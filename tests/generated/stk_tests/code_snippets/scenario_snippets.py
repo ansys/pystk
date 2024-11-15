@@ -147,13 +147,13 @@ class ScenarioSnippets(CodeSnippetsTestBase):
         self.ConfigureScenarioAnimation(clr.CastAs(CodeSnippetsTestBase.m_Root.current_scenario, Scenario))
 
     def ConfigureScenarioAnimation(self, scenario: "Scenario"):
-        animation: "ScenarioAnimation" = scenario.animation
+        animation: "ScenarioAnimation" = scenario.animation_settings
 
         animation.start_time = "1 Jun 2004 12:00:00.00"
         animation.enable_anim_cycle_time = True
-        animation.anim_cycle_type = SCENARIO_END_LOOP_TYPE.END_TIME
-        animation.anim_cycle_time = "2 Jun 2004 12:00:00.00"
-        animation.anim_step_value = 1000
+        animation.animation_end_loop_type = SCENARIO_END_LOOP_TYPE.END_TIME
+        animation.animation_cycle_time = "2 Jun 2004 12:00:00.00"
+        animation.animation_step_value = 1000
         animation.refresh_delta_type = SCENARIO_REFRESH_DELTA_TYPE.REFRESH_DELTA
         animation.refresh_delta = 0.02
 
@@ -169,7 +169,7 @@ class ScenarioSnippets(CodeSnippetsTestBase):
 
         fonts.bold = True
         fonts.italic = True
-        fonts.point_size = SCENARIO_3D_POINT_SIZE.FONT_SIZE36
+        fonts.point_size = SCENARIO_3D_POINT_SIZE.FONT_SIZE_36
         if fonts.is_font_available("Impact"):
             fonts.name = "Impact"
 
@@ -186,7 +186,7 @@ class ScenarioSnippets(CodeSnippetsTestBase):
         self.ComputeSurfaceDistanceOfCentralBody(CodeSnippetsTestBase.m_Root)
 
     def ComputeSurfaceDistanceOfCentralBody(self, root: "StkObjectRoot"):
-        centralBodyEllipsoid: "StkCentralBodyEllipsoid" = root.central_bodies["Earth"].ellipsoid
+        centralBodyEllipsoid: "CentralBodyEllipsoid" = root.central_bodies["Earth"].ellipsoid
 
         # Compute the distance between Philadelphia and London.
         # The code snippet assumes the latitude and longitude unit preference is set to degrees.
@@ -200,8 +200,8 @@ class ScenarioSnippets(CodeSnippetsTestBase):
         scenario: "IStkObject" = TestBase.Application.current_scenario
 
         satellite: "Satellite" = Satellite(scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "GeoEye"))
-        satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
-        (VehiclePropagatorTwoBody(satellite.propagator)).propagate()
+        satellite.set_propagator_type(PROPAGATOR_TYPE.TWO_BODY)
+        (PropagatorTwoBody(satellite.propagator)).propagate()
 
         try:
             self.SetScenarioAnalysisTimeToSatelliteEphmerisIntervalTimes(TestBase.Application, Scenario(scenario))
@@ -212,8 +212,10 @@ class ScenarioSnippets(CodeSnippetsTestBase):
     def SetScenarioAnalysisTimeToSatelliteEphmerisIntervalTimes(self, stkRoot: "StkObjectRoot", scenario: "Scenario"):
         satellite: "Satellite" = clr.CastAs(stkRoot.get_object_from_path("/Satellite/GeoEye"), Satellite)
 
-        vgtProvider: "AnalysisWorkbenchComponentProvider" = stkRoot.vgt_root.get_provider("/Satellite/GeoEye")
-        twoBody: "VehiclePropagatorTwoBody" = clr.CastAs(satellite.propagator, VehiclePropagatorTwoBody)
+        vgtProvider: "AnalysisWorkbenchComponentProvider" = stkRoot.analysis_workbench_components_root.get_provider(
+            "/Satellite/GeoEye"
+        )
+        twoBody: "PropagatorTwoBody" = clr.CastAs(satellite.propagator, PropagatorTwoBody)
         startEpoch: "TimeToolInstantSmartEpoch" = twoBody.ephemeris_interval.get_start_epoch()
         stopEpoch: "TimeToolInstantSmartEpoch" = twoBody.ephemeris_interval.get_stop_epoch()
 

@@ -32,7 +32,7 @@ Overview
               - Return an Attitude file for export.
             * - :py:attr:`~ansys.stk.core.stkobjects.SatelliteExportTools.get_ephemeris_stk_binary_export_tool`
               - Return an Ephemeris file of the STK Binary ephemeris type for export.
-            * - :py:attr:`~ansys.stk.core.stkobjects.SatelliteExportTools.get_ephemeris_ccsd_sv2_export_tool`
+            * - :py:attr:`~ansys.stk.core.stkobjects.SatelliteExportTools.get_ephemeris_ccsds_v2_export_tool`
               - Return an Ephemeris file of the CCSDS v2 ephemeris type for export.
 
 
@@ -58,23 +58,23 @@ Method detail
 
         :obj:`~VehicleEphemerisCCSDSExportTool`
 
-.. py:method:: get_ephemeris_stk_export_tool(self) -> VehicleEphemerisStkExportTool
+.. py:method:: get_ephemeris_stk_export_tool(self) -> VehicleEphemerisExportTool
     :canonical: ansys.stk.core.stkobjects.SatelliteExportTools.get_ephemeris_stk_export_tool
 
     Return an Ephemeris file of the STK ephemeris type for export.
 
     :Returns:
 
-        :obj:`~VehicleEphemerisStkExportTool`
+        :obj:`~VehicleEphemerisExportTool`
 
-.. py:method:: get_ephemeris_spice_export_tool(self) -> VehicleEphemerisSpiceExportTool
+.. py:method:: get_ephemeris_spice_export_tool(self) -> VehicleEphemerisSPICEExportTool
     :canonical: ansys.stk.core.stkobjects.SatelliteExportTools.get_ephemeris_spice_export_tool
 
     Return an Ephemeris file of the Spice ephemeris type for export.
 
     :Returns:
 
-        :obj:`~VehicleEphemerisSpiceExportTool`
+        :obj:`~VehicleEphemerisSPICEExportTool`
 
 .. py:method:: get_ephemeris_code500_export_tool(self) -> VehicleEphemerisCode500ExportTool
     :canonical: ansys.stk.core.stkobjects.SatelliteExportTools.get_ephemeris_code500_export_tool
@@ -85,14 +85,14 @@ Method detail
 
         :obj:`~VehicleEphemerisCode500ExportTool`
 
-.. py:method:: get_propagator_definition_export_tool(self) -> VehiclePropagationDefinitionExportTool
+.. py:method:: get_propagator_definition_export_tool(self) -> PropagatorDefinitionExportTool
     :canonical: ansys.stk.core.stkobjects.SatelliteExportTools.get_propagator_definition_export_tool
 
     Return a Propagator (Prop Def) file for export.
 
     :Returns:
 
-        :obj:`~VehiclePropagationDefinitionExportTool`
+        :obj:`~PropagatorDefinitionExportTool`
 
 .. py:method:: get_attitude_export_tool(self) -> VehicleAttitudeExportTool
     :canonical: ansys.stk.core.stkobjects.SatelliteExportTools.get_attitude_export_tool
@@ -103,17 +103,17 @@ Method detail
 
         :obj:`~VehicleAttitudeExportTool`
 
-.. py:method:: get_ephemeris_stk_binary_export_tool(self) -> VehicleEphemerisStkBinaryExportTool
+.. py:method:: get_ephemeris_stk_binary_export_tool(self) -> VehicleEphemerisBinaryExportTool
     :canonical: ansys.stk.core.stkobjects.SatelliteExportTools.get_ephemeris_stk_binary_export_tool
 
     Return an Ephemeris file of the STK Binary ephemeris type for export.
 
     :Returns:
 
-        :obj:`~VehicleEphemerisStkBinaryExportTool`
+        :obj:`~VehicleEphemerisBinaryExportTool`
 
-.. py:method:: get_ephemeris_ccsd_sv2_export_tool(self) -> VehicleEphemerisCCSDSv2ExportTool
-    :canonical: ansys.stk.core.stkobjects.SatelliteExportTools.get_ephemeris_ccsd_sv2_export_tool
+.. py:method:: get_ephemeris_ccsds_v2_export_tool(self) -> VehicleEphemerisCCSDSv2ExportTool
+    :canonical: ansys.stk.core.stkobjects.SatelliteExportTools.get_ephemeris_ccsds_v2_export_tool
 
     Return an Ephemeris file of the CCSDS v2 ephemeris type for export.
 

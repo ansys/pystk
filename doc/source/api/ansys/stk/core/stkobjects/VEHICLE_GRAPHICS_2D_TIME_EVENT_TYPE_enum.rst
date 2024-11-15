@@ -19,16 +19,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~TIME_EVENT_TYPE_UNKNOWN`
+            * - :py:attr:`~UNKNOWN`
               - Unknown Time Event Type.
 
-            * - :py:attr:`~TIME_EVENT_TYPE_LINE`
+            * - :py:attr:`~LINE`
               - Line.
 
-            * - :py:attr:`~TIME_EVENT_TYPE_MARKER`
+            * - :py:attr:`~MARKER`
               - Marker.
 
-            * - :py:attr:`~TIME_EVENT_TYPE_TEXT`
+            * - :py:attr:`~TEXT`
               - Text.
 
 

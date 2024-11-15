@@ -81,7 +81,7 @@ Property detail
 
 .. py:property:: advanced
     :canonical: ansys.stk.core.stkobjects.Volumetric.advanced
-    :type: VolumetricAdvanced
+    :type: VolumetricAdvancedSettings
 
     Get Advanced options.
 
@@ -96,14 +96,14 @@ Method detail
 -------------
 
 
-.. py:method:: set_volume_grid_definition_type(self, vmGridCalcType: VOLUMETRIC_DEFINITION_TYPE) -> None
+.. py:method:: set_volume_grid_definition_type(self, vm_grid_calc_type: VOLUMETRIC_DEFINITION_TYPE) -> None
     :canonical: ansys.stk.core.stkobjects.Volumetric.set_volume_grid_definition_type
 
     Set volume grid definition type, using the AgEVmDefinitionType enumeration.
 
     :Parameters:
 
-    **vmGridCalcType** : :obj:`~VOLUMETRIC_DEFINITION_TYPE`
+    **vm_grid_calc_type** : :obj:`~VOLUMETRIC_DEFINITION_TYPE`
 
     :Returns:
 

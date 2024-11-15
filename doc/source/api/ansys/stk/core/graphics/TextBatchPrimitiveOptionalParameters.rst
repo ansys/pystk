@@ -112,27 +112,27 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_eye_offsets(self, eyeOffsets: list) -> None
+.. py:method:: set_eye_offsets(self, eye_offsets: list) -> None
     :canonical: ansys.stk.core.graphics.TextBatchPrimitiveOptionalParameters.set_eye_offsets
 
     Define a collection of eye offsets, one for each string in the batch.
 
     :Parameters:
 
-    **eyeOffsets** : :obj:`~list`
+    **eye_offsets** : :obj:`~list`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: set_pixel_offsets(self, pixelOffsets: list) -> None
+.. py:method:: set_pixel_offsets(self, pixel_offsets: list) -> None
     :canonical: ansys.stk.core.graphics.TextBatchPrimitiveOptionalParameters.set_pixel_offsets
 
     Define a collection of pixel offsets, one for each string in the batch.
 
     :Parameters:
 
-    **pixelOffsets** : :obj:`~list`
+    **pixel_offsets** : :obj:`~list`
 
     :Returns:
 

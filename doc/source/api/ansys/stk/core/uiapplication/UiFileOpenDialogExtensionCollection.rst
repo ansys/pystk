@@ -29,7 +29,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.uiapplication.UiFileOpenDialogExtensionCollection.count`
               - Gets the total count of files in the collection.
-            * - :py:attr:`~ansys.stk.core.uiapplication.UiFileOpenDialogExtensionCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.uiapplication.UiFileOpenDialogExtensionCollection._new_enum`
               - Enumerates through the file collection.
 
 
@@ -51,8 +51,8 @@ Property detail
 
     Gets the total count of files in the collection.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.uiapplication.UiFileOpenDialogExtensionCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.uiapplication.UiFileOpenDialogExtensionCollection._new_enum
     :type: EnumeratorProxy
 
     Enumerates through the file collection.
@@ -63,14 +63,14 @@ Method detail
 
 
 
-.. py:method:: item(self, nIndex: int) -> str
+.. py:method:: item(self, n_index: int) -> str
     :canonical: ansys.stk.core.uiapplication.UiFileOpenDialogExtensionCollection.item
 
     Get the file at the specified index.
 
     :Parameters:
 
-    **nIndex** : :obj:`~int`
+    **n_index** : :obj:`~int`
 
     :Returns:
 

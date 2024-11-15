@@ -279,15 +279,15 @@ Method detail
 
 
 
-.. py:method:: set_climb_airspeed(self, airspeedType: AIRSPEED_TYPE, aispeed: float) -> None
+.. py:method:: set_climb_airspeed(self, airspeed_type: AIRSPEED_TYPE, airspeed: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.MissileModel.set_climb_airspeed
 
     Set the missile's climb airspeed and airspeed type.
 
     :Parameters:
 
-    **airspeedType** : :obj:`~AIRSPEED_TYPE`
-    **aispeed** : :obj:`~float`
+    **airspeed_type** : :obj:`~AIRSPEED_TYPE`
+    **airspeed** : :obj:`~float`
 
     :Returns:
 
@@ -301,15 +301,15 @@ Method detail
 
 
 
-.. py:method:: set_cruise_max_airspeed(self, airspeedType: AIRSPEED_TYPE, aispeed: float) -> None
+.. py:method:: set_cruise_max_airspeed(self, airspeed_type: AIRSPEED_TYPE, airspeed: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.MissileModel.set_cruise_max_airspeed
 
     Set the missile's max cruise airspeed and airspeed type.
 
     :Parameters:
 
-    **airspeedType** : :obj:`~AIRSPEED_TYPE`
-    **aispeed** : :obj:`~float`
+    **airspeed_type** : :obj:`~AIRSPEED_TYPE`
+    **airspeed** : :obj:`~float`
 
     :Returns:
 
@@ -319,15 +319,15 @@ Method detail
 
 
 
-.. py:method:: set_descent_airspeed(self, airspeedType: AIRSPEED_TYPE, aispeed: float) -> None
+.. py:method:: set_descent_airspeed(self, airspeed_type: AIRSPEED_TYPE, airspeed: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.MissileModel.set_descent_airspeed
 
     Set the missile's descent airspeed and airspeed type.
 
     :Parameters:
 
-    **airspeedType** : :obj:`~AIRSPEED_TYPE`
-    **aispeed** : :obj:`~float`
+    **airspeed_type** : :obj:`~AIRSPEED_TYPE`
+    **airspeed** : :obj:`~float`
 
     :Returns:
 

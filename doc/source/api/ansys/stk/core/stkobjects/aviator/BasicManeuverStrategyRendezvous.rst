@@ -228,7 +228,7 @@ Method detail
 
 
 
-.. py:method:: set_cpa(self, enable: bool, cPA: float) -> None
+.. py:method:: set_cpa(self, enable: bool, collision_avoidance: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRendezvous.set_cpa
 
     Set whether to enable collision avoidance and the corresponding minimum distance between this aircraft and the target aircraft.
@@ -236,7 +236,7 @@ Method detail
     :Parameters:
 
     **enable** : :obj:`~bool`
-    **cPA** : :obj:`~float`
+    **collision_avoidance** : :obj:`~float`
 
     :Returns:
 
@@ -266,7 +266,7 @@ Method detail
 
 
 
-.. py:method:: set_airspeed_factor(self, enable: bool, airspeedFactor: float) -> None
+.. py:method:: set_airspeed_factor(self, enable: bool, airspeed_factor: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRendezvous.set_airspeed_factor
 
     Set whether to enable the option to control how fine the control is and the corresponding dimensionless factor.
@@ -274,7 +274,7 @@ Method detail
     :Parameters:
 
     **enable** : :obj:`~bool`
-    **airspeedFactor** : :obj:`~float`
+    **airspeed_factor** : :obj:`~float`
 
     :Returns:
 

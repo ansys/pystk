@@ -37,7 +37,7 @@ Overview
               - Accesses for the point selected in the graphics window.
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGridInspector.point_daily_coverage`
               - Access times for the point selected in the graphics window.
-            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGridInspector.point_prob_of_coverage`
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGridInspector.point_probability_of_coverage`
               - Get the probability of coverage for the point selected in the graphics window being achieved as a function of the time past a request for coverage.
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGridInspector.region_coverage`
               - Summary of coverage for the region selected in the graphics window.
@@ -73,8 +73,8 @@ Property detail
 
     Access times for the point selected in the graphics window.
 
-.. py:property:: point_prob_of_coverage
-    :canonical: ansys.stk.core.stkobjects.CoverageGridInspector.point_prob_of_coverage
+.. py:property:: point_probability_of_coverage
+    :canonical: ansys.stk.core.stkobjects.CoverageGridInspector.point_probability_of_coverage
     :type: IDataProviderInfo
 
     Get the probability of coverage for the point selected in the graphics window being achieved as a function of the time past a request for coverage.
@@ -121,14 +121,14 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: select_region(self, regionName: str) -> None
+.. py:method:: select_region(self, region_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.CoverageGridInspector.select_region
 
     Select a region.
 
     :Parameters:
 
-    **regionName** : :obj:`~str`
+    **region_name** : :obj:`~str`
 
     :Returns:
 

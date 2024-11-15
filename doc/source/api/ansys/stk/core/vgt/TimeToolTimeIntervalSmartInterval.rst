@@ -98,14 +98,14 @@ Method detail
 
 
 
-.. py:method:: set_implicit_interval(self, eventInterval: ITimeToolTimeInterval) -> None
+.. py:method:: set_implicit_interval(self, event_interval: ITimeToolTimeInterval) -> None
     :canonical: ansys.stk.core.vgt.TimeToolTimeIntervalSmartInterval.set_implicit_interval
 
     Set the reference interval and changes the state to Implicit.
 
     :Parameters:
 
-    **eventInterval** : :obj:`~ITimeToolTimeInterval`
+    **event_interval** : :obj:`~ITimeToolTimeInterval`
 
     :Returns:
 
@@ -138,14 +138,14 @@ Method detail
 
         :obj:`~TimeToolInstantSmartEpoch`
 
-.. py:method:: set_start_epoch(self, startEpoch: TimeToolInstantSmartEpoch) -> None
+.. py:method:: set_start_epoch(self, start_epoch: TimeToolInstantSmartEpoch) -> None
     :canonical: ansys.stk.core.vgt.TimeToolTimeIntervalSmartInterval.set_start_epoch
 
     Set a start of the interval using specified epoch component.
 
     :Parameters:
 
-    **startEpoch** : :obj:`~TimeToolInstantSmartEpoch`
+    **start_epoch** : :obj:`~TimeToolInstantSmartEpoch`
 
     :Returns:
 
@@ -160,14 +160,14 @@ Method detail
 
         :obj:`~TimeToolInstantSmartEpoch`
 
-.. py:method:: set_stop_epoch(self, stopEpoch: TimeToolInstantSmartEpoch) -> None
+.. py:method:: set_stop_epoch(self, stop_epoch: TimeToolInstantSmartEpoch) -> None
     :canonical: ansys.stk.core.vgt.TimeToolTimeIntervalSmartInterval.set_stop_epoch
 
     Set a stop of the interval using specified epoch component.
 
     :Parameters:
 
-    **stopEpoch** : :obj:`~TimeToolInstantSmartEpoch`
+    **stop_epoch** : :obj:`~TimeToolInstantSmartEpoch`
 
     :Returns:
 
@@ -187,49 +187,49 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_start_and_stop_epochs(self, refStartEpoch: TimeToolInstantSmartEpoch, refStopEpoch: TimeToolInstantSmartEpoch) -> None
+.. py:method:: set_start_and_stop_epochs(self, ref_start_epoch: TimeToolInstantSmartEpoch, ref_stop_epoch: TimeToolInstantSmartEpoch) -> None
     :canonical: ansys.stk.core.vgt.TimeToolTimeIntervalSmartInterval.set_start_and_stop_epochs
 
     Set the interval's start and stop epochs as two smart epoch components. Exception is thrown if specified start time is greater than stop time.
 
     :Parameters:
 
-    **refStartEpoch** : :obj:`~TimeToolInstantSmartEpoch`
-    **refStopEpoch** : :obj:`~TimeToolInstantSmartEpoch`
+    **ref_start_epoch** : :obj:`~TimeToolInstantSmartEpoch`
+    **ref_stop_epoch** : :obj:`~TimeToolInstantSmartEpoch`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: set_start_and_stop_times(self, startTime: typing.Any, stopTime: typing.Any) -> None
+.. py:method:: set_start_and_stop_times(self, start_time: typing.Any, stop_time: typing.Any) -> None
     :canonical: ansys.stk.core.vgt.TimeToolTimeIntervalSmartInterval.set_start_and_stop_times
 
     Set the interval's start and stop epochs as explicit times. Exception is thrown if specified start time is greater than stop time.
 
     :Parameters:
 
-    **startTime** : :obj:`~typing.Any`
-    **stopTime** : :obj:`~typing.Any`
+    **start_time** : :obj:`~typing.Any`
+    **stop_time** : :obj:`~typing.Any`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: set_start_epoch_and_duration(self, refStartEpoch: TimeToolInstantSmartEpoch, durationStr: str) -> None
+.. py:method:: set_start_epoch_and_duration(self, ref_start_epoch: TimeToolInstantSmartEpoch, duration_str: str) -> None
     :canonical: ansys.stk.core.vgt.TimeToolTimeIntervalSmartInterval.set_start_epoch_and_duration
 
     Set the interval's start epoch and the interval's duration.
 
     :Parameters:
 
-    **refStartEpoch** : :obj:`~TimeToolInstantSmartEpoch`
-    **durationStr** : :obj:`~str`
+    **ref_start_epoch** : :obj:`~TimeToolInstantSmartEpoch`
+    **duration_str** : :obj:`~str`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: set_start_time_and_duration(self, epoch: typing.Any, durationStr: str) -> None
+.. py:method:: set_start_time_and_duration(self, epoch: typing.Any, duration_str: str) -> None
     :canonical: ansys.stk.core.vgt.TimeToolTimeIntervalSmartInterval.set_start_time_and_duration
 
     Set the interval's start time and the interval's duration.
@@ -237,7 +237,7 @@ Method detail
     :Parameters:
 
     **epoch** : :obj:`~typing.Any`
-    **durationStr** : :obj:`~str`
+    **duration_str** : :obj:`~str`
 
     :Returns:
 

@@ -40,9 +40,9 @@ Overview
               - Returns an array of supported coordinate system types.
             * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateDelaunay.mean_anomaly`
               - Mean Anomaly (l). Uses Angle Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateDelaunay.arg_of_periapsis`
+            * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateDelaunay.argument_of_periapsis`
               - Argument of periapsis (g). Uses Angle Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateDelaunay.raan`
+            * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateDelaunay.right_ascension_ascending_node`
               - RAAN (h). Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateDelaunay.state_epoch`
               - Smart epoch component allows the user to configure the state epoch explicitly or implicitly (using a pre-defined or custom time instant component).
@@ -120,14 +120,14 @@ Property detail
 
     Mean Anomaly (l). Uses Angle Dimension.
 
-.. py:property:: arg_of_periapsis
-    :canonical: ansys.stk.core.stkobjects.OrbitStateDelaunay.arg_of_periapsis
+.. py:property:: argument_of_periapsis
+    :canonical: ansys.stk.core.stkobjects.OrbitStateDelaunay.argument_of_periapsis
     :type: float
 
     Argument of periapsis (g). Uses Angle Dimension.
 
-.. py:property:: raan
-    :canonical: ansys.stk.core.stkobjects.OrbitStateDelaunay.raan
+.. py:property:: right_ascension_ascending_node
+    :canonical: ansys.stk.core.stkobjects.OrbitStateDelaunay.right_ascension_ascending_node
     :type: float
 
     RAAN (h). Uses Angle Dimension.

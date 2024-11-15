@@ -19,7 +19,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~INTERPOLATION_METHOD_UNKNOWN`
+            * - :py:attr:`~UNKNOWN`
               - Unknown or unsupported interpolation method.
 
             * - :py:attr:`~HERMITIAN`
@@ -28,7 +28,7 @@ Overview
             * - :py:attr:`~LAGRANGE`
               - Lagrange: interpolates position and velocity separately.
 
-            * - :py:attr:`~GRAPHICS_3D_P`
+            * - :py:attr:`~VOP`
               - VOP: a special interpolator that deals well with ephemeris produced at a large step size.
 
 

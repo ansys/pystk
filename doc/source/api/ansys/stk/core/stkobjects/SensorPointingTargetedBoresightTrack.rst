@@ -52,7 +52,7 @@ Property detail
 
 .. py:property:: track_mode
     :canonical: ansys.stk.core.stkobjects.SensorPointingTargetedBoresightTrack.track_mode
-    :type: TRACK_MODE_TYPE
+    :type: TRACK_MODE
 
     The antenna orientation option for the sensor. A member of the AgETrackModeType enumeration.
 

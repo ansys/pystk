@@ -18,7 +18,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.CoveragePointDefinition.set_points_lla`
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoveragePointDefinition.set_points_detic`
               - Use an array of latitude/longitude/altitude values to define a coverage grid point.
 
     .. tab-item:: Properties
@@ -67,7 +67,7 @@ Property detail
 
 .. py:property:: point_location_method
     :canonical: ansys.stk.core.stkobjects.CoveragePointDefinition.point_location_method
-    :type: COVERAGE_POINT_LOC_METHOD
+    :type: COVERAGE_POINT_LOCATION_METHOD
 
     Specify the location of points on the coverage grid.
 
@@ -157,14 +157,14 @@ Method detail
 
 
 
-.. py:method:: set_points_lla(self, lLAPoints: list) -> None
-    :canonical: ansys.stk.core.stkobjects.CoveragePointDefinition.set_points_lla
+.. py:method:: set_points_detic(self, lla_points: list) -> None
+    :canonical: ansys.stk.core.stkobjects.CoveragePointDefinition.set_points_detic
 
     Use an array of latitude/longitude/altitude values to define a coverage grid point.
 
     :Parameters:
 
-    **lLAPoints** : :obj:`~list`
+    **lla_points** : :obj:`~list`
 
     :Returns:
 

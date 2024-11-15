@@ -29,7 +29,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GoldenSectionResultCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GoldenSectionResultCollection._new_enum`
               - Allows you to enumerate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GoldenSectionResultCollection.count`
               - Returns the size of the collection.
@@ -47,8 +47,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.astrogator.GoldenSectionResultCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.astrogator.GoldenSectionResultCollection._new_enum
     :type: EnumeratorProxy
 
     Allows you to enumerate through the collection.
@@ -78,15 +78,15 @@ Method detail
 
 
 
-.. py:method:: get_result_by_paths(self, objectPath: str, resultPath: str) -> GoldenSectionResult
+.. py:method:: get_result_by_paths(self, object_path: str, result_path: str) -> GoldenSectionResult
     :canonical: ansys.stk.core.stkobjects.astrogator.GoldenSectionResultCollection.get_result_by_paths
 
     Return the result specified by the object/result path.
 
     :Parameters:
 
-    **objectPath** : :obj:`~str`
-    **resultPath** : :obj:`~str`
+    **object_path** : :obj:`~str`
+    **result_path** : :obj:`~str`
 
     :Returns:
 

@@ -56,7 +56,7 @@ Property detail
 
 .. py:property:: intervals
     :canonical: ansys.stk.core.stkobjects.AccessConstraintIntervals.intervals
-    :type: IntervalCollection
+    :type: TimeIntervalCollection
 
     Gets the collection of intervals.
 

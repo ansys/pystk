@@ -22,7 +22,7 @@ Overview
             * - :py:attr:`~UNKNOWN`
               - An invalid AgESpEnvSAAFluxLevel value.
 
-            * - :py:attr:`~BACKGROUND3_SIGMA`
+            * - :py:attr:`~GREATER_THAN_BACKGROUND_BY_3_SIGMA`
               - Represents flux values greater than the background environment by 3 sigma.
 
             * - :py:attr:`~HALF_OF_PEAK`

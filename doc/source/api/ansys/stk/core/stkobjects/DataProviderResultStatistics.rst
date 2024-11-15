@@ -41,53 +41,53 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: compute_statistic(self, statistic: STATISTICS) -> DataProviderResultStatisticResult
+.. py:method:: compute_statistic(self, statistic: STATISTIC_TYPE) -> DataProviderResultStatisticResult
     :canonical: ansys.stk.core.stkobjects.DataProviderResultStatistics.compute_statistic
 
     Compute the requested statistic for the data set.
 
     :Parameters:
 
-    **statistic** : :obj:`~STATISTICS`
+    **statistic** : :obj:`~STATISTIC_TYPE`
 
     :Returns:
 
         :obj:`~DataProviderResultStatisticResult`
 
-.. py:method:: compute_time_varying_extremum(self, timeVarExtremum: TIME_VARYING_EXTREMUM) -> DataProviderResultTimeVaryingExtremumResult
+.. py:method:: compute_time_varying_extremum(self, time_var_extremum: TIME_VARYING_EXTREMUM) -> DataProviderResultTimeVaryingExtremumResult
     :canonical: ansys.stk.core.stkobjects.DataProviderResultStatistics.compute_time_varying_extremum
 
     Compute the requested time varying extremum for the data set.
 
     :Parameters:
 
-    **timeVarExtremum** : :obj:`~TIME_VARYING_EXTREMUM`
+    **time_var_extremum** : :obj:`~TIME_VARYING_EXTREMUM`
 
     :Returns:
 
         :obj:`~DataProviderResultTimeVaryingExtremumResult`
 
-.. py:method:: is_statistic_available(self, statistic: STATISTICS) -> bool
+.. py:method:: is_statistic_available(self, statistic: STATISTIC_TYPE) -> bool
     :canonical: ansys.stk.core.stkobjects.DataProviderResultStatistics.is_statistic_available
 
     Is the supplied statistic available for the data?
 
     :Parameters:
 
-    **statistic** : :obj:`~STATISTICS`
+    **statistic** : :obj:`~STATISTIC_TYPE`
 
     :Returns:
 
         :obj:`~bool`
 
-.. py:method:: is_time_varying_extremum_available(self, timeVarExtremum: TIME_VARYING_EXTREMUM) -> bool
+.. py:method:: is_time_varying_extremum_available(self, time_var_extremum: TIME_VARYING_EXTREMUM) -> bool
     :canonical: ansys.stk.core.stkobjects.DataProviderResultStatistics.is_time_varying_extremum_available
 
     Is the supplied time varying extremum available for the data?
 
     :Parameters:
 
-    **timeVarExtremum** : :obj:`~TIME_VARYING_EXTREMUM`
+    **time_var_extremum** : :obj:`~TIME_VARYING_EXTREMUM`
 
     :Returns:
 

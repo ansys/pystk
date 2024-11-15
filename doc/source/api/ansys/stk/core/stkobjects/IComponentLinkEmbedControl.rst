@@ -72,14 +72,14 @@ Method detail
 
 
 
-.. py:method:: set_component(self, componentName: str) -> None
+.. py:method:: set_component(self, component_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.IComponentLinkEmbedControl.set_component
 
     Set the component by name.
 
     :Parameters:
 
-    **componentName** : :obj:`~str`
+    **component_name** : :obj:`~str`
 
     :Returns:
 

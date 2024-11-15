@@ -54,14 +54,14 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_central_body(self, centralBody: AnalysisWorkbenchCentralBody) -> None
+.. py:method:: set_central_body(self, central_body: AnalysisWorkbenchCentralBody) -> None
     :canonical: ansys.stk.core.vgt.AnalysisWorkbenchCentralBodyReference.set_central_body
 
     Set a new central body.
 
     :Parameters:
 
-    **centralBody** : :obj:`~AnalysisWorkbenchCentralBody`
+    **central_body** : :obj:`~AnalysisWorkbenchCentralBody`
 
     :Returns:
 

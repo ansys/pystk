@@ -19,13 +19,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~POINT_ALTITUDE_METHOD_UNKNOWN`
+            * - :py:attr:`~UNKNOWN`
               - Unknown method.
 
-            * - :py:attr:`~POINT_ALTITUDE_METHOD_FILE_VALUES`
+            * - :py:attr:`~FILE_VALUES`
               - Use the altitude values in the point file.
 
-            * - :py:attr:`~POINT_ALTITUDE_METHOD_OVERRIDE`
+            * - :py:attr:`~OVERRIDE`
               - Override the point altitude with the altitude at a point on terrain.
 
 

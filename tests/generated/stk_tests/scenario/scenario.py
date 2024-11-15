@@ -44,25 +44,35 @@ class EarlyBoundTests(TestBase):
             scenarioObj: "IStkObject" = clr.CastAs(EarlyBoundTests.AG_SC, IStkObject)
 
             EarlyBoundTests.today = str(
-                TestBase.Application.current_scenario.vgt.time_instants["Today"].find_occurrence().epoch
+                TestBase.Application.current_scenario.analysis_workbench_components.time_instants["Today"]
+                .find_occurrence()
+                .epoch
             )
             EarlyBoundTests.tomorrow = str(
-                TestBase.Application.current_scenario.vgt.time_instants["Tomorrow"].find_occurrence().epoch
+                TestBase.Application.current_scenario.analysis_workbench_components.time_instants["Tomorrow"]
+                .find_occurrence()
+                .epoch
             )
 
             EarlyBoundTests.todayEpoch = clr.CastAs(
-                scenarioObj.vgt.time_instants.factory.create_smart_epoch_from_time(EarlyBoundTests.today),
+                scenarioObj.analysis_workbench_components.time_instants.factory.create_smart_epoch_from_time(
+                    EarlyBoundTests.today
+                ),
                 TimeToolInstantSmartEpoch,
             )
             EarlyBoundTests.tomorrowEpoch = clr.CastAs(
-                scenarioObj.vgt.time_instants.factory.create_smart_epoch_from_time(EarlyBoundTests.tomorrow),
+                scenarioObj.analysis_workbench_components.time_instants.factory.create_smart_epoch_from_time(
+                    EarlyBoundTests.tomorrow
+                ),
                 TimeToolInstantSmartEpoch,
             )
 
             EarlyBoundTests.todayEpoch.set_explicit_time(EarlyBoundTests.today)
             EarlyBoundTests.tomorrowEpoch.set_explicit_time(EarlyBoundTests.tomorrow)
 
-            EarlyBoundTests.todayInterval = TestBase.Application.current_scenario.vgt.time_intervals["TodayInterval"]
+            EarlyBoundTests.todayInterval = (
+                TestBase.Application.current_scenario.analysis_workbench_components.time_intervals["TodayInterval"]
+            )
 
         except Exception as e:
             raise e
@@ -79,14 +89,14 @@ class EarlyBoundTests(TestBase):
 
     # region Setup
     def setUp(self):
-        TestBase.Application.unit_preferences.set_current_unit("DateFormat", "UTCG")
-        TestBase.Application.unit_preferences.set_current_unit("Temperature", "degC")
+        TestBase.Application.units_preferences.set_current_unit("DateFormat", "UTCG")
+        TestBase.Application.units_preferences.set_current_unit("Temperature", "degC")
 
     # endregion
 
     # region TearDown
     def tearDown(self):
-        TestBase.Application.unit_preferences.reset_units()
+        TestBase.Application.units_preferences.reset_units()
 
     # endregion
 
@@ -129,12 +139,12 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("10 Jun 1999 12:00:00.010", EarlyBoundTests.AG_SC.stop_time)
 
         missile1: "Missile" = clr.CastAs(TestBase.Application.current_scenario.children["Missile1"], Missile)
-        missile1Prop: "VehiclePropagatorBallistic" = clr.CastAs(missile1.trajectory, VehiclePropagatorBallistic)
+        missile1Prop: "PropagatorBallistic" = clr.CastAs(missile1.trajectory, PropagatorBallistic)
         initialMissile1Step: float = missile1Prop.step
         missile1Prop.step = 1200
 
         satellite1: "Satellite" = clr.CastAs(TestBase.Application.current_scenario.children["Satellite1"], Satellite)
-        satellite1Prop: "VehiclePropagatorTwoBody" = clr.CastAs(satellite1.propagator, VehiclePropagatorTwoBody)
+        satellite1Prop: "PropagatorTwoBody" = clr.CastAs(satellite1.propagator, PropagatorTwoBody)
         initialSatellite1Step: float = satellite1Prop.step
         satellite1Prop.step = 10 * 86400  # 10 days
 
@@ -176,38 +186,49 @@ class EarlyBoundTests(TestBase):
 
         # SatNoOrbitWarning
         TestBase.logger.WriteLine4(
-            "The current SatNoOrbitWarning flag is: {0}", EarlyBoundTests.AG_SC.sat_no_orbit_warning
+            "The current SatNoOrbitWarning flag is: {0}", EarlyBoundTests.AG_SC.display_warning_if_orbit_impacts_ground
         )
-        EarlyBoundTests.AG_SC.sat_no_orbit_warning = False
-        TestBase.logger.WriteLine4("The new SatNoOrbitWarning flag is: {0}", EarlyBoundTests.AG_SC.sat_no_orbit_warning)
-        Assert.assertFalse(EarlyBoundTests.AG_SC.sat_no_orbit_warning)
-        EarlyBoundTests.AG_SC.sat_no_orbit_warning = True
-        TestBase.logger.WriteLine4("The new SatNoOrbitWarning flag is: {0}", EarlyBoundTests.AG_SC.sat_no_orbit_warning)
-        Assert.assertTrue(EarlyBoundTests.AG_SC.sat_no_orbit_warning)
+        EarlyBoundTests.AG_SC.display_warning_if_orbit_impacts_ground = False
+        TestBase.logger.WriteLine4(
+            "The new SatNoOrbitWarning flag is: {0}", EarlyBoundTests.AG_SC.display_warning_if_orbit_impacts_ground
+        )
+        Assert.assertFalse(EarlyBoundTests.AG_SC.display_warning_if_orbit_impacts_ground)
+        EarlyBoundTests.AG_SC.display_warning_if_orbit_impacts_ground = True
+        TestBase.logger.WriteLine4(
+            "The new SatNoOrbitWarning flag is: {0}", EarlyBoundTests.AG_SC.display_warning_if_orbit_impacts_ground
+        )
+        Assert.assertTrue(EarlyBoundTests.AG_SC.display_warning_if_orbit_impacts_ground)
         # MslNoOrbitWarning
         TestBase.logger.WriteLine4(
-            "The current MslNoOrbitWarning flag is: {0}", EarlyBoundTests.AG_SC.msl_no_orbit_warning
+            "The current MslNoOrbitWarning flag is: {0}", EarlyBoundTests.AG_SC.show_warning_if_missile_fails_to_impact
         )
-        EarlyBoundTests.AG_SC.msl_no_orbit_warning = False
-        TestBase.logger.WriteLine4("The new MslNoOrbitWarning flag is: {0}", EarlyBoundTests.AG_SC.msl_no_orbit_warning)
-        Assert.assertFalse(EarlyBoundTests.AG_SC.msl_no_orbit_warning)
-        EarlyBoundTests.AG_SC.msl_no_orbit_warning = True
-        TestBase.logger.WriteLine4("The new MslNoOrbitWarning flag is: {0}", EarlyBoundTests.AG_SC.msl_no_orbit_warning)
-        Assert.assertTrue(EarlyBoundTests.AG_SC.msl_no_orbit_warning)
+        EarlyBoundTests.AG_SC.show_warning_if_missile_fails_to_impact = False
+        TestBase.logger.WriteLine4(
+            "The new MslNoOrbitWarning flag is: {0}", EarlyBoundTests.AG_SC.show_warning_if_missile_fails_to_impact
+        )
+        Assert.assertFalse(EarlyBoundTests.AG_SC.show_warning_if_missile_fails_to_impact)
+        EarlyBoundTests.AG_SC.show_warning_if_missile_fails_to_impact = True
+        TestBase.logger.WriteLine4(
+            "The new MslNoOrbitWarning flag is: {0}", EarlyBoundTests.AG_SC.show_warning_if_missile_fails_to_impact
+        )
+        Assert.assertTrue(EarlyBoundTests.AG_SC.show_warning_if_missile_fails_to_impact)
         # MslStopTimeWarning
         TestBase.logger.WriteLine4(
-            "The current MslStopTimeWarning flag is: {0}", EarlyBoundTests.AG_SC.msl_stop_time_warning
+            "The current MslStopTimeWarning flag is: {0}",
+            EarlyBoundTests.AG_SC.show_warning_whether_missile_achieves_orbit_or_not,
         )
-        EarlyBoundTests.AG_SC.msl_stop_time_warning = False
+        EarlyBoundTests.AG_SC.show_warning_whether_missile_achieves_orbit_or_not = False
         TestBase.logger.WriteLine4(
-            "The new MslStopTimeWarning flag is: {0}", EarlyBoundTests.AG_SC.msl_stop_time_warning
+            "The new MslStopTimeWarning flag is: {0}",
+            EarlyBoundTests.AG_SC.show_warning_whether_missile_achieves_orbit_or_not,
         )
-        Assert.assertFalse(EarlyBoundTests.AG_SC.msl_stop_time_warning)
-        EarlyBoundTests.AG_SC.msl_stop_time_warning = True
+        Assert.assertFalse(EarlyBoundTests.AG_SC.show_warning_whether_missile_achieves_orbit_or_not)
+        EarlyBoundTests.AG_SC.show_warning_whether_missile_achieves_orbit_or_not = True
         TestBase.logger.WriteLine4(
-            "The new MslStopTimeWarning flag is: {0}", EarlyBoundTests.AG_SC.msl_stop_time_warning
+            "The new MslStopTimeWarning flag is: {0}",
+            EarlyBoundTests.AG_SC.show_warning_whether_missile_achieves_orbit_or_not,
         )
-        Assert.assertTrue(EarlyBoundTests.AG_SC.msl_stop_time_warning)
+        Assert.assertTrue(EarlyBoundTests.AG_SC.show_warning_whether_missile_achieves_orbit_or_not)
 
         # AcWGS84Warning (ALWAYS)
         TestBase.logger.WriteLine6(
@@ -241,13 +262,13 @@ class EarlyBoundTests(TestBase):
         # scenario's time period
         EarlyBoundTests.AG_SC.use_analysis_start_time_for_epoch = True
         TestBase.Application.begin_update()
-        sPrevUnit: str = TestBase.Application.unit_preferences.get_current_unit_abbrv("DateFormat")
-        TestBase.Application.unit_preferences.set_current_unit("DateFormat", "UTCG")
+        sPrevUnit: str = TestBase.Application.units_preferences.get_current_unit_abbrv("DateFormat")
+        TestBase.Application.units_preferences.set_current_unit("DateFormat", "UTCG")
         try:
             self.AnalysisEpochInternal()
 
         finally:
-            TestBase.Application.unit_preferences.set_current_unit("DateFormat", sPrevUnit)
+            TestBase.Application.units_preferences.set_current_unit("DateFormat", sPrevUnit)
             TestBase.Application.end_update()
 
     def AnalysisEpochInternal(self):
@@ -276,7 +297,7 @@ class EarlyBoundTests(TestBase):
     @category("Basic Tests")
     @category("Graphics Tests")
     def test_Animation(self):
-        ani: "ScenarioAnimation" = EarlyBoundTests.AG_SC.animation
+        ani: "ScenarioAnimation" = EarlyBoundTests.AG_SC.animation_settings
         Assert.assertIsNotNone(ani)
 
         ani.start_time = "1 Jun 2004 12:00:00.00"
@@ -285,13 +306,13 @@ class EarlyBoundTests(TestBase):
         ani.enable_anim_cycle_time = True
         Assert.assertEqual(True, ani.enable_anim_cycle_time)
 
-        ani.anim_cycle_time = "1 Jun 2004 12:00:00.01"
-        Assert.assertEqual("1 Jun 2004 12:00:00.010", ani.anim_cycle_time)
+        ani.animation_cycle_time = "1 Jun 2004 12:00:00.01"
+        Assert.assertEqual("1 Jun 2004 12:00:00.010", ani.animation_cycle_time)
 
-        ani.anim_cycle_type = SCENARIO_END_LOOP_TYPE.LOOP_AT_TIME
-        Assert.assertEqual(SCENARIO_END_LOOP_TYPE.LOOP_AT_TIME, ani.anim_cycle_type)
-        ani.anim_cycle_type = SCENARIO_END_LOOP_TYPE.END_TIME
-        Assert.assertEqual(SCENARIO_END_LOOP_TYPE.END_TIME, ani.anim_cycle_type)
+        ani.animation_end_loop_type = SCENARIO_END_LOOP_TYPE.LOOP_AT_TIME
+        Assert.assertEqual(SCENARIO_END_LOOP_TYPE.LOOP_AT_TIME, ani.animation_end_loop_type)
+        ani.animation_end_loop_type = SCENARIO_END_LOOP_TYPE.END_TIME
+        Assert.assertEqual(SCENARIO_END_LOOP_TYPE.END_TIME, ani.animation_end_loop_type)
 
         # RefreshDeltaType + RefreshDelta
         ani.refresh_delta_type = SCENARIO_REFRESH_DELTA_TYPE.REFRESH_DELTA
@@ -304,38 +325,38 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             ani.refresh_delta = 321
 
-        ani.anim_step_type = SCENARIO_TIME_STEP_TYPE.REAL_TIME
-        Assert.assertEqual(SCENARIO_TIME_STEP_TYPE.REAL_TIME, ani.anim_step_type)
+        ani.animation_step_type = SCENARIO_TIME_STEP_TYPE.REAL_TIME
+        Assert.assertEqual(SCENARIO_TIME_STEP_TYPE.REAL_TIME, ani.animation_step_type)
 
-        ani.anim_step_value = 12
-        Assert.assertEqual(12, ani.anim_step_value)
+        ani.animation_step_value = 12
+        Assert.assertEqual(12, ani.animation_step_value)
 
-        ani.anim_step_type = SCENARIO_TIME_STEP_TYPE.X_REAL_TIME
-        Assert.assertEqual(SCENARIO_TIME_STEP_TYPE.X_REAL_TIME, ani.anim_step_type)
+        ani.animation_step_type = SCENARIO_TIME_STEP_TYPE.X_REAL_TIME
+        Assert.assertEqual(SCENARIO_TIME_STEP_TYPE.X_REAL_TIME, ani.animation_step_type)
 
-        ani.continue_x_realtime_from_pause = True
-        Assert.assertTrue(ani.continue_x_realtime_from_pause)
-        ani.continue_x_realtime_from_pause = False
-        Assert.assertFalse(ani.continue_x_realtime_from_pause)
+        ani.ccontinue_x_real_time_from_pause = True
+        Assert.assertTrue(ani.ccontinue_x_real_time_from_pause)
+        ani.ccontinue_x_real_time_from_pause = False
+        Assert.assertFalse(ani.ccontinue_x_real_time_from_pause)
 
-        ani.anim_step_value = 21
-        Assert.assertEqual(21, ani.anim_step_value)
+        ani.animation_step_value = 21
+        Assert.assertEqual(21, ani.animation_step_value)
 
-        ani.anim_step_type = SCENARIO_TIME_STEP_TYPE.STEP
-        Assert.assertEqual(SCENARIO_TIME_STEP_TYPE.STEP, ani.anim_step_type)
+        ani.animation_step_type = SCENARIO_TIME_STEP_TYPE.STEP
+        Assert.assertEqual(SCENARIO_TIME_STEP_TYPE.STEP, ani.animation_step_type)
 
-        ani.anim_step_value = 1234
-        Assert.assertEqual(1234, ani.anim_step_value)
+        ani.animation_step_value = 1234
+        Assert.assertEqual(1234, ani.animation_step_value)
 
-        ani.anim_step_type = SCENARIO_TIME_STEP_TYPE.ARRAY
-        Assert.assertEqual(SCENARIO_TIME_STEP_TYPE.ARRAY, ani.anim_step_type)
+        ani.animation_step_type = SCENARIO_TIME_STEP_TYPE.ARRAY
+        Assert.assertEqual(SCENARIO_TIME_STEP_TYPE.ARRAY, ani.animation_step_type)
 
         ani.time_array_increment = 1
         Assert.assertEqual(1, ani.time_array_increment)
-        ani.anim_step_value = 100000
-        Assert.assertEqual(100000, ani.anim_step_value)
+        ani.animation_step_value = 100000
+        Assert.assertEqual(100000, ani.animation_step_value)
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            ani.anim_step_value = -1
+            ani.animation_step_value = -1
 
         Assert.assertEqual("", ani.get_time_array_qualified_path())
 
@@ -358,32 +379,38 @@ class EarlyBoundTests(TestBase):
         )
 
         crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(
-            TestBase.Application.current_scenario.vgt.time_instants["AnalysisStartTime"], IAnalysisWorkbenchComponent
+            TestBase.Application.current_scenario.analysis_workbench_components.time_instants["AnalysisStartTime"],
+            IAnalysisWorkbenchComponent,
         )
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             ani.set_time_array_component(crdn)
         crdnFac: "IAnalysisWorkbenchComponent" = clr.CastAs(
-            TestBase.Application.current_scenario.children["Facility1"].vgt.time_interval_collections[
-                "LightingIntervals"
-            ],
+            TestBase.Application.current_scenario.children[
+                "Facility1"
+            ].analysis_workbench_components.time_interval_collections["LightingIntervals"],
             IAnalysisWorkbenchComponent,
         )
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             ani.set_time_array_component(crdnFac)
         crdnIntervals: "IAnalysisWorkbenchComponent" = clr.CastAs(
-            TestBase.Application.current_scenario.vgt.time_intervals["AnalysisInterval"], IAnalysisWorkbenchComponent
+            TestBase.Application.current_scenario.analysis_workbench_components.time_intervals["AnalysisInterval"],
+            IAnalysisWorkbenchComponent,
         )
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             ani.set_time_array_component(crdnIntervals)
         crdnIntList: "IAnalysisWorkbenchComponent" = clr.CastAs(
-            TestBase.Application.current_scenario.vgt.time_interval_lists["AvailabilityIntervals"],
+            TestBase.Application.current_scenario.analysis_workbench_components.time_interval_lists[
+                "AvailabilityIntervals"
+            ],
             IAnalysisWorkbenchComponent,
         )
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             ani.set_time_array_component(crdnIntList)
 
         crdnSat: "IAnalysisWorkbenchComponent" = clr.CastAs(
-            TestBase.Application.current_scenario.children["Satellite1"].vgt.time_arrays["EphemerisTimes"],
+            TestBase.Application.current_scenario.children["Satellite1"].analysis_workbench_components.time_arrays[
+                "EphemerisTimes"
+            ],
             IAnalysisWorkbenchComponent,
         )
         ani.set_time_array_component(crdnSat)
@@ -476,12 +503,12 @@ class EarlyBoundTests(TestBase):
                 STK_OBJECT_TYPE.SATELLITE, "Sat1"
             )
             sat1: "Satellite" = clr.CastAs(objSat1, Satellite)
-            sat1.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
-            (clr.CastAs(sat1.propagator, VehiclePropagatorTwoBody)).propagate()
+            sat1.set_propagator_type(PROPAGATOR_TYPE.TWO_BODY)
+            (clr.CastAs(sat1.propagator, PropagatorTwoBody)).propagate()
 
             # Get access
             scenario: "Scenario" = clr.CastAs(TestBase.Application.current_scenario, Scenario)
-            access: "StkAccess" = scenario.get_access_between_objects_by_path("Facility/Fac1", "Satellite/Sat1")
+            access: "Access" = scenario.get_access_between_objects_by_path("Facility/Fac1", "Satellite/Sat1")
             Assert.assertIsNotNone(access)
             Assert.assertEqual(0, access.computed_access_interval_times.count)
 
@@ -547,15 +574,15 @@ class EarlyBoundTests(TestBase):
                 STK_OBJECT_TYPE.SATELLITE, "Sat1"
             )
             sat1: "Satellite" = clr.CastAs(objSat1, Satellite)
-            sat1.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
-            (clr.CastAs(sat1.propagator, VehiclePropagatorTwoBody)).propagate()
+            sat1.set_propagator_type(PROPAGATOR_TYPE.TWO_BODY)
+            (clr.CastAs(sat1.propagator, PropagatorTwoBody)).propagate()
 
             objSat2: "IStkObject" = TestBase.Application.current_scenario.children.new(
                 STK_OBJECT_TYPE.SATELLITE, "Sat2"
             )
             sat2: "Satellite" = clr.CastAs(objSat2, Satellite)
-            sat2.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
-            (clr.CastAs(sat2.propagator, VehiclePropagatorTwoBody)).propagate()
+            sat2.set_propagator_type(PROPAGATOR_TYPE.TWO_BODY)
+            (clr.CastAs(sat2.propagator, PropagatorTwoBody)).propagate()
 
             # Initially, no accesses
             scenario: "Scenario" = clr.CastAs(TestBase.Application.current_scenario, Scenario)
@@ -564,10 +591,10 @@ class EarlyBoundTests(TestBase):
             Assert.assertEqual(0, len(arAccesses))
 
             # Create access objects (not yet computed)
-            accessFac1Sat1: "StkAccess" = objFac1.get_access_to_object(objSat1)
-            accessFac1Sat2: "StkAccess" = objFac1.get_access_to_object(objSat2)
-            accessFac2Sat1: "StkAccess" = objFac2.get_access_to_object(objSat1)
-            accessFac2Sat2: "StkAccess" = objFac2.get_access_to_object(objSat2)
+            accessFac1Sat1: "Access" = objFac1.get_access_to_object(objSat1)
+            accessFac1Sat2: "Access" = objFac1.get_access_to_object(objSat2)
+            accessFac2Sat1: "Access" = objFac2.get_access_to_object(objSat1)
+            accessFac2Sat2: "Access" = objFac2.get_access_to_object(objSat2)
 
             arAccesses = scenario.get_existing_accesses()
             Assert.assertEqual(4, len(arAccesses))
@@ -651,15 +678,15 @@ class EarlyBoundTests(TestBase):
         tc: "TerrainCollection" = EarlyBoundTests.AG_SC.terrain[
             (IStkObject(EarlyBoundTests.AG_SC)).central_body_name
         ].terrain_collection
-        oTerrain: "Terrain" = tc.add(TestBase.GetScenarioFile("StHelens.pdtt"), TERRAIN_FILE_TYPE.PDTT_TERRAIN_FILE)
+        oTerrain: "Terrain" = tc.add(TestBase.GetScenarioFile("StHelens.pdtt"), TERRAIN_FILE_TYPE.PDTT)
         oTerrain.use_terrain = True
 
         aircraft: "IStkObject" = (IStkObject(EarlyBoundTests.AG_SC)).children.new(
             STK_OBJECT_TYPE.AIRCRAFT, "MyAircraft"
         )
         ac: "Aircraft" = clr.CastAs(aircraft, Aircraft)
-        ac.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
-        ga: "VehiclePropagatorGreatArc" = clr.CastAs(ac.route, VehiclePropagatorGreatArc)
+        ac.set_route_type(PROPAGATOR_TYPE.GREAT_ARC)
+        ga: "PropagatorGreatArc" = clr.CastAs(ac.route, PropagatorGreatArc)
         waypoints = [
             [44.03468398, -122.97447479, 3.048, 0.07716667, 0],
             [46.0515, -122.186, 0.048, 0.07716667, 0],
@@ -668,36 +695,41 @@ class EarlyBoundTests(TestBase):
         ga.set_points_smooth_rate_and_propagate(waypoints)
 
         originPoint: "VectorGeometryToolPointCentralBodyIntersect" = clr.CastAs(
-            aircraft.vgt.points.factory.create("cbi", "", POINT_TYPE.CENTRAL_BODY_INTERSECTION),
+            aircraft.analysis_workbench_components.points.factory.create(
+                "cbi", "", POINT_TYPE.CENTRAL_BODY_INTERSECTION
+            ),
             VectorGeometryToolPointCentralBodyIntersect,
         )
-        nadirVector: "IVectorGeometryToolVector" = aircraft.vgt.vectors["Nadir(Detic)"]
-        destinationPoint: "IVectorGeometryToolPoint" = aircraft.vgt.points["Center"]
+        nadirVector: "IVectorGeometryToolVector" = aircraft.analysis_workbench_components.vectors["Nadir(Detic)"]
+        destinationPoint: "IVectorGeometryToolPoint" = aircraft.analysis_workbench_components.points["Center"]
         originPoint.direction_vector = nadirVector
         originPoint.reference_point = destinationPoint
         originPoint.intersection_surface = INTERSECTION_SURFACE_TYPE.AT_TERRAIN
 
         displacementVector: "VectorGeometryToolVectorDisplacement" = (
-            aircraft.vgt.vectors.factory.create_displacement_vector(
+            aircraft.analysis_workbench_components.vectors.factory.create_displacement_vector(
                 "d", clr.CastAs(originPoint, IVectorGeometryToolPoint), destinationPoint
             )
         )
 
         vm: "CalculationToolScalarVectorMagnitude" = clr.CastAs(
-            aircraft.vgt.calculation_scalars.factory.create_vector_magnitude("vm", "test"),
+            aircraft.analysis_workbench_components.calculation_scalars.factory.create_vector_magnitude("vm", "test"),
             CalculationToolScalarVectorMagnitude,
         )
         vm.input_vector = clr.CastAs(displacementVector, IVectorGeometryToolVector)
 
         bounds: "CalculationToolConditionScalarBounds" = clr.CastAs(
-            aircraft.vgt.conditions.factory.create_scalar_bounds("sb", "desc"), CalculationToolConditionScalarBounds
+            aircraft.analysis_workbench_components.conditions.factory.create_scalar_bounds("sb", "desc"),
+            CalculationToolConditionScalarBounds,
         )
         qtyMin: "Quantity" = TestBase.Application.conversion_utility.new_quantity("TimeUnit", "sec", 3.05)
         bounds.set_minimum(qtyMin)
         bounds.operation = CONDITION_THRESHOLD_TYPE.ABOVE_MINIMUM
         bounds.scalar = clr.CastAs(vm, ICalculationToolScalar)
 
-        crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(aircraft.vgt.conditions["sb"], IAnalysisWorkbenchComponent)
+        crdn: "IAnalysisWorkbenchComponent" = clr.CastAs(
+            aircraft.analysis_workbench_components.conditions["sb"], IAnalysisWorkbenchComponent
+        )
 
         crdnEvent: "ITimeToolTimeIntervalList" = clr.CastAs(
             crdn.embedded_components["sb.SatisfactionIntervals"], ITimeToolTimeIntervalList
@@ -760,11 +792,11 @@ class EarlyBoundTests(TestBase):
                 "\t\tElement {0}: FileTyp = {7}, Location = {1}, NELatitude = {2}, NELongitude = {3}, Resolution = {4}, SWLatitude = {5}, SWLongitude = {6}",
                 iIndex,
                 terrainElement.location,
-                terrainElement.ne_latitude,
-                terrainElement.ne_longitude,
+                terrainElement.northeast_latitude,
+                terrainElement.northeast_longitude,
                 terrainElement.resolution,
-                terrainElement.sw_latitude,
-                terrainElement.sw_longitude,
+                terrainElement.southwest_latitude,
+                terrainElement.southwest_longitude,
                 terrainElement.file_type,
             )
 
@@ -775,35 +807,9 @@ class EarlyBoundTests(TestBase):
         tc.remove_all()
         TestBase.logger.WriteLine3("\tAfter RemoveAll() the Terrain collection contains: {0} elements.", tc.count)
 
-        # Add (ARC_INFO_BIN_GRID_MSL_FILE)
-        oTerrain = tc.add(TestBase.GetScenarioFile("NED", strADFFilePath), TERRAIN_FILE_TYPE.ARC_INFO_BIN_GRID_MSL_FILE)
-        Assert.assertIsNotNone(oTerrain)
-        TestBase.logger.WriteLine3("\tAfter Add() the Terrain collection contains: {0} elements.", tc.count)
-        # _NewEnum
-        iIndex = 0
-        terrainElement: "Terrain"
-        for terrainElement in tc:
-            TestBase.logger.WriteLine10(
-                "\t\tElement {0}: FileType = {7}, Location = {1}, NELatitude = {2}, NELongitude = {3}, Resolution = {4}, SWLatitude = {5}, SWLongitude = {6}",
-                iIndex,
-                terrainElement.location,
-                terrainElement.ne_latitude,
-                terrainElement.ne_longitude,
-                terrainElement.resolution,
-                terrainElement.sw_latitude,
-                terrainElement.sw_longitude,
-                terrainElement.file_type,
-            )
-            iIndex += 1
-
-        # Remove
-        tc.remove(0)
-        TestBase.logger.WriteLine3("\tAfter Remove(0) the Terrain collection contains: {0} elements.", tc.count)
-        Assert.assertEqual(0, tc.count)
-
-        # Add (ARC_INFO_GRID_DEPTH_MSL_FILE)
+        # Add (ARC_INFO_BINARY_GRID_MEAN_SEA_LEVEL)
         oTerrain = tc.add(
-            TestBase.GetScenarioFile("NED", strADFFilePath), TERRAIN_FILE_TYPE.ARC_INFO_GRID_DEPTH_MSL_FILE
+            TestBase.GetScenarioFile("NED", strADFFilePath), TERRAIN_FILE_TYPE.ARC_INFO_BINARY_GRID_MEAN_SEA_LEVEL
         )
         Assert.assertIsNotNone(oTerrain)
         TestBase.logger.WriteLine3("\tAfter Add() the Terrain collection contains: {0} elements.", tc.count)
@@ -815,11 +821,39 @@ class EarlyBoundTests(TestBase):
                 "\t\tElement {0}: FileType = {7}, Location = {1}, NELatitude = {2}, NELongitude = {3}, Resolution = {4}, SWLatitude = {5}, SWLongitude = {6}",
                 iIndex,
                 terrainElement.location,
-                terrainElement.ne_latitude,
-                terrainElement.ne_longitude,
+                terrainElement.northeast_latitude,
+                terrainElement.northeast_longitude,
                 terrainElement.resolution,
-                terrainElement.sw_latitude,
-                terrainElement.sw_longitude,
+                terrainElement.southwest_latitude,
+                terrainElement.southwest_longitude,
+                terrainElement.file_type,
+            )
+            iIndex += 1
+
+        # Remove
+        tc.remove(0)
+        TestBase.logger.WriteLine3("\tAfter Remove(0) the Terrain collection contains: {0} elements.", tc.count)
+        Assert.assertEqual(0, tc.count)
+
+        # Add (ARC_INFO_GRID_DEPTH_MEAN_SEA_LEVEL)
+        oTerrain = tc.add(
+            TestBase.GetScenarioFile("NED", strADFFilePath), TERRAIN_FILE_TYPE.ARC_INFO_GRID_DEPTH_MEAN_SEA_LEVEL
+        )
+        Assert.assertIsNotNone(oTerrain)
+        TestBase.logger.WriteLine3("\tAfter Add() the Terrain collection contains: {0} elements.", tc.count)
+        # _NewEnum
+        iIndex = 0
+        terrainElement: "Terrain"
+        for terrainElement in tc:
+            TestBase.logger.WriteLine10(
+                "\t\tElement {0}: FileType = {7}, Location = {1}, NELatitude = {2}, NELongitude = {3}, Resolution = {4}, SWLatitude = {5}, SWLongitude = {6}",
+                iIndex,
+                terrainElement.location,
+                terrainElement.northeast_latitude,
+                terrainElement.northeast_longitude,
+                terrainElement.resolution,
+                terrainElement.southwest_latitude,
+                terrainElement.southwest_longitude,
                 terrainElement.file_type,
             )
             iIndex += 1
@@ -841,11 +875,11 @@ class EarlyBoundTests(TestBase):
                 "\t\tElement {0}: FileType = {7}, Location = {1}, NELatitude = {2}, NELongitude = {3}, Resolution = {4}, SWLatitude = {5}, SWLongitude = {6}",
                 iIndex,
                 terrainElement.location,
-                terrainElement.ne_latitude,
-                terrainElement.ne_longitude,
+                terrainElement.northeast_latitude,
+                terrainElement.northeast_longitude,
                 terrainElement.resolution,
-                terrainElement.sw_latitude,
-                terrainElement.sw_longitude,
+                terrainElement.southwest_latitude,
+                terrainElement.southwest_longitude,
                 terrainElement.file_type,
             )
             iIndex += 1
@@ -855,8 +889,10 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine3("\tAfter Remove(0) the Terrain collection contains: {0} elements.", tc.count)
         Assert.assertEqual(0, tc.count)
 
-        # Add (TIFFMSL_TERRAIN_FILE)
-        oTerrain = tc.add(TestBase.GetScenarioFile("NED", strTIFFilePath), TERRAIN_FILE_TYPE.TIFFMSL_TERRAIN_FILE)
+        # Add (TIFF_TERRAIN_FILE_IN_MEAN_SEA_LEVEL)
+        oTerrain = tc.add(
+            TestBase.GetScenarioFile("NED", strTIFFilePath), TERRAIN_FILE_TYPE.TIFF_TERRAIN_FILE_IN_MEAN_SEA_LEVEL
+        )
         Assert.assertIsNotNone(oTerrain)
         TestBase.logger.WriteLine3("\tAfter Add() the Terrain collection contains: {0} elements.", tc.count)
         # _NewEnum
@@ -867,11 +903,11 @@ class EarlyBoundTests(TestBase):
                 "\t\tElement {0}: FileType = {7}, Location = {1}, NELatitude = {2}, NELongitude = {3}, Resolution = {4}, SWLatitude = {5}, SWLongitude = {6}",
                 iIndex,
                 terrainElement.location,
-                terrainElement.ne_latitude,
-                terrainElement.ne_longitude,
+                terrainElement.northeast_latitude,
+                terrainElement.northeast_longitude,
                 terrainElement.resolution,
-                terrainElement.sw_latitude,
-                terrainElement.sw_longitude,
+                terrainElement.southwest_latitude,
+                terrainElement.southwest_longitude,
                 terrainElement.file_type,
             )
             iIndex += 1
@@ -889,18 +925,18 @@ class EarlyBoundTests(TestBase):
                     "\t\tElement {0}: FileType = {7}, Location = {1}, NELatitude = {2}, NELongitude = {3}, Resolution = {4}, SWLatitude = {5}, SWLongitude = {6}",
                     iIndex,
                     tc[iIndex].location,
-                    tc[iIndex].ne_latitude,
-                    tc[iIndex].ne_longitude,
+                    tc[iIndex].northeast_latitude,
+                    tc[iIndex].northeast_longitude,
                     tc[iIndex].resolution,
-                    tc[iIndex].sw_latitude,
-                    tc[iIndex].sw_longitude,
+                    tc[iIndex].southwest_latitude,
+                    tc[iIndex].southwest_longitude,
                     tc[iIndex].file_type,
                 )
 
                 iIndex += 1
 
-        # Add (ARC_INFO_BIN_GRID_FILE)
-        oTerrain = tc.add(TestBase.GetScenarioFile("NED", strADFFilePath), TERRAIN_FILE_TYPE.ARC_INFO_BIN_GRID_FILE)
+        # Add (ARC_INFO_BINARY_GRID)
+        oTerrain = tc.add(TestBase.GetScenarioFile("NED", strADFFilePath), TERRAIN_FILE_TYPE.ARC_INFO_BINARY_GRID)
         Assert.assertIsNotNone(oTerrain)
         TestBase.logger.WriteLine3("\tAfter Add() the Terrain collection contains: {0} elements.", tc.count)
         while iIndex < tc.count:
@@ -908,11 +944,11 @@ class EarlyBoundTests(TestBase):
                 "\t\tElement {0}: FileType = {7}, Location = {1}, NELatitude = {2}, NELongitude = {3}, Resolution = {4}, SWLatitude = {5}, SWLongitude = {6}",
                 iIndex,
                 tc[iIndex].location,
-                tc[iIndex].ne_latitude,
-                tc[iIndex].ne_longitude,
+                tc[iIndex].northeast_latitude,
+                tc[iIndex].northeast_longitude,
                 tc[iIndex].resolution,
-                tc[iIndex].sw_latitude,
-                tc[iIndex].sw_longitude,
+                tc[iIndex].southwest_latitude,
+                tc[iIndex].southwest_longitude,
                 tc[iIndex].file_type,
             )
 
@@ -930,8 +966,8 @@ class EarlyBoundTests(TestBase):
         fac.use_terrain = True
 
         pos: "Geodetic" = Geodetic(fac.position.convert_to(POSITION_TYPE.GEODETIC))
-        pos.lat = 40.31
-        pos.lon = -111.645
+        pos.latitude = 40.31
+        pos.longitude = -111.645
         fac.altitude_reference = ALTITUDE_REFERENCE_TYPE.WGS84
 
         fac.position.assign(pos)
@@ -1030,7 +1066,7 @@ class EarlyBoundTests(TestBase):
                 eTerrainFileType: "TERRAIN_FILE_TYPE"
                 for eTerrainFileType in Enum.GetValues(clr.TypeOf(TERRAIN_FILE_TYPE)):
                     sFilename: str = None
-                    if eTerrainFileType == TERRAIN_FILE_TYPE.USGSDEM:
+                    if eTerrainFileType == TERRAIN_FILE_TYPE.USGS_DEM:
                         oTerrain = oTCollection.add(TestBase.GetScenarioFile(r"hoquiam-e.dem"), eTerrainFileType)
                         Assert.assertIsNotNone(oTerrain)
                         Assert.assertEqual(oTCollection.count, 1)
@@ -1042,7 +1078,7 @@ class EarlyBoundTests(TestBase):
                         Assert.assertEqual(oTCollection.count, 1)
                         oTCollection.remove(iCount)
                         Assert.assertEqual(0, oTCollection.count)
-                    elif eTerrainFileType == TERRAIN_FILE_TYPE.NIMANGA_TERRAIN_DIRECTION:
+                    elif eTerrainFileType == TERRAIN_FILE_TYPE.NIMA_NGA_TERRAIN_DIRECTORY:
                         oTerrain = oTCollection.add(TestBase.GetScenarioFile("NED", "dmed"), eTerrainFileType)
                         Assert.assertIsNotNone(oTerrain)
                         Assert.assertEqual(oTCollection.count, 1)
@@ -1066,42 +1102,42 @@ class EarlyBoundTests(TestBase):
                         Assert.assertEqual(oTCollection.count, 1)
                         oTCollection.remove(iCount)
                         Assert.assertEqual(0, oTCollection.count)
-                    elif eTerrainFileType == TERRAIN_FILE_TYPE.NIMANGADTED_LEVEL0:
+                    elif eTerrainFileType == TERRAIN_FILE_TYPE.NIM0_NIMA_NGA_DTED_LEVEL_0:
                         oTerrain = oTCollection.add(TestBase.GetScenarioFile("NED", "n40.dt0"), eTerrainFileType)
                         Assert.assertIsNotNone(oTerrain)
                         Assert.assertEqual(oTCollection.count, 1)
                         oTCollection.remove(iCount)
                         Assert.assertEqual(0, oTCollection.count)
-                    elif eTerrainFileType == TERRAIN_FILE_TYPE.NIMANGADTED_LEVEL1:
+                    elif eTerrainFileType == TERRAIN_FILE_TYPE.NIM1_NIMA_NGA_DTED_LEVEL_1:
                         oTerrain = oTCollection.add(TestBase.GetScenarioFile("NED", "n30.dt1"), eTerrainFileType)
                         Assert.assertIsNotNone(oTerrain)
                         Assert.assertEqual(oTCollection.count, 1)
                         oTCollection.remove(iCount)
                         Assert.assertEqual(0, oTCollection.count)
-                    elif eTerrainFileType == TERRAIN_FILE_TYPE.NIMANGADTED_LEVEL2:
+                    elif eTerrainFileType == TERRAIN_FILE_TYPE.NIM2_NIMA_NGA_DTED_LEVEL_2:
                         oTerrain = oTCollection.add(TestBase.GetScenarioFile("NED", "s05.dt2"), eTerrainFileType)
                         Assert.assertIsNotNone(oTerrain)
                         Assert.assertEqual(oTCollection.count, 1)
                         oTCollection.remove(iCount)
                         Assert.assertEqual(0, oTCollection.count)
                     elif (
-                        ((eTerrainFileType == TERRAIN_FILE_TYPE.NIMANGADTED_LEVEL3))
-                        or ((eTerrainFileType == TERRAIN_FILE_TYPE.NIMANGADTED_LEVEL4))
-                    ) or ((eTerrainFileType == TERRAIN_FILE_TYPE.NIMANGADTED_LEVEL5)):
+                        ((eTerrainFileType == TERRAIN_FILE_TYPE.NIM3_NIMA_NGA_DTED_LEVEL_3))
+                        or ((eTerrainFileType == TERRAIN_FILE_TYPE.NIM4_NIMA_NGA_DTED_LEVEL_4))
+                    ) or ((eTerrainFileType == TERRAIN_FILE_TYPE.NIM5_NIMA_NGA_DTED_LEVEL_5)):
                         pass
-                    elif eTerrainFileType == TERRAIN_FILE_TYPE.ARC_INFO_BIN_GRID_FILE:
+                    elif eTerrainFileType == TERRAIN_FILE_TYPE.ARC_INFO_BINARY_GRID:
                         oTerrain = oTCollection.add(TestBase.GetScenarioFile("NED", strADFFilePath), eTerrainFileType)
                         Assert.assertIsNotNone(oTerrain)
                         Assert.assertEqual(oTCollection.count, 1)
                         oTCollection.remove(iCount)
                         Assert.assertEqual(0, oTCollection.count)
-                    elif eTerrainFileType == TERRAIN_FILE_TYPE.ARC_INFO_BIN_GRID_MSL_FILE:
+                    elif eTerrainFileType == TERRAIN_FILE_TYPE.ARC_INFO_BINARY_GRID_MEAN_SEA_LEVEL:
                         oTerrain = oTCollection.add(TestBase.GetScenarioFile("NED", strADFFilePath), eTerrainFileType)
                         Assert.assertIsNotNone(oTerrain)
                         Assert.assertEqual(oTCollection.count, 1)
                         oTCollection.remove(iCount)
                         Assert.assertEqual(0, oTCollection.count)
-                    elif eTerrainFileType == TERRAIN_FILE_TYPE.PDTT_TERRAIN_FILE:
+                    elif eTerrainFileType == TERRAIN_FILE_TYPE.PDTT:
                         sFilename = TestBase.PathCombine(sSTKHome, r"STKData", "VO", "Textures", "St Helens.pdtt")
                         oTerrain = oTCollection.add(sFilename, eTerrainFileType)
                         Assert.assertIsNotNone(oTerrain)
@@ -1116,7 +1152,7 @@ class EarlyBoundTests(TestBase):
                             oTCollection.remove(iCount)
                             Assert.assertEqual(0, oTCollection.count)
 
-                    elif eTerrainFileType == TERRAIN_FILE_TYPE.TIFFMSL_TERRAIN_FILE:
+                    elif eTerrainFileType == TERRAIN_FILE_TYPE.TIFF_TERRAIN_FILE_IN_MEAN_SEA_LEVEL:
                         oTerrain = oTCollection.add(TestBase.GetScenarioFile("NED", strTIFFilePath), eTerrainFileType)
                         Assert.assertIsNotNone(oTerrain)
                         Assert.assertEqual(oTCollection.count, 1)
@@ -1128,7 +1164,7 @@ class EarlyBoundTests(TestBase):
                         Assert.assertEqual(oTCollection.count, 1)
                         oTCollection.remove(iCount)
                         Assert.assertEqual(0, oTCollection.count)
-                    elif eTerrainFileType == TERRAIN_FILE_TYPE.ARC_INFO_GRID_DEPTH_MSL_FILE:
+                    elif eTerrainFileType == TERRAIN_FILE_TYPE.ARC_INFO_GRID_DEPTH_MEAN_SEA_LEVEL:
                         oTerrain = oTCollection.add(TestBase.GetScenarioFile("NED", strADFFilePath), eTerrainFileType)
                         Assert.assertIsNotNone(oTerrain)
                         Assert.assertEqual(oTCollection.count, 1)
@@ -1171,7 +1207,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(1, oEarth.terrain_collection.count)
 
         oMoon.terrain_collection.add(
-            TestBase.GetScenarioFile("NED", strADFFilePath), TERRAIN_FILE_TYPE.ARC_INFO_BIN_GRID_FILE
+            TestBase.GetScenarioFile("NED", strADFFilePath), TERRAIN_FILE_TYPE.ARC_INFO_BINARY_GRID
         )
         Assert.assertEqual(1, oEarth.terrain_collection.count)
         Assert.assertEqual(1, oMoon.terrain_collection.count)
@@ -1205,7 +1241,7 @@ class EarlyBoundTests(TestBase):
         )
 
         oEarth.terrain_collection.remove_all()
-        terrain: "Terrain" = oEarth.terrain_collection.add(pdttTerrainFile, TERRAIN_FILE_TYPE.PDTT_TERRAIN_FILE)
+        terrain: "Terrain" = oEarth.terrain_collection.add(pdttTerrainFile, TERRAIN_FILE_TYPE.PDTT)
         Assert.assertTrue(terrain.use_terrain, "UseTerrain not set correctly!")
         terrain.use_terrain = False
         Assert.assertFalse(terrain.use_terrain, "UseTerrain not cleared correctly!")
@@ -1222,7 +1258,7 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine("----- TERRAIN ALTITUDE TEST ----- BEGIN -----")
         earthTerrainElement: "CentralBodyTerrainCollectionElement" = EarlyBoundTests.AG_SC.terrain["Earth"]
         earthTerrainElement.terrain_collection.add(
-            TestBase.GetScenarioFile("NED", strADFFilePath), TERRAIN_FILE_TYPE.ARC_INFO_BIN_GRID_MSL_FILE
+            TestBase.GetScenarioFile("NED", strADFFilePath), TERRAIN_FILE_TYPE.ARC_INFO_BINARY_GRID_MEAN_SEA_LEVEL
         )
 
         self.Units.set_current_unit("DistanceUnit", "km")
@@ -1237,7 +1273,7 @@ class EarlyBoundTests(TestBase):
         # GetAltitude
         # Hits terrain
         self.CompareGetAltitudeAndFacilityAltitude(
-            40.31, -111.645, ALTITUDE_REFERENCE_TYPE.MSL, earthFac, earthTerrainElement
+            40.31, -111.645, ALTITUDE_REFERENCE_TYPE.MEAN_SEA_LEVEL, earthFac, earthTerrainElement
         )
         self.CompareGetAltitudeAndFacilityAltitude(
             40.31, -111.645, ALTITUDE_REFERENCE_TYPE.WGS84, earthFac, earthTerrainElement
@@ -1245,7 +1281,7 @@ class EarlyBoundTests(TestBase):
 
         # Does not hit terrain
         self.CompareGetAltitudeAndFacilityAltitude(
-            20.15, -11.645, ALTITUDE_REFERENCE_TYPE.MSL, earthFac, earthTerrainElement
+            20.15, -11.645, ALTITUDE_REFERENCE_TYPE.MEAN_SEA_LEVEL, earthFac, earthTerrainElement
         )
         self.CompareGetAltitudeAndFacilityAltitude(
             20.15, -11.645, ALTITUDE_REFERENCE_TYPE.WGS84, earthFac, earthTerrainElement
@@ -1253,62 +1289,62 @@ class EarlyBoundTests(TestBase):
 
         # Corner cases
         self.CompareGetAltitudeAndFacilityAltitude(
-            earthTerrainElement.terrain_collection[0].sw_latitude,
-            earthTerrainElement.terrain_collection[0].sw_longitude,
-            ALTITUDE_REFERENCE_TYPE.MSL,
+            earthTerrainElement.terrain_collection[0].southwest_latitude,
+            earthTerrainElement.terrain_collection[0].southwest_longitude,
+            ALTITUDE_REFERENCE_TYPE.MEAN_SEA_LEVEL,
             earthFac,
             earthTerrainElement,
         )
         self.CompareGetAltitudeAndFacilityAltitude(
-            earthTerrainElement.terrain_collection[0].sw_latitude,
-            earthTerrainElement.terrain_collection[0].sw_longitude,
+            earthTerrainElement.terrain_collection[0].southwest_latitude,
+            earthTerrainElement.terrain_collection[0].southwest_longitude,
             ALTITUDE_REFERENCE_TYPE.WGS84,
             earthFac,
             earthTerrainElement,
         )
         self.CompareGetAltitudeAndFacilityAltitude(
-            earthTerrainElement.terrain_collection[0].ne_latitude,
-            earthTerrainElement.terrain_collection[0].ne_longitude,
-            ALTITUDE_REFERENCE_TYPE.MSL,
+            earthTerrainElement.terrain_collection[0].northeast_latitude,
+            earthTerrainElement.terrain_collection[0].northeast_longitude,
+            ALTITUDE_REFERENCE_TYPE.MEAN_SEA_LEVEL,
             earthFac,
             earthTerrainElement,
         )
         self.CompareGetAltitudeAndFacilityAltitude(
-            earthTerrainElement.terrain_collection[0].ne_latitude,
-            earthTerrainElement.terrain_collection[0].ne_longitude,
+            earthTerrainElement.terrain_collection[0].northeast_latitude,
+            earthTerrainElement.terrain_collection[0].northeast_longitude,
             ALTITUDE_REFERENCE_TYPE.WGS84,
             earthFac,
             earthTerrainElement,
         )
 
         # GetExtentMaxResolution
-        maxResolution: float = earthTerrainElement.get_extent_max_resolution(
-            earthTerrainElement.terrain_collection[0].sw_latitude,
-            earthTerrainElement.terrain_collection[0].sw_longitude,
-            earthTerrainElement.terrain_collection[0].ne_latitude,
-            earthTerrainElement.terrain_collection[0].ne_longitude,
+        maxResolution: float = earthTerrainElement.get_extent_maximum_resolution(
+            earthTerrainElement.terrain_collection[0].southwest_latitude,
+            earthTerrainElement.terrain_collection[0].southwest_longitude,
+            earthTerrainElement.terrain_collection[0].northeast_latitude,
+            earthTerrainElement.terrain_collection[0].northeast_longitude,
         )
         Assert.assertEqual(maxResolution, earthTerrainElement.terrain_collection[0].resolution)
 
         # No terrain, sanity check.
-        nonHitResolution: float = earthTerrainElement.get_extent_max_resolution(20.15, -11.645, 22.1, -13)
+        nonHitResolution: float = earthTerrainElement.get_extent_maximum_resolution(20.15, -11.645, 22.1, -13)
 
         # GetAltitudeBatch
         latLon = [
             [
-                earthTerrainElement.terrain_collection[0].sw_latitude,
-                earthTerrainElement.terrain_collection[0].sw_longitude,
+                earthTerrainElement.terrain_collection[0].southwest_latitude,
+                earthTerrainElement.terrain_collection[0].southwest_longitude,
             ],
             [
-                earthTerrainElement.terrain_collection[0].ne_latitude,
-                earthTerrainElement.terrain_collection[0].ne_longitude,
+                earthTerrainElement.terrain_collection[0].northeast_latitude,
+                earthTerrainElement.terrain_collection[0].northeast_longitude,
             ],
             [40.31, -111.645],
         ]
 
         refType: "ALTITUDE_REFERENCE_TYPE"
 
-        for refType in [ALTITUDE_REFERENCE_TYPE.MSL, ALTITUDE_REFERENCE_TYPE.WGS84]:
+        for refType in [ALTITUDE_REFERENCE_TYPE.MEAN_SEA_LEVEL, ALTITUDE_REFERENCE_TYPE.WGS84]:
             altitudeBatch = earthTerrainElement.get_altitude_batch(latLon, refType)
             Assert.assertIsNotNone(altitudeBatch)
 
@@ -1330,10 +1366,10 @@ class EarlyBoundTests(TestBase):
         for distanceType in [DISTANCE_ON_SPHERE.GREAT_CIRCLE, DISTANCE_ON_SPHERE.RHUMB_LINE]:
             # Just make sure the numbers are correct
             altitudeProfile = earthTerrainElement.get_altitudes_between_points_at_resolution(
-                earthTerrainElement.terrain_collection[0].sw_latitude,
-                earthTerrainElement.terrain_collection[0].sw_longitude,
-                earthTerrainElement.terrain_collection[0].ne_latitude,
-                earthTerrainElement.terrain_collection[0].ne_longitude,
+                earthTerrainElement.terrain_collection[0].southwest_latitude,
+                earthTerrainElement.terrain_collection[0].southwest_longitude,
+                earthTerrainElement.terrain_collection[0].northeast_latitude,
+                earthTerrainElement.terrain_collection[0].northeast_longitude,
                 maxResolution,
                 distanceType,
                 ALTITUDE_REFERENCE_TYPE.WGS84,
@@ -1353,49 +1389,53 @@ class EarlyBoundTests(TestBase):
 
             # Make sure the beginning and endpoint points are what we specified.
             Assert.assertAlmostEqual(
-                float(earthTerrainElement.terrain_collection[0].sw_latitude), float(altitudeProfile[0][0]), delta=1e-05
+                float(earthTerrainElement.terrain_collection[0].southwest_latitude),
+                float(altitudeProfile[0][0]),
+                delta=1e-05,
             )
             Assert.assertAlmostEqual(
-                float(earthTerrainElement.terrain_collection[0].sw_longitude), float(altitudeProfile[0][1]), delta=1e-05
+                float(earthTerrainElement.terrain_collection[0].southwest_longitude),
+                float(altitudeProfile[0][1]),
+                delta=1e-05,
             )
             Assert.assertAlmostEqual(
-                float(earthTerrainElement.terrain_collection[0].ne_latitude),
+                float(earthTerrainElement.terrain_collection[0].northeast_latitude),
                 float(altitudeProfile[(altitudeProfileCount - 1)][0]),
                 delta=1e-05,
             )
             Assert.assertAlmostEqual(
-                float(earthTerrainElement.terrain_collection[0].ne_longitude),
+                float(earthTerrainElement.terrain_collection[0].northeast_longitude),
                 float(altitudeProfile[(altitudeProfileCount - 1)][1]),
                 delta=1e-05,
             )
 
         # Unit perferences check.
         # Because these methods don't use attributes, sanity tests to make sure UnitPerferences work.
-        prevLatitude: str = TestBase.Application.unit_preferences.get_current_unit_abbrv("Latitude")
-        prevLongitude: str = TestBase.Application.unit_preferences.get_current_unit_abbrv("Longitude")
-        prevDistance: str = TestBase.Application.unit_preferences.get_current_unit_abbrv("Distance")
+        prevLatitude: str = TestBase.Application.units_preferences.get_current_unit_abbrv("Latitude")
+        prevLongitude: str = TestBase.Application.units_preferences.get_current_unit_abbrv("Longitude")
+        prevDistance: str = TestBase.Application.units_preferences.get_current_unit_abbrv("Distance")
         try:
-            TestBase.Application.unit_preferences.set_current_unit("Latitude", "DMS_Lat")
-            TestBase.Application.unit_preferences.set_current_unit("Longitude", "HMS")
-            TestBase.Application.unit_preferences.set_current_unit("Distance", "ft")
+            TestBase.Application.units_preferences.set_current_unit("Latitude", "DMS_Lat")
+            TestBase.Application.units_preferences.set_current_unit("Longitude", "HMS")
+            TestBase.Application.units_preferences.set_current_unit("Distance", "ft")
 
             self.CompareGetAltitudeAndFacilityAltitude(
-                "40:02:24.0000", "-05:02:22.8000", ALTITUDE_REFERENCE_TYPE.MSL, earthFac, earthTerrainElement
+                "40:02:24.0000", "-05:02:22.8000", ALTITUDE_REFERENCE_TYPE.MEAN_SEA_LEVEL, earthFac, earthTerrainElement
             )
             earthTerrainElement.get_altitudes_between_points_at_resolution(
-                earthTerrainElement.terrain_collection[0].sw_latitude,
-                earthTerrainElement.terrain_collection[0].sw_longitude,
-                earthTerrainElement.terrain_collection[0].ne_latitude,
-                earthTerrainElement.terrain_collection[0].ne_longitude,
+                earthTerrainElement.terrain_collection[0].southwest_latitude,
+                earthTerrainElement.terrain_collection[0].southwest_longitude,
+                earthTerrainElement.terrain_collection[0].northeast_latitude,
+                earthTerrainElement.terrain_collection[0].northeast_longitude,
                 earthTerrainElement.terrain_collection[0].resolution,
                 DISTANCE_ON_SPHERE.RHUMB_LINE,
-                ALTITUDE_REFERENCE_TYPE.MSL,
+                ALTITUDE_REFERENCE_TYPE.MEAN_SEA_LEVEL,
             )
 
         finally:
-            TestBase.Application.unit_preferences.set_current_unit("Latitude", prevLatitude)
-            TestBase.Application.unit_preferences.set_current_unit("Longitude", prevLongitude)
-            TestBase.Application.unit_preferences.set_current_unit("Distance", prevDistance)
+            TestBase.Application.units_preferences.set_current_unit("Latitude", prevLatitude)
+            TestBase.Application.units_preferences.set_current_unit("Longitude", prevLongitude)
+            TestBase.Application.units_preferences.set_current_unit("Distance", prevDistance)
 
         # Remove the instance of the facility
         TestBase.Application.current_scenario.children.unload(
@@ -1415,15 +1455,15 @@ class EarlyBoundTests(TestBase):
 
         marsTerrainElement: "CentralBodyTerrainCollectionElement" = EarlyBoundTests.AG_SC.terrain["Mars"]
         marsTerrainElement.terrain_collection.add(
-            TestBase.GetScenarioFile("NED", strADFFilePath), TERRAIN_FILE_TYPE.ARC_INFO_BIN_GRID_MSL_FILE
+            TestBase.GetScenarioFile("NED", strADFFilePath), TERRAIN_FILE_TYPE.ARC_INFO_BINARY_GRID_MEAN_SEA_LEVEL
         )
 
         with pytest.raises(Exception):
-            marsTerrainElement.get_altitude(40.31, -111.645, ALTITUDE_REFERENCE_TYPE.MSL)
+            marsTerrainElement.get_altitude(40.31, -111.645, ALTITUDE_REFERENCE_TYPE.MEAN_SEA_LEVEL)
 
         Assert.assertEqual(ALTITUDE_REFERENCE_TYPE.ELLIPSOID, marsFacility.altitude_reference)
         with pytest.raises(Exception):
-            marsFacility.altitude_reference = ALTITUDE_REFERENCE_TYPE.MSL
+            marsFacility.altitude_reference = ALTITUDE_REFERENCE_TYPE.MEAN_SEA_LEVEL
 
         marsFacility.use_terrain = True
 
@@ -1439,15 +1479,15 @@ class EarlyBoundTests(TestBase):
 
         # Corner cases
         self.CompareGetAltitudeAndFacilityAltitude(
-            marsTerrainElement.terrain_collection[0].sw_latitude,
-            marsTerrainElement.terrain_collection[0].sw_longitude,
+            marsTerrainElement.terrain_collection[0].southwest_latitude,
+            marsTerrainElement.terrain_collection[0].southwest_longitude,
             ALTITUDE_REFERENCE_TYPE.TERRAIN,
             marsFacility,
             marsTerrainElement,
         )
         self.CompareGetAltitudeAndFacilityAltitude(
-            marsTerrainElement.terrain_collection[0].ne_latitude,
-            marsTerrainElement.terrain_collection[0].ne_longitude,
+            marsTerrainElement.terrain_collection[0].northeast_latitude,
+            marsTerrainElement.terrain_collection[0].northeast_longitude,
             ALTITUDE_REFERENCE_TYPE.TERRAIN,
             marsFacility,
             marsTerrainElement,
@@ -1496,7 +1536,7 @@ class EarlyBoundTests(TestBase):
             TestBase.Application.execute_command("GetDirectory / STKHome")[0],
             TestBase.PathCombine("STKData", "VO", "3DTilesets", "AGI_Headquarters", "tileset.json"),
         )
-        tilesets: "TilesetCollection3D" = clr.CastAs(EarlyBoundTests.AG_SC.tilesets, TilesetCollection3D)
+        tilesets: "Tileset3DCollection" = clr.CastAs(EarlyBoundTests.AG_SC.tilesets, Tileset3DCollection)
         tilesets.add("Test", tilesetMetadata, TILESET_3D_SOURCE_TYPE.LOCAL_FILE, "CentralBody/Earth Fixed")
 
         Assert.assertEqual(tilesets.count, 1)
@@ -1524,31 +1564,31 @@ class EarlyBoundTests(TestBase):
             facility2.use_terrain = False
             facility3.use_terrain = False
 
-            Assert.assertEqual("km", TestBase.Application.unit_preferences.get_current_unit_abbrv("Distance"))
-            Assert.assertEqual("deg", TestBase.Application.unit_preferences.get_current_unit_abbrv("Latitude"))
-            Assert.assertEqual("deg", TestBase.Application.unit_preferences.get_current_unit_abbrv("Longitude"))
+            Assert.assertEqual("km", TestBase.Application.units_preferences.get_current_unit_abbrv("Distance"))
+            Assert.assertEqual("deg", TestBase.Application.units_preferences.get_current_unit_abbrv("Latitude"))
+            Assert.assertEqual("deg", TestBase.Application.units_preferences.get_current_unit_abbrv("Longitude"))
 
             # ~Coi pond
             pos1: "Geodetic" = Geodetic(facility1.position.convert_to(POSITION_TYPE.GEODETIC))
             pos1.altitude = 0.086
-            pos1.lat = 40.039129
-            pos1.lon = -75.5968411
+            pos1.latitude = 40.039129
+            pos1.longitude = -75.5968411
             facility1.height_above_ground = 0.0005
             facility1.altitude_reference = ALTITUDE_REFERENCE_TYPE.WGS84
             facility1.position.assign(pos1)
             # ~South side of building (back parking lot)
             pos2: "Geodetic" = Geodetic(facility2.position.convert_to(POSITION_TYPE.GEODETIC))
             pos2.altitude = 0.086
-            pos2.lat = 40.03840663
-            pos2.lon = -75.596263
+            pos2.latitude = 40.03840663
+            pos2.longitude = -75.596263
             facility2.height_above_ground = 0.0005
             facility2.altitude_reference = ALTITUDE_REFERENCE_TYPE.WGS84
             facility2.position.assign(pos2)
             # ~entrance to corporate center ... should have LOS to Facility1
             pos3: "Geodetic" = Geodetic(facility2.position.convert_to(POSITION_TYPE.GEODETIC))
             pos3.altitude = 0.086
-            pos3.lat = 40.0393
-            pos3.lon = -75.5964
+            pos3.latitude = 40.0393
+            pos3.longitude = -75.5964
             facility3.height_above_ground = 0.0005
             facility3.altitude_reference = ALTITUDE_REFERENCE_TYPE.WGS84
             facility3.position.assign(pos3)
@@ -1557,7 +1597,7 @@ class EarlyBoundTests(TestBase):
             # Assert access is there when 3DFeaturesMask constraint is not enabled
             #
             # Should have access between facility 1 and facility 2 when 3D Tileset is not used for analysis
-            access_1_2: "StkAccess" = EarlyBoundTests.AG_SC.get_access_between_objects_by_path(
+            access_1_2: "Access" = EarlyBoundTests.AG_SC.get_access_between_objects_by_path(
                 "Facility/Fac1", "Facility/Fac2"
             )
             Assert.assertIsNotNone(access_1_2)
@@ -1571,7 +1611,7 @@ class EarlyBoundTests(TestBase):
             #
             # Assert access is lost when 3DFeaturesMask constraint is enabled
             #
-            facility1.access_constraints.add_constraint(ACCESS_CONSTRAINTS.TILES_MASK_3D)
+            facility1.access_constraints.add_constraint(ACCESS_CONSTRAINT_TYPE.TILES_MASK_3D)
             access_1_2.clear_access()
             # Should not have access between facility 1 and facility 2
             access_1_2 = EarlyBoundTests.AG_SC.get_access_between_objects_by_path("Facility/Fac1", "Facility/Fac2")
@@ -1580,7 +1620,7 @@ class EarlyBoundTests(TestBase):
             Assert.assertEqual(0, access_1_2.computed_access_interval_times.count)
 
             # Assert access is available between Fac1 and Fac3
-            access_1_3: "StkAccess" = EarlyBoundTests.AG_SC.get_access_between_objects_by_path(
+            access_1_3: "Access" = EarlyBoundTests.AG_SC.get_access_between_objects_by_path(
                 "Facility/Fac1", "Facility/Fac3"
             )
             Assert.assertIsNotNone(access_1_3)
@@ -1604,26 +1644,26 @@ class EarlyBoundTests(TestBase):
     # region GenDBs
     @category("Basic Tests")
     def test_GenDBs(self):
-        oGenDBCollection: "ScenarioGenDatabaseCollection" = EarlyBoundTests.AG_SC.gen_dbs
+        oGenDBCollection: "ScenarioDatabaseCollection" = EarlyBoundTests.AG_SC.database_settings
         Assert.assertIsNotNone(oGenDBCollection)
         TestBase.logger.WriteLine3("The GenDb collection contains: {0} elements", oGenDBCollection.count)
 
         i: int = 0
-        oGenDB: "ScenarioGenDatabase"
+        oGenDB: "ScenarioDatabase"
         for oGenDB in oGenDBCollection:
             TestBase.logger.WriteLine10(
                 "Element {0}: Type = {5}, DefaultDb = {2}, DefaultDir = {3}, EnableAuxDb = {4}, AuxDb = {1}",
                 i,
-                oGenDB.aux_database,
+                oGenDB.auxiliary_database,
                 oGenDB.default_database,
                 oGenDB.default_direction,
-                oGenDB.enable_aux_database,
+                oGenDB.enable_auxiliary_database,
                 oGenDB.type,
             )
             i += 1
 
         with pytest.raises(Exception):
-            scGenDb: "ScenarioGenDatabase" = oGenDBCollection[oGenDBCollection.count]
+            scGenDb: "ScenarioDatabase" = oGenDBCollection[oGenDBCollection.count]
 
         strType: str = oGenDBCollection[0].type
 
@@ -1653,24 +1693,26 @@ class EarlyBoundTests(TestBase):
         )
         Assert.assertEqual(holdDir, oGenDBCollection[0].default_direction)
 
-        oGenDBCollection[0].enable_aux_database = False
-        Assert.assertFalse(oGenDBCollection[0].enable_aux_database)
+        oGenDBCollection[0].enable_auxiliary_database = False
+        Assert.assertFalse(oGenDBCollection[0].enable_auxiliary_database)
         with pytest.raises(Exception):
-            oGenDBCollection[0].aux_database = "BlaBlaBla"
+            oGenDBCollection[0].auxiliary_database = "BlaBlaBla"
 
         TestBase.logger.WriteLine7(
-            "Element {0} - current EnableAuxDb is: {1}", strType, oGenDBCollection[0].enable_aux_database
+            "Element {0} - current EnableAuxDb is: {1}", strType, oGenDBCollection[0].enable_auxiliary_database
         )
-        oGenDBCollection[0].enable_aux_database = True
+        oGenDBCollection[0].enable_auxiliary_database = True
         TestBase.logger.WriteLine7(
-            "Element {0} - new EnableAuxDb is: {1}", strType, oGenDBCollection[0].enable_aux_database
+            "Element {0} - new EnableAuxDb is: {1}", strType, oGenDBCollection[0].enable_auxiliary_database
         )
-        Assert.assertTrue(oGenDBCollection[0].enable_aux_database)
+        Assert.assertTrue(oGenDBCollection[0].enable_auxiliary_database)
 
-        TestBase.logger.WriteLine7("Element {0} - current AuxDb is: {1}", strType, oGenDBCollection[0].aux_database)
-        oGenDBCollection[0].aux_database = "BlaBlaBla"  # "stkAllComm.sd";
-        TestBase.logger.WriteLine7("Element {0} - new AuxDb is: {1}", strType, oGenDBCollection[0].aux_database)
-        Assert.assertEqual("BlaBlaBla", oGenDBCollection[0].aux_database)
+        TestBase.logger.WriteLine7(
+            "Element {0} - current AuxDb is: {1}", strType, oGenDBCollection[0].auxiliary_database
+        )
+        oGenDBCollection[0].auxiliary_database = "BlaBlaBla"  # "stkAllComm.sd";
+        TestBase.logger.WriteLine7("Element {0} - new AuxDb is: {1}", strType, oGenDBCollection[0].auxiliary_database)
+        Assert.assertEqual("BlaBlaBla", oGenDBCollection[0].auxiliary_database)
 
     # endregion
 
@@ -1679,10 +1721,10 @@ class EarlyBoundTests(TestBase):
     def test_Graphics(self):
         gfx: "ScenarioGraphics" = EarlyBoundTests.AG_SC.graphics
         Assert.assertIsNotNone(gfx)
-        gfx.access_anim_high = True
-        Assert.assertEqual(True, gfx.access_anim_high)
-        gfx.access_lines_visible = True
-        Assert.assertTrue(gfx.access_lines_visible)
+        gfx.access_animation_highlights = True
+        Assert.assertEqual(True, gfx.access_animation_highlights)
+        gfx.access_lines_are_visible = True
+        Assert.assertTrue(gfx.access_lines_are_visible)
         gfx.access_lines_width = 2
         Assert.assertTrue((gfx.access_lines_width == 2))
         gfx.access_lines_width = 1
@@ -1691,36 +1733,36 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(gfx.access_line_style, "Dashed")
         gfx.access_line_style = "Solid"
         Assert.assertEqual(gfx.access_line_style, "Solid")
-        gfx.access_stat_high = True
-        Assert.assertTrue(gfx.access_stat_high)
-        gfx.allow_anim_update = True
-        Assert.assertTrue(gfx.allow_anim_update)
-        gfx.centroids_visible = True
-        Assert.assertTrue(gfx.centroids_visible)
-        gfx.elset_num_visible = True
-        Assert.assertTrue(gfx.elset_num_visible)
-        gfx.gnd_markers_visible = True
-        Assert.assertTrue(gfx.gnd_markers_visible)
-        gfx.gnd_tracks_visible = True
-        Assert.assertTrue(gfx.gnd_tracks_visible)
-        gfx.inertial_position_labels_visible = True
-        Assert.assertTrue(gfx.inertial_position_labels_visible)
-        gfx.inertial_position_visible = True
-        Assert.assertTrue(gfx.inertial_position_visible)
-        gfx.labels_visible = True
-        Assert.assertTrue(gfx.labels_visible)
-        gfx.orbit_markers_visible = True
-        Assert.assertTrue(gfx.orbit_markers_visible)
-        gfx.orbits_visible = True
-        Assert.assertTrue(gfx.orbits_visible)
-        gfx.planet_orbits_visible = True
-        Assert.assertTrue(gfx.planet_orbits_visible)
-        gfx.sensors_visible = True
-        Assert.assertTrue(gfx.sensors_visible)
-        gfx.sub_planet_labels_visible = True
-        Assert.assertTrue(gfx.sub_planet_labels_visible)
-        gfx.sub_planet_points_visible = True
-        Assert.assertTrue(gfx.sub_planet_points_visible)
+        gfx.access_static_highlights = True
+        Assert.assertTrue(gfx.access_static_highlights)
+        gfx.allow_animation_update = True
+        Assert.assertTrue(gfx.allow_animation_update)
+        gfx.show_area_target_centroids = True
+        Assert.assertTrue(gfx.show_area_target_centroids)
+        gfx.show_element_set_number = True
+        Assert.assertTrue(gfx.show_element_set_number)
+        gfx.show_ground_markers = True
+        Assert.assertTrue(gfx.show_ground_markers)
+        gfx.show_ground_tracks = True
+        Assert.assertTrue(gfx.show_ground_tracks)
+        gfx.show_inertial_position_labels = True
+        Assert.assertTrue(gfx.show_inertial_position_labels)
+        gfx.show_inertial_position = True
+        Assert.assertTrue(gfx.show_inertial_position)
+        gfx.show_label = True
+        Assert.assertTrue(gfx.show_label)
+        gfx.show_orbit_markers = True
+        Assert.assertTrue(gfx.show_orbit_markers)
+        gfx.show_orbits = True
+        Assert.assertTrue(gfx.show_orbits)
+        gfx.show_planet_orbits = True
+        Assert.assertTrue(gfx.show_planet_orbits)
+        gfx.show_sensors = True
+        Assert.assertTrue(gfx.show_sensors)
+        gfx.show_sub_planet_labels = True
+        Assert.assertTrue(gfx.show_sub_planet_labels)
+        gfx.show_sub_planet_points = True
+        Assert.assertTrue(gfx.show_sub_planet_points)
 
         # Testing text outline
         gfx.text_outline_style = TEXT_OUTLINE_STYLE.NONE
@@ -1902,10 +1944,10 @@ class EarlyBoundTests(TestBase):
         except Exception as e:
             TestBase.logger.WriteLine(str(e))
 
-        radEnv.nasa_models_activity = SPACE_ENVIRONMENT_NASA_MODELS_ACTIVITY.SOLAR_MIN
-        Assert.assertEqual(SPACE_ENVIRONMENT_NASA_MODELS_ACTIVITY.SOLAR_MIN, radEnv.nasa_models_activity)
-        radEnv.nasa_models_activity = SPACE_ENVIRONMENT_NASA_MODELS_ACTIVITY.SOLAR_MAX
-        Assert.assertEqual(SPACE_ENVIRONMENT_NASA_MODELS_ACTIVITY.SOLAR_MAX, radEnv.nasa_models_activity)
+        radEnv.nasa_models_activity = SPACE_ENVIRONMENT_NASA_MODELS_ACTIVITY.SOLAR_MINIMUM
+        Assert.assertEqual(SPACE_ENVIRONMENT_NASA_MODELS_ACTIVITY.SOLAR_MINIMUM, radEnv.nasa_models_activity)
+        radEnv.nasa_models_activity = SPACE_ENVIRONMENT_NASA_MODELS_ACTIVITY.SOLAR_MAXIMUM
+        Assert.assertEqual(SPACE_ENVIRONMENT_NASA_MODELS_ACTIVITY.SOLAR_MAXIMUM, radEnv.nasa_models_activity)
 
         Console.WriteLine("CrresElectronEnergies:")
         arCEE = radEnv.get_crres_electron_energies()
@@ -1933,12 +1975,12 @@ class EarlyBoundTests(TestBase):
 
         # ///////////////////////////////////////
 
-        radEnergyValues: "SpaceEnvironmentRadEnergyValues" = radEnv.nasa_energy_values
+        radEnergyValues: "SpaceEnvironmentRadiationEnergyValues" = radEnv.nasa_energy_values
 
         radEnergyValues.use_default = False  # Use Custom
         Assert.assertFalse(radEnergyValues.use_default)
 
-        radEnergyMethodSpecify: "SpaceEnvironmentRadEnergyMethodSpecify" = radEnergyValues.custom
+        radEnergyMethodSpecify: "SpaceEnvironmentRadiationEnergyMethodEnergies" = radEnergyValues.custom
         electronEnergies: "DoublesCollection" = radEnergyMethodSpecify.electron_energies
         Console.WriteLine("electronEnergies.Count(): {0}", electronEnergies.count)
         ee: float
@@ -1973,8 +2015,8 @@ class EarlyBoundTests(TestBase):
             EarlyBoundTests.AG_SC.space_environment.graphics_3d.magnetic_field
         )
 
-        magFieldGfx.is_magnitude_field_visible = False
-        Assert.assertFalse(magFieldGfx.is_magnitude_field_visible)
+        magFieldGfx.show_magnetic_field = False
+        Assert.assertFalse(magFieldGfx.show_magnetic_field)
 
         with pytest.raises(Exception):
             magFieldGfx.main_field = SPACE_ENVIRONMENT_MAGNETIC_MAIN_FIELD.IGRF
@@ -1992,10 +2034,10 @@ class EarlyBoundTests(TestBase):
             magFieldGfx.stop_latitude = 84.0
 
         with pytest.raises(Exception):
-            magFieldGfx.num_field_lines = 7
+            magFieldGfx.number_of_field_lines = 7
 
         with pytest.raises(Exception):
-            magFieldGfx.num_longitudes = 5
+            magFieldGfx.number_of_longitudes = 5
 
         with pytest.raises(Exception):
             magFieldGfx.reference_longitude = 45.0
@@ -2004,7 +2046,7 @@ class EarlyBoundTests(TestBase):
             magFieldGfx.field_line_refresh = 6.0
 
         with pytest.raises(Exception):
-            magFieldGfx.color_mode = SPACE_ENVIRONMENT_MAGNITUDE_FIELD_COLOR_MODE.FIELD_MAGNITUDE
+            magFieldGfx.color_mode = SPACE_ENVIRONMENT_MAGNETIC_FIELD_COLOR_MODE.FIELD_MAGNITUDE
 
         with pytest.raises(Exception):
             magFieldGfx.color_ramp_start_color = Colors.Yellow
@@ -2013,7 +2055,7 @@ class EarlyBoundTests(TestBase):
             magFieldGfx.color_ramp_stop_color = Colors.Red
 
         with pytest.raises(Exception):
-            magFieldGfx.color_scale = SPACE_ENVIRONMENT_MAGNITUDE_FIELD_COLOR_SCALE.LINEAR
+            magFieldGfx.color_scale = SPACE_ENVIRONMENT_MAGNETIC_FIELD_COLOR_SCALE_TYPE.LINEAR
 
         with pytest.raises(Exception):
             magFieldGfx.line_style = LINE_STYLE.DASH_DOT_DOTTED
@@ -2023,8 +2065,8 @@ class EarlyBoundTests(TestBase):
 
         # /////////////////////////////////////////////////////////////////
 
-        magFieldGfx.is_magnitude_field_visible = True
-        Assert.assertTrue(magFieldGfx.is_magnitude_field_visible)
+        magFieldGfx.show_magnetic_field = True
+        Assert.assertTrue(magFieldGfx.show_magnetic_field)
 
         with pytest.raises(Exception):
             magFieldGfx.main_field = SPACE_ENVIRONMENT_MAGNETIC_MAIN_FIELD.UNKNOWN
@@ -2053,11 +2095,11 @@ class EarlyBoundTests(TestBase):
         magFieldGfx.stop_latitude = 84.0
         Assert.assertEqual(84.0, magFieldGfx.stop_latitude)
 
-        magFieldGfx.num_field_lines = 7
-        Assert.assertEqual(7, magFieldGfx.num_field_lines)
+        magFieldGfx.number_of_field_lines = 7
+        Assert.assertEqual(7, magFieldGfx.number_of_field_lines)
 
-        magFieldGfx.num_longitudes = 5
-        Assert.assertEqual(5, magFieldGfx.num_longitudes)
+        magFieldGfx.number_of_longitudes = 5
+        Assert.assertEqual(5, magFieldGfx.number_of_longitudes)
 
         magFieldGfx.reference_longitude = 45.0
         Assert.assertEqual(45.0, magFieldGfx.reference_longitude)
@@ -2066,11 +2108,11 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(6.0, magFieldGfx.field_line_refresh)
 
         with pytest.raises(Exception):
-            magFieldGfx.color_mode = SPACE_ENVIRONMENT_MAGNITUDE_FIELD_COLOR_MODE.UNKNOWN
-        magFieldGfx.color_mode = SPACE_ENVIRONMENT_MAGNITUDE_FIELD_COLOR_MODE.FIELD_MAGNITUDE
-        Assert.assertEqual(SPACE_ENVIRONMENT_MAGNITUDE_FIELD_COLOR_MODE.FIELD_MAGNITUDE, magFieldGfx.color_mode)
-        magFieldGfx.color_mode = SPACE_ENVIRONMENT_MAGNITUDE_FIELD_COLOR_MODE.LATITUDE_LINE
-        Assert.assertEqual(SPACE_ENVIRONMENT_MAGNITUDE_FIELD_COLOR_MODE.LATITUDE_LINE, magFieldGfx.color_mode)
+            magFieldGfx.color_mode = SPACE_ENVIRONMENT_MAGNETIC_FIELD_COLOR_MODE.UNKNOWN
+        magFieldGfx.color_mode = SPACE_ENVIRONMENT_MAGNETIC_FIELD_COLOR_MODE.FIELD_MAGNITUDE
+        Assert.assertEqual(SPACE_ENVIRONMENT_MAGNETIC_FIELD_COLOR_MODE.FIELD_MAGNITUDE, magFieldGfx.color_mode)
+        magFieldGfx.color_mode = SPACE_ENVIRONMENT_MAGNETIC_FIELD_COLOR_MODE.LATITUDE_LINE
+        Assert.assertEqual(SPACE_ENVIRONMENT_MAGNETIC_FIELD_COLOR_MODE.LATITUDE_LINE, magFieldGfx.color_mode)
 
         magFieldGfx.color_ramp_start_color = Colors.Yellow
         Assert.assertEqual(Colors.Yellow, magFieldGfx.color_ramp_start_color)
@@ -2079,11 +2121,11 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(Colors.Red, magFieldGfx.color_ramp_stop_color)
 
         with pytest.raises(Exception):
-            magFieldGfx.color_scale = SPACE_ENVIRONMENT_MAGNITUDE_FIELD_COLOR_SCALE.UNKNOWN
-        magFieldGfx.color_scale = SPACE_ENVIRONMENT_MAGNITUDE_FIELD_COLOR_SCALE.LOG
-        Assert.assertEqual(SPACE_ENVIRONMENT_MAGNITUDE_FIELD_COLOR_SCALE.LOG, magFieldGfx.color_scale)
-        magFieldGfx.color_scale = SPACE_ENVIRONMENT_MAGNITUDE_FIELD_COLOR_SCALE.LINEAR
-        Assert.assertEqual(SPACE_ENVIRONMENT_MAGNITUDE_FIELD_COLOR_SCALE.LINEAR, magFieldGfx.color_scale)
+            magFieldGfx.color_scale = SPACE_ENVIRONMENT_MAGNETIC_FIELD_COLOR_SCALE_TYPE.UNKNOWN
+        magFieldGfx.color_scale = SPACE_ENVIRONMENT_MAGNETIC_FIELD_COLOR_SCALE_TYPE.LOG
+        Assert.assertEqual(SPACE_ENVIRONMENT_MAGNETIC_FIELD_COLOR_SCALE_TYPE.LOG, magFieldGfx.color_scale)
+        magFieldGfx.color_scale = SPACE_ENVIRONMENT_MAGNETIC_FIELD_COLOR_SCALE_TYPE.LINEAR
+        Assert.assertEqual(SPACE_ENVIRONMENT_MAGNETIC_FIELD_COLOR_SCALE_TYPE.LINEAR, magFieldGfx.color_scale)
 
         magFieldGfx.line_style = LINE_STYLE.DASH_DOT_DOTTED
         Assert.assertEqual(LINE_STYLE.DASH_DOT_DOTTED, magFieldGfx.line_style)
@@ -2095,8 +2137,8 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception):
             magFieldGfx.line_width = 11
 
-        magFieldGfx.max_translucency = 55
-        Assert.assertAlmostEqual(55, magFieldGfx.max_translucency, delta=Math2.Epsilon12)
+        magFieldGfx.maximum_translucency = 55
+        Assert.assertAlmostEqual(55, magFieldGfx.maximum_translucency, delta=Math2.Epsilon12)
 
     # endregion
 
@@ -2152,7 +2194,7 @@ class EarlyBoundTests(TestBase):
         holdEpoch: typing.Any = EarlyBoundTests.AG_SC.epoch
 
         EarlyBoundTests.AG_SC.analysis_epoch.set_implicit_time(
-            TestBase.Application.current_scenario.vgt.time_instants["B1950Epoch"]
+            TestBase.Application.current_scenario.analysis_workbench_components.time_instants["B1950Epoch"]
         )
         Assert.assertEqual("31 Dec 1949 22:09:04.682", EarlyBoundTests.AG_SC.epoch)
         Assert.assertEqual("31 Dec 1949 22:09:04.682", EarlyBoundTests.AG_SC.analysis_epoch.time_instant)
@@ -2160,7 +2202,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(
             (
                 clr.CastAs(
-                    TestBase.Application.current_scenario.vgt.time_instants["B1950Epoch"], IAnalysisWorkbenchComponent
+                    TestBase.Application.current_scenario.analysis_workbench_components.time_instants["B1950Epoch"],
+                    IAnalysisWorkbenchComponent,
                 )
             ).name,
             (clr.CastAs(EarlyBoundTests.AG_SC.analysis_epoch.reference_epoch, IAnalysisWorkbenchComponent)).name,
@@ -2168,7 +2211,7 @@ class EarlyBoundTests(TestBase):
 
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             EarlyBoundTests.AG_SC.analysis_epoch.set_implicit_time(
-                TestBase.Application.current_scenario.vgt.time_instants["Bogus"]
+                TestBase.Application.current_scenario.analysis_workbench_components.time_instants["Bogus"]
             )
 
         EarlyBoundTests.AG_SC.epoch = holdEpoch
@@ -2310,7 +2353,7 @@ class EarlyBoundTests(TestBase):
         holdStop: typing.Any = EarlyBoundTests.AG_SC.stop_time
 
         EarlyBoundTests.AG_SC.analysis_interval.set_implicit_interval(
-            TestBase.Application.current_scenario.vgt.time_intervals["TodayInterval"]
+            TestBase.Application.current_scenario.analysis_workbench_components.time_intervals["TodayInterval"]
         )
         Assert.assertEqual(EarlyBoundTests.today, EarlyBoundTests.AG_SC.start_time)
         Assert.assertEqual(EarlyBoundTests.tomorrow, EarlyBoundTests.AG_SC.stop_time)
@@ -2620,7 +2663,7 @@ class EarlyBoundTests(TestBase):
                     crane82.surface_temperature = 101
 
             elif rainLossModelName == "ITU-R P618-10":
-                Assert.assertEqual(RAIN_LOSS_MODEL_TYPE.ITURP_618_10, rainLossModel.type)
+                Assert.assertEqual(RAIN_LOSS_MODEL_TYPE.ITU_R_P618_10, rainLossModel.type)
                 itu618_10: "RainLossModelITURP618_10" = clr.CastAs(rainLossModel, RainLossModelITURP618_10)
                 itu618_10.surface_temperature = -100
                 Assert.assertEqual(-100, itu618_10.surface_temperature)
@@ -2636,7 +2679,7 @@ class EarlyBoundTests(TestBase):
                 Assert.assertTrue(itu618_10.enable_depolarization_loss)
 
             elif rainLossModelName == "ITU-R P618-12":
-                Assert.assertEqual(RAIN_LOSS_MODEL_TYPE.ITURP_618_12, rainLossModel.type)
+                Assert.assertEqual(RAIN_LOSS_MODEL_TYPE.ITU_R_P618_12, rainLossModel.type)
                 itu618_12: "RainLossModelITURP618_12" = clr.CastAs(rainLossModel, RainLossModelITURP618_12)
                 itu618_12.surface_temperature = -100
                 Assert.assertEqual(-100, itu618_12.surface_temperature)
@@ -2652,7 +2695,7 @@ class EarlyBoundTests(TestBase):
                 Assert.assertTrue(itu618_12.enable_depolarization_loss)
 
             elif rainLossModelName == "ITU-R P618-13":
-                Assert.assertEqual(RAIN_LOSS_MODEL_TYPE.ITURP_618_13, rainLossModel.type)
+                Assert.assertEqual(RAIN_LOSS_MODEL_TYPE.ITU_R_P618_13, rainLossModel.type)
                 itu618_13: "RainLossModelITURP618_13" = clr.CastAs(rainLossModel, RainLossModelITURP618_13)
 
                 itu618_13.enable_itu_1510 = False
@@ -2772,10 +2815,10 @@ class EarlyBoundTests(TestBase):
             cfflm7.cloud_temperature = 101
 
         with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
-            cfflm7.liquid_water_density_choice = CLOUDS_AND_FOG_LIQUID_WATER_CHOICES.WATER_CHOICE_UNKNOWN
+            cfflm7.liquid_water_density_choice = CLOUDS_AND_FOG_LIQUID_WATER_CHOICE_TYPE.UNKNOWN
 
-        cfflm7.liquid_water_density_choice = CLOUDS_AND_FOG_LIQUID_WATER_CHOICES.WATER_CHOICE_DENSITY_VALUE
-        TestBase.Application.unit_preferences.set_current_unit("MassUnit", "g")
+        cfflm7.liquid_water_density_choice = CLOUDS_AND_FOG_LIQUID_WATER_CHOICE_TYPE.DENSITY_VALUE
+        TestBase.Application.units_preferences.set_current_unit("MassUnit", "g")
         cfflm7.cloud_liquid_water_density = 0
         Assert.assertEqual(0, cfflm7.cloud_liquid_water_density)
         cfflm7.cloud_liquid_water_density = 100
@@ -2795,7 +2838,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             cfflm7.use_rain_height_as_cloud_layer_thickness = True
 
-        cfflm7.liquid_water_density_choice = CLOUDS_AND_FOG_LIQUID_WATER_CHOICES.WATER_CHOICE_ANNUAL_EXCEEDED
+        cfflm7.liquid_water_density_choice = CLOUDS_AND_FOG_LIQUID_WATER_CHOICE_TYPE.ANNUAL_EXCEEDED
         cfflm7.liquid_water_percent_annual_exceeded = 0.1
         Assert.assertEqual(0.1, cfflm7.liquid_water_percent_annual_exceeded)
         cfflm7.liquid_water_percent_annual_exceeded = 99
@@ -2816,7 +2859,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             cfflm7.average_data_month = 1
 
-        cfflm7.liquid_water_density_choice = CLOUDS_AND_FOG_LIQUID_WATER_CHOICES.FOGL_LIQ_WATER_CHOICE_MONTHLY_EXCEEDED
+        cfflm7.liquid_water_density_choice = CLOUDS_AND_FOG_LIQUID_WATER_CHOICE_TYPE.MONTHLY_EXCEEDED
         cfflm7.liquid_water_percent_monthly_exceeded = 1.0
         Assert.assertEqual(1.0, cfflm7.liquid_water_percent_monthly_exceeded)
         cfflm7.liquid_water_percent_monthly_exceeded = 99.0
@@ -2878,10 +2921,10 @@ class EarlyBoundTests(TestBase):
             cfflm6.cloud_temperature = 101
 
         with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
-            cfflm6.liquid_water_density_choice = CLOUDS_AND_FOG_LIQUID_WATER_CHOICES.WATER_CHOICE_UNKNOWN
+            cfflm6.liquid_water_density_choice = CLOUDS_AND_FOG_LIQUID_WATER_CHOICE_TYPE.UNKNOWN
 
-        cfflm6.liquid_water_density_choice = CLOUDS_AND_FOG_LIQUID_WATER_CHOICES.WATER_CHOICE_DENSITY_VALUE
-        TestBase.Application.unit_preferences.set_current_unit("MassUnit", "g")
+        cfflm6.liquid_water_density_choice = CLOUDS_AND_FOG_LIQUID_WATER_CHOICE_TYPE.DENSITY_VALUE
+        TestBase.Application.units_preferences.set_current_unit("MassUnit", "g")
         cfflm6.cloud_liquid_water_density = 0
         Assert.assertEqual(0, cfflm6.cloud_liquid_water_density)
         cfflm6.cloud_liquid_water_density = 100
@@ -2899,7 +2942,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             cfflm6.average_data_month = 1
 
-        cfflm6.liquid_water_density_choice = CLOUDS_AND_FOG_LIQUID_WATER_CHOICES.WATER_CHOICE_ANNUAL_EXCEEDED
+        cfflm6.liquid_water_density_choice = CLOUDS_AND_FOG_LIQUID_WATER_CHOICE_TYPE.ANNUAL_EXCEEDED
         cfflm6.liquid_water_percent_annual_exceeded = 0.1
         Assert.assertEqual(0.1, cfflm6.liquid_water_percent_annual_exceeded)
         cfflm6.liquid_water_percent_annual_exceeded = 99
@@ -2915,7 +2958,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             cfflm6.average_data_month = 1
 
-        cfflm6.liquid_water_density_choice = CLOUDS_AND_FOG_LIQUID_WATER_CHOICES.FOGL_LIQ_WATER_CHOICE_MONTHLY_EXCEEDED
+        cfflm6.liquid_water_density_choice = CLOUDS_AND_FOG_LIQUID_WATER_CHOICE_TYPE.MONTHLY_EXCEEDED
         cfflm6.liquid_water_percent_monthly_exceeded = 1.0
         Assert.assertEqual(1.0, cfflm6.liquid_water_percent_monthly_exceeded)
         cfflm6.liquid_water_percent_monthly_exceeded = 99.0
@@ -2942,23 +2985,23 @@ class EarlyBoundTests(TestBase):
     # region RF_Environment_AtmosphericAbsorption
     def test_RF_Environment_AtmosphericAbsorption(self):
         propChan: "PropagationChannel" = EarlyBoundTests.AG_SC.rf_environment.propagation_channel
-        atmosAbsorb: "IAtmosphericAbsorptionModel" = propChan.atmos_absorption_model
+        atmosAbsorb: "IAtmosphericAbsorptionModel" = propChan.atmospheric_absorption_model
 
-        propChan.enable_atmos_absorption = False
-        Assert.assertFalse(propChan.enable_atmos_absorption)
+        propChan.enable_atmospheric_absorption = False
+        Assert.assertFalse(propChan.enable_atmospheric_absorption)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            propChan.set_atmos_absorption_model("ITU-R P676-9")
+            propChan.set_atmospheric_absorption_model("ITU-R P676-9")
 
-        propChan.enable_atmos_absorption = True
-        Assert.assertTrue(propChan.enable_atmos_absorption)
+        propChan.enable_atmospheric_absorption = True
+        Assert.assertTrue(propChan.enable_atmospheric_absorption)
 
         helper = AtmosphereHelper(TestBase.Application)
-        supportedAtmosAbsorptionModels = propChan.supported_atmos_absorption_models
+        supportedAtmosAbsorptionModels = propChan.supported_atmospheric_absorption_models
         aaModelName: str
         for aaModelName in supportedAtmosAbsorptionModels:
-            propChan.set_atmos_absorption_model(aaModelName)
-            aaModel: "IAtmosphericAbsorptionModel" = propChan.atmos_absorption_model
+            propChan.set_atmospheric_absorption_model(aaModelName)
+            aaModel: "IAtmosphericAbsorptionModel" = propChan.atmospheric_absorption_model
             Assert.assertEqual(aaModelName, aaModel.name)
             if aaModelName == "ITU-R P676-9":
                 Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.ITURP676_9, aaModel.type)
@@ -2980,16 +3023,18 @@ class EarlyBoundTests(TestBase):
                 )
             elif aaModelName == "TIREM 3.31":
                 Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.TIREM331, aaModel.type)
-                self.Test_IAgAtmosphericAbsorptionModelTirem(clr.CastAs(aaModel, IAtmosphericAbsorptionModelTirem))
+                self.Test_IAgAtmosphericAbsorptionModelTirem(clr.CastAs(aaModel, IAtmosphericAbsorptionModelTIREM))
             elif aaModelName == "TIREM 3.20":
                 Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.TIREM320, aaModel.type)
-                self.Test_IAgAtmosphericAbsorptionModelTirem(clr.CastAs(aaModel, IAtmosphericAbsorptionModelTirem))
+                self.Test_IAgAtmosphericAbsorptionModelTirem(clr.CastAs(aaModel, IAtmosphericAbsorptionModelTIREM))
             elif aaModelName == "TIREM 5.50":
                 Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.TIREM550, aaModel.type)
-                self.Test_IAgAtmosphericAbsorptionModelTirem(clr.CastAs(aaModel, IAtmosphericAbsorptionModelTirem))
+                self.Test_IAgAtmosphericAbsorptionModelTirem(clr.CastAs(aaModel, IAtmosphericAbsorptionModelTIREM))
             elif aaModelName == "VOACAP":
-                Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.VOACAP, aaModel.type)
-                helper.Test_IAgAtmosphericAbsorptionModelVoacap(clr.CastAs(aaModel, AtmosphericAbsorptionModelVoacap))
+                Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.GRAPHICS_3D_ACAP, aaModel.type)
+                helper.Test_IAgAtmosphericAbsorptionModelVoacap(
+                    clr.CastAs(aaModel, AtmosphericAbsorptionModelGraphics3DACAP)
+                )
             elif aaModelName == "Early ITU Foliage Model CSharp Example":
                 Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.COM_PLUGIN, aaModel.type)
                 helper.Test_IAgAtmosphericAbsorptionModelCOMPlugin(
@@ -3009,7 +3054,7 @@ class EarlyBoundTests(TestBase):
                 Assert.fail("Unknown model type")
 
         with pytest.raises(Exception, match=RegexSubstringMatch("Invalid model name")):
-            propChan.set_atmos_absorption_model("bogus")
+            propChan.set_atmospheric_absorption_model("bogus")
 
     def Test_IAgAtmosphericAbsorptionModelITURP676(self, iturp676: "IAtmosphericAbsorptionModelITURP676"):
         iturp676.fast_approximation_method = False
@@ -3032,7 +3077,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(r"CommRad\VB_AbsorpModel.vbs", scriptPlugin.filename)
 
     def Test_IAgAtmosphericAbsorptionModelSimpleSatcom(self, simpleSatcom: "AtmosphericAbsorptionModelSimpleSatcom"):
-        TestBase.Application.unit_preferences.set_current_unit("DistanceUnit", "m")
+        TestBase.Application.units_preferences.set_current_unit("DistanceUnit", "m")
         simpleSatcom.water_vapor_concentration = 0
         Assert.assertEqual(0, simpleSatcom.water_vapor_concentration)
         simpleSatcom.water_vapor_concentration = 100
@@ -3051,7 +3096,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             simpleSatcom.surface_temperature = 101
 
-    def Test_IAgAtmosphericAbsorptionModelTirem(self, tirem: "IAtmosphericAbsorptionModelTirem"):
+    def Test_IAgAtmosphericAbsorptionModelTirem(self, tirem: "IAtmosphericAbsorptionModelTIREM"):
         tirem.surface_temperature = -100
         Assert.assertEqual(-100, tirem.surface_temperature)
         tirem.surface_temperature = 100
@@ -3061,7 +3106,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tirem.surface_temperature = 101
 
-        TestBase.Application.unit_preferences.set_current_unit("DistanceUnit", "m")
+        TestBase.Application.units_preferences.set_current_unit("DistanceUnit", "m")
         tirem.surface_humidity = 0
         Assert.assertEqual(0, tirem.surface_humidity)
         tirem.surface_humidity = 13.25
@@ -3107,7 +3152,7 @@ class EarlyBoundTests(TestBase):
         tirem.override_terrain_sample_resolution = True
         Assert.assertTrue(tirem.override_terrain_sample_resolution)
 
-        TestBase.Application.unit_preferences.set_current_unit("DistanceUnit", "km")
+        TestBase.Application.units_preferences.set_current_unit("DistanceUnit", "km")
         tirem.terrain_sample_resolution = 0.0001
         Assert.assertEqual(0.0001, tirem.terrain_sample_resolution)
         tirem.terrain_sample_resolution = 10
@@ -3143,7 +3188,7 @@ class EarlyBoundTests(TestBase):
                 self.Test_IAgUrbanTerrestrialLossModelTwoRay(clr.CastAs(utModel, UrbanTerrestrialLossModelTwoRay))
             elif utModelName == "Urban Propagation Wireless InSite 64":
                 Assert.assertEqual(
-                    URBAN_TERRESTRIAL_LOSS_MODEL_TYPE.WIRELESS_IN_SITE64, utModel.type
+                    URBAN_TERRESTRIAL_LOSS_MODEL_TYPE.WIRELESS_INSITE_64, utModel.type
                 )  # was 5 in WirelessInSiteRT
                 self.Test_IAgUrbanTerrestrialLossModelWirelessInSite64(
                     clr.CastAs(utModel, UrbanTerrestrialLossModelWirelessInSite64)
@@ -3207,10 +3252,12 @@ class EarlyBoundTests(TestBase):
             geometryData.filename = TestBase.GetScenarioFile("Skopje.shp")
             Assert.assertEqual("Skopje.shp", geometryData.filename)
 
-            geometryData.projection_horizontal_datum = PROJECTION_HORIZONTAL_DATUM_TYPE.LAT_LON_WGS84
-            Assert.assertEqual(PROJECTION_HORIZONTAL_DATUM_TYPE.LAT_LON_WGS84, geometryData.projection_horizontal_datum)
+            geometryData.projection_horizontal_datum = PROJECTION_HORIZONTAL_DATUM_TYPE.WGS84_LATITUDE_LONGITUDE
+            Assert.assertEqual(
+                PROJECTION_HORIZONTAL_DATUM_TYPE.WGS84_LATITUDE_LONGITUDE, geometryData.projection_horizontal_datum
+            )
             with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
-                geometryData.projection_horizontal_datum = PROJECTION_HORIZONTAL_DATUM_TYPE.UTMWGS84
+                geometryData.projection_horizontal_datum = PROJECTION_HORIZONTAL_DATUM_TYPE.WGS84_UTM
 
             geometryData.building_height_data_attribute = "GM_LAYER"
             Assert.assertEqual("GM_LAYER", geometryData.building_height_data_attribute)
@@ -3228,10 +3275,10 @@ class EarlyBoundTests(TestBase):
 
             # option removed because Remcom (UProp) needs special transform for processing
             # This will be reviewed with the new Wireless Insight library from Remcom.
-            # geometryData.BuildingHeightUnit = BUILD_HEIGHT_UNIT.FEET;
-            # Assert.AreEqual(BUILD_HEIGHT_UNIT.FEET, geometryData.BuildingHeightUnit);
-            # geometryData.BuildingHeightUnit = BUILD_HEIGHT_UNIT.METERS;
-            # Assert.AreEqual(BUILD_HEIGHT_UNIT.METERS, geometryData.BuildingHeightUnit);
+            # geometryData.BuildingHeightUnit = BUILDING_HEIGHT_UNIT.FEET;
+            # Assert.AreEqual(BUILDING_HEIGHT_UNIT.FEET, geometryData.BuildingHeightUnit);
+            # geometryData.BuildingHeightUnit = BUILDING_HEIGHT_UNIT.METERS;
+            # Assert.AreEqual(BUILDING_HEIGHT_UNIT.METERS, geometryData.BuildingHeightUnit);
 
             geometryData.override_geometry_tile_origin = False
             Assert.assertFalse(geometryData.override_geometry_tile_origin)
@@ -3265,18 +3312,18 @@ class EarlyBoundTests(TestBase):
             geometryData.use_terrain_data = False
             Assert.assertFalse(geometryData.use_terrain_data)
 
-            Assert.assertAlmostEqual(42.0, float(geometryData.terrain_extent_max_latitude), delta=0.01)
-            Assert.assertAlmostEqual(21.44, float(geometryData.terrain_extent_max_longitude), delta=0.01)
-            Assert.assertAlmostEqual(41.99, float(geometryData.terrain_extent_min_latitude), delta=0.01)
-            Assert.assertAlmostEqual(21.42, float(geometryData.terrain_extent_min_longitude), delta=0.01)
+            Assert.assertAlmostEqual(42.0, float(geometryData.terrain_extent_maximum_latitude), delta=0.01)
+            Assert.assertAlmostEqual(21.44, float(geometryData.terrain_extent_maximum_longitude), delta=0.01)
+            Assert.assertAlmostEqual(41.99, float(geometryData.terrain_extent_minimum_latitude), delta=0.01)
+            Assert.assertAlmostEqual(21.42, float(geometryData.terrain_extent_minimum_longitude), delta=0.01)
 
             geometryData.use_terrain_data = True
             Assert.assertTrue(geometryData.use_terrain_data)
 
-            Assert.assertAlmostEqual(42.0, float(geometryData.terrain_extent_max_latitude), delta=0.01)
-            Assert.assertAlmostEqual(21.44, float(geometryData.terrain_extent_max_longitude), delta=0.01)
-            Assert.assertAlmostEqual(41.99, float(geometryData.terrain_extent_min_latitude), delta=0.01)
-            Assert.assertAlmostEqual(21.42, float(geometryData.terrain_extent_min_longitude), delta=0.01)
+            Assert.assertAlmostEqual(42.0, float(geometryData.terrain_extent_maximum_latitude), delta=0.01)
+            Assert.assertAlmostEqual(21.44, float(geometryData.terrain_extent_maximum_longitude), delta=0.01)
+            Assert.assertAlmostEqual(41.99, float(geometryData.terrain_extent_minimum_latitude), delta=0.01)
+            Assert.assertAlmostEqual(21.42, float(geometryData.terrain_extent_minimum_longitude), delta=0.01)
 
     # endregion
 
@@ -3298,7 +3345,7 @@ class EarlyBoundTests(TestBase):
         propChan.set_tropospheric_scintillation_fading_loss_model("ITU-R P618-12")
         tsflm: "ITroposphericScintillationFadingLossModel" = propChan.tropospheric_scintillation_fading_loss_model
         Assert.assertEqual("ITU-R P618-12", tsflm.name)
-        Assert.assertEqual(TROPOSPHERIC_SCINTILLATION_FADING_LOSS_MODEL_TYPE.P_618_12_TYPE, tsflm.type)
+        Assert.assertEqual(TROPOSPHERIC_SCINTILLATION_FADING_LOSS_MODEL_TYPE.P_618_12, tsflm.type)
         self.Test_IAgTroposphericScintillationFadingLossModelP618_12(
             clr.CastAs(tsflm, TroposphericScintillationFadingLossModelP618_12)
         )
@@ -3306,7 +3353,7 @@ class EarlyBoundTests(TestBase):
         propChan.set_tropospheric_scintillation_fading_loss_model("ITU-R P618-8")
         tsflm = propChan.tropospheric_scintillation_fading_loss_model
         Assert.assertEqual("ITU-R P618-8", tsflm.name)
-        Assert.assertEqual(TROPOSPHERIC_SCINTILLATION_FADING_LOSS_MODEL_TYPE.P_618_8_TYPE, tsflm.type)
+        Assert.assertEqual(TROPOSPHERIC_SCINTILLATION_FADING_LOSS_MODEL_TYPE.P_618_8, tsflm.type)
         self.Test_IAgTroposphericScintillationFadingLossModelP618_8(
             clr.CastAs(tsflm, TroposphericScintillationFadingLossModelP618_8)
         )
@@ -3353,12 +3400,12 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tsflm12.percent_time_refractivity_gradient = 101
 
-        tsflm12.average_time_choice = TROPOSPHERIC_SCINTILLATION_AVERAGE_TIME_CHOICES.WORST_MONTH
-        Assert.assertEqual(TROPOSPHERIC_SCINTILLATION_AVERAGE_TIME_CHOICES.WORST_MONTH, tsflm12.average_time_choice)
-        tsflm12.average_time_choice = TROPOSPHERIC_SCINTILLATION_AVERAGE_TIME_CHOICES.YEAR
-        Assert.assertEqual(TROPOSPHERIC_SCINTILLATION_AVERAGE_TIME_CHOICES.YEAR, tsflm12.average_time_choice)
+        tsflm12.average_time_choice = TROPOSPHERIC_SCINTILLATION_AVERAGE_TIME_CHOICE_TYPE.WORST_MONTH
+        Assert.assertEqual(TROPOSPHERIC_SCINTILLATION_AVERAGE_TIME_CHOICE_TYPE.WORST_MONTH, tsflm12.average_time_choice)
+        tsflm12.average_time_choice = TROPOSPHERIC_SCINTILLATION_AVERAGE_TIME_CHOICE_TYPE.YEAR
+        Assert.assertEqual(TROPOSPHERIC_SCINTILLATION_AVERAGE_TIME_CHOICE_TYPE.YEAR, tsflm12.average_time_choice)
         with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
-            tsflm12.average_time_choice = TROPOSPHERIC_SCINTILLATION_AVERAGE_TIME_CHOICES.UNKNOWN
+            tsflm12.average_time_choice = TROPOSPHERIC_SCINTILLATION_AVERAGE_TIME_CHOICE_TYPE.UNKNOWN
 
     def Test_IAgTroposphericScintillationFadingLossModelP618_8(
         self, tsflm8: "TroposphericScintillationFadingLossModelP618_8"
@@ -3426,7 +3473,7 @@ class EarlyBoundTests(TestBase):
         propChan.set_ionospheric_fading_loss_model("ITU-R P531-13")
         iflm: "IIonosphericFadingLossModel" = propChan.ionospheric_fading_loss_model
         Assert.assertEqual("ITU-R P531-13", iflm.name)
-        Assert.assertEqual(IONOSPHERIC_FADING_LOSS_MODEL_TYPE.P_531_13_TYPE, iflm.type)
+        Assert.assertEqual(IONOSPHERIC_FADING_LOSS_MODEL_TYPE.P_531_13, iflm.type)
         self.Test_IAgIonosphericFadingLossModelP531_13(clr.CastAs(iflm, IonosphericFadingLossModelP531_13))
 
     def Test_IAgIonosphericFadingLossModelP531_13(self, iflm13: "IonosphericFadingLossModelP531_13"):
@@ -3582,17 +3629,17 @@ class EarlyBoundTests(TestBase):
 
         Assert.assertEqual("MODTRAN-derived Lookup Table", laserPropChan.atmospheric_loss_model.name)
         Assert.assertEqual(
-            LASER_PROPAGATION_LOSS_MODEL_TYPE.MODTRAN_LOOKUP_TABLE_TYPE, laserPropChan.atmospheric_loss_model.type
+            LASER_PROPAGATION_LOSS_MODEL_TYPE.MODTRAN_LOOKUP_TABLE, laserPropChan.atmospheric_loss_model.type
         )
 
-        modtran: "ModtranLookupTablePropagationModel" = clr.CastAs(
-            laserPropChan.atmospheric_loss_model, ModtranLookupTablePropagationModel
+        modtran: "MODTRANLookupTablePropagationModel" = clr.CastAs(
+            laserPropChan.atmospheric_loss_model, MODTRANLookupTablePropagationModel
         )
 
         modtran.aerosol_model_type = MODTRAN_AEROSOL_MODEL_TYPE.MARITIME
         Assert.assertEqual(MODTRAN_AEROSOL_MODEL_TYPE.MARITIME, modtran.aerosol_model_type)
-        modtran.aerosol_model_type = MODTRAN_AEROSOL_MODEL_TYPE.RURAL_HI_VIS
-        Assert.assertEqual(MODTRAN_AEROSOL_MODEL_TYPE.RURAL_HI_VIS, modtran.aerosol_model_type)
+        modtran.aerosol_model_type = MODTRAN_AEROSOL_MODEL_TYPE.RURAL_HIGH_VISIBILITY
+        Assert.assertEqual(MODTRAN_AEROSOL_MODEL_TYPE.RURAL_HIGH_VISIBILITY, modtran.aerosol_model_type)
         modtran.aerosol_model_type = MODTRAN_AEROSOL_MODEL_TYPE.TROPOSPHERIC
         Assert.assertEqual(MODTRAN_AEROSOL_MODEL_TYPE.TROPOSPHERIC, modtran.aerosol_model_type)
         modtran.aerosol_model_type = MODTRAN_AEROSOL_MODEL_TYPE.URBAN
@@ -3724,16 +3771,16 @@ class EarlyBoundTests(TestBase):
 
         Assert.assertEqual(300000000000.0, band.maximum_frequency)
 
-        band.swerling_case = RADAR_SWERLING_CASE.CASE0
-        Assert.assertEqual(RADAR_SWERLING_CASE.CASE0, band.swerling_case)
-        band.swerling_case = RADAR_SWERLING_CASE.I
-        Assert.assertEqual(RADAR_SWERLING_CASE.I, band.swerling_case)
-        band.swerling_case = RADAR_SWERLING_CASE.II
-        Assert.assertEqual(RADAR_SWERLING_CASE.II, band.swerling_case)
-        band.swerling_case = RADAR_SWERLING_CASE.III
-        Assert.assertEqual(RADAR_SWERLING_CASE.III, band.swerling_case)
-        band.swerling_case = RADAR_SWERLING_CASE.IV
-        Assert.assertEqual(RADAR_SWERLING_CASE.IV, band.swerling_case)
+        band.swerling_case = RADAR_SWERLING_CASE.CASE_0
+        Assert.assertEqual(RADAR_SWERLING_CASE.CASE_0, band.swerling_case)
+        band.swerling_case = RADAR_SWERLING_CASE.CASE_I
+        Assert.assertEqual(RADAR_SWERLING_CASE.CASE_I, band.swerling_case)
+        band.swerling_case = RADAR_SWERLING_CASE.CASE_II
+        Assert.assertEqual(RADAR_SWERLING_CASE.CASE_II, band.swerling_case)
+        band.swerling_case = RADAR_SWERLING_CASE.CASE_III
+        Assert.assertEqual(RADAR_SWERLING_CASE.CASE_III, band.swerling_case)
+        band.swerling_case = RADAR_SWERLING_CASE.CASE_IV
+        Assert.assertEqual(RADAR_SWERLING_CASE.CASE_IV, band.swerling_case)
 
         arSupportedComputeStrategies = band.supported_compute_strategies
         computeStrategy: str
@@ -3783,25 +3830,25 @@ class EarlyBoundTests(TestBase):
                     self.IsSupportedComputeStrategy("Ansys HFSS CSV File", band.supported_compute_strategies)
                 )
 
-                ansys: "RadarCrossSectionComputeStrategyAnsysCsvFile" = clr.CastAs(
-                    band.compute_strategy, RadarCrossSectionComputeStrategyAnsysCsvFile
+                ansys: "RadarCrossSectionComputeStrategyAnsysCSVFile" = clr.CastAs(
+                    band.compute_strategy, RadarCrossSectionComputeStrategyAnsysCSVFile
                 )
                 with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
-                    ansys.filename = TestBase.GetScenarioFile("CommRad, bogus.csv")
+                    ansys.primary_polarization_data_filename = TestBase.GetScenarioFile("CommRad, bogus.csv")
                 with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
-                    ansys.file2_name = TestBase.GetScenarioFile("CommRad, bogus.csv")
+                    ansys.orthogonal_polarization_data_filename = TestBase.GetScenarioFile("CommRad, bogus.csv")
 
                 expectedFileName: str = TestBase.PathCombine("CommRad", "MD4-200_H_Incident_2p8GHz.csv")
-                ansys.filename = TestBase.GetScenarioFile(expectedFileName)
-                Assert.assertEqual(expectedFileName, ansys.filename)
+                ansys.primary_polarization_data_filename = TestBase.GetScenarioFile(expectedFileName)
+                Assert.assertEqual(expectedFileName, ansys.primary_polarization_data_filename)
 
                 expectedFileName = TestBase.PathCombine("CommRad", "MD4-200_V_Incident_2p8GHz.csv")
-                ansys.file2_name = TestBase.GetScenarioFile(expectedFileName)
-                Assert.assertEqual(expectedFileName, ansys.file2_name)
+                ansys.orthogonal_polarization_data_filename = TestBase.GetScenarioFile(expectedFileName)
+                Assert.assertEqual(expectedFileName, ansys.orthogonal_polarization_data_filename)
 
                 expectedFileName = TestBase.PathCombine("CommRad", "MD4-200_H_Incident_10GHz.csv")  # mismatch
                 with pytest.raises(Exception, match=RegexSubstringMatch("Please ensure that the frequency")):
-                    ansys.file2_name = TestBase.GetScenarioFile(expectedFileName)
+                    ansys.orthogonal_polarization_data_filename = TestBase.GetScenarioFile(expectedFileName)
             elif eComputeStrategy == RCS_COMPUTE_STRATEGY.UNKNOWN:
                 with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
                     band.set_compute_strategy("Unknown")
@@ -3854,10 +3901,10 @@ class EarlyBoundTests(TestBase):
 
     # region DP_PreData_Unit
     def test_DP_PreData_Unit(self):
-        holdDateFormat: str = TestBase.Application.unit_preferences.get_current_unit_abbrv("DateFormat")
+        holdDateFormat: str = TestBase.Application.units_preferences.get_current_unit_abbrv("DateFormat")
 
         try:
-            TestBase.Application.unit_preferences.set_current_unit("DateFormat", "EpSec")
+            TestBase.Application.units_preferences.set_current_unit("DateFormat", "EpSec")
 
             scenario: "Scenario" = clr.CastAs(TestBase.Application.current_scenario, Scenario)
             dp: "IDataProvider" = clr.CastAs(
@@ -3866,17 +3913,17 @@ class EarlyBoundTests(TestBase):
             dpFixed: "DataProviderFixed" = clr.CastAs(dp, DataProviderFixed)
             tcePath: str = TestBase.GetScenarioFile("stkAllTLE.tce")
             dp.pre_data = tcePath + ", 90"
-            result: "DataProviderResult" = dpFixed.exec()
+            result: "DataProviderResult" = dpFixed.execute()
 
             # This test will currently always pass even though an incorrect value for a unit type is passed
             # because although data provider's pre-service call will fail, the actual data provider will ignore it and execute
             Assert.assertEqual("OK", str(result.message.messages[0]))
 
             dp.pre_data = tcePath + "Bogus, 90"
-            result = dpFixed.exec()
+            result = dpFixed.execute()
             Assert.assertEqual("Data Unavailable", str(result.message.messages[0]))
 
         finally:
-            TestBase.Application.unit_preferences.set_current_unit("DateFormat", holdDateFormat)
+            TestBase.Application.units_preferences.set_current_unit("DateFormat", holdDateFormat)
 
     # endregion

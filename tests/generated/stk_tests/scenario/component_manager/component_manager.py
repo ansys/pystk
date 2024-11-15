@@ -25,7 +25,7 @@ class EarlyBoundTests(TestBase):
         scene: "Scenario" = clr.CastAs(TestBase.Application.current_scenario, Scenario)
         EarlyBoundTests.AG_COM = scene.component_directory
         sat: "Satellite" = clr.CastAs(TestBase.Application.current_scenario.children["Satellite1"], Satellite)
-        sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
+        sat.set_propagator_type(PROPAGATOR_TYPE.ASTROGATOR)
         driver: "MCSDriver" = clr.CastAs(sat.propagator, MCSDriver)
         EarlyBoundTests._targetSequence = clr.CastAs(
             driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "Targeter1", "-"), MCSTargetSequence
@@ -950,15 +950,15 @@ class EarlyBoundTests(TestBase):
                     "You may not choose a Reference if ReferenceSelection is set to Basic->Reference."
                 ),
             ):
-                curvRelMotion.reference.bind_to("Satellite/Satellite1")
+                curvRelMotion.reference.bind_to_object("Satellite/Satellite1")
 
             curvRelMotion.reference_selection = CALCULATION_OBJECT_REFERENCE.SPECIFIED
             Assert.assertEqual(CALCULATION_OBJECT_REFERENCE.SPECIFIED, curvRelMotion.reference_selection)
 
-            curvRelMotion.reference.bind_to("Satellite/Satellite1")
+            curvRelMotion.reference.bind_to_object("Satellite/Satellite1")
             Assert.assertEqual("Satellite1", curvRelMotion.reference.linked_object.instance_name)
             with pytest.raises(Exception, match=RegexSubstringMatch("not a valid choice")):
-                curvRelMotion.reference.bind_to("Satellite/Bogus1")
+                curvRelMotion.reference.bind_to_object("Satellite/Bogus1")
 
             curvRelMotion.sign_convention = CALCULATION_OBJECT_ANGLE_SIGN.NEGATIVE
             Assert.assertEqual(CALCULATION_OBJECT_ANGLE_SIGN.NEGATIVE, curvRelMotion.sign_convention)
@@ -1093,7 +1093,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(CALCULATION_OBJECT_REFERENCE.BASIC, cab.reference_selection)
         cab.reference_selection = CALCULATION_OBJECT_REFERENCE.SPECIFIED
         Assert.assertEqual(CALCULATION_OBJECT_REFERENCE.SPECIFIED, cab.reference_selection)
-        cab.reference.bind_to("Satellite/Satellite1")
+        cab.reference.bind_to_object("Satellite/Satellite1")
         Assert.assertEqual("Satellite/Satellite1", cab.reference.name)
         formationElems.remove((clr.CastAs(cab, IComponentInfo)).name)
 
@@ -1107,7 +1107,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(CALCULATION_OBJECT_REFERENCE.BASIC, closeApproachTheta.reference_selection)
         closeApproachTheta.reference_selection = CALCULATION_OBJECT_REFERENCE.SPECIFIED
         Assert.assertEqual(CALCULATION_OBJECT_REFERENCE.SPECIFIED, closeApproachTheta.reference_selection)
-        closeApproachTheta.reference.bind_to("Satellite/Satellite1")
+        closeApproachTheta.reference.bind_to_object("Satellite/Satellite1")
         Assert.assertEqual("Satellite/Satellite1", closeApproachTheta.reference.name)
         formationElems.remove((clr.CastAs(closeApproachTheta, IComponentInfo)).name)
 
@@ -1121,7 +1121,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(CALCULATION_OBJECT_REFERENCE.BASIC, closeApproachX.reference_selection)
         closeApproachX.reference_selection = CALCULATION_OBJECT_REFERENCE.SPECIFIED
         Assert.assertEqual(CALCULATION_OBJECT_REFERENCE.SPECIFIED, closeApproachX.reference_selection)
-        closeApproachX.reference.bind_to("Satellite/Satellite1")
+        closeApproachX.reference.bind_to_object("Satellite/Satellite1")
         Assert.assertEqual("Satellite/Satellite1", closeApproachX.reference.name)
         formationElems.remove((clr.CastAs(closeApproachX, IComponentInfo)).name)
 
@@ -1135,7 +1135,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(CALCULATION_OBJECT_REFERENCE.BASIC, closeApproachY.reference_selection)
         closeApproachY.reference_selection = CALCULATION_OBJECT_REFERENCE.SPECIFIED
         Assert.assertEqual(CALCULATION_OBJECT_REFERENCE.SPECIFIED, closeApproachY.reference_selection)
-        closeApproachY.reference.bind_to("Satellite/Satellite1")
+        closeApproachY.reference.bind_to_object("Satellite/Satellite1")
         Assert.assertEqual("Satellite/Satellite1", closeApproachY.reference.name)
         formationElems.remove((clr.CastAs(closeApproachY, IComponentInfo)).name)
 
@@ -1150,7 +1150,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(CALCULATION_OBJECT_REFERENCE.BASIC, cacb.reference_selection)
         cacb.reference_selection = CALCULATION_OBJECT_REFERENCE.SPECIFIED
         Assert.assertEqual(CALCULATION_OBJECT_REFERENCE.SPECIFIED, cacb.reference_selection)
-        cacb.reference.bind_to("Satellite/Satellite1")
+        cacb.reference.bind_to_object("Satellite/Satellite1")
         Assert.assertEqual("Satellite/Satellite1", cacb.reference.name)
         formationElems.remove((clr.CastAs(cacb, IComponentInfo)).name)
 
@@ -1172,7 +1172,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(CALCULATION_OBJECT_REFERENCE.BASIC, gte.reference_selection)
         gte.reference_selection = CALCULATION_OBJECT_REFERENCE.SPECIFIED
         Assert.assertEqual(CALCULATION_OBJECT_REFERENCE.SPECIFIED, gte.reference_selection)
-        gte.reference.bind_to("Missile/Missile1")
+        gte.reference.bind_to_object("Missile/Missile1")
         Assert.assertEqual("Missile/Missile1", gte.reference.name)
         formationElems.remove((clr.CastAs(gte, IComponentInfo)).name)
 
@@ -1186,7 +1186,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(CALCULATION_OBJECT_REFERENCE.BASIC, deltaMaster.reference_selection)
         deltaMaster.reference_selection = CALCULATION_OBJECT_REFERENCE.SPECIFIED
         Assert.assertEqual(CALCULATION_OBJECT_REFERENCE.SPECIFIED, deltaMaster.reference_selection)
-        deltaMaster.reference.bind_to("Satellite/Satellite1")
+        deltaMaster.reference.bind_to_object("Satellite/Satellite1")
         Assert.assertEqual("Satellite/Satellite1", deltaMaster.reference.name)
         formationElems.remove((clr.CastAs(deltaMaster, IComponentInfo)).name)
 
@@ -1206,7 +1206,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(CALCULATION_OBJECT_REFERENCE.BASIC, aolMaster.reference_selection)
         aolMaster.reference_selection = CALCULATION_OBJECT_REFERENCE.SPECIFIED
         Assert.assertEqual(CALCULATION_OBJECT_REFERENCE.SPECIFIED, aolMaster.reference_selection)
-        aolMaster.reference.bind_to("Satellite/Satellite1")
+        aolMaster.reference.bind_to_object("Satellite/Satellite1")
         Assert.assertEqual("Satellite/Satellite1", aolMaster.reference.name)
         formationElems.remove((clr.CastAs(aolMaster, IComponentInfo)).name)
 
@@ -2123,12 +2123,12 @@ class EarlyBoundTests(TestBase):
                 "You may not choose a Reference if ReferenceSelection is set to Basic->Reference."
             ),
         ):
-            crossTrack.reference.bind_to("Satellite/Satellite1")
+            crossTrack.reference.bind_to_object("Satellite/Satellite1")
 
         crossTrack.reference_selection = CALCULATION_OBJECT_REFERENCE.SPECIFIED
         Assert.assertEqual(CALCULATION_OBJECT_REFERENCE.SPECIFIED, crossTrack.reference_selection)
 
-        crossTrack.reference.bind_to("Missile/Missile1")
+        crossTrack.reference.bind_to_object("Missile/Missile1")
         Assert.assertEqual("Missile/Missile1", crossTrack.reference.name)
 
         relMotionElems.remove((clr.CastAs(crossTrack, IComponentInfo)).name)
@@ -2155,15 +2155,15 @@ class EarlyBoundTests(TestBase):
                 "You may not choose a Reference if ReferenceSelection is set to Basic->Reference."
             ),
         ):
-            solarBetaAngle.reference.bind_to("Satellite/Satellite1")
+            solarBetaAngle.reference.bind_to_object("Satellite/Satellite1")
 
         solarBetaAngle.reference_selection = CALCULATION_OBJECT_REFERENCE.SPECIFIED
         Assert.assertEqual(CALCULATION_OBJECT_REFERENCE.SPECIFIED, solarBetaAngle.reference_selection)
 
-        solarBetaAngle.reference.bind_to("Satellite/Satellite1")
+        solarBetaAngle.reference.bind_to_object("Satellite/Satellite1")
         Assert.assertEqual("Satellite/Satellite1", solarBetaAngle.reference.name)
         with pytest.raises(Exception, match=RegexSubstringMatch("not a valid choice")):
-            solarBetaAngle.reference.bind_to("Satellite/Bogus1")
+            solarBetaAngle.reference.bind_to_object("Satellite/Bogus1")
 
         solarBetaAngle.sun_position = CALCULATION_OBJECT_SUN_POSITION.TRUE_FROM_SATELLITE
         Assert.assertEqual(CALCULATION_OBJECT_SUN_POSITION.TRUE_FROM_SATELLITE, solarBetaAngle.sun_position)
@@ -2197,15 +2197,15 @@ class EarlyBoundTests(TestBase):
                 "You may not choose a Reference if ReferenceSelection is set to Basic->Reference."
             ),
         ):
-            solarInPlanlaneAngle.reference.bind_to("Satellite/Satellite1")
+            solarInPlanlaneAngle.reference.bind_to_object("Satellite/Satellite1")
 
         solarInPlanlaneAngle.reference_selection = CALCULATION_OBJECT_REFERENCE.SPECIFIED
         Assert.assertEqual(CALCULATION_OBJECT_REFERENCE.SPECIFIED, solarInPlanlaneAngle.reference_selection)
 
-        solarInPlanlaneAngle.reference.bind_to("Satellite/Satellite1")
+        solarInPlanlaneAngle.reference.bind_to_object("Satellite/Satellite1")
         Assert.assertEqual("Satellite/Satellite1", solarInPlanlaneAngle.reference.name)
         with pytest.raises(Exception, match=RegexSubstringMatch("not a valid choice")):
-            solarInPlanlaneAngle.reference.bind_to("Satellite/Bogus1")
+            solarInPlanlaneAngle.reference.bind_to_object("Satellite/Bogus1")
 
         solarInPlanlaneAngle.sun_position = CALCULATION_OBJECT_SUN_POSITION.TRUE_FROM_REFERENCE_SATELLITE
         Assert.assertEqual(
@@ -2245,12 +2245,12 @@ class EarlyBoundTests(TestBase):
                 "You may not choose a Reference if ReferenceSelection is set to Basic->Reference."
             ),
         ):
-            relPosDecAngle.reference.bind_to("Satellite/Satellite1")
+            relPosDecAngle.reference.bind_to_object("Satellite/Satellite1")
 
         relPosDecAngle.reference_selection = CALCULATION_OBJECT_REFERENCE.SPECIFIED
         Assert.assertEqual(CALCULATION_OBJECT_REFERENCE.SPECIFIED, relPosDecAngle.reference_selection)
 
-        relPosDecAngle.reference.bind_to("Satellite/Satellite1")
+        relPosDecAngle.reference.bind_to_object("Satellite/Satellite1")
         relPosDecAngle.relative_position_type = CALCULATION_OBJECT_RELATIVE_POSITION.REFERENCE_SATELLITE_TO_SATELLITE
         Assert.assertEqual(
             CALCULATION_OBJECT_RELATIVE_POSITION.REFERENCE_SATELLITE_TO_SATELLITE, relPosDecAngle.relative_position_type
@@ -2286,12 +2286,12 @@ class EarlyBoundTests(TestBase):
                 "You may not choose a Reference if ReferenceSelection is set to Basic->Reference."
             ),
         ):
-            relPosInPlaneAngle.reference.bind_to("Satellite/Satellite1")
+            relPosInPlaneAngle.reference.bind_to_object("Satellite/Satellite1")
 
         relPosInPlaneAngle.reference_selection = CALCULATION_OBJECT_REFERENCE.SPECIFIED
         Assert.assertEqual(CALCULATION_OBJECT_REFERENCE.SPECIFIED, relPosInPlaneAngle.reference_selection)
 
-        relPosInPlaneAngle.reference.bind_to("Satellite/Satellite1")
+        relPosInPlaneAngle.reference.bind_to_object("Satellite/Satellite1")
         relPosInPlaneAngle.counter_clockwise_rotation = CALCULATION_OBJECT_ANGLE_SIGN.NEGATIVE
         Assert.assertEqual(CALCULATION_OBJECT_ANGLE_SIGN.NEGATIVE, relPosInPlaneAngle.counter_clockwise_rotation)
 
@@ -2339,12 +2339,12 @@ class EarlyBoundTests(TestBase):
                 "You may not choose a Reference if ReferenceSelection is set to Basic->Reference."
             ),
         ):
-            relativeInclination.reference.bind_to("Satellite/Satellite1")
+            relativeInclination.reference.bind_to_object("Satellite/Satellite1")
 
         relativeInclination.reference_selection = CALCULATION_OBJECT_REFERENCE.SPECIFIED
         Assert.assertEqual(CALCULATION_OBJECT_REFERENCE.SPECIFIED, relativeInclination.reference_selection)
 
-        relativeInclination.reference.bind_to("Satellite/Satellite1")
+        relativeInclination.reference.bind_to_object("Satellite/Satellite1")
 
         relMotionElems.remove((clr.CastAs(relativeInclination, IComponentInfo)).name)
 
@@ -2497,7 +2497,7 @@ class EarlyBoundTests(TestBase):
             (ICloneable(seetElems["GeoMagFieldFieldLineSeparation"])).clone_object(),
             StateCalcSEETMagneticFieldLineSeparationAngle,
         )
-        fieldfieldLineSepAngle.target_object.bind_to("Missile/Missile1")
+        fieldfieldLineSepAngle.target_object.bind_to_object("Missile/Missile1")
         Assert.assertEqual("Missile/Missile1", fieldfieldLineSepAngle.target_object.name)
         seetElems.remove((clr.CastAs(fieldfieldLineSepAngle, IComponentInfo)).name)
 
@@ -2583,7 +2583,7 @@ class EarlyBoundTests(TestBase):
         sat: "Satellite" = clr.CastAs(
             TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "SegmentSat"), Satellite
         )
-        sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
+        sat.set_propagator_type(PROPAGATOR_TYPE.ASTROGATOR)
         mcs: "MCSDriver" = clr.CastAs(sat.propagator, MCSDriver)
         propagate: "MCSPropagate" = clr.CastAs(mcs.main_sequence["Propagate"], MCSPropagate)
         stopCondElem: "StoppingConditionElement" = propagate.stopping_conditions.add("UserSelect")
@@ -2671,10 +2671,10 @@ class EarlyBoundTests(TestBase):
         ValAtSegOtherSat: "StateCalcValueAtSegmentOtherSat" = clr.CastAs(
             stopCond.user_calculation_object, StateCalcValueAtSegmentOtherSat
         )
-        ValAtSegOtherSat.reference_satellite.bind_to("Satellite/Satellite1")
+        ValAtSegOtherSat.reference_satellite.bind_to_object("Satellite/Satellite1")
         Assert.assertEqual("Satellite/Satellite1", ValAtSegOtherSat.reference_satellite.name)
         with pytest.raises(Exception, match=RegexSubstringMatch("is not a valid choice")):
-            ValAtSegOtherSat.reference_satellite.bind_to("Satellite/Bogus")
+            ValAtSegOtherSat.reference_satellite.bind_to_object("Satellite/Bogus")
         Assert.assertEqual("-Not Set-", ValAtSegOtherSat.other_segment_name)
         ValAtSegOtherSat.other_segment_name = "Initial State"
         Assert.assertEqual("Initial State", ValAtSegOtherSat.other_segment_name)
@@ -2704,10 +2704,10 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(SEGMENT_STATE.FINAL, diffAcrossSegOtherSat.segment_state_to_use)
         diffAcrossSegOtherSat.segment_state_to_use = SEGMENT_STATE.INITIAL
         Assert.assertEqual(SEGMENT_STATE.INITIAL, diffAcrossSegOtherSat.segment_state_to_use)
-        diffAcrossSegOtherSat.reference_satellite.bind_to("Satellite/Satellite1")
+        diffAcrossSegOtherSat.reference_satellite.bind_to_object("Satellite/Satellite1")
         Assert.assertEqual("Satellite/Satellite1", diffAcrossSegOtherSat.reference_satellite.name)
         with pytest.raises(Exception, match=RegexSubstringMatch("is not a valid choice")):
-            diffAcrossSegOtherSat.reference_satellite.bind_to("Satellite/Bogus")
+            diffAcrossSegOtherSat.reference_satellite.bind_to_object("Satellite/Bogus")
         Assert.assertEqual("-Not Set-", diffAcrossSegOtherSat.other_segment_name)
         diffAcrossSegOtherSat.other_segment_name = "Initial State"
         Assert.assertEqual("Initial State", diffAcrossSegOtherSat.other_segment_name)
@@ -3088,14 +3088,14 @@ class EarlyBoundTests(TestBase):
         access.time_delay_convergence_tolerance = 1
         Assert.assertEqual(1, access.time_delay_convergence_tolerance)
 
-        access.target_object.bind_to("Facility/Facility1")
+        access.target_object.bind_to_object("Facility/Facility1")
 
         access.set_base_selection(BASE_SELECTION.CURRENT_SATELLITE)
         Assert.assertEqual(BASE_SELECTION.CURRENT_SATELLITE, access.base_selection_type)
         access.set_base_selection(BASE_SELECTION.SPECIFY)
         Assert.assertEqual(BASE_SELECTION.SPECIFY, access.base_selection_type)
 
-        access.base_selection.bind_to("GroundVehicle/GroundVehicle1")
+        access.base_selection.bind_to_object("GroundVehicle/GroundVehicle1")
 
         Assert.assertEqual("GroundVehicle/GroundVehicle1", access.base_selection.name)
 
@@ -3851,10 +3851,10 @@ class EarlyBoundTests(TestBase):
         access.set_base_selection(BASE_SELECTION.SPECIFY)
         Assert.assertEqual(BASE_SELECTION.SPECIFY, access.base_selection_type)
 
-        access.base_selection.bind_to("AreaTarget/AreaTarget1")
+        access.base_selection.bind_to_object("AreaTarget/AreaTarget1")
         Assert.assertEqual("AreaTarget/AreaTarget1", access.base_selection.name)
 
-        access.target_object.bind_to("Facility/Facility1")
+        access.target_object.bind_to_object("Facility/Facility1")
         Assert.assertEqual("Facility/Facility1", access.target_object.name)
 
         access.time_convergence = 0.01
@@ -4046,7 +4046,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception):
             follow.joining_type = FOLLOW_JOIN.SPECIFY
         with pytest.raises(Exception):
-            follow.leader.bind_to("Aircraft/Boing737")
+            follow.leader.bind_to_object("Aircraft/Boing737")
         self.TestSegmentProperties((IMCSSegment(follow)), True)
         with pytest.raises(Exception):
             follow.spacecraft_and_fuel_tank_type = FOLLOW_SPACECRAFT_AND_FUEL_TANK.SPECIFY
@@ -4061,7 +4061,7 @@ class EarlyBoundTests(TestBase):
         follow = clr.CastAs((ICloneable(comp)).clone_object(), MCSFollow)
 
         with pytest.raises(Exception):
-            follow.leader.bind_to("Aircraft/Boing737")
+            follow.leader.bind_to_object("Aircraft/Boing737")
         follow.x_offset = 1
         Assert.assertEqual(1, follow.x_offset)
         follow.y_offset = 2
@@ -7094,8 +7094,8 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception):
             gff.truncate_solid_tides = True
 
-        gff.solid_tide_type = SOLID_TIDE.PERMANENT
-        Assert.assertEqual(SOLID_TIDE.PERMANENT, gff.solid_tide_type)
+        gff.solid_tide_type = SOLID_TIDE.PERMANENT_ONLY
+        Assert.assertEqual(SOLID_TIDE.PERMANENT_ONLY, gff.solid_tide_type)
 
         with pytest.raises(Exception):
             gff.include_time_dependent_solid_tides = True

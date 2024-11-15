@@ -34,7 +34,7 @@ class SatelliteSnippets(CodeSnippetsTestBase):
             ),
             Satellite,
         )
-        CodeSnippetsTestBase.m_Root.unit_preferences.reset_units()
+        CodeSnippetsTestBase.m_Root.units_preferences.reset_units()
 
     # endregion
 
@@ -89,12 +89,10 @@ class SatelliteSnippets(CodeSnippetsTestBase):
 
     def ConfigureSatelliteWithJ2PerturbationPropagator(self, satellite: "Satellite"):
         # Set propagator to J2 Perturbation
-        satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_J2_PERTURBATION)
+        satellite.set_propagator_type(PROPAGATOR_TYPE.J2_PERTURBATION)
 
         # Get the J2 Perturbation propagator
-        propagator: "VehiclePropagatorJ2Perturbation" = clr.CastAs(
-            satellite.propagator, VehiclePropagatorJ2Perturbation
-        )
+        propagator: "PropagatorJ2Perturbation" = clr.CastAs(satellite.propagator, PropagatorJ2Perturbation)
 
     # endregion
 
@@ -104,10 +102,10 @@ class SatelliteSnippets(CodeSnippetsTestBase):
 
     def ConfigureSatelliteWithGPSPropagator(self, satellite: "Satellite"):
         # Set propagator to GPS
-        satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GPS)
+        satellite.set_propagator_type(PROPAGATOR_TYPE.GPS)
 
         # Get the GPS propagator
-        propagator: "VehiclePropagatorGPS" = clr.CastAs(satellite.propagator, VehiclePropagatorGPS)
+        propagator: "PropagatorGPS" = clr.CastAs(satellite.propagator, PropagatorGPS)
 
     # endregion
 
@@ -117,10 +115,10 @@ class SatelliteSnippets(CodeSnippetsTestBase):
 
     def ConfigureSatelliteWithStkExternalPropagator(self, satellite: "Satellite"):
         # Set propagator to STK External
-        satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_STK_EXTERNAL)
+        satellite.set_propagator_type(PROPAGATOR_TYPE.STK_EXTERNAL)
 
         # Get the STK External propagator
-        propagator: "VehiclePropagatorStkExternal" = clr.CastAs(satellite.propagator, VehiclePropagatorStkExternal)
+        propagator: "PropagatorStkExternal" = clr.CastAs(satellite.propagator, PropagatorStkExternal)
 
     # endregion
 
@@ -130,10 +128,10 @@ class SatelliteSnippets(CodeSnippetsTestBase):
 
     def ConfigureSatelliteWithSGP4Propagator(self, satellite: "Satellite"):
         # Set propagator to SGP4
-        satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_SGP4)
+        satellite.set_propagator_type(PROPAGATOR_TYPE.SGP4)
 
         # Get the SGP4 propagator
-        propagator: "VehiclePropagatorSGP4" = clr.CastAs(satellite.propagator, VehiclePropagatorSGP4)
+        propagator: "PropagatorSGP4" = clr.CastAs(satellite.propagator, PropagatorSGP4)
 
     # endregion
 
@@ -143,10 +141,10 @@ class SatelliteSnippets(CodeSnippetsTestBase):
 
     def ConfigureSatelliteWithSPICEPropagator(self, satellite: "Satellite"):
         # Set propagator to SPICE
-        satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_SPICE)
+        satellite.set_propagator_type(PROPAGATOR_TYPE.SPICE)
 
         # Get the SPICE propagator
-        propagator: "VehiclePropagatorSPICE" = clr.CastAs(satellite.propagator, VehiclePropagatorSPICE)
+        propagator: "PropagatorSPICE" = clr.CastAs(satellite.propagator, PropagatorSPICE)
 
     # endregion
 
@@ -156,10 +154,10 @@ class SatelliteSnippets(CodeSnippetsTestBase):
 
     def ConfigureSatelliteWithLOPPropagator(self, satellite: "Satellite"):
         # Set satellite propagator to LOP
-        satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_LOP)
+        satellite.set_propagator_type(PROPAGATOR_TYPE.LOP)
 
         # Get the LOP propagator
-        propagator: "VehiclePropagatorLOP" = clr.CastAs(satellite.propagator, VehiclePropagatorLOP)
+        propagator: "PropagatorLOP" = clr.CastAs(satellite.propagator, PropagatorLOP)
 
     # endregion
 
@@ -169,16 +167,16 @@ class SatelliteSnippets(CodeSnippetsTestBase):
 
     def ConfigureSatelliteWithHPOPPropagator(self, satellite: "Satellite"):
         # Set satellite propagator to HPOP
-        satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_HPOP)
+        satellite.set_propagator_type(PROPAGATOR_TYPE.HPOP)
 
         # Get the HPOP propagator
-        propagator: "VehiclePropagatorHPOP" = clr.CastAs(satellite.propagator, VehiclePropagatorHPOP)
+        propagator: "PropagatorHPOP" = clr.CastAs(satellite.propagator, PropagatorHPOP)
 
     # endregion
 
     # region ConfigureTargetSlew
     def test_ConfigureTargetSlew(self):
-        SatelliteSnippets.m_Object.set_attitude_type(VEHICLE_ATTITUDE.ATTITUDE_STANDARD)
+        SatelliteSnippets.m_Object.set_attitude_type(VEHICLE_ATTITUDE.STANDARD)
         fac: "Facility" = clr.CastAs(
             TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "FacSlew"), Facility
         )
@@ -186,33 +184,33 @@ class SatelliteSnippets(CodeSnippetsTestBase):
         self.ConfigureTargetSlew(SatelliteSnippets.m_Object)
 
     def ConfigureTargetSlew(self, satellite: "Satellite"):
-        orbitAttStandard: "VehicleOrbitAttitudeStandard" = clr.CastAs(satellite.attitude, VehicleOrbitAttitudeStandard)
+        orbitAttStandard: "AttitudeStandardOrbit" = clr.CastAs(satellite.attitude, AttitudeStandardOrbit)
         orbitAttStandard.pointing.use_target_pointing = True
         orbitAttStandard.pointing.targets.add("Facility/FacSlew")
-        orbitAttStandard.pointing.target_slew.set_slew_mode_type(VEHICLE_SLEW_MODE.CONSTRAINED2_ND_ORDER_SPLINE)
+        orbitAttStandard.pointing.target_slew.set_slew_mode_type(VEHICLE_SLEW_MODE.CONSTRAINED_2ND_ORDER_SPLINE)
 
         constrainedSlew: "VehicleAttitudeSlewConstrained" = clr.CastAs(
             orbitAttStandard.pointing.target_slew.slew_mode, VehicleAttitudeSlewConstrained
         )
         constrainedSlew.maximum_slew_time = 20.0  # sec
-        constrainedSlew.slew_timing_between_targets = VEHICLE_SLEW_TIMING_BETWEEN_TARGETS.OPTIMAL
+        constrainedSlew.slew_timing_between_targets = VEHICLE_SLEW_TIMING_BETWEEN_TARGET_TYPE.OPTIMAL
 
         maxRate: "VehicleAttitudeMaximumSlewRate" = constrainedSlew.maximum_slew_rate
         maxRate.magnitude = 10.0  # deg/sec^2
-        maxRate.per_axis_x_enabled = True
-        maxRate.per_axis_x = 5.0  # deg/sec^2
-        maxRate.per_axis_y_enabled = True
-        maxRate.per_axis_y = 5.0  # deg/sec^2
-        maxRate.per_axis_z_enabled = True
-        maxRate.per_axis_z = 5.0  # deg/sec^2
+        maxRate.slew_rate_along_x_axis_enabled = True
+        maxRate.slew_rate_along_x_axis = 5.0  # deg/sec^2
+        maxRate.slew_rate_along_y_axis_enabled = True
+        maxRate.slew_rate_along_y_axis = 5.0  # deg/sec^2
+        maxRate.slew_rate_along_z_axis_enabled = True
+        maxRate.slew_rate_along_z_axis = 5.0  # deg/sec^2
 
         maxAcceleration: "VehicleAttitudeMaximumSlewAcceleration" = constrainedSlew.maximum_slew_acceleration
         maxAcceleration.magnitude = 10.0  # deg/sec^2
-        maxAcceleration.per_axis_x_acceleration_enabled = True
-        maxAcceleration.per_axis_x_acceleration = 5.0  # deg/sec^2
-        maxAcceleration.per_axis_y_acceleration_enabled = True
-        maxAcceleration.per_axis_y_acceleration = 5.0  # deg/sec^2
-        maxAcceleration.per_axis_z_acceleration_enabled = True
-        maxAcceleration.per_axis_z_acceleration = 5.0  # deg/sec^2
+        maxAcceleration.slew_acceleration_along_x_axis_enabled = True
+        maxAcceleration.slew_acceleration_along_x_axis = 5.0  # deg/sec^2
+        maxAcceleration.slew_acceleration_along_y_axis_enabled = True
+        maxAcceleration.slew_acceleration_along_y_axis = 5.0  # deg/sec^2
+        maxAcceleration.slew_acceleration_along_z_axis_enabled = True
+        maxAcceleration.slew_acceleration_along_z_axis = 5.0  # deg/sec^2
 
     # endregion

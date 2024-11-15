@@ -53,24 +53,24 @@ class RealTimeSnippets(CodeSnippetsTestBase):
         anim: "IAnimation" = None
         holdTimeStepType: "SCENARIO_TIME_STEP_TYPE" = SCENARIO_TIME_STEP_TYPE.REAL_TIME
         if not TestBase.NoGraphicsMode:
-            scenAnim = scenario.animation
-            holdTimeStepType = scenAnim.anim_step_type
-            scenAnim.anim_step_type = SCENARIO_TIME_STEP_TYPE.REAL_TIME
+            scenAnim = scenario.animation_settings
+            holdTimeStepType = scenAnim.animation_step_type
+            scenAnim.animation_step_type = SCENARIO_TIME_STEP_TYPE.REAL_TIME
             anim = clr.CastAs(CodeSnippetsTestBase.m_Root, IAnimation)
             anim.play_forward()
 
-        RealTimeSnippets.m_Object.set_trajectory_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_REALTIME)
-        prop: "IVehiclePropagator" = RealTimeSnippets.m_Object.trajectory
-        propRealtime: "VehiclePropagatorRealtime" = clr.CastAs(prop, VehiclePropagatorRealtime)
+        RealTimeSnippets.m_Object.set_trajectory_type(PROPAGATOR_TYPE.REAL_TIME)
+        prop: "IPropagator" = RealTimeSnippets.m_Object.trajectory
+        propRealtime: "PropagatorRealtime" = clr.CastAs(prop, PropagatorRealtime)
 
         self.ConfigureRealtimePropagator(CodeSnippetsTestBase.m_Root, propRealtime)
         if not TestBase.NoGraphicsMode:
             anim.pause()
 
             # Cleanup
-            scenAnim.anim_step_type = holdTimeStepType
+            scenAnim.animation_step_type = holdTimeStepType
 
-    def ConfigureRealtimePropagator(self, root: "StkObjectRoot", propagator: "VehiclePropagatorRealtime"):
+    def ConfigureRealtimePropagator(self, root: "StkObjectRoot", propagator: "PropagatorRealtime"):
         # Set Realtime Propagator settings if they should be other than
         # the defaults.
         propagator.interpolation_order = 1
@@ -96,14 +96,14 @@ class RealTimeSnippets(CodeSnippetsTestBase):
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.GROUND_VEHICLE, "gv1"),
             GroundVehicle,
         )
-        gv.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_REALTIME)
-        (VehiclePropagatorRealtime(gv.route)).propagate()
-        realtime: "VehiclePropagatorRealtime" = clr.CastAs(gv.route, VehiclePropagatorRealtime)
+        gv.set_route_type(PROPAGATOR_TYPE.REAL_TIME)
+        (PropagatorRealtime(gv.route)).propagate()
+        realtime: "PropagatorRealtime" = clr.CastAs(gv.route, PropagatorRealtime)
         self.AddRealtimeLLAPositions(realtime)
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.GROUND_VEHICLE, "gv1")
 
-    def AddRealtimeLLAPositions(self, propagator: "VehiclePropagatorRealtime"):
-        points: "VehicleRealtimeLLAPoints" = propagator.point_builder.lla
+    def AddRealtimeLLAPositions(self, propagator: "PropagatorRealtime"):
+        points: "PropagatorRealtimeDeticPoints" = propagator.point_builder.ephemeris_in_latitude_longituide_altitude
         points.add("1 Jan 2012 12:00:00.000", 39.693, -76.399, 0.039, 0.03458, 0.01223, 0.05402)
 
     # endregion
@@ -114,13 +114,13 @@ class RealTimeSnippets(CodeSnippetsTestBase):
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.GROUND_VEHICLE, "gv1"),
             GroundVehicle,
         )
-        gv.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_REALTIME)
-        (VehiclePropagatorRealtime(gv.route)).propagate()
-        realtime: "VehiclePropagatorRealtime" = clr.CastAs(gv.route, VehiclePropagatorRealtime)
+        gv.set_route_type(PROPAGATOR_TYPE.REAL_TIME)
+        (PropagatorRealtime(gv.route)).propagate()
+        realtime: "PropagatorRealtime" = clr.CastAs(gv.route, PropagatorRealtime)
         self.AddRealtimeLLAPositionsInBatches(realtime)
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.GROUND_VEHICLE, "gv1")
 
-    def AddRealtimeLLAPositionsInBatches(self, propagator: "VehiclePropagatorRealtime"):
+    def AddRealtimeLLAPositionsInBatches(self, propagator: "PropagatorRealtime"):
         # Add realtime LLA points in batches
         times = ["1 Jan 2012 12:00:00.000", "1 Jan 2012 12:01:00.000", "1 Jan 2012 12:02:00.000"]
         lat = [39.693, 41.061, 39.925]
@@ -130,7 +130,7 @@ class RealTimeSnippets(CodeSnippetsTestBase):
         lonrate = [0.01223, 0.01148, 0.01075]
         altrate = [0.05402, 0.0521, 0.05075]
 
-        points: "VehicleRealtimeLLAPoints" = propagator.point_builder.lla
+        points: "PropagatorRealtimeDeticPoints" = propagator.point_builder.ephemeris_in_latitude_longituide_altitude
 
         # AddBatch expects each parameter to be a one dimensional array and all of the same length
         points.add_batch(times, lat, lon, alt, latrate, lonrate, altrate)

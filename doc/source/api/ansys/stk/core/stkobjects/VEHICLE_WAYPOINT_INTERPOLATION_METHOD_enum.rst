@@ -19,10 +19,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~WAYPOINT_ELLIPSOID_HEIGHT`
+            * - :py:attr:`~ELLIPSOID_HEIGHT`
               - Ellipsoid height: interpolate using the greatArc interpolator without considering terrain.
 
-            * - :py:attr:`~WAYPOINT_TERRAIN_HEIGHT`
+            * - :py:attr:`~TERRAIN_HEIGHT`
               - Terrain height: assigns a height above terrain by a linear interpolation between the heights above terrain at the waypoints.
 
 

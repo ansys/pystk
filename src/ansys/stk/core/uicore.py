@@ -19,8 +19,7 @@ from .internal.comutil     import IUnknown, IDispatch
 from .internal.apiutil     import (InterfaceProxy, EnumeratorProxy, OutArg, 
     initialize_from_source_object, get_interface_property, set_class_attribute, 
     SupportsDeleteCallback)
-from .internal.eventutil   import *
-from .utilities.exceptions import *
+from .utilities.exceptions import STKRuntimeError
 
 
 def _raise_uninitialized_error(*args):
@@ -120,7 +119,7 @@ class WindowsCollection(SupportsDeleteCallback):
     _get_count_method_offset = 2
     _arrange_method_offset = 3
     _add_method_offset = 4
-    _get__NewEnum_method_offset = 5
+    _get__new_enum_method_offset = 5
     _get_item_by_index_method_offset = 6
     _get_item_by_name_method_offset = 7
     _metadata = {
@@ -132,7 +131,7 @@ class WindowsCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, WindowsCollection)
     def __iter__(self):
         """Create an iterator for the WindowsCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "Window":
@@ -147,9 +146,9 @@ class WindowsCollection(SupportsDeleteCallback):
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
-    def item(self, indexOrCaption:typing.Any) -> "Window":
+    def item(self, index_or_caption:typing.Any) -> "Window":
         """Retrieve a window object."""
-        return self._intf.invoke(WindowsCollection._metadata, WindowsCollection._item_metadata, indexOrCaption, OutArg())
+        return self._intf.invoke(WindowsCollection._metadata, WindowsCollection._item_metadata, index_or_caption, OutArg())
 
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -162,24 +161,24 @@ class WindowsCollection(SupportsDeleteCallback):
     _arrange_metadata = { "offset" : _arrange_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(WINDOW_ARRANGE_STYLE),) }
-    def arrange(self, arrangeStyle:"WINDOW_ARRANGE_STYLE") -> None:
+    def arrange(self, arrange_style:"WINDOW_ARRANGE_STYLE") -> None:
         """Arranges the application windows using the specified style."""
-        return self._intf.invoke(WindowsCollection._metadata, WindowsCollection._arrange_metadata, arrangeStyle)
+        return self._intf.invoke(WindowsCollection._metadata, WindowsCollection._arrange_metadata, arrange_style)
 
     _add_metadata = { "offset" : _add_method_offset,
             "arg_types" : (agcom.BSTR, agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
-    def add(self, pluginID:str, initData:typing.Any) -> "Window":
+    def add(self, plugin_id:str, init_data:typing.Any) -> "Window":
         """Create a new window. The bstrPluginID is a COM ProgID associated with an STK plugin."""
-        return self._intf.invoke(WindowsCollection._metadata, WindowsCollection._add_metadata, pluginID, initData, OutArg())
+        return self._intf.invoke(WindowsCollection._metadata, WindowsCollection._add_metadata, plugin_id, init_data, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Enumerates the windows in the collection."""
-        return self._intf.get_property(WindowsCollection._metadata, WindowsCollection._get__NewEnum_metadata)
+        return self._intf.get_property(WindowsCollection._metadata, WindowsCollection._get__new_enum_metadata)
 
     _get_item_by_index_metadata = { "offset" : _get_item_by_index_method_offset,
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
@@ -199,12 +198,12 @@ class WindowsCollection(SupportsDeleteCallback):
 
 
     _property_names[count] = "count"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type WindowsCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, WindowsCollection)
+        initialize_from_source_object(self, source_object, WindowsCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -289,8 +288,8 @@ class Window(SupportsDeleteCallback):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(APPLICATION_WINDOW_STATE),) }
     @window_state.setter
-    def window_state(self, newVal:"APPLICATION_WINDOW_STATE") -> None:
-        return self._intf.set_property(Window._metadata, Window._set_window_state_metadata, newVal)
+    def window_state(self, new_value:"APPLICATION_WINDOW_STATE") -> None:
+        return self._intf.set_property(Window._metadata, Window._set_window_state_metadata, new_value)
 
     _close_metadata = { "offset" : _close_method_offset,
             "arg_types" : (),
@@ -311,8 +310,8 @@ class Window(SupportsDeleteCallback):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.LongArg,) }
     @height.setter
-    def height(self, newVal:int) -> None:
-        return self._intf.set_property(Window._metadata, Window._set_height_metadata, newVal)
+    def height(self, new_value:int) -> None:
+        return self._intf.set_property(Window._metadata, Window._set_height_metadata, new_value)
 
     _get_width_metadata = { "offset" : _get_width_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -326,8 +325,8 @@ class Window(SupportsDeleteCallback):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.LongArg,) }
     @width.setter
-    def width(self, newVal:int) -> None:
-        return self._intf.set_property(Window._metadata, Window._set_width_metadata, newVal)
+    def width(self, new_value:int) -> None:
+        return self._intf.set_property(Window._metadata, Window._set_width_metadata, new_value)
 
     _get_left_metadata = { "offset" : _get_left_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -341,8 +340,8 @@ class Window(SupportsDeleteCallback):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.LongArg,) }
     @left.setter
-    def left(self, newVal:int) -> None:
-        return self._intf.set_property(Window._metadata, Window._set_left_metadata, newVal)
+    def left(self, new_value:int) -> None:
+        return self._intf.set_property(Window._metadata, Window._set_left_metadata, new_value)
 
     _get_top_metadata = { "offset" : _get_top_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -356,8 +355,8 @@ class Window(SupportsDeleteCallback):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.LongArg,) }
     @top.setter
-    def top(self, newVal:int) -> None:
-        return self._intf.set_property(Window._metadata, Window._set_top_metadata, newVal)
+    def top(self, new_value:int) -> None:
+        return self._intf.set_property(Window._metadata, Window._set_top_metadata, new_value)
 
     _get_dock_style_metadata = { "offset" : _get_dock_style_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -371,8 +370,8 @@ class Window(SupportsDeleteCallback):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(WINDOW_DOCK_STYLE),) }
     @dock_style.setter
-    def dock_style(self, newVal:"WINDOW_DOCK_STYLE") -> None:
-        return self._intf.set_property(Window._metadata, Window._set_dock_style_metadata, newVal)
+    def dock_style(self, new_value:"WINDOW_DOCK_STYLE") -> None:
+        return self._intf.set_property(Window._metadata, Window._set_dock_style_metadata, new_value)
 
     _get_no_workbook_close_metadata = { "offset" : _get_no_workbook_close_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -386,8 +385,8 @@ class Window(SupportsDeleteCallback):
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @no_workbook_close.setter
-    def no_workbook_close(self, newVal:bool) -> None:
-        return self._intf.set_property(Window._metadata, Window._set_no_workbook_close_metadata, newVal)
+    def no_workbook_close(self, new_value:bool) -> None:
+        return self._intf.set_property(Window._metadata, Window._set_no_workbook_close_metadata, new_value)
 
     _get_unpinned_metadata = { "offset" : _get_unpinned_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -401,8 +400,8 @@ class Window(SupportsDeleteCallback):
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @unpinned.setter
-    def unpinned(self, newVal:bool) -> None:
-        return self._intf.set_property(Window._metadata, Window._set_unpinned_metadata, newVal)
+    def unpinned(self, new_value:bool) -> None:
+        return self._intf.set_property(Window._metadata, Window._set_unpinned_metadata, new_value)
 
     _get_can_pin_metadata = { "offset" : _get_can_pin_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -430,9 +429,9 @@ class Window(SupportsDeleteCallback):
     _get_service_by_type_metadata = { "offset" : _get_service_by_type_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.EnumArg(WINDOW_SERVICE_TYPE), agmarshall.InterfaceOutArg,) }
-    def get_service_by_type(self, serviceType:"WINDOW_SERVICE_TYPE") -> typing.Any:
+    def get_service_by_type(self, service_type:"WINDOW_SERVICE_TYPE") -> typing.Any:
         """Return a service object that can be accessed at runtime. The method returns null if no service object is associated with the specified service type."""
-        return self._intf.invoke(Window._metadata, Window._get_service_by_type_metadata, serviceType, OutArg())
+        return self._intf.invoke(Window._metadata, Window._get_service_by_type_metadata, service_type, OutArg())
 
     _property_names[caption] = "caption"
     _property_names[window_state] = "window_state"
@@ -446,10 +445,10 @@ class Window(SupportsDeleteCallback):
     _property_names[can_pin] = "can_pin"
     _property_names[toolbars] = "toolbars"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type Window."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, Window)
+        initialize_from_source_object(self, source_object, Window)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -467,7 +466,7 @@ class Toolbar(SupportsDeleteCallback):
 
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_id_method_offset = 1
+    _get_identifier_method_offset = 1
     _get_caption_method_offset = 2
     _get_visible_method_offset = 3
     _set_visible_method_offset = 4
@@ -481,13 +480,13 @@ class Toolbar(SupportsDeleteCallback):
     def _get_property(self, attrname):
         return get_interface_property(attrname, Toolbar)
     
-    _get_id_metadata = { "offset" : _get_id_method_offset,
+    _get_identifier_metadata = { "offset" : _get_identifier_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
     @property
-    def id(self) -> int:
+    def identifier(self) -> int:
         """The identity."""
-        return self._intf.get_property(Toolbar._metadata, Toolbar._get_id_metadata)
+        return self._intf.get_property(Toolbar._metadata, Toolbar._get_identifier_metadata)
 
     _get_caption_metadata = { "offset" : _get_caption_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -509,8 +508,8 @@ class Toolbar(SupportsDeleteCallback):
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @visible.setter
-    def visible(self, newVal:bool) -> None:
-        return self._intf.set_property(Toolbar._metadata, Toolbar._set_visible_metadata, newVal)
+    def visible(self, new_value:bool) -> None:
+        return self._intf.set_property(Toolbar._metadata, Toolbar._set_visible_metadata, new_value)
 
     _get_float_state_metadata = { "offset" : _get_float_state_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -524,18 +523,18 @@ class Toolbar(SupportsDeleteCallback):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(WINDOW_ARRANGE_STATE),) }
     @float_state.setter
-    def float_state(self, newVal:"WINDOW_ARRANGE_STATE") -> None:
-        return self._intf.set_property(Toolbar._metadata, Toolbar._set_float_state_metadata, newVal)
+    def float_state(self, new_value:"WINDOW_ARRANGE_STATE") -> None:
+        return self._intf.set_property(Toolbar._metadata, Toolbar._set_float_state_metadata, new_value)
 
-    _property_names[id] = "id"
+    _property_names[identifier] = "identifier"
     _property_names[caption] = "caption"
     _property_names[visible] = "visible"
     _property_names[float_state] = "float_state"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type Toolbar."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, Toolbar)
+        initialize_from_source_object(self, source_object, Toolbar)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -555,7 +554,7 @@ class ToolbarCollection(SupportsDeleteCallback):
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _item_method_offset = 1
     _get_count_method_offset = 2
-    _get__NewEnum_method_offset = 3
+    _get__new_enum_method_offset = 3
     _get_toolbar_by_id_method_offset = 4
     _get_item_by_index_method_offset = 5
     _get_item_by_name_method_offset = 6
@@ -568,7 +567,7 @@ class ToolbarCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, ToolbarCollection)
     def __iter__(self):
         """Create an iterator for the ToolbarCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "Toolbar":
@@ -583,9 +582,9 @@ class ToolbarCollection(SupportsDeleteCallback):
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
-    def item(self, indexOrCaption:typing.Any) -> "Toolbar":
+    def item(self, index_or_caption:typing.Any) -> "Toolbar":
         """Retrieve a toolbar object."""
-        return self._intf.invoke(ToolbarCollection._metadata, ToolbarCollection._item_metadata, indexOrCaption, OutArg())
+        return self._intf.invoke(ToolbarCollection._metadata, ToolbarCollection._item_metadata, index_or_caption, OutArg())
 
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -595,13 +594,13 @@ class ToolbarCollection(SupportsDeleteCallback):
         """Return a total number of toolbars in the collection."""
         return self._intf.get_property(ToolbarCollection._metadata, ToolbarCollection._get_count_metadata)
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Enumerates the toolbars in the collection."""
-        return self._intf.get_property(ToolbarCollection._metadata, ToolbarCollection._get__NewEnum_metadata)
+        return self._intf.get_property(ToolbarCollection._metadata, ToolbarCollection._get__new_enum_metadata)
 
     _get_toolbar_by_id_metadata = { "offset" : _get_toolbar_by_id_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
@@ -628,12 +627,12 @@ class ToolbarCollection(SupportsDeleteCallback):
 
 
     _property_names[count] = "count"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ToolbarCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ToolbarCollection)
+        initialize_from_source_object(self, source_object, ToolbarCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -670,10 +669,10 @@ class WindowMapObject(SupportsDeleteCallback):
 
     _property_names[map_id] = "map_id"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type WindowMapObject."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, WindowMapObject)
+        initialize_from_source_object(self, source_object, WindowMapObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -710,10 +709,10 @@ class WindowGlobeObject(SupportsDeleteCallback):
 
     _property_names[scene_id] = "scene_id"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type WindowGlobeObject."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, WindowGlobeObject)
+        initialize_from_source_object(self, source_object, WindowGlobeObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):

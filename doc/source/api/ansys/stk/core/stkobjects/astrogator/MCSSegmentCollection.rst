@@ -47,7 +47,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSSegmentCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSSegmentCollection._new_enum`
               - Allows you to enumerate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSSegmentCollection.count`
               - Returns the size of the collection.
@@ -67,8 +67,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.astrogator.MCSSegmentCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.astrogator.MCSSegmentCollection._new_enum
     :type: EnumeratorProxy
 
     Allows you to enumerate through the collection.
@@ -89,42 +89,42 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, indexOrName: typing.Any) -> IMCSSegment
+.. py:method:: item(self, index_or_name: typing.Any) -> IMCSSegment
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSSegmentCollection.item
 
     Return the specified segment(using segment name or index number).
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 
         :obj:`~IMCSSegment`
 
-.. py:method:: insert(self, segmentType: SEGMENT_TYPE, segmentName: str, segmentToInsertBefore: str) -> IMCSSegment
+.. py:method:: insert(self, segment_type: SEGMENT_TYPE, segment_name: str, segment_to_insert_before: str) -> IMCSSegment
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSSegmentCollection.insert
 
     Add a segment to the segment collection.
 
     :Parameters:
 
-    **segmentType** : :obj:`~SEGMENT_TYPE`
-    **segmentName** : :obj:`~str`
-    **segmentToInsertBefore** : :obj:`~str`
+    **segment_type** : :obj:`~SEGMENT_TYPE`
+    **segment_name** : :obj:`~str`
+    **segment_to_insert_before** : :obj:`~str`
 
     :Returns:
 
         :obj:`~IMCSSegment`
 
-.. py:method:: remove(self, segmentNameToRemove: str) -> None
+.. py:method:: remove(self, segment_name_to_remove: str) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSSegmentCollection.remove
 
     Remove a segment; the End segment cannot be deleted.
 
     :Parameters:
 
-    **segmentNameToRemove** : :obj:`~str`
+    **segment_name_to_remove** : :obj:`~str`
 
     :Returns:
 
@@ -141,33 +141,33 @@ Method detail
 
 
 
-.. py:method:: cut(self, segmentNameToCut: str) -> None
+.. py:method:: cut(self, segment_name_to_cut: str) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSSegmentCollection.cut
 
     Copy the segment into the clipboard and removes the segment from the sequence.
 
     :Parameters:
 
-    **segmentNameToCut** : :obj:`~str`
+    **segment_name_to_cut** : :obj:`~str`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: paste(self, segmentToPasteBefore: str) -> IMCSSegment
+.. py:method:: paste(self, segment_to_paste_before: str) -> IMCSSegment
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSSegmentCollection.paste
 
     Pastes the segment from the clipboard and inserts in before the given segment name.
 
     :Parameters:
 
-    **segmentToPasteBefore** : :obj:`~str`
+    **segment_to_paste_before** : :obj:`~str`
 
     :Returns:
 
         :obj:`~IMCSSegment`
 
-.. py:method:: insert_copy(self, segment: IMCSSegment, segmentToInsertBefore: str) -> IMCSSegment
+.. py:method:: insert_copy(self, segment: IMCSSegment, segment_to_insert_before: str) -> IMCSSegment
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSSegmentCollection.insert_copy
 
     Copy the segment pointer and inserts the copy before the given segment name.
@@ -175,21 +175,21 @@ Method detail
     :Parameters:
 
     **segment** : :obj:`~IMCSSegment`
-    **segmentToInsertBefore** : :obj:`~str`
+    **segment_to_insert_before** : :obj:`~str`
 
     :Returns:
 
         :obj:`~IMCSSegment`
 
-.. py:method:: insert_by_name(self, segmentName: str, segmentToInsertBefore: str) -> IMCSSegment
+.. py:method:: insert_by_name(self, segment_name: str, segment_to_insert_before: str) -> IMCSSegment
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSSegmentCollection.insert_by_name
 
     Insert a segment by name to the segment collection.
 
     :Parameters:
 
-    **segmentName** : :obj:`~str`
-    **segmentToInsertBefore** : :obj:`~str`
+    **segment_name** : :obj:`~str`
+    **segment_to_insert_before** : :obj:`~str`
 
     :Returns:
 

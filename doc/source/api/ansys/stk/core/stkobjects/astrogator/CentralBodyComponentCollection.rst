@@ -39,7 +39,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CentralBodyComponentCollection.count`
               - Returns the size of the collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CentralBodyComponentCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CentralBodyComponentCollection._new_enum`
               - Iterates through the collection.
 
 
@@ -61,8 +61,8 @@ Property detail
 
     Returns the size of the collection.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.astrogator.CentralBodyComponentCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.astrogator.CentralBodyComponentCollection._new_enum
     :type: EnumeratorProxy
 
     Iterates through the collection.
@@ -71,14 +71,14 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, indexOrCbName: typing.Any) -> CentralBodyComponent
+.. py:method:: item(self, index_or_cb_name: typing.Any) -> CentralBodyComponent
     :canonical: ansys.stk.core.stkobjects.astrogator.CentralBodyComponentCollection.item
 
     Allow you to iterate through the collection.
 
     :Parameters:
 
-    **indexOrCbName** : :obj:`~typing.Any`
+    **index_or_cb_name** : :obj:`~typing.Any`
 
     :Returns:
 
@@ -86,27 +86,27 @@ Method detail
 
 
 
-.. py:method:: add(self, cbName: str) -> None
+.. py:method:: add(self, cb_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.CentralBodyComponentCollection.add
 
     Add a central body to the collection.
 
     :Parameters:
 
-    **cbName** : :obj:`~str`
+    **cb_name** : :obj:`~str`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: remove(self, indexOrName: typing.Any) -> None
+.. py:method:: remove(self, index_or_name: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.CentralBodyComponentCollection.remove
 
     Remove a central body from the collection.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 
@@ -134,14 +134,14 @@ Method detail
 
         :obj:`~CentralBodyComponent`
 
-.. py:method:: get_item_by_name(self, cbName: str) -> CentralBodyComponent
+.. py:method:: get_item_by_name(self, cb_name: str) -> CentralBodyComponent
     :canonical: ansys.stk.core.stkobjects.astrogator.CentralBodyComponentCollection.get_item_by_name
 
     Retrieve a central body from the collection by name.
 
     :Parameters:
 
-    **cbName** : :obj:`~str`
+    **cb_name** : :obj:`~str`
 
     :Returns:
 

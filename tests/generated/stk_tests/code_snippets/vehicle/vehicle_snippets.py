@@ -47,7 +47,7 @@ class VehicleSnippets(CodeSnippetsTestBase):
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.GROUND_VEHICLE, "gv1"),
             GroundVehicle,
         )
-        ga: "VehiclePropagatorGreatArc" = clr.CastAs(gv.route, VehiclePropagatorGreatArc)
+        ga: "PropagatorGreatArc" = clr.CastAs(gv.route, PropagatorGreatArc)
         ga.waypoints.add()
         ga.waypoints.add()
         ga.propagate()
@@ -60,11 +60,11 @@ class VehicleSnippets(CodeSnippetsTestBase):
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.GROUND_VEHICLE, "gv1")
 
     def ExportVehicleToStkEphemerisFile(
-        self, scenario: "Scenario", stkEphem: "VehicleEphemerisStkExportTool", ephemFilePath: str
+        self, scenario: "Scenario", stkEphem: "VehicleEphemerisExportTool", ephemFilePath: str
     ):
         # set export parameters
-        stkEphem.coordinate_system = STK_EPHEM_COORDINATE_SYSTEM.FIXED
-        stkEphem.include_interpolation = True
+        stkEphem.coordinate_system = EPHEMERIS_COORDINATE_SYSTEM_TYPE.FIXED
+        stkEphem.include_interpolation_boundaries = True
         stkEphem.version_format = EXPORT_TOOL_VERSION_FORMAT.CURRENT
         stkEphem.time_period.time_period_type = EXPORT_TOOL_TIME_PERIOD.SPECIFY
 
@@ -72,7 +72,7 @@ class VehicleSnippets(CodeSnippetsTestBase):
         stkEphem.time_period.start = scenario.start_time
         stkEphem.time_period.stop = scenario.stop_time
 
-        stkEphem.step_size.step_size_type = EXPORT_TOOL_STEP_SIZE.EPHEM
+        stkEphem.step_size.step_size_type = EXPORT_TOOL_STEP_SIZE.EPHEMERIS
         stkEphem.export(ephemFilePath)
 
     # endregion
@@ -83,7 +83,7 @@ class VehicleSnippets(CodeSnippetsTestBase):
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.GROUND_VEHICLE, "gv1"),
             GroundVehicle,
         )
-        ga: "VehiclePropagatorGreatArc" = clr.CastAs(gv.route, VehiclePropagatorGreatArc)
+        ga: "PropagatorGreatArc" = clr.CastAs(gv.route, PropagatorGreatArc)
         ga.waypoints.add()
         ga.waypoints.add()
         ga.propagate()
@@ -101,7 +101,7 @@ class VehicleSnippets(CodeSnippetsTestBase):
         customAxes.reference_axes_name = "CentralBody/Sun J2000 Axes"
 
         attitudeExport.version_format = EXPORT_TOOL_VERSION_FORMAT.CURRENT
-        attitudeExport.include = ATTITUDE_INCLUDE.QUATERNIONS_ANGULAR_VELOCITY
+        attitudeExport.include = ATTITUDE_INCLUDE.QUATERNIONS_AND_ANGULAR_VELOCITY
 
         # Set the attitude file to use Scenario start and stop time
         attitudeExport.time_period.time_period_type = EXPORT_TOOL_TIME_PERIOD.SPECIFY

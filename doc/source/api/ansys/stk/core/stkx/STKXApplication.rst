@@ -190,19 +190,19 @@ Method detail
 
 
 
-.. py:method:: set_online_options(self, useProxy: bool, serverName: str, portNum: int, userName: str, password: str, savePassword: bool) -> bool
+.. py:method:: set_online_options(self, use_proxy: bool, server_name: str, port_num: int, user_name: str, password: str, save_password: bool) -> bool
     :canonical: ansys.stk.core.stkx.STKXApplication.set_online_options
 
     Set http proxy online options.
 
     :Parameters:
 
-    **useProxy** : :obj:`~bool`
-    **serverName** : :obj:`~str`
-    **portNum** : :obj:`~int`
-    **userName** : :obj:`~str`
+    **use_proxy** : :obj:`~bool`
+    **server_name** : :obj:`~str`
+    **port_num** : :obj:`~int`
+    **user_name** : :obj:`~str`
     **password** : :obj:`~str`
-    **savePassword** : :obj:`~bool`
+    **save_password** : :obj:`~bool`
 
     :Returns:
 
@@ -217,15 +217,15 @@ Method detail
 
         :obj:`~typing.Tuple[bool, str, int, str, bool]`
 
-.. py:method:: set_connect_handler(self, commandID: str, progID: str) -> None
+.. py:method:: set_connect_handler(self, command_id: str, prog_id: str) -> None
     :canonical: ansys.stk.core.stkx.STKXApplication.set_connect_handler
 
     Set callback to handle a certain connect command.
 
     :Parameters:
 
-    **commandID** : :obj:`~str`
-    **progID** : :obj:`~str`
+    **command_id** : :obj:`~str`
+    **prog_id** : :obj:`~str`
 
     :Returns:
 
@@ -236,28 +236,28 @@ Method detail
 
 
 
-.. py:method:: execute_multiple_commands(self, connectCommands: list, eAction: EXECUTE_MULTIPLE_COMMANDS_MODE) -> ExecuteMultipleCommandResult
+.. py:method:: execute_multiple_commands(self, connect_commands: list, action: EXECUTE_MULTIPLE_COMMANDS_MODE) -> ExecuteMultipleCommandsResult
     :canonical: ansys.stk.core.stkx.STKXApplication.execute_multiple_commands
 
     Execute multiple CONNECT actions. The method throws an exception if any of the specified commands have failed.
 
     :Parameters:
 
-    **connectCommands** : :obj:`~list`
-    **eAction** : :obj:`~EXECUTE_MULTIPLE_COMMANDS_MODE`
+    **connect_commands** : :obj:`~list`
+    **action** : :obj:`~EXECUTE_MULTIPLE_COMMANDS_MODE`
 
     :Returns:
 
-        :obj:`~ExecuteMultipleCommandResult`
+        :obj:`~ExecuteMultipleCommandsResult`
 
-.. py:method:: is_feature_available(self, featureCode: FEATURE_CODES) -> bool
+.. py:method:: is_feature_available(self, feature_code: FEATURE_CODES) -> bool
     :canonical: ansys.stk.core.stkx.STKXApplication.is_feature_available
 
     Return true if the specified feature is available.
 
     :Parameters:
 
-    **featureCode** : :obj:`~FEATURE_CODES`
+    **feature_code** : :obj:`~FEATURE_CODES`
 
     :Returns:
 

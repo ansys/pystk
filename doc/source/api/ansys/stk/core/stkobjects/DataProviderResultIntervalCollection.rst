@@ -29,7 +29,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultIntervalCollection.count`
               - Returns a number of elements in collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultIntervalCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultIntervalCollection._new_enum`
               - Returns an enumerator for the collection.
 
 
@@ -51,8 +51,8 @@ Property detail
 
     Returns a number of elements in collection.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.DataProviderResultIntervalCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.DataProviderResultIntervalCollection._new_enum
     :type: EnumeratorProxy
 
     Returns an enumerator for the collection.

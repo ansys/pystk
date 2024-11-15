@@ -252,14 +252,14 @@ Method detail
 
 
 
-.. py:method:: set_display_system_type(self, displaySystemType: LAUNCH_DISPLAY_SYSTEM) -> None
+.. py:method:: set_display_system_type(self, display_system_type: LAUNCH_DISPLAY_SYSTEM) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSLaunch.set_display_system_type
 
     Set the display system type.
 
     :Parameters:
 
-    **displaySystemType** : :obj:`~LAUNCH_DISPLAY_SYSTEM`
+    **display_system_type** : :obj:`~LAUNCH_DISPLAY_SYSTEM`
 
     :Returns:
 
@@ -271,14 +271,14 @@ Method detail
 
 
 
-.. py:method:: set_burnout_type(self, burnoutType: BURNOUT_TYPE) -> None
+.. py:method:: set_burnout_type(self, burnout_type: BURNOUT_TYPE) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSLaunch.set_burnout_type
 
     Set the burnout type.
 
     :Parameters:
 
-    **burnoutType** : :obj:`~BURNOUT_TYPE`
+    **burnout_type** : :obj:`~BURNOUT_TYPE`
 
     :Returns:
 

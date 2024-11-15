@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionResponseTime.min_assets`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionResponseTime.minimum_assets`
               - Minimum number of for computing Response Time Figure of Merit.
 
 
@@ -35,8 +35,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: min_assets
-    :canonical: ansys.stk.core.stkobjects.IFigureOfMeritDefinitionResponseTime.min_assets
+.. py:property:: minimum_assets
+    :canonical: ansys.stk.core.stkobjects.IFigureOfMeritDefinitionResponseTime.minimum_assets
     :type: int
 
     Minimum number of for computing Response Time Figure of Merit.

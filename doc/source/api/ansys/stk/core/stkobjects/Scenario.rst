@@ -41,23 +41,23 @@ Overview
               - Scenario stop time. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.epoch`
               - Scenario epoch. Uses DateFormat Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.animation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.animation_settings`
               - Scenario animation settings.
             * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.earth_data`
               - Scenario Earth Data settings.
             * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.graphics`
               - Scenario 2D Graphics settings.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.gen_dbs`
+            * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.database_settings`
               - Scenario database settings.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.sat_no_orbit_warning`
+            * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.display_warning_if_orbit_impacts_ground`
               - Specify whether to display a warning when a satellite orbit intersects the central body.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.msl_no_orbit_warning`
+            * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.show_warning_if_missile_fails_to_impact`
               - Specify whether to display a warning when a missile trajectory does not impact the central body.
             * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.graphics_3d`
               - Scenario 3D Graphics settings.
             * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.aircraft_wgs84_warning`
               - Specify when to display the aircraft mission modeler WGS84 warning.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.msl_stop_time_warning`
+            * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.show_warning_whether_missile_achieves_orbit_or_not`
               - Generate a message that warns the user if the missile achieves orbit (and give the perigee) or impacts the surface (and give the interval after missile's stop time).
             * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.terrain`
               - Returns a list of central bodies and their terrains.
@@ -119,8 +119,8 @@ Property detail
 
     Scenario epoch. Uses DateFormat Dimension.
 
-.. py:property:: animation
-    :canonical: ansys.stk.core.stkobjects.Scenario.animation
+.. py:property:: animation_settings
+    :canonical: ansys.stk.core.stkobjects.Scenario.animation_settings
     :type: ScenarioAnimation
 
     Scenario animation settings.
@@ -137,20 +137,20 @@ Property detail
 
     Scenario 2D Graphics settings.
 
-.. py:property:: gen_dbs
-    :canonical: ansys.stk.core.stkobjects.Scenario.gen_dbs
-    :type: ScenarioGenDatabaseCollection
+.. py:property:: database_settings
+    :canonical: ansys.stk.core.stkobjects.Scenario.database_settings
+    :type: ScenarioDatabaseCollection
 
     Scenario database settings.
 
-.. py:property:: sat_no_orbit_warning
-    :canonical: ansys.stk.core.stkobjects.Scenario.sat_no_orbit_warning
+.. py:property:: display_warning_if_orbit_impacts_ground
+    :canonical: ansys.stk.core.stkobjects.Scenario.display_warning_if_orbit_impacts_ground
     :type: bool
 
     Specify whether to display a warning when a satellite orbit intersects the central body.
 
-.. py:property:: msl_no_orbit_warning
-    :canonical: ansys.stk.core.stkobjects.Scenario.msl_no_orbit_warning
+.. py:property:: show_warning_if_missile_fails_to_impact
+    :canonical: ansys.stk.core.stkobjects.Scenario.show_warning_if_missile_fails_to_impact
     :type: bool
 
     Specify whether to display a warning when a missile trajectory does not impact the central body.
@@ -167,8 +167,8 @@ Property detail
 
     Specify when to display the aircraft mission modeler WGS84 warning.
 
-.. py:property:: msl_stop_time_warning
-    :canonical: ansys.stk.core.stkobjects.Scenario.msl_stop_time_warning
+.. py:property:: show_warning_whether_missile_achieves_orbit_or_not
+    :canonical: ansys.stk.core.stkobjects.Scenario.show_warning_whether_missile_achieves_orbit_or_not
     :type: bool
 
     Generate a message that warns the user if the missile achieves orbit (and give the perigee) or impacts the surface (and give the interval after missile's stop time).
@@ -205,7 +205,7 @@ Property detail
 
 .. py:property:: space_environment
     :canonical: ansys.stk.core.stkobjects.Scenario.space_environment
-    :type: ScenSpaceEnvironment
+    :type: ScenarioSpaceEnvironment
 
     Scenario SpaceEnvironment settings.
 
@@ -247,7 +247,7 @@ Property detail
 
 .. py:property:: tilesets
     :canonical: ansys.stk.core.stkobjects.Scenario.tilesets
-    :type: TilesetCollection3D
+    :type: Tileset3DCollection
 
     Returns a list of 3D Tilesets used for Analysis.
 
@@ -265,15 +265,15 @@ Method detail
 
 
 
-.. py:method:: set_time_period(self, startTime: typing.Any, stopTime: typing.Any) -> None
+.. py:method:: set_time_period(self, start_time: typing.Any, stop_time: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.Scenario.set_time_period
 
     Set the Scenario time period. startTime/stopTime use DateFormat Dimension.
 
     :Parameters:
 
-    **startTime** : :obj:`~typing.Any`
-    **stopTime** : :obj:`~typing.Any`
+    **start_time** : :obj:`~typing.Any`
+    **stop_time** : :obj:`~typing.Any`
 
     :Returns:
 
@@ -322,19 +322,19 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: get_access_between_objects_by_path(self, objectPath1: str, objectPath2: str) -> StkAccess
+.. py:method:: get_access_between_objects_by_path(self, object_path1: str, object_path2: str) -> Access
     :canonical: ansys.stk.core.stkobjects.Scenario.get_access_between_objects_by_path
 
     Return an IAgStkAccess object associated with the two STK objects specified using their paths. The paths can be fully-qualified or truncated.
 
     :Parameters:
 
-    **objectPath1** : :obj:`~str`
-    **objectPath2** : :obj:`~str`
+    **object_path1** : :obj:`~str`
+    **object_path2** : :obj:`~str`
 
     :Returns:
 
-        :obj:`~StkAccess`
+        :obj:`~Access`
 
 
 

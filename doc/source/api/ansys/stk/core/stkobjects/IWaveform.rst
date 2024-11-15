@@ -57,7 +57,7 @@ Property detail
 
 .. py:property:: frequency_specification
     :canonical: ansys.stk.core.stkobjects.IWaveform.frequency_specification
-    :type: FREQUENCY_SPEC
+    :type: FREQUENCY_SPECIFICATION_TYPE
 
     Gets or sets the frequency specification.
 

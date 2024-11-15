@@ -18,7 +18,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.uicore.Toolbar.id`
+            * - :py:attr:`~ansys.stk.core.uicore.Toolbar.identifier`
               - The identity.
             * - :py:attr:`~ansys.stk.core.uicore.Toolbar.caption`
               - The caption.
@@ -40,8 +40,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: id
-    :canonical: ansys.stk.core.uicore.Toolbar.id
+.. py:property:: identifier
+    :canonical: ansys.stk.core.uicore.Toolbar.identifier
     :type: int
 
     The identity.

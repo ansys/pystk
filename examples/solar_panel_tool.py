@@ -15,7 +15,7 @@ class SolarPanelTool:
 
     def __init__(self):
         """Create a new instance and initialize the user interface."""
-        self.stk = STKEngine.start_application(noGraphics=False)
+        self.stk = STKEngine.start_application(no_graphics=False)
         self.root = self.stk.new_object_root()
         self.reportFilePath = ""
         self.firstTime = True

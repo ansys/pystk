@@ -32,7 +32,7 @@ Overview
               - Create one point access to the supplied object name. The Remove method in IAgOnePtAccess should be called when you are done with the data.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.unload`
               - Remove the object from the scenario.
-            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.is_vgt_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.supports_analysis_workbench`
               - Return whether the object supports Vector Geometry.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.copy_object`
               - Copy and paste the current instance of STK Object. The copied object will be pasted as the sibling of the instance being copied.
@@ -71,7 +71,7 @@ Overview
               - Get the constraints imposed on the object.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.object_files`
               - Returns the list of files that constitute an object.
-            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.vgt`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.analysis_workbench_components`
               - Returns an instance of Vector Geometry Tool provider.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.central_body_name`
               - The object's central body.
@@ -158,7 +158,7 @@ Property detail
 
 .. py:property:: object_coverage
     :canonical: ansys.stk.core.stkobjects.IStkObject.object_coverage
-    :type: StkObjectCoverage
+    :type: ObjectCoverage
 
     Returns an IAgStkObjectCoverage object.
 
@@ -174,8 +174,8 @@ Property detail
 
     Returns the list of files that constitute an object.
 
-.. py:property:: vgt
-    :canonical: ansys.stk.core.stkobjects.IStkObject.vgt
+.. py:property:: analysis_workbench_components
+    :canonical: ansys.stk.core.stkobjects.IStkObject.analysis_workbench_components
     :type: IAnalysisWorkbenchComponentProvider
 
     Returns an instance of Vector Geometry Tool provider.
@@ -242,41 +242,41 @@ Method detail
 
         :obj:`~bool`
 
-.. py:method:: get_access(self, objectPath: str) -> StkAccess
+.. py:method:: get_access(self, object_path: str) -> Access
     :canonical: ansys.stk.core.stkobjects.IStkObject.get_access
 
     Return an IAgStkAccess object associated with this STK object and another STK object specified using its path. The path can be fully-qualified or truncated.
 
     :Parameters:
 
-    **objectPath** : :obj:`~str`
+    **object_path** : :obj:`~str`
 
     :Returns:
 
-        :obj:`~StkAccess`
+        :obj:`~Access`
 
-.. py:method:: get_access_to_object(self, pObject: IStkObject) -> StkAccess
+.. py:method:: get_access_to_object(self, object: IStkObject) -> Access
     :canonical: ansys.stk.core.stkobjects.IStkObject.get_access_to_object
 
     Return an IAgStkAccess object associated with this STK object and another STK object.
 
     :Parameters:
 
-    **pObject** : :obj:`~IStkObject`
+    **object** : :obj:`~IStkObject`
 
     :Returns:
 
-        :obj:`~StkAccess`
+        :obj:`~Access`
 
 
-.. py:method:: create_one_point_access(self, pathToObject: str) -> OnePointAccess
+.. py:method:: create_one_point_access(self, path_to_object: str) -> OnePointAccess
     :canonical: ansys.stk.core.stkobjects.IStkObject.create_one_point_access
 
     Create one point access to the supplied object name. The Remove method in IAgOnePtAccess should be called when you are done with the data.
 
     :Parameters:
 
-    **pathToObject** : :obj:`~str`
+    **path_to_object** : :obj:`~str`
 
     :Returns:
 
@@ -292,8 +292,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: is_vgt_supported(self) -> bool
-    :canonical: ansys.stk.core.stkobjects.IStkObject.is_vgt_supported
+.. py:method:: supports_analysis_workbench(self) -> bool
+    :canonical: ansys.stk.core.stkobjects.IStkObject.supports_analysis_workbench
 
     Return whether the object supports Vector Geometry.
 
@@ -302,14 +302,14 @@ Method detail
         :obj:`~bool`
 
 
-.. py:method:: copy_object(self, newObjectName: str) -> IStkObject
+.. py:method:: copy_object(self, new_object_name: str) -> IStkObject
     :canonical: ansys.stk.core.stkobjects.IStkObject.copy_object
 
     Copy and paste the current instance of STK Object. The copied object will be pasted as the sibling of the instance being copied.
 
     :Parameters:
 
-    **newObjectName** : :obj:`~str`
+    **new_object_name** : :obj:`~str`
 
     :Returns:
 

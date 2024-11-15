@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkutil.Planetodetic.lat`
+            * - :py:attr:`~ansys.stk.core.stkutil.Planetodetic.latitude`
               - Latitude. Uses Latitude Dimension.
-            * - :py:attr:`~ansys.stk.core.stkutil.Planetodetic.lon`
+            * - :py:attr:`~ansys.stk.core.stkutil.Planetodetic.longitude`
               - Longitude. Uses Longitude Dimension.
             * - :py:attr:`~ansys.stk.core.stkutil.Planetodetic.altitude`
               - Altitude. Dimension depends on context.
@@ -40,14 +40,14 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: lat
-    :canonical: ansys.stk.core.stkutil.Planetodetic.lat
+.. py:property:: latitude
+    :canonical: ansys.stk.core.stkutil.Planetodetic.latitude
     :type: typing.Any
 
     Latitude. Uses Latitude Dimension.
 
-.. py:property:: lon
-    :canonical: ansys.stk.core.stkutil.Planetodetic.lon
+.. py:property:: longitude
+    :canonical: ansys.stk.core.stkutil.Planetodetic.longitude
     :type: typing.Any
 
     Longitude. Uses Longitude Dimension.

@@ -89,7 +89,7 @@ Property detail
 
 .. py:property:: location
     :canonical: ansys.stk.core.stkobjects.RadarModelMultifunction.location
-    :type: CRLocation
+    :type: CommRadCartesianLocation
 
     Gets the radar location object.
 
@@ -133,14 +133,14 @@ Method detail
 
 
 
-.. py:method:: set_pointing_strategy_type(self, val: POINTING_STRATEGY_TYPE) -> None
+.. py:method:: set_pointing_strategy_type(self, value: POINTING_STRATEGY_TYPE) -> None
     :canonical: ansys.stk.core.stkobjects.RadarModelMultifunction.set_pointing_strategy_type
 
     Set the current pointing strategy type.
 
     :Parameters:
 
-    **val** : :obj:`~POINTING_STRATEGY_TYPE`
+    **value** : :obj:`~POINTING_STRATEGY_TYPE`
 
     :Returns:
 

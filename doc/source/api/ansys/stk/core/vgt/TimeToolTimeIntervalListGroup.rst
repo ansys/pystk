@@ -41,7 +41,7 @@ Overview
               - Returns a number of elements in the group.
             * - :py:attr:`~ansys.stk.core.vgt.TimeToolTimeIntervalListGroup.factory`
               - Returns a factory object used to create custom event interval lists.
-            * - :py:attr:`~ansys.stk.core.vgt.TimeToolTimeIntervalListGroup._NewEnum`
+            * - :py:attr:`~ansys.stk.core.vgt.TimeToolTimeIntervalListGroup._new_enum`
               - Returns a COM enumerator.
 
 
@@ -75,8 +75,8 @@ Property detail
 
     Returns a factory object used to create custom event interval lists.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.vgt.TimeToolTimeIntervalListGroup._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.vgt.TimeToolTimeIntervalListGroup._new_enum
     :type: EnumeratorProxy
 
     Returns a COM enumerator.
@@ -85,14 +85,14 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: remove(self, eventName: str) -> None
+.. py:method:: remove(self, event_name: str) -> None
     :canonical: ansys.stk.core.vgt.TimeToolTimeIntervalListGroup.remove
 
     Remove a specified element.
 
     :Parameters:
 
-    **eventName** : :obj:`~str`
+    **event_name** : :obj:`~str`
 
     :Returns:
 
@@ -114,14 +114,14 @@ Method detail
 
 
 
-.. py:method:: item(self, indexOrName: typing.Any) -> ITimeToolTimeIntervalList
+.. py:method:: item(self, index_or_name: typing.Any) -> ITimeToolTimeIntervalList
     :canonical: ansys.stk.core.vgt.TimeToolTimeIntervalListGroup.item
 
     Return an element by name or at a specified position.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 

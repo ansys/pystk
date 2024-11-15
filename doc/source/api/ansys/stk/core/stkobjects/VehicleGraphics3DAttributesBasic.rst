@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DAttributesBasic.is_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DAttributesBasic.show_graphics`
               - Opt to display the selected graphics properties instead of using those defined in terms of intervals.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DAttributesBasic.color`
               - Gets or sets the line color used when UseCustomColor is true.
@@ -44,8 +44,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: is_visible
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DAttributesBasic.is_visible
+.. py:property:: show_graphics
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DAttributesBasic.show_graphics
     :type: bool
 
     Opt to display the selected graphics properties instead of using those defined in terms of intervals.

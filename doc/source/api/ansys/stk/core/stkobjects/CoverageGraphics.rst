@@ -20,11 +20,11 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGraphics.static`
               - 2D static graphics options.
-            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGraphics.animation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGraphics.animation_settings`
               - 2D animation graphics options.
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGraphics.progress`
               - Access progress graphics options.
-            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGraphics.is_object_graphics_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGraphics.show_graphics`
               - Specify whether graphics attributes of the coverage definition are visible.
 
 
@@ -46,8 +46,8 @@ Property detail
 
     2D static graphics options.
 
-.. py:property:: animation
-    :canonical: ansys.stk.core.stkobjects.CoverageGraphics.animation
+.. py:property:: animation_settings
+    :canonical: ansys.stk.core.stkobjects.CoverageGraphics.animation_settings
     :type: CoverageGraphics2DAnimation
 
     2D animation graphics options.
@@ -58,8 +58,8 @@ Property detail
 
     Access progress graphics options.
 
-.. py:property:: is_object_graphics_visible
-    :canonical: ansys.stk.core.stkobjects.CoverageGraphics.is_object_graphics_visible
+.. py:property:: show_graphics
+    :canonical: ansys.stk.core.stkobjects.CoverageGraphics.show_graphics
     :type: bool
 
     Specify whether graphics attributes of the coverage definition are visible.

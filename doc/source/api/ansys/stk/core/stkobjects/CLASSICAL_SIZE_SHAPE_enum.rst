@@ -19,22 +19,22 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~SIZE_SHAPE_UNKNOWN`
+            * - :py:attr:`~UNKNOWN`
               - Represents a value unsupported by the Object Model.
 
-            * - :py:attr:`~SIZE_SHAPE_ALTITUDE`
+            * - :py:attr:`~ALTITUDE`
               - Apogee and Perigee Altitude.
 
-            * - :py:attr:`~SIZE_SHAPE_MEAN_MOTION`
+            * - :py:attr:`~MEAN_MOTION`
               - Mean Motion and Eccentricity.
 
-            * - :py:attr:`~SIZE_SHAPE_PERIOD`
+            * - :py:attr:`~PERIOD`
               - Period and Eccentricity.
 
-            * - :py:attr:`~SIZE_SHAPE_RADIUS`
+            * - :py:attr:`~RADIUS`
               - Apogee and Perigee Radius.
 
-            * - :py:attr:`~SIZE_SHAPE_SEMIMAJOR_AXIS`
+            * - :py:attr:`~SEMIMAJOR_AXIS`
               - Semimajor Axis and Eccentricity.
 
 

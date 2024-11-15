@@ -19,16 +19,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~GPS_ALMANAC_TYPE_NONE`
+            * - :py:attr:`~NONE`
               - Almanac is not selected.
 
-            * - :py:attr:`~GPS_ALMANAC_TYPE_YUMA`
+            * - :py:attr:`~YUMA`
               - YUMA almanac.
 
-            * - :py:attr:`~GPS_ALMANAC_TYPE_SEM`
+            * - :py:attr:`~SEM`
               - SEM almanac.
 
-            * - :py:attr:`~GPS_ALMANAC_TYPE_SP3`
+            * - :py:attr:`~SP3`
               - SP3 almanac.
 
 

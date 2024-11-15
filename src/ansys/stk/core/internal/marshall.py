@@ -12,7 +12,7 @@ from .           import coclassutil as agcoclass
 from ..utilities import colors      as agcolor
 from ..utilities import comobject   as agcomobj
 
-from ..utilities.exceptions import *
+from ..utilities.exceptions import STKColorError, STKPluginMethodNotImplementedError
 
 ###############################################################################
 #   Marshalling DATE

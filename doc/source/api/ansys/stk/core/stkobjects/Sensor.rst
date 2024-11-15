@@ -36,7 +36,7 @@ Overview
               - Set the sensor's location type, a member of the AgESnLocation enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.Sensor.is_refraction_type_supported`
               - Get a value indicating whether the specified type can be used.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Sensor.get_stars_in_fov`
+            * - :py:attr:`~ansys.stk.core.stkobjects.Sensor.get_stars_in_field_of_view`
               - Return celestial bodies within the sensor's field of view.
 
     .. tab-item:: Properties
@@ -216,14 +216,14 @@ Method detail
 -------------
 
 
-.. py:method:: set_pattern_type(self, patternType: SENSOR_PATTERN) -> None
+.. py:method:: set_pattern_type(self, pattern_type: SENSOR_PATTERN) -> None
     :canonical: ansys.stk.core.stkobjects.Sensor.set_pattern_type
 
     Set the pattern type.
 
     :Parameters:
 
-    **patternType** : :obj:`~SENSOR_PATTERN`
+    **pattern_type** : :obj:`~SENSOR_PATTERN`
 
     :Returns:
 
@@ -231,27 +231,27 @@ Method detail
 
 
 
-.. py:method:: set_pointing_type(self, pointingType: SENSOR_POINTING) -> None
+.. py:method:: set_pointing_type(self, pointing_type: SENSOR_POINTING) -> None
     :canonical: ansys.stk.core.stkobjects.Sensor.set_pointing_type
 
     Set the sensor's pointing type, using the AgESnPointing enumeration.
 
     :Parameters:
 
-    **pointingType** : :obj:`~SENSOR_POINTING`
+    **pointing_type** : :obj:`~SENSOR_POINTING`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: set_pointing_external_file(self, sensorPointingFile: str) -> None
+.. py:method:: set_pointing_external_file(self, sensor_pointing_file: str) -> None
     :canonical: ansys.stk.core.stkobjects.Sensor.set_pointing_external_file
 
     Set the external pointing type.
 
     :Parameters:
 
-    **sensorPointingFile** : :obj:`~str`
+    **sensor_pointing_file** : :obj:`~str`
 
     :Returns:
 
@@ -268,14 +268,14 @@ Method detail
         :obj:`~None`
 
 
-.. py:method:: set_az_el_mask(self, azElMaskType: AZ_EL_MASK_TYPE) -> None
+.. py:method:: set_az_el_mask(self, az_el_mask_type: AZ_EL_MASK_TYPE) -> None
     :canonical: ansys.stk.core.stkobjects.Sensor.set_az_el_mask
 
     Set the az-el mask type, using the AgEAzElMaskType enumeration.
 
     :Parameters:
 
-    **azElMaskType** : :obj:`~AZ_EL_MASK_TYPE`
+    **az_el_mask_type** : :obj:`~AZ_EL_MASK_TYPE`
 
     :Returns:
 
@@ -304,14 +304,14 @@ Method detail
 
 
 
-.. py:method:: set_location_type(self, locationType: SENSOR_LOCATION) -> None
+.. py:method:: set_location_type(self, location_type: SENSOR_LOCATION) -> None
     :canonical: ansys.stk.core.stkobjects.Sensor.set_location_type
 
     Set the sensor's location type, a member of the AgESnLocation enumeration.
 
     :Parameters:
 
-    **locationType** : :obj:`~SENSOR_LOCATION`
+    **location_type** : :obj:`~SENSOR_LOCATION`
 
     :Returns:
 
@@ -338,8 +338,8 @@ Method detail
 
 
 
-.. py:method:: get_stars_in_fov(self, epoch: typing.Any) -> CelestialBodyCollection
-    :canonical: ansys.stk.core.stkobjects.Sensor.get_stars_in_fov
+.. py:method:: get_stars_in_field_of_view(self, epoch: typing.Any) -> ICelestialBodyInformationCollection
+    :canonical: ansys.stk.core.stkobjects.Sensor.get_stars_in_field_of_view
 
     Return celestial bodies within the sensor's field of view.
 
@@ -349,5 +349,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~CelestialBodyCollection`
+        :obj:`~ICelestialBodyInformationCollection`
 

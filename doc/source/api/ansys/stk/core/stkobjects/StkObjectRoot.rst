@@ -36,7 +36,7 @@ Overview
               - Add a custom marker to Application.
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.get_object_from_path`
               - Get the object instance that matches the path provided.
-            * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.all_instance_names_to_xml`
+            * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.all_instance_names_in_xml`
               - Return an XML representation of AllInstanceNames.
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.begin_update`
               - Signals the object that the batch update is starting.
@@ -75,7 +75,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.unit_preferences`
+            * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.units_preferences`
               - Provides access to the Global Unit table.
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.current_scenario`
               - Returns a Scenario object or null if no scenario has been loaded yet.
@@ -83,17 +83,17 @@ Overview
               - Returns whether the instance is isolated.
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.conversion_utility`
               - Returns the conversion utility interface.
-            * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.std_military2525_b_symbols`
+            * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.military_standard_2525b_symbols`
               - Returns the interface that enables creating 2525b symbols.
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.available_features`
               - Allows the user to inquiry about the available features.
-            * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.vgt_root`
+            * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.analysis_workbench_components_root`
               - Returns an instance of VGT root object.
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.central_bodies`
               - Returns a collection of available central bodies.
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.notification_filter`
               - Temporarily disable only the root events to prevent them from being raised. The event filtering can be used to improve client application performance.
-            * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.stk_preferences`
+            * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.preferences`
               - Configures STK preferences.
 
 
@@ -109,8 +109,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: unit_preferences
-    :canonical: ansys.stk.core.stkobjects.StkObjectRoot.unit_preferences
+.. py:property:: units_preferences
+    :canonical: ansys.stk.core.stkobjects.StkObjectRoot.units_preferences
     :type: IUnitPreferencesDimensionCollection
 
     Provides access to the Global Unit table.
@@ -133,9 +133,9 @@ Property detail
 
     Returns the conversion utility interface.
 
-.. py:property:: std_military2525_b_symbols
-    :canonical: ansys.stk.core.stkobjects.StkObjectRoot.std_military2525_b_symbols
-    :type: StdMilitary2525bSymbols
+.. py:property:: military_standard_2525b_symbols
+    :canonical: ansys.stk.core.stkobjects.StkObjectRoot.military_standard_2525b_symbols
+    :type: MilitaryStandard2525bSymbols
 
     Returns the interface that enables creating 2525b symbols.
 
@@ -145,15 +145,15 @@ Property detail
 
     Allows the user to inquiry about the available features.
 
-.. py:property:: vgt_root
-    :canonical: ansys.stk.core.stkobjects.StkObjectRoot.vgt_root
+.. py:property:: analysis_workbench_components_root
+    :canonical: ansys.stk.core.stkobjects.StkObjectRoot.analysis_workbench_components_root
     :type: IAnalysisWorkbenchRoot
 
     Returns an instance of VGT root object.
 
 .. py:property:: central_bodies
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.central_bodies
-    :type: StkCentralBodyCollection
+    :type: CentralBodyCollection
 
     Returns a collection of available central bodies.
 
@@ -163,9 +163,9 @@ Property detail
 
     Temporarily disable only the root events to prevent them from being raised. The event filtering can be used to improve client application performance.
 
-.. py:property:: stk_preferences
-    :canonical: ansys.stk.core.stkobjects.StkObjectRoot.stk_preferences
-    :type: StkPreferences
+.. py:property:: preferences
+    :canonical: ansys.stk.core.stkobjects.StkObjectRoot.preferences
+    :type: Preferences
 
     Configures STK preferences.
 
@@ -173,14 +173,14 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: execute_command(self, connectCommand: str) -> ExecuteCommandResult
+.. py:method:: execute_command(self, connect_command: str) -> ExecuteCommandResult
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.execute_command
 
     Execute a custom CONNECT action. The method throws an exception if the command has failed.
 
     :Parameters:
 
-    **connectCommand** : :obj:`~str`
+    **connect_command** : :obj:`~str`
 
     :Returns:
 
@@ -208,14 +208,14 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: new_scenario(self, scenarioName: str) -> None
+.. py:method:: new_scenario(self, scenario_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.new_scenario
 
     Create a new scenario. User must close a scenario before creating a new one; otherwise an exception will occur.
 
     :Parameters:
 
-    **scenarioName** : :obj:`~str`
+    **scenario_name** : :obj:`~str`
 
     :Returns:
 
@@ -230,14 +230,14 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: save_scenario_as(self, scFileName: str) -> None
+.. py:method:: save_scenario_as(self, sc_file_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.save_scenario_as
 
     Use SaveAs method. Saves the changes made to the scenario to a specified path and file name.
 
     :Parameters:
 
-    **scFileName** : :obj:`~str`
+    **sc_file_name** : :obj:`~str`
 
     :Returns:
 
@@ -258,21 +258,21 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: get_object_from_path(self, objectPath: str) -> IStkObject
+.. py:method:: get_object_from_path(self, object_path: str) -> IStkObject
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.get_object_from_path
 
     Get the object instance that matches the path provided.
 
     :Parameters:
 
-    **objectPath** : :obj:`~str`
+    **object_path** : :obj:`~str`
 
     :Returns:
 
         :obj:`~IStkObject`
 
-.. py:method:: all_instance_names_to_xml(self) -> str
-    :canonical: ansys.stk.core.stkobjects.StkObjectRoot.all_instance_names_to_xml
+.. py:method:: all_instance_names_in_xml(self) -> str
+    :canonical: ansys.stk.core.stkobjects.StkObjectRoot.all_instance_names_in_xml
 
     Return an XML representation of AllInstanceNames.
 
@@ -298,19 +298,19 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: execute_multiple_commands(self, connectCommands: list, action: EXECUTE_MULTIPLE_COMMANDS_MODE) -> ExecuteMultipleCommandResult
+.. py:method:: execute_multiple_commands(self, connect_commands: list, action: EXECUTE_MULTIPLE_COMMANDS_MODE) -> ExecuteMultipleCommandsResult
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.execute_multiple_commands
 
     Execute multiple CONNECT actions.  The behavior of the method when encountering an exception varies depending on the setting of the Action parameter. See the help for AgEExecMultiCmdResultAction.
 
     :Parameters:
 
-    **connectCommands** : :obj:`~list`
+    **connect_commands** : :obj:`~list`
     **action** : :obj:`~EXECUTE_MULTIPLE_COMMANDS_MODE`
 
     :Returns:
 
-        :obj:`~ExecuteMultipleCommandResult`
+        :obj:`~ExecuteMultipleCommandsResult`
 
 .. py:method:: isolate(self) -> None
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.isolate
@@ -339,14 +339,14 @@ Method detail
         :obj:`~None`
 
 
-.. py:method:: object_exists(self, objectPath: str) -> bool
+.. py:method:: object_exists(self, object_path: str) -> bool
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.object_exists
 
     Check whether a currently loaded scenario contains an object with the given path.
 
     :Parameters:
 
-    **objectPath** : :obj:`~str`
+    **object_path** : :obj:`~str`
 
     :Returns:
 
@@ -365,17 +365,17 @@ Method detail
 
 
 
-.. py:method:: save_vdf_as(self, vdfFileName: str, password: str, description: str, windowID: str) -> None
+.. py:method:: save_vdf_as(self, vdf_file_name: str, password: str, description: str, window_id: str) -> None
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.save_vdf_as
 
     Save the changes made to the scenario to a specified path and file name as a vdf file.
 
     :Parameters:
 
-    **vdfFileName** : :obj:`~str`
+    **vdf_file_name** : :obj:`~str`
     **password** : :obj:`~str`
     **description** : :obj:`~str`
-    **windowID** : :obj:`~str`
+    **window_id** : :obj:`~str`
 
     :Returns:
 
@@ -404,41 +404,41 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: save_as(self, fileName: str) -> None
+.. py:method:: save_as(self, file_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.save_as
 
     Save the changes made to the scenario/vdf to a specified path and file name.
 
     :Parameters:
 
-    **fileName** : :obj:`~str`
+    **file_name** : :obj:`~str`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: load_vdf_from_sdf(self, vDFPath: str, password: str) -> None
+.. py:method:: load_vdf_from_sdf(self, vdf_path: str, password: str) -> None
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.load_vdf_from_sdf
 
     Load a vdf from SDF using the specified path. The method throws an exception if there is a scenario already loaded. If the password isn't needed, enter an empty string.
 
     :Parameters:
 
-    **vDFPath** : :obj:`~str`
+    **vdf_path** : :obj:`~str`
     **password** : :obj:`~str`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: load_vdf_from_sdf_with_version(self, vDFPath: str, password: str, version: float) -> None
+.. py:method:: load_vdf_from_sdf_with_version(self, vdf_path: str, password: str, version: float) -> None
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.load_vdf_from_sdf_with_version
 
     Load a vdf from SDF using the specified path. The method throws an exception if there is a scenario already loaded. If the password isn't needed, enter an empty string.
 
     :Parameters:
 
-    **vDFPath** : :obj:`~str`
+    **vdf_path** : :obj:`~str`
     **password** : :obj:`~str`
     **version** : :obj:`~float`
 
@@ -446,14 +446,14 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: save_vdf_to_sdf(self, sDFPath: str) -> None
+.. py:method:: save_vdf_to_sdf(self, sdf_path: str) -> None
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.save_vdf_to_sdf
 
     Save a vdf to SDF at the specified location. The method throws an exception if the VDF creation or upload fails.
 
     :Parameters:
 
-    **sDFPath** : :obj:`~str`
+    **sdf_path** : :obj:`~str`
 
     :Returns:
 

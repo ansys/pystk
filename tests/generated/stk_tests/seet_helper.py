@@ -12,34 +12,32 @@ class SEETHelper(object):
     logger = Logger.Instance
 
     @staticmethod
-    def TestEnvironment(spEnv: "VehicleSpaceEnvironment"):
+    def TestEnvironment(spEnv: "SpaceEnvironment"):
         SEETHelper.Test_IAgVeSpEnvMagneticField(spEnv.magnetic_field)
         SEETHelper.Test_IAgSpEnvSAAContour(spEnv.saa_contour)
 
     @staticmethod
-    def TestThermal(spEnv: "VehicleSpaceEnvironment"):
-        SEETHelper.Test_IAgVeSpEnvVehTemperature(spEnv.veh_temperature)
+    def TestThermal(spEnv: "SpaceEnvironment"):
+        SEETHelper.Test_IAgVeSpEnvVehTemperature(spEnv.vehicle_temperature)
 
     @staticmethod
-    def TestParticleFlux(spEnv: "VehicleSpaceEnvironment"):
+    def TestParticleFlux(spEnv: "SpaceEnvironment"):
         SEETHelper.Test_IAgVeSpEnvParticleFlux(spEnv.particle_flux)
 
     @staticmethod
-    def TestRadiation(spEnv: "VehicleSpaceEnvironment"):
+    def TestRadiation(spEnv: "SpaceEnvironment"):
         SEETHelper.Test_IAgVeSpEnvRadiation(spEnv.radiation)
 
     @staticmethod
     def TestEnvironment_2D(
-        spEnv: "VehicleSpaceEnvironment", veGfxSAA: "VehicleGraphics2DSAA", veVOSAA: "VehicleGraphics3DSAA"
+        spEnv: "SpaceEnvironment", veGfxSAA: "VehicleGraphics2DSAA", veVOSAA: "VehicleGraphics3DSAA"
     ):
-        SEETHelper.Test_IAgVeSpEnvMagFieldLine(spEnv.graphics.magnitude_field_line)
+        SEETHelper.Test_IAgVeSpEnvMagFieldLine(spEnv.graphics.magnetic_field_line)
         SEETHelper.Test_IAgVeGfxSAA(veGfxSAA)
         SEETHelper.Test_IAgVeVOSAA(veVOSAA)
 
     @staticmethod
-    def TestComputations(
-        obj: "IStkObject", spEnv: "VehicleSpaceEnvironment", startTime: typing.Any, stopTime: typing.Any
-    ):
+    def TestComputations(obj: "IStkObject", spEnv: "SpaceEnvironment", startTime: typing.Any, stopTime: typing.Any):
         startOM: float = 0
         stopOM: float = 0
         startDP: float = 0
@@ -59,23 +57,23 @@ class SEETHelper(object):
 
         spEnv.radiation.computation_mode = VEHICLE_SPACE_ENVIRONMENT_COMPUTATION_MODE.CRRES
 
-        rdrColl: "VehicleSpaceEnvironmentRadDoseRateCollection" = spEnv.radiation.compute_dose_rates(
+        rdrColl: "SpaceEnvironmentRadiationDoseRateCollection" = spEnv.radiation.compute_dose_rates(
             "1 Jul 1999 00:58:00.000"
         )
-        element: "VehicleSpaceEnvironmentRadDoseRateElement"
+        element: "SpaceEnvironmentRadiationDoseRateElement"
         for element in rdrColl:
             sElement: str = str(element)
 
         i: int = 0
         while i < rdrColl.count:
-            element: "VehicleSpaceEnvironmentRadDoseRateElement" = rdrColl[i]
+            element: "SpaceEnvironmentRadiationDoseRateElement" = rdrColl[i]
 
             i += 1
 
         with pytest.raises(Exception):
-            element: "VehicleSpaceEnvironmentRadDoseRateElement" = rdrColl[rdrColl.count]
+            element: "SpaceEnvironmentRadiationDoseRateElement" = rdrColl[rdrColl.count]
 
-        rdre: "VehicleSpaceEnvironmentRadDoseRateElement" = rdrColl[0]
+        rdre: "SpaceEnvironmentRadiationDoseRateElement" = rdrColl[0]
 
         shieldingThickness: float = rdre.shielding_thickness
 
@@ -110,15 +108,15 @@ class SEETHelper(object):
         #
 
         dp = IDataProvider(obj.data_providers["SEET Magnetic Field"])
-        dp.allow_user_interface = False
+        dp.allow_user_interface_for_pre_data = False
         tv = clr.CastAs(dp, DataProviderTimeVarying)
-        result = tv.exec(startTime, stopTime, 60)
+        result = tv.execute(startTime, stopTime, 60)
 
         # B/Beq
         drDataSet = result.data_sets.get_data_set_by_name("B/Beq")
         arValues = drDataSet.get_values()
-        startOM = spEnv.magnetic_field.compute_b_beq(startTime)
-        stopOM = spEnv.magnetic_field.compute_b_beq(stopTime)
+        startOM = spEnv.magnetic_field.compute_b_over_beq(startTime)
+        stopOM = spEnv.magnetic_field.compute_b_over_beq(stopTime)
         startDP = Convert.ToDouble(arValues[0])
         stopDP = Convert.ToDouble(arValues[(len(arValues) - 1)])
 
@@ -130,8 +128,8 @@ class SEETHelper(object):
         # ComputeDipoleL
         drDataSet = result.data_sets.get_data_set_by_name("Dipole L-shell parameter")
         arValues = drDataSet.get_values()
-        startOM = spEnv.magnetic_field.compute_dipole_l(startTime)
-        stopOM = spEnv.magnetic_field.compute_dipole_l(stopTime)
+        startOM = spEnv.magnetic_field.compute_dipole_l_shell(startTime)
+        stopOM = spEnv.magnetic_field.compute_dipole_l_shell(stopTime)
 
         startDP = Convert.ToDouble(arValues[0])
         stopDP = Convert.ToDouble(arValues[(len(arValues) - 1)])
@@ -144,8 +142,8 @@ class SEETHelper(object):
         # ComputeMcIlwainL
         drDataSet = result.data_sets.get_data_set_by_name("McIlwain L-shell parameter")
         arValues = drDataSet.get_values()
-        startOM = spEnv.magnetic_field.compute_mc_ilwain_l(startTime)
-        stopOM = spEnv.magnetic_field.compute_mc_ilwain_l(stopTime)
+        startOM = spEnv.magnetic_field.compute_mcilwain_l_shell(startTime)
+        stopOM = spEnv.magnetic_field.compute_mcilwain_l_shell(stopTime)
         startDP = Convert.ToDouble(arValues[0])
         stopDP = Convert.ToDouble(arValues[(len(arValues) - 1)])
 
@@ -243,9 +241,9 @@ class SEETHelper(object):
         dpg = DataProviderGroup(obj.data_providers["SEET Meteor Flux"])
         dpColl = dpg.group
         dp = clr.CastAs(dpColl["Impacts"], IDataProvider)
-        dp.allow_user_interface = False
+        dp.allow_user_interface_for_pre_data = False
         tv = clr.CastAs(dp, DataProviderTimeVarying)
-        result = tv.exec(startTime, stopTime, 60)
+        result = tv.execute(startTime, stopTime, 60)
 
         arRow0 = result.data_sets.get_row(0)
         startDP = Convert.ToDouble(arRow0[3])  # 3 = Impact Flux
@@ -267,9 +265,9 @@ class SEETHelper(object):
         dpg = DataProviderGroup(obj.data_providers["SEET Meteor Flux"])
         dpColl = dpg.group
         dp = clr.CastAs(dpColl["Damaging Impacts"], IDataProvider)
-        dp.allow_user_interface = False
+        dp.allow_user_interface_for_pre_data = False
         tv = clr.CastAs(dp, DataProviderTimeVarying)
-        result = tv.exec(startTime, stopTime, 60)
+        result = tv.execute(startTime, stopTime, 60)
 
         arRow0 = result.data_sets.get_row(0)
         startDP = Convert.ToDouble(arRow0[3])  # 3 = Impact Flux
@@ -354,12 +352,12 @@ class SEETHelper(object):
         #
 
         seetSat: "Satellite" = clr.CastAs(obj, Satellite)
-        seetSat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
-        twobody: "VehiclePropagatorTwoBody" = VehiclePropagatorTwoBody(seetSat.propagator)
+        seetSat.set_propagator_type(PROPAGATOR_TYPE.TWO_BODY)
+        twobody: "PropagatorTwoBody" = PropagatorTwoBody(seetSat.propagator)
         classical: "OrbitStateClassical" = OrbitStateClassical(
             twobody.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CLASSICAL)
         )
-        classical.size_shape_type = CLASSICAL_SIZE_SHAPE.SIZE_SHAPE_PERIOD
+        classical.size_shape_type = CLASSICAL_SIZE_SHAPE.PERIOD
         period: "ClassicalSizeShapePeriod" = ClassicalSizeShapePeriod(classical.size_shape)
         period.eccentricity = 0.2
         period.period = 10000
@@ -377,9 +375,9 @@ class SEETHelper(object):
             Console.WriteLine(dpx.name)
 
         dp = clr.CastAs(dpColl[0], IDataProvider)
-        dp.allow_user_interface = False
+        dp.allow_user_interface_for_pre_data = False
         tv = clr.CastAs(dp, DataProviderTimeVarying)
-        result = tv.exec(startTime, stopTime, 60)
+        result = tv.execute(startTime, stopTime, 60)
         drDataSet = result.data_sets.get_data_set_by_name("Flux intensity")
         arValues = drDataSet.get_values()
         startDP = Convert.ToDouble(arValues[0])
@@ -392,15 +390,15 @@ class SEETHelper(object):
         #
 
         dp = IDataProvider(obj.data_providers["SEET Vehicle Temperature"])
-        dp.allow_user_interface = False
+        dp.allow_user_interface_for_pre_data = False
         tv = clr.CastAs(dp, DataProviderTimeVarying)
-        result = tv.exec(startTime, stopTime, 60)
+        result = tv.execute(startTime, stopTime, 60)
         drDataSet = result.data_sets.get_data_set_by_name("Temperature")
         arValues = drDataSet.get_values()
         startDP = Convert.ToDouble(arValues[0])
         stopDP = Convert.ToDouble(arValues[(len(arValues) - 1)])
-        startOM = spEnv.veh_temperature.compute_temperature(startTime)
-        stopOM = spEnv.veh_temperature.compute_temperature(stopTime)
+        startOM = spEnv.vehicle_temperature.compute_temperature(startTime)
+        stopOM = spEnv.vehicle_temperature.compute_temperature(stopTime)
 
         Assert.assertAlmostEqual(219.6, startOM, delta=0.01)
         Assert.assertAlmostEqual(219.6, startDP, delta=0.01)
@@ -408,7 +406,7 @@ class SEETHelper(object):
         Assert.assertAlmostEqual(208.43, stopDP, delta=0.01)
 
     @staticmethod
-    def Test_IAgVeSpEnvMagneticField(magField: "VehicleSpaceEnvironmentMagneticField"):
+    def Test_IAgVeSpEnvMagneticField(magField: "SpaceEnvironmentMagneticField"):
         with pytest.raises(Exception):
             magField.main_field = SPACE_ENVIRONMENT_MAGNETIC_MAIN_FIELD.UNKNOWN
         magField.main_field = SPACE_ENVIRONMENT_MAGNETIC_MAIN_FIELD.IGRF
@@ -434,26 +432,26 @@ class SEETHelper(object):
     def Test_IAgSpEnvSAAContour(saaContour: "SpaceEnvironmentSAAContour"):
         with pytest.raises(Exception):
             saaContour.channel = SPACE_ENVIRONMENT_SAA_CHANNEL.UNKNOWN
-        saaContour.channel = SPACE_ENVIRONMENT_SAA_CHANNEL.CHANNEL23_ME_V
-        Assert.assertEqual(SPACE_ENVIRONMENT_SAA_CHANNEL.CHANNEL23_ME_V, saaContour.channel)
-        saaContour.channel = SPACE_ENVIRONMENT_SAA_CHANNEL.CHANNEL38_ME_V
-        Assert.assertEqual(SPACE_ENVIRONMENT_SAA_CHANNEL.CHANNEL38_ME_V, saaContour.channel)
-        saaContour.channel = SPACE_ENVIRONMENT_SAA_CHANNEL.CHANNEL66_ME_V
-        Assert.assertEqual(SPACE_ENVIRONMENT_SAA_CHANNEL.CHANNEL66_ME_V, saaContour.channel)
-        saaContour.channel = SPACE_ENVIRONMENT_SAA_CHANNEL.CHANNEL94_ME_V
-        Assert.assertEqual(SPACE_ENVIRONMENT_SAA_CHANNEL.CHANNEL94_ME_V, saaContour.channel)
+        saaContour.channel = SPACE_ENVIRONMENT_SAA_CHANNEL.CHANNEL_23_MEV
+        Assert.assertEqual(SPACE_ENVIRONMENT_SAA_CHANNEL.CHANNEL_23_MEV, saaContour.channel)
+        saaContour.channel = SPACE_ENVIRONMENT_SAA_CHANNEL.CHANNEL_38_MEV
+        Assert.assertEqual(SPACE_ENVIRONMENT_SAA_CHANNEL.CHANNEL_38_MEV, saaContour.channel)
+        saaContour.channel = SPACE_ENVIRONMENT_SAA_CHANNEL.CHANNEL_66_MEV
+        Assert.assertEqual(SPACE_ENVIRONMENT_SAA_CHANNEL.CHANNEL_66_MEV, saaContour.channel)
+        saaContour.channel = SPACE_ENVIRONMENT_SAA_CHANNEL.CHANNEL_94_MEV
+        Assert.assertEqual(SPACE_ENVIRONMENT_SAA_CHANNEL.CHANNEL_94_MEV, saaContour.channel)
 
         with pytest.raises(Exception):
             saaContour.flux_level = SPACE_ENVIRONMENT_SAA_FLUX_LEVEL.UNKNOWN
-        saaContour.flux_level = SPACE_ENVIRONMENT_SAA_FLUX_LEVEL.BACKGROUND3_SIGMA
-        Assert.assertEqual(SPACE_ENVIRONMENT_SAA_FLUX_LEVEL.BACKGROUND3_SIGMA, saaContour.flux_level)
+        saaContour.flux_level = SPACE_ENVIRONMENT_SAA_FLUX_LEVEL.GREATER_THAN_BACKGROUND_BY_3_SIGMA
+        Assert.assertEqual(SPACE_ENVIRONMENT_SAA_FLUX_LEVEL.GREATER_THAN_BACKGROUND_BY_3_SIGMA, saaContour.flux_level)
         saaContour.flux_level = SPACE_ENVIRONMENT_SAA_FLUX_LEVEL.HALF_OF_PEAK
         Assert.assertEqual(SPACE_ENVIRONMENT_SAA_FLUX_LEVEL.HALF_OF_PEAK, saaContour.flux_level)
         saaContour.flux_level = SPACE_ENVIRONMENT_SAA_FLUX_LEVEL.TENTH_OF_PEAK
         Assert.assertEqual(SPACE_ENVIRONMENT_SAA_FLUX_LEVEL.TENTH_OF_PEAK, saaContour.flux_level)
 
     @staticmethod
-    def Test_IAgVeSpEnvVehTemperature(vehTemp: "VehicleSpaceEnvironmentVehTemperature"):
+    def Test_IAgVeSpEnvVehTemperature(vehTemp: "SpaceEnvironmentVehicleTemperature"):
         vehTemp.earth_albedo = 0.4
         Assert.assertEqual(0.4, vehTemp.earth_albedo)
         vehTemp.material_emissivity = 0.9
@@ -481,24 +479,24 @@ class SEETHelper(object):
             vehTemp.normal_vector = "Satellite/Satellite1 Sun"
 
     @staticmethod
-    def Test_IAgVeSpEnvParticleFlux(particleFlux: "VehicleSpaceEnvironmentParticleFlux"):
+    def Test_IAgVeSpEnvParticleFlux(particleFlux: "SpaceEnvironmentParticleFlux"):
         with pytest.raises(Exception):
-            particleFlux.f_10_p7_source = VEHICLE_SPACE_ENVIRONMENT_F_10_P7_SOURCE.UNKNOWN
-        particleFlux.f_10_p7_source = VEHICLE_SPACE_ENVIRONMENT_F_10_P7_SOURCE.FILE
-        Assert.assertEqual(VEHICLE_SPACE_ENVIRONMENT_F_10_P7_SOURCE.FILE, particleFlux.f_10_p7_source)
+            particleFlux.f10p7_source = VEHICLE_SPACE_ENVIRONMENT_F10P7_SOURCE_TYPE.UNKNOWN
+        particleFlux.f10p7_source = VEHICLE_SPACE_ENVIRONMENT_F10P7_SOURCE_TYPE.FILE
+        Assert.assertEqual(VEHICLE_SPACE_ENVIRONMENT_F10P7_SOURCE_TYPE.FILE, particleFlux.f10p7_source)
 
-        particleFlux.flux_file = r"DynamicEarthData\SpaceWeather-v1.2.txt"
-        Assert.assertEqual("SpaceWeather-v1.2.txt", particleFlux.flux_file)
+        particleFlux.flux_filename = r"DynamicEarthData\SpaceWeather-v1.2.txt"
+        Assert.assertEqual("SpaceWeather-v1.2.txt", particleFlux.flux_filename)
         with pytest.raises(Exception):
-            particleFlux.f_10_p7 = 160
+            particleFlux.f10p7 = 160
 
-        particleFlux.f_10_p7_source = VEHICLE_SPACE_ENVIRONMENT_F_10_P7_SOURCE.SPECIFY
-        Assert.assertEqual(VEHICLE_SPACE_ENVIRONMENT_F_10_P7_SOURCE.SPECIFY, particleFlux.f_10_p7_source)
+        particleFlux.f10p7_source = VEHICLE_SPACE_ENVIRONMENT_F10P7_SOURCE_TYPE.SPECIFY
+        Assert.assertEqual(VEHICLE_SPACE_ENVIRONMENT_F10P7_SOURCE_TYPE.SPECIFY, particleFlux.f10p7_source)
 
-        particleFlux.f_10_p7 = 160
-        Assert.assertEqual(160, particleFlux.f_10_p7)
+        particleFlux.f10p7 = 160
+        Assert.assertEqual(160, particleFlux.f10p7)
         with pytest.raises(Exception):
-            particleFlux.flux_file = r"DynamicEarthData\SpaceWeather-v1.2.txt"
+            particleFlux.flux_filename = r"DynamicEarthData\SpaceWeather-v1.2.txt"
 
         particleFlux.area = 1.1
         Assert.assertEqual(1.1, particleFlux.area)
@@ -539,16 +537,16 @@ class SEETHelper(object):
             Console.WriteLine(d)
 
     @staticmethod
-    def Test_IAgVeSpEnvMagFieldLine(magFieldLine: "VehicleSpaceEnvironmentMagnitudeFieldLine"):
-        magFieldLine.is_2d_visible = False
-        Assert.assertFalse(magFieldLine.is_2d_visible)
-        magFieldLine.is_2d_visible = True
-        Assert.assertTrue(magFieldLine.is_2d_visible)
+    def Test_IAgVeSpEnvMagFieldLine(magFieldLine: "SpaceEnvironmentMagnitudeFieldLine"):
+        magFieldLine.show_graphics_2d = False
+        Assert.assertFalse(magFieldLine.show_graphics_2d)
+        magFieldLine.show_graphics_2d = True
+        Assert.assertTrue(magFieldLine.show_graphics_2d)
 
-        magFieldLine.is_3d_visible = False
-        Assert.assertFalse(magFieldLine.is_3d_visible)
-        magFieldLine.is_3d_visible = True
-        Assert.assertTrue(magFieldLine.is_3d_visible)
+        magFieldLine.show_graphics_3d = False
+        Assert.assertFalse(magFieldLine.show_graphics_3d)
+        magFieldLine.show_graphics_3d = True
+        Assert.assertTrue(magFieldLine.show_graphics_3d)
 
         magFieldLine.color = Colors.from_argb(100)
         AssertEx.AreEqual(Colors.from_argb(100), magFieldLine.color)
@@ -563,10 +561,10 @@ class SEETHelper(object):
         with pytest.raises(Exception):
             magFieldLine.line_width = 11
 
-        magFieldLine.label_visible = False
-        Assert.assertFalse(magFieldLine.label_visible)
-        magFieldLine.label_visible = True
-        Assert.assertTrue(magFieldLine.label_visible)
+        magFieldLine.show_label = False
+        Assert.assertFalse(magFieldLine.show_label)
+        magFieldLine.show_label = True
+        Assert.assertTrue(magFieldLine.show_label)
 
     @staticmethod
     def Test_IAgVeGfxSAA(veGfxSAA: "VehicleGraphics2DSAA"):
@@ -582,39 +580,39 @@ class SEETHelper(object):
         with pytest.raises(Exception):
             veGfxSAA.altitude = 600
 
-        veGfxSAA.is_visible = True
-        Assert.assertTrue(veGfxSAA.is_visible)
+        veGfxSAA.show_graphics = True
+        Assert.assertTrue(veGfxSAA.show_graphics)
 
-        veGfxSAA.is_fill_visible = True
-        Assert.assertTrue(veGfxSAA.is_fill_visible)
+        veGfxSAA.show_filled_contours = True
+        Assert.assertTrue(veGfxSAA.show_filled_contours)
 
         veGfxSAA.translucency = 50
         Assert.assertEqual(50, veGfxSAA.translucency)
 
-        veGfxSAA.is_fill_visible = False
-        Assert.assertFalse(veGfxSAA.is_fill_visible)
+        veGfxSAA.show_filled_contours = False
+        Assert.assertFalse(veGfxSAA.show_filled_contours)
 
         with pytest.raises(Exception):
             veGfxSAA.translucency = 50
 
-        veGfxSAA.is_visible = False
-        Assert.assertFalse(veGfxSAA.is_visible)
+        veGfxSAA.show_graphics = False
+        Assert.assertFalse(veGfxSAA.show_graphics)
 
         with pytest.raises(Exception):
-            veGfxSAA.is_fill_visible = False
+            veGfxSAA.show_filled_contours = False
 
         with pytest.raises(Exception):
             veGfxSAA.translucency = 50
 
     @staticmethod
     def Test_IAgVeVOSAA(veVOSAA: "VehicleGraphics3DSAA"):
-        veVOSAA.is_visible = True
-        Assert.assertTrue(veVOSAA.is_visible)
-        veVOSAA.is_visible = False
-        Assert.assertFalse(veVOSAA.is_visible)
+        veVOSAA.show_graphics = True
+        Assert.assertTrue(veVOSAA.show_graphics)
+        veVOSAA.show_graphics = False
+        Assert.assertFalse(veVOSAA.show_graphics)
 
     @staticmethod
-    def Test_IAgVeSpEnvRadiation(radiation: "VehicleSpaceEnvironmentRadiation"):
+    def Test_IAgVeSpEnvRadiation(radiation: "SpaceEnvironmentRadiation"):
         fluxStatus: str = radiation.flux_status
         Assert.assertEqual(
             "The Radiation Only mode uses APEXRAD and CRRESRAD only and cannot compute radiation flux values.",
@@ -647,17 +645,17 @@ class SEETHelper(object):
                     SEETHelper.TestDoseChannelEnabled(radiation)
                     SEETHelper.TestApFluxEnabled(radiation)
                 else:
-                    Assert.fail("Should never get here (Test_VehicleSpaceEnvironmentRadiation)")
+                    Assert.fail("Should never get here (Test_SpaceEnvironmentRadiation)")
 
     @staticmethod
-    def TestDoseChannelEnabled(radiation: "VehicleSpaceEnvironmentRadiation"):
+    def TestDoseChannelEnabled(radiation: "SpaceEnvironmentRadiation"):
         with pytest.raises(Exception):
             radiation.dose_channel = VEHICLE_SPACE_ENVIRONMENT_DOSE_CHANNEL.UNKNOWN
 
-        radiation.dose_channel = VEHICLE_SPACE_ENVIRONMENT_DOSE_CHANNEL.HIGH_LET
-        Assert.assertEqual(VEHICLE_SPACE_ENVIRONMENT_DOSE_CHANNEL.HIGH_LET, radiation.dose_channel)
-        radiation.dose_channel = VEHICLE_SPACE_ENVIRONMENT_DOSE_CHANNEL.LOW_LET
-        Assert.assertEqual(VEHICLE_SPACE_ENVIRONMENT_DOSE_CHANNEL.LOW_LET, radiation.dose_channel)
+        radiation.dose_channel = VEHICLE_SPACE_ENVIRONMENT_DOSE_CHANNEL.HIGH_LINEAR_ENERGY_TRANSPORT
+        Assert.assertEqual(VEHICLE_SPACE_ENVIRONMENT_DOSE_CHANNEL.HIGH_LINEAR_ENERGY_TRANSPORT, radiation.dose_channel)
+        radiation.dose_channel = VEHICLE_SPACE_ENVIRONMENT_DOSE_CHANNEL.LOW_LINEAR_ENERGY_TRANSPORT
+        Assert.assertEqual(VEHICLE_SPACE_ENVIRONMENT_DOSE_CHANNEL.LOW_LINEAR_ENERGY_TRANSPORT, radiation.dose_channel)
         radiation.dose_channel = VEHICLE_SPACE_ENVIRONMENT_DOSE_CHANNEL.TOTAL
         Assert.assertEqual(VEHICLE_SPACE_ENVIRONMENT_DOSE_CHANNEL.TOTAL, radiation.dose_channel)
 
@@ -671,7 +669,7 @@ class SEETHelper(object):
             radiation.use_nuclear_attenuation = True
 
         with pytest.raises(Exception):
-            radiation.include_nuclear_atten_neutrons = True
+            radiation.include_nuclear_attenuation_neutrons = True
 
         with pytest.raises(Exception):
             radiation.shielding_thicknesses.add(10)
@@ -687,9 +685,9 @@ class SEETHelper(object):
                 Console.WriteLine(pe)
 
     @staticmethod
-    def TestDoseChannelDisabled(radiation: "VehicleSpaceEnvironmentRadiation", shieldingThicknessesVal: float):
+    def TestDoseChannelDisabled(radiation: "SpaceEnvironmentRadiation", shieldingThicknessesVal: float):
         with pytest.raises(Exception):
-            radiation.dose_channel = VEHICLE_SPACE_ENVIRONMENT_DOSE_CHANNEL.HIGH_LET
+            radiation.dose_channel = VEHICLE_SPACE_ENVIRONMENT_DOSE_CHANNEL.HIGH_LINEAR_ENERGY_TRANSPORT
 
         with pytest.raises(Exception):
             radiation.detector_type = VEHICLE_SPACE_ENVIRONMENT_DETECTOR_TYPE.UNKNOWN
@@ -710,16 +708,16 @@ class SEETHelper(object):
         radiation.use_nuclear_attenuation = True
         Assert.assertTrue(radiation.use_nuclear_attenuation)
 
-        radiation.include_nuclear_atten_neutrons = False
-        Assert.assertFalse(radiation.include_nuclear_atten_neutrons)
-        radiation.include_nuclear_atten_neutrons = True
-        Assert.assertTrue(radiation.include_nuclear_atten_neutrons)
+        radiation.include_nuclear_attenuation_neutrons = False
+        Assert.assertFalse(radiation.include_nuclear_attenuation_neutrons)
+        radiation.include_nuclear_attenuation_neutrons = True
+        Assert.assertTrue(radiation.include_nuclear_attenuation_neutrons)
 
         radiation.use_nuclear_attenuation = False
         Assert.assertFalse(radiation.use_nuclear_attenuation)
 
         with pytest.raises(Exception):
-            radiation.include_nuclear_atten_neutrons = True
+            radiation.include_nuclear_attenuation_neutrons = True
 
         origCount: int = radiation.shielding_thicknesses.count
         radiation.shielding_thicknesses.add(shieldingThicknessesVal)
@@ -736,14 +734,14 @@ class SEETHelper(object):
             Console.WriteLine(pe)
 
     @staticmethod
-    def TestApFluxEnabled(radiation: "VehicleSpaceEnvironmentRadiation"):
+    def TestApFluxEnabled(radiation: "SpaceEnvironmentRadiation"):
         with pytest.raises(Exception):
             radiation.ap_source = VEHICLE_SPACE_ENVIRONMENT_AP_SOURCE.UNKNOWN
         radiation.ap_source = VEHICLE_SPACE_ENVIRONMENT_AP_SOURCE.FILE
         Assert.assertEqual(VEHICLE_SPACE_ENVIRONMENT_AP_SOURCE.FILE, radiation.ap_source)
 
-        radiation.flux_file = r"DynamicEarthData\SpaceWeather-v1.2.txt"
-        Assert.assertEqual("SpaceWeather-v1.2.txt", radiation.flux_file)
+        radiation.flux_filename = r"DynamicEarthData\SpaceWeather-v1.2.txt"
+        Assert.assertEqual("SpaceWeather-v1.2.txt", radiation.flux_filename)
         with pytest.raises(Exception):
             radiation.ap = 11
 
@@ -753,22 +751,22 @@ class SEETHelper(object):
         radiation.ap = 11
         Assert.assertEqual(11, radiation.ap)
         with pytest.raises(Exception):
-            radiation.flux_file = r"DynamicEarthData\SpaceWeather-v1.2.txt"
+            radiation.flux_filename = r"DynamicEarthData\SpaceWeather-v1.2.txt"
 
     @staticmethod
-    def TestApFluxDisabled(radiation: "VehicleSpaceEnvironmentRadiation"):
+    def TestApFluxDisabled(radiation: "SpaceEnvironmentRadiation"):
         with pytest.raises(Exception):
             radiation.ap_source = VEHICLE_SPACE_ENVIRONMENT_AP_SOURCE.FILE
 
         with pytest.raises(Exception):
-            radiation.flux_file = r"DynamicEarthData\SpaceWeather-v1.2.txt"
+            radiation.flux_filename = r"DynamicEarthData\SpaceWeather-v1.2.txt"
 
         with pytest.raises(Exception):
             radiation.ap = 11
 
     @staticmethod
     def TestScenarioComputations(scen: "Scenario", startTime: typing.Any, stopTime: typing.Any):
-        scenSpEnv: "ScenSpaceEnvironment" = scen.space_environment
+        scenSpEnv: "ScenarioSpaceEnvironment" = scen.space_environment
         if not TestBase.NoGraphicsMode:
             startOM: float = 0
             stopOM: float = 0
@@ -777,10 +775,10 @@ class SEETHelper(object):
             pBy: float = 0
             pBz: float = 0
 
-            startOM = scenSpEnv.graphics_3d.magnetic_field.compute_b_beq(startTime, 10, 20, 1000)
+            startOM = scenSpEnv.graphics_3d.magnetic_field.compute_b_over_beq(startTime, 10, 20, 1000)
             Console.WriteLine(startOM)
             Assert.assertAlmostEqual(1.0125, startOM, delta=0.0001)
-            stopOM = scenSpEnv.graphics_3d.magnetic_field.compute_b_beq(stopTime, 10, 20, 1000)
+            stopOM = scenSpEnv.graphics_3d.magnetic_field.compute_b_over_beq(stopTime, 10, 20, 1000)
             Console.WriteLine(stopOM)
             Assert.assertAlmostEqual(1.0125, stopOM, delta=0.0001)
             bFieldArray = scenSpEnv.graphics_3d.magnetic_field.compute_b_field_as_array(startTime, 10, 20, 1000)
@@ -809,34 +807,34 @@ class SEETHelper(object):
             Console.WriteLine(arStop[2])
             Assert.assertAlmostEqual(20328.957, float(arStop[2]), delta=0.001)
 
-            startOM = scenSpEnv.graphics_3d.magnetic_field.compute_dipole_l(startTime, 10, 20, 1000)
+            startOM = scenSpEnv.graphics_3d.magnetic_field.compute_dipole__shell(startTime, 10, 20, 1000)
             Console.WriteLine(startOM)
             Assert.assertAlmostEqual(1.1913, startOM, delta=0.0001)
-            stopOM = scenSpEnv.graphics_3d.magnetic_field.compute_dipole_l(stopTime, 10, 20, 1000)
+            stopOM = scenSpEnv.graphics_3d.magnetic_field.compute_dipole__shell(stopTime, 10, 20, 1000)
             Console.WriteLine(stopOM)
             Assert.assertAlmostEqual(1.1914, stopOM, delta=0.0001)
 
-            startOM = scenSpEnv.graphics_3d.magnetic_field.compute_mc_ilwain_l(startTime, 10, 20, 1000)
+            startOM = scenSpEnv.graphics_3d.magnetic_field.compute_mcilwain_l_shell(startTime, 10, 20, 1000)
             Console.WriteLine(startOM)
             Assert.assertAlmostEqual(1.1498, startOM, delta=0.0001)
-            stopOM = scenSpEnv.graphics_3d.magnetic_field.compute_mc_ilwain_l(stopTime, 10, 20, 1000)
+            stopOM = scenSpEnv.graphics_3d.magnetic_field.compute_mcilwain_l_shell(stopTime, 10, 20, 1000)
             Console.WriteLine(stopOM)
             Assert.assertAlmostEqual(1.1498, stopOM, delta=0.0001)
 
         else:
             with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
-                startOM: float = scenSpEnv.graphics_3d.magnetic_field.compute_b_beq(startTime, 10, 20, 1000)
+                startOM: float = scenSpEnv.graphics_3d.magnetic_field.compute_b_over_beq(startTime, 10, 20, 1000)
 
         #
         # SAA Flux Intensity Compute methods
         #
 
         d: float = scen.space_environment.compute_saa_flux_intensity(
-            SPACE_ENVIRONMENT_SAA_CHANNEL.CHANNEL23_ME_V, 10, 20, 1000
+            SPACE_ENVIRONMENT_SAA_CHANNEL.CHANNEL_23_MEV, 10, 20, 1000
         )
         Assert.assertAlmostEqual(19543.74, d, delta=0.01)
 
         with pytest.raises(Exception):
             d = scen.space_environment.compute_saa_flux_intensity(
-                SPACE_ENVIRONMENT_SAA_CHANNEL.CHANNEL23_ME_V, 10, 20, 2000
+                SPACE_ENVIRONMENT_SAA_CHANNEL.CHANNEL_23_MEV, 10, 20, 2000
             )

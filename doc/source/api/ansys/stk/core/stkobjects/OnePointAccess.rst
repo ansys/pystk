@@ -41,7 +41,7 @@ Overview
               - Gets or sets the step size. Default is 60 seconds.
             * - :py:attr:`~ansys.stk.core.stkobjects.OnePointAccess.output_to_file`
               - Whether to output to a file.
-            * - :py:attr:`~ansys.stk.core.stkobjects.OnePointAccess.output_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.OnePointAccess.output_filename`
               - If set to do so, results will be output to a file with this name.
 
 
@@ -87,8 +87,8 @@ Property detail
 
     Whether to output to a file.
 
-.. py:property:: output_file
-    :canonical: ansys.stk.core.stkobjects.OnePointAccess.output_file
+.. py:property:: output_filename
+    :canonical: ansys.stk.core.stkobjects.OnePointAccess.output_filename
     :type: str
 
     If set to do so, results will be output to a file with this name.
@@ -127,19 +127,19 @@ Method detail
 
 
 
-.. py:method:: compute_first_satisfaction(self, startTime: typing.Any, stopTime: typing.Any, maxNumAccessesToFind: int, minDuration: float) -> ImmutableIntervalCollection
+.. py:method:: compute_first_satisfaction(self, start_time: typing.Any, stop_time: typing.Any, max_num_accesses_to_find: int, min_duration: float) -> TimeIntervalCollectionReadOnly
     :canonical: ansys.stk.core.stkobjects.OnePointAccess.compute_first_satisfaction
 
     Compute and reports the first N satisfaction intervals (where N <= MaxNumAccessesToFind) over the specified interval whose spans meet the specified minimum duration. Does not use output file.
 
     :Parameters:
 
-    **startTime** : :obj:`~typing.Any`
-    **stopTime** : :obj:`~typing.Any`
-    **maxNumAccessesToFind** : :obj:`~int`
-    **minDuration** : :obj:`~float`
+    **start_time** : :obj:`~typing.Any`
+    **stop_time** : :obj:`~typing.Any`
+    **max_num_accesses_to_find** : :obj:`~int`
+    **min_duration** : :obj:`~float`
 
     :Returns:
 
-        :obj:`~ImmutableIntervalCollection`
+        :obj:`~TimeIntervalCollectionReadOnly`
 

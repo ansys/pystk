@@ -54,10 +54,10 @@ class ObjectCoverageSnippets(CodeSnippetsTestBase):
         uavAircraft: "IStkObject" = root.get_object_from_path("Aircraft/UAV/Sensor/UAV_Camera")
         airspaceAreaTarget: "IStkObject" = root.get_object_from_path("AreaTarget/Airspace")
 
-        firstSunlightEpoch: "ITimeToolInstant" = airspaceAreaTarget.vgt.time_instants[
+        firstSunlightEpoch: "ITimeToolInstant" = airspaceAreaTarget.analysis_workbench_components.time_instants[
             "LightingIntervals.Sunlight.First.Start"
         ]
-        lastSunlightEpoch: "ITimeToolInstant" = airspaceAreaTarget.vgt.time_instants[
+        lastSunlightEpoch: "ITimeToolInstant" = airspaceAreaTarget.analysis_workbench_components.time_instants[
             "LightingIntervals.Sunlight.First.Stop"
         ]
 

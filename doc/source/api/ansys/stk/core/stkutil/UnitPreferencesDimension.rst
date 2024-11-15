@@ -27,7 +27,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkutil.UnitPreferencesDimension.id`
+            * - :py:attr:`~ansys.stk.core.stkutil.UnitPreferencesDimension.identifier`
               - Returns the ID of the dimension.
             * - :py:attr:`~ansys.stk.core.stkutil.UnitPreferencesDimension.name`
               - Returns the current Dimension's full name.
@@ -49,8 +49,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: id
-    :canonical: ansys.stk.core.stkutil.UnitPreferencesDimension.id
+.. py:property:: identifier
+    :canonical: ansys.stk.core.stkutil.UnitPreferencesDimension.identifier
     :type: int
 
     Returns the ID of the dimension.
@@ -81,14 +81,14 @@ Method detail
 
 
 
-.. py:method:: set_current_unit(self, unitAbbrv: str) -> None
+.. py:method:: set_current_unit(self, unit_abbrv: str) -> None
     :canonical: ansys.stk.core.stkutil.UnitPreferencesDimension.set_current_unit
 
     Set the Unit for this simple dimension.
 
     :Parameters:
 
-    **unitAbbrv** : :obj:`~str`
+    **unit_abbrv** : :obj:`~str`
 
     :Returns:
 

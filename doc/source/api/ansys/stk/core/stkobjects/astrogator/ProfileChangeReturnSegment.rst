@@ -65,14 +65,14 @@ Method detail
 
 
 
-.. py:method:: set_segment(self, pVAMCSReturn: MCSReturn) -> None
+.. py:method:: set_segment(self, mcs_return: MCSReturn) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileChangeReturnSegment.set_segment
 
     Set the return segment to target.
 
     :Parameters:
 
-    **pVAMCSReturn** : :obj:`~MCSReturn`
+    **mcs_return** : :obj:`~MCSReturn`
 
     :Returns:
 

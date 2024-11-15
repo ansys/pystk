@@ -22,7 +22,7 @@ Overview
             * - :py:attr:`~UNKNOWN`
               - Unknown Ionospheric loss model type.
 
-            * - :py:attr:`~P_531_13_TYPE`
+            * - :py:attr:`~P_531_13`
               - Ionospheric loss model P. 531-13.
 
 

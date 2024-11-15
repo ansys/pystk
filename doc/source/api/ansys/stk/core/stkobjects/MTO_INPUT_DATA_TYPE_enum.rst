@@ -19,13 +19,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~TIME_LAT_LON_ALTITUDE`
+            * - :py:attr:`~DETIC`
               - Input position data arrays are lat, lon, alt.
 
-            * - :py:attr:`~TIME_CBF`
+            * - :py:attr:`~CARTESIAN_IN_CENTRAL_BODY_FIXED`
               - Input position data arrays are cartesian x, y, z in the MTO's central body fixed frame.
 
-            * - :py:attr:`~TIME_VGT`
+            * - :py:attr:`~CARTESIAN_IN_VECTOR_GEOMETRY_TOOL_SYSTEM`
               - Input position data arrays are cartesian x, y, z in the MTO's specified data reference system.
 
 

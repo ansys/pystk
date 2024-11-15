@@ -18,7 +18,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DVector.reference_crdns`
+            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DVector.vector_geometry_tool_components`
               - Gets a collection that manages the 3D VGT visualizations.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DVector.vector_size_scale`
               - The size scale of the geometric elements. Dimensionless.
@@ -40,9 +40,9 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: reference_crdns
-    :canonical: ansys.stk.core.stkobjects.Graphics3DVector.reference_crdns
-    :type: Graphics3DReferenceAnalysisWorkbenchCollection
+.. py:property:: vector_geometry_tool_components
+    :canonical: ansys.stk.core.stkobjects.Graphics3DVector.vector_geometry_tool_components
+    :type: Graphics3DReferenceVectorGeometryToolComponentCollection
 
     Gets a collection that manages the 3D VGT visualizations.
 

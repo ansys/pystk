@@ -37,16 +37,16 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: create(self, systemName: str, description: str, systemType: SYSTEM_TYPE) -> IVectorGeometryToolSystem
+.. py:method:: create(self, system_name: str, description: str, system_type: SYSTEM_TYPE) -> IVectorGeometryToolSystem
     :canonical: ansys.stk.core.vgt.VectorGeometryToolSystemFactory.create
 
     Create a VGT system using the specified name, description and type.
 
     :Parameters:
 
-    **systemName** : :obj:`~str`
+    **system_name** : :obj:`~str`
     **description** : :obj:`~str`
-    **systemType** : :obj:`~SYSTEM_TYPE`
+    **system_type** : :obj:`~SYSTEM_TYPE`
 
     :Returns:
 

@@ -19,16 +19,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~MODEL_TYPE_UNKNOWN`
+            * - :py:attr:`~UNKNOWN`
               - Unknown GPS attitude model.
 
-            * - :py:attr:`~GSP_MODEL_GYM95`
+            * - :py:attr:`~GYM95`
               - GYM 95 model.
 
-            * - :py:attr:`~GSP_MODEL_BLOCK_IIA_NOMINAL`
+            * - :py:attr:`~BLOCK_IIA_NOMINAL`
               - IIA Nominal model.
 
-            * - :py:attr:`~GSP_MODEL_BLOCK_IIR_NOMINAL`
+            * - :py:attr:`~BLOCK_IIR_NOMINAL`
               - IIR Nominal model.
 
 

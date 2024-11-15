@@ -22,10 +22,10 @@ Overview
             * - :py:attr:`~UNKNOWN`
               - Unknown or unsupported slew mode.
 
-            * - :py:attr:`~CONSTRAINED2_ND_ORDER_SPLINE`
+            * - :py:attr:`~CONSTRAINED_2ND_ORDER_SPLINE`
               - 2nd order spline interpolation mode.
 
-            * - :py:attr:`~CONSTRAINED3_RD_ORDER_SPLINE`
+            * - :py:attr:`~CONSTRAINED_3RD_ORDER_SPLINE`
               - 3d order spline interpolation mode.
 
             * - :py:attr:`~FIXED_RATE`

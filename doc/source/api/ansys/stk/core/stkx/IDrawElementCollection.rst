@@ -35,7 +35,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkx.IDrawElementCollection.count`
               - Number of elements contained in the collection.
-            * - :py:attr:`~ansys.stk.core.stkx.IDrawElementCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkx.IDrawElementCollection._new_enum`
               - Returns an object that can be used to iterate through all the strings in the collection.
             * - :py:attr:`~ansys.stk.core.stkx.IDrawElementCollection.visible`
               - Show or hide all the elements.
@@ -58,8 +58,8 @@ Property detail
 
     Number of elements contained in the collection.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkx.IDrawElementCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkx.IDrawElementCollection._new_enum
     :type: EnumeratorProxy
 
     Returns an object that can be used to iterate through all the strings in the collection.
@@ -98,27 +98,27 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, elemType: str) -> IDrawElement
+.. py:method:: add(self, elem_type: str) -> IDrawElement
     :canonical: ansys.stk.core.stkx.IDrawElementCollection.add
 
     Create and add a new element to the end of the sequence.
 
     :Parameters:
 
-    **elemType** : :obj:`~str`
+    **elem_type** : :obj:`~str`
 
     :Returns:
 
         :obj:`~IDrawElement`
 
-.. py:method:: remove(self, drawElem: IDrawElement) -> None
+.. py:method:: remove(self, draw_elem: IDrawElement) -> None
     :canonical: ansys.stk.core.stkx.IDrawElementCollection.remove
 
     Remove the specified element.
 
     :Parameters:
 
-    **drawElem** : :obj:`~IDrawElement`
+    **draw_elem** : :obj:`~IDrawElement`
 
     :Returns:
 

@@ -65,11 +65,13 @@ class StkObjectGfxVOSnippets(CodeSnippetsTestBase):
         # Attempt to cast STK Object to the IDisplayTime interface
         display: "IDisplayTime" = clr.CastAs(stkObject, IDisplayTime)
         if display != None:
-            if display.is_display_status_type_supported(DISPLAY_TIMES_TYPE.USE_INTERVALS):
-                display.set_display_status_type(DISPLAY_TIMES_TYPE.USE_INTERVALS)
+            if display.is_display_status_type_supported(DISPLAY_TIMES_TYPE.INTERVALS):
+                display.set_display_status_type(DISPLAY_TIMES_TYPE.INTERVALS)
 
-                # Get IntervalCollection interface
-                intervalCollection: "IntervalCollection" = clr.CastAs(display.display_times_data, IntervalCollection)
+                # Get TimeIntervalCollection interface
+                intervalCollection: "TimeIntervalCollection" = clr.CastAs(
+                    display.display_times_data, TimeIntervalCollection
+                )
                 intervalCollection.remove_all()
 
                 # Add subsequent intervals
@@ -98,7 +100,9 @@ class StkObjectGfxVOSnippets(CodeSnippetsTestBase):
             if display.is_display_status_type_supported(DISPLAY_TIMES_TYPE.DURING_ACCESS):
                 display.set_display_status_type(DISPLAY_TIMES_TYPE.DURING_ACCESS)
 
-                duringAccess: "DuringAccess" = clr.CastAs(display.display_times_data, DuringAccess)
+                duringAccess: "DisplayTimesDuringAccess" = clr.CastAs(
+                    display.display_times_data, DisplayTimesDuringAccess
+                )
 
                 # Add subsequent existing stk objects to access display
                 duringAccess.access_objects.add("Satellite/satellite1")

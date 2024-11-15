@@ -78,7 +78,7 @@ Property detail
 
 .. py:property:: liquid_water_density_choice
     :canonical: ansys.stk.core.stkobjects.CloudsAndFogFadingLossModelP840_7.liquid_water_density_choice
-    :type: CLOUDS_AND_FOG_LIQUID_WATER_CHOICES
+    :type: CLOUDS_AND_FOG_LIQUID_WATER_CHOICE_TYPE
 
     Gets or sets the cloud liquid water density Choice.
 

@@ -18,7 +18,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DDefaultAttributes.is_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DDefaultAttributes.show_graphics`
               - Opt whether to show the graphics attributes.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DDefaultAttributes.color`
               - Gets or sets the line color.
@@ -40,8 +40,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: is_visible
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DDefaultAttributes.is_visible
+.. py:property:: show_graphics
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DDefaultAttributes.show_graphics
     :type: bool
 
     Opt whether to show the graphics attributes.

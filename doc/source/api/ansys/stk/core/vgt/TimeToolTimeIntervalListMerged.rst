@@ -95,106 +95,106 @@ Method detail
 
 
 
-.. py:method:: set_interval_list_a(self, refIntervals: ITimeToolTimeIntervalList) -> None
+.. py:method:: set_interval_list_a(self, ref_intervals: ITimeToolTimeIntervalList) -> None
     :canonical: ansys.stk.core.vgt.TimeToolTimeIntervalListMerged.set_interval_list_a
 
     Set the interval list A.
 
     :Parameters:
 
-    **refIntervals** : :obj:`~ITimeToolTimeIntervalList`
+    **ref_intervals** : :obj:`~ITimeToolTimeIntervalList`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: set_interval_a(self, refIntervals: ITimeToolTimeInterval) -> None
+.. py:method:: set_interval_a(self, ref_intervals: ITimeToolTimeInterval) -> None
     :canonical: ansys.stk.core.vgt.TimeToolTimeIntervalListMerged.set_interval_a
 
     Set the interval A.
 
     :Parameters:
 
-    **refIntervals** : :obj:`~ITimeToolTimeInterval`
+    **ref_intervals** : :obj:`~ITimeToolTimeInterval`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: set_interval_list_b(self, refIntervals: ITimeToolTimeIntervalList) -> None
+.. py:method:: set_interval_list_b(self, ref_intervals: ITimeToolTimeIntervalList) -> None
     :canonical: ansys.stk.core.vgt.TimeToolTimeIntervalListMerged.set_interval_list_b
 
     Set the interval list B.
 
     :Parameters:
 
-    **refIntervals** : :obj:`~ITimeToolTimeIntervalList`
+    **ref_intervals** : :obj:`~ITimeToolTimeIntervalList`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: set_interval_b(self, refIntervals: ITimeToolTimeInterval) -> None
+.. py:method:: set_interval_b(self, ref_intervals: ITimeToolTimeInterval) -> None
     :canonical: ansys.stk.core.vgt.TimeToolTimeIntervalListMerged.set_interval_b
 
     Set the interval B.
 
     :Parameters:
 
-    **refIntervals** : :obj:`~ITimeToolTimeInterval`
+    **ref_intervals** : :obj:`~ITimeToolTimeInterval`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: add_interval(self, refIntervals: ITimeToolTimeInterval) -> None
+.. py:method:: add_interval(self, ref_intervals: ITimeToolTimeInterval) -> None
     :canonical: ansys.stk.core.vgt.TimeToolTimeIntervalListMerged.add_interval
 
     Add interval.
 
     :Parameters:
 
-    **refIntervals** : :obj:`~ITimeToolTimeInterval`
+    **ref_intervals** : :obj:`~ITimeToolTimeInterval`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: add_interval_list(self, refIntervals: ITimeToolTimeIntervalList) -> None
+.. py:method:: add_interval_list(self, ref_intervals: ITimeToolTimeIntervalList) -> None
     :canonical: ansys.stk.core.vgt.TimeToolTimeIntervalListMerged.add_interval_list
 
     Add interval list.
 
     :Parameters:
 
-    **refIntervals** : :obj:`~ITimeToolTimeIntervalList`
+    **ref_intervals** : :obj:`~ITimeToolTimeIntervalList`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: set_interval(self, refIntervals: ITimeToolTimeInterval, pos: int) -> None
+.. py:method:: set_interval(self, ref_intervals: ITimeToolTimeInterval, pos: int) -> None
     :canonical: ansys.stk.core.vgt.TimeToolTimeIntervalListMerged.set_interval
 
     Set the interval at given index.
 
     :Parameters:
 
-    **refIntervals** : :obj:`~ITimeToolTimeInterval`
+    **ref_intervals** : :obj:`~ITimeToolTimeInterval`
     **pos** : :obj:`~int`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: set_interval_list(self, refIntervals: ITimeToolTimeIntervalList, pos: int) -> None
+.. py:method:: set_interval_list(self, ref_intervals: ITimeToolTimeIntervalList, pos: int) -> None
     :canonical: ansys.stk.core.vgt.TimeToolTimeIntervalListMerged.set_interval_list
 
     Set the interval list at given index.
 
     :Parameters:
 
-    **refIntervals** : :obj:`~ITimeToolTimeIntervalList`
+    **ref_intervals** : :obj:`~ITimeToolTimeIntervalList`
     **pos** : :obj:`~int`
 
     :Returns:

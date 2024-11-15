@@ -29,7 +29,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleEphemerisCCSDSv2ExportTool.originator`
               - A string that specifies an identifier of the organization producing the data file.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleEphemerisCCSDSv2ExportTool.object_id`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleEphemerisCCSDSv2ExportTool.object_identifier`
               - A string defining the Object ID - to be specified as the international spacecraft designator, also known as an NSSDC identifier.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleEphemerisCCSDSv2ExportTool.object_name`
               - A name for the Object. By recommendation of the CCSDS standard, the name from the SPACEWARN Bulletin should be used.
@@ -81,8 +81,8 @@ Property detail
 
     A string that specifies an identifier of the organization producing the data file.
 
-.. py:property:: object_id
-    :canonical: ansys.stk.core.stkobjects.VehicleEphemerisCCSDSv2ExportTool.object_id
+.. py:property:: object_identifier
+    :canonical: ansys.stk.core.stkobjects.VehicleEphemerisCCSDSv2ExportTool.object_identifier
     :type: str
 
     A string defining the Object ID - to be specified as the international spacecraft designator, also known as an NSSDC identifier.
@@ -113,7 +113,7 @@ Property detail
 
 .. py:property:: ephemeris_format
     :canonical: ansys.stk.core.stkobjects.VehicleEphemerisCCSDSv2ExportTool.ephemeris_format
-    :type: CCSDS_EPHEM_FORMAT
+    :type: CCSDS_EPHEMERIS_FORMAT_TYPE
 
     Gets or sets the desired format to be used for representing the position and velocity information as either scientific notation or floating point notation. Scientific notation is recommended when possible.
 
@@ -202,14 +202,14 @@ Method detail
 
 
 
-.. py:method:: export(self, fileName: str) -> None
+.. py:method:: export(self, file_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.VehicleEphemerisCCSDSv2ExportTool.export
 
     Export the ephemeris file.
 
     :Parameters:
 
-    **fileName** : :obj:`~str`
+    **file_name** : :obj:`~str`
 
     :Returns:
 

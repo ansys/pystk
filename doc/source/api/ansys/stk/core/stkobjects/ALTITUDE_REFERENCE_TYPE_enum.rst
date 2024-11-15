@@ -19,7 +19,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~MSL`
+            * - :py:attr:`~MEAN_SEA_LEVEL`
               - Reference the altitude to Mean Sea Level.
 
             * - :py:attr:`~TERRAIN`

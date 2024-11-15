@@ -19,7 +19,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~STANDARD_ATMOS_MODEL_1976`
+            * - :py:attr:`~STANDARD_ATMOSPHERE_MODEL_1976`
               - 1976 Standard Atmosphere: look-up model based on the satellite's altitude, with a valid range of 86km - 1000 km.
 
             * - :py:attr:`~CIRA72`
@@ -52,7 +52,7 @@ Overview
             * - :py:attr:`~MSIS90`
               - MSISE 1990: finds the total density by accounting for the contribution of N2, O, O2, He, Ar and H. 1990 version, valid range of 0-1000 km.
 
-            * - :py:attr:`~UNKNOWN_DENS_MODEL`
+            * - :py:attr:`~UNKNOWN`
               - Unsupported or unknown atmospheric density model.
 
             * - :py:attr:`~USER_DEFINED`

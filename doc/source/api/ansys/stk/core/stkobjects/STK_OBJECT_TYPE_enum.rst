@@ -19,7 +19,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ADV_CAT`
+            * - :py:attr:`~ADVCAT`
               - AdvCAT.
 
             * - :py:attr:`~AIRCRAFT`

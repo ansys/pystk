@@ -98,14 +98,14 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: set_all_arguments(self, calcList: list) -> None
+.. py:method:: set_all_arguments(self, calc_list: list) -> None
     :canonical: ansys.stk.core.vgt.CalculationToolScalarCustomInlineScript.set_all_arguments
 
     Set the list of arguments.
 
     :Parameters:
 
-    **calcList** : :obj:`~list`
+    **calc_list** : :obj:`~list`
 
     :Returns:
 

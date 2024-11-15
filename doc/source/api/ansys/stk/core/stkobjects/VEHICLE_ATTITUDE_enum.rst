@@ -19,13 +19,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ATTITUDE_UNKNOWN`
+            * - :py:attr:`~UNKNOWN`
               - Unsupported attitude option.
 
-            * - :py:attr:`~ATTITUDE_REAL_TIME`
+            * - :py:attr:`~REAL_TIME`
               - Real-time: define the vehicle's attitude profile using near-real time attitude data supplied via Connect.
 
-            * - :py:attr:`~ATTITUDE_STANDARD`
+            * - :py:attr:`~STANDARD`
               - Standard: use a basic, targeted or external attitude profile.
 
 

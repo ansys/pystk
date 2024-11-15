@@ -17,9 +17,9 @@ class ChainSnippets(CodeSnippetsTestBase):
     @staticmethod
     def setUpClass():
         CodeSnippetsTestBase.Initialize()
-        CodeSnippetsTestBase.m_Root.unit_preferences.set_current_unit("DateFormat", "UTCG")
-        CodeSnippetsTestBase.m_Root.unit_preferences.set_current_unit("Angle", "deg")
-        CodeSnippetsTestBase.m_Root.unit_preferences.set_current_unit("Distance", "m")
+        CodeSnippetsTestBase.m_Root.units_preferences.set_current_unit("DateFormat", "UTCG")
+        CodeSnippetsTestBase.m_Root.units_preferences.set_current_unit("Angle", "deg")
+        CodeSnippetsTestBase.m_Root.units_preferences.set_current_unit("Distance", "m")
 
     # endregion
 
@@ -110,13 +110,13 @@ class ChainSnippets(CodeSnippetsTestBase):
         chain.objects.add("Aircraft/air1")
 
         # Configure chain parameters
-        chain.auto_recompute = False
+        chain.recompute_automatically = False
         chain.enable_light_time_delay = False
         chain.time_convergence = 0.001
         chain.data_save_mode = DATA_SAVE_MODE.SAVE_ACCESSES
 
         # Specify our own time period
-        chain.set_time_period_type(CHAIN_TIME_PERIOD_TYPE.USER_SPECIFIED_TIME_PERIOD)
+        chain.set_time_period_type(CHAIN_TIME_PERIOD_TYPE.SPECIFIED_TIME_PERIOD)
 
         # Get chain time period interface
         chainUserTimePeriod: "ChainUserSpecifiedTimePeriod" = clr.CastAs(
@@ -134,8 +134,8 @@ class ChainSnippets(CodeSnippetsTestBase):
         scenario: "IStkObject" = TestBase.Application.current_scenario
 
         satellite: "Satellite" = Satellite(scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "GEO"))
-        satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
-        twoBody: "VehiclePropagatorTwoBody" = VehiclePropagatorTwoBody(satellite.propagator)
+        satellite.set_propagator_type(PROPAGATOR_TYPE.TWO_BODY)
+        twoBody: "PropagatorTwoBody" = PropagatorTwoBody(satellite.propagator)
         twoBody.ephemeris_interval.set_start_time_and_duration("1 May 2012 04:00:00.000", "+1 hour")
         twoBody.propagate()
 
@@ -155,7 +155,7 @@ class ChainSnippets(CodeSnippetsTestBase):
             (IStkObject(chain)).unload()
 
     def ConfigureChainComputeTimePeriod(self, chain: "Chain"):
-        chain.set_time_period_type(CHAIN_TIME_PERIOD_TYPE.USER_SPECIFIED_TIME_PERIOD)
+        chain.set_time_period_type(CHAIN_TIME_PERIOD_TYPE.SPECIFIED_TIME_PERIOD)
         userSpecifiedTimePeriod: "ChainUserSpecifiedTimePeriod" = clr.CastAs(
             chain.time_period, ChainUserSpecifiedTimePeriod
         )
@@ -170,8 +170,8 @@ class ChainSnippets(CodeSnippetsTestBase):
         scenario: "IStkObject" = TestBase.Application.current_scenario
 
         satellite: "Satellite" = Satellite(scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "GEO"))
-        satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
-        twoBody: "VehiclePropagatorTwoBody" = VehiclePropagatorTwoBody(satellite.propagator)
+        satellite.set_propagator_type(PROPAGATOR_TYPE.TWO_BODY)
+        twoBody: "PropagatorTwoBody" = PropagatorTwoBody(satellite.propagator)
         twoBody.ephemeris_interval.set_start_time_and_duration("2 May 2012 04:00:00.000", "+1 hour")
         twoBody.propagate()
 
@@ -199,15 +199,15 @@ class ChainSnippets(CodeSnippetsTestBase):
         # Considered Start and Stop time
         Console.WriteLine(
             "Chain considered start time: {0}",
-            chainAsStkObject.vgt.time_instants["ConsideredStartTime"].find_occurrence().epoch,
+            chainAsStkObject.analysis_workbench_components.time_instants["ConsideredStartTime"].find_occurrence().epoch,
         )
         Console.WriteLine(
             "Chain considered stop time: {0}",
-            chainAsStkObject.vgt.time_instants["ConsideredStopTime"].find_occurrence().epoch,
+            chainAsStkObject.analysis_workbench_components.time_instants["ConsideredStopTime"].find_occurrence().epoch,
         )
 
         objectParticipationIntervals: "ITimeToolTimeIntervalCollection" = (
-            chainAsStkObject.vgt.time_interval_collections["StrandAccessIntervals"]
+            chainAsStkObject.analysis_workbench_components.time_interval_collections["StrandAccessIntervals"]
         )
         intervalListResult: "TimeToolIntervalsVectorResult" = objectParticipationIntervals.find_interval_collection()
 

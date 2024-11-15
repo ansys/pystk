@@ -8,7 +8,7 @@ import signal
 
 from ctypes import CFUNCTYPE, cdll, c_size_t, c_int, c_void_p
 
-from ..utilities.exceptions import *
+from ..utilities.exceptions import STKInvalidTimerError
 
 TIMERPROC = CFUNCTYPE(None, c_size_t)
 INSTALLTIMER = CFUNCTYPE(c_size_t, c_int, TIMERPROC, c_void_p)

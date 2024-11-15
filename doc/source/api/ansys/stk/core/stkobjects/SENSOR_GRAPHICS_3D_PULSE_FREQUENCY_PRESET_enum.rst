@@ -19,16 +19,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~PULSE_FREQUENCY_FAST`
+            * - :py:attr:`~FAST`
               - Fast: 0.333 Hz.
 
-            * - :py:attr:`~PULSE_FREQUENCY_MEDIUM`
+            * - :py:attr:`~MEDIUM`
               - Medium: 0.167 Hz.
 
-            * - :py:attr:`~PULSE_FREQUENCY_SLOW`
+            * - :py:attr:`~SLOW`
               - Slow: 0.083 Hz.
 
-            * - :py:attr:`~PULSE_FREQUENCY_CUSTOM`
+            * - :py:attr:`~CUSTOM`
               - Custom: user-specified.
 
 

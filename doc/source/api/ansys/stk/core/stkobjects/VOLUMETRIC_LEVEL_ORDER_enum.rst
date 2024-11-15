@@ -19,16 +19,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~HORIZONTAL_MIN_TO_MAX`
+            * - :py:attr:`~HORIZONTAL_MINIMUM_TO_MAXIMUM`
               - Horizontal Min To Max.
 
-            * - :py:attr:`~HORIZONTAL_MAX_TO_MIN`
+            * - :py:attr:`~HORIZONTAL_MAXIMUM_TO_MINIMUM`
               - Horizontal Max To Min.
 
-            * - :py:attr:`~VERTICAL_MIN_TO_MAX`
+            * - :py:attr:`~VERTICAL_MINIMUM_TO_MAXIMUM`
               - Vertical Min To Max.
 
-            * - :py:attr:`~VERTICAL_MAX_TO_MIN`
+            * - :py:attr:`~VERTICAL_MAXIMUM_TO_MINIMUM`
               - Vertical Max To Min.
 
 

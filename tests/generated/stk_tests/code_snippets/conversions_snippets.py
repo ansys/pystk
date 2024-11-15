@@ -69,8 +69,8 @@ class ConversionsSnippets(CodeSnippetsTestBase):
         sat: "Satellite" = clr.CastAs(
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "sat1"), Satellite
         )
-        sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_J2_PERTURBATION)
-        j2prop: "VehiclePropagatorJ2Perturbation" = clr.CastAs(sat.propagator, VehiclePropagatorJ2Perturbation)
+        sat.set_propagator_type(PROPAGATOR_TYPE.J2_PERTURBATION)
+        j2prop: "PropagatorJ2Perturbation" = clr.CastAs(sat.propagator, PropagatorJ2Perturbation)
 
         self.ConvertOrbitStateToAnotherRepresentation(j2prop.initial_state.representation)
 
@@ -108,8 +108,8 @@ class ConversionsSnippets(CodeSnippetsTestBase):
         sat: "Satellite" = clr.CastAs(
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "sat1"), Satellite
         )
-        sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
-        oTwobody: "VehiclePropagatorTwoBody" = clr.CastAs(sat.propagator, VehiclePropagatorTwoBody)
+        sat.set_propagator_type(PROPAGATOR_TYPE.TWO_BODY)
+        oTwobody: "PropagatorTwoBody" = clr.CastAs(sat.propagator, PropagatorTwoBody)
 
         self.AssignIAgOrbitStateToAnotherRepresentation(oTwobody.initial_state.representation)
 

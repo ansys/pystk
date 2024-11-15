@@ -22,10 +22,10 @@ Overview
             * - :py:attr:`~UNKNOWN`
               - Unknown TropoScintillation loss model type.
 
-            * - :py:attr:`~P_618_8_TYPE`
+            * - :py:attr:`~P_618_8`
               - TropoScintillation loss model P. 618-8.
 
-            * - :py:attr:`~P_618_12_TYPE`
+            * - :py:attr:`~P_618_12`
               - TropoScintillation loss model P. 618-12.
 
 

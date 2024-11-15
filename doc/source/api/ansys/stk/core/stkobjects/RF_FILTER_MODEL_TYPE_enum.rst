@@ -28,7 +28,7 @@ Overview
             * - :py:attr:`~BUTTERWORTH`
               - Butterworth.
 
-            * - :py:attr:`~SINC_ENV_SINC`
+            * - :py:attr:`~SINC_ENVELOPE_SINC`
               - Sinc Envelope Sinc.
 
             * - :py:attr:`~ELLIPTIC`

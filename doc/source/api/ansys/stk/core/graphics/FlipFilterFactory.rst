@@ -46,14 +46,14 @@ Method detail
 
         :obj:`~FlipFilter`
 
-.. py:method:: initialize_with_flip_axis(self, flipAxis: RASTER_FLIP_AXIS) -> FlipFilter
+.. py:method:: initialize_with_flip_axis(self, flip_axis: RASTER_FLIP_AXIS) -> FlipFilter
     :canonical: ansys.stk.core.graphics.FlipFilterFactory.initialize_with_flip_axis
 
     Initialize a new instance with the specified flip axis.
 
     :Parameters:
 
-    **flipAxis** : :obj:`~RASTER_FLIP_AXIS`
+    **flip_axis** : :obj:`~RASTER_FLIP_AXIS`
 
     :Returns:
 

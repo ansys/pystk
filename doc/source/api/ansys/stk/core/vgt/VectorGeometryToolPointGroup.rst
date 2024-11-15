@@ -41,7 +41,7 @@ Overview
               - Returns a number of elements in the group.
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolPointGroup.factory`
               - Returns a Factory object used to create custom points.
-            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolPointGroup._NewEnum`
+            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolPointGroup._new_enum`
               - Returns a COM enumerator.
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolPointGroup.common_tasks`
               - Provides access to common tasks that allow users quickly carry out tasks such as creating known point types, etc.
@@ -77,8 +77,8 @@ Property detail
 
     Returns a Factory object used to create custom points.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.vgt.VectorGeometryToolPointGroup._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.vgt.VectorGeometryToolPointGroup._new_enum
     :type: EnumeratorProxy
 
     Returns a COM enumerator.
@@ -93,14 +93,14 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: remove(self, pointName: str) -> None
+.. py:method:: remove(self, point_name: str) -> None
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPointGroup.remove
 
     Remove a specified point by name.
 
     :Parameters:
 
-    **pointName** : :obj:`~str`
+    **point_name** : :obj:`~str`
 
     :Returns:
 
@@ -122,14 +122,14 @@ Method detail
 
 
 
-.. py:method:: item(self, indexOrName: typing.Any) -> IVectorGeometryToolPoint
+.. py:method:: item(self, index_or_name: typing.Any) -> IVectorGeometryToolPoint
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPointGroup.item
 
     Return a point by name or at a specified position.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 

@@ -35,7 +35,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AutomaticSequenceCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AutomaticSequenceCollection._new_enum`
               - Allows you to enumerate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AutomaticSequenceCollection.count`
               - Get the size of the collection.
@@ -53,8 +53,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.astrogator.AutomaticSequenceCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.astrogator.AutomaticSequenceCollection._new_enum
     :type: EnumeratorProxy
 
     Allows you to enumerate through the collection.
@@ -69,14 +69,14 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, indexOrName: typing.Any) -> AutomaticSequence
+.. py:method:: item(self, index_or_name: typing.Any) -> AutomaticSequence
     :canonical: ansys.stk.core.stkobjects.astrogator.AutomaticSequenceCollection.item
 
     Return the given automatic sequence.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 
@@ -95,14 +95,14 @@ Method detail
 
         :obj:`~AutomaticSequence`
 
-.. py:method:: remove(self, indexOrName: typing.Any) -> None
+.. py:method:: remove(self, index_or_name: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.AutomaticSequenceCollection.remove
 
     Remove a sequence.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 

@@ -18,9 +18,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarWaveformSarPulseDefinition.prf_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarWaveformSarPulseDefinition.pulse_repetition_frequency_mode`
               - Gets or sets the prf mode enumeration.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarWaveformSarPulseDefinition.prf`
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarWaveformSarPulseDefinition.pulse_repetition_frequency`
               - Gets or sets the pulse repetition frequency.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarWaveformSarPulseDefinition.unambiguous_range`
               - Gets or sets the unambiguous range.
@@ -30,9 +30,9 @@ Overview
               - Gets or sets the range resolution.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarWaveformSarPulseDefinition.bandwidth`
               - Gets or sets the bandwidth.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarWaveformSarPulseDefinition.pcr_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarWaveformSarPulseDefinition.pulse_compression_ratio_mode`
               - Gets or sets the pulse compression ratio mode enumeration.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarWaveformSarPulseDefinition.pcr`
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarWaveformSarPulseDefinition.pulse_compression_ratio`
               - Gets or sets the pulse compression ratio.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarWaveformSarPulseDefinition.pulse_width`
               - Gets or sets the pulse width.
@@ -60,14 +60,14 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: prf_mode
-    :canonical: ansys.stk.core.stkobjects.RadarWaveformSarPulseDefinition.prf_mode
+.. py:property:: pulse_repetition_frequency_mode
+    :canonical: ansys.stk.core.stkobjects.RadarWaveformSarPulseDefinition.pulse_repetition_frequency_mode
     :type: RADAR_SAR_PRF_MODE
 
     Gets or sets the prf mode enumeration.
 
-.. py:property:: prf
-    :canonical: ansys.stk.core.stkobjects.RadarWaveformSarPulseDefinition.prf
+.. py:property:: pulse_repetition_frequency
+    :canonical: ansys.stk.core.stkobjects.RadarWaveformSarPulseDefinition.pulse_repetition_frequency
     :type: float
 
     Gets or sets the pulse repetition frequency.
@@ -96,14 +96,14 @@ Property detail
 
     Gets or sets the bandwidth.
 
-.. py:property:: pcr_mode
-    :canonical: ansys.stk.core.stkobjects.RadarWaveformSarPulseDefinition.pcr_mode
+.. py:property:: pulse_compression_ratio_mode
+    :canonical: ansys.stk.core.stkobjects.RadarWaveformSarPulseDefinition.pulse_compression_ratio_mode
     :type: RADAR_SAR_PCR_MODE
 
     Gets or sets the pulse compression ratio mode enumeration.
 
-.. py:property:: pcr
-    :canonical: ansys.stk.core.stkobjects.RadarWaveformSarPulseDefinition.pcr
+.. py:property:: pulse_compression_ratio
+    :canonical: ansys.stk.core.stkobjects.RadarWaveformSarPulseDefinition.pulse_compression_ratio
     :type: float
 
     Gets or sets the pulse compression ratio.

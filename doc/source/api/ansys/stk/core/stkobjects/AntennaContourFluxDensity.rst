@@ -33,7 +33,7 @@ Overview
               - Gets the azimuth resolution.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaContourFluxDensity.elevation_resolution`
               - Gets the elevation resolution.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaContourFluxDensity.max_elevation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaContourFluxDensity.maximum_elevation_angle`
               - Gets the maximum elevation.
 
 
@@ -61,8 +61,8 @@ Property detail
 
     Gets the elevation resolution.
 
-.. py:property:: max_elevation
-    :canonical: ansys.stk.core.stkobjects.AntennaContourFluxDensity.max_elevation
+.. py:property:: maximum_elevation_angle
+    :canonical: ansys.stk.core.stkobjects.AntennaContourFluxDensity.maximum_elevation_angle
     :type: typing.Any
 
     Gets the maximum elevation.
@@ -74,16 +74,16 @@ Method detail
 
 
 
-.. py:method:: set_resolution(self, azimuthResolution: float, elevationResolution: float, maxElevation: float) -> None
+.. py:method:: set_resolution(self, azimuth_resolution: float, elevation_resolution: float, max_elevation: float) -> None
     :canonical: ansys.stk.core.stkobjects.AntennaContourFluxDensity.set_resolution
 
     Set the azimuth and elevation resolution as well as the maximum elevation angle.
 
     :Parameters:
 
-    **azimuthResolution** : :obj:`~float`
-    **elevationResolution** : :obj:`~float`
-    **maxElevation** : :obj:`~float`
+    **azimuth_resolution** : :obj:`~float`
+    **elevation_resolution** : :obj:`~float`
+    **max_elevation** : :obj:`~float`
 
     :Returns:
 

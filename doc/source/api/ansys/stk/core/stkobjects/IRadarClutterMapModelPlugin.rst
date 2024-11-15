@@ -37,7 +37,7 @@ Property detail
 
 .. py:property:: plugin_configuration
     :canonical: ansys.stk.core.stkobjects.IRadarClutterMapModelPlugin.plugin_configuration
-    :type: CRPluginConfiguration
+    :type: AgCRPluginConfiguration
 
     This property is deprecated. Use PluginConfiguration on IAgScatteringPointModelPlugin instead. Gets the plugin configuration interface.
 

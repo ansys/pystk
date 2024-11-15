@@ -41,7 +41,7 @@ Overview
               - Returns a number of elements in the group.
             * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolConditionGroup.factory`
               - Returns a factory object used to create spatial condition components.
-            * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolConditionGroup._NewEnum`
+            * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolConditionGroup._new_enum`
               - Returns a COM enumerator.
 
 
@@ -75,8 +75,8 @@ Property detail
 
     Returns a factory object used to create spatial condition components.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.vgt.SpatialAnalysisToolConditionGroup._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.vgt.SpatialAnalysisToolConditionGroup._new_enum
     :type: EnumeratorProxy
 
     Returns a COM enumerator.
@@ -85,14 +85,14 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: remove(self, eventName: str) -> None
+.. py:method:: remove(self, event_name: str) -> None
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolConditionGroup.remove
 
     Remove a specified element.
 
     :Parameters:
 
-    **eventName** : :obj:`~str`
+    **event_name** : :obj:`~str`
 
     :Returns:
 
@@ -114,14 +114,14 @@ Method detail
 
 
 
-.. py:method:: item(self, indexOrName: typing.Any) -> ISpatialAnalysisToolVolume
+.. py:method:: item(self, index_or_name: typing.Any) -> ISpatialAnalysisToolVolume
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolConditionGroup.item
 
     Return an element by name or at a specified position.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 

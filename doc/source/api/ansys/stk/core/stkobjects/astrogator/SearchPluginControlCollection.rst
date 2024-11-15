@@ -29,7 +29,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.SearchPluginControlCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.SearchPluginControlCollection._new_enum`
               - Property that allows you to enumerate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.SearchPluginControlCollection.count`
               - Returns the size of the collection.
@@ -47,8 +47,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.astrogator.SearchPluginControlCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.astrogator.SearchPluginControlCollection._new_enum
     :type: EnumeratorProxy
 
     Property that allows you to enumerate through the collection.
@@ -78,15 +78,15 @@ Method detail
 
 
 
-.. py:method:: get_control_by_paths(self, objectPath: str, controlPath: str) -> SearchPluginControl
+.. py:method:: get_control_by_paths(self, object_path: str, control_path: str) -> SearchPluginControl
     :canonical: ansys.stk.core.stkobjects.astrogator.SearchPluginControlCollection.get_control_by_paths
 
     Return the control specified by the object/control path.
 
     :Parameters:
 
-    **objectPath** : :obj:`~str`
-    **controlPath** : :obj:`~str`
+    **object_path** : :obj:`~str`
+    **control_path** : :obj:`~str`
 
     :Returns:
 

@@ -112,28 +112,28 @@ Method detail
 
 
 
-.. py:method:: set_access_constraint_definition(self, constraintName: FIGURE_OF_MERIT_CONSTRAINT_NAME) -> FigureOfMeritDefinitionAccessConstraint
+.. py:method:: set_access_constraint_definition(self, constraint_name: FIGURE_OF_MERIT_CONSTRAINT_NAME) -> FigureOfMeritDefinitionAccessConstraint
     :canonical: ansys.stk.core.stkobjects.ObjectCoverageFigureOfMerit.set_access_constraint_definition
 
     Set the access constraint definition.
 
     :Parameters:
 
-    **constraintName** : :obj:`~FIGURE_OF_MERIT_CONSTRAINT_NAME`
+    **constraint_name** : :obj:`~FIGURE_OF_MERIT_CONSTRAINT_NAME`
 
     :Returns:
 
         :obj:`~FigureOfMeritDefinitionAccessConstraint`
 
 
-.. py:method:: set_access_constraint_definition_name(self, constraintName: str) -> FigureOfMeritDefinitionAccessConstraint
+.. py:method:: set_access_constraint_definition_name(self, constraint_name: str) -> FigureOfMeritDefinitionAccessConstraint
     :canonical: ansys.stk.core.stkobjects.ObjectCoverageFigureOfMerit.set_access_constraint_definition_name
 
     Set the access constraint definition by name.
 
     :Parameters:
 
-    **constraintName** : :obj:`~str`
+    **constraint_name** : :obj:`~str`
 
     :Returns:
 

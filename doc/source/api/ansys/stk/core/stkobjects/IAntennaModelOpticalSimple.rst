@@ -20,7 +20,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelOpticalSimple.compute_gain`
               - Gets or sets the option for computing gain.
-            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelOpticalSimple.max_gain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelOpticalSimple.maximum_gain`
               - Gets or sets the maximum gain.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModelOpticalSimple.area`
               - Gets or sets the area.
@@ -45,8 +45,8 @@ Property detail
 
     Gets or sets the option for computing gain.
 
-.. py:property:: max_gain
-    :canonical: ansys.stk.core.stkobjects.IAntennaModelOpticalSimple.max_gain
+.. py:property:: maximum_gain
+    :canonical: ansys.stk.core.stkobjects.IAntennaModelOpticalSimple.maximum_gain
     :type: float
 
     Gets or sets the maximum gain.

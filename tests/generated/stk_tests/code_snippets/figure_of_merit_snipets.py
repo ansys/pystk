@@ -112,10 +112,10 @@ class FigureOfMeritSnipets(CodeSnippetsTestBase):
             defComp.set_compute_type(FIGURE_OF_MERIT_COMPUTE.TOTAL_TIME_ABOVE)
 
             # Get compute option compute interface
-            fomData: "FigureOfMeritDefinitionDataMinAssets" = clr.CastAs(
-                defComp.compute, FigureOfMeritDefinitionDataMinAssets
+            fomData: "FigureOfMeritDefinitionDataMinimumNumberOfAssets" = clr.CastAs(
+                defComp.compute, FigureOfMeritDefinitionDataMinimumNumberOfAssets
             )
-            fomData.min_assets = 15
+            fomData.minimum_assets = 15
 
     # endregion
 
@@ -175,18 +175,18 @@ class FigureOfMeritSnipets(CodeSnippetsTestBase):
         gridInspector.select_point(-13.864, -51.088)
 
         pointFom: "DataProviderTimeVarying" = clr.CastAs(gridInspector.point_figure_of_merit, DataProviderTimeVarying)
-        pointFomResult: "DataProviderResult" = pointFom.exec_single("1 Jan 2012 12:00:00.00")
+        pointFomResult: "DataProviderResult" = pointFom.execute_single("1 Jan 2012 12:00:00.00")
 
         pointSatisfaction: "DataProviderInterval" = clr.CastAs(gridInspector.point_satisfaction, DataProviderInterval)
-        pointSatisfactionResult: "DataProviderResult" = pointSatisfaction.exec(
+        pointSatisfactionResult: "DataProviderResult" = pointSatisfaction.execute(
             "1 Jan 2012 12:00:00.00", "2 Jan 2012 12:00:00.00"
         )
 
         regionFom: "DataProviderTimeVarying" = clr.CastAs(gridInspector.region_figure_of_merit, DataProviderTimeVarying)
-        regionFomResult: "DataProviderResult" = regionFom.exec_single("1 Jan 2012 12:00:00.00")
+        regionFomResult: "DataProviderResult" = regionFom.execute_single("1 Jan 2012 12:00:00.00")
 
         regionSatisfaction: "DataProviderInterval" = clr.CastAs(gridInspector.region_satisfaction, DataProviderInterval)
-        regionSatisfactionResult: "DataProviderResult" = regionSatisfaction.exec(
+        regionSatisfactionResult: "DataProviderResult" = regionSatisfaction.execute(
             "1 Jan 2012 12:00:00.00", "2 Jan 2012 12:00:00.00"
         )
 
@@ -199,7 +199,7 @@ class FigureOfMeritSnipets(CodeSnippetsTestBase):
         self.ConfigureFigureOfMeritContours(FigureOfMeritSnipets.m_Object.graphics.static.contours)
 
     def ConfigureFigureOfMeritContours(self, contours: "IFigureOfMeritGraphics2DContours"):
-        contours.is_visible = True
+        contours.show_graphics = True
         contours.contour_type = FIGURE_OF_MERIT_GRAPHICS_2D_CONTOUR_TYPE.SMOOTH_FILL
         contours.color_method = FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD.EXPLICIT
 
@@ -224,7 +224,7 @@ class FigureOfMeritSnipets(CodeSnippetsTestBase):
         ageOfData: "FigureOfMeritDefinitionAgeOfData" = clr.CastAs(fom.definition, FigureOfMeritDefinitionAgeOfData)
 
         # Set the minimum number of assets for computing
-        ageOfData.min_assets = 2
+        ageOfData.minimum_assets = 2
 
     # endregion
 
@@ -246,7 +246,9 @@ class FigureOfMeritSnipets(CodeSnippetsTestBase):
 
     def FigureOfMeritDefinitionScalarCalculationFromVGT(self, fom: "FigureOfMerit", stkRoot: "StkObjectRoot"):
         # Get the qualified path of a Scalar Calculation (e.g.
-        provider: "AnalysisWorkbenchComponentProvider" = stkRoot.vgt_root.get_provider("CentralBody/Sun")
+        provider: "AnalysisWorkbenchComponentProvider" = stkRoot.analysis_workbench_components_root.get_provider(
+            "CentralBody/Sun"
+        )
         calcScalar: "ICalculationToolScalar" = provider.calculation_scalars[0]
         calcScalarQualifiedPath: str = (clr.CastAs(calcScalar, IAnalysisWorkbenchComponent)).qualified_path
 

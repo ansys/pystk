@@ -20,7 +20,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaVolumeGraphics.set_resolution`
               - Set the azimuth/elevation ranges and resolution.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaVolumeGraphics.set_num_points`
+            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaVolumeGraphics.set_number_of_points`
               - Set the azimuth/elevation ranges and number of points.
 
     .. tab-item:: Properties
@@ -43,7 +43,7 @@ Overview
               - Gets the azimuth stop value.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaVolumeGraphics.azimuth_resolution`
               - Gets the azimuth resolution.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaVolumeGraphics.azimuth_num_points`
+            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaVolumeGraphics.azimuth_number_of_points`
               - Gets the number of azimuth points.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaVolumeGraphics.elevation_start`
               - Gets the elevation start value.
@@ -51,7 +51,7 @@ Overview
               - Gets the elevation stop value.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaVolumeGraphics.elevation_resolution`
               - Gets the elevation resolution.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaVolumeGraphics.elevation_num_points`
+            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaVolumeGraphics.elevation_number_of_points`
               - Gets the number of elevation points.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaVolumeGraphics.color_method`
               - Color method for volume levels (color ramp or explicit).
@@ -121,8 +121,8 @@ Property detail
 
     Gets the azimuth resolution.
 
-.. py:property:: azimuth_num_points
-    :canonical: ansys.stk.core.stkobjects.AntennaVolumeGraphics.azimuth_num_points
+.. py:property:: azimuth_number_of_points
+    :canonical: ansys.stk.core.stkobjects.AntennaVolumeGraphics.azimuth_number_of_points
     :type: int
 
     Gets the number of azimuth points.
@@ -145,8 +145,8 @@ Property detail
 
     Gets the elevation resolution.
 
-.. py:property:: elevation_num_points
-    :canonical: ansys.stk.core.stkobjects.AntennaVolumeGraphics.elevation_num_points
+.. py:property:: elevation_number_of_points
+    :canonical: ansys.stk.core.stkobjects.AntennaVolumeGraphics.elevation_number_of_points
     :type: int
 
     Gets the number of elevation points.
@@ -207,37 +207,37 @@ Method detail
 
 
 
-.. py:method:: set_resolution(self, azimuthStart: float, azimuthStop: float, azimuthResolution: float, elevationStart: float, elevationStop: float, elevationResolution: float) -> None
+.. py:method:: set_resolution(self, azimuth_start: float, azimuth_stop: float, azimuth_resolution: float, elevation_start: float, elevation_stop: float, elevation_resolution: float) -> None
     :canonical: ansys.stk.core.stkobjects.AntennaVolumeGraphics.set_resolution
 
     Set the azimuth/elevation ranges and resolution.
 
     :Parameters:
 
-    **azimuthStart** : :obj:`~float`
-    **azimuthStop** : :obj:`~float`
-    **azimuthResolution** : :obj:`~float`
-    **elevationStart** : :obj:`~float`
-    **elevationStop** : :obj:`~float`
-    **elevationResolution** : :obj:`~float`
+    **azimuth_start** : :obj:`~float`
+    **azimuth_stop** : :obj:`~float`
+    **azimuth_resolution** : :obj:`~float`
+    **elevation_start** : :obj:`~float`
+    **elevation_stop** : :obj:`~float`
+    **elevation_resolution** : :obj:`~float`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: set_num_points(self, azimuthStart: float, azimuthStop: float, azimuthNumPoints: int, elevationStart: float, elevationStop: float, elevationNumPoints: int) -> None
-    :canonical: ansys.stk.core.stkobjects.AntennaVolumeGraphics.set_num_points
+.. py:method:: set_number_of_points(self, azimuth_start: float, azimuth_stop: float, azimuth_num_points: int, elevation_start: float, elevation_stop: float, elevation_num_points: int) -> None
+    :canonical: ansys.stk.core.stkobjects.AntennaVolumeGraphics.set_number_of_points
 
     Set the azimuth/elevation ranges and number of points.
 
     :Parameters:
 
-    **azimuthStart** : :obj:`~float`
-    **azimuthStop** : :obj:`~float`
-    **azimuthNumPoints** : :obj:`~int`
-    **elevationStart** : :obj:`~float`
-    **elevationStop** : :obj:`~float`
-    **elevationNumPoints** : :obj:`~int`
+    **azimuth_start** : :obj:`~float`
+    **azimuth_stop** : :obj:`~float`
+    **azimuth_num_points** : :obj:`~int`
+    **elevation_start** : :obj:`~float`
+    **elevation_stop** : :obj:`~float`
+    **elevation_num_points** : :obj:`~int`
 
     :Returns:
 

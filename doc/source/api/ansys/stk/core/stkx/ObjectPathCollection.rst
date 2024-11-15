@@ -31,7 +31,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkx.ObjectPathCollection.count`
               - Number of elements contained in the collection.
-            * - :py:attr:`~ansys.stk.core.stkx.ObjectPathCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkx.ObjectPathCollection._new_enum`
               - Returns an object that can be used to iterate through all the object paths in the collection.
 
 
@@ -53,8 +53,8 @@ Property detail
 
     Number of elements contained in the collection.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkx.ObjectPathCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkx.ObjectPathCollection._new_enum
     :type: EnumeratorProxy
 
     Returns an object that can be used to iterate through all the object paths in the collection.
@@ -78,15 +78,15 @@ Method detail
         :obj:`~str`
 
 
-.. py:method:: range(self, startIndex: int, stopIndex: int) -> list
+.. py:method:: range(self, start_index: int, stop_index: int) -> list
     :canonical: ansys.stk.core.stkx.ObjectPathCollection.range
 
     Return the elements within the specified range.
 
     :Parameters:
 
-    **startIndex** : :obj:`~int`
-    **stopIndex** : :obj:`~int`
+    **start_index** : :obj:`~int`
+    **stop_index** : :obj:`~int`
 
     :Returns:
 

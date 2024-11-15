@@ -166,14 +166,14 @@ Method detail
 
         :obj:`~ITimeToolTimeArray`
 
-.. py:method:: is_type_supported(self, eType: EVENT_ARRAY_TYPE) -> bool
+.. py:method:: is_type_supported(self, type: EVENT_ARRAY_TYPE) -> bool
     :canonical: ansys.stk.core.vgt.TimeToolTimeArrayFactory.is_type_supported
 
     Return whether the specified type is supported.
 
     :Parameters:
 
-    **eType** : :obj:`~EVENT_ARRAY_TYPE`
+    **type** : :obj:`~EVENT_ARRAY_TYPE`
 
     :Returns:
 

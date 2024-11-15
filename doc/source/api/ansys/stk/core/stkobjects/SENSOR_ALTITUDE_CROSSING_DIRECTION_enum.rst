@@ -19,16 +19,16 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~DIRECTION_UNKNOWN`
+            * - :py:attr:`~UNKNOWN`
               - Unknown.
 
-            * - :py:attr:`~DIRECTION_EITHER`
+            * - :py:attr:`~EITHER`
               - Either - Crossing can occur in either direction.
 
-            * - :py:attr:`~DIRECTION_INSIDE_OUT`
+            * - :py:attr:`~INSIDE_OUT`
               - Inside Out - Crossing occurs from lower altitudes to higher altitudes.
 
-            * - :py:attr:`~DIRECTION_OUTSIDE_IN`
+            * - :py:attr:`~OUTSIDE_IN`
               - Outside In - Crossing occurs from higher altitudes to lower altitudes.
 
 

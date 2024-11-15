@@ -43,7 +43,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.PropagatorFunctionCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.PropagatorFunctionCollection._new_enum`
               - Allows you to enumerate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.PropagatorFunctionCollection.count`
               - Returns the size of the collection.
@@ -61,8 +61,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.astrogator.PropagatorFunctionCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.astrogator.PropagatorFunctionCollection._new_enum
     :type: EnumeratorProxy
 
     Allows you to enumerate through the collection.
@@ -77,40 +77,40 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: add(self, resultName: str) -> IComponentInfo
+.. py:method:: add(self, result_name: str) -> IComponentInfo
     :canonical: ansys.stk.core.stkobjects.astrogator.PropagatorFunctionCollection.add
 
     Add a function to the collection.
 
     :Parameters:
 
-    **resultName** : :obj:`~str`
+    **result_name** : :obj:`~str`
 
     :Returns:
 
         :obj:`~IComponentInfo`
 
-.. py:method:: item(self, indexOrName: typing.Any) -> IComponentInfo
+.. py:method:: item(self, index_or_name: typing.Any) -> IComponentInfo
     :canonical: ansys.stk.core.stkobjects.astrogator.PropagatorFunctionCollection.item
 
     Allow you to iterate through the collection.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 
         :obj:`~IComponentInfo`
 
-.. py:method:: remove(self, indexOrName: typing.Any) -> None
+.. py:method:: remove(self, index_or_name: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.PropagatorFunctionCollection.remove
 
     Remove the specified function from the collection.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 
@@ -127,14 +127,14 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: cut(self, indexOrName: typing.Any) -> None
+.. py:method:: cut(self, index_or_name: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.PropagatorFunctionCollection.cut
 
     Copy a propagator function to the clipboard and removes the propagator function from the list.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 
@@ -149,14 +149,14 @@ Method detail
 
         :obj:`~IComponentInfo`
 
-.. py:method:: insert_copy(self, propFunc: IComponentInfo) -> IComponentInfo
+.. py:method:: insert_copy(self, prop_func: IComponentInfo) -> IComponentInfo
     :canonical: ansys.stk.core.stkobjects.astrogator.PropagatorFunctionCollection.insert_copy
 
     Copy a propagator function and inserts the copy into the list.
 
     :Parameters:
 
-    **propFunc** : :obj:`~IComponentInfo`
+    **prop_func** : :obj:`~IComponentInfo`
 
     :Returns:
 

@@ -68,14 +68,14 @@ Method detail
 
         :obj:`~ICalculationToolConditionSet`
 
-.. py:method:: is_type_supported(self, eType: CONDITION_SET_TYPE) -> bool
+.. py:method:: is_type_supported(self, type: CONDITION_SET_TYPE) -> bool
     :canonical: ansys.stk.core.vgt.CalculationToolConditionSetFactory.is_type_supported
 
     Return whether the specified type is supported.
 
     :Parameters:
 
-    **eType** : :obj:`~CONDITION_SET_TYPE`
+    **type** : :obj:`~CONDITION_SET_TYPE`
 
     :Returns:
 

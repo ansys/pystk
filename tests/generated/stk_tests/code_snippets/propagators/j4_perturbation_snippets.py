@@ -34,7 +34,7 @@ class J4PerturbationSnippets(CodeSnippetsTestBase):
             ),
             Satellite,
         )
-        CodeSnippetsTestBase.m_Root.unit_preferences.reset_units()
+        CodeSnippetsTestBase.m_Root.units_preferences.reset_units()
 
     # endregion
 
@@ -53,25 +53,25 @@ class J4PerturbationSnippets(CodeSnippetsTestBase):
 
     # This code snippet is taken from SatelliteOrbitWizard.cs in the test suite
     def ConfigureJ4PerturbationPropagatorOrbitToCircular(self, satellite: "Satellite", incl: float, altitude: float):
-        satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_J4_PERTURBATION)
-        prop: "VehiclePropagatorJ4Perturbation" = clr.CastAs(satellite.propagator, VehiclePropagatorJ4Perturbation)
+        satellite.set_propagator_type(PROPAGATOR_TYPE.J4_PERTURBATION)
+        prop: "PropagatorJ4Perturbation" = clr.CastAs(satellite.propagator, PropagatorJ4Perturbation)
 
         keplerian: "OrbitStateClassical" = clr.CastAs(
             prop.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CLASSICAL), OrbitStateClassical
         )
 
-        keplerian.size_shape_type = CLASSICAL_SIZE_SHAPE.SIZE_SHAPE_ALTITUDE
+        keplerian.size_shape_type = CLASSICAL_SIZE_SHAPE.ALTITUDE
         size: "ClassicalSizeShapeAltitude" = clr.CastAs(keplerian.size_shape, ClassicalSizeShapeAltitude)
 
         size.apogee_altitude = altitude
         size.perigee_altitude = altitude
 
         keplerian.orientation.inclination = incl
-        keplerian.orientation.arg_of_perigee = 0
-        keplerian.orientation.asc_node_type = ORIENTATION_ASC_NODE.ASC_NODE_RAAN
-        (clr.CastAs(keplerian.orientation.asc_node, OrientationAscNodeRAAN)).value = 0
+        keplerian.orientation.argument_of_periapsis = 0
+        keplerian.orientation.ascending_node_type = ORIENTATION_ASC_NODE.RIGHT_ASCENSION_ASCENDING_NODE
+        (clr.CastAs(keplerian.orientation.ascending_node, OrientationRightAscensionOfAscendingNode)).value = 0
 
-        keplerian.location_type = CLASSICAL_LOCATION.LOCATION_TRUE_ANOMALY
+        keplerian.location_type = CLASSICAL_LOCATION.TRUE_ANOMALY
         (clr.CastAs(keplerian.location, ClassicalLocationTrueAnomaly)).value = 0
 
         prop.initial_state.representation.assign(keplerian)
@@ -89,25 +89,25 @@ class J4PerturbationSnippets(CodeSnippetsTestBase):
     def ConfigureJ4PerturbationPropagatorOrbitToCritcallyInclined(
         self, satellite: "Satellite", apogeeAlt: float, perigeeAlt: float, ascNodeLon: float
     ):
-        satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_J4_PERTURBATION)
-        prop: "VehiclePropagatorJ4Perturbation" = clr.CastAs(satellite.propagator, VehiclePropagatorJ4Perturbation)
+        satellite.set_propagator_type(PROPAGATOR_TYPE.J4_PERTURBATION)
+        prop: "PropagatorJ4Perturbation" = clr.CastAs(satellite.propagator, PropagatorJ4Perturbation)
 
         keplerian: "OrbitStateClassical" = clr.CastAs(
             prop.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CLASSICAL), OrbitStateClassical
         )
 
-        keplerian.size_shape_type = CLASSICAL_SIZE_SHAPE.SIZE_SHAPE_ALTITUDE
+        keplerian.size_shape_type = CLASSICAL_SIZE_SHAPE.ALTITUDE
         size: "ClassicalSizeShapeAltitude" = clr.CastAs(keplerian.size_shape, ClassicalSizeShapeAltitude)
 
         size.apogee_altitude = apogeeAlt
         size.perigee_altitude = perigeeAlt
 
         keplerian.orientation.inclination = 63.434949
-        keplerian.orientation.arg_of_perigee = 270.0
-        keplerian.orientation.asc_node_type = ORIENTATION_ASC_NODE.ASC_NODE_LAN
-        (clr.CastAs(keplerian.orientation.asc_node, OrientationAscNodeLAN)).value = ascNodeLon
+        keplerian.orientation.argument_of_periapsis = 270.0
+        keplerian.orientation.ascending_node_type = ORIENTATION_ASC_NODE.LONGITUDE_ASCENDING_NODE
+        (clr.CastAs(keplerian.orientation.ascending_node, OrientationLongitudeOfAscending)).value = ascNodeLon
 
-        keplerian.location_type = CLASSICAL_LOCATION.LOCATION_TRUE_ANOMALY
+        keplerian.location_type = CLASSICAL_LOCATION.TRUE_ANOMALY
         (clr.CastAs(keplerian.location, ClassicalLocationTrueAnomaly)).value = 90.0
 
         prop.initial_state.representation.assign(keplerian)

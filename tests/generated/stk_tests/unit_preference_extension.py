@@ -15,7 +15,7 @@ class UnitPreferenceState(IDisposable):
         self._state = {}
 
         self._application: "StkObjectRoot" = application
-        self.SaveState(application.unit_preferences)
+        self.SaveState(application.units_preferences)
 
     def RestoreState(self, dimensions: "UnitPreferencesDimensionCollection"):
         dimension: "UnitPreferencesDimension"
@@ -42,7 +42,7 @@ class UnitPreferenceState(IDisposable):
         if self._disposed:
             return
         if disposing:
-            self.RestoreState(self._application.unit_preferences)
+            self.RestoreState(self._application.units_preferences)
             self._application = None
 
         self._disposed = True

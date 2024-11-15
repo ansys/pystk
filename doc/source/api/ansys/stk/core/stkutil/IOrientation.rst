@@ -92,20 +92,20 @@ Method detail
         :obj:`~IOrientation`
 
 
-.. py:method:: assign(self, pOrientation: IOrientation) -> None
+.. py:method:: assign(self, orientation: IOrientation) -> None
     :canonical: ansys.stk.core.stkutil.IOrientation.assign
 
     Assign a new orientation method.
 
     :Parameters:
 
-    **pOrientation** : :obj:`~IOrientation`
+    **orientation** : :obj:`~IOrientation`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: assign_az_el(self, azimuth: typing.Any, elevation: typing.Any, aboutBoresight: AZ_EL_ABOUT_BORESIGHT) -> None
+.. py:method:: assign_az_el(self, azimuth: typing.Any, elevation: typing.Any, about_boresight: AZ_EL_ABOUT_BORESIGHT) -> None
     :canonical: ansys.stk.core.stkutil.IOrientation.assign_az_el
 
     Set orientation using the AzEl representation.
@@ -114,7 +114,7 @@ Method detail
 
     **azimuth** : :obj:`~typing.Any`
     **elevation** : :obj:`~typing.Any`
-    **aboutBoresight** : :obj:`~AZ_EL_ABOUT_BORESIGHT`
+    **about_boresight** : :obj:`~AZ_EL_ABOUT_BORESIGHT`
 
     :Returns:
 

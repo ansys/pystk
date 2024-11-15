@@ -37,9 +37,9 @@ Overview
               - Get the pass property.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DPasses.visible_sides`
               - Gets or sets the visible sides option for the pass: ascending, descending, both or none.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DPasses.is_pass_labels_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DPasses.show_pass_labels`
               - Opt whether to display pass numbers at the pass break locations in the 2D Graphics window.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DPasses.is_path_labels_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DPasses.show_path_labels`
               - Opt whether to display path numbers within a repeating ground track sequence at the pass break locations in the 2D Graphics window.
 
 
@@ -75,18 +75,18 @@ Property detail
 
 .. py:property:: visible_sides
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DPasses.visible_sides
-    :type: VEHICLE_GRAPHICS_2D_VISIBLE_SIDES
+    :type: VEHICLE_GRAPHICS_2D_VISIBLE_SIDE_TYPE
 
     Gets or sets the visible sides option for the pass: ascending, descending, both or none.
 
-.. py:property:: is_pass_labels_visible
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DPasses.is_pass_labels_visible
+.. py:property:: show_pass_labels
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DPasses.show_pass_labels
     :type: bool
 
     Opt whether to display pass numbers at the pass break locations in the 2D Graphics window.
 
-.. py:property:: is_path_labels_visible
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DPasses.is_path_labels_visible
+.. py:property:: show_path_labels
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DPasses.show_path_labels
     :type: bool
 
     Opt whether to display path numbers within a repeating ground track sequence at the pass break locations in the 2D Graphics window.
@@ -96,27 +96,27 @@ Method detail
 -------------
 
 
-.. py:method:: set_pass_type(self, passType: VEHICLE_GRAPHICS_2D_PASS) -> None
+.. py:method:: set_pass_type(self, pass_type: VEHICLE_GRAPHICS_2D_PASS) -> None
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DPasses.set_pass_type
 
     Pass display option: show all or those in a user-specified range.
 
     :Parameters:
 
-    **passType** : :obj:`~VEHICLE_GRAPHICS_2D_PASS`
+    **pass_type** : :obj:`~VEHICLE_GRAPHICS_2D_PASS`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_pass_type_supported(self, passType: VEHICLE_GRAPHICS_2D_PASS) -> bool
+.. py:method:: is_pass_type_supported(self, pass_type: VEHICLE_GRAPHICS_2D_PASS) -> bool
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DPasses.is_pass_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **passType** : :obj:`~VEHICLE_GRAPHICS_2D_PASS`
+    **pass_type** : :obj:`~VEHICLE_GRAPHICS_2D_PASS`
 
     :Returns:
 

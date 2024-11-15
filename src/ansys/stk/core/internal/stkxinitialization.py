@@ -12,8 +12,7 @@ from ..internal  import marshall         as agmarshall
 from ..internal.comutil     import IDispatch
 from ..internal.apiutil     import (InterfaceProxy, initialize_from_source_object, get_interface_property, 
     set_class_attribute, SupportsDeleteCallback)
-from ..internal.eventutil   import *
-from ..utilities.exceptions import *
+from ..utilities.exceptions import STKRuntimeError
 
 
 def _raise_uninitialized_error(*args):
@@ -46,22 +45,22 @@ class STKXInitialize(SupportsDeleteCallback):
     _initialize_data_metadata = { "offset" : _initialize_data_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg,) }
-    def initialize_data(self, installHome:str, configDirectory:str) -> None:
+    def initialize_data(self, install_home:str, config_directory:str) -> None:
         """Copy the virtual registry to the Config directory and initialize it with the install home specified."""
-        return self._intf.invoke(STKXInitialize._metadata, STKXInitialize._initialize_data_metadata, installHome, configDirectory)
+        return self._intf.invoke(STKXInitialize._metadata, STKXInitialize._initialize_data_metadata, install_home, config_directory)
 
     _initialize_data_ex_metadata = { "offset" : _initialize_data_ex_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL, agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.VariantBoolArg, agmarshall.VariantBoolArg, agmarshall.VariantBoolArg, agmarshall.VariantBoolArg, agmarshall.VariantBoolArg, agmarshall.VariantBoolArg, agmarshall.VariantBoolArg,) }
-    def initialize_data_ex(self, installHome:str, configDirectory:str, bDefaults:bool, bStyles:bool, bVGT:bool, bAMM:bool, bGator:bool, bOnlineData:bool, bOnlineSGP4:bool) -> None:
+    def initialize_data_ex(self, install_home:str, config_directory:str, defaults:bool, styles:bool, vgt:bool, amm:bool, gator:bool, online_data:bool, online_sgp4:bool) -> None:
         """Copy the virtual registry to the Config directory and initialize it with the install home specified, and config options."""
-        return self._intf.invoke(STKXInitialize._metadata, STKXInitialize._initialize_data_ex_metadata, installHome, configDirectory, bDefaults, bStyles, bVGT, bAMM, bGator, bOnlineData, bOnlineSGP4)
+        return self._intf.invoke(STKXInitialize._metadata, STKXInitialize._initialize_data_ex_metadata, install_home, config_directory, defaults, styles, vgt, amm, gator, online_data, online_sgp4)
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type STKXInitialize."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, STKXInitialize)
+        initialize_from_source_object(self, source_object, STKXInitialize)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):

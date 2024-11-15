@@ -41,7 +41,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CalculationObjectCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CalculationObjectCollection._new_enum`
               - Allows you to enumerate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CalculationObjectCollection.count`
               - Returns the size of the collection.
@@ -59,8 +59,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.astrogator.CalculationObjectCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.astrogator.CalculationObjectCollection._new_enum
     :type: EnumeratorProxy
 
     Allows you to enumerate through the collection.
@@ -88,27 +88,27 @@ Method detail
 
         :obj:`~IComponentInfo`
 
-.. py:method:: item(self, indexOrName: typing.Any) -> IComponentInfo
+.. py:method:: item(self, index_or_name: typing.Any) -> IComponentInfo
     :canonical: ansys.stk.core.stkobjects.astrogator.CalculationObjectCollection.item
 
     Return a calc object.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 
         :obj:`~IComponentInfo`
 
-.. py:method:: remove(self, indexOrName: typing.Any) -> None
+.. py:method:: remove(self, index_or_name: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.CalculationObjectCollection.remove
 
     Remove a calc object from the collection.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 
@@ -116,14 +116,14 @@ Method detail
 
 
 
-.. py:method:: cut(self, indexOrName: typing.Any) -> None
+.. py:method:: cut(self, index_or_name: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.CalculationObjectCollection.cut
 
     Copy a calc object to the clipboard and removes the calc object from the list.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 
@@ -138,14 +138,14 @@ Method detail
 
         :obj:`~IComponentInfo`
 
-.. py:method:: insert_copy(self, calcObj: IComponentInfo) -> IComponentInfo
+.. py:method:: insert_copy(self, calc_obj: IComponentInfo) -> IComponentInfo
     :canonical: ansys.stk.core.stkobjects.astrogator.CalculationObjectCollection.insert_copy
 
     Copy a calc object and inserts the copy into the list.
 
     :Parameters:
 
-    **calcObj** : :obj:`~IComponentInfo`
+    **calc_obj** : :obj:`~IComponentInfo`
 
     :Returns:
 

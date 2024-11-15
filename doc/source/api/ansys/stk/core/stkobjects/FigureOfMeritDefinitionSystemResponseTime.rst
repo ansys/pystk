@@ -24,7 +24,7 @@ Overview
               - Instance path for the commanding object. NONE can be used to clear the commanding object.
             * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionSystemResponseTime.receive_station_path`
               - Instance path for the receiving object. NONE can be used to clear the receiving object.
-            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionSystemResponseTime.command_perp_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionSystemResponseTime.command_preparation_time`
               - Amount of time in seconds required for command preparation.
             * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionSystemResponseTime.commanding_time`
               - Amount of time in seconds required for transmission of the prepared command from the CommandStation to the assets.
@@ -66,8 +66,8 @@ Property detail
 
     Instance path for the receiving object. NONE can be used to clear the receiving object.
 
-.. py:property:: command_perp_time
-    :canonical: ansys.stk.core.stkobjects.FigureOfMeritDefinitionSystemResponseTime.command_perp_time
+.. py:property:: command_preparation_time
+    :canonical: ansys.stk.core.stkobjects.FigureOfMeritDefinitionSystemResponseTime.command_preparation_time
     :type: float
 
     Amount of time in seconds required for command preparation.

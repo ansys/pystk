@@ -19,10 +19,9 @@ from .internal.comutil     import IUnknown, IDispatch
 from .internal.apiutil     import (InterfaceProxy, EnumeratorProxy, OutArg, 
     initialize_from_source_object, get_interface_property, set_interface_attribute, 
     set_class_attribute, SupportsDeleteCallback)
-from .internal.eventutil   import *
-from .utilities.exceptions import *
+from .utilities.exceptions import STKRuntimeError
 
-from .uicore import *
+from .uicore import APPLICATION_WINDOW_STATE
 
 
 def _raise_uninitialized_error(*args):
@@ -107,9 +106,9 @@ class IUiApplicationPartnerAccess(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IUiApplicationPartnerAccess."""
-        initialize_from_source_object(self, sourceObject, IUiApplicationPartnerAccess)
+        initialize_from_source_object(self, source_object, IUiApplicationPartnerAccess)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -188,9 +187,9 @@ class UiApplication(IUiApplicationPartnerAccess, SupportsDeleteCallback):
     _load_personality_metadata = { "offset" : _load_personality_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    def load_personality(self, persName:str) -> None:
+    def load_personality(self, pers_name:str) -> None:
         """Load a personality by its name."""
-        return self._intf.invoke(UiApplication._metadata, UiApplication._load_personality_metadata, persName)
+        return self._intf.invoke(UiApplication._metadata, UiApplication._load_personality_metadata, pers_name)
 
     _get_personality_metadata = { "offset" : _get_personality_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -212,9 +211,9 @@ class UiApplication(IUiApplicationPartnerAccess, SupportsDeleteCallback):
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @visible.setter
-    def visible(self, newVal:bool) -> None:
+    def visible(self, new_value:bool) -> None:
         """Get or set whether the main window is visible."""
-        return self._intf.set_property(UiApplication._metadata, UiApplication._set_visible_metadata, newVal)
+        return self._intf.set_property(UiApplication._metadata, UiApplication._set_visible_metadata, new_value)
 
     _get_user_control_metadata = { "offset" : _get_user_control_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -228,9 +227,9 @@ class UiApplication(IUiApplicationPartnerAccess, SupportsDeleteCallback):
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @user_control.setter
-    def user_control(self, newVal:bool) -> None:
+    def user_control(self, new_value:bool) -> None:
         """Get or set whether the application is user controlled."""
-        return self._intf.set_property(UiApplication._metadata, UiApplication._set_user_control_metadata, newVal)
+        return self._intf.set_property(UiApplication._metadata, UiApplication._set_user_control_metadata, new_value)
 
     _get_windows_metadata = { "offset" : _get_windows_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -252,9 +251,9 @@ class UiApplication(IUiApplicationPartnerAccess, SupportsDeleteCallback):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.LongArg,) }
     @height.setter
-    def height(self, newVal:int) -> None:
+    def height(self, new_value:int) -> None:
         """Get or set a height of the main window."""
-        return self._intf.set_property(UiApplication._metadata, UiApplication._set_height_metadata, newVal)
+        return self._intf.set_property(UiApplication._metadata, UiApplication._set_height_metadata, new_value)
 
     _get_width_metadata = { "offset" : _get_width_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -268,9 +267,9 @@ class UiApplication(IUiApplicationPartnerAccess, SupportsDeleteCallback):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.LongArg,) }
     @width.setter
-    def width(self, newVal:int) -> None:
+    def width(self, new_value:int) -> None:
         """Get or set a width of the main window."""
-        return self._intf.set_property(UiApplication._metadata, UiApplication._set_width_metadata, newVal)
+        return self._intf.set_property(UiApplication._metadata, UiApplication._set_width_metadata, new_value)
 
     _get_left_metadata = { "offset" : _get_left_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -284,9 +283,9 @@ class UiApplication(IUiApplicationPartnerAccess, SupportsDeleteCallback):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.LongArg,) }
     @left.setter
-    def left(self, newVal:int) -> None:
+    def left(self, new_value:int) -> None:
         """Get or set a vertical coordinate of the main window."""
-        return self._intf.set_property(UiApplication._metadata, UiApplication._set_left_metadata, newVal)
+        return self._intf.set_property(UiApplication._metadata, UiApplication._set_left_metadata, new_value)
 
     _get_top_metadata = { "offset" : _get_top_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -300,9 +299,9 @@ class UiApplication(IUiApplicationPartnerAccess, SupportsDeleteCallback):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.LongArg,) }
     @top.setter
-    def top(self, newVal:int) -> None:
+    def top(self, new_value:int) -> None:
         """Get or set a horizontal coordinate of the main window."""
-        return self._intf.set_property(UiApplication._metadata, UiApplication._set_top_metadata, newVal)
+        return self._intf.set_property(UiApplication._metadata, UiApplication._set_top_metadata, new_value)
 
     _get_window_state_metadata = { "offset" : _get_window_state_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -316,9 +315,9 @@ class UiApplication(IUiApplicationPartnerAccess, SupportsDeleteCallback):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(APPLICATION_WINDOW_STATE),) }
     @window_state.setter
-    def window_state(self, newVal:"APPLICATION_WINDOW_STATE") -> None:
+    def window_state(self, new_value:"APPLICATION_WINDOW_STATE") -> None:
         """Get or set the state of the main window."""
-        return self._intf.set_property(UiApplication._metadata, UiApplication._set_window_state_metadata, newVal)
+        return self._intf.set_property(UiApplication._metadata, UiApplication._set_window_state_metadata, new_value)
 
     _activate_metadata = { "offset" : _activate_method_offset,
             "arg_types" : (),
@@ -338,9 +337,9 @@ class UiApplication(IUiApplicationPartnerAccess, SupportsDeleteCallback):
     _file_open_dialog_metadata = { "offset" : _file_open_dialog_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.BStrArg,) }
-    def file_open_dialog(self, defaultExt:str, filter:str, initialDir:str) -> str:
+    def file_open_dialog(self, default_ext:str, filter:str, initial_dir:str) -> str:
         """Brings up a common File Open dialog and returns the file name selected by the user. If the user canceled, returns an empty file name."""
-        return self._intf.invoke(UiApplication._metadata, UiApplication._file_open_dialog_metadata, defaultExt, filter, initialDir, OutArg())
+        return self._intf.invoke(UiApplication._metadata, UiApplication._file_open_dialog_metadata, default_ext, filter, initial_dir, OutArg())
 
     _get_path_metadata = { "offset" : _get_path_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -353,16 +352,16 @@ class UiApplication(IUiApplicationPartnerAccess, SupportsDeleteCallback):
     _create_object_metadata = { "offset" : _create_object_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
-    def create_object(self, progID:str, remoteServer:str) -> typing.Any:
+    def create_object(self, prog_id:str, remote_server:str) -> typing.Any:
         """Only works from local HTML pages and scripts."""
-        return self._intf.invoke(UiApplication._metadata, UiApplication._create_object_metadata, progID, remoteServer, OutArg())
+        return self._intf.invoke(UiApplication._metadata, UiApplication._create_object_metadata, prog_id, remote_server, OutArg())
 
     _file_save_as_dialog_metadata = { "offset" : _file_save_as_dialog_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.BStrArg,) }
-    def file_save_as_dialog(self, defaultExt:str, filter:str, initialDir:str) -> str:
+    def file_save_as_dialog(self, default_ext:str, filter:str, initial_dir:str) -> str:
         """Brings up a common File SaveAs dialog and returns the file name selected by the user. If the user canceled, returns an empty file name."""
-        return self._intf.invoke(UiApplication._metadata, UiApplication._file_save_as_dialog_metadata, defaultExt, filter, initialDir, OutArg())
+        return self._intf.invoke(UiApplication._metadata, UiApplication._file_save_as_dialog_metadata, default_ext, filter, initial_dir, OutArg())
 
     _quit_metadata = { "offset" : _quit_method_offset,
             "arg_types" : (),
@@ -374,9 +373,9 @@ class UiApplication(IUiApplicationPartnerAccess, SupportsDeleteCallback):
     _file_open_dialog_extension_metadata = { "offset" : _file_open_dialog_extension_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL, agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantBoolArg, agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
-    def file_open_dialog_extension(self, allowMultiSelect:bool, defaultExt:str, filter:str, initialDir:str) -> "UiFileOpenDialogExtension":
+    def file_open_dialog_extension(self, allow_multi_select:bool, default_ext:str, filter:str, initial_dir:str) -> "UiFileOpenDialogExtension":
         """Brings up a standard File Open Dialog and returns an object representing the selected file."""
-        return self._intf.invoke(UiApplication._metadata, UiApplication._file_open_dialog_extension_metadata, allowMultiSelect, defaultExt, filter, initialDir, OutArg())
+        return self._intf.invoke(UiApplication._metadata, UiApplication._file_open_dialog_extension_metadata, allow_multi_select, default_ext, filter, initial_dir, OutArg())
 
     _get_hwnd_metadata = { "offset" : _get_hwnd_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -389,9 +388,9 @@ class UiApplication(IUiApplicationPartnerAccess, SupportsDeleteCallback):
     _directory_picker_dialog_metadata = { "offset" : _directory_picker_dialog_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.BStrArg,) }
-    def directory_picker_dialog(self, title:str, initialDir:str) -> str:
+    def directory_picker_dialog(self, title:str, initial_dir:str) -> str:
         """Brings up the Directory Picker Dialog and returns a selected directory name."""
-        return self._intf.invoke(UiApplication._metadata, UiApplication._directory_picker_dialog_metadata, title, initialDir, OutArg())
+        return self._intf.invoke(UiApplication._metadata, UiApplication._directory_picker_dialog_metadata, title, initial_dir, OutArg())
 
     _get_message_pending_delay_metadata = { "offset" : _get_message_pending_delay_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -405,9 +404,9 @@ class UiApplication(IUiApplicationPartnerAccess, SupportsDeleteCallback):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.LongArg,) }
     @message_pending_delay.setter
-    def message_pending_delay(self, newVal:int) -> None:
+    def message_pending_delay(self, new_value:int) -> None:
         """Get or set message-pending delay for server busy dialog (in milliseconds)."""
-        return self._intf.set_property(UiApplication._metadata, UiApplication._set_message_pending_delay_metadata, newVal)
+        return self._intf.set_property(UiApplication._metadata, UiApplication._set_message_pending_delay_metadata, new_value)
 
     _get_personality2_metadata = { "offset" : _get_personality2_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -420,16 +419,16 @@ class UiApplication(IUiApplicationPartnerAccess, SupportsDeleteCallback):
     _open_log_file_metadata = { "offset" : _open_log_file_method_offset,
             "arg_types" : (agcom.BSTR, agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.EnumArg(APPLICATION_OPEN_LOG_FILE_MODE), agmarshall.VariantBoolArg,) }
-    def open_log_file(self, logFileName:str, logFileMode:"APPLICATION_OPEN_LOG_FILE_MODE") -> bool:
+    def open_log_file(self, log_file_name:str, log_file_mode:"APPLICATION_OPEN_LOG_FILE_MODE") -> bool:
         """Specify the current log file to be written to."""
-        return self._intf.invoke(UiApplication._metadata, UiApplication._open_log_file_metadata, logFileName, logFileMode, OutArg())
+        return self._intf.invoke(UiApplication._metadata, UiApplication._open_log_file_metadata, log_file_name, log_file_mode, OutArg())
 
     _log_message_metadata = { "offset" : _log_message_method_offset,
             "arg_types" : (agcom.LONG, agcom.BSTR,),
             "marshallers" : (agmarshall.EnumArg(APPLICATION_LOG_MESSAGE_TYPE), agmarshall.BStrArg,) }
-    def log_message(self, msgType:"APPLICATION_LOG_MESSAGE_TYPE", msg:str) -> None:
+    def log_message(self, msg_type:"APPLICATION_LOG_MESSAGE_TYPE", msg:str) -> None:
         """Log the Message specified."""
-        return self._intf.invoke(UiApplication._metadata, UiApplication._log_message_metadata, msgType, msg)
+        return self._intf.invoke(UiApplication._metadata, UiApplication._log_message_metadata, msg_type, msg)
 
     _get_log_file_metadata = { "offset" : _get_log_file_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -451,9 +450,9 @@ class UiApplication(IUiApplicationPartnerAccess, SupportsDeleteCallback):
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @display_alerts.setter
-    def display_alerts(self, displayAlerts:bool) -> None:
+    def display_alerts(self, display_alerts:bool) -> None:
         """Set to true to display certain alerts and messages. Otherwise false. The default value is True."""
-        return self._intf.set_property(UiApplication._metadata, UiApplication._set_display_alerts_metadata, displayAlerts)
+        return self._intf.set_property(UiApplication._metadata, UiApplication._set_display_alerts_metadata, display_alerts)
 
     _create_application_metadata = { "offset" : _create_application_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -488,11 +487,11 @@ class UiApplication(IUiApplicationPartnerAccess, SupportsDeleteCallback):
     _property_names[display_alerts] = "display_alerts"
     _property_names[process_id] = "process_id"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type UiApplication."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, UiApplication)
-        IUiApplicationPartnerAccess.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, UiApplication)
+        IUiApplicationPartnerAccess.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IUiApplicationPartnerAccess._private_init(self, intf)
@@ -513,7 +512,7 @@ class MostRecentlyUsedCollection(SupportsDeleteCallback):
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _item_method_offset = 1
     _get_count_method_offset = 2
-    _get__NewEnum_method_offset = 3
+    _get__new_enum_method_offset = 3
     _metadata = {
         "iid_data" : (5511485448271886598, 17798322995058890112),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
@@ -523,7 +522,7 @@ class MostRecentlyUsedCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, MostRecentlyUsedCollection)
     def __iter__(self):
         """Create an iterator for the MostRecentlyUsedCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> str:
@@ -550,24 +549,24 @@ class MostRecentlyUsedCollection(SupportsDeleteCallback):
         """Get the total count of MRUs in the collection."""
         return self._intf.get_property(MostRecentlyUsedCollection._metadata, MostRecentlyUsedCollection._get_count_metadata)
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Enumerates through the MRU collection."""
-        return self._intf.get_property(MostRecentlyUsedCollection._metadata, MostRecentlyUsedCollection._get__NewEnum_metadata)
+        return self._intf.get_property(MostRecentlyUsedCollection._metadata, MostRecentlyUsedCollection._get__new_enum_metadata)
 
     __getitem__ = item
 
 
     _property_names[count] = "count"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type MostRecentlyUsedCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, MostRecentlyUsedCollection)
+        initialize_from_source_object(self, source_object, MostRecentlyUsedCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -586,7 +585,7 @@ class UiFileOpenDialogExtensionCollection(SupportsDeleteCallback):
     _num_methods = 3
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _get_count_method_offset = 1
-    _get__NewEnum_method_offset = 2
+    _get__new_enum_method_offset = 2
     _item_method_offset = 3
     _metadata = {
         "iid_data" : (5663541480808773789, 6468980721787839653),
@@ -597,7 +596,7 @@ class UiFileOpenDialogExtensionCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, UiFileOpenDialogExtensionCollection)
     def __iter__(self):
         """Create an iterator for the UiFileOpenDialogExtensionCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> str:
@@ -617,31 +616,31 @@ class UiFileOpenDialogExtensionCollection(SupportsDeleteCallback):
         """Get the total count of files in the collection."""
         return self._intf.get_property(UiFileOpenDialogExtensionCollection._metadata, UiFileOpenDialogExtensionCollection._get_count_metadata)
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Enumerates through the file collection."""
-        return self._intf.get_property(UiFileOpenDialogExtensionCollection._metadata, UiFileOpenDialogExtensionCollection._get__NewEnum_metadata)
+        return self._intf.get_property(UiFileOpenDialogExtensionCollection._metadata, UiFileOpenDialogExtensionCollection._get__new_enum_metadata)
 
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.LongArg, agmarshall.BStrArg,) }
-    def item(self, nIndex:int) -> str:
+    def item(self, n_index:int) -> str:
         """Get the file at the specified index."""
-        return self._intf.invoke(UiFileOpenDialogExtensionCollection._metadata, UiFileOpenDialogExtensionCollection._item_metadata, nIndex, OutArg())
+        return self._intf.invoke(UiFileOpenDialogExtensionCollection._metadata, UiFileOpenDialogExtensionCollection._item_metadata, n_index, OutArg())
 
     __getitem__ = item
 
 
     _property_names[count] = "count"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type UiFileOpenDialogExtensionCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, UiFileOpenDialogExtensionCollection)
+        initialize_from_source_object(self, source_object, UiFileOpenDialogExtensionCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -685,9 +684,9 @@ class UiFileOpenDialogExtension(SupportsDeleteCallback):
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("UiFileOpenDialogExtensionCollection"),) }
     @file_name.setter
-    def file_name(self, newVal:"UiFileOpenDialogExtensionCollection") -> None:
+    def file_name(self, value:"UiFileOpenDialogExtensionCollection") -> None:
         """Get or set the multiple file open collection."""
-        return self._intf.set_property(UiFileOpenDialogExtension._metadata, UiFileOpenDialogExtension._set_file_name_metadata, newVal)
+        return self._intf.set_property(UiFileOpenDialogExtension._metadata, UiFileOpenDialogExtension._set_file_name_metadata, value)
 
     _get_filter_description_metadata = { "offset" : _get_filter_description_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -701,9 +700,9 @@ class UiFileOpenDialogExtension(SupportsDeleteCallback):
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @filter_description.setter
-    def filter_description(self, newVal:str) -> None:
+    def filter_description(self, new_value:str) -> None:
         """Get or set the file open dialog filter description."""
-        return self._intf.set_property(UiFileOpenDialogExtension._metadata, UiFileOpenDialogExtension._set_filter_description_metadata, newVal)
+        return self._intf.set_property(UiFileOpenDialogExtension._metadata, UiFileOpenDialogExtension._set_filter_description_metadata, new_value)
 
     _get_filter_pattern_metadata = { "offset" : _get_filter_pattern_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -717,18 +716,18 @@ class UiFileOpenDialogExtension(SupportsDeleteCallback):
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @filter_pattern.setter
-    def filter_pattern(self, newVal:str) -> None:
+    def filter_pattern(self, new_value:str) -> None:
         """Get or set the file open dialog filter pattern."""
-        return self._intf.set_property(UiFileOpenDialogExtension._metadata, UiFileOpenDialogExtension._set_filter_pattern_metadata, newVal)
+        return self._intf.set_property(UiFileOpenDialogExtension._metadata, UiFileOpenDialogExtension._set_filter_pattern_metadata, new_value)
 
     _property_names[file_name] = "file_name"
     _property_names[filter_description] = "filter_description"
     _property_names[filter_pattern] = "filter_pattern"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type UiFileOpenDialogExtension."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, UiFileOpenDialogExtension)
+        initialize_from_source_object(self, source_object, UiFileOpenDialogExtension)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):

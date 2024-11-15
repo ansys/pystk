@@ -19,13 +19,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~SIGMA_SCALE_UNKNOWN`
+            * - :py:attr:`~UNKNOWN`
               - Unknown.
 
-            * - :py:attr:`~SIGMA_SCALE_PROBABILITY`
+            * - :py:attr:`~PROBABILITY`
               - Use probability: the contour is sized indirectly by specifying the probability encompassed by the ellipsoid as a percent.
 
-            * - :py:attr:`~SIGMA_SCALE_SCALE`
+            * - :py:attr:`~SCALE`
               - Use scale: the contour is sized directly by specifying the scale.
 
 

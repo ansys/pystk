@@ -32,9 +32,9 @@ Overview
               - Get the File Type.
             * - :py:attr:`~ansys.stk.core.stkobjects.AdvCATChosenObject.hard_body_radius`
               - Used in prob of collision.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AdvCATChosenObject.number_id`
+            * - :py:attr:`~ansys.stk.core.stkobjects.AdvCATChosenObject.number_identifier`
               - An IRON or other numeric id.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AdvCATChosenObject.string_id`
+            * - :py:attr:`~ansys.stk.core.stkobjects.AdvCATChosenObject.string_identifier`
               - A VEID, or other character id.
 
 
@@ -58,7 +58,7 @@ Property detail
 
 .. py:property:: ellipsoid_class
     :canonical: ansys.stk.core.stkobjects.AdvCATChosenObject.ellipsoid_class
-    :type: ADV_CAT_ELLIPSOID_CLASS
+    :type: ADVCAT_ELLIPSOID_CLASS_TYPE
 
     Determine Ellipsoid Sizing method class.
 
@@ -92,14 +92,14 @@ Property detail
 
     Used in prob of collision.
 
-.. py:property:: number_id
-    :canonical: ansys.stk.core.stkobjects.AdvCATChosenObject.number_id
+.. py:property:: number_identifier
+    :canonical: ansys.stk.core.stkobjects.AdvCATChosenObject.number_identifier
     :type: int
 
     An IRON or other numeric id.
 
-.. py:property:: string_id
-    :canonical: ansys.stk.core.stkobjects.AdvCATChosenObject.string_id
+.. py:property:: string_identifier
+    :canonical: ansys.stk.core.stkobjects.AdvCATChosenObject.string_identifier
     :type: str
 
     A VEID, or other character id.

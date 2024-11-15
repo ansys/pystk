@@ -35,7 +35,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.uicore.ToolbarCollection.count`
               - Returns a total number of toolbars in the collection.
-            * - :py:attr:`~ansys.stk.core.uicore.ToolbarCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.uicore.ToolbarCollection._new_enum`
               - Enumerates the toolbars in the collection.
 
 
@@ -57,8 +57,8 @@ Property detail
 
     Returns a total number of toolbars in the collection.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.uicore.ToolbarCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.uicore.ToolbarCollection._new_enum
     :type: EnumeratorProxy
 
     Enumerates the toolbars in the collection.
@@ -67,14 +67,14 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, indexOrCaption: typing.Any) -> Toolbar
+.. py:method:: item(self, index_or_caption: typing.Any) -> Toolbar
     :canonical: ansys.stk.core.uicore.ToolbarCollection.item
 
     Retrieve a toolbar object.
 
     :Parameters:
 
-    **indexOrCaption** : :obj:`~typing.Any`
+    **index_or_caption** : :obj:`~typing.Any`
 
     :Returns:
 

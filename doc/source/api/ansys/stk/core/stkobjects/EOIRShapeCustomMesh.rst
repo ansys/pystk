@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.EOIRShapeCustomMesh.max_dimension`
+            * - :py:attr:`~ansys.stk.core.stkobjects.EOIRShapeCustomMesh.maximum_dimension`
               - Property used to access the maximum dimension of a custom mesh shape.
 
 
@@ -36,8 +36,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: max_dimension
-    :canonical: ansys.stk.core.stkobjects.EOIRShapeCustomMesh.max_dimension
+.. py:property:: maximum_dimension
+    :canonical: ansys.stk.core.stkobjects.EOIRShapeCustomMesh.maximum_dimension
     :type: float
 
     Property used to access the maximum dimension of a custom mesh shape.

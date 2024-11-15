@@ -31,7 +31,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.UserVariableCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.UserVariableCollection._new_enum`
               - Allows you to enumerate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.UserVariableCollection.count`
               - Returns the size of the collection.
@@ -49,8 +49,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.astrogator.UserVariableCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.astrogator.UserVariableCollection._new_enum
     :type: EnumeratorProxy
 
     Allows you to enumerate through the collection.
@@ -65,14 +65,14 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, indexOrName: typing.Any) -> UserVariable
+.. py:method:: item(self, index_or_name: typing.Any) -> UserVariable
     :canonical: ansys.stk.core.stkobjects.astrogator.UserVariableCollection.item
 
     Allow you to iterate through the collection.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 

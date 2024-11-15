@@ -48,7 +48,7 @@ class EarlyBoundTests(TestBase):
         Console.WriteLine("XXX Volumetric.EarlyBoundTests.Definition - START")
 
         with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
-            EarlyBoundTests.AG_VOL.set_volume_grid_definition_type(VOLUMETRIC_DEFINITION_TYPE.GRID_UNKNOWN)
+            EarlyBoundTests.AG_VOL.set_volume_grid_definition_type(VOLUMETRIC_DEFINITION_TYPE.UNKNOWN)
 
         Console.WriteLine("XXX Volumetric.EarlyBoundTests.Definition - Before setting to GRID_SPATIAL_CALCULATION")
         EarlyBoundTests.AG_VOL.set_volume_grid_definition_type(VOLUMETRIC_DEFINITION_TYPE.GRID_SPATIAL_CALCULATION)
@@ -84,10 +84,10 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("Could not create")):
             vmGridSpatialCalculation.spatial_calculation = "Satellite/Satellite1 Bogus"
 
-        Console.WriteLine("XXX Volumetric.EarlyBoundTests.Definition - Before setting to EXTERNAL_FILE")
-        EarlyBoundTests.AG_VOL.set_volume_grid_definition_type(VOLUMETRIC_DEFINITION_TYPE.EXTERNAL_FILE)
-        Console.WriteLine("XXX Volumetric.EarlyBoundTests.Definition - After setting to EXTERNAL_FILE")
-        Assert.assertEqual(VOLUMETRIC_DEFINITION_TYPE.EXTERNAL_FILE, EarlyBoundTests.AG_VOL.volume_grid_definition_type)
+        Console.WriteLine("XXX Volumetric.EarlyBoundTests.Definition - Before setting to FILE")
+        EarlyBoundTests.AG_VOL.set_volume_grid_definition_type(VOLUMETRIC_DEFINITION_TYPE.FILE)
+        Console.WriteLine("XXX Volumetric.EarlyBoundTests.Definition - After setting to FILE")
+        Assert.assertEqual(VOLUMETRIC_DEFINITION_TYPE.FILE, EarlyBoundTests.AG_VOL.volume_grid_definition_type)
 
         vmExternalFile: "VolumetricExternalFile" = clr.CastAs(
             EarlyBoundTests.AG_VOL.volume_grid_definition, VolumetricExternalFile
@@ -176,11 +176,16 @@ class EarlyBoundTests(TestBase):
         vmAnalysisInterval: "VolumetricAnalysisInterval" = EarlyBoundTests.AG_VOL.volume_analysis_interval
 
         with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
-            vmAnalysisInterval.set_evaluation_of_spatial_calc_type(VOLUMETRIC_SPATIAL_CALC_EVAL_TYPE.EVAL_UNKNOWN)
+            vmAnalysisInterval.set_spatial_calcuation_evaluation_type(
+                VOLUMETRIC_SPATIAL_CALCULATION_EVALUATION_TYPE.UNKNOWN
+            )
 
-        vmAnalysisInterval.set_evaluation_of_spatial_calc_type(VOLUMETRIC_SPATIAL_CALC_EVAL_TYPE.AT_INSTANT_IN_TIME)
+        vmAnalysisInterval.set_spatial_calcuation_evaluation_type(
+            VOLUMETRIC_SPATIAL_CALCULATION_EVALUATION_TYPE.AT_INSTANT_IN_TIME
+        )
         Assert.assertEqual(
-            VOLUMETRIC_SPATIAL_CALC_EVAL_TYPE.AT_INSTANT_IN_TIME, vmAnalysisInterval.evaluation_of_spatial_calc_type
+            VOLUMETRIC_SPATIAL_CALCULATION_EVALUATION_TYPE.AT_INSTANT_IN_TIME,
+            vmAnalysisInterval.evaluation_of_spatial_calculation_type,
         )
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
@@ -188,12 +193,12 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             vmAnalysisInterval.step_size = 60
 
-        vmAnalysisInterval.set_evaluation_of_spatial_calc_type(
-            VOLUMETRIC_SPATIAL_CALC_EVAL_TYPE.AT_TIMES_FROM_TIME_ARRAY
+        vmAnalysisInterval.set_spatial_calcuation_evaluation_type(
+            VOLUMETRIC_SPATIAL_CALCULATION_EVALUATION_TYPE.AT_TIMES_FROM_TIME_ARRAY
         )
         Assert.assertEqual(
-            VOLUMETRIC_SPATIAL_CALC_EVAL_TYPE.AT_TIMES_FROM_TIME_ARRAY,
-            vmAnalysisInterval.evaluation_of_spatial_calc_type,
+            VOLUMETRIC_SPATIAL_CALCULATION_EVALUATION_TYPE.AT_TIMES_FROM_TIME_ARRAY,
+            vmAnalysisInterval.evaluation_of_spatial_calculation_type,
         )
 
         vmAnalysisInterval.time_array = "Satellite/Satellite1 EphemerisTimes"
@@ -204,9 +209,12 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             vmAnalysisInterval.step_size = 60
 
-        vmAnalysisInterval.set_evaluation_of_spatial_calc_type(VOLUMETRIC_SPATIAL_CALC_EVAL_TYPE.AT_TIMES_AT_STEP_SIZE)
+        vmAnalysisInterval.set_spatial_calcuation_evaluation_type(
+            VOLUMETRIC_SPATIAL_CALCULATION_EVALUATION_TYPE.AT_TIMES_AT_STEP_SIZE
+        )
         Assert.assertEqual(
-            VOLUMETRIC_SPATIAL_CALC_EVAL_TYPE.AT_TIMES_AT_STEP_SIZE, vmAnalysisInterval.evaluation_of_spatial_calc_type
+            VOLUMETRIC_SPATIAL_CALCULATION_EVALUATION_TYPE.AT_TIMES_AT_STEP_SIZE,
+            vmAnalysisInterval.evaluation_of_spatial_calculation_type,
         )
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
@@ -229,12 +237,12 @@ class EarlyBoundTests(TestBase):
     def test_Advanced(self):
         Console.WriteLine("XXX Volumetric.EarlyBoundTests.Advanced - START")
 
-        vmAdvanced: "VolumetricAdvanced" = EarlyBoundTests.AG_VOL.advanced
+        vmAdvanced: "VolumetricAdvancedSettings" = EarlyBoundTests.AG_VOL.advanced
 
-        vmAdvanced.automatic_recompute = True
-        Assert.assertTrue(vmAdvanced.automatic_recompute)
-        vmAdvanced.automatic_recompute = False
-        Assert.assertFalse(vmAdvanced.automatic_recompute)
+        vmAdvanced.recompute_automatically = True
+        Assert.assertTrue(vmAdvanced.recompute_automatically)
+        vmAdvanced.recompute_automatically = False
+        Assert.assertFalse(vmAdvanced.recompute_automatically)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
             vmAdvanced.save_computed_data_type = VOLUMETRIC_SAVE_COMPUTED_DATA_TYPE.UNKNOWN
@@ -385,20 +393,20 @@ class EarlyBoundTests(TestBase):
         )
         vmGridSpatialCalculation.use_spatial_calculation = True
         vmGridSpatialCalculation.spatial_calculation = "Satellite/Satellite1 Altitude"
-        vmVO.volume_type = VOLUMETRIC_DISPLAY_VOLUME_TYPE.VOLUME_SPATIAL_CALC_LEVELS
-        Assert.assertTrue((vmVO.volume_type == VOLUMETRIC_DISPLAY_VOLUME_TYPE.VOLUME_SPATIAL_CALC_LEVELS))
+        vmVO.volume_type = VOLUMETRIC_DISPLAY_VOLUME_TYPE.SPATIAL_CALCULATION_VALUE_LEVELS
+        Assert.assertTrue((vmVO.volume_type == VOLUMETRIC_DISPLAY_VOLUME_TYPE.SPATIAL_CALCULATION_VALUE_LEVELS))
 
         # Test Active Grid Points volume type
-        vmVO.volume_type = VOLUMETRIC_DISPLAY_VOLUME_TYPE.VOLUME_ACTIVE_GRID_PTS
-        Assert.assertTrue((vmVO.volume_type == VOLUMETRIC_DISPLAY_VOLUME_TYPE.VOLUME_ACTIVE_GRID_PTS))
+        vmVO.volume_type = VOLUMETRIC_DISPLAY_VOLUME_TYPE.ACTIVE_GRID_POINTS
+        Assert.assertTrue((vmVO.volume_type == VOLUMETRIC_DISPLAY_VOLUME_TYPE.ACTIVE_GRID_POINTS))
 
         # Test Spatial Calculation Levels volume type when invalid
         # spatial calc component is set.  An exception should be thrown
         # when this occurs.
         vmGridSpatialCalculation.use_spatial_calculation = False
         with pytest.raises(Exception, match=RegexSubstringMatch("Spatial calculation is unavailable")):
-            vmVO.volume_type = VOLUMETRIC_DISPLAY_VOLUME_TYPE.VOLUME_SPATIAL_CALC_LEVELS
-        Assert.assertTrue((vmVO.volume_type == VOLUMETRIC_DISPLAY_VOLUME_TYPE.VOLUME_ACTIVE_GRID_PTS))
+            vmVO.volume_type = VOLUMETRIC_DISPLAY_VOLUME_TYPE.SPATIAL_CALCULATION_VALUE_LEVELS
+        Assert.assertTrue((vmVO.volume_type == VOLUMETRIC_DISPLAY_VOLUME_TYPE.ACTIVE_GRID_POINTS))
 
         # Restore inital state
         vmVO.volume_type = vType
@@ -602,10 +610,10 @@ class EarlyBoundTests(TestBase):
 
         # Fill Levels
 
-        vmVOSpatialCalculationLevels.display_colors_outside_min_max = False
-        Assert.assertFalse(vmVOSpatialCalculationLevels.display_colors_outside_min_max)
-        vmVOSpatialCalculationLevels.display_colors_outside_min_max = True
-        Assert.assertTrue(vmVOSpatialCalculationLevels.display_colors_outside_min_max)
+        vmVOSpatialCalculationLevels.display_colors_outside_minimum_maximum = False
+        Assert.assertFalse(vmVOSpatialCalculationLevels.display_colors_outside_minimum_maximum)
+        vmVOSpatialCalculationLevels.display_colors_outside_minimum_maximum = True
+        Assert.assertTrue(vmVOSpatialCalculationLevels.display_colors_outside_minimum_maximum)
 
         vmVOSpatialCalculationLevels.show_fill_levels = False
         Assert.assertFalse(vmVOSpatialCalculationLevels.show_fill_levels)
@@ -783,65 +791,65 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             legend.decimal_digits = 100
 
-        legend.notation = VOLUMETRIC_LEGEND_NUMERIC_NOTATION.FLOATING_POINT
-        Assert.assertEqual(VOLUMETRIC_LEGEND_NUMERIC_NOTATION.FLOATING_POINT, legend.notation)
-        legend.notation = VOLUMETRIC_LEGEND_NUMERIC_NOTATION.SCIENTIFIC_NOTATION_E
-        Assert.assertEqual(VOLUMETRIC_LEGEND_NUMERIC_NOTATION.SCIENTIFIC_NOTATION_E, legend.notation)
-        legend.notation = VOLUMETRIC_LEGEND_NUMERIC_NOTATION.SCIENTIFIC_E
-        Assert.assertEqual(VOLUMETRIC_LEGEND_NUMERIC_NOTATION.SCIENTIFIC_E, legend.notation)
+        legend.notation = VOLUMETRIC_LEGEND_NUMERIC_NOTATION_TYPE.FLOATING_POINT
+        Assert.assertEqual(VOLUMETRIC_LEGEND_NUMERIC_NOTATION_TYPE.FLOATING_POINT, legend.notation)
+        legend.notation = VOLUMETRIC_LEGEND_NUMERIC_NOTATION_TYPE.SCIENTIFIC_LOWERCASE_E
+        Assert.assertEqual(VOLUMETRIC_LEGEND_NUMERIC_NOTATION_TYPE.SCIENTIFIC_LOWERCASE_E, legend.notation)
+        legend.notation = VOLUMETRIC_LEGEND_NUMERIC_NOTATION_TYPE.SCIENTIFIC_UPPERCASE_E
+        Assert.assertEqual(VOLUMETRIC_LEGEND_NUMERIC_NOTATION_TYPE.SCIENTIFIC_UPPERCASE_E, legend.notation)
 
         legend.text_color = Colors.Red
         Assert.assertEqual(Colors.Red, legend.text_color)
         legend.text_color = Colors.Blue
         Assert.assertEqual(Colors.Blue, legend.text_color)
 
-        legend.level_order = VOLUMETRIC_LEVEL_ORDER.HORIZONTAL_MIN_TO_MAX
-        Assert.assertEqual(VOLUMETRIC_LEVEL_ORDER.HORIZONTAL_MIN_TO_MAX, legend.level_order)
+        legend.level_order = VOLUMETRIC_LEVEL_ORDER.HORIZONTAL_MINIMUM_TO_MAXIMUM
+        Assert.assertEqual(VOLUMETRIC_LEVEL_ORDER.HORIZONTAL_MINIMUM_TO_MAXIMUM, legend.level_order)
 
-        legend.max_color_squares = 1
-        Assert.assertEqual(1, legend.max_color_squares)
-        legend.max_color_squares = 1000
-        Assert.assertEqual(1000, legend.max_color_squares)
+        legend.maximum_color_squares = 1
+        Assert.assertEqual(1, legend.maximum_color_squares)
+        legend.maximum_color_squares = 1000
+        Assert.assertEqual(1000, legend.maximum_color_squares)
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            legend.max_color_squares = 0
+            legend.maximum_color_squares = 0
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            legend.max_color_squares = 1001
+            legend.maximum_color_squares = 1001
 
-        legend.level_order = VOLUMETRIC_LEVEL_ORDER.HORIZONTAL_MAX_TO_MIN
-        Assert.assertEqual(VOLUMETRIC_LEVEL_ORDER.HORIZONTAL_MAX_TO_MIN, legend.level_order)
+        legend.level_order = VOLUMETRIC_LEVEL_ORDER.HORIZONTAL_MAXIMUM_TO_MINIMUM
+        Assert.assertEqual(VOLUMETRIC_LEVEL_ORDER.HORIZONTAL_MAXIMUM_TO_MINIMUM, legend.level_order)
 
-        legend.max_color_squares = 1
-        Assert.assertEqual(1, legend.max_color_squares)
-        legend.max_color_squares = 1000
-        Assert.assertEqual(1000, legend.max_color_squares)
+        legend.maximum_color_squares = 1
+        Assert.assertEqual(1, legend.maximum_color_squares)
+        legend.maximum_color_squares = 1000
+        Assert.assertEqual(1000, legend.maximum_color_squares)
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            legend.max_color_squares = 0
+            legend.maximum_color_squares = 0
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            legend.max_color_squares = 1001
+            legend.maximum_color_squares = 1001
 
-        legend.level_order = VOLUMETRIC_LEVEL_ORDER.VERTICAL_MIN_TO_MAX
-        Assert.assertEqual(VOLUMETRIC_LEVEL_ORDER.VERTICAL_MIN_TO_MAX, legend.level_order)
+        legend.level_order = VOLUMETRIC_LEVEL_ORDER.VERTICAL_MINIMUM_TO_MAXIMUM
+        Assert.assertEqual(VOLUMETRIC_LEVEL_ORDER.VERTICAL_MINIMUM_TO_MAXIMUM, legend.level_order)
 
-        legend.max_color_squares = 1
-        Assert.assertEqual(1, legend.max_color_squares)
-        legend.max_color_squares = 1000
-        Assert.assertEqual(1000, legend.max_color_squares)
+        legend.maximum_color_squares = 1
+        Assert.assertEqual(1, legend.maximum_color_squares)
+        legend.maximum_color_squares = 1000
+        Assert.assertEqual(1000, legend.maximum_color_squares)
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            legend.max_color_squares = 0
+            legend.maximum_color_squares = 0
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            legend.max_color_squares = 1001
+            legend.maximum_color_squares = 1001
 
-        legend.level_order = VOLUMETRIC_LEVEL_ORDER.VERTICAL_MAX_TO_MIN
-        Assert.assertEqual(VOLUMETRIC_LEVEL_ORDER.VERTICAL_MAX_TO_MIN, legend.level_order)
+        legend.level_order = VOLUMETRIC_LEVEL_ORDER.VERTICAL_MAXIMUM_TO_MINIMUM
+        Assert.assertEqual(VOLUMETRIC_LEVEL_ORDER.VERTICAL_MAXIMUM_TO_MINIMUM, legend.level_order)
 
-        legend.max_color_squares = 1
-        Assert.assertEqual(1, legend.max_color_squares)
-        legend.max_color_squares = 1000
-        Assert.assertEqual(1000, legend.max_color_squares)
+        legend.maximum_color_squares = 1
+        Assert.assertEqual(1, legend.maximum_color_squares)
+        legend.maximum_color_squares = 1000
+        Assert.assertEqual(1000, legend.maximum_color_squares)
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            legend.max_color_squares = 0
+            legend.maximum_color_squares = 0
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            legend.max_color_squares = 1001
+            legend.maximum_color_squares = 1001
 
         legend.color_square_height = 1
         Assert.assertEqual(1, legend.color_square_height)
@@ -878,10 +886,10 @@ class EarlyBoundTests(TestBase):
 
     # region DP_PreData_Unit
     def test_DP_PreData_Unit(self):
-        holdDateFormat: str = TestBase.Application.unit_preferences.get_current_unit_abbrv("DateFormat")
+        holdDateFormat: str = TestBase.Application.units_preferences.get_current_unit_abbrv("DateFormat")
 
         try:
-            TestBase.Application.unit_preferences.set_current_unit("DateFormat", "EpSec")
+            TestBase.Application.units_preferences.set_current_unit("DateFormat", "EpSec")
 
             volumetric: "Volumetric" = clr.CastAs(
                 TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.VOLUMETRIC, "VolumetricPreDataTest"),
@@ -894,14 +902,14 @@ class EarlyBoundTests(TestBase):
             )
             dpFixed: "DataProviderFixed" = clr.CastAs(dp, DataProviderFixed)
             dp.pre_data = "90"
-            result: "DataProviderResult" = dpFixed.exec()
+            result: "DataProviderResult" = dpFixed.execute()
 
             # This test will currently always pass even though an incorrect value for a unit type is passed
             # because although data provider's pre-service call will fail, the actual data provider will ignore it and execute
             Assert.assertEqual("OK", str(result.message.messages[0]))
 
             dp.pre_data = "Bogus 90"
-            result = dpFixed.exec()
+            result = dpFixed.execute()
 
             # This test will currently always pass even though an incorrect value for a unit type is passed
             # because although data provider's pre-service call will fail, the actual data provider will ignore it and execute
@@ -912,15 +920,15 @@ class EarlyBoundTests(TestBase):
             )
             dpFixed = clr.CastAs(dp, DataProviderFixed)
             dp.pre_data = "90"
-            result = dpFixed.exec()
+            result = dpFixed.execute()
             Assert.assertEqual("OK", str(result.message.messages[0]))
 
             dp.pre_data = "Bogus 90"
-            result = dpFixed.exec()
+            result = dpFixed.execute()
             Assert.assertEqual("Data Unavailable", str(result.message.messages[0]))
 
         finally:
             TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.VOLUMETRIC, "VolumetricPreDataTest")
-            TestBase.Application.unit_preferences.set_current_unit("DateFormat", holdDateFormat)
+            TestBase.Application.units_preferences.set_current_unit("DateFormat", holdDateFormat)
 
     # endregion

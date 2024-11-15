@@ -126,7 +126,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: read(self, extent: list, userTileData: typing.Any, image: IPictureDisp) -> bool
+.. py:method:: read(self, extent: list, user_tile_data: typing.Any, image: IPictureDisp) -> bool
     :canonical: ansys.stk.core.graphics.CustomImageGlobeOverlay.read
 
     Read a tile from the specified extent, scales it to and stores the result in image.
@@ -134,7 +134,7 @@ Method detail
     :Parameters:
 
     **extent** : :obj:`~list`
-    **userTileData** : :obj:`~typing.Any`
+    **user_tile_data** : :obj:`~typing.Any`
     **image** : :obj:`~IPictureDisp`
 
     :Returns:

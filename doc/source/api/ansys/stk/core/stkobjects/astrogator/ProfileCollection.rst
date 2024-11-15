@@ -47,7 +47,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileCollection._new_enum`
               - Allows you to enumerate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileCollection.count`
               - Returns the size of the collection.
@@ -69,8 +69,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.astrogator.ProfileCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.astrogator.ProfileCollection._new_enum
     :type: EnumeratorProxy
 
     Allows you to enumerate through the collection.
@@ -97,27 +97,27 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: add(self, profileName: str) -> IProfile
+.. py:method:: add(self, profile_name: str) -> IProfile
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileCollection.add
 
     Add a profile.
 
     :Parameters:
 
-    **profileName** : :obj:`~str`
+    **profile_name** : :obj:`~str`
 
     :Returns:
 
         :obj:`~IProfile`
 
-.. py:method:: item(self, indexOrName: typing.Any) -> IProfile
+.. py:method:: item(self, index_or_name: typing.Any) -> IProfile
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileCollection.item
 
     Allow you to iterate through the collection.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 
@@ -126,14 +126,14 @@ Method detail
 
 
 
-.. py:method:: remove(self, indexOrProfileName: typing.Any) -> None
+.. py:method:: remove(self, index_or_profile_name: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileCollection.remove
 
     Remove an item from the profile collection.
 
     :Parameters:
 
-    **indexOrProfileName** : :obj:`~typing.Any`
+    **index_or_profile_name** : :obj:`~typing.Any`
 
     :Returns:
 
@@ -149,34 +149,34 @@ Method detail
         :obj:`~None`
 
 
-.. py:method:: cut(self, indexOrName: typing.Any) -> None
+.. py:method:: cut(self, index_or_name: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileCollection.cut
 
     Copy the profile into the clipboard and removes profile from the list.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: paste(self, indexOrName: typing.Any, direction: PROFILE_INSERT_DIRECTION) -> IProfile
+.. py:method:: paste(self, index_or_name: typing.Any, direction: PROFILE_INSERT_DIRECTION) -> IProfile
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileCollection.paste
 
     Pastes the profile from the clipboard and inserts into the list.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
     **direction** : :obj:`~PROFILE_INSERT_DIRECTION`
 
     :Returns:
 
         :obj:`~IProfile`
 
-.. py:method:: insert_copy(self, profile: IProfile, indexOrName: typing.Any, direction: PROFILE_INSERT_DIRECTION) -> IProfile
+.. py:method:: insert_copy(self, profile: IProfile, index_or_name: typing.Any, direction: PROFILE_INSERT_DIRECTION) -> IProfile
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileCollection.insert_copy
 
     Copy the profile and inserts the copy into the list.
@@ -184,22 +184,22 @@ Method detail
     :Parameters:
 
     **profile** : :obj:`~IProfile`
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
     **direction** : :obj:`~PROFILE_INSERT_DIRECTION`
 
     :Returns:
 
         :obj:`~IProfile`
 
-.. py:method:: add2(self, profileName: str, indexOrName: typing.Any, direction: PROFILE_INSERT_DIRECTION) -> IProfile
+.. py:method:: add2(self, profile_name: str, index_or_name: typing.Any, direction: PROFILE_INSERT_DIRECTION) -> IProfile
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileCollection.add2
 
     Add a profile.
 
     :Parameters:
 
-    **profileName** : :obj:`~str`
-    **indexOrName** : :obj:`~typing.Any`
+    **profile_name** : :obj:`~str`
+    **index_or_name** : :obj:`~typing.Any`
     **direction** : :obj:`~PROFILE_INSERT_DIRECTION`
 
     :Returns:

@@ -22,10 +22,10 @@ Overview
             * - :py:attr:`~UNKNOWN`
               - An invalid AgEVeSpEnvDoseChannel value.
 
-            * - :py:attr:`~HIGH_LET`
+            * - :py:attr:`~HIGH_LINEAR_ENERGY_TRANSPORT`
               - Characterizes high linear energy transport.
 
-            * - :py:attr:`~LOW_LET`
+            * - :py:attr:`~LOW_LINEAR_ENERGY_TRANSPORT`
               - Characterizes low linear energy transport.
 
             * - :py:attr:`~TOTAL`

@@ -51,14 +51,14 @@ Method detail
 
         :obj:`~ICatalogItem`
 
-.. py:method:: get_value(self, fieldName: str) -> typing.Any
+.. py:method:: get_value(self, field_name: str) -> typing.Any
     :canonical: ansys.stk.core.stkobjects.aviator.IARINC424Item.get_value
 
     Get the value of the field with the given name.
 
     :Parameters:
 
-    **fieldName** : :obj:`~str`
+    **field_name** : :obj:`~str`
 
     :Returns:
 

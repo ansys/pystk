@@ -33,7 +33,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CalculationGraphCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CalculationGraphCollection._new_enum`
               - Allows you to enumerate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CalculationGraphCollection.count`
               - Returns the size of the collection.
@@ -51,8 +51,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.astrogator.CalculationGraphCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.astrogator.CalculationGraphCollection._new_enum
     :type: EnumeratorProxy
 
     Allows you to enumerate through the collection.
@@ -81,27 +81,27 @@ Method detail
         :obj:`~str`
 
 
-.. py:method:: add(self, graphName: str) -> None
+.. py:method:: add(self, graph_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.CalculationGraphCollection.add
 
     Add a calculation graph.
 
     :Parameters:
 
-    **graphName** : :obj:`~str`
+    **graph_name** : :obj:`~str`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: remove(self, graphName: str) -> None
+.. py:method:: remove(self, graph_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.CalculationGraphCollection.remove
 
     Remove a parameter.
 
     :Parameters:
 
-    **graphName** : :obj:`~str`
+    **graph_name** : :obj:`~str`
 
     :Returns:
 

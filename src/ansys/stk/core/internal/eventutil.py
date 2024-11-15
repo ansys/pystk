@@ -16,12 +16,22 @@ __all__ = [ "IStkObjectRootEventHandler",
 import typing
 
 from .comutil                import IUnknown
-from .comevents              import *
-from ..utilities.exceptions  import *
+from .comevents import (COMEventHandlerImpl, ISTKXApplicationEventCOMHandler,
+                        IImageCollectionEventCOMHandler,
+                        IKmlGraphicsEventCOMHandler,
+                        ISceneEventCOMHandler,
+                        ITerrainOverlayCollectionEventCOMHandler,
+                        IStkObjectRootEventCOMHandler, IGraphics2DControlEventCOMHandler,
+                        IGraphics3DControlEventCOMHandler)
+from ..utilities.exceptions import STKAttributeError, STKEventsAPIError, STKRuntimeError
 
 try:
     from .grpcutil   import GrpcInterface
-    from .grpcevents import *
+    from .grpcevents import (GrpcEventHandlerImpl, ISTKXApplicationEventGrpcHandler,
+                         IStkGraphicsImageCollectionEventGrpcHandler,
+                         IStkGraphicsKmlGraphicsEventGrpcHandler, IStkGraphicsSceneEventGrpcHandler,
+                         IStkGraphicsTerrainCollectionEventGrpcHandler,
+                         IStkObjectRootEventGrpcHandler)
 except:
     class GrpcInterface(object):
         def __init__(self):
@@ -258,7 +268,7 @@ class IStkObjectRootEventHandler(STKEventSubscriber):
         
     @property
     def on_animation_playback(self):
-        """Use operator += to register or operator -= to unregister callbacks with the signature [OnAnimationPlayback(CurrentTime:float, eAction:"ANIMATION_ACTIONS", eDirection:"ANIMATION_DIRECTIONS") -> None]"""
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnAnimationPlayback(CurrentTime:float, eAction:"ANIMATION_ACTION_TYPE", eDirection:"ANIMATION_DIRECTION_TYPE") -> None]"""
         return self._events["OnAnimationPlayback"]
         
     @on_animation_playback.setter
@@ -285,7 +295,7 @@ class IStkObjectRootEventHandler(STKEventSubscriber):
         
     @property
     def on_scenario_before_save(self):
-        """Use operator += to register or operator -= to unregister callbacks with the signature [OnScenarioBeforeSave(pArgs:"ScenarioBeforeSaveEventArgs") -> None]"""
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnScenarioBeforeSave(pArgs:"ScenarioBeforeSaveEventArguments") -> None]"""
         return self._events["OnScenarioBeforeSave"]
         
     @on_scenario_before_save.setter
@@ -330,7 +340,7 @@ class IStkObjectRootEventHandler(STKEventSubscriber):
         
     @property
     def on_percent_complete_update(self):
-        """Use operator += to register or operator -= to unregister callbacks with the signature [OnPercentCompleteUpdate(pArgs:"PctCmpltEventArgs") -> None]"""
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnPercentCompleteUpdate(pArgs:"ProgressBarEventArguments") -> None]"""
         return self._events["OnPercentCompleteUpdate"]
         
     @on_percent_complete_update.setter
@@ -357,7 +367,7 @@ class IStkObjectRootEventHandler(STKEventSubscriber):
         
     @property
     def on_stk_object_changed(self):
-        """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectChanged(pArgs:"StkObjectChangedEventArgs") -> None]"""
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectChanged(pArgs:"StkObjectChangedEventArguments") -> None]"""
         return self._events["OnStkObjectChanged"]
         
     @on_stk_object_changed.setter
@@ -375,7 +385,7 @@ class IStkObjectRootEventHandler(STKEventSubscriber):
         
     @property
     def on_stk_object_pre_delete(self):
-        """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectPreDelete(pArgs:"StkObjectPreDeleteEventArgs") -> None]"""
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectPreDelete(pArgs:"StkObjectPreDeleteEventArguments") -> None]"""
         return self._events["OnStkObjectPreDelete"]
         
     @on_stk_object_pre_delete.setter
@@ -420,7 +430,7 @@ class IStkObjectRootEventHandler(STKEventSubscriber):
         
     @property
     def on_stk_object_pre_cut(self):
-        """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectPreCut(pArgs:"StkObjectCutCopyPasteEventArgs") -> None]"""
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectPreCut(pArgs:"StkObjectCutCopyPasteEventArguments") -> None]"""
         return self._events["OnStkObjectPreCut"]
         
     @on_stk_object_pre_cut.setter
@@ -429,7 +439,7 @@ class IStkObjectRootEventHandler(STKEventSubscriber):
         
     @property
     def on_stk_object_copy(self):
-        """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectCopy(pArgs:"StkObjectCutCopyPasteEventArgs") -> None]"""
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectCopy(pArgs:"StkObjectCutCopyPasteEventArguments") -> None]"""
         return self._events["OnStkObjectCopy"]
         
     @on_stk_object_copy.setter
@@ -438,7 +448,7 @@ class IStkObjectRootEventHandler(STKEventSubscriber):
         
     @property
     def on_stk_object_paste(self):
-        """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectPaste(pArgs:"StkObjectCutCopyPasteEventArgs") -> None]"""
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectPaste(pArgs:"StkObjectCutCopyPasteEventArguments") -> None]"""
         return self._events["OnStkObjectPaste"]
         
     @on_stk_object_paste.setter

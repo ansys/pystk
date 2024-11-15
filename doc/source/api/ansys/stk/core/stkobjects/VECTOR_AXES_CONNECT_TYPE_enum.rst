@@ -19,13 +19,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~CONNECT_TRACE`
+            * - :py:attr:`~TRACE`
               - Trace: a single-line arc represents the path of the element.
 
-            * - :py:attr:`~CONNECT_SWEEP`
+            * - :py:attr:`~SWEEP`
               - Sweep: a continuous band of color represents the path of the element.
 
-            * - :py:attr:`~CONNECT_LINE`
+            * - :py:attr:`~LINE`
               - Line: a line is drawn at every time step representing the position of the element.
 
 

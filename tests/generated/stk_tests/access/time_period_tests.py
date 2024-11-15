@@ -17,7 +17,7 @@ class TimePeriodTests(TestBase):
         TestBase.Initialize()
         TestBase.Application.close_scenario()
         TestBase.Application.new_scenario("Test")  # uses default scenario interval
-        TestBase.Application.unit_preferences.reset_units()
+        TestBase.Application.units_preferences.reset_units()
 
         TimePeriodTests.SatelliteObj = clr.CastAs(
             TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "Spy"), Satellite
@@ -28,7 +28,7 @@ class TimePeriodTests(TestBase):
         Assert.assertIsNotNone(TimePeriodTests.SatelliteObj)
         Assert.assertIsNotNone(TimePeriodTests.FacilityObj)
         # propagate default satellite (assumes TwoBody, assumes over the scenario interval)
-        oPropagator: "VehiclePropagatorTwoBody" = VehiclePropagatorTwoBody(TimePeriodTests.SatelliteObj.propagator)
+        oPropagator: "PropagatorTwoBody" = PropagatorTwoBody(TimePeriodTests.SatelliteObj.propagator)
         Assert.assertIsNotNone(oPropagator)
         oPropagator.propagate()
 
@@ -59,8 +59,8 @@ class TimePeriodTests(TestBase):
         Assert.assertIsNotNone(oFacility)
 
         # first construction of the access occurs here
-        access: "StkAccess" = oSatellite.get_access_to_object(oFacility)
-        access.access_time_period = ACCESS_TIME_TYPE.USER_SPEC_ACCESS_TIME
+        access: "Access" = oSatellite.get_access_to_object(oFacility)
+        access.access_time_period = ACCESS_TIME_TYPE.SPECIFIED_TIME_PERIOD
         accessTimePeriod: "AccessTimePeriod" = clr.CastAs(access.access_time_period_data, AccessTimePeriod)
         tp: "ITimePeriod" = clr.CastAs(access.access_time_period_data, ITimePeriod)
         Assert.assertIsNotNone(tp)
@@ -80,8 +80,8 @@ class TimePeriodTests(TestBase):
         Assert.assertIsNotNone(oSatellite)
         Assert.assertIsNotNone(oFacility)
 
-        access: "StkAccess" = oSatellite.get_access_to_object(oFacility)
-        access.access_time_period = ACCESS_TIME_TYPE.USER_SPEC_ACCESS_TIME
+        access: "Access" = oSatellite.get_access_to_object(oFacility)
+        access.access_time_period = ACCESS_TIME_TYPE.SPECIFIED_TIME_PERIOD
         accessTimePeriod: "AccessTimePeriod" = clr.CastAs(access.access_time_period_data, AccessTimePeriod)
         tp: "ITimePeriod" = clr.CastAs(access.access_time_period_data, ITimePeriod)
         Assert.assertIsNotNone(tp)
@@ -113,8 +113,8 @@ class TimePeriodTests(TestBase):
         Assert.assertIsNotNone(oSatellite)
         Assert.assertIsNotNone(oFacility)
 
-        access: "StkAccess" = oSatellite.get_access_to_object(oFacility)
-        access.access_time_period = ACCESS_TIME_TYPE.USER_SPEC_ACCESS_TIME
+        access: "Access" = oSatellite.get_access_to_object(oFacility)
+        access.access_time_period = ACCESS_TIME_TYPE.SPECIFIED_TIME_PERIOD
         accessTimePeriod: "AccessTimePeriod" = clr.CastAs(access.access_time_period_data, AccessTimePeriod)
         tp: "ITimePeriod" = clr.CastAs(access.access_time_period_data, ITimePeriod)
         Assert.assertIsNotNone(tp)
@@ -152,8 +152,8 @@ class TimePeriodTests(TestBase):
         Assert.assertIsNotNone(oFacility)
 
         # NOTE: the values of Start and Stop were set in the previous test TimePeriod_03
-        access: "StkAccess" = oSatellite.get_access_to_object(oFacility)
-        access.access_time_period = ACCESS_TIME_TYPE.USER_SPEC_ACCESS_TIME
+        access: "Access" = oSatellite.get_access_to_object(oFacility)
+        access.access_time_period = ACCESS_TIME_TYPE.SPECIFIED_TIME_PERIOD
         accessTimePeriod: "AccessTimePeriod" = clr.CastAs(access.access_time_period_data, AccessTimePeriod)
         tp: "ITimePeriod" = clr.CastAs(access.access_time_period_data, ITimePeriod)
         Assert.assertIsNotNone(tp)
@@ -166,7 +166,7 @@ class TimePeriodTests(TestBase):
 
         # reset the start time - the actual date is likely YEARs earlier than the scenario start and satellite's ephemeris start time
         scene.start_time = TimePeriodTests.DateObj.format("UTCG")
-        access.access_time_period = ACCESS_TIME_TYPE.USER_SPEC_ACCESS_TIME
+        access.access_time_period = ACCESS_TIME_TYPE.SPECIFIED_TIME_PERIOD
         tp.start_time.value = scene.start_time
         Assert.assertEqual(TIME_PERIOD_VALUE_TYPE.SPECIFY, tp.start_time.type)
 
@@ -183,15 +183,15 @@ class TimePeriodTests(TestBase):
         Assert.assertIsNotNone(oSatellite)
         Assert.assertIsNotNone(oFacility)
 
-        access: "StkAccess" = oSatellite.get_access_to_object(oFacility)
-        access.access_time_period = ACCESS_TIME_TYPE.USER_SPEC_ACCESS_TIME
+        access: "Access" = oSatellite.get_access_to_object(oFacility)
+        access.access_time_period = ACCESS_TIME_TYPE.SPECIFIED_TIME_PERIOD
         accessTimePeriod: "AccessTimePeriod" = clr.CastAs(access.access_time_period_data, AccessTimePeriod)
         tp: "ITimePeriod" = clr.CastAs(access.access_time_period_data, ITimePeriod)
         Assert.assertIsNotNone(tp)
 
-        TestBase.Application.unit_preferences.set_current_unit("DateFormat", "EpSec")
+        TestBase.Application.units_preferences.set_current_unit("DateFormat", "EpSec")
         scene.analysis_interval.set_start_and_stop_times(0, 86400)
-        TestBase.Application.unit_preferences.set_current_unit("DateFormat", "UTCG")
+        TestBase.Application.units_preferences.set_current_unit("DateFormat", "UTCG")
 
         # Set the stop time to the stop time + 1 day
         TimePeriodTests.DateObj.set_date("UTCG", str(scene.stop_time))
@@ -211,8 +211,8 @@ class TimePeriodTests(TestBase):
         Assert.assertIsNotNone(oSatellite)
         Assert.assertIsNotNone(oFacility)
 
-        access: "StkAccess" = oSatellite.get_access_to_object(oFacility)
-        access.access_time_period = ACCESS_TIME_TYPE.USER_SPEC_ACCESS_TIME
+        access: "Access" = oSatellite.get_access_to_object(oFacility)
+        access.access_time_period = ACCESS_TIME_TYPE.SPECIFIED_TIME_PERIOD
         accessTimePeriod: "AccessTimePeriod" = clr.CastAs(access.access_time_period_data, AccessTimePeriod)
         tp: "ITimePeriod" = clr.CastAs(access.access_time_period_data, ITimePeriod)
         Assert.assertIsNotNone(tp)
@@ -240,8 +240,8 @@ class TimePeriodTests(TestBase):
         Assert.assertIsNotNone(oSatellite)
         Assert.assertIsNotNone(oFacility)
 
-        access: "StkAccess" = oSatellite.get_access_to_object(oFacility)
-        access.access_time_period = ACCESS_TIME_TYPE.USER_SPEC_ACCESS_TIME
+        access: "Access" = oSatellite.get_access_to_object(oFacility)
+        access.access_time_period = ACCESS_TIME_TYPE.SPECIFIED_TIME_PERIOD
         accessTimePeriod: "AccessTimePeriod" = clr.CastAs(access.access_time_period_data, AccessTimePeriod)
         tp: "ITimePeriod" = clr.CastAs(access.access_time_period_data, ITimePeriod)
         Assert.assertIsNotNone(tp)
@@ -267,8 +267,8 @@ class TimePeriodTests(TestBase):
         Assert.assertIsNotNone(oSatellite)
         Assert.assertIsNotNone(oFacility)
 
-        access: "StkAccess" = oSatellite.get_access_to_object(oFacility)
-        access.access_time_period = ACCESS_TIME_TYPE.USER_SPEC_ACCESS_TIME
+        access: "Access" = oSatellite.get_access_to_object(oFacility)
+        access.access_time_period = ACCESS_TIME_TYPE.SPECIFIED_TIME_PERIOD
         accessTimePeriod: "AccessTimePeriod" = clr.CastAs(access.access_time_period_data, AccessTimePeriod)
         tp: "ITimePeriod" = clr.CastAs(access.access_time_period_data, ITimePeriod)
         Assert.assertIsNotNone(tp)
@@ -290,8 +290,8 @@ class TimePeriodTests(TestBase):
         Assert.assertIsNotNone(oSatellite)
         Assert.assertIsNotNone(oFacility)
 
-        access: "StkAccess" = oSatellite.get_access_to_object(oFacility)
-        access.access_time_period = ACCESS_TIME_TYPE.USER_SPEC_ACCESS_TIME
+        access: "Access" = oSatellite.get_access_to_object(oFacility)
+        access.access_time_period = ACCESS_TIME_TYPE.SPECIFIED_TIME_PERIOD
         accessTimePeriod: "AccessTimePeriod" = clr.CastAs(access.access_time_period_data, AccessTimePeriod)
         tp: "ITimePeriod" = clr.CastAs(access.access_time_period_data, ITimePeriod)
         Assert.assertIsNotNone(tp)
@@ -327,8 +327,8 @@ class TimePeriodTests(TestBase):
         Assert.assertIsNotNone(oSatellite)
         Assert.assertIsNotNone(oFacility)
 
-        access: "StkAccess" = oSatellite.get_access_to_object(oFacility)
-        access.access_time_period = ACCESS_TIME_TYPE.USER_SPEC_ACCESS_TIME
+        access: "Access" = oSatellite.get_access_to_object(oFacility)
+        access.access_time_period = ACCESS_TIME_TYPE.SPECIFIED_TIME_PERIOD
         accessTimePeriod: "AccessTimePeriod" = clr.CastAs(access.access_time_period_data, AccessTimePeriod)
         tp: "ITimePeriod" = clr.CastAs(access.access_time_period_data, ITimePeriod)
         Assert.assertIsNotNone(tp)

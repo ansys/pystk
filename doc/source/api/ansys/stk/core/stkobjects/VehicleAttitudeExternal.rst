@@ -105,7 +105,7 @@ Property detail
 
 .. py:property:: message_level
     :canonical: ansys.stk.core.stkobjects.VehicleAttitudeExternal.message_level
-    :type: STK_EXTERNAL_FILE_MESSAGE_LEVEL
+    :type: EXTERNAL_FILE_MESSAGE_LEVEL_TYPE
 
     Message level used to report messages during file loading.
 

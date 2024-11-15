@@ -41,7 +41,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CalculationObjectLinkEmbedControlCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CalculationObjectLinkEmbedControlCollection._new_enum`
               - Allows you to enumerate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CalculationObjectLinkEmbedControlCollection.count`
               - Returns the size of the collection.
@@ -59,8 +59,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.astrogator.CalculationObjectLinkEmbedControlCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.astrogator.CalculationObjectLinkEmbedControlCollection._new_enum
     :type: EnumeratorProxy
 
     Allows you to enumerate through the collection.
@@ -75,7 +75,7 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: add(self, name: str, refType: COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE) -> IComponentLinkEmbedControl
+.. py:method:: add(self, name: str, ref_type: COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE) -> IComponentLinkEmbedControl
     :canonical: ansys.stk.core.stkobjects.astrogator.CalculationObjectLinkEmbedControlCollection.add
 
     Add a link/embed calc object to the collection.
@@ -83,33 +83,33 @@ Method detail
     :Parameters:
 
     **name** : :obj:`~str`
-    **refType** : :obj:`~COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE`
+    **ref_type** : :obj:`~COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE`
 
     :Returns:
 
         :obj:`~IComponentLinkEmbedControl`
 
-.. py:method:: item(self, indexOrName: typing.Any) -> IComponentLinkEmbedControl
+.. py:method:: item(self, index_or_name: typing.Any) -> IComponentLinkEmbedControl
     :canonical: ansys.stk.core.stkobjects.astrogator.CalculationObjectLinkEmbedControlCollection.item
 
     Return a link/embed calc object.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 
         :obj:`~IComponentLinkEmbedControl`
 
-.. py:method:: remove(self, indexOrName: typing.Any) -> None
+.. py:method:: remove(self, index_or_name: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.CalculationObjectLinkEmbedControlCollection.remove
 
     Remove a link/embed calc object from the collection.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 
@@ -117,14 +117,14 @@ Method detail
 
 
 
-.. py:method:: cut(self, indexOrName: typing.Any) -> None
+.. py:method:: cut(self, index_or_name: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.CalculationObjectLinkEmbedControlCollection.cut
 
     Copy a link/embed calc object to the clipboard and removes the calc object from the list.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 
@@ -139,14 +139,14 @@ Method detail
 
         :obj:`~IComponentLinkEmbedControl`
 
-.. py:method:: insert_copy(self, calcObj: IComponentLinkEmbedControl) -> IComponentLinkEmbedControl
+.. py:method:: insert_copy(self, calc_obj: IComponentLinkEmbedControl) -> IComponentLinkEmbedControl
     :canonical: ansys.stk.core.stkobjects.astrogator.CalculationObjectLinkEmbedControlCollection.insert_copy
 
     Copy a link/embed calc object and inserts the copy into the list.
 
     :Parameters:
 
-    **calcObj** : :obj:`~IComponentLinkEmbedControl`
+    **calc_obj** : :obj:`~IComponentLinkEmbedControl`
 
     :Returns:
 

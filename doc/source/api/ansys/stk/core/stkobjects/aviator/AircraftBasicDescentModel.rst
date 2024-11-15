@@ -125,15 +125,15 @@ Method detail
 
 
 
-.. py:method:: set_airspeed(self, airspeedType: AIRSPEED_TYPE, aispeed: float) -> None
+.. py:method:: set_airspeed(self, airspeed_type: AIRSPEED_TYPE, airspeed: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicDescentModel.set_airspeed
 
     Set the airspeed type and value.
 
     :Parameters:
 
-    **airspeedType** : :obj:`~AIRSPEED_TYPE`
-    **aispeed** : :obj:`~float`
+    **airspeed_type** : :obj:`~AIRSPEED_TYPE`
+    **airspeed** : :obj:`~float`
 
     :Returns:
 

@@ -35,7 +35,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.TerrainCollection.count`
               - The number of items in the collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.TerrainCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.TerrainCollection._new_enum`
               - Enumerates through the collection.
 
 
@@ -57,8 +57,8 @@ Property detail
 
     The number of items in the collection.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.TerrainCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.TerrainCollection._new_enum
     :type: EnumeratorProxy
 
     Enumerates through the collection.
@@ -82,7 +82,7 @@ Method detail
 
         :obj:`~Terrain`
 
-.. py:method:: add(self, location: str, terrainFileType: TERRAIN_FILE_TYPE) -> Terrain
+.. py:method:: add(self, location: str, terrain_file_type: TERRAIN_FILE_TYPE) -> Terrain
     :canonical: ansys.stk.core.stkobjects.TerrainCollection.add
 
     Add a terrain item to the collection.
@@ -90,7 +90,7 @@ Method detail
     :Parameters:
 
     **location** : :obj:`~str`
-    **terrainFileType** : :obj:`~TERRAIN_FILE_TYPE`
+    **terrain_file_type** : :obj:`~TERRAIN_FILE_TYPE`
 
     :Returns:
 

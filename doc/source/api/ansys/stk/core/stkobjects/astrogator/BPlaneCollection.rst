@@ -33,7 +33,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.BPlaneCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.BPlaneCollection._new_enum`
               - Allows you to enumerate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.BPlaneCollection.count`
               - Get the number of active BPlanes.
@@ -51,8 +51,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.astrogator.BPlaneCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.astrogator.BPlaneCollection._new_enum
     :type: EnumeratorProxy
 
     Allows you to enumerate through the collection.
@@ -67,27 +67,27 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: add(self, bPlaneName: str) -> None
+.. py:method:: add(self, plane_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.BPlaneCollection.add
 
     Add a BPlane.
 
     :Parameters:
 
-    **bPlaneName** : :obj:`~str`
+    **plane_name** : :obj:`~str`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: remove(self, bPlaneName: str) -> None
+.. py:method:: remove(self, plane_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.BPlaneCollection.remove
 
     Remove a BPlane.
 
     :Parameters:
 
-    **bPlaneName** : :obj:`~str`
+    **plane_name** : :obj:`~str`
 
     :Returns:
 

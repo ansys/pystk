@@ -31,7 +31,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DesignCR3BPObjectCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DesignCR3BPObjectCollection._new_enum`
               - A property that allows you to enumerate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DesignCR3BPObjectCollection.count`
               - Get the number of associated objects in the set.
@@ -49,8 +49,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.astrogator.DesignCR3BPObjectCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.astrogator.DesignCR3BPObjectCollection._new_enum
     :type: EnumeratorProxy
 
     A property that allows you to enumerate through the collection.
@@ -65,14 +65,14 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, indexOrName: typing.Any) -> DesignCR3BPObject
+.. py:method:: item(self, index_or_name: typing.Any) -> DesignCR3BPObject
     :canonical: ansys.stk.core.stkobjects.astrogator.DesignCR3BPObjectCollection.item
 
     Iterate through the collection.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 

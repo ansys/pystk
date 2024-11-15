@@ -29,7 +29,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.graphics.KmlFeatureCollection.count`
               - A total number of elements in the collection.
-            * - :py:attr:`~ansys.stk.core.graphics.KmlFeatureCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.graphics.KmlFeatureCollection._new_enum`
               - Return an enumerator that iterates through the collection.
 
 
@@ -51,8 +51,8 @@ Property detail
 
     A total number of elements in the collection.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.graphics.KmlFeatureCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.graphics.KmlFeatureCollection._new_enum
     :type: EnumeratorProxy
 
     Return an enumerator that iterates through the collection.

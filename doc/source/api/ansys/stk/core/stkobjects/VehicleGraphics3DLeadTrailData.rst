@@ -109,27 +109,27 @@ Method detail
 
 
 
-.. py:method:: set_lead_data_type(self, eLeadData: LEAD_TRAIL_DATA) -> None
+.. py:method:: set_lead_data_type(self, lead_data: LEAD_TRAIL_DATA) -> None
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DLeadTrailData.set_lead_data_type
 
     Set the display option for the leading portion of the vehicle's tracks.
 
     :Parameters:
 
-    **eLeadData** : :obj:`~LEAD_TRAIL_DATA`
+    **lead_data** : :obj:`~LEAD_TRAIL_DATA`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: set_trail_data_type(self, eTrailData: LEAD_TRAIL_DATA) -> None
+.. py:method:: set_trail_data_type(self, trail_data: LEAD_TRAIL_DATA) -> None
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DLeadTrailData.set_trail_data_type
 
     Set the display option for the trailng portion of the vehicle's tracks.
 
     :Parameters:
 
-    **eTrailData** : :obj:`~LEAD_TRAIL_DATA`
+    **trail_data** : :obj:`~LEAD_TRAIL_DATA`
 
     :Returns:
 
@@ -139,14 +139,14 @@ Method detail
 
 
 
-.. py:method:: is_data_type_supported(self, eData: LEAD_TRAIL_DATA) -> bool
+.. py:method:: is_data_type_supported(self, data: LEAD_TRAIL_DATA) -> bool
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DLeadTrailData.is_data_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **eData** : :obj:`~LEAD_TRAIL_DATA`
+    **data** : :obj:`~LEAD_TRAIL_DATA`
 
     :Returns:
 

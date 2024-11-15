@@ -130,10 +130,10 @@ from .internal.comutil     import IUnknown, IDispatch
 from .internal.apiutil     import (InterfaceProxy, EnumeratorProxy, OutArg, 
     initialize_from_source_object, get_interface_property, set_interface_attribute, 
     set_class_attribute, SupportsDeleteCallback)
-from .internal.eventutil   import *
-from .utilities.exceptions import *
+from .utilities.exceptions import STKRuntimeError
 
-from .stkutil import *
+from .stkutil import (EULER_ORIENTATION_SEQUENCE_TYPE, ICartesian3Vector, IDirection, IOrientation,
+                      IPosition, Quantity)
 
 
 def _raise_uninitialized_error(*args):
@@ -1889,9 +1889,9 @@ class IVectorGeometryToolPoint(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IVectorGeometryToolPoint."""
-        initialize_from_source_object(self, sourceObject, IVectorGeometryToolPoint)
+        initialize_from_source_object(self, source_object, IVectorGeometryToolPoint)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -1944,9 +1944,9 @@ class IVectorGeometryToolVector(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IVectorGeometryToolVector."""
-        initialize_from_source_object(self, sourceObject, IVectorGeometryToolVector)
+        initialize_from_source_object(self, source_object, IVectorGeometryToolVector)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -2000,9 +2000,9 @@ class IVectorGeometryToolSystem(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IVectorGeometryToolSystem."""
-        initialize_from_source_object(self, sourceObject, IVectorGeometryToolSystem)
+        initialize_from_source_object(self, source_object, IVectorGeometryToolSystem)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -2032,16 +2032,16 @@ class IVectorGeometryToolSystem(object):
     _transform_metadata = { "offset" : _transform_method_offset,
             "arg_types" : (agcom.Variant, agcom.PVOID, agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceInArg("IVectorGeometryToolSystem"), agmarshall.InterfaceInArg("ICartesian3Vector"), agmarshall.InterfaceOutArg,) }
-    def transform(self, epoch:typing.Any, outputSystem:"IVectorGeometryToolSystem", positionInMySystem:"ICartesian3Vector") -> "AnalysisWorkbenchSystemTransformResult":
+    def transform(self, epoch:typing.Any, output_system:"IVectorGeometryToolSystem", position_in_my_system:"ICartesian3Vector") -> "AnalysisWorkbenchSystemTransformResult":
         """Translate the position vector from this system into the output system."""
-        return self._intf.invoke(IVectorGeometryToolSystem._metadata, IVectorGeometryToolSystem._transform_metadata, epoch, outputSystem, positionInMySystem, OutArg())
+        return self._intf.invoke(IVectorGeometryToolSystem._metadata, IVectorGeometryToolSystem._transform_metadata, epoch, output_system, position_in_my_system, OutArg())
 
     _transform_with_rate_metadata = { "offset" : _transform_with_rate_method_offset,
             "arg_types" : (agcom.Variant, agcom.PVOID, agcom.PVOID, agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceInArg("IVectorGeometryToolSystem"), agmarshall.InterfaceInArg("ICartesian3Vector"), agmarshall.InterfaceInArg("ICartesian3Vector"), agmarshall.InterfaceOutArg,) }
-    def transform_with_rate(self, epoch:typing.Any, outputSystem:"IVectorGeometryToolSystem", positionInMySystem:"ICartesian3Vector", velocityInMySystem:"ICartesian3Vector") -> "AnalysisWorkbenchSystemTransformWithRateResult":
+    def transform_with_rate(self, epoch:typing.Any, output_system:"IVectorGeometryToolSystem", position_in_my_system:"ICartesian3Vector", velocity_in_my_system:"ICartesian3Vector") -> "AnalysisWorkbenchSystemTransformWithRateResult":
         """Translate the position and rate vectors from this system into the output system."""
-        return self._intf.invoke(IVectorGeometryToolSystem._metadata, IVectorGeometryToolSystem._transform_with_rate_metadata, epoch, outputSystem, positionInMySystem, velocityInMySystem, OutArg())
+        return self._intf.invoke(IVectorGeometryToolSystem._metadata, IVectorGeometryToolSystem._transform_with_rate_metadata, epoch, output_system, position_in_my_system, velocity_in_my_system, OutArg())
 
     _property_names[type] = "type"
 
@@ -2068,9 +2068,9 @@ class IVectorGeometryToolAxes(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IVectorGeometryToolAxes."""
-        initialize_from_source_object(self, sourceObject, IVectorGeometryToolAxes)
+        initialize_from_source_object(self, source_object, IVectorGeometryToolAxes)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -2139,16 +2139,16 @@ class IVectorGeometryToolAxes(object):
     _transform_metadata = { "offset" : _transform_method_offset,
             "arg_types" : (agcom.Variant, agcom.PVOID, agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceInArg("IVectorGeometryToolAxes"), agmarshall.InterfaceInArg("ICartesian3Vector"), agmarshall.InterfaceOutArg,) }
-    def transform(self, epoch:typing.Any, outputAxes:"IVectorGeometryToolAxes", vectorInMyAxes:"ICartesian3Vector") -> "AnalysisWorkbenchAxesTransformResult":
+    def transform(self, epoch:typing.Any, output_axes:"IVectorGeometryToolAxes", vector_in_my_axes:"ICartesian3Vector") -> "AnalysisWorkbenchAxesTransformResult":
         """Transform the input vector from this axes into the output axes."""
-        return self._intf.invoke(IVectorGeometryToolAxes._metadata, IVectorGeometryToolAxes._transform_metadata, epoch, outputAxes, vectorInMyAxes, OutArg())
+        return self._intf.invoke(IVectorGeometryToolAxes._metadata, IVectorGeometryToolAxes._transform_metadata, epoch, output_axes, vector_in_my_axes, OutArg())
 
     _transform_with_rate_metadata = { "offset" : _transform_with_rate_method_offset,
             "arg_types" : (agcom.Variant, agcom.PVOID, agcom.PVOID, agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceInArg("IVectorGeometryToolAxes"), agmarshall.InterfaceInArg("ICartesian3Vector"), agmarshall.InterfaceInArg("ICartesian3Vector"), agmarshall.InterfaceOutArg,) }
-    def transform_with_rate(self, epoch:typing.Any, outputAxes:"IVectorGeometryToolAxes", vectorInMyAxes:"ICartesian3Vector", rateInMyAxes:"ICartesian3Vector") -> "AnalysisWorkbenchAxesTransformWithRateResult":
+    def transform_with_rate(self, epoch:typing.Any, output_axes:"IVectorGeometryToolAxes", vector_in_my_axes:"ICartesian3Vector", rate_in_my_axes:"ICartesian3Vector") -> "AnalysisWorkbenchAxesTransformWithRateResult":
         """Transform the input vector and vector's rate from this axes into the output axes."""
-        return self._intf.invoke(IVectorGeometryToolAxes._metadata, IVectorGeometryToolAxes._transform_with_rate_metadata, epoch, outputAxes, vectorInMyAxes, rateInMyAxes, OutArg())
+        return self._intf.invoke(IVectorGeometryToolAxes._metadata, IVectorGeometryToolAxes._transform_with_rate_metadata, epoch, output_axes, vector_in_my_axes, rate_in_my_axes, OutArg())
 
     _property_names[type] = "type"
     _property_names[labels] = "labels"
@@ -2175,9 +2175,9 @@ class IVectorGeometryToolAngle(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IVectorGeometryToolAngle."""
-        initialize_from_source_object(self, sourceObject, IVectorGeometryToolAngle)
+        initialize_from_source_object(self, source_object, IVectorGeometryToolAngle)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -2247,9 +2247,9 @@ class IVectorGeometryToolPlane(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IVectorGeometryToolPlane."""
-        initialize_from_source_object(self, sourceObject, IVectorGeometryToolPlane)
+        initialize_from_source_object(self, source_object, IVectorGeometryToolPlane)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -2323,9 +2323,9 @@ class IAnalysisWorkbenchComponentContext(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IAnalysisWorkbenchComponentContext."""
-        initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchComponentContext)
+        initialize_from_source_object(self, source_object, IAnalysisWorkbenchComponentContext)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -2380,9 +2380,9 @@ class IAnalysisWorkbenchComponent(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IAnalysisWorkbenchComponent."""
-        initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchComponent)
+        initialize_from_source_object(self, source_object, IAnalysisWorkbenchComponent)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -2500,9 +2500,9 @@ class IAnalysisWorkbenchComponent(object):
     _duplicate_metadata = { "offset" : _duplicate_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
-    def duplicate(self, newName:str, description:str) -> "IAnalysisWorkbenchComponent":
+    def duplicate(self, new_name:str, description:str) -> "IAnalysisWorkbenchComponent":
         """Create a copy of the instance of a VGT component. The new component is automatically registered and will be persisted or restored when a scenario is saved or loaded."""
-        return self._intf.invoke(IAnalysisWorkbenchComponent._metadata, IAnalysisWorkbenchComponent._duplicate_metadata, newName, description, OutArg())
+        return self._intf.invoke(IAnalysisWorkbenchComponent._metadata, IAnalysisWorkbenchComponent._duplicate_metadata, new_name, description, OutArg())
 
     _anonymous_duplicate_metadata = { "offset" : _anonymous_duplicate_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -2536,9 +2536,9 @@ class IAnalysisWorkbenchComponent(object):
     _rename_metadata = { "offset" : _rename_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    def rename(self, newName:str) -> None:
+    def rename(self, new_name:str) -> None:
         """Rename the component."""
-        return self._intf.invoke(IAnalysisWorkbenchComponent._metadata, IAnalysisWorkbenchComponent._rename_metadata, newName)
+        return self._intf.invoke(IAnalysisWorkbenchComponent._metadata, IAnalysisWorkbenchComponent._rename_metadata, new_name)
 
     _property_names[component_type] = "component_type"
     _property_names[category] = "category"
@@ -2579,9 +2579,9 @@ class ICalculationToolScalar(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ICalculationToolScalar."""
-        initialize_from_source_object(self, sourceObject, ICalculationToolScalar)
+        initialize_from_source_object(self, source_object, ICalculationToolScalar)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -2661,16 +2661,16 @@ class ICalculationToolScalar(object):
     _quick_evaluate_time_array_metadata = { "offset" : _quick_evaluate_time_array_method_offset,
             "arg_types" : (agcom.PVOID, POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.InterfaceInArg("ITimeToolTimeArray"), agmarshall.LPSafearrayArg,) }
-    def quick_evaluate_time_array(self, refArray:"ITimeToolTimeArray") -> list:
+    def quick_evaluate_time_array(self, ref_array:"ITimeToolTimeArray") -> list:
         """Evaluate the scalar calculation, and rate, over the array of times provided by an Event Array component. It returns an array corresponding to the input times..."""
-        return self._intf.invoke(ICalculationToolScalar._metadata, ICalculationToolScalar._quick_evaluate_time_array_metadata, refArray, OutArg())
+        return self._intf.invoke(ICalculationToolScalar._metadata, ICalculationToolScalar._quick_evaluate_time_array_metadata, ref_array, OutArg())
 
     _quick_evaluate_with_rate_event_array_metadata = { "offset" : _quick_evaluate_with_rate_event_array_method_offset,
             "arg_types" : (agcom.PVOID, POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.InterfaceInArg("ITimeToolTimeArray"), agmarshall.LPSafearrayArg,) }
-    def quick_evaluate_with_rate_event_array(self, refArray:"ITimeToolTimeArray") -> list:
+    def quick_evaluate_with_rate_event_array(self, ref_array:"ITimeToolTimeArray") -> list:
         """Evaluate the scalar calculation, and rate, over the array of times provided by an Event Array component. It returns an array corresponding to the input times..."""
-        return self._intf.invoke(ICalculationToolScalar._metadata, ICalculationToolScalar._quick_evaluate_with_rate_event_array_metadata, refArray, OutArg())
+        return self._intf.invoke(ICalculationToolScalar._metadata, ICalculationToolScalar._quick_evaluate_with_rate_event_array_metadata, ref_array, OutArg())
 
     _property_names[type] = "type"
     _property_names[unit_of_measure] = "unit_of_measure"
@@ -2692,9 +2692,9 @@ class ICalculationToolCondition(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ICalculationToolCondition."""
-        initialize_from_source_object(self, sourceObject, ICalculationToolCondition)
+        initialize_from_source_object(self, source_object, ICalculationToolCondition)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -2747,9 +2747,9 @@ class ICalculationToolConditionSet(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ICalculationToolConditionSet."""
-        initialize_from_source_object(self, sourceObject, ICalculationToolConditionSet)
+        initialize_from_source_object(self, source_object, ICalculationToolConditionSet)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -2799,9 +2799,9 @@ class IAnalysisWorkbenchConvergence(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IAnalysisWorkbenchConvergence."""
-        initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchConvergence)
+        initialize_from_source_object(self, source_object, IAnalysisWorkbenchConvergence)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -2828,9 +2828,9 @@ class IAnalysisWorkbenchDerivative(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IAnalysisWorkbenchDerivative."""
-        initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchDerivative)
+        initialize_from_source_object(self, source_object, IAnalysisWorkbenchDerivative)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -2864,9 +2864,9 @@ class ITimeToolInstant(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ITimeToolInstant."""
-        initialize_from_source_object(self, sourceObject, ITimeToolInstant)
+        initialize_from_source_object(self, source_object, ITimeToolInstant)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -2954,9 +2954,9 @@ class ITimeToolTimeArray(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ITimeToolTimeArray."""
-        initialize_from_source_object(self, sourceObject, ITimeToolTimeArray)
+        initialize_from_source_object(self, source_object, ITimeToolTimeArray)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3006,9 +3006,9 @@ class ITimeToolTimeInterval(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ITimeToolTimeInterval."""
-        initialize_from_source_object(self, sourceObject, ITimeToolTimeInterval)
+        initialize_from_source_object(self, source_object, ITimeToolTimeInterval)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3098,9 +3098,9 @@ class ITimeToolTimeIntervalCollection(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ITimeToolTimeIntervalCollection."""
-        initialize_from_source_object(self, sourceObject, ITimeToolTimeIntervalCollection)
+        initialize_from_source_object(self, source_object, ITimeToolTimeIntervalCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3164,9 +3164,9 @@ class ITimeToolTimeIntervalList(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ITimeToolTimeIntervalList."""
-        initialize_from_source_object(self, sourceObject, ITimeToolTimeIntervalList)
+        initialize_from_source_object(self, source_object, ITimeToolTimeIntervalList)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3234,9 +3234,9 @@ class IAnalysisWorkbenchIntegral(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IAnalysisWorkbenchIntegral."""
-        initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchIntegral)
+        initialize_from_source_object(self, source_object, IAnalysisWorkbenchIntegral)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3263,9 +3263,9 @@ class IAnalysisWorkbenchInterpolator(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IAnalysisWorkbenchInterpolator."""
-        initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchInterpolator)
+        initialize_from_source_object(self, source_object, IAnalysisWorkbenchInterpolator)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3298,9 +3298,9 @@ class ICalculationToolParameterSet(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ICalculationToolParameterSet."""
-        initialize_from_source_object(self, sourceObject, ICalculationToolParameterSet)
+        initialize_from_source_object(self, source_object, ICalculationToolParameterSet)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3378,9 +3378,9 @@ class ITimeToolPruneFilter(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ITimeToolPruneFilter."""
-        initialize_from_source_object(self, sourceObject, ITimeToolPruneFilter)
+        initialize_from_source_object(self, source_object, ITimeToolPruneFilter)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3416,9 +3416,9 @@ class IAnalysisWorkbenchSampling(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IAnalysisWorkbenchSampling."""
-        initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchSampling)
+        initialize_from_source_object(self, source_object, IAnalysisWorkbenchSampling)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3446,9 +3446,9 @@ class ICalculationToolSamplingMethod(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ICalculationToolSamplingMethod."""
-        initialize_from_source_object(self, sourceObject, ICalculationToolSamplingMethod)
+        initialize_from_source_object(self, source_object, ICalculationToolSamplingMethod)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3484,9 +3484,9 @@ class IAnalysisWorkbenchSignalDelay(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IAnalysisWorkbenchSignalDelay."""
-        initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchSignalDelay)
+        initialize_from_source_object(self, source_object, IAnalysisWorkbenchSignalDelay)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3514,9 +3514,9 @@ class ISpatialAnalysisToolGridValuesMethod(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ISpatialAnalysisToolGridValuesMethod."""
-        initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolGridValuesMethod)
+        initialize_from_source_object(self, source_object, ISpatialAnalysisToolGridValuesMethod)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3552,9 +3552,9 @@ class ISpatialAnalysisToolVolume(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ISpatialAnalysisToolVolume."""
-        initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolume)
+        initialize_from_source_object(self, source_object, ISpatialAnalysisToolVolume)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3581,9 +3581,9 @@ class ISpatialAnalysisToolSpatialCalculation(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ISpatialAnalysisToolSpatialCalculation."""
-        initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolSpatialCalculation)
+        initialize_from_source_object(self, source_object, ISpatialAnalysisToolSpatialCalculation)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3610,9 +3610,9 @@ class ISpatialAnalysisToolVolumeGrid(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type ISpatialAnalysisToolVolumeGrid."""
-        initialize_from_source_object(self, sourceObject, ISpatialAnalysisToolVolumeGrid)
+        initialize_from_source_object(self, source_object, ISpatialAnalysisToolVolumeGrid)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3640,9 +3640,9 @@ class IAnalysisWorkbenchComponentTimeProperties(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IAnalysisWorkbenchComponentTimeProperties."""
-        initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchComponentTimeProperties)
+        initialize_from_source_object(self, source_object, IAnalysisWorkbenchComponentTimeProperties)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3677,9 +3677,9 @@ class IAnalysisWorkbenchComponentReference(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IAnalysisWorkbenchComponentReference."""
-        initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchComponentReference)
+        initialize_from_source_object(self, source_object, IAnalysisWorkbenchComponentReference)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3716,9 +3716,9 @@ class IAnalysisWorkbenchMethodCallResult(object):
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type IAnalysisWorkbenchMethodCallResult."""
-        initialize_from_source_object(self, sourceObject, IAnalysisWorkbenchMethodCallResult)
+        initialize_from_source_object(self, source_object, IAnalysisWorkbenchMethodCallResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3780,10 +3780,10 @@ class CalculationToolEvaluateResult(SupportsDeleteCallback):
     _property_names[is_valid] = "is_valid"
     _property_names[value] = "value"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolEvaluateResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolEvaluateResult)
+        initialize_from_source_object(self, source_object, CalculationToolEvaluateResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3840,10 +3840,10 @@ class CalculationToolEvaluateWithRateResult(SupportsDeleteCallback):
     _property_names[value] = "value"
     _property_names[rate] = "rate"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolEvaluateWithRateResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolEvaluateWithRateResult)
+        initialize_from_source_object(self, source_object, CalculationToolEvaluateWithRateResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3890,10 +3890,10 @@ class TimeToolTimeIntervalResult(SupportsDeleteCallback):
     _property_names[is_valid] = "is_valid"
     _property_names[interval] = "interval"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalResult)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -3940,10 +3940,10 @@ class TimeToolInstantOccurrenceResult(SupportsDeleteCallback):
     _property_names[is_valid] = "is_valid"
     _property_names[epoch] = "epoch"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolInstantOccurrenceResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolInstantOccurrenceResult)
+        initialize_from_source_object(self, source_object, TimeToolInstantOccurrenceResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -4020,10 +4020,10 @@ class TimeToolTimeArrayFindTimesResult(SupportsDeleteCallback):
     _property_names[stop] = "stop"
     _property_names[times] = "times"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeArrayFindTimesResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeArrayFindTimesResult)
+        initialize_from_source_object(self, source_object, TimeToolTimeArrayFindTimesResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -4070,10 +4070,10 @@ class TimeToolIntervalsVectorResult(SupportsDeleteCallback):
     _property_names[is_valid] = "is_valid"
     _property_names[interval_collections] = "interval_collections"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolIntervalsVectorResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolIntervalsVectorResult)
+        initialize_from_source_object(self, source_object, TimeToolIntervalsVectorResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -4120,10 +4120,10 @@ class TimeToolTimeIntervalCollectionOccurredResult(SupportsDeleteCallback):
     _property_names[is_valid] = "is_valid"
     _property_names[index] = "index"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalCollectionOccurredResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalCollectionOccurredResult)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalCollectionOccurredResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -4170,10 +4170,10 @@ class TimeToolIntervalListResult(SupportsDeleteCallback):
     _property_names[is_valid] = "is_valid"
     _property_names[intervals] = "intervals"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolIntervalListResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolIntervalListResult)
+        initialize_from_source_object(self, source_object, TimeToolIntervalListResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -4193,7 +4193,7 @@ class TimeToolIntervalVectorCollection(SupportsDeleteCallback):
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _get_count_method_offset = 1
     _item_method_offset = 2
-    _get__NewEnum_method_offset = 3
+    _get__new_enum_method_offset = 3
     _metadata = {
         "iid_data" : (5575174488488139361, 17888026257103832750),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
@@ -4203,7 +4203,7 @@ class TimeToolIntervalVectorCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, TimeToolIntervalVectorCollection)
     def __iter__(self):
         """Create an iterator for the TimeToolIntervalVectorCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "TimeToolIntervalCollection":
@@ -4230,24 +4230,24 @@ class TimeToolIntervalVectorCollection(SupportsDeleteCallback):
         """Access an element at the specified position."""
         return self._intf.invoke(TimeToolIntervalVectorCollection._metadata, TimeToolIntervalVectorCollection._item_metadata, index, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return a COM enumerator."""
-        return self._intf.get_property(TimeToolIntervalVectorCollection._metadata, TimeToolIntervalVectorCollection._get__NewEnum_metadata)
+        return self._intf.get_property(TimeToolIntervalVectorCollection._metadata, TimeToolIntervalVectorCollection._get__new_enum_metadata)
 
     __getitem__ = item
 
 
     _property_names[count] = "count"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolIntervalVectorCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolIntervalVectorCollection)
+        initialize_from_source_object(self, source_object, TimeToolIntervalVectorCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -4271,7 +4271,7 @@ class TimeToolInstantGroup(SupportsDeleteCallback):
     _get_count_method_offset = 4
     _get_factory_method_offset = 5
     _item_method_offset = 6
-    _get__NewEnum_method_offset = 7
+    _get__new_enum_method_offset = 7
     _get_item_by_index_method_offset = 8
     _get_item_by_name_method_offset = 9
     _metadata = {
@@ -4283,7 +4283,7 @@ class TimeToolInstantGroup(SupportsDeleteCallback):
         return get_interface_property(attrname, TimeToolInstantGroup)
     def __iter__(self):
         """Create an iterator for the TimeToolInstantGroup object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "ITimeToolInstant":
@@ -4298,9 +4298,9 @@ class TimeToolInstantGroup(SupportsDeleteCallback):
     _remove_metadata = { "offset" : _remove_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    def remove(self, eventName:str) -> None:
+    def remove(self, event_name:str) -> None:
         """Remove a specified element."""
-        return self._intf.invoke(TimeToolInstantGroup._metadata, TimeToolInstantGroup._remove_metadata, eventName)
+        return self._intf.invoke(TimeToolInstantGroup._metadata, TimeToolInstantGroup._remove_metadata, event_name)
 
     _get_context_metadata = { "offset" : _get_context_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -4336,17 +4336,17 @@ class TimeToolInstantGroup(SupportsDeleteCallback):
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
-    def item(self, indexOrName:typing.Any) -> "ITimeToolInstant":
+    def item(self, index_or_name:typing.Any) -> "ITimeToolInstant":
         """Return an element by name or at a specified position."""
-        return self._intf.invoke(TimeToolInstantGroup._metadata, TimeToolInstantGroup._item_metadata, indexOrName, OutArg())
+        return self._intf.invoke(TimeToolInstantGroup._metadata, TimeToolInstantGroup._item_metadata, index_or_name, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return a COM enumerator."""
-        return self._intf.get_property(TimeToolInstantGroup._metadata, TimeToolInstantGroup._get__NewEnum_metadata)
+        return self._intf.get_property(TimeToolInstantGroup._metadata, TimeToolInstantGroup._get__new_enum_metadata)
 
     _get_item_by_index_metadata = { "offset" : _get_item_by_index_method_offset,
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
@@ -4368,12 +4368,12 @@ class TimeToolInstantGroup(SupportsDeleteCallback):
     _property_names[context] = "context"
     _property_names[count] = "count"
     _property_names[factory] = "factory"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolInstantGroup."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolInstantGroup)
+        initialize_from_source_object(self, source_object, TimeToolInstantGroup)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -4397,7 +4397,7 @@ class TimeToolTimeIntervalGroup(SupportsDeleteCallback):
     _get_count_method_offset = 4
     _get_factory_method_offset = 5
     _item_method_offset = 6
-    _get__NewEnum_method_offset = 7
+    _get__new_enum_method_offset = 7
     _get_item_by_index_method_offset = 8
     _get_item_by_name_method_offset = 9
     _metadata = {
@@ -4409,7 +4409,7 @@ class TimeToolTimeIntervalGroup(SupportsDeleteCallback):
         return get_interface_property(attrname, TimeToolTimeIntervalGroup)
     def __iter__(self):
         """Create an iterator for the TimeToolTimeIntervalGroup object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "ITimeToolTimeInterval":
@@ -4424,9 +4424,9 @@ class TimeToolTimeIntervalGroup(SupportsDeleteCallback):
     _remove_metadata = { "offset" : _remove_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    def remove(self, eventIntervalName:str) -> None:
+    def remove(self, event_interval_name:str) -> None:
         """Remove an element by name."""
-        return self._intf.invoke(TimeToolTimeIntervalGroup._metadata, TimeToolTimeIntervalGroup._remove_metadata, eventIntervalName)
+        return self._intf.invoke(TimeToolTimeIntervalGroup._metadata, TimeToolTimeIntervalGroup._remove_metadata, event_interval_name)
 
     _get_context_metadata = { "offset" : _get_context_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -4462,17 +4462,17 @@ class TimeToolTimeIntervalGroup(SupportsDeleteCallback):
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
-    def item(self, indexOrName:typing.Any) -> "ITimeToolTimeInterval":
+    def item(self, index_or_name:typing.Any) -> "ITimeToolTimeInterval":
         """Return an element by name or at a specified position."""
-        return self._intf.invoke(TimeToolTimeIntervalGroup._metadata, TimeToolTimeIntervalGroup._item_metadata, indexOrName, OutArg())
+        return self._intf.invoke(TimeToolTimeIntervalGroup._metadata, TimeToolTimeIntervalGroup._item_metadata, index_or_name, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return a COM enumerator."""
-        return self._intf.get_property(TimeToolTimeIntervalGroup._metadata, TimeToolTimeIntervalGroup._get__NewEnum_metadata)
+        return self._intf.get_property(TimeToolTimeIntervalGroup._metadata, TimeToolTimeIntervalGroup._get__new_enum_metadata)
 
     _get_item_by_index_metadata = { "offset" : _get_item_by_index_method_offset,
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
@@ -4494,12 +4494,12 @@ class TimeToolTimeIntervalGroup(SupportsDeleteCallback):
     _property_names[context] = "context"
     _property_names[count] = "count"
     _property_names[factory] = "factory"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalGroup."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalGroup)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalGroup)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -4523,7 +4523,7 @@ class TimeToolTimeIntervalListGroup(SupportsDeleteCallback):
     _get_count_method_offset = 4
     _get_factory_method_offset = 5
     _item_method_offset = 6
-    _get__NewEnum_method_offset = 7
+    _get__new_enum_method_offset = 7
     _get_item_by_index_method_offset = 8
     _get_item_by_name_method_offset = 9
     _metadata = {
@@ -4535,7 +4535,7 @@ class TimeToolTimeIntervalListGroup(SupportsDeleteCallback):
         return get_interface_property(attrname, TimeToolTimeIntervalListGroup)
     def __iter__(self):
         """Create an iterator for the TimeToolTimeIntervalListGroup object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "ITimeToolTimeIntervalList":
@@ -4550,9 +4550,9 @@ class TimeToolTimeIntervalListGroup(SupportsDeleteCallback):
     _remove_metadata = { "offset" : _remove_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    def remove(self, eventName:str) -> None:
+    def remove(self, event_name:str) -> None:
         """Remove a specified element."""
-        return self._intf.invoke(TimeToolTimeIntervalListGroup._metadata, TimeToolTimeIntervalListGroup._remove_metadata, eventName)
+        return self._intf.invoke(TimeToolTimeIntervalListGroup._metadata, TimeToolTimeIntervalListGroup._remove_metadata, event_name)
 
     _get_context_metadata = { "offset" : _get_context_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -4588,17 +4588,17 @@ class TimeToolTimeIntervalListGroup(SupportsDeleteCallback):
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
-    def item(self, indexOrName:typing.Any) -> "ITimeToolTimeIntervalList":
+    def item(self, index_or_name:typing.Any) -> "ITimeToolTimeIntervalList":
         """Return an element by name or at a specified position."""
-        return self._intf.invoke(TimeToolTimeIntervalListGroup._metadata, TimeToolTimeIntervalListGroup._item_metadata, indexOrName, OutArg())
+        return self._intf.invoke(TimeToolTimeIntervalListGroup._metadata, TimeToolTimeIntervalListGroup._item_metadata, index_or_name, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return a COM enumerator."""
-        return self._intf.get_property(TimeToolTimeIntervalListGroup._metadata, TimeToolTimeIntervalListGroup._get__NewEnum_metadata)
+        return self._intf.get_property(TimeToolTimeIntervalListGroup._metadata, TimeToolTimeIntervalListGroup._get__new_enum_metadata)
 
     _get_item_by_index_metadata = { "offset" : _get_item_by_index_method_offset,
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
@@ -4620,12 +4620,12 @@ class TimeToolTimeIntervalListGroup(SupportsDeleteCallback):
     _property_names[context] = "context"
     _property_names[count] = "count"
     _property_names[factory] = "factory"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalListGroup."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalListGroup)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalListGroup)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -4649,7 +4649,7 @@ class TimeToolTimeArrayGroup(SupportsDeleteCallback):
     _get_count_method_offset = 4
     _get_factory_method_offset = 5
     _item_method_offset = 6
-    _get__NewEnum_method_offset = 7
+    _get__new_enum_method_offset = 7
     _get_item_by_index_method_offset = 8
     _get_item_by_name_method_offset = 9
     _metadata = {
@@ -4661,7 +4661,7 @@ class TimeToolTimeArrayGroup(SupportsDeleteCallback):
         return get_interface_property(attrname, TimeToolTimeArrayGroup)
     def __iter__(self):
         """Create an iterator for the TimeToolTimeArrayGroup object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "ITimeToolTimeArray":
@@ -4676,9 +4676,9 @@ class TimeToolTimeArrayGroup(SupportsDeleteCallback):
     _remove_metadata = { "offset" : _remove_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    def remove(self, eventName:str) -> None:
+    def remove(self, event_name:str) -> None:
         """Remove a specified element."""
-        return self._intf.invoke(TimeToolTimeArrayGroup._metadata, TimeToolTimeArrayGroup._remove_metadata, eventName)
+        return self._intf.invoke(TimeToolTimeArrayGroup._metadata, TimeToolTimeArrayGroup._remove_metadata, event_name)
 
     _get_context_metadata = { "offset" : _get_context_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -4714,17 +4714,17 @@ class TimeToolTimeArrayGroup(SupportsDeleteCallback):
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
-    def item(self, indexOrName:typing.Any) -> "ITimeToolTimeArray":
+    def item(self, index_or_name:typing.Any) -> "ITimeToolTimeArray":
         """Return an element by name or at a specified position."""
-        return self._intf.invoke(TimeToolTimeArrayGroup._metadata, TimeToolTimeArrayGroup._item_metadata, indexOrName, OutArg())
+        return self._intf.invoke(TimeToolTimeArrayGroup._metadata, TimeToolTimeArrayGroup._item_metadata, index_or_name, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return a COM enumerator."""
-        return self._intf.get_property(TimeToolTimeArrayGroup._metadata, TimeToolTimeArrayGroup._get__NewEnum_metadata)
+        return self._intf.get_property(TimeToolTimeArrayGroup._metadata, TimeToolTimeArrayGroup._get__new_enum_metadata)
 
     _get_item_by_index_metadata = { "offset" : _get_item_by_index_method_offset,
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
@@ -4746,12 +4746,12 @@ class TimeToolTimeArrayGroup(SupportsDeleteCallback):
     _property_names[context] = "context"
     _property_names[count] = "count"
     _property_names[factory] = "factory"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeArrayGroup."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeArrayGroup)
+        initialize_from_source_object(self, source_object, TimeToolTimeArrayGroup)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -4775,7 +4775,7 @@ class CalculationToolScalarGroup(SupportsDeleteCallback):
     _get_count_method_offset = 4
     _get_factory_method_offset = 5
     _item_method_offset = 6
-    _get__NewEnum_method_offset = 7
+    _get__new_enum_method_offset = 7
     _get_item_by_index_method_offset = 8
     _get_item_by_name_method_offset = 9
     _metadata = {
@@ -4787,7 +4787,7 @@ class CalculationToolScalarGroup(SupportsDeleteCallback):
         return get_interface_property(attrname, CalculationToolScalarGroup)
     def __iter__(self):
         """Create an iterator for the CalculationToolScalarGroup object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "ICalculationToolScalar":
@@ -4802,9 +4802,9 @@ class CalculationToolScalarGroup(SupportsDeleteCallback):
     _remove_metadata = { "offset" : _remove_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    def remove(self, eventName:str) -> None:
+    def remove(self, event_name:str) -> None:
         """Remove a specified element."""
-        return self._intf.invoke(CalculationToolScalarGroup._metadata, CalculationToolScalarGroup._remove_metadata, eventName)
+        return self._intf.invoke(CalculationToolScalarGroup._metadata, CalculationToolScalarGroup._remove_metadata, event_name)
 
     _get_context_metadata = { "offset" : _get_context_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -4840,17 +4840,17 @@ class CalculationToolScalarGroup(SupportsDeleteCallback):
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
-    def item(self, indexOrName:typing.Any) -> "ICalculationToolScalar":
+    def item(self, index_or_name:typing.Any) -> "ICalculationToolScalar":
         """Return an element by name or at a specified position."""
-        return self._intf.invoke(CalculationToolScalarGroup._metadata, CalculationToolScalarGroup._item_metadata, indexOrName, OutArg())
+        return self._intf.invoke(CalculationToolScalarGroup._metadata, CalculationToolScalarGroup._item_metadata, index_or_name, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return a COM enumerator."""
-        return self._intf.get_property(CalculationToolScalarGroup._metadata, CalculationToolScalarGroup._get__NewEnum_metadata)
+        return self._intf.get_property(CalculationToolScalarGroup._metadata, CalculationToolScalarGroup._get__new_enum_metadata)
 
     _get_item_by_index_metadata = { "offset" : _get_item_by_index_method_offset,
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
@@ -4872,12 +4872,12 @@ class CalculationToolScalarGroup(SupportsDeleteCallback):
     _property_names[context] = "context"
     _property_names[count] = "count"
     _property_names[factory] = "factory"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolScalarGroup."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolScalarGroup)
+        initialize_from_source_object(self, source_object, CalculationToolScalarGroup)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -4901,7 +4901,7 @@ class TimeToolTimeIntervalCollectionGroup(SupportsDeleteCallback):
     _get_count_method_offset = 4
     _get_factory_method_offset = 5
     _item_method_offset = 6
-    _get__NewEnum_method_offset = 7
+    _get__new_enum_method_offset = 7
     _get_item_by_index_method_offset = 8
     _get_item_by_name_method_offset = 9
     _metadata = {
@@ -4913,7 +4913,7 @@ class TimeToolTimeIntervalCollectionGroup(SupportsDeleteCallback):
         return get_interface_property(attrname, TimeToolTimeIntervalCollectionGroup)
     def __iter__(self):
         """Create an iterator for the TimeToolTimeIntervalCollectionGroup object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "ITimeToolTimeIntervalCollection":
@@ -4928,9 +4928,9 @@ class TimeToolTimeIntervalCollectionGroup(SupportsDeleteCallback):
     _remove_metadata = { "offset" : _remove_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    def remove(self, eventName:str) -> None:
+    def remove(self, event_name:str) -> None:
         """Remove a specified element."""
-        return self._intf.invoke(TimeToolTimeIntervalCollectionGroup._metadata, TimeToolTimeIntervalCollectionGroup._remove_metadata, eventName)
+        return self._intf.invoke(TimeToolTimeIntervalCollectionGroup._metadata, TimeToolTimeIntervalCollectionGroup._remove_metadata, event_name)
 
     _get_context_metadata = { "offset" : _get_context_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -4966,17 +4966,17 @@ class TimeToolTimeIntervalCollectionGroup(SupportsDeleteCallback):
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
-    def item(self, indexOrName:typing.Any) -> "ITimeToolTimeIntervalCollection":
+    def item(self, index_or_name:typing.Any) -> "ITimeToolTimeIntervalCollection":
         """Return an element by name or at a specified position."""
-        return self._intf.invoke(TimeToolTimeIntervalCollectionGroup._metadata, TimeToolTimeIntervalCollectionGroup._item_metadata, indexOrName, OutArg())
+        return self._intf.invoke(TimeToolTimeIntervalCollectionGroup._metadata, TimeToolTimeIntervalCollectionGroup._item_metadata, index_or_name, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return a COM enumerator."""
-        return self._intf.get_property(TimeToolTimeIntervalCollectionGroup._metadata, TimeToolTimeIntervalCollectionGroup._get__NewEnum_metadata)
+        return self._intf.get_property(TimeToolTimeIntervalCollectionGroup._metadata, TimeToolTimeIntervalCollectionGroup._get__new_enum_metadata)
 
     _get_item_by_index_metadata = { "offset" : _get_item_by_index_method_offset,
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
@@ -4998,12 +4998,12 @@ class TimeToolTimeIntervalCollectionGroup(SupportsDeleteCallback):
     _property_names[context] = "context"
     _property_names[count] = "count"
     _property_names[factory] = "factory"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalCollectionGroup."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalCollectionGroup)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalCollectionGroup)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -5027,7 +5027,7 @@ class CalculationToolParameterSetGroup(SupportsDeleteCallback):
     _get_count_method_offset = 4
     _get_factory_method_offset = 5
     _item_method_offset = 6
-    _get__NewEnum_method_offset = 7
+    _get__new_enum_method_offset = 7
     _get_item_by_index_method_offset = 8
     _get_item_by_name_method_offset = 9
     _metadata = {
@@ -5039,7 +5039,7 @@ class CalculationToolParameterSetGroup(SupportsDeleteCallback):
         return get_interface_property(attrname, CalculationToolParameterSetGroup)
     def __iter__(self):
         """Create an iterator for the CalculationToolParameterSetGroup object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "ICalculationToolParameterSet":
@@ -5054,9 +5054,9 @@ class CalculationToolParameterSetGroup(SupportsDeleteCallback):
     _remove_metadata = { "offset" : _remove_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    def remove(self, eventName:str) -> None:
+    def remove(self, event_name:str) -> None:
         """Remove a specified element."""
-        return self._intf.invoke(CalculationToolParameterSetGroup._metadata, CalculationToolParameterSetGroup._remove_metadata, eventName)
+        return self._intf.invoke(CalculationToolParameterSetGroup._metadata, CalculationToolParameterSetGroup._remove_metadata, event_name)
 
     _get_context_metadata = { "offset" : _get_context_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -5092,17 +5092,17 @@ class CalculationToolParameterSetGroup(SupportsDeleteCallback):
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
-    def item(self, indexOrName:typing.Any) -> "ICalculationToolParameterSet":
+    def item(self, index_or_name:typing.Any) -> "ICalculationToolParameterSet":
         """Return an element by name or at a specified position."""
-        return self._intf.invoke(CalculationToolParameterSetGroup._metadata, CalculationToolParameterSetGroup._item_metadata, indexOrName, OutArg())
+        return self._intf.invoke(CalculationToolParameterSetGroup._metadata, CalculationToolParameterSetGroup._item_metadata, index_or_name, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return a COM enumerator."""
-        return self._intf.get_property(CalculationToolParameterSetGroup._metadata, CalculationToolParameterSetGroup._get__NewEnum_metadata)
+        return self._intf.get_property(CalculationToolParameterSetGroup._metadata, CalculationToolParameterSetGroup._get__new_enum_metadata)
 
     _get_item_by_index_metadata = { "offset" : _get_item_by_index_method_offset,
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
@@ -5124,12 +5124,12 @@ class CalculationToolParameterSetGroup(SupportsDeleteCallback):
     _property_names[context] = "context"
     _property_names[count] = "count"
     _property_names[factory] = "factory"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolParameterSetGroup."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolParameterSetGroup)
+        initialize_from_source_object(self, source_object, CalculationToolParameterSetGroup)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -5153,7 +5153,7 @@ class CalculationToolConditionGroup(SupportsDeleteCallback):
     _get_count_method_offset = 4
     _get_factory_method_offset = 5
     _item_method_offset = 6
-    _get__NewEnum_method_offset = 7
+    _get__new_enum_method_offset = 7
     _get_item_by_index_method_offset = 8
     _get_item_by_name_method_offset = 9
     _metadata = {
@@ -5165,7 +5165,7 @@ class CalculationToolConditionGroup(SupportsDeleteCallback):
         return get_interface_property(attrname, CalculationToolConditionGroup)
     def __iter__(self):
         """Create an iterator for the CalculationToolConditionGroup object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "ICalculationToolCondition":
@@ -5180,9 +5180,9 @@ class CalculationToolConditionGroup(SupportsDeleteCallback):
     _remove_metadata = { "offset" : _remove_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    def remove(self, eventName:str) -> None:
+    def remove(self, event_name:str) -> None:
         """Remove a specified element."""
-        return self._intf.invoke(CalculationToolConditionGroup._metadata, CalculationToolConditionGroup._remove_metadata, eventName)
+        return self._intf.invoke(CalculationToolConditionGroup._metadata, CalculationToolConditionGroup._remove_metadata, event_name)
 
     _get_context_metadata = { "offset" : _get_context_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -5218,17 +5218,17 @@ class CalculationToolConditionGroup(SupportsDeleteCallback):
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
-    def item(self, indexOrName:typing.Any) -> "ICalculationToolCondition":
+    def item(self, index_or_name:typing.Any) -> "ICalculationToolCondition":
         """Return an element by name or at a specified position."""
-        return self._intf.invoke(CalculationToolConditionGroup._metadata, CalculationToolConditionGroup._item_metadata, indexOrName, OutArg())
+        return self._intf.invoke(CalculationToolConditionGroup._metadata, CalculationToolConditionGroup._item_metadata, index_or_name, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return a COM enumerator."""
-        return self._intf.get_property(CalculationToolConditionGroup._metadata, CalculationToolConditionGroup._get__NewEnum_metadata)
+        return self._intf.get_property(CalculationToolConditionGroup._metadata, CalculationToolConditionGroup._get__new_enum_metadata)
 
     _get_item_by_index_metadata = { "offset" : _get_item_by_index_method_offset,
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
@@ -5250,12 +5250,12 @@ class CalculationToolConditionGroup(SupportsDeleteCallback):
     _property_names[context] = "context"
     _property_names[count] = "count"
     _property_names[factory] = "factory"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolConditionGroup."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolConditionGroup)
+        initialize_from_source_object(self, source_object, CalculationToolConditionGroup)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -5279,7 +5279,7 @@ class CalculationToolConditionSetGroup(SupportsDeleteCallback):
     _get_count_method_offset = 4
     _get_factory_method_offset = 5
     _item_method_offset = 6
-    _get__NewEnum_method_offset = 7
+    _get__new_enum_method_offset = 7
     _get_item_by_index_method_offset = 8
     _get_item_by_name_method_offset = 9
     _metadata = {
@@ -5291,7 +5291,7 @@ class CalculationToolConditionSetGroup(SupportsDeleteCallback):
         return get_interface_property(attrname, CalculationToolConditionSetGroup)
     def __iter__(self):
         """Create an iterator for the CalculationToolConditionSetGroup object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "ICalculationToolConditionSet":
@@ -5306,9 +5306,9 @@ class CalculationToolConditionSetGroup(SupportsDeleteCallback):
     _remove_metadata = { "offset" : _remove_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    def remove(self, eventName:str) -> None:
+    def remove(self, event_name:str) -> None:
         """Remove a specified element."""
-        return self._intf.invoke(CalculationToolConditionSetGroup._metadata, CalculationToolConditionSetGroup._remove_metadata, eventName)
+        return self._intf.invoke(CalculationToolConditionSetGroup._metadata, CalculationToolConditionSetGroup._remove_metadata, event_name)
 
     _get_context_metadata = { "offset" : _get_context_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -5344,17 +5344,17 @@ class CalculationToolConditionSetGroup(SupportsDeleteCallback):
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
-    def item(self, indexOrName:typing.Any) -> "ICalculationToolConditionSet":
+    def item(self, index_or_name:typing.Any) -> "ICalculationToolConditionSet":
         """Return an element by name or at a specified position."""
-        return self._intf.invoke(CalculationToolConditionSetGroup._metadata, CalculationToolConditionSetGroup._item_metadata, indexOrName, OutArg())
+        return self._intf.invoke(CalculationToolConditionSetGroup._metadata, CalculationToolConditionSetGroup._item_metadata, index_or_name, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return a COM enumerator."""
-        return self._intf.get_property(CalculationToolConditionSetGroup._metadata, CalculationToolConditionSetGroup._get__NewEnum_metadata)
+        return self._intf.get_property(CalculationToolConditionSetGroup._metadata, CalculationToolConditionSetGroup._get__new_enum_metadata)
 
     _get_item_by_index_metadata = { "offset" : _get_item_by_index_method_offset,
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
@@ -5376,12 +5376,12 @@ class CalculationToolConditionSetGroup(SupportsDeleteCallback):
     _property_names[context] = "context"
     _property_names[count] = "count"
     _property_names[factory] = "factory"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolConditionSetGroup."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolConditionSetGroup)
+        initialize_from_source_object(self, source_object, CalculationToolConditionSetGroup)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -5428,10 +5428,10 @@ class CalculationToolConditionSetEvaluateResult(SupportsDeleteCallback):
     _property_names[is_valid] = "is_valid"
     _property_names[values] = "values"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolConditionSetEvaluateResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolConditionSetEvaluateResult)
+        initialize_from_source_object(self, source_object, CalculationToolConditionSetEvaluateResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -5488,10 +5488,10 @@ class CalculationToolConditionSetEvaluateWithRateResult(SupportsDeleteCallback):
     _property_names[values] = "values"
     _property_names[rates] = "rates"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolConditionSetEvaluateWithRateResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolConditionSetEvaluateWithRateResult)
+        initialize_from_source_object(self, source_object, CalculationToolConditionSetEvaluateWithRateResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -5515,7 +5515,7 @@ class SpatialAnalysisToolVolumeGridGroup(SupportsDeleteCallback):
     _get_count_method_offset = 4
     _get_factory_method_offset = 5
     _item_method_offset = 6
-    _get__NewEnum_method_offset = 7
+    _get__new_enum_method_offset = 7
     _get_item_by_index_method_offset = 8
     _get_item_by_name_method_offset = 9
     _metadata = {
@@ -5527,7 +5527,7 @@ class SpatialAnalysisToolVolumeGridGroup(SupportsDeleteCallback):
         return get_interface_property(attrname, SpatialAnalysisToolVolumeGridGroup)
     def __iter__(self):
         """Create an iterator for the SpatialAnalysisToolVolumeGridGroup object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "ISpatialAnalysisToolVolumeGrid":
@@ -5542,9 +5542,9 @@ class SpatialAnalysisToolVolumeGridGroup(SupportsDeleteCallback):
     _remove_metadata = { "offset" : _remove_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    def remove(self, eventName:str) -> None:
+    def remove(self, event_name:str) -> None:
         """Remove a specified element."""
-        return self._intf.invoke(SpatialAnalysisToolVolumeGridGroup._metadata, SpatialAnalysisToolVolumeGridGroup._remove_metadata, eventName)
+        return self._intf.invoke(SpatialAnalysisToolVolumeGridGroup._metadata, SpatialAnalysisToolVolumeGridGroup._remove_metadata, event_name)
 
     _get_context_metadata = { "offset" : _get_context_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -5580,17 +5580,17 @@ class SpatialAnalysisToolVolumeGridGroup(SupportsDeleteCallback):
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
-    def item(self, indexOrName:typing.Any) -> "ISpatialAnalysisToolVolumeGrid":
+    def item(self, index_or_name:typing.Any) -> "ISpatialAnalysisToolVolumeGrid":
         """Return an element by name or at a specified position."""
-        return self._intf.invoke(SpatialAnalysisToolVolumeGridGroup._metadata, SpatialAnalysisToolVolumeGridGroup._item_metadata, indexOrName, OutArg())
+        return self._intf.invoke(SpatialAnalysisToolVolumeGridGroup._metadata, SpatialAnalysisToolVolumeGridGroup._item_metadata, index_or_name, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return a COM enumerator."""
-        return self._intf.get_property(SpatialAnalysisToolVolumeGridGroup._metadata, SpatialAnalysisToolVolumeGridGroup._get__NewEnum_metadata)
+        return self._intf.get_property(SpatialAnalysisToolVolumeGridGroup._metadata, SpatialAnalysisToolVolumeGridGroup._get__new_enum_metadata)
 
     _get_item_by_index_metadata = { "offset" : _get_item_by_index_method_offset,
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
@@ -5612,12 +5612,12 @@ class SpatialAnalysisToolVolumeGridGroup(SupportsDeleteCallback):
     _property_names[context] = "context"
     _property_names[count] = "count"
     _property_names[factory] = "factory"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolVolumeGridGroup."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolVolumeGridGroup)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolVolumeGridGroup)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -5641,7 +5641,7 @@ class SpatialAnalysisToolConditionGroup(SupportsDeleteCallback):
     _get_count_method_offset = 4
     _get_factory_method_offset = 5
     _item_method_offset = 6
-    _get__NewEnum_method_offset = 7
+    _get__new_enum_method_offset = 7
     _get_item_by_index_method_offset = 8
     _get_item_by_name_method_offset = 9
     _metadata = {
@@ -5653,7 +5653,7 @@ class SpatialAnalysisToolConditionGroup(SupportsDeleteCallback):
         return get_interface_property(attrname, SpatialAnalysisToolConditionGroup)
     def __iter__(self):
         """Create an iterator for the SpatialAnalysisToolConditionGroup object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "ISpatialAnalysisToolVolume":
@@ -5668,9 +5668,9 @@ class SpatialAnalysisToolConditionGroup(SupportsDeleteCallback):
     _remove_metadata = { "offset" : _remove_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    def remove(self, eventName:str) -> None:
+    def remove(self, event_name:str) -> None:
         """Remove a specified element."""
-        return self._intf.invoke(SpatialAnalysisToolConditionGroup._metadata, SpatialAnalysisToolConditionGroup._remove_metadata, eventName)
+        return self._intf.invoke(SpatialAnalysisToolConditionGroup._metadata, SpatialAnalysisToolConditionGroup._remove_metadata, event_name)
 
     _get_context_metadata = { "offset" : _get_context_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -5706,17 +5706,17 @@ class SpatialAnalysisToolConditionGroup(SupportsDeleteCallback):
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
-    def item(self, indexOrName:typing.Any) -> "ISpatialAnalysisToolVolume":
+    def item(self, index_or_name:typing.Any) -> "ISpatialAnalysisToolVolume":
         """Return an element by name or at a specified position."""
-        return self._intf.invoke(SpatialAnalysisToolConditionGroup._metadata, SpatialAnalysisToolConditionGroup._item_metadata, indexOrName, OutArg())
+        return self._intf.invoke(SpatialAnalysisToolConditionGroup._metadata, SpatialAnalysisToolConditionGroup._item_metadata, index_or_name, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return a COM enumerator."""
-        return self._intf.get_property(SpatialAnalysisToolConditionGroup._metadata, SpatialAnalysisToolConditionGroup._get__NewEnum_metadata)
+        return self._intf.get_property(SpatialAnalysisToolConditionGroup._metadata, SpatialAnalysisToolConditionGroup._get__new_enum_metadata)
 
     _get_item_by_index_metadata = { "offset" : _get_item_by_index_method_offset,
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
@@ -5738,12 +5738,12 @@ class SpatialAnalysisToolConditionGroup(SupportsDeleteCallback):
     _property_names[context] = "context"
     _property_names[count] = "count"
     _property_names[factory] = "factory"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolConditionGroup."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolConditionGroup)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolConditionGroup)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -5767,7 +5767,7 @@ class SpatialAnalysisToolCalculationGroup(SupportsDeleteCallback):
     _get_count_method_offset = 4
     _get_factory_method_offset = 5
     _item_method_offset = 6
-    _get__NewEnum_method_offset = 7
+    _get__new_enum_method_offset = 7
     _get_item_by_index_method_offset = 8
     _get_item_by_name_method_offset = 9
     _metadata = {
@@ -5779,7 +5779,7 @@ class SpatialAnalysisToolCalculationGroup(SupportsDeleteCallback):
         return get_interface_property(attrname, SpatialAnalysisToolCalculationGroup)
     def __iter__(self):
         """Create an iterator for the SpatialAnalysisToolCalculationGroup object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "ISpatialAnalysisToolSpatialCalculation":
@@ -5794,9 +5794,9 @@ class SpatialAnalysisToolCalculationGroup(SupportsDeleteCallback):
     _remove_metadata = { "offset" : _remove_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    def remove(self, eventName:str) -> None:
+    def remove(self, event_name:str) -> None:
         """Remove a specified element."""
-        return self._intf.invoke(SpatialAnalysisToolCalculationGroup._metadata, SpatialAnalysisToolCalculationGroup._remove_metadata, eventName)
+        return self._intf.invoke(SpatialAnalysisToolCalculationGroup._metadata, SpatialAnalysisToolCalculationGroup._remove_metadata, event_name)
 
     _get_context_metadata = { "offset" : _get_context_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -5832,17 +5832,17 @@ class SpatialAnalysisToolCalculationGroup(SupportsDeleteCallback):
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
-    def item(self, indexOrName:typing.Any) -> "ISpatialAnalysisToolSpatialCalculation":
+    def item(self, index_or_name:typing.Any) -> "ISpatialAnalysisToolSpatialCalculation":
         """Return an element by name or at a specified position."""
-        return self._intf.invoke(SpatialAnalysisToolCalculationGroup._metadata, SpatialAnalysisToolCalculationGroup._item_metadata, indexOrName, OutArg())
+        return self._intf.invoke(SpatialAnalysisToolCalculationGroup._metadata, SpatialAnalysisToolCalculationGroup._item_metadata, index_or_name, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return a COM enumerator."""
-        return self._intf.get_property(SpatialAnalysisToolCalculationGroup._metadata, SpatialAnalysisToolCalculationGroup._get__NewEnum_metadata)
+        return self._intf.get_property(SpatialAnalysisToolCalculationGroup._metadata, SpatialAnalysisToolCalculationGroup._get__new_enum_metadata)
 
     _get_item_by_index_metadata = { "offset" : _get_item_by_index_method_offset,
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
@@ -5864,12 +5864,12 @@ class SpatialAnalysisToolCalculationGroup(SupportsDeleteCallback):
     _property_names[context] = "context"
     _property_names[count] = "count"
     _property_names[factory] = "factory"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolCalculationGroup."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolCalculationGroup)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolCalculationGroup)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -5884,11 +5884,11 @@ agcls.AgTypeNameMap["SpatialAnalysisToolCalculationGroup"] = SpatialAnalysisTool
 
 class CalculationToolScalar(ICalculationToolScalar, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Any scalar calculation that is not constant by construction."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolScalar."""
         SupportsDeleteCallback.__init__(self)
-        ICalculationToolScalar.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        ICalculationToolScalar.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
@@ -5930,17 +5930,17 @@ class CalculationToolScalarAngle(ICalculationToolScalar, IAnalysisWorkbenchCompo
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolAngle"),) }
     @input_angle.setter
-    def input_angle(self, inputAngle:"IVectorGeometryToolAngle") -> None:
-        return self._intf.set_property(CalculationToolScalarAngle._metadata, CalculationToolScalarAngle._set_input_angle_metadata, inputAngle)
+    def input_angle(self, input_angle:"IVectorGeometryToolAngle") -> None:
+        return self._intf.set_property(CalculationToolScalarAngle._metadata, CalculationToolScalarAngle._set_input_angle_metadata, input_angle)
 
     _property_names[input_angle] = "input_angle"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolScalarAngle."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolScalarAngle)
-        ICalculationToolScalar.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolScalarAngle)
+        ICalculationToolScalar.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
@@ -6005,8 +6005,8 @@ class CalculationToolScalarAverage(ICalculationToolScalar, IAnalysisWorkbenchCom
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ICalculationToolScalar"),) }
     @input_scalar.setter
-    def input_scalar(self, inputScalar:"ICalculationToolScalar") -> None:
-        return self._intf.set_property(CalculationToolScalarAverage._metadata, CalculationToolScalarAverage._set_input_scalar_metadata, inputScalar)
+    def input_scalar(self, input_scalar:"ICalculationToolScalar") -> None:
+        return self._intf.set_property(CalculationToolScalarAverage._metadata, CalculationToolScalarAverage._set_input_scalar_metadata, input_scalar)
 
     _get_compute_as_average_metadata = { "offset" : _get_compute_as_average_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -6020,8 +6020,8 @@ class CalculationToolScalarAverage(ICalculationToolScalar, IAnalysisWorkbenchCom
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @compute_as_average.setter
-    def compute_as_average(self, computeAsAverage:bool) -> None:
-        return self._intf.set_property(CalculationToolScalarAverage._metadata, CalculationToolScalarAverage._set_compute_as_average_metadata, computeAsAverage)
+    def compute_as_average(self, compute_as_average:bool) -> None:
+        return self._intf.set_property(CalculationToolScalarAverage._metadata, CalculationToolScalarAverage._set_compute_as_average_metadata, compute_as_average)
 
     _get_integration_window_type_metadata = { "offset" : _get_integration_window_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -6035,8 +6035,8 @@ class CalculationToolScalarAverage(ICalculationToolScalar, IAnalysisWorkbenchCom
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(INTEGRATION_WINDOW_TYPE),) }
     @integration_window_type.setter
-    def integration_window_type(self, integrationWindowType:"INTEGRATION_WINDOW_TYPE") -> None:
-        return self._intf.set_property(CalculationToolScalarAverage._metadata, CalculationToolScalarAverage._set_integration_window_type_metadata, integrationWindowType)
+    def integration_window_type(self, integration_window_type:"INTEGRATION_WINDOW_TYPE") -> None:
+        return self._intf.set_property(CalculationToolScalarAverage._metadata, CalculationToolScalarAverage._set_integration_window_type_metadata, integration_window_type)
 
     _get_start_offset_metadata = { "offset" : _get_start_offset_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -6050,8 +6050,8 @@ class CalculationToolScalarAverage(ICalculationToolScalar, IAnalysisWorkbenchCom
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @start_offset.setter
-    def start_offset(self, startOffset:float) -> None:
-        return self._intf.set_property(CalculationToolScalarAverage._metadata, CalculationToolScalarAverage._set_start_offset_metadata, startOffset)
+    def start_offset(self, start_offset:float) -> None:
+        return self._intf.set_property(CalculationToolScalarAverage._metadata, CalculationToolScalarAverage._set_start_offset_metadata, start_offset)
 
     _get_stop_offset_metadata = { "offset" : _get_stop_offset_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -6065,8 +6065,8 @@ class CalculationToolScalarAverage(ICalculationToolScalar, IAnalysisWorkbenchCom
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @stop_offset.setter
-    def stop_offset(self, stopOffset:float) -> None:
-        return self._intf.set_property(CalculationToolScalarAverage._metadata, CalculationToolScalarAverage._set_stop_offset_metadata, stopOffset)
+    def stop_offset(self, stop_offset:float) -> None:
+        return self._intf.set_property(CalculationToolScalarAverage._metadata, CalculationToolScalarAverage._set_stop_offset_metadata, stop_offset)
 
     _get_use_custom_time_limits_metadata = { "offset" : _get_use_custom_time_limits_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -6080,8 +6080,8 @@ class CalculationToolScalarAverage(ICalculationToolScalar, IAnalysisWorkbenchCom
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @use_custom_time_limits.setter
-    def use_custom_time_limits(self, useCustomTimeLimits:bool) -> None:
-        return self._intf.set_property(CalculationToolScalarAverage._metadata, CalculationToolScalarAverage._set_use_custom_time_limits_metadata, useCustomTimeLimits)
+    def use_custom_time_limits(self, use_custom_time_limits:bool) -> None:
+        return self._intf.set_property(CalculationToolScalarAverage._metadata, CalculationToolScalarAverage._set_use_custom_time_limits_metadata, use_custom_time_limits)
 
     _get_custom_time_limits_metadata = { "offset" : _get_custom_time_limits_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -6095,8 +6095,8 @@ class CalculationToolScalarAverage(ICalculationToolScalar, IAnalysisWorkbenchCom
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ITimeToolTimeIntervalList"),) }
     @custom_time_limits.setter
-    def custom_time_limits(self, customTimeLimits:"ITimeToolTimeIntervalList") -> None:
-        return self._intf.set_property(CalculationToolScalarAverage._metadata, CalculationToolScalarAverage._set_custom_time_limits_metadata, customTimeLimits)
+    def custom_time_limits(self, custom_time_limits:"ITimeToolTimeIntervalList") -> None:
+        return self._intf.set_property(CalculationToolScalarAverage._metadata, CalculationToolScalarAverage._set_custom_time_limits_metadata, custom_time_limits)
 
     _get_save_data_option_metadata = { "offset" : _get_save_data_option_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -6110,8 +6110,8 @@ class CalculationToolScalarAverage(ICalculationToolScalar, IAnalysisWorkbenchCom
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(SAVE_DATA_TYPE),) }
     @save_data_option.setter
-    def save_data_option(self, saveDataOption:"SAVE_DATA_TYPE") -> None:
-        return self._intf.set_property(CalculationToolScalarAverage._metadata, CalculationToolScalarAverage._set_save_data_option_metadata, saveDataOption)
+    def save_data_option(self, save_data_option:"SAVE_DATA_TYPE") -> None:
+        return self._intf.set_property(CalculationToolScalarAverage._metadata, CalculationToolScalarAverage._set_save_data_option_metadata, save_data_option)
 
     _get_interpolation_metadata = { "offset" : _get_interpolation_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -6170,15 +6170,15 @@ class CalculationToolScalarAverage(ICalculationToolScalar, IAnalysisWorkbenchCom
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @keep_constant_outside_time_limits.setter
-    def keep_constant_outside_time_limits(self, keepConstantOutsideTimeLimits:bool) -> None:
-        return self._intf.set_property(CalculationToolScalarAverage._metadata, CalculationToolScalarAverage._set_keep_constant_outside_time_limits_metadata, keepConstantOutsideTimeLimits)
+    def keep_constant_outside_time_limits(self, keep_constant_outside_time_limits:bool) -> None:
+        return self._intf.set_property(CalculationToolScalarAverage._metadata, CalculationToolScalarAverage._set_keep_constant_outside_time_limits_metadata, keep_constant_outside_time_limits)
 
     _set_offsets_metadata = { "offset" : _set_offsets_method_offset,
             "arg_types" : (agcom.DOUBLE, agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg, agmarshall.DoubleArg,) }
-    def set_offsets(self, startOffset:float, stopOffset:float) -> None:
+    def set_offsets(self, start_offset:float, stop_offset:float) -> None:
         """Set the offsets with respect to current time to define the start and stop of the sliding window, used when IntegrationWindowType is set to Sliding Window."""
-        return self._intf.invoke(CalculationToolScalarAverage._metadata, CalculationToolScalarAverage._set_offsets_metadata, startOffset, stopOffset)
+        return self._intf.invoke(CalculationToolScalarAverage._metadata, CalculationToolScalarAverage._set_offsets_metadata, start_offset, stop_offset)
 
     _property_names[input_scalar] = "input_scalar"
     _property_names[compute_as_average] = "compute_as_average"
@@ -6193,12 +6193,12 @@ class CalculationToolScalarAverage(ICalculationToolScalar, IAnalysisWorkbenchCom
     _property_names[integral] = "integral"
     _property_names[keep_constant_outside_time_limits] = "keep_constant_outside_time_limits"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolScalarAverage."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolScalarAverage)
-        ICalculationToolScalar.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolScalarAverage)
+        ICalculationToolScalar.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
@@ -6263,12 +6263,12 @@ class CalculationToolScalarConstant(ICalculationToolScalar, IAnalysisWorkbenchCo
     _property_names[value] = "value"
     _property_names[dimension] = "dimension"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolScalarConstant."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolScalarConstant)
-        ICalculationToolScalar.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolScalarConstant)
+        ICalculationToolScalar.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
@@ -6335,18 +6335,18 @@ class CalculationToolScalarCustom(ICalculationToolScalar, IAnalysisWorkbenchComp
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @invalidate_on_execution_error.setter
-    def invalidate_on_execution_error(self, invalidateOnExecError:bool) -> None:
-        return self._intf.set_property(CalculationToolScalarCustom._metadata, CalculationToolScalarCustom._set_invalidate_on_execution_error_metadata, invalidateOnExecError)
+    def invalidate_on_execution_error(self, invalidate_on_exec_error:bool) -> None:
+        return self._intf.set_property(CalculationToolScalarCustom._metadata, CalculationToolScalarCustom._set_invalidate_on_execution_error_metadata, invalidate_on_exec_error)
 
     _property_names[filename] = "filename"
     _property_names[invalidate_on_execution_error] = "invalidate_on_execution_error"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolScalarCustom."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolScalarCustom)
-        ICalculationToolScalar.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolScalarCustom)
+        ICalculationToolScalar.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
@@ -6396,8 +6396,8 @@ class CalculationToolScalarCustomInlineScript(ICalculationToolScalar, IAnalysisW
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @script_type.setter
-    def script_type(self, scriptType:str) -> None:
-        return self._intf.set_property(CalculationToolScalarCustomInlineScript._metadata, CalculationToolScalarCustomInlineScript._set_script_type_metadata, scriptType)
+    def script_type(self, script_type:str) -> None:
+        return self._intf.set_property(CalculationToolScalarCustomInlineScript._metadata, CalculationToolScalarCustomInlineScript._set_script_type_metadata, script_type)
 
     _get_value_function_metadata = { "offset" : _get_value_function_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -6411,8 +6411,8 @@ class CalculationToolScalarCustomInlineScript(ICalculationToolScalar, IAnalysisW
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @value_function.setter
-    def value_function(self, valueFunction:str) -> None:
-        return self._intf.set_property(CalculationToolScalarCustomInlineScript._metadata, CalculationToolScalarCustomInlineScript._set_value_function_metadata, valueFunction)
+    def value_function(self, value_function:str) -> None:
+        return self._intf.set_property(CalculationToolScalarCustomInlineScript._metadata, CalculationToolScalarCustomInlineScript._set_value_function_metadata, value_function)
 
     _get_derivative_function_metadata = { "offset" : _get_derivative_function_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -6426,8 +6426,8 @@ class CalculationToolScalarCustomInlineScript(ICalculationToolScalar, IAnalysisW
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @derivative_function.setter
-    def derivative_function(self, derivativeFunction:str) -> None:
-        return self._intf.set_property(CalculationToolScalarCustomInlineScript._metadata, CalculationToolScalarCustomInlineScript._set_derivative_function_metadata, derivativeFunction)
+    def derivative_function(self, derivative_function:str) -> None:
+        return self._intf.set_property(CalculationToolScalarCustomInlineScript._metadata, CalculationToolScalarCustomInlineScript._set_derivative_function_metadata, derivative_function)
 
     _get_dimension_metadata = { "offset" : _get_dimension_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -6454,21 +6454,21 @@ class CalculationToolScalarCustomInlineScript(ICalculationToolScalar, IAnalysisW
     _set_all_arguments_metadata = { "offset" : _set_all_arguments_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
-    def set_all_arguments(self, calcList:list) -> None:
+    def set_all_arguments(self, calc_list:list) -> None:
         """Set the list of arguments."""
-        return self._intf.invoke(CalculationToolScalarCustomInlineScript._metadata, CalculationToolScalarCustomInlineScript._set_all_arguments_metadata, calcList)
+        return self._intf.invoke(CalculationToolScalarCustomInlineScript._metadata, CalculationToolScalarCustomInlineScript._set_all_arguments_metadata, calc_list)
 
     _property_names[script_type] = "script_type"
     _property_names[value_function] = "value_function"
     _property_names[derivative_function] = "derivative_function"
     _property_names[dimension] = "dimension"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolScalarCustomInlineScript."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolScalarCustomInlineScript)
-        ICalculationToolScalar.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolScalarCustomInlineScript)
+        ICalculationToolScalar.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
@@ -6577,8 +6577,8 @@ class CalculationToolScalarDataElement(ICalculationToolScalar, IAnalysisWorkbenc
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @use_samples.setter
-    def use_samples(self, useSamples:bool) -> None:
-        return self._intf.set_property(CalculationToolScalarDataElement._metadata, CalculationToolScalarDataElement._set_use_samples_metadata, useSamples)
+    def use_samples(self, use_samples:bool) -> None:
+        return self._intf.set_property(CalculationToolScalarDataElement._metadata, CalculationToolScalarDataElement._set_use_samples_metadata, use_samples)
 
     _get_save_data_option_metadata = { "offset" : _get_save_data_option_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -6592,22 +6592,22 @@ class CalculationToolScalarDataElement(ICalculationToolScalar, IAnalysisWorkbenc
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(SAVE_DATA_TYPE),) }
     @save_data_option.setter
-    def save_data_option(self, saveDataOption:"SAVE_DATA_TYPE") -> None:
-        return self._intf.set_property(CalculationToolScalarDataElement._metadata, CalculationToolScalarDataElement._set_save_data_option_metadata, saveDataOption)
+    def save_data_option(self, save_data_option:"SAVE_DATA_TYPE") -> None:
+        return self._intf.set_property(CalculationToolScalarDataElement._metadata, CalculationToolScalarDataElement._set_save_data_option_metadata, save_data_option)
 
     _set_metadata = { "offset" : _set_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg,) }
-    def set(self, dataProvider:str, elementName:str) -> None:
+    def set(self, data_provider:str, element_name:str) -> None:
         """Set the data provider and the element name."""
-        return self._intf.invoke(CalculationToolScalarDataElement._metadata, CalculationToolScalarDataElement._set_metadata, dataProvider, elementName)
+        return self._intf.invoke(CalculationToolScalarDataElement._metadata, CalculationToolScalarDataElement._set_metadata, data_provider, element_name)
 
     _set_with_group_metadata = { "offset" : _set_with_group_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.BStrArg,) }
-    def set_with_group(self, dataProvider:str, typeName:str, elementName:str) -> None:
+    def set_with_group(self, data_provider:str, type_name:str, element_name:str) -> None:
         """Set the data provider name, the element name, and data provider type name."""
-        return self._intf.invoke(CalculationToolScalarDataElement._metadata, CalculationToolScalarDataElement._set_with_group_metadata, dataProvider, typeName, elementName)
+        return self._intf.invoke(CalculationToolScalarDataElement._metadata, CalculationToolScalarDataElement._set_with_group_metadata, data_provider, type_name, element_name)
 
     _get_invalid_data_indicator_metadata = { "offset" : _get_invalid_data_indicator_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -6621,8 +6621,8 @@ class CalculationToolScalarDataElement(ICalculationToolScalar, IAnalysisWorkbenc
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @invalid_data_indicator.setter
-    def invalid_data_indicator(self, invalidDataIndicator:float) -> None:
-        return self._intf.set_property(CalculationToolScalarDataElement._metadata, CalculationToolScalarDataElement._set_invalid_data_indicator_metadata, invalidDataIndicator)
+    def invalid_data_indicator(self, invalid_data_indicator:float) -> None:
+        return self._intf.set_property(CalculationToolScalarDataElement._metadata, CalculationToolScalarDataElement._set_invalid_data_indicator_metadata, invalid_data_indicator)
 
     _property_names[data_provider] = "data_provider"
     _property_names[element_name] = "element_name"
@@ -6633,12 +6633,12 @@ class CalculationToolScalarDataElement(ICalculationToolScalar, IAnalysisWorkbenc
     _property_names[save_data_option] = "save_data_option"
     _property_names[invalid_data_indicator] = "invalid_data_indicator"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolScalarDataElement."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolScalarDataElement)
-        ICalculationToolScalar.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolScalarDataElement)
+        ICalculationToolScalar.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
@@ -6699,8 +6699,8 @@ class CalculationToolScalarDerivative(ICalculationToolScalar, IAnalysisWorkbench
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @differencing_time_step.setter
-    def differencing_time_step(self, differencingTimeStep:float) -> None:
-        return self._intf.set_property(CalculationToolScalarDerivative._metadata, CalculationToolScalarDerivative._set_differencing_time_step_metadata, differencingTimeStep)
+    def differencing_time_step(self, differencing_time_step:float) -> None:
+        return self._intf.set_property(CalculationToolScalarDerivative._metadata, CalculationToolScalarDerivative._set_differencing_time_step_metadata, differencing_time_step)
 
     _get_force_use_of_numerical_differences_metadata = { "offset" : _get_force_use_of_numerical_differences_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -6714,19 +6714,19 @@ class CalculationToolScalarDerivative(ICalculationToolScalar, IAnalysisWorkbench
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @force_use_of_numerical_differences.setter
-    def force_use_of_numerical_differences(self, forceUseOfNumericalDifferences:bool) -> None:
-        return self._intf.set_property(CalculationToolScalarDerivative._metadata, CalculationToolScalarDerivative._set_force_use_of_numerical_differences_metadata, forceUseOfNumericalDifferences)
+    def force_use_of_numerical_differences(self, force_use_of_numerical_differences:bool) -> None:
+        return self._intf.set_property(CalculationToolScalarDerivative._metadata, CalculationToolScalarDerivative._set_force_use_of_numerical_differences_metadata, force_use_of_numerical_differences)
 
     _property_names[scalar] = "scalar"
     _property_names[differencing_time_step] = "differencing_time_step"
     _property_names[force_use_of_numerical_differences] = "force_use_of_numerical_differences"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolScalarDerivative."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolScalarDerivative)
-        ICalculationToolScalar.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolScalarDerivative)
+        ICalculationToolScalar.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
@@ -6776,8 +6776,8 @@ class CalculationToolScalarDotProduct(ICalculationToolScalar, IAnalysisWorkbench
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolVector"),) }
     @vector_a.setter
-    def vector_a(self, vectorA:"IVectorGeometryToolVector") -> None:
-        return self._intf.set_property(CalculationToolScalarDotProduct._metadata, CalculationToolScalarDotProduct._set_vector_a_metadata, vectorA)
+    def vector_a(self, vector_a:"IVectorGeometryToolVector") -> None:
+        return self._intf.set_property(CalculationToolScalarDotProduct._metadata, CalculationToolScalarDotProduct._set_vector_a_metadata, vector_a)
 
     _get_normalize_vector_a_metadata = { "offset" : _get_normalize_vector_a_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -6791,8 +6791,8 @@ class CalculationToolScalarDotProduct(ICalculationToolScalar, IAnalysisWorkbench
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @normalize_vector_a.setter
-    def normalize_vector_a(self, normalizeVectorA:bool) -> None:
-        return self._intf.set_property(CalculationToolScalarDotProduct._metadata, CalculationToolScalarDotProduct._set_normalize_vector_a_metadata, normalizeVectorA)
+    def normalize_vector_a(self, normalize_vector_a:bool) -> None:
+        return self._intf.set_property(CalculationToolScalarDotProduct._metadata, CalculationToolScalarDotProduct._set_normalize_vector_a_metadata, normalize_vector_a)
 
     _get_vector_b_metadata = { "offset" : _get_vector_b_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -6806,8 +6806,8 @@ class CalculationToolScalarDotProduct(ICalculationToolScalar, IAnalysisWorkbench
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolVector"),) }
     @vector_b.setter
-    def vector_b(self, vectorB:"IVectorGeometryToolVector") -> None:
-        return self._intf.set_property(CalculationToolScalarDotProduct._metadata, CalculationToolScalarDotProduct._set_vector_b_metadata, vectorB)
+    def vector_b(self, vector_b:"IVectorGeometryToolVector") -> None:
+        return self._intf.set_property(CalculationToolScalarDotProduct._metadata, CalculationToolScalarDotProduct._set_vector_b_metadata, vector_b)
 
     _get_normalize_vector_b_metadata = { "offset" : _get_normalize_vector_b_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -6821,8 +6821,8 @@ class CalculationToolScalarDotProduct(ICalculationToolScalar, IAnalysisWorkbench
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @normalize_vector_b.setter
-    def normalize_vector_b(self, normalizeVectorB:bool) -> None:
-        return self._intf.set_property(CalculationToolScalarDotProduct._metadata, CalculationToolScalarDotProduct._set_normalize_vector_b_metadata, normalizeVectorB)
+    def normalize_vector_b(self, normalize_vector_b:bool) -> None:
+        return self._intf.set_property(CalculationToolScalarDotProduct._metadata, CalculationToolScalarDotProduct._set_normalize_vector_b_metadata, normalize_vector_b)
 
     _get_dimension_metadata = { "offset" : _get_dimension_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -6845,12 +6845,12 @@ class CalculationToolScalarDotProduct(ICalculationToolScalar, IAnalysisWorkbench
     _property_names[normalize_vector_b] = "normalize_vector_b"
     _property_names[dimension] = "dimension"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolScalarDotProduct."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolScalarDotProduct)
-        ICalculationToolScalar.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolScalarDotProduct)
+        ICalculationToolScalar.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
@@ -6892,17 +6892,17 @@ class CalculationToolScalarElapsedTime(ICalculationToolScalar, IAnalysisWorkbenc
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ITimeToolInstant"),) }
     @reference_time_instant.setter
-    def reference_time_instant(self, referenceTimeInstant:"ITimeToolInstant") -> None:
-        return self._intf.set_property(CalculationToolScalarElapsedTime._metadata, CalculationToolScalarElapsedTime._set_reference_time_instant_metadata, referenceTimeInstant)
+    def reference_time_instant(self, reference_time_instant:"ITimeToolInstant") -> None:
+        return self._intf.set_property(CalculationToolScalarElapsedTime._metadata, CalculationToolScalarElapsedTime._set_reference_time_instant_metadata, reference_time_instant)
 
     _property_names[reference_time_instant] = "reference_time_instant"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolScalarElapsedTime."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolScalarElapsedTime)
-        ICalculationToolScalar.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolScalarElapsedTime)
+        ICalculationToolScalar.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
@@ -6993,16 +6993,16 @@ class CalculationToolScalarFactory(SupportsDeleteCallback):
     _create_data_element_metadata = { "offset" : _create_data_element_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
-    def create_data_element(self, name:str, description:str, dataProvider:str, elementName:str) -> "ICalculationToolScalar":
+    def create_data_element(self, name:str, description:str, data_provider:str, element_name:str) -> "ICalculationToolScalar":
         """Create a scalar calculation defined from a time-dependent data element from STK data providers available for parent STK object."""
-        return self._intf.invoke(CalculationToolScalarFactory._metadata, CalculationToolScalarFactory._create_data_element_metadata, name, description, dataProvider, elementName, OutArg())
+        return self._intf.invoke(CalculationToolScalarFactory._metadata, CalculationToolScalarFactory._create_data_element_metadata, name, description, data_provider, element_name, OutArg())
 
     _create_data_element_within_group_metadata = { "offset" : _create_data_element_within_group_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
-    def create_data_element_within_group(self, name:str, description:str, dataProvider:str, groupName:str, elementName:str) -> "ICalculationToolScalar":
+    def create_data_element_within_group(self, name:str, description:str, data_provider:str, group_name:str, element_name:str) -> "ICalculationToolScalar":
         """Create a scalar calculation defined from a time-dependent data element from STK data providers available for parent STK object."""
-        return self._intf.invoke(CalculationToolScalarFactory._metadata, CalculationToolScalarFactory._create_data_element_within_group_metadata, name, description, dataProvider, groupName, elementName, OutArg())
+        return self._intf.invoke(CalculationToolScalarFactory._metadata, CalculationToolScalarFactory._create_data_element_within_group_metadata, name, description, data_provider, group_name, element_name, OutArg())
 
     _create_derivative_metadata = { "offset" : _create_derivative_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
@@ -7056,16 +7056,16 @@ class CalculationToolScalarFactory(SupportsDeleteCallback):
     _create_plugin_from_display_name_metadata = { "offset" : _create_plugin_from_display_name_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
-    def create_plugin_from_display_name(self, name:str, description:str, displayName:str) -> "ICalculationToolScalar":
+    def create_plugin_from_display_name(self, name:str, description:str, display_name:str) -> "ICalculationToolScalar":
         """Create a scalar calculation based on a COM plugin. For information how to implement and register VGT plugins, see <topic name='Engine Plugins: COM-based Engine Plugin Components'>COM-based Engine Plugins.</topic>."""
-        return self._intf.invoke(CalculationToolScalarFactory._metadata, CalculationToolScalarFactory._create_plugin_from_display_name_metadata, name, description, displayName, OutArg())
+        return self._intf.invoke(CalculationToolScalarFactory._metadata, CalculationToolScalarFactory._create_plugin_from_display_name_metadata, name, description, display_name, OutArg())
 
     _is_type_supported_metadata = { "offset" : _is_type_supported_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.EnumArg(CALCULATION_SCALAR_TYPE), agmarshall.VariantBoolArg,) }
-    def is_type_supported(self, eType:"CALCULATION_SCALAR_TYPE") -> bool:
+    def is_type_supported(self, type:"CALCULATION_SCALAR_TYPE") -> bool:
         """Return whether the specified type is supported."""
-        return self._intf.invoke(CalculationToolScalarFactory._metadata, CalculationToolScalarFactory._is_type_supported_metadata, eType, OutArg())
+        return self._intf.invoke(CalculationToolScalarFactory._metadata, CalculationToolScalarFactory._is_type_supported_metadata, type, OutArg())
 
     _create_from_custom_script_metadata = { "offset" : _create_from_custom_script_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
@@ -7125,10 +7125,10 @@ class CalculationToolScalarFactory(SupportsDeleteCallback):
 
     _property_names[available_plugin_display_names] = "available_plugin_display_names"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolScalarFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolScalarFactory)
+        initialize_from_source_object(self, source_object, CalculationToolScalarFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -7205,8 +7205,8 @@ class CalculationToolScalarFile(ICalculationToolScalar, IAnalysisWorkbenchCompon
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(FILE_INTERPOLATOR_TYPE),) }
     @file_interpolation_type.setter
-    def file_interpolation_type(self, fileInterpolationType:"FILE_INTERPOLATOR_TYPE") -> None:
-        return self._intf.set_property(CalculationToolScalarFile._metadata, CalculationToolScalarFile._set_file_interpolation_type_metadata, fileInterpolationType)
+    def file_interpolation_type(self, file_interpolation_type:"FILE_INTERPOLATOR_TYPE") -> None:
+        return self._intf.set_property(CalculationToolScalarFile._metadata, CalculationToolScalarFile._set_file_interpolation_type_metadata, file_interpolation_type)
 
     _get_file_interpolation_order_metadata = { "offset" : _get_file_interpolation_order_method_offset,
             "arg_types" : (POINTER(agcom.INT),),
@@ -7220,8 +7220,8 @@ class CalculationToolScalarFile(ICalculationToolScalar, IAnalysisWorkbenchCompon
             "arg_types" : (agcom.INT,),
             "marshallers" : (agmarshall.IntArg,) }
     @file_interpolation_order.setter
-    def file_interpolation_order(self, fileInterpolationOrder:int) -> None:
-        return self._intf.set_property(CalculationToolScalarFile._metadata, CalculationToolScalarFile._set_file_interpolation_order_metadata, fileInterpolationOrder)
+    def file_interpolation_order(self, file_interpolation_order:int) -> None:
+        return self._intf.set_property(CalculationToolScalarFile._metadata, CalculationToolScalarFile._set_file_interpolation_order_metadata, file_interpolation_order)
 
     _get_use_native_file_interpolation_settings_metadata = { "offset" : _get_use_native_file_interpolation_settings_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -7235,20 +7235,20 @@ class CalculationToolScalarFile(ICalculationToolScalar, IAnalysisWorkbenchCompon
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @use_native_file_interpolation_settings.setter
-    def use_native_file_interpolation_settings(self, useNativeFileInterpolationSettings:bool) -> None:
-        return self._intf.set_property(CalculationToolScalarFile._metadata, CalculationToolScalarFile._set_use_native_file_interpolation_settings_metadata, useNativeFileInterpolationSettings)
+    def use_native_file_interpolation_settings(self, use_native_file_interpolation_settings:bool) -> None:
+        return self._intf.set_property(CalculationToolScalarFile._metadata, CalculationToolScalarFile._set_use_native_file_interpolation_settings_metadata, use_native_file_interpolation_settings)
 
     _property_names[filename] = "filename"
     _property_names[file_interpolation_type] = "file_interpolation_type"
     _property_names[file_interpolation_order] = "file_interpolation_order"
     _property_names[use_native_file_interpolation_settings] = "use_native_file_interpolation_settings"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolScalarFile."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolScalarFile)
-        ICalculationToolScalar.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolScalarFile)
+        ICalculationToolScalar.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
@@ -7292,8 +7292,8 @@ class CalculationToolScalarFixedAtTimeInstant(ICalculationToolScalar, IAnalysisW
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ICalculationToolScalar"),) }
     @input_scalar.setter
-    def input_scalar(self, inputScalar:"ICalculationToolScalar") -> None:
-        return self._intf.set_property(CalculationToolScalarFixedAtTimeInstant._metadata, CalculationToolScalarFixedAtTimeInstant._set_input_scalar_metadata, inputScalar)
+    def input_scalar(self, input_scalar:"ICalculationToolScalar") -> None:
+        return self._intf.set_property(CalculationToolScalarFixedAtTimeInstant._metadata, CalculationToolScalarFixedAtTimeInstant._set_input_scalar_metadata, input_scalar)
 
     _get_reference_time_instant_metadata = { "offset" : _get_reference_time_instant_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -7307,18 +7307,18 @@ class CalculationToolScalarFixedAtTimeInstant(ICalculationToolScalar, IAnalysisW
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ITimeToolInstant"),) }
     @reference_time_instant.setter
-    def reference_time_instant(self, referenceTimeInstant:"ITimeToolInstant") -> None:
-        return self._intf.set_property(CalculationToolScalarFixedAtTimeInstant._metadata, CalculationToolScalarFixedAtTimeInstant._set_reference_time_instant_metadata, referenceTimeInstant)
+    def reference_time_instant(self, reference_time_instant:"ITimeToolInstant") -> None:
+        return self._intf.set_property(CalculationToolScalarFixedAtTimeInstant._metadata, CalculationToolScalarFixedAtTimeInstant._set_reference_time_instant_metadata, reference_time_instant)
 
     _property_names[input_scalar] = "input_scalar"
     _property_names[reference_time_instant] = "reference_time_instant"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolScalarFixedAtTimeInstant."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolScalarFixedAtTimeInstant)
-        ICalculationToolScalar.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolScalarFixedAtTimeInstant)
+        ICalculationToolScalar.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
@@ -7389,8 +7389,8 @@ class CalculationToolScalarFunction(ICalculationToolScalar, IAnalysisWorkbenchCo
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @use_calculation_scalar.setter
-    def use_calculation_scalar(self, useScalar:bool) -> None:
-        return self._intf.set_property(CalculationToolScalarFunction._metadata, CalculationToolScalarFunction._set_use_calculation_scalar_metadata, useScalar)
+    def use_calculation_scalar(self, use_scalar:bool) -> None:
+        return self._intf.set_property(CalculationToolScalarFunction._metadata, CalculationToolScalarFunction._set_use_calculation_scalar_metadata, use_scalar)
 
     _get_input_scalar_metadata = { "offset" : _get_input_scalar_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -7404,8 +7404,8 @@ class CalculationToolScalarFunction(ICalculationToolScalar, IAnalysisWorkbenchCo
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ICalculationToolScalar"),) }
     @input_scalar.setter
-    def input_scalar(self, inputScalar:"ICalculationToolScalar") -> None:
-        return self._intf.set_property(CalculationToolScalarFunction._metadata, CalculationToolScalarFunction._set_input_scalar_metadata, inputScalar)
+    def input_scalar(self, input_scalar:"ICalculationToolScalar") -> None:
+        return self._intf.set_property(CalculationToolScalarFunction._metadata, CalculationToolScalarFunction._set_input_scalar_metadata, input_scalar)
 
     _get_input_time_metadata = { "offset" : _get_input_time_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -7419,8 +7419,8 @@ class CalculationToolScalarFunction(ICalculationToolScalar, IAnalysisWorkbenchCo
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ITimeToolInstant"),) }
     @input_time.setter
-    def input_time(self, inputTime:"ITimeToolInstant") -> None:
-        return self._intf.set_property(CalculationToolScalarFunction._metadata, CalculationToolScalarFunction._set_input_time_metadata, inputTime)
+    def input_time(self, input_time:"ITimeToolInstant") -> None:
+        return self._intf.set_property(CalculationToolScalarFunction._metadata, CalculationToolScalarFunction._set_input_time_metadata, input_time)
 
     _get_input_time_units_metadata = { "offset" : _get_input_time_units_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -7434,8 +7434,8 @@ class CalculationToolScalarFunction(ICalculationToolScalar, IAnalysisWorkbenchCo
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @input_time_units.setter
-    def input_time_units(self, inputUnit:str) -> None:
-        return self._intf.set_property(CalculationToolScalarFunction._metadata, CalculationToolScalarFunction._set_input_time_units_metadata, inputUnit)
+    def input_time_units(self, input_unit:str) -> None:
+        return self._intf.set_property(CalculationToolScalarFunction._metadata, CalculationToolScalarFunction._set_input_time_units_metadata, input_unit)
 
     _get_coefficient_a_metadata = { "offset" : _get_coefficient_a_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -7524,8 +7524,8 @@ class CalculationToolScalarFunction(ICalculationToolScalar, IAnalysisWorkbenchCo
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @selected_function.setter
-    def selected_function(self, selectedFunction:str) -> None:
-        return self._intf.set_property(CalculationToolScalarFunction._metadata, CalculationToolScalarFunction._set_selected_function_metadata, selectedFunction)
+    def selected_function(self, selected_function:str) -> None:
+        return self._intf.set_property(CalculationToolScalarFunction._metadata, CalculationToolScalarFunction._set_selected_function_metadata, selected_function)
 
     _get_available_functions_metadata = { "offset" : _get_available_functions_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
@@ -7547,8 +7547,8 @@ class CalculationToolScalarFunction(ICalculationToolScalar, IAnalysisWorkbenchCo
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @inherit_dimension_from_input.setter
-    def inherit_dimension_from_input(self, inheritDimensionFromInput:bool) -> None:
-        return self._intf.set_property(CalculationToolScalarFunction._metadata, CalculationToolScalarFunction._set_inherit_dimension_from_input_metadata, inheritDimensionFromInput)
+    def inherit_dimension_from_input(self, inherit_dimension_from_input:bool) -> None:
+        return self._intf.set_property(CalculationToolScalarFunction._metadata, CalculationToolScalarFunction._set_inherit_dimension_from_input_metadata, inherit_dimension_from_input)
 
     _get_output_dimension_metadata = { "offset" : _get_output_dimension_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -7562,8 +7562,8 @@ class CalculationToolScalarFunction(ICalculationToolScalar, IAnalysisWorkbenchCo
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @output_dimension.setter
-    def output_dimension(self, outputDimension:str) -> None:
-        return self._intf.set_property(CalculationToolScalarFunction._metadata, CalculationToolScalarFunction._set_output_dimension_metadata, outputDimension)
+    def output_dimension(self, output_dimension:str) -> None:
+        return self._intf.set_property(CalculationToolScalarFunction._metadata, CalculationToolScalarFunction._set_output_dimension_metadata, output_dimension)
 
     _get_output_units_metadata = { "offset" : _get_output_units_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -7577,8 +7577,8 @@ class CalculationToolScalarFunction(ICalculationToolScalar, IAnalysisWorkbenchCo
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @output_units.setter
-    def output_units(self, outputUnit:str) -> None:
-        return self._intf.set_property(CalculationToolScalarFunction._metadata, CalculationToolScalarFunction._set_output_units_metadata, outputUnit)
+    def output_units(self, output_unit:str) -> None:
+        return self._intf.set_property(CalculationToolScalarFunction._metadata, CalculationToolScalarFunction._set_output_units_metadata, output_unit)
 
     _get_sampling_metadata = { "offset" : _get_sampling_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -7627,12 +7627,12 @@ class CalculationToolScalarFunction(ICalculationToolScalar, IAnalysisWorkbenchCo
     _property_names[sampling] = "sampling"
     _property_names[convergence] = "convergence"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolScalarFunction."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolScalarFunction)
-        ICalculationToolScalar.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolScalarFunction)
+        ICalculationToolScalar.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
@@ -7710,8 +7710,8 @@ class CalculationToolScalarFunctionOf2Variables(ICalculationToolScalar, IAnalysi
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @units_x.setter
-    def units_x(self, unitX:str) -> None:
-        return self._intf.set_property(CalculationToolScalarFunctionOf2Variables._metadata, CalculationToolScalarFunctionOf2Variables._set_units_x_metadata, unitX)
+    def units_x(self, unit_x:str) -> None:
+        return self._intf.set_property(CalculationToolScalarFunctionOf2Variables._metadata, CalculationToolScalarFunctionOf2Variables._set_units_x_metadata, unit_x)
 
     _get_coefficient_a_metadata = { "offset" : _get_coefficient_a_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -7755,8 +7755,8 @@ class CalculationToolScalarFunctionOf2Variables(ICalculationToolScalar, IAnalysi
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @units_y.setter
-    def units_y(self, unitY:str) -> None:
-        return self._intf.set_property(CalculationToolScalarFunctionOf2Variables._metadata, CalculationToolScalarFunctionOf2Variables._set_units_y_metadata, unitY)
+    def units_y(self, unit_y:str) -> None:
+        return self._intf.set_property(CalculationToolScalarFunctionOf2Variables._metadata, CalculationToolScalarFunctionOf2Variables._set_units_y_metadata, unit_y)
 
     _get_coefficient_b_metadata = { "offset" : _get_coefficient_b_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -7800,8 +7800,8 @@ class CalculationToolScalarFunctionOf2Variables(ICalculationToolScalar, IAnalysi
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(INHERIT_DIMENSION_TYPE),) }
     @output_dimension_inheritance.setter
-    def output_dimension_inheritance(self, outputDimensionInheritance:"INHERIT_DIMENSION_TYPE") -> None:
-        return self._intf.set_property(CalculationToolScalarFunctionOf2Variables._metadata, CalculationToolScalarFunctionOf2Variables._set_output_dimension_inheritance_metadata, outputDimensionInheritance)
+    def output_dimension_inheritance(self, output_dimension_inheritance:"INHERIT_DIMENSION_TYPE") -> None:
+        return self._intf.set_property(CalculationToolScalarFunctionOf2Variables._metadata, CalculationToolScalarFunctionOf2Variables._set_output_dimension_inheritance_metadata, output_dimension_inheritance)
 
     _get_output_dimension_metadata = { "offset" : _get_output_dimension_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -7815,8 +7815,8 @@ class CalculationToolScalarFunctionOf2Variables(ICalculationToolScalar, IAnalysi
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @output_dimension.setter
-    def output_dimension(self, outputDimension:str) -> None:
-        return self._intf.set_property(CalculationToolScalarFunctionOf2Variables._metadata, CalculationToolScalarFunctionOf2Variables._set_output_dimension_metadata, outputDimension)
+    def output_dimension(self, output_dimension:str) -> None:
+        return self._intf.set_property(CalculationToolScalarFunctionOf2Variables._metadata, CalculationToolScalarFunctionOf2Variables._set_output_dimension_metadata, output_dimension)
 
     _get_available_functions_metadata = { "offset" : _get_available_functions_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
@@ -7838,8 +7838,8 @@ class CalculationToolScalarFunctionOf2Variables(ICalculationToolScalar, IAnalysi
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @selected_function.setter
-    def selected_function(self, selectedFunction:str) -> None:
-        return self._intf.set_property(CalculationToolScalarFunctionOf2Variables._metadata, CalculationToolScalarFunctionOf2Variables._set_selected_function_metadata, selectedFunction)
+    def selected_function(self, selected_function:str) -> None:
+        return self._intf.set_property(CalculationToolScalarFunctionOf2Variables._metadata, CalculationToolScalarFunctionOf2Variables._set_selected_function_metadata, selected_function)
 
     _get_output_units_metadata = { "offset" : _get_output_units_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -7853,8 +7853,8 @@ class CalculationToolScalarFunctionOf2Variables(ICalculationToolScalar, IAnalysi
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @output_units.setter
-    def output_units(self, outputUnit:str) -> None:
-        return self._intf.set_property(CalculationToolScalarFunctionOf2Variables._metadata, CalculationToolScalarFunctionOf2Variables._set_output_units_metadata, outputUnit)
+    def output_units(self, output_unit:str) -> None:
+        return self._intf.set_property(CalculationToolScalarFunctionOf2Variables._metadata, CalculationToolScalarFunctionOf2Variables._set_output_units_metadata, output_unit)
 
     _property_names[x] = "x"
     _property_names[units_x] = "units_x"
@@ -7869,12 +7869,12 @@ class CalculationToolScalarFunctionOf2Variables(ICalculationToolScalar, IAnalysi
     _property_names[selected_function] = "selected_function"
     _property_names[output_units] = "output_units"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolScalarFunctionOf2Variables."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolScalarFunctionOf2Variables)
-        ICalculationToolScalar.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolScalarFunctionOf2Variables)
+        ICalculationToolScalar.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
@@ -7939,8 +7939,8 @@ class CalculationToolScalarIntegral(ICalculationToolScalar, IAnalysisWorkbenchCo
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ICalculationToolScalar"),) }
     @input_scalar.setter
-    def input_scalar(self, inputScalar:"ICalculationToolScalar") -> None:
-        return self._intf.set_property(CalculationToolScalarIntegral._metadata, CalculationToolScalarIntegral._set_input_scalar_metadata, inputScalar)
+    def input_scalar(self, input_scalar:"ICalculationToolScalar") -> None:
+        return self._intf.set_property(CalculationToolScalarIntegral._metadata, CalculationToolScalarIntegral._set_input_scalar_metadata, input_scalar)
 
     _get_compute_as_average_metadata = { "offset" : _get_compute_as_average_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -7954,8 +7954,8 @@ class CalculationToolScalarIntegral(ICalculationToolScalar, IAnalysisWorkbenchCo
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @compute_as_average.setter
-    def compute_as_average(self, computeAsAverage:bool) -> None:
-        return self._intf.set_property(CalculationToolScalarIntegral._metadata, CalculationToolScalarIntegral._set_compute_as_average_metadata, computeAsAverage)
+    def compute_as_average(self, compute_as_average:bool) -> None:
+        return self._intf.set_property(CalculationToolScalarIntegral._metadata, CalculationToolScalarIntegral._set_compute_as_average_metadata, compute_as_average)
 
     _get_integration_window_type_metadata = { "offset" : _get_integration_window_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -7969,8 +7969,8 @@ class CalculationToolScalarIntegral(ICalculationToolScalar, IAnalysisWorkbenchCo
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(INTEGRATION_WINDOW_TYPE),) }
     @integration_window_type.setter
-    def integration_window_type(self, integrationWindowType:"INTEGRATION_WINDOW_TYPE") -> None:
-        return self._intf.set_property(CalculationToolScalarIntegral._metadata, CalculationToolScalarIntegral._set_integration_window_type_metadata, integrationWindowType)
+    def integration_window_type(self, integration_window_type:"INTEGRATION_WINDOW_TYPE") -> None:
+        return self._intf.set_property(CalculationToolScalarIntegral._metadata, CalculationToolScalarIntegral._set_integration_window_type_metadata, integration_window_type)
 
     _get_start_offset_metadata = { "offset" : _get_start_offset_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -7984,8 +7984,8 @@ class CalculationToolScalarIntegral(ICalculationToolScalar, IAnalysisWorkbenchCo
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @start_offset.setter
-    def start_offset(self, startOffset:float) -> None:
-        return self._intf.set_property(CalculationToolScalarIntegral._metadata, CalculationToolScalarIntegral._set_start_offset_metadata, startOffset)
+    def start_offset(self, start_offset:float) -> None:
+        return self._intf.set_property(CalculationToolScalarIntegral._metadata, CalculationToolScalarIntegral._set_start_offset_metadata, start_offset)
 
     _get_stop_offset_metadata = { "offset" : _get_stop_offset_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -7999,8 +7999,8 @@ class CalculationToolScalarIntegral(ICalculationToolScalar, IAnalysisWorkbenchCo
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @stop_offset.setter
-    def stop_offset(self, stopOffset:float) -> None:
-        return self._intf.set_property(CalculationToolScalarIntegral._metadata, CalculationToolScalarIntegral._set_stop_offset_metadata, stopOffset)
+    def stop_offset(self, stop_offset:float) -> None:
+        return self._intf.set_property(CalculationToolScalarIntegral._metadata, CalculationToolScalarIntegral._set_stop_offset_metadata, stop_offset)
 
     _get_use_custom_time_limits_metadata = { "offset" : _get_use_custom_time_limits_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -8014,8 +8014,8 @@ class CalculationToolScalarIntegral(ICalculationToolScalar, IAnalysisWorkbenchCo
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @use_custom_time_limits.setter
-    def use_custom_time_limits(self, useCustomTimeLimits:bool) -> None:
-        return self._intf.set_property(CalculationToolScalarIntegral._metadata, CalculationToolScalarIntegral._set_use_custom_time_limits_metadata, useCustomTimeLimits)
+    def use_custom_time_limits(self, use_custom_time_limits:bool) -> None:
+        return self._intf.set_property(CalculationToolScalarIntegral._metadata, CalculationToolScalarIntegral._set_use_custom_time_limits_metadata, use_custom_time_limits)
 
     _get_custom_time_limits_metadata = { "offset" : _get_custom_time_limits_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -8029,8 +8029,8 @@ class CalculationToolScalarIntegral(ICalculationToolScalar, IAnalysisWorkbenchCo
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ITimeToolTimeIntervalList"),) }
     @custom_time_limits.setter
-    def custom_time_limits(self, customTimeLimits:"ITimeToolTimeIntervalList") -> None:
-        return self._intf.set_property(CalculationToolScalarIntegral._metadata, CalculationToolScalarIntegral._set_custom_time_limits_metadata, customTimeLimits)
+    def custom_time_limits(self, custom_time_limits:"ITimeToolTimeIntervalList") -> None:
+        return self._intf.set_property(CalculationToolScalarIntegral._metadata, CalculationToolScalarIntegral._set_custom_time_limits_metadata, custom_time_limits)
 
     _get_save_data_option_metadata = { "offset" : _get_save_data_option_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -8044,8 +8044,8 @@ class CalculationToolScalarIntegral(ICalculationToolScalar, IAnalysisWorkbenchCo
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(SAVE_DATA_TYPE),) }
     @save_data_option.setter
-    def save_data_option(self, saveDataOption:"SAVE_DATA_TYPE") -> None:
-        return self._intf.set_property(CalculationToolScalarIntegral._metadata, CalculationToolScalarIntegral._set_save_data_option_metadata, saveDataOption)
+    def save_data_option(self, save_data_option:"SAVE_DATA_TYPE") -> None:
+        return self._intf.set_property(CalculationToolScalarIntegral._metadata, CalculationToolScalarIntegral._set_save_data_option_metadata, save_data_option)
 
     _get_interpolation_metadata = { "offset" : _get_interpolation_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -8104,15 +8104,15 @@ class CalculationToolScalarIntegral(ICalculationToolScalar, IAnalysisWorkbenchCo
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @keep_constant_outside_time_limits.setter
-    def keep_constant_outside_time_limits(self, keepConstantOutsideTimeLimits:bool) -> None:
-        return self._intf.set_property(CalculationToolScalarIntegral._metadata, CalculationToolScalarIntegral._set_keep_constant_outside_time_limits_metadata, keepConstantOutsideTimeLimits)
+    def keep_constant_outside_time_limits(self, keep_constant_outside_time_limits:bool) -> None:
+        return self._intf.set_property(CalculationToolScalarIntegral._metadata, CalculationToolScalarIntegral._set_keep_constant_outside_time_limits_metadata, keep_constant_outside_time_limits)
 
     _set_offsets_metadata = { "offset" : _set_offsets_method_offset,
             "arg_types" : (agcom.DOUBLE, agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg, agmarshall.DoubleArg,) }
-    def set_offsets(self, startOffset:float, stopOffset:float) -> None:
+    def set_offsets(self, start_offset:float, stop_offset:float) -> None:
         """Set the offsets with respect to current time to define the start and stop of the sliding window, used when IntegrationWindowType is set to Sliding Window."""
-        return self._intf.invoke(CalculationToolScalarIntegral._metadata, CalculationToolScalarIntegral._set_offsets_metadata, startOffset, stopOffset)
+        return self._intf.invoke(CalculationToolScalarIntegral._metadata, CalculationToolScalarIntegral._set_offsets_metadata, start_offset, stop_offset)
 
     _property_names[input_scalar] = "input_scalar"
     _property_names[compute_as_average] = "compute_as_average"
@@ -8127,12 +8127,12 @@ class CalculationToolScalarIntegral(ICalculationToolScalar, IAnalysisWorkbenchCo
     _property_names[integral] = "integral"
     _property_names[keep_constant_outside_time_limits] = "keep_constant_outside_time_limits"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolScalarIntegral."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolScalarIntegral)
-        ICalculationToolScalar.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolScalarIntegral)
+        ICalculationToolScalar.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
@@ -8215,12 +8215,12 @@ class CalculationToolScalarPlugin(ICalculationToolScalar, IAnalysisWorkbenchComp
     _property_names[display_name] = "display_name"
     _property_names[available_properties] = "available_properties"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolScalarPlugin."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolScalarPlugin)
-        ICalculationToolScalar.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolScalarPlugin)
+        ICalculationToolScalar.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
@@ -8264,8 +8264,8 @@ class CalculationToolScalarAlongTrajectory(ICalculationToolScalar, IAnalysisWork
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolPoint"),) }
     @trajectory_point.setter
-    def trajectory_point(self, trajectoryPoint:"IVectorGeometryToolPoint") -> None:
-        return self._intf.set_property(CalculationToolScalarAlongTrajectory._metadata, CalculationToolScalarAlongTrajectory._set_trajectory_point_metadata, trajectoryPoint)
+    def trajectory_point(self, trajectory_point:"IVectorGeometryToolPoint") -> None:
+        return self._intf.set_property(CalculationToolScalarAlongTrajectory._metadata, CalculationToolScalarAlongTrajectory._set_trajectory_point_metadata, trajectory_point)
 
     _get_spatial_calculation_metadata = { "offset" : _get_spatial_calculation_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -8279,18 +8279,18 @@ class CalculationToolScalarAlongTrajectory(ICalculationToolScalar, IAnalysisWork
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ISpatialAnalysisToolSpatialCalculation"),) }
     @spatial_calculation.setter
-    def spatial_calculation(self, spatialCalculation:"ISpatialAnalysisToolSpatialCalculation") -> None:
-        return self._intf.set_property(CalculationToolScalarAlongTrajectory._metadata, CalculationToolScalarAlongTrajectory._set_spatial_calculation_metadata, spatialCalculation)
+    def spatial_calculation(self, spatial_calculation:"ISpatialAnalysisToolSpatialCalculation") -> None:
+        return self._intf.set_property(CalculationToolScalarAlongTrajectory._metadata, CalculationToolScalarAlongTrajectory._set_spatial_calculation_metadata, spatial_calculation)
 
     _property_names[trajectory_point] = "trajectory_point"
     _property_names[spatial_calculation] = "spatial_calculation"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolScalarAlongTrajectory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolScalarAlongTrajectory)
-        ICalculationToolScalar.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolScalarAlongTrajectory)
+        ICalculationToolScalar.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
@@ -8355,8 +8355,8 @@ class CalculationToolScalarStandardDeviation(ICalculationToolScalar, IAnalysisWo
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ICalculationToolScalar"),) }
     @input_scalar.setter
-    def input_scalar(self, inputScalar:"ICalculationToolScalar") -> None:
-        return self._intf.set_property(CalculationToolScalarStandardDeviation._metadata, CalculationToolScalarStandardDeviation._set_input_scalar_metadata, inputScalar)
+    def input_scalar(self, input_scalar:"ICalculationToolScalar") -> None:
+        return self._intf.set_property(CalculationToolScalarStandardDeviation._metadata, CalculationToolScalarStandardDeviation._set_input_scalar_metadata, input_scalar)
 
     _get_compute_as_average_metadata = { "offset" : _get_compute_as_average_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -8370,8 +8370,8 @@ class CalculationToolScalarStandardDeviation(ICalculationToolScalar, IAnalysisWo
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @compute_as_average.setter
-    def compute_as_average(self, computeAsAverage:bool) -> None:
-        return self._intf.set_property(CalculationToolScalarStandardDeviation._metadata, CalculationToolScalarStandardDeviation._set_compute_as_average_metadata, computeAsAverage)
+    def compute_as_average(self, compute_as_average:bool) -> None:
+        return self._intf.set_property(CalculationToolScalarStandardDeviation._metadata, CalculationToolScalarStandardDeviation._set_compute_as_average_metadata, compute_as_average)
 
     _get_integration_window_type_metadata = { "offset" : _get_integration_window_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -8385,8 +8385,8 @@ class CalculationToolScalarStandardDeviation(ICalculationToolScalar, IAnalysisWo
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(INTEGRATION_WINDOW_TYPE),) }
     @integration_window_type.setter
-    def integration_window_type(self, integrationWindowType:"INTEGRATION_WINDOW_TYPE") -> None:
-        return self._intf.set_property(CalculationToolScalarStandardDeviation._metadata, CalculationToolScalarStandardDeviation._set_integration_window_type_metadata, integrationWindowType)
+    def integration_window_type(self, integration_window_type:"INTEGRATION_WINDOW_TYPE") -> None:
+        return self._intf.set_property(CalculationToolScalarStandardDeviation._metadata, CalculationToolScalarStandardDeviation._set_integration_window_type_metadata, integration_window_type)
 
     _get_start_offset_metadata = { "offset" : _get_start_offset_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -8400,8 +8400,8 @@ class CalculationToolScalarStandardDeviation(ICalculationToolScalar, IAnalysisWo
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @start_offset.setter
-    def start_offset(self, startOffset:float) -> None:
-        return self._intf.set_property(CalculationToolScalarStandardDeviation._metadata, CalculationToolScalarStandardDeviation._set_start_offset_metadata, startOffset)
+    def start_offset(self, start_offset:float) -> None:
+        return self._intf.set_property(CalculationToolScalarStandardDeviation._metadata, CalculationToolScalarStandardDeviation._set_start_offset_metadata, start_offset)
 
     _get_stop_offset_metadata = { "offset" : _get_stop_offset_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -8415,8 +8415,8 @@ class CalculationToolScalarStandardDeviation(ICalculationToolScalar, IAnalysisWo
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @stop_offset.setter
-    def stop_offset(self, stopOffset:float) -> None:
-        return self._intf.set_property(CalculationToolScalarStandardDeviation._metadata, CalculationToolScalarStandardDeviation._set_stop_offset_metadata, stopOffset)
+    def stop_offset(self, stop_offset:float) -> None:
+        return self._intf.set_property(CalculationToolScalarStandardDeviation._metadata, CalculationToolScalarStandardDeviation._set_stop_offset_metadata, stop_offset)
 
     _get_use_custom_time_limits_metadata = { "offset" : _get_use_custom_time_limits_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -8430,8 +8430,8 @@ class CalculationToolScalarStandardDeviation(ICalculationToolScalar, IAnalysisWo
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @use_custom_time_limits.setter
-    def use_custom_time_limits(self, useCustomTimeLimits:bool) -> None:
-        return self._intf.set_property(CalculationToolScalarStandardDeviation._metadata, CalculationToolScalarStandardDeviation._set_use_custom_time_limits_metadata, useCustomTimeLimits)
+    def use_custom_time_limits(self, use_custom_time_limits:bool) -> None:
+        return self._intf.set_property(CalculationToolScalarStandardDeviation._metadata, CalculationToolScalarStandardDeviation._set_use_custom_time_limits_metadata, use_custom_time_limits)
 
     _get_custom_time_limits_metadata = { "offset" : _get_custom_time_limits_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -8445,8 +8445,8 @@ class CalculationToolScalarStandardDeviation(ICalculationToolScalar, IAnalysisWo
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ITimeToolTimeIntervalList"),) }
     @custom_time_limits.setter
-    def custom_time_limits(self, customTimeLimits:"ITimeToolTimeIntervalList") -> None:
-        return self._intf.set_property(CalculationToolScalarStandardDeviation._metadata, CalculationToolScalarStandardDeviation._set_custom_time_limits_metadata, customTimeLimits)
+    def custom_time_limits(self, custom_time_limits:"ITimeToolTimeIntervalList") -> None:
+        return self._intf.set_property(CalculationToolScalarStandardDeviation._metadata, CalculationToolScalarStandardDeviation._set_custom_time_limits_metadata, custom_time_limits)
 
     _get_save_data_option_metadata = { "offset" : _get_save_data_option_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -8460,8 +8460,8 @@ class CalculationToolScalarStandardDeviation(ICalculationToolScalar, IAnalysisWo
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(SAVE_DATA_TYPE),) }
     @save_data_option.setter
-    def save_data_option(self, saveDataOption:"SAVE_DATA_TYPE") -> None:
-        return self._intf.set_property(CalculationToolScalarStandardDeviation._metadata, CalculationToolScalarStandardDeviation._set_save_data_option_metadata, saveDataOption)
+    def save_data_option(self, save_data_option:"SAVE_DATA_TYPE") -> None:
+        return self._intf.set_property(CalculationToolScalarStandardDeviation._metadata, CalculationToolScalarStandardDeviation._set_save_data_option_metadata, save_data_option)
 
     _get_interpolation_metadata = { "offset" : _get_interpolation_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -8520,15 +8520,15 @@ class CalculationToolScalarStandardDeviation(ICalculationToolScalar, IAnalysisWo
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @keep_constant_outside_time_limits.setter
-    def keep_constant_outside_time_limits(self, keepConstantOutsideTimeLimits:bool) -> None:
-        return self._intf.set_property(CalculationToolScalarStandardDeviation._metadata, CalculationToolScalarStandardDeviation._set_keep_constant_outside_time_limits_metadata, keepConstantOutsideTimeLimits)
+    def keep_constant_outside_time_limits(self, keep_constant_outside_time_limits:bool) -> None:
+        return self._intf.set_property(CalculationToolScalarStandardDeviation._metadata, CalculationToolScalarStandardDeviation._set_keep_constant_outside_time_limits_metadata, keep_constant_outside_time_limits)
 
     _set_offsets_metadata = { "offset" : _set_offsets_method_offset,
             "arg_types" : (agcom.DOUBLE, agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg, agmarshall.DoubleArg,) }
-    def set_offsets(self, startOffset:float, stopOffset:float) -> None:
+    def set_offsets(self, start_offset:float, stop_offset:float) -> None:
         """Set the offsets with respect to current time to define the start and stop of the sliding window, used when IntegrationWindowType is set to Sliding Window."""
-        return self._intf.invoke(CalculationToolScalarStandardDeviation._metadata, CalculationToolScalarStandardDeviation._set_offsets_metadata, startOffset, stopOffset)
+        return self._intf.invoke(CalculationToolScalarStandardDeviation._metadata, CalculationToolScalarStandardDeviation._set_offsets_metadata, start_offset, stop_offset)
 
     _property_names[input_scalar] = "input_scalar"
     _property_names[compute_as_average] = "compute_as_average"
@@ -8543,12 +8543,12 @@ class CalculationToolScalarStandardDeviation(ICalculationToolScalar, IAnalysisWo
     _property_names[integral] = "integral"
     _property_names[keep_constant_outside_time_limits] = "keep_constant_outside_time_limits"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolScalarStandardDeviation."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolScalarStandardDeviation)
-        ICalculationToolScalar.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolScalarStandardDeviation)
+        ICalculationToolScalar.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
@@ -8626,8 +8626,8 @@ class CalculationToolScalarSurfaceDistanceBetweenPoints(ICalculationToolScalar, 
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @surface_central_body.setter
-    def surface_central_body(self, surfaceCentralBody:str) -> None:
-        return self._intf.set_property(CalculationToolScalarSurfaceDistanceBetweenPoints._metadata, CalculationToolScalarSurfaceDistanceBetweenPoints._set_surface_central_body_metadata, surfaceCentralBody)
+    def surface_central_body(self, surface_central_body:str) -> None:
+        return self._intf.set_property(CalculationToolScalarSurfaceDistanceBetweenPoints._metadata, CalculationToolScalarSurfaceDistanceBetweenPoints._set_surface_central_body_metadata, surface_central_body)
 
     _get_differencing_time_step_metadata = { "offset" : _get_differencing_time_step_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -8641,20 +8641,20 @@ class CalculationToolScalarSurfaceDistanceBetweenPoints(ICalculationToolScalar, 
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @differencing_time_step.setter
-    def differencing_time_step(self, differencingTimeStep:float) -> None:
-        return self._intf.set_property(CalculationToolScalarSurfaceDistanceBetweenPoints._metadata, CalculationToolScalarSurfaceDistanceBetweenPoints._set_differencing_time_step_metadata, differencingTimeStep)
+    def differencing_time_step(self, differencing_time_step:float) -> None:
+        return self._intf.set_property(CalculationToolScalarSurfaceDistanceBetweenPoints._metadata, CalculationToolScalarSurfaceDistanceBetweenPoints._set_differencing_time_step_metadata, differencing_time_step)
 
     _property_names[point_1] = "point_1"
     _property_names[point_2] = "point_2"
     _property_names[surface_central_body] = "surface_central_body"
     _property_names[differencing_time_step] = "differencing_time_step"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolScalarSurfaceDistanceBetweenPoints."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolScalarSurfaceDistanceBetweenPoints)
-        ICalculationToolScalar.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolScalarSurfaceDistanceBetweenPoints)
+        ICalculationToolScalar.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
@@ -8700,8 +8700,8 @@ class CalculationToolScalarVectorComponent(ICalculationToolScalar, IAnalysisWork
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolVector"),) }
     @input_vector.setter
-    def input_vector(self, inputVector:"IVectorGeometryToolVector") -> None:
-        return self._intf.set_property(CalculationToolScalarVectorComponent._metadata, CalculationToolScalarVectorComponent._set_input_vector_metadata, inputVector)
+    def input_vector(self, input_vector:"IVectorGeometryToolVector") -> None:
+        return self._intf.set_property(CalculationToolScalarVectorComponent._metadata, CalculationToolScalarVectorComponent._set_input_vector_metadata, input_vector)
 
     _get_reference_axes_metadata = { "offset" : _get_reference_axes_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -8715,8 +8715,8 @@ class CalculationToolScalarVectorComponent(ICalculationToolScalar, IAnalysisWork
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolAxes"),) }
     @reference_axes.setter
-    def reference_axes(self, referenceAxes:"IVectorGeometryToolAxes") -> None:
-        return self._intf.set_property(CalculationToolScalarVectorComponent._metadata, CalculationToolScalarVectorComponent._set_reference_axes_metadata, referenceAxes)
+    def reference_axes(self, reference_axes:"IVectorGeometryToolAxes") -> None:
+        return self._intf.set_property(CalculationToolScalarVectorComponent._metadata, CalculationToolScalarVectorComponent._set_reference_axes_metadata, reference_axes)
 
     _get_component_metadata = { "offset" : _get_component_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -8737,12 +8737,12 @@ class CalculationToolScalarVectorComponent(ICalculationToolScalar, IAnalysisWork
     _property_names[reference_axes] = "reference_axes"
     _property_names[component] = "component"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolScalarVectorComponent."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolScalarVectorComponent)
-        ICalculationToolScalar.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolScalarVectorComponent)
+        ICalculationToolScalar.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
@@ -8784,17 +8784,17 @@ class CalculationToolScalarVectorMagnitude(ICalculationToolScalar, IAnalysisWork
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolVector"),) }
     @input_vector.setter
-    def input_vector(self, inputVector:"IVectorGeometryToolVector") -> None:
-        return self._intf.set_property(CalculationToolScalarVectorMagnitude._metadata, CalculationToolScalarVectorMagnitude._set_input_vector_metadata, inputVector)
+    def input_vector(self, input_vector:"IVectorGeometryToolVector") -> None:
+        return self._intf.set_property(CalculationToolScalarVectorMagnitude._metadata, CalculationToolScalarVectorMagnitude._set_input_vector_metadata, input_vector)
 
     _property_names[input_vector] = "input_vector"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolScalarVectorMagnitude."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolScalarVectorMagnitude)
-        ICalculationToolScalar.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolScalarVectorMagnitude)
+        ICalculationToolScalar.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolScalar._private_init(self, intf)
@@ -8811,11 +8811,11 @@ agcls.AgTypeNameMap["CalculationToolScalarVectorMagnitude"] = CalculationToolSca
 
 class CalculationToolCondition(ICalculationToolCondition, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Condition returns a non-dimensional metric that is positive if satisfied, negative if not satisfied and 0 if on boundary; this provides computational methods needed for accurate detection of condition crossings."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolCondition."""
         SupportsDeleteCallback.__init__(self)
-        ICalculationToolCondition.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        ICalculationToolCondition.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolCondition._private_init(self, intf)
@@ -8864,8 +8864,8 @@ class CalculationToolConditionCombined(ICalculationToolCondition, IAnalysisWorkb
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(CONDITION_COMBINED_OPERATION_TYPE),) }
     @boolean_operation.setter
-    def boolean_operation(self, combineOperation:"CONDITION_COMBINED_OPERATION_TYPE") -> None:
-        return self._intf.set_property(CalculationToolConditionCombined._metadata, CalculationToolConditionCombined._set_boolean_operation_metadata, combineOperation)
+    def boolean_operation(self, combine_operation:"CONDITION_COMBINED_OPERATION_TYPE") -> None:
+        return self._intf.set_property(CalculationToolConditionCombined._metadata, CalculationToolConditionCombined._set_boolean_operation_metadata, combine_operation)
 
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.INT),),
@@ -8920,12 +8920,12 @@ class CalculationToolConditionCombined(ICalculationToolCondition, IAnalysisWorkb
     _property_names[boolean_operation] = "boolean_operation"
     _property_names[count] = "count"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolConditionCombined."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolConditionCombined)
-        ICalculationToolCondition.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolConditionCombined)
+        ICalculationToolCondition.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolCondition._private_init(self, intf)
@@ -8975,9 +8975,9 @@ class CalculationToolConditionFactory(SupportsDeleteCallback):
     _is_type_supported_metadata = { "offset" : _is_type_supported_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.EnumArg(CONDITION_TYPE), agmarshall.VariantBoolArg,) }
-    def is_type_supported(self, eType:"CONDITION_TYPE") -> bool:
+    def is_type_supported(self, type:"CONDITION_TYPE") -> bool:
         """Return whether the specified type is supported."""
-        return self._intf.invoke(CalculationToolConditionFactory._metadata, CalculationToolConditionFactory._is_type_supported_metadata, eType, OutArg())
+        return self._intf.invoke(CalculationToolConditionFactory._metadata, CalculationToolConditionFactory._is_type_supported_metadata, type, OutArg())
 
     _create_combined_metadata = { "offset" : _create_combined_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
@@ -8994,10 +8994,10 @@ class CalculationToolConditionFactory(SupportsDeleteCallback):
         return self._intf.invoke(CalculationToolConditionFactory._metadata, CalculationToolConditionFactory._create_trajectory_within_volume_metadata, name, description, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolConditionFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolConditionFactory)
+        initialize_from_source_object(self, source_object, CalculationToolConditionFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -9060,12 +9060,12 @@ class CalculationToolConditionTrajectoryWithinVolume(ICalculationToolCondition, 
     _property_names[point] = "point"
     _property_names[constraint] = "constraint"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolConditionTrajectoryWithinVolume."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolConditionTrajectoryWithinVolume)
-        ICalculationToolCondition.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolConditionTrajectoryWithinVolume)
+        ICalculationToolCondition.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolCondition._private_init(self, intf)
@@ -9210,12 +9210,12 @@ class CalculationToolConditionScalarBounds(ICalculationToolCondition, IAnalysisW
     _property_names[scalar] = "scalar"
     _property_names[operation] = "operation"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolConditionScalarBounds."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolConditionScalarBounds)
-        ICalculationToolCondition.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolConditionScalarBounds)
+        ICalculationToolCondition.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolCondition._private_init(self, intf)
@@ -9232,11 +9232,11 @@ agcls.AgTypeNameMap["CalculationToolConditionScalarBounds"] = CalculationToolCon
 
 class CalculationToolConditionSet(ICalculationToolConditionSet, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Condition set returns an array of non-dimensional metrics, one for each condition in the set; each metric is positive if corresponding condition is satisfied, negative if not satisfied and 0 if on boundary; this provides computational methods needed for..."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolConditionSet."""
         SupportsDeleteCallback.__init__(self)
-        ICalculationToolConditionSet.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        ICalculationToolConditionSet.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolConditionSet._private_init(self, intf)
@@ -9284,15 +9284,15 @@ class CalculationToolConditionSetFactory(SupportsDeleteCallback):
     _is_type_supported_metadata = { "offset" : _is_type_supported_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.EnumArg(CONDITION_SET_TYPE), agmarshall.VariantBoolArg,) }
-    def is_type_supported(self, eType:"CONDITION_SET_TYPE") -> bool:
+    def is_type_supported(self, type:"CONDITION_SET_TYPE") -> bool:
         """Return whether the specified type is supported."""
-        return self._intf.invoke(CalculationToolConditionSetFactory._metadata, CalculationToolConditionSetFactory._is_type_supported_metadata, eType, OutArg())
+        return self._intf.invoke(CalculationToolConditionSetFactory._metadata, CalculationToolConditionSetFactory._is_type_supported_metadata, type, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolConditionSetFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolConditionSetFactory)
+        initialize_from_source_object(self, source_object, CalculationToolConditionSetFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -9370,8 +9370,8 @@ class CalculationToolConditionSetScalarThresholds(ICalculationToolConditionSet, 
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @include_above_highest_threshold.setter
-    def include_above_highest_threshold(self, includeAboveHighestThreshold:bool) -> None:
-        return self._intf.set_property(CalculationToolConditionSetScalarThresholds._metadata, CalculationToolConditionSetScalarThresholds._set_include_above_highest_threshold_metadata, includeAboveHighestThreshold)
+    def include_above_highest_threshold(self, include_above_highest_threshold:bool) -> None:
+        return self._intf.set_property(CalculationToolConditionSetScalarThresholds._metadata, CalculationToolConditionSetScalarThresholds._set_include_above_highest_threshold_metadata, include_above_highest_threshold)
 
     _get_include_below_lowest_threshold_metadata = { "offset" : _get_include_below_lowest_threshold_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -9385,15 +9385,15 @@ class CalculationToolConditionSetScalarThresholds(ICalculationToolConditionSet, 
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @include_below_lowest_threshold.setter
-    def include_below_lowest_threshold(self, includeBelowLowestThreshold:bool) -> None:
-        return self._intf.set_property(CalculationToolConditionSetScalarThresholds._metadata, CalculationToolConditionSetScalarThresholds._set_include_below_lowest_threshold_metadata, includeBelowLowestThreshold)
+    def include_below_lowest_threshold(self, include_below_lowest_threshold:bool) -> None:
+        return self._intf.set_property(CalculationToolConditionSetScalarThresholds._metadata, CalculationToolConditionSetScalarThresholds._set_include_below_lowest_threshold_metadata, include_below_lowest_threshold)
 
     _set_thresholds_and_labels_metadata = { "offset" : _set_thresholds_and_labels_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg,) }
-    def set_thresholds_and_labels(self, thresholds:list, thresholdLabels:list) -> None:
+    def set_thresholds_and_labels(self, thresholds:list, threshold_labels:list) -> None:
         """Set thresholds and threshold labels."""
-        return self._intf.invoke(CalculationToolConditionSetScalarThresholds._metadata, CalculationToolConditionSetScalarThresholds._set_thresholds_and_labels_metadata, thresholds, thresholdLabels)
+        return self._intf.invoke(CalculationToolConditionSetScalarThresholds._metadata, CalculationToolConditionSetScalarThresholds._set_thresholds_and_labels_metadata, thresholds, threshold_labels)
 
     _property_names[scalar] = "scalar"
     _property_names[thresholds] = "thresholds"
@@ -9401,12 +9401,12 @@ class CalculationToolConditionSetScalarThresholds(ICalculationToolConditionSet, 
     _property_names[include_above_highest_threshold] = "include_above_highest_threshold"
     _property_names[include_below_lowest_threshold] = "include_below_lowest_threshold"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolConditionSetScalarThresholds."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolConditionSetScalarThresholds)
-        ICalculationToolConditionSet.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolConditionSetScalarThresholds)
+        ICalculationToolConditionSet.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolConditionSet._private_init(self, intf)
@@ -9423,11 +9423,11 @@ agcls.AgTypeNameMap["CalculationToolConditionSetScalarThresholds"] = Calculation
 
 class AnalysisWorkbenchConvergence(IAnalysisWorkbenchConvergence, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Represents a base class for convergence definitions."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchConvergence."""
         SupportsDeleteCallback.__init__(self)
-        IAnalysisWorkbenchConvergence.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchConvergence.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchConvergence._private_init(self, intf)
@@ -9490,8 +9490,8 @@ class CalculationToolConvergeBasic(IAnalysisWorkbenchConvergence, IAnalysisWorkb
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @time_tolerance.setter
-    def time_tolerance(self, timeTolerance:float) -> None:
-        return self._intf.set_property(CalculationToolConvergeBasic._metadata, CalculationToolConvergeBasic._set_time_tolerance_metadata, timeTolerance)
+    def time_tolerance(self, time_tolerance:float) -> None:
+        return self._intf.set_property(CalculationToolConvergeBasic._metadata, CalculationToolConvergeBasic._set_time_tolerance_metadata, time_tolerance)
 
     _get_absolute_tolerance_metadata = { "offset" : _get_absolute_tolerance_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -9505,8 +9505,8 @@ class CalculationToolConvergeBasic(IAnalysisWorkbenchConvergence, IAnalysisWorkb
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @absolute_tolerance.setter
-    def absolute_tolerance(self, absoluteTolerance:float) -> None:
-        return self._intf.set_property(CalculationToolConvergeBasic._metadata, CalculationToolConvergeBasic._set_absolute_tolerance_metadata, absoluteTolerance)
+    def absolute_tolerance(self, absolute_tolerance:float) -> None:
+        return self._intf.set_property(CalculationToolConvergeBasic._metadata, CalculationToolConvergeBasic._set_absolute_tolerance_metadata, absolute_tolerance)
 
     _get_relative_tolerance_metadata = { "offset" : _get_relative_tolerance_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -9520,20 +9520,20 @@ class CalculationToolConvergeBasic(IAnalysisWorkbenchConvergence, IAnalysisWorkb
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @relative_tolerance.setter
-    def relative_tolerance(self, relativeTolerance:float) -> None:
-        return self._intf.set_property(CalculationToolConvergeBasic._metadata, CalculationToolConvergeBasic._set_relative_tolerance_metadata, relativeTolerance)
+    def relative_tolerance(self, relative_tolerance:float) -> None:
+        return self._intf.set_property(CalculationToolConvergeBasic._metadata, CalculationToolConvergeBasic._set_relative_tolerance_metadata, relative_tolerance)
 
     _property_names[sense] = "sense"
     _property_names[time_tolerance] = "time_tolerance"
     _property_names[absolute_tolerance] = "absolute_tolerance"
     _property_names[relative_tolerance] = "relative_tolerance"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolConvergeBasic."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolConvergeBasic)
-        IAnalysisWorkbenchConvergence.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolConvergeBasic)
+        IAnalysisWorkbenchConvergence.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchConvergence._private_init(self, intf)
@@ -9550,11 +9550,11 @@ agcls.AgTypeNameMap["CalculationToolConvergeBasic"] = CalculationToolConvergeBas
 
 class AnalysisWorkbenchDerivative(IAnalysisWorkbenchDerivative, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Represents a base class for derivative definitions."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchDerivative."""
         SupportsDeleteCallback.__init__(self)
-        IAnalysisWorkbenchDerivative.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchDerivative.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchDerivative._private_init(self, intf)
@@ -9596,17 +9596,17 @@ class CalculationToolDerivativeBasic(IAnalysisWorkbenchDerivative, IAnalysisWork
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @time_step.setter
-    def time_step(self, timeStep:float) -> None:
-        return self._intf.set_property(CalculationToolDerivativeBasic._metadata, CalculationToolDerivativeBasic._set_time_step_metadata, timeStep)
+    def time_step(self, time_step:float) -> None:
+        return self._intf.set_property(CalculationToolDerivativeBasic._metadata, CalculationToolDerivativeBasic._set_time_step_metadata, time_step)
 
     _property_names[time_step] = "time_step"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolDerivativeBasic."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolDerivativeBasic)
-        IAnalysisWorkbenchDerivative.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolDerivativeBasic)
+        IAnalysisWorkbenchDerivative.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchDerivative._private_init(self, intf)
@@ -9623,11 +9623,11 @@ agcls.AgTypeNameMap["CalculationToolDerivativeBasic"] = CalculationToolDerivativ
 
 class TimeToolInstant(ITimeToolInstant, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Define an event (time instant)."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolInstant."""
         SupportsDeleteCallback.__init__(self)
-        ITimeToolInstant.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        ITimeToolInstant.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolInstant._private_init(self, intf)
@@ -9644,11 +9644,11 @@ agcls.AgTypeNameMap["TimeToolInstant"] = TimeToolInstant
 
 class TimeToolTimeArray(ITimeToolTimeArray, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """An ordered array of times, which may or may not be evenly spaced."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeArray."""
         SupportsDeleteCallback.__init__(self)
-        ITimeToolTimeArray.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        ITimeToolTimeArray.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeArray._private_init(self, intf)
@@ -9702,8 +9702,8 @@ class TimeToolTimeArrayConditionCrossings(ITimeToolTimeArray, IAnalysisWorkbench
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(SATISFACTION_CROSSING),) }
     @satisfaction_crossing.setter
-    def satisfaction_crossing(self, satisfactionCrossing:"SATISFACTION_CROSSING") -> None:
-        return self._intf.set_property(TimeToolTimeArrayConditionCrossings._metadata, TimeToolTimeArrayConditionCrossings._set_satisfaction_crossing_metadata, satisfactionCrossing)
+    def satisfaction_crossing(self, satisfaction_crossing:"SATISFACTION_CROSSING") -> None:
+        return self._intf.set_property(TimeToolTimeArrayConditionCrossings._metadata, TimeToolTimeArrayConditionCrossings._set_satisfaction_crossing_metadata, satisfaction_crossing)
 
     _get_condition_metadata = { "offset" : _get_condition_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -9732,8 +9732,8 @@ class TimeToolTimeArrayConditionCrossings(ITimeToolTimeArray, IAnalysisWorkbench
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ITimeToolTimeIntervalList"),) }
     @custom_time_limits.setter
-    def custom_time_limits(self, customTimeLimits:"ITimeToolTimeIntervalList") -> None:
-        return self._intf.set_property(TimeToolTimeArrayConditionCrossings._metadata, TimeToolTimeArrayConditionCrossings._set_custom_time_limits_metadata, customTimeLimits)
+    def custom_time_limits(self, custom_time_limits:"ITimeToolTimeIntervalList") -> None:
+        return self._intf.set_property(TimeToolTimeArrayConditionCrossings._metadata, TimeToolTimeArrayConditionCrossings._set_custom_time_limits_metadata, custom_time_limits)
 
     _get_use_custom_time_limits_metadata = { "offset" : _get_use_custom_time_limits_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -9747,8 +9747,8 @@ class TimeToolTimeArrayConditionCrossings(ITimeToolTimeArray, IAnalysisWorkbench
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @use_custom_time_limits.setter
-    def use_custom_time_limits(self, useCustomTimeLimits:bool) -> None:
-        return self._intf.set_property(TimeToolTimeArrayConditionCrossings._metadata, TimeToolTimeArrayConditionCrossings._set_use_custom_time_limits_metadata, useCustomTimeLimits)
+    def use_custom_time_limits(self, use_custom_time_limits:bool) -> None:
+        return self._intf.set_property(TimeToolTimeArrayConditionCrossings._metadata, TimeToolTimeArrayConditionCrossings._set_use_custom_time_limits_metadata, use_custom_time_limits)
 
     _get_save_data_option_metadata = { "offset" : _get_save_data_option_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -9762,8 +9762,8 @@ class TimeToolTimeArrayConditionCrossings(ITimeToolTimeArray, IAnalysisWorkbench
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(SAVE_DATA_TYPE),) }
     @save_data_option.setter
-    def save_data_option(self, saveDataOption:"SAVE_DATA_TYPE") -> None:
-        return self._intf.set_property(TimeToolTimeArrayConditionCrossings._metadata, TimeToolTimeArrayConditionCrossings._set_save_data_option_metadata, saveDataOption)
+    def save_data_option(self, save_data_option:"SAVE_DATA_TYPE") -> None:
+        return self._intf.set_property(TimeToolTimeArrayConditionCrossings._metadata, TimeToolTimeArrayConditionCrossings._set_save_data_option_metadata, save_data_option)
 
     _get_sampling_metadata = { "offset" : _get_sampling_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -9803,12 +9803,12 @@ class TimeToolTimeArrayConditionCrossings(ITimeToolTimeArray, IAnalysisWorkbench
     _property_names[sampling] = "sampling"
     _property_names[convergence] = "convergence"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeArrayConditionCrossings."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeArrayConditionCrossings)
-        ITimeToolTimeArray.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeArrayConditionCrossings)
+        ITimeToolTimeArray.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeArray._private_init(self, intf)
@@ -9864,8 +9864,8 @@ class TimeToolTimeArrayExtrema(ITimeToolTimeArray, IAnalysisWorkbenchComponent, 
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(EXTREMUM_TYPE),) }
     @extremum_type.setter
-    def extremum_type(self, extremumType:"EXTREMUM_TYPE") -> None:
-        return self._intf.set_property(TimeToolTimeArrayExtrema._metadata, TimeToolTimeArrayExtrema._set_extremum_type_metadata, extremumType)
+    def extremum_type(self, extremum_type:"EXTREMUM_TYPE") -> None:
+        return self._intf.set_property(TimeToolTimeArrayExtrema._metadata, TimeToolTimeArrayExtrema._set_extremum_type_metadata, extremum_type)
 
     _get_is_global_metadata = { "offset" : _get_is_global_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -9879,8 +9879,8 @@ class TimeToolTimeArrayExtrema(ITimeToolTimeArray, IAnalysisWorkbenchComponent, 
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @is_global.setter
-    def is_global(self, isGlobal:bool) -> None:
-        return self._intf.set_property(TimeToolTimeArrayExtrema._metadata, TimeToolTimeArrayExtrema._set_is_global_metadata, isGlobal)
+    def is_global(self, is_global:bool) -> None:
+        return self._intf.set_property(TimeToolTimeArrayExtrema._metadata, TimeToolTimeArrayExtrema._set_is_global_metadata, is_global)
 
     _get_calculation_scalar_metadata = { "offset" : _get_calculation_scalar_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -9909,8 +9909,8 @@ class TimeToolTimeArrayExtrema(ITimeToolTimeArray, IAnalysisWorkbenchComponent, 
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ITimeToolTimeIntervalList"),) }
     @custom_time_limits.setter
-    def custom_time_limits(self, customTimeLimits:"ITimeToolTimeIntervalList") -> None:
-        return self._intf.set_property(TimeToolTimeArrayExtrema._metadata, TimeToolTimeArrayExtrema._set_custom_time_limits_metadata, customTimeLimits)
+    def custom_time_limits(self, custom_time_limits:"ITimeToolTimeIntervalList") -> None:
+        return self._intf.set_property(TimeToolTimeArrayExtrema._metadata, TimeToolTimeArrayExtrema._set_custom_time_limits_metadata, custom_time_limits)
 
     _get_use_custom_time_limits_metadata = { "offset" : _get_use_custom_time_limits_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -9924,8 +9924,8 @@ class TimeToolTimeArrayExtrema(ITimeToolTimeArray, IAnalysisWorkbenchComponent, 
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @use_custom_time_limits.setter
-    def use_custom_time_limits(self, useCustomTimeLimits:bool) -> None:
-        return self._intf.set_property(TimeToolTimeArrayExtrema._metadata, TimeToolTimeArrayExtrema._set_use_custom_time_limits_metadata, useCustomTimeLimits)
+    def use_custom_time_limits(self, use_custom_time_limits:bool) -> None:
+        return self._intf.set_property(TimeToolTimeArrayExtrema._metadata, TimeToolTimeArrayExtrema._set_use_custom_time_limits_metadata, use_custom_time_limits)
 
     _get_save_data_option_metadata = { "offset" : _get_save_data_option_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -9939,8 +9939,8 @@ class TimeToolTimeArrayExtrema(ITimeToolTimeArray, IAnalysisWorkbenchComponent, 
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(SAVE_DATA_TYPE),) }
     @save_data_option.setter
-    def save_data_option(self, saveDataOption:"SAVE_DATA_TYPE") -> None:
-        return self._intf.set_property(TimeToolTimeArrayExtrema._metadata, TimeToolTimeArrayExtrema._set_save_data_option_metadata, saveDataOption)
+    def save_data_option(self, save_data_option:"SAVE_DATA_TYPE") -> None:
+        return self._intf.set_property(TimeToolTimeArrayExtrema._metadata, TimeToolTimeArrayExtrema._set_save_data_option_metadata, save_data_option)
 
     _get_sampling_metadata = { "offset" : _get_sampling_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -9981,12 +9981,12 @@ class TimeToolTimeArrayExtrema(ITimeToolTimeArray, IAnalysisWorkbenchComponent, 
     _property_names[sampling] = "sampling"
     _property_names[convergence] = "convergence"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeArrayExtrema."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeArrayExtrema)
-        ITimeToolTimeArray.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeArrayExtrema)
+        ITimeToolTimeArray.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeArray._private_init(self, intf)
@@ -10083,9 +10083,9 @@ class TimeToolTimeArrayFactory(SupportsDeleteCallback):
     _is_type_supported_metadata = { "offset" : _is_type_supported_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.EnumArg(EVENT_ARRAY_TYPE), agmarshall.VariantBoolArg,) }
-    def is_type_supported(self, eType:"EVENT_ARRAY_TYPE") -> bool:
+    def is_type_supported(self, type:"EVENT_ARRAY_TYPE") -> bool:
         """Return whether the specified type is supported."""
-        return self._intf.invoke(TimeToolTimeArrayFactory._metadata, TimeToolTimeArrayFactory._is_type_supported_metadata, eType, OutArg())
+        return self._intf.invoke(TimeToolTimeArrayFactory._metadata, TimeToolTimeArrayFactory._is_type_supported_metadata, type, OutArg())
 
     _create_fixed_times_metadata = { "offset" : _create_fixed_times_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
@@ -10095,10 +10095,10 @@ class TimeToolTimeArrayFactory(SupportsDeleteCallback):
         return self._intf.invoke(TimeToolTimeArrayFactory._metadata, TimeToolTimeArrayFactory._create_fixed_times_metadata, name, description, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeArrayFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeArrayFactory)
+        initialize_from_source_object(self, source_object, TimeToolTimeArrayFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -10148,8 +10148,8 @@ class TimeToolTimeArrayFiltered(ITimeToolTimeArray, IAnalysisWorkbenchComponent,
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ITimeToolTimeArray"),) }
     @original_time_array.setter
-    def original_time_array(self, originalTimeArray:"ITimeToolTimeArray") -> None:
-        return self._intf.set_property(TimeToolTimeArrayFiltered._metadata, TimeToolTimeArrayFiltered._set_original_time_array_metadata, originalTimeArray)
+    def original_time_array(self, original_time_array:"ITimeToolTimeArray") -> None:
+        return self._intf.set_property(TimeToolTimeArrayFiltered._metadata, TimeToolTimeArrayFiltered._set_original_time_array_metadata, original_time_array)
 
     _get_filter_type_metadata = { "offset" : _get_filter_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -10163,8 +10163,8 @@ class TimeToolTimeArrayFiltered(ITimeToolTimeArray, IAnalysisWorkbenchComponent,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(EVENT_ARRAY_FILTER_TYPE),) }
     @filter_type.setter
-    def filter_type(self, filterType:"EVENT_ARRAY_FILTER_TYPE") -> None:
-        return self._intf.set_property(TimeToolTimeArrayFiltered._metadata, TimeToolTimeArrayFiltered._set_filter_type_metadata, filterType)
+    def filter_type(self, filter_type:"EVENT_ARRAY_FILTER_TYPE") -> None:
+        return self._intf.set_property(TimeToolTimeArrayFiltered._metadata, TimeToolTimeArrayFiltered._set_filter_type_metadata, filter_type)
 
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.INT),),
@@ -10208,8 +10208,8 @@ class TimeToolTimeArrayFiltered(ITimeToolTimeArray, IAnalysisWorkbenchComponent,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @include_interval_stop_times.setter
-    def include_interval_stop_times(self, includeIntervalStopTimes:bool) -> None:
-        return self._intf.set_property(TimeToolTimeArrayFiltered._metadata, TimeToolTimeArrayFiltered._set_include_interval_stop_times_metadata, includeIntervalStopTimes)
+    def include_interval_stop_times(self, include_interval_stop_times:bool) -> None:
+        return self._intf.set_property(TimeToolTimeArrayFiltered._metadata, TimeToolTimeArrayFiltered._set_include_interval_stop_times_metadata, include_interval_stop_times)
 
     _get_filter_interval_list_metadata = { "offset" : _get_filter_interval_list_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -10223,8 +10223,8 @@ class TimeToolTimeArrayFiltered(ITimeToolTimeArray, IAnalysisWorkbenchComponent,
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ITimeToolTimeIntervalList"),) }
     @filter_interval_list.setter
-    def filter_interval_list(self, filterIntervalList:"ITimeToolTimeIntervalList") -> None:
-        return self._intf.set_property(TimeToolTimeArrayFiltered._metadata, TimeToolTimeArrayFiltered._set_filter_interval_list_metadata, filterIntervalList)
+    def filter_interval_list(self, filter_interval_list:"ITimeToolTimeIntervalList") -> None:
+        return self._intf.set_property(TimeToolTimeArrayFiltered._metadata, TimeToolTimeArrayFiltered._set_filter_interval_list_metadata, filter_interval_list)
 
     _property_names[original_time_array] = "original_time_array"
     _property_names[filter_type] = "filter_type"
@@ -10233,12 +10233,12 @@ class TimeToolTimeArrayFiltered(ITimeToolTimeArray, IAnalysisWorkbenchComponent,
     _property_names[include_interval_stop_times] = "include_interval_stop_times"
     _property_names[filter_interval_list] = "filter_interval_list"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeArrayFiltered."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeArrayFiltered)
-        ITimeToolTimeArray.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeArrayFiltered)
+        ITimeToolTimeArray.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeArray._private_init(self, intf)
@@ -10288,8 +10288,8 @@ class TimeToolTimeArrayFixedStep(ITimeToolTimeArray, IAnalysisWorkbenchComponent
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ITimeToolTimeIntervalList"),) }
     @bounding_interval_list.setter
-    def bounding_interval_list(self, boundingIntervalList:"ITimeToolTimeIntervalList") -> None:
-        return self._intf.set_property(TimeToolTimeArrayFixedStep._metadata, TimeToolTimeArrayFixedStep._set_bounding_interval_list_metadata, boundingIntervalList)
+    def bounding_interval_list(self, bounding_interval_list:"ITimeToolTimeIntervalList") -> None:
+        return self._intf.set_property(TimeToolTimeArrayFixedStep._metadata, TimeToolTimeArrayFixedStep._set_bounding_interval_list_metadata, bounding_interval_list)
 
     _get_sampling_time_step_metadata = { "offset" : _get_sampling_time_step_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -10303,8 +10303,8 @@ class TimeToolTimeArrayFixedStep(ITimeToolTimeArray, IAnalysisWorkbenchComponent
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @sampling_time_step.setter
-    def sampling_time_step(self, samplingTimeStep:float) -> None:
-        return self._intf.set_property(TimeToolTimeArrayFixedStep._metadata, TimeToolTimeArrayFixedStep._set_sampling_time_step_metadata, samplingTimeStep)
+    def sampling_time_step(self, sampling_time_step:float) -> None:
+        return self._intf.set_property(TimeToolTimeArrayFixedStep._metadata, TimeToolTimeArrayFixedStep._set_sampling_time_step_metadata, sampling_time_step)
 
     _get_include_interval_edges_metadata = { "offset" : _get_include_interval_edges_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -10318,8 +10318,8 @@ class TimeToolTimeArrayFixedStep(ITimeToolTimeArray, IAnalysisWorkbenchComponent
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @include_interval_edges.setter
-    def include_interval_edges(self, includeIntervalEdges:bool) -> None:
-        return self._intf.set_property(TimeToolTimeArrayFixedStep._metadata, TimeToolTimeArrayFixedStep._set_include_interval_edges_metadata, includeIntervalEdges)
+    def include_interval_edges(self, include_interval_edges:bool) -> None:
+        return self._intf.set_property(TimeToolTimeArrayFixedStep._metadata, TimeToolTimeArrayFixedStep._set_include_interval_edges_metadata, include_interval_edges)
 
     _get_reference_type_metadata = { "offset" : _get_reference_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -10333,8 +10333,8 @@ class TimeToolTimeArrayFixedStep(ITimeToolTimeArray, IAnalysisWorkbenchComponent
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(SAMPLE_REFERENCE_TIME_TYPE),) }
     @reference_type.setter
-    def reference_type(self, referenceType:"SAMPLE_REFERENCE_TIME_TYPE") -> None:
-        return self._intf.set_property(TimeToolTimeArrayFixedStep._metadata, TimeToolTimeArrayFixedStep._set_reference_type_metadata, referenceType)
+    def reference_type(self, reference_type:"SAMPLE_REFERENCE_TIME_TYPE") -> None:
+        return self._intf.set_property(TimeToolTimeArrayFixedStep._metadata, TimeToolTimeArrayFixedStep._set_reference_type_metadata, reference_type)
 
     _get_reference_time_instant_metadata = { "offset" : _get_reference_time_instant_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -10348,8 +10348,8 @@ class TimeToolTimeArrayFixedStep(ITimeToolTimeArray, IAnalysisWorkbenchComponent
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ITimeToolInstant"),) }
     @reference_time_instant.setter
-    def reference_time_instant(self, referenceTimeInstant:"ITimeToolInstant") -> None:
-        return self._intf.set_property(TimeToolTimeArrayFixedStep._metadata, TimeToolTimeArrayFixedStep._set_reference_time_instant_metadata, referenceTimeInstant)
+    def reference_time_instant(self, reference_time_instant:"ITimeToolInstant") -> None:
+        return self._intf.set_property(TimeToolTimeArrayFixedStep._metadata, TimeToolTimeArrayFixedStep._set_reference_time_instant_metadata, reference_time_instant)
 
     _property_names[bounding_interval_list] = "bounding_interval_list"
     _property_names[sampling_time_step] = "sampling_time_step"
@@ -10357,12 +10357,12 @@ class TimeToolTimeArrayFixedStep(ITimeToolTimeArray, IAnalysisWorkbenchComponent
     _property_names[reference_type] = "reference_type"
     _property_names[reference_time_instant] = "reference_time_instant"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeArrayFixedStep."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeArrayFixedStep)
-        ITimeToolTimeArray.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeArrayFixedStep)
+        ITimeToolTimeArray.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeArray._private_init(self, intf)
@@ -10409,12 +10409,12 @@ class TimeToolTimeArrayFixedTimes(ITimeToolTimeArray, IAnalysisWorkbenchComponen
 
     _property_names[array_times] = "array_times"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeArrayFixedTimes."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeArrayFixedTimes)
-        ITimeToolTimeArray.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeArrayFixedTimes)
+        ITimeToolTimeArray.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeArray._private_init(self, intf)
@@ -10458,8 +10458,8 @@ class TimeToolTimeArrayMerged(ITimeToolTimeArray, IAnalysisWorkbenchComponent, S
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ITimeToolTimeArray"),) }
     @time_array_a.setter
-    def time_array_a(self, timeArrayA:"ITimeToolTimeArray") -> None:
-        return self._intf.set_property(TimeToolTimeArrayMerged._metadata, TimeToolTimeArrayMerged._set_time_array_a_metadata, timeArrayA)
+    def time_array_a(self, time_array_a:"ITimeToolTimeArray") -> None:
+        return self._intf.set_property(TimeToolTimeArrayMerged._metadata, TimeToolTimeArrayMerged._set_time_array_a_metadata, time_array_a)
 
     _get_time_array_b_metadata = { "offset" : _get_time_array_b_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -10473,18 +10473,18 @@ class TimeToolTimeArrayMerged(ITimeToolTimeArray, IAnalysisWorkbenchComponent, S
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ITimeToolTimeArray"),) }
     @time_array_b.setter
-    def time_array_b(self, timeArrayB:"ITimeToolTimeArray") -> None:
-        return self._intf.set_property(TimeToolTimeArrayMerged._metadata, TimeToolTimeArrayMerged._set_time_array_b_metadata, timeArrayB)
+    def time_array_b(self, time_array_b:"ITimeToolTimeArray") -> None:
+        return self._intf.set_property(TimeToolTimeArrayMerged._metadata, TimeToolTimeArrayMerged._set_time_array_b_metadata, time_array_b)
 
     _property_names[time_array_a] = "time_array_a"
     _property_names[time_array_b] = "time_array_b"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeArrayMerged."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeArrayMerged)
-        ITimeToolTimeArray.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeArrayMerged)
+        ITimeToolTimeArray.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeArray._private_init(self, intf)
@@ -10534,8 +10534,8 @@ class TimeToolTimeArraySignaled(ITimeToolTimeArray, IAnalysisWorkbenchComponent,
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ITimeToolTimeArray"),) }
     @original_time_array.setter
-    def original_time_array(self, originalTimeArray:"ITimeToolTimeArray") -> None:
-        return self._intf.set_property(TimeToolTimeArraySignaled._metadata, TimeToolTimeArraySignaled._set_original_time_array_metadata, originalTimeArray)
+    def original_time_array(self, original_time_array:"ITimeToolTimeArray") -> None:
+        return self._intf.set_property(TimeToolTimeArraySignaled._metadata, TimeToolTimeArraySignaled._set_original_time_array_metadata, original_time_array)
 
     _get_signal_sense_metadata = { "offset" : _get_signal_sense_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -10549,8 +10549,8 @@ class TimeToolTimeArraySignaled(ITimeToolTimeArray, IAnalysisWorkbenchComponent,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(SIGNAL_DIRECTION_TYPE),) }
     @signal_sense.setter
-    def signal_sense(self, signalSense:"SIGNAL_DIRECTION_TYPE") -> None:
-        return self._intf.set_property(TimeToolTimeArraySignaled._metadata, TimeToolTimeArraySignaled._set_signal_sense_metadata, signalSense)
+    def signal_sense(self, signal_sense:"SIGNAL_DIRECTION_TYPE") -> None:
+        return self._intf.set_property(TimeToolTimeArraySignaled._metadata, TimeToolTimeArraySignaled._set_signal_sense_metadata, signal_sense)
 
     _get_base_clock_location_metadata = { "offset" : _get_base_clock_location_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -10564,8 +10564,8 @@ class TimeToolTimeArraySignaled(ITimeToolTimeArray, IAnalysisWorkbenchComponent,
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolPoint"),) }
     @base_clock_location.setter
-    def base_clock_location(self, baseClockLocation:"IVectorGeometryToolPoint") -> None:
-        return self._intf.set_property(TimeToolTimeArraySignaled._metadata, TimeToolTimeArraySignaled._set_base_clock_location_metadata, baseClockLocation)
+    def base_clock_location(self, base_clock_location:"IVectorGeometryToolPoint") -> None:
+        return self._intf.set_property(TimeToolTimeArraySignaled._metadata, TimeToolTimeArraySignaled._set_base_clock_location_metadata, base_clock_location)
 
     _get_target_clock_location_metadata = { "offset" : _get_target_clock_location_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -10579,8 +10579,8 @@ class TimeToolTimeArraySignaled(ITimeToolTimeArray, IAnalysisWorkbenchComponent,
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolPoint"),) }
     @target_clock_location.setter
-    def target_clock_location(self, targetClockLocation:"IVectorGeometryToolPoint") -> None:
-        return self._intf.set_property(TimeToolTimeArraySignaled._metadata, TimeToolTimeArraySignaled._set_target_clock_location_metadata, targetClockLocation)
+    def target_clock_location(self, target_clock_location:"IVectorGeometryToolPoint") -> None:
+        return self._intf.set_property(TimeToolTimeArraySignaled._metadata, TimeToolTimeArraySignaled._set_target_clock_location_metadata, target_clock_location)
 
     _get_signal_delay_metadata = { "offset" : _get_signal_delay_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -10594,8 +10594,8 @@ class TimeToolTimeArraySignaled(ITimeToolTimeArray, IAnalysisWorkbenchComponent,
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IAnalysisWorkbenchSignalDelay"),) }
     @signal_delay.setter
-    def signal_delay(self, signalDelay:"IAnalysisWorkbenchSignalDelay") -> None:
-        return self._intf.set_property(TimeToolTimeArraySignaled._metadata, TimeToolTimeArraySignaled._set_signal_delay_metadata, signalDelay)
+    def signal_delay(self, signal_delay:"IAnalysisWorkbenchSignalDelay") -> None:
+        return self._intf.set_property(TimeToolTimeArraySignaled._metadata, TimeToolTimeArraySignaled._set_signal_delay_metadata, signal_delay)
 
     _property_names[original_time_array] = "original_time_array"
     _property_names[signal_sense] = "signal_sense"
@@ -10603,12 +10603,12 @@ class TimeToolTimeArraySignaled(ITimeToolTimeArray, IAnalysisWorkbenchComponent,
     _property_names[target_clock_location] = "target_clock_location"
     _property_names[signal_delay] = "signal_delay"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeArraySignaled."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeArraySignaled)
-        ITimeToolTimeArray.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeArraySignaled)
+        ITimeToolTimeArray.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeArray._private_init(self, intf)
@@ -10652,8 +10652,8 @@ class TimeToolTimeArrayStartStopTimes(ITimeToolTimeArray, IAnalysisWorkbenchComp
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(START_STOP_TYPE),) }
     @start_stop_option.setter
-    def start_stop_option(self, startStopOption:"START_STOP_TYPE") -> None:
-        return self._intf.set_property(TimeToolTimeArrayStartStopTimes._metadata, TimeToolTimeArrayStartStopTimes._set_start_stop_option_metadata, startStopOption)
+    def start_stop_option(self, start_stop_option:"START_STOP_TYPE") -> None:
+        return self._intf.set_property(TimeToolTimeArrayStartStopTimes._metadata, TimeToolTimeArrayStartStopTimes._set_start_stop_option_metadata, start_stop_option)
 
     _get_reference_intervals_metadata = { "offset" : _get_reference_intervals_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -10667,18 +10667,18 @@ class TimeToolTimeArrayStartStopTimes(ITimeToolTimeArray, IAnalysisWorkbenchComp
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ITimeToolTimeIntervalList"),) }
     @reference_intervals.setter
-    def reference_intervals(self, referenceIntervals:"ITimeToolTimeIntervalList") -> None:
-        return self._intf.set_property(TimeToolTimeArrayStartStopTimes._metadata, TimeToolTimeArrayStartStopTimes._set_reference_intervals_metadata, referenceIntervals)
+    def reference_intervals(self, reference_intervals:"ITimeToolTimeIntervalList") -> None:
+        return self._intf.set_property(TimeToolTimeArrayStartStopTimes._metadata, TimeToolTimeArrayStartStopTimes._set_reference_intervals_metadata, reference_intervals)
 
     _property_names[start_stop_option] = "start_stop_option"
     _property_names[reference_intervals] = "reference_intervals"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeArrayStartStopTimes."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeArrayStartStopTimes)
-        ITimeToolTimeArray.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeArrayStartStopTimes)
+        ITimeToolTimeArray.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeArray._private_init(self, intf)
@@ -10725,12 +10725,12 @@ class TimeToolInstantEpoch(ITimeToolInstant, IAnalysisWorkbenchComponent, Suppor
 
     _property_names[epoch] = "epoch"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolInstantEpoch."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolInstantEpoch)
-        ITimeToolInstant.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolInstantEpoch)
+        ITimeToolInstant.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolInstant._private_init(self, intf)
@@ -10784,8 +10784,8 @@ class TimeToolInstantExtremum(ITimeToolInstant, IAnalysisWorkbenchComponent, Sup
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(EXTREMUM_TYPE),) }
     @extremum_type.setter
-    def extremum_type(self, extremumType:"EXTREMUM_TYPE") -> None:
-        return self._intf.set_property(TimeToolInstantExtremum._metadata, TimeToolInstantExtremum._set_extremum_type_metadata, extremumType)
+    def extremum_type(self, extremum_type:"EXTREMUM_TYPE") -> None:
+        return self._intf.set_property(TimeToolInstantExtremum._metadata, TimeToolInstantExtremum._set_extremum_type_metadata, extremum_type)
 
     _get_calculation_scalar_metadata = { "offset" : _get_calculation_scalar_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -10814,8 +10814,8 @@ class TimeToolInstantExtremum(ITimeToolInstant, IAnalysisWorkbenchComponent, Sup
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ITimeToolTimeIntervalList"),) }
     @custom_time_limits.setter
-    def custom_time_limits(self, customTimeLimits:"ITimeToolTimeIntervalList") -> None:
-        return self._intf.set_property(TimeToolInstantExtremum._metadata, TimeToolInstantExtremum._set_custom_time_limits_metadata, customTimeLimits)
+    def custom_time_limits(self, custom_time_limits:"ITimeToolTimeIntervalList") -> None:
+        return self._intf.set_property(TimeToolInstantExtremum._metadata, TimeToolInstantExtremum._set_custom_time_limits_metadata, custom_time_limits)
 
     _get_use_custom_time_limits_metadata = { "offset" : _get_use_custom_time_limits_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -10829,8 +10829,8 @@ class TimeToolInstantExtremum(ITimeToolInstant, IAnalysisWorkbenchComponent, Sup
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @use_custom_time_limits.setter
-    def use_custom_time_limits(self, useCustomTimeLimits:bool) -> None:
-        return self._intf.set_property(TimeToolInstantExtremum._metadata, TimeToolInstantExtremum._set_use_custom_time_limits_metadata, useCustomTimeLimits)
+    def use_custom_time_limits(self, use_custom_time_limits:bool) -> None:
+        return self._intf.set_property(TimeToolInstantExtremum._metadata, TimeToolInstantExtremum._set_use_custom_time_limits_metadata, use_custom_time_limits)
 
     _get_save_data_option_metadata = { "offset" : _get_save_data_option_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -10844,8 +10844,8 @@ class TimeToolInstantExtremum(ITimeToolInstant, IAnalysisWorkbenchComponent, Sup
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(SAVE_DATA_TYPE),) }
     @save_data_option.setter
-    def save_data_option(self, saveDataOption:"SAVE_DATA_TYPE") -> None:
-        return self._intf.set_property(TimeToolInstantExtremum._metadata, TimeToolInstantExtremum._set_save_data_option_metadata, saveDataOption)
+    def save_data_option(self, save_data_option:"SAVE_DATA_TYPE") -> None:
+        return self._intf.set_property(TimeToolInstantExtremum._metadata, TimeToolInstantExtremum._set_save_data_option_metadata, save_data_option)
 
     _get_sampling_metadata = { "offset" : _get_sampling_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -10885,12 +10885,12 @@ class TimeToolInstantExtremum(ITimeToolInstant, IAnalysisWorkbenchComponent, Sup
     _property_names[sampling] = "sampling"
     _property_names[convergence] = "convergence"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolInstantExtremum."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolInstantExtremum)
-        ITimeToolInstant.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolInstantExtremum)
+        ITimeToolInstant.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolInstant._private_init(self, intf)
@@ -10997,24 +10997,24 @@ class TimeToolInstantFactory(SupportsDeleteCallback):
     _create_smart_epoch_from_event_metadata = { "offset" : _create_smart_epoch_from_event_method_offset,
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceInArg("ITimeToolInstant"), agmarshall.InterfaceOutArg,) }
-    def create_smart_epoch_from_event(self, refEvent:"ITimeToolInstant") -> "TimeToolInstantSmartEpoch":
+    def create_smart_epoch_from_event(self, ref_event:"ITimeToolInstant") -> "TimeToolInstantSmartEpoch":
         """Create a smart epoch from an event."""
-        return self._intf.invoke(TimeToolInstantFactory._metadata, TimeToolInstantFactory._create_smart_epoch_from_event_metadata, refEvent, OutArg())
+        return self._intf.invoke(TimeToolInstantFactory._metadata, TimeToolInstantFactory._create_smart_epoch_from_event_metadata, ref_event, OutArg())
 
     _is_type_supported_metadata = { "offset" : _is_type_supported_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.EnumArg(TIME_EVENT_TYPE), agmarshall.VariantBoolArg,) }
-    def is_type_supported(self, eType:"TIME_EVENT_TYPE") -> bool:
+    def is_type_supported(self, type:"TIME_EVENT_TYPE") -> bool:
         """Return whether the specified type is supported."""
-        return self._intf.invoke(TimeToolInstantFactory._metadata, TimeToolInstantFactory._is_type_supported_metadata, eType, OutArg())
+        return self._intf.invoke(TimeToolInstantFactory._metadata, TimeToolInstantFactory._is_type_supported_metadata, type, OutArg())
 
     _property_names[today] = "today"
     _property_names[tomorrow] = "tomorrow"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolInstantFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolInstantFactory)
+        initialize_from_source_object(self, source_object, TimeToolInstantFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -11029,11 +11029,11 @@ agcls.AgTypeNameMap["TimeToolInstantFactory"] = TimeToolInstantFactory
 
 class TimeToolTimeInterval(ITimeToolTimeInterval, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """A single time interval."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeInterval."""
         SupportsDeleteCallback.__init__(self)
-        ITimeToolTimeInterval.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        ITimeToolTimeInterval.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeInterval._private_init(self, intf)
@@ -11077,8 +11077,8 @@ class TimeToolTimeIntervalBetweenTimeInstants(ITimeToolTimeInterval, IAnalysisWo
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ITimeToolInstant"),) }
     @start_time_instant.setter
-    def start_time_instant(self, startTimeInstant:"ITimeToolInstant") -> None:
-        return self._intf.set_property(TimeToolTimeIntervalBetweenTimeInstants._metadata, TimeToolTimeIntervalBetweenTimeInstants._set_start_time_instant_metadata, startTimeInstant)
+    def start_time_instant(self, start_time_instant:"ITimeToolInstant") -> None:
+        return self._intf.set_property(TimeToolTimeIntervalBetweenTimeInstants._metadata, TimeToolTimeIntervalBetweenTimeInstants._set_start_time_instant_metadata, start_time_instant)
 
     _get_stop_time_instant_metadata = { "offset" : _get_stop_time_instant_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -11092,18 +11092,18 @@ class TimeToolTimeIntervalBetweenTimeInstants(ITimeToolTimeInterval, IAnalysisWo
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ITimeToolInstant"),) }
     @stop_time_instant.setter
-    def stop_time_instant(self, stopTimeInstant:"ITimeToolInstant") -> None:
-        return self._intf.set_property(TimeToolTimeIntervalBetweenTimeInstants._metadata, TimeToolTimeIntervalBetweenTimeInstants._set_stop_time_instant_metadata, stopTimeInstant)
+    def stop_time_instant(self, stop_time_instant:"ITimeToolInstant") -> None:
+        return self._intf.set_property(TimeToolTimeIntervalBetweenTimeInstants._metadata, TimeToolTimeIntervalBetweenTimeInstants._set_stop_time_instant_metadata, stop_time_instant)
 
     _property_names[start_time_instant] = "start_time_instant"
     _property_names[stop_time_instant] = "stop_time_instant"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalBetweenTimeInstants."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalBetweenTimeInstants)
-        ITimeToolTimeInterval.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalBetweenTimeInstants)
+        ITimeToolTimeInterval.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeInterval._private_init(self, intf)
@@ -11120,11 +11120,11 @@ agcls.AgTypeNameMap["TimeToolTimeIntervalBetweenTimeInstants"] = TimeToolTimeInt
 
 class TimeToolTimeIntervalCollection(ITimeToolTimeIntervalCollection, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """A collection of related interval lists."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalCollection."""
         SupportsDeleteCallback.__init__(self)
-        ITimeToolTimeIntervalCollection.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        ITimeToolTimeIntervalCollection.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeIntervalCollection._private_init(self, intf)
@@ -11176,8 +11176,8 @@ class TimeToolTimeIntervalCollectionCondition(ITimeToolTimeIntervalCollection, I
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ICalculationToolConditionSet"),) }
     @condition_set.setter
-    def condition_set(self, conditionSet:"ICalculationToolConditionSet") -> None:
-        return self._intf.set_property(TimeToolTimeIntervalCollectionCondition._metadata, TimeToolTimeIntervalCollectionCondition._set_condition_set_metadata, conditionSet)
+    def condition_set(self, condition_set:"ICalculationToolConditionSet") -> None:
+        return self._intf.set_property(TimeToolTimeIntervalCollectionCondition._metadata, TimeToolTimeIntervalCollectionCondition._set_condition_set_metadata, condition_set)
 
     _get_custom_time_limits_metadata = { "offset" : _get_custom_time_limits_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -11191,8 +11191,8 @@ class TimeToolTimeIntervalCollectionCondition(ITimeToolTimeIntervalCollection, I
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ITimeToolTimeIntervalList"),) }
     @custom_time_limits.setter
-    def custom_time_limits(self, customTimeLimits:"ITimeToolTimeIntervalList") -> None:
-        return self._intf.set_property(TimeToolTimeIntervalCollectionCondition._metadata, TimeToolTimeIntervalCollectionCondition._set_custom_time_limits_metadata, customTimeLimits)
+    def custom_time_limits(self, custom_time_limits:"ITimeToolTimeIntervalList") -> None:
+        return self._intf.set_property(TimeToolTimeIntervalCollectionCondition._metadata, TimeToolTimeIntervalCollectionCondition._set_custom_time_limits_metadata, custom_time_limits)
 
     _get_use_custom_time_limits_metadata = { "offset" : _get_use_custom_time_limits_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -11206,8 +11206,8 @@ class TimeToolTimeIntervalCollectionCondition(ITimeToolTimeIntervalCollection, I
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @use_custom_time_limits.setter
-    def use_custom_time_limits(self, useCustomTimeLimits:bool) -> None:
-        return self._intf.set_property(TimeToolTimeIntervalCollectionCondition._metadata, TimeToolTimeIntervalCollectionCondition._set_use_custom_time_limits_metadata, useCustomTimeLimits)
+    def use_custom_time_limits(self, use_custom_time_limits:bool) -> None:
+        return self._intf.set_property(TimeToolTimeIntervalCollectionCondition._metadata, TimeToolTimeIntervalCollectionCondition._set_use_custom_time_limits_metadata, use_custom_time_limits)
 
     _get_save_data_option_metadata = { "offset" : _get_save_data_option_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -11221,8 +11221,8 @@ class TimeToolTimeIntervalCollectionCondition(ITimeToolTimeIntervalCollection, I
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(SAVE_DATA_TYPE),) }
     @save_data_option.setter
-    def save_data_option(self, saveDataOption:"SAVE_DATA_TYPE") -> None:
-        return self._intf.set_property(TimeToolTimeIntervalCollectionCondition._metadata, TimeToolTimeIntervalCollectionCondition._set_save_data_option_metadata, saveDataOption)
+    def save_data_option(self, save_data_option:"SAVE_DATA_TYPE") -> None:
+        return self._intf.set_property(TimeToolTimeIntervalCollectionCondition._metadata, TimeToolTimeIntervalCollectionCondition._set_save_data_option_metadata, save_data_option)
 
     _get_sampling_metadata = { "offset" : _get_sampling_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -11261,12 +11261,12 @@ class TimeToolTimeIntervalCollectionCondition(ITimeToolTimeIntervalCollection, I
     _property_names[sampling] = "sampling"
     _property_names[convergence] = "convergence"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalCollectionCondition."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalCollectionCondition)
-        ITimeToolTimeIntervalCollection.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalCollectionCondition)
+        ITimeToolTimeIntervalCollection.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeIntervalCollection._private_init(self, intf)
@@ -11323,9 +11323,9 @@ class TimeToolTimeIntervalCollectionFactory(SupportsDeleteCallback):
     _is_type_supported_metadata = { "offset" : _is_type_supported_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.EnumArg(EVENT_INTERVAL_COLLECTION_TYPE), agmarshall.VariantBoolArg,) }
-    def is_type_supported(self, eType:"EVENT_INTERVAL_COLLECTION_TYPE") -> bool:
+    def is_type_supported(self, type:"EVENT_INTERVAL_COLLECTION_TYPE") -> bool:
         """Return whether the specified type is supported."""
-        return self._intf.invoke(TimeToolTimeIntervalCollectionFactory._metadata, TimeToolTimeIntervalCollectionFactory._is_type_supported_metadata, eType, OutArg())
+        return self._intf.invoke(TimeToolTimeIntervalCollectionFactory._metadata, TimeToolTimeIntervalCollectionFactory._is_type_supported_metadata, type, OutArg())
 
     _create_satisfaction_metadata = { "offset" : _create_satisfaction_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
@@ -11335,10 +11335,10 @@ class TimeToolTimeIntervalCollectionFactory(SupportsDeleteCallback):
         return self._intf.invoke(TimeToolTimeIntervalCollectionFactory._metadata, TimeToolTimeIntervalCollectionFactory._create_satisfaction_metadata, name, description, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalCollectionFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalCollectionFactory)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalCollectionFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -11397,8 +11397,8 @@ class TimeToolTimeIntervalCollectionLighting(ITimeToolTimeIntervalCollection, IA
             "arg_types" : (agcom.LPSAFEARRAY,),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
     @eclipsing_bodies.setter
-    def eclipsing_bodies(self, eclipsingBodies:list) -> None:
-        return self._intf.set_property(TimeToolTimeIntervalCollectionLighting._metadata, TimeToolTimeIntervalCollectionLighting._set_eclipsing_bodies_metadata, eclipsingBodies)
+    def eclipsing_bodies(self, eclipsing_bodies:list) -> None:
+        return self._intf.set_property(TimeToolTimeIntervalCollectionLighting._metadata, TimeToolTimeIntervalCollectionLighting._set_eclipsing_bodies_metadata, eclipsing_bodies)
 
     _get_use_object_eclipsing_bodies_metadata = { "offset" : _get_use_object_eclipsing_bodies_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -11412,19 +11412,19 @@ class TimeToolTimeIntervalCollectionLighting(ITimeToolTimeIntervalCollection, IA
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @use_object_eclipsing_bodies.setter
-    def use_object_eclipsing_bodies(self, useObjectEclipsingBodies:bool) -> None:
-        return self._intf.set_property(TimeToolTimeIntervalCollectionLighting._metadata, TimeToolTimeIntervalCollectionLighting._set_use_object_eclipsing_bodies_metadata, useObjectEclipsingBodies)
+    def use_object_eclipsing_bodies(self, use_object_eclipsing_bodies:bool) -> None:
+        return self._intf.set_property(TimeToolTimeIntervalCollectionLighting._metadata, TimeToolTimeIntervalCollectionLighting._set_use_object_eclipsing_bodies_metadata, use_object_eclipsing_bodies)
 
     _property_names[location] = "location"
     _property_names[eclipsing_bodies] = "eclipsing_bodies"
     _property_names[use_object_eclipsing_bodies] = "use_object_eclipsing_bodies"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalCollectionLighting."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalCollectionLighting)
-        ITimeToolTimeIntervalCollection.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalCollectionLighting)
+        ITimeToolTimeIntervalCollection.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeIntervalCollection._private_init(self, intf)
@@ -11474,8 +11474,8 @@ class TimeToolTimeIntervalCollectionSignaled(ITimeToolTimeIntervalCollection, IA
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ITimeToolTimeIntervalCollection"),) }
     @original_collection.setter
-    def original_collection(self, originalCollection:"ITimeToolTimeIntervalCollection") -> None:
-        return self._intf.set_property(TimeToolTimeIntervalCollectionSignaled._metadata, TimeToolTimeIntervalCollectionSignaled._set_original_collection_metadata, originalCollection)
+    def original_collection(self, original_collection:"ITimeToolTimeIntervalCollection") -> None:
+        return self._intf.set_property(TimeToolTimeIntervalCollectionSignaled._metadata, TimeToolTimeIntervalCollectionSignaled._set_original_collection_metadata, original_collection)
 
     _get_signal_sense_metadata = { "offset" : _get_signal_sense_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -11489,8 +11489,8 @@ class TimeToolTimeIntervalCollectionSignaled(ITimeToolTimeIntervalCollection, IA
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(SIGNAL_DIRECTION_TYPE),) }
     @signal_sense.setter
-    def signal_sense(self, signalSense:"SIGNAL_DIRECTION_TYPE") -> None:
-        return self._intf.set_property(TimeToolTimeIntervalCollectionSignaled._metadata, TimeToolTimeIntervalCollectionSignaled._set_signal_sense_metadata, signalSense)
+    def signal_sense(self, signal_sense:"SIGNAL_DIRECTION_TYPE") -> None:
+        return self._intf.set_property(TimeToolTimeIntervalCollectionSignaled._metadata, TimeToolTimeIntervalCollectionSignaled._set_signal_sense_metadata, signal_sense)
 
     _get_base_clock_location_metadata = { "offset" : _get_base_clock_location_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -11504,8 +11504,8 @@ class TimeToolTimeIntervalCollectionSignaled(ITimeToolTimeIntervalCollection, IA
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolPoint"),) }
     @base_clock_location.setter
-    def base_clock_location(self, baseClockLocation:"IVectorGeometryToolPoint") -> None:
-        return self._intf.set_property(TimeToolTimeIntervalCollectionSignaled._metadata, TimeToolTimeIntervalCollectionSignaled._set_base_clock_location_metadata, baseClockLocation)
+    def base_clock_location(self, base_clock_location:"IVectorGeometryToolPoint") -> None:
+        return self._intf.set_property(TimeToolTimeIntervalCollectionSignaled._metadata, TimeToolTimeIntervalCollectionSignaled._set_base_clock_location_metadata, base_clock_location)
 
     _get_target_clock_location_metadata = { "offset" : _get_target_clock_location_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -11519,8 +11519,8 @@ class TimeToolTimeIntervalCollectionSignaled(ITimeToolTimeIntervalCollection, IA
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolPoint"),) }
     @target_clock_location.setter
-    def target_clock_location(self, targetClockLocation:"IVectorGeometryToolPoint") -> None:
-        return self._intf.set_property(TimeToolTimeIntervalCollectionSignaled._metadata, TimeToolTimeIntervalCollectionSignaled._set_target_clock_location_metadata, targetClockLocation)
+    def target_clock_location(self, target_clock_location:"IVectorGeometryToolPoint") -> None:
+        return self._intf.set_property(TimeToolTimeIntervalCollectionSignaled._metadata, TimeToolTimeIntervalCollectionSignaled._set_target_clock_location_metadata, target_clock_location)
 
     _get_signal_delay_metadata = { "offset" : _get_signal_delay_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -11534,8 +11534,8 @@ class TimeToolTimeIntervalCollectionSignaled(ITimeToolTimeIntervalCollection, IA
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IAnalysisWorkbenchSignalDelay"),) }
     @signal_delay.setter
-    def signal_delay(self, signalDelay:"IAnalysisWorkbenchSignalDelay") -> None:
-        return self._intf.set_property(TimeToolTimeIntervalCollectionSignaled._metadata, TimeToolTimeIntervalCollectionSignaled._set_signal_delay_metadata, signalDelay)
+    def signal_delay(self, signal_delay:"IAnalysisWorkbenchSignalDelay") -> None:
+        return self._intf.set_property(TimeToolTimeIntervalCollectionSignaled._metadata, TimeToolTimeIntervalCollectionSignaled._set_signal_delay_metadata, signal_delay)
 
     _property_names[original_collection] = "original_collection"
     _property_names[signal_sense] = "signal_sense"
@@ -11543,12 +11543,12 @@ class TimeToolTimeIntervalCollectionSignaled(ITimeToolTimeIntervalCollection, IA
     _property_names[target_clock_location] = "target_clock_location"
     _property_names[signal_delay] = "signal_delay"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalCollectionSignaled."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalCollectionSignaled)
-        ITimeToolTimeIntervalCollection.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalCollectionSignaled)
+        ITimeToolTimeIntervalCollection.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeIntervalCollection._private_init(self, intf)
@@ -11644,15 +11644,15 @@ class TimeToolTimeIntervalFactory(SupportsDeleteCallback):
     _is_type_supported_metadata = { "offset" : _is_type_supported_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.EnumArg(EVENT_INTERVAL_TYPE), agmarshall.VariantBoolArg,) }
-    def is_type_supported(self, eType:"EVENT_INTERVAL_TYPE") -> bool:
+    def is_type_supported(self, type:"EVENT_INTERVAL_TYPE") -> bool:
         """Return whether the specified type is supported."""
-        return self._intf.invoke(TimeToolTimeIntervalFactory._metadata, TimeToolTimeIntervalFactory._is_type_supported_metadata, eType, OutArg())
+        return self._intf.invoke(TimeToolTimeIntervalFactory._metadata, TimeToolTimeIntervalFactory._is_type_supported_metadata, type, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalFactory)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -11700,19 +11700,19 @@ class TimeToolTimeIntervalFixed(ITimeToolTimeInterval, IAnalysisWorkbenchCompone
     _set_interval_metadata = { "offset" : _set_interval_method_offset,
             "arg_types" : (agcom.Variant, agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg, agmarshall.VariantArg,) }
-    def set_interval(self, startEpoch:typing.Any, stopEpoch:typing.Any) -> None:
+    def set_interval(self, start_epoch:typing.Any, stop_epoch:typing.Any) -> None:
         """Set interval's start and stop times."""
-        return self._intf.invoke(TimeToolTimeIntervalFixed._metadata, TimeToolTimeIntervalFixed._set_interval_metadata, startEpoch, stopEpoch)
+        return self._intf.invoke(TimeToolTimeIntervalFixed._metadata, TimeToolTimeIntervalFixed._set_interval_metadata, start_epoch, stop_epoch)
 
     _property_names[start_time] = "start_time"
     _property_names[stop_time] = "stop_time"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalFixed."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalFixed)
-        ITimeToolTimeInterval.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalFixed)
+        ITimeToolTimeInterval.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeInterval._private_init(self, intf)
@@ -11758,8 +11758,8 @@ class TimeToolTimeIntervalFixedDuration(ITimeToolTimeInterval, IAnalysisWorkbenc
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ITimeToolInstant"),) }
     @reference_time_instant.setter
-    def reference_time_instant(self, referenceTimeInstant:"ITimeToolInstant") -> None:
-        return self._intf.set_property(TimeToolTimeIntervalFixedDuration._metadata, TimeToolTimeIntervalFixedDuration._set_reference_time_instant_metadata, referenceTimeInstant)
+    def reference_time_instant(self, reference_time_instant:"ITimeToolInstant") -> None:
+        return self._intf.set_property(TimeToolTimeIntervalFixedDuration._metadata, TimeToolTimeIntervalFixedDuration._set_reference_time_instant_metadata, reference_time_instant)
 
     _get_start_offset_metadata = { "offset" : _get_start_offset_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -11773,8 +11773,8 @@ class TimeToolTimeIntervalFixedDuration(ITimeToolTimeInterval, IAnalysisWorkbenc
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @start_offset.setter
-    def start_offset(self, startOffset:float) -> None:
-        return self._intf.set_property(TimeToolTimeIntervalFixedDuration._metadata, TimeToolTimeIntervalFixedDuration._set_start_offset_metadata, startOffset)
+    def start_offset(self, start_offset:float) -> None:
+        return self._intf.set_property(TimeToolTimeIntervalFixedDuration._metadata, TimeToolTimeIntervalFixedDuration._set_start_offset_metadata, start_offset)
 
     _get_stop_offset_metadata = { "offset" : _get_stop_offset_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -11788,19 +11788,19 @@ class TimeToolTimeIntervalFixedDuration(ITimeToolTimeInterval, IAnalysisWorkbenc
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @stop_offset.setter
-    def stop_offset(self, stopOffset:float) -> None:
-        return self._intf.set_property(TimeToolTimeIntervalFixedDuration._metadata, TimeToolTimeIntervalFixedDuration._set_stop_offset_metadata, stopOffset)
+    def stop_offset(self, stop_offset:float) -> None:
+        return self._intf.set_property(TimeToolTimeIntervalFixedDuration._metadata, TimeToolTimeIntervalFixedDuration._set_stop_offset_metadata, stop_offset)
 
     _property_names[reference_time_instant] = "reference_time_instant"
     _property_names[start_offset] = "start_offset"
     _property_names[stop_offset] = "stop_offset"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalFixedDuration."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalFixedDuration)
-        ITimeToolTimeInterval.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalFixedDuration)
+        ITimeToolTimeInterval.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeInterval._private_init(self, intf)
@@ -11846,8 +11846,8 @@ class TimeToolTimeIntervalFromIntervalList(ITimeToolTimeInterval, IAnalysisWorkb
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ITimeToolTimeIntervalList"),) }
     @reference_intervals.setter
-    def reference_intervals(self, referenceIntervals:"ITimeToolTimeIntervalList") -> None:
-        return self._intf.set_property(TimeToolTimeIntervalFromIntervalList._metadata, TimeToolTimeIntervalFromIntervalList._set_reference_intervals_metadata, referenceIntervals)
+    def reference_intervals(self, reference_intervals:"ITimeToolTimeIntervalList") -> None:
+        return self._intf.set_property(TimeToolTimeIntervalFromIntervalList._metadata, TimeToolTimeIntervalFromIntervalList._set_reference_intervals_metadata, reference_intervals)
 
     _get_interval_selection_metadata = { "offset" : _get_interval_selection_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -11861,8 +11861,8 @@ class TimeToolTimeIntervalFromIntervalList(ITimeToolTimeInterval, IAnalysisWorkb
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(INTERVAL_FROM_INTERVAL_LIST_SELECTION_TYPE),) }
     @interval_selection.setter
-    def interval_selection(self, intervalSelection:"INTERVAL_FROM_INTERVAL_LIST_SELECTION_TYPE") -> None:
-        return self._intf.set_property(TimeToolTimeIntervalFromIntervalList._metadata, TimeToolTimeIntervalFromIntervalList._set_interval_selection_metadata, intervalSelection)
+    def interval_selection(self, interval_selection:"INTERVAL_FROM_INTERVAL_LIST_SELECTION_TYPE") -> None:
+        return self._intf.set_property(TimeToolTimeIntervalFromIntervalList._metadata, TimeToolTimeIntervalFromIntervalList._set_interval_selection_metadata, interval_selection)
 
     _get_interval_number_metadata = { "offset" : _get_interval_number_method_offset,
             "arg_types" : (POINTER(agcom.INT),),
@@ -11876,19 +11876,19 @@ class TimeToolTimeIntervalFromIntervalList(ITimeToolTimeInterval, IAnalysisWorkb
             "arg_types" : (agcom.INT,),
             "marshallers" : (agmarshall.IntArg,) }
     @interval_number.setter
-    def interval_number(self, intervalNumber:int) -> None:
-        return self._intf.set_property(TimeToolTimeIntervalFromIntervalList._metadata, TimeToolTimeIntervalFromIntervalList._set_interval_number_metadata, intervalNumber)
+    def interval_number(self, interval_number:int) -> None:
+        return self._intf.set_property(TimeToolTimeIntervalFromIntervalList._metadata, TimeToolTimeIntervalFromIntervalList._set_interval_number_metadata, interval_number)
 
     _property_names[reference_intervals] = "reference_intervals"
     _property_names[interval_selection] = "interval_selection"
     _property_names[interval_number] = "interval_number"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalFromIntervalList."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalFromIntervalList)
-        ITimeToolTimeInterval.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalFromIntervalList)
+        ITimeToolTimeInterval.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeInterval._private_init(self, intf)
@@ -11905,11 +11905,11 @@ agcls.AgTypeNameMap["TimeToolTimeIntervalFromIntervalList"] = TimeToolTimeInterv
 
 class TimeToolTimeIntervalList(ITimeToolTimeIntervalList, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """An ordered list of time intervals."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalList."""
         SupportsDeleteCallback.__init__(self)
-        ITimeToolTimeIntervalList.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        ITimeToolTimeIntervalList.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeIntervalList._private_init(self, intf)
@@ -11976,8 +11976,8 @@ class TimeToolTimeIntervalListCondition(ITimeToolTimeIntervalList, IAnalysisWork
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ITimeToolTimeIntervalList"),) }
     @custom_time_limits.setter
-    def custom_time_limits(self, customTimeLimits:"ITimeToolTimeIntervalList") -> None:
-        return self._intf.set_property(TimeToolTimeIntervalListCondition._metadata, TimeToolTimeIntervalListCondition._set_custom_time_limits_metadata, customTimeLimits)
+    def custom_time_limits(self, custom_time_limits:"ITimeToolTimeIntervalList") -> None:
+        return self._intf.set_property(TimeToolTimeIntervalListCondition._metadata, TimeToolTimeIntervalListCondition._set_custom_time_limits_metadata, custom_time_limits)
 
     _get_use_custom_time_limits_metadata = { "offset" : _get_use_custom_time_limits_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -11991,8 +11991,8 @@ class TimeToolTimeIntervalListCondition(ITimeToolTimeIntervalList, IAnalysisWork
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @use_custom_time_limits.setter
-    def use_custom_time_limits(self, useCustomTimeLimits:bool) -> None:
-        return self._intf.set_property(TimeToolTimeIntervalListCondition._metadata, TimeToolTimeIntervalListCondition._set_use_custom_time_limits_metadata, useCustomTimeLimits)
+    def use_custom_time_limits(self, use_custom_time_limits:bool) -> None:
+        return self._intf.set_property(TimeToolTimeIntervalListCondition._metadata, TimeToolTimeIntervalListCondition._set_use_custom_time_limits_metadata, use_custom_time_limits)
 
     _get_save_data_option_metadata = { "offset" : _get_save_data_option_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -12006,8 +12006,8 @@ class TimeToolTimeIntervalListCondition(ITimeToolTimeIntervalList, IAnalysisWork
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(SAVE_DATA_TYPE),) }
     @save_data_option.setter
-    def save_data_option(self, saveDataOption:"SAVE_DATA_TYPE") -> None:
-        return self._intf.set_property(TimeToolTimeIntervalListCondition._metadata, TimeToolTimeIntervalListCondition._set_save_data_option_metadata, saveDataOption)
+    def save_data_option(self, save_data_option:"SAVE_DATA_TYPE") -> None:
+        return self._intf.set_property(TimeToolTimeIntervalListCondition._metadata, TimeToolTimeIntervalListCondition._set_save_data_option_metadata, save_data_option)
 
     _get_sampling_metadata = { "offset" : _get_sampling_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -12046,12 +12046,12 @@ class TimeToolTimeIntervalListCondition(ITimeToolTimeIntervalList, IAnalysisWork
     _property_names[sampling] = "sampling"
     _property_names[convergence] = "convergence"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalListCondition."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalListCondition)
-        ITimeToolTimeIntervalList.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalListCondition)
+        ITimeToolTimeIntervalList.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeIntervalList._private_init(self, intf)
@@ -12141,16 +12141,16 @@ class TimeToolTimeIntervalListFactory(SupportsDeleteCallback):
     _is_type_supported_metadata = { "offset" : _is_type_supported_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.EnumArg(EVENT_INTERVAL_LIST_TYPE), agmarshall.VariantBoolArg,) }
-    def is_type_supported(self, eType:"EVENT_INTERVAL_LIST_TYPE") -> bool:
+    def is_type_supported(self, type:"EVENT_INTERVAL_LIST_TYPE") -> bool:
         """Return whether the specified type is supported."""
-        return self._intf.invoke(TimeToolTimeIntervalListFactory._metadata, TimeToolTimeIntervalListFactory._is_type_supported_metadata, eType, OutArg())
+        return self._intf.invoke(TimeToolTimeIntervalListFactory._metadata, TimeToolTimeIntervalListFactory._is_type_supported_metadata, type, OutArg())
 
     _create_from_file_metadata = { "offset" : _create_from_file_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
-    def create_from_file(self, name:str, description:str, filePath:str) -> "ITimeToolTimeIntervalList":
+    def create_from_file(self, name:str, description:str, file_path:str) -> "ITimeToolTimeIntervalList":
         """Create an interval list based on specified interval file."""
-        return self._intf.invoke(TimeToolTimeIntervalListFactory._metadata, TimeToolTimeIntervalListFactory._create_from_file_metadata, name, description, filePath, OutArg())
+        return self._intf.invoke(TimeToolTimeIntervalListFactory._metadata, TimeToolTimeIntervalListFactory._create_from_file_metadata, name, description, file_path, OutArg())
 
     _create_fixed_metadata = { "offset" : _create_fixed_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
@@ -12160,10 +12160,10 @@ class TimeToolTimeIntervalListFactory(SupportsDeleteCallback):
         return self._intf.invoke(TimeToolTimeIntervalListFactory._metadata, TimeToolTimeIntervalListFactory._create_fixed_metadata, name, description, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalListFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalListFactory)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalListFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -12224,12 +12224,12 @@ class TimeToolTimeIntervalListFile(ITimeToolTimeIntervalList, IAnalysisWorkbench
 
     _property_names[filename] = "filename"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalListFile."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalListFile)
-        ITimeToolTimeIntervalList.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalListFile)
+        ITimeToolTimeIntervalList.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeIntervalList._private_init(self, intf)
@@ -12274,8 +12274,8 @@ class TimeToolTimeIntervalListFiltered(ITimeToolTimeIntervalList, IAnalysisWorkb
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ITimeToolTimeIntervalList"),) }
     @original_intervals.setter
-    def original_intervals(self, originalIntervals:"ITimeToolTimeIntervalList") -> None:
-        return self._intf.set_property(TimeToolTimeIntervalListFiltered._metadata, TimeToolTimeIntervalListFiltered._set_original_intervals_metadata, originalIntervals)
+    def original_intervals(self, original_intervals:"ITimeToolTimeIntervalList") -> None:
+        return self._intf.set_property(TimeToolTimeIntervalListFiltered._metadata, TimeToolTimeIntervalListFiltered._set_original_intervals_metadata, original_intervals)
 
     _get_filter_factory_metadata = { "offset" : _get_filter_factory_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -12304,12 +12304,12 @@ class TimeToolTimeIntervalListFiltered(ITimeToolTimeIntervalList, IAnalysisWorkb
     _property_names[filter_factory] = "filter_factory"
     _property_names[filter] = "filter"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalListFiltered."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalListFiltered)
-        ITimeToolTimeIntervalList.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalListFiltered)
+        ITimeToolTimeIntervalList.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeIntervalList._private_init(self, intf)
@@ -12354,12 +12354,12 @@ class TimeToolTimeIntervalListFixed(ITimeToolTimeIntervalList, IAnalysisWorkbenc
         return self._intf.invoke(TimeToolTimeIntervalListFixed._metadata, TimeToolTimeIntervalListFixed._set_intervals_metadata, intervals)
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalListFixed."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalListFixed)
-        ITimeToolTimeIntervalList.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalListFixed)
+        ITimeToolTimeIntervalList.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeIntervalList._private_init(self, intf)
@@ -12430,64 +12430,64 @@ class TimeToolTimeIntervalListMerged(ITimeToolTimeIntervalList, IAnalysisWorkben
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(EVENT_LIST_MERGE_OPERATION),) }
     @merge_operation.setter
-    def merge_operation(self, mergeOperation:"EVENT_LIST_MERGE_OPERATION") -> None:
-        return self._intf.set_property(TimeToolTimeIntervalListMerged._metadata, TimeToolTimeIntervalListMerged._set_merge_operation_metadata, mergeOperation)
+    def merge_operation(self, merge_operation:"EVENT_LIST_MERGE_OPERATION") -> None:
+        return self._intf.set_property(TimeToolTimeIntervalListMerged._metadata, TimeToolTimeIntervalListMerged._set_merge_operation_metadata, merge_operation)
 
     _set_interval_list_a_metadata = { "offset" : _set_interval_list_a_method_offset,
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ITimeToolTimeIntervalList"),) }
-    def set_interval_list_a(self, refIntervals:"ITimeToolTimeIntervalList") -> None:
+    def set_interval_list_a(self, ref_intervals:"ITimeToolTimeIntervalList") -> None:
         """Set the interval list A."""
-        return self._intf.invoke(TimeToolTimeIntervalListMerged._metadata, TimeToolTimeIntervalListMerged._set_interval_list_a_metadata, refIntervals)
+        return self._intf.invoke(TimeToolTimeIntervalListMerged._metadata, TimeToolTimeIntervalListMerged._set_interval_list_a_metadata, ref_intervals)
 
     _set_interval_a_metadata = { "offset" : _set_interval_a_method_offset,
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ITimeToolTimeInterval"),) }
-    def set_interval_a(self, refIntervals:"ITimeToolTimeInterval") -> None:
+    def set_interval_a(self, ref_intervals:"ITimeToolTimeInterval") -> None:
         """Set the interval A."""
-        return self._intf.invoke(TimeToolTimeIntervalListMerged._metadata, TimeToolTimeIntervalListMerged._set_interval_a_metadata, refIntervals)
+        return self._intf.invoke(TimeToolTimeIntervalListMerged._metadata, TimeToolTimeIntervalListMerged._set_interval_a_metadata, ref_intervals)
 
     _set_interval_list_b_metadata = { "offset" : _set_interval_list_b_method_offset,
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ITimeToolTimeIntervalList"),) }
-    def set_interval_list_b(self, refIntervals:"ITimeToolTimeIntervalList") -> None:
+    def set_interval_list_b(self, ref_intervals:"ITimeToolTimeIntervalList") -> None:
         """Set the interval list B."""
-        return self._intf.invoke(TimeToolTimeIntervalListMerged._metadata, TimeToolTimeIntervalListMerged._set_interval_list_b_metadata, refIntervals)
+        return self._intf.invoke(TimeToolTimeIntervalListMerged._metadata, TimeToolTimeIntervalListMerged._set_interval_list_b_metadata, ref_intervals)
 
     _set_interval_b_metadata = { "offset" : _set_interval_b_method_offset,
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ITimeToolTimeInterval"),) }
-    def set_interval_b(self, refIntervals:"ITimeToolTimeInterval") -> None:
+    def set_interval_b(self, ref_intervals:"ITimeToolTimeInterval") -> None:
         """Set the interval B."""
-        return self._intf.invoke(TimeToolTimeIntervalListMerged._metadata, TimeToolTimeIntervalListMerged._set_interval_b_metadata, refIntervals)
+        return self._intf.invoke(TimeToolTimeIntervalListMerged._metadata, TimeToolTimeIntervalListMerged._set_interval_b_metadata, ref_intervals)
 
     _add_interval_metadata = { "offset" : _add_interval_method_offset,
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ITimeToolTimeInterval"),) }
-    def add_interval(self, refIntervals:"ITimeToolTimeInterval") -> None:
+    def add_interval(self, ref_intervals:"ITimeToolTimeInterval") -> None:
         """Add interval."""
-        return self._intf.invoke(TimeToolTimeIntervalListMerged._metadata, TimeToolTimeIntervalListMerged._add_interval_metadata, refIntervals)
+        return self._intf.invoke(TimeToolTimeIntervalListMerged._metadata, TimeToolTimeIntervalListMerged._add_interval_metadata, ref_intervals)
 
     _add_interval_list_metadata = { "offset" : _add_interval_list_method_offset,
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ITimeToolTimeIntervalList"),) }
-    def add_interval_list(self, refIntervals:"ITimeToolTimeIntervalList") -> None:
+    def add_interval_list(self, ref_intervals:"ITimeToolTimeIntervalList") -> None:
         """Add interval list."""
-        return self._intf.invoke(TimeToolTimeIntervalListMerged._metadata, TimeToolTimeIntervalListMerged._add_interval_list_metadata, refIntervals)
+        return self._intf.invoke(TimeToolTimeIntervalListMerged._metadata, TimeToolTimeIntervalListMerged._add_interval_list_metadata, ref_intervals)
 
     _set_interval_metadata = { "offset" : _set_interval_method_offset,
             "arg_types" : (agcom.PVOID, agcom.INT,),
             "marshallers" : (agmarshall.InterfaceInArg("ITimeToolTimeInterval"), agmarshall.IntArg,) }
-    def set_interval(self, refIntervals:"ITimeToolTimeInterval", pos:int) -> None:
+    def set_interval(self, ref_intervals:"ITimeToolTimeInterval", pos:int) -> None:
         """Set the interval at given index."""
-        return self._intf.invoke(TimeToolTimeIntervalListMerged._metadata, TimeToolTimeIntervalListMerged._set_interval_metadata, refIntervals, pos)
+        return self._intf.invoke(TimeToolTimeIntervalListMerged._metadata, TimeToolTimeIntervalListMerged._set_interval_metadata, ref_intervals, pos)
 
     _set_interval_list_metadata = { "offset" : _set_interval_list_method_offset,
             "arg_types" : (agcom.PVOID, agcom.INT,),
             "marshallers" : (agmarshall.InterfaceInArg("ITimeToolTimeIntervalList"), agmarshall.IntArg,) }
-    def set_interval_list(self, refIntervals:"ITimeToolTimeIntervalList", pos:int) -> None:
+    def set_interval_list(self, ref_intervals:"ITimeToolTimeIntervalList", pos:int) -> None:
         """Set the interval list at given index."""
-        return self._intf.invoke(TimeToolTimeIntervalListMerged._metadata, TimeToolTimeIntervalListMerged._set_interval_list_metadata, refIntervals, pos)
+        return self._intf.invoke(TimeToolTimeIntervalListMerged._metadata, TimeToolTimeIntervalListMerged._set_interval_list_metadata, ref_intervals, pos)
 
     _get_time_component_metadata = { "offset" : _get_time_component_method_offset,
             "arg_types" : (agcom.INT, POINTER(agcom.BSTR),),
@@ -12514,12 +12514,12 @@ class TimeToolTimeIntervalListMerged(ITimeToolTimeIntervalList, IAnalysisWorkben
     _property_names[interval_list_or_interval_b] = "interval_list_or_interval_b"
     _property_names[merge_operation] = "merge_operation"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalListMerged."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalListMerged)
-        ITimeToolTimeIntervalList.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalListMerged)
+        ITimeToolTimeIntervalList.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeIntervalList._private_init(self, intf)
@@ -12567,8 +12567,8 @@ class TimeToolTimeIntervalListScaled(ITimeToolTimeIntervalList, IAnalysisWorkben
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ITimeToolTimeIntervalList"),) }
     @original_intervals.setter
-    def original_intervals(self, originalIntervals:"ITimeToolTimeIntervalList") -> None:
-        return self._intf.set_property(TimeToolTimeIntervalListScaled._metadata, TimeToolTimeIntervalListScaled._set_original_intervals_metadata, originalIntervals)
+    def original_intervals(self, original_intervals:"ITimeToolTimeIntervalList") -> None:
+        return self._intf.set_property(TimeToolTimeIntervalListScaled._metadata, TimeToolTimeIntervalListScaled._set_original_intervals_metadata, original_intervals)
 
     _get_absolute_increment_metadata = { "offset" : _get_absolute_increment_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -12582,8 +12582,8 @@ class TimeToolTimeIntervalListScaled(ITimeToolTimeIntervalList, IAnalysisWorkben
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @absolute_increment.setter
-    def absolute_increment(self, absoluteIncrement:float) -> None:
-        return self._intf.set_property(TimeToolTimeIntervalListScaled._metadata, TimeToolTimeIntervalListScaled._set_absolute_increment_metadata, absoluteIncrement)
+    def absolute_increment(self, absolute_increment:float) -> None:
+        return self._intf.set_property(TimeToolTimeIntervalListScaled._metadata, TimeToolTimeIntervalListScaled._set_absolute_increment_metadata, absolute_increment)
 
     _get_relative_increment_metadata = { "offset" : _get_relative_increment_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -12597,8 +12597,8 @@ class TimeToolTimeIntervalListScaled(ITimeToolTimeIntervalList, IAnalysisWorkben
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @relative_increment.setter
-    def relative_increment(self, relativeIncrement:float) -> None:
-        return self._intf.set_property(TimeToolTimeIntervalListScaled._metadata, TimeToolTimeIntervalListScaled._set_relative_increment_metadata, relativeIncrement)
+    def relative_increment(self, relative_increment:float) -> None:
+        return self._intf.set_property(TimeToolTimeIntervalListScaled._metadata, TimeToolTimeIntervalListScaled._set_relative_increment_metadata, relative_increment)
 
     _get_use_absolute_increment_metadata = { "offset" : _get_use_absolute_increment_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -12612,20 +12612,20 @@ class TimeToolTimeIntervalListScaled(ITimeToolTimeIntervalList, IAnalysisWorkben
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @use_absolute_increment.setter
-    def use_absolute_increment(self, useAbsoluteIncrement:bool) -> None:
-        return self._intf.set_property(TimeToolTimeIntervalListScaled._metadata, TimeToolTimeIntervalListScaled._set_use_absolute_increment_metadata, useAbsoluteIncrement)
+    def use_absolute_increment(self, use_absolute_increment:bool) -> None:
+        return self._intf.set_property(TimeToolTimeIntervalListScaled._metadata, TimeToolTimeIntervalListScaled._set_use_absolute_increment_metadata, use_absolute_increment)
 
     _property_names[original_intervals] = "original_intervals"
     _property_names[absolute_increment] = "absolute_increment"
     _property_names[relative_increment] = "relative_increment"
     _property_names[use_absolute_increment] = "use_absolute_increment"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalListScaled."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalListScaled)
-        ITimeToolTimeIntervalList.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalListScaled)
+        ITimeToolTimeIntervalList.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeIntervalList._private_init(self, intf)
@@ -12675,8 +12675,8 @@ class TimeToolTimeIntervalListSignaled(ITimeToolTimeIntervalList, IAnalysisWorkb
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ITimeToolTimeIntervalList"),) }
     @original_intervals.setter
-    def original_intervals(self, originalIntervals:"ITimeToolTimeIntervalList") -> None:
-        return self._intf.set_property(TimeToolTimeIntervalListSignaled._metadata, TimeToolTimeIntervalListSignaled._set_original_intervals_metadata, originalIntervals)
+    def original_intervals(self, original_intervals:"ITimeToolTimeIntervalList") -> None:
+        return self._intf.set_property(TimeToolTimeIntervalListSignaled._metadata, TimeToolTimeIntervalListSignaled._set_original_intervals_metadata, original_intervals)
 
     _get_signal_sense_metadata = { "offset" : _get_signal_sense_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -12690,8 +12690,8 @@ class TimeToolTimeIntervalListSignaled(ITimeToolTimeIntervalList, IAnalysisWorkb
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(SIGNAL_DIRECTION_TYPE),) }
     @signal_sense.setter
-    def signal_sense(self, signalSense:"SIGNAL_DIRECTION_TYPE") -> None:
-        return self._intf.set_property(TimeToolTimeIntervalListSignaled._metadata, TimeToolTimeIntervalListSignaled._set_signal_sense_metadata, signalSense)
+    def signal_sense(self, signal_sense:"SIGNAL_DIRECTION_TYPE") -> None:
+        return self._intf.set_property(TimeToolTimeIntervalListSignaled._metadata, TimeToolTimeIntervalListSignaled._set_signal_sense_metadata, signal_sense)
 
     _get_base_clock_location_metadata = { "offset" : _get_base_clock_location_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -12705,8 +12705,8 @@ class TimeToolTimeIntervalListSignaled(ITimeToolTimeIntervalList, IAnalysisWorkb
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolPoint"),) }
     @base_clock_location.setter
-    def base_clock_location(self, baseClockLocation:"IVectorGeometryToolPoint") -> None:
-        return self._intf.set_property(TimeToolTimeIntervalListSignaled._metadata, TimeToolTimeIntervalListSignaled._set_base_clock_location_metadata, baseClockLocation)
+    def base_clock_location(self, base_clock_location:"IVectorGeometryToolPoint") -> None:
+        return self._intf.set_property(TimeToolTimeIntervalListSignaled._metadata, TimeToolTimeIntervalListSignaled._set_base_clock_location_metadata, base_clock_location)
 
     _get_target_clock_location_metadata = { "offset" : _get_target_clock_location_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -12720,8 +12720,8 @@ class TimeToolTimeIntervalListSignaled(ITimeToolTimeIntervalList, IAnalysisWorkb
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolPoint"),) }
     @target_clock_location.setter
-    def target_clock_location(self, targetClockLocation:"IVectorGeometryToolPoint") -> None:
-        return self._intf.set_property(TimeToolTimeIntervalListSignaled._metadata, TimeToolTimeIntervalListSignaled._set_target_clock_location_metadata, targetClockLocation)
+    def target_clock_location(self, target_clock_location:"IVectorGeometryToolPoint") -> None:
+        return self._intf.set_property(TimeToolTimeIntervalListSignaled._metadata, TimeToolTimeIntervalListSignaled._set_target_clock_location_metadata, target_clock_location)
 
     _get_signal_delay_metadata = { "offset" : _get_signal_delay_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -12735,8 +12735,8 @@ class TimeToolTimeIntervalListSignaled(ITimeToolTimeIntervalList, IAnalysisWorkb
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IAnalysisWorkbenchSignalDelay"),) }
     @signal_delay.setter
-    def signal_delay(self, signalDelay:"IAnalysisWorkbenchSignalDelay") -> None:
-        return self._intf.set_property(TimeToolTimeIntervalListSignaled._metadata, TimeToolTimeIntervalListSignaled._set_signal_delay_metadata, signalDelay)
+    def signal_delay(self, signal_delay:"IAnalysisWorkbenchSignalDelay") -> None:
+        return self._intf.set_property(TimeToolTimeIntervalListSignaled._metadata, TimeToolTimeIntervalListSignaled._set_signal_delay_metadata, signal_delay)
 
     _property_names[original_intervals] = "original_intervals"
     _property_names[signal_sense] = "signal_sense"
@@ -12744,12 +12744,12 @@ class TimeToolTimeIntervalListSignaled(ITimeToolTimeIntervalList, IAnalysisWorkb
     _property_names[target_clock_location] = "target_clock_location"
     _property_names[signal_delay] = "signal_delay"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalListSignaled."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalListSignaled)
-        ITimeToolTimeIntervalList.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalListSignaled)
+        ITimeToolTimeIntervalList.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeIntervalList._private_init(self, intf)
@@ -12793,8 +12793,8 @@ class TimeToolTimeIntervalListTimeOffset(ITimeToolTimeIntervalList, IAnalysisWor
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ITimeToolTimeIntervalList"),) }
     @reference_intervals.setter
-    def reference_intervals(self, referenceIntervals:"ITimeToolTimeIntervalList") -> None:
-        return self._intf.set_property(TimeToolTimeIntervalListTimeOffset._metadata, TimeToolTimeIntervalListTimeOffset._set_reference_intervals_metadata, referenceIntervals)
+    def reference_intervals(self, reference_intervals:"ITimeToolTimeIntervalList") -> None:
+        return self._intf.set_property(TimeToolTimeIntervalListTimeOffset._metadata, TimeToolTimeIntervalListTimeOffset._set_reference_intervals_metadata, reference_intervals)
 
     _get_time_offset_metadata = { "offset" : _get_time_offset_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -12808,18 +12808,18 @@ class TimeToolTimeIntervalListTimeOffset(ITimeToolTimeIntervalList, IAnalysisWor
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @time_offset.setter
-    def time_offset(self, timeOffset:float) -> None:
-        return self._intf.set_property(TimeToolTimeIntervalListTimeOffset._metadata, TimeToolTimeIntervalListTimeOffset._set_time_offset_metadata, timeOffset)
+    def time_offset(self, time_offset:float) -> None:
+        return self._intf.set_property(TimeToolTimeIntervalListTimeOffset._metadata, TimeToolTimeIntervalListTimeOffset._set_time_offset_metadata, time_offset)
 
     _property_names[reference_intervals] = "reference_intervals"
     _property_names[time_offset] = "time_offset"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalListTimeOffset."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalListTimeOffset)
-        ITimeToolTimeIntervalList.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalListTimeOffset)
+        ITimeToolTimeIntervalList.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeIntervalList._private_init(self, intf)
@@ -12867,8 +12867,8 @@ class TimeToolTimeIntervalScaled(ITimeToolTimeInterval, IAnalysisWorkbenchCompon
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ITimeToolTimeInterval"),) }
     @original_interval.setter
-    def original_interval(self, originalInterval:"ITimeToolTimeInterval") -> None:
-        return self._intf.set_property(TimeToolTimeIntervalScaled._metadata, TimeToolTimeIntervalScaled._set_original_interval_metadata, originalInterval)
+    def original_interval(self, original_interval:"ITimeToolTimeInterval") -> None:
+        return self._intf.set_property(TimeToolTimeIntervalScaled._metadata, TimeToolTimeIntervalScaled._set_original_interval_metadata, original_interval)
 
     _get_absolute_increment_metadata = { "offset" : _get_absolute_increment_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -12882,8 +12882,8 @@ class TimeToolTimeIntervalScaled(ITimeToolTimeInterval, IAnalysisWorkbenchCompon
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @absolute_increment.setter
-    def absolute_increment(self, absoluteIncrement:float) -> None:
-        return self._intf.set_property(TimeToolTimeIntervalScaled._metadata, TimeToolTimeIntervalScaled._set_absolute_increment_metadata, absoluteIncrement)
+    def absolute_increment(self, absolute_increment:float) -> None:
+        return self._intf.set_property(TimeToolTimeIntervalScaled._metadata, TimeToolTimeIntervalScaled._set_absolute_increment_metadata, absolute_increment)
 
     _get_relative_increment_metadata = { "offset" : _get_relative_increment_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -12897,8 +12897,8 @@ class TimeToolTimeIntervalScaled(ITimeToolTimeInterval, IAnalysisWorkbenchCompon
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @relative_increment.setter
-    def relative_increment(self, relativeIncrement:float) -> None:
-        return self._intf.set_property(TimeToolTimeIntervalScaled._metadata, TimeToolTimeIntervalScaled._set_relative_increment_metadata, relativeIncrement)
+    def relative_increment(self, relative_increment:float) -> None:
+        return self._intf.set_property(TimeToolTimeIntervalScaled._metadata, TimeToolTimeIntervalScaled._set_relative_increment_metadata, relative_increment)
 
     _get_use_absolute_increment_metadata = { "offset" : _get_use_absolute_increment_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -12912,20 +12912,20 @@ class TimeToolTimeIntervalScaled(ITimeToolTimeInterval, IAnalysisWorkbenchCompon
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @use_absolute_increment.setter
-    def use_absolute_increment(self, useAbsoluteIncrement:bool) -> None:
-        return self._intf.set_property(TimeToolTimeIntervalScaled._metadata, TimeToolTimeIntervalScaled._set_use_absolute_increment_metadata, useAbsoluteIncrement)
+    def use_absolute_increment(self, use_absolute_increment:bool) -> None:
+        return self._intf.set_property(TimeToolTimeIntervalScaled._metadata, TimeToolTimeIntervalScaled._set_use_absolute_increment_metadata, use_absolute_increment)
 
     _property_names[original_interval] = "original_interval"
     _property_names[absolute_increment] = "absolute_increment"
     _property_names[relative_increment] = "relative_increment"
     _property_names[use_absolute_increment] = "use_absolute_increment"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalScaled."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalScaled)
-        ITimeToolTimeInterval.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalScaled)
+        ITimeToolTimeInterval.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeInterval._private_init(self, intf)
@@ -12975,8 +12975,8 @@ class TimeToolTimeIntervalSignaled(ITimeToolTimeInterval, IAnalysisWorkbenchComp
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ITimeToolTimeInterval"),) }
     @original_interval.setter
-    def original_interval(self, originalInterval:"ITimeToolTimeInterval") -> None:
-        return self._intf.set_property(TimeToolTimeIntervalSignaled._metadata, TimeToolTimeIntervalSignaled._set_original_interval_metadata, originalInterval)
+    def original_interval(self, original_interval:"ITimeToolTimeInterval") -> None:
+        return self._intf.set_property(TimeToolTimeIntervalSignaled._metadata, TimeToolTimeIntervalSignaled._set_original_interval_metadata, original_interval)
 
     _get_signal_sense_metadata = { "offset" : _get_signal_sense_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -12990,8 +12990,8 @@ class TimeToolTimeIntervalSignaled(ITimeToolTimeInterval, IAnalysisWorkbenchComp
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(SIGNAL_DIRECTION_TYPE),) }
     @signal_sense.setter
-    def signal_sense(self, signalSense:"SIGNAL_DIRECTION_TYPE") -> None:
-        return self._intf.set_property(TimeToolTimeIntervalSignaled._metadata, TimeToolTimeIntervalSignaled._set_signal_sense_metadata, signalSense)
+    def signal_sense(self, signal_sense:"SIGNAL_DIRECTION_TYPE") -> None:
+        return self._intf.set_property(TimeToolTimeIntervalSignaled._metadata, TimeToolTimeIntervalSignaled._set_signal_sense_metadata, signal_sense)
 
     _get_base_clock_location_metadata = { "offset" : _get_base_clock_location_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -13005,8 +13005,8 @@ class TimeToolTimeIntervalSignaled(ITimeToolTimeInterval, IAnalysisWorkbenchComp
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolPoint"),) }
     @base_clock_location.setter
-    def base_clock_location(self, baseClockLocation:"IVectorGeometryToolPoint") -> None:
-        return self._intf.set_property(TimeToolTimeIntervalSignaled._metadata, TimeToolTimeIntervalSignaled._set_base_clock_location_metadata, baseClockLocation)
+    def base_clock_location(self, base_clock_location:"IVectorGeometryToolPoint") -> None:
+        return self._intf.set_property(TimeToolTimeIntervalSignaled._metadata, TimeToolTimeIntervalSignaled._set_base_clock_location_metadata, base_clock_location)
 
     _get_target_clock_location_metadata = { "offset" : _get_target_clock_location_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -13020,8 +13020,8 @@ class TimeToolTimeIntervalSignaled(ITimeToolTimeInterval, IAnalysisWorkbenchComp
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolPoint"),) }
     @target_clock_location.setter
-    def target_clock_location(self, targetClockLocation:"IVectorGeometryToolPoint") -> None:
-        return self._intf.set_property(TimeToolTimeIntervalSignaled._metadata, TimeToolTimeIntervalSignaled._set_target_clock_location_metadata, targetClockLocation)
+    def target_clock_location(self, target_clock_location:"IVectorGeometryToolPoint") -> None:
+        return self._intf.set_property(TimeToolTimeIntervalSignaled._metadata, TimeToolTimeIntervalSignaled._set_target_clock_location_metadata, target_clock_location)
 
     _get_signal_delay_metadata = { "offset" : _get_signal_delay_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -13035,8 +13035,8 @@ class TimeToolTimeIntervalSignaled(ITimeToolTimeInterval, IAnalysisWorkbenchComp
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IAnalysisWorkbenchSignalDelay"),) }
     @signal_delay.setter
-    def signal_delay(self, signalDelay:"IAnalysisWorkbenchSignalDelay") -> None:
-        return self._intf.set_property(TimeToolTimeIntervalSignaled._metadata, TimeToolTimeIntervalSignaled._set_signal_delay_metadata, signalDelay)
+    def signal_delay(self, signal_delay:"IAnalysisWorkbenchSignalDelay") -> None:
+        return self._intf.set_property(TimeToolTimeIntervalSignaled._metadata, TimeToolTimeIntervalSignaled._set_signal_delay_metadata, signal_delay)
 
     _property_names[original_interval] = "original_interval"
     _property_names[signal_sense] = "signal_sense"
@@ -13044,12 +13044,12 @@ class TimeToolTimeIntervalSignaled(ITimeToolTimeInterval, IAnalysisWorkbenchComp
     _property_names[target_clock_location] = "target_clock_location"
     _property_names[signal_delay] = "signal_delay"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalSignaled."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalSignaled)
-        ITimeToolTimeInterval.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalSignaled)
+        ITimeToolTimeInterval.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeInterval._private_init(self, intf)
@@ -13114,8 +13114,8 @@ class TimeToolTimeIntervalSmartInterval(ITimeToolTimeInterval, IAnalysisWorkbenc
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @duration_as_string.setter
-    def duration_as_string(self, durationAsString:str) -> None:
-        return self._intf.set_property(TimeToolTimeIntervalSmartInterval._metadata, TimeToolTimeIntervalSmartInterval._set_duration_as_string_metadata, durationAsString)
+    def duration_as_string(self, duration_as_string:str) -> None:
+        return self._intf.set_property(TimeToolTimeIntervalSmartInterval._metadata, TimeToolTimeIntervalSmartInterval._set_duration_as_string_metadata, duration_as_string)
 
     _get_state_metadata = { "offset" : _get_state_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -13135,9 +13135,9 @@ class TimeToolTimeIntervalSmartInterval(ITimeToolTimeInterval, IAnalysisWorkbenc
     _set_implicit_interval_metadata = { "offset" : _set_implicit_interval_method_offset,
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ITimeToolTimeInterval"),) }
-    def set_implicit_interval(self, eventInterval:"ITimeToolTimeInterval") -> None:
+    def set_implicit_interval(self, event_interval:"ITimeToolTimeInterval") -> None:
         """Set the reference interval and changes the state to Implicit."""
-        return self._intf.invoke(TimeToolTimeIntervalSmartInterval._metadata, TimeToolTimeIntervalSmartInterval._set_implicit_interval_metadata, eventInterval)
+        return self._intf.invoke(TimeToolTimeIntervalSmartInterval._metadata, TimeToolTimeIntervalSmartInterval._set_implicit_interval_metadata, event_interval)
 
     _find_start_time_metadata = { "offset" : _find_start_time_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
@@ -13163,9 +13163,9 @@ class TimeToolTimeIntervalSmartInterval(ITimeToolTimeInterval, IAnalysisWorkbenc
     _set_start_epoch_metadata = { "offset" : _set_start_epoch_method_offset,
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("TimeToolInstantSmartEpoch"),) }
-    def set_start_epoch(self, startEpoch:"TimeToolInstantSmartEpoch") -> None:
+    def set_start_epoch(self, start_epoch:"TimeToolInstantSmartEpoch") -> None:
         """Set a start of the interval using specified epoch component."""
-        return self._intf.invoke(TimeToolTimeIntervalSmartInterval._metadata, TimeToolTimeIntervalSmartInterval._set_start_epoch_metadata, startEpoch)
+        return self._intf.invoke(TimeToolTimeIntervalSmartInterval._metadata, TimeToolTimeIntervalSmartInterval._set_start_epoch_metadata, start_epoch)
 
     _get_stop_epoch_metadata = { "offset" : _get_stop_epoch_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -13177,9 +13177,9 @@ class TimeToolTimeIntervalSmartInterval(ITimeToolTimeInterval, IAnalysisWorkbenc
     _set_stop_epoch_metadata = { "offset" : _set_stop_epoch_method_offset,
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("TimeToolInstantSmartEpoch"),) }
-    def set_stop_epoch(self, stopEpoch:"TimeToolInstantSmartEpoch") -> None:
+    def set_stop_epoch(self, stop_epoch:"TimeToolInstantSmartEpoch") -> None:
         """Set a stop of the interval using specified epoch component."""
-        return self._intf.invoke(TimeToolTimeIntervalSmartInterval._metadata, TimeToolTimeIntervalSmartInterval._set_stop_epoch_metadata, stopEpoch)
+        return self._intf.invoke(TimeToolTimeIntervalSmartInterval._metadata, TimeToolTimeIntervalSmartInterval._set_stop_epoch_metadata, stop_epoch)
 
     _set_explicit_interval_metadata = { "offset" : _set_explicit_interval_method_offset,
             "arg_types" : (agcom.Variant, agcom.Variant,),
@@ -13191,41 +13191,41 @@ class TimeToolTimeIntervalSmartInterval(ITimeToolTimeInterval, IAnalysisWorkbenc
     _set_start_and_stop_epochs_metadata = { "offset" : _set_start_and_stop_epochs_method_offset,
             "arg_types" : (agcom.PVOID, agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("TimeToolInstantSmartEpoch"), agmarshall.InterfaceInArg("TimeToolInstantSmartEpoch"),) }
-    def set_start_and_stop_epochs(self, refStartEpoch:"TimeToolInstantSmartEpoch", refStopEpoch:"TimeToolInstantSmartEpoch") -> None:
+    def set_start_and_stop_epochs(self, ref_start_epoch:"TimeToolInstantSmartEpoch", ref_stop_epoch:"TimeToolInstantSmartEpoch") -> None:
         """Set the interval's start and stop epochs as two smart epoch components. Exception is thrown if specified start time is greater than stop time."""
-        return self._intf.invoke(TimeToolTimeIntervalSmartInterval._metadata, TimeToolTimeIntervalSmartInterval._set_start_and_stop_epochs_metadata, refStartEpoch, refStopEpoch)
+        return self._intf.invoke(TimeToolTimeIntervalSmartInterval._metadata, TimeToolTimeIntervalSmartInterval._set_start_and_stop_epochs_metadata, ref_start_epoch, ref_stop_epoch)
 
     _set_start_and_stop_times_metadata = { "offset" : _set_start_and_stop_times_method_offset,
             "arg_types" : (agcom.Variant, agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg, agmarshall.VariantArg,) }
-    def set_start_and_stop_times(self, startTime:typing.Any, stopTime:typing.Any) -> None:
+    def set_start_and_stop_times(self, start_time:typing.Any, stop_time:typing.Any) -> None:
         """Set the interval's start and stop epochs as explicit times. Exception is thrown if specified start time is greater than stop time."""
-        return self._intf.invoke(TimeToolTimeIntervalSmartInterval._metadata, TimeToolTimeIntervalSmartInterval._set_start_and_stop_times_metadata, startTime, stopTime)
+        return self._intf.invoke(TimeToolTimeIntervalSmartInterval._metadata, TimeToolTimeIntervalSmartInterval._set_start_and_stop_times_metadata, start_time, stop_time)
 
     _set_start_epoch_and_duration_metadata = { "offset" : _set_start_epoch_and_duration_method_offset,
             "arg_types" : (agcom.PVOID, agcom.BSTR,),
             "marshallers" : (agmarshall.InterfaceInArg("TimeToolInstantSmartEpoch"), agmarshall.BStrArg,) }
-    def set_start_epoch_and_duration(self, refStartEpoch:"TimeToolInstantSmartEpoch", durationStr:str) -> None:
+    def set_start_epoch_and_duration(self, ref_start_epoch:"TimeToolInstantSmartEpoch", duration_str:str) -> None:
         """Set the interval's start epoch and the interval's duration."""
-        return self._intf.invoke(TimeToolTimeIntervalSmartInterval._metadata, TimeToolTimeIntervalSmartInterval._set_start_epoch_and_duration_metadata, refStartEpoch, durationStr)
+        return self._intf.invoke(TimeToolTimeIntervalSmartInterval._metadata, TimeToolTimeIntervalSmartInterval._set_start_epoch_and_duration_metadata, ref_start_epoch, duration_str)
 
     _set_start_time_and_duration_metadata = { "offset" : _set_start_time_and_duration_method_offset,
             "arg_types" : (agcom.Variant, agcom.BSTR,),
             "marshallers" : (agmarshall.VariantArg, agmarshall.BStrArg,) }
-    def set_start_time_and_duration(self, epoch:typing.Any, durationStr:str) -> None:
+    def set_start_time_and_duration(self, epoch:typing.Any, duration_str:str) -> None:
         """Set the interval's start time and the interval's duration."""
-        return self._intf.invoke(TimeToolTimeIntervalSmartInterval._metadata, TimeToolTimeIntervalSmartInterval._set_start_time_and_duration_metadata, epoch, durationStr)
+        return self._intf.invoke(TimeToolTimeIntervalSmartInterval._metadata, TimeToolTimeIntervalSmartInterval._set_start_time_and_duration_metadata, epoch, duration_str)
 
     _property_names[reference_interval] = "reference_interval"
     _property_names[duration_as_string] = "duration_as_string"
     _property_names[state] = "state"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalSmartInterval."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalSmartInterval)
-        ITimeToolTimeInterval.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalSmartInterval)
+        ITimeToolTimeInterval.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeInterval._private_init(self, intf)
@@ -13269,8 +13269,8 @@ class TimeToolTimeIntervalTimeOffset(ITimeToolTimeInterval, IAnalysisWorkbenchCo
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ITimeToolTimeInterval"),) }
     @reference_interval.setter
-    def reference_interval(self, referenceInterval:"ITimeToolTimeInterval") -> None:
-        return self._intf.set_property(TimeToolTimeIntervalTimeOffset._metadata, TimeToolTimeIntervalTimeOffset._set_reference_interval_metadata, referenceInterval)
+    def reference_interval(self, reference_interval:"ITimeToolTimeInterval") -> None:
+        return self._intf.set_property(TimeToolTimeIntervalTimeOffset._metadata, TimeToolTimeIntervalTimeOffset._set_reference_interval_metadata, reference_interval)
 
     _get_time_offset_metadata = { "offset" : _get_time_offset_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -13284,18 +13284,18 @@ class TimeToolTimeIntervalTimeOffset(ITimeToolTimeInterval, IAnalysisWorkbenchCo
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @time_offset.setter
-    def time_offset(self, timeOffset:float) -> None:
-        return self._intf.set_property(TimeToolTimeIntervalTimeOffset._metadata, TimeToolTimeIntervalTimeOffset._set_time_offset_metadata, timeOffset)
+    def time_offset(self, time_offset:float) -> None:
+        return self._intf.set_property(TimeToolTimeIntervalTimeOffset._metadata, TimeToolTimeIntervalTimeOffset._set_time_offset_metadata, time_offset)
 
     _property_names[reference_interval] = "reference_interval"
     _property_names[time_offset] = "time_offset"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalTimeOffset."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalTimeOffset)
-        ITimeToolTimeInterval.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalTimeOffset)
+        ITimeToolTimeInterval.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolTimeInterval._private_init(self, intf)
@@ -13345,8 +13345,8 @@ class TimeToolInstantSignaled(ITimeToolInstant, IAnalysisWorkbenchComponent, Sup
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ITimeToolInstant"),) }
     @original_time_instant.setter
-    def original_time_instant(self, originalTimeInstant:"ITimeToolInstant") -> None:
-        return self._intf.set_property(TimeToolInstantSignaled._metadata, TimeToolInstantSignaled._set_original_time_instant_metadata, originalTimeInstant)
+    def original_time_instant(self, original_time_instant:"ITimeToolInstant") -> None:
+        return self._intf.set_property(TimeToolInstantSignaled._metadata, TimeToolInstantSignaled._set_original_time_instant_metadata, original_time_instant)
 
     _get_signal_sense_metadata = { "offset" : _get_signal_sense_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -13360,8 +13360,8 @@ class TimeToolInstantSignaled(ITimeToolInstant, IAnalysisWorkbenchComponent, Sup
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(SIGNAL_DIRECTION_TYPE),) }
     @signal_sense.setter
-    def signal_sense(self, signalSense:"SIGNAL_DIRECTION_TYPE") -> None:
-        return self._intf.set_property(TimeToolInstantSignaled._metadata, TimeToolInstantSignaled._set_signal_sense_metadata, signalSense)
+    def signal_sense(self, signal_sense:"SIGNAL_DIRECTION_TYPE") -> None:
+        return self._intf.set_property(TimeToolInstantSignaled._metadata, TimeToolInstantSignaled._set_signal_sense_metadata, signal_sense)
 
     _get_base_clock_location_metadata = { "offset" : _get_base_clock_location_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -13375,8 +13375,8 @@ class TimeToolInstantSignaled(ITimeToolInstant, IAnalysisWorkbenchComponent, Sup
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolPoint"),) }
     @base_clock_location.setter
-    def base_clock_location(self, baseClockLocation:"IVectorGeometryToolPoint") -> None:
-        return self._intf.set_property(TimeToolInstantSignaled._metadata, TimeToolInstantSignaled._set_base_clock_location_metadata, baseClockLocation)
+    def base_clock_location(self, base_clock_location:"IVectorGeometryToolPoint") -> None:
+        return self._intf.set_property(TimeToolInstantSignaled._metadata, TimeToolInstantSignaled._set_base_clock_location_metadata, base_clock_location)
 
     _get_target_clock_location_metadata = { "offset" : _get_target_clock_location_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -13390,8 +13390,8 @@ class TimeToolInstantSignaled(ITimeToolInstant, IAnalysisWorkbenchComponent, Sup
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolPoint"),) }
     @target_clock_location.setter
-    def target_clock_location(self, targetClockLocation:"IVectorGeometryToolPoint") -> None:
-        return self._intf.set_property(TimeToolInstantSignaled._metadata, TimeToolInstantSignaled._set_target_clock_location_metadata, targetClockLocation)
+    def target_clock_location(self, target_clock_location:"IVectorGeometryToolPoint") -> None:
+        return self._intf.set_property(TimeToolInstantSignaled._metadata, TimeToolInstantSignaled._set_target_clock_location_metadata, target_clock_location)
 
     _get_signal_delay_metadata = { "offset" : _get_signal_delay_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -13405,8 +13405,8 @@ class TimeToolInstantSignaled(ITimeToolInstant, IAnalysisWorkbenchComponent, Sup
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IAnalysisWorkbenchSignalDelay"),) }
     @signal_delay.setter
-    def signal_delay(self, signalDelay:"IAnalysisWorkbenchSignalDelay") -> None:
-        return self._intf.set_property(TimeToolInstantSignaled._metadata, TimeToolInstantSignaled._set_signal_delay_metadata, signalDelay)
+    def signal_delay(self, signal_delay:"IAnalysisWorkbenchSignalDelay") -> None:
+        return self._intf.set_property(TimeToolInstantSignaled._metadata, TimeToolInstantSignaled._set_signal_delay_metadata, signal_delay)
 
     _property_names[original_time_instant] = "original_time_instant"
     _property_names[signal_sense] = "signal_sense"
@@ -13414,12 +13414,12 @@ class TimeToolInstantSignaled(ITimeToolInstant, IAnalysisWorkbenchComponent, Sup
     _property_names[target_clock_location] = "target_clock_location"
     _property_names[signal_delay] = "signal_delay"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolInstantSignaled."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolInstantSignaled)
-        ITimeToolInstant.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolInstantSignaled)
+        ITimeToolInstant.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolInstant._private_init(self, intf)
@@ -13494,20 +13494,20 @@ class TimeToolInstantSmartEpoch(ITimeToolInstant, IAnalysisWorkbenchComponent, S
     _set_implicit_time_metadata = { "offset" : _set_implicit_time_method_offset,
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ITimeToolInstant"),) }
-    def set_implicit_time(self, eventEpoch:"ITimeToolInstant") -> None:
+    def set_implicit_time(self, event_epoch:"ITimeToolInstant") -> None:
         """Set the reference event and the smart epoch's state to Implicit."""
-        return self._intf.invoke(TimeToolInstantSmartEpoch._metadata, TimeToolInstantSmartEpoch._set_implicit_time_metadata, eventEpoch)
+        return self._intf.invoke(TimeToolInstantSmartEpoch._metadata, TimeToolInstantSmartEpoch._set_implicit_time_metadata, event_epoch)
 
     _property_names[time_instant] = "time_instant"
     _property_names[reference_epoch] = "reference_epoch"
     _property_names[state] = "state"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolInstantSmartEpoch."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolInstantSmartEpoch)
-        ITimeToolInstant.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolInstantSmartEpoch)
+        ITimeToolInstant.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolInstant._private_init(self, intf)
@@ -13551,8 +13551,8 @@ class TimeToolInstantStartStopTime(ITimeToolInstant, IAnalysisWorkbenchComponent
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @use_start.setter
-    def use_start(self, useStart:bool) -> None:
-        return self._intf.set_property(TimeToolInstantStartStopTime._metadata, TimeToolInstantStartStopTime._set_use_start_metadata, useStart)
+    def use_start(self, use_start:bool) -> None:
+        return self._intf.set_property(TimeToolInstantStartStopTime._metadata, TimeToolInstantStartStopTime._set_use_start_metadata, use_start)
 
     _get_reference_interval_metadata = { "offset" : _get_reference_interval_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -13566,18 +13566,18 @@ class TimeToolInstantStartStopTime(ITimeToolInstant, IAnalysisWorkbenchComponent
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ITimeToolTimeInterval"),) }
     @reference_interval.setter
-    def reference_interval(self, referenceEventInterval:"ITimeToolTimeInterval") -> None:
-        return self._intf.set_property(TimeToolInstantStartStopTime._metadata, TimeToolInstantStartStopTime._set_reference_interval_metadata, referenceEventInterval)
+    def reference_interval(self, reference_event_interval:"ITimeToolTimeInterval") -> None:
+        return self._intf.set_property(TimeToolInstantStartStopTime._metadata, TimeToolInstantStartStopTime._set_reference_interval_metadata, reference_event_interval)
 
     _property_names[use_start] = "use_start"
     _property_names[reference_interval] = "reference_interval"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolInstantStartStopTime."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolInstantStartStopTime)
-        ITimeToolInstant.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolInstantStartStopTime)
+        ITimeToolInstant.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolInstant._private_init(self, intf)
@@ -13621,8 +13621,8 @@ class TimeToolInstantTimeOffset(ITimeToolInstant, IAnalysisWorkbenchComponent, S
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ITimeToolInstant"),) }
     @reference_time_instant.setter
-    def reference_time_instant(self, referenceTimeInstant:"ITimeToolInstant") -> None:
-        return self._intf.set_property(TimeToolInstantTimeOffset._metadata, TimeToolInstantTimeOffset._set_reference_time_instant_metadata, referenceTimeInstant)
+    def reference_time_instant(self, reference_time_instant:"ITimeToolInstant") -> None:
+        return self._intf.set_property(TimeToolInstantTimeOffset._metadata, TimeToolInstantTimeOffset._set_reference_time_instant_metadata, reference_time_instant)
 
     _get_time_offset_metadata = { "offset" : _get_time_offset_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -13636,18 +13636,18 @@ class TimeToolInstantTimeOffset(ITimeToolInstant, IAnalysisWorkbenchComponent, S
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @time_offset.setter
-    def time_offset(self, timeOffset2:float) -> None:
-        return self._intf.set_property(TimeToolInstantTimeOffset._metadata, TimeToolInstantTimeOffset._set_time_offset_metadata, timeOffset2)
+    def time_offset(self, time_offset2:float) -> None:
+        return self._intf.set_property(TimeToolInstantTimeOffset._metadata, TimeToolInstantTimeOffset._set_time_offset_metadata, time_offset2)
 
     _property_names[reference_time_instant] = "reference_time_instant"
     _property_names[time_offset] = "time_offset"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolInstantTimeOffset."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolInstantTimeOffset)
-        ITimeToolInstant.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolInstantTimeOffset)
+        ITimeToolInstant.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolInstant._private_init(self, intf)
@@ -13689,16 +13689,16 @@ class TimeToolTimeIntervalFirstIntervalsFilter(ITimeToolPruneFilter, SupportsDel
             "arg_types" : (agcom.INT,),
             "marshallers" : (agmarshall.IntArg,) }
     @maximum_number_of_intervals.setter
-    def maximum_number_of_intervals(self, maximumNumberOfIntervals:int) -> None:
-        return self._intf.set_property(TimeToolTimeIntervalFirstIntervalsFilter._metadata, TimeToolTimeIntervalFirstIntervalsFilter._set_maximum_number_of_intervals_metadata, maximumNumberOfIntervals)
+    def maximum_number_of_intervals(self, maximum_number_of_intervals:int) -> None:
+        return self._intf.set_property(TimeToolTimeIntervalFirstIntervalsFilter._metadata, TimeToolTimeIntervalFirstIntervalsFilter._set_maximum_number_of_intervals_metadata, maximum_number_of_intervals)
 
     _property_names[maximum_number_of_intervals] = "maximum_number_of_intervals"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalFirstIntervalsFilter."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalFirstIntervalsFilter)
-        ITimeToolPruneFilter.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalFirstIntervalsFilter)
+        ITimeToolPruneFilter.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolPruneFilter._private_init(self, intf)
@@ -13741,8 +13741,8 @@ class TimeToolTimeIntervalGapsFilter(ITimeToolPruneFilter, SupportsDeleteCallbac
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(INTERVAL_DURATION_TYPE),) }
     @duration_type.setter
-    def duration_type(self, durationKind:"INTERVAL_DURATION_TYPE") -> None:
-        return self._intf.set_property(TimeToolTimeIntervalGapsFilter._metadata, TimeToolTimeIntervalGapsFilter._set_duration_type_metadata, durationKind)
+    def duration_type(self, duration_kind:"INTERVAL_DURATION_TYPE") -> None:
+        return self._intf.set_property(TimeToolTimeIntervalGapsFilter._metadata, TimeToolTimeIntervalGapsFilter._set_duration_type_metadata, duration_kind)
 
     _get_gap_duration_metadata = { "offset" : _get_gap_duration_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -13756,17 +13756,17 @@ class TimeToolTimeIntervalGapsFilter(ITimeToolPruneFilter, SupportsDeleteCallbac
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @gap_duration.setter
-    def gap_duration(self, gapDuration:float) -> None:
-        return self._intf.set_property(TimeToolTimeIntervalGapsFilter._metadata, TimeToolTimeIntervalGapsFilter._set_gap_duration_metadata, gapDuration)
+    def gap_duration(self, gap_duration:float) -> None:
+        return self._intf.set_property(TimeToolTimeIntervalGapsFilter._metadata, TimeToolTimeIntervalGapsFilter._set_gap_duration_metadata, gap_duration)
 
     _property_names[duration_type] = "duration_type"
     _property_names[gap_duration] = "gap_duration"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalGapsFilter."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalGapsFilter)
-        ITimeToolPruneFilter.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalGapsFilter)
+        ITimeToolPruneFilter.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolPruneFilter._private_init(self, intf)
@@ -13782,11 +13782,11 @@ agcls.AgTypeNameMap["TimeToolTimeIntervalGapsFilter"] = TimeToolTimeIntervalGaps
 
 class AnalysisWorkbenchIntegral(IAnalysisWorkbenchIntegral, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Represents a base class for integral definitions."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchIntegral."""
         SupportsDeleteCallback.__init__(self)
-        IAnalysisWorkbenchIntegral.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchIntegral.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchIntegral._private_init(self, intf)
@@ -13862,19 +13862,19 @@ class CalculationToolIntegralBasic(IAnalysisWorkbenchIntegral, IAnalysisWorkbenc
             "arg_types" : (agcom.INT,),
             "marshallers" : (agmarshall.IntArg,) }
     @maximum_iterations.setter
-    def maximum_iterations(self, maximumIterations:int) -> None:
-        return self._intf.set_property(CalculationToolIntegralBasic._metadata, CalculationToolIntegralBasic._set_maximum_iterations_metadata, maximumIterations)
+    def maximum_iterations(self, maximum_iterations:int) -> None:
+        return self._intf.set_property(CalculationToolIntegralBasic._metadata, CalculationToolIntegralBasic._set_maximum_iterations_metadata, maximum_iterations)
 
     _property_names[type] = "type"
     _property_names[tolerance] = "tolerance"
     _property_names[maximum_iterations] = "maximum_iterations"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolIntegralBasic."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolIntegralBasic)
-        IAnalysisWorkbenchIntegral.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolIntegralBasic)
+        IAnalysisWorkbenchIntegral.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchIntegral._private_init(self, intf)
@@ -13891,11 +13891,11 @@ agcls.AgTypeNameMap["CalculationToolIntegralBasic"] = CalculationToolIntegralBas
 
 class AnalysisWorkbenchInterpolator(IAnalysisWorkbenchInterpolator, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Represents a base class for interpolation definitions."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchInterpolator."""
         SupportsDeleteCallback.__init__(self)
-        IAnalysisWorkbenchInterpolator.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchInterpolator.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchInterpolator._private_init(self, intf)
@@ -13960,12 +13960,12 @@ class CalculationToolInterpolatorBasic(IAnalysisWorkbenchInterpolator, IAnalysis
     _property_names[type] = "type"
     _property_names[order] = "order"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolInterpolatorBasic."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolInterpolatorBasic)
-        IAnalysisWorkbenchInterpolator.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolInterpolatorBasic)
+        IAnalysisWorkbenchInterpolator.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchInterpolator._private_init(self, intf)
@@ -14009,8 +14009,8 @@ class TimeToolIntervalsFilter(ITimeToolPruneFilter, SupportsDeleteCallback):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(INTERVAL_DURATION_TYPE),) }
     @duration_type.setter
-    def duration_type(self, durationKind:"INTERVAL_DURATION_TYPE") -> None:
-        return self._intf.set_property(TimeToolIntervalsFilter._metadata, TimeToolIntervalsFilter._set_duration_type_metadata, durationKind)
+    def duration_type(self, duration_kind:"INTERVAL_DURATION_TYPE") -> None:
+        return self._intf.set_property(TimeToolIntervalsFilter._metadata, TimeToolIntervalsFilter._set_duration_type_metadata, duration_kind)
 
     _get_interval_duration_metadata = { "offset" : _get_interval_duration_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -14024,17 +14024,17 @@ class TimeToolIntervalsFilter(ITimeToolPruneFilter, SupportsDeleteCallback):
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @interval_duration.setter
-    def interval_duration(self, intervalDuration:float) -> None:
-        return self._intf.set_property(TimeToolIntervalsFilter._metadata, TimeToolIntervalsFilter._set_interval_duration_metadata, intervalDuration)
+    def interval_duration(self, interval_duration:float) -> None:
+        return self._intf.set_property(TimeToolIntervalsFilter._metadata, TimeToolIntervalsFilter._set_interval_duration_metadata, interval_duration)
 
     _property_names[duration_type] = "duration_type"
     _property_names[interval_duration] = "interval_duration"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolIntervalsFilter."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolIntervalsFilter)
-        ITimeToolPruneFilter.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolIntervalsFilter)
+        ITimeToolPruneFilter.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolPruneFilter._private_init(self, intf)
@@ -14075,16 +14075,16 @@ class TimeToolTimeIntervalLastIntervalsFilter(ITimeToolPruneFilter, SupportsDele
             "arg_types" : (agcom.INT,),
             "marshallers" : (agmarshall.IntArg,) }
     @maximum_number_of_intervals.setter
-    def maximum_number_of_intervals(self, maximumNumberOfIntervals:int) -> None:
-        return self._intf.set_property(TimeToolTimeIntervalLastIntervalsFilter._metadata, TimeToolTimeIntervalLastIntervalsFilter._set_maximum_number_of_intervals_metadata, maximumNumberOfIntervals)
+    def maximum_number_of_intervals(self, maximum_number_of_intervals:int) -> None:
+        return self._intf.set_property(TimeToolTimeIntervalLastIntervalsFilter._metadata, TimeToolTimeIntervalLastIntervalsFilter._set_maximum_number_of_intervals_metadata, maximum_number_of_intervals)
 
     _property_names[maximum_number_of_intervals] = "maximum_number_of_intervals"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalLastIntervalsFilter."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalLastIntervalsFilter)
-        ITimeToolPruneFilter.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalLastIntervalsFilter)
+        ITimeToolPruneFilter.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolPruneFilter._private_init(self, intf)
@@ -14100,11 +14100,11 @@ agcls.AgTypeNameMap["TimeToolTimeIntervalLastIntervalsFilter"] = TimeToolTimeInt
 
 class CalculationToolParameterSet(ICalculationToolParameterSet, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Parameter set contains various sets of scalar computations."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolParameterSet."""
         SupportsDeleteCallback.__init__(self)
-        ICalculationToolParameterSet.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        ICalculationToolParameterSet.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolParameterSet._private_init(self, intf)
@@ -14163,18 +14163,18 @@ class CalculationToolParameterSetAttitude(ICalculationToolParameterSet, IAnalysi
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolAxes"),) }
     @reference_axes.setter
-    def reference_axes(self, referenceAxes:"IVectorGeometryToolAxes") -> None:
-        return self._intf.set_property(CalculationToolParameterSetAttitude._metadata, CalculationToolParameterSetAttitude._set_reference_axes_metadata, referenceAxes)
+    def reference_axes(self, reference_axes:"IVectorGeometryToolAxes") -> None:
+        return self._intf.set_property(CalculationToolParameterSetAttitude._metadata, CalculationToolParameterSetAttitude._set_reference_axes_metadata, reference_axes)
 
     _property_names[axes] = "axes"
     _property_names[reference_axes] = "reference_axes"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolParameterSetAttitude."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolParameterSetAttitude)
-        ICalculationToolParameterSet.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolParameterSetAttitude)
+        ICalculationToolParameterSet.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolParameterSet._private_init(self, intf)
@@ -14254,15 +14254,15 @@ class CalculationToolParameterSetFactory(SupportsDeleteCallback):
     _is_type_supported_metadata = { "offset" : _is_type_supported_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.EnumArg(PARAMETER_SET_TYPE), agmarshall.VariantBoolArg,) }
-    def is_type_supported(self, eType:"PARAMETER_SET_TYPE") -> bool:
+    def is_type_supported(self, type:"PARAMETER_SET_TYPE") -> bool:
         """Return whether the specified type is supported."""
-        return self._intf.invoke(CalculationToolParameterSetFactory._metadata, CalculationToolParameterSetFactory._is_type_supported_metadata, eType, OutArg())
+        return self._intf.invoke(CalculationToolParameterSetFactory._metadata, CalculationToolParameterSetFactory._is_type_supported_metadata, type, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolParameterSetFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolParameterSetFactory)
+        initialize_from_source_object(self, source_object, CalculationToolParameterSetFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -14319,18 +14319,18 @@ class CalculationToolParameterSetGroundTrajectory(ICalculationToolParameterSet, 
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @central_body.setter
-    def central_body(self, centralBody:str) -> None:
-        return self._intf.set_property(CalculationToolParameterSetGroundTrajectory._metadata, CalculationToolParameterSetGroundTrajectory._set_central_body_metadata, centralBody)
+    def central_body(self, central_body:str) -> None:
+        return self._intf.set_property(CalculationToolParameterSetGroundTrajectory._metadata, CalculationToolParameterSetGroundTrajectory._set_central_body_metadata, central_body)
 
     _property_names[location] = "location"
     _property_names[central_body] = "central_body"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolParameterSetGroundTrajectory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolParameterSetGroundTrajectory)
-        ICalculationToolParameterSet.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolParameterSetGroundTrajectory)
+        ICalculationToolParameterSet.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolParameterSet._private_init(self, intf)
@@ -14382,8 +14382,8 @@ class CalculationToolParameterSetOrbit(ICalculationToolParameterSet, IAnalysisWo
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolPoint"),) }
     @orbiting_point.setter
-    def orbiting_point(self, orbitingPoint:"IVectorGeometryToolPoint") -> None:
-        return self._intf.set_property(CalculationToolParameterSetOrbit._metadata, CalculationToolParameterSetOrbit._set_orbiting_point_metadata, orbitingPoint)
+    def orbiting_point(self, orbiting_point:"IVectorGeometryToolPoint") -> None:
+        return self._intf.set_property(CalculationToolParameterSetOrbit._metadata, CalculationToolParameterSetOrbit._set_orbiting_point_metadata, orbiting_point)
 
     _get_reference_system_metadata = { "offset" : _get_reference_system_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -14397,8 +14397,8 @@ class CalculationToolParameterSetOrbit(ICalculationToolParameterSet, IAnalysisWo
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolSystem"),) }
     @reference_system.setter
-    def reference_system(self, referenceSystem:"IVectorGeometryToolSystem") -> None:
-        return self._intf.set_property(CalculationToolParameterSetOrbit._metadata, CalculationToolParameterSetOrbit._set_reference_system_metadata, referenceSystem)
+    def reference_system(self, reference_system:"IVectorGeometryToolSystem") -> None:
+        return self._intf.set_property(CalculationToolParameterSetOrbit._metadata, CalculationToolParameterSetOrbit._set_reference_system_metadata, reference_system)
 
     _get_gravitational_parameter_metadata = { "offset" : _get_gravitational_parameter_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -14412,8 +14412,8 @@ class CalculationToolParameterSetOrbit(ICalculationToolParameterSet, IAnalysisWo
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @gravitational_parameter.setter
-    def gravitational_parameter(self, gravitationalParameter:float) -> None:
-        return self._intf.set_property(CalculationToolParameterSetOrbit._metadata, CalculationToolParameterSetOrbit._set_gravitational_parameter_metadata, gravitationalParameter)
+    def gravitational_parameter(self, gravitational_parameter:float) -> None:
+        return self._intf.set_property(CalculationToolParameterSetOrbit._metadata, CalculationToolParameterSetOrbit._set_gravitational_parameter_metadata, gravitational_parameter)
 
     _get_central_body_metadata = { "offset" : _get_central_body_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -14427,8 +14427,8 @@ class CalculationToolParameterSetOrbit(ICalculationToolParameterSet, IAnalysisWo
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @central_body.setter
-    def central_body(self, centralBody:str) -> None:
-        return self._intf.set_property(CalculationToolParameterSetOrbit._metadata, CalculationToolParameterSetOrbit._set_central_body_metadata, centralBody)
+    def central_body(self, central_body:str) -> None:
+        return self._intf.set_property(CalculationToolParameterSetOrbit._metadata, CalculationToolParameterSetOrbit._set_central_body_metadata, central_body)
 
     _get_use_central_body_gravitational_parameter_metadata = { "offset" : _get_use_central_body_gravitational_parameter_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -14442,8 +14442,8 @@ class CalculationToolParameterSetOrbit(ICalculationToolParameterSet, IAnalysisWo
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @use_central_body_gravitational_parameter.setter
-    def use_central_body_gravitational_parameter(self, useCentralBodyGravitationalParameter:bool) -> None:
-        return self._intf.set_property(CalculationToolParameterSetOrbit._metadata, CalculationToolParameterSetOrbit._set_use_central_body_gravitational_parameter_metadata, useCentralBodyGravitationalParameter)
+    def use_central_body_gravitational_parameter(self, use_central_body_gravitational_parameter:bool) -> None:
+        return self._intf.set_property(CalculationToolParameterSetOrbit._metadata, CalculationToolParameterSetOrbit._set_use_central_body_gravitational_parameter_metadata, use_central_body_gravitational_parameter)
 
     _get_use_central_body_inertial_metadata = { "offset" : _get_use_central_body_inertial_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -14457,8 +14457,8 @@ class CalculationToolParameterSetOrbit(ICalculationToolParameterSet, IAnalysisWo
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @use_central_body_inertial.setter
-    def use_central_body_inertial(self, useCentralBodyInertial:bool) -> None:
-        return self._intf.set_property(CalculationToolParameterSetOrbit._metadata, CalculationToolParameterSetOrbit._set_use_central_body_inertial_metadata, useCentralBodyInertial)
+    def use_central_body_inertial(self, use_central_body_inertial:bool) -> None:
+        return self._intf.set_property(CalculationToolParameterSetOrbit._metadata, CalculationToolParameterSetOrbit._set_use_central_body_inertial_metadata, use_central_body_inertial)
 
     _property_names[orbiting_point] = "orbiting_point"
     _property_names[reference_system] = "reference_system"
@@ -14467,12 +14467,12 @@ class CalculationToolParameterSetOrbit(ICalculationToolParameterSet, IAnalysisWo
     _property_names[use_central_body_gravitational_parameter] = "use_central_body_gravitational_parameter"
     _property_names[use_central_body_inertial] = "use_central_body_inertial"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolParameterSetOrbit."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolParameterSetOrbit)
-        ICalculationToolParameterSet.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolParameterSetOrbit)
+        ICalculationToolParameterSet.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolParameterSet._private_init(self, intf)
@@ -14531,18 +14531,18 @@ class CalculationToolParameterSetTrajectory(ICalculationToolParameterSet, IAnaly
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolSystem"),) }
     @reference_system.setter
-    def reference_system(self, referenceSystem:"IVectorGeometryToolSystem") -> None:
-        return self._intf.set_property(CalculationToolParameterSetTrajectory._metadata, CalculationToolParameterSetTrajectory._set_reference_system_metadata, referenceSystem)
+    def reference_system(self, reference_system:"IVectorGeometryToolSystem") -> None:
+        return self._intf.set_property(CalculationToolParameterSetTrajectory._metadata, CalculationToolParameterSetTrajectory._set_reference_system_metadata, reference_system)
 
     _property_names[point] = "point"
     _property_names[reference_system] = "reference_system"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolParameterSetTrajectory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolParameterSetTrajectory)
-        ICalculationToolParameterSet.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolParameterSetTrajectory)
+        ICalculationToolParameterSet.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolParameterSet._private_init(self, intf)
@@ -14601,18 +14601,18 @@ class CalculationToolParameterSetVector(ICalculationToolParameterSet, IAnalysisW
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolAxes"),) }
     @reference_axes.setter
-    def reference_axes(self, referenceAxes:"IVectorGeometryToolAxes") -> None:
-        return self._intf.set_property(CalculationToolParameterSetVector._metadata, CalculationToolParameterSetVector._set_reference_axes_metadata, referenceAxes)
+    def reference_axes(self, reference_axes:"IVectorGeometryToolAxes") -> None:
+        return self._intf.set_property(CalculationToolParameterSetVector._metadata, CalculationToolParameterSetVector._set_reference_axes_metadata, reference_axes)
 
     _property_names[vector] = "vector"
     _property_names[reference_axes] = "reference_axes"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolParameterSetVector."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolParameterSetVector)
-        ICalculationToolParameterSet.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolParameterSetVector)
+        ICalculationToolParameterSet.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolParameterSet._private_init(self, intf)
@@ -14629,10 +14629,10 @@ agcls.AgTypeNameMap["CalculationToolParameterSetVector"] = CalculationToolParame
 
 class TimeToolPruneFilter(ITimeToolPruneFilter, SupportsDeleteCallback):
     """A filter used with event interval list pruned class to prune interval lists..."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolPruneFilter."""
         SupportsDeleteCallback.__init__(self)
-        ITimeToolPruneFilter.__init__(self, sourceObject)
+        ITimeToolPruneFilter.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolPruneFilter._private_init(self, intf)
@@ -14663,15 +14663,15 @@ class TimeToolPruneFilterFactory(SupportsDeleteCallback):
     _create_metadata = { "offset" : _create_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.EnumArg(INTERVAL_PRUNE_FILTER_TYPE), agmarshall.InterfaceOutArg,) }
-    def create(self, eFilter:"INTERVAL_PRUNE_FILTER_TYPE") -> "ITimeToolPruneFilter":
+    def create(self, filter:"INTERVAL_PRUNE_FILTER_TYPE") -> "ITimeToolPruneFilter":
         """Create and initializes a new prune filter using default configuration."""
-        return self._intf.invoke(TimeToolPruneFilterFactory._metadata, TimeToolPruneFilterFactory._create_metadata, eFilter, OutArg())
+        return self._intf.invoke(TimeToolPruneFilterFactory._metadata, TimeToolPruneFilterFactory._create_metadata, filter, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolPruneFilterFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolPruneFilterFactory)
+        initialize_from_source_object(self, source_object, TimeToolPruneFilterFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -14730,8 +14730,8 @@ class TimeToolTimeIntervalRelativeSatisfactionConditionFilter(ITimeToolPruneFilt
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(INTERVAL_DURATION_TYPE),) }
     @duration_type.setter
-    def duration_type(self, durationKind:"INTERVAL_DURATION_TYPE") -> None:
-        return self._intf.set_property(TimeToolTimeIntervalRelativeSatisfactionConditionFilter._metadata, TimeToolTimeIntervalRelativeSatisfactionConditionFilter._set_duration_type_metadata, durationKind)
+    def duration_type(self, duration_kind:"INTERVAL_DURATION_TYPE") -> None:
+        return self._intf.set_property(TimeToolTimeIntervalRelativeSatisfactionConditionFilter._metadata, TimeToolTimeIntervalRelativeSatisfactionConditionFilter._set_duration_type_metadata, duration_kind)
 
     _get_relative_interval_duration_metadata = { "offset" : _get_relative_interval_duration_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -14745,18 +14745,18 @@ class TimeToolTimeIntervalRelativeSatisfactionConditionFilter(ITimeToolPruneFilt
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @relative_interval_duration.setter
-    def relative_interval_duration(self, relativeIntervalDuration:float) -> None:
-        return self._intf.set_property(TimeToolTimeIntervalRelativeSatisfactionConditionFilter._metadata, TimeToolTimeIntervalRelativeSatisfactionConditionFilter._set_relative_interval_duration_metadata, relativeIntervalDuration)
+    def relative_interval_duration(self, relative_interval_duration:float) -> None:
+        return self._intf.set_property(TimeToolTimeIntervalRelativeSatisfactionConditionFilter._metadata, TimeToolTimeIntervalRelativeSatisfactionConditionFilter._set_relative_interval_duration_metadata, relative_interval_duration)
 
     _property_names[condition] = "condition"
     _property_names[duration_type] = "duration_type"
     _property_names[relative_interval_duration] = "relative_interval_duration"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalRelativeSatisfactionConditionFilter."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalRelativeSatisfactionConditionFilter)
-        ITimeToolPruneFilter.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalRelativeSatisfactionConditionFilter)
+        ITimeToolPruneFilter.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolPruneFilter._private_init(self, intf)
@@ -14772,11 +14772,11 @@ agcls.AgTypeNameMap["TimeToolTimeIntervalRelativeSatisfactionConditionFilter"] =
 
 class AnalysisWorkbenchSampling(IAnalysisWorkbenchSampling, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Base sampling interface."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchSampling."""
         SupportsDeleteCallback.__init__(self)
-        IAnalysisWorkbenchSampling.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchSampling.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchSampling._private_init(self, intf)
@@ -14819,8 +14819,8 @@ class CalculationToolSamplingBasic(IAnalysisWorkbenchSampling, IAnalysisWorkbenc
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ICalculationToolSamplingMethod"),) }
     @sampling_method.setter
-    def sampling_method(self, samplingMethod:"ICalculationToolSamplingMethod") -> None:
-        return self._intf.set_property(CalculationToolSamplingBasic._metadata, CalculationToolSamplingBasic._set_sampling_method_metadata, samplingMethod)
+    def sampling_method(self, sampling_method:"ICalculationToolSamplingMethod") -> None:
+        return self._intf.set_property(CalculationToolSamplingBasic._metadata, CalculationToolSamplingBasic._set_sampling_method_metadata, sampling_method)
 
     _get_method_factory_metadata = { "offset" : _get_method_factory_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -14833,12 +14833,12 @@ class CalculationToolSamplingBasic(IAnalysisWorkbenchSampling, IAnalysisWorkbenc
     _property_names[sampling_method] = "sampling_method"
     _property_names[method_factory] = "method_factory"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolSamplingBasic."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolSamplingBasic)
-        IAnalysisWorkbenchSampling.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolSamplingBasic)
+        IAnalysisWorkbenchSampling.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchSampling._private_init(self, intf)
@@ -14890,8 +14890,8 @@ class CalculationToolSamplingCurvatureTolerance(ICalculationToolSamplingMethod, 
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @minimum_time_step.setter
-    def minimum_time_step(self, minimumTimeStep:float) -> None:
-        return self._intf.set_property(CalculationToolSamplingCurvatureTolerance._metadata, CalculationToolSamplingCurvatureTolerance._set_minimum_time_step_metadata, minimumTimeStep)
+    def minimum_time_step(self, minimum_time_step:float) -> None:
+        return self._intf.set_property(CalculationToolSamplingCurvatureTolerance._metadata, CalculationToolSamplingCurvatureTolerance._set_minimum_time_step_metadata, minimum_time_step)
 
     _get_maximum_time_step_metadata = { "offset" : _get_maximum_time_step_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -14905,8 +14905,8 @@ class CalculationToolSamplingCurvatureTolerance(ICalculationToolSamplingMethod, 
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @maximum_time_step.setter
-    def maximum_time_step(self, maximumTimeStep:float) -> None:
-        return self._intf.set_property(CalculationToolSamplingCurvatureTolerance._metadata, CalculationToolSamplingCurvatureTolerance._set_maximum_time_step_metadata, maximumTimeStep)
+    def maximum_time_step(self, maximum_time_step:float) -> None:
+        return self._intf.set_property(CalculationToolSamplingCurvatureTolerance._metadata, CalculationToolSamplingCurvatureTolerance._set_maximum_time_step_metadata, maximum_time_step)
 
     _get_step_at_boundaries_metadata = { "offset" : _get_step_at_boundaries_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -14920,8 +14920,8 @@ class CalculationToolSamplingCurvatureTolerance(ICalculationToolSamplingMethod, 
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @step_at_boundaries.setter
-    def step_at_boundaries(self, stepAtBoundaries:float) -> None:
-        return self._intf.set_property(CalculationToolSamplingCurvatureTolerance._metadata, CalculationToolSamplingCurvatureTolerance._set_step_at_boundaries_metadata, stepAtBoundaries)
+    def step_at_boundaries(self, step_at_boundaries:float) -> None:
+        return self._intf.set_property(CalculationToolSamplingCurvatureTolerance._metadata, CalculationToolSamplingCurvatureTolerance._set_step_at_boundaries_metadata, step_at_boundaries)
 
     _get_relative_tolerance_metadata = { "offset" : _get_relative_tolerance_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -14935,8 +14935,8 @@ class CalculationToolSamplingCurvatureTolerance(ICalculationToolSamplingMethod, 
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @relative_tolerance.setter
-    def relative_tolerance(self, relativeTolerance:float) -> None:
-        return self._intf.set_property(CalculationToolSamplingCurvatureTolerance._metadata, CalculationToolSamplingCurvatureTolerance._set_relative_tolerance_metadata, relativeTolerance)
+    def relative_tolerance(self, relative_tolerance:float) -> None:
+        return self._intf.set_property(CalculationToolSamplingCurvatureTolerance._metadata, CalculationToolSamplingCurvatureTolerance._set_relative_tolerance_metadata, relative_tolerance)
 
     _get_absolute_tolerance_metadata = { "offset" : _get_absolute_tolerance_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -14950,8 +14950,8 @@ class CalculationToolSamplingCurvatureTolerance(ICalculationToolSamplingMethod, 
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @absolute_tolerance.setter
-    def absolute_tolerance(self, absoluteTolerance:float) -> None:
-        return self._intf.set_property(CalculationToolSamplingCurvatureTolerance._metadata, CalculationToolSamplingCurvatureTolerance._set_absolute_tolerance_metadata, absoluteTolerance)
+    def absolute_tolerance(self, absolute_tolerance:float) -> None:
+        return self._intf.set_property(CalculationToolSamplingCurvatureTolerance._metadata, CalculationToolSamplingCurvatureTolerance._set_absolute_tolerance_metadata, absolute_tolerance)
 
     _get_curvature_tolerance_metadata = { "offset" : _get_curvature_tolerance_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -14965,8 +14965,8 @@ class CalculationToolSamplingCurvatureTolerance(ICalculationToolSamplingMethod, 
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @curvature_tolerance.setter
-    def curvature_tolerance(self, curvatureTolerance:float) -> None:
-        return self._intf.set_property(CalculationToolSamplingCurvatureTolerance._metadata, CalculationToolSamplingCurvatureTolerance._set_curvature_tolerance_metadata, curvatureTolerance)
+    def curvature_tolerance(self, curvature_tolerance:float) -> None:
+        return self._intf.set_property(CalculationToolSamplingCurvatureTolerance._metadata, CalculationToolSamplingCurvatureTolerance._set_curvature_tolerance_metadata, curvature_tolerance)
 
     _property_names[minimum_time_step] = "minimum_time_step"
     _property_names[maximum_time_step] = "maximum_time_step"
@@ -14975,11 +14975,11 @@ class CalculationToolSamplingCurvatureTolerance(ICalculationToolSamplingMethod, 
     _property_names[absolute_tolerance] = "absolute_tolerance"
     _property_names[curvature_tolerance] = "curvature_tolerance"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolSamplingCurvatureTolerance."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolSamplingCurvatureTolerance)
-        ICalculationToolSamplingMethod.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolSamplingCurvatureTolerance)
+        ICalculationToolSamplingMethod.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolSamplingMethod._private_init(self, intf)
@@ -15020,16 +15020,16 @@ class CalculationToolSamplingFixedStep(ICalculationToolSamplingMethod, SupportsD
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @time_step.setter
-    def time_step(self, timeStep:float) -> None:
-        return self._intf.set_property(CalculationToolSamplingFixedStep._metadata, CalculationToolSamplingFixedStep._set_time_step_metadata, timeStep)
+    def time_step(self, time_step:float) -> None:
+        return self._intf.set_property(CalculationToolSamplingFixedStep._metadata, CalculationToolSamplingFixedStep._set_time_step_metadata, time_step)
 
     _property_names[time_step] = "time_step"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolSamplingFixedStep."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolSamplingFixedStep)
-        ICalculationToolSamplingMethod.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolSamplingFixedStep)
+        ICalculationToolSamplingMethod.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolSamplingMethod._private_init(self, intf)
@@ -15045,10 +15045,10 @@ agcls.AgTypeNameMap["CalculationToolSamplingFixedStep"] = CalculationToolSamplin
 
 class CalculationToolSamplingMethod(ICalculationToolSamplingMethod, SupportsDeleteCallback):
     """A sampling method."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolSamplingMethod."""
         SupportsDeleteCallback.__init__(self)
-        ICalculationToolSamplingMethod.__init__(self, sourceObject)
+        ICalculationToolSamplingMethod.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolSamplingMethod._private_init(self, intf)
@@ -15081,29 +15081,29 @@ class CalculationToolSamplingMethodFactory(SupportsDeleteCallback):
     _create_fixed_step_metadata = { "offset" : _create_fixed_step_method_offset,
             "arg_types" : (agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.DoubleArg, agmarshall.InterfaceOutArg,) }
-    def create_fixed_step(self, fixedStep:float) -> "ICalculationToolSamplingMethod":
+    def create_fixed_step(self, fixed_step:float) -> "ICalculationToolSamplingMethod":
         """Create a fixed time step sampling definition."""
-        return self._intf.invoke(CalculationToolSamplingMethodFactory._metadata, CalculationToolSamplingMethodFactory._create_fixed_step_metadata, fixedStep, OutArg())
+        return self._intf.invoke(CalculationToolSamplingMethodFactory._metadata, CalculationToolSamplingMethodFactory._create_fixed_step_metadata, fixed_step, OutArg())
 
     _create_curvature_tolerance_metadata = { "offset" : _create_curvature_tolerance_method_offset,
             "arg_types" : (agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.DoubleArg, agmarshall.InterfaceOutArg,) }
-    def create_curvature_tolerance(self, curvatureTolerance:float) -> "ICalculationToolSamplingMethod":
+    def create_curvature_tolerance(self, curvature_tolerance:float) -> "ICalculationToolSamplingMethod":
         """Create a curvature tolerance sampling definition. Curvature tolerance uses changes in slope between samples."""
-        return self._intf.invoke(CalculationToolSamplingMethodFactory._metadata, CalculationToolSamplingMethodFactory._create_curvature_tolerance_metadata, curvatureTolerance, OutArg())
+        return self._intf.invoke(CalculationToolSamplingMethodFactory._metadata, CalculationToolSamplingMethodFactory._create_curvature_tolerance_metadata, curvature_tolerance, OutArg())
 
     _create_relative_tolerance_metadata = { "offset" : _create_relative_tolerance_method_offset,
             "arg_types" : (agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.DoubleArg, agmarshall.InterfaceOutArg,) }
-    def create_relative_tolerance(self, relativeTolerance:float) -> "ICalculationToolSamplingMethod":
+    def create_relative_tolerance(self, relative_tolerance:float) -> "ICalculationToolSamplingMethod":
         """Create a relative tolerance sampling definition. Relative tolerance uses a combination of relative and absolute changes in scalar values between samples."""
-        return self._intf.invoke(CalculationToolSamplingMethodFactory._metadata, CalculationToolSamplingMethodFactory._create_relative_tolerance_metadata, relativeTolerance, OutArg())
+        return self._intf.invoke(CalculationToolSamplingMethodFactory._metadata, CalculationToolSamplingMethodFactory._create_relative_tolerance_metadata, relative_tolerance, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolSamplingMethodFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolSamplingMethodFactory)
+        initialize_from_source_object(self, source_object, CalculationToolSamplingMethodFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -15151,8 +15151,8 @@ class CalculationToolSamplingRelativeTolerance(ICalculationToolSamplingMethod, S
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @minimum_time_step.setter
-    def minimum_time_step(self, minimumTimeStep:float) -> None:
-        return self._intf.set_property(CalculationToolSamplingRelativeTolerance._metadata, CalculationToolSamplingRelativeTolerance._set_minimum_time_step_metadata, minimumTimeStep)
+    def minimum_time_step(self, minimum_time_step:float) -> None:
+        return self._intf.set_property(CalculationToolSamplingRelativeTolerance._metadata, CalculationToolSamplingRelativeTolerance._set_minimum_time_step_metadata, minimum_time_step)
 
     _get_maximum_time_step_metadata = { "offset" : _get_maximum_time_step_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -15166,8 +15166,8 @@ class CalculationToolSamplingRelativeTolerance(ICalculationToolSamplingMethod, S
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @maximum_time_step.setter
-    def maximum_time_step(self, maximumTimeStep:float) -> None:
-        return self._intf.set_property(CalculationToolSamplingRelativeTolerance._metadata, CalculationToolSamplingRelativeTolerance._set_maximum_time_step_metadata, maximumTimeStep)
+    def maximum_time_step(self, maximum_time_step:float) -> None:
+        return self._intf.set_property(CalculationToolSamplingRelativeTolerance._metadata, CalculationToolSamplingRelativeTolerance._set_maximum_time_step_metadata, maximum_time_step)
 
     _get_step_at_boundaries_metadata = { "offset" : _get_step_at_boundaries_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -15181,8 +15181,8 @@ class CalculationToolSamplingRelativeTolerance(ICalculationToolSamplingMethod, S
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @step_at_boundaries.setter
-    def step_at_boundaries(self, stepAtBoundaries:float) -> None:
-        return self._intf.set_property(CalculationToolSamplingRelativeTolerance._metadata, CalculationToolSamplingRelativeTolerance._set_step_at_boundaries_metadata, stepAtBoundaries)
+    def step_at_boundaries(self, step_at_boundaries:float) -> None:
+        return self._intf.set_property(CalculationToolSamplingRelativeTolerance._metadata, CalculationToolSamplingRelativeTolerance._set_step_at_boundaries_metadata, step_at_boundaries)
 
     _get_relative_tolerance_metadata = { "offset" : _get_relative_tolerance_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -15196,8 +15196,8 @@ class CalculationToolSamplingRelativeTolerance(ICalculationToolSamplingMethod, S
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @relative_tolerance.setter
-    def relative_tolerance(self, relativeTolerance:float) -> None:
-        return self._intf.set_property(CalculationToolSamplingRelativeTolerance._metadata, CalculationToolSamplingRelativeTolerance._set_relative_tolerance_metadata, relativeTolerance)
+    def relative_tolerance(self, relative_tolerance:float) -> None:
+        return self._intf.set_property(CalculationToolSamplingRelativeTolerance._metadata, CalculationToolSamplingRelativeTolerance._set_relative_tolerance_metadata, relative_tolerance)
 
     _get_absolute_tolerance_metadata = { "offset" : _get_absolute_tolerance_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -15211,8 +15211,8 @@ class CalculationToolSamplingRelativeTolerance(ICalculationToolSamplingMethod, S
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @absolute_tolerance.setter
-    def absolute_tolerance(self, absoluteTolerance:float) -> None:
-        return self._intf.set_property(CalculationToolSamplingRelativeTolerance._metadata, CalculationToolSamplingRelativeTolerance._set_absolute_tolerance_metadata, absoluteTolerance)
+    def absolute_tolerance(self, absolute_tolerance:float) -> None:
+        return self._intf.set_property(CalculationToolSamplingRelativeTolerance._metadata, CalculationToolSamplingRelativeTolerance._set_absolute_tolerance_metadata, absolute_tolerance)
 
     _property_names[minimum_time_step] = "minimum_time_step"
     _property_names[maximum_time_step] = "maximum_time_step"
@@ -15220,11 +15220,11 @@ class CalculationToolSamplingRelativeTolerance(ICalculationToolSamplingMethod, S
     _property_names[relative_tolerance] = "relative_tolerance"
     _property_names[absolute_tolerance] = "absolute_tolerance"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type CalculationToolSamplingRelativeTolerance."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, CalculationToolSamplingRelativeTolerance)
-        ICalculationToolSamplingMethod.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, CalculationToolSamplingRelativeTolerance)
+        ICalculationToolSamplingMethod.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ICalculationToolSamplingMethod._private_init(self, intf)
@@ -15284,8 +15284,8 @@ class TimeToolTimeIntervalSatisfactionConditionFilter(ITimeToolPruneFilter, Supp
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(INTERVAL_DURATION_TYPE),) }
     @duration_type.setter
-    def duration_type(self, durationKind:"INTERVAL_DURATION_TYPE") -> None:
-        return self._intf.set_property(TimeToolTimeIntervalSatisfactionConditionFilter._metadata, TimeToolTimeIntervalSatisfactionConditionFilter._set_duration_type_metadata, durationKind)
+    def duration_type(self, duration_kind:"INTERVAL_DURATION_TYPE") -> None:
+        return self._intf.set_property(TimeToolTimeIntervalSatisfactionConditionFilter._metadata, TimeToolTimeIntervalSatisfactionConditionFilter._set_duration_type_metadata, duration_kind)
 
     _get_interval_duration_metadata = { "offset" : _get_interval_duration_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -15299,18 +15299,18 @@ class TimeToolTimeIntervalSatisfactionConditionFilter(ITimeToolPruneFilter, Supp
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @interval_duration.setter
-    def interval_duration(self, intervalDuration:float) -> None:
-        return self._intf.set_property(TimeToolTimeIntervalSatisfactionConditionFilter._metadata, TimeToolTimeIntervalSatisfactionConditionFilter._set_interval_duration_metadata, intervalDuration)
+    def interval_duration(self, interval_duration:float) -> None:
+        return self._intf.set_property(TimeToolTimeIntervalSatisfactionConditionFilter._metadata, TimeToolTimeIntervalSatisfactionConditionFilter._set_interval_duration_metadata, interval_duration)
 
     _property_names[condition] = "condition"
     _property_names[duration_type] = "duration_type"
     _property_names[interval_duration] = "interval_duration"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolTimeIntervalSatisfactionConditionFilter."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolTimeIntervalSatisfactionConditionFilter)
-        ITimeToolPruneFilter.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolTimeIntervalSatisfactionConditionFilter)
+        ITimeToolPruneFilter.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ITimeToolPruneFilter._private_init(self, intf)
@@ -15326,11 +15326,11 @@ agcls.AgTypeNameMap["TimeToolTimeIntervalSatisfactionConditionFilter"] = TimeToo
 
 class AnalysisWorkbenchSignalDelay(IAnalysisWorkbenchSignalDelay, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Signal delay definition determines how long it takes for a signal to propagate from one location to another."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchSignalDelay."""
         SupportsDeleteCallback.__init__(self)
-        IAnalysisWorkbenchSignalDelay.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchSignalDelay.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchSignalDelay._private_init(self, intf)
@@ -15380,8 +15380,8 @@ class TimeToolSignalDelayBasic(IAnalysisWorkbenchSignalDelay, IAnalysisWorkbench
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(SIGNAL_PATH_REFERENCE_SYSTEM),) }
     @signal_path_reference_system.setter
-    def signal_path_reference_system(self, signalPathReferenceSystem:"SIGNAL_PATH_REFERENCE_SYSTEM") -> None:
-        return self._intf.set_property(TimeToolSignalDelayBasic._metadata, TimeToolSignalDelayBasic._set_signal_path_reference_system_metadata, signalPathReferenceSystem)
+    def signal_path_reference_system(self, signal_path_reference_system:"SIGNAL_PATH_REFERENCE_SYSTEM") -> None:
+        return self._intf.set_property(TimeToolSignalDelayBasic._metadata, TimeToolSignalDelayBasic._set_signal_path_reference_system_metadata, signal_path_reference_system)
 
     _get_reference_system_metadata = { "offset" : _get_reference_system_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -15395,8 +15395,8 @@ class TimeToolSignalDelayBasic(IAnalysisWorkbenchSignalDelay, IAnalysisWorkbench
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolSystem"),) }
     @reference_system.setter
-    def reference_system(self, referenceSystem:"IVectorGeometryToolSystem") -> None:
-        return self._intf.set_property(TimeToolSignalDelayBasic._metadata, TimeToolSignalDelayBasic._set_reference_system_metadata, referenceSystem)
+    def reference_system(self, reference_system:"IVectorGeometryToolSystem") -> None:
+        return self._intf.set_property(TimeToolSignalDelayBasic._metadata, TimeToolSignalDelayBasic._set_reference_system_metadata, reference_system)
 
     _get_speed_option_metadata = { "offset" : _get_speed_option_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -15410,8 +15410,8 @@ class TimeToolSignalDelayBasic(IAnalysisWorkbenchSignalDelay, IAnalysisWorkbench
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(SPEED_TYPE),) }
     @speed_option.setter
-    def speed_option(self, speedOption:"SPEED_TYPE") -> None:
-        return self._intf.set_property(TimeToolSignalDelayBasic._metadata, TimeToolSignalDelayBasic._set_speed_option_metadata, speedOption)
+    def speed_option(self, speed_option:"SPEED_TYPE") -> None:
+        return self._intf.set_property(TimeToolSignalDelayBasic._metadata, TimeToolSignalDelayBasic._set_speed_option_metadata, speed_option)
 
     _get_transfer_speed_metadata = { "offset" : _get_transfer_speed_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -15425,8 +15425,8 @@ class TimeToolSignalDelayBasic(IAnalysisWorkbenchSignalDelay, IAnalysisWorkbench
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @transfer_speed.setter
-    def transfer_speed(self, transferSpeed:float) -> None:
-        return self._intf.set_property(TimeToolSignalDelayBasic._metadata, TimeToolSignalDelayBasic._set_transfer_speed_metadata, transferSpeed)
+    def transfer_speed(self, transfer_speed:float) -> None:
+        return self._intf.set_property(TimeToolSignalDelayBasic._metadata, TimeToolSignalDelayBasic._set_transfer_speed_metadata, transfer_speed)
 
     _get_time_delay_convergence_metadata = { "offset" : _get_time_delay_convergence_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -15440,8 +15440,8 @@ class TimeToolSignalDelayBasic(IAnalysisWorkbenchSignalDelay, IAnalysisWorkbench
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @time_delay_convergence.setter
-    def time_delay_convergence(self, timeDelayConvergence:float) -> None:
-        return self._intf.set_property(TimeToolSignalDelayBasic._metadata, TimeToolSignalDelayBasic._set_time_delay_convergence_metadata, timeDelayConvergence)
+    def time_delay_convergence(self, time_delay_convergence:float) -> None:
+        return self._intf.set_property(TimeToolSignalDelayBasic._metadata, TimeToolSignalDelayBasic._set_time_delay_convergence_metadata, time_delay_convergence)
 
     _property_names[signal_path_reference_system] = "signal_path_reference_system"
     _property_names[reference_system] = "reference_system"
@@ -15449,12 +15449,12 @@ class TimeToolSignalDelayBasic(IAnalysisWorkbenchSignalDelay, IAnalysisWorkbench
     _property_names[transfer_speed] = "transfer_speed"
     _property_names[time_delay_convergence] = "time_delay_convergence"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolSignalDelayBasic."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolSignalDelayBasic)
-        IAnalysisWorkbenchSignalDelay.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, TimeToolSignalDelayBasic)
+        IAnalysisWorkbenchSignalDelay.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchSignalDelay._private_init(self, intf)
@@ -15495,9 +15495,9 @@ class SpatialAnalysisToolCalculationFactory(SupportsDeleteCallback):
     _is_type_supported_metadata = { "offset" : _is_type_supported_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.EnumArg(SPATIAL_CALCULATION_TYPE), agmarshall.VariantBoolArg,) }
-    def is_type_supported(self, eType:"SPATIAL_CALCULATION_TYPE") -> bool:
+    def is_type_supported(self, type:"SPATIAL_CALCULATION_TYPE") -> bool:
         """Return whether the specified type is supported."""
-        return self._intf.invoke(SpatialAnalysisToolCalculationFactory._metadata, SpatialAnalysisToolCalculationFactory._is_type_supported_metadata, eType, OutArg())
+        return self._intf.invoke(SpatialAnalysisToolCalculationFactory._metadata, SpatialAnalysisToolCalculationFactory._is_type_supported_metadata, type, OutArg())
 
     _create_metadata = { "offset" : _create_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
@@ -15563,10 +15563,10 @@ class SpatialAnalysisToolCalculationFactory(SupportsDeleteCallback):
         return self._intf.invoke(SpatialAnalysisToolCalculationFactory._metadata, SpatialAnalysisToolCalculationFactory._create_propagation_delay_to_location_metadata, name, description, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolCalculationFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolCalculationFactory)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolCalculationFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -15612,9 +15612,9 @@ class SpatialAnalysisToolConditionFactory(SupportsDeleteCallback):
     _is_type_supported_metadata = { "offset" : _is_type_supported_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.EnumArg(VOLUME_TYPE), agmarshall.VariantBoolArg,) }
-    def is_type_supported(self, eType:"VOLUME_TYPE") -> bool:
+    def is_type_supported(self, type:"VOLUME_TYPE") -> bool:
         """Return whether the specified type is supported."""
-        return self._intf.invoke(SpatialAnalysisToolConditionFactory._metadata, SpatialAnalysisToolConditionFactory._is_type_supported_metadata, eType, OutArg())
+        return self._intf.invoke(SpatialAnalysisToolConditionFactory._metadata, SpatialAnalysisToolConditionFactory._is_type_supported_metadata, type, OutArg())
 
     _create_combined_metadata = { "offset" : _create_combined_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
@@ -15673,10 +15673,10 @@ class SpatialAnalysisToolConditionFactory(SupportsDeleteCallback):
         return self._intf.invoke(SpatialAnalysisToolConditionFactory._metadata, SpatialAnalysisToolConditionFactory._create_from_access_metadata, name, description, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolConditionFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolConditionFactory)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolConditionFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -15727,9 +15727,9 @@ class SpatialAnalysisToolVolumeGridFactory(SupportsDeleteCallback):
     _is_type_supported_metadata = { "offset" : _is_type_supported_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.EnumArg(VOLUME_GRID_TYPE), agmarshall.VariantBoolArg,) }
-    def is_type_supported(self, eType:"VOLUME_GRID_TYPE") -> bool:
+    def is_type_supported(self, type:"VOLUME_GRID_TYPE") -> bool:
         """Return whether the specified type is supported."""
-        return self._intf.invoke(SpatialAnalysisToolVolumeGridFactory._metadata, SpatialAnalysisToolVolumeGridFactory._is_type_supported_metadata, eType, OutArg())
+        return self._intf.invoke(SpatialAnalysisToolVolumeGridFactory._metadata, SpatialAnalysisToolVolumeGridFactory._is_type_supported_metadata, type, OutArg())
 
     _create_cylindrical_metadata = { "offset" : _create_cylindrical_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
@@ -15767,10 +15767,10 @@ class SpatialAnalysisToolVolumeGridFactory(SupportsDeleteCallback):
         return self._intf.invoke(SpatialAnalysisToolVolumeGridFactory._metadata, SpatialAnalysisToolVolumeGridFactory._create_bearing_altitude_metadata, name, description, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolVolumeGridFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolVolumeGridFactory)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolVolumeGridFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -15821,16 +15821,16 @@ class SpatialAnalysisToolGridCoordinateDefinition(SupportsDeleteCallback):
     _set_fixed_step_metadata = { "offset" : _set_fixed_step_method_offset,
             "arg_types" : (agcom.DOUBLE, agcom.DOUBLE, agcom.VARIANT_BOOL, agcom.DOUBLE, agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.VariantBoolArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.InterfaceOutArg,) }
-    def set_fixed_step(self, min:float, max:float, includeMinMax:bool, refValue:float, fixedStep:float) -> "SpatialAnalysisToolGridValuesFixedStep":
+    def set_fixed_step(self, min:float, max:float, include_min_max:bool, ref_value:float, fixed_step:float) -> "SpatialAnalysisToolGridValuesFixedStep":
         """Set grid values type to fixed step."""
-        return self._intf.invoke(SpatialAnalysisToolGridCoordinateDefinition._metadata, SpatialAnalysisToolGridCoordinateDefinition._set_fixed_step_metadata, min, max, includeMinMax, refValue, fixedStep, OutArg())
+        return self._intf.invoke(SpatialAnalysisToolGridCoordinateDefinition._metadata, SpatialAnalysisToolGridCoordinateDefinition._set_fixed_step_metadata, min, max, include_min_max, ref_value, fixed_step, OutArg())
 
     _set_grid_values_fixed_number_of_steps_metadata = { "offset" : _set_grid_values_fixed_number_of_steps_method_offset,
             "arg_types" : (agcom.DOUBLE, agcom.DOUBLE, agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.IntArg, agmarshall.InterfaceOutArg,) }
-    def set_grid_values_fixed_number_of_steps(self, min:float, max:float, numSteps:int) -> "SpatialAnalysisToolGridValuesFixedNumberOfSteps":
+    def set_grid_values_fixed_number_of_steps(self, min:float, max:float, num_steps:int) -> "SpatialAnalysisToolGridValuesFixedNumberOfSteps":
         """Do not use this method, as it is deprecated. Use SetGridValuesFixedNumberOfStepsEx."""
-        return self._intf.invoke(SpatialAnalysisToolGridCoordinateDefinition._metadata, SpatialAnalysisToolGridCoordinateDefinition._set_grid_values_fixed_number_of_steps_metadata, min, max, numSteps, OutArg())
+        return self._intf.invoke(SpatialAnalysisToolGridCoordinateDefinition._metadata, SpatialAnalysisToolGridCoordinateDefinition._set_grid_values_fixed_number_of_steps_metadata, min, max, num_steps, OutArg())
 
     _set_custom_metadata = { "offset" : _set_custom_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.PVOID),),
@@ -15842,17 +15842,17 @@ class SpatialAnalysisToolGridCoordinateDefinition(SupportsDeleteCallback):
     _set_fixed_number_of_steps_metadata = { "offset" : _set_fixed_number_of_steps_method_offset,
             "arg_types" : (agcom.PVOID, agcom.PVOID, agcom.INT, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceInArg("Quantity"), agmarshall.InterfaceInArg("Quantity"), agmarshall.IntArg, agmarshall.InterfaceOutArg,) }
-    def set_fixed_number_of_steps(self, min:"Quantity", max:"Quantity", numSteps:int) -> "SpatialAnalysisToolGridValuesFixedNumberOfSteps":
+    def set_fixed_number_of_steps(self, min:"Quantity", max:"Quantity", num_steps:int) -> "SpatialAnalysisToolGridValuesFixedNumberOfSteps":
         """Set grid values type to fixed number of steps with min and max as Quantity."""
-        return self._intf.invoke(SpatialAnalysisToolGridCoordinateDefinition._metadata, SpatialAnalysisToolGridCoordinateDefinition._set_fixed_number_of_steps_metadata, min, max, numSteps, OutArg())
+        return self._intf.invoke(SpatialAnalysisToolGridCoordinateDefinition._metadata, SpatialAnalysisToolGridCoordinateDefinition._set_fixed_number_of_steps_metadata, min, max, num_steps, OutArg())
 
     _property_names[method_type] = "method_type"
     _property_names[grid_values_method] = "grid_values_method"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolGridCoordinateDefinition."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolGridCoordinateDefinition)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolGridCoordinateDefinition)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -15897,11 +15897,11 @@ class SpatialAnalysisToolGridValuesCustom(ISpatialAnalysisToolGridValuesMethod, 
 
     _property_names[values] = "values"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolGridValuesCustom."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolGridValuesCustom)
-        ISpatialAnalysisToolGridValuesMethod.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolGridValuesCustom)
+        ISpatialAnalysisToolGridValuesMethod.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolGridValuesMethod._private_init(self, intf)
@@ -15980,8 +15980,8 @@ class SpatialAnalysisToolGridValuesFixedNumberOfSteps(ISpatialAnalysisToolGridVa
             "arg_types" : (agcom.INT,),
             "marshallers" : (agmarshall.IntArg,) }
     @number_of_steps.setter
-    def number_of_steps(self, numberOfSteps:int) -> None:
-        return self._intf.set_property(SpatialAnalysisToolGridValuesFixedNumberOfSteps._metadata, SpatialAnalysisToolGridValuesFixedNumberOfSteps._set_number_of_steps_metadata, numberOfSteps)
+    def number_of_steps(self, number_of_steps:int) -> None:
+        return self._intf.set_property(SpatialAnalysisToolGridValuesFixedNumberOfSteps._metadata, SpatialAnalysisToolGridValuesFixedNumberOfSteps._set_number_of_steps_metadata, number_of_steps)
 
     _get_minimum_metadata = { "offset" : _get_minimum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -15995,8 +15995,8 @@ class SpatialAnalysisToolGridValuesFixedNumberOfSteps(ISpatialAnalysisToolGridVa
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("Quantity"),) }
     @minimum.setter
-    def minimum(self, minEx:"Quantity") -> None:
-        return self._intf.set_property(SpatialAnalysisToolGridValuesFixedNumberOfSteps._metadata, SpatialAnalysisToolGridValuesFixedNumberOfSteps._set_minimum_metadata, minEx)
+    def minimum(self, min_ex:"Quantity") -> None:
+        return self._intf.set_property(SpatialAnalysisToolGridValuesFixedNumberOfSteps._metadata, SpatialAnalysisToolGridValuesFixedNumberOfSteps._set_minimum_metadata, min_ex)
 
     _get_maximum_metadata = { "offset" : _get_maximum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -16010,8 +16010,8 @@ class SpatialAnalysisToolGridValuesFixedNumberOfSteps(ISpatialAnalysisToolGridVa
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("Quantity"),) }
     @maximum.setter
-    def maximum(self, maxEx:"Quantity") -> None:
-        return self._intf.set_property(SpatialAnalysisToolGridValuesFixedNumberOfSteps._metadata, SpatialAnalysisToolGridValuesFixedNumberOfSteps._set_maximum_metadata, maxEx)
+    def maximum(self, max_ex:"Quantity") -> None:
+        return self._intf.set_property(SpatialAnalysisToolGridValuesFixedNumberOfSteps._metadata, SpatialAnalysisToolGridValuesFixedNumberOfSteps._set_maximum_metadata, max_ex)
 
     _property_names[min] = "min"
     _property_names[max] = "max"
@@ -16019,11 +16019,11 @@ class SpatialAnalysisToolGridValuesFixedNumberOfSteps(ISpatialAnalysisToolGridVa
     _property_names[minimum] = "minimum"
     _property_names[maximum] = "maximum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolGridValuesFixedNumberOfSteps."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolGridValuesFixedNumberOfSteps)
-        ISpatialAnalysisToolGridValuesMethod.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolGridValuesFixedNumberOfSteps)
+        ISpatialAnalysisToolGridValuesMethod.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolGridValuesMethod._private_init(self, intf)
@@ -16102,8 +16102,8 @@ class SpatialAnalysisToolGridValuesFixedStep(ISpatialAnalysisToolGridValuesMetho
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @include_minimum_maximum.setter
-    def include_minimum_maximum(self, includeMinMax:bool) -> None:
-        return self._intf.set_property(SpatialAnalysisToolGridValuesFixedStep._metadata, SpatialAnalysisToolGridValuesFixedStep._set_include_minimum_maximum_metadata, includeMinMax)
+    def include_minimum_maximum(self, include_min_max:bool) -> None:
+        return self._intf.set_property(SpatialAnalysisToolGridValuesFixedStep._metadata, SpatialAnalysisToolGridValuesFixedStep._set_include_minimum_maximum_metadata, include_min_max)
 
     _get_reference_value_metadata = { "offset" : _get_reference_value_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -16117,8 +16117,8 @@ class SpatialAnalysisToolGridValuesFixedStep(ISpatialAnalysisToolGridValuesMetho
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @reference_value.setter
-    def reference_value(self, referenceValue:float) -> None:
-        return self._intf.set_property(SpatialAnalysisToolGridValuesFixedStep._metadata, SpatialAnalysisToolGridValuesFixedStep._set_reference_value_metadata, referenceValue)
+    def reference_value(self, reference_value:float) -> None:
+        return self._intf.set_property(SpatialAnalysisToolGridValuesFixedStep._metadata, SpatialAnalysisToolGridValuesFixedStep._set_reference_value_metadata, reference_value)
 
     _get_step_metadata = { "offset" : _get_step_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -16141,11 +16141,11 @@ class SpatialAnalysisToolGridValuesFixedStep(ISpatialAnalysisToolGridValuesMetho
     _property_names[reference_value] = "reference_value"
     _property_names[step] = "step"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolGridValuesFixedStep."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolGridValuesFixedStep)
-        ISpatialAnalysisToolGridValuesMethod.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolGridValuesFixedStep)
+        ISpatialAnalysisToolGridValuesMethod.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolGridValuesMethod._private_init(self, intf)
@@ -16161,10 +16161,10 @@ agcls.AgTypeNameMap["SpatialAnalysisToolGridValuesFixedStep"] = SpatialAnalysisT
 
 class SpatialAnalysisToolGridValuesMethod(ISpatialAnalysisToolGridValuesMethod, SupportsDeleteCallback):
     """A grid values method."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolGridValuesMethod."""
         SupportsDeleteCallback.__init__(self)
-        ISpatialAnalysisToolGridValuesMethod.__init__(self, sourceObject)
+        ISpatialAnalysisToolGridValuesMethod.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolGridValuesMethod._private_init(self, intf)
@@ -16213,8 +16213,8 @@ class TimeToolLightTimeDelay(SupportsDeleteCallback):
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @use_light_time_delay.setter
-    def use_light_time_delay(self, useLightTimeDelay:bool) -> None:
-        return self._intf.set_property(TimeToolLightTimeDelay._metadata, TimeToolLightTimeDelay._set_use_light_time_delay_metadata, useLightTimeDelay)
+    def use_light_time_delay(self, use_light_time_delay:bool) -> None:
+        return self._intf.set_property(TimeToolLightTimeDelay._metadata, TimeToolLightTimeDelay._set_use_light_time_delay_metadata, use_light_time_delay)
 
     _get_time_delay_convergence_metadata = { "offset" : _get_time_delay_convergence_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -16228,8 +16228,8 @@ class TimeToolLightTimeDelay(SupportsDeleteCallback):
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @time_delay_convergence.setter
-    def time_delay_convergence(self, timeDelayConvergence:float) -> None:
-        return self._intf.set_property(TimeToolLightTimeDelay._metadata, TimeToolLightTimeDelay._set_time_delay_convergence_metadata, timeDelayConvergence)
+    def time_delay_convergence(self, time_delay_convergence:float) -> None:
+        return self._intf.set_property(TimeToolLightTimeDelay._metadata, TimeToolLightTimeDelay._set_time_delay_convergence_metadata, time_delay_convergence)
 
     _get_aberration_type_metadata = { "offset" : _get_aberration_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -16243,8 +16243,8 @@ class TimeToolLightTimeDelay(SupportsDeleteCallback):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(ABERRATION_TYPE),) }
     @aberration_type.setter
-    def aberration_type(self, aberrationType:"ABERRATION_TYPE") -> None:
-        return self._intf.set_property(TimeToolLightTimeDelay._metadata, TimeToolLightTimeDelay._set_aberration_type_metadata, aberrationType)
+    def aberration_type(self, aberration_type:"ABERRATION_TYPE") -> None:
+        return self._intf.set_property(TimeToolLightTimeDelay._metadata, TimeToolLightTimeDelay._set_aberration_type_metadata, aberration_type)
 
     _get_clock_host_metadata = { "offset" : _get_clock_host_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -16258,8 +16258,8 @@ class TimeToolLightTimeDelay(SupportsDeleteCallback):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(CLOCK_HOST_TYPE),) }
     @clock_host.setter
-    def clock_host(self, clockHost:"CLOCK_HOST_TYPE") -> None:
-        return self._intf.set_property(TimeToolLightTimeDelay._metadata, TimeToolLightTimeDelay._set_clock_host_metadata, clockHost)
+    def clock_host(self, clock_host:"CLOCK_HOST_TYPE") -> None:
+        return self._intf.set_property(TimeToolLightTimeDelay._metadata, TimeToolLightTimeDelay._set_clock_host_metadata, clock_host)
 
     _get_time_sense_metadata = { "offset" : _get_time_sense_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -16273,8 +16273,8 @@ class TimeToolLightTimeDelay(SupportsDeleteCallback):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(TIME_SENSE_TYPE),) }
     @time_sense.setter
-    def time_sense(self, timeSense:"TIME_SENSE_TYPE") -> None:
-        return self._intf.set_property(TimeToolLightTimeDelay._metadata, TimeToolLightTimeDelay._set_time_sense_metadata, timeSense)
+    def time_sense(self, time_sense:"TIME_SENSE_TYPE") -> None:
+        return self._intf.set_property(TimeToolLightTimeDelay._metadata, TimeToolLightTimeDelay._set_time_sense_metadata, time_sense)
 
     _property_names[use_light_time_delay] = "use_light_time_delay"
     _property_names[time_delay_convergence] = "time_delay_convergence"
@@ -16282,10 +16282,10 @@ class TimeToolLightTimeDelay(SupportsDeleteCallback):
     _property_names[clock_host] = "clock_host"
     _property_names[time_sense] = "time_sense"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolLightTimeDelay."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolLightTimeDelay)
+        initialize_from_source_object(self, source_object, TimeToolLightTimeDelay)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -16300,11 +16300,11 @@ agcls.AgTypeNameMap["TimeToolLightTimeDelay"] = TimeToolLightTimeDelay
 
 class SpatialAnalysisToolVolume(ISpatialAnalysisToolVolume, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """A volume interface. The methods and properties of the interface provide Volume functions."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolVolume."""
         SupportsDeleteCallback.__init__(self)
-        ISpatialAnalysisToolVolume.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        ISpatialAnalysisToolVolume.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolVolume._private_init(self, intf)
@@ -16321,11 +16321,11 @@ agcls.AgTypeNameMap["SpatialAnalysisToolVolume"] = SpatialAnalysisToolVolume
 
 class SpatialAnalysisToolSpatialCalculation(ISpatialAnalysisToolSpatialCalculation, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """A volume calc interface. The methods and properties of the interface provide Volumetric calc functions."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolSpatialCalculation."""
         SupportsDeleteCallback.__init__(self)
-        ISpatialAnalysisToolSpatialCalculation.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        ISpatialAnalysisToolSpatialCalculation.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolSpatialCalculation._private_init(self, intf)
@@ -16373,8 +16373,8 @@ class SpatialAnalysisToolCalculationAltitude(ISpatialAnalysisToolSpatialCalculat
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @central_body.setter
-    def central_body(self, centralBody:str) -> None:
-        return self._intf.set_property(SpatialAnalysisToolCalculationAltitude._metadata, SpatialAnalysisToolCalculationAltitude._set_central_body_metadata, centralBody)
+    def central_body(self, central_body:str) -> None:
+        return self._intf.set_property(SpatialAnalysisToolCalculationAltitude._metadata, SpatialAnalysisToolCalculationAltitude._set_central_body_metadata, central_body)
 
     _get_shape_model_metadata = { "offset" : _get_shape_model_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -16388,8 +16388,8 @@ class SpatialAnalysisToolCalculationAltitude(ISpatialAnalysisToolSpatialCalculat
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(SPATIAL_CALCULATION_ALTITUDE_REFERENCE_TYPE),) }
     @shape_model.setter
-    def shape_model(self, shapeModel:"SPATIAL_CALCULATION_ALTITUDE_REFERENCE_TYPE") -> None:
-        return self._intf.set_property(SpatialAnalysisToolCalculationAltitude._metadata, SpatialAnalysisToolCalculationAltitude._set_shape_model_metadata, shapeModel)
+    def shape_model(self, shape_model:"SPATIAL_CALCULATION_ALTITUDE_REFERENCE_TYPE") -> None:
+        return self._intf.set_property(SpatialAnalysisToolCalculationAltitude._metadata, SpatialAnalysisToolCalculationAltitude._set_shape_model_metadata, shape_model)
 
     _get_use_custom_reference_metadata = { "offset" : _get_use_custom_reference_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -16403,8 +16403,8 @@ class SpatialAnalysisToolCalculationAltitude(ISpatialAnalysisToolSpatialCalculat
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @use_custom_reference.setter
-    def use_custom_reference(self, useCustomReference:bool) -> None:
-        return self._intf.set_property(SpatialAnalysisToolCalculationAltitude._metadata, SpatialAnalysisToolCalculationAltitude._set_use_custom_reference_metadata, useCustomReference)
+    def use_custom_reference(self, use_custom_reference:bool) -> None:
+        return self._intf.set_property(SpatialAnalysisToolCalculationAltitude._metadata, SpatialAnalysisToolCalculationAltitude._set_use_custom_reference_metadata, use_custom_reference)
 
     _get_reference_point_metadata = { "offset" : _get_reference_point_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -16418,20 +16418,20 @@ class SpatialAnalysisToolCalculationAltitude(ISpatialAnalysisToolSpatialCalculat
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolPoint"),) }
     @reference_point.setter
-    def reference_point(self, referencePoint:"IVectorGeometryToolPoint") -> None:
-        return self._intf.set_property(SpatialAnalysisToolCalculationAltitude._metadata, SpatialAnalysisToolCalculationAltitude._set_reference_point_metadata, referencePoint)
+    def reference_point(self, reference_point:"IVectorGeometryToolPoint") -> None:
+        return self._intf.set_property(SpatialAnalysisToolCalculationAltitude._metadata, SpatialAnalysisToolCalculationAltitude._set_reference_point_metadata, reference_point)
 
     _property_names[central_body] = "central_body"
     _property_names[shape_model] = "shape_model"
     _property_names[use_custom_reference] = "use_custom_reference"
     _property_names[reference_point] = "reference_point"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolCalculationAltitude."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolCalculationAltitude)
-        ISpatialAnalysisToolSpatialCalculation.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolCalculationAltitude)
+        ISpatialAnalysisToolSpatialCalculation.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolSpatialCalculation._private_init(self, intf)
@@ -16496,8 +16496,8 @@ class SpatialAnalysisToolCalculationAngleToLocation(ISpatialAnalysisToolSpatialC
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolPlane"),) }
     @reference_plane.setter
-    def reference_plane(self, referencePlane:"IVectorGeometryToolPlane") -> None:
-        return self._intf.set_property(SpatialAnalysisToolCalculationAngleToLocation._metadata, SpatialAnalysisToolCalculationAngleToLocation._set_reference_plane_metadata, referencePlane)
+    def reference_plane(self, reference_plane:"IVectorGeometryToolPlane") -> None:
+        return self._intf.set_property(SpatialAnalysisToolCalculationAngleToLocation._metadata, SpatialAnalysisToolCalculationAngleToLocation._set_reference_plane_metadata, reference_plane)
 
     _get_reference_point_metadata = { "offset" : _get_reference_point_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -16511,8 +16511,8 @@ class SpatialAnalysisToolCalculationAngleToLocation(ISpatialAnalysisToolSpatialC
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolPoint"),) }
     @reference_point.setter
-    def reference_point(self, referencePoint:"IVectorGeometryToolPoint") -> None:
-        return self._intf.set_property(SpatialAnalysisToolCalculationAngleToLocation._metadata, SpatialAnalysisToolCalculationAngleToLocation._set_reference_point_metadata, referencePoint)
+    def reference_point(self, reference_point:"IVectorGeometryToolPoint") -> None:
+        return self._intf.set_property(SpatialAnalysisToolCalculationAngleToLocation._metadata, SpatialAnalysisToolCalculationAngleToLocation._set_reference_point_metadata, reference_point)
 
     _get_reference_vector_metadata = { "offset" : _get_reference_vector_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -16526,8 +16526,8 @@ class SpatialAnalysisToolCalculationAngleToLocation(ISpatialAnalysisToolSpatialC
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolVector"),) }
     @reference_vector.setter
-    def reference_vector(self, referenceVector:"IVectorGeometryToolVector") -> None:
-        return self._intf.set_property(SpatialAnalysisToolCalculationAngleToLocation._metadata, SpatialAnalysisToolCalculationAngleToLocation._set_reference_vector_metadata, referenceVector)
+    def reference_vector(self, reference_vector:"IVectorGeometryToolVector") -> None:
+        return self._intf.set_property(SpatialAnalysisToolCalculationAngleToLocation._metadata, SpatialAnalysisToolCalculationAngleToLocation._set_reference_vector_metadata, reference_vector)
 
     _get_about_vector_metadata = { "offset" : _get_about_vector_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -16541,8 +16541,8 @@ class SpatialAnalysisToolCalculationAngleToLocation(ISpatialAnalysisToolSpatialC
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolVector"),) }
     @about_vector.setter
-    def about_vector(self, aboutVector:"IVectorGeometryToolVector") -> None:
-        return self._intf.set_property(SpatialAnalysisToolCalculationAngleToLocation._metadata, SpatialAnalysisToolCalculationAngleToLocation._set_about_vector_metadata, aboutVector)
+    def about_vector(self, about_vector:"IVectorGeometryToolVector") -> None:
+        return self._intf.set_property(SpatialAnalysisToolCalculationAngleToLocation._metadata, SpatialAnalysisToolCalculationAngleToLocation._set_about_vector_metadata, about_vector)
 
     _property_names[angle] = "angle"
     _property_names[reference_plane] = "reference_plane"
@@ -16550,12 +16550,12 @@ class SpatialAnalysisToolCalculationAngleToLocation(ISpatialAnalysisToolSpatialC
     _property_names[reference_vector] = "reference_vector"
     _property_names[about_vector] = "about_vector"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolCalculationAngleToLocation."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolCalculationAngleToLocation)
-        ISpatialAnalysisToolSpatialCalculation.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolCalculationAngleToLocation)
+        ISpatialAnalysisToolSpatialCalculation.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolSpatialCalculation._private_init(self, intf)
@@ -16615,8 +16615,8 @@ class SpatialAnalysisToolCalculationConditionSatisfactionMetric(ISpatialAnalysis
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ISpatialAnalysisToolVolume"),) }
     @spatial_condition.setter
-    def spatial_condition(self, spatialCondition:"ISpatialAnalysisToolVolume") -> None:
-        return self._intf.set_property(SpatialAnalysisToolCalculationConditionSatisfactionMetric._metadata, SpatialAnalysisToolCalculationConditionSatisfactionMetric._set_spatial_condition_metadata, spatialCondition)
+    def spatial_condition(self, spatial_condition:"ISpatialAnalysisToolVolume") -> None:
+        return self._intf.set_property(SpatialAnalysisToolCalculationConditionSatisfactionMetric._metadata, SpatialAnalysisToolCalculationConditionSatisfactionMetric._set_spatial_condition_metadata, spatial_condition)
 
     _get_satisfaction_metric_metadata = { "offset" : _get_satisfaction_metric_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -16630,8 +16630,8 @@ class SpatialAnalysisToolCalculationConditionSatisfactionMetric(ISpatialAnalysis
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(VOLUME_SATISFACTION_METRIC_TYPE),) }
     @satisfaction_metric.setter
-    def satisfaction_metric(self, satisfactionMetric:"VOLUME_SATISFACTION_METRIC_TYPE") -> None:
-        return self._intf.set_property(SpatialAnalysisToolCalculationConditionSatisfactionMetric._metadata, SpatialAnalysisToolCalculationConditionSatisfactionMetric._set_satisfaction_metric_metadata, satisfactionMetric)
+    def satisfaction_metric(self, satisfaction_metric:"VOLUME_SATISFACTION_METRIC_TYPE") -> None:
+        return self._intf.set_property(SpatialAnalysisToolCalculationConditionSatisfactionMetric._metadata, SpatialAnalysisToolCalculationConditionSatisfactionMetric._set_satisfaction_metric_metadata, satisfaction_metric)
 
     _get_accumulation_type_metadata = { "offset" : _get_accumulation_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -16645,8 +16645,8 @@ class SpatialAnalysisToolCalculationConditionSatisfactionMetric(ISpatialAnalysis
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(VOLUME_SATISFACTION_ACCUMULATION_TYPE),) }
     @accumulation_type.setter
-    def accumulation_type(self, accumulationType:"VOLUME_SATISFACTION_ACCUMULATION_TYPE") -> None:
-        return self._intf.set_property(SpatialAnalysisToolCalculationConditionSatisfactionMetric._metadata, SpatialAnalysisToolCalculationConditionSatisfactionMetric._set_accumulation_type_metadata, accumulationType)
+    def accumulation_type(self, accumulation_type:"VOLUME_SATISFACTION_ACCUMULATION_TYPE") -> None:
+        return self._intf.set_property(SpatialAnalysisToolCalculationConditionSatisfactionMetric._metadata, SpatialAnalysisToolCalculationConditionSatisfactionMetric._set_accumulation_type_metadata, accumulation_type)
 
     _get_duration_type_metadata = { "offset" : _get_duration_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -16660,8 +16660,8 @@ class SpatialAnalysisToolCalculationConditionSatisfactionMetric(ISpatialAnalysis
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(VOLUME_SATISFACTION_DURATION_TYPE),) }
     @duration_type.setter
-    def duration_type(self, durationType:"VOLUME_SATISFACTION_DURATION_TYPE") -> None:
-        return self._intf.set_property(SpatialAnalysisToolCalculationConditionSatisfactionMetric._metadata, SpatialAnalysisToolCalculationConditionSatisfactionMetric._set_duration_type_metadata, durationType)
+    def duration_type(self, duration_type:"VOLUME_SATISFACTION_DURATION_TYPE") -> None:
+        return self._intf.set_property(SpatialAnalysisToolCalculationConditionSatisfactionMetric._metadata, SpatialAnalysisToolCalculationConditionSatisfactionMetric._set_duration_type_metadata, duration_type)
 
     _get_filter_metadata = { "offset" : _get_filter_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -16690,8 +16690,8 @@ class SpatialAnalysisToolCalculationConditionSatisfactionMetric(ISpatialAnalysis
             "arg_types" : (agcom.INT,),
             "marshallers" : (agmarshall.IntArg,) }
     @maximum_number_of_intervals.setter
-    def maximum_number_of_intervals(self, maximumNumberOfIntervals:int) -> None:
-        return self._intf.set_property(SpatialAnalysisToolCalculationConditionSatisfactionMetric._metadata, SpatialAnalysisToolCalculationConditionSatisfactionMetric._set_maximum_number_of_intervals_metadata, maximumNumberOfIntervals)
+    def maximum_number_of_intervals(self, maximum_number_of_intervals:int) -> None:
+        return self._intf.set_property(SpatialAnalysisToolCalculationConditionSatisfactionMetric._metadata, SpatialAnalysisToolCalculationConditionSatisfactionMetric._set_maximum_number_of_intervals_metadata, maximum_number_of_intervals)
 
     _get_use_minimum_duration_metadata = { "offset" : _get_use_minimum_duration_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -16705,8 +16705,8 @@ class SpatialAnalysisToolCalculationConditionSatisfactionMetric(ISpatialAnalysis
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @use_minimum_duration.setter
-    def use_minimum_duration(self, useMinimumDuration:bool) -> None:
-        return self._intf.set_property(SpatialAnalysisToolCalculationConditionSatisfactionMetric._metadata, SpatialAnalysisToolCalculationConditionSatisfactionMetric._set_use_minimum_duration_metadata, useMinimumDuration)
+    def use_minimum_duration(self, use_minimum_duration:bool) -> None:
+        return self._intf.set_property(SpatialAnalysisToolCalculationConditionSatisfactionMetric._metadata, SpatialAnalysisToolCalculationConditionSatisfactionMetric._set_use_minimum_duration_metadata, use_minimum_duration)
 
     _get_use_maximum_duration_metadata = { "offset" : _get_use_maximum_duration_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -16720,8 +16720,8 @@ class SpatialAnalysisToolCalculationConditionSatisfactionMetric(ISpatialAnalysis
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @use_maximum_duration.setter
-    def use_maximum_duration(self, useMaximumDuration:bool) -> None:
-        return self._intf.set_property(SpatialAnalysisToolCalculationConditionSatisfactionMetric._metadata, SpatialAnalysisToolCalculationConditionSatisfactionMetric._set_use_maximum_duration_metadata, useMaximumDuration)
+    def use_maximum_duration(self, use_maximum_duration:bool) -> None:
+        return self._intf.set_property(SpatialAnalysisToolCalculationConditionSatisfactionMetric._metadata, SpatialAnalysisToolCalculationConditionSatisfactionMetric._set_use_maximum_duration_metadata, use_maximum_duration)
 
     _get_minimum_duration_time_metadata = { "offset" : _get_minimum_duration_time_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -16735,8 +16735,8 @@ class SpatialAnalysisToolCalculationConditionSatisfactionMetric(ISpatialAnalysis
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @minimum_duration_time.setter
-    def minimum_duration_time(self, minimumDurationTime:float) -> None:
-        return self._intf.set_property(SpatialAnalysisToolCalculationConditionSatisfactionMetric._metadata, SpatialAnalysisToolCalculationConditionSatisfactionMetric._set_minimum_duration_time_metadata, minimumDurationTime)
+    def minimum_duration_time(self, minimum_duration_time:float) -> None:
+        return self._intf.set_property(SpatialAnalysisToolCalculationConditionSatisfactionMetric._metadata, SpatialAnalysisToolCalculationConditionSatisfactionMetric._set_minimum_duration_time_metadata, minimum_duration_time)
 
     _get_maximum_duration_time_metadata = { "offset" : _get_maximum_duration_time_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -16750,8 +16750,8 @@ class SpatialAnalysisToolCalculationConditionSatisfactionMetric(ISpatialAnalysis
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @maximum_duration_time.setter
-    def maximum_duration_time(self, maximumDurationTime:float) -> None:
-        return self._intf.set_property(SpatialAnalysisToolCalculationConditionSatisfactionMetric._metadata, SpatialAnalysisToolCalculationConditionSatisfactionMetric._set_maximum_duration_time_metadata, maximumDurationTime)
+    def maximum_duration_time(self, maximum_duration_time:float) -> None:
+        return self._intf.set_property(SpatialAnalysisToolCalculationConditionSatisfactionMetric._metadata, SpatialAnalysisToolCalculationConditionSatisfactionMetric._set_maximum_duration_time_metadata, maximum_duration_time)
 
     _property_names[spatial_condition] = "spatial_condition"
     _property_names[satisfaction_metric] = "satisfaction_metric"
@@ -16764,12 +16764,12 @@ class SpatialAnalysisToolCalculationConditionSatisfactionMetric(ISpatialAnalysis
     _property_names[minimum_duration_time] = "minimum_duration_time"
     _property_names[maximum_duration_time] = "maximum_duration_time"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolCalculationConditionSatisfactionMetric."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolCalculationConditionSatisfactionMetric)
-        ISpatialAnalysisToolSpatialCalculation.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolCalculationConditionSatisfactionMetric)
+        ISpatialAnalysisToolSpatialCalculation.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolSpatialCalculation._private_init(self, intf)
@@ -16836,8 +16836,8 @@ class SpatialAnalysisToolCalculationPropagationDelayToLocation(ISpatialAnalysisT
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolPoint"),) }
     @reference_point.setter
-    def reference_point(self, referencePoint:"IVectorGeometryToolPoint") -> None:
-        return self._intf.set_property(SpatialAnalysisToolCalculationPropagationDelayToLocation._metadata, SpatialAnalysisToolCalculationPropagationDelayToLocation._set_reference_point_metadata, referencePoint)
+    def reference_point(self, reference_point:"IVectorGeometryToolPoint") -> None:
+        return self._intf.set_property(SpatialAnalysisToolCalculationPropagationDelayToLocation._metadata, SpatialAnalysisToolCalculationPropagationDelayToLocation._set_reference_point_metadata, reference_point)
 
     _get_reference_plane_metadata = { "offset" : _get_reference_plane_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -16851,8 +16851,8 @@ class SpatialAnalysisToolCalculationPropagationDelayToLocation(ISpatialAnalysisT
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolPlane"),) }
     @reference_plane.setter
-    def reference_plane(self, referencePlane:"IVectorGeometryToolPlane") -> None:
-        return self._intf.set_property(SpatialAnalysisToolCalculationPropagationDelayToLocation._metadata, SpatialAnalysisToolCalculationPropagationDelayToLocation._set_reference_plane_metadata, referencePlane)
+    def reference_plane(self, reference_plane:"IVectorGeometryToolPlane") -> None:
+        return self._intf.set_property(SpatialAnalysisToolCalculationPropagationDelayToLocation._metadata, SpatialAnalysisToolCalculationPropagationDelayToLocation._set_reference_plane_metadata, reference_plane)
 
     _get_along_vector_metadata = { "offset" : _get_along_vector_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -16866,8 +16866,8 @@ class SpatialAnalysisToolCalculationPropagationDelayToLocation(ISpatialAnalysisT
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolVector"),) }
     @along_vector.setter
-    def along_vector(self, alongVector:"IVectorGeometryToolVector") -> None:
-        return self._intf.set_property(SpatialAnalysisToolCalculationPropagationDelayToLocation._metadata, SpatialAnalysisToolCalculationPropagationDelayToLocation._set_along_vector_metadata, alongVector)
+    def along_vector(self, along_vector:"IVectorGeometryToolVector") -> None:
+        return self._intf.set_property(SpatialAnalysisToolCalculationPropagationDelayToLocation._metadata, SpatialAnalysisToolCalculationPropagationDelayToLocation._set_along_vector_metadata, along_vector)
 
     _get_speed_type_metadata = { "offset" : _get_speed_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -16881,8 +16881,8 @@ class SpatialAnalysisToolCalculationPropagationDelayToLocation(ISpatialAnalysisT
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(RANGE_SPEED_TYPE),) }
     @speed_type.setter
-    def speed_type(self, speedType:"RANGE_SPEED_TYPE") -> None:
-        return self._intf.set_property(SpatialAnalysisToolCalculationPropagationDelayToLocation._metadata, SpatialAnalysisToolCalculationPropagationDelayToLocation._set_speed_type_metadata, speedType)
+    def speed_type(self, speed_type:"RANGE_SPEED_TYPE") -> None:
+        return self._intf.set_property(SpatialAnalysisToolCalculationPropagationDelayToLocation._metadata, SpatialAnalysisToolCalculationPropagationDelayToLocation._set_speed_type_metadata, speed_type)
 
     _get_speed_metadata = { "offset" : _get_speed_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -16906,12 +16906,12 @@ class SpatialAnalysisToolCalculationPropagationDelayToLocation(ISpatialAnalysisT
     _property_names[speed_type] = "speed_type"
     _property_names[speed] = "speed"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolCalculationPropagationDelayToLocation."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolCalculationPropagationDelayToLocation)
-        ISpatialAnalysisToolSpatialCalculation.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolCalculationPropagationDelayToLocation)
+        ISpatialAnalysisToolSpatialCalculation.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolSpatialCalculation._private_init(self, intf)
@@ -16966,12 +16966,12 @@ class SpatialAnalysisToolCalculationFile(ISpatialAnalysisToolSpatialCalculation,
 
     _property_names[filename] = "filename"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolCalculationFile."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolCalculationFile)
-        ISpatialAnalysisToolSpatialCalculation.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolCalculationFile)
+        ISpatialAnalysisToolSpatialCalculation.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolSpatialCalculation._private_init(self, intf)
@@ -17018,12 +17018,12 @@ class SpatialAnalysisToolCalculationFromCalculationScalar(ISpatialAnalysisToolSp
 
     _property_names[scalar] = "scalar"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolCalculationFromCalculationScalar."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolCalculationFromCalculationScalar)
-        ISpatialAnalysisToolSpatialCalculation.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolCalculationFromCalculationScalar)
+        ISpatialAnalysisToolSpatialCalculation.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolSpatialCalculation._private_init(self, intf)
@@ -17086,8 +17086,8 @@ class SpatialAnalysisToolCalculationDistanceToLocation(ISpatialAnalysisToolSpati
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolPoint"),) }
     @reference_point.setter
-    def reference_point(self, referencePoint:"IVectorGeometryToolPoint") -> None:
-        return self._intf.set_property(SpatialAnalysisToolCalculationDistanceToLocation._metadata, SpatialAnalysisToolCalculationDistanceToLocation._set_reference_point_metadata, referencePoint)
+    def reference_point(self, reference_point:"IVectorGeometryToolPoint") -> None:
+        return self._intf.set_property(SpatialAnalysisToolCalculationDistanceToLocation._metadata, SpatialAnalysisToolCalculationDistanceToLocation._set_reference_point_metadata, reference_point)
 
     _get_reference_plane_metadata = { "offset" : _get_reference_plane_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -17101,8 +17101,8 @@ class SpatialAnalysisToolCalculationDistanceToLocation(ISpatialAnalysisToolSpati
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolPlane"),) }
     @reference_plane.setter
-    def reference_plane(self, referencePlane:"IVectorGeometryToolPlane") -> None:
-        return self._intf.set_property(SpatialAnalysisToolCalculationDistanceToLocation._metadata, SpatialAnalysisToolCalculationDistanceToLocation._set_reference_plane_metadata, referencePlane)
+    def reference_plane(self, reference_plane:"IVectorGeometryToolPlane") -> None:
+        return self._intf.set_property(SpatialAnalysisToolCalculationDistanceToLocation._metadata, SpatialAnalysisToolCalculationDistanceToLocation._set_reference_plane_metadata, reference_plane)
 
     _get_along_vector_metadata = { "offset" : _get_along_vector_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -17116,20 +17116,20 @@ class SpatialAnalysisToolCalculationDistanceToLocation(ISpatialAnalysisToolSpati
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolVector"),) }
     @along_vector.setter
-    def along_vector(self, alongVector:"IVectorGeometryToolVector") -> None:
-        return self._intf.set_property(SpatialAnalysisToolCalculationDistanceToLocation._metadata, SpatialAnalysisToolCalculationDistanceToLocation._set_along_vector_metadata, alongVector)
+    def along_vector(self, along_vector:"IVectorGeometryToolVector") -> None:
+        return self._intf.set_property(SpatialAnalysisToolCalculationDistanceToLocation._metadata, SpatialAnalysisToolCalculationDistanceToLocation._set_along_vector_metadata, along_vector)
 
     _property_names[distance] = "distance"
     _property_names[reference_point] = "reference_point"
     _property_names[reference_plane] = "reference_plane"
     _property_names[along_vector] = "along_vector"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolCalculationDistanceToLocation."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolCalculationDistanceToLocation)
-        ISpatialAnalysisToolSpatialCalculation.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolCalculationDistanceToLocation)
+        ISpatialAnalysisToolSpatialCalculation.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolSpatialCalculation._private_init(self, intf)
@@ -17173,8 +17173,8 @@ class SpatialAnalysisToolCalculationSolarIntensity(ISpatialAnalysisToolSpatialCa
             "arg_types" : (agcom.LPSAFEARRAY,),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
     @eclipsing_bodies.setter
-    def eclipsing_bodies(self, eclipsingBodies:list) -> None:
-        return self._intf.set_property(SpatialAnalysisToolCalculationSolarIntensity._metadata, SpatialAnalysisToolCalculationSolarIntensity._set_eclipsing_bodies_metadata, eclipsingBodies)
+    def eclipsing_bodies(self, eclipsing_bodies:list) -> None:
+        return self._intf.set_property(SpatialAnalysisToolCalculationSolarIntensity._metadata, SpatialAnalysisToolCalculationSolarIntensity._set_eclipsing_bodies_metadata, eclipsing_bodies)
 
     _get_use_object_eclipsing_bodies_metadata = { "offset" : _get_use_object_eclipsing_bodies_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -17188,18 +17188,18 @@ class SpatialAnalysisToolCalculationSolarIntensity(ISpatialAnalysisToolSpatialCa
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @use_object_eclipsing_bodies.setter
-    def use_object_eclipsing_bodies(self, useObjectEclipsingBodies:bool) -> None:
-        return self._intf.set_property(SpatialAnalysisToolCalculationSolarIntensity._metadata, SpatialAnalysisToolCalculationSolarIntensity._set_use_object_eclipsing_bodies_metadata, useObjectEclipsingBodies)
+    def use_object_eclipsing_bodies(self, use_object_eclipsing_bodies:bool) -> None:
+        return self._intf.set_property(SpatialAnalysisToolCalculationSolarIntensity._metadata, SpatialAnalysisToolCalculationSolarIntensity._set_use_object_eclipsing_bodies_metadata, use_object_eclipsing_bodies)
 
     _property_names[eclipsing_bodies] = "eclipsing_bodies"
     _property_names[use_object_eclipsing_bodies] = "use_object_eclipsing_bodies"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolCalculationSolarIntensity."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolCalculationSolarIntensity)
-        ISpatialAnalysisToolSpatialCalculation.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolCalculationSolarIntensity)
+        ISpatialAnalysisToolSpatialCalculation.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolSpatialCalculation._private_init(self, intf)
@@ -17247,8 +17247,8 @@ class SpatialAnalysisToolConditionCombined(ISpatialAnalysisToolVolume, IAnalysis
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(VOLUME_COMBINED_OPERATION_TYPE),) }
     @boolean_operation.setter
-    def boolean_operation(self, combineOperation:"VOLUME_COMBINED_OPERATION_TYPE") -> None:
-        return self._intf.set_property(SpatialAnalysisToolConditionCombined._metadata, SpatialAnalysisToolConditionCombined._set_boolean_operation_metadata, combineOperation)
+    def boolean_operation(self, combine_operation:"VOLUME_COMBINED_OPERATION_TYPE") -> None:
+        return self._intf.set_property(SpatialAnalysisToolConditionCombined._metadata, SpatialAnalysisToolConditionCombined._set_boolean_operation_metadata, combine_operation)
 
     _get_count_metadata = { "offset" : _get_count_method_offset,
             "arg_types" : (POINTER(agcom.INT),),
@@ -17296,12 +17296,12 @@ class SpatialAnalysisToolConditionCombined(ISpatialAnalysisToolVolume, IAnalysis
     _property_names[boolean_operation] = "boolean_operation"
     _property_names[count] = "count"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolConditionCombined."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolConditionCombined)
-        ISpatialAnalysisToolVolume.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolConditionCombined)
+        ISpatialAnalysisToolVolume.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolVolume._private_init(self, intf)
@@ -17365,8 +17365,8 @@ class SpatialAnalysisToolConditionSpatialCalculationBounds(ISpatialAnalysisToolV
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ISpatialAnalysisToolSpatialCalculation"),) }
     @spatial_calculation.setter
-    def spatial_calculation(self, volumeCalc:"ISpatialAnalysisToolSpatialCalculation") -> None:
-        return self._intf.set_property(SpatialAnalysisToolConditionSpatialCalculationBounds._metadata, SpatialAnalysisToolConditionSpatialCalculationBounds._set_spatial_calculation_metadata, volumeCalc)
+    def spatial_calculation(self, volume_calc:"ISpatialAnalysisToolSpatialCalculation") -> None:
+        return self._intf.set_property(SpatialAnalysisToolConditionSpatialCalculationBounds._metadata, SpatialAnalysisToolConditionSpatialCalculationBounds._set_spatial_calculation_metadata, volume_calc)
 
     _get_minimum_metadata = { "offset" : _get_minimum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -17406,12 +17406,12 @@ class SpatialAnalysisToolConditionSpatialCalculationBounds(ISpatialAnalysisToolV
     _property_names[operation] = "operation"
     _property_names[spatial_calculation] = "spatial_calculation"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolConditionSpatialCalculationBounds."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolConditionSpatialCalculationBounds)
-        ISpatialAnalysisToolVolume.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolConditionSpatialCalculationBounds)
+        ISpatialAnalysisToolVolume.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolVolume._private_init(self, intf)
@@ -17476,8 +17476,8 @@ class SpatialAnalysisToolConditionConditionAtLocation(ISpatialAnalysisToolVolume
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @use_custom_time_limits.setter
-    def use_custom_time_limits(self, useCustomTimeLimits:bool) -> None:
-        return self._intf.set_property(SpatialAnalysisToolConditionConditionAtLocation._metadata, SpatialAnalysisToolConditionConditionAtLocation._set_use_custom_time_limits_metadata, useCustomTimeLimits)
+    def use_custom_time_limits(self, use_custom_time_limits:bool) -> None:
+        return self._intf.set_property(SpatialAnalysisToolConditionConditionAtLocation._metadata, SpatialAnalysisToolConditionConditionAtLocation._set_use_custom_time_limits_metadata, use_custom_time_limits)
 
     _get_custom_time_limits_metadata = { "offset" : _get_custom_time_limits_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -17491,8 +17491,8 @@ class SpatialAnalysisToolConditionConditionAtLocation(ISpatialAnalysisToolVolume
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ITimeToolTimeIntervalList"),) }
     @custom_time_limits.setter
-    def custom_time_limits(self, customTimeLimits:"ITimeToolTimeIntervalList") -> None:
-        return self._intf.set_property(SpatialAnalysisToolConditionConditionAtLocation._metadata, SpatialAnalysisToolConditionConditionAtLocation._set_custom_time_limits_metadata, customTimeLimits)
+    def custom_time_limits(self, custom_time_limits:"ITimeToolTimeIntervalList") -> None:
+        return self._intf.set_property(SpatialAnalysisToolConditionConditionAtLocation._metadata, SpatialAnalysisToolConditionConditionAtLocation._set_custom_time_limits_metadata, custom_time_limits)
 
     _get_sampling_metadata = { "offset" : _get_sampling_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -17530,12 +17530,12 @@ class SpatialAnalysisToolConditionConditionAtLocation(ISpatialAnalysisToolVolume
     _property_names[sampling] = "sampling"
     _property_names[convergence] = "convergence"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolConditionConditionAtLocation."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolConditionConditionAtLocation)
-        ISpatialAnalysisToolVolume.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolConditionConditionAtLocation)
+        ISpatialAnalysisToolVolume.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolVolume._private_init(self, intf)
@@ -17579,8 +17579,8 @@ class SpatialAnalysisToolConditionGridBoundingVolume(ISpatialAnalysisToolVolume,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(VOLUME_FROM_GRID_EDGE_TYPE),) }
     @edge_type.setter
-    def edge_type(self, edgeType:"VOLUME_FROM_GRID_EDGE_TYPE") -> None:
-        return self._intf.set_property(SpatialAnalysisToolConditionGridBoundingVolume._metadata, SpatialAnalysisToolConditionGridBoundingVolume._set_edge_type_metadata, edgeType)
+    def edge_type(self, edge_type:"VOLUME_FROM_GRID_EDGE_TYPE") -> None:
+        return self._intf.set_property(SpatialAnalysisToolConditionGridBoundingVolume._metadata, SpatialAnalysisToolConditionGridBoundingVolume._set_edge_type_metadata, edge_type)
 
     _get_volume_grid_metadata = { "offset" : _get_volume_grid_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -17594,18 +17594,18 @@ class SpatialAnalysisToolConditionGridBoundingVolume(ISpatialAnalysisToolVolume,
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ISpatialAnalysisToolVolumeGrid"),) }
     @volume_grid.setter
-    def volume_grid(self, volumeGrid:"ISpatialAnalysisToolVolumeGrid") -> None:
-        return self._intf.set_property(SpatialAnalysisToolConditionGridBoundingVolume._metadata, SpatialAnalysisToolConditionGridBoundingVolume._set_volume_grid_metadata, volumeGrid)
+    def volume_grid(self, volume_grid:"ISpatialAnalysisToolVolumeGrid") -> None:
+        return self._intf.set_property(SpatialAnalysisToolConditionGridBoundingVolume._metadata, SpatialAnalysisToolConditionGridBoundingVolume._set_volume_grid_metadata, volume_grid)
 
     _property_names[edge_type] = "edge_type"
     _property_names[volume_grid] = "volume_grid"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolConditionGridBoundingVolume."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolConditionGridBoundingVolume)
-        ISpatialAnalysisToolVolume.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolConditionGridBoundingVolume)
+        ISpatialAnalysisToolVolume.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolVolume._private_init(self, intf)
@@ -17647,17 +17647,17 @@ class SpatialAnalysisToolConditionValidTimeAtLocation(ISpatialAnalysisToolVolume
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ITimeToolTimeIntervalList"),) }
     @time_satisfaction.setter
-    def time_satisfaction(self, timeSatisfaction:"ITimeToolTimeIntervalList") -> None:
-        return self._intf.set_property(SpatialAnalysisToolConditionValidTimeAtLocation._metadata, SpatialAnalysisToolConditionValidTimeAtLocation._set_time_satisfaction_metadata, timeSatisfaction)
+    def time_satisfaction(self, time_satisfaction:"ITimeToolTimeIntervalList") -> None:
+        return self._intf.set_property(SpatialAnalysisToolConditionValidTimeAtLocation._metadata, SpatialAnalysisToolConditionValidTimeAtLocation._set_time_satisfaction_metadata, time_satisfaction)
 
     _property_names[time_satisfaction] = "time_satisfaction"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolConditionValidTimeAtLocation."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolConditionValidTimeAtLocation)
-        ISpatialAnalysisToolVolume.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolConditionValidTimeAtLocation)
+        ISpatialAnalysisToolVolume.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolVolume._private_init(self, intf)
@@ -17674,11 +17674,11 @@ agcls.AgTypeNameMap["SpatialAnalysisToolConditionValidTimeAtLocation"] = Spatial
 
 class SpatialAnalysisToolVolumeGrid(ISpatialAnalysisToolVolumeGrid, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """A volume grid interface. The methods and properties of the interface provide Volumetric Grid functions."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolVolumeGrid."""
         SupportsDeleteCallback.__init__(self)
-        ISpatialAnalysisToolVolumeGrid.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        ISpatialAnalysisToolVolumeGrid.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolVolumeGrid._private_init(self, intf)
@@ -17729,8 +17729,8 @@ class SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude(ISpatialAnalysisT
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @reference_central_body.setter
-    def reference_central_body(self, referenceCentralBody:str) -> None:
-        return self._intf.set_property(SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude._metadata, SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude._set_reference_central_body_metadata, referenceCentralBody)
+    def reference_central_body(self, reference_central_body:str) -> None:
+        return self._intf.set_property(SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude._metadata, SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude._set_reference_central_body_metadata, reference_central_body)
 
     _get_along_bearing_grid_parameters_metadata = { "offset" : _get_along_bearing_grid_parameters_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -17768,8 +17768,8 @@ class SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude(ISpatialAnalysisT
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @auto_fit_bounds.setter
-    def auto_fit_bounds(self, autoFitBounds:bool) -> None:
-        return self._intf.set_property(SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude._metadata, SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude._set_auto_fit_bounds_metadata, autoFitBounds)
+    def auto_fit_bounds(self, auto_fit_bounds:bool) -> None:
+        return self._intf.set_property(SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude._metadata, SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude._set_auto_fit_bounds_metadata, auto_fit_bounds)
 
     _get_bearing_angle_metadata = { "offset" : _get_bearing_angle_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -17783,8 +17783,8 @@ class SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude(ISpatialAnalysisT
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @bearing_angle.setter
-    def bearing_angle(self, bearingAngle:float) -> None:
-        return self._intf.set_property(SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude._metadata, SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude._set_bearing_angle_metadata, bearingAngle)
+    def bearing_angle(self, bearing_angle:float) -> None:
+        return self._intf.set_property(SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude._metadata, SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude._set_bearing_angle_metadata, bearing_angle)
 
     _get_reference_location_metadata = { "offset" : _get_reference_location_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
@@ -17798,8 +17798,8 @@ class SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude(ISpatialAnalysisT
             "arg_types" : (agcom.LPSAFEARRAY,),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
     @reference_location.setter
-    def reference_location(self, referenceLocation:list) -> None:
-        return self._intf.set_property(SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude._metadata, SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude._set_reference_location_metadata, referenceLocation)
+    def reference_location(self, reference_location:list) -> None:
+        return self._intf.set_property(SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude._metadata, SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude._set_reference_location_metadata, reference_location)
 
     _property_names[reference_central_body] = "reference_central_body"
     _property_names[along_bearing_grid_parameters] = "along_bearing_grid_parameters"
@@ -17809,12 +17809,12 @@ class SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude(ISpatialAnalysisT
     _property_names[bearing_angle] = "bearing_angle"
     _property_names[reference_location] = "reference_location"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude)
-        ISpatialAnalysisToolVolumeGrid.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude)
+        ISpatialAnalysisToolVolumeGrid.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolVolumeGrid._private_init(self, intf)
@@ -17859,8 +17859,8 @@ class SpatialAnalysisToolVolumeGridCartesian(ISpatialAnalysisToolVolumeGrid, IAn
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolSystem"),) }
     @reference_system.setter
-    def reference_system(self, referenceSystem:"IVectorGeometryToolSystem") -> None:
-        return self._intf.set_property(SpatialAnalysisToolVolumeGridCartesian._metadata, SpatialAnalysisToolVolumeGridCartesian._set_reference_system_metadata, referenceSystem)
+    def reference_system(self, reference_system:"IVectorGeometryToolSystem") -> None:
+        return self._intf.set_property(SpatialAnalysisToolVolumeGridCartesian._metadata, SpatialAnalysisToolVolumeGridCartesian._set_reference_system_metadata, reference_system)
 
     _get_x_grid_parameters_metadata = { "offset" : _get_x_grid_parameters_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -17891,12 +17891,12 @@ class SpatialAnalysisToolVolumeGridCartesian(ISpatialAnalysisToolVolumeGrid, IAn
     _property_names[y_grid_parameters] = "y_grid_parameters"
     _property_names[z_grid_parameters] = "z_grid_parameters"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolVolumeGridCartesian."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolVolumeGridCartesian)
-        ISpatialAnalysisToolVolumeGrid.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolVolumeGridCartesian)
+        ISpatialAnalysisToolVolumeGrid.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolVolumeGrid._private_init(self, intf)
@@ -17940,8 +17940,8 @@ class SpatialAnalysisToolVolumeGridConstrained(ISpatialAnalysisToolVolumeGrid, I
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ISpatialAnalysisToolVolumeGrid"),) }
     @reference_grid.setter
-    def reference_grid(self, referenceGrid:"ISpatialAnalysisToolVolumeGrid") -> None:
-        return self._intf.set_property(SpatialAnalysisToolVolumeGridConstrained._metadata, SpatialAnalysisToolVolumeGridConstrained._set_reference_grid_metadata, referenceGrid)
+    def reference_grid(self, reference_grid:"ISpatialAnalysisToolVolumeGrid") -> None:
+        return self._intf.set_property(SpatialAnalysisToolVolumeGridConstrained._metadata, SpatialAnalysisToolVolumeGridConstrained._set_reference_grid_metadata, reference_grid)
 
     _get_constraint_metadata = { "offset" : _get_constraint_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -17961,12 +17961,12 @@ class SpatialAnalysisToolVolumeGridConstrained(ISpatialAnalysisToolVolumeGrid, I
     _property_names[reference_grid] = "reference_grid"
     _property_names[constraint] = "constraint"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolVolumeGridConstrained."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolVolumeGridConstrained)
-        ISpatialAnalysisToolVolumeGrid.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolVolumeGridConstrained)
+        ISpatialAnalysisToolVolumeGrid.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolVolumeGrid._private_init(self, intf)
@@ -18011,8 +18011,8 @@ class SpatialAnalysisToolVolumeGridCylindrical(ISpatialAnalysisToolVolumeGrid, I
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolSystem"),) }
     @reference_system.setter
-    def reference_system(self, referenceSystem:"IVectorGeometryToolSystem") -> None:
-        return self._intf.set_property(SpatialAnalysisToolVolumeGridCylindrical._metadata, SpatialAnalysisToolVolumeGridCylindrical._set_reference_system_metadata, referenceSystem)
+    def reference_system(self, reference_system:"IVectorGeometryToolSystem") -> None:
+        return self._intf.set_property(SpatialAnalysisToolVolumeGridCylindrical._metadata, SpatialAnalysisToolVolumeGridCylindrical._set_reference_system_metadata, reference_system)
 
     _get_theta_coordinates_metadata = { "offset" : _get_theta_coordinates_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -18043,12 +18043,12 @@ class SpatialAnalysisToolVolumeGridCylindrical(ISpatialAnalysisToolVolumeGrid, I
     _property_names[radius_coordinates] = "radius_coordinates"
     _property_names[height_coordinates] = "height_coordinates"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolVolumeGridCylindrical."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolVolumeGridCylindrical)
-        ISpatialAnalysisToolVolumeGrid.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolVolumeGridCylindrical)
+        ISpatialAnalysisToolVolumeGrid.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolVolumeGrid._private_init(self, intf)
@@ -18095,8 +18095,8 @@ class SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude(ISpatialAnalysisToo
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @reference_central_body.setter
-    def reference_central_body(self, referenceCentralBody:str) -> None:
-        return self._intf.set_property(SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude._metadata, SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude._set_reference_central_body_metadata, referenceCentralBody)
+    def reference_central_body(self, reference_central_body:str) -> None:
+        return self._intf.set_property(SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude._metadata, SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude._set_reference_central_body_metadata, reference_central_body)
 
     _get_latitude_coordinates_metadata = { "offset" : _get_latitude_coordinates_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -18134,8 +18134,8 @@ class SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude(ISpatialAnalysisToo
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @auto_fit_bounds.setter
-    def auto_fit_bounds(self, autoFitBounds:bool) -> None:
-        return self._intf.set_property(SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude._metadata, SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude._set_auto_fit_bounds_metadata, autoFitBounds)
+    def auto_fit_bounds(self, auto_fit_bounds:bool) -> None:
+        return self._intf.set_property(SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude._metadata, SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude._set_auto_fit_bounds_metadata, auto_fit_bounds)
 
     _property_names[reference_central_body] = "reference_central_body"
     _property_names[latitude_coordinates] = "latitude_coordinates"
@@ -18143,12 +18143,12 @@ class SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude(ISpatialAnalysisToo
     _property_names[altitude_grid_parameters] = "altitude_grid_parameters"
     _property_names[auto_fit_bounds] = "auto_fit_bounds"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude)
-        ISpatialAnalysisToolVolumeGrid.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude)
+        ISpatialAnalysisToolVolumeGrid.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolVolumeGrid._private_init(self, intf)
@@ -18257,10 +18257,10 @@ class SpatialAnalysisToolVolumeGridResult(SupportsDeleteCallback):
     _property_names[native_position_vector] = "native_position_vector"
     _property_names[gradient_vector] = "gradient_vector"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolVolumeGridResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolVolumeGridResult)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolVolumeGridResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -18303,8 +18303,8 @@ class SpatialAnalysisToolVolumeGridSpherical(ISpatialAnalysisToolVolumeGrid, IAn
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolSystem"),) }
     @reference_system.setter
-    def reference_system(self, referenceSystem:"IVectorGeometryToolSystem") -> None:
-        return self._intf.set_property(SpatialAnalysisToolVolumeGridSpherical._metadata, SpatialAnalysisToolVolumeGridSpherical._set_reference_system_metadata, referenceSystem)
+    def reference_system(self, reference_system:"IVectorGeometryToolSystem") -> None:
+        return self._intf.set_property(SpatialAnalysisToolVolumeGridSpherical._metadata, SpatialAnalysisToolVolumeGridSpherical._set_reference_system_metadata, reference_system)
 
     _get_azimuth_grid_parameters_metadata = { "offset" : _get_azimuth_grid_parameters_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -18335,12 +18335,12 @@ class SpatialAnalysisToolVolumeGridSpherical(ISpatialAnalysisToolVolumeGrid, IAn
     _property_names[elevation_grid_parameters] = "elevation_grid_parameters"
     _property_names[range_coordinates] = "range_coordinates"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolVolumeGridSpherical."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolVolumeGridSpherical)
-        ISpatialAnalysisToolVolumeGrid.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolVolumeGridSpherical)
+        ISpatialAnalysisToolVolumeGrid.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolVolumeGrid._private_init(self, intf)
@@ -18383,8 +18383,8 @@ class SpatialAnalysisToolConditionAccessToLocation(ISpatialAnalysisToolVolume, I
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
     @constraint_object.setter
-    def constraint_object(self, constraintObject:typing.Any) -> None:
-        return self._intf.set_property(SpatialAnalysisToolConditionAccessToLocation._metadata, SpatialAnalysisToolConditionAccessToLocation._set_constraint_object_metadata, constraintObject)
+    def constraint_object(self, constraint_object:typing.Any) -> None:
+        return self._intf.set_property(SpatialAnalysisToolConditionAccessToLocation._metadata, SpatialAnalysisToolConditionAccessToLocation._set_constraint_object_metadata, constraint_object)
 
     _get_light_time_delay_metadata = { "offset" : _get_light_time_delay_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -18397,12 +18397,12 @@ class SpatialAnalysisToolConditionAccessToLocation(ISpatialAnalysisToolVolume, I
     _property_names[constraint_object] = "constraint_object"
     _property_names[light_time_delay] = "light_time_delay"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolConditionAccessToLocation."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolConditionAccessToLocation)
-        ISpatialAnalysisToolVolume.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolConditionAccessToLocation)
+        ISpatialAnalysisToolVolume.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolVolume._private_init(self, intf)
@@ -18448,8 +18448,8 @@ class SpatialAnalysisToolConditionLighting(ISpatialAnalysisToolVolume, IAnalysis
             "arg_types" : (agcom.LPSAFEARRAY,),
             "marshallers" : (agmarshall.LPSafearrayArg,) }
     @eclipsing_bodies.setter
-    def eclipsing_bodies(self, eclipsingBodies:list) -> None:
-        return self._intf.set_property(SpatialAnalysisToolConditionLighting._metadata, SpatialAnalysisToolConditionLighting._set_eclipsing_bodies_metadata, eclipsingBodies)
+    def eclipsing_bodies(self, eclipsing_bodies:list) -> None:
+        return self._intf.set_property(SpatialAnalysisToolConditionLighting._metadata, SpatialAnalysisToolConditionLighting._set_eclipsing_bodies_metadata, eclipsing_bodies)
 
     _get_use_object_eclipsing_bodies_metadata = { "offset" : _get_use_object_eclipsing_bodies_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -18463,8 +18463,8 @@ class SpatialAnalysisToolConditionLighting(ISpatialAnalysisToolVolume, IAnalysis
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @use_object_eclipsing_bodies.setter
-    def use_object_eclipsing_bodies(self, useObjectEclipsingBodies:bool) -> None:
-        return self._intf.set_property(SpatialAnalysisToolConditionLighting._metadata, SpatialAnalysisToolConditionLighting._set_use_object_eclipsing_bodies_metadata, useObjectEclipsingBodies)
+    def use_object_eclipsing_bodies(self, use_object_eclipsing_bodies:bool) -> None:
+        return self._intf.set_property(SpatialAnalysisToolConditionLighting._metadata, SpatialAnalysisToolConditionLighting._set_use_object_eclipsing_bodies_metadata, use_object_eclipsing_bodies)
 
     _get_lighting_conditions_metadata = { "offset" : _get_lighting_conditions_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -18478,19 +18478,19 @@ class SpatialAnalysisToolConditionLighting(ISpatialAnalysisToolVolume, IAnalysis
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(LIGHTING_CONDITIONS_TYPE),) }
     @lighting_conditions.setter
-    def lighting_conditions(self, lightingConditions:"LIGHTING_CONDITIONS_TYPE") -> None:
-        return self._intf.set_property(SpatialAnalysisToolConditionLighting._metadata, SpatialAnalysisToolConditionLighting._set_lighting_conditions_metadata, lightingConditions)
+    def lighting_conditions(self, lighting_conditions:"LIGHTING_CONDITIONS_TYPE") -> None:
+        return self._intf.set_property(SpatialAnalysisToolConditionLighting._metadata, SpatialAnalysisToolConditionLighting._set_lighting_conditions_metadata, lighting_conditions)
 
     _property_names[eclipsing_bodies] = "eclipsing_bodies"
     _property_names[use_object_eclipsing_bodies] = "use_object_eclipsing_bodies"
     _property_names[lighting_conditions] = "lighting_conditions"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolConditionLighting."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolConditionLighting)
-        ISpatialAnalysisToolVolume.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolConditionLighting)
+        ISpatialAnalysisToolVolume.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolVolume._private_init(self, intf)
@@ -18540,8 +18540,8 @@ class SpatialAnalysisToolConditionOverTime(ISpatialAnalysisToolVolume, IAnalysis
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(SPATIAL_CONDITION_OVER_TYPE_DURATION_TYPE),) }
     @duration_type.setter
-    def duration_type(self, durationType:"SPATIAL_CONDITION_OVER_TYPE_DURATION_TYPE") -> None:
-        return self._intf.set_property(SpatialAnalysisToolConditionOverTime._metadata, SpatialAnalysisToolConditionOverTime._set_duration_type_metadata, durationType)
+    def duration_type(self, duration_type:"SPATIAL_CONDITION_OVER_TYPE_DURATION_TYPE") -> None:
+        return self._intf.set_property(SpatialAnalysisToolConditionOverTime._metadata, SpatialAnalysisToolConditionOverTime._set_duration_type_metadata, duration_type)
 
     _get_reference_volume_metadata = { "offset" : _get_reference_volume_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -18555,8 +18555,8 @@ class SpatialAnalysisToolConditionOverTime(ISpatialAnalysisToolVolume, IAnalysis
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ISpatialAnalysisToolVolume"),) }
     @reference_volume.setter
-    def reference_volume(self, referenceVolume:"ISpatialAnalysisToolVolume") -> None:
-        return self._intf.set_property(SpatialAnalysisToolConditionOverTime._metadata, SpatialAnalysisToolConditionOverTime._set_reference_volume_metadata, referenceVolume)
+    def reference_volume(self, reference_volume:"ISpatialAnalysisToolVolume") -> None:
+        return self._intf.set_property(SpatialAnalysisToolConditionOverTime._metadata, SpatialAnalysisToolConditionOverTime._set_reference_volume_metadata, reference_volume)
 
     _get_reference_intervals_metadata = { "offset" : _get_reference_intervals_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -18570,8 +18570,8 @@ class SpatialAnalysisToolConditionOverTime(ISpatialAnalysisToolVolume, IAnalysis
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ITimeToolTimeIntervalList"),) }
     @reference_intervals.setter
-    def reference_intervals(self, referenceIntervals:"ITimeToolTimeIntervalList") -> None:
-        return self._intf.set_property(SpatialAnalysisToolConditionOverTime._metadata, SpatialAnalysisToolConditionOverTime._set_reference_intervals_metadata, referenceIntervals)
+    def reference_intervals(self, reference_intervals:"ITimeToolTimeIntervalList") -> None:
+        return self._intf.set_property(SpatialAnalysisToolConditionOverTime._metadata, SpatialAnalysisToolConditionOverTime._set_reference_intervals_metadata, reference_intervals)
 
     _get_start_offset_metadata = { "offset" : _get_start_offset_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -18585,8 +18585,8 @@ class SpatialAnalysisToolConditionOverTime(ISpatialAnalysisToolVolume, IAnalysis
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @start_offset.setter
-    def start_offset(self, startOffset:float) -> None:
-        return self._intf.set_property(SpatialAnalysisToolConditionOverTime._metadata, SpatialAnalysisToolConditionOverTime._set_start_offset_metadata, startOffset)
+    def start_offset(self, start_offset:float) -> None:
+        return self._intf.set_property(SpatialAnalysisToolConditionOverTime._metadata, SpatialAnalysisToolConditionOverTime._set_start_offset_metadata, start_offset)
 
     _get_stop_offset_metadata = { "offset" : _get_stop_offset_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -18600,8 +18600,8 @@ class SpatialAnalysisToolConditionOverTime(ISpatialAnalysisToolVolume, IAnalysis
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @stop_offset.setter
-    def stop_offset(self, stopOffset:float) -> None:
-        return self._intf.set_property(SpatialAnalysisToolConditionOverTime._metadata, SpatialAnalysisToolConditionOverTime._set_stop_offset_metadata, stopOffset)
+    def stop_offset(self, stop_offset:float) -> None:
+        return self._intf.set_property(SpatialAnalysisToolConditionOverTime._metadata, SpatialAnalysisToolConditionOverTime._set_stop_offset_metadata, stop_offset)
 
     _property_names[duration_type] = "duration_type"
     _property_names[reference_volume] = "reference_volume"
@@ -18609,12 +18609,12 @@ class SpatialAnalysisToolConditionOverTime(ISpatialAnalysisToolVolume, IAnalysis
     _property_names[start_offset] = "start_offset"
     _property_names[stop_offset] = "stop_offset"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type SpatialAnalysisToolConditionOverTime."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, SpatialAnalysisToolConditionOverTime)
-        ISpatialAnalysisToolVolume.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, SpatialAnalysisToolConditionOverTime)
+        ISpatialAnalysisToolVolume.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         ISpatialAnalysisToolVolume._private_init(self, intf)
@@ -18631,10 +18631,10 @@ agcls.AgTypeNameMap["SpatialAnalysisToolConditionOverTime"] = SpatialAnalysisToo
 
 class AnalysisWorkbenchComponent(IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Generic VGT component."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchComponent."""
         SupportsDeleteCallback.__init__(self)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchComponent._private_init(self, intf)
@@ -18692,10 +18692,10 @@ class AnalysisWorkbenchComponentTypeInformation(SupportsDeleteCallback):
     _property_names[type_name] = "type_name"
     _property_names[short_type_description] = "short_type_description"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchComponentTypeInformation."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchComponentTypeInformation)
+        initialize_from_source_object(self, source_object, AnalysisWorkbenchComponentTypeInformation)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -18742,11 +18742,11 @@ class AnalysisWorkbenchComponentInstance(IAnalysisWorkbenchComponentContext, Sup
     _property_names[instance_path] = "instance_path"
     _property_names[template] = "template"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchComponentInstance."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchComponentInstance)
-        IAnalysisWorkbenchComponentContext.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AnalysisWorkbenchComponentInstance)
+        IAnalysisWorkbenchComponentContext.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchComponentContext._private_init(self, intf)
@@ -18784,11 +18784,11 @@ class AnalysisWorkbenchComponentTemplate(IAnalysisWorkbenchComponentContext, Sup
 
     _property_names[class_name] = "class_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchComponentTemplate."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchComponentTemplate)
-        IAnalysisWorkbenchComponentContext.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AnalysisWorkbenchComponentTemplate)
+        IAnalysisWorkbenchComponentContext.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchComponentContext._private_init(self, intf)
@@ -18848,11 +18848,11 @@ class VectorGeometryToolPointReference(IAnalysisWorkbenchComponentReference, Sup
         return self._intf.invoke(VectorGeometryToolPointReference._metadata, VectorGeometryToolPointReference._has_cyclic_dependency_metadata, point, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPointReference."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolPointReference)
-        IAnalysisWorkbenchComponentReference.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolPointReference)
+        IAnalysisWorkbenchComponentReference.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchComponentReference._private_init(self, intf)
@@ -18912,11 +18912,11 @@ class VectorGeometryToolVectorReference(IAnalysisWorkbenchComponentReference, Su
         return self._intf.invoke(VectorGeometryToolVectorReference._metadata, VectorGeometryToolVectorReference._has_cyclic_dependency_metadata, vector, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorReference."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorReference)
-        IAnalysisWorkbenchComponentReference.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorReference)
+        IAnalysisWorkbenchComponentReference.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchComponentReference._private_init(self, intf)
@@ -18976,11 +18976,11 @@ class VectorGeometryToolAxesReference(IAnalysisWorkbenchComponentReference, Supp
         return self._intf.invoke(VectorGeometryToolAxesReference._metadata, VectorGeometryToolAxesReference._has_cyclic_dependency_metadata, axes, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolAxesReference."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolAxesReference)
-        IAnalysisWorkbenchComponentReference.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolAxesReference)
+        IAnalysisWorkbenchComponentReference.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchComponentReference._private_init(self, intf)
@@ -19040,11 +19040,11 @@ class VectorGeometryToolAngleReference(IAnalysisWorkbenchComponentReference, Sup
         return self._intf.invoke(VectorGeometryToolAngleReference._metadata, VectorGeometryToolAngleReference._has_cyclic_dependency_metadata, angle, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolAngleReference."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolAngleReference)
-        IAnalysisWorkbenchComponentReference.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolAngleReference)
+        IAnalysisWorkbenchComponentReference.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchComponentReference._private_init(self, intf)
@@ -19104,11 +19104,11 @@ class VectorGeometryToolSystemReference(IAnalysisWorkbenchComponentReference, Su
         return self._intf.invoke(VectorGeometryToolSystemReference._metadata, VectorGeometryToolSystemReference._has_cyclic_dependency_metadata, system, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolSystemReference."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolSystemReference)
-        IAnalysisWorkbenchComponentReference.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolSystemReference)
+        IAnalysisWorkbenchComponentReference.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchComponentReference._private_init(self, intf)
@@ -19168,11 +19168,11 @@ class VectorGeometryToolPlaneReference(IAnalysisWorkbenchComponentReference, Sup
         return self._intf.invoke(VectorGeometryToolPlaneReference._metadata, VectorGeometryToolPlaneReference._has_cyclic_dependency_metadata, plane, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPlaneReference."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolPlaneReference)
-        IAnalysisWorkbenchComponentReference.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolPlaneReference)
+        IAnalysisWorkbenchComponentReference.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchComponentReference._private_init(self, intf)
@@ -19188,12 +19188,12 @@ agcls.AgTypeNameMap["VectorGeometryToolPlaneReference"] = VectorGeometryToolPlan
 
 class VectorGeometryToolVector(IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """A generic vector class."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVector."""
         SupportsDeleteCallback.__init__(self)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        IVectorGeometryToolVector.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
@@ -19240,8 +19240,8 @@ class VectorGeometryToolAxesLabels(SupportsDeleteCallback):
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @label_x.setter
-    def label_x(self, labelX:str) -> None:
-        return self._intf.set_property(VectorGeometryToolAxesLabels._metadata, VectorGeometryToolAxesLabels._set_label_x_metadata, labelX)
+    def label_x(self, label_x:str) -> None:
+        return self._intf.set_property(VectorGeometryToolAxesLabels._metadata, VectorGeometryToolAxesLabels._set_label_x_metadata, label_x)
 
     _get_label_y_metadata = { "offset" : _get_label_y_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -19255,8 +19255,8 @@ class VectorGeometryToolAxesLabels(SupportsDeleteCallback):
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @label_y.setter
-    def label_y(self, labelY:str) -> None:
-        return self._intf.set_property(VectorGeometryToolAxesLabels._metadata, VectorGeometryToolAxesLabels._set_label_y_metadata, labelY)
+    def label_y(self, label_y:str) -> None:
+        return self._intf.set_property(VectorGeometryToolAxesLabels._metadata, VectorGeometryToolAxesLabels._set_label_y_metadata, label_y)
 
     _get_label_z_metadata = { "offset" : _get_label_z_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -19270,17 +19270,17 @@ class VectorGeometryToolAxesLabels(SupportsDeleteCallback):
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @label_z.setter
-    def label_z(self, labelZ:str) -> None:
-        return self._intf.set_property(VectorGeometryToolAxesLabels._metadata, VectorGeometryToolAxesLabels._set_label_z_metadata, labelZ)
+    def label_z(self, label_z:str) -> None:
+        return self._intf.set_property(VectorGeometryToolAxesLabels._metadata, VectorGeometryToolAxesLabels._set_label_z_metadata, label_z)
 
     _property_names[label_x] = "label_x"
     _property_names[label_y] = "label_y"
     _property_names[label_z] = "label_z"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolAxesLabels."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolAxesLabels)
+        initialize_from_source_object(self, source_object, VectorGeometryToolAxesLabels)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -19295,12 +19295,12 @@ agcls.AgTypeNameMap["VectorGeometryToolAxesLabels"] = VectorGeometryToolAxesLabe
 
 class VectorGeometryToolAxes(IVectorGeometryToolAxes, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """A generic axes class."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolAxes."""
         SupportsDeleteCallback.__init__(self)
-        IVectorGeometryToolAxes.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        IVectorGeometryToolAxes.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAxes._private_init(self, intf)
@@ -19318,12 +19318,12 @@ agcls.AgTypeNameMap["VectorGeometryToolAxes"] = VectorGeometryToolAxes
 
 class VectorGeometryToolPoint(IVectorGeometryToolPoint, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """A generic VGT point class."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPoint."""
         SupportsDeleteCallback.__init__(self)
-        IVectorGeometryToolPoint.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        IVectorGeometryToolPoint.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPoint._private_init(self, intf)
@@ -19341,12 +19341,12 @@ agcls.AgTypeNameMap["VectorGeometryToolPoint"] = VectorGeometryToolPoint
 
 class VectorGeometryToolSystem(IVectorGeometryToolSystem, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Base class for VGT axes."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolSystem."""
         SupportsDeleteCallback.__init__(self)
-        IVectorGeometryToolSystem.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        IVectorGeometryToolSystem.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolSystem._private_init(self, intf)
@@ -19364,12 +19364,12 @@ agcls.AgTypeNameMap["VectorGeometryToolSystem"] = VectorGeometryToolSystem
 
 class VectorGeometryToolAngle(IVectorGeometryToolAngle, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Base class for VGT axes."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolAngle."""
         SupportsDeleteCallback.__init__(self)
-        IVectorGeometryToolAngle.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        IVectorGeometryToolAngle.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAngle._private_init(self, intf)
@@ -19414,8 +19414,8 @@ class VectorGeometryToolPlaneLabels(SupportsDeleteCallback):
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @x_axis_label.setter
-    def x_axis_label(self, xAxisLabel:str) -> None:
-        return self._intf.set_property(VectorGeometryToolPlaneLabels._metadata, VectorGeometryToolPlaneLabels._set_x_axis_label_metadata, xAxisLabel)
+    def x_axis_label(self, x_axis_label:str) -> None:
+        return self._intf.set_property(VectorGeometryToolPlaneLabels._metadata, VectorGeometryToolPlaneLabels._set_x_axis_label_metadata, x_axis_label)
 
     _get_y_axis_label_metadata = { "offset" : _get_y_axis_label_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -19429,16 +19429,16 @@ class VectorGeometryToolPlaneLabels(SupportsDeleteCallback):
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @y_axis_label.setter
-    def y_axis_label(self, yAxisLabel:str) -> None:
-        return self._intf.set_property(VectorGeometryToolPlaneLabels._metadata, VectorGeometryToolPlaneLabels._set_y_axis_label_metadata, yAxisLabel)
+    def y_axis_label(self, y_axis_label:str) -> None:
+        return self._intf.set_property(VectorGeometryToolPlaneLabels._metadata, VectorGeometryToolPlaneLabels._set_y_axis_label_metadata, y_axis_label)
 
     _property_names[x_axis_label] = "x_axis_label"
     _property_names[y_axis_label] = "y_axis_label"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPlaneLabels."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolPlaneLabels)
+        initialize_from_source_object(self, source_object, VectorGeometryToolPlaneLabels)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -19453,12 +19453,12 @@ agcls.AgTypeNameMap["VectorGeometryToolPlaneLabels"] = VectorGeometryToolPlaneLa
 
 class VectorGeometryToolPlane(IVectorGeometryToolPlane, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
     """Base class for VGT axes."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPlane."""
         SupportsDeleteCallback.__init__(self)
-        IVectorGeometryToolPlane.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        IVectorGeometryToolPlane.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPlane._private_init(self, intf)
@@ -19528,13 +19528,13 @@ class VectorGeometryToolAxesAlignedAndConstrained(IVectorGeometryToolAxes, IAnal
     _property_names[alignment_direction] = "alignment_direction"
     _property_names[constraint_direction] = "constraint_direction"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolAxesAlignedAndConstrained."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolAxesAlignedAndConstrained)
-        IVectorGeometryToolAxes.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolAxesAlignedAndConstrained)
+        IVectorGeometryToolAxes.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAxes._private_init(self, intf)
@@ -19604,21 +19604,21 @@ class VectorGeometryToolAxesAngularOffset(IVectorGeometryToolAxes, IAnalysisWork
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @fixed_offset_angle.setter
-    def fixed_offset_angle(self, fixedOffsetAngle:float) -> None:
-        return self._intf.set_property(VectorGeometryToolAxesAngularOffset._metadata, VectorGeometryToolAxesAngularOffset._set_fixed_offset_angle_metadata, fixedOffsetAngle)
+    def fixed_offset_angle(self, fixed_offset_angle:float) -> None:
+        return self._intf.set_property(VectorGeometryToolAxesAngularOffset._metadata, VectorGeometryToolAxesAngularOffset._set_fixed_offset_angle_metadata, fixed_offset_angle)
 
     _property_names[spin_vector] = "spin_vector"
     _property_names[rotation_angle] = "rotation_angle"
     _property_names[reference_axes] = "reference_axes"
     _property_names[fixed_offset_angle] = "fixed_offset_angle"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolAxesAngularOffset."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolAxesAngularOffset)
-        IVectorGeometryToolAxes.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolAxesAngularOffset)
+        IVectorGeometryToolAxes.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAxes._private_init(self, intf)
@@ -19686,13 +19686,13 @@ class VectorGeometryToolAxesFixedAtEpoch(IVectorGeometryToolAxes, IAnalysisWorkb
     _property_names[reference_axes] = "reference_axes"
     _property_names[epoch] = "epoch"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolAxesFixedAtEpoch."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolAxesFixedAtEpoch)
-        IVectorGeometryToolAxes.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolAxesFixedAtEpoch)
+        IVectorGeometryToolAxes.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAxes._private_init(self, intf)
@@ -19770,13 +19770,13 @@ class VectorGeometryToolAxesBPlane(IVectorGeometryToolAxes, IAnalysisWorkbenchCo
     _property_names[target_body] = "target_body"
     _property_names[direction] = "direction"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolAxesBPlane."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolAxesBPlane)
-        IVectorGeometryToolAxes.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolAxesBPlane)
+        IVectorGeometryToolAxes.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAxes._private_init(self, intf)
@@ -19834,13 +19834,13 @@ class VectorGeometryToolAxesCustomScript(IVectorGeometryToolAxes, IAnalysisWorkb
     _property_names[reference_axes] = "reference_axes"
     _property_names[filename] = "filename"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolAxesCustomScript."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolAxesCustomScript)
-        IVectorGeometryToolAxes.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolAxesCustomScript)
+        IVectorGeometryToolAxes.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAxes._private_init(self, intf)
@@ -19888,13 +19888,13 @@ class VectorGeometryToolAxesAttitudeFile(IVectorGeometryToolAxes, IAnalysisWorkb
 
     _property_names[filename] = "filename"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolAxesAttitudeFile."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolAxesAttitudeFile)
-        IVectorGeometryToolAxes.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolAxesAttitudeFile)
+        IVectorGeometryToolAxes.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAxes._private_init(self, intf)
@@ -19944,13 +19944,13 @@ class VectorGeometryToolAxesFixed(IVectorGeometryToolAxes, IAnalysisWorkbenchCom
     _property_names[reference_axes] = "reference_axes"
     _property_names[fixed_orientation] = "fixed_orientation"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolAxesFixed."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolAxesFixed)
-        IVectorGeometryToolAxes.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolAxesFixed)
+        IVectorGeometryToolAxes.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAxes._private_init(self, intf)
@@ -19993,18 +19993,18 @@ class VectorGeometryToolAxesModelAttachment(IVectorGeometryToolAxes, IAnalysisWo
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @pointable_element_name.setter
-    def pointable_element_name(self, pointableElementName:str) -> None:
-        return self._intf.set_property(VectorGeometryToolAxesModelAttachment._metadata, VectorGeometryToolAxesModelAttachment._set_pointable_element_name_metadata, pointableElementName)
+    def pointable_element_name(self, pointable_element_name:str) -> None:
+        return self._intf.set_property(VectorGeometryToolAxesModelAttachment._metadata, VectorGeometryToolAxesModelAttachment._set_pointable_element_name_metadata, pointable_element_name)
 
     _property_names[pointable_element_name] = "pointable_element_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolAxesModelAttachment."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolAxesModelAttachment)
-        IVectorGeometryToolAxes.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolAxesModelAttachment)
+        IVectorGeometryToolAxes.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAxes._private_init(self, intf)
@@ -20084,8 +20084,8 @@ class VectorGeometryToolAxesSpinning(IVectorGeometryToolAxes, IAnalysisWorkbench
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @initial_offset.setter
-    def initial_offset(self, initialOffset:float) -> None:
-        return self._intf.set_property(VectorGeometryToolAxesSpinning._metadata, VectorGeometryToolAxesSpinning._set_initial_offset_metadata, initialOffset)
+    def initial_offset(self, initial_offset:float) -> None:
+        return self._intf.set_property(VectorGeometryToolAxesSpinning._metadata, VectorGeometryToolAxesSpinning._set_initial_offset_metadata, initial_offset)
 
     _get_spin_rate_metadata = { "offset" : _get_spin_rate_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -20099,8 +20099,8 @@ class VectorGeometryToolAxesSpinning(IVectorGeometryToolAxes, IAnalysisWorkbench
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @spin_rate.setter
-    def spin_rate(self, spinRate:float) -> None:
-        return self._intf.set_property(VectorGeometryToolAxesSpinning._metadata, VectorGeometryToolAxesSpinning._set_spin_rate_metadata, spinRate)
+    def spin_rate(self, spin_rate:float) -> None:
+        return self._intf.set_property(VectorGeometryToolAxesSpinning._metadata, VectorGeometryToolAxesSpinning._set_spin_rate_metadata, spin_rate)
 
     _property_names[spin_vector] = "spin_vector"
     _property_names[reference_axes] = "reference_axes"
@@ -20108,13 +20108,13 @@ class VectorGeometryToolAxesSpinning(IVectorGeometryToolAxes, IAnalysisWorkbench
     _property_names[initial_offset] = "initial_offset"
     _property_names[spin_rate] = "spin_rate"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolAxesSpinning."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolAxesSpinning)
-        IVectorGeometryToolAxes.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolAxesSpinning)
+        IVectorGeometryToolAxes.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAxes._private_init(self, intf)
@@ -20175,20 +20175,20 @@ class VectorGeometryToolAxesOnSurface(IVectorGeometryToolAxes, IAnalysisWorkbenc
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @use_mean_sea_level.setter
-    def use_mean_sea_level(self, useMSL:bool) -> None:
-        return self._intf.set_property(VectorGeometryToolAxesOnSurface._metadata, VectorGeometryToolAxesOnSurface._set_use_mean_sea_level_metadata, useMSL)
+    def use_mean_sea_level(self, use_msl:bool) -> None:
+        return self._intf.set_property(VectorGeometryToolAxesOnSurface._metadata, VectorGeometryToolAxesOnSurface._set_use_mean_sea_level_metadata, use_msl)
 
     _property_names[central_body] = "central_body"
     _property_names[reference_point] = "reference_point"
     _property_names[use_mean_sea_level] = "use_mean_sea_level"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolAxesOnSurface."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolAxesOnSurface)
-        IVectorGeometryToolAxes.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolAxesOnSurface)
+        IVectorGeometryToolAxes.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAxes._private_init(self, intf)
@@ -20249,20 +20249,20 @@ class VectorGeometryToolAxesTrajectory(IVectorGeometryToolAxes, IAnalysisWorkben
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(TRAJECTORY_AXES_COORDINATES_TYPE),) }
     @trajectory_axes_type.setter
-    def trajectory_axes_type(self, trajectoryAxesType:"TRAJECTORY_AXES_COORDINATES_TYPE") -> None:
-        return self._intf.set_property(VectorGeometryToolAxesTrajectory._metadata, VectorGeometryToolAxesTrajectory._set_trajectory_axes_type_metadata, trajectoryAxesType)
+    def trajectory_axes_type(self, trajectory_axes_type:"TRAJECTORY_AXES_COORDINATES_TYPE") -> None:
+        return self._intf.set_property(VectorGeometryToolAxesTrajectory._metadata, VectorGeometryToolAxesTrajectory._set_trajectory_axes_type_metadata, trajectory_axes_type)
 
     _property_names[trajectory_point] = "trajectory_point"
     _property_names[reference_system] = "reference_system"
     _property_names[trajectory_axes_type] = "trajectory_axes_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolAxesTrajectory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolAxesTrajectory)
-        IVectorGeometryToolAxes.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolAxesTrajectory)
+        IVectorGeometryToolAxes.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAxes._private_init(self, intf)
@@ -20315,8 +20315,8 @@ class VectorGeometryToolAxesLagrangeLibration(IVectorGeometryToolAxes, IAnalysis
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(LAGRANGE_LIBRATION_POINT_TYPE),) }
     @point_type.setter
-    def point_type(self, pointType:"LAGRANGE_LIBRATION_POINT_TYPE") -> None:
-        return self._intf.set_property(VectorGeometryToolAxesLagrangeLibration._metadata, VectorGeometryToolAxesLagrangeLibration._set_point_type_metadata, pointType)
+    def point_type(self, point_type:"LAGRANGE_LIBRATION_POINT_TYPE") -> None:
+        return self._intf.set_property(VectorGeometryToolAxesLagrangeLibration._metadata, VectorGeometryToolAxesLagrangeLibration._set_point_type_metadata, point_type)
 
     _get_secondary_central_bodies_metadata = { "offset" : _get_secondary_central_bodies_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -20330,13 +20330,13 @@ class VectorGeometryToolAxesLagrangeLibration(IVectorGeometryToolAxes, IAnalysis
     _property_names[point_type] = "point_type"
     _property_names[secondary_central_bodies] = "secondary_central_bodies"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolAxesLagrangeLibration."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolAxesLagrangeLibration)
-        IVectorGeometryToolAxes.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolAxesLagrangeLibration)
+        IVectorGeometryToolAxes.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAxes._private_init(self, intf)
@@ -20372,36 +20372,36 @@ class VectorGeometryToolAxesCommonTasks(SupportsDeleteCallback):
     _create_topocentric_axes_quaternion_metadata = { "offset" : _create_topocentric_axes_quaternion_method_offset,
             "arg_types" : (agcom.PVOID, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolPoint"), agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.InterfaceOutArg,) }
-    def create_topocentric_axes_quaternion(self, originPoint:"IVectorGeometryToolPoint", qx:float, qy:float, qz:float, qs:float) -> "VectorGeometryToolAxesFixed":
+    def create_topocentric_axes_quaternion(self, origin_point:"IVectorGeometryToolPoint", qx:float, qy:float, qz:float, qs:float) -> "VectorGeometryToolAxesFixed":
         """Create non-persistent axes fixed in axes on the surface of a central body with the location specified by the origin point. The quaternion defines the axes's orientation."""
-        return self._intf.invoke(VectorGeometryToolAxesCommonTasks._metadata, VectorGeometryToolAxesCommonTasks._create_topocentric_axes_quaternion_metadata, originPoint, qx, qy, qz, qs, OutArg())
+        return self._intf.invoke(VectorGeometryToolAxesCommonTasks._metadata, VectorGeometryToolAxesCommonTasks._create_topocentric_axes_quaternion_metadata, origin_point, qx, qy, qz, qs, OutArg())
 
     _create_topocentric_axes_euler_angles_metadata = { "offset" : _create_topocentric_axes_euler_angles_method_offset,
             "arg_types" : (agcom.PVOID, agcom.LONG, agcom.Variant, agcom.Variant, agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolPoint"), agmarshall.EnumArg(EULER_ORIENTATION_SEQUENCE_TYPE), agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
-    def create_topocentric_axes_euler_angles(self, originPoint:"IVectorGeometryToolPoint", sequence:"EULER_ORIENTATION_SEQUENCE_TYPE", a:typing.Any, b:typing.Any, c:typing.Any) -> "VectorGeometryToolAxesFixed":
+    def create_topocentric_axes_euler_angles(self, origin_point:"IVectorGeometryToolPoint", sequence:"EULER_ORIENTATION_SEQUENCE_TYPE", a:typing.Any, b:typing.Any, c:typing.Any) -> "VectorGeometryToolAxesFixed":
         """Create non-persistent axes fixed in axes on the surface of a central body with the location specified by the origin point. The euler angles define the axes's orientation."""
-        return self._intf.invoke(VectorGeometryToolAxesCommonTasks._metadata, VectorGeometryToolAxesCommonTasks._create_topocentric_axes_euler_angles_metadata, originPoint, sequence, a, b, c, OutArg())
+        return self._intf.invoke(VectorGeometryToolAxesCommonTasks._metadata, VectorGeometryToolAxesCommonTasks._create_topocentric_axes_euler_angles_metadata, origin_point, sequence, a, b, c, OutArg())
 
     _create_fixed_metadata = { "offset" : _create_fixed_method_offset,
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolAxes"), agmarshall.InterfaceOutArg,) }
-    def create_fixed(self, referenceAxes:"IVectorGeometryToolAxes") -> "VectorGeometryToolAxesFixed":
+    def create_fixed(self, reference_axes:"IVectorGeometryToolAxes") -> "VectorGeometryToolAxesFixed":
         """Create non-persistent fixed axes based on specified axes."""
-        return self._intf.invoke(VectorGeometryToolAxesCommonTasks._metadata, VectorGeometryToolAxesCommonTasks._create_fixed_metadata, referenceAxes, OutArg())
+        return self._intf.invoke(VectorGeometryToolAxesCommonTasks._metadata, VectorGeometryToolAxesCommonTasks._create_fixed_metadata, reference_axes, OutArg())
 
     _sample_metadata = { "offset" : _sample_method_offset,
             "arg_types" : (agcom.PVOID, agcom.PVOID, POINTER(agcom.LPSAFEARRAY), agcom.DOUBLE, agcom.DOUBLE, agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolAxes"), agmarshall.InterfaceInArg("IVectorGeometryToolAxes"), agmarshall.LPSafearrayArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
-    def sample(self, axes:"IVectorGeometryToolAxes", referenceAxes:"IVectorGeometryToolAxes", intervals:list, minStep:float, maxStep:float, targetRate:typing.Any) -> "TimeToolAxesSamplingResult":
+    def sample(self, axes:"IVectorGeometryToolAxes", reference_axes:"IVectorGeometryToolAxes", intervals:list, min_step:float, max_step:float, target_rate:typing.Any) -> "TimeToolAxesSamplingResult":
         """Compute and returns tabulated orientations and angular velocities of axes with respect to reference axes using specified sampling parameters."""
-        return self._intf.invoke(VectorGeometryToolAxesCommonTasks._metadata, VectorGeometryToolAxesCommonTasks._sample_metadata, axes, referenceAxes, intervals, minStep, maxStep, targetRate, OutArg())
+        return self._intf.invoke(VectorGeometryToolAxesCommonTasks._metadata, VectorGeometryToolAxesCommonTasks._sample_metadata, axes, reference_axes, intervals, min_step, max_step, target_rate, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolAxesCommonTasks."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolAxesCommonTasks)
+        initialize_from_source_object(self, source_object, VectorGeometryToolAxesCommonTasks)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -20445,8 +20445,8 @@ class VectorGeometryToolAxesAtTimeInstant(IAnalysisWorkbenchComponent, IAnalysis
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ITimeToolInstant"),) }
     @reference_time_instant.setter
-    def reference_time_instant(self, referenceTimeInstant:"ITimeToolInstant") -> None:
-        return self._intf.set_property(VectorGeometryToolAxesAtTimeInstant._metadata, VectorGeometryToolAxesAtTimeInstant._set_reference_time_instant_metadata, referenceTimeInstant)
+    def reference_time_instant(self, reference_time_instant:"ITimeToolInstant") -> None:
+        return self._intf.set_property(VectorGeometryToolAxesAtTimeInstant._metadata, VectorGeometryToolAxesAtTimeInstant._set_reference_time_instant_metadata, reference_time_instant)
 
     _get_source_axes_metadata = { "offset" : _get_source_axes_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -20460,8 +20460,8 @@ class VectorGeometryToolAxesAtTimeInstant(IAnalysisWorkbenchComponent, IAnalysis
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolAxes"),) }
     @source_axes.setter
-    def source_axes(self, sourceAxes:"IVectorGeometryToolAxes") -> None:
-        return self._intf.set_property(VectorGeometryToolAxesAtTimeInstant._metadata, VectorGeometryToolAxesAtTimeInstant._set_source_axes_metadata, sourceAxes)
+    def source_axes(self, source_axes:"IVectorGeometryToolAxes") -> None:
+        return self._intf.set_property(VectorGeometryToolAxesAtTimeInstant._metadata, VectorGeometryToolAxesAtTimeInstant._set_source_axes_metadata, source_axes)
 
     _get_reference_axes_metadata = { "offset" : _get_reference_axes_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -20475,20 +20475,20 @@ class VectorGeometryToolAxesAtTimeInstant(IAnalysisWorkbenchComponent, IAnalysis
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolAxes"),) }
     @reference_axes.setter
-    def reference_axes(self, referenceAxes:"IVectorGeometryToolAxes") -> None:
-        return self._intf.set_property(VectorGeometryToolAxesAtTimeInstant._metadata, VectorGeometryToolAxesAtTimeInstant._set_reference_axes_metadata, referenceAxes)
+    def reference_axes(self, reference_axes:"IVectorGeometryToolAxes") -> None:
+        return self._intf.set_property(VectorGeometryToolAxesAtTimeInstant._metadata, VectorGeometryToolAxesAtTimeInstant._set_reference_axes_metadata, reference_axes)
 
     _property_names[reference_time_instant] = "reference_time_instant"
     _property_names[source_axes] = "source_axes"
     _property_names[reference_axes] = "reference_axes"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolAxesAtTimeInstant."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolAxesAtTimeInstant)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IVectorGeometryToolAxes.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolAxesAtTimeInstant)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IVectorGeometryToolAxes.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchComponent._private_init(self, intf)
@@ -20572,13 +20572,13 @@ class VectorGeometryToolAxesPlugin(IAnalysisWorkbenchComponent, IAnalysisWorkben
     _property_names[display_name] = "display_name"
     _property_names[available_properties] = "available_properties"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolAxesPlugin."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolAxesPlugin)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IVectorGeometryToolAxes.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolAxesPlugin)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IVectorGeometryToolAxes.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchComponent._private_init(self, intf)
@@ -20628,13 +20628,13 @@ class VectorGeometryToolAngleBetweenVectors(IVectorGeometryToolAngle, IAnalysisW
     _property_names[from_vector] = "from_vector"
     _property_names[to_vector] = "to_vector"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolAngleBetweenVectors."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolAngleBetweenVectors)
-        IVectorGeometryToolAngle.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolAngleBetweenVectors)
+        IVectorGeometryToolAngle.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAngle._private_init(self, intf)
@@ -20684,13 +20684,13 @@ class VectorGeometryToolAngleBetweenPlanes(IVectorGeometryToolAngle, IAnalysisWo
     _property_names[from_plane] = "from_plane"
     _property_names[to_plane] = "to_plane"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolAngleBetweenPlanes."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolAngleBetweenPlanes)
-        IVectorGeometryToolAngle.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolAngleBetweenPlanes)
+        IVectorGeometryToolAngle.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAngle._private_init(self, intf)
@@ -20762,8 +20762,8 @@ class VectorGeometryToolAngleDihedral(IVectorGeometryToolAngle, IAnalysisWorkben
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @counter_clockwise_rotation.setter
-    def counter_clockwise_rotation(self, counterClockwiseRotation:bool) -> None:
-        return self._intf.set_property(VectorGeometryToolAngleDihedral._metadata, VectorGeometryToolAngleDihedral._set_counter_clockwise_rotation_metadata, counterClockwiseRotation)
+    def counter_clockwise_rotation(self, counter_clockwise_rotation:bool) -> None:
+        return self._intf.set_property(VectorGeometryToolAngleDihedral._metadata, VectorGeometryToolAngleDihedral._set_counter_clockwise_rotation_metadata, counter_clockwise_rotation)
 
     _get_signed_angle_metadata = { "offset" : _get_signed_angle_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -20777,8 +20777,8 @@ class VectorGeometryToolAngleDihedral(IVectorGeometryToolAngle, IAnalysisWorkben
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @signed_angle.setter
-    def signed_angle(self, signedAngle:bool) -> None:
-        return self._intf.set_property(VectorGeometryToolAngleDihedral._metadata, VectorGeometryToolAngleDihedral._set_signed_angle_metadata, signedAngle)
+    def signed_angle(self, signed_angle:bool) -> None:
+        return self._intf.set_property(VectorGeometryToolAngleDihedral._metadata, VectorGeometryToolAngleDihedral._set_signed_angle_metadata, signed_angle)
 
     _property_names[from_vector] = "from_vector"
     _property_names[to_vector] = "to_vector"
@@ -20786,13 +20786,13 @@ class VectorGeometryToolAngleDihedral(IVectorGeometryToolAngle, IAnalysisWorkben
     _property_names[counter_clockwise_rotation] = "counter_clockwise_rotation"
     _property_names[signed_angle] = "signed_angle"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolAngleDihedral."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolAngleDihedral)
-        IVectorGeometryToolAngle.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolAngleDihedral)
+        IVectorGeometryToolAngle.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAngle._private_init(self, intf)
@@ -20853,20 +20853,20 @@ class VectorGeometryToolAngleRotation(IVectorGeometryToolAngle, IAnalysisWorkben
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(PRINCIPAL_AXIS_OF_ROTATION_TYPE),) }
     @reference_direction.setter
-    def reference_direction(self, referenceDirection:"PRINCIPAL_AXIS_OF_ROTATION_TYPE") -> None:
-        return self._intf.set_property(VectorGeometryToolAngleRotation._metadata, VectorGeometryToolAngleRotation._set_reference_direction_metadata, referenceDirection)
+    def reference_direction(self, reference_direction:"PRINCIPAL_AXIS_OF_ROTATION_TYPE") -> None:
+        return self._intf.set_property(VectorGeometryToolAngleRotation._metadata, VectorGeometryToolAngleRotation._set_reference_direction_metadata, reference_direction)
 
     _property_names[from_axes] = "from_axes"
     _property_names[to_axes] = "to_axes"
     _property_names[reference_direction] = "reference_direction"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolAngleRotation."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolAngleRotation)
-        IVectorGeometryToolAngle.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolAngleRotation)
+        IVectorGeometryToolAngle.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAngle._private_init(self, intf)
@@ -20934,13 +20934,13 @@ class VectorGeometryToolAngleToPlane(IVectorGeometryToolAngle, IAnalysisWorkbenc
     _property_names[reference_plane] = "reference_plane"
     _property_names[signed] = "signed"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolAngleToPlane."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolAngleToPlane)
-        IVectorGeometryToolAngle.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolAngleToPlane)
+        IVectorGeometryToolAngle.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolAngle._private_init(self, intf)
@@ -21000,13 +21000,13 @@ class VectorGeometryToolPlaneNormal(IVectorGeometryToolPlane, IAnalysisWorkbench
     _property_names[reference_vector] = "reference_vector"
     _property_names[reference_point] = "reference_point"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPlaneNormal."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolPlaneNormal)
-        IVectorGeometryToolPlane.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolPlaneNormal)
+        IVectorGeometryToolPlane.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPlane._private_init(self, intf)
@@ -21064,13 +21064,13 @@ class VectorGeometryToolPlaneQuadrant(IVectorGeometryToolPlane, IAnalysisWorkben
     _property_names[reference_system] = "reference_system"
     _property_names[quadrant] = "quadrant"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPlaneQuadrant."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolPlaneQuadrant)
-        IVectorGeometryToolPlane.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolPlaneQuadrant)
+        IVectorGeometryToolPlane.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPlane._private_init(self, intf)
@@ -21131,20 +21131,20 @@ class VectorGeometryToolPlaneTrajectory(IVectorGeometryToolPlane, IAnalysisWorkb
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @rotation_offset.setter
-    def rotation_offset(self, rotationOffset:float) -> None:
-        return self._intf.set_property(VectorGeometryToolPlaneTrajectory._metadata, VectorGeometryToolPlaneTrajectory._set_rotation_offset_metadata, rotationOffset)
+    def rotation_offset(self, rotation_offset:float) -> None:
+        return self._intf.set_property(VectorGeometryToolPlaneTrajectory._metadata, VectorGeometryToolPlaneTrajectory._set_rotation_offset_metadata, rotation_offset)
 
     _property_names[point] = "point"
     _property_names[reference_system] = "reference_system"
     _property_names[rotation_offset] = "rotation_offset"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPlaneTrajectory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolPlaneTrajectory)
-        IVectorGeometryToolPlane.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolPlaneTrajectory)
+        IVectorGeometryToolPlane.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPlane._private_init(self, intf)
@@ -21214,21 +21214,21 @@ class VectorGeometryToolPlaneTriad(IVectorGeometryToolPlane, IAnalysisWorkbenchC
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @rotation_offset.setter
-    def rotation_offset(self, rotationOffset:float) -> None:
-        return self._intf.set_property(VectorGeometryToolPlaneTriad._metadata, VectorGeometryToolPlaneTriad._set_rotation_offset_metadata, rotationOffset)
+    def rotation_offset(self, rotation_offset:float) -> None:
+        return self._intf.set_property(VectorGeometryToolPlaneTriad._metadata, VectorGeometryToolPlaneTriad._set_rotation_offset_metadata, rotation_offset)
 
     _property_names[point_a] = "point_a"
     _property_names[point_b] = "point_b"
     _property_names[reference_point] = "reference_point"
     _property_names[rotation_offset] = "rotation_offset"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPlaneTriad."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolPlaneTriad)
-        IVectorGeometryToolPlane.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolPlaneTriad)
+        IVectorGeometryToolPlane.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPlane._private_init(self, intf)
@@ -21288,13 +21288,13 @@ class VectorGeometryToolPlaneTwoVector(IVectorGeometryToolPlane, IAnalysisWorkbe
     _property_names[vector_2] = "vector_2"
     _property_names[reference_point] = "reference_point"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPlaneTwoVector."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolPlaneTwoVector)
-        IVectorGeometryToolPlane.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolPlaneTwoVector)
+        IVectorGeometryToolPlane.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPlane._private_init(self, intf)
@@ -21357,8 +21357,8 @@ class VectorGeometryToolPointBPlane(IVectorGeometryToolPoint, IAnalysisWorkbench
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(POINT_B_PLANE_TYPE),) }
     @point_type.setter
-    def point_type(self, pointType:"POINT_B_PLANE_TYPE") -> None:
-        return self._intf.set_property(VectorGeometryToolPointBPlane._metadata, VectorGeometryToolPointBPlane._set_point_type_metadata, pointType)
+    def point_type(self, point_type:"POINT_B_PLANE_TYPE") -> None:
+        return self._intf.set_property(VectorGeometryToolPointBPlane._metadata, VectorGeometryToolPointBPlane._set_point_type_metadata, point_type)
 
     _get_direction_metadata = { "offset" : _get_direction_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -21380,13 +21380,13 @@ class VectorGeometryToolPointBPlane(IVectorGeometryToolPoint, IAnalysisWorkbench
     _property_names[point_type] = "point_type"
     _property_names[direction] = "direction"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPointBPlane."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolPointBPlane)
-        IVectorGeometryToolPoint.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolPointBPlane)
+        IVectorGeometryToolPoint.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPoint._private_init(self, intf)
@@ -21434,13 +21434,13 @@ class VectorGeometryToolPointFile(IVectorGeometryToolPoint, IAnalysisWorkbenchCo
 
     _property_names[filename] = "filename"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPointFile."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolPointFile)
-        IVectorGeometryToolPoint.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolPointFile)
+        IVectorGeometryToolPoint.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPoint._private_init(self, intf)
@@ -21490,13 +21490,13 @@ class VectorGeometryToolPointFixedInSystem(IVectorGeometryToolPoint, IAnalysisWo
     _property_names[reference] = "reference"
     _property_names[fixed_point] = "fixed_point"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPointFixedInSystem."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolPointFixedInSystem)
-        IVectorGeometryToolPoint.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolPointFixedInSystem)
+        IVectorGeometryToolPoint.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPoint._private_init(self, intf)
@@ -21574,13 +21574,13 @@ class VectorGeometryToolPointGrazing(IVectorGeometryToolPoint, IAnalysisWorkbenc
     _property_names[direction_vector] = "direction_vector"
     _property_names[altitude] = "altitude"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPointGrazing."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolPointGrazing)
-        IVectorGeometryToolPoint.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolPointGrazing)
+        IVectorGeometryToolPoint.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPoint._private_init(self, intf)
@@ -21640,13 +21640,13 @@ class VectorGeometryToolPointGlint(IVectorGeometryToolPoint, IAnalysisWorkbenchC
     _property_names[source_point] = "source_point"
     _property_names[observer_point] = "observer_point"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPointGlint."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolPointGlint)
-        IVectorGeometryToolPoint.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolPointGlint)
+        IVectorGeometryToolPoint.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPoint._private_init(self, intf)
@@ -21715,8 +21715,8 @@ class VectorGeometryToolPointCovarianceGrazing(IVectorGeometryToolPoint, IAnalys
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @target_name.setter
-    def target_name(self, targetName:str) -> None:
-        return self._intf.set_property(VectorGeometryToolPointCovarianceGrazing._metadata, VectorGeometryToolPointCovarianceGrazing._set_target_name_metadata, targetName)
+    def target_name(self, target_name:str) -> None:
+        return self._intf.set_property(VectorGeometryToolPointCovarianceGrazing._metadata, VectorGeometryToolPointCovarianceGrazing._set_target_name_metadata, target_name)
 
     _get_distance_metadata = { "offset" : _get_distance_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -21775,8 +21775,8 @@ class VectorGeometryToolPointCovarianceGrazing(IVectorGeometryToolPoint, IAnalys
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @use_probability.setter
-    def use_probability(self, useProbability:bool) -> None:
-        return self._intf.set_property(VectorGeometryToolPointCovarianceGrazing._metadata, VectorGeometryToolPointCovarianceGrazing._set_use_probability_metadata, useProbability)
+    def use_probability(self, use_probability:bool) -> None:
+        return self._intf.set_property(VectorGeometryToolPointCovarianceGrazing._metadata, VectorGeometryToolPointCovarianceGrazing._set_use_probability_metadata, use_probability)
 
     _property_names[reference_point] = "reference_point"
     _property_names[direction_vector] = "direction_vector"
@@ -21786,13 +21786,13 @@ class VectorGeometryToolPointCovarianceGrazing(IVectorGeometryToolPoint, IAnalys
     _property_names[scale] = "scale"
     _property_names[use_probability] = "use_probability"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPointCovarianceGrazing."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolPointCovarianceGrazing)
-        IVectorGeometryToolPoint.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolPointCovarianceGrazing)
+        IVectorGeometryToolPoint.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPoint._private_init(self, intf)
@@ -21852,13 +21852,13 @@ class VectorGeometryToolPointPlaneIntersection(IVectorGeometryToolPoint, IAnalys
     _property_names[reference_plane] = "reference_plane"
     _property_names[origin_point] = "origin_point"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPointPlaneIntersection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolPointPlaneIntersection)
-        IVectorGeometryToolPoint.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolPointPlaneIntersection)
+        IVectorGeometryToolPoint.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPoint._private_init(self, intf)
@@ -21921,8 +21921,8 @@ class VectorGeometryToolPointOnSurface(IVectorGeometryToolPoint, IAnalysisWorkbe
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(SURFACE_REFERENCE_SHAPE_TYPE),) }
     @reference_shape.setter
-    def reference_shape(self, referenceShape:"SURFACE_REFERENCE_SHAPE_TYPE") -> None:
-        return self._intf.set_property(VectorGeometryToolPointOnSurface._metadata, VectorGeometryToolPointOnSurface._set_reference_shape_metadata, referenceShape)
+    def reference_shape(self, reference_shape:"SURFACE_REFERENCE_SHAPE_TYPE") -> None:
+        return self._intf.set_property(VectorGeometryToolPointOnSurface._metadata, VectorGeometryToolPointOnSurface._set_reference_shape_metadata, reference_shape)
 
     _get_surface_type_metadata = { "offset" : _get_surface_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -21936,21 +21936,21 @@ class VectorGeometryToolPointOnSurface(IVectorGeometryToolPoint, IAnalysisWorkbe
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(SURFACE_SHAPE_TYPE),) }
     @surface_type.setter
-    def surface_type(self, surfaceType:"SURFACE_SHAPE_TYPE") -> None:
-        return self._intf.set_property(VectorGeometryToolPointOnSurface._metadata, VectorGeometryToolPointOnSurface._set_surface_type_metadata, surfaceType)
+    def surface_type(self, surface_type:"SURFACE_SHAPE_TYPE") -> None:
+        return self._intf.set_property(VectorGeometryToolPointOnSurface._metadata, VectorGeometryToolPointOnSurface._set_surface_type_metadata, surface_type)
 
     _property_names[central_body] = "central_body"
     _property_names[reference_point] = "reference_point"
     _property_names[reference_shape] = "reference_shape"
     _property_names[surface_type] = "surface_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPointOnSurface."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolPointOnSurface)
-        IVectorGeometryToolPoint.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolPointOnSurface)
+        IVectorGeometryToolPoint.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPoint._private_init(self, intf)
@@ -21995,8 +21995,8 @@ class VectorGeometryToolPointModelAttachment(IVectorGeometryToolPoint, IAnalysis
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @pointable_element_name.setter
-    def pointable_element_name(self, pointableElementName:str) -> None:
-        return self._intf.set_property(VectorGeometryToolPointModelAttachment._metadata, VectorGeometryToolPointModelAttachment._set_pointable_element_name_metadata, pointableElementName)
+    def pointable_element_name(self, pointable_element_name:str) -> None:
+        return self._intf.set_property(VectorGeometryToolPointModelAttachment._metadata, VectorGeometryToolPointModelAttachment._set_pointable_element_name_metadata, pointable_element_name)
 
     _get_use_scale_metadata = { "offset" : _get_use_scale_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -22010,19 +22010,19 @@ class VectorGeometryToolPointModelAttachment(IVectorGeometryToolPoint, IAnalysis
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @use_scale.setter
-    def use_scale(self, useScale:bool) -> None:
-        return self._intf.set_property(VectorGeometryToolPointModelAttachment._metadata, VectorGeometryToolPointModelAttachment._set_use_scale_metadata, useScale)
+    def use_scale(self, use_scale:bool) -> None:
+        return self._intf.set_property(VectorGeometryToolPointModelAttachment._metadata, VectorGeometryToolPointModelAttachment._set_use_scale_metadata, use_scale)
 
     _property_names[pointable_element_name] = "pointable_element_name"
     _property_names[use_scale] = "use_scale"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPointModelAttachment."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolPointModelAttachment)
-        IVectorGeometryToolPoint.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolPointModelAttachment)
+        IVectorGeometryToolPoint.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPoint._private_init(self, intf)
@@ -22065,18 +22065,18 @@ class VectorGeometryToolPointSatelliteCollectionEntry(IVectorGeometryToolPoint, 
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @entry_name.setter
-    def entry_name(self, entryName:str) -> None:
-        return self._intf.set_property(VectorGeometryToolPointSatelliteCollectionEntry._metadata, VectorGeometryToolPointSatelliteCollectionEntry._set_entry_name_metadata, entryName)
+    def entry_name(self, entry_name:str) -> None:
+        return self._intf.set_property(VectorGeometryToolPointSatelliteCollectionEntry._metadata, VectorGeometryToolPointSatelliteCollectionEntry._set_entry_name_metadata, entry_name)
 
     _property_names[entry_name] = "entry_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPointSatelliteCollectionEntry."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolPointSatelliteCollectionEntry)
-        IVectorGeometryToolPoint.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolPointSatelliteCollectionEntry)
+        IVectorGeometryToolPoint.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPoint._private_init(self, intf)
@@ -22126,13 +22126,13 @@ class VectorGeometryToolPointPlaneProjection(IVectorGeometryToolPoint, IAnalysis
     _property_names[source_point] = "source_point"
     _property_names[reference_plane] = "reference_plane"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPointPlaneProjection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolPointPlaneProjection)
-        IVectorGeometryToolPoint.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolPointPlaneProjection)
+        IVectorGeometryToolPoint.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPoint._private_init(self, intf)
@@ -22185,8 +22185,8 @@ class VectorGeometryToolPointLagrangeLibration(IVectorGeometryToolPoint, IAnalys
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(LAGRANGE_LIBRATION_POINT_TYPE),) }
     @point_type.setter
-    def point_type(self, pointType:"LAGRANGE_LIBRATION_POINT_TYPE") -> None:
-        return self._intf.set_property(VectorGeometryToolPointLagrangeLibration._metadata, VectorGeometryToolPointLagrangeLibration._set_point_type_metadata, pointType)
+    def point_type(self, point_type:"LAGRANGE_LIBRATION_POINT_TYPE") -> None:
+        return self._intf.set_property(VectorGeometryToolPointLagrangeLibration._metadata, VectorGeometryToolPointLagrangeLibration._set_point_type_metadata, point_type)
 
     _get_secondary_central_bodies_metadata = { "offset" : _get_secondary_central_bodies_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -22200,13 +22200,13 @@ class VectorGeometryToolPointLagrangeLibration(IVectorGeometryToolPoint, IAnalys
     _property_names[point_type] = "point_type"
     _property_names[secondary_central_bodies] = "secondary_central_bodies"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPointLagrangeLibration."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolPointLagrangeLibration)
-        IVectorGeometryToolPoint.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolPointLagrangeLibration)
+        IVectorGeometryToolPoint.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolPoint._private_init(self, intf)
@@ -22241,29 +22241,29 @@ class VectorGeometryToolPointCommonTasks(SupportsDeleteCallback):
     _create_fixed_in_system_cartographic_metadata = { "offset" : _create_fixed_in_system_cartographic_method_offset,
             "arg_types" : (agcom.PVOID, agcom.Variant, agcom.Variant, agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolSystem"), agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.DoubleArg, agmarshall.InterfaceOutArg,) }
-    def create_fixed_in_system_cartographic(self, referenceSystem:"IVectorGeometryToolSystem", latitude:typing.Any, longitude:typing.Any, altitude:float) -> "VectorGeometryToolPointFixedInSystem":
+    def create_fixed_in_system_cartographic(self, reference_system:"IVectorGeometryToolSystem", latitude:typing.Any, longitude:typing.Any, altitude:float) -> "VectorGeometryToolPointFixedInSystem":
         """Create a non-persistent point fixed in a specified reference system."""
-        return self._intf.invoke(VectorGeometryToolPointCommonTasks._metadata, VectorGeometryToolPointCommonTasks._create_fixed_in_system_cartographic_metadata, referenceSystem, latitude, longitude, altitude, OutArg())
+        return self._intf.invoke(VectorGeometryToolPointCommonTasks._metadata, VectorGeometryToolPointCommonTasks._create_fixed_in_system_cartographic_metadata, reference_system, latitude, longitude, altitude, OutArg())
 
     _create_fixed_in_system_cartesian_metadata = { "offset" : _create_fixed_in_system_cartesian_method_offset,
             "arg_types" : (agcom.PVOID, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolSystem"), agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.InterfaceOutArg,) }
-    def create_fixed_in_system_cartesian(self, referenceSystem:"IVectorGeometryToolSystem", x:float, y:float, z:float) -> "VectorGeometryToolPointFixedInSystem":
+    def create_fixed_in_system_cartesian(self, reference_system:"IVectorGeometryToolSystem", x:float, y:float, z:float) -> "VectorGeometryToolPointFixedInSystem":
         """Create a non-persistent point fixed in a specified reference system."""
-        return self._intf.invoke(VectorGeometryToolPointCommonTasks._metadata, VectorGeometryToolPointCommonTasks._create_fixed_in_system_cartesian_metadata, referenceSystem, x, y, z, OutArg())
+        return self._intf.invoke(VectorGeometryToolPointCommonTasks._metadata, VectorGeometryToolPointCommonTasks._create_fixed_in_system_cartesian_metadata, reference_system, x, y, z, OutArg())
 
     _sample_metadata = { "offset" : _sample_method_offset,
             "arg_types" : (agcom.PVOID, agcom.PVOID, POINTER(agcom.LPSAFEARRAY), agcom.DOUBLE, agcom.DOUBLE, agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolPoint"), agmarshall.InterfaceInArg("IVectorGeometryToolSystem"), agmarshall.LPSafearrayArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
-    def sample(self, point:"IVectorGeometryToolPoint", referenceSystem:"IVectorGeometryToolSystem", intervals:list, minStep:float, maxStep:float, targetRate:typing.Any) -> "TimeToolPointSamplingResult":
+    def sample(self, point:"IVectorGeometryToolPoint", reference_system:"IVectorGeometryToolSystem", intervals:list, min_step:float, max_step:float, target_rate:typing.Any) -> "TimeToolPointSamplingResult":
         """Compute and returns tabulated positions and velocities of a point with respect to reference system using specified sampling parameters."""
-        return self._intf.invoke(VectorGeometryToolPointCommonTasks._metadata, VectorGeometryToolPointCommonTasks._sample_metadata, point, referenceSystem, intervals, minStep, maxStep, targetRate, OutArg())
+        return self._intf.invoke(VectorGeometryToolPointCommonTasks._metadata, VectorGeometryToolPointCommonTasks._sample_metadata, point, reference_system, intervals, min_step, max_step, target_rate, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPointCommonTasks."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolPointCommonTasks)
+        initialize_from_source_object(self, source_object, VectorGeometryToolPointCommonTasks)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -22324,8 +22324,8 @@ class VectorGeometryToolPointCentralBodyIntersect(IAnalysisWorkbenchComponent, I
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @central_body.setter
-    def central_body(self, centralBody:str) -> None:
-        return self._intf.set_property(VectorGeometryToolPointCentralBodyIntersect._metadata, VectorGeometryToolPointCentralBodyIntersect._set_central_body_metadata, centralBody)
+    def central_body(self, central_body:str) -> None:
+        return self._intf.set_property(VectorGeometryToolPointCentralBodyIntersect._metadata, VectorGeometryToolPointCentralBodyIntersect._set_central_body_metadata, central_body)
 
     _get_reference_point_metadata = { "offset" : _get_reference_point_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -22339,8 +22339,8 @@ class VectorGeometryToolPointCentralBodyIntersect(IAnalysisWorkbenchComponent, I
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolPoint"),) }
     @reference_point.setter
-    def reference_point(self, referencePoint:"IVectorGeometryToolPoint") -> None:
-        return self._intf.set_property(VectorGeometryToolPointCentralBodyIntersect._metadata, VectorGeometryToolPointCentralBodyIntersect._set_reference_point_metadata, referencePoint)
+    def reference_point(self, reference_point:"IVectorGeometryToolPoint") -> None:
+        return self._intf.set_property(VectorGeometryToolPointCentralBodyIntersect._metadata, VectorGeometryToolPointCentralBodyIntersect._set_reference_point_metadata, reference_point)
 
     _get_direction_vector_metadata = { "offset" : _get_direction_vector_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -22354,8 +22354,8 @@ class VectorGeometryToolPointCentralBodyIntersect(IAnalysisWorkbenchComponent, I
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolVector"),) }
     @direction_vector.setter
-    def direction_vector(self, directionVector:"IVectorGeometryToolVector") -> None:
-        return self._intf.set_property(VectorGeometryToolPointCentralBodyIntersect._metadata, VectorGeometryToolPointCentralBodyIntersect._set_direction_vector_metadata, directionVector)
+    def direction_vector(self, direction_vector:"IVectorGeometryToolVector") -> None:
+        return self._intf.set_property(VectorGeometryToolPointCentralBodyIntersect._metadata, VectorGeometryToolPointCentralBodyIntersect._set_direction_vector_metadata, direction_vector)
 
     _get_intersection_surface_metadata = { "offset" : _get_intersection_surface_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -22369,8 +22369,8 @@ class VectorGeometryToolPointCentralBodyIntersect(IAnalysisWorkbenchComponent, I
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(INTERSECTION_SURFACE_TYPE),) }
     @intersection_surface.setter
-    def intersection_surface(self, intersectionSurface:"INTERSECTION_SURFACE_TYPE") -> None:
-        return self._intf.set_property(VectorGeometryToolPointCentralBodyIntersect._metadata, VectorGeometryToolPointCentralBodyIntersect._set_intersection_surface_metadata, intersectionSurface)
+    def intersection_surface(self, intersection_surface:"INTERSECTION_SURFACE_TYPE") -> None:
+        return self._intf.set_property(VectorGeometryToolPointCentralBodyIntersect._metadata, VectorGeometryToolPointCentralBodyIntersect._set_intersection_surface_metadata, intersection_surface)
 
     _get_altitude_metadata = { "offset" : _get_altitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -22399,8 +22399,8 @@ class VectorGeometryToolPointCentralBodyIntersect(IAnalysisWorkbenchComponent, I
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @use_range_constraint.setter
-    def use_range_constraint(self, useRangeConstraint:bool) -> None:
-        return self._intf.set_property(VectorGeometryToolPointCentralBodyIntersect._metadata, VectorGeometryToolPointCentralBodyIntersect._set_use_range_constraint_metadata, useRangeConstraint)
+    def use_range_constraint(self, use_range_constraint:bool) -> None:
+        return self._intf.set_property(VectorGeometryToolPointCentralBodyIntersect._metadata, VectorGeometryToolPointCentralBodyIntersect._set_use_range_constraint_metadata, use_range_constraint)
 
     _get_minimum_range_metadata = { "offset" : _get_minimum_range_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -22414,8 +22414,8 @@ class VectorGeometryToolPointCentralBodyIntersect(IAnalysisWorkbenchComponent, I
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @minimum_range.setter
-    def minimum_range(self, minimumRange:float) -> None:
-        return self._intf.set_property(VectorGeometryToolPointCentralBodyIntersect._metadata, VectorGeometryToolPointCentralBodyIntersect._set_minimum_range_metadata, minimumRange)
+    def minimum_range(self, minimum_range:float) -> None:
+        return self._intf.set_property(VectorGeometryToolPointCentralBodyIntersect._metadata, VectorGeometryToolPointCentralBodyIntersect._set_minimum_range_metadata, minimum_range)
 
     _get_maximum_range_metadata = { "offset" : _get_maximum_range_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -22429,8 +22429,8 @@ class VectorGeometryToolPointCentralBodyIntersect(IAnalysisWorkbenchComponent, I
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @maximum_range.setter
-    def maximum_range(self, maximumRange:float) -> None:
-        return self._intf.set_property(VectorGeometryToolPointCentralBodyIntersect._metadata, VectorGeometryToolPointCentralBodyIntersect._set_maximum_range_metadata, maximumRange)
+    def maximum_range(self, maximum_range:float) -> None:
+        return self._intf.set_property(VectorGeometryToolPointCentralBodyIntersect._metadata, VectorGeometryToolPointCentralBodyIntersect._set_maximum_range_metadata, maximum_range)
 
     _get_use_minimum_range_metadata = { "offset" : _get_use_minimum_range_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -22444,8 +22444,8 @@ class VectorGeometryToolPointCentralBodyIntersect(IAnalysisWorkbenchComponent, I
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @use_minimum_range.setter
-    def use_minimum_range(self, useMinimumRange:bool) -> None:
-        return self._intf.set_property(VectorGeometryToolPointCentralBodyIntersect._metadata, VectorGeometryToolPointCentralBodyIntersect._set_use_minimum_range_metadata, useMinimumRange)
+    def use_minimum_range(self, use_minimum_range:bool) -> None:
+        return self._intf.set_property(VectorGeometryToolPointCentralBodyIntersect._metadata, VectorGeometryToolPointCentralBodyIntersect._set_use_minimum_range_metadata, use_minimum_range)
 
     _get_use_maximum_range_metadata = { "offset" : _get_use_maximum_range_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -22459,8 +22459,8 @@ class VectorGeometryToolPointCentralBodyIntersect(IAnalysisWorkbenchComponent, I
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @use_maximum_range.setter
-    def use_maximum_range(self, useMaximumRange:bool) -> None:
-        return self._intf.set_property(VectorGeometryToolPointCentralBodyIntersect._metadata, VectorGeometryToolPointCentralBodyIntersect._set_use_maximum_range_metadata, useMaximumRange)
+    def use_maximum_range(self, use_maximum_range:bool) -> None:
+        return self._intf.set_property(VectorGeometryToolPointCentralBodyIntersect._metadata, VectorGeometryToolPointCentralBodyIntersect._set_use_maximum_range_metadata, use_maximum_range)
 
     _set_range_metadata = { "offset" : _set_range_method_offset,
             "arg_types" : (agcom.DOUBLE, agcom.DOUBLE,),
@@ -22481,8 +22481,8 @@ class VectorGeometryToolPointCentralBodyIntersect(IAnalysisWorkbenchComponent, I
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @allow_intersection_from_below.setter
-    def allow_intersection_from_below(self, allowIntersectionFromBelow:bool) -> None:
-        return self._intf.set_property(VectorGeometryToolPointCentralBodyIntersect._metadata, VectorGeometryToolPointCentralBodyIntersect._set_allow_intersection_from_below_metadata, allowIntersectionFromBelow)
+    def allow_intersection_from_below(self, allow_intersection_from_below:bool) -> None:
+        return self._intf.set_property(VectorGeometryToolPointCentralBodyIntersect._metadata, VectorGeometryToolPointCentralBodyIntersect._set_allow_intersection_from_below_metadata, allow_intersection_from_below)
 
     _property_names[central_body] = "central_body"
     _property_names[reference_point] = "reference_point"
@@ -22496,13 +22496,13 @@ class VectorGeometryToolPointCentralBodyIntersect(IAnalysisWorkbenchComponent, I
     _property_names[use_maximum_range] = "use_maximum_range"
     _property_names[allow_intersection_from_below] = "allow_intersection_from_below"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPointCentralBodyIntersect."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolPointCentralBodyIntersect)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IVectorGeometryToolPoint.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolPointCentralBodyIntersect)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IVectorGeometryToolPoint.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchComponent._private_init(self, intf)
@@ -22549,8 +22549,8 @@ class VectorGeometryToolPointAtTimeInstant(IAnalysisWorkbenchComponent, IAnalysi
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ITimeToolInstant"),) }
     @reference_time_instant.setter
-    def reference_time_instant(self, referenceTimeInstant:"ITimeToolInstant") -> None:
-        return self._intf.set_property(VectorGeometryToolPointAtTimeInstant._metadata, VectorGeometryToolPointAtTimeInstant._set_reference_time_instant_metadata, referenceTimeInstant)
+    def reference_time_instant(self, reference_time_instant:"ITimeToolInstant") -> None:
+        return self._intf.set_property(VectorGeometryToolPointAtTimeInstant._metadata, VectorGeometryToolPointAtTimeInstant._set_reference_time_instant_metadata, reference_time_instant)
 
     _get_source_point_metadata = { "offset" : _get_source_point_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -22564,8 +22564,8 @@ class VectorGeometryToolPointAtTimeInstant(IAnalysisWorkbenchComponent, IAnalysi
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolPoint"),) }
     @source_point.setter
-    def source_point(self, sourcePoint:"IVectorGeometryToolPoint") -> None:
-        return self._intf.set_property(VectorGeometryToolPointAtTimeInstant._metadata, VectorGeometryToolPointAtTimeInstant._set_source_point_metadata, sourcePoint)
+    def source_point(self, source_point:"IVectorGeometryToolPoint") -> None:
+        return self._intf.set_property(VectorGeometryToolPointAtTimeInstant._metadata, VectorGeometryToolPointAtTimeInstant._set_source_point_metadata, source_point)
 
     _get_reference_system_metadata = { "offset" : _get_reference_system_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -22579,20 +22579,20 @@ class VectorGeometryToolPointAtTimeInstant(IAnalysisWorkbenchComponent, IAnalysi
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolSystem"),) }
     @reference_system.setter
-    def reference_system(self, referenceSystem:"IVectorGeometryToolSystem") -> None:
-        return self._intf.set_property(VectorGeometryToolPointAtTimeInstant._metadata, VectorGeometryToolPointAtTimeInstant._set_reference_system_metadata, referenceSystem)
+    def reference_system(self, reference_system:"IVectorGeometryToolSystem") -> None:
+        return self._intf.set_property(VectorGeometryToolPointAtTimeInstant._metadata, VectorGeometryToolPointAtTimeInstant._set_reference_system_metadata, reference_system)
 
     _property_names[reference_time_instant] = "reference_time_instant"
     _property_names[source_point] = "source_point"
     _property_names[reference_system] = "reference_system"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPointAtTimeInstant."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolPointAtTimeInstant)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IVectorGeometryToolPoint.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolPointAtTimeInstant)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IVectorGeometryToolPoint.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchComponent._private_init(self, intf)
@@ -22676,13 +22676,13 @@ class VectorGeometryToolPointPlugin(IAnalysisWorkbenchComponent, IAnalysisWorkbe
     _property_names[display_name] = "display_name"
     _property_names[available_properties] = "available_properties"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPointPlugin."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolPointPlugin)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IVectorGeometryToolPoint.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolPointPlugin)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IVectorGeometryToolPoint.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchComponent._private_init(self, intf)
@@ -22728,8 +22728,8 @@ class VectorGeometryToolPointCentralBodyFixedOffset(IAnalysisWorkbenchComponent,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @central_body.setter
-    def central_body(self, centralBody:str) -> None:
-        return self._intf.set_property(VectorGeometryToolPointCentralBodyFixedOffset._metadata, VectorGeometryToolPointCentralBodyFixedOffset._set_central_body_metadata, centralBody)
+    def central_body(self, central_body:str) -> None:
+        return self._intf.set_property(VectorGeometryToolPointCentralBodyFixedOffset._metadata, VectorGeometryToolPointCentralBodyFixedOffset._set_central_body_metadata, central_body)
 
     _get_reference_shape_metadata = { "offset" : _get_reference_shape_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -22743,8 +22743,8 @@ class VectorGeometryToolPointCentralBodyFixedOffset(IAnalysisWorkbenchComponent,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(SURFACE_REFERENCE_SHAPE_TYPE),) }
     @reference_shape.setter
-    def reference_shape(self, referenceShape:"SURFACE_REFERENCE_SHAPE_TYPE") -> None:
-        return self._intf.set_property(VectorGeometryToolPointCentralBodyFixedOffset._metadata, VectorGeometryToolPointCentralBodyFixedOffset._set_reference_shape_metadata, referenceShape)
+    def reference_shape(self, reference_shape:"SURFACE_REFERENCE_SHAPE_TYPE") -> None:
+        return self._intf.set_property(VectorGeometryToolPointCentralBodyFixedOffset._metadata, VectorGeometryToolPointCentralBodyFixedOffset._set_reference_shape_metadata, reference_shape)
 
     _get_position_metadata = { "offset" : _get_position_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -22758,13 +22758,13 @@ class VectorGeometryToolPointCentralBodyFixedOffset(IAnalysisWorkbenchComponent,
     _property_names[reference_shape] = "reference_shape"
     _property_names[position] = "position"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPointCentralBodyFixedOffset."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolPointCentralBodyFixedOffset)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IVectorGeometryToolPoint.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolPointCentralBodyFixedOffset)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IVectorGeometryToolPoint.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchComponent._private_init(self, intf)
@@ -22814,13 +22814,13 @@ class VectorGeometryToolSystemAssembled(IVectorGeometryToolSystem, IAnalysisWork
     _property_names[origin_point] = "origin_point"
     _property_names[reference_axes] = "reference_axes"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolSystemAssembled."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolSystemAssembled)
-        IVectorGeometryToolSystem.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolSystemAssembled)
+        IVectorGeometryToolSystem.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolSystem._private_init(self, intf)
@@ -22875,8 +22875,8 @@ class VectorGeometryToolSystemOnSurface(IVectorGeometryToolSystem, IAnalysisWork
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @azimuth_angle.setter
-    def azimuth_angle(self, azimuthAngle:float) -> None:
-        return self._intf.set_property(VectorGeometryToolSystemOnSurface._metadata, VectorGeometryToolSystemOnSurface._set_azimuth_angle_metadata, azimuthAngle)
+    def azimuth_angle(self, azimuth_angle:float) -> None:
+        return self._intf.set_property(VectorGeometryToolSystemOnSurface._metadata, VectorGeometryToolSystemOnSurface._set_azimuth_angle_metadata, azimuth_angle)
 
     _get_use_mean_sea_level_metadata = { "offset" : _get_use_mean_sea_level_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -22890,8 +22890,8 @@ class VectorGeometryToolSystemOnSurface(IVectorGeometryToolSystem, IAnalysisWork
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @use_mean_sea_level.setter
-    def use_mean_sea_level(self, useMSL:bool) -> None:
-        return self._intf.set_property(VectorGeometryToolSystemOnSurface._metadata, VectorGeometryToolSystemOnSurface._set_use_mean_sea_level_metadata, useMSL)
+    def use_mean_sea_level(self, use_msl:bool) -> None:
+        return self._intf.set_property(VectorGeometryToolSystemOnSurface._metadata, VectorGeometryToolSystemOnSurface._set_use_mean_sea_level_metadata, use_msl)
 
     _get_position_metadata = { "offset" : _get_position_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -22906,13 +22906,13 @@ class VectorGeometryToolSystemOnSurface(IVectorGeometryToolSystem, IAnalysisWork
     _property_names[use_mean_sea_level] = "use_mean_sea_level"
     _property_names[position] = "position"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolSystemOnSurface."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolSystemOnSurface)
-        IVectorGeometryToolSystem.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolSystemOnSurface)
+        IVectorGeometryToolSystem.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolSystem._private_init(self, intf)
@@ -22996,10 +22996,10 @@ class AnalysisWorkbenchPositionLLA(SupportsDeleteCallback):
     _property_names[longitude] = "longitude"
     _property_names[altitude] = "altitude"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchPositionLLA."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchPositionLLA)
+        initialize_from_source_object(self, source_object, AnalysisWorkbenchPositionLLA)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -23037,15 +23037,15 @@ class VectorGeometryToolSystemCommonTasks(SupportsDeleteCallback):
     _create_assembled_metadata = { "offset" : _create_assembled_method_offset,
             "arg_types" : (agcom.PVOID, agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolPoint"), agmarshall.InterfaceInArg("IVectorGeometryToolAxes"), agmarshall.InterfaceOutArg,) }
-    def create_assembled(self, originPoint:"IVectorGeometryToolPoint", referenceAxes:"IVectorGeometryToolAxes") -> "VectorGeometryToolSystemAssembled":
+    def create_assembled(self, origin_point:"IVectorGeometryToolPoint", reference_axes:"IVectorGeometryToolAxes") -> "VectorGeometryToolSystemAssembled":
         """Create a non-persistent system component assembled from an origin point and a set of reference axes."""
-        return self._intf.invoke(VectorGeometryToolSystemCommonTasks._metadata, VectorGeometryToolSystemCommonTasks._create_assembled_metadata, originPoint, referenceAxes, OutArg())
+        return self._intf.invoke(VectorGeometryToolSystemCommonTasks._metadata, VectorGeometryToolSystemCommonTasks._create_assembled_metadata, origin_point, reference_axes, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolSystemCommonTasks."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolSystemCommonTasks)
+        initialize_from_source_object(self, source_object, VectorGeometryToolSystemCommonTasks)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -23094,19 +23094,19 @@ class VectorGeometryToolVectorAngleRate(IVectorGeometryToolVector, IAnalysisWork
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @differencing_time_step.setter
-    def differencing_time_step(self, differencingTimeStep:float) -> None:
-        return self._intf.set_property(VectorGeometryToolVectorAngleRate._metadata, VectorGeometryToolVectorAngleRate._set_differencing_time_step_metadata, differencingTimeStep)
+    def differencing_time_step(self, differencing_time_step:float) -> None:
+        return self._intf.set_property(VectorGeometryToolVectorAngleRate._metadata, VectorGeometryToolVectorAngleRate._set_differencing_time_step_metadata, differencing_time_step)
 
     _property_names[angle] = "angle"
     _property_names[differencing_time_step] = "differencing_time_step"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorAngleRate."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorAngleRate)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorAngleRate)
+        IVectorGeometryToolVector.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
@@ -23167,20 +23167,20 @@ class VectorGeometryToolVectorApoapsis(IVectorGeometryToolVector, IAnalysisWorkb
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(MEAN_ELEMENT_THEORY),) }
     @mean_element_type.setter
-    def mean_element_type(self, meanElementType:"MEAN_ELEMENT_THEORY") -> None:
-        return self._intf.set_property(VectorGeometryToolVectorApoapsis._metadata, VectorGeometryToolVectorApoapsis._set_mean_element_type_metadata, meanElementType)
+    def mean_element_type(self, mean_element_type:"MEAN_ELEMENT_THEORY") -> None:
+        return self._intf.set_property(VectorGeometryToolVectorApoapsis._metadata, VectorGeometryToolVectorApoapsis._set_mean_element_type_metadata, mean_element_type)
 
     _property_names[reference_point] = "reference_point"
     _property_names[central_body] = "central_body"
     _property_names[mean_element_type] = "mean_element_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorApoapsis."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorApoapsis)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorApoapsis)
+        IVectorGeometryToolVector.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
@@ -23248,13 +23248,13 @@ class VectorGeometryToolVectorFixedAtEpoch(IVectorGeometryToolVector, IAnalysisW
     _property_names[source_vector] = "source_vector"
     _property_names[reference_axes] = "reference_axes"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorFixedAtEpoch."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorFixedAtEpoch)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorFixedAtEpoch)
+        IVectorGeometryToolVector.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
@@ -23315,20 +23315,20 @@ class VectorGeometryToolVectorAngularVelocity(IVectorGeometryToolVector, IAnalys
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @differencing_time_step.setter
-    def differencing_time_step(self, differencingTimeStep:float) -> None:
-        return self._intf.set_property(VectorGeometryToolVectorAngularVelocity._metadata, VectorGeometryToolVectorAngularVelocity._set_differencing_time_step_metadata, differencingTimeStep)
+    def differencing_time_step(self, differencing_time_step:float) -> None:
+        return self._intf.set_property(VectorGeometryToolVectorAngularVelocity._metadata, VectorGeometryToolVectorAngularVelocity._set_differencing_time_step_metadata, differencing_time_step)
 
     _property_names[axes] = "axes"
     _property_names[reference_axes] = "reference_axes"
     _property_names[differencing_time_step] = "differencing_time_step"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorAngularVelocity."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorAngularVelocity)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorAngularVelocity)
+        IVectorGeometryToolVector.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
@@ -23397,8 +23397,8 @@ class VectorGeometryToolVectorConing(IVectorGeometryToolVector, IAnalysisWorkben
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @start_clock_angle.setter
-    def start_clock_angle(self, startClockAngle:float) -> None:
-        return self._intf.set_property(VectorGeometryToolVectorConing._metadata, VectorGeometryToolVectorConing._set_start_clock_angle_metadata, startClockAngle)
+    def start_clock_angle(self, start_clock_angle:float) -> None:
+        return self._intf.set_property(VectorGeometryToolVectorConing._metadata, VectorGeometryToolVectorConing._set_start_clock_angle_metadata, start_clock_angle)
 
     _get_stop_clock_angle_metadata = { "offset" : _get_stop_clock_angle_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -23412,8 +23412,8 @@ class VectorGeometryToolVectorConing(IVectorGeometryToolVector, IAnalysisWorkben
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @stop_clock_angle.setter
-    def stop_clock_angle(self, stopClockAngle:float) -> None:
-        return self._intf.set_property(VectorGeometryToolVectorConing._metadata, VectorGeometryToolVectorConing._set_stop_clock_angle_metadata, stopClockAngle)
+    def stop_clock_angle(self, stop_clock_angle:float) -> None:
+        return self._intf.set_property(VectorGeometryToolVectorConing._metadata, VectorGeometryToolVectorConing._set_stop_clock_angle_metadata, stop_clock_angle)
 
     _get_start_epoch_metadata = { "offset" : _get_start_epoch_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
@@ -23427,8 +23427,8 @@ class VectorGeometryToolVectorConing(IVectorGeometryToolVector, IAnalysisWorkben
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
     @start_epoch.setter
-    def start_epoch(self, startEpoch:typing.Any) -> None:
-        return self._intf.set_property(VectorGeometryToolVectorConing._metadata, VectorGeometryToolVectorConing._set_start_epoch_metadata, startEpoch)
+    def start_epoch(self, start_epoch:typing.Any) -> None:
+        return self._intf.set_property(VectorGeometryToolVectorConing._metadata, VectorGeometryToolVectorConing._set_start_epoch_metadata, start_epoch)
 
     _get_clock_angle_rate_metadata = { "offset" : _get_clock_angle_rate_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -23442,8 +23442,8 @@ class VectorGeometryToolVectorConing(IVectorGeometryToolVector, IAnalysisWorkben
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @clock_angle_rate.setter
-    def clock_angle_rate(self, clockAngleRate:float) -> None:
-        return self._intf.set_property(VectorGeometryToolVectorConing._metadata, VectorGeometryToolVectorConing._set_clock_angle_rate_metadata, clockAngleRate)
+    def clock_angle_rate(self, clock_angle_rate:float) -> None:
+        return self._intf.set_property(VectorGeometryToolVectorConing._metadata, VectorGeometryToolVectorConing._set_clock_angle_rate_metadata, clock_angle_rate)
 
     _get_mode_metadata = { "offset" : _get_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -23468,13 +23468,13 @@ class VectorGeometryToolVectorConing(IVectorGeometryToolVector, IAnalysisWorkben
     _property_names[clock_angle_rate] = "clock_angle_rate"
     _property_names[mode] = "mode"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorConing."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorConing)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorConing)
+        IVectorGeometryToolVector.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
@@ -23537,8 +23537,8 @@ class VectorGeometryToolVectorCross(IVectorGeometryToolVector, IAnalysisWorkbenc
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @is_normalized.setter
-    def is_normalized(self, isNormalized:bool) -> None:
-        return self._intf.set_property(VectorGeometryToolVectorCross._metadata, VectorGeometryToolVectorCross._set_is_normalized_metadata, isNormalized)
+    def is_normalized(self, is_normalized:bool) -> None:
+        return self._intf.set_property(VectorGeometryToolVectorCross._metadata, VectorGeometryToolVectorCross._set_is_normalized_metadata, is_normalized)
 
     _get_dimension_metadata = { "offset" : _get_dimension_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -23560,13 +23560,13 @@ class VectorGeometryToolVectorCross(IVectorGeometryToolVector, IAnalysisWorkbenc
     _property_names[is_normalized] = "is_normalized"
     _property_names[dimension] = "dimension"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorCross."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorCross)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorCross)
+        IVectorGeometryToolVector.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
@@ -23620,8 +23620,8 @@ class VectorGeometryToolVectorCustomScript(IVectorGeometryToolVector, IAnalysisW
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @script_file.setter
-    def script_file(self, scriptFile:str) -> None:
-        return self._intf.set_property(VectorGeometryToolVectorCustomScript._metadata, VectorGeometryToolVectorCustomScript._set_script_file_metadata, scriptFile)
+    def script_file(self, script_file:str) -> None:
+        return self._intf.set_property(VectorGeometryToolVectorCustomScript._metadata, VectorGeometryToolVectorCustomScript._set_script_file_metadata, script_file)
 
     _get_initialization_script_file_metadata = { "offset" : _get_initialization_script_file_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -23635,20 +23635,20 @@ class VectorGeometryToolVectorCustomScript(IVectorGeometryToolVector, IAnalysisW
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @initialization_script_file.setter
-    def initialization_script_file(self, initializationScriptFile:str) -> None:
-        return self._intf.set_property(VectorGeometryToolVectorCustomScript._metadata, VectorGeometryToolVectorCustomScript._set_initialization_script_file_metadata, initializationScriptFile)
+    def initialization_script_file(self, initialization_script_file:str) -> None:
+        return self._intf.set_property(VectorGeometryToolVectorCustomScript._metadata, VectorGeometryToolVectorCustomScript._set_initialization_script_file_metadata, initialization_script_file)
 
     _property_names[reference_axes] = "reference_axes"
     _property_names[script_file] = "script_file"
     _property_names[initialization_script_file] = "initialization_script_file"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorCustomScript."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorCustomScript)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorCustomScript)
+        IVectorGeometryToolVector.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
@@ -23711,8 +23711,8 @@ class VectorGeometryToolVectorDerivative(IVectorGeometryToolVector, IAnalysisWor
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @differencing_time_step.setter
-    def differencing_time_step(self, differencingTimeStep:float) -> None:
-        return self._intf.set_property(VectorGeometryToolVectorDerivative._metadata, VectorGeometryToolVectorDerivative._set_differencing_time_step_metadata, differencingTimeStep)
+    def differencing_time_step(self, differencing_time_step:float) -> None:
+        return self._intf.set_property(VectorGeometryToolVectorDerivative._metadata, VectorGeometryToolVectorDerivative._set_differencing_time_step_metadata, differencing_time_step)
 
     _get_force_use_of_numerical_differences_metadata = { "offset" : _get_force_use_of_numerical_differences_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -23726,21 +23726,21 @@ class VectorGeometryToolVectorDerivative(IVectorGeometryToolVector, IAnalysisWor
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @force_use_of_numerical_differences.setter
-    def force_use_of_numerical_differences(self, forceUseOfNumericalDifferences:bool) -> None:
-        return self._intf.set_property(VectorGeometryToolVectorDerivative._metadata, VectorGeometryToolVectorDerivative._set_force_use_of_numerical_differences_metadata, forceUseOfNumericalDifferences)
+    def force_use_of_numerical_differences(self, force_use_of_numerical_differences:bool) -> None:
+        return self._intf.set_property(VectorGeometryToolVectorDerivative._metadata, VectorGeometryToolVectorDerivative._set_force_use_of_numerical_differences_metadata, force_use_of_numerical_differences)
 
     _property_names[vector] = "vector"
     _property_names[reference_axes] = "reference_axes"
     _property_names[differencing_time_step] = "differencing_time_step"
     _property_names[force_use_of_numerical_differences] = "force_use_of_numerical_differences"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorDerivative."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorDerivative)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorDerivative)
+        IVectorGeometryToolVector.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
@@ -23821,8 +23821,8 @@ class VectorGeometryToolVectorDisplacement(IVectorGeometryToolVector, IAnalysisW
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @ignore_aberration.setter
-    def ignore_aberration(self, ignoreAberration:bool) -> None:
-        return self._intf.set_property(VectorGeometryToolVectorDisplacement._metadata, VectorGeometryToolVectorDisplacement._set_ignore_aberration_metadata, ignoreAberration)
+    def ignore_aberration(self, ignore_aberration:bool) -> None:
+        return self._intf.set_property(VectorGeometryToolVectorDisplacement._metadata, VectorGeometryToolVectorDisplacement._set_ignore_aberration_metadata, ignore_aberration)
 
     _get_signal_sense_metadata = { "offset" : _get_signal_sense_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -23836,8 +23836,8 @@ class VectorGeometryToolVectorDisplacement(IVectorGeometryToolVector, IAnalysisW
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(SIGNAL_DIRECTION_TYPE),) }
     @signal_sense.setter
-    def signal_sense(self, signalSense:"SIGNAL_DIRECTION_TYPE") -> None:
-        return self._intf.set_property(VectorGeometryToolVectorDisplacement._metadata, VectorGeometryToolVectorDisplacement._set_signal_sense_metadata, signalSense)
+    def signal_sense(self, signal_sense:"SIGNAL_DIRECTION_TYPE") -> None:
+        return self._intf.set_property(VectorGeometryToolVectorDisplacement._metadata, VectorGeometryToolVectorDisplacement._set_signal_sense_metadata, signal_sense)
 
     _get_reference_system_metadata = { "offset" : _get_reference_system_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -23854,13 +23854,13 @@ class VectorGeometryToolVectorDisplacement(IVectorGeometryToolVector, IAnalysisW
     _property_names[signal_sense] = "signal_sense"
     _property_names[reference_system] = "reference_system"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorDisplacement."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorDisplacement)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorDisplacement)
+        IVectorGeometryToolVector.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
@@ -23910,13 +23910,13 @@ class VectorGeometryToolVectorTwoPlanesIntersection(IVectorGeometryToolVector, I
     _property_names[plane_a] = "plane_a"
     _property_names[plane_b] = "plane_b"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorTwoPlanesIntersection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorTwoPlanesIntersection)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorTwoPlanesIntersection)
+        IVectorGeometryToolVector.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
@@ -23959,18 +23959,18 @@ class VectorGeometryToolVectorModelAttachment(IVectorGeometryToolVector, IAnalys
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @pointable_element_name.setter
-    def pointable_element_name(self, pointableElementName:str) -> None:
-        return self._intf.set_property(VectorGeometryToolVectorModelAttachment._metadata, VectorGeometryToolVectorModelAttachment._set_pointable_element_name_metadata, pointableElementName)
+    def pointable_element_name(self, pointable_element_name:str) -> None:
+        return self._intf.set_property(VectorGeometryToolVectorModelAttachment._metadata, VectorGeometryToolVectorModelAttachment._set_pointable_element_name_metadata, pointable_element_name)
 
     _property_names[pointable_element_name] = "pointable_element_name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorModelAttachment."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorModelAttachment)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorModelAttachment)
+        IVectorGeometryToolVector.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
@@ -24020,13 +24020,13 @@ class VectorGeometryToolVectorProjection(IVectorGeometryToolVector, IAnalysisWor
     _property_names[source] = "source"
     _property_names[reference_plane] = "reference_plane"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorProjection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorProjection)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorProjection)
+        IVectorGeometryToolVector.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
@@ -24095,20 +24095,20 @@ class VectorGeometryToolVectorScaled(IVectorGeometryToolVector, IAnalysisWorkben
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @is_normalized.setter
-    def is_normalized(self, isNormalized:bool) -> None:
-        return self._intf.set_property(VectorGeometryToolVectorScaled._metadata, VectorGeometryToolVectorScaled._set_is_normalized_metadata, isNormalized)
+    def is_normalized(self, is_normalized:bool) -> None:
+        return self._intf.set_property(VectorGeometryToolVectorScaled._metadata, VectorGeometryToolVectorScaled._set_is_normalized_metadata, is_normalized)
 
     _property_names[reference_vector] = "reference_vector"
     _property_names[scale] = "scale"
     _property_names[is_normalized] = "is_normalized"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorScaled."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorScaled)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorScaled)
+        IVectorGeometryToolVector.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
@@ -24169,20 +24169,20 @@ class VectorGeometryToolVectorEccentricity(IVectorGeometryToolVector, IAnalysisW
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(MEAN_ELEMENT_THEORY),) }
     @mean_element_type.setter
-    def mean_element_type(self, meanElementType:"MEAN_ELEMENT_THEORY") -> None:
-        return self._intf.set_property(VectorGeometryToolVectorEccentricity._metadata, VectorGeometryToolVectorEccentricity._set_mean_element_type_metadata, meanElementType)
+    def mean_element_type(self, mean_element_type:"MEAN_ELEMENT_THEORY") -> None:
+        return self._intf.set_property(VectorGeometryToolVectorEccentricity._metadata, VectorGeometryToolVectorEccentricity._set_mean_element_type_metadata, mean_element_type)
 
     _property_names[central_body] = "central_body"
     _property_names[reference_point] = "reference_point"
     _property_names[mean_element_type] = "mean_element_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorEccentricity."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorEccentricity)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorEccentricity)
+        IVectorGeometryToolVector.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
@@ -24232,13 +24232,13 @@ class VectorGeometryToolVectorFixedInAxes(IVectorGeometryToolVector, IAnalysisWo
     _property_names[reference_axes] = "reference_axes"
     _property_names[direction] = "direction"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorFixedInAxes."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorFixedInAxes)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorFixedInAxes)
+        IVectorGeometryToolVector.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
@@ -24288,13 +24288,13 @@ class VectorGeometryToolVectorLineOfNodes(IVectorGeometryToolVector, IAnalysisWo
     _property_names[central_body] = "central_body"
     _property_names[reference_point] = "reference_point"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorLineOfNodes."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorLineOfNodes)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorLineOfNodes)
+        IVectorGeometryToolVector.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
@@ -24355,20 +24355,20 @@ class VectorGeometryToolVectorOrbitAngularMomentum(IVectorGeometryToolVector, IA
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(MEAN_ELEMENT_THEORY),) }
     @mean_element_type.setter
-    def mean_element_type(self, meanElementType:"MEAN_ELEMENT_THEORY") -> None:
-        return self._intf.set_property(VectorGeometryToolVectorOrbitAngularMomentum._metadata, VectorGeometryToolVectorOrbitAngularMomentum._set_mean_element_type_metadata, meanElementType)
+    def mean_element_type(self, mean_element_type:"MEAN_ELEMENT_THEORY") -> None:
+        return self._intf.set_property(VectorGeometryToolVectorOrbitAngularMomentum._metadata, VectorGeometryToolVectorOrbitAngularMomentum._set_mean_element_type_metadata, mean_element_type)
 
     _property_names[central_body] = "central_body"
     _property_names[reference_point] = "reference_point"
     _property_names[mean_element_type] = "mean_element_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorOrbitAngularMomentum."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorOrbitAngularMomentum)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorOrbitAngularMomentum)
+        IVectorGeometryToolVector.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
@@ -24429,20 +24429,20 @@ class VectorGeometryToolVectorOrbitNormal(IVectorGeometryToolVector, IAnalysisWo
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(MEAN_ELEMENT_THEORY),) }
     @mean_element_type.setter
-    def mean_element_type(self, meanElementType:"MEAN_ELEMENT_THEORY") -> None:
-        return self._intf.set_property(VectorGeometryToolVectorOrbitNormal._metadata, VectorGeometryToolVectorOrbitNormal._set_mean_element_type_metadata, meanElementType)
+    def mean_element_type(self, mean_element_type:"MEAN_ELEMENT_THEORY") -> None:
+        return self._intf.set_property(VectorGeometryToolVectorOrbitNormal._metadata, VectorGeometryToolVectorOrbitNormal._set_mean_element_type_metadata, mean_element_type)
 
     _property_names[central_body] = "central_body"
     _property_names[reference_point] = "reference_point"
     _property_names[mean_element_type] = "mean_element_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorOrbitNormal."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorOrbitNormal)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorOrbitNormal)
+        IVectorGeometryToolVector.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
@@ -24503,20 +24503,20 @@ class VectorGeometryToolVectorPeriapsis(IVectorGeometryToolVector, IAnalysisWork
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(MEAN_ELEMENT_THEORY),) }
     @mean_element_type.setter
-    def mean_element_type(self, meanElementType:"MEAN_ELEMENT_THEORY") -> None:
-        return self._intf.set_property(VectorGeometryToolVectorPeriapsis._metadata, VectorGeometryToolVectorPeriapsis._set_mean_element_type_metadata, meanElementType)
+    def mean_element_type(self, mean_element_type:"MEAN_ELEMENT_THEORY") -> None:
+        return self._intf.set_property(VectorGeometryToolVectorPeriapsis._metadata, VectorGeometryToolVectorPeriapsis._set_mean_element_type_metadata, mean_element_type)
 
     _property_names[central_body] = "central_body"
     _property_names[reference_point] = "reference_point"
     _property_names[mean_element_type] = "mean_element_type"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorPeriapsis."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorPeriapsis)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorPeriapsis)
+        IVectorGeometryToolVector.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
@@ -24573,8 +24573,8 @@ class VectorGeometryToolVectorReflection(IVectorGeometryToolVector, IAnalysisWor
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @use_opposite_of_selected_vector.setter
-    def use_opposite_of_selected_vector(self, useOppositeOfSelectedVector:bool) -> None:
-        return self._intf.set_property(VectorGeometryToolVectorReflection._metadata, VectorGeometryToolVectorReflection._set_use_opposite_of_selected_vector_metadata, useOppositeOfSelectedVector)
+    def use_opposite_of_selected_vector(self, use_opposite_of_selected_vector:bool) -> None:
+        return self._intf.set_property(VectorGeometryToolVectorReflection._metadata, VectorGeometryToolVectorReflection._set_use_opposite_of_selected_vector_metadata, use_opposite_of_selected_vector)
 
     _get_normal_vector_metadata = { "offset" : _get_normal_vector_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -24596,8 +24596,8 @@ class VectorGeometryToolVectorReflection(IVectorGeometryToolVector, IAnalysisWor
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @allow_reflections_on_backside.setter
-    def allow_reflections_on_backside(self, allowReflectionsOnBackside:bool) -> None:
-        return self._intf.set_property(VectorGeometryToolVectorReflection._metadata, VectorGeometryToolVectorReflection._set_allow_reflections_on_backside_metadata, allowReflectionsOnBackside)
+    def allow_reflections_on_backside(self, allow_reflections_on_backside:bool) -> None:
+        return self._intf.set_property(VectorGeometryToolVectorReflection._metadata, VectorGeometryToolVectorReflection._set_allow_reflections_on_backside_metadata, allow_reflections_on_backside)
 
     _get_scale_factor_metadata = { "offset" : _get_scale_factor_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -24611,8 +24611,8 @@ class VectorGeometryToolVectorReflection(IVectorGeometryToolVector, IAnalysisWor
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @scale_factor.setter
-    def scale_factor(self, scaleFactor:float) -> None:
-        return self._intf.set_property(VectorGeometryToolVectorReflection._metadata, VectorGeometryToolVectorReflection._set_scale_factor_metadata, scaleFactor)
+    def scale_factor(self, scale_factor:float) -> None:
+        return self._intf.set_property(VectorGeometryToolVectorReflection._metadata, VectorGeometryToolVectorReflection._set_scale_factor_metadata, scale_factor)
 
     _property_names[incoming_vector] = "incoming_vector"
     _property_names[use_opposite_of_selected_vector] = "use_opposite_of_selected_vector"
@@ -24620,13 +24620,13 @@ class VectorGeometryToolVectorReflection(IVectorGeometryToolVector, IAnalysisWor
     _property_names[allow_reflections_on_backside] = "allow_reflections_on_backside"
     _property_names[scale_factor] = "scale_factor"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorReflection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorReflection)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorReflection)
+        IVectorGeometryToolVector.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
@@ -24687,20 +24687,20 @@ class VectorGeometryToolVectorRotationVector(IVectorGeometryToolVector, IAnalysi
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @force_minimum_rotation.setter
-    def force_minimum_rotation(self, forceMinimumRotation:bool) -> None:
-        return self._intf.set_property(VectorGeometryToolVectorRotationVector._metadata, VectorGeometryToolVectorRotationVector._set_force_minimum_rotation_metadata, forceMinimumRotation)
+    def force_minimum_rotation(self, force_minimum_rotation:bool) -> None:
+        return self._intf.set_property(VectorGeometryToolVectorRotationVector._metadata, VectorGeometryToolVectorRotationVector._set_force_minimum_rotation_metadata, force_minimum_rotation)
 
     _property_names[axes] = "axes"
     _property_names[reference_axes] = "reference_axes"
     _property_names[force_minimum_rotation] = "force_minimum_rotation"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorRotationVector."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorRotationVector)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorRotationVector)
+        IVectorGeometryToolVector.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
@@ -24743,18 +24743,18 @@ class VectorGeometryToolVectorDirectionToStar(IVectorGeometryToolVector, IAnalys
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @selected_star.setter
-    def selected_star(self, selectedStar:str) -> None:
-        return self._intf.set_property(VectorGeometryToolVectorDirectionToStar._metadata, VectorGeometryToolVectorDirectionToStar._set_selected_star_metadata, selectedStar)
+    def selected_star(self, selected_star:str) -> None:
+        return self._intf.set_property(VectorGeometryToolVectorDirectionToStar._metadata, VectorGeometryToolVectorDirectionToStar._set_selected_star_metadata, selected_star)
 
     _property_names[selected_star] = "selected_star"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorDirectionToStar."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorDirectionToStar)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorDirectionToStar)
+        IVectorGeometryToolVector.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IVectorGeometryToolVector._private_init(self, intf)
@@ -24801,8 +24801,8 @@ class VectorGeometryToolVectorFixedAtTimeInstant(IAnalysisWorkbenchComponent, IA
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ITimeToolInstant"),) }
     @reference_time_instant.setter
-    def reference_time_instant(self, referenceTimeInstant:"ITimeToolInstant") -> None:
-        return self._intf.set_property(VectorGeometryToolVectorFixedAtTimeInstant._metadata, VectorGeometryToolVectorFixedAtTimeInstant._set_reference_time_instant_metadata, referenceTimeInstant)
+    def reference_time_instant(self, reference_time_instant:"ITimeToolInstant") -> None:
+        return self._intf.set_property(VectorGeometryToolVectorFixedAtTimeInstant._metadata, VectorGeometryToolVectorFixedAtTimeInstant._set_reference_time_instant_metadata, reference_time_instant)
 
     _get_source_vector_metadata = { "offset" : _get_source_vector_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -24816,8 +24816,8 @@ class VectorGeometryToolVectorFixedAtTimeInstant(IAnalysisWorkbenchComponent, IA
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolVector"),) }
     @source_vector.setter
-    def source_vector(self, sourceVector:"IVectorGeometryToolVector") -> None:
-        return self._intf.set_property(VectorGeometryToolVectorFixedAtTimeInstant._metadata, VectorGeometryToolVectorFixedAtTimeInstant._set_source_vector_metadata, sourceVector)
+    def source_vector(self, source_vector:"IVectorGeometryToolVector") -> None:
+        return self._intf.set_property(VectorGeometryToolVectorFixedAtTimeInstant._metadata, VectorGeometryToolVectorFixedAtTimeInstant._set_source_vector_metadata, source_vector)
 
     _get_reference_axes_metadata = { "offset" : _get_reference_axes_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -24831,20 +24831,20 @@ class VectorGeometryToolVectorFixedAtTimeInstant(IAnalysisWorkbenchComponent, IA
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolAxes"),) }
     @reference_axes.setter
-    def reference_axes(self, referenceAxes:"IVectorGeometryToolAxes") -> None:
-        return self._intf.set_property(VectorGeometryToolVectorFixedAtTimeInstant._metadata, VectorGeometryToolVectorFixedAtTimeInstant._set_reference_axes_metadata, referenceAxes)
+    def reference_axes(self, reference_axes:"IVectorGeometryToolAxes") -> None:
+        return self._intf.set_property(VectorGeometryToolVectorFixedAtTimeInstant._metadata, VectorGeometryToolVectorFixedAtTimeInstant._set_reference_axes_metadata, reference_axes)
 
     _property_names[reference_time_instant] = "reference_time_instant"
     _property_names[source_vector] = "source_vector"
     _property_names[reference_axes] = "reference_axes"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorFixedAtTimeInstant."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorFixedAtTimeInstant)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorFixedAtTimeInstant)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IVectorGeometryToolVector.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchComponent._private_init(self, intf)
@@ -24901,8 +24901,8 @@ class VectorGeometryToolVectorLinearCombination(IAnalysisWorkbenchComponent, IAn
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolVector"),) }
     @vector_a.setter
-    def vector_a(self, vectorA:"IVectorGeometryToolVector") -> None:
-        return self._intf.set_property(VectorGeometryToolVectorLinearCombination._metadata, VectorGeometryToolVectorLinearCombination._set_vector_a_metadata, vectorA)
+    def vector_a(self, vector_a:"IVectorGeometryToolVector") -> None:
+        return self._intf.set_property(VectorGeometryToolVectorLinearCombination._metadata, VectorGeometryToolVectorLinearCombination._set_vector_a_metadata, vector_a)
 
     _get_scale_factor_a_metadata = { "offset" : _get_scale_factor_a_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -24916,8 +24916,8 @@ class VectorGeometryToolVectorLinearCombination(IAnalysisWorkbenchComponent, IAn
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @scale_factor_a.setter
-    def scale_factor_a(self, scaleFactorA:float) -> None:
-        return self._intf.set_property(VectorGeometryToolVectorLinearCombination._metadata, VectorGeometryToolVectorLinearCombination._set_scale_factor_a_metadata, scaleFactorA)
+    def scale_factor_a(self, scale_factor_a:float) -> None:
+        return self._intf.set_property(VectorGeometryToolVectorLinearCombination._metadata, VectorGeometryToolVectorLinearCombination._set_scale_factor_a_metadata, scale_factor_a)
 
     _get_normalize_vector_a_metadata = { "offset" : _get_normalize_vector_a_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -24931,8 +24931,8 @@ class VectorGeometryToolVectorLinearCombination(IAnalysisWorkbenchComponent, IAn
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @normalize_vector_a.setter
-    def normalize_vector_a(self, normalizeVectorA:bool) -> None:
-        return self._intf.set_property(VectorGeometryToolVectorLinearCombination._metadata, VectorGeometryToolVectorLinearCombination._set_normalize_vector_a_metadata, normalizeVectorA)
+    def normalize_vector_a(self, normalize_vector_a:bool) -> None:
+        return self._intf.set_property(VectorGeometryToolVectorLinearCombination._metadata, VectorGeometryToolVectorLinearCombination._set_normalize_vector_a_metadata, normalize_vector_a)
 
     _get_vector_b_metadata = { "offset" : _get_vector_b_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -24946,8 +24946,8 @@ class VectorGeometryToolVectorLinearCombination(IAnalysisWorkbenchComponent, IAn
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolVector"),) }
     @vector_b.setter
-    def vector_b(self, vectorB:"IVectorGeometryToolVector") -> None:
-        return self._intf.set_property(VectorGeometryToolVectorLinearCombination._metadata, VectorGeometryToolVectorLinearCombination._set_vector_b_metadata, vectorB)
+    def vector_b(self, vector_b:"IVectorGeometryToolVector") -> None:
+        return self._intf.set_property(VectorGeometryToolVectorLinearCombination._metadata, VectorGeometryToolVectorLinearCombination._set_vector_b_metadata, vector_b)
 
     _get_scale_factor_b_metadata = { "offset" : _get_scale_factor_b_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -24961,8 +24961,8 @@ class VectorGeometryToolVectorLinearCombination(IAnalysisWorkbenchComponent, IAn
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @scale_factor_b.setter
-    def scale_factor_b(self, scaleFactorB:float) -> None:
-        return self._intf.set_property(VectorGeometryToolVectorLinearCombination._metadata, VectorGeometryToolVectorLinearCombination._set_scale_factor_b_metadata, scaleFactorB)
+    def scale_factor_b(self, scale_factor_b:float) -> None:
+        return self._intf.set_property(VectorGeometryToolVectorLinearCombination._metadata, VectorGeometryToolVectorLinearCombination._set_scale_factor_b_metadata, scale_factor_b)
 
     _get_normalize_vector_b_metadata = { "offset" : _get_normalize_vector_b_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -24976,8 +24976,8 @@ class VectorGeometryToolVectorLinearCombination(IAnalysisWorkbenchComponent, IAn
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @normalize_vector_b.setter
-    def normalize_vector_b(self, normalizeVectorB:bool) -> None:
-        return self._intf.set_property(VectorGeometryToolVectorLinearCombination._metadata, VectorGeometryToolVectorLinearCombination._set_normalize_vector_b_metadata, normalizeVectorB)
+    def normalize_vector_b(self, normalize_vector_b:bool) -> None:
+        return self._intf.set_property(VectorGeometryToolVectorLinearCombination._metadata, VectorGeometryToolVectorLinearCombination._set_normalize_vector_b_metadata, normalize_vector_b)
 
     _get_output_dimension_inheritance_metadata = { "offset" : _get_output_dimension_inheritance_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -24991,8 +24991,8 @@ class VectorGeometryToolVectorLinearCombination(IAnalysisWorkbenchComponent, IAn
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(INHERIT_DIMENSION_TYPE),) }
     @output_dimension_inheritance.setter
-    def output_dimension_inheritance(self, outputDimensionInheritance:"INHERIT_DIMENSION_TYPE") -> None:
-        return self._intf.set_property(VectorGeometryToolVectorLinearCombination._metadata, VectorGeometryToolVectorLinearCombination._set_output_dimension_inheritance_metadata, outputDimensionInheritance)
+    def output_dimension_inheritance(self, output_dimension_inheritance:"INHERIT_DIMENSION_TYPE") -> None:
+        return self._intf.set_property(VectorGeometryToolVectorLinearCombination._metadata, VectorGeometryToolVectorLinearCombination._set_output_dimension_inheritance_metadata, output_dimension_inheritance)
 
     _get_output_dimension_metadata = { "offset" : _get_output_dimension_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -25006,8 +25006,8 @@ class VectorGeometryToolVectorLinearCombination(IAnalysisWorkbenchComponent, IAn
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @output_dimension.setter
-    def output_dimension(self, outputDimension:str) -> None:
-        return self._intf.set_property(VectorGeometryToolVectorLinearCombination._metadata, VectorGeometryToolVectorLinearCombination._set_output_dimension_metadata, outputDimension)
+    def output_dimension(self, output_dimension:str) -> None:
+        return self._intf.set_property(VectorGeometryToolVectorLinearCombination._metadata, VectorGeometryToolVectorLinearCombination._set_output_dimension_metadata, output_dimension)
 
     _property_names[vector_a] = "vector_a"
     _property_names[scale_factor_a] = "scale_factor_a"
@@ -25018,13 +25018,13 @@ class VectorGeometryToolVectorLinearCombination(IAnalysisWorkbenchComponent, IAn
     _property_names[output_dimension_inheritance] = "output_dimension_inheritance"
     _property_names[output_dimension] = "output_dimension"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorLinearCombination."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorLinearCombination)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorLinearCombination)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IVectorGeometryToolVector.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchComponent._private_init(self, intf)
@@ -25069,8 +25069,8 @@ class VectorGeometryToolVectorProjectionAlongVector(IAnalysisWorkbenchComponent,
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolVector"),) }
     @source_vector.setter
-    def source_vector(self, sourceVector:"IVectorGeometryToolVector") -> None:
-        return self._intf.set_property(VectorGeometryToolVectorProjectionAlongVector._metadata, VectorGeometryToolVectorProjectionAlongVector._set_source_vector_metadata, sourceVector)
+    def source_vector(self, source_vector:"IVectorGeometryToolVector") -> None:
+        return self._intf.set_property(VectorGeometryToolVectorProjectionAlongVector._metadata, VectorGeometryToolVectorProjectionAlongVector._set_source_vector_metadata, source_vector)
 
     _get_along_vector_metadata = { "offset" : _get_along_vector_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -25084,19 +25084,19 @@ class VectorGeometryToolVectorProjectionAlongVector(IAnalysisWorkbenchComponent,
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolVector"),) }
     @along_vector.setter
-    def along_vector(self, alongVector:"IVectorGeometryToolVector") -> None:
-        return self._intf.set_property(VectorGeometryToolVectorProjectionAlongVector._metadata, VectorGeometryToolVectorProjectionAlongVector._set_along_vector_metadata, alongVector)
+    def along_vector(self, along_vector:"IVectorGeometryToolVector") -> None:
+        return self._intf.set_property(VectorGeometryToolVectorProjectionAlongVector._metadata, VectorGeometryToolVectorProjectionAlongVector._set_along_vector_metadata, along_vector)
 
     _property_names[source_vector] = "source_vector"
     _property_names[along_vector] = "along_vector"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorProjectionAlongVector."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorProjectionAlongVector)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorProjectionAlongVector)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IVectorGeometryToolVector.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchComponent._private_init(self, intf)
@@ -25161,8 +25161,8 @@ class VectorGeometryToolVectorScalarLinearCombination(IAnalysisWorkbenchComponen
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolVector"),) }
     @vector_a.setter
-    def vector_a(self, vectorA:"IVectorGeometryToolVector") -> None:
-        return self._intf.set_property(VectorGeometryToolVectorScalarLinearCombination._metadata, VectorGeometryToolVectorScalarLinearCombination._set_vector_a_metadata, vectorA)
+    def vector_a(self, vector_a:"IVectorGeometryToolVector") -> None:
+        return self._intf.set_property(VectorGeometryToolVectorScalarLinearCombination._metadata, VectorGeometryToolVectorScalarLinearCombination._set_vector_a_metadata, vector_a)
 
     _get_scale_factor_a_metadata = { "offset" : _get_scale_factor_a_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -25176,8 +25176,8 @@ class VectorGeometryToolVectorScalarLinearCombination(IAnalysisWorkbenchComponen
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @scale_factor_a.setter
-    def scale_factor_a(self, scaleFactorA:float) -> None:
-        return self._intf.set_property(VectorGeometryToolVectorScalarLinearCombination._metadata, VectorGeometryToolVectorScalarLinearCombination._set_scale_factor_a_metadata, scaleFactorA)
+    def scale_factor_a(self, scale_factor_a:float) -> None:
+        return self._intf.set_property(VectorGeometryToolVectorScalarLinearCombination._metadata, VectorGeometryToolVectorScalarLinearCombination._set_scale_factor_a_metadata, scale_factor_a)
 
     _get_normalize_vector_a_metadata = { "offset" : _get_normalize_vector_a_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -25191,8 +25191,8 @@ class VectorGeometryToolVectorScalarLinearCombination(IAnalysisWorkbenchComponen
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @normalize_vector_a.setter
-    def normalize_vector_a(self, normalizeVectorA:bool) -> None:
-        return self._intf.set_property(VectorGeometryToolVectorScalarLinearCombination._metadata, VectorGeometryToolVectorScalarLinearCombination._set_normalize_vector_a_metadata, normalizeVectorA)
+    def normalize_vector_a(self, normalize_vector_a:bool) -> None:
+        return self._intf.set_property(VectorGeometryToolVectorScalarLinearCombination._metadata, VectorGeometryToolVectorScalarLinearCombination._set_normalize_vector_a_metadata, normalize_vector_a)
 
     _get_use_scale_from_calculation_scalar_a_metadata = { "offset" : _get_use_scale_from_calculation_scalar_a_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -25206,8 +25206,8 @@ class VectorGeometryToolVectorScalarLinearCombination(IAnalysisWorkbenchComponen
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @use_scale_from_calculation_scalar_a.setter
-    def use_scale_from_calculation_scalar_a(self, useScaleFromScalarA:bool) -> None:
-        return self._intf.set_property(VectorGeometryToolVectorScalarLinearCombination._metadata, VectorGeometryToolVectorScalarLinearCombination._set_use_scale_from_calculation_scalar_a_metadata, useScaleFromScalarA)
+    def use_scale_from_calculation_scalar_a(self, use_scale_from_scalar_a:bool) -> None:
+        return self._intf.set_property(VectorGeometryToolVectorScalarLinearCombination._metadata, VectorGeometryToolVectorScalarLinearCombination._set_use_scale_from_calculation_scalar_a_metadata, use_scale_from_scalar_a)
 
     _get_use_scale_from_calculation_scalar_b_metadata = { "offset" : _get_use_scale_from_calculation_scalar_b_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -25221,8 +25221,8 @@ class VectorGeometryToolVectorScalarLinearCombination(IAnalysisWorkbenchComponen
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @use_scale_from_calculation_scalar_b.setter
-    def use_scale_from_calculation_scalar_b(self, useScaleFromScalarB:bool) -> None:
-        return self._intf.set_property(VectorGeometryToolVectorScalarLinearCombination._metadata, VectorGeometryToolVectorScalarLinearCombination._set_use_scale_from_calculation_scalar_b_metadata, useScaleFromScalarB)
+    def use_scale_from_calculation_scalar_b(self, use_scale_from_scalar_b:bool) -> None:
+        return self._intf.set_property(VectorGeometryToolVectorScalarLinearCombination._metadata, VectorGeometryToolVectorScalarLinearCombination._set_use_scale_from_calculation_scalar_b_metadata, use_scale_from_scalar_b)
 
     _get_scalar_a_metadata = { "offset" : _get_scalar_a_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -25236,8 +25236,8 @@ class VectorGeometryToolVectorScalarLinearCombination(IAnalysisWorkbenchComponen
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ICalculationToolScalar"),) }
     @scalar_a.setter
-    def scalar_a(self, scalarA:"ICalculationToolScalar") -> None:
-        return self._intf.set_property(VectorGeometryToolVectorScalarLinearCombination._metadata, VectorGeometryToolVectorScalarLinearCombination._set_scalar_a_metadata, scalarA)
+    def scalar_a(self, scalar_a:"ICalculationToolScalar") -> None:
+        return self._intf.set_property(VectorGeometryToolVectorScalarLinearCombination._metadata, VectorGeometryToolVectorScalarLinearCombination._set_scalar_a_metadata, scalar_a)
 
     _get_scalar_b_metadata = { "offset" : _get_scalar_b_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -25251,8 +25251,8 @@ class VectorGeometryToolVectorScalarLinearCombination(IAnalysisWorkbenchComponen
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ICalculationToolScalar"),) }
     @scalar_b.setter
-    def scalar_b(self, scalarB:"ICalculationToolScalar") -> None:
-        return self._intf.set_property(VectorGeometryToolVectorScalarLinearCombination._metadata, VectorGeometryToolVectorScalarLinearCombination._set_scalar_b_metadata, scalarB)
+    def scalar_b(self, scalar_b:"ICalculationToolScalar") -> None:
+        return self._intf.set_property(VectorGeometryToolVectorScalarLinearCombination._metadata, VectorGeometryToolVectorScalarLinearCombination._set_scalar_b_metadata, scalar_b)
 
     _get_vector_b_metadata = { "offset" : _get_vector_b_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -25266,8 +25266,8 @@ class VectorGeometryToolVectorScalarLinearCombination(IAnalysisWorkbenchComponen
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolVector"),) }
     @vector_b.setter
-    def vector_b(self, vectorB:"IVectorGeometryToolVector") -> None:
-        return self._intf.set_property(VectorGeometryToolVectorScalarLinearCombination._metadata, VectorGeometryToolVectorScalarLinearCombination._set_vector_b_metadata, vectorB)
+    def vector_b(self, vector_b:"IVectorGeometryToolVector") -> None:
+        return self._intf.set_property(VectorGeometryToolVectorScalarLinearCombination._metadata, VectorGeometryToolVectorScalarLinearCombination._set_vector_b_metadata, vector_b)
 
     _get_scale_factor_b_metadata = { "offset" : _get_scale_factor_b_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -25281,8 +25281,8 @@ class VectorGeometryToolVectorScalarLinearCombination(IAnalysisWorkbenchComponen
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @scale_factor_b.setter
-    def scale_factor_b(self, scaleFactorB:float) -> None:
-        return self._intf.set_property(VectorGeometryToolVectorScalarLinearCombination._metadata, VectorGeometryToolVectorScalarLinearCombination._set_scale_factor_b_metadata, scaleFactorB)
+    def scale_factor_b(self, scale_factor_b:float) -> None:
+        return self._intf.set_property(VectorGeometryToolVectorScalarLinearCombination._metadata, VectorGeometryToolVectorScalarLinearCombination._set_scale_factor_b_metadata, scale_factor_b)
 
     _get_normalize_vector_b_metadata = { "offset" : _get_normalize_vector_b_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -25296,8 +25296,8 @@ class VectorGeometryToolVectorScalarLinearCombination(IAnalysisWorkbenchComponen
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @normalize_vector_b.setter
-    def normalize_vector_b(self, normalizeVectorB:bool) -> None:
-        return self._intf.set_property(VectorGeometryToolVectorScalarLinearCombination._metadata, VectorGeometryToolVectorScalarLinearCombination._set_normalize_vector_b_metadata, normalizeVectorB)
+    def normalize_vector_b(self, normalize_vector_b:bool) -> None:
+        return self._intf.set_property(VectorGeometryToolVectorScalarLinearCombination._metadata, VectorGeometryToolVectorScalarLinearCombination._set_normalize_vector_b_metadata, normalize_vector_b)
 
     _get_output_dimension_inheritance_metadata = { "offset" : _get_output_dimension_inheritance_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -25311,8 +25311,8 @@ class VectorGeometryToolVectorScalarLinearCombination(IAnalysisWorkbenchComponen
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(INHERIT_DIMENSION_TYPE),) }
     @output_dimension_inheritance.setter
-    def output_dimension_inheritance(self, outputDimensionInheritance:"INHERIT_DIMENSION_TYPE") -> None:
-        return self._intf.set_property(VectorGeometryToolVectorScalarLinearCombination._metadata, VectorGeometryToolVectorScalarLinearCombination._set_output_dimension_inheritance_metadata, outputDimensionInheritance)
+    def output_dimension_inheritance(self, output_dimension_inheritance:"INHERIT_DIMENSION_TYPE") -> None:
+        return self._intf.set_property(VectorGeometryToolVectorScalarLinearCombination._metadata, VectorGeometryToolVectorScalarLinearCombination._set_output_dimension_inheritance_metadata, output_dimension_inheritance)
 
     _get_output_dimension_metadata = { "offset" : _get_output_dimension_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -25326,8 +25326,8 @@ class VectorGeometryToolVectorScalarLinearCombination(IAnalysisWorkbenchComponen
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @output_dimension.setter
-    def output_dimension(self, outputDimension:str) -> None:
-        return self._intf.set_property(VectorGeometryToolVectorScalarLinearCombination._metadata, VectorGeometryToolVectorScalarLinearCombination._set_output_dimension_metadata, outputDimension)
+    def output_dimension(self, output_dimension:str) -> None:
+        return self._intf.set_property(VectorGeometryToolVectorScalarLinearCombination._metadata, VectorGeometryToolVectorScalarLinearCombination._set_output_dimension_metadata, output_dimension)
 
     _property_names[vector_a] = "vector_a"
     _property_names[scale_factor_a] = "scale_factor_a"
@@ -25342,13 +25342,13 @@ class VectorGeometryToolVectorScalarLinearCombination(IAnalysisWorkbenchComponen
     _property_names[output_dimension_inheritance] = "output_dimension_inheritance"
     _property_names[output_dimension] = "output_dimension"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorScalarLinearCombination."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorScalarLinearCombination)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorScalarLinearCombination)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IVectorGeometryToolVector.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchComponent._private_init(self, intf)
@@ -25401,8 +25401,8 @@ class VectorGeometryToolVectorScalarScaled(IAnalysisWorkbenchComponent, IAnalysi
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolVector"),) }
     @input_vector.setter
-    def input_vector(self, inputVector:"IVectorGeometryToolVector") -> None:
-        return self._intf.set_property(VectorGeometryToolVectorScalarScaled._metadata, VectorGeometryToolVectorScalarScaled._set_input_vector_metadata, inputVector)
+    def input_vector(self, input_vector:"IVectorGeometryToolVector") -> None:
+        return self._intf.set_property(VectorGeometryToolVectorScalarScaled._metadata, VectorGeometryToolVectorScalarScaled._set_input_vector_metadata, input_vector)
 
     _get_input_scalar_metadata = { "offset" : _get_input_scalar_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -25416,8 +25416,8 @@ class VectorGeometryToolVectorScalarScaled(IAnalysisWorkbenchComponent, IAnalysi
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("ICalculationToolScalar"),) }
     @input_scalar.setter
-    def input_scalar(self, inputScalar:"ICalculationToolScalar") -> None:
-        return self._intf.set_property(VectorGeometryToolVectorScalarScaled._metadata, VectorGeometryToolVectorScalarScaled._set_input_scalar_metadata, inputScalar)
+    def input_scalar(self, input_scalar:"ICalculationToolScalar") -> None:
+        return self._intf.set_property(VectorGeometryToolVectorScalarScaled._metadata, VectorGeometryToolVectorScalarScaled._set_input_scalar_metadata, input_scalar)
 
     _get_scale_factor_metadata = { "offset" : _get_scale_factor_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -25431,8 +25431,8 @@ class VectorGeometryToolVectorScalarScaled(IAnalysisWorkbenchComponent, IAnalysi
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @scale_factor.setter
-    def scale_factor(self, scaleFactor:float) -> None:
-        return self._intf.set_property(VectorGeometryToolVectorScalarScaled._metadata, VectorGeometryToolVectorScalarScaled._set_scale_factor_metadata, scaleFactor)
+    def scale_factor(self, scale_factor:float) -> None:
+        return self._intf.set_property(VectorGeometryToolVectorScalarScaled._metadata, VectorGeometryToolVectorScalarScaled._set_scale_factor_metadata, scale_factor)
 
     _get_normalize_metadata = { "offset" : _get_normalize_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -25461,8 +25461,8 @@ class VectorGeometryToolVectorScalarScaled(IAnalysisWorkbenchComponent, IAnalysi
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(VECTOR_GEOMETRY_TOOL_SCALED_VECTOR_DIMENSION_INHERITANCE_OPTION_TYPE),) }
     @dimension_inheritance.setter
-    def dimension_inheritance(self, dimensionInheritance:"VECTOR_GEOMETRY_TOOL_SCALED_VECTOR_DIMENSION_INHERITANCE_OPTION_TYPE") -> None:
-        return self._intf.set_property(VectorGeometryToolVectorScalarScaled._metadata, VectorGeometryToolVectorScalarScaled._set_dimension_inheritance_metadata, dimensionInheritance)
+    def dimension_inheritance(self, dimension_inheritance:"VECTOR_GEOMETRY_TOOL_SCALED_VECTOR_DIMENSION_INHERITANCE_OPTION_TYPE") -> None:
+        return self._intf.set_property(VectorGeometryToolVectorScalarScaled._metadata, VectorGeometryToolVectorScalarScaled._set_dimension_inheritance_metadata, dimension_inheritance)
 
     _get_dimension_metadata = { "offset" : _get_dimension_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -25486,13 +25486,13 @@ class VectorGeometryToolVectorScalarScaled(IAnalysisWorkbenchComponent, IAnalysi
     _property_names[dimension_inheritance] = "dimension_inheritance"
     _property_names[dimension] = "dimension"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorScalarScaled."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorScalarScaled)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorScalarScaled)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IVectorGeometryToolVector.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchComponent._private_init(self, intf)
@@ -25539,8 +25539,8 @@ class VectorGeometryToolVectorVelocityAcceleration(IAnalysisWorkbenchComponent, 
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolSystem"),) }
     @reference_system.setter
-    def reference_system(self, referenceSystem:"IVectorGeometryToolSystem") -> None:
-        return self._intf.set_property(VectorGeometryToolVectorVelocityAcceleration._metadata, VectorGeometryToolVectorVelocityAcceleration._set_reference_system_metadata, referenceSystem)
+    def reference_system(self, reference_system:"IVectorGeometryToolSystem") -> None:
+        return self._intf.set_property(VectorGeometryToolVectorVelocityAcceleration._metadata, VectorGeometryToolVectorVelocityAcceleration._set_reference_system_metadata, reference_system)
 
     _get_point_metadata = { "offset" : _get_point_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -25569,20 +25569,20 @@ class VectorGeometryToolVectorVelocityAcceleration(IAnalysisWorkbenchComponent, 
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @differencing_time_step.setter
-    def differencing_time_step(self, differencingTimeStep:float) -> None:
-        return self._intf.set_property(VectorGeometryToolVectorVelocityAcceleration._metadata, VectorGeometryToolVectorVelocityAcceleration._set_differencing_time_step_metadata, differencingTimeStep)
+    def differencing_time_step(self, differencing_time_step:float) -> None:
+        return self._intf.set_property(VectorGeometryToolVectorVelocityAcceleration._metadata, VectorGeometryToolVectorVelocityAcceleration._set_differencing_time_step_metadata, differencing_time_step)
 
     _property_names[reference_system] = "reference_system"
     _property_names[point] = "point"
     _property_names[differencing_time_step] = "differencing_time_step"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorVelocityAcceleration."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorVelocityAcceleration)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorVelocityAcceleration)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IVectorGeometryToolVector.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchComponent._private_init(self, intf)
@@ -25666,13 +25666,13 @@ class VectorGeometryToolVectorPlugin(IAnalysisWorkbenchComponent, IAnalysisWorkb
     _property_names[display_name] = "display_name"
     _property_names[available_properties] = "available_properties"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorPlugin."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorPlugin)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorPlugin)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IVectorGeometryToolVector.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchComponent._private_init(self, intf)
@@ -25721,8 +25721,8 @@ class VectorGeometryToolVectorSurfaceDisplacement(IAnalysisWorkbenchComponent, I
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolPoint"),) }
     @origin_point.setter
-    def origin_point(self, originPoint:"IVectorGeometryToolPoint") -> None:
-        return self._intf.set_property(VectorGeometryToolVectorSurfaceDisplacement._metadata, VectorGeometryToolVectorSurfaceDisplacement._set_origin_point_metadata, originPoint)
+    def origin_point(self, origin_point:"IVectorGeometryToolPoint") -> None:
+        return self._intf.set_property(VectorGeometryToolVectorSurfaceDisplacement._metadata, VectorGeometryToolVectorSurfaceDisplacement._set_origin_point_metadata, origin_point)
 
     _get_destination_point_metadata = { "offset" : _get_destination_point_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -25736,8 +25736,8 @@ class VectorGeometryToolVectorSurfaceDisplacement(IAnalysisWorkbenchComponent, I
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolPoint"),) }
     @destination_point.setter
-    def destination_point(self, destinationPoint:"IVectorGeometryToolPoint") -> None:
-        return self._intf.set_property(VectorGeometryToolVectorSurfaceDisplacement._metadata, VectorGeometryToolVectorSurfaceDisplacement._set_destination_point_metadata, destinationPoint)
+    def destination_point(self, destination_point:"IVectorGeometryToolPoint") -> None:
+        return self._intf.set_property(VectorGeometryToolVectorSurfaceDisplacement._metadata, VectorGeometryToolVectorSurfaceDisplacement._set_destination_point_metadata, destination_point)
 
     _get_surface_central_body_metadata = { "offset" : _get_surface_central_body_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -25751,8 +25751,8 @@ class VectorGeometryToolVectorSurfaceDisplacement(IAnalysisWorkbenchComponent, I
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @surface_central_body.setter
-    def surface_central_body(self, surfaceCentralBody:str) -> None:
-        return self._intf.set_property(VectorGeometryToolVectorSurfaceDisplacement._metadata, VectorGeometryToolVectorSurfaceDisplacement._set_surface_central_body_metadata, surfaceCentralBody)
+    def surface_central_body(self, surface_central_body:str) -> None:
+        return self._intf.set_property(VectorGeometryToolVectorSurfaceDisplacement._metadata, VectorGeometryToolVectorSurfaceDisplacement._set_surface_central_body_metadata, surface_central_body)
 
     _get_differencing_time_step_metadata = { "offset" : _get_differencing_time_step_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -25766,21 +25766,21 @@ class VectorGeometryToolVectorSurfaceDisplacement(IAnalysisWorkbenchComponent, I
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @differencing_time_step.setter
-    def differencing_time_step(self, differencingTimeStep:float) -> None:
-        return self._intf.set_property(VectorGeometryToolVectorSurfaceDisplacement._metadata, VectorGeometryToolVectorSurfaceDisplacement._set_differencing_time_step_metadata, differencingTimeStep)
+    def differencing_time_step(self, differencing_time_step:float) -> None:
+        return self._intf.set_property(VectorGeometryToolVectorSurfaceDisplacement._metadata, VectorGeometryToolVectorSurfaceDisplacement._set_differencing_time_step_metadata, differencing_time_step)
 
     _property_names[origin_point] = "origin_point"
     _property_names[destination_point] = "destination_point"
     _property_names[surface_central_body] = "surface_central_body"
     _property_names[differencing_time_step] = "differencing_time_step"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorSurfaceDisplacement."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorSurfaceDisplacement)
-        IAnalysisWorkbenchComponent.__init__(self, sourceObject)
-        IAnalysisWorkbenchComponentTimeProperties.__init__(self, sourceObject)
-        IVectorGeometryToolVector.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorSurfaceDisplacement)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IVectorGeometryToolVector.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchComponent._private_init(self, intf)
@@ -25818,9 +25818,9 @@ class VectorGeometryToolVectorFactory(SupportsDeleteCallback):
     _create_metadata = { "offset" : _create_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(VECTOR_TYPE), agmarshall.InterfaceOutArg,) }
-    def create(self, vectorName:str, description:str, vectorType:"VECTOR_TYPE") -> "IVectorGeometryToolVector":
+    def create(self, vector_name:str, description:str, vector_type:"VECTOR_TYPE") -> "IVectorGeometryToolVector":
         """Create a VGT vector using specified name, description and type."""
-        return self._intf.invoke(VectorGeometryToolVectorFactory._metadata, VectorGeometryToolVectorFactory._create_metadata, vectorName, description, vectorType, OutArg())
+        return self._intf.invoke(VectorGeometryToolVectorFactory._metadata, VectorGeometryToolVectorFactory._create_metadata, vector_name, description, vector_type, OutArg())
 
     _is_type_supported_metadata = { "offset" : _is_type_supported_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
@@ -25832,9 +25832,9 @@ class VectorGeometryToolVectorFactory(SupportsDeleteCallback):
     _create_displacement_vector_metadata = { "offset" : _create_displacement_vector_method_offset,
             "arg_types" : (agcom.BSTR, agcom.PVOID, agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceInArg("IVectorGeometryToolPoint"), agmarshall.InterfaceInArg("IVectorGeometryToolPoint"), agmarshall.InterfaceOutArg,) }
-    def create_displacement_vector(self, vectorName:str, originPoint:"IVectorGeometryToolPoint", destPoint:"IVectorGeometryToolPoint") -> "VectorGeometryToolVectorDisplacement":
+    def create_displacement_vector(self, vector_name:str, origin_point:"IVectorGeometryToolPoint", dest_point:"IVectorGeometryToolPoint") -> "VectorGeometryToolVectorDisplacement":
         """Create a displacement vector."""
-        return self._intf.invoke(VectorGeometryToolVectorFactory._metadata, VectorGeometryToolVectorFactory._create_displacement_vector_metadata, vectorName, originPoint, destPoint, OutArg())
+        return self._intf.invoke(VectorGeometryToolVectorFactory._metadata, VectorGeometryToolVectorFactory._create_displacement_vector_metadata, vector_name, origin_point, dest_point, OutArg())
 
     _get_available_plugin_display_names_metadata = { "offset" : _get_available_plugin_display_names_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY),),
@@ -25847,23 +25847,23 @@ class VectorGeometryToolVectorFactory(SupportsDeleteCallback):
     _create_plugin_from_display_name_metadata = { "offset" : _create_plugin_from_display_name_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
-    def create_plugin_from_display_name(self, vectorName:str, description:str, displayName:str) -> "IVectorGeometryToolVector":
+    def create_plugin_from_display_name(self, vector_name:str, description:str, display_name:str) -> "IVectorGeometryToolVector":
         """Create a vector component based on a COM vector plugin. For information how to implement and register VGT plugins, see."""
-        return self._intf.invoke(VectorGeometryToolVectorFactory._metadata, VectorGeometryToolVectorFactory._create_plugin_from_display_name_metadata, vectorName, description, displayName, OutArg())
+        return self._intf.invoke(VectorGeometryToolVectorFactory._metadata, VectorGeometryToolVectorFactory._create_plugin_from_display_name_metadata, vector_name, description, display_name, OutArg())
 
     _create_cross_product_metadata = { "offset" : _create_cross_product_method_offset,
             "arg_types" : (agcom.BSTR, agcom.PVOID, agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceInArg("IVectorGeometryToolVector"), agmarshall.InterfaceInArg("IVectorGeometryToolVector"), agmarshall.InterfaceOutArg,) }
-    def create_cross_product(self, vectorName:str, vectorA:"IVectorGeometryToolVector", vectorB:"IVectorGeometryToolVector") -> "VectorGeometryToolVectorCross":
+    def create_cross_product(self, vector_name:str, vector_a:"IVectorGeometryToolVector", vector_b:"IVectorGeometryToolVector") -> "VectorGeometryToolVectorCross":
         """Create a cross product C = A x B."""
-        return self._intf.invoke(VectorGeometryToolVectorFactory._metadata, VectorGeometryToolVectorFactory._create_cross_product_metadata, vectorName, vectorA, vectorB, OutArg())
+        return self._intf.invoke(VectorGeometryToolVectorFactory._metadata, VectorGeometryToolVectorFactory._create_cross_product_metadata, vector_name, vector_a, vector_b, OutArg())
 
     _property_names[available_plugin_display_names] = "available_plugin_display_names"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorFactory)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -25896,9 +25896,9 @@ class VectorGeometryToolAxesFactory(SupportsDeleteCallback):
     _create_metadata = { "offset" : _create_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(AXES_TYPE), agmarshall.InterfaceOutArg,) }
-    def create(self, axesName:str, description:str, axesType:"AXES_TYPE") -> "IVectorGeometryToolAxes":
+    def create(self, axes_name:str, description:str, axes_type:"AXES_TYPE") -> "IVectorGeometryToolAxes":
         """Create a VGT axes using specified name, description and type."""
-        return self._intf.invoke(VectorGeometryToolAxesFactory._metadata, VectorGeometryToolAxesFactory._create_metadata, axesName, description, axesType, OutArg())
+        return self._intf.invoke(VectorGeometryToolAxesFactory._metadata, VectorGeometryToolAxesFactory._create_metadata, axes_name, description, axes_type, OutArg())
 
     _is_type_supported_metadata = { "offset" : _is_type_supported_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
@@ -25918,16 +25918,16 @@ class VectorGeometryToolAxesFactory(SupportsDeleteCallback):
     _create_plugin_from_display_name_metadata = { "offset" : _create_plugin_from_display_name_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
-    def create_plugin_from_display_name(self, axesName:str, description:str, displayName:str) -> "IVectorGeometryToolAxes":
+    def create_plugin_from_display_name(self, axes_name:str, description:str, display_name:str) -> "IVectorGeometryToolAxes":
         """Create an axes component based on a COM axes plugin. For information how to implement and register VGT plugins, see."""
-        return self._intf.invoke(VectorGeometryToolAxesFactory._metadata, VectorGeometryToolAxesFactory._create_plugin_from_display_name_metadata, axesName, description, displayName, OutArg())
+        return self._intf.invoke(VectorGeometryToolAxesFactory._metadata, VectorGeometryToolAxesFactory._create_plugin_from_display_name_metadata, axes_name, description, display_name, OutArg())
 
     _property_names[available_plugin_display_names] = "available_plugin_display_names"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolAxesFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolAxesFactory)
+        initialize_from_source_object(self, source_object, VectorGeometryToolAxesFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -25958,9 +25958,9 @@ class VectorGeometryToolSystemFactory(SupportsDeleteCallback):
     _create_metadata = { "offset" : _create_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(SYSTEM_TYPE), agmarshall.InterfaceOutArg,) }
-    def create(self, systemName:str, description:str, systemType:"SYSTEM_TYPE") -> "IVectorGeometryToolSystem":
+    def create(self, system_name:str, description:str, system_type:"SYSTEM_TYPE") -> "IVectorGeometryToolSystem":
         """Create a VGT system using the specified name, description and type."""
-        return self._intf.invoke(VectorGeometryToolSystemFactory._metadata, VectorGeometryToolSystemFactory._create_metadata, systemName, description, systemType, OutArg())
+        return self._intf.invoke(VectorGeometryToolSystemFactory._metadata, VectorGeometryToolSystemFactory._create_metadata, system_name, description, system_type, OutArg())
 
     _is_type_supported_metadata = { "offset" : _is_type_supported_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
@@ -25970,10 +25970,10 @@ class VectorGeometryToolSystemFactory(SupportsDeleteCallback):
         return self._intf.invoke(VectorGeometryToolSystemFactory._metadata, VectorGeometryToolSystemFactory._is_type_supported_metadata, type, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolSystemFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolSystemFactory)
+        initialize_from_source_object(self, source_object, VectorGeometryToolSystemFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -26007,9 +26007,9 @@ class VectorGeometryToolPointFactory(SupportsDeleteCallback):
     _create_metadata = { "offset" : _create_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(POINT_TYPE), agmarshall.InterfaceOutArg,) }
-    def create(self, pointName:str, description:str, pointType:"POINT_TYPE") -> "IVectorGeometryToolPoint":
+    def create(self, point_name:str, description:str, point_type:"POINT_TYPE") -> "IVectorGeometryToolPoint":
         """Create a VGT point using the specified name, description and type."""
-        return self._intf.invoke(VectorGeometryToolPointFactory._metadata, VectorGeometryToolPointFactory._create_metadata, pointName, description, pointType, OutArg())
+        return self._intf.invoke(VectorGeometryToolPointFactory._metadata, VectorGeometryToolPointFactory._create_metadata, point_name, description, point_type, OutArg())
 
     _is_type_supported_metadata = { "offset" : _is_type_supported_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
@@ -26029,23 +26029,23 @@ class VectorGeometryToolPointFactory(SupportsDeleteCallback):
     _create_plugin_from_display_name_metadata = { "offset" : _create_plugin_from_display_name_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
-    def create_plugin_from_display_name(self, pointName:str, description:str, displayName:str) -> "IVectorGeometryToolPoint":
+    def create_plugin_from_display_name(self, point_name:str, description:str, display_name:str) -> "IVectorGeometryToolPoint":
         """Create a point component based on a COM point plugin. For information how to implement and register VGT plugins, see."""
-        return self._intf.invoke(VectorGeometryToolPointFactory._metadata, VectorGeometryToolPointFactory._create_plugin_from_display_name_metadata, pointName, description, displayName, OutArg())
+        return self._intf.invoke(VectorGeometryToolPointFactory._metadata, VectorGeometryToolPointFactory._create_plugin_from_display_name_metadata, point_name, description, display_name, OutArg())
 
     _create_fixed_on_central_body_metadata = { "offset" : _create_fixed_on_central_body_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.Variant, agcom.Variant, agcom.DOUBLE, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.DoubleArg, agmarshall.EnumArg(SURFACE_REFERENCE_SHAPE_TYPE), agmarshall.InterfaceOutArg,) }
-    def create_fixed_on_central_body(self, pointName:str, description:str, longitude:typing.Any, latitude:typing.Any, altitude:float, referenceShape:"SURFACE_REFERENCE_SHAPE_TYPE") -> "IVectorGeometryToolPoint":
+    def create_fixed_on_central_body(self, point_name:str, description:str, longitude:typing.Any, latitude:typing.Any, altitude:float, reference_shape:"SURFACE_REFERENCE_SHAPE_TYPE") -> "IVectorGeometryToolPoint":
         """Create a point fixed on a central body."""
-        return self._intf.invoke(VectorGeometryToolPointFactory._metadata, VectorGeometryToolPointFactory._create_fixed_on_central_body_metadata, pointName, description, longitude, latitude, altitude, referenceShape, OutArg())
+        return self._intf.invoke(VectorGeometryToolPointFactory._metadata, VectorGeometryToolPointFactory._create_fixed_on_central_body_metadata, point_name, description, longitude, latitude, altitude, reference_shape, OutArg())
 
     _property_names[available_plugin_display_names] = "available_plugin_display_names"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPointFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolPointFactory)
+        initialize_from_source_object(self, source_object, VectorGeometryToolPointFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -26076,9 +26076,9 @@ class VectorGeometryToolPlaneFactory(SupportsDeleteCallback):
     _create_metadata = { "offset" : _create_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(PLANE_TYPE), agmarshall.InterfaceOutArg,) }
-    def create(self, planeName:str, description:str, planeType:"PLANE_TYPE") -> "IVectorGeometryToolPlane":
+    def create(self, plane_name:str, description:str, plane_type:"PLANE_TYPE") -> "IVectorGeometryToolPlane":
         """Create a VGT plane using the specified name, description and type."""
-        return self._intf.invoke(VectorGeometryToolPlaneFactory._metadata, VectorGeometryToolPlaneFactory._create_metadata, planeName, description, planeType, OutArg())
+        return self._intf.invoke(VectorGeometryToolPlaneFactory._metadata, VectorGeometryToolPlaneFactory._create_metadata, plane_name, description, plane_type, OutArg())
 
     _is_type_supported_metadata = { "offset" : _is_type_supported_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
@@ -26088,10 +26088,10 @@ class VectorGeometryToolPlaneFactory(SupportsDeleteCallback):
         return self._intf.invoke(VectorGeometryToolPlaneFactory._metadata, VectorGeometryToolPlaneFactory._is_type_supported_metadata, type, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPlaneFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolPlaneFactory)
+        initialize_from_source_object(self, source_object, VectorGeometryToolPlaneFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -26122,9 +26122,9 @@ class VectorGeometryToolAngleFactory(SupportsDeleteCallback):
     _create_metadata = { "offset" : _create_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(ANGLE_TYPE), agmarshall.InterfaceOutArg,) }
-    def create(self, angleName:str, description:str, angleType:"ANGLE_TYPE") -> "IVectorGeometryToolAngle":
+    def create(self, angle_name:str, description:str, angle_type:"ANGLE_TYPE") -> "IVectorGeometryToolAngle":
         """Create a VGT angle using specified name, description and type."""
-        return self._intf.invoke(VectorGeometryToolAngleFactory._metadata, VectorGeometryToolAngleFactory._create_metadata, angleName, description, angleType, OutArg())
+        return self._intf.invoke(VectorGeometryToolAngleFactory._metadata, VectorGeometryToolAngleFactory._create_metadata, angle_name, description, angle_type, OutArg())
 
     _is_type_supported_metadata = { "offset" : _is_type_supported_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
@@ -26134,10 +26134,10 @@ class VectorGeometryToolAngleFactory(SupportsDeleteCallback):
         return self._intf.invoke(VectorGeometryToolAngleFactory._metadata, VectorGeometryToolAngleFactory._is_type_supported_metadata, type, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolAngleFactory."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolAngleFactory)
+        initialize_from_source_object(self, source_object, VectorGeometryToolAngleFactory)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -26161,7 +26161,7 @@ class VectorGeometryToolVectorGroup(SupportsDeleteCallback):
     _get_count_method_offset = 4
     _get_factory_method_offset = 5
     _item_method_offset = 6
-    _get__NewEnum_method_offset = 7
+    _get__new_enum_method_offset = 7
     _get_item_by_index_method_offset = 8
     _get_item_by_name_method_offset = 9
     _metadata = {
@@ -26173,7 +26173,7 @@ class VectorGeometryToolVectorGroup(SupportsDeleteCallback):
         return get_interface_property(attrname, VectorGeometryToolVectorGroup)
     def __iter__(self):
         """Create an iterator for the VectorGeometryToolVectorGroup object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IVectorGeometryToolVector":
@@ -26188,9 +26188,9 @@ class VectorGeometryToolVectorGroup(SupportsDeleteCallback):
     _remove_metadata = { "offset" : _remove_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    def remove(self, vectorName:str) -> None:
+    def remove(self, vector_name:str) -> None:
         """Remove a specified vector."""
-        return self._intf.invoke(VectorGeometryToolVectorGroup._metadata, VectorGeometryToolVectorGroup._remove_metadata, vectorName)
+        return self._intf.invoke(VectorGeometryToolVectorGroup._metadata, VectorGeometryToolVectorGroup._remove_metadata, vector_name)
 
     _get_context_metadata = { "offset" : _get_context_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -26226,17 +26226,17 @@ class VectorGeometryToolVectorGroup(SupportsDeleteCallback):
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
-    def item(self, indexOrName:typing.Any) -> "IVectorGeometryToolVector":
+    def item(self, index_or_name:typing.Any) -> "IVectorGeometryToolVector":
         """Return a vector by name or at a specified position."""
-        return self._intf.invoke(VectorGeometryToolVectorGroup._metadata, VectorGeometryToolVectorGroup._item_metadata, indexOrName, OutArg())
+        return self._intf.invoke(VectorGeometryToolVectorGroup._metadata, VectorGeometryToolVectorGroup._item_metadata, index_or_name, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return a COM enumerator."""
-        return self._intf.get_property(VectorGeometryToolVectorGroup._metadata, VectorGeometryToolVectorGroup._get__NewEnum_metadata)
+        return self._intf.get_property(VectorGeometryToolVectorGroup._metadata, VectorGeometryToolVectorGroup._get__new_enum_metadata)
 
     _get_item_by_index_metadata = { "offset" : _get_item_by_index_method_offset,
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
@@ -26258,12 +26258,12 @@ class VectorGeometryToolVectorGroup(SupportsDeleteCallback):
     _property_names[context] = "context"
     _property_names[count] = "count"
     _property_names[factory] = "factory"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolVectorGroup."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolVectorGroup)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorGroup)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -26287,7 +26287,7 @@ class VectorGeometryToolPointGroup(SupportsDeleteCallback):
     _get_count_method_offset = 4
     _get_factory_method_offset = 5
     _item_method_offset = 6
-    _get__NewEnum_method_offset = 7
+    _get__new_enum_method_offset = 7
     _get_common_tasks_method_offset = 8
     _get_item_by_index_method_offset = 9
     _get_item_by_name_method_offset = 10
@@ -26300,7 +26300,7 @@ class VectorGeometryToolPointGroup(SupportsDeleteCallback):
         return get_interface_property(attrname, VectorGeometryToolPointGroup)
     def __iter__(self):
         """Create an iterator for the VectorGeometryToolPointGroup object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IVectorGeometryToolPoint":
@@ -26315,9 +26315,9 @@ class VectorGeometryToolPointGroup(SupportsDeleteCallback):
     _remove_metadata = { "offset" : _remove_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    def remove(self, pointName:str) -> None:
+    def remove(self, point_name:str) -> None:
         """Remove a specified point by name."""
-        return self._intf.invoke(VectorGeometryToolPointGroup._metadata, VectorGeometryToolPointGroup._remove_metadata, pointName)
+        return self._intf.invoke(VectorGeometryToolPointGroup._metadata, VectorGeometryToolPointGroup._remove_metadata, point_name)
 
     _get_context_metadata = { "offset" : _get_context_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -26353,17 +26353,17 @@ class VectorGeometryToolPointGroup(SupportsDeleteCallback):
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
-    def item(self, indexOrName:typing.Any) -> "IVectorGeometryToolPoint":
+    def item(self, index_or_name:typing.Any) -> "IVectorGeometryToolPoint":
         """Return a point by name or at a specified position."""
-        return self._intf.invoke(VectorGeometryToolPointGroup._metadata, VectorGeometryToolPointGroup._item_metadata, indexOrName, OutArg())
+        return self._intf.invoke(VectorGeometryToolPointGroup._metadata, VectorGeometryToolPointGroup._item_metadata, index_or_name, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return a COM enumerator."""
-        return self._intf.get_property(VectorGeometryToolPointGroup._metadata, VectorGeometryToolPointGroup._get__NewEnum_metadata)
+        return self._intf.get_property(VectorGeometryToolPointGroup._metadata, VectorGeometryToolPointGroup._get__new_enum_metadata)
 
     _get_common_tasks_metadata = { "offset" : _get_common_tasks_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -26393,13 +26393,13 @@ class VectorGeometryToolPointGroup(SupportsDeleteCallback):
     _property_names[context] = "context"
     _property_names[count] = "count"
     _property_names[factory] = "factory"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
     _property_names[common_tasks] = "common_tasks"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPointGroup."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolPointGroup)
+        initialize_from_source_object(self, source_object, VectorGeometryToolPointGroup)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -26423,7 +26423,7 @@ class VectorGeometryToolAngleGroup(SupportsDeleteCallback):
     _get_count_method_offset = 4
     _get_factory_method_offset = 5
     _item_method_offset = 6
-    _get__NewEnum_method_offset = 7
+    _get__new_enum_method_offset = 7
     _get_item_by_index_method_offset = 8
     _get_item_by_name_method_offset = 9
     _metadata = {
@@ -26435,7 +26435,7 @@ class VectorGeometryToolAngleGroup(SupportsDeleteCallback):
         return get_interface_property(attrname, VectorGeometryToolAngleGroup)
     def __iter__(self):
         """Create an iterator for the VectorGeometryToolAngleGroup object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IVectorGeometryToolAngle":
@@ -26450,9 +26450,9 @@ class VectorGeometryToolAngleGroup(SupportsDeleteCallback):
     _remove_metadata = { "offset" : _remove_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    def remove(self, angleName:str) -> None:
+    def remove(self, angle_name:str) -> None:
         """Remove a specified Angle."""
-        return self._intf.invoke(VectorGeometryToolAngleGroup._metadata, VectorGeometryToolAngleGroup._remove_metadata, angleName)
+        return self._intf.invoke(VectorGeometryToolAngleGroup._metadata, VectorGeometryToolAngleGroup._remove_metadata, angle_name)
 
     _get_context_metadata = { "offset" : _get_context_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -26488,17 +26488,17 @@ class VectorGeometryToolAngleGroup(SupportsDeleteCallback):
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
-    def item(self, indexOrName:typing.Any) -> "IVectorGeometryToolAngle":
+    def item(self, index_or_name:typing.Any) -> "IVectorGeometryToolAngle":
         """Return an angle by name or at a specified position."""
-        return self._intf.invoke(VectorGeometryToolAngleGroup._metadata, VectorGeometryToolAngleGroup._item_metadata, indexOrName, OutArg())
+        return self._intf.invoke(VectorGeometryToolAngleGroup._metadata, VectorGeometryToolAngleGroup._item_metadata, index_or_name, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return a COM enumerator."""
-        return self._intf.get_property(VectorGeometryToolAngleGroup._metadata, VectorGeometryToolAngleGroup._get__NewEnum_metadata)
+        return self._intf.get_property(VectorGeometryToolAngleGroup._metadata, VectorGeometryToolAngleGroup._get__new_enum_metadata)
 
     _get_item_by_index_metadata = { "offset" : _get_item_by_index_method_offset,
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
@@ -26520,12 +26520,12 @@ class VectorGeometryToolAngleGroup(SupportsDeleteCallback):
     _property_names[context] = "context"
     _property_names[count] = "count"
     _property_names[factory] = "factory"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolAngleGroup."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolAngleGroup)
+        initialize_from_source_object(self, source_object, VectorGeometryToolAngleGroup)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -26549,7 +26549,7 @@ class VectorGeometryToolAxesGroup(SupportsDeleteCallback):
     _get_count_method_offset = 4
     _get_factory_method_offset = 5
     _item_method_offset = 6
-    _get__NewEnum_method_offset = 7
+    _get__new_enum_method_offset = 7
     _get_common_tasks_method_offset = 8
     _get_item_by_index_method_offset = 9
     _get_item_by_name_method_offset = 10
@@ -26562,7 +26562,7 @@ class VectorGeometryToolAxesGroup(SupportsDeleteCallback):
         return get_interface_property(attrname, VectorGeometryToolAxesGroup)
     def __iter__(self):
         """Create an iterator for the VectorGeometryToolAxesGroup object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IVectorGeometryToolAxes":
@@ -26577,9 +26577,9 @@ class VectorGeometryToolAxesGroup(SupportsDeleteCallback):
     _remove_metadata = { "offset" : _remove_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    def remove(self, axesName:str) -> None:
+    def remove(self, axes_name:str) -> None:
         """Remove a specified Axes."""
-        return self._intf.invoke(VectorGeometryToolAxesGroup._metadata, VectorGeometryToolAxesGroup._remove_metadata, axesName)
+        return self._intf.invoke(VectorGeometryToolAxesGroup._metadata, VectorGeometryToolAxesGroup._remove_metadata, axes_name)
 
     _get_context_metadata = { "offset" : _get_context_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -26615,17 +26615,17 @@ class VectorGeometryToolAxesGroup(SupportsDeleteCallback):
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
-    def item(self, indexOrName:typing.Any) -> "IVectorGeometryToolAxes":
+    def item(self, index_or_name:typing.Any) -> "IVectorGeometryToolAxes":
         """Return an axes by name or at a specified position."""
-        return self._intf.invoke(VectorGeometryToolAxesGroup._metadata, VectorGeometryToolAxesGroup._item_metadata, indexOrName, OutArg())
+        return self._intf.invoke(VectorGeometryToolAxesGroup._metadata, VectorGeometryToolAxesGroup._item_metadata, index_or_name, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return a COM enumerator."""
-        return self._intf.get_property(VectorGeometryToolAxesGroup._metadata, VectorGeometryToolAxesGroup._get__NewEnum_metadata)
+        return self._intf.get_property(VectorGeometryToolAxesGroup._metadata, VectorGeometryToolAxesGroup._get__new_enum_metadata)
 
     _get_common_tasks_metadata = { "offset" : _get_common_tasks_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -26655,13 +26655,13 @@ class VectorGeometryToolAxesGroup(SupportsDeleteCallback):
     _property_names[context] = "context"
     _property_names[count] = "count"
     _property_names[factory] = "factory"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
     _property_names[common_tasks] = "common_tasks"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolAxesGroup."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolAxesGroup)
+        initialize_from_source_object(self, source_object, VectorGeometryToolAxesGroup)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -26685,7 +26685,7 @@ class VectorGeometryToolPlaneGroup(SupportsDeleteCallback):
     _get_count_method_offset = 4
     _get_factory_method_offset = 5
     _item_method_offset = 6
-    _get__NewEnum_method_offset = 7
+    _get__new_enum_method_offset = 7
     _get_item_by_index_method_offset = 8
     _get_item_by_name_method_offset = 9
     _metadata = {
@@ -26697,7 +26697,7 @@ class VectorGeometryToolPlaneGroup(SupportsDeleteCallback):
         return get_interface_property(attrname, VectorGeometryToolPlaneGroup)
     def __iter__(self):
         """Create an iterator for the VectorGeometryToolPlaneGroup object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IVectorGeometryToolPlane":
@@ -26712,9 +26712,9 @@ class VectorGeometryToolPlaneGroup(SupportsDeleteCallback):
     _remove_metadata = { "offset" : _remove_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    def remove(self, planeName:str) -> None:
+    def remove(self, plane_name:str) -> None:
         """Remove a specified Plane."""
-        return self._intf.invoke(VectorGeometryToolPlaneGroup._metadata, VectorGeometryToolPlaneGroup._remove_metadata, planeName)
+        return self._intf.invoke(VectorGeometryToolPlaneGroup._metadata, VectorGeometryToolPlaneGroup._remove_metadata, plane_name)
 
     _get_context_metadata = { "offset" : _get_context_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -26750,17 +26750,17 @@ class VectorGeometryToolPlaneGroup(SupportsDeleteCallback):
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
-    def item(self, indexOrName:typing.Any) -> "IVectorGeometryToolPlane":
+    def item(self, index_or_name:typing.Any) -> "IVectorGeometryToolPlane":
         """Return an Plane by name or at a specified position."""
-        return self._intf.invoke(VectorGeometryToolPlaneGroup._metadata, VectorGeometryToolPlaneGroup._item_metadata, indexOrName, OutArg())
+        return self._intf.invoke(VectorGeometryToolPlaneGroup._metadata, VectorGeometryToolPlaneGroup._item_metadata, index_or_name, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return a COM enumerator."""
-        return self._intf.get_property(VectorGeometryToolPlaneGroup._metadata, VectorGeometryToolPlaneGroup._get__NewEnum_metadata)
+        return self._intf.get_property(VectorGeometryToolPlaneGroup._metadata, VectorGeometryToolPlaneGroup._get__new_enum_metadata)
 
     _get_item_by_index_metadata = { "offset" : _get_item_by_index_method_offset,
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
@@ -26782,12 +26782,12 @@ class VectorGeometryToolPlaneGroup(SupportsDeleteCallback):
     _property_names[context] = "context"
     _property_names[count] = "count"
     _property_names[factory] = "factory"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolPlaneGroup."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolPlaneGroup)
+        initialize_from_source_object(self, source_object, VectorGeometryToolPlaneGroup)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -26811,7 +26811,7 @@ class VectorGeometryToolSystemGroup(SupportsDeleteCallback):
     _get_count_method_offset = 4
     _get_factory_method_offset = 5
     _item_method_offset = 6
-    _get__NewEnum_method_offset = 7
+    _get__new_enum_method_offset = 7
     _get_common_tasks_method_offset = 8
     _get_item_by_index_method_offset = 9
     _get_item_by_name_method_offset = 10
@@ -26824,7 +26824,7 @@ class VectorGeometryToolSystemGroup(SupportsDeleteCallback):
         return get_interface_property(attrname, VectorGeometryToolSystemGroup)
     def __iter__(self):
         """Create an iterator for the VectorGeometryToolSystemGroup object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IVectorGeometryToolSystem":
@@ -26839,9 +26839,9 @@ class VectorGeometryToolSystemGroup(SupportsDeleteCallback):
     _remove_metadata = { "offset" : _remove_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    def remove(self, systemName:str) -> None:
+    def remove(self, system_name:str) -> None:
         """Remove a specified System."""
-        return self._intf.invoke(VectorGeometryToolSystemGroup._metadata, VectorGeometryToolSystemGroup._remove_metadata, systemName)
+        return self._intf.invoke(VectorGeometryToolSystemGroup._metadata, VectorGeometryToolSystemGroup._remove_metadata, system_name)
 
     _get_context_metadata = { "offset" : _get_context_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -26877,17 +26877,17 @@ class VectorGeometryToolSystemGroup(SupportsDeleteCallback):
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
-    def item(self, indexOrName:typing.Any) -> "IVectorGeometryToolSystem":
+    def item(self, index_or_name:typing.Any) -> "IVectorGeometryToolSystem":
         """Return a System by name or at a specified position."""
-        return self._intf.invoke(VectorGeometryToolSystemGroup._metadata, VectorGeometryToolSystemGroup._item_metadata, indexOrName, OutArg())
+        return self._intf.invoke(VectorGeometryToolSystemGroup._metadata, VectorGeometryToolSystemGroup._item_metadata, index_or_name, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return a COM enumerator."""
-        return self._intf.get_property(VectorGeometryToolSystemGroup._metadata, VectorGeometryToolSystemGroup._get__NewEnum_metadata)
+        return self._intf.get_property(VectorGeometryToolSystemGroup._metadata, VectorGeometryToolSystemGroup._get__new_enum_metadata)
 
     _get_common_tasks_metadata = { "offset" : _get_common_tasks_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -26917,13 +26917,13 @@ class VectorGeometryToolSystemGroup(SupportsDeleteCallback):
     _property_names[context] = "context"
     _property_names[count] = "count"
     _property_names[factory] = "factory"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
     _property_names[common_tasks] = "common_tasks"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolSystemGroup."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolSystemGroup)
+        initialize_from_source_object(self, source_object, VectorGeometryToolSystemGroup)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -27166,10 +27166,10 @@ class AnalysisWorkbenchComponentProvider(SupportsDeleteCallback):
     _property_names[volumes] = "volumes"
     _property_names[spatial_calculations] = "spatial_calculations"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchComponentProvider."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchComponentProvider)
+        initialize_from_source_object(self, source_object, AnalysisWorkbenchComponentProvider)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -27202,16 +27202,16 @@ class AnalysisWorkbenchRoot(SupportsDeleteCallback):
     _get_template_provider_metadata = { "offset" : _get_template_provider_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
-    def get_template_provider(self, className:str) -> "AnalysisWorkbenchComponentProvider":
+    def get_template_provider(self, class_name:str) -> "AnalysisWorkbenchComponentProvider":
         """Return a template provider. The method takes a class name (i.e. ``Satellite``, ``Facility``, etc.)."""
-        return self._intf.invoke(AnalysisWorkbenchRoot._metadata, AnalysisWorkbenchRoot._get_template_provider_metadata, className, OutArg())
+        return self._intf.invoke(AnalysisWorkbenchRoot._metadata, AnalysisWorkbenchRoot._get_template_provider_metadata, class_name, OutArg())
 
     _get_provider_metadata = { "offset" : _get_provider_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
-    def get_provider(self, instPath:str) -> "AnalysisWorkbenchComponentProvider":
+    def get_provider(self, inst_path:str) -> "AnalysisWorkbenchComponentProvider":
         """Return an instance provider. The method takes a short instance path to an STK object or a central body.(i.e. ``Satellite/Satellite1``, ``CentralBody/Earth``, etc.)."""
-        return self._intf.invoke(AnalysisWorkbenchRoot._metadata, AnalysisWorkbenchRoot._get_provider_metadata, instPath, OutArg())
+        return self._intf.invoke(AnalysisWorkbenchRoot._metadata, AnalysisWorkbenchRoot._get_provider_metadata, inst_path, OutArg())
 
     _get_well_known_systems_metadata = { "offset" : _get_well_known_systems_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -27232,10 +27232,10 @@ class AnalysisWorkbenchRoot(SupportsDeleteCallback):
     _property_names[well_known_systems] = "well_known_systems"
     _property_names[well_known_axes] = "well_known_axes"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchRoot."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchRoot)
+        initialize_from_source_object(self, source_object, AnalysisWorkbenchRoot)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -27254,7 +27254,7 @@ class VectorGeometryToolWellKnownEarthSystems(SupportsDeleteCallback):
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_fixed_method_offset = 1
-    _get_ICRF_method_offset = 2
+    _get_icrf_method_offset = 2
     _get_inertial_method_offset = 3
     _metadata = {
         "iid_data" : (4710478852462905673, 1995567772504852135),
@@ -27272,13 +27272,13 @@ class VectorGeometryToolWellKnownEarthSystems(SupportsDeleteCallback):
         """Earth's Fixed coordinate system."""
         return self._intf.get_property(VectorGeometryToolWellKnownEarthSystems._metadata, VectorGeometryToolWellKnownEarthSystems._get_fixed_metadata)
 
-    _get_ICRF_metadata = { "offset" : _get_ICRF_method_offset,
+    _get_icrf_metadata = { "offset" : _get_icrf_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def ICRF(self) -> "IVectorGeometryToolSystem":
+    def icrf(self) -> "IVectorGeometryToolSystem":
         """Earth's ICRF."""
-        return self._intf.get_property(VectorGeometryToolWellKnownEarthSystems._metadata, VectorGeometryToolWellKnownEarthSystems._get_ICRF_metadata)
+        return self._intf.get_property(VectorGeometryToolWellKnownEarthSystems._metadata, VectorGeometryToolWellKnownEarthSystems._get_icrf_metadata)
 
     _get_inertial_metadata = { "offset" : _get_inertial_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -27289,13 +27289,13 @@ class VectorGeometryToolWellKnownEarthSystems(SupportsDeleteCallback):
         return self._intf.get_property(VectorGeometryToolWellKnownEarthSystems._metadata, VectorGeometryToolWellKnownEarthSystems._get_inertial_metadata)
 
     _property_names[fixed] = "fixed"
-    _property_names[ICRF] = "ICRF"
+    _property_names[icrf] = "icrf"
     _property_names[inertial] = "inertial"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolWellKnownEarthSystems."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolWellKnownEarthSystems)
+        initialize_from_source_object(self, source_object, VectorGeometryToolWellKnownEarthSystems)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -27314,9 +27314,9 @@ class VectorGeometryToolWellKnownEarthAxes(SupportsDeleteCallback):
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_fixed_method_offset = 1
-    _get_ICRF_method_offset = 2
+    _get_icrf_method_offset = 2
     _get_inertial_method_offset = 3
-    _get_J2000_method_offset = 4
+    _get_j2000_method_offset = 4
     _metadata = {
         "iid_data" : (5483010606787155483, 17339470825221630117),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -27333,13 +27333,13 @@ class VectorGeometryToolWellKnownEarthAxes(SupportsDeleteCallback):
         """Earth's Fixed axes."""
         return self._intf.get_property(VectorGeometryToolWellKnownEarthAxes._metadata, VectorGeometryToolWellKnownEarthAxes._get_fixed_metadata)
 
-    _get_ICRF_metadata = { "offset" : _get_ICRF_method_offset,
+    _get_icrf_metadata = { "offset" : _get_icrf_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def ICRF(self) -> "IVectorGeometryToolAxes":
+    def icrf(self) -> "IVectorGeometryToolAxes":
         """Earth's ICRF axes."""
-        return self._intf.get_property(VectorGeometryToolWellKnownEarthAxes._metadata, VectorGeometryToolWellKnownEarthAxes._get_ICRF_metadata)
+        return self._intf.get_property(VectorGeometryToolWellKnownEarthAxes._metadata, VectorGeometryToolWellKnownEarthAxes._get_icrf_metadata)
 
     _get_inertial_metadata = { "offset" : _get_inertial_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -27349,23 +27349,23 @@ class VectorGeometryToolWellKnownEarthAxes(SupportsDeleteCallback):
         """Earth's Inertial axes (as defined in STK)."""
         return self._intf.get_property(VectorGeometryToolWellKnownEarthAxes._metadata, VectorGeometryToolWellKnownEarthAxes._get_inertial_metadata)
 
-    _get_J2000_metadata = { "offset" : _get_J2000_method_offset,
+    _get_j2000_metadata = { "offset" : _get_j2000_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def J2000(self) -> "IVectorGeometryToolAxes":
+    def j2000(self) -> "IVectorGeometryToolAxes":
         """The Earth's J2000 axes."""
-        return self._intf.get_property(VectorGeometryToolWellKnownEarthAxes._metadata, VectorGeometryToolWellKnownEarthAxes._get_J2000_metadata)
+        return self._intf.get_property(VectorGeometryToolWellKnownEarthAxes._metadata, VectorGeometryToolWellKnownEarthAxes._get_j2000_metadata)
 
     _property_names[fixed] = "fixed"
-    _property_names[ICRF] = "ICRF"
+    _property_names[icrf] = "icrf"
     _property_names[inertial] = "inertial"
-    _property_names[J2000] = "J2000"
+    _property_names[j2000] = "j2000"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolWellKnownEarthAxes."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolWellKnownEarthAxes)
+        initialize_from_source_object(self, source_object, VectorGeometryToolWellKnownEarthAxes)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -27384,9 +27384,9 @@ class VectorGeometryToolWellKnownSunSystems(SupportsDeleteCallback):
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_fixed_method_offset = 1
-    _get_ICRF_method_offset = 2
+    _get_icrf_method_offset = 2
     _get_inertial_method_offset = 3
-    _get_J2000_method_offset = 4
+    _get_j2000_method_offset = 4
     _get_barycenter_method_offset = 5
     _metadata = {
         "iid_data" : (4865958749773106719, 13197055767931333526),
@@ -27404,13 +27404,13 @@ class VectorGeometryToolWellKnownSunSystems(SupportsDeleteCallback):
         """The Sun's Fixed coordinate system."""
         return self._intf.get_property(VectorGeometryToolWellKnownSunSystems._metadata, VectorGeometryToolWellKnownSunSystems._get_fixed_metadata)
 
-    _get_ICRF_metadata = { "offset" : _get_ICRF_method_offset,
+    _get_icrf_metadata = { "offset" : _get_icrf_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def ICRF(self) -> "IVectorGeometryToolSystem":
+    def icrf(self) -> "IVectorGeometryToolSystem":
         """The Sun's International Celestial Reference Frame (ICRF)."""
-        return self._intf.get_property(VectorGeometryToolWellKnownSunSystems._metadata, VectorGeometryToolWellKnownSunSystems._get_ICRF_metadata)
+        return self._intf.get_property(VectorGeometryToolWellKnownSunSystems._metadata, VectorGeometryToolWellKnownSunSystems._get_icrf_metadata)
 
     _get_inertial_metadata = { "offset" : _get_inertial_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -27420,13 +27420,13 @@ class VectorGeometryToolWellKnownSunSystems(SupportsDeleteCallback):
         """The Sun's Inertial coordinate system (as defined in STK)."""
         return self._intf.get_property(VectorGeometryToolWellKnownSunSystems._metadata, VectorGeometryToolWellKnownSunSystems._get_inertial_metadata)
 
-    _get_J2000_metadata = { "offset" : _get_J2000_method_offset,
+    _get_j2000_metadata = { "offset" : _get_j2000_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def J2000(self) -> "IVectorGeometryToolSystem":
+    def j2000(self) -> "IVectorGeometryToolSystem":
         """The Sun's J2000 coordinate system."""
-        return self._intf.get_property(VectorGeometryToolWellKnownSunSystems._metadata, VectorGeometryToolWellKnownSunSystems._get_J2000_metadata)
+        return self._intf.get_property(VectorGeometryToolWellKnownSunSystems._metadata, VectorGeometryToolWellKnownSunSystems._get_j2000_metadata)
 
     _get_barycenter_metadata = { "offset" : _get_barycenter_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -27437,15 +27437,15 @@ class VectorGeometryToolWellKnownSunSystems(SupportsDeleteCallback):
         return self._intf.get_property(VectorGeometryToolWellKnownSunSystems._metadata, VectorGeometryToolWellKnownSunSystems._get_barycenter_metadata)
 
     _property_names[fixed] = "fixed"
-    _property_names[ICRF] = "ICRF"
+    _property_names[icrf] = "icrf"
     _property_names[inertial] = "inertial"
-    _property_names[J2000] = "J2000"
+    _property_names[j2000] = "j2000"
     _property_names[barycenter] = "barycenter"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolWellKnownSunSystems."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolWellKnownSunSystems)
+        initialize_from_source_object(self, source_object, VectorGeometryToolWellKnownSunSystems)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -27464,9 +27464,9 @@ class VectorGeometryToolWellKnownSunAxes(SupportsDeleteCallback):
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_fixed_method_offset = 1
-    _get_ICRF_method_offset = 2
+    _get_icrf_method_offset = 2
     _get_inertial_method_offset = 3
-    _get_J2000_method_offset = 4
+    _get_j2000_method_offset = 4
     _metadata = {
         "iid_data" : (4663702446183210292, 13434367744902099591),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -27483,13 +27483,13 @@ class VectorGeometryToolWellKnownSunAxes(SupportsDeleteCallback):
         """Sun's Fixed axes."""
         return self._intf.get_property(VectorGeometryToolWellKnownSunAxes._metadata, VectorGeometryToolWellKnownSunAxes._get_fixed_metadata)
 
-    _get_ICRF_metadata = { "offset" : _get_ICRF_method_offset,
+    _get_icrf_metadata = { "offset" : _get_icrf_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def ICRF(self) -> "IVectorGeometryToolAxes":
+    def icrf(self) -> "IVectorGeometryToolAxes":
         """Sun's ICRF."""
-        return self._intf.get_property(VectorGeometryToolWellKnownSunAxes._metadata, VectorGeometryToolWellKnownSunAxes._get_ICRF_metadata)
+        return self._intf.get_property(VectorGeometryToolWellKnownSunAxes._metadata, VectorGeometryToolWellKnownSunAxes._get_icrf_metadata)
 
     _get_inertial_metadata = { "offset" : _get_inertial_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -27499,23 +27499,23 @@ class VectorGeometryToolWellKnownSunAxes(SupportsDeleteCallback):
         """Sun's Inertial axes (as defined in STK)."""
         return self._intf.get_property(VectorGeometryToolWellKnownSunAxes._metadata, VectorGeometryToolWellKnownSunAxes._get_inertial_metadata)
 
-    _get_J2000_metadata = { "offset" : _get_J2000_method_offset,
+    _get_j2000_metadata = { "offset" : _get_j2000_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def J2000(self) -> "IVectorGeometryToolAxes":
+    def j2000(self) -> "IVectorGeometryToolAxes":
         """The Sun's J2000 axes."""
-        return self._intf.get_property(VectorGeometryToolWellKnownSunAxes._metadata, VectorGeometryToolWellKnownSunAxes._get_J2000_metadata)
+        return self._intf.get_property(VectorGeometryToolWellKnownSunAxes._metadata, VectorGeometryToolWellKnownSunAxes._get_j2000_metadata)
 
     _property_names[fixed] = "fixed"
-    _property_names[ICRF] = "ICRF"
+    _property_names[icrf] = "icrf"
     _property_names[inertial] = "inertial"
-    _property_names[J2000] = "J2000"
+    _property_names[j2000] = "j2000"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolWellKnownSunAxes."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolWellKnownSunAxes)
+        initialize_from_source_object(self, source_object, VectorGeometryToolWellKnownSunAxes)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -27562,10 +27562,10 @@ class VectorGeometryToolWellKnownSystems(SupportsDeleteCallback):
     _property_names[earth] = "earth"
     _property_names[sun] = "sun"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolWellKnownSystems."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolWellKnownSystems)
+        initialize_from_source_object(self, source_object, VectorGeometryToolWellKnownSystems)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -27612,10 +27612,10 @@ class VectorGeometryToolWellKnownAxes(SupportsDeleteCallback):
     _property_names[earth] = "earth"
     _property_names[sun] = "sun"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type VectorGeometryToolWellKnownAxes."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, VectorGeometryToolWellKnownAxes)
+        initialize_from_source_object(self, source_object, VectorGeometryToolWellKnownAxes)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -27692,11 +27692,11 @@ class AnalysisWorkbenchAngleFindResult(IAnalysisWorkbenchMethodCallResult, Suppo
     _property_names[vector_to] = "vector_to"
     _property_names[vector_about] = "vector_about"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchAngleFindResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchAngleFindResult)
-        IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AnalysisWorkbenchAngleFindResult)
+        IAnalysisWorkbenchMethodCallResult.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
@@ -27784,11 +27784,11 @@ class AnalysisWorkbenchAngleFindWithRateResult(IAnalysisWorkbenchMethodCallResul
     _property_names[vector_to] = "vector_to"
     _property_names[vector_about] = "vector_about"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchAngleFindWithRateResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchAngleFindWithRateResult)
-        IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AnalysisWorkbenchAngleFindWithRateResult)
+        IAnalysisWorkbenchMethodCallResult.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
@@ -27836,11 +27836,11 @@ class AnalysisWorkbenchAxesTransformResult(IAnalysisWorkbenchMethodCallResult, S
     _property_names[is_valid] = "is_valid"
     _property_names[vector] = "vector"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchAxesTransformResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchAxesTransformResult)
-        IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AnalysisWorkbenchAxesTransformResult)
+        IAnalysisWorkbenchMethodCallResult.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
@@ -27898,11 +27898,11 @@ class AnalysisWorkbenchAxesTransformWithRateResult(IAnalysisWorkbenchMethodCallR
     _property_names[vector] = "vector"
     _property_names[velocity] = "velocity"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchAxesTransformWithRateResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchAxesTransformWithRateResult)
-        IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AnalysisWorkbenchAxesTransformWithRateResult)
+        IAnalysisWorkbenchMethodCallResult.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
@@ -27950,11 +27950,11 @@ class AnalysisWorkbenchAxesFindInAxesResult(IAnalysisWorkbenchMethodCallResult, 
     _property_names[is_valid] = "is_valid"
     _property_names[orientation] = "orientation"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchAxesFindInAxesResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchAxesFindInAxesResult)
-        IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AnalysisWorkbenchAxesFindInAxesResult)
+        IAnalysisWorkbenchMethodCallResult.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
@@ -28012,11 +28012,11 @@ class AnalysisWorkbenchAxesFindInAxesWithRateResult(IAnalysisWorkbenchMethodCall
     _property_names[angular_velocity] = "angular_velocity"
     _property_names[orientation] = "orientation"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchAxesFindInAxesWithRateResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchAxesFindInAxesWithRateResult)
-        IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AnalysisWorkbenchAxesFindInAxesWithRateResult)
+        IAnalysisWorkbenchMethodCallResult.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
@@ -28074,11 +28074,11 @@ class AnalysisWorkbenchPlaneFindInAxesResult(IAnalysisWorkbenchMethodCallResult,
     _property_names[x_axis] = "x_axis"
     _property_names[y_axis] = "y_axis"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchPlaneFindInAxesResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchPlaneFindInAxesResult)
-        IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AnalysisWorkbenchPlaneFindInAxesResult)
+        IAnalysisWorkbenchMethodCallResult.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
@@ -28156,11 +28156,11 @@ class AnalysisWorkbenchPlaneFindInAxesWithRateResult(IAnalysisWorkbenchMethodCal
     _property_names[y_axis] = "y_axis"
     _property_names[y_axis_rate] = "y_axis_rate"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchPlaneFindInAxesWithRateResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchPlaneFindInAxesWithRateResult)
-        IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AnalysisWorkbenchPlaneFindInAxesWithRateResult)
+        IAnalysisWorkbenchMethodCallResult.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
@@ -28228,11 +28228,11 @@ class AnalysisWorkbenchPlaneFindInSystemResult(IAnalysisWorkbenchMethodCallResul
     _property_names[x_axis] = "x_axis"
     _property_names[y_axis] = "y_axis"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchPlaneFindInSystemResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchPlaneFindInSystemResult)
-        IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AnalysisWorkbenchPlaneFindInSystemResult)
+        IAnalysisWorkbenchMethodCallResult.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
@@ -28330,11 +28330,11 @@ class AnalysisWorkbenchPlaneFindInSystemWithRateResult(IAnalysisWorkbenchMethodC
     _property_names[y_axis] = "y_axis"
     _property_names[y_axis_rate] = "y_axis_rate"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchPlaneFindInSystemWithRateResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchPlaneFindInSystemWithRateResult)
-        IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AnalysisWorkbenchPlaneFindInSystemWithRateResult)
+        IAnalysisWorkbenchMethodCallResult.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
@@ -28382,11 +28382,11 @@ class AnalysisWorkbenchPointLocateInSystemResult(IAnalysisWorkbenchMethodCallRes
     _property_names[is_valid] = "is_valid"
     _property_names[position] = "position"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchPointLocateInSystemResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchPointLocateInSystemResult)
-        IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AnalysisWorkbenchPointLocateInSystemResult)
+        IAnalysisWorkbenchMethodCallResult.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
@@ -28444,11 +28444,11 @@ class AnalysisWorkbenchPointLocateInSystemWithRateResult(IAnalysisWorkbenchMetho
     _property_names[position] = "position"
     _property_names[velocity] = "velocity"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchPointLocateInSystemWithRateResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchPointLocateInSystemWithRateResult)
-        IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AnalysisWorkbenchPointLocateInSystemWithRateResult)
+        IAnalysisWorkbenchMethodCallResult.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
@@ -28496,11 +28496,11 @@ class AnalysisWorkbenchSystemTransformResult(IAnalysisWorkbenchMethodCallResult,
     _property_names[is_valid] = "is_valid"
     _property_names[vector] = "vector"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchSystemTransformResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchSystemTransformResult)
-        IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AnalysisWorkbenchSystemTransformResult)
+        IAnalysisWorkbenchMethodCallResult.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
@@ -28558,11 +28558,11 @@ class AnalysisWorkbenchSystemTransformWithRateResult(IAnalysisWorkbenchMethodCal
     _property_names[vector] = "vector"
     _property_names[velocity] = "velocity"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchSystemTransformWithRateResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchSystemTransformWithRateResult)
-        IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AnalysisWorkbenchSystemTransformWithRateResult)
+        IAnalysisWorkbenchMethodCallResult.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
@@ -28640,11 +28640,11 @@ class AnalysisWorkbenchSystemFindInSystemResult(IAnalysisWorkbenchMethodCallResu
     _property_names[rate] = "rate"
     _property_names[orientation] = "orientation"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchSystemFindInSystemResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchSystemFindInSystemResult)
-        IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AnalysisWorkbenchSystemFindInSystemResult)
+        IAnalysisWorkbenchMethodCallResult.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
@@ -28692,11 +28692,11 @@ class AnalysisWorkbenchVectorFindInAxesResult(IAnalysisWorkbenchMethodCallResult
     _property_names[is_valid] = "is_valid"
     _property_names[vector] = "vector"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchVectorFindInAxesResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchVectorFindInAxesResult)
-        IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AnalysisWorkbenchVectorFindInAxesResult)
+        IAnalysisWorkbenchMethodCallResult.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
@@ -28754,11 +28754,11 @@ class AnalysisWorkbenchVectorFindInAxesWithRateResult(IAnalysisWorkbenchMethodCa
     _property_names[vector] = "vector"
     _property_names[rate] = "rate"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchVectorFindInAxesWithRateResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchVectorFindInAxesWithRateResult)
-        IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AnalysisWorkbenchVectorFindInAxesWithRateResult)
+        IAnalysisWorkbenchMethodCallResult.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
@@ -28816,11 +28816,11 @@ class AnalysisWorkbenchAngleFindAngleWithRateResult(IAnalysisWorkbenchMethodCall
     _property_names[angle] = "angle"
     _property_names[angle_rate] = "angle_rate"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchAngleFindAngleWithRateResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchAngleFindAngleWithRateResult)
-        IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AnalysisWorkbenchAngleFindAngleWithRateResult)
+        IAnalysisWorkbenchMethodCallResult.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
@@ -28868,11 +28868,11 @@ class AnalysisWorkbenchAngleFindAngleResult(IAnalysisWorkbenchMethodCallResult, 
     _property_names[is_valid] = "is_valid"
     _property_names[angle] = "angle"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchAngleFindAngleResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchAngleFindAngleResult)
-        IAnalysisWorkbenchMethodCallResult.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AnalysisWorkbenchAngleFindAngleResult)
+        IAnalysisWorkbenchMethodCallResult.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchMethodCallResult._private_init(self, intf)
@@ -28920,10 +28920,10 @@ class TimeToolInterval(SupportsDeleteCallback):
     _property_names[start] = "start"
     _property_names[stop] = "stop"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolInterval."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolInterval)
+        initialize_from_source_object(self, source_object, TimeToolInterval)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -28943,7 +28943,7 @@ class TimeToolIntervalCollection(SupportsDeleteCallback):
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _get_count_method_offset = 1
     _item_method_offset = 2
-    _get__NewEnum_method_offset = 3
+    _get__new_enum_method_offset = 3
     _metadata = {
         "iid_data" : (4991188993072027394, 12329114457855179136),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
@@ -28953,7 +28953,7 @@ class TimeToolIntervalCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, TimeToolIntervalCollection)
     def __iter__(self):
         """Create an iterator for the TimeToolIntervalCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "TimeToolInterval":
@@ -28980,24 +28980,24 @@ class TimeToolIntervalCollection(SupportsDeleteCallback):
         """Return an interval at a specified index."""
         return self._intf.invoke(TimeToolIntervalCollection._metadata, TimeToolIntervalCollection._item_metadata, index, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return a COM enumerator."""
-        return self._intf.get_property(TimeToolIntervalCollection._metadata, TimeToolIntervalCollection._get__NewEnum_metadata)
+        return self._intf.get_property(TimeToolIntervalCollection._metadata, TimeToolIntervalCollection._get__new_enum_metadata)
 
     __getitem__ = item
 
 
     _property_names[count] = "count"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolIntervalCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolIntervalCollection)
+        initialize_from_source_object(self, source_object, TimeToolIntervalCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -29034,10 +29034,10 @@ class AnalysisWorkbenchCentralBody(SupportsDeleteCallback):
 
     _property_names[name] = "name"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchCentralBody."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchCentralBody)
+        initialize_from_source_object(self, source_object, AnalysisWorkbenchCentralBody)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -29076,9 +29076,9 @@ class AnalysisWorkbenchCentralBodyReference(IAnalysisWorkbenchComponentReference
     _set_central_body_metadata = { "offset" : _set_central_body_method_offset,
             "arg_types" : (agcom.PVOID,),
             "marshallers" : (agmarshall.InterfaceInArg("AnalysisWorkbenchCentralBody"),) }
-    def set_central_body(self, centralBody:"AnalysisWorkbenchCentralBody") -> None:
+    def set_central_body(self, central_body:"AnalysisWorkbenchCentralBody") -> None:
         """Set a new central body."""
-        return self._intf.invoke(AnalysisWorkbenchCentralBodyReference._metadata, AnalysisWorkbenchCentralBodyReference._set_central_body_metadata, centralBody)
+        return self._intf.invoke(AnalysisWorkbenchCentralBodyReference._metadata, AnalysisWorkbenchCentralBodyReference._set_central_body_metadata, central_body)
 
     _get_central_body_metadata = { "offset" : _get_central_body_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -29088,11 +29088,11 @@ class AnalysisWorkbenchCentralBodyReference(IAnalysisWorkbenchComponentReference
         return self._intf.invoke(AnalysisWorkbenchCentralBodyReference._metadata, AnalysisWorkbenchCentralBodyReference._get_central_body_metadata, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchCentralBodyReference."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchCentralBodyReference)
-        IAnalysisWorkbenchComponentReference.__init__(self, sourceObject)
+        initialize_from_source_object(self, source_object, AnalysisWorkbenchCentralBodyReference)
+        IAnalysisWorkbenchComponentReference.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
         IAnalysisWorkbenchComponentReference._private_init(self, intf)
@@ -29113,7 +29113,7 @@ class AnalysisWorkbenchCentralBodyCollection(SupportsDeleteCallback):
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _get_count_method_offset = 1
     _item_method_offset = 2
-    _get__NewEnum_method_offset = 3
+    _get__new_enum_method_offset = 3
     _add_method_offset = 4
     _remove_method_offset = 5
     _metadata = {
@@ -29125,7 +29125,7 @@ class AnalysisWorkbenchCentralBodyCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, AnalysisWorkbenchCentralBodyCollection)
     def __iter__(self):
         """Create an iterator for the AnalysisWorkbenchCentralBodyCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> str:
@@ -29152,38 +29152,38 @@ class AnalysisWorkbenchCentralBodyCollection(SupportsDeleteCallback):
         """Return a central body name at a specified index."""
         return self._intf.invoke(AnalysisWorkbenchCentralBodyCollection._metadata, AnalysisWorkbenchCentralBodyCollection._item_metadata, index, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return a COM enumerator."""
-        return self._intf.get_property(AnalysisWorkbenchCentralBodyCollection._metadata, AnalysisWorkbenchCentralBodyCollection._get__NewEnum_metadata)
+        return self._intf.get_property(AnalysisWorkbenchCentralBodyCollection._metadata, AnalysisWorkbenchCentralBodyCollection._get__new_enum_metadata)
 
     _add_metadata = { "offset" : _add_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.VariantBoolArg,) }
-    def add(self, centralBodyName:str) -> bool:
+    def add(self, central_body_name:str) -> bool:
         """Add a central body to the collection of central bodies. True indicates success."""
-        return self._intf.invoke(AnalysisWorkbenchCentralBodyCollection._metadata, AnalysisWorkbenchCentralBodyCollection._add_metadata, centralBodyName, OutArg())
+        return self._intf.invoke(AnalysisWorkbenchCentralBodyCollection._metadata, AnalysisWorkbenchCentralBodyCollection._add_metadata, central_body_name, OutArg())
 
     _remove_metadata = { "offset" : _remove_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    def remove(self, centralBodyName:str) -> None:
+    def remove(self, central_body_name:str) -> None:
         """Remove a central body with the specified name from the collection of the central bodies."""
-        return self._intf.invoke(AnalysisWorkbenchCentralBodyCollection._metadata, AnalysisWorkbenchCentralBodyCollection._remove_metadata, centralBodyName)
+        return self._intf.invoke(AnalysisWorkbenchCentralBodyCollection._metadata, AnalysisWorkbenchCentralBodyCollection._remove_metadata, central_body_name)
 
     __getitem__ = item
 
 
     _property_names[count] = "count"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchCentralBodyCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchCentralBodyCollection)
+        initialize_from_source_object(self, source_object, AnalysisWorkbenchCentralBodyCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -29204,7 +29204,7 @@ class AnalysisWorkbenchComponentCollection(SupportsDeleteCallback):
     _contains_method_offset = 1
     _get_count_method_offset = 2
     _item_method_offset = 3
-    _get__NewEnum_method_offset = 4
+    _get__new_enum_method_offset = 4
     _get_item_by_index_method_offset = 5
     _get_item_by_name_method_offset = 6
     _metadata = {
@@ -29216,7 +29216,7 @@ class AnalysisWorkbenchComponentCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, AnalysisWorkbenchComponentCollection)
     def __iter__(self):
         """Create an iterator for the AnalysisWorkbenchComponentCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "IAnalysisWorkbenchComponent":
@@ -29246,17 +29246,17 @@ class AnalysisWorkbenchComponentCollection(SupportsDeleteCallback):
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.Variant, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
-    def item(self, indexOrName:typing.Any) -> "IAnalysisWorkbenchComponent":
+    def item(self, index_or_name:typing.Any) -> "IAnalysisWorkbenchComponent":
         """Retrieve an element of the collection using the name of the element or a position in the collection."""
-        return self._intf.invoke(AnalysisWorkbenchComponentCollection._metadata, AnalysisWorkbenchComponentCollection._item_metadata, indexOrName, OutArg())
+        return self._intf.invoke(AnalysisWorkbenchComponentCollection._metadata, AnalysisWorkbenchComponentCollection._item_metadata, index_or_name, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return a COM enumerator."""
-        return self._intf.get_property(AnalysisWorkbenchComponentCollection._metadata, AnalysisWorkbenchComponentCollection._get__NewEnum_metadata)
+        return self._intf.get_property(AnalysisWorkbenchComponentCollection._metadata, AnalysisWorkbenchComponentCollection._get__new_enum_metadata)
 
     _get_item_by_index_metadata = { "offset" : _get_item_by_index_method_offset,
             "arg_types" : (agcom.INT, POINTER(agcom.PVOID),),
@@ -29276,12 +29276,12 @@ class AnalysisWorkbenchComponentCollection(SupportsDeleteCallback):
 
 
     _property_names[count] = "count"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type AnalysisWorkbenchComponentCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, AnalysisWorkbenchComponentCollection)
+        initialize_from_source_object(self, source_object, AnalysisWorkbenchComponentCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -29328,10 +29328,10 @@ class TimeToolPointSamplingResult(SupportsDeleteCallback):
     _property_names[is_valid] = "is_valid"
     _property_names[intervals] = "intervals"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolPointSamplingResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolPointSamplingResult)
+        initialize_from_source_object(self, source_object, TimeToolPointSamplingResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -29408,10 +29408,10 @@ class TimeToolPointSamplingInterval(SupportsDeleteCallback):
     _property_names[start] = "start"
     _property_names[stop] = "stop"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolPointSamplingInterval."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolPointSamplingInterval)
+        initialize_from_source_object(self, source_object, TimeToolPointSamplingInterval)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -29431,7 +29431,7 @@ class TimeToolPointSamplingIntervalCollection(SupportsDeleteCallback):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_count_method_offset = 1
     _item_method_offset = 2
-    _get__NewEnum_method_offset = 3
+    _get__new_enum_method_offset = 3
     _metadata = {
         "iid_data" : (5530358145792459749, 592623579709177530),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -29441,7 +29441,7 @@ class TimeToolPointSamplingIntervalCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, TimeToolPointSamplingIntervalCollection)
     def __iter__(self):
         """Create an iterator for the TimeToolPointSamplingIntervalCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "TimeToolPointSamplingInterval":
@@ -29468,24 +29468,24 @@ class TimeToolPointSamplingIntervalCollection(SupportsDeleteCallback):
         """Access an element at the specified position."""
         return self._intf.invoke(TimeToolPointSamplingIntervalCollection._metadata, TimeToolPointSamplingIntervalCollection._item_metadata, index, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return a COM enumerator."""
-        return self._intf.get_property(TimeToolPointSamplingIntervalCollection._metadata, TimeToolPointSamplingIntervalCollection._get__NewEnum_metadata)
+        return self._intf.get_property(TimeToolPointSamplingIntervalCollection._metadata, TimeToolPointSamplingIntervalCollection._get__new_enum_metadata)
 
     __getitem__ = item
 
 
     _property_names[count] = "count"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolPointSamplingIntervalCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolPointSamplingIntervalCollection)
+        initialize_from_source_object(self, source_object, TimeToolPointSamplingIntervalCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -29532,10 +29532,10 @@ class TimeToolAxesSamplingResult(SupportsDeleteCallback):
     _property_names[is_valid] = "is_valid"
     _property_names[intervals] = "intervals"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolAxesSamplingResult."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolAxesSamplingResult)
+        initialize_from_source_object(self, source_object, TimeToolAxesSamplingResult)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -29612,10 +29612,10 @@ class TimeToolAxesSamplingInterval(SupportsDeleteCallback):
     _property_names[start] = "start"
     _property_names[stop] = "stop"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolAxesSamplingInterval."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolAxesSamplingInterval)
+        initialize_from_source_object(self, source_object, TimeToolAxesSamplingInterval)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -29635,7 +29635,7 @@ class TimeToolAxesSamplingIntervalCollection(SupportsDeleteCallback):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_count_method_offset = 1
     _item_method_offset = 2
-    _get__NewEnum_method_offset = 3
+    _get__new_enum_method_offset = 3
     _metadata = {
         "iid_data" : (5710623310116775291, 12435953586864494518),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -29645,7 +29645,7 @@ class TimeToolAxesSamplingIntervalCollection(SupportsDeleteCallback):
         return get_interface_property(attrname, TimeToolAxesSamplingIntervalCollection)
     def __iter__(self):
         """Create an iterator for the TimeToolAxesSamplingIntervalCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> "TimeToolAxesSamplingInterval":
@@ -29672,24 +29672,24 @@ class TimeToolAxesSamplingIntervalCollection(SupportsDeleteCallback):
         """Access an element at the specified position."""
         return self._intf.invoke(TimeToolAxesSamplingIntervalCollection._metadata, TimeToolAxesSamplingIntervalCollection._item_metadata, index, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return a COM enumerator."""
-        return self._intf.get_property(TimeToolAxesSamplingIntervalCollection._metadata, TimeToolAxesSamplingIntervalCollection._get__NewEnum_metadata)
+        return self._intf.get_property(TimeToolAxesSamplingIntervalCollection._metadata, TimeToolAxesSamplingIntervalCollection._get__new_enum_metadata)
 
     __getitem__ = item
 
 
     _property_names[count] = "count"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type TimeToolAxesSamplingIntervalCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, TimeToolAxesSamplingIntervalCollection)
+        initialize_from_source_object(self, source_object, TimeToolAxesSamplingIntervalCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):

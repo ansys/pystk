@@ -119,28 +119,28 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: set_ignore_error(self, ignoreError: bool) -> None
+.. py:method:: set_ignore_error(self, ignore_error: bool) -> None
     :canonical: ansys.stk.core.stkx.STKXSSLCertificateErrorEventArgs.set_ignore_error
 
     Specify True to ignore the certificate error and continue with establishing secure HTTP connection to the remote server.
 
     :Parameters:
 
-    **ignoreError** : :obj:`~bool`
+    **ignore_error** : :obj:`~bool`
 
     :Returns:
 
         :obj:`~None`
 
 
-.. py:method:: set_ignore_error_permanently(self, ignoreErrorPermanently: bool) -> None
+.. py:method:: set_ignore_error_permanently(self, ignore_error_permanently: bool) -> None
     :canonical: ansys.stk.core.stkx.STKXSSLCertificateErrorEventArgs.set_ignore_error_permanently
 
     Specify True to ignore the certificate error and add the certificate to the list of trusted certificates.
 
     :Parameters:
 
-    **ignoreErrorPermanently** : :obj:`~bool`
+    **ignore_error_permanently** : :obj:`~bool`
 
     :Returns:
 

@@ -37,16 +37,16 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: create(self, planeName: str, description: str, planeType: PLANE_TYPE) -> IVectorGeometryToolPlane
+.. py:method:: create(self, plane_name: str, description: str, plane_type: PLANE_TYPE) -> IVectorGeometryToolPlane
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPlaneFactory.create
 
     Create a VGT plane using the specified name, description and type.
 
     :Parameters:
 
-    **planeName** : :obj:`~str`
+    **plane_name** : :obj:`~str`
     **description** : :obj:`~str`
-    **planeType** : :obj:`~PLANE_TYPE`
+    **plane_type** : :obj:`~PLANE_TYPE`
 
     :Returns:
 

@@ -42,7 +42,7 @@ class UnitsSnippets(CodeSnippetsTestBase):
     def GetCurrentUnitPreference(self, root: "StkObjectRoot"):
         # DistanceUnit
         dimensionName: str = "Distance"
-        unitAbbreviation: str = root.unit_preferences.get_current_unit_abbrv(dimensionName)
+        unitAbbreviation: str = root.units_preferences.get_current_unit_abbrv(dimensionName)
 
     # endregion
 
@@ -51,11 +51,11 @@ class UnitsSnippets(CodeSnippetsTestBase):
         self.SetCurrentUnitPreference(CodeSnippetsTestBase.m_Root)
 
         # reverse any changes we made to Unit Preferences
-        CodeSnippetsTestBase.m_Root.unit_preferences.reset_units()
+        CodeSnippetsTestBase.m_Root.units_preferences.reset_units()
 
     def SetCurrentUnitPreference(self, root: "StkObjectRoot"):
         # DistanceUnit
-        root.unit_preferences.set_current_unit("Distance", "m")
+        root.units_preferences.set_current_unit("Distance", "m")
 
     # endregion
 
@@ -65,7 +65,7 @@ class UnitsSnippets(CodeSnippetsTestBase):
 
     def ResetCurrentUnitPreferences(self, root: "StkObjectRoot"):
         # Reset Units
-        root.unit_preferences.reset_units()
+        root.units_preferences.reset_units()
 
     # endregion
 

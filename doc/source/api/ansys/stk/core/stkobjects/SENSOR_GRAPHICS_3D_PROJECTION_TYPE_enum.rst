@@ -19,13 +19,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~PROJECTION_ALL_INTERSECTIONS`
+            * - :py:attr:`~ALL_INTERSECTIONS`
               - All intersections: the entire sensor projection is displayed.
 
-            * - :py:attr:`~PROJECTION_EARTH_INTERSECTIONS`
+            * - :py:attr:`~CENTRAL_BODY_INTERSECTIONS`
               - Earth intersections: 0nly the portion of the sensor projection that intersects the Earth is displayed.
 
-            * - :py:attr:`~PROJECTION_NONE`
+            * - :py:attr:`~NONE`
               - None: no projection is displayed for sensors attached to facilities. For other objects, the part of the sensor projection that does not intersect with the central body is displayed.
 
 

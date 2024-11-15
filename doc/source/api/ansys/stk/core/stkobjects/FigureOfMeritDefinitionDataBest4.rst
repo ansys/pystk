@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionDataBest4.is_best4_metric_supported`
+            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionDataBest4.is_best_4_metric_supported`
               - Is the type of Best 4 metric supported?
 
     .. tab-item:: Properties
@@ -29,9 +29,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionDataBest4.best4_metric`
+            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionDataBest4.best_4_metric`
               - Gets or sets the minimization metric for the best 4 computation.
-            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionDataBest4.best4_metric_supported_types`
+            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionDataBest4.best_4_metric_supported_types`
               - Best 4 supported types.
 
 
@@ -47,14 +47,14 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: best4_metric
-    :canonical: ansys.stk.core.stkobjects.FigureOfMeritDefinitionDataBest4.best4_metric
+.. py:property:: best_4_metric
+    :canonical: ansys.stk.core.stkobjects.FigureOfMeritDefinitionDataBest4.best_4_metric
     :type: FIGURE_OF_MERIT_METHOD
 
     Gets or sets the minimization metric for the best 4 computation.
 
-.. py:property:: best4_metric_supported_types
-    :canonical: ansys.stk.core.stkobjects.FigureOfMeritDefinitionDataBest4.best4_metric_supported_types
+.. py:property:: best_4_metric_supported_types
+    :canonical: ansys.stk.core.stkobjects.FigureOfMeritDefinitionDataBest4.best_4_metric_supported_types
     :type: list
 
     Best 4 supported types.
@@ -65,14 +65,14 @@ Method detail
 
 
 
-.. py:method:: is_best4_metric_supported(self, best4Metric: FIGURE_OF_MERIT_METHOD) -> bool
-    :canonical: ansys.stk.core.stkobjects.FigureOfMeritDefinitionDataBest4.is_best4_metric_supported
+.. py:method:: is_best_4_metric_supported(self, best_4_metric: FIGURE_OF_MERIT_METHOD) -> bool
+    :canonical: ansys.stk.core.stkobjects.FigureOfMeritDefinitionDataBest4.is_best_4_metric_supported
 
     Is the type of Best 4 metric supported?
 
     :Parameters:
 
-    **best4Metric** : :obj:`~FIGURE_OF_MERIT_METHOD`
+    **best_4_metric** : :obj:`~FIGURE_OF_MERIT_METHOD`
 
     :Returns:
 

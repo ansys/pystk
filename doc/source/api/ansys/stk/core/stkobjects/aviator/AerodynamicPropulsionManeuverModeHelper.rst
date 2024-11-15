@@ -145,14 +145,14 @@ Method detail
 
 
 
-.. py:method:: set_reference_airspeed(self, airspeedType: AIRSPEED_TYPE, airspeed: float) -> None
+.. py:method:: set_reference_airspeed(self, airspeed_type: AIRSPEED_TYPE, airspeed: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.AerodynamicPropulsionManeuverModeHelper.set_reference_airspeed
 
     Set the reference airspeed and reference airspeed type.
 
     :Parameters:
 
-    **airspeedType** : :obj:`~AIRSPEED_TYPE`
+    **airspeed_type** : :obj:`~AIRSPEED_TYPE`
     **airspeed** : :obj:`~float`
 
     :Returns:

@@ -19,13 +19,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~LAUNCH_UNKNOWN`
+            * - :py:attr:`~UNKNOWN`
               - Unknown.
 
-            * - :py:attr:`~LAUNCH_LLA`
+            * - :py:attr:`~DETIC`
               - LLA (geodetic) coordinates.
 
-            * - :py:attr:`~LAUNCH_LLR`
+            * - :py:attr:`~CENTRIC`
               - LLR (geocentric) coordinates.
 
 

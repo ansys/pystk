@@ -45,7 +45,7 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: initialize_with_format(self, width: int, height: int, rasterFormat: RASTER_FORMAT) -> RasterAttributes
+.. py:method:: initialize_with_format(self, width: int, height: int, raster_format: RASTER_FORMAT) -> RasterAttributes
     :canonical: ansys.stk.core.graphics.RasterAttributesFactory.initialize_with_format
 
     Initialize a new instance with the width and height of the raster in pixels, and the given raster format.
@@ -54,13 +54,13 @@ Method detail
 
     **width** : :obj:`~int`
     **height** : :obj:`~int`
-    **rasterFormat** : :obj:`~RASTER_FORMAT`
+    **raster_format** : :obj:`~RASTER_FORMAT`
 
     :Returns:
 
         :obj:`~RasterAttributes`
 
-.. py:method:: initialize_with_format_and_type(self, width: int, height: int, rasterFormat: RASTER_FORMAT, rasterType: RASTER_TYPE) -> RasterAttributes
+.. py:method:: initialize_with_format_and_type(self, width: int, height: int, raster_format: RASTER_FORMAT, raster_type: RASTER_TYPE) -> RasterAttributes
     :canonical: ansys.stk.core.graphics.RasterAttributesFactory.initialize_with_format_and_type
 
     Initialize a new instance with the width and height of the raster in pixels, and the given raster format and raster type.
@@ -69,14 +69,14 @@ Method detail
 
     **width** : :obj:`~int`
     **height** : :obj:`~int`
-    **rasterFormat** : :obj:`~RASTER_FORMAT`
-    **rasterType** : :obj:`~RASTER_TYPE`
+    **raster_format** : :obj:`~RASTER_FORMAT`
+    **raster_type** : :obj:`~RASTER_TYPE`
 
     :Returns:
 
         :obj:`~RasterAttributes`
 
-.. py:method:: initialize_with_format_type_and_orientation(self, width: int, height: int, rasterFormat: RASTER_FORMAT, rasterType: RASTER_TYPE, rasterOrientation: RASTER_ORIENTATION) -> RasterAttributes
+.. py:method:: initialize_with_format_type_and_orientation(self, width: int, height: int, raster_format: RASTER_FORMAT, raster_type: RASTER_TYPE, raster_orientation: RASTER_ORIENTATION) -> RasterAttributes
     :canonical: ansys.stk.core.graphics.RasterAttributesFactory.initialize_with_format_type_and_orientation
 
     Initialize a new instance with the width and height of the raster in pixels, and the given raster format, raster type, and raster orientation.
@@ -85,15 +85,15 @@ Method detail
 
     **width** : :obj:`~int`
     **height** : :obj:`~int`
-    **rasterFormat** : :obj:`~RASTER_FORMAT`
-    **rasterType** : :obj:`~RASTER_TYPE`
-    **rasterOrientation** : :obj:`~RASTER_ORIENTATION`
+    **raster_format** : :obj:`~RASTER_FORMAT`
+    **raster_type** : :obj:`~RASTER_TYPE`
+    **raster_orientation** : :obj:`~RASTER_ORIENTATION`
 
     :Returns:
 
         :obj:`~RasterAttributes`
 
-.. py:method:: initialize_with_format_type_orientation_and_alignment(self, width: int, height: int, rasterFormat: RASTER_FORMAT, rasterType: RASTER_TYPE, rasterOrientation: RASTER_ORIENTATION, rowAlignment: int) -> RasterAttributes
+.. py:method:: initialize_with_format_type_orientation_and_alignment(self, width: int, height: int, raster_format: RASTER_FORMAT, raster_type: RASTER_TYPE, raster_orientation: RASTER_ORIENTATION, row_alignment: int) -> RasterAttributes
     :canonical: ansys.stk.core.graphics.RasterAttributesFactory.initialize_with_format_type_orientation_and_alignment
 
     Initialize a new instance with the width and height of the raster in pixels, and the given raster format, raster type, raster orientation, and row alignment.
@@ -102,16 +102,16 @@ Method detail
 
     **width** : :obj:`~int`
     **height** : :obj:`~int`
-    **rasterFormat** : :obj:`~RASTER_FORMAT`
-    **rasterType** : :obj:`~RASTER_TYPE`
-    **rasterOrientation** : :obj:`~RASTER_ORIENTATION`
-    **rowAlignment** : :obj:`~int`
+    **raster_format** : :obj:`~RASTER_FORMAT`
+    **raster_type** : :obj:`~RASTER_TYPE`
+    **raster_orientation** : :obj:`~RASTER_ORIENTATION`
+    **row_alignment** : :obj:`~int`
 
     :Returns:
 
         :obj:`~RasterAttributes`
 
-.. py:method:: initialize_with_format_type_orientation_alignment_and_ratio(self, width: int, height: int, rasterFormat: RASTER_FORMAT, rasterType: RASTER_TYPE, rasterOrientation: RASTER_ORIENTATION, rowAlignment: int, pixelAspectRatio: float) -> RasterAttributes
+.. py:method:: initialize_with_format_type_orientation_alignment_and_ratio(self, width: int, height: int, raster_format: RASTER_FORMAT, raster_type: RASTER_TYPE, raster_orientation: RASTER_ORIENTATION, row_alignment: int, pixel_aspect_ratio: float) -> RasterAttributes
     :canonical: ansys.stk.core.graphics.RasterAttributesFactory.initialize_with_format_type_orientation_alignment_and_ratio
 
     Initialize a new instance with the width and height of the raster in pixels, and the given raster format, raster type, raster orientation, row alignment, and pixel aspect ratio.
@@ -120,11 +120,11 @@ Method detail
 
     **width** : :obj:`~int`
     **height** : :obj:`~int`
-    **rasterFormat** : :obj:`~RASTER_FORMAT`
-    **rasterType** : :obj:`~RASTER_TYPE`
-    **rasterOrientation** : :obj:`~RASTER_ORIENTATION`
-    **rowAlignment** : :obj:`~int`
-    **pixelAspectRatio** : :obj:`~float`
+    **raster_format** : :obj:`~RASTER_FORMAT`
+    **raster_type** : :obj:`~RASTER_TYPE`
+    **raster_orientation** : :obj:`~RASTER_ORIENTATION`
+    **row_alignment** : :obj:`~int`
+    **pixel_aspect_ratio** : :obj:`~float`
 
     :Returns:
 

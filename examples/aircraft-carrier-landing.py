@@ -22,7 +22,7 @@
 from ansys.stk.core.stkengine import STKEngine
 
 
-stk = STKEngine.start_application(noGraphics=False)
+stk = STKEngine.start_application(no_graphics=False)
 print(f"Using {stk.version}")
 # -
 
@@ -102,10 +102,10 @@ carrier = root.current_scenario.children.new(STK_OBJECT_TYPE.SHIP, "USSAbrahamLi
 # The carrier is modeled with a Great Arc propagator, which propagates the ship's route based on waypoints. Assign a Great Arc propagator to the ship:
 
 # +
-from ansys.stk.core.stkobjects import VEHICLE_PROPAGATOR_TYPE
+from ansys.stk.core.stkobjects import PROPAGATOR_TYPE
 
 
-carrier.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
+carrier.set_route_type(PROPAGATOR_TYPE.GREAT_ARC)
 # -
 
 # Configure the propagator to use terrain along the ship's route as the altitude reference for its waypoints:
@@ -114,9 +114,7 @@ carrier.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
 from ansys.stk.core.stkobjects import VEHICLE_ALTITUDE_REFERENCE
 
 
-carrier.route.set_altitude_reference_type(
-    VEHICLE_ALTITUDE_REFERENCE.WAYPOINT_ALTITUDE_REFERENCE_TERRAIN
-)
+carrier.route.set_altitude_reference_type(VEHICLE_ALTITUDE_REFERENCE.TERRAIN)
 # -
 
 # Next, define the distance between sampling points along the ship's route. This option is used when waypoint altitudes are referenced to terrain. Set the distance to $1$ km:
@@ -162,7 +160,7 @@ lead_aircraft = root.current_scenario.children.new(
 
 # Next, set the aircraft's propagator to the Aviator propagator:
 
-lead_aircraft.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_AVIATOR)
+lead_aircraft.set_route_type(PROPAGATOR_TYPE.AVIATOR)
 
 # Get the propagator object:
 
@@ -913,7 +911,7 @@ wing_aircraft = scenario.children.new(STK_OBJECT_TYPE.AIRCRAFT, "WingAircraft")
 
 # Assign an Aviator propagator to the aircraft:
 
-wing_aircraft.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_AVIATOR)
+wing_aircraft.set_route_type(PROPAGATOR_TYPE.AVIATOR)
 wing_propagator = wing_aircraft.route.aviator_propagator
 
 # ### Configure the aircraft's mission
@@ -1307,7 +1305,7 @@ map_plotter.show()
 
 lead_flight_profile_df = (
     lead_aircraft.data_providers.item("Flight Profile By Time")
-    .exec(scenario.start_time, scenario.stop_time, 60)
+    .execute(scenario.start_time, scenario.stop_time, 60)
     .data_sets.to_pandas_dataframe()
 )
 
@@ -1323,7 +1321,7 @@ print(
 
 wing_flight_profile_df = (
     wing_aircraft.data_providers.item("Flight Profile By Time")
-    .exec(scenario.start_time, scenario.stop_time, 60)
+    .execute(scenario.start_time, scenario.stop_time, 60)
     .data_sets.to_pandas_dataframe()
 )
 

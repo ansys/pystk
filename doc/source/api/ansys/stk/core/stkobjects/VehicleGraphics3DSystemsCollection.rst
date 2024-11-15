@@ -39,7 +39,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.count`
               - Returns the number of elements in a collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection._new_enum`
               - Returns an enumerator that can iterate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.supported_systems`
               - Returns a list of element types that can be added to the collection.
@@ -67,8 +67,8 @@ Property detail
 
     Returns the number of elements in a collection.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection._new_enum
     :type: EnumeratorProxy
 
     Returns an enumerator that can iterate through the collection.
@@ -132,28 +132,28 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, systemName: str) -> VehicleGraphics3DSystemsElement
+.. py:method:: add(self, system_name: str) -> VehicleGraphics3DSystemsElement
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.add
 
     Add a new element to the collection.
 
     :Parameters:
 
-    **systemName** : :obj:`~str`
+    **system_name** : :obj:`~str`
 
     :Returns:
 
         :obj:`~VehicleGraphics3DSystemsElement`
 
 
-.. py:method:: contains(self, systemName: str) -> bool
+.. py:method:: contains(self, system_name: str) -> bool
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.contains
 
     Check whether the given frame is already in the list.
 
     :Parameters:
 
-    **systemName** : :obj:`~str`
+    **system_name** : :obj:`~str`
 
     :Returns:
 
@@ -161,14 +161,14 @@ Method detail
 
 
 
-.. py:method:: remove(self, systemName: str) -> None
+.. py:method:: remove(self, system_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.remove
 
     Remove a system by name.
 
     :Parameters:
 
-    **systemName** : :obj:`~str`
+    **system_name** : :obj:`~str`
 
     :Returns:
 

@@ -19,7 +19,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~STRAND_COMPARE_TYPE_UNKNOWN`
+            * - :py:attr:`~UNKNOWN`
               - Unsupported Chain optimal strand comparison type used to compare strands.
 
             * - :py:attr:`~STRAND_COMPARE_TYPE_MIN`

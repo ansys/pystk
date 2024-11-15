@@ -19,13 +19,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~IMPACT_UNKNOWN`
+            * - :py:attr:`~UNKNOWN`
               - Unknown.
 
-            * - :py:attr:`~IMPACT_LLA`
+            * - :py:attr:`~IMPACT_LOCATION_DETIC`
               - LLA (geodetic) impact location.
 
-            * - :py:attr:`~IMPACT_LLR`
+            * - :py:attr:`~IMPACT_LOCATION_CENTRIC`
               - LLR (geocentric) impact location.
 
 

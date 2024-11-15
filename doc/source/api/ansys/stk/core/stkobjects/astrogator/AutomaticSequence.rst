@@ -69,14 +69,14 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: make_copy(self, uniqueName: str) -> AutomaticSequence
+.. py:method:: make_copy(self, unique_name: str) -> AutomaticSequence
     :canonical: ansys.stk.core.stkobjects.astrogator.AutomaticSequence.make_copy
 
     Make a copy of the sequence.
 
     :Parameters:
 
-    **uniqueName** : :obj:`~str`
+    **unique_name** : :obj:`~str`
 
     :Returns:
 

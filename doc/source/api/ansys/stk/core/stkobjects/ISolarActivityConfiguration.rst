@@ -35,7 +35,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.ISolarActivityConfiguration.type
-    :type: VOACAP_SOLAR_ACTIVITY_CONFIGURATION_TYPE
+    :type: GRAPHICS_3D_ACAP_SOLAR_ACTIVITY_CONFIGURATION_TYPE
 
     Gets the solar activity configuration enumeration.
 

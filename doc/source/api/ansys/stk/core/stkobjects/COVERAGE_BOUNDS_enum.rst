@@ -19,25 +19,25 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~BOUNDS_CUSTOM_REGIONS`
+            * - :py:attr:`~CUSTOM_REGIONS`
               - Create a grid within regions specified by a combination of user-selected area targets, region list files (.rl) and/or ArcView shapefiles (.shp).
 
-            * - :py:attr:`~BOUNDS_GLOBAL`
+            * - :py:attr:`~GLOBAL`
               - Create a grid that covers the entire globe.
 
-            * - :py:attr:`~BOUNDS_LAT`
+            * - :py:attr:`~LATITUDE`
               - Create a grid between the user-specified Minimum and Maximum Latitude boundaries.
 
-            * - :py:attr:`~BOUNDS_LAT_LINE`
+            * - :py:attr:`~LATITUDE_LINE`
               - Create a set of points along a single latitude line.
 
-            * - :py:attr:`~BOUNDS_LON_LINE`
+            * - :py:attr:`~LONGITUDE_LINE`
               - Create a set of points along a single meridian.
 
-            * - :py:attr:`~BOUNDS_CUSTOM_BOUNDARY`
+            * - :py:attr:`~CUSTOM_BOUNDARY`
               - Custom boundary coverage.
 
-            * - :py:attr:`~BOUNDS_LAT_LON_REGION`
+            * - :py:attr:`~LATITUDE_LONGITUDE_REGION`
               - Create a lat-lon region between the user-specified Minimum and Maximum Latitude/Longitude boundaries.
 
 

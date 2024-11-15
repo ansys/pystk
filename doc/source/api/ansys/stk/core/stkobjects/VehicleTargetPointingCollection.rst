@@ -41,7 +41,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleTargetPointingCollection.count`
               - Returns the number of elements in a collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleTargetPointingCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleTargetPointingCollection._new_enum`
               - Returns an enumerator that can iterate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleTargetPointingCollection.available_targets`
               - Returns an array of available targets.
@@ -65,8 +65,8 @@ Property detail
 
     Returns the number of elements in a collection.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.VehicleTargetPointingCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.VehicleTargetPointingCollection._new_enum
     :type: EnumeratorProxy
 
     Returns an enumerator that can iterate through the collection.
@@ -118,14 +118,14 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, shortPath: str) -> VehicleTargetPointingElement
+.. py:method:: add(self, short_path: str) -> VehicleTargetPointingElement
     :canonical: ansys.stk.core.stkobjects.VehicleTargetPointingCollection.add
 
     Add a new element to the collection.
 
     :Parameters:
 
-    **shortPath** : :obj:`~str`
+    **short_path** : :obj:`~str`
 
     :Returns:
 

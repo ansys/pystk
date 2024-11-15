@@ -93,15 +93,15 @@ Method detail
 
 
 
-.. py:method:: set_max_aoa(self, calculateAoA: bool, maxAoA: typing.Any) -> None
+.. py:method:: set_max_aoa(self, calculate_aoa: bool, max_aoa: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.MissileSimpleAerodynamic.set_max_aoa
 
     Set whether to calculate the Angle of Attack and the corresponding value.
 
     :Parameters:
 
-    **calculateAoA** : :obj:`~bool`
-    **maxAoA** : :obj:`~typing.Any`
+    **calculate_aoa** : :obj:`~bool`
+    **max_aoa** : :obj:`~typing.Any`
 
     :Returns:
 

@@ -22,7 +22,7 @@ Overview
             * - :py:attr:`~WINDOW_3D`
               - Display in the 3D window.
 
-            * - :py:attr:`~DATA_DISPLAY_AREA`
+            * - :py:attr:`~DISPLAY_AREA`
               - Display in the data display area.
 
             * - :py:attr:`~OFFSET_FROM_OBJECT`

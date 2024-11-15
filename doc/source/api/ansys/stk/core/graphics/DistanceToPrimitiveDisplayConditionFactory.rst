@@ -46,7 +46,7 @@ Method detail
 
         :obj:`~DistanceToPrimitiveDisplayCondition`
 
-.. py:method:: initialize_with_distances(self, primitive: IPrimitive, minimumDistance: float, maximumDistance: float) -> DistanceToPrimitiveDisplayCondition
+.. py:method:: initialize_with_distances(self, primitive: IPrimitive, minimum_distance: float, maximum_distance: float) -> DistanceToPrimitiveDisplayCondition
     :canonical: ansys.stk.core.graphics.DistanceToPrimitiveDisplayConditionFactory.initialize_with_distances
 
     Initialize a distance to primitive display condition with the inclusive distance interval [minimumDistance, maximumDistance]...
@@ -54,8 +54,8 @@ Method detail
     :Parameters:
 
     **primitive** : :obj:`~IPrimitive`
-    **minimumDistance** : :obj:`~float`
-    **maximumDistance** : :obj:`~float`
+    **minimum_distance** : :obj:`~float`
+    **maximum_distance** : :obj:`~float`
 
     :Returns:
 

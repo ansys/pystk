@@ -34,7 +34,7 @@ class J2PerturbationSnippets(CodeSnippetsTestBase):
             ),
             Satellite,
         )
-        CodeSnippetsTestBase.m_Root.unit_preferences.reset_units()
+        CodeSnippetsTestBase.m_Root.units_preferences.reset_units()
 
     # endregion
 
@@ -53,22 +53,22 @@ class J2PerturbationSnippets(CodeSnippetsTestBase):
 
     def ConfigureSatelliteWithJ2PerturbationPropagator(self, satellite: "Satellite"):
         # Set propagator to SGP4
-        satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_J2_PERTURBATION)
+        satellite.set_propagator_type(PROPAGATOR_TYPE.J2_PERTURBATION)
 
         # J2 Perturbation propagator
-        j2prop: "VehiclePropagatorJ2Perturbation" = clr.CastAs(satellite.propagator, VehiclePropagatorJ2Perturbation)
+        j2prop: "PropagatorJ2Perturbation" = clr.CastAs(satellite.propagator, PropagatorJ2Perturbation)
 
         # Configure time period
         j2prop.ephemeris_interval.set_explicit_interval("1 Jan 2012 12:00:00.000", "2 Jan 2012 12:00:00.000")
         j2prop.step = 60.0
 
         # Configure propagator initial state
-        initial: "VehicleJxInitialState" = j2prop.initial_state
+        initial: "VehicleZonalPropagatorInitialState" = j2prop.initial_state
         initial.representation.epoch = "1 Jan 2012 12:00:00.000"
         initial.representation.assign_cartesian(
             COORDINATE_SYSTEM.FIXED, -1514.4, -6790.1, -1.25, 4.8151, 1.771, 5.6414
         )  # in km/sec
-        initial.ellipse_options = VEHICLE_ELLIPSE_OPTIONS.SECULARLY_PRECESSING
+        initial.ellipse_options = VEHICLE_ELLIPSE_OPTION_TYPE.SECULARLY_PRECESSING
 
         # Propagate
         j2prop.propagate()

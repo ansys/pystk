@@ -37,7 +37,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.UserVariableDefinitionCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.UserVariableDefinitionCollection._new_enum`
               - Allows you to enumerate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.UserVariableDefinitionCollection.count`
               - Returns the size of the collection.
@@ -55,8 +55,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.astrogator.UserVariableDefinitionCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.astrogator.UserVariableDefinitionCollection._new_enum
     :type: EnumeratorProxy
 
     Allows you to enumerate through the collection.
@@ -71,40 +71,40 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, indexOrName: typing.Any) -> UserVariableDefinition
+.. py:method:: item(self, index_or_name: typing.Any) -> UserVariableDefinition
     :canonical: ansys.stk.core.stkobjects.astrogator.UserVariableDefinitionCollection.item
 
     Allow you to iterate through the collection.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 
         :obj:`~UserVariableDefinition`
 
-.. py:method:: add(self, parameterName: str) -> UserVariableDefinition
+.. py:method:: add(self, parameter_name: str) -> UserVariableDefinition
     :canonical: ansys.stk.core.stkobjects.astrogator.UserVariableDefinitionCollection.add
 
     Add a user variable to the collection.
 
     :Parameters:
 
-    **parameterName** : :obj:`~str`
+    **parameter_name** : :obj:`~str`
 
     :Returns:
 
         :obj:`~UserVariableDefinition`
 
-.. py:method:: remove(self, indexOrName: typing.Any) -> None
+.. py:method:: remove(self, index_or_name: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.UserVariableDefinitionCollection.remove
 
     Remove a user variable.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 

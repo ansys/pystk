@@ -20,11 +20,11 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ChainGraphics.static`
               - Get the chain's 2D static graphics properties.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ChainGraphics.animation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ChainGraphics.animation_settings`
               - Get the chain's 3D graphics properties.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ChainGraphics.is_object_graphics_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ChainGraphics.show_graphics`
               - Specify whether graphics attributes of the chain are visible.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ChainGraphics.is_object_graphics_visible_in_2d`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ChainGraphics.show_graphics_2d`
               - Specify whether graphics attributes of the chain are visible in 2D Windows.
 
 
@@ -46,20 +46,20 @@ Property detail
 
     Get the chain's 2D static graphics properties.
 
-.. py:property:: animation
-    :canonical: ansys.stk.core.stkobjects.ChainGraphics.animation
+.. py:property:: animation_settings
+    :canonical: ansys.stk.core.stkobjects.ChainGraphics.animation_settings
     :type: ChainGraphics2DAnimation
 
     Get the chain's 3D graphics properties.
 
-.. py:property:: is_object_graphics_visible
-    :canonical: ansys.stk.core.stkobjects.ChainGraphics.is_object_graphics_visible
+.. py:property:: show_graphics
+    :canonical: ansys.stk.core.stkobjects.ChainGraphics.show_graphics
     :type: bool
 
     Specify whether graphics attributes of the chain are visible.
 
-.. py:property:: is_object_graphics_visible_in_2d
-    :canonical: ansys.stk.core.stkobjects.ChainGraphics.is_object_graphics_visible_in_2d
+.. py:property:: show_graphics_2d
+    :canonical: ansys.stk.core.stkobjects.ChainGraphics.show_graphics_2d
     :type: bool
 
     Specify whether graphics attributes of the chain are visible in 2D Windows.

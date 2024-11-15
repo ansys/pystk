@@ -18,7 +18,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DMarker.set_marker_image_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DMarker.set_marker_image_filename`
               - Set the marker image file.
 
     .. tab-item:: Properties
@@ -122,14 +122,14 @@ Method detail
 
 
 
-.. py:method:: set_marker_image_file(self, imageFile: str) -> None
-    :canonical: ansys.stk.core.stkobjects.Graphics3DMarker.set_marker_image_file
+.. py:method:: set_marker_image_filename(self, image_file: str) -> None
+    :canonical: ansys.stk.core.stkobjects.Graphics3DMarker.set_marker_image_filename
 
     Set the marker image file.
 
     :Parameters:
 
-    **imageFile** : :obj:`~str`
+    **image_file** : :obj:`~str`
 
     :Returns:
 

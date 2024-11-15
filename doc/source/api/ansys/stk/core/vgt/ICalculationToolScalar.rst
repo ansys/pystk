@@ -165,27 +165,27 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: quick_evaluate_time_array(self, refArray: ITimeToolTimeArray) -> list
+.. py:method:: quick_evaluate_time_array(self, ref_array: ITimeToolTimeArray) -> list
     :canonical: ansys.stk.core.vgt.ICalculationToolScalar.quick_evaluate_time_array
 
     Evaluate the scalar calculation, and rate, over the array of times provided by an Event Array component. It returns an array corresponding to the input times...
 
     :Parameters:
 
-    **refArray** : :obj:`~ITimeToolTimeArray`
+    **ref_array** : :obj:`~ITimeToolTimeArray`
 
     :Returns:
 
         :obj:`~list`
 
-.. py:method:: quick_evaluate_with_rate_event_array(self, refArray: ITimeToolTimeArray) -> list
+.. py:method:: quick_evaluate_with_rate_event_array(self, ref_array: ITimeToolTimeArray) -> list
     :canonical: ansys.stk.core.vgt.ICalculationToolScalar.quick_evaluate_with_rate_event_array
 
     Evaluate the scalar calculation, and rate, over the array of times provided by an Event Array component. It returns an array corresponding to the input times...
 
     :Parameters:
 
-    **refArray** : :obj:`~ITimeToolTimeArray`
+    **ref_array** : :obj:`~ITimeToolTimeArray`
 
     :Returns:
 

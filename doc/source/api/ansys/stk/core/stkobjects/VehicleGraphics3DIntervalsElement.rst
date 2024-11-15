@@ -22,7 +22,7 @@ Overview
               - Time at which the interval begins and the selected graphics display in the 3D window. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DIntervalsElement.stop_time`
               - Time at which the interval ends. Uses DateFormat Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DIntervalsElement.is_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DIntervalsElement.show_graphics`
               - Opt whether to display the object during the selected time using the selected graphics properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DIntervalsElement.color`
               - Gets or sets the line color.
@@ -56,8 +56,8 @@ Property detail
 
     Time at which the interval ends. Uses DateFormat Dimension.
 
-.. py:property:: is_visible
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DIntervalsElement.is_visible
+.. py:property:: show_graphics
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DIntervalsElement.show_graphics
     :type: bool
 
     Opt whether to display the object during the selected time using the selected graphics properties.

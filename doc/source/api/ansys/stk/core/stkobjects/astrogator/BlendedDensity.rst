@@ -89,27 +89,27 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: atmos_density_model(self, pInVal: IComponentInfo) -> None
+.. py:method:: atmos_density_model(self, value: IComponentInfo) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.BlendedDensity.atmos_density_model
 
     Embeds a nominal atmosphere model from the component browser.
 
     :Parameters:
 
-    **pInVal** : :obj:`~IComponentInfo`
+    **value** : :obj:`~IComponentInfo`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: low_altitude_atmosphere_density_model(self, pInVal: IComponentInfo) -> None
+.. py:method:: low_altitude_atmosphere_density_model(self, value: IComponentInfo) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.BlendedDensity.low_altitude_atmosphere_density_model
 
     Embeds a low altitude atmosphere model from the component browser.
 
     :Parameters:
 
-    **pInVal** : :obj:`~IComponentInfo`
+    **value** : :obj:`~IComponentInfo`
 
     :Returns:
 

@@ -119,7 +119,7 @@ class SensorSnippets(CodeSnippetsTestBase):
         self.DefineSensorPointingFixedAxesAzEl(SensorSnippets.m_Object)
 
     def DefineSensorPointingFixedAxesAzEl(self, sensor: "Sensor"):
-        fixedAxesSensor: "SensorPointingFixedAxes" = sensor.common_tasks.set_pointing_fixed_axes_az_el(
+        fixedAxesSensor: "SensorPointingFixedInAxes" = sensor.common_tasks.set_pointing_fixed_axes_az_el(
             "CentralBody/Sun J2000 Axes", 11, 22, AZ_EL_ABOUT_BORESIGHT.HOLD
         )
 
@@ -141,7 +141,7 @@ class SensorSnippets(CodeSnippetsTestBase):
         self.DefineSensorPointingFixedAxesEuler(SensorSnippets.m_Object)
 
     def DefineSensorPointingFixedAxesEuler(self, sensor: "Sensor"):
-        fixedAxesSensor: "SensorPointingFixedAxes" = sensor.common_tasks.set_pointing_fixed_axes_euler(
+        fixedAxesSensor: "SensorPointingFixedInAxes" = sensor.common_tasks.set_pointing_fixed_axes_euler(
             "CentralBody/Sun J2000 Axes", EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_132, 30, 40, 50
         )
 
@@ -152,7 +152,7 @@ class SensorSnippets(CodeSnippetsTestBase):
         self.DefineSensorPointingFixedQuaternion(SensorSnippets.m_Object)
 
     def DefineSensorPointingFixedQuaternion(self, sensor: "Sensor"):
-        fixedSensor: "SensorPointingFixed" = sensor.common_tasks.set_pointing_fixed_quat(0.1, 0.2, 0.3, 0.4)
+        fixedSensor: "SensorPointingFixed" = sensor.common_tasks.set_pointing_fixed_quaternion(0.1, 0.2, 0.3, 0.4)
 
     # endregion
 
@@ -161,7 +161,7 @@ class SensorSnippets(CodeSnippetsTestBase):
         self.DefineSensorPointingFixedAxesQuaternion(SensorSnippets.m_Object)
 
     def DefineSensorPointingFixedAxesQuaternion(self, sensor: "Sensor"):
-        fixedAxesSensor: "SensorPointingFixedAxes" = sensor.common_tasks.set_pointing_fixed_axes_quat(
+        fixedAxesSensor: "SensorPointingFixedInAxes" = sensor.common_tasks.set_pointing_fixed_axes_quaternion(
             "CentralBody/Sun J2000 Axes", 0.1, 0.2, 0.3, 0.4
         )
 
@@ -183,7 +183,7 @@ class SensorSnippets(CodeSnippetsTestBase):
         self.DefineSensorPointingFixedAxesYPR(SensorSnippets.m_Object)
 
     def DefineSensorPointingFixedAxesYPR(self, sensor: "Sensor"):
-        fixedAxesSensor: "SensorPointingFixedAxes" = sensor.common_tasks.set_pointing_fixed_axes_ypr(
+        fixedAxesSensor: "SensorPointingFixedInAxes" = sensor.common_tasks.set_pointing_fixed_axes_ypr(
             "CentralBody/Sun J2000 Axes", YPR_ANGLES_SEQUENCE.RYP, 11, 22, 33
         )
 
@@ -197,7 +197,7 @@ class SensorSnippets(CodeSnippetsTestBase):
 
     def DefineTargetSensorPointing(self, sensor: "Sensor"):
         targetedSensor: "SensorPointingTargeted" = sensor.common_tasks.set_pointing_targeted_tracking(
-            TRACK_MODE_TYPE.TRANSMIT, BORESIGHT_TYPE.LEVEL, "*/AreaTarget/AreaTarget1"
+            TRACK_MODE.TRANSMIT, BORESIGHT_TYPE.LEVEL, "*/AreaTarget/AreaTarget1"
         )
 
     # endregion
@@ -208,7 +208,7 @@ class SensorSnippets(CodeSnippetsTestBase):
 
     def DefineSpinningSensorPointing(self, root: "StkObjectRoot", sensor: "Sensor"):
         # Set pattern type to Spinning
-        sensor.set_pointing_type(SENSOR_POINTING.POINT_SPINNING)
+        sensor.set_pointing_type(SENSOR_POINTING.SPINNING)
         spinning: "SensorPointingSpinning" = clr.CastAs(sensor.pointing, SensorPointingSpinning)
 
         # Configure sensor
@@ -274,7 +274,7 @@ class SensorSnippets(CodeSnippetsTestBase):
 
     def DefineLocationOn3DModel(self, sensor: "Sensor"):
         # Set pointing type to 3d model
-        sensor.set_pointing_type(SENSOR_POINTING.POINT_3D_MODEL)
+        sensor.set_pointing_type(SENSOR_POINTING.ELEMENT_OF_3D_MODEL)
 
         # Point to model attach point (in this example: "SolarPanels")
         model: "SensorPointing3DModel" = sensor.common_tasks.set_pointing_3d_model("SolarPanels")
@@ -289,7 +289,7 @@ class SensorSnippets(CodeSnippetsTestBase):
 
     def DefineLocationFromCrdnPoint(self, sensor: "Sensor"):
         # Set location type to VGT
-        sensor.set_location_type(SENSOR_LOCATION.VECTOR_GEOMETRY_TOOL_POINT)
+        sensor.set_location_type(SENSOR_LOCATION.POINT)
 
         # Get LocationVectorGeometryToolPoint interface
         vgtPoint: "LocationVectorGeometryToolPoint" = clr.CastAs(sensor.location_data, LocationVectorGeometryToolPoint)
@@ -313,7 +313,7 @@ class SensorSnippets(CodeSnippetsTestBase):
         maskFile: "SensorAzElMaskFile" = clr.CastAs(sensor.az_el_mask_data, SensorAzElMaskFile)
 
         # Configure MaskFile as needed
-        maskFile.boresight_axis = SENSOR_AZ_EL_BORESIGHT_AXIS_TYPE.PLUS_MINUS_Z
+        maskFile.boresight_axis = SENSOR_AZ_EL_BORESIGHT_AXIS_TYPE.Z_AXIS
 
     # endregion
 
@@ -323,10 +323,8 @@ class SensorSnippets(CodeSnippetsTestBase):
         if TestBase.NoGraphicsMode:
             Assert.skipTest("Test cannot be run in NoGraphicsMode (because it uses swath)")
 
-        (Satellite(SensorSnippets.m_Satellite)).set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
-        tb: "VehiclePropagatorTwoBody" = clr.CastAs(
-            (Satellite(SensorSnippets.m_Satellite)).propagator, VehiclePropagatorTwoBody
-        )
+        (Satellite(SensorSnippets.m_Satellite)).set_propagator_type(PROPAGATOR_TYPE.TWO_BODY)
+        tb: "PropagatorTwoBody" = clr.CastAs((Satellite(SensorSnippets.m_Satellite)).propagator, PropagatorTwoBody)
         # Propagate
         tb.propagate()
         self.ConfigureAndComputeSensorSwath(SensorSnippets.m_Object)
@@ -360,7 +358,7 @@ class SensorSnippets(CodeSnippetsTestBase):
         self.ConfigureSensorVOProjection(SensorSnippets.m_Object.graphics_3d)
 
     def ConfigureSensorVOProjection(self, sensorVo: "SensorGraphics3D"):
-        sensorVo.projection_type = SENSOR_GRAPHICS_3D_PROJECTION_TYPE.PROJECTION_ALL_INTERSECTIONS
+        sensorVo.projection_type = SENSOR_GRAPHICS_3D_PROJECTION_TYPE.ALL_INTERSECTIONS
         sensorVo.inherit_from_2d = SENSOR_GRAPHICS_3D_INHERIT_FROM_2D.EXTENT_ONLY
         sensorVo.space_projection = 2000.0
 
@@ -375,7 +373,7 @@ class SensorSnippets(CodeSnippetsTestBase):
         self.ConfigureSensorVOProjectionTimeVarying(SensorSnippets.m_Object.graphics_3d)
 
     def ConfigureSensorVOProjectionTimeVarying(self, sensorVo: "SensorGraphics3D"):
-        sensorVo.projection_type = SENSOR_GRAPHICS_3D_PROJECTION_TYPE.PROJECTION_ALL_INTERSECTIONS
+        sensorVo.projection_type = SENSOR_GRAPHICS_3D_PROJECTION_TYPE.ALL_INTERSECTIONS
         sensorVo.projection_time_dependency = SENSOR_GRAPHICS_3D_PROJECTION_TIME_DEPENDENCY_TYPE.TIME_VARYING
         elem1: "SensorGraphics3DProjectionElement" = sensorVo.space_projection_intervals.add()
         elem1.distance = 5000.0

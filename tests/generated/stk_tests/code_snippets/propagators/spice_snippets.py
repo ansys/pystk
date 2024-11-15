@@ -34,7 +34,7 @@ class SPICESnippets(CodeSnippetsTestBase):
             ),
             Satellite,
         )
-        CodeSnippetsTestBase.m_Root.unit_preferences.reset_units()
+        CodeSnippetsTestBase.m_Root.units_preferences.reset_units()
 
     # endregion
 
@@ -49,13 +49,13 @@ class SPICESnippets(CodeSnippetsTestBase):
 
     # region ConfigureSPICEPropagator
     def test_ConfigureSPICEPropagator(self):
-        SPICESnippets.m_Object.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_SPICE)
-        spiceProp: "VehiclePropagatorSPICE" = clr.CastAs(SPICESnippets.m_Object.propagator, VehiclePropagatorSPICE)
+        SPICESnippets.m_Object.set_propagator_type(PROPAGATOR_TYPE.SPICE)
+        spiceProp: "PropagatorSPICE" = clr.CastAs(SPICESnippets.m_Object.propagator, PropagatorSPICE)
         self.ConfigureSPICEPropagator(
             spiceProp, TestBase.GetScenarioFile("CodeSnippetsTests", "External", "Satellite1.bsp")
         )
 
-    def ConfigureSPICEPropagator(self, propagator: "VehiclePropagatorSPICE", spiceFile: str):
+    def ConfigureSPICEPropagator(self, propagator: "PropagatorSPICE", spiceFile: str):
         # Set the SPICE file
         propagator.spice = spiceFile
 

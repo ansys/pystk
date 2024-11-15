@@ -45,7 +45,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ObjectLinkCollection.count`
               - Returns the number of elements in a collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ObjectLinkCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ObjectLinkCollection._new_enum`
               - Returns an enumerator that can iterate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.ObjectLinkCollection.available_objects`
               - Returns an array of valid objects.
@@ -69,8 +69,8 @@ Property detail
 
     Returns the number of elements in a collection.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.ObjectLinkCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.ObjectLinkCollection._new_enum
     :type: EnumeratorProxy
 
     Returns an enumerator that can iterate through the collection.
@@ -149,27 +149,27 @@ Method detail
         :obj:`~None`
 
 
-.. py:method:: add_object(self, pObject: IStkObject) -> None
+.. py:method:: add_object(self, object: IStkObject) -> None
     :canonical: ansys.stk.core.stkobjects.ObjectLinkCollection.add_object
 
     Add to the collection a link to the given STK object.
 
     :Parameters:
 
-    **pObject** : :obj:`~IStkObject`
+    **object** : :obj:`~IStkObject`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: remove_object(self, pObject: IStkObject) -> None
+.. py:method:: remove_object(self, object: IStkObject) -> None
     :canonical: ansys.stk.core.stkobjects.ObjectLinkCollection.remove_object
 
     Remove from the collection a link to the given STK object.
 
     :Parameters:
 
-    **pObject** : :obj:`~IStkObject`
+    **object** : :obj:`~IStkObject`
 
     :Returns:
 

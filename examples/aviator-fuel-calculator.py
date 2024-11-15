@@ -37,7 +37,7 @@
 from ansys.stk.core.stkengine import STKEngine
 
 
-stk = STKEngine.start_application(noGraphics=False)
+stk = STKEngine.start_application(no_graphics=False)
 print(f"Using {stk.version}")
 # -
 
@@ -92,10 +92,10 @@ aircraft = root.current_scenario.children.new(
 # The `IAviatorPropagator` interface allows access to all Aviator functions. Through the propagator, it is possible to access the aircraft's mission and plan its route, as well as access the Aviator catalogs, which allow loading and saving aircraft, airports, navaids, runways, VTOL points, and waypoints. To start using Aviator capabilities, first set the aircraft's propagator type to the Aviator propagator:
 
 # +
-from ansys.stk.core.stkobjects import VEHICLE_PROPAGATOR_TYPE
+from ansys.stk.core.stkobjects import PROPAGATOR_TYPE
 
 
-aircraft.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_AVIATOR)
+aircraft.set_route_type(PROPAGATOR_TYPE.AVIATOR)
 # -
 
 # Then, use the aircraft's `route` property to access the `aviator_propagator` property, which holds an `IAviatorPropagator` object:
@@ -565,7 +565,7 @@ map_plotter.show()
 
 flight_profile_df = (
     aircraft.data_providers.item("Flight Profile By Time")
-    .exec(scenario.start_time, scenario.stop_time, 60)
+    .execute(scenario.start_time, scenario.stop_time, 60)
     .data_sets.to_pandas_dataframe()
 )
 
@@ -586,7 +586,7 @@ internal_fuel.initial_fuel_state = 14000
 aircraft.route.aviator_propagator.propagate()
 flight_profile_df = (
     aircraft.data_providers.item("Flight Profile By Time")
-    .exec(scenario.start_time, scenario.stop_time, 60)
+    .execute(scenario.start_time, scenario.stop_time, 60)
     .data_sets.to_pandas_dataframe()
 )
 flight_profile_df[["weight", "fuel state"]].iloc[[0, -1]]
@@ -608,7 +608,7 @@ import pandas as pd
 
 flight_profile_df = (
     aircraft.data_providers.item("Flight Profile By Time")
-    .exec(scenario.start_time, scenario.stop_time, 60)
+    .execute(scenario.start_time, scenario.stop_time, 60)
     .data_sets.to_pandas_dataframe()
 )
 flight_profile_df[["weight", "fuel state", "time"]]
@@ -640,7 +640,7 @@ ax.legend(shadow=True)
 lla_position_df = (
     aircraft.data_providers.item("LLA State")
     .group.item(1)
-    .exec(scenario.start_time, scenario.stop_time, 1)
+    .execute(scenario.start_time, scenario.stop_time, 1)
     .data_sets.to_pandas_dataframe()
 )
 

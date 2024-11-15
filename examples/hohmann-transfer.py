@@ -19,13 +19,13 @@
 
 # ## Launch a new STK instance
 #
-# Start by launching a new STK instance. In this example, ``STKEngine`` is used in ``noGraphics`` mode. This means that the graphic user interface (GUI) of the product is not launched:
+# Start by launching a new STK instance. In this example, ``STKEngine`` is used in ``no_graphics`` mode. This means that the graphic user interface (GUI) of the product is not launched:
 
 # +
 from ansys.stk.core.stkengine import STKEngine
 
 
-stk = STKEngine.start_application(noGraphics=False)
+stk = STKEngine.start_application(no_graphics=False)
 print(f"Using {stk.version}")
 # -
 
@@ -60,10 +60,10 @@ satellite = root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "Satel
 # Then, declare the type of orbit propagator used for the satellite:
 
 # +
-from ansys.stk.core.stkobjects import VEHICLE_PROPAGATOR_TYPE
+from ansys.stk.core.stkobjects import PROPAGATOR_TYPE
 
 
-satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
+satellite.set_propagator_type(PROPAGATOR_TYPE.ASTROGATOR)
 # -
 
 # Initialize the propagator by making sure that no previous sequence is present. Add any additional configurations for the propagator. For this example, its is requested to draw the maneuver in 3D.

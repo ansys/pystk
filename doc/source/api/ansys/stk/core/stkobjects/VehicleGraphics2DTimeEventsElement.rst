@@ -29,7 +29,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventsElement.is_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventsElement.show_graphics`
               - Opt whether to display time event graphics.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventsElement.time_event_type`
               - Type of time event graphics: line, marker or text.
@@ -51,8 +51,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: is_visible
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventsElement.is_visible
+.. py:property:: show_graphics
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventsElement.show_graphics
     :type: bool
 
     Opt whether to display time event graphics.
@@ -82,27 +82,27 @@ Method detail
 
 
 
-.. py:method:: set_time_event_type(self, timeEventType: VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE) -> None
+.. py:method:: set_time_event_type(self, time_event_type: VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE) -> None
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventsElement.set_time_event_type
 
     Type of time event graphics: line, marker or text.
 
     :Parameters:
 
-    **timeEventType** : :obj:`~VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE`
+    **time_event_type** : :obj:`~VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_time_event_type_supported(self, timeEventType: VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE) -> bool
+.. py:method:: is_time_event_type_supported(self, time_event_type: VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE) -> bool
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventsElement.is_time_event_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **timeEventType** : :obj:`~VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE`
+    **time_event_type** : :obj:`~VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE`
 
     :Returns:
 
