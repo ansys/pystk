@@ -7,10 +7,14 @@
 __all__ = ["STKDesktop", "STKDesktopApplication"]
 
 import os
+import socket
 import typing
 import atexit
 from ctypes import byref
-import subprocess
+
+# The subprocess module is needed to start the backend. 
+# Excluding low severity bandit warning as the validity of the inputs is enforced.
+import subprocess # nosec B404
 
 from .internal.comutil        import (OLE32Lib, OLEAut32Lib, GUID, IUnknown, CoInitializeManager, Succeeded,
                                   CLSCTX_LOCAL_SERVER, ObjectLifetimeManager, PVOID, COINIT_APARTMENTTHREADED)
@@ -162,25 +166,25 @@ class STKDesktopApplication(UiApplication):
 class STKDesktop(object):
     """Create, initialize, and manage STK Desktop application instances."""
 
+    _disable_pop_ups = False
+
     @staticmethod
     def start_application(visible:bool=False, \
                          user_control:bool=False, \
                          grpc_server:bool=False, \
                          grpc_host:str="0.0.0.0", \
                          grpc_port:int=40704, \
-                         grpc_timeout_sec:int=60, \
-                         grpc_desktop_options:str="") -> STKDesktopApplication:
+                         grpc_timeout_sec:int=60) -> STKDesktopApplication:
         """
         Create a new STK Desktop application instance.  
 
         Specify visible = True to show the application window.
-        Specify user_control = True to return the application to the user's control .
+        Specify user_control = True to return the application to the user's control.
         (the application remains open) after terminating the Python API connection.
         Specify grpc_server = True to attach to STK Desktop Application running the gRPC server at grpc_host:grpc_port.
         grpc_host is the IP address or DNS name of the gRPC server.
-        grpc_port is the integral port number that the gRPC server is using.
+        grpc_port is the integral port number that the gRPC server is using (valid values are integers from 0 to 65535).
         grpc_timeout_sec specifies the time allocated to wait for a grpc connection (seconds).
-        grpc_desktop_options passes extra command line options to UiApplication.
         Only available on Windows.
         """
         if os.name != "nt":
@@ -192,6 +196,17 @@ class STKDesktop(object):
                 pass
             except ModuleNotFoundError:
                 raise STKInitializationError(f"gRPC use requires Python modules grpcio and protobuf.")
+            if grpc_port < 0 or grpc_port > 65535:
+                raise STKInitializationError(f"{grpc_port} is not a valid port number for the gRPC server.")
+            if grpc_host != "localhost":
+                try:
+                    socket.inet_pton(socket.AF_INET, grpc_host)
+                except:
+                    try:
+                        socket.inet_pton(socket.AF_INET6, grpc_host)
+                    except OSError:
+                        raise STKInitializationError(f"Could not resolve host \"{grpc_host}\" for the gRPC server.")
+
             clsid_stk12application = "{7ADA6C22-FA34-4578-8BE8-65405A55EE15}"
             executable = read_registry_key(f"CLSID\\{clsid_stk12application}\\LocalServer32", silent_exception=True)
             if executable is None or not os.path.exists(executable):
@@ -200,8 +215,13 @@ class STKDesktop(object):
                     executable = os.path.join(bin_dir, "UiApplication.exe")
                 else:
                     raise STKInitializationError(f"Could not find UiApplication.exe. Verify STK 12 installation.")
-            cmd_line = f"\"{executable}\" /pers STK /grpcServer On /grpcHost {grpc_host} /grpcPort {grpc_port} {grpc_desktop_options}"
-            app_process = subprocess.Popen(cmd_line)
+            cmd_line = [f"{executable}", "/pers", "STK", "/grpcServer", "On", "/grpcHost", grpc_host, "/grpcPort", str(grpc_port)]
+            if STKDesktop._disable_pop_ups:
+                cmd_line.append("/Automation")
+
+            # Calling subprocess.Popen (without shell equals true) to start the backend. 
+            # Excluding low severity bandit check as the validity of the inputs has been ensured.
+            app_process = subprocess.Popen(cmd_line) # nosec B603
             host = "localhost" if grpc_host=="0.0.0.0" else grpc_host
             app = STKDesktop.attach_to_application(None, grpc_server, host, grpc_port, grpc_timeout_sec)
             app.visible = visible
