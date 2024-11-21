@@ -163,7 +163,9 @@ class STKRuntime(object):
         subprocess.Popen(cmd_line) # nosec B603
         # Ignoring B104 warning as it is a false positive. The hardcoded string "0.0.0.0" is being filtered
         # to ensure that it is not used.
-        host = "localhost" if grpc_host=="0.0.0.0" else grpc_host # nosec B104
+        host = grpc_host
+        if host=="0.0.0.0": # nosec B104
+            host = "localhost"
         app = STKRuntime.attach_to_application(host, grpc_port, grpc_timeout_sec)
         app._intf.client.set_shutdown_stkruntime(not user_control)
         return app
