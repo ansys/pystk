@@ -161,9 +161,9 @@ class STKRuntime(object):
         # Calling subprocess.Popen (without shell equals true) to start the backend. 
         # Excluding low severity bandit check as the validity of the inputs has been ensured.
         subprocess.Popen(cmd_line) # nosec B603
+        host = grpc_host
         # Ignoring B104 warning as it is a false positive. The hardcoded string "0.0.0.0" is being filtered
         # to ensure that it is not used.
-        host = grpc_host
         if host=="0.0.0.0": # nosec B104
             host = "localhost"
         app = STKRuntime.attach_to_application(host, grpc_port, grpc_timeout_sec)
