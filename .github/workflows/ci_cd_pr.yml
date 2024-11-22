@@ -104,6 +104,11 @@ jobs:
     name: "Build wheelhouse for latest Python versions"
     runs-on: ${{ matrix.os }}
     needs: doc-style
+    if: |
+      always() &&
+        (needs.doc-style.result == 'success' || needs.doc-style.result == 'skipped') &&
+        !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
+        !contains(github.event.pull_request.labels.*.name, 'doc:skip')
     strategy:
        matrix:
            os: [ubuntu-latest, windows-latest]
@@ -321,8 +326,10 @@ jobs:
     name: "Tests Python ${{ matrix.python }}"
     runs-on: [self-hosted, pystk]
     if: |
-      !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
-      !contains(github.event.pull_request.labels.*.name, 'tests:skip')
+      always() &&
+        (needs.code-style.result == 'success' || needs.code-style.result == 'skipped') &&
+        !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
+        !contains(github.event.pull_request.labels.*.name, 'tests:skip')
     needs: code-style
     strategy:
       matrix:
@@ -433,7 +440,10 @@ jobs:
     name: "Build library"
     runs-on: ubuntu-latest
     if: |
-      !contains(github.event.pull_request.labels.*.name, 'ci:skip')
+      always() &&
+        (needs.doc-build.result == 'success' || needs.doc-build.result == 'skipped') &&
+        (needs.tests.result == 'success' || needs.tests.result == 'skipped') &&
+        !contains(github.event.pull_request.labels.*.name, 'ci:skip')
     needs: [doc-build, tests]
     steps:
       - uses: ansys/actions/build-library@v8
