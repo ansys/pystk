@@ -6085,12 +6085,14 @@ class EarlyBoundTests(TestBase):
         mg.sun_position = SUN_POSITION.TRUE
         Assert.assertEqual(SUN_POSITION.TRUE, mg.sun_position)
 
-        path: str = "C:\\Program Files\\AGI\\STK 12\\STKData\\CentralBodies\\Mars\\MarsGRAM\\v3.7"
+        path: str = TestBase.PathCombine(
+            TestBase.GetSTKHomeDir(), "STKData", "CentralBodies", "Mars", "MarsGRAM", "v3.7"
+        )
 
         mg.data_directory = path
         Assert.assertEqual(path, mg.data_directory)
 
-        path = "STKData\\CentralBodies\\Mars\\MarsGRAM\\v3.7\\INPUT.nml"
+        path = TestBase.PathCombine("STKData", "CentralBodies", "Mars", "MarsGRAM", "v3.7", "INPUT.nml")
         mg.namelist_file = path
         Assert.assertEqual(path, mg.namelist_file)
 
@@ -6187,12 +6189,14 @@ class EarlyBoundTests(TestBase):
         mg.sun_position = SUN_POSITION.TRUE
         Assert.assertEqual(SUN_POSITION.TRUE, mg.sun_position)
 
-        path: str = "C:\\Program Files\\AGI\\STK 12\\STKData\\CentralBodies\\Mars\\MarsGRAM\\v2000"
+        path: str = TestBase.PathCombine(
+            TestBase.GetSTKHomeDir(), "STKData", "CentralBodies", "Mars", "MarsGRAM", "v2000"
+        )
 
         mg.data_directory = path
         Assert.assertEqual(path, mg.data_directory)
 
-        path = "STKData\\CentralBodies\\Mars\\MarsGRAM\\v2000\\INPUT.nml"
+        path = TestBase.PathCombine("STKData", "CentralBodies", "Mars", "MarsGRAM", "v2000", "INPUT.nml")
         mg.namelist_file = path
         Assert.assertEqual(path, mg.namelist_file)
 
@@ -6289,12 +6293,14 @@ class EarlyBoundTests(TestBase):
         mg.sun_position = SUN_POSITION.TRUE
         Assert.assertEqual(SUN_POSITION.TRUE, mg.sun_position)
 
-        path: str = "C:\\Program Files\\AGI\\STK 12\\STKData\\CentralBodies\\Mars\\MarsGRAM\\v2001"
+        path: str = TestBase.PathCombine(
+            TestBase.GetSTKHomeDir(), "STKData", "CentralBodies", "Mars", "MarsGRAM", "v2001"
+        )
 
         mg.data_directory = path
         Assert.assertEqual(path, mg.data_directory)
 
-        path = "STKData\\CentralBodies\\Mars\\MarsGRAM\\v2001\\INPUT.nml"
+        path = TestBase.PathCombine("STKData", "CentralBodies", "Mars", "MarsGRAM", "v2001", "INPUT.nml")
         mg.namelist_file = path
         Assert.assertEqual(path, mg.namelist_file)
 
@@ -6391,12 +6397,14 @@ class EarlyBoundTests(TestBase):
         mg.sun_position = SUN_POSITION.TRUE
         Assert.assertEqual(SUN_POSITION.TRUE, mg.sun_position)
 
-        path: str = "C:\\Program Files\\AGI\\STK 12\\STKData\\CentralBodies\\Mars\\MarsGRAM\\v2005"
+        path: str = TestBase.PathCombine(
+            TestBase.GetSTKHomeDir(), "STKData", "CentralBodies", "Mars", "MarsGRAM", "v2005"
+        )
 
         mg.data_directory = path
         Assert.assertEqual(path, mg.data_directory)
 
-        path = "STKData\\CentralBodies\\Mars\\MarsGRAM\\v2005\\INPUT.nml"
+        path = TestBase.PathCombine("STKData", "CentralBodies", "Mars", "MarsGRAM", "v2005", "INPUT.nml")
         mg.namelist_file = path
         Assert.assertEqual(path, mg.namelist_file)
 
@@ -6535,13 +6543,15 @@ class EarlyBoundTests(TestBase):
         mg.sun_position = SUN_POSITION.TRUE
         Assert.assertEqual(SUN_POSITION.TRUE, mg.sun_position)
 
-        path: str = "C:\\Program Files\\AGI\\STK 12\\STKData\\CentralBodies\\Mars\\MarsGRAM\\v2010"
+        path: str = TestBase.PathCombine(
+            TestBase.GetSTKHomeDir(), "STKData", "CentralBodies", "Mars", "MarsGRAM", "v2010"
+        )
 
         mg.data_directory = path
         Assert.assertEqual(path, mg.data_directory)
         # try non-existent path
 
-        path = "STKData\\CentralBodies\\Mars\\MarsGRAM\\v2010\\INPUT.nml"
+        path = TestBase.PathCombine("STKData", "CentralBodies", "Mars", "MarsGRAM", "v2010", "INPUT.nml")
         mg.namelist_file = path
         Assert.assertEqual(path, mg.namelist_file)
 
@@ -6581,12 +6591,16 @@ class EarlyBoundTests(TestBase):
         vg.use_approximate_altitude = True
         Assert.assertTrue(vg.use_approximate_altitude)
 
-        path: str = "C:\\Program Files\\AGI\\STK 12\\STKData\\CentralBodies\\Venus\\VenusGRAM\\v2005"
+        path: str = TestBase.PathCombine(
+            TestBase.GetSTKHomeDir(), "STKData", "CentralBodies", "Venus", "VenusGRAM", "v2005"
+        )
 
         vg.data_directory = path
         Assert.assertEqual(path, vg.data_directory)
 
-        path = "C:\\Program Files\\AGI\\STK 12\\STKData\\CentralBodies\\Venus\\VenusGRAM\\v2005\\VIRAHi.txt"
+        path = TestBase.PathCombine(
+            TestBase.GetSTKHomeDir(), "STKData", "CentralBodies", "Venus", "VenusGRAM", "v2005", "VIRAHi.txt"
+        )
         vg.namelist_file = path
         Assert.assertTrue(("VIRAHi.txt" in vg.namelist_file))
 

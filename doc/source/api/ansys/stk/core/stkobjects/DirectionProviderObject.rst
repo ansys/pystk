@@ -36,6 +36,12 @@ Overview
               - Gets or sets Elevation Steering Limit A.
             * - :py:attr:`~ansys.stk.core.stkobjects.DirectionProviderObject.elevation_steering_limit_b`
               - Gets or sets Elevation Steering Limit B.
+            * - :py:attr:`~ansys.stk.core.stkobjects.DirectionProviderObject.maximum_selection_count`
+              - Gets or sets the maximum number of targets to select for beam steering.
+            * - :py:attr:`~ansys.stk.core.stkobjects.DirectionProviderObject.target_selection_method_type`
+              - Gets or sets the method type used to determin which targets are selected for steering.
+            * - :py:attr:`~ansys.stk.core.stkobjects.DirectionProviderObject.target_selection_method`
+              - Gets the target selection method.
 
 
 
@@ -97,5 +103,23 @@ Property detail
     :type: float
 
     Gets or sets Elevation Steering Limit B.
+
+.. py:property:: maximum_selection_count
+    :canonical: ansys.stk.core.stkobjects.DirectionProviderObject.maximum_selection_count
+    :type: int
+
+    Gets or sets the maximum number of targets to select for beam steering.
+
+.. py:property:: target_selection_method_type
+    :canonical: ansys.stk.core.stkobjects.DirectionProviderObject.target_selection_method_type
+    :type: TARGET_SELECTION_METHOD_TYPE
+
+    Gets or sets the method type used to determin which targets are selected for steering.
+
+.. py:property:: target_selection_method
+    :canonical: ansys.stk.core.stkobjects.DirectionProviderObject.target_selection_method
+    :type: ITargetSelectionMethod
+
+    Gets the target selection method.
 
 

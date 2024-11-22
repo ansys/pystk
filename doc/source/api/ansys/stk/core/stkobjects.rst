@@ -230,6 +230,9 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.IBeamformer`
               - Provide access to the properties and methods defining a beamformer.
 
+            * - :py:class:`~ansys.stk.core.stkobjects.ITargetSelectionMethod`
+              - Provide access to the properties and methods defining a target selection method.
+
             * - :py:class:`~ansys.stk.core.stkobjects.IDirectionProvider`
               - Provide access to the properties and methods defining an direction provider.
 
@@ -1894,6 +1897,18 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.CoverageAreaTargetsCollection`
               - Collection of Area Targets.
 
+            * - :py:class:`~ansys.stk.core.stkobjects.CoverageEllipseCollection`
+              - Collection of elliptical areas of interest.
+
+            * - :py:class:`~ansys.stk.core.stkobjects.CoverageEllipse`
+              - Elliptical area of interest.
+
+            * - :py:class:`~ansys.stk.core.stkobjects.CoverageLatLonBoxCollection`
+              - Collection of latitude/longitude boxes of interest.
+
+            * - :py:class:`~ansys.stk.core.stkobjects.CoverageLatLonBox`
+              - Latitude/longitude box area of interest.
+
             * - :py:class:`~ansys.stk.core.stkobjects.CoveragePointDefinition`
               - Point Definition: methods and parameters for specifying the location of points on the coverage grid.
 
@@ -3307,6 +3322,9 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.AtmosphericAbsorptionModelITURP676_9`
               - Class defining an atmospheric absorption model.
 
+            * - :py:class:`~ansys.stk.core.stkobjects.AtmosphericAbsorptionModelITURP676_13`
+              - Class defining an atmospheric absorption model.
+
             * - :py:class:`~ansys.stk.core.stkobjects.AtmosphericAbsorptionModelGraphics3DACAP`
               - Class defining an atmospheric absorption model.
 
@@ -3874,6 +3892,9 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.BeamformerDolphChebyshev`
               - Class defining a Dolph-Chebyshev tapered beamformer.
 
+            * - :py:class:`~ansys.stk.core.stkobjects.BeamformerTaylor`
+              - Class defining a Taylor tapered beamformer.
+
             * - :py:class:`~ansys.stk.core.stkobjects.BeamformerHamming`
               - Class defining a Hamming tapered beamformer.
 
@@ -3888,6 +3909,24 @@ Summary
 
             * - :py:class:`~ansys.stk.core.stkobjects.BeamformerScript`
               - Class defining a beamformer script plugin.
+
+            * - :py:class:`~ansys.stk.core.stkobjects.Priority`
+              - Class defining a target priority.
+
+            * - :py:class:`~ansys.stk.core.stkobjects.PriorityCollection`
+              - Class defining a priority data collection.
+
+            * - :py:class:`~ansys.stk.core.stkobjects.TargetSelectionMethod`
+              - Class defining a target selection method.
+
+            * - :py:class:`~ansys.stk.core.stkobjects.TargetSelectionMethodPriority`
+              - Class defining a priority-based target selection method.
+
+            * - :py:class:`~ansys.stk.core.stkobjects.TargetSelectionMethodRange`
+              - Class defining a range-based target selection method.
+
+            * - :py:class:`~ansys.stk.core.stkobjects.TargetSelectionMethodClosingVelocity`
+              - Class defining a closing velocity-based target selection method.
 
             * - :py:class:`~ansys.stk.core.stkobjects.DirectionProvider`
               - Class defining a direction provider.
@@ -4803,6 +4842,9 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.EOIR_FLIGHT_TYPE`
               - EOIR Flight Types.
 
+            * - :py:class:`~ansys.stk.core.stkobjects.PROPAGATOR_DISPLAY_COORDINATE_TYPE`
+              - Propagator Display Coordinate Types.
+
             * - :py:class:`~ansys.stk.core.stkobjects.COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE`
               - Component link/embed control reference type.
 
@@ -4910,6 +4952,9 @@ Summary
 
             * - :py:class:`~ansys.stk.core.stkobjects.LIMITS_EXCEEDED_BEHAVIOR_TYPE`
               - Limits Exceeded Behavior types.
+
+            * - :py:class:`~ansys.stk.core.stkobjects.TARGET_SELECTION_METHOD_TYPE`
+              - Target Selection Method types.
 
             * - :py:class:`~ansys.stk.core.stkobjects.ANTENNA_GRAPHICS_COORDINATE_SYSTEM`
               - Coordinate system for defining antenna graphics resolution.
@@ -5242,6 +5287,7 @@ The following is an overview of the classes, interfaces and enumerations of the 
      IElementConfiguration<stkobjects/IElementConfiguration>
      IElementConfigurationPolygon<stkobjects/IElementConfigurationPolygon>
      IBeamformer<stkobjects/IBeamformer>
+     ITargetSelectionMethod<stkobjects/ITargetSelectionMethod>
      IDirectionProvider<stkobjects/IDirectionProvider>
      IAntennaModelOpticalSimple<stkobjects/IAntennaModelOpticalSimple>
      IAntennaContour<stkobjects/IAntennaContour>
@@ -5800,6 +5846,10 @@ The following is an overview of the classes, interfaces and enumerations of the 
      CoverageAssetListCollection<stkobjects/CoverageAssetListCollection>
      CoverageRegionFilesCollection<stkobjects/CoverageRegionFilesCollection>
      CoverageAreaTargetsCollection<stkobjects/CoverageAreaTargetsCollection>
+     CoverageEllipseCollection<stkobjects/CoverageEllipseCollection>
+     CoverageEllipse<stkobjects/CoverageEllipse>
+     CoverageLatLonBoxCollection<stkobjects/CoverageLatLonBoxCollection>
+     CoverageLatLonBox<stkobjects/CoverageLatLonBox>
      CoveragePointDefinition<stkobjects/CoveragePointDefinition>
      CoveragePointFileListCollection<stkobjects/CoveragePointFileListCollection>
      CoverageAdvancedSettings<stkobjects/CoverageAdvancedSettings>
@@ -6271,6 +6321,7 @@ The following is an overview of the classes, interfaces and enumerations of the 
      LaserTroposphericScintillationLossModelITURP1814<stkobjects/LaserTroposphericScintillationLossModelITURP1814>
      AtmosphericAbsorptionModel<stkobjects/AtmosphericAbsorptionModel>
      AtmosphericAbsorptionModelITURP676_9<stkobjects/AtmosphericAbsorptionModelITURP676_9>
+     AtmosphericAbsorptionModelITURP676_13<stkobjects/AtmosphericAbsorptionModelITURP676_13>
      AtmosphericAbsorptionModelGraphics3DACAP<stkobjects/AtmosphericAbsorptionModelGraphics3DACAP>
      AtmosphericAbsorptionModelTIREM320<stkobjects/AtmosphericAbsorptionModelTIREM320>
      AtmosphericAbsorptionModelTIREM331<stkobjects/AtmosphericAbsorptionModelTIREM331>
@@ -6460,11 +6511,18 @@ The following is an overview of the classes, interfaces and enumerations of the 
      BeamformerCosineX<stkobjects/BeamformerCosineX>
      BeamformerCustomTaperFile<stkobjects/BeamformerCustomTaperFile>
      BeamformerDolphChebyshev<stkobjects/BeamformerDolphChebyshev>
+     BeamformerTaylor<stkobjects/BeamformerTaylor>
      BeamformerHamming<stkobjects/BeamformerHamming>
      BeamformerHann<stkobjects/BeamformerHann>
      BeamformerRaisedCosine<stkobjects/BeamformerRaisedCosine>
      BeamformerRaisedCosineSquared<stkobjects/BeamformerRaisedCosineSquared>
      BeamformerScript<stkobjects/BeamformerScript>
+     Priority<stkobjects/Priority>
+     PriorityCollection<stkobjects/PriorityCollection>
+     TargetSelectionMethod<stkobjects/TargetSelectionMethod>
+     TargetSelectionMethodPriority<stkobjects/TargetSelectionMethodPriority>
+     TargetSelectionMethodRange<stkobjects/TargetSelectionMethodRange>
+     TargetSelectionMethodClosingVelocity<stkobjects/TargetSelectionMethodClosingVelocity>
      DirectionProvider<stkobjects/DirectionProvider>
      DirectionProviderASCIIFile<stkobjects/DirectionProviderASCIIFile>
      DirectionProviderObject<stkobjects/DirectionProviderObject>
@@ -6773,6 +6831,7 @@ The following is an overview of the classes, interfaces and enumerations of the 
     ≔ EOIR_SHAPE_MATERIAL_SPECIFICATION_TYPE<stkobjects/EOIR_SHAPE_MATERIAL_SPECIFICATION_TYPE_enum>
     ≔ EOIR_THERMAL_MODEL_TYPE<stkobjects/EOIR_THERMAL_MODEL_TYPE_enum>
     ≔ EOIR_FLIGHT_TYPE<stkobjects/EOIR_FLIGHT_TYPE_enum>
+    ≔ PROPAGATOR_DISPLAY_COORDINATE_TYPE<stkobjects/PROPAGATOR_DISPLAY_COORDINATE_TYPE_enum>
     ≔ COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE<stkobjects/COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE_enum>
     ≔ SWATH_COMPUTATIONAL_METHOD<stkobjects/SWATH_COMPUTATIONAL_METHOD_enum>
     ≔ CLASSICAL_LOCATION<stkobjects/CLASSICAL_LOCATION_enum>
@@ -6809,6 +6868,7 @@ The following is an overview of the classes, interfaces and enumerations of the 
     ≔ LATTICE_TYPE<stkobjects/LATTICE_TYPE_enum>
     ≔ SPACING_UNIT<stkobjects/SPACING_UNIT_enum>
     ≔ LIMITS_EXCEEDED_BEHAVIOR_TYPE<stkobjects/LIMITS_EXCEEDED_BEHAVIOR_TYPE_enum>
+    ≔ TARGET_SELECTION_METHOD_TYPE<stkobjects/TARGET_SELECTION_METHOD_TYPE_enum>
     ≔ ANTENNA_GRAPHICS_COORDINATE_SYSTEM<stkobjects/ANTENNA_GRAPHICS_COORDINATE_SYSTEM_enum>
     ≔ ANTENNA_MODEL_INPUT_TYPE<stkobjects/ANTENNA_MODEL_INPUT_TYPE_enum>
     ≔ HFSS_FAR_FIELD_DATA_GAIN_TYPE<stkobjects/HFSS_FAR_FIELD_DATA_GAIN_TYPE_enum>

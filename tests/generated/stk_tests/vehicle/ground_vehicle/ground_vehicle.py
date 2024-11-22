@@ -825,6 +825,7 @@ class EarlyBoundTests(TestBase):
     def test_RF_RadarCrossSection(self):
         helper = RadarCrossSectionInheritableHelper()
         helper.Run(EarlyBoundTests.AG_GV.radar_cross_section)
+        helper.Run_DeprecatedModelInterface(EarlyBoundTests.AG_GV.radar_cross_section)
 
     # endregion
 

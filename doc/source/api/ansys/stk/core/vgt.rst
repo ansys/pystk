@@ -894,6 +894,9 @@ Summary
             * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolVectorSurfaceDisplacement`
               - Displacement between origin and destination points using surface distance and altitude difference.
 
+            * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolVectorFile`
+              - Vector interpolated from tabulated data from file.
+
             * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolVectorFactory`
               - A Factory object to create vectors.
 
@@ -1594,6 +1597,7 @@ analysis.
      VectorGeometryToolVectorVelocityAcceleration<vgt/VectorGeometryToolVectorVelocityAcceleration>
      VectorGeometryToolVectorPlugin<vgt/VectorGeometryToolVectorPlugin>
      VectorGeometryToolVectorSurfaceDisplacement<vgt/VectorGeometryToolVectorSurfaceDisplacement>
+     VectorGeometryToolVectorFile<vgt/VectorGeometryToolVectorFile>
      VectorGeometryToolVectorFactory<vgt/VectorGeometryToolVectorFactory>
      VectorGeometryToolAxesFactory<vgt/VectorGeometryToolAxesFactory>
      VectorGeometryToolSystemFactory<vgt/VectorGeometryToolSystemFactory>

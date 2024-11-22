@@ -12,13 +12,14 @@ __all__ = ["ACCELERATION_ADVANCED_ACCELERATION_MODE", "ACCELERATION_MANEUVER_AER
 "AIRSPEED_TYPE", "ALTITUDE_CONSTRAINT_MANEUVER_MODE", "ALTITUDE_REFERENCE", "AND_OR", "ANGLE_MODE", "APPROACH_MODE", "ARINC424Airport", 
 "ARINC424Helipad", "ARINC424Navaid", "ARINC424Runway", "ARINC424Source", "ARINC424Waypoint", "ATMOSPHERE_MODEL", "AUTOPILOT_ALTITUDE_CONTROL_MODE", 
 "AUTOPILOT_ALTITUDE_MODE", "AUTOPILOT_HORIZONTAL_PLANE_MODE", "AdvancedFixedWingElectricPowerplant", "AdvancedFixedWingEmpiricalJetEngine", 
-"AdvancedFixedWingExternalAerodynamic", "AdvancedFixedWingExternalPropulsion", "AdvancedFixedWingGeometryBasic", "AdvancedFixedWingGeometryVariable", 
-"AdvancedFixedWingPistonPowerplant", "AdvancedFixedWingRamjetBasic", "AdvancedFixedWingScramjetBasic", "AdvancedFixedWingSubSuperHypersonicAerodynamic", 
-"AdvancedFixedWingSubSuperHypersonicPropulsion", "AdvancedFixedWingSubsonicAerodynamic", "AdvancedFixedWingSupersonicAerodynamic", 
-"AdvancedFixedWingTool", "AdvancedFixedWingTurbofanBasicABPowerplant", "AdvancedFixedWingTurbofanBasicABPropulsion", "AdvancedFixedWingTurbojetBasicABPowerplant", 
-"AdvancedFixedWingTurbojetBasicABPropulsion", "AdvancedFixedWingTurbopropPowerplant", "AerodynamicPropulsionManeuverModeHelper", 
-"AircraftAcceleration", "AircraftAccelerationMode", "AircraftAdvancedAccelerationModel", "AircraftAdvancedClimbModel", "AircraftAdvancedCruiseModel", 
-"AircraftAdvancedDescentModel", "AircraftAdvancedLandingModel", "AircraftAdvancedTakeoffModel", "AircraftAerodynamic", "AircraftBasicAccelerationModel", 
+"AdvancedFixedWingExternalAerodynamic", "AdvancedFixedWingExternalPropulsion", "AdvancedFixedWingFourPointAerodynamic", 
+"AdvancedFixedWingGeometryBasic", "AdvancedFixedWingGeometryVariable", "AdvancedFixedWingPistonPowerplant", "AdvancedFixedWingRamjetBasic", 
+"AdvancedFixedWingScramjetBasic", "AdvancedFixedWingSubSuperHypersonicAerodynamic", "AdvancedFixedWingSubSuperHypersonicPropulsion", 
+"AdvancedFixedWingSubsonicAerodynamic", "AdvancedFixedWingSupersonicAerodynamic", "AdvancedFixedWingTool", "AdvancedFixedWingTurbofanBasicABPowerplant", 
+"AdvancedFixedWingTurbofanBasicABPropulsion", "AdvancedFixedWingTurbojetBasicABPowerplant", "AdvancedFixedWingTurbojetBasicABPropulsion", 
+"AdvancedFixedWingTurbopropPowerplant", "AerodynamicPropulsionManeuverModeHelper", "AircraftAcceleration", "AircraftAccelerationMode", 
+"AircraftAdvancedAccelerationModel", "AircraftAdvancedClimbModel", "AircraftAdvancedCruiseModel", "AircraftAdvancedDescentModel", 
+"AircraftAdvancedLandingModel", "AircraftAdvancedTakeoffModel", "AircraftAerodynamic", "AircraftBasicAccelerationModel", 
 "AircraftBasicClimbModel", "AircraftBasicCruiseModel", "AircraftBasicDescentModel", "AircraftBasicFixedWingAerodynamic", 
 "AircraftBasicFixedWingPropulsion", "AircraftBasicLandingModel", "AircraftBasicTakeoffModel", "AircraftCategory", "AircraftClimb", 
 "AircraftCruise", "AircraftDescent", "AircraftExternalAerodynamic", "AircraftExternalPropulsion", "AircraftLanding", "AircraftModel", 
@@ -42,47 +43,48 @@ __all__ = ["ACCELERATION_ADVANCED_ACCELERATION_MODE", "ACCELERATION_MANEUVER_AER
 "CruiseAirspeedProfile", "DAFIFHelipad", "DAFIFRunway", "DAFIFSource", "DAFIFWaypoint", "DELAY_ALTITUDE_MODE", "DELAY_TURN_DIRECTION", 
 "DEPARTURE_SPEED_MODE", "DESCENT_SPEED_TYPE", "EPHEM_SHIFT_ROTATE_ALTITUDE_MODE", "EPHEM_SHIFT_ROTATE_COURSE_MODE", "ERROR_CODES", 
 "EXT_EPHEM_FLIGHT_MODE", "EnrouteAndDelayOptions", "EnrouteOptions", "EnrouteTurnDirectionOptions", "FLIGHT_LINE_PROCEDURE_TYPE", 
-"FLY_AOA_LEFT_RIGHT", "FLY_TO_FLIGHT_PATH_ANGLE_MODE", "FORMATION_FLYER_STOP_CONDITION", "FUEL_FLOW_TYPE", "FuelModelKeroseneAFPROP", 
-"FuelModelKeroseneCEA", "FuelTankExternal", "FuelTankInternal", "HOLDING_DIRECTION", "HOLDING_ENTRY_MANEUVER", "HOLDING_PROFILE_MODE", 
-"HOLD_REFUEL_DUMP_MODE", "HOVER_ALTITUDE_MODE", "HOVER_HEADING_MODE", "HOVER_MODE", "HoverAltitudeOptions", "IARINC424Airport", 
-"IARINC424Item", "IAdvancedFixedWingGeometry", "IAdvancedFixedWingPowerplant", "IAutomationStrategyFactory", "IAviatorVehicle", 
-"IBasicFixedWingLiftHelper", "IBasicManeuverStrategy", "ICatalogAirport", "ICatalogItem", "ICatalogNavaid", "ICatalogRunway", 
-"ICatalogSource", "ICatalogVTOLPoint", "ICatalogWaypoint", "IConnect", "ICruiseAirspeedAndProfileOptions", "IDAFIFItem", 
-"IEnrouteAndDelayOptions", "INTERCEPT_MODE", "IPerformanceModel", "IProcedure", "ISite", "ISiteUnknown", "IStation", "IVerticalPlaneOptions", 
-"JET_ENGINE_EXHAUST_NOZZLE_TYPE", "JET_ENGINE_INTAKE_TYPE", "JET_ENGINE_TECHNOLOGY_LEVEL", "JET_ENGINE_TURBINE_TYPE", "JET_FUEL_TYPE", 
-"JOIN_EXIT_ARC_METHOD", "LANDING_APPROACH_FIX_RANGE_MODE", "LAUNCH_ATTITUDE_MODE", "LAUNCH_DYNAMIC_STATE_BEARING_REFERENCE", 
+"FLY_AOA_LEFT_RIGHT", "FLY_TO_FLIGHT_PATH_ANGLE_MODE", "FORMATION_FLYER_STOP_CONDITION", "FUEL_FLOW_TYPE", "FourPointAerodynamic", 
+"FuelModelKeroseneAFPROP", "FuelModelKeroseneCEA", "FuelTankExternal", "FuelTankInternal", "HOLDING_DIRECTION", "HOLDING_ENTRY_MANEUVER", 
+"HOLDING_PROFILE_MODE", "HOLD_REFUEL_DUMP_MODE", "HOVER_ALTITUDE_MODE", "HOVER_HEADING_MODE", "HOVER_MODE", "HoverAltitudeOptions", 
+"IARINC424Airport", "IARINC424Item", "IAdvancedFixedWingGeometry", "IAdvancedFixedWingPowerplant", "IAutomationStrategyFactory", 
+"IAviatorVehicle", "IBasicFixedWingLiftHelper", "IBasicManeuverStrategy", "ICatalogAirport", "ICatalogItem", "ICatalogNavaid", 
+"ICatalogRunway", "ICatalogSource", "ICatalogVTOLPoint", "ICatalogWaypoint", "IConnect", "ICruiseAirspeedAndProfileOptions", 
+"IDAFIFItem", "IEnrouteAndDelayOptions", "INTERCEPT_MODE", "IPerformanceModel", "IProcedure", "ISite", "ISiteUnknown", "IStation", 
+"IVerticalPlaneOptions", "JET_ENGINE_EXHAUST_NOZZLE_TYPE", "JET_ENGINE_INTAKE_TYPE", "JET_ENGINE_TECHNOLOGY_LEVEL", "JET_ENGINE_TURBINE_TYPE", 
+"JET_FUEL_TYPE", "JOIN_EXIT_ARC_METHOD", "LANDING_APPROACH_FIX_RANGE_MODE", "LAUNCH_ATTITUDE_MODE", "LAUNCH_DYNAMIC_STATE_BEARING_REFERENCE", 
 "LAUNCH_DYNAMIC_STATE_COORD_FRAME", "LINE_ORIENTATION", "LandingCruiseAirspeedAndProfileOptions", "LandingEnrouteOptions", 
 "LandingEnterDownwindPattern", "LandingInterceptGlideslope", "LandingStandardInstrumentApproach", "LandingVerticalPlaneOptions", 
 "LevelTurns", "MINIMIZE_SITE_PROCEDURE_TIME_DIFF", "MISSILE_AERODYNAMIC_STRATEGY", "MISSILE_PROPULSION_STRATEGY", "MissileAdvancedAerodynamic", 
-"MissileAerodynamic", "MissileExternalAerodynamic", "MissileExternalPropulsion", "MissileModel", "MissileModels", "MissilePropulsion", 
-"MissileRamjetPropulsion", "MissileRocketPropulsion", "MissileSimpleAerodynamic", "MissileSimplePropulsion", "MissileTurbojetPropulsion", 
-"Mission", "NAVIGATOR_TURN_DIRECTION", "NUMERICAL_INTEGRATOR", "NavaidCategory", "NavigationOptions", "PERFORMANCE_MODEL_OVERRIDE", 
-"PHASE_OF_FLIGHT", "PITCH_3D_CONTROL_MODE", "POINT_TO_POINT_MODE", "PROCEDURE_TYPE", "PROFILE_CONTROL_LIMIT", "PULL_MODE", 
-"PUSH_PULL", "PayloadStation", "PerformanceModel", "PerformanceModelOptions", "Phase", "PhaseCollection", "Procedure", "ProcedureAirway", 
-"ProcedureAirwayRouter", "ProcedureArcEnroute", "ProcedureArcPointToPoint", "ProcedureAreaTargetSearch", "ProcedureBasicManeuver", 
-"ProcedureBasicPointToPoint", "ProcedureCollection", "ProcedureDelay", "ProcedureEnroute", "ProcedureExtEphem", "ProcedureFastTimeOptions", 
-"ProcedureFlightLine", "ProcedureFormationFlyer", "ProcedureFormationRecover", "ProcedureHoldingCircular", "ProcedureHoldingFigure8", 
-"ProcedureHoldingRacetrack", "ProcedureHover", "ProcedureHoverTranslate", "ProcedureInFormation", "ProcedureLanding", "ProcedureLaunch", 
-"ProcedureLaunchDynamicState", "ProcedureLaunchWaypoint", "ProcedureParallelFlightLine", "ProcedureReferenceState", "ProcedureSuperProcedure", 
-"ProcedureTakeoff", "ProcedureTerrainFollow", "ProcedureTimeOptions", "ProcedureTransitionToForwardFlight", "ProcedureTransitionToHover", 
-"ProcedureVGTPoint", "ProcedureVerticalLanding", "ProcedureVerticalTakeoff", "PropulsionEfficiencies", "PropulsionThrust", 
-"RAMJET_MODE", "REFERENCE_STATE_ATTITUDE_MODE", "REFERENCE_STATE_LATERAL_ACCELERATION_MODE", "REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE", 
-"REFERENCE_STATE_PERFORMANCE_MODE", "REFUEL_DUMP_MODE", "RELATIVE_ABSOLUTE_BEARING", "RELATIVE_ALTITUDE_MODE", "RELATIVE_SPEED_ALTITUDE_STOP_CONDITION", 
-"RENDEZVOUS_STOP_CONDITION", "ROLLING_PULL_MODE", "ROLL_LEFT_RIGHT", "ROLL_UPRIGHT_INVERTED", "ROTORCRAFT_POWERPLANT_TYPE", 
-"RUNWAY_HIGH_LOW_END", "ReferenceStateForwardFlightOptions", "ReferenceStateHoverOptions", "ReferenceStateTakeoffLandingOptions", 
-"ReferenceStateWeightOnWheelsOptions", "RefuelDumpProperties", "RotorcraftAerodynamic", "RotorcraftModel", "RotorcraftModels", 
-"RotorcraftPropulsion", "RunwayCategory", "RunwayHeadingOptions", "SCRAMJET_MODE", "SEARCH_PATTERN_COURSE_MODE", "SITE_TYPE", 
-"SMOOTH_ACCELERATION_LEFT_RIGHT", "SMOOTH_ACCELERATION_STOP_CONDITIONS", "SMOOTH_TURN_FLIGHT_PATH_ANGLE_MODE", "SMOOTH_TURN_MODE", 
-"STATIONKEEPING_STOP_CONDITION", "STK_OBJECT_WAYPOINT_OFFSET_MODE", "STRAIGHT_AHEAD_REFERENCE_FRAME", "Site", "SiteAirportFromCatalog", 
-"SiteDynamicState", "SiteEndOfPrevProcedure", "SiteNavaidFromCatalog", "SiteReferenceState", "SiteRelativeToPrevProcedure", 
-"SiteRelativeToSTKObject", "SiteRunway", "SiteRunwayFromCatalog", "SiteSTKAreaTarget", "SiteSTKObjectWaypoint", "SiteSTKStaticObject", 
-"SiteSTKVehicle", "SiteSuperProcedure", "SiteVTOLPoint", "SiteVTOLPointFromCatalog", "SiteWaypoint", "SiteWaypointFromCatalog", 
-"StationCollection", "TAKEOFF_LANDING_SPEED_MODE", "TAKEOFF_MODE", "TARGET_POSITION_VEL_TYPE", "TRAJECTORY_BLEND_MODE", 
-"TRANSITION_TO_HOVER_MODE", "TURBINE_MODE", "TURN_DIRECTION", "TURN_MODE", "TakeoffDeparturePoint", "TakeoffLowTransition", 
-"TakeoffNormal", "UserRunway", "UserRunwaySource", "UserVTOLPoint", "UserVTOLPointSource", "UserWaypoint", "UserWaypointSource", 
-"VERT_LANDING_MODE", "VTOLPointCategory", "VTOL_FINAL_HEADING_MODE", "VTOL_HEADING_MODE", "VTOL_RATE_MODE", "VTOL_TRANSITION_MODE", 
-"VTOL_TRANSLATION_FINAL_COURSE_MODE", "VTOL_TRANSLATION_MODE", "VerticalPlaneAndFlightPathOptions", "VerticalPlaneOptions", 
-"WIND_ATMOS_MODEL_SOURCE", "WIND_MODEL_TYPE", "WaypointCategory", "WindModel", "WindModelADDS", "WindModelConstant"]
+"MissileAerodynamic", "MissileExternalAerodynamic", "MissileExternalPropulsion", "MissileFourPointAerodynamic", "MissileModel", 
+"MissileModels", "MissilePropulsion", "MissileRamjetPropulsion", "MissileRocketPropulsion", "MissileSimpleAerodynamic", 
+"MissileSimplePropulsion", "MissileTurbojetPropulsion", "Mission", "NAVIGATOR_TURN_DIRECTION", "NUMERICAL_INTEGRATOR", "NavaidCategory", 
+"NavigationOptions", "PERFORMANCE_MODEL_OVERRIDE", "PHASE_OF_FLIGHT", "PITCH_3D_CONTROL_MODE", "POINT_TO_POINT_MODE", "PROCEDURE_TYPE", 
+"PROFILE_CONTROL_LIMIT", "PULL_MODE", "PUSH_PULL", "PayloadStation", "PerformanceModel", "PerformanceModelOptions", "Phase", 
+"PhaseCollection", "Procedure", "ProcedureAirway", "ProcedureAirwayRouter", "ProcedureArcEnroute", "ProcedureArcPointToPoint", 
+"ProcedureAreaTargetSearch", "ProcedureBasicManeuver", "ProcedureBasicPointToPoint", "ProcedureCollection", "ProcedureDelay", 
+"ProcedureEnroute", "ProcedureExtEphem", "ProcedureFastTimeOptions", "ProcedureFlightLine", "ProcedureFormationFlyer", "ProcedureFormationRecover", 
+"ProcedureHoldingCircular", "ProcedureHoldingFigure8", "ProcedureHoldingRacetrack", "ProcedureHover", "ProcedureHoverTranslate", 
+"ProcedureInFormation", "ProcedureLanding", "ProcedureLaunch", "ProcedureLaunchDynamicState", "ProcedureLaunchWaypoint", 
+"ProcedureParallelFlightLine", "ProcedureReferenceState", "ProcedureSuperProcedure", "ProcedureTakeoff", "ProcedureTerrainFollow", 
+"ProcedureTimeOptions", "ProcedureTransitionToForwardFlight", "ProcedureTransitionToHover", "ProcedureVGTPoint", "ProcedureVerticalLanding", 
+"ProcedureVerticalTakeoff", "PropulsionEfficiencies", "PropulsionThrust", "RAMJET_MODE", "REFERENCE_STATE_ATTITUDE_MODE", 
+"REFERENCE_STATE_LATERAL_ACCELERATION_MODE", "REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE", "REFERENCE_STATE_PERFORMANCE_MODE", 
+"REFUEL_DUMP_MODE", "RELATIVE_ABSOLUTE_BEARING", "RELATIVE_ALTITUDE_MODE", "RELATIVE_SPEED_ALTITUDE_STOP_CONDITION", "RENDEZVOUS_STOP_CONDITION", 
+"ROLLING_PULL_MODE", "ROLL_LEFT_RIGHT", "ROLL_UPRIGHT_INVERTED", "ROTORCRAFT_POWERPLANT_TYPE", "RUNWAY_HIGH_LOW_END", "ReferenceStateForwardFlightOptions", 
+"ReferenceStateHoverOptions", "ReferenceStateTakeoffLandingOptions", "ReferenceStateWeightOnWheelsOptions", "RefuelDumpProperties", 
+"RotorcraftAerodynamic", "RotorcraftModel", "RotorcraftModels", "RotorcraftPropulsion", "RunwayCategory", "RunwayHeadingOptions", 
+"SCRAMJET_MODE", "SEARCH_PATTERN_COURSE_MODE", "SITE_TYPE", "SMOOTH_ACCELERATION_LEFT_RIGHT", "SMOOTH_ACCELERATION_STOP_CONDITIONS", 
+"SMOOTH_TURN_FLIGHT_PATH_ANGLE_MODE", "SMOOTH_TURN_MODE", "STATIONKEEPING_STOP_CONDITION", "STK_OBJECT_WAYPOINT_OFFSET_MODE", 
+"STRAIGHT_AHEAD_REFERENCE_FRAME", "Site", "SiteAirportFromCatalog", "SiteDynamicState", "SiteEndOfPrevProcedure", "SiteNavaidFromCatalog", 
+"SiteReferenceState", "SiteRelativeToPrevProcedure", "SiteRelativeToSTKObject", "SiteRunway", "SiteRunwayFromCatalog", "SiteSTKAreaTarget", 
+"SiteSTKObjectWaypoint", "SiteSTKStaticObject", "SiteSTKVehicle", "SiteSuperProcedure", "SiteVTOLPoint", "SiteVTOLPointFromCatalog", 
+"SiteWaypoint", "SiteWaypointFromCatalog", "StationCollection", "TAKEOFF_LANDING_SPEED_MODE", "TAKEOFF_MODE", "TARGET_POSITION_VEL_TYPE", 
+"TRAJECTORY_BLEND_MODE", "TRANSITION_TO_HOVER_MODE", "TURBINE_MODE", "TURN_DIRECTION", "TURN_MODE", "TakeoffDeparturePoint", 
+"TakeoffLowTransition", "TakeoffNormal", "UserRunway", "UserRunwaySource", "UserVTOLPoint", "UserVTOLPointSource", "UserWaypoint", 
+"UserWaypointSource", "VERT_LANDING_MODE", "VTOLPointCategory", "VTOL_FINAL_HEADING_MODE", "VTOL_HEADING_MODE", "VTOL_RATE_MODE", 
+"VTOL_TRANSITION_MODE", "VTOL_TRANSLATION_FINAL_COURSE_MODE", "VTOL_TRANSLATION_MODE", "VerticalPlaneAndFlightPathOptions", 
+"VerticalPlaneOptions", "WIND_ATMOS_MODEL_SOURCE", "WIND_MODEL_TYPE", "WaypointCategory", "WindModel", "WindModelADDS", 
+"WindModelConstant"]
 
 import typing
 
@@ -661,11 +663,14 @@ class AIRCRAFT_AERODYNAMIC_STRATEGY(IntEnum):
     """Basic fixed wing aerodynamics."""
     AIRCRAFT_AERODYNAMIC_ADVANCED_MISSILE = 3
     """Advanced missile aerodynamics."""
+    AIRCRAFT_AERODYNAMIC_FOUR_POINT = 4
+    """Four Point aerodynamics."""
 
 AIRCRAFT_AERODYNAMIC_STRATEGY.AIRCRAFT_AERODYNAMIC_SIMPLE.__doc__ = "Simple aerodynamics."
 AIRCRAFT_AERODYNAMIC_STRATEGY.AIRCRAFT_AERODYNAMIC_EXTERNAL_FILE.__doc__ = "External file aerodynamics."
 AIRCRAFT_AERODYNAMIC_STRATEGY.AIRCRAFT_AERODYNAMIC_BASIC_FIXED_WING.__doc__ = "Basic fixed wing aerodynamics."
 AIRCRAFT_AERODYNAMIC_STRATEGY.AIRCRAFT_AERODYNAMIC_ADVANCED_MISSILE.__doc__ = "Advanced missile aerodynamics."
+AIRCRAFT_AERODYNAMIC_STRATEGY.AIRCRAFT_AERODYNAMIC_FOUR_POINT.__doc__ = "Four Point aerodynamics."
 
 agcls.AgTypeNameMap["AIRCRAFT_AERODYNAMIC_STRATEGY"] = AIRCRAFT_AERODYNAMIC_STRATEGY
 
@@ -1994,11 +1999,14 @@ class ADVANCED_FIXED_WING_AERODYNAMIC_STRATEGY(IntEnum):
     """Define the aerodynamics for an aircraft that generally travels at subsonic speeds."""
     SUPERSONIC_AERODYNAMIC = 3
     """Define the aerodynamics for an aircraft that generally travels at supersonic speeds."""
+    FOUR_POINT_AERODYNAMIC = 4
+    """Define the aerodynamics for an aircraft defined at 4 different points in the flight envelope."""
 
 ADVANCED_FIXED_WING_AERODYNAMIC_STRATEGY.EXTERNAL_AERODYNAMIC_FILE.__doc__ = "Define the aerodynamics using an external .aero file."
 ADVANCED_FIXED_WING_AERODYNAMIC_STRATEGY.SUB_SUPER_HYPER_AERODYNAMIC.__doc__ = "Define the aerodynamics using a model derived from first principles that is valid for the full speed range of high speed aircraft."
 ADVANCED_FIXED_WING_AERODYNAMIC_STRATEGY.SUBSONIC_AERODYNAMIC.__doc__ = "Define the aerodynamics for an aircraft that generally travels at subsonic speeds."
 ADVANCED_FIXED_WING_AERODYNAMIC_STRATEGY.SUPERSONIC_AERODYNAMIC.__doc__ = "Define the aerodynamics for an aircraft that generally travels at supersonic speeds."
+ADVANCED_FIXED_WING_AERODYNAMIC_STRATEGY.FOUR_POINT_AERODYNAMIC.__doc__ = "Define the aerodynamics for an aircraft defined at 4 different points in the flight envelope."
 
 agcls.AgTypeNameMap["ADVANCED_FIXED_WING_AERODYNAMIC_STRATEGY"] = ADVANCED_FIXED_WING_AERODYNAMIC_STRATEGY
 
@@ -2067,10 +2075,13 @@ class MISSILE_AERODYNAMIC_STRATEGY(IntEnum):
     """External file aerodynamics."""
     MISSILE_AERODYNAMIC_ADVANCED = 2
     """Advanced missile aerodynamics."""
+    MISSILE_AERODYNAMIC_FOUR_POINT = 3
+    """FourPoint missile aerodynamics."""
 
 MISSILE_AERODYNAMIC_STRATEGY.MISSILE_AERODYNAMIC_SIMPLE.__doc__ = "Simple aerodynamics."
 MISSILE_AERODYNAMIC_STRATEGY.MISSILE_AERODYNAMIC_EXTERNAL_FILE.__doc__ = "External file aerodynamics."
 MISSILE_AERODYNAMIC_STRATEGY.MISSILE_AERODYNAMIC_ADVANCED.__doc__ = "Advanced missile aerodynamics."
+MISSILE_AERODYNAMIC_STRATEGY.MISSILE_AERODYNAMIC_FOUR_POINT.__doc__ = "FourPoint missile aerodynamics."
 
 agcls.AgTypeNameMap["MISSILE_AERODYNAMIC_STRATEGY"] = MISSILE_AERODYNAMIC_STRATEGY
 
@@ -15785,7 +15796,7 @@ agcls.AgTypeNameMap["AircraftExternalAerodynamic"] = AircraftExternalAerodynamic
 class AircraftAerodynamic(SupportsDeleteCallback):
     """Interface used to access the Aerodynamics options for the Basic Acceleration Model of an aircraft."""
 
-    _num_methods = 10
+    _num_methods = 11
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_aerodynamic_strategy_method_offset = 1
     _set_aerodynamic_strategy_method_offset = 2
@@ -15797,6 +15808,7 @@ class AircraftAerodynamic(SupportsDeleteCallback):
     _set_lift_factor_method_offset = 8
     _get_drag_factor_method_offset = 9
     _set_drag_factor_method_offset = 10
+    _get_mode_as_four_point_method_offset = 11
     _metadata = {
         "iid_data" : (5120934689185363706, 8628502199224761519),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -15885,6 +15897,14 @@ class AircraftAerodynamic(SupportsDeleteCallback):
         """Get or set the scalar value applied to the drag for parametric analysis."""
         return self._intf.set_property(AircraftAerodynamic._metadata, AircraftAerodynamic._set_drag_factor_metadata, value)
 
+    _get_mode_as_four_point_metadata = { "offset" : _get_mode_as_four_point_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def mode_as_four_point(self) -> "FourPointAerodynamic":
+        """Get the interface for a four point aerodynamics strategy."""
+        return self._intf.get_property(AircraftAerodynamic._metadata, AircraftAerodynamic._get_mode_as_four_point_metadata)
+
     _property_names[aerodynamic_strategy] = "aerodynamic_strategy"
     _property_names[mode_as_simple] = "mode_as_simple"
     _property_names[mode_as_basic_fixed_wing] = "mode_as_basic_fixed_wing"
@@ -15892,6 +15912,7 @@ class AircraftAerodynamic(SupportsDeleteCallback):
     _property_names[mode_as_advanced_missile] = "mode_as_advanced_missile"
     _property_names[lift_factor] = "lift_factor"
     _property_names[drag_factor] = "drag_factor"
+    _property_names[mode_as_four_point] = "mode_as_four_point"
 
     def __init__(self, source_object=None):
         """Construct an object of type AircraftAerodynamic."""
@@ -29677,7 +29698,7 @@ agcls.AgTypeNameMap["PerformanceModelOptions"] = PerformanceModelOptions
 class AdvancedFixedWingTool(SupportsDeleteCallback):
     """Interface used to access the options for the Advanced Fixed Wing Tool of an aircraft."""
 
-    _num_methods = 41
+    _num_methods = 42
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _get_wing_area_method_offset = 1
     _set_wing_area_method_offset = 2
@@ -29720,6 +29741,7 @@ class AdvancedFixedWingTool(SupportsDeleteCallback):
     _get_powerplant_mode_as_basic_turbofan_method_offset = 39
     _get_powerplant_mode_as_basic_turbojet_method_offset = 40
     _get_powerplant_mode_as_sub_super_hypersonic_method_offset = 41
+    _get_aerodynamic_mode_as_four_point_method_offset = 42
     _metadata = {
         "iid_data" : (5237019780042636595, 13473390248537517999),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
@@ -30055,6 +30077,14 @@ class AdvancedFixedWingTool(SupportsDeleteCallback):
         """Get the interface for a Sub/Super/Hypersoinc Powerplant strategy."""
         return self._intf.get_property(AdvancedFixedWingTool._metadata, AdvancedFixedWingTool._get_powerplant_mode_as_sub_super_hypersonic_metadata)
 
+    _get_aerodynamic_mode_as_four_point_metadata = { "offset" : _get_aerodynamic_mode_as_four_point_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def aerodynamic_mode_as_four_point(self) -> "AdvancedFixedWingFourPointAerodynamic":
+        """Get the interface for a Four Point Aerodynamics strategy."""
+        return self._intf.get_property(AdvancedFixedWingTool._metadata, AdvancedFixedWingTool._get_aerodynamic_mode_as_four_point_metadata)
+
     _property_names[wing_area] = "wing_area"
     _property_names[flaps_area] = "flaps_area"
     _property_names[speedbrakes_area] = "speedbrakes_area"
@@ -30081,6 +30111,7 @@ class AdvancedFixedWingTool(SupportsDeleteCallback):
     _property_names[powerplant_mode_as_basic_turbofan] = "powerplant_mode_as_basic_turbofan"
     _property_names[powerplant_mode_as_basic_turbojet] = "powerplant_mode_as_basic_turbojet"
     _property_names[powerplant_mode_as_sub_super_hypersonic] = "powerplant_mode_as_sub_super_hypersonic"
+    _property_names[aerodynamic_mode_as_four_point] = "aerodynamic_mode_as_four_point"
 
     def __init__(self, source_object=None):
         """Construct an object of type AdvancedFixedWingTool."""
@@ -32989,13 +33020,14 @@ agcls.AgTypeNameMap["MissileAdvancedAerodynamic"] = MissileAdvancedAerodynamic
 class MissileAerodynamic(SupportsDeleteCallback):
     """Interface used to access the aerodynamics options for a missile."""
 
-    _num_methods = 5
+    _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_aerodynamic_strategy_method_offset = 1
     _set_aerodynamic_strategy_method_offset = 2
     _get_mode_as_simple_method_offset = 3
     _get_mode_as_external_method_offset = 4
     _get_mode_as_advanced_method_offset = 5
+    _get_mode_as_four_point_method_offset = 6
     _metadata = {
         "iid_data" : (5364173899613717274, 6266031543543176121),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -33044,10 +33076,19 @@ class MissileAerodynamic(SupportsDeleteCallback):
         """Get the interface for an advanced aerodynamics strategy."""
         return self._intf.get_property(MissileAerodynamic._metadata, MissileAerodynamic._get_mode_as_advanced_metadata)
 
+    _get_mode_as_four_point_metadata = { "offset" : _get_mode_as_four_point_method_offset,
+            "arg_types" : (POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.InterfaceOutArg,) }
+    @property
+    def mode_as_four_point(self) -> "MissileFourPointAerodynamic":
+        """Get the interface for an four point aerodynamics strategy."""
+        return self._intf.get_property(MissileAerodynamic._metadata, MissileAerodynamic._get_mode_as_four_point_metadata)
+
     _property_names[aerodynamic_strategy] = "aerodynamic_strategy"
     _property_names[mode_as_simple] = "mode_as_simple"
     _property_names[mode_as_external] = "mode_as_external"
     _property_names[mode_as_advanced] = "mode_as_advanced"
+    _property_names[mode_as_four_point] = "mode_as_four_point"
 
     def __init__(self, source_object=None):
         """Construct an object of type MissileAerodynamic."""
@@ -38831,6 +38872,1170 @@ class BasicManeuverTargetPositionVelNoisySurfTarget(SupportsDeleteCallback):
 
 agcls.AgClassCatalog.add_catalog_entry((5226338563214008525, 1195314219041710241), BasicManeuverTargetPositionVelNoisySurfTarget)
 agcls.AgTypeNameMap["BasicManeuverTargetPositionVelNoisySurfTarget"] = BasicManeuverTargetPositionVelNoisySurfTarget
+
+class AdvancedFixedWingFourPointAerodynamic(SupportsDeleteCallback):
+    """Interface used to access the options for the FourPoint aerodynamic strategy in the advanced fixed wing tool."""
+
+    _num_methods = 36
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_max_aoa_method_offset = 1
+    _set_max_aoa_method_offset = 2
+    _get_mach_1_method_offset = 3
+    _set_mach_1_method_offset = 4
+    _get_a_o_a_1_method_offset = 5
+    _set_a_o_a_1_method_offset = 6
+    _get_c_l_1_method_offset = 7
+    _set_c_l_1_method_offset = 8
+    _get_c_d_1_method_offset = 9
+    _set_c_d_1_method_offset = 10
+    _get_mach_2_method_offset = 11
+    _set_mach_2_method_offset = 12
+    _get_a_o_a_2_method_offset = 13
+    _set_a_o_a_2_method_offset = 14
+    _get_c_l_2_method_offset = 15
+    _set_c_l_2_method_offset = 16
+    _get_c_d_2_method_offset = 17
+    _set_c_d_2_method_offset = 18
+    _get_mach_3_method_offset = 19
+    _set_mach_3_method_offset = 20
+    _get_a_o_a_3_method_offset = 21
+    _set_a_o_a_3_method_offset = 22
+    _get_c_l_3_method_offset = 23
+    _set_c_l_3_method_offset = 24
+    _get_c_d_3_method_offset = 25
+    _set_c_d_3_method_offset = 26
+    _get_mach_4_method_offset = 27
+    _set_mach_4_method_offset = 28
+    _get_a_o_a_4_method_offset = 29
+    _set_a_o_a_4_method_offset = 30
+    _get_c_l_4_method_offset = 31
+    _set_c_l_4_method_offset = 32
+    _get_c_d_4_method_offset = 33
+    _set_c_d_4_method_offset = 34
+    _validate_lift_design_points_method_offset = 35
+    _validate_drag_design_points_method_offset = 36
+    _metadata = {
+        "iid_data" : (4877073665632949624, 11672716552880349597),
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+    }
+    _property_names = {}
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, AdvancedFixedWingFourPointAerodynamic)
+    
+    _get_max_aoa_metadata = { "offset" : _get_max_aoa_method_offset,
+            "arg_types" : (POINTER(agcom.Variant),),
+            "marshallers" : (agmarshall.VariantArg,) }
+    @property
+    def max_aoa(self) -> typing.Any:
+        """property MaxAOA"""
+        return self._intf.get_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._get_max_aoa_metadata)
+
+    _set_max_aoa_metadata = { "offset" : _set_max_aoa_method_offset,
+            "arg_types" : (agcom.Variant,),
+            "marshallers" : (agmarshall.VariantArg,) }
+    @max_aoa.setter
+    def max_aoa(self, value:typing.Any) -> None:
+        """property MaxAOA"""
+        return self._intf.set_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._set_max_aoa_metadata, value)
+
+    _get_mach_1_metadata = { "offset" : _get_mach_1_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def mach_1(self) -> float:
+        """property Mach_1"""
+        return self._intf.get_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._get_mach_1_metadata)
+
+    _set_mach_1_metadata = { "offset" : _set_mach_1_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @mach_1.setter
+    def mach_1(self, value:float) -> None:
+        """property Mach_1"""
+        return self._intf.set_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._set_mach_1_metadata, value)
+
+    _get_a_o_a_1_metadata = { "offset" : _get_a_o_a_1_method_offset,
+            "arg_types" : (POINTER(agcom.Variant),),
+            "marshallers" : (agmarshall.VariantArg,) }
+    @property
+    def a_o_a_1(self) -> typing.Any:
+        """property AOA_1"""
+        return self._intf.get_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._get_a_o_a_1_metadata)
+
+    _set_a_o_a_1_metadata = { "offset" : _set_a_o_a_1_method_offset,
+            "arg_types" : (agcom.Variant,),
+            "marshallers" : (agmarshall.VariantArg,) }
+    @a_o_a_1.setter
+    def a_o_a_1(self, value:typing.Any) -> None:
+        """property AOA_1"""
+        return self._intf.set_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._set_a_o_a_1_metadata, value)
+
+    _get_c_l_1_metadata = { "offset" : _get_c_l_1_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def c_l_1(self) -> float:
+        """property CL_1"""
+        return self._intf.get_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._get_c_l_1_metadata)
+
+    _set_c_l_1_metadata = { "offset" : _set_c_l_1_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @c_l_1.setter
+    def c_l_1(self, value:float) -> None:
+        """property CL_1"""
+        return self._intf.set_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._set_c_l_1_metadata, value)
+
+    _get_c_d_1_metadata = { "offset" : _get_c_d_1_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def c_d_1(self) -> float:
+        """property CD_1"""
+        return self._intf.get_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._get_c_d_1_metadata)
+
+    _set_c_d_1_metadata = { "offset" : _set_c_d_1_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @c_d_1.setter
+    def c_d_1(self, value:float) -> None:
+        """property CD_1"""
+        return self._intf.set_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._set_c_d_1_metadata, value)
+
+    _get_mach_2_metadata = { "offset" : _get_mach_2_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def mach_2(self) -> float:
+        """property Mach_2"""
+        return self._intf.get_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._get_mach_2_metadata)
+
+    _set_mach_2_metadata = { "offset" : _set_mach_2_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @mach_2.setter
+    def mach_2(self, value:float) -> None:
+        """property Mach_2"""
+        return self._intf.set_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._set_mach_2_metadata, value)
+
+    _get_a_o_a_2_metadata = { "offset" : _get_a_o_a_2_method_offset,
+            "arg_types" : (POINTER(agcom.Variant),),
+            "marshallers" : (agmarshall.VariantArg,) }
+    @property
+    def a_o_a_2(self) -> typing.Any:
+        """property AOA_2"""
+        return self._intf.get_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._get_a_o_a_2_metadata)
+
+    _set_a_o_a_2_metadata = { "offset" : _set_a_o_a_2_method_offset,
+            "arg_types" : (agcom.Variant,),
+            "marshallers" : (agmarshall.VariantArg,) }
+    @a_o_a_2.setter
+    def a_o_a_2(self, value:typing.Any) -> None:
+        """property AOA_2"""
+        return self._intf.set_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._set_a_o_a_2_metadata, value)
+
+    _get_c_l_2_metadata = { "offset" : _get_c_l_2_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def c_l_2(self) -> float:
+        """property CL_2"""
+        return self._intf.get_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._get_c_l_2_metadata)
+
+    _set_c_l_2_metadata = { "offset" : _set_c_l_2_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @c_l_2.setter
+    def c_l_2(self, value:float) -> None:
+        """property CL_2"""
+        return self._intf.set_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._set_c_l_2_metadata, value)
+
+    _get_c_d_2_metadata = { "offset" : _get_c_d_2_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def c_d_2(self) -> float:
+        """property CD_2"""
+        return self._intf.get_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._get_c_d_2_metadata)
+
+    _set_c_d_2_metadata = { "offset" : _set_c_d_2_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @c_d_2.setter
+    def c_d_2(self, value:float) -> None:
+        """property CD_2"""
+        return self._intf.set_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._set_c_d_2_metadata, value)
+
+    _get_mach_3_metadata = { "offset" : _get_mach_3_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def mach_3(self) -> float:
+        """property Mach_3"""
+        return self._intf.get_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._get_mach_3_metadata)
+
+    _set_mach_3_metadata = { "offset" : _set_mach_3_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @mach_3.setter
+    def mach_3(self, value:float) -> None:
+        """property Mach_3"""
+        return self._intf.set_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._set_mach_3_metadata, value)
+
+    _get_a_o_a_3_metadata = { "offset" : _get_a_o_a_3_method_offset,
+            "arg_types" : (POINTER(agcom.Variant),),
+            "marshallers" : (agmarshall.VariantArg,) }
+    @property
+    def a_o_a_3(self) -> typing.Any:
+        """property AOA_3"""
+        return self._intf.get_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._get_a_o_a_3_metadata)
+
+    _set_a_o_a_3_metadata = { "offset" : _set_a_o_a_3_method_offset,
+            "arg_types" : (agcom.Variant,),
+            "marshallers" : (agmarshall.VariantArg,) }
+    @a_o_a_3.setter
+    def a_o_a_3(self, value:typing.Any) -> None:
+        """property AOA_3"""
+        return self._intf.set_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._set_a_o_a_3_metadata, value)
+
+    _get_c_l_3_metadata = { "offset" : _get_c_l_3_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def c_l_3(self) -> float:
+        """property CL_3"""
+        return self._intf.get_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._get_c_l_3_metadata)
+
+    _set_c_l_3_metadata = { "offset" : _set_c_l_3_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @c_l_3.setter
+    def c_l_3(self, value:float) -> None:
+        """property CL_3"""
+        return self._intf.set_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._set_c_l_3_metadata, value)
+
+    _get_c_d_3_metadata = { "offset" : _get_c_d_3_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def c_d_3(self) -> float:
+        """property CD_3"""
+        return self._intf.get_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._get_c_d_3_metadata)
+
+    _set_c_d_3_metadata = { "offset" : _set_c_d_3_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @c_d_3.setter
+    def c_d_3(self, value:float) -> None:
+        """property CD_3"""
+        return self._intf.set_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._set_c_d_3_metadata, value)
+
+    _get_mach_4_metadata = { "offset" : _get_mach_4_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def mach_4(self) -> float:
+        """property Mach_4"""
+        return self._intf.get_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._get_mach_4_metadata)
+
+    _set_mach_4_metadata = { "offset" : _set_mach_4_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @mach_4.setter
+    def mach_4(self, value:float) -> None:
+        """property Mach_4"""
+        return self._intf.set_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._set_mach_4_metadata, value)
+
+    _get_a_o_a_4_metadata = { "offset" : _get_a_o_a_4_method_offset,
+            "arg_types" : (POINTER(agcom.Variant),),
+            "marshallers" : (agmarshall.VariantArg,) }
+    @property
+    def a_o_a_4(self) -> typing.Any:
+        """property AOA_4"""
+        return self._intf.get_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._get_a_o_a_4_metadata)
+
+    _set_a_o_a_4_metadata = { "offset" : _set_a_o_a_4_method_offset,
+            "arg_types" : (agcom.Variant,),
+            "marshallers" : (agmarshall.VariantArg,) }
+    @a_o_a_4.setter
+    def a_o_a_4(self, value:typing.Any) -> None:
+        """property AOA_4"""
+        return self._intf.set_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._set_a_o_a_4_metadata, value)
+
+    _get_c_l_4_metadata = { "offset" : _get_c_l_4_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def c_l_4(self) -> float:
+        """property CL_4"""
+        return self._intf.get_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._get_c_l_4_metadata)
+
+    _set_c_l_4_metadata = { "offset" : _set_c_l_4_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @c_l_4.setter
+    def c_l_4(self, value:float) -> None:
+        """property CL_4"""
+        return self._intf.set_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._set_c_l_4_metadata, value)
+
+    _get_c_d_4_metadata = { "offset" : _get_c_d_4_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def c_d_4(self) -> float:
+        """property CD_4"""
+        return self._intf.get_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._get_c_d_4_metadata)
+
+    _set_c_d_4_metadata = { "offset" : _set_c_d_4_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @c_d_4.setter
+    def c_d_4(self, value:float) -> None:
+        """property CD_4"""
+        return self._intf.set_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._set_c_d_4_metadata, value)
+
+    _validate_lift_design_points_metadata = { "offset" : _validate_lift_design_points_method_offset,
+            "arg_types" : (agcom.DOUBLE, agcom.Variant, agcom.DOUBLE, agcom.Variant, agcom.DOUBLE, agcom.Variant, agcom.DOUBLE, agcom.Variant, POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.DoubleArg, agmarshall.VariantArg, agmarshall.DoubleArg, agmarshall.VariantArg, agmarshall.DoubleArg, agmarshall.VariantArg, agmarshall.DoubleArg, agmarshall.VariantArg, agmarshall.VariantBoolArg,) }
+    def validate_lift_design_points(self, d_mach_1:float, d_a_o_a_1:typing.Any, d_mach_2:float, d_a_o_a_2:typing.Any, d_mach_3:float, d_a_o_a_3:typing.Any, d_mach_4:float, d_a_o_a_4:typing.Any) -> bool:
+        """method ValidateLiftDesignPoints"""
+        return self._intf.invoke(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._validate_lift_design_points_metadata, d_mach_1, d_a_o_a_1, d_mach_2, d_a_o_a_2, d_mach_3, d_a_o_a_3, d_mach_4, d_a_o_a_4, OutArg())
+
+    _validate_drag_design_points_metadata = { "offset" : _validate_drag_design_points_method_offset,
+            "arg_types" : (agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.VariantBoolArg,) }
+    def validate_drag_design_points(self, d_mach_1:float, d_c_l_1:float, d_mach_2:float, d_c_l_2:float, d_mach_3:float, d_c_l_3:float, d_mach_4:float, d_c_l_4:float) -> bool:
+        """method ValidateDragDesignPoints"""
+        return self._intf.invoke(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._validate_drag_design_points_metadata, d_mach_1, d_c_l_1, d_mach_2, d_c_l_2, d_mach_3, d_c_l_3, d_mach_4, d_c_l_4, OutArg())
+
+    _property_names[max_aoa] = "max_aoa"
+    _property_names[mach_1] = "mach_1"
+    _property_names[a_o_a_1] = "a_o_a_1"
+    _property_names[c_l_1] = "c_l_1"
+    _property_names[c_d_1] = "c_d_1"
+    _property_names[mach_2] = "mach_2"
+    _property_names[a_o_a_2] = "a_o_a_2"
+    _property_names[c_l_2] = "c_l_2"
+    _property_names[c_d_2] = "c_d_2"
+    _property_names[mach_3] = "mach_3"
+    _property_names[a_o_a_3] = "a_o_a_3"
+    _property_names[c_l_3] = "c_l_3"
+    _property_names[c_d_3] = "c_d_3"
+    _property_names[mach_4] = "mach_4"
+    _property_names[a_o_a_4] = "a_o_a_4"
+    _property_names[c_l_4] = "c_l_4"
+    _property_names[c_d_4] = "c_d_4"
+
+    def __init__(self, source_object=None):
+        """Construct an object of type AdvancedFixedWingFourPointAerodynamic."""
+        SupportsDeleteCallback.__init__(self)
+        initialize_from_source_object(self, source_object, AdvancedFixedWingFourPointAerodynamic)
+    def _private_init(self, intf:InterfaceProxy):
+        self.__dict__["_intf"] = intf
+    def __eq__(self, other):
+        """Check equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
+        set_class_attribute(self, attrname, value, AdvancedFixedWingFourPointAerodynamic, [AdvancedFixedWingFourPointAerodynamic, ])
+
+agcls.AgClassCatalog.add_catalog_entry((5395193493490888646, 11199330471138564483), AdvancedFixedWingFourPointAerodynamic)
+agcls.AgTypeNameMap["AdvancedFixedWingFourPointAerodynamic"] = AdvancedFixedWingFourPointAerodynamic
+
+class MissileFourPointAerodynamic(SupportsDeleteCallback):
+    """Interface used to access the options for the FourPoint aerodynamic strategy in the missile."""
+
+    _num_methods = 40
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_mach_1_method_offset = 1
+    _set_mach_1_method_offset = 2
+    _get_a_o_a_1_method_offset = 3
+    _set_a_o_a_1_method_offset = 4
+    _get_c_l_1_method_offset = 5
+    _set_c_l_1_method_offset = 6
+    _get_c_d_1_method_offset = 7
+    _set_c_d_1_method_offset = 8
+    _get_mach_2_method_offset = 9
+    _set_mach_2_method_offset = 10
+    _get_a_o_a_2_method_offset = 11
+    _set_a_o_a_2_method_offset = 12
+    _get_c_l_2_method_offset = 13
+    _set_c_l_2_method_offset = 14
+    _get_c_d_2_method_offset = 15
+    _set_c_d_2_method_offset = 16
+    _get_mach_3_method_offset = 17
+    _set_mach_3_method_offset = 18
+    _get_a_o_a_3_method_offset = 19
+    _set_a_o_a_3_method_offset = 20
+    _get_c_l_3_method_offset = 21
+    _set_c_l_3_method_offset = 22
+    _get_c_d_3_method_offset = 23
+    _set_c_d_3_method_offset = 24
+    _get_mach_4_method_offset = 25
+    _set_mach_4_method_offset = 26
+    _get_a_o_a_4_method_offset = 27
+    _set_a_o_a_4_method_offset = 28
+    _get_c_l_4_method_offset = 29
+    _set_c_l_4_method_offset = 30
+    _get_c_d_4_method_offset = 31
+    _set_c_d_4_method_offset = 32
+    _validate_lift_design_points_method_offset = 33
+    _validate_drag_design_points_method_offset = 34
+    _get_s_reference_method_offset = 35
+    _set_s_reference_method_offset = 36
+    _set_aoa_method_offset = 37
+    _get_max_aoa_method_offset = 38
+    _get_max_endurance_aoa_method_offset = 39
+    _get_max_range_aoa_method_offset = 40
+    _metadata = {
+        "iid_data" : (4730269207064615935, 16334924616545939868),
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+    }
+    _property_names = {}
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, MissileFourPointAerodynamic)
+    
+    _get_mach_1_metadata = { "offset" : _get_mach_1_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def mach_1(self) -> float:
+        """property Mach_1"""
+        return self._intf.get_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._get_mach_1_metadata)
+
+    _set_mach_1_metadata = { "offset" : _set_mach_1_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @mach_1.setter
+    def mach_1(self, value:float) -> None:
+        """property Mach_1"""
+        return self._intf.set_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._set_mach_1_metadata, value)
+
+    _get_a_o_a_1_metadata = { "offset" : _get_a_o_a_1_method_offset,
+            "arg_types" : (POINTER(agcom.Variant),),
+            "marshallers" : (agmarshall.VariantArg,) }
+    @property
+    def a_o_a_1(self) -> typing.Any:
+        """property AOA_1"""
+        return self._intf.get_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._get_a_o_a_1_metadata)
+
+    _set_a_o_a_1_metadata = { "offset" : _set_a_o_a_1_method_offset,
+            "arg_types" : (agcom.Variant,),
+            "marshallers" : (agmarshall.VariantArg,) }
+    @a_o_a_1.setter
+    def a_o_a_1(self, value:typing.Any) -> None:
+        """property AOA_1"""
+        return self._intf.set_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._set_a_o_a_1_metadata, value)
+
+    _get_c_l_1_metadata = { "offset" : _get_c_l_1_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def c_l_1(self) -> float:
+        """property CL_1"""
+        return self._intf.get_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._get_c_l_1_metadata)
+
+    _set_c_l_1_metadata = { "offset" : _set_c_l_1_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @c_l_1.setter
+    def c_l_1(self, value:float) -> None:
+        """property CL_1"""
+        return self._intf.set_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._set_c_l_1_metadata, value)
+
+    _get_c_d_1_metadata = { "offset" : _get_c_d_1_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def c_d_1(self) -> float:
+        """property CD_1"""
+        return self._intf.get_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._get_c_d_1_metadata)
+
+    _set_c_d_1_metadata = { "offset" : _set_c_d_1_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @c_d_1.setter
+    def c_d_1(self, value:float) -> None:
+        """property CD_1"""
+        return self._intf.set_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._set_c_d_1_metadata, value)
+
+    _get_mach_2_metadata = { "offset" : _get_mach_2_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def mach_2(self) -> float:
+        """property Mach_2"""
+        return self._intf.get_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._get_mach_2_metadata)
+
+    _set_mach_2_metadata = { "offset" : _set_mach_2_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @mach_2.setter
+    def mach_2(self, value:float) -> None:
+        """property Mach_2"""
+        return self._intf.set_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._set_mach_2_metadata, value)
+
+    _get_a_o_a_2_metadata = { "offset" : _get_a_o_a_2_method_offset,
+            "arg_types" : (POINTER(agcom.Variant),),
+            "marshallers" : (agmarshall.VariantArg,) }
+    @property
+    def a_o_a_2(self) -> typing.Any:
+        """property AOA_2"""
+        return self._intf.get_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._get_a_o_a_2_metadata)
+
+    _set_a_o_a_2_metadata = { "offset" : _set_a_o_a_2_method_offset,
+            "arg_types" : (agcom.Variant,),
+            "marshallers" : (agmarshall.VariantArg,) }
+    @a_o_a_2.setter
+    def a_o_a_2(self, value:typing.Any) -> None:
+        """property AOA_2"""
+        return self._intf.set_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._set_a_o_a_2_metadata, value)
+
+    _get_c_l_2_metadata = { "offset" : _get_c_l_2_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def c_l_2(self) -> float:
+        """property CL_2"""
+        return self._intf.get_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._get_c_l_2_metadata)
+
+    _set_c_l_2_metadata = { "offset" : _set_c_l_2_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @c_l_2.setter
+    def c_l_2(self, value:float) -> None:
+        """property CL_2"""
+        return self._intf.set_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._set_c_l_2_metadata, value)
+
+    _get_c_d_2_metadata = { "offset" : _get_c_d_2_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def c_d_2(self) -> float:
+        """property CD_2"""
+        return self._intf.get_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._get_c_d_2_metadata)
+
+    _set_c_d_2_metadata = { "offset" : _set_c_d_2_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @c_d_2.setter
+    def c_d_2(self, value:float) -> None:
+        """property CD_2"""
+        return self._intf.set_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._set_c_d_2_metadata, value)
+
+    _get_mach_3_metadata = { "offset" : _get_mach_3_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def mach_3(self) -> float:
+        """property Mach_3"""
+        return self._intf.get_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._get_mach_3_metadata)
+
+    _set_mach_3_metadata = { "offset" : _set_mach_3_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @mach_3.setter
+    def mach_3(self, value:float) -> None:
+        """property Mach_3"""
+        return self._intf.set_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._set_mach_3_metadata, value)
+
+    _get_a_o_a_3_metadata = { "offset" : _get_a_o_a_3_method_offset,
+            "arg_types" : (POINTER(agcom.Variant),),
+            "marshallers" : (agmarshall.VariantArg,) }
+    @property
+    def a_o_a_3(self) -> typing.Any:
+        """property AOA_3"""
+        return self._intf.get_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._get_a_o_a_3_metadata)
+
+    _set_a_o_a_3_metadata = { "offset" : _set_a_o_a_3_method_offset,
+            "arg_types" : (agcom.Variant,),
+            "marshallers" : (agmarshall.VariantArg,) }
+    @a_o_a_3.setter
+    def a_o_a_3(self, value:typing.Any) -> None:
+        """property AOA_3"""
+        return self._intf.set_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._set_a_o_a_3_metadata, value)
+
+    _get_c_l_3_metadata = { "offset" : _get_c_l_3_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def c_l_3(self) -> float:
+        """property CL_3"""
+        return self._intf.get_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._get_c_l_3_metadata)
+
+    _set_c_l_3_metadata = { "offset" : _set_c_l_3_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @c_l_3.setter
+    def c_l_3(self, value:float) -> None:
+        """property CL_3"""
+        return self._intf.set_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._set_c_l_3_metadata, value)
+
+    _get_c_d_3_metadata = { "offset" : _get_c_d_3_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def c_d_3(self) -> float:
+        """property CD_3"""
+        return self._intf.get_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._get_c_d_3_metadata)
+
+    _set_c_d_3_metadata = { "offset" : _set_c_d_3_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @c_d_3.setter
+    def c_d_3(self, value:float) -> None:
+        """property CD_3"""
+        return self._intf.set_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._set_c_d_3_metadata, value)
+
+    _get_mach_4_metadata = { "offset" : _get_mach_4_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def mach_4(self) -> float:
+        """property Mach_4"""
+        return self._intf.get_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._get_mach_4_metadata)
+
+    _set_mach_4_metadata = { "offset" : _set_mach_4_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @mach_4.setter
+    def mach_4(self, value:float) -> None:
+        """property Mach_4"""
+        return self._intf.set_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._set_mach_4_metadata, value)
+
+    _get_a_o_a_4_metadata = { "offset" : _get_a_o_a_4_method_offset,
+            "arg_types" : (POINTER(agcom.Variant),),
+            "marshallers" : (agmarshall.VariantArg,) }
+    @property
+    def a_o_a_4(self) -> typing.Any:
+        """property AOA_4"""
+        return self._intf.get_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._get_a_o_a_4_metadata)
+
+    _set_a_o_a_4_metadata = { "offset" : _set_a_o_a_4_method_offset,
+            "arg_types" : (agcom.Variant,),
+            "marshallers" : (agmarshall.VariantArg,) }
+    @a_o_a_4.setter
+    def a_o_a_4(self, value:typing.Any) -> None:
+        """property AOA_4"""
+        return self._intf.set_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._set_a_o_a_4_metadata, value)
+
+    _get_c_l_4_metadata = { "offset" : _get_c_l_4_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def c_l_4(self) -> float:
+        """property CL_4"""
+        return self._intf.get_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._get_c_l_4_metadata)
+
+    _set_c_l_4_metadata = { "offset" : _set_c_l_4_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @c_l_4.setter
+    def c_l_4(self, value:float) -> None:
+        """property CL_4"""
+        return self._intf.set_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._set_c_l_4_metadata, value)
+
+    _get_c_d_4_metadata = { "offset" : _get_c_d_4_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def c_d_4(self) -> float:
+        """property CD_4"""
+        return self._intf.get_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._get_c_d_4_metadata)
+
+    _set_c_d_4_metadata = { "offset" : _set_c_d_4_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @c_d_4.setter
+    def c_d_4(self, value:float) -> None:
+        """property CD_4"""
+        return self._intf.set_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._set_c_d_4_metadata, value)
+
+    _validate_lift_design_points_metadata = { "offset" : _validate_lift_design_points_method_offset,
+            "arg_types" : (agcom.DOUBLE, agcom.Variant, agcom.DOUBLE, agcom.Variant, agcom.DOUBLE, agcom.Variant, agcom.DOUBLE, agcom.Variant, POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.DoubleArg, agmarshall.VariantArg, agmarshall.DoubleArg, agmarshall.VariantArg, agmarshall.DoubleArg, agmarshall.VariantArg, agmarshall.DoubleArg, agmarshall.VariantArg, agmarshall.VariantBoolArg,) }
+    def validate_lift_design_points(self, d_mach_1:float, d_a_o_a_1:typing.Any, d_mach_2:float, d_a_o_a_2:typing.Any, d_mach_3:float, d_a_o_a_3:typing.Any, d_mach_4:float, d_a_o_a_4:typing.Any) -> bool:
+        """method ValidateLiftDesignPoints"""
+        return self._intf.invoke(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._validate_lift_design_points_metadata, d_mach_1, d_a_o_a_1, d_mach_2, d_a_o_a_2, d_mach_3, d_a_o_a_3, d_mach_4, d_a_o_a_4, OutArg())
+
+    _validate_drag_design_points_metadata = { "offset" : _validate_drag_design_points_method_offset,
+            "arg_types" : (agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.VariantBoolArg,) }
+    def validate_drag_design_points(self, d_mach_1:float, d_c_l_1:float, d_mach_2:float, d_c_l_2:float, d_mach_3:float, d_c_l_3:float, d_mach_4:float, d_c_l_4:float) -> bool:
+        """method ValidateDragDesignPoints"""
+        return self._intf.invoke(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._validate_drag_design_points_metadata, d_mach_1, d_c_l_1, d_mach_2, d_c_l_2, d_mach_3, d_c_l_3, d_mach_4, d_c_l_4, OutArg())
+
+    _get_s_reference_metadata = { "offset" : _get_s_reference_method_offset,
+            "arg_types" : (POINTER(agcom.Variant),),
+            "marshallers" : (agmarshall.VariantArg,) }
+    @property
+    def s_reference(self) -> typing.Any:
+        """property SRef"""
+        return self._intf.get_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._get_s_reference_metadata)
+
+    _set_s_reference_metadata = { "offset" : _set_s_reference_method_offset,
+            "arg_types" : (agcom.Variant,),
+            "marshallers" : (agmarshall.VariantArg,) }
+    @s_reference.setter
+    def s_reference(self, value:typing.Any) -> None:
+        """property SRef"""
+        return self._intf.set_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._set_s_reference_metadata, value)
+
+    _set_aoa_metadata = { "offset" : _set_aoa_method_offset,
+            "arg_types" : (agcom.Variant, agcom.Variant, agcom.Variant,),
+            "marshallers" : (agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.VariantArg,) }
+    def set_aoa(self, d_max_aoa:typing.Any, d_max_endurance_aoa:typing.Any, d_max_range_aoa:typing.Any) -> None:
+        """method SetAOA"""
+        return self._intf.invoke(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._set_aoa_metadata, d_max_aoa, d_max_endurance_aoa, d_max_range_aoa)
+
+    _get_max_aoa_metadata = { "offset" : _get_max_aoa_method_offset,
+            "arg_types" : (POINTER(agcom.Variant),),
+            "marshallers" : (agmarshall.VariantArg,) }
+    @property
+    def max_aoa(self) -> typing.Any:
+        """property MaxAOA"""
+        return self._intf.get_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._get_max_aoa_metadata)
+
+    _get_max_endurance_aoa_metadata = { "offset" : _get_max_endurance_aoa_method_offset,
+            "arg_types" : (POINTER(agcom.Variant),),
+            "marshallers" : (agmarshall.VariantArg,) }
+    @property
+    def max_endurance_aoa(self) -> typing.Any:
+        """property MaxEnduranceAOA"""
+        return self._intf.get_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._get_max_endurance_aoa_metadata)
+
+    _get_max_range_aoa_metadata = { "offset" : _get_max_range_aoa_method_offset,
+            "arg_types" : (POINTER(agcom.Variant),),
+            "marshallers" : (agmarshall.VariantArg,) }
+    @property
+    def max_range_aoa(self) -> typing.Any:
+        """property MaxRangeAOA"""
+        return self._intf.get_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._get_max_range_aoa_metadata)
+
+    _property_names[mach_1] = "mach_1"
+    _property_names[a_o_a_1] = "a_o_a_1"
+    _property_names[c_l_1] = "c_l_1"
+    _property_names[c_d_1] = "c_d_1"
+    _property_names[mach_2] = "mach_2"
+    _property_names[a_o_a_2] = "a_o_a_2"
+    _property_names[c_l_2] = "c_l_2"
+    _property_names[c_d_2] = "c_d_2"
+    _property_names[mach_3] = "mach_3"
+    _property_names[a_o_a_3] = "a_o_a_3"
+    _property_names[c_l_3] = "c_l_3"
+    _property_names[c_d_3] = "c_d_3"
+    _property_names[mach_4] = "mach_4"
+    _property_names[a_o_a_4] = "a_o_a_4"
+    _property_names[c_l_4] = "c_l_4"
+    _property_names[c_d_4] = "c_d_4"
+    _property_names[s_reference] = "s_reference"
+    _property_names[max_aoa] = "max_aoa"
+    _property_names[max_endurance_aoa] = "max_endurance_aoa"
+    _property_names[max_range_aoa] = "max_range_aoa"
+
+    def __init__(self, source_object=None):
+        """Construct an object of type MissileFourPointAerodynamic."""
+        SupportsDeleteCallback.__init__(self)
+        initialize_from_source_object(self, source_object, MissileFourPointAerodynamic)
+    def _private_init(self, intf:InterfaceProxy):
+        self.__dict__["_intf"] = intf
+    def __eq__(self, other):
+        """Check equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
+        set_class_attribute(self, attrname, value, MissileFourPointAerodynamic, [MissileFourPointAerodynamic, ])
+
+agcls.AgClassCatalog.add_catalog_entry((5716462331802832450, 2304689591626170533), MissileFourPointAerodynamic)
+agcls.AgTypeNameMap["MissileFourPointAerodynamic"] = MissileFourPointAerodynamic
+
+class FourPointAerodynamic(SupportsDeleteCallback):
+    """Interface used to access the options for the FourPoint aerodynamic strategy."""
+
+    _num_methods = 38
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_mach_1_method_offset = 1
+    _set_mach_1_method_offset = 2
+    _get_a_o_a_1_method_offset = 3
+    _set_a_o_a_1_method_offset = 4
+    _get_c_l_1_method_offset = 5
+    _set_c_l_1_method_offset = 6
+    _get_c_d_1_method_offset = 7
+    _set_c_d_1_method_offset = 8
+    _get_mach_2_method_offset = 9
+    _set_mach_2_method_offset = 10
+    _get_a_o_a_2_method_offset = 11
+    _set_a_o_a_2_method_offset = 12
+    _get_c_l_2_method_offset = 13
+    _set_c_l_2_method_offset = 14
+    _get_c_d_2_method_offset = 15
+    _set_c_d_2_method_offset = 16
+    _get_mach_3_method_offset = 17
+    _set_mach_3_method_offset = 18
+    _get_a_o_a_3_method_offset = 19
+    _set_a_o_a_3_method_offset = 20
+    _get_c_l_3_method_offset = 21
+    _set_c_l_3_method_offset = 22
+    _get_c_d_3_method_offset = 23
+    _set_c_d_3_method_offset = 24
+    _get_mach_4_method_offset = 25
+    _set_mach_4_method_offset = 26
+    _get_a_o_a_4_method_offset = 27
+    _set_a_o_a_4_method_offset = 28
+    _get_c_l_4_method_offset = 29
+    _set_c_l_4_method_offset = 30
+    _get_c_d_4_method_offset = 31
+    _set_c_d_4_method_offset = 32
+    _validate_lift_design_points_method_offset = 33
+    _validate_drag_design_points_method_offset = 34
+    _get_s_reference_method_offset = 35
+    _set_s_reference_method_offset = 36
+    _get_max_aoa_method_offset = 37
+    _set_max_aoa_method_offset = 38
+    _metadata = {
+        "iid_data" : (5484477733759286553, 11826654122719919528),
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+    }
+    _property_names = {}
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, FourPointAerodynamic)
+    
+    _get_mach_1_metadata = { "offset" : _get_mach_1_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def mach_1(self) -> float:
+        """property Mach_1"""
+        return self._intf.get_property(FourPointAerodynamic._metadata, FourPointAerodynamic._get_mach_1_metadata)
+
+    _set_mach_1_metadata = { "offset" : _set_mach_1_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @mach_1.setter
+    def mach_1(self, value:float) -> None:
+        """property Mach_1"""
+        return self._intf.set_property(FourPointAerodynamic._metadata, FourPointAerodynamic._set_mach_1_metadata, value)
+
+    _get_a_o_a_1_metadata = { "offset" : _get_a_o_a_1_method_offset,
+            "arg_types" : (POINTER(agcom.Variant),),
+            "marshallers" : (agmarshall.VariantArg,) }
+    @property
+    def a_o_a_1(self) -> typing.Any:
+        """property AOA_1"""
+        return self._intf.get_property(FourPointAerodynamic._metadata, FourPointAerodynamic._get_a_o_a_1_metadata)
+
+    _set_a_o_a_1_metadata = { "offset" : _set_a_o_a_1_method_offset,
+            "arg_types" : (agcom.Variant,),
+            "marshallers" : (agmarshall.VariantArg,) }
+    @a_o_a_1.setter
+    def a_o_a_1(self, value:typing.Any) -> None:
+        """property AOA_1"""
+        return self._intf.set_property(FourPointAerodynamic._metadata, FourPointAerodynamic._set_a_o_a_1_metadata, value)
+
+    _get_c_l_1_metadata = { "offset" : _get_c_l_1_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def c_l_1(self) -> float:
+        """property CL_1"""
+        return self._intf.get_property(FourPointAerodynamic._metadata, FourPointAerodynamic._get_c_l_1_metadata)
+
+    _set_c_l_1_metadata = { "offset" : _set_c_l_1_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @c_l_1.setter
+    def c_l_1(self, value:float) -> None:
+        """property CL_1"""
+        return self._intf.set_property(FourPointAerodynamic._metadata, FourPointAerodynamic._set_c_l_1_metadata, value)
+
+    _get_c_d_1_metadata = { "offset" : _get_c_d_1_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def c_d_1(self) -> float:
+        """property CD_1"""
+        return self._intf.get_property(FourPointAerodynamic._metadata, FourPointAerodynamic._get_c_d_1_metadata)
+
+    _set_c_d_1_metadata = { "offset" : _set_c_d_1_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @c_d_1.setter
+    def c_d_1(self, value:float) -> None:
+        """property CD_1"""
+        return self._intf.set_property(FourPointAerodynamic._metadata, FourPointAerodynamic._set_c_d_1_metadata, value)
+
+    _get_mach_2_metadata = { "offset" : _get_mach_2_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def mach_2(self) -> float:
+        """property Mach_2"""
+        return self._intf.get_property(FourPointAerodynamic._metadata, FourPointAerodynamic._get_mach_2_metadata)
+
+    _set_mach_2_metadata = { "offset" : _set_mach_2_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @mach_2.setter
+    def mach_2(self, value:float) -> None:
+        """property Mach_2"""
+        return self._intf.set_property(FourPointAerodynamic._metadata, FourPointAerodynamic._set_mach_2_metadata, value)
+
+    _get_a_o_a_2_metadata = { "offset" : _get_a_o_a_2_method_offset,
+            "arg_types" : (POINTER(agcom.Variant),),
+            "marshallers" : (agmarshall.VariantArg,) }
+    @property
+    def a_o_a_2(self) -> typing.Any:
+        """property AOA_2"""
+        return self._intf.get_property(FourPointAerodynamic._metadata, FourPointAerodynamic._get_a_o_a_2_metadata)
+
+    _set_a_o_a_2_metadata = { "offset" : _set_a_o_a_2_method_offset,
+            "arg_types" : (agcom.Variant,),
+            "marshallers" : (agmarshall.VariantArg,) }
+    @a_o_a_2.setter
+    def a_o_a_2(self, value:typing.Any) -> None:
+        """property AOA_2"""
+        return self._intf.set_property(FourPointAerodynamic._metadata, FourPointAerodynamic._set_a_o_a_2_metadata, value)
+
+    _get_c_l_2_metadata = { "offset" : _get_c_l_2_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def c_l_2(self) -> float:
+        """property CL_2"""
+        return self._intf.get_property(FourPointAerodynamic._metadata, FourPointAerodynamic._get_c_l_2_metadata)
+
+    _set_c_l_2_metadata = { "offset" : _set_c_l_2_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @c_l_2.setter
+    def c_l_2(self, value:float) -> None:
+        """property CL_2"""
+        return self._intf.set_property(FourPointAerodynamic._metadata, FourPointAerodynamic._set_c_l_2_metadata, value)
+
+    _get_c_d_2_metadata = { "offset" : _get_c_d_2_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def c_d_2(self) -> float:
+        """property CD_2"""
+        return self._intf.get_property(FourPointAerodynamic._metadata, FourPointAerodynamic._get_c_d_2_metadata)
+
+    _set_c_d_2_metadata = { "offset" : _set_c_d_2_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @c_d_2.setter
+    def c_d_2(self, value:float) -> None:
+        """property CD_2"""
+        return self._intf.set_property(FourPointAerodynamic._metadata, FourPointAerodynamic._set_c_d_2_metadata, value)
+
+    _get_mach_3_metadata = { "offset" : _get_mach_3_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def mach_3(self) -> float:
+        """property Mach_3"""
+        return self._intf.get_property(FourPointAerodynamic._metadata, FourPointAerodynamic._get_mach_3_metadata)
+
+    _set_mach_3_metadata = { "offset" : _set_mach_3_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @mach_3.setter
+    def mach_3(self, value:float) -> None:
+        """property Mach_3"""
+        return self._intf.set_property(FourPointAerodynamic._metadata, FourPointAerodynamic._set_mach_3_metadata, value)
+
+    _get_a_o_a_3_metadata = { "offset" : _get_a_o_a_3_method_offset,
+            "arg_types" : (POINTER(agcom.Variant),),
+            "marshallers" : (agmarshall.VariantArg,) }
+    @property
+    def a_o_a_3(self) -> typing.Any:
+        """property AOA_3"""
+        return self._intf.get_property(FourPointAerodynamic._metadata, FourPointAerodynamic._get_a_o_a_3_metadata)
+
+    _set_a_o_a_3_metadata = { "offset" : _set_a_o_a_3_method_offset,
+            "arg_types" : (agcom.Variant,),
+            "marshallers" : (agmarshall.VariantArg,) }
+    @a_o_a_3.setter
+    def a_o_a_3(self, value:typing.Any) -> None:
+        """property AOA_3"""
+        return self._intf.set_property(FourPointAerodynamic._metadata, FourPointAerodynamic._set_a_o_a_3_metadata, value)
+
+    _get_c_l_3_metadata = { "offset" : _get_c_l_3_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def c_l_3(self) -> float:
+        """property CL_3"""
+        return self._intf.get_property(FourPointAerodynamic._metadata, FourPointAerodynamic._get_c_l_3_metadata)
+
+    _set_c_l_3_metadata = { "offset" : _set_c_l_3_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @c_l_3.setter
+    def c_l_3(self, value:float) -> None:
+        """property CL_3"""
+        return self._intf.set_property(FourPointAerodynamic._metadata, FourPointAerodynamic._set_c_l_3_metadata, value)
+
+    _get_c_d_3_metadata = { "offset" : _get_c_d_3_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def c_d_3(self) -> float:
+        """property CD_3"""
+        return self._intf.get_property(FourPointAerodynamic._metadata, FourPointAerodynamic._get_c_d_3_metadata)
+
+    _set_c_d_3_metadata = { "offset" : _set_c_d_3_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @c_d_3.setter
+    def c_d_3(self, value:float) -> None:
+        """property CD_3"""
+        return self._intf.set_property(FourPointAerodynamic._metadata, FourPointAerodynamic._set_c_d_3_metadata, value)
+
+    _get_mach_4_metadata = { "offset" : _get_mach_4_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def mach_4(self) -> float:
+        """property Mach_4"""
+        return self._intf.get_property(FourPointAerodynamic._metadata, FourPointAerodynamic._get_mach_4_metadata)
+
+    _set_mach_4_metadata = { "offset" : _set_mach_4_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @mach_4.setter
+    def mach_4(self, value:float) -> None:
+        """property Mach_4"""
+        return self._intf.set_property(FourPointAerodynamic._metadata, FourPointAerodynamic._set_mach_4_metadata, value)
+
+    _get_a_o_a_4_metadata = { "offset" : _get_a_o_a_4_method_offset,
+            "arg_types" : (POINTER(agcom.Variant),),
+            "marshallers" : (agmarshall.VariantArg,) }
+    @property
+    def a_o_a_4(self) -> typing.Any:
+        """property AOA_4"""
+        return self._intf.get_property(FourPointAerodynamic._metadata, FourPointAerodynamic._get_a_o_a_4_metadata)
+
+    _set_a_o_a_4_metadata = { "offset" : _set_a_o_a_4_method_offset,
+            "arg_types" : (agcom.Variant,),
+            "marshallers" : (agmarshall.VariantArg,) }
+    @a_o_a_4.setter
+    def a_o_a_4(self, value:typing.Any) -> None:
+        """property AOA_4"""
+        return self._intf.set_property(FourPointAerodynamic._metadata, FourPointAerodynamic._set_a_o_a_4_metadata, value)
+
+    _get_c_l_4_metadata = { "offset" : _get_c_l_4_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def c_l_4(self) -> float:
+        """property CL_4"""
+        return self._intf.get_property(FourPointAerodynamic._metadata, FourPointAerodynamic._get_c_l_4_metadata)
+
+    _set_c_l_4_metadata = { "offset" : _set_c_l_4_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @c_l_4.setter
+    def c_l_4(self, value:float) -> None:
+        """property CL_4"""
+        return self._intf.set_property(FourPointAerodynamic._metadata, FourPointAerodynamic._set_c_l_4_metadata, value)
+
+    _get_c_d_4_metadata = { "offset" : _get_c_d_4_method_offset,
+            "arg_types" : (POINTER(agcom.DOUBLE),),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @property
+    def c_d_4(self) -> float:
+        """property CD_4"""
+        return self._intf.get_property(FourPointAerodynamic._metadata, FourPointAerodynamic._get_c_d_4_metadata)
+
+    _set_c_d_4_metadata = { "offset" : _set_c_d_4_method_offset,
+            "arg_types" : (agcom.DOUBLE,),
+            "marshallers" : (agmarshall.DoubleArg,) }
+    @c_d_4.setter
+    def c_d_4(self, value:float) -> None:
+        """property CD_4"""
+        return self._intf.set_property(FourPointAerodynamic._metadata, FourPointAerodynamic._set_c_d_4_metadata, value)
+
+    _validate_lift_design_points_metadata = { "offset" : _validate_lift_design_points_method_offset,
+            "arg_types" : (agcom.DOUBLE, agcom.Variant, agcom.DOUBLE, agcom.Variant, agcom.DOUBLE, agcom.Variant, agcom.DOUBLE, agcom.Variant, POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.DoubleArg, agmarshall.VariantArg, agmarshall.DoubleArg, agmarshall.VariantArg, agmarshall.DoubleArg, agmarshall.VariantArg, agmarshall.DoubleArg, agmarshall.VariantArg, agmarshall.VariantBoolArg,) }
+    def validate_lift_design_points(self, d_mach_1:float, d_a_o_a_1:typing.Any, d_mach_2:float, d_a_o_a_2:typing.Any, d_mach_3:float, d_a_o_a_3:typing.Any, d_mach_4:float, d_a_o_a_4:typing.Any) -> bool:
+        """method ValidateLiftDesignPoints"""
+        return self._intf.invoke(FourPointAerodynamic._metadata, FourPointAerodynamic._validate_lift_design_points_metadata, d_mach_1, d_a_o_a_1, d_mach_2, d_a_o_a_2, d_mach_3, d_a_o_a_3, d_mach_4, d_a_o_a_4, OutArg())
+
+    _validate_drag_design_points_metadata = { "offset" : _validate_drag_design_points_method_offset,
+            "arg_types" : (agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, POINTER(agcom.VARIANT_BOOL),),
+            "marshallers" : (agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.VariantBoolArg,) }
+    def validate_drag_design_points(self, d_mach_1:float, d_c_l_1:float, d_mach_2:float, d_c_l_2:float, d_mach_3:float, d_c_l_3:float, d_mach_4:float, d_c_l_4:float) -> bool:
+        """method ValidateDragDesignPoints"""
+        return self._intf.invoke(FourPointAerodynamic._metadata, FourPointAerodynamic._validate_drag_design_points_metadata, d_mach_1, d_c_l_1, d_mach_2, d_c_l_2, d_mach_3, d_c_l_3, d_mach_4, d_c_l_4, OutArg())
+
+    _get_s_reference_metadata = { "offset" : _get_s_reference_method_offset,
+            "arg_types" : (POINTER(agcom.Variant),),
+            "marshallers" : (agmarshall.VariantArg,) }
+    @property
+    def s_reference(self) -> typing.Any:
+        """property SRef"""
+        return self._intf.get_property(FourPointAerodynamic._metadata, FourPointAerodynamic._get_s_reference_metadata)
+
+    _set_s_reference_metadata = { "offset" : _set_s_reference_method_offset,
+            "arg_types" : (agcom.Variant,),
+            "marshallers" : (agmarshall.VariantArg,) }
+    @s_reference.setter
+    def s_reference(self, value:typing.Any) -> None:
+        """property SRef"""
+        return self._intf.set_property(FourPointAerodynamic._metadata, FourPointAerodynamic._set_s_reference_metadata, value)
+
+    _get_max_aoa_metadata = { "offset" : _get_max_aoa_method_offset,
+            "arg_types" : (POINTER(agcom.Variant),),
+            "marshallers" : (agmarshall.VariantArg,) }
+    @property
+    def max_aoa(self) -> typing.Any:
+        """property MaxAOA"""
+        return self._intf.get_property(FourPointAerodynamic._metadata, FourPointAerodynamic._get_max_aoa_metadata)
+
+    _set_max_aoa_metadata = { "offset" : _set_max_aoa_method_offset,
+            "arg_types" : (agcom.Variant,),
+            "marshallers" : (agmarshall.VariantArg,) }
+    @max_aoa.setter
+    def max_aoa(self, value:typing.Any) -> None:
+        """property MaxAOA"""
+        return self._intf.set_property(FourPointAerodynamic._metadata, FourPointAerodynamic._set_max_aoa_metadata, value)
+
+    _property_names[mach_1] = "mach_1"
+    _property_names[a_o_a_1] = "a_o_a_1"
+    _property_names[c_l_1] = "c_l_1"
+    _property_names[c_d_1] = "c_d_1"
+    _property_names[mach_2] = "mach_2"
+    _property_names[a_o_a_2] = "a_o_a_2"
+    _property_names[c_l_2] = "c_l_2"
+    _property_names[c_d_2] = "c_d_2"
+    _property_names[mach_3] = "mach_3"
+    _property_names[a_o_a_3] = "a_o_a_3"
+    _property_names[c_l_3] = "c_l_3"
+    _property_names[c_d_3] = "c_d_3"
+    _property_names[mach_4] = "mach_4"
+    _property_names[a_o_a_4] = "a_o_a_4"
+    _property_names[c_l_4] = "c_l_4"
+    _property_names[c_d_4] = "c_d_4"
+    _property_names[s_reference] = "s_reference"
+    _property_names[max_aoa] = "max_aoa"
+
+    def __init__(self, source_object=None):
+        """Construct an object of type FourPointAerodynamic."""
+        SupportsDeleteCallback.__init__(self)
+        initialize_from_source_object(self, source_object, FourPointAerodynamic)
+    def _private_init(self, intf:InterfaceProxy):
+        self.__dict__["_intf"] = intf
+    def __eq__(self, other):
+        """Check equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
+        set_class_attribute(self, attrname, value, FourPointAerodynamic, [FourPointAerodynamic, ])
+
+agcls.AgClassCatalog.add_catalog_entry((5736042625051820997, 10368039465623093694), FourPointAerodynamic)
+agcls.AgTypeNameMap["FourPointAerodynamic"] = FourPointAerodynamic
 
 
 ################################################################################

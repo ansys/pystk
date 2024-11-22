@@ -376,6 +376,8 @@ class EarlyBoundTests(TestBase):
         # Optimal Strands Type
         newChain.optimal_strand_opts.type = CHAIN_OPTIMAL_STRAND_METRIC_TYPE.STRAND_METRIC_DISTANCE
         Assert.assertEqual(CHAIN_OPTIMAL_STRAND_METRIC_TYPE.STRAND_METRIC_DISTANCE, newChain.optimal_strand_opts.type)
+        newChain.optimal_strand_opts.type = CHAIN_OPTIMAL_STRAND_METRIC_TYPE.STRAND_METRIC_DURATION
+        Assert.assertEqual(CHAIN_OPTIMAL_STRAND_METRIC_TYPE.STRAND_METRIC_DURATION, newChain.optimal_strand_opts.type)
         newChain.optimal_strand_opts.type = CHAIN_OPTIMAL_STRAND_METRIC_TYPE.STRAND_METRIC_PROCESSING_DELAY
         Assert.assertEqual(
             CHAIN_OPTIMAL_STRAND_METRIC_TYPE.STRAND_METRIC_PROCESSING_DELAY, newChain.optimal_strand_opts.type
@@ -751,6 +753,20 @@ class EarlyBoundTests(TestBase):
 
         optStrandOpts.type = CHAIN_OPTIMAL_STRAND_METRIC_TYPE.STRAND_METRIC_DISTANCE
         Assert.assertEqual(CHAIN_OPTIMAL_STRAND_METRIC_TYPE.STRAND_METRIC_DISTANCE, optStrandOpts.type)
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            optStrandOpts.calc_scalar_type = (
+                CHAIN_OPTIMAL_STRAND_CALCULATION_SCALAR_METRIC_TYPE.STRAND_CALCULATION_SCALAR_METRIC_NAME
+            )
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            optStrandOpts.calc_scalar_file_name = "My_CS.awb"
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            optStrandOpts.calc_scalar_name = "From-To-AER(Body).Cartesian.Magnitude"
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            optStrandOpts.link_comparison_type = CHAIN_OPTIMAL_STRAND_LINK_COMPARE_TYPE.STRAND_LINK_COMPARE_TYPE_MIN
+
+        optStrandOpts.type = CHAIN_OPTIMAL_STRAND_METRIC_TYPE.STRAND_METRIC_DURATION
+        Assert.assertEqual(CHAIN_OPTIMAL_STRAND_METRIC_TYPE.STRAND_METRIC_DURATION, optStrandOpts.type)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             optStrandOpts.calc_scalar_type = (

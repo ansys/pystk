@@ -30548,7 +30548,7 @@ class RadiationPressureFunction(IComponentInfo, ICloneable, SupportsDeleteCallba
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
     def override_segment_settings(self) -> bool:
-        """True to use Ck and area values defined on this component for radiation pressure computations, rather than those defined in the MCS segments."""
+        """Do not use this property, as it is deprecated. True to use Ck and area values defined on this component for radiation pressure computations, rather than those defined in the MCS segments."""
         return self._intf.get_property(RadiationPressureFunction._metadata, RadiationPressureFunction._get_override_segment_settings_metadata)
 
     _set_override_segment_settings_metadata = { "offset" : _set_override_segment_settings_method_offset,
@@ -30563,7 +30563,7 @@ class RadiationPressureFunction(IComponentInfo, ICloneable, SupportsDeleteCallba
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def radiation_pressure_coefficient(self) -> float:
-        """Coefficient, Ck, for use with radiation pressure computation."""
+        """Do not use this property, as it is deprecated. Coefficient, Ck, for use with radiation pressure computation."""
         return self._intf.get_property(RadiationPressureFunction._metadata, RadiationPressureFunction._get_radiation_pressure_coefficient_metadata)
 
     _set_radiation_pressure_coefficient_metadata = { "offset" : _set_radiation_pressure_coefficient_method_offset,
@@ -30578,7 +30578,7 @@ class RadiationPressureFunction(IComponentInfo, ICloneable, SupportsDeleteCallba
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def radiation_pressure_area(self) -> float:
-        """Area to be used for radiation pressure computations. Small area dimension."""
+        """Do not use this property, as it is deprecated. Area to be used for radiation pressure computations. Small area dimension."""
         return self._intf.get_property(RadiationPressureFunction._metadata, RadiationPressureFunction._get_radiation_pressure_area_metadata)
 
     _set_radiation_pressure_area_metadata = { "offset" : _set_radiation_pressure_area_method_offset,

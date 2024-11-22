@@ -106,8 +106,10 @@ class LinkBudgetSnippets(CodeSnippetsTestBase):
         rcvrAsStkObject: "IStkObject" = clr.CastAs(facilityReceiver, IStkObject)
 
         # Set the transmitter to the simple model
-        geoTransmitter.set_model("Simple Transmitter Model")
-        simpleTrans: "TransmitterModelSimple" = clr.CastAs(geoTransmitter.model, TransmitterModelSimple)
+        geoTransmitter.model_component_linking.set_component("Simple Transmitter Model")
+        simpleTrans: "TransmitterModelSimple" = clr.CastAs(
+            geoTransmitter.model_component_linking.component, TransmitterModelSimple
+        )
 
         # Set the simple transmitter model's frequency to 3.2 GHz
         simpleTrans.frequency = 3.2
@@ -116,8 +118,10 @@ class LinkBudgetSnippets(CodeSnippetsTestBase):
         simpleTrans.eirp = 60.0
 
         # Set the receiver to the simple model
-        facilityReceiver.set_model("Simple Receiver Model")
-        simpleRcvr: "ReceiverModelSimple" = clr.CastAs(facilityReceiver.model, ReceiverModelSimple)
+        facilityReceiver.model_component_linking.set_component("Simple Receiver Model")
+        simpleRcvr: "ReceiverModelSimple" = clr.CastAs(
+            facilityReceiver.model_component_linking.component, ReceiverModelSimple
+        )
 
         # Set the simple receiver model's G/T to 60 dB/K
         simpleRcvr.g_over_t = 60.0
@@ -191,8 +195,10 @@ class LinkBudgetSnippets(CodeSnippetsTestBase):
         scenarioRFEnv.propagation_channel.enable_rain_loss = True
 
         # Set the transmitter to the complex model
-        geoTransmitter.set_model("Complex Transmitter Model")
-        complexTrans: "TransmitterModelComplex" = clr.CastAs(geoTransmitter.model, TransmitterModelComplex)
+        geoTransmitter.model_component_linking.set_component("Complex Transmitter Model")
+        complexTrans: "TransmitterModelComplex" = clr.CastAs(
+            geoTransmitter.model_component_linking.component, TransmitterModelComplex
+        )
 
         # Set the complex transmitter model's frequency to 3.2 GHz
         complexTrans.frequency = 3.2
@@ -201,18 +207,22 @@ class LinkBudgetSnippets(CodeSnippetsTestBase):
         complexTrans.power = 50.0
 
         # Set the complex transmitter's embedded antenna model to helix
-        complexTrans.antenna_control.set_embedded_model("Helix")
+        complexTrans.antenna_control.embedded_model_component_linking.set_component("Helix")
 
         # Set the beamwidth of the parablic antenna to 2 degrees
-        helix: "AntennaModelHelix" = clr.CastAs(complexTrans.antenna_control.embedded_model, AntennaModelHelix)
+        helix: "AntennaModelHelix" = clr.CastAs(
+            complexTrans.antenna_control.embedded_model_component_linking.component, AntennaModelHelix
+        )
         helix.number_of_turns = 30.0
 
         # Orient the complex transmitter embedded antenna's boresight to point directly at the receiver's location
         complexTrans.antenna_control.embedded_model_orientation.assign_az_el(287.2, 83.4, AZ_EL_ABOUT_BORESIGHT.ROTATE)
 
         # Set the receiver to the complex model
-        facilityReceiver.set_model("Complex Receiver Model")
-        complexRcvr: "ReceiverModelComplex" = clr.CastAs(facilityReceiver.model, ReceiverModelComplex)
+        facilityReceiver.model_component_linking.set_component("Complex Receiver Model")
+        complexRcvr: "ReceiverModelComplex" = clr.CastAs(
+            facilityReceiver.model_component_linking.component, ReceiverModelComplex
+        )
 
         # Configure the complex receiver to use the antenna object on the same parent facility, by linking
         complexRcvr.antenna_control.reference_type = ANTENNA_CONTROL_REFERENCE_TYPE.LINK
@@ -235,13 +245,15 @@ class LinkBudgetSnippets(CodeSnippetsTestBase):
         facilityDish.orientation.assign_az_el(202.6, 41.2, AZ_EL_ABOUT_BORESIGHT.ROTATE)
 
         # Set the antenna object's model to parabolic
-        facilityDish.set_model("Parabolic")
+        facilityDish.model_component_linking.set_component("Parabolic")
 
         # Set the antenan object's design frequency to match the transmitter's 3.2 GHz
-        facilityDish.model.design_frequency = 3.2
+        (IAntennaModel(facilityDish.model_component_linking.component)).design_frequency = 3.2
 
         # Set the antenna object's parabolic model diameter to 5 m.
-        parabolic: "AntennaModelParabolic" = clr.CastAs(facilityDish.model, AntennaModelParabolic)
+        parabolic: "AntennaModelParabolic" = clr.CastAs(
+            facilityDish.model_component_linking.component, AntennaModelParabolic
+        )
         parabolic.input_type = ANTENNA_MODEL_INPUT_TYPE.DIAMETER
         parabolic.diameter = 5.0
 

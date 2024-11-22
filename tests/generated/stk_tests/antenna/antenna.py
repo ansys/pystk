@@ -6,6 +6,7 @@ from assertion_harness import *
 from display_times_helper import *
 from interfaces.stk_objects import *
 from orientation_helper import *
+from stk_util_helper import *
 from vehicle.vehicle_vo import *
 from parameterized import *
 from ansys.stk.core.utilities.colors import *
@@ -69,7 +70,7 @@ class EarlyBoundTests(TestBase):
         TestBase.Application.units_preferences.set_current_unit("AngleUnit", "deg")
 
         # Reset model type to default
-        EarlyBoundTests.antenna.set_model("Gaussian")
+        EarlyBoundTests.antenna.model_component_linking.set_component("Gaussian")
 
     # endregion
 
@@ -173,13 +174,13 @@ class EarlyBoundTests(TestBase):
 
     # endregion
 
-    # ----------------------------------------------------------------
+    @staticmethod
+    def TestSupportedModels(modelArray):
+        Assert.assertEqual(55, len(modelArray))
 
-    # region SupportedModels
-    def test_SupportedModels(self):
-        arModels = EarlyBoundTests.antenna.supported_models
         sModelName: str
-        for sModelName in arModels:
+
+        for sModelName in modelArray:
             if (
                 (
                     (
@@ -529,7 +530,28 @@ class EarlyBoundTests(TestBase):
             else:
                 Assert.fail(("Unknown or untested Antenna Model: " + sModelName))
 
-        Assert.assertEqual(55, len(arModels))
+    # ----------------------------------------------------------------
+    # region DeprecatedModelInterface
+    def test_DeprecatedModelInterface(self):
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid model name")):
+            EarlyBoundTests.antenna.set_model("bogus")
+        TestBase.Application.units_preferences.set_current_unit("FrequencyUnit", "GHz")
+
+        EarlyBoundTests.antenna.set_model("Parabolic")
+        antennaModel: "IAntennaModel" = clr.CastAs(EarlyBoundTests.antenna.model, IAntennaModel)
+        Assert.assertEqual("Parabolic", antennaModel.name)
+
+        antennaHelper = AntennaHelper(TestBase.Application)
+        antennaHelper.Run(antennaModel, "Parabolic", True)
+
+        EarlyBoundTests.TestSupportedModels(EarlyBoundTests.antenna.supported_models)
+
+    # endregion
+
+    # region ModelComponentLinking
+    def test_ModelComponentLinking(self):
+        STKUtilHelper.TestComponentLinking(EarlyBoundTests.antenna.model_component_linking, 55)
+        EarlyBoundTests.TestSupportedModels(EarlyBoundTests.antenna.model_component_linking.supported_components)
 
     # endregion
 
@@ -594,12 +616,14 @@ class EarlyBoundTests(TestBase):
         ]
     )
     def test_Model(self, modelName: str):
-        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid model name")):
-            EarlyBoundTests.antenna.set_model("bogus")
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid component name")):
+            EarlyBoundTests.antenna.model_component_linking.set_component("bogus")
         TestBase.Application.units_preferences.set_current_unit("FrequencyUnit", "GHz")
 
-        EarlyBoundTests.antenna.set_model(modelName)
-        antennaModel: "IAntennaModel" = EarlyBoundTests.antenna.model
+        EarlyBoundTests.antenna.model_component_linking.set_component(modelName)
+        antennaModel: "IAntennaModel" = clr.CastAs(
+            EarlyBoundTests.antenna.model_component_linking.component, IAntennaModel
+        )
         Assert.assertEqual(modelName, antennaModel.name)
 
         antennaHelper = AntennaHelper(TestBase.Application)
@@ -1111,6 +1135,8 @@ class EarlyBoundTests(TestBase):
 
         with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify a read only")):
             EarlyBoundTests.antennaVolumeGraphics.gain_offset = 1
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify a read only")):
+            EarlyBoundTests.antennaVolumeGraphics.minimum_displayed_gain = 1
 
         EarlyBoundTests.antennaVolumeGraphics.show = True
 
@@ -1122,6 +1148,15 @@ class EarlyBoundTests(TestBase):
             EarlyBoundTests.antennaVolumeGraphics.gain_offset = -101
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             EarlyBoundTests.antennaVolumeGraphics.gain_offset = 201
+
+        EarlyBoundTests.antennaVolumeGraphics.minimum_displayed_gain = -100
+        Assert.assertEqual(-100, EarlyBoundTests.antennaVolumeGraphics.minimum_displayed_gain)
+        EarlyBoundTests.antennaVolumeGraphics.minimum_displayed_gain = 200
+        Assert.assertEqual(200, EarlyBoundTests.antennaVolumeGraphics.minimum_displayed_gain)
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
+            EarlyBoundTests.antennaVolumeGraphics.minimum_displayed_gain = -101
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
+            EarlyBoundTests.antennaVolumeGraphics.minimum_displayed_gain = 201
 
     # endregion
 
@@ -1515,6 +1550,7 @@ class EarlyBoundTests(TestBase):
     def test_Laser_Environment_AtmosphericLoss_BBLL(self):
         helper = LaserEnvAtmosLossBBLLHelper()
         helper.Run(EarlyBoundTests.antenna.laser_environment)
+        helper.RunDeprecatedModelInterface(EarlyBoundTests.antenna.laser_environment)
 
     # endregion
 
@@ -1522,6 +1558,7 @@ class EarlyBoundTests(TestBase):
     def test_Laser_Environment_AtmosphericLoss_Modtran(self):
         helper = LaserEnvAtmosLossModtranHelper()
         helper.Run(EarlyBoundTests.antenna.laser_environment)
+        helper.RunDeprecatedModelInterface(EarlyBoundTests.antenna.laser_environment)
 
     # endregion
 
@@ -1529,6 +1566,7 @@ class EarlyBoundTests(TestBase):
     def test_Laser_Environment_TroposphericScintillationLoss(self):
         helper = LaserEnvTropoScintLossHelper()
         helper.Run(EarlyBoundTests.antenna.laser_environment)
+        helper.RunDeprecatedModelInterface(EarlyBoundTests.antenna.laser_environment)
 
     # endregion
 
@@ -1545,6 +1583,7 @@ class EarlyBoundTests(TestBase):
     def test_RF_Environment_RainCloudFog_RainModel(self):
         helper = RF_Environment_RainCloudFog_RainModelHelper()
         helper.Run(EarlyBoundTests.antenna.rf_environment, TestBase.Application)
+        helper.RunDeprecatedModelInterface(EarlyBoundTests.antenna.rf_environment, TestBase.Application)
 
     # endregion
 
@@ -1552,6 +1591,7 @@ class EarlyBoundTests(TestBase):
     def test_RF_Environment_RainCloudFog_CloudsAndFogModel(self):
         helper = RF_Environment_RainCloudFog_CloudsAndFogModelHelper()
         helper.Run(EarlyBoundTests.antenna.rf_environment, TestBase.Application)
+        helper.RunDeprecatedModelInterface(EarlyBoundTests.antenna.rf_environment, TestBase.Application)
 
     # endregion
 
@@ -1559,6 +1599,7 @@ class EarlyBoundTests(TestBase):
     def test_RF_Environment_AtmosphericAbsorption(self):
         helper = RF_Environment_AtmosphericAbsorptionHelper(TestBase.Application)
         helper.Run(EarlyBoundTests.antenna.rf_environment)
+        helper.RunDeprecatedModelInterface(EarlyBoundTests.antenna.rf_environment)
 
     # endregion
 
@@ -1566,6 +1607,7 @@ class EarlyBoundTests(TestBase):
     def test_RF_Environment_UrbanAndTerrestrial(self):
         helper = RF_Environment_UrbanAndTerrestrialHelper(TestBase.Application)
         helper.Run(EarlyBoundTests.antenna.rf_environment)
+        helper.RunDeprecatedModelInterface(EarlyBoundTests.antenna.rf_environment)
 
     # endregion
 
@@ -1573,6 +1615,7 @@ class EarlyBoundTests(TestBase):
     def test_RF_Environment_TropoScintillation(self):
         helper = RF_Environment_TropoScintillationHelper(TestBase.Application)
         helper.Run(EarlyBoundTests.antenna.rf_environment)
+        helper.RunDeprecatedModelInterface(EarlyBoundTests.antenna.rf_environment)
 
     # endregion
 

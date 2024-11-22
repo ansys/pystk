@@ -174,6 +174,7 @@ class STKDesktop(object):
                          grpc_server:bool=False, \
                          grpc_host:str="localhost", \
                          grpc_port:int=40704, \
+                         grpc_max_message_size:int=0, \
                          grpc_timeout_sec:int=60) -> STKDesktopApplication:
         """
         Create a new STK Desktop application instance.  
@@ -185,6 +186,7 @@ class STKDesktop(object):
         grpc_host is the IP address or DNS name of the gRPC server.
         grpc_port is the integral port number that the gRPC server is using (valid values are integers from 0 to 65535).
         grpc_timeout_sec specifies the time allocated to wait for a grpc connection (seconds).
+        grpc_max_message_size is the maximum size in bytes that the gRPC client can receive. Set to zero to use the gRPC default.
         Only available on Windows.
         """
         if os.name != "nt":
@@ -222,12 +224,10 @@ class STKDesktop(object):
             # Calling subprocess.Popen (without shell equals true) to start the backend. 
             # Excluding low severity bandit check as the validity of the inputs has been ensured.
             app_process = subprocess.Popen(cmd_line) # nosec B603
-            host = grpc_host
-            # Ignoring B104 warning as it is a false positive. The hardcoded string "0.0.0.0" is being filtered
+            # Ignoring B104 warning as it is a false positive. The hard-coded string "0.0.0.0" is being filtered
             # to ensure that it is not used.
-            if host=="0.0.0.0": # nosec B104
-                host = "localhost"
-            app = STKDesktop.attach_to_application(None, grpc_server, host, grpc_port, grpc_timeout_sec)
+            host = "localhost" if grpc_host=="0.0.0.0" else grpc_host # nosec B104
+            app = STKDesktop.attach_to_application(None, grpc_server, host, grpc_port, grpc_timeout_sec, grpc_max_message_size)
             app.visible = visible
             app.user_control = user_control
             return app
@@ -250,7 +250,8 @@ class STKDesktop(object):
                             grpc_server:bool=False, \
                             grpc_host:str="localhost", \
                             grpc_port:int=40704, \
-                            grpc_timeout_sec:int=60) -> STKDesktopApplication:
+                            grpc_timeout_sec:int=60,
+                            grpc_max_message_size:int=0) -> STKDesktopApplication:
         """
         Attach to an existing STK Desktop instance. 
 
@@ -259,6 +260,7 @@ class STKDesktop(object):
         grpc_host is the IP address or DNS name of the gRPC server.
         grpc_port is the integral port number that the gRPC server is using.
         grpc_timeout_sec specifies the time allocated to wait for a grpc connection (seconds).
+        grpc_max_message_size is the maximum size in bytes that the gRPC client can receive. Set to zero to use the gRPC default.
         Only available on Windows.
         """
         if os.name != "nt":
@@ -272,7 +274,7 @@ class STKDesktop(object):
                 from .internal.grpcutil import GrpcClient
             except ModuleNotFoundError:
                 raise STKInitializationError(f"gRPC use requires Python modules grpcio and protobuf.")
-            client: GrpcClient = GrpcClient.new_client(grpc_host, grpc_port, grpc_timeout_sec)
+            client: GrpcClient = GrpcClient.new_client(grpc_host, grpc_port, grpc_timeout_sec, grpc_max_message_size)
             if client is not None:
                 pAppImpl = client.get_stk_application_interface()
                 app = STKDesktopApplication()

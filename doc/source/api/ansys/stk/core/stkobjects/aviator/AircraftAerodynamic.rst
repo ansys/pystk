@@ -32,6 +32,8 @@ Overview
               - Gets or sets the scalar value applied to the lift for parametric analysis.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAerodynamic.drag_factor`
               - Gets or sets the scalar value applied to the drag for parametric analysis.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAerodynamic.mode_as_four_point`
+              - Get the interface for a four point aerodynamics strategy.
 
 
 
@@ -87,5 +89,11 @@ Property detail
     :type: float
 
     Gets or sets the scalar value applied to the drag for parametric analysis.
+
+.. py:property:: mode_as_four_point
+    :canonical: ansys.stk.core.stkobjects.aviator.AircraftAerodynamic.mode_as_four_point
+    :type: FourPointAerodynamic
+
+    Get the interface for a four point aerodynamics strategy.
 
 

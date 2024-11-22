@@ -28,6 +28,8 @@ Overview
               - Create a vector component based on a COM vector plugin. For information how to implement and register VGT plugins, see.
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolVectorFactory.create_cross_product`
               - Create a cross product C = A x B.
+            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolVectorFactory.create_file_vector`
+              - Create a vector interpolated from tabulated data from file.
 
     .. tab-item:: Properties
         
@@ -134,4 +136,19 @@ Method detail
     :Returns:
 
         :obj:`~VectorGeometryToolVectorCross`
+
+.. py:method:: create_file_vector(self, vector_name: str, description: str, file_name: str) -> VectorGeometryToolVectorFile
+    :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorFactory.create_file_vector
+
+    Create a vector interpolated from tabulated data from file.
+
+    :Parameters:
+
+    **vector_name** : :obj:`~str`
+    **description** : :obj:`~str`
+    **file_name** : :obj:`~str`
+
+    :Returns:
+
+        :obj:`~VectorGeometryToolVectorFile`
 

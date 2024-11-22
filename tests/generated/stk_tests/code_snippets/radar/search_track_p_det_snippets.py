@@ -119,7 +119,9 @@ class SearchTrackPDetSnippets(CodeSnippetsTestBase):
 
         # Configure the radar object as a monostatic model.
         radar.set_model("Monostatic")
-        monostaticModel: "RadarModelMonostatic" = clr.CastAs(radar.model, RadarModelMonostatic)
+        monostaticModel: "RadarModelMonostatic" = clr.CastAs(
+            radar.model_component_linking.component, RadarModelMonostatic
+        )
 
         # Orient the radar antenna in the direction of the target
         monostaticModel.antenna_control.embedded_model_orientation.assign_az_el(
@@ -127,9 +129,9 @@ class SearchTrackPDetSnippets(CodeSnippetsTestBase):
         )
 
         # Set the radar antenna model to parabolic
-        monostaticModel.antenna_control.set_embedded_model("Parabolic")
+        monostaticModel.antenna_control.embedded_model_component_linking.set_component("Parabolic")
         parabolic: "AntennaModelParabolic" = clr.CastAs(
-            monostaticModel.antenna_control.embedded_model, AntennaModelParabolic
+            monostaticModel.antenna_control.embedded_model_component_linking.component, AntennaModelParabolic
         )
 
         # Give the parabolic antenna a 2 deg beamwidth;
@@ -184,7 +186,9 @@ class SearchTrackPDetSnippets(CodeSnippetsTestBase):
 
         # Don't inherit the radar cross section settings from the scenario
         targetAircraft.radar_cross_section.inherit = False
-        rcs: "RadarCrossSectionModel" = clr.CastAs(targetAircraft.radar_cross_section.model, RadarCrossSectionModel)
+        rcs: "RadarCrossSectionModel" = clr.CastAs(
+            targetAircraft.radar_cross_section.model_component_linking.component, RadarCrossSectionModel
+        )
 
         # Set the radar cross section compute strategy to constan value
         rcs.frequency_bands[0].set_compute_strategy("Constant Value")

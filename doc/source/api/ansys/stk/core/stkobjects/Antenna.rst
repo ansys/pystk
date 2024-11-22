@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.Antenna.set_model`
-              - Set the current antenna model by name.
+              - Do not use this method, as it is deprecated. Use ModelComponentLinking on IAgAntenna instead. Sets the current antenna model by name.
             * - :py:attr:`~ansys.stk.core.stkobjects.Antenna.is_refraction_type_supported`
               - Get a value indicating whether the specified type can be used.
 
@@ -32,9 +32,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.Antenna.supported_models`
-              - Gets an array of supported model names.
+              - This property is deprecated. Use ModelComponentLinking on IAgAntenna instead. Gets an array of supported model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.Antenna.model`
-              - Gets the current antenna model.
+              - This property is deprecated. Use ModelComponentLinking on IAgAntenna instead. Gets the current antenna model.
             * - :py:attr:`~ansys.stk.core.stkobjects.Antenna.orientation`
               - Gets the antenna orientation.
             * - :py:attr:`~ansys.stk.core.stkobjects.Antenna.refraction`
@@ -53,6 +53,8 @@ Overview
               - Gets the object RF environment settings.
             * - :py:attr:`~ansys.stk.core.stkobjects.Antenna.laser_environment`
               - Gets the object laser environment settings.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Antenna.model_component_linking`
+              - Gets the link/embed controller for managing the antenna model component.
 
 
 
@@ -71,13 +73,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Antenna.supported_models
     :type: list
 
-    Gets an array of supported model names.
+    This property is deprecated. Use ModelComponentLinking on IAgAntenna instead. Gets an array of supported model names.
 
 .. py:property:: model
     :canonical: ansys.stk.core.stkobjects.Antenna.model
     :type: IAntennaModel
 
-    Gets the current antenna model.
+    This property is deprecated. Use ModelComponentLinking on IAgAntenna instead. Gets the current antenna model.
 
 .. py:property:: orientation
     :canonical: ansys.stk.core.stkobjects.Antenna.orientation
@@ -133,6 +135,12 @@ Property detail
 
     Gets the object laser environment settings.
 
+.. py:property:: model_component_linking
+    :canonical: ansys.stk.core.stkobjects.Antenna.model_component_linking
+    :type: IComponentLinkEmbedControl
+
+    Gets the link/embed controller for managing the antenna model component.
+
 
 Method detail
 -------------
@@ -141,7 +149,7 @@ Method detail
 .. py:method:: set_model(self, model_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.Antenna.set_model
 
-    Set the current antenna model by name.
+    Do not use this method, as it is deprecated. Use ModelComponentLinking on IAgAntenna instead. Sets the current antenna model by name.
 
     :Parameters:
 
@@ -168,6 +176,7 @@ Method detail
     :Returns:
 
         :obj:`~bool`
+
 
 
 

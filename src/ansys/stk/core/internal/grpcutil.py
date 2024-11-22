@@ -488,7 +488,7 @@ class GrpcClient(object):
         connect_request = AgGrpcServices_pb2.EmptyMessage()
         connect_response = self.stub.GetConnectionMetadata(connect_request)
         server_version = f"{connect_response.version}.{connect_response.release}.{connect_response.update}"
-        expected_version = "12.9.0"
+        expected_version = "12.10.0"
         if server_version != expected_version:
             raise STKRuntimeError(f"Version mismatch between Python client and gRPC server. Expected STK {expected_version}, found STK {server_version}.")
         self._connection_id = connect_response.connection_id
@@ -534,10 +534,13 @@ class GrpcClient(object):
         future.reset_impl(bound_intf)
 
     @staticmethod
-    def new_client(host, port, timeout_sec:int=60) -> "GrpcClient":
+    def new_client(host, port, timeout_sec:int=60, max_receive_message_size:int=0) -> "GrpcClient":
         addr = f"{host}:{port}"
         new_grpc_client = GrpcClient()
-        new_grpc_client.channel = grpc.insecure_channel(addr)
+        channel_args = []
+        if max_receive_message_size > 0:
+            channel_args.append(("grpc.max_receive_message_length", max_receive_message_size))
+        new_grpc_client.channel = grpc.insecure_channel(addr, options=channel_args)
         try:
             grpc.channel_ready_future(new_grpc_client.channel).result(timeout=timeout_sec)
 
@@ -703,7 +706,10 @@ class GrpcClient(object):
                 else:
                     return tuple([self._marshall_return_arg(arg) for arg in response.return_vals])
         except grpc.RpcError as rpc_error:
-            self._handle_rpc_error(rpc_error)
+            if rpc_error.code() == grpc.StatusCode.RESOURCE_EXHAUSTED:
+                raise RuntimeError("gRPC message size limit exceeded. Try chunking the data request or specify a larger limit using grpc_max_message_size when starting the application.")
+            else:
+                self._handle_rpc_error(rpc_error)
 
     def get_property(self, p:AgGrpcServices_pb2.STKObject, guid:AgGrpcServices_pb2.InterfaceID, method_offset) -> typing.Any:
         self._execute_batched_invoke()

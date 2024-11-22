@@ -169,7 +169,18 @@ class EarlyBoundTests(TestBase):
         type: "VECTOR_TYPE"
         for type in Enum.GetValues(clr.TypeOf(VECTOR_TYPE)):
             if provider.vectors.factory.is_type_supported(type) and (type != VECTOR_TYPE.PLUGIN):
-                obj: "IVectorGeometryToolVector" = provider.vectors.factory.create("NameHere", "", type)
+                obj: "IVectorGeometryToolVector" = None
+                if VECTOR_TYPE.FILE == type:
+                    obj = clr.CastAs(
+                        provider.vectors.factory.create_file_vector(
+                            "NameHere", "", TestBase.GetScenarioFile("VectorFile1.vd")
+                        ),
+                        IVectorGeometryToolVector,
+                    )
+
+                else:
+                    obj = provider.vectors.factory.create("NameHere", "", type)
+
                 Assert.assertIsNotNone(obj)
                 provider.vectors.remove("NameHere")
 

@@ -31,6 +31,9 @@ Overview
             * - :py:attr:`~STRAND_METRIC_CALCULATION_SCALAR`
               - Chain optimal strand calculation scalar metric.
 
+            * - :py:attr:`~STRAND_METRIC_DURATION`
+              - Chain optimal strand duration metric.
+
 
 Import detail
 -------------

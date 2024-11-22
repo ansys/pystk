@@ -2394,10 +2394,17 @@ class SensorHelper(object):
     # region StarsInFOV
     def StarsInFOV(self):
         self.m_logger.WriteLine("----- THE StarsInFOV TEST ----- BEGIN -----")
-        StarColl: "ICelestialBodyInformationCollection" = self.m_oSensor.get_stars_in_field_of_view(0.0)
+        celBodyColl: "ICelestialBodyInformationCollection" = self.m_oSensor.get_stars_in_field_of_view(0.0)
+        Assert.assertTrue((celBodyColl.count > 0))
+
+        celBodyColl.recycle = True
+        Assert.assertTrue(celBodyColl.recycle)
+
+        celBodyInfo: "ICelestialBodyInformation" = celBodyColl[0]
+        Assert.assertEqual("Hip", celBodyInfo.catalog_name)
 
         # BUG58418 - verify that calling this with time before object time does not crash.
-        StarColl = self.m_oSensor.get_stars_in_field_of_view(-100.0)
+        celBodyColl = self.m_oSensor.get_stars_in_field_of_view(-100.0)
 
         self.m_logger.WriteLine("----- THE StarsInFOV TEST ----- END -----")
 

@@ -69,18 +69,26 @@ class ChainSnippets(CodeSnippetsTestBase):
         CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "sat1")
         CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "sat2")
         CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.AIRCRAFT, "air1")
-        self.DefineAndComputeChainBasic(ChainSnippets.m_Object)
+        self.DefineAndComputeChainBasic(CodeSnippetsTestBase.m_Root.current_scenario, ChainSnippets.m_Object)
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.AIRCRAFT, "air1")
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "sat2")
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "sat1")
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.FACILITY, "fac1")
 
-    def DefineAndComputeChainBasic(self, chain: "Chain"):
-        # Add some objects to chain (using STK path)
-        chain.objects.add("Facility/fac1")
-        chain.objects.add("Satellite/sat1")
-        chain.objects.add("Satellite/sat2")
-        chain.objects.add("Aircraft/air1")
+    def DefineAndComputeChainBasic(self, scenarioObj: "IStkObject", chain: "Chain"):
+        chain.start_object = scenarioObj.children.get_item_by_name("fac1")
+        chain.end_object = scenarioObj.children.get_item_by_name("air1")
+
+        connections: "ChainConnectionCollection" = chain.connections
+        connections.add(
+            scenarioObj.children.get_item_by_name("sat2"), scenarioObj.children.get_item_by_name("air1"), 1, 1
+        )
+        connections.add(
+            scenarioObj.children.get_item_by_name("fac1"), scenarioObj.children.get_item_by_name("sat1"), 1, 1
+        )
+        connections.add(
+            scenarioObj.children.get_item_by_name("sat1"), scenarioObj.children.get_item_by_name("sat2"), 1, 1
+        )
 
         # Compute the chain
         chain.compute_access()
@@ -93,21 +101,30 @@ class ChainSnippets(CodeSnippetsTestBase):
         CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "sat1")
         CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "sat2")
         CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.AIRCRAFT, "air1")
-        self.DefineAndComputeChainAdvanced(ChainSnippets.m_Object)
+        self.DefineAndComputeChainAdvanced(CodeSnippetsTestBase.m_Root.current_scenario, ChainSnippets.m_Object)
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.AIRCRAFT, "air1")
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "sat2")
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "sat1")
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.FACILITY, "fac1")
 
-    def DefineAndComputeChainAdvanced(self, chain: "Chain"):
+    def DefineAndComputeChainAdvanced(self, scenarioObj: "IStkObject", chain: "Chain"):
         # Remove all previous accesses
         chain.clear_access()
 
         # Add some objects to chain
-        chain.objects.add("Facility/fac1")
-        chain.objects.add("Satellite/sat1")
-        chain.objects.add("Satellite/sat2")
-        chain.objects.add("Aircraft/air1")
+        chain.start_object = scenarioObj.children.get_item_by_name("fac1")
+        chain.end_object = scenarioObj.children.get_item_by_name("air1")
+
+        connections: "ChainConnectionCollection" = chain.connections
+        connections.add(
+            scenarioObj.children.get_item_by_name("sat2"), scenarioObj.children.get_item_by_name("air1"), 1, 1
+        )
+        connections.add(
+            scenarioObj.children.get_item_by_name("fac1"), scenarioObj.children.get_item_by_name("sat1"), 1, 1
+        )
+        connections.add(
+            scenarioObj.children.get_item_by_name("sat1"), scenarioObj.children.get_item_by_name("sat2"), 1, 1
+        )
 
         # Configure chain parameters
         chain.recompute_automatically = False
@@ -142,9 +159,13 @@ class ChainSnippets(CodeSnippetsTestBase):
         aircraft: "IStkObject" = scenario.children.new(STK_OBJECT_TYPE.AIRCRAFT, "DummyAircraft")
 
         chain: "Chain" = Chain(scenario.children.new(STK_OBJECT_TYPE.CHAIN, "ChainForCodeSnippet"))
+        chain.start_object = scenario.children.get_item_by_name("GEO")
+        chain.end_object = scenario.children.get_item_by_name("DummyAircraft")
 
-        chain.objects.add("Satellite/GEO")
-        chain.objects.add("Aircraft/DummyAircraft")
+        connections: "ChainConnectionCollection" = chain.connections
+        connections.add(
+            scenario.children.get_item_by_name("GEO"), scenario.children.get_item_by_name("DummyAircraft"), 1, 1
+        )
 
         try:
             self.ConfigureChainComputeTimePeriod(chain)
@@ -178,9 +199,13 @@ class ChainSnippets(CodeSnippetsTestBase):
         aircraft: "IStkObject" = scenario.children.new(STK_OBJECT_TYPE.AIRCRAFT, "DummyAircraft")
 
         chain: "Chain" = Chain(scenario.children.new(STK_OBJECT_TYPE.CHAIN, "ChainForCodeSnippet"))
+        chain.start_object = scenario.children.get_item_by_name("GEO")
+        chain.end_object = scenario.children.get_item_by_name("DummyAircraft")
 
-        chain.objects.add("Satellite/GEO")
-        chain.objects.add("Aircraft/DummyAircraft")
+        connections: "ChainConnectionCollection" = chain.connections
+        connections.add(
+            scenario.children.get_item_by_name("GEO"), scenario.children.get_item_by_name("DummyAircraft"), 1, 1
+        )
 
         try:
             self.PrintChainStrainIntervalsTimes(chain)

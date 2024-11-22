@@ -94,6 +94,29 @@ class EarlyBoundTests(TestBase):
 
     # ----------------------------------------------------------------
 
+    # region ZZZ_Compute_and_Clear
+    def test_ZZZ_Compute_and_Clear(self):
+        # Configure CommSystem so that Compute will succeed
+        EarlyBoundTests.commSystem.transmitters.add(r"Constellation/Constellation1")
+        EarlyBoundTests.commSystem.receivers.add(r"Constellation/Constellation2")
+        EarlyBoundTests.commSystem.interference_sources.add(r"Constellation/Constellation1")
+
+        EarlyBoundTests.commSystem.compute()
+        TestBase.Application.save_as(
+            Path.Combine(TestBase.TemporaryDirectory, "CommSystem_Compute.sc")
+        )  # so that dat files are saved
+        Assert.assertTrue(File.Exists(Path.Combine(TestBase.TemporaryDirectory, "CommSystem1.cs.dat1")))
+        Assert.assertTrue(File.Exists(Path.Combine(TestBase.TemporaryDirectory, "CommSystem1.cs.dat2")))
+
+        EarlyBoundTests.commSystem.clear()
+        TestBase.Application.save_as(
+            Path.Combine(TestBase.TemporaryDirectory, "CommSystem_Compute.sc")
+        )  # so that dat files are removed
+        Assert.assertFalse(File.Exists(Path.Combine(TestBase.TemporaryDirectory, "CommSystem1.cs.dat1")))
+        Assert.assertFalse(File.Exists(Path.Combine(TestBase.TemporaryDirectory, "CommSystem1.cs.dat2")))
+
+    # endregion
+
     # region Transmitters
     def test_Transmitters(self):
         oHelper = ObjectLinkCollectionHelper(False)
@@ -137,6 +160,10 @@ class EarlyBoundTests(TestBase):
         EarlyBoundTests.commSystem.constraining_role = COMM_SYSTEM_CONSTRAINING_ROLE.TRANSMIT
         Assert.assertEqual(COMM_SYSTEM_CONSTRAINING_ROLE.TRANSMIT, EarlyBoundTests.commSystem.constraining_role)
 
+        backupCriteria: "COMM_SYSTEM_LINK_SELECTION_CRITERIA_TYPE" = (
+            EarlyBoundTests.commSystem.link_selection_criteria.type
+        )
+
         EarlyBoundTests.commSystem.set_link_selection_criteria_type(
             COMM_SYSTEM_LINK_SELECTION_CRITERIA_TYPE.MAXIMUM_ELEVATION
         )
@@ -170,6 +197,8 @@ class EarlyBoundTests(TestBase):
             EarlyBoundTests.commSystem.set_link_selection_criteria_type(
                 COMM_SYSTEM_LINK_SELECTION_CRITERIA_TYPE.UNKNOWN
             )
+
+        EarlyBoundTests.commSystem.set_link_selection_criteria_type(backupCriteria)
 
     # endregion
 

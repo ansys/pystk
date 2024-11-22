@@ -28,6 +28,9 @@ Overview
             * - :py:attr:`~MISSILE_AERODYNAMIC_ADVANCED`
               - Advanced missile aerodynamics.
 
+            * - :py:attr:`~MISSILE_AERODYNAMIC_FOUR_POINT`
+              - FourPoint missile aerodynamics.
+
 
 Import detail
 -------------

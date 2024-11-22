@@ -31,6 +31,7 @@ Overview
                 grpc_host is the IP address or DNS name of the gRPC server.
                 grpc_port is the integral port number that the gRPC server is using (valid values are integers from 0 to 65535).
                 grpc_timeout_sec specifies the time allocated to wait for a grpc connection (seconds).
+                grpc_max_message_size is the maximum size in bytes that the gRPC client can receive. Set to zero to use the gRPC default.
                 Only available on Windows.
             * - :py:attr:`~ansys.stk.core.stkdesktop.STKDesktop.attach_to_application`
               - Attach to an existing STK Desktop instance. 
@@ -40,6 +41,7 @@ Overview
                 grpc_host is the IP address or DNS name of the gRPC server.
                 grpc_port is the integral port number that the gRPC server is using.
                 grpc_timeout_sec specifies the time allocated to wait for a grpc connection (seconds).
+                grpc_max_message_size is the maximum size in bytes that the gRPC client can receive. Set to zero to use the gRPC default.
                 Only available on Windows.
             * - :py:attr:`~ansys.stk.core.stkdesktop.STKDesktop.release_all`
               - Release all handles from Python to STK Desktop applications.
@@ -61,7 +63,7 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: start_application(visible: bool = False, user_control: bool = False, grpc_server: bool = False, grpc_host: str = False, grpc_port: int = False, grpc_timeout_sec: int = False) -> STKDesktopApplication
+.. py:method:: start_application(visible: bool = False, user_control: bool = False, grpc_server: bool = False, grpc_host: str = False, grpc_port: int = False, grpc_max_message_size: int = False, grpc_timeout_sec: int = False) -> STKDesktopApplication
     :canonical: ansys.stk.core.stkdesktop.STKDesktop.start_application
 
     Create a new STK Desktop application instance.  
@@ -73,6 +75,7 @@ Method detail
     grpc_host is the IP address or DNS name of the gRPC server.
     grpc_port is the integral port number that the gRPC server is using (valid values are integers from 0 to 65535).
     grpc_timeout_sec specifies the time allocated to wait for a grpc connection (seconds).
+    grpc_max_message_size is the maximum size in bytes that the gRPC client can receive. Set to zero to use the gRPC default.
     Only available on Windows.
 
     :Parameters:
@@ -82,13 +85,14 @@ Method detail
     **grpc_server** : :obj:`~bool`
     **grpc_host** : :obj:`~str`
     **grpc_port** : :obj:`~int`
+    **grpc_max_message_size** : :obj:`~int`
     **grpc_timeout_sec** : :obj:`~int`
 
     :Returns:
 
         :obj:`~STKDesktopApplication`
 
-.. py:method:: attach_to_application(pid: int = None, grpc_server: bool = None, grpc_host: str = None, grpc_port: int = None, grpc_timeout_sec: int = None) -> STKDesktopApplication
+.. py:method:: attach_to_application(pid: int = None, grpc_server: bool = None, grpc_host: str = None, grpc_port: int = None, grpc_timeout_sec: int = None, grpc_max_message_size: int = None) -> STKDesktopApplication
     :canonical: ansys.stk.core.stkdesktop.STKDesktop.attach_to_application
 
     Attach to an existing STK Desktop instance. 
@@ -98,6 +102,7 @@ Method detail
     grpc_host is the IP address or DNS name of the gRPC server.
     grpc_port is the integral port number that the gRPC server is using.
     grpc_timeout_sec specifies the time allocated to wait for a grpc connection (seconds).
+    grpc_max_message_size is the maximum size in bytes that the gRPC client can receive. Set to zero to use the gRPC default.
     Only available on Windows.
 
     :Parameters:
@@ -107,6 +112,7 @@ Method detail
     **grpc_host** : :obj:`~str`
     **grpc_port** : :obj:`~int`
     **grpc_timeout_sec** : :obj:`~int`
+    **grpc_max_message_size** : :obj:`~int`
 
     :Returns:
 

@@ -34,7 +34,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaVolumeGraphics.wireframe`
               - Enables the ability to view the volume as a wireframe.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaVolumeGraphics.gain_offset`
-              - Gets or sets the gain offset value.
+              - This property is deprecated. Use the MinimumDisplayedGain property instead. Gets or sets the gain offset value.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaVolumeGraphics.gain_scale`
               - Gets or sets the gain scale value.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaVolumeGraphics.azimuth_start`
@@ -65,6 +65,8 @@ Overview
               - Gets or sets the contours value represents the gain value relative to the maximum.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaVolumeGraphics.coordinate_system`
               - Gets or sets the coordinate system for defining the resolution of the antenna graphics.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaVolumeGraphics.minimum_displayed_gain`
+              - Gets or sets the minimum dispayed gain value.
 
 
 
@@ -95,7 +97,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.AntennaVolumeGraphics.gain_offset
     :type: float
 
-    Gets or sets the gain offset value.
+    This property is deprecated. Use the MinimumDisplayedGain property instead. Gets or sets the gain offset value.
 
 .. py:property:: gain_scale
     :canonical: ansys.stk.core.stkobjects.AntennaVolumeGraphics.gain_scale
@@ -187,6 +189,12 @@ Property detail
 
     Gets or sets the coordinate system for defining the resolution of the antenna graphics.
 
+.. py:property:: minimum_displayed_gain
+    :canonical: ansys.stk.core.stkobjects.AntennaVolumeGraphics.minimum_displayed_gain
+    :type: float
+
+    Gets or sets the minimum dispayed gain value.
+
 
 Method detail
 -------------
@@ -242,6 +250,8 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
+
 
 
 

@@ -40,6 +40,8 @@ Overview
               - Displays a point at the current animation time.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DReferenceAxes.available_points`
               - Returns a safearray of available points.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DReferenceAxes.thickness`
+              - Thickness of line.
 
 
 
@@ -113,5 +115,11 @@ Property detail
     :type: list
 
     Returns a safearray of available points.
+
+.. py:property:: thickness
+    :canonical: ansys.stk.core.stkobjects.Graphics3DReferenceAxes.thickness
+    :type: float
+
+    Thickness of line.
 
 

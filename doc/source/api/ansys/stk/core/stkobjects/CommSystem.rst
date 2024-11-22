@@ -22,6 +22,10 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.CommSystem.set_link_selection_criteria_type`
               - Set the link selection criteria by name.
+            * - :py:attr:`~ansys.stk.core.stkobjects.CommSystem.compute`
+              - Unconditionally computes the CommSystem.
+            * - :py:attr:`~ansys.stk.core.stkobjects.CommSystem.clear`
+              - Unconditionally clears any computed values of the CommSystem.
 
     .. tab-item:: Properties
         
@@ -191,4 +195,22 @@ Method detail
 
 
 
+
+.. py:method:: compute(self) -> None
+    :canonical: ansys.stk.core.stkobjects.CommSystem.compute
+
+    Unconditionally computes the CommSystem.
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: clear(self) -> None
+    :canonical: ansys.stk.core.stkobjects.CommSystem.clear
+
+    Unconditionally clears any computed values of the CommSystem.
+
+    :Returns:
+
+        :obj:`~None`
 
