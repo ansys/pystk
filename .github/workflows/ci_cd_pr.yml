@@ -126,6 +126,12 @@ jobs:
   doc-build:
     name: "Doc build"
     runs-on: ${{ matrix.runner }}
+    needs: build-wheelhouse
+    if: |
+      always() &&
+        (needs.build-wheelhouse.result == 'success' || needs.build-wheelhouse.result == 'skipped') &&
+        !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
+        !contains(github.event.pull_request.labels.*.name, 'doc:skip')
     # Limitations with one line GitHub actions conditionals forces us to use a
     # matrix strategy. If examples execution is required, a self-hosted runner
     # is selected. Otherwise, a GitHub runner is used.
@@ -139,10 +145,6 @@ jobs:
             runner: [self-hosted, pystk]
           - needs-self-hosted-runner: true
             runner: ubuntu-latest
-    if: |
-      !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
-      !contains(github.event.pull_request.labels.*.name, 'doc:skip')
-    needs: build-wheelhouse
     timeout-minutes: 90
     steps:
 
