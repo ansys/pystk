@@ -108,7 +108,7 @@ jobs:
       always() &&
         (needs.doc-style.result == 'success' || needs.doc-style.result == 'skipped') &&
         !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
-        !contains(github.event.pull_request.labels.*.name, 'doc:skip')
+        !contains(github.event.pull_request.labels.*.name, 'docs:skip')
     strategy:
        matrix:
            os: [ubuntu-latest, windows-latest]
@@ -131,7 +131,7 @@ jobs:
       always() &&
         (needs.build-wheelhouse.result == 'success' || needs.build-wheelhouse.result == 'skipped') &&
         !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
-        !contains(github.event.pull_request.labels.*.name, 'doc:skip')
+        !contains(github.event.pull_request.labels.*.name, 'docs:skip')
     # Limitations with one line GitHub actions conditionals forces us to use a
     # matrix strategy. If examples execution is required, a self-hosted runner
     # is selected. Otherwise, a GitHub runner is used.
