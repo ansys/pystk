@@ -222,9 +222,11 @@ class STKDesktop(object):
             # Calling subprocess.Popen (without shell equals true) to start the backend. 
             # Excluding low severity bandit check as the validity of the inputs has been ensured.
             app_process = subprocess.Popen(cmd_line) # nosec B603
+            host = grpc_host
             # Ignoring B104 warning as it is a false positive. The hardcoded string "0.0.0.0" is being filtered
             # to ensure that it is not used.
-            host = "localhost" if grpc_host=="0.0.0.0" else grpc_host # nosec B104
+            if host=="0.0.0.0": # nosec B104
+                host = "localhost"
             app = STKDesktop.attach_to_application(None, grpc_server, host, grpc_port, grpc_timeout_sec)
             app.visible = visible
             app.user_control = user_control
