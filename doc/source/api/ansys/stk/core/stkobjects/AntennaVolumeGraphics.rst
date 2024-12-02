@@ -66,7 +66,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaVolumeGraphics.coordinate_system`
               - Gets or sets the coordinate system for defining the resolution of the antenna graphics.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaVolumeGraphics.minimum_displayed_gain`
-              - Gets or sets the minimum dispayed gain value.
+              - Gets or sets the minimum displayed gain value.
 
 
 
@@ -193,7 +193,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.AntennaVolumeGraphics.minimum_displayed_gain
     :type: float
 
-    Gets or sets the minimum dispayed gain value.
+    Gets or sets the minimum displayed gain value.
 
 
 Method detail

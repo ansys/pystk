@@ -23,7 +23,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkrfcm.StkRfcmRadarTransceiverConfiguration.transceiver`
               - Gets or sets the transceiver.
             * - :py:attr:`~ansys.stk.core.stkrfcm.StkRfcmRadarTransceiverConfiguration.mode`
-              - Gets or sets the tranceiver mode.
+              - Gets or sets the transceiver mode.
 
 
 
@@ -54,6 +54,6 @@ Property detail
     :canonical: ansys.stk.core.stkrfcm.StkRfcmRadarTransceiverConfiguration.mode
     :type: RFCM_TRANSCEIVER_MODE
 
-    Gets or sets the tranceiver mode.
+    Gets or sets the transceiver mode.
 
 

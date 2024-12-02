@@ -39585,7 +39585,7 @@ class MissileFourPointAerodynamic(SupportsDeleteCallback):
             "arg_types" : (agcom.Variant, agcom.Variant, agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.VariantArg,) }
     def set_aoa(self, d_max_aoa:typing.Any, d_max_endurance_aoa:typing.Any, d_max_range_aoa:typing.Any) -> None:
-        """Get or set and validates the maxium, max range and max endurance AOA values for the aircraft"""
+        """Get or set and validates the maximum, max range and max endurance AOA values for the aircraft"""
         return self._intf.invoke(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._set_aoa_metadata, d_max_aoa, d_max_endurance_aoa, d_max_range_aoa)
 
     _get_max_aoa_metadata = { "offset" : _get_max_aoa_method_offset,

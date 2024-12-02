@@ -571,7 +571,7 @@ class IStkRfcmAnalysisLink(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def transmit_transceiver_identifier(self) -> str:
-        """Get the transmit tranceiver identifier."""
+        """Get the transmit transceiver identifier."""
         return self._intf.get_property(IStkRfcmAnalysisLink._metadata, IStkRfcmAnalysisLink._get_transmit_transceiver_identifier_metadata)
 
     _get_transmit_transceiver_name_metadata = { "offset" : _get_transmit_transceiver_name_method_offset,
@@ -579,7 +579,7 @@ class IStkRfcmAnalysisLink(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def transmit_transceiver_name(self) -> str:
-        """Get the transmit tranceiver name."""
+        """Get the transmit transceiver name."""
         return self._intf.get_property(IStkRfcmAnalysisLink._metadata, IStkRfcmAnalysisLink._get_transmit_transceiver_name_metadata)
 
     _get_receive_transceiver_identifier_metadata = { "offset" : _get_receive_transceiver_identifier_method_offset,
@@ -587,7 +587,7 @@ class IStkRfcmAnalysisLink(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def receive_transceiver_identifier(self) -> str:
-        """Get the receive tranceiver identifier."""
+        """Get the receive transceiver identifier."""
         return self._intf.get_property(IStkRfcmAnalysisLink._metadata, IStkRfcmAnalysisLink._get_receive_transceiver_identifier_metadata)
 
     _get_receive_transceiver_name_metadata = { "offset" : _get_receive_transceiver_name_method_offset,
@@ -595,7 +595,7 @@ class IStkRfcmAnalysisLink(object):
             "marshallers" : (agmarshall.BStrArg,) }
     @property
     def receive_transceiver_name(self) -> str:
-        """Get the receive tranceiver name."""
+        """Get the receive transceiver name."""
         return self._intf.get_property(IStkRfcmAnalysisLink._metadata, IStkRfcmAnalysisLink._get_receive_transceiver_name_metadata)
 
     _get_transmit_antenna_count_metadata = { "offset" : _get_transmit_antenna_count_method_offset,
@@ -2250,7 +2250,7 @@ class StkRfcmCommunicationsTransceiverConfiguration(SupportsDeleteCallback):
             "marshallers" : (agmarshall.EnumArg(RFCM_TRANSCEIVER_MODE),) }
     @property
     def mode(self) -> "RFCM_TRANSCEIVER_MODE":
-        """Get or set the tranceiver mode."""
+        """Get or set the transceiver mode."""
         return self._intf.get_property(StkRfcmCommunicationsTransceiverConfiguration._metadata, StkRfcmCommunicationsTransceiverConfiguration._get_mode_metadata)
 
     _set_mode_metadata = { "offset" : _set_mode_method_offset,
@@ -2258,7 +2258,7 @@ class StkRfcmCommunicationsTransceiverConfiguration(SupportsDeleteCallback):
             "marshallers" : (agmarshall.EnumArg(RFCM_TRANSCEIVER_MODE),) }
     @mode.setter
     def mode(self, value:"RFCM_TRANSCEIVER_MODE") -> None:
-        """Get or set the tranceiver mode."""
+        """Get or set the transceiver mode."""
         return self._intf.set_property(StkRfcmCommunicationsTransceiverConfiguration._metadata, StkRfcmCommunicationsTransceiverConfiguration._set_mode_metadata, value)
 
     _get_include_parent_object_facets_metadata = { "offset" : _get_include_parent_object_facets_method_offset,
@@ -2345,7 +2345,7 @@ class StkRfcmRadarTransceiverConfiguration(SupportsDeleteCallback):
             "marshallers" : (agmarshall.EnumArg(RFCM_TRANSCEIVER_MODE),) }
     @property
     def mode(self) -> "RFCM_TRANSCEIVER_MODE":
-        """Get or set the tranceiver mode."""
+        """Get or set the transceiver mode."""
         return self._intf.get_property(StkRfcmRadarTransceiverConfiguration._metadata, StkRfcmRadarTransceiverConfiguration._get_mode_metadata)
 
     _set_mode_metadata = { "offset" : _set_mode_method_offset,
@@ -2353,7 +2353,7 @@ class StkRfcmRadarTransceiverConfiguration(SupportsDeleteCallback):
             "marshallers" : (agmarshall.EnumArg(RFCM_TRANSCEIVER_MODE),) }
     @mode.setter
     def mode(self, value:"RFCM_TRANSCEIVER_MODE") -> None:
-        """Get or set the tranceiver mode."""
+        """Get or set the transceiver mode."""
         return self._intf.set_property(StkRfcmRadarTransceiverConfiguration._metadata, StkRfcmRadarTransceiverConfiguration._set_mode_metadata, value)
 
     _property_names[supported_transceivers] = "supported_transceivers"
@@ -3978,7 +3978,7 @@ class StkRFChannelModeler(SupportsDeleteCallback):
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
     def validate_analysis(self, analysis_configuration_name:str) -> "StkRfcmValidationResponse":
-        """Validates an analysis configuration."""
+        """Validate an analysis configuration."""
         return self._intf.invoke(StkRFChannelModeler._metadata, StkRFChannelModeler._validate_analysis_metadata, analysis_configuration_name, OutArg())
 
     _property_names[transceiver_collection] = "transceiver_collection"

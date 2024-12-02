@@ -30,13 +30,13 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkrfcm.IStkRfcmAnalysisLink.name`
               - Gets the analysis link name.
             * - :py:attr:`~ansys.stk.core.stkrfcm.IStkRfcmAnalysisLink.transmit_transceiver_identifier`
-              - Gets the transmit tranceiver identifier.
+              - Gets the transmit transceiver identifier.
             * - :py:attr:`~ansys.stk.core.stkrfcm.IStkRfcmAnalysisLink.transmit_transceiver_name`
-              - Gets the transmit tranceiver name.
+              - Gets the transmit transceiver name.
             * - :py:attr:`~ansys.stk.core.stkrfcm.IStkRfcmAnalysisLink.receive_transceiver_identifier`
-              - Gets the receive tranceiver identifier.
+              - Gets the receive transceiver identifier.
             * - :py:attr:`~ansys.stk.core.stkrfcm.IStkRfcmAnalysisLink.receive_transceiver_name`
-              - Gets the receive tranceiver name.
+              - Gets the receive transceiver name.
             * - :py:attr:`~ansys.stk.core.stkrfcm.IStkRfcmAnalysisLink.transmit_antenna_count`
               - Gets the transmit antenna count.
             * - :py:attr:`~ansys.stk.core.stkrfcm.IStkRfcmAnalysisLink.receive_antenna_count`
@@ -66,25 +66,25 @@ Property detail
     :canonical: ansys.stk.core.stkrfcm.IStkRfcmAnalysisLink.transmit_transceiver_identifier
     :type: str
 
-    Gets the transmit tranceiver identifier.
+    Gets the transmit transceiver identifier.
 
 .. py:property:: transmit_transceiver_name
     :canonical: ansys.stk.core.stkrfcm.IStkRfcmAnalysisLink.transmit_transceiver_name
     :type: str
 
-    Gets the transmit tranceiver name.
+    Gets the transmit transceiver name.
 
 .. py:property:: receive_transceiver_identifier
     :canonical: ansys.stk.core.stkrfcm.IStkRfcmAnalysisLink.receive_transceiver_identifier
     :type: str
 
-    Gets the receive tranceiver identifier.
+    Gets the receive transceiver identifier.
 
 .. py:property:: receive_transceiver_name
     :canonical: ansys.stk.core.stkrfcm.IStkRfcmAnalysisLink.receive_transceiver_name
     :type: str
 
-    Gets the receive tranceiver name.
+    Gets the receive transceiver name.
 
 .. py:property:: transmit_antenna_count
     :canonical: ansys.stk.core.stkrfcm.IStkRfcmAnalysisLink.transmit_antenna_count

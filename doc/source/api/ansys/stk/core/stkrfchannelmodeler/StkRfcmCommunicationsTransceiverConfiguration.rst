@@ -23,7 +23,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkrfcm.StkRfcmCommunicationsTransceiverConfiguration.transceiver`
               - Gets or sets the transceiver.
             * - :py:attr:`~ansys.stk.core.stkrfcm.StkRfcmCommunicationsTransceiverConfiguration.mode`
-              - Gets or sets the tranceiver mode.
+              - Gets or sets the transceiver mode.
             * - :py:attr:`~ansys.stk.core.stkrfcm.StkRfcmCommunicationsTransceiverConfiguration.include_parent_object_facets`
               - Gets or sets an indicator of whether or not to include the parent object facets.
 
@@ -56,7 +56,7 @@ Property detail
     :canonical: ansys.stk.core.stkrfcm.StkRfcmCommunicationsTransceiverConfiguration.mode
     :type: RFCM_TRANSCEIVER_MODE
 
-    Gets or sets the tranceiver mode.
+    Gets or sets the transceiver mode.
 
 .. py:property:: include_parent_object_facets
     :canonical: ansys.stk.core.stkrfcm.StkRfcmCommunicationsTransceiverConfiguration.include_parent_object_facets

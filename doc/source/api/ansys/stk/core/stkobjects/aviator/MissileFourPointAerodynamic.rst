@@ -23,7 +23,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileFourPointAerodynamic.validate_drag_design_points`
               - Validate the drag design points - ensure the choices do not result in a singular system of equations
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileFourPointAerodynamic.set_aoa`
-              - Get or set and validates the maxium, max range and max endurance AOA values for the aircraft
+              - Get or set and validates the maximum, max range and max endurance AOA values for the aircraft
 
     .. tab-item:: Properties
         
@@ -286,7 +286,7 @@ Method detail
 .. py:method:: set_aoa(self, d_max_aoa: typing.Any, d_max_endurance_aoa: typing.Any, d_max_range_aoa: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.MissileFourPointAerodynamic.set_aoa
 
-    Get or set and validates the maxium, max range and max endurance AOA values for the aircraft
+    Get or set and validates the maximum, max range and max endurance AOA values for the aircraft
 
     :Parameters:
 

@@ -39,7 +39,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.DirectionProviderObject.maximum_selection_count`
               - Gets or sets the maximum number of targets to select for beam steering.
             * - :py:attr:`~ansys.stk.core.stkobjects.DirectionProviderObject.target_selection_method_type`
-              - Gets or sets the method type used to determin which targets are selected for steering.
+              - Gets or sets the method type used to determine which targets are selected for steering.
             * - :py:attr:`~ansys.stk.core.stkobjects.DirectionProviderObject.target_selection_method`
               - Gets the target selection method.
 
@@ -114,7 +114,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.DirectionProviderObject.target_selection_method_type
     :type: TARGET_SELECTION_METHOD_TYPE
 
-    Gets or sets the method type used to determin which targets are selected for steering.
+    Gets or sets the method type used to determine which targets are selected for steering.
 
 .. py:property:: target_selection_method
     :canonical: ansys.stk.core.stkobjects.DirectionProviderObject.target_selection_method
