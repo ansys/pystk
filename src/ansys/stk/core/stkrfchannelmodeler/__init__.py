@@ -2840,7 +2840,7 @@ class StkRfcmTransceiverCollection(SupportsDeleteCallback):
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
     def find_by_identifier(self, identifier:str) -> "StkRfcmTransceiver":
-        """Return the transciever in the collection with the supplied identifier or Null if not found or invalid."""
+        """Return the transceiver in the collection with the supplied identifier or Null if not found or invalid."""
         return self._intf.invoke(StkRfcmTransceiverCollection._metadata, StkRfcmTransceiverCollection._find_by_identifier_metadata, identifier, OutArg())
 
     __getitem__ = item

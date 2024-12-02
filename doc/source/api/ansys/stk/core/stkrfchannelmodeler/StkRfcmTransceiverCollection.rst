@@ -31,7 +31,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkrfcm.StkRfcmTransceiverCollection.remove_all`
               - Remove all transceivers from the collection.
             * - :py:attr:`~ansys.stk.core.stkrfcm.StkRfcmTransceiverCollection.find_by_identifier`
-              - Return the transciever in the collection with the supplied identifier or Null if not found or invalid.
+              - Return the transceiver in the collection with the supplied identifier or Null if not found or invalid.
 
     .. tab-item:: Properties
         
@@ -154,7 +154,7 @@ Method detail
 .. py:method:: find_by_identifier(self, identifier: str) -> StkRfcmTransceiver
     :canonical: ansys.stk.core.stkrfcm.StkRfcmTransceiverCollection.find_by_identifier
 
-    Return the transciever in the collection with the supplied identifier or Null if not found or invalid.
+    Return the transceiver in the collection with the supplied identifier or Null if not found or invalid.
 
     :Parameters:
 
