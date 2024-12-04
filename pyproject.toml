@@ -66,7 +66,7 @@ doc = [
     "sphinx-jinja==2.0.2",
     "sphinx-copybutton==0.5.2",
     "pandas==2.2.3",
-    "matplotlib==3.9.2"
+    "matplotlib==3.9.3"
 ]
 visualization = [
     "jupyter-rfb==0.4.4",
