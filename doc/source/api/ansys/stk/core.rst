@@ -56,6 +56,7 @@ Detail
 
     🖿 stkengine<core/stkengine>
     🖿 stkobjects<core/stkobjects>
+    🖿 stkrfchannelmodeler<core/stkrfchannelmodeler>
     🖿 utilities<core/utilities>
 
 .. toctree::
