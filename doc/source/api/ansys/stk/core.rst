@@ -18,6 +18,7 @@ Summary
             * - :py:obj:`~ansys.stk.core.stkengine`
             * - :py:obj:`~ansys.stk.core.stkobjects`
             * - :py:obj:`~ansys.stk.core.utilities`
+            * - :py:obj:`~ansys.stk.core.stkrfchannelmodeler`
 
     .. tab-item:: Submodules
 
