@@ -7,10 +7,6 @@ IVehicleSolarFluxGeoMagnitude
 
 .. py:currentmodule:: IVehicleSolarFluxGeoMagnitude
 
-Overview
---------
-
-
 Import detail
 -------------
 

@@ -9,10 +9,6 @@ RFFilterModelRectangular
 
 .. py:currentmodule:: RFFilterModelRectangular
 
-Overview
---------
-
-
 
 Import detail
 -------------

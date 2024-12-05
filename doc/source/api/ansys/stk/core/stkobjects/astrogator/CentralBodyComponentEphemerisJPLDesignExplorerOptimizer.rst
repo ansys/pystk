@@ -9,10 +9,6 @@ CentralBodyComponentEphemerisJPLDesignExplorerOptimizer
 
 .. py:currentmodule:: CentralBodyComponentEphemerisJPLDesignExplorerOptimizer
 
-Overview
---------
-
-
 
 Import detail
 -------------

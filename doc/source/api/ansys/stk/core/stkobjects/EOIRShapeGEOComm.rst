@@ -9,10 +9,6 @@ EOIRShapeGEOComm
 
 .. py:currentmodule:: EOIRShapeGEOComm
 
-Overview
---------
-
-
 
 Import detail
 -------------

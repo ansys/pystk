@@ -22,7 +22,6 @@ Overview
               - Initialize default text batch primitive optional parameters.
 
 
-
 Import detail
 -------------
 

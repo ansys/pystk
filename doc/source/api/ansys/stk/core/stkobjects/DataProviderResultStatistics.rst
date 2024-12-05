@@ -28,7 +28,6 @@ Overview
               - Is the supplied time varying extremum available for the data?
 
 
-
 Import detail
 -------------
 

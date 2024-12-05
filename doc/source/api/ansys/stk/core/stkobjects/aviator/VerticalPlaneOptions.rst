@@ -9,10 +9,6 @@ VerticalPlaneOptions
 
 .. py:currentmodule:: VerticalPlaneOptions
 
-Overview
---------
-
-
 
 Import detail
 -------------

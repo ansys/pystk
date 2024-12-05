@@ -26,7 +26,6 @@ Overview
               - Initialize a new instance with a raster format indicating the desired order of the bands in the source raster, and whether to maintain the source raster's format after swizzling.
 
 
-
 Import detail
 -------------
 

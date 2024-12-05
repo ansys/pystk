@@ -9,10 +9,6 @@ DemodulatorModel8PSK
 
 .. py:currentmodule:: DemodulatorModel8PSK
 
-Overview
---------
-
-
 
 Import detail
 -------------

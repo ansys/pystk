@@ -7,10 +7,6 @@ IDelaunayActionVariable
 
 .. py:currentmodule:: IDelaunayActionVariable
 
-Overview
---------
-
-
 Import detail
 -------------
 

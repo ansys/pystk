@@ -106,7 +106,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: NewGrpcCallBatcher(self, max_batch: int = None, disable_batching: bool = None) -> GrpcCallBatcher
+.. py:method:: NewGrpcCallBatcher(self, max_batch: int = None, disable_batching: bool = False) -> GrpcCallBatcher
     :canonical: ansys.stk.core.stkdesktop.STKDesktopApplication.NewGrpcCallBatcher
 
     Construct a GrpcCallBatcher linked to this gRPC client that may be used to improve API performance.

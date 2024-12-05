@@ -7,10 +7,6 @@ ISpatialAnalysisToolSpatialCalculation
 
 .. py:currentmodule:: ISpatialAnalysisToolSpatialCalculation
 
-Overview
---------
-
-
 Import detail
 -------------
 

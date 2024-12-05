@@ -9,10 +9,6 @@ Projection
 
 .. py:currentmodule:: Projection
 
-Overview
---------
-
-
 
 Import detail
 -------------

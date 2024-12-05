@@ -26,7 +26,6 @@ Overview
               - Initialize a rhumb line interpolator with the specified centralBody and granularity.
 
 
-
 Import detail
 -------------
 

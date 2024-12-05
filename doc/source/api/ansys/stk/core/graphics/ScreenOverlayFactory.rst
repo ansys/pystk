@@ -24,7 +24,6 @@ Overview
               - Initialize the overlay with the specified position and size.
 
 
-
 Import detail
 -------------
 

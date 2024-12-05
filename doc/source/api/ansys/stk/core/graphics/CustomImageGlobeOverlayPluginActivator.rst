@@ -24,7 +24,6 @@ Overview
               - Get a list of available custom image globe overlay Display Names (Programmatic Identifiers).
 
 
-
 Import detail
 -------------
 

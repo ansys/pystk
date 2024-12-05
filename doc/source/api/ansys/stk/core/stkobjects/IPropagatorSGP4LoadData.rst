@@ -7,10 +7,6 @@ IPropagatorSGP4LoadData
 
 .. py:currentmodule:: IPropagatorSGP4LoadData
 
-Overview
---------
-
-
 Import detail
 -------------
 

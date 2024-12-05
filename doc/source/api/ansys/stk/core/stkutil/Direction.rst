@@ -9,10 +9,6 @@ Direction
 
 .. py:currentmodule:: Direction
 
-Overview
---------
-
-
 
 Import detail
 -------------

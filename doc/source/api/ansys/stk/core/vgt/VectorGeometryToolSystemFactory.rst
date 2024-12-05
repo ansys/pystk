@@ -24,7 +24,6 @@ Overview
               - Return true if the specified system type is supported.
 
 
-
 Import detail
 -------------
 

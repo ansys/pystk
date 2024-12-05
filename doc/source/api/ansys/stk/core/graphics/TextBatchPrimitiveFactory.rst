@@ -26,7 +26,6 @@ Overview
               - Initialize a text batch primitive with the specified font and setHint, optimized for 2d screen space rendering.
 
 
-
 Import detail
 -------------
 

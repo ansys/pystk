@@ -9,10 +9,6 @@ RadarCrossSectionComputeStrategy
 
 .. py:currentmodule:: RadarCrossSectionComputeStrategy
 
-Overview
---------
-
-
 
 Import detail
 -------------

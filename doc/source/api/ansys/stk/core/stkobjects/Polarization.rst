@@ -9,10 +9,6 @@ Polarization
 
 .. py:currentmodule:: Polarization
 
-Overview
---------
-
-
 
 Import detail
 -------------

@@ -9,10 +9,6 @@ TroposphericScintillationFadingLossModel
 
 .. py:currentmodule:: TroposphericScintillationFadingLossModel
 
-Overview
---------
-
-
 
 Import detail
 -------------

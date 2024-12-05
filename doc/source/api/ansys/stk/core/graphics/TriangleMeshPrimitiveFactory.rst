@@ -24,7 +24,6 @@ Overview
               - Initialize a triangle mesh primitive with the specified setHint .
 
 
-
 Import detail
 -------------
 

@@ -61,7 +61,7 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: start_application(visible: bool = False, user_control: bool = False, grpc_server: bool = False, grpc_host: str = False, grpc_port: int = False, grpc_timeout_sec: int = False) -> STKDesktopApplication
+.. py:method:: start_application(visible: bool = False, user_control: bool = False, grpc_server: bool = False, grpc_host: str = localhost, grpc_port: int = 40704, grpc_timeout_sec: int = 60) -> STKDesktopApplication
     :canonical: ansys.stk.core.stkdesktop.STKDesktop.start_application
 
     Create a new STK Desktop application instance.  
@@ -88,7 +88,7 @@ Method detail
 
         :obj:`~STKDesktopApplication`
 
-.. py:method:: attach_to_application(pid: int = None, grpc_server: bool = None, grpc_host: str = None, grpc_port: int = None, grpc_timeout_sec: int = None) -> STKDesktopApplication
+.. py:method:: attach_to_application(pid: int = None, grpc_server: bool = False, grpc_host: str = localhost, grpc_port: int = 40704, grpc_timeout_sec: int = 60) -> STKDesktopApplication
     :canonical: ansys.stk.core.stkdesktop.STKDesktop.attach_to_application
 
     Attach to an existing STK Desktop instance. 

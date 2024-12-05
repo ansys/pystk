@@ -28,7 +28,6 @@ Overview
               - Initialize a new instance with the specified kernel, divisor, and offset.
 
 
-
 Import detail
 -------------
 

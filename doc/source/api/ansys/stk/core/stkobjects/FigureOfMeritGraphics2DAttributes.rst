@@ -9,10 +9,6 @@ FigureOfMeritGraphics2DAttributes
 
 .. py:currentmodule:: FigureOfMeritGraphics2DAttributes
 
-Overview
---------
-
-
 
 Import detail
 -------------

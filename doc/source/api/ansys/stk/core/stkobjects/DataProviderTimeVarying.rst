@@ -42,7 +42,6 @@ Overview
               - Compute the data and returns just the indicated data elements; Input is a Times Array component.
 
 
-
 Import detail
 -------------
 

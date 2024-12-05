@@ -9,10 +9,6 @@ OrientationAzEl
 
 .. py:currentmodule:: OrientationAzEl
 
-Overview
---------
-
-
 
 Import detail
 -------------

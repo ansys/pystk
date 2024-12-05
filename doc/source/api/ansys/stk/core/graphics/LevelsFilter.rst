@@ -26,7 +26,6 @@ Overview
               - Clear the level adjustment values for all bands.
 
 
-
 Import detail
 -------------
 

@@ -24,7 +24,6 @@ Overview
               - Define a collection of colors.
 
 
-
 Import detail
 -------------
 

@@ -9,10 +9,6 @@ PositionInterpolator
 
 .. py:currentmodule:: PositionInterpolator
 
-Overview
---------
-
-
 
 Import detail
 -------------

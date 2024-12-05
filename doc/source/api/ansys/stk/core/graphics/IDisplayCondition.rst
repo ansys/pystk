@@ -7,10 +7,6 @@ IDisplayCondition
 
 .. py:currentmodule:: IDisplayCondition
 
-Overview
---------
-
-
 Import detail
 -------------
 

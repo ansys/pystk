@@ -56,7 +56,6 @@ Overview
               - Convert the position to cartesian vector.
 
 
-
 Import detail
 -------------
 

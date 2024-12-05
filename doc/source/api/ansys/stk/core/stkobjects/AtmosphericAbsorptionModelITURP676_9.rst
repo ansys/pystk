@@ -9,10 +9,6 @@ AtmosphericAbsorptionModelITURP676_9
 
 .. py:currentmodule:: AtmosphericAbsorptionModelITURP676_9
 
-Overview
---------
-
-
 
 Import detail
 -------------

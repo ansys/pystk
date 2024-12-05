@@ -24,7 +24,6 @@ Overview
               - Initialize a graphics font with the typeface name and size.
 
 
-
 Import detail
 -------------
 

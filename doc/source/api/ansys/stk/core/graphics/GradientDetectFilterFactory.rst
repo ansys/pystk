@@ -24,7 +24,6 @@ Overview
               - Initialize a new instance with specified gradient detect method.
 
 
-
 Import detail
 -------------
 

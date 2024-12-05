@@ -21,7 +21,6 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.ICloneable.clone_object`
               - Make a clone of this component.
 
-
 Import detail
 -------------
 

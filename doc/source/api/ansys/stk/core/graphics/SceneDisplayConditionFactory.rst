@@ -22,7 +22,6 @@ Overview
               - Initialize a default scene display condition. When this display condition is assigned to an object, such as a primitive, the object can be restricted to only render in certain scenes. Call set display in scene or display only in scene to limit the scenes.
 
 
-
 Import detail
 -------------
 

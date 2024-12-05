@@ -40,7 +40,6 @@ Overview
               - Define a collection of boolean display flags, one for each marker in the batch.
 
 
-
 Import detail
 -------------
 

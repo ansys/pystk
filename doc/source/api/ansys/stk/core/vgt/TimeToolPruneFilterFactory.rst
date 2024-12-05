@@ -22,7 +22,6 @@ Overview
               - Create and initializes a new prune filter using default configuration.
 
 
-
 Import detail
 -------------
 

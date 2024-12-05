@@ -21,7 +21,6 @@ Overview
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponentTimeProperties.get_availability`
               - Return a collection of availability intervals.
 
-
 Import detail
 -------------
 

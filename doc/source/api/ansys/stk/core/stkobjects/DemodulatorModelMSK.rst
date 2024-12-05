@@ -9,10 +9,6 @@ DemodulatorModelMSK
 
 .. py:currentmodule:: DemodulatorModelMSK
 
-Overview
---------
-
-
 
 Import detail
 -------------

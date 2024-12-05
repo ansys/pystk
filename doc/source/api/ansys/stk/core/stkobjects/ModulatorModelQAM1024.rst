@@ -9,10 +9,6 @@ ModulatorModelQAM1024
 
 .. py:currentmodule:: ModulatorModelQAM1024
 
-Overview
---------
-
-
 
 Import detail
 -------------

@@ -9,10 +9,6 @@ DemodulatorModelQAM128
 
 .. py:currentmodule:: DemodulatorModelQAM128
 
-Overview
---------
-
-
 
 Import detail
 -------------

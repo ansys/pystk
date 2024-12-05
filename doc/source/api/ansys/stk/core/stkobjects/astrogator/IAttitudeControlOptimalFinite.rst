@@ -9,10 +9,6 @@ IAttitudeControlOptimalFinite
 
 .. py:currentmodule:: IAttitudeControlOptimalFinite
 
-Overview
---------
-
-
 Import detail
 -------------
 

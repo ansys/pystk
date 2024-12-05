@@ -9,10 +9,6 @@ ReceivePolarizationElliptical
 
 .. py:currentmodule:: ReceivePolarizationElliptical
 
-Overview
---------
-
-
 
 Import detail
 -------------

@@ -9,10 +9,6 @@ ReceiverModel
 
 .. py:currentmodule:: ReceiverModel
 
-Overview
---------
-
-
 
 Import detail
 -------------

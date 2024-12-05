@@ -9,10 +9,6 @@ RadarSTCAttenuationMapAzimuthRange
 
 .. py:currentmodule:: RadarSTCAttenuationMapAzimuthRange
 
-Overview
---------
-
-
 
 Import detail
 -------------

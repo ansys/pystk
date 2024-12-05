@@ -28,7 +28,6 @@ Overview
               - Initialize a texture matrix from texture corner points. Normally, a texture is mapped such that the lower left corner is texture coordinate (0, 0), the lower right is (1, 0), the upper right is (1, 1), and the upper left is (0, 1)...
 
 
-
 Import detail
 -------------
 

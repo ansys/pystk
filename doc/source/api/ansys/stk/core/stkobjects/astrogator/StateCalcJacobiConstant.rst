@@ -9,10 +9,6 @@ StateCalcJacobiConstant
 
 .. py:currentmodule:: StateCalcJacobiConstant
 
-Overview
---------
-
-
 
 Import detail
 -------------

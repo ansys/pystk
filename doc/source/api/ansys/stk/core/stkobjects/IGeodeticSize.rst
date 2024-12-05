@@ -7,10 +7,6 @@ IGeodeticSize
 
 .. py:currentmodule:: IGeodeticSize
 
-Overview
---------
-
-
 Import detail
 -------------
 

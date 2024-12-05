@@ -9,10 +9,6 @@ ARINC424Waypoint
 
 .. py:currentmodule:: ARINC424Waypoint
 
-Overview
---------
-
-
 
 Import detail
 -------------

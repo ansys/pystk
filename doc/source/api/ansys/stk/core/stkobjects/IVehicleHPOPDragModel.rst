@@ -7,10 +7,6 @@ IVehicleHPOPDragModel
 
 .. py:currentmodule:: IVehicleHPOPDragModel
 
-Overview
---------
-
-
 Import detail
 -------------
 

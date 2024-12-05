@@ -22,7 +22,6 @@ Overview
               - Add an ephemeris point using position, heading, pitch and speed. Epoch uses DateFormat dimension. Lat uses Latitude dimension. Lon uses Longitude dimension. Alt uses Distance dimension. Heading/Pitch use Angle dimension.
 
 
-
 Import detail
 -------------
 

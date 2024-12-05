@@ -7,10 +7,6 @@ IClassicalSizeShape
 
 .. py:currentmodule:: IClassicalSizeShape
 
-Overview
---------
-
-
 Import detail
 -------------
 

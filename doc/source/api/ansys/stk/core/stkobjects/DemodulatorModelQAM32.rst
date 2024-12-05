@@ -9,10 +9,6 @@ DemodulatorModelQAM32
 
 .. py:currentmodule:: DemodulatorModelQAM32
 
-Overview
---------
-
-
 
 Import detail
 -------------

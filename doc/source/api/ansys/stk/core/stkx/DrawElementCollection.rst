@@ -9,10 +9,6 @@ DrawElementCollection
 
 .. py:currentmodule:: DrawElementCollection
 
-Overview
---------
-
-
 
 Import detail
 -------------

@@ -9,10 +9,6 @@ OrientationYPRAngles
 
 .. py:currentmodule:: OrientationYPRAngles
 
-Overview
---------
-
-
 
 Import detail
 -------------

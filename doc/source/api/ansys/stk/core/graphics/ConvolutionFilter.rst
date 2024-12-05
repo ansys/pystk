@@ -9,10 +9,6 @@ ConvolutionFilter
 
 .. py:currentmodule:: ConvolutionFilter
 
-Overview
---------
-
-
 
 Import detail
 -------------

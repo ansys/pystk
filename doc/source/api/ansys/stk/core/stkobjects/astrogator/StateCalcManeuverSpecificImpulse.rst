@@ -9,10 +9,6 @@ StateCalcManeuverSpecificImpulse
 
 .. py:currentmodule:: StateCalcManeuverSpecificImpulse
 
-Overview
---------
-
-
 
 Import detail
 -------------

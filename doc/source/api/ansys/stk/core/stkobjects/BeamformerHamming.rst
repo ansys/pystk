@@ -9,10 +9,6 @@ BeamformerHamming
 
 .. py:currentmodule:: BeamformerHamming
 
-Overview
---------
-
-
 
 Import detail
 -------------

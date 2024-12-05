@@ -26,7 +26,6 @@ Overview
               - Compute the data and returns just the indicated data elements; fixed data providers do not require arguments.
 
 
-
 Import detail
 -------------
 

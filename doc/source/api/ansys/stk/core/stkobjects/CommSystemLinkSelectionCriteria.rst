@@ -9,10 +9,6 @@ CommSystemLinkSelectionCriteria
 
 .. py:currentmodule:: CommSystemLinkSelectionCriteria
 
-Overview
---------
-
-
 
 Import detail
 -------------

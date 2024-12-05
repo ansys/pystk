@@ -28,7 +28,6 @@ Overview
               - Compute and returns tabulated orientations and angular velocities of axes with respect to reference axes using specified sampling parameters.
 
 
-
 Import detail
 -------------
 

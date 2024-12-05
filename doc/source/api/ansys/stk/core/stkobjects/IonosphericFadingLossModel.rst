@@ -9,10 +9,6 @@ IonosphericFadingLossModel
 
 .. py:currentmodule:: IonosphericFadingLossModel
 
-Overview
---------
-
-
 
 Import detail
 -------------

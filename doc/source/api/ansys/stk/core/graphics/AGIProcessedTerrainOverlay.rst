@@ -9,10 +9,6 @@ AGIProcessedTerrainOverlay
 
 .. py:currentmodule:: AGIProcessedTerrainOverlay
 
-Overview
---------
-
-
 
 Import detail
 -------------

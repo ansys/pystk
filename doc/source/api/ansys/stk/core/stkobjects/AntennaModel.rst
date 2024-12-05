@@ -9,10 +9,6 @@ AntennaModel
 
 .. py:currentmodule:: AntennaModel
 
-Overview
---------
-
-
 
 Import detail
 -------------

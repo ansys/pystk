@@ -9,10 +9,6 @@ WaveformSelectionStrategy
 
 .. py:currentmodule:: WaveformSelectionStrategy
 
-Overview
---------
-
-
 
 Import detail
 -------------

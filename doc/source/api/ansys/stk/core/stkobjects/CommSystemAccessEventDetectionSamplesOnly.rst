@@ -9,10 +9,6 @@ CommSystemAccessEventDetectionSamplesOnly
 
 .. py:currentmodule:: CommSystemAccessEventDetectionSamplesOnly
 
-Overview
---------
-
-
 
 Import detail
 -------------

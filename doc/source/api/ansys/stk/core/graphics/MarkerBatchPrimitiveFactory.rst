@@ -34,7 +34,6 @@ Overview
               - Determine whether or not the video card supports the marker batch primitive with the given renderingMethod.
 
 
-
 Import detail
 -------------
 

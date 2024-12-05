@@ -24,7 +24,6 @@ Overview
               - Return true if the type is supported.
 
 
-
 Import detail
 -------------
 

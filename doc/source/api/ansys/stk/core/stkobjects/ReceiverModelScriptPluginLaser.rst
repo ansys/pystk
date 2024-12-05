@@ -9,10 +9,6 @@ ReceiverModelScriptPluginLaser
 
 .. py:currentmodule:: ReceiverModelScriptPluginLaser
 
-Overview
---------
-
-
 
 Import detail
 -------------

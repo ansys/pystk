@@ -7,10 +7,6 @@ ISensorPattern
 
 .. py:currentmodule:: ISensorPattern
 
-Overview
---------
-
-
 Import detail
 -------------
 

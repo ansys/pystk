@@ -22,7 +22,6 @@ Overview
               - Initialize an axes primitive with the specified reference frame as its source.
 
 
-
 Import detail
 -------------
 

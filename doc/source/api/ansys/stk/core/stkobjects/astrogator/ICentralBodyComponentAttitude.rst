@@ -7,10 +7,6 @@ ICentralBodyComponentAttitude
 
 .. py:currentmodule:: ICentralBodyComponentAttitude
 
-Overview
---------
-
-
 Import detail
 -------------
 

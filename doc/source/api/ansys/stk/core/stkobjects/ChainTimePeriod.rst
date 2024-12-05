@@ -9,10 +9,6 @@ ChainTimePeriod
 
 .. py:currentmodule:: ChainTimePeriod
 
-Overview
---------
-
-
 
 Import detail
 -------------

@@ -9,10 +9,6 @@ EOIRShapeObject
 
 .. py:currentmodule:: EOIRShapeObject
 
-Overview
---------
-
-
 
 Import detail
 -------------

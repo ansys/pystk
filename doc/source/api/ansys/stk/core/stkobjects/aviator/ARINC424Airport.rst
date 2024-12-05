@@ -9,10 +9,6 @@ ARINC424Airport
 
 .. py:currentmodule:: ARINC424Airport
 
-Overview
---------
-
-
 
 Import detail
 -------------

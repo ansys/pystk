@@ -9,10 +9,6 @@ RainLossModel
 
 .. py:currentmodule:: RainLossModel
 
-Overview
---------
-
-
 
 Import detail
 -------------

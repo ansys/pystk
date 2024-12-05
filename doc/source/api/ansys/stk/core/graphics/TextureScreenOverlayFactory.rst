@@ -30,7 +30,6 @@ Overview
               - Initialize the overlay with a specified background texture. The size of the overlay will be the same as the size of the texture.
 
 
-
 Import detail
 -------------
 

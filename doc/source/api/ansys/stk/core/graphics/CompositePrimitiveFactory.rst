@@ -22,7 +22,6 @@ Overview
               - Initialize a default composite primitive.
 
 
-
 Import detail
 -------------
 

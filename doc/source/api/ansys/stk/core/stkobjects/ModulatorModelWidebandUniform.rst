@@ -9,10 +9,6 @@ ModulatorModelWidebandUniform
 
 .. py:currentmodule:: ModulatorModelWidebandUniform
 
-Overview
---------
-
-
 
 Import detail
 -------------

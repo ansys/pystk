@@ -9,10 +9,6 @@ GlobeImageOverlay
 
 .. py:currentmodule:: GlobeImageOverlay
 
-Overview
---------
-
-
 
 Import detail
 -------------

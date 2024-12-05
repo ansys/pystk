@@ -24,7 +24,6 @@ Overview
               - Initialize a distance display condition with the globe overlay and the inclusive distance interval [minimumDistance, maximumDistance]...
 
 
-
 Import detail
 -------------
 

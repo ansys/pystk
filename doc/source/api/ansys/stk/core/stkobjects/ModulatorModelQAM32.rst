@@ -9,10 +9,6 @@ ModulatorModelQAM32
 
 .. py:currentmodule:: ModulatorModelQAM32
 
-Overview
---------
-
-
 
 Import detail
 -------------

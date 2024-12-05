@@ -9,10 +9,6 @@ PolarizationVertical
 
 .. py:currentmodule:: PolarizationVertical
 
-Overview
---------
-
-
 
 Import detail
 -------------

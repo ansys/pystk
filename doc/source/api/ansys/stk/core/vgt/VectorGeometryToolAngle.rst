@@ -9,10 +9,6 @@ VectorGeometryToolAngle
 
 .. py:currentmodule:: VectorGeometryToolAngle
 
-Overview
---------
-
-
 
 Import detail
 -------------

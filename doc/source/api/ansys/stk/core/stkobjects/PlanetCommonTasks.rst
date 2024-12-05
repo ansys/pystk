@@ -24,7 +24,6 @@ Overview
               - Specify the planet using a central body and a desired ephemeris source.
 
 
-
 Import detail
 -------------
 

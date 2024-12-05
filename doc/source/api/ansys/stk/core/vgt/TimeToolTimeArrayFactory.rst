@@ -40,7 +40,6 @@ Overview
               - Create an event array using specified times.
 
 
-
 Import detail
 -------------
 

@@ -9,10 +9,6 @@ LaserTroposphericScintillationLossModel
 
 .. py:currentmodule:: LaserTroposphericScintillationLossModel
 
-Overview
---------
-
-
 
 Import detail
 -------------

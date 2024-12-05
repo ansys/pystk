@@ -9,10 +9,6 @@ StkObject
 
 .. py:currentmodule:: StkObject
 
-Overview
---------
-
-
 
 Import detail
 -------------

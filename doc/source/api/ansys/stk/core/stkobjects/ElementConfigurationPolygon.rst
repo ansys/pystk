@@ -9,10 +9,6 @@ ElementConfigurationPolygon
 
 .. py:currentmodule:: ElementConfigurationPolygon
 
-Overview
---------
-
-
 
 Import detail
 -------------

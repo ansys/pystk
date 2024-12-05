@@ -9,10 +9,6 @@ FigureOfMeritDefinitionSimpleCoverage
 
 .. py:currentmodule:: FigureOfMeritDefinitionSimpleCoverage
 
-Overview
---------
-
-
 
 Import detail
 -------------

@@ -9,10 +9,6 @@ ScatteringPointProvider
 
 .. py:currentmodule:: ScatteringPointProvider
 
-Overview
---------
-
-
 
 Import detail
 -------------

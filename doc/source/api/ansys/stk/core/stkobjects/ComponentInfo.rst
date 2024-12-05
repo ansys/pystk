@@ -9,10 +9,6 @@ ComponentInfo
 
 .. py:currentmodule:: ComponentInfo
 
-Overview
---------
-
-
 
 Import detail
 -------------

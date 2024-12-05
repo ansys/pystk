@@ -9,10 +9,6 @@ AntennaModelOpticalGaussian
 
 .. py:currentmodule:: AntennaModelOpticalGaussian
 
-Overview
---------
-
-
 
 Import detail
 -------------

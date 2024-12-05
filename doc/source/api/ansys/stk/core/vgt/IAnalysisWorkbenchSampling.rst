@@ -7,10 +7,6 @@ IAnalysisWorkbenchSampling
 
 .. py:currentmodule:: IAnalysisWorkbenchSampling
 
-Overview
---------
-
-
 Import detail
 -------------
 

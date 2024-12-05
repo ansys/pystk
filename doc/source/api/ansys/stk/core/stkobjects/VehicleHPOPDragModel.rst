@@ -9,10 +9,6 @@ VehicleHPOPDragModel
 
 .. py:currentmodule:: VehicleHPOPDragModel
 
-Overview
---------
-
-
 
 Import detail
 -------------

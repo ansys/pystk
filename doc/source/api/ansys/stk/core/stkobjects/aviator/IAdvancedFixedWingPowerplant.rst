@@ -7,10 +7,6 @@ IAdvancedFixedWingPowerplant
 
 .. py:currentmodule:: IAdvancedFixedWingPowerplant
 
-Overview
---------
-
-
 Import detail
 -------------
 

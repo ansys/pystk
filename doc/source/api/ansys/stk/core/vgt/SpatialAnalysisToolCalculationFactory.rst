@@ -40,7 +40,6 @@ Overview
               - Create and registers a distance to location volume calc type using specified name and description.
 
 
-
 Import detail
 -------------
 
