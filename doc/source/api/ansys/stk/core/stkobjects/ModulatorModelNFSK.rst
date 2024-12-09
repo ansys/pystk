@@ -9,10 +9,6 @@ ModulatorModelNFSK
 
 .. py:currentmodule:: ModulatorModelNFSK
 
-Overview
---------
-
-
 
 Import detail
 -------------

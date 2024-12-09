@@ -7,10 +7,6 @@ IAnalysisWorkbenchInterpolator
 
 .. py:currentmodule:: IAnalysisWorkbenchInterpolator
 
-Overview
---------
-
-
 Import detail
 -------------
 

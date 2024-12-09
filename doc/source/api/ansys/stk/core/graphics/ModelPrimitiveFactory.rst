@@ -26,7 +26,6 @@ Overview
               - For convenience. Initializes a model primitive with the specified file path and up axis.
 
 
-
 Import detail
 -------------
 

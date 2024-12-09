@@ -9,10 +9,6 @@ AtmosphericAbsorptionModel
 
 .. py:currentmodule:: AtmosphericAbsorptionModel
 
-Overview
---------
-
-
 
 Import detail
 -------------

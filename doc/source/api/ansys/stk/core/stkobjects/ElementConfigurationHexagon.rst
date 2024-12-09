@@ -9,10 +9,6 @@ ElementConfigurationHexagon
 
 .. py:currentmodule:: ElementConfigurationHexagon
 
-Overview
---------
-
-
 
 Import detail
 -------------

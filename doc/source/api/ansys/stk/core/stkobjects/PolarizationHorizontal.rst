@@ -9,10 +9,6 @@ PolarizationHorizontal
 
 .. py:currentmodule:: PolarizationHorizontal
 
-Overview
---------
-
-
 
 Import detail
 -------------

@@ -9,10 +9,6 @@ RadarModel
 
 .. py:currentmodule:: RadarModel
 
-Overview
---------
-
-
 
 Import detail
 -------------

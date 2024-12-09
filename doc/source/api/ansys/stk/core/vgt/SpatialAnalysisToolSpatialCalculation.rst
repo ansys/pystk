@@ -9,10 +9,6 @@ SpatialAnalysisToolSpatialCalculation
 
 .. py:currentmodule:: SpatialAnalysisToolSpatialCalculation
 
-Overview
---------
-
-
 
 Import detail
 -------------

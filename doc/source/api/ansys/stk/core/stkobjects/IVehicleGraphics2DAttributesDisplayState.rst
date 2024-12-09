@@ -21,7 +21,6 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesDisplayState.get_display_intervals`
               - Get a read-only collection of computed display intervals.
 
-
 Import detail
 -------------
 

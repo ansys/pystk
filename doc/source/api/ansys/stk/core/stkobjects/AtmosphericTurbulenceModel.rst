@@ -9,10 +9,6 @@ AtmosphericTurbulenceModel
 
 .. py:currentmodule:: AtmosphericTurbulenceModel
 
-Overview
---------
-
-
 
 Import detail
 -------------

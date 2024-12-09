@@ -9,10 +9,6 @@ ModulatorModelScriptPluginCustomPSD
 
 .. py:currentmodule:: ModulatorModelScriptPluginCustomPSD
 
-Overview
---------
-
-
 
 Import detail
 -------------

@@ -26,7 +26,6 @@ Overview
               - Initialize a new instance from another projection.
 
 
-
 Import detail
 -------------
 

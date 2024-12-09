@@ -9,10 +9,6 @@ RadarSTCAttenuationMapElevationRange
 
 .. py:currentmodule:: RadarSTCAttenuationMapElevationRange
 
-Overview
---------
-
-
 
 Import detail
 -------------

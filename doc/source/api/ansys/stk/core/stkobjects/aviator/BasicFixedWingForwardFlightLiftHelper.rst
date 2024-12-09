@@ -9,10 +9,6 @@ BasicFixedWingForwardFlightLiftHelper
 
 .. py:currentmodule:: BasicFixedWingForwardFlightLiftHelper
 
-Overview
---------
-
-
 
 Import detail
 -------------

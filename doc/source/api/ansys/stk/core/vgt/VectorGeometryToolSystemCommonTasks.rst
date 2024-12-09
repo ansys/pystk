@@ -24,7 +24,6 @@ Overview
               - Create a non-persistent system component assembled from an origin point and a set of reference axes.
 
 
-
 Import detail
 -------------
 

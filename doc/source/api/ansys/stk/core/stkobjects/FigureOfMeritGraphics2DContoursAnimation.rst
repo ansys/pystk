@@ -9,10 +9,6 @@ FigureOfMeritGraphics2DContoursAnimation
 
 .. py:currentmodule:: FigureOfMeritGraphics2DContoursAnimation
 
-Overview
---------
-
-
 
 Import detail
 -------------

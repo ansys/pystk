@@ -24,7 +24,6 @@ Overview
               - Initialize a policy with the specified duration and removeLocation.
 
 
-
 Import detail
 -------------
 

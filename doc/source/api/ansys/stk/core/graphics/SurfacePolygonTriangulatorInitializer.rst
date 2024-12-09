@@ -32,7 +32,6 @@ Overview
               - For convenience. Computes the triangulation on the specified centralBody for a polygon whose boundary is defined by the specified cartographic positions. This is equivalent to converting each position in positions to cartesian and calling Compute.
 
 
-
 Import detail
 -------------
 

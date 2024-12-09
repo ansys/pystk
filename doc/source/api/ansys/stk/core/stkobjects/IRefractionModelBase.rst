@@ -7,10 +7,6 @@ IRefractionModelBase
 
 .. py:currentmodule:: IRefractionModelBase
 
-Overview
---------
-
-
 Import detail
 -------------
 

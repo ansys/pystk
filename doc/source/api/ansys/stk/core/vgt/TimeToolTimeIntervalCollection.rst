@@ -9,10 +9,6 @@ TimeToolTimeIntervalCollection
 
 .. py:currentmodule:: TimeToolTimeIntervalCollection
 
-Overview
---------
-
-
 
 Import detail
 -------------

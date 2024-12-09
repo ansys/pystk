@@ -9,10 +9,6 @@ DemodulatorModelQAM256
 
 .. py:currentmodule:: DemodulatorModelQAM256
 
-Overview
---------
-
-
 
 Import detail
 -------------

@@ -7,10 +7,6 @@ IVehicleLeadTrailData
 
 .. py:currentmodule:: IVehicleLeadTrailData
 
-Overview
---------
-
-
 Import detail
 -------------
 

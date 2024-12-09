@@ -9,10 +9,6 @@ ModulatorModelScriptPluginIdealPSD
 
 .. py:currentmodule:: ModulatorModelScriptPluginIdealPSD
 
-Overview
---------
-
-
 
 Import detail
 -------------

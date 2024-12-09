@@ -26,7 +26,6 @@ Overview
               - Initialize a great arc interpolator with the specified centralBody and granularity.
 
 
-
 Import detail
 -------------
 

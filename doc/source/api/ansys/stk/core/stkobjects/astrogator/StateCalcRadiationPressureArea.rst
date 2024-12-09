@@ -9,10 +9,6 @@ StateCalcRadiationPressureArea
 
 .. py:currentmodule:: StateCalcRadiationPressureArea
 
-Overview
---------
-
-
 
 Import detail
 -------------

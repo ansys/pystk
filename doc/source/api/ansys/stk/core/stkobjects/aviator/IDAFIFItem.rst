@@ -29,7 +29,6 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IDAFIFItem.get_as_catalog_item`
               - Get the catalog item interface for this object.
 
-
 Import detail
 -------------
 

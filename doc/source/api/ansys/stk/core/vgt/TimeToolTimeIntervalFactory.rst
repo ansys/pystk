@@ -38,7 +38,6 @@ Overview
               - Return whether the specified type is supported.
 
 
-
 Import detail
 -------------
 

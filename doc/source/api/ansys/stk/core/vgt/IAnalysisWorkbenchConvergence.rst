@@ -7,10 +7,6 @@ IAnalysisWorkbenchConvergence
 
 .. py:currentmodule:: IAnalysisWorkbenchConvergence
 
-Overview
---------
-
-
 Import detail
 -------------
 

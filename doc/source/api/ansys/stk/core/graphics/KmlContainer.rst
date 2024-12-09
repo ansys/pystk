@@ -9,10 +9,6 @@ KmlContainer
 
 .. py:currentmodule:: KmlContainer
 
-Overview
---------
-
-
 
 Import detail
 -------------

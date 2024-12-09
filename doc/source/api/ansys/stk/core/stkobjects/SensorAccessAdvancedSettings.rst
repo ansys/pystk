@@ -9,10 +9,6 @@ SensorAccessAdvancedSettings
 
 .. py:currentmodule:: SensorAccessAdvancedSettings
 
-Overview
---------
-
-
 
 Import detail
 -------------

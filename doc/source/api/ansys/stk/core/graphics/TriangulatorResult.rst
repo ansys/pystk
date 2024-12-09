@@ -9,10 +9,6 @@ TriangulatorResult
 
 .. py:currentmodule:: TriangulatorResult
 
-Overview
---------
-
-
 
 Import detail
 -------------

@@ -9,10 +9,6 @@ MCSBackwardSequence
 
 .. py:currentmodule:: MCSBackwardSequence
 
-Overview
---------
-
-
 
 Import detail
 -------------

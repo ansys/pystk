@@ -7,10 +7,6 @@ ICentralBodyComponentEphemeris
 
 .. py:currentmodule:: ICentralBodyComponentEphemeris
 
-Overview
---------
-
-
 Import detail
 -------------
 

@@ -9,10 +9,6 @@ StateCalcTemperature
 
 .. py:currentmodule:: StateCalcTemperature
 
-Overview
---------
-
-
 
 Import detail
 -------------

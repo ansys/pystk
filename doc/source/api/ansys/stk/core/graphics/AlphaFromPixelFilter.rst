@@ -9,10 +9,6 @@ AlphaFromPixelFilter
 
 .. py:currentmodule:: AlphaFromPixelFilter
 
-Overview
---------
-
-
 
 Import detail
 -------------

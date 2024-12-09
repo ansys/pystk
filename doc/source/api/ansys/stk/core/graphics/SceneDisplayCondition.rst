@@ -28,7 +28,6 @@ Overview
               - Allow rendering only in the given scene. The display condition will not allow rendering in other scenes, including newly created ones.
 
 
-
 Import detail
 -------------
 

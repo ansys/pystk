@@ -9,10 +9,6 @@ ComponentAttrLinkEmbedControl
 
 .. py:currentmodule:: ComponentAttrLinkEmbedControl
 
-Overview
---------
-
-
 
 Import detail
 -------------

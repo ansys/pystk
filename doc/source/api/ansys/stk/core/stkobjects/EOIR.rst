@@ -9,10 +9,6 @@ EOIR
 
 .. py:currentmodule:: EOIR
 
-Overview
---------
-
-
 
 Import detail
 -------------

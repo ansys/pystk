@@ -9,10 +9,6 @@ ReceivePolarizationLinear
 
 .. py:currentmodule:: ReceivePolarizationLinear
 
-Overview
---------
-
-
 
 Import detail
 -------------

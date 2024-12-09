@@ -24,7 +24,6 @@ Overview
               - Compute the satellite collection, updating its subgroups.
 
 
-
 Import detail
 -------------
 

@@ -28,7 +28,6 @@ Overview
               - Convert an image, such as a BMP, to a GeoJP2 file that can be used as an image globe overlay. The extent of the image can be defined as an input parameter if necessary.
 
 
-
 Import detail
 -------------
 

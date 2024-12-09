@@ -9,10 +9,6 @@ TransmitterModelScriptPluginLaser
 
 .. py:currentmodule:: TransmitterModelScriptPluginLaser
 
-Overview
---------
-
-
 
 Import detail
 -------------

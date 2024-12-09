@@ -9,10 +9,6 @@ RadarProbabilityOfDetectionCFARCellAveraging
 
 .. py:currentmodule:: RadarProbabilityOfDetectionCFARCellAveraging
 
-Overview
---------
-
-
 
 Import detail
 -------------

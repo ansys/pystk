@@ -26,7 +26,6 @@ Overview
               - Initialize an altitude display condition with the inclusive altitude interval [minimumAltitude, maximumAltitude]...
 
 
-
 Import detail
 -------------
 

@@ -9,10 +9,6 @@ DemodulatorModelDPSK
 
 .. py:currentmodule:: DemodulatorModelDPSK
 
-Overview
---------
-
-
 
 Import detail
 -------------

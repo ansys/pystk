@@ -9,10 +9,6 @@ PolarizationElliptical
 
 .. py:currentmodule:: PolarizationElliptical
 
-Overview
---------
-
-
 
 Import detail
 -------------

@@ -44,7 +44,6 @@ Overview
               - For convenience. Computes boundary positions for a sector on the specified centralBody using a cartographic center. This is equivalent to converting center to cartesian and calling ComputeSector.
 
 
-
 Import detail
 -------------
 

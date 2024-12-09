@@ -9,10 +9,6 @@ CalculationToolParameterSet
 
 .. py:currentmodule:: CalculationToolParameterSet
 
-Overview
---------
-
-
 
 Import detail
 -------------

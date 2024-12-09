@@ -9,10 +9,6 @@ ReceivePolarizationHorizontal
 
 .. py:currentmodule:: ReceivePolarizationHorizontal
 
-Overview
---------
-
-
 
 Import detail
 -------------

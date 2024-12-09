@@ -7,10 +7,6 @@ IVehicleLaunchControl
 
 .. py:currentmodule:: IVehicleLaunchControl
 
-Overview
---------
-
-
 Import detail
 -------------
 

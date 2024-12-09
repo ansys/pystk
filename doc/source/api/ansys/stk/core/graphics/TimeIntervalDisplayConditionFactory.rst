@@ -26,7 +26,6 @@ Overview
               - Initialize a time display condition with a time interval.
 
 
-
 Import detail
 -------------
 

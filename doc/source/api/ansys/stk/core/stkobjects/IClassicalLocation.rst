@@ -7,10 +7,6 @@ IClassicalLocation
 
 .. py:currentmodule:: IClassicalLocation
 
-Overview
---------
-
-
 Import detail
 -------------
 

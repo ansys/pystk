@@ -9,10 +9,6 @@ SpatialAnalysisToolGridValuesMethod
 
 .. py:currentmodule:: SpatialAnalysisToolGridValuesMethod
 
-Overview
---------
-
-
 
 Import detail
 -------------

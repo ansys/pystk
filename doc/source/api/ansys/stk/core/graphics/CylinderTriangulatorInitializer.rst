@@ -24,7 +24,6 @@ Overview
               - Compute the triangulation for a cylinder centered at the origin.
 
 
-
 Import detail
 -------------
 

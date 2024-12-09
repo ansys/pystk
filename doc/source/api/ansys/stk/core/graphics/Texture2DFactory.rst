@@ -24,7 +24,6 @@ Overview
               - Create a new texture from a raster.
 
 
-
 Import detail
 -------------
 

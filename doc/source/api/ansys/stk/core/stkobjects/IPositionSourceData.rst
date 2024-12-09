@@ -7,10 +7,6 @@ IPositionSourceData
 
 .. py:currentmodule:: IPositionSourceData
 
-Overview
---------
-
-
 Import detail
 -------------
 

@@ -7,10 +7,6 @@ IDisplayDistance
 
 .. py:currentmodule:: IDisplayDistance
 
-Overview
---------
-
-
 Import detail
 -------------
 

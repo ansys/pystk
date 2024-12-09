@@ -9,10 +9,6 @@ StateCalcCd
 
 .. py:currentmodule:: StateCalcCd
 
-Overview
---------
-
-
 
 Import detail
 -------------

@@ -30,7 +30,6 @@ Overview
               - Determine whether or not the video card supports the surface mesh primitive. This is equivalent to calling Supported with automatic.
 
 
-
 Import detail
 -------------
 

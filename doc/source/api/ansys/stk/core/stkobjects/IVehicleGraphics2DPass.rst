@@ -7,10 +7,6 @@ IVehicleGraphics2DPass
 
 .. py:currentmodule:: IVehicleGraphics2DPass
 
-Overview
---------
-
-
 Import detail
 -------------
 

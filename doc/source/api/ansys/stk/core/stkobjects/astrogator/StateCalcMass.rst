@@ -9,10 +9,6 @@ StateCalcMass
 
 .. py:currentmodule:: StateCalcMass
 
-Overview
---------
-
-
 
 Import detail
 -------------

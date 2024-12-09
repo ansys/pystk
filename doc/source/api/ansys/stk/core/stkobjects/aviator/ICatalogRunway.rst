@@ -7,10 +7,6 @@ ICatalogRunway
 
 .. py:currentmodule:: ICatalogRunway
 
-Overview
---------
-
-
 Import detail
 -------------
 

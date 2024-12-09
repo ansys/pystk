@@ -9,10 +9,6 @@ AtmosphericAbsorptionModelTIREM320
 
 .. py:currentmodule:: AtmosphericAbsorptionModelTIREM320
 
-Overview
---------
-
-
 
 Import detail
 -------------

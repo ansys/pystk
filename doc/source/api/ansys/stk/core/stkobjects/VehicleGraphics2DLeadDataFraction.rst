@@ -9,10 +9,6 @@ VehicleGraphics2DLeadDataFraction
 
 .. py:currentmodule:: VehicleGraphics2DLeadDataFraction
 
-Overview
---------
-
-
 
 Import detail
 -------------

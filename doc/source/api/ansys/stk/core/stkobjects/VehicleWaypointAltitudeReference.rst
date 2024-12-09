@@ -9,10 +9,6 @@ VehicleWaypointAltitudeReference
 
 .. py:currentmodule:: VehicleWaypointAltitudeReference
 
-Overview
---------
-
-
 
 Import detail
 -------------

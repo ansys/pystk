@@ -9,10 +9,6 @@ DemodulatorModel16PSK
 
 .. py:currentmodule:: DemodulatorModel16PSK
 
-Overview
---------
-
-
 
 Import detail
 -------------

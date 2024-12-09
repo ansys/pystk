@@ -9,10 +9,6 @@ VectorGeometryToolVector
 
 .. py:currentmodule:: VectorGeometryToolVector
 
-Overview
---------
-
-
 
 Import detail
 -------------

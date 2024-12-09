@@ -30,7 +30,6 @@ Overview
               - Save a snapshot of the 3D window to a texture 2d.
 
 
-
 Import detail
 -------------
 

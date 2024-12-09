@@ -28,7 +28,6 @@ Overview
               - Return a central body or null if the central body is invalid.
 
 
-
 Import detail
 -------------
 

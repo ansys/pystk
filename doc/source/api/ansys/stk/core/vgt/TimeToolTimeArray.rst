@@ -9,10 +9,6 @@ TimeToolTimeArray
 
 .. py:currentmodule:: TimeToolTimeArray
 
-Overview
---------
-
-
 
 Import detail
 -------------

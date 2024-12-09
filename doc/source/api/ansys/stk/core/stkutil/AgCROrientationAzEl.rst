@@ -9,10 +9,6 @@ AgCROrientationAzEl
 
 .. py:currentmodule:: AgCROrientationAzEl
 
-Overview
---------
-
-
 
 Import detail
 -------------

@@ -22,7 +22,6 @@ Overview
               - Initialize default polyline primitive optional parameters. All per-segment parameters are initially empty.
 
 
-
 Import detail
 -------------
 

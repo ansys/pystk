@@ -9,10 +9,6 @@ ModulatorModelQPSK
 
 .. py:currentmodule:: ModulatorModelQPSK
 
-Overview
---------
-
-
 
 Import detail
 -------------

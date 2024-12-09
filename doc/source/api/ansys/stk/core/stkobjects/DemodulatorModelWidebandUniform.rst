@@ -9,10 +9,6 @@ DemodulatorModelWidebandUniform
 
 .. py:currentmodule:: DemodulatorModelWidebandUniform
 
-Overview
---------
-
-
 
 Import detail
 -------------

@@ -9,10 +9,6 @@ RadarActivity
 
 .. py:currentmodule:: RadarActivity
 
-Overview
---------
-
-
 
 Import detail
 -------------

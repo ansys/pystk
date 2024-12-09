@@ -9,10 +9,6 @@ AgCROrientationEulerAngles
 
 .. py:currentmodule:: AgCROrientationEulerAngles
 
-Overview
---------
-
-
 
 Import detail
 -------------

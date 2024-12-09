@@ -9,10 +9,6 @@ StateCalcEpoch
 
 .. py:currentmodule:: StateCalcEpoch
 
-Overview
---------
-
-
 
 Import detail
 -------------

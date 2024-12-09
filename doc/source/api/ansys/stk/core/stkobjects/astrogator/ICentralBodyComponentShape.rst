@@ -7,10 +7,6 @@ ICentralBodyComponentShape
 
 .. py:currentmodule:: ICentralBodyComponentShape
 
-Overview
---------
-
-
 Import detail
 -------------
 

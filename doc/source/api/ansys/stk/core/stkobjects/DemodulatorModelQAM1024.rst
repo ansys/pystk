@@ -9,10 +9,6 @@ DemodulatorModelQAM1024
 
 .. py:currentmodule:: DemodulatorModelQAM1024
 
-Overview
---------
-
-
 
 Import detail
 -------------

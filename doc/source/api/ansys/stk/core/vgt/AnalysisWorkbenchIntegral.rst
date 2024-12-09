@@ -9,10 +9,6 @@ AnalysisWorkbenchIntegral
 
 .. py:currentmodule:: AnalysisWorkbenchIntegral
 
-Overview
---------
-
-
 
 Import detail
 -------------

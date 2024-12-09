@@ -9,10 +9,6 @@ StateCalcPi
 
 .. py:currentmodule:: StateCalcPi
 
-Overview
---------
-
-
 
 Import detail
 -------------

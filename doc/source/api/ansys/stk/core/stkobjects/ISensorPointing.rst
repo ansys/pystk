@@ -7,10 +7,6 @@ ISensorPointing
 
 .. py:currentmodule:: ISensorPointing
 
-Overview
---------
-
-
 Import detail
 -------------
 

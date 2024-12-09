@@ -22,7 +22,6 @@ Overview
               - Define a collection of pixel sizes, one for each point in the point batch.
 
 
-
 Import detail
 -------------
 

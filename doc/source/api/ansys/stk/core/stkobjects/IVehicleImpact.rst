@@ -7,10 +7,6 @@ IVehicleImpact
 
 .. py:currentmodule:: IVehicleImpact
 
-Overview
---------
-
-
 Import detail
 -------------
 

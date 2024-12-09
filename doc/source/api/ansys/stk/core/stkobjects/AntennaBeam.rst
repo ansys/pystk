@@ -9,10 +9,6 @@ AntennaBeam
 
 .. py:currentmodule:: AntennaBeam
 
-Overview
---------
-
-
 
 Import detail
 -------------

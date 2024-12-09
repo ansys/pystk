@@ -44,7 +44,6 @@ Overview
               - For convenience. Computes an extrusion of positions on the specified centralBody using cartographic positions. One side of the extrusion has a constant altitude and the other has the original altitudes from positions...
 
 
-
 Import detail
 -------------
 

@@ -9,10 +9,6 @@ AgCROrientationYPRAngles
 
 .. py:currentmodule:: AgCROrientationYPRAngles
 
-Overview
---------
-
-
 
 Import detail
 -------------

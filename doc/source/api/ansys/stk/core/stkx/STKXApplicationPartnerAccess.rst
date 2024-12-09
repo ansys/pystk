@@ -22,7 +22,6 @@ Overview
               - Provide object model root for authorized business partners.
 
 
-
 Import detail
 -------------
 

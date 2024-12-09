@@ -9,10 +9,6 @@ LandingVerticalPlaneOptions
 
 .. py:currentmodule:: LandingVerticalPlaneOptions
 
-Overview
---------
-
-
 
 Import detail
 -------------

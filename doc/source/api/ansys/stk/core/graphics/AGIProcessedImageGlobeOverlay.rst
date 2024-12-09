@@ -9,10 +9,6 @@ AGIProcessedImageGlobeOverlay
 
 .. py:currentmodule:: AGIProcessedImageGlobeOverlay
 
-Overview
---------
-
-
 
 Import detail
 -------------

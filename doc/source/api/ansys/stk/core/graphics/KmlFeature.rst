@@ -9,10 +9,6 @@ KmlFeature
 
 .. py:currentmodule:: KmlFeature
 
-Overview
---------
-
-
 
 Import detail
 -------------

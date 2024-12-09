@@ -21,7 +21,6 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IConnect.execute_command`
               - Send a connect command to an Aviator object.
 
-
 Import detail
 -------------
 

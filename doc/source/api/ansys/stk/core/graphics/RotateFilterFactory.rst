@@ -24,7 +24,6 @@ Overview
               - Initialize a new instance with a counterclockwise rotation angle.
 
 
-
 Import detail
 -------------
 

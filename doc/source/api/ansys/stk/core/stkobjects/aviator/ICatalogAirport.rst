@@ -7,10 +7,6 @@ ICatalogAirport
 
 .. py:currentmodule:: ICatalogAirport
 
-Overview
---------
-
-
 Import detail
 -------------
 

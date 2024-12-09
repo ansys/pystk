@@ -9,10 +9,6 @@ BeamformerHann
 
 .. py:currentmodule:: BeamformerHann
 
-Overview
---------
-
-
 
 Import detail
 -------------

@@ -7,10 +7,6 @@ IVolumetricGridDefinition
 
 .. py:currentmodule:: IVolumetricGridDefinition
 
-Overview
---------
-
-
 Import detail
 -------------
 

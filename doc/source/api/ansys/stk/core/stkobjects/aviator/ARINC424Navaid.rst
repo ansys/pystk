@@ -9,10 +9,6 @@ ARINC424Navaid
 
 .. py:currentmodule:: ARINC424Navaid
 
-Overview
---------
-
-
 
 Import detail
 -------------

@@ -32,7 +32,6 @@ Overview
               - Remove and resets the display configuration by unsetting currently set time component (if any).
 
 
-
 Import detail
 -------------
 

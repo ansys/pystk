@@ -9,10 +9,6 @@ AgCROrientationQuaternion
 
 .. py:currentmodule:: AgCROrientationQuaternion
 
-Overview
---------
-
-
 
 Import detail
 -------------

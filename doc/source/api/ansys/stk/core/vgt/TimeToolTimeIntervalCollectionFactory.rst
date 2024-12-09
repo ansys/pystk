@@ -30,7 +30,6 @@ Overview
               - Create an event interval collection containing intervals during which condition set is satisfied.
 
 
-
 Import detail
 -------------
 

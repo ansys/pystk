@@ -22,7 +22,6 @@ Overview
               - Initialize default marker batch primitive optional parameters. All per-marker parameters are initially empty.
 
 
-
 Import detail
 -------------
 

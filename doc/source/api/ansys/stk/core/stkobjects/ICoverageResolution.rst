@@ -7,10 +7,6 @@ ICoverageResolution
 
 .. py:currentmodule:: ICoverageResolution
 
-Overview
---------
-
-
 Import detail
 -------------
 

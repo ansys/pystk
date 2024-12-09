@@ -9,10 +9,6 @@ ModulatorModelBPSK
 
 .. py:currentmodule:: ModulatorModelBPSK
 
-Overview
---------
-
-
 
 Import detail
 -------------

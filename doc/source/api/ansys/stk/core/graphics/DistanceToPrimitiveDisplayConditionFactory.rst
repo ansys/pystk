@@ -24,7 +24,6 @@ Overview
               - Initialize a distance to primitive display condition with the inclusive distance interval [minimumDistance, maximumDistance]...
 
 
-
 Import detail
 -------------
 

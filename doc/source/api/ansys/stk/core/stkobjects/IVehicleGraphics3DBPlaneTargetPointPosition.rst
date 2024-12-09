@@ -7,10 +7,6 @@ IVehicleGraphics3DBPlaneTargetPointPosition
 
 .. py:currentmodule:: IVehicleGraphics3DBPlaneTargetPointPosition
 
-Overview
---------
-
-
 Import detail
 -------------
 

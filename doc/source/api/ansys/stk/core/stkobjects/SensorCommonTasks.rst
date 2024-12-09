@@ -60,7 +60,6 @@ Overview
               - Set the pointing method to Along Vector.
 
 
-
 Import detail
 -------------
 

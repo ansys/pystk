@@ -21,7 +21,6 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAutomationStrategyFactory.construct_strategy`
               - Construct the strategy.
 
-
 Import detail
 -------------
 

@@ -9,10 +9,6 @@ DemodulatorModelPulsedSignal
 
 .. py:currentmodule:: DemodulatorModelPulsedSignal
 
-Overview
---------
-
-
 
 Import detail
 -------------

@@ -7,10 +7,6 @@ ITerrainNormData
 
 .. py:currentmodule:: ITerrainNormData
 
-Overview
---------
-
-
 Import detail
 -------------
 

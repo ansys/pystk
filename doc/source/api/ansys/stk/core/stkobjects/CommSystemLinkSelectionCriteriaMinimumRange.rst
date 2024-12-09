@@ -9,10 +9,6 @@ CommSystemLinkSelectionCriteriaMinimumRange
 
 .. py:currentmodule:: CommSystemLinkSelectionCriteriaMinimumRange
 
-Overview
---------
-
-
 
 Import detail
 -------------

@@ -9,10 +9,6 @@ TimeToolInstant
 
 .. py:currentmodule:: TimeToolInstant
 
-Overview
---------
-
-
 
 Import detail
 -------------

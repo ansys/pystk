@@ -9,10 +9,6 @@ CalculationToolSamplingMethod
 
 .. py:currentmodule:: CalculationToolSamplingMethod
 
-Overview
---------
-
-
 
 Import detail
 -------------
