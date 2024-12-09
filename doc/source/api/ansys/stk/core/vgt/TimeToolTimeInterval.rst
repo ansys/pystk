@@ -9,10 +9,6 @@ TimeToolTimeInterval
 
 .. py:currentmodule:: TimeToolTimeInterval
 
-Overview
---------
-
-
 
 Import detail
 -------------

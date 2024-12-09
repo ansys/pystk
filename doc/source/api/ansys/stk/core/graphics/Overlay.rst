@@ -9,10 +9,6 @@ Overlay
 
 .. py:currentmodule:: Overlay
 
-Overview
---------
-
-
 
 Import detail
 -------------

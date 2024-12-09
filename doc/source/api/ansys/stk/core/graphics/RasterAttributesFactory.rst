@@ -32,7 +32,6 @@ Overview
               - Initialize a new instance with the attributes of the specified raster.
 
 
-
 Import detail
 -------------
 

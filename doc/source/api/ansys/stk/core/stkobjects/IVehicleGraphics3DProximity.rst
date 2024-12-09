@@ -7,10 +7,6 @@ IVehicleGraphics3DProximity
 
 .. py:currentmodule:: IVehicleGraphics3DProximity
 
-Overview
---------
-
-
 Import detail
 -------------
 

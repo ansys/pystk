@@ -9,10 +9,6 @@ AGIRoamImageGlobeOverlay
 
 .. py:currentmodule:: AGIRoamImageGlobeOverlay
 
-Overview
---------
-
-
 
 Import detail
 -------------

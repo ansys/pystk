@@ -7,10 +7,6 @@ IVehicleImpactLocation
 
 .. py:currentmodule:: IVehicleImpactLocation
 
-Overview
---------
-
-
 Import detail
 -------------
 

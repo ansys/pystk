@@ -7,10 +7,6 @@ INumericalIntegrator
 
 .. py:currentmodule:: INumericalIntegrator
 
-Overview
---------
-
-
 Import detail
 -------------
 

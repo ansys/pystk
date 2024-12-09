@@ -26,7 +26,6 @@ Overview
               - Set interval list from intervals with explicitly specified start and stop times. The method takes a one-dimensional array which elements are 2-tuples of intervals' start/stop times converted according to the current unit preferences.
 
 
-
 Import detail
 -------------
 

@@ -9,10 +9,6 @@ AntennaBeamSelectionStrategyAggregate
 
 .. py:currentmodule:: AntennaBeamSelectionStrategyAggregate
 
-Overview
---------
-
-
 
 Import detail
 -------------

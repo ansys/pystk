@@ -9,10 +9,6 @@ KmlFolder
 
 .. py:currentmodule:: KmlFolder
 
-Overview
---------
-
-
 
 Import detail
 -------------

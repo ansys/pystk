@@ -9,10 +9,6 @@ StarInformation
 
 .. py:currentmodule:: StarInformation
 
-Overview
---------
-
-
 
 Import detail
 -------------

@@ -29,7 +29,6 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IARINC424Item.copy_site`
               - Copy the site to the clipboard.
 
-
 Import detail
 -------------
 

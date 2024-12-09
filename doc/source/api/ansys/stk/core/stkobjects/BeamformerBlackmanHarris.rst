@@ -9,10 +9,6 @@ BeamformerBlackmanHarris
 
 .. py:currentmodule:: BeamformerBlackmanHarris
 
-Overview
---------
-
-
 
 Import detail
 -------------

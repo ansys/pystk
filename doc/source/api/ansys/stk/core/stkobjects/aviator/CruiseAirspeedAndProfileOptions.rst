@@ -9,10 +9,6 @@ CruiseAirspeedAndProfileOptions
 
 .. py:currentmodule:: CruiseAirspeedAndProfileOptions
 
-Overview
---------
-
-
 
 Import detail
 -------------

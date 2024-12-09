@@ -7,10 +7,6 @@ IAnalysisWorkbenchSignalDelay
 
 .. py:currentmodule:: IAnalysisWorkbenchSignalDelay
 
-Overview
---------
-
-
 Import detail
 -------------
 

@@ -7,10 +7,6 @@ IBurnout
 
 .. py:currentmodule:: IBurnout
 
-Overview
---------
-
-
 Import detail
 -------------
 

@@ -9,10 +9,6 @@ TransmitterModel
 
 .. py:currentmodule:: TransmitterModel
 
-Overview
---------
-
-
 
 Import detail
 -------------

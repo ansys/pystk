@@ -24,7 +24,6 @@ Overview
               - Search the online source (AGI server) for elements matching the specified SSC number and adds them to the collection. The method uses the propagator's start/stop.
 
 
-
 Import detail
 -------------
 

@@ -9,10 +9,6 @@ TransmitterModelScriptPluginRF
 
 .. py:currentmodule:: TransmitterModelScriptPluginRF
 
-Overview
---------
-
-
 
 Import detail
 -------------

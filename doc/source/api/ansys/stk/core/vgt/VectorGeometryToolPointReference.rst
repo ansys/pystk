@@ -30,7 +30,6 @@ Overview
               - Test whether the input component and the target component form a cyclic dependency.
 
 
-
 Import detail
 -------------
 

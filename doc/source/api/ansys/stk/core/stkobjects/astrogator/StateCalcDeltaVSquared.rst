@@ -9,10 +9,6 @@ StateCalcDeltaVSquared
 
 .. py:currentmodule:: StateCalcDeltaVSquared
 
-Overview
---------
-
-
 
 Import detail
 -------------

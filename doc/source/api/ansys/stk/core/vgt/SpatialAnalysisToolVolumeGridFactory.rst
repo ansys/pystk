@@ -36,7 +36,6 @@ Overview
               - Create and registers a volume grid of type surface bearing using specified name and description.
 
 
-
 Import detail
 -------------
 

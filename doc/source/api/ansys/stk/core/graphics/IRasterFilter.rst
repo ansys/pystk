@@ -7,10 +7,6 @@ IRasterFilter
 
 .. py:currentmodule:: IRasterFilter
 
-Overview
---------
-
-
 Import detail
 -------------
 

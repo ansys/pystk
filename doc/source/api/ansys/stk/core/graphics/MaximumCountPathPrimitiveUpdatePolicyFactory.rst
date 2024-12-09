@@ -24,7 +24,6 @@ Overview
               - Initialize a policy with the specified maximumCount and removeLocation.
 
 
-
 Import detail
 -------------
 

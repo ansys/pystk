@@ -84,7 +84,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: NewGrpcCallBatcher(self, max_batch: int = None, disable_batching: bool = None) -> GrpcCallBatcher
+.. py:method:: NewGrpcCallBatcher(self, max_batch: int = None, disable_batching: bool = True) -> GrpcCallBatcher
     :canonical: ansys.stk.core.stkengine.STKEngineApplication.NewGrpcCallBatcher
 
     Grpc is not available with STK Engine. Provided for parity with STK Runtime and Desktop.

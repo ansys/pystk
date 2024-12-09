@@ -26,7 +26,6 @@ Overview
               - Create a relative tolerance sampling definition. Relative tolerance uses a combination of relative and absolute changes in scalar values between samples.
 
 
-
 Import detail
 -------------
 

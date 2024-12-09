@@ -7,10 +7,6 @@ IAzElMaskData
 
 .. py:currentmodule:: IAzElMaskData
 
-Overview
---------
-
-
 Import detail
 -------------
 

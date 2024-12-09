@@ -9,10 +9,6 @@ VectorGeometryToolAxes
 
 .. py:currentmodule:: VectorGeometryToolAxes
 
-Overview
---------
-
-
 
 Import detail
 -------------

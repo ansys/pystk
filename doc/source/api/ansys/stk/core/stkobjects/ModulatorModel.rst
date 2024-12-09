@@ -9,10 +9,6 @@ ModulatorModel
 
 .. py:currentmodule:: ModulatorModel
 
-Overview
---------
-
-
 
 Import detail
 -------------

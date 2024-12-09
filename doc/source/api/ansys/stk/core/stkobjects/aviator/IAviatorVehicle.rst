@@ -21,7 +21,6 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAviatorVehicle.get_as_catalog_item`
               - Get the catalog item interface for this object.
 
-
 Import detail
 -------------
 

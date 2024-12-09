@@ -24,7 +24,6 @@ Overview
               - Set the boundary area type to Pattern.
 
 
-
 Import detail
 -------------
 

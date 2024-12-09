@@ -9,10 +9,6 @@ GaussianBlurFilter
 
 .. py:currentmodule:: GaussianBlurFilter
 
-Overview
---------
-
-
 
 Import detail
 -------------

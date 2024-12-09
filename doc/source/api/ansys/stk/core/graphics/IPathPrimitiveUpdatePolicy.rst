@@ -21,7 +21,6 @@ Overview
             * - :py:attr:`~ansys.stk.core.graphics.IPathPrimitiveUpdatePolicy.update`
               - Update the pathPrimitive at the specified date.
 
-
 Import detail
 -------------
 

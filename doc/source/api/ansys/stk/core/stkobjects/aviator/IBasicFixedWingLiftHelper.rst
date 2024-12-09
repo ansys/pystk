@@ -7,10 +7,6 @@ IBasicFixedWingLiftHelper
 
 .. py:currentmodule:: IBasicFixedWingLiftHelper
 
-Overview
---------
-
-
 Import detail
 -------------
 

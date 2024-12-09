@@ -9,10 +9,6 @@ AccessConstraintMinMaxBase
 
 .. py:currentmodule:: AccessConstraintMinMaxBase
 
-Overview
---------
-
-
 
 Import detail
 -------------

@@ -22,7 +22,6 @@ Overview
               - Initialize a geospatial image globe overlay with the provided values.
 
 
-
 Import detail
 -------------
 

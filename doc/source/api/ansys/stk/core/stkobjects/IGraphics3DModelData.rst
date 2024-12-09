@@ -7,10 +7,6 @@ IGraphics3DModelData
 
 .. py:currentmodule:: IGraphics3DModelData
 
-Overview
---------
-
-
 Import detail
 -------------
 

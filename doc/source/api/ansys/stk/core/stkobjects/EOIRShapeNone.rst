@@ -9,10 +9,6 @@ EOIRShapeNone
 
 .. py:currentmodule:: EOIRShapeNone
 
-Overview
---------
-
-
 
 Import detail
 -------------

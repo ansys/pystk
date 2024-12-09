@@ -9,10 +9,6 @@ AntennaBeamSelectionStrategyMaximumGain
 
 .. py:currentmodule:: AntennaBeamSelectionStrategyMaximumGain
 
-Overview
---------
-
-
 
 Import detail
 -------------

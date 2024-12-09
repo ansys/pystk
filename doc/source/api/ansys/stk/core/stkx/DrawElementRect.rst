@@ -9,10 +9,6 @@ DrawElementRect
 
 .. py:currentmodule:: DrawElementRect
 
-Overview
---------
-
-
 
 Import detail
 -------------

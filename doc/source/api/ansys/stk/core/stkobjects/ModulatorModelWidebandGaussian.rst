@@ -9,10 +9,6 @@ ModulatorModelWidebandGaussian
 
 .. py:currentmodule:: ModulatorModelWidebandGaussian
 
-Overview
---------
-
-
 
 Import detail
 -------------

@@ -24,7 +24,6 @@ Overview
               - Restore the graphics for all objects within the constellation in the 2D Graphics window.
 
 
-
 Import detail
 -------------
 

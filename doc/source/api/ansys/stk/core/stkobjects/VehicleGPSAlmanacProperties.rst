@@ -9,10 +9,6 @@ VehicleGPSAlmanacProperties
 
 .. py:currentmodule:: VehicleGPSAlmanacProperties
 
-Overview
---------
-
-
 
 Import detail
 -------------

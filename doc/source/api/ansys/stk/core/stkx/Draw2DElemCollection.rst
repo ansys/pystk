@@ -9,10 +9,6 @@ Draw2DElemCollection
 
 .. py:currentmodule:: Draw2DElemCollection
 
-Overview
---------
-
-
 
 Import detail
 -------------

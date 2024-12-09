@@ -9,10 +9,6 @@ Raster
 
 .. py:currentmodule:: Raster
 
-Overview
---------
-
-
 
 Import detail
 -------------

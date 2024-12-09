@@ -7,10 +7,6 @@ ISpatialAnalysisToolVolume
 
 .. py:currentmodule:: ISpatialAnalysisToolVolume
 
-Overview
---------
-
-
 Import detail
 -------------
 

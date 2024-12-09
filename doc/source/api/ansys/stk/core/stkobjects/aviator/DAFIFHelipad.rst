@@ -9,10 +9,6 @@ DAFIFHelipad
 
 .. py:currentmodule:: DAFIFHelipad
 
-Overview
---------
-
-
 
 Import detail
 -------------

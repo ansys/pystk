@@ -9,10 +9,6 @@ IAttitudeControlFinite
 
 .. py:currentmodule:: IAttitudeControlFinite
 
-Overview
---------
-
-
 Import detail
 -------------
 

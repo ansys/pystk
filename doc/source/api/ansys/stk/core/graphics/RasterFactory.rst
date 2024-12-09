@@ -26,7 +26,6 @@ Overview
               - Initialize a raster from another raster.
 
 
-
 Import detail
 -------------
 

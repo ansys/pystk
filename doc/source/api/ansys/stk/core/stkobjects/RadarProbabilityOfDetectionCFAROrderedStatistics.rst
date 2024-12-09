@@ -9,10 +9,6 @@ RadarProbabilityOfDetectionCFAROrderedStatistics
 
 .. py:currentmodule:: RadarProbabilityOfDetectionCFAROrderedStatistics
 
-Overview
---------
-
-
 
 Import detail
 -------------

@@ -22,7 +22,6 @@ Overview
               - Initialize an agi roam image globe overlay with the provided values.
 
 
-
 Import detail
 -------------
 

@@ -24,7 +24,6 @@ Overview
               - Return true if the specified STK object type is available.
 
 
-
 Import detail
 -------------
 

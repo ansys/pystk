@@ -9,10 +9,6 @@ LandingEnrouteOptions
 
 .. py:currentmodule:: LandingEnrouteOptions
 
-Overview
---------
-
-
 
 Import detail
 -------------

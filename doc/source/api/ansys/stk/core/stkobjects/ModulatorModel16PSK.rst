@@ -9,10 +9,6 @@ ModulatorModel16PSK
 
 .. py:currentmodule:: ModulatorModel16PSK
 
-Overview
---------
-
-
 
 Import detail
 -------------

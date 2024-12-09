@@ -9,10 +9,6 @@ RadarSTCAttenuation
 
 .. py:currentmodule:: RadarSTCAttenuation
 
-Overview
---------
-
-
 
 Import detail
 -------------

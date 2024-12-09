@@ -7,10 +7,6 @@ IEOIR
 
 .. py:currentmodule:: IEOIR
 
-Overview
---------
-
-
 Import detail
 -------------
 

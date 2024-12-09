@@ -9,10 +9,6 @@ Primitive
 
 .. py:currentmodule:: Primitive
 
-Overview
---------
-
-
 
 Import detail
 -------------

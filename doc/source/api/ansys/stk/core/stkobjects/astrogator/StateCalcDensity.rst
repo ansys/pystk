@@ -9,10 +9,6 @@ StateCalcDensity
 
 .. py:currentmodule:: StateCalcDensity
 
-Overview
---------
-
-
 
 Import detail
 -------------

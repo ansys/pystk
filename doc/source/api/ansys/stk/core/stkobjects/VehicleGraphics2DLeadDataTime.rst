@@ -9,10 +9,6 @@ VehicleGraphics2DLeadDataTime
 
 .. py:currentmodule:: VehicleGraphics2DLeadDataTime
 
-Overview
---------
-
-
 
 Import detail
 -------------

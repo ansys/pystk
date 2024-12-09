@@ -7,10 +7,6 @@ IDisplayTimesData
 
 .. py:currentmodule:: IDisplayTimesData
 
-Overview
---------
-
-
 Import detail
 -------------
 

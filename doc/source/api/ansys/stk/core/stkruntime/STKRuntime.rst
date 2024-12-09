@@ -47,7 +47,7 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: start_application(grpc_host: str = 0.0.0.0, grpc_port: int = 0.0.0.0, grpc_timeout_sec: int = 0.0.0.0, user_control: bool = 0.0.0.0, no_graphics: bool = 0.0.0.0) -> STKRuntimeApplication
+.. py:method:: start_application(grpc_host: str = localhost, grpc_port: int = 40704, grpc_timeout_sec: int = 60, user_control: bool = False, no_graphics: bool = True) -> STKRuntimeApplication
     :canonical: ansys.stk.core.stkruntime.STKRuntime.start_application
 
     Create a new STK Runtime instance and attach to the remote host.  
@@ -70,7 +70,7 @@ Method detail
 
         :obj:`~STKRuntimeApplication`
 
-.. py:method:: attach_to_application(grpc_host: str = localhost, grpc_port: int = localhost, grpc_timeout_sec: int = localhost) -> STKRuntimeApplication
+.. py:method:: attach_to_application(grpc_host: str = localhost, grpc_port: int = 40704, grpc_timeout_sec: int = 60) -> STKRuntimeApplication
     :canonical: ansys.stk.core.stkruntime.STKRuntime.attach_to_application
 
     Attach to STKRuntime.

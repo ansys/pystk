@@ -7,10 +7,6 @@ IVehicleGraphics2DTimeEventType
 
 .. py:currentmodule:: IVehicleGraphics2DTimeEventType
 
-Overview
---------
-
-
 Import detail
 -------------
 

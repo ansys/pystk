@@ -36,7 +36,6 @@ Overview
               - Return an Ephemeris file of the CCSDS v2 ephemeris type for export.
 
 
-
 Import detail
 -------------
 

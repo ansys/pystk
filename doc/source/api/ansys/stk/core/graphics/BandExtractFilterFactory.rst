@@ -26,7 +26,6 @@ Overview
               - Initialize a new instance with the raster format containing the bands to be extracted from the source raster.
 
 
-
 Import detail
 -------------
 

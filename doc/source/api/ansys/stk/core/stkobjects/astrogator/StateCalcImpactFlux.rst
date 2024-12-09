@@ -9,10 +9,6 @@ StateCalcImpactFlux
 
 .. py:currentmodule:: StateCalcImpactFlux
 
-Overview
---------
-
-
 
 Import detail
 -------------

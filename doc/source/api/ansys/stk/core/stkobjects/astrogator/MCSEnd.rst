@@ -9,10 +9,6 @@ MCSEnd
 
 .. py:currentmodule:: MCSEnd
 
-Overview
---------
-
-
 
 Import detail
 -------------

@@ -24,7 +24,6 @@ Overview
               - Initialize a new instance with the specified flip axis.
 
 
-
 Import detail
 -------------
 

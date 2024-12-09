@@ -7,10 +7,6 @@ IBasicManeuverStrategy
 
 .. py:currentmodule:: IBasicManeuverStrategy
 
-Overview
---------
-
-
 Import detail
 -------------
 

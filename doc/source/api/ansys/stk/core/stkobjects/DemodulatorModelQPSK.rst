@@ -9,10 +9,6 @@ DemodulatorModelQPSK
 
 .. py:currentmodule:: DemodulatorModelQPSK
 
-Overview
---------
-
-
 
 Import detail
 -------------

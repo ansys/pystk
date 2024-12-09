@@ -30,7 +30,6 @@ Overview
               - Initialize a new path point with the given date, position, color and translucency.
 
 
-
 Import detail
 -------------
 

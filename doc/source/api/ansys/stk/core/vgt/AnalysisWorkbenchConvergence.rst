@@ -9,10 +9,6 @@ AnalysisWorkbenchConvergence
 
 .. py:currentmodule:: AnalysisWorkbenchConvergence
 
-Overview
---------
-
-
 
 Import detail
 -------------

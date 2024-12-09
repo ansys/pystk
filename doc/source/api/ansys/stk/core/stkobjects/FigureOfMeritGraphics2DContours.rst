@@ -9,10 +9,6 @@ FigureOfMeritGraphics2DContours
 
 .. py:currentmodule:: FigureOfMeritGraphics2DContours
 
-Overview
---------
-
-
 
 Import detail
 -------------

@@ -9,10 +9,6 @@ VectorGeometryToolPlane
 
 .. py:currentmodule:: VectorGeometryToolPlane
 
-Overview
---------
-
-
 
 Import detail
 -------------

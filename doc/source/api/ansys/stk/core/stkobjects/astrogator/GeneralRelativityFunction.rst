@@ -9,10 +9,6 @@ GeneralRelativityFunction
 
 .. py:currentmodule:: GeneralRelativityFunction
 
-Overview
---------
-
-
 
 Import detail
 -------------

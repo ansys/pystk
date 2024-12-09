@@ -22,7 +22,6 @@ Overview
               - Initialize an empty composite display condition.
 
 
-
 Import detail
 -------------
 
