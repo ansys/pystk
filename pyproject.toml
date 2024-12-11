@@ -77,7 +77,7 @@ visualization = [
 ]
 vulnerabilities = [
     "bandit==1.8.0",
-    "safety==3.2.12",
+    "safety==3.2.13",
 ]
 
 [tool.flit.module]
