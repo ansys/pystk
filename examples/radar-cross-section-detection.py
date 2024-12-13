@@ -67,9 +67,7 @@ root.rewind()
 from ansys.stk.core.stkobjects import STKObjectType
 
 
-aircraft = root.current_scenario.children.new(
-    STKObjectType.AIRCRAFT, "TargetAircraft"
-)
+aircraft = root.current_scenario.children.new(STKObjectType.AIRCRAFT, "TargetAircraft")
 # -
 
 # The aircraft's route is designated by a great arc propagator, which uses waypoints to calculate how the aircraft flies. The aircraft flies between two waypoints. The first is located at latitude $37^\circ$ and longitude $139.7^\circ$, and the second is located at latitude $34^\circ$ and longitude $139.1^\circ$. The aircraft flies at an altitude of $25000$ ft ($7.62$ km) and a speed of $330$ nm/hr at both waypoints.

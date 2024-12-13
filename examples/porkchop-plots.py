@@ -181,9 +181,7 @@ from ansys.stk.core.stkobjects import EphemSourceType, PlanetPositionSourceType
 
 for name in ["Earth", "Mars"]:
     planet = scenario.children.new_on_central_body(STKObjectType.PLANET, name, "Sun")
-    planet.common_tasks.set_position_source_central_body(
-        name, EphemSourceType.DEFAULT
-    )
+    planet.common_tasks.set_position_source_central_body(name, EphemSourceType.DEFAULT)
 
 earth, mars = [scenario.children[object_name] for object_name in ["Earth", "Mars"]]
 # -

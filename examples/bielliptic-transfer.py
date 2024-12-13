@@ -170,9 +170,7 @@ second_propagate.propagator_name = "Earth Point Mass"
 bielliptic_end = bielliptic_transfer.segments.insert(
     SegmentType.TARGET_SEQUENCE, "BiElliptic End", "-"
 )
-last_impulse = bielliptic_end.segments.insert(
-    SegmentType.MANEUVER, "Last Impulse", "-"
-)
+last_impulse = bielliptic_end.segments.insert(SegmentType.MANEUVER, "Last Impulse", "-")
 last_impulse.set_maneuver_type(ManeuverType.IMPULSIVE)
 last_impulse.maneuver.set_attitude_control_type(AttitudeControl.THRUST_VECTOR)
 # -

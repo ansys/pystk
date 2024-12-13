@@ -126,9 +126,7 @@ sensor.common_tasks.set_pattern_complex_conic(50, 90, 0, 90)
 from ansys.stk.core.stkobjects import AccessConstraintType
 
 
-access_constraint = sensor.access_constraints.add_constraint(
-    AccessConstraintType.RANGE
-)
+access_constraint = sensor.access_constraints.add_constraint(AccessConstraintType.RANGE)
 # -
 
 # This method returns an ``IAccessConstraintMinMax`` object, through it is possible to access the access constraint attributes. Use this object to enable a maximum range value and set it to 40 km (the units are set to km by default):

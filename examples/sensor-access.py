@@ -235,9 +235,7 @@ globe_plotter.show()
 
 # First, insert a sensor on the satellite. By default, the sensor's type is fixed.
 
-fixed_sat_sensor = satellite.children.new(
-    STKObjectType.SENSOR, "FixedSatelliteSensor"
-)
+fixed_sat_sensor = satellite.children.new(STKObjectType.SENSOR, "FixedSatelliteSensor")
 
 # Then, set the sensor's pattern to simple conic with a cone half angle of $45^\circ$ and an angular resolution of $1^\circ$:
 

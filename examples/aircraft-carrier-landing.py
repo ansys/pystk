@@ -312,9 +312,7 @@ enroute_procedure.altitude_msl_options.msl_altitude = 20000
 from ansys.stk.core.stkobjects.aviator import PointToPointMode
 
 
-enroute_procedure.navigation_options.navigation_mode = (
-    PointToPointMode.ARRIVE_ON_COURSE
-)
+enroute_procedure.navigation_options.navigation_mode = PointToPointMode.ARRIVE_ON_COURSE
 # -
 
 # Then, set the aircraft to arrive on course at $135^\circ$:
@@ -440,9 +438,7 @@ station_keeping_profile = station_keeping_basic_maneuver.profile
 from ansys.stk.core.stkobjects.aviator import AutopilotAltitudeMode
 
 
-station_keeping_profile.altitude_mode = (
-    AutopilotAltitudeMode.AUTOPILOT_SPECIFY_ALTITUDE
-)
+station_keeping_profile.altitude_mode = AutopilotAltitudeMode.AUTOPILOT_SPECIFY_ALTITUDE
 station_keeping_profile.absolute_altitude = 2000
 # -
 
