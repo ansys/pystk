@@ -50,7 +50,7 @@ Property detail
 
 .. py:property:: pulse_repetition_frequency_mode
     :canonical: ansys.stk.core.stkobjects.WaveformPulseDefinition.pulse_repetition_frequency_mode
-    :type: PRF_MODE
+    :type: PRFMode
 
     Gets or sets the prf mode enumeration.
 
@@ -74,7 +74,7 @@ Property detail
 
 .. py:property:: pulse_width_mode
     :canonical: ansys.stk.core.stkobjects.WaveformPulseDefinition.pulse_width_mode
-    :type: PULSE_WIDTH_MODE
+    :type: PulseWidthMode
 
     Gets or sets the pulse width mode enumeration.
 

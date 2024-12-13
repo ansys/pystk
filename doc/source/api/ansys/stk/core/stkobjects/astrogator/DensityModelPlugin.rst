@@ -122,13 +122,13 @@ Property detail
 
 .. py:property:: sun_position
     :canonical: ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.sun_position
-    :type: SUN_POSITION
+    :type: SunPosition
 
     Gets or sets the sun position computation.
 
 .. py:property:: atmos_data_source
     :canonical: ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.atmos_data_source
-    :type: ATMOS_DATA_SOURCE
+    :type: AtmosDataSource
 
     Gets or sets the atmospheric model data source - data file or constant values.
 
@@ -194,13 +194,13 @@ Property detail
 
 .. py:property:: atmos_data_geo_magnetic_flux_source
     :canonical: ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.atmos_data_geo_magnetic_flux_source
-    :type: GEO_MAGNETIC_FLUX_SOURCE
+    :type: GeoMagneticFluxSource
 
     Whether to use Kp or Ap data from the flux file.
 
 .. py:property:: atmos_data_geo_magnetic_flux_update_rate
     :canonical: ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.atmos_data_geo_magnetic_flux_update_rate
-    :type: GEO_MAGNETIC_FLUX_UPDATE_RATE
+    :type: GeoMagneticFluxUpdateRate
 
     Gets or sets the update rate for geomagnetic flux values from the flux file.
 
@@ -224,7 +224,7 @@ Property detail
 
 .. py:property:: drag_model_type
     :canonical: ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.drag_model_type
-    :type: DRAG_MODEL_TYPE
+    :type: DragModelType
 
     Drag model type.
 

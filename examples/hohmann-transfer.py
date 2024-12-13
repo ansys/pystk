@@ -51,19 +51,19 @@ plotter.show()
 # Now that a new scenario is available, add a new satellite:
 
 # +
-from ansys.stk.core.stkobjects import STK_OBJECT_TYPE
+from ansys.stk.core.stkobjects import STKObjectType
 
 
-satellite = root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "Satellite")
+satellite = root.current_scenario.children.new(STKObjectType.SATELLITE, "Satellite")
 # -
 
 # Then, declare the type of orbit propagator used for the satellite:
 
 # +
-from ansys.stk.core.stkobjects import PROPAGATOR_TYPE
+from ansys.stk.core.stkobjects import PropagatorType
 
 
-satellite.set_propagator_type(PROPAGATOR_TYPE.ASTROGATOR)
+satellite.set_propagator_type(PropagatorType.ASTROGATOR)
 # -
 
 # Initialize the propagator by making sure that no previous sequence is present. Add any additional configurations for the propagator. For this example, its is requested to draw the maneuver in 3D.
@@ -76,21 +76,21 @@ satellite.propagator.options.draw_trajectory_in_3d = True
 # Start by adding a new segment to the main sequence for modeling the initial state of the satellite:
 
 # +
-from ansys.stk.core.stkobjects.astrogator import SEGMENT_TYPE
+from ansys.stk.core.stkobjects.astrogator import SegmentType
 
 
 initial_state = satellite.propagator.main_sequence.insert(
-    SEGMENT_TYPE.INITIAL_STATE, "Initial State", "-"
+    SegmentType.INITIAL_STATE, "Initial State", "-"
 )
 # -
 
 # A total of six orbital parameters are required to specify the initial state of the satellite. Considering the data provided in this example, Keplerian elements can be used. Thus, it is possible to assign the following parameters:
 
 # +
-from ansys.stk.core.stkobjects.astrogator import ELEMENT_TYPE
+from ansys.stk.core.stkobjects.astrogator import ElementSetType
 
 
-initial_state.set_element_type(ELEMENT_TYPE.KEPLERIAN)
+initial_state.set_element_type(ElementSetType.KEPLERIAN)
 
 initial_state.element.periapsis_radius_size = 6700.00
 initial_state.element.eccentricity = 0.00
@@ -105,7 +105,7 @@ initial_state.element.true_anomaly = 0.00
 # The parking orbit is the temporary orbit that the satellite follows before starting any maneuver. Modelling a parking orbit requires inserting a new `PROPAGATE` segment type in the main sequence. To be consistent with the assumptions of the Hohmann transfer, the segment should be propagated using an `Earth point mass` propagator. The total duration of the propagation is set for 7200 seconds, that is 2 hours.
 
 parking_orbit_propagate = satellite.propagator.main_sequence.insert(
-    SEGMENT_TYPE.PROPAGATE, "Parking Orbit Propagate", "-"
+    SegmentType.PROPAGATE, "Parking Orbit Propagate", "-"
 )
 parking_orbit_propagate.propagator_name = "Earth point mass"
 parking_orbit_propagate.stopping_conditions["Duration"].properties.trip = 7200
@@ -133,33 +133,33 @@ parking_orbit_propagate.properties.color = Colors.Blue
 # All maneuvers are modeled as `IMPULSIVE` maneuver type. The attitude control used is of the type `THRUST_VECTOR`.
 
 # +
-from ansys.stk.core.stkobjects.astrogator import ATTITUDE_CONTROL, MANEUVER_TYPE
+from ansys.stk.core.stkobjects.astrogator import AttitudeControl, ManeuverType
 
 
 hohmann_transfer = satellite.propagator.main_sequence.insert(
-    SEGMENT_TYPE.SEQUENCE, "Hohmann Transfer", "-"
+    SegmentType.SEQUENCE, "Hohmann Transfer", "-"
 )
 
 hohmann_start = hohmann_transfer.segments.insert(
-    SEGMENT_TYPE.TARGET_SEQUENCE, "Hohmann Start", "-"
+    SegmentType.TARGET_SEQUENCE, "Hohmann Start", "-"
 )
 first_impulse = hohmann_start.segments.insert(
-    SEGMENT_TYPE.MANEUVER, "First Impulse", "-"
+    SegmentType.MANEUVER, "First Impulse", "-"
 )
-first_impulse.set_maneuver_type(MANEUVER_TYPE.IMPULSIVE)
-first_impulse.maneuver.set_attitude_control_type(ATTITUDE_CONTROL.THRUST_VECTOR)
+first_impulse.set_maneuver_type(ManeuverType.IMPULSIVE)
+first_impulse.maneuver.set_attitude_control_type(AttitudeControl.THRUST_VECTOR)
 
 hohmann_propagate = hohmann_transfer.segments.insert(
-    SEGMENT_TYPE.PROPAGATE, "Hohmann Propagate", "-"
+    SegmentType.PROPAGATE, "Hohmann Propagate", "-"
 )
 hohmann_propagate.propagator_name = "Earth Point Mass"
 
 hohmann_end = hohmann_transfer.segments.insert(
-    SEGMENT_TYPE.TARGET_SEQUENCE, "Hohmann End", "-"
+    SegmentType.TARGET_SEQUENCE, "Hohmann End", "-"
 )
-last_impulse = hohmann_end.segments.insert(SEGMENT_TYPE.MANEUVER, "Last Impulse", "-")
-last_impulse.set_maneuver_type(MANEUVER_TYPE.IMPULSIVE)
-last_impulse.maneuver.set_attitude_control_type(ATTITUDE_CONTROL.THRUST_VECTOR)
+last_impulse = hohmann_end.segments.insert(SegmentType.MANEUVER, "Last Impulse", "-")
+last_impulse.set_maneuver_type(ManeuverType.IMPULSIVE)
+last_impulse.maneuver.set_attitude_control_type(AttitudeControl.THRUST_VECTOR)
 # -
 
 # Finally, it is possible to visualize the segments layout of the Hohmann transfer sequence by running:
@@ -178,21 +178,21 @@ for control_sequence in hohmann_transfer.segments:
 # Enable the component of the velocity impulse along the X axis as a control parameter. Add the radius of apoapsis as a result to be achieved.
 
 # +
-from ansys.stk.core.stkobjects.astrogator import CONTROL_MANEUVER
+from ansys.stk.core.stkobjects.astrogator import ControlManeuver
 
 
-first_impulse.enable_control_parameter(CONTROL_MANEUVER.IMPULSIVE_CARTESIAN_X)
+first_impulse.enable_control_parameter(ControlManeuver.IMPULSIVE_CARTESIAN_X)
 first_impulse.results.add("Keplerian Elems/Radius of Apoapsis")
 # -
 
 # Now, configure the solver for this first impulse. A differential corrector can be used to solve for the values of the control parameters to achieved the desired results:
 
 # +
-from ansys.stk.core.stkobjects.astrogator import PROFILE_MODE
+from ansys.stk.core.stkobjects.astrogator import ProfileMode
 
 
 hohmann_start_solver = hohmann_start.profiles["Differential Corrector"]
-hohmann_start_solver.mode = PROFILE_MODE.ITERATE
+hohmann_start_solver.mode = ProfileMode.ITERATE
 hohmann_start_solver.max_iterations = 50
 
 delta_v1_x = hohmann_start_solver.control_parameters.get_control_by_paths(
@@ -224,13 +224,13 @@ hohmann_propagate.properties.color = Colors.Red
 #
 # Again, enable the component of the velocity impulse along the X axis as a control parameter. In this case, add the eccentricity as a result to be achieved.
 
-last_impulse.enable_control_parameter(CONTROL_MANEUVER.IMPULSIVE_CARTESIAN_X)
+last_impulse.enable_control_parameter(ControlManeuver.IMPULSIVE_CARTESIAN_X)
 last_impulse.results.add("Keplerian Elems/Eccentricity")
 # Now, configure the solver for this last impulse. A differential corrector can be used to solve for the values of the control parameters to achieved the desired results:
 
 # +
 hohmann_end_solver = hohmann_end.profiles["Differential Corrector"]
-hohmann_end_solver.mode = PROFILE_MODE.ITERATE
+hohmann_end_solver.mode = ProfileMode.ITERATE
 hohmann_end_solver.max_iterations = 50
 
 delta_v2_x = hohmann_end_solver.control_parameters.get_control_by_paths(
@@ -252,7 +252,7 @@ desired_eccentricity.tolerance = 0.01
 # Once the last impulse has been applied, it is possible to propagate the satellite along its final orbit. Start by creating a new propagation segment in the main sequence. Propagate the satellite for a total of 86400 seconds.
 
 propagate_final_orbit = satellite.propagator.main_sequence.insert(
-    SEGMENT_TYPE.PROPAGATE, "Final State Propagate", "-"
+    SegmentType.PROPAGATE, "Final State Propagate", "-"
 )
 propagate_final_orbit.properties.color = Colors.Green
 propagate_final_orbit.propagator_name = "Earth Point Mass"
@@ -263,11 +263,11 @@ propagate_final_orbit.stopping_conditions["Duration"].properties.trip = 86400.00
 # Once that all the segments for the main sequence are defined, the main control sequence can be executed to solve for the desired values in each sequence:
 
 # +
-from ansys.stk.core.stkobjects.astrogator import TARGET_SEQUENCE_ACTION
+from ansys.stk.core.stkobjects.astrogator import TargetSequenceAction
 
 
-hohmann_start.action = TARGET_SEQUENCE_ACTION.RUN_ACTIVE_PROFILES
-hohmann_end.action = TARGET_SEQUENCE_ACTION.RUN_ACTIVE_PROFILES
+hohmann_start.action = TargetSequenceAction.RUN_ACTIVE_PROFILES
+hohmann_end.action = TargetSequenceAction.RUN_ACTIVE_PROFILES
 
 satellite.propagator.run_mcs()
 # -

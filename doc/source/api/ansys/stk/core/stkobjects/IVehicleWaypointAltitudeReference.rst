@@ -35,7 +35,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.IVehicleWaypointAltitudeReference.type
-    :type: VEHICLE_ALTITUDE_REFERENCE
+    :type: VehicleAltitudeReference
 
     Gets the altitude reference type.
 

@@ -113,13 +113,13 @@ Property detail
 
 .. py:property:: location
     :canonical: ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.location
-    :type: GRAPHICS_3D_LOCATION
+    :type: Graphics3DLocation
 
     Gets or sets the location where the data display is to appear: 3D window, data display area, or offset from the selected object.
 
 .. py:property:: x_origin
     :canonical: ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.x_origin
-    :type: GRAPHICS_3D_X_ORIGIN
+    :type: Graphics3DXOrigin
 
     Gets or sets the horizontal point of origin for the marker (left, center or right).
 
@@ -131,7 +131,7 @@ Property detail
 
 .. py:property:: y_origin
     :canonical: ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.y_origin
-    :type: GRAPHICS_3D_Y_ORIGIN
+    :type: Graphics3DYOrigin
 
     Gets or sets the vertical point of origin for the marker (top, center or bottom.).
 
@@ -149,7 +149,7 @@ Property detail
 
 .. py:property:: font_size
     :canonical: ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.font_size
-    :type: GRAPHICS_3D_FONT_SIZE
+    :type: Graphics3DFontSize
 
     Font size of the data display.
 
@@ -161,7 +161,7 @@ Property detail
 
 .. py:property:: format
     :canonical: ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.format
-    :type: GRAPHICS_3D_FORMAT
+    :type: Graphics3DFormat
 
     Font format of the data display.
 

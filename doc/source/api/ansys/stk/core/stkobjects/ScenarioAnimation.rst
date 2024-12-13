@@ -103,19 +103,19 @@ Property detail
 
 .. py:property:: animation_end_loop_type
     :canonical: ansys.stk.core.stkobjects.ScenarioAnimation.animation_end_loop_type
-    :type: SCENARIO_END_LOOP_TYPE
+    :type: ScenarioEndLoopType
 
     Animation end time or loop-at time. A member of the AgEScEndLoopType enumeration.
 
 .. py:property:: refresh_delta_type
     :canonical: ansys.stk.core.stkobjects.ScenarioAnimation.refresh_delta_type
-    :type: SCENARIO_REFRESH_DELTA_TYPE
+    :type: ScenarioRefreshDeltaType
 
     Refresh Delta or high speed. A member of the AgEScRefreshDeltaType enumeration.
 
 .. py:property:: animation_step_type
     :canonical: ansys.stk.core.stkobjects.ScenarioAnimation.animation_step_type
-    :type: SCENARIO_TIME_STEP_TYPE
+    :type: ScenarioTimeStepType
 
     Time step, real time (with offset) or a multiple of real time. A member of the AgEScTimeStepType enumeration.
 

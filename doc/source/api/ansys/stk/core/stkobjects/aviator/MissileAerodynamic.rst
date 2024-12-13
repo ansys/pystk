@@ -42,7 +42,7 @@ Property detail
 
 .. py:property:: aerodynamic_strategy
     :canonical: ansys.stk.core.stkobjects.aviator.MissileAerodynamic.aerodynamic_strategy
-    :type: MISSILE_AERODYNAMIC_STRATEGY
+    :type: MissileAerodynamicStrategy
 
     Gets or sets the aerodynamic strategy type.
 

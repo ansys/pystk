@@ -54,7 +54,7 @@ Property detail
 
 .. py:property:: lighting_conditions
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolConditionLighting.lighting_conditions
-    :type: LIGHTING_CONDITIONS_TYPE
+    :type: LightingConditionsType
 
     Sets/Returns the lighting conditions.
 

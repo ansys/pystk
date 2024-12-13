@@ -46,7 +46,7 @@ Property detail
 
 .. py:property:: remove_location
     :canonical: ansys.stk.core.graphics.MaximumCountPathPrimitiveUpdatePolicy.remove_location
-    :type: PATH_PRIMITIVE_REMOVE_LOCATION
+    :type: PathPrimitiveRemoveLocation
 
     Gets or sets where the positions on the path are removed from.
 

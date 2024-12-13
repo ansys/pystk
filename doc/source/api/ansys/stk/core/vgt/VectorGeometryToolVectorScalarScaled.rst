@@ -72,7 +72,7 @@ Property detail
 
 .. py:property:: dimension_inheritance
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorScalarScaled.dimension_inheritance
-    :type: VECTOR_GEOMETRY_TOOL_SCALED_VECTOR_DIMENSION_INHERITANCE_OPTION_TYPE
+    :type: VectorGeometryToolScaledVectorDimensionInheritanceOptionType
 
     Whether or not to inherit dimension from the input vector or the scalar.
 

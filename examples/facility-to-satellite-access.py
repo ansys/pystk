@@ -56,10 +56,10 @@ root.rewind()
 # Create a Static STK Object (facility). All new objects are attached to an existing parent object. In this case, the new facility is added to the children collection of the scenario.
 
 # +
-from ansys.stk.core.stkobjects import STK_OBJECT_TYPE
+from ansys.stk.core.stkobjects import STKObjectType
 
 
-facility = root.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "Philadelphia")
+facility = root.current_scenario.children.new(STKObjectType.FACILITY, "Philadelphia")
 # -
 
 # **Note:** the “new” method returns an object of the ``IStkObject`` type.
@@ -97,22 +97,22 @@ facility.graphics.label_name = "Philadelphia Facility"
 
 # It is possible to use the ``children`` collection of the facility object to check if “MySensor” is already part of the collection. If the sensor already exists, it is possible to get the sensor object from the children collection using the path from the facility to the sensor.
 
-if facility.children.contains(STK_OBJECT_TYPE.SENSOR, "MySensor"):
+if facility.children.contains(STKObjectType.SENSOR, "MySensor"):
     sensor = root.get_object_from_path("Facility/MyFacility/Sensor/MySensor")
 
 # In this case, the sensor has not yet been created, so create the object from the root:
 
-sensor = facility.children.new(STK_OBJECT_TYPE.SENSOR, "MySensor")
+sensor = facility.children.new(STKObjectType.SENSOR, "MySensor")
 
 # #### Set the sensor pattern
 
 # Now, set the sensor’s pattern to complex conic. The default sensor object is defined as a simple conic sensor. So, the first step is to change the sensor type to complex conic. The API also provides a helper function to set the sensor pattern properties. To access this helper function, get an ``ISensorCommonTasks`` object through the sensor's ``common_tasks`` property.
 
 # +
-from ansys.stk.core.stkobjects import SENSOR_PATTERN
+from ansys.stk.core.stkobjects import SensorPattern
 
 
-sensor.set_pattern_type(SENSOR_PATTERN.COMPLEX_CONIC)
+sensor.set_pattern_type(SensorPattern.COMPLEX_CONIC)
 sensor.common_tasks.set_pattern_complex_conic(50, 90, 0, 90)
 # -
 
@@ -123,11 +123,11 @@ sensor.common_tasks.set_pattern_complex_conic(50, 90, 0, 90)
 # Add an access constraint to the sensor defining a maximum range of 40 km:
 
 # +
-from ansys.stk.core.stkobjects import ACCESS_CONSTRAINT_TYPE
+from ansys.stk.core.stkobjects import AccessConstraintType
 
 
 access_constraint = sensor.access_constraints.add_constraint(
-    ACCESS_CONSTRAINT_TYPE.RANGE
+    AccessConstraintType.RANGE
 )
 # -
 
@@ -143,11 +143,11 @@ access_constraint.maximum = 40
 # First, create the satellite using online data for the International Space Station (SSN number 25544):
 
 # +
-from ansys.stk.core.stkobjects import PROPAGATOR_TYPE
+from ansys.stk.core.stkobjects import PropagatorType
 
 
-satellite = root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "MySatellite")
-satellite.set_propagator_type(PROPAGATOR_TYPE.SGP4)
+satellite = root.current_scenario.children.new(STKObjectType.SATELLITE, "MySatellite")
+satellite.set_propagator_type(PropagatorType.SGP4)
 propagator = satellite.propagator
 propagator.common_tasks.add_segments_from_online_source("25544")
 propagator.propagate()
@@ -165,13 +165,13 @@ plotter.show()
 # Since it is very hard to observe satellites when they are in the Earth's shadow, add a direct sun constraint to the satellite object:
 
 # +
-from ansys.stk.core.stkobjects import CONSTRAINT_LIGHTING
+from ansys.stk.core.stkobjects import ConstraintLighting
 
 
 lighting_constraint = satellite.access_constraints.add_constraint(
-    ACCESS_CONSTRAINT_TYPE.LIGHTING
+    AccessConstraintType.LIGHTING
 )
-lighting_constraint.condition = CONSTRAINT_LIGHTING.DIRECT_SUN
+lighting_constraint.condition = ConstraintLighting.DIRECT_SUN
 # -
 
 # Now that the satellite can only be "seen" if it is illuminated by the Sun, it is possible to run an access or intervisibility calculation.
@@ -288,11 +288,11 @@ data_provider_result.data_sets.to_numpy_array()[:10]
 # Create a vector between the satellite and facility objects:
 
 # +
-from ansys.stk.core.vgt import VECTOR_TYPE
+from ansys.stk.core.vgt import VectorType
 
 
 vector = facility.analysis_workbench_components.vectors.factory.create(
-    "FromTo", "Vector description", VECTOR_TYPE.DISPLACEMENT
+    "FromTo", "Vector description", VectorType.DISPLACEMENT
 )
 vector.destination.set_point(
     satellite.analysis_workbench_components.points.item("Center")
@@ -302,11 +302,11 @@ vector.destination.set_point(
 # Visualize the vector and set its size to 4.0:
 
 # +
-from ansys.stk.core.stkobjects import GEOMETRIC_ELEMENT_TYPE
+from ansys.stk.core.stkobjects import GeometricElementType
 
 
 boresight_vector = facility.graphics_3d.vector.vector_geometry_tool_components.add(
-    GEOMETRIC_ELEMENT_TYPE.VECTOR_ELEMENT, "Facility/Philadelphia FromTo Vector"
+    GeometricElementType.VECTOR_ELEMENT, "Facility/Philadelphia FromTo Vector"
 )
 facility.graphics_3d.vector.vector_size_scale = 4.0
 # -

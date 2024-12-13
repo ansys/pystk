@@ -82,7 +82,7 @@ Property detail
 
 .. py:property:: fuel_type
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingRamjetBasic.fuel_type
-    :type: JET_FUEL_TYPE
+    :type: JetFuelType
 
     Gets or sets the jet engine's fuel type.
 

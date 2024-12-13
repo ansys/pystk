@@ -50,16 +50,16 @@ Summary
             :widths: auto
         
 
-            * - :py:class:`~ansys.stk.core.uiapplication.APPLICATION_OPEN_LOG_FILE_MODE`
+            * - :py:class:`~ansys.stk.core.uiapplication.ApplicationOpenLogFileMode`
               - Log file open modes.
 
-            * - :py:class:`~ansys.stk.core.uiapplication.APPLICATION_LOG_MESSAGE_TYPE`
+            * - :py:class:`~ansys.stk.core.uiapplication.ApplicationLogMessageType`
               - Log message types.
 
-            * - :py:class:`~ansys.stk.core.uiapplication.APPLICATION_CONSTANTS`
+            * - :py:class:`~ansys.stk.core.uiapplication.ApplicationConstants`
               - AgEAppConstants contains base IDs for various structures.
 
-            * - :py:class:`~ansys.stk.core.uiapplication.APPLICATION_ERROR_CODES`
+            * - :py:class:`~ansys.stk.core.uiapplication.ApplicationErrorCodes`
               - App error codes.
 
 
@@ -97,8 +97,8 @@ The STK UI Application library is a COM library containing classes, interfaces a
     :maxdepth: 1
     :hidden:
 
-    ≔ APPLICATION_OPEN_LOG_FILE_MODE<uiapplication/APPLICATION_OPEN_LOG_FILE_MODE_enum>
-    ≔ APPLICATION_LOG_MESSAGE_TYPE<uiapplication/APPLICATION_LOG_MESSAGE_TYPE_enum>
-    ≔ APPLICATION_CONSTANTS<uiapplication/APPLICATION_CONSTANTS_enum>
-    ≔ APPLICATION_ERROR_CODES<uiapplication/APPLICATION_ERROR_CODES_enum>
+    ≔ ApplicationOpenLogFileMode<uiapplication/ApplicationOpenLogFileMode>
+    ≔ ApplicationLogMessageType<uiapplication/ApplicationLogMessageType>
+    ≔ ApplicationConstants<uiapplication/ApplicationConstants>
+    ≔ ApplicationErrorCodes<uiapplication/ApplicationErrorCodes>
 

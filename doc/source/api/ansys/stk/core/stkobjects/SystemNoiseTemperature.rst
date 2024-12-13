@@ -48,7 +48,7 @@ Property detail
 
 .. py:property:: compute_type
     :canonical: ansys.stk.core.stkobjects.SystemNoiseTemperature.compute_type
-    :type: NOISE_TEMPERATURE_COMPUTE_TYPE
+    :type: NoiseTemperatureComputeType
 
     Gets or sets the system noise temperature compute type.
 

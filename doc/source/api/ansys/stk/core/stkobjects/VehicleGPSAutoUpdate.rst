@@ -42,7 +42,7 @@ Property detail
 
 .. py:property:: selected_source
     :canonical: ansys.stk.core.stkobjects.VehicleGPSAutoUpdate.selected_source
-    :type: VEHICLE_GPS_AUTOMATIC_UPDATE_SOURCE_TYPE
+    :type: VehicleGPSAutomaticUpdateSourceType
 
     Gets or sets the source type for element updates.
 

@@ -67,7 +67,7 @@ Property detail
 
 .. py:property:: propulsion_mode
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicFixedWingPropulsion.propulsion_mode
-    :type: BASIC_FIXED_WING_PROPULSION_MODE
+    :type: BasicFixedWingPropulsionMode
 
     Gets or sets the option of whether to specify net thrust or net power.
 

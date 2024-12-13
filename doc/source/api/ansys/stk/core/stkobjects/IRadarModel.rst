@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.IRadarModel.type
-    :type: RADAR_MODEL_TYPE
+    :type: RadarModelType
 
     Gets the radar model type enumeration.
 

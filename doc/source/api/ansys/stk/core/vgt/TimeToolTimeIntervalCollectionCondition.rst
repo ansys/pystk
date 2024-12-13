@@ -66,7 +66,7 @@ Property detail
 
 .. py:property:: save_data_option
     :canonical: ansys.stk.core.vgt.TimeToolTimeIntervalCollectionCondition.save_data_option
-    :type: SAVE_DATA_TYPE
+    :type: SaveDataType
 
     Determines if computed time of extremum is saved/loaded, otherwise it is recomputed on load if necessary.
 

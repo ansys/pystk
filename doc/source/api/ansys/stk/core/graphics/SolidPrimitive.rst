@@ -159,7 +159,7 @@ Property detail
 
 .. py:property:: outline_appearance
     :canonical: ansys.stk.core.graphics.SolidPrimitive.outline_appearance
-    :type: OUTLINE_APPEARANCE
+    :type: OutlineAppearance
 
     Gets or sets the outline's appearance.
 
@@ -201,7 +201,7 @@ Property detail
 
 .. py:property:: set_hint
     :canonical: ansys.stk.core.graphics.SolidPrimitive.set_hint
-    :type: SET_HINT
+    :type: SetHint
 
     Gets the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with.
 
@@ -259,7 +259,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set(self, positions: list, normals: list, indices: list, outline_indices: list, winding_order: WINDING_ORDER, bounding_sphere: BoundingSphere, closed: bool) -> None
+.. py:method:: set(self, positions: list, normals: list, indices: list, outline_indices: list, winding_order: WindingOrder, bounding_sphere: BoundingSphere, closed: bool) -> None
     :canonical: ansys.stk.core.graphics.SolidPrimitive.set
 
     Define the solid using the specified parameters. The solid is rendered in the primitive's reference frame.
@@ -270,7 +270,7 @@ Method detail
     **normals** : :obj:`~list`
     **indices** : :obj:`~list`
     **outline_indices** : :obj:`~list`
-    **winding_order** : :obj:`~WINDING_ORDER`
+    **winding_order** : :obj:`~WindingOrder`
     **bounding_sphere** : :obj:`~BoundingSphere`
     **closed** : :obj:`~bool`
 

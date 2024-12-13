@@ -24,7 +24,7 @@ from ...internal.apiutil     import (InterfaceProxy, OutArg, initialize_from_sou
     get_interface_property, set_class_attribute, SupportsDeleteCallback)
 from ...utilities.exceptions import STKRuntimeError
 
-from ...stkobjects.aviator import CLOSURE_MODE, IAutomationStrategyFactory, IBasicManeuverStrategy
+from ...stkobjects.aviator import ClosureMode, IAutomationStrategyFactory, IBasicManeuverStrategy
 
 
 def _raise_uninitialized_error(*args):
@@ -507,17 +507,17 @@ class StrategyMATLAB3DGuidance(IBasicManeuverStrategy, SupportsDeleteCallback):
 
     _get_closure_mode_metadata = { "offset" : _get_closure_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CLOSURE_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(ClosureMode),) }
     @property
-    def closure_mode(self) -> "CLOSURE_MODE":
+    def closure_mode(self) -> "ClosureMode":
         """Get or set the closure mode for the guidance strategy."""
         return self._intf.get_property(StrategyMATLAB3DGuidance._metadata, StrategyMATLAB3DGuidance._get_closure_mode_metadata)
 
     _set_closure_mode_metadata = { "offset" : _set_closure_mode_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CLOSURE_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(ClosureMode),) }
     @closure_mode.setter
-    def closure_mode(self, value:"CLOSURE_MODE") -> None:
+    def closure_mode(self, value:"ClosureMode") -> None:
         """Get or set the closure mode for the guidance strategy."""
         return self._intf.set_property(StrategyMATLAB3DGuidance._metadata, StrategyMATLAB3DGuidance._set_closure_mode_metadata, value)
 

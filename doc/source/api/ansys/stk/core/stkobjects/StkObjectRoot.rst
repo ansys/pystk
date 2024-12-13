@@ -298,7 +298,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: execute_multiple_commands(self, connect_commands: list, action: EXECUTE_MULTIPLE_COMMANDS_MODE) -> ExecuteMultipleCommandsResult
+.. py:method:: execute_multiple_commands(self, connect_commands: list, action: ExecuteMultipleCommandsMode) -> ExecuteMultipleCommandsResult
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.execute_multiple_commands
 
     Execute multiple CONNECT actions.  The behavior of the method when encountering an exception varies depending on the setting of the Action parameter. See the help for AgEExecMultiCmdResultAction.
@@ -306,7 +306,7 @@ Method detail
     :Parameters:
 
     **connect_commands** : :obj:`~list`
-    **action** : :obj:`~EXECUTE_MULTIPLE_COMMANDS_MODE`
+    **action** : :obj:`~ExecuteMultipleCommandsMode`
 
     :Returns:
 

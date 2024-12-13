@@ -62,7 +62,7 @@ Property detail
 
 .. py:property:: fill_style
     :canonical: ansys.stk.core.stkobjects.Graphics2DRangeContours.fill_style
-    :type: FILL_STYLE
+    :type: FillStyle
 
     Gets or sets the style in which the range contours polygon is filled. A member of the AgEFillStyle enumeration.
 

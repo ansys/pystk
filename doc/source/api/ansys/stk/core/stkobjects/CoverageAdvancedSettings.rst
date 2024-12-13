@@ -52,7 +52,7 @@ Property detail
 
 .. py:property:: data_retention
     :canonical: ansys.stk.core.stkobjects.CoverageAdvancedSettings.data_retention
-    :type: COVERAGE_DATA_RETENTION
+    :type: CoverageDataRetention
 
     Data retention options can be all data or static data only.
 
@@ -64,13 +64,13 @@ Property detail
 
 .. py:property:: save_mode
     :canonical: ansys.stk.core.stkobjects.CoverageAdvancedSettings.save_mode
-    :type: DATA_SAVE_MODE
+    :type: DataSaveMode
 
     Specify whether accesses are saved with the coverage definition and, if not, whether they are recomputed on load.
 
 .. py:property:: region_access_acceleration
     :canonical: ansys.stk.core.stkobjects.CoverageAdvancedSettings.region_access_acceleration
-    :type: COVERAGE_REGION_ACCESS_ACCELERATION_TYPE
+    :type: CoverageRegionAccessAccelerationType
 
     Controls the use of region access computations to speedup overall coverage computations.
 
@@ -100,7 +100,7 @@ Property detail
 
 .. py:property:: n_assets_satisfaction_type
     :canonical: ansys.stk.core.stkobjects.CoverageAdvancedSettings.n_assets_satisfaction_type
-    :type: COVERAGE_SATISFACTION_TYPE
+    :type: CoverageSatisfactionType
 
     Used to restrict accesses satisfying specified type.
 

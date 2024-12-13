@@ -55,13 +55,13 @@ Property detail
 
 .. py:property:: asset_status
     :canonical: ansys.stk.core.stkobjects.CoverageAssetListElement.asset_status
-    :type: COVERAGE_ASSET_STATUS
+    :type: CoverageAssetStatus
 
     Gets or sets the current status of the coverage asset (active or not).
 
 .. py:property:: grouping
     :canonical: ansys.stk.core.stkobjects.CoverageAssetListElement.grouping
-    :type: COVERAGE_ASSET_GROUPING
+    :type: CoverageAssetGrouping
 
     Opt whether to consider the members of a constellation as a group or as separate entities.
 

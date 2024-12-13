@@ -81,7 +81,7 @@ Property detail
 
 .. py:property:: longitudinal_acceleration_type
     :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateWeightOnWheelsOptions.longitudinal_acceleration_type
-    :type: REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE
+    :type: ReferenceStateLongitudinalAccelerationMode
 
     Get the mode to specify the longitudinal acceleration.
 
@@ -111,7 +111,7 @@ Property detail
 
 .. py:property:: lateral_acceleration_type
     :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateWeightOnWheelsOptions.lateral_acceleration_type
-    :type: REFERENCE_STATE_LATERAL_ACCELERATION_MODE
+    :type: ReferenceStateLateralAccelerationMode
 
     Get the mode to specify the lateral acceleration.
 
@@ -124,14 +124,14 @@ Method detail
 
 
 
-.. py:method:: set_longitudinal_acceleration(self, accel_type: REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE, value: float) -> None
+.. py:method:: set_longitudinal_acceleration(self, accel_type: ReferenceStateLongitudinalAccelerationMode, value: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateWeightOnWheelsOptions.set_longitudinal_acceleration
 
     Set the longitudinal acceleration.
 
     :Parameters:
 
-    **accel_type** : :obj:`~REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE`
+    **accel_type** : :obj:`~ReferenceStateLongitudinalAccelerationMode`
     **value** : :obj:`~float`
 
     :Returns:
@@ -145,14 +145,14 @@ Method detail
 
 
 
-.. py:method:: set_lateral_acceleration(self, accel_type: REFERENCE_STATE_LATERAL_ACCELERATION_MODE, value: typing.Any) -> None
+.. py:method:: set_lateral_acceleration(self, accel_type: ReferenceStateLateralAccelerationMode, value: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateWeightOnWheelsOptions.set_lateral_acceleration
 
     Set the lateral acceleration.
 
     :Parameters:
 
-    **accel_type** : :obj:`~REFERENCE_STATE_LATERAL_ACCELERATION_MODE`
+    **accel_type** : :obj:`~ReferenceStateLateralAccelerationMode`
     **value** : :obj:`~typing.Any`
 
     :Returns:

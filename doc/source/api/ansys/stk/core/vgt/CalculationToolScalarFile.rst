@@ -61,7 +61,7 @@ Property detail
 
 .. py:property:: file_interpolation_type
     :canonical: ansys.stk.core.vgt.CalculationToolScalarFile.file_interpolation_type
-    :type: FILE_INTERPOLATOR_TYPE
+    :type: FileInterpolatorType
 
     The interpolation method used with the data.
 

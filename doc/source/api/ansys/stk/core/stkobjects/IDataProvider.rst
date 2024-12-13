@@ -101,28 +101,28 @@ Method detail
 
 
 
-.. py:method:: is_statistic_available(self, statistic: STATISTIC_TYPE, element_name: str) -> bool
+.. py:method:: is_statistic_available(self, statistic: StatisticType, element_name: str) -> bool
     :canonical: ansys.stk.core.stkobjects.IDataProvider.is_statistic_available
 
     Is the supplied statistic available for the provided element name?
 
     :Parameters:
 
-    **statistic** : :obj:`~STATISTIC_TYPE`
+    **statistic** : :obj:`~StatisticType`
     **element_name** : :obj:`~str`
 
     :Returns:
 
         :obj:`~bool`
 
-.. py:method:: is_time_varying_extremum_available(self, time_var_extremum: TIME_VARYING_EXTREMUM, element_name: str) -> bool
+.. py:method:: is_time_varying_extremum_available(self, time_var_extremum: TimeVaryingExtremum, element_name: str) -> bool
     :canonical: ansys.stk.core.stkobjects.IDataProvider.is_time_varying_extremum_available
 
     Is the supplied time varying extremum available for the provided element name?
 
     :Parameters:
 
-    **time_var_extremum** : :obj:`~TIME_VARYING_EXTREMUM`
+    **time_var_extremum** : :obj:`~TimeVaryingExtremum`
     **element_name** : :obj:`~str`
 
     :Returns:

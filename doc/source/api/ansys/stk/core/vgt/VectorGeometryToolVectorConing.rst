@@ -86,7 +86,7 @@ Property detail
 
 .. py:property:: mode
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorConing.mode
-    :type: ROTATION_SWEEP_MODE_TYPE
+    :type: RotationSweepModeType
 
     Specify either unidirectional or bidirectional mode.
 

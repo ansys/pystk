@@ -95,7 +95,7 @@ Property detail
 
 .. py:property:: trajectory_type
     :canonical: ansys.stk.core.stkobjects.LaunchVehicle.trajectory_type
-    :type: PROPAGATOR_TYPE
+    :type: PropagatorType
 
     Get the propagator type used by the launch vehicle.
 
@@ -113,7 +113,7 @@ Property detail
 
 .. py:property:: attitude_type
     :canonical: ansys.stk.core.stkobjects.LaunchVehicle.attitude_type
-    :type: VEHICLE_ATTITUDE
+    :type: VehicleAttitude
 
     Get the type of attitude profile used by the launch vehicle.
 
@@ -230,27 +230,27 @@ Method detail
 -------------
 
 
-.. py:method:: set_trajectory_type(self, trajectory: PROPAGATOR_TYPE) -> None
+.. py:method:: set_trajectory_type(self, trajectory: PropagatorType) -> None
     :canonical: ansys.stk.core.stkobjects.LaunchVehicle.set_trajectory_type
 
     Set the propagator type.
 
     :Parameters:
 
-    **trajectory** : :obj:`~PROPAGATOR_TYPE`
+    **trajectory** : :obj:`~PropagatorType`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_trajectory_type_supported(self, trajectory: PROPAGATOR_TYPE) -> bool
+.. py:method:: is_trajectory_type_supported(self, trajectory: PropagatorType) -> bool
     :canonical: ansys.stk.core.stkobjects.LaunchVehicle.is_trajectory_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **trajectory** : :obj:`~PROPAGATOR_TYPE`
+    **trajectory** : :obj:`~PropagatorType`
 
     :Returns:
 
@@ -259,27 +259,27 @@ Method detail
 
 
 
-.. py:method:: set_attitude_type(self, attitude: VEHICLE_ATTITUDE) -> None
+.. py:method:: set_attitude_type(self, attitude: VehicleAttitude) -> None
     :canonical: ansys.stk.core.stkobjects.LaunchVehicle.set_attitude_type
 
     Set the type of attitude profile used by the launch vehicle.
 
     :Parameters:
 
-    **attitude** : :obj:`~VEHICLE_ATTITUDE`
+    **attitude** : :obj:`~VehicleAttitude`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_attitude_type_supported(self, attitude: VEHICLE_ATTITUDE) -> bool
+.. py:method:: is_attitude_type_supported(self, attitude: VehicleAttitude) -> bool
     :canonical: ansys.stk.core.stkobjects.LaunchVehicle.is_attitude_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **attitude** : :obj:`~VEHICLE_ATTITUDE`
+    **attitude** : :obj:`~VehicleAttitude`
 
     :Returns:
 

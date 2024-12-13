@@ -68,10 +68,10 @@ root.rewind()
 # First, insert a place object to represent the airport's radar site:
 
 # +
-from ansys.stk.core.stkobjects import STK_OBJECT_TYPE
+from ansys.stk.core.stkobjects import STKObjectType
 
 
-radar_site = scenario.children.new(STK_OBJECT_TYPE.PLACE, "RadarSite")
+radar_site = scenario.children.new(STKObjectType.PLACE, "RadarSite")
 # -
 
 # Then, set the radar site's position using geodetic coordinates. Provide the latitude, longitude, and altitude corresponding to the radar's antenna:
@@ -84,7 +84,7 @@ radar_site.position.assign_geodetic(38.8006, -104.6784, 0.01524)
 
 # First, add a place object to represent Cheyenne:
 
-cheyenne = scenario.children.new(STK_OBJECT_TYPE.PLACE, "Cheyenne")
+cheyenne = scenario.children.new(STKObjectType.PLACE, "Cheyenne")
 
 # Cheyenne is located at a latitude of $41.1400^\circ$ and a longitude of $-104.8202^\circ$. Set the place's location to match Cheyenne's:
 
@@ -92,7 +92,7 @@ cheyenne.position.assign_geodetic(41.1400, -104.8202, 0)
 
 # Then, add a place object to represent Raton:
 
-raton = scenario.children.new(STK_OBJECT_TYPE.PLACE, "Raton")
+raton = scenario.children.new(STKObjectType.PLACE, "Raton")
 
 # Raton is located at a latitude of $36.9034^\circ$ and a longitude of $-104.4392^\circ$. Set the place's location to match Raton's:
 
@@ -104,15 +104,15 @@ raton.position.assign_geodetic(36.9034, -104.4392, 0)
 
 # First, insert an aircraft:
 
-aircraft = scenario.children.new(STK_OBJECT_TYPE.AIRCRAFT, "Aircraft")
+aircraft = scenario.children.new(STKObjectType.AIRCRAFT, "Aircraft")
 
 # Because the aircraft's route is defined by a set of waypoints, the aircraft's flight is modeled with a Great Arc propagator. Set the aircraft's propagator to the Great Arc propagator:
 
 # +
-from ansys.stk.core.stkobjects import PROPAGATOR_TYPE
+from ansys.stk.core.stkobjects import PropagatorType
 
 
-aircraft.set_route_type(PROPAGATOR_TYPE.GREAT_ARC)
+aircraft.set_route_type(PropagatorType.GREAT_ARC)
 # -
 
 # The aircraft flies between Cheyenne and Raton, so the propagator's route must include waypoints for both locations.
@@ -150,34 +150,34 @@ map_plotter.show()
 
 # First, insert a satellite:
 
-satellite = scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "ImageSat")
+satellite = scenario.children.new(STKObjectType.SATELLITE, "ImageSat")
 
 # Set the satellite's propagator to J4Pertubation:
 
 # +
-from ansys.stk.core.stkobjects import PROPAGATOR_TYPE
+from ansys.stk.core.stkobjects import PropagatorType
 
 
-satellite.set_propagator_type(PROPAGATOR_TYPE.J4_PERTURBATION)
+satellite.set_propagator_type(PropagatorType.J4_PERTURBATION)
 propagator = satellite.propagator
 # -
 
 # Set the orbit's coordinate type to classical:
 
 # +
-from ansys.stk.core.stkutil import ORBIT_STATE_TYPE
+from ansys.stk.core.stkutil import OrbitStateType
 
 
-orbit = propagator.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CLASSICAL)
+orbit = propagator.initial_state.representation.convert_to(OrbitStateType.CLASSICAL)
 # -
 
 # Use the returned `IOrbitStateClassical` object to set the `size_shape_type` property. This property designates which pair of elements describe the orbit. Set the `size_shape_type` to Semimajor Axis and Eccentricity:
 
 # +
-from ansys.stk.core.stkobjects import CLASSICAL_SIZE_SHAPE
+from ansys.stk.core.stkobjects import ClassicalSizeShape
 
 
-orbit.size_shape_type = CLASSICAL_SIZE_SHAPE.SEMIMAJOR_AXIS
+orbit.size_shape_type = ClassicalSizeShape.SEMIMAJOR_AXIS
 # -
 
 # Set the orbit's semimajor axis to $7178.14$ km and it's eccentricity to $0$:
@@ -193,11 +193,11 @@ orbit.orientation.argument_of_periapsis = 0
 # Using the orientation property, set the ascending node type to RAAN:
 
 # +
-from ansys.stk.core.stkobjects import ORIENTATION_ASC_NODE
+from ansys.stk.core.stkobjects import OrientationAscNode
 
 
 orbit.orientation.ascending_node_type = (
-    ORIENTATION_ASC_NODE.RIGHT_ASCENSION_ASCENDING_NODE
+    OrientationAscNode.RIGHT_ASCENSION_ASCENDING_NODE
 )
 # -
 
@@ -208,10 +208,10 @@ orbit.orientation.ascending_node.value = 20
 # Then, use the `location` property of the `IOrbitStateClassical` object to set the location type to true anomaly:
 
 # +
-from ansys.stk.core.stkobjects import CLASSICAL_LOCATION
+from ansys.stk.core.stkobjects import ClassicalLocation
 
 
-orbit.location_type = CLASSICAL_LOCATION.TRUE_ANOMALY
+orbit.location_type = ClassicalLocation.TRUE_ANOMALY
 # -
 
 # Set the true anomaly value to $0^\circ$:
@@ -236,16 +236,16 @@ globe_plotter.show()
 # First, insert a sensor on the satellite. By default, the sensor's type is fixed.
 
 fixed_sat_sensor = satellite.children.new(
-    STK_OBJECT_TYPE.SENSOR, "FixedSatelliteSensor"
+    STKObjectType.SENSOR, "FixedSatelliteSensor"
 )
 
 # Then, set the sensor's pattern to simple conic with a cone half angle of $45^\circ$ and an angular resolution of $1^\circ$:
 
 # +
-from ansys.stk.core.stkobjects import SENSOR_PATTERN
+from ansys.stk.core.stkobjects import SensorPattern
 
 
-fixed_sat_sensor.set_pattern_type(SENSOR_PATTERN.SIMPLE_CONIC)
+fixed_sat_sensor.set_pattern_type(SensorPattern.SIMPLE_CONIC)
 fixed_sat_sensor.common_tasks.set_pattern_simple_conic(45, 1)
 # -
 
@@ -281,21 +281,21 @@ fixed_sat_access.data_providers.item("Access Data").execute(
 # First, insert a sensor on the satellite:
 
 moving_sat_sensor = satellite.children.new(
-    STK_OBJECT_TYPE.SENSOR, "MovingSatelliteSensor"
+    STKObjectType.SENSOR, "MovingSatelliteSensor"
 )
 
 # The sensor is inserted as a fixed sensor by default, so set the sensor's pointing type to targeted:
 
 # +
-from ansys.stk.core.stkobjects import SENSOR_POINTING
+from ansys.stk.core.stkobjects import SensorPointing
 
 
-moving_sat_sensor.set_pointing_type(SENSOR_POINTING.TARGETED)
+moving_sat_sensor.set_pointing_type(SensorPointing.TARGETED)
 # -
 
 # Then, set the sensor's pattern to simple conic with a cone half angle of $5^\circ$ and an angular resolution of $1^\circ$:
 
-moving_sat_sensor.set_pattern_type(SENSOR_PATTERN.SIMPLE_CONIC)
+moving_sat_sensor.set_pattern_type(SensorPattern.SIMPLE_CONIC)
 moving_sat_sensor.common_tasks.set_pattern_simple_conic(5, 1)
 
 # Because the sensor is set to a pointing type, the sensor's `pointing` method now holds an `ISensorPointingTargeted` object, through which it is possible to add a target to the sensor. Add Raton as the target:
@@ -330,11 +330,11 @@ moving_sat_access.data_providers.item("Access Data").execute(
 
 # First, add a sensor to the radar site. The sensor is inserted as a fixed sensor by default.
 
-radar_dome_sensor = radar_site.children.new(STK_OBJECT_TYPE.SENSOR, "RadarDome")
+radar_dome_sensor = radar_site.children.new(STKObjectType.SENSOR, "RadarDome")
 
 # Then, set the sensor's pattern to simple conic with a cone half angle of $90^\circ$ and an angular resolution of $1^\circ$:
 
-radar_dome_sensor.set_pattern_type(SENSOR_PATTERN.SIMPLE_CONIC)
+radar_dome_sensor.set_pattern_type(SensorPattern.SIMPLE_CONIC)
 radar_dome_sensor.common_tasks.set_pattern_simple_conic(90, 1)
 
 # ## Add a constraint to the sensor
@@ -344,11 +344,11 @@ radar_dome_sensor.common_tasks.set_pattern_simple_conic(90, 1)
 # First, add a range access constraint to the sensor:
 
 # +
-from ansys.stk.core.stkobjects import ACCESS_CONSTRAINT_TYPE
+from ansys.stk.core.stkobjects import AccessConstraintType
 
 
 dome_range_constraint = radar_dome_sensor.access_constraints.add_constraint(
-    ACCESS_CONSTRAINT_TYPE.RANGE
+    AccessConstraintType.RANGE
 )
 # -
 
@@ -366,11 +366,11 @@ dome_range_constraint.maximum = 150
 # Configure the sensor's 2D graphics properties to show a projection of the maximum range on the 2D map:
 
 # +
-from ansys.stk.core.stkobjects import SENSOR_PROJECTION_DISTANCE_TYPE
+from ansys.stk.core.stkobjects import SensorProjectionDistanceType
 
 
 radar_dome_sensor.graphics.projection.distance_type = (
-    SENSOR_PROJECTION_DISTANCE_TYPE.RANGE_CONSTRAINT
+    SensorProjectionDistanceType.RANGE_CONSTRAINT
 )
 radar_dome_sensor.graphics.projection.use_constraints = True
 radar_dome_sensor.graphics.projection.show_on_2d_map = True
@@ -474,20 +474,20 @@ plt.show()
 
 # First, insert a sensor on the radar site:
 
-radar_sweep_sensor = radar_site.children.new(STK_OBJECT_TYPE.SENSOR, "RadarSweep")
+radar_sweep_sensor = radar_site.children.new(STKObjectType.SENSOR, "RadarSweep")
 
 # To model a field-of-view of a radar, use a rectangular sensor. Rectangular sensor types are typically used for modeling the field-of-view of instruments such as push broom sensors and star trackers. Rectangular sensors are defined according to specified vertical and horizontal half-angles.
 
 # Set the radar's sensor pattern to a rectangular pattern with a $5^\circ$ vertical half angle and a $35^\circ$ horizontal half angle:
 
-radar_sweep_sensor.set_pattern_type(SENSOR_PATTERN.RECTANGULAR)
+radar_sweep_sensor.set_pattern_type(SensorPattern.RECTANGULAR)
 radar_sweep_sensor.common_tasks.set_pattern_rectangular(5, 35)
 
 # This sensor configuration creates a wedge type field-of-view. Right now, that “wedge” is just pointing straight up. The radar afixed to the radar site sweeps or scans in a repeating cycle. Since the radar “scans”, the full range of the radar is not always covered. Configure the sensor’s field-of-view to provide a visual representation of the area that the radar does cover at any given point in time. Set the properties of the sensor to rotate and point at $35^\circ$ elevation. Set the spin axis elevation to $90^\circ$ for horizontal rotation with a cone angle of $55^\circ$ for a $35^\circ$ elevation from the horizon.
 
 # First, set the radar's pointing type to spinning. This type of sensor is used to model radars, push broom sensors and other instruments that spin, scan or sweep over time.
 
-radar_sweep_sensor.set_pointing_type(SENSOR_POINTING.SPINNING)
+radar_sweep_sensor.set_pointing_type(SensorPointing.SPINNING)
 
 # The sensor's `pointing` property now contains an `ISensorPointingSpinning` object. The spin rate property of this object describes the rate at which the boresight spins about the spin axis, measured in revolutions per minute. Set the spin rate to $12$ revs/min:
 
@@ -504,7 +504,7 @@ radar_sweep_sensor.pointing.spin_axis_cone_angle = 55
 # First, add a range constraint to the sweeping sensor:
 
 sweep_range_constraint = radar_sweep_sensor.access_constraints.add_constraint(
-    ACCESS_CONSTRAINT_TYPE.RANGE
+    AccessConstraintType.RANGE
 )
 
 # Then, configure the constraint to a maximum range of $150$ km:
@@ -521,7 +521,7 @@ from ansys.stk.core.utilities.colors import Color
 
 
 radar_sweep_sensor.graphics.projection.distance_type = (
-    SENSOR_PROJECTION_DISTANCE_TYPE.RANGE_CONSTRAINT
+    SensorProjectionDistanceType.RANGE_CONSTRAINT
 )
 radar_sweep_sensor.graphics.projection.use_constraints = True
 radar_sweep_sensor.graphics.projection.show_on_2d_map = True

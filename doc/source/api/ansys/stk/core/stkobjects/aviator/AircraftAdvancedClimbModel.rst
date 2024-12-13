@@ -73,13 +73,13 @@ Property detail
 
 .. py:property:: climb_speed_type
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedClimbModel.climb_speed_type
-    :type: CLIMB_SPEED_TYPE
+    :type: ClimbSpeedType
 
     Gets or sets the mode to calculate the aircraft's airspeed while climbing.
 
 .. py:property:: climb_override_airspeed_type
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedClimbModel.climb_override_airspeed_type
-    :type: AIRSPEED_TYPE
+    :type: AirspeedType
 
     Get the override airspeed type.
 
@@ -109,7 +109,7 @@ Property detail
 
 .. py:property:: airspeed_limit_type
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedClimbModel.airspeed_limit_type
-    :type: AIRSPEED_TYPE
+    :type: AirspeedType
 
     Get the airspeed limit type.
 
@@ -145,14 +145,14 @@ Method detail
 
 
 
-.. py:method:: set_climb_override_airspeed(self, airspeed_type: AIRSPEED_TYPE, airspeed: float) -> None
+.. py:method:: set_climb_override_airspeed(self, airspeed_type: AirspeedType, airspeed: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedClimbModel.set_climb_override_airspeed
 
     Set the override airspeed and airspeed type.
 
     :Parameters:
 
-    **airspeed_type** : :obj:`~AIRSPEED_TYPE`
+    **airspeed_type** : :obj:`~AirspeedType`
     **airspeed** : :obj:`~float`
 
     :Returns:
@@ -167,14 +167,14 @@ Method detail
 
 
 
-.. py:method:: set_airspeed_limit(self, airspeed_type: AIRSPEED_TYPE, airspeed: float) -> None
+.. py:method:: set_airspeed_limit(self, airspeed_type: AirspeedType, airspeed: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedClimbModel.set_airspeed_limit
 
     Set the airspeed limit and airspeed type below the altitude threshold.
 
     :Parameters:
 
-    **airspeed_type** : :obj:`~AIRSPEED_TYPE`
+    **airspeed_type** : :obj:`~AirspeedType`
     **airspeed** : :obj:`~float`
 
     :Returns:

@@ -40,18 +40,17 @@ class StkObjectVOSnippets(CodeSnippetsTestBase):
     # region ConfigureVOModelFile
     def test_ConfigureVOModelFile(self):
         satellite: "Satellite" = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "satellite1"),
-            Satellite,
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STKObjectType.SATELLITE, "satellite1"), Satellite
         )
         model: "IGraphics3DModel" = satellite.graphics_3d.model
 
         self.ConfigureVOModelFile(model)
 
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "satellite1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STKObjectType.SATELLITE, "satellite1")
 
     def ConfigureVOModelFile(self, model: "IGraphics3DModel"):
         # Set new ModelFile.Filename
-        model.model_type = MODEL_TYPE.FILE
+        model.model_type = ModelType.FILE
         modelFile: "Graphics3DModelFile" = clr.CastAs(model.model_data, Graphics3DModelFile)
         modelFile.filename = r"\STKData\VO\Models\Space\alexis.glb"
 
@@ -64,19 +63,18 @@ class StkObjectVOSnippets(CodeSnippetsTestBase):
     # region ConfigureVOArticulations
     def test_ConfigureVOArticulations(self):
         satellite: "Satellite" = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "satellite1"),
-            Satellite,
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STKObjectType.SATELLITE, "satellite1"), Satellite
         )
         model: "IGraphics3DModel" = satellite.graphics_3d.model
 
         # Set new ModelFile.Filename
-        model.model_type = MODEL_TYPE.FILE
+        model.model_type = ModelType.FILE
         modelFile: "Graphics3DModelFile" = clr.CastAs(model.model_data, Graphics3DModelFile)
         modelFile.filename = r"\STKData\VO\Models\Space\satellite.glb"
 
         self.ConfigureVOModelArticulations(model)
 
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "satellite1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STKObjectType.SATELLITE, "satellite1")
 
     def ConfigureVOModelArticulations(self, model: "IGraphics3DModel"):
         # Configure articulation
@@ -104,14 +102,13 @@ class StkObjectVOSnippets(CodeSnippetsTestBase):
     # region ListVOModelArticulations
     def test_ListVOModelArticulations(self):
         satellite: "Satellite" = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "satellite1"),
-            Satellite,
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STKObjectType.SATELLITE, "satellite1"), Satellite
         )
         model: "IGraphics3DModel" = satellite.graphics_3d.model
 
         self.ListVOModelArticulations(satellite, model)
 
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "satellite1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STKObjectType.SATELLITE, "satellite1")
 
     def ListVOModelArticulations(self, satellite: "Satellite", model: "IGraphics3DModel"):
         # Enumerating through the transformation collection is helpful if you do not
@@ -157,14 +154,13 @@ class StkObjectVOSnippets(CodeSnippetsTestBase):
     # region ConfigureVOModelLevelOfDetail
     def test_ConfigureVOModelLevelOfDetail(self):
         satellite: "Satellite" = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "satellite1"),
-            Satellite,
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STKObjectType.SATELLITE, "satellite1"), Satellite
         )
         model: "IGraphics3DModel" = satellite.graphics_3d.model
 
         self.ConfigureVOModelLevelOfDetail(model)
 
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "satellite1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STKObjectType.SATELLITE, "satellite1")
 
     def ConfigureVOModelLevelOfDetail(self, model: "IGraphics3DModel"):
         # Configure level of details
@@ -183,18 +179,18 @@ class StkObjectVOSnippets(CodeSnippetsTestBase):
     # region ConfigureVOVector
     def test_ConfigureVOVector(self):
         vehicle: "GroundVehicle" = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.GROUND_VEHICLE, "gv1"),
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STKObjectType.GROUND_VEHICLE, "gv1"),
             GroundVehicle,
         )
 
         self.ConfigureVOVector(vehicle.graphics_3d.vector)
 
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.GROUND_VEHICLE, "gv1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STKObjectType.GROUND_VEHICLE, "gv1")
 
     def ConfigureVOVector(self, vector: "Graphics3DVector"):
         # See AvailableCrdns for supported elements
         vector.vector_geometry_tool_components.add(
-            GEOMETRIC_ELEMENT_TYPE.VECTOR_ELEMENT,
+            GeometricElementType.VECTOR_ELEMENT,
             (
                 IAnalysisWorkbenchComponent(
                     CodeSnippetsTestBase.m_Root.central_bodies["Earth"].analysis_workbench_components.vectors["Moon"]
@@ -202,7 +198,7 @@ class StkObjectVOSnippets(CodeSnippetsTestBase):
             ).qualified_path,
         )
         vector.vector_geometry_tool_components.add(
-            GEOMETRIC_ELEMENT_TYPE.AXES_ELEMENT,
+            GeometricElementType.AXES_ELEMENT,
             (
                 IAnalysisWorkbenchComponent(
                     CodeSnippetsTestBase.m_Root.central_bodies["Moon"].analysis_workbench_components.vectors["Position"]
@@ -210,7 +206,7 @@ class StkObjectVOSnippets(CodeSnippetsTestBase):
             ).qualified_path,
         )
         vector.vector_geometry_tool_components.add(
-            GEOMETRIC_ELEMENT_TYPE.VECTOR_ELEMENT,
+            GeometricElementType.VECTOR_ELEMENT,
             (
                 IAnalysisWorkbenchComponent(
                     CodeSnippetsTestBase.m_Root.central_bodies["Sun"].analysis_workbench_components.vectors[
@@ -223,7 +219,7 @@ class StkObjectVOSnippets(CodeSnippetsTestBase):
         # Draw on Central Body
         body: "Graphics3DReferenceVector" = clr.CastAs(
             vector.vector_geometry_tool_components.get_component_by_name(
-                GEOMETRIC_ELEMENT_TYPE.AXES_ELEMENT,
+                GeometricElementType.AXES_ELEMENT,
                 (
                     IAnalysisWorkbenchComponent(
                         CodeSnippetsTestBase.m_Root.central_bodies["Earth"].analysis_workbench_components.vectors[
@@ -246,15 +242,15 @@ class StkObjectVOSnippets(CodeSnippetsTestBase):
     # region ConfigureVODataDisplay
     def test_ConfigureVODataDisplay(self):
         sat: "Satellite" = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "sat1"), Satellite
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STKObjectType.SATELLITE, "sat1"), Satellite
         )
-        (sat).set_propagator_type(PROPAGATOR_TYPE.TWO_BODY)
+        (sat).set_propagator_type(PropagatorType.TWO_BODY)
         tb: "PropagatorTwoBody" = clr.CastAs((sat).propagator, PropagatorTwoBody)
         tb.propagate()
         ddc: "Graphics3DDataDisplayCollection" = sat.graphics_3d.data_display
         self.ConfigureVODataDisplay(ddc)
 
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "sat1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STKObjectType.SATELLITE, "sat1")
 
     def ConfigureVODataDisplay(self, datadisplaycol: "Graphics3DDataDisplayCollection"):
         # Add existing data display
@@ -264,9 +260,9 @@ class StkObjectVOSnippets(CodeSnippetsTestBase):
         # Configure data display as needed
         displayElement.title_text = "Sol. Intensity"
         displayElement.show_graphics = True
-        displayElement.location = GRAPHICS_3D_LOCATION.WINDOW_3D
+        displayElement.location = Graphics3DLocation.WINDOW_3D
         displayElement.font_color = Colors.White
-        displayElement.font_size = GRAPHICS_3D_FONT_SIZE.SMALL
+        displayElement.font_size = Graphics3DFontSize.SMALL
         displayElement.use_background = True
         displayElement.background_color = Colors.Orange
         displayElement.use_automatic_size_width = False

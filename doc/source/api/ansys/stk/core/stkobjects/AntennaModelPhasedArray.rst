@@ -116,7 +116,7 @@ Property detail
 
 .. py:property:: beam_direction_provider_type
     :canonical: ansys.stk.core.stkobjects.AntennaModelPhasedArray.beam_direction_provider_type
-    :type: DIRECTION_PROVIDER_TYPE
+    :type: DirectionProviderType
 
     Gets or sets the beam direction provider type.
 
@@ -134,7 +134,7 @@ Property detail
 
 .. py:property:: null_direction_provider_type
     :canonical: ansys.stk.core.stkobjects.AntennaModelPhasedArray.null_direction_provider_type
-    :type: DIRECTION_PROVIDER_TYPE
+    :type: DirectionProviderType
 
     Gets or sets the null direction provider type.
 
@@ -146,7 +146,7 @@ Property detail
 
 .. py:property:: beamformer_type
     :canonical: ansys.stk.core.stkobjects.AntennaModelPhasedArray.beamformer_type
-    :type: BEAMFORMER_TYPE
+    :type: BeamformerType
 
     Gets or sets beamformer type.
 
@@ -158,7 +158,7 @@ Property detail
 
 .. py:property:: element_configuration_type
     :canonical: ansys.stk.core.stkobjects.AntennaModelPhasedArray.element_configuration_type
-    :type: ELEMENT_CONFIGURATION_TYPE
+    :type: ElementConfigurationType
 
     Gets or sets the element configuration type.
 

@@ -91,13 +91,13 @@ Property detail
 
 .. py:property:: intersection_type
     :canonical: ansys.stk.core.stkobjects.SensorProjection.intersection_type
-    :type: INTERSECTION_TYPE
+    :type: IntersectionType
 
     The type of intersections to be shown. A member of the AgEIntersectionType enumeration.
 
 .. py:property:: distance_type
     :canonical: ansys.stk.core.stkobjects.SensorProjection.distance_type
-    :type: SENSOR_PROJECTION_DISTANCE_TYPE
+    :type: SensorProjectionDistanceType
 
     The criterion used for determining the projection distance. A member of the AgESnProjectionDistanceType enumeration.
 

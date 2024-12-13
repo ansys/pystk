@@ -81,7 +81,7 @@ Property detail
 
 .. py:property:: integration_window_type
     :canonical: ansys.stk.core.vgt.CalculationToolScalarIntegral.integration_window_type
-    :type: INTEGRATION_WINDOW_TYPE
+    :type: IntegrationWindowType
 
     The integration window, or accumulation, type.
 
@@ -111,7 +111,7 @@ Property detail
 
 .. py:property:: save_data_option
     :canonical: ansys.stk.core.vgt.CalculationToolScalarIntegral.save_data_option
-    :type: SAVE_DATA_TYPE
+    :type: SaveDataType
 
     Set the value to determine if computed time of extremum is saved/loaded, or recomputed on load if necessary.
 

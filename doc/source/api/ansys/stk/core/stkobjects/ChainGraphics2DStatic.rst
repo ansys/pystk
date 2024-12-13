@@ -52,7 +52,7 @@ Property detail
 
 .. py:property:: line_width
     :canonical: ansys.stk.core.stkobjects.ChainGraphics2DStatic.line_width
-    :type: LINE_WIDTH
+    :type: LineWidth
 
     Gets or sets the width of the line that overlays the ground track in the 2D Graphics window.
 

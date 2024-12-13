@@ -62,7 +62,7 @@ Property detail
 
 .. py:property:: coordinate_system_type
     :canonical: ansys.stk.core.stkobjects.OrbitStateDelaunay.coordinate_system_type
-    :type: COORDINATE_SYSTEM
+    :type: CoordinateSystem
 
     Gets or sets the coordinate system being used.
 
@@ -74,7 +74,7 @@ Property detail
 
 .. py:property:: l_type
     :canonical: ansys.stk.core.stkobjects.OrbitStateDelaunay.l_type
-    :type: DELAUNAY_L_TYPE
+    :type: DelaunayLType
 
     Option for Delaunay L (default or L/SQRT(mu).
 
@@ -86,7 +86,7 @@ Property detail
 
 .. py:property:: h_type
     :canonical: ansys.stk.core.stkobjects.OrbitStateDelaunay.h_type
-    :type: DELAUNAY_H_TYPE
+    :type: DelaunayHType
 
     Option for Delaunay H (default or H/SQRT(mu).
 
@@ -98,7 +98,7 @@ Property detail
 
 .. py:property:: g_type
     :canonical: ansys.stk.core.stkobjects.OrbitStateDelaunay.g_type
-    :type: DELAUNAY_G_TYPE
+    :type: DelaunayGType
 
     Option for Delaunay G (default or G/SQRT(mu).
 

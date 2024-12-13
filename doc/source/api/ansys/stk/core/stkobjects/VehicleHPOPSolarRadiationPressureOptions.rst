@@ -38,7 +38,7 @@ Property detail
 
 .. py:property:: method_to_compute_sun_position
     :canonical: ansys.stk.core.stkobjects.VehicleHPOPSolarRadiationPressureOptions.method_to_compute_sun_position
-    :type: METHOD_TO_COMPUTE_SUN_POSITION
+    :type: MethodToComputeSunPosition
 
     Specifies the direction of the Sun for SRP computations.
 

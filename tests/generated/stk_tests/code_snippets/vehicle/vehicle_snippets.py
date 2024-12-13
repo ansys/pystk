@@ -27,9 +27,7 @@ class VehicleSnippets(CodeSnippetsTestBase):
     # region TestSetUp
     def setUp(self):
         VehicleSnippets.m_Object = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-                STK_OBJECT_TYPE.GROUND_VEHICLE, self.m_DefaultName
-            ),
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STKObjectType.GROUND_VEHICLE, self.m_DefaultName),
             GroundVehicle,
         )
 
@@ -44,7 +42,7 @@ class VehicleSnippets(CodeSnippetsTestBase):
     # region ExportVehicleToStkEphemerisFile
     def test_ExportVehicleToStkEphemerisFile(self):
         gv: "GroundVehicle" = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.GROUND_VEHICLE, "gv1"),
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STKObjectType.GROUND_VEHICLE, "gv1"),
             GroundVehicle,
         )
         ga: "PropagatorGreatArc" = clr.CastAs(gv.route, PropagatorGreatArc)
@@ -57,22 +55,22 @@ class VehicleSnippets(CodeSnippetsTestBase):
             gv.export_tools.get_ephemeris_stk_export_tool(),
             ephemFilePath,
         )
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.GROUND_VEHICLE, "gv1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STKObjectType.GROUND_VEHICLE, "gv1")
 
     def ExportVehicleToStkEphemerisFile(
         self, scenario: "Scenario", stkEphem: "VehicleEphemerisExportTool", ephemFilePath: str
     ):
         # set export parameters
-        stkEphem.coordinate_system = EPHEMERIS_COORDINATE_SYSTEM_TYPE.FIXED
+        stkEphem.coordinate_system = EphemerisCoordinateSystemType.FIXED
         stkEphem.include_interpolation_boundaries = True
-        stkEphem.version_format = EXPORT_TOOL_VERSION_FORMAT.CURRENT
-        stkEphem.time_period.time_period_type = EXPORT_TOOL_TIME_PERIOD.SPECIFY
+        stkEphem.version_format = ExportToolVersionFormat.CURRENT
+        stkEphem.time_period.time_period_type = ExportToolTimePeriodType.SPECIFY
 
         # Set the ephemeris to the Scenario start and stop times
         stkEphem.time_period.start = scenario.start_time
         stkEphem.time_period.stop = scenario.stop_time
 
-        stkEphem.step_size.step_size_type = EXPORT_TOOL_STEP_SIZE.EPHEMERIS
+        stkEphem.step_size.step_size_type = ExportToolStepSizeType.EPHEMERIS
         stkEphem.export(ephemFilePath)
 
     # endregion
@@ -80,7 +78,7 @@ class VehicleSnippets(CodeSnippetsTestBase):
     # region ExportVehicleToAttitudeFile
     def test_ExportVehicleToAttitudeFile(self):
         gv: "GroundVehicle" = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.GROUND_VEHICLE, "gv1"),
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STKObjectType.GROUND_VEHICLE, "gv1"),
             GroundVehicle,
         )
         ga: "PropagatorGreatArc" = clr.CastAs(gv.route, PropagatorGreatArc)
@@ -90,25 +88,25 @@ class VehicleSnippets(CodeSnippetsTestBase):
         self.ExportVehicleToAttitudeFile(
             Scenario(CodeSnippetsTestBase.m_Root.current_scenario), gv.export_tools.get_attitude_export_tool()
         )
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.GROUND_VEHICLE, "gv1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STKObjectType.GROUND_VEHICLE, "gv1")
 
     def ExportVehicleToAttitudeFile(self, scenario: "Scenario", attitudeExport: "VehicleAttitudeExportTool"):
         # Set and configure attitude coordinate axes
-        attitudeExport.set_coordinate_axes_type(ATTITUDE_COORDINATE_AXES.CUSTOM)
+        attitudeExport.set_coordinate_axes_type(AttitudeCoordinateAxes.CUSTOM)
         customAxes: "VehicleCoordinateAxesCustom" = clr.CastAs(
             attitudeExport.coordinate_axes, VehicleCoordinateAxesCustom
         )
         customAxes.reference_axes_name = "CentralBody/Sun J2000 Axes"
 
-        attitudeExport.version_format = EXPORT_TOOL_VERSION_FORMAT.CURRENT
-        attitudeExport.include = ATTITUDE_INCLUDE.QUATERNIONS_AND_ANGULAR_VELOCITY
+        attitudeExport.version_format = ExportToolVersionFormat.CURRENT
+        attitudeExport.include = AttitudeInclude.QUATERNIONS_AND_ANGULAR_VELOCITY
 
         # Set the attitude file to use Scenario start and stop time
-        attitudeExport.time_period.time_period_type = EXPORT_TOOL_TIME_PERIOD.SPECIFY
+        attitudeExport.time_period.time_period_type = ExportToolTimePeriodType.SPECIFY
         attitudeExport.time_period.start = scenario.start_time
         attitudeExport.time_period.stop = scenario.stop_time
 
-        attitudeExport.step_size.step_size_type = EXPORT_TOOL_STEP_SIZE.SPECIFY
+        attitudeExport.step_size.step_size_type = ExportToolStepSizeType.SPECIFY
         attitudeExport.step_size.value = 3600
 
         # Save Attitude File

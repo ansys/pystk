@@ -46,7 +46,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolVector.type
-    :type: VECTOR_TYPE
+    :type: VectorType
 
     Returns a type of the vector object.
 

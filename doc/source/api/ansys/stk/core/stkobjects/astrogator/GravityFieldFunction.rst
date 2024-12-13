@@ -154,7 +154,7 @@ Property detail
 
 .. py:property:: solid_tide_type
     :canonical: ansys.stk.core.stkobjects.astrogator.GravityFieldFunction.solid_tide_type
-    :type: SOLID_TIDE
+    :type: SolidTide
 
     Gets or sets the type of solid tide contribution to be modeled.
 

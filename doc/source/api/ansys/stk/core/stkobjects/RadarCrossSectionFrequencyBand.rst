@@ -65,7 +65,7 @@ Property detail
 
 .. py:property:: swerling_case
     :canonical: ansys.stk.core.stkobjects.RadarCrossSectionFrequencyBand.swerling_case
-    :type: RADAR_SWERLING_CASE
+    :type: RadarSwerlingCase
 
     Gets or sets the band Swerling case.
 

@@ -70,7 +70,7 @@ Property detail
 
 .. py:property:: line_width
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DIntervalsElement.line_width
-    :type: LINE_WIDTH
+    :type: LineWidth
 
     Gets or sets the line width.
 

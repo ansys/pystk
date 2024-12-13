@@ -67,7 +67,7 @@ Property detail
 
 .. py:property:: final_altitude_rate
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureVerticalLanding.final_altitude_rate
-    :type: VTOL_RATE_MODE
+    :type: VTOLRateMode
 
     Gets or sets the altitude rate at the end of the procedure.
 
@@ -79,7 +79,7 @@ Property detail
 
 .. py:property:: heading_mode
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureVerticalLanding.heading_mode
-    :type: VERT_LANDING_MODE
+    :type: VertLandingMode
 
     Gets or sets the mode to define the heading during the landing.
 

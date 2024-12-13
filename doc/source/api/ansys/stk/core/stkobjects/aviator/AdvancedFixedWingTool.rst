@@ -167,7 +167,7 @@ Property detail
 
 .. py:property:: aerodynamic_strategy
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.aerodynamic_strategy
-    :type: ADVANCED_FIXED_WING_AERODYNAMIC_STRATEGY
+    :type: AdvancedFixedWingAerodynamicStrategy
 
     Gets or sets the aerodynamic strategy type.
 
@@ -197,7 +197,7 @@ Property detail
 
 .. py:property:: powerplant_strategy
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.powerplant_strategy
-    :type: ADVANCED_FIXED_WING_POWERPLANT_STRATEGY
+    :type: AdvancedFixedWingPowerplantStrategy
 
     Gets or sets the powerplant strategy type.
 

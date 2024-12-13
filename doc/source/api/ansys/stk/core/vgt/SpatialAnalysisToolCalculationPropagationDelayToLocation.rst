@@ -48,7 +48,7 @@ Property detail
 
 .. py:property:: distance
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolCalculationPropagationDelayToLocation.distance
-    :type: DISTANCE_TO_LOCATION_TYPE
+    :type: DistanceToLocationType
 
     The Volume Calc range distance types.
 
@@ -72,7 +72,7 @@ Property detail
 
 .. py:property:: speed_type
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolCalculationPropagationDelayToLocation.speed_type
-    :type: RANGE_SPEED_TYPE
+    :type: RangeSpeedType
 
     The Volume Calc range speed types.
 

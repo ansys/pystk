@@ -76,13 +76,13 @@ Property detail
 
 .. py:property:: line_style
     :canonical: ansys.stk.core.stkobjects.SensorGraphics.line_style
-    :type: LINE_STYLE
+    :type: LineStyle
 
     Select the line style in which sensor 2D graphics display from the AgELineStyle enumeration.
 
 .. py:property:: line_width
     :canonical: ansys.stk.core.stkobjects.SensorGraphics.line_width
-    :type: LINE_WIDTH
+    :type: LineWidth
 
     Select the line width in which sensor 2D graphics display from the AgELineWidth enumeration.
 

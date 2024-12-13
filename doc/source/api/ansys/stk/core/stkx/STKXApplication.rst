@@ -127,7 +127,7 @@ Property detail
 
 .. py:property:: logging_mode
     :canonical: ansys.stk.core.stkx.STKXApplication.logging_mode
-    :type: LOGGING_MODE
+    :type: LoggingMode
 
     Controls the log file generation, and if the log file is deleted or not on application exit.
 
@@ -236,7 +236,7 @@ Method detail
 
 
 
-.. py:method:: execute_multiple_commands(self, connect_commands: list, action: EXECUTE_MULTIPLE_COMMANDS_MODE) -> ExecuteMultipleCommandsResult
+.. py:method:: execute_multiple_commands(self, connect_commands: list, action: ExecuteMultipleCommandsMode) -> ExecuteMultipleCommandsResult
     :canonical: ansys.stk.core.stkx.STKXApplication.execute_multiple_commands
 
     Execute multiple CONNECT actions. The method throws an exception if any of the specified commands have failed.
@@ -244,20 +244,20 @@ Method detail
     :Parameters:
 
     **connect_commands** : :obj:`~list`
-    **action** : :obj:`~EXECUTE_MULTIPLE_COMMANDS_MODE`
+    **action** : :obj:`~ExecuteMultipleCommandsMode`
 
     :Returns:
 
         :obj:`~ExecuteMultipleCommandsResult`
 
-.. py:method:: is_feature_available(self, feature_code: FEATURE_CODES) -> bool
+.. py:method:: is_feature_available(self, feature_code: FeatureCodes) -> bool
     :canonical: ansys.stk.core.stkx.STKXApplication.is_feature_available
 
     Return true if the specified feature is available.
 
     :Parameters:
 
-    **feature_code** : :obj:`~FEATURE_CODES`
+    **feature_code** : :obj:`~FeatureCodes`
 
     :Returns:
 

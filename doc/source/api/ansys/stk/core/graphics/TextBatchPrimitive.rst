@@ -91,7 +91,7 @@ Property detail
 
 .. py:property:: set_hint
     :canonical: ansys.stk.core.graphics.TextBatchPrimitive.set_hint
-    :type: SET_HINT
+    :type: SetHint
 
     Gets the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with.
 
@@ -198,7 +198,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_with_optional_parameters_and_render_pass(self, positions: list, text: list, optional_parameters: TextBatchPrimitiveOptionalParameters, render_pass_hint: RENDER_PASS_HINT) -> None
+.. py:method:: set_with_optional_parameters_and_render_pass(self, positions: list, text: list, optional_parameters: TextBatchPrimitiveOptionalParameters, render_pass_hint: RenderPassHint) -> None
     :canonical: ansys.stk.core.graphics.TextBatchPrimitive.set_with_optional_parameters_and_render_pass
 
     Define the positions, text, and optional parameters of strings in a text batch. The strings are rendered in the primitive's reference frame. renderPassHint is provided for efficiency.
@@ -208,7 +208,7 @@ Method detail
     **positions** : :obj:`~list`
     **text** : :obj:`~list`
     **optional_parameters** : :obj:`~TextBatchPrimitiveOptionalParameters`
-    **render_pass_hint** : :obj:`~RENDER_PASS_HINT`
+    **render_pass_hint** : :obj:`~RenderPassHint`
 
     :Returns:
 
@@ -245,7 +245,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_cartographic_with_optional_parameters_and_render_pass(self, central_body: str, positions: list, text: list, optional_parameters: TextBatchPrimitiveOptionalParameters, render_pass_hint: RENDER_PASS_HINT) -> None
+.. py:method:: set_cartographic_with_optional_parameters_and_render_pass(self, central_body: str, positions: list, text: list, optional_parameters: TextBatchPrimitiveOptionalParameters, render_pass_hint: RenderPassHint) -> None
     :canonical: ansys.stk.core.graphics.TextBatchPrimitive.set_cartographic_with_optional_parameters_and_render_pass
 
     For convenience. Defines the positions, text, and optional parameters of strings in a text batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling Set.
@@ -256,7 +256,7 @@ Method detail
     **positions** : :obj:`~list`
     **text** : :obj:`~list`
     **optional_parameters** : :obj:`~TextBatchPrimitiveOptionalParameters`
-    **render_pass_hint** : :obj:`~RENDER_PASS_HINT`
+    **render_pass_hint** : :obj:`~RenderPassHint`
 
     :Returns:
 
@@ -277,7 +277,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_partial_with_indices_order(self, positions: list, text: list, indices: list, indices_order_hint: PRIMITIVE_INDICES_ORDER_HINT) -> None
+.. py:method:: set_partial_with_indices_order(self, positions: list, text: list, indices: list, indices_order_hint: PrimitiveIndicesOrderHint) -> None
     :canonical: ansys.stk.core.graphics.TextBatchPrimitive.set_partial_with_indices_order
 
     Update a subset of positions and/or text in a text batch.
@@ -287,7 +287,7 @@ Method detail
     **positions** : :obj:`~list`
     **text** : :obj:`~list`
     **indices** : :obj:`~list`
-    **indices_order_hint** : :obj:`~PRIMITIVE_INDICES_ORDER_HINT`
+    **indices_order_hint** : :obj:`~PrimitiveIndicesOrderHint`
 
     :Returns:
 
@@ -309,7 +309,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_partial_with_optional_parameters_indices_order_and_render_pass(self, positions: list, text: list, optional_parameters: TextBatchPrimitiveOptionalParameters, indices: list, indices_order_hint: PRIMITIVE_INDICES_ORDER_HINT, render_pass_hint: RENDER_PASS_HINT) -> None
+.. py:method:: set_partial_with_optional_parameters_indices_order_and_render_pass(self, positions: list, text: list, optional_parameters: TextBatchPrimitiveOptionalParameters, indices: list, indices_order_hint: PrimitiveIndicesOrderHint, render_pass_hint: RenderPassHint) -> None
     :canonical: ansys.stk.core.graphics.TextBatchPrimitive.set_partial_with_optional_parameters_indices_order_and_render_pass
 
     Update a subset of positions, text, and/or optional per-string parameters in a text batch.
@@ -320,8 +320,8 @@ Method detail
     **text** : :obj:`~list`
     **optional_parameters** : :obj:`~TextBatchPrimitiveOptionalParameters`
     **indices** : :obj:`~list`
-    **indices_order_hint** : :obj:`~PRIMITIVE_INDICES_ORDER_HINT`
-    **render_pass_hint** : :obj:`~RENDER_PASS_HINT`
+    **indices_order_hint** : :obj:`~PrimitiveIndicesOrderHint`
+    **render_pass_hint** : :obj:`~RenderPassHint`
 
     :Returns:
 
@@ -343,7 +343,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_partial_cartographic_with_indices_order(self, central_body: str, positions: list, text: list, indices: list, indices_order_hint: PRIMITIVE_INDICES_ORDER_HINT) -> None
+.. py:method:: set_partial_cartographic_with_indices_order(self, central_body: str, positions: list, text: list, indices: list, indices_order_hint: PrimitiveIndicesOrderHint) -> None
     :canonical: ansys.stk.core.graphics.TextBatchPrimitive.set_partial_cartographic_with_indices_order
 
     For convenience. Updates a subset of positions and/or text in a text batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial.
@@ -354,7 +354,7 @@ Method detail
     **positions** : :obj:`~list`
     **text** : :obj:`~list`
     **indices** : :obj:`~list`
-    **indices_order_hint** : :obj:`~PRIMITIVE_INDICES_ORDER_HINT`
+    **indices_order_hint** : :obj:`~PrimitiveIndicesOrderHint`
 
     :Returns:
 
@@ -377,7 +377,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_partial_cartographic_with_optional_parameters_indices_order_and_render_pass(self, central_body: str, positions: list, text: list, optional_parameters: TextBatchPrimitiveOptionalParameters, indices: list, indices_order_hint: PRIMITIVE_INDICES_ORDER_HINT, render_pass_hint: RENDER_PASS_HINT) -> None
+.. py:method:: set_partial_cartographic_with_optional_parameters_indices_order_and_render_pass(self, central_body: str, positions: list, text: list, optional_parameters: TextBatchPrimitiveOptionalParameters, indices: list, indices_order_hint: PrimitiveIndicesOrderHint, render_pass_hint: RenderPassHint) -> None
     :canonical: ansys.stk.core.graphics.TextBatchPrimitive.set_partial_cartographic_with_optional_parameters_indices_order_and_render_pass
 
     For convenience. Updates a subset of positions, text, and/or per-string parameters in a text batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial.
@@ -389,8 +389,8 @@ Method detail
     **text** : :obj:`~list`
     **optional_parameters** : :obj:`~TextBatchPrimitiveOptionalParameters`
     **indices** : :obj:`~list`
-    **indices_order_hint** : :obj:`~PRIMITIVE_INDICES_ORDER_HINT`
-    **render_pass_hint** : :obj:`~RENDER_PASS_HINT`
+    **indices_order_hint** : :obj:`~PrimitiveIndicesOrderHint`
+    **render_pass_hint** : :obj:`~RenderPassHint`
 
     :Returns:
 

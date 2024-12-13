@@ -46,7 +46,7 @@ Property detail
 
 .. py:property:: quadrant
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPlaneQuadrant.quadrant
-    :type: PLANE_QUADRANT_TYPE
+    :type: PlaneQuadrantType
 
     Specify a quadrant.
 

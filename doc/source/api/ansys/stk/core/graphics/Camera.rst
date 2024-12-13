@@ -151,7 +151,7 @@ Property detail
 
 .. py:property:: constrained_up_axis
     :canonical: ansys.stk.core.graphics.Camera.constrained_up_axis
-    :type: CONSTRAINED_UP_AXIS
+    :type: ConstrainedUpAxis
 
     Gets or sets the axis to constrain the up vector to.
 
@@ -277,7 +277,7 @@ Method detail
 
 
 
-.. py:method:: visibility_test(self, reference_frame: IVectorGeometryToolSystem, sphere: BoundingSphere) -> VISIBILITY
+.. py:method:: visibility_test(self, reference_frame: IVectorGeometryToolSystem, sphere: BoundingSphere) -> Visibility
     :canonical: ansys.stk.core.graphics.Camera.visibility_test
 
     Get the visibility of a sphere against the view frustum and any occluding central bodies.
@@ -289,7 +289,7 @@ Method detail
 
     :Returns:
 
-        :obj:`~VISIBILITY`
+        :obj:`~Visibility`
 
 .. py:method:: cartographic_to_window(self, central_body: str, position: list) -> list
     :canonical: ansys.stk.core.graphics.Camera.cartographic_to_window

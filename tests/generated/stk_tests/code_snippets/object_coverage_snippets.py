@@ -37,10 +37,10 @@ class ObjectCoverageSnippets(CodeSnippetsTestBase):
     # region SetObjectCoverageCustomTimeIntervalToLightingTimeOfAnObject
     def test_SetObjectCoverageCustomTimeIntervalToLightingTimeOfAnObject(self):
         scenario: "IStkObject" = TestBase.Application.current_scenario
-        aircraft: "IStkObject" = scenario.children.new(STK_OBJECT_TYPE.AIRCRAFT, "UAV")
-        aircraft.children.new(STK_OBJECT_TYPE.SENSOR, "UAV_Camera")
+        aircraft: "IStkObject" = scenario.children.new(STKObjectType.AIRCRAFT, "UAV")
+        aircraft.children.new(STKObjectType.SENSOR, "UAV_Camera")
 
-        areaTarget: "IStkObject" = scenario.children.new(STK_OBJECT_TYPE.AREA_TARGET, "Airspace")
+        areaTarget: "IStkObject" = scenario.children.new(STKObjectType.AREA_TARGET, "Airspace")
 
         try:
             self.SetObjectCoverageCustomTimeIntervalToLightingTimeOfAnObject(TestBase.Application)

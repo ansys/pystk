@@ -28,7 +28,7 @@ class AreaTargetSnippets(CodeSnippetsTestBase):
     def setUp(self):
         self.m_Object = clr.CastAs(
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-                STK_OBJECT_TYPE.AREA_TARGET, AreaTargetSnippets.m_DefaultName
+                STKObjectType.AREA_TARGET, AreaTargetSnippets.m_DefaultName
             ),
             AreaTarget,
         )
@@ -38,7 +38,7 @@ class AreaTargetSnippets(CodeSnippetsTestBase):
     # region TestTearDown
     def tearDown(self):
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(
-            STK_OBJECT_TYPE.AREA_TARGET, AreaTargetSnippets.m_DefaultName
+            STKObjectType.AREA_TARGET, AreaTargetSnippets.m_DefaultName
         )
         self.m_Object = None
 
@@ -56,7 +56,7 @@ class AreaTargetSnippets(CodeSnippetsTestBase):
         # Create the AreaTarget on the current scenario central body (use
         # NewOnCentralBody to specify explicitly the central body)
         areaTarget: "AreaTarget" = clr.CastAs(
-            root.current_scenario.children.new(STK_OBJECT_TYPE.AREA_TARGET, "MyAreaTarget"), AreaTarget
+            root.current_scenario.children.new(STKObjectType.AREA_TARGET, "MyAreaTarget"), AreaTarget
         )
 
     # endregion
@@ -69,7 +69,7 @@ class AreaTargetSnippets(CodeSnippetsTestBase):
         # By using the fine grained interfaces,
         # BeginUpdate/EndUpdate prevent intermediate redraws
         root.begin_update()
-        areaTarget.area_type = AREA_TYPE.PATTERN
+        areaTarget.area_type = AreaType.PATTERN
         patterns: "AreaTypePatternCollection" = clr.CastAs(areaTarget.area_type_data, AreaTypePatternCollection)
         patterns.add(40.04, -76.304)
         patterns.add(40.337, -75.922)
@@ -100,7 +100,7 @@ class AreaTargetSnippets(CodeSnippetsTestBase):
         # By using the fine grained interfaces,
         # BeginUpdate/EndUpdate prevent intermediate redraws
         root.begin_update()
-        areaTarget.area_type = AREA_TYPE.ELLIPSE
+        areaTarget.area_type = AreaType.ELLIPSE
         ellipse: "AreaTypeEllipse" = clr.CastAs(areaTarget.area_type_data, AreaTypeEllipse)
         ellipse.semi_major_axis = 85.25  # in km (distance dimension)
         ellipse.semi_minor_axis = 80.75  # in km (distance dimension)
@@ -125,7 +125,7 @@ class AreaTargetSnippets(CodeSnippetsTestBase):
         self.ListAllPointsInAnAreaTarget(self.m_Object)
 
     def ListAllPointsInAnAreaTarget(self, areaTarget: "AreaTarget"):
-        if areaTarget.area_type == AREA_TYPE.PATTERN:
+        if areaTarget.area_type == AreaType.PATTERN:
             # Get AreaTypePatternCollection interface from AreaTypeData
             patternPoints: "AreaTypePatternCollection" = clr.CastAs(
                 areaTarget.area_type_data, AreaTypePatternCollection

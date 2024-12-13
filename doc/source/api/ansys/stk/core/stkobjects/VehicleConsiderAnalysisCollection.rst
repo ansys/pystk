@@ -106,27 +106,27 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, param_type: VEHICLE_CONSIDER_ANALYSIS_TYPE) -> VehicleConsiderAnalysisCollectionElement
+.. py:method:: add(self, param_type: VehicleConsiderAnalysisType) -> VehicleConsiderAnalysisCollectionElement
     :canonical: ansys.stk.core.stkobjects.VehicleConsiderAnalysisCollection.add
 
     Add a new element to the collection.
 
     :Parameters:
 
-    **param_type** : :obj:`~VEHICLE_CONSIDER_ANALYSIS_TYPE`
+    **param_type** : :obj:`~VehicleConsiderAnalysisType`
 
     :Returns:
 
         :obj:`~VehicleConsiderAnalysisCollectionElement`
 
-.. py:method:: remove_by_type(self, param_type: VEHICLE_CONSIDER_ANALYSIS_TYPE) -> None
+.. py:method:: remove_by_type(self, param_type: VehicleConsiderAnalysisType) -> None
     :canonical: ansys.stk.core.stkobjects.VehicleConsiderAnalysisCollection.remove_by_type
 
     Remove an element from the collection using the AgEVeConsiderAnalysisType type.
 
     :Parameters:
 
-    **param_type** : :obj:`~VEHICLE_CONSIDER_ANALYSIS_TYPE`
+    **param_type** : :obj:`~VehicleConsiderAnalysisType`
 
     :Returns:
 

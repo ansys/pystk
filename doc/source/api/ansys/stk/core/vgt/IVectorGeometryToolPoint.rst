@@ -46,7 +46,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPoint.type
-    :type: POINT_TYPE
+    :type: PointType
 
     Returns a type of the point object.
 

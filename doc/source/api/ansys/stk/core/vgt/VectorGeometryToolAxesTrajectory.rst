@@ -54,7 +54,7 @@ Property detail
 
 .. py:property:: trajectory_axes_type
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesTrajectory.trajectory_axes_type
-    :type: TRAJECTORY_AXES_COORDINATES_TYPE
+    :type: TrajectoryAxesCoordinatesType
 
     Specify a type of the trajectory's coordinate frame.
 

@@ -154,40 +154,40 @@ Method detail
 
 
 
-.. py:method:: enable_control_parameter(self, param: CONTROL_ADVANCED) -> None
+.. py:method:: enable_control_parameter(self, param: ControlAdvanced) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSHold.enable_control_parameter
 
     Enable or disables the specified control parameter.
 
     :Parameters:
 
-    **param** : :obj:`~CONTROL_ADVANCED`
+    **param** : :obj:`~ControlAdvanced`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: disable_control_parameter(self, param: CONTROL_ADVANCED) -> None
+.. py:method:: disable_control_parameter(self, param: ControlAdvanced) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSHold.disable_control_parameter
 
     Disables the specified control parameter.
 
     :Parameters:
 
-    **param** : :obj:`~CONTROL_ADVANCED`
+    **param** : :obj:`~ControlAdvanced`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_control_parameter_enabled(self, param: CONTROL_ADVANCED) -> bool
+.. py:method:: is_control_parameter_enabled(self, param: ControlAdvanced) -> bool
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSHold.is_control_parameter_enabled
 
     Sees if the specified control is enabled.
 
     :Parameters:
 
-    **param** : :obj:`~CONTROL_ADVANCED`
+    **param** : :obj:`~ControlAdvanced`
 
     :Returns:
 

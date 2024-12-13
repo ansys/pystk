@@ -92,7 +92,7 @@ Property detail
 
 .. py:property:: line_width
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DGroundEllipsesElement.line_width
-    :type: LINE_WIDTH
+    :type: LineWidth
 
     Line width of ellipses in the set.
 

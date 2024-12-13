@@ -112,7 +112,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: load_with_string_uri_and_up_axis(self, uri: str, up_axis: MODEL_UP_AXIS) -> None
+.. py:method:: load_with_string_uri_and_up_axis(self, uri: str, up_axis: ModelUpAxis) -> None
     :canonical: ansys.stk.core.graphics.ModelPrimitive.load_with_string_uri_and_up_axis
 
     For convenience. Loads a `COLLADA <https://www.khronos.org/collada/>`_ (DAE) or AGI `MDL <https://support.agi.com/3d-models>`_ (MDL) model using a file path.
@@ -120,7 +120,7 @@ Method detail
     :Parameters:
 
     **uri** : :obj:`~str`
-    **up_axis** : :obj:`~MODEL_UP_AXIS`
+    **up_axis** : :obj:`~ModelUpAxis`
 
     :Returns:
 

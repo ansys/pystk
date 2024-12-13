@@ -83,7 +83,7 @@ Property detail
 
 .. py:property:: language_type
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileScriptingTool.language_type
-    :type: LANGUAGE
+    :type: Language
 
     Gets or sets the scripting language being used.
 

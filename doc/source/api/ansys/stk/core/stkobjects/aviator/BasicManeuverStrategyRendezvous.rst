@@ -181,7 +181,7 @@ Property detail
 
 .. py:property:: airspeed_control_mode
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRendezvous.airspeed_control_mode
-    :type: ACCELERATION_PERFORMANCE_MODEL_OVERRIDE
+    :type: AccelerationPerformanceModelOverride
 
     Gets or sets the method to define the aircraft's acceleration performance in formation.
 
@@ -205,7 +205,7 @@ Property detail
 
 .. py:property:: stop_condition
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRendezvous.stop_condition
-    :type: RENDEZVOUS_STOP_CONDITION
+    :type: RendezvousStopCondition
 
     Gets or sets the stopping condition for the maneuver.
 

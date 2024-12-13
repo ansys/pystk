@@ -46,7 +46,7 @@ Property detail
 
 .. py:property:: element_type
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcOrbitDelaunayH.element_type
-    :type: ELEMENT
+    :type: ElementType
 
     Choice of osculating or mean elements.
 

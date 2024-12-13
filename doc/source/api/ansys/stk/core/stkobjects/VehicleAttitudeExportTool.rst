@@ -61,7 +61,7 @@ Property detail
 
 .. py:property:: coordinate_axes_type
     :canonical: ansys.stk.core.stkobjects.VehicleAttitudeExportTool.coordinate_axes_type
-    :type: ATTITUDE_COORDINATE_AXES
+    :type: AttitudeCoordinateAxes
 
     Get the coordinate axes to be used in the file.
 
@@ -79,13 +79,13 @@ Property detail
 
 .. py:property:: include
     :canonical: ansys.stk.core.stkobjects.VehicleAttitudeExportTool.include
-    :type: ATTITUDE_INCLUDE
+    :type: AttitudeInclude
 
     Gets or sets the details to include in the data file.
 
 .. py:property:: version_format
     :canonical: ansys.stk.core.stkobjects.VehicleAttitudeExportTool.version_format
-    :type: EXPORT_TOOL_VERSION_FORMAT
+    :type: ExportToolVersionFormat
 
     Provides the option to generate files compatible with prior versions of STK.
 
@@ -112,14 +112,14 @@ Method detail
 -------------
 
 
-.. py:method:: set_coordinate_axes_type(self, coordinate_axes: ATTITUDE_COORDINATE_AXES) -> None
+.. py:method:: set_coordinate_axes_type(self, coordinate_axes: AttitudeCoordinateAxes) -> None
     :canonical: ansys.stk.core.stkobjects.VehicleAttitudeExportTool.set_coordinate_axes_type
 
     Select the coordinate axes to be used in the file.
 
     :Parameters:
 
-    **coordinate_axes** : :obj:`~ATTITUDE_COORDINATE_AXES`
+    **coordinate_axes** : :obj:`~AttitudeCoordinateAxes`
 
     :Returns:
 

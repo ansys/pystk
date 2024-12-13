@@ -128,7 +128,7 @@ class IStkObjectRootEventGrpcHandler(GrpcEventHandlerImpl):
     def _on_log_message(self, message:str, msgType:int, errorCode:int, fileName:str, lineNo:int, dispID:int) -> None:
         for callback in self._events["OnLogMessage"]._callbacks:
             try:
-                callback(message, AgTypeNameMap["LOG_MESSAGE_TYPE"](msgType), errorCode, fileName, lineNo, AgTypeNameMap["LOG_MESSAGE_DISPLAY_ID"](dispID))
+                callback(message, AgTypeNameMap["LogMessageType"](msgType), errorCode, fileName, lineNo, AgTypeNameMap["LogMessageDisplayID"](dispID))
             except:
                 pass
     
@@ -163,7 +163,7 @@ class IStkObjectRootEventGrpcHandler(GrpcEventHandlerImpl):
     def _on_animation_playback(self, CurrentTime:float, eAction:int, eDirection:int) -> None:
         for callback in self._events["OnAnimationPlayback"]._callbacks:
             try:
-                callback(CurrentTime, AgTypeNameMap["ANIMATION_ACTION_TYPE"](eAction), AgTypeNameMap["ANIMATION_DIRECTION_TYPE"](eDirection))
+                callback(CurrentTime, AgTypeNameMap["AnimationActionType"](eAction), AgTypeNameMap["AnimationDirectionType"](eDirection))
             except:
                 pass
                 
@@ -362,7 +362,7 @@ class ISTKXApplicationEventGrpcHandler(GrpcEventHandlerImpl):
     def _on_log_message(self, message:str, msgType:int, errorCode:int, fileName:str, lineNo:int, dispID:int) -> None:
         for callback in self._events["OnLogMessage"]._callbacks:
             try:
-                callback(message, AgTypeNameMap["LOG_MESSAGE_TYPE"](msgType), errorCode, fileName, lineNo, AgTypeNameMap["LOG_MESSAGE_DISPLAY_ID"](dispID))
+                callback(message, AgTypeNameMap["LogMessageType"](msgType), errorCode, fileName, lineNo, AgTypeNameMap["LogMessageDisplayID"](dispID))
             except:
                 pass
     
@@ -411,7 +411,7 @@ class ISTKXApplicationEventGrpcHandler(GrpcEventHandlerImpl):
     def _on_new_gfx_analysis_ctrl_request(self, SceneID:int, GfxAnalysisMode:int) -> None:
         for callback in self._events["OnNewGfxAnalysisCtrlRequest"]._callbacks:
             try:
-                callback(SceneID, AgTypeNameMap["GRAPHICS_2D_ANALYSIS_MODE"](GfxAnalysisMode))
+                callback(SceneID, AgTypeNameMap["Graphics2DAnalysisMode"](GfxAnalysisMode))
             except:
                 pass
     

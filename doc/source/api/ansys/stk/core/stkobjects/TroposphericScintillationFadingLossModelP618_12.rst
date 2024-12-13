@@ -48,7 +48,7 @@ Property detail
 
 .. py:property:: average_time_choice
     :canonical: ansys.stk.core.stkobjects.TroposphericScintillationFadingLossModelP618_12.average_time_choice
-    :type: TROPOSPHERIC_SCINTILLATION_AVERAGE_TIME_CHOICE_TYPE
+    :type: TroposphericScintillationAverageTimeChoiceType
 
     Gets or sets the TropoScintillation average fade time choice.
 

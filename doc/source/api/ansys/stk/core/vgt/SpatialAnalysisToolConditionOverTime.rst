@@ -46,7 +46,7 @@ Property detail
 
 .. py:property:: duration_type
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolConditionOverTime.duration_type
-    :type: SPATIAL_CONDITION_OVER_TYPE_DURATION_TYPE
+    :type: SpatialConditionOverTypeDurationType
 
     Sets/Returns the lighting conditions.
 

@@ -88,21 +88,21 @@ Method detail
         :obj:`~IProcedure`
 
 
-.. py:method:: add(self, site_type: SITE_TYPE, procedure_type: PROCEDURE_TYPE) -> IProcedure
+.. py:method:: add(self, site_type: SiteType, procedure_type: ProcedureType) -> IProcedure
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureCollection.add
 
     Add a procedure with the specified site at the end of the current phase.
 
     :Parameters:
 
-    **site_type** : :obj:`~SITE_TYPE`
-    **procedure_type** : :obj:`~PROCEDURE_TYPE`
+    **site_type** : :obj:`~SiteType`
+    **procedure_type** : :obj:`~ProcedureType`
 
     :Returns:
 
         :obj:`~IProcedure`
 
-.. py:method:: add_at_index(self, index: int, site_type: SITE_TYPE, procedure_type: PROCEDURE_TYPE) -> IProcedure
+.. py:method:: add_at_index(self, index: int, site_type: SiteType, procedure_type: ProcedureType) -> IProcedure
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureCollection.add_at_index
 
     Add a procedure with the specified site at the given index.
@@ -110,8 +110,8 @@ Method detail
     :Parameters:
 
     **index** : :obj:`~int`
-    **site_type** : :obj:`~SITE_TYPE`
-    **procedure_type** : :obj:`~PROCEDURE_TYPE`
+    **site_type** : :obj:`~SiteType`
+    **procedure_type** : :obj:`~ProcedureType`
 
     :Returns:
 

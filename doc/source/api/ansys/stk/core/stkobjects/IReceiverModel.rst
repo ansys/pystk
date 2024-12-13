@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.IReceiverModel.type
-    :type: RECEIVER_MODEL_TYPE
+    :type: ReceiverModelType
 
     Gets the receiver model type enumeration.
 

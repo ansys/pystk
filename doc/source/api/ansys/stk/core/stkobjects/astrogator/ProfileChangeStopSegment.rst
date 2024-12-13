@@ -55,7 +55,7 @@ Property detail
 
 .. py:property:: state
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileChangeStopSegment.state
-    :type: STATE
+    :type: StateType
 
     Gets or sets the new state of the targeted stop segment.
 

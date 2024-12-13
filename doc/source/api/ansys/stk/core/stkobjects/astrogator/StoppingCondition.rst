@@ -145,7 +145,7 @@ Property detail
 
 .. py:property:: criterion
     :canonical: ansys.stk.core.stkobjects.astrogator.StoppingCondition.criterion
-    :type: CRITERION
+    :type: Criterion
 
     Specifies the direction from which the stopping condition value must be achieved.
 

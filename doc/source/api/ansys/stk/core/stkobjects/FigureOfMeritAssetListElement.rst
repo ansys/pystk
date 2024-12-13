@@ -40,7 +40,7 @@ Property detail
 
 .. py:property:: method_type
     :canonical: ansys.stk.core.stkobjects.FigureOfMeritAssetListElement.method_type
-    :type: FIGURE_OF_MERIT_NAVIGATION_ACCURACY_METHOD
+    :type: FigureOfMeritNavigationAccuracyMethod
 
     Type of method used to specify range uncertainty.
 

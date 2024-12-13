@@ -70,13 +70,13 @@ Property detail
 
 .. py:property:: mode
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfile.mode
-    :type: PROFILE_MODE
+    :type: ProfileMode
 
     Gets or sets the profile's mode.
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfile.type
-    :type: PROFILE
+    :type: Profile
 
     Return the current profile type.
 

@@ -50,25 +50,25 @@ Property detail
 
 .. py:property:: minification_filter
     :canonical: ansys.stk.core.graphics.TextureFilter2D.minification_filter
-    :type: MINIFICATION_FILTER
+    :type: MinificationFilter
 
     Gets the minification filter used when the pixel being textured maps to an area less than or equal to one texel.
 
 .. py:property:: magnification_filter
     :canonical: ansys.stk.core.graphics.TextureFilter2D.magnification_filter
-    :type: MAGNIFICATION_FILTER
+    :type: MagnificationFilter
 
     Gets the magnification filter used when the pixel being textured maps to an area greater than one texel.
 
 .. py:property:: wrap_s
     :canonical: ansys.stk.core.graphics.TextureFilter2D.wrap_s
-    :type: TEXTURE_WRAP
+    :type: TextureWrap
 
     Gets the texture wrap for the s direction.
 
 .. py:property:: wrap_t
     :canonical: ansys.stk.core.graphics.TextureFilter2D.wrap_t
-    :type: TEXTURE_WRAP
+    :type: TextureWrap
 
     Gets the texture wrap for the t direction.
 

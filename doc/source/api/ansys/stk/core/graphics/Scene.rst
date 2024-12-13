@@ -139,7 +139,7 @@ Property detail
 
 .. py:property:: anti_aliasing
     :canonical: ansys.stk.core.graphics.Scene.anti_aliasing
-    :type: ANTI_ALIASING_METHOD
+    :type: AntiAliasingMethod
 
     Gets or sets the multisample anti-aliasing (MSAA) option for this scene. As the level of anti-aliasing increases, performance will generally decrease, but the quality of the anti-aliasing will improve.
 

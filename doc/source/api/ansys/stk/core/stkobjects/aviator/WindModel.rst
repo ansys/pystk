@@ -55,7 +55,7 @@ Property detail
 
 .. py:property:: wind_model_type
     :canonical: ansys.stk.core.stkobjects.aviator.WindModel.wind_model_type
-    :type: WIND_MODEL_TYPE
+    :type: WindModelType
 
     Gets or sets the wind model type.
 
@@ -67,7 +67,7 @@ Property detail
 
 .. py:property:: wind_model_source
     :canonical: ansys.stk.core.stkobjects.aviator.WindModel.wind_model_source
-    :type: WIND_ATMOS_MODEL_SOURCE
+    :type: WindAtmosModelSource
 
     Gets or sets the wind model source.
 

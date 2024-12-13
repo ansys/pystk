@@ -93,13 +93,13 @@ Property detail
 
 .. py:property:: color_mode
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.color_mode
-    :type: SPACE_ENVIRONMENT_MAGNETIC_FIELD_COLOR_MODE
+    :type: SpaceEnvironmentMagneticFieldColorMode
 
     Mode by which color is assigned.
 
 .. py:property:: color_scale
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.color_scale
-    :type: SPACE_ENVIRONMENT_MAGNETIC_FIELD_COLOR_SCALE_TYPE
+    :type: SpaceEnvironmentMagneticFieldColorScaleType
 
     Scaling of magnetic field to use when assigning color/translucency.
 
@@ -123,13 +123,13 @@ Property detail
 
 .. py:property:: line_style
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.line_style
-    :type: LINE_STYLE
+    :type: LineStyle
 
     Magnetic field line style.
 
 .. py:property:: line_width
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.line_width
-    :type: LINE_WIDTH
+    :type: LineWidth
 
     Magnetic field line width.
 
@@ -165,13 +165,13 @@ Property detail
 
 .. py:property:: main_field
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.main_field
-    :type: SPACE_ENVIRONMENT_MAGNETIC_MAIN_FIELD
+    :type: SpaceEnvironmentMagneticMainField
 
     Gets or sets the main magnetic field.
 
 .. py:property:: external_field
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.external_field
-    :type: SPACE_ENVIRONMENT_MAGNETIC_EXTERNAL_FIELD
+    :type: SpaceEnvironmentMagneticExternalField
 
     External magnetic field.
 

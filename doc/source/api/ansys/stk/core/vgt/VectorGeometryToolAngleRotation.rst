@@ -54,7 +54,7 @@ Property detail
 
 .. py:property:: reference_direction
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAngleRotation.reference_direction
-    :type: PRINCIPAL_AXIS_OF_ROTATION_TYPE
+    :type: PrincipalAxisOfRotationType
 
     Specify a rotation direction.
 

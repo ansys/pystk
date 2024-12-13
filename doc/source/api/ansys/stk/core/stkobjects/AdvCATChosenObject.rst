@@ -58,7 +58,7 @@ Property detail
 
 .. py:property:: ellipsoid_class
     :canonical: ansys.stk.core.stkobjects.AdvCATChosenObject.ellipsoid_class
-    :type: ADVCAT_ELLIPSOID_CLASS_TYPE
+    :type: AdvCATEllipsoidClassType
 
     Determine Ellipsoid Sizing method class.
 

@@ -58,7 +58,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxes.type
-    :type: AXES_TYPE
+    :type: AxesType
 
     Returns a type of the axes object.
 

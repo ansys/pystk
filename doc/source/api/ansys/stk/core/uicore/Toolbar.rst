@@ -60,7 +60,7 @@ Property detail
 
 .. py:property:: float_state
     :canonical: ansys.stk.core.uicore.Toolbar.float_state
-    :type: WINDOW_ARRANGE_STATE
+    :type: WindowArrangeState
 
     The float state.
 

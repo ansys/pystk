@@ -58,7 +58,7 @@ Property detail
 
 .. py:property:: coordinate_system_type
     :canonical: ansys.stk.core.stkobjects.OrbitStateMixedSpherical.coordinate_system_type
-    :type: COORDINATE_SYSTEM
+    :type: CoordinateSystem
 
     Gets or sets the coordinate system being used.
 
@@ -88,7 +88,7 @@ Property detail
 
 .. py:property:: flight_path_angle_type
     :canonical: ansys.stk.core.stkobjects.OrbitStateMixedSpherical.flight_path_angle_type
-    :type: MIXED_SPHERICAL_FLIGHT_PATH_ANGLE_TYPE
+    :type: MixedSphericalFlightPathAngleType
 
     Gets or sets the Flight Path Angle type can be Vertical or Horizontal.
 

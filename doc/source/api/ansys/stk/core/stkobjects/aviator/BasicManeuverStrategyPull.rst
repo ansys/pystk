@@ -46,7 +46,7 @@ Property detail
 
 .. py:property:: active_mode
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPull.active_mode
-    :type: PULL_MODE
+    :type: PullMode
 
     Gets or sets the pull mode for the pull basic maneuver strategy.
 
@@ -58,7 +58,7 @@ Property detail
 
 .. py:property:: pull_g_mode
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPull.pull_g_mode
-    :type: PERFORMANCE_MODEL_OVERRIDE
+    :type: PerformanceModelOverride
 
     Gets or sets the pull G mode for a pull basic maneuver strategy.
 

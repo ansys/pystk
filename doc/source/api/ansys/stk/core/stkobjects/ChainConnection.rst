@@ -68,7 +68,7 @@ Property detail
 
 .. py:property:: parent_platform_restriction
     :canonical: ansys.stk.core.stkobjects.ChainConnection.parent_platform_restriction
-    :type: CHAIN_PARENT_PLATFORM_RESTRICTION
+    :type: ChainParentPlatformRestriction
 
     Gets or sets the parent platform restriction for a connection.
 

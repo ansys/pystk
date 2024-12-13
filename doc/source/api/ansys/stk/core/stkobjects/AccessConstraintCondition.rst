@@ -38,7 +38,7 @@ Property detail
 
 .. py:property:: condition
     :canonical: ansys.stk.core.stkobjects.AccessConstraintCondition.condition
-    :type: CONSTRAINT_LIGHTING
+    :type: ConstraintLighting
 
     Condition uses the AgECnstrLighting enum.
 

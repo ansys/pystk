@@ -59,7 +59,7 @@ Property detail
 
 .. py:property:: boolean_operation
     :canonical: ansys.stk.core.vgt.CalculationToolConditionCombined.boolean_operation
-    :type: CONDITION_COMBINED_OPERATION_TYPE
+    :type: ConditionCombinedOperationType
 
     Get the operation from the condition that determines how the conditions are combined. The operation can be set to AND, OR, XOR, MINUS.
 

@@ -34,14 +34,13 @@ class FigureOfMeritSnipets(CodeSnippetsTestBase):
     def setUp(self):
         self.m_CovDefObject = clr.CastAs(
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-                STK_OBJECT_TYPE.COVERAGE_DEFINITION, FigureOfMeritSnipets.m_CovDefDefaultName
+                STKObjectType.COVERAGE_DEFINITION, FigureOfMeritSnipets.m_CovDefDefaultName
             ),
             CoverageDefinition,
         )
         covdefObject: "IStkObject" = clr.CastAs(self.m_CovDefObject, IStkObject)
         FigureOfMeritSnipets.m_Object = clr.CastAs(
-            covdefObject.children.new(STK_OBJECT_TYPE.FIGURE_OF_MERIT, FigureOfMeritSnipets.m_DefaultName),
-            FigureOfMerit,
+            covdefObject.children.new(STKObjectType.FIGURE_OF_MERIT, FigureOfMeritSnipets.m_DefaultName), FigureOfMerit
         )
 
     # endregion
@@ -49,14 +48,14 @@ class FigureOfMeritSnipets(CodeSnippetsTestBase):
     # region TestTearDown
     def tearDown(self):
         covdefObject: "IStkObject" = clr.CastAs(self.m_CovDefObject, IStkObject)
-        covdefObject.children.unload(STK_OBJECT_TYPE.FIGURE_OF_MERIT, FigureOfMeritSnipets.m_DefaultName)
+        covdefObject.children.unload(STKObjectType.FIGURE_OF_MERIT, FigureOfMeritSnipets.m_DefaultName)
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(
-            STK_OBJECT_TYPE.COVERAGE_DEFINITION, FigureOfMeritSnipets.m_CovDefDefaultName
+            STKObjectType.COVERAGE_DEFINITION, FigureOfMeritSnipets.m_CovDefDefaultName
         )
         FigureOfMeritSnipets.m_Object = None
         self.m_CovDefObject = None
-        if TestBase.Application.current_scenario.children.contains(STK_OBJECT_TYPE.FACILITY, "Facility1"):
-            TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.FACILITY, "Facility1")
+        if TestBase.Application.current_scenario.children.contains(STKObjectType.FACILITY, "Facility1"):
+            TestBase.Application.current_scenario.children.unload(STKObjectType.FACILITY, "Facility1")
 
     # endregion
 
@@ -70,7 +69,7 @@ class FigureOfMeritSnipets(CodeSnippetsTestBase):
 
         # Create the figure of merit
         fom: "FigureOfMerit" = clr.CastAs(
-            covdefObject.children.new(STK_OBJECT_TYPE.FIGURE_OF_MERIT, "MyFigureOfMerit"), FigureOfMerit
+            covdefObject.children.new(STKObjectType.FIGURE_OF_MERIT, "MyFigureOfMerit"), FigureOfMerit
         )
 
     # endregion
@@ -81,13 +80,13 @@ class FigureOfMeritSnipets(CodeSnippetsTestBase):
 
     def ConfigureAccessDurationFigureOfMerit(self, fom: "FigureOfMerit"):
         # Set figure of merit definition to ACCESS_DURATION
-        fom.set_definition_type(FIGURE_OF_MERIT_DEFINITION_TYPE.ACCESS_DURATION)
+        fom.set_definition_type(FigureOfMeritDefinitionType.ACCESS_DURATION)
 
         # Get IFigureOfMeritDefinitionCompute interface
         defComp: "IFigureOfMeritDefinitionCompute" = clr.CastAs(fom.definition, IFigureOfMeritDefinitionCompute)
-        if defComp.is_compute_type_supported(FIGURE_OF_MERIT_COMPUTE.PERCENT_ABOVE):
+        if defComp.is_compute_type_supported(FigureOfMeritCompute.PERCENT_ABOVE):
             # Set Compute type to supported compute option
-            defComp.set_compute_type(FIGURE_OF_MERIT_COMPUTE.PERCENT_ABOVE)
+            defComp.set_compute_type(FigureOfMeritCompute.PERCENT_ABOVE)
 
             # Get compute option compute interface
             fomData: "FigureOfMeritDefinitionDataPercentLevel" = clr.CastAs(
@@ -103,13 +102,13 @@ class FigureOfMeritSnipets(CodeSnippetsTestBase):
 
     def ConfigureCoverageTimeFigureOfMerit(self, fom: "FigureOfMerit"):
         # Set figure of merit definition to COVERAGE_TIME
-        fom.set_definition_type(FIGURE_OF_MERIT_DEFINITION_TYPE.COVERAGE_TIME)
+        fom.set_definition_type(FigureOfMeritDefinitionType.COVERAGE_TIME)
 
         # Get IFigureOfMeritDefinitionCompute interface
         defComp: "IFigureOfMeritDefinitionCompute" = clr.CastAs(fom.definition, IFigureOfMeritDefinitionCompute)
-        if defComp.is_compute_type_supported(FIGURE_OF_MERIT_COMPUTE.TOTAL_TIME_ABOVE):
+        if defComp.is_compute_type_supported(FigureOfMeritCompute.TOTAL_TIME_ABOVE):
             # Set Compute type to supported compute option
-            defComp.set_compute_type(FIGURE_OF_MERIT_COMPUTE.TOTAL_TIME_ABOVE)
+            defComp.set_compute_type(FigureOfMeritCompute.TOTAL_TIME_ABOVE)
 
             # Get compute option compute interface
             fomData: "FigureOfMeritDefinitionDataMinimumNumberOfAssets" = clr.CastAs(
@@ -125,7 +124,7 @@ class FigureOfMeritSnipets(CodeSnippetsTestBase):
 
     def SetFigureOfMeritDefToAccessConstraintByEnum(self, fom: "FigureOfMerit"):
         acd: "FigureOfMeritDefinitionAccessConstraint" = fom.set_access_constraint_definition(
-            FIGURE_OF_MERIT_CONSTRAINT_NAME.AZIMUTH_RATE
+            FigureOfMeritConstraintName.AZIMUTH_RATE
         )
 
     # endregion
@@ -140,8 +139,8 @@ class FigureOfMeritSnipets(CodeSnippetsTestBase):
         )
 
         # Confiure access constraint properties
-        defAccessCnstr.set_compute_type(FIGURE_OF_MERIT_COMPUTE.MAXIMUM)
-        defAccessCnstr.across_assets = FIGURE_OF_MERIT_ACROSS_ASSETS.MINIMUM
+        defAccessCnstr.set_compute_type(FigureOfMeritCompute.MAXIMUM)
+        defAccessCnstr.across_assets = FigureOfMeritAcrossAssets.MINIMUM
         defAccessCnstr.time_step = 60.0
 
     # endregion
@@ -152,7 +151,7 @@ class FigureOfMeritSnipets(CodeSnippetsTestBase):
 
     def ConfigureFigureOfMeritDefToAccessConstraint(self, fom: "FigureOfMerit"):
         # Set access constraint definition to altitude
-        fom.set_access_constraint_definition(FIGURE_OF_MERIT_CONSTRAINT_NAME.ALTITUDE)
+        fom.set_access_constraint_definition(FigureOfMeritConstraintName.ALTITUDE)
 
         # Get FigureOfMeritDefinitionAccessConstraint interface
         defAccessCnstr: "FigureOfMeritDefinitionAccessConstraint" = clr.CastAs(
@@ -160,8 +159,8 @@ class FigureOfMeritSnipets(CodeSnippetsTestBase):
         )
 
         # Confiure access constraint properties
-        defAccessCnstr.set_compute_type(FIGURE_OF_MERIT_COMPUTE.MAXIMUM)
-        defAccessCnstr.across_assets = FIGURE_OF_MERIT_ACROSS_ASSETS.MINIMUM
+        defAccessCnstr.set_compute_type(FigureOfMeritCompute.MAXIMUM)
+        defAccessCnstr.across_assets = FigureOfMeritAcrossAssets.MINIMUM
         defAccessCnstr.time_step = 60.0
 
     # endregion
@@ -200,8 +199,8 @@ class FigureOfMeritSnipets(CodeSnippetsTestBase):
 
     def ConfigureFigureOfMeritContours(self, contours: "IFigureOfMeritGraphics2DContours"):
         contours.show_graphics = True
-        contours.contour_type = FIGURE_OF_MERIT_GRAPHICS_2D_CONTOUR_TYPE.SMOOTH_FILL
-        contours.color_method = FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD.EXPLICIT
+        contours.contour_type = FigureOfMeritGraphics2DContourType.SMOOTH_FILL
+        contours.color_method = FigureOfMeritGraphics2DColorMethod.EXPLICIT
 
         # Add level ranges (batch)
         contours.level_attributes.add_level_range(25, 35, 1)
@@ -220,7 +219,7 @@ class FigureOfMeritSnipets(CodeSnippetsTestBase):
 
     def FigureOfMeritDefinitionAgeOfData(self, fom: "FigureOfMerit"):
         # Get the FigureOfMeritDefinitionAgeOfData interface
-        fom.set_definition_type(FIGURE_OF_MERIT_DEFINITION_TYPE.AGE_OF_DATA)
+        fom.set_definition_type(FigureOfMeritDefinitionType.AGE_OF_DATA)
         ageOfData: "FigureOfMeritDefinitionAgeOfData" = clr.CastAs(fom.definition, FigureOfMeritDefinitionAgeOfData)
 
         # Set the minimum number of assets for computing
@@ -261,11 +260,11 @@ class FigureOfMeritSnipets(CodeSnippetsTestBase):
 
     # region FigureOfMeritDefinitionSystemResponseTime
     def test_FigureOfMeritDefinitionSystemResponseTime(self):
-        TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "Facility1")
+        TestBase.Application.current_scenario.children.new(STKObjectType.FACILITY, "Facility1")
         self.FigureOfMeritDefinitionSystemResponseTime(FigureOfMeritSnipets.m_Object)
 
     def FigureOfMeritDefinitionSystemResponseTime(self, fom: "FigureOfMerit"):
-        fom.set_definition_type(FIGURE_OF_MERIT_DEFINITION_TYPE.SYSTEM_RESPONSE_TIME)
+        fom.set_definition_type(FigureOfMeritDefinitionType.SYSTEM_RESPONSE_TIME)
         systemResponseTime: "FigureOfMeritDefinitionSystemResponseTime" = clr.CastAs(
             fom.definition, FigureOfMeritDefinitionSystemResponseTime
         )
@@ -276,11 +275,11 @@ class FigureOfMeritSnipets(CodeSnippetsTestBase):
 
     # region FigureOfMeritDefinitionSystemResponseTimeReset
     def test_FigureOfMeritDefinitionSystemResponseTimeReset(self):
-        TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "Facility1")
+        TestBase.Application.current_scenario.children.new(STKObjectType.FACILITY, "Facility1")
         self.FigureOfMeritDefinitionSystemResponseTimeReset(FigureOfMeritSnipets.m_Object)
 
     def FigureOfMeritDefinitionSystemResponseTimeReset(self, fom: "FigureOfMerit"):
-        fom.set_definition_type(FIGURE_OF_MERIT_DEFINITION_TYPE.SYSTEM_RESPONSE_TIME)
+        fom.set_definition_type(FigureOfMeritDefinitionType.SYSTEM_RESPONSE_TIME)
         systemResponseTime: "FigureOfMeritDefinitionSystemResponseTime" = clr.CastAs(
             fom.definition, FigureOfMeritDefinitionSystemResponseTime
         )

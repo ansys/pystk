@@ -52,7 +52,7 @@ Property detail
 
 .. py:property:: compute_type
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritDefinitionCompute.compute_type
-    :type: FIGURE_OF_MERIT_COMPUTE
+    :type: FigureOfMeritCompute
 
     Type of compute option to be used for navigation accuracy.
 
@@ -73,27 +73,27 @@ Method detail
 -------------
 
 
-.. py:method:: set_compute_type(self, compute_type: FIGURE_OF_MERIT_COMPUTE) -> None
+.. py:method:: set_compute_type(self, compute_type: FigureOfMeritCompute) -> None
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritDefinitionCompute.set_compute_type
 
     Set the type of compute option.
 
     :Parameters:
 
-    **compute_type** : :obj:`~FIGURE_OF_MERIT_COMPUTE`
+    **compute_type** : :obj:`~FigureOfMeritCompute`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_compute_type_supported(self, compute_type: FIGURE_OF_MERIT_COMPUTE) -> bool
+.. py:method:: is_compute_type_supported(self, compute_type: FigureOfMeritCompute) -> bool
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritDefinitionCompute.is_compute_type_supported
 
     Is the type of compute option supported?
 
     :Parameters:
 
-    **compute_type** : :obj:`~FIGURE_OF_MERIT_COMPUTE`
+    **compute_type** : :obj:`~FigureOfMeritCompute`
 
     :Returns:
 

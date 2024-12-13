@@ -70,7 +70,7 @@ Property detail
 
 .. py:property:: direction_type
     :canonical: ansys.stk.core.stkutil.IDirection.direction_type
-    :type: DIRECTION_TYPE
+    :type: DirectionType
 
     Returns the type of direction currently being used.
 
@@ -78,14 +78,14 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: convert_to(self, type: DIRECTION_TYPE) -> IDirection
+.. py:method:: convert_to(self, type: DirectionType) -> IDirection
     :canonical: ansys.stk.core.stkutil.IDirection.convert_to
 
     Change the direction to the type specified.
 
     :Parameters:
 
-    **type** : :obj:`~DIRECTION_TYPE`
+    **type** : :obj:`~DirectionType`
 
     :Returns:
 
@@ -105,7 +105,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: assign_euler(self, b: typing.Any, c: typing.Any, sequence: EULER_DIRECTION_SEQUENCE) -> None
+.. py:method:: assign_euler(self, b: typing.Any, c: typing.Any, sequence: EulerDirectionSequence) -> None
     :canonical: ansys.stk.core.stkutil.IDirection.assign_euler
 
     Set direction using the Euler representation. Params B and C use Angle Dimension.
@@ -114,7 +114,7 @@ Method detail
 
     **b** : :obj:`~typing.Any`
     **c** : :obj:`~typing.Any`
-    **sequence** : :obj:`~EULER_DIRECTION_SEQUENCE`
+    **sequence** : :obj:`~EulerDirectionSequence`
 
     :Returns:
 
@@ -163,27 +163,27 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: query_euler(self, sequence: EULER_DIRECTION_SEQUENCE) -> typing.Tuple[typing.Any, typing.Any]
+.. py:method:: query_euler(self, sequence: EulerDirectionSequence) -> typing.Tuple[typing.Any, typing.Any]
     :canonical: ansys.stk.core.stkutil.IDirection.query_euler
 
     Get direction using the Euler representation. Params B and C use Angle Dimension.
 
     :Parameters:
 
-    **sequence** : :obj:`~EULER_DIRECTION_SEQUENCE`
+    **sequence** : :obj:`~EulerDirectionSequence`
 
     :Returns:
 
         :obj:`~typing.Tuple[typing.Any, typing.Any]`
 
-.. py:method:: query_pr(self, sequence: PR_SEQUENCE) -> typing.Tuple[typing.Any, typing.Any]
+.. py:method:: query_pr(self, sequence: PRSequence) -> typing.Tuple[typing.Any, typing.Any]
     :canonical: ansys.stk.core.stkutil.IDirection.query_pr
 
     Get direction using the Pitch Roll representation. Pitch and Roll use Angle Dimension.
 
     :Parameters:
 
-    **sequence** : :obj:`~PR_SEQUENCE`
+    **sequence** : :obj:`~PRSequence`
 
     :Returns:
 
@@ -207,27 +207,27 @@ Method detail
 
         :obj:`~typing.Tuple[float, float, float]`
 
-.. py:method:: query_euler_array(self, sequence: EULER_DIRECTION_SEQUENCE) -> list
+.. py:method:: query_euler_array(self, sequence: EulerDirectionSequence) -> list
     :canonical: ansys.stk.core.stkutil.IDirection.query_euler_array
 
     Return the Euler elements in an array.
 
     :Parameters:
 
-    **sequence** : :obj:`~EULER_DIRECTION_SEQUENCE`
+    **sequence** : :obj:`~EulerDirectionSequence`
 
     :Returns:
 
         :obj:`~list`
 
-.. py:method:: query_pr_array(self, sequence: PR_SEQUENCE) -> list
+.. py:method:: query_pr_array(self, sequence: PRSequence) -> list
     :canonical: ansys.stk.core.stkutil.IDirection.query_pr_array
 
     Return the PR elements in an array.
 
     :Parameters:
 
-    **sequence** : :obj:`~PR_SEQUENCE`
+    **sequence** : :obj:`~PRSequence`
 
     :Returns:
 

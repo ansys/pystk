@@ -85,7 +85,7 @@ Property detail
 
 .. py:property:: access_time_period
     :canonical: ansys.stk.core.stkobjects.Access.access_time_period
-    :type: ACCESS_TIME_TYPE
+    :type: AccessTimeType
 
     Specifies the time period option. A member of the AgEAccessTimeType enumeration.
 

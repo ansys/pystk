@@ -42,7 +42,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.vgt.CalculationToolIntegralBasic.type
-    :type: QUADRATURE_TYPE
+    :type: QuadratureType
 
     Get the integral type which determines the method of integration and can be set to trapezoidal, Simplson or adaptive Lobatto.
 

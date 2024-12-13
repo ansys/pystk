@@ -23,11 +23,11 @@ class LogMessageMonitor(IObjectModelEventMonitor):
     def _root_OnLogMessage(
         self,
         Message: str,
-        MsgType: "LOG_MESSAGE_TYPE",
+        MsgType: "LogMessageType",
         ErrorCode: int,
         Filename: str,
         LineNo: int,
-        DispID: "LOG_MESSAGE_DISPLAY_ID",
+        DispID: "LogMessageDisplayID",
     ):
         if self._filterEcho:
             if Message.startswith("STK/CON:"):

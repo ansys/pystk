@@ -48,7 +48,7 @@ Property detail
 
 .. py:property:: reference_type
     :canonical: ansys.stk.core.stkobjects.IComponentLinkEmbedControl.reference_type
-    :type: COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE
+    :type: ComponentLinkEmbedControlReferenceType
 
     Gets or sets the component reference type.
 

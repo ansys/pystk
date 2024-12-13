@@ -49,7 +49,7 @@ Property detail
 
 .. py:property:: altitude_reference
     :canonical: ansys.stk.core.stkobjects.MTOAnalysisPosition.altitude_reference
-    :type: ALTITUDE_REFERENCE_TYPE
+    :type: AltitudeReferenceType
 
     Specify the altitude reference. Default is Ellipsoid.
 

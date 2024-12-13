@@ -89,7 +89,7 @@ Property detail
 
 .. py:property:: logic_operation
     :canonical: ansys.stk.core.graphics.CompositeDisplayCondition.logic_operation
-    :type: BINARY_LOGIC_OPERATION
+    :type: BinaryLogicOperation
 
     Gets or sets the binary logic operation applied to all display conditions in the composite when the composite is evaluated. To combine logical and and or operations in the same expression, create composites containing composites.
 

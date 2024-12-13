@@ -48,7 +48,7 @@ Property detail
 
 .. py:property:: sidelobe_type
     :canonical: ansys.stk.core.stkobjects.AntennaModelCosecantSquared.sidelobe_type
-    :type: ANTENNA_MODEL_COSECANT_SQUARED_SIDELOBE_TYPE
+    :type: AntennaModelCosecantSquaredSidelobeType
 
     Gets the Cosecant Squared antenna sidelobe type enumeration.
 

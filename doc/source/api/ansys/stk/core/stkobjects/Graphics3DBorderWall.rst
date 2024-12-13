@@ -67,7 +67,7 @@ Property detail
 
 .. py:property:: upper_edge_altitude_reference
     :canonical: ansys.stk.core.stkobjects.Graphics3DBorderWall.upper_edge_altitude_reference
-    :type: BORDER_WALL_UPPER_LOWER_EDGE_ALTITUDE_REFERENCE
+    :type: BorderWallUpperLowerEdgeAltitudeReference
 
     Reference used in defining the upper edge of the border wall. A member of the AgEBorderWallUpperLowerEdgeAltRef enumeration.
 
@@ -79,7 +79,7 @@ Property detail
 
 .. py:property:: lower_edge_altitude_reference
     :canonical: ansys.stk.core.stkobjects.Graphics3DBorderWall.lower_edge_altitude_reference
-    :type: BORDER_WALL_UPPER_LOWER_EDGE_ALTITUDE_REFERENCE
+    :type: BorderWallUpperLowerEdgeAltitudeReference
 
     Reference used in defining the lower edge of the border wall. A member of the AgEBorderWallUpperLowerEdgeAltRef enumeration.
 
@@ -135,14 +135,14 @@ Method detail
 
 
 
-.. py:method:: is_altitude_reference_type_supported(self, ref_type: BORDER_WALL_UPPER_LOWER_EDGE_ALTITUDE_REFERENCE) -> bool
+.. py:method:: is_altitude_reference_type_supported(self, ref_type: BorderWallUpperLowerEdgeAltitudeReference) -> bool
     :canonical: ansys.stk.core.stkobjects.Graphics3DBorderWall.is_altitude_reference_type_supported
 
     Provide verification of the availability of borderwall edge altitude reference.
 
     :Parameters:
 
-    **ref_type** : :obj:`~BORDER_WALL_UPPER_LOWER_EDGE_ALTITUDE_REFERENCE`
+    **ref_type** : :obj:`~BorderWallUpperLowerEdgeAltitudeReference`
 
     :Returns:
 

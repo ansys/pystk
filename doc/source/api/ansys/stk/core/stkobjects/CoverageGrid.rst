@@ -42,7 +42,7 @@ Property detail
 
 .. py:property:: bounds_type
     :canonical: ansys.stk.core.stkobjects.CoverageGrid.bounds_type
-    :type: COVERAGE_BOUNDS
+    :type: CoverageBounds
 
     Type of bounds used to define the coverage region.
 
@@ -54,7 +54,7 @@ Property detail
 
 .. py:property:: resolution_type
     :canonical: ansys.stk.core.stkobjects.CoverageGrid.resolution_type
-    :type: COVERAGE_RESOLUTION
+    :type: CoverageResolution
 
     Type of criterion used to define grid resolution.
 

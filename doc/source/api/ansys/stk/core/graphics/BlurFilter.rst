@@ -38,7 +38,7 @@ Property detail
 
 .. py:property:: method
     :canonical: ansys.stk.core.graphics.BlurFilter.method
-    :type: BLUR_METHOD
+    :type: BlurMethod
 
     Gets or sets the method used to blur the source raster.
 
