@@ -46,7 +46,7 @@ Property detail
 
 .. py:property:: atmospheric_density_model
     :canonical: ansys.stk.core.stkobjects.VehicleLOPDragSettings.atmospheric_density_model
-    :type: ATMOSPHERIC_DENSITY_MODEL
+    :type: AtmosphericDensityModel
 
     This property is deprecated. Use AtmosDensityModel instead. Atmospheric density model.
 
@@ -76,7 +76,7 @@ Property detail
 
 .. py:property:: atmosphere_density_model
     :canonical: ansys.stk.core.stkobjects.VehicleLOPDragSettings.atmosphere_density_model
-    :type: LOP_ATMOSPHERIC_DENSITY_MODEL
+    :type: LOPAtmosphericDensityModel
 
     Atmospheric density model.
 

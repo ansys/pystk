@@ -34,14 +34,14 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: get_components(self, component: COMPONENT) -> ComponentInfoCollection
+.. py:method:: get_components(self, component: Component) -> ComponentInfoCollection
     :canonical: ansys.stk.core.stkobjects.ComponentDirectory.get_components
 
     Return the specified components.
 
     :Parameters:
 
-    **component** : :obj:`~COMPONENT`
+    **component** : :obj:`~Component`
 
     :Returns:
 

@@ -77,7 +77,7 @@ Property detail
 
 .. py:property:: f10p7_source
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentParticleFlux.f10p7_source
-    :type: VEHICLE_SPACE_ENVIRONMENT_F10P7_SOURCE_TYPE
+    :type: VehicleSpaceEnvironmentF10P7SourceType
 
     Mode for computing 13-month average F10.7.
 
@@ -89,7 +89,7 @@ Property detail
 
 .. py:property:: material
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentParticleFlux.material
-    :type: VEHICLE_SPACE_ENVIRONMENT_MATERIAL
+    :type: VehicleSpaceEnvironmentMaterial
 
     Vehicle material.
 

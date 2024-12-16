@@ -40,7 +40,7 @@ Property detail
 
 .. py:property:: method
     :canonical: ansys.stk.core.stkobjects.VehicleInterpolation.method
-    :type: VEHICLE_INTERPOLATION_METHOD
+    :type: VehicleInterpolationMethod
 
     Gets or sets the interpolation method.
 

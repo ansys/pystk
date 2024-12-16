@@ -185,52 +185,52 @@ Summary
             :widths: auto
         
 
-            * - :py:class:`~ansys.stk.core.stkutil.POSITION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkutil.PositionType`
               - Facility/place/target position types.
 
-            * - :py:class:`~ansys.stk.core.stkutil.EULER_DIRECTION_SEQUENCE`
+            * - :py:class:`~ansys.stk.core.stkutil.EulerDirectionSequence`
               - Euler direction sequences.
 
-            * - :py:class:`~ansys.stk.core.stkutil.DIRECTION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkutil.DirectionType`
               - Direction options for aligned and constrained vectors.
 
-            * - :py:class:`~ansys.stk.core.stkutil.PR_SEQUENCE`
+            * - :py:class:`~ansys.stk.core.stkutil.PRSequence`
               - Pitch-Roll (PR) direction sequences.
 
-            * - :py:class:`~ansys.stk.core.stkutil.ORIENTATION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkutil.OrientationType`
               - Orientation methods.
 
-            * - :py:class:`~ansys.stk.core.stkutil.AZ_EL_ABOUT_BORESIGHT`
+            * - :py:class:`~ansys.stk.core.stkutil.AzElAboutBoresight`
               - About Boresight options for AzEl orientation method.
 
-            * - :py:class:`~ansys.stk.core.stkutil.EULER_ORIENTATION_SEQUENCE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkutil.EulerOrientationSequenceType`
               - Euler rotation sequence options:.
 
-            * - :py:class:`~ansys.stk.core.stkutil.YPR_ANGLES_SEQUENCE`
+            * - :py:class:`~ansys.stk.core.stkutil.YPRAnglesSequence`
               - Yaw-Pitch-Roll (YPR) sequences.
 
-            * - :py:class:`~ansys.stk.core.stkutil.ORBIT_STATE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkutil.OrbitStateType`
               - Coordinate types used in specifying orbit state.
 
-            * - :py:class:`~ansys.stk.core.stkutil.COORDINATE_SYSTEM`
+            * - :py:class:`~ansys.stk.core.stkutil.CoordinateSystem`
               - Earth-centered coordinate systems for defining certain propagators.
 
-            * - :py:class:`~ansys.stk.core.stkutil.LOG_MESSAGE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkutil.LogMessageType`
               - Log message types.
 
-            * - :py:class:`~ansys.stk.core.stkutil.LOG_MESSAGE_DISPLAY_ID`
+            * - :py:class:`~ansys.stk.core.stkutil.LogMessageDisplayID`
               - Log message destination options.
 
-            * - :py:class:`~ansys.stk.core.stkutil.LINE_STYLE`
+            * - :py:class:`~ansys.stk.core.stkutil.LineStyle`
               - Line Style.
 
-            * - :py:class:`~ansys.stk.core.stkutil.EXECUTE_MULTIPLE_COMMANDS_MODE`
+            * - :py:class:`~ansys.stk.core.stkutil.ExecuteMultipleCommandsMode`
               - Enumeration defines a set of actions when an error occurs while executing a command batch.
 
-            * - :py:class:`~ansys.stk.core.stkutil.FILL_STYLE`
+            * - :py:class:`~ansys.stk.core.stkutil.FillStyle`
               - Fill Style.
 
-            * - :py:class:`~ansys.stk.core.stkutil.PROPERTY_INFO_VALUE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkutil.PropertyInfoValueType`
               - The enumeration used to determine what type of property is being used.
 
 
@@ -317,20 +317,20 @@ in the STK X and STK Objects libraries.
     :maxdepth: 1
     :hidden:
 
-    ≔ POSITION_TYPE<stkutil/POSITION_TYPE_enum>
-    ≔ EULER_DIRECTION_SEQUENCE<stkutil/EULER_DIRECTION_SEQUENCE_enum>
-    ≔ DIRECTION_TYPE<stkutil/DIRECTION_TYPE_enum>
-    ≔ PR_SEQUENCE<stkutil/PR_SEQUENCE_enum>
-    ≔ ORIENTATION_TYPE<stkutil/ORIENTATION_TYPE_enum>
-    ≔ AZ_EL_ABOUT_BORESIGHT<stkutil/AZ_EL_ABOUT_BORESIGHT_enum>
-    ≔ EULER_ORIENTATION_SEQUENCE_TYPE<stkutil/EULER_ORIENTATION_SEQUENCE_TYPE_enum>
-    ≔ YPR_ANGLES_SEQUENCE<stkutil/YPR_ANGLES_SEQUENCE_enum>
-    ≔ ORBIT_STATE_TYPE<stkutil/ORBIT_STATE_TYPE_enum>
-    ≔ COORDINATE_SYSTEM<stkutil/COORDINATE_SYSTEM_enum>
-    ≔ LOG_MESSAGE_TYPE<stkutil/LOG_MESSAGE_TYPE_enum>
-    ≔ LOG_MESSAGE_DISPLAY_ID<stkutil/LOG_MESSAGE_DISPLAY_ID_enum>
-    ≔ LINE_STYLE<stkutil/LINE_STYLE_enum>
-    ≔ EXECUTE_MULTIPLE_COMMANDS_MODE<stkutil/EXECUTE_MULTIPLE_COMMANDS_MODE_enum>
-    ≔ FILL_STYLE<stkutil/FILL_STYLE_enum>
-    ≔ PROPERTY_INFO_VALUE_TYPE<stkutil/PROPERTY_INFO_VALUE_TYPE_enum>
+    ≔ PositionType<stkutil/PositionType>
+    ≔ EulerDirectionSequence<stkutil/EulerDirectionSequence>
+    ≔ DirectionType<stkutil/DirectionType>
+    ≔ PRSequence<stkutil/PRSequence>
+    ≔ OrientationType<stkutil/OrientationType>
+    ≔ AzElAboutBoresight<stkutil/AzElAboutBoresight>
+    ≔ EulerOrientationSequenceType<stkutil/EulerOrientationSequenceType>
+    ≔ YPRAnglesSequence<stkutil/YPRAnglesSequence>
+    ≔ OrbitStateType<stkutil/OrbitStateType>
+    ≔ CoordinateSystem<stkutil/CoordinateSystem>
+    ≔ LogMessageType<stkutil/LogMessageType>
+    ≔ LogMessageDisplayID<stkutil/LogMessageDisplayID>
+    ≔ LineStyle<stkutil/LineStyle>
+    ≔ ExecuteMultipleCommandsMode<stkutil/ExecuteMultipleCommandsMode>
+    ≔ FillStyle<stkutil/FillStyle>
+    ≔ PropertyInfoValueType<stkutil/PropertyInfoValueType>
 

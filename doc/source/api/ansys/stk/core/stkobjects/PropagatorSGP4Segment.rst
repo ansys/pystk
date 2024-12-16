@@ -154,7 +154,7 @@ Property detail
 
 .. py:property:: switching_method
     :canonical: ansys.stk.core.stkobjects.PropagatorSGP4Segment.switching_method
-    :type: PROPAGATOR_SGP4_SWITCH_METHOD
+    :type: PropagatorSGP4SwitchMethod
 
     Method used to switch between element sets.
 

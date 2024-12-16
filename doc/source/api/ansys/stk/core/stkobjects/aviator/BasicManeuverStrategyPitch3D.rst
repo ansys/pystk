@@ -48,7 +48,7 @@ Property detail
 
 .. py:property:: control_mode
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPitch3D.control_mode
-    :type: PITCH_3D_CONTROL_MODE
+    :type: Pitch3DControlMode
 
     Gets or sets the control mode for the pitch 3D strategy.
 

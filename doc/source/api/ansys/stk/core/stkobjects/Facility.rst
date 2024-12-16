@@ -181,7 +181,7 @@ Property detail
 
 .. py:property:: lighting_obstruction_model
     :canonical: ansys.stk.core.stkobjects.Facility.lighting_obstruction_model
-    :type: LIGHTING_OBSTRUCTION_MODEL_TYPE
+    :type: LightingObstructionModelType
 
     Gets or sets the obstruction model used in lighting computations.
 
@@ -219,14 +219,14 @@ Method detail
 
 
 
-.. py:method:: set_az_el_mask(self, type: AZ_EL_MASK_TYPE, data: typing.Any) -> None
+.. py:method:: set_az_el_mask(self, type: AzElMaskType, data: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.Facility.set_az_el_mask
 
     Set an az-el mask. A member of the AgEAzElMaskType enumeration.
 
     :Parameters:
 
-    **type** : :obj:`~AZ_EL_MASK_TYPE`
+    **type** : :obj:`~AzElMaskType`
     **data** : :obj:`~typing.Any`
 
     :Returns:
@@ -249,14 +249,14 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: get_az_el_mask(self) -> AZ_EL_MASK_TYPE
+.. py:method:: get_az_el_mask(self) -> AzElMaskType
     :canonical: ansys.stk.core.stkobjects.Facility.get_az_el_mask
 
     Get the az-el mask. A member of the AgEAzElMaskType enumeration.
 
     :Returns:
 
-        :obj:`~AZ_EL_MASK_TYPE`
+        :obj:`~AzElMaskType`
 
 .. py:method:: get_az_el_mask_data(self) -> typing.Any
     :canonical: ansys.stk.core.stkobjects.Facility.get_az_el_mask_data

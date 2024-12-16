@@ -151,7 +151,7 @@ Property detail
 
 .. py:property:: color_method
     :canonical: ansys.stk.core.stkobjects.RadarCrossSectionVolumeGraphics.color_method
-    :type: FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD
+    :type: FigureOfMeritGraphics2DColorMethod
 
     Color method for contours (color ramp or explicit).
 

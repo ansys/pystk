@@ -145,7 +145,7 @@ Method detail
 
         :obj:`~ChainConnection`
 
-.. py:method:: add_with_parent_restriction(self, from_object: IStkObject, to_object: IStkObject, min_num_uses: int, max_num_uses: int, parent_restriction: CHAIN_PARENT_PLATFORM_RESTRICTION) -> ChainConnection
+.. py:method:: add_with_parent_restriction(self, from_object: IStkObject, to_object: IStkObject, min_num_uses: int, max_num_uses: int, parent_restriction: ChainParentPlatformRestriction) -> ChainConnection
     :canonical: ansys.stk.core.stkobjects.ChainConnectionCollection.add_with_parent_restriction
 
     Add with the option for a parent restriction and returns a new connection with the corresponding values. A Constellation or Subset must be one of the input objects.
@@ -156,7 +156,7 @@ Method detail
     **to_object** : :obj:`~IStkObject`
     **min_num_uses** : :obj:`~int`
     **max_num_uses** : :obj:`~int`
-    **parent_restriction** : :obj:`~CHAIN_PARENT_PLATFORM_RESTRICTION`
+    **parent_restriction** : :obj:`~ChainParentPlatformRestriction`
 
     :Returns:
 

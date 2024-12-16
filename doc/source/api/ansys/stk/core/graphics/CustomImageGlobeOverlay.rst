@@ -71,7 +71,7 @@ Property detail
 
 .. py:property:: projection
     :canonical: ansys.stk.core.graphics.CustomImageGlobeOverlay.projection
-    :type: MAP_PROJECTION
+    :type: MapProjection
 
     Gets the map projection. Valid values are mercator and equidistant cylindrical.
 

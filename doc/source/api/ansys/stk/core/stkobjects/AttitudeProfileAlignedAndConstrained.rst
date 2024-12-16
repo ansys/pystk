@@ -56,13 +56,13 @@ Property detail
 
 .. py:property:: displayed_aligned_vector_type
     :canonical: ansys.stk.core.stkobjects.AttitudeProfileAlignedAndConstrained.displayed_aligned_vector_type
-    :type: DIRECTION_TYPE
+    :type: DirectionType
 
     Aligned vector type displayed on GUI.
 
 .. py:property:: displayed_constrained_vector_type
     :canonical: ansys.stk.core.stkobjects.AttitudeProfileAlignedAndConstrained.displayed_constrained_vector_type
-    :type: DIRECTION_TYPE
+    :type: DirectionType
 
     Constrained vector type displayed on GUI.
 

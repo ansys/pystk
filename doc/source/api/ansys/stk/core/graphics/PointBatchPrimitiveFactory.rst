@@ -72,14 +72,14 @@ Method detail
 
         :obj:`~PointBatchPrimitive`
 
-.. py:method:: initialize_with_set_hint(self, set_hint: SET_HINT) -> PointBatchPrimitive
+.. py:method:: initialize_with_set_hint(self, set_hint: SetHint) -> PointBatchPrimitive
     :canonical: ansys.stk.core.graphics.PointBatchPrimitiveFactory.initialize_with_set_hint
 
     Initialize a new instance of a point batch primitive with the specified set hint.
 
     :Parameters:
 
-    **set_hint** : :obj:`~SET_HINT`
+    **set_hint** : :obj:`~SetHint`
 
     :Returns:
 

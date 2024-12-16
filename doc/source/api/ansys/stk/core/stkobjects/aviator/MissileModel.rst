@@ -111,7 +111,7 @@ Property detail
 
 .. py:property:: maneuver_mode
     :canonical: ansys.stk.core.stkobjects.aviator.MissileModel.maneuver_mode
-    :type: ACCELERATION_MANEUVER_MODE
+    :type: AccelerationManeuverMode
 
     Gets or sets the mode that the missile will adhere to the specified load factor. Scale by atmospheric density will cause the missile to consider dynamic pressure when calculating turn radius.
 
@@ -141,7 +141,7 @@ Property detail
 
 .. py:property:: climb_airspeed_type
     :canonical: ansys.stk.core.stkobjects.aviator.MissileModel.climb_airspeed_type
-    :type: AIRSPEED_TYPE
+    :type: AirspeedType
 
     Get the climb airspeed type.
 
@@ -171,7 +171,7 @@ Property detail
 
 .. py:property:: cruise_max_airspeed_type
     :canonical: ansys.stk.core.stkobjects.aviator.MissileModel.cruise_max_airspeed_type
-    :type: AIRSPEED_TYPE
+    :type: AirspeedType
 
     Get the cruise airspeed type.
 
@@ -189,7 +189,7 @@ Property detail
 
 .. py:property:: descent_airspeed_type
     :canonical: ansys.stk.core.stkobjects.aviator.MissileModel.descent_airspeed_type
-    :type: AIRSPEED_TYPE
+    :type: AirspeedType
 
     Get the descent airspeed type.
 
@@ -279,14 +279,14 @@ Method detail
 
 
 
-.. py:method:: set_climb_airspeed(self, airspeed_type: AIRSPEED_TYPE, airspeed: float) -> None
+.. py:method:: set_climb_airspeed(self, airspeed_type: AirspeedType, airspeed: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.MissileModel.set_climb_airspeed
 
     Set the missile's climb airspeed and airspeed type.
 
     :Parameters:
 
-    **airspeed_type** : :obj:`~AIRSPEED_TYPE`
+    **airspeed_type** : :obj:`~AirspeedType`
     **airspeed** : :obj:`~float`
 
     :Returns:
@@ -301,14 +301,14 @@ Method detail
 
 
 
-.. py:method:: set_cruise_max_airspeed(self, airspeed_type: AIRSPEED_TYPE, airspeed: float) -> None
+.. py:method:: set_cruise_max_airspeed(self, airspeed_type: AirspeedType, airspeed: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.MissileModel.set_cruise_max_airspeed
 
     Set the missile's max cruise airspeed and airspeed type.
 
     :Parameters:
 
-    **airspeed_type** : :obj:`~AIRSPEED_TYPE`
+    **airspeed_type** : :obj:`~AirspeedType`
     **airspeed** : :obj:`~float`
 
     :Returns:
@@ -319,14 +319,14 @@ Method detail
 
 
 
-.. py:method:: set_descent_airspeed(self, airspeed_type: AIRSPEED_TYPE, airspeed: float) -> None
+.. py:method:: set_descent_airspeed(self, airspeed_type: AirspeedType, airspeed: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.MissileModel.set_descent_airspeed
 
     Set the missile's descent airspeed and airspeed type.
 
     :Parameters:
 
-    **airspeed_type** : :obj:`~AIRSPEED_TYPE`
+    **airspeed_type** : :obj:`~AirspeedType`
     **airspeed** : :obj:`~float`
 
     :Returns:

@@ -61,7 +61,7 @@ Property detail
 
 .. py:property:: ephemeris_source
     :canonical: ansys.stk.core.stkobjects.astrogator.ThirdBodyFunction.ephemeris_source
-    :type: EPHEMERIS_SOURCE
+    :type: EphemerisSource
 
     Source for the third body's ephemeris.
 
@@ -73,7 +73,7 @@ Property detail
 
 .. py:property:: mode_type
     :canonical: ansys.stk.core.stkobjects.astrogator.ThirdBodyFunction.mode_type
-    :type: THIRD_BODY_MODE
+    :type: ThirdBodyMode
 
     Get the third body gravity mode type.
 
@@ -92,14 +92,14 @@ Method detail
 
 
 
-.. py:method:: set_mode_type(self, mode: THIRD_BODY_MODE) -> None
+.. py:method:: set_mode_type(self, mode: ThirdBodyMode) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.ThirdBodyFunction.set_mode_type
 
     Set the third body gravity mode.
 
     :Parameters:
 
-    **mode** : :obj:`~THIRD_BODY_MODE`
+    **mode** : :obj:`~ThirdBodyMode`
 
     :Returns:
 

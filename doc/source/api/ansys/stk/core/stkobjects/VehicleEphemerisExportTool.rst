@@ -59,7 +59,7 @@ Property detail
 
 .. py:property:: coordinate_system
     :canonical: ansys.stk.core.stkobjects.VehicleEphemerisExportTool.coordinate_system
-    :type: EPHEMERIS_COORDINATE_SYSTEM_TYPE
+    :type: EphemerisCoordinateSystemType
 
     Gets or sets the coordinate system in which to express the ephemeris.
 
@@ -71,7 +71,7 @@ Property detail
 
 .. py:property:: version_format
     :canonical: ansys.stk.core.stkobjects.VehicleEphemerisExportTool.version_format
-    :type: EXPORT_TOOL_VERSION_FORMAT
+    :type: ExportToolVersionFormat
 
     Provides the option to generate files compatible with prior versions of STK.
 
@@ -95,7 +95,7 @@ Property detail
 
 .. py:property:: covariance_type
     :canonical: ansys.stk.core.stkobjects.VehicleEphemerisExportTool.covariance_type
-    :type: EPHEMERIS_COVARIANCE_TYPE
+    :type: EphemerisCovarianceType
 
     Choose to export position covariance (3x3), position/velocity covariance (6x6), or no covariance information. CovarianceType is valid only if the vehicle has ephemeris with covariance.
 

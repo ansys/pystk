@@ -113,7 +113,7 @@ Property detail
 
 .. py:property:: criterion
     :canonical: ansys.stk.core.stkobjects.astrogator.AccessStoppingCondition.criterion
-    :type: ACCESS_CRITERION
+    :type: AccessCriterion
 
     Specifies the direction from which the stopping condition value must be achieved.
 
@@ -125,13 +125,13 @@ Property detail
 
 .. py:property:: aberration_type
     :canonical: ansys.stk.core.stkobjects.astrogator.AccessStoppingCondition.aberration_type
-    :type: ABERRATION_TYPE
+    :type: AberrationType
 
     Gets or sets the model of aberration to be used in access computations.
 
 .. py:property:: base_selection_type
     :canonical: ansys.stk.core.stkobjects.astrogator.AccessStoppingCondition.base_selection_type
-    :type: BASE_SELECTION
+    :type: BaseSelection
 
     Get the base object for the access calculation.
 
@@ -143,13 +143,13 @@ Property detail
 
 .. py:property:: clock_host
     :canonical: ansys.stk.core.stkobjects.astrogator.AccessStoppingCondition.clock_host
-    :type: IV_CLOCK_HOST
+    :type: IvClockHost
 
     Time values are reported with a clock colocated with the clock host object.
 
 .. py:property:: signal_sense
     :canonical: ansys.stk.core.stkobjects.astrogator.AccessStoppingCondition.signal_sense
-    :type: IV_TIME_SENSE
+    :type: IvTimeSense
 
     Gets or sets the direction of the signal.
 
@@ -191,14 +191,14 @@ Method detail
 
 
 
-.. py:method:: set_base_selection(self, selection: BASE_SELECTION) -> None
+.. py:method:: set_base_selection(self, selection: BaseSelection) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.AccessStoppingCondition.set_base_selection
 
     BaseSelection.
 
     :Parameters:
 
-    **selection** : :obj:`~BASE_SELECTION`
+    **selection** : :obj:`~BaseSelection`
 
     :Returns:
 

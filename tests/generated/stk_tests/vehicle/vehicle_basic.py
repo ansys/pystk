@@ -23,46 +23,46 @@ class ExportDataFileHelper(object):
     def AttitudeExportTool(self, attitude: "VehicleAttitudeExportTool"):
         customAxes: "VehicleCoordinateAxesCustom" = None
         with pytest.raises(Exception):
-            attitude.version_format = EXPORT_TOOL_VERSION_FORMAT.FORMAT410
+            attitude.version_format = ExportToolVersionFormat.FORMAT410
         with pytest.raises(Exception):
-            attitude.version_format = EXPORT_TOOL_VERSION_FORMAT.FORMAT420
+            attitude.version_format = ExportToolVersionFormat.FORMAT420
         with pytest.raises(Exception):
-            attitude.version_format = EXPORT_TOOL_VERSION_FORMAT.FORMAT620
-        attitude.version_format = EXPORT_TOOL_VERSION_FORMAT.FORMAT430
-        Assert.assertEqual(EXPORT_TOOL_VERSION_FORMAT.FORMAT430, attitude.version_format)
-        attitude.version_format = EXPORT_TOOL_VERSION_FORMAT.FORMAT600
-        Assert.assertEqual(EXPORT_TOOL_VERSION_FORMAT.FORMAT600, attitude.version_format)
-        attitude.version_format = EXPORT_TOOL_VERSION_FORMAT.FORMAT800
-        Assert.assertEqual(EXPORT_TOOL_VERSION_FORMAT.FORMAT800, attitude.version_format)
-        attitude.version_format = EXPORT_TOOL_VERSION_FORMAT.CURRENT
-        Assert.assertEqual(EXPORT_TOOL_VERSION_FORMAT.CURRENT, attitude.version_format)
+            attitude.version_format = ExportToolVersionFormat.FORMAT620
+        attitude.version_format = ExportToolVersionFormat.FORMAT430
+        Assert.assertEqual(ExportToolVersionFormat.FORMAT430, attitude.version_format)
+        attitude.version_format = ExportToolVersionFormat.FORMAT600
+        Assert.assertEqual(ExportToolVersionFormat.FORMAT600, attitude.version_format)
+        attitude.version_format = ExportToolVersionFormat.FORMAT800
+        Assert.assertEqual(ExportToolVersionFormat.FORMAT800, attitude.version_format)
+        attitude.version_format = ExportToolVersionFormat.CURRENT
+        Assert.assertEqual(ExportToolVersionFormat.CURRENT, attitude.version_format)
 
         # ****************************
         # Testing the Coordinate Axes
         # ****************************
 
         # Export for Attitude file type only supports versions 4.3, 6, 8, and current
-        arSupportedVersionFormats: "List[EXPORT_TOOL_VERSION_FORMAT]" = [
-            EXPORT_TOOL_VERSION_FORMAT.FORMAT430,
-            EXPORT_TOOL_VERSION_FORMAT.FORMAT600,
-            EXPORT_TOOL_VERSION_FORMAT.FORMAT800,
-            EXPORT_TOOL_VERSION_FORMAT.CURRENT,
+        arSupportedVersionFormats: "List[ExportToolVersionFormat]" = [
+            ExportToolVersionFormat.FORMAT430,
+            ExportToolVersionFormat.FORMAT600,
+            ExportToolVersionFormat.FORMAT800,
+            ExportToolVersionFormat.CURRENT,
         ]
 
-        eFormat: "EXPORT_TOOL_VERSION_FORMAT"
+        eFormat: "ExportToolVersionFormat"
 
         for eFormat in arSupportedVersionFormats:
             attitude.version_format = eFormat
             self.m_logger.WriteLine6("Version Format: {0}", attitude.version_format)
-            if eFormat == EXPORT_TOOL_VERSION_FORMAT.CURRENT:
-                attitude.set_coordinate_axes_type(ATTITUDE_COORDINATE_AXES.J2000)
-                Assert.assertEqual(ATTITUDE_COORDINATE_AXES.J2000, attitude.coordinate_axes_type)
-                attitude.set_coordinate_axes_type(ATTITUDE_COORDINATE_AXES.FIXED)
-                Assert.assertEqual(ATTITUDE_COORDINATE_AXES.FIXED, attitude.coordinate_axes_type)
-                attitude.set_coordinate_axes_type(ATTITUDE_COORDINATE_AXES.ICRF)
-                Assert.assertEqual(ATTITUDE_COORDINATE_AXES.ICRF, attitude.coordinate_axes_type)
-                attitude.set_coordinate_axes_type(ATTITUDE_COORDINATE_AXES.CUSTOM)
-                Assert.assertEqual(ATTITUDE_COORDINATE_AXES.CUSTOM, attitude.coordinate_axes_type)
+            if eFormat == ExportToolVersionFormat.CURRENT:
+                attitude.set_coordinate_axes_type(AttitudeCoordinateAxes.J2000)
+                Assert.assertEqual(AttitudeCoordinateAxes.J2000, attitude.coordinate_axes_type)
+                attitude.set_coordinate_axes_type(AttitudeCoordinateAxes.FIXED)
+                Assert.assertEqual(AttitudeCoordinateAxes.FIXED, attitude.coordinate_axes_type)
+                attitude.set_coordinate_axes_type(AttitudeCoordinateAxes.ICRF)
+                Assert.assertEqual(AttitudeCoordinateAxes.ICRF, attitude.coordinate_axes_type)
+                attitude.set_coordinate_axes_type(AttitudeCoordinateAxes.CUSTOM)
+                Assert.assertEqual(AttitudeCoordinateAxes.CUSTOM, attitude.coordinate_axes_type)
                 customAxes = VehicleCoordinateAxesCustom(attitude.coordinate_axes)
                 customAxes.reference_axes_name = "CentralBody/Sun J2000 Axes"
                 Assert.assertEqual("CentralBody/Sun J2000 Axes", customAxes.reference_axes_name)
@@ -70,112 +70,105 @@ class ExportDataFileHelper(object):
                 with pytest.raises(Exception):
                     customAxes.reference_axes_name = "CentralBody/Sun Bogus Axes"
                 if attitude.central_body_name != "Earth":
-                    attitude.set_coordinate_axes_type(ATTITUDE_COORDINATE_AXES.INERTIAL)
-                    Assert.assertEqual(ATTITUDE_COORDINATE_AXES.INERTIAL, attitude.coordinate_axes_type)
+                    attitude.set_coordinate_axes_type(AttitudeCoordinateAxes.INERTIAL)
+                    Assert.assertEqual(AttitudeCoordinateAxes.INERTIAL, attitude.coordinate_axes_type)
 
-            elif eFormat == EXPORT_TOOL_VERSION_FORMAT.FORMAT800:
-                attitude.set_coordinate_axes_type(ATTITUDE_COORDINATE_AXES.FIXED)
-                Assert.assertEqual(ATTITUDE_COORDINATE_AXES.FIXED, attitude.coordinate_axes_type)
-                attitude.set_coordinate_axes_type(ATTITUDE_COORDINATE_AXES.CUSTOM)
-                Assert.assertEqual(ATTITUDE_COORDINATE_AXES.CUSTOM, attitude.coordinate_axes_type)
+            elif eFormat == ExportToolVersionFormat.FORMAT800:
+                attitude.set_coordinate_axes_type(AttitudeCoordinateAxes.FIXED)
+                Assert.assertEqual(AttitudeCoordinateAxes.FIXED, attitude.coordinate_axes_type)
+                attitude.set_coordinate_axes_type(AttitudeCoordinateAxes.CUSTOM)
+                Assert.assertEqual(AttitudeCoordinateAxes.CUSTOM, attitude.coordinate_axes_type)
                 customAxes = VehicleCoordinateAxesCustom(attitude.coordinate_axes)
                 customAxes.reference_axes_name = "CentralBody/Sun J2000 Axes"
                 if attitude.central_body_name == "Earth":
-                    attitude.set_coordinate_axes_type(ATTITUDE_COORDINATE_AXES.J2000)
-                    Assert.assertEqual(ATTITUDE_COORDINATE_AXES.J2000, attitude.coordinate_axes_type)
+                    attitude.set_coordinate_axes_type(AttitudeCoordinateAxes.J2000)
+                    Assert.assertEqual(AttitudeCoordinateAxes.J2000, attitude.coordinate_axes_type)
 
                 else:
-                    attitude.set_coordinate_axes_type(ATTITUDE_COORDINATE_AXES.INERTIAL)
-                    Assert.assertEqual(ATTITUDE_COORDINATE_AXES.INERTIAL, attitude.coordinate_axes_type)
+                    attitude.set_coordinate_axes_type(AttitudeCoordinateAxes.INERTIAL)
+                    Assert.assertEqual(AttitudeCoordinateAxes.INERTIAL, attitude.coordinate_axes_type)
 
             else:
-                attitude.set_coordinate_axes_type(ATTITUDE_COORDINATE_AXES.INERTIAL)
-                Assert.assertEqual(ATTITUDE_COORDINATE_AXES.INERTIAL, attitude.coordinate_axes_type)
-                attitude.set_coordinate_axes_type(ATTITUDE_COORDINATE_AXES.FIXED)
-                Assert.assertEqual(ATTITUDE_COORDINATE_AXES.FIXED, attitude.coordinate_axes_type)
-                attitude.set_coordinate_axes_type(ATTITUDE_COORDINATE_AXES.CUSTOM)
-                Assert.assertEqual(ATTITUDE_COORDINATE_AXES.CUSTOM, attitude.coordinate_axes_type)
+                attitude.set_coordinate_axes_type(AttitudeCoordinateAxes.INERTIAL)
+                Assert.assertEqual(AttitudeCoordinateAxes.INERTIAL, attitude.coordinate_axes_type)
+                attitude.set_coordinate_axes_type(AttitudeCoordinateAxes.FIXED)
+                Assert.assertEqual(AttitudeCoordinateAxes.FIXED, attitude.coordinate_axes_type)
+                attitude.set_coordinate_axes_type(AttitudeCoordinateAxes.CUSTOM)
+                Assert.assertEqual(AttitudeCoordinateAxes.CUSTOM, attitude.coordinate_axes_type)
                 customAxes = VehicleCoordinateAxesCustom(attitude.coordinate_axes)
                 customAxes.reference_axes_name = "CentralBody/Sun J2000 Axes"
 
             supportedCoordinateAxes = attitude.supported_coordinate_axes
             ocoordAxis: typing.Any
             for ocoordAxis in supportedCoordinateAxes:
-                coordAxis: "ATTITUDE_COORDINATE_AXES" = ATTITUDE_COORDINATE_AXES(int(ocoordAxis))
+                coordAxis: "AttitudeCoordinateAxes" = AttitudeCoordinateAxes(int(ocoordAxis))
                 self.m_logger.WriteLine6("Supported coordinate axes: {0}", coordAxis)
-                if eFormat == EXPORT_TOOL_VERSION_FORMAT.CURRENT:
+                if eFormat == ExportToolVersionFormat.CURRENT:
                     if (
-                        (
-                            ((coordAxis == ATTITUDE_COORDINATE_AXES.FIXED))
-                            or ((coordAxis == ATTITUDE_COORDINATE_AXES.ICRF))
-                        )
-                        or ((coordAxis == ATTITUDE_COORDINATE_AXES.J2000))
-                    ) or ((coordAxis == ATTITUDE_COORDINATE_AXES.CUSTOM)):
+                        (((coordAxis == AttitudeCoordinateAxes.FIXED)) or ((coordAxis == AttitudeCoordinateAxes.ICRF)))
+                        or ((coordAxis == AttitudeCoordinateAxes.J2000))
+                    ) or ((coordAxis == AttitudeCoordinateAxes.CUSTOM)):
                         pass
                     else:
                         if attitude.central_body_name == "Earth":
                             Assert.fail("Coordinate axis should not be supported.")
 
-                elif eFormat == EXPORT_TOOL_VERSION_FORMAT.FORMAT800:
-                    if ((coordAxis == ATTITUDE_COORDINATE_AXES.FIXED)) or (
-                        (coordAxis == ATTITUDE_COORDINATE_AXES.CUSTOM)
-                    ):
+                elif eFormat == ExportToolVersionFormat.FORMAT800:
+                    if ((coordAxis == AttitudeCoordinateAxes.FIXED)) or ((coordAxis == AttitudeCoordinateAxes.CUSTOM)):
                         pass
                     else:
-                        if (attitude.central_body_name == "Earth") and (coordAxis != ATTITUDE_COORDINATE_AXES.J2000):
+                        if (attitude.central_body_name == "Earth") and (coordAxis != AttitudeCoordinateAxes.J2000):
                             Assert.fail("Coordinate axis should not be supported.")
 
-                        elif (attitude.central_body_name != "Earth") and (
-                            coordAxis != ATTITUDE_COORDINATE_AXES.INERTIAL
-                        ):
+                        elif (attitude.central_body_name != "Earth") and (coordAxis != AttitudeCoordinateAxes.INERTIAL):
                             Assert.fail("Coordinate axis should not be supported.")
 
-                elif ((eFormat == EXPORT_TOOL_VERSION_FORMAT.FORMAT600)) or (
-                    (eFormat == EXPORT_TOOL_VERSION_FORMAT.FORMAT430)
+                elif ((eFormat == ExportToolVersionFormat.FORMAT600)) or (
+                    (eFormat == ExportToolVersionFormat.FORMAT430)
                 ):
                     if (
-                        ((coordAxis == ATTITUDE_COORDINATE_AXES.FIXED))
-                        or ((coordAxis == ATTITUDE_COORDINATE_AXES.INERTIAL))
-                    ) or ((coordAxis == ATTITUDE_COORDINATE_AXES.CUSTOM)):
+                        ((coordAxis == AttitudeCoordinateAxes.FIXED))
+                        or ((coordAxis == AttitudeCoordinateAxes.INERTIAL))
+                    ) or ((coordAxis == AttitudeCoordinateAxes.CUSTOM)):
                         pass
                     else:
                         Assert.fail("Coordinate axis should not be supported.")
 
         # Restore the version format and the coordinate axes
-        attitude.version_format = EXPORT_TOOL_VERSION_FORMAT.CURRENT
-        attitude.set_coordinate_axes_type(ATTITUDE_COORDINATE_AXES.CUSTOM)
-        Assert.assertEqual(ATTITUDE_COORDINATE_AXES.CUSTOM, attitude.coordinate_axes_type)
+        attitude.version_format = ExportToolVersionFormat.CURRENT
+        attitude.set_coordinate_axes_type(AttitudeCoordinateAxes.CUSTOM)
+        Assert.assertEqual(AttitudeCoordinateAxes.CUSTOM, attitude.coordinate_axes_type)
         customAxes = VehicleCoordinateAxesCustom(attitude.coordinate_axes)
         customAxes.reference_axes_name = "CentralBody/Sun J2000 Axes"
 
-        attitude.include = ATTITUDE_INCLUDE.QUATERNIONS
-        Assert.assertEqual(ATTITUDE_INCLUDE.QUATERNIONS, attitude.include)
-        attitude.include = ATTITUDE_INCLUDE.QUATERNIONS_AND_ANGULAR_VELOCITY
-        Assert.assertEqual(ATTITUDE_INCLUDE.QUATERNIONS_AND_ANGULAR_VELOCITY, attitude.include)
+        attitude.include = AttitudeInclude.QUATERNIONS
+        Assert.assertEqual(AttitudeInclude.QUATERNIONS, attitude.include)
+        attitude.include = AttitudeInclude.QUATERNIONS_AND_ANGULAR_VELOCITY
+        Assert.assertEqual(AttitudeInclude.QUATERNIONS_AND_ANGULAR_VELOCITY, attitude.include)
 
-        attitude.time_period.time_period_type = EXPORT_TOOL_TIME_PERIOD.USE_ENTIRE_EPHEMERIS
-        Assert.assertEqual(EXPORT_TOOL_TIME_PERIOD.USE_ENTIRE_EPHEMERIS, attitude.time_period.time_period_type)
-        attitude.time_period.time_period_type = EXPORT_TOOL_TIME_PERIOD.SPECIFY
-        Assert.assertEqual(EXPORT_TOOL_TIME_PERIOD.SPECIFY, attitude.time_period.time_period_type)
+        attitude.time_period.time_period_type = ExportToolTimePeriodType.USE_ENTIRE_EPHEMERIS
+        Assert.assertEqual(ExportToolTimePeriodType.USE_ENTIRE_EPHEMERIS, attitude.time_period.time_period_type)
+        attitude.time_period.time_period_type = ExportToolTimePeriodType.SPECIFY
+        Assert.assertEqual(ExportToolTimePeriodType.SPECIFY, attitude.time_period.time_period_type)
 
         attitude.time_period.start = (Scenario(self._root.current_scenario)).start_time
         Assert.assertEqual((Scenario(self._root.current_scenario)).start_time, attitude.time_period.start)
         attitude.time_period.stop = (Scenario(self._root.current_scenario)).stop_time
         Assert.assertEqual((Scenario(self._root.current_scenario)).stop_time, attitude.time_period.stop)
 
-        attitude.step_size.step_size_type = EXPORT_TOOL_STEP_SIZE.EPHEMERIS
-        Assert.assertEqual(EXPORT_TOOL_STEP_SIZE.EPHEMERIS, attitude.step_size.step_size_type)
+        attitude.step_size.step_size_type = ExportToolStepSizeType.EPHEMERIS
+        Assert.assertEqual(ExportToolStepSizeType.EPHEMERIS, attitude.step_size.step_size_type)
 
-        attitude.step_size.step_size_type = EXPORT_TOOL_STEP_SIZE.SPECIFY
-        Assert.assertEqual(EXPORT_TOOL_STEP_SIZE.SPECIFY, attitude.step_size.step_size_type)
+        attitude.step_size.step_size_type = ExportToolStepSizeType.SPECIFY
+        Assert.assertEqual(ExportToolStepSizeType.SPECIFY, attitude.step_size.step_size_type)
         attitude.step_size.value = 3600
         Assert.assertEqual(3600, attitude.step_size.value)
 
-        attitude.step_size.step_size_type = EXPORT_TOOL_STEP_SIZE.NATIVE
-        Assert.assertEqual(EXPORT_TOOL_STEP_SIZE.NATIVE, attitude.step_size.step_size_type)
+        attitude.step_size.step_size_type = ExportToolStepSizeType.NATIVE
+        Assert.assertEqual(ExportToolStepSizeType.NATIVE, attitude.step_size.step_size_type)
 
-        attitude.step_size.step_size_type = EXPORT_TOOL_STEP_SIZE.TIME_ARRAY
-        Assert.assertEqual(EXPORT_TOOL_STEP_SIZE.TIME_ARRAY, attitude.step_size.step_size_type)
+        attitude.step_size.step_size_type = ExportToolStepSizeType.TIME_ARRAY
+        Assert.assertEqual(ExportToolStepSizeType.TIME_ARRAY, attitude.step_size.step_size_type)
 
         objName: str = (self._oObj.class_name + "/") + self._oObj.instance_name
 
@@ -251,13 +244,13 @@ class ExportDataFileHelper(object):
     # region EphemerisSTKExportTool
     def EphemerisSTKExportTool(self, stkEphem: "VehicleEphemerisExportTool", isSat: bool):
         # "Satellite1.e"
-        stkEphem.coordinate_system = EPHEMERIS_COORDINATE_SYSTEM_TYPE.FIXED
-        Assert.assertEqual(EPHEMERIS_COORDINATE_SYSTEM_TYPE.FIXED, stkEphem.coordinate_system)
+        stkEphem.coordinate_system = EphemerisCoordinateSystemType.FIXED
+        Assert.assertEqual(EphemerisCoordinateSystemType.FIXED, stkEphem.coordinate_system)
         # only works with Earth cb validates it when it gets exported.
-        stkEphem.coordinate_system = EPHEMERIS_COORDINATE_SYSTEM_TYPE.INERTIAL
-        Assert.assertEqual(EPHEMERIS_COORDINATE_SYSTEM_TYPE.INERTIAL, stkEphem.coordinate_system)
-        stkEphem.coordinate_system = EPHEMERIS_COORDINATE_SYSTEM_TYPE.J2000
-        Assert.assertEqual(EPHEMERIS_COORDINATE_SYSTEM_TYPE.J2000, stkEphem.coordinate_system)
+        stkEphem.coordinate_system = EphemerisCoordinateSystemType.INERTIAL
+        Assert.assertEqual(EphemerisCoordinateSystemType.INERTIAL, stkEphem.coordinate_system)
+        stkEphem.coordinate_system = EphemerisCoordinateSystemType.J2000
+        Assert.assertEqual(EphemerisCoordinateSystemType.J2000, stkEphem.coordinate_system)
 
         Assert.assertTrue(stkEphem.use_vehicle_central_body)
         Assert.assertEqual("Earth", stkEphem.central_body_name)
@@ -282,43 +275,43 @@ class ExportDataFileHelper(object):
         stkEphem.include_interpolation_boundaries = True
         Assert.assertTrue(stkEphem.include_interpolation_boundaries)
         with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
-            stkEphem.version_format = EXPORT_TOOL_VERSION_FORMAT.FORMAT600
-        stkEphem.version_format = EXPORT_TOOL_VERSION_FORMAT.FORMAT410
-        Assert.assertEqual(EXPORT_TOOL_VERSION_FORMAT.FORMAT410, stkEphem.version_format)
-        stkEphem.version_format = EXPORT_TOOL_VERSION_FORMAT.FORMAT420
-        Assert.assertEqual(EXPORT_TOOL_VERSION_FORMAT.FORMAT420, stkEphem.version_format)
-        stkEphem.version_format = EXPORT_TOOL_VERSION_FORMAT.FORMAT430
-        Assert.assertEqual(EXPORT_TOOL_VERSION_FORMAT.FORMAT430, stkEphem.version_format)
-        stkEphem.version_format = EXPORT_TOOL_VERSION_FORMAT.FORMAT620
-        Assert.assertEqual(EXPORT_TOOL_VERSION_FORMAT.FORMAT620, stkEphem.version_format)
-        stkEphem.version_format = EXPORT_TOOL_VERSION_FORMAT.FORMAT800
-        Assert.assertEqual(EXPORT_TOOL_VERSION_FORMAT.FORMAT800, stkEphem.version_format)
-        stkEphem.version_format = EXPORT_TOOL_VERSION_FORMAT.CURRENT
-        Assert.assertEqual(EXPORT_TOOL_VERSION_FORMAT.CURRENT, stkEphem.version_format)
+            stkEphem.version_format = ExportToolVersionFormat.FORMAT600
+        stkEphem.version_format = ExportToolVersionFormat.FORMAT410
+        Assert.assertEqual(ExportToolVersionFormat.FORMAT410, stkEphem.version_format)
+        stkEphem.version_format = ExportToolVersionFormat.FORMAT420
+        Assert.assertEqual(ExportToolVersionFormat.FORMAT420, stkEphem.version_format)
+        stkEphem.version_format = ExportToolVersionFormat.FORMAT430
+        Assert.assertEqual(ExportToolVersionFormat.FORMAT430, stkEphem.version_format)
+        stkEphem.version_format = ExportToolVersionFormat.FORMAT620
+        Assert.assertEqual(ExportToolVersionFormat.FORMAT620, stkEphem.version_format)
+        stkEphem.version_format = ExportToolVersionFormat.FORMAT800
+        Assert.assertEqual(ExportToolVersionFormat.FORMAT800, stkEphem.version_format)
+        stkEphem.version_format = ExportToolVersionFormat.CURRENT
+        Assert.assertEqual(ExportToolVersionFormat.CURRENT, stkEphem.version_format)
 
-        stkEphem.time_period.time_period_type = EXPORT_TOOL_TIME_PERIOD.USE_ENTIRE_EPHEMERIS
-        Assert.assertEqual(EXPORT_TOOL_TIME_PERIOD.USE_ENTIRE_EPHEMERIS, stkEphem.time_period.time_period_type)
-        stkEphem.time_period.time_period_type = EXPORT_TOOL_TIME_PERIOD.SPECIFY
-        Assert.assertEqual(EXPORT_TOOL_TIME_PERIOD.SPECIFY, stkEphem.time_period.time_period_type)
+        stkEphem.time_period.time_period_type = ExportToolTimePeriodType.USE_ENTIRE_EPHEMERIS
+        Assert.assertEqual(ExportToolTimePeriodType.USE_ENTIRE_EPHEMERIS, stkEphem.time_period.time_period_type)
+        stkEphem.time_period.time_period_type = ExportToolTimePeriodType.SPECIFY
+        Assert.assertEqual(ExportToolTimePeriodType.SPECIFY, stkEphem.time_period.time_period_type)
         stkEphem.time_period.start = (Scenario(self._root.current_scenario)).start_time
         Assert.assertEqual((Scenario(self._root.current_scenario)).start_time, stkEphem.time_period.start)
         stkEphem.time_period.stop = (Scenario(self._root.current_scenario)).stop_time
         Assert.assertEqual((Scenario(self._root.current_scenario)).stop_time, stkEphem.time_period.stop)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            stkEphem.covariance_type = EPHEMERIS_COVARIANCE_TYPE.POSITION_3_BY_3
+            stkEphem.covariance_type = EphemerisCovarianceType.POSITION_3_BY_3
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            stkEphem.covariance_type = EPHEMERIS_COVARIANCE_TYPE.POSITION_VELOCITY_6_BY_6
+            stkEphem.covariance_type = EphemerisCovarianceType.POSITION_VELOCITY_6_BY_6
 
-        stkEphem.step_size.step_size_type = EXPORT_TOOL_STEP_SIZE.EPHEMERIS
-        Assert.assertEqual(EXPORT_TOOL_STEP_SIZE.EPHEMERIS, stkEphem.step_size.step_size_type)
-        stkEphem.step_size.step_size_type = EXPORT_TOOL_STEP_SIZE.SPECIFY
-        Assert.assertEqual(EXPORT_TOOL_STEP_SIZE.SPECIFY, stkEphem.step_size.step_size_type)
+        stkEphem.step_size.step_size_type = ExportToolStepSizeType.EPHEMERIS
+        Assert.assertEqual(ExportToolStepSizeType.EPHEMERIS, stkEphem.step_size.step_size_type)
+        stkEphem.step_size.step_size_type = ExportToolStepSizeType.SPECIFY
+        Assert.assertEqual(ExportToolStepSizeType.SPECIFY, stkEphem.step_size.step_size_type)
         stkEphem.step_size.value = 3600
         Assert.assertEqual(3600, stkEphem.step_size.value)
         with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
-            stkEphem.step_size.step_size_type = EXPORT_TOOL_STEP_SIZE.NATIVE
+            stkEphem.step_size.step_size_type = ExportToolStepSizeType.NATIVE
 
         stkEphem.export(TestBase.GetScenarioFile("OMExternalFileStk.e"))
         if isSat:
@@ -383,15 +376,15 @@ class ExportDataFileHelper(object):
         # Check that the CentralBody and ReferenceFrame are writable
         ccsds.central_body_name = "Jupiter"
         Assert.assertEqual("Jupiter", ccsds.central_body_name)
-        ccsds.reference_frame = CCSDS_REFERENCE_FRAME.EME2000
-        Assert.assertEqual(CCSDS_REFERENCE_FRAME.EME2000, ccsds.reference_frame)
+        ccsds.reference_frame = CCSDSReferenceFrame.EME2000
+        Assert.assertEqual(CCSDSReferenceFrame.EME2000, ccsds.reference_frame)
 
         ccsds.use_satellite_center_and_frame = True
         Assert.assertTrue(ccsds.use_satellite_center_and_frame)
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             ccsds.central_body_name = "Earth"
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            ccsds.reference_frame = CCSDS_REFERENCE_FRAME.FIXED
+            ccsds.reference_frame = CCSDSReferenceFrame.FIXED
 
         ccsds.use_satellite_center_and_frame = False
 
@@ -412,82 +405,82 @@ class ExportDataFileHelper(object):
         RefsSupported = ccsds.reference_frames_supported
         refTypeObj: typing.Any
         for refTypeObj in RefsSupported:
-            refType: "CCSDS_REFERENCE_FRAME" = CCSDS_REFERENCE_FRAME(int(refTypeObj))
+            refType: "CCSDSReferenceFrame" = CCSDSReferenceFrame(int(refTypeObj))
             ccsds.reference_frame = refType
             Assert.assertEqual(refType, ccsds.reference_frame)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("must be in ")):
-            ccsds.reference_frame = CCSDS_REFERENCE_FRAME.MEAN_EARTH
+            ccsds.reference_frame = CCSDSReferenceFrame.MEAN_EARTH
 
         # Moon: ICRF, J2000, TOD, MeanEarth, Fixed
         ccsds.central_body_name = "Moon"
         RefsSupported = ccsds.reference_frames_supported
         refTypeObj: typing.Any
         for refTypeObj in RefsSupported:
-            refType: "CCSDS_REFERENCE_FRAME" = CCSDS_REFERENCE_FRAME(int(refTypeObj))
+            refType: "CCSDSReferenceFrame" = CCSDSReferenceFrame(int(refTypeObj))
             ccsds.reference_frame = refType
             Assert.assertEqual(refType, ccsds.reference_frame)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
-            ccsds.reference_frame = CCSDS_REFERENCE_FRAME.ITRF
+            ccsds.reference_frame = CCSDSReferenceFrame.ITRF
 
         # other cb's: ICRF, J2000, TOD, Fixed
         ccsds.central_body_name = "Sun"
         RefsSupported = ccsds.reference_frames_supported
         refTypeObj: typing.Any
         for refTypeObj in RefsSupported:
-            refType: "CCSDS_REFERENCE_FRAME" = CCSDS_REFERENCE_FRAME(int(refTypeObj))
+            refType: "CCSDSReferenceFrame" = CCSDSReferenceFrame(int(refTypeObj))
             ccsds.reference_frame = refType
             Assert.assertEqual(refType, ccsds.reference_frame)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
-            ccsds.reference_frame = CCSDS_REFERENCE_FRAME.ITRF
+            ccsds.reference_frame = CCSDSReferenceFrame.ITRF
         with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
-            ccsds.reference_frame = CCSDS_REFERENCE_FRAME.MEAN_EARTH
+            ccsds.reference_frame = CCSDSReferenceFrame.MEAN_EARTH
 
         # pick a valid combination
         ccsds.central_body_name = "Moon"
-        ccsds.reference_frame = CCSDS_REFERENCE_FRAME.EME2000
+        ccsds.reference_frame = CCSDSReferenceFrame.EME2000
 
         ccsds.time_precision = 7
         Assert.assertEqual(7, ccsds.time_precision)
-        ccsds.date_format = CCSDS_DATE_FORMAT.YDOY
-        Assert.assertEqual(CCSDS_DATE_FORMAT.YDOY, ccsds.date_format)
-        ccsds.date_format = CCSDS_DATE_FORMAT.YMD
-        Assert.assertEqual(CCSDS_DATE_FORMAT.YMD, ccsds.date_format)
-        ccsds.ephemeris_format = CCSDS_EPHEMERIS_FORMAT_TYPE.FLOATING_POINT
-        Assert.assertEqual(CCSDS_EPHEMERIS_FORMAT_TYPE.FLOATING_POINT, ccsds.ephemeris_format)
-        ccsds.ephemeris_format = CCSDS_EPHEMERIS_FORMAT_TYPE.SCIENTIFIC_NOTATION
-        Assert.assertEqual(CCSDS_EPHEMERIS_FORMAT_TYPE.SCIENTIFIC_NOTATION, ccsds.ephemeris_format)
+        ccsds.date_format = CCSDSDateFormat.YDOY
+        Assert.assertEqual(CCSDSDateFormat.YDOY, ccsds.date_format)
+        ccsds.date_format = CCSDSDateFormat.YMD
+        Assert.assertEqual(CCSDSDateFormat.YMD, ccsds.date_format)
+        ccsds.ephemeris_format = CCSDSEphemerisFormatType.FLOATING_POINT
+        Assert.assertEqual(CCSDSEphemerisFormatType.FLOATING_POINT, ccsds.ephemeris_format)
+        ccsds.ephemeris_format = CCSDSEphemerisFormatType.SCIENTIFIC_NOTATION
+        Assert.assertEqual(CCSDSEphemerisFormatType.SCIENTIFIC_NOTATION, ccsds.ephemeris_format)
 
-        ccsds.time_period.time_period_type = EXPORT_TOOL_TIME_PERIOD.USE_ENTIRE_EPHEMERIS
-        Assert.assertEqual(EXPORT_TOOL_TIME_PERIOD.USE_ENTIRE_EPHEMERIS, ccsds.time_period.time_period_type)
-        ccsds.time_period.time_period_type = EXPORT_TOOL_TIME_PERIOD.SPECIFY
-        Assert.assertEqual(EXPORT_TOOL_TIME_PERIOD.SPECIFY, ccsds.time_period.time_period_type)
+        ccsds.time_period.time_period_type = ExportToolTimePeriodType.USE_ENTIRE_EPHEMERIS
+        Assert.assertEqual(ExportToolTimePeriodType.USE_ENTIRE_EPHEMERIS, ccsds.time_period.time_period_type)
+        ccsds.time_period.time_period_type = ExportToolTimePeriodType.SPECIFY
+        Assert.assertEqual(ExportToolTimePeriodType.SPECIFY, ccsds.time_period.time_period_type)
         ccsds.time_period.start = (Scenario(self._root.current_scenario)).start_time
         Assert.assertEqual((Scenario(self._root.current_scenario)).start_time, ccsds.time_period.start)
         ccsds.time_period.stop = (Scenario(self._root.current_scenario)).stop_time
         Assert.assertEqual((Scenario(self._root.current_scenario)).stop_time, ccsds.time_period.stop)
 
-        ccsds.step_size.step_size_type = EXPORT_TOOL_STEP_SIZE.EPHEMERIS
-        Assert.assertEqual(EXPORT_TOOL_STEP_SIZE.EPHEMERIS, ccsds.step_size.step_size_type)
-        ccsds.step_size.step_size_type = EXPORT_TOOL_STEP_SIZE.SPECIFY
-        Assert.assertEqual(EXPORT_TOOL_STEP_SIZE.SPECIFY, ccsds.step_size.step_size_type)
+        ccsds.step_size.step_size_type = ExportToolStepSizeType.EPHEMERIS
+        Assert.assertEqual(ExportToolStepSizeType.EPHEMERIS, ccsds.step_size.step_size_type)
+        ccsds.step_size.step_size_type = ExportToolStepSizeType.SPECIFY
+        Assert.assertEqual(ExportToolStepSizeType.SPECIFY, ccsds.step_size.step_size_type)
         ccsds.step_size.value = 3600
         Assert.assertEqual(3600, ccsds.step_size.value)
         with pytest.raises(Exception):
-            ccsds.step_size.step_size_type = EXPORT_TOOL_STEP_SIZE.NATIVE
+            ccsds.step_size.step_size_type = ExportToolStepSizeType.NATIVE
 
-        ccsds.time_system = CCSDS_TIME_SYSTEM.GPS
-        Assert.assertEqual(CCSDS_TIME_SYSTEM.GPS, ccsds.time_system)
-        ccsds.time_system = CCSDS_TIME_SYSTEM.TAI
-        Assert.assertEqual(CCSDS_TIME_SYSTEM.TAI, ccsds.time_system)
-        ccsds.time_system = CCSDS_TIME_SYSTEM.TDB
-        Assert.assertEqual(CCSDS_TIME_SYSTEM.TDB, ccsds.time_system)
-        ccsds.time_system = CCSDS_TIME_SYSTEM.TT
-        Assert.assertEqual(CCSDS_TIME_SYSTEM.TT, ccsds.time_system)
-        ccsds.time_system = CCSDS_TIME_SYSTEM.UTC
-        Assert.assertEqual(CCSDS_TIME_SYSTEM.UTC, ccsds.time_system)
+        ccsds.time_system = CCSDSTimeSystem.GPS
+        Assert.assertEqual(CCSDSTimeSystem.GPS, ccsds.time_system)
+        ccsds.time_system = CCSDSTimeSystem.TAI
+        Assert.assertEqual(CCSDSTimeSystem.TAI, ccsds.time_system)
+        ccsds.time_system = CCSDSTimeSystem.TDB
+        Assert.assertEqual(CCSDSTimeSystem.TDB, ccsds.time_system)
+        ccsds.time_system = CCSDSTimeSystem.TT
+        Assert.assertEqual(CCSDSTimeSystem.TT, ccsds.time_system)
+        ccsds.time_system = CCSDSTimeSystem.UTC
+        Assert.assertEqual(CCSDSTimeSystem.UTC, ccsds.time_system)
 
         ccsds.export(TestBase.GetScenarioFile("OMExternalFileCCSDS.oem"))
         self._root.execute_command(
@@ -620,15 +613,15 @@ class ExportDataFileHelper(object):
         # Check that the CentralBody and ReferenceFrame are writable
         ccsdsv2.central_body_name = "Jupiter"
         Assert.assertEqual("Jupiter", ccsdsv2.central_body_name)
-        ccsdsv2.reference_frame = CCSDS_REFERENCE_FRAME.EME2000
-        Assert.assertEqual(CCSDS_REFERENCE_FRAME.EME2000, ccsdsv2.reference_frame)
+        ccsdsv2.reference_frame = CCSDSReferenceFrame.EME2000
+        Assert.assertEqual(CCSDSReferenceFrame.EME2000, ccsdsv2.reference_frame)
 
         ccsdsv2.use_satellite_center_and_frame = True
         Assert.assertTrue(ccsdsv2.use_satellite_center_and_frame)
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             ccsdsv2.central_body_name = "Earth"
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            ccsdsv2.reference_frame = CCSDS_REFERENCE_FRAME.FIXED
+            ccsdsv2.reference_frame = CCSDSReferenceFrame.FIXED
 
         ccsdsv2.use_satellite_center_and_frame = False
 
@@ -649,82 +642,82 @@ class ExportDataFileHelper(object):
         RefsSupported = ccsdsv2.reference_frames_supported
         refTypeObj: typing.Any
         for refTypeObj in RefsSupported:
-            refType: "CCSDS_REFERENCE_FRAME" = CCSDS_REFERENCE_FRAME(int(refTypeObj))
+            refType: "CCSDSReferenceFrame" = CCSDSReferenceFrame(int(refTypeObj))
             ccsdsv2.reference_frame = refType
             Assert.assertEqual(refType, ccsdsv2.reference_frame)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
-            ccsdsv2.reference_frame = CCSDS_REFERENCE_FRAME.MEAN_EARTH
+            ccsdsv2.reference_frame = CCSDSReferenceFrame.MEAN_EARTH
 
         # Moon: ICRF, J2000, TOD, MeanEarth, Fixed
         ccsdsv2.central_body_name = "Moon"
         RefsSupported = ccsdsv2.reference_frames_supported
         refTypeObj: typing.Any
         for refTypeObj in RefsSupported:
-            refType: "CCSDS_REFERENCE_FRAME" = CCSDS_REFERENCE_FRAME(int(refTypeObj))
+            refType: "CCSDSReferenceFrame" = CCSDSReferenceFrame(int(refTypeObj))
             ccsdsv2.reference_frame = refType
             Assert.assertEqual(refType, ccsdsv2.reference_frame)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
-            ccsdsv2.reference_frame = CCSDS_REFERENCE_FRAME.ITRF
+            ccsdsv2.reference_frame = CCSDSReferenceFrame.ITRF
 
         # other cb's: ICRF, J2000, TOD, Fixed
         ccsdsv2.central_body_name = "Sun"
         RefsSupported = ccsdsv2.reference_frames_supported
         refTypeObj: typing.Any
         for refTypeObj in RefsSupported:
-            refType: "CCSDS_REFERENCE_FRAME" = CCSDS_REFERENCE_FRAME(int(refTypeObj))
+            refType: "CCSDSReferenceFrame" = CCSDSReferenceFrame(int(refTypeObj))
             ccsdsv2.reference_frame = refType
             Assert.assertEqual(refType, ccsdsv2.reference_frame)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
-            ccsdsv2.reference_frame = CCSDS_REFERENCE_FRAME.ITRF
+            ccsdsv2.reference_frame = CCSDSReferenceFrame.ITRF
         with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
-            ccsdsv2.reference_frame = CCSDS_REFERENCE_FRAME.MEAN_EARTH
+            ccsdsv2.reference_frame = CCSDSReferenceFrame.MEAN_EARTH
 
         # pick a valid combination
         ccsdsv2.central_body_name = "Moon"
-        ccsdsv2.reference_frame = CCSDS_REFERENCE_FRAME.EME2000
+        ccsdsv2.reference_frame = CCSDSReferenceFrame.EME2000
 
         ccsdsv2.time_precision = 7
         Assert.assertEqual(7, ccsdsv2.time_precision)
-        ccsdsv2.date_format = CCSDS_DATE_FORMAT.YDOY
-        Assert.assertEqual(CCSDS_DATE_FORMAT.YDOY, ccsdsv2.date_format)
-        ccsdsv2.date_format = CCSDS_DATE_FORMAT.YMD
-        Assert.assertEqual(CCSDS_DATE_FORMAT.YMD, ccsdsv2.date_format)
-        ccsdsv2.ephemeris_format = CCSDS_EPHEMERIS_FORMAT_TYPE.FLOATING_POINT
-        Assert.assertEqual(CCSDS_EPHEMERIS_FORMAT_TYPE.FLOATING_POINT, ccsdsv2.ephemeris_format)
-        ccsdsv2.ephemeris_format = CCSDS_EPHEMERIS_FORMAT_TYPE.SCIENTIFIC_NOTATION
-        Assert.assertEqual(CCSDS_EPHEMERIS_FORMAT_TYPE.SCIENTIFIC_NOTATION, ccsdsv2.ephemeris_format)
+        ccsdsv2.date_format = CCSDSDateFormat.YDOY
+        Assert.assertEqual(CCSDSDateFormat.YDOY, ccsdsv2.date_format)
+        ccsdsv2.date_format = CCSDSDateFormat.YMD
+        Assert.assertEqual(CCSDSDateFormat.YMD, ccsdsv2.date_format)
+        ccsdsv2.ephemeris_format = CCSDSEphemerisFormatType.FLOATING_POINT
+        Assert.assertEqual(CCSDSEphemerisFormatType.FLOATING_POINT, ccsdsv2.ephemeris_format)
+        ccsdsv2.ephemeris_format = CCSDSEphemerisFormatType.SCIENTIFIC_NOTATION
+        Assert.assertEqual(CCSDSEphemerisFormatType.SCIENTIFIC_NOTATION, ccsdsv2.ephemeris_format)
 
-        ccsdsv2.time_period.time_period_type = EXPORT_TOOL_TIME_PERIOD.USE_ENTIRE_EPHEMERIS
-        Assert.assertEqual(EXPORT_TOOL_TIME_PERIOD.USE_ENTIRE_EPHEMERIS, ccsdsv2.time_period.time_period_type)
-        ccsdsv2.time_period.time_period_type = EXPORT_TOOL_TIME_PERIOD.SPECIFY
-        Assert.assertEqual(EXPORT_TOOL_TIME_PERIOD.SPECIFY, ccsdsv2.time_period.time_period_type)
+        ccsdsv2.time_period.time_period_type = ExportToolTimePeriodType.USE_ENTIRE_EPHEMERIS
+        Assert.assertEqual(ExportToolTimePeriodType.USE_ENTIRE_EPHEMERIS, ccsdsv2.time_period.time_period_type)
+        ccsdsv2.time_period.time_period_type = ExportToolTimePeriodType.SPECIFY
+        Assert.assertEqual(ExportToolTimePeriodType.SPECIFY, ccsdsv2.time_period.time_period_type)
         ccsdsv2.time_period.start = (Scenario(self._root.current_scenario)).start_time
         Assert.assertEqual((Scenario(self._root.current_scenario)).start_time, ccsdsv2.time_period.start)
         ccsdsv2.time_period.stop = (Scenario(self._root.current_scenario)).stop_time
         Assert.assertEqual((Scenario(self._root.current_scenario)).stop_time, ccsdsv2.time_period.stop)
 
-        ccsdsv2.step_size.step_size_type = EXPORT_TOOL_STEP_SIZE.EPHEMERIS
-        Assert.assertEqual(EXPORT_TOOL_STEP_SIZE.EPHEMERIS, ccsdsv2.step_size.step_size_type)
-        ccsdsv2.step_size.step_size_type = EXPORT_TOOL_STEP_SIZE.SPECIFY
-        Assert.assertEqual(EXPORT_TOOL_STEP_SIZE.SPECIFY, ccsdsv2.step_size.step_size_type)
+        ccsdsv2.step_size.step_size_type = ExportToolStepSizeType.EPHEMERIS
+        Assert.assertEqual(ExportToolStepSizeType.EPHEMERIS, ccsdsv2.step_size.step_size_type)
+        ccsdsv2.step_size.step_size_type = ExportToolStepSizeType.SPECIFY
+        Assert.assertEqual(ExportToolStepSizeType.SPECIFY, ccsdsv2.step_size.step_size_type)
         ccsdsv2.step_size.value = 3600
         Assert.assertEqual(3600, ccsdsv2.step_size.value)
         with pytest.raises(Exception):
-            ccsdsv2.step_size.step_size_type = EXPORT_TOOL_STEP_SIZE.NATIVE
+            ccsdsv2.step_size.step_size_type = ExportToolStepSizeType.NATIVE
 
-        ccsdsv2.time_system = CCSDS_TIME_SYSTEM.GPS
-        Assert.assertEqual(CCSDS_TIME_SYSTEM.GPS, ccsdsv2.time_system)
-        ccsdsv2.time_system = CCSDS_TIME_SYSTEM.TAI
-        Assert.assertEqual(CCSDS_TIME_SYSTEM.TAI, ccsdsv2.time_system)
-        ccsdsv2.time_system = CCSDS_TIME_SYSTEM.TDB
-        Assert.assertEqual(CCSDS_TIME_SYSTEM.TDB, ccsdsv2.time_system)
-        ccsdsv2.time_system = CCSDS_TIME_SYSTEM.TT
-        Assert.assertEqual(CCSDS_TIME_SYSTEM.TT, ccsdsv2.time_system)
-        ccsdsv2.time_system = CCSDS_TIME_SYSTEM.UTC
-        Assert.assertEqual(CCSDS_TIME_SYSTEM.UTC, ccsdsv2.time_system)
+        ccsdsv2.time_system = CCSDSTimeSystem.GPS
+        Assert.assertEqual(CCSDSTimeSystem.GPS, ccsdsv2.time_system)
+        ccsdsv2.time_system = CCSDSTimeSystem.TAI
+        Assert.assertEqual(CCSDSTimeSystem.TAI, ccsdsv2.time_system)
+        ccsdsv2.time_system = CCSDSTimeSystem.TDB
+        Assert.assertEqual(CCSDSTimeSystem.TDB, ccsdsv2.time_system)
+        ccsdsv2.time_system = CCSDSTimeSystem.TT
+        Assert.assertEqual(CCSDSTimeSystem.TT, ccsdsv2.time_system)
+        ccsdsv2.time_system = CCSDSTimeSystem.UTC
+        Assert.assertEqual(CCSDSTimeSystem.UTC, ccsdsv2.time_system)
 
         ccsdsv2.export(TestBase.GetScenarioFile("OMExternalFileCCSDS.oem"))
         self._root.execute_command(
@@ -858,8 +851,8 @@ class ExportDataFileHelper(object):
         ccsdsv2.include_acceleration = True
         Assert.assertTrue(ccsdsv2.include_acceleration)
 
-        ccsdsv2.file_format = EPHEM_EXPORT_TOOL_FILE_FORMAT.ORBIT_EPHEMERIS_MESSAGE
-        Assert.assertEqual(EPHEM_EXPORT_TOOL_FILE_FORMAT.ORBIT_EPHEMERIS_MESSAGE, ccsdsv2.file_format)
+        ccsdsv2.file_format = EphemExportToolFileFormat.ORBIT_EPHEMERIS_MESSAGE
+        Assert.assertEqual(EphemExportToolFileFormat.ORBIT_EPHEMERIS_MESSAGE, ccsdsv2.file_format)
 
         ccsdsv2.export(TestBase.GetScenarioFile("OMExternalFileCCSDS_2.oem"))
         self._root.execute_command(
@@ -898,8 +891,8 @@ class ExportDataFileHelper(object):
         om.Delete()
         connect.Delete()
 
-        ccsdsv2.file_format = EPHEM_EXPORT_TOOL_FILE_FORMAT.XML
-        Assert.assertEqual(EPHEM_EXPORT_TOOL_FILE_FORMAT.XML, ccsdsv2.file_format)
+        ccsdsv2.file_format = EphemExportToolFileFormat.XML
+        Assert.assertEqual(EphemExportToolFileFormat.XML, ccsdsv2.file_format)
 
         ccsdsv2.export(TestBase.GetScenarioFile("OMExternalFileCCSDS_3.oem"))
         self._root.execute_command(
@@ -945,23 +938,23 @@ class ExportDataFileHelper(object):
         code500.satellite_identifer = 40
         Assert.assertEqual(40, code500.satellite_identifer)
 
-        code500.time_period.time_period_type = EXPORT_TOOL_TIME_PERIOD.USE_ENTIRE_EPHEMERIS
-        Assert.assertEqual(EXPORT_TOOL_TIME_PERIOD.USE_ENTIRE_EPHEMERIS, code500.time_period.time_period_type)
-        code500.time_period.time_period_type = EXPORT_TOOL_TIME_PERIOD.SPECIFY
-        Assert.assertEqual(EXPORT_TOOL_TIME_PERIOD.SPECIFY, code500.time_period.time_period_type)
+        code500.time_period.time_period_type = ExportToolTimePeriodType.USE_ENTIRE_EPHEMERIS
+        Assert.assertEqual(ExportToolTimePeriodType.USE_ENTIRE_EPHEMERIS, code500.time_period.time_period_type)
+        code500.time_period.time_period_type = ExportToolTimePeriodType.SPECIFY
+        Assert.assertEqual(ExportToolTimePeriodType.SPECIFY, code500.time_period.time_period_type)
         code500.time_period.start = (Scenario(self._root.current_scenario)).start_time
         Assert.assertEqual((Scenario(self._root.current_scenario)).start_time, code500.time_period.start)
         code500.time_period.stop = (Scenario(self._root.current_scenario)).stop_time
         Assert.assertEqual((Scenario(self._root.current_scenario)).stop_time, code500.time_period.stop)
 
-        code500.step_size.step_size_type = EXPORT_TOOL_STEP_SIZE.EPHEMERIS
-        Assert.assertEqual(EXPORT_TOOL_STEP_SIZE.EPHEMERIS, code500.step_size.step_size_type)
-        code500.step_size.step_size_type = EXPORT_TOOL_STEP_SIZE.SPECIFY
-        Assert.assertEqual(EXPORT_TOOL_STEP_SIZE.SPECIFY, code500.step_size.step_size_type)
+        code500.step_size.step_size_type = ExportToolStepSizeType.EPHEMERIS
+        Assert.assertEqual(ExportToolStepSizeType.EPHEMERIS, code500.step_size.step_size_type)
+        code500.step_size.step_size_type = ExportToolStepSizeType.SPECIFY
+        Assert.assertEqual(ExportToolStepSizeType.SPECIFY, code500.step_size.step_size_type)
         code500.step_size.value = 3600
         Assert.assertEqual(3600, code500.step_size.value)
         with pytest.raises(Exception):
-            code500.step_size.step_size_type = EXPORT_TOOL_STEP_SIZE.NATIVE
+            code500.step_size.step_size_type = ExportToolStepSizeType.NATIVE
 
         # this part only works if you have the code500 dll loaded.
         code500.export(TestBase.GetScenarioFile("OMExternalFileCode500.eph"))
@@ -1012,30 +1005,30 @@ class ExportDataFileHelper(object):
 
         spice.satellite_identifer = -200001
         Assert.assertEqual(-200001, spice.satellite_identifer)
-        spice.interpolation_type = SPICE_INTERPOLATION.LAGRANGE_9TH_ORDER
-        Assert.assertEqual(SPICE_INTERPOLATION.LAGRANGE_9TH_ORDER, spice.interpolation_type)
-        spice.interpolation_type = SPICE_INTERPOLATION.HERMITE_13TH_ORDER
-        Assert.assertEqual(SPICE_INTERPOLATION.HERMITE_13TH_ORDER, spice.interpolation_type)
+        spice.interpolation_type = SpiceInterpolation.LAGRANGE_9TH_ORDER
+        Assert.assertEqual(SpiceInterpolation.LAGRANGE_9TH_ORDER, spice.interpolation_type)
+        spice.interpolation_type = SpiceInterpolation.HERMITE_13TH_ORDER
+        Assert.assertEqual(SpiceInterpolation.HERMITE_13TH_ORDER, spice.interpolation_type)
         spice.interpolation = 7
         Assert.assertEqual(7, spice.interpolation)
 
-        spice.time_period.time_period_type = EXPORT_TOOL_TIME_PERIOD.USE_ENTIRE_EPHEMERIS
-        Assert.assertEqual(EXPORT_TOOL_TIME_PERIOD.USE_ENTIRE_EPHEMERIS, spice.time_period.time_period_type)
-        spice.time_period.time_period_type = EXPORT_TOOL_TIME_PERIOD.SPECIFY
-        Assert.assertEqual(EXPORT_TOOL_TIME_PERIOD.SPECIFY, spice.time_period.time_period_type)
+        spice.time_period.time_period_type = ExportToolTimePeriodType.USE_ENTIRE_EPHEMERIS
+        Assert.assertEqual(ExportToolTimePeriodType.USE_ENTIRE_EPHEMERIS, spice.time_period.time_period_type)
+        spice.time_period.time_period_type = ExportToolTimePeriodType.SPECIFY
+        Assert.assertEqual(ExportToolTimePeriodType.SPECIFY, spice.time_period.time_period_type)
         spice.time_period.start = (Scenario(self._root.current_scenario)).start_time
         Assert.assertEqual((Scenario(self._root.current_scenario)).start_time, spice.time_period.start)
         spice.time_period.stop = (Scenario(self._root.current_scenario)).stop_time
         Assert.assertEqual((Scenario(self._root.current_scenario)).stop_time, spice.time_period.stop)
 
-        spice.step_size.step_size_type = EXPORT_TOOL_STEP_SIZE.EPHEMERIS
-        Assert.assertEqual(EXPORT_TOOL_STEP_SIZE.EPHEMERIS, spice.step_size.step_size_type)
-        spice.step_size.step_size_type = EXPORT_TOOL_STEP_SIZE.SPECIFY
-        Assert.assertEqual(EXPORT_TOOL_STEP_SIZE.SPECIFY, spice.step_size.step_size_type)
+        spice.step_size.step_size_type = ExportToolStepSizeType.EPHEMERIS
+        Assert.assertEqual(ExportToolStepSizeType.EPHEMERIS, spice.step_size.step_size_type)
+        spice.step_size.step_size_type = ExportToolStepSizeType.SPECIFY
+        Assert.assertEqual(ExportToolStepSizeType.SPECIFY, spice.step_size.step_size_type)
         spice.step_size.value = 3600
         Assert.assertEqual(3600, spice.step_size.value)
         with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
-            spice.step_size.step_size_type = EXPORT_TOOL_STEP_SIZE.NATIVE
+            spice.step_size.step_size_type = ExportToolStepSizeType.NATIVE
 
         spice.export(TestBase.GetScenarioFile("OMExternalFileSpice.bsp"))
         self._root.execute_command(
@@ -1125,14 +1118,14 @@ class ExportDataFileHelper(object):
     # region EphemerisStkBinaryExportTool
     def EphemerisStkBinaryExportTool(self, binary: "VehicleEphemerisBinaryExportTool", isSat: bool):
         # "Satellite1.be"
-        binary.coordinate_system = EPHEMERIS_COORDINATE_SYSTEM_TYPE.FIXED
-        Assert.assertEqual(EPHEMERIS_COORDINATE_SYSTEM_TYPE.FIXED, binary.coordinate_system)
-        binary.coordinate_system = EPHEMERIS_COORDINATE_SYSTEM_TYPE.ICRF
-        Assert.assertEqual(EPHEMERIS_COORDINATE_SYSTEM_TYPE.ICRF, binary.coordinate_system)
-        binary.coordinate_system = EPHEMERIS_COORDINATE_SYSTEM_TYPE.INERTIAL
-        Assert.assertEqual(EPHEMERIS_COORDINATE_SYSTEM_TYPE.INERTIAL, binary.coordinate_system)
-        binary.coordinate_system = EPHEMERIS_COORDINATE_SYSTEM_TYPE.J2000
-        Assert.assertEqual(EPHEMERIS_COORDINATE_SYSTEM_TYPE.J2000, binary.coordinate_system)
+        binary.coordinate_system = EphemerisCoordinateSystemType.FIXED
+        Assert.assertEqual(EphemerisCoordinateSystemType.FIXED, binary.coordinate_system)
+        binary.coordinate_system = EphemerisCoordinateSystemType.ICRF
+        Assert.assertEqual(EphemerisCoordinateSystemType.ICRF, binary.coordinate_system)
+        binary.coordinate_system = EphemerisCoordinateSystemType.INERTIAL
+        Assert.assertEqual(EphemerisCoordinateSystemType.INERTIAL, binary.coordinate_system)
+        binary.coordinate_system = EphemerisCoordinateSystemType.J2000
+        Assert.assertEqual(EphemerisCoordinateSystemType.J2000, binary.coordinate_system)
 
         Assert.assertTrue(binary.use_vehicle_central_body)
         Assert.assertEqual("Earth", binary.central_body_name)
@@ -1157,45 +1150,45 @@ class ExportDataFileHelper(object):
         binary.include_interpolation_boundaries = True
         Assert.assertTrue(binary.include_interpolation_boundaries)
 
-        binary.version_format = EXPORT_TOOL_VERSION_FORMAT.CURRENT
-        Assert.assertEqual(EXPORT_TOOL_VERSION_FORMAT.CURRENT, binary.version_format)
+        binary.version_format = ExportToolVersionFormat.CURRENT
+        Assert.assertEqual(ExportToolVersionFormat.CURRENT, binary.version_format)
         with pytest.raises(Exception):
-            binary.version_format = EXPORT_TOOL_VERSION_FORMAT.FORMAT410
+            binary.version_format = ExportToolVersionFormat.FORMAT410
         with pytest.raises(Exception):
-            binary.version_format = EXPORT_TOOL_VERSION_FORMAT.FORMAT420
+            binary.version_format = ExportToolVersionFormat.FORMAT420
         with pytest.raises(Exception):
-            binary.version_format = EXPORT_TOOL_VERSION_FORMAT.FORMAT430
+            binary.version_format = ExportToolVersionFormat.FORMAT430
         with pytest.raises(Exception):
-            binary.version_format = EXPORT_TOOL_VERSION_FORMAT.FORMAT600
+            binary.version_format = ExportToolVersionFormat.FORMAT600
         with pytest.raises(Exception):
-            binary.version_format = EXPORT_TOOL_VERSION_FORMAT.FORMAT620
+            binary.version_format = ExportToolVersionFormat.FORMAT620
         with pytest.raises(Exception):
-            binary.version_format = EXPORT_TOOL_VERSION_FORMAT.FORMAT800
+            binary.version_format = ExportToolVersionFormat.FORMAT800
 
-        binary.time_period.time_period_type = EXPORT_TOOL_TIME_PERIOD.USE_ENTIRE_EPHEMERIS
-        Assert.assertEqual(EXPORT_TOOL_TIME_PERIOD.USE_ENTIRE_EPHEMERIS, binary.time_period.time_period_type)
-        binary.time_period.time_period_type = EXPORT_TOOL_TIME_PERIOD.SPECIFY
-        Assert.assertEqual(EXPORT_TOOL_TIME_PERIOD.SPECIFY, binary.time_period.time_period_type)
+        binary.time_period.time_period_type = ExportToolTimePeriodType.USE_ENTIRE_EPHEMERIS
+        Assert.assertEqual(ExportToolTimePeriodType.USE_ENTIRE_EPHEMERIS, binary.time_period.time_period_type)
+        binary.time_period.time_period_type = ExportToolTimePeriodType.SPECIFY
+        Assert.assertEqual(ExportToolTimePeriodType.SPECIFY, binary.time_period.time_period_type)
         binary.time_period.start = (Scenario(self._root.current_scenario)).start_time
         Assert.assertEqual((Scenario(self._root.current_scenario)).start_time, binary.time_period.start)
         binary.time_period.stop = (Scenario(self._root.current_scenario)).stop_time
         Assert.assertEqual((Scenario(self._root.current_scenario)).stop_time, binary.time_period.stop)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            binary.covariance_type = EPHEMERIS_COVARIANCE_TYPE.NONE
+            binary.covariance_type = EphemerisCovarianceType.NONE
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            binary.covariance_type = EPHEMERIS_COVARIANCE_TYPE.POSITION_3_BY_3
+            binary.covariance_type = EphemerisCovarianceType.POSITION_3_BY_3
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            binary.covariance_type = EPHEMERIS_COVARIANCE_TYPE.POSITION_VELOCITY_6_BY_6
+            binary.covariance_type = EphemerisCovarianceType.POSITION_VELOCITY_6_BY_6
 
-        binary.step_size.step_size_type = EXPORT_TOOL_STEP_SIZE.EPHEMERIS
-        Assert.assertEqual(EXPORT_TOOL_STEP_SIZE.EPHEMERIS, binary.step_size.step_size_type)
-        binary.step_size.step_size_type = EXPORT_TOOL_STEP_SIZE.SPECIFY
-        Assert.assertEqual(EXPORT_TOOL_STEP_SIZE.SPECIFY, binary.step_size.step_size_type)
+        binary.step_size.step_size_type = ExportToolStepSizeType.EPHEMERIS
+        Assert.assertEqual(ExportToolStepSizeType.EPHEMERIS, binary.step_size.step_size_type)
+        binary.step_size.step_size_type = ExportToolStepSizeType.SPECIFY
+        Assert.assertEqual(ExportToolStepSizeType.SPECIFY, binary.step_size.step_size_type)
         binary.step_size.value = 3600
         Assert.assertEqual(3600, binary.step_size.value)
         with pytest.raises(Exception):
-            binary.step_size.step_size_type = EXPORT_TOOL_STEP_SIZE.NATIVE
+            binary.step_size.step_size_type = ExportToolStepSizeType.NATIVE
 
         binary.export(TestBase.GetScenarioFile("OMExternalFileStk.be"))
         if isSat:
@@ -1485,57 +1478,57 @@ class BasicPropagatorHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, obj: "IStkObject", oPropagator: "IPropagator", eType: "PROPAGATOR_TYPE", EarthGravModel):
+    def Run(self, obj: "IStkObject", oPropagator: "IPropagator", eType: "PropagatorType", EarthGravModel):
         self.m_logger.WriteLine6("----- THE BASIC PROPAGATOR TEST ({0})----- BEGIN -----", eType)
         Assert.assertIsNotNone(oPropagator)
-        if eType == PROPAGATOR_TYPE.GREAT_ARC:
+        if eType == PropagatorType.GREAT_ARC:
             oHelper = PropagatorGreatArcHelper(obj, self.m_oUnits)
             oHelper.Run(PropagatorGreatArc(oPropagator))
-        elif eType == PROPAGATOR_TYPE.STK_EXTERNAL:
+        elif eType == PropagatorType.STK_EXTERNAL:
             oHelper = PropagatorStkExternalHelper(self.m_oUnits)
             oHelper.Run(PropagatorStkExternal(oPropagator))
-        elif eType == PROPAGATOR_TYPE.SIMPLE_ASCENT:
+        elif eType == PropagatorType.SIMPLE_ASCENT:
             oHelper = PropagatorSimpleAscentHelper(obj, self.m_oUnits)
             oHelper.Run(PropagatorSimpleAscent(oPropagator))
-        elif eType == PROPAGATOR_TYPE.TWO_BODY:
+        elif eType == PropagatorType.TWO_BODY:
             oHelper = PropagatorTwoBodyHelper(self.m_oApplication)
             oHelper.Run(PropagatorTwoBody(oPropagator))
-        elif eType == PROPAGATOR_TYPE.LOP:
+        elif eType == PropagatorType.LOP:
             oHelper = PropagatorLOPHelper(self.m_oApplication)
             oHelper.Run(PropagatorLOP(oPropagator))
-        elif eType == PROPAGATOR_TYPE.J2_PERTURBATION:
+        elif eType == PropagatorType.J2_PERTURBATION:
             oHelper = PropagatorJ2PerturbationHelper(self.m_oApplication)
             oHelper.Run(PropagatorJ2Perturbation(oPropagator))
-        elif eType == PROPAGATOR_TYPE.J4_PERTURBATION:
+        elif eType == PropagatorType.J4_PERTURBATION:
             oHelper = PropagatorJ4PerturbationHelper(self.m_oApplication)
             oHelper.Run(PropagatorJ4Perturbation(oPropagator))
-        elif eType == PROPAGATOR_TYPE.SGP4:
+        elif eType == PropagatorType.SGP4:
             oHelper = PropagatorSGP4Helper(self.m_oApplication)
             oHelper.Run(PropagatorSGP4(oPropagator))
-        elif eType == PROPAGATOR_TYPE.SPICE:
+        elif eType == PropagatorType.SPICE:
             oHelper = PropagatorSPICEHelper(self.m_oApplication)
             oHelper.Run(PropagatorSPICE(oPropagator))
-        elif eType == PROPAGATOR_TYPE.USER_EXTERNAL:
+        elif eType == PropagatorType.USER_EXTERNAL:
             oHelper = PropagatorUserExternalHelper(self.m_oApplication)
             oHelper.Run(PropagatorUserExternal(oPropagator))
-        elif eType == PROPAGATOR_TYPE.HPOP:
+        elif eType == PropagatorType.HPOP:
             oHelper = PropagatorHPOPHelper(self.m_oApplication, obj, EarthGravModel)
             oHelper.Run(PropagatorHPOP(oPropagator), False)
-        elif eType == PROPAGATOR_TYPE.BALLISTIC:
+        elif eType == PropagatorType.BALLISTIC:
             oHelper = PropagatorBallisticHelper(obj, self.m_oUnits)
             oHelper.Run(PropagatorBallistic(oPropagator))
-        elif eType == PROPAGATOR_TYPE.ASTROGATOR:
+        elif eType == PropagatorType.ASTROGATOR:
             pass
-        elif eType == PROPAGATOR_TYPE.REAL_TIME:
+        elif eType == PropagatorType.REAL_TIME:
             helper = PropagatorRealtimeHelper()
             helper.Run(obj, clr.CastAs(oPropagator, PropagatorRealtime))
-        elif eType == PROPAGATOR_TYPE.GPS:
+        elif eType == PropagatorType.GPS:
             helper = PropagatorGPSHelper(TestBase.GetSTKDBDir())
             helper.Run(obj, clr.CastAs(oPropagator, PropagatorGPS))
 
-        elif ((eType == PROPAGATOR_TYPE.PROPAGATOR_11_PARAMETERS)) or ((eType == PROPAGATOR_TYPE.SP3)):
+        elif ((eType == PropagatorType.PROPAGATOR_11_PARAMETERS)) or ((eType == PropagatorType.SP3)):
             pass
-        elif eType == PROPAGATOR_TYPE.AVIATOR:
+        elif eType == PropagatorType.AVIATOR:
             pass
         else:
             Assert.fail("Invalid propagator type: {0}", eType)
@@ -1563,27 +1556,25 @@ class PropagatorGreatArcHelper(object):
         Assert.assertIsNotNone(oGreatArc)
         # Method (DETERMINE_VELOCITY_FROM_TIME)
         self.m_logger.WriteLine6("\tThe current Calculation Method is: {0}", oGreatArc.method)
-        oGreatArc.method = VEHICLE_WAYPOINT_COMPUTATION_METHOD.DETERMINE_VELOCITY_FROM_TIME
+        oGreatArc.method = VehicleWaypointComputationMethod.DETERMINE_VELOCITY_FROM_TIME
         self.m_logger.WriteLine6("\tThe new Calculation Method is: {0}", oGreatArc.method)
-        Assert.assertEqual(VEHICLE_WAYPOINT_COMPUTATION_METHOD.DETERMINE_VELOCITY_FROM_TIME, oGreatArc.method)
+        Assert.assertEqual(VehicleWaypointComputationMethod.DETERMINE_VELOCITY_FROM_TIME, oGreatArc.method)
         # Waypoints
         oWPHelper = BasicWaypointsHelper(self.m_oUnits)
         oWPHelper.Run(oGreatArc.waypoints, oGreatArc.method)
 
         # Method (DETERMINE_TIME_ACCELERATION_FROM_VELOCITY)
-        oGreatArc.method = VEHICLE_WAYPOINT_COMPUTATION_METHOD.DETERMINE_TIME_ACCELERATION_FROM_VELOCITY
+        oGreatArc.method = VehicleWaypointComputationMethod.DETERMINE_TIME_ACCELERATION_FROM_VELOCITY
         self.m_logger.WriteLine6("\tThe new Calculation Method is: {0}", oGreatArc.method)
-        Assert.assertEqual(
-            VEHICLE_WAYPOINT_COMPUTATION_METHOD.DETERMINE_TIME_ACCELERATION_FROM_VELOCITY, oGreatArc.method
-        )
+        Assert.assertEqual(VehicleWaypointComputationMethod.DETERMINE_TIME_ACCELERATION_FROM_VELOCITY, oGreatArc.method)
         # Waypoints
         oWPHelper.Run(oGreatArc.waypoints, oGreatArc.method)
 
         # Method (DETERMINE_TIME_FROM_VELOCITY_AND_ACCELERATION)
-        oGreatArc.method = VEHICLE_WAYPOINT_COMPUTATION_METHOD.DETERMINE_TIME_FROM_VELOCITY_AND_ACCELERATION
+        oGreatArc.method = VehicleWaypointComputationMethod.DETERMINE_TIME_FROM_VELOCITY_AND_ACCELERATION
         self.m_logger.WriteLine6("\tThe new Calculation Method is: {0}", oGreatArc.method)
         Assert.assertEqual(
-            VEHICLE_WAYPOINT_COMPUTATION_METHOD.DETERMINE_TIME_FROM_VELOCITY_AND_ACCELERATION, oGreatArc.method
+            VehicleWaypointComputationMethod.DETERMINE_TIME_FROM_VELOCITY_AND_ACCELERATION, oGreatArc.method
         )
         # Waypoints
         oWPHelper.Run(oGreatArc.waypoints, oGreatArc.method)
@@ -1608,7 +1599,7 @@ class PropagatorGreatArcHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arTypes):
-            eRefType: "VEHICLE_ALTITUDE_REFERENCE" = VEHICLE_ALTITUDE_REFERENCE(int(arTypes[iIndex][0]))
+            eRefType: "VehicleAltitudeReference" = VehicleAltitudeReference(int(arTypes[iIndex][0]))
             if not oGreatArc.is_altitude_reference_type_supported(eRefType):
                 Assert.fail("The {0} Altitude Ref Type should be supported!", eRefType)
 
@@ -1619,9 +1610,9 @@ class PropagatorGreatArcHelper(object):
             )
             Assert.assertEqual(eRefType, oGreatArc.altitude_reference_type)
             if (
-                ((eRefType == VEHICLE_ALTITUDE_REFERENCE.MEAN_SEA_LEVEL))
-                or ((eRefType == VEHICLE_ALTITUDE_REFERENCE.WGS84))
-            ) or ((eRefType == VEHICLE_ALTITUDE_REFERENCE.ELLIPSOID)):
+                ((eRefType == VehicleAltitudeReference.MEAN_SEA_LEVEL))
+                or ((eRefType == VehicleAltitudeReference.WGS84))
+            ) or ((eRefType == VehicleAltitudeReference.ELLIPSOID)):
                 # AltitudeRef
                 oRef: "IVehicleWaypointAltitudeReference" = oGreatArc.altitude_reference
                 Assert.assertIsNotNone(oRef)
@@ -1634,7 +1625,7 @@ class PropagatorGreatArcHelper(object):
                 Assert.assertAlmostEqual(23.456, oGreatArc.arc_granularity, delta=0.0001)
                 with pytest.raises(Exception):
                     oGreatArc.arc_granularity = 654.321
-            elif eRefType == VEHICLE_ALTITUDE_REFERENCE.TERRAIN:
+            elif eRefType == VehicleAltitudeReference.TERRAIN:
                 # AltitudeRef
                 oRef: "IVehicleWaypointAltitudeReference" = oGreatArc.altitude_reference
                 Assert.assertIsNotNone(oRef)
@@ -1658,15 +1649,13 @@ class PropagatorGreatArcHelper(object):
                     oTerrain.granularity = -65.4321
                 # InterpMethod (ELLIPSOID_HEIGHT)
                 self.m_logger.WriteLine6("\t\t\tThe current InterpMethod is: {0}", oTerrain.interpolation_method)
-                oTerrain.interpolation_method = VEHICLE_WAYPOINT_INTERPOLATION_METHOD.ELLIPSOID_HEIGHT
+                oTerrain.interpolation_method = VehicleWaypointInterpolationMethod.ELLIPSOID_HEIGHT
                 self.m_logger.WriteLine6("\t\t\tThe new InterpMethod is: {0}", oTerrain.interpolation_method)
-                Assert.assertEqual(
-                    VEHICLE_WAYPOINT_INTERPOLATION_METHOD.ELLIPSOID_HEIGHT, oTerrain.interpolation_method
-                )
+                Assert.assertEqual(VehicleWaypointInterpolationMethod.ELLIPSOID_HEIGHT, oTerrain.interpolation_method)
                 # InterpMethod (TERRAIN_HEIGHT)
-                oTerrain.interpolation_method = VEHICLE_WAYPOINT_INTERPOLATION_METHOD.TERRAIN_HEIGHT
+                oTerrain.interpolation_method = VehicleWaypointInterpolationMethod.TERRAIN_HEIGHT
                 self.m_logger.WriteLine6("\t\t\tThe new InterpMethod is: {0}", oTerrain.interpolation_method)
-                Assert.assertEqual(VEHICLE_WAYPOINT_INTERPOLATION_METHOD.TERRAIN_HEIGHT, oTerrain.interpolation_method)
+                Assert.assertEqual(VehicleWaypointInterpolationMethod.TERRAIN_HEIGHT, oTerrain.interpolation_method)
             else:
                 Assert.fail("Invalid Altitude Ref Type: {0}!", eRefType)
             # Propagate
@@ -1676,20 +1665,20 @@ class PropagatorGreatArcHelper(object):
 
         # UseScenarioAnalysisTime property is read-only if the
         # method for computing the waypoints is not DETERMINE_VELOCITY_FROM_TIME
-        methods: "List[VEHICLE_WAYPOINT_COMPUTATION_METHOD]" = [
-            VEHICLE_WAYPOINT_COMPUTATION_METHOD.DETERMINE_TIME_ACCELERATION_FROM_VELOCITY,
-            VEHICLE_WAYPOINT_COMPUTATION_METHOD.DETERMINE_TIME_FROM_VELOCITY_AND_ACCELERATION,
+        methods: "List[VehicleWaypointComputationMethod]" = [
+            VehicleWaypointComputationMethod.DETERMINE_TIME_ACCELERATION_FROM_VELOCITY,
+            VehicleWaypointComputationMethod.DETERMINE_TIME_FROM_VELOCITY_AND_ACCELERATION,
         ]
-        m: "VEHICLE_WAYPOINT_COMPUTATION_METHOD"
+        m: "VehicleWaypointComputationMethod"
         for m in methods:
             oGreatArc.method = m
             Assert.assertEqual(m, oGreatArc.method)
 
-        oGreatArc.method = VEHICLE_WAYPOINT_COMPUTATION_METHOD.DETERMINE_VELOCITY_FROM_TIME
+        oGreatArc.method = VehicleWaypointComputationMethod.DETERMINE_VELOCITY_FROM_TIME
 
-        oGreatArc.method = VEHICLE_WAYPOINT_COMPUTATION_METHOD.DETERMINE_TIME_FROM_VELOCITY_AND_ACCELERATION
+        oGreatArc.method = VehicleWaypointComputationMethod.DETERMINE_TIME_FROM_VELOCITY_AND_ACCELERATION
         Assert.assertEqual(
-            VEHICLE_WAYPOINT_COMPUTATION_METHOD.DETERMINE_TIME_FROM_VELOCITY_AND_ACCELERATION, oGreatArc.method
+            VehicleWaypointComputationMethod.DETERMINE_TIME_FROM_VELOCITY_AND_ACCELERATION, oGreatArc.method
         )
         # Verify "Use Scenario Analysis Time" to make sure it works as expected
         # By setting UseScenarioAnalysisTime the propagator's
@@ -1730,7 +1719,7 @@ class BasicWaypointsHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oCollection: "VehicleWaypointsCollection", eMethod: "VEHICLE_WAYPOINT_COMPUTATION_METHOD"):
+    def Run(self, oCollection: "VehicleWaypointsCollection", eMethod: "VehicleWaypointComputationMethod"):
         self.m_logger.WriteLine6("----- THE BASIC WAYPOINTS TEST (Method = {0}) ----- BEGIN -----", eMethod)
         Assert.assertIsNotNone(oCollection)
 
@@ -1809,7 +1798,7 @@ class BasicWaypointsHelper(object):
             oItem.turn_radius = 3.45
             with pytest.raises(Exception):
                 oItem.turn_radius = -654.321
-            if eMethod == VEHICLE_WAYPOINT_COMPUTATION_METHOD.DETERMINE_TIME_ACCELERATION_FROM_VELOCITY:
+            if eMethod == VehicleWaypointComputationMethod.DETERMINE_TIME_ACCELERATION_FROM_VELOCITY:
                 # Speed
                 distance: str = self.m_oUnits.get_current_unit_abbrv("DistanceUnit")
                 time: str = self.m_oUnits.get_current_unit_abbrv("TimeUnit")
@@ -1827,7 +1816,7 @@ class BasicWaypointsHelper(object):
                     oItem.acceleration = 0.321
                 self.m_oUnits.set_current_unit("DistanceUnit", distance)
                 self.m_oUnits.set_current_unit("TimeUnit", time)
-            elif eMethod == VEHICLE_WAYPOINT_COMPUTATION_METHOD.DETERMINE_TIME_FROM_VELOCITY_AND_ACCELERATION:
+            elif eMethod == VehicleWaypointComputationMethod.DETERMINE_TIME_FROM_VELOCITY_AND_ACCELERATION:
                 # Speed
                 oItem.speed = 3.21
                 with pytest.raises(Exception):
@@ -1839,7 +1828,7 @@ class BasicWaypointsHelper(object):
                 # Time
                 with pytest.raises(Exception):
                     oItem.time = "10 Jul 1999 04:00:00.000"
-            elif eMethod == VEHICLE_WAYPOINT_COMPUTATION_METHOD.DETERMINE_VELOCITY_FROM_TIME:
+            elif eMethod == VehicleWaypointComputationMethod.DETERMINE_VELOCITY_FROM_TIME:
                 # Time
                 oItem.time = "12 Jul 1999 04:00:00.000"
                 # Speed
@@ -1904,38 +1893,38 @@ class PropagatorStkExternalHelper(object):
         Assert.assertEqual("2 Jul 1999 17:00:00.000", oStkExternal.ephemeris_start_epoch.time_instant)
 
         # FileFormat / Filename
-        oStkExternal.file_format = EXTERNAL_EPHEMERIS_FORMAT_TYPE.CCSDS
-        Assert.assertEqual(EXTERNAL_EPHEMERIS_FORMAT_TYPE.CCSDS, oStkExternal.file_format)
+        oStkExternal.file_format = ExternalEphemerisFormatType.CCSDS
+        Assert.assertEqual(ExternalEphemerisFormatType.CCSDS, oStkExternal.file_format)
         externalFile: str = TestBase.GetScenarioFile("External", "Satellite1.oem")
         oStkExternal.filename = externalFile
         Assert.assertEqual(TestBase.PathCombine("External", "Satellite1.oem"), oStkExternal.filename)
 
-        oStkExternal.file_format = EXTERNAL_EPHEMERIS_FORMAT_TYPE.ITC
-        Assert.assertEqual(EXTERNAL_EPHEMERIS_FORMAT_TYPE.ITC, oStkExternal.file_format)
+        oStkExternal.file_format = ExternalEphemerisFormatType.ITC
+        Assert.assertEqual(ExternalEphemerisFormatType.ITC, oStkExternal.file_format)
         externalFile = TestBase.GetScenarioFile("External", "Satellite1.bsp")
         oStkExternal.filename = externalFile
         Assert.assertEqual(TestBase.PathCombine("External", "Satellite1.bsp"), oStkExternal.filename)
 
-        oStkExternal.file_format = EXTERNAL_EPHEMERIS_FORMAT_TYPE.STK
-        Assert.assertEqual(EXTERNAL_EPHEMERIS_FORMAT_TYPE.STK, oStkExternal.file_format)
+        oStkExternal.file_format = ExternalEphemerisFormatType.STK
+        Assert.assertEqual(ExternalEphemerisFormatType.STK, oStkExternal.file_format)
         externalFile = TestBase.GetScenarioFile("External", "Satellite1.e")
         oStkExternal.filename = externalFile
         Assert.assertEqual(TestBase.PathCombine("External", "Satellite1.e"), oStkExternal.filename)
 
-        oStkExternal.file_format = EXTERNAL_EPHEMERIS_FORMAT_TYPE.STK_BINARY
-        Assert.assertEqual(EXTERNAL_EPHEMERIS_FORMAT_TYPE.STK_BINARY, oStkExternal.file_format)
+        oStkExternal.file_format = ExternalEphemerisFormatType.STK_BINARY
+        Assert.assertEqual(ExternalEphemerisFormatType.STK_BINARY, oStkExternal.file_format)
         externalFile = TestBase.GetScenarioFile("External", "Satellite1.be")
         oStkExternal.filename = externalFile
         Assert.assertEqual(TestBase.PathCombine("External", "Satellite1.be"), oStkExternal.filename)
 
-        oStkExternal.file_format = EXTERNAL_EPHEMERIS_FORMAT_TYPE.CODE500
-        Assert.assertEqual(EXTERNAL_EPHEMERIS_FORMAT_TYPE.CODE500, oStkExternal.file_format)
+        oStkExternal.file_format = ExternalEphemerisFormatType.CODE500
+        Assert.assertEqual(ExternalEphemerisFormatType.CODE500, oStkExternal.file_format)
         externalFile = TestBase.GetScenarioFile("External", "Satellite1.EPH")
         oStkExternal.filename = externalFile
         Assert.assertEqual(TestBase.PathCombine("External", "Satellite1.EPH"), oStkExternal.filename)
 
         with pytest.raises(Exception):
-            oStkExternal.file_format = EXTERNAL_EPHEMERIS_FORMAT_TYPE.UNKNOWN
+            oStkExternal.file_format = ExternalEphemerisFormatType.UNKNOWN
 
         with pytest.raises(Exception):
             oStkExternal.filename = ""
@@ -2092,7 +2081,7 @@ class PropagatorTwoBodyHelper(object):
         # m_logger.WriteLine("\tThe new Epoch is:  {0}", oInitState.Epoch);
         # Assert.AreEqual("18 Jan 2003 01:23:45.678", oInitState.Epoch);
         cart: "OrbitStateCartesian" = OrbitStateCartesian(
-            oInitState.representation.convert_to(ORBIT_STATE_TYPE.CARTESIAN)
+            oInitState.representation.convert_to(OrbitStateType.CARTESIAN)
         )
         (cart).epoch = "18 Jan 2003 01:23:45.678"
         self.m_logger.WriteLine6("\tThe new Epoch is:  {0}", cart.epoch)
@@ -2132,14 +2121,14 @@ class PropagatorTwoBodyHelper(object):
 
         arSupportedPropagationFrames = oTwoBody.supported_propagation_frames
         Assert.assertEqual(3, len(arSupportedPropagationFrames))
-        oTwoBody.propagation_frame = VEHICLE_PROPAGATION_FRAME(int((arSupportedPropagationFrames[2])))
-        Assert.assertEqual(VEHICLE_PROPAGATION_FRAME.TRUE_OF_EPOCH, oTwoBody.propagation_frame)
+        oTwoBody.propagation_frame = VehiclePropagationFrame(int((arSupportedPropagationFrames[2])))
+        Assert.assertEqual(VehiclePropagationFrame.TRUE_OF_EPOCH, oTwoBody.propagation_frame)
         oTwoBody.propagate()
-        oTwoBody.propagation_frame = VEHICLE_PROPAGATION_FRAME(int((arSupportedPropagationFrames[1])))
-        Assert.assertEqual(VEHICLE_PROPAGATION_FRAME.TRUE_OF_DATE, oTwoBody.propagation_frame)
+        oTwoBody.propagation_frame = VehiclePropagationFrame(int((arSupportedPropagationFrames[1])))
+        Assert.assertEqual(VehiclePropagationFrame.TRUE_OF_DATE, oTwoBody.propagation_frame)
         oTwoBody.propagate()
-        oTwoBody.propagation_frame = VEHICLE_PROPAGATION_FRAME(int((arSupportedPropagationFrames[0])))
-        Assert.assertEqual(VEHICLE_PROPAGATION_FRAME.INERTIAL, oTwoBody.propagation_frame)
+        oTwoBody.propagation_frame = VehiclePropagationFrame(int((arSupportedPropagationFrames[0])))
+        Assert.assertEqual(VehiclePropagationFrame.INERTIAL, oTwoBody.propagation_frame)
         oTwoBody.propagate()
 
         self.m_logger.WriteLine("----- TWO BODY PROPAGATOR TEST ----- END -----")
@@ -2186,7 +2175,7 @@ class PropagatorLOPHelper(object):
         # m_logger.WriteLine("\tThe new Epoch is:  {0}", oInitState.Epoch);
         # Assert.AreEqual("18 Jan 2003 01:23:45.678", oInitState.Epoch);
         cart: "OrbitStateCartesian" = OrbitStateCartesian(
-            oInitState.representation.convert_to(ORBIT_STATE_TYPE.CARTESIAN)
+            oInitState.representation.convert_to(OrbitStateType.CARTESIAN)
         )
         (cart).epoch = "18 Jan 2003 01:23:45.678"
         Assert.assertEqual("18 Jan 2003 01:23:45.678", cart.epoch)
@@ -2297,7 +2286,7 @@ class PropagatorLOPHelper(object):
         if bIsReadOnly:
             # AtmosphericDensityModel
             with pytest.raises(Exception):
-                oAdvanved.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.STANDARD_ATMOSPHERE_MODEL_1976
+                oAdvanved.atmospheric_density_model = AtmosphericDensityModel.STANDARD_ATMOSPHERE_MODEL_1976
             # UseOsculatingAlt
             with pytest.raises(Exception):
                 oAdvanved.use_osculating_altitude = True
@@ -2315,23 +2304,23 @@ class PropagatorLOPHelper(object):
             self.m_logger.WriteLine6(
                 "\tThe current AtmosphericDensityModel is:  {0}", oAdvanved.atmospheric_density_model
             )
-            oAdvanved.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.STANDARD_ATMOSPHERE_MODEL_1976
+            oAdvanved.atmospheric_density_model = AtmosphericDensityModel.STANDARD_ATMOSPHERE_MODEL_1976
             self.m_logger.WriteLine6("\tThe new AtmosphericDensityModel is:  {0}", oAdvanved.atmospheric_density_model)
             Assert.assertEqual(
-                ATMOSPHERIC_DENSITY_MODEL.STANDARD_ATMOSPHERE_MODEL_1976, oAdvanved.atmospheric_density_model
+                AtmosphericDensityModel.STANDARD_ATMOSPHERE_MODEL_1976, oAdvanved.atmospheric_density_model
             )
 
             with pytest.raises(Exception):
-                oAdvanved.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.HARRIS_PRIESTER
+                oAdvanved.atmospheric_density_model = AtmosphericDensityModel.HARRIS_PRIESTER
 
             # AtmosDensityModel (STANDARD_ATMOSPHERE_MODEL_1976)
             self.m_logger.WriteLine6(
                 "\tThe current AtmosphericDensityModel is:  {0}", oAdvanved.atmosphere_density_model
             )
-            oAdvanved.atmosphere_density_model = LOP_ATMOSPHERIC_DENSITY_MODEL.STANDARD_ATMOSPHERE_MODEL_1976
+            oAdvanved.atmosphere_density_model = LOPAtmosphericDensityModel.STANDARD_ATMOSPHERE_MODEL_1976
             self.m_logger.WriteLine6("\tThe new AtmosphericDensityModel is:  {0}", oAdvanved.atmosphere_density_model)
             Assert.assertEqual(
-                LOP_ATMOSPHERIC_DENSITY_MODEL.STANDARD_ATMOSPHERE_MODEL_1976, oAdvanved.atmosphere_density_model
+                LOPAtmosphericDensityModel.STANDARD_ATMOSPHERE_MODEL_1976, oAdvanved.atmosphere_density_model
             )
 
             # UseOsculatingAlt
@@ -2357,13 +2346,13 @@ class PropagatorLOPHelper(object):
             with pytest.raises(Exception):
                 oAdvanved.density_weighing_factor = -43.21
             # AtmosphericDensityModel (EXPONENTIAL_MODEL)
-            oAdvanved.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.EXPONENTIAL_MODEL
+            oAdvanved.atmospheric_density_model = AtmosphericDensityModel.EXPONENTIAL_MODEL
             self.m_logger.WriteLine6("\tThe new AtmosphericDensityModel is:  {0}", oAdvanved.atmospheric_density_model)
-            Assert.assertEqual(ATMOSPHERIC_DENSITY_MODEL.EXPONENTIAL_MODEL, oAdvanved.atmospheric_density_model)
+            Assert.assertEqual(AtmosphericDensityModel.EXPONENTIAL_MODEL, oAdvanved.atmospheric_density_model)
             # AtmosDensityModel (EXPONENTIAL_MODEL)
-            oAdvanved.atmosphere_density_model = LOP_ATMOSPHERIC_DENSITY_MODEL.EXPONENTIAL
+            oAdvanved.atmosphere_density_model = LOPAtmosphericDensityModel.EXPONENTIAL
             self.m_logger.WriteLine6("\tThe new AtmosDensityModel is:  {0}", oAdvanved.atmosphere_density_model)
-            Assert.assertEqual(LOP_ATMOSPHERIC_DENSITY_MODEL.EXPONENTIAL, oAdvanved.atmosphere_density_model)
+            Assert.assertEqual(LOPAtmosphericDensityModel.EXPONENTIAL, oAdvanved.atmosphere_density_model)
             # ExpDensModelParams
             self.ExponentialModelParamsTest(oAdvanved.exponential_density_model_parameters, False)
 
@@ -2519,19 +2508,19 @@ class PropagatorJ2PerturbationHelper(object):
         # oInitState.Epoch = "18 Jan 2003 01:23:45.678";
         # m_logger.WriteLine("\tThe new Epoch is:  {0}", oInitState.Epoch);
         # Assert.AreEqual("18 Jan 2003 01:23:45.678", oInitState.Epoch);
-        cart = OrbitStateCartesian(oInitState.representation.convert_to(ORBIT_STATE_TYPE.CARTESIAN))
+        cart = OrbitStateCartesian(oInitState.representation.convert_to(OrbitStateType.CARTESIAN))
         (cart).epoch = "18 Jan 2003 01:23:45.678"
         Assert.assertEqual("18 Jan 2003 01:23:45.678", cart.epoch)
 
         # EllipseOptions (OSCULATING)
         self.m_logger.WriteLine6("\tThe current EllipseOptions is:  {0}", oInitState.ellipse_options)
-        oInitState.ellipse_options = VEHICLE_ELLIPSE_OPTION_TYPE.OSCULATING
+        oInitState.ellipse_options = VehicleEllipseOptionType.OSCULATING
         self.m_logger.WriteLine6("\tThe new EllipseOptions is:  {0}", oInitState.ellipse_options)
-        Assert.assertEqual(VEHICLE_ELLIPSE_OPTION_TYPE.OSCULATING, oInitState.ellipse_options)
+        Assert.assertEqual(VehicleEllipseOptionType.OSCULATING, oInitState.ellipse_options)
         # EllipseOptions (SECULARLY_PRECESSING)
-        oInitState.ellipse_options = VEHICLE_ELLIPSE_OPTION_TYPE.SECULARLY_PRECESSING
+        oInitState.ellipse_options = VehicleEllipseOptionType.SECULARLY_PRECESSING
         self.m_logger.WriteLine6("\tThe new EllipseOptions is:  {0}", oInitState.ellipse_options)
-        Assert.assertEqual(VEHICLE_ELLIPSE_OPTION_TYPE.SECULARLY_PRECESSING, oInitState.ellipse_options)
+        Assert.assertEqual(VehicleEllipseOptionType.SECULARLY_PRECESSING, oInitState.ellipse_options)
         # Propagate
         oJ2.propagate()
         # Representation
@@ -2566,14 +2555,14 @@ class PropagatorJ2PerturbationHelper(object):
 
         arSupportedPropagationFrames = oJ2.supported_propagation_frames
         Assert.assertEqual(3, len(arSupportedPropagationFrames))
-        oJ2.propagation_frame = VEHICLE_PROPAGATION_FRAME((arSupportedPropagationFrames[2]))
-        Assert.assertEqual(VEHICLE_PROPAGATION_FRAME.TRUE_OF_EPOCH, oJ2.propagation_frame)
+        oJ2.propagation_frame = VehiclePropagationFrame((arSupportedPropagationFrames[2]))
+        Assert.assertEqual(VehiclePropagationFrame.TRUE_OF_EPOCH, oJ2.propagation_frame)
         oJ2.propagate()
-        oJ2.propagation_frame = VEHICLE_PROPAGATION_FRAME((arSupportedPropagationFrames[1]))
-        Assert.assertEqual(VEHICLE_PROPAGATION_FRAME.TRUE_OF_DATE, oJ2.propagation_frame)
+        oJ2.propagation_frame = VehiclePropagationFrame((arSupportedPropagationFrames[1]))
+        Assert.assertEqual(VehiclePropagationFrame.TRUE_OF_DATE, oJ2.propagation_frame)
         oJ2.propagate()
-        oJ2.propagation_frame = VEHICLE_PROPAGATION_FRAME((arSupportedPropagationFrames[0]))
-        Assert.assertEqual(VEHICLE_PROPAGATION_FRAME.INERTIAL, oJ2.propagation_frame)
+        oJ2.propagation_frame = VehiclePropagationFrame((arSupportedPropagationFrames[0]))
+        Assert.assertEqual(VehiclePropagationFrame.INERTIAL, oJ2.propagation_frame)
         oJ2.propagate()
 
         self.m_logger.WriteLine("----- J2 PERTURBATION PROPAGATOR TEST ----- END -----")
@@ -2622,19 +2611,19 @@ class PropagatorJ4PerturbationHelper(object):
         # oInitState.Epoch = "18 Jan 2003 01:23:45.678";
         # m_logger.WriteLine("\tThe new Epoch is:  {0}", oInitState.Epoch);
         # Assert.AreEqual("18 Jan 2003 01:23:45.678", oInitState.Epoch);
-        cart = OrbitStateCartesian(oInitState.representation.convert_to(ORBIT_STATE_TYPE.CARTESIAN))
+        cart = OrbitStateCartesian(oInitState.representation.convert_to(OrbitStateType.CARTESIAN))
         (cart).epoch = "18 Jan 2003 01:23:45.678"
         Assert.assertEqual("18 Jan 2003 01:23:45.678", cart.epoch)
         oInitState.representation.assign(cart)
         # EllipseOptions (OSCULATING)
         self.m_logger.WriteLine6("\tThe current EllipseOptions is:  {0}", oInitState.ellipse_options)
-        oInitState.ellipse_options = VEHICLE_ELLIPSE_OPTION_TYPE.OSCULATING
+        oInitState.ellipse_options = VehicleEllipseOptionType.OSCULATING
         self.m_logger.WriteLine6("\tThe new EllipseOptions is:  {0}", oInitState.ellipse_options)
-        Assert.assertEqual(VEHICLE_ELLIPSE_OPTION_TYPE.OSCULATING, oInitState.ellipse_options)
+        Assert.assertEqual(VehicleEllipseOptionType.OSCULATING, oInitState.ellipse_options)
         # EllipseOptions (SECULARLY_PRECESSING)
-        oInitState.ellipse_options = VEHICLE_ELLIPSE_OPTION_TYPE.SECULARLY_PRECESSING
+        oInitState.ellipse_options = VehicleEllipseOptionType.SECULARLY_PRECESSING
         self.m_logger.WriteLine6("\tThe new EllipseOptions is:  {0}", oInitState.ellipse_options)
-        Assert.assertEqual(VEHICLE_ELLIPSE_OPTION_TYPE.SECULARLY_PRECESSING, oInitState.ellipse_options)
+        Assert.assertEqual(VehicleEllipseOptionType.SECULARLY_PRECESSING, oInitState.ellipse_options)
         # Propagate
         oJ4.propagate()
         # Representation
@@ -2669,14 +2658,14 @@ class PropagatorJ4PerturbationHelper(object):
 
         arSupportedPropagationFrames = oJ4.supported_propagation_frames
         Assert.assertEqual(3, len(arSupportedPropagationFrames))
-        oJ4.propagation_frame = VEHICLE_PROPAGATION_FRAME((arSupportedPropagationFrames[2]))
-        Assert.assertEqual(VEHICLE_PROPAGATION_FRAME.TRUE_OF_EPOCH, oJ4.propagation_frame)
+        oJ4.propagation_frame = VehiclePropagationFrame((arSupportedPropagationFrames[2]))
+        Assert.assertEqual(VehiclePropagationFrame.TRUE_OF_EPOCH, oJ4.propagation_frame)
         oJ4.propagate()
-        oJ4.propagation_frame = VEHICLE_PROPAGATION_FRAME((arSupportedPropagationFrames[1]))
-        Assert.assertEqual(VEHICLE_PROPAGATION_FRAME.TRUE_OF_DATE, oJ4.propagation_frame)
+        oJ4.propagation_frame = VehiclePropagationFrame((arSupportedPropagationFrames[1]))
+        Assert.assertEqual(VehiclePropagationFrame.TRUE_OF_DATE, oJ4.propagation_frame)
         oJ4.propagate()
-        oJ4.propagation_frame = VEHICLE_PROPAGATION_FRAME((arSupportedPropagationFrames[0]))
-        Assert.assertEqual(VEHICLE_PROPAGATION_FRAME.INERTIAL, oJ4.propagation_frame)
+        oJ4.propagation_frame = VehiclePropagationFrame((arSupportedPropagationFrames[0]))
+        Assert.assertEqual(VehiclePropagationFrame.INERTIAL, oJ4.propagation_frame)
         oJ4.propagate()
 
         self.m_logger.WriteLine("----- J4 PERTURBATION PROPAGATOR TEST ----- END -----")
@@ -2792,9 +2781,9 @@ class PropagatorSGP4Helper(object):
         Assert.assertEqual(0, oSegments.count)
         # LoadMethodType (AUTOMATIC_LOAD)
         self.m_logger.WriteLine6("\tThe current LoadMethodType is:  {0}", oSegments.load_method_type)
-        oSegments.load_method_type = LOAD_METHOD.AUTOMATIC_LOAD
+        oSegments.load_method_type = LoadMethod.AUTOMATIC_LOAD
         self.m_logger.WriteLine6("\tThe new LoadMethodType is:  {0}", oSegments.load_method_type)
-        Assert.assertEqual(LOAD_METHOD.AUTOMATIC_LOAD, oSegments.load_method_type)
+        Assert.assertEqual(LoadMethod.AUTOMATIC_LOAD, oSegments.load_method_type)
         # LoadMethod
         self.LoadFileTest(clr.CastAs(oSegments.load_method, PropagatorSGP4LoadFile))
         # Propagate
@@ -2803,9 +2792,9 @@ class PropagatorSGP4Helper(object):
         oSegments.remove_all_segments()
         Assert.assertEqual(0, oSegments.count)
         # LoadMethodType (FILE_INSERT)
-        oSegments.load_method_type = LOAD_METHOD.FILE_INSERT
+        oSegments.load_method_type = LoadMethod.FILE_INSERT
         self.m_logger.WriteLine6("\tThe new LoadMethodType is:  {0}", oSegments.load_method_type)
-        Assert.assertEqual(LOAD_METHOD.FILE_INSERT, oSegments.load_method_type)
+        Assert.assertEqual(LoadMethod.FILE_INSERT, oSegments.load_method_type)
         # LoadMethod
         self.LoadFileTest(clr.CastAs(oSegments.load_method, PropagatorSGP4LoadFile))
         # Propagate
@@ -2814,9 +2803,9 @@ class PropagatorSGP4Helper(object):
         oSegments.remove_all_segments()
         Assert.assertEqual(0, oSegments.count)
         # LoadMethodType (FILE_LOAD)
-        oSegments.load_method_type = LOAD_METHOD.FILE_LOAD
+        oSegments.load_method_type = LoadMethod.FILE_LOAD
         self.m_logger.WriteLine6("\tThe new LoadMethodType is:  {0}", oSegments.load_method_type)
-        Assert.assertEqual(LOAD_METHOD.FILE_LOAD, oSegments.load_method_type)
+        Assert.assertEqual(LoadMethod.FILE_LOAD, oSegments.load_method_type)
         # LoadMethod
         self.LoadFileTest(clr.CastAs(oSegments.load_method, PropagatorSGP4LoadFile))
         # Propagate
@@ -2961,7 +2950,7 @@ class PropagatorSGP4Helper(object):
         # auto-update using alpha5 ssc number
         oSGP4.segments.ssc_number = "B0058"
         oSGP4.automatic_update_enabled = True
-        oSGP4.automatic_update_settings.selected_source = VEHICLE_SGP4_AUTOMATIC_UPDATE_SOURCE_TYPE.FILE
+        oSGP4.automatic_update_settings.selected_source = VehicleSGP4AutomaticUpdateSourceType.FILE
         oSGP4.automatic_update_settings.file_source.filename = TestBase.GetScenarioFile("smallSet_unsorted_alpha5.tce")
         preview = oSGP4.automatic_update_settings.file_source.preview()
         oSGP4.propagate()
@@ -2969,16 +2958,16 @@ class PropagatorSGP4Helper(object):
         # auto-update using csv file
         oSGP4.segments.ssc_number = "24836"
         oSGP4.automatic_update_enabled = True
-        oSGP4.automatic_update_settings.selected_source = VEHICLE_SGP4_AUTOMATIC_UPDATE_SOURCE_TYPE.FILE
+        oSGP4.automatic_update_settings.selected_source = VehicleSGP4AutomaticUpdateSourceType.FILE
         oSGP4.automatic_update_settings.file_source.filename = TestBase.GetScenarioFile("smallSet_unsorted.OMM.csv")
         preview = oSGP4.automatic_update_settings.file_source.preview()
         oSGP4.propagate()
 
         # LoadMethodType (ONLINE_AUTOMATIC_LOAD)
         oSGP4.ephemeris_interval.set_explicit_interval("18 Jan 2003 01:23:45.678", "19 Jan 2003 02:46:24.680")
-        oSegments.load_method_type = LOAD_METHOD.ONLINE_AUTOMATIC_LOAD
+        oSegments.load_method_type = LoadMethod.ONLINE_AUTOMATIC_LOAD
         self.m_logger.WriteLine6("\tThe new LoadMethodType is:  {0}", oSegments.load_method_type)
-        Assert.assertEqual(LOAD_METHOD.ONLINE_AUTOMATIC_LOAD, oSegments.load_method_type)
+        Assert.assertEqual(LoadMethod.ONLINE_AUTOMATIC_LOAD, oSegments.load_method_type)
 
         # this is backwards compatibility using a deprecated interface
         # the current interface is PropagatorSGP4OnlineLoad
@@ -2992,9 +2981,9 @@ class PropagatorSGP4Helper(object):
         oSGP4.propagate()
 
         # LoadMethodType (ONLINE_LOAD)
-        oSegments.load_method_type = LOAD_METHOD.ONLINE_LOAD
+        oSegments.load_method_type = LoadMethod.ONLINE_LOAD
         self.m_logger.WriteLine6("\tThe new LoadMethodType is:  {0}", oSegments.load_method_type)
-        Assert.assertEqual(LOAD_METHOD.ONLINE_LOAD, oSegments.load_method_type)
+        Assert.assertEqual(LoadMethod.ONLINE_LOAD, oSegments.load_method_type)
         # LoadMethod
         self.OnlineLoadTest(clr.CastAs(oSegments.load_method, PropagatorSGP4OnlineLoad))
         # Propagate
@@ -3005,45 +2994,35 @@ class PropagatorSGP4Helper(object):
         # ----------------------------------------------------
 
         Assert.assertFalse(oSGP4.automatic_update_enabled)
-        Assert.assertEqual(
-            VEHICLE_SGP4_AUTOMATIC_UPDATE_SOURCE_TYPE.NONE, oSGP4.automatic_update_settings.selected_source
-        )
+        Assert.assertEqual(VehicleSGP4AutomaticUpdateSourceType.NONE, oSGP4.automatic_update_settings.selected_source)
 
         with pytest.raises(Exception):
-            oSGP4.automatic_update_settings.selected_source = VEHICLE_SGP4_AUTOMATIC_UPDATE_SOURCE_TYPE.NONE
+            oSGP4.automatic_update_settings.selected_source = VehicleSGP4AutomaticUpdateSourceType.NONE
 
         with pytest.raises(Exception):
-            oSGP4.automatic_update_settings.selected_source = VEHICLE_SGP4_AUTOMATIC_UPDATE_SOURCE_TYPE.UNKNOWN
+            oSGP4.automatic_update_settings.selected_source = VehicleSGP4AutomaticUpdateSourceType.UNKNOWN
 
         oSGP4.automatic_update_enabled = True
         Assert.assertTrue(oSGP4.automatic_update_enabled)
 
-        oSGP4.automatic_update_settings.selected_source = VEHICLE_SGP4_AUTOMATIC_UPDATE_SOURCE_TYPE.ONLINE
-        Assert.assertEqual(
-            oSGP4.automatic_update_settings.selected_source, VEHICLE_SGP4_AUTOMATIC_UPDATE_SOURCE_TYPE.ONLINE
-        )
+        oSGP4.automatic_update_settings.selected_source = VehicleSGP4AutomaticUpdateSourceType.ONLINE
+        Assert.assertEqual(oSGP4.automatic_update_settings.selected_source, VehicleSGP4AutomaticUpdateSourceType.ONLINE)
 
-        oSGP4.automatic_update_settings.selected_source = VEHICLE_SGP4_AUTOMATIC_UPDATE_SOURCE_TYPE.FILE
-        Assert.assertEqual(
-            oSGP4.automatic_update_settings.selected_source, VEHICLE_SGP4_AUTOMATIC_UPDATE_SOURCE_TYPE.FILE
-        )
+        oSGP4.automatic_update_settings.selected_source = VehicleSGP4AutomaticUpdateSourceType.FILE
+        Assert.assertEqual(oSGP4.automatic_update_settings.selected_source, VehicleSGP4AutomaticUpdateSourceType.FILE)
 
         with pytest.raises(Exception):
-            oSGP4.automatic_update_settings.selected_source = VEHICLE_SGP4_AUTOMATIC_UPDATE_SOURCE_TYPE.NONE
+            oSGP4.automatic_update_settings.selected_source = VehicleSGP4AutomaticUpdateSourceType.NONE
 
         with pytest.raises(Exception):
-            oSGP4.automatic_update_settings.selected_source = VEHICLE_SGP4_AUTOMATIC_UPDATE_SOURCE_TYPE.UNKNOWN
+            oSGP4.automatic_update_settings.selected_source = VehicleSGP4AutomaticUpdateSourceType.UNKNOWN
 
         with pytest.raises(Exception):
-            oSGP4.automatic_update_settings.selected_source = (
-                VEHICLE_SGP4_AUTOMATIC_UPDATE_SOURCE_TYPE.ONLINE_SPACE_TRACK
-            )
+            oSGP4.automatic_update_settings.selected_source = VehicleSGP4AutomaticUpdateSourceType.ONLINE_SPACE_TRACK
 
         Assert.assertTrue(oSGP4.automatic_update_enabled)
-        oSGP4.automatic_update_settings.selected_source = VEHICLE_SGP4_AUTOMATIC_UPDATE_SOURCE_TYPE.FILE
-        Assert.assertEqual(
-            oSGP4.automatic_update_settings.selected_source, VEHICLE_SGP4_AUTOMATIC_UPDATE_SOURCE_TYPE.FILE
-        )
+        oSGP4.automatic_update_settings.selected_source = VehicleSGP4AutomaticUpdateSourceType.FILE
+        Assert.assertEqual(oSGP4.automatic_update_settings.selected_source, VehicleSGP4AutomaticUpdateSourceType.FILE)
         Assert.assertTrue(oSGP4.automatic_update_enabled)
 
         # ----------------------------------------------------
@@ -3053,7 +3032,7 @@ class PropagatorSGP4Helper(object):
         oSGP4.step = 60
         oSGP4.segments.ssc_number = "5"
         oSGP4.automatic_update_enabled = True
-        oSGP4.automatic_update_settings.selected_source = VEHICLE_SGP4_AUTOMATIC_UPDATE_SOURCE_TYPE.FILE
+        oSGP4.automatic_update_settings.selected_source = VehicleSGP4AutomaticUpdateSourceType.FILE
         oSGP4.automatic_update_settings.file_source.filename = TestBase.GetScenarioFile("stkAllTLE.tce")
         preview = oSGP4.automatic_update_settings.file_source.preview()
         oSGP4.propagate()
@@ -3065,7 +3044,7 @@ class PropagatorSGP4Helper(object):
         # ----------------------------------------------------
         # Auto-update the satellite using the online source.
         # ----------------------------------------------------
-        oSGP4.automatic_update_settings.selected_source = VEHICLE_SGP4_AUTOMATIC_UPDATE_SOURCE_TYPE.ONLINE
+        oSGP4.automatic_update_settings.selected_source = VehicleSGP4AutomaticUpdateSourceType.ONLINE
         preview = oSGP4.automatic_update_settings.online_source.preview()
         oSGP4.propagate()
         preview = oSGP4.automatic_update_settings.online_source.preview()
@@ -3078,38 +3057,30 @@ class PropagatorSGP4Helper(object):
         Assert.assertTrue((segment.ssc_number == "00005"))
         Assert.assertTrue((segment.revolution_number == 69126), String.Format("{0}", segment.revolution_number))
         Assert.assertTrue(segment.international_designator.startswith("1958-002B"))
-        Assert.assertEqual(segment.switching_method, PROPAGATOR_SGP4_SWITCH_METHOD.EPOCH)
+        Assert.assertEqual(segment.switching_method, PropagatorSGP4SwitchMethod.EPOCH)
         Assert.assertEqual(segment.switch_time, "30 Jun 2007 21:06:05.884")
 
-        oSGP4.automatic_update_settings.properties.selection = VEHICLE_SGP4_TLE_SELECTION_TYPE.USE_ALL
+        oSGP4.automatic_update_settings.properties.selection = VehicleSGP4TLESelectionType.USE_ALL
+        Assert.assertEqual(VehicleSGP4TLESelectionType.USE_ALL, oSGP4.automatic_update_settings.properties.selection)
+        oSGP4.automatic_update_settings.properties.switch_method = PropagatorSGP4SwitchMethod.EPOCH
+        Assert.assertEqual(PropagatorSGP4SwitchMethod.EPOCH, oSGP4.automatic_update_settings.properties.switch_method)
+        oSGP4.automatic_update_settings.properties.switch_method = PropagatorSGP4SwitchMethod.MIDPOINT
         Assert.assertEqual(
-            VEHICLE_SGP4_TLE_SELECTION_TYPE.USE_ALL, oSGP4.automatic_update_settings.properties.selection
-        )
-        oSGP4.automatic_update_settings.properties.switch_method = PROPAGATOR_SGP4_SWITCH_METHOD.EPOCH
-        Assert.assertEqual(
-            PROPAGATOR_SGP4_SWITCH_METHOD.EPOCH, oSGP4.automatic_update_settings.properties.switch_method
-        )
-        oSGP4.automatic_update_settings.properties.switch_method = PROPAGATOR_SGP4_SWITCH_METHOD.MIDPOINT
-        Assert.assertEqual(
-            PROPAGATOR_SGP4_SWITCH_METHOD.MIDPOINT, oSGP4.automatic_update_settings.properties.switch_method
+            PropagatorSGP4SwitchMethod.MIDPOINT, oSGP4.automatic_update_settings.properties.switch_method
         )
         # Override is not supported
-        # oSGP4.AutoUpdate.Properties.SwitchMethod = PROPAGATOR_SGP4_SWITCH_METHOD.OVERRIDE;
-        # Assert.AreEqual(PROPAGATOR_SGP4_SWITCH_METHOD.OVERRIDE, oSGP4.AutoUpdate.Properties.SwitchMethod);
-        oSGP4.automatic_update_settings.properties.switch_method = (
-            PROPAGATOR_SGP4_SWITCH_METHOD.TIME_OF_CLOSEST_APPROACH
-        )
+        # oSGP4.AutoUpdate.Properties.SwitchMethod = PropagatorSGP4SwitchMethod.OVERRIDE;
+        # Assert.AreEqual(PropagatorSGP4SwitchMethod.OVERRIDE, oSGP4.AutoUpdate.Properties.SwitchMethod);
+        oSGP4.automatic_update_settings.properties.switch_method = PropagatorSGP4SwitchMethod.TIME_OF_CLOSEST_APPROACH
         Assert.assertEqual(
-            PROPAGATOR_SGP4_SWITCH_METHOD.TIME_OF_CLOSEST_APPROACH,
+            PropagatorSGP4SwitchMethod.TIME_OF_CLOSEST_APPROACH,
             oSGP4.automatic_update_settings.properties.switch_method,
         )
 
-        oSGP4.automatic_update_settings.properties.selection = VEHICLE_SGP4_TLE_SELECTION_TYPE.USE_FIRST
-        Assert.assertEqual(
-            VEHICLE_SGP4_TLE_SELECTION_TYPE.USE_FIRST, oSGP4.automatic_update_settings.properties.selection
-        )
+        oSGP4.automatic_update_settings.properties.selection = VehicleSGP4TLESelectionType.USE_FIRST
+        Assert.assertEqual(VehicleSGP4TLESelectionType.USE_FIRST, oSGP4.automatic_update_settings.properties.selection)
         with pytest.raises(Exception):
-            oSGP4.automatic_update_settings.properties.switch_method = PROPAGATOR_SGP4_SWITCH_METHOD.EPOCH
+            oSGP4.automatic_update_settings.properties.switch_method = PropagatorSGP4SwitchMethod.EPOCH
 
         oSGP4.settings.use_sgp4_one_point_interpolation = True
         oSGP4.settings.use_sgp4_one_point_validation = True
@@ -3242,30 +3213,30 @@ class PropagatorSGP4Helper(object):
 
         # SwitchingMethod (DISABLE)
         self.m_logger.WriteLine6("\tThe current SwitchingMethod is:  {0}", oSegment.switching_method)
-        oSegment.switching_method = PROPAGATOR_SGP4_SWITCH_METHOD.DISABLE
+        oSegment.switching_method = PropagatorSGP4SwitchMethod.DISABLE
         self.m_logger.WriteLine6("\tThe new SwitchingMethod is:  {0}", oSegment.switching_method)
-        Assert.assertEqual(PROPAGATOR_SGP4_SWITCH_METHOD.DISABLE, oSegment.switching_method)
+        Assert.assertEqual(PropagatorSGP4SwitchMethod.DISABLE, oSegment.switching_method)
         with pytest.raises(Exception):
             oSegment.switch_time = "24 Jan 2003 02:46:24.680"
 
         # SwitchingMethod (EPOCH)
-        oSegment.switching_method = PROPAGATOR_SGP4_SWITCH_METHOD.EPOCH
+        oSegment.switching_method = PropagatorSGP4SwitchMethod.EPOCH
         self.m_logger.WriteLine6("\tThe new SwitchingMethod is:  {0}", oSegment.switching_method)
-        Assert.assertEqual(PROPAGATOR_SGP4_SWITCH_METHOD.EPOCH, oSegment.switching_method)
+        Assert.assertEqual(PropagatorSGP4SwitchMethod.EPOCH, oSegment.switching_method)
         with pytest.raises(Exception):
             oSegment.switch_time = "24 Jan 2003 02:46:24.680"
 
         # SwitchingMethod (MIDPOINT)
-        oSegment.switching_method = PROPAGATOR_SGP4_SWITCH_METHOD.MIDPOINT
+        oSegment.switching_method = PropagatorSGP4SwitchMethod.MIDPOINT
         self.m_logger.WriteLine6("\tThe new SwitchingMethod is:  {0}", oSegment.switching_method)
-        Assert.assertEqual(PROPAGATOR_SGP4_SWITCH_METHOD.MIDPOINT, oSegment.switching_method)
+        Assert.assertEqual(PropagatorSGP4SwitchMethod.MIDPOINT, oSegment.switching_method)
         with pytest.raises(Exception):
             oSegment.switch_time = "24 Jan 2003 02:46:24.680"
 
         # SwitchingMethod (OVERRIDE)
-        oSegment.switching_method = PROPAGATOR_SGP4_SWITCH_METHOD.OVERRIDE
+        oSegment.switching_method = PropagatorSGP4SwitchMethod.OVERRIDE
         self.m_logger.WriteLine6("\tThe new SwitchingMethod is:  {0}", oSegment.switching_method)
-        Assert.assertEqual(PROPAGATOR_SGP4_SWITCH_METHOD.OVERRIDE, oSegment.switching_method)
+        Assert.assertEqual(PropagatorSGP4SwitchMethod.OVERRIDE, oSegment.switching_method)
 
         # SwitchTime
         self.m_logger.WriteLine6("\tThe current SwitchTime is:  {0}", oSegment.switch_time)
@@ -3274,9 +3245,9 @@ class PropagatorSGP4Helper(object):
         Assert.assertEqual("24 Jan 2003 02:46:24.680", oSegment.switch_time)
 
         # SwitchingMethod (TIME_OF_CLOSEST_APPROACH)
-        oSegment.switching_method = PROPAGATOR_SGP4_SWITCH_METHOD.TIME_OF_CLOSEST_APPROACH
+        oSegment.switching_method = PropagatorSGP4SwitchMethod.TIME_OF_CLOSEST_APPROACH
         self.m_logger.WriteLine6("\tThe new SwitchingMethod is:  {0}", oSegment.switching_method)
-        Assert.assertEqual(PROPAGATOR_SGP4_SWITCH_METHOD.TIME_OF_CLOSEST_APPROACH, oSegment.switching_method)
+        Assert.assertEqual(PropagatorSGP4SwitchMethod.TIME_OF_CLOSEST_APPROACH, oSegment.switching_method)
         with pytest.raises(Exception):
             oSegment.switch_time = "24 Jan 2003 02:46:24.680"
 
@@ -3508,7 +3479,7 @@ class PropagatorSPICEHelper(object):
 
         # BUG59850 - Try to propagate SPICE using a SatelliteID as a BodyName
         sat: "Satellite" = Satellite(self.m_oApplication.get_object_from_path("Satellite/Satellite1"))
-        sat.set_propagator_type(PROPAGATOR_TYPE.SPICE)
+        sat.set_propagator_type(PropagatorType.SPICE)
         spice: "PropagatorSPICE" = PropagatorSPICE(sat.propagator)
         spice.spice = TestBase.GetScenarioFile("Satellite1.bsp")
         spice.body_name = "-200000"
@@ -3712,7 +3683,7 @@ class PropagatorHPOPHelper(object):
         # oState.Epoch = "18 Jan 2003 02:40:24.680";
         # m_logger.WriteLine("\tThe new Epoch is: {0}", oState.Epoch);
         # Assert.AreEqual("18 Jan 2003 02:40:24.680", oState.Epoch);
-        cart = OrbitStateCartesian(oState.representation.convert_to(ORBIT_STATE_TYPE.CARTESIAN))
+        cart = OrbitStateCartesian(oState.representation.convert_to(OrbitStateType.CARTESIAN))
         (cart).epoch = "18 Jan 2003 02:40:24.680"
         Assert.assertEqual("18 Jan 2003 02:40:24.680", cart.epoch)
         oState.representation.assign(cart)
@@ -3798,12 +3769,12 @@ class PropagatorHPOPHelper(object):
         Assert.assertEqual(False, oGravity.use_ocean_tides)
 
         # SolidTideType
-        oGravity.solid_tide_type = SOLID_TIDE.FULL
-        Assert.assertEqual(SOLID_TIDE.FULL, oGravity.solid_tide_type)
-        oGravity.solid_tide_type = SOLID_TIDE.NONE
-        Assert.assertEqual(SOLID_TIDE.NONE, oGravity.solid_tide_type)
-        oGravity.solid_tide_type = SOLID_TIDE.PERMANENT_ONLY
-        Assert.assertEqual(SOLID_TIDE.PERMANENT_ONLY, oGravity.solid_tide_type)
+        oGravity.solid_tide_type = SolidTide.FULL
+        Assert.assertEqual(SolidTide.FULL, oGravity.solid_tide_type)
+        oGravity.solid_tide_type = SolidTide.NONE
+        Assert.assertEqual(SolidTide.NONE, oGravity.solid_tide_type)
+        oGravity.solid_tide_type = SolidTide.PERMANENT_ONLY
+        Assert.assertEqual(SolidTide.PERMANENT_ONLY, oGravity.solid_tide_type)
 
         # File
         oGravity.file = "WGS84_EGM96.grv"
@@ -3837,7 +3808,7 @@ class PropagatorHPOPHelper(object):
             oPressure.use_boundary_mitigation = False
         # ShadowModel (readonly)
         with pytest.raises(Exception):
-            oPressure.shadow_model = SHADOW_MODEL.CYLINDRICAL
+            oPressure.shadow_model = SolarRadiationPressureShadowModelType.CYLINDRICAL
         # Use (true)
         oPressure.use = True
         self.m_logger.WriteLine4("\tThe new Use is: {0}", oPressure.use)
@@ -3852,38 +3823,36 @@ class PropagatorHPOPHelper(object):
         Assert.assertEqual(True, oPressure.use_boundary_mitigation)
         # ShadowModel
         self.m_logger.WriteLine6("\tThe current ShadowModel is: {0}", oPressure.shadow_model)
-        oPressure.shadow_model = SHADOW_MODEL.CYLINDRICAL
+        oPressure.shadow_model = SolarRadiationPressureShadowModelType.CYLINDRICAL
         self.m_logger.WriteLine6("\tThe new ShadowModel is: {0}", oPressure.shadow_model)
-        Assert.assertEqual(SHADOW_MODEL.CYLINDRICAL, oPressure.shadow_model)
-        oPressure.shadow_model = SHADOW_MODEL.DUAL_CONE
+        Assert.assertEqual(SolarRadiationPressureShadowModelType.CYLINDRICAL, oPressure.shadow_model)
+        oPressure.shadow_model = SolarRadiationPressureShadowModelType.DUAL_CONE
         self.m_logger.WriteLine6("\tThe new ShadowModel is: {0}", oPressure.shadow_model)
-        Assert.assertEqual(SHADOW_MODEL.DUAL_CONE, oPressure.shadow_model)
-        oPressure.shadow_model = SHADOW_MODEL.NONE
+        Assert.assertEqual(SolarRadiationPressureShadowModelType.DUAL_CONE, oPressure.shadow_model)
+        oPressure.shadow_model = SolarRadiationPressureShadowModelType.NONE
         self.m_logger.WriteLine6("\tThe new ShadowModel is: {0}", oPressure.shadow_model)
-        Assert.assertEqual(SHADOW_MODEL.NONE, oPressure.shadow_model)
+        Assert.assertEqual(SolarRadiationPressureShadowModelType.NONE, oPressure.shadow_model)
 
         # Testing new SRP models
         self.m_logger.WriteLine("***************** SRP MODELS ***********")
         oSrpModel: "VehicleHPOPSolarRadiationPressureModel" = oPressure.solar_radiation_pressure_model
-        oSrpModel.set_model_type(SOLAR_RADIATION_PRESSURE_MODEL_TYPE.SPHERICAL)
-        Assert.assertEqual(SOLAR_RADIATION_PRESSURE_MODEL_TYPE.SPHERICAL, oSrpModel.model_type)
+        oSrpModel.set_model_type(SolarRadiationPressureModelType.SPHERICAL)
+        Assert.assertEqual(SolarRadiationPressureModelType.SPHERICAL, oSrpModel.model_type)
 
-        oSrpModel.set_model_type(SOLAR_RADIATION_PRESSURE_MODEL_TYPE.SPHERICAL)
-        Assert.assertEqual(SOLAR_RADIATION_PRESSURE_MODEL_TYPE.SPHERICAL, oSrpModel.model_type)
+        oSrpModel.set_model_type(SolarRadiationPressureModelType.SPHERICAL)
+        Assert.assertEqual(SolarRadiationPressureModelType.SPHERICAL, oSrpModel.model_type)
         oSrpModelChoices = oSrpModel.model_supported_types
         Assert.assertIsNotNone(oSrpModelChoices)
 
         i: int = 0
         while i < len(oSrpModelChoices):
-            eModel: "SOLAR_RADIATION_PRESSURE_MODEL_TYPE" = SOLAR_RADIATION_PRESSURE_MODEL_TYPE(
-                int(oSrpModelChoices[i][0])
-            )
+            eModel: "SolarRadiationPressureModelType" = SolarRadiationPressureModelType(int(oSrpModelChoices[i][0]))
             self.m_logger.WriteLine6("SRP Model: {0}", eModel)
             oSrpModel.set_model_type(eModel)
-            eModel1: "SOLAR_RADIATION_PRESSURE_MODEL_TYPE" = oSrpModel.model_type
+            eModel1: "SolarRadiationPressureModelType" = oSrpModel.model_type
             Assert.assertEqual(eModel, eModel1)
             Assert.assertTrue(oSrpModel.is_model_type_supported(eModel))
-            if eModel == SOLAR_RADIATION_PRESSURE_MODEL_TYPE.SPHERICAL:
+            if eModel == SolarRadiationPressureModelType.SPHERICAL:
                 oSphericalSRP: "SolarRadiationPressureModelSpherical" = clr.CastAs(
                     oSrpModel.model, SolarRadiationPressureModelSpherical
                 )
@@ -3893,7 +3862,7 @@ class PropagatorHPOPHelper(object):
                 Assert.assertEqual(12.0, oSphericalSRP.area_mass_ratio)
                 oSphericalSRP.cr = 99
                 Assert.assertEqual(99, oSphericalSRP.cr)
-                type1: "SOLAR_RADIATION_PRESSURE_MODEL_TYPE" = oSphericalSRP.type
+                type1: "SolarRadiationPressureModelType" = oSphericalSRP.type
 
                 with pytest.raises(Exception):
                     oSphericalSRP.cr = -101
@@ -3907,15 +3876,15 @@ class PropagatorHPOPHelper(object):
                 (
                     (
                         (
-                            ((eModel == SOLAR_RADIATION_PRESSURE_MODEL_TYPE.GPS_BLKIIA_AEROSPACE_T20))
-                            or ((eModel == SOLAR_RADIATION_PRESSURE_MODEL_TYPE.GPS_BLKIIA_GSPM04A))
+                            ((eModel == SolarRadiationPressureModelType.GPS_BLKIIA_AEROSPACE_T20))
+                            or ((eModel == SolarRadiationPressureModelType.GPS_BLKIIA_GSPM04A))
                         )
-                        or ((eModel == SOLAR_RADIATION_PRESSURE_MODEL_TYPE.GPS_BLKIIA_GSPM04AE))
+                        or ((eModel == SolarRadiationPressureModelType.GPS_BLKIIA_GSPM04AE))
                     )
-                    or ((eModel == SOLAR_RADIATION_PRESSURE_MODEL_TYPE.GPS_BLKIIA_AEROSPACE_T30))
+                    or ((eModel == SolarRadiationPressureModelType.GPS_BLKIIA_AEROSPACE_T30))
                 )
-                or ((eModel == SOLAR_RADIATION_PRESSURE_MODEL_TYPE.GPS_BLKIIR_GSPM04A))
-            ) or ((eModel == SOLAR_RADIATION_PRESSURE_MODEL_TYPE.GPS_BLKIIR_GSPM04AE)):
+                or ((eModel == SolarRadiationPressureModelType.GPS_BLKIIR_GSPM04A))
+            ) or ((eModel == SolarRadiationPressureModelType.GPS_BLKIIR_GSPM04AE)):
                 oGPSSRP: "SolarRadiationPressureModelGPS" = clr.CastAs(oSrpModel.model, SolarRadiationPressureModelGPS)
                 Assert.assertIsNotNone(oGPSSRP)
                 oGPSSRP.scale = -100
@@ -3926,7 +3895,7 @@ class PropagatorHPOPHelper(object):
                 Assert.assertEqual(0, oGPSSRP.y_bias)
                 oGPSSRP.y_bias = 1000000000000000000000000000000.0
                 Assert.assertEqual(1000000000000000000000000000000.0, oGPSSRP.y_bias)
-                type2: "SOLAR_RADIATION_PRESSURE_MODEL_TYPE" = oGPSSRP.type
+                type2: "SolarRadiationPressureModelType" = oGPSSRP.type
 
                 with pytest.raises(Exception):
                     oGPSSRP.scale = -101
@@ -3939,9 +3908,9 @@ class PropagatorHPOPHelper(object):
 
             i += 1
 
-        oSrpModel.set_model_type(SOLAR_RADIATION_PRESSURE_MODEL_TYPE.SPHERICAL)
+        oSrpModel.set_model_type(SolarRadiationPressureModelType.SPHERICAL)
         with pytest.raises(Exception):
-            oSrpModel.set_model_type(SOLAR_RADIATION_PRESSURE_MODEL_TYPE.UNKNOWN)
+            oSrpModel.set_model_type(SolarRadiationPressureModelType.UNKNOWN)
         self.m_logger.WriteLine("***************** END OF SRP MODELS ***********")
 
     # endregion
@@ -3962,17 +3931,17 @@ class PropagatorHPOPHelper(object):
             (VehicleHPOPDragModelSpherical((oDrag.drag_model))).area_mass_ratio = 12.34
         # AtmosphericDensityModel (readonly)
         with pytest.raises(Exception):
-            oDrag.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.STANDARD_ATMOSPHERE_MODEL_1976
+            oDrag.atmospheric_density_model = AtmosphericDensityModel.STANDARD_ATMOSPHERE_MODEL_1976
         # SetSolarFluxGeoMagType (readonly)
         with pytest.raises(Exception):
-            oDrag.set_solar_flux_geo_magnitude_type(VEHICLE_SOLAR_FLUX_GEOMAGNETIC_TYPE.MANUAL_ENTRY)
+            oDrag.set_solar_flux_geo_magnitude_type(VehicleSolarFluxGeomagneticType.MANUAL_ENTRY)
         # LowAltAtmosphericDensityModel
         with pytest.raises(Exception):
-            oDrag.low_altitude_atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.MSIS00
+            oDrag.low_altitude_atmospheric_density_model = AtmosphericDensityModel.MSIS00
         # BlendingRange
         with pytest.raises(Exception):
             oDrag.blending_range = 20
-        if oDrag.solar_flux_geo_magnitude_type == VEHICLE_SOLAR_FLUX_GEOMAGNETIC_TYPE.MANUAL_ENTRY:
+        if oDrag.solar_flux_geo_magnitude_type == VehicleSolarFluxGeomagneticType.MANUAL_ENTRY:
             self.SolarFluxGeoMagEnterManually(oDrag.solar_flux_geo_magnitude, oDrag.atmospheric_density_model, True)
         else:
             self.SolarFluxGeoMagUseFile(oDrag.solar_flux_geo_magnitude, oDrag.atmospheric_density_model, True)
@@ -4012,220 +3981,220 @@ class PropagatorHPOPHelper(object):
         with pytest.raises(Exception):
             (VehicleHPOPDragModelSpherical((oDrag.drag_model))).area_mass_ratio = -12.34
 
-        oDrag.set_drag_model_type(DRAG_MODEL.PLUGIN)
-        Assert.assertEqual(DRAG_MODEL.PLUGIN, oDrag.drag_model_type)
+        oDrag.set_drag_model_type(DragModel.PLUGIN)
+        Assert.assertEqual(DragModel.PLUGIN, oDrag.drag_model_type)
 
         self.m_logger.WriteLine6("\tThe current AtmosphericDensityModel is: {0}", oDrag.atmospheric_density_model)
         # AtmosphericDensityModel (EXPONENTIAL_MODEL)
         with pytest.raises(Exception):
-            oDrag.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.EXPONENTIAL_MODEL
+            oDrag.atmospheric_density_model = AtmosphericDensityModel.EXPONENTIAL_MODEL
         # AtmosphericDensityModel (USER_DEFINED)
         with pytest.raises(Exception):
-            oDrag.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.USER_DEFINED
+            oDrag.atmospheric_density_model = AtmosphericDensityModel.USER_DEFINED
         # AtmosphericDensityModel (UNKNOWN)
         with pytest.raises(Exception):
-            oDrag.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.UNKNOWN
+            oDrag.atmospheric_density_model = AtmosphericDensityModel.UNKNOWN
 
         # AtmosphericDensityModel (CIRA72)
-        oDrag.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.CIRA72
+        oDrag.atmospheric_density_model = AtmosphericDensityModel.CIRA72
         self.m_logger.WriteLine6("\tThe new AtmosphericDensityModel is: {0}", oDrag.atmospheric_density_model)
-        Assert.assertEqual(ATMOSPHERIC_DENSITY_MODEL.CIRA72, oDrag.atmospheric_density_model)
+        Assert.assertEqual(AtmosphericDensityModel.CIRA72, oDrag.atmospheric_density_model)
         # SolarFluxGeoMagType
         self.m_logger.WriteLine6("\t\tThe current SolarFluxGeoMagType is: {0}", oDrag.solar_flux_geo_magnitude_type)
         # SetSolarFluxGeoMagType (Manually)
-        oDrag.set_solar_flux_geo_magnitude_type(VEHICLE_SOLAR_FLUX_GEOMAGNETIC_TYPE.MANUAL_ENTRY)
+        oDrag.set_solar_flux_geo_magnitude_type(VehicleSolarFluxGeomagneticType.MANUAL_ENTRY)
         self.m_logger.WriteLine6("\t\tThe new SolarFluxGeoMagType is: {0}", oDrag.solar_flux_geo_magnitude_type)
-        Assert.assertEqual(VEHICLE_SOLAR_FLUX_GEOMAGNETIC_TYPE.MANUAL_ENTRY, oDrag.solar_flux_geo_magnitude_type)
+        Assert.assertEqual(VehicleSolarFluxGeomagneticType.MANUAL_ENTRY, oDrag.solar_flux_geo_magnitude_type)
         # SolarFluxGeoMag
         self.SolarFluxGeoMagEnterManually(oDrag.solar_flux_geo_magnitude, oDrag.atmospheric_density_model, False)
         # SetSolarFluxGeoMagType (File)
-        oDrag.set_solar_flux_geo_magnitude_type(VEHICLE_SOLAR_FLUX_GEOMAGNETIC_TYPE.FILE)
+        oDrag.set_solar_flux_geo_magnitude_type(VehicleSolarFluxGeomagneticType.FILE)
         self.m_logger.WriteLine6("\t\tThe new SolarFluxGeoMagType is: {0}", oDrag.solar_flux_geo_magnitude_type)
-        Assert.assertEqual(VEHICLE_SOLAR_FLUX_GEOMAGNETIC_TYPE.FILE, oDrag.solar_flux_geo_magnitude_type)
+        Assert.assertEqual(VehicleSolarFluxGeomagneticType.FILE, oDrag.solar_flux_geo_magnitude_type)
         # SolarFluxGeoMag
         self.SolarFluxGeoMagUseFile(oDrag.solar_flux_geo_magnitude, oDrag.atmospheric_density_model, False)
 
         # AtmosphericDensityModel (HARRIS_PRIESTER)
-        oDrag.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.HARRIS_PRIESTER
+        oDrag.atmospheric_density_model = AtmosphericDensityModel.HARRIS_PRIESTER
         self.m_logger.WriteLine6("\tThe new AtmosphericDensityModel is: {0}", oDrag.atmospheric_density_model)
-        Assert.assertEqual(ATMOSPHERIC_DENSITY_MODEL.HARRIS_PRIESTER, oDrag.atmospheric_density_model)
+        Assert.assertEqual(AtmosphericDensityModel.HARRIS_PRIESTER, oDrag.atmospheric_density_model)
         # SolarFluxGeoMagType
         self.m_logger.WriteLine6("\t\tThe current SolarFluxGeoMagType is: {0}", oDrag.solar_flux_geo_magnitude_type)
         # SetSolarFluxGeoMagType (Manually)
-        oDrag.set_solar_flux_geo_magnitude_type(VEHICLE_SOLAR_FLUX_GEOMAGNETIC_TYPE.MANUAL_ENTRY)
+        oDrag.set_solar_flux_geo_magnitude_type(VehicleSolarFluxGeomagneticType.MANUAL_ENTRY)
         self.m_logger.WriteLine6("\t\tThe new SolarFluxGeoMagType is: {0}", oDrag.solar_flux_geo_magnitude_type)
-        Assert.assertEqual(VEHICLE_SOLAR_FLUX_GEOMAGNETIC_TYPE.MANUAL_ENTRY, oDrag.solar_flux_geo_magnitude_type)
+        Assert.assertEqual(VehicleSolarFluxGeomagneticType.MANUAL_ENTRY, oDrag.solar_flux_geo_magnitude_type)
         # SolarFluxGeoMag
         self.SolarFluxGeoMagEnterManually(oDrag.solar_flux_geo_magnitude, oDrag.atmospheric_density_model, False)
         # SetSolarFluxGeoMagType (File)
-        oDrag.set_solar_flux_geo_magnitude_type(VEHICLE_SOLAR_FLUX_GEOMAGNETIC_TYPE.FILE)
+        oDrag.set_solar_flux_geo_magnitude_type(VehicleSolarFluxGeomagneticType.FILE)
         self.m_logger.WriteLine6("\t\tThe new SolarFluxGeoMagType is: {0}", oDrag.solar_flux_geo_magnitude_type)
-        Assert.assertEqual(VEHICLE_SOLAR_FLUX_GEOMAGNETIC_TYPE.FILE, oDrag.solar_flux_geo_magnitude_type)
+        Assert.assertEqual(VehicleSolarFluxGeomagneticType.FILE, oDrag.solar_flux_geo_magnitude_type)
         # SolarFluxGeoMag
         self.SolarFluxGeoMagUseFile(oDrag.solar_flux_geo_magnitude, oDrag.atmospheric_density_model, False)
 
         # AtmosphericDensityModel (JACCHIA60)
-        oDrag.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.JACCHIA60
+        oDrag.atmospheric_density_model = AtmosphericDensityModel.JACCHIA60
         self.m_logger.WriteLine6("\tThe new AtmosphericDensityModel is: {0}", oDrag.atmospheric_density_model)
-        Assert.assertEqual(ATMOSPHERIC_DENSITY_MODEL.JACCHIA60, oDrag.atmospheric_density_model)
+        Assert.assertEqual(AtmosphericDensityModel.JACCHIA60, oDrag.atmospheric_density_model)
         # SolarFluxGeoMagType
         self.m_logger.WriteLine6("\t\tThe current SolarFluxGeoMagType is: {0}", oDrag.solar_flux_geo_magnitude_type)
         # SetSolarFluxGeoMagType (readonly)
         with pytest.raises(Exception):
-            oDrag.set_solar_flux_geo_magnitude_type(VEHICLE_SOLAR_FLUX_GEOMAGNETIC_TYPE.MANUAL_ENTRY)
-        if oDrag.solar_flux_geo_magnitude_type == VEHICLE_SOLAR_FLUX_GEOMAGNETIC_TYPE.MANUAL_ENTRY:
+            oDrag.set_solar_flux_geo_magnitude_type(VehicleSolarFluxGeomagneticType.MANUAL_ENTRY)
+        if oDrag.solar_flux_geo_magnitude_type == VehicleSolarFluxGeomagneticType.MANUAL_ENTRY:
             self.SolarFluxGeoMagEnterManually(oDrag.solar_flux_geo_magnitude, oDrag.atmospheric_density_model, True)
         else:
             self.SolarFluxGeoMagUseFile(oDrag.solar_flux_geo_magnitude, oDrag.atmospheric_density_model, True)
 
         # AtmosphericDensityModel (JACCHIA70)
-        oDrag.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.JACCHIA70
+        oDrag.atmospheric_density_model = AtmosphericDensityModel.JACCHIA70
         self.m_logger.WriteLine6("\tThe new AtmosphericDensityModel is: {0}", oDrag.atmospheric_density_model)
-        Assert.assertEqual(ATMOSPHERIC_DENSITY_MODEL.JACCHIA70, oDrag.atmospheric_density_model)
+        Assert.assertEqual(AtmosphericDensityModel.JACCHIA70, oDrag.atmospheric_density_model)
         # SolarFluxGeoMagType
         self.m_logger.WriteLine6("\t\tThe current SolarFluxGeoMagType is: {0}", oDrag.solar_flux_geo_magnitude_type)
         # SetSolarFluxGeoMagType (Manually)
-        oDrag.set_solar_flux_geo_magnitude_type(VEHICLE_SOLAR_FLUX_GEOMAGNETIC_TYPE.MANUAL_ENTRY)
+        oDrag.set_solar_flux_geo_magnitude_type(VehicleSolarFluxGeomagneticType.MANUAL_ENTRY)
         self.m_logger.WriteLine6("\t\tThe new SolarFluxGeoMagType is: {0}", oDrag.solar_flux_geo_magnitude_type)
-        Assert.assertEqual(VEHICLE_SOLAR_FLUX_GEOMAGNETIC_TYPE.MANUAL_ENTRY, oDrag.solar_flux_geo_magnitude_type)
+        Assert.assertEqual(VehicleSolarFluxGeomagneticType.MANUAL_ENTRY, oDrag.solar_flux_geo_magnitude_type)
         # SolarFluxGeoMag
         self.SolarFluxGeoMagEnterManually(oDrag.solar_flux_geo_magnitude, oDrag.atmospheric_density_model, False)
         # SetSolarFluxGeoMagType (File)
-        oDrag.set_solar_flux_geo_magnitude_type(VEHICLE_SOLAR_FLUX_GEOMAGNETIC_TYPE.FILE)
+        oDrag.set_solar_flux_geo_magnitude_type(VehicleSolarFluxGeomagneticType.FILE)
         self.m_logger.WriteLine6("\t\tThe new SolarFluxGeoMagType is: {0}", oDrag.solar_flux_geo_magnitude_type)
-        Assert.assertEqual(VEHICLE_SOLAR_FLUX_GEOMAGNETIC_TYPE.FILE, oDrag.solar_flux_geo_magnitude_type)
+        Assert.assertEqual(VehicleSolarFluxGeomagneticType.FILE, oDrag.solar_flux_geo_magnitude_type)
         # SolarFluxGeoMag
         self.SolarFluxGeoMagUseFile(oDrag.solar_flux_geo_magnitude, oDrag.atmospheric_density_model, False)
 
         # AtmosphericDensityModel (JACCHIA71)
-        oDrag.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.JACCHIA71
+        oDrag.atmospheric_density_model = AtmosphericDensityModel.JACCHIA71
         self.m_logger.WriteLine6("\tThe new AtmosphericDensityModel is: {0}", oDrag.atmospheric_density_model)
-        Assert.assertEqual(ATMOSPHERIC_DENSITY_MODEL.JACCHIA71, oDrag.atmospheric_density_model)
+        Assert.assertEqual(AtmosphericDensityModel.JACCHIA71, oDrag.atmospheric_density_model)
         # SolarFluxGeoMagType
         self.m_logger.WriteLine6("\t\tThe current SolarFluxGeoMagType is: {0}", oDrag.solar_flux_geo_magnitude_type)
         # SetSolarFluxGeoMagType (Manually)
-        oDrag.set_solar_flux_geo_magnitude_type(VEHICLE_SOLAR_FLUX_GEOMAGNETIC_TYPE.MANUAL_ENTRY)
+        oDrag.set_solar_flux_geo_magnitude_type(VehicleSolarFluxGeomagneticType.MANUAL_ENTRY)
         self.m_logger.WriteLine6("\t\tThe new SolarFluxGeoMagType is: {0}", oDrag.solar_flux_geo_magnitude_type)
-        Assert.assertEqual(VEHICLE_SOLAR_FLUX_GEOMAGNETIC_TYPE.MANUAL_ENTRY, oDrag.solar_flux_geo_magnitude_type)
+        Assert.assertEqual(VehicleSolarFluxGeomagneticType.MANUAL_ENTRY, oDrag.solar_flux_geo_magnitude_type)
         # SolarFluxGeoMag
         self.SolarFluxGeoMagEnterManually(oDrag.solar_flux_geo_magnitude, oDrag.atmospheric_density_model, False)
         # SetSolarFluxGeoMagType (File)
-        oDrag.set_solar_flux_geo_magnitude_type(VEHICLE_SOLAR_FLUX_GEOMAGNETIC_TYPE.FILE)
+        oDrag.set_solar_flux_geo_magnitude_type(VehicleSolarFluxGeomagneticType.FILE)
         self.m_logger.WriteLine6("\t\tThe new SolarFluxGeoMagType is: {0}", oDrag.solar_flux_geo_magnitude_type)
-        Assert.assertEqual(VEHICLE_SOLAR_FLUX_GEOMAGNETIC_TYPE.FILE, oDrag.solar_flux_geo_magnitude_type)
+        Assert.assertEqual(VehicleSolarFluxGeomagneticType.FILE, oDrag.solar_flux_geo_magnitude_type)
         # SolarFluxGeoMag
         self.SolarFluxGeoMagUseFile(oDrag.solar_flux_geo_magnitude, oDrag.atmospheric_density_model, False)
 
         # AtmosphericDensityModel (JACCHIA_ROBERTS)
-        oDrag.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.JACCHIA_ROBERTS
+        oDrag.atmospheric_density_model = AtmosphericDensityModel.JACCHIA_ROBERTS
         self.m_logger.WriteLine6("\tThe new AtmosphericDensityModel is: {0}", oDrag.atmospheric_density_model)
-        Assert.assertEqual(ATMOSPHERIC_DENSITY_MODEL.JACCHIA_ROBERTS, oDrag.atmospheric_density_model)
+        Assert.assertEqual(AtmosphericDensityModel.JACCHIA_ROBERTS, oDrag.atmospheric_density_model)
         # SolarFluxGeoMagType
         self.m_logger.WriteLine6("\t\tThe current SolarFluxGeoMagType is: {0}", oDrag.solar_flux_geo_magnitude_type)
         # SetSolarFluxGeoMagType (Manually)
-        oDrag.set_solar_flux_geo_magnitude_type(VEHICLE_SOLAR_FLUX_GEOMAGNETIC_TYPE.MANUAL_ENTRY)
+        oDrag.set_solar_flux_geo_magnitude_type(VehicleSolarFluxGeomagneticType.MANUAL_ENTRY)
         self.m_logger.WriteLine6("\t\tThe new SolarFluxGeoMagType is: {0}", oDrag.solar_flux_geo_magnitude_type)
-        Assert.assertEqual(VEHICLE_SOLAR_FLUX_GEOMAGNETIC_TYPE.MANUAL_ENTRY, oDrag.solar_flux_geo_magnitude_type)
+        Assert.assertEqual(VehicleSolarFluxGeomagneticType.MANUAL_ENTRY, oDrag.solar_flux_geo_magnitude_type)
         # SolarFluxGeoMag
         self.SolarFluxGeoMagEnterManually(oDrag.solar_flux_geo_magnitude, oDrag.atmospheric_density_model, False)
         # SetSolarFluxGeoMagType (File)
-        oDrag.set_solar_flux_geo_magnitude_type(VEHICLE_SOLAR_FLUX_GEOMAGNETIC_TYPE.FILE)
+        oDrag.set_solar_flux_geo_magnitude_type(VehicleSolarFluxGeomagneticType.FILE)
         self.m_logger.WriteLine6("\t\tThe new SolarFluxGeoMagType is: {0}", oDrag.solar_flux_geo_magnitude_type)
-        Assert.assertEqual(VEHICLE_SOLAR_FLUX_GEOMAGNETIC_TYPE.FILE, oDrag.solar_flux_geo_magnitude_type)
+        Assert.assertEqual(VehicleSolarFluxGeomagneticType.FILE, oDrag.solar_flux_geo_magnitude_type)
         # SolarFluxGeoMag
         self.SolarFluxGeoMagUseFile(oDrag.solar_flux_geo_magnitude, oDrag.atmospheric_density_model, False)
 
         # AtmosphericDensityModel (MSIS00)
-        oDrag.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.MSIS00
+        oDrag.atmospheric_density_model = AtmosphericDensityModel.MSIS00
         self.m_logger.WriteLine6("\tThe new AtmosphericDensityModel is: {0}", oDrag.atmospheric_density_model)
-        Assert.assertEqual(ATMOSPHERIC_DENSITY_MODEL.MSIS00, oDrag.atmospheric_density_model)
+        Assert.assertEqual(AtmosphericDensityModel.MSIS00, oDrag.atmospheric_density_model)
         # SolarFluxGeoMagType
         self.m_logger.WriteLine6("\t\tThe current SolarFluxGeoMagType is: {0}", oDrag.solar_flux_geo_magnitude_type)
         # SetSolarFluxGeoMagType (Manually)
-        oDrag.set_solar_flux_geo_magnitude_type(VEHICLE_SOLAR_FLUX_GEOMAGNETIC_TYPE.MANUAL_ENTRY)
+        oDrag.set_solar_flux_geo_magnitude_type(VehicleSolarFluxGeomagneticType.MANUAL_ENTRY)
         self.m_logger.WriteLine6("\t\tThe new SolarFluxGeoMagType is: {0}", oDrag.solar_flux_geo_magnitude_type)
-        Assert.assertEqual(VEHICLE_SOLAR_FLUX_GEOMAGNETIC_TYPE.MANUAL_ENTRY, oDrag.solar_flux_geo_magnitude_type)
+        Assert.assertEqual(VehicleSolarFluxGeomagneticType.MANUAL_ENTRY, oDrag.solar_flux_geo_magnitude_type)
         # SolarFluxGeoMag
         self.SolarFluxGeoMagEnterManually(oDrag.solar_flux_geo_magnitude, oDrag.atmospheric_density_model, False)
         # SetSolarFluxGeoMagType (File)
-        oDrag.set_solar_flux_geo_magnitude_type(VEHICLE_SOLAR_FLUX_GEOMAGNETIC_TYPE.FILE)
+        oDrag.set_solar_flux_geo_magnitude_type(VehicleSolarFluxGeomagneticType.FILE)
         self.m_logger.WriteLine6("\t\tThe new SolarFluxGeoMagType is: {0}", oDrag.solar_flux_geo_magnitude_type)
-        Assert.assertEqual(VEHICLE_SOLAR_FLUX_GEOMAGNETIC_TYPE.FILE, oDrag.solar_flux_geo_magnitude_type)
+        Assert.assertEqual(VehicleSolarFluxGeomagneticType.FILE, oDrag.solar_flux_geo_magnitude_type)
         # SolarFluxGeoMag
         self.SolarFluxGeoMagUseFile(oDrag.solar_flux_geo_magnitude, oDrag.atmospheric_density_model, False)
 
         # AtmosphericDensityModel (MSIS86)
-        oDrag.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.MSIS86
+        oDrag.atmospheric_density_model = AtmosphericDensityModel.MSIS86
         self.m_logger.WriteLine6("\tThe new AtmosphericDensityModel is: {0}", oDrag.atmospheric_density_model)
-        Assert.assertEqual(ATMOSPHERIC_DENSITY_MODEL.MSIS86, oDrag.atmospheric_density_model)
+        Assert.assertEqual(AtmosphericDensityModel.MSIS86, oDrag.atmospheric_density_model)
         # SolarFluxGeoMagType
         self.m_logger.WriteLine6("\t\tThe current SolarFluxGeoMagType is: {0}", oDrag.solar_flux_geo_magnitude_type)
         # SetSolarFluxGeoMagType (Manually)
-        oDrag.set_solar_flux_geo_magnitude_type(VEHICLE_SOLAR_FLUX_GEOMAGNETIC_TYPE.MANUAL_ENTRY)
+        oDrag.set_solar_flux_geo_magnitude_type(VehicleSolarFluxGeomagneticType.MANUAL_ENTRY)
         self.m_logger.WriteLine6("\t\tThe new SolarFluxGeoMagType is: {0}", oDrag.solar_flux_geo_magnitude_type)
-        Assert.assertEqual(VEHICLE_SOLAR_FLUX_GEOMAGNETIC_TYPE.MANUAL_ENTRY, oDrag.solar_flux_geo_magnitude_type)
+        Assert.assertEqual(VehicleSolarFluxGeomagneticType.MANUAL_ENTRY, oDrag.solar_flux_geo_magnitude_type)
         # SolarFluxGeoMag
         self.SolarFluxGeoMagEnterManually(oDrag.solar_flux_geo_magnitude, oDrag.atmospheric_density_model, False)
         # SetSolarFluxGeoMagType (File)
-        oDrag.set_solar_flux_geo_magnitude_type(VEHICLE_SOLAR_FLUX_GEOMAGNETIC_TYPE.FILE)
+        oDrag.set_solar_flux_geo_magnitude_type(VehicleSolarFluxGeomagneticType.FILE)
         self.m_logger.WriteLine6("\t\tThe new SolarFluxGeoMagType is: {0}", oDrag.solar_flux_geo_magnitude_type)
-        Assert.assertEqual(VEHICLE_SOLAR_FLUX_GEOMAGNETIC_TYPE.FILE, oDrag.solar_flux_geo_magnitude_type)
+        Assert.assertEqual(VehicleSolarFluxGeomagneticType.FILE, oDrag.solar_flux_geo_magnitude_type)
         # SolarFluxGeoMag
         self.SolarFluxGeoMagUseFile(oDrag.solar_flux_geo_magnitude, oDrag.atmospheric_density_model, False)
 
         # AtmosphericDensityModel (MSIS90)
-        oDrag.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.MSIS90
+        oDrag.atmospheric_density_model = AtmosphericDensityModel.MSIS90
         self.m_logger.WriteLine6("\tThe new AtmosphericDensityModel is: {0}", oDrag.atmospheric_density_model)
-        Assert.assertEqual(ATMOSPHERIC_DENSITY_MODEL.MSIS90, oDrag.atmospheric_density_model)
+        Assert.assertEqual(AtmosphericDensityModel.MSIS90, oDrag.atmospheric_density_model)
         # SolarFluxGeoMagType
         self.m_logger.WriteLine6("\t\tThe current SolarFluxGeoMagType is: {0}", oDrag.solar_flux_geo_magnitude_type)
         # SetSolarFluxGeoMagType (File)
-        oDrag.set_solar_flux_geo_magnitude_type(VEHICLE_SOLAR_FLUX_GEOMAGNETIC_TYPE.FILE)
+        oDrag.set_solar_flux_geo_magnitude_type(VehicleSolarFluxGeomagneticType.FILE)
         self.m_logger.WriteLine6("\t\tThe new SolarFluxGeoMagType is: {0}", oDrag.solar_flux_geo_magnitude_type)
-        Assert.assertEqual(VEHICLE_SOLAR_FLUX_GEOMAGNETIC_TYPE.FILE, oDrag.solar_flux_geo_magnitude_type)
+        Assert.assertEqual(VehicleSolarFluxGeomagneticType.FILE, oDrag.solar_flux_geo_magnitude_type)
         # SolarFluxGeoMag
         self.SolarFluxGeoMagUseFile(oDrag.solar_flux_geo_magnitude, oDrag.atmospheric_density_model, False)
         # SetSolarFluxGeoMagType (Manually)
-        oDrag.set_solar_flux_geo_magnitude_type(VEHICLE_SOLAR_FLUX_GEOMAGNETIC_TYPE.MANUAL_ENTRY)
+        oDrag.set_solar_flux_geo_magnitude_type(VehicleSolarFluxGeomagneticType.MANUAL_ENTRY)
         self.m_logger.WriteLine6("\t\tThe new SolarFluxGeoMagType is: {0}", oDrag.solar_flux_geo_magnitude_type)
-        Assert.assertEqual(VEHICLE_SOLAR_FLUX_GEOMAGNETIC_TYPE.MANUAL_ENTRY, oDrag.solar_flux_geo_magnitude_type)
+        Assert.assertEqual(VehicleSolarFluxGeomagneticType.MANUAL_ENTRY, oDrag.solar_flux_geo_magnitude_type)
         # SolarFluxGeoMag
         self.SolarFluxGeoMagEnterManually(oDrag.solar_flux_geo_magnitude, oDrag.atmospheric_density_model, False)
 
         # AtmosphericDensityModel (DTM2012)
-        oDrag.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.DTM2012
+        oDrag.atmospheric_density_model = AtmosphericDensityModel.DTM2012
         self.m_logger.WriteLine6("\tThe new AtmosphericDensityModel is: {0}", oDrag.atmospheric_density_model)
-        Assert.assertEqual(ATMOSPHERIC_DENSITY_MODEL.DTM2012, oDrag.atmospheric_density_model)
+        Assert.assertEqual(AtmosphericDensityModel.DTM2012, oDrag.atmospheric_density_model)
         # SolarFluxGeoMagType
         self.m_logger.WriteLine6("\t\tThe current SolarFluxGeoMagType is: {0}", oDrag.solar_flux_geo_magnitude_type)
         # SetSolarFluxGeoMagType (Manually)
-        oDrag.set_solar_flux_geo_magnitude_type(VEHICLE_SOLAR_FLUX_GEOMAGNETIC_TYPE.MANUAL_ENTRY)
+        oDrag.set_solar_flux_geo_magnitude_type(VehicleSolarFluxGeomagneticType.MANUAL_ENTRY)
         self.m_logger.WriteLine6("\t\tThe new SolarFluxGeoMagType is: {0}", oDrag.solar_flux_geo_magnitude_type)
-        Assert.assertEqual(VEHICLE_SOLAR_FLUX_GEOMAGNETIC_TYPE.MANUAL_ENTRY, oDrag.solar_flux_geo_magnitude_type)
+        Assert.assertEqual(VehicleSolarFluxGeomagneticType.MANUAL_ENTRY, oDrag.solar_flux_geo_magnitude_type)
         # SolarFluxGeoMag
         self.SolarFluxGeoMagEnterManually(oDrag.solar_flux_geo_magnitude, oDrag.atmospheric_density_model, False)
         # SetSolarFluxGeoMagType (File)
-        oDrag.set_solar_flux_geo_magnitude_type(VEHICLE_SOLAR_FLUX_GEOMAGNETIC_TYPE.FILE)
+        oDrag.set_solar_flux_geo_magnitude_type(VehicleSolarFluxGeomagneticType.FILE)
         self.m_logger.WriteLine6("\t\tThe new SolarFluxGeoMagType is: {0}", oDrag.solar_flux_geo_magnitude_type)
-        Assert.assertEqual(VEHICLE_SOLAR_FLUX_GEOMAGNETIC_TYPE.FILE, oDrag.solar_flux_geo_magnitude_type)
+        Assert.assertEqual(VehicleSolarFluxGeomagneticType.FILE, oDrag.solar_flux_geo_magnitude_type)
         # SolarFluxGeoMag
         self.SolarFluxGeoMagUseFile(oDrag.solar_flux_geo_magnitude, oDrag.atmospheric_density_model, False)
 
         # AtmosphericDensityModel (STANDARD_ATMOSPHERE_MODEL_1976)
-        oDrag.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.STANDARD_ATMOSPHERE_MODEL_1976
+        oDrag.atmospheric_density_model = AtmosphericDensityModel.STANDARD_ATMOSPHERE_MODEL_1976
         self.m_logger.WriteLine6("\tThe new AtmosphericDensityModel is: {0}", oDrag.atmospheric_density_model)
-        Assert.assertEqual(ATMOSPHERIC_DENSITY_MODEL.STANDARD_ATMOSPHERE_MODEL_1976, oDrag.atmospheric_density_model)
+        Assert.assertEqual(AtmosphericDensityModel.STANDARD_ATMOSPHERE_MODEL_1976, oDrag.atmospheric_density_model)
         # SetSolarFluxGeoMagType (readonly)
         with pytest.raises(Exception):
-            oDrag.set_solar_flux_geo_magnitude_type(VEHICLE_SOLAR_FLUX_GEOMAGNETIC_TYPE.MANUAL_ENTRY)
-        if oDrag.solar_flux_geo_magnitude_type == VEHICLE_SOLAR_FLUX_GEOMAGNETIC_TYPE.MANUAL_ENTRY:
+            oDrag.set_solar_flux_geo_magnitude_type(VehicleSolarFluxGeomagneticType.MANUAL_ENTRY)
+        if oDrag.solar_flux_geo_magnitude_type == VehicleSolarFluxGeomagneticType.MANUAL_ENTRY:
             self.SolarFluxGeoMagEnterManually(oDrag.solar_flux_geo_magnitude, oDrag.atmospheric_density_model, False)
         else:
             self.SolarFluxGeoMagUseFile(oDrag.solar_flux_geo_magnitude, oDrag.atmospheric_density_model, False)
 
         # LowAltAtmosphericDensityModel (UNKNOWN)
-        oDrag.low_altitude_atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.UNKNOWN
-        Assert.assertEqual(ATMOSPHERIC_DENSITY_MODEL.UNKNOWN, oDrag.low_altitude_atmospheric_density_model)
+        oDrag.low_altitude_atmospheric_density_model = AtmosphericDensityModel.UNKNOWN
+        Assert.assertEqual(AtmosphericDensityModel.UNKNOWN, oDrag.low_altitude_atmospheric_density_model)
         self.m_logger.WriteLine6(
             "\tThe new LowAltAtmosphericDensityModel is: {0}", oDrag.low_altitude_atmospheric_density_model
         )
@@ -4233,8 +4202,8 @@ class PropagatorHPOPHelper(object):
             oDrag.blending_range = 50.0
 
         # LowAltAtmosphericDensityModel (MSIS90)
-        oDrag.low_altitude_atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.MSIS90
-        Assert.assertEqual(ATMOSPHERIC_DENSITY_MODEL.MSIS90, oDrag.low_altitude_atmospheric_density_model)
+        oDrag.low_altitude_atmospheric_density_model = AtmosphericDensityModel.MSIS90
+        Assert.assertEqual(AtmosphericDensityModel.MSIS90, oDrag.low_altitude_atmospheric_density_model)
         self.m_logger.WriteLine6(
             "\tThe new LowAltAtmosphericDensityModel is: {0}", oDrag.low_altitude_atmospheric_density_model
         )
@@ -4244,8 +4213,8 @@ class PropagatorHPOPHelper(object):
         self.m_logger.WriteLine6("\t\tThe new BlendingRange is: {0}", oDrag.blending_range)
 
         # LowAltAtmosphericDensityModel (MSIS00)
-        oDrag.low_altitude_atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.MSIS00
-        Assert.assertEqual(ATMOSPHERIC_DENSITY_MODEL.MSIS00, oDrag.low_altitude_atmospheric_density_model)
+        oDrag.low_altitude_atmospheric_density_model = AtmosphericDensityModel.MSIS00
+        Assert.assertEqual(AtmosphericDensityModel.MSIS00, oDrag.low_altitude_atmospheric_density_model)
         self.m_logger.WriteLine6(
             "\tThe new LowAltAtmosphericDensityModel is: {0}", oDrag.low_altitude_atmospheric_density_model
         )
@@ -4254,18 +4223,18 @@ class PropagatorHPOPHelper(object):
         oDrag.blending_range = 30.0
         self.m_logger.WriteLine6("\t\tThe new BlendingRange is: {0}", oDrag.blending_range)
         # Reset LowAltAtmosphericDensityModel
-        oDrag.low_altitude_atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.UNKNOWN
+        oDrag.low_altitude_atmospheric_density_model = AtmosphericDensityModel.UNKNOWN
 
         # LowAltAtmosDensityModel (UNKNOWN)
-        oDrag.low_altitude_atmos_density_model = LOW_ALTITUDE_ATMOSPHERIC_DENSITY_MODEL.NONE
-        Assert.assertEqual(LOW_ALTITUDE_ATMOSPHERIC_DENSITY_MODEL.NONE, oDrag.low_altitude_atmos_density_model)
+        oDrag.low_altitude_atmos_density_model = LowAltitudeAtmosphericDensityModel.NONE
+        Assert.assertEqual(LowAltitudeAtmosphericDensityModel.NONE, oDrag.low_altitude_atmos_density_model)
         self.m_logger.WriteLine6("\tThe new LowAltAtmosDensityModel is: {0}", oDrag.low_altitude_atmos_density_model)
         with pytest.raises(Exception):
             oDrag.blending_range = 50.0
 
         # LowAltAtmosDensityModel (MSIS90)
-        oDrag.low_altitude_atmos_density_model = LOW_ALTITUDE_ATMOSPHERIC_DENSITY_MODEL.MSISE1990
-        Assert.assertEqual(LOW_ALTITUDE_ATMOSPHERIC_DENSITY_MODEL.MSISE1990, oDrag.low_altitude_atmos_density_model)
+        oDrag.low_altitude_atmos_density_model = LowAltitudeAtmosphericDensityModel.MSISE1990
+        Assert.assertEqual(LowAltitudeAtmosphericDensityModel.MSISE1990, oDrag.low_altitude_atmos_density_model)
         self.m_logger.WriteLine6("\tThe new LowAltAtmosDensityModel is: {0}", oDrag.low_altitude_atmos_density_model)
         self.m_logger.WriteLine6("\t\tThe current BlendingRange is: {0}", oDrag.blending_range)
         # BlendingRange
@@ -4273,31 +4242,31 @@ class PropagatorHPOPHelper(object):
         self.m_logger.WriteLine6("\t\tThe new BlendingRange is: {0}", oDrag.blending_range)
 
         # LowAltAtmosDensityModel (MSIS00)
-        oDrag.low_altitude_atmos_density_model = LOW_ALTITUDE_ATMOSPHERIC_DENSITY_MODEL.NRLMSISE2000
-        Assert.assertEqual(LOW_ALTITUDE_ATMOSPHERIC_DENSITY_MODEL.NRLMSISE2000, oDrag.low_altitude_atmos_density_model)
+        oDrag.low_altitude_atmos_density_model = LowAltitudeAtmosphericDensityModel.NRLMSISE2000
+        Assert.assertEqual(LowAltitudeAtmosphericDensityModel.NRLMSISE2000, oDrag.low_altitude_atmos_density_model)
         self.m_logger.WriteLine6("\tThe new LowAltAtmosDensityModel is: {0}", oDrag.low_altitude_atmos_density_model)
         self.m_logger.WriteLine6("\t\tThe current BlendingRange is: {0}", oDrag.blending_range)
         # BlendingRange
         oDrag.blending_range = 30.0
         self.m_logger.WriteLine6("\t\tThe new BlendingRange is: {0}", oDrag.blending_range)
         # Reset LowAltAtmosDensityModel
-        oDrag.low_altitude_atmos_density_model = LOW_ALTITUDE_ATMOSPHERIC_DENSITY_MODEL.NONE
-        Assert.assertEqual(LOW_ALTITUDE_ATMOSPHERIC_DENSITY_MODEL.NONE, oDrag.low_altitude_atmos_density_model)
+        oDrag.low_altitude_atmos_density_model = LowAltitudeAtmosphericDensityModel.NONE
+        Assert.assertEqual(LowAltitudeAtmosphericDensityModel.NONE, oDrag.low_altitude_atmos_density_model)
 
         # LowAltAtmosphericDensityModel
         # Try to set to equivalent of "None"
-        oDrag.low_altitude_atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.UNKNOWN
-        Assert.assertEqual(ATMOSPHERIC_DENSITY_MODEL.UNKNOWN, oDrag.low_altitude_atmospheric_density_model)
+        oDrag.low_altitude_atmospheric_density_model = AtmosphericDensityModel.UNKNOWN
+        Assert.assertEqual(AtmosphericDensityModel.UNKNOWN, oDrag.low_altitude_atmospheric_density_model)
         # If None above, then shouldn't be able to set the Blending Range
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             oDrag.blending_range = 30
 
-        oDrag.low_altitude_atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.MSIS00
-        Assert.assertEqual(ATMOSPHERIC_DENSITY_MODEL.MSIS00, oDrag.low_altitude_atmospheric_density_model)
-        oDrag.low_altitude_atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.MSIS90
-        Assert.assertEqual(ATMOSPHERIC_DENSITY_MODEL.MSIS90, oDrag.low_altitude_atmospheric_density_model)
+        oDrag.low_altitude_atmospheric_density_model = AtmosphericDensityModel.MSIS00
+        Assert.assertEqual(AtmosphericDensityModel.MSIS00, oDrag.low_altitude_atmospheric_density_model)
+        oDrag.low_altitude_atmospheric_density_model = AtmosphericDensityModel.MSIS90
+        Assert.assertEqual(AtmosphericDensityModel.MSIS90, oDrag.low_altitude_atmospheric_density_model)
         with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
-            oDrag.low_altitude_atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.CIRA72
+            oDrag.low_altitude_atmospheric_density_model = AtmosphericDensityModel.CIRA72
 
         # BlendingRange
         oDrag.blending_range = 30
@@ -4308,19 +4277,19 @@ class PropagatorHPOPHelper(object):
         # Testing new drag models
         self.m_logger.WriteLine("***************** DRAG MODELS ***********")
         # IVehicleHPOPDragModel oDragModel = oDrag.DragModel;
-        oDrag.set_drag_model_type(DRAG_MODEL.SPHERICAL)
-        Assert.assertEqual(DRAG_MODEL.SPHERICAL, oDrag.drag_model_type)
+        oDrag.set_drag_model_type(DragModel.SPHERICAL)
+        Assert.assertEqual(DragModel.SPHERICAL, oDrag.drag_model_type)
         oDragModelChoices = oDrag.drag_model_supported_types
         Assert.assertIsNotNone(oDragModelChoices)
 
         i: int = 0
         while i < len(oDragModelChoices):
-            eModel: "DRAG_MODEL" = DRAG_MODEL(int(oDragModelChoices[i][0]))
+            eModel: "DragModel" = DragModel(int(oDragModelChoices[i][0]))
             self.m_logger.WriteLine6("Drag Model: {0}", eModel)
             oDrag.set_drag_model_type(eModel)
             Assert.assertEqual(eModel, oDrag.drag_model_type)
             Assert.assertTrue(oDrag.is_drag_model_type_supported(eModel))
-            if eModel == DRAG_MODEL.SPHERICAL:
+            if eModel == DragModel.SPHERICAL:
                 oSphericalDrag: "VehicleHPOPDragModelSpherical" = clr.CastAs(
                     oDrag.drag_model, VehicleHPOPDragModelSpherical
                 )
@@ -4343,23 +4312,23 @@ class PropagatorHPOPHelper(object):
 
             i += 1
 
-        oDrag.set_drag_model_type(DRAG_MODEL.SPHERICAL)
+        oDrag.set_drag_model_type(DragModel.SPHERICAL)
 
         with pytest.raises(Exception):
-            oDrag.set_drag_model_type(DRAG_MODEL.UNKNOWN)
+            oDrag.set_drag_model_type(DragModel.UNKNOWN)
         self.m_logger.WriteLine("***************** END OF Drag MODELS ***********")
 
     # endregion
 
     # region SolarFluxGeoMagEnterManually
     def SolarFluxGeoMagEnterManually(
-        self, oSolar: "IVehicleSolarFluxGeoMagnitude", eModel: "ATMOSPHERIC_DENSITY_MODEL", bReadOnly: bool
+        self, oSolar: "IVehicleSolarFluxGeoMagnitude", eModel: "AtmosphericDensityModel", bReadOnly: bool
     ):
         Assert.assertIsNotNone(oSolar)
         oManually: "SolarFluxGeoMagneticValueSettings" = clr.CastAs(oSolar, SolarFluxGeoMagneticValueSettings)
         Assert.assertIsNotNone(oManually)
-        if (bReadOnly or (eModel == ATMOSPHERIC_DENSITY_MODEL.STANDARD_ATMOSPHERE_MODEL_1976)) or (
-            eModel == ATMOSPHERIC_DENSITY_MODEL.JACCHIA60
+        if (bReadOnly or (eModel == AtmosphericDensityModel.STANDARD_ATMOSPHERE_MODEL_1976)) or (
+            eModel == AtmosphericDensityModel.JACCHIA60
         ):
             # DailyF107
             with pytest.raises(Exception):
@@ -4379,7 +4348,7 @@ class PropagatorHPOPHelper(object):
             Assert.assertEqual(123.4, oManually.average_f107)
             with pytest.raises(Exception):
                 oManually.average_f107 = 12345.6
-            if eModel == ATMOSPHERIC_DENSITY_MODEL.HARRIS_PRIESTER:
+            if eModel == AtmosphericDensityModel.HARRIS_PRIESTER:
                 # DailyF107
                 with pytest.raises(Exception):
                     oManually.daily_f107 = 123.4
@@ -4392,19 +4361,19 @@ class PropagatorHPOPHelper(object):
                         (
                             (
                                 (
-                                    ((eModel == ATMOSPHERIC_DENSITY_MODEL.CIRA72))
-                                    or ((eModel == ATMOSPHERIC_DENSITY_MODEL.JACCHIA70))
+                                    ((eModel == AtmosphericDensityModel.CIRA72))
+                                    or ((eModel == AtmosphericDensityModel.JACCHIA70))
                                 )
-                                or ((eModel == ATMOSPHERIC_DENSITY_MODEL.JACCHIA71))
+                                or ((eModel == AtmosphericDensityModel.JACCHIA71))
                             )
-                            or ((eModel == ATMOSPHERIC_DENSITY_MODEL.JACCHIA_ROBERTS))
+                            or ((eModel == AtmosphericDensityModel.JACCHIA_ROBERTS))
                         )
-                        or ((eModel == ATMOSPHERIC_DENSITY_MODEL.MSIS00))
+                        or ((eModel == AtmosphericDensityModel.MSIS00))
                     )
-                    or ((eModel == ATMOSPHERIC_DENSITY_MODEL.MSIS86))
+                    or ((eModel == AtmosphericDensityModel.MSIS86))
                 )
-                or ((eModel == ATMOSPHERIC_DENSITY_MODEL.MSIS90))
-            ) or ((eModel == ATMOSPHERIC_DENSITY_MODEL.DTM2012)):
+                or ((eModel == AtmosphericDensityModel.MSIS90))
+            ) or ((eModel == AtmosphericDensityModel.DTM2012)):
                 # DailyF107
                 self.m_logger.WriteLine6("\t\tThe current DailyF107 is: {0}", oManually.daily_f107)
                 oManually.daily_f107 = 123.4
@@ -4426,35 +4395,35 @@ class PropagatorHPOPHelper(object):
 
     # region SolarFluxGeoMagUseFile
     def SolarFluxGeoMagUseFile(
-        self, oSolar: "IVehicleSolarFluxGeoMagnitude", eModel: "ATMOSPHERIC_DENSITY_MODEL", bReadOnly: bool
+        self, oSolar: "IVehicleSolarFluxGeoMagnitude", eModel: "AtmosphericDensityModel", bReadOnly: bool
     ):
         Assert.assertIsNotNone(oSolar)
         oFile: "SolarFluxGeoMagneticFileSettings" = clr.CastAs(oSolar, SolarFluxGeoMagneticFileSettings)
         Assert.assertIsNotNone(oFile)
-        if (bReadOnly or (eModel == ATMOSPHERIC_DENSITY_MODEL.STANDARD_ATMOSPHERE_MODEL_1976)) or (
-            eModel == ATMOSPHERIC_DENSITY_MODEL.JACCHIA60
+        if (bReadOnly or (eModel == AtmosphericDensityModel.STANDARD_ATMOSPHERE_MODEL_1976)) or (
+            eModel == AtmosphericDensityModel.JACCHIA60
         ):
             # File
             with pytest.raises(Exception):
                 oFile.file = r"DynamicEarthData\EOP-v1.1.txt"
             # GeomagFluxSrc
             with pytest.raises(Exception):
-                oFile.geomagnetic_flux_source = VEHICLE_GEOMAGNETIC_FLUX_SOURCE_TYPE.READ_AP_FROM_FILE
+                oFile.geomagnetic_flux_source = VehicleGeomagneticFluxSourceType.READ_AP_FROM_FILE
             # GeomagFluxUpdateRate
             with pytest.raises(Exception):
-                oFile.geomagnetic_flux_update_rate = VEHICLE_GEOMAGNETIC_FLUX_UPDATE_RATE_TYPE.DAILY
+                oFile.geomagnetic_flux_update_rate = VehicleGeomagneticFluxUpdateRateType.DAILY
 
         else:
             # GeomagFluxSrc
             self.m_logger.WriteLine6("\t\tThe current GeomagFluxSrc is: {0}", oFile.geomagnetic_flux_source)
-            oFile.geomagnetic_flux_source = VEHICLE_GEOMAGNETIC_FLUX_SOURCE_TYPE.READ_AP_FROM_FILE
+            oFile.geomagnetic_flux_source = VehicleGeomagneticFluxSourceType.READ_AP_FROM_FILE
             self.m_logger.WriteLine6("\t\tThe new GeomagFluxSrc is: {0}", oFile.geomagnetic_flux_source)
-            Assert.assertEqual(VEHICLE_GEOMAGNETIC_FLUX_SOURCE_TYPE.READ_AP_FROM_FILE, oFile.geomagnetic_flux_source)
+            Assert.assertEqual(VehicleGeomagneticFluxSourceType.READ_AP_FROM_FILE, oFile.geomagnetic_flux_source)
             # GeomagFluxUpdateRate
             self.m_logger.WriteLine6("\t\tThe current GeomagFluxUpdateRate is: {0}", oFile.geomagnetic_flux_update_rate)
-            oFile.geomagnetic_flux_update_rate = VEHICLE_GEOMAGNETIC_FLUX_UPDATE_RATE_TYPE.DAILY
+            oFile.geomagnetic_flux_update_rate = VehicleGeomagneticFluxUpdateRateType.DAILY
             self.m_logger.WriteLine6("\t\tThe new GeomagFluxUpdateRate is: {0}", oFile.geomagnetic_flux_update_rate)
-            Assert.assertEqual(VEHICLE_GEOMAGNETIC_FLUX_UPDATE_RATE_TYPE.DAILY, oFile.geomagnetic_flux_update_rate)
+            Assert.assertEqual(VehicleGeomagneticFluxUpdateRateType.DAILY, oFile.geomagnetic_flux_update_rate)
             # File
             self.m_logger.WriteLine5("\t\tThe current File is: {0}", oFile.file)
             if (
@@ -4464,21 +4433,21 @@ class PropagatorHPOPHelper(object):
                             (
                                 (
                                     (
-                                        ((eModel == ATMOSPHERIC_DENSITY_MODEL.HARRIS_PRIESTER))
-                                        or ((eModel == ATMOSPHERIC_DENSITY_MODEL.CIRA72))
+                                        ((eModel == AtmosphericDensityModel.HARRIS_PRIESTER))
+                                        or ((eModel == AtmosphericDensityModel.CIRA72))
                                     )
-                                    or ((eModel == ATMOSPHERIC_DENSITY_MODEL.JACCHIA70))
+                                    or ((eModel == AtmosphericDensityModel.JACCHIA70))
                                 )
-                                or ((eModel == ATMOSPHERIC_DENSITY_MODEL.JACCHIA71))
+                                or ((eModel == AtmosphericDensityModel.JACCHIA71))
                             )
-                            or ((eModel == ATMOSPHERIC_DENSITY_MODEL.JACCHIA_ROBERTS))
+                            or ((eModel == AtmosphericDensityModel.JACCHIA_ROBERTS))
                         )
-                        or ((eModel == ATMOSPHERIC_DENSITY_MODEL.MSIS00))
+                        or ((eModel == AtmosphericDensityModel.MSIS00))
                     )
-                    or ((eModel == ATMOSPHERIC_DENSITY_MODEL.MSIS86))
+                    or ((eModel == AtmosphericDensityModel.MSIS86))
                 )
-                or ((eModel == ATMOSPHERIC_DENSITY_MODEL.MSIS90))
-            ) or ((eModel == ATMOSPHERIC_DENSITY_MODEL.DTM2012)):
+                or ((eModel == AtmosphericDensityModel.MSIS90))
+            ) or ((eModel == AtmosphericDensityModel.DTM2012)):
                 oFile.file = r"EOP-v1.1.txt"
                 Assert.assertEqual("EOP-v1.1.txt", oFile.file)
 
@@ -4535,7 +4504,7 @@ class PropagatorHPOPHelper(object):
                 thirdBodyGravityElement.gravity_value,
             )
             gravValue: float = thirdBodyGravityElement.gravity_value
-            thirdBodyGravityElement.source = THIRD_BODY_GRAVITY_SOURCE_TYPE.HPOP_HISTORICAL
+            thirdBodyGravityElement.source = ThirdBodyGravitySourceType.HPOP_HISTORICAL
             Assert.assertFalse((gravValue == thirdBodyGravityElement.gravity_value))
             with pytest.raises(Exception):
                 oGravity.add_third_body(centralBody)
@@ -4557,7 +4526,7 @@ class PropagatorHPOPHelper(object):
                 thirdBodyGravityElement.gravity_value,
             )
             gravValue: float = thirdBodyGravityElement.gravity_value
-            thirdBodyGravityElement.source = THIRD_BODY_GRAVITY_SOURCE_TYPE.HPOP_HISTORICAL
+            thirdBodyGravityElement.source = ThirdBodyGravitySourceType.HPOP_HISTORICAL
             Assert.assertFalse((gravValue == thirdBodyGravityElement.gravity_value))
             with pytest.raises(Exception):
                 oGravity.add_third_body(centralBody)
@@ -4568,7 +4537,7 @@ class PropagatorHPOPHelper(object):
         oBody: "PropagatorHPOPThirdBodyGravityElement" = oGravity[0]
         Assert.assertIsNotNone(oBody)
         # Source (CENTRAL_BODY_FILE)
-        oBody.source = THIRD_BODY_GRAVITY_SOURCE_TYPE.CENTRAL_BODY_FILE
+        oBody.source = ThirdBodyGravitySourceType.CENTRAL_BODY_FILE
         with pytest.raises(Exception):
             oBody.gravity_value = 123.456
         self.m_logger.WriteLine8(
@@ -4578,7 +4547,7 @@ class PropagatorHPOPHelper(object):
             oBody.gravity_value,
         )
         # Source (HPOP_HISTORICAL)
-        oBody.source = THIRD_BODY_GRAVITY_SOURCE_TYPE.HPOP_HISTORICAL
+        oBody.source = ThirdBodyGravitySourceType.HPOP_HISTORICAL
         with pytest.raises(Exception):
             oBody.gravity_value = 123.456
         self.m_logger.WriteLine8(
@@ -4588,7 +4557,7 @@ class PropagatorHPOPHelper(object):
             oBody.gravity_value,
         )
         # Source (JPL_DEVELOPMENTAL_EPHEMERIS)
-        oBody.source = THIRD_BODY_GRAVITY_SOURCE_TYPE.JPL_DEVELOPMENTAL_EPHEMERIS
+        oBody.source = ThirdBodyGravitySourceType.JPL_DEVELOPMENTAL_EPHEMERIS
         with pytest.raises(Exception):
             oBody.gravity_value = 123.456
         self.m_logger.WriteLine8(
@@ -4598,7 +4567,7 @@ class PropagatorHPOPHelper(object):
             oBody.gravity_value,
         )
         # Source (USER_SPECIFIED)
-        oBody.source = THIRD_BODY_GRAVITY_SOURCE_TYPE.USER_SPECIFIED
+        oBody.source = ThirdBodyGravitySourceType.USER_SPECIFIED
         oBody.gravity_value = 123.456
         Assert.assertEqual(123.456, oBody.gravity_value)
         with pytest.raises(Exception):
@@ -4739,24 +4708,23 @@ class PropagatorHPOPHelper(object):
         self.m_logger.WriteLine6(
             "\tThe current MethodToComputeSunPosition is: {0}", oOptions.method_to_compute_sun_position
         )
-        oOptions.method_to_compute_sun_position = METHOD_TO_COMPUTE_SUN_POSITION.APPARENT
+        oOptions.method_to_compute_sun_position = MethodToComputeSunPosition.APPARENT
         self.m_logger.WriteLine6(
             "\tThe new MethodToComputeSunPosition is: {0}", oOptions.method_to_compute_sun_position
         )
-        Assert.assertEqual(METHOD_TO_COMPUTE_SUN_POSITION.APPARENT, oOptions.method_to_compute_sun_position)
-        oOptions.method_to_compute_sun_position = METHOD_TO_COMPUTE_SUN_POSITION.APPARENT_TO_TRUE_CENTRAL_BODY_LOCATION
+        Assert.assertEqual(MethodToComputeSunPosition.APPARENT, oOptions.method_to_compute_sun_position)
+        oOptions.method_to_compute_sun_position = MethodToComputeSunPosition.APPARENT_TO_TRUE_CENTRAL_BODY_LOCATION
         self.m_logger.WriteLine6(
             "\tThe new MethodToComputeSunPosition is: {0}", oOptions.method_to_compute_sun_position
         )
         Assert.assertEqual(
-            METHOD_TO_COMPUTE_SUN_POSITION.APPARENT_TO_TRUE_CENTRAL_BODY_LOCATION,
-            oOptions.method_to_compute_sun_position,
+            MethodToComputeSunPosition.APPARENT_TO_TRUE_CENTRAL_BODY_LOCATION, oOptions.method_to_compute_sun_position
         )
-        oOptions.method_to_compute_sun_position = METHOD_TO_COMPUTE_SUN_POSITION.TRUE
+        oOptions.method_to_compute_sun_position = MethodToComputeSunPosition.TRUE
         self.m_logger.WriteLine6(
             "\tThe new MethodToComputeSunPosition is: {0}", oOptions.method_to_compute_sun_position
         )
-        Assert.assertEqual(METHOD_TO_COMPUTE_SUN_POSITION.TRUE, oOptions.method_to_compute_sun_position)
+        Assert.assertEqual(MethodToComputeSunPosition.TRUE, oOptions.method_to_compute_sun_position)
         # AtmosAltOfEarthShapeForEclipse
         self.m_logger.WriteLine6(
             "\tThe current AtmosAltOfEarthShapeForEclipse is: {0}",
@@ -4989,59 +4957,59 @@ class PropagatorHPOPHelper(object):
 
         # IntegrationModel (BULIRSCH_STOER)
         self.m_logger.WriteLine6("\tThe current IntegrationModel is: {0}", oIntegrator.integration_model)
-        oIntegrator.integration_model = VEHICLE_INTEGRATION_MODEL.BULIRSCH_STOER
+        oIntegrator.integration_model = VehicleIntegrationModel.BULIRSCH_STOER
         self.m_logger.WriteLine6("\tThe new IntegrationModel is: {0}", oIntegrator.integration_model)
-        Assert.assertEqual(VEHICLE_INTEGRATION_MODEL.BULIRSCH_STOER, oIntegrator.integration_model)
+        Assert.assertEqual(VehicleIntegrationModel.BULIRSCH_STOER, oIntegrator.integration_model)
         # PredictorCorrectorScheme (readonly)
         with pytest.raises(Exception):
-            oIntegrator.predictor_corrector_scheme = VEHICLE_PREDICTOR_CORRECTOR_SCHEME.PSEUDOCORRECTION
+            oIntegrator.predictor_corrector_scheme = VehiclePredictorCorrectorScheme.PSEUDOCORRECTION
         # StepSizeControl
         self.StepSizeControl(oIntegrator.step_size_control, False)
 
         # IntegrationModel (GAUSS_JACKSON)
-        oIntegrator.integration_model = VEHICLE_INTEGRATION_MODEL.GAUSS_JACKSON
+        oIntegrator.integration_model = VehicleIntegrationModel.GAUSS_JACKSON
         self.m_logger.WriteLine6("\tThe new IntegrationModel is: {0}", oIntegrator.integration_model)
-        Assert.assertEqual(VEHICLE_INTEGRATION_MODEL.GAUSS_JACKSON, oIntegrator.integration_model)
+        Assert.assertEqual(VehicleIntegrationModel.GAUSS_JACKSON, oIntegrator.integration_model)
         # PredictorCorrectorScheme
         self.m_logger.WriteLine6(
             "\t\tThe current PredictorCorrectorScheme is: {0}", oIntegrator.predictor_corrector_scheme
         )
-        oIntegrator.predictor_corrector_scheme = VEHICLE_PREDICTOR_CORRECTOR_SCHEME.FULL_CORRECTION
+        oIntegrator.predictor_corrector_scheme = VehiclePredictorCorrectorScheme.FULL_CORRECTION
         self.m_logger.WriteLine6("\t\tThe new PredictorCorrectorScheme is: {0}", oIntegrator.predictor_corrector_scheme)
-        Assert.assertEqual(VEHICLE_PREDICTOR_CORRECTOR_SCHEME.FULL_CORRECTION, oIntegrator.predictor_corrector_scheme)
-        oIntegrator.predictor_corrector_scheme = VEHICLE_PREDICTOR_CORRECTOR_SCHEME.PSEUDOCORRECTION
+        Assert.assertEqual(VehiclePredictorCorrectorScheme.FULL_CORRECTION, oIntegrator.predictor_corrector_scheme)
+        oIntegrator.predictor_corrector_scheme = VehiclePredictorCorrectorScheme.PSEUDOCORRECTION
         self.m_logger.WriteLine6("\t\tThe new PredictorCorrectorScheme is: {0}", oIntegrator.predictor_corrector_scheme)
-        Assert.assertEqual(VEHICLE_PREDICTOR_CORRECTOR_SCHEME.PSEUDOCORRECTION, oIntegrator.predictor_corrector_scheme)
+        Assert.assertEqual(VehiclePredictorCorrectorScheme.PSEUDOCORRECTION, oIntegrator.predictor_corrector_scheme)
         # StepSizeControl
         self.StepSizeControl(oIntegrator.step_size_control, True)
 
         # IntegrationModel (eRK4)
-        oIntegrator.integration_model = VEHICLE_INTEGRATION_MODEL.RUNGE_KUTTA_4
+        oIntegrator.integration_model = VehicleIntegrationModel.RUNGE_KUTTA_4
         self.m_logger.WriteLine6("\tThe new IntegrationModel is: {0}", oIntegrator.integration_model)
-        Assert.assertEqual(VEHICLE_INTEGRATION_MODEL.RUNGE_KUTTA_4, oIntegrator.integration_model)
+        Assert.assertEqual(VehicleIntegrationModel.RUNGE_KUTTA_4, oIntegrator.integration_model)
         # PredictorCorrectorScheme (readonly)
         with pytest.raises(Exception):
-            oIntegrator.predictor_corrector_scheme = VEHICLE_PREDICTOR_CORRECTOR_SCHEME.PSEUDOCORRECTION
+            oIntegrator.predictor_corrector_scheme = VehiclePredictorCorrectorScheme.PSEUDOCORRECTION
         # StepSizeControl
         self.StepSizeControl(oIntegrator.step_size_control, True)
 
         # IntegrationModel (RUNGE_KUTTA_FEHLBERG_78)
-        oIntegrator.integration_model = VEHICLE_INTEGRATION_MODEL.RUNGE_KUTTA_FEHLBERG_78
+        oIntegrator.integration_model = VehicleIntegrationModel.RUNGE_KUTTA_FEHLBERG_78
         self.m_logger.WriteLine6("\tThe new IntegrationModel is: {0}", oIntegrator.integration_model)
-        Assert.assertEqual(VEHICLE_INTEGRATION_MODEL.RUNGE_KUTTA_FEHLBERG_78, oIntegrator.integration_model)
+        Assert.assertEqual(VehicleIntegrationModel.RUNGE_KUTTA_FEHLBERG_78, oIntegrator.integration_model)
         # PredictorCorrectorScheme (readonly)
         with pytest.raises(Exception):
-            oIntegrator.predictor_corrector_scheme = VEHICLE_PREDICTOR_CORRECTOR_SCHEME.PSEUDOCORRECTION
+            oIntegrator.predictor_corrector_scheme = VehiclePredictorCorrectorScheme.PSEUDOCORRECTION
         # StepSizeControl
         self.StepSizeControl(oIntegrator.step_size_control, False)
 
         # IntegrationModel (eRKF89Efficient)
-        oIntegrator.integration_model = VEHICLE_INTEGRATION_MODEL.RUNGE_KUTTA_VERNER_89_EFFICIENT
+        oIntegrator.integration_model = VehicleIntegrationModel.RUNGE_KUTTA_VERNER_89_EFFICIENT
         self.m_logger.WriteLine6("\tThe new IntegrationModel is: {0}", oIntegrator.integration_model)
-        Assert.assertEqual(VEHICLE_INTEGRATION_MODEL.RUNGE_KUTTA_VERNER_89_EFFICIENT, oIntegrator.integration_model)
+        Assert.assertEqual(VehicleIntegrationModel.RUNGE_KUTTA_VERNER_89_EFFICIENT, oIntegrator.integration_model)
         # PredictorCorrectorScheme (readonly)
         with pytest.raises(Exception):
-            oIntegrator.predictor_corrector_scheme = VEHICLE_PREDICTOR_CORRECTOR_SCHEME.PSEUDOCORRECTION
+            oIntegrator.predictor_corrector_scheme = VehiclePredictorCorrectorScheme.PSEUDOCORRECTION
         # StepSizeControl
         self.StepSizeControl(oIntegrator.step_size_control, False)
 
@@ -5064,13 +5032,13 @@ class PropagatorHPOPHelper(object):
         if bUseVOP:
             # Method
             with pytest.raises(Exception):
-                oInterpolation.method = VEHICLE_INTERPOLATION_METHOD.HERMITIAN
+                oInterpolation.method = VehicleInterpolationMethod.HERMITIAN
 
         else:
             # Test Hermitian/Lagrange interpolation orders
             # When Hermitian, the order's lower bound is 3 and the upper bound is 29
             # For Lagrange, the lower bound is 0 and the upper bound is 29.
-            oInterpolation.method = VEHICLE_INTERPOLATION_METHOD.HERMITIAN
+            oInterpolation.method = VehicleInterpolationMethod.HERMITIAN
             with pytest.raises(Exception):
                 oInterpolation.order = 2
             with pytest.raises(Exception):
@@ -5080,7 +5048,7 @@ class PropagatorHPOPHelper(object):
             oInterpolation.order = 29
             Assert.assertEqual(29, oInterpolation.order)
 
-            oInterpolation.method = VEHICLE_INTERPOLATION_METHOD.LAGRANGE
+            oInterpolation.method = VehicleInterpolationMethod.LAGRANGE
             with pytest.raises(Exception):
                 oInterpolation.order = -1
             with pytest.raises(Exception):
@@ -5091,9 +5059,9 @@ class PropagatorHPOPHelper(object):
             Assert.assertEqual(29, oInterpolation.order)
 
             # Method (HERMITIAN)
-            oInterpolation.method = VEHICLE_INTERPOLATION_METHOD.HERMITIAN
+            oInterpolation.method = VehicleInterpolationMethod.HERMITIAN
             self.m_logger.WriteLine6("\tThe new Method is: {0}", oInterpolation.method)
-            Assert.assertEqual(VEHICLE_INTERPOLATION_METHOD.HERMITIAN, oInterpolation.method)
+            Assert.assertEqual(VehicleInterpolationMethod.HERMITIAN, oInterpolation.method)
             # Order
             self.m_logger.WriteLine3("\t\tThe current Order is: {0}", oInterpolation.order)
             oInterpolation.order = 12
@@ -5105,9 +5073,9 @@ class PropagatorHPOPHelper(object):
             with pytest.raises(Exception):
                 oInterpolation.vop_mu = 12.34
             # Method (LAGRANGE)
-            oInterpolation.method = VEHICLE_INTERPOLATION_METHOD.LAGRANGE
+            oInterpolation.method = VehicleInterpolationMethod.LAGRANGE
             self.m_logger.WriteLine6("\tThe new Method is: {0}", oInterpolation.method)
-            Assert.assertEqual(VEHICLE_INTERPOLATION_METHOD.LAGRANGE, oInterpolation.method)
+            Assert.assertEqual(VehicleInterpolationMethod.LAGRANGE, oInterpolation.method)
             # Order
             self.m_logger.WriteLine3("\t\tThe current Order is: {0}", oInterpolation.order)
             oInterpolation.order = 13
@@ -5119,9 +5087,9 @@ class PropagatorHPOPHelper(object):
             with pytest.raises(Exception):
                 oInterpolation.vop_mu = 12.34
             # Method (VOP)
-            oInterpolation.method = VEHICLE_INTERPOLATION_METHOD.VOP
+            oInterpolation.method = VehicleInterpolationMethod.VOP
             self.m_logger.WriteLine6("\tThe new Method is: {0}", oInterpolation.method)
-            Assert.assertEqual(VEHICLE_INTERPOLATION_METHOD.VOP, oInterpolation.method)
+            Assert.assertEqual(VehicleInterpolationMethod.VOP, oInterpolation.method)
 
         # Order
         self.m_logger.WriteLine3("\t\tThe current Order is: {0}", oInterpolation.order)
@@ -5161,9 +5129,9 @@ class PropagatorHPOPHelper(object):
         self.m_logger.WriteLine6("\tThe current Method is: {0}", oControl.method)
         if not bReadOnly:
             # Method (RELATIVE_ERROR)
-            oControl.method = VEHICLE_METHOD.RELATIVE_ERROR
+            oControl.method = VehicleMethod.RELATIVE_ERROR
             self.m_logger.WriteLine6("\tThe new Method is: {0}", oControl.method)
-            Assert.assertEqual(VEHICLE_METHOD.RELATIVE_ERROR, oControl.method)
+            Assert.assertEqual(VehicleMethod.RELATIVE_ERROR, oControl.method)
             # ErrorTolerance
             self.m_logger.WriteLine6("\t\tThe current ErrorTolerance is: {0}", oControl.error_tolerance)
             oControl.error_tolerance = 1e-06
@@ -5190,14 +5158,14 @@ class PropagatorHPOPHelper(object):
             with pytest.raises(Exception):
                 oControl.maximum_step_size = 2
             # Method (FIXED_STEP)
-            oControl.method = VEHICLE_METHOD.FIXED_STEP
+            oControl.method = VehicleMethod.FIXED_STEP
             self.m_logger.WriteLine6("\tThe new Method is: {0}", oControl.method)
-            Assert.assertEqual(VEHICLE_METHOD.FIXED_STEP, oControl.method)
+            Assert.assertEqual(VehicleMethod.FIXED_STEP, oControl.method)
 
         else:
             # Method (FIXED_STEP)
             with pytest.raises(Exception):
-                oControl.method = VEHICLE_METHOD.FIXED_STEP
+                oControl.method = VehicleMethod.FIXED_STEP
 
         # ErrorTolerance
         with pytest.raises(Exception):
@@ -5221,7 +5189,7 @@ class PropagatorHPOPHelper(object):
         Assert.assertEqual(False, oCovariance.compute_covariance)
         # Frame (readonly)
         with pytest.raises(Exception):
-            oCovariance.frame = VEHICLE_FRAME.LVLH
+            oCovariance.frame = VehicleFrame.LVLH
         # Gravity
         self.CovarianceGravity(oCovariance.gravity, True)
         # PositionVelocity
@@ -5247,18 +5215,18 @@ class PropagatorHPOPHelper(object):
         self.m_logger.WriteLine5("\t\tThe current Representation is: {0}", oCovariance.representation)
         # Frame
         self.m_logger.WriteLine6("\t\tThe current Frame is: {0}", oCovariance.frame)
-        oCovariance.frame = VEHICLE_FRAME.FRENET
+        oCovariance.frame = VehicleFrame.FRENET
         self.m_logger.WriteLine6("\t\tThe new Frame is: {0}", oCovariance.frame)
-        Assert.assertEqual(VEHICLE_FRAME.FRENET, oCovariance.frame)
-        oCovariance.frame = VEHICLE_FRAME.J2000
+        Assert.assertEqual(VehicleFrame.FRENET, oCovariance.frame)
+        oCovariance.frame = VehicleFrame.J2000
         self.m_logger.WriteLine6("\t\tThe new Frame is: {0}", oCovariance.frame)
-        Assert.assertEqual(VEHICLE_FRAME.J2000, oCovariance.frame)
-        oCovariance.frame = VEHICLE_FRAME.LVLH
+        Assert.assertEqual(VehicleFrame.J2000, oCovariance.frame)
+        oCovariance.frame = VehicleFrame.LVLH
         self.m_logger.WriteLine6("\t\tThe new Frame is: {0}", oCovariance.frame)
-        Assert.assertEqual(VEHICLE_FRAME.LVLH, oCovariance.frame)
-        oCovariance.frame = VEHICLE_FRAME.TRUE_OF_DATE
+        Assert.assertEqual(VehicleFrame.LVLH, oCovariance.frame)
+        oCovariance.frame = VehicleFrame.TRUE_OF_DATE
         self.m_logger.WriteLine6("\t\tThe new Frame is: {0}", oCovariance.frame)
-        Assert.assertEqual(VEHICLE_FRAME.TRUE_OF_DATE, oCovariance.frame)
+        Assert.assertEqual(VehicleFrame.TRUE_OF_DATE, oCovariance.frame)
 
         # Gravity
         self.CovarianceGravity(oCovariance.gravity, False)
@@ -5481,7 +5449,7 @@ class PropagatorHPOPHelper(object):
                 oCollection.remove_all()
             # Add (readonly)
             with pytest.raises(Exception):
-                oCollection.add(VEHICLE_CONSIDER_ANALYSIS_TYPE.DRAG)
+                oCollection.add(VehicleConsiderAnalysisType.DRAG)
             if oCollection.count > 0:
                 with pytest.raises(Exception):
                     oCollection.remove_at(0)
@@ -5505,18 +5473,18 @@ class PropagatorHPOPHelper(object):
             )
             Assert.assertEqual(0, oCollection.count)
             # Add (DRAG)
-            oCollection.add(VEHICLE_CONSIDER_ANALYSIS_TYPE.DRAG)
+            oCollection.add(VehicleConsiderAnalysisType.DRAG)
             Assert.assertEqual(1, oCollection.count)
             with pytest.raises(Exception):
-                oCollection.add(VEHICLE_CONSIDER_ANALYSIS_TYPE.DRAG)
+                oCollection.add(VehicleConsiderAnalysisType.DRAG)
             self.m_logger.WriteLine3(
                 "\t\tThe new ConsiderAnalysis collection contains: {0} elements", oCollection.count
             )
             # Add (SOLAR_RADIATION_PRESSURE)
-            oCollection.add(VEHICLE_CONSIDER_ANALYSIS_TYPE.SOLAR_RADIATION_PRESSURE)
+            oCollection.add(VehicleConsiderAnalysisType.SOLAR_RADIATION_PRESSURE)
             Assert.assertEqual(2, oCollection.count)
             with pytest.raises(Exception):
-                oCollection.add(VEHICLE_CONSIDER_ANALYSIS_TYPE.SOLAR_RADIATION_PRESSURE)
+                oCollection.add(VehicleConsiderAnalysisType.SOLAR_RADIATION_PRESSURE)
             self.m_logger.WriteLine3(
                 "\t\tThe new ConsiderAnalysis collection contains: {0} elements", oCollection.count
             )
@@ -5541,7 +5509,7 @@ class PropagatorHPOPHelper(object):
             )
             Assert.assertEqual(0, oCollection.count)
             with pytest.raises(Exception):
-                oCollection.remove_by_type(VEHICLE_CONSIDER_ANALYSIS_TYPE.SOLAR_RADIATION_PRESSURE)
+                oCollection.remove_by_type(VehicleConsiderAnalysisType.SOLAR_RADIATION_PRESSURE)
 
     # endregion
 
@@ -5688,10 +5656,10 @@ class PropagatorHPOPHelper(object):
                 oVeCorrelationListElement.value = 123.456
             # Row (readonly)
             with pytest.raises(Exception):
-                oVeCorrelationListElement.row = VEHICLE_CORRELATION_LIST_TYPE.DRAG
+                oVeCorrelationListElement.row = VehicleCorrelationListType.DRAG
             # Column (readonly)
             with pytest.raises(Exception):
-                oVeCorrelationListElement.column = VEHICLE_CORRELATION_LIST_TYPE.SOLAR_RADIATION_PRESSURE
+                oVeCorrelationListElement.column = VehicleCorrelationListType.SOLAR_RADIATION_PRESSURE
 
         else:
             # Value
@@ -5701,24 +5669,24 @@ class PropagatorHPOPHelper(object):
             Assert.assertEqual(123.456, oVeCorrelationListElement.value)
             # Row
             self.m_logger.WriteLine6("\t\tThe current Row is: {0}", oVeCorrelationListElement.row)
-            oVeCorrelationListElement.row = VEHICLE_CORRELATION_LIST_TYPE.DRAG
+            oVeCorrelationListElement.row = VehicleCorrelationListType.DRAG
             self.m_logger.WriteLine6("\t\tThe new Row is: {0}", oVeCorrelationListElement.row)
-            Assert.assertEqual(VEHICLE_CORRELATION_LIST_TYPE.DRAG, oVeCorrelationListElement.row)
-            oVeCorrelationListElement.row = VEHICLE_CORRELATION_LIST_TYPE.SOLAR_RADIATION_PRESSURE
+            Assert.assertEqual(VehicleCorrelationListType.DRAG, oVeCorrelationListElement.row)
+            oVeCorrelationListElement.row = VehicleCorrelationListType.SOLAR_RADIATION_PRESSURE
             self.m_logger.WriteLine6("\t\tThe new Row is: {0}", oVeCorrelationListElement.row)
-            Assert.assertEqual(VEHICLE_CORRELATION_LIST_TYPE.SOLAR_RADIATION_PRESSURE, oVeCorrelationListElement.row)
+            Assert.assertEqual(VehicleCorrelationListType.SOLAR_RADIATION_PRESSURE, oVeCorrelationListElement.row)
             with pytest.raises(Exception):
-                oVeCorrelationListElement.row = VEHICLE_CORRELATION_LIST_TYPE.NONE
+                oVeCorrelationListElement.row = VehicleCorrelationListType.NONE
             # Column
             self.m_logger.WriteLine6("\t\tThe current Column is: {0}", oVeCorrelationListElement.column)
-            oVeCorrelationListElement.column = VEHICLE_CORRELATION_LIST_TYPE.DRAG
+            oVeCorrelationListElement.column = VehicleCorrelationListType.DRAG
             self.m_logger.WriteLine6("\t\tThe new Column is: {0}", oVeCorrelationListElement.column)
-            Assert.assertEqual(VEHICLE_CORRELATION_LIST_TYPE.DRAG, oVeCorrelationListElement.column)
-            oVeCorrelationListElement.column = VEHICLE_CORRELATION_LIST_TYPE.SOLAR_RADIATION_PRESSURE
+            Assert.assertEqual(VehicleCorrelationListType.DRAG, oVeCorrelationListElement.column)
+            oVeCorrelationListElement.column = VehicleCorrelationListType.SOLAR_RADIATION_PRESSURE
             self.m_logger.WriteLine6("\t\tThe new Column is: {0}", oVeCorrelationListElement.column)
-            Assert.assertEqual(VEHICLE_CORRELATION_LIST_TYPE.SOLAR_RADIATION_PRESSURE, oVeCorrelationListElement.column)
+            Assert.assertEqual(VehicleCorrelationListType.SOLAR_RADIATION_PRESSURE, oVeCorrelationListElement.column)
             with pytest.raises(Exception):
-                oVeCorrelationListElement.column = VEHICLE_CORRELATION_LIST_TYPE.NONE
+                oVeCorrelationListElement.column = VehicleCorrelationListType.NONE
 
 
 # endregion
@@ -5762,7 +5730,7 @@ class PropagatorBallisticHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arLanchTypes):
-            eLaunch: "VEHICLE_LAUNCH" = VEHICLE_LAUNCH(int(arLanchTypes[iIndex][0]))
+            eLaunch: "VehicleLaunch" = VehicleLaunch(int(arLanchTypes[iIndex][0]))
             self.m_logger.WriteLine8("\t\tType {0} is: {1} ({2})", iIndex, arLanchTypes[iIndex][1], eLaunch)
             if not oBallistic.is_launch_type_supported(eLaunch):
                 Assert.fail("The {0} type should be supported!", eLaunch)
@@ -5771,7 +5739,7 @@ class PropagatorBallisticHelper(object):
             oBallistic.set_launch_type(eLaunch)
             self.m_logger.WriteLine6("\t\tThe new Lunch type is: {0}", oBallistic.launch_type)
             Assert.assertEqual(eLaunch, oBallistic.launch_type)
-            if eLaunch == VEHICLE_LAUNCH.DETIC:
+            if eLaunch == VehicleLaunch.DETIC:
                 # Launch
                 launchLLA: "LaunchVehicleLocationDetic" = LaunchVehicleLocationDetic(oBallistic.launch)
                 Assert.assertIsNotNone(launchLLA)
@@ -5796,7 +5764,7 @@ class PropagatorBallisticHelper(object):
                 Assert.assertEqual(123.4, launchLLA.altitude)
                 with pytest.raises(Exception):
                     launchLLA.altitude = -1
-            elif eLaunch == VEHICLE_LAUNCH.CENTRIC:
+            elif eLaunch == VehicleLaunch.CENTRIC:
                 oLLR: "LaunchVehicleLocationCentric" = LaunchVehicleLocationCentric(oBallistic.launch)
                 Assert.assertIsNotNone(oLLR)
                 # Lat
@@ -5823,7 +5791,7 @@ class PropagatorBallisticHelper(object):
             else:
                 Assert.fail("Invalid type!")
             # need the deltaV to be set in order to propagate without exception
-            oBallistic.set_impact_location_type(VEHICLE_IMPACT_LOCATION.LAUNCH_AZ_EL)
+            oBallistic.set_impact_location_type(VehicleImpactLocation.LAUNCH_AZ_EL)
             oAzEl: "VehicleImpactLocationLaunchAzEl" = VehicleImpactLocationLaunchAzEl(oBallistic.impact_location)
             oAzEl.delta_v = 4
             oAzEl.elevation = 88
@@ -5841,7 +5809,7 @@ class PropagatorBallisticHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arImpactTypes):
-            eImpact: "VEHICLE_IMPACT_LOCATION" = VEHICLE_IMPACT_LOCATION(int(arImpactTypes[iIndex][0]))
+            eImpact: "VehicleImpactLocation" = VehicleImpactLocation(int(arImpactTypes[iIndex][0]))
             self.m_logger.WriteLine8("\t\tType {0} is: {1} ({2})", iIndex, arImpactTypes[iIndex][1], eImpact)
             if not oBallistic.is_impact_location_type_supported(eImpact):
                 Assert.fail("The {0} type should be supported!", eImpact)
@@ -5850,7 +5818,7 @@ class PropagatorBallisticHelper(object):
             oBallistic.set_impact_location_type(eImpact)
             self.m_logger.WriteLine6("\t\tThe new ImpactLocation type is: {0}", oBallistic.impact_location_type)
             Assert.assertEqual(eImpact, oBallistic.impact_location_type)
-            if eImpact == VEHICLE_IMPACT_LOCATION.LAUNCH_AZ_EL:
+            if eImpact == VehicleImpactLocation.LAUNCH_AZ_EL:
                 # ImpactLocation
                 oAzEl: "VehicleImpactLocationLaunchAzEl" = VehicleImpactLocationLaunchAzEl(oBallistic.impact_location)
                 Assert.assertIsNotNone(oAzEl)
@@ -5875,7 +5843,7 @@ class PropagatorBallisticHelper(object):
                 Assert.assertEqual(5, oAzEl.delta_v)
                 with pytest.raises(Exception):
                     oAzEl.delta_v = 390.1
-            elif eImpact == VEHICLE_IMPACT_LOCATION.POINT:
+            elif eImpact == VehicleImpactLocation.POINT:
                 # ImpactLocation
                 oPoint: "VehicleImpactLocationPoint" = VehicleImpactLocationPoint(oBallistic.impact_location)
                 Assert.assertIsNotNone(oPoint)
@@ -5887,7 +5855,7 @@ class PropagatorBallisticHelper(object):
 
                 j: int = 0
                 while j < len(arPITypes):
-                    eI: "VEHICLE_IMPACT" = VEHICLE_IMPACT(int(arPITypes[j][0]))
+                    eI: "VehicleImpact" = VehicleImpact(int(arPITypes[j][0]))
                     self.m_logger.WriteLine8("\t\t\tType {0} is: {1} ({2})", j, arPITypes[j][1], eI)
                     if not oPoint.is_impact_type_supported(eI):
                         Assert.fail("The {0} type should be supported!", eI)
@@ -5896,7 +5864,7 @@ class PropagatorBallisticHelper(object):
                     oPoint.set_impact_type(eI)
                     self.m_logger.WriteLine6("\t\t\tThe new Impact type is: {0}", oPoint.impact_type)
                     Assert.assertEqual(eI, oPoint.impact_type)
-                    if eI == VEHICLE_IMPACT.IMPACT_LOCATION_DETIC:
+                    if eI == VehicleImpact.IMPACT_LOCATION_DETIC:
                         impactLLA: "VehicleImpactLocationDetic" = VehicleImpactLocationDetic(oPoint.impact)
                         Assert.assertIsNotNone(impactLLA)
                         # Lat
@@ -5920,7 +5888,7 @@ class PropagatorBallisticHelper(object):
                         Assert.assertEqual(10, impactLLA.altitude)
                         with pytest.raises(Exception):
                             impactLLA.altitude = -1
-                    elif eI == VEHICLE_IMPACT.IMPACT_LOCATION_CENTRIC:
+                    elif eI == VehicleImpact.IMPACT_LOCATION_CENTRIC:
                         oLLR: "VehicleImpactLocationCentric" = VehicleImpactLocationCentric(oPoint.impact)
                         Assert.assertIsNotNone(oLLR)
                         # Lat
@@ -5961,7 +5929,7 @@ class PropagatorBallisticHelper(object):
 
                 j: int = 0
                 while j < len(arLCTypes):
-                    eI: "VEHICLE_LAUNCH_CONTROL" = VEHICLE_LAUNCH_CONTROL(int(arLCTypes[j][0]))
+                    eI: "VehicleLaunchControl" = VehicleLaunchControl(int(arLCTypes[j][0]))
                     self.m_logger.WriteLine8("\t\t\tType {0} is: {1} ({2})", j, arLCTypes[j][1], eI)
                     if not oPoint.is_launch_control_type_supported(eI):
                         Assert.fail("The {0} type should be supported!", eI)
@@ -5970,7 +5938,7 @@ class PropagatorBallisticHelper(object):
                     oPoint.set_launch_control_type(eI)
                     self.m_logger.WriteLine6("\t\t\tThe new LaunchControl type is: {0}", oPoint.launch_control_type)
                     Assert.assertEqual(eI, oPoint.launch_control_type)
-                    if eI == VEHICLE_LAUNCH_CONTROL.FIXED_APOGEE_ALTITUDE:
+                    if eI == VehicleLaunchControl.FIXED_APOGEE_ALTITUDE:
                         launchControlFixedApogeeAlt: "LaunchVehicleControlFixedApogeeAltitude" = (
                             LaunchVehicleControlFixedApogeeAltitude(oPoint.launch_control)
                         )
@@ -5986,7 +5954,7 @@ class PropagatorBallisticHelper(object):
                         Assert.assertEqual(12345.6, launchControlFixedApogeeAlt.apogee_altitude)
                         with pytest.raises(Exception):
                             launchControlFixedApogeeAlt.apogee_altitude = -1
-                    elif eI == VEHICLE_LAUNCH_CONTROL.FIXED_DELTA_V:
+                    elif eI == VehicleLaunchControl.FIXED_DELTA_V:
                         launchControlFixedDeltaV: "LaunchVehicleControlFixedDeltaV" = LaunchVehicleControlFixedDeltaV(
                             oPoint.launch_control
                         )
@@ -5998,7 +5966,7 @@ class PropagatorBallisticHelper(object):
                         Assert.assertEqual(8.6, launchControlFixedDeltaV.delta_v)
                         with pytest.raises(Exception):
                             launchControlFixedDeltaV.delta_v = 23
-                    elif eI == VEHICLE_LAUNCH_CONTROL.FIXED_DELTA_V_MINIMUM_ECCENTRICITY:
+                    elif eI == VehicleLaunchControl.FIXED_DELTA_V_MINIMUM_ECCENTRICITY:
                         launchControlFixedDeltaVMinEcc: "LaunchVehicleControlFixedDeltaVMinimumEccentricity" = (
                             LaunchVehicleControlFixedDeltaVMinimumEccentricity(oPoint.launch_control)
                         )
@@ -6014,7 +5982,7 @@ class PropagatorBallisticHelper(object):
                         Assert.assertEqual(10, launchControlFixedDeltaVMinEcc.delta_v_min)
                         with pytest.raises(Exception):
                             launchControlFixedDeltaVMinEcc.delta_v_min = 12
-                    elif eI == VEHICLE_LAUNCH_CONTROL.FIXED_TIME_OF_FLIGHT:
+                    elif eI == VehicleLaunchControl.FIXED_TIME_OF_FLIGHT:
                         launchControlFixedTimeOfFlight: "LaunchVehicleControlFixedTimeOfFlight" = (
                             LaunchVehicleControlFixedTimeOfFlight(oPoint.launch_control)
                         )
@@ -6305,10 +6273,10 @@ class PropagatorRealtimeHelper(object):
 
         i: int = 0
         while i < len(supportedPropagators):
-            supportedType: "LOOK_AHEAD_PROPAGATOR" = LOOK_AHEAD_PROPAGATOR(int(supportedPropagators[i]))
+            supportedType: "LookAheadPropagator" = LookAheadPropagator(int(supportedPropagators[i]))
             self.m_logger.WriteLine6("Supported lookahead propagator: {0}", supportedType)
-            if ((supportedType == LOOK_AHEAD_PROPAGATOR.HOLD_CENTRAL_BODY_INERTIAL_POSITION)) or (
-                (supportedType == LOOK_AHEAD_PROPAGATOR.HOLD_CENTRAL_BODY_FIXED_POSITION)
+            if ((supportedType == LookAheadPropagator.HOLD_CENTRAL_BODY_INERTIAL_POSITION)) or (
+                (supportedType == LookAheadPropagator.HOLD_CENTRAL_BODY_FIXED_POSITION)
             ):
                 Assert.assertTrue(
                     (
@@ -6316,16 +6284,16 @@ class PropagatorRealtimeHelper(object):
                             (
                                 (
                                     (
-                                        (obj.class_type == STK_OBJECT_TYPE.SHIP)
-                                        or (obj.class_type == STK_OBJECT_TYPE.AIRCRAFT)
+                                        (obj.class_type == STKObjectType.SHIP)
+                                        or (obj.class_type == STKObjectType.AIRCRAFT)
                                     )
-                                    or (obj.class_type == STK_OBJECT_TYPE.GROUND_VEHICLE)
+                                    or (obj.class_type == STKObjectType.GROUND_VEHICLE)
                                 )
-                                or (obj.class_type == STK_OBJECT_TYPE.MISSILE)
+                                or (obj.class_type == STKObjectType.MISSILE)
                             )
-                            or (obj.class_type == STK_OBJECT_TYPE.LAUNCH_VEHICLE)
+                            or (obj.class_type == STKObjectType.LAUNCH_VEHICLE)
                         )
-                        or (obj.class_type == STK_OBJECT_TYPE.SATELLITE)
+                        or (obj.class_type == STKObjectType.SATELLITE)
                     ),
                     String.Format("Object is not expected to support {0} look ahead propagator.", supportedType),
                 )
@@ -6333,44 +6301,38 @@ class PropagatorRealtimeHelper(object):
                 realtime.look_ahead_propagator = supportedType
                 Assert.assertEqual(supportedType, realtime.look_ahead_propagator)
             elif (
-                ((supportedType == LOOK_AHEAD_PROPAGATOR.TWO_BODY))
-                or ((supportedType == LOOK_AHEAD_PROPAGATOR.J2_PERTURBATION))
-            ) or ((supportedType == LOOK_AHEAD_PROPAGATOR.J4_PERTURBATION)):
+                ((supportedType == LookAheadPropagator.TWO_BODY))
+                or ((supportedType == LookAheadPropagator.J2_PERTURBATION))
+            ) or ((supportedType == LookAheadPropagator.J4_PERTURBATION)):
                 Assert.assertTrue(
                     (
-                        (
-                            (obj.class_type == STK_OBJECT_TYPE.MISSILE)
-                            or (obj.class_type == STK_OBJECT_TYPE.LAUNCH_VEHICLE)
-                        )
-                        or (obj.class_type == STK_OBJECT_TYPE.SATELLITE)
+                        ((obj.class_type == STKObjectType.MISSILE) or (obj.class_type == STKObjectType.LAUNCH_VEHICLE))
+                        or (obj.class_type == STKObjectType.SATELLITE)
                     ),
                     String.Format("Object is not expected to support {0} look ahead propagator.", supportedType),
                 )
                 Assert.assertTrue(realtime.is_look_ahead_propagator_supported(supportedType))
                 realtime.look_ahead_propagator = supportedType
                 Assert.assertEqual(supportedType, realtime.look_ahead_propagator)
-            elif supportedType == LOOK_AHEAD_PROPAGATOR.BALLISTIC:
+            elif supportedType == LookAheadPropagator.BALLISTIC:
                 Assert.assertTrue(
-                    ((obj.class_type == STK_OBJECT_TYPE.MISSILE) or (obj.class_type == STK_OBJECT_TYPE.LAUNCH_VEHICLE)),
+                    ((obj.class_type == STKObjectType.MISSILE) or (obj.class_type == STKObjectType.LAUNCH_VEHICLE)),
                     String.Format("Object is not expected to support {0} look ahead propagator.", supportedType),
                 )
                 Assert.assertTrue(realtime.is_look_ahead_propagator_supported(supportedType))
                 realtime.look_ahead_propagator = supportedType
                 Assert.assertEqual(supportedType, realtime.look_ahead_propagator)
-            elif supportedType == LOOK_AHEAD_PROPAGATOR.DEAD_RECKONING:
+            elif supportedType == LookAheadPropagator.DEAD_RECKONING:
                 Assert.assertTrue(
                     (
                         (
                             (
-                                (
-                                    (obj.class_type == STK_OBJECT_TYPE.SHIP)
-                                    or (obj.class_type == STK_OBJECT_TYPE.AIRCRAFT)
-                                )
-                                or (obj.class_type == STK_OBJECT_TYPE.GROUND_VEHICLE)
+                                ((obj.class_type == STKObjectType.SHIP) or (obj.class_type == STKObjectType.AIRCRAFT))
+                                or (obj.class_type == STKObjectType.GROUND_VEHICLE)
                             )
-                            or (obj.class_type == STK_OBJECT_TYPE.MISSILE)
+                            or (obj.class_type == STKObjectType.MISSILE)
                         )
-                        or (obj.class_type == STK_OBJECT_TYPE.LAUNCH_VEHICLE)
+                        or (obj.class_type == STKObjectType.LAUNCH_VEHICLE)
                     ),
                     String.Format("Object is not expected to support {0} look ahead propagator.", supportedType),
                 )
@@ -6429,23 +6391,23 @@ class PropagatorGPSHelper(object):
 
         gps.specify_catalog.filename = sYUMAAlmanacPath
         Assert.assertEqual("GPSAlmanac.alm", gps.specify_catalog.filename)
-        Assert.assertEqual(gps.specify_catalog.properties.type, VEHICLE_GPS_ALMANAC_TYPE.YUMA)
+        Assert.assertEqual(gps.specify_catalog.properties.type, VehicleGPSAlmanacType.YUMA)
 
         yuma: "VehicleGPSAlmanacPropertiesYUMA" = clr.CastAs(
             gps.specify_catalog.properties, VehicleGPSAlmanacPropertiesYUMA
         )
         Assert.assertIsNotNone(yuma)
 
-        yumaType: "VEHICLE_GPS_ALMANAC_TYPE" = yuma.type
+        yumaType: "VehicleGPSAlmanacType" = yuma.type
 
-        yuma.reference_week = GPS_REFERENCE_WEEK.WEEK06_JAN1980
-        Assert.assertEqual(GPS_REFERENCE_WEEK.WEEK06_JAN1980, yuma.reference_week)
-        yuma.reference_week = GPS_REFERENCE_WEEK.WEEK07_APR2019
-        Assert.assertEqual(GPS_REFERENCE_WEEK.WEEK07_APR2019, yuma.reference_week)
-        yuma.reference_week = GPS_REFERENCE_WEEK.WEEK22_AUG1999
-        Assert.assertEqual(GPS_REFERENCE_WEEK.WEEK22_AUG1999, yuma.reference_week)
+        yuma.reference_week = GPSReferenceWeek.WEEK06_JAN1980
+        Assert.assertEqual(GPSReferenceWeek.WEEK06_JAN1980, yuma.reference_week)
+        yuma.reference_week = GPSReferenceWeek.WEEK07_APR2019
+        Assert.assertEqual(GPSReferenceWeek.WEEK07_APR2019, yuma.reference_week)
+        yuma.reference_week = GPSReferenceWeek.WEEK22_AUG1999
+        Assert.assertEqual(GPSReferenceWeek.WEEK22_AUG1999, yuma.reference_week)
         with pytest.raises(Exception):
-            yuma.reference_week = GPS_REFERENCE_WEEK.UNKNOWN
+            yuma.reference_week = GPSReferenceWeek.UNKNOWN
 
         self.m_logger.WriteLine10(
             "Almanac week: {0}, Date of almanac: {1}, Time of almanac: {2}, Ref.Week: {3}, Health: {4}, WeekNumber:{5}",
@@ -6459,14 +6421,14 @@ class PropagatorGPSHelper(object):
 
         gps.specify_catalog.filename = sSP3AlmanacPath
         Assert.assertEqual("GPSAlmanac.sp3", gps.specify_catalog.filename)
-        Assert.assertEqual(gps.specify_catalog.properties.type, VEHICLE_GPS_ALMANAC_TYPE.SP3)
+        Assert.assertEqual(gps.specify_catalog.properties.type, VehicleGPSAlmanacType.SP3)
 
         sp3: "VehicleGPSAlmanacPropertiesSP3" = clr.CastAs(
             gps.specify_catalog.properties, VehicleGPSAlmanacPropertiesSP3
         )
         Assert.assertIsNotNone(sp3)
 
-        sp3Type: "VEHICLE_GPS_ALMANAC_TYPE" = sp3.type
+        sp3Type: "VehicleGPSAlmanacType" = sp3.type
 
         self.m_logger.WriteLine8(
             "Almanac week: {0}, Date of almanac: {1}, Time of almanac: {2}",
@@ -6477,7 +6439,7 @@ class PropagatorGPSHelper(object):
 
         gps.specify_catalog.filename = sSEMAlmanacPath
         Assert.assertEqual("GPSAlmanac.al3", gps.specify_catalog.filename)
-        Assert.assertEqual(gps.specify_catalog.properties.type, VEHICLE_GPS_ALMANAC_TYPE.SEM)
+        Assert.assertEqual(gps.specify_catalog.properties.type, VehicleGPSAlmanacType.SEM)
 
         availPRNs = gps.available_prns
         Assert.assertIsNotNone(availPRNs)
@@ -6493,17 +6455,17 @@ class PropagatorGPSHelper(object):
 
         properties: "VehicleGPSAutoUpdateProperties" = gps.automatic_update_settings.properties
 
-        properties.selection = VEHICLE_GPS_ELEMENT_SELECTION_TYPE.USE_ALL
-        Assert.assertEqual(VEHICLE_GPS_ELEMENT_SELECTION_TYPE.USE_ALL, properties.selection)
-        properties.selection = VEHICLE_GPS_ELEMENT_SELECTION_TYPE.USE_FIRST
-        Assert.assertEqual(VEHICLE_GPS_ELEMENT_SELECTION_TYPE.USE_FIRST, properties.selection)
+        properties.selection = VehicleGPSElementSelectionType.USE_ALL
+        Assert.assertEqual(VehicleGPSElementSelectionType.USE_ALL, properties.selection)
+        properties.selection = VehicleGPSElementSelectionType.USE_FIRST
+        Assert.assertEqual(VehicleGPSElementSelectionType.USE_FIRST, properties.selection)
 
-        properties.switch_method = VEHICLE_GPS_SWITCH_METHOD.TIME_OF_CLOSEST_APPROACH
-        Assert.assertEqual(VEHICLE_GPS_SWITCH_METHOD.TIME_OF_CLOSEST_APPROACH, properties.switch_method)
-        properties.switch_method = VEHICLE_GPS_SWITCH_METHOD.MIDPOINT
-        Assert.assertEqual(VEHICLE_GPS_SWITCH_METHOD.MIDPOINT, properties.switch_method)
-        properties.switch_method = VEHICLE_GPS_SWITCH_METHOD.EPOCH
-        Assert.assertEqual(VEHICLE_GPS_SWITCH_METHOD.EPOCH, properties.switch_method)
+        properties.switch_method = VehicleGPSSwitchMethod.TIME_OF_CLOSEST_APPROACH
+        Assert.assertEqual(VehicleGPSSwitchMethod.TIME_OF_CLOSEST_APPROACH, properties.switch_method)
+        properties.switch_method = VehicleGPSSwitchMethod.MIDPOINT
+        Assert.assertEqual(VehicleGPSSwitchMethod.MIDPOINT, properties.switch_method)
+        properties.switch_method = VehicleGPSSwitchMethod.EPOCH
+        Assert.assertEqual(VehicleGPSSwitchMethod.EPOCH, properties.switch_method)
 
         gps.automatic_update_enabled = False
 
@@ -6512,16 +6474,16 @@ class PropagatorGPSHelper(object):
         )
         Assert.assertIsNotNone(sem)
 
-        semType: "VEHICLE_GPS_ALMANAC_TYPE" = yuma.type
+        semType: "VehicleGPSAlmanacType" = yuma.type
 
-        sem.reference_week = GPS_REFERENCE_WEEK.WEEK06_JAN1980
-        Assert.assertEqual(GPS_REFERENCE_WEEK.WEEK06_JAN1980, sem.reference_week)
-        sem.reference_week = GPS_REFERENCE_WEEK.WEEK07_APR2019
-        Assert.assertEqual(GPS_REFERENCE_WEEK.WEEK07_APR2019, sem.reference_week)
-        sem.reference_week = GPS_REFERENCE_WEEK.WEEK22_AUG1999
-        Assert.assertEqual(GPS_REFERENCE_WEEK.WEEK22_AUG1999, sem.reference_week)
+        sem.reference_week = GPSReferenceWeek.WEEK06_JAN1980
+        Assert.assertEqual(GPSReferenceWeek.WEEK06_JAN1980, sem.reference_week)
+        sem.reference_week = GPSReferenceWeek.WEEK07_APR2019
+        Assert.assertEqual(GPSReferenceWeek.WEEK07_APR2019, sem.reference_week)
+        sem.reference_week = GPSReferenceWeek.WEEK22_AUG1999
+        Assert.assertEqual(GPSReferenceWeek.WEEK22_AUG1999, sem.reference_week)
         with pytest.raises(Exception):
-            sem.reference_week = GPS_REFERENCE_WEEK.UNKNOWN
+            sem.reference_week = GPSReferenceWeek.UNKNOWN
 
         self.m_logger.WriteLine10(
             "Almanac week: {0}, Date of almanac: {1}, Time of almanac: {2}, Ref.Week: {3}, Health: {4}, AvgURA:{5}",
@@ -6533,12 +6495,12 @@ class PropagatorGPSHelper(object):
             sem.avg_ura,
         )
 
-        sem.reference_week = GPS_REFERENCE_WEEK.WEEK06_JAN1980
-        Assert.assertEqual(GPS_REFERENCE_WEEK.WEEK06_JAN1980, sem.reference_week)
-        sem.reference_week = GPS_REFERENCE_WEEK.WEEK07_APR2019
-        Assert.assertEqual(GPS_REFERENCE_WEEK.WEEK07_APR2019, sem.reference_week)
-        sem.reference_week = GPS_REFERENCE_WEEK.WEEK22_AUG1999
-        Assert.assertEqual(GPS_REFERENCE_WEEK.WEEK22_AUG1999, sem.reference_week)
+        sem.reference_week = GPSReferenceWeek.WEEK06_JAN1980
+        Assert.assertEqual(GPSReferenceWeek.WEEK06_JAN1980, sem.reference_week)
+        sem.reference_week = GPSReferenceWeek.WEEK07_APR2019
+        Assert.assertEqual(GPSReferenceWeek.WEEK07_APR2019, sem.reference_week)
+        sem.reference_week = GPSReferenceWeek.WEEK22_AUG1999
+        Assert.assertEqual(GPSReferenceWeek.WEEK22_AUG1999, sem.reference_week)
 
         self.m_logger.WriteLine8(
             "Start time: {0}, Stop time: {1}, Step: {2}",
@@ -6573,7 +6535,7 @@ class PropagatorGPSHelper(object):
         #
 
         try:
-            gps.automatic_update_settings.selected_source = VEHICLE_GPS_AUTOMATIC_UPDATE_SOURCE_TYPE.UNKNOWN
+            gps.automatic_update_settings.selected_source = VehicleGPSAutomaticUpdateSourceType.UNKNOWN
             Assert.fail("Should have failed - UNKNOWN.")
 
         except AssertionError:
@@ -6583,7 +6545,7 @@ class PropagatorGPSHelper(object):
             self.m_logger.WriteLine(str(ex))
 
         try:
-            gps.automatic_update_settings.selected_source = VEHICLE_GPS_AUTOMATIC_UPDATE_SOURCE_TYPE.NONE
+            gps.automatic_update_settings.selected_source = VehicleGPSAutomaticUpdateSourceType.NONE
             Assert.fail("Should have failed - NONE.")
 
         except AssertionError:
@@ -6592,8 +6554,8 @@ class PropagatorGPSHelper(object):
         except Exception as ex:
             self.m_logger.WriteLine(str(ex))
 
-        gps.automatic_update_settings.selected_source = VEHICLE_GPS_AUTOMATIC_UPDATE_SOURCE_TYPE.FILE
-        Assert.assertEqual(VEHICLE_GPS_AUTOMATIC_UPDATE_SOURCE_TYPE.FILE, gps.automatic_update_settings.selected_source)
+        gps.automatic_update_settings.selected_source = VehicleGPSAutomaticUpdateSourceType.FILE
+        Assert.assertEqual(VehicleGPSAutomaticUpdateSourceType.FILE, gps.automatic_update_settings.selected_source)
 
         gps.automatic_update_settings.file_source.filename = sSEMAlmanacPath
         Assert.assertEqual("GPSAlmanac.al3", gps.automatic_update_settings.file_source.filename)
@@ -6650,7 +6612,7 @@ class BasicAttitudeStandardHelper(object):
         Assert.assertIsNotNone(oAttitude)
         # Type
         self.m_logger.WriteLine6("\tThe current Type is: {0}", oAttitude.type)
-        if oAttitude.type == ATTITUDE_STANDARD_TYPE.TRAJECTORY_ATTITUDE_STANDARD:
+        if oAttitude.type == AttitudeStandardType.TRAJECTORY_ATTITUDE_STANDARD:
             oTrajectory: "AttitudeStandardTrajectory" = AttitudeStandardTrajectory(oAttitude)
             Assert.assertIsNotNone(oTrajectory)
             # Basic
@@ -6659,7 +6621,7 @@ class BasicAttitudeStandardHelper(object):
             self.External(oTrajectory.external)
             # Pointing
             self.Pointing(oTrajectory.pointing)
-        elif oAttitude.type == ATTITUDE_STANDARD_TYPE.ORBIT_ATTITUDE_STANDARD:
+        elif oAttitude.type == AttitudeStandardType.ORBIT_ATTITUDE_STANDARD:
             oOrbit: "AttitudeStandardOrbit" = AttitudeStandardOrbit(oAttitude)
             Assert.assertIsNotNone(oOrbit)
             # Basic
@@ -6670,7 +6632,7 @@ class BasicAttitudeStandardHelper(object):
             self.IntegratedAttitude(oOrbit.integrated_attitude)
             # External
             self.External(oOrbit.external)
-        elif oAttitude.type == ATTITUDE_STANDARD_TYPE.ROUTE_ATTITUDE_STANDARD:
+        elif oAttitude.type == AttitudeStandardType.ROUTE_ATTITUDE_STANDARD:
             oRoute: "AttitudeStandardRoute" = AttitudeStandardRoute(oAttitude)
             Assert.assertIsNotNone(oRoute)
             # Basic
@@ -6695,7 +6657,7 @@ class BasicAttitudeStandardHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arTypes):
-            eType: "ATTITUDE_PROFILE" = ATTITUDE_PROFILE(int(arTypes[iIndex][0]))
+            eType: "AttitudeProfile" = AttitudeProfile(int(arTypes[iIndex][0]))
             self.m_logger.WriteLine8("\tType {0} is: {1} ({2})", iIndex, arTypes[iIndex][1], eType)
             if not oBasic.is_profile_type_supported(eType):
                 Assert.fail("The {0} type should be supported!", eType)
@@ -6703,7 +6665,7 @@ class BasicAttitudeStandardHelper(object):
             # SetProfileType
             oBasic.set_profile_type(eType)
             self.m_logger.WriteLine6("\t\tThe new Profile type is: {0}", oBasic.profile_type)
-            veProfile: "ATTITUDE_PROFILE" = oBasic.profile_type
+            veProfile: "AttitudeProfile" = oBasic.profile_type
             Assert.assertEqual(eType, veProfile)
             # Profile
             self.Profile(oBasic.profile)
@@ -6725,13 +6687,11 @@ class BasicAttitudeStandardHelper(object):
 
             # AlignedVector
             self.Vector(oAAC.aligned_vector)
-            Assert.assertEqual(DIRECTION_TYPE.XYZ, oAAC.displayed_aligned_vector_type)  # See PLTFA-1812, PLTFA-40045
+            Assert.assertEqual(DirectionType.XYZ, oAAC.displayed_aligned_vector_type)  # See PLTFA-1812, PLTFA-40045
 
             # ConstrainedVector
             self.Vector(oAAC.constrained_vector)
-            Assert.assertEqual(
-                DIRECTION_TYPE.XYZ, oAAC.displayed_constrained_vector_type
-            )  # See PLTFA-1812, PLTFA-40045
+            Assert.assertEqual(DirectionType.XYZ, oAAC.displayed_constrained_vector_type)  # See PLTFA-1812, PLTFA-40045
 
         if oProfile.type == "Coordinated Turn":
             oCTurn: "AttitudeProfileCoordinatedTurn" = AttitudeProfileCoordinatedTurn(oProfile)
@@ -6921,17 +6881,17 @@ class BasicAttitudeStandardHelper(object):
             Assert.assertIsNotNone(oGPS)
             # ModelType
             self.m_logger.WriteLine6("\t\t\t\tThe current ModelType is: {0}", oGPS.model_type)
-            oGPS.model_type = GPS_ATTITUDE_MODEL_TYPE.BLOCK_IIA_NOMINAL
+            oGPS.model_type = GPSAttitudeModelType.BLOCK_IIA_NOMINAL
             self.m_logger.WriteLine6("\t\t\t\tThe new ModelType is: {0}", oGPS.model_type)
-            Assert.assertEqual(GPS_ATTITUDE_MODEL_TYPE.BLOCK_IIA_NOMINAL, oGPS.model_type)
-            oGPS.model_type = GPS_ATTITUDE_MODEL_TYPE.BLOCK_IIR_NOMINAL
+            Assert.assertEqual(GPSAttitudeModelType.BLOCK_IIA_NOMINAL, oGPS.model_type)
+            oGPS.model_type = GPSAttitudeModelType.BLOCK_IIR_NOMINAL
             self.m_logger.WriteLine6("\t\t\t\tThe new ModelType is: {0}", oGPS.model_type)
-            Assert.assertEqual(GPS_ATTITUDE_MODEL_TYPE.BLOCK_IIR_NOMINAL, oGPS.model_type)
-            oGPS.model_type = GPS_ATTITUDE_MODEL_TYPE.GYM95
+            Assert.assertEqual(GPSAttitudeModelType.BLOCK_IIR_NOMINAL, oGPS.model_type)
+            oGPS.model_type = GPSAttitudeModelType.GYM95
             self.m_logger.WriteLine6("\t\t\t\tThe new ModelType is: {0}", oGPS.model_type)
-            Assert.assertEqual(GPS_ATTITUDE_MODEL_TYPE.GYM95, oGPS.model_type)
+            Assert.assertEqual(GPSAttitudeModelType.GYM95, oGPS.model_type)
             with pytest.raises(Exception):
-                oGPS.model_type = GPS_ATTITUDE_MODEL_TYPE.UNKNOWN
+                oGPS.model_type = GPSAttitudeModelType.UNKNOWN
 
     # endregion
 
@@ -7226,13 +7186,13 @@ class BasicAttitudeStandardHelper(object):
                 oAdvanced.use_light_time_delay = True
             # TimeSense (readonly)
             with pytest.raises(Exception):
-                oAdvanced.time_sense = IV_TIME_SENSE.RECEIVE
+                oAdvanced.time_sense = IvTimeSense.RECEIVE
             # TimeDelayConvergence (readonly)
             with pytest.raises(Exception):
                 oAdvanced.time_delay_convergence = 0.1
             # AberrationType (readonly)
             with pytest.raises(Exception):
-                (oAdvanced).aberration_type = ABERRATION_TYPE.ANNUAL
+                (oAdvanced).aberration_type = AberrationType.ANNUAL
             # EventDetection (readonly)
             oEDHelper.Run(oAdvanced.event_detection, bReadOnly)
             # Sampling (readonly)
@@ -7246,30 +7206,30 @@ class BasicAttitudeStandardHelper(object):
             Assert.assertFalse(oAdvanced.use_light_time_delay)
             # TimeSense (readonly)
             with pytest.raises(Exception):
-                oAdvanced.time_sense = IV_TIME_SENSE.RECEIVE
+                oAdvanced.time_sense = IvTimeSense.RECEIVE
             # TimeDelayConvergence (readonly)
             with pytest.raises(Exception):
                 oAdvanced.time_delay_convergence = 0.1
             # AberrationType (readonly)
             with pytest.raises(Exception):
-                (oAdvanced).aberration_type = ABERRATION_TYPE.ANNUAL
+                (oAdvanced).aberration_type = AberrationType.ANNUAL
             # UseLightTimeDelay (true)
             oAdvanced.use_light_time_delay = True
             self.m_logger.WriteLine4("\tThe new UseLightTimeDelay is: {0}", oAdvanced.use_light_time_delay)
             Assert.assertTrue(oAdvanced.use_light_time_delay)
             # AberrationType
             self.m_logger.WriteLine6("\tThe current AberrationType is: {0}", oAdvanced.aberration_type)
-            (oAdvanced).aberration_type = ABERRATION_TYPE.ANNUAL
+            (oAdvanced).aberration_type = AberrationType.ANNUAL
             self.m_logger.WriteLine6("\tThe new AberrationType is: {0}", oAdvanced.aberration_type)
-            Assert.assertEqual(ABERRATION_TYPE.ANNUAL, oAdvanced.aberration_type)
-            (oAdvanced).aberration_type = ABERRATION_TYPE.NONE
+            Assert.assertEqual(AberrationType.ANNUAL, oAdvanced.aberration_type)
+            (oAdvanced).aberration_type = AberrationType.NONE
             self.m_logger.WriteLine6("\tThe new AberrationType is: {0}", oAdvanced.aberration_type)
-            Assert.assertEqual(ABERRATION_TYPE.NONE, oAdvanced.aberration_type)
-            (oAdvanced).aberration_type = ABERRATION_TYPE.TOTAL
+            Assert.assertEqual(AberrationType.NONE, oAdvanced.aberration_type)
+            (oAdvanced).aberration_type = AberrationType.TOTAL
             self.m_logger.WriteLine6("\tThe new AberrationType is: {0}", oAdvanced.aberration_type)
-            Assert.assertEqual(ABERRATION_TYPE.TOTAL, oAdvanced.aberration_type)
+            Assert.assertEqual(AberrationType.TOTAL, oAdvanced.aberration_type)
             with pytest.raises(Exception):
-                (oAdvanced).aberration_type = ABERRATION_TYPE.UNKNOWN
+                (oAdvanced).aberration_type = AberrationType.UNKNOWN
             # TimeDelayConvergence
             self.m_logger.WriteLine6("\tThe current TimeDelayConvergence is: {0}", oAdvanced.time_delay_convergence)
             oAdvanced.time_delay_convergence = 0.1
@@ -7279,14 +7239,14 @@ class BasicAttitudeStandardHelper(object):
                 oAdvanced.time_delay_convergence = 0.5
             # TimeSense
             self.m_logger.WriteLine6("\tThe current TimeSense is: {0}", oAdvanced.time_sense)
-            oAdvanced.time_sense = IV_TIME_SENSE.RECEIVE
+            oAdvanced.time_sense = IvTimeSense.RECEIVE
             self.m_logger.WriteLine6("\tThe new TimeSense is: {0}", oAdvanced.time_sense)
-            Assert.assertEqual(IV_TIME_SENSE.RECEIVE, oAdvanced.time_sense)
-            oAdvanced.time_sense = IV_TIME_SENSE.TRANSMIT
+            Assert.assertEqual(IvTimeSense.RECEIVE, oAdvanced.time_sense)
+            oAdvanced.time_sense = IvTimeSense.TRANSMIT
             self.m_logger.WriteLine6("\tThe new TimeSense is: {0}", oAdvanced.time_sense)
-            Assert.assertEqual(IV_TIME_SENSE.TRANSMIT, oAdvanced.time_sense)
+            Assert.assertEqual(IvTimeSense.TRANSMIT, oAdvanced.time_sense)
             with pytest.raises(Exception):
-                oAdvanced.time_sense = IV_TIME_SENSE.UNKNOWN
+                oAdvanced.time_sense = IvTimeSense.UNKNOWN
             # EventDetection
             oEDHelper.Run(oAdvanced.event_detection, bReadOnly)
             # Sampling
@@ -7781,7 +7741,7 @@ class BasicAttitudeRealTimeHelper(object):
         dtSpan: "Quantity" = dtStop.span(dtStart)
         dtSpan.convert_to_unit("sec")
 
-        ga.method = VEHICLE_WAYPOINT_COMPUTATION_METHOD.DETERMINE_VELOCITY_FROM_TIME
+        ga.method = VehicleWaypointComputationMethod.DETERMINE_VELOCITY_FROM_TIME
         # ga.StartTime = startTime;
         # ga.StopTime = stopTime;
         increment: float = dtSpan.value / MAX_POINTS
@@ -7928,52 +7888,52 @@ class BasicAttitudeRealTimeHelper(object):
         self.m_logger.WriteLine6("Ephemeris and attitude stop time:  {0}", stopTime)
         self.m_logger.WriteLine5("Start time in seconds: {0} ", dtStart.format("EpSec"))
         self.m_logger.WriteLine5(" Stop time in seconds: {0} ", dtStop.format("EpSec"))
-        if self._obj.class_type == STK_OBJECT_TYPE.SATELLITE:
+        if self._obj.class_type == STKObjectType.SATELLITE:
             # Re-propagate the satellite
             AG_SAT: "Satellite" = Satellite(self._obj)
-            AG_SAT.set_propagator_type(PROPAGATOR_TYPE.TWO_BODY)
+            AG_SAT.set_propagator_type(PropagatorType.TWO_BODY)
             tb: "PropagatorTwoBody" = clr.CastAs(AG_SAT.propagator, PropagatorTwoBody)
             tb.ephemeris_interval.set_explicit_interval(startTime, stopTime)
             tb.propagate()
             startTime = tb.ephemeris_interval.find_start_time()
             stopTime = tb.ephemeris_interval.find_stop_time()
 
-        elif self._obj.class_type == STK_OBJECT_TYPE.SHIP:
+        elif self._obj.class_type == STKObjectType.SHIP:
             AG_SH: "Ship" = Ship(self._obj)
-            AG_SH.set_route_type(PROPAGATOR_TYPE.GREAT_ARC)
+            AG_SH.set_route_type(PropagatorType.GREAT_ARC)
             ga: "PropagatorGreatArc" = clr.CastAs(AG_SH.route, PropagatorGreatArc)
             self.CreateTrajectory(ga, startTime, stopTime)
             startTime = ga.ephemeris_interval.find_start_time()
             stopTime = ga.ephemeris_interval.find_stop_time()
 
-        elif self._obj.class_type == STK_OBJECT_TYPE.AIRCRAFT:
+        elif self._obj.class_type == STKObjectType.AIRCRAFT:
             AG_AC: "Aircraft" = Aircraft(self._obj)
-            AG_AC.set_route_type(PROPAGATOR_TYPE.GREAT_ARC)
+            AG_AC.set_route_type(PropagatorType.GREAT_ARC)
             ga: "PropagatorGreatArc" = clr.CastAs(AG_AC.route, PropagatorGreatArc)
             self.CreateTrajectory(ga, startTime, stopTime)
             startTime = ga.ephemeris_interval.find_start_time()
             stopTime = ga.ephemeris_interval.find_stop_time()
 
-        elif self._obj.class_type == STK_OBJECT_TYPE.GROUND_VEHICLE:
+        elif self._obj.class_type == STKObjectType.GROUND_VEHICLE:
             AG_GV: "GroundVehicle" = GroundVehicle(self._obj)
-            AG_GV.set_route_type(PROPAGATOR_TYPE.GREAT_ARC)
+            AG_GV.set_route_type(PropagatorType.GREAT_ARC)
             ga: "PropagatorGreatArc" = clr.CastAs(AG_GV.route, PropagatorGreatArc)
             self.CreateTrajectory(ga, startTime, stopTime)
             startTime = ga.ephemeris_interval.find_start_time()
             stopTime = ga.ephemeris_interval.find_stop_time()
 
-        elif self._obj.class_type == STK_OBJECT_TYPE.MISSILE:
+        elif self._obj.class_type == STKObjectType.MISSILE:
             AG_MS: "Missile" = Missile(self._obj)
-            AG_MS.set_trajectory_type(PROPAGATOR_TYPE.TWO_BODY)
+            AG_MS.set_trajectory_type(PropagatorType.TWO_BODY)
             tb: "PropagatorTwoBody" = clr.CastAs(AG_MS.trajectory, PropagatorTwoBody)
             tb.ephemeris_interval.set_explicit_interval(startTime, stopTime)
             tb.propagate()
             startTime = tb.ephemeris_interval.find_start_time()
             stopTime = tb.ephemeris_interval.find_stop_time()
 
-        elif self._obj.class_type == STK_OBJECT_TYPE.LAUNCH_VEHICLE:
+        elif self._obj.class_type == STKObjectType.LAUNCH_VEHICLE:
             AG_LV: "LaunchVehicle" = LaunchVehicle(self._obj)
-            AG_LV.set_trajectory_type(PROPAGATOR_TYPE.SIMPLE_ASCENT)
+            AG_LV.set_trajectory_type(PropagatorType.SIMPLE_ASCENT)
             sa: "PropagatorSimpleAscent" = clr.CastAs(AG_LV.trajectory, PropagatorSimpleAscent)
             sa.ephemeris_interval.set_explicit_interval(startTime, stopTime)
             sa.propagate()
@@ -7985,13 +7945,13 @@ class BasicAttitudeRealTimeHelper(object):
         Assert.assertIsNotNone(oAttitude)
         # LookAheadMethod (EXTRAPOLATE)
         self.m_logger.WriteLine6("\tThe current LookAheadMethod is: {0}", oAttitude.look_ahead_method)
-        oAttitude.look_ahead_method = VEHICLE_LOOK_AHEAD_METHOD.EXTRAPOLATE
+        oAttitude.look_ahead_method = VehicleLookAheadMethod.EXTRAPOLATE
         self.m_logger.WriteLine6("\tThe new LookAheadMethod is: {0}", oAttitude.look_ahead_method)
-        Assert.assertEqual(VEHICLE_LOOK_AHEAD_METHOD.EXTRAPOLATE, oAttitude.look_ahead_method)
+        Assert.assertEqual(VehicleLookAheadMethod.EXTRAPOLATE, oAttitude.look_ahead_method)
         # LookAheadMethod (HOLD)
-        oAttitude.look_ahead_method = VEHICLE_LOOK_AHEAD_METHOD.HOLD
+        oAttitude.look_ahead_method = VehicleLookAheadMethod.HOLD
         self.m_logger.WriteLine6("\tThe new LookAheadMethod is: {0}", oAttitude.look_ahead_method)
-        Assert.assertEqual(VEHICLE_LOOK_AHEAD_METHOD.HOLD, oAttitude.look_ahead_method)
+        Assert.assertEqual(VehicleLookAheadMethod.HOLD, oAttitude.look_ahead_method)
         # Duration
         oDuration: "VehicleDuration" = oAttitude.duration
         Assert.assertIsNotNone(oDuration)
@@ -8017,7 +7977,7 @@ class BasicAttitudeRealTimeHelper(object):
         Assert.assertEqual(40, oAttitude.block_factor)
         with pytest.raises(Exception):
             oAttitude.block_factor = 19
-        if oAttitude.data_reference.profile_type == ATTITUDE_PROFILE.UNKNOWN:
+        if oAttitude.data_reference.profile_type == AttitudeProfile.UNKNOWN:
             Assert.assertIsNone(oAttitude.data_reference.profile)
 
         # Enumerate supported profiles and verify each one by setting it
@@ -8026,7 +7986,7 @@ class BasicAttitudeRealTimeHelper(object):
 
         i: int = 0
         while i < len(supportedProfileTypes):
-            profileid: "ATTITUDE_PROFILE" = ATTITUDE_PROFILE(int(supportedProfileTypes[i][0]))
+            profileid: "AttitudeProfile" = AttitudeProfile(int(supportedProfileTypes[i][0]))
             self.m_logger.WriteLine6("DataReference: {0}", profileid)
             oAttitude.data_reference.set_profile_type(profileid)
             Assert.assertIsNotNone(oAttitude.data_reference.profile)
@@ -8037,7 +7997,7 @@ class BasicAttitudeRealTimeHelper(object):
         oAttitude.clear_all()
 
         Assert.assertIsNone(oAttitude.data_reference.profile)
-        Assert.assertEqual(oAttitude.data_reference.profile_type, ATTITUDE_PROFILE.UNKNOWN)
+        Assert.assertEqual(oAttitude.data_reference.profile_type, AttitudeProfile.UNKNOWN)
 
         pos: int = 0
         while pos < Array.Length(data):
@@ -8093,8 +8053,8 @@ class BasicAttitudeRealTimeHelper(object):
             reportedStopTime = str(times[(Array.Length(times) - 1)])[0 : (0 + len(str(stopTime)))]
             Assert.assertEqual(reportedStartTime, startTime)
             Assert.assertEqual(reportedStopTime, stopTime)
-            if oAttitude.data_reference.is_profile_type_supported(ATTITUDE_PROFILE.FIXED_IN_AXES):
-                oAttitude.data_reference.set_profile_type(ATTITUDE_PROFILE.FIXED_IN_AXES)
+            if oAttitude.data_reference.is_profile_type_supported(AttitudeProfile.FIXED_IN_AXES):
+                oAttitude.data_reference.set_profile_type(AttitudeProfile.FIXED_IN_AXES)
                 fixed: "AttitudeProfileFixedInAxes" = clr.CastAs(
                     oAttitude.data_reference.profile, AttitudeProfileFixedInAxes
                 )
@@ -8154,7 +8114,7 @@ class BasicAttitudeDifferenceHelper(object):
 
         oRealTime: "VehicleAttitudeRealTime" = clr.CastAs(self.GetAttitude(oAny), VehicleAttitudeRealTime)
         Assert.assertIsNotNone(oRealTime)
-        Assert.assertEqual(VEHICLE_LOOK_AHEAD_METHOD.EXTRAPOLATE, oRealTime.look_ahead_method)
+        Assert.assertEqual(VehicleLookAheadMethod.EXTRAPOLATE, oRealTime.look_ahead_method)
         Assert.assertEqual(300, oRealTime.duration.look_ahead)
         Assert.assertEqual(120, oRealTime.duration.look_behind)
 
@@ -8165,8 +8125,8 @@ class BasicAttitudeDifferenceHelper(object):
         Assert.assertIsNotNone(oStandard)
 
         self.m_oApplication.execute_command((("SetAttitude " + strObject) + " Profile ECFVelNadir Offset 12.5"))
-        veProfile: "ATTITUDE_PROFILE" = self.GetCurrentBasicProfileType(oStandard)
-        Assert.assertEqual(ATTITUDE_PROFILE.FIXED_VELOCITY_ALIGNMENT_WITH_NADIR_CONSTRAINT, veProfile)
+        veProfile: "AttitudeProfile" = self.GetCurrentBasicProfileType(oStandard)
+        Assert.assertEqual(AttitudeProfile.FIXED_VELOCITY_ALIGNMENT_WITH_NADIR_CONSTRAINT, veProfile)
         Assert.assertEqual(
             12.5, (AttitudeProfileConstraintOffset(self.GetCurrentBasicProfile(oStandard))).constraint_offset
         )
@@ -8189,17 +8149,17 @@ class BasicAttitudeDifferenceHelper(object):
     # region GetAttitude
     def GetAttitude(self, oAny: "IStkObject"):
         oAttitude: "IVehicleAttitude" = None
-        if oAny.class_type == STK_OBJECT_TYPE.SATELLITE:
+        if oAny.class_type == STKObjectType.SATELLITE:
             oAttitude = (Satellite(oAny)).attitude
-        elif oAny.class_type == STK_OBJECT_TYPE.SHIP:
+        elif oAny.class_type == STKObjectType.SHIP:
             oAttitude = (Ship(oAny)).attitude
-        elif oAny.class_type == STK_OBJECT_TYPE.AIRCRAFT:
+        elif oAny.class_type == STKObjectType.AIRCRAFT:
             oAttitude = (Aircraft(oAny)).attitude
-        elif oAny.class_type == STK_OBJECT_TYPE.MISSILE:
+        elif oAny.class_type == STKObjectType.MISSILE:
             oAttitude = (Missile(oAny)).attitude
-        elif oAny.class_type == STK_OBJECT_TYPE.GROUND_VEHICLE:
+        elif oAny.class_type == STKObjectType.GROUND_VEHICLE:
             oAttitude = (GroundVehicle(oAny)).attitude
-        elif oAny.class_type == STK_OBJECT_TYPE.LAUNCH_VEHICLE:
+        elif oAny.class_type == STKObjectType.LAUNCH_VEHICLE:
             oAttitude = (LaunchVehicle(oAny)).attitude
         return oAttitude
 
@@ -8207,29 +8167,29 @@ class BasicAttitudeDifferenceHelper(object):
 
     # region GetCurrentBasicProfileType
     def GetCurrentBasicProfileType(self, oStandard: "IVehicleAttitudeStandard"):
-        if oStandard.type == ATTITUDE_STANDARD_TYPE.ORBIT_ATTITUDE_STANDARD:
+        if oStandard.type == AttitudeStandardType.ORBIT_ATTITUDE_STANDARD:
             orbit: "AttitudeStandardOrbit" = AttitudeStandardOrbit(oStandard)
             return orbit.basic.profile_type
-        elif oStandard.type == ATTITUDE_STANDARD_TYPE.ROUTE_ATTITUDE_STANDARD:
+        elif oStandard.type == AttitudeStandardType.ROUTE_ATTITUDE_STANDARD:
             route: "AttitudeStandardRoute" = AttitudeStandardRoute(oStandard)
             return route.basic.profile_type
-        elif oStandard.type == ATTITUDE_STANDARD_TYPE.TRAJECTORY_ATTITUDE_STANDARD:
+        elif oStandard.type == AttitudeStandardType.TRAJECTORY_ATTITUDE_STANDARD:
             traj: "AttitudeStandardTrajectory" = AttitudeStandardTrajectory(oStandard)
             return traj.basic.profile_type
         else:
-            return ATTITUDE_PROFILE.UNKNOWN
+            return AttitudeProfile.UNKNOWN
 
     # endregion
 
     # region GetCurrentBasicProfile
     def GetCurrentBasicProfile(self, oStandard: "IVehicleAttitudeStandard"):
-        if oStandard.type == ATTITUDE_STANDARD_TYPE.ORBIT_ATTITUDE_STANDARD:
+        if oStandard.type == AttitudeStandardType.ORBIT_ATTITUDE_STANDARD:
             orbit: "AttitudeStandardOrbit" = AttitudeStandardOrbit(oStandard)
             return orbit.basic.profile
-        elif oStandard.type == ATTITUDE_STANDARD_TYPE.ROUTE_ATTITUDE_STANDARD:
+        elif oStandard.type == AttitudeStandardType.ROUTE_ATTITUDE_STANDARD:
             route: "AttitudeStandardRoute" = AttitudeStandardRoute(oStandard)
             return route.basic.profile
-        elif oStandard.type == ATTITUDE_STANDARD_TYPE.TRAJECTORY_ATTITUDE_STANDARD:
+        elif oStandard.type == AttitudeStandardType.TRAJECTORY_ATTITUDE_STANDARD:
             traj: "AttitudeStandardTrajectory" = AttitudeStandardTrajectory(oStandard)
             return traj.basic.profile
         else:
@@ -8253,12 +8213,12 @@ class AccessEventDetectionHelper(object):
             # SetType (readonly)
             with pytest.raises(Exception):
                 oDetection.set_type(oDetection.type)
-            if oDetection.type == EVENT_DETECTION.NO_SUB_SAMPLING:
+            if oDetection.type == EventDetection.NO_SUB_SAMPLING:
                 oNoSubSampling: "EventDetectionNoSubSampling" = clr.CastAs(
                     oDetection.strategy, EventDetectionNoSubSampling
                 )
                 Assert.assertIsNotNone(oNoSubSampling)
-            elif oDetection.type == EVENT_DETECTION.USE_SUB_SAMPLING:
+            elif oDetection.type == EventDetection.USE_SUB_SAMPLING:
                 oSubSampling: "EventDetectionSubSampling" = clr.CastAs(oDetection.strategy, EventDetectionSubSampling)
                 Assert.assertIsNotNone(oSubSampling)
                 # AbsValueConvergence (readonly)
@@ -8282,7 +8242,7 @@ class AccessEventDetectionHelper(object):
 
             iIndex: int = 0
             while iIndex < len(arTypes):
-                eType: "EVENT_DETECTION" = EVENT_DETECTION(int(arTypes[iIndex][0]))
+                eType: "EventDetection" = EventDetection(int(arTypes[iIndex][0]))
                 self.m_logger.WriteLine8("\t\tType {0}: {1} ({2})", iIndex, eType, arTypes[iIndex][1])
                 if not oDetection.is_type_supported(eType):
                     Assert.fail("{0} type should be supported!", eType)
@@ -8290,15 +8250,15 @@ class AccessEventDetectionHelper(object):
                 # SetType
                 oDetection.set_type(eType)
                 self.m_logger.WriteLine6("\t\t\tThe new Type is: {0}", oDetection.type)
-                eType1: "EVENT_DETECTION" = oDetection.type
+                eType1: "EventDetection" = oDetection.type
                 Assert.assertEqual(eType, eType1)
-                if oDetection.type == EVENT_DETECTION.NO_SUB_SAMPLING:
+                if oDetection.type == EventDetection.NO_SUB_SAMPLING:
                     # Strategy
                     oNoSubSampling: "EventDetectionNoSubSampling" = clr.CastAs(
                         oDetection.strategy, EventDetectionNoSubSampling
                     )
                     Assert.assertIsNotNone(oNoSubSampling)
-                elif oDetection.type == EVENT_DETECTION.USE_SUB_SAMPLING:
+                elif oDetection.type == EventDetection.USE_SUB_SAMPLING:
                     # Strategy
                     oSubSampling: "EventDetectionSubSampling" = clr.CastAs(
                         oDetection.strategy, EventDetectionSubSampling
@@ -8358,7 +8318,7 @@ class AccessSamplingHelper(object):
             # SetType (readonly)
             with pytest.raises(Exception):
                 oSampling.set_type(oSampling.type)
-            if oSampling.type == SAMPLING_METHOD.ADAPTIVE:
+            if oSampling.type == SamplingMethod.ADAPTIVE:
                 oAdaptive: "SamplingMethodAdaptive" = clr.CastAs(oSampling.strategy, SamplingMethodAdaptive)
                 Assert.assertIsNotNone(oAdaptive)
                 # MinTimeStep (readonly)
@@ -8367,7 +8327,7 @@ class AccessSamplingHelper(object):
                 # MaxTimeStep (readonly)
                 with pytest.raises(Exception):
                     oAdaptive.maximum_time_step = 1.1
-            elif oSampling.type == SAMPLING_METHOD.FIXED_STEP:
+            elif oSampling.type == SamplingMethod.FIXED_STEP:
                 oFixedStep: "SamplingMethodFixedStep" = clr.CastAs(oSampling.strategy, SamplingMethodFixedStep)
                 Assert.assertIsNotNone(oFixedStep)
                 # FixedTimeStep (readonly)
@@ -8388,7 +8348,7 @@ class AccessSamplingHelper(object):
 
             iIndex: int = 0
             while iIndex < len(arTypes):
-                eType: "SAMPLING_METHOD" = SAMPLING_METHOD(int(arTypes[iIndex][0]))
+                eType: "SamplingMethod" = SamplingMethod(int(arTypes[iIndex][0]))
                 self.m_logger.WriteLine8("\t\tType {0}: {1} ({2})", iIndex, eType, arTypes[iIndex][1])
                 if not oSampling.is_type_supported(eType):
                     Assert.fail("{0} type should be supported!", eType)
@@ -8396,9 +8356,9 @@ class AccessSamplingHelper(object):
                 # SetType
                 oSampling.set_type(eType)
                 self.m_logger.WriteLine6("\t\t\tThe new Type is: {0}", oSampling.type)
-                eType1: "SAMPLING_METHOD" = oSampling.type
+                eType1: "SamplingMethod" = oSampling.type
                 Assert.assertEqual(eType, eType1)
-                if oSampling.type == SAMPLING_METHOD.ADAPTIVE:
+                if oSampling.type == SamplingMethod.ADAPTIVE:
                     # Strategy
                     oAdaptive: "SamplingMethodAdaptive" = clr.CastAs(oSampling.strategy, SamplingMethodAdaptive)
                     Assert.assertIsNotNone(oAdaptive)
@@ -8416,7 +8376,7 @@ class AccessSamplingHelper(object):
                     Assert.assertEqual(12.5, oAdaptive.maximum_time_step)
                     with pytest.raises(Exception):
                         oAdaptive.maximum_time_step = -12.5
-                elif oSampling.type == SAMPLING_METHOD.FIXED_STEP:
+                elif oSampling.type == SamplingMethod.FIXED_STEP:
                     # Strategy
                     oFixedStep: "SamplingMethodFixedStep" = clr.CastAs(oSampling.strategy, SamplingMethodFixedStep)
                     Assert.assertIsNotNone(oFixedStep)
@@ -8482,9 +8442,9 @@ class SpatialInfoHelper(object):
         ga: "PropagatorGreatArc" = None
         wpe: "VehicleWaypointsElement" = None
         oParentObj: "IStkObject" = oObj
-        oParentType: "STK_OBJECT_TYPE" = oObj.class_type
-        objTypeToPropagate: "STK_OBJECT_TYPE" = None
-        if oObj.class_type == STK_OBJECT_TYPE.SENSOR:
+        oParentType: "STKObjectType" = oObj.class_type
+        objTypeToPropagate: "STKObjectType" = None
+        if oObj.class_type == STKObjectType.SENSOR:
             oParentObj = oObj.parent
             oParentType = oParentObj.class_type
             objTypeToPropagate = oParentObj.class_type
@@ -8496,8 +8456,8 @@ class SpatialInfoHelper(object):
             # the vehicles are not propagated.
             Assert.assertFalse(spatialState.is_available)
             objTypeToPropagate = oObj.class_type
-            if objTypeToPropagate == STK_OBJECT_TYPE.AIRCRAFT:
-                (Aircraft(oParentObj)).set_route_type(PROPAGATOR_TYPE.GREAT_ARC)
+            if objTypeToPropagate == STKObjectType.AIRCRAFT:
+                (Aircraft(oParentObj)).set_route_type(PropagatorType.GREAT_ARC)
                 ga = PropagatorGreatArc((Aircraft(oParentObj)).route)
                 wpe = ga.waypoints.add()
                 wpe.latitude = -10
@@ -8509,8 +8469,8 @@ class SpatialInfoHelper(object):
                 wpe.latitude = -13
                 wpe.longitude = -14
                 ga.propagate()
-            elif objTypeToPropagate == STK_OBJECT_TYPE.GROUND_VEHICLE:
-                (GroundVehicle(oParentObj)).set_route_type(PROPAGATOR_TYPE.GREAT_ARC)
+            elif objTypeToPropagate == STKObjectType.GROUND_VEHICLE:
+                (GroundVehicle(oParentObj)).set_route_type(PropagatorType.GREAT_ARC)
                 ga = PropagatorGreatArc((GroundVehicle(oParentObj)).route)
                 wpe = ga.waypoints.add()
                 wpe.latitude = -16
@@ -8522,26 +8482,26 @@ class SpatialInfoHelper(object):
                 wpe.latitude = -20
                 wpe.longitude = -21
                 ga.propagate()
-            elif objTypeToPropagate == STK_OBJECT_TYPE.LAUNCH_VEHICLE:
-                (LaunchVehicle(oParentObj)).set_trajectory_type(PROPAGATOR_TYPE.SIMPLE_ASCENT)
+            elif objTypeToPropagate == STKObjectType.LAUNCH_VEHICLE:
+                (LaunchVehicle(oParentObj)).set_trajectory_type(PropagatorType.SIMPLE_ASCENT)
                 ascent: "PropagatorSimpleAscent" = clr.CastAs(
                     (LaunchVehicle(oParentObj)).trajectory, PropagatorSimpleAscent
                 )
                 Assert.assertIsNotNone(ascent)
                 ascent.propagate()
-            elif objTypeToPropagate == STK_OBJECT_TYPE.MISSILE:
-                (Missile(oParentObj)).set_trajectory_type(PROPAGATOR_TYPE.TWO_BODY)
+            elif objTypeToPropagate == STKObjectType.MISSILE:
+                (Missile(oParentObj)).set_trajectory_type(PropagatorType.TWO_BODY)
                 ballistic: "PropagatorTwoBody" = clr.CastAs((Missile(oParentObj)).trajectory, PropagatorTwoBody)
                 Assert.assertIsNotNone(ballistic)
                 ballistic.propagate()
-            elif objTypeToPropagate == STK_OBJECT_TYPE.SATELLITE:
-                (Satellite(oParentObj)).set_propagator_type(PROPAGATOR_TYPE.TWO_BODY)
+            elif objTypeToPropagate == STKObjectType.SATELLITE:
+                (Satellite(oParentObj)).set_propagator_type(PropagatorType.TWO_BODY)
                 tb: "PropagatorTwoBody" = clr.CastAs((Satellite(oParentObj)).propagator, PropagatorTwoBody)
                 Assert.assertIsNotNone(tb)
                 tb.step = 120
                 tb.propagate()
-            elif objTypeToPropagate == STK_OBJECT_TYPE.SHIP:
-                (Ship(oParentObj)).set_route_type(PROPAGATOR_TYPE.GREAT_ARC)
+            elif objTypeToPropagate == STKObjectType.SHIP:
+                (Ship(oParentObj)).set_route_type(PropagatorType.GREAT_ARC)
                 ga = PropagatorGreatArc((Ship(oParentObj)).route)
                 wpe = ga.waypoints.add()
                 wpe.latitude = -22
@@ -8623,7 +8583,7 @@ class SpatialInfoHelper(object):
         Assert.assertIsNotNone(spatialState.inertial_position)
 
         # Text the orientation
-        fixedOrientation: "IOrientation" = spatialState.fixed_orientation.convert_to(ORIENTATION_TYPE.AZ_EL)
+        fixedOrientation: "IOrientation" = spatialState.fixed_orientation.convert_to(OrientationType.AZ_EL)
         Assert.assertIsNotNone(fixedOrientation)
         with pytest.raises(Exception):
             spatialState.fixed_orientation.assign(fixedOrientation)
@@ -8676,7 +8636,7 @@ class SpatialInfoHelper(object):
     def Run(self, oOrigObj: "IStkObject"):
         oNewObj: "IStkObject" = None
         try:
-            if oOrigObj.class_type != STK_OBJECT_TYPE.SENSOR:
+            if oOrigObj.class_type != STKObjectType.SENSOR:
                 oNewObj = self.Application.current_scenario.children.new(
                     oOrigObj.class_type, (oOrigObj.class_type.name + "_1")
                 )
@@ -8904,7 +8864,7 @@ class PlatformLaserEnvAtmosLossBBLLHelper(object):
         laserPropChan.set_atmospheric_loss_model("Beer-Bouguer-Lambert Law")
         Assert.assertEqual("Beer-Bouguer-Lambert Law", laserPropChan.atmospheric_loss_model.name)
         Assert.assertEqual(
-            LASER_PROPAGATION_LOSS_MODEL_TYPE.BEER_BOUGUER_LAMBERT_LAW, laserPropChan.atmospheric_loss_model.type
+            LaserPropagationLossModelType.BEER_BOUGUER_LAMBERT_LAW, laserPropChan.atmospheric_loss_model.type
         )
 
         bbll: "LaserAtmosphericLossModelBeerBouguerLambertLaw" = clr.CastAs(
@@ -8995,21 +8955,21 @@ class PlatformLaserEnvAtmosLossModtranHelper(object):
 
         Assert.assertEqual("MODTRAN-derived Lookup Table", laserPropChan.atmospheric_loss_model.name)
         Assert.assertEqual(
-            LASER_PROPAGATION_LOSS_MODEL_TYPE.MODTRAN_LOOKUP_TABLE, laserPropChan.atmospheric_loss_model.type
+            LaserPropagationLossModelType.MODTRAN_LOOKUP_TABLE, laserPropChan.atmospheric_loss_model.type
         )
 
         modtran: "MODTRANLookupTablePropagationModel" = clr.CastAs(
             laserPropChan.atmospheric_loss_model, MODTRANLookupTablePropagationModel
         )
 
-        modtran.aerosol_model_type = MODTRAN_AEROSOL_MODEL_TYPE.MARITIME
-        Assert.assertEqual(MODTRAN_AEROSOL_MODEL_TYPE.MARITIME, modtran.aerosol_model_type)
-        modtran.aerosol_model_type = MODTRAN_AEROSOL_MODEL_TYPE.RURAL_HIGH_VISIBILITY
-        Assert.assertEqual(MODTRAN_AEROSOL_MODEL_TYPE.RURAL_HIGH_VISIBILITY, modtran.aerosol_model_type)
-        modtran.aerosol_model_type = MODTRAN_AEROSOL_MODEL_TYPE.TROPOSPHERIC
-        Assert.assertEqual(MODTRAN_AEROSOL_MODEL_TYPE.TROPOSPHERIC, modtran.aerosol_model_type)
-        modtran.aerosol_model_type = MODTRAN_AEROSOL_MODEL_TYPE.URBAN
-        Assert.assertEqual(MODTRAN_AEROSOL_MODEL_TYPE.URBAN, modtran.aerosol_model_type)
+        modtran.aerosol_model_type = ModtranAerosolModelType.MARITIME
+        Assert.assertEqual(ModtranAerosolModelType.MARITIME, modtran.aerosol_model_type)
+        modtran.aerosol_model_type = ModtranAerosolModelType.RURAL_HIGH_VISIBILITY
+        Assert.assertEqual(ModtranAerosolModelType.RURAL_HIGH_VISIBILITY, modtran.aerosol_model_type)
+        modtran.aerosol_model_type = ModtranAerosolModelType.TROPOSPHERIC
+        Assert.assertEqual(ModtranAerosolModelType.TROPOSPHERIC, modtran.aerosol_model_type)
+        modtran.aerosol_model_type = ModtranAerosolModelType.URBAN
+        Assert.assertEqual(ModtranAerosolModelType.URBAN, modtran.aerosol_model_type)
 
         modtran.visibility = 0.5
         Assert.assertEqual(0.5, modtran.visibility)
@@ -9066,7 +9026,7 @@ class PlatformLaserEnvTropoScintLossHelper(object):
         laserPropChan.set_tropospheric_scintillation_loss_model("ITU-R P1814")
         Assert.assertEqual("ITU-R P1814", laserPropChan.tropospheric_scintillation_loss_model.name)
         Assert.assertEqual(
-            LASER_TROPOSPHERIC_SCINTILLATION_LOSS_MODEL_TYPE.ITURP_1814,
+            LaserTroposphericScintillationLossModelType.ITURP_1814,
             laserPropChan.tropospheric_scintillation_loss_model.type,
         )
 
@@ -9074,8 +9034,8 @@ class PlatformLaserEnvTropoScintLossHelper(object):
             laserTropoScint, LaserTroposphericScintillationLossModelITURP1814
         )
 
-        iturp1814.set_atmospheric_turbulence_model_type(ATMOSPHERIC_TURBULENCE_MODEL_TYPE.CONSTANT)
-        Assert.assertEqual(ATMOSPHERIC_TURBULENCE_MODEL_TYPE.CONSTANT, iturp1814.atmospheric_turbulence_model.type)
+        iturp1814.set_atmospheric_turbulence_model_type(AtmosphericTurbulenceModelType.CONSTANT)
+        Assert.assertEqual(AtmosphericTurbulenceModelType.CONSTANT, iturp1814.atmospheric_turbulence_model.type)
 
         cnst: "AtmosphericTurbulenceModelConstant" = clr.CastAs(
             iturp1814.atmospheric_turbulence_model, AtmosphericTurbulenceModelConstant
@@ -9083,10 +9043,8 @@ class PlatformLaserEnvTropoScintLossHelper(object):
         cnst.constant_refractive_index_structure_parameter = 99
         Assert.assertEqual(99, cnst.constant_refractive_index_structure_parameter)
 
-        iturp1814.set_atmospheric_turbulence_model_type(ATMOSPHERIC_TURBULENCE_MODEL_TYPE.HUFNAGEL_VALLEY)
-        Assert.assertEqual(
-            ATMOSPHERIC_TURBULENCE_MODEL_TYPE.HUFNAGEL_VALLEY, iturp1814.atmospheric_turbulence_model.type
-        )
+        iturp1814.set_atmospheric_turbulence_model_type(AtmosphericTurbulenceModelType.HUFNAGEL_VALLEY)
+        Assert.assertEqual(AtmosphericTurbulenceModelType.HUFNAGEL_VALLEY, iturp1814.atmospheric_turbulence_model.type)
 
         huf: "AtmosphericTurbulenceModelHufnagelValley" = clr.CastAs(
             iturp1814.atmospheric_turbulence_model, AtmosphericTurbulenceModelHufnagelValley
@@ -9140,7 +9098,7 @@ class PlatformRF_Environment_RainCloudFog_RainModelHelper(object):
             rainLossModel: "IRainLossModel" = propChan.rain_loss_model
             Assert.assertEqual(rainLossModelName, rainLossModel.name)
             if rainLossModelName == "Crane 1985":
-                Assert.assertEqual(RAIN_LOSS_MODEL_TYPE.CRANE1985, rainLossModel.type)
+                Assert.assertEqual(RainLossModelType.CRANE1985, rainLossModel.type)
                 crane85: "RainLossModelCrane1985" = clr.CastAs(rainLossModel, RainLossModelCrane1985)
                 crane85.surface_temperature = -100
                 Assert.assertEqual(-100, crane85.surface_temperature)
@@ -9154,7 +9112,7 @@ class PlatformRF_Environment_RainCloudFog_RainModelHelper(object):
             elif rainLossModelName == "Script Plugin":
                 if not OSHelper.IsLinux():
                     # script plugins do not work on linux
-                    Assert.assertEqual(RAIN_LOSS_MODEL_TYPE.SCRIPT_PLUGIN, rainLossModel.type)
+                    Assert.assertEqual(RainLossModelType.SCRIPT_PLUGIN, rainLossModel.type)
                     scriptPlugin: "RainLossModelScriptPlugin" = clr.CastAs(rainLossModel, RainLossModelScriptPlugin)
                     with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
                         scriptPlugin.filename = r"C:\bogus.vbs"
@@ -9164,7 +9122,7 @@ class PlatformRF_Environment_RainCloudFog_RainModelHelper(object):
                     Assert.assertEqual(TestBase.PathCombine("CommRad", "VB_RainLossModel.vbs"), scriptPlugin.filename)
 
             elif rainLossModelName == "CCIR 1983":
-                Assert.assertEqual(RAIN_LOSS_MODEL_TYPE.CCIR1983, rainLossModel.type)
+                Assert.assertEqual(RainLossModelType.CCIR1983, rainLossModel.type)
                 ccir83: "RainLossModelCCIR1983" = clr.CastAs(rainLossModel, RainLossModelCCIR1983)
                 ccir83.surface_temperature = -100
                 Assert.assertEqual(-100, ccir83.surface_temperature)
@@ -9176,7 +9134,7 @@ class PlatformRF_Environment_RainCloudFog_RainModelHelper(object):
                     ccir83.surface_temperature = 101
 
             elif rainLossModelName == "Crane 1982":
-                Assert.assertEqual(RAIN_LOSS_MODEL_TYPE.CRANE1982, rainLossModel.type)
+                Assert.assertEqual(RainLossModelType.CRANE1982, rainLossModel.type)
                 crane82: "RainLossModelCrane1982" = clr.CastAs(rainLossModel, RainLossModelCrane1982)
                 crane82.surface_temperature = -100
                 Assert.assertEqual(-100, crane82.surface_temperature)
@@ -9188,7 +9146,7 @@ class PlatformRF_Environment_RainCloudFog_RainModelHelper(object):
                     crane82.surface_temperature = 101
 
             elif rainLossModelName == "ITU-R P618-10":
-                Assert.assertEqual(RAIN_LOSS_MODEL_TYPE.ITU_R_P618_10, rainLossModel.type)
+                Assert.assertEqual(RainLossModelType.ITU_R_P618_10, rainLossModel.type)
                 itu618_10: "RainLossModelITURP618_10" = clr.CastAs(rainLossModel, RainLossModelITURP618_10)
                 itu618_10.surface_temperature = -100
                 Assert.assertEqual(-100, itu618_10.surface_temperature)
@@ -9204,7 +9162,7 @@ class PlatformRF_Environment_RainCloudFog_RainModelHelper(object):
                 Assert.assertTrue(itu618_10.enable_depolarization_loss)
 
             elif rainLossModelName == "ITU-R P618-12":
-                Assert.assertEqual(RAIN_LOSS_MODEL_TYPE.ITU_R_P618_12, rainLossModel.type)
+                Assert.assertEqual(RainLossModelType.ITU_R_P618_12, rainLossModel.type)
                 itu618_12: "RainLossModelITURP618_12" = clr.CastAs(rainLossModel, RainLossModelITURP618_12)
                 itu618_12.surface_temperature = -100
                 Assert.assertEqual(-100, itu618_12.surface_temperature)
@@ -9220,7 +9178,7 @@ class PlatformRF_Environment_RainCloudFog_RainModelHelper(object):
                 Assert.assertTrue(itu618_12.enable_depolarization_loss)
 
             elif rainLossModelName == "ITU-R P618-13":
-                Assert.assertEqual(RAIN_LOSS_MODEL_TYPE.ITU_R_P618_13, rainLossModel.type)
+                Assert.assertEqual(RainLossModelType.ITU_R_P618_13, rainLossModel.type)
                 itu618_13: "RainLossModelITURP618_13" = clr.CastAs(rainLossModel, RainLossModelITURP618_13)
 
                 itu618_13.enable_itu_1510 = False
@@ -9306,13 +9264,13 @@ class PlatformRF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
         propChan.set_clouds_and_fog_fading_loss_model("ITU-R P840-7")
         cfflm: "ICloudsAndFogFadingLossModel" = propChan.clouds_and_fog_fading_loss_model
         Assert.assertEqual("ITU-R P840-7", cfflm.name)
-        Assert.assertEqual(CLOUDS_AND_FOG_FADING_LOSS_MODEL_TYPE.P_840_7_TYPE, cfflm.type)
+        Assert.assertEqual(CloudsAndFogFadingLossModelType.P_840_7_TYPE, cfflm.type)
         self.Test_IAgCloudsAndFogFadingLossModelP840_7(clr.CastAs(cfflm, CloudsAndFogFadingLossModelP840_7))
 
         propChan.set_clouds_and_fog_fading_loss_model("ITU-R P840-6")
         cfflm = propChan.clouds_and_fog_fading_loss_model
         Assert.assertEqual("ITU-R P840-6", cfflm.name)
-        Assert.assertEqual(CLOUDS_AND_FOG_FADING_LOSS_MODEL_TYPE.P_840_6_TYPE, cfflm.type)
+        Assert.assertEqual(CloudsAndFogFadingLossModelType.P_840_6_TYPE, cfflm.type)
         self.Test_IAgCloudsAndFogFadingLossModelP840_6(clr.CastAs(cfflm, CloudsAndFogFadingLossModelP840_6))
 
         root.units_preferences.set_current_unit("Temperature", holdUnit)
@@ -9350,9 +9308,9 @@ class PlatformRF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
             cfflm7.cloud_temperature = 101
 
         with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
-            cfflm7.liquid_water_density_choice = CLOUDS_AND_FOG_LIQUID_WATER_CHOICE_TYPE.UNKNOWN
+            cfflm7.liquid_water_density_choice = CloudsAndFogLiquidWaterChoiceType.UNKNOWN
 
-        cfflm7.liquid_water_density_choice = CLOUDS_AND_FOG_LIQUID_WATER_CHOICE_TYPE.DENSITY_VALUE
+        cfflm7.liquid_water_density_choice = CloudsAndFogLiquidWaterChoiceType.DENSITY_VALUE
         # Application.UnitPreferences.SetCurrentUnit("MassUnit", "g");
         cfflm7.cloud_liquid_water_density = 0
         Assert.assertEqual(0, cfflm7.cloud_liquid_water_density)
@@ -9373,7 +9331,7 @@ class PlatformRF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             cfflm7.use_rain_height_as_cloud_layer_thickness = True
 
-        cfflm7.liquid_water_density_choice = CLOUDS_AND_FOG_LIQUID_WATER_CHOICE_TYPE.ANNUAL_EXCEEDED
+        cfflm7.liquid_water_density_choice = CloudsAndFogLiquidWaterChoiceType.ANNUAL_EXCEEDED
         cfflm7.liquid_water_percent_annual_exceeded = 0.1
         Assert.assertEqual(0.1, cfflm7.liquid_water_percent_annual_exceeded)
         cfflm7.liquid_water_percent_annual_exceeded = 99
@@ -9394,7 +9352,7 @@ class PlatformRF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             cfflm7.average_data_month = 1
 
-        cfflm7.liquid_water_density_choice = CLOUDS_AND_FOG_LIQUID_WATER_CHOICE_TYPE.MONTHLY_EXCEEDED
+        cfflm7.liquid_water_density_choice = CloudsAndFogLiquidWaterChoiceType.MONTHLY_EXCEEDED
         cfflm7.liquid_water_percent_monthly_exceeded = 1.0
         Assert.assertEqual(1.0, cfflm7.liquid_water_percent_monthly_exceeded)
         cfflm7.liquid_water_percent_monthly_exceeded = 99.0
@@ -9456,9 +9414,9 @@ class PlatformRF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
             cfflm6.cloud_temperature = 101
 
         with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
-            cfflm6.liquid_water_density_choice = CLOUDS_AND_FOG_LIQUID_WATER_CHOICE_TYPE.UNKNOWN
+            cfflm6.liquid_water_density_choice = CloudsAndFogLiquidWaterChoiceType.UNKNOWN
 
-        cfflm6.liquid_water_density_choice = CLOUDS_AND_FOG_LIQUID_WATER_CHOICE_TYPE.DENSITY_VALUE
+        cfflm6.liquid_water_density_choice = CloudsAndFogLiquidWaterChoiceType.DENSITY_VALUE
         # Application.UnitPreferences.SetCurrentUnit("MassUnit", "g");
         cfflm6.cloud_liquid_water_density = 0
         Assert.assertEqual(0, cfflm6.cloud_liquid_water_density)
@@ -9477,7 +9435,7 @@ class PlatformRF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             cfflm6.average_data_month = 1
 
-        cfflm6.liquid_water_density_choice = CLOUDS_AND_FOG_LIQUID_WATER_CHOICE_TYPE.ANNUAL_EXCEEDED
+        cfflm6.liquid_water_density_choice = CloudsAndFogLiquidWaterChoiceType.ANNUAL_EXCEEDED
         cfflm6.liquid_water_percent_annual_exceeded = 0.1
         Assert.assertEqual(0.1, cfflm6.liquid_water_percent_annual_exceeded)
         cfflm6.liquid_water_percent_annual_exceeded = 99
@@ -9493,7 +9451,7 @@ class PlatformRF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             cfflm6.average_data_month = 1
 
-        cfflm6.liquid_water_density_choice = CLOUDS_AND_FOG_LIQUID_WATER_CHOICE_TYPE.MONTHLY_EXCEEDED
+        cfflm6.liquid_water_density_choice = CloudsAndFogLiquidWaterChoiceType.MONTHLY_EXCEEDED
         cfflm6.liquid_water_percent_monthly_exceeded = 1.0
         Assert.assertEqual(1.0, cfflm6.liquid_water_percent_monthly_exceeded)
         cfflm6.liquid_water_percent_monthly_exceeded = 99.0
@@ -9550,49 +9508,49 @@ class PlatformRF_Environment_AtmosphericAbsorptionHelper(object):
             aaModel: "IAtmosphericAbsorptionModel" = propChan.atmospheric_absorption_model
             Assert.assertEqual(aaModelName, aaModel.name)
             if aaModelName == "ITU-R P676-9":
-                Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.ITURP676_9, aaModel.type)
+                Assert.assertEqual(AtmosphericAbsorptionModelType.ITURP676_9, aaModel.type)
                 self.Test_IAgAtmosphericAbsorptionModelITURP676(
                     clr.CastAs(aaModel, IAtmosphericAbsorptionModelITURP676)
                 )
             elif aaModelName == "Script Plugin":
                 if not OSHelper.IsLinux():
                     # script plugins do not work on linux
-                    Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.SCRIPT_PLUGIN, aaModel.type)
+                    Assert.assertEqual(AtmosphericAbsorptionModelType.SCRIPT_PLUGIN, aaModel.type)
                     self.Test_IAgAtmosphericAbsorptionModelScriptPlugin(
                         clr.CastAs(aaModel, AtmosphericAbsorptionModelScriptPlugin)
                     )
 
             elif aaModelName == "Simple Satcom":
-                Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.SIMPLE_SATCOM, aaModel.type)
+                Assert.assertEqual(AtmosphericAbsorptionModelType.SIMPLE_SATCOM, aaModel.type)
                 self.Test_IAgAtmosphericAbsorptionModelSimpleSatcom(
                     clr.CastAs(aaModel, AtmosphericAbsorptionModelSimpleSatcom)
                 )
             elif aaModelName == "TIREM 3.31":
-                Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.TIREM331, aaModel.type)
+                Assert.assertEqual(AtmosphericAbsorptionModelType.TIREM331, aaModel.type)
                 self.Test_IAgAtmosphericAbsorptionModelTirem(clr.CastAs(aaModel, IAtmosphericAbsorptionModelTIREM))
             elif aaModelName == "TIREM 3.20":
-                Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.TIREM320, aaModel.type)
+                Assert.assertEqual(AtmosphericAbsorptionModelType.TIREM320, aaModel.type)
                 self.Test_IAgAtmosphericAbsorptionModelTirem(clr.CastAs(aaModel, IAtmosphericAbsorptionModelTIREM))
             elif aaModelName == "TIREM 5.50":
-                Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.TIREM550, aaModel.type)
+                Assert.assertEqual(AtmosphericAbsorptionModelType.TIREM550, aaModel.type)
                 self.Test_IAgAtmosphericAbsorptionModelTirem(clr.CastAs(aaModel, IAtmosphericAbsorptionModelTIREM))
             elif aaModelName == "VOACAP":
-                Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.GRAPHICS_3D_ACAP, aaModel.type)
+                Assert.assertEqual(AtmosphericAbsorptionModelType.GRAPHICS_3D_ACAP, aaModel.type)
                 helper.Test_IAgAtmosphericAbsorptionModelVoacap(
                     clr.CastAs(aaModel, AtmosphericAbsorptionModelGraphics3DACAP)
                 )
             elif aaModelName == "Early ITU Foliage Model CSharp Example":
-                Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.COM_PLUGIN, aaModel.type)
+                Assert.assertEqual(AtmosphericAbsorptionModelType.COM_PLUGIN, aaModel.type)
                 helper.Test_IAgAtmosphericAbsorptionModelCOMPlugin(
                     clr.CastAs(aaModel, AtmosphericAbsorptionModelCOMPlugin), False
                 )
             elif aaModelName == "Early ITU Foliage Model JScript Example":
-                Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.COM_PLUGIN, aaModel.type)
+                Assert.assertEqual(AtmosphericAbsorptionModelType.COM_PLUGIN, aaModel.type)
                 helper.Test_IAgAtmosphericAbsorptionModelCOMPlugin(
                     clr.CastAs(aaModel, AtmosphericAbsorptionModelCOMPlugin), False
                 )
             elif aaModelName == "Python Plugin":
-                Assert.assertEqual(ATMOSPHERIC_ABSORPTION_MODEL_TYPE.COM_PLUGIN, aaModel.type)
+                Assert.assertEqual(AtmosphericAbsorptionModelType.COM_PLUGIN, aaModel.type)
                 helper.Test_IAgAtmosphericAbsorptionModelCOMPlugin(
                     clr.CastAs(aaModel, AtmosphericAbsorptionModelCOMPlugin), True
                 )
@@ -9743,10 +9701,10 @@ class PlatformRF_Environment_UrbanAndTerrestrialHelper(object):
             utModel: "IUrbanTerrestrialLossModel" = propChan.urban_terrestrial_loss_model
             Assert.assertEqual(utModelName, utModel.name)
             if utModelName == "Two Ray":
-                Assert.assertEqual(URBAN_TERRESTRIAL_LOSS_MODEL_TYPE.TWO_RAY, utModel.type)
+                Assert.assertEqual(UrbanTerrestrialLossModelType.TWO_RAY, utModel.type)
                 self.Test_IAgUrbanTerrestrialLossModelTwoRay(clr.CastAs(utModel, UrbanTerrestrialLossModelTwoRay))
             elif utModelName == "Urban Propagation Wireless InSite 64":
-                Assert.assertEqual(URBAN_TERRESTRIAL_LOSS_MODEL_TYPE.WIRELESS_INSITE_64, utModel.type)  # was RT
+                Assert.assertEqual(UrbanTerrestrialLossModelType.WIRELESS_INSITE_64, utModel.type)  # was RT
                 self.Test_IAgUrbanTerrestrialLossModelWirelessInSite64(
                     clr.CastAs(utModel, UrbanTerrestrialLossModelWirelessInSite64), IsVehicle
                 )
@@ -9819,25 +9777,25 @@ class PlatformRF_Environment_UrbanAndTerrestrialHelper(object):
             geometryData.filename = filename
             Assert.assertTrue(("Skopje.shp" in geometryData.filename))
 
-            geometryData.projection_horizontal_datum = PROJECTION_HORIZONTAL_DATUM_TYPE.WGS84_LATITUDE_LONGITUDE
+            geometryData.projection_horizontal_datum = ProjectionHorizontalDatumType.WGS84_LATITUDE_LONGITUDE
             Assert.assertEqual(
-                PROJECTION_HORIZONTAL_DATUM_TYPE.WGS84_LATITUDE_LONGITUDE, geometryData.projection_horizontal_datum
+                ProjectionHorizontalDatumType.WGS84_LATITUDE_LONGITUDE, geometryData.projection_horizontal_datum
             )
             with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
-                geometryData.projection_horizontal_datum = PROJECTION_HORIZONTAL_DATUM_TYPE.WGS84_UTM
+                geometryData.projection_horizontal_datum = ProjectionHorizontalDatumType.WGS84_UTM
 
             geometryData.building_height_data_attribute = "GM_LAYER"
             Assert.assertEqual("GM_LAYER", geometryData.building_height_data_attribute)
             with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
                 geometryData.building_height_data_attribute = "Some"
 
-            geometryData.building_height_reference_method = BUILD_HEIGHT_REFERENCE_METHOD.HEIGHT_ABOVE_SEA_LEVEL
+            geometryData.building_height_reference_method = BuildHeightReferenceMethod.HEIGHT_ABOVE_SEA_LEVEL
             Assert.assertEqual(
-                BUILD_HEIGHT_REFERENCE_METHOD.HEIGHT_ABOVE_SEA_LEVEL, geometryData.building_height_reference_method
+                BuildHeightReferenceMethod.HEIGHT_ABOVE_SEA_LEVEL, geometryData.building_height_reference_method
             )
-            geometryData.building_height_reference_method = BUILD_HEIGHT_REFERENCE_METHOD.HEIGHT_ABOVE_TERRAIN
+            geometryData.building_height_reference_method = BuildHeightReferenceMethod.HEIGHT_ABOVE_TERRAIN
             Assert.assertEqual(
-                BUILD_HEIGHT_REFERENCE_METHOD.HEIGHT_ABOVE_TERRAIN, geometryData.building_height_reference_method
+                BuildHeightReferenceMethod.HEIGHT_ABOVE_TERRAIN, geometryData.building_height_reference_method
             )
 
             geometryData.override_geometry_tile_origin = False
@@ -9919,7 +9877,7 @@ class PlatformRF_Environment_TropoScintillationHelper(object):
         propChan.set_tropospheric_scintillation_fading_loss_model("ITU-R P618-12")
         tsflm: "ITroposphericScintillationFadingLossModel" = propChan.tropospheric_scintillation_fading_loss_model
         Assert.assertEqual("ITU-R P618-12", tsflm.name)
-        Assert.assertEqual(TROPOSPHERIC_SCINTILLATION_FADING_LOSS_MODEL_TYPE.P_618_12, tsflm.type)
+        Assert.assertEqual(TroposphericScintillationFadingLossModelType.P_618_12, tsflm.type)
         self.Test_IAgTroposphericScintillationFadingLossModelP618_12(
             clr.CastAs(tsflm, TroposphericScintillationFadingLossModelP618_12)
         )
@@ -9927,7 +9885,7 @@ class PlatformRF_Environment_TropoScintillationHelper(object):
         propChan.set_tropospheric_scintillation_fading_loss_model("ITU-R P618-8")
         tsflm = propChan.tropospheric_scintillation_fading_loss_model
         Assert.assertEqual("ITU-R P618-8", tsflm.name)
-        Assert.assertEqual(TROPOSPHERIC_SCINTILLATION_FADING_LOSS_MODEL_TYPE.P_618_8, tsflm.type)
+        Assert.assertEqual(TroposphericScintillationFadingLossModelType.P_618_8, tsflm.type)
         self.Test_IAgTroposphericScintillationFadingLossModelP618_8(
             clr.CastAs(tsflm, TroposphericScintillationFadingLossModelP618_8)
         )
@@ -9974,12 +9932,12 @@ class PlatformRF_Environment_TropoScintillationHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             tsflm12.percent_time_refractivity_gradient = 101
 
-        tsflm12.average_time_choice = TROPOSPHERIC_SCINTILLATION_AVERAGE_TIME_CHOICE_TYPE.WORST_MONTH
-        Assert.assertEqual(TROPOSPHERIC_SCINTILLATION_AVERAGE_TIME_CHOICE_TYPE.WORST_MONTH, tsflm12.average_time_choice)
-        tsflm12.average_time_choice = TROPOSPHERIC_SCINTILLATION_AVERAGE_TIME_CHOICE_TYPE.YEAR
-        Assert.assertEqual(TROPOSPHERIC_SCINTILLATION_AVERAGE_TIME_CHOICE_TYPE.YEAR, tsflm12.average_time_choice)
+        tsflm12.average_time_choice = TroposphericScintillationAverageTimeChoiceType.WORST_MONTH
+        Assert.assertEqual(TroposphericScintillationAverageTimeChoiceType.WORST_MONTH, tsflm12.average_time_choice)
+        tsflm12.average_time_choice = TroposphericScintillationAverageTimeChoiceType.YEAR
+        Assert.assertEqual(TroposphericScintillationAverageTimeChoiceType.YEAR, tsflm12.average_time_choice)
         with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
-            tsflm12.average_time_choice = TROPOSPHERIC_SCINTILLATION_AVERAGE_TIME_CHOICE_TYPE.UNKNOWN
+            tsflm12.average_time_choice = TroposphericScintillationAverageTimeChoiceType.UNKNOWN
 
     def Test_IAgTroposphericScintillationFadingLossModelP618_8(
         self, tsflm8: "TroposphericScintillationFadingLossModelP618_8"

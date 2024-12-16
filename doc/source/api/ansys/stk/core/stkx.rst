@@ -98,37 +98,37 @@ Summary
             :widths: auto
         
 
-            * - :py:class:`~ansys.stk.core.stkx.SHIFT_VALUES`
+            * - :py:class:`~ansys.stk.core.stkx.ShiftValues`
               - State of the Shift/Ctrl/Alt keys.
 
-            * - :py:class:`~ansys.stk.core.stkx.BUTTON_VALUES`
+            * - :py:class:`~ansys.stk.core.stkx.ButtonValues`
               - Numeric value of the mouse button pressed.
 
-            * - :py:class:`~ansys.stk.core.stkx.OLE_DROP_MODE`
+            * - :py:class:`~ansys.stk.core.stkx.OLEDropMode`
               - Specify how to handle OLE drop operations.
 
-            * - :py:class:`~ansys.stk.core.stkx.MOUSE_MODE`
+            * - :py:class:`~ansys.stk.core.stkx.MouseMode`
               - Mouse modes.
 
-            * - :py:class:`~ansys.stk.core.stkx.LOGGING_MODE`
+            * - :py:class:`~ansys.stk.core.stkx.LoggingMode`
               - Specify the state of the log file.
 
-            * - :py:class:`~ansys.stk.core.stkx.GRAPHICS_2D_ANALYSIS_MODE`
+            * - :py:class:`~ansys.stk.core.stkx.Graphics2DAnalysisMode`
               - Specify the mode of Gfx Analysis Control.
 
-            * - :py:class:`~ansys.stk.core.stkx.GRAPHICS_2D_DRAW_COORDINATES`
+            * - :py:class:`~ansys.stk.core.stkx.Graphics2DDrawCoordinates`
               - Specify the draw coordinates for Map Control.
 
-            * - :py:class:`~ansys.stk.core.stkx.SHOW_PROGRESS_IMAGE`
+            * - :py:class:`~ansys.stk.core.stkx.ShowProgressImage`
               - Specify to show progress image.
 
-            * - :py:class:`~ansys.stk.core.stkx.FEATURE_CODES`
+            * - :py:class:`~ansys.stk.core.stkx.FeatureCodes`
               - The enumeration values are used to check availability of a given feature.
 
-            * - :py:class:`~ansys.stk.core.stkx.PROGRESS_IMAGE_X_ORIGIN`
+            * - :py:class:`~ansys.stk.core.stkx.ProgressImageXOrigin`
               - Specify to align progress image X origin.
 
-            * - :py:class:`~ansys.stk.core.stkx.PROGRESS_IMAGE_Y_ORIGIN`
+            * - :py:class:`~ansys.stk.core.stkx.ProgressImageYOrigin`
               - Specify to align progress image Y origin.
 
 
@@ -211,15 +211,15 @@ Solar Panel Tool
     :maxdepth: 1
     :hidden:
 
-    ≔ SHIFT_VALUES<stkx/SHIFT_VALUES_enum>
-    ≔ BUTTON_VALUES<stkx/BUTTON_VALUES_enum>
-    ≔ OLE_DROP_MODE<stkx/OLE_DROP_MODE_enum>
-    ≔ MOUSE_MODE<stkx/MOUSE_MODE_enum>
-    ≔ LOGGING_MODE<stkx/LOGGING_MODE_enum>
-    ≔ GRAPHICS_2D_ANALYSIS_MODE<stkx/GRAPHICS_2D_ANALYSIS_MODE_enum>
-    ≔ GRAPHICS_2D_DRAW_COORDINATES<stkx/GRAPHICS_2D_DRAW_COORDINATES_enum>
-    ≔ SHOW_PROGRESS_IMAGE<stkx/SHOW_PROGRESS_IMAGE_enum>
-    ≔ FEATURE_CODES<stkx/FEATURE_CODES_enum>
-    ≔ PROGRESS_IMAGE_X_ORIGIN<stkx/PROGRESS_IMAGE_X_ORIGIN_enum>
-    ≔ PROGRESS_IMAGE_Y_ORIGIN<stkx/PROGRESS_IMAGE_Y_ORIGIN_enum>
+    ≔ ShiftValues<stkx/ShiftValues>
+    ≔ ButtonValues<stkx/ButtonValues>
+    ≔ OLEDropMode<stkx/OLEDropMode>
+    ≔ MouseMode<stkx/MouseMode>
+    ≔ LoggingMode<stkx/LoggingMode>
+    ≔ Graphics2DAnalysisMode<stkx/Graphics2DAnalysisMode>
+    ≔ Graphics2DDrawCoordinates<stkx/Graphics2DDrawCoordinates>
+    ≔ ShowProgressImage<stkx/ShowProgressImage>
+    ≔ FeatureCodes<stkx/FeatureCodes>
+    ≔ ProgressImageXOrigin<stkx/ProgressImageXOrigin>
+    ≔ ProgressImageYOrigin<stkx/ProgressImageYOrigin>
 

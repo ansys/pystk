@@ -81,7 +81,7 @@ Property detail
 
 .. py:property:: element_type
     :canonical: ansys.stk.core.stkobjects.astrogator.State.element_type
-    :type: ELEMENT_TYPE
+    :type: ElementSetType
 
     Get the element type.
 
@@ -186,14 +186,14 @@ Method detail
 -------------
 
 
-.. py:method:: set_element_type(self, element_type: ELEMENT_TYPE) -> None
+.. py:method:: set_element_type(self, element_type: ElementSetType) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.State.set_element_type
 
     Set the element type.
 
     :Parameters:
 
-    **element_type** : :obj:`~ELEMENT_TYPE`
+    **element_type** : :obj:`~ElementSetType`
 
     :Returns:
 

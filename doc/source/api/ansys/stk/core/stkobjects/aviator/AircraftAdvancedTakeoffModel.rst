@@ -67,7 +67,7 @@ Property detail
 
 .. py:property:: takeoff_speed_mode
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedTakeoffModel.takeoff_speed_mode
-    :type: TAKEOFF_LANDING_SPEED_MODE
+    :type: TakeoffLandingSpeedMode
 
     Gets or sets the mode to calculate the aircraft's airspeed upon leaving the ground.
 
@@ -91,7 +91,7 @@ Property detail
 
 .. py:property:: departure_speed_mode
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedTakeoffModel.departure_speed_mode
-    :type: DEPARTURE_SPEED_MODE
+    :type: DepartureSpeedMode
 
     Gets or sets the mode to calculate the airspeed upon leaving the ground.
 
@@ -103,7 +103,7 @@ Property detail
 
 .. py:property:: departure_speed_limit_type
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedTakeoffModel.departure_speed_limit_type
-    :type: AIRSPEED_TYPE
+    :type: AirspeedType
 
     Get the departure speed limim type.
 
@@ -153,14 +153,14 @@ Method detail
 
 
 
-.. py:method:: set_departure_speed_limit(self, airspeed_type: AIRSPEED_TYPE, airspeed: float) -> None
+.. py:method:: set_departure_speed_limit(self, airspeed_type: AirspeedType, airspeed: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedTakeoffModel.set_departure_speed_limit
 
     Set the departure speed limit of the aircraft.
 
     :Parameters:
 
-    **airspeed_type** : :obj:`~AIRSPEED_TYPE`
+    **airspeed_type** : :obj:`~AirspeedType`
     **airspeed** : :obj:`~float`
 
     :Returns:

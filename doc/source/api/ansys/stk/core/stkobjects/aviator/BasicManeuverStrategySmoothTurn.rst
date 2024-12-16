@@ -62,13 +62,13 @@ Property detail
 
 .. py:property:: turn_mode
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategySmoothTurn.turn_mode
-    :type: SMOOTH_TURN_MODE
+    :type: SmoothTurnMode
 
     Gets or sets the turn mode for the smooth turn.
 
 .. py:property:: load_factor_mode
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategySmoothTurn.load_factor_mode
-    :type: PERFORMANCE_MODEL_OVERRIDE
+    :type: PerformanceModelOverride
 
     Gets or sets the load factor mode for the smooth turn.
 
@@ -86,7 +86,7 @@ Property detail
 
 .. py:property:: roll_rate_mode
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategySmoothTurn.roll_rate_mode
-    :type: PERFORMANCE_MODEL_OVERRIDE
+    :type: PerformanceModelOverride
 
     Gets or sets the roll rate mode for the smooth turn.
 
@@ -110,7 +110,7 @@ Property detail
 
 .. py:property:: flight_path_angle_mode
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategySmoothTurn.flight_path_angle_mode
-    :type: SMOOTH_TURN_FLIGHT_PATH_ANGLE_MODE
+    :type: SmoothTurnFlightPathAngleMode
 
     Gets or sets the flight path angle mode.
 

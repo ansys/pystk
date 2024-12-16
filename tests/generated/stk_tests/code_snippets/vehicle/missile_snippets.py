@@ -29,7 +29,7 @@ class MissileSnippets(CodeSnippetsTestBase):
     def setUp(self):
         MissileSnippets.m_Object = clr.CastAs(
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-                STK_OBJECT_TYPE.MISSILE, MissileSnippets.m_DefaultName
+                STKObjectType.MISSILE, MissileSnippets.m_DefaultName
             ),
             Missile,
         )
@@ -39,7 +39,7 @@ class MissileSnippets(CodeSnippetsTestBase):
     # region TestTearDown
     def tearDown(self):
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(
-            STK_OBJECT_TYPE.MISSILE, MissileSnippets.m_DefaultName
+            STKObjectType.MISSILE, MissileSnippets.m_DefaultName
         )
         MissileSnippets.m_Object = None
 
@@ -56,7 +56,7 @@ class MissileSnippets(CodeSnippetsTestBase):
 
     def DefineMissileTrajectory(self, missile: "Missile"):
         # Set missile trajectory type
-        missile.set_trajectory_type(PROPAGATOR_TYPE.BALLISTIC)
+        missile.set_trajectory_type(PropagatorType.BALLISTIC)
 
         # Retrieve the Propagator interface
         trajectory: "PropagatorBallistic" = clr.CastAs(missile.trajectory, PropagatorBallistic)
@@ -66,20 +66,20 @@ class MissileSnippets(CodeSnippetsTestBase):
         trajectory.step = 60.0
 
         # Set flight parameters
-        trajectory.set_launch_type(VEHICLE_LAUNCH.DETIC)
+        trajectory.set_launch_type(VehicleLaunch.DETIC)
         launch: "LaunchVehicleLocationDetic" = clr.CastAs(trajectory.launch, LaunchVehicleLocationDetic)
         launch.latitude = 0.0
         launch.longitude = 0.0
         launch.altitude = 0.0
 
         # Set impact location type
-        trajectory.set_impact_location_type(VEHICLE_IMPACT_LOCATION.POINT)
+        trajectory.set_impact_location_type(VehicleImpactLocation.POINT)
 
         # Retrieve the impact point interface
         impactLocation: "VehicleImpactLocationPoint" = clr.CastAs(
             trajectory.impact_location, VehicleImpactLocationPoint
         )
-        impactLocation.set_launch_control_type(VEHICLE_LAUNCH_CONTROL.FIXED_TIME_OF_FLIGHT)
+        impactLocation.set_launch_control_type(VehicleLaunchControl.FIXED_TIME_OF_FLIGHT)
 
         # Retrieve the launch flight interface
         launchControl: "LaunchVehicleControlFixedTimeOfFlight" = clr.CastAs(
@@ -88,7 +88,7 @@ class MissileSnippets(CodeSnippetsTestBase):
         launchControl.time_of_flight = 9000.0
 
         # Configure missile Impact parameters
-        impactLocation.set_impact_type(VEHICLE_IMPACT.IMPACT_LOCATION_DETIC)
+        impactLocation.set_impact_type(VehicleImpact.IMPACT_LOCATION_DETIC)
         impact: "VehicleImpactLocationDetic" = clr.CastAs(impactLocation.impact, VehicleImpactLocationDetic)
         impact.latitude = -20.0
         impact.longitude = -20.0

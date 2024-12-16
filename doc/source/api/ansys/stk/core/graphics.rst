@@ -755,166 +755,166 @@ Summary
             :widths: auto
         
 
-            * - :py:class:`~ansys.stk.core.graphics.CYLINDER_FILL_OPTIONS`
+            * - :py:class:`~ansys.stk.core.graphics.CylinderFillOptions`
               - Cylinder faces that can be filled.
 
-            * - :py:class:`~ansys.stk.core.graphics.WINDING_ORDER`
+            * - :py:class:`~ansys.stk.core.graphics.WindingOrder`
               - Specify the order for positions or front facing triangles. Winding order is important for triangulation and backface culling.
 
-            * - :py:class:`~ansys.stk.core.graphics.SNAPSHOT_FILE_FORMAT`
+            * - :py:class:`~ansys.stk.core.graphics.SnapshotFileFormat`
               - When using camera snapshot or camera video recording to save a snapshot to a file, this specifies the file format.
 
-            * - :py:class:`~ansys.stk.core.graphics.VIDEO_FORMAT`
+            * - :py:class:`~ansys.stk.core.graphics.VideoFormat`
               - When using camera video recording to record a video, this specifies the file format.
 
-            * - :py:class:`~ansys.stk.core.graphics.CONSTRAINED_UP_AXIS`
+            * - :py:class:`~ansys.stk.core.graphics.ConstrainedUpAxis`
               - When setting the camera'saxes, this defines which axis of the axes is up in screen space, where up is from the bottom to the top of the screen.
 
-            * - :py:class:`~ansys.stk.core.graphics.OVERLAY_ROLE`
+            * - :py:class:`~ansys.stk.core.graphics.OverlayRole`
               - The role of a globe overlay.
 
-            * - :py:class:`~ansys.stk.core.graphics.PRIMITIVE_INDICES_ORDER_HINT`
+            * - :py:class:`~ansys.stk.core.graphics.PrimitiveIndicesOrderHint`
               - An optimization hint optionally provided to a primitive'sSetPartial method to enhance performance.
 
-            * - :py:class:`~ansys.stk.core.graphics.OVERLAY_ASPECT_RATIO_MODE`
+            * - :py:class:`~ansys.stk.core.graphics.OverlayAspectRatioMode`
               - Specify whether the aspect ratio of a texture will be maintained during sizing of a screen overlay.
 
-            * - :py:class:`~ansys.stk.core.graphics.MAP_PROJECTION`
+            * - :py:class:`~ansys.stk.core.graphics.MapProjection`
               - The projection of the pixel data returned from a custom image globe overlay.
 
-            * - :py:class:`~ansys.stk.core.graphics.MARKER_BATCH_RENDERING_METHOD`
+            * - :py:class:`~ansys.stk.core.graphics.MarkerBatchRenderingMethod`
               - Rendering methods available for use by the marker batch primitive. Different methods may have different performance characteristics and require different video card support. When in doubt, use Automatic.
 
-            * - :py:class:`~ansys.stk.core.graphics.MARKER_BATCH_RENDER_PASS`
+            * - :py:class:`~ansys.stk.core.graphics.MarkerBatchRenderPass`
               - The pass during which the marker batch is rendered.
 
-            * - :py:class:`~ansys.stk.core.graphics.MARKER_BATCH_SIZE_SOURCE`
+            * - :py:class:`~ansys.stk.core.graphics.MarkerBatchSizeSource`
               - Determine which marker batch property is used to size each marker in a marker batch.
 
-            * - :py:class:`~ansys.stk.core.graphics.MARKER_BATCH_SORT_ORDER`
+            * - :py:class:`~ansys.stk.core.graphics.MarkerBatchSortOrder`
               - The order in which markers in a marker batch are sorted before rendering.
 
-            * - :py:class:`~ansys.stk.core.graphics.MARKER_BATCH_SIZE_UNIT`
+            * - :py:class:`~ansys.stk.core.graphics.MarkerBatchSizeUnit`
               - The unit for marker sizes in a marker batch.
 
-            * - :py:class:`~ansys.stk.core.graphics.MODEL_TRANSFORMATION_TYPE`
+            * - :py:class:`~ansys.stk.core.graphics.ModelTransformationType`
               - Transformation types that define the way a model transformation changes the geometry of the model articulation it is associated with.
 
-            * - :py:class:`~ansys.stk.core.graphics.ORIGIN`
+            * - :py:class:`~ansys.stk.core.graphics.Origin`
               - Vertical and horizontal origin.
 
-            * - :py:class:`~ansys.stk.core.graphics.PATH_PRIMITIVE_REMOVE_LOCATION`
+            * - :py:class:`~ansys.stk.core.graphics.PathPrimitiveRemoveLocation`
               - Represents the location of a point to be removed.
 
-            * - :py:class:`~ansys.stk.core.graphics.PRIMITIVES_SORT_ORDER`
+            * - :py:class:`~ansys.stk.core.graphics.PrimitivesSortOrder`
               - The order in which primitives are sorted before rendering.
 
-            * - :py:class:`~ansys.stk.core.graphics.REFRESH_RATE`
+            * - :py:class:`~ansys.stk.core.graphics.RefreshRate`
               - The rate at which animation frames will occur.
 
-            * - :py:class:`~ansys.stk.core.graphics.RENDER_PASS`
+            * - :py:class:`~ansys.stk.core.graphics.RenderPass`
               - Describes when a primitive will be rendered. Some primitives need to be rendered during or at a certain time. For example, translucent primitives need to be rendered after opaque primitives to allow proper blending...
 
-            * - :py:class:`~ansys.stk.core.graphics.RENDER_PASS_HINT`
+            * - :py:class:`~ansys.stk.core.graphics.RenderPassHint`
               - An optimization hint optionally provided to a primitive'sSet method to enhance performance when per-position colors are used.
 
-            * - :py:class:`~ansys.stk.core.graphics.SCREEN_OVERLAY_ORIGIN`
+            * - :py:class:`~ansys.stk.core.graphics.ScreenOverlayOrigin`
               - Specify the origin of a screen overlay, as well as the direction of the horizontal and vertical axes. The origin specifies both the origin in the parent overlay's coordinate system and the origin within the overlay itself that is positioned.
 
-            * - :py:class:`~ansys.stk.core.graphics.SCREEN_OVERLAY_PINNING_ORIGIN`
+            * - :py:class:`~ansys.stk.core.graphics.ScreenOverlayPinningOrigin`
               - Specify the origin of the pinning position of the screen overlay, as well as the direction of the horizontal and vertical axes for that pinning position. The pinning origin specifies the origin of the pinning position in the overlay's coordinate system.
 
-            * - :py:class:`~ansys.stk.core.graphics.SCREEN_OVERLAY_UNIT`
+            * - :py:class:`~ansys.stk.core.graphics.ScreenOverlayUnit`
               - A unit specifying how a screen overlay is sized and positioned relative to its parent.
 
-            * - :py:class:`~ansys.stk.core.graphics.SURFACE_MESH_RENDERING_METHOD`
+            * - :py:class:`~ansys.stk.core.graphics.SurfaceMeshRenderingMethod`
               - Rendering methods available for use by the surface mesh primitive. Different methods may have different performance characteristics and require different video card support. When in doubt, use Automatic.
 
-            * - :py:class:`~ansys.stk.core.graphics.VISIBILITY`
+            * - :py:class:`~ansys.stk.core.graphics.Visibility`
               - Result of a visibility test, such as testing if a sphere intersects a frustum.
 
-            * - :py:class:`~ansys.stk.core.graphics.ANTI_ALIASING_METHOD`
+            * - :py:class:`~ansys.stk.core.graphics.AntiAliasingMethod`
               - The multisample anti-aliasing (MSAA) options for Scenes. As the level of anti-aliasing increases, performance will generally decrease, but the quality of the anti-aliasing will improve.
 
-            * - :py:class:`~ansys.stk.core.graphics.BINARY_LOGIC_OPERATION`
+            * - :py:class:`~ansys.stk.core.graphics.BinaryLogicOperation`
               - Binary logic operations that can be used by composite display condition.
 
-            * - :py:class:`~ansys.stk.core.graphics.BLUR_METHOD`
+            * - :py:class:`~ansys.stk.core.graphics.BlurMethod`
               - The method used to blur or smooth a raster.
 
-            * - :py:class:`~ansys.stk.core.graphics.EDGE_DETECT_METHOD`
+            * - :py:class:`~ansys.stk.core.graphics.EdgeDetectMethod`
               - The method used to detect edges in a raster.
 
-            * - :py:class:`~ansys.stk.core.graphics.RASTER_FLIP_AXIS`
+            * - :py:class:`~ansys.stk.core.graphics.RasterFlipAxis`
               - The axis on which a raster will be flipped.
 
-            * - :py:class:`~ansys.stk.core.graphics.GRADIENT_DETECT_METHOD`
+            * - :py:class:`~ansys.stk.core.graphics.GradientDetectMethod`
               - The method used to detect gradients in a raster. Gradient detection is commonly referred to as embossing.
 
-            * - :py:class:`~ansys.stk.core.graphics.JPEG2000_COMPRESSION_PROFILE`
+            * - :py:class:`~ansys.stk.core.graphics.Jpeg2000CompressionProfile`
               - Define the profile used when encoding a JPEG 2000 file.
 
-            * - :py:class:`~ansys.stk.core.graphics.RASTER_BAND`
+            * - :py:class:`~ansys.stk.core.graphics.RasterBand`
               - Common band types that may be contained within a raster dataset. Each band can be thought of as a set of values, which are most commonly associated with colors when the raster represents an image...
 
-            * - :py:class:`~ansys.stk.core.graphics.RASTER_FORMAT`
+            * - :py:class:`~ansys.stk.core.graphics.RasterFormat`
               - Common raster band layouts that may be contained within a raster dataset. Each pixel of the raster will contain the bands defined by the layout in the specified order. A typical color raster image will have an rgbraster format.
 
-            * - :py:class:`~ansys.stk.core.graphics.RASTER_ORIENTATION`
+            * - :py:class:`~ansys.stk.core.graphics.RasterOrientation`
               - The vertical orientation of the raster.
 
-            * - :py:class:`~ansys.stk.core.graphics.RASTER_TYPE`
+            * - :py:class:`~ansys.stk.core.graphics.RasterType`
               - The type of data contained within each band of a raster dataset.
 
-            * - :py:class:`~ansys.stk.core.graphics.RASTER_SHARPEN_METHOD`
+            * - :py:class:`~ansys.stk.core.graphics.RasterSharpenMethod`
               - The method used to sharpen a raster.
 
-            * - :py:class:`~ansys.stk.core.graphics.VIDEO_PLAYBACK`
+            * - :py:class:`~ansys.stk.core.graphics.VideoPlayback`
               - Specify how the video stream will playback. When the playback is set to real time, the video will playback in real time...
 
-            * - :py:class:`~ansys.stk.core.graphics.KML_NETWORK_LINK_REFRESH_MODE`
+            * - :py:class:`~ansys.stk.core.graphics.KmlNetworkLinkRefreshMode`
               - Define the options available for a KmlNetworkLink's RefreshMode property.
 
-            * - :py:class:`~ansys.stk.core.graphics.KML_NETWORK_LINK_VIEW_REFRESH_MODE`
+            * - :py:class:`~ansys.stk.core.graphics.KmlNetworkLinkViewRefreshMode`
               - Define the options available for a KmlNetworkLink's ViewRefreshMode property.
 
-            * - :py:class:`~ansys.stk.core.graphics.MODEL_UP_AXIS`
+            * - :py:class:`~ansys.stk.core.graphics.ModelUpAxis`
               - When setting the camera'saxes, this defines which axis of the axes is up in screen space, where up is from the bottom to the top of the screen.
 
-            * - :py:class:`~ansys.stk.core.graphics.OUTLINE_APPEARANCE`
+            * - :py:class:`~ansys.stk.core.graphics.OutlineAppearance`
               - Possible appearances of an outline. Front lines are lines on front facing geometry and back lines are lines on back facing geometry.
 
-            * - :py:class:`~ansys.stk.core.graphics.POLYLINE_TYPE`
+            * - :py:class:`~ansys.stk.core.graphics.PolylineType`
               - Describes how to interpret positions defining a polyline.
 
-            * - :py:class:`~ansys.stk.core.graphics.FACE_CULLING_MODE`
+            * - :py:class:`~ansys.stk.core.graphics.FaceCullingMode`
               - Identifies whether front- and/or back-facing triangles are culled.
 
-            * - :py:class:`~ansys.stk.core.graphics.TEXTURE_FORMAT`
+            * - :py:class:`~ansys.stk.core.graphics.TextureFormat`
               - The format of individual texels in a texture.
 
-            * - :py:class:`~ansys.stk.core.graphics.MAGNIFICATION_FILTER`
+            * - :py:class:`~ansys.stk.core.graphics.MagnificationFilter`
               - The filter used when the pixel being textured maps to an area less than or equal to one texel.
 
-            * - :py:class:`~ansys.stk.core.graphics.MINIFICATION_FILTER`
+            * - :py:class:`~ansys.stk.core.graphics.MinificationFilter`
               - The filter used when the pixel being textured maps to an area greater than one texel.
 
-            * - :py:class:`~ansys.stk.core.graphics.RENDERER_SHADING_MODEL`
+            * - :py:class:`~ansys.stk.core.graphics.RendererShadingModel`
               - Identifies which shade model to use. The primitive can be drawn with a single color or multiple colors.
 
-            * - :py:class:`~ansys.stk.core.graphics.TEXTURE_WRAP`
+            * - :py:class:`~ansys.stk.core.graphics.TextureWrap`
               - Determine how to handle textures coordinates that fall outside of the range [0, 1].
 
-            * - :py:class:`~ansys.stk.core.graphics.SET_HINT`
+            * - :py:class:`~ansys.stk.core.graphics.SetHint`
               - An optimization hint optionally provided to primitives to enhance performance for static or dynamic primitives. See the Set Hint Performance Overview for selecting an appropriate value.
 
-            * - :py:class:`~ansys.stk.core.graphics.STEREO_PROJECTION_MODE`
+            * - :py:class:`~ansys.stk.core.graphics.StereoProjectionMode`
               - The stereoscopic projection mode used for the left and right eye scenes.
 
-            * - :py:class:`~ansys.stk.core.graphics.STEREOSCOPIC_DISPLAY_MODE`
+            * - :py:class:`~ansys.stk.core.graphics.StereoscopicDisplayMode`
               - The stereoscopic display mode. To use a particular stereoscopic display mode, ensure that your system supports the feature and that it is enabled.
 
-            * - :py:class:`~ansys.stk.core.graphics.FONT_STYLE`
+            * - :py:class:`~ansys.stk.core.graphics.FontStyle`
               - Font styles.
 
 
@@ -1193,58 +1193,58 @@ well as in STK Engine custom applications.
     :maxdepth: 1
     :hidden:
 
-    ≔ CYLINDER_FILL_OPTIONS<graphics/CYLINDER_FILL_OPTIONS_enum>
-    ≔ WINDING_ORDER<graphics/WINDING_ORDER_enum>
-    ≔ SNAPSHOT_FILE_FORMAT<graphics/SNAPSHOT_FILE_FORMAT_enum>
-    ≔ VIDEO_FORMAT<graphics/VIDEO_FORMAT_enum>
-    ≔ CONSTRAINED_UP_AXIS<graphics/CONSTRAINED_UP_AXIS_enum>
-    ≔ OVERLAY_ROLE<graphics/OVERLAY_ROLE_enum>
-    ≔ PRIMITIVE_INDICES_ORDER_HINT<graphics/PRIMITIVE_INDICES_ORDER_HINT_enum>
-    ≔ OVERLAY_ASPECT_RATIO_MODE<graphics/OVERLAY_ASPECT_RATIO_MODE_enum>
-    ≔ MAP_PROJECTION<graphics/MAP_PROJECTION_enum>
-    ≔ MARKER_BATCH_RENDERING_METHOD<graphics/MARKER_BATCH_RENDERING_METHOD_enum>
-    ≔ MARKER_BATCH_RENDER_PASS<graphics/MARKER_BATCH_RENDER_PASS_enum>
-    ≔ MARKER_BATCH_SIZE_SOURCE<graphics/MARKER_BATCH_SIZE_SOURCE_enum>
-    ≔ MARKER_BATCH_SORT_ORDER<graphics/MARKER_BATCH_SORT_ORDER_enum>
-    ≔ MARKER_BATCH_SIZE_UNIT<graphics/MARKER_BATCH_SIZE_UNIT_enum>
-    ≔ MODEL_TRANSFORMATION_TYPE<graphics/MODEL_TRANSFORMATION_TYPE_enum>
-    ≔ ORIGIN<graphics/ORIGIN_enum>
-    ≔ PATH_PRIMITIVE_REMOVE_LOCATION<graphics/PATH_PRIMITIVE_REMOVE_LOCATION_enum>
-    ≔ PRIMITIVES_SORT_ORDER<graphics/PRIMITIVES_SORT_ORDER_enum>
-    ≔ REFRESH_RATE<graphics/REFRESH_RATE_enum>
-    ≔ RENDER_PASS<graphics/RENDER_PASS_enum>
-    ≔ RENDER_PASS_HINT<graphics/RENDER_PASS_HINT_enum>
-    ≔ SCREEN_OVERLAY_ORIGIN<graphics/SCREEN_OVERLAY_ORIGIN_enum>
-    ≔ SCREEN_OVERLAY_PINNING_ORIGIN<graphics/SCREEN_OVERLAY_PINNING_ORIGIN_enum>
-    ≔ SCREEN_OVERLAY_UNIT<graphics/SCREEN_OVERLAY_UNIT_enum>
-    ≔ SURFACE_MESH_RENDERING_METHOD<graphics/SURFACE_MESH_RENDERING_METHOD_enum>
-    ≔ VISIBILITY<graphics/VISIBILITY_enum>
-    ≔ ANTI_ALIASING_METHOD<graphics/ANTI_ALIASING_METHOD_enum>
-    ≔ BINARY_LOGIC_OPERATION<graphics/BINARY_LOGIC_OPERATION_enum>
-    ≔ BLUR_METHOD<graphics/BLUR_METHOD_enum>
-    ≔ EDGE_DETECT_METHOD<graphics/EDGE_DETECT_METHOD_enum>
-    ≔ RASTER_FLIP_AXIS<graphics/RASTER_FLIP_AXIS_enum>
-    ≔ GRADIENT_DETECT_METHOD<graphics/GRADIENT_DETECT_METHOD_enum>
-    ≔ JPEG2000_COMPRESSION_PROFILE<graphics/JPEG2000_COMPRESSION_PROFILE_enum>
-    ≔ RASTER_BAND<graphics/RASTER_BAND_enum>
-    ≔ RASTER_FORMAT<graphics/RASTER_FORMAT_enum>
-    ≔ RASTER_ORIENTATION<graphics/RASTER_ORIENTATION_enum>
-    ≔ RASTER_TYPE<graphics/RASTER_TYPE_enum>
-    ≔ RASTER_SHARPEN_METHOD<graphics/RASTER_SHARPEN_METHOD_enum>
-    ≔ VIDEO_PLAYBACK<graphics/VIDEO_PLAYBACK_enum>
-    ≔ KML_NETWORK_LINK_REFRESH_MODE<graphics/KML_NETWORK_LINK_REFRESH_MODE_enum>
-    ≔ KML_NETWORK_LINK_VIEW_REFRESH_MODE<graphics/KML_NETWORK_LINK_VIEW_REFRESH_MODE_enum>
-    ≔ MODEL_UP_AXIS<graphics/MODEL_UP_AXIS_enum>
-    ≔ OUTLINE_APPEARANCE<graphics/OUTLINE_APPEARANCE_enum>
-    ≔ POLYLINE_TYPE<graphics/POLYLINE_TYPE_enum>
-    ≔ FACE_CULLING_MODE<graphics/FACE_CULLING_MODE_enum>
-    ≔ TEXTURE_FORMAT<graphics/TEXTURE_FORMAT_enum>
-    ≔ MAGNIFICATION_FILTER<graphics/MAGNIFICATION_FILTER_enum>
-    ≔ MINIFICATION_FILTER<graphics/MINIFICATION_FILTER_enum>
-    ≔ RENDERER_SHADING_MODEL<graphics/RENDERER_SHADING_MODEL_enum>
-    ≔ TEXTURE_WRAP<graphics/TEXTURE_WRAP_enum>
-    ≔ SET_HINT<graphics/SET_HINT_enum>
-    ≔ STEREO_PROJECTION_MODE<graphics/STEREO_PROJECTION_MODE_enum>
-    ≔ STEREOSCOPIC_DISPLAY_MODE<graphics/STEREOSCOPIC_DISPLAY_MODE_enum>
-    ≔ FONT_STYLE<graphics/FONT_STYLE_enum>
+    ≔ CylinderFillOptions<graphics/CylinderFillOptions>
+    ≔ WindingOrder<graphics/WindingOrder>
+    ≔ SnapshotFileFormat<graphics/SnapshotFileFormat>
+    ≔ VideoFormat<graphics/VideoFormat>
+    ≔ ConstrainedUpAxis<graphics/ConstrainedUpAxis>
+    ≔ OverlayRole<graphics/OverlayRole>
+    ≔ PrimitiveIndicesOrderHint<graphics/PrimitiveIndicesOrderHint>
+    ≔ OverlayAspectRatioMode<graphics/OverlayAspectRatioMode>
+    ≔ MapProjection<graphics/MapProjection>
+    ≔ MarkerBatchRenderingMethod<graphics/MarkerBatchRenderingMethod>
+    ≔ MarkerBatchRenderPass<graphics/MarkerBatchRenderPass>
+    ≔ MarkerBatchSizeSource<graphics/MarkerBatchSizeSource>
+    ≔ MarkerBatchSortOrder<graphics/MarkerBatchSortOrder>
+    ≔ MarkerBatchSizeUnit<graphics/MarkerBatchSizeUnit>
+    ≔ ModelTransformationType<graphics/ModelTransformationType>
+    ≔ Origin<graphics/Origin>
+    ≔ PathPrimitiveRemoveLocation<graphics/PathPrimitiveRemoveLocation>
+    ≔ PrimitivesSortOrder<graphics/PrimitivesSortOrder>
+    ≔ RefreshRate<graphics/RefreshRate>
+    ≔ RenderPass<graphics/RenderPass>
+    ≔ RenderPassHint<graphics/RenderPassHint>
+    ≔ ScreenOverlayOrigin<graphics/ScreenOverlayOrigin>
+    ≔ ScreenOverlayPinningOrigin<graphics/ScreenOverlayPinningOrigin>
+    ≔ ScreenOverlayUnit<graphics/ScreenOverlayUnit>
+    ≔ SurfaceMeshRenderingMethod<graphics/SurfaceMeshRenderingMethod>
+    ≔ Visibility<graphics/Visibility>
+    ≔ AntiAliasingMethod<graphics/AntiAliasingMethod>
+    ≔ BinaryLogicOperation<graphics/BinaryLogicOperation>
+    ≔ BlurMethod<graphics/BlurMethod>
+    ≔ EdgeDetectMethod<graphics/EdgeDetectMethod>
+    ≔ RasterFlipAxis<graphics/RasterFlipAxis>
+    ≔ GradientDetectMethod<graphics/GradientDetectMethod>
+    ≔ Jpeg2000CompressionProfile<graphics/Jpeg2000CompressionProfile>
+    ≔ RasterBand<graphics/RasterBand>
+    ≔ RasterFormat<graphics/RasterFormat>
+    ≔ RasterOrientation<graphics/RasterOrientation>
+    ≔ RasterType<graphics/RasterType>
+    ≔ RasterSharpenMethod<graphics/RasterSharpenMethod>
+    ≔ VideoPlayback<graphics/VideoPlayback>
+    ≔ KmlNetworkLinkRefreshMode<graphics/KmlNetworkLinkRefreshMode>
+    ≔ KmlNetworkLinkViewRefreshMode<graphics/KmlNetworkLinkViewRefreshMode>
+    ≔ ModelUpAxis<graphics/ModelUpAxis>
+    ≔ OutlineAppearance<graphics/OutlineAppearance>
+    ≔ PolylineType<graphics/PolylineType>
+    ≔ FaceCullingMode<graphics/FaceCullingMode>
+    ≔ TextureFormat<graphics/TextureFormat>
+    ≔ MagnificationFilter<graphics/MagnificationFilter>
+    ≔ MinificationFilter<graphics/MinificationFilter>
+    ≔ RendererShadingModel<graphics/RendererShadingModel>
+    ≔ TextureWrap<graphics/TextureWrap>
+    ≔ SetHint<graphics/SetHint>
+    ≔ StereoProjectionMode<graphics/StereoProjectionMode>
+    ≔ StereoscopicDisplayMode<graphics/StereoscopicDisplayMode>
+    ≔ FontStyle<graphics/FontStyle>
 

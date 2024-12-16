@@ -56,13 +56,13 @@ Property detail
 
 .. py:property:: segment_state_to_use
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcDifferenceOtherSegment.segment_state_to_use
-    :type: SEGMENT_STATE
+    :type: SegmentState
 
     Gets or sets the segment state to use in the calculation.
 
 .. py:property:: difference_order
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcDifferenceOtherSegment.difference_order
-    :type: SEGMENT_DIFFERENCE_ORDER
+    :type: SegmentDifferenceOrder
 
     Gets or sets the order of the difference calculation.
 

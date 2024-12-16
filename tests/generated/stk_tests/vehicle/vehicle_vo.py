@@ -121,7 +121,7 @@ class VOAttributesBasicHelper(object):
 
         try:
             bCaught = False
-            oBasic.line_width = LINE_WIDTH.WIDTH5
+            oBasic.line_width = LineWidth.WIDTH5
 
         except Exception as e:
             bCaught = True
@@ -148,9 +148,9 @@ class VOAttributesBasicHelper(object):
 
         # LineWidth
         self.m_logger.WriteLine6("\tCurrent LineWidth is: {0}", oBasic.line_width)
-        oBasic.line_width = LINE_WIDTH.WIDTH5
+        oBasic.line_width = LineWidth.WIDTH5
         self.m_logger.WriteLine6("\tNew LineWidth is: {0}", oBasic.line_width)
-        Assert.assertEqual(LINE_WIDTH.WIDTH5, oBasic.line_width)
+        Assert.assertEqual(LineWidth.WIDTH5, oBasic.line_width)
         with pytest.raises(Exception):
             oBasic.line_width = -1
         with pytest.raises(Exception):
@@ -188,18 +188,18 @@ class VOAttributesIntervalsHelper(object):
         AssertEx.AreEqual(Colors.from_argb(65535), oDefault.color)
         # LineWidth
         self.m_logger.WriteLine6("\tCurrent LineWidth is: {0}", oDefault.line_width)
-        oDefault.line_width = LINE_WIDTH.WIDTH2
+        oDefault.line_width = LineWidth.WIDTH2
         self.m_logger.WriteLine6("\tNew LineWidth is: {0}", oDefault.line_width)
-        Assert.assertEqual(LINE_WIDTH.WIDTH2, oDefault.line_width)
+        Assert.assertEqual(LineWidth.WIDTH2, oDefault.line_width)
         oDefault.show_graphics = True
         self.m_logger.WriteLine4("\tNew Visible flag is: {0}", oDefault.show_graphics)
         Assert.assertEqual(True, oDefault.show_graphics)
         oDefault.color = Colors.from_argb(255)
         self.m_logger.WriteLine6("\tNew Color is: {0}", oDefault.color)
         AssertEx.AreEqual(Colors.from_argb(255), oDefault.color)
-        oDefault.line_width = LINE_WIDTH.WIDTH4
+        oDefault.line_width = LineWidth.WIDTH4
         self.m_logger.WriteLine6("\tNew LineWidth is: {0}", oDefault.line_width)
-        Assert.assertEqual(LINE_WIDTH.WIDTH4, oDefault.line_width)
+        Assert.assertEqual(LineWidth.WIDTH4, oDefault.line_width)
         oDefault.translucency = 50
         Assert.assertEqual(50, oDefault.translucency)
 
@@ -307,7 +307,7 @@ class VOAttributesIntervalsHelper(object):
 
         try:
             bCaught = False
-            intervalsElement.line_width = LINE_WIDTH.WIDTH2
+            intervalsElement.line_width = LineWidth.WIDTH2
 
         except Exception as e:
             bCaught = True
@@ -356,36 +356,36 @@ class VOCovarianceHelper(object):
                 "\tElement {0}: {1} ({2})",
                 iIndex,
                 arChoices[iIndex][1],
-                VEHICLE_GRAPHICS_3D_SIGMA_SCALE(int(arChoices[iIndex][0])),
+                VehicleGraphics3DSigmaScale(int(arChoices[iIndex][0])),
             )
 
             iIndex += 1
 
         # Scale test
         self.m_logger.WriteLine6("The current Sigma Scale type is: {0}", oCovariance.sigma_scale_type)
-        if not oCovariance.is_sigma_scale_type_supported(VEHICLE_GRAPHICS_3D_SIGMA_SCALE.SCALE):
-            Assert.fail("The {0} type should be supported.", VEHICLE_GRAPHICS_3D_SIGMA_SCALE.SCALE)
+        if not oCovariance.is_sigma_scale_type_supported(VehicleGraphics3DSigmaScale.SCALE):
+            Assert.fail("The {0} type should be supported.", VehicleGraphics3DSigmaScale.SCALE)
 
-        oCovariance.set_sigma_scale_type(VEHICLE_GRAPHICS_3D_SIGMA_SCALE.SCALE)
+        oCovariance.set_sigma_scale_type(VehicleGraphics3DSigmaScale.SCALE)
         self.m_logger.WriteLine6("The new Sigma Scale type is: {0}", oCovariance.sigma_scale_type)
-        Assert.assertEqual(VEHICLE_GRAPHICS_3D_SIGMA_SCALE.SCALE, oCovariance.sigma_scale_type)
+        Assert.assertEqual(VehicleGraphics3DSigmaScale.SCALE, oCovariance.sigma_scale_type)
 
         oSSSHelper = VOSigmaScaleScaleHelper()
         oSSSHelper.Run(VehicleGraphics3DSigmaScaleScale(oCovariance.sigma_scale))
-        if not oCovariance.is_sigma_scale_type_supported(VEHICLE_GRAPHICS_3D_SIGMA_SCALE.PROBABILITY):
-            Assert.fail("The {0} type should be supported.", VEHICLE_GRAPHICS_3D_SIGMA_SCALE.PROBABILITY)
+        if not oCovariance.is_sigma_scale_type_supported(VehicleGraphics3DSigmaScale.PROBABILITY):
+            Assert.fail("The {0} type should be supported.", VehicleGraphics3DSigmaScale.PROBABILITY)
 
-        oCovariance.set_sigma_scale_type(VEHICLE_GRAPHICS_3D_SIGMA_SCALE.PROBABILITY)
+        oCovariance.set_sigma_scale_type(VehicleGraphics3DSigmaScale.PROBABILITY)
         self.m_logger.WriteLine6("The new Sigma Scale type is: {0}", oCovariance.sigma_scale_type)
-        Assert.assertEqual(VEHICLE_GRAPHICS_3D_SIGMA_SCALE.PROBABILITY, oCovariance.sigma_scale_type)
+        Assert.assertEqual(VehicleGraphics3DSigmaScale.PROBABILITY, oCovariance.sigma_scale_type)
 
         oSSPHelper = VOSigmaScaleProbabilityHelper()
         oSSPHelper.Run(VehicleGraphics3DSigmaScaleProbability(oCovariance.sigma_scale))
-        if oCovariance.is_sigma_scale_type_supported(VEHICLE_GRAPHICS_3D_SIGMA_SCALE.UNKNOWN):
+        if oCovariance.is_sigma_scale_type_supported(VehicleGraphics3DSigmaScale.UNKNOWN):
             Assert.fail("The UNKNOWN type should be unsupported!")
 
         with pytest.raises(Exception):
-            oCovariance.set_sigma_scale_type(VEHICLE_GRAPHICS_3D_SIGMA_SCALE.UNKNOWN)
+            oCovariance.set_sigma_scale_type(VehicleGraphics3DSigmaScale.UNKNOWN)
 
         # Attributes test
         arChoices = oCovariance.attributes_supported_types
@@ -398,36 +398,36 @@ class VOCovarianceHelper(object):
                 "\tElement {0}: {1} ({2})",
                 iIndex,
                 arChoices[iIndex][1],
-                VEHICLE_GRAPHICS_3D_ATTRIBUTE_TYPE(int(arChoices[iIndex][0])),
+                VehicleGraphics3DAttributeType(int(arChoices[iIndex][0])),
             )
 
             iIndex += 1
 
         # Basic attributes test
         self.m_logger.WriteLine6("The current Attributes type is: {0}", oCovariance.attributes_type)
-        if not oCovariance.is_attributes_type_supported(VEHICLE_GRAPHICS_3D_ATTRIBUTE_TYPE.BASIC):
-            Assert.fail("The {0} type should be supported.", VEHICLE_GRAPHICS_3D_ATTRIBUTE_TYPE.BASIC)
+        if not oCovariance.is_attributes_type_supported(VehicleGraphics3DAttributeType.BASIC):
+            Assert.fail("The {0} type should be supported.", VehicleGraphics3DAttributeType.BASIC)
 
-        oCovariance.set_attributes_type(VEHICLE_GRAPHICS_3D_ATTRIBUTE_TYPE.BASIC)
+        oCovariance.set_attributes_type(VehicleGraphics3DAttributeType.BASIC)
         self.m_logger.WriteLine6("The new Attributes type is: {0}", oCovariance.attributes_type)
-        Assert.assertEqual(VEHICLE_GRAPHICS_3D_ATTRIBUTE_TYPE.BASIC, oCovariance.attributes_type)
+        Assert.assertEqual(VehicleGraphics3DAttributeType.BASIC, oCovariance.attributes_type)
 
         oABHelper = VOAttributesBasicHelper()
         oABHelper.Run(VehicleGraphics3DAttributesBasic(oCovariance.attributes))
-        if not oCovariance.is_attributes_type_supported(VEHICLE_GRAPHICS_3D_ATTRIBUTE_TYPE.INTERVALS):
-            Assert.fail("The {0} type should be supported.", VEHICLE_GRAPHICS_3D_ATTRIBUTE_TYPE.INTERVALS)
+        if not oCovariance.is_attributes_type_supported(VehicleGraphics3DAttributeType.INTERVALS):
+            Assert.fail("The {0} type should be supported.", VehicleGraphics3DAttributeType.INTERVALS)
 
-        oCovariance.set_attributes_type(VEHICLE_GRAPHICS_3D_ATTRIBUTE_TYPE.INTERVALS)
+        oCovariance.set_attributes_type(VehicleGraphics3DAttributeType.INTERVALS)
         self.m_logger.WriteLine6("The new Attributes type is: {0}", oCovariance.attributes_type)
-        Assert.assertEqual(VEHICLE_GRAPHICS_3D_ATTRIBUTE_TYPE.INTERVALS, oCovariance.attributes_type)
+        Assert.assertEqual(VehicleGraphics3DAttributeType.INTERVALS, oCovariance.attributes_type)
 
         oAIHelper = VOAttributesIntervalsHelper()
         oAIHelper.Run(VehicleGraphics3DAttributesIntervals(oCovariance.attributes))
-        if oCovariance.is_attributes_type_supported(VEHICLE_GRAPHICS_3D_ATTRIBUTE_TYPE.UNKNOWN):
+        if oCovariance.is_attributes_type_supported(VehicleGraphics3DAttributeType.UNKNOWN):
             Assert.fail("The UNKNOWN type should be unsupported!")
 
         with pytest.raises(Exception):
-            oCovariance.set_attributes_type(VEHICLE_GRAPHICS_3D_ATTRIBUTE_TYPE.UNKNOWN)
+            oCovariance.set_attributes_type(VehicleGraphics3DAttributeType.UNKNOWN)
 
         self.m_logger.WriteLine("----- THE VO COVARIANCE TEST ----- END -----")
 
@@ -467,36 +467,36 @@ class VOVelocityCovarianceHelper(object):
                 "\tElement {0}: {1} ({2})",
                 iIndex,
                 arChoices[iIndex][1],
-                VEHICLE_GRAPHICS_3D_ATTRIBUTE_TYPE(int(arChoices[iIndex][0])),
+                VehicleGraphics3DAttributeType(int(arChoices[iIndex][0])),
             )
 
             iIndex += 1
 
         # Basic attributes test
         self.m_logger.WriteLine6("The current Attributes type is: {0}", oVelCovariance.attributes_type)
-        if not oVelCovariance.is_attributes_type_supported(VEHICLE_GRAPHICS_3D_ATTRIBUTE_TYPE.BASIC):
-            Assert.fail("The {0} type should be supported.", VEHICLE_GRAPHICS_3D_ATTRIBUTE_TYPE.BASIC)
+        if not oVelCovariance.is_attributes_type_supported(VehicleGraphics3DAttributeType.BASIC):
+            Assert.fail("The {0} type should be supported.", VehicleGraphics3DAttributeType.BASIC)
 
-        oVelCovariance.set_attributes_type(VEHICLE_GRAPHICS_3D_ATTRIBUTE_TYPE.BASIC)
+        oVelCovariance.set_attributes_type(VehicleGraphics3DAttributeType.BASIC)
         self.m_logger.WriteLine6("The new Attributes type is: {0}", oVelCovariance.attributes_type)
-        Assert.assertEqual(VEHICLE_GRAPHICS_3D_ATTRIBUTE_TYPE.BASIC, oVelCovariance.attributes_type)
+        Assert.assertEqual(VehicleGraphics3DAttributeType.BASIC, oVelCovariance.attributes_type)
 
         oABHelper = VOAttributesBasicHelper()
         oABHelper.Run(VehicleGraphics3DAttributesBasic(oVelCovariance.attributes))
-        if not oVelCovariance.is_attributes_type_supported(VEHICLE_GRAPHICS_3D_ATTRIBUTE_TYPE.INTERVALS):
-            Assert.fail("The {0} type should be supported.", VEHICLE_GRAPHICS_3D_ATTRIBUTE_TYPE.INTERVALS)
+        if not oVelCovariance.is_attributes_type_supported(VehicleGraphics3DAttributeType.INTERVALS):
+            Assert.fail("The {0} type should be supported.", VehicleGraphics3DAttributeType.INTERVALS)
 
-        oVelCovariance.set_attributes_type(VEHICLE_GRAPHICS_3D_ATTRIBUTE_TYPE.INTERVALS)
+        oVelCovariance.set_attributes_type(VehicleGraphics3DAttributeType.INTERVALS)
         self.m_logger.WriteLine6("The new Attributes type is: {0}", oVelCovariance.attributes_type)
-        Assert.assertEqual(VEHICLE_GRAPHICS_3D_ATTRIBUTE_TYPE.INTERVALS, oVelCovariance.attributes_type)
+        Assert.assertEqual(VehicleGraphics3DAttributeType.INTERVALS, oVelCovariance.attributes_type)
 
         oAIHelper = VOAttributesIntervalsHelper()
         oAIHelper.Run(VehicleGraphics3DAttributesIntervals(oVelCovariance.attributes))
-        if oVelCovariance.is_attributes_type_supported(VEHICLE_GRAPHICS_3D_ATTRIBUTE_TYPE.UNKNOWN):
+        if oVelCovariance.is_attributes_type_supported(VehicleGraphics3DAttributeType.UNKNOWN):
             Assert.fail("The UNKNOWN type should be unsupported!")
 
         with pytest.raises(Exception):
-            oVelCovariance.set_attributes_type(VEHICLE_GRAPHICS_3D_ATTRIBUTE_TYPE.UNKNOWN)
+            oVelCovariance.set_attributes_type(VehicleGraphics3DAttributeType.UNKNOWN)
 
         self.m_logger.WriteLine("----- THE VO VELOCITY COVARIANCE TEST ----- END -----")
 
@@ -524,7 +524,7 @@ class VOCovariancePointingContourHelper(object):
                 "\tElement {0} is: {1} ({2})",
                 iIndex,
                 arSupportedTypes[iIndex][1],
-                VEHICLE_GRAPHICS_3D_ATTRIBUTE_TYPE(int(arSupportedTypes[iIndex][0])),
+                VehicleGraphics3DAttributeType(int(arSupportedTypes[iIndex][0])),
             )
 
             iIndex += 1
@@ -534,12 +534,8 @@ class VOCovariancePointingContourHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arSupportedTypes):
-            eType: "VEHICLE_GRAPHICS_3D_ATTRIBUTE_TYPE" = VEHICLE_GRAPHICS_3D_ATTRIBUTE_TYPE(
-                int(arSupportedTypes[iIndex][0])
-            )
-            if (eType != VEHICLE_GRAPHICS_3D_ATTRIBUTE_TYPE.BASIC) and (
-                eType != VEHICLE_GRAPHICS_3D_ATTRIBUTE_TYPE.INTERVALS
-            ):
+            eType: "VehicleGraphics3DAttributeType" = VehicleGraphics3DAttributeType(int(arSupportedTypes[iIndex][0]))
+            if (eType != VehicleGraphics3DAttributeType.BASIC) and (eType != VehicleGraphics3DAttributeType.INTERVALS):
                 Assert.fail("Invalid type: {0}.", eType)
 
             if not oCPContour.is_attributes_type_supported(eType):
@@ -548,12 +544,12 @@ class VOCovariancePointingContourHelper(object):
             self.m_logger.WriteLine6("The current Attributes Type is: {0}", oCPContour.attributes_type)
             oCPContour.set_attributes_type(eType)
             self.m_logger.WriteLine6("The new Attributes Type is: {0}", oCPContour.attributes_type)
-            eType2: "VEHICLE_GRAPHICS_3D_ATTRIBUTE_TYPE" = oCPContour.attributes_type
+            eType2: "VehicleGraphics3DAttributeType" = oCPContour.attributes_type
             Assert.assertEqual(eType, eType2)
-            if eType == VEHICLE_GRAPHICS_3D_ATTRIBUTE_TYPE.BASIC:
+            if eType == VehicleGraphics3DAttributeType.BASIC:
                 oHelper = VOAttributesBasicHelper()
                 oHelper.Run(VehicleGraphics3DAttributesBasic(oCPContour.attributes))
-            elif eType == VEHICLE_GRAPHICS_3D_ATTRIBUTE_TYPE.INTERVALS:
+            elif eType == VehicleGraphics3DAttributeType.INTERVALS:
                 oHelper = VOAttributesIntervalsHelper()
                 oHelper.Run(VehicleGraphics3DAttributesIntervals(oCPContour.attributes))
             else:
@@ -561,12 +557,12 @@ class VOCovariancePointingContourHelper(object):
 
             iIndex += 1
 
-        if oCPContour.is_attributes_type_supported(VEHICLE_GRAPHICS_3D_ATTRIBUTE_TYPE.UNKNOWN):
+        if oCPContour.is_attributes_type_supported(VehicleGraphics3DAttributeType.UNKNOWN):
             Assert.fail("The UNKNOWN type should be unsupported!")
 
         try:
             bCaught = False
-            oCPContour.set_attributes_type(VEHICLE_GRAPHICS_3D_ATTRIBUTE_TYPE.UNKNOWN)
+            oCPContour.set_attributes_type(VehicleGraphics3DAttributeType.UNKNOWN)
 
         except Exception as e:
             bCaught = True
@@ -585,17 +581,15 @@ class VOCovariancePointingContourHelper(object):
                 "\tElement {0} is: {1} ({2})",
                 iIndex,
                 arSupportedTypes[iIndex][1],
-                VEHICLE_GRAPHICS_3D_SIGMA_SCALE(int(arSupportedTypes[iIndex][0])),
+                VehicleGraphics3DSigmaScale(int(arSupportedTypes[iIndex][0])),
             )
 
             iIndex += 1
 
         iIndex: int = 0
         while iIndex < len(arSupportedTypes):
-            eType: "VEHICLE_GRAPHICS_3D_SIGMA_SCALE" = VEHICLE_GRAPHICS_3D_SIGMA_SCALE(int(arSupportedTypes[iIndex][0]))
-            if (eType != VEHICLE_GRAPHICS_3D_SIGMA_SCALE.PROBABILITY) and (
-                eType != VEHICLE_GRAPHICS_3D_SIGMA_SCALE.SCALE
-            ):
+            eType: "VehicleGraphics3DSigmaScale" = VehicleGraphics3DSigmaScale(int(arSupportedTypes[iIndex][0]))
+            if (eType != VehicleGraphics3DSigmaScale.PROBABILITY) and (eType != VehicleGraphics3DSigmaScale.SCALE):
                 Assert.fail("Invalid type: {0}.", eType)
 
             if not oCPContour.is_sigma_scale_type_supported(eType):
@@ -604,12 +598,12 @@ class VOCovariancePointingContourHelper(object):
             self.m_logger.WriteLine6("The current Sigma Scale Type is: {0}", oCPContour.sigma_scale_type)
             oCPContour.set_sigma_scale_type(eType)
             self.m_logger.WriteLine6("The new Sigma Scale Type is: {0}", oCPContour.sigma_scale_type)
-            eType2: "VEHICLE_GRAPHICS_3D_SIGMA_SCALE" = oCPContour.sigma_scale_type
+            eType2: "VehicleGraphics3DSigmaScale" = oCPContour.sigma_scale_type
             Assert.assertEqual(eType, eType2)
-            if eType == VEHICLE_GRAPHICS_3D_SIGMA_SCALE.PROBABILITY:
+            if eType == VehicleGraphics3DSigmaScale.PROBABILITY:
                 oSSPHelper = VOSigmaScaleProbabilityHelper()
                 oSSPHelper.Run(VehicleGraphics3DSigmaScaleProbability(oCPContour.sigma_scale))
-            elif eType == VEHICLE_GRAPHICS_3D_SIGMA_SCALE.SCALE:
+            elif eType == VehicleGraphics3DSigmaScale.SCALE:
                 oSSSHelper = VOSigmaScaleScaleHelper()
                 oSSSHelper.Run(VehicleGraphics3DSigmaScaleScale(oCPContour.sigma_scale))
             else:
@@ -617,12 +611,12 @@ class VOCovariancePointingContourHelper(object):
 
             iIndex += 1
 
-        if oCPContour.is_sigma_scale_type_supported(VEHICLE_GRAPHICS_3D_SIGMA_SCALE.UNKNOWN):
+        if oCPContour.is_sigma_scale_type_supported(VehicleGraphics3DSigmaScale.UNKNOWN):
             Assert.fail("The UNKNOWN type should be unsupported!")
 
         try:
             bCaught = False
-            oCPContour.set_sigma_scale_type(VEHICLE_GRAPHICS_3D_SIGMA_SCALE.UNKNOWN)
+            oCPContour.set_sigma_scale_type(VehicleGraphics3DSigmaScale.UNKNOWN)
 
         except Exception as e:
             bCaught = True
@@ -722,10 +716,10 @@ class VODropLinePosItemCollectionHelper(object):
                 dropLinePosItem.color = Colors.from_argb(16448250)
             # LineWidth
             with pytest.raises(Exception):
-                dropLinePosItem.line_width = LINE_WIDTH.WIDTH3
+                dropLinePosItem.line_width = LineWidth.WIDTH3
             # LineStyle
             with pytest.raises(Exception):
-                dropLinePosItem.line_style = LINE_STYLE.DOTTED
+                dropLinePosItem.line_style = LineStyle.DOTTED
             # IsVisible (true)
             dropLinePosItem.show_graphics = True
             self.m_logger.WriteLine4("\tThe new IsVisible flag is: {0}", dropLinePosItem.show_graphics)
@@ -749,14 +743,14 @@ class VODropLinePosItemCollectionHelper(object):
             AssertEx.AreEqual(Colors.from_argb(16448175), dropLinePosItem.color)
             # LineWidth
             self.m_logger.WriteLine6("\tThe current LineWidth  is: {0}", dropLinePosItem.line_width)
-            dropLinePosItem.line_width = LINE_WIDTH.WIDTH3
+            dropLinePosItem.line_width = LineWidth.WIDTH3
             self.m_logger.WriteLine6("\tThe new LineWidth is: {0}", dropLinePosItem.line_width)
-            Assert.assertEqual(LINE_WIDTH.WIDTH3, dropLinePosItem.line_width)
+            Assert.assertEqual(LineWidth.WIDTH3, dropLinePosItem.line_width)
             # LineStyle
             self.m_logger.WriteLine6("\tThe current LineStyle is: {0}", dropLinePosItem.line_style)
-            dropLinePosItem.line_style = LINE_STYLE.DASHED  # Dashed
+            dropLinePosItem.line_style = LineStyle.DASHED  # Dashed
             self.m_logger.WriteLine6("\tThe new LineStyle is: {0}", dropLinePosItem.line_style)
-            Assert.assertEqual(LINE_STYLE.DASHED, dropLinePosItem.line_style)
+            Assert.assertEqual(LineStyle.DASHED, dropLinePosItem.line_style)
 
             iIndex += 1
 
@@ -801,10 +795,10 @@ class VODropLinePathItemCollectionHelper(object):
                 dropLinePathItem.color = Colors.from_argb(16448250)
             # LineWidth
             with pytest.raises(Exception):
-                dropLinePathItem.line_width = LINE_WIDTH.WIDTH3
+                dropLinePathItem.line_width = LineWidth.WIDTH3
             # LineStyle
             with pytest.raises(Exception):
-                dropLinePathItem.line_style = LINE_STYLE.SOLID
+                dropLinePathItem.line_style = LineStyle.SOLID
             # Interval
             with pytest.raises(Exception):
                 dropLinePathItem.interval = 123.456
@@ -831,14 +825,14 @@ class VODropLinePathItemCollectionHelper(object):
             AssertEx.AreEqual(Colors.from_argb(16448018), dropLinePathItem.color)
             # LineWidth
             self.m_logger.WriteLine6("\tThe current LineWidth  is: {0}", dropLinePathItem.line_width)
-            dropLinePathItem.line_width = LINE_WIDTH.WIDTH3
+            dropLinePathItem.line_width = LineWidth.WIDTH3
             self.m_logger.WriteLine6("\tThe new LineWidth is: {0}", dropLinePathItem.line_width)
-            Assert.assertEqual(LINE_WIDTH.WIDTH3, dropLinePathItem.line_width)
+            Assert.assertEqual(LineWidth.WIDTH3, dropLinePathItem.line_width)
             # LineStyle
             self.m_logger.WriteLine6("\tThe current LineStyle is: {0}", dropLinePathItem.line_style)
-            dropLinePathItem.line_style = LINE_STYLE.DASHED  # Dashed
+            dropLinePathItem.line_style = LineStyle.DASHED  # Dashed
             self.m_logger.WriteLine6("\tThe new LineStyle is: {0}", dropLinePathItem.line_style)
-            Assert.assertEqual(LINE_STYLE.DASHED, dropLinePathItem.line_style)
+            Assert.assertEqual(LineStyle.DASHED, dropLinePathItem.line_style)
             # Interval
             self.m_logger.WriteLine6("\tThe current Interval is: {0}", dropLinePathItem.interval)
             dropLinePathItem.interval = 123.456
@@ -1052,18 +1046,18 @@ class VORouteModelHelper(object):
             TestBase.ModelDirectory, "scaling_sphere.mdl"
         )  # need a model that does not support GLTF settings
         with pytest.raises(Exception, match=RegexSubstringMatch("glTF settings are not available")):
-            oModel.gltf_reflection_map_type = MODEL_GLTF_REFLECTION_MAP_TYPE.PROCEDURAL_ENVIRONMENT
+            oModel.gltf_reflection_map_type = ModelGltfReflectionMapType.PROCEDURAL_ENVIRONMENT
         (
             clr.CastAs(oModel.model_data, Graphics3DModelFile)
         ).filename = r"STKData\VO\Models\Land\facility.glb"  # need a model that supports GLTF settings
-        oModel.gltf_reflection_map_type = MODEL_GLTF_REFLECTION_MAP_TYPE.PROCEDURAL_ENVIRONMENT
-        Assert.assertEqual(MODEL_GLTF_REFLECTION_MAP_TYPE.PROCEDURAL_ENVIRONMENT, oModel.gltf_reflection_map_type)
+        oModel.gltf_reflection_map_type = ModelGltfReflectionMapType.PROCEDURAL_ENVIRONMENT
+        Assert.assertEqual(ModelGltfReflectionMapType.PROCEDURAL_ENVIRONMENT, oModel.gltf_reflection_map_type)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("is not set to Image Based")):
             x: "Graphics3DModelglTFImageBased" = oModel.gltf_image_based
 
-        oModel.gltf_reflection_map_type = MODEL_GLTF_REFLECTION_MAP_TYPE.IMAGE_BASED
-        Assert.assertEqual(MODEL_GLTF_REFLECTION_MAP_TYPE.IMAGE_BASED, oModel.gltf_reflection_map_type)
+        oModel.gltf_reflection_map_type = ModelGltfReflectionMapType.IMAGE_BASED
+        Assert.assertEqual(ModelGltfReflectionMapType.IMAGE_BASED, oModel.gltf_reflection_map_type)
 
         gltfImageBased: "Graphics3DModelglTFImageBased" = oModel.gltf_image_based
         gltfImageBased.filename = TestBase.GetScenarioFile("over_the_clouds.hdr")
@@ -1130,9 +1124,9 @@ class VOMarkerHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             oMarker.angle = 1.23
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-            oMarker.marker_type = MARKER_TYPE.IMAGE_FILE
+            oMarker.marker_type = MarkerType.IMAGE_FILE
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            oMarker.orientation_mode = GRAPHICS_3D_MARKER_ORIENTATION.ANGLE
+            oMarker.orientation_mode = Graphics3DMarkerOrientation.ANGLE
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             oMarker.pixel_size = 1
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
@@ -1142,26 +1136,26 @@ class VOMarkerHelper(object):
         oMarker.visible = True
         Assert.assertTrue(oMarker.visible)
 
-        oMarker.marker_type = MARKER_TYPE.SHAPE
-        Assert.assertEqual(MARKER_TYPE.SHAPE, oMarker.marker_type)
+        oMarker.marker_type = MarkerType.SHAPE
+        Assert.assertEqual(MarkerType.SHAPE, oMarker.marker_type)
 
         oShape: "Graphics3DMarkerShape" = clr.CastAs(oMarker.marker_data, Graphics3DMarkerShape)
         Assert.assertIsNotNone(oShape)
-        oShape.style = MARKER_SHAPE_3D.SHAPE_CIRCLE
-        Assert.assertEqual(MARKER_SHAPE_3D.SHAPE_CIRCLE, oShape.style)
-        oShape.style = MARKER_SHAPE_3D.SHAPE_POINT
-        Assert.assertEqual(MARKER_SHAPE_3D.SHAPE_POINT, oShape.style)
+        oShape.style = MarkerShape3d.SHAPE_CIRCLE
+        Assert.assertEqual(MarkerShape3d.SHAPE_CIRCLE, oShape.style)
+        oShape.style = MarkerShape3d.SHAPE_POINT
+        Assert.assertEqual(MarkerShape3d.SHAPE_POINT, oShape.style)
         with pytest.raises(STKInvalidCastError):
             voMarkerFileX: "Graphics3DMarkerFile" = Graphics3DMarkerFile(oMarker.marker_data)
 
         oMarker.marker_type = (
-            MARKER_TYPE.IMAGE_FILE
+            MarkerType.IMAGE_FILE
         )  # This property will not be set to this enum. See below, and see helpstrings.
         oMarker.set_marker_image_filename(
             TestBase.PathCombine("STKData", "VO", "Markers", "Ship.ppm")
         )  # This will set the MarkerType to IMAGE_FILE
 
-        Assert.assertEqual(MARKER_TYPE.IMAGE_FILE, oMarker.marker_type)
+        Assert.assertEqual(MarkerType.IMAGE_FILE, oMarker.marker_type)
         oFile: "Graphics3DMarkerFile" = clr.CastAs(oMarker.marker_data, Graphics3DMarkerFile)
         Assert.assertIsNotNone(oFile)
         self.Test_IAgVOMarkerFile(oFile)
@@ -1173,24 +1167,24 @@ class VOMarkerHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             oMarker.pixel_size = 1234
 
-        oMarker.x_origin = GRAPHICS_3D_MARKER_ORIGIN_TYPE.RIGHT
-        Assert.assertEqual(GRAPHICS_3D_MARKER_ORIGIN_TYPE.RIGHT, oMarker.x_origin)
+        oMarker.x_origin = Graphics3DMarkerOriginType.RIGHT
+        Assert.assertEqual(Graphics3DMarkerOriginType.RIGHT, oMarker.x_origin)
         with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid")):
-            oMarker.x_origin = GRAPHICS_3D_MARKER_ORIGIN_TYPE.TOP
+            oMarker.x_origin = Graphics3DMarkerOriginType.TOP
 
-        oMarker.y_origin = GRAPHICS_3D_MARKER_ORIGIN_TYPE.BOTTOM
-        Assert.assertEqual(GRAPHICS_3D_MARKER_ORIGIN_TYPE.BOTTOM, oMarker.y_origin)
+        oMarker.y_origin = Graphics3DMarkerOriginType.BOTTOM
+        Assert.assertEqual(Graphics3DMarkerOriginType.BOTTOM, oMarker.y_origin)
         with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid")):
-            oMarker.y_origin = GRAPHICS_3D_MARKER_ORIGIN_TYPE.LEFT
+            oMarker.y_origin = Graphics3DMarkerOriginType.LEFT
 
-        oMarker.orientation_mode = GRAPHICS_3D_MARKER_ORIENTATION.NONE
-        Assert.assertEqual(GRAPHICS_3D_MARKER_ORIENTATION.NONE, oMarker.orientation_mode)
+        oMarker.orientation_mode = Graphics3DMarkerOrientation.NONE
+        Assert.assertEqual(Graphics3DMarkerOrientation.NONE, oMarker.orientation_mode)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             oMarker.angle = 1.23
         if bIsVehicle:
-            oMarker.orientation_mode = GRAPHICS_3D_MARKER_ORIENTATION.FOLLOW_DIRECTION
-            Assert.assertEqual(GRAPHICS_3D_MARKER_ORIENTATION.FOLLOW_DIRECTION, oMarker.orientation_mode)
+            oMarker.orientation_mode = Graphics3DMarkerOrientation.FOLLOW_DIRECTION
+            Assert.assertEqual(Graphics3DMarkerOrientation.FOLLOW_DIRECTION, oMarker.orientation_mode)
 
             oMarker.angle = 1.23456
             Assert.assertEqual(1.23456, oMarker.angle)
@@ -1199,10 +1193,10 @@ class VOMarkerHelper(object):
 
         else:
             with pytest.raises(Exception, match=RegexSubstringMatch("Only supported for vehicle")):
-                oMarker.orientation_mode = GRAPHICS_3D_MARKER_ORIENTATION.FOLLOW_DIRECTION
+                oMarker.orientation_mode = Graphics3DMarkerOrientation.FOLLOW_DIRECTION
 
-        oMarker.orientation_mode = GRAPHICS_3D_MARKER_ORIENTATION.ANGLE
-        Assert.assertEqual(GRAPHICS_3D_MARKER_ORIENTATION.ANGLE, oMarker.orientation_mode)
+        oMarker.orientation_mode = Graphics3DMarkerOrientation.ANGLE
+        Assert.assertEqual(Graphics3DMarkerOrientation.ANGLE, oMarker.orientation_mode)
 
         oMarker.angle = 1.23456
         Assert.assertEqual(1.23456, oMarker.angle)
@@ -1237,7 +1231,7 @@ class VOModelHelper(object):
         with pytest.raises(Exception):
             oModel.scale_value = 3.3
         with pytest.raises(Exception):
-            oModel.model_type = MODEL_TYPE.FILE
+            oModel.model_type = ModelType.FILE
 
         oModel.visible = True
         self.m_logger.WriteLine4("\tThe new Visible flag is: {0}", oModel.visible)
@@ -1252,9 +1246,9 @@ class VOModelHelper(object):
 
         # ModelType (File)
         self.m_logger.WriteLine6("\tThe current ModelType is: {0}", oModel.model_type)
-        oModel.model_type = MODEL_TYPE.FILE
+        oModel.model_type = ModelType.FILE
         self.m_logger.WriteLine6("\tThe new ModelType is: {0}", oModel.model_type)
-        Assert.assertEqual(MODEL_TYPE.FILE, oModel.model_type)
+        Assert.assertEqual(ModelType.FILE, oModel.model_type)
         oModelFile: "Graphics3DModelFile" = clr.CastAs(oModel.model_data, Graphics3DModelFile)
         Assert.assertIsNotNone(oModelFile)
         self.m_logger.WriteLine5("\t\tThe current Filename is: {0}", oModelFile.filename)
@@ -1272,9 +1266,9 @@ class VOModelHelper(object):
         Assert.assertEqual(TestBase.GetScenarioFile("VO", "Models", "satellite.dae"), oModelFile.file_path)
 
         # ModelType (List)
-        oModel.model_type = MODEL_TYPE.LIST
+        oModel.model_type = ModelType.LIST
         self.m_logger.WriteLine6("\tThe new ModelType is: {0}", oModel.model_type)
-        Assert.assertEqual(MODEL_TYPE.LIST, oModel.model_type)
+        Assert.assertEqual(ModelType.LIST, oModel.model_type)
         oModelList: "Graphics3DModelCollection" = clr.CastAs(oModel.model_data, Graphics3DModelCollection)
         Assert.assertIsNotNone(oModelList)
         iSize: int = oModelList.count
@@ -1369,12 +1363,12 @@ class VOModelHelper(object):
         # invoked. This way the users do not have to call EndUpdate
         # after setting a new model to set desired articulations.
         # ------------------------------------------------------------
-        oModel.model_type = MODEL_TYPE.FILE
-        Assert.assertTrue((oModel.model_type == MODEL_TYPE.FILE))
+        oModel.model_type = ModelType.FILE
+        Assert.assertTrue((oModel.model_type == ModelType.FILE))
         oldModel: str = (clr.CastAs(oModel.model_data, Graphics3DModelFile)).filename
         self._root.begin_update()
         try:
-            oModel.model_type = MODEL_TYPE.FILE
+            oModel.model_type = ModelType.FILE
             modelFile: "Graphics3DModelFile" = clr.CastAs(oModel.model_data, Graphics3DModelFile)
             modelFile.filename = Path.Combine(TestBase.ModelDirectory, "hubble.glb")
 
@@ -1383,7 +1377,7 @@ class VOModelHelper(object):
         finally:
             self._root.end_update()
 
-        oModel.model_type = MODEL_TYPE.LIST
+        oModel.model_type = ModelType.LIST
         modelList: "Graphics3DModelCollection" = clr.CastAs(oModel.model_data, Graphics3DModelCollection)
         while modelList.count > 1:
             modelList.remove((modelList.count - 1))
@@ -1398,7 +1392,7 @@ class VOModelHelper(object):
 
         finally:
             self._root.end_update()
-            oModel.model_type = MODEL_TYPE.FILE
+            oModel.model_type = ModelType.FILE
 
     # endregion
 
@@ -1721,18 +1715,18 @@ class VOTargetModelHelper(object):
             TestBase.ModelDirectory, "scaling_sphere.mdl"
         )  # need a model that does not support GLTF settings
         with pytest.raises(Exception, match=RegexSubstringMatch("glTF settings are not available")):
-            oModel.gltf_reflection_map_type = MODEL_GLTF_REFLECTION_MAP_TYPE.PROCEDURAL_ENVIRONMENT
+            oModel.gltf_reflection_map_type = ModelGltfReflectionMapType.PROCEDURAL_ENVIRONMENT
         (
             clr.CastAs(oModel.model_data, Graphics3DModelFile)
         ).filename = r"STKData\VO\Models\Land\facility.glb"  # need a model that supports GLTF settings
-        oModel.gltf_reflection_map_type = MODEL_GLTF_REFLECTION_MAP_TYPE.PROCEDURAL_ENVIRONMENT
-        Assert.assertEqual(MODEL_GLTF_REFLECTION_MAP_TYPE.PROCEDURAL_ENVIRONMENT, oModel.gltf_reflection_map_type)
+        oModel.gltf_reflection_map_type = ModelGltfReflectionMapType.PROCEDURAL_ENVIRONMENT
+        Assert.assertEqual(ModelGltfReflectionMapType.PROCEDURAL_ENVIRONMENT, oModel.gltf_reflection_map_type)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("is not set to Image Based")):
             x: "Graphics3DModelglTFImageBased" = oModel.gltf_image_based
 
-        oModel.gltf_reflection_map_type = MODEL_GLTF_REFLECTION_MAP_TYPE.IMAGE_BASED
-        Assert.assertEqual(MODEL_GLTF_REFLECTION_MAP_TYPE.IMAGE_BASED, oModel.gltf_reflection_map_type)
+        oModel.gltf_reflection_map_type = ModelGltfReflectionMapType.IMAGE_BASED
+        Assert.assertEqual(ModelGltfReflectionMapType.IMAGE_BASED, oModel.gltf_reflection_map_type)
 
         gltfImageBased: "Graphics3DModelglTFImageBased" = oModel.gltf_image_based
         gltfImageBased.filename = TestBase.GetScenarioFile("over_the_clouds.hdr")
@@ -1794,18 +1788,18 @@ class VOTrajectoryModelHelper(object):
             TestBase.ModelDirectory, "scaling_sphere.mdl"
         )  # need a model that does not support GLTF settings
         with pytest.raises(Exception, match=RegexSubstringMatch("glTF settings are not available")):
-            oModel.gltf_reflection_map_type = MODEL_GLTF_REFLECTION_MAP_TYPE.PROCEDURAL_ENVIRONMENT
+            oModel.gltf_reflection_map_type = ModelGltfReflectionMapType.PROCEDURAL_ENVIRONMENT
         (
             clr.CastAs(oModel.model_data, Graphics3DModelFile)
         ).filename = r"STKData\VO\Models\Land\facility.glb"  # need a model that supports GLTF settings
-        oModel.gltf_reflection_map_type = MODEL_GLTF_REFLECTION_MAP_TYPE.PROCEDURAL_ENVIRONMENT
-        Assert.assertEqual(MODEL_GLTF_REFLECTION_MAP_TYPE.PROCEDURAL_ENVIRONMENT, oModel.gltf_reflection_map_type)
+        oModel.gltf_reflection_map_type = ModelGltfReflectionMapType.PROCEDURAL_ENVIRONMENT
+        Assert.assertEqual(ModelGltfReflectionMapType.PROCEDURAL_ENVIRONMENT, oModel.gltf_reflection_map_type)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("is not set to Image Based")):
             x: "Graphics3DModelglTFImageBased" = oModel.gltf_image_based
 
-        oModel.gltf_reflection_map_type = MODEL_GLTF_REFLECTION_MAP_TYPE.IMAGE_BASED
-        Assert.assertEqual(MODEL_GLTF_REFLECTION_MAP_TYPE.IMAGE_BASED, oModel.gltf_reflection_map_type)
+        oModel.gltf_reflection_map_type = ModelGltfReflectionMapType.IMAGE_BASED
+        Assert.assertEqual(ModelGltfReflectionMapType.IMAGE_BASED, oModel.gltf_reflection_map_type)
 
         gltfImageBased: "Graphics3DModelglTFImageBased" = oModel.gltf_image_based
         gltfImageBased.filename = TestBase.GetScenarioFile("over_the_clouds.hdr")
@@ -1877,18 +1871,18 @@ class VOSatelliteModelHelper(object):
             TestBase.ModelDirectory, "scaling_sphere.mdl"
         )  # need a model that does not support GLTF settings
         with pytest.raises(Exception, match=RegexSubstringMatch("glTF settings are not available")):
-            oModel.gltf_reflection_map_type = MODEL_GLTF_REFLECTION_MAP_TYPE.PROCEDURAL_ENVIRONMENT
+            oModel.gltf_reflection_map_type = ModelGltfReflectionMapType.PROCEDURAL_ENVIRONMENT
         (
             clr.CastAs(oModel.model_data, Graphics3DModelFile)
         ).filename = r"STKData\VO\Models\Land\facility.glb"  # need a model that supports GLTF settings
-        oModel.gltf_reflection_map_type = MODEL_GLTF_REFLECTION_MAP_TYPE.PROCEDURAL_ENVIRONMENT
-        Assert.assertEqual(MODEL_GLTF_REFLECTION_MAP_TYPE.PROCEDURAL_ENVIRONMENT, oModel.gltf_reflection_map_type)
+        oModel.gltf_reflection_map_type = ModelGltfReflectionMapType.PROCEDURAL_ENVIRONMENT
+        Assert.assertEqual(ModelGltfReflectionMapType.PROCEDURAL_ENVIRONMENT, oModel.gltf_reflection_map_type)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("is not set to Image Based")):
             x: "Graphics3DModelglTFImageBased" = oModel.gltf_image_based
 
-        oModel.gltf_reflection_map_type = MODEL_GLTF_REFLECTION_MAP_TYPE.IMAGE_BASED
-        Assert.assertEqual(MODEL_GLTF_REFLECTION_MAP_TYPE.IMAGE_BASED, oModel.gltf_reflection_map_type)
+        oModel.gltf_reflection_map_type = ModelGltfReflectionMapType.IMAGE_BASED
+        Assert.assertEqual(ModelGltfReflectionMapType.IMAGE_BASED, oModel.gltf_reflection_map_type)
 
         gltfImageBased: "Graphics3DModelglTFImageBased" = oModel.gltf_image_based
         gltfImageBased.filename = TestBase.GetScenarioFile("over_the_clouds.hdr")
@@ -2441,7 +2435,7 @@ class VOOffsetLabelHelper(object):
                 oLabel.enable = False
             # OffsetFrame
             with pytest.raises(Exception):
-                oLabel.offset_frame = OFFSET_FRAME_TYPE.CARTESIAN
+                oLabel.offset_frame = OffsetFrameType.CARTESIAN
             # X
             with pytest.raises(Exception):
                 oLabel.x = 10.1
@@ -2460,7 +2454,7 @@ class VOOffsetLabelHelper(object):
             Assert.assertEqual(False, oLabel.enable)
             # OffsetFrame
             with pytest.raises(Exception):
-                oLabel.offset_frame = OFFSET_FRAME_TYPE.CARTESIAN
+                oLabel.offset_frame = OffsetFrameType.CARTESIAN
             # X
             with pytest.raises(Exception):
                 oLabel.x = 10.1
@@ -2476,9 +2470,9 @@ class VOOffsetLabelHelper(object):
             Assert.assertEqual(True, oLabel.enable)
             # OffsetFrame (Cartesian)
             self.m_logger.WriteLine6("\t\t\tThe current OffsetFrame is: {0}", oLabel.offset_frame)
-            oLabel.offset_frame = OFFSET_FRAME_TYPE.CARTESIAN
+            oLabel.offset_frame = OffsetFrameType.CARTESIAN
             self.m_logger.WriteLine6("\t\t\tThe new OffsetFrame is: {0}", oLabel.offset_frame)
-            Assert.assertEqual(OFFSET_FRAME_TYPE.CARTESIAN, oLabel.offset_frame)
+            Assert.assertEqual(OffsetFrameType.CARTESIAN, oLabel.offset_frame)
             # X
             self.m_logger.WriteLine6("\t\t\t\tThe current X is: {0}", oLabel.x)
             oLabel.x = 10.1
@@ -2501,9 +2495,9 @@ class VOOffsetLabelHelper(object):
             with pytest.raises(Exception):
                 oLabel.z = 210900000000000000000000000000000000.0
             # OffsetFrame (Pixel)
-            oLabel.offset_frame = OFFSET_FRAME_TYPE.PIXEL
+            oLabel.offset_frame = OffsetFrameType.PIXEL
             self.m_logger.WriteLine6("\t\t\tThe new OffsetFrame is: {0}", oLabel.offset_frame)
-            Assert.assertEqual(OFFSET_FRAME_TYPE.PIXEL, oLabel.offset_frame)
+            Assert.assertEqual(OffsetFrameType.PIXEL, oLabel.offset_frame)
             # X
             self.m_logger.WriteLine6("\t\t\t\tThe current X is: {0}", oLabel.x)
             oLabel.x = 13.13
@@ -2604,10 +2598,10 @@ class VOProximityHelper(object):
             oAreaObject.show_text = True
         # LineStyle (readonly)
         with pytest.raises(Exception):
-            oAreaObject.line_style = LINE_STYLE.DASHED
+            oAreaObject.line_style = LineStyle.DASHED
         # LineWidth (readonly)
         with pytest.raises(Exception):
-            oAreaObject.line_width = LINE_WIDTH.WIDTH2
+            oAreaObject.line_width = LineWidth.WIDTH2
         # Text (readonly)
         with pytest.raises(Exception):
             oAreaObject.text = "Area Of Uncertainty"
@@ -2647,14 +2641,14 @@ class VOProximityHelper(object):
         Assert.assertEqual(True, oAreaObject.show_text)
         # LineStyle
         self.m_logger.WriteLine6("\tThe current LineStyle is: {0}", oAreaObject.line_style)
-        oAreaObject.line_style = LINE_STYLE.DASHED
+        oAreaObject.line_style = LineStyle.DASHED
         self.m_logger.WriteLine6("\tThe new LineStyle is: {0}", oAreaObject.line_style)
-        Assert.assertEqual(LINE_STYLE.DASHED, oAreaObject.line_style)
+        Assert.assertEqual(LineStyle.DASHED, oAreaObject.line_style)
         # LineWidth
         self.m_logger.WriteLine6("\tThe current LineWidth is: {0}", oAreaObject.line_width)
-        oAreaObject.line_width = LINE_WIDTH.WIDTH2
+        oAreaObject.line_width = LineWidth.WIDTH2
         self.m_logger.WriteLine6("\tThe new LineWidth is: {0}", oAreaObject.line_width)
-        Assert.assertEqual(LINE_WIDTH.WIDTH2, oAreaObject.line_width)
+        Assert.assertEqual(LineWidth.WIDTH2, oAreaObject.line_width)
 
     # endregion
 
@@ -3005,7 +2999,7 @@ class VOProximityHelper(object):
             oBox.error_color = Colors.from_argb(9991764)
         # ErrorLineWidth (readonly)
         with pytest.raises(Exception):
-            oBox.error_line_width = LINE_WIDTH.WIDTH5
+            oBox.error_line_width = LineWidth.WIDTH5
         # IsVisible (true)
         oBox.show_graphics = True
         self.m_logger.WriteLine4("\tThe new IsVisible flag is: {0}", oBox.show_graphics)
@@ -3055,9 +3049,9 @@ class VOProximityHelper(object):
         AssertEx.AreEqual(Colors.from_argb(11259375), oBox.error_color)
         # ErrorLineWidth
         self.m_logger.WriteLine6("\tThe current ErrorLineWidth is: {0}", oBox.error_line_width)
-        oBox.error_line_width = LINE_WIDTH.WIDTH4
+        oBox.error_line_width = LineWidth.WIDTH4
         self.m_logger.WriteLine6("\tThe new ErrorLineWidth is: {0}", oBox.error_line_width)
-        Assert.assertEqual(LINE_WIDTH.WIDTH4, oBox.error_line_width)
+        Assert.assertEqual(LineWidth.WIDTH4, oBox.error_line_width)
         # restore AngleUnit
         self.m_oUnits.set_current_unit("AngleUnit", strAngleUnit)
         self.m_logger.WriteLine5("\tThe new AngleUnit (restored) is: {0}", strAngleUnit)
@@ -3345,10 +3339,10 @@ class VOBorderWallHelper(object):
             oWall.use_border_wall = False
         # UpperEdgeAltRef
         with pytest.raises(Exception):
-            oWall.upper_edge_altitude_reference = BORDER_WALL_UPPER_LOWER_EDGE_ALTITUDE_REFERENCE.MEAN_SEA_LEVEL
+            oWall.upper_edge_altitude_reference = BorderWallUpperLowerEdgeAltitudeReference.MEAN_SEA_LEVEL
         # LowerEdgeAltRef
         with pytest.raises(Exception):
-            oWall.lower_edge_altitude_reference = BORDER_WALL_UPPER_LOWER_EDGE_ALTITUDE_REFERENCE.TERRAIN
+            oWall.lower_edge_altitude_reference = BorderWallUpperLowerEdgeAltitudeReference.TERRAIN
         # UpperEdgeHeight
         with pytest.raises(Exception):
             oWall.upper_edge_height = 12.34
@@ -3381,10 +3375,10 @@ class VOBorderWallHelper(object):
         Assert.assertEqual(False, oWall.use_border_wall)
         # UpperEdgeAltRef
         with pytest.raises(Exception):
-            oWall.upper_edge_altitude_reference = BORDER_WALL_UPPER_LOWER_EDGE_ALTITUDE_REFERENCE.MEAN_SEA_LEVEL
+            oWall.upper_edge_altitude_reference = BorderWallUpperLowerEdgeAltitudeReference.MEAN_SEA_LEVEL
         # LowerEdgeAltRef
         with pytest.raises(Exception):
-            oWall.lower_edge_altitude_reference = BORDER_WALL_UPPER_LOWER_EDGE_ALTITUDE_REFERENCE.TERRAIN
+            oWall.lower_edge_altitude_reference = BorderWallUpperLowerEdgeAltitudeReference.TERRAIN
         # UpperEdgeHeight
         with pytest.raises(Exception):
             oWall.upper_edge_height = 12.34
@@ -3418,37 +3412,37 @@ class VOBorderWallHelper(object):
         # IsAltRefTypeSupported
         self.m_logger.WriteLine4(
             "\tIsAltRefTypeSupported MEAN_SEA_LEVEL is: {0}",
-            oWall.is_altitude_reference_type_supported(BORDER_WALL_UPPER_LOWER_EDGE_ALTITUDE_REFERENCE.MEAN_SEA_LEVEL),
+            oWall.is_altitude_reference_type_supported(BorderWallUpperLowerEdgeAltitudeReference.MEAN_SEA_LEVEL),
         )
         self.m_logger.WriteLine4(
             "\tIsAltRefTypeSupported OBJECT is: {0}",
-            oWall.is_altitude_reference_type_supported(BORDER_WALL_UPPER_LOWER_EDGE_ALTITUDE_REFERENCE.OBJECT),
+            oWall.is_altitude_reference_type_supported(BorderWallUpperLowerEdgeAltitudeReference.OBJECT),
         )
         self.m_logger.WriteLine4(
             "\tIsAltRefTypeSupported TERRAIN is: {0}",
-            oWall.is_altitude_reference_type_supported(BORDER_WALL_UPPER_LOWER_EDGE_ALTITUDE_REFERENCE.TERRAIN),
+            oWall.is_altitude_reference_type_supported(BorderWallUpperLowerEdgeAltitudeReference.TERRAIN),
         )
         self.m_logger.WriteLine4(
             "\tIsAltRefTypeSupported WGS84 is: {0}",
-            oWall.is_altitude_reference_type_supported(BORDER_WALL_UPPER_LOWER_EDGE_ALTITUDE_REFERENCE.WGS84),
+            oWall.is_altitude_reference_type_supported(BorderWallUpperLowerEdgeAltitudeReference.WGS84),
         )
 
         # UpperEdgeAltRef
         self.m_logger.WriteLine6("\t\tThe current UpperEdge is: {0}", oWall.upper_edge_altitude_reference)
-        oWall.upper_edge_altitude_reference = BORDER_WALL_UPPER_LOWER_EDGE_ALTITUDE_REFERENCE.MEAN_SEA_LEVEL
+        oWall.upper_edge_altitude_reference = BorderWallUpperLowerEdgeAltitudeReference.MEAN_SEA_LEVEL
         self.m_logger.WriteLine6("\t\tThe new UpperEdge is: {0}", oWall.upper_edge_altitude_reference)
         Assert.assertEqual(
-            BORDER_WALL_UPPER_LOWER_EDGE_ALTITUDE_REFERENCE.MEAN_SEA_LEVEL, oWall.upper_edge_altitude_reference
+            BorderWallUpperLowerEdgeAltitudeReference.MEAN_SEA_LEVEL, oWall.upper_edge_altitude_reference
         )
-        oWall.upper_edge_altitude_reference = BORDER_WALL_UPPER_LOWER_EDGE_ALTITUDE_REFERENCE.OBJECT
+        oWall.upper_edge_altitude_reference = BorderWallUpperLowerEdgeAltitudeReference.OBJECT
         self.m_logger.WriteLine6("\t\tThe new UpperEdge is: {0}", oWall.upper_edge_altitude_reference)
-        Assert.assertEqual(BORDER_WALL_UPPER_LOWER_EDGE_ALTITUDE_REFERENCE.OBJECT, oWall.upper_edge_altitude_reference)
-        oWall.upper_edge_altitude_reference = BORDER_WALL_UPPER_LOWER_EDGE_ALTITUDE_REFERENCE.TERRAIN
+        Assert.assertEqual(BorderWallUpperLowerEdgeAltitudeReference.OBJECT, oWall.upper_edge_altitude_reference)
+        oWall.upper_edge_altitude_reference = BorderWallUpperLowerEdgeAltitudeReference.TERRAIN
         self.m_logger.WriteLine6("\t\tThe new UpperEdge is: {0}", oWall.upper_edge_altitude_reference)
-        Assert.assertEqual(BORDER_WALL_UPPER_LOWER_EDGE_ALTITUDE_REFERENCE.TERRAIN, oWall.upper_edge_altitude_reference)
-        oWall.upper_edge_altitude_reference = BORDER_WALL_UPPER_LOWER_EDGE_ALTITUDE_REFERENCE.WGS84
+        Assert.assertEqual(BorderWallUpperLowerEdgeAltitudeReference.TERRAIN, oWall.upper_edge_altitude_reference)
+        oWall.upper_edge_altitude_reference = BorderWallUpperLowerEdgeAltitudeReference.WGS84
         self.m_logger.WriteLine6("\t\tThe new UpperEdge is: {0}", oWall.upper_edge_altitude_reference)
-        Assert.assertEqual(BORDER_WALL_UPPER_LOWER_EDGE_ALTITUDE_REFERENCE.WGS84, oWall.upper_edge_altitude_reference)
+        Assert.assertEqual(BorderWallUpperLowerEdgeAltitudeReference.WGS84, oWall.upper_edge_altitude_reference)
         # UpperEdgeHeight
         self.m_logger.WriteLine6("\t\tThe current UpperEdge Height is: {0}", oWall.upper_edge_height)
         oWall.upper_edge_height = 123.4567
@@ -3459,20 +3453,20 @@ class VOBorderWallHelper(object):
             oWall.upper_edge_height = -9876543210.1
         # LowerEdgeAltRef
         self.m_logger.WriteLine6("\t\tThe current LowerEdge is: {0}", oWall.lower_edge_altitude_reference)
-        oWall.lower_edge_altitude_reference = BORDER_WALL_UPPER_LOWER_EDGE_ALTITUDE_REFERENCE.MEAN_SEA_LEVEL
+        oWall.lower_edge_altitude_reference = BorderWallUpperLowerEdgeAltitudeReference.MEAN_SEA_LEVEL
         self.m_logger.WriteLine6("\t\tThe new LowerEdge is: {0}", oWall.lower_edge_altitude_reference)
         Assert.assertEqual(
-            BORDER_WALL_UPPER_LOWER_EDGE_ALTITUDE_REFERENCE.MEAN_SEA_LEVEL, oWall.lower_edge_altitude_reference
+            BorderWallUpperLowerEdgeAltitudeReference.MEAN_SEA_LEVEL, oWall.lower_edge_altitude_reference
         )
-        oWall.lower_edge_altitude_reference = BORDER_WALL_UPPER_LOWER_EDGE_ALTITUDE_REFERENCE.OBJECT
+        oWall.lower_edge_altitude_reference = BorderWallUpperLowerEdgeAltitudeReference.OBJECT
         self.m_logger.WriteLine6("\t\tThe new LowerEdge is: {0}", oWall.lower_edge_altitude_reference)
-        Assert.assertEqual(BORDER_WALL_UPPER_LOWER_EDGE_ALTITUDE_REFERENCE.OBJECT, oWall.lower_edge_altitude_reference)
-        oWall.lower_edge_altitude_reference = BORDER_WALL_UPPER_LOWER_EDGE_ALTITUDE_REFERENCE.TERRAIN
+        Assert.assertEqual(BorderWallUpperLowerEdgeAltitudeReference.OBJECT, oWall.lower_edge_altitude_reference)
+        oWall.lower_edge_altitude_reference = BorderWallUpperLowerEdgeAltitudeReference.TERRAIN
         self.m_logger.WriteLine6("\t\tThe new LowerEdge is: {0}", oWall.lower_edge_altitude_reference)
-        Assert.assertEqual(BORDER_WALL_UPPER_LOWER_EDGE_ALTITUDE_REFERENCE.TERRAIN, oWall.lower_edge_altitude_reference)
-        oWall.lower_edge_altitude_reference = BORDER_WALL_UPPER_LOWER_EDGE_ALTITUDE_REFERENCE.WGS84
+        Assert.assertEqual(BorderWallUpperLowerEdgeAltitudeReference.TERRAIN, oWall.lower_edge_altitude_reference)
+        oWall.lower_edge_altitude_reference = BorderWallUpperLowerEdgeAltitudeReference.WGS84
         self.m_logger.WriteLine6("\t\tThe new LowerEdge is: {0}", oWall.lower_edge_altitude_reference)
-        Assert.assertEqual(BORDER_WALL_UPPER_LOWER_EDGE_ALTITUDE_REFERENCE.WGS84, oWall.lower_edge_altitude_reference)
+        Assert.assertEqual(BorderWallUpperLowerEdgeAltitudeReference.WGS84, oWall.lower_edge_altitude_reference)
         # LowerEdgeHeight
         self.m_logger.WriteLine6("\t\tThe current LowerEdge Height is: {0}", oWall.lower_edge_height)
         oWall.lower_edge_height = 123.4567
@@ -3603,7 +3597,7 @@ class VOLeadTrailDataHelper(object):
         bCaught: bool = False
         try:
             bCaught = False
-            leadTrailData.set_lead_data_type(LEAD_TRAIL_DATA.QUARTER)
+            leadTrailData.set_lead_data_type(LeadTrailData.QUARTER)
             self.m_logger.WriteLine6("The new LeadDataType flag is: {0}", leadTrailData.lead_data_type)
 
         except Exception as e:
@@ -3615,7 +3609,7 @@ class VOLeadTrailDataHelper(object):
 
         try:
             bCaught = False
-            leadTrailData.set_trail_data_type(LEAD_TRAIL_DATA.HALF)
+            leadTrailData.set_trail_data_type(LeadTrailData.HALF)
 
         except Exception as e:
             bCaught = True
@@ -3652,7 +3646,7 @@ class VOLeadTrailDataHelper(object):
                 "\t\tType {0} is: {1} ({2})",
                 iIndex,
                 str(arSupportedTypes[iIndex][1]),
-                LEAD_TRAIL_DATA(int(arSupportedTypes[iIndex][0])),
+                LeadTrailData(int(arSupportedTypes[iIndex][0])),
             )
 
             iIndex += 1
@@ -3662,17 +3656,17 @@ class VOLeadTrailDataHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arSupportedTypes):
-            eType: "LEAD_TRAIL_DATA" = LEAD_TRAIL_DATA(int(arSupportedTypes[iIndex][0]))
+            eType: "LeadTrailData" = LeadTrailData(int(arSupportedTypes[iIndex][0]))
             if not leadTrailData.is_data_type_supported(eType):
                 Assert.fail("The {0} LeadType should be supported!", eType)
 
             # SetLeadDataType
             leadTrailData.set_lead_data_type(eType)
             self.m_logger.WriteLine6("\tThe new LeadDataType is: {0}", leadTrailData.lead_data_type)
-            eType2: "LEAD_TRAIL_DATA" = leadTrailData.lead_data_type
+            eType2: "LeadTrailData" = leadTrailData.lead_data_type
             Assert.assertEqual(eType, eType2)
             if leadTrailData.has_lead_data:
-                if eType == LEAD_TRAIL_DATA.FRACTION:
+                if eType == LeadTrailData.FRACTION:
                     # LeadData
                     oFraction: "IVehicleLeadTrailDataFraction" = IVehicleLeadTrailDataFraction(leadTrailData.lead_data)
                     Assert.assertIsNotNone(oFraction)
@@ -3693,7 +3687,7 @@ class VOLeadTrailDataHelper(object):
                     if not bCaught:
                         Assert.fail("Cannot set value out of range!")
 
-                elif eType == LEAD_TRAIL_DATA.TIME:
+                elif eType == LeadTrailData.TIME:
                     # LeadData
                     oTime: "IVehicleLeadTrailDataTime" = IVehicleLeadTrailDataTime(leadTrailData.lead_data)
                     Assert.assertIsNotNone(oTime)
@@ -3739,17 +3733,17 @@ class VOLeadTrailDataHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arSupportedTypes):
-            eType: "LEAD_TRAIL_DATA" = LEAD_TRAIL_DATA(int(arSupportedTypes[iIndex][0]))
+            eType: "LeadTrailData" = LeadTrailData(int(arSupportedTypes[iIndex][0]))
             if not leadTrailData.is_data_type_supported(eType):
                 Assert.fail("The {0} TrailType should be supported!", eType)
 
             # SetTrailDataType
             leadTrailData.set_trail_data_type(eType)
             self.m_logger.WriteLine6("\tThe new TrailDataType is: {0}", leadTrailData.trail_data_type)
-            eType2: "LEAD_TRAIL_DATA" = leadTrailData.trail_data_type
+            eType2: "LeadTrailData" = leadTrailData.trail_data_type
             Assert.assertEqual(eType, eType2)
             if leadTrailData.has_trail_data:
-                if eType == LEAD_TRAIL_DATA.FRACTION:
+                if eType == LeadTrailData.FRACTION:
                     # TrailData
                     oFraction: "IVehicleLeadTrailDataFraction" = IVehicleLeadTrailDataFraction(leadTrailData.trail_data)
                     Assert.assertIsNotNone(oFraction)
@@ -3770,7 +3764,7 @@ class VOLeadTrailDataHelper(object):
                     if not bCaught:
                         Assert.fail("Cannot set value out of range!")
 
-                elif eType == LEAD_TRAIL_DATA.TIME:
+                elif eType == LeadTrailData.TIME:
                     # TrailData
                     oTime: "IVehicleLeadTrailDataTime" = IVehicleLeadTrailDataTime(leadTrailData.trail_data)
                     Assert.assertIsNotNone(oTime)
@@ -3812,7 +3806,7 @@ class VOLeadTrailDataHelper(object):
             iIndex += 1
 
         # SetTrailSameAsLead
-        leadTrailData.set_trail_data_type(LEAD_TRAIL_DATA(int(arSupportedTypes[0][0])))
+        leadTrailData.set_trail_data_type(LeadTrailData(int(arSupportedTypes[0][0])))
         self.m_logger.WriteLine7(
             "\tBefore: TrailDataType = {0}, LeadDataType = {1}",
             leadTrailData.trail_data_type,
@@ -3895,11 +3889,11 @@ class VOWaypointMarkersHelper(object):
                 Assert.fail("Cannot set value out of range!")
 
             # MarkerType (MARKER)
-            waypointMarkersElement.marker_type = ROUTE_GRAPHICS_3D_MARKER_TYPE.MARKER
-            Assert.assertEqual(ROUTE_GRAPHICS_3D_MARKER_TYPE.MARKER, waypointMarkersElement.marker_type)
+            waypointMarkersElement.marker_type = RouteGraphics3DMarkerType.MARKER
+            Assert.assertEqual(RouteGraphics3DMarkerType.MARKER, waypointMarkersElement.marker_type)
             # Shape
-            waypointMarkersElement.shape = MARKER_SHAPE_3D.SHAPE_TRIANGLE
-            Assert.assertEqual(MARKER_SHAPE_3D.SHAPE_TRIANGLE, waypointMarkersElement.shape)
+            waypointMarkersElement.shape = MarkerShape3d.SHAPE_TRIANGLE
+            Assert.assertEqual(MarkerShape3d.SHAPE_TRIANGLE, waypointMarkersElement.shape)
             try:
                 bCaught = False
                 waypointMarkersElement.marker_filename = "STKData\\VO\\Markers\\Aircraft.ppm"
@@ -3925,24 +3919,24 @@ class VOWaypointMarkersHelper(object):
             # MarkerType (IMAGE)
             self.Application.begin_update()
             try:
-                waypointMarkersElement.marker_type = ROUTE_GRAPHICS_3D_MARKER_TYPE.IMAGE
+                waypointMarkersElement.marker_type = RouteGraphics3DMarkerType.IMAGE
                 # MarkerFile
                 waypointMarkersElement.marker_filename = "STKData\\VO\\Markers\\Aircraft.ppm"
 
             finally:
                 self.Application.end_update()
 
-            Assert.assertEqual(ROUTE_GRAPHICS_3D_MARKER_TYPE.IMAGE, waypointMarkersElement.marker_type)
+            Assert.assertEqual(RouteGraphics3DMarkerType.IMAGE, waypointMarkersElement.marker_type)
             Assert.assertEqual(
                 TestBase.PathCombine("STKData", "VO", "Markers", "Aircraft.ppm"), waypointMarkersElement.marker_filename
             )
 
-            waypointMarkersElement.marker_type = ROUTE_GRAPHICS_3D_MARKER_TYPE.MARKER
-            Assert.assertEqual(ROUTE_GRAPHICS_3D_MARKER_TYPE.MARKER, waypointMarkersElement.marker_type)
+            waypointMarkersElement.marker_type = RouteGraphics3DMarkerType.MARKER
+            Assert.assertEqual(RouteGraphics3DMarkerType.MARKER, waypointMarkersElement.marker_type)
 
             strFilename: str = r"VO\Markers\SampleAircraft.ppm"
             waypointMarkersElement.set_image_file(TestBase.GetScenarioFile(strFilename))
-            Assert.assertEqual(ROUTE_GRAPHICS_3D_MARKER_TYPE.IMAGE, waypointMarkersElement.marker_type)
+            Assert.assertEqual(RouteGraphics3DMarkerType.IMAGE, waypointMarkersElement.marker_type)
             Assert.assertEqual(
                 TestBase.PathCombine("VO", "Markers", "SampleAircraft.ppm"), waypointMarkersElement.marker_filename
             )
@@ -3952,7 +3946,7 @@ class VOWaypointMarkersHelper(object):
             Assert.assertEqual(True, waypointMarkersElement.is_transparent)
             try:
                 bCaught = False
-                waypointMarkersElement.shape = MARKER_SHAPE_3D.SHAPE_PLUS
+                waypointMarkersElement.shape = MarkerShape3d.SHAPE_PLUS
 
             except Exception as e:
                 bCaught = True
@@ -4115,7 +4109,7 @@ class VOPathTickMarksHelper(object):
         iIndex: int = 0
         while iIndex < len(arTypes):
             self.m_logger.WriteLine8(
-                "\t\tType {0} is: {1} ({2})", iIndex, str(arTypes[iIndex][1]), TICK_DATA(int(arTypes[iIndex][0]))
+                "\t\tType {0} is: {1} ({2})", iIndex, str(arTypes[iIndex][1]), TickData(int(arTypes[iIndex][0]))
             )
 
             iIndex += 1
@@ -4129,7 +4123,7 @@ class VOPathTickMarksHelper(object):
         bCaught: bool = False
         try:
             bCaught = False
-            oPath.set_tick_data_type(TICK_DATA(arTypes[0][0]))
+            oPath.set_tick_data_type(TickData(arTypes[0][0]))
 
         except Exception as e:
             bCaught = True
@@ -4138,7 +4132,7 @@ class VOPathTickMarksHelper(object):
         if not bCaught:
             Assert.fail("The TickDataType should be readonly.")
 
-        if oPath.tick_data_type == TICK_DATA.POINT:
+        if oPath.tick_data_type == TickData.POINT:
             oPoint: "VehicleGraphics3DTickDataPoint" = VehicleGraphics3DTickDataPoint(oPath.tick_data)
             Assert.assertIsNotNone(oPoint)
             try:
@@ -4152,7 +4146,7 @@ class VOPathTickMarksHelper(object):
             if not bCaught:
                 Assert.fail("The Size should be readonly.")
 
-        elif oPath.tick_data_type == TICK_DATA.UNKNOWN:
+        elif oPath.tick_data_type == TickData.UNKNOWN:
             pass
         else:
             oLine: "VehicleGraphics3DTickDataLine" = VehicleGraphics3DTickDataLine(oPath.tick_data)
@@ -4170,7 +4164,7 @@ class VOPathTickMarksHelper(object):
 
             try:
                 bCaught = False
-                oLine.line_width = LINE_WIDTH.WIDTH5
+                oLine.line_width = LineWidth.WIDTH5
 
             except Exception as e:
                 bCaught = True
@@ -4185,7 +4179,7 @@ class VOPathTickMarksHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arTypes):
-            eType: "TICK_DATA" = TICK_DATA(int(arTypes[iIndex][0]))
+            eType: "TickData" = TickData(int(arTypes[iIndex][0]))
             if not oPath.is_tick_data_type_supported(eType):
                 Assert.fail("The {0} type should be supported!", eType)
 
@@ -4193,9 +4187,9 @@ class VOPathTickMarksHelper(object):
             oPath.set_tick_data_type(eType)
             # TickDataType
             self.m_logger.WriteLine6("\t\tNew Type is: {0}", oPath.tick_data_type)
-            if oPath.tick_data_type == TICK_DATA.UNKNOWN:
+            if oPath.tick_data_type == TickData.UNKNOWN:
                 Assert.fail("The UNKNOWN type should not be supported!")
-            elif oPath.tick_data_type == TICK_DATA.POINT:
+            elif oPath.tick_data_type == TickData.POINT:
                 oPoint: "VehicleGraphics3DTickDataPoint" = VehicleGraphics3DTickDataPoint(oPath.tick_data)
                 Assert.assertIsNotNone(oPoint)
                 # Size
@@ -4220,9 +4214,9 @@ class VOPathTickMarksHelper(object):
                 Assert.assertIsNotNone(oLine)
                 # LineWith
                 self.m_logger.WriteLine6("\t\t\tThe current LineWith is: {0}", oLine.line_width)
-                oLine.line_width = LINE_WIDTH.WIDTH2
+                oLine.line_width = LineWidth.WIDTH2
                 self.m_logger.WriteLine6("\t\t\tThe new LineWith is: {0}", oLine.line_width)
-                Assert.assertEqual(LINE_WIDTH.WIDTH2, oLine.line_width)
+                Assert.assertEqual(LineWidth.WIDTH2, oLine.line_width)
                 # Length
                 self.m_logger.WriteLine6("\t\t\tThe current Length is: {0}", oLine.length)
                 oLine.length = 12.34
@@ -4443,36 +4437,36 @@ class VOLabelSwapDistanceHelper(object):
         # DistanceLevel
         self.m_logger.WriteLine6("\tThe current DistanceLevel is: {0}", oSwapDist.distance_level)
         # SetDistanceLevel (ALL)
-        oSwapDist.set_distance_level(GRAPHICS_3D_LABEL_SWAP_DISTANCE.ALL)
+        oSwapDist.set_distance_level(Graphics3DLabelSwapDistanceType.ALL)
         self.m_logger.WriteLine6("\tThe new DistanceLevel is: {0}", oSwapDist.distance_level)
-        Assert.assertEqual(GRAPHICS_3D_LABEL_SWAP_DISTANCE.ALL, oSwapDist.distance_level)
+        Assert.assertEqual(Graphics3DLabelSwapDistanceType.ALL, oSwapDist.distance_level)
         self.m_logger.WriteLine6("\t\tThe new DistanceValue is: {0}", oSwapDist.distance_value)
         # SetDistanceLevel (MARKER)
-        oSwapDist.set_distance_level(GRAPHICS_3D_LABEL_SWAP_DISTANCE.MARKER)
+        oSwapDist.set_distance_level(Graphics3DLabelSwapDistanceType.MARKER)
         self.m_logger.WriteLine6("\tThe new DistanceLevel is: {0}", oSwapDist.distance_level)
-        Assert.assertEqual(GRAPHICS_3D_LABEL_SWAP_DISTANCE.MARKER, oSwapDist.distance_level)
+        Assert.assertEqual(Graphics3DLabelSwapDistanceType.MARKER, oSwapDist.distance_level)
         self.m_logger.WriteLine6("\t\tThe new DistanceValue is: {0}", oSwapDist.distance_value)
         # SetDistanceLevel (MARKER_LABEL)
-        oSwapDist.set_distance_level(GRAPHICS_3D_LABEL_SWAP_DISTANCE.MARKER_LABEL)
+        oSwapDist.set_distance_level(Graphics3DLabelSwapDistanceType.MARKER_LABEL)
         self.m_logger.WriteLine6("\tThe new DistanceLevel is: {0}", oSwapDist.distance_level)
-        Assert.assertEqual(GRAPHICS_3D_LABEL_SWAP_DISTANCE.MARKER_LABEL, oSwapDist.distance_level)
+        Assert.assertEqual(Graphics3DLabelSwapDistanceType.MARKER_LABEL, oSwapDist.distance_level)
         self.m_logger.WriteLine6("\t\tThe new DistanceValue is: {0}", oSwapDist.distance_value)
         # SetDistanceLevel (MODEL_LABEL)
-        oSwapDist.set_distance_level(GRAPHICS_3D_LABEL_SWAP_DISTANCE.MODEL_LABEL)
+        oSwapDist.set_distance_level(Graphics3DLabelSwapDistanceType.MODEL_LABEL)
         self.m_logger.WriteLine6("\tThe new DistanceLevel is: {0}", oSwapDist.distance_level)
-        Assert.assertEqual(GRAPHICS_3D_LABEL_SWAP_DISTANCE.MODEL_LABEL, oSwapDist.distance_level)
+        Assert.assertEqual(Graphics3DLabelSwapDistanceType.MODEL_LABEL, oSwapDist.distance_level)
         self.m_logger.WriteLine6("\t\tThe new DistanceValue is: {0}", oSwapDist.distance_value)
         # SetDistanceLevel (POINT)
-        oSwapDist.set_distance_level(GRAPHICS_3D_LABEL_SWAP_DISTANCE.POINT)
+        oSwapDist.set_distance_level(Graphics3DLabelSwapDistanceType.POINT)
         self.m_logger.WriteLine6("\tThe new DistanceLevel is: {0}", oSwapDist.distance_level)
-        Assert.assertEqual(GRAPHICS_3D_LABEL_SWAP_DISTANCE.POINT, oSwapDist.distance_level)
+        Assert.assertEqual(Graphics3DLabelSwapDistanceType.POINT, oSwapDist.distance_level)
         self.m_logger.WriteLine6("\t\tThe new DistanceValue is: {0}", oSwapDist.distance_value)
         # SetDistanceLevel (CUSTOM)
         with pytest.raises(Exception):
-            oSwapDist.set_distance_level(GRAPHICS_3D_LABEL_SWAP_DISTANCE.CUSTOM)
+            oSwapDist.set_distance_level(Graphics3DLabelSwapDistanceType.CUSTOM)
         # SetDistanceLevel (UNKNOWN)
         with pytest.raises(Exception):
-            oSwapDist.set_distance_level(GRAPHICS_3D_LABEL_SWAP_DISTANCE.UNKNOWN)
+            oSwapDist.set_distance_level(Graphics3DLabelSwapDistanceType.UNKNOWN)
         self.m_logger.WriteLine("----- VO LABEL SWAP DISTANCE TEST ----- END -----")
 
 
@@ -4931,20 +4925,20 @@ class VOVectorsHelper(object):
 
         with pytest.raises(Exception):
             refCrdn: "IGraphics3DReferenceAnalysisWorkbenchComponent" = oCollection.add(
-                GEOMETRIC_ELEMENT_TYPE.ANGLE_ELEMENT, "bogus"
+                GeometricElementType.ANGLE_ELEMENT, "bogus"
             )
 
         with pytest.raises(Exception):
             oElement2: "IGraphics3DReferenceAnalysisWorkbenchComponent" = oCollection.get_component_by_name(-1, "bogus")
         with pytest.raises(Exception):
             oElement2: "IGraphics3DReferenceAnalysisWorkbenchComponent" = oCollection.get_component_by_name(
-                GEOMETRIC_ELEMENT_TYPE.ANGLE_ELEMENT, ""
+                GeometricElementType.ANGLE_ELEMENT, ""
             )
 
         iIndex: int = 0
         while iIndex < len(arAvailable):
-            eType: "GEOMETRIC_ELEMENT_TYPE" = GEOMETRIC_ELEMENT_TYPE(int(arAvailable[iIndex][1]))
-            if eType == GEOMETRIC_ELEMENT_TYPE.ANGLE_ELEMENT:
+            eType: "GeometricElementType" = GeometricElementType(int(arAvailable[iIndex][1]))
+            if eType == GeometricElementType.ANGLE_ELEMENT:
                 refCrdn: "IGraphics3DReferenceAnalysisWorkbenchComponent" = oCollection.add(
                     eType, str(arAvailable[iIndex][0])
                 )
@@ -4962,8 +4956,8 @@ class VOVectorsHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arAvailable):
-            eType: "GEOMETRIC_ELEMENT_TYPE" = GEOMETRIC_ELEMENT_TYPE(int(arAvailable[iIndex][1]))
-            if eType == GEOMETRIC_ELEMENT_TYPE.AXES_ELEMENT:
+            eType: "GeometricElementType" = GeometricElementType(int(arAvailable[iIndex][1]))
+            if eType == GeometricElementType.AXES_ELEMENT:
                 refCrdn: "IGraphics3DReferenceAnalysisWorkbenchComponent" = oCollection.add(
                     eType, str(arAvailable[iIndex][0])
                 )
@@ -4981,8 +4975,8 @@ class VOVectorsHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arAvailable):
-            eType: "GEOMETRIC_ELEMENT_TYPE" = GEOMETRIC_ELEMENT_TYPE(int(arAvailable[iIndex][1]))
-            if eType == GEOMETRIC_ELEMENT_TYPE.PLANE_ELEMENT:
+            eType: "GeometricElementType" = GeometricElementType(int(arAvailable[iIndex][1]))
+            if eType == GeometricElementType.PLANE_ELEMENT:
                 refCrdn: "IGraphics3DReferenceAnalysisWorkbenchComponent" = oCollection.add(
                     eType, str(arAvailable[iIndex][0])
                 )
@@ -5000,8 +4994,8 @@ class VOVectorsHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arAvailable):
-            eType: "GEOMETRIC_ELEMENT_TYPE" = GEOMETRIC_ELEMENT_TYPE(int(arAvailable[iIndex][1]))
-            if eType == GEOMETRIC_ELEMENT_TYPE.POINT_ELEMENT:
+            eType: "GeometricElementType" = GeometricElementType(int(arAvailable[iIndex][1]))
+            if eType == GeometricElementType.POINT_ELEMENT:
                 refCrdn: "IGraphics3DReferenceAnalysisWorkbenchComponent" = oCollection.add(
                     eType, str(arAvailable[iIndex][0])
                 )
@@ -5022,8 +5016,8 @@ class VOVectorsHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arAvailable):
-            eType: "GEOMETRIC_ELEMENT_TYPE" = GEOMETRIC_ELEMENT_TYPE(int(arAvailable[iIndex][1]))
-            if eType == GEOMETRIC_ELEMENT_TYPE.VECTOR_ELEMENT:
+            eType: "GeometricElementType" = GeometricElementType(int(arAvailable[iIndex][1]))
+            if eType == GeometricElementType.VECTOR_ELEMENT:
                 oVector: "Graphics3DReferenceVector" = Graphics3DReferenceVector(
                     oCollection.add(eType, str(arAvailable[iIndex][0]))
                 )
@@ -5057,7 +5051,7 @@ class VOVectorsHelper(object):
             self.m_logger.WriteLine7("\tElement: Name = {0}, Type = {1}", refCrdn.name, refCrdn.type_identifier)
 
         moonVector: "Graphics3DReferenceVector" = clr.CastAs(
-            oCollection.add(GEOMETRIC_ELEMENT_TYPE.VECTOR_ELEMENT, "Satellite/Satellite1 Moon Vector"),
+            oCollection.add(GeometricElementType.VECTOR_ELEMENT, "Satellite/Satellite1 Moon Vector"),
             Graphics3DReferenceVector,
         )  # add for Vector test
 
@@ -5097,15 +5091,15 @@ class VOVectorsHelper(object):
             if not bCaught:
                 Assert.fail("The LabelVisible should be readonly.")
 
-            if refCrdn.type_identifier == GEOMETRIC_ELEMENT_TYPE.ANGLE_ELEMENT:
+            if refCrdn.type_identifier == GeometricElementType.ANGLE_ELEMENT:
                 self.RefCrdnAngleReadOnly(Graphics3DReferenceAngle(refCrdn))
-            elif refCrdn.type_identifier == GEOMETRIC_ELEMENT_TYPE.AXES_ELEMENT:
+            elif refCrdn.type_identifier == GeometricElementType.AXES_ELEMENT:
                 self.RefCrdnAxesReadOnly(Graphics3DReferenceAxes(refCrdn))
-            elif refCrdn.type_identifier == GEOMETRIC_ELEMENT_TYPE.PLANE_ELEMENT:
+            elif refCrdn.type_identifier == GeometricElementType.PLANE_ELEMENT:
                 self.RefCrdnPlaneReadOnly(Graphics3DReferencePlane(refCrdn))
-            elif refCrdn.type_identifier == GEOMETRIC_ELEMENT_TYPE.POINT_ELEMENT:
+            elif refCrdn.type_identifier == GeometricElementType.POINT_ELEMENT:
                 self.RefCrdnPointReadOnly(Graphics3DReferencePoint(refCrdn))
-            elif refCrdn.type_identifier == GEOMETRIC_ELEMENT_TYPE.VECTOR_ELEMENT:
+            elif refCrdn.type_identifier == GeometricElementType.VECTOR_ELEMENT:
                 self.RefCrdnVectorReadOnly(Graphics3DReferenceVector(refCrdn))
             else:
                 Assert.fail("Invalid TypeID!")
@@ -5126,16 +5120,16 @@ class VOVectorsHelper(object):
             refCrdn.show_label = True
             self.m_logger.WriteLine4("\tThe new LabelVisible flag is: {0}", refCrdn.show_label)
             Assert.assertEqual(True, refCrdn.show_label)
-            if refCrdn.type_identifier == GEOMETRIC_ELEMENT_TYPE.ANGLE_ELEMENT:
+            if refCrdn.type_identifier == GeometricElementType.ANGLE_ELEMENT:
                 self.RefCrdnAngle(Graphics3DReferenceAngle(refCrdn))
-            elif refCrdn.type_identifier == GEOMETRIC_ELEMENT_TYPE.AXES_ELEMENT:
+            elif refCrdn.type_identifier == GeometricElementType.AXES_ELEMENT:
                 self.RefCrdnAxes(Graphics3DReferenceAxes(refCrdn))
-            elif refCrdn.type_identifier == GEOMETRIC_ELEMENT_TYPE.PLANE_ELEMENT:
+            elif refCrdn.type_identifier == GeometricElementType.PLANE_ELEMENT:
                 self.RefCrdnPlane(Graphics3DReferencePlane(refCrdn))
-            elif refCrdn.type_identifier == GEOMETRIC_ELEMENT_TYPE.POINT_ELEMENT:
+            elif refCrdn.type_identifier == GeometricElementType.POINT_ELEMENT:
                 # 38619: Earth Center point freezes STK
                 self.RefCrdnPoint(Graphics3DReferencePoint(refCrdn))
-            elif refCrdn.type_identifier == GEOMETRIC_ELEMENT_TYPE.VECTOR_ELEMENT:
+            elif refCrdn.type_identifier == GeometricElementType.VECTOR_ELEMENT:
                 self.RefCrdnVector(Graphics3DReferenceVector(refCrdn))
             else:
                 Assert.fail("Invalid TypeID!")
@@ -5163,7 +5157,7 @@ class VOVectorsHelper(object):
         with pytest.raises(Exception):
             oCollection.remove_by_name(-1, "bogus")
         with pytest.raises(Exception):
-            oCollection.remove_by_name(GEOMETRIC_ELEMENT_TYPE.ANGLE_ELEMENT, "bogus")
+            oCollection.remove_by_name(GeometricElementType.ANGLE_ELEMENT, "bogus")
 
         # RemoveAll
         self.m_logger.WriteLine3("Before RemoveAll() the Vector Collection contains: {0} elements", oCollection.count)
@@ -5307,7 +5301,7 @@ class VOVectorsHelper(object):
         Assert.assertEqual(strUnit, self.m_oUnits.get_current_unit_abbrv("TimeUnit"))
         try:
             bCaught = False
-            oAxes.connect = VECTOR_AXES_CONNECT_TYPE.LINE
+            oAxes.connect = VectorAxesConnectType.LINE
 
         except Exception as e:
             bCaught = True
@@ -5388,7 +5382,7 @@ class VOVectorsHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             oAxes.duration = 600
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            oAxes.connect = VECTOR_AXES_CONNECT_TYPE.LINE
+            oAxes.connect = VectorAxesConnectType.LINE
 
         oAxes.show_persistence = True
         Assert.assertTrue(oAxes.show_persistence)
@@ -5405,12 +5399,12 @@ class VOVectorsHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             oAxes.duration = -1
 
-        oAxes.connect = VECTOR_AXES_CONNECT_TYPE.SWEEP
-        Assert.assertEqual(VECTOR_AXES_CONNECT_TYPE.SWEEP, oAxes.connect)
-        oAxes.connect = VECTOR_AXES_CONNECT_TYPE.TRACE
-        Assert.assertEqual(VECTOR_AXES_CONNECT_TYPE.TRACE, oAxes.connect)
-        oAxes.connect = VECTOR_AXES_CONNECT_TYPE.LINE
-        Assert.assertEqual(VECTOR_AXES_CONNECT_TYPE.LINE, oAxes.connect)
+        oAxes.connect = VectorAxesConnectType.SWEEP
+        Assert.assertEqual(VectorAxesConnectType.SWEEP, oAxes.connect)
+        oAxes.connect = VectorAxesConnectType.TRACE
+        Assert.assertEqual(VectorAxesConnectType.TRACE, oAxes.connect)
+        oAxes.connect = VectorAxesConnectType.LINE
+        Assert.assertEqual(VectorAxesConnectType.LINE, oAxes.connect)
 
     # endregion
 
@@ -5667,7 +5661,7 @@ class VOVectorsHelper(object):
         bCaught: bool = False
         try:
             bCaught = False
-            oPoint.trajectory_type = TRAJECTORY_TYPE.TRACE
+            oPoint.trajectory_type = TrajectoryType.TRACE
 
         except Exception as e:
             bCaught = True
@@ -5750,9 +5744,9 @@ class VOVectorsHelper(object):
         self.m_logger.WriteLine("\tRefCrdnPoint test:")
         # TrajectoryType
         self.m_logger.WriteLine6("\t\tThe current TrajectoryType is: {0}", oPoint.trajectory_type)
-        oPoint.trajectory_type = TRAJECTORY_TYPE.LINE
+        oPoint.trajectory_type = TrajectoryType.LINE
         self.m_logger.WriteLine6("\t\tThe new TrajectoryType flag is: {0}", oPoint.trajectory_type)
-        Assert.assertEqual(TRAJECTORY_TYPE.LINE, oPoint.trajectory_type)
+        Assert.assertEqual(TrajectoryType.LINE, oPoint.trajectory_type)
         # Size
         self.m_logger.WriteLine6("\t\tThe current Size is: {0}", oPoint.size)
         oPoint.size = 3.21
@@ -5941,7 +5935,7 @@ class VOVectorsHelper(object):
         Assert.assertEqual(strUnit, self.m_oUnits.get_current_unit_abbrv("TimeUnit"))
         # Connect
         with pytest.raises(Exception):
-            oVector.connect = VECTOR_AXES_CONNECT_TYPE.LINE
+            oVector.connect = VectorAxesConnectType.LINE
         # Transparent
         with pytest.raises(Exception):
             oVector.transparent = True
@@ -6006,7 +6000,7 @@ class VOVectorsHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             oVector.duration = 600
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            oVector.connect = VECTOR_AXES_CONNECT_TYPE.LINE
+            oVector.connect = VectorAxesConnectType.LINE
 
         oVector.show_persistence = True
         Assert.assertTrue(oVector.show_persistence)
@@ -6023,12 +6017,12 @@ class VOVectorsHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             oVector.duration = -1
 
-        oVector.connect = VECTOR_AXES_CONNECT_TYPE.SWEEP
-        Assert.assertEqual(VECTOR_AXES_CONNECT_TYPE.SWEEP, oVector.connect)
-        oVector.connect = VECTOR_AXES_CONNECT_TYPE.TRACE
-        Assert.assertEqual(VECTOR_AXES_CONNECT_TYPE.TRACE, oVector.connect)
-        oVector.connect = VECTOR_AXES_CONNECT_TYPE.LINE
-        Assert.assertEqual(VECTOR_AXES_CONNECT_TYPE.LINE, oVector.connect)
+        oVector.connect = VectorAxesConnectType.SWEEP
+        Assert.assertEqual(VectorAxesConnectType.SWEEP, oVector.connect)
+        oVector.connect = VectorAxesConnectType.TRACE
+        Assert.assertEqual(VectorAxesConnectType.TRACE, oVector.connect)
+        oVector.connect = VectorAxesConnectType.LINE
+        Assert.assertEqual(VectorAxesConnectType.LINE, oVector.connect)
 
         oVector.show_right_ascension_declination_values = False
         Assert.assertFalse(oVector.show_right_ascension_declination_values)
@@ -6213,8 +6207,8 @@ class VOVaporTrailHelper(object):
         # Load a VOModel with attached points
         oModel.visible = True
         Assert.assertTrue(oModel.visible)
-        oModel.model_type = MODEL_TYPE.FILE
-        Assert.assertEqual(MODEL_TYPE.FILE, oModel.model_type)
+        oModel.model_type = ModelType.FILE
+        Assert.assertEqual(ModelType.FILE, oModel.model_type)
         oModelFile: "Graphics3DModelFile" = Graphics3DModelFile(oModel.model_data)
         Assert.assertIsNotNone(oModelFile)
         self.m_logger.WriteLine5("\tThe current VOModel file is: {0}", oModelFile.filename)

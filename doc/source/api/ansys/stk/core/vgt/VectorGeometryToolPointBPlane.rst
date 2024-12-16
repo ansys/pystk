@@ -56,13 +56,13 @@ Property detail
 
 .. py:property:: point_type
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPointBPlane.point_type
-    :type: POINT_B_PLANE_TYPE
+    :type: PointBPlaneType
 
     Specify a point type.
 
 .. py:property:: direction
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPointBPlane.direction
-    :type: ASYMPTOTE_DIRECTION_TYPE
+    :type: AsymptoteDirectionType
 
     Specify a direction (incoming or outgoing).
 

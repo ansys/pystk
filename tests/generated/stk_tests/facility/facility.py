@@ -64,8 +64,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(stopTime, onePtAccess.stop_time)
         onePtAccess.step_size = 120
         Assert.assertEqual(120, onePtAccess.step_size)
-        onePtAccess.summary_option = ONE_POINT_ACCESS_SUMMARY.DETAILED
-        Assert.assertEqual(ONE_POINT_ACCESS_SUMMARY.DETAILED, onePtAccess.summary_option)
+        onePtAccess.summary_option = OnePointAccessSummary.DETAILED
+        Assert.assertEqual(OnePointAccessSummary.DETAILED, onePtAccess.summary_option)
         result: "OnePointAccessResult" = None
         results: "OnePointAccessResultCollection" = onePtAccess.compute()
 
@@ -93,16 +93,16 @@ class EarlyBoundTests(TestBase):
             for c in r.constraints:
                 self.dumpOnePtAccessConstraint(c)
 
-        onePtAccess.summary_option = ONE_POINT_ACCESS_SUMMARY.FAST
-        Assert.assertEqual(ONE_POINT_ACCESS_SUMMARY.FAST, onePtAccess.summary_option)
+        onePtAccess.summary_option = OnePointAccessSummary.FAST
+        Assert.assertEqual(OnePointAccessSummary.FAST, onePtAccess.summary_option)
         results = onePtAccess.compute()
         Assert.assertGreater(results.count, 1)
         result = results[0]
         if result.constraints.count > 0:
             self.dumpOnePtAccessConstraint(result.constraints[0])
 
-        onePtAccess.summary_option = ONE_POINT_ACCESS_SUMMARY.RESULT_ONLY
-        Assert.assertEqual(ONE_POINT_ACCESS_SUMMARY.RESULT_ONLY, onePtAccess.summary_option)
+        onePtAccess.summary_option = OnePointAccessSummary.RESULT_ONLY
+        Assert.assertEqual(OnePointAccessSummary.RESULT_ONLY, onePtAccess.summary_option)
         results = onePtAccess.compute()
         Assert.assertGreater(results.count, 1)
         result = results[0]
@@ -119,7 +119,7 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine2(constraint.value)
 
     def test_StartTime2StopTime2(self):
-        fac1: "IStkObject" = TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "BUG56961")
+        fac1: "IStkObject" = TestBase.Application.current_scenario.children.new(STKObjectType.FACILITY, "BUG56961")
         interval: "DataProviderInterval" = clr.CastAs(fac1.data_providers["Eclipse Times"], DataProviderInterval)
         result: "DataProviderResult" = interval.execute(
             (clr.CastAs(TestBase.Application.current_scenario, Scenario)).start_time,
@@ -140,10 +140,10 @@ class EarlyBoundTests(TestBase):
     @category("Basic Tests")
     def test_AzElMask(self):
         EarlyBoundTests.AG_FA.reset_az_el_mask()
-        Assert.assertEqual(AZ_EL_MASK_TYPE.NONE, EarlyBoundTests.AG_FA.get_az_el_mask())
+        Assert.assertEqual(AzElMaskType.NONE, EarlyBoundTests.AG_FA.get_az_el_mask())
 
-        EarlyBoundTests.AG_FA.set_az_el_mask(AZ_EL_MASK_TYPE.NONE, "dummy data")
-        Assert.assertEqual(AZ_EL_MASK_TYPE.NONE, EarlyBoundTests.AG_FA.get_az_el_mask())
+        EarlyBoundTests.AG_FA.set_az_el_mask(AzElMaskType.NONE, "dummy data")
+        Assert.assertEqual(AzElMaskType.NONE, EarlyBoundTests.AG_FA.get_az_el_mask())
         Assert.assertEqual(None, EarlyBoundTests.AG_FA.get_az_el_mask_data())
 
         with pytest.raises(Exception, match=RegexSubstringMatch("not available")):
@@ -153,8 +153,8 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             EarlyBoundTests.AG_FA.maximum_range_when_computing_az_el_mask = 11.0
 
-        EarlyBoundTests.AG_FA.set_az_el_mask(AZ_EL_MASK_TYPE.MASK_FILE, TestBase.GetScenarioFile(r"maskfile.aem"))
-        Assert.assertEqual(AZ_EL_MASK_TYPE.MASK_FILE, EarlyBoundTests.AG_FA.get_az_el_mask())
+        EarlyBoundTests.AG_FA.set_az_el_mask(AzElMaskType.MASK_FILE, TestBase.GetScenarioFile(r"maskfile.aem"))
+        Assert.assertEqual(AzElMaskType.MASK_FILE, EarlyBoundTests.AG_FA.get_az_el_mask())
         Assert.assertEqual("maskfile.aem", EarlyBoundTests.AG_FA.get_az_el_mask_data())
 
         with pytest.raises(Exception, match=RegexSubstringMatch("not available")):
@@ -164,10 +164,10 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             EarlyBoundTests.AG_FA.maximum_range_when_computing_az_el_mask = 11.0
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
-            EarlyBoundTests.AG_FA.set_az_el_mask(AZ_EL_MASK_TYPE.MASK_FILE, TestBase.GetScenarioFile("bogus.aem"))
+            EarlyBoundTests.AG_FA.set_az_el_mask(AzElMaskType.MASK_FILE, TestBase.GetScenarioFile("bogus.aem"))
 
-        EarlyBoundTests.AG_FA.set_az_el_mask(AZ_EL_MASK_TYPE.TERRAIN_DATA, 22)
-        Assert.assertEqual(AZ_EL_MASK_TYPE.TERRAIN_DATA, EarlyBoundTests.AG_FA.get_az_el_mask())
+        EarlyBoundTests.AG_FA.set_az_el_mask(AzElMaskType.TERRAIN_DATA, 22)
+        Assert.assertEqual(AzElMaskType.TERRAIN_DATA, EarlyBoundTests.AG_FA.get_az_el_mask())
         Assert.assertEqual(22, EarlyBoundTests.AG_FA.get_az_el_mask_data())
 
         EarlyBoundTests.AG_FA.save_terrain_mask_data_in_binary = True
@@ -185,7 +185,7 @@ class EarlyBoundTests(TestBase):
             EarlyBoundTests.AG_FA.maximum_range_when_computing_az_el_mask = 1001.0
 
         EarlyBoundTests.AG_FA.reset_az_el_mask()
-        Assert.assertEqual(AZ_EL_MASK_TYPE.NONE, EarlyBoundTests.AG_FA.get_az_el_mask())
+        Assert.assertEqual(AzElMaskType.NONE, EarlyBoundTests.AG_FA.get_az_el_mask())
 
     # endregion
 
@@ -366,9 +366,9 @@ class EarlyBoundTests(TestBase):
     def test_VOModelPointing(self):
         oModel: "IGraphics3DModel" = EarlyBoundTests.AG_FA.graphics_3d.model
         TestBase.logger.WriteLine6("\tThe current ModelType is: {0}", oModel.model_type)
-        oModel.model_type = MODEL_TYPE.FILE
+        oModel.model_type = ModelType.FILE
         TestBase.logger.WriteLine6("\tThe new ModelType is: {0}", oModel.model_type)
-        Assert.assertEqual(MODEL_TYPE.FILE, oModel.model_type)
+        Assert.assertEqual(ModelType.FILE, oModel.model_type)
         oModelFile: "Graphics3DModelFile" = clr.CastAs(oModel.model_data, Graphics3DModelFile)
         Assert.assertIsNotNone(oModelFile)
         TestBase.logger.WriteLine5("\t\tThe current Filename is: {0}", oModelFile.filename)
@@ -392,7 +392,7 @@ class EarlyBoundTests(TestBase):
         # scenario.StopTime  = "23 Oct 2012 16:00:00.000";
 
         fac: "Facility" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "Facility1"), Facility
+            TestBase.Application.current_scenario.children.new(STKObjectType.FACILITY, "Facility1"), Facility
         )
         voModelFile: "Graphics3DModelFile" = clr.CastAs(fac.graphics_3d.model.model_data, Graphics3DModelFile)
         voModelFile.filename = r"STKData\VO\Models\Land\ground-antenna.glb"

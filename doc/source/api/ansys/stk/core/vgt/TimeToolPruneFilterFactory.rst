@@ -34,14 +34,14 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: create(self, filter: INTERVAL_PRUNE_FILTER_TYPE) -> ITimeToolPruneFilter
+.. py:method:: create(self, filter: IntervalPruneFilterType) -> ITimeToolPruneFilter
     :canonical: ansys.stk.core.vgt.TimeToolPruneFilterFactory.create
 
     Create and initializes a new prune filter using default configuration.
 
     :Parameters:
 
-    **filter** : :obj:`~INTERVAL_PRUNE_FILTER_TYPE`
+    **filter** : :obj:`~IntervalPruneFilterType`
 
     :Returns:
 

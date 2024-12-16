@@ -54,7 +54,7 @@ Property detail
 
 .. py:property:: mean_element_type
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorOrbitAngularMomentum.mean_element_type
-    :type: MEAN_ELEMENT_THEORY
+    :type: MeanElementTheory
 
     Specify the mean element theory type for approximating motion.
 

@@ -66,7 +66,7 @@ Property detail
 
 .. py:property:: turbine_mode
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingSubSuperHypersonicPropulsion.turbine_mode
-    :type: TURBINE_MODE
+    :type: TurbineMode
 
     Gets or sets the turbine operating mode.
 
@@ -84,7 +84,7 @@ Property detail
 
 .. py:property:: ramjet_mode
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingSubSuperHypersonicPropulsion.ramjet_mode
-    :type: RAMJET_MODE
+    :type: RamjetMode
 
     Gets or sets the ramjet operating mode.
 
@@ -96,7 +96,7 @@ Property detail
 
 .. py:property:: scramjet_mode
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingSubSuperHypersonicPropulsion.scramjet_mode
-    :type: SCRAMJET_MODE
+    :type: ScramjetMode
 
     Gets or sets the scramjet operating mode.
 

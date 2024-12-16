@@ -162,10 +162,10 @@ class EventInterval(TimelineCodeSnippetsTestBase):
         )
 
         asIntervalList.reference_intervals = provider.time_interval_lists["AttitudeIntervals"]
-        asIntervalList.interval_selection = INTERVAL_FROM_INTERVAL_LIST_SELECTION_TYPE.MAXIMUM_GAP
+        asIntervalList.interval_selection = IntervalFromIntervalListSelectionType.MAXIMUM_GAP
 
         # Or from start
-        asIntervalList.interval_selection = INTERVAL_FROM_INTERVAL_LIST_SELECTION_TYPE.FROM_START
+        asIntervalList.interval_selection = IntervalFromIntervalListSelectionType.FROM_START
         asIntervalList.interval_number = 1
 
         intervalResult: "TimeToolTimeIntervalResult" = eventInterval.find_interval()
@@ -223,9 +223,9 @@ class EventInterval(TimelineCodeSnippetsTestBase):
         asSignaled.base_clock_location = satelliteVgtProvider.points["Center"]
         asSignaled.target_clock_location = aircraftVgtProvider.points["Center"]
 
-        asSignaled.signal_sense = SIGNAL_DIRECTION_TYPE.RECEIVE
+        asSignaled.signal_sense = SignalDirectionType.RECEIVE
         basicSignalDelay: "TimeToolSignalDelayBasic" = clr.CastAs(asSignaled.signal_delay, TimeToolSignalDelayBasic)
-        basicSignalDelay.speed_option = SPEED_TYPE.LIGHT_TRANSMISSION_SPEED
+        basicSignalDelay.speed_option = SpeedType.LIGHT_TRANSMISSION_SPEED
 
         # Uses current Time unit preference, this code snippet assumes seconds.
         basicSignalDelay.time_delay_convergence = 0.002
@@ -267,7 +267,7 @@ class EventInterval(TimelineCodeSnippetsTestBase):
         startEventEpoch: "ITimeToolInstant",
         stopEventEpoch: "ITimeToolInstant",
     ):
-        smartInterval.state = SMART_INTERVAL_STATE.START_STOP
+        smartInterval.state = SmartIntervalState.START_STOP
 
         accessStartEpoch: "TimeToolInstantSmartEpoch" = smartInterval.get_start_epoch()
         accessStartEpoch.set_implicit_time(startEventEpoch)

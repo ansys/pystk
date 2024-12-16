@@ -62,13 +62,13 @@ Property detail
 
 .. py:property:: line_style
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DElevationsElement.line_style
-    :type: LINE_STYLE
+    :type: LineStyle
 
     Contour line style.
 
 .. py:property:: line_width
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DElevationsElement.line_width
-    :type: LINE_WIDTH
+    :type: LineWidth
 
     Contour line width.
 

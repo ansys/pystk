@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: type_identifier
     :canonical: ansys.stk.core.stkobjects.IGraphics3DReferenceAnalysisWorkbenchComponent.type_identifier
-    :type: GEOMETRIC_ELEMENT_TYPE
+    :type: GeometricElementType
 
     Type of component (vector, axes, angle, plane, point). A member of the AgEGeometricElemType enumeration.
 

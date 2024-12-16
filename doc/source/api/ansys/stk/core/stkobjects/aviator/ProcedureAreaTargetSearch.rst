@@ -87,7 +87,7 @@ Property detail
 
 .. py:property:: procedure_type
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch.procedure_type
-    :type: FLIGHT_LINE_PROCEDURE_TYPE
+    :type: FlightLineProcedureType
 
     Gets or sets the procedure methodology used to calculate the flight line.
 
@@ -99,7 +99,7 @@ Property detail
 
 .. py:property:: course_mode
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch.course_mode
-    :type: SEARCH_PATTERN_COURSE_MODE
+    :type: SearchPatternCourseMode
 
     Gets or sets the mode to determine the course of the search pattern.
 
@@ -129,7 +129,7 @@ Property detail
 
 .. py:property:: level_off_mode
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch.level_off_mode
-    :type: ALTITUDE_CONSTRAINT_MANEUVER_MODE
+    :type: AltitudeConstraintManeuverMode
 
     Gets or sets the level off mode. This is only used when the must level off option is on.
 

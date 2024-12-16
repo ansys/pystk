@@ -75,7 +75,7 @@ Property detail
 
 .. py:property:: variable_action
     :canonical: ansys.stk.core.stkobjects.astrogator.UserVariableUpdate.variable_action
-    :type: UPDATE_ACTION
+    :type: UpdateAction
 
     Action to be performed using the value.
 

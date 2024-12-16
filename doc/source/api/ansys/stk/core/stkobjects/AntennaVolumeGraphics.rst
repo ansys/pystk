@@ -153,7 +153,7 @@ Property detail
 
 .. py:property:: color_method
     :canonical: ansys.stk.core.stkobjects.AntennaVolumeGraphics.color_method
-    :type: FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD
+    :type: FigureOfMeritGraphics2DColorMethod
 
     Color method for volume levels (color ramp or explicit).
 
@@ -183,7 +183,7 @@ Property detail
 
 .. py:property:: coordinate_system
     :canonical: ansys.stk.core.stkobjects.AntennaVolumeGraphics.coordinate_system
-    :type: ANTENNA_GRAPHICS_COORDINATE_SYSTEM
+    :type: AntennaGraphicsCoordinateSystem
 
     Gets or sets the coordinate system for defining the resolution of the antenna graphics.
 

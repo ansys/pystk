@@ -50,7 +50,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.vgt.ITimeToolTimeIntervalList.type
-    :type: EVENT_INTERVAL_LIST_TYPE
+    :type: EventIntervalListType
 
     Return the type of interval list.
 

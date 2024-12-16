@@ -70,7 +70,7 @@ Property detail
 
 .. py:property:: attributes_type
     :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics.attributes_type
-    :type: VEHICLE_GRAPHICS_2D_ATTRIBUTE_TYPE
+    :type: VehicleGraphics2DAttributeType
 
     Get the 2D Graphics attributes type for the vehicle: basic, access intervals, custom intervals, or real time.
 
@@ -151,27 +151,27 @@ Method detail
 -------------
 
 
-.. py:method:: set_attributes_type(self, attributes: VEHICLE_GRAPHICS_2D_ATTRIBUTE_TYPE) -> None
+.. py:method:: set_attributes_type(self, attributes: VehicleGraphics2DAttributeType) -> None
     :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics.set_attributes_type
 
     Set the 2D Graphics attributes type for the vehicle.
 
     :Parameters:
 
-    **attributes** : :obj:`~VEHICLE_GRAPHICS_2D_ATTRIBUTE_TYPE`
+    **attributes** : :obj:`~VehicleGraphics2DAttributeType`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_attributes_type_supported(self, attributes: VEHICLE_GRAPHICS_2D_ATTRIBUTE_TYPE) -> bool
+.. py:method:: is_attributes_type_supported(self, attributes: VehicleGraphics2DAttributeType) -> bool
     :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics.is_attributes_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **attributes** : :obj:`~VEHICLE_GRAPHICS_2D_ATTRIBUTE_TYPE`
+    **attributes** : :obj:`~VehicleGraphics2DAttributeType`
 
     :Returns:
 

@@ -44,7 +44,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.vgt.ITimeToolTimeArray.type
-    :type: EVENT_ARRAY_TYPE
+    :type: EventArrayType
 
     Return the type of time array.
 

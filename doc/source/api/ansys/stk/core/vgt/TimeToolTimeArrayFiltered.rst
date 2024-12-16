@@ -54,7 +54,7 @@ Property detail
 
 .. py:property:: filter_type
     :canonical: ansys.stk.core.vgt.TimeToolTimeArrayFiltered.filter_type
-    :type: EVENT_ARRAY_FILTER_TYPE
+    :type: EventArrayFilterType
 
     Skip Time Steps filter type omits from filtered time array any times that fall within specified time step of last accepted time sample. Skip Count filter type omits specified number of time samples since last accepted time sample...
 

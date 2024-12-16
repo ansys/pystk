@@ -91,13 +91,13 @@ Property detail
 
 .. py:property:: procedure_type
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureParallelFlightLine.procedure_type
-    :type: FLIGHT_LINE_PROCEDURE_TYPE
+    :type: FlightLineProcedureType
 
     Gets or sets the procedure methodology used to calculate the flight line.
 
 .. py:property:: orientation
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureParallelFlightLine.orientation
-    :type: LINE_ORIENTATION
+    :type: LineOrientation
 
     Gets or sets the placement of the procedure with respect to the previous flight line.
 
@@ -127,7 +127,7 @@ Property detail
 
 .. py:property:: level_off_mode
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureParallelFlightLine.level_off_mode
-    :type: ALTITUDE_CONSTRAINT_MANEUVER_MODE
+    :type: AltitudeConstraintManeuverMode
 
     Gets or sets the level off mode. This is only used when the must level off option is on.
 

@@ -102,14 +102,14 @@ Method detail
 
         :obj:`~IMCSSegment`
 
-.. py:method:: insert(self, segment_type: SEGMENT_TYPE, segment_name: str, segment_to_insert_before: str) -> IMCSSegment
+.. py:method:: insert(self, segment_type: SegmentType, segment_name: str, segment_to_insert_before: str) -> IMCSSegment
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSSegmentCollection.insert
 
     Add a segment to the segment collection.
 
     :Parameters:
 
-    **segment_type** : :obj:`~SEGMENT_TYPE`
+    **segment_type** : :obj:`~SegmentType`
     **segment_name** : :obj:`~str`
     **segment_to_insert_before** : :obj:`~str`
 

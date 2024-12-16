@@ -77,7 +77,7 @@ Property detail
 
 .. py:property:: load_method_type
     :canonical: ansys.stk.core.stkobjects.PropagatorSGP4SegmentCollection.load_method_type
-    :type: LOAD_METHOD
+    :type: LoadMethod
 
     File Load Type.
 

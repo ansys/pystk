@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.IRadarClutterGeometryModel.type
-    :type: RADAR_CLUTTER_GEOMETRY_MODEL_TYPE
+    :type: RadarClutterGeometryModelType
 
     This property is deprecated. Use PointProviderType on IAgScatteringPointProvider instead. Gets the radar clutter geometry model type enumeration.
 

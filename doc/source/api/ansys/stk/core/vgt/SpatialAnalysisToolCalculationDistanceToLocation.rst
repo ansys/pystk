@@ -44,7 +44,7 @@ Property detail
 
 .. py:property:: distance
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolCalculationDistanceToLocation.distance
-    :type: DISTANCE_TO_LOCATION_TYPE
+    :type: DistanceToLocationType
 
     The Volume Calc range distance types.
 

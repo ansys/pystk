@@ -40,7 +40,7 @@ Property detail
 
 .. py:property:: direction_definition
     :canonical: ansys.stk.core.stkobjects.astrogator.ThrusterSet.direction_definition
-    :type: THRUSTER_DIRECTION
+    :type: ThrusterDirection
 
     Gets or sets the thruster set direction definition.
 

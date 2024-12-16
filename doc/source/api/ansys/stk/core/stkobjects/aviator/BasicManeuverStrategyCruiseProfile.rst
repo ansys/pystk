@@ -50,7 +50,7 @@ Property detail
 
 .. py:property:: reference_frame
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyCruiseProfile.reference_frame
-    :type: BASIC_MANEUVER_REFERENCE_FRAME
+    :type: BasicManeuverReferenceFrame
 
     Gets or sets the reference frame the aircraft will use. Earth Frame will force the aircraft to overcome wind effects. Wind frame will allow the maneuver to be perturbed by wind.
 

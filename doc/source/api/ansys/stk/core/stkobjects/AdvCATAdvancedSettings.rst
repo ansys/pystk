@@ -172,7 +172,7 @@ Property detail
 
 .. py:property:: conjunction_type
     :canonical: ansys.stk.core.stkobjects.AdvCATAdvancedSettings.conjunction_type
-    :type: ADVCAT_CONJUNCTION_TYPE
+    :type: AdvCATConjunctionType
 
     Mode for computing events involving conjunction TCA.
 

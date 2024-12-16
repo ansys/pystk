@@ -48,13 +48,13 @@ Property detail
 
 .. py:property:: final_state_component
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcCartSTMElem.final_state_component
-    :type: STM_PERTURBATION_VARIABLES
+    :type: STMPerturbationVariables
 
     Gets or sets the final variation variable.
 
 .. py:property:: initial_state_component
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcCartSTMElem.initial_state_component
-    :type: STM_PERTURBATION_VARIABLES
+    :type: STMPerturbationVariables
 
     Gets or sets the initial variation variable.
 

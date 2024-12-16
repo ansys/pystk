@@ -69,7 +69,7 @@ Method detail
 
 
 
-.. py:method:: get_altitude(self, lat: typing.Any, lon: typing.Any, alt_ref: ALTITUDE_REFERENCE_TYPE) -> float
+.. py:method:: get_altitude(self, lat: typing.Any, lon: typing.Any, alt_ref: AltitudeReferenceType) -> float
     :canonical: ansys.stk.core.stkobjects.CentralBodyTerrainCollectionElement.get_altitude
 
     Return the altitude at the specified position relative to the input reference surface. If the specified position is outside terrain sources, the altitude of 0.0 relative to the default reference ellipsoid (WGS84 for Earth) is returned.
@@ -78,13 +78,13 @@ Method detail
 
     **lat** : :obj:`~typing.Any`
     **lon** : :obj:`~typing.Any`
-    **alt_ref** : :obj:`~ALTITUDE_REFERENCE_TYPE`
+    **alt_ref** : :obj:`~AltitudeReferenceType`
 
     :Returns:
 
         :obj:`~float`
 
-.. py:method:: get_altitude_batch(self, lat_lons: list, alt_ref: ALTITUDE_REFERENCE_TYPE) -> list
+.. py:method:: get_altitude_batch(self, lat_lons: list, alt_ref: AltitudeReferenceType) -> list
     :canonical: ansys.stk.core.stkobjects.CentralBodyTerrainCollectionElement.get_altitude_batch
 
     Return the altitudes at the specified position array relative to the input reference surface. If a specified position is outside terrain sources, the altitude of 0.0 relative to the default reference ellipsoid (WGS84 for Earth) is used.
@@ -92,13 +92,13 @@ Method detail
     :Parameters:
 
     **lat_lons** : :obj:`~list`
-    **alt_ref** : :obj:`~ALTITUDE_REFERENCE_TYPE`
+    **alt_ref** : :obj:`~AltitudeReferenceType`
 
     :Returns:
 
         :obj:`~list`
 
-.. py:method:: get_altitudes_between_points_at_resolution(self, southwest_latitude: typing.Any, southwest_longitude: typing.Any, northeast_latitude: typing.Any, northeast_longitude: typing.Any, step_size: typing.Any, distance_type: DISTANCE_ON_SPHERE, alt_ref: ALTITUDE_REFERENCE_TYPE) -> list
+.. py:method:: get_altitudes_between_points_at_resolution(self, southwest_latitude: typing.Any, southwest_longitude: typing.Any, northeast_latitude: typing.Any, northeast_longitude: typing.Any, step_size: typing.Any, distance_type: DistanceOnSphere, alt_ref: AltitudeReferenceType) -> list
     :canonical: ansys.stk.core.stkobjects.CentralBodyTerrainCollectionElement.get_altitudes_between_points_at_resolution
 
     Return the terrain profile at the specified resolution relative to the input reference surface. If a position along the profile is outside terrain sources, the altitude of 0.0 relative to the default reference ellipsoid (WGS84 for Earth) is used.
@@ -110,8 +110,8 @@ Method detail
     **northeast_latitude** : :obj:`~typing.Any`
     **northeast_longitude** : :obj:`~typing.Any`
     **step_size** : :obj:`~typing.Any`
-    **distance_type** : :obj:`~DISTANCE_ON_SPHERE`
-    **alt_ref** : :obj:`~ALTITUDE_REFERENCE_TYPE`
+    **distance_type** : :obj:`~DistanceOnSphere`
+    **alt_ref** : :obj:`~AltitudeReferenceType`
 
     :Returns:
 

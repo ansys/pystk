@@ -79,7 +79,7 @@ Property detail
 
 .. py:property:: control_limit_mode
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyWeave.control_limit_mode
-    :type: BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT
+    :type: BasicManeuverStrategyNavigationControlLimit
 
     Get the method to define the control limits of the aircraft during the maneuver.
 
@@ -121,14 +121,14 @@ Method detail
 
 
 
-.. py:method:: set_control_limit(self, control_limit_mode: BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT, control_limit_value: float) -> None
+.. py:method:: set_control_limit(self, control_limit_mode: BasicManeuverStrategyNavigationControlLimit, control_limit_value: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyWeave.set_control_limit
 
     Set the method and corresponding value to define the control limits of the aircraft during the maneuver.
 
     :Parameters:
 
-    **control_limit_mode** : :obj:`~BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT`
+    **control_limit_mode** : :obj:`~BasicManeuverStrategyNavigationControlLimit`
     **control_limit_value** : :obj:`~float`
 
     :Returns:

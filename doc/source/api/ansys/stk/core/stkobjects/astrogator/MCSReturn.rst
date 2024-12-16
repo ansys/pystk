@@ -38,7 +38,7 @@ Property detail
 
 .. py:property:: return_control_to_parent_sequence
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSReturn.return_control_to_parent_sequence
-    :type: RETURN_CONTROL
+    :type: ReturnControl
 
     Gets or sets the state of the segment.
 

@@ -61,42 +61,42 @@ root.rewind()
 # First, add a satellite in a polar orbit:
 
 # +
-from ansys.stk.core.stkobjects import STK_OBJECT_TYPE
+from ansys.stk.core.stkobjects import STKObjectType
 
 
-polar_sat = root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "PolarSat")
+polar_sat = root.current_scenario.children.new(STKObjectType.SATELLITE, "PolarSat")
 # -
 
 # Then, set the satellite's propagator to J4Pertubation:
 
 # +
-from ansys.stk.core.stkobjects import PROPAGATOR_TYPE
+from ansys.stk.core.stkobjects import PropagatorType
 
 
-polar_sat.set_propagator_type(PROPAGATOR_TYPE.J4_PERTURBATION)
+polar_sat.set_propagator_type(PropagatorType.J4_PERTURBATION)
 # -
 
 # The satellite should have a circular orbit with an inclination of $97.3^\circ$ and an altitude of $400$ km, which translates to an initial state of $r_x = -6374.80$ km, $r_y = -2303.27$ km, $r_z = -0.0000357827$ km, $v_x = -0.499065$ km/s, $v_y = 1.38127$ km/s, and $v_z = 7.6064$ km/s given with respect to J2000 frame:
 
 # +
-from ansys.stk.core.stkobjects import COORDINATE_SYSTEM
+from ansys.stk.core.stkobjects import CoordinateSystem
 
 
 polar_sat_propagator = polar_sat.propagator
 r_vec = [-6374.8, -2303.27, -0.0000357827]
 v_vec = [-0.499065, 1.38127, 7.6064]
 polar_sat_propagator.initial_state.representation.assign_cartesian(
-    COORDINATE_SYSTEM.J2000, *r_vec, *v_vec
+    CoordinateSystem.J2000, *r_vec, *v_vec
 )
 # -
 
 # Then, insert a satellite named Shuttle:
 
-shuttle = root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "Shuttle")
+shuttle = root.current_scenario.children.new(STKObjectType.SATELLITE, "Shuttle")
 
 # Set the satellite's propagator to J4Pertubation:
 
-shuttle.set_propagator_type(PROPAGATOR_TYPE.J4_PERTURBATION)
+shuttle.set_propagator_type(PropagatorType.J4_PERTURBATION)
 
 # The satellite should have a circular orbit with a RAAN of $340^\circ$, which translates to an initial state of $r_x = -6878.12$ km, $r_y = -16.3051$ km, $r_z = 0.00199559$ km, $v_x = -0.0115701$ km/s, $v_y = -4.88136$ km/s, and $v_z = 5.38292$ km/s with respect to the J2000 frame:
 
@@ -104,7 +104,7 @@ shuttle_propagator = shuttle.propagator
 r_vec = [-6878.12, -16.3051, 0.00199559]
 v_vec = [-0.0115701, -4.88136, 5.38292]
 shuttle_propagator.initial_state.representation.assign_cartesian(
-    COORDINATE_SYSTEM.J2000, *r_vec, *v_vec
+    CoordinateSystem.J2000, *r_vec, *v_vec
 )
 
 # Finally, propagate both satellites:
@@ -123,16 +123,16 @@ globe_plotter.show()
 # Create a coverage definition object modeling the region of Tropics:
 
 tropics = root.current_scenario.children.new(
-    STK_OBJECT_TYPE.COVERAGE_DEFINITION, "Tropics"
+    STKObjectType.COVERAGE_DEFINITION, "Tropics"
 )
 
 # Assign the coverage definition a grid of type latitude bounds, with a minimum latitude of $-23.5^\circ$, a maximum latitude of $23.5^\circ$, and point granularity of $3.0^\circ$ lat/lon:
 
 # +
-from ansys.stk.core.stkobjects import COVERAGE_BOUNDS
+from ansys.stk.core.stkobjects import CoverageBounds
 
 
-tropics.grid.bounds_type = COVERAGE_BOUNDS.LATITUDE
+tropics.grid.bounds_type = CoverageBounds.LATITUDE
 tropics.grid.bounds.minimum_latitude = -23.5
 tropics.grid.bounds.maximum_latitude = 23.5
 tropics.grid.resolution.latitude_longitude = 3
@@ -237,26 +237,26 @@ tropics.graphics.static.show_points = False
 
 # Create a Figure of Merit:
 
-coverage = tropics.children.new(STK_OBJECT_TYPE.FIGURE_OF_MERIT, "Coverage")
+coverage = tropics.children.new(STKObjectType.FIGURE_OF_MERIT, "Coverage")
 
 # ### Define the coverage
 
 # Set the coverage definition to N Asset Coverage:
 
 # +
-from ansys.stk.core.stkobjects import FIGURE_OF_MERIT_DEFINITION_TYPE
+from ansys.stk.core.stkobjects import FigureOfMeritDefinitionType
 
 
-coverage.set_definition_type(FIGURE_OF_MERIT_DEFINITION_TYPE.N_ASSET_COVERAGE)
+coverage.set_definition_type(FigureOfMeritDefinitionType.N_ASSET_COVERAGE)
 # -
 
 # Set the compute type to Maximum:
 
 # +
-from ansys.stk.core.stkobjects import FIGURE_OF_MERIT_COMPUTE
+from ansys.stk.core.stkobjects import FigureOfMeritCompute
 
 
-coverage.definition.set_compute_type(FIGURE_OF_MERIT_COMPUTE.MAXIMUM)
+coverage.definition.set_compute_type(FigureOfMeritCompute.MAXIMUM)
 # -
 
 # ### Configure the graphics
@@ -264,12 +264,12 @@ coverage.definition.set_compute_type(FIGURE_OF_MERIT_COMPUTE.MAXIMUM)
 # Set some animation graphics options for the Figure of Merit object:
 
 # +
-from ansys.stk.core.stkobjects import FIGURE_OF_MERIT_GRAPHICS_2D_ACCUMULATION
+from ansys.stk.core.stkobjects import FigureOfMeritGraphics2DAccumulation
 
 
 coverage.graphics.animation_settings.show_graphics = True
 coverage.graphics.animation_settings.accumulation = (
-    FIGURE_OF_MERIT_GRAPHICS_2D_ACCUMULATION.CURRENT_TIME
+    FigureOfMeritGraphics2DAccumulation.CURRENT_TIME
 )
 coverage.graphics.animation_settings.fill_points = False
 coverage.graphics.animation_settings.marker_style = "Star"
@@ -292,12 +292,12 @@ globe_plotter.show()
 # Adjust the definition of the Figure of Merit's coverage to determine which points have coverage from both satellites at the same time:
 
 # +
-from ansys.stk.core.stkobjects import FIGURE_OF_MERIT_SATISFACTION_TYPE
+from ansys.stk.core.stkobjects import FigureOfMeritSatisfactionType
 
 
 coverage.definition.satisfaction.enable_satisfaction = True
 coverage.definition.satisfaction.satisfaction_type = (
-    FIGURE_OF_MERIT_SATISFACTION_TYPE.AT_LEAST
+    FigureOfMeritSatisfactionType.AT_LEAST
 )
 coverage.definition.satisfaction.satisfaction_threshold = 2
 # -
@@ -309,14 +309,14 @@ coverage.definition.satisfaction.satisfaction_threshold = 2
 # Set some animation graphics to see when points are covered by neither, one, or both satellites:
 
 # +
-from ansys.stk.core.stkobjects import FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD
+from ansys.stk.core.stkobjects import FigureOfMeritGraphics2DColorMethod
 from ansys.stk.core.utilities.colors import Color
 
 
 coverage.graphics.static.show_graphics = False
 coverage.graphics.animation_settings.contours.show_graphics = True
 coverage.graphics.animation_settings.contours.color_method = (
-    FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD.EXPLICIT
+    FigureOfMeritGraphics2DColorMethod.EXPLICIT
 )
 level1 = coverage.graphics.animation_settings.contours.level_attributes.add_level(1)
 level1.color = Color.from_rgb(250, 7, 214)

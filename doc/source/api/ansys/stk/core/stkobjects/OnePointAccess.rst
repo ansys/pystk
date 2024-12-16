@@ -59,7 +59,7 @@ Property detail
 
 .. py:property:: summary_option
     :canonical: ansys.stk.core.stkobjects.OnePointAccess.summary_option
-    :type: ONE_POINT_ACCESS_SUMMARY
+    :type: OnePointAccessSummary
 
     Summary option that specifies the level of detail to provide in the computed results.
 

@@ -14,62 +14,60 @@ well as in STK Engine custom applications.
 
 __all__ = ["AGICustomTerrainOverlay", "AGICustomTerrainOverlayFactory", "AGIProcessedImageGlobeOverlay", "AGIProcessedImageGlobeOverlayFactory", 
 "AGIProcessedTerrainOverlay", "AGIProcessedTerrainOverlayFactory", "AGIRoamImageGlobeOverlay", "AGIRoamImageGlobeOverlayFactory", 
-"ANTI_ALIASING_METHOD", "AlphaFromLuminanceFilter", "AlphaFromLuminanceFilterFactory", "AlphaFromPixelFilter", "AlphaFromPixelFilterFactory", 
-"AlphaFromRasterFilter", "AlphaFromRasterFilterFactory", "AltitudeDisplayCondition", "AltitudeDisplayConditionFactory", 
-"AxesPrimitive", "AxesPrimitiveFactory", "BINARY_LOGIC_OPERATION", "BLUR_METHOD", "BandExtractFilter", "BandExtractFilterFactory", 
-"BandOrderFilter", "BandOrderFilterFactory", "BatchPrimitiveIndex", "BlurFilter", "BlurFilterFactory", "BoundingSphere", 
-"BoundingSphereFactory", "BoxTriangulatorInitializer", "BrightnessFilter", "BrightnessFilterFactory", "CONSTRAINED_UP_AXIS", 
-"CYLINDER_FILL_OPTIONS", "Camera", "CameraSnapshot", "CameraVideoRecording", "CentralBodyGraphics", "CentralBodyGraphicsIndexer", 
-"Clouds", "ColorToLuminanceFilter", "ColorToLuminanceFilterFactory", "CompositeDisplayCondition", "CompositeDisplayConditionFactory", 
-"CompositePrimitive", "CompositePrimitiveFactory", "ConstantDisplayCondition", "ConstantDisplayConditionFactory", "ContrastFilter", 
-"ContrastFilterFactory", "ConvolutionFilter", "ConvolutionFilterFactory", "CustomImageGlobeOverlay", "CustomImageGlobeOverlayPluginActivator", 
-"CustomImageGlobeOverlayPluginActivatorFactory", "CustomImageGlobeOverlayPluginProxy", "CylinderTriangulatorInitializer", 
-"DisplayCondition", "DistanceDisplayCondition", "DistanceDisplayConditionFactory", "DistanceToGlobeOverlayDisplayCondition", 
-"DistanceToGlobeOverlayDisplayConditionFactory", "DistanceToPositionDisplayCondition", "DistanceToPositionDisplayConditionFactory", 
-"DistanceToPrimitiveDisplayCondition", "DistanceToPrimitiveDisplayConditionFactory", "DurationPathPrimitiveUpdatePolicy", 
-"DurationPathPrimitiveUpdatePolicyFactory", "EDGE_DETECT_METHOD", "EdgeDetectFilter", "EdgeDetectFilterFactory", "EllipsoidTriangulatorInitializer", 
-"ExtrudedPolylineTriangulatorInitializer", "ExtrudedPolylineTriangulatorResult", "FACE_CULLING_MODE", "FONT_STYLE", "FactoryAndInitializers", 
-"FilteringRasterStream", "FilteringRasterStreamFactory", "FlipFilter", "FlipFilterFactory", "FrameRate", "GRADIENT_DETECT_METHOD", 
-"GammaCorrectionFilter", "GammaCorrectionFilterFactory", "GaussianBlurFilter", "GaussianBlurFilterFactory", "GeospatialImageGlobeOverlay", 
-"GeospatialImageGlobeOverlayFactory", "GlobeImageOverlay", "GlobeImageOverlayAddCompleteEventArgs", "GlobeImageOverlayInitializer", 
-"GlobeOverlay", "GlobeOverlaySettings", "GradientDetectFilter", "GradientDetectFilterFactory", "GraphicsFont", "GraphicsFontFactory", 
-"GreatArcInterpolator", "GreatArcInterpolatorFactory", "IConvolutionFilter", "IDisplayCondition", "IGlobeImageOverlay", 
-"IGlobeOverlay", "IKmlContainer", "IKmlFeature", "IOverlay", "IPathPrimitiveUpdatePolicy", "IPositionInterpolator", "IPrimitive", 
-"IProjection", "IRaster", "IRasterFilter", "IRasterStream", "IScreenOverlay", "IScreenOverlayCollectionBase", "IScreenOverlayContainer", 
-"ITerrainOverlay", "ITriangulatorResult", "ImageCollection", "JPEG2000_COMPRESSION_PROFILE", "Jpeg2000WriterInitializer", 
-"KML_NETWORK_LINK_REFRESH_MODE", "KML_NETWORK_LINK_VIEW_REFRESH_MODE", "KmlContainer", "KmlDocument", "KmlDocumentCollection", 
-"KmlDocumentLoadedEventArgs", "KmlFeature", "KmlFeatureCollection", "KmlFolder", "KmlGraphics", "KmlNetworkLink", "LevelsFilter", 
-"LevelsFilterFactory", "Lighting", "MAGNIFICATION_FILTER", "MAP_PROJECTION", "MARKER_BATCH_RENDERING_METHOD", "MARKER_BATCH_RENDER_PASS", 
-"MARKER_BATCH_SIZE_SOURCE", "MARKER_BATCH_SIZE_UNIT", "MARKER_BATCH_SORT_ORDER", "MINIFICATION_FILTER", "MODEL_TRANSFORMATION_TYPE", 
-"MODEL_UP_AXIS", "MarkerBatchPrimitive", "MarkerBatchPrimitiveFactory", "MarkerBatchPrimitiveOptionalParameters", "MarkerBatchPrimitiveOptionalParametersFactory", 
-"MaximumCountPathPrimitiveUpdatePolicy", "MaximumCountPathPrimitiveUpdatePolicyFactory", "ModelArticulation", "ModelArticulationCollection", 
-"ModelPrimitive", "ModelPrimitiveFactory", "ModelTransformation", "ORIGIN", "OUTLINE_APPEARANCE", "OVERLAY_ASPECT_RATIO_MODE", 
-"OVERLAY_ROLE", "ObjectCollection", "Overlay", "PATH_PRIMITIVE_REMOVE_LOCATION", "POLYLINE_TYPE", "PRIMITIVES_SORT_ORDER", 
-"PRIMITIVE_INDICES_ORDER_HINT", "PathPoint", "PathPointCollection", "PathPointFactory", "PathPrimitive", "PathPrimitiveFactory", 
+"AlphaFromLuminanceFilter", "AlphaFromLuminanceFilterFactory", "AlphaFromPixelFilter", "AlphaFromPixelFilterFactory", "AlphaFromRasterFilter", 
+"AlphaFromRasterFilterFactory", "AltitudeDisplayCondition", "AltitudeDisplayConditionFactory", "AntiAliasingMethod", "AxesPrimitive", 
+"AxesPrimitiveFactory", "BandExtractFilter", "BandExtractFilterFactory", "BandOrderFilter", "BandOrderFilterFactory", "BatchPrimitiveIndex", 
+"BinaryLogicOperation", "BlurFilter", "BlurFilterFactory", "BlurMethod", "BoundingSphere", "BoundingSphereFactory", "BoxTriangulatorInitializer", 
+"BrightnessFilter", "BrightnessFilterFactory", "Camera", "CameraSnapshot", "CameraVideoRecording", "CentralBodyGraphics", 
+"CentralBodyGraphicsIndexer", "Clouds", "ColorToLuminanceFilter", "ColorToLuminanceFilterFactory", "CompositeDisplayCondition", 
+"CompositeDisplayConditionFactory", "CompositePrimitive", "CompositePrimitiveFactory", "ConstantDisplayCondition", "ConstantDisplayConditionFactory", 
+"ConstrainedUpAxis", "ContrastFilter", "ContrastFilterFactory", "ConvolutionFilter", "ConvolutionFilterFactory", "CustomImageGlobeOverlay", 
+"CustomImageGlobeOverlayPluginActivator", "CustomImageGlobeOverlayPluginActivatorFactory", "CustomImageGlobeOverlayPluginProxy", 
+"CylinderFillOptions", "CylinderTriangulatorInitializer", "DisplayCondition", "DistanceDisplayCondition", "DistanceDisplayConditionFactory", 
+"DistanceToGlobeOverlayDisplayCondition", "DistanceToGlobeOverlayDisplayConditionFactory", "DistanceToPositionDisplayCondition", 
+"DistanceToPositionDisplayConditionFactory", "DistanceToPrimitiveDisplayCondition", "DistanceToPrimitiveDisplayConditionFactory", 
+"DurationPathPrimitiveUpdatePolicy", "DurationPathPrimitiveUpdatePolicyFactory", "EdgeDetectFilter", "EdgeDetectFilterFactory", 
+"EdgeDetectMethod", "EllipsoidTriangulatorInitializer", "ExtrudedPolylineTriangulatorInitializer", "ExtrudedPolylineTriangulatorResult", 
+"FaceCullingMode", "FactoryAndInitializers", "FilteringRasterStream", "FilteringRasterStreamFactory", "FlipFilter", "FlipFilterFactory", 
+"FontStyle", "FrameRate", "GammaCorrectionFilter", "GammaCorrectionFilterFactory", "GaussianBlurFilter", "GaussianBlurFilterFactory", 
+"GeospatialImageGlobeOverlay", "GeospatialImageGlobeOverlayFactory", "GlobeImageOverlay", "GlobeImageOverlayAddCompleteEventArgs", 
+"GlobeImageOverlayInitializer", "GlobeOverlay", "GlobeOverlaySettings", "GradientDetectFilter", "GradientDetectFilterFactory", 
+"GradientDetectMethod", "GraphicsFont", "GraphicsFontFactory", "GreatArcInterpolator", "GreatArcInterpolatorFactory", "IConvolutionFilter", 
+"IDisplayCondition", "IGlobeImageOverlay", "IGlobeOverlay", "IKmlContainer", "IKmlFeature", "IOverlay", "IPathPrimitiveUpdatePolicy", 
+"IPositionInterpolator", "IPrimitive", "IProjection", "IRaster", "IRasterFilter", "IRasterStream", "IScreenOverlay", "IScreenOverlayCollectionBase", 
+"IScreenOverlayContainer", "ITerrainOverlay", "ITriangulatorResult", "ImageCollection", "Jpeg2000CompressionProfile", "Jpeg2000WriterInitializer", 
+"KmlContainer", "KmlDocument", "KmlDocumentCollection", "KmlDocumentLoadedEventArgs", "KmlFeature", "KmlFeatureCollection", 
+"KmlFolder", "KmlGraphics", "KmlNetworkLink", "KmlNetworkLinkRefreshMode", "KmlNetworkLinkViewRefreshMode", "LevelsFilter", 
+"LevelsFilterFactory", "Lighting", "MagnificationFilter", "MapProjection", "MarkerBatchPrimitive", "MarkerBatchPrimitiveFactory", 
+"MarkerBatchPrimitiveOptionalParameters", "MarkerBatchPrimitiveOptionalParametersFactory", "MarkerBatchRenderPass", "MarkerBatchRenderingMethod", 
+"MarkerBatchSizeSource", "MarkerBatchSizeUnit", "MarkerBatchSortOrder", "MaximumCountPathPrimitiveUpdatePolicy", "MaximumCountPathPrimitiveUpdatePolicyFactory", 
+"MinificationFilter", "ModelArticulation", "ModelArticulationCollection", "ModelPrimitive", "ModelPrimitiveFactory", "ModelTransformation", 
+"ModelTransformationType", "ModelUpAxis", "ObjectCollection", "Origin", "OutlineAppearance", "Overlay", "OverlayAspectRatioMode", 
+"OverlayRole", "PathPoint", "PathPointCollection", "PathPointFactory", "PathPrimitive", "PathPrimitiveFactory", "PathPrimitiveRemoveLocation", 
 "PathPrimitiveUpdatePolicy", "PickResult", "PickResultCollection", "PixelSizeDisplayCondition", "PixelSizeDisplayConditionFactory", 
 "PointBatchPrimitive", "PointBatchPrimitiveFactory", "PointBatchPrimitiveOptionalParameters", "PointBatchPrimitiveOptionalParametersFactory", 
 "PolylinePrimitive", "PolylinePrimitiveFactory", "PolylinePrimitiveOptionalParameters", "PolylinePrimitiveOptionalParametersFactory", 
-"PositionInterpolator", "Primitive", "PrimitiveManager", "ProjectedRasterOverlay", "ProjectedRasterOverlayFactory", "Projection", 
-"ProjectionFactory", "ProjectionRasterStreamPluginActivator", "ProjectionRasterStreamPluginActivatorFactory", "ProjectionRasterStreamPluginProxy", 
-"ProjectionStream", "RASTER_BAND", "RASTER_FLIP_AXIS", "RASTER_FORMAT", "RASTER_ORIENTATION", "RASTER_SHARPEN_METHOD", "RASTER_TYPE", 
-"REFRESH_RATE", "RENDERER_SHADING_MODEL", "RENDER_PASS", "RENDER_PASS_HINT", "Raster", "RasterAttributes", "RasterAttributesFactory", 
-"RasterFactory", "RasterFilter", "RasterImageGlobeOverlay", "RasterImageGlobeOverlayFactory", "RasterStream", "RendererTexture2D", 
-"RendererTextureTemplate2D", "RenderingEventArgs", "RhumbLineInterpolator", "RhumbLineInterpolatorFactory", "RotateFilter", 
-"RotateFilterFactory", "SCREEN_OVERLAY_ORIGIN", "SCREEN_OVERLAY_PINNING_ORIGIN", "SCREEN_OVERLAY_UNIT", "SET_HINT", "SNAPSHOT_FILE_FORMAT", 
-"STEREOSCOPIC_DISPLAY_MODE", "STEREO_PROJECTION_MODE", "SURFACE_MESH_RENDERING_METHOD", "Scene", "SceneCollection", "SceneDisplayCondition", 
-"SceneDisplayConditionFactory", "SceneGlobeOverlaySettings", "SceneManager", "SceneManagerInitializer", "ScreenOverlay", 
-"ScreenOverlayCollection", "ScreenOverlayCollectionBase", "ScreenOverlayFactory", "ScreenOverlayManager", "ScreenOverlayPickResult", 
-"ScreenOverlayPickResultCollection", "SequenceFilter", "SequenceFilterFactory", "SharpenFilter", "SharpenFilterFactory", 
-"SolidPrimitive", "SolidPrimitiveFactory", "SolidTriangulatorResult", "Stereoscopic", "SurfaceExtentTriangulatorInitializer", 
-"SurfaceMeshPrimitive", "SurfaceMeshPrimitiveFactory", "SurfacePolygonTriangulatorInitializer", "SurfaceShapesInitializer", 
-"SurfaceShapesResult", "SurfaceTriangulatorResult", "TEXTURE_FORMAT", "TEXTURE_WRAP", "TerrainOverlay", "TerrainOverlayAddCompleteEventArgs", 
+"PolylineType", "PositionInterpolator", "Primitive", "PrimitiveIndicesOrderHint", "PrimitiveManager", "PrimitivesSortOrder", 
+"ProjectedRasterOverlay", "ProjectedRasterOverlayFactory", "Projection", "ProjectionFactory", "ProjectionRasterStreamPluginActivator", 
+"ProjectionRasterStreamPluginActivatorFactory", "ProjectionRasterStreamPluginProxy", "ProjectionStream", "Raster", "RasterAttributes", 
+"RasterAttributesFactory", "RasterBand", "RasterFactory", "RasterFilter", "RasterFlipAxis", "RasterFormat", "RasterImageGlobeOverlay", 
+"RasterImageGlobeOverlayFactory", "RasterOrientation", "RasterSharpenMethod", "RasterStream", "RasterType", "RefreshRate", 
+"RenderPass", "RenderPassHint", "RendererShadingModel", "RendererTexture2D", "RendererTextureTemplate2D", "RenderingEventArgs", 
+"RhumbLineInterpolator", "RhumbLineInterpolatorFactory", "RotateFilter", "RotateFilterFactory", "Scene", "SceneCollection", 
+"SceneDisplayCondition", "SceneDisplayConditionFactory", "SceneGlobeOverlaySettings", "SceneManager", "SceneManagerInitializer", 
+"ScreenOverlay", "ScreenOverlayCollection", "ScreenOverlayCollectionBase", "ScreenOverlayFactory", "ScreenOverlayManager", 
+"ScreenOverlayOrigin", "ScreenOverlayPickResult", "ScreenOverlayPickResultCollection", "ScreenOverlayPinningOrigin", "ScreenOverlayUnit", 
+"SequenceFilter", "SequenceFilterFactory", "SetHint", "SharpenFilter", "SharpenFilterFactory", "SnapshotFileFormat", "SolidPrimitive", 
+"SolidPrimitiveFactory", "SolidTriangulatorResult", "StereoProjectionMode", "Stereoscopic", "StereoscopicDisplayMode", "SurfaceExtentTriangulatorInitializer", 
+"SurfaceMeshPrimitive", "SurfaceMeshPrimitiveFactory", "SurfaceMeshRenderingMethod", "SurfacePolygonTriangulatorInitializer", 
+"SurfaceShapesInitializer", "SurfaceShapesResult", "SurfaceTriangulatorResult", "TerrainOverlay", "TerrainOverlayAddCompleteEventArgs", 
 "TerrainOverlayCollection", "TerrainOverlayInitializer", "TextBatchPrimitive", "TextBatchPrimitiveFactory", "TextBatchPrimitiveOptionalParameters", 
 "TextBatchPrimitiveOptionalParametersFactory", "TextOverlay", "TextOverlayFactory", "Texture2DFactory", "TextureFilter2D", 
-"TextureFilter2DFactory", "TextureMatrix", "TextureMatrixFactory", "TextureScreenOverlay", "TextureScreenOverlayFactory", 
-"TimeIntervalDisplayCondition", "TimeIntervalDisplayConditionFactory", "TriangleMeshPrimitive", "TriangleMeshPrimitiveFactory", 
-"TriangleMeshPrimitiveOptionalParameters", "TriangleMeshPrimitiveOptionalParametersFactory", "TriangulatorResult", "VIDEO_FORMAT", 
-"VIDEO_PLAYBACK", "VISIBILITY", "VectorPrimitive", "VectorPrimitiveFactory", "VideoStream", "VideoStreamFactory", "VisualEffects", 
-"WINDING_ORDER"]
+"TextureFilter2DFactory", "TextureFormat", "TextureMatrix", "TextureMatrixFactory", "TextureScreenOverlay", "TextureScreenOverlayFactory", 
+"TextureWrap", "TimeIntervalDisplayCondition", "TimeIntervalDisplayConditionFactory", "TriangleMeshPrimitive", "TriangleMeshPrimitiveFactory", 
+"TriangleMeshPrimitiveOptionalParameters", "TriangleMeshPrimitiveOptionalParametersFactory", "TriangulatorResult", "VectorPrimitive", 
+"VectorPrimitiveFactory", "VideoFormat", "VideoPlayback", "VideoStream", "VideoStreamFactory", "Visibility", "VisualEffects", 
+"WindingOrder"]
 
 import typing
 
@@ -96,7 +94,7 @@ from .vgt import (IVectorGeometryToolAxes, IVectorGeometryToolPoint, IVectorGeom
 def _raise_uninitialized_error(*args):
     raise STKRuntimeError("Valid STK object model classes are returned from STK methods and should not be created independently.")
 
-class CYLINDER_FILL_OPTIONS(IntFlag):
+class CylinderFillOptions(IntFlag):
     """Cylinder faces that can be filled."""
    
     WALL = 1
@@ -108,14 +106,14 @@ class CYLINDER_FILL_OPTIONS(IntFlag):
     ALL = 7
     """Completely fill the cylinder, including its wall, bottom, and top cap."""
 
-CYLINDER_FILL_OPTIONS.WALL.__doc__ = "Fill the cylinder's wall."
-CYLINDER_FILL_OPTIONS.BOTTOM_CAP.__doc__ = "Fill the cylinder's bottom cap."
-CYLINDER_FILL_OPTIONS.TOP_CAP.__doc__ = "Fill the cylinder's top cap."
-CYLINDER_FILL_OPTIONS.ALL.__doc__ = "Completely fill the cylinder, including its wall, bottom, and top cap."
+CylinderFillOptions.WALL.__doc__ = "Fill the cylinder's wall."
+CylinderFillOptions.BOTTOM_CAP.__doc__ = "Fill the cylinder's bottom cap."
+CylinderFillOptions.TOP_CAP.__doc__ = "Fill the cylinder's top cap."
+CylinderFillOptions.ALL.__doc__ = "Completely fill the cylinder, including its wall, bottom, and top cap."
 
-agcls.AgTypeNameMap["CYLINDER_FILL_OPTIONS"] = CYLINDER_FILL_OPTIONS
+agcls.AgTypeNameMap["CylinderFillOptions"] = CylinderFillOptions
 
-class WINDING_ORDER(IntEnum):
+class WindingOrder(IntEnum):
     """Specify the order for positions or front facing triangles. Winding order is important for triangulation and backface culling."""
    
     COUNTER_CLOCKWISE = 0
@@ -125,13 +123,13 @@ class WINDING_ORDER(IntEnum):
     COMPUTE = 2
     """The winding order is unknown and should be computed. For best performance, only use this value if you do not know the actual winding order."""
 
-WINDING_ORDER.COUNTER_CLOCKWISE.__doc__ = "Positions or triangles are defined in counter-clockwise order."
-WINDING_ORDER.CLOCKWISE.__doc__ = "Positions or triangles are defined in clockwise order."
-WINDING_ORDER.COMPUTE.__doc__ = "The winding order is unknown and should be computed. For best performance, only use this value if you do not know the actual winding order."
+WindingOrder.COUNTER_CLOCKWISE.__doc__ = "Positions or triangles are defined in counter-clockwise order."
+WindingOrder.CLOCKWISE.__doc__ = "Positions or triangles are defined in clockwise order."
+WindingOrder.COMPUTE.__doc__ = "The winding order is unknown and should be computed. For best performance, only use this value if you do not know the actual winding order."
 
-agcls.AgTypeNameMap["WINDING_ORDER"] = WINDING_ORDER
+agcls.AgTypeNameMap["WindingOrder"] = WindingOrder
 
-class SNAPSHOT_FILE_FORMAT(IntEnum):
+class SnapshotFileFormat(IntEnum):
     """When using camera snapshot or camera video recording to save a snapshot to a file, this specifies the file format."""
    
     BMP = 0
@@ -143,14 +141,14 @@ class SNAPSHOT_FILE_FORMAT(IntEnum):
     PNG = 4
     """PNG file format."""
 
-SNAPSHOT_FILE_FORMAT.BMP.__doc__ = "BMP file format."
-SNAPSHOT_FILE_FORMAT.TIFF.__doc__ = "TIFF file format."
-SNAPSHOT_FILE_FORMAT.JPEG.__doc__ = "JPEG file format."
-SNAPSHOT_FILE_FORMAT.PNG.__doc__ = "PNG file format."
+SnapshotFileFormat.BMP.__doc__ = "BMP file format."
+SnapshotFileFormat.TIFF.__doc__ = "TIFF file format."
+SnapshotFileFormat.JPEG.__doc__ = "JPEG file format."
+SnapshotFileFormat.PNG.__doc__ = "PNG file format."
 
-agcls.AgTypeNameMap["SNAPSHOT_FILE_FORMAT"] = SNAPSHOT_FILE_FORMAT
+agcls.AgTypeNameMap["SnapshotFileFormat"] = SnapshotFileFormat
 
-class VIDEO_FORMAT(IntEnum):
+class VideoFormat(IntEnum):
     """When using camera video recording to record a video, this specifies the file format."""
    
     H264 = 0
@@ -158,12 +156,12 @@ class VIDEO_FORMAT(IntEnum):
     WMV = 1
     """Windows Media Video (WMV) file format."""
 
-VIDEO_FORMAT.H264.__doc__ = "H.264 file format."
-VIDEO_FORMAT.WMV.__doc__ = "Windows Media Video (WMV) file format."
+VideoFormat.H264.__doc__ = "H.264 file format."
+VideoFormat.WMV.__doc__ = "Windows Media Video (WMV) file format."
 
-agcls.AgTypeNameMap["VIDEO_FORMAT"] = VIDEO_FORMAT
+agcls.AgTypeNameMap["VideoFormat"] = VideoFormat
 
-class CONSTRAINED_UP_AXIS(IntEnum):
+class ConstrainedUpAxis(IntEnum):
     """When setting the camera'saxes, this defines which axis of the axes is up in screen space, where up is from the bottom to the top of the screen."""
    
     X = 0
@@ -181,17 +179,17 @@ class CONSTRAINED_UP_AXIS(IntEnum):
     NONE = 6
     """No axis is contained."""
 
-CONSTRAINED_UP_AXIS.X.__doc__ = "The X axis is constrained."
-CONSTRAINED_UP_AXIS.Y.__doc__ = "The Y axis is constrained."
-CONSTRAINED_UP_AXIS.Z.__doc__ = "The Z axis is constrained."
-CONSTRAINED_UP_AXIS.NEGATIVE_X.__doc__ = "The negative X axis is constrained."
-CONSTRAINED_UP_AXIS.NEGATIVE_Y.__doc__ = "The negative Y axis is constrained."
-CONSTRAINED_UP_AXIS.NEGATIVE_Z.__doc__ = "The negative Z axis is constrained."
-CONSTRAINED_UP_AXIS.NONE.__doc__ = "No axis is contained."
+ConstrainedUpAxis.X.__doc__ = "The X axis is constrained."
+ConstrainedUpAxis.Y.__doc__ = "The Y axis is constrained."
+ConstrainedUpAxis.Z.__doc__ = "The Z axis is constrained."
+ConstrainedUpAxis.NEGATIVE_X.__doc__ = "The negative X axis is constrained."
+ConstrainedUpAxis.NEGATIVE_Y.__doc__ = "The negative Y axis is constrained."
+ConstrainedUpAxis.NEGATIVE_Z.__doc__ = "The negative Z axis is constrained."
+ConstrainedUpAxis.NONE.__doc__ = "No axis is contained."
 
-agcls.AgTypeNameMap["CONSTRAINED_UP_AXIS"] = CONSTRAINED_UP_AXIS
+agcls.AgTypeNameMap["ConstrainedUpAxis"] = ConstrainedUpAxis
 
-class OVERLAY_ROLE(IntEnum):
+class OverlayRole(IntEnum):
     """The role of a globe overlay."""
    
     BASE = 0
@@ -205,15 +203,15 @@ class OVERLAY_ROLE(IntEnum):
     NONE = 5
     """The role of the globe overlay isn't set."""
 
-OVERLAY_ROLE.BASE.__doc__ = "The globe overlay is a base image."
-OVERLAY_ROLE.NIGHT.__doc__ = "The globe overlay is a base image that is only displayed on the area of the central body that is not lit by the sun."
-OVERLAY_ROLE.SPECULAR.__doc__ = "The globe overlay is a base image that shows the glint of the sun on the central body."
-OVERLAY_ROLE.NORMAL.__doc__ = "The globe overlay is a normal overlay without a special role."
-OVERLAY_ROLE.NONE.__doc__ = "The role of the globe overlay isn't set."
+OverlayRole.BASE.__doc__ = "The globe overlay is a base image."
+OverlayRole.NIGHT.__doc__ = "The globe overlay is a base image that is only displayed on the area of the central body that is not lit by the sun."
+OverlayRole.SPECULAR.__doc__ = "The globe overlay is a base image that shows the glint of the sun on the central body."
+OverlayRole.NORMAL.__doc__ = "The globe overlay is a normal overlay without a special role."
+OverlayRole.NONE.__doc__ = "The role of the globe overlay isn't set."
 
-agcls.AgTypeNameMap["OVERLAY_ROLE"] = OVERLAY_ROLE
+agcls.AgTypeNameMap["OverlayRole"] = OverlayRole
 
-class PRIMITIVE_INDICES_ORDER_HINT(IntEnum):
+class PrimitiveIndicesOrderHint(IntEnum):
     """An optimization hint optionally provided to a primitive'sSetPartial method to enhance performance."""
    
     NOT_SORTED = 0
@@ -221,12 +219,12 @@ class PRIMITIVE_INDICES_ORDER_HINT(IntEnum):
     SORTED_ASCENDING = 1
     """The indices passed to SetPartial are sorted in ascending order. Therefore, the primitive does not need to sort them. It is recommended to only use SortedAscending if it is easy and efficient for you to provide the indices in ascending order..."""
 
-PRIMITIVE_INDICES_ORDER_HINT.NOT_SORTED.__doc__ = "The indices passed to SetPartial are not sorted. Therefore, the primitive may sort them to improve performance of writing its geometry to video memory."
-PRIMITIVE_INDICES_ORDER_HINT.SORTED_ASCENDING.__doc__ = "The indices passed to SetPartial are sorted in ascending order. Therefore, the primitive does not need to sort them. It is recommended to only use SortedAscending if it is easy and efficient for you to provide the indices in ascending order..."
+PrimitiveIndicesOrderHint.NOT_SORTED.__doc__ = "The indices passed to SetPartial are not sorted. Therefore, the primitive may sort them to improve performance of writing its geometry to video memory."
+PrimitiveIndicesOrderHint.SORTED_ASCENDING.__doc__ = "The indices passed to SetPartial are sorted in ascending order. Therefore, the primitive does not need to sort them. It is recommended to only use SortedAscending if it is easy and efficient for you to provide the indices in ascending order..."
 
-agcls.AgTypeNameMap["PRIMITIVE_INDICES_ORDER_HINT"] = PRIMITIVE_INDICES_ORDER_HINT
+agcls.AgTypeNameMap["PrimitiveIndicesOrderHint"] = PrimitiveIndicesOrderHint
 
-class OVERLAY_ASPECT_RATIO_MODE(IntEnum):
+class OverlayAspectRatioMode(IntEnum):
     """Specify whether the aspect ratio of a texture will be maintained during sizing of a screen overlay."""
    
     NONE = 0
@@ -236,13 +234,13 @@ class OVERLAY_ASPECT_RATIO_MODE(IntEnum):
     HEIGHT = 2
     """The aspect ratio of the texture is maintained based on the height property of the screen overlay. When used, the width property is ignored and the width is automatically calculated based on the aspect ratio of the texture and the overlay's height property."""
 
-OVERLAY_ASPECT_RATIO_MODE.NONE.__doc__ = "The aspect ratio of the texture is not maintained during sizing of the screen overlay."
-OVERLAY_ASPECT_RATIO_MODE.WIDTH.__doc__ = "The aspect ratio of the texture is maintained based on the width property of the screen overlay. When used, the height property is ignored and the height is automatically calculated based on the aspect ratio of the texture and the overlay's width property."
-OVERLAY_ASPECT_RATIO_MODE.HEIGHT.__doc__ = "The aspect ratio of the texture is maintained based on the height property of the screen overlay. When used, the width property is ignored and the width is automatically calculated based on the aspect ratio of the texture and the overlay's height property."
+OverlayAspectRatioMode.NONE.__doc__ = "The aspect ratio of the texture is not maintained during sizing of the screen overlay."
+OverlayAspectRatioMode.WIDTH.__doc__ = "The aspect ratio of the texture is maintained based on the width property of the screen overlay. When used, the height property is ignored and the height is automatically calculated based on the aspect ratio of the texture and the overlay's width property."
+OverlayAspectRatioMode.HEIGHT.__doc__ = "The aspect ratio of the texture is maintained based on the height property of the screen overlay. When used, the width property is ignored and the width is automatically calculated based on the aspect ratio of the texture and the overlay's height property."
 
-agcls.AgTypeNameMap["OVERLAY_ASPECT_RATIO_MODE"] = OVERLAY_ASPECT_RATIO_MODE
+agcls.AgTypeNameMap["OverlayAspectRatioMode"] = OverlayAspectRatioMode
 
-class MAP_PROJECTION(IntEnum):
+class MapProjection(IntEnum):
     """The projection of the pixel data returned from a custom image globe overlay."""
    
     MERCATOR = 0
@@ -250,12 +248,12 @@ class MAP_PROJECTION(IntEnum):
     EQUIDISTANT_CYLINDRICAL = 1
     """Equidistant Cylindrical projection."""
 
-MAP_PROJECTION.MERCATOR.__doc__ = "Mercator projection."
-MAP_PROJECTION.EQUIDISTANT_CYLINDRICAL.__doc__ = "Equidistant Cylindrical projection."
+MapProjection.MERCATOR.__doc__ = "Mercator projection."
+MapProjection.EQUIDISTANT_CYLINDRICAL.__doc__ = "Equidistant Cylindrical projection."
 
-agcls.AgTypeNameMap["MAP_PROJECTION"] = MAP_PROJECTION
+agcls.AgTypeNameMap["MapProjection"] = MapProjection
 
-class MARKER_BATCH_RENDERING_METHOD(IntEnum):
+class MarkerBatchRenderingMethod(IntEnum):
     """Rendering methods available for use by the marker batch primitive. Different methods may have different performance characteristics and require different video card support. When in doubt, use Automatic."""
    
     GEOMETRY_SHADER = 0
@@ -267,14 +265,14 @@ class MARKER_BATCH_RENDERING_METHOD(IntEnum):
     FIXED_FUNCTION = 3
     """Render the marker batch using the fixed function pipeline. Generally, this is the slowest method but it supports all video cards."""
 
-MARKER_BATCH_RENDERING_METHOD.GEOMETRY_SHADER.__doc__ = "Render the marker batch using a geometry shader."
-MARKER_BATCH_RENDERING_METHOD.VERTEX_SHADER.__doc__ = "Render the marker batch using a vertex shader."
-MARKER_BATCH_RENDERING_METHOD.AUTOMATIC.__doc__ = "Render the marker batch using an automatically selected method based on the capabilities of the video card."
-MARKER_BATCH_RENDERING_METHOD.FIXED_FUNCTION.__doc__ = "Render the marker batch using the fixed function pipeline. Generally, this is the slowest method but it supports all video cards."
+MarkerBatchRenderingMethod.GEOMETRY_SHADER.__doc__ = "Render the marker batch using a geometry shader."
+MarkerBatchRenderingMethod.VERTEX_SHADER.__doc__ = "Render the marker batch using a vertex shader."
+MarkerBatchRenderingMethod.AUTOMATIC.__doc__ = "Render the marker batch using an automatically selected method based on the capabilities of the video card."
+MarkerBatchRenderingMethod.FIXED_FUNCTION.__doc__ = "Render the marker batch using the fixed function pipeline. Generally, this is the slowest method but it supports all video cards."
 
-agcls.AgTypeNameMap["MARKER_BATCH_RENDERING_METHOD"] = MARKER_BATCH_RENDERING_METHOD
+agcls.AgTypeNameMap["MarkerBatchRenderingMethod"] = MarkerBatchRenderingMethod
 
-class MARKER_BATCH_RENDER_PASS(IntEnum):
+class MarkerBatchRenderPass(IntEnum):
     """The pass during which the marker batch is rendered."""
    
     OPAQUE = 0
@@ -284,13 +282,13 @@ class MARKER_BATCH_RENDER_PASS(IntEnum):
     BASED_ON_TRANSLUCENCY = 2
     """The marker batch render pass should be determined based on the marker batch's translucency. This includes the translucency set per marker when SetColors is used."""
 
-MARKER_BATCH_RENDER_PASS.OPAQUE.__doc__ = "The marker batch contains all opaque textures and therefore should be rendered using the opaque pass."
-MARKER_BATCH_RENDER_PASS.TRANSLUCENT.__doc__ = "The marker batch contains textures with translucency and therefore should be rendered using the translucent pass. For correct blending of overlapping textures, also consider using back to front."
-MARKER_BATCH_RENDER_PASS.BASED_ON_TRANSLUCENCY.__doc__ = "The marker batch render pass should be determined based on the marker batch's translucency. This includes the translucency set per marker when SetColors is used."
+MarkerBatchRenderPass.OPAQUE.__doc__ = "The marker batch contains all opaque textures and therefore should be rendered using the opaque pass."
+MarkerBatchRenderPass.TRANSLUCENT.__doc__ = "The marker batch contains textures with translucency and therefore should be rendered using the translucent pass. For correct blending of overlapping textures, also consider using back to front."
+MarkerBatchRenderPass.BASED_ON_TRANSLUCENCY.__doc__ = "The marker batch render pass should be determined based on the marker batch's translucency. This includes the translucency set per marker when SetColors is used."
 
-agcls.AgTypeNameMap["MARKER_BATCH_RENDER_PASS"] = MARKER_BATCH_RENDER_PASS
+agcls.AgTypeNameMap["MarkerBatchRenderPass"] = MarkerBatchRenderPass
 
-class MARKER_BATCH_SIZE_SOURCE(IntEnum):
+class MarkerBatchSizeSource(IntEnum):
     """Determine which marker batch property is used to size each marker in a marker batch."""
    
     FROM_TEXTURE = 0
@@ -298,12 +296,12 @@ class MARKER_BATCH_SIZE_SOURCE(IntEnum):
     USER_DEFINED = 1
     """The size of each marker in the marker batch is user defined. Either all markers have the same size (size) or each marker has a user defined size (SetSizes)."""
 
-MARKER_BATCH_SIZE_SOURCE.FROM_TEXTURE.__doc__ = "The size of each marker is the same as the size of its texture. If the marker is not textured, the user defined size is used instead."
-MARKER_BATCH_SIZE_SOURCE.USER_DEFINED.__doc__ = "The size of each marker in the marker batch is user defined. Either all markers have the same size (size) or each marker has a user defined size (SetSizes)."
+MarkerBatchSizeSource.FROM_TEXTURE.__doc__ = "The size of each marker is the same as the size of its texture. If the marker is not textured, the user defined size is used instead."
+MarkerBatchSizeSource.USER_DEFINED.__doc__ = "The size of each marker in the marker batch is user defined. Either all markers have the same size (size) or each marker has a user defined size (SetSizes)."
 
-agcls.AgTypeNameMap["MARKER_BATCH_SIZE_SOURCE"] = MARKER_BATCH_SIZE_SOURCE
+agcls.AgTypeNameMap["MarkerBatchSizeSource"] = MarkerBatchSizeSource
 
-class MARKER_BATCH_SORT_ORDER(IntEnum):
+class MarkerBatchSortOrder(IntEnum):
     """The order in which markers in a marker batch are sorted before rendering."""
    
     BACK_TO_FRONT = 0
@@ -313,13 +311,13 @@ class MARKER_BATCH_SORT_ORDER(IntEnum):
     BY_TEXTURE = 2
     """The markers are sorted by texture. This minimizes costly texture changes during rendering and does not require resorting when the camera moves or a marker changes position."""
 
-MARKER_BATCH_SORT_ORDER.BACK_TO_FRONT.__doc__ = "The markers are sorted in back to front order before rendering. For overlapping translucent markers, this enables correct blending results..."
-MARKER_BATCH_SORT_ORDER.FRONT_TO_BACK.__doc__ = "The markers are sorted in front to back order before rendering. For overlapping opaque markers, this can enable the GPU to quickly eliminate markers that are hidden behind other markers..."
-MARKER_BATCH_SORT_ORDER.BY_TEXTURE.__doc__ = "The markers are sorted by texture. This minimizes costly texture changes during rendering and does not require resorting when the camera moves or a marker changes position."
+MarkerBatchSortOrder.BACK_TO_FRONT.__doc__ = "The markers are sorted in back to front order before rendering. For overlapping translucent markers, this enables correct blending results..."
+MarkerBatchSortOrder.FRONT_TO_BACK.__doc__ = "The markers are sorted in front to back order before rendering. For overlapping opaque markers, this can enable the GPU to quickly eliminate markers that are hidden behind other markers..."
+MarkerBatchSortOrder.BY_TEXTURE.__doc__ = "The markers are sorted by texture. This minimizes costly texture changes during rendering and does not require resorting when the camera moves or a marker changes position."
 
-agcls.AgTypeNameMap["MARKER_BATCH_SORT_ORDER"] = MARKER_BATCH_SORT_ORDER
+agcls.AgTypeNameMap["MarkerBatchSortOrder"] = MarkerBatchSortOrder
 
-class MARKER_BATCH_SIZE_UNIT(IntEnum):
+class MarkerBatchSizeUnit(IntEnum):
     """The unit for marker sizes in a marker batch."""
    
     PIXELS = 0
@@ -327,12 +325,12 @@ class MARKER_BATCH_SIZE_UNIT(IntEnum):
     METERS = 1
     """The size of a marker is defined in meters."""
 
-MARKER_BATCH_SIZE_UNIT.PIXELS.__doc__ = "The size of a marker is defined in pixels. As the camera zooms in and out the size of the marker doesn't change."
-MARKER_BATCH_SIZE_UNIT.METERS.__doc__ = "The size of a marker is defined in meters."
+MarkerBatchSizeUnit.PIXELS.__doc__ = "The size of a marker is defined in pixels. As the camera zooms in and out the size of the marker doesn't change."
+MarkerBatchSizeUnit.METERS.__doc__ = "The size of a marker is defined in meters."
 
-agcls.AgTypeNameMap["MARKER_BATCH_SIZE_UNIT"] = MARKER_BATCH_SIZE_UNIT
+agcls.AgTypeNameMap["MarkerBatchSizeUnit"] = MarkerBatchSizeUnit
 
-class MODEL_TRANSFORMATION_TYPE(IntEnum):
+class ModelTransformationType(IntEnum):
     """Transformation types that define the way a model transformation changes the geometry of the model articulation it is associated with."""
    
     TRANSLATE_X = 0
@@ -382,33 +380,33 @@ class MODEL_TRANSFORMATION_TYPE(IntEnum):
     TRANSLATE_BLUE = 22
     """Translate the blue band of color associated with the geometry."""
 
-MODEL_TRANSFORMATION_TYPE.TRANSLATE_X.__doc__ = "Translate the geometry along the X axis."
-MODEL_TRANSFORMATION_TYPE.TRANSLATE_Y.__doc__ = "Translate the geometry along the Y axis."
-MODEL_TRANSFORMATION_TYPE.TRANSLATE_Z.__doc__ = "Translate the geometry along the Z axis."
-MODEL_TRANSFORMATION_TYPE.ROTATE_X.__doc__ = "Rotate the geometry about the X axis."
-MODEL_TRANSFORMATION_TYPE.ROTATE_Y.__doc__ = "Rotate the geometry about the Y axis."
-MODEL_TRANSFORMATION_TYPE.ROTATE_Z.__doc__ = "Rotate the geometry about the Z axis."
-MODEL_TRANSFORMATION_TYPE.SCALE_X.__doc__ = "Scale the geometry along the X axis."
-MODEL_TRANSFORMATION_TYPE.SCALE_Y.__doc__ = "Scale the geometry along the Y axis."
-MODEL_TRANSFORMATION_TYPE.SCALE_Z.__doc__ = "Scale the geometry along the Z axis."
-MODEL_TRANSFORMATION_TYPE.SCALE_UNIFORM.__doc__ = "Scale the geometry uniformly along the X, Y, and Z axes."
-MODEL_TRANSFORMATION_TYPE.TEXTURE_TRANSLATE_X.__doc__ = "Translate the texture associated with the geometry along the X axis."
-MODEL_TRANSFORMATION_TYPE.TEXTURE_TRANSLATE_Y.__doc__ = "Translate the texture associated with the geometry along the Y axis."
-MODEL_TRANSFORMATION_TYPE.TEXTURE_TRANSLATE_Z.__doc__ = "Translate the texture associated with the geometry along the Z axis."
-MODEL_TRANSFORMATION_TYPE.TEXTURE_ROTATE_X.__doc__ = "Rotate the texture associated with the geometry about the X axis."
-MODEL_TRANSFORMATION_TYPE.TEXTURE_ROTATE_Y.__doc__ = "Rotate the texture associated with the geometry about the Y axis."
-MODEL_TRANSFORMATION_TYPE.TEXTURE_ROTATE_Z.__doc__ = "Rotate the texture associated with the geometry about the Z axis."
-MODEL_TRANSFORMATION_TYPE.TEXTURE_SCALE_X.__doc__ = "Scale the texture associated with the geometry along the X axis."
-MODEL_TRANSFORMATION_TYPE.TEXTURE_SCALE_Y.__doc__ = "Scale the texture associated with the geometry along the Y axis."
-MODEL_TRANSFORMATION_TYPE.TEXTURE_SCALE_Z.__doc__ = "Scale the texture associated with the geometry along the Z axis."
-MODEL_TRANSFORMATION_TYPE.TEXTURE_SCALE_UNIFORM.__doc__ = "Scale the texture associated with the geometry uniformly along the X, Y, and Z axes."
-MODEL_TRANSFORMATION_TYPE.TRANSLATE_RED.__doc__ = "Translate the red band of color associated with the geometry."
-MODEL_TRANSFORMATION_TYPE.TRANSLATE_GREEN.__doc__ = "Translate the green band of color associated with the geometry."
-MODEL_TRANSFORMATION_TYPE.TRANSLATE_BLUE.__doc__ = "Translate the blue band of color associated with the geometry."
+ModelTransformationType.TRANSLATE_X.__doc__ = "Translate the geometry along the X axis."
+ModelTransformationType.TRANSLATE_Y.__doc__ = "Translate the geometry along the Y axis."
+ModelTransformationType.TRANSLATE_Z.__doc__ = "Translate the geometry along the Z axis."
+ModelTransformationType.ROTATE_X.__doc__ = "Rotate the geometry about the X axis."
+ModelTransformationType.ROTATE_Y.__doc__ = "Rotate the geometry about the Y axis."
+ModelTransformationType.ROTATE_Z.__doc__ = "Rotate the geometry about the Z axis."
+ModelTransformationType.SCALE_X.__doc__ = "Scale the geometry along the X axis."
+ModelTransformationType.SCALE_Y.__doc__ = "Scale the geometry along the Y axis."
+ModelTransformationType.SCALE_Z.__doc__ = "Scale the geometry along the Z axis."
+ModelTransformationType.SCALE_UNIFORM.__doc__ = "Scale the geometry uniformly along the X, Y, and Z axes."
+ModelTransformationType.TEXTURE_TRANSLATE_X.__doc__ = "Translate the texture associated with the geometry along the X axis."
+ModelTransformationType.TEXTURE_TRANSLATE_Y.__doc__ = "Translate the texture associated with the geometry along the Y axis."
+ModelTransformationType.TEXTURE_TRANSLATE_Z.__doc__ = "Translate the texture associated with the geometry along the Z axis."
+ModelTransformationType.TEXTURE_ROTATE_X.__doc__ = "Rotate the texture associated with the geometry about the X axis."
+ModelTransformationType.TEXTURE_ROTATE_Y.__doc__ = "Rotate the texture associated with the geometry about the Y axis."
+ModelTransformationType.TEXTURE_ROTATE_Z.__doc__ = "Rotate the texture associated with the geometry about the Z axis."
+ModelTransformationType.TEXTURE_SCALE_X.__doc__ = "Scale the texture associated with the geometry along the X axis."
+ModelTransformationType.TEXTURE_SCALE_Y.__doc__ = "Scale the texture associated with the geometry along the Y axis."
+ModelTransformationType.TEXTURE_SCALE_Z.__doc__ = "Scale the texture associated with the geometry along the Z axis."
+ModelTransformationType.TEXTURE_SCALE_UNIFORM.__doc__ = "Scale the texture associated with the geometry uniformly along the X, Y, and Z axes."
+ModelTransformationType.TRANSLATE_RED.__doc__ = "Translate the red band of color associated with the geometry."
+ModelTransformationType.TRANSLATE_GREEN.__doc__ = "Translate the green band of color associated with the geometry."
+ModelTransformationType.TRANSLATE_BLUE.__doc__ = "Translate the blue band of color associated with the geometry."
 
-agcls.AgTypeNameMap["MODEL_TRANSFORMATION_TYPE"] = MODEL_TRANSFORMATION_TYPE
+agcls.AgTypeNameMap["ModelTransformationType"] = ModelTransformationType
 
-class ORIGIN(IntEnum):
+class Origin(IntEnum):
     """Vertical and horizontal origin."""
    
     BOTTOM_LEFT = 0
@@ -430,19 +428,19 @@ class ORIGIN(IntEnum):
     TOP_RIGHT = 8
     """The object's origin is its top, right corner."""
 
-ORIGIN.BOTTOM_LEFT.__doc__ = "The object's origin is its bottom, left corner."
-ORIGIN.BOTTOM_CENTER.__doc__ = "The object's origin is its bottom, center point."
-ORIGIN.BOTTOM_RIGHT.__doc__ = "The object's origin is its bottom, right corner."
-ORIGIN.CENTER_LEFT.__doc__ = "The object's origin is its center, left point."
-ORIGIN.CENTER.__doc__ = "The object's origin is its center."
-ORIGIN.CENTER_RIGHT.__doc__ = "The object's origin is its center, right point."
-ORIGIN.TOP_LEFT.__doc__ = "The object's origin is its top, left corner."
-ORIGIN.TOP_CENTER.__doc__ = "The object's origin is its top, center point."
-ORIGIN.TOP_RIGHT.__doc__ = "The object's origin is its top, right corner."
+Origin.BOTTOM_LEFT.__doc__ = "The object's origin is its bottom, left corner."
+Origin.BOTTOM_CENTER.__doc__ = "The object's origin is its bottom, center point."
+Origin.BOTTOM_RIGHT.__doc__ = "The object's origin is its bottom, right corner."
+Origin.CENTER_LEFT.__doc__ = "The object's origin is its center, left point."
+Origin.CENTER.__doc__ = "The object's origin is its center."
+Origin.CENTER_RIGHT.__doc__ = "The object's origin is its center, right point."
+Origin.TOP_LEFT.__doc__ = "The object's origin is its top, left corner."
+Origin.TOP_CENTER.__doc__ = "The object's origin is its top, center point."
+Origin.TOP_RIGHT.__doc__ = "The object's origin is its top, right corner."
 
-agcls.AgTypeNameMap["ORIGIN"] = ORIGIN
+agcls.AgTypeNameMap["Origin"] = Origin
 
-class PATH_PRIMITIVE_REMOVE_LOCATION(IntEnum):
+class PathPrimitiveRemoveLocation(IntEnum):
     """Represents the location of a point to be removed."""
    
     FRONT = 0
@@ -450,12 +448,12 @@ class PATH_PRIMITIVE_REMOVE_LOCATION(IntEnum):
     BACK = 1
     """Remove from the back of the line."""
 
-PATH_PRIMITIVE_REMOVE_LOCATION.FRONT.__doc__ = "Remove from the front of the line."
-PATH_PRIMITIVE_REMOVE_LOCATION.BACK.__doc__ = "Remove from the back of the line."
+PathPrimitiveRemoveLocation.FRONT.__doc__ = "Remove from the front of the line."
+PathPrimitiveRemoveLocation.BACK.__doc__ = "Remove from the back of the line."
 
-agcls.AgTypeNameMap["PATH_PRIMITIVE_REMOVE_LOCATION"] = PATH_PRIMITIVE_REMOVE_LOCATION
+agcls.AgTypeNameMap["PathPrimitiveRemoveLocation"] = PathPrimitiveRemoveLocation
 
-class PRIMITIVES_SORT_ORDER(IntEnum):
+class PrimitivesSortOrder(IntEnum):
     """The order in which primitives are sorted before rendering."""
    
     BY_STATE = 0
@@ -463,12 +461,12 @@ class PRIMITIVES_SORT_ORDER(IntEnum):
     BACK_TO_FRONT = 1
     """Primitives are sorted in back to front order before rendering. For translucent primitives, this enables correct blending results. This may not perform as well as PrimitivesSortOrderByState since the CPU has to sort the primitives before rendering."""
 
-PRIMITIVES_SORT_ORDER.BY_STATE.__doc__ = "Primitives are sorted by their internal state before rendering. This provides good performance but can lead to blending artifacts with translucent primitives along the same line of sight."
-PRIMITIVES_SORT_ORDER.BACK_TO_FRONT.__doc__ = "Primitives are sorted in back to front order before rendering. For translucent primitives, this enables correct blending results. This may not perform as well as PrimitivesSortOrderByState since the CPU has to sort the primitives before rendering."
+PrimitivesSortOrder.BY_STATE.__doc__ = "Primitives are sorted by their internal state before rendering. This provides good performance but can lead to blending artifacts with translucent primitives along the same line of sight."
+PrimitivesSortOrder.BACK_TO_FRONT.__doc__ = "Primitives are sorted in back to front order before rendering. For translucent primitives, this enables correct blending results. This may not perform as well as PrimitivesSortOrderByState since the CPU has to sort the primitives before rendering."
 
-agcls.AgTypeNameMap["PRIMITIVES_SORT_ORDER"] = PRIMITIVES_SORT_ORDER
+agcls.AgTypeNameMap["PrimitivesSortOrder"] = PrimitivesSortOrder
 
-class REFRESH_RATE(IntEnum):
+class RefreshRate(IntEnum):
     """The rate at which animation frames will occur."""
    
     FASTEST = 0
@@ -476,12 +474,12 @@ class REFRESH_RATE(IntEnum):
     TARGETED_FRAMES_PER_SECOND = 1
     """The animation will target a specified frame rate."""
 
-REFRESH_RATE.FASTEST.__doc__ = "The animation will occur as fast as possible. The maximum frame rate is the refresh rate of the display or is the maximum that video card is capable of if the video card's vertical sync is off."
-REFRESH_RATE.TARGETED_FRAMES_PER_SECOND.__doc__ = "The animation will target a specified frame rate."
+RefreshRate.FASTEST.__doc__ = "The animation will occur as fast as possible. The maximum frame rate is the refresh rate of the display or is the maximum that video card is capable of if the video card's vertical sync is off."
+RefreshRate.TARGETED_FRAMES_PER_SECOND.__doc__ = "The animation will target a specified frame rate."
 
-agcls.AgTypeNameMap["REFRESH_RATE"] = REFRESH_RATE
+agcls.AgTypeNameMap["RefreshRate"] = RefreshRate
 
-class RENDER_PASS(IntFlag):
+class RenderPass(IntFlag):
     """Describes when a primitive will be rendered. Some primitives need to be rendered during or at a certain time. For example, translucent primitives need to be rendered after opaque primitives to allow proper blending..."""
    
     OPAQUE = 1
@@ -497,16 +495,16 @@ class RENDER_PASS(IntFlag):
     TERRAIN = 32
     """Render after the terrain is rendered."""
 
-RENDER_PASS.OPAQUE.__doc__ = "Render during the opaque rendering pass."
-RENDER_PASS.TRANSLUCENT.__doc__ = "Render during the translucent rendering pass."
-RENDER_PASS.CENTRAL_BODY_CLIPPED.__doc__ = "Render before the central body is rendered."
-RENDER_PASS.ORDERED_COMPOSITE_CENTRAL_BODY_CLIPPED.__doc__ = "Rendered in an ordered composite before all other primitives and before the central body is rendered."
-RENDER_PASS.ORDERED_COMPOSITE.__doc__ = "Rendered in an ordered composite before all primitives but after the central body is rendered."
-RENDER_PASS.TERRAIN.__doc__ = "Render after the terrain is rendered."
+RenderPass.OPAQUE.__doc__ = "Render during the opaque rendering pass."
+RenderPass.TRANSLUCENT.__doc__ = "Render during the translucent rendering pass."
+RenderPass.CENTRAL_BODY_CLIPPED.__doc__ = "Render before the central body is rendered."
+RenderPass.ORDERED_COMPOSITE_CENTRAL_BODY_CLIPPED.__doc__ = "Rendered in an ordered composite before all other primitives and before the central body is rendered."
+RenderPass.ORDERED_COMPOSITE.__doc__ = "Rendered in an ordered composite before all primitives but after the central body is rendered."
+RenderPass.TERRAIN.__doc__ = "Render after the terrain is rendered."
 
-agcls.AgTypeNameMap["RENDER_PASS"] = RENDER_PASS
+agcls.AgTypeNameMap["RenderPass"] = RenderPass
 
-class RENDER_PASS_HINT(IntEnum):
+class RenderPassHint(IntEnum):
     """An optimization hint optionally provided to a primitive'sSet method to enhance performance when per-position colors are used."""
    
     OPAQUE = 0
@@ -516,13 +514,13 @@ class RENDER_PASS_HINT(IntEnum):
     UNKNOWN = 2
     """It is unknown if the collection of colors contains opaque or translucent colors."""
 
-RENDER_PASS_HINT.OPAQUE.__doc__ = "The collection of colors contains only opaque colors. This implies that each color's alpha component is 255."
-RENDER_PASS_HINT.TRANSLUCENT.__doc__ = "The collection of colors contains translucent colors. This implies that at least one color has an alpha component that is not 255."
-RENDER_PASS_HINT.UNKNOWN.__doc__ = "It is unknown if the collection of colors contains opaque or translucent colors."
+RenderPassHint.OPAQUE.__doc__ = "The collection of colors contains only opaque colors. This implies that each color's alpha component is 255."
+RenderPassHint.TRANSLUCENT.__doc__ = "The collection of colors contains translucent colors. This implies that at least one color has an alpha component that is not 255."
+RenderPassHint.UNKNOWN.__doc__ = "It is unknown if the collection of colors contains opaque or translucent colors."
 
-agcls.AgTypeNameMap["RENDER_PASS_HINT"] = RENDER_PASS_HINT
+agcls.AgTypeNameMap["RenderPassHint"] = RenderPassHint
 
-class SCREEN_OVERLAY_ORIGIN(IntEnum):
+class ScreenOverlayOrigin(IntEnum):
     """Specify the origin of a screen overlay, as well as the direction of the horizontal and vertical axes. The origin specifies both the origin in the parent overlay's coordinate system and the origin within the overlay itself that is positioned."""
    
     BOTTOM_LEFT = 0
@@ -544,19 +542,19 @@ class SCREEN_OVERLAY_ORIGIN(IntEnum):
     TOP_RIGHT = 8
     """When the X and Y position are both set to 0, this value places the top, right corner of the overlay in its parent's top, right corner. Increasing X values move the overlay to the left and increasing Y values move it down."""
 
-SCREEN_OVERLAY_ORIGIN.BOTTOM_LEFT.__doc__ = "When the X and Y position are both set to 0, this value places the bottom, left corner of the overlay in its parent's bottom, left corner. Increasing X values move the overlay to the right and increasing Y values move it up."
-SCREEN_OVERLAY_ORIGIN.BOTTOM_CENTER.__doc__ = "When the X and Y position are both set to 0, this value places the bottom edge of the overlay at its parent's bottom edge and the center of the overlay is horizontally centered within its parent..."
-SCREEN_OVERLAY_ORIGIN.BOTTOM_RIGHT.__doc__ = "When the X and Y position are both set to 0, this value places the bottom, right corner of the overlay in its parent's bottom, right corner. Increasing X values move the overlay to the left and increasing Y values move it up."
-SCREEN_OVERLAY_ORIGIN.CENTER_LEFT.__doc__ = "When the X and Y position are both set to 0, this value places the left edge of the overlay at its parent's left edge and the center of the overlay is vertically centered within its parent..."
-SCREEN_OVERLAY_ORIGIN.CENTER.__doc__ = "When the X and Y position are both set to 0, this value places the center of the overlay at its parent's center. Increasing X values move the overlay to the right and increasing Y values move it up."
-SCREEN_OVERLAY_ORIGIN.CENTER_RIGHT.__doc__ = "When the X and Y position are both set to 0, this value places the right edge of the overlay at its parent's right edge and the center of the overlay is vertically centered within its parent..."
-SCREEN_OVERLAY_ORIGIN.TOP_LEFT.__doc__ = "When the X and Y position are both set to 0, this value places the top, left corner of the overlay in its parent's top, left corner. Increasing X values move the overlay to the right and increasing Y values move it down."
-SCREEN_OVERLAY_ORIGIN.TOP_CENTER.__doc__ = "When the X and Y position are both set to 0, this value places the top edge of the overlay at its parent's top edge and the center of the overlay is horizontally centered within its parent..."
-SCREEN_OVERLAY_ORIGIN.TOP_RIGHT.__doc__ = "When the X and Y position are both set to 0, this value places the top, right corner of the overlay in its parent's top, right corner. Increasing X values move the overlay to the left and increasing Y values move it down."
+ScreenOverlayOrigin.BOTTOM_LEFT.__doc__ = "When the X and Y position are both set to 0, this value places the bottom, left corner of the overlay in its parent's bottom, left corner. Increasing X values move the overlay to the right and increasing Y values move it up."
+ScreenOverlayOrigin.BOTTOM_CENTER.__doc__ = "When the X and Y position are both set to 0, this value places the bottom edge of the overlay at its parent's bottom edge and the center of the overlay is horizontally centered within its parent..."
+ScreenOverlayOrigin.BOTTOM_RIGHT.__doc__ = "When the X and Y position are both set to 0, this value places the bottom, right corner of the overlay in its parent's bottom, right corner. Increasing X values move the overlay to the left and increasing Y values move it up."
+ScreenOverlayOrigin.CENTER_LEFT.__doc__ = "When the X and Y position are both set to 0, this value places the left edge of the overlay at its parent's left edge and the center of the overlay is vertically centered within its parent..."
+ScreenOverlayOrigin.CENTER.__doc__ = "When the X and Y position are both set to 0, this value places the center of the overlay at its parent's center. Increasing X values move the overlay to the right and increasing Y values move it up."
+ScreenOverlayOrigin.CENTER_RIGHT.__doc__ = "When the X and Y position are both set to 0, this value places the right edge of the overlay at its parent's right edge and the center of the overlay is vertically centered within its parent..."
+ScreenOverlayOrigin.TOP_LEFT.__doc__ = "When the X and Y position are both set to 0, this value places the top, left corner of the overlay in its parent's top, left corner. Increasing X values move the overlay to the right and increasing Y values move it down."
+ScreenOverlayOrigin.TOP_CENTER.__doc__ = "When the X and Y position are both set to 0, this value places the top edge of the overlay at its parent's top edge and the center of the overlay is horizontally centered within its parent..."
+ScreenOverlayOrigin.TOP_RIGHT.__doc__ = "When the X and Y position are both set to 0, this value places the top, right corner of the overlay in its parent's top, right corner. Increasing X values move the overlay to the left and increasing Y values move it down."
 
-agcls.AgTypeNameMap["SCREEN_OVERLAY_ORIGIN"] = SCREEN_OVERLAY_ORIGIN
+agcls.AgTypeNameMap["ScreenOverlayOrigin"] = ScreenOverlayOrigin
 
-class SCREEN_OVERLAY_PINNING_ORIGIN(IntEnum):
+class ScreenOverlayPinningOrigin(IntEnum):
     """Specify the origin of the pinning position of the screen overlay, as well as the direction of the horizontal and vertical axes for that pinning position. The pinning origin specifies the origin of the pinning position in the overlay's coordinate system."""
    
     BOTTOM_LEFT = 0
@@ -580,20 +578,20 @@ class SCREEN_OVERLAY_PINNING_ORIGIN(IntEnum):
     AUTOMATIC = 9
     """The pinning origin is automatically set to the origin of the overlay. For instance, if the origin of the overlay is ScreenOverlayOrigin.BottomLeft, the pinning origin will also be equivalent to ScreenOverlayPinningOrigin.BottomLeft."""
 
-SCREEN_OVERLAY_PINNING_ORIGIN.BOTTOM_LEFT.__doc__ = "When the X and Y pinning position are both set to 0, this value places the pinning position in the overlay's bottom, left corner. Increasing X values move the pinning position to the right and increasing Y values move it up."
-SCREEN_OVERLAY_PINNING_ORIGIN.BOTTOM_CENTER.__doc__ = "When the X and Y pinning position are both set to 0, this value places the pinning position at its overlay's bottom edge and the pinning position is horizontally centered within its overlay..."
-SCREEN_OVERLAY_PINNING_ORIGIN.BOTTOM_RIGHT.__doc__ = "When the X and Y pinning position are both set to 0, this value places the pinning position in its overlay's bottom, right corner. Increasing X values move the pinning position to the left and increasing Y values move it up."
-SCREEN_OVERLAY_PINNING_ORIGIN.CENTER_LEFT.__doc__ = "When the X and Y pinning position are both set to 0, this value places the pinning position at its overlay's left edge and the pinning position is vertically centered within its overlay..."
-SCREEN_OVERLAY_PINNING_ORIGIN.CENTER.__doc__ = "When the X and Y pinning position are both set to 0, this value places the pinning position at its overlay's center. Increasing X values move the pinning position to the right and increasing Y values move it up."
-SCREEN_OVERLAY_PINNING_ORIGIN.CENTER_RIGHT.__doc__ = "When the X and Y pinning pinning position are both set to 0, this value places the pinning position at its overlay's right edge and the pinning position is vertically centered within its overlay..."
-SCREEN_OVERLAY_PINNING_ORIGIN.TOP_LEFT.__doc__ = "When the X and Y pinning position are both set to 0, this value places the pinning position in its overlay's top, left corner. Increasing X values move the pinning position to the right and increasing Y values move it down."
-SCREEN_OVERLAY_PINNING_ORIGIN.TOP_CENTER.__doc__ = "When the X and Y pinning position are both set to 0, this value places the pinning position at its overlays's top edge and the pinning position is horizontally centered within its overlay..."
-SCREEN_OVERLAY_PINNING_ORIGIN.TOP_RIGHT.__doc__ = "When the X and Y pinning position are both set to 0, this value places the pinning position in its overlay's top, right corner. Increasing X values move the pinning position to the left and increasing Y values move it down."
-SCREEN_OVERLAY_PINNING_ORIGIN.AUTOMATIC.__doc__ = "The pinning origin is automatically set to the origin of the overlay. For instance, if the origin of the overlay is ScreenOverlayOrigin.BottomLeft, the pinning origin will also be equivalent to ScreenOverlayPinningOrigin.BottomLeft."
+ScreenOverlayPinningOrigin.BOTTOM_LEFT.__doc__ = "When the X and Y pinning position are both set to 0, this value places the pinning position in the overlay's bottom, left corner. Increasing X values move the pinning position to the right and increasing Y values move it up."
+ScreenOverlayPinningOrigin.BOTTOM_CENTER.__doc__ = "When the X and Y pinning position are both set to 0, this value places the pinning position at its overlay's bottom edge and the pinning position is horizontally centered within its overlay..."
+ScreenOverlayPinningOrigin.BOTTOM_RIGHT.__doc__ = "When the X and Y pinning position are both set to 0, this value places the pinning position in its overlay's bottom, right corner. Increasing X values move the pinning position to the left and increasing Y values move it up."
+ScreenOverlayPinningOrigin.CENTER_LEFT.__doc__ = "When the X and Y pinning position are both set to 0, this value places the pinning position at its overlay's left edge and the pinning position is vertically centered within its overlay..."
+ScreenOverlayPinningOrigin.CENTER.__doc__ = "When the X and Y pinning position are both set to 0, this value places the pinning position at its overlay's center. Increasing X values move the pinning position to the right and increasing Y values move it up."
+ScreenOverlayPinningOrigin.CENTER_RIGHT.__doc__ = "When the X and Y pinning pinning position are both set to 0, this value places the pinning position at its overlay's right edge and the pinning position is vertically centered within its overlay..."
+ScreenOverlayPinningOrigin.TOP_LEFT.__doc__ = "When the X and Y pinning position are both set to 0, this value places the pinning position in its overlay's top, left corner. Increasing X values move the pinning position to the right and increasing Y values move it down."
+ScreenOverlayPinningOrigin.TOP_CENTER.__doc__ = "When the X and Y pinning position are both set to 0, this value places the pinning position at its overlays's top edge and the pinning position is horizontally centered within its overlay..."
+ScreenOverlayPinningOrigin.TOP_RIGHT.__doc__ = "When the X and Y pinning position are both set to 0, this value places the pinning position in its overlay's top, right corner. Increasing X values move the pinning position to the left and increasing Y values move it down."
+ScreenOverlayPinningOrigin.AUTOMATIC.__doc__ = "The pinning origin is automatically set to the origin of the overlay. For instance, if the origin of the overlay is ScreenOverlayOrigin.BottomLeft, the pinning origin will also be equivalent to ScreenOverlayPinningOrigin.BottomLeft."
 
-agcls.AgTypeNameMap["SCREEN_OVERLAY_PINNING_ORIGIN"] = SCREEN_OVERLAY_PINNING_ORIGIN
+agcls.AgTypeNameMap["ScreenOverlayPinningOrigin"] = ScreenOverlayPinningOrigin
 
-class SCREEN_OVERLAY_UNIT(IntEnum):
+class ScreenOverlayUnit(IntEnum):
     """A unit specifying how a screen overlay is sized and positioned relative to its parent."""
    
     PIXEL = 0
@@ -601,12 +599,12 @@ class SCREEN_OVERLAY_UNIT(IntEnum):
     PERCENT = 1
     """The value is specified as a fraction of the overlay's parent, where 0.0 is 0% and 1.0 is 100%."""
 
-SCREEN_OVERLAY_UNIT.PIXEL.__doc__ = "The value is specified in pixels."
-SCREEN_OVERLAY_UNIT.PERCENT.__doc__ = "The value is specified as a fraction of the overlay's parent, where 0.0 is 0% and 1.0 is 100%."
+ScreenOverlayUnit.PIXEL.__doc__ = "The value is specified in pixels."
+ScreenOverlayUnit.PERCENT.__doc__ = "The value is specified as a fraction of the overlay's parent, where 0.0 is 0% and 1.0 is 100%."
 
-agcls.AgTypeNameMap["SCREEN_OVERLAY_UNIT"] = SCREEN_OVERLAY_UNIT
+agcls.AgTypeNameMap["ScreenOverlayUnit"] = ScreenOverlayUnit
 
-class SURFACE_MESH_RENDERING_METHOD(IntEnum):
+class SurfaceMeshRenderingMethod(IntEnum):
     """Rendering methods available for use by the surface mesh primitive. Different methods may have different performance characteristics and require different video card support. When in doubt, use Automatic."""
    
     GEOMETRY_SHADER = 0
@@ -616,13 +614,13 @@ class SURFACE_MESH_RENDERING_METHOD(IntEnum):
     AUTOMATIC = 2
     """Render the surface mesh using an automatically selected method based on the capabilities of the video card."""
 
-SURFACE_MESH_RENDERING_METHOD.GEOMETRY_SHADER.__doc__ = "Render the surface mesh using a geometry shader."
-SURFACE_MESH_RENDERING_METHOD.VERTEX_SHADER.__doc__ = "Render the surface mesh using a vertex shader."
-SURFACE_MESH_RENDERING_METHOD.AUTOMATIC.__doc__ = "Render the surface mesh using an automatically selected method based on the capabilities of the video card."
+SurfaceMeshRenderingMethod.GEOMETRY_SHADER.__doc__ = "Render the surface mesh using a geometry shader."
+SurfaceMeshRenderingMethod.VERTEX_SHADER.__doc__ = "Render the surface mesh using a vertex shader."
+SurfaceMeshRenderingMethod.AUTOMATIC.__doc__ = "Render the surface mesh using an automatically selected method based on the capabilities of the video card."
 
-agcls.AgTypeNameMap["SURFACE_MESH_RENDERING_METHOD"] = SURFACE_MESH_RENDERING_METHOD
+agcls.AgTypeNameMap["SurfaceMeshRenderingMethod"] = SurfaceMeshRenderingMethod
 
-class VISIBILITY(IntEnum):
+class Visibility(IntEnum):
     """Result of a visibility test, such as testing if a sphere intersects a frustum."""
    
     NONE = 0
@@ -632,13 +630,13 @@ class VISIBILITY(IntEnum):
     ALL = 2
     """The object is completely visible."""
 
-VISIBILITY.NONE.__doc__ = "The object is not visible."
-VISIBILITY.PARTIAL.__doc__ = "The object is partially visible."
-VISIBILITY.ALL.__doc__ = "The object is completely visible."
+Visibility.NONE.__doc__ = "The object is not visible."
+Visibility.PARTIAL.__doc__ = "The object is partially visible."
+Visibility.ALL.__doc__ = "The object is completely visible."
 
-agcls.AgTypeNameMap["VISIBILITY"] = VISIBILITY
+agcls.AgTypeNameMap["Visibility"] = Visibility
 
-class ANTI_ALIASING_METHOD(IntEnum):
+class AntiAliasingMethod(IntEnum):
     """The multisample anti-aliasing (MSAA) options for Scenes. As the level of anti-aliasing increases, performance will generally decrease, but the quality of the anti-aliasing will improve."""
    
     OFF = 0
@@ -658,18 +656,18 @@ class ANTI_ALIASING_METHOD(IntEnum):
     SIXTY_FOUR_X = 64
     """Anti-aliasing at 64x."""
 
-ANTI_ALIASING_METHOD.OFF.__doc__ = "No anti-aliasing."
-ANTI_ALIASING_METHOD.FXAA.__doc__ = "Fast Approximate Anti aliasing."
-ANTI_ALIASING_METHOD.TWO_X.__doc__ = "Anti-aliasing at 2x."
-ANTI_ALIASING_METHOD.FOUR_X.__doc__ = "Anti-aliasing at 4x."
-ANTI_ALIASING_METHOD.EIGHT_X.__doc__ = "Anti-aliasing at 8x."
-ANTI_ALIASING_METHOD.SIXTEEN_X.__doc__ = "Anti-aliasing at 16x."
-ANTI_ALIASING_METHOD.THIRTY_TWO_X.__doc__ = "Anti-aliasing at 32x."
-ANTI_ALIASING_METHOD.SIXTY_FOUR_X.__doc__ = "Anti-aliasing at 64x."
+AntiAliasingMethod.OFF.__doc__ = "No anti-aliasing."
+AntiAliasingMethod.FXAA.__doc__ = "Fast Approximate Anti aliasing."
+AntiAliasingMethod.TWO_X.__doc__ = "Anti-aliasing at 2x."
+AntiAliasingMethod.FOUR_X.__doc__ = "Anti-aliasing at 4x."
+AntiAliasingMethod.EIGHT_X.__doc__ = "Anti-aliasing at 8x."
+AntiAliasingMethod.SIXTEEN_X.__doc__ = "Anti-aliasing at 16x."
+AntiAliasingMethod.THIRTY_TWO_X.__doc__ = "Anti-aliasing at 32x."
+AntiAliasingMethod.SIXTY_FOUR_X.__doc__ = "Anti-aliasing at 64x."
 
-agcls.AgTypeNameMap["ANTI_ALIASING_METHOD"] = ANTI_ALIASING_METHOD
+agcls.AgTypeNameMap["AntiAliasingMethod"] = AntiAliasingMethod
 
-class BINARY_LOGIC_OPERATION(IntEnum):
+class BinaryLogicOperation(IntEnum):
     """Binary logic operations that can be used by composite display condition."""
    
     AND = 0
@@ -677,12 +675,12 @@ class BINARY_LOGIC_OPERATION(IntEnum):
     OR = 1
     """Logically or together display conditions in the composite."""
 
-BINARY_LOGIC_OPERATION.AND.__doc__ = "Logically and together display conditions in the composite."
-BINARY_LOGIC_OPERATION.OR.__doc__ = "Logically or together display conditions in the composite."
+BinaryLogicOperation.AND.__doc__ = "Logically and together display conditions in the composite."
+BinaryLogicOperation.OR.__doc__ = "Logically or together display conditions in the composite."
 
-agcls.AgTypeNameMap["BINARY_LOGIC_OPERATION"] = BINARY_LOGIC_OPERATION
+agcls.AgTypeNameMap["BinaryLogicOperation"] = BinaryLogicOperation
 
-class BLUR_METHOD(IntEnum):
+class BlurMethod(IntEnum):
     """The method used to blur or smooth a raster."""
    
     MEAN = 0
@@ -690,12 +688,12 @@ class BLUR_METHOD(IntEnum):
     BASIC = 1
     """Provide basic blurring."""
 
-BLUR_METHOD.MEAN.__doc__ = "Provide smoothing and noise reduction through mean filtering."
-BLUR_METHOD.BASIC.__doc__ = "Provide basic blurring."
+BlurMethod.MEAN.__doc__ = "Provide smoothing and noise reduction through mean filtering."
+BlurMethod.BASIC.__doc__ = "Provide basic blurring."
 
-agcls.AgTypeNameMap["BLUR_METHOD"] = BLUR_METHOD
+agcls.AgTypeNameMap["BlurMethod"] = BlurMethod
 
-class EDGE_DETECT_METHOD(IntEnum):
+class EdgeDetectMethod(IntEnum):
     """The method used to detect edges in a raster."""
    
     VERTICAL = 0
@@ -715,18 +713,18 @@ class EDGE_DETECT_METHOD(IntEnum):
     SOBEL_HORIZONTAL = 7
     """Detects horizontal edges using the Sobel method."""
 
-EDGE_DETECT_METHOD.VERTICAL.__doc__ = "Detects vertical edges."
-EDGE_DETECT_METHOD.HORIZONTAL.__doc__ = "Detects horizontal edges."
-EDGE_DETECT_METHOD.LEFT_DIAGONAL.__doc__ = "Detects left diagonal edges."
-EDGE_DETECT_METHOD.RIGHT_DIAGONAL.__doc__ = "Detects right diagonal edges."
-EDGE_DETECT_METHOD.LAPLACIAN.__doc__ = "Detects edges using the Laplacian method."
-EDGE_DETECT_METHOD.PREWITT_LAPLACIAN.__doc__ = "Detects edges using the Prewitt-Laplacian method."
-EDGE_DETECT_METHOD.SOBEL_VERTICAL.__doc__ = "Detects vertical edges using the Sobel method."
-EDGE_DETECT_METHOD.SOBEL_HORIZONTAL.__doc__ = "Detects horizontal edges using the Sobel method."
+EdgeDetectMethod.VERTICAL.__doc__ = "Detects vertical edges."
+EdgeDetectMethod.HORIZONTAL.__doc__ = "Detects horizontal edges."
+EdgeDetectMethod.LEFT_DIAGONAL.__doc__ = "Detects left diagonal edges."
+EdgeDetectMethod.RIGHT_DIAGONAL.__doc__ = "Detects right diagonal edges."
+EdgeDetectMethod.LAPLACIAN.__doc__ = "Detects edges using the Laplacian method."
+EdgeDetectMethod.PREWITT_LAPLACIAN.__doc__ = "Detects edges using the Prewitt-Laplacian method."
+EdgeDetectMethod.SOBEL_VERTICAL.__doc__ = "Detects vertical edges using the Sobel method."
+EdgeDetectMethod.SOBEL_HORIZONTAL.__doc__ = "Detects horizontal edges using the Sobel method."
 
-agcls.AgTypeNameMap["EDGE_DETECT_METHOD"] = EDGE_DETECT_METHOD
+agcls.AgTypeNameMap["EdgeDetectMethod"] = EdgeDetectMethod
 
-class RASTER_FLIP_AXIS(IntEnum):
+class RasterFlipAxis(IntEnum):
     """The axis on which a raster will be flipped."""
    
     HORIZONTAL = 0
@@ -734,12 +732,12 @@ class RASTER_FLIP_AXIS(IntEnum):
     VERTICAL = 1
     """The vertical axis."""
 
-RASTER_FLIP_AXIS.HORIZONTAL.__doc__ = "The horizontal axis."
-RASTER_FLIP_AXIS.VERTICAL.__doc__ = "The vertical axis."
+RasterFlipAxis.HORIZONTAL.__doc__ = "The horizontal axis."
+RasterFlipAxis.VERTICAL.__doc__ = "The vertical axis."
 
-agcls.AgTypeNameMap["RASTER_FLIP_AXIS"] = RASTER_FLIP_AXIS
+agcls.AgTypeNameMap["RasterFlipAxis"] = RasterFlipAxis
 
-class GRADIENT_DETECT_METHOD(IntEnum):
+class GradientDetectMethod(IntEnum):
     """The method used to detect gradients in a raster. Gradient detection is commonly referred to as embossing."""
    
     EAST = 0
@@ -759,18 +757,18 @@ class GRADIENT_DETECT_METHOD(IntEnum):
     SOUTH_WEST = 7
     """Detects south west gradients."""
 
-GRADIENT_DETECT_METHOD.EAST.__doc__ = "Detects east gradients."
-GRADIENT_DETECT_METHOD.NORTH.__doc__ = "Detects north gradients."
-GRADIENT_DETECT_METHOD.WEST.__doc__ = "Detects west gradients."
-GRADIENT_DETECT_METHOD.SOUTH.__doc__ = "Detects south gradients."
-GRADIENT_DETECT_METHOD.NORTH_EAST.__doc__ = "Detects north east gradients."
-GRADIENT_DETECT_METHOD.NORTH_WEST.__doc__ = "Detects north west gradients."
-GRADIENT_DETECT_METHOD.SOUTH_EAST.__doc__ = "Detects south east gradients."
-GRADIENT_DETECT_METHOD.SOUTH_WEST.__doc__ = "Detects south west gradients."
+GradientDetectMethod.EAST.__doc__ = "Detects east gradients."
+GradientDetectMethod.NORTH.__doc__ = "Detects north gradients."
+GradientDetectMethod.WEST.__doc__ = "Detects west gradients."
+GradientDetectMethod.SOUTH.__doc__ = "Detects south gradients."
+GradientDetectMethod.NORTH_EAST.__doc__ = "Detects north east gradients."
+GradientDetectMethod.NORTH_WEST.__doc__ = "Detects north west gradients."
+GradientDetectMethod.SOUTH_EAST.__doc__ = "Detects south east gradients."
+GradientDetectMethod.SOUTH_WEST.__doc__ = "Detects south west gradients."
 
-agcls.AgTypeNameMap["GRADIENT_DETECT_METHOD"] = GRADIENT_DETECT_METHOD
+agcls.AgTypeNameMap["GradientDetectMethod"] = GradientDetectMethod
 
-class JPEG2000_COMPRESSION_PROFILE(IntEnum):
+class Jpeg2000CompressionProfile(IntEnum):
     """Define the profile used when encoding a JPEG 2000 file."""
    
     DEFAULT = 0
@@ -780,13 +778,13 @@ class JPEG2000_COMPRESSION_PROFILE(IntEnum):
     NITF_BIIF_EPJE = 2
     """This profile is designed for U.S. and NATO military applications. Based on NPJE, the profile is used for image exploitation, and improves image read times for lower resolutions in large images as compared to NPJE."""
 
-JPEG2000_COMPRESSION_PROFILE.DEFAULT.__doc__ = "This is the default profile, which is recommended for those unfamiliar with the others."
-JPEG2000_COMPRESSION_PROFILE.NITF_BIIF_NPJE.__doc__ = "This profile is designed for U.S. and NATO military applications."
-JPEG2000_COMPRESSION_PROFILE.NITF_BIIF_EPJE.__doc__ = "This profile is designed for U.S. and NATO military applications. Based on NPJE, the profile is used for image exploitation, and improves image read times for lower resolutions in large images as compared to NPJE."
+Jpeg2000CompressionProfile.DEFAULT.__doc__ = "This is the default profile, which is recommended for those unfamiliar with the others."
+Jpeg2000CompressionProfile.NITF_BIIF_NPJE.__doc__ = "This profile is designed for U.S. and NATO military applications."
+Jpeg2000CompressionProfile.NITF_BIIF_EPJE.__doc__ = "This profile is designed for U.S. and NATO military applications. Based on NPJE, the profile is used for image exploitation, and improves image read times for lower resolutions in large images as compared to NPJE."
 
-agcls.AgTypeNameMap["JPEG2000_COMPRESSION_PROFILE"] = JPEG2000_COMPRESSION_PROFILE
+agcls.AgTypeNameMap["Jpeg2000CompressionProfile"] = Jpeg2000CompressionProfile
 
-class RASTER_BAND(IntEnum):
+class RasterBand(IntEnum):
     """Common band types that may be contained within a raster dataset. Each band can be thought of as a set of values, which are most commonly associated with colors when the raster represents an image..."""
    
     RED = 0
@@ -800,15 +798,15 @@ class RASTER_BAND(IntEnum):
     LUMINANCE = 4
     """A band containing luminance values."""
 
-RASTER_BAND.RED.__doc__ = "A band containing red values."
-RASTER_BAND.GREEN.__doc__ = "A band containing green values."
-RASTER_BAND.BLUE.__doc__ = "A band containing blue values."
-RASTER_BAND.ALPHA.__doc__ = "A band containing alpha values."
-RASTER_BAND.LUMINANCE.__doc__ = "A band containing luminance values."
+RasterBand.RED.__doc__ = "A band containing red values."
+RasterBand.GREEN.__doc__ = "A band containing green values."
+RasterBand.BLUE.__doc__ = "A band containing blue values."
+RasterBand.ALPHA.__doc__ = "A band containing alpha values."
+RasterBand.LUMINANCE.__doc__ = "A band containing luminance values."
 
-agcls.AgTypeNameMap["RASTER_BAND"] = RASTER_BAND
+agcls.AgTypeNameMap["RasterBand"] = RasterBand
 
-class RASTER_FORMAT(IntEnum):
+class RasterFormat(IntEnum):
     """Common raster band layouts that may be contained within a raster dataset. Each pixel of the raster will contain the bands defined by the layout in the specified order. A typical color raster image will have an rgbraster format."""
    
     RED = 0
@@ -832,20 +830,20 @@ class RASTER_FORMAT(IntEnum):
     LUMINANCE_ALPHA = 9
     """The format of the raster is two bands consisting of luminance and alpha values."""
 
-RASTER_FORMAT.RED.__doc__ = "The format of the raster is a single band consisting of red values."
-RASTER_FORMAT.GREEN.__doc__ = "The format of the raster is a single band consisting of green values."
-RASTER_FORMAT.BLUE.__doc__ = "The format of the raster is a single band consisting of blue values."
-RASTER_FORMAT.ALPHA.__doc__ = "The format of the raster is a single band consisting of alpha values."
-RASTER_FORMAT.RGB.__doc__ = "The format of the raster is three bands consisting of red, green, and blue values."
-RASTER_FORMAT.BGR.__doc__ = "The format of the raster is three bands consisting of blue, green, and red values."
-RASTER_FORMAT.RGBA.__doc__ = "The format of the raster is four bands consisting of red, green, blue, and alpha values."
-RASTER_FORMAT.BGRA.__doc__ = "The format of the raster is four bands consisting of blue, green, red, and alpha values."
-RASTER_FORMAT.LUMINANCE.__doc__ = "The format of the raster is a single band consisting of luminance values."
-RASTER_FORMAT.LUMINANCE_ALPHA.__doc__ = "The format of the raster is two bands consisting of luminance and alpha values."
+RasterFormat.RED.__doc__ = "The format of the raster is a single band consisting of red values."
+RasterFormat.GREEN.__doc__ = "The format of the raster is a single band consisting of green values."
+RasterFormat.BLUE.__doc__ = "The format of the raster is a single band consisting of blue values."
+RasterFormat.ALPHA.__doc__ = "The format of the raster is a single band consisting of alpha values."
+RasterFormat.RGB.__doc__ = "The format of the raster is three bands consisting of red, green, and blue values."
+RasterFormat.BGR.__doc__ = "The format of the raster is three bands consisting of blue, green, and red values."
+RasterFormat.RGBA.__doc__ = "The format of the raster is four bands consisting of red, green, blue, and alpha values."
+RasterFormat.BGRA.__doc__ = "The format of the raster is four bands consisting of blue, green, red, and alpha values."
+RasterFormat.LUMINANCE.__doc__ = "The format of the raster is a single band consisting of luminance values."
+RasterFormat.LUMINANCE_ALPHA.__doc__ = "The format of the raster is two bands consisting of luminance and alpha values."
 
-agcls.AgTypeNameMap["RASTER_FORMAT"] = RASTER_FORMAT
+agcls.AgTypeNameMap["RasterFormat"] = RasterFormat
 
-class RASTER_ORIENTATION(IntEnum):
+class RasterOrientation(IntEnum):
     """The vertical orientation of the raster."""
    
     TOP_TO_BOTTOM = 0
@@ -853,12 +851,12 @@ class RASTER_ORIENTATION(IntEnum):
     BOTTOM_TO_TOP = 1
     """The raster has a bottom to top orientation."""
 
-RASTER_ORIENTATION.TOP_TO_BOTTOM.__doc__ = "The raster has a top to bottom orientation."
-RASTER_ORIENTATION.BOTTOM_TO_TOP.__doc__ = "The raster has a bottom to top orientation."
+RasterOrientation.TOP_TO_BOTTOM.__doc__ = "The raster has a top to bottom orientation."
+RasterOrientation.BOTTOM_TO_TOP.__doc__ = "The raster has a bottom to top orientation."
 
-agcls.AgTypeNameMap["RASTER_ORIENTATION"] = RASTER_ORIENTATION
+agcls.AgTypeNameMap["RasterOrientation"] = RasterOrientation
 
-class RASTER_TYPE(IntEnum):
+class RasterType(IntEnum):
     """The type of data contained within each band of a raster dataset."""
    
     UNSIGNED_BYTE = 0
@@ -878,18 +876,18 @@ class RASTER_TYPE(IntEnum):
     DOUBLE = 7
     """Each value contained within a band can be represented with a double."""
 
-RASTER_TYPE.UNSIGNED_BYTE.__doc__ = "Each value contained within a band can be represented with an unsigned byte."
-RASTER_TYPE.BYTE.__doc__ = "Each value contained within a band can be represented with a byte."
-RASTER_TYPE.UNSIGNED_SHORT.__doc__ = "Each value contained within a band can be represented with an unsigned short."
-RASTER_TYPE.SHORT.__doc__ = "Each value contained within a band can be represented with a short."
-RASTER_TYPE.UNSIGNED_INT.__doc__ = "Each value contained within a band can be represented with an unsigned int."
-RASTER_TYPE.INT.__doc__ = "Each value contained within a band can be represented with an int."
-RASTER_TYPE.FLOAT.__doc__ = "Each value contained within a band can be represented with a float."
-RASTER_TYPE.DOUBLE.__doc__ = "Each value contained within a band can be represented with a double."
+RasterType.UNSIGNED_BYTE.__doc__ = "Each value contained within a band can be represented with an unsigned byte."
+RasterType.BYTE.__doc__ = "Each value contained within a band can be represented with a byte."
+RasterType.UNSIGNED_SHORT.__doc__ = "Each value contained within a band can be represented with an unsigned short."
+RasterType.SHORT.__doc__ = "Each value contained within a band can be represented with a short."
+RasterType.UNSIGNED_INT.__doc__ = "Each value contained within a band can be represented with an unsigned int."
+RasterType.INT.__doc__ = "Each value contained within a band can be represented with an int."
+RasterType.FLOAT.__doc__ = "Each value contained within a band can be represented with a float."
+RasterType.DOUBLE.__doc__ = "Each value contained within a band can be represented with a double."
 
-agcls.AgTypeNameMap["RASTER_TYPE"] = RASTER_TYPE
+agcls.AgTypeNameMap["RasterType"] = RasterType
 
-class RASTER_SHARPEN_METHOD(IntEnum):
+class RasterSharpenMethod(IntEnum):
     """The method used to sharpen a raster."""
    
     MEAN_REMOVAL = 0
@@ -897,12 +895,12 @@ class RASTER_SHARPEN_METHOD(IntEnum):
     BASIC = 1
     """Provide basic sharpening."""
 
-RASTER_SHARPEN_METHOD.MEAN_REMOVAL.__doc__ = "Provide sharpening through mean removal."
-RASTER_SHARPEN_METHOD.BASIC.__doc__ = "Provide basic sharpening."
+RasterSharpenMethod.MEAN_REMOVAL.__doc__ = "Provide sharpening through mean removal."
+RasterSharpenMethod.BASIC.__doc__ = "Provide basic sharpening."
 
-agcls.AgTypeNameMap["RASTER_SHARPEN_METHOD"] = RASTER_SHARPEN_METHOD
+agcls.AgTypeNameMap["RasterSharpenMethod"] = RasterSharpenMethod
 
-class VIDEO_PLAYBACK(IntEnum):
+class VideoPlayback(IntEnum):
     """Specify how the video stream will playback. When the playback is set to real time, the video will playback in real time..."""
    
     REAL_TIME = 0
@@ -910,12 +908,12 @@ class VIDEO_PLAYBACK(IntEnum):
     MAPPED = 1
     """The video will playback in coincidence with the scene manager time within the interval defined by interval start time and interval end time."""
 
-VIDEO_PLAYBACK.REAL_TIME.__doc__ = "The video will playback in realtime."
-VIDEO_PLAYBACK.MAPPED.__doc__ = "The video will playback in coincidence with the scene manager time within the interval defined by interval start time and interval end time."
+VideoPlayback.REAL_TIME.__doc__ = "The video will playback in realtime."
+VideoPlayback.MAPPED.__doc__ = "The video will playback in coincidence with the scene manager time within the interval defined by interval start time and interval end time."
 
-agcls.AgTypeNameMap["VIDEO_PLAYBACK"] = VIDEO_PLAYBACK
+agcls.AgTypeNameMap["VideoPlayback"] = VideoPlayback
 
-class KML_NETWORK_LINK_REFRESH_MODE(IntEnum):
+class KmlNetworkLinkRefreshMode(IntEnum):
     """Define the options available for a KmlNetworkLink's RefreshMode property."""
    
     ON_CHANGE = 0
@@ -925,13 +923,13 @@ class KML_NETWORK_LINK_REFRESH_MODE(IntEnum):
     ON_EXPIRE = 2
     """Refresh the network link when the expiration time is reached."""
 
-KML_NETWORK_LINK_REFRESH_MODE.ON_CHANGE.__doc__ = "Refresh when the document is loaded and whenever the Link parameters change (the default)."
-KML_NETWORK_LINK_REFRESH_MODE.ON_INTERVAL.__doc__ = "Refresh the network link at the duration specified by refresh interval."
-KML_NETWORK_LINK_REFRESH_MODE.ON_EXPIRE.__doc__ = "Refresh the network link when the expiration time is reached."
+KmlNetworkLinkRefreshMode.ON_CHANGE.__doc__ = "Refresh when the document is loaded and whenever the Link parameters change (the default)."
+KmlNetworkLinkRefreshMode.ON_INTERVAL.__doc__ = "Refresh the network link at the duration specified by refresh interval."
+KmlNetworkLinkRefreshMode.ON_EXPIRE.__doc__ = "Refresh the network link when the expiration time is reached."
 
-agcls.AgTypeNameMap["KML_NETWORK_LINK_REFRESH_MODE"] = KML_NETWORK_LINK_REFRESH_MODE
+agcls.AgTypeNameMap["KmlNetworkLinkRefreshMode"] = KmlNetworkLinkRefreshMode
 
-class KML_NETWORK_LINK_VIEW_REFRESH_MODE(IntEnum):
+class KmlNetworkLinkViewRefreshMode(IntEnum):
     """Define the options available for a KmlNetworkLink's ViewRefreshMode property."""
    
     NEVER = 0
@@ -943,14 +941,14 @@ class KML_NETWORK_LINK_VIEW_REFRESH_MODE(IntEnum):
     ON_REGION = 3
     """Refresh the network link when the region associated with this link becomes active."""
 
-KML_NETWORK_LINK_VIEW_REFRESH_MODE.NEVER.__doc__ = "Do not refresh the network link when the camera's view changes."
-KML_NETWORK_LINK_VIEW_REFRESH_MODE.ON_REQUEST.__doc__ = "Only refresh the network link when it is explicitly refreshed by calling the refresh method."
-KML_NETWORK_LINK_VIEW_REFRESH_MODE.ON_STOP.__doc__ = "Refresh the network link after camera view movement stops for the duration specified by view refresh time."
-KML_NETWORK_LINK_VIEW_REFRESH_MODE.ON_REGION.__doc__ = "Refresh the network link when the region associated with this link becomes active."
+KmlNetworkLinkViewRefreshMode.NEVER.__doc__ = "Do not refresh the network link when the camera's view changes."
+KmlNetworkLinkViewRefreshMode.ON_REQUEST.__doc__ = "Only refresh the network link when it is explicitly refreshed by calling the refresh method."
+KmlNetworkLinkViewRefreshMode.ON_STOP.__doc__ = "Refresh the network link after camera view movement stops for the duration specified by view refresh time."
+KmlNetworkLinkViewRefreshMode.ON_REGION.__doc__ = "Refresh the network link when the region associated with this link becomes active."
 
-agcls.AgTypeNameMap["KML_NETWORK_LINK_VIEW_REFRESH_MODE"] = KML_NETWORK_LINK_VIEW_REFRESH_MODE
+agcls.AgTypeNameMap["KmlNetworkLinkViewRefreshMode"] = KmlNetworkLinkViewRefreshMode
 
-class MODEL_UP_AXIS(IntEnum):
+class ModelUpAxis(IntEnum):
     """When setting the camera'saxes, this defines which axis of the axes is up in screen space, where up is from the bottom to the top of the screen."""
    
     X = 0
@@ -966,16 +964,16 @@ class MODEL_UP_AXIS(IntEnum):
     NEGATIVE_Z = 5
     """The negative Z axis."""
 
-MODEL_UP_AXIS.X.__doc__ = "The positive X axis."
-MODEL_UP_AXIS.Y.__doc__ = "The positive Y axis."
-MODEL_UP_AXIS.Z.__doc__ = "The positive Z axis."
-MODEL_UP_AXIS.NEGATIVE_X.__doc__ = "The negative X axis."
-MODEL_UP_AXIS.NEGATIVE_Y.__doc__ = "The negative Y axis."
-MODEL_UP_AXIS.NEGATIVE_Z.__doc__ = "The negative Z axis."
+ModelUpAxis.X.__doc__ = "The positive X axis."
+ModelUpAxis.Y.__doc__ = "The positive Y axis."
+ModelUpAxis.Z.__doc__ = "The positive Z axis."
+ModelUpAxis.NEGATIVE_X.__doc__ = "The negative X axis."
+ModelUpAxis.NEGATIVE_Y.__doc__ = "The negative Y axis."
+ModelUpAxis.NEGATIVE_Z.__doc__ = "The negative Z axis."
 
-agcls.AgTypeNameMap["MODEL_UP_AXIS"] = MODEL_UP_AXIS
+agcls.AgTypeNameMap["ModelUpAxis"] = ModelUpAxis
 
-class OUTLINE_APPEARANCE(IntEnum):
+class OutlineAppearance(IntEnum):
     """Possible appearances of an outline. Front lines are lines on front facing geometry and back lines are lines on back facing geometry."""
    
     FRONT_AND_BACK_LINES = 0
@@ -985,13 +983,13 @@ class OUTLINE_APPEARANCE(IntEnum):
     STYLIZE_BACK_LINES = 2
     """Both the front and back lines are displayed. The back lines are displayed using a different color, translucency, and width. This is used to declutter the outline but still provide a visual cue for the back facing geometry."""
 
-OUTLINE_APPEARANCE.FRONT_AND_BACK_LINES.__doc__ = "Both the front and back lines are displayed."
-OUTLINE_APPEARANCE.FRONT_LINES_ONLY.__doc__ = "Only the front lines are displayed. This can be used to declutter the outline."
-OUTLINE_APPEARANCE.STYLIZE_BACK_LINES.__doc__ = "Both the front and back lines are displayed. The back lines are displayed using a different color, translucency, and width. This is used to declutter the outline but still provide a visual cue for the back facing geometry."
+OutlineAppearance.FRONT_AND_BACK_LINES.__doc__ = "Both the front and back lines are displayed."
+OutlineAppearance.FRONT_LINES_ONLY.__doc__ = "Only the front lines are displayed. This can be used to declutter the outline."
+OutlineAppearance.STYLIZE_BACK_LINES.__doc__ = "Both the front and back lines are displayed. The back lines are displayed using a different color, translucency, and width. This is used to declutter the outline but still provide a visual cue for the back facing geometry."
 
-agcls.AgTypeNameMap["OUTLINE_APPEARANCE"] = OUTLINE_APPEARANCE
+agcls.AgTypeNameMap["OutlineAppearance"] = OutlineAppearance
 
-class POLYLINE_TYPE(IntEnum):
+class PolylineType(IntEnum):
     """Describes how to interpret positions defining a polyline."""
    
     LINES = 0
@@ -1001,13 +999,13 @@ class POLYLINE_TYPE(IntEnum):
     POINTS = 2
     """Lines are drawn as points."""
 
-POLYLINE_TYPE.LINES.__doc__ = "Every two positions define a line segment. Line segments are not required to be connected to each other."
-POLYLINE_TYPE.LINE_STRIP.__doc__ = "After the first position, each additional position defines a line segment from the previous position to the current position."
-POLYLINE_TYPE.POINTS.__doc__ = "Lines are drawn as points."
+PolylineType.LINES.__doc__ = "Every two positions define a line segment. Line segments are not required to be connected to each other."
+PolylineType.LINE_STRIP.__doc__ = "After the first position, each additional position defines a line segment from the previous position to the current position."
+PolylineType.POINTS.__doc__ = "Lines are drawn as points."
 
-agcls.AgTypeNameMap["POLYLINE_TYPE"] = POLYLINE_TYPE
+agcls.AgTypeNameMap["PolylineType"] = PolylineType
 
-class FACE_CULLING_MODE(IntEnum):
+class FaceCullingMode(IntEnum):
     """Identifies whether front- and/or back-facing triangles are culled."""
    
     CULL_FACE_FRONT = 0
@@ -1019,14 +1017,14 @@ class FACE_CULLING_MODE(IntEnum):
     CULL_FACE_NEITHER = 3
     """No triangles are culled."""
 
-FACE_CULLING_MODE.CULL_FACE_FRONT.__doc__ = "Front-facing triangles are culled."
-FACE_CULLING_MODE.CULL_FACE_BACK.__doc__ = "Back-facing triangles are culled."
-FACE_CULLING_MODE.CULL_FACE_FRONT_AND_BACK.__doc__ = "Both front- and back-facing triangles are culled. Therefore, no triangles are rendered."
-FACE_CULLING_MODE.CULL_FACE_NEITHER.__doc__ = "No triangles are culled."
+FaceCullingMode.CULL_FACE_FRONT.__doc__ = "Front-facing triangles are culled."
+FaceCullingMode.CULL_FACE_BACK.__doc__ = "Back-facing triangles are culled."
+FaceCullingMode.CULL_FACE_FRONT_AND_BACK.__doc__ = "Both front- and back-facing triangles are culled. Therefore, no triangles are rendered."
+FaceCullingMode.CULL_FACE_NEITHER.__doc__ = "No triangles are culled."
 
-agcls.AgTypeNameMap["FACE_CULLING_MODE"] = FACE_CULLING_MODE
+agcls.AgTypeNameMap["FaceCullingMode"] = FaceCullingMode
 
-class TEXTURE_FORMAT(IntEnum):
+class TextureFormat(IntEnum):
     """The format of individual texels in a texture."""
    
     ALPHA4 = 0
@@ -1102,46 +1100,46 @@ class TEXTURE_FORMAT(IntEnum):
     LUMINANCE32_ALPHA32_F = 35
     """Each texel contains an 32-bit luminance and 32-bit alpha floating point component."""
 
-TEXTURE_FORMAT.ALPHA4.__doc__ = "Each texel is an 4-bit alpha component."
-TEXTURE_FORMAT.ALPHA8.__doc__ = "Each texel is an 8-bit alpha component."
-TEXTURE_FORMAT.ALPHA12.__doc__ = "Each texel is an 12-bit alpha component."
-TEXTURE_FORMAT.ALPHA16.__doc__ = "Each texel is an 16-bit alpha component."
-TEXTURE_FORMAT.R3G3B2.__doc__ = "Each texel contains 3-bit red and green components and 2-bit blue component."
-TEXTURE_FORMAT.RGB4.__doc__ = "Each texel contains 4-bit red, green, and blue components."
-TEXTURE_FORMAT.RGB5.__doc__ = "Each texel contains 5-bit red, green, and blue components."
-TEXTURE_FORMAT.RGB8.__doc__ = "Each texel contains 8-bit red, green, and blue components."
-TEXTURE_FORMAT.RGB10.__doc__ = "Each texel contains 10-bit red, green, and blue components."
-TEXTURE_FORMAT.RGB12.__doc__ = "Each texel contains 12-bit red, green, and blue components."
-TEXTURE_FORMAT.RGB16.__doc__ = "Each texel contains 16-bit red, green, and blue components."
-TEXTURE_FORMAT.RGB16_F.__doc__ = "Each texel contains 16-bit red, green, and blue floating point components."
-TEXTURE_FORMAT.RGB32_F.__doc__ = "Each texel contains 32-bit red, green, and blue floating point components."
-TEXTURE_FORMAT.RGBA2.__doc__ = "Each texel contains 2-bit red, green, blue, and alpha components."
-TEXTURE_FORMAT.RGBA4.__doc__ = "Each texel contains 4-bit red, green, blue, and alpha components."
-TEXTURE_FORMAT.RGB5_A1.__doc__ = "Each texel contains 5-bit red, green, blue components and 1-bit alpha component."
-TEXTURE_FORMAT.RGBA8.__doc__ = "Each texel contains 8-bit red, green, blue, and alpha components."
-TEXTURE_FORMAT.RGB10_A2.__doc__ = "Each texel contains 10-bit red, green, blue components and 2-bit alpha component."
-TEXTURE_FORMAT.RGBA12.__doc__ = "Each texel contains 12-bit red, green, blue, and alpha components."
-TEXTURE_FORMAT.RGBA16.__doc__ = "Each texel contains 16-bit red, green, blue, and alpha components."
-TEXTURE_FORMAT.RGBA16_F.__doc__ = "Each texel contains 16-bit red, green, blue, and alpha floating point components."
-TEXTURE_FORMAT.RGBA32_F.__doc__ = "Each texel contains 32-bit red, green, blue, and alpha floating point components."
-TEXTURE_FORMAT.LUMINANCE4.__doc__ = "Each texel is an 4-bit luminance, e.g. intensity, component."
-TEXTURE_FORMAT.LUMINANCE8.__doc__ = "Each texel is an 8-bit luminance, e.g. intensity, component."
-TEXTURE_FORMAT.LUMINANCE12.__doc__ = "Each texel is an 12-bit luminance, e.g. intensity, component."
-TEXTURE_FORMAT.LUMINANCE16.__doc__ = "Each texel is an 16-bit luminance, e.g. intensity, component."
-TEXTURE_FORMAT.LUMINANCE16_F.__doc__ = "Each texel is an 16-bit luminance, e.g. intensity, floating point component."
-TEXTURE_FORMAT.LUMINANCE32_F.__doc__ = "Each texel is an 32-bit luminance, e.g. intensity, floating point component."
-TEXTURE_FORMAT.LUMINANCE4_ALPHA4.__doc__ = "Each texel contains an 4-bit luminance and 4-bit alpha component."
-TEXTURE_FORMAT.LUMINANCE6_ALPHA2.__doc__ = "Each texel contains an 6-bit luminance and 2-bit alpha component."
-TEXTURE_FORMAT.LUMINANCE8_ALPHA8.__doc__ = "Each texel contains an 8-bit luminance and 8-bit alpha component."
-TEXTURE_FORMAT.LUMINANCE12_ALPHA4.__doc__ = "Each texel contains an 12-bit luminance and 4-bit alpha component."
-TEXTURE_FORMAT.LUMINANCE12_ALPHA12.__doc__ = "Each texel contains an 12-bit luminance and 12-bit alpha component."
-TEXTURE_FORMAT.LUMINANCE16_ALPHA16.__doc__ = "Each texel contains an 16-bit luminance and 16-bit alpha component."
-TEXTURE_FORMAT.LUMINANCE16_ALPHA16_F.__doc__ = "Each texel contains an 16-bit luminance and 16-bit alpha floating point component."
-TEXTURE_FORMAT.LUMINANCE32_ALPHA32_F.__doc__ = "Each texel contains an 32-bit luminance and 32-bit alpha floating point component."
+TextureFormat.ALPHA4.__doc__ = "Each texel is an 4-bit alpha component."
+TextureFormat.ALPHA8.__doc__ = "Each texel is an 8-bit alpha component."
+TextureFormat.ALPHA12.__doc__ = "Each texel is an 12-bit alpha component."
+TextureFormat.ALPHA16.__doc__ = "Each texel is an 16-bit alpha component."
+TextureFormat.R3G3B2.__doc__ = "Each texel contains 3-bit red and green components and 2-bit blue component."
+TextureFormat.RGB4.__doc__ = "Each texel contains 4-bit red, green, and blue components."
+TextureFormat.RGB5.__doc__ = "Each texel contains 5-bit red, green, and blue components."
+TextureFormat.RGB8.__doc__ = "Each texel contains 8-bit red, green, and blue components."
+TextureFormat.RGB10.__doc__ = "Each texel contains 10-bit red, green, and blue components."
+TextureFormat.RGB12.__doc__ = "Each texel contains 12-bit red, green, and blue components."
+TextureFormat.RGB16.__doc__ = "Each texel contains 16-bit red, green, and blue components."
+TextureFormat.RGB16_F.__doc__ = "Each texel contains 16-bit red, green, and blue floating point components."
+TextureFormat.RGB32_F.__doc__ = "Each texel contains 32-bit red, green, and blue floating point components."
+TextureFormat.RGBA2.__doc__ = "Each texel contains 2-bit red, green, blue, and alpha components."
+TextureFormat.RGBA4.__doc__ = "Each texel contains 4-bit red, green, blue, and alpha components."
+TextureFormat.RGB5_A1.__doc__ = "Each texel contains 5-bit red, green, blue components and 1-bit alpha component."
+TextureFormat.RGBA8.__doc__ = "Each texel contains 8-bit red, green, blue, and alpha components."
+TextureFormat.RGB10_A2.__doc__ = "Each texel contains 10-bit red, green, blue components and 2-bit alpha component."
+TextureFormat.RGBA12.__doc__ = "Each texel contains 12-bit red, green, blue, and alpha components."
+TextureFormat.RGBA16.__doc__ = "Each texel contains 16-bit red, green, blue, and alpha components."
+TextureFormat.RGBA16_F.__doc__ = "Each texel contains 16-bit red, green, blue, and alpha floating point components."
+TextureFormat.RGBA32_F.__doc__ = "Each texel contains 32-bit red, green, blue, and alpha floating point components."
+TextureFormat.LUMINANCE4.__doc__ = "Each texel is an 4-bit luminance, e.g. intensity, component."
+TextureFormat.LUMINANCE8.__doc__ = "Each texel is an 8-bit luminance, e.g. intensity, component."
+TextureFormat.LUMINANCE12.__doc__ = "Each texel is an 12-bit luminance, e.g. intensity, component."
+TextureFormat.LUMINANCE16.__doc__ = "Each texel is an 16-bit luminance, e.g. intensity, component."
+TextureFormat.LUMINANCE16_F.__doc__ = "Each texel is an 16-bit luminance, e.g. intensity, floating point component."
+TextureFormat.LUMINANCE32_F.__doc__ = "Each texel is an 32-bit luminance, e.g. intensity, floating point component."
+TextureFormat.LUMINANCE4_ALPHA4.__doc__ = "Each texel contains an 4-bit luminance and 4-bit alpha component."
+TextureFormat.LUMINANCE6_ALPHA2.__doc__ = "Each texel contains an 6-bit luminance and 2-bit alpha component."
+TextureFormat.LUMINANCE8_ALPHA8.__doc__ = "Each texel contains an 8-bit luminance and 8-bit alpha component."
+TextureFormat.LUMINANCE12_ALPHA4.__doc__ = "Each texel contains an 12-bit luminance and 4-bit alpha component."
+TextureFormat.LUMINANCE12_ALPHA12.__doc__ = "Each texel contains an 12-bit luminance and 12-bit alpha component."
+TextureFormat.LUMINANCE16_ALPHA16.__doc__ = "Each texel contains an 16-bit luminance and 16-bit alpha component."
+TextureFormat.LUMINANCE16_ALPHA16_F.__doc__ = "Each texel contains an 16-bit luminance and 16-bit alpha floating point component."
+TextureFormat.LUMINANCE32_ALPHA32_F.__doc__ = "Each texel contains an 32-bit luminance and 32-bit alpha floating point component."
 
-agcls.AgTypeNameMap["TEXTURE_FORMAT"] = TEXTURE_FORMAT
+agcls.AgTypeNameMap["TextureFormat"] = TextureFormat
 
-class MAGNIFICATION_FILTER(IntEnum):
+class MagnificationFilter(IntEnum):
     """The filter used when the pixel being textured maps to an area less than or equal to one texel."""
    
     NEAREST = 0
@@ -1149,12 +1147,12 @@ class MAGNIFICATION_FILTER(IntEnum):
     LINEAR = 1
     """Use the weighted average of the four texels that are closest to the center of the pixel being textured."""
 
-MAGNIFICATION_FILTER.NEAREST.__doc__ = "Use the texel that is closest to the center of the pixel being textured. This usually faster than Linear but can produce images with sharper edges."
-MAGNIFICATION_FILTER.LINEAR.__doc__ = "Use the weighted average of the four texels that are closest to the center of the pixel being textured."
+MagnificationFilter.NEAREST.__doc__ = "Use the texel that is closest to the center of the pixel being textured. This usually faster than Linear but can produce images with sharper edges."
+MagnificationFilter.LINEAR.__doc__ = "Use the weighted average of the four texels that are closest to the center of the pixel being textured."
 
-agcls.AgTypeNameMap["MAGNIFICATION_FILTER"] = MAGNIFICATION_FILTER
+agcls.AgTypeNameMap["MagnificationFilter"] = MagnificationFilter
 
-class MINIFICATION_FILTER(IntEnum):
+class MinificationFilter(IntEnum):
     """The filter used when the pixel being textured maps to an area greater than one texel."""
    
     NEAREST = 0
@@ -1170,16 +1168,16 @@ class MINIFICATION_FILTER(IntEnum):
     LINEAR_MIP_MAP_LINEAR = 5
     """Use the two mipmaps that most closely match the size of the pixel being textured. Determine the weighted average of the four (for 2D textures, two for 1D textures) texels that are closest to the center of the pixel being textured in each mipmap..."""
 
-MINIFICATION_FILTER.NEAREST.__doc__ = "Use the texel that is closest to the center of the pixel being textured."
-MINIFICATION_FILTER.LINEAR.__doc__ = "Use the weighted average of the four (for 2D textures, two for 1D textures) texels that are closest to the center of the pixel being textured."
-MINIFICATION_FILTER.NEAREST_MIP_MAP_NEAREST.__doc__ = "Use the mipmap that most closely matches the size of the pixel being textured. Then use the texel from that mipmap that is closest to the center of the pixel being textured."
-MINIFICATION_FILTER.LINEAR_MIP_MAP_NEAREST.__doc__ = "Use the mipmap that most closely matches the size of the pixel being textured. Then use the weighted average of the four (for 2D textures, two for 1D textures) texels from that mipmap that are closest to the center of the pixel being textured."
-MINIFICATION_FILTER.NEAREST_MIP_MAP_LINEAR.__doc__ = "Use the two mipmaps that most closely match the size of the pixel being textured. Determine the texel that is closest to the center of the pixel being textured in each mipmap. The final texture value is a weighted average of these two texels."
-MINIFICATION_FILTER.LINEAR_MIP_MAP_LINEAR.__doc__ = "Use the two mipmaps that most closely match the size of the pixel being textured. Determine the weighted average of the four (for 2D textures, two for 1D textures) texels that are closest to the center of the pixel being textured in each mipmap..."
+MinificationFilter.NEAREST.__doc__ = "Use the texel that is closest to the center of the pixel being textured."
+MinificationFilter.LINEAR.__doc__ = "Use the weighted average of the four (for 2D textures, two for 1D textures) texels that are closest to the center of the pixel being textured."
+MinificationFilter.NEAREST_MIP_MAP_NEAREST.__doc__ = "Use the mipmap that most closely matches the size of the pixel being textured. Then use the texel from that mipmap that is closest to the center of the pixel being textured."
+MinificationFilter.LINEAR_MIP_MAP_NEAREST.__doc__ = "Use the mipmap that most closely matches the size of the pixel being textured. Then use the weighted average of the four (for 2D textures, two for 1D textures) texels from that mipmap that are closest to the center of the pixel being textured."
+MinificationFilter.NEAREST_MIP_MAP_LINEAR.__doc__ = "Use the two mipmaps that most closely match the size of the pixel being textured. Determine the texel that is closest to the center of the pixel being textured in each mipmap. The final texture value is a weighted average of these two texels."
+MinificationFilter.LINEAR_MIP_MAP_LINEAR.__doc__ = "Use the two mipmaps that most closely match the size of the pixel being textured. Determine the weighted average of the four (for 2D textures, two for 1D textures) texels that are closest to the center of the pixel being textured in each mipmap..."
 
-agcls.AgTypeNameMap["MINIFICATION_FILTER"] = MINIFICATION_FILTER
+agcls.AgTypeNameMap["MinificationFilter"] = MinificationFilter
 
-class RENDERER_SHADING_MODEL(IntEnum):
+class RendererShadingModel(IntEnum):
     """Identifies which shade model to use. The primitive can be drawn with a single color or multiple colors."""
    
     FLAT = 0
@@ -1187,12 +1185,12 @@ class RENDERER_SHADING_MODEL(IntEnum):
     GOURAUD = 1
     """Gouraud shading renders the primitive by interpolating the color between the vertices."""
 
-RENDERER_SHADING_MODEL.FLAT.__doc__ = "Flat shading renders the primitive with one color across all of the vertices."
-RENDERER_SHADING_MODEL.GOURAUD.__doc__ = "Gouraud shading renders the primitive by interpolating the color between the vertices."
+RendererShadingModel.FLAT.__doc__ = "Flat shading renders the primitive with one color across all of the vertices."
+RendererShadingModel.GOURAUD.__doc__ = "Gouraud shading renders the primitive by interpolating the color between the vertices."
 
-agcls.AgTypeNameMap["RENDERER_SHADING_MODEL"] = RENDERER_SHADING_MODEL
+agcls.AgTypeNameMap["RendererShadingModel"] = RendererShadingModel
 
-class TEXTURE_WRAP(IntEnum):
+class TextureWrap(IntEnum):
     """Determine how to handle textures coordinates that fall outside of the range [0, 1]."""
    
     CLAMP = 0
@@ -1206,15 +1204,15 @@ class TEXTURE_WRAP(IntEnum):
     REPEAT = 4
     """Ignore the integer part of the texture coordinate."""
 
-TEXTURE_WRAP.CLAMP.__doc__ = "Clamp the texture coordinate to the range [0, 1]."
-TEXTURE_WRAP.CLAMP_TO_BORDER.__doc__ = "Clamp the texture coordinate to the range [-1/2N, 1 + 1/2N], where N is the size the texture in the direction of clamping."
-TEXTURE_WRAP.CLAMP_TO_EDGE.__doc__ = "Clamp the texture coordinate to the range [1/2N, 1 - 1/2N], where N is the size the texture in the direction of clamping."
-TEXTURE_WRAP.MIRRORED_REPEAT.__doc__ = "If the integer part of the texture coordinate is even, use the fractional part of the texture coordinate. Otherwise, use one minus the fractional part of the texture coordinate."
-TEXTURE_WRAP.REPEAT.__doc__ = "Ignore the integer part of the texture coordinate."
+TextureWrap.CLAMP.__doc__ = "Clamp the texture coordinate to the range [0, 1]."
+TextureWrap.CLAMP_TO_BORDER.__doc__ = "Clamp the texture coordinate to the range [-1/2N, 1 + 1/2N], where N is the size the texture in the direction of clamping."
+TextureWrap.CLAMP_TO_EDGE.__doc__ = "Clamp the texture coordinate to the range [1/2N, 1 - 1/2N], where N is the size the texture in the direction of clamping."
+TextureWrap.MIRRORED_REPEAT.__doc__ = "If the integer part of the texture coordinate is even, use the fractional part of the texture coordinate. Otherwise, use one minus the fractional part of the texture coordinate."
+TextureWrap.REPEAT.__doc__ = "Ignore the integer part of the texture coordinate."
 
-agcls.AgTypeNameMap["TEXTURE_WRAP"] = TEXTURE_WRAP
+agcls.AgTypeNameMap["TextureWrap"] = TextureWrap
 
-class SET_HINT(IntEnum):
+class SetHint(IntEnum):
     """An optimization hint optionally provided to primitives to enhance performance for static or dynamic primitives. See the Set Hint Performance Overview for selecting an appropriate value."""
    
     INFREQUENT = 0
@@ -1224,13 +1222,13 @@ class SET_HINT(IntEnum):
     FREQUENT = 2
     """Rendering is optimized for streaming geometry. The primitive's vertices are expected to be updated with Set() - all the vertices will change and/or the number of vertices will change. Calls to SetPartial() will fail."""
 
-SET_HINT.INFREQUENT.__doc__ = "Rendering is optimized for static geometry. The primitive's vertices are not going to be updated with Set() or SetPartial() calls. Calls to SetPartial() will fail. Calls to Set() are allowed but may not be as efficient as SetHintFrequent."
-SET_HINT.PARTIAL.__doc__ = "Rendering is optimized for dynamic geometry. The primitive's vertices are expected to be updated with SetPartial() - some or all of the vertices will change but the number of vertices will not."
-SET_HINT.FREQUENT.__doc__ = "Rendering is optimized for streaming geometry. The primitive's vertices are expected to be updated with Set() - all the vertices will change and/or the number of vertices will change. Calls to SetPartial() will fail."
+SetHint.INFREQUENT.__doc__ = "Rendering is optimized for static geometry. The primitive's vertices are not going to be updated with Set() or SetPartial() calls. Calls to SetPartial() will fail. Calls to Set() are allowed but may not be as efficient as SetHintFrequent."
+SetHint.PARTIAL.__doc__ = "Rendering is optimized for dynamic geometry. The primitive's vertices are expected to be updated with SetPartial() - some or all of the vertices will change but the number of vertices will not."
+SetHint.FREQUENT.__doc__ = "Rendering is optimized for streaming geometry. The primitive's vertices are expected to be updated with Set() - all the vertices will change and/or the number of vertices will change. Calls to SetPartial() will fail."
 
-agcls.AgTypeNameMap["SET_HINT"] = SET_HINT
+agcls.AgTypeNameMap["SetHint"] = SetHint
 
-class STEREO_PROJECTION_MODE(IntEnum):
+class StereoProjectionMode(IntEnum):
     """The stereoscopic projection mode used for the left and right eye scenes."""
    
     PARALLEL = 0
@@ -1240,13 +1238,13 @@ class STEREO_PROJECTION_MODE(IntEnum):
     AUTOMATIC = 2
     """Automatic distance projection. Automatic distance projection will ignore any projection distance that has been set and instead automatically calculates the projection distance based on the distance between the camera and the center of the scene."""
 
-STEREO_PROJECTION_MODE.PARALLEL.__doc__ = "Parallel projection. Parallel projection will ignore any projection distance that has been set and instead use a parallel projection for each eye. In parallel mode all objects will appear to go into the screen..."
-STEREO_PROJECTION_MODE.FIXED_DISTANCE.__doc__ = "Fixed distance projection. Objects at the fixed distance will appear to have no depth. Objects further than the distance will appear to go into the screen. Objects nearer than the distance will appear to pop out of the screen."
-STEREO_PROJECTION_MODE.AUTOMATIC.__doc__ = "Automatic distance projection. Automatic distance projection will ignore any projection distance that has been set and instead automatically calculates the projection distance based on the distance between the camera and the center of the scene."
+StereoProjectionMode.PARALLEL.__doc__ = "Parallel projection. Parallel projection will ignore any projection distance that has been set and instead use a parallel projection for each eye. In parallel mode all objects will appear to go into the screen..."
+StereoProjectionMode.FIXED_DISTANCE.__doc__ = "Fixed distance projection. Objects at the fixed distance will appear to have no depth. Objects further than the distance will appear to go into the screen. Objects nearer than the distance will appear to pop out of the screen."
+StereoProjectionMode.AUTOMATIC.__doc__ = "Automatic distance projection. Automatic distance projection will ignore any projection distance that has been set and instead automatically calculates the projection distance based on the distance between the camera and the center of the scene."
 
-agcls.AgTypeNameMap["STEREO_PROJECTION_MODE"] = STEREO_PROJECTION_MODE
+agcls.AgTypeNameMap["StereoProjectionMode"] = StereoProjectionMode
 
-class STEREOSCOPIC_DISPLAY_MODE(IntEnum):
+class StereoscopicDisplayMode(IntEnum):
     """The stereoscopic display mode. To use a particular stereoscopic display mode, ensure that your system supports the feature and that it is enabled."""
    
     OFF = 0
@@ -1262,16 +1260,16 @@ class STEREOSCOPIC_DISPLAY_MODE(IntEnum):
     SIDE_BY_SIDE = 5
     """Side-by-side stereoscopic. Left and right eye views are rendered next to each other in the same window."""
 
-STEREOSCOPIC_DISPLAY_MODE.OFF.__doc__ = "No stereoscopic."
-STEREOSCOPIC_DISPLAY_MODE.QUAD_BUFFER.__doc__ = "OpenGL Quad-buffer stereoscopic."
-STEREOSCOPIC_DISPLAY_MODE.ANAGLYPH.__doc__ = "Anaglyph or two-color stereoscopic."
-STEREOSCOPIC_DISPLAY_MODE.LEFT_EYE.__doc__ = "Left eye view of the stereoscopic scene."
-STEREOSCOPIC_DISPLAY_MODE.RIGHT_EYE.__doc__ = "Right eye view of the stereoscopic scene."
-STEREOSCOPIC_DISPLAY_MODE.SIDE_BY_SIDE.__doc__ = "Side-by-side stereoscopic. Left and right eye views are rendered next to each other in the same window."
+StereoscopicDisplayMode.OFF.__doc__ = "No stereoscopic."
+StereoscopicDisplayMode.QUAD_BUFFER.__doc__ = "OpenGL Quad-buffer stereoscopic."
+StereoscopicDisplayMode.ANAGLYPH.__doc__ = "Anaglyph or two-color stereoscopic."
+StereoscopicDisplayMode.LEFT_EYE.__doc__ = "Left eye view of the stereoscopic scene."
+StereoscopicDisplayMode.RIGHT_EYE.__doc__ = "Right eye view of the stereoscopic scene."
+StereoscopicDisplayMode.SIDE_BY_SIDE.__doc__ = "Side-by-side stereoscopic. Left and right eye views are rendered next to each other in the same window."
 
-agcls.AgTypeNameMap["STEREOSCOPIC_DISPLAY_MODE"] = STEREOSCOPIC_DISPLAY_MODE
+agcls.AgTypeNameMap["StereoscopicDisplayMode"] = StereoscopicDisplayMode
 
-class FONT_STYLE(IntEnum):
+class FontStyle(IntEnum):
     """Font styles."""
    
     REGULAR = 0x0
@@ -1285,13 +1283,13 @@ class FONT_STYLE(IntEnum):
     STRIKEOUT = 0x8
     """Strike-out style."""
 
-FONT_STYLE.REGULAR.__doc__ = "Regular font."
-FONT_STYLE.BOLD.__doc__ = "Bold font."
-FONT_STYLE.ITALIC.__doc__ = "Italic font."
-FONT_STYLE.UNDERLINE.__doc__ = "Underlined font."
-FONT_STYLE.STRIKEOUT.__doc__ = "Strike-out style."
+FontStyle.REGULAR.__doc__ = "Regular font."
+FontStyle.BOLD.__doc__ = "Bold font."
+FontStyle.ITALIC.__doc__ = "Italic font."
+FontStyle.UNDERLINE.__doc__ = "Underlined font."
+FontStyle.STRIKEOUT.__doc__ = "Strike-out style."
 
-agcls.AgTypeNameMap["FONT_STYLE"] = FONT_STYLE
+agcls.AgTypeNameMap["FontStyle"] = FontStyle
 
 
 class IScreenOverlayContainer(object):
@@ -1424,9 +1422,9 @@ class ITriangulatorResult(object):
 
     _get_triangle_winding_order_metadata = { "offset" : _get_triangle_winding_order_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(WINDING_ORDER),) }
+            "marshallers" : (agmarshall.EnumArg(WindingOrder),) }
     @property
-    def triangle_winding_order(self) -> "WINDING_ORDER":
+    def triangle_winding_order(self) -> "WindingOrder":
         """Get the orientation of front-facing triangles in the mesh."""
         return self._intf.get_property(ITriangulatorResult._metadata, ITriangulatorResult._get_triangle_winding_order_metadata)
 
@@ -1497,9 +1495,9 @@ class IGlobeOverlay(object):
 
     _get_role_metadata = { "offset" : _get_role_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(OVERLAY_ROLE),) }
+            "marshallers" : (agmarshall.EnumArg(OverlayRole),) }
     @property
-    def role(self) -> "OVERLAY_ROLE":
+    def role(self) -> "OverlayRole":
         """Get the globe overlay role of the globe overlay."""
         return self._intf.get_property(IGlobeOverlay._metadata, IGlobeOverlay._get_role_metadata)
 
@@ -2154,8 +2152,8 @@ class IRaster(object):
 
     _flip_metadata = { "offset" : _flip_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(RASTER_FLIP_AXIS),) }
-    def flip(self, axis:"RASTER_FLIP_AXIS") -> None:
+            "marshallers" : (agmarshall.EnumArg(RasterFlipAxis),) }
+    def flip(self, axis:"RasterFlipAxis") -> None:
         """Flips the raster along the given axis."""
         return self._intf.invoke(IRaster._metadata, IRaster._flip_metadata, axis)
 
@@ -2182,15 +2180,15 @@ class IRaster(object):
 
     _extract_band_metadata = { "offset" : _extract_band_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.EnumArg(RASTER_BAND), agmarshall.InterfaceOutArg,) }
-    def extract_band(self, band:"RASTER_BAND") -> "IRaster":
+            "marshallers" : (agmarshall.EnumArg(RasterBand), agmarshall.InterfaceOutArg,) }
+    def extract_band(self, band:"RasterBand") -> "IRaster":
         """Extract the band of raster data associated with the given raster band."""
         return self._intf.invoke(IRaster._metadata, IRaster._extract_band_metadata, band, OutArg())
 
     _extract_band_from_raster_format_metadata = { "offset" : _extract_band_from_raster_format_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.EnumArg(RASTER_FORMAT), agmarshall.InterfaceOutArg,) }
-    def extract_band_from_raster_format(self, format:"RASTER_FORMAT") -> "IRaster":
+            "marshallers" : (agmarshall.EnumArg(RasterFormat), agmarshall.InterfaceOutArg,) }
+    def extract_band_from_raster_format(self, format:"RasterFormat") -> "IRaster":
         """Extract the bands of raster data associated with the given raster format."""
         return self._intf.invoke(IRaster._metadata, IRaster._extract_band_from_raster_format_metadata, format, OutArg())
 
@@ -2594,17 +2592,17 @@ class IOverlay(object):
 
     _get_x_unit_metadata = { "offset" : _get_x_unit_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(SCREEN_OVERLAY_UNIT),) }
+            "marshallers" : (agmarshall.EnumArg(ScreenOverlayUnit),) }
     @property
-    def x_unit(self) -> "SCREEN_OVERLAY_UNIT":
+    def x_unit(self) -> "ScreenOverlayUnit":
         """Get or set the unit of the x property."""
         return self._intf.get_property(IOverlay._metadata, IOverlay._get_x_unit_metadata)
 
     _set_x_unit_metadata = { "offset" : _set_x_unit_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(SCREEN_OVERLAY_UNIT),) }
+            "marshallers" : (agmarshall.EnumArg(ScreenOverlayUnit),) }
     @x_unit.setter
-    def x_unit(self, x_unit:"SCREEN_OVERLAY_UNIT") -> None:
+    def x_unit(self, x_unit:"ScreenOverlayUnit") -> None:
         return self._intf.set_property(IOverlay._metadata, IOverlay._set_x_unit_metadata, x_unit)
 
     _get_y_metadata = { "offset" : _get_y_method_offset,
@@ -2624,17 +2622,17 @@ class IOverlay(object):
 
     _get_y_unit_metadata = { "offset" : _get_y_unit_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(SCREEN_OVERLAY_UNIT),) }
+            "marshallers" : (agmarshall.EnumArg(ScreenOverlayUnit),) }
     @property
-    def y_unit(self) -> "SCREEN_OVERLAY_UNIT":
+    def y_unit(self) -> "ScreenOverlayUnit":
         """Get or set the unit of the y property."""
         return self._intf.get_property(IOverlay._metadata, IOverlay._get_y_unit_metadata)
 
     _set_y_unit_metadata = { "offset" : _set_y_unit_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(SCREEN_OVERLAY_UNIT),) }
+            "marshallers" : (agmarshall.EnumArg(ScreenOverlayUnit),) }
     @y_unit.setter
-    def y_unit(self, y_unit:"SCREEN_OVERLAY_UNIT") -> None:
+    def y_unit(self, y_unit:"ScreenOverlayUnit") -> None:
         return self._intf.set_property(IOverlay._metadata, IOverlay._set_y_unit_metadata, y_unit)
 
     _get_size_metadata = { "offset" : _get_size_method_offset,
@@ -2669,17 +2667,17 @@ class IOverlay(object):
 
     _get_width_unit_metadata = { "offset" : _get_width_unit_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(SCREEN_OVERLAY_UNIT),) }
+            "marshallers" : (agmarshall.EnumArg(ScreenOverlayUnit),) }
     @property
-    def width_unit(self) -> "SCREEN_OVERLAY_UNIT":
+    def width_unit(self) -> "ScreenOverlayUnit":
         """Get or set the unit of the width property."""
         return self._intf.get_property(IOverlay._metadata, IOverlay._get_width_unit_metadata)
 
     _set_width_unit_metadata = { "offset" : _set_width_unit_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(SCREEN_OVERLAY_UNIT),) }
+            "marshallers" : (agmarshall.EnumArg(ScreenOverlayUnit),) }
     @width_unit.setter
-    def width_unit(self, width_unit:"SCREEN_OVERLAY_UNIT") -> None:
+    def width_unit(self, width_unit:"ScreenOverlayUnit") -> None:
         return self._intf.set_property(IOverlay._metadata, IOverlay._set_width_unit_metadata, width_unit)
 
     _get_height_metadata = { "offset" : _get_height_method_offset,
@@ -2699,17 +2697,17 @@ class IOverlay(object):
 
     _get_height_unit_metadata = { "offset" : _get_height_unit_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(SCREEN_OVERLAY_UNIT),) }
+            "marshallers" : (agmarshall.EnumArg(ScreenOverlayUnit),) }
     @property
-    def height_unit(self) -> "SCREEN_OVERLAY_UNIT":
+    def height_unit(self) -> "ScreenOverlayUnit":
         """Get or set the unit of the height property."""
         return self._intf.get_property(IOverlay._metadata, IOverlay._get_height_unit_metadata)
 
     _set_height_unit_metadata = { "offset" : _set_height_unit_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(SCREEN_OVERLAY_UNIT),) }
+            "marshallers" : (agmarshall.EnumArg(ScreenOverlayUnit),) }
     @height_unit.setter
-    def height_unit(self, height_unit:"SCREEN_OVERLAY_UNIT") -> None:
+    def height_unit(self, height_unit:"ScreenOverlayUnit") -> None:
         return self._intf.set_property(IOverlay._metadata, IOverlay._set_height_unit_metadata, height_unit)
 
     _get_minimum_size_metadata = { "offset" : _get_minimum_size_method_offset,
@@ -2902,32 +2900,32 @@ class IOverlay(object):
 
     _get_origin_metadata = { "offset" : _get_origin_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(SCREEN_OVERLAY_ORIGIN),) }
+            "marshallers" : (agmarshall.EnumArg(ScreenOverlayOrigin),) }
     @property
-    def origin(self) -> "SCREEN_OVERLAY_ORIGIN":
+    def origin(self) -> "ScreenOverlayOrigin":
         """Get or set the origin from which the overlay's position is defined. By default, the value of this property is bottom left..."""
         return self._intf.get_property(IOverlay._metadata, IOverlay._get_origin_metadata)
 
     _set_origin_metadata = { "offset" : _set_origin_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(SCREEN_OVERLAY_ORIGIN),) }
+            "marshallers" : (agmarshall.EnumArg(ScreenOverlayOrigin),) }
     @origin.setter
-    def origin(self, origin:"SCREEN_OVERLAY_ORIGIN") -> None:
+    def origin(self, origin:"ScreenOverlayOrigin") -> None:
         return self._intf.set_property(IOverlay._metadata, IOverlay._set_origin_metadata, origin)
 
     _get_pinning_origin_metadata = { "offset" : _get_pinning_origin_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(SCREEN_OVERLAY_PINNING_ORIGIN),) }
+            "marshallers" : (agmarshall.EnumArg(ScreenOverlayPinningOrigin),) }
     @property
-    def pinning_origin(self) -> "SCREEN_OVERLAY_PINNING_ORIGIN":
+    def pinning_origin(self) -> "ScreenOverlayPinningOrigin":
         """Get or set the origin of the pinning position property, relative to the overlay..."""
         return self._intf.get_property(IOverlay._metadata, IOverlay._get_pinning_origin_metadata)
 
     _set_pinning_origin_metadata = { "offset" : _set_pinning_origin_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(SCREEN_OVERLAY_PINNING_ORIGIN),) }
+            "marshallers" : (agmarshall.EnumArg(ScreenOverlayPinningOrigin),) }
     @pinning_origin.setter
-    def pinning_origin(self, pinning_origin:"SCREEN_OVERLAY_PINNING_ORIGIN") -> None:
+    def pinning_origin(self, pinning_origin:"ScreenOverlayPinningOrigin") -> None:
         return self._intf.set_property(IOverlay._metadata, IOverlay._set_pinning_origin_metadata, pinning_origin)
 
     _get_parent_metadata = { "offset" : _get_parent_method_offset,
@@ -3190,9 +3188,9 @@ class IPositionInterpolator(object):
     
     _get_polyline_type_metadata = { "offset" : _get_polyline_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(POLYLINE_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(PolylineType),) }
     @property
-    def polyline_type(self) -> "POLYLINE_TYPE":
+    def polyline_type(self) -> "PolylineType":
         """Get the polyline type of positions returned from interpolate."""
         return self._intf.get_property(IPositionInterpolator._metadata, IPositionInterpolator._get_polyline_type_metadata)
 
@@ -3819,33 +3817,33 @@ class TextureFilter2D(SupportsDeleteCallback):
     
     _get_minification_filter_metadata = { "offset" : _get_minification_filter_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(MINIFICATION_FILTER),) }
+            "marshallers" : (agmarshall.EnumArg(MinificationFilter),) }
     @property
-    def minification_filter(self) -> "MINIFICATION_FILTER":
+    def minification_filter(self) -> "MinificationFilter":
         """Get the minification filter used when the pixel being textured maps to an area less than or equal to one texel."""
         return self._intf.get_property(TextureFilter2D._metadata, TextureFilter2D._get_minification_filter_metadata)
 
     _get_magnification_filter_metadata = { "offset" : _get_magnification_filter_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(MAGNIFICATION_FILTER),) }
+            "marshallers" : (agmarshall.EnumArg(MagnificationFilter),) }
     @property
-    def magnification_filter(self) -> "MAGNIFICATION_FILTER":
+    def magnification_filter(self) -> "MagnificationFilter":
         """Get the magnification filter used when the pixel being textured maps to an area greater than one texel."""
         return self._intf.get_property(TextureFilter2D._metadata, TextureFilter2D._get_magnification_filter_metadata)
 
     _get_wrap_s_metadata = { "offset" : _get_wrap_s_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(TEXTURE_WRAP),) }
+            "marshallers" : (agmarshall.EnumArg(TextureWrap),) }
     @property
-    def wrap_s(self) -> "TEXTURE_WRAP":
+    def wrap_s(self) -> "TextureWrap":
         """Get the texture wrap for the s direction."""
         return self._intf.get_property(TextureFilter2D._metadata, TextureFilter2D._get_wrap_s_metadata)
 
     _get_wrap_t_metadata = { "offset" : _get_wrap_t_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(TEXTURE_WRAP),) }
+            "marshallers" : (agmarshall.EnumArg(TextureWrap),) }
     @property
-    def wrap_t(self) -> "TEXTURE_WRAP":
+    def wrap_t(self) -> "TextureWrap":
         """Get the texture wrap for the t direction."""
         return self._intf.get_property(TextureFilter2D._metadata, TextureFilter2D._get_wrap_t_metadata)
 
@@ -3960,22 +3958,22 @@ class TextureFilter2DFactory(SupportsDeleteCallback):
 
     _initialize_metadata = { "offset" : _initialize_method_offset,
             "arg_types" : (agcom.LONG, agcom.LONG, agcom.LONG, agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.EnumArg(MINIFICATION_FILTER), agmarshall.EnumArg(MAGNIFICATION_FILTER), agmarshall.EnumArg(TEXTURE_WRAP), agmarshall.EnumArg(TEXTURE_WRAP), agmarshall.InterfaceOutArg,) }
-    def initialize(self, minification_filter:"MINIFICATION_FILTER", magnification_filter:"MAGNIFICATION_FILTER", wrap_s:"TEXTURE_WRAP", wrap_t:"TEXTURE_WRAP") -> "TextureFilter2D":
+            "marshallers" : (agmarshall.EnumArg(MinificationFilter), agmarshall.EnumArg(MagnificationFilter), agmarshall.EnumArg(TextureWrap), agmarshall.EnumArg(TextureWrap), agmarshall.InterfaceOutArg,) }
+    def initialize(self, minification_filter:"MinificationFilter", magnification_filter:"MagnificationFilter", wrap_s:"TextureWrap", wrap_t:"TextureWrap") -> "TextureFilter2D":
         """Create a texture filter using the specified minification/magnification options and texture wrap."""
         return self._intf.invoke(TextureFilter2DFactory._metadata, TextureFilter2DFactory._initialize_metadata, minification_filter, magnification_filter, wrap_s, wrap_t, OutArg())
 
     _initialize_with_texture_wrap_metadata = { "offset" : _initialize_with_texture_wrap_method_offset,
             "arg_types" : (agcom.LONG, agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.EnumArg(TEXTURE_WRAP), agmarshall.EnumArg(TEXTURE_WRAP), agmarshall.InterfaceOutArg,) }
-    def initialize_with_texture_wrap(self, wrap_s:"TEXTURE_WRAP", wrap_t:"TEXTURE_WRAP") -> "TextureFilter2D":
+            "marshallers" : (agmarshall.EnumArg(TextureWrap), agmarshall.EnumArg(TextureWrap), agmarshall.InterfaceOutArg,) }
+    def initialize_with_texture_wrap(self, wrap_s:"TextureWrap", wrap_t:"TextureWrap") -> "TextureFilter2D":
         """Create a texture filter using the specified texture wrap."""
         return self._intf.invoke(TextureFilter2DFactory._metadata, TextureFilter2DFactory._initialize_with_texture_wrap_metadata, wrap_s, wrap_t, OutArg())
 
     _initialize_with_minification_and_magnification_metadata = { "offset" : _initialize_with_minification_and_magnification_method_offset,
             "arg_types" : (agcom.LONG, agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.EnumArg(MINIFICATION_FILTER), agmarshall.EnumArg(MAGNIFICATION_FILTER), agmarshall.InterfaceOutArg,) }
-    def initialize_with_minification_and_magnification(self, minification_filter:"MINIFICATION_FILTER", magnification_filter:"MAGNIFICATION_FILTER") -> "TextureFilter2D":
+            "marshallers" : (agmarshall.EnumArg(MinificationFilter), agmarshall.EnumArg(MagnificationFilter), agmarshall.InterfaceOutArg,) }
+    def initialize_with_minification_and_magnification(self, minification_filter:"MinificationFilter", magnification_filter:"MagnificationFilter") -> "TextureFilter2D":
         """Create a texture filter using the specified minification/magnification options."""
         return self._intf.invoke(TextureFilter2DFactory._metadata, TextureFilter2DFactory._initialize_with_minification_and_magnification_metadata, minification_filter, magnification_filter, OutArg())
 
@@ -4058,9 +4056,9 @@ class RendererTextureTemplate2D(SupportsDeleteCallback):
     
     _get_internal_format_metadata = { "offset" : _get_internal_format_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(TEXTURE_FORMAT),) }
+            "marshallers" : (agmarshall.EnumArg(TextureFormat),) }
     @property
-    def internal_format(self) -> "TEXTURE_FORMAT":
+    def internal_format(self) -> "TextureFormat":
         """Get an internal format of the texture."""
         return self._intf.get_property(RendererTextureTemplate2D._metadata, RendererTextureTemplate2D._get_internal_format_metadata)
 
@@ -5742,9 +5740,9 @@ class ExtrudedPolylineTriangulatorResult(ITriangulatorResult, SupportsDeleteCall
 
     _get_boundary_positions_winding_order_metadata = { "offset" : _get_boundary_positions_winding_order_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(WINDING_ORDER),) }
+            "marshallers" : (agmarshall.EnumArg(WindingOrder),) }
     @property
-    def boundary_positions_winding_order(self) -> "WINDING_ORDER":
+    def boundary_positions_winding_order(self) -> "WindingOrder":
         """Get the winding order of top boundary positions and bottom boundary positions."""
         return self._intf.get_property(ExtrudedPolylineTriangulatorResult._metadata, ExtrudedPolylineTriangulatorResult._get_boundary_positions_winding_order_metadata)
 
@@ -5805,9 +5803,9 @@ class SolidTriangulatorResult(ITriangulatorResult, SupportsDeleteCallback):
 
     _get_outline_polyline_type_metadata = { "offset" : _get_outline_polyline_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(POLYLINE_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(PolylineType),) }
     @property
-    def outline_polyline_type(self) -> "POLYLINE_TYPE":
+    def outline_polyline_type(self) -> "PolylineType":
         """Get the polyline type of outline indices and outline positions."""
         return self._intf.get_property(SolidTriangulatorResult._metadata, SolidTriangulatorResult._get_outline_polyline_type_metadata)
 
@@ -5868,17 +5866,17 @@ class SurfaceShapesResult(SupportsDeleteCallback):
 
     _get_positions_winding_order_metadata = { "offset" : _get_positions_winding_order_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(WINDING_ORDER),) }
+            "marshallers" : (agmarshall.EnumArg(WindingOrder),) }
     @property
-    def positions_winding_order(self) -> "WINDING_ORDER":
+    def positions_winding_order(self) -> "WindingOrder":
         """Get the winding order of positions."""
         return self._intf.get_property(SurfaceShapesResult._metadata, SurfaceShapesResult._get_positions_winding_order_metadata)
 
     _get_polyline_type_metadata = { "offset" : _get_polyline_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(POLYLINE_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(PolylineType),) }
     @property
-    def polyline_type(self) -> "POLYLINE_TYPE":
+    def polyline_type(self) -> "PolylineType":
         """Get the polyline type of positions."""
         return self._intf.get_property(SurfaceShapesResult._metadata, SurfaceShapesResult._get_polyline_type_metadata)
 
@@ -5946,17 +5944,17 @@ class SurfaceTriangulatorResult(ITriangulatorResult, SupportsDeleteCallback):
 
     _get_boundary_positions_winding_order_metadata = { "offset" : _get_boundary_positions_winding_order_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(WINDING_ORDER),) }
+            "marshallers" : (agmarshall.EnumArg(WindingOrder),) }
     @property
-    def boundary_positions_winding_order(self) -> "WINDING_ORDER":
+    def boundary_positions_winding_order(self) -> "WindingOrder":
         """Get the winding order of boundary positions."""
         return self._intf.get_property(SurfaceTriangulatorResult._metadata, SurfaceTriangulatorResult._get_boundary_positions_winding_order_metadata)
 
     _get_boundary_polyline_type_metadata = { "offset" : _get_boundary_polyline_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(POLYLINE_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(PolylineType),) }
     @property
-    def boundary_polyline_type(self) -> "POLYLINE_TYPE":
+    def boundary_polyline_type(self) -> "PolylineType":
         """Get the polyline type of boundary positions."""
         return self._intf.get_property(SurfaceTriangulatorResult._metadata, SurfaceTriangulatorResult._get_boundary_polyline_type_metadata)
 
@@ -6159,15 +6157,15 @@ class CameraSnapshot(SupportsDeleteCallback):
     
     _save_to_file_metadata = { "offset" : _save_to_file_method_offset,
             "arg_types" : (agcom.BSTR, agcom.LONG,),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.EnumArg(SNAPSHOT_FILE_FORMAT),) }
-    def save_to_file(self, filename:str, camera_snapshot_format:"SNAPSHOT_FILE_FORMAT") -> None:
+            "marshallers" : (agmarshall.BStrArg, agmarshall.EnumArg(SnapshotFileFormat),) }
+    def save_to_file(self, filename:str, camera_snapshot_format:"SnapshotFileFormat") -> None:
         """Save a snapshot of the 3D window to the filename with the specified format."""
         return self._intf.invoke(CameraSnapshot._metadata, CameraSnapshot._save_to_file_metadata, filename, camera_snapshot_format)
 
     _save_to_file_with_width_and_dpi_metadata = { "offset" : _save_to_file_with_width_and_dpi_method_offset,
             "arg_types" : (agcom.BSTR, agcom.LONG, agcom.DOUBLE, agcom.DOUBLE,),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.EnumArg(SNAPSHOT_FILE_FORMAT), agmarshall.DoubleArg, agmarshall.DoubleArg,) }
-    def save_to_file_with_width_and_dpi(self, filename:str, camera_snapshot_format:"SNAPSHOT_FILE_FORMAT", width_in_inches:float, dots_per_inch:float) -> None:
+            "marshallers" : (agmarshall.BStrArg, agmarshall.EnumArg(SnapshotFileFormat), agmarshall.DoubleArg, agmarshall.DoubleArg,) }
+    def save_to_file_with_width_and_dpi(self, filename:str, camera_snapshot_format:"SnapshotFileFormat", width_in_inches:float, dots_per_inch:float) -> None:
         """Save a snapshot of the 3D window to the filename with the specified format at high resolution..."""
         return self._intf.invoke(CameraSnapshot._metadata, CameraSnapshot._save_to_file_with_width_and_dpi_metadata, filename, camera_snapshot_format, width_in_inches, dots_per_inch)
 
@@ -6244,8 +6242,8 @@ class CameraVideoRecording(SupportsDeleteCallback):
 
     _start_recording_frame_stack_metadata = { "offset" : _start_recording_frame_stack_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, agcom.INT, agcom.INT,),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(SNAPSHOT_FILE_FORMAT), agmarshall.IntArg, agmarshall.IntArg,) }
-    def start_recording_frame_stack(self, file_directory:str, file_prefix:str, camera_snapshot_file_format:"SNAPSHOT_FILE_FORMAT", starting_frame_number:int, number_of_frame_digits:int) -> None:
+            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(SnapshotFileFormat), agmarshall.IntArg, agmarshall.IntArg,) }
+    def start_recording_frame_stack(self, file_directory:str, file_prefix:str, camera_snapshot_file_format:"SnapshotFileFormat", starting_frame_number:int, number_of_frame_digits:int) -> None:
         """Start recording a frame stack. Each frame is saved as a separate image file. The filename of each frame is defined by a prefix followed by a frame number."""
         return self._intf.invoke(CameraVideoRecording._metadata, CameraVideoRecording._start_recording_frame_stack_metadata, file_directory, file_prefix, camera_snapshot_file_format, starting_frame_number, number_of_frame_digits)
 
@@ -6258,8 +6256,8 @@ class CameraVideoRecording(SupportsDeleteCallback):
 
     _start_recording_video_metadata = { "offset" : _start_recording_video_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, agcom.INT, agcom.INT,),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(VIDEO_FORMAT), agmarshall.IntArg, agmarshall.IntArg,) }
-    def start_recording_video(self, file_directory:str, file_prefix:str, video_format:"VIDEO_FORMAT", video_bit_rate:int, video_frame_rate:int) -> None:
+            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(VideoFormat), agmarshall.IntArg, agmarshall.IntArg,) }
+    def start_recording_video(self, file_directory:str, file_prefix:str, video_format:"VideoFormat", video_bit_rate:int, video_frame_rate:int) -> None:
         """Start recording a video file at the specified bit and frame rate."""
         return self._intf.invoke(CameraVideoRecording._metadata, CameraVideoRecording._start_recording_video_metadata, file_directory, file_prefix, video_format, video_bit_rate, video_frame_rate)
 
@@ -6399,9 +6397,9 @@ class CustomImageGlobeOverlay(IGlobeImageOverlay, IGlobeOverlay, SupportsDeleteC
 
     _get_projection_metadata = { "offset" : _get_projection_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(MAP_PROJECTION),) }
+            "marshallers" : (agmarshall.EnumArg(MapProjection),) }
     @property
-    def projection(self) -> "MAP_PROJECTION":
+    def projection(self) -> "MapProjection":
         """Get the map projection. Valid values are mercator and equidistant cylindrical."""
         return self._intf.get_property(CustomImageGlobeOverlay._metadata, CustomImageGlobeOverlay._get_projection_metadata)
 
@@ -8023,17 +8021,17 @@ class Camera(SupportsDeleteCallback):
 
     _get_constrained_up_axis_metadata = { "offset" : _get_constrained_up_axis_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CONSTRAINED_UP_AXIS),) }
+            "marshallers" : (agmarshall.EnumArg(ConstrainedUpAxis),) }
     @property
-    def constrained_up_axis(self) -> "CONSTRAINED_UP_AXIS":
+    def constrained_up_axis(self) -> "ConstrainedUpAxis":
         """Get or set the axis to constrain the up vector to."""
         return self._intf.get_property(Camera._metadata, Camera._get_constrained_up_axis_metadata)
 
     _set_constrained_up_axis_metadata = { "offset" : _set_constrained_up_axis_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CONSTRAINED_UP_AXIS),) }
+            "marshallers" : (agmarshall.EnumArg(ConstrainedUpAxis),) }
     @constrained_up_axis.setter
-    def constrained_up_axis(self, constrained_up_axis:"CONSTRAINED_UP_AXIS") -> None:
+    def constrained_up_axis(self, constrained_up_axis:"ConstrainedUpAxis") -> None:
         return self._intf.set_property(Camera._metadata, Camera._set_constrained_up_axis_metadata, constrained_up_axis)
 
     _get_allow_rotation_over_constrained_up_axis_metadata = { "offset" : _get_allow_rotation_over_constrained_up_axis_method_offset,
@@ -8192,8 +8190,8 @@ class Camera(SupportsDeleteCallback):
 
     _visibility_test_metadata = { "offset" : _visibility_test_method_offset,
             "arg_types" : (agcom.PVOID, agcom.PVOID, POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolSystem"), agmarshall.InterfaceInArg("BoundingSphere"), agmarshall.EnumArg(VISIBILITY),) }
-    def visibility_test(self, reference_frame:"IVectorGeometryToolSystem", sphere:"BoundingSphere") -> "VISIBILITY":
+            "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolSystem"), agmarshall.InterfaceInArg("BoundingSphere"), agmarshall.EnumArg(Visibility),) }
+    def visibility_test(self, reference_frame:"IVectorGeometryToolSystem", sphere:"BoundingSphere") -> "Visibility":
         """Get the visibility of a sphere against the view frustum and any occluding central bodies."""
         return self._intf.invoke(Camera._metadata, Camera._visibility_test_metadata, reference_frame, sphere, OutArg())
 
@@ -8754,17 +8752,17 @@ class CompositeDisplayCondition(IDisplayCondition, SupportsDeleteCallback):
 
     _get_logic_operation_metadata = { "offset" : _get_logic_operation_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(BINARY_LOGIC_OPERATION),) }
+            "marshallers" : (agmarshall.EnumArg(BinaryLogicOperation),) }
     @property
-    def logic_operation(self) -> "BINARY_LOGIC_OPERATION":
+    def logic_operation(self) -> "BinaryLogicOperation":
         """Get or set the binary logic operation applied to all display conditions in the composite when the composite is evaluated. To combine logical and and or operations in the same expression, create composites containing composites."""
         return self._intf.get_property(CompositeDisplayCondition._metadata, CompositeDisplayCondition._get_logic_operation_metadata)
 
     _set_logic_operation_metadata = { "offset" : _set_logic_operation_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(BINARY_LOGIC_OPERATION),) }
+            "marshallers" : (agmarshall.EnumArg(BinaryLogicOperation),) }
     @logic_operation.setter
-    def logic_operation(self, logic_operation:"BINARY_LOGIC_OPERATION") -> None:
+    def logic_operation(self, logic_operation:"BinaryLogicOperation") -> None:
         return self._intf.set_property(CompositeDisplayCondition._metadata, CompositeDisplayCondition._set_logic_operation_metadata, logic_operation)
 
     _item_metadata = { "offset" : _item_method_offset,
@@ -8936,17 +8934,17 @@ class CompositePrimitive(IPrimitive, SupportsDeleteCallback):
 
     _get_translucent_primitives_sort_order_metadata = { "offset" : _get_translucent_primitives_sort_order_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(PRIMITIVES_SORT_ORDER),) }
+            "marshallers" : (agmarshall.EnumArg(PrimitivesSortOrder),) }
     @property
-    def translucent_primitives_sort_order(self) -> "PRIMITIVES_SORT_ORDER":
+    def translucent_primitives_sort_order(self) -> "PrimitivesSortOrder":
         """Get or set the sort order for translucent primitives in this composite. This determines a trade-off between rendering speed and quality..."""
         return self._intf.get_property(CompositePrimitive._metadata, CompositePrimitive._get_translucent_primitives_sort_order_metadata)
 
     _set_translucent_primitives_sort_order_metadata = { "offset" : _set_translucent_primitives_sort_order_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(PRIMITIVES_SORT_ORDER),) }
+            "marshallers" : (agmarshall.EnumArg(PrimitivesSortOrder),) }
     @translucent_primitives_sort_order.setter
-    def translucent_primitives_sort_order(self, translucent_primitives_sort_order:"PRIMITIVES_SORT_ORDER") -> None:
+    def translucent_primitives_sort_order(self, translucent_primitives_sort_order:"PrimitivesSortOrder") -> None:
         return self._intf.set_property(CompositePrimitive._metadata, CompositePrimitive._set_translucent_primitives_sort_order_metadata, translucent_primitives_sort_order)
 
     _add_metadata = { "offset" : _add_method_offset,
@@ -9534,17 +9532,17 @@ class DurationPathPrimitiveUpdatePolicy(IPathPrimitiveUpdatePolicy, SupportsDele
 
     _get_remove_location_metadata = { "offset" : _get_remove_location_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(PATH_PRIMITIVE_REMOVE_LOCATION),) }
+            "marshallers" : (agmarshall.EnumArg(PathPrimitiveRemoveLocation),) }
     @property
-    def remove_location(self) -> "PATH_PRIMITIVE_REMOVE_LOCATION":
+    def remove_location(self) -> "PathPrimitiveRemoveLocation":
         """Get or set where the positions on the path are removed from."""
         return self._intf.get_property(DurationPathPrimitiveUpdatePolicy._metadata, DurationPathPrimitiveUpdatePolicy._get_remove_location_metadata)
 
     _set_remove_location_metadata = { "offset" : _set_remove_location_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(PATH_PRIMITIVE_REMOVE_LOCATION),) }
+            "marshallers" : (agmarshall.EnumArg(PathPrimitiveRemoveLocation),) }
     @remove_location.setter
-    def remove_location(self, remove_location:"PATH_PRIMITIVE_REMOVE_LOCATION") -> None:
+    def remove_location(self, remove_location:"PathPrimitiveRemoveLocation") -> None:
         return self._intf.set_property(DurationPathPrimitiveUpdatePolicy._metadata, DurationPathPrimitiveUpdatePolicy._set_remove_location_metadata, remove_location)
 
     _property_names[duration] = "duration"
@@ -9735,9 +9733,9 @@ class GraphicsFont(SupportsDeleteCallback):
 
     _get_style_metadata = { "offset" : _get_style_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(FONT_STYLE),) }
+            "marshallers" : (agmarshall.EnumArg(FontStyle),) }
     @property
-    def style(self) -> "FONT_STYLE":
+    def style(self) -> "FontStyle":
         """Get the font style enumeration that contains the style for this font. This does not include the outline property."""
         return self._intf.get_property(GraphicsFont._metadata, GraphicsFont._get_style_metadata)
 
@@ -10189,17 +10187,17 @@ class BandExtractFilter(IRasterFilter, SupportsDeleteCallback):
     
     _get_extract_format_metadata = { "offset" : _get_extract_format_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(RASTER_FORMAT),) }
+            "marshallers" : (agmarshall.EnumArg(RasterFormat),) }
     @property
-    def extract_format(self) -> "RASTER_FORMAT":
+    def extract_format(self) -> "RasterFormat":
         """Get or set the raster format containing the bands and the order of the bands that will be extracted."""
         return self._intf.get_property(BandExtractFilter._metadata, BandExtractFilter._get_extract_format_metadata)
 
     _set_extract_format_metadata = { "offset" : _set_extract_format_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(RASTER_FORMAT),) }
+            "marshallers" : (agmarshall.EnumArg(RasterFormat),) }
     @extract_format.setter
-    def extract_format(self, extract_format:"RASTER_FORMAT") -> None:
+    def extract_format(self, extract_format:"RasterFormat") -> None:
         return self._intf.set_property(BandExtractFilter._metadata, BandExtractFilter._set_extract_format_metadata, extract_format)
 
     _property_names[extract_format] = "extract_format"
@@ -10241,17 +10239,17 @@ class BandOrderFilter(IRasterFilter, SupportsDeleteCallback):
     
     _get_band_order_metadata = { "offset" : _get_band_order_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(RASTER_FORMAT),) }
+            "marshallers" : (agmarshall.EnumArg(RasterFormat),) }
     @property
-    def band_order(self) -> "RASTER_FORMAT":
+    def band_order(self) -> "RasterFormat":
         """Get or set the raster format indicating the desired order of the bands in the source raster."""
         return self._intf.get_property(BandOrderFilter._metadata, BandOrderFilter._get_band_order_metadata)
 
     _set_band_order_metadata = { "offset" : _set_band_order_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(RASTER_FORMAT),) }
+            "marshallers" : (agmarshall.EnumArg(RasterFormat),) }
     @band_order.setter
-    def band_order(self, band_order:"RASTER_FORMAT") -> None:
+    def band_order(self, band_order:"RasterFormat") -> None:
         return self._intf.set_property(BandOrderFilter._metadata, BandOrderFilter._set_band_order_metadata, band_order)
 
     _get_maintain_raster_format_metadata = { "offset" : _get_maintain_raster_format_method_offset,
@@ -10307,17 +10305,17 @@ class BlurFilter(IConvolutionFilter, IRasterFilter, SupportsDeleteCallback):
     
     _get_method_metadata = { "offset" : _get_method_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(BLUR_METHOD),) }
+            "marshallers" : (agmarshall.EnumArg(BlurMethod),) }
     @property
-    def method(self) -> "BLUR_METHOD":
+    def method(self) -> "BlurMethod":
         """Get or set the method used to blur the source raster."""
         return self._intf.get_property(BlurFilter._metadata, BlurFilter._get_method_metadata)
 
     _set_method_metadata = { "offset" : _set_method_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(BLUR_METHOD),) }
+            "marshallers" : (agmarshall.EnumArg(BlurMethod),) }
     @method.setter
-    def method(self, method:"BLUR_METHOD") -> None:
+    def method(self, method:"BlurMethod") -> None:
         return self._intf.set_property(BlurFilter._metadata, BlurFilter._set_method_metadata, method)
 
     _property_names[method] = "method"
@@ -10512,17 +10510,17 @@ class EdgeDetectFilter(IConvolutionFilter, IRasterFilter, SupportsDeleteCallback
     
     _get_method_metadata = { "offset" : _get_method_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(EDGE_DETECT_METHOD),) }
+            "marshallers" : (agmarshall.EnumArg(EdgeDetectMethod),) }
     @property
-    def method(self) -> "EDGE_DETECT_METHOD":
+    def method(self) -> "EdgeDetectMethod":
         """Get or set the method used to detect edges in the source raster."""
         return self._intf.get_property(EdgeDetectFilter._metadata, EdgeDetectFilter._get_method_metadata)
 
     _set_method_metadata = { "offset" : _set_method_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(EDGE_DETECT_METHOD),) }
+            "marshallers" : (agmarshall.EnumArg(EdgeDetectMethod),) }
     @method.setter
-    def method(self, method:"EDGE_DETECT_METHOD") -> None:
+    def method(self, method:"EdgeDetectMethod") -> None:
         return self._intf.set_property(EdgeDetectFilter._metadata, EdgeDetectFilter._set_method_metadata, method)
 
     _property_names[method] = "method"
@@ -10618,17 +10616,17 @@ class FlipFilter(IRasterFilter, SupportsDeleteCallback):
     
     _get_flip_axis_metadata = { "offset" : _get_flip_axis_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(RASTER_FLIP_AXIS),) }
+            "marshallers" : (agmarshall.EnumArg(RasterFlipAxis),) }
     @property
-    def flip_axis(self) -> "RASTER_FLIP_AXIS":
+    def flip_axis(self) -> "RasterFlipAxis":
         """Get or set the flip axis along which the source raster will be flipped."""
         return self._intf.get_property(FlipFilter._metadata, FlipFilter._get_flip_axis_metadata)
 
     _set_flip_axis_metadata = { "offset" : _set_flip_axis_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(RASTER_FLIP_AXIS),) }
+            "marshallers" : (agmarshall.EnumArg(RasterFlipAxis),) }
     @flip_axis.setter
-    def flip_axis(self, flip_axis:"RASTER_FLIP_AXIS") -> None:
+    def flip_axis(self, flip_axis:"RasterFlipAxis") -> None:
         return self._intf.set_property(FlipFilter._metadata, FlipFilter._set_flip_axis_metadata, flip_axis)
 
     _property_names[flip_axis] = "flip_axis"
@@ -10752,17 +10750,17 @@ class GradientDetectFilter(IConvolutionFilter, IRasterFilter, SupportsDeleteCall
     
     _get_method_metadata = { "offset" : _get_method_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(GRADIENT_DETECT_METHOD),) }
+            "marshallers" : (agmarshall.EnumArg(GradientDetectMethod),) }
     @property
-    def method(self) -> "GRADIENT_DETECT_METHOD":
+    def method(self) -> "GradientDetectMethod":
         """Get or set the method used to detect gradients in the source raster."""
         return self._intf.get_property(GradientDetectFilter._metadata, GradientDetectFilter._get_method_metadata)
 
     _set_method_metadata = { "offset" : _set_method_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(GRADIENT_DETECT_METHOD),) }
+            "marshallers" : (agmarshall.EnumArg(GradientDetectMethod),) }
     @method.setter
-    def method(self, method:"GRADIENT_DETECT_METHOD") -> None:
+    def method(self, method:"GradientDetectMethod") -> None:
         return self._intf.set_property(GradientDetectFilter._metadata, GradientDetectFilter._set_method_metadata, method)
 
     _property_names[method] = "method"
@@ -10804,8 +10802,8 @@ class LevelsFilter(IRasterFilter, SupportsDeleteCallback):
     
     _set_level_adjustment_metadata = { "offset" : _set_level_adjustment_method_offset,
             "arg_types" : (agcom.LONG, agcom.INT,),
-            "marshallers" : (agmarshall.EnumArg(RASTER_BAND), agmarshall.IntArg,) }
-    def set_level_adjustment(self, band:"RASTER_BAND", adjustment:int) -> None:
+            "marshallers" : (agmarshall.EnumArg(RasterBand), agmarshall.IntArg,) }
+    def set_level_adjustment(self, band:"RasterBand", adjustment:int) -> None:
         """Set the linear level adjustment value for the given raster band. Both negative and positive values are accepted."""
         return self._intf.invoke(LevelsFilter._metadata, LevelsFilter._set_level_adjustment_metadata, band, adjustment)
 
@@ -11006,25 +11004,25 @@ class RasterAttributes(SupportsDeleteCallback):
     
     _get_format_metadata = { "offset" : _get_format_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(RASTER_FORMAT),) }
+            "marshallers" : (agmarshall.EnumArg(RasterFormat),) }
     @property
-    def format(self) -> "RASTER_FORMAT":
+    def format(self) -> "RasterFormat":
         """Get the raster format associated with the attributes."""
         return self._intf.get_property(RasterAttributes._metadata, RasterAttributes._get_format_metadata)
 
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(RASTER_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(RasterType),) }
     @property
-    def type(self) -> "RASTER_TYPE":
+    def type(self) -> "RasterType":
         """Get the raster type associated with the attributes."""
         return self._intf.get_property(RasterAttributes._metadata, RasterAttributes._get_type_metadata)
 
     _get_orientation_metadata = { "offset" : _get_orientation_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(RASTER_ORIENTATION),) }
+            "marshallers" : (agmarshall.EnumArg(RasterOrientation),) }
     @property
-    def orientation(self) -> "RASTER_ORIENTATION":
+    def orientation(self) -> "RasterOrientation":
         """Get the raster orientation associated with the attributes."""
         return self._intf.get_property(RasterAttributes._metadata, RasterAttributes._get_orientation_metadata)
 
@@ -11086,8 +11084,8 @@ class RasterAttributes(SupportsDeleteCallback):
 
     _has_band_metadata = { "offset" : _has_band_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.EnumArg(RASTER_BAND), agmarshall.VariantBoolArg,) }
-    def has_band(self, band:"RASTER_BAND") -> bool:
+            "marshallers" : (agmarshall.EnumArg(RasterBand), agmarshall.VariantBoolArg,) }
+    def has_band(self, band:"RasterBand") -> bool:
         """Get whether the raster contains the given band."""
         return self._intf.invoke(RasterAttributes._metadata, RasterAttributes._has_band_metadata, band, OutArg())
 
@@ -11317,17 +11315,17 @@ class SharpenFilter(IConvolutionFilter, IRasterFilter, SupportsDeleteCallback):
     
     _get_method_metadata = { "offset" : _get_method_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(RASTER_SHARPEN_METHOD),) }
+            "marshallers" : (agmarshall.EnumArg(RasterSharpenMethod),) }
     @property
-    def method(self) -> "RASTER_SHARPEN_METHOD":
+    def method(self) -> "RasterSharpenMethod":
         """Get or set the method used to sharpen the source raster."""
         return self._intf.get_property(SharpenFilter._metadata, SharpenFilter._get_method_metadata)
 
     _set_method_metadata = { "offset" : _set_method_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(RASTER_SHARPEN_METHOD),) }
+            "marshallers" : (agmarshall.EnumArg(RasterSharpenMethod),) }
     @method.setter
-    def method(self, method:"RASTER_SHARPEN_METHOD") -> None:
+    def method(self, method:"RasterSharpenMethod") -> None:
         return self._intf.set_property(SharpenFilter._metadata, SharpenFilter._set_method_metadata, method)
 
     _property_names[method] = "method"
@@ -11410,17 +11408,17 @@ class VideoStream(IRasterStream, IRaster, SupportsDeleteCallback):
 
     _get_playback_metadata = { "offset" : _get_playback_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(VIDEO_PLAYBACK),) }
+            "marshallers" : (agmarshall.EnumArg(VideoPlayback),) }
     @property
-    def playback(self) -> "VIDEO_PLAYBACK":
+    def playback(self) -> "VideoPlayback":
         """Get or set the video playback mode of the video."""
         return self._intf.get_property(VideoStream._metadata, VideoStream._get_playback_metadata)
 
     _set_playback_metadata = { "offset" : _set_playback_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(VIDEO_PLAYBACK),) }
+            "marshallers" : (agmarshall.EnumArg(VideoPlayback),) }
     @playback.setter
-    def playback(self, playback:"VIDEO_PLAYBACK") -> None:
+    def playback(self, playback:"VideoPlayback") -> None:
         return self._intf.set_property(VideoStream._metadata, VideoStream._set_playback_metadata, playback)
 
     _get_frame_rate_metadata = { "offset" : _get_frame_rate_method_offset,
@@ -11963,17 +11961,17 @@ class KmlNetworkLink(IKmlFeature, SupportsDeleteCallback):
 
     _get_refresh_mode_metadata = { "offset" : _get_refresh_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(KML_NETWORK_LINK_REFRESH_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(KmlNetworkLinkRefreshMode),) }
     @property
-    def refresh_mode(self) -> "KML_NETWORK_LINK_REFRESH_MODE":
+    def refresh_mode(self) -> "KmlNetworkLinkRefreshMode":
         """Get or set the refresh mode of the network link. The refresh mode specifies a time-based refresh policy for this link."""
         return self._intf.get_property(KmlNetworkLink._metadata, KmlNetworkLink._get_refresh_mode_metadata)
 
     _set_refresh_mode_metadata = { "offset" : _set_refresh_mode_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(KML_NETWORK_LINK_REFRESH_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(KmlNetworkLinkRefreshMode),) }
     @refresh_mode.setter
-    def refresh_mode(self, refresh_mode:"KML_NETWORK_LINK_REFRESH_MODE") -> None:
+    def refresh_mode(self, refresh_mode:"KmlNetworkLinkRefreshMode") -> None:
         return self._intf.set_property(KmlNetworkLink._metadata, KmlNetworkLink._set_refresh_mode_metadata, refresh_mode)
 
     _get_refresh_interval_metadata = { "offset" : _get_refresh_interval_method_offset,
@@ -11993,17 +11991,17 @@ class KmlNetworkLink(IKmlFeature, SupportsDeleteCallback):
 
     _get_view_refresh_mode_metadata = { "offset" : _get_view_refresh_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(KML_NETWORK_LINK_VIEW_REFRESH_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(KmlNetworkLinkViewRefreshMode),) }
     @property
-    def view_refresh_mode(self) -> "KML_NETWORK_LINK_VIEW_REFRESH_MODE":
+    def view_refresh_mode(self) -> "KmlNetworkLinkViewRefreshMode":
         """Get or set the view refresh mode of the network link. The view refresh mode specifies the refresh policy for the when the camera's view changes."""
         return self._intf.get_property(KmlNetworkLink._metadata, KmlNetworkLink._get_view_refresh_mode_metadata)
 
     _set_view_refresh_mode_metadata = { "offset" : _set_view_refresh_mode_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(KML_NETWORK_LINK_VIEW_REFRESH_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(KmlNetworkLinkViewRefreshMode),) }
     @view_refresh_mode.setter
-    def view_refresh_mode(self, view_refresh_mode:"KML_NETWORK_LINK_VIEW_REFRESH_MODE") -> None:
+    def view_refresh_mode(self, view_refresh_mode:"KmlNetworkLinkViewRefreshMode") -> None:
         return self._intf.set_property(KmlNetworkLink._metadata, KmlNetworkLink._set_view_refresh_mode_metadata, view_refresh_mode)
 
     _get_view_refresh_time_metadata = { "offset" : _get_view_refresh_time_method_offset,
@@ -12182,49 +12180,49 @@ class MarkerBatchPrimitive(IPrimitive, SupportsDeleteCallback):
     
     _get_size_source_metadata = { "offset" : _get_size_source_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(MARKER_BATCH_SIZE_SOURCE),) }
+            "marshallers" : (agmarshall.EnumArg(MarkerBatchSizeSource),) }
     @property
-    def size_source(self) -> "MARKER_BATCH_SIZE_SOURCE":
+    def size_source(self) -> "MarkerBatchSizeSource":
         """Get the source used for the size of markers in the batch."""
         return self._intf.get_property(MarkerBatchPrimitive._metadata, MarkerBatchPrimitive._get_size_source_metadata)
 
     _get_sort_order_metadata = { "offset" : _get_sort_order_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(MARKER_BATCH_SORT_ORDER),) }
+            "marshallers" : (agmarshall.EnumArg(MarkerBatchSortOrder),) }
     @property
-    def sort_order(self) -> "MARKER_BATCH_SORT_ORDER":
+    def sort_order(self) -> "MarkerBatchSortOrder":
         """Get the order in which markers in the marker batch are sorted before rendering."""
         return self._intf.get_property(MarkerBatchPrimitive._metadata, MarkerBatchPrimitive._get_sort_order_metadata)
 
     _get_set_hint_metadata = { "offset" : _get_set_hint_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(SET_HINT),) }
+            "marshallers" : (agmarshall.EnumArg(SetHint),) }
     @property
-    def set_hint(self) -> "SET_HINT":
+    def set_hint(self) -> "SetHint":
         """Get the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with."""
         return self._intf.get_property(MarkerBatchPrimitive._metadata, MarkerBatchPrimitive._get_set_hint_metadata)
 
     _get_rendering_method_metadata = { "offset" : _get_rendering_method_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(MARKER_BATCH_RENDERING_METHOD),) }
+            "marshallers" : (agmarshall.EnumArg(MarkerBatchRenderingMethod),) }
     @property
-    def rendering_method(self) -> "MARKER_BATCH_RENDERING_METHOD":
+    def rendering_method(self) -> "MarkerBatchRenderingMethod":
         """Get the rendering method used to render the marker batch."""
         return self._intf.get_property(MarkerBatchPrimitive._metadata, MarkerBatchPrimitive._get_rendering_method_metadata)
 
     _get_render_pass_metadata = { "offset" : _get_render_pass_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(MARKER_BATCH_RENDER_PASS),) }
+            "marshallers" : (agmarshall.EnumArg(MarkerBatchRenderPass),) }
     @property
-    def render_pass(self) -> "MARKER_BATCH_RENDER_PASS":
+    def render_pass(self) -> "MarkerBatchRenderPass":
         """Get or set the pass during which the marker batch is rendered."""
         return self._intf.get_property(MarkerBatchPrimitive._metadata, MarkerBatchPrimitive._get_render_pass_metadata)
 
     _set_render_pass_metadata = { "offset" : _set_render_pass_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(MARKER_BATCH_RENDER_PASS),) }
+            "marshallers" : (agmarshall.EnumArg(MarkerBatchRenderPass),) }
     @render_pass.setter
-    def render_pass(self, render_pass:"MARKER_BATCH_RENDER_PASS") -> None:
+    def render_pass(self, render_pass:"MarkerBatchRenderPass") -> None:
         return self._intf.set_property(MarkerBatchPrimitive._metadata, MarkerBatchPrimitive._set_render_pass_metadata, render_pass)
 
     _get_bounding_sphere_scale_metadata = { "offset" : _get_bounding_sphere_scale_method_offset,
@@ -12274,17 +12272,17 @@ class MarkerBatchPrimitive(IPrimitive, SupportsDeleteCallback):
 
     _get_size_unit_metadata = { "offset" : _get_size_unit_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(MARKER_BATCH_SIZE_UNIT),) }
+            "marshallers" : (agmarshall.EnumArg(MarkerBatchSizeUnit),) }
     @property
-    def size_unit(self) -> "MARKER_BATCH_SIZE_UNIT":
+    def size_unit(self) -> "MarkerBatchSizeUnit":
         """Get or set the unit that each marker's size is defined in."""
         return self._intf.get_property(MarkerBatchPrimitive._metadata, MarkerBatchPrimitive._get_size_unit_metadata)
 
     _set_size_unit_metadata = { "offset" : _set_size_unit_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(MARKER_BATCH_SIZE_UNIT),) }
+            "marshallers" : (agmarshall.EnumArg(MarkerBatchSizeUnit),) }
     @size_unit.setter
-    def size_unit(self, size_unit:"MARKER_BATCH_SIZE_UNIT") -> None:
+    def size_unit(self, size_unit:"MarkerBatchSizeUnit") -> None:
         return self._intf.set_property(MarkerBatchPrimitive._metadata, MarkerBatchPrimitive._set_size_unit_metadata, size_unit)
 
     _get_size_metadata = { "offset" : _get_size_method_offset,
@@ -12304,17 +12302,17 @@ class MarkerBatchPrimitive(IPrimitive, SupportsDeleteCallback):
 
     _get_origin_metadata = { "offset" : _get_origin_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(ORIGIN),) }
+            "marshallers" : (agmarshall.EnumArg(Origin),) }
     @property
-    def origin(self) -> "ORIGIN":
+    def origin(self) -> "Origin":
         """Get or set the per-batch origin, which is applied to each marker in the batch."""
         return self._intf.get_property(MarkerBatchPrimitive._metadata, MarkerBatchPrimitive._get_origin_metadata)
 
     _set_origin_metadata = { "offset" : _set_origin_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(ORIGIN),) }
+            "marshallers" : (agmarshall.EnumArg(Origin),) }
     @origin.setter
-    def origin(self, origin:"ORIGIN") -> None:
+    def origin(self, origin:"Origin") -> None:
         return self._intf.set_property(MarkerBatchPrimitive._metadata, MarkerBatchPrimitive._set_origin_metadata, origin)
 
     _get_pixel_offset_metadata = { "offset" : _get_pixel_offset_method_offset,
@@ -12438,8 +12436,8 @@ class MarkerBatchPrimitive(IPrimitive, SupportsDeleteCallback):
 
     _set_with_optional_parameters_and_render_pass_hint_metadata = { "offset" : _set_with_optional_parameters_and_render_pass_hint_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), agcom.PVOID, agcom.LONG,),
-            "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.InterfaceInArg("MarkerBatchPrimitiveOptionalParameters"), agmarshall.EnumArg(RENDER_PASS_HINT),) }
-    def set_with_optional_parameters_and_render_pass_hint(self, positions:list, optional_parameters:"MarkerBatchPrimitiveOptionalParameters", render_pass_hint:"RENDER_PASS_HINT") -> None:
+            "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.InterfaceInArg("MarkerBatchPrimitiveOptionalParameters"), agmarshall.EnumArg(RenderPassHint),) }
+    def set_with_optional_parameters_and_render_pass_hint(self, positions:list, optional_parameters:"MarkerBatchPrimitiveOptionalParameters", render_pass_hint:"RenderPassHint") -> None:
         """Define the positions and optional per-marker parameters of markers in a marker batch. The markers are rendered in the primitive's reference frame. renderPassHint is provided for efficiency."""
         return self._intf.invoke(MarkerBatchPrimitive._metadata, MarkerBatchPrimitive._set_with_optional_parameters_and_render_pass_hint_metadata, positions, optional_parameters, render_pass_hint)
 
@@ -12459,8 +12457,8 @@ class MarkerBatchPrimitive(IPrimitive, SupportsDeleteCallback):
 
     _set_cartographic_with_optional_parameters_and_render_pass_hint_metadata = { "offset" : _set_cartographic_with_optional_parameters_and_render_pass_hint_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), agcom.PVOID, agcom.LONG,),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.InterfaceInArg("MarkerBatchPrimitiveOptionalParameters"), agmarshall.EnumArg(RENDER_PASS_HINT),) }
-    def set_cartographic_with_optional_parameters_and_render_pass_hint(self, central_body:str, positions:list, optional_parameters:"MarkerBatchPrimitiveOptionalParameters", render_pass_hint:"RENDER_PASS_HINT") -> None:
+            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.InterfaceInArg("MarkerBatchPrimitiveOptionalParameters"), agmarshall.EnumArg(RenderPassHint),) }
+    def set_cartographic_with_optional_parameters_and_render_pass_hint(self, central_body:str, positions:list, optional_parameters:"MarkerBatchPrimitiveOptionalParameters", render_pass_hint:"RenderPassHint") -> None:
         """For convenience. Defines the positions and optional per-marker parameters of markers in a marker batch using cartographic positions. renderPassHint is provided for efficiency..."""
         return self._intf.invoke(MarkerBatchPrimitive._metadata, MarkerBatchPrimitive._set_cartographic_with_optional_parameters_and_render_pass_hint_metadata, central_body, positions, optional_parameters, render_pass_hint)
 
@@ -12473,8 +12471,8 @@ class MarkerBatchPrimitive(IPrimitive, SupportsDeleteCallback):
 
     _set_partial_with_indices_order_metadata = { "offset" : _set_partial_with_indices_order_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.LONG,),
-            "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(PRIMITIVE_INDICES_ORDER_HINT),) }
-    def set_partial_with_indices_order(self, positions:list, indices:list, indices_order_hint:"PRIMITIVE_INDICES_ORDER_HINT") -> None:
+            "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(PrimitiveIndicesOrderHint),) }
+    def set_partial_with_indices_order(self, positions:list, indices:list, indices_order_hint:"PrimitiveIndicesOrderHint") -> None:
         """Update a subset of marker positions in a marker batch."""
         return self._intf.invoke(MarkerBatchPrimitive._metadata, MarkerBatchPrimitive._set_partial_with_indices_order_metadata, positions, indices, indices_order_hint)
 
@@ -12487,8 +12485,8 @@ class MarkerBatchPrimitive(IPrimitive, SupportsDeleteCallback):
 
     _set_partial_with_optional_parameters_indices_order_and_render_pass_metadata = { "offset" : _set_partial_with_optional_parameters_indices_order_and_render_pass_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), agcom.PVOID, POINTER(agcom.LPSAFEARRAY), agcom.LONG, agcom.LONG,),
-            "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.InterfaceInArg("MarkerBatchPrimitiveOptionalParameters"), agmarshall.LPSafearrayArg, agmarshall.EnumArg(PRIMITIVE_INDICES_ORDER_HINT), agmarshall.EnumArg(RENDER_PASS_HINT),) }
-    def set_partial_with_optional_parameters_indices_order_and_render_pass(self, positions:list, optional_parameters:"MarkerBatchPrimitiveOptionalParameters", indices:list, indices_order_hint:"PRIMITIVE_INDICES_ORDER_HINT", render_pass_hint:"RENDER_PASS_HINT") -> None:
+            "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.InterfaceInArg("MarkerBatchPrimitiveOptionalParameters"), agmarshall.LPSafearrayArg, agmarshall.EnumArg(PrimitiveIndicesOrderHint), agmarshall.EnumArg(RenderPassHint),) }
+    def set_partial_with_optional_parameters_indices_order_and_render_pass(self, positions:list, optional_parameters:"MarkerBatchPrimitiveOptionalParameters", indices:list, indices_order_hint:"PrimitiveIndicesOrderHint", render_pass_hint:"RenderPassHint") -> None:
         """Update a subset of marker positions and/or per-marker parameters in a marker batch."""
         return self._intf.invoke(MarkerBatchPrimitive._metadata, MarkerBatchPrimitive._set_partial_with_optional_parameters_indices_order_and_render_pass_metadata, positions, optional_parameters, indices, indices_order_hint, render_pass_hint)
 
@@ -12501,8 +12499,8 @@ class MarkerBatchPrimitive(IPrimitive, SupportsDeleteCallback):
 
     _set_partial_cartographic_with_indices_order_metadata = { "offset" : _set_partial_cartographic_with_indices_order_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.LONG,),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(PRIMITIVE_INDICES_ORDER_HINT),) }
-    def set_partial_cartographic_with_indices_order(self, central_body:str, positions:list, indices:list, indices_order_hint:"PRIMITIVE_INDICES_ORDER_HINT") -> None:
+            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(PrimitiveIndicesOrderHint),) }
+    def set_partial_cartographic_with_indices_order(self, central_body:str, positions:list, indices:list, indices_order_hint:"PrimitiveIndicesOrderHint") -> None:
         """For convenience. Updates a subset of positions in a marker batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial."""
         return self._intf.invoke(MarkerBatchPrimitive._metadata, MarkerBatchPrimitive._set_partial_cartographic_with_indices_order_metadata, central_body, positions, indices, indices_order_hint)
 
@@ -12515,15 +12513,15 @@ class MarkerBatchPrimitive(IPrimitive, SupportsDeleteCallback):
 
     _set_partial_cartographic_with_optional_parameters_indices_order_and_render_pass_metadata = { "offset" : _set_partial_cartographic_with_optional_parameters_indices_order_and_render_pass_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), agcom.PVOID, POINTER(agcom.LPSAFEARRAY), agcom.LONG, agcom.LONG,),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.InterfaceInArg("MarkerBatchPrimitiveOptionalParameters"), agmarshall.LPSafearrayArg, agmarshall.EnumArg(PRIMITIVE_INDICES_ORDER_HINT), agmarshall.EnumArg(RENDER_PASS_HINT),) }
-    def set_partial_cartographic_with_optional_parameters_indices_order_and_render_pass(self, central_body:str, positions:list, optional_parameters:"MarkerBatchPrimitiveOptionalParameters", indices:list, indices_order_hint:"PRIMITIVE_INDICES_ORDER_HINT", render_pass_hint:"RENDER_PASS_HINT") -> None:
+            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.InterfaceInArg("MarkerBatchPrimitiveOptionalParameters"), agmarshall.LPSafearrayArg, agmarshall.EnumArg(PrimitiveIndicesOrderHint), agmarshall.EnumArg(RenderPassHint),) }
+    def set_partial_cartographic_with_optional_parameters_indices_order_and_render_pass(self, central_body:str, positions:list, optional_parameters:"MarkerBatchPrimitiveOptionalParameters", indices:list, indices_order_hint:"PrimitiveIndicesOrderHint", render_pass_hint:"RenderPassHint") -> None:
         """For convenience. Updates a subset of positions and/or optional per-marker parameters of markers in a marker batch using cartographic positions. renderPassHint is provided for efficiency..."""
         return self._intf.invoke(MarkerBatchPrimitive._metadata, MarkerBatchPrimitive._set_partial_cartographic_with_optional_parameters_indices_order_and_render_pass_metadata, central_body, positions, optional_parameters, indices, indices_order_hint, render_pass_hint)
 
     _supported_metadata = { "offset" : _supported_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.EnumArg(MARKER_BATCH_RENDERING_METHOD), agmarshall.VariantBoolArg,) }
-    def supported(self, rendering_method:"MARKER_BATCH_RENDERING_METHOD") -> bool:
+            "marshallers" : (agmarshall.EnumArg(MarkerBatchRenderingMethod), agmarshall.VariantBoolArg,) }
+    def supported(self, rendering_method:"MarkerBatchRenderingMethod") -> bool:
         """Determine whether or not the video card supports the marker batch primitive with the given renderingMethod."""
         return self._intf.invoke(MarkerBatchPrimitive._metadata, MarkerBatchPrimitive._supported_metadata, rendering_method, OutArg())
 
@@ -12761,17 +12759,17 @@ class MaximumCountPathPrimitiveUpdatePolicy(IPathPrimitiveUpdatePolicy, Supports
 
     _get_remove_location_metadata = { "offset" : _get_remove_location_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(PATH_PRIMITIVE_REMOVE_LOCATION),) }
+            "marshallers" : (agmarshall.EnumArg(PathPrimitiveRemoveLocation),) }
     @property
-    def remove_location(self) -> "PATH_PRIMITIVE_REMOVE_LOCATION":
+    def remove_location(self) -> "PathPrimitiveRemoveLocation":
         """Get or set where the positions on the path are removed from."""
         return self._intf.get_property(MaximumCountPathPrimitiveUpdatePolicy._metadata, MaximumCountPathPrimitiveUpdatePolicy._get_remove_location_metadata)
 
     _set_remove_location_metadata = { "offset" : _set_remove_location_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(PATH_PRIMITIVE_REMOVE_LOCATION),) }
+            "marshallers" : (agmarshall.EnumArg(PathPrimitiveRemoveLocation),) }
     @remove_location.setter
-    def remove_location(self, remove_location:"PATH_PRIMITIVE_REMOVE_LOCATION") -> None:
+    def remove_location(self, remove_location:"PathPrimitiveRemoveLocation") -> None:
         return self._intf.set_property(MaximumCountPathPrimitiveUpdatePolicy._metadata, MaximumCountPathPrimitiveUpdatePolicy._set_remove_location_metadata, remove_location)
 
     _property_names[maximum_count] = "maximum_count"
@@ -13095,8 +13093,8 @@ class ModelPrimitive(IPrimitive, SupportsDeleteCallback):
 
     _load_with_string_uri_and_up_axis_metadata = { "offset" : _load_with_string_uri_and_up_axis_method_offset,
             "arg_types" : (agcom.BSTR, agcom.LONG,),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.EnumArg(MODEL_UP_AXIS),) }
-    def load_with_string_uri_and_up_axis(self, uri:str, up_axis:"MODEL_UP_AXIS") -> None:
+            "marshallers" : (agmarshall.BStrArg, agmarshall.EnumArg(ModelUpAxis),) }
+    def load_with_string_uri_and_up_axis(self, uri:str, up_axis:"ModelUpAxis") -> None:
         """For convenience. Loads a `COLLADA <https://www.khronos.org/collada/>`_ (DAE) or AGI `MDL <https://support.agi.com/3d-models>`_ (MDL) model using a file path."""
         return self._intf.invoke(ModelPrimitive._metadata, ModelPrimitive._load_with_string_uri_and_up_axis_metadata, uri, up_axis)
 
@@ -13209,9 +13207,9 @@ class ModelTransformation(SupportsDeleteCallback):
 
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(MODEL_TRANSFORMATION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(ModelTransformationType),) }
     @property
-    def type(self) -> "MODEL_TRANSFORMATION_TYPE":
+    def type(self) -> "ModelTransformationType":
         """Get the model transformation type associated with the transformation."""
         return self._intf.get_property(ModelTransformation._metadata, ModelTransformation._get_type_metadata)
 
@@ -13350,17 +13348,17 @@ class PathPrimitive(IPrimitive, SupportsDeleteCallback):
 
     _get_polyline_type_metadata = { "offset" : _get_polyline_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(POLYLINE_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(PolylineType),) }
     @property
-    def polyline_type(self) -> "POLYLINE_TYPE":
+    def polyline_type(self) -> "PolylineType":
         """Get or set how the primitive interprets the positions."""
         return self._intf.get_property(PathPrimitive._metadata, PathPrimitive._get_polyline_type_metadata)
 
     _set_polyline_type_metadata = { "offset" : _set_polyline_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(POLYLINE_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(PolylineType),) }
     @polyline_type.setter
-    def polyline_type(self, polyline_type:"POLYLINE_TYPE") -> None:
+    def polyline_type(self, polyline_type:"PolylineType") -> None:
         return self._intf.set_property(PathPrimitive._metadata, PathPrimitive._set_polyline_type_metadata, polyline_type)
 
     _get_width_metadata = { "offset" : _get_width_method_offset,
@@ -13863,9 +13861,9 @@ class PointBatchPrimitive(IPrimitive, SupportsDeleteCallback):
 
     _get_set_hint_metadata = { "offset" : _get_set_hint_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(SET_HINT),) }
+            "marshallers" : (agmarshall.EnumArg(SetHint),) }
     @property
-    def set_hint(self) -> "SET_HINT":
+    def set_hint(self) -> "SetHint":
         """Get the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with."""
         return self._intf.get_property(PointBatchPrimitive._metadata, PointBatchPrimitive._get_set_hint_metadata)
 
@@ -13900,8 +13898,8 @@ class PointBatchPrimitive(IPrimitive, SupportsDeleteCallback):
 
     _set_with_colors_and_render_pass_metadata = { "offset" : _set_with_colors_and_render_pass_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.LONG,),
-            "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(RENDER_PASS_HINT),) }
-    def set_with_colors_and_render_pass(self, positions:list, colors:list, render_pass_hint:"RENDER_PASS_HINT") -> None:
+            "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(RenderPassHint),) }
+    def set_with_colors_and_render_pass(self, positions:list, colors:list, render_pass_hint:"RenderPassHint") -> None:
         """Define the positions and colors of points in a point batch. The points are rendered in the primitive's reference frame. renderPassHint is provided for efficiency."""
         return self._intf.invoke(PointBatchPrimitive._metadata, PointBatchPrimitive._set_with_colors_and_render_pass_metadata, positions, colors, render_pass_hint)
 
@@ -13921,8 +13919,8 @@ class PointBatchPrimitive(IPrimitive, SupportsDeleteCallback):
 
     _set_cartographic_with_colors_and_render_pass_metadata = { "offset" : _set_cartographic_with_colors_and_render_pass_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.LONG,),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(RENDER_PASS_HINT),) }
-    def set_cartographic_with_colors_and_render_pass(self, central_body:str, positions:list, colors:list, render_pass_hint:"RENDER_PASS_HINT") -> None:
+            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(RenderPassHint),) }
+    def set_cartographic_with_colors_and_render_pass(self, central_body:str, positions:list, colors:list, render_pass_hint:"RenderPassHint") -> None:
         """For convenience. Defines the positions and colors of points in a point batch using cartographic positions. renderPassHint is provided for efficiency. This is equivalent to converting each position in positions to cartesian and calling Set."""
         return self._intf.invoke(PointBatchPrimitive._metadata, PointBatchPrimitive._set_cartographic_with_colors_and_render_pass_metadata, central_body, positions, colors, render_pass_hint)
 
@@ -13935,8 +13933,8 @@ class PointBatchPrimitive(IPrimitive, SupportsDeleteCallback):
 
     _set_partial_with_indices_order_metadata = { "offset" : _set_partial_with_indices_order_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.LONG,),
-            "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(PRIMITIVE_INDICES_ORDER_HINT),) }
-    def set_partial_with_indices_order(self, positions:list, indices:list, indices_order_hint:"PRIMITIVE_INDICES_ORDER_HINT") -> None:
+            "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(PrimitiveIndicesOrderHint),) }
+    def set_partial_with_indices_order(self, positions:list, indices:list, indices_order_hint:"PrimitiveIndicesOrderHint") -> None:
         """Update a subset of positions in a point batch."""
         return self._intf.invoke(PointBatchPrimitive._metadata, PointBatchPrimitive._set_partial_with_indices_order_metadata, positions, indices, indices_order_hint)
 
@@ -13949,8 +13947,8 @@ class PointBatchPrimitive(IPrimitive, SupportsDeleteCallback):
 
     _set_partial_with_colors_indices_order_and_render_pass_metadata = { "offset" : _set_partial_with_colors_indices_order_and_render_pass_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.LONG, agcom.LONG,),
-            "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(PRIMITIVE_INDICES_ORDER_HINT), agmarshall.EnumArg(RENDER_PASS_HINT),) }
-    def set_partial_with_colors_indices_order_and_render_pass(self, positions:list, colors:list, indices:list, indices_order_hint:"PRIMITIVE_INDICES_ORDER_HINT", render_pass_hint:"RENDER_PASS_HINT") -> None:
+            "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(PrimitiveIndicesOrderHint), agmarshall.EnumArg(RenderPassHint),) }
+    def set_partial_with_colors_indices_order_and_render_pass(self, positions:list, colors:list, indices:list, indices_order_hint:"PrimitiveIndicesOrderHint", render_pass_hint:"RenderPassHint") -> None:
         """Update a subset of positions and/or colors in a point batch."""
         return self._intf.invoke(PointBatchPrimitive._metadata, PointBatchPrimitive._set_partial_with_colors_indices_order_and_render_pass_metadata, positions, colors, indices, indices_order_hint, render_pass_hint)
 
@@ -13963,8 +13961,8 @@ class PointBatchPrimitive(IPrimitive, SupportsDeleteCallback):
 
     _set_partial_cartographic_with_indices_order_metadata = { "offset" : _set_partial_cartographic_with_indices_order_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.LONG,),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(PRIMITIVE_INDICES_ORDER_HINT),) }
-    def set_partial_cartographic_with_indices_order(self, central_body:str, positions:list, indices:list, indices_order_hint:"PRIMITIVE_INDICES_ORDER_HINT") -> None:
+            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(PrimitiveIndicesOrderHint),) }
+    def set_partial_cartographic_with_indices_order(self, central_body:str, positions:list, indices:list, indices_order_hint:"PrimitiveIndicesOrderHint") -> None:
         """For convenience. Updates a subset of positions in a point batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial."""
         return self._intf.invoke(PointBatchPrimitive._metadata, PointBatchPrimitive._set_partial_cartographic_with_indices_order_metadata, central_body, positions, indices, indices_order_hint)
 
@@ -13977,8 +13975,8 @@ class PointBatchPrimitive(IPrimitive, SupportsDeleteCallback):
 
     _set_partial_cartographic_with_colors_indices_order_and_render_pass_metadata = { "offset" : _set_partial_cartographic_with_colors_indices_order_and_render_pass_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.LONG, agcom.LONG,),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(PRIMITIVE_INDICES_ORDER_HINT), agmarshall.EnumArg(RENDER_PASS_HINT),) }
-    def set_partial_cartographic_with_colors_indices_order_and_render_pass(self, central_body:str, positions:list, colors:list, indices:list, indices_order_hint:"PRIMITIVE_INDICES_ORDER_HINT", render_pass_hint:"RENDER_PASS_HINT") -> None:
+            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(PrimitiveIndicesOrderHint), agmarshall.EnumArg(RenderPassHint),) }
+    def set_partial_cartographic_with_colors_indices_order_and_render_pass(self, central_body:str, positions:list, colors:list, indices:list, indices_order_hint:"PrimitiveIndicesOrderHint", render_pass_hint:"RenderPassHint") -> None:
         """For convenience. Updates a subset of positions and/or colors in a point batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial."""
         return self._intf.invoke(PointBatchPrimitive._metadata, PointBatchPrimitive._set_partial_cartographic_with_colors_indices_order_and_render_pass_metadata, central_body, positions, colors, indices, indices_order_hint, render_pass_hint)
 
@@ -13999,8 +13997,8 @@ class PointBatchPrimitive(IPrimitive, SupportsDeleteCallback):
 
     _set_with_optional_parameters_metadata = { "offset" : _set_with_optional_parameters_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.PVOID, agcom.LONG,),
-            "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.InterfaceInArg("PointBatchPrimitiveOptionalParameters"), agmarshall.EnumArg(RENDER_PASS_HINT),) }
-    def set_with_optional_parameters(self, positions:list, colors:list, optional_parameters:"PointBatchPrimitiveOptionalParameters", render_pass_hint:"RENDER_PASS_HINT") -> None:
+            "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.InterfaceInArg("PointBatchPrimitiveOptionalParameters"), agmarshall.EnumArg(RenderPassHint),) }
+    def set_with_optional_parameters(self, positions:list, colors:list, optional_parameters:"PointBatchPrimitiveOptionalParameters", render_pass_hint:"RenderPassHint") -> None:
         """Define the positions, colors, and optional parameters of points in a point batch. The points are rendered in the primitive's reference frame. renderPassHint is provided for efficiency."""
         return self._intf.invoke(PointBatchPrimitive._metadata, PointBatchPrimitive._set_with_optional_parameters_metadata, positions, colors, optional_parameters, render_pass_hint)
 
@@ -14168,17 +14166,17 @@ class PolylinePrimitive(IPrimitive, SupportsDeleteCallback):
 
     _get_polyline_type_metadata = { "offset" : _get_polyline_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(POLYLINE_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(PolylineType),) }
     @property
-    def polyline_type(self) -> "POLYLINE_TYPE":
+    def polyline_type(self) -> "PolylineType":
         """Get how the polyline interprets the positions passed to Set methods."""
         return self._intf.get_property(PolylinePrimitive._metadata, PolylinePrimitive._get_polyline_type_metadata)
 
     _get_set_hint_metadata = { "offset" : _get_set_hint_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(SET_HINT),) }
+            "marshallers" : (agmarshall.EnumArg(SetHint),) }
     @property
-    def set_hint(self) -> "SET_HINT":
+    def set_hint(self) -> "SetHint":
         """Get the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with."""
         return self._intf.get_property(PolylinePrimitive._metadata, PolylinePrimitive._get_set_hint_metadata)
 
@@ -14273,8 +14271,8 @@ class PolylinePrimitive(IPrimitive, SupportsDeleteCallback):
 
     _set_with_colors_and_hint_metadata = { "offset" : _set_with_colors_and_hint_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.LONG,),
-            "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(RENDER_PASS_HINT),) }
-    def set_with_colors_and_hint(self, positions:list, colors:list, render_pass_hint:"RENDER_PASS_HINT") -> None:
+            "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(RenderPassHint),) }
+    def set_with_colors_and_hint(self, positions:list, colors:list, render_pass_hint:"RenderPassHint") -> None:
         """Define the positions and colors of a polyline. The polyline is rendered in its reference frame. renderPassHint is provided for efficiency."""
         return self._intf.invoke(PolylinePrimitive._metadata, PolylinePrimitive._set_with_colors_and_hint_metadata, positions, colors, render_pass_hint)
 
@@ -14315,8 +14313,8 @@ class PolylinePrimitive(IPrimitive, SupportsDeleteCallback):
 
     _set_cartographic_with_colors_and_hint_metadata = { "offset" : _set_cartographic_with_colors_and_hint_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.LONG,),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(RENDER_PASS_HINT),) }
-    def set_cartographic_with_colors_and_hint(self, central_body:str, positions:list, colors:list, render_pass_hint:"RENDER_PASS_HINT") -> None:
+            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(RenderPassHint),) }
+    def set_cartographic_with_colors_and_hint(self, central_body:str, positions:list, colors:list, render_pass_hint:"RenderPassHint") -> None:
         """For convenience. Defines the positions and colors of a polyline using cartographic positions. renderPassHint is provided for efficiency. This is equivalent to converting each position in positions to cartesian and calling Set."""
         return self._intf.invoke(PolylinePrimitive._metadata, PolylinePrimitive._set_cartographic_with_colors_and_hint_metadata, central_body, positions, colors, render_pass_hint)
 
@@ -14343,8 +14341,8 @@ class PolylinePrimitive(IPrimitive, SupportsDeleteCallback):
 
     _set_partial_with_indices_order_metadata = { "offset" : _set_partial_with_indices_order_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.LONG,),
-            "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(PRIMITIVE_INDICES_ORDER_HINT),) }
-    def set_partial_with_indices_order(self, positions:list, indices:list, indices_order_hint:"PRIMITIVE_INDICES_ORDER_HINT") -> None:
+            "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(PrimitiveIndicesOrderHint),) }
+    def set_partial_with_indices_order(self, positions:list, indices:list, indices_order_hint:"PrimitiveIndicesOrderHint") -> None:
         """Update a subset of positions in a polyline."""
         return self._intf.invoke(PolylinePrimitive._metadata, PolylinePrimitive._set_partial_with_indices_order_metadata, positions, indices, indices_order_hint)
 
@@ -14357,8 +14355,8 @@ class PolylinePrimitive(IPrimitive, SupportsDeleteCallback):
 
     _set_partial_with_colors_indices_order_and_render_pass_hint_metadata = { "offset" : _set_partial_with_colors_indices_order_and_render_pass_hint_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.LONG, agcom.LONG,),
-            "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(PRIMITIVE_INDICES_ORDER_HINT), agmarshall.EnumArg(RENDER_PASS_HINT),) }
-    def set_partial_with_colors_indices_order_and_render_pass_hint(self, positions:list, colors:list, indices:list, indices_order_hint:"PRIMITIVE_INDICES_ORDER_HINT", render_pass_hint:"RENDER_PASS_HINT") -> None:
+            "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(PrimitiveIndicesOrderHint), agmarshall.EnumArg(RenderPassHint),) }
+    def set_partial_with_colors_indices_order_and_render_pass_hint(self, positions:list, colors:list, indices:list, indices_order_hint:"PrimitiveIndicesOrderHint", render_pass_hint:"RenderPassHint") -> None:
         """Update a subset of positions and/or colors in a polyline."""
         return self._intf.invoke(PolylinePrimitive._metadata, PolylinePrimitive._set_partial_with_colors_indices_order_and_render_pass_hint_metadata, positions, colors, indices, indices_order_hint, render_pass_hint)
 
@@ -14371,8 +14369,8 @@ class PolylinePrimitive(IPrimitive, SupportsDeleteCallback):
 
     _set_partial_cartographic_with_indices_order_metadata = { "offset" : _set_partial_cartographic_with_indices_order_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.LONG,),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(PRIMITIVE_INDICES_ORDER_HINT),) }
-    def set_partial_cartographic_with_indices_order(self, central_body:str, positions:list, indices:list, indices_order_hint:"PRIMITIVE_INDICES_ORDER_HINT") -> None:
+            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(PrimitiveIndicesOrderHint),) }
+    def set_partial_cartographic_with_indices_order(self, central_body:str, positions:list, indices:list, indices_order_hint:"PrimitiveIndicesOrderHint") -> None:
         """For convenience. Updates a subset of positions in a polyline using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial."""
         return self._intf.invoke(PolylinePrimitive._metadata, PolylinePrimitive._set_partial_cartographic_with_indices_order_metadata, central_body, positions, indices, indices_order_hint)
 
@@ -14385,8 +14383,8 @@ class PolylinePrimitive(IPrimitive, SupportsDeleteCallback):
 
     _set_partial_cartographic_with_colors_indices_order_and_render_pass_metadata = { "offset" : _set_partial_cartographic_with_colors_indices_order_and_render_pass_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.LONG, agcom.LONG,),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(PRIMITIVE_INDICES_ORDER_HINT), agmarshall.EnumArg(RENDER_PASS_HINT),) }
-    def set_partial_cartographic_with_colors_indices_order_and_render_pass(self, central_body:str, positions:list, colors:list, indices:list, indices_order_hint:"PRIMITIVE_INDICES_ORDER_HINT", render_pass_hint:"RENDER_PASS_HINT") -> None:
+            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(PrimitiveIndicesOrderHint), agmarshall.EnumArg(RenderPassHint),) }
+    def set_partial_cartographic_with_colors_indices_order_and_render_pass(self, central_body:str, positions:list, colors:list, indices:list, indices_order_hint:"PrimitiveIndicesOrderHint", render_pass_hint:"RenderPassHint") -> None:
         """For convenience. Updates a subset of positions and/or colors in a polyline using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial."""
         return self._intf.invoke(PolylinePrimitive._metadata, PolylinePrimitive._set_partial_cartographic_with_colors_indices_order_and_render_pass_metadata, central_body, positions, colors, indices, indices_order_hint, render_pass_hint)
 
@@ -14601,17 +14599,17 @@ class PrimitiveManager(SupportsDeleteCallback):
 
     _get_translucent_primitives_sort_order_metadata = { "offset" : _get_translucent_primitives_sort_order_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(PRIMITIVES_SORT_ORDER),) }
+            "marshallers" : (agmarshall.EnumArg(PrimitivesSortOrder),) }
     @property
-    def translucent_primitives_sort_order(self) -> "PRIMITIVES_SORT_ORDER":
+    def translucent_primitives_sort_order(self) -> "PrimitivesSortOrder":
         """Get or set the sort order for translucent primitives in the primitive manager. This determines a trade-off between rendering speed and quality..."""
         return self._intf.get_property(PrimitiveManager._metadata, PrimitiveManager._get_translucent_primitives_sort_order_metadata)
 
     _set_translucent_primitives_sort_order_metadata = { "offset" : _set_translucent_primitives_sort_order_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(PRIMITIVES_SORT_ORDER),) }
+            "marshallers" : (agmarshall.EnumArg(PrimitivesSortOrder),) }
     @translucent_primitives_sort_order.setter
-    def translucent_primitives_sort_order(self, translucent_primitives_sort_order:"PRIMITIVES_SORT_ORDER") -> None:
+    def translucent_primitives_sort_order(self, translucent_primitives_sort_order:"PrimitivesSortOrder") -> None:
         return self._intf.set_property(PrimitiveManager._metadata, PrimitiveManager._set_translucent_primitives_sort_order_metadata, translucent_primitives_sort_order)
 
     _add_metadata = { "offset" : _add_method_offset,
@@ -14995,17 +14993,17 @@ class Scene(SupportsDeleteCallback):
 
     _get_anti_aliasing_metadata = { "offset" : _get_anti_aliasing_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(ANTI_ALIASING_METHOD),) }
+            "marshallers" : (agmarshall.EnumArg(AntiAliasingMethod),) }
     @property
-    def anti_aliasing(self) -> "ANTI_ALIASING_METHOD":
+    def anti_aliasing(self) -> "AntiAliasingMethod":
         """Get or set the multisample anti-aliasing (MSAA) option for this scene. As the level of anti-aliasing increases, performance will generally decrease, but the quality of the anti-aliasing will improve."""
         return self._intf.get_property(Scene._metadata, Scene._get_anti_aliasing_metadata)
 
     _set_anti_aliasing_metadata = { "offset" : _set_anti_aliasing_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(ANTI_ALIASING_METHOD),) }
+            "marshallers" : (agmarshall.EnumArg(AntiAliasingMethod),) }
     @anti_aliasing.setter
-    def anti_aliasing(self, anti_aliasing:"ANTI_ALIASING_METHOD") -> None:
+    def anti_aliasing(self, anti_aliasing:"AntiAliasingMethod") -> None:
         return self._intf.set_property(Scene._metadata, Scene._set_anti_aliasing_metadata, anti_aliasing)
 
     _get_visual_effects_metadata = { "offset" : _get_visual_effects_method_offset,
@@ -15659,17 +15657,17 @@ class SolidPrimitive(IPrimitive, SupportsDeleteCallback):
 
     _get_outline_appearance_metadata = { "offset" : _get_outline_appearance_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(OUTLINE_APPEARANCE),) }
+            "marshallers" : (agmarshall.EnumArg(OutlineAppearance),) }
     @property
-    def outline_appearance(self) -> "OUTLINE_APPEARANCE":
+    def outline_appearance(self) -> "OutlineAppearance":
         """Get or set the outline's appearance."""
         return self._intf.get_property(SolidPrimitive._metadata, SolidPrimitive._get_outline_appearance_metadata)
 
     _set_outline_appearance_metadata = { "offset" : _set_outline_appearance_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(OUTLINE_APPEARANCE),) }
+            "marshallers" : (agmarshall.EnumArg(OutlineAppearance),) }
     @outline_appearance.setter
-    def outline_appearance(self, outline_appearance:"OUTLINE_APPEARANCE") -> None:
+    def outline_appearance(self, outline_appearance:"OutlineAppearance") -> None:
         return self._intf.set_property(SolidPrimitive._metadata, SolidPrimitive._set_outline_appearance_metadata, outline_appearance)
 
     _get_back_line_color_metadata = { "offset" : _get_back_line_color_method_offset,
@@ -15764,9 +15762,9 @@ class SolidPrimitive(IPrimitive, SupportsDeleteCallback):
 
     _get_set_hint_metadata = { "offset" : _get_set_hint_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(SET_HINT),) }
+            "marshallers" : (agmarshall.EnumArg(SetHint),) }
     @property
-    def set_hint(self) -> "SET_HINT":
+    def set_hint(self) -> "SetHint":
         """Get the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with."""
         return self._intf.get_property(SolidPrimitive._metadata, SolidPrimitive._get_set_hint_metadata)
 
@@ -15779,8 +15777,8 @@ class SolidPrimitive(IPrimitive, SupportsDeleteCallback):
 
     _set_metadata = { "offset" : _set_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.LONG, agcom.PVOID, agcom.VARIANT_BOOL,),
-            "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(WINDING_ORDER), agmarshall.InterfaceInArg("BoundingSphere"), agmarshall.VariantBoolArg,) }
-    def set(self, positions:list, normals:list, indices:list, outline_indices:list, winding_order:"WINDING_ORDER", bounding_sphere:"BoundingSphere", closed:bool) -> None:
+            "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(WindingOrder), agmarshall.InterfaceInArg("BoundingSphere"), agmarshall.VariantBoolArg,) }
+    def set(self, positions:list, normals:list, indices:list, outline_indices:list, winding_order:"WindingOrder", bounding_sphere:"BoundingSphere", closed:bool) -> None:
         """Define the solid using the specified parameters. The solid is rendered in the primitive's reference frame."""
         return self._intf.invoke(SolidPrimitive._metadata, SolidPrimitive._set_metadata, positions, normals, indices, outline_indices, winding_order, bounding_sphere, closed)
 
@@ -15846,32 +15844,32 @@ class Stereoscopic(SupportsDeleteCallback):
     
     _get_display_mode_metadata = { "offset" : _get_display_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(STEREOSCOPIC_DISPLAY_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(StereoscopicDisplayMode),) }
     @property
-    def display_mode(self) -> "STEREOSCOPIC_DISPLAY_MODE":
+    def display_mode(self) -> "StereoscopicDisplayMode":
         """Get or set the stereoscopic display mode for all Scenes. To use a particular stereoscopic display mode, ensure that your system supports the feature and that it is enabled."""
         return self._intf.get_property(Stereoscopic._metadata, Stereoscopic._get_display_mode_metadata)
 
     _set_display_mode_metadata = { "offset" : _set_display_mode_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(STEREOSCOPIC_DISPLAY_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(StereoscopicDisplayMode),) }
     @display_mode.setter
-    def display_mode(self, display_mode:"STEREOSCOPIC_DISPLAY_MODE") -> None:
+    def display_mode(self, display_mode:"StereoscopicDisplayMode") -> None:
         return self._intf.set_property(Stereoscopic._metadata, Stereoscopic._set_display_mode_metadata, display_mode)
 
     _get_projection_mode_metadata = { "offset" : _get_projection_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(STEREO_PROJECTION_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(StereoProjectionMode),) }
     @property
-    def projection_mode(self) -> "STEREO_PROJECTION_MODE":
+    def projection_mode(self) -> "StereoProjectionMode":
         """Get or set whether the type of stereo projection that will be used."""
         return self._intf.get_property(Stereoscopic._metadata, Stereoscopic._get_projection_mode_metadata)
 
     _set_projection_mode_metadata = { "offset" : _set_projection_mode_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(STEREO_PROJECTION_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(StereoProjectionMode),) }
     @projection_mode.setter
-    def projection_mode(self, projection_mode:"STEREO_PROJECTION_MODE") -> None:
+    def projection_mode(self, projection_mode:"StereoProjectionMode") -> None:
         return self._intf.set_property(Stereoscopic._metadata, Stereoscopic._set_projection_mode_metadata, projection_mode)
 
     _get_projection_distance_metadata = { "offset" : _get_projection_distance_method_offset,
@@ -15987,25 +15985,25 @@ class SurfaceMeshPrimitive(IPrimitive, SupportsDeleteCallback):
 
     _get_triangle_winding_order_metadata = { "offset" : _get_triangle_winding_order_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(WINDING_ORDER),) }
+            "marshallers" : (agmarshall.EnumArg(WindingOrder),) }
     @property
-    def triangle_winding_order(self) -> "WINDING_ORDER":
+    def triangle_winding_order(self) -> "WindingOrder":
         """Get the orientation of front-facing triangles in the mesh."""
         return self._intf.get_property(SurfaceMeshPrimitive._metadata, SurfaceMeshPrimitive._get_triangle_winding_order_metadata)
 
     _get_set_hint_metadata = { "offset" : _get_set_hint_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(SET_HINT),) }
+            "marshallers" : (agmarshall.EnumArg(SetHint),) }
     @property
-    def set_hint(self) -> "SET_HINT":
+    def set_hint(self) -> "SetHint":
         """Get the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with."""
         return self._intf.get_property(SurfaceMeshPrimitive._metadata, SurfaceMeshPrimitive._get_set_hint_metadata)
 
     _get_rendering_method_metadata = { "offset" : _get_rendering_method_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(SURFACE_MESH_RENDERING_METHOD),) }
+            "marshallers" : (agmarshall.EnumArg(SurfaceMeshRenderingMethod),) }
     @property
-    def rendering_method(self) -> "SURFACE_MESH_RENDERING_METHOD":
+    def rendering_method(self) -> "SurfaceMeshRenderingMethod":
         """Get the rendering method used to render the mesh."""
         return self._intf.get_property(SurfaceMeshPrimitive._metadata, SurfaceMeshPrimitive._get_rendering_method_metadata)
 
@@ -16070,8 +16068,8 @@ class SurfaceMeshPrimitive(IPrimitive, SupportsDeleteCallback):
 
     _supported_metadata = { "offset" : _supported_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.EnumArg(SURFACE_MESH_RENDERING_METHOD), agmarshall.VariantBoolArg,) }
-    def supported(self, rendering_method:"SURFACE_MESH_RENDERING_METHOD") -> bool:
+            "marshallers" : (agmarshall.EnumArg(SurfaceMeshRenderingMethod), agmarshall.VariantBoolArg,) }
+    def supported(self, rendering_method:"SurfaceMeshRenderingMethod") -> bool:
         """Determine whether or not the video card supports the surface mesh primitive with the given renderingMethod."""
         return self._intf.invoke(SurfaceMeshPrimitive._metadata, SurfaceMeshPrimitive._supported_metadata, rendering_method, OutArg())
 
@@ -16392,9 +16390,9 @@ class TextBatchPrimitive(IPrimitive, SupportsDeleteCallback):
     
     _get_set_hint_metadata = { "offset" : _get_set_hint_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(SET_HINT),) }
+            "marshallers" : (agmarshall.EnumArg(SetHint),) }
     @property
-    def set_hint(self) -> "SET_HINT":
+    def set_hint(self) -> "SetHint":
         """Get the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with."""
         return self._intf.get_property(TextBatchPrimitive._metadata, TextBatchPrimitive._get_set_hint_metadata)
 
@@ -16527,8 +16525,8 @@ class TextBatchPrimitive(IPrimitive, SupportsDeleteCallback):
 
     _set_with_optional_parameters_and_render_pass_metadata = { "offset" : _set_with_optional_parameters_and_render_pass_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.PVOID, agcom.LONG,),
-            "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.InterfaceInArg("TextBatchPrimitiveOptionalParameters"), agmarshall.EnumArg(RENDER_PASS_HINT),) }
-    def set_with_optional_parameters_and_render_pass(self, positions:list, text:list, optional_parameters:"TextBatchPrimitiveOptionalParameters", render_pass_hint:"RENDER_PASS_HINT") -> None:
+            "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.InterfaceInArg("TextBatchPrimitiveOptionalParameters"), agmarshall.EnumArg(RenderPassHint),) }
+    def set_with_optional_parameters_and_render_pass(self, positions:list, text:list, optional_parameters:"TextBatchPrimitiveOptionalParameters", render_pass_hint:"RenderPassHint") -> None:
         """Define the positions, text, and optional parameters of strings in a text batch. The strings are rendered in the primitive's reference frame. renderPassHint is provided for efficiency."""
         return self._intf.invoke(TextBatchPrimitive._metadata, TextBatchPrimitive._set_with_optional_parameters_and_render_pass_metadata, positions, text, optional_parameters, render_pass_hint)
 
@@ -16548,8 +16546,8 @@ class TextBatchPrimitive(IPrimitive, SupportsDeleteCallback):
 
     _set_cartographic_with_optional_parameters_and_render_pass_metadata = { "offset" : _set_cartographic_with_optional_parameters_and_render_pass_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.PVOID, agcom.LONG,),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.InterfaceInArg("TextBatchPrimitiveOptionalParameters"), agmarshall.EnumArg(RENDER_PASS_HINT),) }
-    def set_cartographic_with_optional_parameters_and_render_pass(self, central_body:str, positions:list, text:list, optional_parameters:"TextBatchPrimitiveOptionalParameters", render_pass_hint:"RENDER_PASS_HINT") -> None:
+            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.InterfaceInArg("TextBatchPrimitiveOptionalParameters"), agmarshall.EnumArg(RenderPassHint),) }
+    def set_cartographic_with_optional_parameters_and_render_pass(self, central_body:str, positions:list, text:list, optional_parameters:"TextBatchPrimitiveOptionalParameters", render_pass_hint:"RenderPassHint") -> None:
         """For convenience. Defines the positions, text, and optional parameters of strings in a text batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling Set."""
         return self._intf.invoke(TextBatchPrimitive._metadata, TextBatchPrimitive._set_cartographic_with_optional_parameters_and_render_pass_metadata, central_body, positions, text, optional_parameters, render_pass_hint)
 
@@ -16562,8 +16560,8 @@ class TextBatchPrimitive(IPrimitive, SupportsDeleteCallback):
 
     _set_partial_with_indices_order_metadata = { "offset" : _set_partial_with_indices_order_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.LONG,),
-            "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(PRIMITIVE_INDICES_ORDER_HINT),) }
-    def set_partial_with_indices_order(self, positions:list, text:list, indices:list, indices_order_hint:"PRIMITIVE_INDICES_ORDER_HINT") -> None:
+            "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(PrimitiveIndicesOrderHint),) }
+    def set_partial_with_indices_order(self, positions:list, text:list, indices:list, indices_order_hint:"PrimitiveIndicesOrderHint") -> None:
         """Update a subset of positions and/or text in a text batch."""
         return self._intf.invoke(TextBatchPrimitive._metadata, TextBatchPrimitive._set_partial_with_indices_order_metadata, positions, text, indices, indices_order_hint)
 
@@ -16576,8 +16574,8 @@ class TextBatchPrimitive(IPrimitive, SupportsDeleteCallback):
 
     _set_partial_with_optional_parameters_indices_order_and_render_pass_metadata = { "offset" : _set_partial_with_optional_parameters_indices_order_and_render_pass_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.PVOID, POINTER(agcom.LPSAFEARRAY), agcom.LONG, agcom.LONG,),
-            "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.InterfaceInArg("TextBatchPrimitiveOptionalParameters"), agmarshall.LPSafearrayArg, agmarshall.EnumArg(PRIMITIVE_INDICES_ORDER_HINT), agmarshall.EnumArg(RENDER_PASS_HINT),) }
-    def set_partial_with_optional_parameters_indices_order_and_render_pass(self, positions:list, text:list, optional_parameters:"TextBatchPrimitiveOptionalParameters", indices:list, indices_order_hint:"PRIMITIVE_INDICES_ORDER_HINT", render_pass_hint:"RENDER_PASS_HINT") -> None:
+            "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.InterfaceInArg("TextBatchPrimitiveOptionalParameters"), agmarshall.LPSafearrayArg, agmarshall.EnumArg(PrimitiveIndicesOrderHint), agmarshall.EnumArg(RenderPassHint),) }
+    def set_partial_with_optional_parameters_indices_order_and_render_pass(self, positions:list, text:list, optional_parameters:"TextBatchPrimitiveOptionalParameters", indices:list, indices_order_hint:"PrimitiveIndicesOrderHint", render_pass_hint:"RenderPassHint") -> None:
         """Update a subset of positions, text, and/or optional per-string parameters in a text batch."""
         return self._intf.invoke(TextBatchPrimitive._metadata, TextBatchPrimitive._set_partial_with_optional_parameters_indices_order_and_render_pass_metadata, positions, text, optional_parameters, indices, indices_order_hint, render_pass_hint)
 
@@ -16590,8 +16588,8 @@ class TextBatchPrimitive(IPrimitive, SupportsDeleteCallback):
 
     _set_partial_cartographic_with_indices_order_metadata = { "offset" : _set_partial_cartographic_with_indices_order_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.LONG,),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(PRIMITIVE_INDICES_ORDER_HINT),) }
-    def set_partial_cartographic_with_indices_order(self, central_body:str, positions:list, text:list, indices:list, indices_order_hint:"PRIMITIVE_INDICES_ORDER_HINT") -> None:
+            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(PrimitiveIndicesOrderHint),) }
+    def set_partial_cartographic_with_indices_order(self, central_body:str, positions:list, text:list, indices:list, indices_order_hint:"PrimitiveIndicesOrderHint") -> None:
         """For convenience. Updates a subset of positions and/or text in a text batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial."""
         return self._intf.invoke(TextBatchPrimitive._metadata, TextBatchPrimitive._set_partial_cartographic_with_indices_order_metadata, central_body, positions, text, indices, indices_order_hint)
 
@@ -16604,8 +16602,8 @@ class TextBatchPrimitive(IPrimitive, SupportsDeleteCallback):
 
     _set_partial_cartographic_with_optional_parameters_indices_order_and_render_pass_metadata = { "offset" : _set_partial_cartographic_with_optional_parameters_indices_order_and_render_pass_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.PVOID, POINTER(agcom.LPSAFEARRAY), agcom.LONG, agcom.LONG,),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.InterfaceInArg("TextBatchPrimitiveOptionalParameters"), agmarshall.LPSafearrayArg, agmarshall.EnumArg(PRIMITIVE_INDICES_ORDER_HINT), agmarshall.EnumArg(RENDER_PASS_HINT),) }
-    def set_partial_cartographic_with_optional_parameters_indices_order_and_render_pass(self, central_body:str, positions:list, text:list, optional_parameters:"TextBatchPrimitiveOptionalParameters", indices:list, indices_order_hint:"PRIMITIVE_INDICES_ORDER_HINT", render_pass_hint:"RENDER_PASS_HINT") -> None:
+            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.InterfaceInArg("TextBatchPrimitiveOptionalParameters"), agmarshall.LPSafearrayArg, agmarshall.EnumArg(PrimitiveIndicesOrderHint), agmarshall.EnumArg(RenderPassHint),) }
+    def set_partial_cartographic_with_optional_parameters_indices_order_and_render_pass(self, central_body:str, positions:list, text:list, optional_parameters:"TextBatchPrimitiveOptionalParameters", indices:list, indices_order_hint:"PrimitiveIndicesOrderHint", render_pass_hint:"RenderPassHint") -> None:
         """For convenience. Updates a subset of positions, text, and/or per-string parameters in a text batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial."""
         return self._intf.invoke(TextBatchPrimitive._metadata, TextBatchPrimitive._set_partial_cartographic_with_optional_parameters_indices_order_and_render_pass_metadata, central_body, positions, text, optional_parameters, indices, indices_order_hint, render_pass_hint)
 
@@ -16682,17 +16680,17 @@ class TextBatchPrimitiveOptionalParameters(SupportsDeleteCallback):
     
     _get_origin_metadata = { "offset" : _get_origin_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(ORIGIN),) }
+            "marshallers" : (agmarshall.EnumArg(Origin),) }
     @property
-    def origin(self) -> "ORIGIN":
+    def origin(self) -> "Origin":
         """Get or set the per-batch origin, which is applied to each string in the text batch."""
         return self._intf.get_property(TextBatchPrimitiveOptionalParameters._metadata, TextBatchPrimitiveOptionalParameters._get_origin_metadata)
 
     _set_origin_metadata = { "offset" : _set_origin_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(ORIGIN),) }
+            "marshallers" : (agmarshall.EnumArg(Origin),) }
     @origin.setter
-    def origin(self, origin:"ORIGIN") -> None:
+    def origin(self, origin:"Origin") -> None:
         return self._intf.set_property(TextBatchPrimitiveOptionalParameters._metadata, TextBatchPrimitiveOptionalParameters._set_origin_metadata, origin)
 
     _get_eye_offset_metadata = { "offset" : _get_eye_offset_method_offset,
@@ -17136,17 +17134,17 @@ class TextureScreenOverlay(IScreenOverlay, IOverlay, IScreenOverlayContainer, Su
 
     _get_maintain_aspect_ratio_metadata = { "offset" : _get_maintain_aspect_ratio_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(OVERLAY_ASPECT_RATIO_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(OverlayAspectRatioMode),) }
     @property
-    def maintain_aspect_ratio(self) -> "OVERLAY_ASPECT_RATIO_MODE":
+    def maintain_aspect_ratio(self) -> "OverlayAspectRatioMode":
         """Get or set a value indicating whether the aspect ratio of the texture screen overlay is maintained or not."""
         return self._intf.get_property(TextureScreenOverlay._metadata, TextureScreenOverlay._get_maintain_aspect_ratio_metadata)
 
     _set_maintain_aspect_ratio_metadata = { "offset" : _set_maintain_aspect_ratio_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(OVERLAY_ASPECT_RATIO_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(OverlayAspectRatioMode),) }
     @maintain_aspect_ratio.setter
-    def maintain_aspect_ratio(self, maintain_aspect_ratio:"OVERLAY_ASPECT_RATIO_MODE") -> None:
+    def maintain_aspect_ratio(self, maintain_aspect_ratio:"OverlayAspectRatioMode") -> None:
         return self._intf.set_property(TextureScreenOverlay._metadata, TextureScreenOverlay._set_maintain_aspect_ratio_metadata, maintain_aspect_ratio)
 
     _property_names[texture] = "texture"
@@ -17327,47 +17325,47 @@ class TriangleMeshPrimitive(IPrimitive, SupportsDeleteCallback):
 
     _get_triangle_winding_order_metadata = { "offset" : _get_triangle_winding_order_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(WINDING_ORDER),) }
+            "marshallers" : (agmarshall.EnumArg(WindingOrder),) }
     @property
-    def triangle_winding_order(self) -> "WINDING_ORDER":
+    def triangle_winding_order(self) -> "WindingOrder":
         """Get or set the orientation of front-facing triangles. This is used in combination with cull face for culling."""
         return self._intf.get_property(TriangleMeshPrimitive._metadata, TriangleMeshPrimitive._get_triangle_winding_order_metadata)
 
     _set_triangle_winding_order_metadata = { "offset" : _set_triangle_winding_order_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(WINDING_ORDER),) }
+            "marshallers" : (agmarshall.EnumArg(WindingOrder),) }
     @triangle_winding_order.setter
-    def triangle_winding_order(self, triangle_winding_order:"WINDING_ORDER") -> None:
+    def triangle_winding_order(self, triangle_winding_order:"WindingOrder") -> None:
         return self._intf.set_property(TriangleMeshPrimitive._metadata, TriangleMeshPrimitive._set_triangle_winding_order_metadata, triangle_winding_order)
 
     _get_cull_face_metadata = { "offset" : _get_cull_face_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(FACE_CULLING_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(FaceCullingMode),) }
     @property
-    def cull_face(self) -> "FACE_CULLING_MODE":
+    def cull_face(self) -> "FaceCullingMode":
         """Get or set whether front and/or back-facing triangles may be culled. This is used in combination with triangle winding order for culling."""
         return self._intf.get_property(TriangleMeshPrimitive._metadata, TriangleMeshPrimitive._get_cull_face_metadata)
 
     _set_cull_face_metadata = { "offset" : _set_cull_face_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(FACE_CULLING_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(FaceCullingMode),) }
     @cull_face.setter
-    def cull_face(self, cull_face:"FACE_CULLING_MODE") -> None:
+    def cull_face(self, cull_face:"FaceCullingMode") -> None:
         return self._intf.set_property(TriangleMeshPrimitive._metadata, TriangleMeshPrimitive._set_cull_face_metadata, cull_face)
 
     _get_shade_model_metadata = { "offset" : _get_shade_model_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(RENDERER_SHADING_MODEL),) }
+            "marshallers" : (agmarshall.EnumArg(RendererShadingModel),) }
     @property
-    def shade_model(self) -> "RENDERER_SHADING_MODEL":
+    def shade_model(self) -> "RendererShadingModel":
         """Get or set the shading model for the mesh."""
         return self._intf.get_property(TriangleMeshPrimitive._metadata, TriangleMeshPrimitive._get_shade_model_metadata)
 
     _set_shade_model_metadata = { "offset" : _set_shade_model_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(RENDERER_SHADING_MODEL),) }
+            "marshallers" : (agmarshall.EnumArg(RendererShadingModel),) }
     @shade_model.setter
-    def shade_model(self, shade_model:"RENDERER_SHADING_MODEL") -> None:
+    def shade_model(self, shade_model:"RendererShadingModel") -> None:
         return self._intf.set_property(TriangleMeshPrimitive._metadata, TriangleMeshPrimitive._set_shade_model_metadata, shade_model)
 
     _get_texture_metadata = { "offset" : _get_texture_method_offset,
@@ -17402,9 +17400,9 @@ class TriangleMeshPrimitive(IPrimitive, SupportsDeleteCallback):
 
     _get_set_hint_metadata = { "offset" : _get_set_hint_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(SET_HINT),) }
+            "marshallers" : (agmarshall.EnumArg(SetHint),) }
     @property
-    def set_hint(self) -> "SET_HINT":
+    def set_hint(self) -> "SetHint":
         """Get the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with."""
         return self._intf.get_property(TriangleMeshPrimitive._metadata, TriangleMeshPrimitive._get_set_hint_metadata)
 
@@ -17881,8 +17879,8 @@ class CylinderTriangulatorInitializer(SupportsDeleteCallback):
 
     _compute_metadata = { "offset" : _compute_method_offset,
             "arg_types" : (agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.INT, agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.IntArg, agmarshall.EnumArg(CYLINDER_FILL_OPTIONS), agmarshall.InterfaceOutArg,) }
-    def compute(self, length:float, bottom_radius:float, top_radius:float, slices:int, cylinder_fill:"CYLINDER_FILL_OPTIONS") -> "SolidTriangulatorResult":
+            "marshallers" : (agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.IntArg, agmarshall.EnumArg(CylinderFillOptions), agmarshall.InterfaceOutArg,) }
+    def compute(self, length:float, bottom_radius:float, top_radius:float, slices:int, cylinder_fill:"CylinderFillOptions") -> "SolidTriangulatorResult":
         """Compute the triangulation for a cylinder centered at the origin."""
         return self._intf.invoke(CylinderTriangulatorInitializer._metadata, CylinderTriangulatorInitializer._compute_metadata, length, bottom_radius, top_radius, slices, cylinder_fill, OutArg())
 
@@ -17983,8 +17981,8 @@ class ExtrudedPolylineTriangulatorInitializer(SupportsDeleteCallback):
 
     _compute_with_winding_order_metadata = { "offset" : _compute_with_winding_order_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(WINDING_ORDER), agmarshall.InterfaceOutArg,) }
-    def compute_with_winding_order(self, central_body:str, bottom_positions:list, top_positions:list, positions_winding_order:"WINDING_ORDER") -> "ExtrudedPolylineTriangulatorResult":
+            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(WindingOrder), agmarshall.InterfaceOutArg,) }
+    def compute_with_winding_order(self, central_body:str, bottom_positions:list, top_positions:list, positions_winding_order:"WindingOrder") -> "ExtrudedPolylineTriangulatorResult":
         """Compute an extrusion between bottomPositions and topPositions on the specified centralBody."""
         return self._intf.invoke(ExtrudedPolylineTriangulatorInitializer._metadata, ExtrudedPolylineTriangulatorInitializer._compute_with_winding_order_metadata, central_body, bottom_positions, top_positions, positions_winding_order, OutArg())
 
@@ -17997,8 +17995,8 @@ class ExtrudedPolylineTriangulatorInitializer(SupportsDeleteCallback):
 
     _compute_cartographic_with_winding_order_metadata = { "offset" : _compute_cartographic_with_winding_order_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(WINDING_ORDER), agmarshall.InterfaceOutArg,) }
-    def compute_cartographic_with_winding_order(self, central_body:str, bottom_positions:list, top_positions:list, positions_winding_order:"WINDING_ORDER") -> "ExtrudedPolylineTriangulatorResult":
+            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(WindingOrder), agmarshall.InterfaceOutArg,) }
+    def compute_cartographic_with_winding_order(self, central_body:str, bottom_positions:list, top_positions:list, positions_winding_order:"WindingOrder") -> "ExtrudedPolylineTriangulatorResult":
         """For convenience. Computes an extrusion between bottomPositions and topPositions on the specified centralBody using cartographic positions. This is equivalent to converting each position in bottomPositions and topPositions to cartesian and calling Compute."""
         return self._intf.invoke(ExtrudedPolylineTriangulatorInitializer._metadata, ExtrudedPolylineTriangulatorInitializer._compute_cartographic_with_winding_order_metadata, central_body, bottom_positions, top_positions, positions_winding_order, OutArg())
 
@@ -18011,8 +18009,8 @@ class ExtrudedPolylineTriangulatorInitializer(SupportsDeleteCallback):
 
     _compute_with_altitudes_and_winding_order_metadata = { "offset" : _compute_with_altitudes_and_winding_order_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), agcom.DOUBLE, agcom.DOUBLE, agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.EnumArg(WINDING_ORDER), agmarshall.InterfaceOutArg,) }
-    def compute_with_altitudes_and_winding_order(self, central_body:str, positions:list, bottom_altitude:float, top_altitude:float, positions_winding_order:"WINDING_ORDER") -> "ExtrudedPolylineTriangulatorResult":
+            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.EnumArg(WindingOrder), agmarshall.InterfaceOutArg,) }
+    def compute_with_altitudes_and_winding_order(self, central_body:str, positions:list, bottom_altitude:float, top_altitude:float, positions_winding_order:"WindingOrder") -> "ExtrudedPolylineTriangulatorResult":
         """Compute an extrusion of positions on the specified centralBody with a constant bottomAltitude and topAltitude."""
         return self._intf.invoke(ExtrudedPolylineTriangulatorInitializer._metadata, ExtrudedPolylineTriangulatorInitializer._compute_with_altitudes_and_winding_order_metadata, central_body, positions, bottom_altitude, top_altitude, positions_winding_order, OutArg())
 
@@ -18025,8 +18023,8 @@ class ExtrudedPolylineTriangulatorInitializer(SupportsDeleteCallback):
 
     _compute_cartographic_with_altitudes_and_winding_order_metadata = { "offset" : _compute_cartographic_with_altitudes_and_winding_order_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), agcom.DOUBLE, agcom.DOUBLE, agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.EnumArg(WINDING_ORDER), agmarshall.InterfaceOutArg,) }
-    def compute_cartographic_with_altitudes_and_winding_order(self, central_body:str, positions:list, bottom_altitude:float, top_altitude:float, positions_winding_order:"WINDING_ORDER") -> "ExtrudedPolylineTriangulatorResult":
+            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.EnumArg(WindingOrder), agmarshall.InterfaceOutArg,) }
+    def compute_cartographic_with_altitudes_and_winding_order(self, central_body:str, positions:list, bottom_altitude:float, top_altitude:float, positions_winding_order:"WindingOrder") -> "ExtrudedPolylineTriangulatorResult":
         """For convenience. Computes an extrusion of positions on the specified centralBody with a constant bottomAltitude and topAltitude using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling Compute."""
         return self._intf.invoke(ExtrudedPolylineTriangulatorInitializer._metadata, ExtrudedPolylineTriangulatorInitializer._compute_cartographic_with_altitudes_and_winding_order_metadata, central_body, positions, bottom_altitude, top_altitude, positions_winding_order, OutArg())
 
@@ -18039,8 +18037,8 @@ class ExtrudedPolylineTriangulatorInitializer(SupportsDeleteCallback):
 
     _compute_single_constant_altitude_with_winding_order_metadata = { "offset" : _compute_single_constant_altitude_with_winding_order_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), agcom.DOUBLE, agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.DoubleArg, agmarshall.EnumArg(WINDING_ORDER), agmarshall.InterfaceOutArg,) }
-    def compute_single_constant_altitude_with_winding_order(self, central_body:str, positions:list, altitude:float, positions_winding_order:"WINDING_ORDER") -> "ExtrudedPolylineTriangulatorResult":
+            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.DoubleArg, agmarshall.EnumArg(WindingOrder), agmarshall.InterfaceOutArg,) }
+    def compute_single_constant_altitude_with_winding_order(self, central_body:str, positions:list, altitude:float, positions_winding_order:"WindingOrder") -> "ExtrudedPolylineTriangulatorResult":
         """Compute an extrusion of positions on the specified centralBody. One side of the extrusion has a constant altitude and the other has the original altitudes from positions."""
         return self._intf.invoke(ExtrudedPolylineTriangulatorInitializer._metadata, ExtrudedPolylineTriangulatorInitializer._compute_single_constant_altitude_with_winding_order_metadata, central_body, positions, altitude, positions_winding_order, OutArg())
 
@@ -18053,8 +18051,8 @@ class ExtrudedPolylineTriangulatorInitializer(SupportsDeleteCallback):
 
     _compute_single_constant_altitude_cartographic_with_winding_order_metadata = { "offset" : _compute_single_constant_altitude_cartographic_with_winding_order_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), agcom.DOUBLE, agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.DoubleArg, agmarshall.EnumArg(WINDING_ORDER), agmarshall.InterfaceOutArg,) }
-    def compute_single_constant_altitude_cartographic_with_winding_order(self, central_body:str, positions:list, altitude:float, positions_winding_order:"WINDING_ORDER") -> "ExtrudedPolylineTriangulatorResult":
+            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.DoubleArg, agmarshall.EnumArg(WindingOrder), agmarshall.InterfaceOutArg,) }
+    def compute_single_constant_altitude_cartographic_with_winding_order(self, central_body:str, positions:list, altitude:float, positions_winding_order:"WindingOrder") -> "ExtrudedPolylineTriangulatorResult":
         """For convenience. Computes an extrusion of positions on the specified centralBody using cartographic positions. One side of the extrusion has a constant altitude and the other has the original altitudes from positions..."""
         return self._intf.invoke(ExtrudedPolylineTriangulatorInitializer._metadata, ExtrudedPolylineTriangulatorInitializer._compute_single_constant_altitude_cartographic_with_winding_order_metadata, central_body, positions, altitude, positions_winding_order, OutArg())
 
@@ -18170,15 +18168,15 @@ class SurfacePolygonTriangulatorInitializer(SupportsDeleteCallback):
 
     _compute_with_altitude_and_granularity_metadata = { "offset" : _compute_with_altitude_and_granularity_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), agcom.DOUBLE, agcom.DOUBLE, agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.EnumArg(WINDING_ORDER), agmarshall.InterfaceOutArg,) }
-    def compute_with_altitude_and_granularity(self, central_body:str, positions:list, altitude:float, granularity:float, positions_winding_order:"WINDING_ORDER") -> "SurfaceTriangulatorResult":
+            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.EnumArg(WindingOrder), agmarshall.InterfaceOutArg,) }
+    def compute_with_altitude_and_granularity(self, central_body:str, positions:list, altitude:float, granularity:float, positions_winding_order:"WindingOrder") -> "SurfaceTriangulatorResult":
         """Compute the triangulation on the specified centralBody for a polygon whose boundary is defined by the specified positions."""
         return self._intf.invoke(SurfacePolygonTriangulatorInitializer._metadata, SurfacePolygonTriangulatorInitializer._compute_with_altitude_and_granularity_metadata, central_body, positions, altitude, granularity, positions_winding_order, OutArg())
 
     _compute_cartographic_with_altitude_and_granularity_metadata = { "offset" : _compute_cartographic_with_altitude_and_granularity_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), agcom.DOUBLE, agcom.DOUBLE, agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.EnumArg(WINDING_ORDER), agmarshall.InterfaceOutArg,) }
-    def compute_cartographic_with_altitude_and_granularity(self, central_body:str, positions:list, altitude:float, granularity:float, positions_winding_order:"WINDING_ORDER") -> "SurfaceTriangulatorResult":
+            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.EnumArg(WindingOrder), agmarshall.InterfaceOutArg,) }
+    def compute_cartographic_with_altitude_and_granularity(self, central_body:str, positions:list, altitude:float, granularity:float, positions_winding_order:"WindingOrder") -> "SurfaceTriangulatorResult":
         """For convenience. Computes the triangulation on the specified centralBody for a polygon whose boundary is defined by the specified cartographic positions. This is equivalent to converting each position in positions to cartesian and calling Compute."""
         return self._intf.invoke(SurfacePolygonTriangulatorInitializer._metadata, SurfacePolygonTriangulatorInitializer._compute_cartographic_with_altitude_and_granularity_metadata, central_body, positions, altitude, granularity, positions_winding_order, OutArg())
 
@@ -19085,8 +19083,8 @@ class DurationPathPrimitiveUpdatePolicyFactory(SupportsDeleteCallback):
 
     _initialize_with_parameters_metadata = { "offset" : _initialize_with_parameters_method_offset,
             "arg_types" : (agcom.DOUBLE, agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.DoubleArg, agmarshall.EnumArg(PATH_PRIMITIVE_REMOVE_LOCATION), agmarshall.InterfaceOutArg,) }
-    def initialize_with_parameters(self, duration:float, remove_location:"PATH_PRIMITIVE_REMOVE_LOCATION") -> "DurationPathPrimitiveUpdatePolicy":
+            "marshallers" : (agmarshall.DoubleArg, agmarshall.EnumArg(PathPrimitiveRemoveLocation), agmarshall.InterfaceOutArg,) }
+    def initialize_with_parameters(self, duration:float, remove_location:"PathPrimitiveRemoveLocation") -> "DurationPathPrimitiveUpdatePolicy":
         """Initialize a policy with the specified duration and removeLocation."""
         return self._intf.invoke(DurationPathPrimitiveUpdatePolicyFactory._metadata, DurationPathPrimitiveUpdatePolicyFactory._initialize_with_parameters_metadata, duration, remove_location, OutArg())
 
@@ -19164,8 +19162,8 @@ class GraphicsFontFactory(SupportsDeleteCallback):
     
     _initialize_with_name_size_font_style_outline_metadata = { "offset" : _initialize_with_name_size_font_style_outline_method_offset,
             "arg_types" : (agcom.BSTR, agcom.INT, agcom.LONG, agcom.VARIANT_BOOL, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.IntArg, agmarshall.EnumArg(FONT_STYLE), agmarshall.VariantBoolArg, agmarshall.InterfaceOutArg,) }
-    def initialize_with_name_size_font_style_outline(self, name:str, size:int, font_style:"FONT_STYLE", outline:bool) -> "GraphicsFont":
+            "marshallers" : (agmarshall.BStrArg, agmarshall.IntArg, agmarshall.EnumArg(FontStyle), agmarshall.VariantBoolArg, agmarshall.InterfaceOutArg,) }
+    def initialize_with_name_size_font_style_outline(self, name:str, size:int, font_style:"FontStyle", outline:bool) -> "GraphicsFont":
         """Initialize a graphics font with the given arguments."""
         return self._intf.invoke(GraphicsFontFactory._metadata, GraphicsFontFactory._initialize_with_name_size_font_style_outline_metadata, name, size, font_style, outline, OutArg())
 
@@ -19394,15 +19392,15 @@ class BandExtractFilterFactory(SupportsDeleteCallback):
 
     _initialize_with_band_metadata = { "offset" : _initialize_with_band_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.EnumArg(RASTER_BAND), agmarshall.InterfaceOutArg,) }
-    def initialize_with_band(self, raster_band:"RASTER_BAND") -> "BandExtractFilter":
+            "marshallers" : (agmarshall.EnumArg(RasterBand), agmarshall.InterfaceOutArg,) }
+    def initialize_with_band(self, raster_band:"RasterBand") -> "BandExtractFilter":
         """Initialize a new instance with the raster band to be extracted from the source raster."""
         return self._intf.invoke(BandExtractFilterFactory._metadata, BandExtractFilterFactory._initialize_with_band_metadata, raster_band, OutArg())
 
     _initialize_with_format_metadata = { "offset" : _initialize_with_format_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.EnumArg(RASTER_FORMAT), agmarshall.InterfaceOutArg,) }
-    def initialize_with_format(self, raster_format:"RASTER_FORMAT") -> "BandExtractFilter":
+            "marshallers" : (agmarshall.EnumArg(RasterFormat), agmarshall.InterfaceOutArg,) }
+    def initialize_with_format(self, raster_format:"RasterFormat") -> "BandExtractFilter":
         """Initialize a new instance with the raster format containing the bands to be extracted from the source raster."""
         return self._intf.invoke(BandExtractFilterFactory._metadata, BandExtractFilterFactory._initialize_with_format_metadata, raster_format, OutArg())
 
@@ -19448,15 +19446,15 @@ class BandOrderFilterFactory(SupportsDeleteCallback):
 
     _initialize_with_order_metadata = { "offset" : _initialize_with_order_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.EnumArg(RASTER_FORMAT), agmarshall.InterfaceOutArg,) }
-    def initialize_with_order(self, band_order:"RASTER_FORMAT") -> "BandOrderFilter":
+            "marshallers" : (agmarshall.EnumArg(RasterFormat), agmarshall.InterfaceOutArg,) }
+    def initialize_with_order(self, band_order:"RasterFormat") -> "BandOrderFilter":
         """Initialize a new instance with a raster format indicating the desired order of the bands in the source raster."""
         return self._intf.invoke(BandOrderFilterFactory._metadata, BandOrderFilterFactory._initialize_with_order_metadata, band_order, OutArg())
 
     _initialize_with_order_and_bool_metadata = { "offset" : _initialize_with_order_and_bool_method_offset,
             "arg_types" : (agcom.LONG, agcom.VARIANT_BOOL, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.EnumArg(RASTER_FORMAT), agmarshall.VariantBoolArg, agmarshall.InterfaceOutArg,) }
-    def initialize_with_order_and_bool(self, band_order:"RASTER_FORMAT", maintain_image_format:bool) -> "BandOrderFilter":
+            "marshallers" : (agmarshall.EnumArg(RasterFormat), agmarshall.VariantBoolArg, agmarshall.InterfaceOutArg,) }
+    def initialize_with_order_and_bool(self, band_order:"RasterFormat", maintain_image_format:bool) -> "BandOrderFilter":
         """Initialize a new instance with a raster format indicating the desired order of the bands in the source raster, and whether to maintain the source raster's format after swizzling."""
         return self._intf.invoke(BandOrderFilterFactory._metadata, BandOrderFilterFactory._initialize_with_order_and_bool_metadata, band_order, maintain_image_format, OutArg())
 
@@ -19501,8 +19499,8 @@ class BlurFilterFactory(SupportsDeleteCallback):
 
     _initialize_with_method_metadata = { "offset" : _initialize_with_method_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.EnumArg(BLUR_METHOD), agmarshall.InterfaceOutArg,) }
-    def initialize_with_method(self, method:"BLUR_METHOD") -> "BlurFilter":
+            "marshallers" : (agmarshall.EnumArg(BlurMethod), agmarshall.InterfaceOutArg,) }
+    def initialize_with_method(self, method:"BlurMethod") -> "BlurFilter":
         """Initialize a new instance with the specified blur method."""
         return self._intf.invoke(BlurFilterFactory._metadata, BlurFilterFactory._initialize_with_method_metadata, method, OutArg())
 
@@ -19739,8 +19737,8 @@ class EdgeDetectFilterFactory(SupportsDeleteCallback):
 
     _initialize_with_method_metadata = { "offset" : _initialize_with_method_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.EnumArg(EDGE_DETECT_METHOD), agmarshall.InterfaceOutArg,) }
-    def initialize_with_method(self, method:"EDGE_DETECT_METHOD") -> "EdgeDetectFilter":
+            "marshallers" : (agmarshall.EnumArg(EdgeDetectMethod), agmarshall.InterfaceOutArg,) }
+    def initialize_with_method(self, method:"EdgeDetectMethod") -> "EdgeDetectFilter":
         """Initialize a new instance with the specified edge detect method."""
         return self._intf.invoke(EdgeDetectFilterFactory._metadata, EdgeDetectFilterFactory._initialize_with_method_metadata, method, OutArg())
 
@@ -19823,8 +19821,8 @@ class FlipFilterFactory(SupportsDeleteCallback):
 
     _initialize_with_flip_axis_metadata = { "offset" : _initialize_with_flip_axis_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.EnumArg(RASTER_FLIP_AXIS), agmarshall.InterfaceOutArg,) }
-    def initialize_with_flip_axis(self, flip_axis:"RASTER_FLIP_AXIS") -> "FlipFilter":
+            "marshallers" : (agmarshall.EnumArg(RasterFlipAxis), agmarshall.InterfaceOutArg,) }
+    def initialize_with_flip_axis(self, flip_axis:"RasterFlipAxis") -> "FlipFilter":
         """Initialize a new instance with the specified flip axis."""
         return self._intf.invoke(FlipFilterFactory._metadata, FlipFilterFactory._initialize_with_flip_axis_metadata, flip_axis, OutArg())
 
@@ -19953,8 +19951,8 @@ class GradientDetectFilterFactory(SupportsDeleteCallback):
 
     _initialize_with_method_metadata = { "offset" : _initialize_with_method_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.EnumArg(GRADIENT_DETECT_METHOD), agmarshall.InterfaceOutArg,) }
-    def initialize_with_method(self, method:"GRADIENT_DETECT_METHOD") -> "GradientDetectFilter":
+            "marshallers" : (agmarshall.EnumArg(GradientDetectMethod), agmarshall.InterfaceOutArg,) }
+    def initialize_with_method(self, method:"GradientDetectMethod") -> "GradientDetectFilter":
         """Initialize a new instance with specified gradient detect method."""
         return self._intf.invoke(GradientDetectFilterFactory._metadata, GradientDetectFilterFactory._initialize_with_method_metadata, method, OutArg())
 
@@ -19994,29 +19992,29 @@ class Jpeg2000WriterInitializer(SupportsDeleteCallback):
     
     _write_string_metadata = { "offset" : _write_string_method_offset,
             "arg_types" : (agcom.BSTR, agcom.LONG, agcom.INT, agcom.BSTR, agcom.VARIANT_BOOL,),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.EnumArg(JPEG2000_COMPRESSION_PROFILE), agmarshall.IntArg, agmarshall.BStrArg, agmarshall.VariantBoolArg,) }
-    def write_string(self, image_uri:str, compression_profile:"JPEG2000_COMPRESSION_PROFILE", compression_rate:int, jpeg2000_uri:str, overwrite_existing_file:bool) -> None:
+            "marshallers" : (agmarshall.BStrArg, agmarshall.EnumArg(Jpeg2000CompressionProfile), agmarshall.IntArg, agmarshall.BStrArg, agmarshall.VariantBoolArg,) }
+    def write_string(self, image_uri:str, compression_profile:"Jpeg2000CompressionProfile", compression_rate:int, jpeg2000_uri:str, overwrite_existing_file:bool) -> None:
         """Convert an image, such as a BMP, to a GeoJP2 file that can be used as an image globe overlay. The extent of the image must be in the image, as in a GeoTIFF."""
         return self._intf.invoke(Jpeg2000WriterInitializer._metadata, Jpeg2000WriterInitializer._write_string_metadata, image_uri, compression_profile, compression_rate, jpeg2000_uri, overwrite_existing_file)
 
     _write_extent_string_metadata = { "offset" : _write_extent_string_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), agcom.LONG, agcom.INT, agcom.BSTR, agcom.VARIANT_BOOL,),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(JPEG2000_COMPRESSION_PROFILE), agmarshall.IntArg, agmarshall.BStrArg, agmarshall.VariantBoolArg,) }
-    def write_extent_string(self, image_uri:str, extent:list, compression_profile:"JPEG2000_COMPRESSION_PROFILE", compression_rate:int, jpeg2000_uri:str, overwrite_existing_file:bool) -> None:
+            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(Jpeg2000CompressionProfile), agmarshall.IntArg, agmarshall.BStrArg, agmarshall.VariantBoolArg,) }
+    def write_extent_string(self, image_uri:str, extent:list, compression_profile:"Jpeg2000CompressionProfile", compression_rate:int, jpeg2000_uri:str, overwrite_existing_file:bool) -> None:
         """Convert an image, such as a BMP, to a GeoJP2 file that can be used as an image globe overlay. The extent of the image can be defined as an input parameter if necessary."""
         return self._intf.invoke(Jpeg2000WriterInitializer._metadata, Jpeg2000WriterInitializer._write_extent_string_metadata, image_uri, extent, compression_profile, compression_rate, jpeg2000_uri, overwrite_existing_file)
 
     _write_extent_and_sub_extent_string_metadata = { "offset" : _write_extent_and_sub_extent_string_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.LONG, agcom.INT, agcom.BSTR, agcom.VARIANT_BOOL,),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(JPEG2000_COMPRESSION_PROFILE), agmarshall.IntArg, agmarshall.BStrArg, agmarshall.VariantBoolArg,) }
-    def write_extent_and_sub_extent_string(self, image_uri:str, extent:list, sub_extent:list, compression_profile:"JPEG2000_COMPRESSION_PROFILE", compression_rate:int, jpeg2000_uri:str, overwrite_existing_file:bool) -> None:
+            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(Jpeg2000CompressionProfile), agmarshall.IntArg, agmarshall.BStrArg, agmarshall.VariantBoolArg,) }
+    def write_extent_and_sub_extent_string(self, image_uri:str, extent:list, sub_extent:list, compression_profile:"Jpeg2000CompressionProfile", compression_rate:int, jpeg2000_uri:str, overwrite_existing_file:bool) -> None:
         """Convert an image, such as a BMP, to a GeoJP2 file that can be used as an image globe overlay. The extent of the image can be defined as an input parameter if necessary."""
         return self._intf.invoke(Jpeg2000WriterInitializer._metadata, Jpeg2000WriterInitializer._write_extent_and_sub_extent_string_metadata, image_uri, extent, sub_extent, compression_profile, compression_rate, jpeg2000_uri, overwrite_existing_file)
 
     _write_extent_and_sub_extent_transparent_color_string_metadata = { "offset" : _write_extent_and_sub_extent_transparent_color_string_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.LONG, agcom.INT, agcom.BSTR, agcom.VARIANT_BOOL, agcom.OLE_COLOR,),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(JPEG2000_COMPRESSION_PROFILE), agmarshall.IntArg, agmarshall.BStrArg, agmarshall.VariantBoolArg, agmarshall.OLEColorArg,) }
-    def write_extent_and_sub_extent_transparent_color_string(self, image_uri:str, extent:list, sub_extent:list, compression_profile:"JPEG2000_COMPRESSION_PROFILE", compression_rate:int, jpeg2000_uri:str, overwrite_existing_file:bool, transparent_color:agcolor.Color) -> None:
+            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(Jpeg2000CompressionProfile), agmarshall.IntArg, agmarshall.BStrArg, agmarshall.VariantBoolArg, agmarshall.OLEColorArg,) }
+    def write_extent_and_sub_extent_transparent_color_string(self, image_uri:str, extent:list, sub_extent:list, compression_profile:"Jpeg2000CompressionProfile", compression_rate:int, jpeg2000_uri:str, overwrite_existing_file:bool, transparent_color:agcolor.Color) -> None:
         """Convert an image, such as a BMP, to a GeoJP2 file that can be used as an image globe overlay. The extent of the image can be defined as an input parameter if necessary."""
         return self._intf.invoke(Jpeg2000WriterInitializer._metadata, Jpeg2000WriterInitializer._write_extent_and_sub_extent_transparent_color_string_metadata, image_uri, extent, sub_extent, compression_profile, compression_rate, jpeg2000_uri, overwrite_existing_file, transparent_color)
 
@@ -20188,36 +20186,36 @@ class RasterAttributesFactory(SupportsDeleteCallback):
     
     _initialize_with_format_metadata = { "offset" : _initialize_with_format_method_offset,
             "arg_types" : (agcom.INT, agcom.INT, agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.IntArg, agmarshall.IntArg, agmarshall.EnumArg(RASTER_FORMAT), agmarshall.InterfaceOutArg,) }
-    def initialize_with_format(self, width:int, height:int, raster_format:"RASTER_FORMAT") -> "RasterAttributes":
+            "marshallers" : (agmarshall.IntArg, agmarshall.IntArg, agmarshall.EnumArg(RasterFormat), agmarshall.InterfaceOutArg,) }
+    def initialize_with_format(self, width:int, height:int, raster_format:"RasterFormat") -> "RasterAttributes":
         """Initialize a new instance with the width and height of the raster in pixels, and the given raster format."""
         return self._intf.invoke(RasterAttributesFactory._metadata, RasterAttributesFactory._initialize_with_format_metadata, width, height, raster_format, OutArg())
 
     _initialize_with_format_and_type_metadata = { "offset" : _initialize_with_format_and_type_method_offset,
             "arg_types" : (agcom.INT, agcom.INT, agcom.LONG, agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.IntArg, agmarshall.IntArg, agmarshall.EnumArg(RASTER_FORMAT), agmarshall.EnumArg(RASTER_TYPE), agmarshall.InterfaceOutArg,) }
-    def initialize_with_format_and_type(self, width:int, height:int, raster_format:"RASTER_FORMAT", raster_type:"RASTER_TYPE") -> "RasterAttributes":
+            "marshallers" : (agmarshall.IntArg, agmarshall.IntArg, agmarshall.EnumArg(RasterFormat), agmarshall.EnumArg(RasterType), agmarshall.InterfaceOutArg,) }
+    def initialize_with_format_and_type(self, width:int, height:int, raster_format:"RasterFormat", raster_type:"RasterType") -> "RasterAttributes":
         """Initialize a new instance with the width and height of the raster in pixels, and the given raster format and raster type."""
         return self._intf.invoke(RasterAttributesFactory._metadata, RasterAttributesFactory._initialize_with_format_and_type_metadata, width, height, raster_format, raster_type, OutArg())
 
     _initialize_with_format_type_and_orientation_metadata = { "offset" : _initialize_with_format_type_and_orientation_method_offset,
             "arg_types" : (agcom.INT, agcom.INT, agcom.LONG, agcom.LONG, agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.IntArg, agmarshall.IntArg, agmarshall.EnumArg(RASTER_FORMAT), agmarshall.EnumArg(RASTER_TYPE), agmarshall.EnumArg(RASTER_ORIENTATION), agmarshall.InterfaceOutArg,) }
-    def initialize_with_format_type_and_orientation(self, width:int, height:int, raster_format:"RASTER_FORMAT", raster_type:"RASTER_TYPE", raster_orientation:"RASTER_ORIENTATION") -> "RasterAttributes":
+            "marshallers" : (agmarshall.IntArg, agmarshall.IntArg, agmarshall.EnumArg(RasterFormat), agmarshall.EnumArg(RasterType), agmarshall.EnumArg(RasterOrientation), agmarshall.InterfaceOutArg,) }
+    def initialize_with_format_type_and_orientation(self, width:int, height:int, raster_format:"RasterFormat", raster_type:"RasterType", raster_orientation:"RasterOrientation") -> "RasterAttributes":
         """Initialize a new instance with the width and height of the raster in pixels, and the given raster format, raster type, and raster orientation."""
         return self._intf.invoke(RasterAttributesFactory._metadata, RasterAttributesFactory._initialize_with_format_type_and_orientation_metadata, width, height, raster_format, raster_type, raster_orientation, OutArg())
 
     _initialize_with_format_type_orientation_and_alignment_metadata = { "offset" : _initialize_with_format_type_orientation_and_alignment_method_offset,
             "arg_types" : (agcom.INT, agcom.INT, agcom.LONG, agcom.LONG, agcom.LONG, agcom.INT, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.IntArg, agmarshall.IntArg, agmarshall.EnumArg(RASTER_FORMAT), agmarshall.EnumArg(RASTER_TYPE), agmarshall.EnumArg(RASTER_ORIENTATION), agmarshall.IntArg, agmarshall.InterfaceOutArg,) }
-    def initialize_with_format_type_orientation_and_alignment(self, width:int, height:int, raster_format:"RASTER_FORMAT", raster_type:"RASTER_TYPE", raster_orientation:"RASTER_ORIENTATION", row_alignment:int) -> "RasterAttributes":
+            "marshallers" : (agmarshall.IntArg, agmarshall.IntArg, agmarshall.EnumArg(RasterFormat), agmarshall.EnumArg(RasterType), agmarshall.EnumArg(RasterOrientation), agmarshall.IntArg, agmarshall.InterfaceOutArg,) }
+    def initialize_with_format_type_orientation_and_alignment(self, width:int, height:int, raster_format:"RasterFormat", raster_type:"RasterType", raster_orientation:"RasterOrientation", row_alignment:int) -> "RasterAttributes":
         """Initialize a new instance with the width and height of the raster in pixels, and the given raster format, raster type, raster orientation, and row alignment."""
         return self._intf.invoke(RasterAttributesFactory._metadata, RasterAttributesFactory._initialize_with_format_type_orientation_and_alignment_metadata, width, height, raster_format, raster_type, raster_orientation, row_alignment, OutArg())
 
     _initialize_with_format_type_orientation_alignment_and_ratio_metadata = { "offset" : _initialize_with_format_type_orientation_alignment_and_ratio_method_offset,
             "arg_types" : (agcom.INT, agcom.INT, agcom.LONG, agcom.LONG, agcom.LONG, agcom.INT, agcom.DOUBLE, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.IntArg, agmarshall.IntArg, agmarshall.EnumArg(RASTER_FORMAT), agmarshall.EnumArg(RASTER_TYPE), agmarshall.EnumArg(RASTER_ORIENTATION), agmarshall.IntArg, agmarshall.DoubleArg, agmarshall.InterfaceOutArg,) }
-    def initialize_with_format_type_orientation_alignment_and_ratio(self, width:int, height:int, raster_format:"RASTER_FORMAT", raster_type:"RASTER_TYPE", raster_orientation:"RASTER_ORIENTATION", row_alignment:int, pixel_aspect_ratio:float) -> "RasterAttributes":
+            "marshallers" : (agmarshall.IntArg, agmarshall.IntArg, agmarshall.EnumArg(RasterFormat), agmarshall.EnumArg(RasterType), agmarshall.EnumArg(RasterOrientation), agmarshall.IntArg, agmarshall.DoubleArg, agmarshall.InterfaceOutArg,) }
+    def initialize_with_format_type_orientation_alignment_and_ratio(self, width:int, height:int, raster_format:"RasterFormat", raster_type:"RasterType", raster_orientation:"RasterOrientation", row_alignment:int, pixel_aspect_ratio:float) -> "RasterAttributes":
         """Initialize a new instance with the width and height of the raster in pixels, and the given raster format, raster type, raster orientation, row alignment, and pixel aspect ratio."""
         return self._intf.invoke(RasterAttributesFactory._metadata, RasterAttributesFactory._initialize_with_format_type_orientation_alignment_and_ratio_metadata, width, height, raster_format, raster_type, raster_orientation, row_alignment, pixel_aspect_ratio, OutArg())
 
@@ -20353,8 +20351,8 @@ class SharpenFilterFactory(SupportsDeleteCallback):
 
     _initialize_with_method_metadata = { "offset" : _initialize_with_method_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.EnumArg(RASTER_SHARPEN_METHOD), agmarshall.InterfaceOutArg,) }
-    def initialize_with_method(self, method:"RASTER_SHARPEN_METHOD") -> "SharpenFilter":
+            "marshallers" : (agmarshall.EnumArg(RasterSharpenMethod), agmarshall.InterfaceOutArg,) }
+    def initialize_with_method(self, method:"RasterSharpenMethod") -> "SharpenFilter":
         """Initialize a new instance with the specified sharpen method."""
         return self._intf.invoke(SharpenFilterFactory._metadata, SharpenFilterFactory._initialize_with_method_metadata, method, OutArg())
 
@@ -20458,43 +20456,43 @@ class MarkerBatchPrimitiveFactory(SupportsDeleteCallback):
 
     _initialize_with_set_hint_metadata = { "offset" : _initialize_with_set_hint_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.EnumArg(SET_HINT), agmarshall.InterfaceOutArg,) }
-    def initialize_with_set_hint(self, set_hint:"SET_HINT") -> "MarkerBatchPrimitive":
+            "marshallers" : (agmarshall.EnumArg(SetHint), agmarshall.InterfaceOutArg,) }
+    def initialize_with_set_hint(self, set_hint:"SetHint") -> "MarkerBatchPrimitive":
         """Initialize a marker batch primitive with the specified setHint..."""
         return self._intf.invoke(MarkerBatchPrimitiveFactory._metadata, MarkerBatchPrimitiveFactory._initialize_with_set_hint_metadata, set_hint, OutArg())
 
     _initialize_with_size_source_metadata = { "offset" : _initialize_with_size_source_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.EnumArg(MARKER_BATCH_SIZE_SOURCE), agmarshall.InterfaceOutArg,) }
-    def initialize_with_size_source(self, size_source:"MARKER_BATCH_SIZE_SOURCE") -> "MarkerBatchPrimitive":
+            "marshallers" : (agmarshall.EnumArg(MarkerBatchSizeSource), agmarshall.InterfaceOutArg,) }
+    def initialize_with_size_source(self, size_source:"MarkerBatchSizeSource") -> "MarkerBatchPrimitive":
         """Initialize a marker batch primitive with the specified sizeSource..."""
         return self._intf.invoke(MarkerBatchPrimitiveFactory._metadata, MarkerBatchPrimitiveFactory._initialize_with_size_source_metadata, size_source, OutArg())
 
     _initialize_with_size_source_and_sort_order_metadata = { "offset" : _initialize_with_size_source_and_sort_order_method_offset,
             "arg_types" : (agcom.LONG, agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.EnumArg(MARKER_BATCH_SIZE_SOURCE), agmarshall.EnumArg(MARKER_BATCH_SORT_ORDER), agmarshall.InterfaceOutArg,) }
-    def initialize_with_size_source_and_sort_order(self, size_source:"MARKER_BATCH_SIZE_SOURCE", sort_order:"MARKER_BATCH_SORT_ORDER") -> "MarkerBatchPrimitive":
+            "marshallers" : (agmarshall.EnumArg(MarkerBatchSizeSource), agmarshall.EnumArg(MarkerBatchSortOrder), agmarshall.InterfaceOutArg,) }
+    def initialize_with_size_source_and_sort_order(self, size_source:"MarkerBatchSizeSource", sort_order:"MarkerBatchSortOrder") -> "MarkerBatchPrimitive":
         """Initialize a marker batch primitive with the specified sizeSource and sortOrder..."""
         return self._intf.invoke(MarkerBatchPrimitiveFactory._metadata, MarkerBatchPrimitiveFactory._initialize_with_size_source_and_sort_order_metadata, size_source, sort_order, OutArg())
 
     _initialize_size_source_sort_order_and_set_hint_metadata = { "offset" : _initialize_size_source_sort_order_and_set_hint_method_offset,
             "arg_types" : (agcom.LONG, agcom.LONG, agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.EnumArg(MARKER_BATCH_SIZE_SOURCE), agmarshall.EnumArg(MARKER_BATCH_SORT_ORDER), agmarshall.EnumArg(SET_HINT), agmarshall.InterfaceOutArg,) }
-    def initialize_size_source_sort_order_and_set_hint(self, size_source:"MARKER_BATCH_SIZE_SOURCE", sort_order:"MARKER_BATCH_SORT_ORDER", set_hint:"SET_HINT") -> "MarkerBatchPrimitive":
+            "marshallers" : (agmarshall.EnumArg(MarkerBatchSizeSource), agmarshall.EnumArg(MarkerBatchSortOrder), agmarshall.EnumArg(SetHint), agmarshall.InterfaceOutArg,) }
+    def initialize_size_source_sort_order_and_set_hint(self, size_source:"MarkerBatchSizeSource", sort_order:"MarkerBatchSortOrder", set_hint:"SetHint") -> "MarkerBatchPrimitive":
         """Initialize a marker batch primitive with the specified sizeSource, sortOrder, and setHint. This is equivalent to constructing a marker batch with the specified arguments and a marker batch rendering method of Automatic."""
         return self._intf.invoke(MarkerBatchPrimitiveFactory._metadata, MarkerBatchPrimitiveFactory._initialize_size_source_sort_order_and_set_hint_metadata, size_source, sort_order, set_hint, OutArg())
 
     _initialize_size_source_sort_order_set_hint_and_rendering_method_metadata = { "offset" : _initialize_size_source_sort_order_set_hint_and_rendering_method_method_offset,
             "arg_types" : (agcom.LONG, agcom.LONG, agcom.LONG, agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.EnumArg(MARKER_BATCH_SIZE_SOURCE), agmarshall.EnumArg(MARKER_BATCH_SORT_ORDER), agmarshall.EnumArg(SET_HINT), agmarshall.EnumArg(MARKER_BATCH_RENDERING_METHOD), agmarshall.InterfaceOutArg,) }
-    def initialize_size_source_sort_order_set_hint_and_rendering_method(self, size_source:"MARKER_BATCH_SIZE_SOURCE", sort_order:"MARKER_BATCH_SORT_ORDER", set_hint:"SET_HINT", rendering_method:"MARKER_BATCH_RENDERING_METHOD") -> "MarkerBatchPrimitive":
+            "marshallers" : (agmarshall.EnumArg(MarkerBatchSizeSource), agmarshall.EnumArg(MarkerBatchSortOrder), agmarshall.EnumArg(SetHint), agmarshall.EnumArg(MarkerBatchRenderingMethod), agmarshall.InterfaceOutArg,) }
+    def initialize_size_source_sort_order_set_hint_and_rendering_method(self, size_source:"MarkerBatchSizeSource", sort_order:"MarkerBatchSortOrder", set_hint:"SetHint", rendering_method:"MarkerBatchRenderingMethod") -> "MarkerBatchPrimitive":
         """Initialize a marker batch primitive with the specified arguments."""
         return self._intf.invoke(MarkerBatchPrimitiveFactory._metadata, MarkerBatchPrimitiveFactory._initialize_size_source_sort_order_set_hint_and_rendering_method_metadata, size_source, sort_order, set_hint, rendering_method, OutArg())
 
     _supported_metadata = { "offset" : _supported_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.EnumArg(MARKER_BATCH_RENDERING_METHOD), agmarshall.VariantBoolArg,) }
-    def supported(self, rendering_method:"MARKER_BATCH_RENDERING_METHOD") -> bool:
+            "marshallers" : (agmarshall.EnumArg(MarkerBatchRenderingMethod), agmarshall.VariantBoolArg,) }
+    def supported(self, rendering_method:"MarkerBatchRenderingMethod") -> bool:
         """Determine whether or not the video card supports the marker batch primitive with the given renderingMethod."""
         return self._intf.invoke(MarkerBatchPrimitiveFactory._metadata, MarkerBatchPrimitiveFactory._supported_metadata, rendering_method, OutArg())
 
@@ -20577,8 +20575,8 @@ class MaximumCountPathPrimitiveUpdatePolicyFactory(SupportsDeleteCallback):
 
     _initialize_with_parameters_metadata = { "offset" : _initialize_with_parameters_method_offset,
             "arg_types" : (agcom.INT, agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.IntArg, agmarshall.EnumArg(PATH_PRIMITIVE_REMOVE_LOCATION), agmarshall.InterfaceOutArg,) }
-    def initialize_with_parameters(self, maximum_count:int, remove_location:"PATH_PRIMITIVE_REMOVE_LOCATION") -> "MaximumCountPathPrimitiveUpdatePolicy":
+            "marshallers" : (agmarshall.IntArg, agmarshall.EnumArg(PathPrimitiveRemoveLocation), agmarshall.InterfaceOutArg,) }
+    def initialize_with_parameters(self, maximum_count:int, remove_location:"PathPrimitiveRemoveLocation") -> "MaximumCountPathPrimitiveUpdatePolicy":
         """Initialize a policy with the specified maximumCount and removeLocation."""
         return self._intf.invoke(MaximumCountPathPrimitiveUpdatePolicyFactory._metadata, MaximumCountPathPrimitiveUpdatePolicyFactory._initialize_with_parameters_metadata, maximum_count, remove_location, OutArg())
 
@@ -20631,8 +20629,8 @@ class ModelPrimitiveFactory(SupportsDeleteCallback):
 
     _initialize_with_string_uri_and_up_axis_metadata = { "offset" : _initialize_with_string_uri_and_up_axis_method_offset,
             "arg_types" : (agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.EnumArg(MODEL_UP_AXIS), agmarshall.InterfaceOutArg,) }
-    def initialize_with_string_uri_and_up_axis(self, uri:str, up_axis:"MODEL_UP_AXIS") -> "ModelPrimitive":
+            "marshallers" : (agmarshall.BStrArg, agmarshall.EnumArg(ModelUpAxis), agmarshall.InterfaceOutArg,) }
+    def initialize_with_string_uri_and_up_axis(self, uri:str, up_axis:"ModelUpAxis") -> "ModelPrimitive":
         """For convenience. Initializes a model primitive with the specified file path and up axis."""
         return self._intf.invoke(ModelPrimitiveFactory._metadata, ModelPrimitiveFactory._initialize_with_string_uri_and_up_axis_metadata, uri, up_axis, OutArg())
 
@@ -20791,8 +20789,8 @@ class PointBatchPrimitiveFactory(SupportsDeleteCallback):
 
     _initialize_with_set_hint_metadata = { "offset" : _initialize_with_set_hint_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.EnumArg(SET_HINT), agmarshall.InterfaceOutArg,) }
-    def initialize_with_set_hint(self, set_hint:"SET_HINT") -> "PointBatchPrimitive":
+            "marshallers" : (agmarshall.EnumArg(SetHint), agmarshall.InterfaceOutArg,) }
+    def initialize_with_set_hint(self, set_hint:"SetHint") -> "PointBatchPrimitive":
         """Initialize a new instance of a point batch primitive with the specified set hint."""
         return self._intf.invoke(PointBatchPrimitiveFactory._metadata, PointBatchPrimitiveFactory._initialize_with_set_hint_metadata, set_hint, OutArg())
 
@@ -20899,15 +20897,15 @@ class PolylinePrimitiveFactory(SupportsDeleteCallback):
 
     _initialize_with_interpolator_and_set_hint_metadata = { "offset" : _initialize_with_interpolator_and_set_hint_method_offset,
             "arg_types" : (agcom.PVOID, agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceInArg("IPositionInterpolator"), agmarshall.EnumArg(SET_HINT), agmarshall.InterfaceOutArg,) }
-    def initialize_with_interpolator_and_set_hint(self, interpolator:"IPositionInterpolator", set_hint:"SET_HINT") -> "PolylinePrimitive":
+            "marshallers" : (agmarshall.InterfaceInArg("IPositionInterpolator"), agmarshall.EnumArg(SetHint), agmarshall.InterfaceOutArg,) }
+    def initialize_with_interpolator_and_set_hint(self, interpolator:"IPositionInterpolator", set_hint:"SetHint") -> "PolylinePrimitive":
         """Initialize a polyline primitive with the specified interpolator and setHint."""
         return self._intf.invoke(PolylinePrimitiveFactory._metadata, PolylinePrimitiveFactory._initialize_with_interpolator_and_set_hint_metadata, interpolator, set_hint, OutArg())
 
     _initialize_with_type_and_hint_metadata = { "offset" : _initialize_with_type_and_hint_method_offset,
             "arg_types" : (agcom.LONG, agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.EnumArg(POLYLINE_TYPE), agmarshall.EnumArg(SET_HINT), agmarshall.InterfaceOutArg,) }
-    def initialize_with_type_and_hint(self, polyline_type:"POLYLINE_TYPE", set_hint:"SET_HINT") -> "PolylinePrimitive":
+            "marshallers" : (agmarshall.EnumArg(PolylineType), agmarshall.EnumArg(SetHint), agmarshall.InterfaceOutArg,) }
+    def initialize_with_type_and_hint(self, polyline_type:"PolylineType", set_hint:"SetHint") -> "PolylinePrimitive":
         """Initialize a new instance of a polyline primitive with the specified polylineType and setHint."""
         return self._intf.invoke(PolylinePrimitiveFactory._metadata, PolylinePrimitiveFactory._initialize_with_type_and_hint_metadata, polyline_type, set_hint, OutArg())
 
@@ -20920,15 +20918,15 @@ class PolylinePrimitiveFactory(SupportsDeleteCallback):
 
     _initialize_with_hint_metadata = { "offset" : _initialize_with_hint_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.EnumArg(SET_HINT), agmarshall.InterfaceOutArg,) }
-    def initialize_with_hint(self, set_hint:"SET_HINT") -> "PolylinePrimitive":
+            "marshallers" : (agmarshall.EnumArg(SetHint), agmarshall.InterfaceOutArg,) }
+    def initialize_with_hint(self, set_hint:"SetHint") -> "PolylinePrimitive":
         """Initialize a new instance of a polyline primitive with the specified set hint. This is equivalent to constructing a polyline with a polyline type of LineStrip and the specified set hint."""
         return self._intf.invoke(PolylinePrimitiveFactory._metadata, PolylinePrimitiveFactory._initialize_with_hint_metadata, set_hint, OutArg())
 
     _initialize_with_type_metadata = { "offset" : _initialize_with_type_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.EnumArg(POLYLINE_TYPE), agmarshall.InterfaceOutArg,) }
-    def initialize_with_type(self, polyline_type:"POLYLINE_TYPE") -> "PolylinePrimitive":
+            "marshallers" : (agmarshall.EnumArg(PolylineType), agmarshall.InterfaceOutArg,) }
+    def initialize_with_type(self, polyline_type:"PolylineType") -> "PolylinePrimitive":
         """Initialize a polyline primitive with the specified polylineType. This is equivalent to constructing a polyline with the specified polylineType and a set hint of Frequent."""
         return self._intf.invoke(PolylinePrimitiveFactory._metadata, PolylinePrimitiveFactory._initialize_with_type_metadata, polyline_type, OutArg())
 
@@ -21321,8 +21319,8 @@ class SolidPrimitiveFactory(SupportsDeleteCallback):
 
     _initialize_with_hint_metadata = { "offset" : _initialize_with_hint_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.EnumArg(SET_HINT), agmarshall.InterfaceOutArg,) }
-    def initialize_with_hint(self, set_hint:"SET_HINT") -> "SolidPrimitive":
+            "marshallers" : (agmarshall.EnumArg(SetHint), agmarshall.InterfaceOutArg,) }
+    def initialize_with_hint(self, set_hint:"SetHint") -> "SolidPrimitive":
         """Initialize a solid primitive with the specified setHint."""
         return self._intf.invoke(SolidPrimitiveFactory._metadata, SolidPrimitiveFactory._initialize_with_hint_metadata, set_hint, OutArg())
 
@@ -21388,22 +21386,22 @@ class SurfaceMeshPrimitiveFactory(SupportsDeleteCallback):
 
     _initialize_with_set_hint_metadata = { "offset" : _initialize_with_set_hint_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.EnumArg(SET_HINT), agmarshall.InterfaceOutArg,) }
-    def initialize_with_set_hint(self, set_hint:"SET_HINT") -> "SurfaceMeshPrimitive":
+            "marshallers" : (agmarshall.EnumArg(SetHint), agmarshall.InterfaceOutArg,) }
+    def initialize_with_set_hint(self, set_hint:"SetHint") -> "SurfaceMeshPrimitive":
         """Initialize a surface mesh primitive with the specified setHint. This is equivalent to constructing a surface mesh with the specified setHint and a surface mesh rendering method of Automatic."""
         return self._intf.invoke(SurfaceMeshPrimitiveFactory._metadata, SurfaceMeshPrimitiveFactory._initialize_with_set_hint_metadata, set_hint, OutArg())
 
     _initialize_with_set_hint_and_rendering_method_metadata = { "offset" : _initialize_with_set_hint_and_rendering_method_method_offset,
             "arg_types" : (agcom.LONG, agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.EnumArg(SET_HINT), agmarshall.EnumArg(SURFACE_MESH_RENDERING_METHOD), agmarshall.InterfaceOutArg,) }
-    def initialize_with_set_hint_and_rendering_method(self, set_hint:"SET_HINT", rendering_method:"SURFACE_MESH_RENDERING_METHOD") -> "SurfaceMeshPrimitive":
+            "marshallers" : (agmarshall.EnumArg(SetHint), agmarshall.EnumArg(SurfaceMeshRenderingMethod), agmarshall.InterfaceOutArg,) }
+    def initialize_with_set_hint_and_rendering_method(self, set_hint:"SetHint", rendering_method:"SurfaceMeshRenderingMethod") -> "SurfaceMeshPrimitive":
         """Initialize a surface mesh primitive with the specified setHint and renderingMethod."""
         return self._intf.invoke(SurfaceMeshPrimitiveFactory._metadata, SurfaceMeshPrimitiveFactory._initialize_with_set_hint_and_rendering_method_metadata, set_hint, rendering_method, OutArg())
 
     _supported_metadata = { "offset" : _supported_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.EnumArg(SURFACE_MESH_RENDERING_METHOD), agmarshall.VariantBoolArg,) }
-    def supported(self, rendering_method:"SURFACE_MESH_RENDERING_METHOD") -> bool:
+            "marshallers" : (agmarshall.EnumArg(SurfaceMeshRenderingMethod), agmarshall.VariantBoolArg,) }
+    def supported(self, rendering_method:"SurfaceMeshRenderingMethod") -> bool:
         """Determine whether or not the video card supports the surface mesh primitive with the given renderingMethod."""
         return self._intf.invoke(SurfaceMeshPrimitiveFactory._metadata, SurfaceMeshPrimitiveFactory._supported_metadata, rendering_method, OutArg())
 
@@ -21496,15 +21494,15 @@ class TextBatchPrimitiveFactory(SupportsDeleteCallback):
 
     _initialize_with_graphics_font_and_set_hint_metadata = { "offset" : _initialize_with_graphics_font_and_set_hint_method_offset,
             "arg_types" : (agcom.PVOID, agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceInArg("GraphicsFont"), agmarshall.EnumArg(SET_HINT), agmarshall.InterfaceOutArg,) }
-    def initialize_with_graphics_font_and_set_hint(self, font:"GraphicsFont", set_hint:"SET_HINT") -> "TextBatchPrimitive":
+            "marshallers" : (agmarshall.InterfaceInArg("GraphicsFont"), agmarshall.EnumArg(SetHint), agmarshall.InterfaceOutArg,) }
+    def initialize_with_graphics_font_and_set_hint(self, font:"GraphicsFont", set_hint:"SetHint") -> "TextBatchPrimitive":
         """Initialize a marker batch primitive with the specified font and setHint."""
         return self._intf.invoke(TextBatchPrimitiveFactory._metadata, TextBatchPrimitiveFactory._initialize_with_graphics_font_and_set_hint_metadata, font, set_hint, OutArg())
 
     _initialize_with_graphics_font_and_set_hint_2d_metadata = { "offset" : _initialize_with_graphics_font_and_set_hint_2d_method_offset,
             "arg_types" : (agcom.PVOID, agcom.LONG, agcom.VARIANT_BOOL, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceInArg("GraphicsFont"), agmarshall.EnumArg(SET_HINT), agmarshall.VariantBoolArg, agmarshall.InterfaceOutArg,) }
-    def initialize_with_graphics_font_and_set_hint_2d(self, font:"GraphicsFont", set_hint:"SET_HINT", render_in_screen_space:bool) -> "TextBatchPrimitive":
+            "marshallers" : (agmarshall.InterfaceInArg("GraphicsFont"), agmarshall.EnumArg(SetHint), agmarshall.VariantBoolArg, agmarshall.InterfaceOutArg,) }
+    def initialize_with_graphics_font_and_set_hint_2d(self, font:"GraphicsFont", set_hint:"SetHint", render_in_screen_space:bool) -> "TextBatchPrimitive":
         """Initialize a text batch primitive with the specified font and setHint, optimized for 2d screen space rendering."""
         return self._intf.invoke(TextBatchPrimitiveFactory._metadata, TextBatchPrimitiveFactory._initialize_with_graphics_font_and_set_hint_2d_metadata, font, set_hint, render_in_screen_space, OutArg())
 
@@ -21603,8 +21601,8 @@ class TextOverlayFactory(SupportsDeleteCallback):
 
     _initialize_with_width_height_units_metadata = { "offset" : _initialize_with_width_height_units_method_offset,
             "arg_types" : (agcom.PVOID, agcom.DOUBLE, agcom.LONG, agcom.DOUBLE, agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceInArg("GraphicsFont"), agmarshall.DoubleArg, agmarshall.EnumArg(SCREEN_OVERLAY_UNIT), agmarshall.DoubleArg, agmarshall.EnumArg(SCREEN_OVERLAY_UNIT), agmarshall.InterfaceOutArg,) }
-    def initialize_with_width_height_units(self, font:"GraphicsFont", width:float, width_unit:"SCREEN_OVERLAY_UNIT", height:float, height_unit:"SCREEN_OVERLAY_UNIT") -> "TextOverlay":
+            "marshallers" : (agmarshall.InterfaceInArg("GraphicsFont"), agmarshall.DoubleArg, agmarshall.EnumArg(ScreenOverlayUnit), agmarshall.DoubleArg, agmarshall.EnumArg(ScreenOverlayUnit), agmarshall.InterfaceOutArg,) }
+    def initialize_with_width_height_units(self, font:"GraphicsFont", width:float, width_unit:"ScreenOverlayUnit", height:float, height_unit:"ScreenOverlayUnit") -> "TextOverlay":
         """Initialize the overlay with the specified position and size."""
         return self._intf.invoke(TextOverlayFactory._metadata, TextOverlayFactory._initialize_with_width_height_units_metadata, font, width, width_unit, height, height_unit, OutArg())
 
@@ -21835,8 +21833,8 @@ class TriangleMeshPrimitiveFactory(SupportsDeleteCallback):
 
     _initialize_with_set_hint_metadata = { "offset" : _initialize_with_set_hint_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.EnumArg(SET_HINT), agmarshall.InterfaceOutArg,) }
-    def initialize_with_set_hint(self, set_hint:"SET_HINT") -> "TriangleMeshPrimitive":
+            "marshallers" : (agmarshall.EnumArg(SetHint), agmarshall.InterfaceOutArg,) }
+    def initialize_with_set_hint(self, set_hint:"SetHint") -> "TriangleMeshPrimitive":
         """Initialize a triangle mesh primitive with the specified setHint ."""
         return self._intf.invoke(TriangleMeshPrimitiveFactory._metadata, TriangleMeshPrimitiveFactory._initialize_with_set_hint_metadata, set_hint, OutArg())
 

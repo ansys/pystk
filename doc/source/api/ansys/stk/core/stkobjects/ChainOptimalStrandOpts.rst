@@ -78,25 +78,25 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.ChainOptimalStrandOpts.type
-    :type: CHAIN_OPTIMAL_STRAND_METRIC_TYPE
+    :type: ChainOptimalStrandMetricType
 
     Optimal path type.
 
 .. py:property:: link_comparison_type
     :canonical: ansys.stk.core.stkobjects.ChainOptimalStrandOpts.link_comparison_type
-    :type: CHAIN_OPTIMAL_STRAND_LINK_COMPARE_TYPE
+    :type: ChainOptimalStrandLinkCompareType
 
     Optimal path comparison type (min, max or sum) used when comparing connections of a strand when computing an overall value of the metric for a strand.
 
 .. py:property:: strand_comparison_type
     :canonical: ansys.stk.core.stkobjects.ChainOptimalStrandOpts.strand_comparison_type
-    :type: CHAIN_OPTIMAL_STRAND_COMPARE_STRANDS_TYPE
+    :type: ChainOptimalStrandCompareStrandsType
 
     Optimal path comparison type (min or max) used when comparing strands.
 
 .. py:property:: calc_scalar_type
     :canonical: ansys.stk.core.stkobjects.ChainOptimalStrandOpts.calc_scalar_type
-    :type: CHAIN_OPTIMAL_STRAND_CALCULATION_SCALAR_METRIC_TYPE
+    :type: ChainOptimalStrandCalculationScalarMetricType
 
     Optimal path AWB calculation scalar type used when the optiml path type is set to use a calculation scalar.
 

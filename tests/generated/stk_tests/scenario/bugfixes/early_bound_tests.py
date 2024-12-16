@@ -50,14 +50,14 @@ class EarlyBoundTests(TestBase):
 
     @parameterized.expand(
         [
-            (ANIMATION_END_TIME_MODE.NORMAL,),
-            (ANIMATION_END_TIME_MODE.X_REAL_TIME,),
-            (ANIMATION_END_TIME_MODE.REAL_TIME,),
-            (ANIMATION_END_TIME_MODE.TIME_ARRAY,),
+            (AnimationEndTimeMode.NORMAL,),
+            (AnimationEndTimeMode.X_REAL_TIME,),
+            (AnimationEndTimeMode.REAL_TIME,),
+            (AnimationEndTimeMode.TIME_ARRAY,),
         ]
     )
     @category("Graphics Tests")
-    def test_AnimationModes(self, mode: "ANIMATION_END_TIME_MODE"):
+    def test_AnimationModes(self, mode: "AnimationEndTimeMode"):
         (Scenario(TestBase.Application.current_scenario)).set_time_period(0, 360)
 
         EarlyBoundTests._animation.mode = mode
@@ -70,7 +70,7 @@ class EarlyBoundTests(TestBase):
         sc.set_time_period(startTime, stopTime)
 
         # Change the animation step to test the animation mode
-        sc.animation_settings.animation_step_type = SCENARIO_TIME_STEP_TYPE.STEP
+        sc.animation_settings.animation_step_type = ScenarioTimeStepType.STEP
         sc.animation_settings.animation_step_value = stepInSecs
 
         EarlyBoundTests._animation.high_speed = False
@@ -166,7 +166,7 @@ class EarlyBoundTests(TestBase):
         TestBase.Application.new_scenario("BUG66310")
 
         covDef: "CoverageDefinition" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.COVERAGE_DEFINITION, "CovDef"),
+            TestBase.Application.current_scenario.children.new(STKObjectType.COVERAGE_DEFINITION, "CovDef"),
             CoverageDefinition,
         )
         covDef.interval.use_scenario_interval = True
@@ -197,7 +197,7 @@ class EarlyBoundTests(TestBase):
     def HeapCorruption(self):
         sc: "Scenario" = Scenario(TestBase.Application.current_scenario)
         oSatOnMars: "IStkObject" = TestBase.Application.current_scenario.children.new_on_central_body(
-            STK_OBJECT_TYPE.SATELLITE, "SatelliteOnMars", "Mars"
+            STKObjectType.SATELLITE, "SatelliteOnMars", "Mars"
         )
         Assert.assertIsNotNone(oSatOnMars)
 
@@ -221,15 +221,15 @@ class EarlyBoundTests(TestBase):
         scen: "Scenario" = clr.CastAs(TestBase.Application.current_scenario, Scenario)
 
         sat1: "Satellite" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "sat1"), Satellite
+            TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "sat1"), Satellite
         )
-        sat1.set_propagator_type(PROPAGATOR_TYPE.TWO_BODY)
+        sat1.set_propagator_type(PropagatorType.TWO_BODY)
         (clr.CastAs(sat1.propagator, PropagatorTwoBody)).propagate()
 
         sat2: "Satellite" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "sat2"), Satellite
+            TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "sat2"), Satellite
         )
-        sat2.set_propagator_type(PROPAGATOR_TYPE.TWO_BODY)
+        sat2.set_propagator_type(PropagatorType.TWO_BODY)
         (clr.CastAs(sat2.propagator, PropagatorTwoBody)).propagate()
 
         sat1.graphics_3d.data_display.remove_all()
@@ -251,15 +251,15 @@ class EarlyBoundTests(TestBase):
             scen: "Scenario" = clr.CastAs(TestBase.Application.current_scenario, Scenario)
 
             sat1: "Satellite" = clr.CastAs(
-                TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "sat1"), Satellite
+                TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "sat1"), Satellite
             )
-            sat1.set_propagator_type(PROPAGATOR_TYPE.TWO_BODY)
+            sat1.set_propagator_type(PropagatorType.TWO_BODY)
             (clr.CastAs(sat1.propagator, PropagatorTwoBody)).propagate()
 
             sat2: "Satellite" = clr.CastAs(
-                TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "sat2"), Satellite
+                TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "sat2"), Satellite
             )
-            sat2.set_propagator_type(PROPAGATOR_TYPE.TWO_BODY)
+            sat2.set_propagator_type(PropagatorType.TWO_BODY)
             (clr.CastAs(sat2.propagator, PropagatorTwoBody)).propagate()
 
             sat1.graphics_3d.data_display.remove_all()

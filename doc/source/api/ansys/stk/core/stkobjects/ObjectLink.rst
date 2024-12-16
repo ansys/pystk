@@ -54,7 +54,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.ObjectLink.type
-    :type: STK_OBJECT_TYPE
+    :type: STKObjectType
 
     Returns STK object type.
 

@@ -199,7 +199,7 @@ Property detail
 
 .. py:property:: max_safe_airspeed_type
     :canonical: ansys.stk.core.stkobjects.aviator.RotorcraftModel.max_safe_airspeed_type
-    :type: AIRSPEED_TYPE
+    :type: AirspeedType
 
     Get the maximum safe airspeed type.
 
@@ -211,7 +211,7 @@ Property detail
 
 .. py:property:: max_safe_translation_speed_type
     :canonical: ansys.stk.core.stkobjects.aviator.RotorcraftModel.max_safe_translation_speed_type
-    :type: AIRSPEED_TYPE
+    :type: AirspeedType
 
     Get the maximum safe translation speed type.
 
@@ -277,14 +277,14 @@ Method detail
 
 
 
-.. py:method:: set_max_safe_airspeed(self, airspeed_type: AIRSPEED_TYPE, airspeed: float) -> None
+.. py:method:: set_max_safe_airspeed(self, airspeed_type: AirspeedType, airspeed: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.RotorcraftModel.set_max_safe_airspeed
 
     Set the maximum safe airspeed and airspeed type.
 
     :Parameters:
 
-    **airspeed_type** : :obj:`~AIRSPEED_TYPE`
+    **airspeed_type** : :obj:`~AirspeedType`
     **airspeed** : :obj:`~float`
 
     :Returns:
@@ -293,14 +293,14 @@ Method detail
 
 
 
-.. py:method:: set_max_safe_translation_speed(self, airspeed_type: AIRSPEED_TYPE, airspeed: float) -> None
+.. py:method:: set_max_safe_translation_speed(self, airspeed_type: AirspeedType, airspeed: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.RotorcraftModel.set_max_safe_translation_speed
 
     Set the maximum safe translation airspeed and airspeed type.
 
     :Parameters:
 
-    **airspeed_type** : :obj:`~AIRSPEED_TYPE`
+    **airspeed_type** : :obj:`~AirspeedType`
     **airspeed** : :obj:`~float`
 
     :Returns:

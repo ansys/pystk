@@ -48,7 +48,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolSystem.type
-    :type: SYSTEM_TYPE
+    :type: SystemType
 
     Returns a type of the system object.
 

@@ -51,7 +51,7 @@ Property detail
 
 .. py:property:: bearing_mode
     :canonical: ansys.stk.core.stkobjects.aviator.SiteRelativeToPrevProcedure.bearing_mode
-    :type: RELATIVE_ABSOLUTE_BEARING
+    :type: RelativeAbsoluteBearing
 
     Gets or sets the bearing reference.
 

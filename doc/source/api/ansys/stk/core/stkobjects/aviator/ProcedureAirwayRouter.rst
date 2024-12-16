@@ -113,7 +113,7 @@ Property detail
 
 .. py:property:: entry_exit_and_or
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureAirwayRouter.entry_exit_and_or
-    :type: AND_OR
+    :type: AndOr
 
     Define how the two Entry/Exit Waypoint constraints will be considered.
 

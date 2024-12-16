@@ -28,7 +28,7 @@ class SGP4Snippets(CodeSnippetsTestBase):
     def setUp(self):
         SGP4Snippets.m_Object = clr.CastAs(
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-                STK_OBJECT_TYPE.SATELLITE, SGP4Snippets.m_DefaultName
+                STKObjectType.SATELLITE, SGP4Snippets.m_DefaultName
             ),
             Satellite,
         )
@@ -39,7 +39,7 @@ class SGP4Snippets(CodeSnippetsTestBase):
     # region TestTearDown
     def tearDown(self):
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(
-            STK_OBJECT_TYPE.SATELLITE, SGP4Snippets.m_DefaultName
+            STKObjectType.SATELLITE, SGP4Snippets.m_DefaultName
         )
         SGP4Snippets.m_Object = None
 
@@ -47,7 +47,7 @@ class SGP4Snippets(CodeSnippetsTestBase):
 
     # region ConfigureSGP4WithFileSource
     def test_ConfigureSGP4WithFileSource(self):
-        SGP4Snippets.m_Object.set_propagator_type(PROPAGATOR_TYPE.SGP4)
+        SGP4Snippets.m_Object.set_propagator_type(PropagatorType.SGP4)
 
         sgp4: "PropagatorSGP4" = clr.CastAs(SGP4Snippets.m_Object.propagator, PropagatorSGP4)
         self.ConfigureSGP4WithFileSource(
@@ -77,7 +77,7 @@ class SGP4Snippets(CodeSnippetsTestBase):
     # region SetSGP4ToAutoUpdateFromFileSource
     def test_SetSGP4ToAutoUpdateFromFileSource(self):
         # Set propagator
-        SGP4Snippets.m_Object.set_propagator_type(PROPAGATOR_TYPE.SGP4)
+        SGP4Snippets.m_Object.set_propagator_type(PropagatorType.SGP4)
         sgp4: "PropagatorSGP4" = clr.CastAs(SGP4Snippets.m_Object.propagator, PropagatorSGP4)
 
         sgp4.common_tasks.add_segments_from_file(
@@ -88,7 +88,7 @@ class SGP4Snippets(CodeSnippetsTestBase):
 
     def SetSGP4ToAutoUpdateFromFileSource(self, propagator: "PropagatorSGP4", fileUpdateSource: str):
         propagator.automatic_update_enabled = True
-        propagator.automatic_update_settings.selected_source = VEHICLE_SGP4_AUTOMATIC_UPDATE_SOURCE_TYPE.FILE
+        propagator.automatic_update_settings.selected_source = VehicleSGP4AutomaticUpdateSourceType.FILE
         propagator.automatic_update_settings.file_source.filename = fileUpdateSource
 
         # Preview TLEs (optional)
@@ -114,7 +114,7 @@ class SGP4Snippets(CodeSnippetsTestBase):
     # region SetSGP4ToAutoUpdateFromOnlineSource
     def test_SetSGP4ToAutoUpdateFromOnlineSource(self):
         # Set propagator
-        SGP4Snippets.m_Object.set_propagator_type(PROPAGATOR_TYPE.SGP4)
+        SGP4Snippets.m_Object.set_propagator_type(PropagatorType.SGP4)
         sgp4: "PropagatorSGP4" = clr.CastAs(SGP4Snippets.m_Object.propagator, PropagatorSGP4)
 
         sgp4.common_tasks.add_segments_from_file(
@@ -125,7 +125,7 @@ class SGP4Snippets(CodeSnippetsTestBase):
 
     def SetSGP4ToAutoUpdateFromOnlineSource(self, propagator: "PropagatorSGP4"):
         propagator.automatic_update_enabled = True
-        propagator.automatic_update_settings.selected_source = VEHICLE_SGP4_AUTOMATIC_UPDATE_SOURCE_TYPE.ONLINE
+        propagator.automatic_update_settings.selected_source = VehicleSGP4AutomaticUpdateSourceType.ONLINE
 
         # Preview TLEs (optional)
         # Preview() returns a one dimension string of tles

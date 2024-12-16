@@ -50,7 +50,7 @@ Property detail
 
 .. py:property:: satisfaction_crossing
     :canonical: ansys.stk.core.vgt.TimeToolTimeArrayConditionCrossings.satisfaction_crossing
-    :type: SATISFACTION_CROSSING
+    :type: SatisfactionCrossing
 
     The direction of interest for satisfaction crossing.
 
@@ -74,7 +74,7 @@ Property detail
 
 .. py:property:: save_data_option
     :canonical: ansys.stk.core.vgt.TimeToolTimeArrayConditionCrossings.save_data_option
-    :type: SAVE_DATA_TYPE
+    :type: SaveDataType
 
     Determine if computed satisfaction crossing times are saved/loaded, or recomputed on load if necessary.
 

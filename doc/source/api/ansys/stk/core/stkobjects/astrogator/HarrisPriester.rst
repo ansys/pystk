@@ -78,13 +78,13 @@ Property detail
 
 .. py:property:: sun_position
     :canonical: ansys.stk.core.stkobjects.astrogator.HarrisPriester.sun_position
-    :type: SUN_POSITION
+    :type: SunPosition
 
     Gets or sets the sun position computation.
 
 .. py:property:: atmos_data_source
     :canonical: ansys.stk.core.stkobjects.astrogator.HarrisPriester.atmos_data_source
-    :type: ATMOS_DATA_SOURCE
+    :type: AtmosDataSource
 
     Gets or sets the atmospheric model data source - data file or constant values.
 
@@ -102,7 +102,7 @@ Property detail
 
 .. py:property:: drag_model_type
     :canonical: ansys.stk.core.stkobjects.astrogator.HarrisPriester.drag_model_type
-    :type: DRAG_MODEL_TYPE
+    :type: DragModelType
 
     Drag model type.
 

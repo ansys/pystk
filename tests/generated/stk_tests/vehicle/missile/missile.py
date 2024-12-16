@@ -57,15 +57,15 @@ class EarlyBoundTests(TestBase):
     @category("Basic Tests")
     def test_STKObject(self):
         # See 31588
-        EarlyBoundTests.AG_MSL.set_trajectory_type(PROPAGATOR_TYPE.BALLISTIC)
-        Assert.assertEqual(PROPAGATOR_TYPE.BALLISTIC, EarlyBoundTests.AG_MSL.trajectory_type)
+        EarlyBoundTests.AG_MSL.set_trajectory_type(PropagatorType.BALLISTIC)
+        Assert.assertEqual(PropagatorType.BALLISTIC, EarlyBoundTests.AG_MSL.trajectory_type)
         ballistic: "PropagatorBallistic" = PropagatorBallistic(EarlyBoundTests.AG_MSL.trajectory)
         ballistic.ephemeris_interval.set_start_and_stop_times(
             "1 Jul 1999 00:00:00.00", ballistic.ephemeris_interval.find_stop_time()
         )
-        ballistic.set_impact_location_type(VEHICLE_IMPACT_LOCATION.POINT)
+        ballistic.set_impact_location_type(VehicleImpactLocation.POINT)
         point: "VehicleImpactLocationPoint" = VehicleImpactLocationPoint(ballistic.impact_location)
-        point.set_launch_control_type(VEHICLE_LAUNCH_CONTROL.FIXED_TIME_OF_FLIGHT)
+        point.set_launch_control_type(VehicleLaunchControl.FIXED_TIME_OF_FLIGHT)
         tof: "LaunchVehicleControlFixedTimeOfFlight" = LaunchVehicleControlFixedTimeOfFlight(point.launch_control)
         tof.time_of_flight = 9024.46
         ballistic.propagate()
@@ -126,7 +126,7 @@ class EarlyBoundTests(TestBase):
 
         iIndex: int = 0
         while iIndex < len(arTypes):
-            eType: "VEHICLE_ATTITUDE" = VEHICLE_ATTITUDE(int(arTypes[iIndex][0]))
+            eType: "VehicleAttitude" = VehicleAttitude(int(arTypes[iIndex][0]))
             TestBase.logger.WriteLine8("\tType {0} is: {1} ({2})", iIndex, arTypes[iIndex][1], eType)
             if not EarlyBoundTests.AG_MSL.is_attitude_type_supported(eType):
                 Assert.fail("The {0} type should be supported!", eType)
@@ -134,13 +134,13 @@ class EarlyBoundTests(TestBase):
             # SetAttitudeType
             EarlyBoundTests.AG_MSL.set_attitude_type(eType)
             TestBase.logger.WriteLine6("\t\tThe new Attitude type is: {0}", EarlyBoundTests.AG_MSL.attitude_type)
-            eType2: "VEHICLE_ATTITUDE" = EarlyBoundTests.AG_MSL.attitude_type
+            eType2: "VehicleAttitude" = EarlyBoundTests.AG_MSL.attitude_type
             Assert.assertEqual(eType, eType2)
-            if eType == VEHICLE_ATTITUDE.STANDARD:
+            if eType == VehicleAttitude.STANDARD:
                 # Attitude
                 oHelper = BasicAttitudeStandardHelper(TestBase.Application)
                 oHelper.Run(IVehicleAttitudeStandard(EarlyBoundTests.AG_MSL.attitude))
-            elif eType == VEHICLE_ATTITUDE.REAL_TIME:
+            elif eType == VehicleAttitude.REAL_TIME:
                 oHelper = BasicAttitudeRealTimeHelper(
                     TestBase.Application, clr.CastAs(EarlyBoundTests.AG_MSL, IStkObject)
                 )
@@ -230,7 +230,7 @@ class EarlyBoundTests(TestBase):
 
         iIndex: int = 0
         while iIndex < len(arTypes):
-            eType: "PROPAGATOR_TYPE" = PROPAGATOR_TYPE(int(arTypes[iIndex][0]))
+            eType: "PropagatorType" = PropagatorType(int(arTypes[iIndex][0]))
             TestBase.logger.WriteLine8("\tType {0} is: {1} ({2})", iIndex, arTypes[iIndex][1], eType)
             if not EarlyBoundTests.AG_MSL.is_trajectory_type_supported(eType):
                 Assert.fail("The {0} type should be supported!", eType)
@@ -240,7 +240,7 @@ class EarlyBoundTests(TestBase):
             TestBase.logger.WriteLine6(
                 "\tThe new Missile propagator type is: {0}", EarlyBoundTests.AG_MSL.trajectory_type
             )
-            eType2: "PROPAGATOR_TYPE" = EarlyBoundTests.AG_MSL.trajectory_type
+            eType2: "PropagatorType" = EarlyBoundTests.AG_MSL.trajectory_type
             Assert.assertEqual(eType, eType2)
             # Trajectory
             oHelper = BasicPropagatorHelper(TestBase.Application)
@@ -258,7 +258,7 @@ class EarlyBoundTests(TestBase):
     # endregion
 
     # region SetAttributesType
-    def SetAttributesType(self, eType: "VEHICLE_GRAPHICS_2D_ATTRIBUTE_TYPE"):
+    def SetAttributesType(self, eType: "VehicleGraphics2DAttributeType"):
         oGfx: "MissileGraphics" = EarlyBoundTests.AG_MSL.graphics
         Assert.assertIsNotNone(oGfx)
 
@@ -271,7 +271,7 @@ class EarlyBoundTests(TestBase):
                 "The {0} supported element is: {1} ({2})",
                 iIndex,
                 arSupportedTypes[iIndex][1],
-                VEHICLE_GRAPHICS_2D_ATTRIBUTE_TYPE(int(arSupportedTypes[iIndex][0])),
+                VehicleGraphics2DAttributeType(int(arSupportedTypes[iIndex][0])),
             )
 
             iIndex += 1
@@ -282,7 +282,7 @@ class EarlyBoundTests(TestBase):
 
         oGfx.set_attributes_type(eType)
         TestBase.logger.WriteLine6("The new Attributes type is: {0}", oGfx.attributes_type)
-        eType2: "VEHICLE_GRAPHICS_2D_ATTRIBUTE_TYPE" = oGfx.attributes_type
+        eType2: "VehicleGraphics2DAttributeType" = oGfx.attributes_type
         Assert.assertEqual(eType, eType2)
 
     # endregion
@@ -293,7 +293,7 @@ class EarlyBoundTests(TestBase):
     def test_GfxAttributesBasic(self):
         TestBase.logger.WriteLine("----- THE GRAPHICS ATTRIBUTES BASIC TEST ----- BEGIN -----")
 
-        self.SetAttributesType(VEHICLE_GRAPHICS_2D_ATTRIBUTE_TYPE.BASIC)
+        self.SetAttributesType(VehicleGraphics2DAttributeType.BASIC)
 
         oHelper = GfxAttributesTrajectoryHelper()
         oHelper.Run(VehicleGraphics2DAttributesTrajectory(EarlyBoundTests.AG_MSL.graphics.attributes))
@@ -321,10 +321,10 @@ class EarlyBoundTests(TestBase):
         EarlyBoundTests.InitHelper()
 
         ac1: "Aircraft" = clr.CastAs(TestBase.Application.current_scenario.children["Boing737"], Aircraft)
-        ac1.set_route_type(PROPAGATOR_TYPE.GREAT_ARC)
+        ac1.set_route_type(PropagatorType.GREAT_ARC)
         TestBase.PropagateGreatArc(clr.CastAs(ac1.route, PropagatorGreatArc))
 
-        self.SetAttributesType(VEHICLE_GRAPHICS_2D_ATTRIBUTE_TYPE.ACCESS)
+        self.SetAttributesType(VehicleGraphics2DAttributeType.ACCESS)
 
         oHelper = GfxAttributesAccessHelper()
         oHelper.Run(
@@ -351,7 +351,7 @@ class EarlyBoundTests(TestBase):
     def test_GfxAttributesCustom(self):
         TestBase.logger.WriteLine("----- THE GRAPHICS ATTRIBUTES CUSTOM TEST ----- BEGIN -----")
 
-        self.SetAttributesType(VEHICLE_GRAPHICS_2D_ATTRIBUTE_TYPE.CUSTOM)
+        self.SetAttributesType(VehicleGraphics2DAttributeType.CUSTOM)
 
         # Custom Intervals
         oHelper = GfxAttributesCustomHelper()
@@ -382,7 +382,7 @@ class EarlyBoundTests(TestBase):
     def test_GfxAttributesTimeComponents(self):
         TestBase.logger.WriteLine("----- THE GRAPHICS ATTRIBUTES ACCESS TEST ----- BEGIN -----")
 
-        self.SetAttributesType(VEHICLE_GRAPHICS_2D_ATTRIBUTE_TYPE.TIME_COMPONENTS)
+        self.SetAttributesType(VehicleGraphics2DAttributeType.TIME_COMPONENTS)
 
         oHelper = GfxAttributesTimeComponentsHelper()
         oHelper.Run(
@@ -413,11 +413,11 @@ class EarlyBoundTests(TestBase):
     @category("GraphicsTests.Attributes")
     def test_GfxAttributesRealTime(self):
         TestBase.logger.WriteLine("----- THE GRAPHICS ATTRIBUTES REAL TIME TEST ----- BEGIN -----")
-        if EarlyBoundTests.AG_MSL.trajectory_type != PROPAGATOR_TYPE.REAL_TIME:
+        if EarlyBoundTests.AG_MSL.trajectory_type != PropagatorType.REAL_TIME:
             bCaught: bool = False
             try:
                 bCaught = False
-                self.SetAttributesType(VEHICLE_GRAPHICS_2D_ATTRIBUTE_TYPE.REAL_TIME)
+                self.SetAttributesType(VehicleGraphics2DAttributeType.REAL_TIME)
 
             except Exception as e:
                 bCaught = True
@@ -426,9 +426,9 @@ class EarlyBoundTests(TestBase):
             if not bCaught:
                 Assert.fail("The SetAttributesType should not allow to set REAL_TIME value!")
 
-        EarlyBoundTests.AG_MSL.set_trajectory_type(PROPAGATOR_TYPE.REAL_TIME)
+        EarlyBoundTests.AG_MSL.set_trajectory_type(PropagatorType.REAL_TIME)
         (clr.CastAs(EarlyBoundTests.AG_MSL.trajectory, PropagatorRealtime)).propagate()
-        self.SetAttributesType(VEHICLE_GRAPHICS_2D_ATTRIBUTE_TYPE.REAL_TIME)
+        self.SetAttributesType(VehicleGraphics2DAttributeType.REAL_TIME)
 
         oHelper = GfxAttributesRealTimeHelper()
         oHelper.Run(
@@ -614,9 +614,9 @@ class EarlyBoundTests(TestBase):
         # set VO.Model type to FILE
         oModel: "IGraphics3DModel" = EarlyBoundTests.AG_MSL.graphics_3d.model
         TestBase.logger.WriteLine6("The current ModelType is: {0}", oModel.model_type)
-        oModel.model_type = MODEL_TYPE.FILE
+        oModel.model_type = ModelType.FILE
         TestBase.logger.WriteLine6("The new ModelType is: {0}", oModel.model_type)
-        Assert.assertEqual(MODEL_TYPE.FILE, oModel.model_type)
+        Assert.assertEqual(ModelType.FILE, oModel.model_type)
         # set new ModelFile.Filename
         oModelFile: "Graphics3DModelFile" = Graphics3DModelFile(oModel.model_data)
         Assert.assertIsNotNone(oModelFile)
@@ -686,7 +686,7 @@ class EarlyBoundTests(TestBase):
     # region ExportToDataFile
     def test_ExportToDataFile(self):
         ms: "Missile" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.MISSILE, "ExportMs"), Missile
+            TestBase.Application.current_scenario.children.new(STKObjectType.MISSILE, "ExportMs"), Missile
         )
         ball: "PropagatorBallistic" = clr.CastAs(ms.trajectory, PropagatorBallistic)
         impactLocation: "VehicleImpactLocationPoint" = clr.CastAs(ball.impact_location, VehicleImpactLocationPoint)
@@ -702,7 +702,7 @@ class EarlyBoundTests(TestBase):
         exportHelper.PropDefExportTool(ms.export_tools.get_propagator_definition_export_tool())
         exportHelper.EphemerisStkBinaryExportTool(ms.export_tools.get_ephemeris_stk_binary_export_tool(), False)
 
-        TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.MISSILE, "ExportMs")
+        TestBase.Application.current_scenario.children.unload(STKObjectType.MISSILE, "ExportMs")
 
     # endregion
 

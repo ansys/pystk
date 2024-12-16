@@ -50,7 +50,7 @@ Property detail
 
 .. py:property:: shape_model
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolCalculationAltitude.shape_model
-    :type: SPATIAL_CALCULATION_ALTITUDE_REFERENCE_TYPE
+    :type: SpatialCalculationAltitudeReferenceType
 
     The Volume Calc Altitude Reference Type.
 

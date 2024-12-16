@@ -53,7 +53,7 @@ class ConnectSnippets(CodeSnippetsTestBase):
 
         # ExecuteMultipleCommands expect a one dimensional array of Connect commands
         result: "ExecuteMultipleCommandsResult" = root.execute_multiple_commands(
-            connectCommands, EXECUTE_MULTIPLE_COMMANDS_MODE.EXCEPTION_ON_ERROR
+            connectCommands, ExecuteMultipleCommandsMode.EXCEPTION_ON_ERROR
         )
 
     # endregion
@@ -78,7 +78,7 @@ class ConnectSnippets(CodeSnippetsTestBase):
         obj = ["GetSTKVersion /"]
 
         result: "ExecuteMultipleCommandsResult" = CodeSnippetsTestBase.m_Root.execute_multiple_commands(
-            obj, EXECUTE_MULTIPLE_COMMANDS_MODE.CONTINUE_ON_ERROR
+            obj, ExecuteMultipleCommandsMode.CONTINUE_ON_ERROR
         )
         self.ExtractDataFromMultiExecConnectResult(result)
 

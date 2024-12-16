@@ -55,14 +55,14 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: set_atmospheric_turbulence_model_type(self, value: ATMOSPHERIC_TURBULENCE_MODEL_TYPE) -> None
+.. py:method:: set_atmospheric_turbulence_model_type(self, value: AtmosphericTurbulenceModelType) -> None
     :canonical: ansys.stk.core.stkobjects.LaserTroposphericScintillationLossModelITURP1814.set_atmospheric_turbulence_model_type
 
     Set the atmospheric turbulence model type.
 
     :Parameters:
 
-    **value** : :obj:`~ATMOSPHERIC_TURBULENCE_MODEL_TYPE`
+    **value** : :obj:`~AtmosphericTurbulenceModelType`
 
     :Returns:
 

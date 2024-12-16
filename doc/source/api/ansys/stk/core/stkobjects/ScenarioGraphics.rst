@@ -193,7 +193,7 @@ Property detail
 
 .. py:property:: text_outline_style
     :canonical: ansys.stk.core.stkobjects.ScenarioGraphics.text_outline_style
-    :type: TEXT_OUTLINE_STYLE
+    :type: TextOutlineStyle
 
     Default text outline style.
 

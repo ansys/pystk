@@ -40,7 +40,7 @@ Property detail
 
 .. py:property:: band_order
     :canonical: ansys.stk.core.graphics.BandOrderFilter.band_order
-    :type: RASTER_FORMAT
+    :type: RasterFormat
 
     Gets or sets the raster format indicating the desired order of the bands in the source raster.
 

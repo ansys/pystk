@@ -180,7 +180,7 @@ Property detail
 
 .. py:property:: smart_run_mode
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSOptions.smart_run_mode
-    :type: SMART_RUN_MODE
+    :type: SmartRunMode
 
     Controls whether the run will attempt to only run changed segments.
 

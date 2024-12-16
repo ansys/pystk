@@ -30,7 +30,7 @@ class J2PerturbationSnippets(CodeSnippetsTestBase):
     def setUp(self):
         J2PerturbationSnippets.m_Object = clr.CastAs(
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-                STK_OBJECT_TYPE.SATELLITE, J2PerturbationSnippets.m_DefaultName
+                STKObjectType.SATELLITE, J2PerturbationSnippets.m_DefaultName
             ),
             Satellite,
         )
@@ -41,7 +41,7 @@ class J2PerturbationSnippets(CodeSnippetsTestBase):
     # region TestTearDown
     def tearDown(self):
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(
-            STK_OBJECT_TYPE.SATELLITE, J2PerturbationSnippets.m_DefaultName
+            STKObjectType.SATELLITE, J2PerturbationSnippets.m_DefaultName
         )
         J2PerturbationSnippets.m_Object = None
 
@@ -53,7 +53,7 @@ class J2PerturbationSnippets(CodeSnippetsTestBase):
 
     def ConfigureSatelliteWithJ2PerturbationPropagator(self, satellite: "Satellite"):
         # Set propagator to SGP4
-        satellite.set_propagator_type(PROPAGATOR_TYPE.J2_PERTURBATION)
+        satellite.set_propagator_type(PropagatorType.J2_PERTURBATION)
 
         # J2 Perturbation propagator
         j2prop: "PropagatorJ2Perturbation" = clr.CastAs(satellite.propagator, PropagatorJ2Perturbation)
@@ -66,9 +66,9 @@ class J2PerturbationSnippets(CodeSnippetsTestBase):
         initial: "VehicleZonalPropagatorInitialState" = j2prop.initial_state
         initial.representation.epoch = "1 Jan 2012 12:00:00.000"
         initial.representation.assign_cartesian(
-            COORDINATE_SYSTEM.FIXED, -1514.4, -6790.1, -1.25, 4.8151, 1.771, 5.6414
+            CoordinateSystem.FIXED, -1514.4, -6790.1, -1.25, 4.8151, 1.771, 5.6414
         )  # in km/sec
-        initial.ellipse_options = VEHICLE_ELLIPSE_OPTION_TYPE.SECULARLY_PRECESSING
+        initial.ellipse_options = VehicleEllipseOptionType.SECULARLY_PRECESSING
 
         # Propagate
         j2prop.propagate()

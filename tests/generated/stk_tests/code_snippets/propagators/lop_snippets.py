@@ -30,7 +30,7 @@ class LOPSnippets(CodeSnippetsTestBase):
     def setUp(self):
         LOPSnippets.m_Object = clr.CastAs(
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-                STK_OBJECT_TYPE.SATELLITE, LOPSnippets.m_DefaultName
+                STKObjectType.SATELLITE, LOPSnippets.m_DefaultName
             ),
             Satellite,
         )
@@ -40,9 +40,7 @@ class LOPSnippets(CodeSnippetsTestBase):
 
     # region TestTearDown
     def tearDown(self):
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(
-            STK_OBJECT_TYPE.SATELLITE, LOPSnippets.m_DefaultName
-        )
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STKObjectType.SATELLITE, LOPSnippets.m_DefaultName)
         LOPSnippets.m_Object = None
 
     # endregion
@@ -53,7 +51,7 @@ class LOPSnippets(CodeSnippetsTestBase):
 
     def ConfigureLOPPropagator(self, satellite: "Satellite"):
         # Set satellite propagator to LOP
-        satellite.set_propagator_type(PROPAGATOR_TYPE.LOP)
+        satellite.set_propagator_type(PropagatorType.LOP)
 
         # Get PropagatorLOP interface
         lopProp: "PropagatorLOP" = clr.CastAs(satellite.propagator, PropagatorLOP)
@@ -66,7 +64,7 @@ class LOPSnippets(CodeSnippetsTestBase):
         orbit: "IOrbitState" = lopProp.initial_state.representation
         orbit.epoch = "1 Jan 2012 12:00:00.000"
         orbit.assign_cartesian(
-            COORDINATE_SYSTEM.FIXED, -1120.32, -9520.84, 0.129, 2.155, -1.54416, 5.668412
+            CoordinateSystem.FIXED, -1120.32, -9520.84, 0.129, 2.155, -1.54416, 5.668412
         )  # in km/sec
 
         # Configure force model

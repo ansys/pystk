@@ -188,40 +188,40 @@ Method detail
 
 
 
-.. py:method:: enable_control_parameter(self, param: CONTROL_POWER_SOLAR_ARRAY) -> None
+.. py:method:: enable_control_parameter(self, param: ControlPowerSolarArray) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.PowerSolarArray.enable_control_parameter
 
     Enable the specified control parameter.
 
     :Parameters:
 
-    **param** : :obj:`~CONTROL_POWER_SOLAR_ARRAY`
+    **param** : :obj:`~ControlPowerSolarArray`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: disable_control_parameter(self, param: CONTROL_POWER_SOLAR_ARRAY) -> None
+.. py:method:: disable_control_parameter(self, param: ControlPowerSolarArray) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.PowerSolarArray.disable_control_parameter
 
     Disables the specified control parameter.
 
     :Parameters:
 
-    **param** : :obj:`~CONTROL_POWER_SOLAR_ARRAY`
+    **param** : :obj:`~ControlPowerSolarArray`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_control_parameter_enabled(self, param: CONTROL_POWER_SOLAR_ARRAY) -> bool
+.. py:method:: is_control_parameter_enabled(self, param: ControlPowerSolarArray) -> bool
     :canonical: ansys.stk.core.stkobjects.astrogator.PowerSolarArray.is_control_parameter_enabled
 
     Sees if the specified control is enabled.
 
     :Parameters:
 
-    **param** : :obj:`~CONTROL_POWER_SOLAR_ARRAY`
+    **param** : :obj:`~ControlPowerSolarArray`
 
     :Returns:
 

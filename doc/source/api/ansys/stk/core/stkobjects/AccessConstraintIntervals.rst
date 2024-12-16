@@ -50,7 +50,7 @@ Property detail
 
 .. py:property:: action_type
     :canonical: ansys.stk.core.stkobjects.AccessConstraintIntervals.action_type
-    :type: ACTION_TYPE
+    :type: ActionType
 
     This property is deprecated. Use ExclIntvl instead to determine whether intervals are to be excluded or not. The action type (include or exclude).
 

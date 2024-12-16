@@ -56,13 +56,13 @@ Property detail
 
 .. py:property:: reference_shape
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPointOnSurface.reference_shape
-    :type: SURFACE_REFERENCE_SHAPE_TYPE
+    :type: SurfaceReferenceShapeType
 
     Specify a reference shape.
 
 .. py:property:: surface_type
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPointOnSurface.surface_type
-    :type: SURFACE_SHAPE_TYPE
+    :type: SurfaceShapeType
 
     Specify a surface type.
 

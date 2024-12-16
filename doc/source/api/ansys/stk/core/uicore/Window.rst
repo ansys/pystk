@@ -77,7 +77,7 @@ Property detail
 
 .. py:property:: window_state
     :canonical: ansys.stk.core.uicore.Window.window_state
-    :type: APPLICATION_WINDOW_STATE
+    :type: ApplicationWindowState
 
     The window state.
 
@@ -107,7 +107,7 @@ Property detail
 
 .. py:property:: dock_style
     :canonical: ansys.stk.core.uicore.Window.dock_style
-    :type: WINDOW_DOCK_STYLE
+    :type: WindowDockStyle
 
     The window docking style.
 
@@ -190,14 +190,14 @@ Method detail
 
         :obj:`~typing.Any`
 
-.. py:method:: get_service_by_type(self, service_type: WINDOW_SERVICE_TYPE) -> typing.Any
+.. py:method:: get_service_by_type(self, service_type: WindowServiceType) -> typing.Any
     :canonical: ansys.stk.core.uicore.Window.get_service_by_type
 
     Return a service object that can be accessed at runtime. The method returns null if no service object is associated with the specified service type.
 
     :Parameters:
 
-    **service_type** : :obj:`~WINDOW_SERVICE_TYPE`
+    **service_type** : :obj:`~WindowServiceType`
 
     :Returns:
 

@@ -66,13 +66,13 @@ Property detail
 
 .. py:property:: turn_direction
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategySmoothAcceleration.turn_direction
-    :type: SMOOTH_ACCELERATION_LEFT_RIGHT
+    :type: SmoothAccelerationLeftRight
 
     Gets or sets the roll turn direction for a Smooth Accel basic maneuver strategy.
 
 .. py:property:: roll_rate_mode
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategySmoothAcceleration.roll_rate_mode
-    :type: PERFORMANCE_MODEL_OVERRIDE
+    :type: PerformanceModelOverride
 
     Gets or sets the roll rate mode for a Smooth Accel basic maneuver strategy.
 
@@ -102,7 +102,7 @@ Property detail
 
 .. py:property:: load_factor_mode
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategySmoothAcceleration.load_factor_mode
-    :type: PERFORMANCE_MODEL_OVERRIDE
+    :type: PerformanceModelOverride
 
     Gets or sets the load factor mode for the Smooth Accel basic maneuver strategy.
 
@@ -132,7 +132,7 @@ Property detail
 
 .. py:property:: stop_conditions
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategySmoothAcceleration.stop_conditions
-    :type: SMOOTH_ACCELERATION_STOP_CONDITIONS
+    :type: SmoothAccelerationStopConditions
 
     Gets or sets the stop condition for the Smooth Accel basic maneuver strategy.
 

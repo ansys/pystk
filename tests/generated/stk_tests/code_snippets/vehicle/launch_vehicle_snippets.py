@@ -30,7 +30,7 @@ class LaunchVehicleSnippets(CodeSnippetsTestBase):
         CodeSnippetsTestBase.m_Root.units_preferences.reset_units()
         LaunchVehicleSnippets.m_Object = clr.CastAs(
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-                STK_OBJECT_TYPE.LAUNCH_VEHICLE, LaunchVehicleSnippets.m_DefaultName
+                STKObjectType.LAUNCH_VEHICLE, LaunchVehicleSnippets.m_DefaultName
             ),
             LaunchVehicle,
         )
@@ -40,7 +40,7 @@ class LaunchVehicleSnippets(CodeSnippetsTestBase):
     # region TestTearDown
     def tearDown(self):
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(
-            STK_OBJECT_TYPE.LAUNCH_VEHICLE, LaunchVehicleSnippets.m_DefaultName
+            STKObjectType.LAUNCH_VEHICLE, LaunchVehicleSnippets.m_DefaultName
         )
         LaunchVehicleSnippets.m_Object = None
 
@@ -54,7 +54,7 @@ class LaunchVehicleSnippets(CodeSnippetsTestBase):
     def CreateLaunchVehicleOnCurrentScenarioCentralBody(self, root: "StkObjectRoot"):
         # Create the Launch vehicle
         launchVehicle: "LaunchVehicle" = clr.CastAs(
-            root.current_scenario.children.new(STK_OBJECT_TYPE.LAUNCH_VEHICLE, "MyLaunchVehicle"), LaunchVehicle
+            root.current_scenario.children.new(STKObjectType.LAUNCH_VEHICLE, "MyLaunchVehicle"), LaunchVehicle
         )
 
     # endregion
@@ -64,6 +64,6 @@ class LaunchVehicleSnippets(CodeSnippetsTestBase):
         self.DetermineIfTrajectoryIsSupported(LaunchVehicleSnippets.m_Object)
 
     def DetermineIfTrajectoryIsSupported(self, launchVehicle: "LaunchVehicle"):
-        supported: bool = launchVehicle.is_trajectory_type_supported(PROPAGATOR_TYPE.REAL_TIME)
+        supported: bool = launchVehicle.is_trajectory_type_supported(PropagatorType.REAL_TIME)
 
     # endregion

@@ -162,7 +162,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: paste(self, index_or_name: typing.Any, direction: PROFILE_INSERT_DIRECTION) -> IProfile
+.. py:method:: paste(self, index_or_name: typing.Any, direction: ProfileInsertDirection) -> IProfile
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileCollection.paste
 
     Pastes the profile from the clipboard and inserts into the list.
@@ -170,13 +170,13 @@ Method detail
     :Parameters:
 
     **index_or_name** : :obj:`~typing.Any`
-    **direction** : :obj:`~PROFILE_INSERT_DIRECTION`
+    **direction** : :obj:`~ProfileInsertDirection`
 
     :Returns:
 
         :obj:`~IProfile`
 
-.. py:method:: insert_copy(self, profile: IProfile, index_or_name: typing.Any, direction: PROFILE_INSERT_DIRECTION) -> IProfile
+.. py:method:: insert_copy(self, profile: IProfile, index_or_name: typing.Any, direction: ProfileInsertDirection) -> IProfile
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileCollection.insert_copy
 
     Copy the profile and inserts the copy into the list.
@@ -185,13 +185,13 @@ Method detail
 
     **profile** : :obj:`~IProfile`
     **index_or_name** : :obj:`~typing.Any`
-    **direction** : :obj:`~PROFILE_INSERT_DIRECTION`
+    **direction** : :obj:`~ProfileInsertDirection`
 
     :Returns:
 
         :obj:`~IProfile`
 
-.. py:method:: add2(self, profile_name: str, index_or_name: typing.Any, direction: PROFILE_INSERT_DIRECTION) -> IProfile
+.. py:method:: add2(self, profile_name: str, index_or_name: typing.Any, direction: ProfileInsertDirection) -> IProfile
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileCollection.add2
 
     Add a profile.
@@ -200,7 +200,7 @@ Method detail
 
     **profile_name** : :obj:`~str`
     **index_or_name** : :obj:`~typing.Any`
-    **direction** : :obj:`~PROFILE_INSERT_DIRECTION`
+    **direction** : :obj:`~ProfileInsertDirection`
 
     :Returns:
 

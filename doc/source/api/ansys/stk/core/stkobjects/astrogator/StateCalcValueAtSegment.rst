@@ -54,7 +54,7 @@ Property detail
 
 .. py:property:: segment_state_to_use
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcValueAtSegment.segment_state_to_use
-    :type: SEGMENT_STATE
+    :type: SegmentState
 
     Gets or sets the segment state to use in the calculation.
 

@@ -52,7 +52,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.IDataProviderInfo.type
-    :type: DATA_PROVIDER_TYPE
+    :type: DataProviderType
 
     Returns a type of the data provider.
 

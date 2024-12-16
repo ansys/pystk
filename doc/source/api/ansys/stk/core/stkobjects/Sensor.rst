@@ -99,7 +99,7 @@ Property detail
 
 .. py:property:: pattern_type
     :canonical: ansys.stk.core.stkobjects.Sensor.pattern_type
-    :type: SENSOR_PATTERN
+    :type: SensorPattern
 
     Criterion for defining the sensor pattern. A member of the AgESnPattern enumeration.
 
@@ -111,7 +111,7 @@ Property detail
 
 .. py:property:: pointing_type
     :canonical: ansys.stk.core.stkobjects.Sensor.pointing_type
-    :type: SENSOR_POINTING
+    :type: SensorPointing
 
     The sensor's pointing type. A member of the AgESnPointing enumeration.
 
@@ -123,7 +123,7 @@ Property detail
 
 .. py:property:: az_el_mask
     :canonical: ansys.stk.core.stkobjects.Sensor.az_el_mask
-    :type: AZ_EL_MASK_TYPE
+    :type: AzElMaskType
 
     Get the az-el mask.
 
@@ -147,7 +147,7 @@ Property detail
 
 .. py:property:: refraction
     :canonical: ansys.stk.core.stkobjects.Sensor.refraction
-    :type: SENSOR_REFRACTION_TYPE
+    :type: SensorRefractionType
 
     Refraction method, a member of the AgESnRefractionType enumeration.
 
@@ -165,7 +165,7 @@ Property detail
 
 .. py:property:: location_type
     :canonical: ansys.stk.core.stkobjects.Sensor.location_type
-    :type: SENSOR_LOCATION
+    :type: SensorLocation
 
     The location type being used by the sensor.
 
@@ -216,14 +216,14 @@ Method detail
 -------------
 
 
-.. py:method:: set_pattern_type(self, pattern_type: SENSOR_PATTERN) -> None
+.. py:method:: set_pattern_type(self, pattern_type: SensorPattern) -> None
     :canonical: ansys.stk.core.stkobjects.Sensor.set_pattern_type
 
     Set the pattern type.
 
     :Parameters:
 
-    **pattern_type** : :obj:`~SENSOR_PATTERN`
+    **pattern_type** : :obj:`~SensorPattern`
 
     :Returns:
 
@@ -231,14 +231,14 @@ Method detail
 
 
 
-.. py:method:: set_pointing_type(self, pointing_type: SENSOR_POINTING) -> None
+.. py:method:: set_pointing_type(self, pointing_type: SensorPointing) -> None
     :canonical: ansys.stk.core.stkobjects.Sensor.set_pointing_type
 
     Set the sensor's pointing type, using the AgESnPointing enumeration.
 
     :Parameters:
 
-    **pointing_type** : :obj:`~SENSOR_POINTING`
+    **pointing_type** : :obj:`~SensorPointing`
 
     :Returns:
 
@@ -268,14 +268,14 @@ Method detail
         :obj:`~None`
 
 
-.. py:method:: set_az_el_mask(self, az_el_mask_type: AZ_EL_MASK_TYPE) -> None
+.. py:method:: set_az_el_mask(self, az_el_mask_type: AzElMaskType) -> None
     :canonical: ansys.stk.core.stkobjects.Sensor.set_az_el_mask
 
     Set the az-el mask type, using the AgEAzElMaskType enumeration.
 
     :Parameters:
 
-    **az_el_mask_type** : :obj:`~AZ_EL_MASK_TYPE`
+    **az_el_mask_type** : :obj:`~AzElMaskType`
 
     :Returns:
 
@@ -304,14 +304,14 @@ Method detail
 
 
 
-.. py:method:: set_location_type(self, location_type: SENSOR_LOCATION) -> None
+.. py:method:: set_location_type(self, location_type: SensorLocation) -> None
     :canonical: ansys.stk.core.stkobjects.Sensor.set_location_type
 
     Set the sensor's location type, a member of the AgESnLocation enumeration.
 
     :Parameters:
 
-    **location_type** : :obj:`~SENSOR_LOCATION`
+    **location_type** : :obj:`~SensorLocation`
 
     :Returns:
 
@@ -320,14 +320,14 @@ Method detail
 
 
 
-.. py:method:: is_refraction_type_supported(self, model: SENSOR_REFRACTION_TYPE) -> bool
+.. py:method:: is_refraction_type_supported(self, model: SensorRefractionType) -> bool
     :canonical: ansys.stk.core.stkobjects.Sensor.is_refraction_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **model** : :obj:`~SENSOR_REFRACTION_TYPE`
+    **model** : :obj:`~SensorRefractionType`
 
     :Returns:
 

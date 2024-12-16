@@ -97,13 +97,13 @@ Property detail
 
 .. py:property:: reference_bandwidth
     :canonical: ansys.stk.core.stkobjects.CommSystem.reference_bandwidth
-    :type: COMM_SYSTEM_REFERENCE_BANDWIDTH
+    :type: CommSystemReferenceBandwidth
 
     Gets or sets the reference bandwidth.
 
 .. py:property:: constraining_role
     :canonical: ansys.stk.core.stkobjects.CommSystem.constraining_role
-    :type: COMM_SYSTEM_CONSTRAINING_ROLE
+    :type: CommSystemConstrainingRole
 
     Gets or sets the constraining role.
 
@@ -121,7 +121,7 @@ Property detail
 
 .. py:property:: save_mode
     :canonical: ansys.stk.core.stkobjects.CommSystem.save_mode
-    :type: COMM_SYSTEM_SAVE_MODE
+    :type: CommSystemSaveMode
 
     Gets or sets the save mode.
 
@@ -174,14 +174,14 @@ Method detail
 
 
 
-.. py:method:: set_link_selection_criteria_type(self, value: COMM_SYSTEM_LINK_SELECTION_CRITERIA_TYPE) -> None
+.. py:method:: set_link_selection_criteria_type(self, value: CommSystemLinkSelectionCriteriaType) -> None
     :canonical: ansys.stk.core.stkobjects.CommSystem.set_link_selection_criteria_type
 
     Set the link selection criteria by name.
 
     :Parameters:
 
-    **value** : :obj:`~COMM_SYSTEM_LINK_SELECTION_CRITERIA_TYPE`
+    **value** : :obj:`~CommSystemLinkSelectionCriteriaType`
 
     :Returns:
 

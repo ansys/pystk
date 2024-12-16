@@ -70,7 +70,7 @@ Property detail
 
 .. py:property:: draw_at_altitude_mode
     :canonical: ansys.stk.core.stkobjects.CoverageGraphics3D.draw_at_altitude_mode
-    :type: COVERAGE_3D_DRAW_AT_ALTITUDE_MODE
+    :type: Coverage3dDrawAtAltitudeMode
 
     Draw at Altitude Polygon Mode.
 

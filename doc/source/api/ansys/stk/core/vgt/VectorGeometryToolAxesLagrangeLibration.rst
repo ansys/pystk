@@ -48,7 +48,7 @@ Property detail
 
 .. py:property:: point_type
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesLagrangeLibration.point_type
-    :type: LAGRANGE_LIBRATION_POINT_TYPE
+    :type: LagrangeLibrationPointType
 
     Specify a lagrange point (L1, L2, etc.).
 

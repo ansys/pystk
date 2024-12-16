@@ -46,7 +46,7 @@ Property detail
 
 .. py:property:: squared_type
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcSequenceDeltaVSquared.squared_type
-    :type: SQUARED_TYPE
+    :type: SquaredType
 
     Whether the value should be calculated as the sum of the squares of the maneuver Delta-Vs or the square of the sum of the maneuver Delta-Vs.
 

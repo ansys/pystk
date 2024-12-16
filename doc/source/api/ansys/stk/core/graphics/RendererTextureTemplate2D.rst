@@ -40,7 +40,7 @@ Property detail
 
 .. py:property:: internal_format
     :canonical: ansys.stk.core.graphics.RendererTextureTemplate2D.internal_format
-    :type: TEXTURE_FORMAT
+    :type: TextureFormat
 
     Gets an internal format of the texture.
 

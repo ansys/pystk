@@ -71,7 +71,7 @@ Method detail
 
         :obj:`~ExtrudedPolylineTriangulatorResult`
 
-.. py:method:: compute_with_winding_order(self, central_body: str, bottom_positions: list, top_positions: list, positions_winding_order: WINDING_ORDER) -> ExtrudedPolylineTriangulatorResult
+.. py:method:: compute_with_winding_order(self, central_body: str, bottom_positions: list, top_positions: list, positions_winding_order: WindingOrder) -> ExtrudedPolylineTriangulatorResult
     :canonical: ansys.stk.core.graphics.ExtrudedPolylineTriangulatorInitializer.compute_with_winding_order
 
     Compute an extrusion between bottomPositions and topPositions on the specified centralBody.
@@ -81,7 +81,7 @@ Method detail
     **central_body** : :obj:`~str`
     **bottom_positions** : :obj:`~list`
     **top_positions** : :obj:`~list`
-    **positions_winding_order** : :obj:`~WINDING_ORDER`
+    **positions_winding_order** : :obj:`~WindingOrder`
 
     :Returns:
 
@@ -102,7 +102,7 @@ Method detail
 
         :obj:`~ExtrudedPolylineTriangulatorResult`
 
-.. py:method:: compute_cartographic_with_winding_order(self, central_body: str, bottom_positions: list, top_positions: list, positions_winding_order: WINDING_ORDER) -> ExtrudedPolylineTriangulatorResult
+.. py:method:: compute_cartographic_with_winding_order(self, central_body: str, bottom_positions: list, top_positions: list, positions_winding_order: WindingOrder) -> ExtrudedPolylineTriangulatorResult
     :canonical: ansys.stk.core.graphics.ExtrudedPolylineTriangulatorInitializer.compute_cartographic_with_winding_order
 
     For convenience. Computes an extrusion between bottomPositions and topPositions on the specified centralBody using cartographic positions. This is equivalent to converting each position in bottomPositions and topPositions to cartesian and calling Compute.
@@ -112,7 +112,7 @@ Method detail
     **central_body** : :obj:`~str`
     **bottom_positions** : :obj:`~list`
     **top_positions** : :obj:`~list`
-    **positions_winding_order** : :obj:`~WINDING_ORDER`
+    **positions_winding_order** : :obj:`~WindingOrder`
 
     :Returns:
 
@@ -134,7 +134,7 @@ Method detail
 
         :obj:`~ExtrudedPolylineTriangulatorResult`
 
-.. py:method:: compute_with_altitudes_and_winding_order(self, central_body: str, positions: list, bottom_altitude: float, top_altitude: float, positions_winding_order: WINDING_ORDER) -> ExtrudedPolylineTriangulatorResult
+.. py:method:: compute_with_altitudes_and_winding_order(self, central_body: str, positions: list, bottom_altitude: float, top_altitude: float, positions_winding_order: WindingOrder) -> ExtrudedPolylineTriangulatorResult
     :canonical: ansys.stk.core.graphics.ExtrudedPolylineTriangulatorInitializer.compute_with_altitudes_and_winding_order
 
     Compute an extrusion of positions on the specified centralBody with a constant bottomAltitude and topAltitude.
@@ -145,7 +145,7 @@ Method detail
     **positions** : :obj:`~list`
     **bottom_altitude** : :obj:`~float`
     **top_altitude** : :obj:`~float`
-    **positions_winding_order** : :obj:`~WINDING_ORDER`
+    **positions_winding_order** : :obj:`~WindingOrder`
 
     :Returns:
 
@@ -167,7 +167,7 @@ Method detail
 
         :obj:`~ExtrudedPolylineTriangulatorResult`
 
-.. py:method:: compute_cartographic_with_altitudes_and_winding_order(self, central_body: str, positions: list, bottom_altitude: float, top_altitude: float, positions_winding_order: WINDING_ORDER) -> ExtrudedPolylineTriangulatorResult
+.. py:method:: compute_cartographic_with_altitudes_and_winding_order(self, central_body: str, positions: list, bottom_altitude: float, top_altitude: float, positions_winding_order: WindingOrder) -> ExtrudedPolylineTriangulatorResult
     :canonical: ansys.stk.core.graphics.ExtrudedPolylineTriangulatorInitializer.compute_cartographic_with_altitudes_and_winding_order
 
     For convenience. Computes an extrusion of positions on the specified centralBody with a constant bottomAltitude and topAltitude using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling Compute.
@@ -178,7 +178,7 @@ Method detail
     **positions** : :obj:`~list`
     **bottom_altitude** : :obj:`~float`
     **top_altitude** : :obj:`~float`
-    **positions_winding_order** : :obj:`~WINDING_ORDER`
+    **positions_winding_order** : :obj:`~WindingOrder`
 
     :Returns:
 
@@ -199,7 +199,7 @@ Method detail
 
         :obj:`~ExtrudedPolylineTriangulatorResult`
 
-.. py:method:: compute_single_constant_altitude_with_winding_order(self, central_body: str, positions: list, altitude: float, positions_winding_order: WINDING_ORDER) -> ExtrudedPolylineTriangulatorResult
+.. py:method:: compute_single_constant_altitude_with_winding_order(self, central_body: str, positions: list, altitude: float, positions_winding_order: WindingOrder) -> ExtrudedPolylineTriangulatorResult
     :canonical: ansys.stk.core.graphics.ExtrudedPolylineTriangulatorInitializer.compute_single_constant_altitude_with_winding_order
 
     Compute an extrusion of positions on the specified centralBody. One side of the extrusion has a constant altitude and the other has the original altitudes from positions.
@@ -209,7 +209,7 @@ Method detail
     **central_body** : :obj:`~str`
     **positions** : :obj:`~list`
     **altitude** : :obj:`~float`
-    **positions_winding_order** : :obj:`~WINDING_ORDER`
+    **positions_winding_order** : :obj:`~WindingOrder`
 
     :Returns:
 
@@ -230,7 +230,7 @@ Method detail
 
         :obj:`~ExtrudedPolylineTriangulatorResult`
 
-.. py:method:: compute_single_constant_altitude_cartographic_with_winding_order(self, central_body: str, positions: list, altitude: float, positions_winding_order: WINDING_ORDER) -> ExtrudedPolylineTriangulatorResult
+.. py:method:: compute_single_constant_altitude_cartographic_with_winding_order(self, central_body: str, positions: list, altitude: float, positions_winding_order: WindingOrder) -> ExtrudedPolylineTriangulatorResult
     :canonical: ansys.stk.core.graphics.ExtrudedPolylineTriangulatorInitializer.compute_single_constant_altitude_cartographic_with_winding_order
 
     For convenience. Computes an extrusion of positions on the specified centralBody using cartographic positions. One side of the extrusion has a constant altitude and the other has the original altitudes from positions...
@@ -240,7 +240,7 @@ Method detail
     **central_body** : :obj:`~str`
     **positions** : :obj:`~list`
     **altitude** : :obj:`~float`
-    **positions_winding_order** : :obj:`~WINDING_ORDER`
+    **positions_winding_order** : :obj:`~WindingOrder`
 
     :Returns:
 

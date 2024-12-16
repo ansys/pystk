@@ -83,14 +83,14 @@ Method detail
         :obj:`~Window`
 
 
-.. py:method:: arrange(self, arrange_style: WINDOW_ARRANGE_STYLE) -> None
+.. py:method:: arrange(self, arrange_style: WindowArrangeStyle) -> None
     :canonical: ansys.stk.core.uicore.WindowsCollection.arrange
 
     Arranges the application windows using the specified style.
 
     :Parameters:
 
-    **arrange_style** : :obj:`~WINDOW_ARRANGE_STYLE`
+    **arrange_style** : :obj:`~WindowArrangeStyle`
 
     :Returns:
 

@@ -53,7 +53,7 @@ Property detail
 
 .. py:property:: about_boresight
     :canonical: ansys.stk.core.stkutil.IOrientationAzEl.about_boresight
-    :type: AZ_EL_ABOUT_BORESIGHT
+    :type: AzElAboutBoresight
 
     Determines orientation of the X and Y axes with respect to the parent's reference frame.
 

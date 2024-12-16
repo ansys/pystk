@@ -52,7 +52,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlane.type
-    :type: PLANE_TYPE
+    :type: PlaneType
 
     Returns a type of the plane object.
 

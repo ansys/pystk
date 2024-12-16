@@ -92,7 +92,7 @@ class EarlyBoundTests(TestBase):
 
         # Reference frame.
         # Note: Reference frame is read-only for now. Might be writable in the future.
-        Assert.assertEqual(STAR_REFERENCE_FRAME.J2000, EarlyBoundTests.AG_SR.reference_frame)
+        Assert.assertEqual(StarReferenceFrame.J2000, EarlyBoundTests.AG_SR.reference_frame)
 
         # Radial velocity
         unit: str = (IStkObject(EarlyBoundTests.AG_SR)).root.units_preferences.get_current_unit_abbrv("Distance")

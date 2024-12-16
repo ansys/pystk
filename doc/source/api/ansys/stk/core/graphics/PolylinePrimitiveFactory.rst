@@ -80,7 +80,7 @@ Method detail
 
         :obj:`~PolylinePrimitive`
 
-.. py:method:: initialize_with_interpolator_and_set_hint(self, interpolator: IPositionInterpolator, set_hint: SET_HINT) -> PolylinePrimitive
+.. py:method:: initialize_with_interpolator_and_set_hint(self, interpolator: IPositionInterpolator, set_hint: SetHint) -> PolylinePrimitive
     :canonical: ansys.stk.core.graphics.PolylinePrimitiveFactory.initialize_with_interpolator_and_set_hint
 
     Initialize a polyline primitive with the specified interpolator and setHint.
@@ -88,21 +88,21 @@ Method detail
     :Parameters:
 
     **interpolator** : :obj:`~IPositionInterpolator`
-    **set_hint** : :obj:`~SET_HINT`
+    **set_hint** : :obj:`~SetHint`
 
     :Returns:
 
         :obj:`~PolylinePrimitive`
 
-.. py:method:: initialize_with_type_and_hint(self, polyline_type: POLYLINE_TYPE, set_hint: SET_HINT) -> PolylinePrimitive
+.. py:method:: initialize_with_type_and_hint(self, polyline_type: PolylineType, set_hint: SetHint) -> PolylinePrimitive
     :canonical: ansys.stk.core.graphics.PolylinePrimitiveFactory.initialize_with_type_and_hint
 
     Initialize a new instance of a polyline primitive with the specified polylineType and setHint.
 
     :Parameters:
 
-    **polyline_type** : :obj:`~POLYLINE_TYPE`
-    **set_hint** : :obj:`~SET_HINT`
+    **polyline_type** : :obj:`~PolylineType`
+    **set_hint** : :obj:`~SetHint`
 
     :Returns:
 
@@ -121,27 +121,27 @@ Method detail
 
         :obj:`~PolylinePrimitive`
 
-.. py:method:: initialize_with_hint(self, set_hint: SET_HINT) -> PolylinePrimitive
+.. py:method:: initialize_with_hint(self, set_hint: SetHint) -> PolylinePrimitive
     :canonical: ansys.stk.core.graphics.PolylinePrimitiveFactory.initialize_with_hint
 
     Initialize a new instance of a polyline primitive with the specified set hint. This is equivalent to constructing a polyline with a polyline type of LineStrip and the specified set hint.
 
     :Parameters:
 
-    **set_hint** : :obj:`~SET_HINT`
+    **set_hint** : :obj:`~SetHint`
 
     :Returns:
 
         :obj:`~PolylinePrimitive`
 
-.. py:method:: initialize_with_type(self, polyline_type: POLYLINE_TYPE) -> PolylinePrimitive
+.. py:method:: initialize_with_type(self, polyline_type: PolylineType) -> PolylinePrimitive
     :canonical: ansys.stk.core.graphics.PolylinePrimitiveFactory.initialize_with_type
 
     Initialize a polyline primitive with the specified polylineType. This is equivalent to constructing a polyline with the specified polylineType and a set hint of Frequent.
 
     :Parameters:
 
-    **polyline_type** : :obj:`~POLYLINE_TYPE`
+    **polyline_type** : :obj:`~PolylineType`
 
     :Returns:
 

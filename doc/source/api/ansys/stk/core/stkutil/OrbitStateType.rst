@@ -1,0 +1,51 @@
+OrbitStateType
+==============
+
+.. py:class:: ansys.stk.core.stkutil.OrbitStateType
+
+   IntEnum
+
+
+.. py:currentmodule:: OrbitStateType
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~CARTESIAN`
+              - Cartesian coordinate type.
+
+            * - :py:attr:`~CLASSICAL`
+              - Classical (Keplerian) coordinate type.
+
+            * - :py:attr:`~EQUINOCTIAL`
+              - Equinoctial coordinate type.
+
+            * - :py:attr:`~DELAUNAY`
+              - Delaunay variables coordinate type.
+
+            * - :py:attr:`~SPHERICAL`
+              - Spherical coordinate type.
+
+            * - :py:attr:`~MIXED_SPHERICAL`
+              - Mixed spherical coordinate type.
+
+            * - :py:attr:`~GEODETIC`
+              - Geodetic coordinate type.
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkutil import OrbitStateType
+
+

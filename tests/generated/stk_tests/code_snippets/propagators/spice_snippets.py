@@ -30,7 +30,7 @@ class SPICESnippets(CodeSnippetsTestBase):
     def setUp(self):
         SPICESnippets.m_Object = clr.CastAs(
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-                STK_OBJECT_TYPE.SATELLITE, SPICESnippets.m_DefaultName
+                STKObjectType.SATELLITE, SPICESnippets.m_DefaultName
             ),
             Satellite,
         )
@@ -41,7 +41,7 @@ class SPICESnippets(CodeSnippetsTestBase):
     # region TestTearDown
     def tearDown(self):
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(
-            STK_OBJECT_TYPE.SATELLITE, SPICESnippets.m_DefaultName
+            STKObjectType.SATELLITE, SPICESnippets.m_DefaultName
         )
         SPICESnippets.m_Object = None
 
@@ -49,7 +49,7 @@ class SPICESnippets(CodeSnippetsTestBase):
 
     # region ConfigureSPICEPropagator
     def test_ConfigureSPICEPropagator(self):
-        SPICESnippets.m_Object.set_propagator_type(PROPAGATOR_TYPE.SPICE)
+        SPICESnippets.m_Object.set_propagator_type(PropagatorType.SPICE)
         spiceProp: "PropagatorSPICE" = clr.CastAs(SPICESnippets.m_Object.propagator, PropagatorSPICE)
         self.ConfigureSPICEPropagator(
             spiceProp, TestBase.GetScenarioFile("CodeSnippetsTests", "External", "Satellite1.bsp")

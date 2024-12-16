@@ -88,19 +88,19 @@ Property detail
 
 .. py:property:: aberration_type
     :canonical: ansys.stk.core.stkobjects.AccessAdvancedSettings.aberration_type
-    :type: ABERRATION_TYPE
+    :type: AberrationType
 
     Gets or sets the model of aberration to be used in access computations.
 
 .. py:property:: clock_host
     :canonical: ansys.stk.core.stkobjects.AccessAdvancedSettings.clock_host
-    :type: IV_CLOCK_HOST
+    :type: IvClockHost
 
     Clock host object with which the clock with which time values are reported is colocated.
 
 .. py:property:: signal_sense_of_clock_host
     :canonical: ansys.stk.core.stkobjects.AccessAdvancedSettings.signal_sense_of_clock_host
-    :type: IV_TIME_SENSE
+    :type: IvTimeSense
 
     Gets or sets the direction of the signal with reference to the object selected as the ClockHost.
 

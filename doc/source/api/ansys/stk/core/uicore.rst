@@ -45,19 +45,19 @@ Summary
             :widths: auto
         
 
-            * - :py:class:`~ansys.stk.core.uicore.WINDOW_SERVICE_TYPE`
+            * - :py:class:`~ansys.stk.core.uicore.WindowServiceType`
               - Well-known types of services.
 
-            * - :py:class:`~ansys.stk.core.uicore.APPLICATION_WINDOW_STATE`
+            * - :py:class:`~ansys.stk.core.uicore.ApplicationWindowState`
               - Window states.
 
-            * - :py:class:`~ansys.stk.core.uicore.WINDOW_ARRANGE_STYLE`
+            * - :py:class:`~ansys.stk.core.uicore.WindowArrangeStyle`
               - Window layout styles.
 
-            * - :py:class:`~ansys.stk.core.uicore.WINDOW_DOCK_STYLE`
+            * - :py:class:`~ansys.stk.core.uicore.WindowDockStyle`
               - Window docking styles.
 
-            * - :py:class:`~ansys.stk.core.uicore.WINDOW_ARRANGE_STATE`
+            * - :py:class:`~ansys.stk.core.uicore.WindowArrangeState`
               - Floating state.
 
 
@@ -90,9 +90,9 @@ The STK UI Core library is a COM library containing classes, interfaces and enum
     :maxdepth: 1
     :hidden:
 
-    ≔ WINDOW_SERVICE_TYPE<uicore/WINDOW_SERVICE_TYPE_enum>
-    ≔ APPLICATION_WINDOW_STATE<uicore/APPLICATION_WINDOW_STATE_enum>
-    ≔ WINDOW_ARRANGE_STYLE<uicore/WINDOW_ARRANGE_STYLE_enum>
-    ≔ WINDOW_DOCK_STYLE<uicore/WINDOW_DOCK_STYLE_enum>
-    ≔ WINDOW_ARRANGE_STATE<uicore/WINDOW_ARRANGE_STATE_enum>
+    ≔ WindowServiceType<uicore/WindowServiceType>
+    ≔ ApplicationWindowState<uicore/ApplicationWindowState>
+    ≔ WindowArrangeStyle<uicore/WindowArrangeStyle>
+    ≔ WindowDockStyle<uicore/WindowDockStyle>
+    ≔ WindowArrangeState<uicore/WindowArrangeState>
 

@@ -66,7 +66,7 @@ Property detail
 
 .. py:property:: position_source
     :canonical: ansys.stk.core.stkobjects.Planet.position_source
-    :type: PLANET_POSITION_SOURCE_TYPE
+    :type: PlanetPositionSourceType
 
     The criterion for defining the planet. A member of the AgEPlPositionSourceType enumeration.
 

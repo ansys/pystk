@@ -29,7 +29,7 @@ class AttitudeSnippets(CodeSnippetsTestBase):
     def setUp(self):
         AttitudeSnippets.m_Object = clr.CastAs(
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-                STK_OBJECT_TYPE.SATELLITE, AttitudeSnippets.m_DefaultName
+                STKObjectType.SATELLITE, AttitudeSnippets.m_DefaultName
             ),
             Satellite,
         )
@@ -39,7 +39,7 @@ class AttitudeSnippets(CodeSnippetsTestBase):
     # region TestTearDown
     def tearDown(self):
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(
-            STK_OBJECT_TYPE.SATELLITE, AttitudeSnippets.m_DefaultName
+            STKObjectType.SATELLITE, AttitudeSnippets.m_DefaultName
         )
         AttitudeSnippets.m_Object = None
 
@@ -51,8 +51,8 @@ class AttitudeSnippets(CodeSnippetsTestBase):
 
     def SetAttitudeProfileTypeIsSupported(self, satellite: "Satellite"):
         standard: "AttitudeStandardOrbit" = clr.CastAs(satellite.attitude, AttitudeStandardOrbit)
-        if standard.basic.is_profile_type_supported(ATTITUDE_PROFILE.SPINNING):
-            standard.basic.set_profile_type(ATTITUDE_PROFILE.SPINNING)
+        if standard.basic.is_profile_type_supported(AttitudeProfile.SPINNING):
+            standard.basic.set_profile_type(AttitudeProfile.SPINNING)
 
     # endregion
 
@@ -61,9 +61,9 @@ class AttitudeSnippets(CodeSnippetsTestBase):
         self.AddsAttitudeDataBasedOnTimeOrderedSetOfQuaternions(AttitudeSnippets.m_Object)
 
     def AddsAttitudeDataBasedOnTimeOrderedSetOfQuaternions(self, satellite: "Satellite"):
-        satellite.set_attitude_type(VEHICLE_ATTITUDE.STANDARD)
+        satellite.set_attitude_type(VehicleAttitude.STANDARD)
         standard: "AttitudeStandardOrbit" = clr.CastAs(satellite.attitude, AttitudeStandardOrbit)
-        standard.basic.set_profile_type(ATTITUDE_PROFILE.INERTIALLY_FIXED)
+        standard.basic.set_profile_type(AttitudeProfile.INERTIALLY_FIXED)
         interfix: "AttitudeProfileInertial" = clr.CastAs(standard.basic.profile, AttitudeProfileInertial)
 
         interfix.inertial.assign_quaternion(-0.34298, -0.47081, 0.70345, 0.40725)
@@ -85,7 +85,7 @@ class AttitudeSnippets(CodeSnippetsTestBase):
     def AddsAttitudeDataBasedOnTimeOrderedSetOfQuaternionsInterpretedRelativeToCBF(
         self, root: "StkObjectRoot", satellite: "Satellite", cpfQuaternion
     ):
-        satellite.set_attitude_type(VEHICLE_ATTITUDE.REAL_TIME)
+        satellite.set_attitude_type(VehicleAttitude.REAL_TIME)
         realtime: "VehicleAttitudeRealTime" = clr.CastAs(satellite.attitude, VehicleAttitudeRealTime)
 
         i: int = 0
@@ -108,16 +108,16 @@ class AttitudeSnippets(CodeSnippetsTestBase):
 
     def AddsAttitudeDataBasedOnTimeOrderedSetOfEulerAngles(self, satellite: "Satellite"):
         # Set Attitude to Standard
-        satellite.set_attitude_type(VEHICLE_ATTITUDE.STANDARD)
+        satellite.set_attitude_type(VehicleAttitude.STANDARD)
         # Get AttitudeStandardOrbit interface
         standard: "AttitudeStandardOrbit" = clr.CastAs(satellite.attitude, AttitudeStandardOrbit)
 
         # Set Profile to Inertially Fixed
-        standard.basic.set_profile_type(ATTITUDE_PROFILE.INERTIALLY_FIXED)
+        standard.basic.set_profile_type(AttitudeProfile.INERTIALLY_FIXED)
         # Get AttitudeProfileInertial interface
         interfix: "AttitudeProfileInertial" = clr.CastAs(standard.basic.profile, AttitudeProfileInertial)
 
-        interfix.inertial.assign_euler_angles(EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_123, 20.1, 50.0, 20.0)
+        interfix.inertial.assign_euler_angles(EulerOrientationSequenceType.SEQUENCE_123, 20.1, 50.0, 20.0)
 
     # endregion
 
@@ -127,11 +127,11 @@ class AttitudeSnippets(CodeSnippetsTestBase):
 
     def ConfigureRealTimeAttitude(self, satellite: "Satellite"):
         # set attitude type to real time
-        satellite.set_attitude_type(VEHICLE_ATTITUDE.REAL_TIME)
+        satellite.set_attitude_type(VehicleAttitude.REAL_TIME)
         realtime: "VehicleAttitudeRealTime" = clr.CastAs(satellite.attitude, VehicleAttitudeRealTime)
 
         # Set our Attitude Look Ahead method to Extrapolate
-        realtime.look_ahead_method = VEHICLE_LOOK_AHEAD_METHOD.EXTRAPOLATE
+        realtime.look_ahead_method = VehicleLookAheadMethod.EXTRAPOLATE
 
         # Duration
         duration: "VehicleDuration" = realtime.duration
@@ -140,6 +140,6 @@ class AttitudeSnippets(CodeSnippetsTestBase):
 
         # BlockFactor
         realtime.block_factor = 40
-        realtime.data_reference.set_profile_type(ATTITUDE_PROFILE.INERTIALLY_FIXED)
+        realtime.data_reference.set_profile_type(AttitudeProfile.INERTIALLY_FIXED)
 
     # endregion

@@ -46,7 +46,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.vgt.ICalculationToolConditionSet.type
-    :type: CONDITION_SET_TYPE
+    :type: ConditionSetType
 
     Returns the type of condition set.
 

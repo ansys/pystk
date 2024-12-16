@@ -63,7 +63,7 @@ Property detail
 
 .. py:property:: look_ahead_method
     :canonical: ansys.stk.core.stkobjects.VehicleAttitudeRealTime.look_ahead_method
-    :type: VEHICLE_LOOK_AHEAD_METHOD
+    :type: VehicleLookAheadMethod
 
     Look ahead method can be extrapolate or hold.
 

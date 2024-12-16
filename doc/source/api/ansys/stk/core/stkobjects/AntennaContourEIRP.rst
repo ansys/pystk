@@ -113,7 +113,7 @@ Property detail
 
 .. py:property:: coordinate_system
     :canonical: ansys.stk.core.stkobjects.AntennaContourEIRP.coordinate_system
-    :type: ANTENNA_GRAPHICS_COORDINATE_SYSTEM
+    :type: AntennaGraphicsCoordinateSystem
 
     Gets or sets the coordinate system for defining the resolution of the antenna graphics.
 

@@ -50,7 +50,7 @@ Property detail
 
 .. py:property:: extremum_type
     :canonical: ansys.stk.core.vgt.TimeToolInstantExtremum.extremum_type
-    :type: EXTREMUM_TYPE
+    :type: ExtremumType
 
     The extremum type of interest (either minimum or maximum) for scalar calculation.
 
@@ -74,7 +74,7 @@ Property detail
 
 .. py:property:: save_data_option
     :canonical: ansys.stk.core.vgt.TimeToolInstantExtremum.save_data_option
-    :type: SAVE_DATA_TYPE
+    :type: SaveDataType
 
     Determines if computed time of extremum is saved/loaded, otherwise it is recomputed on load if necessary.
 
