@@ -35,7 +35,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.IDirectionProvider.type
-    :type: DIRECTION_PROVIDER_TYPE
+    :type: DirectionProviderType
 
     Gets the direction provider type enumeration.
 

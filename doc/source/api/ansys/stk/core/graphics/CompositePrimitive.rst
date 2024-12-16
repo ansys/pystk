@@ -63,7 +63,7 @@ Property detail
 
 .. py:property:: translucent_primitives_sort_order
     :canonical: ansys.stk.core.graphics.CompositePrimitive.translucent_primitives_sort_order
-    :type: PRIMITIVES_SORT_ORDER
+    :type: PrimitivesSortOrder
 
     Gets or sets the sort order for translucent primitives in this composite. This determines a trade-off between rendering speed and quality...
 

@@ -137,7 +137,7 @@ Property detail
 
 .. py:property:: ole_drop_mode
     :canonical: ansys.stk.core.stkx.Graphics3DControlBase.ole_drop_mode
-    :type: OLE_DROP_MODE
+    :type: OLEDropMode
 
     How the control handles drop operations.
 
@@ -149,7 +149,7 @@ Property detail
 
 .. py:property:: mouse_mode
     :canonical: ansys.stk.core.stkx.Graphics3DControlBase.mouse_mode
-    :type: MOUSE_MODE
+    :type: MouseMode
 
     Whether this control responds to mouse events.
 
@@ -191,7 +191,7 @@ Property detail
 
 .. py:property:: show_progress_image
     :canonical: ansys.stk.core.stkx.Graphics3DControlBase.show_progress_image
-    :type: SHOW_PROGRESS_IMAGE
+    :type: ShowProgressImage
 
     The animated progress image type.
 
@@ -215,13 +215,13 @@ Property detail
 
 .. py:property:: progress_image_x_origin
     :canonical: ansys.stk.core.stkx.Graphics3DControlBase.progress_image_x_origin
-    :type: PROGRESS_IMAGE_X_ORIGIN
+    :type: ProgressImageXOrigin
 
     The X origin alignment for animated progress image.
 
 .. py:property:: progress_image_y_origin
     :canonical: ansys.stk.core.stkx.Graphics3DControlBase.progress_image_y_origin
-    :type: PROGRESS_IMAGE_Y_ORIGIN
+    :type: ProgressImageYOrigin
 
     The Y origin alignment for animated progress image.
 

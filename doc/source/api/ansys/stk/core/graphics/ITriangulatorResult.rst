@@ -61,7 +61,7 @@ Property detail
 
 .. py:property:: triangle_winding_order
     :canonical: ansys.stk.core.graphics.ITriangulatorResult.triangle_winding_order
-    :type: WINDING_ORDER
+    :type: WindingOrder
 
     Gets the orientation of front-facing triangles in the mesh.
 

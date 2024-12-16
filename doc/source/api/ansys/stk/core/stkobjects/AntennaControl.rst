@@ -55,7 +55,7 @@ Property detail
 
 .. py:property:: reference_type
     :canonical: ansys.stk.core.stkobjects.AntennaControl.reference_type
-    :type: ANTENNA_CONTROL_REFERENCE_TYPE
+    :type: AntennaControlReferenceType
 
     Gets or sets the antenna control reference type.
 

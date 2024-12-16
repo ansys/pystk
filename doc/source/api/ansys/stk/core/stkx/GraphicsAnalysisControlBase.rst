@@ -97,7 +97,7 @@ Property detail
 
 .. py:property:: control_mode
     :canonical: ansys.stk.core.stkx.GraphicsAnalysisControlBase.control_mode
-    :type: GRAPHICS_2D_ANALYSIS_MODE
+    :type: Graphics2DAnalysisMode
 
     The Graphics control mode.
 

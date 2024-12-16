@@ -130,7 +130,7 @@ Property detail
 
 .. py:property:: connect_point_line_width
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneInstance.connect_point_line_width
-    :type: LINE_WIDTH
+    :type: LineWidth
 
     Gets or sets the width of the lines connecting the additional points.
 

@@ -46,7 +46,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.LinkMargin.type
-    :type: LINK_MARGIN_TYPE
+    :type: LinkMarginType
 
     Gets or sets the link margin type.
 

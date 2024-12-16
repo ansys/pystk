@@ -38,35 +38,35 @@ class LinkBudgetSnippets(CodeSnippetsTestBase):
         scenario: "IStkObject" = CodeSnippetsTestBase.m_Root.current_scenario
 
         LinkBudgetSnippets.m_Satellite = scenario.children.new(
-            STK_OBJECT_TYPE.SATELLITE, LinkBudgetSnippets.m_DefaultSatName
+            STKObjectType.SATELLITE, LinkBudgetSnippets.m_DefaultSatName
         )
 
         sat: "Satellite" = Satellite(LinkBudgetSnippets.m_Satellite)
-        sat.set_propagator_type(PROPAGATOR_TYPE.TWO_BODY)
+        sat.set_propagator_type(PropagatorType.TWO_BODY)
         twoBody: "PropagatorTwoBody" = PropagatorTwoBody(sat.propagator)
         twoBody.ephemeris_interval.set_explicit_interval("1 Jan 2012 12:00:00.000", "2 Jan 2012 12:00:00.000")
         twoBody.initial_state.representation.epoch = "1 Jan 2012 12:00:00.000"
         twoBody.initial_state.representation.assign_classical(
-            COORDINATE_SYSTEM.TRUE_OF_DATE, 42166.3, 0.0, 0.0, 0.0, 190, 0.0
+            CoordinateSystem.TRUE_OF_DATE, 42166.3, 0.0, 0.0, 0.0, 190, 0.0
         )
         twoBody.propagate()
 
         LinkBudgetSnippets.m_Facility = scenario.children.new(
-            STK_OBJECT_TYPE.FACILITY, LinkBudgetSnippets.m_DefaultFacilityName
+            STKObjectType.FACILITY, LinkBudgetSnippets.m_DefaultFacilityName
         )
 
         LinkBudgetSnippets.m_XmtrObject = clr.CastAs(
             LinkBudgetSnippets.m_Satellite.children.new(
-                STK_OBJECT_TYPE.TRANSMITTER, LinkBudgetSnippets.m_DefaultXmtrName
+                STKObjectType.TRANSMITTER, LinkBudgetSnippets.m_DefaultXmtrName
             ),
             Transmitter,
         )
         LinkBudgetSnippets.m_RcvrObject = clr.CastAs(
-            LinkBudgetSnippets.m_Facility.children.new(STK_OBJECT_TYPE.RECEIVER, LinkBudgetSnippets.m_DefaultRcvrName),
+            LinkBudgetSnippets.m_Facility.children.new(STKObjectType.RECEIVER, LinkBudgetSnippets.m_DefaultRcvrName),
             Receiver,
         )
         LinkBudgetSnippets.m_AntennaObject = clr.CastAs(
-            LinkBudgetSnippets.m_Facility.children.new(STK_OBJECT_TYPE.ANTENNA, LinkBudgetSnippets.m_DefaultAntName),
+            LinkBudgetSnippets.m_Facility.children.new(STKObjectType.ANTENNA, LinkBudgetSnippets.m_DefaultAntName),
             Antenna,
         )
 
@@ -74,24 +74,22 @@ class LinkBudgetSnippets(CodeSnippetsTestBase):
 
     # region TestTearDown
     def tearDown(self):
-        LinkBudgetSnippets.m_Satellite.children.unload(
-            STK_OBJECT_TYPE.TRANSMITTER, LinkBudgetSnippets.m_DefaultXmtrName
-        )
+        LinkBudgetSnippets.m_Satellite.children.unload(STKObjectType.TRANSMITTER, LinkBudgetSnippets.m_DefaultXmtrName)
         LinkBudgetSnippets.m_XmtrObject = None
 
-        LinkBudgetSnippets.m_Facility.children.unload(STK_OBJECT_TYPE.RECEIVER, LinkBudgetSnippets.m_DefaultRcvrName)
+        LinkBudgetSnippets.m_Facility.children.unload(STKObjectType.RECEIVER, LinkBudgetSnippets.m_DefaultRcvrName)
         LinkBudgetSnippets.m_RcvrObject = None
 
-        LinkBudgetSnippets.m_Facility.children.unload(STK_OBJECT_TYPE.ANTENNA, LinkBudgetSnippets.m_DefaultAntName)
+        LinkBudgetSnippets.m_Facility.children.unload(STKObjectType.ANTENNA, LinkBudgetSnippets.m_DefaultAntName)
         LinkBudgetSnippets.m_AntennaObject = None
 
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(
-            STK_OBJECT_TYPE.SATELLITE, LinkBudgetSnippets.m_DefaultSatName
+            STKObjectType.SATELLITE, LinkBudgetSnippets.m_DefaultSatName
         )
         LinkBudgetSnippets.m_Satellite = None
 
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(
-            STK_OBJECT_TYPE.FACILITY, LinkBudgetSnippets.m_DefaultFacilityName
+            STKObjectType.FACILITY, LinkBudgetSnippets.m_DefaultFacilityName
         )
         LinkBudgetSnippets.m_Facility = None
 
@@ -208,14 +206,14 @@ class LinkBudgetSnippets(CodeSnippetsTestBase):
         helix.number_of_turns = 30.0
 
         # Orient the complex transmitter embedded antenna's boresight to point directly at the receiver's location
-        complexTrans.antenna_control.embedded_model_orientation.assign_az_el(287.2, 83.4, AZ_EL_ABOUT_BORESIGHT.ROTATE)
+        complexTrans.antenna_control.embedded_model_orientation.assign_az_el(287.2, 83.4, AzElAboutBoresight.ROTATE)
 
         # Set the receiver to the complex model
         facilityReceiver.set_model("Complex Receiver Model")
         complexRcvr: "ReceiverModelComplex" = clr.CastAs(facilityReceiver.model, ReceiverModelComplex)
 
         # Configure the complex receiver to use the antenna object on the same parent facility, by linking
-        complexRcvr.antenna_control.reference_type = ANTENNA_CONTROL_REFERENCE_TYPE.LINK
+        complexRcvr.antenna_control.reference_type = AntennaControlReferenceType.LINK
         complexRcvr.antenna_control.linked_antenna_object = "Antenna/FacilityDish"
 
         # Enable rain loss computation on the receiver
@@ -223,16 +221,16 @@ class LinkBudgetSnippets(CodeSnippetsTestBase):
         complexRcvr.rain_outage_percent = 0.001
 
         # Enable the receiver system noise temperature computation.
-        complexRcvr.system_noise_temperature.compute_type = NOISE_TEMPERATURE_COMPUTE_TYPE.CALCULATE
+        complexRcvr.system_noise_temperature.compute_type = NoiseTemperatureComputeType.CALCULATE
 
         # Enable the antenna noise temperature computation
         complexRcvr.system_noise_temperature.antenna_noise_temperature.compute_type = (
-            NOISE_TEMPERATURE_COMPUTE_TYPE.CALCULATE
+            NoiseTemperatureComputeType.CALCULATE
         )
         complexRcvr.system_noise_temperature.antenna_noise_temperature.use_rain = True
 
         # Orient the antenna object's boresight to point directly at the transmitter's location
-        facilityDish.orientation.assign_az_el(202.6, 41.2, AZ_EL_ABOUT_BORESIGHT.ROTATE)
+        facilityDish.orientation.assign_az_el(202.6, 41.2, AzElAboutBoresight.ROTATE)
 
         # Set the antenna object's model to parabolic
         facilityDish.set_model("Parabolic")
@@ -242,7 +240,7 @@ class LinkBudgetSnippets(CodeSnippetsTestBase):
 
         # Set the antenna object's parabolic model diameter to 5 m.
         parabolic: "AntennaModelParabolic" = clr.CastAs(facilityDish.model, AntennaModelParabolic)
-        parabolic.input_type = ANTENNA_MODEL_INPUT_TYPE.DIAMETER
+        parabolic.input_type = AntennaModelInputType.DIAMETER
         parabolic.diameter = 5.0
 
         # Create an access object for the access between the transmitter and recevier objects

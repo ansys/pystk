@@ -50,19 +50,19 @@ Property detail
 
 .. py:property:: eigenvector_number
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcSTMEigenvecElem.eigenvector_number
-    :type: STM_EIGEN_NUMBER
+    :type: STMEigenNumber
 
     Gets or sets the number identifying one of the six Eigenvectors.
 
 .. py:property:: state_variable
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcSTMEigenvecElem.state_variable
-    :type: STM_PERTURBATION_VARIABLES
+    :type: STMPerturbationVariables
 
     Gets or sets the variable identifying the component within an Eigenvector.
 
 .. py:property:: eigenvector_complex_part
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcSTMEigenvecElem.eigenvector_complex_part
-    :type: COMPLEX_NUMBER
+    :type: ComplexNumber
 
     Whether this value represents the real or imaginary part of an Eigenvector element.
 

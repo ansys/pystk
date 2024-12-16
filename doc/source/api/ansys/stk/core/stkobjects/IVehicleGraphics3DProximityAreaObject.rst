@@ -59,7 +59,7 @@ Property detail
 
 .. py:property:: line_width
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DProximityAreaObject.line_width
-    :type: LINE_WIDTH
+    :type: LineWidth
 
     Specifies a line width.
 
@@ -83,7 +83,7 @@ Property detail
 
 .. py:property:: line_style
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DProximityAreaObject.line_style
-    :type: LINE_STYLE
+    :type: LineStyle
 
     Specifies a line style type.
 

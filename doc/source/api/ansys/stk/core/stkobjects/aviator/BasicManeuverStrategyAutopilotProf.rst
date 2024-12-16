@@ -66,7 +66,7 @@ Property detail
 
 .. py:property:: altitude_mode
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyAutopilotProf.altitude_mode
-    :type: AUTOPILOT_ALTITUDE_MODE
+    :type: AutopilotAltitudeMode
 
     Gets or sets the altitude mode of the autopilot - vertical plane strategy.
 
@@ -96,7 +96,7 @@ Property detail
 
 .. py:property:: altitude_control_mode
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyAutopilotProf.altitude_control_mode
-    :type: AUTOPILOT_ALTITUDE_CONTROL_MODE
+    :type: AutopilotAltitudeControlMode
 
     Gets or sets the altitude control mode for the hold initial altitude, specify altitude, and specify altitude change modes.
 
@@ -114,7 +114,7 @@ Property detail
 
 .. py:property:: control_limit_mode
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyAutopilotProf.control_limit_mode
-    :type: PERFORMANCE_MODEL_OVERRIDE
+    :type: PerformanceModelOverride
 
     Gets or sets the control limits mode.
 

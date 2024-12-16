@@ -104,7 +104,7 @@ Property detail
 
 .. py:property:: convergence_criteria
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileDifferentialCorrector.convergence_criteria
-    :type: CONVERGENCE_CRITERIA
+    :type: ConvergenceCriteria
 
     Gets or sets the convergence criteria.
 
@@ -152,7 +152,7 @@ Property detail
 
 .. py:property:: derivative_calc_method
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileDifferentialCorrector.derivative_calc_method
-    :type: DERIVATIVE_CALCULATION_METHOD
+    :type: DerivativeCalculationMethod
 
     Gets or sets the derivative calculation method.
 
@@ -176,7 +176,7 @@ Property detail
 
 .. py:property:: draw_perturbation
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileDifferentialCorrector.draw_perturbation
-    :type: DRAW_PERTURBATION
+    :type: DrawPerturbation
 
     Defines the display of perturbations in the 2D and 3D Graphics windows, if you have set Astrogator to draw while calculating.
 
@@ -188,7 +188,7 @@ Property detail
 
 .. py:property:: root_finding_algorithm
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileDifferentialCorrector.root_finding_algorithm
-    :type: ROOT_FINDING_ALGORITHM
+    :type: RootFindingAlgorithm
 
     Gets or sets the root-finding algorithm to use.
 

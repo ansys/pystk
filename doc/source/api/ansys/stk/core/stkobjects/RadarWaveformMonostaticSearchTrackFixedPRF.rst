@@ -93,7 +93,7 @@ Property detail
 
 .. py:property:: pulse_integration_type
     :canonical: ansys.stk.core.stkobjects.RadarWaveformMonostaticSearchTrackFixedPRF.pulse_integration_type
-    :type: RADAR_PULSE_INTEGRATION_TYPE
+    :type: RadarPulseIntegrationType
 
     Gets or sets the pulse integration type.
 

@@ -58,7 +58,7 @@ Property detail
 
 .. py:property:: fill_style
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DElevationContours.fill_style
-    :type: FILL_STYLE
+    :type: FillStyle
 
     Gets or sets the type of fill to display.
 

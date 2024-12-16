@@ -50,7 +50,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAngle.type
-    :type: ANGLE_TYPE
+    :type: AngleType
 
     Returns a type of the angle object.
 

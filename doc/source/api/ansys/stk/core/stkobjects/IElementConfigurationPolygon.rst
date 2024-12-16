@@ -53,7 +53,7 @@ Property detail
 
 .. py:property:: lattice_type
     :canonical: ansys.stk.core.stkobjects.IElementConfigurationPolygon.lattice_type
-    :type: LATTICE_TYPE
+    :type: LatticeType
 
     Gets or sets the lattice type.
 
@@ -107,7 +107,7 @@ Property detail
 
 .. py:property:: spacing_unit
     :canonical: ansys.stk.core.stkobjects.IElementConfigurationPolygon.spacing_unit
-    :type: SPACING_UNIT
+    :type: SpacingUnit
 
     Gets or sets the spacing unit.
 

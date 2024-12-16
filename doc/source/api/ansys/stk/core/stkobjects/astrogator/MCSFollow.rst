@@ -117,19 +117,19 @@ Property detail
 
 .. py:property:: joining_type
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSFollow.joining_type
-    :type: FOLLOW_JOIN
+    :type: FollowJoin
 
     Gets or sets the joining type.
 
 .. py:property:: separation_type
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSFollow.separation_type
-    :type: FOLLOW_SEPARATION
+    :type: FollowSeparation
 
     Gets or sets the separation type.
 
 .. py:property:: spacecraft_and_fuel_tank_type
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSFollow.spacecraft_and_fuel_tank_type
-    :type: FOLLOW_SPACECRAFT_AND_FUEL_TANK
+    :type: FollowSpacecraftAndFuelTank
 
     Gets or sets the spacecraft snd fuel tank configuration type.
 
@@ -172,40 +172,40 @@ Method detail
 
 
 
-.. py:method:: enable_control_parameter(self, param: CONTROL_FOLLOW) -> None
+.. py:method:: enable_control_parameter(self, param: ControlFollow) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSFollow.enable_control_parameter
 
     Enable the specified control parameter.
 
     :Parameters:
 
-    **param** : :obj:`~CONTROL_FOLLOW`
+    **param** : :obj:`~ControlFollow`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: disable_control_parameter(self, param: CONTROL_FOLLOW) -> None
+.. py:method:: disable_control_parameter(self, param: ControlFollow) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSFollow.disable_control_parameter
 
     Disables the specified control parameter.
 
     :Parameters:
 
-    **param** : :obj:`~CONTROL_FOLLOW`
+    **param** : :obj:`~ControlFollow`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_control_parameter_enabled(self, param: CONTROL_FOLLOW) -> bool
+.. py:method:: is_control_parameter_enabled(self, param: ControlFollow) -> bool
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSFollow.is_control_parameter_enabled
 
     Sees if the specified control is enabled.
 
     :Parameters:
 
-    **param** : :obj:`~CONTROL_FOLLOW`
+    **param** : :obj:`~ControlFollow`
 
     :Returns:
 

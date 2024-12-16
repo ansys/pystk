@@ -56,7 +56,7 @@ Property detail
 
 .. py:property:: coordinate_system_type
     :canonical: ansys.stk.core.stkobjects.OrbitStateDetic.coordinate_system_type
-    :type: COORDINATE_SYSTEM
+    :type: CoordinateSystem
 
     Gets or sets the coordinate system being used. Note that the Geodetic coordinate type is available only if a Fixed coordinate system is selected.
 
@@ -68,7 +68,7 @@ Property detail
 
 .. py:property:: size_type
     :canonical: ansys.stk.core.stkobjects.OrbitStateDetic.size_type
-    :type: GEODETIC_SIZE
+    :type: GeodeticSize
 
     Gets or sets the element (altitude or radius) used to specify size.
 

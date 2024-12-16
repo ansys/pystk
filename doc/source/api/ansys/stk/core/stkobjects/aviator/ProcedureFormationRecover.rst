@@ -129,7 +129,7 @@ Property detail
 
 .. py:property:: fuel_flow_type
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFormationRecover.fuel_flow_type
-    :type: FUEL_FLOW_TYPE
+    :type: FuelFlowType
 
     Gets or sets the source used to calculate the fuel flow for the maneuver.
 
@@ -171,7 +171,7 @@ Property detail
 
 .. py:property:: flight_mode
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFormationRecover.flight_mode
-    :type: PHASE_OF_FLIGHT
+    :type: PhaseOfFlight
 
     Gets or sets the type of performance model that the aircraft will use to fly the maneuver.
 
@@ -195,7 +195,7 @@ Property detail
 
 .. py:property:: delay_turn_direction
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFormationRecover.delay_turn_direction
-    :type: DELAY_TURN_DIRECTION
+    :type: DelayTurnDirection
 
     Gets or sets the turn direction of the delay.
 

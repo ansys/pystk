@@ -58,7 +58,7 @@ root.rewind()
 # +
 import pathlib
 
-from ansys.stk.core.stkobjects import TERRAIN_FILE_TYPE
+from ansys.stk.core.stkobjects import TerrainFileType
 
 
 install_dir = root.execute_command("GetDirectory / STKHome")[0]
@@ -75,7 +75,7 @@ terrain_path = str(
 # Then, add the file to the Earth central body's terrain collection:
 
 terrain = scenario.terrain.item("Earth").terrain_collection.add(
-    terrain_path, TERRAIN_FILE_TYPE.PDTT
+    terrain_path, TerrainFileType.PDTT
 )
 
 # This file is used for analysis by default after it is inserted.
@@ -87,17 +87,17 @@ terrain = scenario.terrain.item("Earth").terrain_collection.add(
 # To add the satellite, first insert a satellite object:
 
 # +
-from ansys.stk.core.stkobjects import PROPAGATOR_TYPE, STK_OBJECT_TYPE
+from ansys.stk.core.stkobjects import PropagatorType, STKObjectType
 
 
 satellite = root.current_scenario.children.new(
-    STK_OBJECT_TYPE.SATELLITE, "TerraSarX_31698"
+    STKObjectType.SATELLITE, "TerraSarX_31698"
 )
 # -
 
 # Then, set the satellite's propagator to the SGP4 propagator:
 
-satellite.set_propagator_type(PROPAGATOR_TYPE.SGP4)
+satellite.set_propagator_type(PropagatorType.SGP4)
 propagator = satellite.propagator
 
 # Finally, use the propagator's `common_tasks` property to add the satellite's orbit from an online source, and propagate the satellite:
@@ -109,7 +109,7 @@ propagator.propagate()
 
 # Add a place object to represent the camp site:
 
-camp_site = root.current_scenario.children.new(STK_OBJECT_TYPE.PLACE, "CampSite")
+camp_site = root.current_scenario.children.new(STKObjectType.PLACE, "CampSite")
 
 # Assign the site's position to latitude $47.5605^\circ$ and longitude $11.5027^\circ$, with an elevation of $6$ ft ($0.0018288$ km) to simulate the height of the equipment at the site:
 
@@ -119,7 +119,7 @@ camp_site.position.assign_planetodetic(47.5605, 11.5027, 0.0018288)
 
 # The satellite has a simple transmitter model, a model type which uses an isotropic, omnidirectional antenna, which is an ideal spherical pattern antenna with constant gain. Insert the transmitter on the satellite:
 
-transmitter = satellite.children.new(STK_OBJECT_TYPE.TRANSMITTER, "DownloadTransmitter")
+transmitter = satellite.children.new(STKObjectType.TRANSMITTER, "DownloadTransmitter")
 
 # The transmitter's `model` property now contains a `TransmitterModelSimple` object. Set the model's frequency to $1.7045$ GHz:
 
@@ -140,25 +140,25 @@ transmitter.model.enable_polarization = True
 # Finally, set the model's polarization type to right-hand circular:
 
 # +
-from ansys.stk.core.stkobjects import POLARIZATION_TYPE
+from ansys.stk.core.stkobjects import PolarizationType
 
 
-transmitter.model.set_polarization_type(POLARIZATION_TYPE.RIGHT_HAND_CIRCULAR)
+transmitter.model.set_polarization_type(PolarizationType.RIGHT_HAND_CIRCULAR)
 # -
 
 # ## Add a steerable sensor
 
 # The receiver antenna at the camp site is steerable. To create a steering device, add a sensor object:
 
-sensor = camp_site.children.new(STK_OBJECT_TYPE.SENSOR, "ServoMotor")
+sensor = camp_site.children.new(STKObjectType.SENSOR, "ServoMotor")
 
 # Then, set the sensor's pattern to a half power pattern, which is designed to visually model parabolic antennas. The sensor half angle is determined by frequency and antenna diameter.
 
 # +
-from ansys.stk.core.stkobjects import SENSOR_PATTERN
+from ansys.stk.core.stkobjects import SensorPattern
 
 
-sensor.set_pattern_type(SENSOR_PATTERN.HALF_POWER)
+sensor.set_pattern_type(SensorPattern.HALF_POWER)
 # -
 
 # The sensor's `pattern` property now holds a `SensorHalfPowerPattern` object, through which it is possible to configure the half power model. First, set the sensor's frequency to $1.7045$ GHz:
@@ -172,10 +172,10 @@ sensor.pattern.antenna_diameter = 1.6
 # The sensor is steerable and tracks the satellite, so set the sensor's pointing type to targeted:
 
 # +
-from ansys.stk.core.stkobjects import SENSOR_POINTING
+from ansys.stk.core.stkobjects import SensorPointing
 
 
-sensor.set_pointing_type(SENSOR_POINTING.TARGETED)
+sensor.set_pointing_type(SensorPointing.TARGETED)
 # -
 
 # The sensor's `pointing` property now holds a `SensorPointingTargeted` object, through which it is possible to set the satellite as the sensor's target:
@@ -212,7 +212,7 @@ globe.show()
 
 # First, add the receiver on the sensor:
 
-receiver = sensor.children.new(STK_OBJECT_TYPE.RECEIVER, "DownloadReceiver")
+receiver = sensor.children.new(STKObjectType.RECEIVER, "DownloadReceiver")
 
 # Then, set the receiver's model type to the complex receiver model:
 
@@ -225,11 +225,11 @@ receiver.model.antenna_control.set_embedded_model("Parabolic")
 # The receiver model's antenna control's `embedded_model` property now holds an `AntennaModelParabolic` object, through which it is possible to configure the antenna model. First, configure the antenna model to use diameter as its input type:
 
 # +
-from ansys.stk.core.stkobjects import ANTENNA_MODEL_INPUT_TYPE
+from ansys.stk.core.stkobjects import AntennaModelInputType
 
 
 receiver.model.antenna_control.embedded_model.input_type = (
-    ANTENNA_MODEL_INPUT_TYPE.DIAMETER
+    AntennaModelInputType.DIAMETER
 )
 # -
 
@@ -247,7 +247,7 @@ receiver.model.enable_polarization = True
 
 # The receiver's polarization type is the same as the transmitter's polarization, so set the model's polarization type to right-hand circular:
 
-receiver.model.set_polarization_type(POLARIZATION_TYPE.RIGHT_HAND_CIRCULAR)
+receiver.model.set_polarization_type(PolarizationType.RIGHT_HAND_CIRCULAR)
 
 # ## Calculate access
 
@@ -297,11 +297,11 @@ receiver_basic_link_df.head(10)[link_budget_columns]
 # Next, add a terrain mask to the receiver to add terrain into the access analysis. A terrain mask causes STK to constrain access to an object by any terrain data in the line of sight to which access is being calculated. Add a terrain mask access constraint:
 
 # +
-from ansys.stk.core.stkobjects import ACCESS_CONSTRAINT_TYPE
+from ansys.stk.core.stkobjects import AccessConstraintType
 
 
 terrain_constraint = receiver.access_constraints.add_constraint(
-    ACCESS_CONSTRAINT_TYPE.TERRAIN_MASK
+    AccessConstraintType.TERRAIN_MASK
 )
 # -
 
@@ -354,18 +354,18 @@ receiver_environmental_link_df.head(10)[link_budget_columns]
 # The receiver's system noise temperature enables specifying the system's inherent noise characteristics, which can help simulate real-world RF situations more accurately. STK can use either a constant system noise temperature value, or can calculate it based off of different noise sources. In this case, configure the receiver model's system noise temperature to use calculated values:
 
 # +
-from ansys.stk.core.stkobjects import NOISE_TEMPERATURE_COMPUTE_TYPE
+from ansys.stk.core.stkobjects import NoiseTemperatureComputeType
 
 
 receiver.model.system_noise_temperature.compute_type = (
-    NOISE_TEMPERATURE_COMPUTE_TYPE.CALCULATE
+    NoiseTemperatureComputeType.CALCULATE
 )
 # -
 
 # Do the same for the model's antenna noise temperature:
 
 receiver.model.system_noise_temperature.antenna_noise_temperature.compute_type = (
-    NOISE_TEMPERATURE_COMPUTE_TYPE.CALCULATE
+    NoiseTemperatureComputeType.CALCULATE
 )
 
 # Then, enable the use of sun, atmosphere, rain, and cosmic background in computations:

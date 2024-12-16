@@ -44,7 +44,7 @@ Property detail
 
 .. py:property:: save_computed_data_type
     :canonical: ansys.stk.core.stkobjects.VolumetricAdvancedSettings.save_computed_data_type
-    :type: VOLUMETRIC_SAVE_COMPUTED_DATA_TYPE
+    :type: VolumetricSaveComputedDataType
 
     Get save computed data type. A member of the AgEVmSaveComputedDataType enumeration.
 

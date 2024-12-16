@@ -38,7 +38,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.OrbitStateCoordinateSystem.type
-    :type: COORDINATE_SYSTEM
+    :type: CoordinateSystem
 
     Get the coordinate system being used.
 

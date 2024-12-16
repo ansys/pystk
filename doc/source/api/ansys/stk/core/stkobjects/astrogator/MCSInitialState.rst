@@ -91,7 +91,7 @@ Property detail
 
 .. py:property:: element_type
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSInitialState.element_type
-    :type: ELEMENT_TYPE
+    :type: ElementSetType
 
     Get the coordinate type.
 
@@ -124,54 +124,54 @@ Method detail
 
 
 
-.. py:method:: set_element_type(self, element_type: ELEMENT_TYPE) -> None
+.. py:method:: set_element_type(self, element_type: ElementSetType) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSInitialState.set_element_type
 
     Select an coordinate type.
 
     :Parameters:
 
-    **element_type** : :obj:`~ELEMENT_TYPE`
+    **element_type** : :obj:`~ElementSetType`
 
     :Returns:
 
         :obj:`~None`
 
 
-.. py:method:: enable_control_parameter(self, param: CONTROL_INIT_STATE) -> None
+.. py:method:: enable_control_parameter(self, param: ControlInitState) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSInitialState.enable_control_parameter
 
     Enable a control parameter.
 
     :Parameters:
 
-    **param** : :obj:`~CONTROL_INIT_STATE`
+    **param** : :obj:`~ControlInitState`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: disable_control_parameter(self, param: CONTROL_INIT_STATE) -> None
+.. py:method:: disable_control_parameter(self, param: ControlInitState) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSInitialState.disable_control_parameter
 
     Disables a control parameter.
 
     :Parameters:
 
-    **param** : :obj:`~CONTROL_INIT_STATE`
+    **param** : :obj:`~ControlInitState`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_control_parameter_enabled(self, param: CONTROL_INIT_STATE) -> bool
+.. py:method:: is_control_parameter_enabled(self, param: ControlInitState) -> bool
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSInitialState.is_control_parameter_enabled
 
     Sees if a control is enabled.
 
     :Parameters:
 
-    **param** : :obj:`~CONTROL_INIT_STATE`
+    **param** : :obj:`~ControlInitState`
 
     :Returns:
 

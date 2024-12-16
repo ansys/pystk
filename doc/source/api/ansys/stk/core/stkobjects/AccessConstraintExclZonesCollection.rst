@@ -97,7 +97,7 @@ Property detail
 
 .. py:property:: constraint_type
     :canonical: ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.constraint_type
-    :type: ACCESS_CONSTRAINT_TYPE
+    :type: AccessConstraintType
 
     Gets the constraint type.
 

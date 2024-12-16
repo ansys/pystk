@@ -93,7 +93,7 @@ Property detail
 
 .. py:property:: file_format
     :canonical: ansys.stk.core.stkobjects.PropagatorStkExternal.file_format
-    :type: EXTERNAL_EPHEMERIS_FORMAT_TYPE
+    :type: ExternalEphemerisFormatType
 
     Ephemeris file format.
 
@@ -111,7 +111,7 @@ Property detail
 
 .. py:property:: message_level
     :canonical: ansys.stk.core.stkobjects.PropagatorStkExternal.message_level
-    :type: EXTERNAL_FILE_MESSAGE_LEVEL_TYPE
+    :type: ExternalFileMessageLevelType
 
     Message level used to report messages during file loading.
 

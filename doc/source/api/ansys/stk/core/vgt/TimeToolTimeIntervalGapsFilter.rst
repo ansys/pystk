@@ -40,7 +40,7 @@ Property detail
 
 .. py:property:: duration_type
     :canonical: ansys.stk.core.vgt.TimeToolTimeIntervalGapsFilter.duration_type
-    :type: INTERVAL_DURATION_TYPE
+    :type: IntervalDurationType
 
     Choose a duration type (at least/at most).
 

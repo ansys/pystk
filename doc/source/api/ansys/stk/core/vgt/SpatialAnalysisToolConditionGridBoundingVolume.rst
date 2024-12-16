@@ -40,7 +40,7 @@ Property detail
 
 .. py:property:: edge_type
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolConditionGridBoundingVolume.edge_type
-    :type: VOLUME_FROM_GRID_EDGE_TYPE
+    :type: VolumeFromGridEdgeType
 
     Sets/Returns the edge type.
 

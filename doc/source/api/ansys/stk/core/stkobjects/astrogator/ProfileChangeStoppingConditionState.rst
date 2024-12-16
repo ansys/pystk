@@ -59,7 +59,7 @@ Property detail
 
 .. py:property:: state
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileChangeStoppingConditionState.state
-    :type: STATE
+    :type: StateType
 
     Gets or sets the new state of the targeted stopping condition.
 

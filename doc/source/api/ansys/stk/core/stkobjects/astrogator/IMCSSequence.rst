@@ -70,7 +70,7 @@ Property detail
 
 .. py:property:: sequence_state_to_pass
     :canonical: ansys.stk.core.stkobjects.astrogator.IMCSSequence.sequence_state_to_pass
-    :type: SEQUENCE_STATE_TO_PASS
+    :type: SequenceStateToPass
 
     State To Pass To Next Segment - the state of the sequence to pass.
 

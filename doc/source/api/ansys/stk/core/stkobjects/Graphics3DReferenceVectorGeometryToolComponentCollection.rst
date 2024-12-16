@@ -94,14 +94,14 @@ Method detail
         :obj:`~IGraphics3DReferenceAnalysisWorkbenchComponent`
 
 
-.. py:method:: add(self, type: GEOMETRIC_ELEMENT_TYPE, name: str) -> IGraphics3DReferenceAnalysisWorkbenchComponent
+.. py:method:: add(self, type: GeometricElementType, name: str) -> IGraphics3DReferenceAnalysisWorkbenchComponent
     :canonical: ansys.stk.core.stkobjects.Graphics3DReferenceVectorGeometryToolComponentCollection.add
 
     Add a VGT component to the collection. The path must refer to a valid VGT component. The method throws an exception if the path is invalid or if the element already exist.
 
     :Parameters:
 
-    **type** : :obj:`~GEOMETRIC_ELEMENT_TYPE`
+    **type** : :obj:`~GeometricElementType`
     **name** : :obj:`~str`
 
     :Returns:
@@ -130,14 +130,14 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: remove_by_name(self, type: GEOMETRIC_ELEMENT_TYPE, name: str) -> None
+.. py:method:: remove_by_name(self, type: GeometricElementType, name: str) -> None
     :canonical: ansys.stk.core.stkobjects.Graphics3DReferenceVectorGeometryToolComponentCollection.remove_by_name
 
     Remove an element from the collection using the element's path. The method does not throw an exception if the element with the specified name is not in the collection.
 
     :Parameters:
 
-    **type** : :obj:`~GEOMETRIC_ELEMENT_TYPE`
+    **type** : :obj:`~GeometricElementType`
     **name** : :obj:`~str`
 
     :Returns:
@@ -145,14 +145,14 @@ Method detail
         :obj:`~None`
 
 
-.. py:method:: get_component_by_name(self, type: GEOMETRIC_ELEMENT_TYPE, name: str) -> IGraphics3DReferenceAnalysisWorkbenchComponent
+.. py:method:: get_component_by_name(self, type: GeometricElementType, name: str) -> IGraphics3DReferenceAnalysisWorkbenchComponent
     :canonical: ansys.stk.core.stkobjects.Graphics3DReferenceVectorGeometryToolComponentCollection.get_component_by_name
 
     Return an element with the specified name and type. The method throws an exception if the element with the specified name does not exist.
 
     :Parameters:
 
-    **type** : :obj:`~GEOMETRIC_ELEMENT_TYPE`
+    **type** : :obj:`~GeometricElementType`
     **name** : :obj:`~str`
 
     :Returns:

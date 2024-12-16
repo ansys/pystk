@@ -56,7 +56,7 @@ Property detail
 
 .. py:property:: outline_polyline_type
     :canonical: ansys.stk.core.graphics.SolidTriangulatorResult.outline_polyline_type
-    :type: POLYLINE_TYPE
+    :type: PolylineType
 
     Gets the polyline type of outline indices and outline positions.
 

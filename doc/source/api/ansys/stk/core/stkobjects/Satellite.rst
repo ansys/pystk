@@ -97,7 +97,7 @@ Property detail
 
 .. py:property:: propagator_type
     :canonical: ansys.stk.core.stkobjects.Satellite.propagator_type
-    :type: PROPAGATOR_TYPE
+    :type: PropagatorType
 
     Get the type of propagator used to define the satellite's orbit.
 
@@ -109,7 +109,7 @@ Property detail
 
 .. py:property:: attitude_type
     :canonical: ansys.stk.core.stkobjects.Satellite.attitude_type
-    :type: VEHICLE_ATTITUDE
+    :type: VehicleAttitude
 
     Get the type of the satellite's attitude.
 
@@ -238,14 +238,14 @@ Method detail
 -------------
 
 
-.. py:method:: set_propagator_type(self, propagator: PROPAGATOR_TYPE) -> None
+.. py:method:: set_propagator_type(self, propagator: PropagatorType) -> None
     :canonical: ansys.stk.core.stkobjects.Satellite.set_propagator_type
 
     Set the propagator type.
 
     :Parameters:
 
-    **propagator** : :obj:`~PROPAGATOR_TYPE`
+    **propagator** : :obj:`~PropagatorType`
 
     :Returns:
 
@@ -253,27 +253,27 @@ Method detail
 
 
 
-.. py:method:: set_attitude_type(self, attitude: VEHICLE_ATTITUDE) -> None
+.. py:method:: set_attitude_type(self, attitude: VehicleAttitude) -> None
     :canonical: ansys.stk.core.stkobjects.Satellite.set_attitude_type
 
     Set the attitude type.
 
     :Parameters:
 
-    **attitude** : :obj:`~VEHICLE_ATTITUDE`
+    **attitude** : :obj:`~VehicleAttitude`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_attitude_type_supported(self, attitude: VEHICLE_ATTITUDE) -> bool
+.. py:method:: is_attitude_type_supported(self, attitude: VehicleAttitude) -> bool
     :canonical: ansys.stk.core.stkobjects.Satellite.is_attitude_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **attitude** : :obj:`~VEHICLE_ATTITUDE`
+    **attitude** : :obj:`~VehicleAttitude`
 
     :Returns:
 
@@ -288,14 +288,14 @@ Method detail
 
 
 
-.. py:method:: is_propagator_type_supported(self, propagator: PROPAGATOR_TYPE) -> bool
+.. py:method:: is_propagator_type_supported(self, propagator: PropagatorType) -> bool
     :canonical: ansys.stk.core.stkobjects.Satellite.is_propagator_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **propagator** : :obj:`~PROPAGATOR_TYPE`
+    **propagator** : :obj:`~PropagatorType`
 
     :Returns:
 

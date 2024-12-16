@@ -85,7 +85,7 @@ Property detail
 
 .. py:property:: intersection_surface
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPointCentralBodyIntersect.intersection_surface
-    :type: INTERSECTION_SURFACE_TYPE
+    :type: IntersectionSurfaceType
 
     An intersection surface.
 

@@ -38,7 +38,7 @@ Property detail
 
 .. py:property:: style
     :canonical: ansys.stk.core.stkobjects.Graphics3DMarkerShape.style
-    :type: MARKER_SHAPE_3D
+    :type: MarkerShape3d
 
     The 2D marker type that represents the object in the 3D Graphics window. A member of the AgE3dMarkerShape enumeration.
 

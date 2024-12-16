@@ -48,7 +48,7 @@ Property detail
 
 .. py:property:: show_note
     :canonical: ansys.stk.core.stkobjects.LabelNote.show_note
-    :type: NOTE_SHOW_TYPE
+    :type: NoteShowType
 
     Property specifying when the note is displayed. A member of the AgENoteShowType enumeration.
 

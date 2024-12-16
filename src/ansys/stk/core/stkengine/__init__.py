@@ -4,7 +4,7 @@
 
 """Starts STK Engine and provides access to the Object Model root."""
 
-__all__ = ["STKEngine", "STKEngineApplication", "STK_ENGINE_TIMER_TYPE"]
+__all__ = ["STKEngine", "STKEngineApplication", "STKEngineTimerType"]
 
 import os
 import atexit
@@ -27,7 +27,7 @@ from ..utilities.exceptions        import STKRuntimeError, STKInitializationErro
 from ..stkobjects                  import StkObjectRoot, StkObjectModelContext
 from ..stkx                        import STKXApplication
 
-class STK_ENGINE_TIMER_TYPE(IntEnum):
+class STKEngineTimerType(IntEnum):
     """
     Specify the timer implementation to use.
     
@@ -97,14 +97,14 @@ class STKEngineApplication(STKXApplication):
         
     def _set_timer_type_from_env(self):
         timer_type = int(os.getenv("STK_PYTHONAPI_TIMERTYPE", "4"))
-        if os.name=="nt" or timer_type == STK_ENGINE_TIMER_TYPE.DISABLE_TIMERS:
+        if os.name=="nt" or timer_type == STKEngineTimerType.DISABLE_TIMERS:
             self.__dict__["_timer_impl"] = NullTimer()
         elif os.name != "nt":
-            if timer_type == STK_ENGINE_TIMER_TYPE.TKINTER_MAIN_LOOP or timer_type == STK_ENGINE_TIMER_TYPE.INTERACTIVE_PYTHON:
+            if timer_type == STKEngineTimerType.TKINTER_MAIN_LOOP or timer_type == STKEngineTimerType.INTERACTIVE_PYTHON:
                 self.__dict__["_timer_impl"] = TclTimer()
-            elif timer_type == STK_ENGINE_TIMER_TYPE.SIG_ALARM:
+            elif timer_type == STKEngineTimerType.SIG_ALARM:
                 self.__dict__["_timer_impl"] = SigAlarmTimer()
-            elif timer_type == STK_ENGINE_TIMER_TYPE.SIG_RT:
+            elif timer_type == STKEngineTimerType.SIG_RT:
                 sigrtmin_offset = int(os.getenv("STK_PYTHONAPI_TIMERTYPE5_SIGRTMIN_OFFSET", "0"))
                 signo = STKEngineApplication._get_signo(sigrtmin_offset)
                 self.__dict__["_timer_impl"] = SigRtTimer(signo)

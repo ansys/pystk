@@ -56,19 +56,19 @@ Property detail
 
 .. py:property:: reference_ellipse
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcCurvilinearRelativeMotion.reference_ellipse
-    :type: CALCULATION_OBJECT_REFERENCE_ELLIPSE
+    :type: CalculationObjectReferenceEllipse
 
     Selection of the satellite orbit that is used as the reference ellipse.
 
 .. py:property:: location_source
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcCurvilinearRelativeMotion.location_source
-    :type: CALCULATION_OBJECT_LOCATION_SOURCE
+    :type: CalculationObjectLocationSource
 
     Selection of the satellite whose location is being reported with respect to the reference ellipse.
 
 .. py:property:: reference_selection
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcCurvilinearRelativeMotion.reference_selection
-    :type: CALCULATION_OBJECT_REFERENCE
+    :type: CalculationObjectReference
 
     Gets or sets the reference object selection.
 
@@ -80,13 +80,13 @@ Property detail
 
 .. py:property:: element_type
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcCurvilinearRelativeMotion.element_type
-    :type: CALCULATION_OBJECT_ELEMENT
+    :type: CalculationObjectElement
 
     Choice of osculating or mean elements.
 
 .. py:property:: sign_convention
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcCurvilinearRelativeMotion.sign_convention
-    :type: CALCULATION_OBJECT_ANGLE_SIGN
+    :type: CalculationObjectAngleSign
 
     Gets or sets the sign of the angle when the relative position has a positive component along the orbit normal.
 

@@ -30,7 +30,7 @@ class HPOPSnippets(CodeSnippetsTestBase):
     def setUp(self):
         HPOPSnippets.m_Object = clr.CastAs(
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-                STK_OBJECT_TYPE.SATELLITE, HPOPSnippets.m_DefaultName
+                STKObjectType.SATELLITE, HPOPSnippets.m_DefaultName
             ),
             Satellite,
         )
@@ -41,7 +41,7 @@ class HPOPSnippets(CodeSnippetsTestBase):
     # region TestTearDown
     def tearDown(self):
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(
-            STK_OBJECT_TYPE.SATELLITE, HPOPSnippets.m_DefaultName
+            STKObjectType.SATELLITE, HPOPSnippets.m_DefaultName
         )
         HPOPSnippets.m_Object = None
 
@@ -53,7 +53,7 @@ class HPOPSnippets(CodeSnippetsTestBase):
 
     def ConfigureSatelliteWithHPOPPropagator(self, satellite: "Satellite"):
         # Set satellite propagator to HPOP
-        satellite.set_propagator_type(PROPAGATOR_TYPE.HPOP)
+        satellite.set_propagator_type(PropagatorType.HPOP)
 
         # Get PropagatorLOP interface
         hpopProp: "PropagatorHPOP" = clr.CastAs(satellite.propagator, PropagatorHPOP)
@@ -71,7 +71,7 @@ class HPOPSnippets(CodeSnippetsTestBase):
         )
         hpopDragModel.cd = 1.89
         hpopDragModel.area_mass_ratio = 0.05
-        hpopForceModel.drag.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.MSIS90
+        hpopForceModel.drag.atmospheric_density_model = AtmosphericDensityModel.MSIS90
 
         hpopForceModel.third_body_gravity.remove_third_body("Moon")
 

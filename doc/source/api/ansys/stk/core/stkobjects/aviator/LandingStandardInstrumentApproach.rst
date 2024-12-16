@@ -56,7 +56,7 @@ Property detail
 
 .. py:property:: level_off_mode
     :canonical: ansys.stk.core.stkobjects.aviator.LandingStandardInstrumentApproach.level_off_mode
-    :type: ALTITUDE_CONSTRAINT_MANEUVER_MODE
+    :type: AltitudeConstraintManeuverMode
 
     Gets or sets the level off mode. This is only used when the must level off option is on.
 
@@ -68,7 +68,7 @@ Property detail
 
 .. py:property:: approach_fix_range_mode
     :canonical: ansys.stk.core.stkobjects.aviator.LandingStandardInstrumentApproach.approach_fix_range_mode
-    :type: LANDING_APPROACH_FIX_RANGE_MODE
+    :type: LandingApproachFixRangeMode
 
     Gets or sets the reference point on the runway for the Approach Fix Range.
 

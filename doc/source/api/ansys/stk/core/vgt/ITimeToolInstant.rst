@@ -54,7 +54,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.vgt.ITimeToolInstant.type
-    :type: TIME_EVENT_TYPE
+    :type: TimeEventType
 
     Return the type of time instant.
 

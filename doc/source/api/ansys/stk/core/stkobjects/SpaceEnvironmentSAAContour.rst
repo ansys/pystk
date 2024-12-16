@@ -47,13 +47,13 @@ Property detail
 
 .. py:property:: channel
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentSAAContour.channel
-    :type: SPACE_ENVIRONMENT_SAA_CHANNEL
+    :type: SpaceEnvironmentSAAChannel
 
     Energy level for SAA protons.
 
 .. py:property:: flux_level
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentSAAContour.flux_level
-    :type: SPACE_ENVIRONMENT_SAA_FLUX_LEVEL
+    :type: SpaceEnvironmentSAAFluxLevel
 
     Flux level for SAA contour.
 

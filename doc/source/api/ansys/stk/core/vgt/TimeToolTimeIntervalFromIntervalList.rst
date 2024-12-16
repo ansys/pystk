@@ -48,7 +48,7 @@ Property detail
 
 .. py:property:: interval_selection
     :canonical: ansys.stk.core.vgt.TimeToolTimeIntervalFromIntervalList.interval_selection
-    :type: INTERVAL_FROM_INTERVAL_LIST_SELECTION_TYPE
+    :type: IntervalFromIntervalListSelectionType
 
     The method used to select an interval from the reference interval list.
 

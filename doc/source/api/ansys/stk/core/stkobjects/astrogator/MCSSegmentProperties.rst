@@ -79,7 +79,7 @@ Property detail
 
 .. py:property:: last_run_code
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSSegmentProperties.last_run_code
-    :type: RUN_CODE
+    :type: RunCode
 
     Get the last run code returned by the segment.
 

@@ -114,7 +114,7 @@ Property detail
 
 .. py:property:: boundary_style
     :canonical: ansys.stk.core.stkobjects.AreaTargetGraphics.boundary_style
-    :type: LINE_STYLE
+    :type: LineStyle
 
     The style in which the area target's boundary displays.
 

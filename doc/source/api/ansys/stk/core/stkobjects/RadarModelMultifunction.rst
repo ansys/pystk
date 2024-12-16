@@ -133,14 +133,14 @@ Method detail
 
 
 
-.. py:method:: set_pointing_strategy_type(self, value: POINTING_STRATEGY_TYPE) -> None
+.. py:method:: set_pointing_strategy_type(self, value: PointingStrategyType) -> None
     :canonical: ansys.stk.core.stkobjects.RadarModelMultifunction.set_pointing_strategy_type
 
     Set the current pointing strategy type.
 
     :Parameters:
 
-    **value** : :obj:`~POINTING_STRATEGY_TYPE`
+    **value** : :obj:`~PointingStrategyType`
 
     :Returns:
 

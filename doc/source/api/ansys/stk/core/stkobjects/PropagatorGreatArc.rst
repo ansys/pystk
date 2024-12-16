@@ -77,13 +77,13 @@ Property detail
 
 .. py:property:: method
     :canonical: ansys.stk.core.stkobjects.PropagatorGreatArc.method
-    :type: VEHICLE_WAYPOINT_COMPUTATION_METHOD
+    :type: VehicleWaypointComputationMethod
 
     Compute waypoints.
 
 .. py:property:: altitude_reference_type
     :canonical: ansys.stk.core.stkobjects.PropagatorGreatArc.altitude_reference_type
-    :type: VEHICLE_ALTITUDE_REFERENCE
+    :type: VehicleAltitudeReference
 
     Reference altitude for waypoints.
 
@@ -151,27 +151,27 @@ Method detail
 
 
 
-.. py:method:: set_altitude_reference_type(self, altitude_ref: VEHICLE_ALTITUDE_REFERENCE) -> None
+.. py:method:: set_altitude_reference_type(self, altitude_ref: VehicleAltitudeReference) -> None
     :canonical: ansys.stk.core.stkobjects.PropagatorGreatArc.set_altitude_reference_type
 
     Specify Waypoint Altitude Reference.
 
     :Parameters:
 
-    **altitude_ref** : :obj:`~VEHICLE_ALTITUDE_REFERENCE`
+    **altitude_ref** : :obj:`~VehicleAltitudeReference`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_altitude_reference_type_supported(self, altitude_ref: VEHICLE_ALTITUDE_REFERENCE) -> bool
+.. py:method:: is_altitude_reference_type_supported(self, altitude_ref: VehicleAltitudeReference) -> bool
     :canonical: ansys.stk.core.stkobjects.PropagatorGreatArc.is_altitude_reference_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **altitude_ref** : :obj:`~VEHICLE_ALTITUDE_REFERENCE`
+    **altitude_ref** : :obj:`~VehicleAltitudeReference`
 
     :Returns:
 

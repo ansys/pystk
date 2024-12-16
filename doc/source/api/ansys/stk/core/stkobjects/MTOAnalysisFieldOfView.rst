@@ -63,7 +63,7 @@ Property detail
 
 .. py:property:: entirety
     :canonical: ansys.stk.core.stkobjects.MTOAnalysisFieldOfView.entirety
-    :type: MTO_ENTIRETY
+    :type: MTOEntirety
 
     Field Of View Entirety.
 
@@ -111,14 +111,14 @@ Method detail
 
         :obj:`~bool`
 
-.. py:method:: compute_tracks(self, mode: MTO_VISIBILITY_MODE, tracks: list, time: typing.Any) -> list
+.. py:method:: compute_tracks(self, mode: MTOVisibilityMode, tracks: list, time: typing.Any) -> list
     :canonical: ansys.stk.core.stkobjects.MTOAnalysisFieldOfView.compute_tracks
 
     Return an array of track ids and boolean values.
 
     :Parameters:
 
-    **mode** : :obj:`~MTO_VISIBILITY_MODE`
+    **mode** : :obj:`~MTOVisibilityMode`
     **tracks** : :obj:`~list`
     **time** : :obj:`~typing.Any`
 
@@ -126,14 +126,14 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: compute_all_tracks(self, mode: MTO_VISIBILITY_MODE, time: typing.Any) -> list
+.. py:method:: compute_all_tracks(self, mode: MTOVisibilityMode, time: typing.Any) -> list
     :canonical: ansys.stk.core.stkobjects.MTOAnalysisFieldOfView.compute_all_tracks
 
     Return an array of track ids and boolean values for all tracks.
 
     :Parameters:
 
-    **mode** : :obj:`~MTO_VISIBILITY_MODE`
+    **mode** : :obj:`~MTOVisibilityMode`
     **time** : :obj:`~typing.Any`
 
     :Returns:
@@ -144,14 +144,14 @@ Method detail
 
 
 
-.. py:method:: are_tracks_in_field_of_view(self, any_or_all: MTO_TRACK_EVALUATION_TYPE, tracks: list, time: typing.Any) -> bool
+.. py:method:: are_tracks_in_field_of_view(self, any_or_all: MTOTrackEvaluationType, tracks: list, time: typing.Any) -> bool
     :canonical: ansys.stk.core.stkobjects.MTOAnalysisFieldOfView.are_tracks_in_field_of_view
 
     Return an array of track ids and boolean values.
 
     :Parameters:
 
-    **any_or_all** : :obj:`~MTO_TRACK_EVALUATION_TYPE`
+    **any_or_all** : :obj:`~MTOTrackEvaluationType`
     **tracks** : :obj:`~list`
     **time** : :obj:`~typing.Any`
 

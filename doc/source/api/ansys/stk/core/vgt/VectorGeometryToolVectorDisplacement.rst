@@ -72,7 +72,7 @@ Property detail
 
 .. py:property:: signal_sense
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorDisplacement.signal_sense
-    :type: SIGNAL_DIRECTION_TYPE
+    :type: SignalDirectionType
 
     Specify a sense of signal transmission. This property is read-only if Apparent is set to false.
 

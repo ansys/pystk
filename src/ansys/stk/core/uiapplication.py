@@ -4,8 +4,8 @@
 
 """The STK UI Application library is a COM library containing classes, interfaces and enumerations for the Application Object Model."""
 
-__all__ = ["APPLICATION_CONSTANTS", "APPLICATION_ERROR_CODES", "APPLICATION_LOG_MESSAGE_TYPE", "APPLICATION_OPEN_LOG_FILE_MODE", 
-"IUiApplicationPartnerAccess", "MostRecentlyUsedCollection", "UiApplication", "UiFileOpenDialogExtension", "UiFileOpenDialogExtensionCollection"]
+__all__ = ["ApplicationConstants", "ApplicationErrorCodes", "ApplicationLogMessageType", "ApplicationOpenLogFileMode", "IUiApplicationPartnerAccess", 
+"MostRecentlyUsedCollection", "UiApplication", "UiFileOpenDialogExtension", "UiFileOpenDialogExtensionCollection"]
 
 import typing
 
@@ -21,13 +21,13 @@ from .internal.apiutil     import (InterfaceProxy, EnumeratorProxy, OutArg,
     set_class_attribute, SupportsDeleteCallback)
 from .utilities.exceptions import STKRuntimeError
 
-from .uicore import APPLICATION_WINDOW_STATE
+from .uicore import ApplicationWindowState
 
 
 def _raise_uninitialized_error(*args):
     raise STKRuntimeError("Valid STK object model classes are returned from STK methods and should not be created independently.")
 
-class APPLICATION_OPEN_LOG_FILE_MODE(IntEnum):
+class ApplicationOpenLogFileMode(IntEnum):
     """Log file open modes."""
    
     FOR_WRITING = 2
@@ -35,12 +35,12 @@ class APPLICATION_OPEN_LOG_FILE_MODE(IntEnum):
     FOR_APPENDING = 8
     """Open log file in append file mode."""
 
-APPLICATION_OPEN_LOG_FILE_MODE.FOR_WRITING.__doc__ = "Open log file in write file mode."
-APPLICATION_OPEN_LOG_FILE_MODE.FOR_APPENDING.__doc__ = "Open log file in append file mode."
+ApplicationOpenLogFileMode.FOR_WRITING.__doc__ = "Open log file in write file mode."
+ApplicationOpenLogFileMode.FOR_APPENDING.__doc__ = "Open log file in append file mode."
 
-agcls.AgTypeNameMap["APPLICATION_OPEN_LOG_FILE_MODE"] = APPLICATION_OPEN_LOG_FILE_MODE
+agcls.AgTypeNameMap["ApplicationOpenLogFileMode"] = ApplicationOpenLogFileMode
 
-class APPLICATION_LOG_MESSAGE_TYPE(IntEnum):
+class ApplicationLogMessageType(IntEnum):
     """Log message types."""
    
     DEBUG = 0
@@ -54,45 +54,45 @@ class APPLICATION_LOG_MESSAGE_TYPE(IntEnum):
     ALARM = 4
     """Log messages that provide alarm text."""
 
-APPLICATION_LOG_MESSAGE_TYPE.DEBUG.__doc__ = "Log messages that provide Debug text."
-APPLICATION_LOG_MESSAGE_TYPE.INFO.__doc__ = "Log messages that provide information text."
-APPLICATION_LOG_MESSAGE_TYPE.FORCE_INFO.__doc__ = "Log messages that provide forceful information text."
-APPLICATION_LOG_MESSAGE_TYPE.WARNING.__doc__ = "Log messages that provide warning text."
-APPLICATION_LOG_MESSAGE_TYPE.ALARM.__doc__ = "Log messages that provide alarm text."
+ApplicationLogMessageType.DEBUG.__doc__ = "Log messages that provide Debug text."
+ApplicationLogMessageType.INFO.__doc__ = "Log messages that provide information text."
+ApplicationLogMessageType.FORCE_INFO.__doc__ = "Log messages that provide forceful information text."
+ApplicationLogMessageType.WARNING.__doc__ = "Log messages that provide warning text."
+ApplicationLogMessageType.ALARM.__doc__ = "Log messages that provide alarm text."
 
-agcls.AgTypeNameMap["APPLICATION_LOG_MESSAGE_TYPE"] = APPLICATION_LOG_MESSAGE_TYPE
+agcls.AgTypeNameMap["ApplicationLogMessageType"] = ApplicationLogMessageType
 
-class APPLICATION_CONSTANTS(IntEnum):
-    """APPLICATION_CONSTANTS contains base IDs for various structures."""
+class ApplicationConstants(IntEnum):
+    """ApplicationConstants contains base IDs for various structures."""
    
     APPLICATION_ERROR_BASE = 0x200
     """Error base."""
 
-APPLICATION_CONSTANTS.APPLICATION_ERROR_BASE.__doc__ = "Error base."
+ApplicationConstants.APPLICATION_ERROR_BASE.__doc__ = "Error base."
 
-agcls.AgTypeNameMap["APPLICATION_CONSTANTS"] = APPLICATION_CONSTANTS
+agcls.AgTypeNameMap["ApplicationConstants"] = ApplicationConstants
 
-class APPLICATION_ERROR_CODES(IntEnum):
+class ApplicationErrorCodes(IntEnum):
     """App error codes."""
    
-    PERSONALITY_LOAD_FAILED = (((1 << 31) | (4 << 16)) | (APPLICATION_CONSTANTS.APPLICATION_ERROR_BASE + 1))
+    PERSONALITY_LOAD_FAILED = (((1 << 31) | (4 << 16)) | (ApplicationConstants.APPLICATION_ERROR_BASE + 1))
     """Failed to load personality."""
-    PERSONALITY_ALREADY_LOADED = (((1 << 31) | (4 << 16)) | (APPLICATION_CONSTANTS.APPLICATION_ERROR_BASE + 2))
+    PERSONALITY_ALREADY_LOADED = (((1 << 31) | (4 << 16)) | (ApplicationConstants.APPLICATION_ERROR_BASE + 2))
     """Personality already loaded."""
-    PERSONALITY_NOT_LOADED = (((1 << 31) | (4 << 16)) | (APPLICATION_CONSTANTS.APPLICATION_ERROR_BASE + 3))
+    PERSONALITY_NOT_LOADED = (((1 << 31) | (4 << 16)) | (ApplicationConstants.APPLICATION_ERROR_BASE + 3))
     """No personality is loaded."""
-    PERSONALITY_LICENSE_ERROR = (((1 << 31) | (4 << 16)) | (APPLICATION_CONSTANTS.APPLICATION_ERROR_BASE + 4))
+    PERSONALITY_LICENSE_ERROR = (((1 << 31) | (4 << 16)) | (ApplicationConstants.APPLICATION_ERROR_BASE + 4))
     """You do not have the required license to connect externally to the application."""
-    NO_LICENSE_ERROR = (((1 << 31) | (4 << 16)) | (APPLICATION_CONSTANTS.APPLICATION_ERROR_BASE + 5))
+    NO_LICENSE_ERROR = (((1 << 31) | (4 << 16)) | (ApplicationConstants.APPLICATION_ERROR_BASE + 5))
     """No license could be found."""
 
-APPLICATION_ERROR_CODES.PERSONALITY_LOAD_FAILED.__doc__ = "Failed to load personality."
-APPLICATION_ERROR_CODES.PERSONALITY_ALREADY_LOADED.__doc__ = "Personality already loaded."
-APPLICATION_ERROR_CODES.PERSONALITY_NOT_LOADED.__doc__ = "No personality is loaded."
-APPLICATION_ERROR_CODES.PERSONALITY_LICENSE_ERROR.__doc__ = "You do not have the required license to connect externally to the application."
-APPLICATION_ERROR_CODES.NO_LICENSE_ERROR.__doc__ = "No license could be found."
+ApplicationErrorCodes.PERSONALITY_LOAD_FAILED.__doc__ = "Failed to load personality."
+ApplicationErrorCodes.PERSONALITY_ALREADY_LOADED.__doc__ = "Personality already loaded."
+ApplicationErrorCodes.PERSONALITY_NOT_LOADED.__doc__ = "No personality is loaded."
+ApplicationErrorCodes.PERSONALITY_LICENSE_ERROR.__doc__ = "You do not have the required license to connect externally to the application."
+ApplicationErrorCodes.NO_LICENSE_ERROR.__doc__ = "No license could be found."
 
-agcls.AgTypeNameMap["APPLICATION_ERROR_CODES"] = APPLICATION_ERROR_CODES
+agcls.AgTypeNameMap["ApplicationErrorCodes"] = ApplicationErrorCodes
 
 
 class IUiApplicationPartnerAccess(object):
@@ -305,17 +305,17 @@ class UiApplication(IUiApplicationPartnerAccess, SupportsDeleteCallback):
 
     _get_window_state_metadata = { "offset" : _get_window_state_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(APPLICATION_WINDOW_STATE),) }
+            "marshallers" : (agmarshall.EnumArg(ApplicationWindowState),) }
     @property
-    def window_state(self) -> "APPLICATION_WINDOW_STATE":
+    def window_state(self) -> "ApplicationWindowState":
         """Get or set the state of the main window."""
         return self._intf.get_property(UiApplication._metadata, UiApplication._get_window_state_metadata)
 
     _set_window_state_metadata = { "offset" : _set_window_state_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(APPLICATION_WINDOW_STATE),) }
+            "marshallers" : (agmarshall.EnumArg(ApplicationWindowState),) }
     @window_state.setter
-    def window_state(self, new_value:"APPLICATION_WINDOW_STATE") -> None:
+    def window_state(self, new_value:"ApplicationWindowState") -> None:
         """Get or set the state of the main window."""
         return self._intf.set_property(UiApplication._metadata, UiApplication._set_window_state_metadata, new_value)
 
@@ -418,15 +418,15 @@ class UiApplication(IUiApplicationPartnerAccess, SupportsDeleteCallback):
 
     _open_log_file_metadata = { "offset" : _open_log_file_method_offset,
             "arg_types" : (agcom.BSTR, agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.EnumArg(APPLICATION_OPEN_LOG_FILE_MODE), agmarshall.VariantBoolArg,) }
-    def open_log_file(self, log_file_name:str, log_file_mode:"APPLICATION_OPEN_LOG_FILE_MODE") -> bool:
+            "marshallers" : (agmarshall.BStrArg, agmarshall.EnumArg(ApplicationOpenLogFileMode), agmarshall.VariantBoolArg,) }
+    def open_log_file(self, log_file_name:str, log_file_mode:"ApplicationOpenLogFileMode") -> bool:
         """Specify the current log file to be written to."""
         return self._intf.invoke(UiApplication._metadata, UiApplication._open_log_file_metadata, log_file_name, log_file_mode, OutArg())
 
     _log_message_metadata = { "offset" : _log_message_method_offset,
             "arg_types" : (agcom.LONG, agcom.BSTR,),
-            "marshallers" : (agmarshall.EnumArg(APPLICATION_LOG_MESSAGE_TYPE), agmarshall.BStrArg,) }
-    def log_message(self, msg_type:"APPLICATION_LOG_MESSAGE_TYPE", msg:str) -> None:
+            "marshallers" : (agmarshall.EnumArg(ApplicationLogMessageType), agmarshall.BStrArg,) }
+    def log_message(self, msg_type:"ApplicationLogMessageType", msg:str) -> None:
         """Log the Message specified."""
         return self._intf.invoke(UiApplication._metadata, UiApplication._log_message_metadata, msg_type, msg)
 

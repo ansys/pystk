@@ -52,20 +52,20 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: is_type_supported(self, type: SPATIAL_CALCULATION_TYPE) -> bool
+.. py:method:: is_type_supported(self, type: SpatialCalculationType) -> bool
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolCalculationFactory.is_type_supported
 
     Return whether the specified type is supported.
 
     :Parameters:
 
-    **type** : :obj:`~SPATIAL_CALCULATION_TYPE`
+    **type** : :obj:`~SpatialCalculationType`
 
     :Returns:
 
         :obj:`~bool`
 
-.. py:method:: create(self, name: str, description: str, type: SPATIAL_CALCULATION_TYPE) -> ISpatialAnalysisToolSpatialCalculation
+.. py:method:: create(self, name: str, description: str, type: SpatialCalculationType) -> ISpatialAnalysisToolSpatialCalculation
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolCalculationFactory.create
 
     Create and registers a volume calc using specified name and description.
@@ -74,7 +74,7 @@ Method detail
 
     **name** : :obj:`~str`
     **description** : :obj:`~str`
-    **type** : :obj:`~SPATIAL_CALCULATION_TYPE`
+    **type** : :obj:`~SpatialCalculationType`
 
     :Returns:
 

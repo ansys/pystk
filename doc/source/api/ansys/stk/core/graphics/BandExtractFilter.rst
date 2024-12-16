@@ -38,7 +38,7 @@ Property detail
 
 .. py:property:: extract_format
     :canonical: ansys.stk.core.graphics.BandExtractFilter.extract_format
-    :type: RASTER_FORMAT
+    :type: RasterFormat
 
     Gets or sets the raster format containing the bands and the order of the bands that will be extracted.
 

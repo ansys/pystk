@@ -82,7 +82,7 @@ Method detail
 
         :obj:`~Terrain`
 
-.. py:method:: add(self, location: str, terrain_file_type: TERRAIN_FILE_TYPE) -> Terrain
+.. py:method:: add(self, location: str, terrain_file_type: TerrainFileType) -> Terrain
     :canonical: ansys.stk.core.stkobjects.TerrainCollection.add
 
     Add a terrain item to the collection.
@@ -90,7 +90,7 @@ Method detail
     :Parameters:
 
     **location** : :obj:`~str`
-    **terrain_file_type** : :obj:`~TERRAIN_FILE_TYPE`
+    **terrain_file_type** : :obj:`~TerrainFileType`
 
     :Returns:
 

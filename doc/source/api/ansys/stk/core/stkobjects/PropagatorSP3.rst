@@ -65,7 +65,7 @@ Property detail
 
 .. py:property:: interpolation_method
     :canonical: ansys.stk.core.stkobjects.PropagatorSP3.interpolation_method
-    :type: VEHICLE_INTERPOLATION_METHOD
+    :type: VehicleInterpolationMethod
 
     By default, the SP3 propagator uses the standard Lagrange interpolation scheme, interpolating position and velocity separately. Some files may be configured to allow the Hermitian interpolation.
 

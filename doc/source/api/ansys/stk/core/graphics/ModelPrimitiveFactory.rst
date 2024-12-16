@@ -60,7 +60,7 @@ Method detail
 
         :obj:`~ModelPrimitive`
 
-.. py:method:: initialize_with_string_uri_and_up_axis(self, uri: str, up_axis: MODEL_UP_AXIS) -> ModelPrimitive
+.. py:method:: initialize_with_string_uri_and_up_axis(self, uri: str, up_axis: ModelUpAxis) -> ModelPrimitive
     :canonical: ansys.stk.core.graphics.ModelPrimitiveFactory.initialize_with_string_uri_and_up_axis
 
     For convenience. Initializes a model primitive with the specified file path and up axis.
@@ -68,7 +68,7 @@ Method detail
     :Parameters:
 
     **uri** : :obj:`~str`
-    **up_axis** : :obj:`~MODEL_UP_AXIS`
+    **up_axis** : :obj:`~ModelUpAxis`
 
     :Returns:
 

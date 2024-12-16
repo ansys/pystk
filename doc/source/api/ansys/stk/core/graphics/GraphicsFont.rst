@@ -94,7 +94,7 @@ Property detail
 
 .. py:property:: style
     :canonical: ansys.stk.core.graphics.GraphicsFont.style
-    :type: FONT_STYLE
+    :type: FontStyle
 
     Gets the font style enumeration that contains the style for this font. This does not include the outline property.
 

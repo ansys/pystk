@@ -80,7 +80,7 @@ Property detail
 
 .. py:property:: connect
     :canonical: ansys.stk.core.stkobjects.Graphics3DReferenceAxes.connect
-    :type: VECTOR_AXES_CONNECT_TYPE
+    :type: VectorAxesConnectType
 
     Specifies the method used for connecting geometric elements.
 

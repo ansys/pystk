@@ -65,7 +65,7 @@ Property detail
 
 .. py:property:: definition_type
     :canonical: ansys.stk.core.stkobjects.FigureOfMerit.definition_type
-    :type: FIGURE_OF_MERIT_DEFINITION_TYPE
+    :type: FigureOfMeritDefinitionType
 
     Definition type for the FOM.
 
@@ -104,27 +104,27 @@ Method detail
 -------------
 
 
-.. py:method:: set_definition_type(self, defn: FIGURE_OF_MERIT_DEFINITION_TYPE) -> None
+.. py:method:: set_definition_type(self, defn: FigureOfMeritDefinitionType) -> None
     :canonical: ansys.stk.core.stkobjects.FigureOfMerit.set_definition_type
 
     Set the definition type.
 
     :Parameters:
 
-    **defn** : :obj:`~FIGURE_OF_MERIT_DEFINITION_TYPE`
+    **defn** : :obj:`~FigureOfMeritDefinitionType`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_definition_type_supported(self, defn: FIGURE_OF_MERIT_DEFINITION_TYPE) -> bool
+.. py:method:: is_definition_type_supported(self, defn: FigureOfMeritDefinitionType) -> bool
     :canonical: ansys.stk.core.stkobjects.FigureOfMerit.is_definition_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **defn** : :obj:`~FIGURE_OF_MERIT_DEFINITION_TYPE`
+    **defn** : :obj:`~FigureOfMeritDefinitionType`
 
     :Returns:
 
@@ -132,14 +132,14 @@ Method detail
 
 
 
-.. py:method:: set_access_constraint_definition(self, constraint_name: FIGURE_OF_MERIT_CONSTRAINT_NAME) -> FigureOfMeritDefinitionAccessConstraint
+.. py:method:: set_access_constraint_definition(self, constraint_name: FigureOfMeritConstraintName) -> FigureOfMeritDefinitionAccessConstraint
     :canonical: ansys.stk.core.stkobjects.FigureOfMerit.set_access_constraint_definition
 
     Set the access constraint definition.
 
     :Parameters:
 
-    **constraint_name** : :obj:`~FIGURE_OF_MERIT_CONSTRAINT_NAME`
+    **constraint_name** : :obj:`~FigureOfMeritConstraintName`
 
     :Returns:
 

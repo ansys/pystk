@@ -52,7 +52,7 @@ Property detail
 
 .. py:property:: propulsion_strategy
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftPropulsion.propulsion_strategy
-    :type: AIRCRAFT_PROPULSION_STRATEGY
+    :type: AircraftPropulsionStrategy
 
     Gets or sets the propulsion strategy type.
 

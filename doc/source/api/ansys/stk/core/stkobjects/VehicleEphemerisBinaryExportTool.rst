@@ -59,7 +59,7 @@ Property detail
 
 .. py:property:: coordinate_system
     :canonical: ansys.stk.core.stkobjects.VehicleEphemerisBinaryExportTool.coordinate_system
-    :type: EPHEMERIS_COORDINATE_SYSTEM_TYPE
+    :type: EphemerisCoordinateSystemType
 
     Whether the resulting data file should be in the Fixed, J2000, or Inertial coordinate system. If Earth or the Sun is the central body, the Inertial coordinate system is not an available option.
 
@@ -71,7 +71,7 @@ Property detail
 
 .. py:property:: version_format
     :canonical: ansys.stk.core.stkobjects.VehicleEphemerisBinaryExportTool.version_format
-    :type: EXPORT_TOOL_VERSION_FORMAT
+    :type: ExportToolVersionFormat
 
     Provides the option to generate files compatible with prior versions of STK.
 
@@ -95,7 +95,7 @@ Property detail
 
 .. py:property:: covariance_type
     :canonical: ansys.stk.core.stkobjects.VehicleEphemerisBinaryExportTool.covariance_type
-    :type: EPHEMERIS_COVARIANCE_TYPE
+    :type: EphemerisCovarianceType
 
     Choose to export position covariance (3x3), position/velocity covariance (6x6), or no covariance information. CovarianceType is valid only if the vehicle has ephemeris with covariance.
 

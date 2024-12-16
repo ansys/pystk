@@ -111,7 +111,7 @@ Property detail
 
 .. py:property:: approach_mode
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureLanding.approach_mode
-    :type: APPROACH_MODE
+    :type: ApproachMode
 
     Gets or sets the type of landing the aircraft will perform.
 

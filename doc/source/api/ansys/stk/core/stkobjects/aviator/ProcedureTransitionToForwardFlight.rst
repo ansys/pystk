@@ -61,7 +61,7 @@ Property detail
 
 .. py:property:: transition_course_mode
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureTransitionToForwardFlight.transition_course_mode
-    :type: VTOL_TRANSITION_MODE
+    :type: VTOLTransitionMode
 
     Get the mode to specify the course of the transition maneuver.
 

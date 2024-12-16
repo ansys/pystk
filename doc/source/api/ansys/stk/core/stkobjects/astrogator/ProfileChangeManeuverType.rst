@@ -46,7 +46,7 @@ Property detail
 
 .. py:property:: maneuver_type
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileChangeManeuverType.maneuver_type
-    :type: MANEUVER_TYPE
+    :type: ManeuverType
 
     Gets or sets the new maneuver type for the targeted segment.
 

@@ -168,16 +168,16 @@ Method detail
 
         :obj:`~IPosition`
 
-.. py:method:: convert_position_array(self, position_type: POSITION_TYPE, position_array: list, convert_to: POSITION_TYPE) -> list
+.. py:method:: convert_position_array(self, position_type: PositionType, position_array: list, convert_to: PositionType) -> list
     :canonical: ansys.stk.core.stkutil.ConversionUtility.convert_position_array
 
     Convert the specified position values from a given position type to another position type.
 
     :Parameters:
 
-    **position_type** : :obj:`~POSITION_TYPE`
+    **position_type** : :obj:`~PositionType`
     **position_array** : :obj:`~list`
-    **convert_to** : :obj:`~POSITION_TYPE`
+    **convert_to** : :obj:`~PositionType`
 
     :Returns:
 

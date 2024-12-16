@@ -120,7 +120,7 @@ Property detail
 
 .. py:property:: reference_frame
     :canonical: ansys.stk.core.stkobjects.Star.reference_frame
-    :type: STAR_REFERENCE_FRAME
+    :type: StarReferenceFrame
 
     Returns a reference frame.
 

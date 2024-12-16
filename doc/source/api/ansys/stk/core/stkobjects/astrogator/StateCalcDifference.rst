@@ -46,7 +46,7 @@ Property detail
 
 .. py:property:: difference_order
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcDifference.difference_order
-    :type: DIFFERENCE_ORDER
+    :type: DifferenceOrder
 
     Gets or sets the order of the difference calculation.
 

@@ -52,7 +52,7 @@ Property detail
 
 .. py:property:: line_style
     :canonical: ansys.stk.core.stkobjects.AntennaContourLevel.line_style
-    :type: LINE_STYLE
+    :type: LineStyle
 
     Select the line style, displayed for the contour level, from the AgELineStyle enumeration.
 

@@ -76,7 +76,7 @@ Property detail
 
 .. py:property:: quality
     :canonical: ansys.stk.core.stkobjects.VolumetricGraphics3D.quality
-    :type: VOLUMETRIC_DISPLAY_QUALITY_TYPE
+    :type: VolumetricDisplayQualityType
 
     Sets/gets the quality of the graphics display.
 
@@ -124,7 +124,7 @@ Property detail
 
 .. py:property:: volume_type
     :canonical: ansys.stk.core.stkobjects.VolumetricGraphics3D.volume_type
-    :type: VOLUMETRIC_DISPLAY_VOLUME_TYPE
+    :type: VolumetricDisplayVolumeType
 
     Sets/gets the graphics volume display type.
 

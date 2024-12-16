@@ -44,7 +44,7 @@ Property detail
 
 .. py:property:: pressure_mode
     :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverFinite.pressure_mode
-    :type: PRESSURE_MODE
+    :type: PressureMode
 
     Gets or sets the pressure mode.
 
@@ -56,7 +56,7 @@ Property detail
 
 .. py:property:: thrust_efficiency_mode
     :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverFinite.thrust_efficiency_mode
-    :type: THRUST_TYPE
+    :type: ThrustType
 
     Thrust - the calculations that are effected by the thrust efficiency value.
 

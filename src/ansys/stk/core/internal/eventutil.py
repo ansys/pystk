@@ -223,7 +223,7 @@ class IStkObjectRootEventHandler(STKEventSubscriber):
         
     @property
     def on_log_message(self):
-        """Use operator += to register or operator -= to unregister callbacks with the signature [OnLogMessage(message:str, msgType:"LOG_MESSAGE_TYPE", errorCode:int, fileName:str, lineNo:int, dispID:"LOG_MESSAGE_DISPLAY_ID") -> None]"""
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnLogMessage(message:str, msgType:"LogMessageType", errorCode:int, fileName:str, lineNo:int, dispID:"LogMessageDisplayID") -> None]"""
         return self._events["OnLogMessage"]
         
     @on_log_message.setter
@@ -268,7 +268,7 @@ class IStkObjectRootEventHandler(STKEventSubscriber):
         
     @property
     def on_animation_playback(self):
-        """Use operator += to register or operator -= to unregister callbacks with the signature [OnAnimationPlayback(CurrentTime:float, eAction:"ANIMATION_ACTION_TYPE", eDirection:"ANIMATION_DIRECTION_TYPE") -> None]"""
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnAnimationPlayback(CurrentTime:float, eAction:"AnimationActionType", eDirection:"AnimationDirectionType") -> None]"""
         return self._events["OnAnimationPlayback"]
         
     @on_animation_playback.setter
@@ -532,7 +532,7 @@ class ISTKXApplicationEventHandler(STKEventSubscriber):
         
     @property
     def on_log_message(self):
-        """Use operator += to register or operator -= to unregister callbacks with the signature [OnLogMessage(message:str, msgType:"LOG_MESSAGE_TYPE", errorCode:int, fileName:str, lineNo:int, dispID:"LOG_MESSAGE_DISPLAY_ID") -> None]"""
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnLogMessage(message:str, msgType:"LogMessageType", errorCode:int, fileName:str, lineNo:int, dispID:"LogMessageDisplayID") -> None]"""
         return self._events["OnLogMessage"]
         
     @on_log_message.setter
@@ -595,7 +595,7 @@ class ISTKXApplicationEventHandler(STKEventSubscriber):
     
     @property
     def on_new_gfx_analysis_ctrl_request(self):
-        """Use operator += to register or operator -= to unregister callbacks with the signature [OnNewGfxAnalysisCtrlRequest(SceneID:int, GfxAnalysisMode:"GRAPHICS_2D_ANALYSIS_MODE") -> None]"""
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnNewGfxAnalysisCtrlRequest(SceneID:int, GfxAnalysisMode:"Graphics2DAnalysisMode") -> None]"""
         return self._events["OnNewGfxAnalysisCtrlRequest"]
         
     @on_new_gfx_analysis_ctrl_request.setter

@@ -94,7 +94,7 @@ Property detail
 
 .. py:property:: notation
     :canonical: ansys.stk.core.stkobjects.VolumetricGraphics3DLegend.notation
-    :type: VOLUMETRIC_LEGEND_NUMERIC_NOTATION_TYPE
+    :type: VolumetricLegendNumericNotationType
 
     Set the legend numeric notation. A member of the AgEVmLegendNumericNotation enumeration.
 
@@ -106,7 +106,7 @@ Property detail
 
 .. py:property:: level_order
     :canonical: ansys.stk.core.stkobjects.VolumetricGraphics3DLegend.level_order
-    :type: VOLUMETRIC_LEVEL_ORDER
+    :type: VolumetricLevelOrder
 
     Set the legend numeric notation. A member of the AgEVmLevelOrder enumeration.
 

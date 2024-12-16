@@ -102,7 +102,7 @@ Method detail
 
         :obj:`~SensorComplexConicPattern`
 
-.. py:method:: set_pattern_eoir(self, line_of_site_jitter: float, processing_level: SENSOR_EOIR_PROCESSING_LEVEL_TYPE) -> SensorEOIRPattern
+.. py:method:: set_pattern_eoir(self, line_of_site_jitter: float, processing_level: SensorEOIRProcessingLevelType) -> SensorEOIRPattern
     :canonical: ansys.stk.core.stkobjects.SensorCommonTasks.set_pattern_eoir
 
     Define the sensor using a EOIR pattern.
@@ -110,7 +110,7 @@ Method detail
     :Parameters:
 
     **line_of_site_jitter** : :obj:`~float`
-    **processing_level** : :obj:`~SENSOR_EOIR_PROCESSING_LEVEL_TYPE`
+    **processing_level** : :obj:`~SensorEOIRProcessingLevelType`
 
     :Returns:
 
@@ -175,7 +175,7 @@ Method detail
 
         :obj:`~SensorSARPattern`
 
-.. py:method:: set_pointing_fixed_az_el(self, azimuth: typing.Any, elevation: typing.Any, about_boresight: AZ_EL_ABOUT_BORESIGHT) -> SensorPointingFixed
+.. py:method:: set_pointing_fixed_az_el(self, azimuth: typing.Any, elevation: typing.Any, about_boresight: AzElAboutBoresight) -> SensorPointingFixed
     :canonical: ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_fixed_az_el
 
     Set the pointing method to Fixed with an AzEl orientation.
@@ -184,20 +184,20 @@ Method detail
 
     **azimuth** : :obj:`~typing.Any`
     **elevation** : :obj:`~typing.Any`
-    **about_boresight** : :obj:`~AZ_EL_ABOUT_BORESIGHT`
+    **about_boresight** : :obj:`~AzElAboutBoresight`
 
     :Returns:
 
         :obj:`~SensorPointingFixed`
 
-.. py:method:: set_pointing_fixed_euler(self, sequence: EULER_ORIENTATION_SEQUENCE_TYPE, a: typing.Any, b: typing.Any, c: typing.Any) -> SensorPointingFixed
+.. py:method:: set_pointing_fixed_euler(self, sequence: EulerOrientationSequenceType, a: typing.Any, b: typing.Any, c: typing.Any) -> SensorPointingFixed
     :canonical: ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_fixed_euler
 
     Set the pointing method to Fixed with a Euler Angles orientation.
 
     :Parameters:
 
-    **sequence** : :obj:`~EULER_ORIENTATION_SEQUENCE_TYPE`
+    **sequence** : :obj:`~EulerOrientationSequenceType`
     **a** : :obj:`~typing.Any`
     **b** : :obj:`~typing.Any`
     **c** : :obj:`~typing.Any`
@@ -222,14 +222,14 @@ Method detail
 
         :obj:`~SensorPointingFixed`
 
-.. py:method:: set_pointing_fixed_ypr(self, sequence: YPR_ANGLES_SEQUENCE, yaw: typing.Any, pitch: typing.Any, roll: typing.Any) -> SensorPointingFixed
+.. py:method:: set_pointing_fixed_ypr(self, sequence: YPRAnglesSequence, yaw: typing.Any, pitch: typing.Any, roll: typing.Any) -> SensorPointingFixed
     :canonical: ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_fixed_ypr
 
     Set the pointing method to Fixed with a YPR Angles orientation.
 
     :Parameters:
 
-    **sequence** : :obj:`~YPR_ANGLES_SEQUENCE`
+    **sequence** : :obj:`~YPRAnglesSequence`
     **yaw** : :obj:`~typing.Any`
     **pitch** : :obj:`~typing.Any`
     **roll** : :obj:`~typing.Any`
@@ -238,7 +238,7 @@ Method detail
 
         :obj:`~SensorPointingFixed`
 
-.. py:method:: set_pointing_fixed_axes_az_el(self, reference_axes: str, azimuth: typing.Any, elevation: typing.Any, about_boresight: AZ_EL_ABOUT_BORESIGHT) -> SensorPointingFixedInAxes
+.. py:method:: set_pointing_fixed_axes_az_el(self, reference_axes: str, azimuth: typing.Any, elevation: typing.Any, about_boresight: AzElAboutBoresight) -> SensorPointingFixedInAxes
     :canonical: ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_fixed_axes_az_el
 
     Set the pointing method to FixedAxes with an AzEl orientation.
@@ -248,13 +248,13 @@ Method detail
     **reference_axes** : :obj:`~str`
     **azimuth** : :obj:`~typing.Any`
     **elevation** : :obj:`~typing.Any`
-    **about_boresight** : :obj:`~AZ_EL_ABOUT_BORESIGHT`
+    **about_boresight** : :obj:`~AzElAboutBoresight`
 
     :Returns:
 
         :obj:`~SensorPointingFixedInAxes`
 
-.. py:method:: set_pointing_fixed_axes_euler(self, reference_axes: str, sequence: EULER_ORIENTATION_SEQUENCE_TYPE, a: typing.Any, b: typing.Any, c: typing.Any) -> SensorPointingFixedInAxes
+.. py:method:: set_pointing_fixed_axes_euler(self, reference_axes: str, sequence: EulerOrientationSequenceType, a: typing.Any, b: typing.Any, c: typing.Any) -> SensorPointingFixedInAxes
     :canonical: ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_fixed_axes_euler
 
     Set the pointing method to FixedAxes with a Euler Angles orientation.
@@ -262,7 +262,7 @@ Method detail
     :Parameters:
 
     **reference_axes** : :obj:`~str`
-    **sequence** : :obj:`~EULER_ORIENTATION_SEQUENCE_TYPE`
+    **sequence** : :obj:`~EulerOrientationSequenceType`
     **a** : :obj:`~typing.Any`
     **b** : :obj:`~typing.Any`
     **c** : :obj:`~typing.Any`
@@ -288,7 +288,7 @@ Method detail
 
         :obj:`~SensorPointingFixedInAxes`
 
-.. py:method:: set_pointing_fixed_axes_ypr(self, reference_axes: str, sequence: YPR_ANGLES_SEQUENCE, yaw: typing.Any, pitch: typing.Any, roll: typing.Any) -> SensorPointingFixedInAxes
+.. py:method:: set_pointing_fixed_axes_ypr(self, reference_axes: str, sequence: YPRAnglesSequence, yaw: typing.Any, pitch: typing.Any, roll: typing.Any) -> SensorPointingFixedInAxes
     :canonical: ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_fixed_axes_ypr
 
     Set the pointing method to FixedAxes with a YPR Angles orientation.
@@ -296,7 +296,7 @@ Method detail
     :Parameters:
 
     **reference_axes** : :obj:`~str`
-    **sequence** : :obj:`~YPR_ANGLES_SEQUENCE`
+    **sequence** : :obj:`~YPRAnglesSequence`
     **yaw** : :obj:`~typing.Any`
     **pitch** : :obj:`~typing.Any`
     **roll** : :obj:`~typing.Any`
@@ -332,7 +332,7 @@ Method detail
 
         :obj:`~SensorPointingGrazingAltitude`
 
-.. py:method:: set_pointing_spinning(self, spin_axis_azimuth: typing.Any, spin_axis_elevation: typing.Any, spin_axis_cone_angle: typing.Any, scan_mode: SENSOR_SCAN_MODE, spin_rate: float, offset_angle: typing.Any, clock_angle_start: typing.Any, clock_angle_stop: typing.Any) -> SensorPointingSpinning
+.. py:method:: set_pointing_spinning(self, spin_axis_azimuth: typing.Any, spin_axis_elevation: typing.Any, spin_axis_cone_angle: typing.Any, scan_mode: SensorScanMode, spin_rate: float, offset_angle: typing.Any, clock_angle_start: typing.Any, clock_angle_stop: typing.Any) -> SensorPointingSpinning
     :canonical: ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_spinning
 
     Set the pointing method to Spinning.
@@ -342,7 +342,7 @@ Method detail
     **spin_axis_azimuth** : :obj:`~typing.Any`
     **spin_axis_elevation** : :obj:`~typing.Any`
     **spin_axis_cone_angle** : :obj:`~typing.Any`
-    **scan_mode** : :obj:`~SENSOR_SCAN_MODE`
+    **scan_mode** : :obj:`~SensorScanMode`
     **spin_rate** : :obj:`~float`
     **offset_angle** : :obj:`~typing.Any`
     **clock_angle_start** : :obj:`~typing.Any`
@@ -352,15 +352,15 @@ Method detail
 
         :obj:`~SensorPointingSpinning`
 
-.. py:method:: set_pointing_targeted_tracking(self, track_mode_type: TRACK_MODE, about_boresight_type: BORESIGHT_TYPE, target_path: str) -> SensorPointingTargeted
+.. py:method:: set_pointing_targeted_tracking(self, track_mode_type: TrackMode, about_boresight_type: BoresightType, target_path: str) -> SensorPointingTargeted
     :canonical: ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_targeted_tracking
 
     Set the pointing method to Targeted with Tracking.
 
     :Parameters:
 
-    **track_mode_type** : :obj:`~TRACK_MODE`
-    **about_boresight_type** : :obj:`~BORESIGHT_TYPE`
+    **track_mode_type** : :obj:`~TrackMode`
+    **about_boresight_type** : :obj:`~BoresightType`
     **target_path** : :obj:`~str`
 
     :Returns:

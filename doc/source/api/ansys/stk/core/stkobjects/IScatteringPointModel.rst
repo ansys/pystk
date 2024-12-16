@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.IScatteringPointModel.type
-    :type: SCATTERING_POINT_MODEL_TYPE
+    :type: ScatteringPointModelType
 
     Gets the radar clutter map model type enumeration.
 

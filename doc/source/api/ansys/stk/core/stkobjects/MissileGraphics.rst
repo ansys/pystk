@@ -77,7 +77,7 @@ Property detail
 
 .. py:property:: attributes_type
     :canonical: ansys.stk.core.stkobjects.MissileGraphics.attributes_type
-    :type: VEHICLE_GRAPHICS_2D_ATTRIBUTE_TYPE
+    :type: VehicleGraphics2DAttributeType
 
     Type of display: basic, during access intervals, during custom intervals, or real time.
 
@@ -176,27 +176,27 @@ Method detail
 -------------
 
 
-.. py:method:: set_attributes_type(self, attributes: VEHICLE_GRAPHICS_2D_ATTRIBUTE_TYPE) -> None
+.. py:method:: set_attributes_type(self, attributes: VehicleGraphics2DAttributeType) -> None
     :canonical: ansys.stk.core.stkobjects.MissileGraphics.set_attributes_type
 
     Set the type of display.
 
     :Parameters:
 
-    **attributes** : :obj:`~VEHICLE_GRAPHICS_2D_ATTRIBUTE_TYPE`
+    **attributes** : :obj:`~VehicleGraphics2DAttributeType`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_attributes_type_supported(self, attributes: VEHICLE_GRAPHICS_2D_ATTRIBUTE_TYPE) -> bool
+.. py:method:: is_attributes_type_supported(self, attributes: VehicleGraphics2DAttributeType) -> bool
     :canonical: ansys.stk.core.stkobjects.MissileGraphics.is_attributes_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **attributes** : :obj:`~VEHICLE_GRAPHICS_2D_ATTRIBUTE_TYPE`
+    **attributes** : :obj:`~VehicleGraphics2DAttributeType`
 
     :Returns:
 

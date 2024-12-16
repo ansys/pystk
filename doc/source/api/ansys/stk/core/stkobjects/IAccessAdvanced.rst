@@ -41,7 +41,7 @@ Property detail
 
 .. py:property:: aberration_type
     :canonical: ansys.stk.core.stkobjects.IAccessAdvanced.aberration_type
-    :type: ABERRATION_TYPE
+    :type: AberrationType
 
     Model used for including aberration in apparent direction computations.
 

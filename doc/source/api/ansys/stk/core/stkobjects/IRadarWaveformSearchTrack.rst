@@ -35,7 +35,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.IRadarWaveformSearchTrack.type
-    :type: RADAR_WAVEFORM_SEARCH_TRACK_TYPE
+    :type: RadarWaveformSearchTrackType
 
     Gets the waveform type enumeration.
 

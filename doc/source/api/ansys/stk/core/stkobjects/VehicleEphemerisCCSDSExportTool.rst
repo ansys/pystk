@@ -93,19 +93,19 @@ Property detail
 
 .. py:property:: reference_frame
     :canonical: ansys.stk.core.stkobjects.VehicleEphemerisCCSDSExportTool.reference_frame
-    :type: CCSDS_REFERENCE_FRAME
+    :type: CCSDSReferenceFrame
 
     Gets or sets the reference frame in which to express the ephemeris. Some frames are allowed for use only when the CentralBodyName is Earth or Moon.
 
 .. py:property:: date_format
     :canonical: ansys.stk.core.stkobjects.VehicleEphemerisCCSDSExportTool.date_format
-    :type: CCSDS_DATE_FORMAT
+    :type: CCSDSDateFormat
 
     Gets or sets the desired date format.
 
 .. py:property:: ephemeris_format
     :canonical: ansys.stk.core.stkobjects.VehicleEphemerisCCSDSExportTool.ephemeris_format
-    :type: CCSDS_EPHEMERIS_FORMAT_TYPE
+    :type: CCSDSEphemerisFormatType
 
     Gets or sets the desired format to be used for representing the position and velocity information as either scientific notation or floating point notation. Scientific notation is recommended when possible.
 
@@ -141,7 +141,7 @@ Property detail
 
 .. py:property:: time_system
     :canonical: ansys.stk.core.stkobjects.VehicleEphemerisCCSDSExportTool.time_system
-    :type: CCSDS_TIME_SYSTEM
+    :type: CCSDSTimeSystem
 
     Gets or sets the time system of the ephemeris.
 

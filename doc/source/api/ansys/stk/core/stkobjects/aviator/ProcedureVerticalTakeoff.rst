@@ -67,7 +67,7 @@ Property detail
 
 .. py:property:: final_altitude_rate
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureVerticalTakeoff.final_altitude_rate
-    :type: VTOL_RATE_MODE
+    :type: VTOLRateMode
 
     Gets or sets the altitude rate at the end of the procedure.
 

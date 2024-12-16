@@ -69,7 +69,7 @@ Property detail
 
 .. py:property:: interpolation_type
     :canonical: ansys.stk.core.stkobjects.VehicleEphemerisSPICEExportTool.interpolation_type
-    :type: SPICE_INTERPOLATION
+    :type: SpiceInterpolation
 
     Gets or sets the interpolation type.
 

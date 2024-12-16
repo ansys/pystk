@@ -41,10 +41,10 @@ class GfxAttributesBasicHelper(object):
             oBasic.inherit = False
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            oBasic.line.style = LINE_STYLE.LMS_DASH
+            oBasic.line.style = LineStyle.LMS_DASH
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            oBasic.line.width = LINE_WIDTH.WIDTH5
+            oBasic.line.width = LineWidth.WIDTH5
 
         # IsVisible (true)
         oBasic.show_graphics = True
@@ -62,14 +62,14 @@ class GfxAttributesBasicHelper(object):
         Assert.assertEqual("Square", oBasic.marker_style)
         # Line.Style
         self.m_logger.WriteLine6("\t\tCurrent Line.Style is: {0}", oBasic.line.style)
-        oBasic.line.style = LINE_STYLE.M_DASH_DOT
+        oBasic.line.style = LineStyle.M_DASH_DOT
         self.m_logger.WriteLine6("\t\tNew Line.Style is: {0}", oBasic.line.style)
-        Assert.assertEqual(LINE_STYLE.M_DASH_DOT, oBasic.line.style)
+        Assert.assertEqual(LineStyle.M_DASH_DOT, oBasic.line.style)
         # Line.Width
         self.m_logger.WriteLine6("\t\tCurrent Line.Width is: {0}", oBasic.line.width)
-        oBasic.line.width = LINE_WIDTH.WIDTH5
+        oBasic.line.width = LineWidth.WIDTH5
         self.m_logger.WriteLine6("\t\tNew Line.Width is: {0}", oBasic.line.width)
-        Assert.assertEqual(LINE_WIDTH.WIDTH5, oBasic.line.width)
+        Assert.assertEqual(LineWidth.WIDTH5, oBasic.line.width)
         # Inherit (true)
         self.m_logger.WriteLine4("\t\tCurrent Inherit flag is: {0}", oBasic.inherit)
         oBasic.inherit = True
@@ -894,36 +894,36 @@ class GfxElevationContoursHelper(object):
         self.m_logger.WriteLine4("The new IsFillVisible flag is: {0}", oContours.show_filled_contours)
         Assert.assertEqual(False, oContours.show_filled_contours)
         with pytest.raises(Exception):
-            oContours.fill_style = FILL_STYLE.HATCH
+            oContours.fill_style = FillStyle.HATCH
         oContours.show_filled_contours = True
         self.m_logger.WriteLine4("The new IsFillVisible flag is: {0}", oContours.show_filled_contours)
         Assert.assertEqual(True, oContours.show_filled_contours)
         # FillStyle
         self.m_logger.WriteLine6("The current FillStyle is: {0}", oContours.fill_style)
-        oContours.fill_style = FILL_STYLE.DIAGONAL_HATCH
+        oContours.fill_style = FillStyle.DIAGONAL_HATCH
         self.m_logger.WriteLine6("The new FillStyle is: {0}", oContours.fill_style)
-        Assert.assertEqual(FILL_STYLE.DIAGONAL_HATCH, oContours.fill_style)
-        oContours.fill_style = FILL_STYLE.DIAGONAL_STRIPE1
+        Assert.assertEqual(FillStyle.DIAGONAL_HATCH, oContours.fill_style)
+        oContours.fill_style = FillStyle.DIAGONAL_STRIPE1
         self.m_logger.WriteLine6("The new FillStyle is: {0}", oContours.fill_style)
-        Assert.assertEqual(FILL_STYLE.DIAGONAL_STRIPE1, oContours.fill_style)
-        oContours.fill_style = FILL_STYLE.DIAGONAL_STRIPE2
+        Assert.assertEqual(FillStyle.DIAGONAL_STRIPE1, oContours.fill_style)
+        oContours.fill_style = FillStyle.DIAGONAL_STRIPE2
         self.m_logger.WriteLine6("The new FillStyle is: {0}", oContours.fill_style)
-        Assert.assertEqual(FILL_STYLE.DIAGONAL_STRIPE2, oContours.fill_style)
-        oContours.fill_style = FILL_STYLE.HATCH
+        Assert.assertEqual(FillStyle.DIAGONAL_STRIPE2, oContours.fill_style)
+        oContours.fill_style = FillStyle.HATCH
         self.m_logger.WriteLine6("The new FillStyle is: {0}", oContours.fill_style)
-        Assert.assertEqual(FILL_STYLE.HATCH, oContours.fill_style)
-        oContours.fill_style = FILL_STYLE.HORIZONTAL_STRIPE
+        Assert.assertEqual(FillStyle.HATCH, oContours.fill_style)
+        oContours.fill_style = FillStyle.HORIZONTAL_STRIPE
         self.m_logger.WriteLine6("The new FillStyle is: {0}", oContours.fill_style)
-        Assert.assertEqual(FILL_STYLE.HORIZONTAL_STRIPE, oContours.fill_style)
-        oContours.fill_style = FILL_STYLE.SCREEN
+        Assert.assertEqual(FillStyle.HORIZONTAL_STRIPE, oContours.fill_style)
+        oContours.fill_style = FillStyle.SCREEN
         self.m_logger.WriteLine6("The new FillStyle is: {0}", oContours.fill_style)
-        Assert.assertEqual(FILL_STYLE.SCREEN, oContours.fill_style)
-        oContours.fill_style = FILL_STYLE.SOLID
+        Assert.assertEqual(FillStyle.SCREEN, oContours.fill_style)
+        oContours.fill_style = FillStyle.SOLID
         self.m_logger.WriteLine6("The new FillStyle is: {0}", oContours.fill_style)
-        Assert.assertEqual(FILL_STYLE.SOLID, oContours.fill_style)
-        oContours.fill_style = FILL_STYLE.VERTICAL_STRIPE
+        Assert.assertEqual(FillStyle.SOLID, oContours.fill_style)
+        oContours.fill_style = FillStyle.VERTICAL_STRIPE
         self.m_logger.WriteLine6("The new FillStyle is: {0}", oContours.fill_style)
-        Assert.assertEqual(FILL_STYLE.VERTICAL_STRIPE, oContours.fill_style)
+        Assert.assertEqual(FillStyle.VERTICAL_STRIPE, oContours.fill_style)
 
         oContours.fill_translucency = 55.0
         Assert.assertAlmostEqual(55.0, oContours.fill_translucency, delta=Math2.Epsilon12)
@@ -1019,8 +1019,8 @@ class GfxElevationContoursHelper(object):
                 elevationsElement.label_angle,
             )
             elevationsElement.color = Colors.from_argb((elevationsElement.color._to_ole_color() + 250))
-            elevationsElement.line_style = LINE_STYLE.M_DASH
-            elevationsElement.line_width = LINE_WIDTH.WIDTH2
+            elevationsElement.line_style = LineStyle.M_DASH
+            elevationsElement.line_width = LineWidth.WIDTH2
             elevationsElement.elevation += 1.5
             elevationsElement.show_distance_label = not elevationsElement.show_distance_label
             elevationsElement.show_user_text_visible = True
@@ -1090,36 +1090,36 @@ class GfxRangeContoursHelper(object):
         self.m_logger.WriteLine4("\tThe new IsFillVisible flag is: {0}", oContours.show_filled_contours)
         Assert.assertFalse(oContours.show_filled_contours)
         with pytest.raises(Exception):
-            oContours.fill_style = FILL_STYLE.HATCH
+            oContours.fill_style = FillStyle.HATCH
         oContours.show_filled_contours = True
         self.m_logger.WriteLine4("\tThe new IsFillVisible flag is: {0}", oContours.show_filled_contours)
         Assert.assertTrue(oContours.show_filled_contours)
         # FillStyle
         self.m_logger.WriteLine6("\tThe current FillStyle is: {0}", oContours.fill_style)
-        oContours.fill_style = FILL_STYLE.DIAGONAL_HATCH
+        oContours.fill_style = FillStyle.DIAGONAL_HATCH
         self.m_logger.WriteLine6("\tThe new FillStyle is: {0}", oContours.fill_style)
-        Assert.assertEqual(FILL_STYLE.DIAGONAL_HATCH, oContours.fill_style)
-        oContours.fill_style = FILL_STYLE.DIAGONAL_STRIPE1
+        Assert.assertEqual(FillStyle.DIAGONAL_HATCH, oContours.fill_style)
+        oContours.fill_style = FillStyle.DIAGONAL_STRIPE1
         self.m_logger.WriteLine6("\tThe new FillStyle is: {0}", oContours.fill_style)
-        Assert.assertEqual(FILL_STYLE.DIAGONAL_STRIPE1, oContours.fill_style)
-        oContours.fill_style = FILL_STYLE.DIAGONAL_STRIPE2
+        Assert.assertEqual(FillStyle.DIAGONAL_STRIPE1, oContours.fill_style)
+        oContours.fill_style = FillStyle.DIAGONAL_STRIPE2
         self.m_logger.WriteLine6("\tThe new FillStyle is: {0}", oContours.fill_style)
-        Assert.assertEqual(FILL_STYLE.DIAGONAL_STRIPE2, oContours.fill_style)
-        oContours.fill_style = FILL_STYLE.HATCH
+        Assert.assertEqual(FillStyle.DIAGONAL_STRIPE2, oContours.fill_style)
+        oContours.fill_style = FillStyle.HATCH
         self.m_logger.WriteLine6("\tThe new FillStyle is: {0}", oContours.fill_style)
-        Assert.assertEqual(FILL_STYLE.HATCH, oContours.fill_style)
-        oContours.fill_style = FILL_STYLE.HORIZONTAL_STRIPE
+        Assert.assertEqual(FillStyle.HATCH, oContours.fill_style)
+        oContours.fill_style = FillStyle.HORIZONTAL_STRIPE
         self.m_logger.WriteLine6("\tThe new FillStyle is: {0}", oContours.fill_style)
-        Assert.assertEqual(FILL_STYLE.HORIZONTAL_STRIPE, oContours.fill_style)
-        oContours.fill_style = FILL_STYLE.SCREEN
+        Assert.assertEqual(FillStyle.HORIZONTAL_STRIPE, oContours.fill_style)
+        oContours.fill_style = FillStyle.SCREEN
         self.m_logger.WriteLine6("\tThe new FillStyle is: {0}", oContours.fill_style)
-        Assert.assertEqual(FILL_STYLE.SCREEN, oContours.fill_style)
-        oContours.fill_style = FILL_STYLE.SOLID
+        Assert.assertEqual(FillStyle.SCREEN, oContours.fill_style)
+        oContours.fill_style = FillStyle.SOLID
         self.m_logger.WriteLine6("\tThe new FillStyle is: {0}", oContours.fill_style)
-        Assert.assertEqual(FILL_STYLE.SOLID, oContours.fill_style)
-        oContours.fill_style = FILL_STYLE.VERTICAL_STRIPE
+        Assert.assertEqual(FillStyle.SOLID, oContours.fill_style)
+        oContours.fill_style = FillStyle.VERTICAL_STRIPE
         self.m_logger.WriteLine6("\tThe new FillStyle is: {0}", oContours.fill_style)
-        Assert.assertEqual(FILL_STYLE.VERTICAL_STRIPE, oContours.fill_style)
+        Assert.assertEqual(FillStyle.VERTICAL_STRIPE, oContours.fill_style)
         # NumOfDecimalDigits
         self.m_logger.WriteLine3("\tThe current NumOfDecimalDigits is: {0}", oContours.number_of_decimal_digits)
         oContours.number_of_decimal_digits = 7
@@ -1226,8 +1226,8 @@ class GfxRangeContoursHelper(object):
                 levelAttribute.label_angle,
             )
             levelAttribute.color = Colors.from_argb((levelAttribute.color._to_ole_color() + 250))
-            levelAttribute.line_style = LINE_STYLE.M_DASH
-            levelAttribute.line_width = LINE_WIDTH.WIDTH2
+            levelAttribute.line_style = LineStyle.M_DASH
+            levelAttribute.line_width = LineWidth.WIDTH2
             levelAttribute.level = float(levelAttribute.level) + 1.5
             levelAttribute.show_label = not levelAttribute.show_label
             levelAttribute.show_user_text_visible = True
@@ -1382,7 +1382,7 @@ class GfxGroundEllipsesHelper(object):
             groundEllipsesElement.show_name = True
             groundEllipsesElement.show_center_point_marker = True
             groundEllipsesElement.color = Colors.from_argb(66047)
-            groundEllipsesElement.line_width = LINE_WIDTH.WIDTH2
+            groundEllipsesElement.line_width = LineWidth.WIDTH2
 
         iIndex: int = 0
         while iIndex < oCollection.count:
@@ -1484,10 +1484,10 @@ class GfxLightingHelper(object):
             oVeGfxLightingElement.color = Colors.from_argb(12632256)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            oVeGfxLightingElement.line_style = LINE_STYLE.DOT_DASHED
+            oVeGfxLightingElement.line_style = LineStyle.DOT_DASHED
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            oVeGfxLightingElement.line_width = LINE_WIDTH.WIDTH1
+            oVeGfxLightingElement.line_width = LineWidth.WIDTH1
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             oVeGfxLightingElement.marker_style = "Circle"
@@ -1503,15 +1503,15 @@ class GfxLightingHelper(object):
         AssertEx.AreEqual(Colors.from_argb(255), oVeGfxLightingElement.color)
         # LineStyle
         self.m_logger.WriteLine6("\tThe current LineStyle is: {0}", oVeGfxLightingElement.line_style)
-        oVeGfxLightingElement.line_style = LINE_STYLE.DOT_DASHED
+        oVeGfxLightingElement.line_style = LineStyle.DOT_DASHED
         self.m_logger.WriteLine6("\tThe new LineStyle is: {0}", oVeGfxLightingElement.line_style)
-        Assert.assertEqual(LINE_STYLE.DOT_DASHED, oVeGfxLightingElement.line_style)
+        Assert.assertEqual(LineStyle.DOT_DASHED, oVeGfxLightingElement.line_style)
 
         # LineWidth
         self.m_logger.WriteLine6("\tThe current LineWidth is: {0}", oVeGfxLightingElement.line_width)
-        oVeGfxLightingElement.line_width = LINE_WIDTH.WIDTH3
+        oVeGfxLightingElement.line_width = LineWidth.WIDTH3
         self.m_logger.WriteLine6("\tThe new LineWidth is: {0}", oVeGfxLightingElement.line_width)
-        Assert.assertEqual(LINE_WIDTH.WIDTH3, oVeGfxLightingElement.line_width)
+        Assert.assertEqual(LineWidth.WIDTH3, oVeGfxLightingElement.line_width)
         with pytest.raises(Exception):
             oVeGfxLightingElement.line_width = -1
         with pytest.raises(Exception):
@@ -1677,7 +1677,7 @@ class GfxLeadTrailDataHelper(object):
                 "\t\tType {0} is: {1} ({2})",
                 iIndex,
                 str(arSupportedTypes[iIndex][1]),
-                LEAD_TRAIL_DATA(int(arSupportedTypes[iIndex][0])),
+                LeadTrailData(int(arSupportedTypes[iIndex][0])),
             )
 
             iIndex += 1
@@ -1687,7 +1687,7 @@ class GfxLeadTrailDataHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arSupportedTypes):
-            eType: "LEAD_TRAIL_DATA" = LEAD_TRAIL_DATA(int(arSupportedTypes[iIndex][0]))
+            eType: "LeadTrailData" = LeadTrailData(int(arSupportedTypes[iIndex][0]))
             if not leadTrailData.is_lead_data_type_supported(eType):
                 Assert.fail("The {0} LeadType should be supported!", eType)
 
@@ -1696,7 +1696,7 @@ class GfxLeadTrailDataHelper(object):
             self.m_logger.WriteLine6("\tThe new LeadDataType is: {0}", leadTrailData.lead_data_type)
             Assert.assertEqual(eType, leadTrailData.lead_data_type)
             if leadTrailData.has_lead_data:
-                if eType == LEAD_TRAIL_DATA.FRACTION:
+                if eType == LeadTrailData.FRACTION:
                     # LeadData
                     oFraction: "IVehicleLeadTrailDataFraction" = IVehicleLeadTrailDataFraction(leadTrailData.lead_data)
                     Assert.assertIsNotNone(oFraction)
@@ -1708,7 +1708,7 @@ class GfxLeadTrailDataHelper(object):
                     # range test
                     with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                         oFraction.fraction = -56.34
-                elif eType == LEAD_TRAIL_DATA.TIME:
+                elif eType == LeadTrailData.TIME:
                     # LeadData
                     oTime: "IVehicleLeadTrailDataTime" = IVehicleLeadTrailDataTime(leadTrailData.lead_data)
                     Assert.assertIsNotNone(oTime)
@@ -1750,7 +1750,7 @@ class GfxLeadTrailDataHelper(object):
                 "\t\tType {0} is: {1} ({2})",
                 iIndex,
                 str(arSupportedTypes[iIndex][1]),
-                LEAD_TRAIL_DATA(int(arSupportedTypes[iIndex][0])),
+                LeadTrailData(int(arSupportedTypes[iIndex][0])),
             )
 
             iIndex += 1
@@ -1760,7 +1760,7 @@ class GfxLeadTrailDataHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arSupportedTypes):
-            eType: "LEAD_TRAIL_DATA" = LEAD_TRAIL_DATA(int(arSupportedTypes[iIndex][0]))
+            eType: "LeadTrailData" = LeadTrailData(int(arSupportedTypes[iIndex][0]))
             if not leadTrailData.is_trail_data_type_supported(eType):
                 Assert.fail("The {0} TrailType should be supported!", eType)
 
@@ -1769,7 +1769,7 @@ class GfxLeadTrailDataHelper(object):
             self.m_logger.WriteLine6("\tThe new TrailDataType is: {0}", leadTrailData.trail_data_type)
             Assert.assertEqual(eType, leadTrailData.trail_data_type)
             if leadTrailData.has_trail_data:
-                if eType == LEAD_TRAIL_DATA.FRACTION:
+                if eType == LeadTrailData.FRACTION:
                     # TrailData
                     oFraction: "IVehicleLeadTrailDataFraction" = IVehicleLeadTrailDataFraction(leadTrailData.trail_data)
                     Assert.assertIsNotNone(oFraction)
@@ -1782,7 +1782,7 @@ class GfxLeadTrailDataHelper(object):
 
                     with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                         oFraction.fraction = -56.34
-                elif eType == LEAD_TRAIL_DATA.TIME:
+                elif eType == LeadTrailData.TIME:
                     # TrailData
                     oTime: "IVehicleLeadTrailDataTime" = IVehicleLeadTrailDataTime(leadTrailData.trail_data)
                     Assert.assertIsNotNone(oTime)
@@ -1817,7 +1817,7 @@ class GfxLeadTrailDataHelper(object):
             iIndex += 1
 
         # SetTrailSameAsLead
-        leadTrailData.set_trail_data_type(LEAD_TRAIL_DATA(int(arSupportedTypes[0][0])))
+        leadTrailData.set_trail_data_type(LeadTrailData(int(arSupportedTypes[0][0])))
         self.m_logger.WriteLine7(
             "\tBefore: TrailDataType = {0}, LeadDataType = {1}",
             leadTrailData.trail_data_type,
@@ -1857,7 +1857,7 @@ class GfxSwathHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arTypes):
-            eType: "VEHICLE_GRAPHICS_2D_ELEVATION" = VEHICLE_GRAPHICS_2D_ELEVATION(int(arTypes[iIndex][0]))
+            eType: "VehicleGraphics2DElevation" = VehicleGraphics2DElevation(int(arTypes[iIndex][0]))
             self.m_logger.WriteLine8("\tElevation type {0}: {1} ({2})", iIndex, arTypes[iIndex][1], eType)
             if not oSwath.is_elevation_type_supported(eType):
                 Assert.fail("The {0} type should be supported!", eType)
@@ -1865,8 +1865,8 @@ class GfxSwathHelper(object):
             oSwath.set_elevation_type(eType)
             self.m_logger.WriteLine6("\t\tThe new Elevation type is: {0}", oSwath.elevation_type)
             Assert.assertEqual(eType, oSwath.elevation_type)
-            if ((oSwath.elevation_type == VEHICLE_GRAPHICS_2D_ELEVATION.ELEVATION_GROUND_ELEVATION)) or (
-                (oSwath.elevation_type == VEHICLE_GRAPHICS_2D_ELEVATION.ELEVATION_GROUND_ELEVATION_ENVELOPE)
+            if ((oSwath.elevation_type == VehicleGraphics2DElevation.ELEVATION_GROUND_ELEVATION)) or (
+                (oSwath.elevation_type == VehicleGraphics2DElevation.ELEVATION_GROUND_ELEVATION_ENVELOPE)
             ):
                 # Elevation
                 gfxElevationGroundElevation: "VehicleGraphics2DElevationGroundElevation" = (
@@ -1896,7 +1896,7 @@ class GfxSwathHelper(object):
                 self.m_oUnits.set_current_unit("AngleUnit", strUnit)
                 self.m_logger.WriteLine5("\t\t\tThe new AngleUnit (restored) is: {0}", strUnit)
                 Assert.assertEqual(strUnit, self.m_oUnits.get_current_unit_abbrv("AngleUnit"))
-            elif oSwath.elevation_type == VEHICLE_GRAPHICS_2D_ELEVATION.ELEVATION_SWATH_HALF_WIDTH:
+            elif oSwath.elevation_type == VehicleGraphics2DElevation.ELEVATION_SWATH_HALF_WIDTH:
                 # Elevation
                 gfxElevationSwathHalfWidth: "VehicleGraphics2DElevationSwathHalfWidth" = (
                     VehicleGraphics2DElevationSwathHalfWidth(oSwath.elevation)
@@ -1927,8 +1927,8 @@ class GfxSwathHelper(object):
                 self.m_oUnits.set_current_unit("DistanceUnit", strUnit)
                 self.m_logger.WriteLine5("\t\t\tThe new DistanceUnit (restored) is: {0}", strUnit)
                 Assert.assertEqual(strUnit, self.m_oUnits.get_current_unit_abbrv("DistanceUnit"))
-            elif ((oSwath.elevation_type == VEHICLE_GRAPHICS_2D_ELEVATION.ELEVATION_VEHICLE_HALF_ANGLE)) or (
-                (oSwath.elevation_type == VEHICLE_GRAPHICS_2D_ELEVATION.ELEVATION_VEHICLE_HALF_ANGLE_ENVELOPE)
+            elif ((oSwath.elevation_type == VehicleGraphics2DElevation.ELEVATION_VEHICLE_HALF_ANGLE)) or (
+                (oSwath.elevation_type == VehicleGraphics2DElevation.ELEVATION_VEHICLE_HALF_ANGLE_ENVELOPE)
             ):
                 gfxElevationVehicleHalfAngle: "VehicleGraphics2DElevationVehicleHalfAngle" = (
                     VehicleGraphics2DElevationVehicleHalfAngle(oSwath.elevation)
@@ -1964,21 +1964,21 @@ class GfxSwathHelper(object):
 
         # SetElevationType(UNKNOWN)
         with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
-            oSwath.set_elevation_type(VEHICLE_GRAPHICS_2D_ELEVATION.UNKNOWN)
+            oSwath.set_elevation_type(VehicleGraphics2DElevation.UNKNOWN)
 
-        oSwath.set_elevation_type(VEHICLE_GRAPHICS_2D_ELEVATION.ELEVATION_GROUND_ELEVATION)
+        oSwath.set_elevation_type(VehicleGraphics2DElevation.ELEVATION_GROUND_ELEVATION)
 
         # Options
         self.m_logger.WriteLine6("The current Options is: {0}", oSwath.options)
-        oSwath.options = VEHICLE_GRAPHICS_2D_OPTION_TYPE.OPTIONS_EDGE_LIMITS
+        oSwath.options = VehicleGraphics2DOptionType.OPTIONS_EDGE_LIMITS
         self.m_logger.WriteLine6("The new Options is: {0}", oSwath.options)
-        Assert.assertEqual(VEHICLE_GRAPHICS_2D_OPTION_TYPE.OPTIONS_EDGE_LIMITS, oSwath.options)
-        oSwath.options = VEHICLE_GRAPHICS_2D_OPTION_TYPE.OPTIONS_FILLED_LIMITS
+        Assert.assertEqual(VehicleGraphics2DOptionType.OPTIONS_EDGE_LIMITS, oSwath.options)
+        oSwath.options = VehicleGraphics2DOptionType.OPTIONS_FILLED_LIMITS
         self.m_logger.WriteLine6("The new Options is: {0}", oSwath.options)
-        Assert.assertEqual(VEHICLE_GRAPHICS_2D_OPTION_TYPE.OPTIONS_FILLED_LIMITS, oSwath.options)
-        oSwath.options = VEHICLE_GRAPHICS_2D_OPTION_TYPE.OPTIONS_NO_GRAPHICS
+        Assert.assertEqual(VehicleGraphics2DOptionType.OPTIONS_FILLED_LIMITS, oSwath.options)
+        oSwath.options = VehicleGraphics2DOptionType.OPTIONS_NO_GRAPHICS
         self.m_logger.WriteLine6("The new Options is: {0}", oSwath.options)
-        Assert.assertEqual(VEHICLE_GRAPHICS_2D_OPTION_TYPE.OPTIONS_NO_GRAPHICS, oSwath.options)
+        Assert.assertEqual(VehicleGraphics2DOptionType.OPTIONS_NO_GRAPHICS, oSwath.options)
         self.m_logger.WriteLine("----- THE GRAPHICS SWATH TEST ----- END -----")
 
 
@@ -2126,7 +2126,7 @@ class GfxTimeEventsHelper(object):
         Assert.assertEqual(False, timeEventsElement.show_graphics)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            timeEventsElement.set_time_event_type(VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE.LINE)
+            timeEventsElement.set_time_event_type(VehicleGraphics2DTimeEventType.LINE)
 
         # IsVisible (true)
         timeEventsElement.show_graphics = True
@@ -2138,7 +2138,7 @@ class GfxTimeEventsHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arTypes):
-            eType: "VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE" = VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE(int(arTypes[iIndex][0]))
+            eType: "VehicleGraphics2DTimeEventType" = VehicleGraphics2DTimeEventType(int(arTypes[iIndex][0]))
             if not timeEventsElement.is_time_event_type_supported(eType):
                 Assert.fail("The {0} type should be supported!", eType)
 
@@ -2148,7 +2148,7 @@ class GfxTimeEventsHelper(object):
             # TimeEventType
             self.m_logger.WriteLine6("\t\tThe new TimeEvent type is: {0}", timeEventsElement.time_event_type)
             Assert.assertEqual(eType, timeEventsElement.time_event_type)
-            if eType == VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE.LINE:
+            if eType == VehicleGraphics2DTimeEventType.LINE:
                 # TimeEventTypeData
                 oLine: "VehicleGraphics2DTimeEventTypeLine" = VehicleGraphics2DTimeEventTypeLine(
                     timeEventsElement.time_event_type_data
@@ -2186,14 +2186,14 @@ class GfxTimeEventsHelper(object):
                 Assert.assertEqual("Test line", oLine.unique_identifer)
                 # LineStyle
                 self.m_logger.WriteLine6("\t\tThe current LineStyle is: {0}", oLine.line_style)
-                oLine.line_style = LINE_STYLE.DASH_DOT_DOTTED
+                oLine.line_style = LineStyle.DASH_DOT_DOTTED
                 self.m_logger.WriteLine6("\t\tThe new LineStyle is: {0}", oLine.line_style)
-                Assert.assertEqual(LINE_STYLE.DASH_DOT_DOTTED, oLine.line_style)
+                Assert.assertEqual(LineStyle.DASH_DOT_DOTTED, oLine.line_style)
                 # LineWidth
                 self.m_logger.WriteLine6("\t\tThe current LineWidth is: {0}", oLine.line_width)
-                oLine.line_width = LINE_WIDTH.WIDTH5
+                oLine.line_width = LineWidth.WIDTH5
                 self.m_logger.WriteLine6("\t\tThe new LineWidth is: {0}", oLine.line_width)
-                Assert.assertEqual(LINE_WIDTH.WIDTH5, oLine.line_width)
+                Assert.assertEqual(LineWidth.WIDTH5, oLine.line_width)
                 # OffsetType
                 self.m_logger.WriteLine6("\t\tThe current Offset type is: {0}", oLine.offset_type)
                 # OffsetSupportedTypes
@@ -2204,7 +2204,7 @@ class GfxTimeEventsHelper(object):
 
                 i: int = 0
                 while i < len(arOffsetTypes):
-                    eOffset: "VEHICLE_GRAPHICS_2D_OFFSET" = VEHICLE_GRAPHICS_2D_OFFSET(int(arOffsetTypes[i][0]))
+                    eOffset: "VehicleGraphics2DOffset" = VehicleGraphics2DOffset(int(arOffsetTypes[i][0]))
                     if not oLine.is_offset_type_supported(eOffset):
                         Assert.fail("The {0} type should be supported!")
 
@@ -2224,7 +2224,7 @@ class GfxTimeEventsHelper(object):
 
                     i += 1
 
-            elif eType == VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE.MARKER:
+            elif eType == VehicleGraphics2DTimeEventType.MARKER:
                 # TimeEventTypeData
                 oMarker: "VehicleGraphics2DTimeEventTypeMarker" = VehicleGraphics2DTimeEventTypeMarker(
                     timeEventsElement.time_event_type_data
@@ -2268,7 +2268,7 @@ class GfxTimeEventsHelper(object):
                 oMarker.unique_identifer = "Howdy"
                 self.m_logger.WriteLine5("\t\tThe new UniqueID is: {0}", oMarker.unique_identifer)
                 Assert.assertEqual("Howdy", oMarker.unique_identifer)
-            elif eType == VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE.TEXT:
+            elif eType == VehicleGraphics2DTimeEventType.TEXT:
                 # TimeEventTypeData
                 oText: "VehicleGraphics2DTimeEventTypeText" = VehicleGraphics2DTimeEventTypeText(
                     timeEventsElement.time_event_type_data
@@ -2322,7 +2322,7 @@ class GfxTimeEventsHelper(object):
 
                 i: int = 0
                 while i < len(arOffsetTypes):
-                    eOffset: "VEHICLE_GRAPHICS_2D_OFFSET" = VEHICLE_GRAPHICS_2D_OFFSET(int(arOffsetTypes[i][0]))
+                    eOffset: "VehicleGraphics2DOffset" = VehicleGraphics2DOffset(int(arOffsetTypes[i][0]))
                     if not oText.is_offset_type_supported(eOffset):
                         Assert.fail("The {0} type should be supported!")
 
@@ -2452,16 +2452,16 @@ class GfxLabelNoteHelper(object):
             labelNote.show_label = True
             Assert.assertEqual(True, labelNote.show_label)
             # NoteVisible
-            labelNote.show_note = NOTE_SHOW_TYPE.ON
-            Assert.assertEqual(NOTE_SHOW_TYPE.ON, labelNote.show_note)
-            labelNote.show_note = NOTE_SHOW_TYPE.INTERVALS
-            Assert.assertEqual(NOTE_SHOW_TYPE.INTERVALS, labelNote.show_note)
+            labelNote.show_note = NoteShowType.ON
+            Assert.assertEqual(NoteShowType.ON, labelNote.show_note)
+            labelNote.show_note = NoteShowType.INTERVALS
+            Assert.assertEqual(NoteShowType.INTERVALS, labelNote.show_note)
             # Intervals
             oHelper = IntervalCollectionHelper(self.m_oUnits)
             oHelper.Run(labelNote.intervals, IntervalCollectionHelper.IntervalCollectionType.LabelNotes)
             # NoteVisible
-            labelNote.show_note = NOTE_SHOW_TYPE.OFF
-            Assert.assertEqual(NOTE_SHOW_TYPE.OFF, labelNote.show_note)
+            labelNote.show_note = NoteShowType.OFF
+            Assert.assertEqual(NoteShowType.OFF, labelNote.show_note)
 
         self.m_logger.WriteLine("----- THE GRAPHICS LABELNOTES TEST ----- END -----")
 

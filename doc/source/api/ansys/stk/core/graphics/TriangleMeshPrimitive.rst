@@ -89,19 +89,19 @@ Property detail
 
 .. py:property:: triangle_winding_order
     :canonical: ansys.stk.core.graphics.TriangleMeshPrimitive.triangle_winding_order
-    :type: WINDING_ORDER
+    :type: WindingOrder
 
     Gets or sets the orientation of front-facing triangles. This is used in combination with cull face for culling.
 
 .. py:property:: cull_face
     :canonical: ansys.stk.core.graphics.TriangleMeshPrimitive.cull_face
-    :type: FACE_CULLING_MODE
+    :type: FaceCullingMode
 
     Gets or sets whether front and/or back-facing triangles may be culled. This is used in combination with triangle winding order for culling.
 
 .. py:property:: shade_model
     :canonical: ansys.stk.core.graphics.TriangleMeshPrimitive.shade_model
-    :type: RENDERER_SHADING_MODEL
+    :type: RendererShadingModel
 
     Gets or sets the shading model for the mesh.
 
@@ -119,7 +119,7 @@ Property detail
 
 .. py:property:: set_hint
     :canonical: ansys.stk.core.graphics.TriangleMeshPrimitive.set_hint
-    :type: SET_HINT
+    :type: SetHint
 
     Gets the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with.
 

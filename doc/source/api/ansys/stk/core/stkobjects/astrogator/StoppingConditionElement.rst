@@ -77,40 +77,40 @@ Method detail
 
 
 
-.. py:method:: enable_control_parameter(self, param: CONTROL_STOPPING_CONDITION) -> None
+.. py:method:: enable_control_parameter(self, param: ControlStoppingCondition) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.StoppingConditionElement.enable_control_parameter
 
     Enable or disables the specified control parameter.
 
     :Parameters:
 
-    **param** : :obj:`~CONTROL_STOPPING_CONDITION`
+    **param** : :obj:`~ControlStoppingCondition`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: disable_control_parameter(self, param: CONTROL_STOPPING_CONDITION) -> None
+.. py:method:: disable_control_parameter(self, param: ControlStoppingCondition) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.StoppingConditionElement.disable_control_parameter
 
     Disables the specified control parameter.
 
     :Parameters:
 
-    **param** : :obj:`~CONTROL_STOPPING_CONDITION`
+    **param** : :obj:`~ControlStoppingCondition`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_control_parameter_enabled(self, param: CONTROL_STOPPING_CONDITION) -> bool
+.. py:method:: is_control_parameter_enabled(self, param: ControlStoppingCondition) -> bool
     :canonical: ansys.stk.core.stkobjects.astrogator.StoppingConditionElement.is_control_parameter_enabled
 
     Sees if the specified control is enabled.
 
     :Parameters:
 
-    **param** : :obj:`~CONTROL_STOPPING_CONDITION`
+    **param** : :obj:`~ControlStoppingCondition`
 
     :Returns:
 

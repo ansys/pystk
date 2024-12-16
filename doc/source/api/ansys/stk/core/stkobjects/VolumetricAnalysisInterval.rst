@@ -61,7 +61,7 @@ Property detail
 
 .. py:property:: evaluation_of_spatial_calculation_type
     :canonical: ansys.stk.core.stkobjects.VolumetricAnalysisInterval.evaluation_of_spatial_calculation_type
-    :type: VOLUMETRIC_SPATIAL_CALCULATION_EVALUATION_TYPE
+    :type: VolumetricSpatialCalculationEvaluationType
 
     Get evaluation of spatial calculation type. A member of the AgEVmSpatialCalcEvalType enumeration.
 
@@ -96,14 +96,14 @@ Method detail
 
 
 
-.. py:method:: set_spatial_calcuation_evaluation_type(self, spatial_calc_eval_type: VOLUMETRIC_SPATIAL_CALCULATION_EVALUATION_TYPE) -> None
+.. py:method:: set_spatial_calcuation_evaluation_type(self, spatial_calc_eval_type: VolumetricSpatialCalculationEvaluationType) -> None
     :canonical: ansys.stk.core.stkobjects.VolumetricAnalysisInterval.set_spatial_calcuation_evaluation_type
 
     Evaluate spatial calculation type, using the AgEVmSpatialCalcEvalType enumeration.
 
     :Parameters:
 
-    **spatial_calc_eval_type** : :obj:`~VOLUMETRIC_SPATIAL_CALCULATION_EVALUATION_TYPE`
+    **spatial_calc_eval_type** : :obj:`~VolumetricSpatialCalculationEvaluationType`
 
     :Returns:
 

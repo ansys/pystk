@@ -58,13 +58,13 @@ Property detail
 
 .. py:property:: direction
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcRelativeAtAOLMaster.direction
-    :type: CALCULATION_OBJECT_DIRECTION
+    :type: CalculationObjectDirection
 
     Gets or sets the direction to search for the desired value.
 
 .. py:property:: reference_selection
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcRelativeAtAOLMaster.reference_selection
-    :type: CALCULATION_OBJECT_REFERENCE
+    :type: CalculationObjectReference
 
     Gets or sets the reference object selection.
 

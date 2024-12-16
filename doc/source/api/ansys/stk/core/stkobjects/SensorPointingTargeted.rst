@@ -54,7 +54,7 @@ Property detail
 
 .. py:property:: boresight
     :canonical: ansys.stk.core.stkobjects.SensorPointingTargeted.boresight
-    :type: SENSOR_POINTING_TARGETED_BORESIGHT_TYPE
+    :type: SensorPointingTargetedBoresightType
 
     The targeted sensor's boresight type, a member of the AgESnPtTrgtBsightType enumeration.
 

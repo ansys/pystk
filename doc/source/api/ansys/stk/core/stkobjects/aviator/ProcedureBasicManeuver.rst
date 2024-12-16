@@ -119,13 +119,13 @@ Property detail
 
 .. py:property:: altitude_limit_mode
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureBasicManeuver.altitude_limit_mode
-    :type: BASIC_MANEUVER_ALTITUDE_LIMIT
+    :type: BasicManeuverAltitudeLimit
 
     Get the altitude limit mode.
 
 .. py:property:: terrain_impact_mode
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureBasicManeuver.terrain_impact_mode
-    :type: BASIC_MANEUVER_ALTITUDE_LIMIT
+    :type: BasicManeuverAltitudeLimit
 
     Get the terrain impact mode.
 
@@ -161,13 +161,13 @@ Property detail
 
 .. py:property:: flight_mode
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureBasicManeuver.flight_mode
-    :type: PHASE_OF_FLIGHT
+    :type: PhaseOfFlight
 
     Gets or sets the type of performance model  that the aircraft will use to fly the maneuver.
 
 .. py:property:: fuel_flow_type
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureBasicManeuver.fuel_flow_type
-    :type: BASIC_MANEUVER_FUEL_FLOW_TYPE
+    :type: BasicManeuverFuelFlowType
 
     Gets or sets the source used to calculate the fuel flow for the maneuver.
 

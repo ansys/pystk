@@ -46,13 +46,13 @@ Property detail
 
 .. py:property:: positions_winding_order
     :canonical: ansys.stk.core.graphics.SurfaceShapesResult.positions_winding_order
-    :type: WINDING_ORDER
+    :type: WindingOrder
 
     Gets the winding order of positions.
 
 .. py:property:: polyline_type
     :canonical: ansys.stk.core.graphics.SurfaceShapesResult.polyline_type
-    :type: POLYLINE_TYPE
+    :type: PolylineType
 
     Gets the polyline type of positions.
 

@@ -55,7 +55,7 @@ Property detail
 
 .. py:property:: state
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileChangeReturnSegment.state
-    :type: RETURN_CONTROL
+    :type: ReturnControl
 
     Gets or sets the new state for the targeted return segment.
 

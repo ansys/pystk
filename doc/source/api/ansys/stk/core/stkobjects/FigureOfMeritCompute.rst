@@ -1,0 +1,108 @@
+FigureOfMeritCompute
+====================
+
+.. py:class:: ansys.stk.core.stkobjects.FigureOfMeritCompute
+
+   IntEnum
+
+
+.. py:currentmodule:: FigureOfMeritCompute
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~UNKNOWN`
+              - Unknown compute option.
+
+            * - :py:attr:`~AVERAGE`
+              - Refer to STK Coverage help under the applicable figure of merit.
+
+            * - :py:attr:`~MAXIMUM`
+              - Refer to STK Coverage help under the applicable figure of merit.
+
+            * - :py:attr:`~MINIMUM`
+              - Refer to STK Coverage help under the applicable figure of merit.
+
+            * - :py:attr:`~PERCENT_ABOVE`
+              - Refer to STK Coverage help under the applicable figure of merit.
+
+            * - :py:attr:`~PERCENT_BELOW`
+              - Refer to STK Coverage help under the applicable figure of merit.
+
+            * - :py:attr:`~STD_DEVIATION`
+              - Refer to STK Coverage help under the applicable figure of merit.
+
+            * - :py:attr:`~MAXIMUM_PER_DAY`
+              - Refer to STK Coverage help under the applicable figure of merit.
+
+            * - :py:attr:`~MAXIMUM_PERCENT_PER_DAY`
+              - Refer to STK Coverage help under the applicable figure of merit.
+
+            * - :py:attr:`~MINIMUM_PER_DAY`
+              - Refer to STK Coverage help under the applicable figure of merit.
+
+            * - :py:attr:`~MINIMUM_PERCENT_PER_DAY`
+              - Refer to STK Coverage help under the applicable figure of merit.
+
+            * - :py:attr:`~PER_DAY`
+              - Refer to STK Coverage help under the applicable figure of merit.
+
+            * - :py:attr:`~PER_DAY_STANDARD_DEVIATION`
+              - Refer to STK Coverage help under the applicable figure of merit.
+
+            * - :py:attr:`~PERCENT`
+              - Refer to STK Coverage help under the applicable figure of merit.
+
+            * - :py:attr:`~PERCENT_PER_DAY`
+              - Refer to STK Coverage help under the applicable figure of merit.
+
+            * - :py:attr:`~PERCENT_PER_DAY_STANDARD_DEVIATION`
+              - Refer to STK Coverage help under the applicable figure of merit.
+
+            * - :py:attr:`~PERCENT_TIME_ABOVE`
+              - Refer to STK Coverage help under the applicable figure of merit.
+
+            * - :py:attr:`~TOTAL`
+              - Refer to STK Coverage help under the applicable figure of merit.
+
+            * - :py:attr:`~TOTAL_TIME_ABOVE`
+              - Refer to STK Coverage help under the applicable figure of merit.
+
+            * - :py:attr:`~PERCENT_BELOW_GAPS_ONLY`
+              - Refer to STK Coverage help under the applicable figure of merit.
+
+            * - :py:attr:`~NUMBER_PERCENT_BELOW`
+              - Refer to STK Coverage help under the applicable figure of merit.
+
+            * - :py:attr:`~AVERAGE_PER_DAY`
+              - Refer to STK Coverage help under the applicable figure of merit.
+
+            * - :py:attr:`~IN_SPAN`
+              - Refer to STK Coverage help under the applicable figure of merit.
+
+            * - :py:attr:`~IN_SPAN_PER_DAY`
+              - Refer to STK Coverage help under the applicable figure of merit.
+
+            * - :py:attr:`~SUM`
+              - Refer to STK Coverage help under the applicable figure of merit.
+
+            * - :py:attr:`~UNIQUE`
+              - Refer to STK Coverage help under the applicable figure of merit.
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects import FigureOfMeritCompute
+
+

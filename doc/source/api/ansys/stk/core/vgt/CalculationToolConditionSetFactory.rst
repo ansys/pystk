@@ -38,7 +38,7 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: create(self, name: str, description: str, type: CONDITION_SET_TYPE) -> ICalculationToolConditionSet
+.. py:method:: create(self, name: str, description: str, type: ConditionSetType) -> ICalculationToolConditionSet
     :canonical: ansys.stk.core.vgt.CalculationToolConditionSetFactory.create
 
     Create and registers a condition set using specified name, description, and type.
@@ -47,7 +47,7 @@ Method detail
 
     **name** : :obj:`~str`
     **description** : :obj:`~str`
-    **type** : :obj:`~CONDITION_SET_TYPE`
+    **type** : :obj:`~ConditionSetType`
 
     :Returns:
 
@@ -67,14 +67,14 @@ Method detail
 
         :obj:`~ICalculationToolConditionSet`
 
-.. py:method:: is_type_supported(self, type: CONDITION_SET_TYPE) -> bool
+.. py:method:: is_type_supported(self, type: ConditionSetType) -> bool
     :canonical: ansys.stk.core.vgt.CalculationToolConditionSetFactory.is_type_supported
 
     Return whether the specified type is supported.
 
     :Parameters:
 
-    **type** : :obj:`~CONDITION_SET_TYPE`
+    **type** : :obj:`~ConditionSetType`
 
     :Returns:
 

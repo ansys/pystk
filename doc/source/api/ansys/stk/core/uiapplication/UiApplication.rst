@@ -147,7 +147,7 @@ Property detail
 
 .. py:property:: window_state
     :canonical: ansys.stk.core.uiapplication.UiApplication.window_state
-    :type: APPLICATION_WINDOW_STATE
+    :type: ApplicationWindowState
 
     Gets/sets the state of the main window.
 
@@ -330,7 +330,7 @@ Method detail
 
 
 
-.. py:method:: open_log_file(self, log_file_name: str, log_file_mode: APPLICATION_OPEN_LOG_FILE_MODE) -> bool
+.. py:method:: open_log_file(self, log_file_name: str, log_file_mode: ApplicationOpenLogFileMode) -> bool
     :canonical: ansys.stk.core.uiapplication.UiApplication.open_log_file
 
     Specify the current log file to be written to.
@@ -338,20 +338,20 @@ Method detail
     :Parameters:
 
     **log_file_name** : :obj:`~str`
-    **log_file_mode** : :obj:`~APPLICATION_OPEN_LOG_FILE_MODE`
+    **log_file_mode** : :obj:`~ApplicationOpenLogFileMode`
 
     :Returns:
 
         :obj:`~bool`
 
-.. py:method:: log_message(self, msg_type: APPLICATION_LOG_MESSAGE_TYPE, msg: str) -> None
+.. py:method:: log_message(self, msg_type: ApplicationLogMessageType, msg: str) -> None
     :canonical: ansys.stk.core.uiapplication.UiApplication.log_message
 
     Log the Message specified.
 
     :Parameters:
 
-    **msg_type** : :obj:`~APPLICATION_LOG_MESSAGE_TYPE`
+    **msg_type** : :obj:`~ApplicationLogMessageType`
     **msg** : :obj:`~str`
 
     :Returns:

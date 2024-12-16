@@ -35,7 +35,7 @@ Property detail
 
 .. py:property:: method_type
     :canonical: ansys.stk.core.vgt.ICalculationToolSamplingMethod.method_type
-    :type: VECTOR_GEOMETRY_TOOL_SAMPLING_METHOD
+    :type: VectorGeometryToolSamplingMethod
 
     A sampling method type.
 

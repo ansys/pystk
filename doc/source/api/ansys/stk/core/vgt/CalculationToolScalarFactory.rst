@@ -98,7 +98,7 @@ Method detail
 -------------
 
 
-.. py:method:: create(self, name: str, description: str, type: CALCULATION_SCALAR_TYPE) -> ICalculationToolScalar
+.. py:method:: create(self, name: str, description: str, type: CalculationScalarType) -> ICalculationToolScalar
     :canonical: ansys.stk.core.vgt.CalculationToolScalarFactory.create
 
     Create and registers a scalar calculation using specified name, description, and type.
@@ -107,7 +107,7 @@ Method detail
 
     **name** : :obj:`~str`
     **description** : :obj:`~str`
-    **type** : :obj:`~CALCULATION_SCALAR_TYPE`
+    **type** : :obj:`~CalculationScalarType`
 
     :Returns:
 
@@ -302,14 +302,14 @@ Method detail
 
         :obj:`~ICalculationToolScalar`
 
-.. py:method:: is_type_supported(self, type: CALCULATION_SCALAR_TYPE) -> bool
+.. py:method:: is_type_supported(self, type: CalculationScalarType) -> bool
     :canonical: ansys.stk.core.vgt.CalculationToolScalarFactory.is_type_supported
 
     Return whether the specified type is supported.
 
     :Parameters:
 
-    **type** : :obj:`~CALCULATION_SCALAR_TYPE`
+    **type** : :obj:`~CalculationScalarType`
 
     :Returns:
 

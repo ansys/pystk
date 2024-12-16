@@ -59,7 +59,7 @@ Property detail
 
 .. py:property:: criteria
     :canonical: ansys.stk.core.stkobjects.astrogator.AsTriggerCondition.criteria
-    :type: CRITERIA
+    :type: Criteria
 
     Gets or sets the criteria to be applied to the desired value.
 

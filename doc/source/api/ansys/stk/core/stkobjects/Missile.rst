@@ -97,7 +97,7 @@ Property detail
 
 .. py:property:: trajectory_type
     :canonical: ansys.stk.core.stkobjects.Missile.trajectory_type
-    :type: PROPAGATOR_TYPE
+    :type: PropagatorType
 
     Get the propagator type used by the missile.
 
@@ -115,7 +115,7 @@ Property detail
 
 .. py:property:: attitude_type
     :canonical: ansys.stk.core.stkobjects.Missile.attitude_type
-    :type: VEHICLE_ATTITUDE
+    :type: VehicleAttitude
 
     Get the type of attitude profile used by the missile.
 
@@ -238,27 +238,27 @@ Method detail
 -------------
 
 
-.. py:method:: set_trajectory_type(self, propagator: PROPAGATOR_TYPE) -> None
+.. py:method:: set_trajectory_type(self, propagator: PropagatorType) -> None
     :canonical: ansys.stk.core.stkobjects.Missile.set_trajectory_type
 
     Set the propagator type.
 
     :Parameters:
 
-    **propagator** : :obj:`~PROPAGATOR_TYPE`
+    **propagator** : :obj:`~PropagatorType`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_trajectory_type_supported(self, propagator: PROPAGATOR_TYPE) -> bool
+.. py:method:: is_trajectory_type_supported(self, propagator: PropagatorType) -> bool
     :canonical: ansys.stk.core.stkobjects.Missile.is_trajectory_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **propagator** : :obj:`~PROPAGATOR_TYPE`
+    **propagator** : :obj:`~PropagatorType`
 
     :Returns:
 
@@ -267,27 +267,27 @@ Method detail
 
 
 
-.. py:method:: set_attitude_type(self, attitude: VEHICLE_ATTITUDE) -> None
+.. py:method:: set_attitude_type(self, attitude: VehicleAttitude) -> None
     :canonical: ansys.stk.core.stkobjects.Missile.set_attitude_type
 
     Set the type of attitude profile used by the missile.
 
     :Parameters:
 
-    **attitude** : :obj:`~VEHICLE_ATTITUDE`
+    **attitude** : :obj:`~VehicleAttitude`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_attitude_type_supported(self, attitude: VEHICLE_ATTITUDE) -> bool
+.. py:method:: is_attitude_type_supported(self, attitude: VehicleAttitude) -> bool
     :canonical: ansys.stk.core.stkobjects.Missile.is_attitude_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **attitude** : :obj:`~VEHICLE_ATTITUDE`
+    **attitude** : :obj:`~VehicleAttitude`
 
     :Returns:
 

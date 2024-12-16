@@ -28,7 +28,7 @@ class SimpleAscentSnippets(CodeSnippetsTestBase):
     def setUp(self):
         self.m_Object = clr.CastAs(
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-                STK_OBJECT_TYPE.LAUNCH_VEHICLE, SimpleAscentSnippets.m_DefaultName
+                STKObjectType.LAUNCH_VEHICLE, SimpleAscentSnippets.m_DefaultName
             ),
             LaunchVehicle,
         )
@@ -45,7 +45,7 @@ class SimpleAscentSnippets(CodeSnippetsTestBase):
     # region ConfigureSimpleAscentPropagator
     def test_ConfigureSimpleAscentPropagator(self):
         # Set launch vehicle propagator to Simple Ascent
-        self.m_Object.set_trajectory_type(PROPAGATOR_TYPE.SIMPLE_ASCENT)
+        self.m_Object.set_trajectory_type(PropagatorType.SIMPLE_ASCENT)
 
         # Get J2 PropagatorSimpleAscent interface
         propagator: "PropagatorSimpleAscent" = clr.CastAs(self.m_Object.trajectory, PropagatorSimpleAscent)

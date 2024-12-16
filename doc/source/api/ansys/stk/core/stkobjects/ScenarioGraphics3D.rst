@@ -103,7 +103,7 @@ Property detail
 
 .. py:property:: surface_reference
     :canonical: ansys.stk.core.stkobjects.ScenarioGraphics3D.surface_reference
-    :type: SURFACE_REFERENCE
+    :type: SurfaceReference
 
     Opt to display the globe's surface at the mean sea level (MSL) or at the central body's reference ellipsoid (WGS84).
 
@@ -121,7 +121,7 @@ Property detail
 
 .. py:property:: text_outline_style
     :canonical: ansys.stk.core.stkobjects.ScenarioGraphics3D.text_outline_style
-    :type: TEXT_OUTLINE_STYLE
+    :type: TextOutlineStyle
 
     Default text outline style.
 

@@ -49,7 +49,7 @@ Property detail
 
 .. py:property:: break_angle_type
     :canonical: ansys.stk.core.stkobjects.VehicleDefinition.break_angle_type
-    :type: VEHICLE_BREAK_ANGLE_TYPE
+    :type: VehicleBreakAngleType
 
     Latitude or longitude.
 
@@ -61,7 +61,7 @@ Property detail
 
 .. py:property:: direction
     :canonical: ansys.stk.core.stkobjects.VehicleDefinition.direction
-    :type: VEHICLE_DIRECTION
+    :type: VehicleDirection
 
     Descending or ascending.
 
@@ -70,14 +70,14 @@ Method detail
 -------------
 
 
-.. py:method:: set_break_angle_type(self, break_angle_type: VEHICLE_BREAK_ANGLE_TYPE) -> None
+.. py:method:: set_break_angle_type(self, break_angle_type: VehicleBreakAngleType) -> None
     :canonical: ansys.stk.core.stkobjects.VehicleDefinition.set_break_angle_type
 
     Set the Break Angle type.
 
     :Parameters:
 
-    **break_angle_type** : :obj:`~VEHICLE_BREAK_ANGLE_TYPE`
+    **break_angle_type** : :obj:`~VehicleBreakAngleType`
 
     :Returns:
 

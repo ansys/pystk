@@ -67,7 +67,7 @@ Property detail
 
 .. py:property:: altitude_reference
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureTransitionToHover.altitude_reference
-    :type: AGL_MSL
+    :type: AGLMSL
 
     Gets or sets the altitude reference.
 
@@ -115,7 +115,7 @@ Property detail
 
 .. py:property:: smooth_transition_mode
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureTransitionToHover.smooth_transition_mode
-    :type: TRANSITION_TO_HOVER_MODE
+    :type: TransitionToHoverMode
 
     Gets or sets the transition mode of the aircraft at the end of the procedure.
 

@@ -124,53 +124,53 @@ Method detail
         :obj:`~IAccessConstraint`
 
 
-.. py:method:: add_constraint(self, constraint: ACCESS_CONSTRAINT_TYPE) -> IAccessConstraint
+.. py:method:: add_constraint(self, constraint: AccessConstraintType) -> IAccessConstraint
     :canonical: ansys.stk.core.stkobjects.AccessConstraintCollection.add_constraint
 
     Add a constraint to the Constraint Collection.
 
     :Parameters:
 
-    **constraint** : :obj:`~ACCESS_CONSTRAINT_TYPE`
+    **constraint** : :obj:`~AccessConstraintType`
 
     :Returns:
 
         :obj:`~IAccessConstraint`
 
-.. py:method:: remove_constraint(self, constraint: ACCESS_CONSTRAINT_TYPE) -> None
+.. py:method:: remove_constraint(self, constraint: AccessConstraintType) -> None
     :canonical: ansys.stk.core.stkobjects.AccessConstraintCollection.remove_constraint
 
     Remove a constraint from the collection.
 
     :Parameters:
 
-    **constraint** : :obj:`~ACCESS_CONSTRAINT_TYPE`
+    **constraint** : :obj:`~AccessConstraintType`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: get_active_constraint(self, constraint: ACCESS_CONSTRAINT_TYPE) -> IAccessConstraint
+.. py:method:: get_active_constraint(self, constraint: AccessConstraintType) -> IAccessConstraint
     :canonical: ansys.stk.core.stkobjects.AccessConstraintCollection.get_active_constraint
 
     Retrieve the active constraint.
 
     :Parameters:
 
-    **constraint** : :obj:`~ACCESS_CONSTRAINT_TYPE`
+    **constraint** : :obj:`~AccessConstraintType`
 
     :Returns:
 
         :obj:`~IAccessConstraint`
 
-.. py:method:: is_constraint_active(self, constraint: ACCESS_CONSTRAINT_TYPE) -> bool
+.. py:method:: is_constraint_active(self, constraint: AccessConstraintType) -> bool
     :canonical: ansys.stk.core.stkobjects.AccessConstraintCollection.is_constraint_active
 
     Given an AgEAccessConstraints enum, informs the user if the constraint is active.
 
     :Parameters:
 
-    **constraint** : :obj:`~ACCESS_CONSTRAINT_TYPE`
+    **constraint** : :obj:`~AccessConstraintType`
 
     :Returns:
 
@@ -185,14 +185,14 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: is_constraint_supported(self, constraint: ACCESS_CONSTRAINT_TYPE) -> bool
+.. py:method:: is_constraint_supported(self, constraint: AccessConstraintType) -> bool
     :canonical: ansys.stk.core.stkobjects.AccessConstraintCollection.is_constraint_supported
 
     Is the constraint supported for this object.
 
     :Parameters:
 
-    **constraint** : :obj:`~ACCESS_CONSTRAINT_TYPE`
+    **constraint** : :obj:`~AccessConstraintType`
 
     :Returns:
 

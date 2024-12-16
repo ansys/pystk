@@ -42,7 +42,7 @@ Property detail
 
 .. py:property:: method
     :canonical: ansys.stk.core.stkobjects.IntegratorStepSizeControl.method
-    :type: VEHICLE_METHOD
+    :type: VehicleMethod
 
     Fixed step or relative error.
 

@@ -89,7 +89,7 @@ Property detail
 
 .. py:property:: hover_mode
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHover.hover_mode
-    :type: HOVER_MODE
+    :type: HoverMode
 
     Gets or sets the option to have the aircraft hover in place for a fixed time or to perform a hovering maneuver.
 
@@ -101,13 +101,13 @@ Property detail
 
 .. py:property:: heading_mode
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHover.heading_mode
-    :type: VTOL_HEADING_MODE
+    :type: VTOLHeadingMode
 
     Gets or sets the heading mode for the aircraft.
 
 .. py:property:: final_heading_mode
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHover.final_heading_mode
-    :type: VTOL_FINAL_HEADING_MODE
+    :type: VTOLFinalHeadingMode
 
     Get the mode to define the heading at the end of the hover.
 
@@ -131,13 +131,13 @@ Property detail
 
 .. py:property:: final_heading_rate
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHover.final_heading_rate
-    :type: VTOL_RATE_MODE
+    :type: VTOLRateMode
 
     Gets or sets the options to define the heading rate of the aircraft at the end of the procedure.
 
 .. py:property:: translation_mode
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHover.translation_mode
-    :type: VTOL_TRANSLATION_MODE
+    :type: VTOLTranslationMode
 
     Define how the aircraft will translate during the hover.
 
@@ -161,13 +161,13 @@ Property detail
 
 .. py:property:: final_course_mode
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHover.final_course_mode
-    :type: VTOL_TRANSLATION_FINAL_COURSE_MODE
+    :type: VTOLTranslationFinalCourseMode
 
     Gets or sets the mode to specify the final course at the end of the hover.
 
 .. py:property:: smooth_translation_mode
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHover.smooth_translation_mode
-    :type: VTOL_RATE_MODE
+    :type: VTOLRateMode
 
     Gets or sets the translation mode of the aircraft at the end of the procedure.
 

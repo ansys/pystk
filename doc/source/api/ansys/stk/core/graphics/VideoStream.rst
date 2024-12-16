@@ -93,7 +93,7 @@ Property detail
 
 .. py:property:: playback
     :canonical: ansys.stk.core.graphics.VideoStream.playback
-    :type: VIDEO_PLAYBACK
+    :type: VideoPlayback
 
     Gets or sets the video playback mode of the video.
 

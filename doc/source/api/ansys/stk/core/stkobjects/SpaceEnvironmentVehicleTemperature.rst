@@ -87,7 +87,7 @@ Property detail
 
 .. py:property:: shape_model
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentVehicleTemperature.shape_model
-    :type: VEHICLE_SPACE_ENVIRONMENT_SHAPE_MODEL
+    :type: VehicleSpaceEnvironmentShapeModel
 
     Thermal shape model.
 

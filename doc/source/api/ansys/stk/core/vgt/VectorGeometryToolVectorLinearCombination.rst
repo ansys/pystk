@@ -88,7 +88,7 @@ Property detail
 
 .. py:property:: output_dimension_inheritance
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorLinearCombination.output_dimension_inheritance
-    :type: INHERIT_DIMENSION_TYPE
+    :type: InheritDimensionType
 
     Determines whether the output dimension is inherited or explicitly specified using OutputDimension.
 

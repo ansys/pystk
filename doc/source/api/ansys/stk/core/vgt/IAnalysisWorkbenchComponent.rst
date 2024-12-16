@@ -76,7 +76,7 @@ Property detail
 
 .. py:property:: component_type
     :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchComponent.component_type
-    :type: VECTOR_GEOMETRY_TOOL_COMPONENT_TYPE
+    :type: VectorGeometryToolComponentType
 
     Returns the component kind.
 

@@ -137,7 +137,7 @@ Property detail
 
 .. py:property:: display_system_type
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSLaunch.display_system_type
-    :type: LAUNCH_DISPLAY_SYSTEM
+    :type: LaunchDisplaySystem
 
     Get the launch coordinate type.
 
@@ -149,7 +149,7 @@ Property detail
 
 .. py:property:: ascent_type
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSLaunch.ascent_type
-    :type: ASCENT_TYPE
+    :type: AscentType
 
     Gets or sets the order of the spline used to generate the motion along the ellipse.
 
@@ -161,7 +161,7 @@ Property detail
 
 .. py:property:: burnout_type
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSLaunch.burnout_type
-    :type: BURNOUT_TYPE
+    :type: BurnoutType
 
     Get the burnout type.
 
@@ -207,40 +207,40 @@ Method detail
 
 
 
-.. py:method:: enable_control_parameter(self, param: CONTROL_LAUNCH) -> None
+.. py:method:: enable_control_parameter(self, param: ControlLaunch) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSLaunch.enable_control_parameter
 
     Enable the specified control parameter.
 
     :Parameters:
 
-    **param** : :obj:`~CONTROL_LAUNCH`
+    **param** : :obj:`~ControlLaunch`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: disable_control_parameter(self, param: CONTROL_LAUNCH) -> None
+.. py:method:: disable_control_parameter(self, param: ControlLaunch) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSLaunch.disable_control_parameter
 
     Disables the specified control parameter.
 
     :Parameters:
 
-    **param** : :obj:`~CONTROL_LAUNCH`
+    **param** : :obj:`~ControlLaunch`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_control_parameter_enabled(self, param: CONTROL_LAUNCH) -> bool
+.. py:method:: is_control_parameter_enabled(self, param: ControlLaunch) -> bool
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSLaunch.is_control_parameter_enabled
 
     Sees if the specified control is enabled.
 
     :Parameters:
 
-    **param** : :obj:`~CONTROL_LAUNCH`
+    **param** : :obj:`~ControlLaunch`
 
     :Returns:
 
@@ -252,14 +252,14 @@ Method detail
 
 
 
-.. py:method:: set_display_system_type(self, display_system_type: LAUNCH_DISPLAY_SYSTEM) -> None
+.. py:method:: set_display_system_type(self, display_system_type: LaunchDisplaySystem) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSLaunch.set_display_system_type
 
     Set the display system type.
 
     :Parameters:
 
-    **display_system_type** : :obj:`~LAUNCH_DISPLAY_SYSTEM`
+    **display_system_type** : :obj:`~LaunchDisplaySystem`
 
     :Returns:
 
@@ -271,14 +271,14 @@ Method detail
 
 
 
-.. py:method:: set_burnout_type(self, burnout_type: BURNOUT_TYPE) -> None
+.. py:method:: set_burnout_type(self, burnout_type: BurnoutType) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSLaunch.set_burnout_type
 
     Set the burnout type.
 
     :Parameters:
 
-    **burnout_type** : :obj:`~BURNOUT_TYPE`
+    **burnout_type** : :obj:`~BurnoutType`
 
     :Returns:
 

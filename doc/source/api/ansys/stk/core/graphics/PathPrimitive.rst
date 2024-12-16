@@ -109,7 +109,7 @@ Property detail
 
 .. py:property:: polyline_type
     :canonical: ansys.stk.core.graphics.PathPrimitive.polyline_type
-    :type: POLYLINE_TYPE
+    :type: PolylineType
 
     Gets or sets how the primitive interprets the positions.
 

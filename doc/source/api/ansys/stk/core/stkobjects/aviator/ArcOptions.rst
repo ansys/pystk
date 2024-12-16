@@ -48,7 +48,7 @@ Property detail
 
 .. py:property:: turn_direction
     :canonical: ansys.stk.core.stkobjects.aviator.ArcOptions.turn_direction
-    :type: TURN_DIRECTION
+    :type: TurnDirection
 
     Gets or sets the turn direction to the arc.
 
@@ -78,13 +78,13 @@ Property detail
 
 .. py:property:: join_arc
     :canonical: ansys.stk.core.stkobjects.aviator.ArcOptions.join_arc
-    :type: JOIN_EXIT_ARC_METHOD
+    :type: JoinExitArcMethod
 
     Gets or sets the method to join the arc.
 
 .. py:property:: exit_arc
     :canonical: ansys.stk.core.stkobjects.aviator.ArcOptions.exit_arc
-    :type: JOIN_EXIT_ARC_METHOD
+    :type: JoinExitArcMethod
 
     Gets or sets the method to exit the arc.
 

@@ -63,13 +63,13 @@ Property detail
 
 .. py:property:: lead_data_type
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DLeadTrailData.lead_data_type
-    :type: LEAD_TRAIL_DATA
+    :type: LeadTrailData
 
     Get display option for the leading portion of the vehicle's tracks.
 
 .. py:property:: trail_data_type
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DLeadTrailData.trail_data_type
-    :type: LEAD_TRAIL_DATA
+    :type: LeadTrailData
 
     Get display option for the trailing portion of the vehicle's tracks.
 
@@ -109,27 +109,27 @@ Method detail
 
 
 
-.. py:method:: set_lead_data_type(self, lead_data: LEAD_TRAIL_DATA) -> None
+.. py:method:: set_lead_data_type(self, lead_data: LeadTrailData) -> None
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DLeadTrailData.set_lead_data_type
 
     Set the display option for the leading portion of the vehicle's tracks.
 
     :Parameters:
 
-    **lead_data** : :obj:`~LEAD_TRAIL_DATA`
+    **lead_data** : :obj:`~LeadTrailData`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: set_trail_data_type(self, trail_data: LEAD_TRAIL_DATA) -> None
+.. py:method:: set_trail_data_type(self, trail_data: LeadTrailData) -> None
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DLeadTrailData.set_trail_data_type
 
     Set the display option for the trailng portion of the vehicle's tracks.
 
     :Parameters:
 
-    **trail_data** : :obj:`~LEAD_TRAIL_DATA`
+    **trail_data** : :obj:`~LeadTrailData`
 
     :Returns:
 
@@ -139,14 +139,14 @@ Method detail
 
 
 
-.. py:method:: is_data_type_supported(self, data: LEAD_TRAIL_DATA) -> bool
+.. py:method:: is_data_type_supported(self, data: LeadTrailData) -> bool
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DLeadTrailData.is_data_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **data** : :obj:`~LEAD_TRAIL_DATA`
+    **data** : :obj:`~LeadTrailData`
 
     :Returns:
 

@@ -72,7 +72,7 @@ Property detail
 
 .. py:property:: desired_operation
     :canonical: ansys.stk.core.stkobjects.astrogator.GridSearchResult.desired_operation
-    :type: GRID_SEARCH_DESIRED_OPERATION
+    :type: GridSearchDesiredOperation
 
     Gets or sets the Desired Operation/Objective of grid search.
 
