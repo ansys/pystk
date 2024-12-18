@@ -1568,7 +1568,6 @@
    <Mapping ParentScope="IAgStkGraphicsJpeg2000WriterInitializer" OldName="WriteExtentString" NewName="write_extent_string" Category="method" />
    <Mapping ParentScope="IAgStkGraphicsJpeg2000WriterInitializer" OldName="WriteExtentAndSubExtentString" NewName="write_extent_and_sub_extent_string" Category="method" />
    <Mapping ParentScope="IAgStkGraphicsJpeg2000WriterInitializer" OldName="WriteExtentAndSubExtentTransparentColorString" NewName="write_extent_and_sub_extent_transparent_color_string" Category="method" />
-   <Mapping ParentScope="IAgStkGraphicsJpeg2000WriterInitializer" OldName="WriteExtentAndSubExtentTransparentColorStringCentralBody" NewName="write_extent_and_sub_extent_transparent_color_string_central_body" Category="method" />
    <Mapping OldName="IAgStkGraphicsLevelsFilterFactory" NewName="LevelsFilterFactory" Category="interface" />
    <Mapping ParentScope="IAgStkGraphicsLevelsFilterFactory" OldName="Initialize" NewName="initialize" Category="method" />
    <Mapping OldName="IAgStkGraphicsProjectionRasterStreamPluginActivatorFactory" NewName="ProjectionRasterStreamPluginActivatorFactory" Category="interface" />
