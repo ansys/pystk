@@ -1,0 +1,15 @@
+.migration-table {
+    table-layout:fixed;
+    th {
+        background-color: #373A36;
+        color: white !important;
+        height: 32px;
+    }
+    td p {
+        overflow-wrap:anywhere;
+    }
+    tr {
+        height: 32px;
+    }
+}
+ 

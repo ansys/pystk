@@ -4,7 +4,7 @@ User guide
 .. grid:: 3
 
     .. grid-item-card:: :fa:`long-arrow-right` Migrate
-        :link: migrate
+        :link: user-guide/migration
         :link-type: doc
 
         Guidelines on how to migrate your code to PySTK
@@ -16,4 +16,4 @@ User guide
    :hidden:
 
  
-   Migrate <migrate>
+   Migration <user-guide/migration>

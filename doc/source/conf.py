@@ -7,6 +7,7 @@ import os
 import pathlib
 import shutil
 import subprocess
+import xml.etree.ElementTree as ET
 import zipfile
 
 import sphinx
@@ -306,13 +307,102 @@ def get_file_size_in_mb(file_path):
     return file_size_bytes / (1024 * 1024)
 
 
-ARTIFACTS_PATH = pathlib.Path().parent / "_static" / "artifacts"
+STATIC_PATH = pathlib.Path(__file__).parent / "_static"
+ARTIFACTS_PATH = STATIC_PATH / "artifacts"
 ARTIFACTS_WHEEL = ARTIFACTS_PATH / f"{project.replace('-', '_')}-{version}-py3-none-any.whl"
 ARTIFACTS_SDIST = ARTIFACTS_PATH / f"{project.replace('-', '_')}-{version}.tar.gz"
 
 WHEELHOUSE_PATH = pathlib.Path().parent / "_static" / "wheelhouse"
 if not WHEELHOUSE_PATH.exists():
     linkcheck_ignore.append(r".*/wheelhouse/.*")
+
+
+MIGRATION_TABLES = STATIC_PATH / "migration-tables"
+
+def migration_table_to_dict(migration_table):
+    """Convert an XML migration table to a dictionary."""
+
+    print(migration_table, flush=True)
+
+    table = {
+        "module": migration_table.name[:-4],
+        "interfaces": {},
+        "classes": {},
+        "enums": {},
+    }
+
+    root = ET.parse(migration_table).getroot()
+
+    # Interfaces
+    for interface in root.findall('./Mapping[@Category="interface"]'):
+        table["interfaces"][interface.get("OldName")] = {
+            "new_name": interface.get("NewName"),
+            "methods": {},
+            "properties": {},
+        }
+
+    # Classes
+    for klass in root.findall('./Mapping[@Category="class"]'):
+        table["classes"][klass.get("OldName")] = {
+            "new_name": klass.get("NewName"),
+            "methods": {},
+            "properties": {},
+        }
+
+    # Methods and properties
+    for method in root.findall('./Mapping[@Category="method"]'):
+        is_interface_method = method.get("ParentScope") in table["interfaces"]
+        category = "interfaces" if is_interface_method else "classes"
+        parent = method.get("ParentScope")
+
+        table[category][parent]["methods"][method.get("OldName")] = method.get("NewName")
+
+    # Enums
+    for enum in root.findall('./Mapping[@Category="enum_type"]'):
+        table["enums"][enum.get("OldName")] = {
+            "new_name": enum.get("NewName"),
+            "values": {},
+        }
+
+    # Enum values
+    for enum_value in root.findall('./Mapping[@Category="enum_value"]'):
+        parent = enum_value.get("ParentScope")
+        table["enums"][parent]["values"][enum_value.get("OldName")] = enum_value.get("NewName")
+
+    return table
+    
+
+
+
+    
+
+# table = {
+#     "module": ...,
+#     "interfaces": [
+#         {
+#             "name": ...,
+#             "new_name": ...,
+#             "properties": [
+#                 {
+#                     "name": ...,
+#                     "new_name": ...,
+#                 }
+#             ],
+#             "methods": [
+#                 {
+#                     "name": ...,
+#                     "new_name": ...,
+#                 }
+#             ],
+#         },    
+#     ],
+#     "classes": ...,
+#     "enums": ...,
+# }
+
+
+
+
 
 jinja_globals = {
     "SUPPORTED_PYTHON_VERSIONS": ["3.11", "3.12", "3.13"],
@@ -349,6 +439,9 @@ jinja_contexts = {
             }
             for platform in ["windows", "ubuntu"]
         }
+    },
+    "oldapi": {
+        "tables": list(map(migration_table_to_dict, list(MIGRATION_TABLES.glob("*.xml")))),
     },
 }
 
