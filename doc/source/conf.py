@@ -3,6 +3,7 @@
 from datetime import datetime
 import fnmatch
 import hashlib
+import json
 import os
 import pathlib
 import shutil
@@ -65,7 +66,15 @@ html_theme_options = {
     },
 }
 html_static_path = ["_static"]
-html_css_files = ["css/highlight.css"]
+html_css_files = [
+    "css/highlight.css",
+    # DataTables CSS
+    "https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.min.css",
+]
+html_js_files = [
+    # DataTables JS
+    "https://cdn.datatables.net/2.1.8/js/dataTables.min.js",
+]
 
 # Sphinx extensions
 extensions = [
@@ -79,6 +88,7 @@ extensions = [
     "numpydoc",
     "nbsphinx",
     "myst_parser",
+    "sphinxcontrib.jquery",
 ]
 
 # Intersphinx mapping
@@ -319,19 +329,16 @@ if not WHEELHOUSE_PATH.exists():
 
 MIGRATION_TABLES = STATIC_PATH / "migration-tables"
 
-def migration_table_to_dict(migration_table):
-    """Convert an XML migration table to a dictionary."""
 
-    print(migration_table, flush=True)
-
+def convert_migration_table_from_xml_to_json(xml_migration_table: pathlib.Path):
+    """Convert an XML migration table to a JSON format."""
     table = {
-        "module": migration_table.name[:-4],
+        "name": xml_migration_table.name[:-4],
         "interfaces": {},
         "classes": {},
         "enums": {},
     }
-
-    root = ET.parse(migration_table).getroot()
+    root = ET.parse(xml_migration_table).getroot()
 
     # Interfaces
     for interface in root.findall('./Mapping[@Category="interface"]'):
@@ -369,39 +376,10 @@ def migration_table_to_dict(migration_table):
         parent = enum_value.get("ParentScope")
         table["enums"][parent]["values"][enum_value.get("OldName")] = enum_value.get("NewName")
 
-    return table
-    
+    migration_table_json = xml_migration_table.with_suffix(".json")
+    migration_table_json.write_text(json.dumps(table, indent=4), encoding="utf-8")
 
-
-
-    
-
-# table = {
-#     "module": ...,
-#     "interfaces": [
-#         {
-#             "name": ...,
-#             "new_name": ...,
-#             "properties": [
-#                 {
-#                     "name": ...,
-#                     "new_name": ...,
-#                 }
-#             ],
-#             "methods": [
-#                 {
-#                     "name": ...,
-#                     "new_name": ...,
-#                 }
-#             ],
-#         },    
-#     ],
-#     "classes": ...,
-#     "enums": ...,
-# }
-
-
-
+    return table["name"], migration_table_json.name
 
 
 jinja_globals = {
@@ -440,8 +418,8 @@ jinja_contexts = {
             for platform in ["windows", "ubuntu"]
         }
     },
-    "oldapi": {
-        "tables": list(map(migration_table_to_dict, list(MIGRATION_TABLES.glob("*.xml")))),
+    "migration_tables": {
+        "tables": [convert_migration_table_from_xml_to_json(file) for file in MIGRATION_TABLES.glob("*.xml")],
     },
 }
 
