@@ -327,61 +327,6 @@ if not WHEELHOUSE_PATH.exists():
     linkcheck_ignore.append(r".*/wheelhouse/.*")
 
 
-MIGRATION_TABLES = STATIC_PATH / "migration-tables"
-
-
-def convert_migration_table_from_xml_to_json(xml_migration_table: pathlib.Path):
-    """Convert an XML migration table to a JSON format."""
-    table = {
-        "name": xml_migration_table.name[:-4],
-        "interfaces": {},
-        "classes": {},
-        "enums": {},
-    }
-    root = ET.parse(xml_migration_table).getroot()
-
-    # Interfaces
-    for interface in root.findall('./Mapping[@Category="interface"]'):
-        table["interfaces"][interface.get("OldName")] = {
-            "new_name": interface.get("NewName"),
-            "methods": {},
-            "properties": {},
-        }
-
-    # Classes
-    for klass in root.findall('./Mapping[@Category="class"]'):
-        table["classes"][klass.get("OldName")] = {
-            "new_name": klass.get("NewName"),
-            "methods": {},
-            "properties": {},
-        }
-
-    # Methods and properties
-    for method in root.findall('./Mapping[@Category="method"]'):
-        is_interface_method = method.get("ParentScope") in table["interfaces"]
-        category = "interfaces" if is_interface_method else "classes"
-        parent = method.get("ParentScope")
-
-        table[category][parent]["methods"][method.get("OldName")] = method.get("NewName")
-
-    # Enums
-    for enum in root.findall('./Mapping[@Category="enum_type"]'):
-        table["enums"][enum.get("OldName")] = {
-            "new_name": enum.get("NewName"),
-            "values": {},
-        }
-
-    # Enum values
-    for enum_value in root.findall('./Mapping[@Category="enum_value"]'):
-        parent = enum_value.get("ParentScope")
-        table["enums"][parent]["values"][enum_value.get("OldName")] = enum_value.get("NewName")
-
-    migration_table_json = xml_migration_table.with_suffix(".json")
-    migration_table_json.write_text(json.dumps(table, indent=4), encoding="utf-8")
-
-    return table["name"], migration_table_json.name
-
-
 jinja_globals = {
     "SUPPORTED_PYTHON_VERSIONS": ["3.11", "3.12", "3.13"],
     "SUPPORTED_PLATFORMS": ["windows", "ubuntu"],
@@ -417,9 +362,6 @@ jinja_contexts = {
             }
             for platform in ["windows", "ubuntu"]
         }
-    },
-    "migration_tables": {
-        "tables": [convert_migration_table_from_xml_to_json(file) for file in MIGRATION_TABLES.glob("*.xml")],
     },
 }
 
@@ -658,6 +600,61 @@ def render_examples_as_pdf(app: sphinx.application.Sphinx, exception: Exception)
         )
 
 
+def render_migration_table(app: sphinx.application.Sphinx):
+    """Convert an XML migration table to a JSON format.
+
+    The final JSON format is as follows:
+
+    .. code-block:: json
+
+        { <old_type_name>:
+              {
+                  'new_name': <new_type_name>,
+                  'members':
+                  {
+                      <old__name>: <new__name>
+                  }
+              }
+        }
+
+    Parameters
+    ----------
+    app : sphinx.application.Sphinx
+        Sphinx application instance containing the all the doc build configuration.
+
+    """
+    MIGRATION_TABLES = STATIC_PATH / "migration-tables"
+    TABLE_FILES = list(MIGRATION_TABLES.glob("*.xml"))
+
+    for xml_file in status_iterator(
+        TABLE_FILES,
+        "Rendering migration table",
+        "green",
+        len(TABLE_FILES),
+        verbosity=1,
+        stringify_func=(lambda x: x.name),
+    ):
+        tree = ET.parse(xml_file)
+        root = tree.getroot()
+
+        mappings = {}
+        type_categories = ["enum_type", "class", "interface"]
+        for type_category in type_categories:
+            type_mappings = root.findall(f'./Mapping[@Category="{type_category}"]')
+            for type_mapping in type_mappings:
+                type_old_name = type_mapping.get("OldName")
+                type_new_name = type_mapping.get("NewName")
+                mappings[type_old_name] = {"new_name": type_new_name, "members": {}}
+                member_mappings = root.findall(f'./Mapping[@ParentScope="{type_old_name}"]')
+                for member_mapping in member_mappings:
+                    member_old_name = member_mapping.get("OldName")
+                    member_new_name = member_mapping.get("NewName")
+                    mappings[type_old_name]["members"][member_old_name] = member_new_name
+
+        json_file = pathlib.Path(xml_file).with_suffix(".json")
+        json_file.write_text(json.dumps(mappings, indent=4))
+
+
 def setup(app: sphinx.application.Sphinx):
     """
     Run different hook functions during the documentation build.
@@ -674,6 +671,8 @@ def setup(app: sphinx.application.Sphinx):
     # build has completed, no matter its success, the examples are removed from
     # the source directory.
     app.connect("builder-inited", copy_docker_files_to_static_dir)
+    app.connect("builder-inited", render_migration_table)
+
     if BUILD_EXAMPLES:
         app.connect("builder-inited", copy_examples_files_to_source_dir)
         app.connect("build-finished", remove_examples_from_source_dir)
