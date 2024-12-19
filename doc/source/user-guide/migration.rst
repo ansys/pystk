@@ -8,7 +8,7 @@ This topic provides details on migrating your code to PySTK.
     <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.css" />
     <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
 
-    <table class="datatable table dataTable no-footer" id="migration-table" role="grid" aria-describedby="DataTables_{{ module | replace('.', '_') }}_info">
+    <table class="datatable table dataTable no-footer display" id="migration-table" role="grid" aria-describedby="DataTables_{{ module | replace('.', '_') }}_info">
       <thead>
         <tr class="row-odd" role="row">
           <th class="head sorting_asc" tabindex="0" aria-controls="migration-table" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Old name activate to sort column descending" style="width: 153.312px;">
@@ -33,19 +33,19 @@ This topic provides details on migrating your code to PySTK.
             })
             .then(function (data) {
 
-                // Initialize the table if it doesn't exist
-                if (!$.fn.dataTable.isDataTable('#migration-table')) {
-                    migrationTable = $("#migration-table").DataTable({
-                       ordering: false,
-                       language: {
-                           emptyTable: "Loading..."
-                       }
-                    });
-                } 
-                else {
-                    // If DataTable is already initialized, just assign the instance
-                    migrationTable = $('#migration-table').DataTable();
+                // If DataTable is already initialized, destroy it first to reset the table
+                if ($.fn.dataTable.isDataTable('#migration-table')) {
+                    $('#migration-table').DataTable().clear().destroy();
                 }
+
+                // Initialize the table with desired options
+                migrationTable = $("#migration-table").DataTable({
+                    ordering: true,
+                    language: {
+                        emptyTable: "Loading..."
+                    },
+                    scrollX: true,
+                });
 
                 // Clear previous content
                 migrationTable.clear();
@@ -92,11 +92,6 @@ This topic provides details on migrating your code to PySTK.
                         migrationTable.row.add(rowData);
                     });
                 }
-
-
-
-
-
                 addRows(data);
 
                 // Update the display
