@@ -626,6 +626,7 @@ def render_migration_table(app: sphinx.application.Sphinx):
     MIGRATION_TABLES = STATIC_PATH / "migration-tables"
     TABLE_FILES = list(MIGRATION_TABLES.glob("*.xml"))
 
+    mappings = {}
     for xml_file in status_iterator(
         TABLE_FILES,
         "Rendering migration table",
@@ -637,7 +638,6 @@ def render_migration_table(app: sphinx.application.Sphinx):
         tree = ET.parse(xml_file)
         root = tree.getroot()
 
-        mappings = {}
         type_categories = ["enum_type", "class", "interface"]
         for type_category in type_categories:
             type_mappings = root.findall(f'./Mapping[@Category="{type_category}"]')
@@ -651,7 +651,7 @@ def render_migration_table(app: sphinx.application.Sphinx):
                     member_new_name = member_mapping.get("NewName")
                     mappings[type_old_name]["members"][member_old_name] = member_new_name
 
-        json_file = pathlib.Path(xml_file).with_suffix(".json")
+        json_file = xml_file.parent / "main.json"
         json_file.write_text(json.dumps(mappings, indent=4))
 
 

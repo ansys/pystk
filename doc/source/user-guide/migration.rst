@@ -8,70 +8,64 @@ This topic provides details on migrating your code to PySTK.
     <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.css" />
     <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
 
-.. jinja:: migration_tables
+    <table class="datatable table dataTable no-footer" id="migration-table" role="grid" aria-describedby="DataTables_{{ module | replace('.', '_') }}_info">
+      <thead>
+        <tr class="row-odd" role="row">
+          <th class="head sorting_asc" tabindex="0" aria-controls="migration-table" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Old name activate to sort column descending" style="width: 153.312px;">
+            <p>Old name</p>
+          </th>
+          <th class="head sorting" tabindex="0" aria-controls="migration-table" rowspan="1" colspan="1" aria-label="New name activate to sort column ascending" style="width: 153.312px;">
+            <p>New name</p>
+          </th>
+        </tr>
+      </thead>
+      <tbody id="{{ module | replace('.', '_') }}_body">
+        <!-- Rows will be dynamically added here. -->
+      </tbody>
+    </table>
 
-    {% for module, table in tables %}
+    <script>
+        let migrationTable;
 
-    The old ``{{ module }}``
-    =========={{ "=" * module|length }}==
+        fetch("../_static/migration-tables/main.json")
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
 
-    {% set tableID = "DataTables_" + module.replace('.', '_') %}
+                // Initialize the table if it doesn't exist
+                if (!migrationTable) {
+                    migrationTable = $("#migration-table").DataTable();
+                }
 
-    .. raw:: html
+                // Clear previous content
+                migrationTable.clear();
 
-        <table class="datatable table dataTable no-footer" id="{{ tableID }}" role="grid" aria-describedby="DataTables_{{ module | replace('.', '_') }}_info">
-          <thead>
-            <tr class="row-odd" role="row">
-              <th class="head sorting_asc" tabindex="0" aria-controls="{{ tableID }}" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Old name activate to sort column descending" style="width: 153.312px;">
-                <p>Old name</p>
-              </th>
-              <th class="head sorting" tabindex="0" aria-controls="{{ tableID }}" rowspan="1" colspan="1" aria-label="New name activate to sort column ascending" style="width: 153.312px;">
-                <p>New name</p>
-              </th>
-            </tr>
-          </thead>
-          <tbody id="{{ module | replace('.', '_') }}_body">
-            <!-- Rows will be dynamically added here. -->
-          </tbody>
-        </table>
+                // Add new rows
+                function addRows(items) {
+                    Object.entries(items).forEach(([oldTypeName, content]) => {
+                        // Add the main row for the type
+                        migrationTable.row.add([
+                            oldTypeName,
+                            content.new_name || ''
+                        ]);
 
-        <script>
-            let migrationTable;
+                        // Add rows for each member
+                        if (content.members) {
+                            Object.entries(content.members).forEach(([oldName, newName]) => {
+                                migrationTable.row.add([
+                                    ` - ${oldName}`, // Indent to show it's a member
+                                    newName || ''
+                                ]);
+                            });
+                        }
+                    });
+                }
 
-            fetch("../_static/migration-tables/{{ table }}")
-                .then(function (response) {
-                    return response.json();
-                })
-                .then(function (data) {
+                addRows(data);
 
-                    // Initialize the table if it doesn't exist
-                    if (!migrationTable) {
-                        migrationTable = $("#{{ tableID }}").DataTable();
-                    }
+                // Update the display
+                migrationTable.draw();
 
-                    // Clear previous content
-                    migrationTable.clear();
-
-                    // Add new rows
-                    function addRows(items) {
-                        Object.entries(items).forEach(([item, values]) => {
-                            console.log(item, values.new_name);
-                            migrationTable.row.add([
-                                item,
-                                values.new_name || ''
-                            ]);
-                        });
-                    }
-
-                    // Populate the table
-                    if (data.interfaces) addRows(data.interfaces);
-                    if (data.classes) addRows(data.classes);
-                    if (data.enums) addRows(data.enums);
-
-                    // Update the display
-                    migrationTable.draw();
-
-                });
-        </script>
-
-    {% endfor %}
+            });
+    </script>
