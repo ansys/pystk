@@ -68,13 +68,8 @@ html_theme_options = {
 html_static_path = ["_static"]
 html_css_files = [
     "css/highlight.css",
-    # DataTables CSS
-    "https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.min.css",
 ]
-html_js_files = [
-    # DataTables JS
-    "https://cdn.datatables.net/2.1.8/js/dataTables.min.js",
-]
+html_js_files = []
 
 # Sphinx extensions
 extensions = [
