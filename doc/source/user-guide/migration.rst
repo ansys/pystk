@@ -53,7 +53,7 @@ This topic provides details on migrating your code to PySTK.
                 function addRows(items) {
                     Object.entries(items).forEach(([oldTypeName, content]) => {
 
-                        // If old type starts with "_", skip it
+                        // Ignore private types
                         if (oldTypeName.startsWith("_")) {
                             return;
                         }
@@ -84,8 +84,8 @@ This topic provides details on migrating your code to PySTK.
                             }
                 
                             // Add the member data next to the main type row
-                            rowData[0] += `<div style="padding-left: 20px;">${memberOldNames}</div>`;
-                            rowData[1] += `<div style="padding-left: 20px;">${memberNewNames}</div>`;
+                            rowData[0] += `<div style="padding-left: 2em;">${memberOldNames}</div>`;
+                            rowData[1] += `<div style="padding-left: 2em;">${memberNewNames}</div>`;
                         }
                 
                         // Add the row to the table
