@@ -52,6 +52,12 @@ This topic provides details on migrating your code to PySTK.
 
                 function addRows(items) {
                     Object.entries(items).forEach(([oldTypeName, content]) => {
+
+                        // If old type starts with "_", skip it
+                        if (oldTypeName.startsWith("_")) {
+                            return;
+                        }
+
                         // Add the main row for the type
                         let rowData = [
                             `<b>${oldTypeName}</b>`,
