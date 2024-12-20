@@ -68,8 +68,11 @@ html_theme_options = {
 html_static_path = ["_static"]
 html_css_files = [
     "css/highlight.css",
+    "css/datatables.css",
 ]
-html_js_files = []
+html_js_files = [
+    "js/datatables.js",
+]
 
 # Sphinx extensions
 extensions = [

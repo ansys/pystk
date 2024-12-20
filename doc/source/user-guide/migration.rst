@@ -14,9 +14,6 @@ conventions include:
 
 .. raw:: html
 
-    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.css" />
-    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
-
     <table class="datatable table dataTable no-footer display" id="migration-table" role="grid" aria-describedby="DataTables_{{ module | replace('.', '_') }}_info">
       <thead>
         <tr class="row-odd" role="row">
