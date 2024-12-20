@@ -17,6 +17,7 @@ IPython
 Keplerian
 LOD
 lod
+namespace
 Nemo
 numpy
 PySTK
