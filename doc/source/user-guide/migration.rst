@@ -2,9 +2,8 @@ Migrate to PySTK
 ################
 
 One of the main advantages of PySTK is that identifiers, symbols, and members
-follow the `Python Enhancement Proposals (PEP8) Style Guide`_.
-
-The new naming conventions include:
+follow the `Python Enhancement Proposals (PEP8) Style Guide`_. The new naming
+conventions include:
 
 - Removal of ``IAg``, ``Ag``, and ``AgE`` prefixes for interfaces, classes, and enumerations
 - Use of ``snake_case`` for functions, members, and variables
