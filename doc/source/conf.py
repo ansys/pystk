@@ -619,7 +619,7 @@ def render_migration_table(app: sphinx.application.Sphinx):
 
     """
     MIGRATION_TABLES = STATIC_PATH / "migration-tables"
-    TABLE_FILES = list(MIGRATION_TABLES.glob("*.xml"))
+    TABLE_FILES = [file for file in MIGRATION_TABLES.glob("*.xml") if "internal" not in file.name]
 
     mappings = {}
     for xml_file in status_iterator(
