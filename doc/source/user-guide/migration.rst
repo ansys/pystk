@@ -9,7 +9,7 @@ conventions include:
 - Spelled out obsolete and sometimes cryptic abbreviations such as `Va`, `Vo`.
 - Merged redundant interface and class types, reducing the number of types by ~30%.
 - Use of ``snake_case`` for functions, members, and variables
-- Use of ``CONSTANT_CASE`` letters for constants and enumeration values
+- Use of ``CONSTANT_CASE`` convention for constants and enumeration values
 - Consistent use of ``ansys.stk`` namespace, similar to other `PyAnsys`_ projects
 
 .. raw:: html
