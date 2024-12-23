@@ -66,9 +66,9 @@ class NativeContainerMethods:
                 if err != 0:
                     errormsg += f" ({WinError(err)})"
                 raise STKRuntimeError(errormsg)
-            stkxdllpath = cPath.value
+            stkxdllpath = pathlib.Path(cPath.value).resolve()
 
-            jniCoreDllPath = os.path.join(os.path.dirname(stkxdllpath), "AgJNICore.dll")
+            jniCoreDllPath = stkxdllpath.parent / "AgJNICore.dll"
             return jniCoreDllPath
     def create_container(self, progid):
         return self.AgPythonCreateContainer(LPVOID(None), LPVOID(None), LPCWSTR(progid))
