@@ -156,7 +156,7 @@ master_doc = "index"
 # Common content for every RST file such us links
 rst_epilog = ""
 links_filepath = pathlib.Path(__file__).parent.absolute() / "links.rst"
-links_filepath.write_text(links_filepath.read_text(), encoding="utf-8")
+rst_epilog += links_filepath.read_text(encoding="utf-8")
 
 # -- Autosectionlabel configuration ------------------------------------------
 autosectionlabel_maxdepth = 6
