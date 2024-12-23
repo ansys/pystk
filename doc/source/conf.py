@@ -156,8 +156,7 @@ master_doc = "index"
 # Common content for every RST file such us links
 rst_epilog = ""
 links_filepath = pathlib.Path(__file__).parent.absolute() / "links.rst"
-with open(links_filepath) as links_file:
-    rst_epilog += links_file.read()
+links_filepath.write_text(links_filepath.read_text(), encoding="utf-8")
 
 # -- Autosectionlabel configuration ------------------------------------------
 autosectionlabel_maxdepth = 6
@@ -278,9 +277,11 @@ def get_sha256_from_file(filepath: pathlib.Path):
 
     """
     sha256_hash = hashlib.sha256()
-    with open(filepath, "rb") as file:
-        while chunk := file.read(8192):
-            sha256_hash.update(chunk)
+
+    file_bytes = filepath.read_bytes()
+    for i in range(0, len(file_bytes), 8192):
+        sha256_hash.update(file_bytes[i : i + 8192])
+
     return sha256_hash.hexdigest()
 
 
