@@ -209,10 +209,10 @@ class STKDesktop(object):
 
             clsid_stk12application = "{7ADA6C22-FA34-4578-8BE8-65405A55EE15}"
             executable = read_registry_key(f"CLSID\\{clsid_stk12application}\\LocalServer32", silent_exception=True)
-            if executable is None or not os.path.exists(executable):
-                bin_dir = winreg_stk_binary_dir()
-                if bin_dir is not None:
-                    executable = os.path.join(bin_dir, "UiApplication.exe")
+            if executable is None or not pathlib.Path(executable).exists():
+                bin_dir = pathlib.Path(winreg_stk_binary_dir()).resolve()
+                if bin_dir.exists():
+                    executable = bin_dir / "UiApplication.exe"
                 else:
                     raise STKInitializationError(f"Could not find UiApplication.exe. Verify STK 12 installation.")
             cmd_line = [f"{executable}", "/pers", "STK", "/grpcServer", "On", "/grpcHost", grpc_host, "/grpcPort", str(grpc_port)]
