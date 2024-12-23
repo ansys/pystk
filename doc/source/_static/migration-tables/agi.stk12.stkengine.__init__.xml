@@ -1,0 +1,15 @@
+<Mappings>
+   <Mapping OldName="STKEngineTimerType" NewName="STK_ENGINE_TIMER_TYPE" Category="enum_type" />
+   <Mapping ParentScope="STKEngineTimerType" OldName="DisableTimers" NewName="DISABLE_TIMERS" Category="enum_value" />
+   <Mapping ParentScope="STKEngineTimerType" OldName="TkinterMainloop" NewName="TKINTER_MAIN_LOOP" Category="enum_value" />
+   <Mapping ParentScope="STKEngineTimerType" OldName="InteractivePython" NewName="INTERACTIVE_PYTHON" Category="enum_value" />
+   <Mapping ParentScope="STKEngineTimerType" OldName="SigAlarm" NewName="SIG_ALARM" Category="enum_value" />
+   <Mapping ParentScope="STKEngineTimerType" OldName="SigRt" NewName="SIG_RT" Category="enum_value" />
+   <Mapping ParentScope="STKEngineApplication" OldName="_STKXInitialize" NewName="_stkx_intialize" Category="method" />
+   <Mapping ParentScope="STKEngineApplication" OldName="_STKXInitializeTimer" NewName="_stkx_intialize_timer" Category="method" />
+   <Mapping ParentScope="STKEngineApplication" OldName="NewObjectRoot" NewName="new_object_root" Category="method" />
+   <Mapping ParentScope="STKEngineApplication" OldName="NewObjectModelContext" NewName="new_object_model_context" Category="method" />
+   <Mapping ParentScope="STKEngineApplication" OldName="ShutDown" NewName="shutdown" Category="method" />
+   <Mapping ParentScope="STKEngine" OldName="StartApplication" NewName="start_application" Category="method" />
+   <Mapping ParentScope="STKEngine" OldName="_initX11" NewName="_init_x11" Category="method" />
+</Mappings>
