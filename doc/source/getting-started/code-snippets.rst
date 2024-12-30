@@ -57,8 +57,8 @@ Set Advanced Settings for Coverage
     # IAgCoverageDefinition coverage: Coverage object
     advanced: "CoverageAdvancedSettings" = coverage.advanced
     advanced.recompute_automatically = False
-    advanced.data_retention = COVERAGE_DATA_RETENTION.ALL_DATA
-    advanced.save_mode = DATA_SAVE_MODE.SAVE_ACCESSES
+    advanced.data_retention = CoverageDataRetention.ALL_DATA
+    advanced.save_mode = DataSaveMode.SAVE_ACCESSES
 
 .. _CoverageCompute:
 

@@ -25,17 +25,17 @@ class CoverageSnippets(CodeSnippetsTestBase):
 
     def setUp(self):
         CoverageSnippets.satellite: "Satellite" = Satellite(
-            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "satellite")
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STKObjectType.SATELLITE, "satellite")
         )
         propagator: "PropagatorTwoBody" = CoverageSnippets.satellite.propagator
         propagator.propagate()
         CoverageSnippets.coverage: "CoverageDefinition" = CoverageDefinition(
-            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.COVERAGE_DEFINITION, "coverage")
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STKObjectType.COVERAGE_DEFINITION, "coverage")
         )
 
     def tearDown(self):
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "satellite")
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.COVERAGE_DEFINITION, "coverage")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STKObjectType.SATELLITE, "satellite")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STKObjectType.COVERAGE_DEFINITION, "coverage")
         CoverageSnippets.satellite = None
         CoverageSnippets.coverage = None
 
@@ -65,8 +65,8 @@ class CoverageSnippets(CodeSnippetsTestBase):
         # IAgCoverageDefinition coverage: Coverage object
         advanced: "CoverageAdvancedSettings" = coverage.advanced
         advanced.recompute_automatically = False
-        advanced.data_retention = COVERAGE_DATA_RETENTION.ALL_DATA
-        advanced.save_mode = DATA_SAVE_MODE.SAVE_ACCESSES
+        advanced.data_retention = CoverageDataRetention.ALL_DATA
+        advanced.save_mode = DataSaveMode.SAVE_ACCESSES
 
     def test_TestCoverageIntervalSnippet(self):
         self.TestCoverageIntervalSnippet(

@@ -24,14 +24,14 @@ class AccessSnippets(CodeSnippetsTestBase):
 
     def setUp(self):
         AccessSnippets.satellite: "Satellite" = Satellite(
-            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "satellite")
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STKObjectType.SATELLITE, "satellite")
         )
         propagator: "PropagatorTwoBody" = AccessSnippets.satellite.propagator
         propagator.propagate()
         AccessSnippets.accessConstraints: "AccessConstraintCollection" = AccessSnippets.satellite.access_constraints
 
     def tearDown(self):
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "satellite")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STKObjectType.SATELLITE, "satellite")
         AccessSnippets.satellite = None
 
     def test_TestAddExclusionZoneConstraintSnippet(self):
