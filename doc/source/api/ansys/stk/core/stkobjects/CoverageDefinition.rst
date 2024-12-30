@@ -54,6 +54,41 @@ Overview
 
 
 
+Examples
+--------
+
+Set the Coverage Interval to an object's availability Analysis interval
+
+.. code-block:: python
+
+    # IAgSatellite satellite: Satellite object
+    # IAgCoverageDefinition coverage: Coverage object
+    satVGT: "AnalysisWorkbenchComponentProvider" = IStkObject(satellite).analysis_workbench_components
+    intervals: "TimeToolTimeIntervalGroup" = satVGT.time_intervals
+    AvailTimeSpan: "ITimeToolTimeInterval" = intervals.item("AvailabilityTimeSpan")
+    IntResult: "TimeToolTimeIntervalResult" = AvailTimeSpan.find_interval()
+    coverage.interval.analysis_interval.set_start_and_stop_times(IntResult.interval.start, IntResult.interval.stop)
+
+
+Set Advanced Settings for Coverage
+
+.. code-block:: python
+
+    # IAgCoverageDefinition coverage: Coverage object
+    advanced: "CoverageAdvancedSettings" = coverage.advanced
+    advanced.recompute_automatically = False
+    advanced.data_retention = COVERAGE_DATA_RETENTION.ALL_DATA
+    advanced.save_mode = DATA_SAVE_MODE.SAVE_ACCESSES
+
+
+Compute Coverage
+
+.. code-block:: python
+
+    # IAgCoverageDefinition coverage: Coverage object
+    coverage.compute_accesses()
+
+
 Import detail
 -------------
 

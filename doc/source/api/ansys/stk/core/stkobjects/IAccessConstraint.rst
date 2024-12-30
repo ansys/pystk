@@ -32,6 +32,21 @@ Overview
               - Maximum relative motion used in adaptive sampling.
 
 
+Examples
+--------
+
+Add an Exclusion Zone access constraint
+
+.. code-block:: python
+
+    # IAgAccessConstraintCollection accessConstraints: Access Constraint collection
+    excludeZone: "AccessConstraintLatitudeLongitudeZone" = accessConstraints.add_named_constraint('ExclusionZone')
+    excludeZone.maximum_latitude = 45
+    excludeZone.minimum_latitude = 15
+    excludeZone.minimum_longitude = -75
+    excludeZone.maximum_longitude = -35
+
+
 Import detail
 -------------
 
