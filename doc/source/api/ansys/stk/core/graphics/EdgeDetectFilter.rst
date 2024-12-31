@@ -38,7 +38,7 @@ Property detail
 
 .. py:property:: method
     :canonical: ansys.stk.core.graphics.EdgeDetectFilter.method
-    :type: EDGE_DETECT_METHOD
+    :type: EdgeDetectMethod
 
     Gets or sets the method used to detect edges in the source raster.
 

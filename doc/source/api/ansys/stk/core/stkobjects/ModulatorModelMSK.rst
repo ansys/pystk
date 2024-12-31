@@ -9,10 +9,6 @@ ModulatorModelMSK
 
 .. py:currentmodule:: ModulatorModelMSK
 
-Overview
---------
-
-
 
 Import detail
 -------------

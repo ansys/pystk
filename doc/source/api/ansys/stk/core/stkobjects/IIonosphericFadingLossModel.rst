@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.IIonosphericFadingLossModel.type
-    :type: IONOSPHERIC_FADING_LOSS_MODEL_TYPE
+    :type: IonosphericFadingLossModelType
 
     Gets the IonoSpheric Fading loss model type enumeration.
 

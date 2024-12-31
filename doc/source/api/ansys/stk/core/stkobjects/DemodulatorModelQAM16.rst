@@ -9,10 +9,6 @@ DemodulatorModelQAM16
 
 .. py:currentmodule:: DemodulatorModelQAM16
 
-Overview
---------
-
-
 
 Import detail
 -------------

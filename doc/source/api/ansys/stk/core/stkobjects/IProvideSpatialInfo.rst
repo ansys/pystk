@@ -21,7 +21,6 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.IProvideSpatialInfo.get_spatial_information`
               - Return the spatial information for an object.
 
-
 Import detail
 -------------
 

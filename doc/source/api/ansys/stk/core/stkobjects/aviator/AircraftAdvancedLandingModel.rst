@@ -61,7 +61,7 @@ Property detail
 
 .. py:property:: landing_speed_mode
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedLandingModel.landing_speed_mode
-    :type: TAKEOFF_LANDING_SPEED_MODE
+    :type: TakeoffLandingSpeedMode
 
     Gets or sets the mode to calculate the aircraft's speed at wheels down.
 

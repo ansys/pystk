@@ -89,40 +89,40 @@ Method detail
 
 
 
-.. py:method:: enable_control_parameter(self, param: CONTROL_POWER_INTERNAL) -> None
+.. py:method:: enable_control_parameter(self, param: ControlPowerInternal) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.PowerInternal.enable_control_parameter
 
     Enable the specified control parameter.
 
     :Parameters:
 
-    **param** : :obj:`~CONTROL_POWER_INTERNAL`
+    **param** : :obj:`~ControlPowerInternal`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: disable_control_parameter(self, param: CONTROL_POWER_INTERNAL) -> None
+.. py:method:: disable_control_parameter(self, param: ControlPowerInternal) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.PowerInternal.disable_control_parameter
 
     Disables the specified control parameter.
 
     :Parameters:
 
-    **param** : :obj:`~CONTROL_POWER_INTERNAL`
+    **param** : :obj:`~ControlPowerInternal`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_control_parameter_enabled(self, param: CONTROL_POWER_INTERNAL) -> bool
+.. py:method:: is_control_parameter_enabled(self, param: ControlPowerInternal) -> bool
     :canonical: ansys.stk.core.stkobjects.astrogator.PowerInternal.is_control_parameter_enabled
 
     Sees if the specified control is enabled.
 
     :Parameters:
 
-    **param** : :obj:`~CONTROL_POWER_INTERNAL`
+    **param** : :obj:`~ControlPowerInternal`
 
     :Returns:
 

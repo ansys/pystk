@@ -52,7 +52,7 @@ Property detail
 
 .. py:property:: basic_model_type
     :canonical: ansys.stk.core.stkobjects.aviator.AtmosphereModelBasic.basic_model_type
-    :type: ATMOSPHERE_MODEL
+    :type: AtmosphereModelType
 
     Gets or sets the type of basic atmosphere.
 

@@ -46,108 +46,106 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(oConstraints)
 
         # FromParentConstraint
-        oConstraints.from_parent_constraint = CONSTELLATION_FROM_TO_PARENT_CONSTRAINT.ANY
-        Assert.assertEqual(CONSTELLATION_FROM_TO_PARENT_CONSTRAINT.ANY, oConstraints.from_parent_constraint)
-        oConstraints.from_parent_constraint = CONSTELLATION_FROM_TO_PARENT_CONSTRAINT.DIFFERENT_PARENT
-        Assert.assertEqual(
-            CONSTELLATION_FROM_TO_PARENT_CONSTRAINT.DIFFERENT_PARENT, oConstraints.from_parent_constraint
-        )
-        oConstraints.from_parent_constraint = CONSTELLATION_FROM_TO_PARENT_CONSTRAINT.SAME_PARENT
-        Assert.assertEqual(CONSTELLATION_FROM_TO_PARENT_CONSTRAINT.SAME_PARENT, oConstraints.from_parent_constraint)
+        oConstraints.from_parent_constraint = ConstellationFromToParentConstraint.ANY
+        Assert.assertEqual(ConstellationFromToParentConstraint.ANY, oConstraints.from_parent_constraint)
+        oConstraints.from_parent_constraint = ConstellationFromToParentConstraint.DIFFERENT_PARENT
+        Assert.assertEqual(ConstellationFromToParentConstraint.DIFFERENT_PARENT, oConstraints.from_parent_constraint)
+        oConstraints.from_parent_constraint = ConstellationFromToParentConstraint.SAME_PARENT
+        Assert.assertEqual(ConstellationFromToParentConstraint.SAME_PARENT, oConstraints.from_parent_constraint)
 
         # ToParentConstraint
-        oConstraints.to_parent_constraint = CONSTELLATION_FROM_TO_PARENT_CONSTRAINT.ANY
-        Assert.assertEqual(CONSTELLATION_FROM_TO_PARENT_CONSTRAINT.ANY, oConstraints.to_parent_constraint)
-        oConstraints.to_parent_constraint = CONSTELLATION_FROM_TO_PARENT_CONSTRAINT.DIFFERENT_PARENT
-        Assert.assertEqual(CONSTELLATION_FROM_TO_PARENT_CONSTRAINT.DIFFERENT_PARENT, oConstraints.to_parent_constraint)
-        oConstraints.to_parent_constraint = CONSTELLATION_FROM_TO_PARENT_CONSTRAINT.SAME_PARENT
-        Assert.assertEqual(CONSTELLATION_FROM_TO_PARENT_CONSTRAINT.SAME_PARENT, oConstraints.to_parent_constraint)
+        oConstraints.to_parent_constraint = ConstellationFromToParentConstraint.ANY
+        Assert.assertEqual(ConstellationFromToParentConstraint.ANY, oConstraints.to_parent_constraint)
+        oConstraints.to_parent_constraint = ConstellationFromToParentConstraint.DIFFERENT_PARENT
+        Assert.assertEqual(ConstellationFromToParentConstraint.DIFFERENT_PARENT, oConstraints.to_parent_constraint)
+        oConstraints.to_parent_constraint = ConstellationFromToParentConstraint.SAME_PARENT
+        Assert.assertEqual(ConstellationFromToParentConstraint.SAME_PARENT, oConstraints.to_parent_constraint)
 
         # FromRestrictionType - From
         TestBase.logger.WriteLine6("\tThe current FromRestrictionType is: {0}", oConstraints.from_restriction_type)
 
         # SetFromRestrictionType (ALL_OF)
-        oConstraints.set_from_restriction_type(CONSTELLATION_CONSTRAINT_RESTRICTION.ALL_OF)
+        oConstraints.set_from_restriction_type(ConstellationConstraintRestrictionType.ALL_OF)
         TestBase.logger.WriteLine6("\tThe new FromRestrictionType is: {0}", oConstraints.from_restriction_type)
-        Assert.assertEqual(CONSTELLATION_CONSTRAINT_RESTRICTION.ALL_OF, oConstraints.from_restriction_type)
+        Assert.assertEqual(ConstellationConstraintRestrictionType.ALL_OF, oConstraints.from_restriction_type)
         Assert.assertIsNotNone(oConstraints.from_restriction)
         Assert.assertIsNone(clr.CastAs(oConstraints.from_restriction, ConstellationConstraintObjectRestriction))
 
         # SetFromRestrictionType (ANY_OF)
-        oConstraints.set_from_restriction_type(CONSTELLATION_CONSTRAINT_RESTRICTION.ANY_OF)
+        oConstraints.set_from_restriction_type(ConstellationConstraintRestrictionType.ANY_OF)
         TestBase.logger.WriteLine6("\tThe new FromRestrictionType is: {0}", oConstraints.from_restriction_type)
-        Assert.assertEqual(CONSTELLATION_CONSTRAINT_RESTRICTION.ANY_OF, oConstraints.from_restriction_type)
+        Assert.assertEqual(ConstellationConstraintRestrictionType.ANY_OF, oConstraints.from_restriction_type)
         Assert.assertIsNotNone(oConstraints.from_restriction)
         Assert.assertIsNone(clr.CastAs(oConstraints.from_restriction, ConstellationConstraintObjectRestriction))
 
         # SetFromRestrictionType (NONE_OF)
-        oConstraints.set_from_restriction_type(CONSTELLATION_CONSTRAINT_RESTRICTION.NONE_OF)
+        oConstraints.set_from_restriction_type(ConstellationConstraintRestrictionType.NONE_OF)
         TestBase.logger.WriteLine6("\tThe new FromRestrictionType is: {0}", oConstraints.from_restriction_type)
-        Assert.assertEqual(CONSTELLATION_CONSTRAINT_RESTRICTION.NONE_OF, oConstraints.from_restriction_type)
+        Assert.assertEqual(ConstellationConstraintRestrictionType.NONE_OF, oConstraints.from_restriction_type)
         Assert.assertIsNotNone(oConstraints.from_restriction)
         Assert.assertIsNone(clr.CastAs(oConstraints.from_restriction, ConstellationConstraintObjectRestriction))
 
         # SetFromRestrictionType (AT_LEAST_N)
-        oConstraints.set_from_restriction_type(CONSTELLATION_CONSTRAINT_RESTRICTION.AT_LEAST_N)
+        oConstraints.set_from_restriction_type(ConstellationConstraintRestrictionType.AT_LEAST_N)
         TestBase.logger.WriteLine6("\tThe new FromRestrictionType is: {0}", oConstraints.from_restriction_type)
-        Assert.assertEqual(CONSTELLATION_CONSTRAINT_RESTRICTION.AT_LEAST_N, oConstraints.from_restriction_type)
+        Assert.assertEqual(ConstellationConstraintRestrictionType.AT_LEAST_N, oConstraints.from_restriction_type)
 
         # FromRestriction
         self.TestObjectRestriction(clr.CastAs(oConstraints.from_restriction, ConstellationConstraintObjectRestriction))
 
         # SetFromRestrictionType (EXACTLY_N)
-        oConstraints.set_from_restriction_type(CONSTELLATION_CONSTRAINT_RESTRICTION.EXACTLY_N)
+        oConstraints.set_from_restriction_type(ConstellationConstraintRestrictionType.EXACTLY_N)
         TestBase.logger.WriteLine6("\tThe new RestrictionType is: {0}", oConstraints.from_restriction_type)
-        Assert.assertEqual(CONSTELLATION_CONSTRAINT_RESTRICTION.EXACTLY_N, oConstraints.from_restriction_type)
+        Assert.assertEqual(ConstellationConstraintRestrictionType.EXACTLY_N, oConstraints.from_restriction_type)
 
         # FromRestriction
         self.TestObjectRestriction(clr.CastAs(oConstraints.from_restriction, ConstellationConstraintObjectRestriction))
 
         with pytest.raises(Exception):
-            oConstraints.set_from_restriction_type(CONSTELLATION_CONSTRAINT_RESTRICTION.UNKNOWN)
+            oConstraints.set_from_restriction_type(ConstellationConstraintRestrictionType.UNKNOWN)
 
         # ToRestrictionType - To
         TestBase.logger.WriteLine6("\tThe current ToRestrictionType is: {0}", oConstraints.to_restriction_type)
 
         # SetToRestrictionType (ALL_OF)
-        oConstraints.set_to_restriction_type(CONSTELLATION_CONSTRAINT_RESTRICTION.ALL_OF)
+        oConstraints.set_to_restriction_type(ConstellationConstraintRestrictionType.ALL_OF)
         TestBase.logger.WriteLine6("\tThe new ToRestrictionType is: {0}", oConstraints.to_restriction_type)
-        Assert.assertEqual(CONSTELLATION_CONSTRAINT_RESTRICTION.ALL_OF, oConstraints.to_restriction_type)
+        Assert.assertEqual(ConstellationConstraintRestrictionType.ALL_OF, oConstraints.to_restriction_type)
         Assert.assertIsNotNone(oConstraints.to_restriction)
         Assert.assertIsNone(clr.CastAs(oConstraints.to_restriction, ConstellationConstraintObjectRestriction))
 
         # SetToRestrictionType (ANY_OF)
-        oConstraints.set_to_restriction_type(CONSTELLATION_CONSTRAINT_RESTRICTION.ANY_OF)
+        oConstraints.set_to_restriction_type(ConstellationConstraintRestrictionType.ANY_OF)
         TestBase.logger.WriteLine6("\tThe new ToRestrictionType is: {0}", oConstraints.to_restriction_type)
-        Assert.assertEqual(CONSTELLATION_CONSTRAINT_RESTRICTION.ANY_OF, oConstraints.to_restriction_type)
+        Assert.assertEqual(ConstellationConstraintRestrictionType.ANY_OF, oConstraints.to_restriction_type)
         Assert.assertIsNotNone(oConstraints.to_restriction)
         Assert.assertIsNone(clr.CastAs(oConstraints.to_restriction, ConstellationConstraintObjectRestriction))
 
         # SetToRestrictionType (NONE_OF)
-        oConstraints.set_to_restriction_type(CONSTELLATION_CONSTRAINT_RESTRICTION.NONE_OF)
+        oConstraints.set_to_restriction_type(ConstellationConstraintRestrictionType.NONE_OF)
         TestBase.logger.WriteLine6("\tThe new ToRestrictionType is: {0}", oConstraints.to_restriction_type)
-        Assert.assertEqual(CONSTELLATION_CONSTRAINT_RESTRICTION.NONE_OF, oConstraints.to_restriction_type)
+        Assert.assertEqual(ConstellationConstraintRestrictionType.NONE_OF, oConstraints.to_restriction_type)
         Assert.assertIsNotNone(oConstraints.to_restriction)
         Assert.assertIsNone(clr.CastAs(oConstraints.to_restriction, ConstellationConstraintObjectRestriction))
 
         # SetRestrictionType (AT_LEAST_N)
-        oConstraints.set_to_restriction_type(CONSTELLATION_CONSTRAINT_RESTRICTION.AT_LEAST_N)
+        oConstraints.set_to_restriction_type(ConstellationConstraintRestrictionType.AT_LEAST_N)
         TestBase.logger.WriteLine6("\tThe new ToRestrictionType is: {0}", oConstraints.to_restriction_type)
-        Assert.assertEqual(CONSTELLATION_CONSTRAINT_RESTRICTION.AT_LEAST_N, oConstraints.to_restriction_type)
+        Assert.assertEqual(ConstellationConstraintRestrictionType.AT_LEAST_N, oConstraints.to_restriction_type)
 
         # ToRestriction
         self.TestObjectRestriction(clr.CastAs(oConstraints.to_restriction, ConstellationConstraintObjectRestriction))
 
         # SetToRestrictionType (EXACTLY_N)
-        oConstraints.set_to_restriction_type(CONSTELLATION_CONSTRAINT_RESTRICTION.EXACTLY_N)
+        oConstraints.set_to_restriction_type(ConstellationConstraintRestrictionType.EXACTLY_N)
         TestBase.logger.WriteLine6("\tThe new RestrictionType is: {0}", oConstraints.to_restriction_type)
-        Assert.assertEqual(CONSTELLATION_CONSTRAINT_RESTRICTION.EXACTLY_N, oConstraints.to_restriction_type)
+        Assert.assertEqual(ConstellationConstraintRestrictionType.EXACTLY_N, oConstraints.to_restriction_type)
 
         # ToRestriction
         self.TestObjectRestriction(clr.CastAs(oConstraints.to_restriction, ConstellationConstraintObjectRestriction))
 
         with pytest.raises(Exception):
-            oConstraints.set_to_restriction_type(CONSTELLATION_CONSTRAINT_RESTRICTION.UNKNOWN)
+            oConstraints.set_to_restriction_type(ConstellationConstraintRestrictionType.UNKNOWN)
 
         TestBase.logger.WriteLine("----- THE CONSTELLATION CONSTRAINTS TEST ----- END -----")
 
@@ -207,7 +205,7 @@ class EarlyBoundTests(TestBase):
         # not the constellation itself.
         #
         newCn: "Constellation" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.CONSTELLATION, "TempConstellation"),
+            TestBase.Application.current_scenario.children.new(STKObjectType.CONSTELLATION, "TempConstellation"),
             Constellation,
         )
         try:
@@ -222,7 +220,7 @@ class EarlyBoundTests(TestBase):
                 facility: str
                 for facility in facilities:
                     o: "IStkObject" = TestBase.Application.current_scenario.children.new(
-                        STK_OBJECT_TYPE.FACILITY, facility
+                        STKObjectType.FACILITY, facility
                     )
                     EarlyBoundTests.AG_CN.objects.add_object(o)
                     del o
@@ -256,7 +254,7 @@ class EarlyBoundTests(TestBase):
                 facility: str
                 for facility in facilities:
                     EarlyBoundTests.AG_CN.objects.remove_name(String.Format("Facility/{0}", facility))
-                    TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.FACILITY, facility)
+                    TestBase.Application.current_scenario.children.unload(STKObjectType.FACILITY, facility)
 
         finally:
             (clr.CastAs(newCn, IStkObject)).unload()

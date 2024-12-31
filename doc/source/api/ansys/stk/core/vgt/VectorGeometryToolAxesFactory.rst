@@ -57,7 +57,7 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: create(self, axes_name: str, description: str, axes_type: AXES_TYPE) -> IVectorGeometryToolAxes
+.. py:method:: create(self, axes_name: str, description: str, axes_type: AxesType) -> IVectorGeometryToolAxes
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesFactory.create
 
     Create a VGT axes using specified name, description and type.
@@ -66,20 +66,20 @@ Method detail
 
     **axes_name** : :obj:`~str`
     **description** : :obj:`~str`
-    **axes_type** : :obj:`~AXES_TYPE`
+    **axes_type** : :obj:`~AxesType`
 
     :Returns:
 
         :obj:`~IVectorGeometryToolAxes`
 
-.. py:method:: is_type_supported(self, type: AXES_TYPE) -> bool
+.. py:method:: is_type_supported(self, type: AxesType) -> bool
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesFactory.is_type_supported
 
     Return true if the type is supported.
 
     :Parameters:
 
-    **type** : :obj:`~AXES_TYPE`
+    **type** : :obj:`~AxesType`
 
     :Returns:
 

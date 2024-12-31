@@ -9,10 +9,6 @@ CalculationToolConditionSet
 
 .. py:currentmodule:: CalculationToolConditionSet
 
-Overview
---------
-
-
 
 Import detail
 -------------

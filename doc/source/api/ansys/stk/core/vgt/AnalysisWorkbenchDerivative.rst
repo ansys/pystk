@@ -9,10 +9,6 @@ AnalysisWorkbenchDerivative
 
 .. py:currentmodule:: AnalysisWorkbenchDerivative
 
-Overview
---------
-
-
 
 Import detail
 -------------

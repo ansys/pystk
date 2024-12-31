@@ -7,10 +7,6 @@ ICatalogNavaid
 
 .. py:currentmodule:: ICatalogNavaid
 
-Overview
---------
-
-
 Import detail
 -------------
 

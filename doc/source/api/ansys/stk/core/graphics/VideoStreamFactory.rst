@@ -26,7 +26,6 @@ Overview
               - Initialize the video stream from a Uri, which can be a file, HTTP, RTP, UDP, or TCP source. See the Video Streams Overview for a list of supported video formats and Uri usage.
 
 
-
 Import detail
 -------------
 

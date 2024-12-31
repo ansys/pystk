@@ -110,7 +110,7 @@ Property detail
 
 .. py:property:: class_type
     :canonical: ansys.stk.core.stkobjects.IStkObject.class_type
-    :type: STK_OBJECT_TYPE
+    :type: STKObjectType
 
     Returns a class type of the object (i.e. eAircraft, eFacility etc.).
 

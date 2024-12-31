@@ -63,7 +63,7 @@ Property detail
 
 .. py:property:: power_back_off_transfer_function_type
     :canonical: ansys.stk.core.stkobjects.IReTransmitterModel.power_back_off_transfer_function_type
-    :type: TRANSFER_FUNCTION_TYPE
+    :type: TransferFunctionType
 
     Gets or sets the power back off transfer function type.
 
@@ -93,7 +93,7 @@ Property detail
 
 .. py:property:: c_over_im_transfer_function_type
     :canonical: ansys.stk.core.stkobjects.IReTransmitterModel.c_over_im_transfer_function_type
-    :type: TRANSFER_FUNCTION_TYPE
+    :type: TransferFunctionType
 
     Gets or sets the C/Im transfer function type.
 
@@ -123,7 +123,7 @@ Property detail
 
 .. py:property:: operational_mode
     :canonical: ansys.stk.core.stkobjects.IReTransmitterModel.operational_mode
-    :type: RE_TRANSMITTER_OP_MODE
+    :type: ReTransmitterOpMode
 
     Gets or sets the operational mode.
 

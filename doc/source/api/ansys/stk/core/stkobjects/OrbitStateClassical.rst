@@ -54,7 +54,7 @@ Property detail
 
 .. py:property:: coordinate_system_type
     :canonical: ansys.stk.core.stkobjects.OrbitStateClassical.coordinate_system_type
-    :type: COORDINATE_SYSTEM
+    :type: CoordinateSystem
 
     Coordinate system being used.
 
@@ -66,7 +66,7 @@ Property detail
 
 .. py:property:: size_shape_type
     :canonical: ansys.stk.core.stkobjects.OrbitStateClassical.size_shape_type
-    :type: CLASSICAL_SIZE_SHAPE
+    :type: ClassicalSizeShape
 
     Gets or sets the pair of elements used for specifying orbit size and shape.
 
@@ -84,7 +84,7 @@ Property detail
 
 .. py:property:: location_type
     :canonical: ansys.stk.core.stkobjects.OrbitStateClassical.location_type
-    :type: CLASSICAL_LOCATION
+    :type: ClassicalLocation
 
     Gets or sets the element used for specifying spacecraft location in the orbit at epoch.
 

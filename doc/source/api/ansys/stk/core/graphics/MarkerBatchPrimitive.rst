@@ -119,31 +119,31 @@ Property detail
 
 .. py:property:: size_source
     :canonical: ansys.stk.core.graphics.MarkerBatchPrimitive.size_source
-    :type: MARKER_BATCH_SIZE_SOURCE
+    :type: MarkerBatchSizeSource
 
     Gets the source used for the size of markers in the batch.
 
 .. py:property:: sort_order
     :canonical: ansys.stk.core.graphics.MarkerBatchPrimitive.sort_order
-    :type: MARKER_BATCH_SORT_ORDER
+    :type: MarkerBatchSortOrder
 
     Gets the order in which markers in the marker batch are sorted before rendering.
 
 .. py:property:: set_hint
     :canonical: ansys.stk.core.graphics.MarkerBatchPrimitive.set_hint
-    :type: SET_HINT
+    :type: SetHint
 
     Gets the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with.
 
 .. py:property:: rendering_method
     :canonical: ansys.stk.core.graphics.MarkerBatchPrimitive.rendering_method
-    :type: MARKER_BATCH_RENDERING_METHOD
+    :type: MarkerBatchRenderingMethod
 
     Gets the rendering method used to render the marker batch.
 
 .. py:property:: render_pass
     :canonical: ansys.stk.core.graphics.MarkerBatchPrimitive.render_pass
-    :type: MARKER_BATCH_RENDER_PASS
+    :type: MarkerBatchRenderPass
 
     Gets or sets the pass during which the marker batch is rendered.
 
@@ -167,7 +167,7 @@ Property detail
 
 .. py:property:: size_unit
     :canonical: ansys.stk.core.graphics.MarkerBatchPrimitive.size_unit
-    :type: MARKER_BATCH_SIZE_UNIT
+    :type: MarkerBatchSizeUnit
 
     Gets or sets the unit that each marker's size is defined in.
 
@@ -179,7 +179,7 @@ Property detail
 
 .. py:property:: origin
     :canonical: ansys.stk.core.graphics.MarkerBatchPrimitive.origin
-    :type: ORIGIN
+    :type: Origin
 
     Gets or sets the per-batch origin, which is applied to each marker in the batch.
 
@@ -300,7 +300,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_with_optional_parameters_and_render_pass_hint(self, positions: list, optional_parameters: MarkerBatchPrimitiveOptionalParameters, render_pass_hint: RENDER_PASS_HINT) -> None
+.. py:method:: set_with_optional_parameters_and_render_pass_hint(self, positions: list, optional_parameters: MarkerBatchPrimitiveOptionalParameters, render_pass_hint: RenderPassHint) -> None
     :canonical: ansys.stk.core.graphics.MarkerBatchPrimitive.set_with_optional_parameters_and_render_pass_hint
 
     Define the positions and optional per-marker parameters of markers in a marker batch. The markers are rendered in the primitive's reference frame. renderPassHint is provided for efficiency.
@@ -309,7 +309,7 @@ Method detail
 
     **positions** : :obj:`~list`
     **optional_parameters** : :obj:`~MarkerBatchPrimitiveOptionalParameters`
-    **render_pass_hint** : :obj:`~RENDER_PASS_HINT`
+    **render_pass_hint** : :obj:`~RenderPassHint`
 
     :Returns:
 
@@ -344,7 +344,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_cartographic_with_optional_parameters_and_render_pass_hint(self, central_body: str, positions: list, optional_parameters: MarkerBatchPrimitiveOptionalParameters, render_pass_hint: RENDER_PASS_HINT) -> None
+.. py:method:: set_cartographic_with_optional_parameters_and_render_pass_hint(self, central_body: str, positions: list, optional_parameters: MarkerBatchPrimitiveOptionalParameters, render_pass_hint: RenderPassHint) -> None
     :canonical: ansys.stk.core.graphics.MarkerBatchPrimitive.set_cartographic_with_optional_parameters_and_render_pass_hint
 
     For convenience. Defines the positions and optional per-marker parameters of markers in a marker batch using cartographic positions. renderPassHint is provided for efficiency...
@@ -354,7 +354,7 @@ Method detail
     **central_body** : :obj:`~str`
     **positions** : :obj:`~list`
     **optional_parameters** : :obj:`~MarkerBatchPrimitiveOptionalParameters`
-    **render_pass_hint** : :obj:`~RENDER_PASS_HINT`
+    **render_pass_hint** : :obj:`~RenderPassHint`
 
     :Returns:
 
@@ -374,7 +374,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_partial_with_indices_order(self, positions: list, indices: list, indices_order_hint: PRIMITIVE_INDICES_ORDER_HINT) -> None
+.. py:method:: set_partial_with_indices_order(self, positions: list, indices: list, indices_order_hint: PrimitiveIndicesOrderHint) -> None
     :canonical: ansys.stk.core.graphics.MarkerBatchPrimitive.set_partial_with_indices_order
 
     Update a subset of marker positions in a marker batch.
@@ -383,7 +383,7 @@ Method detail
 
     **positions** : :obj:`~list`
     **indices** : :obj:`~list`
-    **indices_order_hint** : :obj:`~PRIMITIVE_INDICES_ORDER_HINT`
+    **indices_order_hint** : :obj:`~PrimitiveIndicesOrderHint`
 
     :Returns:
 
@@ -404,7 +404,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_partial_with_optional_parameters_indices_order_and_render_pass(self, positions: list, optional_parameters: MarkerBatchPrimitiveOptionalParameters, indices: list, indices_order_hint: PRIMITIVE_INDICES_ORDER_HINT, render_pass_hint: RENDER_PASS_HINT) -> None
+.. py:method:: set_partial_with_optional_parameters_indices_order_and_render_pass(self, positions: list, optional_parameters: MarkerBatchPrimitiveOptionalParameters, indices: list, indices_order_hint: PrimitiveIndicesOrderHint, render_pass_hint: RenderPassHint) -> None
     :canonical: ansys.stk.core.graphics.MarkerBatchPrimitive.set_partial_with_optional_parameters_indices_order_and_render_pass
 
     Update a subset of marker positions and/or per-marker parameters in a marker batch.
@@ -414,8 +414,8 @@ Method detail
     **positions** : :obj:`~list`
     **optional_parameters** : :obj:`~MarkerBatchPrimitiveOptionalParameters`
     **indices** : :obj:`~list`
-    **indices_order_hint** : :obj:`~PRIMITIVE_INDICES_ORDER_HINT`
-    **render_pass_hint** : :obj:`~RENDER_PASS_HINT`
+    **indices_order_hint** : :obj:`~PrimitiveIndicesOrderHint`
+    **render_pass_hint** : :obj:`~RenderPassHint`
 
     :Returns:
 
@@ -436,7 +436,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_partial_cartographic_with_indices_order(self, central_body: str, positions: list, indices: list, indices_order_hint: PRIMITIVE_INDICES_ORDER_HINT) -> None
+.. py:method:: set_partial_cartographic_with_indices_order(self, central_body: str, positions: list, indices: list, indices_order_hint: PrimitiveIndicesOrderHint) -> None
     :canonical: ansys.stk.core.graphics.MarkerBatchPrimitive.set_partial_cartographic_with_indices_order
 
     For convenience. Updates a subset of positions in a marker batch using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial.
@@ -446,7 +446,7 @@ Method detail
     **central_body** : :obj:`~str`
     **positions** : :obj:`~list`
     **indices** : :obj:`~list`
-    **indices_order_hint** : :obj:`~PRIMITIVE_INDICES_ORDER_HINT`
+    **indices_order_hint** : :obj:`~PrimitiveIndicesOrderHint`
 
     :Returns:
 
@@ -468,7 +468,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_partial_cartographic_with_optional_parameters_indices_order_and_render_pass(self, central_body: str, positions: list, optional_parameters: MarkerBatchPrimitiveOptionalParameters, indices: list, indices_order_hint: PRIMITIVE_INDICES_ORDER_HINT, render_pass_hint: RENDER_PASS_HINT) -> None
+.. py:method:: set_partial_cartographic_with_optional_parameters_indices_order_and_render_pass(self, central_body: str, positions: list, optional_parameters: MarkerBatchPrimitiveOptionalParameters, indices: list, indices_order_hint: PrimitiveIndicesOrderHint, render_pass_hint: RenderPassHint) -> None
     :canonical: ansys.stk.core.graphics.MarkerBatchPrimitive.set_partial_cartographic_with_optional_parameters_indices_order_and_render_pass
 
     For convenience. Updates a subset of positions and/or optional per-marker parameters of markers in a marker batch using cartographic positions. renderPassHint is provided for efficiency...
@@ -479,21 +479,21 @@ Method detail
     **positions** : :obj:`~list`
     **optional_parameters** : :obj:`~MarkerBatchPrimitiveOptionalParameters`
     **indices** : :obj:`~list`
-    **indices_order_hint** : :obj:`~PRIMITIVE_INDICES_ORDER_HINT`
-    **render_pass_hint** : :obj:`~RENDER_PASS_HINT`
+    **indices_order_hint** : :obj:`~PrimitiveIndicesOrderHint`
+    **render_pass_hint** : :obj:`~RenderPassHint`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: supported(self, rendering_method: MARKER_BATCH_RENDERING_METHOD) -> bool
+.. py:method:: supported(self, rendering_method: MarkerBatchRenderingMethod) -> bool
     :canonical: ansys.stk.core.graphics.MarkerBatchPrimitive.supported
 
     Determine whether or not the video card supports the marker batch primitive with the given renderingMethod.
 
     :Parameters:
 
-    **rendering_method** : :obj:`~MARKER_BATCH_RENDERING_METHOD`
+    **rendering_method** : :obj:`~MarkerBatchRenderingMethod`
 
     :Returns:
 

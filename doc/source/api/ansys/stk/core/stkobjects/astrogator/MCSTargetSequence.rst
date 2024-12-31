@@ -67,13 +67,13 @@ Property detail
 
 .. py:property:: action
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSTargetSequence.action
-    :type: TARGET_SEQUENCE_ACTION
+    :type: TargetSequenceAction
 
     Whether to run the sequence nominally or using profiles.
 
 .. py:property:: when_profiles_finish
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSTargetSequence.when_profiles_finish
-    :type: PROFILES_FINISH
+    :type: ProfilesFinish
 
     When Profiles Converge - the action to be carried out if targeting has converged.
 

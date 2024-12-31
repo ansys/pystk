@@ -9,10 +9,6 @@ ConstellationConstraintRestriction
 
 .. py:currentmodule:: ConstellationConstraintRestriction
 
-Overview
---------
-
-
 
 Import detail
 -------------

@@ -9,10 +9,6 @@ AGICustomTerrainOverlay
 
 .. py:currentmodule:: AGICustomTerrainOverlay
 
-Overview
---------
-
-
 
 Import detail
 -------------

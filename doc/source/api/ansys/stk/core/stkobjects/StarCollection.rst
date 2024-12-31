@@ -9,10 +9,6 @@ StarCollection
 
 .. py:currentmodule:: StarCollection
 
-Overview
---------
-
-
 
 Import detail
 -------------

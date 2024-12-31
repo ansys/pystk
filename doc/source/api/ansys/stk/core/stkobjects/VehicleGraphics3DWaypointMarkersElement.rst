@@ -61,13 +61,13 @@ Property detail
 
 .. py:property:: marker_type
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DWaypointMarkersElement.marker_type
-    :type: ROUTE_GRAPHICS_3D_MARKER_TYPE
+    :type: RouteGraphics3DMarkerType
 
     Get the marker type of the waypoint.
 
 .. py:property:: shape
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DWaypointMarkersElement.shape
-    :type: MARKER_SHAPE_3D
+    :type: MarkerShape3d
 
     Gets or sets the shape of the waypoint marker.
 

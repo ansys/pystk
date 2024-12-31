@@ -7,10 +7,6 @@ IAnalysisWorkbenchDerivative
 
 .. py:currentmodule:: IAnalysisWorkbenchDerivative
 
-Overview
---------
-
-
 Import detail
 -------------
 

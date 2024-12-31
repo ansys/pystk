@@ -7,10 +7,6 @@ ISensorPointingTargetedBoresight
 
 .. py:currentmodule:: ISensorPointingTargetedBoresight
 
-Overview
---------
-
-
 Import detail
 -------------
 

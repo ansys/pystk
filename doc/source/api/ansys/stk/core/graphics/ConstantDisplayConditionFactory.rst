@@ -24,7 +24,6 @@ Overview
               - Initialize a constant display condition with the value the display condition evaluates to.
 
 
-
 Import detail
 -------------
 

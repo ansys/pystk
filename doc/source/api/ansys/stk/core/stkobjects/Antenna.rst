@@ -87,7 +87,7 @@ Property detail
 
 .. py:property:: refraction
     :canonical: ansys.stk.core.stkobjects.Antenna.refraction
-    :type: SENSOR_REFRACTION_TYPE
+    :type: SensorRefractionType
 
     Refraction method, a member of the AgESnRefractionType enumeration.
 
@@ -156,14 +156,14 @@ Method detail
 
 
 
-.. py:method:: is_refraction_type_supported(self, model: SENSOR_REFRACTION_TYPE) -> bool
+.. py:method:: is_refraction_type_supported(self, model: SensorRefractionType) -> bool
     :canonical: ansys.stk.core.stkobjects.Antenna.is_refraction_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **model** : :obj:`~SENSOR_REFRACTION_TYPE`
+    **model** : :obj:`~SensorRefractionType`
 
     :Returns:
 

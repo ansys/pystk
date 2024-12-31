@@ -62,7 +62,7 @@ Property detail
 
 .. py:property:: small_region_algorithm
     :canonical: ansys.stk.core.stkobjects.CoverageBoundsCustomRegions.small_region_algorithm
-    :type: COVERAGE_CUSTOM_REGION_ALGORITHM
+    :type: CoverageCustomRegionAlgorithm
 
     Disables or enables one of the two special gridding algorithms triggered when Custom Region grid includes a single small region (longitude span less than 1 deg).
 

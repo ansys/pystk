@@ -24,7 +24,6 @@ Overview
               - Initialize a pixel size display condition with the inclusive interval [minimumPixelSize, maximumPixelSize]...
 
 
-
 Import detail
 -------------
 

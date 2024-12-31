@@ -24,7 +24,6 @@ Overview
               - Add an ephemeris point using position and velocity. Epoch uses DateFormat dimension.
 
 
-
 Import detail
 -------------
 

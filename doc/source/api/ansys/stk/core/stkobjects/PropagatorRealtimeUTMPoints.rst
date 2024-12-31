@@ -24,7 +24,6 @@ Overview
               - Add an ephemeris point. Valid values for <ZoneStr> are A, B, Y, Z or ddc, where 00<dd<61 and c is C-X. Easting, Northing and Alt are entered in Distance. LonRate and LatRate are entered in degrees/second. AltRate is entered in Distance/second.
 
 
-
 Import detail
 -------------
 

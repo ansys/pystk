@@ -103,13 +103,13 @@ Property detail
 
 .. py:property:: condition
     :canonical: ansys.stk.core.stkobjects.astrogator.LightingStoppingCondition.condition
-    :type: LIGHTING_CONDITION
+    :type: LightingCondition
 
     Specifies the direction from which the stopping condition value must be achieved.
 
 .. py:property:: eclipsing_bodies_list_source
     :canonical: ansys.stk.core.stkobjects.astrogator.LightingStoppingCondition.eclipsing_bodies_list_source
-    :type: ECLIPSING_BODIES_SOURCE
+    :type: EclipsingBodiesSource
 
     Eclipsing Bodies List Source.
 

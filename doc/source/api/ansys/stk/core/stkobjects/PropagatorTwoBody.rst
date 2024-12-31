@@ -73,7 +73,7 @@ Property detail
 
 .. py:property:: propagation_frame
     :canonical: ansys.stk.core.stkobjects.PropagatorTwoBody.propagation_frame
-    :type: VEHICLE_PROPAGATION_FRAME
+    :type: VehiclePropagationFrame
 
     Gets or sets the propagation frame.
 

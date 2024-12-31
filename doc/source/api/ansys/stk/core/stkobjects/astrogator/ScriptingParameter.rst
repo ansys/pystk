@@ -78,7 +78,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingParameter.type
-    :type: SCRIPTING_PARAMETER_TYPE
+    :type: ScriptingParameterType
 
     Gets or sets the parameter's type.
 

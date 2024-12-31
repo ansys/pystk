@@ -20,7 +20,7 @@ class AccessConstraintHelper(object):
         Assert.assertIsNotNone(oConstraint)
 
         Assert.assertNotEqual("", oConstraint.constraint_name)
-        constraintType: "ACCESS_CONSTRAINT_TYPE" = oConstraint.constraint_type
+        constraintType: "AccessConstraintType" = oConstraint.constraint_type
 
         bIsPlugin: bool = oConstraint.is_plugin
 
@@ -46,7 +46,7 @@ class AccessConstraintHelper(object):
     # region ConstraintTest
     # ////////////////////////////////////////////////////////////////////////
     def ConstraintTest(
-        self, oCollection: "AccessConstraintCollection", eType: "ACCESS_CONSTRAINT_TYPE", temporaryDirectory: str
+        self, oCollection: "AccessConstraintCollection", eType: "AccessConstraintType", temporaryDirectory: str
     ):
         Assert.assertIsNotNone(oCollection)
         oConstraint: "IAccessConstraint" = None
@@ -54,20 +54,20 @@ class AccessConstraintHelper(object):
             oConstraint = oCollection.add_constraint(eType)
             if (
                 (
-                    ((eType == ACCESS_CONSTRAINT_TYPE.APPARENT_TIME) or (eType == ACCESS_CONSTRAINT_TYPE.DURATION))
-                    or (eType == ACCESS_CONSTRAINT_TYPE.LOCAL_TIME)
+                    ((eType == AccessConstraintType.APPARENT_TIME) or (eType == AccessConstraintType.DURATION))
+                    or (eType == AccessConstraintType.LOCAL_TIME)
                 )
-                or (eType == ACCESS_CONSTRAINT_TYPE.GMT)
-            ) or (eType == ACCESS_CONSTRAINT_TYPE.INTERVALS):
+                or (eType == AccessConstraintType.GMT)
+            ) or (eType == AccessConstraintType.INTERVALS):
                 oConstraint = oCollection.add_constraint(eType)
 
             Assert.assertIsNotNone(oConstraint)
-            if eType == ACCESS_CONSTRAINT_TYPE.THIRD_BODY_OBSTRUCTION:
+            if eType == AccessConstraintType.THIRD_BODY_OBSTRUCTION:
                 # Third Body
                 self.TestConstraintThirdBody(oConstraint)
                 return
 
-            if eType == ACCESS_CONSTRAINT_TYPE.OBJECT_EXCLUSION_ANGLE:
+            if eType == AccessConstraintType.OBJECT_EXCLUSION_ANGLE:
                 # Object Exclusion Angle
                 self.TestConstraintObjectExclusion(oConstraint)
                 return
@@ -79,277 +79,275 @@ class AccessConstraintHelper(object):
         self.BasePropertiesTest(oConstraint)
 
         typesNoFieldsToTest = []
-        typesNoFieldsToTest.append(ACCESS_CONSTRAINT_TYPE.NONE)
-        typesNoFieldsToTest.append(ACCESS_CONSTRAINT_TYPE.AREA_MASK)
-        typesNoFieldsToTest.append(ACCESS_CONSTRAINT_TYPE.AZ_EL_MASK)
-        typesNoFieldsToTest.append(ACCESS_CONSTRAINT_TYPE.FIELD_OF_VIEW)
-        typesNoFieldsToTest.append(ACCESS_CONSTRAINT_TYPE.FIELD_OF_VIEW_SUN_SPECULAR_EXCLUSION_ANGLE)
-        typesNoFieldsToTest.append(ACCESS_CONSTRAINT_TYPE.FIELD_OF_VIEW_SUN_SPECULAR_INCLUSION_ANGLE)
-        typesNoFieldsToTest.append(ACCESS_CONSTRAINT_TYPE.HORIZON_CROSSING)
-        typesNoFieldsToTest.append(ACCESS_CONSTRAINT_TYPE.LINE_OF_SIGHT)
-        typesNoFieldsToTest.append(ACCESS_CONSTRAINT_TYPE.SENSOR_AZ_EL_MASK)
-        typesNoFieldsToTest.append(ACCESS_CONSTRAINT_TYPE.SEARCH_TRACK_CLEAR_DOPPLER)
-        typesNoFieldsToTest.append(ACCESS_CONSTRAINT_TYPE.SEARCH_TRACK_INTEGRATED_PULSES)
-        typesNoFieldsToTest.append(ACCESS_CONSTRAINT_TYPE.SEARCH_TRACK_MLC_FILTER)
-        typesNoFieldsToTest.append(ACCESS_CONSTRAINT_TYPE.SEARCH_TRACK_SLC_FILTER)
-        typesNoFieldsToTest.append(ACCESS_CONSTRAINT_TYPE.SEARCH_TRACK_UNAMBIGUOUS_DOPPLER)
-        typesNoFieldsToTest.append(ACCESS_CONSTRAINT_TYPE.SEARCH_TRACK_UNAMBIGUOUS_RANGE)
-        typesNoFieldsToTest.append(ACCESS_CONSTRAINT_TYPE.TERRAIN_MASK)
-        typesNoFieldsToTest.append(ACCESS_CONSTRAINT_TYPE.TILES_MASK_3D)
-        typesNoFieldsToTest.append(ACCESS_CONSTRAINT_TYPE.FOREGROUND)
-        typesNoFieldsToTest.append(ACCESS_CONSTRAINT_TYPE.SEET_MAGNETIC_FIELD_L_SHELL)
+        typesNoFieldsToTest.append(AccessConstraintType.NONE)
+        typesNoFieldsToTest.append(AccessConstraintType.AREA_MASK)
+        typesNoFieldsToTest.append(AccessConstraintType.AZ_EL_MASK)
+        typesNoFieldsToTest.append(AccessConstraintType.FIELD_OF_VIEW)
+        typesNoFieldsToTest.append(AccessConstraintType.FIELD_OF_VIEW_SUN_SPECULAR_EXCLUSION_ANGLE)
+        typesNoFieldsToTest.append(AccessConstraintType.FIELD_OF_VIEW_SUN_SPECULAR_INCLUSION_ANGLE)
+        typesNoFieldsToTest.append(AccessConstraintType.HORIZON_CROSSING)
+        typesNoFieldsToTest.append(AccessConstraintType.LINE_OF_SIGHT)
+        typesNoFieldsToTest.append(AccessConstraintType.SENSOR_AZ_EL_MASK)
+        typesNoFieldsToTest.append(AccessConstraintType.SEARCH_TRACK_CLEAR_DOPPLER)
+        typesNoFieldsToTest.append(AccessConstraintType.SEARCH_TRACK_INTEGRATED_PULSES)
+        typesNoFieldsToTest.append(AccessConstraintType.SEARCH_TRACK_MLC_FILTER)
+        typesNoFieldsToTest.append(AccessConstraintType.SEARCH_TRACK_SLC_FILTER)
+        typesNoFieldsToTest.append(AccessConstraintType.SEARCH_TRACK_UNAMBIGUOUS_DOPPLER)
+        typesNoFieldsToTest.append(AccessConstraintType.SEARCH_TRACK_UNAMBIGUOUS_RANGE)
+        typesNoFieldsToTest.append(AccessConstraintType.TERRAIN_MASK)
+        typesNoFieldsToTest.append(AccessConstraintType.TILES_MASK_3D)
+        typesNoFieldsToTest.append(AccessConstraintType.FOREGROUND)
+        typesNoFieldsToTest.append(AccessConstraintType.SEET_MAGNETIC_FIELD_L_SHELL)
 
         typesMinMaxSetSeparate = []
-        typesMinMaxSetSeparate.append(ACCESS_CONSTRAINT_TYPE.AREA_TARGET_CENTROID_ELEVATION_ANGLE)
-        typesMinMaxSetSeparate.append(ACCESS_CONSTRAINT_TYPE.BETA_ANGLE)
-        typesMinMaxSetSeparate.append(ACCESS_CONSTRAINT_TYPE.DOPPLER_CONE_ANGLE)
-        typesMinMaxSetSeparate.append(ACCESS_CONSTRAINT_TYPE.GRAZING_ANGLE)
-        typesMinMaxSetSeparate.append(ACCESS_CONSTRAINT_TYPE.GROUND_ELEVATION_ANGLE)
-        typesMinMaxSetSeparate.append(ACCESS_CONSTRAINT_TYPE.LATITUDE)
-        typesMinMaxSetSeparate.append(ACCESS_CONSTRAINT_TYPE.SQUINT_ANGLE)
-        typesMinMaxSetSeparate.append(ACCESS_CONSTRAINT_TYPE.SUN_GROUND_ELEVATION_ANGLE)
-        typesMinMaxSetSeparate.append(ACCESS_CONSTRAINT_TYPE.ANGLE_OFF_BORESIGHT)
-        typesMinMaxSetSeparate.append(ACCESS_CONSTRAINT_TYPE.BORESIGHT_GRAZING_ANGLE)
-        typesMinMaxSetSeparate.append(ACCESS_CONSTRAINT_TYPE.SEET_MAGNETIC_FIELD_LINE_SEPARATION)
-        typesMinMaxSetSeparate.append(ACCESS_CONSTRAINT_TYPE.LUNAR_ELEVATION_ANGLE)
-        typesMinMaxSetSeparate.append(ACCESS_CONSTRAINT_TYPE.SUN_ELEVATION_ANGLE)
-        typesMinMaxSetSeparate.append(ACCESS_CONSTRAINT_TYPE.TERRAIN_GRAZING_ANGLE)
-        typesMinMaxSetSeparate.append(ACCESS_CONSTRAINT_TYPE.CENTROID_SUN_ELEVATION_ANGLE)
-        typesMinMaxSetSeparate.append(ACCESS_CONSTRAINT_TYPE.COLLECTION_ANGLE)
-        typesMinMaxSetSeparate.append(ACCESS_CONSTRAINT_TYPE.CENTRAL_ANGLE)
+        typesMinMaxSetSeparate.append(AccessConstraintType.AREA_TARGET_CENTROID_ELEVATION_ANGLE)
+        typesMinMaxSetSeparate.append(AccessConstraintType.BETA_ANGLE)
+        typesMinMaxSetSeparate.append(AccessConstraintType.DOPPLER_CONE_ANGLE)
+        typesMinMaxSetSeparate.append(AccessConstraintType.GRAZING_ANGLE)
+        typesMinMaxSetSeparate.append(AccessConstraintType.GROUND_ELEVATION_ANGLE)
+        typesMinMaxSetSeparate.append(AccessConstraintType.LATITUDE)
+        typesMinMaxSetSeparate.append(AccessConstraintType.SQUINT_ANGLE)
+        typesMinMaxSetSeparate.append(AccessConstraintType.SUN_GROUND_ELEVATION_ANGLE)
+        typesMinMaxSetSeparate.append(AccessConstraintType.ANGLE_OFF_BORESIGHT)
+        typesMinMaxSetSeparate.append(AccessConstraintType.BORESIGHT_GRAZING_ANGLE)
+        typesMinMaxSetSeparate.append(AccessConstraintType.SEET_MAGNETIC_FIELD_LINE_SEPARATION)
+        typesMinMaxSetSeparate.append(AccessConstraintType.LUNAR_ELEVATION_ANGLE)
+        typesMinMaxSetSeparate.append(AccessConstraintType.SUN_ELEVATION_ANGLE)
+        typesMinMaxSetSeparate.append(AccessConstraintType.TERRAIN_GRAZING_ANGLE)
+        typesMinMaxSetSeparate.append(AccessConstraintType.CENTROID_SUN_ELEVATION_ANGLE)
+        typesMinMaxSetSeparate.append(AccessConstraintType.COLLECTION_ANGLE)
+        typesMinMaxSetSeparate.append(AccessConstraintType.CENTRAL_ANGLE)
 
         typesMinMaxUnitLess = []
-        typesMinMaxUnitLess.append(ACCESS_CONSTRAINT_TYPE.IMAGE_QUALITY)
-        typesMinMaxUnitLess.append(ACCESS_CONSTRAINT_TYPE.MATLAB)
-        typesMinMaxUnitLess.append(ACCESS_CONSTRAINT_TYPE.SAR_EXTERNAL_DATA)
-        typesMinMaxUnitLess.append(ACCESS_CONSTRAINT_TYPE.BORESIGHT_INTERSECTION_LIGHTING_CONDITION)
-        typesMinMaxUnitLess.append(ACCESS_CONSTRAINT_TYPE.ANGULAR_RATE)
-        typesMinMaxUnitLess.append(ACCESS_CONSTRAINT_TYPE.RANGE_RATE)
-        typesMinMaxUnitLess.append(ACCESS_CONSTRAINT_TYPE.SAR_AREA_RATE)
-        typesMinMaxUnitLess.append(ACCESS_CONSTRAINT_TYPE.AZIMUTH_RATE)
-        typesMinMaxUnitLess.append(ACCESS_CONSTRAINT_TYPE.ELEVATION_RATE)
-        typesMinMaxUnitLess.append(ACCESS_CONSTRAINT_TYPE.ANGLE_OFF_BORESIGHT_RATE)
-        typesMinMaxUnitLess.append(ACCESS_CONSTRAINT_TYPE.EOIR_SNR)
+        typesMinMaxUnitLess.append(AccessConstraintType.IMAGE_QUALITY)
+        typesMinMaxUnitLess.append(AccessConstraintType.MATLAB)
+        typesMinMaxUnitLess.append(AccessConstraintType.SAR_EXTERNAL_DATA)
+        typesMinMaxUnitLess.append(AccessConstraintType.BORESIGHT_INTERSECTION_LIGHTING_CONDITION)
+        typesMinMaxUnitLess.append(AccessConstraintType.ANGULAR_RATE)
+        typesMinMaxUnitLess.append(AccessConstraintType.RANGE_RATE)
+        typesMinMaxUnitLess.append(AccessConstraintType.SAR_AREA_RATE)
+        typesMinMaxUnitLess.append(AccessConstraintType.AZIMUTH_RATE)
+        typesMinMaxUnitLess.append(AccessConstraintType.ELEVATION_RATE)
+        typesMinMaxUnitLess.append(AccessConstraintType.ANGLE_OFF_BORESIGHT_RATE)
+        typesMinMaxUnitLess.append(AccessConstraintType.EOIR_SNR)
 
         typesMinMaxUnitLessSubOne = []
-        typesMinMaxUnitLessSubOne.append(ACCESS_CONSTRAINT_TYPE.SEARCH_TRACK_INTEGRATED_PROBABILITY_OF_DETECTION)
-        typesMinMaxUnitLessSubOne.append(ACCESS_CONSTRAINT_TYPE.SEARCH_TRACK_SINGLE_PULSE_PROBABILITY_OF_DETECTION)
+        typesMinMaxUnitLessSubOne.append(AccessConstraintType.SEARCH_TRACK_INTEGRATED_PROBABILITY_OF_DETECTION)
+        typesMinMaxUnitLessSubOne.append(AccessConstraintType.SEARCH_TRACK_SINGLE_PULSE_PROBABILITY_OF_DETECTION)
         typesMinMaxUnitLessSubOne.append(
-            ACCESS_CONSTRAINT_TYPE.SEARCH_TRACK_SINGLE_PULSE_PROBABILITY_OF_DETECTION_JAMMING
+            AccessConstraintType.SEARCH_TRACK_SINGLE_PULSE_PROBABILITY_OF_DETECTION_JAMMING
+        )
+        typesMinMaxUnitLessSubOne.append(AccessConstraintType.SEARCH_TRACK_INTEGRATED_PROBABILITY_OF_DETECTION_JAMMING)
+        typesMinMaxUnitLessSubOne.append(
+            AccessConstraintType.SEARCH_TRACK_ORTHOGONAL_POLARIZATION_SINGLE_PULSE_PROBABILITY_OF_DETECTION
         )
         typesMinMaxUnitLessSubOne.append(
-            ACCESS_CONSTRAINT_TYPE.SEARCH_TRACK_INTEGRATED_PROBABILITY_OF_DETECTION_JAMMING
+            AccessConstraintType.SEARCH_TRACK_ORTHOGONAL_POLARIZATION_SINGLE_PULSE_PROBABILITY_OF_DETECTION_JAMMING
         )
         typesMinMaxUnitLessSubOne.append(
-            ACCESS_CONSTRAINT_TYPE.SEARCH_TRACK_ORTHOGONAL_POLARIZATION_SINGLE_PULSE_PROBABILITY_OF_DETECTION
+            AccessConstraintType.SEARCH_TRACK_ORTHOGONAL_POLARIZATION_INTEGRATED_PROBABILITY_OF_DETECTION
         )
         typesMinMaxUnitLessSubOne.append(
-            ACCESS_CONSTRAINT_TYPE.SEARCH_TRACK_ORTHOGONAL_POLARIZATION_SINGLE_PULSE_PROBABILITY_OF_DETECTION_JAMMING
-        )
-        typesMinMaxUnitLessSubOne.append(
-            ACCESS_CONSTRAINT_TYPE.SEARCH_TRACK_ORTHOGONAL_POLARIZATION_INTEGRATED_PROBABILITY_OF_DETECTION
-        )
-        typesMinMaxUnitLessSubOne.append(
-            ACCESS_CONSTRAINT_TYPE.SEARCH_TRACK_ORTHOGONAL_POLARIZATION_INTEGRATED_PROBABILITY_OF_DETECTION_JAMMING
+            AccessConstraintType.SEARCH_TRACK_ORTHOGONAL_POLARIZATION_INTEGRATED_PROBABILITY_OF_DETECTION_JAMMING
         )
 
         typesMinMaxDistance = []
-        typesMinMaxDistance.append(ACCESS_CONSTRAINT_TYPE.ALTITUDE)
-        typesMinMaxDistance.append(ACCESS_CONSTRAINT_TYPE.CROSS_TRACK_RANGE)
-        typesMinMaxDistance.append(ACCESS_CONSTRAINT_TYPE.IN_TRACK_RANGE)
-        typesMinMaxDistance.append(ACCESS_CONSTRAINT_TYPE.RANGE)
-        typesMinMaxDistance.append(ACCESS_CONSTRAINT_TYPE.CENTROID_RANGE)
-        typesMinMaxDistance.append(ACCESS_CONSTRAINT_TYPE.HEIGHT_ABOVE_HORIZON)
-        typesMinMaxDistance.append(ACCESS_CONSTRAINT_TYPE.CENTRAL_DISTANCE)
-        typesMinMaxDistance.append(ACCESS_CONSTRAINT_TYPE.DISTANCE_FROM_AREA_TARGET_BOUNDARY)
+        typesMinMaxDistance.append(AccessConstraintType.ALTITUDE)
+        typesMinMaxDistance.append(AccessConstraintType.CROSS_TRACK_RANGE)
+        typesMinMaxDistance.append(AccessConstraintType.IN_TRACK_RANGE)
+        typesMinMaxDistance.append(AccessConstraintType.RANGE)
+        typesMinMaxDistance.append(AccessConstraintType.CENTROID_RANGE)
+        typesMinMaxDistance.append(AccessConstraintType.HEIGHT_ABOVE_HORIZON)
+        typesMinMaxDistance.append(AccessConstraintType.CENTRAL_DISTANCE)
+        typesMinMaxDistance.append(AccessConstraintType.DISTANCE_FROM_AREA_TARGET_BOUNDARY)
 
         typesMinMaxTime = []
-        typesMinMaxTime.append(ACCESS_CONSTRAINT_TYPE.DURATION)
-        typesMinMaxTime.append(ACCESS_CONSTRAINT_TYPE.PROPAGATION_DELAY)
-        typesMinMaxTime.append(ACCESS_CONSTRAINT_TYPE.SAR_INTEGRATION_TIME)
-        typesMinMaxTime.append(ACCESS_CONSTRAINT_TYPE.SEARCH_TRACK_DWELL_TIME)
-        typesMinMaxTime.append(ACCESS_CONSTRAINT_TYPE.SEARCH_TRACK_INTEGRATION_TIME)
-        typesMinMaxTime.append(ACCESS_CONSTRAINT_TYPE.SEARCH_TRACK_DWELL_TIME_JAMMING)
-        typesMinMaxTime.append(ACCESS_CONSTRAINT_TYPE.SEARCH_TRACK_INTEGRATION_TIME_JAMMING)
-        typesMinMaxTime.append(ACCESS_CONSTRAINT_TYPE.SEARCH_TRACK_ORTHOGONAL_POLARIZATION_DWELL_TIME)
-        typesMinMaxTime.append(ACCESS_CONSTRAINT_TYPE.SEARCH_TRACK_ORTHOGONAL_POLARIZATION_DWELL_TIME_JAMMING)
-        typesMinMaxTime.append(ACCESS_CONSTRAINT_TYPE.SEARCH_TRACK_ORTHOGONAL_POLARIZATION_SINGLE_PULSE_J_OVER_S)
-        typesMinMaxTime.append(ACCESS_CONSTRAINT_TYPE.SEARCH_TRACK_ORTHOGONAL_POLARIZATION_SINGLE_PULSE_SNR_JAMMING)
-        typesMinMaxTime.append(ACCESS_CONSTRAINT_TYPE.SEARCH_TRACK_ORTHOGONAL_POLARIZATION_INTEGRATION_TIME)
-        typesMinMaxTime.append(ACCESS_CONSTRAINT_TYPE.SEARCH_TRACK_ORTHOGONAL_POLARIZATION_INTEGRATION_TIME_JAMMING)
+        typesMinMaxTime.append(AccessConstraintType.DURATION)
+        typesMinMaxTime.append(AccessConstraintType.PROPAGATION_DELAY)
+        typesMinMaxTime.append(AccessConstraintType.SAR_INTEGRATION_TIME)
+        typesMinMaxTime.append(AccessConstraintType.SEARCH_TRACK_DWELL_TIME)
+        typesMinMaxTime.append(AccessConstraintType.SEARCH_TRACK_INTEGRATION_TIME)
+        typesMinMaxTime.append(AccessConstraintType.SEARCH_TRACK_DWELL_TIME_JAMMING)
+        typesMinMaxTime.append(AccessConstraintType.SEARCH_TRACK_INTEGRATION_TIME_JAMMING)
+        typesMinMaxTime.append(AccessConstraintType.SEARCH_TRACK_ORTHOGONAL_POLARIZATION_DWELL_TIME)
+        typesMinMaxTime.append(AccessConstraintType.SEARCH_TRACK_ORTHOGONAL_POLARIZATION_DWELL_TIME_JAMMING)
+        typesMinMaxTime.append(AccessConstraintType.SEARCH_TRACK_ORTHOGONAL_POLARIZATION_SINGLE_PULSE_J_OVER_S)
+        typesMinMaxTime.append(AccessConstraintType.SEARCH_TRACK_ORTHOGONAL_POLARIZATION_SINGLE_PULSE_SNR_JAMMING)
+        typesMinMaxTime.append(AccessConstraintType.SEARCH_TRACK_ORTHOGONAL_POLARIZATION_INTEGRATION_TIME)
+        typesMinMaxTime.append(AccessConstraintType.SEARCH_TRACK_ORTHOGONAL_POLARIZATION_INTEGRATION_TIME_JAMMING)
 
         typesMinMaxRatio = []
-        typesMinMaxRatio.append(ACCESS_CONSTRAINT_TYPE.SAR_SNR)
-        typesMinMaxRatio.append(ACCESS_CONSTRAINT_TYPE.SAR_CARRIER_TO_NOISE_RATIO)
-        typesMinMaxRatio.append(ACCESS_CONSTRAINT_TYPE.SAR_SCR)
-        typesMinMaxRatio.append(ACCESS_CONSTRAINT_TYPE.SAR_SIGMA_N)
-        typesMinMaxRatio.append(ACCESS_CONSTRAINT_TYPE.SAR_PTCR)
-        typesMinMaxRatio.append(ACCESS_CONSTRAINT_TYPE.SAR_SNR_JAMMING)
-        typesMinMaxRatio.append(ACCESS_CONSTRAINT_TYPE.SAR_SCR_JAMMING)
-        typesMinMaxRatio.append(ACCESS_CONSTRAINT_TYPE.SAR_J_OVER_S)
-        typesMinMaxRatio.append(ACCESS_CONSTRAINT_TYPE.SAR_CARRIER_TO_NOISE_RATIO_JAMIING)
-        typesMinMaxRatio.append(ACCESS_CONSTRAINT_TYPE.SAR_ORTHOGONAL_POLARIZATION_SNR)
-        typesMinMaxRatio.append(ACCESS_CONSTRAINT_TYPE.SAR_ORTHOGONAL_POLARIZATION_CARRIER_TO_NOISE_RATIO)
-        typesMinMaxRatio.append(ACCESS_CONSTRAINT_TYPE.SAR_ORTHOGONAL_POLARIZATION_PTCR)
-        typesMinMaxRatio.append(ACCESS_CONSTRAINT_TYPE.SAR_ORTHOGONAL_POLARIZATION_SCR)
-        typesMinMaxRatio.append(ACCESS_CONSTRAINT_TYPE.SAR_ORTHOGONAL_POLARIZATION_SNR_JAMMING)
-        typesMinMaxRatio.append(ACCESS_CONSTRAINT_TYPE.SAR_ORTHOGONAL_POLARIZATION_J_OVER_S)
-        typesMinMaxRatio.append(ACCESS_CONSTRAINT_TYPE.SAR_ORTHOGONAL_POLARIZATION_SCR_JAMMING)
-        typesMinMaxRatio.append(ACCESS_CONSTRAINT_TYPE.SAR_ORTHOGONAL_POLARIZATION_CARRIER_TO_NOISE_RATIO_JAMMING)
-        typesMinMaxRatio.append(ACCESS_CONSTRAINT_TYPE.SEARCH_TRACK_SINGLE_PULSE_SNR)
-        typesMinMaxRatio.append(ACCESS_CONSTRAINT_TYPE.SEARCH_TRACK_INTEGRATED_SNR)
-        typesMinMaxRatio.append(ACCESS_CONSTRAINT_TYPE.SEARCH_TRACK_SINGLE_PULSE_SNR_JAMMING)
-        typesMinMaxRatio.append(ACCESS_CONSTRAINT_TYPE.SEARCH_TRACK_INTEGRATED_SNR_JAMMING)
-        typesMinMaxRatio.append(ACCESS_CONSTRAINT_TYPE.SEARCH_TRACK_SINGLE_PULSE_J_OVER_S)
-        typesMinMaxRatio.append(ACCESS_CONSTRAINT_TYPE.SEARCH_TRACK_INTEGRATED_J_OVER_S)
-        typesMinMaxRatio.append(ACCESS_CONSTRAINT_TYPE.SEARCH_TRACK_ORTHOGONAL_POLARIZATION_SINGLE_PULSE_SNR)
-        typesMinMaxRatio.append(ACCESS_CONSTRAINT_TYPE.SEARCH_TRACK_ORTHOGONAL_POLARIZATION_INTEGRATED_SNR)
-        typesMinMaxRatio.append(ACCESS_CONSTRAINT_TYPE.SEARCH_TRACK_ORTHOGONAL_POLARIZATION_INTEGRATED_SNR_JAMMING)
-        typesMinMaxRatio.append(ACCESS_CONSTRAINT_TYPE.SEARCH_TRACK_ORTHOGONAL_POLARIZATION_INTEGRATED_J_OVER_S)
+        typesMinMaxRatio.append(AccessConstraintType.SAR_SNR)
+        typesMinMaxRatio.append(AccessConstraintType.SAR_CARRIER_TO_NOISE_RATIO)
+        typesMinMaxRatio.append(AccessConstraintType.SAR_SCR)
+        typesMinMaxRatio.append(AccessConstraintType.SAR_SIGMA_N)
+        typesMinMaxRatio.append(AccessConstraintType.SAR_PTCR)
+        typesMinMaxRatio.append(AccessConstraintType.SAR_SNR_JAMMING)
+        typesMinMaxRatio.append(AccessConstraintType.SAR_SCR_JAMMING)
+        typesMinMaxRatio.append(AccessConstraintType.SAR_J_OVER_S)
+        typesMinMaxRatio.append(AccessConstraintType.SAR_CARRIER_TO_NOISE_RATIO_JAMIING)
+        typesMinMaxRatio.append(AccessConstraintType.SAR_ORTHOGONAL_POLARIZATION_SNR)
+        typesMinMaxRatio.append(AccessConstraintType.SAR_ORTHOGONAL_POLARIZATION_CARRIER_TO_NOISE_RATIO)
+        typesMinMaxRatio.append(AccessConstraintType.SAR_ORTHOGONAL_POLARIZATION_PTCR)
+        typesMinMaxRatio.append(AccessConstraintType.SAR_ORTHOGONAL_POLARIZATION_SCR)
+        typesMinMaxRatio.append(AccessConstraintType.SAR_ORTHOGONAL_POLARIZATION_SNR_JAMMING)
+        typesMinMaxRatio.append(AccessConstraintType.SAR_ORTHOGONAL_POLARIZATION_J_OVER_S)
+        typesMinMaxRatio.append(AccessConstraintType.SAR_ORTHOGONAL_POLARIZATION_SCR_JAMMING)
+        typesMinMaxRatio.append(AccessConstraintType.SAR_ORTHOGONAL_POLARIZATION_CARRIER_TO_NOISE_RATIO_JAMMING)
+        typesMinMaxRatio.append(AccessConstraintType.SEARCH_TRACK_SINGLE_PULSE_SNR)
+        typesMinMaxRatio.append(AccessConstraintType.SEARCH_TRACK_INTEGRATED_SNR)
+        typesMinMaxRatio.append(AccessConstraintType.SEARCH_TRACK_SINGLE_PULSE_SNR_JAMMING)
+        typesMinMaxRatio.append(AccessConstraintType.SEARCH_TRACK_INTEGRATED_SNR_JAMMING)
+        typesMinMaxRatio.append(AccessConstraintType.SEARCH_TRACK_SINGLE_PULSE_J_OVER_S)
+        typesMinMaxRatio.append(AccessConstraintType.SEARCH_TRACK_INTEGRATED_J_OVER_S)
+        typesMinMaxRatio.append(AccessConstraintType.SEARCH_TRACK_ORTHOGONAL_POLARIZATION_SINGLE_PULSE_SNR)
+        typesMinMaxRatio.append(AccessConstraintType.SEARCH_TRACK_ORTHOGONAL_POLARIZATION_INTEGRATED_SNR)
+        typesMinMaxRatio.append(AccessConstraintType.SEARCH_TRACK_ORTHOGONAL_POLARIZATION_INTEGRATED_SNR_JAMMING)
+        typesMinMaxRatio.append(AccessConstraintType.SEARCH_TRACK_ORTHOGONAL_POLARIZATION_INTEGRATED_J_OVER_S)
 
         typesNoTest = []
         # Radar, Receiver, Transmitter
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.ATMOSPHERIC_LOSS)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.CLOUDS_FOG_LOSS)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.FREE_SPACE_LOSS)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.NOISE_TEMPERATURE)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.PROPAGATION_LOSS)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.RAIN_LOSS)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.RADAR_TRANSMITTER_TARGET_ACCESS)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.TROPOSPHERIC_SCINTILLATION_LOSS)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.URBAN_TERRES_LOSS)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.USER_CUSTOM_A_LOSS)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.USER_CUSTOM_B_LOSS)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.USER_CUSTOM_C_LOSS)
+        typesNoTest.append(AccessConstraintType.ATMOSPHERIC_LOSS)
+        typesNoTest.append(AccessConstraintType.CLOUDS_FOG_LOSS)
+        typesNoTest.append(AccessConstraintType.FREE_SPACE_LOSS)
+        typesNoTest.append(AccessConstraintType.NOISE_TEMPERATURE)
+        typesNoTest.append(AccessConstraintType.PROPAGATION_LOSS)
+        typesNoTest.append(AccessConstraintType.RAIN_LOSS)
+        typesNoTest.append(AccessConstraintType.RADAR_TRANSMITTER_TARGET_ACCESS)
+        typesNoTest.append(AccessConstraintType.TROPOSPHERIC_SCINTILLATION_LOSS)
+        typesNoTest.append(AccessConstraintType.URBAN_TERRES_LOSS)
+        typesNoTest.append(AccessConstraintType.USER_CUSTOM_A_LOSS)
+        typesNoTest.append(AccessConstraintType.USER_CUSTOM_B_LOSS)
+        typesNoTest.append(AccessConstraintType.USER_CUSTOM_C_LOSS)
         # Receiver and Transmitter
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.BER_PLUS_I)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.BIT_ERROR_RATE)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.C_OVER_I)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.C_OVER_N)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.C_OVER_N_PLUS_I)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.C_OVER_N0)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.C_OVER_N0_PLUS_I0)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.DELTA_T_OVER_T)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.DOPPLER_SHIFT)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.EB_OVER_N0)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.EB_OVER_N0_PLUS_I0)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.FLUX_DENSITY)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.FREQUENCY)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.G_OVER_T)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.J_OVER_S)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.LINK_EIRP)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.LINK_MARGIN)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.POLARIZATION_RELATIVE_ANGLE)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.POWER_AT_RECEIVER_INPUT)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.POWER_FLUX_DENSITY)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.RECEIVED_ISOTROPIC_POWER)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.TOTAL_POWER_AT_RECEIVER_INPUT)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.TOTAL_RECEIVED_REFRACTION_POWER)
+        typesNoTest.append(AccessConstraintType.BER_PLUS_I)
+        typesNoTest.append(AccessConstraintType.BIT_ERROR_RATE)
+        typesNoTest.append(AccessConstraintType.C_OVER_I)
+        typesNoTest.append(AccessConstraintType.C_OVER_N)
+        typesNoTest.append(AccessConstraintType.C_OVER_N_PLUS_I)
+        typesNoTest.append(AccessConstraintType.C_OVER_N0)
+        typesNoTest.append(AccessConstraintType.C_OVER_N0_PLUS_I0)
+        typesNoTest.append(AccessConstraintType.DELTA_T_OVER_T)
+        typesNoTest.append(AccessConstraintType.DOPPLER_SHIFT)
+        typesNoTest.append(AccessConstraintType.EB_OVER_N0)
+        typesNoTest.append(AccessConstraintType.EB_OVER_N0_PLUS_I0)
+        typesNoTest.append(AccessConstraintType.FLUX_DENSITY)
+        typesNoTest.append(AccessConstraintType.FREQUENCY)
+        typesNoTest.append(AccessConstraintType.G_OVER_T)
+        typesNoTest.append(AccessConstraintType.J_OVER_S)
+        typesNoTest.append(AccessConstraintType.LINK_EIRP)
+        typesNoTest.append(AccessConstraintType.LINK_MARGIN)
+        typesNoTest.append(AccessConstraintType.POLARIZATION_RELATIVE_ANGLE)
+        typesNoTest.append(AccessConstraintType.POWER_AT_RECEIVER_INPUT)
+        typesNoTest.append(AccessConstraintType.POWER_FLUX_DENSITY)
+        typesNoTest.append(AccessConstraintType.RECEIVED_ISOTROPIC_POWER)
+        typesNoTest.append(AccessConstraintType.TOTAL_POWER_AT_RECEIVER_INPUT)
+        typesNoTest.append(AccessConstraintType.TOTAL_RECEIVED_REFRACTION_POWER)
         # Receiver
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.COMM_PLUGIN)
+        typesNoTest.append(AccessConstraintType.COMM_PLUGIN)
         # Sensor
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.FIELD_OF_VIEW_CENTRAL_BODY_CENTER)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.FIELD_OF_VIEW_CENTRAL_BODY_HORIZON_REFINE)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.FIELD_OF_VIEW_CENTRAL_BODY_OBSTRUCTION_CROSSSING_INWARD)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.FIELD_OF_VIEW_CENTRAL_BODY_OBSTRUCTION_CROSSING_OUTWARD)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.SENSOR_RANGE_MASK)
+        typesNoTest.append(AccessConstraintType.FIELD_OF_VIEW_CENTRAL_BODY_CENTER)
+        typesNoTest.append(AccessConstraintType.FIELD_OF_VIEW_CENTRAL_BODY_HORIZON_REFINE)
+        typesNoTest.append(AccessConstraintType.FIELD_OF_VIEW_CENTRAL_BODY_OBSTRUCTION_CROSSSING_INWARD)
+        typesNoTest.append(AccessConstraintType.FIELD_OF_VIEW_CENTRAL_BODY_OBSTRUCTION_CROSSING_OUTWARD)
+        typesNoTest.append(AccessConstraintType.SENSOR_RANGE_MASK)
         # Launch Vehicle and Missile
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.TIME_SLIP_SURFACE_RANGE)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.MFR_DWELL_TIME_JAMMING_MAXIMUM)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.MFR_DWELL_TIME_JAMMING_MIN)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.MFR_DWELL_TIME_MAXIMUM)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.MFR_DWELL_TIME_MINIMUM)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.MFR_INTEGRATED_J_OVER_S_MAXIMUM)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.MFR_INTEGRATED_J_OVER_S_MINIMUM)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.MFR_INTEGRATED_PROBABILITY_OF_DETECTION_JAMMING_MAXIMUM)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.MFR_INTEGRATED_PROBABILITY_OF_DETECTION_JAMMING_MINIMUM)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.MFR_INTEGRATED_PROBABILITY_OF_DETECTION_MAXIMUM)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.MFR_INTEGRATED_PROBABILITY_OF_DETECTION_MINIMUM)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.MFR_INTEGRATED_PULSES_JAMMING_MAXIMUM)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.MFR_INTEGRATED_PULSES_JAMMING_MINIMUM)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.MFR_INTEGRATED_PULSES_MAXIMUM)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.MFR_INTEGRATED_PULSES_MINIMUM)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.MFR_INTEGRATED_SNR_JAMMING_MAXIMUM)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.MFR_INTEGRATED_SNR_JAMMING_MINIMUM)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.MFR_INTEGRATED_SNR_MAXIMUM)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.MFR_INTEGRATED_SNR_MINIMUM)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.MFR_INTEGRATION_TIME_JAMMING_MAXIMUM)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.MFR_INTEGRATION_TIME_JAMMING_MINIMUM)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.MFR_INTEGRATION_TIME_MAXIMUM)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.MFR_INTEGRATION_TIME_MINIMUM)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.MFR_SINGLE_PULSE_J_OVER_S_MAXIMUM)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.MFR_SINGLE_PULSE_J_OVER_S_MINIMUM)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.MFR_SINGLE_PULSE_PROBABILITY_OF_DETECTION_JAMMING_MAXIMUM)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.MFR_SINGLE_PULSE_PROBABILITY_OF_DETECTION_JAMMING_MINIMUM)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.MFR_SINGLE_PULSE_PROBABILITY_OF_DETECTION_MAXIMUM)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.MFR_SINGLE_PULSE_PROBABILITY_OF_DETECTION_MINIMUM)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.MFR_SINGLE_PULSE_SNR_JAMMING_MAXIMUM)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.MFR_SINGLE_PULSE_SNR_JAMMING_MINIMUM)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.MFR_SINGLE_PULSE_SNR_MAXIMUM)
-        typesNoTest.append(ACCESS_CONSTRAINT_TYPE.MFR_SINGLE_PULSE_SNR_MINIMUM)
-        if eType == ACCESS_CONSTRAINT_TYPE.BACKGROUND:
+        typesNoTest.append(AccessConstraintType.TIME_SLIP_SURFACE_RANGE)
+        typesNoTest.append(AccessConstraintType.MFR_DWELL_TIME_JAMMING_MAXIMUM)
+        typesNoTest.append(AccessConstraintType.MFR_DWELL_TIME_JAMMING_MIN)
+        typesNoTest.append(AccessConstraintType.MFR_DWELL_TIME_MAXIMUM)
+        typesNoTest.append(AccessConstraintType.MFR_DWELL_TIME_MINIMUM)
+        typesNoTest.append(AccessConstraintType.MFR_INTEGRATED_J_OVER_S_MAXIMUM)
+        typesNoTest.append(AccessConstraintType.MFR_INTEGRATED_J_OVER_S_MINIMUM)
+        typesNoTest.append(AccessConstraintType.MFR_INTEGRATED_PROBABILITY_OF_DETECTION_JAMMING_MAXIMUM)
+        typesNoTest.append(AccessConstraintType.MFR_INTEGRATED_PROBABILITY_OF_DETECTION_JAMMING_MINIMUM)
+        typesNoTest.append(AccessConstraintType.MFR_INTEGRATED_PROBABILITY_OF_DETECTION_MAXIMUM)
+        typesNoTest.append(AccessConstraintType.MFR_INTEGRATED_PROBABILITY_OF_DETECTION_MINIMUM)
+        typesNoTest.append(AccessConstraintType.MFR_INTEGRATED_PULSES_JAMMING_MAXIMUM)
+        typesNoTest.append(AccessConstraintType.MFR_INTEGRATED_PULSES_JAMMING_MINIMUM)
+        typesNoTest.append(AccessConstraintType.MFR_INTEGRATED_PULSES_MAXIMUM)
+        typesNoTest.append(AccessConstraintType.MFR_INTEGRATED_PULSES_MINIMUM)
+        typesNoTest.append(AccessConstraintType.MFR_INTEGRATED_SNR_JAMMING_MAXIMUM)
+        typesNoTest.append(AccessConstraintType.MFR_INTEGRATED_SNR_JAMMING_MINIMUM)
+        typesNoTest.append(AccessConstraintType.MFR_INTEGRATED_SNR_MAXIMUM)
+        typesNoTest.append(AccessConstraintType.MFR_INTEGRATED_SNR_MINIMUM)
+        typesNoTest.append(AccessConstraintType.MFR_INTEGRATION_TIME_JAMMING_MAXIMUM)
+        typesNoTest.append(AccessConstraintType.MFR_INTEGRATION_TIME_JAMMING_MINIMUM)
+        typesNoTest.append(AccessConstraintType.MFR_INTEGRATION_TIME_MAXIMUM)
+        typesNoTest.append(AccessConstraintType.MFR_INTEGRATION_TIME_MINIMUM)
+        typesNoTest.append(AccessConstraintType.MFR_SINGLE_PULSE_J_OVER_S_MAXIMUM)
+        typesNoTest.append(AccessConstraintType.MFR_SINGLE_PULSE_J_OVER_S_MINIMUM)
+        typesNoTest.append(AccessConstraintType.MFR_SINGLE_PULSE_PROBABILITY_OF_DETECTION_JAMMING_MAXIMUM)
+        typesNoTest.append(AccessConstraintType.MFR_SINGLE_PULSE_PROBABILITY_OF_DETECTION_JAMMING_MINIMUM)
+        typesNoTest.append(AccessConstraintType.MFR_SINGLE_PULSE_PROBABILITY_OF_DETECTION_MAXIMUM)
+        typesNoTest.append(AccessConstraintType.MFR_SINGLE_PULSE_PROBABILITY_OF_DETECTION_MINIMUM)
+        typesNoTest.append(AccessConstraintType.MFR_SINGLE_PULSE_SNR_JAMMING_MAXIMUM)
+        typesNoTest.append(AccessConstraintType.MFR_SINGLE_PULSE_SNR_JAMMING_MINIMUM)
+        typesNoTest.append(AccessConstraintType.MFR_SINGLE_PULSE_SNR_MAXIMUM)
+        typesNoTest.append(AccessConstraintType.MFR_SINGLE_PULSE_SNR_MINIMUM)
+        if eType == AccessConstraintType.BACKGROUND:
             self.TestConstraintBackground(oConstraint)
 
         elif (
             (
-                (eType == ACCESS_CONSTRAINT_TYPE.VECTOR_GEOMETRY_TOOL_ANGLE)
-                or (eType == ACCESS_CONSTRAINT_TYPE.CALCULATION_SCALAR)
+                (eType == AccessConstraintType.VECTOR_GEOMETRY_TOOL_ANGLE)
+                or (eType == AccessConstraintType.CALCULATION_SCALAR)
             )
-            or (eType == ACCESS_CONSTRAINT_TYPE.VECTOR_MAGNITUDE)
-        ) or (eType == ACCESS_CONSTRAINT_TYPE.CONDITION):
+            or (eType == AccessConstraintType.VECTOR_MAGNITUDE)
+        ) or (eType == AccessConstraintType.CONDITION):
             self.TestConstraintCrdnCn(oConstraint)
             self.TestConstraintAWBCollection(oCollection.analysis_workbench_constraints, int(eType))
 
-        elif eType == ACCESS_CONSTRAINT_TYPE.LIGHTING:
+        elif eType == AccessConstraintType.LIGHTING:
             self.TestConstraintCondition(oConstraint)
 
-        elif eType == ACCESS_CONSTRAINT_TYPE.GROUND_TRACK:
+        elif eType == AccessConstraintType.GROUND_TRACK:
             self.TestConstraintGroundTrack(oConstraint)
 
-        elif eType == ACCESS_CONSTRAINT_TYPE.INTERVALS:
+        elif eType == AccessConstraintType.INTERVALS:
             self.TestConstraintIntervals(oConstraint, temporaryDirectory)
 
-        elif eType == ACCESS_CONSTRAINT_TYPE.INCLUSION_ZONE:
+        elif eType == AccessConstraintType.INCLUSION_ZONE:
             self.TestConstraintZone(oConstraint)
 
-        elif eType == ACCESS_CONSTRAINT_TYPE.EXCLUSION_ZONE:
-            oCollection.add_constraint(ACCESS_CONSTRAINT_TYPE.EXCLUSION_ZONE)
-            oCollection.add_constraint(ACCESS_CONSTRAINT_TYPE.EXCLUSION_ZONE)
+        elif eType == AccessConstraintType.EXCLUSION_ZONE:
+            oCollection.add_constraint(AccessConstraintType.EXCLUSION_ZONE)
+            oCollection.add_constraint(AccessConstraintType.EXCLUSION_ZONE)
             self.TestConstraintExclusionZonesCollection(oConstraint)
 
         elif (
             (
                 (
                     (
-                        (eType == ACCESS_CONSTRAINT_TYPE.LIGHT_OF_SIGHT_LUNAR_EXCLUSION_ANGLE)
-                        or (eType == ACCESS_CONSTRAINT_TYPE.LIGHT_OF_SIGHT_SOLAR_EXCLUSION_ANGLE)
+                        (eType == AccessConstraintType.LIGHT_OF_SIGHT_LUNAR_EXCLUSION_ANGLE)
+                        or (eType == AccessConstraintType.LIGHT_OF_SIGHT_SOLAR_EXCLUSION_ANGLE)
                     )
-                    or (eType == ACCESS_CONSTRAINT_TYPE.SUN_SPECULAR_EXCLUSION_ANGLE)
+                    or (eType == AccessConstraintType.SUN_SPECULAR_EXCLUSION_ANGLE)
                 )
-                or (eType == ACCESS_CONSTRAINT_TYPE.GEOSYNCHRONOUS_BELT_EXCLUSION_ANGLE)
+                or (eType == AccessConstraintType.GEOSYNCHRONOUS_BELT_EXCLUSION_ANGLE)
             )
-            or (eType == ACCESS_CONSTRAINT_TYPE.BORESIGHT_LUNAR_EXCLUSION_ANGLE)
-        ) or (eType == ACCESS_CONSTRAINT_TYPE.BORESIGHT_SUN_EXCLUSION_ANGLE):
+            or (eType == AccessConstraintType.BORESIGHT_LUNAR_EXCLUSION_ANGLE)
+        ) or (eType == AccessConstraintType.BORESIGHT_SUN_EXCLUSION_ANGLE):
             self.TestConstraintAngle(oConstraint, "AngleUnit")
 
-        elif (eType == ACCESS_CONSTRAINT_TYPE.SEET_IMPACT_FLUX) or (eType == ACCESS_CONSTRAINT_TYPE.SEET_DAMAGE_FLUX):
+        elif (eType == AccessConstraintType.SEET_IMPACT_FLUX) or (eType == AccessConstraintType.SEET_DAMAGE_FLUX):
             oMinMax: "IAccessConstraintMinMaxBase" = IAccessConstraintMinMaxBase(oConstraint)
             Assert.assertIsNotNone(oMinMax)
             self.TestConstraintMinMaxFlux(oMinMax)
 
-        elif (eType == ACCESS_CONSTRAINT_TYPE.SEET_DAMAGE_MASS_FLUX) or (
-            eType == ACCESS_CONSTRAINT_TYPE.SEET_IMPACT_MASS_FLUX
+        elif (eType == AccessConstraintType.SEET_DAMAGE_MASS_FLUX) or (
+            eType == AccessConstraintType.SEET_IMPACT_MASS_FLUX
         ):
             oMinMax: "IAccessConstraintMinMaxBase" = IAccessConstraintMinMaxBase(oConstraint)
             Assert.assertIsNotNone(oMinMax)
             self.TestConstraintMinMaxMassFlux(oMinMax)
 
-        elif eType == ACCESS_CONSTRAINT_TYPE.SEET_VEHICLE_TEMPERATURE:
+        elif eType == AccessConstraintType.SEET_VEHICLE_TEMPERATURE:
             oMinMax: "IAccessConstraintMinMaxBase" = IAccessConstraintMinMaxBase(oConstraint)
             Assert.assertIsNotNone(oMinMax)
             self.TestConstraintMinMaxVeTemp(oMinMax)
 
-        elif eType == ACCESS_CONSTRAINT_TYPE.SEET_SAA_FLUX_INTENSITY:
+        elif eType == AccessConstraintType.SEET_SAA_FLUX_INTENSITY:
             oMinMax: "IAccessConstraintMinMaxBase" = IAccessConstraintMinMaxBase(oConstraint)
             Assert.assertIsNotNone(oMinMax)
             self.TestConstraintMinMaxFluxIntensity(oMinMax)
@@ -362,8 +360,8 @@ class AccessConstraintHelper(object):
             Assert.assertIsNotNone(oMinMax)
             self.TestConstraintMinMaxAngle(oMinMax)
 
-        elif (eType == ACCESS_CONSTRAINT_TYPE.SUN_ILLUMINATION_ANGLE) or (
-            eType == ACCESS_CONSTRAINT_TYPE.CENTROID_AZIMUTH_ANGLE
+        elif (eType == AccessConstraintType.SUN_ILLUMINATION_ANGLE) or (
+            eType == AccessConstraintType.CENTROID_AZIMUTH_ANGLE
         ):
             oMinMax: "IAccessConstraintMinMaxBase" = IAccessConstraintMinMaxBase(oConstraint)
             Assert.assertIsNotNone(oMinMax)
@@ -380,9 +378,9 @@ class AccessConstraintHelper(object):
             self.TestConstraintMinMaxUnitLess(oMinMax, 0.345, 0.89)
 
         elif (
-            (eType == ACCESS_CONSTRAINT_TYPE.SEARCH_TRACK_INTEGRATED_PULSES_JAMMING)
-            or (eType == ACCESS_CONSTRAINT_TYPE.SEARCH_TRACK_ORTHOGONAL_POLARIZATION_INTEGRATED_PULSES)
-        ) or (eType == ACCESS_CONSTRAINT_TYPE.SEARCH_TRACK_ORTHOGONAL_POLARIZATION_INTEGRATED_PULSES_JAMMING):
+            (eType == AccessConstraintType.SEARCH_TRACK_INTEGRATED_PULSES_JAMMING)
+            or (eType == AccessConstraintType.SEARCH_TRACK_ORTHOGONAL_POLARIZATION_INTEGRATED_PULSES)
+        ) or (eType == AccessConstraintType.SEARCH_TRACK_ORTHOGONAL_POLARIZATION_INTEGRATED_PULSES_JAMMING):
             oMinMax: "IAccessConstraintMinMaxBase" = IAccessConstraintMinMaxBase(oConstraint)
             Assert.assertIsNotNone(oMinMax)
             self.TestConstraintMinMaxUnitLess(oMinMax, 1, 2)
@@ -392,7 +390,7 @@ class AccessConstraintHelper(object):
             Assert.assertIsNotNone(oMinMax)
             self.TestConstraintMinMaxDistance(oMinMax)
 
-        elif eType == ACCESS_CONSTRAINT_TYPE.GRAZING_ALTITUDE:
+        elif eType == AccessConstraintType.GRAZING_ALTITUDE:
             oGrazingAlt: "AccessConstraintGrazingAltitude" = AccessConstraintGrazingAltitude(oConstraint)
             Assert.assertIsNotNone(oGrazingAlt)
             self.TestConstraintMinMaxGrazingAlt(oGrazingAlt)
@@ -402,19 +400,19 @@ class AccessConstraintHelper(object):
             Assert.assertIsNotNone(oMinMax)
             self.TestConstraintMinMaxTime(oMinMax)
 
-        elif eType == ACCESS_CONSTRAINT_TYPE.AZIMUTH_ANGLE:
+        elif eType == AccessConstraintType.AZIMUTH_ANGLE:
             oMinMax: "IAccessConstraintMinMaxBase" = IAccessConstraintMinMaxBase(oConstraint)
             Assert.assertIsNotNone(oMinMax)
             self.TestConstraintMinMaxLongitude(oMinMax)
 
-        elif ((eType == ACCESS_CONSTRAINT_TYPE.APPARENT_TIME) or (eType == ACCESS_CONSTRAINT_TYPE.GMT)) or (
-            eType == ACCESS_CONSTRAINT_TYPE.LOCAL_TIME
+        elif ((eType == AccessConstraintType.APPARENT_TIME) or (eType == AccessConstraintType.GMT)) or (
+            eType == AccessConstraintType.LOCAL_TIME
         ):
             oMinMax: "IAccessConstraintMinMaxBase" = IAccessConstraintMinMaxBase(oConstraint)
             Assert.assertIsNotNone(oMinMax)
             self.TestConstraintMinMaxDuration(oMinMax)
 
-        elif eType == ACCESS_CONSTRAINT_TYPE.GROUND_SAMPLE_DISTANCE:
+        elif eType == AccessConstraintType.GROUND_SAMPLE_DISTANCE:
             oMinMax: "IAccessConstraintMinMaxBase" = IAccessConstraintMinMaxBase(oConstraint)
             Assert.assertIsNotNone(oMinMax)
             self.TestConstraintMinMaxSmallDistance(oMinMax)
@@ -424,12 +422,12 @@ class AccessConstraintHelper(object):
             Assert.assertIsNotNone(oMinMax)
             self.TestConstraintMinMaxRatio(oMinMax)
 
-        elif eType == ACCESS_CONSTRAINT_TYPE.SAR_AZIMUTH_RESOLUTION:
+        elif eType == AccessConstraintType.SAR_AZIMUTH_RESOLUTION:
             oMinMax: "IAccessConstraintMinMaxBase" = IAccessConstraintMinMaxBase(oConstraint)
             Assert.assertIsNotNone(oMinMax)
             self.TestConstraintMinMaxSARTimeResProd(oMinMax)
 
-        elif eType == ACCESS_CONSTRAINT_TYPE.ELEVATION_ANGLE:
+        elif eType == AccessConstraintType.ELEVATION_ANGLE:
             oMinMax: "IAccessConstraintMinMaxBase" = clr.CastAs(oConstraint, IAccessConstraintMinMaxBase)
             if oMinMax != None:
                 self.TestConstraintMinMaxAngle(oMinMax)
@@ -440,12 +438,12 @@ class AccessConstraintHelper(object):
                 Assert.assertIsNotNone(oAngle)
                 self.TestConstraintAngle(oConstraint, "LatitudeUnit")
 
-        elif eType == ACCESS_CONSTRAINT_TYPE.CENTRAL_BODY_OBSTRUCTION:
+        elif eType == AccessConstraintType.CENTRAL_BODY_OBSTRUCTION:
             oCb: "AccessConstraintCentralBodyObstruction" = AccessConstraintCentralBodyObstruction(oConstraint)
             Assert.assertIsNotNone(oCb)
             self.TestConstraintCbObstruction(oCb)
 
-        elif eType == ACCESS_CONSTRAINT_TYPE.SPECTRAL_FLUX_DENSITY:
+        elif eType == AccessConstraintType.SPECTRAL_FLUX_DENSITY:
             oMinMax: "IAccessConstraintMinMaxBase" = IAccessConstraintMinMaxBase(oConstraint)
             Assert.assertIsNotNone(oMinMax)
             self.TestConstraintMinMaxPower(oMinMax)
@@ -607,9 +605,9 @@ class AccessConstraintHelper(object):
         iIndex: int = 0
         while iIndex < len(arAvailable):
             constraintName: str = str(arAvailable[iIndex][0])
-            eType: "ACCESS_CONSTRAINT_TYPE" = ACCESS_CONSTRAINT_TYPE(int(arAvailable[iIndex][1]))
+            eType: "AccessConstraintType" = AccessConstraintType(int(arAvailable[iIndex][1]))
             if not oCollection.is_constraint_supported(eType):
-                if ACCESS_CONSTRAINT_TYPE.NONE == eType:
+                if AccessConstraintType.NONE == eType:
                     iIndex += 1
                     continue
 
@@ -618,7 +616,7 @@ class AccessConstraintHelper(object):
 
             # test constraint
             self.ConstraintTest(oCollection, eType, temporaryDirectory)
-            if eType == ACCESS_CONSTRAINT_TYPE.EXCLUSION_ZONE:
+            if eType == AccessConstraintType.EXCLUSION_ZONE:
                 if oCollection.is_constraint_active(eType):
                     Assert.fail()
 
@@ -630,11 +628,11 @@ class AccessConstraintHelper(object):
             Assert.assertIsNotNone(oConstraint)
             if (
                 (
-                    (eType != ACCESS_CONSTRAINT_TYPE.EXCLUSION_ZONE)
-                    and (eType != ACCESS_CONSTRAINT_TYPE.OBJECT_EXCLUSION_ANGLE)
+                    (eType != AccessConstraintType.EXCLUSION_ZONE)
+                    and (eType != AccessConstraintType.OBJECT_EXCLUSION_ANGLE)
                 )
-                and (eType != ACCESS_CONSTRAINT_TYPE.THIRD_BODY_OBSTRUCTION)
-            ) and (eType != ACCESS_CONSTRAINT_TYPE.LINE_OF_SIGHT):
+                and (eType != AccessConstraintType.THIRD_BODY_OBSTRUCTION)
+            ) and (eType != AccessConstraintType.LINE_OF_SIGHT):
                 oCollection.remove_constraint(eType)
 
             iIndex += 1
@@ -1576,10 +1574,10 @@ class AccessConstraintHelper(object):
             Assert.assertEqual(TestBase.GetScenarioFile("times.int"), oIntervals.file_path)
 
             # ActionType
-            oIntervals.action_type = ACTION_TYPE.EXCLUDE
-            Assert.assertEqual(ACTION_TYPE.EXCLUDE, oIntervals.action_type)
-            oIntervals.action_type = ACTION_TYPE.INCLUDE
-            Assert.assertEqual(ACTION_TYPE.INCLUDE, oIntervals.action_type)
+            oIntervals.action_type = ActionType.EXCLUDE
+            Assert.assertEqual(ActionType.EXCLUDE, oIntervals.action_type)
+            oIntervals.action_type = ActionType.INCLUDE
+            Assert.assertEqual(ActionType.INCLUDE, oIntervals.action_type)
 
             # Interval collection
             oHelper = IntervalCollectionHelper(self.m_oUnits)
@@ -1685,23 +1683,23 @@ class AccessConstraintHelper(object):
         oCondition: "AccessConstraintCondition" = AccessConstraintCondition(oConstraint)
         Assert.assertIsNotNone(oCondition)
         # DIRECT_SUN
-        oCondition.condition = CONSTRAINT_LIGHTING.DIRECT_SUN
-        Assert.assertEqual(CONSTRAINT_LIGHTING.DIRECT_SUN, oCondition.condition)
+        oCondition.condition = ConstraintLighting.DIRECT_SUN
+        Assert.assertEqual(ConstraintLighting.DIRECT_SUN, oCondition.condition)
         # PENUMBRA
-        oCondition.condition = CONSTRAINT_LIGHTING.PENUMBRA
-        Assert.assertEqual(CONSTRAINT_LIGHTING.PENUMBRA, oCondition.condition)
+        oCondition.condition = ConstraintLighting.PENUMBRA
+        Assert.assertEqual(ConstraintLighting.PENUMBRA, oCondition.condition)
         # PENUMBRA_OR_DIRECT_SUN
-        oCondition.condition = CONSTRAINT_LIGHTING.PENUMBRA_OR_DIRECT_SUN
-        Assert.assertEqual(CONSTRAINT_LIGHTING.PENUMBRA_OR_DIRECT_SUN, oCondition.condition)
+        oCondition.condition = ConstraintLighting.PENUMBRA_OR_DIRECT_SUN
+        Assert.assertEqual(ConstraintLighting.PENUMBRA_OR_DIRECT_SUN, oCondition.condition)
         # PENUMBRA_OR_UMBRA
-        oCondition.condition = CONSTRAINT_LIGHTING.PENUMBRA_OR_UMBRA
-        Assert.assertEqual(CONSTRAINT_LIGHTING.PENUMBRA_OR_UMBRA, oCondition.condition)
+        oCondition.condition = ConstraintLighting.PENUMBRA_OR_UMBRA
+        Assert.assertEqual(ConstraintLighting.PENUMBRA_OR_UMBRA, oCondition.condition)
         # UMBRA
-        oCondition.condition = CONSTRAINT_LIGHTING.UMBRA
-        Assert.assertEqual(CONSTRAINT_LIGHTING.UMBRA, oCondition.condition)
+        oCondition.condition = ConstraintLighting.UMBRA
+        Assert.assertEqual(ConstraintLighting.UMBRA, oCondition.condition)
         # UMBRA_OR_DIRECT_SUN
-        oCondition.condition = CONSTRAINT_LIGHTING.UMBRA_OR_DIRECT_SUN
-        Assert.assertEqual(CONSTRAINT_LIGHTING.UMBRA_OR_DIRECT_SUN, oCondition.condition)
+        oCondition.condition = ConstraintLighting.UMBRA_OR_DIRECT_SUN
+        Assert.assertEqual(ConstraintLighting.UMBRA_OR_DIRECT_SUN, oCondition.condition)
 
     # endregion
 
@@ -1890,44 +1888,44 @@ class AccessConstraintHelper(object):
     # region TestConstraintAWBCollection
     # ////////////////////////////////////////////////////////////////////////
     def TestConstraintAWBCollection(self, awbCol: "AccessConstraintAnalysisWorkbenchCollection", eType: int):
-        arReferences = awbCol.get_available_references(ANALYSIS_WORKBENCH_ACCESS_CONSTRAINT_TYPE(eType))
+        arReferences = awbCol.get_available_references(AnalysisWorkbenchAccessConstraintType(eType))
         Assert.assertTrue((Array.Length(arReferences) > 0))
 
         origCount: int = awbCol.count
         reference: str = str(arReferences[1])
 
         accConstraint: "IAccessConstraint" = awbCol.add_constraint(
-            ANALYSIS_WORKBENCH_ACCESS_CONSTRAINT_TYPE(eType), reference
+            AnalysisWorkbenchAccessConstraintType(eType), reference
         )
 
         Assert.assertIsNotNone(accConstraint)
         Assert.assertEqual((origCount + 1), awbCol.count)
-        if ACCESS_CONSTRAINT_TYPE(eType) == ACCESS_CONSTRAINT_TYPE.VECTOR_MAGNITUDE:
+        if AccessConstraintType(eType) == AccessConstraintType.VECTOR_MAGNITUDE:
             self.TestAWBConstraintMinMaxUnitLess(AccessConstraintAnalysisWorkbench(accConstraint), 0.0, 2000.0)
 
-        elif ACCESS_CONSTRAINT_TYPE(eType) == ACCESS_CONSTRAINT_TYPE.VECTOR_GEOMETRY_TOOL_ANGLE:
+        elif AccessConstraintType(eType) == AccessConstraintType.VECTOR_GEOMETRY_TOOL_ANGLE:
             self.TestAWBConstraintMinMaxAngle(AccessConstraintAnalysisWorkbench(accConstraint))
 
-        elif ACCESS_CONSTRAINT_TYPE(eType) == ACCESS_CONSTRAINT_TYPE.CALCULATION_SCALAR:
+        elif AccessConstraintType(eType) == AccessConstraintType.CALCULATION_SCALAR:
             self.TestAWBConstraintMinMaxUnitLess(AccessConstraintAnalysisWorkbench(accConstraint), -2000.0, 2000.0)
 
         Assert.assertEqual(reference, (AccessConstraintAnalysisWorkbench(accConstraint)).reference)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("Specified reference cannot be found")):
-            awbCol.add_constraint(ANALYSIS_WORKBENCH_ACCESS_CONSTRAINT_TYPE(eType), "Bogus")
+            awbCol.add_constraint(AnalysisWorkbenchAccessConstraintType(eType), "Bogus")
 
-        awbCol.remove_constraint(ANALYSIS_WORKBENCH_ACCESS_CONSTRAINT_TYPE(eType), reference)
+        awbCol.remove_constraint(AnalysisWorkbenchAccessConstraintType(eType), reference)
         Assert.assertEqual(origCount, awbCol.count)
 
-        awbCol.add_constraint(ANALYSIS_WORKBENCH_ACCESS_CONSTRAINT_TYPE(eType), reference)
+        awbCol.add_constraint(AnalysisWorkbenchAccessConstraintType(eType), reference)
         Assert.assertEqual((origCount + 1), awbCol.count)
 
         awbCol.remove_index(origCount)
         Assert.assertEqual(origCount, awbCol.count)
 
-        awbCol.add_constraint(ANALYSIS_WORKBENCH_ACCESS_CONSTRAINT_TYPE(eType), reference)
+        awbCol.add_constraint(AnalysisWorkbenchAccessConstraintType(eType), reference)
         with pytest.raises(Exception, match=RegexSubstringMatch("Constraint already active")):
-            awbCol.add_constraint(ANALYSIS_WORKBENCH_ACCESS_CONSTRAINT_TYPE(eType), reference)
+            awbCol.add_constraint(AnalysisWorkbenchAccessConstraintType(eType), reference)
 
         found: bool = False
         awbConstraint: "AccessConstraintAnalysisWorkbench"
@@ -2111,11 +2109,11 @@ class AccessConstraintHelper(object):
         oBackground: "AccessConstraintBackground" = AccessConstraintBackground(oConstraint)
         Assert.assertIsNotNone(oBackground)
         # GROUND
-        oBackground.background = CONSTRAINT_BACKGROUND.GROUND
-        Assert.assertEqual(CONSTRAINT_BACKGROUND.GROUND, oBackground.background)
+        oBackground.background = ConstraintBackground.GROUND
+        Assert.assertEqual(ConstraintBackground.GROUND, oBackground.background)
         # SPACE
-        oBackground.background = CONSTRAINT_BACKGROUND.SPACE
-        Assert.assertEqual(CONSTRAINT_BACKGROUND.SPACE, oBackground.background)
+        oBackground.background = ConstraintBackground.SPACE
+        Assert.assertEqual(ConstraintBackground.SPACE, oBackground.background)
 
     # endregion
 
@@ -2126,11 +2124,11 @@ class AccessConstraintHelper(object):
         oGroundTrack: "AccessConstraintGroundTrack" = AccessConstraintGroundTrack(oConstraint)
         Assert.assertIsNotNone(oGroundTrack)
         # ASCENDING
-        oGroundTrack.direction = CONSTRAINT_GROUND_TRACK.ASCENDING
-        Assert.assertEqual(CONSTRAINT_GROUND_TRACK.ASCENDING, oGroundTrack.direction)
+        oGroundTrack.direction = ConstraintGroundTrack.ASCENDING
+        Assert.assertEqual(ConstraintGroundTrack.ASCENDING, oGroundTrack.direction)
         # DESCENDING
-        oGroundTrack.direction = CONSTRAINT_GROUND_TRACK.DESCENDING
-        Assert.assertEqual(CONSTRAINT_GROUND_TRACK.DESCENDING, oGroundTrack.direction)
+        oGroundTrack.direction = ConstraintGroundTrack.DESCENDING
+        Assert.assertEqual(ConstraintGroundTrack.DESCENDING, oGroundTrack.direction)
 
     # endregion
 
@@ -2285,33 +2283,33 @@ class AccessConstraintHelper(object):
             name: str = constraint.constraint_name
 
         origCount: int = collection.count
-        collection.add_constraint(ACCESS_CONSTRAINT_TYPE.ALTITUDE)
+        collection.add_constraint(AccessConstraintType.ALTITUDE)
         Assert.assertEqual((origCount + 1), collection.count)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("already active")):
-            collection.add_constraint(ACCESS_CONSTRAINT_TYPE.ALTITUDE)
+            collection.add_constraint(AccessConstraintType.ALTITUDE)
         with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid.")):
             collection.add_constraint(-1)
 
-        activeConstraint: "IAccessConstraint" = collection.get_active_constraint(ACCESS_CONSTRAINT_TYPE.ALTITUDE)
-        Assert.assertEqual(ACCESS_CONSTRAINT_TYPE.ALTITUDE, activeConstraint.constraint_type)
-        Assert.assertTrue(collection.is_constraint_active(ACCESS_CONSTRAINT_TYPE.ALTITUDE))
-        Assert.assertTrue(collection.is_constraint_supported(ACCESS_CONSTRAINT_TYPE.ALTITUDE))
+        activeConstraint: "IAccessConstraint" = collection.get_active_constraint(AccessConstraintType.ALTITUDE)
+        Assert.assertEqual(AccessConstraintType.ALTITUDE, activeConstraint.constraint_type)
+        Assert.assertTrue(collection.is_constraint_active(AccessConstraintType.ALTITUDE))
+        Assert.assertTrue(collection.is_constraint_supported(AccessConstraintType.ALTITUDE))
 
-        collection.remove_constraint(ACCESS_CONSTRAINT_TYPE.ALTITUDE)
+        collection.remove_constraint(AccessConstraintType.ALTITUDE)
         Assert.assertEqual(origCount, collection.count)
-        Assert.assertFalse(collection.is_constraint_active(ACCESS_CONSTRAINT_TYPE.ALTITUDE))
-        Assert.assertFalse(collection.is_constraint_supported(ACCESS_CONSTRAINT_TYPE.NONE))
+        Assert.assertFalse(collection.is_constraint_active(AccessConstraintType.ALTITUDE))
+        Assert.assertFalse(collection.is_constraint_supported(AccessConstraintType.NONE))
 
         with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid.")):
-            activeConstraint = collection.get_active_constraint(ACCESS_CONSTRAINT_TYPE.ALTITUDE)
+            activeConstraint = collection.get_active_constraint(AccessConstraintType.ALTITUDE)
 
         arAvailable = collection.available_constraints()
 
         i: int = 0
         while i < len(arAvailable):
             availName: str = str(arAvailable[i][0])
-            eAccessConstraint: "ACCESS_CONSTRAINT_TYPE" = ACCESS_CONSTRAINT_TYPE(int(arAvailable[i][1]))
+            eAccessConstraint: "AccessConstraintType" = AccessConstraintType(int(arAvailable[i][1]))
 
             i += 1
 
@@ -2325,7 +2323,7 @@ class AccessConstraintHelper(object):
             collection.add_named_constraint("Bogus")
 
         activeConstraint = collection.get_active_named_constraint("Altitude")
-        Assert.assertEqual(ACCESS_CONSTRAINT_TYPE.ALTITUDE, activeConstraint.constraint_type)
+        Assert.assertEqual(AccessConstraintType.ALTITUDE, activeConstraint.constraint_type)
         Assert.assertTrue(collection.is_named_constraint_active("Altitude"))
         Assert.assertTrue(collection.is_named_constraint_supported("Altitude"))
 

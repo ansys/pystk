@@ -7,10 +7,6 @@ IVehicleGraphics3DTickData
 
 .. py:currentmodule:: IVehicleGraphics3DTickData
 
-Overview
---------
-
-
 Import detail
 -------------
 

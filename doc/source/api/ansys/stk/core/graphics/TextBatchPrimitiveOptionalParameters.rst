@@ -59,7 +59,7 @@ Property detail
 
 .. py:property:: origin
     :canonical: ansys.stk.core.graphics.TextBatchPrimitiveOptionalParameters.origin
-    :type: ORIGIN
+    :type: Origin
 
     Gets or sets the per-batch origin, which is applied to each string in the text batch.
 

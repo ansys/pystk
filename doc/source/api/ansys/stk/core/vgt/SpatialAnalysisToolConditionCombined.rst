@@ -57,7 +57,7 @@ Property detail
 
 .. py:property:: boolean_operation
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolConditionCombined.boolean_operation
-    :type: VOLUME_COMBINED_OPERATION_TYPE
+    :type: VolumeCombinedOperationType
 
     Sets/Returns volume combined operation.
 

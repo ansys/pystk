@@ -7,10 +7,6 @@ IVehicleAttitude
 
 .. py:currentmodule:: IVehicleAttitude
 
-Overview
---------
-
-
 Import detail
 -------------
 

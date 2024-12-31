@@ -9,10 +9,6 @@ LandingCruiseAirspeedAndProfileOptions
 
 .. py:currentmodule:: LandingCruiseAirspeedAndProfileOptions
 
-Overview
---------
-
-
 
 Import detail
 -------------

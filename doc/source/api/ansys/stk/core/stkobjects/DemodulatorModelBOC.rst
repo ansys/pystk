@@ -9,10 +9,6 @@ DemodulatorModelBOC
 
 .. py:currentmodule:: DemodulatorModelBOC
 
-Overview
---------
-
-
 
 Import detail
 -------------

@@ -52,7 +52,7 @@ Property detail
 
 .. py:property:: integration_model
     :canonical: ansys.stk.core.stkobjects.VehicleIntegrator.integration_model
-    :type: VEHICLE_INTEGRATION_MODEL
+    :type: VehicleIntegrationModel
 
     Integration method to be used in propagating the orbit.
 
@@ -64,7 +64,7 @@ Property detail
 
 .. py:property:: predictor_corrector_scheme
     :canonical: ansys.stk.core.stkobjects.VehicleIntegrator.predictor_corrector_scheme
-    :type: VEHICLE_PREDICTOR_CORRECTOR_SCHEME
+    :type: VehiclePredictorCorrectorScheme
 
     Predictor corrector scheme (valid for Gauss-Jackson method only): method for updating acceleration components after corrector has converged.
 

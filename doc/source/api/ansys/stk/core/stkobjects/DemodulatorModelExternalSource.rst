@@ -9,10 +9,6 @@ DemodulatorModelExternalSource
 
 .. py:currentmodule:: DemodulatorModelExternalSource
 
-Overview
---------
-
-
 
 Import detail
 -------------

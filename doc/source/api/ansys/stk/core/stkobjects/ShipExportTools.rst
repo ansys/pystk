@@ -28,7 +28,6 @@ Overview
               - Return an Ephemeris file of the STK Binary ephemeris type for export.
 
 
-
 Import detail
 -------------
 

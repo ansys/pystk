@@ -58,7 +58,7 @@ Property detail
 
 .. py:property:: gain_type
     :canonical: ansys.stk.core.stkobjects.AntennaModelANSYSffdFormat.gain_type
-    :type: HFSS_FAR_FIELD_DATA_GAIN_TYPE
+    :type: HFSSFarFieldDataGainType
 
     Gets or sets the gain type.
 

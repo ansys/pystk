@@ -48,9 +48,9 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("Venus.pe", file.filename)
 
         cb: "PlanetPositionCentralBody" = EarlyBoundTests.AG_PL.common_tasks.set_position_source_central_body(
-            "Jupiter", EPHEM_SOURCE_TYPE.DEFAULT
+            "Jupiter", EphemSourceType.DEFAULT
         )
-        Assert.assertEqual(EPHEM_SOURCE_TYPE.DEFAULT, cb.ephemeris_source)
+        Assert.assertEqual(EphemSourceType.DEFAULT, cb.ephemeris_source)
         Assert.assertEqual("Jupiter", cb.central_body)
 
     # endregion
@@ -61,9 +61,9 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine("----- THE BASIC TEST ----- BEGIN -----")
         # PositionSource
         TestBase.logger.WriteLine6("The current PositionSource type is: {0}", EarlyBoundTests.AG_PL.position_source)
-        EarlyBoundTests.AG_PL.position_source = PLANET_POSITION_SOURCE_TYPE.CENTRAL_BODY
+        EarlyBoundTests.AG_PL.position_source = PlanetPositionSourceType.CENTRAL_BODY
         TestBase.logger.WriteLine6("The new PositionSource type is: {0}", EarlyBoundTests.AG_PL.position_source)
-        Assert.assertEqual(PLANET_POSITION_SOURCE_TYPE.CENTRAL_BODY, EarlyBoundTests.AG_PL.position_source)
+        Assert.assertEqual(PlanetPositionSourceType.CENTRAL_BODY, EarlyBoundTests.AG_PL.position_source)
         # CentralBody
         oBody: "PlanetPositionCentralBody" = PlanetPositionCentralBody(EarlyBoundTests.AG_PL.position_source_data)
         Assert.assertIsNotNone(oBody)
@@ -90,37 +90,37 @@ class EarlyBoundTests(TestBase):
                 "\t\t\tThe {0} supports {1} EphemSourceTypes", oBody.central_body, Array.Length(arEphem)
             )
             if Array.Length(arEphem) > 0:
-                eType: "EPHEM_SOURCE_TYPE" = EPHEM_SOURCE_TYPE(int(arEphem[0]))
+                eType: "EphemSourceType" = EphemSourceType(int(arEphem[0]))
                 TestBase.logger.WriteLine7("\t\t\t\tAvailable Type {0}: {1}", 0, eType)
                 oBody.ephemeris_source = eType
                 TestBase.logger.WriteLine6("\t\t\t\t\tThe new EphemSourceType is: {0}", oBody.ephemeris_source)
                 Assert.assertEqual(eType, oBody.ephemeris_source)
 
         # File
-        EarlyBoundTests.AG_PL.position_source = PLANET_POSITION_SOURCE_TYPE.FILE
+        EarlyBoundTests.AG_PL.position_source = PlanetPositionSourceType.FILE
         TestBase.logger.WriteLine6("The new PositionSource type is: {0}", EarlyBoundTests.AG_PL.position_source)
-        Assert.assertEqual(PLANET_POSITION_SOURCE_TYPE.FILE, EarlyBoundTests.AG_PL.position_source)
+        Assert.assertEqual(PlanetPositionSourceType.FILE, EarlyBoundTests.AG_PL.position_source)
         file: "PlanetPositionFile" = PlanetPositionFile(EarlyBoundTests.AG_PL.position_source_data)
         Assert.assertIsNotNone(file)
         TestBase.logger.WriteLine5("The current Filename is: {0}", file.filename)
         file.filename = TestBase.GetScenarioFile("Venus.pe")
         TestBase.logger.WriteLine5("The new Filename is: {0}", file.filename)
         # Restore the planet name to its original value
-        EarlyBoundTests.AG_PL.position_source = PLANET_POSITION_SOURCE_TYPE.CENTRAL_BODY
+        EarlyBoundTests.AG_PL.position_source = PlanetPositionSourceType.CENTRAL_BODY
         oBody = PlanetPositionCentralBody(EarlyBoundTests.AG_PL.position_source_data)
         Assert.assertIsNotNone(oBody)
         oBody.rename_automatically = False
         (IStkObject(EarlyBoundTests.AG_PL)).instance_name = "Planet1"
         oBody.central_body = "Sun"
         TestBase.logger.WriteLine5("JPLDEVersion: {0}", oBody.jplde_version)
-        oBody.ephemeris_source = EPHEM_SOURCE_TYPE.ANALYTIC
-        Assert.assertEqual(EPHEM_SOURCE_TYPE.ANALYTIC, oBody.ephemeris_source)
-        oBody.ephemeris_source = EPHEM_SOURCE_TYPE.DEFAULT
-        Assert.assertEqual(EPHEM_SOURCE_TYPE.DEFAULT, oBody.ephemeris_source)
-        oBody.ephemeris_source = EPHEM_SOURCE_TYPE.SPICE
-        Assert.assertEqual(EPHEM_SOURCE_TYPE.SPICE, oBody.ephemeris_source)
-        oBody.ephemeris_source = EPHEM_SOURCE_TYPE.JPL_DEVELOPMENTAL_EPHEMERIS
-        Assert.assertEqual(EPHEM_SOURCE_TYPE.JPL_DEVELOPMENTAL_EPHEMERIS, oBody.ephemeris_source)
+        oBody.ephemeris_source = EphemSourceType.ANALYTIC
+        Assert.assertEqual(EphemSourceType.ANALYTIC, oBody.ephemeris_source)
+        oBody.ephemeris_source = EphemSourceType.DEFAULT
+        Assert.assertEqual(EphemSourceType.DEFAULT, oBody.ephemeris_source)
+        oBody.ephemeris_source = EphemSourceType.SPICE
+        Assert.assertEqual(EphemSourceType.SPICE, oBody.ephemeris_source)
+        oBody.ephemeris_source = EphemSourceType.JPL_DEVELOPMENTAL_EPHEMERIS
+        Assert.assertEqual(EphemSourceType.JPL_DEVELOPMENTAL_EPHEMERIS, oBody.ephemeris_source)
 
         TestBase.logger.WriteLine("----- THE BASIC TEST ----- END -----")
 
@@ -129,9 +129,9 @@ class EarlyBoundTests(TestBase):
         initialDistanceUnit: str = TestBase.Application.units_preferences.get_current_unit_abbrv("DistanceUnit")
         try:
             tempPlanet: "Planet" = Planet(
-                TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.PLANET, "TempPlanet")
+                TestBase.Application.current_scenario.children.new(STKObjectType.PLANET, "TempPlanet")
             )
-            tempPlanet.position_source = PLANET_POSITION_SOURCE_TYPE.CENTRAL_BODY
+            tempPlanet.position_source = PlanetPositionSourceType.CENTRAL_BODY
             centralBody: "PlanetPositionCentralBody" = PlanetPositionCentralBody(tempPlanet.position_source_data)
             centralBody.rename_automatically = False
             centralBody.central_body = "Sun"
@@ -147,7 +147,7 @@ class EarlyBoundTests(TestBase):
             )
 
         finally:
-            TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.PLANET, "TempPlanet")
+            TestBase.Application.current_scenario.children.unload(STKObjectType.PLANET, "TempPlanet")
             TestBase.Application.units_preferences.set_current_unit("DistanceUnit", initialDistanceUnit)
 
     # endregion
@@ -187,15 +187,15 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine5("The new MarkerStyle is: {0}", gfx.marker_style)
         # LineStyle
         TestBase.logger.WriteLine6("The current LineStyle is: {0}", gfx.line_style)
-        gfx.line_style = LINE_STYLE.M_DASH_DOT
+        gfx.line_style = LineStyle.M_DASH_DOT
         TestBase.logger.WriteLine6("The new LineStyle is: {0}", gfx.line_style)
-        Assert.assertEqual(LINE_STYLE.M_DASH_DOT, gfx.line_style)
+        Assert.assertEqual(LineStyle.M_DASH_DOT, gfx.line_style)
 
         # LineWidth
         TestBase.logger.WriteLine6("The current LineWidth is: {0}", gfx.line_width)
-        gfx.line_width = LINE_WIDTH.WIDTH4
+        gfx.line_width = LineWidth.WIDTH4
         TestBase.logger.WriteLine6("The new LineWidth is: {0}", gfx.line_width)
-        Assert.assertEqual(LINE_WIDTH.WIDTH4, gfx.line_width)
+        Assert.assertEqual(LineWidth.WIDTH4, gfx.line_width)
         with pytest.raises(Exception):
             gfx.line_width = -1
         with pytest.raises(Exception):
@@ -298,7 +298,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(False, gfx.show_orbit)
         try:
             bCaught = False
-            gfx.orbit_display = PLANET_ORBIT_DISPLAY_TYPE.ORBIT_DISPLAY_TIME
+            gfx.orbit_display = PlanetOrbitDisplayType.ORBIT_DISPLAY_TIME
 
         except Exception as e:
             bCaught = True
@@ -324,9 +324,9 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine4("The new OrbitVisible is: {0}", gfx.show_orbit)
         Assert.assertEqual(True, gfx.show_orbit)
         TestBase.logger.WriteLine6("The current OrbitDisplay is: {0}", gfx.orbit_display)
-        gfx.orbit_display = PLANET_ORBIT_DISPLAY_TYPE.ONE_ORBIT
+        gfx.orbit_display = PlanetOrbitDisplayType.ONE_ORBIT
         TestBase.logger.WriteLine6("The new OrbitDisplay is: {0}", gfx.orbit_display)
-        Assert.assertEqual(PLANET_ORBIT_DISPLAY_TYPE.ONE_ORBIT, gfx.orbit_display)
+        Assert.assertEqual(PlanetOrbitDisplayType.ONE_ORBIT, gfx.orbit_display)
         try:
             bCaught = False
             oODD: "PlanetOrbitDisplayTime" = PlanetOrbitDisplayTime(gfx.orbit_display_data)
@@ -340,9 +340,9 @@ class EarlyBoundTests(TestBase):
         if not bCaught:
             Assert.fail("The property should be read-only.")
 
-        gfx.orbit_display = PLANET_ORBIT_DISPLAY_TYPE.ORBIT_DISPLAY_TIME
+        gfx.orbit_display = PlanetOrbitDisplayType.ORBIT_DISPLAY_TIME
         TestBase.logger.WriteLine6("The new OrbitDisplay is: {0}", gfx.orbit_display)
-        Assert.assertEqual(PLANET_ORBIT_DISPLAY_TYPE.ORBIT_DISPLAY_TIME, gfx.orbit_display)
+        Assert.assertEqual(PlanetOrbitDisplayType.ORBIT_DISPLAY_TIME, gfx.orbit_display)
         oODT: "PlanetOrbitDisplayTime" = PlanetOrbitDisplayTime(gfx.orbit_display_data)
         Assert.assertIsNotNone(oODT)
         TestBase.logger.WriteLine6("The current Time is: {0}", oODT.time)

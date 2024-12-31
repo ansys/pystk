@@ -73,7 +73,7 @@ Property detail
 
 .. py:property:: look_ahead_propagator
     :canonical: ansys.stk.core.stkobjects.PropagatorRealtime.look_ahead_propagator
-    :type: LOOK_AHEAD_PROPAGATOR
+    :type: LookAheadPropagator
 
     A name of the lookahead propagator.
 
@@ -120,14 +120,14 @@ Method detail
 
 
 
-.. py:method:: is_look_ahead_propagator_supported(self, propagator: LOOK_AHEAD_PROPAGATOR) -> bool
+.. py:method:: is_look_ahead_propagator_supported(self, propagator: LookAheadPropagator) -> bool
     :canonical: ansys.stk.core.stkobjects.PropagatorRealtime.is_look_ahead_propagator_supported
 
     Return whether the specified look ahead propagator is supported.
 
     :Parameters:
 
-    **propagator** : :obj:`~LOOK_AHEAD_PROPAGATOR`
+    **propagator** : :obj:`~LookAheadPropagator`
 
     :Returns:
 

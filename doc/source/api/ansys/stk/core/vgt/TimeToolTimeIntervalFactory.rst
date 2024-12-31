@@ -38,7 +38,6 @@ Overview
               - Return whether the specified type is supported.
 
 
-
 Import detail
 -------------
 
@@ -51,7 +50,7 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: create(self, name: str, description: str, type: EVENT_INTERVAL_TYPE) -> ITimeToolTimeInterval
+.. py:method:: create(self, name: str, description: str, type: EventIntervalType) -> ITimeToolTimeInterval
     :canonical: ansys.stk.core.vgt.TimeToolTimeIntervalFactory.create
 
     Create and register an interval using specified name, description, and type.
@@ -60,7 +59,7 @@ Method detail
 
     **name** : :obj:`~str`
     **description** : :obj:`~str`
-    **type** : :obj:`~EVENT_INTERVAL_TYPE`
+    **type** : :obj:`~EventIntervalType`
 
     :Returns:
 
@@ -164,14 +163,14 @@ Method detail
 
         :obj:`~ITimeToolTimeInterval`
 
-.. py:method:: is_type_supported(self, type: EVENT_INTERVAL_TYPE) -> bool
+.. py:method:: is_type_supported(self, type: EventIntervalType) -> bool
     :canonical: ansys.stk.core.vgt.TimeToolTimeIntervalFactory.is_type_supported
 
     Return whether the specified type is supported.
 
     :Parameters:
 
-    **type** : :obj:`~EVENT_INTERVAL_TYPE`
+    **type** : :obj:`~EventIntervalType`
 
     :Returns:
 

@@ -55,7 +55,7 @@ Property detail
 
 .. py:property:: aerosol_model_type
     :canonical: ansys.stk.core.stkobjects.MODTRANLookupTablePropagationModel.aerosol_model_type
-    :type: MODTRAN_AEROSOL_MODEL_TYPE
+    :type: ModtranAerosolModelType
 
     Gets or sets the aerosol model type.
 

@@ -9,10 +9,6 @@ PolarizationLHC
 
 .. py:currentmodule:: PolarizationLHC
 
-Overview
---------
-
-
 
 Import detail
 -------------

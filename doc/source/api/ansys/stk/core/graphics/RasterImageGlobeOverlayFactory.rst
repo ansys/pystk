@@ -26,7 +26,6 @@ Overview
               - Initialize a raster image globe overlay with the provided values.
 
 
-
 Import detail
 -------------
 

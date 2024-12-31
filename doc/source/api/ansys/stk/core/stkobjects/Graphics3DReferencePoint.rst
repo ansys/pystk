@@ -56,7 +56,7 @@ Property detail
 
 .. py:property:: trajectory_type
     :canonical: ansys.stk.core.stkobjects.Graphics3DReferencePoint.trajectory_type
-    :type: TRAJECTORY_TYPE
+    :type: TrajectoryType
 
     Specifies the arrow type used to represent the geometric element.
 

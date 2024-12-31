@@ -9,10 +9,6 @@ StateCalcMCSDeltaV
 
 .. py:currentmodule:: StateCalcMCSDeltaV
 
-Overview
---------
-
-
 
 Import detail
 -------------

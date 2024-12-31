@@ -24,7 +24,6 @@ Overview
               - Create a restrictive root object.
 
 
-
 Import detail
 -------------
 

@@ -56,7 +56,7 @@ Property detail
 
 .. py:property:: coordinate_system_type
     :canonical: ansys.stk.core.stkobjects.OrbitStateCartesian.coordinate_system_type
-    :type: COORDINATE_SYSTEM
+    :type: CoordinateSystem
 
     Coordinate system being used.
 

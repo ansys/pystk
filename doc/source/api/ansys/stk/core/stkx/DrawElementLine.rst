@@ -93,7 +93,7 @@ Property detail
 
 .. py:property:: line_style
     :canonical: ansys.stk.core.stkx.DrawElementLine.line_style
-    :type: LINE_STYLE
+    :type: LineStyle
 
     Specifies the style of the line.
 

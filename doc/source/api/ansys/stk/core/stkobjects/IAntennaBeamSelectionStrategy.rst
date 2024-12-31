@@ -35,7 +35,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.IAntennaBeamSelectionStrategy.type
-    :type: BEAM_SELECTION_STRATEGY_TYPE
+    :type: BeamSelectionStrategyType
 
     Gets the beam selection strategy type.
 

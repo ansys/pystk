@@ -40,7 +40,6 @@ Overview
               - Create a volume type Inview.
 
 
-
 Import detail
 -------------
 
@@ -53,7 +52,7 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: create(self, name: str, description: str, type: VOLUME_TYPE) -> ISpatialAnalysisToolVolume
+.. py:method:: create(self, name: str, description: str, type: VolumeType) -> ISpatialAnalysisToolVolume
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolConditionFactory.create
 
     Create and registers a volume using specified name and description.
@@ -62,20 +61,20 @@ Method detail
 
     **name** : :obj:`~str`
     **description** : :obj:`~str`
-    **type** : :obj:`~VOLUME_TYPE`
+    **type** : :obj:`~VolumeType`
 
     :Returns:
 
         :obj:`~ISpatialAnalysisToolVolume`
 
-.. py:method:: is_type_supported(self, type: VOLUME_TYPE) -> bool
+.. py:method:: is_type_supported(self, type: VolumeType) -> bool
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolConditionFactory.is_type_supported
 
     Return whether the specified type is supported.
 
     :Parameters:
 
-    **type** : :obj:`~VOLUME_TYPE`
+    **type** : :obj:`~VolumeType`
 
     :Returns:
 

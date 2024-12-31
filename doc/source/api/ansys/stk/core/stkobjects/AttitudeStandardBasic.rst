@@ -51,7 +51,7 @@ Property detail
 
 .. py:property:: profile_type
     :canonical: ansys.stk.core.stkobjects.AttitudeStandardBasic.profile_type
-    :type: ATTITUDE_PROFILE
+    :type: AttitudeProfile
 
     Get basic attitude profile type.
 
@@ -72,27 +72,27 @@ Method detail
 -------------
 
 
-.. py:method:: set_profile_type(self, profile: ATTITUDE_PROFILE) -> None
+.. py:method:: set_profile_type(self, profile: AttitudeProfile) -> None
     :canonical: ansys.stk.core.stkobjects.AttitudeStandardBasic.set_profile_type
 
     Set basic attitude profile type.
 
     :Parameters:
 
-    **profile** : :obj:`~ATTITUDE_PROFILE`
+    **profile** : :obj:`~AttitudeProfile`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_profile_type_supported(self, profile: ATTITUDE_PROFILE) -> bool
+.. py:method:: is_profile_type_supported(self, profile: AttitudeProfile) -> bool
     :canonical: ansys.stk.core.stkobjects.AttitudeStandardBasic.is_profile_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **profile** : :obj:`~ATTITUDE_PROFILE`
+    **profile** : :obj:`~AttitudeProfile`
 
     :Returns:
 

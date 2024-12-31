@@ -7,10 +7,6 @@ IScreenOverlay
 
 .. py:currentmodule:: IScreenOverlay
 
-Overview
---------
-
-
 Import detail
 -------------
 

@@ -104,7 +104,7 @@ Property detail
 
 .. py:property:: projection_type
     :canonical: ansys.stk.core.stkobjects.SensorGraphics3D.projection_type
-    :type: SENSOR_GRAPHICS_3D_PROJECTION_TYPE
+    :type: SensorGraphics3DProjectionType
 
     Select the projection type from the AgESnVOProjectionType enumeration.
 
@@ -170,7 +170,7 @@ Property detail
 
 .. py:property:: inherit_from_2d
     :canonical: ansys.stk.core.stkobjects.SensorGraphics3D.inherit_from_2d
-    :type: SENSOR_GRAPHICS_3D_INHERIT_FROM_2D
+    :type: SensorGraphics3DInheritFrom2D
 
     Specify how projection distances that are computed based on 2D Graphics projection settings are displayed in the 3D Graphics window.
 
@@ -212,7 +212,7 @@ Property detail
 
 .. py:property:: projection_time_dependency
     :canonical: ansys.stk.core.stkobjects.SensorGraphics3D.projection_time_dependency
-    :type: SENSOR_GRAPHICS_3D_PROJECTION_TIME_DEPENDENCY_TYPE
+    :type: SensorGraphics3DProjectionTimeDependencyType
 
     Specify how projection distances are determined in the 3D Graphics window. Either using a constant distance at all times or set of user defined intervals and distance values.
 

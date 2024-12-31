@@ -38,7 +38,7 @@ Property detail
 
 .. py:property:: subtype
     :canonical: ansys.stk.core.stkobjects.aviator.FuelModelKeroseneAFPROP.subtype
-    :type: AFPROP_FUEL_TYPE
+    :type: AFPROPFuelType
 
     Gets or sets the fuel subtype.
 

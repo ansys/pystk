@@ -9,10 +9,6 @@ AtmosphericAbsorptionModelTIREM331
 
 .. py:currentmodule:: AtmosphericAbsorptionModelTIREM331
 
-Overview
---------
-
-
 
 Import detail
 -------------

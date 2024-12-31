@@ -103,7 +103,7 @@ Property detail
 
 .. py:property:: numerical_integrator_type
     :canonical: ansys.stk.core.stkobjects.astrogator.NumericalPropagatorWrapper.numerical_integrator_type
-    :type: NUMERICAL_INTEGRATOR
+    :type: NumericalIntegrator
 
     Get the single step integrator type.
 
@@ -124,14 +124,14 @@ Method detail
 
 
 
-.. py:method:: set_numerical_integrator(self, integrator: NUMERICAL_INTEGRATOR) -> None
+.. py:method:: set_numerical_integrator(self, integrator: NumericalIntegrator) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.NumericalPropagatorWrapper.set_numerical_integrator
 
     Change the single step integrator.
 
     :Parameters:
 
-    **integrator** : :obj:`~NUMERICAL_INTEGRATOR`
+    **integrator** : :obj:`~NumericalIntegrator`
 
     :Returns:
 

@@ -9,10 +9,6 @@ ScreenOverlayCollection
 
 .. py:currentmodule:: ScreenOverlayCollection
 
-Overview
---------
-
-
 
 Import detail
 -------------

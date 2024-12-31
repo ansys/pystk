@@ -9,10 +9,6 @@ Waveform
 
 .. py:currentmodule:: Waveform
 
-Overview
---------
-
-
 
 Import detail
 -------------

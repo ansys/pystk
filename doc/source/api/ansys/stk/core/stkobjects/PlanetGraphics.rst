@@ -108,7 +108,7 @@ Property detail
 
 .. py:property:: orbit_display
     :canonical: ansys.stk.core.stkobjects.PlanetGraphics.orbit_display
-    :type: PLANET_ORBIT_DISPLAY_TYPE
+    :type: PlanetOrbitDisplayType
 
     The factor used in determining how much of the orbit displays. A member of the AgEPlOrbitDisplayType enumeration.
 
@@ -120,13 +120,13 @@ Property detail
 
 .. py:property:: line_style
     :canonical: ansys.stk.core.stkobjects.PlanetGraphics.line_style
-    :type: LINE_STYLE
+    :type: LineStyle
 
     The type of line to represent the object's pattern or tracks.
 
 .. py:property:: line_width
     :canonical: ansys.stk.core.stkobjects.PlanetGraphics.line_width
-    :type: LINE_WIDTH
+    :type: LineWidth
 
     The width of the line to represent the object's pattern or tracks.
 

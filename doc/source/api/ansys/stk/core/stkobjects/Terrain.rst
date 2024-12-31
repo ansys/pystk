@@ -56,7 +56,7 @@ Property detail
 
 .. py:property:: file_type
     :canonical: ansys.stk.core.stkobjects.Terrain.file_type
-    :type: TERRAIN_FILE_TYPE
+    :type: TerrainFileType
 
     Type of terrain data file. A member of the AgETerrainFileType enumeration.
 

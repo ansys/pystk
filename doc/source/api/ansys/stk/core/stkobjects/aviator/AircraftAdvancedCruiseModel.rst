@@ -67,7 +67,7 @@ Property detail
 
 .. py:property:: max_performance_airspeed
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedCruiseModel.max_performance_airspeed
-    :type: CRUISE_MAX_PERFORMANCE_SPEED_TYPE
+    :type: CruiseMaxPerformanceSpeedType
 
     Gets or sets the method for defining the maximum performance airspeed of the aircraft with respect to its altitude.
 
@@ -85,7 +85,7 @@ Property detail
 
 .. py:property:: airspeed_limit_type
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedCruiseModel.airspeed_limit_type
-    :type: AIRSPEED_TYPE
+    :type: AirspeedType
 
     Get the airspeed limit type.
 
@@ -115,14 +115,14 @@ Method detail
 
 
 
-.. py:method:: set_airspeed_limit(self, airspeed_type: AIRSPEED_TYPE, airspeed: float) -> None
+.. py:method:: set_airspeed_limit(self, airspeed_type: AirspeedType, airspeed: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedCruiseModel.set_airspeed_limit
 
     Set the airspeed limit and airspeed type below the altitude threshold.
 
     :Parameters:
 
-    **airspeed_type** : :obj:`~AIRSPEED_TYPE`
+    **airspeed_type** : :obj:`~AirspeedType`
     **airspeed** : :obj:`~float`
 
     :Returns:

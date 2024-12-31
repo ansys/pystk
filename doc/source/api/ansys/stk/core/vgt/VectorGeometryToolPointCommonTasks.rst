@@ -26,7 +26,6 @@ Overview
               - Compute and returns tabulated positions and velocities of a point with respect to reference system using specified sampling parameters.
 
 
-
 Import detail
 -------------
 

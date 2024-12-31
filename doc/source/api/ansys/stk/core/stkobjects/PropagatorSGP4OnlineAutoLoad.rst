@@ -24,7 +24,6 @@ Overview
               - Do not use this method, as it is deprecated. Use AddSegsFromOnline on IAgVeSGP4OnlineLoad instead. Adds the latest segment from Online given an SSC number.
 
 
-
 Import detail
 -------------
 

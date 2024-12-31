@@ -69,7 +69,7 @@ Property detail
 
 .. py:property:: frequency_specification
     :canonical: ansys.stk.core.stkobjects.RadarTransmitter.frequency_specification
-    :type: RADAR_FREQUENCY_SPECIFICATION_TYPE
+    :type: RadarFrequencySpecificationType
 
     Gets or sets the frequency specification.
 
@@ -156,14 +156,14 @@ Method detail
 
 
 
-.. py:method:: set_polarization_type(self, value: POLARIZATION_TYPE) -> None
+.. py:method:: set_polarization_type(self, value: PolarizationType) -> None
     :canonical: ansys.stk.core.stkobjects.RadarTransmitter.set_polarization_type
 
     Set the current polarization type.
 
     :Parameters:
 
-    **value** : :obj:`~POLARIZATION_TYPE`
+    **value** : :obj:`~PolarizationType`
 
     :Returns:
 

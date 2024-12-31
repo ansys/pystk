@@ -7,10 +7,6 @@ IVehicleGraphics3DSigmaScale
 
 .. py:currentmodule:: IVehicleGraphics3DSigmaScale
 
-Overview
---------
-
-
 Import detail
 -------------
 

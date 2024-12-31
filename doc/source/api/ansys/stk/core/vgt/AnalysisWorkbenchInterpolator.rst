@@ -9,10 +9,6 @@ AnalysisWorkbenchInterpolator
 
 .. py:currentmodule:: AnalysisWorkbenchInterpolator
 
-Overview
---------
-
-
 
 Import detail
 -------------

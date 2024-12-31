@@ -9,10 +9,6 @@ BeamformerCosine
 
 .. py:currentmodule:: BeamformerCosine
 
-Overview
---------
-
-
 
 Import detail
 -------------

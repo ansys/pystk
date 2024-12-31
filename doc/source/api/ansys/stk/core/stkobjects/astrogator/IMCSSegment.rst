@@ -56,7 +56,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.astrogator.IMCSSegment.type
-    :type: SEGMENT_TYPE
+    :type: SegmentType
 
     Returns the type of segment.
 

@@ -30,7 +30,6 @@ Overview
               - Create a condition for point in volume.
 
 
-
 Import detail
 -------------
 
@@ -43,7 +42,7 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: create(self, name: str, description: str, type: CONDITION_TYPE) -> ICalculationToolCondition
+.. py:method:: create(self, name: str, description: str, type: ConditionType) -> ICalculationToolCondition
     :canonical: ansys.stk.core.vgt.CalculationToolConditionFactory.create
 
     Create and registers a condition using specified name, description and type.
@@ -52,7 +51,7 @@ Method detail
 
     **name** : :obj:`~str`
     **description** : :obj:`~str`
-    **type** : :obj:`~CONDITION_TYPE`
+    **type** : :obj:`~ConditionType`
 
     :Returns:
 
@@ -72,14 +71,14 @@ Method detail
 
         :obj:`~ICalculationToolCondition`
 
-.. py:method:: is_type_supported(self, type: CONDITION_TYPE) -> bool
+.. py:method:: is_type_supported(self, type: ConditionType) -> bool
     :canonical: ansys.stk.core.vgt.CalculationToolConditionFactory.is_type_supported
 
     Return whether the specified type is supported.
 
     :Parameters:
 
-    **type** : :obj:`~CONDITION_TYPE`
+    **type** : :obj:`~ConditionType`
 
     :Returns:
 

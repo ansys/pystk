@@ -7,10 +7,6 @@ IOrientationAscNode
 
 .. py:currentmodule:: IOrientationAscNode
 
-Overview
---------
-
-
 Import detail
 -------------
 

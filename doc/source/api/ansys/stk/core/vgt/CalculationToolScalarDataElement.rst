@@ -99,7 +99,7 @@ Property detail
 
 .. py:property:: save_data_option
     :canonical: ansys.stk.core.vgt.CalculationToolScalarDataElement.save_data_option
-    :type: SAVE_DATA_TYPE
+    :type: SaveDataType
 
     Determines if computed samples are saved/loaded, otherwise if using samples they are recomputed on load.
 

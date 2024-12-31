@@ -60,7 +60,7 @@ Property detail
 
 .. py:property:: heading_mode
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyLTAHover.heading_mode
-    :type: HOVER_HEADING_MODE
+    :type: HoverHeadingMode
 
     Gets or sets the heading mode for the lighter than air hover.
 
@@ -90,7 +90,7 @@ Property detail
 
 .. py:property:: altitude_mode
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyLTAHover.altitude_mode
-    :type: HOVER_ALTITUDE_MODE
+    :type: HoverAltitudeMode
 
     Gets or sets the altitude mode for the lighter than air hover.
 

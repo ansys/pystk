@@ -9,10 +9,6 @@ MCSSequence
 
 .. py:currentmodule:: MCSSequence
 
-Overview
---------
-
-
 
 Import detail
 -------------

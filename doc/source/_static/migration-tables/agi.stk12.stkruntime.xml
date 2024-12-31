@@ -1,0 +1,7 @@
+<Mappings>
+   <Mapping ParentScope="STKRuntimeApplication" OldName="NewObjectRoot" NewName="new_object_root" Category="method" />
+   <Mapping ParentScope="STKRuntimeApplication" OldName="NewObjectModelContext" NewName="new_object_model_context" Category="method" />
+   <Mapping ParentScope="STKRuntimeApplication" OldName="ShutDown" NewName="shutdown" Category="method" />
+   <Mapping ParentScope="STKRuntime" OldName="StartApplication" NewName="start_application" Category="method" />
+   <Mapping ParentScope="STKRuntime" OldName="AttachToApplication" NewName="attach_to_application" Category="method" />
+</Mappings>

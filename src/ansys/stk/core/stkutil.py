@@ -10,17 +10,17 @@ types provided by STK Util are used indirectly through methods and properties
 in the STK X and STK Objects libraries.
 """
 
-__all__ = ["AZ_EL_ABOUT_BORESIGHT", "AgCROrientationAzEl", "AgCROrientationEulerAngles", "AgCROrientationOffsetCart", "AgCROrientationQuaternion", 
-"AgCROrientationYPRAngles", "COORDINATE_SYSTEM", "Cartesian", "Cartesian2Vector", "Cartesian3Vector", "ConversionUtility", 
-"Cylindrical", "DIRECTION_TYPE", "Date", "Direction", "DirectionEuler", "DirectionPR", "DirectionRADec", "DirectionXYZ", 
-"DoublesCollection", "EULER_DIRECTION_SEQUENCE", "EULER_ORIENTATION_SEQUENCE_TYPE", "EXECUTE_MULTIPLE_COMMANDS_MODE", "ExecuteCommandResult", 
-"ExecuteMultipleCommandsResult", "FILL_STYLE", "Geocentric", "Geodetic", "ICartesian3Vector", "IDirection", "ILocationData", 
+__all__ = ["AgCROrientationAzEl", "AgCROrientationEulerAngles", "AgCROrientationOffsetCart", "AgCROrientationQuaternion", 
+"AgCROrientationYPRAngles", "AzElAboutBoresight", "Cartesian", "Cartesian2Vector", "Cartesian3Vector", "ConversionUtility", 
+"CoordinateSystem", "Cylindrical", "Date", "Direction", "DirectionEuler", "DirectionPR", "DirectionRADec", "DirectionType", 
+"DirectionXYZ", "DoublesCollection", "EulerDirectionSequence", "EulerOrientationSequenceType", "ExecuteCommandResult", "ExecuteMultipleCommandsMode", 
+"ExecuteMultipleCommandsResult", "FillStyle", "Geocentric", "Geodetic", "ICartesian3Vector", "IDirection", "ILocationData", 
 "IOrbitState", "IOrientation", "IOrientationAzEl", "IOrientationEulerAngles", "IOrientationPositionOffset", "IOrientationQuaternion", 
-"IOrientationYPRAngles", "IPosition", "IRuntimeTypeInfoProvider", "LINE_STYLE", "LOG_MESSAGE_DISPLAY_ID", "LOG_MESSAGE_TYPE", 
-"ORBIT_STATE_TYPE", "ORIENTATION_TYPE", "Orientation", "OrientationAzEl", "OrientationEulerAngles", "OrientationQuaternion", 
-"OrientationYPRAngles", "POSITION_TYPE", "PROPERTY_INFO_VALUE_TYPE", "PR_SEQUENCE", "Planetocentric", "Planetodetic", "Position", 
-"PropertyInfo", "PropertyInfoCollection", "Quantity", "RuntimeTypeInfo", "Spherical", "UnitPreferencesDimension", "UnitPreferencesDimensionCollection", 
-"UnitPreferencesUnit", "UnitPreferencesUnitCollection", "YPR_ANGLES_SEQUENCE"]
+"IOrientationYPRAngles", "IPosition", "IRuntimeTypeInfoProvider", "LineStyle", "LogMessageDisplayID", "LogMessageType", 
+"OrbitStateType", "Orientation", "OrientationAzEl", "OrientationEulerAngles", "OrientationQuaternion", "OrientationType", 
+"OrientationYPRAngles", "PRSequence", "Planetocentric", "Planetodetic", "Position", "PositionType", "PropertyInfo", "PropertyInfoCollection", 
+"PropertyInfoValueType", "Quantity", "RuntimeTypeInfo", "Spherical", "UnitPreferencesDimension", "UnitPreferencesDimensionCollection", 
+"UnitPreferencesUnit", "UnitPreferencesUnitCollection", "YPRAnglesSequence"]
 
 import typing
 
@@ -41,7 +41,7 @@ from .utilities.exceptions import STKRuntimeError
 def _raise_uninitialized_error(*args):
     raise STKRuntimeError("Valid STK object model classes are returned from STK methods and should not be created independently.")
 
-class POSITION_TYPE(IntEnum):
+class PositionType(IntEnum):
     """Facility/place/target position types."""
    
     CARTESIAN = 0x0
@@ -59,17 +59,17 @@ class POSITION_TYPE(IntEnum):
     PLANETODETIC = 0x6
     """Planetodetic: position specified in terms of latitude (angle between the normal to the reference ellipsoid and the equatorial plane), longitude and altitude."""
 
-POSITION_TYPE.CARTESIAN.__doc__ = "Cartesian: position specified in terms of the X, Y and Z components of the object's position vector, where the Z-axis points to the North pole, and the X-axis crosses 0 degrees latitude/0 degrees longitude."
-POSITION_TYPE.CYLINDRICAL.__doc__ = "Cylindrical: position specified in terms of radius (polar), longitude (measured in degrees from -360.0 degrees to +360.0 degrees), and the Z component of the object's position vector."
-POSITION_TYPE.GEOCENTRIC.__doc__ = "Geocentric: position specified in terms of latitude (spherical latitude of the sub-point on the surface of the Earth), longitude and altitude."
-POSITION_TYPE.GEODETIC.__doc__ = "Geodetic: position specified in terms of latitude (angle between the normal to the reference ellipsoid and the equatorial plane), longitude and altitude."
-POSITION_TYPE.SPHERICAL.__doc__ = "Spherical: position specified in terms of latitude (spherical latitude of the sub-point on the surface of the Earth), longitude and radius (distance of the object from the center of the Earth)."
-POSITION_TYPE.PLANETOCENTRIC.__doc__ = "Planetocentric: position specified in terms of latitude (spherical latitude of the sub-point on the surface of the Earth), longitude and altitude."
-POSITION_TYPE.PLANETODETIC.__doc__ = "Planetodetic: position specified in terms of latitude (angle between the normal to the reference ellipsoid and the equatorial plane), longitude and altitude."
+PositionType.CARTESIAN.__doc__ = "Cartesian: position specified in terms of the X, Y and Z components of the object's position vector, where the Z-axis points to the North pole, and the X-axis crosses 0 degrees latitude/0 degrees longitude."
+PositionType.CYLINDRICAL.__doc__ = "Cylindrical: position specified in terms of radius (polar), longitude (measured in degrees from -360.0 degrees to +360.0 degrees), and the Z component of the object's position vector."
+PositionType.GEOCENTRIC.__doc__ = "Geocentric: position specified in terms of latitude (spherical latitude of the sub-point on the surface of the Earth), longitude and altitude."
+PositionType.GEODETIC.__doc__ = "Geodetic: position specified in terms of latitude (angle between the normal to the reference ellipsoid and the equatorial plane), longitude and altitude."
+PositionType.SPHERICAL.__doc__ = "Spherical: position specified in terms of latitude (spherical latitude of the sub-point on the surface of the Earth), longitude and radius (distance of the object from the center of the Earth)."
+PositionType.PLANETOCENTRIC.__doc__ = "Planetocentric: position specified in terms of latitude (spherical latitude of the sub-point on the surface of the Earth), longitude and altitude."
+PositionType.PLANETODETIC.__doc__ = "Planetodetic: position specified in terms of latitude (angle between the normal to the reference ellipsoid and the equatorial plane), longitude and altitude."
 
-agcls.AgTypeNameMap["POSITION_TYPE"] = POSITION_TYPE
+agcls.AgTypeNameMap["PositionType"] = PositionType
 
-class EULER_DIRECTION_SEQUENCE(IntEnum):
+class EulerDirectionSequence(IntEnum):
     """Euler direction sequences."""
    
     SEQUENCE_12 = 0
@@ -81,14 +81,14 @@ class EULER_DIRECTION_SEQUENCE(IntEnum):
     SEQUENCE_32 = 3
     """32 sequence."""
 
-EULER_DIRECTION_SEQUENCE.SEQUENCE_12.__doc__ = "12 sequence."
-EULER_DIRECTION_SEQUENCE.SEQUENCE_21.__doc__ = "21 sequence."
-EULER_DIRECTION_SEQUENCE.SEQUENCE_31.__doc__ = "31 sequence."
-EULER_DIRECTION_SEQUENCE.SEQUENCE_32.__doc__ = "32 sequence."
+EulerDirectionSequence.SEQUENCE_12.__doc__ = "12 sequence."
+EulerDirectionSequence.SEQUENCE_21.__doc__ = "21 sequence."
+EulerDirectionSequence.SEQUENCE_31.__doc__ = "31 sequence."
+EulerDirectionSequence.SEQUENCE_32.__doc__ = "32 sequence."
 
-agcls.AgTypeNameMap["EULER_DIRECTION_SEQUENCE"] = EULER_DIRECTION_SEQUENCE
+agcls.AgTypeNameMap["EulerDirectionSequence"] = EulerDirectionSequence
 
-class DIRECTION_TYPE(IntEnum):
+class DirectionType(IntEnum):
     """Direction options for aligned and constrained vectors."""
    
     EULER = 0
@@ -100,24 +100,24 @@ class DIRECTION_TYPE(IntEnum):
     XYZ = 3
     """Cartesian elements."""
 
-DIRECTION_TYPE.EULER.__doc__ = "Euler B and C angles."
-DIRECTION_TYPE.PR.__doc__ = "Pitch and Roll angles."
-DIRECTION_TYPE.RA_DEC.__doc__ = "Spherical elements: Right Ascension and Declination."
-DIRECTION_TYPE.XYZ.__doc__ = "Cartesian elements."
+DirectionType.EULER.__doc__ = "Euler B and C angles."
+DirectionType.PR.__doc__ = "Pitch and Roll angles."
+DirectionType.RA_DEC.__doc__ = "Spherical elements: Right Ascension and Declination."
+DirectionType.XYZ.__doc__ = "Cartesian elements."
 
-agcls.AgTypeNameMap["DIRECTION_TYPE"] = DIRECTION_TYPE
+agcls.AgTypeNameMap["DirectionType"] = DirectionType
 
-class PR_SEQUENCE(IntEnum):
+class PRSequence(IntEnum):
     """Pitch-Roll (PR) direction sequences."""
    
     PR = 0
     """PR sequence."""
 
-PR_SEQUENCE.PR.__doc__ = "PR sequence."
+PRSequence.PR.__doc__ = "PR sequence."
 
-agcls.AgTypeNameMap["PR_SEQUENCE"] = PR_SEQUENCE
+agcls.AgTypeNameMap["PRSequence"] = PRSequence
 
-class ORIENTATION_TYPE(IntEnum):
+class OrientationType(IntEnum):
     """Orientation methods."""
    
     AZ_EL = 0
@@ -129,14 +129,14 @@ class ORIENTATION_TYPE(IntEnum):
     YPR_ANGLES = 3
     """YPR (yaw-pitch-roll) method."""
 
-ORIENTATION_TYPE.AZ_EL.__doc__ = "AzEl (azimuth-elevation) method."
-ORIENTATION_TYPE.EULER_ANGLES.__doc__ = "Euler angles method."
-ORIENTATION_TYPE.QUATERNION.__doc__ = "Quaternion method."
-ORIENTATION_TYPE.YPR_ANGLES.__doc__ = "YPR (yaw-pitch-roll) method."
+OrientationType.AZ_EL.__doc__ = "AzEl (azimuth-elevation) method."
+OrientationType.EULER_ANGLES.__doc__ = "Euler angles method."
+OrientationType.QUATERNION.__doc__ = "Quaternion method."
+OrientationType.YPR_ANGLES.__doc__ = "YPR (yaw-pitch-roll) method."
 
-agcls.AgTypeNameMap["ORIENTATION_TYPE"] = ORIENTATION_TYPE
+agcls.AgTypeNameMap["OrientationType"] = OrientationType
 
-class AZ_EL_ABOUT_BORESIGHT(IntEnum):
+class AzElAboutBoresight(IntEnum):
     """About Boresight options for AzEl orientation method."""
    
     HOLD = 0
@@ -144,12 +144,12 @@ class AZ_EL_ABOUT_BORESIGHT(IntEnum):
     ROTATE = 1
     """Rotate: rotation about the sensor's or antenna's Z axis by the azimuth angle, followed by rotation about the new Y axis by 90 degrees minus the elevation angle."""
 
-AZ_EL_ABOUT_BORESIGHT.HOLD.__doc__ = "Hold: rotation about the Y axis followed by rotation about the new X-axis."
-AZ_EL_ABOUT_BORESIGHT.ROTATE.__doc__ = "Rotate: rotation about the sensor's or antenna's Z axis by the azimuth angle, followed by rotation about the new Y axis by 90 degrees minus the elevation angle."
+AzElAboutBoresight.HOLD.__doc__ = "Hold: rotation about the Y axis followed by rotation about the new X-axis."
+AzElAboutBoresight.ROTATE.__doc__ = "Rotate: rotation about the sensor's or antenna's Z axis by the azimuth angle, followed by rotation about the new Y axis by 90 degrees minus the elevation angle."
 
-agcls.AgTypeNameMap["AZ_EL_ABOUT_BORESIGHT"] = AZ_EL_ABOUT_BORESIGHT
+agcls.AgTypeNameMap["AzElAboutBoresight"] = AzElAboutBoresight
 
-class EULER_ORIENTATION_SEQUENCE_TYPE(IntEnum):
+class EulerOrientationSequenceType(IntEnum):
     """Euler rotation sequence options:."""
    
     SEQUENCE_121 = 0
@@ -177,22 +177,22 @@ class EULER_ORIENTATION_SEQUENCE_TYPE(IntEnum):
     SEQUENCE_323 = 11
     """323 rotation."""
 
-EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_121.__doc__ = "121 rotation."
-EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_123.__doc__ = "123 rotation."
-EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_131.__doc__ = "131 rotation."
-EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_132.__doc__ = "132 rotation."
-EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_212.__doc__ = "212 rotation."
-EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_213.__doc__ = "213 rotation."
-EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_231.__doc__ = "231 rotation."
-EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_232.__doc__ = "232 rotation."
-EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_312.__doc__ = "312 rotation."
-EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_313.__doc__ = "313 rotation."
-EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_321.__doc__ = "321 rotation."
-EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_323.__doc__ = "323 rotation."
+EulerOrientationSequenceType.SEQUENCE_121.__doc__ = "121 rotation."
+EulerOrientationSequenceType.SEQUENCE_123.__doc__ = "123 rotation."
+EulerOrientationSequenceType.SEQUENCE_131.__doc__ = "131 rotation."
+EulerOrientationSequenceType.SEQUENCE_132.__doc__ = "132 rotation."
+EulerOrientationSequenceType.SEQUENCE_212.__doc__ = "212 rotation."
+EulerOrientationSequenceType.SEQUENCE_213.__doc__ = "213 rotation."
+EulerOrientationSequenceType.SEQUENCE_231.__doc__ = "231 rotation."
+EulerOrientationSequenceType.SEQUENCE_232.__doc__ = "232 rotation."
+EulerOrientationSequenceType.SEQUENCE_312.__doc__ = "312 rotation."
+EulerOrientationSequenceType.SEQUENCE_313.__doc__ = "313 rotation."
+EulerOrientationSequenceType.SEQUENCE_321.__doc__ = "321 rotation."
+EulerOrientationSequenceType.SEQUENCE_323.__doc__ = "323 rotation."
 
-agcls.AgTypeNameMap["EULER_ORIENTATION_SEQUENCE_TYPE"] = EULER_ORIENTATION_SEQUENCE_TYPE
+agcls.AgTypeNameMap["EulerOrientationSequenceType"] = EulerOrientationSequenceType
 
-class YPR_ANGLES_SEQUENCE(IntEnum):
+class YPRAnglesSequence(IntEnum):
     """Yaw-Pitch-Roll (YPR) sequences."""
    
     PRY = 0
@@ -208,16 +208,16 @@ class YPR_ANGLES_SEQUENCE(IntEnum):
     YRP = 5
     """YRP sequence."""
 
-YPR_ANGLES_SEQUENCE.PRY.__doc__ = "PRY sequence."
-YPR_ANGLES_SEQUENCE.PYR.__doc__ = "PYR sequence."
-YPR_ANGLES_SEQUENCE.RPY.__doc__ = "RPY sequence."
-YPR_ANGLES_SEQUENCE.RYP.__doc__ = "RYP sequence."
-YPR_ANGLES_SEQUENCE.YPR.__doc__ = "YPR sequence."
-YPR_ANGLES_SEQUENCE.YRP.__doc__ = "YRP sequence."
+YPRAnglesSequence.PRY.__doc__ = "PRY sequence."
+YPRAnglesSequence.PYR.__doc__ = "PYR sequence."
+YPRAnglesSequence.RPY.__doc__ = "RPY sequence."
+YPRAnglesSequence.RYP.__doc__ = "RYP sequence."
+YPRAnglesSequence.YPR.__doc__ = "YPR sequence."
+YPRAnglesSequence.YRP.__doc__ = "YRP sequence."
 
-agcls.AgTypeNameMap["YPR_ANGLES_SEQUENCE"] = YPR_ANGLES_SEQUENCE
+agcls.AgTypeNameMap["YPRAnglesSequence"] = YPRAnglesSequence
 
-class ORBIT_STATE_TYPE(IntEnum):
+class OrbitStateType(IntEnum):
     """Coordinate types used in specifying orbit state."""
    
     CARTESIAN = 0
@@ -235,17 +235,17 @@ class ORBIT_STATE_TYPE(IntEnum):
     GEODETIC = 6
     """Geodetic coordinate type."""
 
-ORBIT_STATE_TYPE.CARTESIAN.__doc__ = "Cartesian coordinate type."
-ORBIT_STATE_TYPE.CLASSICAL.__doc__ = "Classical (Keplerian) coordinate type."
-ORBIT_STATE_TYPE.EQUINOCTIAL.__doc__ = "Equinoctial coordinate type."
-ORBIT_STATE_TYPE.DELAUNAY.__doc__ = "Delaunay variables coordinate type."
-ORBIT_STATE_TYPE.SPHERICAL.__doc__ = "Spherical coordinate type."
-ORBIT_STATE_TYPE.MIXED_SPHERICAL.__doc__ = "Mixed spherical coordinate type."
-ORBIT_STATE_TYPE.GEODETIC.__doc__ = "Geodetic coordinate type."
+OrbitStateType.CARTESIAN.__doc__ = "Cartesian coordinate type."
+OrbitStateType.CLASSICAL.__doc__ = "Classical (Keplerian) coordinate type."
+OrbitStateType.EQUINOCTIAL.__doc__ = "Equinoctial coordinate type."
+OrbitStateType.DELAUNAY.__doc__ = "Delaunay variables coordinate type."
+OrbitStateType.SPHERICAL.__doc__ = "Spherical coordinate type."
+OrbitStateType.MIXED_SPHERICAL.__doc__ = "Mixed spherical coordinate type."
+OrbitStateType.GEODETIC.__doc__ = "Geodetic coordinate type."
 
-agcls.AgTypeNameMap["ORBIT_STATE_TYPE"] = ORBIT_STATE_TYPE
+agcls.AgTypeNameMap["OrbitStateType"] = OrbitStateType
 
-class COORDINATE_SYSTEM(IntEnum):
+class CoordinateSystem(IntEnum):
     """Earth-centered coordinate systems for defining certain propagators."""
    
     UNKNOWN = -1
@@ -297,34 +297,34 @@ class COORDINATE_SYSTEM(IntEnum):
     ECLIPTIC_J2000ICRF = 24
     """EclipticJ2000ICRF: An ecliptic system that is a fixed offset of the ICRF system, found by rotating the ICRF system about its X-axis by the mean obliquity at the J2000 epoch (i.e., 84381.448 arcSecs). The ecliptic plane is the XY-plane of this system."""
 
-COORDINATE_SYSTEM.UNKNOWN.__doc__ = "Represents coordinate system not supported by the Object Model."
-COORDINATE_SYSTEM.ALIGNMENT_AT_EPOCH.__doc__ = "Alignment at Epoch: an inertial system coincident with ECF at the Coord Epoch. Often used to specify launch trajectories."
-COORDINATE_SYSTEM.B1950.__doc__ = "B1950: X points toward the mean vernal equinox and Z points along the mean rotation axis of the Earth at the beginning of the Besselian year 1950 and corresponds to 31 December 1949 22:09:07.2 or JD 2433282.423."
-COORDINATE_SYSTEM.FIXED.__doc__ = "Fixed: X is fixed at 0 deg longitude, Y is fixed at 90 deg longitude, and Z is directed toward the north pole."
-COORDINATE_SYSTEM.J2000.__doc__ = "J2000: X points toward the mean vernal equinox and Z points along the mean rotation axis of the Earth on 1 Jan 2000 at 12:00:00.00 TDB, which corresponds to JD 2451545.0 TDB."
-COORDINATE_SYSTEM.MEAN_OF_DATE.__doc__ = "Mean of Date: X points toward the mean vernal equinox and Z points along the mean rotation axis of the Earth at the Orbit Epoch."
-COORDINATE_SYSTEM.MEAN_OF_EPOCH.__doc__ = "Mean of Epoch: X points toward the mean vernal equinox and Z points along the mean rotation axis of the Earth at the Coord Epoch."
-COORDINATE_SYSTEM.TEME_OF_DATE.__doc__ = "TEME of Date: X points toward the mean vernal equinox and Z points along the true rotation axis of the Earth at the Orbit Epoch."
-COORDINATE_SYSTEM.TEME_OF_EPOCH.__doc__ = "TEME of Epoch: X points toward the mean vernal equinox and Z points along the true rotation axis of the Earth at the Coord Epoch."
-COORDINATE_SYSTEM.TRUE_OF_DATE.__doc__ = "True of Date: X points toward the true vernal equinox and Z points along the true rotation axis of the Earth at the Orbit Epoch."
-COORDINATE_SYSTEM.TRUE_OF_EPOCH.__doc__ = "True of Epoch: X points toward the true vernal equinox and Z points along the true rotation axis of the Earth at the Coord Epoch."
-COORDINATE_SYSTEM.TRUE_OF_REFERENCE_DATE.__doc__ = "True of Ref Date: A special case of True of Epoch. Instead of the Coord Epoch, this system uses a Reference Date defined in the Integration Control page of the scenario's PODS properties."
-COORDINATE_SYSTEM.ICRF.__doc__ = "ICRF: International Celestial Reference Frame."
-COORDINATE_SYSTEM.MEAN_EARTH.__doc__ = "Mean Earth."
-COORDINATE_SYSTEM.FIXED_NO_LIBRATION.__doc__ = "uses an analytic formula not modeling lunar libration."
-COORDINATE_SYSTEM.FIXED_IAU2003.__doc__ = "Fixed_IAU2003."
-COORDINATE_SYSTEM.PRINCIPAL_AXES421.__doc__ = "PrincipalAxes_421."
-COORDINATE_SYSTEM.PRINCIPAL_AXES403.__doc__ = "PrincipalAxes_403."
-COORDINATE_SYSTEM.INERTIAL.__doc__ = "Inertial."
-COORDINATE_SYSTEM.J2000_ECLIPTIC.__doc__ = "The mean ecliptic system evaluated at the J2000 epoch. The mean ecliptic plane is defined as the rotation of the J2000 XY plane about the J2000 X axis by the mean obliquity defined using FK5 IAU76 theory."
-COORDINATE_SYSTEM.TRUE_ECLIPTIC_OF_DATE.__doc__ = "The true ecliptic system, evaluated at each given time. The true ecliptic plane is defined as the rotation of the J2000 XY plane about the J2000 X axis by the true obliquity defined using FK5 IAU76 theory."
-COORDINATE_SYSTEM.PRINCIPAL_AXES430.__doc__ = "PrincipalAxes_430."
-COORDINATE_SYSTEM.TRUE_OF_DATE_ROTATING.__doc__ = "TrueOfDateRotating: Like the Fixed system, but ignores pole wander. The XY plane is the same as the XY plane of the TrueOfDate system, and the system rotates about the TrueOfDate Z-axis."
-COORDINATE_SYSTEM.ECLIPTIC_J2000ICRF.__doc__ = "EclipticJ2000ICRF: An ecliptic system that is a fixed offset of the ICRF system, found by rotating the ICRF system about its X-axis by the mean obliquity at the J2000 epoch (i.e., 84381.448 arcSecs). The ecliptic plane is the XY-plane of this system."
+CoordinateSystem.UNKNOWN.__doc__ = "Represents coordinate system not supported by the Object Model."
+CoordinateSystem.ALIGNMENT_AT_EPOCH.__doc__ = "Alignment at Epoch: an inertial system coincident with ECF at the Coord Epoch. Often used to specify launch trajectories."
+CoordinateSystem.B1950.__doc__ = "B1950: X points toward the mean vernal equinox and Z points along the mean rotation axis of the Earth at the beginning of the Besselian year 1950 and corresponds to 31 December 1949 22:09:07.2 or JD 2433282.423."
+CoordinateSystem.FIXED.__doc__ = "Fixed: X is fixed at 0 deg longitude, Y is fixed at 90 deg longitude, and Z is directed toward the north pole."
+CoordinateSystem.J2000.__doc__ = "J2000: X points toward the mean vernal equinox and Z points along the mean rotation axis of the Earth on 1 Jan 2000 at 12:00:00.00 TDB, which corresponds to JD 2451545.0 TDB."
+CoordinateSystem.MEAN_OF_DATE.__doc__ = "Mean of Date: X points toward the mean vernal equinox and Z points along the mean rotation axis of the Earth at the Orbit Epoch."
+CoordinateSystem.MEAN_OF_EPOCH.__doc__ = "Mean of Epoch: X points toward the mean vernal equinox and Z points along the mean rotation axis of the Earth at the Coord Epoch."
+CoordinateSystem.TEME_OF_DATE.__doc__ = "TEME of Date: X points toward the mean vernal equinox and Z points along the true rotation axis of the Earth at the Orbit Epoch."
+CoordinateSystem.TEME_OF_EPOCH.__doc__ = "TEME of Epoch: X points toward the mean vernal equinox and Z points along the true rotation axis of the Earth at the Coord Epoch."
+CoordinateSystem.TRUE_OF_DATE.__doc__ = "True of Date: X points toward the true vernal equinox and Z points along the true rotation axis of the Earth at the Orbit Epoch."
+CoordinateSystem.TRUE_OF_EPOCH.__doc__ = "True of Epoch: X points toward the true vernal equinox and Z points along the true rotation axis of the Earth at the Coord Epoch."
+CoordinateSystem.TRUE_OF_REFERENCE_DATE.__doc__ = "True of Ref Date: A special case of True of Epoch. Instead of the Coord Epoch, this system uses a Reference Date defined in the Integration Control page of the scenario's PODS properties."
+CoordinateSystem.ICRF.__doc__ = "ICRF: International Celestial Reference Frame."
+CoordinateSystem.MEAN_EARTH.__doc__ = "Mean Earth."
+CoordinateSystem.FIXED_NO_LIBRATION.__doc__ = "uses an analytic formula not modeling lunar libration."
+CoordinateSystem.FIXED_IAU2003.__doc__ = "Fixed_IAU2003."
+CoordinateSystem.PRINCIPAL_AXES421.__doc__ = "PrincipalAxes_421."
+CoordinateSystem.PRINCIPAL_AXES403.__doc__ = "PrincipalAxes_403."
+CoordinateSystem.INERTIAL.__doc__ = "Inertial."
+CoordinateSystem.J2000_ECLIPTIC.__doc__ = "The mean ecliptic system evaluated at the J2000 epoch. The mean ecliptic plane is defined as the rotation of the J2000 XY plane about the J2000 X axis by the mean obliquity defined using FK5 IAU76 theory."
+CoordinateSystem.TRUE_ECLIPTIC_OF_DATE.__doc__ = "The true ecliptic system, evaluated at each given time. The true ecliptic plane is defined as the rotation of the J2000 XY plane about the J2000 X axis by the true obliquity defined using FK5 IAU76 theory."
+CoordinateSystem.PRINCIPAL_AXES430.__doc__ = "PrincipalAxes_430."
+CoordinateSystem.TRUE_OF_DATE_ROTATING.__doc__ = "TrueOfDateRotating: Like the Fixed system, but ignores pole wander. The XY plane is the same as the XY plane of the TrueOfDate system, and the system rotates about the TrueOfDate Z-axis."
+CoordinateSystem.ECLIPTIC_J2000ICRF.__doc__ = "EclipticJ2000ICRF: An ecliptic system that is a fixed offset of the ICRF system, found by rotating the ICRF system about its X-axis by the mean obliquity at the J2000 epoch (i.e., 84381.448 arcSecs). The ecliptic plane is the XY-plane of this system."
 
-agcls.AgTypeNameMap["COORDINATE_SYSTEM"] = COORDINATE_SYSTEM
+agcls.AgTypeNameMap["CoordinateSystem"] = CoordinateSystem
 
-class LOG_MESSAGE_TYPE(IntEnum):
+class LogMessageType(IntEnum):
     """Log message types."""
    
     DEBUG = 0
@@ -338,15 +338,15 @@ class LOG_MESSAGE_TYPE(IntEnum):
     ALARM = 4
     """Alarm message."""
 
-LOG_MESSAGE_TYPE.DEBUG.__doc__ = "Debugging message."
-LOG_MESSAGE_TYPE.INFO.__doc__ = "Informational message."
-LOG_MESSAGE_TYPE.FORCE_INFO.__doc__ = "Informational message."
-LOG_MESSAGE_TYPE.WARNING.__doc__ = "Warning message."
-LOG_MESSAGE_TYPE.ALARM.__doc__ = "Alarm message."
+LogMessageType.DEBUG.__doc__ = "Debugging message."
+LogMessageType.INFO.__doc__ = "Informational message."
+LogMessageType.FORCE_INFO.__doc__ = "Informational message."
+LogMessageType.WARNING.__doc__ = "Warning message."
+LogMessageType.ALARM.__doc__ = "Alarm message."
 
-agcls.AgTypeNameMap["LOG_MESSAGE_TYPE"] = LOG_MESSAGE_TYPE
+agcls.AgTypeNameMap["LogMessageType"] = LogMessageType
 
-class LOG_MESSAGE_DISPLAY_ID(IntEnum):
+class LogMessageDisplayID(IntEnum):
     """Log message destination options."""
    
     ALL = -1
@@ -358,14 +358,14 @@ class LOG_MESSAGE_DISPLAY_ID(IntEnum):
     STATUS_BAR = 2
     """STK displays the message in the status bar."""
 
-LOG_MESSAGE_DISPLAY_ID.ALL.__doc__ = "STK displays the message in all the log destination."
-LOG_MESSAGE_DISPLAY_ID.DEFAULT.__doc__ = "STK displays the message in the default log destination."
-LOG_MESSAGE_DISPLAY_ID.MESSAGE_WINDOW.__doc__ = "STK displays the message in the message window."
-LOG_MESSAGE_DISPLAY_ID.STATUS_BAR.__doc__ = "STK displays the message in the status bar."
+LogMessageDisplayID.ALL.__doc__ = "STK displays the message in all the log destination."
+LogMessageDisplayID.DEFAULT.__doc__ = "STK displays the message in the default log destination."
+LogMessageDisplayID.MESSAGE_WINDOW.__doc__ = "STK displays the message in the message window."
+LogMessageDisplayID.STATUS_BAR.__doc__ = "STK displays the message in the status bar."
 
-agcls.AgTypeNameMap["LOG_MESSAGE_DISPLAY_ID"] = LOG_MESSAGE_DISPLAY_ID
+agcls.AgTypeNameMap["LogMessageDisplayID"] = LogMessageDisplayID
 
-class LINE_STYLE(IntEnum):
+class LineStyle(IntEnum):
     """Line Style."""
    
     SOLID = 0
@@ -405,28 +405,28 @@ class LINE_STYLE(IntEnum):
     S_DASH = 17
     """Specify an alternating dash-dot line."""
 
-LINE_STYLE.SOLID.__doc__ = "Specify a solid line."
-LINE_STYLE.DASHED.__doc__ = "Specify a dashed line."
-LINE_STYLE.DOTTED.__doc__ = "Specify a dotted line."
-LINE_STYLE.DOT_DASHED.__doc__ = "Dot-dashed line."
-LINE_STYLE.LONG_DASHED.__doc__ = "Specify a long dashed line."
-LINE_STYLE.DASH_DOT_DOTTED.__doc__ = "Specify an alternating dash-dot-dot line."
-LINE_STYLE.M_DASH.__doc__ = "Specify a user configurable medium dashed line."
-LINE_STYLE.L_DASH.__doc__ = "Specify a user configurable long dashed line."
-LINE_STYLE.S_DASH_DOT.__doc__ = "Specify a user configurable small dash-dotted line."
-LINE_STYLE.M_DASH_DOT.__doc__ = "Specify a user configurable medium dash-dotted line."
-LINE_STYLE.DASH_DOT.__doc__ = "Specify a user configurable long dash-dotted line."
-LINE_STYLE.MS_DASH.__doc__ = "Specify a user configurable medium followed by small dashed line."
-LINE_STYLE.LS_DASH.__doc__ = "Specify a user configurable long followed by small dashed line."
-LINE_STYLE.LM_DASH.__doc__ = "Specify a user configurable long followed by medium dashed line."
-LINE_STYLE.LMS_DASH.__doc__ = "Specify a user configurable medium followed by small dashed line."
-LINE_STYLE.DOT.__doc__ = "Specify a dotted line."
-LINE_STYLE.LONG_DASH.__doc__ = "Specify a long dashed line."
-LINE_STYLE.S_DASH.__doc__ = "Specify an alternating dash-dot line."
+LineStyle.SOLID.__doc__ = "Specify a solid line."
+LineStyle.DASHED.__doc__ = "Specify a dashed line."
+LineStyle.DOTTED.__doc__ = "Specify a dotted line."
+LineStyle.DOT_DASHED.__doc__ = "Dot-dashed line."
+LineStyle.LONG_DASHED.__doc__ = "Specify a long dashed line."
+LineStyle.DASH_DOT_DOTTED.__doc__ = "Specify an alternating dash-dot-dot line."
+LineStyle.M_DASH.__doc__ = "Specify a user configurable medium dashed line."
+LineStyle.L_DASH.__doc__ = "Specify a user configurable long dashed line."
+LineStyle.S_DASH_DOT.__doc__ = "Specify a user configurable small dash-dotted line."
+LineStyle.M_DASH_DOT.__doc__ = "Specify a user configurable medium dash-dotted line."
+LineStyle.DASH_DOT.__doc__ = "Specify a user configurable long dash-dotted line."
+LineStyle.MS_DASH.__doc__ = "Specify a user configurable medium followed by small dashed line."
+LineStyle.LS_DASH.__doc__ = "Specify a user configurable long followed by small dashed line."
+LineStyle.LM_DASH.__doc__ = "Specify a user configurable long followed by medium dashed line."
+LineStyle.LMS_DASH.__doc__ = "Specify a user configurable medium followed by small dashed line."
+LineStyle.DOT.__doc__ = "Specify a dotted line."
+LineStyle.LONG_DASH.__doc__ = "Specify a long dashed line."
+LineStyle.S_DASH.__doc__ = "Specify an alternating dash-dot line."
 
-agcls.AgTypeNameMap["LINE_STYLE"] = LINE_STYLE
+agcls.AgTypeNameMap["LineStyle"] = LineStyle
 
-class EXECUTE_MULTIPLE_COMMANDS_MODE(IntFlag):
+class ExecuteMultipleCommandsMode(IntFlag):
     """Enumeration defines a set of actions when an error occurs while executing a command batch."""
    
     CONTINUE_ON_ERROR = 0
@@ -438,14 +438,14 @@ class EXECUTE_MULTIPLE_COMMANDS_MODE(IntFlag):
     DISCARD_RESULTS = 0x8000
     """Ignore results returned by individual commands. The option must be used in combination with other flags."""
 
-EXECUTE_MULTIPLE_COMMANDS_MODE.CONTINUE_ON_ERROR.__doc__ = "Continue executing the remaining commands in the command batch."
-EXECUTE_MULTIPLE_COMMANDS_MODE.STOP_ON_ERROR.__doc__ = "Terminate the execution of the command batch but do not throw an exception."
-EXECUTE_MULTIPLE_COMMANDS_MODE.EXCEPTION_ON_ERROR.__doc__ = "Terminate the execution of the command batch and throw an exception."
-EXECUTE_MULTIPLE_COMMANDS_MODE.DISCARD_RESULTS.__doc__ = "Ignore results returned by individual commands. The option must be used in combination with other flags."
+ExecuteMultipleCommandsMode.CONTINUE_ON_ERROR.__doc__ = "Continue executing the remaining commands in the command batch."
+ExecuteMultipleCommandsMode.STOP_ON_ERROR.__doc__ = "Terminate the execution of the command batch but do not throw an exception."
+ExecuteMultipleCommandsMode.EXCEPTION_ON_ERROR.__doc__ = "Terminate the execution of the command batch and throw an exception."
+ExecuteMultipleCommandsMode.DISCARD_RESULTS.__doc__ = "Ignore results returned by individual commands. The option must be used in combination with other flags."
 
-agcls.AgTypeNameMap["EXECUTE_MULTIPLE_COMMANDS_MODE"] = EXECUTE_MULTIPLE_COMMANDS_MODE
+agcls.AgTypeNameMap["ExecuteMultipleCommandsMode"] = ExecuteMultipleCommandsMode
 
-class FILL_STYLE(IntEnum):
+class FillStyle(IntEnum):
     """Fill Style."""
    
     SOLID = 0
@@ -465,18 +465,18 @@ class FILL_STYLE(IntEnum):
     VERTICAL_STRIPE = 7
     """Specify a vertically striped fill style."""
 
-FILL_STYLE.SOLID.__doc__ = "Specify a solid fill style."
-FILL_STYLE.HORIZONTAL_STRIPE.__doc__ = "Specify a horizontally striped fill style."
-FILL_STYLE.DIAGONAL_STRIPE1.__doc__ = "Specify a diagonally striped fill style."
-FILL_STYLE.DIAGONAL_STRIPE2.__doc__ = "Specify a diagonally striped fill style."
-FILL_STYLE.HATCH.__doc__ = "Specify a hatched fill style."
-FILL_STYLE.DIAGONAL_HATCH.__doc__ = "Specify a diagonally hatched fill style."
-FILL_STYLE.SCREEN.__doc__ = "Specify a special fill style where every other pixel is drawn."
-FILL_STYLE.VERTICAL_STRIPE.__doc__ = "Specify a vertically striped fill style."
+FillStyle.SOLID.__doc__ = "Specify a solid fill style."
+FillStyle.HORIZONTAL_STRIPE.__doc__ = "Specify a horizontally striped fill style."
+FillStyle.DIAGONAL_STRIPE1.__doc__ = "Specify a diagonally striped fill style."
+FillStyle.DIAGONAL_STRIPE2.__doc__ = "Specify a diagonally striped fill style."
+FillStyle.HATCH.__doc__ = "Specify a hatched fill style."
+FillStyle.DIAGONAL_HATCH.__doc__ = "Specify a diagonally hatched fill style."
+FillStyle.SCREEN.__doc__ = "Specify a special fill style where every other pixel is drawn."
+FillStyle.VERTICAL_STRIPE.__doc__ = "Specify a vertically striped fill style."
 
-agcls.AgTypeNameMap["FILL_STYLE"] = FILL_STYLE
+agcls.AgTypeNameMap["FillStyle"] = FillStyle
 
-class PROPERTY_INFO_VALUE_TYPE(IntEnum):
+class PropertyInfoValueType(IntEnum):
     """The enumeration used to determine what type of property is being used."""
    
     INT = 0
@@ -494,15 +494,15 @@ class PROPERTY_INFO_VALUE_TYPE(IntEnum):
     INTERFACE = 6
     """Property is an interface."""
 
-PROPERTY_INFO_VALUE_TYPE.INT.__doc__ = "Property is of type int."
-PROPERTY_INFO_VALUE_TYPE.REAL.__doc__ = "Property is of type real."
-PROPERTY_INFO_VALUE_TYPE.QUANTITY.__doc__ = "Property is of type Quantity."
-PROPERTY_INFO_VALUE_TYPE.DATE.__doc__ = "Property is of type Date."
-PROPERTY_INFO_VALUE_TYPE.STRING.__doc__ = "Property is of type string."
-PROPERTY_INFO_VALUE_TYPE.BOOL.__doc__ = "Property is of type bool."
-PROPERTY_INFO_VALUE_TYPE.INTERFACE.__doc__ = "Property is an interface."
+PropertyInfoValueType.INT.__doc__ = "Property is of type int."
+PropertyInfoValueType.REAL.__doc__ = "Property is of type real."
+PropertyInfoValueType.QUANTITY.__doc__ = "Property is of type Quantity."
+PropertyInfoValueType.DATE.__doc__ = "Property is of type Date."
+PropertyInfoValueType.STRING.__doc__ = "Property is of type string."
+PropertyInfoValueType.BOOL.__doc__ = "Property is of type bool."
+PropertyInfoValueType.INTERFACE.__doc__ = "Property is an interface."
 
-agcls.AgTypeNameMap["PROPERTY_INFO_VALUE_TYPE"] = PROPERTY_INFO_VALUE_TYPE
+agcls.AgTypeNameMap["PropertyInfoValueType"] = PropertyInfoValueType
 
 
 class ILocationData(object):
@@ -581,16 +581,16 @@ class IPosition(object):
     
     _convert_to_metadata = { "offset" : _convert_to_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.EnumArg(POSITION_TYPE), agmarshall.InterfaceOutArg,) }
-    def convert_to(self, type:"POSITION_TYPE") -> "IPosition":
+            "marshallers" : (agmarshall.EnumArg(PositionType), agmarshall.InterfaceOutArg,) }
+    def convert_to(self, type:"PositionType") -> "IPosition":
         """Change the position coordinates to type specified."""
         return self._intf.invoke(IPosition._metadata, IPosition._convert_to_metadata, type, OutArg())
 
     _get_position_type_metadata = { "offset" : _get_position_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(POSITION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(PositionType),) }
     @property
-    def position_type(self) -> "POSITION_TYPE":
+    def position_type(self) -> "PositionType":
         """Get the type of position currently being used."""
         return self._intf.get_property(IPosition._metadata, IPosition._get_position_type_metadata)
 
@@ -776,16 +776,16 @@ class IDirection(object):
     
     _convert_to_metadata = { "offset" : _convert_to_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.EnumArg(DIRECTION_TYPE), agmarshall.InterfaceOutArg,) }
-    def convert_to(self, type:"DIRECTION_TYPE") -> "IDirection":
+            "marshallers" : (agmarshall.EnumArg(DirectionType), agmarshall.InterfaceOutArg,) }
+    def convert_to(self, type:"DirectionType") -> "IDirection":
         """Change the direction to the type specified."""
         return self._intf.invoke(IDirection._metadata, IDirection._convert_to_metadata, type, OutArg())
 
     _get_direction_type_metadata = { "offset" : _get_direction_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(DIRECTION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(DirectionType),) }
     @property
-    def direction_type(self) -> "DIRECTION_TYPE":
+    def direction_type(self) -> "DirectionType":
         """Return the type of direction currently being used."""
         return self._intf.get_property(IDirection._metadata, IDirection._get_direction_type_metadata)
 
@@ -798,8 +798,8 @@ class IDirection(object):
 
     _assign_euler_metadata = { "offset" : _assign_euler_method_offset,
             "arg_types" : (agcom.Variant, agcom.Variant, agcom.LONG,),
-            "marshallers" : (agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.EnumArg(EULER_DIRECTION_SEQUENCE),) }
-    def assign_euler(self, b:typing.Any, c:typing.Any, sequence:"EULER_DIRECTION_SEQUENCE") -> None:
+            "marshallers" : (agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.EnumArg(EulerDirectionSequence),) }
+    def assign_euler(self, b:typing.Any, c:typing.Any, sequence:"EulerDirectionSequence") -> None:
         """Set direction using the Euler representation. Params B and C use Angle Dimension."""
         return self._intf.invoke(IDirection._metadata, IDirection._assign_euler_metadata, b, c, sequence)
 
@@ -826,15 +826,15 @@ class IDirection(object):
 
     _query_euler_metadata = { "offset" : _query_euler_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.Variant), POINTER(agcom.Variant),),
-            "marshallers" : (agmarshall.EnumArg(EULER_DIRECTION_SEQUENCE), agmarshall.VariantArg, agmarshall.VariantArg,) }
-    def query_euler(self, sequence:"EULER_DIRECTION_SEQUENCE") -> typing.Tuple[typing.Any, typing.Any]:
+            "marshallers" : (agmarshall.EnumArg(EulerDirectionSequence), agmarshall.VariantArg, agmarshall.VariantArg,) }
+    def query_euler(self, sequence:"EulerDirectionSequence") -> typing.Tuple[typing.Any, typing.Any]:
         """Get direction using the Euler representation. Params B and C use Angle Dimension."""
         return self._intf.invoke(IDirection._metadata, IDirection._query_euler_metadata, sequence, OutArg(), OutArg())
 
     _query_pr_metadata = { "offset" : _query_pr_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.Variant), POINTER(agcom.Variant),),
-            "marshallers" : (agmarshall.EnumArg(PR_SEQUENCE), agmarshall.VariantArg, agmarshall.VariantArg,) }
-    def query_pr(self, sequence:"PR_SEQUENCE") -> typing.Tuple[typing.Any, typing.Any]:
+            "marshallers" : (agmarshall.EnumArg(PRSequence), agmarshall.VariantArg, agmarshall.VariantArg,) }
+    def query_pr(self, sequence:"PRSequence") -> typing.Tuple[typing.Any, typing.Any]:
         """Get direction using the Pitch Roll representation. Pitch and Roll use Angle Dimension."""
         return self._intf.invoke(IDirection._metadata, IDirection._query_pr_metadata, sequence, OutArg(), OutArg())
 
@@ -854,15 +854,15 @@ class IDirection(object):
 
     _query_euler_array_metadata = { "offset" : _query_euler_array_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.LPSAFEARRAY),),
-            "marshallers" : (agmarshall.EnumArg(EULER_DIRECTION_SEQUENCE), agmarshall.LPSafearrayArg,) }
-    def query_euler_array(self, sequence:"EULER_DIRECTION_SEQUENCE") -> list:
+            "marshallers" : (agmarshall.EnumArg(EulerDirectionSequence), agmarshall.LPSafearrayArg,) }
+    def query_euler_array(self, sequence:"EulerDirectionSequence") -> list:
         """Return the Euler elements in an array."""
         return self._intf.invoke(IDirection._metadata, IDirection._query_euler_array_metadata, sequence, OutArg())
 
     _query_pr_array_metadata = { "offset" : _query_pr_array_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.LPSAFEARRAY),),
-            "marshallers" : (agmarshall.EnumArg(PR_SEQUENCE), agmarshall.LPSafearrayArg,) }
-    def query_pr_array(self, sequence:"PR_SEQUENCE") -> list:
+            "marshallers" : (agmarshall.EnumArg(PRSequence), agmarshall.LPSafearrayArg,) }
+    def query_pr_array(self, sequence:"PRSequence") -> list:
         """Return the PR elements in an array."""
         return self._intf.invoke(IDirection._metadata, IDirection._query_pr_array_metadata, sequence, OutArg())
 
@@ -1034,16 +1034,16 @@ class IOrientation(object):
     
     _convert_to_metadata = { "offset" : _convert_to_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.EnumArg(ORIENTATION_TYPE), agmarshall.InterfaceOutArg,) }
-    def convert_to(self, type:"ORIENTATION_TYPE") -> "IOrientation":
+            "marshallers" : (agmarshall.EnumArg(OrientationType), agmarshall.InterfaceOutArg,) }
+    def convert_to(self, type:"OrientationType") -> "IOrientation":
         """Change the orientation method to the type specified."""
         return self._intf.invoke(IOrientation._metadata, IOrientation._convert_to_metadata, type, OutArg())
 
     _get_orientation_type_metadata = { "offset" : _get_orientation_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(ORIENTATION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(OrientationType),) }
     @property
-    def orientation_type(self) -> "ORIENTATION_TYPE":
+    def orientation_type(self) -> "OrientationType":
         """Return the orientation method currently being used."""
         return self._intf.get_property(IOrientation._metadata, IOrientation._get_orientation_type_metadata)
 
@@ -1056,15 +1056,15 @@ class IOrientation(object):
 
     _assign_az_el_metadata = { "offset" : _assign_az_el_method_offset,
             "arg_types" : (agcom.Variant, agcom.Variant, agcom.LONG,),
-            "marshallers" : (agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.EnumArg(AZ_EL_ABOUT_BORESIGHT),) }
-    def assign_az_el(self, azimuth:typing.Any, elevation:typing.Any, about_boresight:"AZ_EL_ABOUT_BORESIGHT") -> None:
+            "marshallers" : (agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.EnumArg(AzElAboutBoresight),) }
+    def assign_az_el(self, azimuth:typing.Any, elevation:typing.Any, about_boresight:"AzElAboutBoresight") -> None:
         """Set orientation using the AzEl representation."""
         return self._intf.invoke(IOrientation._metadata, IOrientation._assign_az_el_metadata, azimuth, elevation, about_boresight)
 
     _assign_euler_angles_metadata = { "offset" : _assign_euler_angles_method_offset,
             "arg_types" : (agcom.LONG, agcom.Variant, agcom.Variant, agcom.Variant,),
-            "marshallers" : (agmarshall.EnumArg(EULER_ORIENTATION_SEQUENCE_TYPE), agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.VariantArg,) }
-    def assign_euler_angles(self, sequence:"EULER_ORIENTATION_SEQUENCE_TYPE", a:typing.Any, b:typing.Any, c:typing.Any) -> None:
+            "marshallers" : (agmarshall.EnumArg(EulerOrientationSequenceType), agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.VariantArg,) }
+    def assign_euler_angles(self, sequence:"EulerOrientationSequenceType", a:typing.Any, b:typing.Any, c:typing.Any) -> None:
         """Set orientation using the Euler angles representation."""
         return self._intf.invoke(IOrientation._metadata, IOrientation._assign_euler_angles_metadata, sequence, a, b, c)
 
@@ -1077,22 +1077,22 @@ class IOrientation(object):
 
     _assign_ypr_angles_metadata = { "offset" : _assign_ypr_angles_method_offset,
             "arg_types" : (agcom.LONG, agcom.Variant, agcom.Variant, agcom.Variant,),
-            "marshallers" : (agmarshall.EnumArg(YPR_ANGLES_SEQUENCE), agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.VariantArg,) }
-    def assign_ypr_angles(self, sequence:"YPR_ANGLES_SEQUENCE", yaw:typing.Any, pitch:typing.Any, roll:typing.Any) -> None:
+            "marshallers" : (agmarshall.EnumArg(YPRAnglesSequence), agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.VariantArg,) }
+    def assign_ypr_angles(self, sequence:"YPRAnglesSequence", yaw:typing.Any, pitch:typing.Any, roll:typing.Any) -> None:
         """Set orientation using the YPR angles representation."""
         return self._intf.invoke(IOrientation._metadata, IOrientation._assign_ypr_angles_metadata, sequence, yaw, pitch, roll)
 
     _query_az_el_metadata = { "offset" : _query_az_el_method_offset,
             "arg_types" : (POINTER(agcom.Variant), POINTER(agcom.Variant), POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.EnumArg(AZ_EL_ABOUT_BORESIGHT),) }
-    def query_az_el(self) -> typing.Tuple[typing.Any, typing.Any, AZ_EL_ABOUT_BORESIGHT]:
+            "marshallers" : (agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.EnumArg(AzElAboutBoresight),) }
+    def query_az_el(self) -> typing.Tuple[typing.Any, typing.Any, AzElAboutBoresight]:
         """Get orientation using the AzEl representation."""
         return self._intf.invoke(IOrientation._metadata, IOrientation._query_az_el_metadata, OutArg(), OutArg(), OutArg())
 
     _query_euler_angles_metadata = { "offset" : _query_euler_angles_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.Variant), POINTER(agcom.Variant), POINTER(agcom.Variant),),
-            "marshallers" : (agmarshall.EnumArg(EULER_ORIENTATION_SEQUENCE_TYPE), agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.VariantArg,) }
-    def query_euler_angles(self, sequence:"EULER_ORIENTATION_SEQUENCE_TYPE") -> typing.Tuple[typing.Any, typing.Any, typing.Any]:
+            "marshallers" : (agmarshall.EnumArg(EulerOrientationSequenceType), agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.VariantArg,) }
+    def query_euler_angles(self, sequence:"EulerOrientationSequenceType") -> typing.Tuple[typing.Any, typing.Any, typing.Any]:
         """Get orientation using the Euler angles representation."""
         return self._intf.invoke(IOrientation._metadata, IOrientation._query_euler_angles_metadata, sequence, OutArg(), OutArg(), OutArg())
 
@@ -1105,8 +1105,8 @@ class IOrientation(object):
 
     _query_ypr_angles_metadata = { "offset" : _query_ypr_angles_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.Variant), POINTER(agcom.Variant), POINTER(agcom.Variant),),
-            "marshallers" : (agmarshall.EnumArg(YPR_ANGLES_SEQUENCE), agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.VariantArg,) }
-    def query_ypr_angles(self, sequence:"YPR_ANGLES_SEQUENCE") -> typing.Tuple[typing.Any, typing.Any, typing.Any]:
+            "marshallers" : (agmarshall.EnumArg(YPRAnglesSequence), agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.VariantArg,) }
+    def query_ypr_angles(self, sequence:"YPRAnglesSequence") -> typing.Tuple[typing.Any, typing.Any, typing.Any]:
         """Get orientation using the YPR angles representation."""
         return self._intf.invoke(IOrientation._metadata, IOrientation._query_ypr_angles_metadata, sequence, OutArg(), OutArg(), OutArg())
 
@@ -1119,8 +1119,8 @@ class IOrientation(object):
 
     _query_euler_angles_array_metadata = { "offset" : _query_euler_angles_array_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.LPSAFEARRAY),),
-            "marshallers" : (agmarshall.EnumArg(EULER_ORIENTATION_SEQUENCE_TYPE), agmarshall.LPSafearrayArg,) }
-    def query_euler_angles_array(self, sequence:"EULER_ORIENTATION_SEQUENCE_TYPE") -> list:
+            "marshallers" : (agmarshall.EnumArg(EulerOrientationSequenceType), agmarshall.LPSafearrayArg,) }
+    def query_euler_angles_array(self, sequence:"EulerOrientationSequenceType") -> list:
         """Return the Euler elements as an array."""
         return self._intf.invoke(IOrientation._metadata, IOrientation._query_euler_angles_array_metadata, sequence, OutArg())
 
@@ -1133,8 +1133,8 @@ class IOrientation(object):
 
     _query_ypr_angles_array_metadata = { "offset" : _query_ypr_angles_array_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.LPSAFEARRAY),),
-            "marshallers" : (agmarshall.EnumArg(YPR_ANGLES_SEQUENCE), agmarshall.LPSafearrayArg,) }
-    def query_ypr_angles_array(self, sequence:"YPR_ANGLES_SEQUENCE") -> list:
+            "marshallers" : (agmarshall.EnumArg(YPRAnglesSequence), agmarshall.LPSafearrayArg,) }
+    def query_ypr_angles_array(self, sequence:"YPRAnglesSequence") -> list:
         """Return the YPR Angles elements as an array."""
         return self._intf.invoke(IOrientation._metadata, IOrientation._query_ypr_angles_array_metadata, sequence, OutArg())
 
@@ -1207,17 +1207,17 @@ class IOrientationAzEl(IOrientation):
 
     _get_about_boresight_metadata = { "offset" : _get_about_boresight_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(AZ_EL_ABOUT_BORESIGHT),) }
+            "marshallers" : (agmarshall.EnumArg(AzElAboutBoresight),) }
     @property
-    def about_boresight(self) -> "AZ_EL_ABOUT_BORESIGHT":
+    def about_boresight(self) -> "AzElAboutBoresight":
         """Determine orientation of the X and Y axes with respect to the parent's reference frame."""
         return self._intf.get_property(IOrientationAzEl._metadata, IOrientationAzEl._get_about_boresight_metadata)
 
     _set_about_boresight_metadata = { "offset" : _set_about_boresight_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(AZ_EL_ABOUT_BORESIGHT),) }
+            "marshallers" : (agmarshall.EnumArg(AzElAboutBoresight),) }
     @about_boresight.setter
-    def about_boresight(self, about_boresight:"AZ_EL_ABOUT_BORESIGHT") -> None:
+    def about_boresight(self, about_boresight:"AzElAboutBoresight") -> None:
         return self._intf.set_property(IOrientationAzEl._metadata, IOrientationAzEl._set_about_boresight_metadata, about_boresight)
 
     _property_names[azimuth] = "azimuth"
@@ -1263,17 +1263,17 @@ class IOrientationEulerAngles(IOrientation):
     
     _get_sequence_metadata = { "offset" : _get_sequence_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(EULER_ORIENTATION_SEQUENCE_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(EulerOrientationSequenceType),) }
     @property
-    def sequence(self) -> "EULER_ORIENTATION_SEQUENCE_TYPE":
+    def sequence(self) -> "EulerOrientationSequenceType":
         """Euler rotation sequence. Must be set before A,B,C values. Otherwise the current A,B,C values will be converted to the Sequence specified."""
         return self._intf.get_property(IOrientationEulerAngles._metadata, IOrientationEulerAngles._get_sequence_metadata)
 
     _set_sequence_metadata = { "offset" : _set_sequence_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(EULER_ORIENTATION_SEQUENCE_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(EulerOrientationSequenceType),) }
     @sequence.setter
-    def sequence(self, value:"EULER_ORIENTATION_SEQUENCE_TYPE") -> None:
+    def sequence(self, value:"EulerOrientationSequenceType") -> None:
         return self._intf.set_property(IOrientationEulerAngles._metadata, IOrientationEulerAngles._set_sequence_metadata, value)
 
     _get_a_metadata = { "offset" : _get_a_method_offset,
@@ -1467,17 +1467,17 @@ class IOrientationYPRAngles(IOrientation):
     
     _get_sequence_metadata = { "offset" : _get_sequence_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(YPR_ANGLES_SEQUENCE),) }
+            "marshallers" : (agmarshall.EnumArg(YPRAnglesSequence),) }
     @property
-    def sequence(self) -> "YPR_ANGLES_SEQUENCE":
+    def sequence(self) -> "YPRAnglesSequence":
         """YPR sequence. Must be set before Yaw,Pitch,Roll values. Otherwise the current Yaw,Pitch,Roll values will be converted to the Sequence specified."""
         return self._intf.get_property(IOrientationYPRAngles._metadata, IOrientationYPRAngles._get_sequence_metadata)
 
     _set_sequence_metadata = { "offset" : _set_sequence_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(YPR_ANGLES_SEQUENCE),) }
+            "marshallers" : (agmarshall.EnumArg(YPRAnglesSequence),) }
     @sequence.setter
-    def sequence(self, sequence:"YPR_ANGLES_SEQUENCE") -> None:
+    def sequence(self, sequence:"YPRAnglesSequence") -> None:
         return self._intf.set_property(IOrientationYPRAngles._metadata, IOrientationYPRAngles._set_sequence_metadata, sequence)
 
     _get_yaw_metadata = { "offset" : _get_yaw_method_offset,
@@ -1612,16 +1612,16 @@ class IOrbitState(object):
     
     _convert_to_metadata = { "offset" : _convert_to_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.EnumArg(ORBIT_STATE_TYPE), agmarshall.InterfaceOutArg,) }
-    def convert_to(self, type:"ORBIT_STATE_TYPE") -> "IOrbitState":
+            "marshallers" : (agmarshall.EnumArg(OrbitStateType), agmarshall.InterfaceOutArg,) }
+    def convert_to(self, type:"OrbitStateType") -> "IOrbitState":
         """Change the coordinate type to the type specified."""
         return self._intf.invoke(IOrbitState._metadata, IOrbitState._convert_to_metadata, type, OutArg())
 
     _get_orbit_state_type_metadata = { "offset" : _get_orbit_state_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(ORBIT_STATE_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(OrbitStateType),) }
     @property
-    def orbit_state_type(self) -> "ORBIT_STATE_TYPE":
+    def orbit_state_type(self) -> "OrbitStateType":
         """Return the coordinate type currently being used."""
         return self._intf.get_property(IOrbitState._metadata, IOrbitState._get_orbit_state_type_metadata)
 
@@ -1634,50 +1634,50 @@ class IOrbitState(object):
 
     _assign_classical_metadata = { "offset" : _assign_classical_method_offset,
             "arg_types" : (agcom.LONG, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE,),
-            "marshallers" : (agmarshall.EnumArg(COORDINATE_SYSTEM), agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg,) }
-    def assign_classical(self, coordinate_system:"COORDINATE_SYSTEM", semi_major_axis:float, eccentricity:float, inclination:float, arg_of_perigee:float, raan:float, mean_anomaly:float) -> None:
+            "marshallers" : (agmarshall.EnumArg(CoordinateSystem), agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg,) }
+    def assign_classical(self, coordinate_system:"CoordinateSystem", semi_major_axis:float, eccentricity:float, inclination:float, arg_of_perigee:float, raan:float, mean_anomaly:float) -> None:
         """Assign a new orbit state using Classical representation."""
         return self._intf.invoke(IOrbitState._metadata, IOrbitState._assign_classical_metadata, coordinate_system, semi_major_axis, eccentricity, inclination, arg_of_perigee, raan, mean_anomaly)
 
     _assign_cartesian_metadata = { "offset" : _assign_cartesian_method_offset,
             "arg_types" : (agcom.LONG, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE,),
-            "marshallers" : (agmarshall.EnumArg(COORDINATE_SYSTEM), agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg,) }
-    def assign_cartesian(self, coordinate_system:"COORDINATE_SYSTEM", x_position:float, y_position:float, z_position:float, x_velocity:float, y_velocity:float, z_velocity:float) -> None:
+            "marshallers" : (agmarshall.EnumArg(CoordinateSystem), agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg,) }
+    def assign_cartesian(self, coordinate_system:"CoordinateSystem", x_position:float, y_position:float, z_position:float, x_velocity:float, y_velocity:float, z_velocity:float) -> None:
         """Assign a new orbit state using Cartesian representation."""
         return self._intf.invoke(IOrbitState._metadata, IOrbitState._assign_cartesian_metadata, coordinate_system, x_position, y_position, z_position, x_velocity, y_velocity, z_velocity)
 
     _assign_geodetic_metadata = { "offset" : _assign_geodetic_method_offset,
             "arg_types" : (agcom.LONG, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE,),
-            "marshallers" : (agmarshall.EnumArg(COORDINATE_SYSTEM), agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg,) }
-    def assign_geodetic(self, coordinate_system:"COORDINATE_SYSTEM", latitude:float, longitude:float, altitude:float, latitude_rate:float, longitude_rate:float, altitude_rate:float) -> None:
+            "marshallers" : (agmarshall.EnumArg(CoordinateSystem), agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg,) }
+    def assign_geodetic(self, coordinate_system:"CoordinateSystem", latitude:float, longitude:float, altitude:float, latitude_rate:float, longitude_rate:float, altitude_rate:float) -> None:
         """Assign a new orbit state using Geodetic representation."""
         return self._intf.invoke(IOrbitState._metadata, IOrbitState._assign_geodetic_metadata, coordinate_system, latitude, longitude, altitude, latitude_rate, longitude_rate, altitude_rate)
 
     _assign_equinoctial_posigrade_metadata = { "offset" : _assign_equinoctial_posigrade_method_offset,
             "arg_types" : (agcom.LONG, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE,),
-            "marshallers" : (agmarshall.EnumArg(COORDINATE_SYSTEM), agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg,) }
-    def assign_equinoctial_posigrade(self, coordinate_system:"COORDINATE_SYSTEM", semi_major_axis:float, h:float, k:float, p:float, q:float, mean_lon:float) -> None:
+            "marshallers" : (agmarshall.EnumArg(CoordinateSystem), agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg,) }
+    def assign_equinoctial_posigrade(self, coordinate_system:"CoordinateSystem", semi_major_axis:float, h:float, k:float, p:float, q:float, mean_lon:float) -> None:
         """Assign a new orbit state using Equinoctial representation."""
         return self._intf.invoke(IOrbitState._metadata, IOrbitState._assign_equinoctial_posigrade_metadata, coordinate_system, semi_major_axis, h, k, p, q, mean_lon)
 
     _assign_equinoctial_retrograde_metadata = { "offset" : _assign_equinoctial_retrograde_method_offset,
             "arg_types" : (agcom.LONG, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE,),
-            "marshallers" : (agmarshall.EnumArg(COORDINATE_SYSTEM), agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg,) }
-    def assign_equinoctial_retrograde(self, coordinate_system:"COORDINATE_SYSTEM", semi_major_axis:float, h:float, k:float, p:float, q:float, mean_lon:float) -> None:
+            "marshallers" : (agmarshall.EnumArg(CoordinateSystem), agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg,) }
+    def assign_equinoctial_retrograde(self, coordinate_system:"CoordinateSystem", semi_major_axis:float, h:float, k:float, p:float, q:float, mean_lon:float) -> None:
         """Assign a new orbit state using Equinoctial representation."""
         return self._intf.invoke(IOrbitState._metadata, IOrbitState._assign_equinoctial_retrograde_metadata, coordinate_system, semi_major_axis, h, k, p, q, mean_lon)
 
     _assign_mixed_spherical_metadata = { "offset" : _assign_mixed_spherical_method_offset,
             "arg_types" : (agcom.LONG, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE,),
-            "marshallers" : (agmarshall.EnumArg(COORDINATE_SYSTEM), agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg,) }
-    def assign_mixed_spherical(self, coordinate_system:"COORDINATE_SYSTEM", latitude:float, longitude:float, altitude:float, horizontal_flight_path_angle:float, flight_path_azimuth:float, velocity:float) -> None:
+            "marshallers" : (agmarshall.EnumArg(CoordinateSystem), agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg,) }
+    def assign_mixed_spherical(self, coordinate_system:"CoordinateSystem", latitude:float, longitude:float, altitude:float, horizontal_flight_path_angle:float, flight_path_azimuth:float, velocity:float) -> None:
         """Assign a new orbit state using Mixed Spherical representation."""
         return self._intf.invoke(IOrbitState._metadata, IOrbitState._assign_mixed_spherical_metadata, coordinate_system, latitude, longitude, altitude, horizontal_flight_path_angle, flight_path_azimuth, velocity)
 
     _assign_spherical_metadata = { "offset" : _assign_spherical_method_offset,
             "arg_types" : (agcom.LONG, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE,),
-            "marshallers" : (agmarshall.EnumArg(COORDINATE_SYSTEM), agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg,) }
-    def assign_spherical(self, coordinate_system:"COORDINATE_SYSTEM", right_ascension:float, declination:float, radius:float, horizontal_flight_path_angle:float, flight_path_azimuth:float, velocity:float) -> None:
+            "marshallers" : (agmarshall.EnumArg(CoordinateSystem), agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg,) }
+    def assign_spherical(self, coordinate_system:"CoordinateSystem", right_ascension:float, declination:float, radius:float, horizontal_flight_path_angle:float, flight_path_azimuth:float, velocity:float) -> None:
         """Assign a new orbit state using Spherical representation."""
         return self._intf.invoke(IOrbitState._metadata, IOrbitState._assign_spherical_metadata, coordinate_system, right_ascension, declination, radius, horizontal_flight_path_angle, flight_path_azimuth, velocity)
 
@@ -2395,8 +2395,8 @@ class ConversionUtility(SupportsDeleteCallback):
 
     _convert_position_array_metadata = { "offset" : _convert_position_array_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.LPSAFEARRAY), agcom.LONG, POINTER(agcom.LPSAFEARRAY),),
-            "marshallers" : (agmarshall.EnumArg(POSITION_TYPE), agmarshall.LPSafearrayArg, agmarshall.EnumArg(POSITION_TYPE), agmarshall.LPSafearrayArg,) }
-    def convert_position_array(self, position_type:"POSITION_TYPE", position_array:list, convert_to:"POSITION_TYPE") -> list:
+            "marshallers" : (agmarshall.EnumArg(PositionType), agmarshall.LPSafearrayArg, agmarshall.EnumArg(PositionType), agmarshall.LPSafearrayArg,) }
+    def convert_position_array(self, position_type:"PositionType", position_array:list, convert_to:"PositionType") -> list:
         """Convert the specified position values from a given position type to another position type."""
         return self._intf.invoke(ConversionUtility._metadata, ConversionUtility._convert_position_array_metadata, position_type, position_array, convert_to, OutArg())
 
@@ -3448,17 +3448,17 @@ class DirectionEuler(IDirection, SupportsDeleteCallback):
 
     _get_sequence_metadata = { "offset" : _get_sequence_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(EULER_DIRECTION_SEQUENCE),) }
+            "marshallers" : (agmarshall.EnumArg(EulerDirectionSequence),) }
     @property
-    def sequence(self) -> "EULER_DIRECTION_SEQUENCE":
+    def sequence(self) -> "EulerDirectionSequence":
         """Euler direction sequence.  Must be set before B,C values. Otherwise the B,C values will converted to the Sequence specified."""
         return self._intf.get_property(DirectionEuler._metadata, DirectionEuler._get_sequence_metadata)
 
     _set_sequence_metadata = { "offset" : _set_sequence_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(EULER_DIRECTION_SEQUENCE),) }
+            "marshallers" : (agmarshall.EnumArg(EulerDirectionSequence),) }
     @sequence.setter
-    def sequence(self, sequence:"EULER_DIRECTION_SEQUENCE") -> None:
+    def sequence(self, sequence:"EulerDirectionSequence") -> None:
         return self._intf.set_property(DirectionEuler._metadata, DirectionEuler._set_sequence_metadata, sequence)
 
     _property_names[b] = "b"
@@ -3534,17 +3534,17 @@ class DirectionPR(IDirection, SupportsDeleteCallback):
 
     _get_sequence_metadata = { "offset" : _get_sequence_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(PR_SEQUENCE),) }
+            "marshallers" : (agmarshall.EnumArg(PRSequence),) }
     @property
-    def sequence(self) -> "PR_SEQUENCE":
+    def sequence(self) -> "PRSequence":
         """PR direction sequence. Must be set before Pitch,Roll values. Otherwise the current Pitch,Roll values will be converted to the Sequence specified."""
         return self._intf.get_property(DirectionPR._metadata, DirectionPR._get_sequence_metadata)
 
     _set_sequence_metadata = { "offset" : _set_sequence_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(PR_SEQUENCE),) }
+            "marshallers" : (agmarshall.EnumArg(PRSequence),) }
     @sequence.setter
-    def sequence(self, sequence:"PR_SEQUENCE") -> None:
+    def sequence(self, sequence:"PRSequence") -> None:
         return self._intf.set_property(DirectionPR._metadata, DirectionPR._set_sequence_metadata, sequence)
 
     _property_names[pitch] = "pitch"
@@ -4098,9 +4098,9 @@ class PropertyInfo(SupportsDeleteCallback):
 
     _get_property_type_metadata = { "offset" : _get_property_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(PROPERTY_INFO_VALUE_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(PropertyInfoValueType),) }
     @property
-    def property_type(self) -> "PROPERTY_INFO_VALUE_TYPE":
+    def property_type(self) -> "PropertyInfoValueType":
         """Get the type of property."""
         return self._intf.get_property(PropertyInfo._metadata, PropertyInfo._get_property_type_metadata)
 

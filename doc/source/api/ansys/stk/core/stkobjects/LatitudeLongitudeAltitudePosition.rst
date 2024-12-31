@@ -9,10 +9,6 @@ LatitudeLongitudeAltitudePosition
 
 .. py:currentmodule:: LatitudeLongitudeAltitudePosition
 
-Overview
---------
-
-
 
 Import detail
 -------------

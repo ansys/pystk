@@ -83,14 +83,14 @@ Method detail
 
 
 
-.. py:method:: flip(self, axis: RASTER_FLIP_AXIS) -> None
+.. py:method:: flip(self, axis: RasterFlipAxis) -> None
     :canonical: ansys.stk.core.graphics.IRaster.flip
 
     Flips the raster along the given axis.
 
     :Parameters:
 
-    **axis** : :obj:`~RASTER_FLIP_AXIS`
+    **axis** : :obj:`~RasterFlipAxis`
 
     :Returns:
 
@@ -135,27 +135,27 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: extract_band(self, band: RASTER_BAND) -> IRaster
+.. py:method:: extract_band(self, band: RasterBand) -> IRaster
     :canonical: ansys.stk.core.graphics.IRaster.extract_band
 
     Extract the band of raster data associated with the given raster band.
 
     :Parameters:
 
-    **band** : :obj:`~RASTER_BAND`
+    **band** : :obj:`~RasterBand`
 
     :Returns:
 
         :obj:`~IRaster`
 
-.. py:method:: extract_band_from_raster_format(self, format: RASTER_FORMAT) -> IRaster
+.. py:method:: extract_band_from_raster_format(self, format: RasterFormat) -> IRaster
     :canonical: ansys.stk.core.graphics.IRaster.extract_band_from_raster_format
 
     Extract the bands of raster data associated with the given raster format.
 
     :Parameters:
 
-    **format** : :obj:`~RASTER_FORMAT`
+    **format** : :obj:`~RasterFormat`
 
     :Returns:
 

@@ -35,7 +35,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.IPointingStrategy.type
-    :type: POINTING_STRATEGY_TYPE
+    :type: PointingStrategyType
 
     Gets the pointing strategy type.
 

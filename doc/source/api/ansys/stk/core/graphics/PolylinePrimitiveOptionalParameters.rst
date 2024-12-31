@@ -22,7 +22,6 @@ Overview
               - Define a collection of TimeIntervals defined by MinimumTime and MaximumTime in Epoch Seconds, one for each point in the Polyline.
 
 
-
 Import detail
 -------------
 

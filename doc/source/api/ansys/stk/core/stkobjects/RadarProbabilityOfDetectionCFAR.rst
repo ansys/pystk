@@ -9,10 +9,6 @@ RadarProbabilityOfDetectionCFAR
 
 .. py:currentmodule:: RadarProbabilityOfDetectionCFAR
 
-Overview
---------
-
-
 
 Import detail
 -------------

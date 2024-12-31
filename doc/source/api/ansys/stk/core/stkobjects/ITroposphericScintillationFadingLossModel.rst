@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.ITroposphericScintillationFadingLossModel.type
-    :type: TROPOSPHERIC_SCINTILLATION_FADING_LOSS_MODEL_TYPE
+    :type: TroposphericScintillationFadingLossModelType
 
     Gets the TropoSpheric Scintillation Fading loss model type enumeration.
 

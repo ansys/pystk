@@ -9,10 +9,6 @@ AccessConstraint
 
 .. py:currentmodule:: AccessConstraint
 
-Overview
---------
-
-
 
 Import detail
 -------------

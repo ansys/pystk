@@ -9,10 +9,6 @@ ModulatorModelFSK
 
 .. py:currentmodule:: ModulatorModelFSK
 
-Overview
---------
-
-
 
 Import detail
 -------------

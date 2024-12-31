@@ -9,10 +9,6 @@ ModulatorModelQAM256
 
 .. py:currentmodule:: ModulatorModelQAM256
 
-Overview
---------
-
-
 
 Import detail
 -------------

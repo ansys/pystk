@@ -83,7 +83,7 @@ Property detail
 
 .. py:property:: airspeed_type
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyGlideProfile.airspeed_type
-    :type: AIRSPEED_TYPE
+    :type: AirspeedType
 
     Get the airspeed type.
 
@@ -101,7 +101,7 @@ Property detail
 
 .. py:property:: max_speed_limits
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyGlideProfile.max_speed_limits
-    :type: BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS
+    :type: BasicManeuverStrategyAirspeedPerformanceLimits
 
     Gets or sets the options of what the procedure will do if the aircraft has exceeded the maximum speed limits.
 
@@ -113,7 +113,7 @@ Property detail
 
 .. py:property:: powered_cruise_mode
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyGlideProfile.powered_cruise_mode
-    :type: BASIC_MANEUVER_STRATEGY_POWERED_CRUISE_MODE
+    :type: BasicManeuverStrategyPoweredCruiseMode
 
     Gets or sets the powered cruise mode.
 
@@ -131,7 +131,7 @@ Property detail
 
 .. py:property:: glide_speed_control_mode
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyGlideProfile.glide_speed_control_mode
-    :type: BASIC_MANEUVER_GLIDE_SPEED_CONTROL_MODE
+    :type: BasicManeuverGlideSpeedControlMode
 
     Get the glide speed control mode.
 
@@ -155,14 +155,14 @@ Method detail
 
 
 
-.. py:method:: set_airspeed(self, airspeed_type: AIRSPEED_TYPE, airspeed: float) -> None
+.. py:method:: set_airspeed(self, airspeed_type: AirspeedType, airspeed: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyGlideProfile.set_airspeed
 
     Set the airspeed and airspeed type that the aircraft will attempt to achieve and maintain if the hold initial airspeed option is not enabled.
 
     :Parameters:
 
-    **airspeed_type** : :obj:`~AIRSPEED_TYPE`
+    **airspeed_type** : :obj:`~AirspeedType`
     **airspeed** : :obj:`~float`
 
     :Returns:
@@ -178,14 +178,14 @@ Method detail
 
 
 
-.. py:method:: set_glide_speed_control_mode(self, glide_speed_mode: BASIC_MANEUVER_GLIDE_SPEED_CONTROL_MODE, control_altitude: float) -> None
+.. py:method:: set_glide_speed_control_mode(self, glide_speed_mode: BasicManeuverGlideSpeedControlMode, control_altitude: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyGlideProfile.set_glide_speed_control_mode
 
     Set the glide speed control mode and altitude.
 
     :Parameters:
 
-    **glide_speed_mode** : :obj:`~BASIC_MANEUVER_GLIDE_SPEED_CONTROL_MODE`
+    **glide_speed_mode** : :obj:`~BasicManeuverGlideSpeedControlMode`
     **control_altitude** : :obj:`~float`
 
     :Returns:

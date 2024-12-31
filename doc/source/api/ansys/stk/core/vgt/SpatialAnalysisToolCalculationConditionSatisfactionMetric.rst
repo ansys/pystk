@@ -62,25 +62,25 @@ Property detail
 
 .. py:property:: satisfaction_metric
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolCalculationConditionSatisfactionMetric.satisfaction_metric
-    :type: VOLUME_SATISFACTION_METRIC_TYPE
+    :type: VolumeSatisfactionMetricType
 
     Spatial condition satisfaction metric types.
 
 .. py:property:: accumulation_type
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolCalculationConditionSatisfactionMetric.accumulation_type
-    :type: VOLUME_SATISFACTION_ACCUMULATION_TYPE
+    :type: VolumeSatisfactionAccumulationType
 
     Spatial condition satisfaction accumulation types.
 
 .. py:property:: duration_type
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolCalculationConditionSatisfactionMetric.duration_type
-    :type: VOLUME_SATISFACTION_DURATION_TYPE
+    :type: VolumeSatisfactionDurationType
 
     Spatial condition satisfaction duration types.
 
 .. py:property:: filter
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolCalculationConditionSatisfactionMetric.filter
-    :type: VOLUME_SATISFACTION_FILTER_TYPE
+    :type: VolumeSatisfactionFilterType
 
     Spatial condition satisfaction duration types.
 

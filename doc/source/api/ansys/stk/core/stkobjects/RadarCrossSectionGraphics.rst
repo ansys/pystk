@@ -99,7 +99,7 @@ Property detail
 
 .. py:property:: polarization
     :canonical: ansys.stk.core.stkobjects.RadarCrossSectionGraphics.polarization
-    :type: RADAR_CROSS_SECTION_CONTOUR_GRAPHICS_POLARIZATION
+    :type: RadarCrossSectionContourGraphicsPolarization
 
     Gets or sets the polarization.
 
@@ -135,13 +135,13 @@ Property detail
 
 .. py:property:: line_width
     :canonical: ansys.stk.core.stkobjects.RadarCrossSectionGraphics.line_width
-    :type: LINE_WIDTH
+    :type: LineWidth
 
     Select the line width in which antenna 2D graphics display from the AgELineWidth enumeration.
 
 .. py:property:: color_method
     :canonical: ansys.stk.core.stkobjects.RadarCrossSectionGraphics.color_method
-    :type: FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD
+    :type: FigureOfMeritGraphics2DColorMethod
 
     Color method for contours (color ramp or explicit).
 

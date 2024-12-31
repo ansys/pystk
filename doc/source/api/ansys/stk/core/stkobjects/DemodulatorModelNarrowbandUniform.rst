@@ -9,10 +9,6 @@ DemodulatorModelNarrowbandUniform
 
 .. py:currentmodule:: DemodulatorModelNarrowbandUniform
 
-Overview
---------
-
-
 
 Import detail
 -------------

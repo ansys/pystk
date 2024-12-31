@@ -38,7 +38,7 @@ Property detail
 
 .. py:property:: direction
     :canonical: ansys.stk.core.stkobjects.AccessConstraintGroundTrack.direction
-    :type: CONSTRAINT_GROUND_TRACK
+    :type: ConstraintGroundTrack
 
     Ground track direction.
 

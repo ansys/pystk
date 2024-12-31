@@ -24,7 +24,6 @@ Overview
               - Return true if the specified STK object type is available.
 
 
-
 Import detail
 -------------
 
@@ -37,27 +36,27 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: is_propagator_type_available(self, propagator_type: PROPAGATOR_TYPE) -> bool
+.. py:method:: is_propagator_type_available(self, propagator_type: PropagatorType) -> bool
     :canonical: ansys.stk.core.stkobjects.AvailableFeatures.is_propagator_type_available
 
     Return true if the specified propagator is available.
 
     :Parameters:
 
-    **propagator_type** : :obj:`~PROPAGATOR_TYPE`
+    **propagator_type** : :obj:`~PropagatorType`
 
     :Returns:
 
         :obj:`~bool`
 
-.. py:method:: is_object_type_available(self, object_type: STK_OBJECT_TYPE) -> bool
+.. py:method:: is_object_type_available(self, object_type: STKObjectType) -> bool
     :canonical: ansys.stk.core.stkobjects.AvailableFeatures.is_object_type_available
 
     Return true if the specified STK object type is available.
 
     :Parameters:
 
-    **object_type** : :obj:`~STK_OBJECT_TYPE`
+    **object_type** : :obj:`~STKObjectType`
 
     :Returns:
 

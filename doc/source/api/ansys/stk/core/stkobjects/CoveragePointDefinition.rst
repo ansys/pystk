@@ -67,7 +67,7 @@ Property detail
 
 .. py:property:: point_location_method
     :canonical: ansys.stk.core.stkobjects.CoveragePointDefinition.point_location_method
-    :type: COVERAGE_POINT_LOCATION_METHOD
+    :type: CoveragePointLocationMethod
 
     Specify the location of points on the coverage grid.
 
@@ -79,7 +79,7 @@ Property detail
 
 .. py:property:: grid_class
     :canonical: ansys.stk.core.stkobjects.CoveragePointDefinition.grid_class
-    :type: COVERAGE_GRID_CLASS
+    :type: CoverageGridClass
 
     Class of object used to define grid points.
 
@@ -97,7 +97,7 @@ Property detail
 
 .. py:property:: altitude_method
     :canonical: ansys.stk.core.stkobjects.CoveragePointDefinition.altitude_method
-    :type: COVERAGE_ALTITUDE_METHOD
+    :type: CoverageAltitudeMethod
 
     Specify the height of a grid point.
 
@@ -121,7 +121,7 @@ Property detail
 
 .. py:property:: ground_altitude_method
     :canonical: ansys.stk.core.stkobjects.CoveragePointDefinition.ground_altitude_method
-    :type: COVERAGE_GROUND_ALTITUDE_METHOD
+    :type: CoverageGroundAltitudeMethod
 
     Specify the height of a grid point.
 
@@ -133,7 +133,7 @@ Property detail
 
 .. py:property:: point_altitude_method
     :canonical: ansys.stk.core.stkobjects.CoveragePointDefinition.point_altitude_method
-    :type: COVERAGE_POINT_ALTITUDE_METHOD
+    :type: CoveragePointAltitudeMethod
 
     Custom point altitude method specifies whether to use the altitude values in the point file (.*pt) or override them using the altitude at a point on terrain.
 

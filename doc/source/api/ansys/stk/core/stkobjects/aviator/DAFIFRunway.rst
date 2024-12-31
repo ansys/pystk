@@ -9,10 +9,6 @@ DAFIFRunway
 
 .. py:currentmodule:: DAFIFRunway
 
-Overview
---------
-
-
 
 Import detail
 -------------

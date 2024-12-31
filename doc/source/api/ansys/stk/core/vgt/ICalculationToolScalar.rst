@@ -62,7 +62,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.vgt.ICalculationToolScalar.type
-    :type: CALCULATION_SCALAR_TYPE
+    :type: CalculationScalarType
 
     Returns the scalar calculation type.
 

@@ -115,7 +115,7 @@ Property detail
 
 .. py:property:: target_coordinate_type
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileLambertSearchProfile.target_coordinate_type
-    :type: LAMBERT_TARGET_COORDINATE_TYPE
+    :type: LambertTargetCoordinateType
 
     Get the target coordinate type.
 
@@ -306,14 +306,14 @@ Method detail
 
 
 
-.. py:method:: set_target_coord_type(self, element_type: LAMBERT_TARGET_COORDINATE_TYPE) -> None
+.. py:method:: set_target_coord_type(self, element_type: LambertTargetCoordinateType) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileLambertSearchProfile.set_target_coord_type
 
     Select a target coordinate type.
 
     :Parameters:
 
-    **element_type** : :obj:`~LAMBERT_TARGET_COORDINATE_TYPE`
+    **element_type** : :obj:`~LambertTargetCoordinateType`
 
     :Returns:
 

@@ -75,7 +75,7 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: add(self, name: str, ref_type: COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE) -> IComponentLinkEmbedControl
+.. py:method:: add(self, name: str, ref_type: ComponentLinkEmbedControlReferenceType) -> IComponentLinkEmbedControl
     :canonical: ansys.stk.core.stkobjects.astrogator.CalculationObjectLinkEmbedControlCollection.add
 
     Add a link/embed calc object to the collection.
@@ -83,7 +83,7 @@ Method detail
     :Parameters:
 
     **name** : :obj:`~str`
-    **ref_type** : :obj:`~COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE`
+    **ref_type** : :obj:`~ComponentLinkEmbedControlReferenceType`
 
     :Returns:
 

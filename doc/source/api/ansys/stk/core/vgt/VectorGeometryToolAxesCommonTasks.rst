@@ -28,7 +28,6 @@ Overview
               - Compute and returns tabulated orientations and angular velocities of axes with respect to reference axes using specified sampling parameters.
 
 
-
 Import detail
 -------------
 
@@ -58,7 +57,7 @@ Method detail
 
         :obj:`~VectorGeometryToolAxesFixed`
 
-.. py:method:: create_topocentric_axes_euler_angles(self, origin_point: IVectorGeometryToolPoint, sequence: EULER_ORIENTATION_SEQUENCE_TYPE, a: typing.Any, b: typing.Any, c: typing.Any) -> VectorGeometryToolAxesFixed
+.. py:method:: create_topocentric_axes_euler_angles(self, origin_point: IVectorGeometryToolPoint, sequence: EulerOrientationSequenceType, a: typing.Any, b: typing.Any, c: typing.Any) -> VectorGeometryToolAxesFixed
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesCommonTasks.create_topocentric_axes_euler_angles
 
     Create non-persistent axes fixed in axes on the surface of a central body with the location specified by the origin point. The euler angles define the axes's orientation.
@@ -66,7 +65,7 @@ Method detail
     :Parameters:
 
     **origin_point** : :obj:`~IVectorGeometryToolPoint`
-    **sequence** : :obj:`~EULER_ORIENTATION_SEQUENCE_TYPE`
+    **sequence** : :obj:`~EulerOrientationSequenceType`
     **a** : :obj:`~typing.Any`
     **b** : :obj:`~typing.Any`
     **c** : :obj:`~typing.Any`

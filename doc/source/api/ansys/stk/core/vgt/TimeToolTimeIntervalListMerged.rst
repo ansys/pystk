@@ -83,7 +83,7 @@ Property detail
 
 .. py:property:: merge_operation
     :canonical: ansys.stk.core.vgt.TimeToolTimeIntervalListMerged.merge_operation
-    :type: EVENT_LIST_MERGE_OPERATION
+    :type: EventListMergeOperation
 
     The merge operation.
 

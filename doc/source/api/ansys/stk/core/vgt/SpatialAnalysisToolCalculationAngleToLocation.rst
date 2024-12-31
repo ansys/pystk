@@ -46,7 +46,7 @@ Property detail
 
 .. py:property:: angle
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolCalculationAngleToLocation.angle
-    :type: ANGLE_TO_LOCATION_TYPE
+    :type: AngleToLocationType
 
     The Volume Calc Angle Off Vector Type.
 

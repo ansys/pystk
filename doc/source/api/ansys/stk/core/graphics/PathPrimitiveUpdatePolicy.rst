@@ -9,10 +9,6 @@ PathPrimitiveUpdatePolicy
 
 .. py:currentmodule:: PathPrimitiveUpdatePolicy
 
-Overview
---------
-
-
 
 Import detail
 -------------

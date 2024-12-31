@@ -40,7 +40,6 @@ Overview
               - Interval list defined by time ordered non-overlapping intervals each explicitly specified by its start and stop times. Stop date/time is required to be at or after start for each interval.
 
 
-
 Import detail
 -------------
 
@@ -53,7 +52,7 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: create(self, name: str, description: str, type: EVENT_INTERVAL_LIST_TYPE) -> ITimeToolTimeIntervalList
+.. py:method:: create(self, name: str, description: str, type: EventIntervalListType) -> ITimeToolTimeIntervalList
     :canonical: ansys.stk.core.vgt.TimeToolTimeIntervalListFactory.create
 
     Create and register an interval list using specified name, description, and type.
@@ -62,7 +61,7 @@ Method detail
 
     **name** : :obj:`~str`
     **description** : :obj:`~str`
-    **type** : :obj:`~EVENT_INTERVAL_LIST_TYPE`
+    **type** : :obj:`~EventIntervalListType`
 
     :Returns:
 
@@ -152,14 +151,14 @@ Method detail
 
         :obj:`~ITimeToolTimeIntervalList`
 
-.. py:method:: is_type_supported(self, type: EVENT_INTERVAL_LIST_TYPE) -> bool
+.. py:method:: is_type_supported(self, type: EventIntervalListType) -> bool
     :canonical: ansys.stk.core.vgt.TimeToolTimeIntervalListFactory.is_type_supported
 
     Return whether the specified type is supported.
 
     :Parameters:
 
-    **type** : :obj:`~EVENT_INTERVAL_LIST_TYPE`
+    **type** : :obj:`~EventIntervalListType`
 
     :Returns:
 

@@ -79,7 +79,7 @@ Property detail
 
 .. py:property:: solid_tide_type
     :canonical: ansys.stk.core.stkobjects.VehicleHPOPCentralBodyGravity.solid_tide_type
-    :type: SOLID_TIDE
+    :type: SolidTide
 
     Solid Tide Type.
 

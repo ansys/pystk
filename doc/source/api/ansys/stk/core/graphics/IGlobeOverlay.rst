@@ -57,7 +57,7 @@ Property detail
 
 .. py:property:: role
     :canonical: ansys.stk.core.graphics.IGlobeOverlay.role
-    :type: OVERLAY_ROLE
+    :type: OverlayRole
 
     Gets the globe overlay role of the globe overlay.
 

@@ -64,7 +64,7 @@ Property detail
 
 .. py:property:: altitude_reference
     :canonical: ansys.stk.core.stkobjects.MTOGlobalTrackOptions.altitude_reference
-    :type: ALTITUDE_REFERENCE_TYPE
+    :type: AltitudeReferenceType
 
     Criterion used to reference the altitude. A member of the AgEAltRefType enumeration.
 

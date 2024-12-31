@@ -22,7 +22,6 @@ Overview
               - Initialize a new instance with a raster stream and the raster filter that will be applied to each update of that stream.
 
 
-
 Import detail
 -------------
 

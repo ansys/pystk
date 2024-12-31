@@ -22,7 +22,6 @@ Overview
               - Initialize a vector primitive with the specified reference frame as its source and pointing in direction dir.
 
 
-
 Import detail
 -------------
 

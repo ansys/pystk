@@ -3,10 +3,12 @@
 from datetime import datetime
 import fnmatch
 import hashlib
+import json
 import os
 import pathlib
 import shutil
 import subprocess
+import xml.etree.ElementTree as ET
 import zipfile
 
 import sphinx
@@ -64,7 +66,13 @@ html_theme_options = {
     },
 }
 html_static_path = ["_static"]
-html_css_files = ["css/highlight.css"]
+html_css_files = [
+    "css/highlight.css",
+    "css/datatables.css",
+]
+html_js_files = [
+    "js/datatables.js",
+]
 
 # Sphinx extensions
 extensions = [
@@ -78,6 +86,7 @@ extensions = [
     "numpydoc",
     "nbsphinx",
     "myst_parser",
+    "sphinxcontrib.jquery",
 ]
 
 # Intersphinx mapping
@@ -306,13 +315,15 @@ def get_file_size_in_mb(file_path):
     return file_size_bytes / (1024 * 1024)
 
 
-ARTIFACTS_PATH = pathlib.Path().parent / "_static" / "artifacts"
+STATIC_PATH = pathlib.Path(__file__).parent / "_static"
+ARTIFACTS_PATH = STATIC_PATH / "artifacts"
 ARTIFACTS_WHEEL = ARTIFACTS_PATH / f"{project.replace('-', '_')}-{version}-py3-none-any.whl"
 ARTIFACTS_SDIST = ARTIFACTS_PATH / f"{project.replace('-', '_')}-{version}.tar.gz"
 
 WHEELHOUSE_PATH = pathlib.Path().parent / "_static" / "wheelhouse"
 if not WHEELHOUSE_PATH.exists():
     linkcheck_ignore.append(r".*/wheelhouse/.*")
+
 
 jinja_globals = {
     "SUPPORTED_PYTHON_VERSIONS": ["3.11", "3.12", "3.13"],
@@ -587,6 +598,61 @@ def render_examples_as_pdf(app: sphinx.application.Sphinx, exception: Exception)
         )
 
 
+def render_migration_table(app: sphinx.application.Sphinx):
+    """Convert an XML migration table to a JSON format.
+
+    The final JSON format is as follows:
+
+    .. code-block:: json
+
+        { <old_type_name>:
+              {
+                  'new_name': <new_type_name>,
+                  'members':
+                  {
+                      <old__name>: <new__name>
+                  }
+              }
+        }
+
+    Parameters
+    ----------
+    app : sphinx.application.Sphinx
+        Sphinx application instance containing the all the doc build configuration.
+
+    """
+    MIGRATION_TABLES = STATIC_PATH / "migration-tables"
+    TABLE_FILES = [file for file in MIGRATION_TABLES.glob("*.xml") if "internal" not in file.name]
+
+    mappings = {}
+    for xml_file in status_iterator(
+        TABLE_FILES,
+        "Rendering migration table",
+        "green",
+        len(TABLE_FILES),
+        verbosity=1,
+        stringify_func=(lambda x: x.name),
+    ):
+        tree = ET.parse(xml_file)
+        root = tree.getroot()
+
+        type_categories = ["enum_type", "class", "interface"]
+        for type_category in type_categories:
+            type_mappings = root.findall(f'./Mapping[@Category="{type_category}"]')
+            for type_mapping in type_mappings:
+                type_old_name = type_mapping.get("OldName")
+                type_new_name = type_mapping.get("NewName")
+                mappings[type_old_name] = {"new_name": type_new_name, "members": {}}
+                member_mappings = root.findall(f'./Mapping[@ParentScope="{type_old_name}"]')
+                for member_mapping in member_mappings:
+                    member_old_name = member_mapping.get("OldName")
+                    member_new_name = member_mapping.get("NewName")
+                    mappings[type_old_name]["members"][member_old_name] = member_new_name
+
+        json_file = xml_file.parent / "main.json"
+        json_file.write_text(json.dumps(mappings, indent=4))
+
+
 def setup(app: sphinx.application.Sphinx):
     """
     Run different hook functions during the documentation build.
@@ -603,6 +669,8 @@ def setup(app: sphinx.application.Sphinx):
     # build has completed, no matter its success, the examples are removed from
     # the source directory.
     app.connect("builder-inited", copy_docker_files_to_static_dir)
+    app.connect("builder-inited", render_migration_table)
+
     if BUILD_EXAMPLES:
         app.connect("builder-inited", copy_examples_files_to_source_dir)
         app.connect("build-finished", remove_examples_from_source_dir)

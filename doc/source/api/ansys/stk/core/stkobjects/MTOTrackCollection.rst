@@ -260,7 +260,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add_tracks_with_position_data(self, track_ids_array: list, num_pts_per_track_array: list, datatype: MTO_INPUT_DATA_TYPE, times_array: list, x_or_lats_array: list, y_or_lons_array: list, z_or_alts_array: list) -> None
+.. py:method:: add_tracks_with_position_data(self, track_ids_array: list, num_pts_per_track_array: list, datatype: MTOInputDataType, times_array: list, x_or_lats_array: list, y_or_lons_array: list, z_or_alts_array: list) -> None
     :canonical: ansys.stk.core.stkobjects.MTOTrackCollection.add_tracks_with_position_data
 
     Add new track with the specified position data.
@@ -269,7 +269,7 @@ Method detail
 
     **track_ids_array** : :obj:`~list`
     **num_pts_per_track_array** : :obj:`~list`
-    **datatype** : :obj:`~MTO_INPUT_DATA_TYPE`
+    **datatype** : :obj:`~MTOInputDataType`
     **times_array** : :obj:`~list`
     **x_or_lats_array** : :obj:`~list`
     **y_or_lons_array** : :obj:`~list`
@@ -279,7 +279,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: extend_tracks_with_position_data(self, track_ids_array: list, num_pts_per_track_array: list, datatype: MTO_INPUT_DATA_TYPE, times_array: list, x_or_lats_array: list, y_or_lons_array: list, z_or_alts_array: list) -> None
+.. py:method:: extend_tracks_with_position_data(self, track_ids_array: list, num_pts_per_track_array: list, datatype: MTOInputDataType, times_array: list, x_or_lats_array: list, y_or_lons_array: list, z_or_alts_array: list) -> None
     :canonical: ansys.stk.core.stkobjects.MTOTrackCollection.extend_tracks_with_position_data
 
     Extend tracks with the specified position data.
@@ -288,7 +288,7 @@ Method detail
 
     **track_ids_array** : :obj:`~list`
     **num_pts_per_track_array** : :obj:`~list`
-    **datatype** : :obj:`~MTO_INPUT_DATA_TYPE`
+    **datatype** : :obj:`~MTOInputDataType`
     **times_array** : :obj:`~list`
     **x_or_lats_array** : :obj:`~list`
     **y_or_lons_array** : :obj:`~list`

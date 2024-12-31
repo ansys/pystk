@@ -30,7 +30,6 @@ Overview
               - Create an event interval collection containing intervals during which condition set is satisfied.
 
 
-
 Import detail
 -------------
 
@@ -43,7 +42,7 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: create(self, name: str, description: str, type: EVENT_INTERVAL_COLLECTION_TYPE) -> ITimeToolTimeIntervalCollection
+.. py:method:: create(self, name: str, description: str, type: EventIntervalCollectionType) -> ITimeToolTimeIntervalCollection
     :canonical: ansys.stk.core.vgt.TimeToolTimeIntervalCollectionFactory.create
 
     Create and register an event interval collection using specified name, description, and type.
@@ -52,7 +51,7 @@ Method detail
 
     **name** : :obj:`~str`
     **description** : :obj:`~str`
-    **type** : :obj:`~EVENT_INTERVAL_COLLECTION_TYPE`
+    **type** : :obj:`~EventIntervalCollectionType`
 
     :Returns:
 
@@ -86,14 +85,14 @@ Method detail
 
         :obj:`~ITimeToolTimeIntervalCollection`
 
-.. py:method:: is_type_supported(self, type: EVENT_INTERVAL_COLLECTION_TYPE) -> bool
+.. py:method:: is_type_supported(self, type: EventIntervalCollectionType) -> bool
     :canonical: ansys.stk.core.vgt.TimeToolTimeIntervalCollectionFactory.is_type_supported
 
     Return whether the specified type is supported.
 
     :Parameters:
 
-    **type** : :obj:`~EVENT_INTERVAL_COLLECTION_TYPE`
+    **type** : :obj:`~EventIntervalCollectionType`
 
     :Returns:
 

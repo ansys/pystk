@@ -9,10 +9,6 @@ CommSystemLinkSelectionCriteriaMaximumElevation
 
 .. py:currentmodule:: CommSystemLinkSelectionCriteriaMaximumElevation
 
-Overview
---------
-
-
 
 Import detail
 -------------

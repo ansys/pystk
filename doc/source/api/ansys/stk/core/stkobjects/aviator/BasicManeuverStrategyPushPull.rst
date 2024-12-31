@@ -81,13 +81,13 @@ Property detail
 
 .. py:property:: reference_frame
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPushPull.reference_frame
-    :type: BASIC_MANEUVER_REFERENCE_FRAME
+    :type: BasicManeuverReferenceFrame
 
     Gets or sets the reference frame the aircraft will use.
 
 .. py:property:: push_pull
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPushPull.push_pull
-    :type: PUSH_PULL
+    :type: PushPull
 
     Gets or sets the option to push over or pull up.
 
@@ -99,7 +99,7 @@ Property detail
 
 .. py:property:: acceleration_mode
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPushPull.acceleration_mode
-    :type: ACCELERATION_MODE
+    :type: AccelerationMode
 
     Gets or sets the option to accelerate, decelerate, or maintain the current airspeed.
 
@@ -111,7 +111,7 @@ Property detail
 
 .. py:property:: maintain_airspeed_type
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPushPull.maintain_airspeed_type
-    :type: AIRSPEED_TYPE
+    :type: AirspeedType
 
     Gets or sets the airspeed type for the maintain airspeed.
 
@@ -165,7 +165,7 @@ Property detail
 
 .. py:property:: stop_airspeed_type
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPushPull.stop_airspeed_type
-    :type: AIRSPEED_TYPE
+    :type: AirspeedType
 
     Get the airspeed type for the airspeed stopping condition.
 
@@ -229,7 +229,7 @@ Method detail
 
 
 
-.. py:method:: set_stop_airspeed(self, enable: bool, airspeed_type: AIRSPEED_TYPE, airspeed: float) -> None
+.. py:method:: set_stop_airspeed(self, enable: bool, airspeed_type: AirspeedType, airspeed: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPushPull.set_stop_airspeed
 
     Set whether to enable the airspeed stopping condition and the corresponding value.
@@ -237,7 +237,7 @@ Method detail
     :Parameters:
 
     **enable** : :obj:`~bool`
-    **airspeed_type** : :obj:`~AIRSPEED_TYPE`
+    **airspeed_type** : :obj:`~AirspeedType`
     **airspeed** : :obj:`~float`
 
     :Returns:

@@ -24,7 +24,6 @@ Overview
               - Compute a triangulation on the specified centralBody for the specified extent.
 
 
-
 Import detail
 -------------
 

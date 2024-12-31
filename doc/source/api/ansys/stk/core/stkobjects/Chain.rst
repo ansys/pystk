@@ -113,7 +113,7 @@ Property detail
 
 .. py:property:: time_period_type
     :canonical: ansys.stk.core.stkobjects.Chain.time_period_type
-    :type: CHAIN_TIME_PERIOD_TYPE
+    :type: ChainTimePeriodType
 
     Get the option used to specify the time period for the chain.
 
@@ -125,7 +125,7 @@ Property detail
 
 .. py:property:: data_save_mode
     :canonical: ansys.stk.core.stkobjects.Chain.data_save_mode
-    :type: DATA_SAVE_MODE
+    :type: DataSaveMode
 
     Specify the mode for saving or recomputing accesses.
 
@@ -191,7 +191,7 @@ Property detail
 
 .. py:property:: const_constraints_mode
     :canonical: ansys.stk.core.stkobjects.Chain.const_constraints_mode
-    :type: CHAIN_CONSTELLATION_CONSTRAINTS_MODE
+    :type: ChainConstellationConstraintsMode
 
     Constellation constraints mode, apply to strands or per instance.
 
@@ -209,7 +209,7 @@ Property detail
 
 .. py:property:: coverage_asset_mode
     :canonical: ansys.stk.core.stkobjects.Chain.coverage_asset_mode
-    :type: CHAIN_COVERAGE_ASSET_MODE
+    :type: ChainCoverageAssetMode
 
     When Computing Coverage and the Chain is used as a coverage asset, append the grid instance to the end of the chain or update the grid instance inside the chain.
 
@@ -251,14 +251,14 @@ Method detail
 
 
 
-.. py:method:: set_time_period_type(self, time_period_type: CHAIN_TIME_PERIOD_TYPE) -> None
+.. py:method:: set_time_period_type(self, time_period_type: ChainTimePeriodType) -> None
     :canonical: ansys.stk.core.stkobjects.Chain.set_time_period_type
 
     Set the option used to specify the time period.
 
     :Parameters:
 
-    **time_period_type** : :obj:`~CHAIN_TIME_PERIOD_TYPE`
+    **time_period_type** : :obj:`~ChainTimePeriodType`
 
     :Returns:
 

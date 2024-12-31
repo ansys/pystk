@@ -7,10 +7,6 @@ IOrbitDisplayData
 
 .. py:currentmodule:: IOrbitDisplayData
 
-Overview
---------
-
-
 Import detail
 -------------
 

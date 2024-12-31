@@ -42,7 +42,7 @@ Property detail
 
 .. py:property:: selected_source
     :canonical: ansys.stk.core.stkobjects.PropagatorSGP4AutoUpdate.selected_source
-    :type: VEHICLE_SGP4_AUTOMATIC_UPDATE_SOURCE_TYPE
+    :type: VehicleSGP4AutomaticUpdateSourceType
 
     Gets or sets the source type for element updates.
 

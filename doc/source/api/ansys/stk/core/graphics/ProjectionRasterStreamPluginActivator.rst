@@ -24,7 +24,6 @@ Overview
               - Get a list of available projection/raster plugins' Display Names (Programmatic Identifiers).
 
 
-
 Import detail
 -------------
 

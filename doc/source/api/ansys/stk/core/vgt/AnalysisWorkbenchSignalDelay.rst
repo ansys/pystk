@@ -9,10 +9,6 @@ AnalysisWorkbenchSignalDelay
 
 .. py:currentmodule:: AnalysisWorkbenchSignalDelay
 
-Overview
---------
-
-
 
 Import detail
 -------------

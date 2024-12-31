@@ -190,7 +190,7 @@ Property detail
 
 .. py:property:: element_type
     :canonical: ansys.stk.core.stkobjects.astrogator.ElementKeplerian.element_type
-    :type: ELEMENT
+    :type: ElementType
 
     Which type of element (osculating or mean).
 

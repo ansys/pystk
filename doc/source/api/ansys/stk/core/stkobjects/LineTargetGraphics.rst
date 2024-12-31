@@ -72,13 +72,13 @@ Property detail
 
 .. py:property:: line_width
     :canonical: ansys.stk.core.stkobjects.LineTargetGraphics.line_width
-    :type: LINE_WIDTH
+    :type: LineWidth
 
     Line width.
 
 .. py:property:: line_style
     :canonical: ansys.stk.core.stkobjects.LineTargetGraphics.line_style
-    :type: LINE_STYLE
+    :type: LineStyle
 
     Line style.
 

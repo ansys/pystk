@@ -7,10 +7,6 @@ IStation
 
 .. py:currentmodule:: IStation
 
-Overview
---------
-
-
 Import detail
 -------------
 

@@ -24,7 +24,6 @@ Overview
               - Initialize a new instance with the specified gamma.
 
 
-
 Import detail
 -------------
 

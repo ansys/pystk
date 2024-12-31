@@ -22,7 +22,6 @@ Overview
               - Initialize an agi processed terrain overlay with the provided values.
 
 
-
 Import detail
 -------------
 

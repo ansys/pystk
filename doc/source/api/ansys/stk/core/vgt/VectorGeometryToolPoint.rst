@@ -9,10 +9,6 @@ VectorGeometryToolPoint
 
 .. py:currentmodule:: VectorGeometryToolPoint
 
-Overview
---------
-
-
 
 Import detail
 -------------

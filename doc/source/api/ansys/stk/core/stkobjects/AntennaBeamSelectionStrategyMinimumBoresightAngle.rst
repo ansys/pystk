@@ -9,10 +9,6 @@ AntennaBeamSelectionStrategyMinimumBoresightAngle
 
 .. py:currentmodule:: AntennaBeamSelectionStrategyMinimumBoresightAngle
 
-Overview
---------
-
-
 
 Import detail
 -------------

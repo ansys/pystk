@@ -64,7 +64,7 @@ Property detail
 
 .. py:property:: limits_exceeded_behavior_type
     :canonical: ansys.stk.core.stkobjects.DirectionProviderObject.limits_exceeded_behavior_type
-    :type: LIMITS_EXCEEDED_BEHAVIOR_TYPE
+    :type: LimitsExceededBehaviorType
 
     Gets or sets the Limits Exceeded Behavior type.
 

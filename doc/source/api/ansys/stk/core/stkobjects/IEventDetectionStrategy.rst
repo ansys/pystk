@@ -7,10 +7,6 @@ IEventDetectionStrategy
 
 .. py:currentmodule:: IEventDetectionStrategy
 
-Overview
---------
-
-
 Import detail
 -------------
 

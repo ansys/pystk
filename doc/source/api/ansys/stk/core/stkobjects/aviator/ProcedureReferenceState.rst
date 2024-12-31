@@ -99,13 +99,13 @@ Property detail
 
 .. py:property:: performance_mode
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.performance_mode
-    :type: REFERENCE_STATE_PERFORMANCE_MODE
+    :type: ReferenceStatePerformanceMode
 
     Gets or sets the type of motion the aircraft is engaged in.
 
 .. py:property:: reference_frame
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.reference_frame
-    :type: BASIC_MANEUVER_REFERENCE_FRAME
+    :type: BasicManeuverReferenceFrame
 
     Gets or sets the reference frame the aircraft will use.
 

@@ -7,10 +7,6 @@ IDisplaySystem
 
 .. py:currentmodule:: IDisplaySystem
 
-Overview
---------
-
-
 Import detail
 -------------
 

@@ -7,10 +7,6 @@ IVehicleCoordinateAxes
 
 .. py:currentmodule:: IVehicleCoordinateAxes
 
-Overview
---------
-
-
 Import detail
 -------------
 

@@ -7,10 +7,6 @@ ISamplingMethodStrategy
 
 .. py:currentmodule:: ISamplingMethodStrategy
 
-Overview
---------
-
-
 Import detail
 -------------
 

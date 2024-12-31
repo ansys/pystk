@@ -105,7 +105,7 @@ Property detail
 
 .. py:property:: flight_mode
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureExtEphem.flight_mode
-    :type: EXT_EPHEM_FLIGHT_MODE
+    :type: ExtEphemFlightMode
 
     Get the flight mode.
 
@@ -147,13 +147,13 @@ Property detail
 
 .. py:property:: course_mode
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureExtEphem.course_mode
-    :type: EPHEM_SHIFT_ROTATE_COURSE_MODE
+    :type: EphemShiftRotateCourseMode
 
     Get the course mode.
 
 .. py:property:: altitude_mode
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureExtEphem.altitude_mode
-    :type: EPHEM_SHIFT_ROTATE_ALTITUDE_MODE
+    :type: EphemShiftRotateAltitudeMode
 
     Get the alt mode.
 

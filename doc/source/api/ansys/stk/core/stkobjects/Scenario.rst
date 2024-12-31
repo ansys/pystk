@@ -163,7 +163,7 @@ Property detail
 
 .. py:property:: aircraft_wgs84_warning
     :canonical: ansys.stk.core.stkobjects.Scenario.aircraft_wgs84_warning
-    :type: AIRCRAFT_WGS84_WARNING_TYPE
+    :type: AircraftWGS84WarningType
 
     Specify when to display the aircraft mission modeler WGS84 warning.
 

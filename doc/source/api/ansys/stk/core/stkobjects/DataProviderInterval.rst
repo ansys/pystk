@@ -30,7 +30,6 @@ Overview
               - Compute the data and returns just the indicated data elements; Input is a Times Array component, and object start and stop times. Start/Stop use DateFormat Dimension.
 
 
-
 Import detail
 -------------
 

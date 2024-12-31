@@ -9,10 +9,6 @@ PointingStrategy
 
 .. py:currentmodule:: PointingStrategy
 
-Overview
---------
-
-
 
 Import detail
 -------------

@@ -9,10 +9,6 @@ AtmosphericAbsorptionModelTIREM550
 
 .. py:currentmodule:: AtmosphericAbsorptionModelTIREM550
 
-Overview
---------
-
-
 
 Import detail
 -------------

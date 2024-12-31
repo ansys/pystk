@@ -83,13 +83,13 @@ Property detail
 
 .. py:property:: profile_mode
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHoldingRacetrack.profile_mode
-    :type: HOLDING_PROFILE_MODE
+    :type: HoldingProfileMode
 
     Gets or sets the mode defines how the aircraft will perform the holding pattern.
 
 .. py:property:: level_off_mode
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHoldingRacetrack.level_off_mode
-    :type: ALTITUDE_CONSTRAINT_MANEUVER_MODE
+    :type: AltitudeConstraintManeuverMode
 
     Gets or sets the mode for the level off maneuver.
 
@@ -125,7 +125,7 @@ Property detail
 
 .. py:property:: entry_maneuver
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHoldingRacetrack.entry_maneuver
-    :type: HOLDING_ENTRY_MANEUVER
+    :type: HoldingEntryManeuver
 
     Defines how the aircraft will enter the holding pattern.
 
@@ -137,7 +137,7 @@ Property detail
 
 .. py:property:: refuel_dump_mode
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHoldingRacetrack.refuel_dump_mode
-    :type: HOLD_REFUEL_DUMP_MODE
+    :type: HoldRefuelDumpMode
 
     Gets or sets the mode that defines when the aircraft will leave the holding pattern for a Refuel/Dump operation.
 

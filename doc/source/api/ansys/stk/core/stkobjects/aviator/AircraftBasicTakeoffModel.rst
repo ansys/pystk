@@ -73,7 +73,7 @@ Property detail
 
 .. py:property:: takeoff_speed_type
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicTakeoffModel.takeoff_speed_type
-    :type: AIRSPEED_TYPE
+    :type: AirspeedType
 
     Get the takeoff speed type.
 
@@ -91,7 +91,7 @@ Property detail
 
 .. py:property:: departure_speed_type
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicTakeoffModel.departure_speed_type
-    :type: AIRSPEED_TYPE
+    :type: AirspeedType
 
     Get the departure speed type.
 
@@ -125,14 +125,14 @@ Method detail
 
 
 
-.. py:method:: set_takeoff_speed(self, airspeed_type: AIRSPEED_TYPE, airspeed: float) -> None
+.. py:method:: set_takeoff_speed(self, airspeed_type: AirspeedType, airspeed: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicTakeoffModel.set_takeoff_speed
 
     Set the takeoff speed of the aircraft.
 
     :Parameters:
 
-    **airspeed_type** : :obj:`~AIRSPEED_TYPE`
+    **airspeed_type** : :obj:`~AirspeedType`
     **airspeed** : :obj:`~float`
 
     :Returns:
@@ -143,14 +143,14 @@ Method detail
 
 
 
-.. py:method:: set_departure_speed(self, airspeed_type: AIRSPEED_TYPE, airspeed: float) -> None
+.. py:method:: set_departure_speed(self, airspeed_type: AirspeedType, airspeed: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicTakeoffModel.set_departure_speed
 
     Set the departure speed of the aircraft.
 
     :Parameters:
 
-    **airspeed_type** : :obj:`~AIRSPEED_TYPE`
+    **airspeed_type** : :obj:`~AirspeedType`
     **airspeed** : :obj:`~float`
 
     :Returns:

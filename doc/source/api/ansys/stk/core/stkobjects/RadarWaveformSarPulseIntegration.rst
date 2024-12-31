@@ -64,7 +64,7 @@ Property detail
 
 .. py:property:: analysis_mode
     :canonical: ansys.stk.core.stkobjects.RadarWaveformSarPulseIntegration.analysis_mode
-    :type: RADAR_SAR_PULSE_INTEGRATION_ANALYSIS_MODE
+    :type: RadarSARPulseIntegrationAnalysisMode
 
     Gets or sets the analysis mode enumeration.
 

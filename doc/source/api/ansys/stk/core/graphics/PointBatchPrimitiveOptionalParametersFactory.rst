@@ -22,7 +22,6 @@ Overview
               - Initialize a default point batch primitive optional parameters object.
 
 
-
 Import detail
 -------------
 

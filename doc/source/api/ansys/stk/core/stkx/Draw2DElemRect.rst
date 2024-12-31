@@ -9,10 +9,6 @@ Draw2DElemRect
 
 .. py:currentmodule:: Draw2DElemRect
 
-Overview
---------
-
-
 
 Import detail
 -------------

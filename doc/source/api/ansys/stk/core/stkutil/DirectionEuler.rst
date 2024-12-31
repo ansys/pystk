@@ -54,7 +54,7 @@ Property detail
 
 .. py:property:: sequence
     :canonical: ansys.stk.core.stkutil.DirectionEuler.sequence
-    :type: EULER_DIRECTION_SEQUENCE
+    :type: EulerDirectionSequence
 
     Euler direction sequence.  Must be set before B,C values. Otherwise the B,C values will converted to the Sequence specified.
 

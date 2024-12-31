@@ -9,10 +9,6 @@ EventDetectionNoSubSampling
 
 .. py:currentmodule:: EventDetectionNoSubSampling
 
-Overview
---------
-
-
 
 Import detail
 -------------

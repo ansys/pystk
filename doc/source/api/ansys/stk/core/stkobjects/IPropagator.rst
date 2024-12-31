@@ -7,10 +7,6 @@ IPropagator
 
 .. py:currentmodule:: IPropagator
 
-Overview
---------
-
-
 Import detail
 -------------
 

@@ -65,13 +65,13 @@ Property detail
 
 .. py:property:: mode
     :canonical: ansys.stk.core.stkobjects.aviator.AerodynamicPropulsionManeuverModeHelper.mode
-    :type: ACCELERATION_MANEUVER_AERODYNAMIC_PROPULSION_MODE
+    :type: AccelerationManeuverAerodynamicPropulsionMode
 
     Gets or sets the calculation mode for the Aero/Prop maneuver mode helper.
 
 .. py:property:: flight_mode
     :canonical: ansys.stk.core.stkobjects.aviator.AerodynamicPropulsionManeuverModeHelper.flight_mode
-    :type: AERODYNAMIC_PROPULSION_FLIGHT_MODE
+    :type: AerodynamicPropulsionFlightMode
 
     Gets or sets the performance flight mode.
 
@@ -101,7 +101,7 @@ Property detail
 
 .. py:property:: reference_airspeed_type
     :canonical: ansys.stk.core.stkobjects.aviator.AerodynamicPropulsionManeuverModeHelper.reference_airspeed_type
-    :type: AIRSPEED_TYPE
+    :type: AirspeedType
 
     Get the reference airspeed type.
 
@@ -145,14 +145,14 @@ Method detail
 
 
 
-.. py:method:: set_reference_airspeed(self, airspeed_type: AIRSPEED_TYPE, airspeed: float) -> None
+.. py:method:: set_reference_airspeed(self, airspeed_type: AirspeedType, airspeed: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.AerodynamicPropulsionManeuverModeHelper.set_reference_airspeed
 
     Set the reference airspeed and reference airspeed type.
 
     :Parameters:
 
-    **airspeed_type** : :obj:`~AIRSPEED_TYPE`
+    **airspeed_type** : :obj:`~AirspeedType`
     **airspeed** : :obj:`~float`
 
     :Returns:

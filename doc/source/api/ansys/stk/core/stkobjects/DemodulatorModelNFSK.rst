@@ -9,10 +9,6 @@ DemodulatorModelNFSK
 
 .. py:currentmodule:: DemodulatorModelNFSK
 
-Overview
---------
-
-
 
 Import detail
 -------------

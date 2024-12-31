@@ -7,10 +7,6 @@ ISiteUnknown
 
 .. py:currentmodule:: ISiteUnknown
 
-Overview
---------
-
-
 Import detail
 -------------
 

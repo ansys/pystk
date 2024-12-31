@@ -7,10 +7,6 @@ IFlightPathAngle
 
 .. py:currentmodule:: IFlightPathAngle
 
-Overview
---------
-
-
 Import detail
 -------------
 

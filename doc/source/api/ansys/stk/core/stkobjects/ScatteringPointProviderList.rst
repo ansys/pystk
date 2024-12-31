@@ -48,7 +48,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.ScatteringPointProviderList.type
-    :type: SCATTERING_POINT_PROVIDER_LIST_TYPE
+    :type: ScatteringPointProviderListType
 
     Gets the scattering point provider list type enumeration.
 

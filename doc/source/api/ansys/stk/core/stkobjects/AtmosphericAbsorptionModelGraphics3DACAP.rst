@@ -76,7 +76,7 @@ Property detail
 
 .. py:property:: coefficient_data_type
     :canonical: ansys.stk.core.stkobjects.AtmosphericAbsorptionModelGraphics3DACAP.coefficient_data_type
-    :type: GRAPHICS_3D_ACAP_COEFFICIENT_DATA_TYPE
+    :type: Graphics3DACAPCoefficientDataType
 
     Gets or sets the coefficient data type.
 
@@ -88,7 +88,7 @@ Property detail
 
 .. py:property:: solar_activity_configuration_type
     :canonical: ansys.stk.core.stkobjects.AtmosphericAbsorptionModelGraphics3DACAP.solar_activity_configuration_type
-    :type: GRAPHICS_3D_ACAP_SOLAR_ACTIVITY_CONFIGURATION_TYPE
+    :type: Graphics3DACAPSolarActivityConfigurationType
 
     Gets or sets the solar activity configuration enumeration.
 

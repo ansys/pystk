@@ -72,7 +72,7 @@ Property detail
 
 .. py:property:: gltf_reflection_map_type
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DModelTrajectory.gltf_reflection_map_type
-    :type: MODEL_GLTF_REFLECTION_MAP_TYPE
+    :type: ModelGltfReflectionMapType
 
     Gets or sets the glTF reflection map type property. A member of the AgEModelGltfReflectionMapType enumeration.
 

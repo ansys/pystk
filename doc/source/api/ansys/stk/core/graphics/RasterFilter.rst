@@ -9,10 +9,6 @@ RasterFilter
 
 .. py:currentmodule:: RasterFilter
 
-Overview
---------
-
-
 
 Import detail
 -------------

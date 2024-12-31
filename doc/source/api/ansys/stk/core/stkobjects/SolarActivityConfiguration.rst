@@ -9,10 +9,6 @@ SolarActivityConfiguration
 
 .. py:currentmodule:: SolarActivityConfiguration
 
-Overview
---------
-
-
 
 Import detail
 -------------

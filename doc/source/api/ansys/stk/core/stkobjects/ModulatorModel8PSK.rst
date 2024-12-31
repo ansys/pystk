@@ -9,10 +9,6 @@ ModulatorModel8PSK
 
 .. py:currentmodule:: ModulatorModel8PSK
 
-Overview
---------
-
-
 
 Import detail
 -------------

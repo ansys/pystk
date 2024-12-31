@@ -9,10 +9,6 @@ RadarModeBistaticTransmitter
 
 .. py:currentmodule:: RadarModeBistaticTransmitter
 
-Overview
---------
-
-
 
 Import detail
 -------------

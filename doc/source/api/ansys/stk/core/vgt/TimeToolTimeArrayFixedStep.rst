@@ -64,7 +64,7 @@ Property detail
 
 .. py:property:: reference_type
     :canonical: ansys.stk.core.vgt.TimeToolTimeArrayFixedStep.reference_type
-    :type: SAMPLE_REFERENCE_TIME_TYPE
+    :type: SampleReferenceTimeType
 
     Specify the time reference from which fixed sampling time steps are taken. Note: selecting Start/Stop of each Interval resets the time reference for each interval, whereas other types maintain single reference for entire array.
 

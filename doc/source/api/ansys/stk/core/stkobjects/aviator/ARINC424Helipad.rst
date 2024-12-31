@@ -9,10 +9,6 @@ ARINC424Helipad
 
 .. py:currentmodule:: ARINC424Helipad
 
-Overview
---------
-
-
 
 Import detail
 -------------

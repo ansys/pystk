@@ -9,10 +9,6 @@ DirectionProvider
 
 .. py:currentmodule:: DirectionProvider
 
-Overview
---------
-
-
 
 Import detail
 -------------

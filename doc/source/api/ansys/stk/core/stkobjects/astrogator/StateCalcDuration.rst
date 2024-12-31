@@ -9,10 +9,6 @@ StateCalcDuration
 
 .. py:currentmodule:: StateCalcDuration
 
-Overview
---------
-
-
 
 Import detail
 -------------

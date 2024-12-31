@@ -24,7 +24,6 @@ Overview
               - Return true if the specified system type is supported.
 
 
-
 Import detail
 -------------
 
@@ -37,7 +36,7 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: create(self, system_name: str, description: str, system_type: SYSTEM_TYPE) -> IVectorGeometryToolSystem
+.. py:method:: create(self, system_name: str, description: str, system_type: SystemType) -> IVectorGeometryToolSystem
     :canonical: ansys.stk.core.vgt.VectorGeometryToolSystemFactory.create
 
     Create a VGT system using the specified name, description and type.
@@ -46,20 +45,20 @@ Method detail
 
     **system_name** : :obj:`~str`
     **description** : :obj:`~str`
-    **system_type** : :obj:`~SYSTEM_TYPE`
+    **system_type** : :obj:`~SystemType`
 
     :Returns:
 
         :obj:`~IVectorGeometryToolSystem`
 
-.. py:method:: is_type_supported(self, type: SYSTEM_TYPE) -> bool
+.. py:method:: is_type_supported(self, type: SystemType) -> bool
     :canonical: ansys.stk.core.vgt.VectorGeometryToolSystemFactory.is_type_supported
 
     Return true if the specified system type is supported.
 
     :Parameters:
 
-    **type** : :obj:`~SYSTEM_TYPE`
+    **type** : :obj:`~SystemType`
 
     :Returns:
 

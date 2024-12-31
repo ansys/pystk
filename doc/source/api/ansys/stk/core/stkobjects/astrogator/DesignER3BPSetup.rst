@@ -155,7 +155,7 @@ Property detail
 
 .. py:property:: rotating_system_choice
     :canonical: ansys.stk.core.stkobjects.astrogator.DesignER3BPSetup.rotating_system_choice
-    :type: ROTATING_COORDINATE_SYSTEM
+    :type: RotatingCoordinateSystem
 
     Get the rotating coordinate system and associated calculation objects to interact with.
 

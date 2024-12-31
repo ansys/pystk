@@ -9,10 +9,6 @@ Subset
 
 .. py:currentmodule:: Subset
 
-Overview
---------
-
-
 
 Import detail
 -------------

@@ -9,10 +9,6 @@ AgCROrientationOffsetCart
 
 .. py:currentmodule:: AgCROrientationOffsetCart
 
-Overview
---------
-
-
 
 Import detail
 -------------

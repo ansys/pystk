@@ -49,7 +49,7 @@ class Event(TimelineCodeSnippetsTestBase):
 
         # create a satellite with no ephem and find that there's no ocurrence of PassIntervals.First.Start
         noEphemObj: "IStkObject" = stkRoot.current_scenario.children.new(
-            STK_OBJECT_TYPE.SATELLITE, "NoEphem_FindOccurenceTest"
+            STKObjectType.SATELLITE, "NoEphem_FindOccurenceTest"
         )
         provider2: "AnalysisWorkbenchComponentProvider" = noEphemObj.analysis_workbench_components
         timeEvent2: "ITimeToolInstant" = provider2.time_instants["EphemerisStartTime"]
@@ -128,9 +128,9 @@ class Event(TimelineCodeSnippetsTestBase):
         asSignaled.base_clock_location = satelliteVgtProvider.points["Center"]
         asSignaled.target_clock_location = aircraftVgtProvider.points["Center"]
 
-        asSignaled.signal_sense = SIGNAL_DIRECTION_TYPE.TRANSMIT
+        asSignaled.signal_sense = SignalDirectionType.TRANSMIT
         basicSignalDelay: "TimeToolSignalDelayBasic" = clr.CastAs(asSignaled.signal_delay, TimeToolSignalDelayBasic)
-        basicSignalDelay.speed_option = SPEED_TYPE.CUSTOM_TRANSMISSION_SPEED
+        basicSignalDelay.speed_option = SpeedType.CUSTOM_TRANSMISSION_SPEED
 
         # Uses current Time unit preference, this code snippet assumes seconds.
         basicSignalDelay.time_delay_convergence = 0.002
@@ -177,7 +177,7 @@ class Event(TimelineCodeSnippetsTestBase):
 
         # For instance, time at highest altitude
         asExtremum.calculation_scalar = provider.calculation_scalars["GroundTrajectory.Detic.LLA.Altitude"]
-        asExtremum.extremum_type = EXTREMUM_TYPE.MAXIMUM
+        asExtremum.extremum_type = ExtremumType.MAXIMUM
 
         occurrence: "TimeToolInstantOccurrenceResult" = timeEvent.find_occurrence()
         if occurrence.is_valid:

@@ -50,7 +50,7 @@ Property detail
 
 .. py:property:: input_type
     :canonical: ansys.stk.core.stkobjects.AntennaModelParabolic.input_type
-    :type: ANTENNA_MODEL_INPUT_TYPE
+    :type: AntennaModelInputType
 
     Gets or sets the input type.
 

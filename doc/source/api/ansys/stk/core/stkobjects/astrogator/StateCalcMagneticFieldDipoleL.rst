@@ -9,10 +9,6 @@ StateCalcMagneticFieldDipoleL
 
 .. py:currentmodule:: StateCalcMagneticFieldDipoleL
 
-Overview
---------
-
-
 
 Import detail
 -------------

@@ -40,7 +40,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.vgt.CalculationToolInterpolatorBasic.type
-    :type: INTERPOLATON_METHOD_TYPE
+    :type: InterpolationMethodType
 
     Get the interpolation type, which can be Lagrange or Hermite interpolation. See STK help on interpolation for further details.
 

@@ -130,14 +130,14 @@ Method detail
 
 
 
-.. py:method:: set_polarization_type(self, value: POLARIZATION_TYPE) -> None
+.. py:method:: set_polarization_type(self, value: PolarizationType) -> None
     :canonical: ansys.stk.core.stkobjects.IAntennaBeam.set_polarization_type
 
     Set the current polarization type.
 
     :Parameters:
 
-    **value** : :obj:`~POLARIZATION_TYPE`
+    **value** : :obj:`~PolarizationType`
 
     :Returns:
 

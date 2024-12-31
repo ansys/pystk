@@ -9,10 +9,6 @@ StateCalcSEETVehTemp
 
 .. py:currentmodule:: StateCalcSEETVehTemp
 
-Overview
---------
-
-
 
 Import detail
 -------------

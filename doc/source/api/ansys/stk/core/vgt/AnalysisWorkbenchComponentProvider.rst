@@ -223,14 +223,14 @@ Method detail
 
 
 
-.. py:method:: supports(self, feature: VECTOR_GEOMETRY_TOOL_COMPONENT_TYPE) -> bool
+.. py:method:: supports(self, feature: VectorGeometryToolComponentType) -> bool
     :canonical: ansys.stk.core.vgt.AnalysisWorkbenchComponentProvider.supports
 
     Test whether the specified VGT feature is supported.
 
     :Parameters:
 
-    **feature** : :obj:`~VECTOR_GEOMETRY_TOOL_COMPONENT_TYPE`
+    **feature** : :obj:`~VectorGeometryToolComponentType`
 
     :Returns:
 

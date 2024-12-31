@@ -29,16 +29,16 @@ class EarlyBoundTests(TestBase):
             TestBase.LoadTestScenario(Path.Combine("CommSystemTests", "CommSystemTests.sc"))
 
             EarlyBoundTests.oCommSystem = TestBase.Application.current_scenario.children.new(
-                STK_OBJECT_TYPE.COMM_SYSTEM, EarlyBoundTests.COMMSYSTEM_NAME
+                STKObjectType.COMM_SYSTEM, EarlyBoundTests.COMMSYSTEM_NAME
             )
             EarlyBoundTests.commSystem = clr.CastAs(EarlyBoundTests.oCommSystem, CommSystem)
 
             # Set up objects needed for Interference, Transmitters, and Receivers tests.
             oTrans1: "IStkObject" = TestBase.Application.current_scenario.children["Satellite1"].children.new(
-                STK_OBJECT_TYPE.TRANSMITTER, "Transmitter1"
+                STKObjectType.TRANSMITTER, "Transmitter1"
             )
             oRec1: "IStkObject" = TestBase.Application.current_scenario.children["Satellite1"].children.new(
-                STK_OBJECT_TYPE.RECEIVER, "Receiver1"
+                STKObjectType.RECEIVER, "Receiver1"
             )
             const1: "Constellation" = clr.CastAs(
                 TestBase.Application.current_scenario.children["Constellation1"], Constellation
@@ -47,13 +47,13 @@ class EarlyBoundTests(TestBase):
             const1.objects.add_object(oRec1)
 
             oTrans2: "IStkObject" = TestBase.Application.current_scenario.children["Facility1"].children.new(
-                STK_OBJECT_TYPE.TRANSMITTER, "Transmitter2"
+                STKObjectType.TRANSMITTER, "Transmitter2"
             )
             oRec2: "IStkObject" = TestBase.Application.current_scenario.children["Facility1"].children.new(
-                STK_OBJECT_TYPE.RECEIVER, "Receiver2"
+                STKObjectType.RECEIVER, "Receiver2"
             )
             const2: "Constellation" = clr.CastAs(
-                TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.CONSTELLATION, "Constellation2"),
+                TestBase.Application.current_scenario.children.new(STKObjectType.CONSTELLATION, "Constellation2"),
                 Constellation,
             )
             const2.objects.add_object(oTrans2)
@@ -80,10 +80,10 @@ class EarlyBoundTests(TestBase):
     @staticmethod
     def tearDownClass():
         if TestBase.Application.current_scenario.children.contains(
-            STK_OBJECT_TYPE.COMM_SYSTEM, EarlyBoundTests.COMMSYSTEM_NAME
+            STKObjectType.COMM_SYSTEM, EarlyBoundTests.COMMSYSTEM_NAME
         ):
             TestBase.Application.current_scenario.children.unload(
-                STK_OBJECT_TYPE.COMM_SYSTEM, EarlyBoundTests.COMMSYSTEM_NAME
+                STKObjectType.COMM_SYSTEM, EarlyBoundTests.COMMSYSTEM_NAME
             )
 
         EarlyBoundTests.oCommSystem = None
@@ -114,14 +114,14 @@ class EarlyBoundTests(TestBase):
         Assert.assertFalse(EarlyBoundTests.commSystem.calculate_interference)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-            EarlyBoundTests.commSystem.reference_bandwidth = COMM_SYSTEM_REFERENCE_BANDWIDTH.BANDWIDTH_10_MHZ
+            EarlyBoundTests.commSystem.reference_bandwidth = CommSystemReferenceBandwidth.BANDWIDTH_10_MHZ
 
         EarlyBoundTests.commSystem.calculate_interference = True
         Assert.assertTrue(EarlyBoundTests.commSystem.calculate_interference)
 
-        refBandwidth: "COMM_SYSTEM_REFERENCE_BANDWIDTH"
+        refBandwidth: "CommSystemReferenceBandwidth"
 
-        for refBandwidth in Enum.GetValues(clr.TypeOf(COMM_SYSTEM_REFERENCE_BANDWIDTH)):
+        for refBandwidth in Enum.GetValues(clr.TypeOf(CommSystemReferenceBandwidth)):
             EarlyBoundTests.commSystem.reference_bandwidth = refBandwidth
             Assert.assertEqual(refBandwidth, EarlyBoundTests.commSystem.reference_bandwidth)
 
@@ -132,28 +132,24 @@ class EarlyBoundTests(TestBase):
 
     # region LinkDefinition
     def test_LinkDefinition(self):
-        EarlyBoundTests.commSystem.constraining_role = COMM_SYSTEM_CONSTRAINING_ROLE.RECEIVE
-        Assert.assertEqual(COMM_SYSTEM_CONSTRAINING_ROLE.RECEIVE, EarlyBoundTests.commSystem.constraining_role)
-        EarlyBoundTests.commSystem.constraining_role = COMM_SYSTEM_CONSTRAINING_ROLE.TRANSMIT
-        Assert.assertEqual(COMM_SYSTEM_CONSTRAINING_ROLE.TRANSMIT, EarlyBoundTests.commSystem.constraining_role)
+        EarlyBoundTests.commSystem.constraining_role = CommSystemConstrainingRole.RECEIVE
+        Assert.assertEqual(CommSystemConstrainingRole.RECEIVE, EarlyBoundTests.commSystem.constraining_role)
+        EarlyBoundTests.commSystem.constraining_role = CommSystemConstrainingRole.TRANSMIT
+        Assert.assertEqual(CommSystemConstrainingRole.TRANSMIT, EarlyBoundTests.commSystem.constraining_role)
 
         EarlyBoundTests.commSystem.set_link_selection_criteria_type(
-            COMM_SYSTEM_LINK_SELECTION_CRITERIA_TYPE.MAXIMUM_ELEVATION
+            CommSystemLinkSelectionCriteriaType.MAXIMUM_ELEVATION
         )
         lsc: "ICommSystemLinkSelectionCriteria" = EarlyBoundTests.commSystem.link_selection_criteria
-        Assert.assertEqual(COMM_SYSTEM_LINK_SELECTION_CRITERIA_TYPE.MAXIMUM_ELEVATION, lsc.type)
+        Assert.assertEqual(CommSystemLinkSelectionCriteriaType.MAXIMUM_ELEVATION, lsc.type)
 
-        EarlyBoundTests.commSystem.set_link_selection_criteria_type(
-            COMM_SYSTEM_LINK_SELECTION_CRITERIA_TYPE.MINIMUM_RANGE
-        )
+        EarlyBoundTests.commSystem.set_link_selection_criteria_type(CommSystemLinkSelectionCriteriaType.MINIMUM_RANGE)
         lsc = EarlyBoundTests.commSystem.link_selection_criteria
-        Assert.assertEqual(COMM_SYSTEM_LINK_SELECTION_CRITERIA_TYPE.MINIMUM_RANGE, lsc.type)
+        Assert.assertEqual(CommSystemLinkSelectionCriteriaType.MINIMUM_RANGE, lsc.type)
 
-        EarlyBoundTests.commSystem.set_link_selection_criteria_type(
-            COMM_SYSTEM_LINK_SELECTION_CRITERIA_TYPE.SCRIPT_PLUGIN
-        )
+        EarlyBoundTests.commSystem.set_link_selection_criteria_type(CommSystemLinkSelectionCriteriaType.SCRIPT_PLUGIN)
         lsc = EarlyBoundTests.commSystem.link_selection_criteria
-        Assert.assertEqual(COMM_SYSTEM_LINK_SELECTION_CRITERIA_TYPE.SCRIPT_PLUGIN, lsc.type)
+        Assert.assertEqual(CommSystemLinkSelectionCriteriaType.SCRIPT_PLUGIN, lsc.type)
         if not OSHelper.IsLinux():
             # script plugins do not work on linux
             scriptPlugin: "CommSystemLinkSelectionCriteriaScriptPlugin" = clr.CastAs(
@@ -167,9 +163,7 @@ class EarlyBoundTests(TestBase):
             Assert.assertEqual(r"CommRad\VB_CommSysSatSelStrat.vbs", scriptPlugin.filename)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
-            EarlyBoundTests.commSystem.set_link_selection_criteria_type(
-                COMM_SYSTEM_LINK_SELECTION_CRITERIA_TYPE.UNKNOWN
-            )
+            EarlyBoundTests.commSystem.set_link_selection_criteria_type(CommSystemLinkSelectionCriteriaType.UNKNOWN)
 
     # endregion
 
@@ -210,19 +204,19 @@ class EarlyBoundTests(TestBase):
         subSample: "CommSystemAccessEventDetectionSubsample" = None
 
         with pytest.raises(Exception, match=RegexSubstringMatch("Unrecognized")):
-            accessOptions.event_detection_type = COMM_SYSTEM_ACCESS_EVENT_DETECTION_TYPE.UNKNOWN
+            accessOptions.event_detection_type = CommSystemAccessEventDetectionType.UNKNOWN
 
-        accessOptions.event_detection_type = COMM_SYSTEM_ACCESS_EVENT_DETECTION_TYPE.SAMPLES_ONLY
-        Assert.assertEqual(COMM_SYSTEM_ACCESS_EVENT_DETECTION_TYPE.SAMPLES_ONLY, accessOptions.event_detection_type)
-
-        aet = accessOptions.event_detection
-        Assert.assertEqual(COMM_SYSTEM_ACCESS_EVENT_DETECTION_TYPE.SAMPLES_ONLY, accessOptions.event_detection.type)
-
-        accessOptions.event_detection_type = COMM_SYSTEM_ACCESS_EVENT_DETECTION_TYPE.SUB_SAMPLE
-        Assert.assertEqual(COMM_SYSTEM_ACCESS_EVENT_DETECTION_TYPE.SUB_SAMPLE, accessOptions.event_detection_type)
+        accessOptions.event_detection_type = CommSystemAccessEventDetectionType.SAMPLES_ONLY
+        Assert.assertEqual(CommSystemAccessEventDetectionType.SAMPLES_ONLY, accessOptions.event_detection_type)
 
         aet = accessOptions.event_detection
-        Assert.assertEqual(COMM_SYSTEM_ACCESS_EVENT_DETECTION_TYPE.SUB_SAMPLE, aet.type)
+        Assert.assertEqual(CommSystemAccessEventDetectionType.SAMPLES_ONLY, accessOptions.event_detection.type)
+
+        accessOptions.event_detection_type = CommSystemAccessEventDetectionType.SUB_SAMPLE
+        Assert.assertEqual(CommSystemAccessEventDetectionType.SUB_SAMPLE, accessOptions.event_detection_type)
+
+        aet = accessOptions.event_detection
+        Assert.assertEqual(CommSystemAccessEventDetectionType.SUB_SAMPLE, aet.type)
         subSample = clr.CastAs(aet, CommSystemAccessEventDetectionSubsample)
         Assert.assertIsNotNone(subSample)
 
@@ -258,10 +252,10 @@ class EarlyBoundTests(TestBase):
         accessOptions: "CommSystemAccessOptions" = EarlyBoundTests.commSystem.access_options
 
         with pytest.raises(Exception, match=RegexSubstringMatch("Unrecognized")):
-            accessOptions.sampling_method_type = COMM_SYSTEM_ACCESS_SAMPLING_METHOD_TYPE.UNKNOWN
+            accessOptions.sampling_method_type = CommSystemAccessSamplingMethodType.UNKNOWN
 
-        accessOptions.sampling_method_type = COMM_SYSTEM_ACCESS_SAMPLING_METHOD_TYPE.ADAPTIVE
-        Assert.assertEqual(COMM_SYSTEM_ACCESS_SAMPLING_METHOD_TYPE.ADAPTIVE, accessOptions.sampling_method_type)
+        accessOptions.sampling_method_type = CommSystemAccessSamplingMethodType.ADAPTIVE
+        Assert.assertEqual(CommSystemAccessSamplingMethodType.ADAPTIVE, accessOptions.sampling_method_type)
 
         adaptive: "CommSystemAccessSamplingMethodAdaptive" = clr.CastAs(
             accessOptions.sampling_method, CommSystemAccessSamplingMethodAdaptive
@@ -286,8 +280,8 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             adaptive.minimum_time_step = 300000001
 
-        accessOptions.sampling_method_type = COMM_SYSTEM_ACCESS_SAMPLING_METHOD_TYPE.FIXED
-        Assert.assertEqual(COMM_SYSTEM_ACCESS_SAMPLING_METHOD_TYPE.FIXED, accessOptions.sampling_method_type)
+        accessOptions.sampling_method_type = CommSystemAccessSamplingMethodType.FIXED
+        Assert.assertEqual(CommSystemAccessSamplingMethodType.FIXED, accessOptions.sampling_method_type)
 
         smFixed: "CommSystemAccessSamplingMethodFixed" = clr.CastAs(
             accessOptions.sampling_method, CommSystemAccessSamplingMethodFixed
@@ -324,7 +318,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             accessOptions.time_light_delay_convergence = 0.1
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-            accessOptions.aberration_type = ABERRATION_TYPE.TOTAL
+            accessOptions.aberration_type = AberrationType.TOTAL
 
         accessOptions.enable_light_time_delay = True
         Assert.assertTrue(accessOptions.enable_light_time_delay)
@@ -338,25 +332,25 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             accessOptions.time_light_delay_convergence = 0.11
 
-        accessOptions.aberration_type = ABERRATION_TYPE.ANNUAL
-        Assert.assertEqual(ABERRATION_TYPE.ANNUAL, accessOptions.aberration_type)
-        accessOptions.aberration_type = ABERRATION_TYPE.NONE
-        Assert.assertEqual(ABERRATION_TYPE.NONE, accessOptions.aberration_type)
-        accessOptions.aberration_type = ABERRATION_TYPE.TOTAL
-        Assert.assertEqual(ABERRATION_TYPE.TOTAL, accessOptions.aberration_type)
+        accessOptions.aberration_type = AberrationType.ANNUAL
+        Assert.assertEqual(AberrationType.ANNUAL, accessOptions.aberration_type)
+        accessOptions.aberration_type = AberrationType.NONE
+        Assert.assertEqual(AberrationType.NONE, accessOptions.aberration_type)
+        accessOptions.aberration_type = AberrationType.TOTAL
+        Assert.assertEqual(AberrationType.TOTAL, accessOptions.aberration_type)
         with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
-            accessOptions.aberration_type = ABERRATION_TYPE.UNKNOWN
+            accessOptions.aberration_type = AberrationType.UNKNOWN
 
     # endregion
 
     # region Advanced
     def test_Advanced(self):
-        EarlyBoundTests.commSystem.save_mode = COMM_SYSTEM_SAVE_MODE.DO_NOT_SAVE_COMPUTED_DATA
-        Assert.assertEqual(EarlyBoundTests.commSystem.save_mode, COMM_SYSTEM_SAVE_MODE.DO_NOT_SAVE_COMPUTED_DATA)
-        EarlyBoundTests.commSystem.save_mode = COMM_SYSTEM_SAVE_MODE.COMPUTE_DATA_ON_LOAD
-        Assert.assertEqual(EarlyBoundTests.commSystem.save_mode, COMM_SYSTEM_SAVE_MODE.COMPUTE_DATA_ON_LOAD)
-        EarlyBoundTests.commSystem.save_mode = COMM_SYSTEM_SAVE_MODE.SAVE_COMPUTED_DATA
-        Assert.assertEqual(EarlyBoundTests.commSystem.save_mode, COMM_SYSTEM_SAVE_MODE.SAVE_COMPUTED_DATA)
+        EarlyBoundTests.commSystem.save_mode = CommSystemSaveMode.DO_NOT_SAVE_COMPUTED_DATA
+        Assert.assertEqual(EarlyBoundTests.commSystem.save_mode, CommSystemSaveMode.DO_NOT_SAVE_COMPUTED_DATA)
+        EarlyBoundTests.commSystem.save_mode = CommSystemSaveMode.COMPUTE_DATA_ON_LOAD
+        Assert.assertEqual(EarlyBoundTests.commSystem.save_mode, CommSystemSaveMode.COMPUTE_DATA_ON_LOAD)
+        EarlyBoundTests.commSystem.save_mode = CommSystemSaveMode.SAVE_COMPUTED_DATA
+        Assert.assertEqual(EarlyBoundTests.commSystem.save_mode, CommSystemSaveMode.SAVE_COMPUTED_DATA)
 
     # endregion
 
@@ -382,27 +376,27 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             graphics.desired_links_color = Colors.Red
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            graphics.desired_links_line_width = LINE_WIDTH.WIDTH1
+            graphics.desired_links_line_width = LineWidth.WIDTH1
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            graphics.desired_links_line_style = LINE_STYLE.DASH_DOT_DOTTED
+            graphics.desired_links_line_style = LineStyle.DASH_DOT_DOTTED
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             graphics.show_interference_links = False
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             graphics.interference_links_color = Colors.Red
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            graphics.interference_links_line_width = LINE_WIDTH.WIDTH1
+            graphics.interference_links_line_width = LineWidth.WIDTH1
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            graphics.interference_links_line_style = LINE_STYLE.DASH_DOT_DOTTED
+            graphics.interference_links_line_style = LineStyle.DASH_DOT_DOTTED
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             graphics.show_primary_interferer_link = False
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             graphics.primary_interferer_link_color = Colors.Red
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            graphics.primary_interferer_link_line_width = LINE_WIDTH.WIDTH1
+            graphics.primary_interferer_link_line_width = LineWidth.WIDTH1
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            graphics.primary_interferer_link_line_style = LINE_STYLE.DASH_DOT_DOTTED
+            graphics.primary_interferer_link_line_style = LineStyle.DASH_DOT_DOTTED
 
         graphics.show = True
         Assert.assertTrue(graphics.show)
@@ -417,17 +411,17 @@ class EarlyBoundTests(TestBase):
         graphics.desired_links_color = Colors.Blue
         Assert.assertEqual(Colors.Blue, graphics.desired_links_color)
 
-        graphics.desired_links_line_width = LINE_WIDTH.WIDTH1
-        Assert.assertEqual(LINE_WIDTH.WIDTH1, graphics.desired_links_line_width)
-        graphics.desired_links_line_width = LINE_WIDTH.WIDTH5
-        Assert.assertEqual(LINE_WIDTH.WIDTH5, graphics.desired_links_line_width)
+        graphics.desired_links_line_width = LineWidth.WIDTH1
+        Assert.assertEqual(LineWidth.WIDTH1, graphics.desired_links_line_width)
+        graphics.desired_links_line_width = LineWidth.WIDTH5
+        Assert.assertEqual(LineWidth.WIDTH5, graphics.desired_links_line_width)
         with pytest.raises(Exception, match=RegexSubstringMatch("maximum value of")):
-            graphics.desired_links_line_width = LINE_WIDTH.WIDTH6
+            graphics.desired_links_line_width = LineWidth.WIDTH6
 
-        graphics.desired_links_line_style = LINE_STYLE.DASH_DOT_DOTTED
-        Assert.assertEqual(LINE_STYLE.DASH_DOT_DOTTED, graphics.desired_links_line_style)
-        graphics.desired_links_line_style = LINE_STYLE.DOT
-        Assert.assertEqual(LINE_STYLE.DOT, graphics.desired_links_line_style)
+        graphics.desired_links_line_style = LineStyle.DASH_DOT_DOTTED
+        Assert.assertEqual(LineStyle.DASH_DOT_DOTTED, graphics.desired_links_line_style)
+        graphics.desired_links_line_style = LineStyle.DOT
+        Assert.assertEqual(LineStyle.DOT, graphics.desired_links_line_style)
 
         graphics.show_interference_links = False
         Assert.assertFalse(graphics.show_interference_links)
@@ -439,17 +433,17 @@ class EarlyBoundTests(TestBase):
         graphics.interference_links_color = Colors.Blue
         Assert.assertEqual(Colors.Blue, graphics.interference_links_color)
 
-        graphics.interference_links_line_width = LINE_WIDTH.WIDTH1
-        Assert.assertEqual(LINE_WIDTH.WIDTH1, graphics.interference_links_line_width)
-        graphics.interference_links_line_width = LINE_WIDTH.WIDTH5
-        Assert.assertEqual(LINE_WIDTH.WIDTH5, graphics.interference_links_line_width)
+        graphics.interference_links_line_width = LineWidth.WIDTH1
+        Assert.assertEqual(LineWidth.WIDTH1, graphics.interference_links_line_width)
+        graphics.interference_links_line_width = LineWidth.WIDTH5
+        Assert.assertEqual(LineWidth.WIDTH5, graphics.interference_links_line_width)
         with pytest.raises(Exception, match=RegexSubstringMatch("maximum value of")):
-            graphics.interference_links_line_width = LINE_WIDTH.WIDTH6
+            graphics.interference_links_line_width = LineWidth.WIDTH6
 
-        graphics.interference_links_line_style = LINE_STYLE.DASH_DOT_DOTTED
-        Assert.assertEqual(LINE_STYLE.DASH_DOT_DOTTED, graphics.interference_links_line_style)
-        graphics.interference_links_line_style = LINE_STYLE.DOT
-        Assert.assertEqual(LINE_STYLE.DOT, graphics.interference_links_line_style)
+        graphics.interference_links_line_style = LineStyle.DASH_DOT_DOTTED
+        Assert.assertEqual(LineStyle.DASH_DOT_DOTTED, graphics.interference_links_line_style)
+        graphics.interference_links_line_style = LineStyle.DOT
+        Assert.assertEqual(LineStyle.DOT, graphics.interference_links_line_style)
 
         graphics.show_primary_interferer_link = False
         Assert.assertFalse(graphics.show_primary_interferer_link)
@@ -461,17 +455,17 @@ class EarlyBoundTests(TestBase):
         graphics.primary_interferer_link_color = Colors.Blue
         Assert.assertEqual(Colors.Blue, graphics.primary_interferer_link_color)
 
-        graphics.primary_interferer_link_line_width = LINE_WIDTH.WIDTH1
-        Assert.assertEqual(LINE_WIDTH.WIDTH1, graphics.primary_interferer_link_line_width)
-        graphics.primary_interferer_link_line_width = LINE_WIDTH.WIDTH5
-        Assert.assertEqual(LINE_WIDTH.WIDTH5, graphics.primary_interferer_link_line_width)
+        graphics.primary_interferer_link_line_width = LineWidth.WIDTH1
+        Assert.assertEqual(LineWidth.WIDTH1, graphics.primary_interferer_link_line_width)
+        graphics.primary_interferer_link_line_width = LineWidth.WIDTH5
+        Assert.assertEqual(LineWidth.WIDTH5, graphics.primary_interferer_link_line_width)
         with pytest.raises(Exception, match=RegexSubstringMatch("maximum value of")):
-            graphics.primary_interferer_link_line_width = LINE_WIDTH.WIDTH6
+            graphics.primary_interferer_link_line_width = LineWidth.WIDTH6
 
-        graphics.primary_interferer_link_line_style = LINE_STYLE.DASH_DOT_DOTTED
-        Assert.assertEqual(LINE_STYLE.DASH_DOT_DOTTED, graphics.primary_interferer_link_line_style)
-        graphics.primary_interferer_link_line_style = LINE_STYLE.DOT
-        Assert.assertEqual(LINE_STYLE.DOT, graphics.primary_interferer_link_line_style)
+        graphics.primary_interferer_link_line_style = LineStyle.DASH_DOT_DOTTED
+        Assert.assertEqual(LineStyle.DASH_DOT_DOTTED, graphics.primary_interferer_link_line_style)
+        graphics.primary_interferer_link_line_style = LineStyle.DOT
+        Assert.assertEqual(LineStyle.DOT, graphics.primary_interferer_link_line_style)
 
     # endregion
 

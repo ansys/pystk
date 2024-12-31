@@ -54,7 +54,7 @@ Property detail
 
 .. py:property:: ascending_node_type
     :canonical: ansys.stk.core.stkobjects.ClassicalOrientation.ascending_node_type
-    :type: ORIENTATION_ASC_NODE
+    :type: OrientationAscNode
 
     Select Longitude of Ascending Node or Right Ascension of Ascending Node.
 

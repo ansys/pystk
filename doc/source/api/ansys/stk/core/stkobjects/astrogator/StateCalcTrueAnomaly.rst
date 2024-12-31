@@ -46,7 +46,7 @@ Property detail
 
 .. py:property:: element_type
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcTrueAnomaly.element_type
-    :type: CALCULATION_OBJECT_ELEMENT
+    :type: CalculationObjectElement
 
     Gets or sets the element type.
 

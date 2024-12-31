@@ -65,7 +65,7 @@ Property detail
 
 .. py:property:: state
     :canonical: ansys.stk.core.vgt.TimeToolInstantSmartEpoch.state
-    :type: SMART_EPOCH_STATE
+    :type: SmartEpochState
 
     State of the event.
 

@@ -32,7 +32,6 @@ Overview
               - For convenience. Computes the triangulation on the specified centralBody for a polygon whose boundary is defined by the specified cartographic positions. This is equivalent to converting each position in positions to cartesian and calling Compute.
 
 
-
 Import detail
 -------------
 
@@ -105,7 +104,7 @@ Method detail
 
         :obj:`~SurfaceTriangulatorResult`
 
-.. py:method:: compute_with_altitude_and_granularity(self, central_body: str, positions: list, altitude: float, granularity: float, positions_winding_order: WINDING_ORDER) -> SurfaceTriangulatorResult
+.. py:method:: compute_with_altitude_and_granularity(self, central_body: str, positions: list, altitude: float, granularity: float, positions_winding_order: WindingOrder) -> SurfaceTriangulatorResult
     :canonical: ansys.stk.core.graphics.SurfacePolygonTriangulatorInitializer.compute_with_altitude_and_granularity
 
     Compute the triangulation on the specified centralBody for a polygon whose boundary is defined by the specified positions.
@@ -116,13 +115,13 @@ Method detail
     **positions** : :obj:`~list`
     **altitude** : :obj:`~float`
     **granularity** : :obj:`~float`
-    **positions_winding_order** : :obj:`~WINDING_ORDER`
+    **positions_winding_order** : :obj:`~WindingOrder`
 
     :Returns:
 
         :obj:`~SurfaceTriangulatorResult`
 
-.. py:method:: compute_cartographic_with_altitude_and_granularity(self, central_body: str, positions: list, altitude: float, granularity: float, positions_winding_order: WINDING_ORDER) -> SurfaceTriangulatorResult
+.. py:method:: compute_cartographic_with_altitude_and_granularity(self, central_body: str, positions: list, altitude: float, granularity: float, positions_winding_order: WindingOrder) -> SurfaceTriangulatorResult
     :canonical: ansys.stk.core.graphics.SurfacePolygonTriangulatorInitializer.compute_cartographic_with_altitude_and_granularity
 
     For convenience. Computes the triangulation on the specified centralBody for a polygon whose boundary is defined by the specified cartographic positions. This is equivalent to converting each position in positions to cartesian and calling Compute.
@@ -133,7 +132,7 @@ Method detail
     **positions** : :obj:`~list`
     **altitude** : :obj:`~float`
     **granularity** : :obj:`~float`
-    **positions_winding_order** : :obj:`~WINDING_ORDER`
+    **positions_winding_order** : :obj:`~WindingOrder`
 
     :Returns:
 

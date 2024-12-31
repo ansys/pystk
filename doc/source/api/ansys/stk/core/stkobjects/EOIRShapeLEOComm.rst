@@ -9,10 +9,6 @@ EOIRShapeLEOComm
 
 .. py:currentmodule:: EOIRShapeLEOComm
 
-Overview
---------
-
-
 
 Import detail
 -------------

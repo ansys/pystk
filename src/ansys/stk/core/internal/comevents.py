@@ -233,7 +233,7 @@ class IStkObjectRootEventCOMHandler(COMEventHandlerImpl):
 
     def _on_log_message(self, pThis:PVOID, message:str, msgType:int, errorCode:int, fileName:str, lineNo:int, dispID:int) -> None:
         for callback in self._events["OnLogMessage"]._callbacks:
-            callback(message, agcls.AgTypeNameMap["LOG_MESSAGE_TYPE"](msgType), errorCode, fileName, lineNo, agcls.AgTypeNameMap["LOG_MESSAGE_DISPLAY_ID"](dispID))
+            callback(message, agcls.AgTypeNameMap["LogMessageType"](msgType), errorCode, fileName, lineNo, agcls.AgTypeNameMap["LogMessageDisplayID"](dispID))
 
     def _on_anim_update(self, pThis:PVOID, timeEpSec:float) -> None:
         for callback in self._events["OnAnimUpdate"]._callbacks:
@@ -256,7 +256,7 @@ class IStkObjectRootEventCOMHandler(COMEventHandlerImpl):
                 
     def _on_animation_playback(self, pThis:PVOID, CurrentTime:float, eAction:int, eDirection:int) -> None:
         for callback in self._events["OnAnimationPlayback"]._callbacks:
-            callback(CurrentTime, agcls.AgTypeNameMap["ANIMATION_ACTION_TYPE"](eAction), agcls.AgTypeNameMap["ANIMATION_DIRECTION_TYPE"](eDirection.python_val))
+            callback(CurrentTime, agcls.AgTypeNameMap["AnimationActionType"](eAction), agcls.AgTypeNameMap["AnimationDirectionType"](eDirection.python_val))
                 
     def _on_animation_rewind(self, pThis:PVOID) -> None:
         for callback in self._events["OnAnimationRewind"]._callbacks:
@@ -454,7 +454,7 @@ class ISTKXApplicationEventCOMHandler(COMEventHandlerImpl):
 
     def _OnLogMessage(self, pThis:PVOID, message:str, msgType:int, errorCode:int, fileName:str, lineNo:int, dispID:int) -> None:
         for callback in self._events["OnLogMessage"]._callbacks:
-            callback(message, agcls.AgTypeNameMap["LOG_MESSAGE_TYPE"](msgType), errorCode, fileName, lineNo, agcls.AgTypeNameMap["LOG_MESSAGE_DISPLAY_ID"](dispID))
+            callback(message, agcls.AgTypeNameMap["LogMessageType"](msgType), errorCode, fileName, lineNo, agcls.AgTypeNameMap["LogMessageDisplayID"](dispID))
 
     def _OnAnimUpdate(self, pThis:PVOID, timeEpSec:float) -> int:
         for callback in self._events["OnAnimUpdate"]._callbacks:
@@ -483,7 +483,7 @@ class ISTKXApplicationEventCOMHandler(COMEventHandlerImpl):
     
     def _OnNewGfxAnalysisCtrlRequest(self, pThis:PVOID, SceneID:int, GfxAnalysisMode:int) -> None:
         for callback in self._events["OnNewGfxAnalysisCtrlRequest"]._callbacks:
-            callback(SceneID, agcls.AgTypeNameMap["GRAPHICS_2D_ANALYSIS_MODE"](GfxAnalysisMode))
+            callback(SceneID, agcls.AgTypeNameMap["Graphics2DAnalysisMode"](GfxAnalysisMode))
     
     def _OnSSLCertificateServerError(self, pThis:PVOID, pArgs:PVOID) -> None:
         for callback in self._events["OnSSLCertificateServerError"]._callbacks:

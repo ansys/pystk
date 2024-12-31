@@ -34,7 +34,6 @@ Overview
               - Return whether the specified type is supported.
 
 
-
 Import detail
 -------------
 
@@ -47,7 +46,7 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: create(self, name: str, description: str, type: PARAMETER_SET_TYPE) -> ICalculationToolParameterSet
+.. py:method:: create(self, name: str, description: str, type: ParameterSetType) -> ICalculationToolParameterSet
     :canonical: ansys.stk.core.vgt.CalculationToolParameterSetFactory.create
 
     Create and registers a parameter set using specified name and description.
@@ -56,7 +55,7 @@ Method detail
 
     **name** : :obj:`~str`
     **description** : :obj:`~str`
-    **type** : :obj:`~PARAMETER_SET_TYPE`
+    **type** : :obj:`~ParameterSetType`
 
     :Returns:
 
@@ -132,14 +131,14 @@ Method detail
 
         :obj:`~ICalculationToolParameterSet`
 
-.. py:method:: is_type_supported(self, type: PARAMETER_SET_TYPE) -> bool
+.. py:method:: is_type_supported(self, type: ParameterSetType) -> bool
     :canonical: ansys.stk.core.vgt.CalculationToolParameterSetFactory.is_type_supported
 
     Return whether the specified type is supported.
 
     :Parameters:
 
-    **type** : :obj:`~PARAMETER_SET_TYPE`
+    **type** : :obj:`~ParameterSetType`
 
     :Returns:
 

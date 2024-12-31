@@ -66,13 +66,13 @@ Property detail
 
 .. py:property:: shadow_model
     :canonical: ansys.stk.core.stkobjects.astrogator.SRPTabulatedAreaVector.shadow_model
-    :type: SHADOW_MODEL
+    :type: ShadowModel
 
     Gets or sets the shadow model type.
 
 .. py:property:: sun_position
     :canonical: ansys.stk.core.stkobjects.astrogator.SRPTabulatedAreaVector.sun_position
-    :type: SUN_POSITION
+    :type: SunPosition
 
     Gets or sets the sun position computation.
 
@@ -96,7 +96,7 @@ Property detail
 
 .. py:property:: solar_force_method
     :canonical: ansys.stk.core.stkobjects.astrogator.SRPTabulatedAreaVector.solar_force_method
-    :type: SOLAR_FORCE_METHOD
+    :type: SolarForceMethod
 
     Gets or sets the solar force method.
 
@@ -126,7 +126,7 @@ Property detail
 
 .. py:property:: interpolation_method
     :canonical: ansys.stk.core.stkobjects.astrogator.SRPTabulatedAreaVector.interpolation_method
-    :type: TAB_VEC_INTERPOLATION_METHOD
+    :type: TabVecInterpolationMethod
 
     Gets or sets the file interpolation method.
 

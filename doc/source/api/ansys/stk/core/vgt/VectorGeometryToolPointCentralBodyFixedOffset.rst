@@ -48,7 +48,7 @@ Property detail
 
 .. py:property:: reference_shape
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPointCentralBodyFixedOffset.reference_shape
-    :type: SURFACE_REFERENCE_SHAPE_TYPE
+    :type: SurfaceReferenceShapeType
 
     Choose the point height's reference. Available options are central body ellipsoid (WSG84), terrain or Mean Sea Level.
 

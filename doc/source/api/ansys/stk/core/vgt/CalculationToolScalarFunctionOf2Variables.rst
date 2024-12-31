@@ -102,7 +102,7 @@ Property detail
 
 .. py:property:: output_dimension_inheritance
     :canonical: ansys.stk.core.vgt.CalculationToolScalarFunctionOf2Variables.output_dimension_inheritance
-    :type: INHERIT_DIMENSION_TYPE
+    :type: InheritDimensionType
 
     Specifies whether the output dimension is inherited or explicitly specified using OutputDimension.
 
