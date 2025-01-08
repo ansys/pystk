@@ -35,7 +35,7 @@ all = [
     "protobuf",
     "jupyter-rfb==0.4.4",
     "numpy==2.2.1",
-    "Pillow==11.0.0",
+    "Pillow==11.1.0",
     "simplejpeg==1.7.6",
     "sidecar==0.7.0"
 ]
@@ -60,7 +60,7 @@ doc = [
     "myst-parser==4.0.0",
     "nbsphinx==0.9.6",
     "numpydoc==1.8.0",
-    "nbconvert==7.16.4",
+    "nbconvert==7.16.5",
     "sphinx==7.4.7",
     "sphinx-design==0.6.1",
     "sphinx-jinja==2.0.2",
@@ -72,7 +72,7 @@ doc = [
 visualization = [
     "jupyter-rfb==0.4.4",
     "numpy==2.2.1",
-    "Pillow==11.0.0",
+    "Pillow==11.1.0",
     "simplejpeg==1.7.6",
     "sidecar==0.7.0"
 ]
