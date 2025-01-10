@@ -3,8 +3,8 @@ PySTK code snippets
 
 The following code snippets demonstrate tasks that are commonly encountered when working with the PySTK API.
 
-How do I...
-===========
+How do I
+========
 
 STK Objects
   Access
