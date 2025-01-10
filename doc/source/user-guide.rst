@@ -9,6 +9,13 @@ User guide
 
         Guidelines on how to migrate your code to PySTK
 
+    .. grid-item-card:: :fa:`clone` Code snippets
+        :link: user-guide/code-snippets
+        :link-type: doc
+        :padding: 2 2 2 2
+
+        Learn how to automate the most common STK capabilities with PySTK
+
 
 
 .. toctree::
@@ -17,3 +24,4 @@ User guide
 
  
    Migration <user-guide/migration>
+   Code snippets <user-guide/code-snippets>
