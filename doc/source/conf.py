@@ -171,6 +171,7 @@ linkcheck_ignore = [
     f"https://github.com/{user_repo}/*",
     "https://support.agi.com/3d-models",
     "https://support.agi.com/downloads",
+    "https://www.khronos.org/collada/",
 ]
 
 # -- Declare the Jinja context -----------------------------------------------
