@@ -28,13 +28,6 @@ platform.
 
         Guidelines on how to install PySTK in your system
 
-    .. grid-item-card:: :fa:`clone` Code snippets
-        :link: getting-started/code-snippets
-        :link-type: doc
-        :padding: 2 2 2 2
-
-        Learn how to automate the most common STK capabilities with PySTK
-
 
 
 .. toctree::
@@ -44,6 +37,5 @@ platform.
    About<getting-started/about>
    Prerequisites<getting-started/prerequisites>
    Install<getting-started/install>
-   Code snippets<getting-started/code-snippets>
    
 

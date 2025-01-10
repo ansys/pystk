@@ -39,7 +39,7 @@ Add an Exclusion Zone access constraint
 
 .. code-block:: python
 
-    # IAgAccessConstraintCollection accessConstraints: Access Constraint collection
+    # AccessConstraintCollection accessConstraints: Access Constraint collection
     excludeZone: "AccessConstraintLatitudeLongitudeZone" = accessConstraints.add_named_constraint('ExclusionZone')
     excludeZone.maximum_latitude = 45
     excludeZone.minimum_latitude = 15

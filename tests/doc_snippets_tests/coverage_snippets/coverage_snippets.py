@@ -49,7 +49,7 @@ class CoverageSnippets(CodeSnippetsTestBase):
         eid="STKObjects~IAgCoverageDefinition",
     )
     def TestCoverageComputeSnippet(self, root: "StkObjectRoot", coverage: "CoverageDefinition"):
-        # IAgCoverageDefinition coverage: Coverage object
+        # CoverageDefinition coverage: Coverage object
         coverage.compute_accesses()
 
     def test_TestCoverageAdvancedSnippet(self):
@@ -62,7 +62,7 @@ class CoverageSnippets(CodeSnippetsTestBase):
         eid="STKObjects~IAgCoverageDefinition",
     )
     def TestCoverageAdvancedSnippet(self, root: "StkObjectRoot", coverage: "CoverageDefinition"):
-        # IAgCoverageDefinition coverage: Coverage object
+        # CoverageDefinition coverage: Coverage object
         advanced: "CoverageAdvancedSettings" = coverage.advanced
         advanced.recompute_automatically = False
         advanced.data_retention = CoverageDataRetention.ALL_DATA
@@ -82,8 +82,8 @@ class CoverageSnippets(CodeSnippetsTestBase):
     def TestCoverageIntervalSnippet(
         self, root: "StkObjectRoot", satellite: "Satellite", coverage: "CoverageDefinition"
     ):
-        # IAgSatellite satellite: Satellite object
-        # IAgCoverageDefinition coverage: Coverage object
+        # Satellite satellite: Satellite object
+        # CoverageDefinition coverage: Coverage object
         satVGT: "AnalysisWorkbenchComponentProvider" = IStkObject(satellite).analysis_workbench_components
         intervals: "TimeToolTimeIntervalGroup" = satVGT.time_intervals
         AvailTimeSpan: "ITimeToolTimeInterval" = intervals.item("AvailabilityTimeSpan")
