@@ -240,7 +240,7 @@ jobs:
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "coverage combine aviator stknogfx stkgfx vgt"
+            "coverage combine aviator stknogfx stkgfx vgt snippets"
 
       - name: "Generate total coverage report"
         if: ${{ matrix.python == env.MAIN_PYTHON_VERSION }}
