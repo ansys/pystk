@@ -151,9 +151,9 @@ class STKRuntime(object):
         else:
             clsid_stkxapplication = "{062AB565-B121-45B5-A9A9-B412CEFAB6A9}"
             stkx_dll_path = read_registry_key(f"CLSID\\{clsid_stkxapplication}\\InprocServer32", silent_exception=True)
-            bin_dir, dll_name = (None, None) if stkx_dll_path is None else os.path.split(stkx_dll_path)
-            path_stkruntime = pathlib.Path(bin_dir) / "stkruntime.exe"
-            if bin_dir is None or not path_stkruntime.exists():
+            bin_dir, dll_name = (None, None) if stkx_dll_path is None else (pathlib.Path(stkx_dll_path).parent, pathlib.Path(stkx_dll_path).name)
+            path_stkruntime = bin_dir / "stkruntime.exe"
+            if not path_stkruntime.exists():
                 bin_dir = winreg_stk_binary_dir()
                 if bin_dir is None:
                     raise STKInitializationError(f"Could not find STKRuntime.exe. Verify STK installation.")
