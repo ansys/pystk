@@ -205,6 +205,13 @@ jobs:
             ${{ env.STK_CONTAINER }} /bin/bash -c \
             "export COVERAGE_FILE=vgt && tox -e tests-vgt-graphics-cov-linux"
 
+      - name: "Run the doc snippet tests"
+        run: |
+          docker exec \
+            --workdir ${{ env.PYSTK_DIR }} \
+            ${{ env.STK_CONTAINER }} /bin/bash -c \
+            "export COVERAGE_FILE=snippets && tox -e tests-snippets-graphics-cov-linux"
+
       - name: "Install coverage dependencies"
         if: ${{ matrix.python == env.MAIN_PYTHON_VERSION }}
         run: |
@@ -219,7 +226,7 @@ jobs:
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "coverage combine aviator stk vgt"
+            "coverage combine aviator stk vgt snippets"
 
       - name: "Generate total coverage report"
         if: ${{ matrix.python == env.MAIN_PYTHON_VERSION }}
