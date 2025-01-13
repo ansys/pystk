@@ -52,7 +52,7 @@ tests = [
     "numpy==2.2.1"
 ]
 doc = [
-    "ansys-sphinx-theme==1.2.4",
+    "ansys-sphinx-theme==1.2.6",
     "build==1.2.2.post1",
     "jupyterlab==4.3.4",
     "jupytext==1.16.6",
