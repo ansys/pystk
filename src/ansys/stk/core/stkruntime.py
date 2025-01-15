@@ -140,9 +140,9 @@ class STKRuntime(object):
             ld_env = os.getenv('LD_LIBRARY_PATH')
             if ld_env:
                 for path in ld_env.split(':'):
-                    path_stkruntime = (pathlib.Path(path) / "stkruntime").resolve()
-                    if path_stkruntime.exists():
-                        cmd_line = [path_stkruntime, "--grpcHost", grpc_host, "--grpcPort", str(grpc_port)]
+                    stkruntime_path = (pathlib.Path(path) / "stkruntime").resolve()
+                    if stkruntime_path.exists():
+                        cmd_line = [stkruntime_path, "--grpcHost", grpc_host, "--grpcPort", str(grpc_port)]
                         if no_graphics:
                             cmd_line.append("--noGraphics")
                         break
@@ -151,13 +151,17 @@ class STKRuntime(object):
         else:
             clsid_stkxapplication = "{062AB565-B121-45B5-A9A9-B412CEFAB6A9}"
             stkx_dll_path = read_registry_key(f"CLSID\\{clsid_stkxapplication}\\InprocServer32", silent_exception=True)
-            bin_dir, dll_name = (None, None) if stkx_dll_path is None else (pathlib.Path(stkx_dll_path).parent, pathlib.Path(stkx_dll_path).name)
-            path_stkruntime = bin_dir / "stkruntime.exe"
-            if not path_stkruntime.exists():
-                bin_dir = winreg_stk_binary_dir()
-                if bin_dir is None:
+
+            default_bin_dir = pathlib.Path(winreg_stk_binary_dir())
+            bin_dir = default_bin_dir if not bin_dir else pathlib.Path(stkx_dll_path).parent
+
+            stkruntime_path = bin_dir / "stkruntime.exe"
+            if not stkruntime_path.exists():
+                if not bin_dir.exists():
                     raise STKInitializationError(f"Could not find STKRuntime.exe. Verify STK installation.")
-            cmd_line = [path_stkruntime, "/grpcHost", grpc_host, "/grpcPort", str(grpc_port)]
+
+            cmd_line = [str(stkruntime_path.resolve()), "/grpcHost", grpc_host, "/grpcPort", str(grpc_port)]
+
             if no_graphics:
                 cmd_line.append("/noGraphics")
 
