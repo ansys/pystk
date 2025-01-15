@@ -64,7 +64,7 @@ class STKRuntimeApplication(STKXApplication):
             return context
         raise STKInitializationError(f"Not connected to the gRPC server.")
 
-    def SetGrpcOptions(self, options:dict) -> None:
+    def set_grpc_options(self, options:dict) -> None:
         """
         Set advanced-usage options for the gRPC client.
 
@@ -79,7 +79,7 @@ class STKRuntimeApplication(STKXApplication):
             client: GrpcClient = self._intf.client
             client.set_grpc_options(options)
             
-    def NewGrpcCallBatcher(self, max_batch:int=None, disable_batching:bool=False) -> GrpcCallBatcher:
+    def new_grpc_call_batcher(self, max_batch:int=None, disable_batching:bool=False) -> GrpcCallBatcher:
         """
         Construct a GrpcCallBatcher linked to this gRPC client that may be used to improve API performance.
         
@@ -162,9 +162,9 @@ class STKRuntime(object):
         # Excluding low severity bandit check as the validity of the inputs has been ensured.
         subprocess.Popen(cmd_line) # nosec B603
         host = grpc_host
-        # Ignoring B104 warning as it is a false positive. The hardcoded string "0.0.0.0" is being filtered
+        # Ignoring B104 warning as it is a false positive. The hard-coded string "0.0.0.0" is being filtered
         # to ensure that it is not used.
-        if host=="0.0.0.0": # nosec B104
+        if grpc_host=="0.0.0.0": # nosec B104
             host = "localhost"
         app = STKRuntime.attach_to_application(host, grpc_port, grpc_timeout_sec)
         app._intf.client.set_shutdown_stkruntime(not user_control)

@@ -141,7 +141,7 @@ class DataAnalysisUtilTests(unittest.TestCase):
 
         index_element_name = "Region Name"
 
-        expected_results_df = region_stats_data_sets.to_pandas_dataframe(indexElementName=index_element_name)
+        expected_results_df = region_stats_data_sets.to_pandas_dataframe(index_element_name=index_element_name)
 
         self.assertIsInstance(expected_results_df, pd.DataFrame)
         self.assertEqual(len(expected_results_df.index), 288)
@@ -160,7 +160,7 @@ class DataAnalysisUtilTests(unittest.TestCase):
         index_element_name = "Faux Invalid Element Name"
 
         with self.assertRaises(ValueError):
-            expected_results_df = region_stats_data_sets.to_pandas_dataframe(indexElementName=index_element_name)
+            expected_results_df = region_stats_data_sets.to_pandas_dataframe(index_element_name=index_element_name)
 
     @unittest.skipIf(skip_test, test_skipped_msg)
     def test_to_dataframe_map_types_to_dtypes(self):
@@ -175,7 +175,9 @@ class DataAnalysisUtilTests(unittest.TestCase):
 
         all_regions_dprv_as_dprv: IDataProvider = IDataProvider(all_regions_dprv_as_dprv_fixed)
         all_regions_dprv_elements = all_regions_dprv_as_dprv.elements
-        expected_results_df = all_regions_data_sets.to_pandas_dataframe(dataProviderElements=all_regions_dprv_elements)
+        expected_results_df = all_regions_data_sets.to_pandas_dataframe(
+            data_provider_elements=all_regions_dprv_elements
+        )
 
         self.assertIsInstance(expected_results_df, pd.DataFrame)
         self.assertEqual(len(expected_results_df.index), 11352)

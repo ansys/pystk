@@ -9147,7 +9147,7 @@ class PlatformRF_Environment_RainCloudFog_RainModelHelper(object):
 
             elif rainLossModelName == "ITU-R P618-10":
                 Assert.assertEqual(RainLossModelType.ITU_R_P618_10, rainLossModel.type)
-                itu618_10: "RainLossModelITURP618_10" = clr.CastAs(rainLossModel, RainLossModelITURP618_10)
+                itu618_10: "RainLossModelITURP618Version10" = clr.CastAs(rainLossModel, RainLossModelITURP618Version10)
                 itu618_10.surface_temperature = -100
                 Assert.assertEqual(-100, itu618_10.surface_temperature)
                 itu618_10.surface_temperature = 100
@@ -9163,7 +9163,7 @@ class PlatformRF_Environment_RainCloudFog_RainModelHelper(object):
 
             elif rainLossModelName == "ITU-R P618-12":
                 Assert.assertEqual(RainLossModelType.ITU_R_P618_12, rainLossModel.type)
-                itu618_12: "RainLossModelITURP618_12" = clr.CastAs(rainLossModel, RainLossModelITURP618_12)
+                itu618_12: "RainLossModelITURP618Version12" = clr.CastAs(rainLossModel, RainLossModelITURP618Version12)
                 itu618_12.surface_temperature = -100
                 Assert.assertEqual(-100, itu618_12.surface_temperature)
                 itu618_12.surface_temperature = 100
@@ -9179,7 +9179,7 @@ class PlatformRF_Environment_RainCloudFog_RainModelHelper(object):
 
             elif rainLossModelName == "ITU-R P618-13":
                 Assert.assertEqual(RainLossModelType.ITU_R_P618_13, rainLossModel.type)
-                itu618_13: "RainLossModelITURP618_13" = clr.CastAs(rainLossModel, RainLossModelITURP618_13)
+                itu618_13: "RainLossModelITURP618Version13" = clr.CastAs(rainLossModel, RainLossModelITURP618Version13)
 
                 itu618_13.enable_itu_1510 = False
                 Assert.assertFalse(itu618_13.enable_itu_1510)
@@ -9265,17 +9265,17 @@ class PlatformRF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
         cfflm: "ICloudsAndFogFadingLossModel" = propChan.clouds_and_fog_fading_loss_model
         Assert.assertEqual("ITU-R P840-7", cfflm.name)
         Assert.assertEqual(CloudsAndFogFadingLossModelType.P_840_7_TYPE, cfflm.type)
-        self.Test_IAgCloudsAndFogFadingLossModelP840_7(clr.CastAs(cfflm, CloudsAndFogFadingLossModelP840_7))
+        self.Test_IAgCloudsAndFogFadingLossModelP840_7(clr.CastAs(cfflm, CloudsAndFogFadingLossModelP840Version7))
 
         propChan.set_clouds_and_fog_fading_loss_model("ITU-R P840-6")
         cfflm = propChan.clouds_and_fog_fading_loss_model
         Assert.assertEqual("ITU-R P840-6", cfflm.name)
         Assert.assertEqual(CloudsAndFogFadingLossModelType.P_840_6_TYPE, cfflm.type)
-        self.Test_IAgCloudsAndFogFadingLossModelP840_6(clr.CastAs(cfflm, CloudsAndFogFadingLossModelP840_6))
+        self.Test_IAgCloudsAndFogFadingLossModelP840_6(clr.CastAs(cfflm, CloudsAndFogFadingLossModelP840Version6))
 
         root.units_preferences.set_current_unit("Temperature", holdUnit)
 
-    def Test_IAgCloudsAndFogFadingLossModelP840_7(self, cfflm7: "CloudsAndFogFadingLossModelP840_7"):
+    def Test_IAgCloudsAndFogFadingLossModelP840_7(self, cfflm7: "CloudsAndFogFadingLossModelP840Version7"):
         cfflm7.cloud_ceiling = 0
         Assert.assertEqual(0, cfflm7.cloud_ceiling)
         cfflm7.cloud_ceiling = 20
@@ -9379,7 +9379,7 @@ class PlatformRF_Environment_RainCloudFog_CloudsAndFogModelHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             cfflm7.liquid_water_percent_annual_exceeded = 1
 
-    def Test_IAgCloudsAndFogFadingLossModelP840_6(self, cfflm6: "CloudsAndFogFadingLossModelP840_6"):
+    def Test_IAgCloudsAndFogFadingLossModelP840_6(self, cfflm6: "CloudsAndFogFadingLossModelP840Version6"):
         cfflm6.cloud_ceiling = 0
         Assert.assertEqual(0, cfflm6.cloud_ceiling)
         cfflm6.cloud_ceiling = 20
@@ -9879,7 +9879,7 @@ class PlatformRF_Environment_TropoScintillationHelper(object):
         Assert.assertEqual("ITU-R P618-12", tsflm.name)
         Assert.assertEqual(TroposphericScintillationFadingLossModelType.P_618_12, tsflm.type)
         self.Test_IAgTroposphericScintillationFadingLossModelP618_12(
-            clr.CastAs(tsflm, TroposphericScintillationFadingLossModelP618_12)
+            clr.CastAs(tsflm, TroposphericScintillationFadingLossModelP618Version12)
         )
 
         propChan.set_tropospheric_scintillation_fading_loss_model("ITU-R P618-8")
@@ -9887,11 +9887,11 @@ class PlatformRF_Environment_TropoScintillationHelper(object):
         Assert.assertEqual("ITU-R P618-8", tsflm.name)
         Assert.assertEqual(TroposphericScintillationFadingLossModelType.P_618_8, tsflm.type)
         self.Test_IAgTroposphericScintillationFadingLossModelP618_8(
-            clr.CastAs(tsflm, TroposphericScintillationFadingLossModelP618_8)
+            clr.CastAs(tsflm, TroposphericScintillationFadingLossModelP618Version8)
         )
 
     def Test_IAgTroposphericScintillationFadingLossModelP618_12(
-        self, tsflm12: "TroposphericScintillationFadingLossModelP618_12"
+        self, tsflm12: "TroposphericScintillationFadingLossModelP618Version12"
     ):
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):  # Deprecated and should not be used.
             tsflm12.compute_deep_fade = True
@@ -9940,7 +9940,7 @@ class PlatformRF_Environment_TropoScintillationHelper(object):
             tsflm12.average_time_choice = TroposphericScintillationAverageTimeChoiceType.UNKNOWN
 
     def Test_IAgTroposphericScintillationFadingLossModelP618_8(
-        self, tsflm8: "TroposphericScintillationFadingLossModelP618_8"
+        self, tsflm8: "TroposphericScintillationFadingLossModelP618Version8"
     ):
         tsflm8.compute_deep_fade = False
         Assert.assertFalse(tsflm8.compute_deep_fade)

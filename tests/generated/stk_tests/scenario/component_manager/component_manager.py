@@ -4278,17 +4278,17 @@ class EarlyBoundTests(TestBase):
                 elif comp.name == "Jacchia 1960":
                     oComp: typing.Any = (ICloneable(comp)).clone_object()
                     comp = clr.CastAs(oComp, IComponentInfo)
-                    self.TestJacchia1960(clr.CastAs(comp, Jacchia_1960))
+                    self.TestJacchia1960(clr.CastAs(comp, Jacchia1960))
 
                 elif comp.name == "Jacchia 1970":
                     oComp: typing.Any = (ICloneable(comp)).clone_object()
                     comp = clr.CastAs(oComp, IComponentInfo)
-                    self.TestJacchia1970(clr.CastAs(comp, Jacchia_1970))
+                    self.TestJacchia1970(clr.CastAs(comp, Jacchia1970))
 
                 elif comp.name == "Jacchia 1971":
                     oComp: typing.Any = (ICloneable(comp)).clone_object()
                     comp = clr.CastAs(oComp, IComponentInfo)
-                    self.TestJacchia1971(clr.CastAs(comp, Jacchia_1971))
+                    self.TestJacchia1971(clr.CastAs(comp, Jacchia1971))
 
                 elif comp.name == "Jacchia Bowman 2008":
                     oComp: typing.Any = (ICloneable(comp)).clone_object()
@@ -4358,22 +4358,22 @@ class EarlyBoundTests(TestBase):
                 elif comp.name == "MSIS 1986":
                     oComp: typing.Any = (ICloneable(comp)).clone_object()
                     comp = clr.CastAs(oComp, IComponentInfo)
-                    self.TestMSIS1986(clr.CastAs(comp, MSIS_1986))
+                    self.TestMSIS1986(clr.CastAs(comp, MSIS1986))
 
                 elif comp.name == "MSISE 1990":
                     oComp: typing.Any = (ICloneable(comp)).clone_object()
                     comp = clr.CastAs(oComp, IComponentInfo)
-                    self.TestMSISE1990(clr.CastAs(comp, MSISE_1990))
+                    self.TestMSISE1990(clr.CastAs(comp, MSISE1990))
 
                 elif comp.name == "NRLMSISE 2000":
                     oComp: typing.Any = (ICloneable(comp)).clone_object()
                     comp = clr.CastAs(oComp, IComponentInfo)
-                    self.TestNRLMSISE2000(clr.CastAs(comp, NRLMSISE_2000))
+                    self.TestNRLMSISE2000(clr.CastAs(comp, NRLMSISE2000))
 
                 elif comp.name == "US Standard Atmosphere":
                     oComp: typing.Any = (ICloneable(comp)).clone_object()
                     comp = clr.CastAs(oComp, IComponentInfo)
-                    self.TestUSStandardAtmosphere(clr.CastAs(comp, US_Standard_Atmosphere))
+                    self.TestUSStandardAtmosphere(clr.CastAs(comp, USStandardAtmosphere))
 
                 elif comp.name == "CSharp EOM Func Example":
                     oComp: typing.Any = (ICloneable(comp)).clone_object()
@@ -5239,7 +5239,7 @@ class EarlyBoundTests(TestBase):
         if not OSHelper.IsLinux():
             pass
 
-    def TestMSIS1986(self, msis1986: "MSIS_1986"):
+    def TestMSIS1986(self, msis1986: "MSIS1986"):
         msis1986.use_approximate_altitude = False
         Assert.assertFalse(msis1986.use_approximate_altitude)
         msis1986.use_approximate_altitude = True
@@ -5324,7 +5324,7 @@ class EarlyBoundTests(TestBase):
         if not OSHelper.IsLinux():
             pass
 
-    def TestMSISE1990(self, msise1990: "MSISE_1990"):
+    def TestMSISE1990(self, msise1990: "MSISE1990"):
         msise1990.use_approximate_altitude = False
         Assert.assertFalse(msise1990.use_approximate_altitude)
         msise1990.use_approximate_altitude = True
@@ -5409,7 +5409,7 @@ class EarlyBoundTests(TestBase):
         if not OSHelper.IsLinux():
             pass
 
-    def TestNRLMSISE2000(self, nrlmsise2000: "NRLMSISE_2000"):
+    def TestNRLMSISE2000(self, nrlmsise2000: "NRLMSISE2000"):
         nrlmsise2000.use_approximate_altitude = False
         Assert.assertFalse(nrlmsise2000.use_approximate_altitude)
         nrlmsise2000.use_approximate_altitude = True
@@ -5496,7 +5496,7 @@ class EarlyBoundTests(TestBase):
         if not OSHelper.IsLinux():
             pass
 
-    def TestUSStandardAtmosphere(self, sa: "US_Standard_Atmosphere"):
+    def TestUSStandardAtmosphere(self, sa: "USStandardAtmosphere"):
         sa.use_approximate_altitude = False
         Assert.assertFalse(sa.use_approximate_altitude)
         sa.use_approximate_altitude = True
@@ -5641,7 +5641,7 @@ class EarlyBoundTests(TestBase):
         if not OSHelper.IsLinux():
             pass
 
-    def TestJacchia1960(self, jr: "Jacchia_1960"):
+    def TestJacchia1960(self, jr: "Jacchia1960"):
         jr.use_approximate_altitude = False
         Assert.assertFalse(jr.use_approximate_altitude)
 
@@ -5708,7 +5708,7 @@ class EarlyBoundTests(TestBase):
         if not OSHelper.IsLinux():
             pass
 
-    def TestJacchia1970(self, jr: "Jacchia_1970"):
+    def TestJacchia1970(self, jr: "Jacchia1970"):
         jr.use_approximate_altitude = False
         Assert.assertFalse(jr.use_approximate_altitude)
 
@@ -5803,7 +5803,7 @@ class EarlyBoundTests(TestBase):
         if not OSHelper.IsLinux():
             pass
 
-    def TestJacchia1971(self, jr: "Jacchia_1971"):
+    def TestJacchia1971(self, jr: "Jacchia1971"):
         jr.use_approximate_altitude = False
         Assert.assertFalse(jr.use_approximate_altitude)
 
