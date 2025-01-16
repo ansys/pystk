@@ -174,7 +174,7 @@ class RemoteFrameBufferHost(object):
               cast(self._cfunc_IUnknown3, c_void_p),
               cast(self._cfunc_Refresh, c_void_p)]
         )
-        self.__dict__['_pUnk'] = pointer(self._vtable)
+        self.__dict__['_unknown'] = pointer(self._vtable)
 
     def _add_ref(self, this: PVOID) -> int:
         return 1
