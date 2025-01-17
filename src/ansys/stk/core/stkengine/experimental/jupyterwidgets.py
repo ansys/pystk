@@ -60,7 +60,7 @@ class AsyncioTimerManager(object):
             agutillib = cdll.LoadLibrary("AgUtil.dll")
 
         functype = CFUNCTYPE(None, INSTALLTIMER, DELETETIMER, c_void_p)
-        AgUtSetTimerCallbacks = functype(
+        set_timer_callbacks = functype(
                 ("AgUtSetTimerCallbacks", agutillib),
                 (
                     (1, "pInstallTimer"),
@@ -73,7 +73,7 @@ class AsyncioTimerManager(object):
         self._timers = dict()
         self._install_timer_cfunc = INSTALLTIMER(self.__install_timer)
         self._delete_timer_cfunc = DELETETIMER(self.__delete_timer)
-        AgUtSetTimerCallbacks(
+        set_timer_callbacks(
             self._install_timer_cfunc,
             self._delete_timer_cfunc, c_void_p())
 
@@ -105,13 +105,13 @@ class AsyncioTimerManager(object):
 
     def _next_timer_proc(self):
         """Return time in sec until next timer proc."""
-        tempTimers = self._timers.copy()
-        if len(tempTimers) == 0:
+        temp_timers = self._timers.copy()
+        if len(temp_timers) == 0:
             return 0.050
         else:
             proc_times = list()
-            for timerid in tempTimers:
-                proc_times.append(tempTimers[timerid].next_proc)
+            for timerid in temp_timers:
+                proc_times.append(temp_timers[timerid].next_proc)
             delta_s = min(proc_times) - time.perf_counter()
             if delta_s > 0:
                 return delta_s
@@ -126,7 +126,7 @@ class AsyncioTimerManager(object):
             self._fire_timers()
 
 
-asyncioTimerManager = None
+asyncio_timer_manager = None
 
 
 class RemoteFrameBufferHostVTable(Structure):
@@ -143,8 +143,8 @@ class RemoteFrameBufferHost(object):
     
     Assemble a vtable following the layout of that interface
     """
-    _IID_IUnknown = GUID(IUnknown._guid)
-    _IID_IAgRemoteFrameBufferHost = GUID('{D229A605-D3A8-4476-B628-AC549C674B58}')
+    _iid_unknown = GUID(IUnknown._guid)
+    _iid_iagremoteframebufferhost = GUID('{D229A605-D3A8-4476-B628-AC549C674B58}')
 
     def __init__(self, owner):
         """Construct an object of type RemoteFrameBufferHost."""
@@ -174,7 +174,7 @@ class RemoteFrameBufferHost(object):
               cast(self._cfunc_IUnknown3, c_void_p),
               cast(self._cfunc_Refresh, c_void_p)]
         )
-        self.__dict__['_pUnk'] = pointer(self._vtable)
+        self.__dict__['_unknown'] = pointer(self._vtable)
 
     def _add_ref(self, this: PVOID) -> int:
         return 1
@@ -185,16 +185,16 @@ class RemoteFrameBufferHost(object):
     def _query_interface(self,
                         this: PVOID,
                         riid: REFIID,
-                        ppvObject: POINTER(PVOID)) -> int:
+                        object: POINTER(PVOID)) -> int:
         iid = riid.contents
-        if iid == RemoteFrameBufferHost._IID_IUnknown:
-            ppvObject[0] = addressof(self._pUnk)
+        if iid == RemoteFrameBufferHost._iid_unknown:
+            object[0] = addressof(self._unknown)
             return S_OK
-        elif iid == RemoteFrameBufferHost._IID_IAgRemoteFrameBufferHost:
-            ppvObject[0] = addressof(self._pUnk)
+        elif iid == RemoteFrameBufferHost._iid_iagremoteframebufferhost:
+            object[0] = addressof(self._unknown)
             return S_OK
         else:
-            ppvObject[0] = 0
+            object[0] = 0
             return E_NOINTERFACE
 
     def _refresh(self, this: PVOID) -> None:
@@ -205,8 +205,8 @@ class WidgetBase(RemoteFrameBuffer):
     """Base class for Jupyter controls."""
     _shift = 0x0001
     _control = 0x0004
-    _lAlt = 0x0008
-    _rAlt = 0x0080
+    _lalt = 0x0008
+    _ralt = 0x0080
     _mouse1 = 0x0100
     _mouse2 = 0x0200
     _mouse3 = 0x0400
@@ -240,7 +240,7 @@ class WidgetBase(RemoteFrameBuffer):
         self._rfbHostImpl = RemoteFrameBufferHost(self)
 
         self._rfbHostImplUnk = IUnknown()
-        self._rfbHostImplUnk.p = addressof(self._rfbHostImpl._pUnk)
+        self._rfbHostImplUnk.p = addressof(self._rfbHostImpl._unknown)
 
         self._rfbHost = IRemoteFrameBufferHost()
         self._rfbHost._private_init(self._rfbHostImplUnk)
@@ -260,9 +260,9 @@ class WidgetBase(RemoteFrameBuffer):
             ]
         ]
 
-        global asyncioTimerManager
-        if asyncioTimerManager is None:
-            asyncioTimerManager = AsyncioTimerManager()
+        global asyncio_timer_manager
+        if asyncio_timer_manager is None:
+            asyncio_timer_manager = AsyncioTimerManager()
 
         self.root = root
         self.title = title or self.root.current_scenario.instance_name
@@ -284,11 +284,11 @@ class WidgetBase(RemoteFrameBuffer):
     def __create_instance(self, clsid: str) -> LPVOID:
         guid = GUID()
         if Succeeded(OLE32Lib.CLSIDFromString(clsid, guid)):
-            IID_IUnknown = GUID(IUnknown._guid)
+            iid_iunknown = GUID(IUnknown._guid)
             unk = IUnknown()
             if Succeeded(OLE32Lib.CoCreateInstance(byref(guid), None,
                                           CLSCTX_INPROC_SERVER,
-                                          byref(IID_IUnknown), byref(unk.p))):
+                                          byref(iid_iunknown), byref(unk.p))):
                 unk.take_ownership()
                 return unk
         return None

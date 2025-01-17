@@ -1,25 +1,25 @@
 <Mappings>
    <Mapping ParentScope="AgEWindowService" OldName="eWindowService2DWindow" NewName="WINDOW_2D" Category="enum_value" />
    <Mapping ParentScope="AgEWindowService" OldName="eWindowService3DWindow" NewName="WINDOW_3D" Category="enum_value" />
-   <Mapping OldName="AgEWindowService" NewName="WINDOW_SERVICE_TYPE" Category="enum_type" />
+   <Mapping OldName="AgEWindowService" NewName="WindowServiceType" Category="enum_type" />
    <Mapping ParentScope="AgEWindowState" OldName="eWindowStateMaximized" NewName="MAXIMIZED" Category="enum_value" />
    <Mapping ParentScope="AgEWindowState" OldName="eWindowStateMinimized" NewName="MINIMIZED" Category="enum_value" />
    <Mapping ParentScope="AgEWindowState" OldName="eWindowStateNormal" NewName="NORMAL" Category="enum_value" />
-   <Mapping OldName="AgEWindowState" NewName="APPLICATION_WINDOW_STATE" Category="enum_type" />
+   <Mapping OldName="AgEWindowState" NewName="ApplicationWindowState" Category="enum_type" />
    <Mapping ParentScope="AgEArrangeStyle" OldName="eArrangeStyleCascade" NewName="CASCADE" Category="enum_value" />
    <Mapping ParentScope="AgEArrangeStyle" OldName="eArrangeStyleTiledHorizontal" NewName="TILED_HORIZONTAL" Category="enum_value" />
    <Mapping ParentScope="AgEArrangeStyle" OldName="eArrangeStyleTiledVertical" NewName="TILED_VERTICAL" Category="enum_value" />
-   <Mapping OldName="AgEArrangeStyle" NewName="WINDOW_ARRANGE_STYLE" Category="enum_type" />
+   <Mapping OldName="AgEArrangeStyle" NewName="WindowArrangeStyle" Category="enum_type" />
    <Mapping ParentScope="AgEDockStyle" OldName="eDockStyleIntegrated" NewName="INTEGRATED" Category="enum_value" />
    <Mapping ParentScope="AgEDockStyle" OldName="eDockStyleDockedLeft" NewName="DOCKED_LEFT" Category="enum_value" />
    <Mapping ParentScope="AgEDockStyle" OldName="eDockStyleDockedRight" NewName="DOCKED_RIGHT" Category="enum_value" />
    <Mapping ParentScope="AgEDockStyle" OldName="eDockStyleDockedTop" NewName="DOCKED_TOP" Category="enum_value" />
    <Mapping ParentScope="AgEDockStyle" OldName="eDockStyleDockedBottom" NewName="DOCKED_BOTTOM" Category="enum_value" />
    <Mapping ParentScope="AgEDockStyle" OldName="eDockStyleFloating" NewName="FLOATING" Category="enum_value" />
-   <Mapping OldName="AgEDockStyle" NewName="WINDOW_DOCK_STYLE" Category="enum_type" />
+   <Mapping OldName="AgEDockStyle" NewName="WindowDockStyle" Category="enum_type" />
    <Mapping ParentScope="AgEFloatState" OldName="eFloatStateFloated" NewName="FLOATED" Category="enum_value" />
    <Mapping ParentScope="AgEFloatState" OldName="eFloatStateDocked" NewName="DOCKED" Category="enum_value" />
-   <Mapping OldName="AgEFloatState" NewName="WINDOW_ARRANGE_STATE" Category="enum_type" />
+   <Mapping OldName="AgEFloatState" NewName="WindowArrangeState" Category="enum_type" />
    <Mapping OldName="IAgUiToolbar" NewName="Toolbar" Category="interface" />
    <Mapping ParentScope="IAgUiToolbar" OldName="ID" NewName="identifier" Category="method" />
    <Mapping ParentScope="IAgUiToolbar" OldName="Caption" NewName="caption" Category="method" />

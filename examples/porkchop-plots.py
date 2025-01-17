@@ -435,15 +435,15 @@ def as_datetime(date):
     date types in future computations.
 
     """
-    UTCG_FORMAT = "%d %b %Y %H:%M:%S.%f"
+    utcg_format_str = "%d %b %Y %H:%M:%S.%f"
     try:
-        return datetime.strptime(date.format("UTCG"), UTCG_FORMAT)
+        return datetime.strptime(date.format("UTCG"), utcg_format_str)
     except ValueError as LeapSecondsError:
         import warnings
 
         warnings.warn(f"Date {date.format('UTCG')} is a leap second.")
         adjusted_date = date.subtract("sec", 1)
-        return datetime.strptime(adjusted_date.format("UTCG"), UTCG_FORMAT)
+        return datetime.strptime(adjusted_date.format("UTCG"), utcg_format_str)
 
 
 # -

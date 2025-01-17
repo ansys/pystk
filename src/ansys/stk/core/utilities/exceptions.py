@@ -26,5 +26,5 @@ class STKInvalidTimerError(RuntimeError):
 class STKColorError(RuntimeError):
     """Raised when a problem is encountered with color classes."""
     
-class GrpcUtilitiesException(SyntaxError):
+class GrpcUtilitiesError(SyntaxError):
     """Raised when using gRPC utilities in an unsupported manner."""
