@@ -38,7 +38,7 @@ Summary
             * - :py:class:`~ansys.stk.core.utilities.exceptions.STKColorError`
               - Raised when a problem is encountered with color classes.
 
-            * - :py:class:`~ansys.stk.core.utilities.exceptions.GrpcUtilitiesException`
+            * - :py:class:`~ansys.stk.core.utilities.exceptions.GrpcUtilitiesError`
               - Raised when using gRPC utilities in an unsupported manner.
 
 
@@ -65,6 +65,6 @@ Contains specific exceptions that may be raised from the STK API.
      STKPluginMethodNotImplementedError<exceptions/STKPluginMethodNotImplementedError>
      STKInvalidTimerError<exceptions/STKInvalidTimerError>
      STKColorError<exceptions/STKColorError>
-     GrpcUtilitiesException<exceptions/GrpcUtilitiesException>
+     GrpcUtilitiesError<exceptions/GrpcUtilitiesError>
 
 

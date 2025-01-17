@@ -1,22 +1,22 @@
 <Mappings>
    <Mapping ParentScope="AgEOpenLogFileMode" OldName="eOpenLogFileForWriting" NewName="FOR_WRITING" Category="enum_value" />
    <Mapping ParentScope="AgEOpenLogFileMode" OldName="eOpenLogFileForAppending" NewName="FOR_APPENDING" Category="enum_value" />
-   <Mapping OldName="AgEOpenLogFileMode" NewName="APPLICATION_OPEN_LOG_FILE_MODE" Category="enum_type" />
+   <Mapping OldName="AgEOpenLogFileMode" NewName="ApplicationOpenLogFileMode" Category="enum_type" />
    <Mapping ParentScope="AgEUiLogMsgType" OldName="eUiLogMsgDebug" NewName="DEBUG" Category="enum_value" />
    <Mapping ParentScope="AgEUiLogMsgType" OldName="eUiLogMsgInfo" NewName="INFO" Category="enum_value" />
    <Mapping ParentScope="AgEUiLogMsgType" OldName="eUiLogMsgForceInfo" NewName="FORCE_INFO" Category="enum_value" />
    <Mapping ParentScope="AgEUiLogMsgType" OldName="eUiLogMsgWarning" NewName="WARNING" Category="enum_value" />
    <Mapping ParentScope="AgEUiLogMsgType" OldName="eUiLogMsgAlarm" NewName="ALARM" Category="enum_value" />
-   <Mapping OldName="AgEUiLogMsgType" NewName="APPLICATION_LOG_MESSAGE_TYPE" Category="enum_type" />
+   <Mapping OldName="AgEUiLogMsgType" NewName="ApplicationLogMessageType" Category="enum_type" />
    <Mapping ParentScope="AgEAppConstants" OldName="eAppErrorBase" NewName="APPLICATION_ERROR_BASE" Category="enum_value" />
-   <Mapping OldName="AgEAppConstants" NewName="APPLICATION_CONSTANTS" Category="enum_type" />
+   <Mapping OldName="AgEAppConstants" NewName="ApplicationConstants" Category="enum_type" />
    <Mapping ParentScope="AgEAppErrorCodes" OldName="eAppErrorPersLoadFail" NewName="PERSONALITY_LOAD_FAILED" Category="enum_value" />
    <Mapping ParentScope="AgEAppErrorCodes" OldName="eAppErrorAlreadyLoadFail" NewName="PERSONALITY_ALREADY_LOADED" Category="enum_value" />
    <Mapping ParentScope="AgEAppErrorCodes" OldName="eAppErrorPersLoadFirst" NewName="PERSONALITY_NOT_LOADED" Category="enum_value" />
    <Mapping ParentScope="AgEAppErrorCodes" OldName="eAppErrorPersLicenseError" NewName="PERSONALITY_LICENSE_ERROR" Category="enum_value" />
    <Mapping ParentScope="AgEAppErrorCodes" OldName="eAppErrorNoLicenseError" NewName="NO_LICENSE_ERROR" Category="enum_value" />
-   <Mapping OldName="AgEAppErrorCodes" NewName="APPLICATION_ERROR_CODES" Category="enum_type" />
-   <Mapping OldName="AgEWindowState" NewName="APPLICATION_WINDOW_STATE" Category="enum_type" />
+   <Mapping OldName="AgEAppErrorCodes" NewName="ApplicationErrorCodes" Category="enum_type" />
+   <Mapping OldName="AgEWindowState" NewName="ApplicationWindowState" Category="enum_type" />
    <Mapping OldName="IAgMRUCollection" NewName="MostRecentlyUsedCollection" Category="interface" />
    <Mapping ParentScope="IAgMRUCollection" OldName="Item" NewName="item" Category="method" />
    <Mapping ParentScope="IAgMRUCollection" OldName="Count" NewName="count" Category="method" />

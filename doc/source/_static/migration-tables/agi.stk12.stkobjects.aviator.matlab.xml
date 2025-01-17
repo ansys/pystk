@@ -1,5 +1,5 @@
 <Mappings>
-   <Mapping OldName="AgEAvtrClosureMode" NewName="CLOSURE_MODE" Category="enum_type" />
+   <Mapping OldName="AgEAvtrClosureMode" NewName="ClosureMode" Category="enum_type" />
    <Mapping OldName="IAgAvtrStrategyMATLABNav" NewName="StrategyMATLABNavigation" Category="interface" />
    <Mapping ParentScope="IAgAvtrStrategyMATLABNav" OldName="FunctionName" NewName="function_name" Category="method" />
    <Mapping ParentScope="IAgAvtrStrategyMATLABNav" OldName="IsFunctionPathValid" NewName="is_function_path_valid" Category="method" />

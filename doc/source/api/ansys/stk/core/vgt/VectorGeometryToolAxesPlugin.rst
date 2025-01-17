@@ -33,7 +33,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolAxesPlugin.ProgID`
+            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolAxesPlugin.prog_id`
               - A programmatic ID associated with the component.
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolAxesPlugin.display_name`
               - Plugin's Display Name associated with the COM plugin.
@@ -53,8 +53,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: ProgID
-    :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesPlugin.ProgID
+.. py:property:: prog_id
+    :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesPlugin.prog_id
     :type: str
 
     A programmatic ID associated with the component.

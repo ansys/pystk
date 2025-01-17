@@ -3304,7 +3304,7 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.AtmosphericAbsorptionModel`
               - Class defining an atmospheric absorption model.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.AtmosphericAbsorptionModelITURP676_9`
+            * - :py:class:`~ansys.stk.core.stkobjects.AtmosphericAbsorptionModelITURP676Version9`
               - Class defining an atmospheric absorption model.
 
             * - :py:class:`~ansys.stk.core.stkobjects.AtmosphericAbsorptionModelGraphics3DACAP`
@@ -3397,13 +3397,13 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.RainLossModel`
               - Class defining a rain loss model.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.RainLossModelITURP618_12`
+            * - :py:class:`~ansys.stk.core.stkobjects.RainLossModelITURP618Version12`
               - Class defining a rain loss model.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.RainLossModelITURP618_13`
+            * - :py:class:`~ansys.stk.core.stkobjects.RainLossModelITURP618Version13`
               - Class defining a rain loss model.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.RainLossModelITURP618_10`
+            * - :py:class:`~ansys.stk.core.stkobjects.RainLossModelITURP618Version10`
               - Class defining a rain loss model.
 
             * - :py:class:`~ansys.stk.core.stkobjects.RainLossModelCrane1985`
@@ -3421,25 +3421,25 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.CloudsAndFogFadingLossModel`
               - Class defining a clouds and fog fading loss model.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.CloudsAndFogFadingLossModelP840_6`
+            * - :py:class:`~ansys.stk.core.stkobjects.CloudsAndFogFadingLossModelP840Version6`
               - Class defining a clouds and fog Loss ITU-R P.840-6 model.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.CloudsAndFogFadingLossModelP840_7`
+            * - :py:class:`~ansys.stk.core.stkobjects.CloudsAndFogFadingLossModelP840Version7`
               - Class defining a clouds and fog Loss ITU-R P.840-7 model.
 
             * - :py:class:`~ansys.stk.core.stkobjects.TroposphericScintillationFadingLossModel`
               - Class defining a tropospheric scintillation fading loss model.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.TroposphericScintillationFadingLossModelP618_8`
+            * - :py:class:`~ansys.stk.core.stkobjects.TroposphericScintillationFadingLossModelP618Version8`
               - Class defining a tropospheric scintillation fading loss P.618-8 model.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.TroposphericScintillationFadingLossModelP618_12`
+            * - :py:class:`~ansys.stk.core.stkobjects.TroposphericScintillationFadingLossModelP618Version12`
               - Class defining a tropospheric scintillation fading loss P.618-12 model.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IonosphericFadingLossModel`
               - Class defining a Ionospheric fading loss model.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.IonosphericFadingLossModelP531_13`
+            * - :py:class:`~ansys.stk.core.stkobjects.IonosphericFadingLossModelP531Version13`
               - Class defining a Ionospheric fading loss P.531-13 model.
 
             * - :py:class:`~ansys.stk.core.stkobjects.UrbanTerrestrialLossModel`
@@ -6270,7 +6270,7 @@ The following is an overview of the classes, interfaces and enumerations of the 
      AtmosphericTurbulenceModelHufnagelValley<stkobjects/AtmosphericTurbulenceModelHufnagelValley>
      LaserTroposphericScintillationLossModelITURP1814<stkobjects/LaserTroposphericScintillationLossModelITURP1814>
      AtmosphericAbsorptionModel<stkobjects/AtmosphericAbsorptionModel>
-     AtmosphericAbsorptionModelITURP676_9<stkobjects/AtmosphericAbsorptionModelITURP676_9>
+     AtmosphericAbsorptionModelITURP676Version9<stkobjects/AtmosphericAbsorptionModelITURP676Version9>
      AtmosphericAbsorptionModelGraphics3DACAP<stkobjects/AtmosphericAbsorptionModelGraphics3DACAP>
      AtmosphericAbsorptionModelTIREM320<stkobjects/AtmosphericAbsorptionModelTIREM320>
      AtmosphericAbsorptionModelTIREM331<stkobjects/AtmosphericAbsorptionModelTIREM331>
@@ -6301,21 +6301,21 @@ The following is an overview of the classes, interfaces and enumerations of the 
      ObjectLaserEnvironment<stkobjects/ObjectLaserEnvironment>
      PlatformLaserEnvironment<stkobjects/PlatformLaserEnvironment>
      RainLossModel<stkobjects/RainLossModel>
-     RainLossModelITURP618_12<stkobjects/RainLossModelITURP618_12>
-     RainLossModelITURP618_13<stkobjects/RainLossModelITURP618_13>
-     RainLossModelITURP618_10<stkobjects/RainLossModelITURP618_10>
+     RainLossModelITURP618Version12<stkobjects/RainLossModelITURP618Version12>
+     RainLossModelITURP618Version13<stkobjects/RainLossModelITURP618Version13>
+     RainLossModelITURP618Version10<stkobjects/RainLossModelITURP618Version10>
      RainLossModelCrane1985<stkobjects/RainLossModelCrane1985>
      RainLossModelCrane1982<stkobjects/RainLossModelCrane1982>
      RainLossModelCCIR1983<stkobjects/RainLossModelCCIR1983>
      RainLossModelScriptPlugin<stkobjects/RainLossModelScriptPlugin>
      CloudsAndFogFadingLossModel<stkobjects/CloudsAndFogFadingLossModel>
-     CloudsAndFogFadingLossModelP840_6<stkobjects/CloudsAndFogFadingLossModelP840_6>
-     CloudsAndFogFadingLossModelP840_7<stkobjects/CloudsAndFogFadingLossModelP840_7>
+     CloudsAndFogFadingLossModelP840Version6<stkobjects/CloudsAndFogFadingLossModelP840Version6>
+     CloudsAndFogFadingLossModelP840Version7<stkobjects/CloudsAndFogFadingLossModelP840Version7>
      TroposphericScintillationFadingLossModel<stkobjects/TroposphericScintillationFadingLossModel>
-     TroposphericScintillationFadingLossModelP618_8<stkobjects/TroposphericScintillationFadingLossModelP618_8>
-     TroposphericScintillationFadingLossModelP618_12<stkobjects/TroposphericScintillationFadingLossModelP618_12>
+     TroposphericScintillationFadingLossModelP618Version8<stkobjects/TroposphericScintillationFadingLossModelP618Version8>
+     TroposphericScintillationFadingLossModelP618Version12<stkobjects/TroposphericScintillationFadingLossModelP618Version12>
      IonosphericFadingLossModel<stkobjects/IonosphericFadingLossModel>
-     IonosphericFadingLossModelP531_13<stkobjects/IonosphericFadingLossModelP531_13>
+     IonosphericFadingLossModelP531Version13<stkobjects/IonosphericFadingLossModelP531Version13>
      UrbanTerrestrialLossModel<stkobjects/UrbanTerrestrialLossModel>
      UrbanTerrestrialLossModelTwoRay<stkobjects/UrbanTerrestrialLossModelTwoRay>
      UrbanTerrestrialLossModelWirelessInSite64<stkobjects/UrbanTerrestrialLossModelWirelessInSite64>

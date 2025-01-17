@@ -28,7 +28,7 @@ Overview
               - May be used to obtain an Object Model Root from a running STK Engine application.
             * - :py:attr:`~ansys.stk.core.stkruntime.STKRuntimeApplication.new_object_model_context`
               - May be used to obtain an Object Model Context from a running STK Engine application.
-            * - :py:attr:`~ansys.stk.core.stkruntime.STKRuntimeApplication.SetGrpcOptions`
+            * - :py:attr:`~ansys.stk.core.stkruntime.STKRuntimeApplication.set_grpc_options`
               - Set advanced-usage options for the gRPC client.
                 
                 Available options include:
@@ -37,7 +37,7 @@ Overview
                 { "disable batching" : bool }. Disable all batching operations.
                 { "release batch size" : int }. Number of interfaces to be garbage collected before 
                 sending the entire batch to STK to be released. Default value is 12.
-            * - :py:attr:`~ansys.stk.core.stkruntime.STKRuntimeApplication.NewGrpcCallBatcher`
+            * - :py:attr:`~ansys.stk.core.stkruntime.STKRuntimeApplication.new_grpc_call_batcher`
               - Construct a GrpcCallBatcher linked to this gRPC client that may be used to improve API performance.
                 
                 max_batch is the maximum number of calls to batch together.
@@ -75,8 +75,8 @@ Method detail
 
         :obj:`~StkObjectModelContext`
 
-.. py:method:: SetGrpcOptions(self, options: dict) -> None
-    :canonical: ansys.stk.core.stkruntime.STKRuntimeApplication.SetGrpcOptions
+.. py:method:: set_grpc_options(self, options: dict) -> None
+    :canonical: ansys.stk.core.stkruntime.STKRuntimeApplication.set_grpc_options
 
     Set advanced-usage options for the gRPC client.
     
@@ -95,8 +95,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: NewGrpcCallBatcher(self, max_batch: int = None, disable_batching: bool = False) -> GrpcCallBatcher
-    :canonical: ansys.stk.core.stkruntime.STKRuntimeApplication.NewGrpcCallBatcher
+.. py:method:: new_grpc_call_batcher(self, max_batch: int = None, disable_batching: bool = False) -> GrpcCallBatcher
+    :canonical: ansys.stk.core.stkruntime.STKRuntimeApplication.new_grpc_call_batcher
 
     Construct a GrpcCallBatcher linked to this gRPC client that may be used to improve API performance.
     

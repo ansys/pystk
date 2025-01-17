@@ -23,7 +23,7 @@ from ..internal.comutil            import OLE32Lib, CoInitializeManager, IUnknow
 from ..internal.eventutil          import EventSubscriptionManager
 from ..utilities.grpcutilities     import GrpcCallBatcher
 from ..internal.stkxinitialization import STKXInitialize
-from ..utilities.exceptions        import STKRuntimeError, STKInitializationError, GrpcUtilitiesException
+from ..utilities.exceptions        import STKRuntimeError, STKInitializationError, GrpcUtilitiesError
 from ..stkobjects                  import StkObjectRoot, StkObjectModelContext
 from ..stkx                        import STKXApplication
 
@@ -59,8 +59,8 @@ class STKEngineApplication(STKXApplication):
         self.__dict__["_initialized"] = False
         self.__dict__["_grpc_exceptions"] = True
 
-    def _private_init(self, pUnk:IUnknown, no_graphics):
-        STKXApplication._private_init(self, pUnk)
+    def _private_init(self, unknown:IUnknown, no_graphics):
+        STKXApplication._private_init(self, unknown)
         if os.name!="nt":
             self._stkx_intialize()
         self._stkx_intialize_timer(no_graphics)
@@ -71,21 +71,21 @@ class STKEngineApplication(STKXApplication):
         self.shutdown()
         
     def _stkx_intialize(self):
-        CLSID_AgSTKXInitialize = GUID()
-        if Succeeded(OLE32Lib.CLSIDFromString("{3B85901D-FC82-4733-97E6-5BB25CE69379}", CLSID_AgSTKXInitialize)):
-            IID_IUnknown = GUID(IUnknown._guid)
+        clsid_agstkxinitialize = GUID()
+        if Succeeded(OLE32Lib.CLSIDFromString("{3B85901D-FC82-4733-97E6-5BB25CE69379}", clsid_agstkxinitialize)):
+            iid_iunknown = GUID(IUnknown._guid)
             stkxinit_unk = IUnknown()
-            if Succeeded(OLE32Lib.CoCreateInstance(byref(CLSID_AgSTKXInitialize), None, CLSCTX_INPROC_SERVER, byref(IID_IUnknown), byref(stkxinit_unk.p))):
+            if Succeeded(OLE32Lib.CoCreateInstance(byref(clsid_agstkxinitialize), None, CLSCTX_INPROC_SERVER, byref(iid_iunknown), byref(stkxinit_unk.p))):
                 stkxinit_unk.take_ownership()
-                pInit = STKXInitialize()
-                pInit._private_init(stkxinit_unk)
+                stkxinit = STKXInitialize()
+                stkxinit._private_init(stkxinit_unk)
                 install_dir = os.getenv("STK_INSTALL_DIR")
                 if install_dir is None:
                     raise STKInitializationError("Please set a valid STK_INSTALL_DIR environment variable.")
                 config_dir = os.getenv("STK_CONFIG_DIR")
                 if config_dir is None:
                     raise STKInitializationError("Please set a valid STK_CONFIG_DIR environment variable.")
-                pInit.initialize_data(install_dir, config_dir)
+                stkxinit.initialize_data(install_dir, config_dir)
                 
     @staticmethod
     def _get_signo(sigrtmin_offset):
@@ -130,11 +130,11 @@ class STKEngineApplication(STKXApplication):
         """Create a new object model root for the STK Engine application."""
         if not self.__dict__["_initialized"]:
             raise STKRuntimeError("STKEngineApplication has not been properly initialized.  Use StartApplication() to obtain the STKEngineApplication object.")
-        CLSID_AgStkObjectRoot = GUID()
-        if Succeeded(OLE32Lib.CLSIDFromString("{96C1CE4E-C61D-4657-99CB-8581E12693FE}", CLSID_AgStkObjectRoot)):
-            IID_IUnknown = GUID(IUnknown._guid)
+        clsid_agstkobjectroot = GUID()
+        if Succeeded(OLE32Lib.CLSIDFromString("{96C1CE4E-C61D-4657-99CB-8581E12693FE}", clsid_agstkobjectroot)):
+            iid_iunknown = GUID(IUnknown._guid)
             root_unk = IUnknown()
-            OLE32Lib.CoCreateInstance(byref(CLSID_AgStkObjectRoot), None, CLSCTX_INPROC_SERVER, byref(IID_IUnknown), byref(root_unk.p))
+            OLE32Lib.CoCreateInstance(byref(clsid_agstkobjectroot), None, CLSCTX_INPROC_SERVER, byref(iid_iunknown), byref(root_unk.p))
             root_unk.take_ownership()
             root = StkObjectRoot()
             root._private_init(root_unk)
@@ -144,17 +144,17 @@ class STKEngineApplication(STKXApplication):
         """Create a new object model context for the STK Engine application."""
         if not self.__dict__['_initialized']:
             raise STKRuntimeError('STKEngineApplication has not been properly initialized.  Use StartApplication() to obtain the STKEngineApplication object.')
-        CLSID_AgStkObjectModelContext = GUID()
-        if Succeeded(OLE32Lib.CLSIDFromString('{7A12879C-5018-4433-8415-5DB250AFBAF9}', CLSID_AgStkObjectModelContext)):
-            IID_IUnknown = GUID(IUnknown._guid)
+        clsid_agstkobjectmodelcontext = GUID()
+        if Succeeded(OLE32Lib.CLSIDFromString('{7A12879C-5018-4433-8415-5DB250AFBAF9}', clsid_agstkobjectmodelcontext)):
+            iid_iunknown = GUID(IUnknown._guid)
             context_unk = IUnknown()
-            OLE32Lib.CoCreateInstance(byref(CLSID_AgStkObjectModelContext), None, CLSCTX_INPROC_SERVER, byref(IID_IUnknown), byref(context_unk.p))
+            OLE32Lib.CoCreateInstance(byref(clsid_agstkobjectmodelcontext), None, CLSCTX_INPROC_SERVER, byref(iid_iunknown), byref(context_unk.p))
             context_unk.take_ownership()
             context = StkObjectModelContext()
             context._private_init(context_unk)
             return context
 
-    def SetGrpcOptions(self, options:dict) -> None:
+    def set_grpc_options(self, options:dict) -> None:
         """
         Grpc is not available with STK Engine. Provided for parity with STK Runtime and Desktop.
         
@@ -165,12 +165,12 @@ class STKEngineApplication(STKXApplication):
         if "raise exceptions with STK Engine" in options:
             self.__dict__["_grpc_exceptions"] = options["raise exceptions with STK Engine"]
         if self._grpc_exceptions:
-            raise GrpcUtilitiesException("gRPC is not available with STK Engine. Disable this exception with SetGrpcOptions({\"raise exceptions with STK Engine\" : False}).")
+            raise GrpcUtilitiesError("gRPC is not available with STK Engine. Disable this exception with SetGrpcOptions({\"raise exceptions with STK Engine\" : False}).")
             
-    def NewGrpcCallBatcher(self, max_batch:int=None, disable_batching:bool=True) -> GrpcCallBatcher:
+    def new_grpc_call_batcher(self, max_batch:int=None, disable_batching:bool=True) -> GrpcCallBatcher:
         """Grpc is not available with STK Engine. Provided for parity with STK Runtime and Desktop."""
         if self._grpc_exceptions:
-            raise GrpcUtilitiesException("gRPC is not available with STK Engine. Disable this exception with SetGrpcOptions({\"raise exceptions with STK Engine\" : False}).")
+            raise GrpcUtilitiesError("gRPC is not available with STK Engine. Disable this exception with SetGrpcOptions({\"raise exceptions with STK Engine\" : False}).")
         return GrpcCallBatcher(disable_batching=True)
 
     def shutdown(self) -> None:
@@ -196,8 +196,8 @@ class STKEngine(object):
             return
         try:
             x11lib = cdll.LoadLibrary(find_library("X11"))
-            XInitThreads = CFUNCTYPE(None)(("XInitThreads", x11lib))
-            XInitThreads()
+            xinit_threads = CFUNCTYPE(None)(("XInitThreads", x11lib))
+            xinit_threads()
         except:
             raise STKRuntimeError("Failed attempting to run graphics mode without X11.")
             
@@ -211,16 +211,16 @@ class STKEngine(object):
         if STKEngine._is_engine_running:
             raise STKRuntimeError("Only one STKEngine instance is allowed per Python process.")
         CoInitializeManager.initialize()
-        CLSID_AgSTKXApplication = GUID()
-        if Succeeded(OLE32Lib.CLSIDFromString("{062AB565-B121-45B5-A9A9-B412CEFAB6A9}", CLSID_AgSTKXApplication)):
-            pUnk = IUnknown()
-            IID_IUnknown = GUID(IUnknown._guid)
-            if Succeeded(OLE32Lib.CoCreateInstance(byref(CLSID_AgSTKXApplication), None, CLSCTX_INPROC_SERVER, byref(IID_IUnknown), byref(pUnk.p))):
-                pUnk.take_ownership(isApplication=True)
+        clsid_agstkxapplication = GUID()
+        if Succeeded(OLE32Lib.CLSIDFromString("{062AB565-B121-45B5-A9A9-B412CEFAB6A9}", clsid_agstkxapplication)):
+            unknown = IUnknown()
+            iid_iunknown = GUID(IUnknown._guid)
+            if Succeeded(OLE32Lib.CoCreateInstance(byref(clsid_agstkxapplication), None, CLSCTX_INPROC_SERVER, byref(iid_iunknown), byref(unknown.p))):
+                unknown.take_ownership(isApplication=True)
                 STKEngine._is_engine_running = True
                 STKEngine._init_x11(no_graphics)
                 engine = STKEngineApplication()
-                engine._private_init(pUnk, no_graphics)
+                engine._private_init(unknown, no_graphics)
                 engine.no_graphics = no_graphics
                 atexit.register(engine.shutdown)
                 return engine
