@@ -7,6 +7,7 @@
 __all__ = ["STKDesktop", "STKDesktopApplication"]
 
 import os
+import pathlib
 import socket
 import typing
 import atexit
@@ -212,9 +213,9 @@ class STKDesktop(object):
             if executable is None or not pathlib.Path(executable).exists():
                 bin_dir = pathlib.Path(winreg_stk_binary_dir()).resolve()
                 if bin_dir.exists():
-                    executable = bin_dir / "UiApplication.exe"
+                    executable = bin_dir / "AgUiApplication.exe"
                 else:
-                    raise STKInitializationError(f"Could not find UiApplication.exe. Verify STK 12 installation.")
+                    raise STKInitializationError(f"Could not find AgUiApplication.exe. Verify STK 12 installation.")
             cmd_line = [f"{executable}", "/pers", "STK", "/grpcServer", "On", "/grpcHost", grpc_host, "/grpcPort", str(grpc_port)]
             if STKDesktop._disable_pop_ups:
                 cmd_line.append("/Automation")

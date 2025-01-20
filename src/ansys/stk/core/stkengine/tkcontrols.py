@@ -7,6 +7,7 @@
 __all__ = ["GlobeControl", "MapControl", "GfxAnalysisControl"]
 
 import os
+import pathlib
 from tkinter                    import Frame
 if os.name == "nt":
     from ctypes import (CDLL, POINTER, WinDLL, WinError, c_char_p, cdll, create_unicode_buffer,
@@ -69,7 +70,7 @@ class NativeContainerMethods:
             stkx_dll_path = pathlib.Path(c_path.value).resolve()
 
             jni_core_dll_path = stkx_dll_path.parent / "AgJNICore.dll"
-            return jni_core_dll_path
+            return str(jni_core_dll_path)
     def create_container(self, progid):
         return self.AgPythonCreateContainer(LPVOID(None), LPVOID(None), LPCWSTR(progid))
     def attach_container(self, container, winid, display):

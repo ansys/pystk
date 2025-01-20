@@ -150,18 +150,13 @@ class STKRuntime(object):
                 raise STKInitializationError("LD_LIBRARY_PATH not defined. Add STK bin directory to LD_LIBRARY_PATH before running.")
         else:
             clsid_stkxapplication = "{062AB565-B121-45B5-A9A9-B412CEFAB6A9}"
-            stkx_dll_path = read_registry_key(f"CLSID\\{clsid_stkxapplication}\\InprocServer32", silent_exception=True)
-
-            default_bin_dir = pathlib.Path(winreg_stk_binary_dir())
-            bin_dir = default_bin_dir if not bin_dir else pathlib.Path(stkx_dll_path).parent
-
-            stkruntime_path = bin_dir / "stkruntime.exe"
-            if not stkruntime_path.exists():
-                if not bin_dir.exists():
+            stkx_dll_registry_value = read_registry_key(f"CLSID\\{clsid_stkxapplication}\\InprocServer32", silent_exception=True)
+            stkruntime_path = None if stkx_dll_registry_value is None else pathlib.Path(stkx_dll_registry_value).parent / "STKRuntime.exe"
+            if stkruntime_path is None or not stkruntime_path.exists():
+                stkruntime_path = pathlib.Path(winreg_stk_binary_dir()) / "STKRuntime.exe"
+                if not stkruntime_path.exists():
                     raise STKInitializationError(f"Could not find STKRuntime.exe. Verify STK installation.")
-
             cmd_line = [str(stkruntime_path.resolve()), "/grpcHost", grpc_host, "/grpcPort", str(grpc_port)]
-
             if no_graphics:
                 cmd_line.append("/noGraphics")
 
