@@ -649,12 +649,13 @@ def render_migration_table(app: sphinx.application.Sphinx):
         for member_category in member_categories:
             method_mappings = root.findall(f'./Mapping[@Category="{member_category}"]')
             for method_mapping in method_mappings:
-                type_old_name = method_mapping.get("ParentScope")
                 member_old_name = method_mapping.get("OldName")
-                member_new_name = method_mapping.get("NewName")
-                if not type_old_name in mappings:
-                    mappings[type_old_name] = {"new_name": type_old_name, "members": {}}
-                mappings[type_old_name]["members"][member_old_name] = member_new_name
+                if member_old_name[0] != "_": # Filter out private methods
+                    type_old_name = method_mapping.get("ParentScope")
+                    member_new_name = method_mapping.get("NewName")
+                    if not type_old_name in mappings:
+                        mappings[type_old_name] = {"new_name": type_old_name, "members": {}}
+                    mappings[type_old_name]["members"][member_old_name] = member_new_name
 
         json_file = xml_file.parent / "main.json"
         json_file.write_text(json.dumps(mappings, indent=4))
