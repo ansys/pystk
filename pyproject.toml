@@ -102,7 +102,8 @@ extend-exclude = [
 select = [
 #    "E",    # pycodestyle, see https://beta.ruff.rs/docs/rules/#pycodestyle-e-w
     "D",     # pydocstyle, see https://beta.ruff.rs/docs/rules/#pydocstyle-d
-    "F",    # pyflakes, see https://beta.ruff.rs/docs/rules/#pyflakes-f
+    "F",     # pyflakes, see https://beta.ruff.rs/docs/rules/#pyflakes-f
+    "PYI",   # flake8-pyi, see https://docs.astral.sh/ruff/rules/#flake8-pyi-pyi 
 #    "I",    # isort, see https://beta.ruff.rs/docs/rules/#isort-i
     "N",    # pep8-naming, see https://beta.ruff.rs/docs/rules/#pep8-naming-n
     "PTH",  # flake8-use-pathlib, https://beta.ruff.rs/docs/rules/#flake8-use-pathlib-pth
@@ -110,10 +111,11 @@ select = [
 ]
 ignore = [
 #   "E501",  # Line too long. Ignoring this so "ruff.formatter" manages line length.
-    "D204",  # One blank line required after class docstring
-    "D212",  # Multi-line docstring summary should start at the first line
-    "D400",  # First line should end with a period
-    "TD002", # Missing author in TODOs comment
+    "D204",  # One blank line required after class docstring.
+    "D212",  # Multi-line docstring summary should start at the first line.
+    "D400",  # First line should end with a period.
+    "F821",  # Undefined name. PyFlakes can not handle forward reference annotations. Using flake8-pyi instead.
+    "TD002", # Missing author in TODOs comment.
 ]
 
 [tool.ruff.lint.pydocstyle]
