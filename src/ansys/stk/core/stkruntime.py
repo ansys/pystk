@@ -8,6 +8,7 @@ __all__ = ["STKRuntime", "STKRuntimeApplication"]
 
 import atexit
 import os
+import pathlib
 import socket
 
 # The subprocess module is needed to start the backend. 
@@ -139,8 +140,9 @@ class STKRuntime(object):
             ld_env = os.getenv('LD_LIBRARY_PATH')
             if ld_env:
                 for path in ld_env.split(':'):
-                    if os.path.exists(os.path.join(path, "stkruntime")):
-                        cmd_line = [os.path.join(path, "stkruntime"), "--grpcHost", grpc_host, "--grpcPort", str(grpc_port)]
+                    stkruntime_path = (pathlib.Path(path) / "stkruntime").resolve()
+                    if stkruntime_path.exists():
+                        cmd_line = [stkruntime_path, "--grpcHost", grpc_host, "--grpcPort", str(grpc_port)]
                         if no_graphics:
                             cmd_line.append("--noGraphics")
                         break
@@ -148,13 +150,13 @@ class STKRuntime(object):
                 raise STKInitializationError("LD_LIBRARY_PATH not defined. Add STK bin directory to LD_LIBRARY_PATH before running.")
         else:
             clsid_stkxapplication = "{062AB565-B121-45B5-A9A9-B412CEFAB6A9}"
-            stkx_dll_path = read_registry_key(f"CLSID\\{clsid_stkxapplication}\\InprocServer32", silent_exception=True)
-            bin_dir, dll_name = (None, None) if stkx_dll_path is None else os.path.split(stkx_dll_path)
-            if bin_dir is None or not os.path.exists(os.path.join(bin_dir, "STKRuntime.exe")):
-                bin_dir = winreg_stk_binary_dir()
-                if bin_dir is None:
+            stkx_dll_registry_value = read_registry_key(f"CLSID\\{clsid_stkxapplication}\\InprocServer32", silent_exception=True)
+            stkruntime_path = None if stkx_dll_registry_value is None else pathlib.Path(stkx_dll_registry_value).parent / "STKRuntime.exe"
+            if stkruntime_path is None or not stkruntime_path.exists():
+                stkruntime_path = pathlib.Path(winreg_stk_binary_dir()) / "STKRuntime.exe"
+                if not stkruntime_path.exists():
                     raise STKInitializationError(f"Could not find STKRuntime.exe. Verify STK installation.")
-            cmd_line = [os.path.join(bin_dir, "STKRuntime.exe"), "/grpcHost", grpc_host, "/grpcPort", str(grpc_port)]
+            cmd_line = [str(stkruntime_path.resolve()), "/grpcHost", grpc_host, "/grpcPort", str(grpc_port)]
             if no_graphics:
                 cmd_line.append("/noGraphics")
 
