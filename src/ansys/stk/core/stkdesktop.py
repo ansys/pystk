@@ -24,7 +24,7 @@ from .internal.eventutil      import EventSubscriptionManager
 from .internal.apiutil        import InterfaceProxy, read_registry_key, winreg_stk_binary_dir
 from .utilities.grpcutilities import GrpcCallBatcher
 from .utilities.exceptions    import STKRuntimeError, STKInitializationError
-from .stkobjects              import StkObjectRoot, StkObjectModelContext, StkObjectRoot
+from .stkobjects              import StkObjectModelContext, StkObjectRoot
 from .uiapplication           import UiApplication
 
 class ThreadMarshaller(object):
@@ -196,7 +196,7 @@ class STKDesktop(object):
             try:
                 pass
             except ModuleNotFoundError:
-                raise STKInitializationError(f"gRPC use requires Python modules grpcio and protobuf.")
+                raise STKInitializationError("gRPC use requires Python modules grpcio and protobuf.")
             if grpc_port < 0 or grpc_port > 65535:
                 raise STKInitializationError(f"{grpc_port} is not a valid port number for the gRPC server.")
             if grpc_host != "localhost":
@@ -215,7 +215,7 @@ class STKDesktop(object):
                 if bin_dir.exists():
                     executable = bin_dir / "AgUiApplication.exe"
                 else:
-                    raise STKInitializationError(f"Could not find AgUiApplication.exe. Verify STK 12 installation.")
+                    raise STKInitializationError("Could not find UiApplication.exe. Verify STK 12 installation.")
             cmd_line = [f"{executable}", "/pers", "STK", "/grpcServer", "On", "/grpcHost", grpc_host, "/grpcPort", str(grpc_port)]
             if STKDesktop._disable_pop_ups:
                 cmd_line.append("/Automation")
@@ -268,11 +268,11 @@ class STKDesktop(object):
         CoInitializeManager.initialize()
         if grpc_server:
             if pid is not None:
-                raise STKInitializationError(f"Retry using either 'pid' or 'grpc_server'. Cannot initialize using both.")
+                raise STKInitializationError("Retry using either 'pid' or 'grpc_server'. Cannot initialize using both.")
             try:
                 from .internal.grpcutil import GrpcClient
             except ModuleNotFoundError:
-                raise STKInitializationError(f"gRPC use requires Python modules grpcio and protobuf.")
+                raise STKInitializationError("gRPC use requires Python modules grpcio and protobuf.")
             client: GrpcClient = GrpcClient.new_client(grpc_host, grpc_port, grpc_timeout_sec)
             if client is not None:
                 app_impl = client.get_stk_application_interface()
