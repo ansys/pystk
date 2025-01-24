@@ -222,7 +222,7 @@ class STKDesktop(object):
 
             # Calling subprocess.Popen (without shell equals true) to start the backend. 
             # Excluding low severity bandit check as the validity of the inputs has been ensured.
-            app_process = subprocess.Popen(cmd_line) # nosec B603
+            subprocess.Popen(cmd_line) # nosec B603
             host = grpc_host
             # Ignoring B104 warning as it is a false positive. The hard-coded string "0.0.0.0" is being filtered
             # to ensure that it is not used.
@@ -286,7 +286,7 @@ class STKDesktop(object):
             clsid_aguiapplication = GUID()
             if Succeeded(OLE32Lib.CLSIDFromString("STK12.Application", clsid_aguiapplication)):
                 unknown = IUnknown()
-                iid_iunknown = GUID(IUnknown._guid)
+                GUID(IUnknown._guid)
                 if Succeeded(OLEAut32Lib.GetActiveObject(byref(clsid_aguiapplication), None, byref(unknown.p))):
                     unknown.take_ownership(isApplication=True)
                     app = STKDesktopApplication()
