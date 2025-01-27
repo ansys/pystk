@@ -286,7 +286,6 @@ class STKDesktop(object):
             clsid_aguiapplication = GUID()
             if Succeeded(OLE32Lib.CLSIDFromString("STK12.Application", clsid_aguiapplication)):
                 unknown = IUnknown()
-                GUID(IUnknown._guid)
                 if Succeeded(OLEAut32Lib.GetActiveObject(byref(clsid_aguiapplication), None, byref(unknown.p))):
                     unknown.take_ownership(isApplication=True)
                     app = STKDesktopApplication()
