@@ -2,8 +2,9 @@
 
 from __future__ import annotations
 
-import typing
 import grpc
+import logging
+import typing
 from enum import IntEnum, IntFlag
 from concurrent.futures import ThreadPoolExecutor
 from queue import SimpleQueue
@@ -18,6 +19,8 @@ from ..utilities.colors import Color
 
 # comutil.GUID.from_registry_format("{00020404-0000-0000-C000-000000000046}").as_data_pair()
 IID_IEnumVARIANT = (132100, 5044031582654955712) 
+
+_logger = logging.getLogger("stk.internal.grpcutil")
         
 def _is_list_type(arg:typing.Any) -> bool:
     if type(arg) == str or not hasattr(arg, '__iter__'):
@@ -758,7 +761,10 @@ class GrpcClient(object):
     def _fire_event(self, callbacks, args, event_id):
         if callbacks is not None:
             for callback in callbacks:
-                callback(*args)
+                try:
+                    callback(*args)
+                except:
+                    _logger.exception(f"Exception raised during callback registered to {callback.__name__}")
                 self._execute_batched_invoke()
         self.acknowledge_event(event_id)
 
@@ -773,7 +779,7 @@ class GrpcClient(object):
                 callbacks = self._event_callbacks[handler][name][p.value]
                 self._executor.submit(self._fire_event, callbacks, args, event.event_id)
         except:
-            pass
+            _logger.exception("Exception raised during handling of STK events:")
 
     def start_event_loop(self):
         if self._event_loop_id is None:

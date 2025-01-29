@@ -138,10 +138,7 @@ if os.name != "nt":
         
         def terminate(self):
             signal.setitimer(signal.ITIMER_REAL, 0, 0)
-            try:
-                signal.signal(signal.SIGALRM, self.previous_sighandler)
-            except:
-                pass
+            signal.signal(signal.SIGALRM, self.previous_sighandler)
                 
         def __install_timer(self, milliseconds, TIMERPROC, callbackData):
             id = self._next_id
@@ -181,10 +178,7 @@ if os.name != "nt":
             
         def terminate(self):
             UtilLib.uninitialize_librt_timers()
-            try:
-                signal.signal(self._signo, self.previous_sighandler)
-            except:
-                pass
+            signal.signal(self._signo, self.previous_sighandler)
             
         def _fire_timers(self, signo, frame):
             UtilLib.fire_librt_timer_callbacks()
