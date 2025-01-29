@@ -1,13 +1,13 @@
-Jacchia_1971
-============
+Jacchia1970
+===========
 
-.. py:class:: ansys.stk.core.stkobjects.astrogator.Jacchia_1971
+.. py:class:: ansys.stk.core.stkobjects.astrogator.Jacchia1970
 
    Bases: :py:class:`~ansys.stk.core.stkobjects.astrogator.IComponentInfo`, :py:class:`~ansys.stk.core.stkobjects.astrogator.ICloneable`
 
-   Jacchia_1971 atmospheric propagator function.
+   Jacchia_1970 atmospheric propagator function.
 
-.. py:currentmodule:: Jacchia_1971
+.. py:currentmodule:: Jacchia1970
 
 Overview
 --------
@@ -20,37 +20,37 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.Jacchia_1971.use_approximate_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.Jacchia1970.use_approximate_altitude`
               - True if using approximate altitude formula.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.Jacchia_1971.computes_temperature`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.Jacchia1970.computes_temperature`
               - Flag indicates whether this model computes temperature.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.Jacchia_1971.computes_pressure`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.Jacchia1970.computes_pressure`
               - Flag indicates whether this model computes pressure.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.Jacchia_1971.sun_position`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.Jacchia1970.sun_position`
               - Gets or sets the sun position computation.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.Jacchia_1971.atmos_data_source`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.Jacchia1970.atmos_data_source`
               - Gets or sets the atmospheric model data source - data file or constant values.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.Jacchia_1971.f_10_p7`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.Jacchia1970.f_10_p7`
               - Solar Flux (F10.7); the daily Ottawa 10.7 cm solar flux value. Dimensionless.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.Jacchia_1971.f_10_p7_avg`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.Jacchia1970.f_10_p7_avg`
               - Average solar Flux (F10.7); the 81-day averaged Ottawa 10.7 cm solar flux value. Dimensionless.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.Jacchia_1971.kp`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.Jacchia1970.kp`
               - Geomagnetic Index (Kp). Dimensionless.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.Jacchia_1971.atmos_data_geo_magnetic_flux_source`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.Jacchia1970.atmos_data_geo_magnetic_flux_source`
               - Whether to use Kp or Ap data from the flux file.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.Jacchia_1971.atmos_data_geo_magnetic_flux_update_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.Jacchia1970.atmos_data_geo_magnetic_flux_update_rate`
               - Gets or sets the update rate for geomagnetic flux values from the flux file.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.Jacchia_1971.atmos_data_filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.Jacchia1970.atmos_data_filename`
               - Gets or sets the atmospheric model data file path.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.Jacchia_1971.drag_model_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.Jacchia1970.drag_model_type`
               - Drag model type.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.Jacchia_1971.drag_model_plugin_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.Jacchia1970.drag_model_plugin_name`
               - Gets or sets the name of the drag model plugin.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.Jacchia_1971.drag_model_plugin`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.Jacchia1970.drag_model_plugin`
               - Drag model plugin properties.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.Jacchia_1971.variable_area_history_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.Jacchia1970.variable_area_history_file`
               - Drag variable area history file.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.Jacchia_1971.n_plate_definition_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.Jacchia1970.n_plate_definition_file`
               - Drag N-Plate definition file.
 
 
@@ -60,104 +60,104 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects.astrogator import Jacchia_1971
+    from ansys.stk.core.stkobjects.astrogator import Jacchia1970
 
 
 Property detail
 ---------------
 
 .. py:property:: use_approximate_altitude
-    :canonical: ansys.stk.core.stkobjects.astrogator.Jacchia_1971.use_approximate_altitude
+    :canonical: ansys.stk.core.stkobjects.astrogator.Jacchia1970.use_approximate_altitude
     :type: bool
 
     True if using approximate altitude formula.
 
 .. py:property:: computes_temperature
-    :canonical: ansys.stk.core.stkobjects.astrogator.Jacchia_1971.computes_temperature
+    :canonical: ansys.stk.core.stkobjects.astrogator.Jacchia1970.computes_temperature
     :type: bool
 
     Flag indicates whether this model computes temperature.
 
 .. py:property:: computes_pressure
-    :canonical: ansys.stk.core.stkobjects.astrogator.Jacchia_1971.computes_pressure
+    :canonical: ansys.stk.core.stkobjects.astrogator.Jacchia1970.computes_pressure
     :type: bool
 
     Flag indicates whether this model computes pressure.
 
 .. py:property:: sun_position
-    :canonical: ansys.stk.core.stkobjects.astrogator.Jacchia_1971.sun_position
+    :canonical: ansys.stk.core.stkobjects.astrogator.Jacchia1970.sun_position
     :type: SunPosition
 
     Gets or sets the sun position computation.
 
 .. py:property:: atmos_data_source
-    :canonical: ansys.stk.core.stkobjects.astrogator.Jacchia_1971.atmos_data_source
+    :canonical: ansys.stk.core.stkobjects.astrogator.Jacchia1970.atmos_data_source
     :type: AtmosDataSource
 
     Gets or sets the atmospheric model data source - data file or constant values.
 
 .. py:property:: f_10_p7
-    :canonical: ansys.stk.core.stkobjects.astrogator.Jacchia_1971.f_10_p7
+    :canonical: ansys.stk.core.stkobjects.astrogator.Jacchia1970.f_10_p7
     :type: float
 
     Solar Flux (F10.7); the daily Ottawa 10.7 cm solar flux value. Dimensionless.
 
 .. py:property:: f_10_p7_avg
-    :canonical: ansys.stk.core.stkobjects.astrogator.Jacchia_1971.f_10_p7_avg
+    :canonical: ansys.stk.core.stkobjects.astrogator.Jacchia1970.f_10_p7_avg
     :type: float
 
     Average solar Flux (F10.7); the 81-day averaged Ottawa 10.7 cm solar flux value. Dimensionless.
 
 .. py:property:: kp
-    :canonical: ansys.stk.core.stkobjects.astrogator.Jacchia_1971.kp
+    :canonical: ansys.stk.core.stkobjects.astrogator.Jacchia1970.kp
     :type: float
 
     Geomagnetic Index (Kp). Dimensionless.
 
 .. py:property:: atmos_data_geo_magnetic_flux_source
-    :canonical: ansys.stk.core.stkobjects.astrogator.Jacchia_1971.atmos_data_geo_magnetic_flux_source
+    :canonical: ansys.stk.core.stkobjects.astrogator.Jacchia1970.atmos_data_geo_magnetic_flux_source
     :type: GeoMagneticFluxSource
 
     Whether to use Kp or Ap data from the flux file.
 
 .. py:property:: atmos_data_geo_magnetic_flux_update_rate
-    :canonical: ansys.stk.core.stkobjects.astrogator.Jacchia_1971.atmos_data_geo_magnetic_flux_update_rate
+    :canonical: ansys.stk.core.stkobjects.astrogator.Jacchia1970.atmos_data_geo_magnetic_flux_update_rate
     :type: GeoMagneticFluxUpdateRate
 
     Gets or sets the update rate for geomagnetic flux values from the flux file.
 
 .. py:property:: atmos_data_filename
-    :canonical: ansys.stk.core.stkobjects.astrogator.Jacchia_1971.atmos_data_filename
+    :canonical: ansys.stk.core.stkobjects.astrogator.Jacchia1970.atmos_data_filename
     :type: str
 
     Gets or sets the atmospheric model data file path.
 
 .. py:property:: drag_model_type
-    :canonical: ansys.stk.core.stkobjects.astrogator.Jacchia_1971.drag_model_type
+    :canonical: ansys.stk.core.stkobjects.astrogator.Jacchia1970.drag_model_type
     :type: DragModelType
 
     Drag model type.
 
 .. py:property:: drag_model_plugin_name
-    :canonical: ansys.stk.core.stkobjects.astrogator.Jacchia_1971.drag_model_plugin_name
+    :canonical: ansys.stk.core.stkobjects.astrogator.Jacchia1970.drag_model_plugin_name
     :type: str
 
     Gets or sets the name of the drag model plugin.
 
 .. py:property:: drag_model_plugin
-    :canonical: ansys.stk.core.stkobjects.astrogator.Jacchia_1971.drag_model_plugin
+    :canonical: ansys.stk.core.stkobjects.astrogator.Jacchia1970.drag_model_plugin
     :type: DragModelPlugin
 
     Drag model plugin properties.
 
 .. py:property:: variable_area_history_file
-    :canonical: ansys.stk.core.stkobjects.astrogator.Jacchia_1971.variable_area_history_file
+    :canonical: ansys.stk.core.stkobjects.astrogator.Jacchia1970.variable_area_history_file
     :type: str
 
     Drag variable area history file.
 
 .. py:property:: n_plate_definition_file
-    :canonical: ansys.stk.core.stkobjects.astrogator.Jacchia_1971.n_plate_definition_file
+    :canonical: ansys.stk.core.stkobjects.astrogator.Jacchia1970.n_plate_definition_file
     :type: str
 
     Drag N-Plate definition file.

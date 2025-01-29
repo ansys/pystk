@@ -1,4 +1,3 @@
-version: '3.8'
 services:
   stk-python3.13:
     image: ansys/stk:dev-windowsservercore-ltsc2019-python3.13

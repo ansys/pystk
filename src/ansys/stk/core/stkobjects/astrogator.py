@@ -44,15 +44,15 @@ __all__ = ["AccessCriterion", "AccessStoppingCondition", "AsTriggerCondition", "
 "IBurnout", "ICentralBodyComponentAttitude", "ICentralBodyComponentEphemeris", "ICentralBodyComponentEphemerisJPLDevelopmentalEphemerides", 
 "ICentralBodyComponentShape", "IDisplaySystem", "IElement", "IMCSSegment", "IMCSSequence", "IManeuver", "INumericalIntegrator", 
 "IPOPTControl", "IPOPTControlCollection", "IPOPTGoal", "IPOPTResult", "IPOPTResultCollection", "IProfile", "IStoppingConditionComponent", 
-"IdealOrbitRadius", "ImpulsiveDeltaVRepresentation", "JacchiaBowman2008", "JacchiaRoberts", "Jacchia_1960", "Jacchia_1970", 
-"Jacchia_1971", "LambertDirectionOfMotionType", "LambertOrbitalEnergyType", "LambertSolutionOptionType", "LambertTargetCoordinateType", 
+"IdealOrbitRadius", "ImpulsiveDeltaVRepresentation", "Jacchia1960", "Jacchia1970", "Jacchia1971", "JacchiaBowman2008", "JacchiaRoberts", 
+"LambertDirectionOfMotionType", "LambertOrbitalEnergyType", "LambertSolutionOptionType", "LambertTargetCoordinateType", 
 "Language", "LaunchDisplaySystem", "LightingCondition", "LightingStoppingCondition", "MCSBackwardSequence", "MCSDriver", 
 "MCSEnd", "MCSFollow", "MCSHold", "MCSInitialState", "MCSLaunch", "MCSManeuver", "MCSOptions", "MCSPropagate", "MCSReturn", 
-"MCSSegmentCollection", "MCSSegmentProperties", "MCSSequence", "MCSStop", "MCSTargetSequence", "MCSUpdate", "MSISE_1990", 
-"MSIS_1986", "ManeuverFinite", "ManeuverFinitePropagator", "ManeuverImpulsive", "ManeuverOptimalFinite", "ManeuverOptimalFiniteBounds", 
+"MCSSegmentCollection", "MCSSegmentProperties", "MCSSequence", "MCSStop", "MCSTargetSequence", "MCSUpdate", "MSIS1986", 
+"MSISE1990", "ManeuverFinite", "ManeuverFinitePropagator", "ManeuverImpulsive", "ManeuverOptimalFinite", "ManeuverOptimalFiniteBounds", 
 "ManeuverOptimalFiniteFinalBoundaryConditions", "ManeuverOptimalFiniteInitialBoundaryConditions", "ManeuverOptimalFinitePathBoundaryConditions", 
 "ManeuverOptimalFiniteSNOPTOptimizer", "ManeuverOptimalFiniteSteeringNodeCollection", "ManeuverOptimalFiniteSteeringNodeElement", 
-"ManeuverType", "MarsGRAM2000", "MarsGRAM2001", "MarsGRAM2005", "MarsGRAM2010", "MarsGRAM37", "MarsGRAMDensityType", "NRLMSISE_2000", 
+"ManeuverType", "MarsGRAM2000", "MarsGRAM2001", "MarsGRAM2005", "MarsGRAM2010", "MarsGRAM37", "MarsGRAMDensityType", "NRLMSISE2000", 
 "NumericalIntegrator", "NumericalPropagatorWrapper", "NumericalPropagatorWrapperCR3BP", "OptimalFiniteDiscretizationStrategy", 
 "OptimalFiniteExportNodesFormat", "OptimalFiniteGuessMethod", "OptimalFiniteRunMode", "OptimalFiniteSNOPTObjective", "OptimalFiniteSNOPTScaling", 
 "OptimalFiniteScalingOptions", "OptimalFiniteSeedMethod", "OptimalFiniteWorkingVariables", "PluginProperties", "PointMassFunction", 
@@ -108,7 +108,7 @@ __all__ = ["AccessCriterion", "AccessStoppingCondition", "AsTriggerCondition", "
 "TabVecInterpolationMethod", "TargetSequenceAction", "TargeterGraph", "TargeterGraphActiveControl", "TargeterGraphActiveControlCollection", 
 "TargeterGraphCollection", "TargeterGraphResult", "TargeterGraphResultCollection", "ThirdBodyFunction", "ThirdBodyMode", 
 "ThrottleTableOperationMode", "ThrustType", "Thruster", "ThrusterDirection", "ThrusterSet", "ThrusterSetCollection", "TwoBodyFunction", 
-"US_Standard_Atmosphere", "UpdateAction", "UpdateParam", "UserVariable", "UserVariableCollection", "UserVariableDefinition", 
+"USStandardAtmosphere", "UpdateAction", "UpdateParam", "UserVariable", "UserVariableCollection", "UserVariableDefinition", 
 "UserVariableDefinitionCollection", "UserVariableUpdate", "UserVariableUpdateCollection", "VenusGRAM2005", "VenusGRAMDensityType", 
 "YarkovskyFunc"]
 
@@ -32786,7 +32786,7 @@ class JacchiaBowman2008(IComponentInfo, ICloneable, SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5206262767115704697, 387730423990499725), JacchiaBowman2008)
 agcls.AgTypeNameMap["JacchiaBowman2008"] = JacchiaBowman2008
 
-class Jacchia_1960(IComponentInfo, ICloneable, SupportsDeleteCallback):
+class Jacchia1960(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for the Jacchia 1960 atmospheric model - an outdated atmospheric model provided for making comparisons with other software."""
 
     _num_methods = 15
@@ -32812,7 +32812,7 @@ class Jacchia_1960(IComponentInfo, ICloneable, SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, Jacchia_1960)
+        return get_interface_property(attrname, Jacchia1960)
     
     _get_use_approximate_altitude_metadata = { "offset" : _get_use_approximate_altitude_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -32820,14 +32820,14 @@ class Jacchia_1960(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def use_approximate_altitude(self) -> bool:
         """True if using approximate altitude formula."""
-        return self._intf.get_property(Jacchia_1960._metadata, Jacchia_1960._get_use_approximate_altitude_metadata)
+        return self._intf.get_property(Jacchia1960._metadata, Jacchia1960._get_use_approximate_altitude_metadata)
 
     _set_use_approximate_altitude_metadata = { "offset" : _set_use_approximate_altitude_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @use_approximate_altitude.setter
     def use_approximate_altitude(self, value:bool) -> None:
-        return self._intf.set_property(Jacchia_1960._metadata, Jacchia_1960._set_use_approximate_altitude_metadata, value)
+        return self._intf.set_property(Jacchia1960._metadata, Jacchia1960._set_use_approximate_altitude_metadata, value)
 
     _get_computes_temperature_metadata = { "offset" : _get_computes_temperature_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -32835,7 +32835,7 @@ class Jacchia_1960(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def computes_temperature(self) -> bool:
         """Flag indicates whether this model computes temperature."""
-        return self._intf.get_property(Jacchia_1960._metadata, Jacchia_1960._get_computes_temperature_metadata)
+        return self._intf.get_property(Jacchia1960._metadata, Jacchia1960._get_computes_temperature_metadata)
 
     _get_computes_pressure_metadata = { "offset" : _get_computes_pressure_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -32843,7 +32843,7 @@ class Jacchia_1960(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def computes_pressure(self) -> bool:
         """Flag indicates whether this model computes pressure."""
-        return self._intf.get_property(Jacchia_1960._metadata, Jacchia_1960._get_computes_pressure_metadata)
+        return self._intf.get_property(Jacchia1960._metadata, Jacchia1960._get_computes_pressure_metadata)
 
     _get_sun_position_metadata = { "offset" : _get_sun_position_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -32851,14 +32851,14 @@ class Jacchia_1960(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def sun_position(self) -> "SunPosition":
         """Get or set the sun position computation."""
-        return self._intf.get_property(Jacchia_1960._metadata, Jacchia_1960._get_sun_position_metadata)
+        return self._intf.get_property(Jacchia1960._metadata, Jacchia1960._get_sun_position_metadata)
 
     _set_sun_position_metadata = { "offset" : _set_sun_position_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(SunPosition),) }
     @sun_position.setter
     def sun_position(self, value:"SunPosition") -> None:
-        return self._intf.set_property(Jacchia_1960._metadata, Jacchia_1960._set_sun_position_metadata, value)
+        return self._intf.set_property(Jacchia1960._metadata, Jacchia1960._set_sun_position_metadata, value)
 
     _get_drag_model_type_metadata = { "offset" : _get_drag_model_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -32866,14 +32866,14 @@ class Jacchia_1960(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def drag_model_type(self) -> "DragModelType":
         """Drag model type."""
-        return self._intf.get_property(Jacchia_1960._metadata, Jacchia_1960._get_drag_model_type_metadata)
+        return self._intf.get_property(Jacchia1960._metadata, Jacchia1960._get_drag_model_type_metadata)
 
     _set_drag_model_type_metadata = { "offset" : _set_drag_model_type_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(DragModelType),) }
     @drag_model_type.setter
     def drag_model_type(self, value:"DragModelType") -> None:
-        return self._intf.set_property(Jacchia_1960._metadata, Jacchia_1960._set_drag_model_type_metadata, value)
+        return self._intf.set_property(Jacchia1960._metadata, Jacchia1960._set_drag_model_type_metadata, value)
 
     _get_drag_model_plugin_name_metadata = { "offset" : _get_drag_model_plugin_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -32881,14 +32881,14 @@ class Jacchia_1960(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def drag_model_plugin_name(self) -> str:
         """Get or set the name of the drag model plugin."""
-        return self._intf.get_property(Jacchia_1960._metadata, Jacchia_1960._get_drag_model_plugin_name_metadata)
+        return self._intf.get_property(Jacchia1960._metadata, Jacchia1960._get_drag_model_plugin_name_metadata)
 
     _set_drag_model_plugin_name_metadata = { "offset" : _set_drag_model_plugin_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @drag_model_plugin_name.setter
     def drag_model_plugin_name(self, value:str) -> None:
-        return self._intf.set_property(Jacchia_1960._metadata, Jacchia_1960._set_drag_model_plugin_name_metadata, value)
+        return self._intf.set_property(Jacchia1960._metadata, Jacchia1960._set_drag_model_plugin_name_metadata, value)
 
     _get_drag_model_plugin_metadata = { "offset" : _get_drag_model_plugin_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -32896,7 +32896,7 @@ class Jacchia_1960(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def drag_model_plugin(self) -> "DragModelPlugin":
         """Drag model plugin properties."""
-        return self._intf.get_property(Jacchia_1960._metadata, Jacchia_1960._get_drag_model_plugin_metadata)
+        return self._intf.get_property(Jacchia1960._metadata, Jacchia1960._get_drag_model_plugin_metadata)
 
     _get_variable_area_history_file_metadata = { "offset" : _get_variable_area_history_file_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -32904,14 +32904,14 @@ class Jacchia_1960(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def variable_area_history_file(self) -> str:
         """Drag variable area history file."""
-        return self._intf.get_property(Jacchia_1960._metadata, Jacchia_1960._get_variable_area_history_file_metadata)
+        return self._intf.get_property(Jacchia1960._metadata, Jacchia1960._get_variable_area_history_file_metadata)
 
     _set_variable_area_history_file_metadata = { "offset" : _set_variable_area_history_file_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @variable_area_history_file.setter
     def variable_area_history_file(self, value:str) -> None:
-        return self._intf.set_property(Jacchia_1960._metadata, Jacchia_1960._set_variable_area_history_file_metadata, value)
+        return self._intf.set_property(Jacchia1960._metadata, Jacchia1960._set_variable_area_history_file_metadata, value)
 
     _get_n_plate_definition_file_metadata = { "offset" : _get_n_plate_definition_file_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -32919,14 +32919,14 @@ class Jacchia_1960(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def n_plate_definition_file(self) -> str:
         """Drag N-Plate definition file."""
-        return self._intf.get_property(Jacchia_1960._metadata, Jacchia_1960._get_n_plate_definition_file_metadata)
+        return self._intf.get_property(Jacchia1960._metadata, Jacchia1960._get_n_plate_definition_file_metadata)
 
     _set_n_plate_definition_file_metadata = { "offset" : _set_n_plate_definition_file_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @n_plate_definition_file.setter
     def n_plate_definition_file(self, value:str) -> None:
-        return self._intf.set_property(Jacchia_1960._metadata, Jacchia_1960._set_n_plate_definition_file_metadata, value)
+        return self._intf.set_property(Jacchia1960._metadata, Jacchia1960._set_n_plate_definition_file_metadata, value)
 
     _property_names[use_approximate_altitude] = "use_approximate_altitude"
     _property_names[computes_temperature] = "computes_temperature"
@@ -32939,9 +32939,9 @@ class Jacchia_1960(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[n_plate_definition_file] = "n_plate_definition_file"
 
     def __init__(self, source_object=None):
-        """Construct an object of type Jacchia_1960."""
+        """Construct an object of type Jacchia1960."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, source_object, Jacchia_1960)
+        initialize_from_source_object(self, source_object, Jacchia1960)
         IComponentInfo.__init__(self, source_object)
         ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
@@ -32953,12 +32953,12 @@ class Jacchia_1960(IComponentInfo, ICloneable, SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, Jacchia_1960, [Jacchia_1960, IComponentInfo, ICloneable])
+        set_class_attribute(self, attrname, value, Jacchia1960, [Jacchia1960, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5574385053179570645, 3116739936857571001), Jacchia_1960)
-agcls.AgTypeNameMap["Jacchia_1960"] = Jacchia_1960
+agcls.AgClassCatalog.add_catalog_entry((5574385053179570645, 3116739936857571001), Jacchia1960)
+agcls.AgTypeNameMap["Jacchia1960"] = Jacchia1960
 
-class Jacchia_1970(IComponentInfo, ICloneable, SupportsDeleteCallback):
+class Jacchia1970(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for the Jacchia 1970 atmospheric model - a model that computes atmospheric density based on the composition of the atmosphere, which depends on altitude as well as seasonal variation. Valid range is 100-2500 km."""
 
     _num_methods = 29
@@ -32998,7 +32998,7 @@ class Jacchia_1970(IComponentInfo, ICloneable, SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, Jacchia_1970)
+        return get_interface_property(attrname, Jacchia1970)
     
     _get_use_approximate_altitude_metadata = { "offset" : _get_use_approximate_altitude_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -33006,14 +33006,14 @@ class Jacchia_1970(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def use_approximate_altitude(self) -> bool:
         """True if using approximate altitude formula."""
-        return self._intf.get_property(Jacchia_1970._metadata, Jacchia_1970._get_use_approximate_altitude_metadata)
+        return self._intf.get_property(Jacchia1970._metadata, Jacchia1970._get_use_approximate_altitude_metadata)
 
     _set_use_approximate_altitude_metadata = { "offset" : _set_use_approximate_altitude_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @use_approximate_altitude.setter
     def use_approximate_altitude(self, value:bool) -> None:
-        return self._intf.set_property(Jacchia_1970._metadata, Jacchia_1970._set_use_approximate_altitude_metadata, value)
+        return self._intf.set_property(Jacchia1970._metadata, Jacchia1970._set_use_approximate_altitude_metadata, value)
 
     _get_computes_temperature_metadata = { "offset" : _get_computes_temperature_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -33021,7 +33021,7 @@ class Jacchia_1970(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def computes_temperature(self) -> bool:
         """Flag indicates whether this model computes temperature."""
-        return self._intf.get_property(Jacchia_1970._metadata, Jacchia_1970._get_computes_temperature_metadata)
+        return self._intf.get_property(Jacchia1970._metadata, Jacchia1970._get_computes_temperature_metadata)
 
     _get_computes_pressure_metadata = { "offset" : _get_computes_pressure_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -33029,7 +33029,7 @@ class Jacchia_1970(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def computes_pressure(self) -> bool:
         """Flag indicates whether this model computes pressure."""
-        return self._intf.get_property(Jacchia_1970._metadata, Jacchia_1970._get_computes_pressure_metadata)
+        return self._intf.get_property(Jacchia1970._metadata, Jacchia1970._get_computes_pressure_metadata)
 
     _get_sun_position_metadata = { "offset" : _get_sun_position_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -33037,14 +33037,14 @@ class Jacchia_1970(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def sun_position(self) -> "SunPosition":
         """Get or set the sun position computation."""
-        return self._intf.get_property(Jacchia_1970._metadata, Jacchia_1970._get_sun_position_metadata)
+        return self._intf.get_property(Jacchia1970._metadata, Jacchia1970._get_sun_position_metadata)
 
     _set_sun_position_metadata = { "offset" : _set_sun_position_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(SunPosition),) }
     @sun_position.setter
     def sun_position(self, value:"SunPosition") -> None:
-        return self._intf.set_property(Jacchia_1970._metadata, Jacchia_1970._set_sun_position_metadata, value)
+        return self._intf.set_property(Jacchia1970._metadata, Jacchia1970._set_sun_position_metadata, value)
 
     _get_atmos_data_source_metadata = { "offset" : _get_atmos_data_source_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -33052,14 +33052,14 @@ class Jacchia_1970(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def atmos_data_source(self) -> "AtmosDataSource":
         """Get or set the atmospheric model data source - data file or constant values."""
-        return self._intf.get_property(Jacchia_1970._metadata, Jacchia_1970._get_atmos_data_source_metadata)
+        return self._intf.get_property(Jacchia1970._metadata, Jacchia1970._get_atmos_data_source_metadata)
 
     _set_atmos_data_source_metadata = { "offset" : _set_atmos_data_source_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(AtmosDataSource),) }
     @atmos_data_source.setter
     def atmos_data_source(self, value:"AtmosDataSource") -> None:
-        return self._intf.set_property(Jacchia_1970._metadata, Jacchia_1970._set_atmos_data_source_metadata, value)
+        return self._intf.set_property(Jacchia1970._metadata, Jacchia1970._set_atmos_data_source_metadata, value)
 
     _get_f_10_p7_metadata = { "offset" : _get_f_10_p7_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -33067,14 +33067,14 @@ class Jacchia_1970(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def f_10_p7(self) -> float:
         """Solar Flux (F10.7); the daily Ottawa 10.7 cm solar flux value. Dimensionless."""
-        return self._intf.get_property(Jacchia_1970._metadata, Jacchia_1970._get_f_10_p7_metadata)
+        return self._intf.get_property(Jacchia1970._metadata, Jacchia1970._get_f_10_p7_metadata)
 
     _set_f_10_p7_metadata = { "offset" : _set_f_10_p7_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @f_10_p7.setter
     def f_10_p7(self, value:float) -> None:
-        return self._intf.set_property(Jacchia_1970._metadata, Jacchia_1970._set_f_10_p7_metadata, value)
+        return self._intf.set_property(Jacchia1970._metadata, Jacchia1970._set_f_10_p7_metadata, value)
 
     _get_f_10_p7_avg_metadata = { "offset" : _get_f_10_p7_avg_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -33082,14 +33082,14 @@ class Jacchia_1970(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def f_10_p7_avg(self) -> float:
         """Average solar Flux (F10.7); the 81-day averaged Ottawa 10.7 cm solar flux value. Dimensionless."""
-        return self._intf.get_property(Jacchia_1970._metadata, Jacchia_1970._get_f_10_p7_avg_metadata)
+        return self._intf.get_property(Jacchia1970._metadata, Jacchia1970._get_f_10_p7_avg_metadata)
 
     _set_f_10_p7_avg_metadata = { "offset" : _set_f_10_p7_avg_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @f_10_p7_avg.setter
     def f_10_p7_avg(self, value:float) -> None:
-        return self._intf.set_property(Jacchia_1970._metadata, Jacchia_1970._set_f_10_p7_avg_metadata, value)
+        return self._intf.set_property(Jacchia1970._metadata, Jacchia1970._set_f_10_p7_avg_metadata, value)
 
     _get_kp_metadata = { "offset" : _get_kp_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -33097,14 +33097,14 @@ class Jacchia_1970(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def kp(self) -> float:
         """Geomagnetic Index (Kp). Dimensionless."""
-        return self._intf.get_property(Jacchia_1970._metadata, Jacchia_1970._get_kp_metadata)
+        return self._intf.get_property(Jacchia1970._metadata, Jacchia1970._get_kp_metadata)
 
     _set_kp_metadata = { "offset" : _set_kp_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @kp.setter
     def kp(self, value:float) -> None:
-        return self._intf.set_property(Jacchia_1970._metadata, Jacchia_1970._set_kp_metadata, value)
+        return self._intf.set_property(Jacchia1970._metadata, Jacchia1970._set_kp_metadata, value)
 
     _get_atmos_data_geo_magnetic_flux_source_metadata = { "offset" : _get_atmos_data_geo_magnetic_flux_source_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -33112,14 +33112,14 @@ class Jacchia_1970(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def atmos_data_geo_magnetic_flux_source(self) -> "GeoMagneticFluxSource":
         """Whether to use Kp or Ap data from the flux file."""
-        return self._intf.get_property(Jacchia_1970._metadata, Jacchia_1970._get_atmos_data_geo_magnetic_flux_source_metadata)
+        return self._intf.get_property(Jacchia1970._metadata, Jacchia1970._get_atmos_data_geo_magnetic_flux_source_metadata)
 
     _set_atmos_data_geo_magnetic_flux_source_metadata = { "offset" : _set_atmos_data_geo_magnetic_flux_source_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(GeoMagneticFluxSource),) }
     @atmos_data_geo_magnetic_flux_source.setter
     def atmos_data_geo_magnetic_flux_source(self, value:"GeoMagneticFluxSource") -> None:
-        return self._intf.set_property(Jacchia_1970._metadata, Jacchia_1970._set_atmos_data_geo_magnetic_flux_source_metadata, value)
+        return self._intf.set_property(Jacchia1970._metadata, Jacchia1970._set_atmos_data_geo_magnetic_flux_source_metadata, value)
 
     _get_atmos_data_geo_magnetic_flux_update_rate_metadata = { "offset" : _get_atmos_data_geo_magnetic_flux_update_rate_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -33127,14 +33127,14 @@ class Jacchia_1970(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def atmos_data_geo_magnetic_flux_update_rate(self) -> "GeoMagneticFluxUpdateRate":
         """Get or set the update rate for geomagnetic flux values from the flux file."""
-        return self._intf.get_property(Jacchia_1970._metadata, Jacchia_1970._get_atmos_data_geo_magnetic_flux_update_rate_metadata)
+        return self._intf.get_property(Jacchia1970._metadata, Jacchia1970._get_atmos_data_geo_magnetic_flux_update_rate_metadata)
 
     _set_atmos_data_geo_magnetic_flux_update_rate_metadata = { "offset" : _set_atmos_data_geo_magnetic_flux_update_rate_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(GeoMagneticFluxUpdateRate),) }
     @atmos_data_geo_magnetic_flux_update_rate.setter
     def atmos_data_geo_magnetic_flux_update_rate(self, value:"GeoMagneticFluxUpdateRate") -> None:
-        return self._intf.set_property(Jacchia_1970._metadata, Jacchia_1970._set_atmos_data_geo_magnetic_flux_update_rate_metadata, value)
+        return self._intf.set_property(Jacchia1970._metadata, Jacchia1970._set_atmos_data_geo_magnetic_flux_update_rate_metadata, value)
 
     _get_atmos_data_filename_metadata = { "offset" : _get_atmos_data_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -33142,14 +33142,14 @@ class Jacchia_1970(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def atmos_data_filename(self) -> str:
         """Get or set the atmospheric model data file path."""
-        return self._intf.get_property(Jacchia_1970._metadata, Jacchia_1970._get_atmos_data_filename_metadata)
+        return self._intf.get_property(Jacchia1970._metadata, Jacchia1970._get_atmos_data_filename_metadata)
 
     _set_atmos_data_filename_metadata = { "offset" : _set_atmos_data_filename_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @atmos_data_filename.setter
     def atmos_data_filename(self, value:str) -> None:
-        return self._intf.set_property(Jacchia_1970._metadata, Jacchia_1970._set_atmos_data_filename_metadata, value)
+        return self._intf.set_property(Jacchia1970._metadata, Jacchia1970._set_atmos_data_filename_metadata, value)
 
     _get_drag_model_type_metadata = { "offset" : _get_drag_model_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -33157,14 +33157,14 @@ class Jacchia_1970(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def drag_model_type(self) -> "DragModelType":
         """Drag model type."""
-        return self._intf.get_property(Jacchia_1970._metadata, Jacchia_1970._get_drag_model_type_metadata)
+        return self._intf.get_property(Jacchia1970._metadata, Jacchia1970._get_drag_model_type_metadata)
 
     _set_drag_model_type_metadata = { "offset" : _set_drag_model_type_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(DragModelType),) }
     @drag_model_type.setter
     def drag_model_type(self, value:"DragModelType") -> None:
-        return self._intf.set_property(Jacchia_1970._metadata, Jacchia_1970._set_drag_model_type_metadata, value)
+        return self._intf.set_property(Jacchia1970._metadata, Jacchia1970._set_drag_model_type_metadata, value)
 
     _get_drag_model_plugin_name_metadata = { "offset" : _get_drag_model_plugin_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -33172,14 +33172,14 @@ class Jacchia_1970(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def drag_model_plugin_name(self) -> str:
         """Get or set the name of the drag model plugin."""
-        return self._intf.get_property(Jacchia_1970._metadata, Jacchia_1970._get_drag_model_plugin_name_metadata)
+        return self._intf.get_property(Jacchia1970._metadata, Jacchia1970._get_drag_model_plugin_name_metadata)
 
     _set_drag_model_plugin_name_metadata = { "offset" : _set_drag_model_plugin_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @drag_model_plugin_name.setter
     def drag_model_plugin_name(self, value:str) -> None:
-        return self._intf.set_property(Jacchia_1970._metadata, Jacchia_1970._set_drag_model_plugin_name_metadata, value)
+        return self._intf.set_property(Jacchia1970._metadata, Jacchia1970._set_drag_model_plugin_name_metadata, value)
 
     _get_drag_model_plugin_metadata = { "offset" : _get_drag_model_plugin_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -33187,7 +33187,7 @@ class Jacchia_1970(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def drag_model_plugin(self) -> "DragModelPlugin":
         """Drag model plugin properties."""
-        return self._intf.get_property(Jacchia_1970._metadata, Jacchia_1970._get_drag_model_plugin_metadata)
+        return self._intf.get_property(Jacchia1970._metadata, Jacchia1970._get_drag_model_plugin_metadata)
 
     _get_variable_area_history_file_metadata = { "offset" : _get_variable_area_history_file_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -33195,14 +33195,14 @@ class Jacchia_1970(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def variable_area_history_file(self) -> str:
         """Drag variable area history file."""
-        return self._intf.get_property(Jacchia_1970._metadata, Jacchia_1970._get_variable_area_history_file_metadata)
+        return self._intf.get_property(Jacchia1970._metadata, Jacchia1970._get_variable_area_history_file_metadata)
 
     _set_variable_area_history_file_metadata = { "offset" : _set_variable_area_history_file_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @variable_area_history_file.setter
     def variable_area_history_file(self, value:str) -> None:
-        return self._intf.set_property(Jacchia_1970._metadata, Jacchia_1970._set_variable_area_history_file_metadata, value)
+        return self._intf.set_property(Jacchia1970._metadata, Jacchia1970._set_variable_area_history_file_metadata, value)
 
     _get_n_plate_definition_file_metadata = { "offset" : _get_n_plate_definition_file_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -33210,14 +33210,14 @@ class Jacchia_1970(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def n_plate_definition_file(self) -> str:
         """Drag N-Plate definition file."""
-        return self._intf.get_property(Jacchia_1970._metadata, Jacchia_1970._get_n_plate_definition_file_metadata)
+        return self._intf.get_property(Jacchia1970._metadata, Jacchia1970._get_n_plate_definition_file_metadata)
 
     _set_n_plate_definition_file_metadata = { "offset" : _set_n_plate_definition_file_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @n_plate_definition_file.setter
     def n_plate_definition_file(self, value:str) -> None:
-        return self._intf.set_property(Jacchia_1970._metadata, Jacchia_1970._set_n_plate_definition_file_metadata, value)
+        return self._intf.set_property(Jacchia1970._metadata, Jacchia1970._set_n_plate_definition_file_metadata, value)
 
     _property_names[use_approximate_altitude] = "use_approximate_altitude"
     _property_names[computes_temperature] = "computes_temperature"
@@ -33237,9 +33237,9 @@ class Jacchia_1970(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[n_plate_definition_file] = "n_plate_definition_file"
 
     def __init__(self, source_object=None):
-        """Construct an object of type Jacchia_1970."""
+        """Construct an object of type Jacchia1970."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, source_object, Jacchia_1970)
+        initialize_from_source_object(self, source_object, Jacchia1970)
         IComponentInfo.__init__(self, source_object)
         ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
@@ -33251,12 +33251,12 @@ class Jacchia_1970(IComponentInfo, ICloneable, SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, Jacchia_1970, [Jacchia_1970, IComponentInfo, ICloneable])
+        set_class_attribute(self, attrname, value, Jacchia1970, [Jacchia1970, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5341959456453390148, 8490840023175055767), Jacchia_1970)
-agcls.AgTypeNameMap["Jacchia_1970"] = Jacchia_1970
+agcls.AgClassCatalog.add_catalog_entry((5341959456453390148, 8490840023175055767), Jacchia1970)
+agcls.AgTypeNameMap["Jacchia1970"] = Jacchia1970
 
-class Jacchia_1971(IComponentInfo, ICloneable, SupportsDeleteCallback):
+class Jacchia1971(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for the Jacchia 1971 atmospheric model - a model that is similar to Jacchia 1970, with improved treatment of certain solar effects."""
 
     _num_methods = 29
@@ -33296,7 +33296,7 @@ class Jacchia_1971(IComponentInfo, ICloneable, SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, Jacchia_1971)
+        return get_interface_property(attrname, Jacchia1971)
     
     _get_use_approximate_altitude_metadata = { "offset" : _get_use_approximate_altitude_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -33304,14 +33304,14 @@ class Jacchia_1971(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def use_approximate_altitude(self) -> bool:
         """True if using approximate altitude formula."""
-        return self._intf.get_property(Jacchia_1971._metadata, Jacchia_1971._get_use_approximate_altitude_metadata)
+        return self._intf.get_property(Jacchia1971._metadata, Jacchia1971._get_use_approximate_altitude_metadata)
 
     _set_use_approximate_altitude_metadata = { "offset" : _set_use_approximate_altitude_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @use_approximate_altitude.setter
     def use_approximate_altitude(self, value:bool) -> None:
-        return self._intf.set_property(Jacchia_1971._metadata, Jacchia_1971._set_use_approximate_altitude_metadata, value)
+        return self._intf.set_property(Jacchia1971._metadata, Jacchia1971._set_use_approximate_altitude_metadata, value)
 
     _get_computes_temperature_metadata = { "offset" : _get_computes_temperature_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -33319,7 +33319,7 @@ class Jacchia_1971(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def computes_temperature(self) -> bool:
         """Flag indicates whether this model computes temperature."""
-        return self._intf.get_property(Jacchia_1971._metadata, Jacchia_1971._get_computes_temperature_metadata)
+        return self._intf.get_property(Jacchia1971._metadata, Jacchia1971._get_computes_temperature_metadata)
 
     _get_computes_pressure_metadata = { "offset" : _get_computes_pressure_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -33327,7 +33327,7 @@ class Jacchia_1971(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def computes_pressure(self) -> bool:
         """Flag indicates whether this model computes pressure."""
-        return self._intf.get_property(Jacchia_1971._metadata, Jacchia_1971._get_computes_pressure_metadata)
+        return self._intf.get_property(Jacchia1971._metadata, Jacchia1971._get_computes_pressure_metadata)
 
     _get_sun_position_metadata = { "offset" : _get_sun_position_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -33335,14 +33335,14 @@ class Jacchia_1971(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def sun_position(self) -> "SunPosition":
         """Get or set the sun position computation."""
-        return self._intf.get_property(Jacchia_1971._metadata, Jacchia_1971._get_sun_position_metadata)
+        return self._intf.get_property(Jacchia1971._metadata, Jacchia1971._get_sun_position_metadata)
 
     _set_sun_position_metadata = { "offset" : _set_sun_position_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(SunPosition),) }
     @sun_position.setter
     def sun_position(self, value:"SunPosition") -> None:
-        return self._intf.set_property(Jacchia_1971._metadata, Jacchia_1971._set_sun_position_metadata, value)
+        return self._intf.set_property(Jacchia1971._metadata, Jacchia1971._set_sun_position_metadata, value)
 
     _get_atmos_data_source_metadata = { "offset" : _get_atmos_data_source_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -33350,14 +33350,14 @@ class Jacchia_1971(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def atmos_data_source(self) -> "AtmosDataSource":
         """Get or set the atmospheric model data source - data file or constant values."""
-        return self._intf.get_property(Jacchia_1971._metadata, Jacchia_1971._get_atmos_data_source_metadata)
+        return self._intf.get_property(Jacchia1971._metadata, Jacchia1971._get_atmos_data_source_metadata)
 
     _set_atmos_data_source_metadata = { "offset" : _set_atmos_data_source_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(AtmosDataSource),) }
     @atmos_data_source.setter
     def atmos_data_source(self, value:"AtmosDataSource") -> None:
-        return self._intf.set_property(Jacchia_1971._metadata, Jacchia_1971._set_atmos_data_source_metadata, value)
+        return self._intf.set_property(Jacchia1971._metadata, Jacchia1971._set_atmos_data_source_metadata, value)
 
     _get_f_10_p7_metadata = { "offset" : _get_f_10_p7_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -33365,14 +33365,14 @@ class Jacchia_1971(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def f_10_p7(self) -> float:
         """Solar Flux (F10.7); the daily Ottawa 10.7 cm solar flux value. Dimensionless."""
-        return self._intf.get_property(Jacchia_1971._metadata, Jacchia_1971._get_f_10_p7_metadata)
+        return self._intf.get_property(Jacchia1971._metadata, Jacchia1971._get_f_10_p7_metadata)
 
     _set_f_10_p7_metadata = { "offset" : _set_f_10_p7_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @f_10_p7.setter
     def f_10_p7(self, value:float) -> None:
-        return self._intf.set_property(Jacchia_1971._metadata, Jacchia_1971._set_f_10_p7_metadata, value)
+        return self._intf.set_property(Jacchia1971._metadata, Jacchia1971._set_f_10_p7_metadata, value)
 
     _get_f_10_p7_avg_metadata = { "offset" : _get_f_10_p7_avg_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -33380,14 +33380,14 @@ class Jacchia_1971(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def f_10_p7_avg(self) -> float:
         """Average solar Flux (F10.7); the 81-day averaged Ottawa 10.7 cm solar flux value. Dimensionless."""
-        return self._intf.get_property(Jacchia_1971._metadata, Jacchia_1971._get_f_10_p7_avg_metadata)
+        return self._intf.get_property(Jacchia1971._metadata, Jacchia1971._get_f_10_p7_avg_metadata)
 
     _set_f_10_p7_avg_metadata = { "offset" : _set_f_10_p7_avg_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @f_10_p7_avg.setter
     def f_10_p7_avg(self, value:float) -> None:
-        return self._intf.set_property(Jacchia_1971._metadata, Jacchia_1971._set_f_10_p7_avg_metadata, value)
+        return self._intf.set_property(Jacchia1971._metadata, Jacchia1971._set_f_10_p7_avg_metadata, value)
 
     _get_kp_metadata = { "offset" : _get_kp_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -33395,14 +33395,14 @@ class Jacchia_1971(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def kp(self) -> float:
         """Geomagnetic Index (Kp). Dimensionless."""
-        return self._intf.get_property(Jacchia_1971._metadata, Jacchia_1971._get_kp_metadata)
+        return self._intf.get_property(Jacchia1971._metadata, Jacchia1971._get_kp_metadata)
 
     _set_kp_metadata = { "offset" : _set_kp_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @kp.setter
     def kp(self, value:float) -> None:
-        return self._intf.set_property(Jacchia_1971._metadata, Jacchia_1971._set_kp_metadata, value)
+        return self._intf.set_property(Jacchia1971._metadata, Jacchia1971._set_kp_metadata, value)
 
     _get_atmos_data_geo_magnetic_flux_source_metadata = { "offset" : _get_atmos_data_geo_magnetic_flux_source_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -33410,14 +33410,14 @@ class Jacchia_1971(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def atmos_data_geo_magnetic_flux_source(self) -> "GeoMagneticFluxSource":
         """Whether to use Kp or Ap data from the flux file."""
-        return self._intf.get_property(Jacchia_1971._metadata, Jacchia_1971._get_atmos_data_geo_magnetic_flux_source_metadata)
+        return self._intf.get_property(Jacchia1971._metadata, Jacchia1971._get_atmos_data_geo_magnetic_flux_source_metadata)
 
     _set_atmos_data_geo_magnetic_flux_source_metadata = { "offset" : _set_atmos_data_geo_magnetic_flux_source_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(GeoMagneticFluxSource),) }
     @atmos_data_geo_magnetic_flux_source.setter
     def atmos_data_geo_magnetic_flux_source(self, value:"GeoMagneticFluxSource") -> None:
-        return self._intf.set_property(Jacchia_1971._metadata, Jacchia_1971._set_atmos_data_geo_magnetic_flux_source_metadata, value)
+        return self._intf.set_property(Jacchia1971._metadata, Jacchia1971._set_atmos_data_geo_magnetic_flux_source_metadata, value)
 
     _get_atmos_data_geo_magnetic_flux_update_rate_metadata = { "offset" : _get_atmos_data_geo_magnetic_flux_update_rate_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -33425,14 +33425,14 @@ class Jacchia_1971(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def atmos_data_geo_magnetic_flux_update_rate(self) -> "GeoMagneticFluxUpdateRate":
         """Get or set the update rate for geomagnetic flux values from the flux file."""
-        return self._intf.get_property(Jacchia_1971._metadata, Jacchia_1971._get_atmos_data_geo_magnetic_flux_update_rate_metadata)
+        return self._intf.get_property(Jacchia1971._metadata, Jacchia1971._get_atmos_data_geo_magnetic_flux_update_rate_metadata)
 
     _set_atmos_data_geo_magnetic_flux_update_rate_metadata = { "offset" : _set_atmos_data_geo_magnetic_flux_update_rate_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(GeoMagneticFluxUpdateRate),) }
     @atmos_data_geo_magnetic_flux_update_rate.setter
     def atmos_data_geo_magnetic_flux_update_rate(self, value:"GeoMagneticFluxUpdateRate") -> None:
-        return self._intf.set_property(Jacchia_1971._metadata, Jacchia_1971._set_atmos_data_geo_magnetic_flux_update_rate_metadata, value)
+        return self._intf.set_property(Jacchia1971._metadata, Jacchia1971._set_atmos_data_geo_magnetic_flux_update_rate_metadata, value)
 
     _get_atmos_data_filename_metadata = { "offset" : _get_atmos_data_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -33440,14 +33440,14 @@ class Jacchia_1971(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def atmos_data_filename(self) -> str:
         """Get or set the atmospheric model data file path."""
-        return self._intf.get_property(Jacchia_1971._metadata, Jacchia_1971._get_atmos_data_filename_metadata)
+        return self._intf.get_property(Jacchia1971._metadata, Jacchia1971._get_atmos_data_filename_metadata)
 
     _set_atmos_data_filename_metadata = { "offset" : _set_atmos_data_filename_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @atmos_data_filename.setter
     def atmos_data_filename(self, value:str) -> None:
-        return self._intf.set_property(Jacchia_1971._metadata, Jacchia_1971._set_atmos_data_filename_metadata, value)
+        return self._intf.set_property(Jacchia1971._metadata, Jacchia1971._set_atmos_data_filename_metadata, value)
 
     _get_drag_model_type_metadata = { "offset" : _get_drag_model_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -33455,14 +33455,14 @@ class Jacchia_1971(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def drag_model_type(self) -> "DragModelType":
         """Drag model type."""
-        return self._intf.get_property(Jacchia_1971._metadata, Jacchia_1971._get_drag_model_type_metadata)
+        return self._intf.get_property(Jacchia1971._metadata, Jacchia1971._get_drag_model_type_metadata)
 
     _set_drag_model_type_metadata = { "offset" : _set_drag_model_type_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(DragModelType),) }
     @drag_model_type.setter
     def drag_model_type(self, value:"DragModelType") -> None:
-        return self._intf.set_property(Jacchia_1971._metadata, Jacchia_1971._set_drag_model_type_metadata, value)
+        return self._intf.set_property(Jacchia1971._metadata, Jacchia1971._set_drag_model_type_metadata, value)
 
     _get_drag_model_plugin_name_metadata = { "offset" : _get_drag_model_plugin_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -33470,14 +33470,14 @@ class Jacchia_1971(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def drag_model_plugin_name(self) -> str:
         """Get or set the name of the drag model plugin."""
-        return self._intf.get_property(Jacchia_1971._metadata, Jacchia_1971._get_drag_model_plugin_name_metadata)
+        return self._intf.get_property(Jacchia1971._metadata, Jacchia1971._get_drag_model_plugin_name_metadata)
 
     _set_drag_model_plugin_name_metadata = { "offset" : _set_drag_model_plugin_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @drag_model_plugin_name.setter
     def drag_model_plugin_name(self, value:str) -> None:
-        return self._intf.set_property(Jacchia_1971._metadata, Jacchia_1971._set_drag_model_plugin_name_metadata, value)
+        return self._intf.set_property(Jacchia1971._metadata, Jacchia1971._set_drag_model_plugin_name_metadata, value)
 
     _get_drag_model_plugin_metadata = { "offset" : _get_drag_model_plugin_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -33485,7 +33485,7 @@ class Jacchia_1971(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def drag_model_plugin(self) -> "DragModelPlugin":
         """Drag model plugin properties."""
-        return self._intf.get_property(Jacchia_1971._metadata, Jacchia_1971._get_drag_model_plugin_metadata)
+        return self._intf.get_property(Jacchia1971._metadata, Jacchia1971._get_drag_model_plugin_metadata)
 
     _get_variable_area_history_file_metadata = { "offset" : _get_variable_area_history_file_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -33493,14 +33493,14 @@ class Jacchia_1971(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def variable_area_history_file(self) -> str:
         """Drag variable area history file."""
-        return self._intf.get_property(Jacchia_1971._metadata, Jacchia_1971._get_variable_area_history_file_metadata)
+        return self._intf.get_property(Jacchia1971._metadata, Jacchia1971._get_variable_area_history_file_metadata)
 
     _set_variable_area_history_file_metadata = { "offset" : _set_variable_area_history_file_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @variable_area_history_file.setter
     def variable_area_history_file(self, value:str) -> None:
-        return self._intf.set_property(Jacchia_1971._metadata, Jacchia_1971._set_variable_area_history_file_metadata, value)
+        return self._intf.set_property(Jacchia1971._metadata, Jacchia1971._set_variable_area_history_file_metadata, value)
 
     _get_n_plate_definition_file_metadata = { "offset" : _get_n_plate_definition_file_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -33508,14 +33508,14 @@ class Jacchia_1971(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def n_plate_definition_file(self) -> str:
         """Drag N-Plate definition file."""
-        return self._intf.get_property(Jacchia_1971._metadata, Jacchia_1971._get_n_plate_definition_file_metadata)
+        return self._intf.get_property(Jacchia1971._metadata, Jacchia1971._get_n_plate_definition_file_metadata)
 
     _set_n_plate_definition_file_metadata = { "offset" : _set_n_plate_definition_file_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @n_plate_definition_file.setter
     def n_plate_definition_file(self, value:str) -> None:
-        return self._intf.set_property(Jacchia_1971._metadata, Jacchia_1971._set_n_plate_definition_file_metadata, value)
+        return self._intf.set_property(Jacchia1971._metadata, Jacchia1971._set_n_plate_definition_file_metadata, value)
 
     _property_names[use_approximate_altitude] = "use_approximate_altitude"
     _property_names[computes_temperature] = "computes_temperature"
@@ -33535,9 +33535,9 @@ class Jacchia_1971(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[n_plate_definition_file] = "n_plate_definition_file"
 
     def __init__(self, source_object=None):
-        """Construct an object of type Jacchia_1971."""
+        """Construct an object of type Jacchia1971."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, source_object, Jacchia_1971)
+        initialize_from_source_object(self, source_object, Jacchia1971)
         IComponentInfo.__init__(self, source_object)
         ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
@@ -33549,12 +33549,12 @@ class Jacchia_1971(IComponentInfo, ICloneable, SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, Jacchia_1971, [Jacchia_1971, IComponentInfo, ICloneable])
+        set_class_attribute(self, attrname, value, Jacchia1971, [Jacchia1971, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5604186918179814220, 16696022812635360702), Jacchia_1971)
-agcls.AgTypeNameMap["Jacchia_1971"] = Jacchia_1971
+agcls.AgClassCatalog.add_catalog_entry((5604186918179814220, 16696022812635360702), Jacchia1971)
+agcls.AgTypeNameMap["Jacchia1971"] = Jacchia1971
 
-class MSISE_1990(IComponentInfo, ICloneable, SupportsDeleteCallback):
+class MSISE1990(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for the MSISE 1990 atmospheric model - an empirical density model developed by Hedin based on satellite data. Finds the total density by accounting for the contribution of N2, O, O2, He, Ar and H. 1990 version, valid range of 0-1000 km."""
 
     _num_methods = 29
@@ -33594,7 +33594,7 @@ class MSISE_1990(IComponentInfo, ICloneable, SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, MSISE_1990)
+        return get_interface_property(attrname, MSISE1990)
     
     _get_use_approximate_altitude_metadata = { "offset" : _get_use_approximate_altitude_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -33602,14 +33602,14 @@ class MSISE_1990(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def use_approximate_altitude(self) -> bool:
         """True if using approximate altitude formula."""
-        return self._intf.get_property(MSISE_1990._metadata, MSISE_1990._get_use_approximate_altitude_metadata)
+        return self._intf.get_property(MSISE1990._metadata, MSISE1990._get_use_approximate_altitude_metadata)
 
     _set_use_approximate_altitude_metadata = { "offset" : _set_use_approximate_altitude_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @use_approximate_altitude.setter
     def use_approximate_altitude(self, value:bool) -> None:
-        return self._intf.set_property(MSISE_1990._metadata, MSISE_1990._set_use_approximate_altitude_metadata, value)
+        return self._intf.set_property(MSISE1990._metadata, MSISE1990._set_use_approximate_altitude_metadata, value)
 
     _get_computes_temperature_metadata = { "offset" : _get_computes_temperature_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -33617,7 +33617,7 @@ class MSISE_1990(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def computes_temperature(self) -> bool:
         """Flag indicates whether this model computes temperature."""
-        return self._intf.get_property(MSISE_1990._metadata, MSISE_1990._get_computes_temperature_metadata)
+        return self._intf.get_property(MSISE1990._metadata, MSISE1990._get_computes_temperature_metadata)
 
     _get_computes_pressure_metadata = { "offset" : _get_computes_pressure_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -33625,7 +33625,7 @@ class MSISE_1990(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def computes_pressure(self) -> bool:
         """Flag indicates whether this model computes pressure."""
-        return self._intf.get_property(MSISE_1990._metadata, MSISE_1990._get_computes_pressure_metadata)
+        return self._intf.get_property(MSISE1990._metadata, MSISE1990._get_computes_pressure_metadata)
 
     _get_sun_position_metadata = { "offset" : _get_sun_position_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -33633,14 +33633,14 @@ class MSISE_1990(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def sun_position(self) -> "SunPosition":
         """Get or set the sun position computation."""
-        return self._intf.get_property(MSISE_1990._metadata, MSISE_1990._get_sun_position_metadata)
+        return self._intf.get_property(MSISE1990._metadata, MSISE1990._get_sun_position_metadata)
 
     _set_sun_position_metadata = { "offset" : _set_sun_position_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(SunPosition),) }
     @sun_position.setter
     def sun_position(self, value:"SunPosition") -> None:
-        return self._intf.set_property(MSISE_1990._metadata, MSISE_1990._set_sun_position_metadata, value)
+        return self._intf.set_property(MSISE1990._metadata, MSISE1990._set_sun_position_metadata, value)
 
     _get_atmos_data_source_metadata = { "offset" : _get_atmos_data_source_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -33648,14 +33648,14 @@ class MSISE_1990(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def atmos_data_source(self) -> "AtmosDataSource":
         """Get or set the atmospheric model data source - data file or constant values."""
-        return self._intf.get_property(MSISE_1990._metadata, MSISE_1990._get_atmos_data_source_metadata)
+        return self._intf.get_property(MSISE1990._metadata, MSISE1990._get_atmos_data_source_metadata)
 
     _set_atmos_data_source_metadata = { "offset" : _set_atmos_data_source_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(AtmosDataSource),) }
     @atmos_data_source.setter
     def atmos_data_source(self, value:"AtmosDataSource") -> None:
-        return self._intf.set_property(MSISE_1990._metadata, MSISE_1990._set_atmos_data_source_metadata, value)
+        return self._intf.set_property(MSISE1990._metadata, MSISE1990._set_atmos_data_source_metadata, value)
 
     _get_f_10_p7_metadata = { "offset" : _get_f_10_p7_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -33663,14 +33663,14 @@ class MSISE_1990(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def f_10_p7(self) -> float:
         """Solar Flux (F10.7); the daily Ottawa 10.7 cm solar flux value. Dimensionless."""
-        return self._intf.get_property(MSISE_1990._metadata, MSISE_1990._get_f_10_p7_metadata)
+        return self._intf.get_property(MSISE1990._metadata, MSISE1990._get_f_10_p7_metadata)
 
     _set_f_10_p7_metadata = { "offset" : _set_f_10_p7_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @f_10_p7.setter
     def f_10_p7(self, value:float) -> None:
-        return self._intf.set_property(MSISE_1990._metadata, MSISE_1990._set_f_10_p7_metadata, value)
+        return self._intf.set_property(MSISE1990._metadata, MSISE1990._set_f_10_p7_metadata, value)
 
     _get_f_10_p7_avg_metadata = { "offset" : _get_f_10_p7_avg_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -33678,14 +33678,14 @@ class MSISE_1990(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def f_10_p7_avg(self) -> float:
         """Average solar Flux (F10.7); the 81-day averaged Ottawa 10.7 cm solar flux value. Dimensionless."""
-        return self._intf.get_property(MSISE_1990._metadata, MSISE_1990._get_f_10_p7_avg_metadata)
+        return self._intf.get_property(MSISE1990._metadata, MSISE1990._get_f_10_p7_avg_metadata)
 
     _set_f_10_p7_avg_metadata = { "offset" : _set_f_10_p7_avg_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @f_10_p7_avg.setter
     def f_10_p7_avg(self, value:float) -> None:
-        return self._intf.set_property(MSISE_1990._metadata, MSISE_1990._set_f_10_p7_avg_metadata, value)
+        return self._intf.set_property(MSISE1990._metadata, MSISE1990._set_f_10_p7_avg_metadata, value)
 
     _get_kp_metadata = { "offset" : _get_kp_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -33693,14 +33693,14 @@ class MSISE_1990(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def kp(self) -> float:
         """Geomagnetic Index (Kp). Dimensionless."""
-        return self._intf.get_property(MSISE_1990._metadata, MSISE_1990._get_kp_metadata)
+        return self._intf.get_property(MSISE1990._metadata, MSISE1990._get_kp_metadata)
 
     _set_kp_metadata = { "offset" : _set_kp_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @kp.setter
     def kp(self, value:float) -> None:
-        return self._intf.set_property(MSISE_1990._metadata, MSISE_1990._set_kp_metadata, value)
+        return self._intf.set_property(MSISE1990._metadata, MSISE1990._set_kp_metadata, value)
 
     _get_atmos_data_geo_magnetic_flux_source_metadata = { "offset" : _get_atmos_data_geo_magnetic_flux_source_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -33708,14 +33708,14 @@ class MSISE_1990(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def atmos_data_geo_magnetic_flux_source(self) -> "GeoMagneticFluxSource":
         """Whether to use Kp or Ap data from the flux file."""
-        return self._intf.get_property(MSISE_1990._metadata, MSISE_1990._get_atmos_data_geo_magnetic_flux_source_metadata)
+        return self._intf.get_property(MSISE1990._metadata, MSISE1990._get_atmos_data_geo_magnetic_flux_source_metadata)
 
     _set_atmos_data_geo_magnetic_flux_source_metadata = { "offset" : _set_atmos_data_geo_magnetic_flux_source_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(GeoMagneticFluxSource),) }
     @atmos_data_geo_magnetic_flux_source.setter
     def atmos_data_geo_magnetic_flux_source(self, value:"GeoMagneticFluxSource") -> None:
-        return self._intf.set_property(MSISE_1990._metadata, MSISE_1990._set_atmos_data_geo_magnetic_flux_source_metadata, value)
+        return self._intf.set_property(MSISE1990._metadata, MSISE1990._set_atmos_data_geo_magnetic_flux_source_metadata, value)
 
     _get_atmos_data_geo_magnetic_flux_update_rate_metadata = { "offset" : _get_atmos_data_geo_magnetic_flux_update_rate_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -33723,14 +33723,14 @@ class MSISE_1990(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def atmos_data_geo_magnetic_flux_update_rate(self) -> "GeoMagneticFluxUpdateRate":
         """Get or set the update rate for geomagnetic flux values from the flux file."""
-        return self._intf.get_property(MSISE_1990._metadata, MSISE_1990._get_atmos_data_geo_magnetic_flux_update_rate_metadata)
+        return self._intf.get_property(MSISE1990._metadata, MSISE1990._get_atmos_data_geo_magnetic_flux_update_rate_metadata)
 
     _set_atmos_data_geo_magnetic_flux_update_rate_metadata = { "offset" : _set_atmos_data_geo_magnetic_flux_update_rate_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(GeoMagneticFluxUpdateRate),) }
     @atmos_data_geo_magnetic_flux_update_rate.setter
     def atmos_data_geo_magnetic_flux_update_rate(self, value:"GeoMagneticFluxUpdateRate") -> None:
-        return self._intf.set_property(MSISE_1990._metadata, MSISE_1990._set_atmos_data_geo_magnetic_flux_update_rate_metadata, value)
+        return self._intf.set_property(MSISE1990._metadata, MSISE1990._set_atmos_data_geo_magnetic_flux_update_rate_metadata, value)
 
     _get_atmos_data_filename_metadata = { "offset" : _get_atmos_data_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -33738,14 +33738,14 @@ class MSISE_1990(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def atmos_data_filename(self) -> str:
         """Get or set the atmospheric model data file path."""
-        return self._intf.get_property(MSISE_1990._metadata, MSISE_1990._get_atmos_data_filename_metadata)
+        return self._intf.get_property(MSISE1990._metadata, MSISE1990._get_atmos_data_filename_metadata)
 
     _set_atmos_data_filename_metadata = { "offset" : _set_atmos_data_filename_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @atmos_data_filename.setter
     def atmos_data_filename(self, value:str) -> None:
-        return self._intf.set_property(MSISE_1990._metadata, MSISE_1990._set_atmos_data_filename_metadata, value)
+        return self._intf.set_property(MSISE1990._metadata, MSISE1990._set_atmos_data_filename_metadata, value)
 
     _get_drag_model_type_metadata = { "offset" : _get_drag_model_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -33753,14 +33753,14 @@ class MSISE_1990(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def drag_model_type(self) -> "DragModelType":
         """Drag model type."""
-        return self._intf.get_property(MSISE_1990._metadata, MSISE_1990._get_drag_model_type_metadata)
+        return self._intf.get_property(MSISE1990._metadata, MSISE1990._get_drag_model_type_metadata)
 
     _set_drag_model_type_metadata = { "offset" : _set_drag_model_type_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(DragModelType),) }
     @drag_model_type.setter
     def drag_model_type(self, value:"DragModelType") -> None:
-        return self._intf.set_property(MSISE_1990._metadata, MSISE_1990._set_drag_model_type_metadata, value)
+        return self._intf.set_property(MSISE1990._metadata, MSISE1990._set_drag_model_type_metadata, value)
 
     _get_drag_model_plugin_name_metadata = { "offset" : _get_drag_model_plugin_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -33768,14 +33768,14 @@ class MSISE_1990(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def drag_model_plugin_name(self) -> str:
         """Get or set the name of the drag model plugin."""
-        return self._intf.get_property(MSISE_1990._metadata, MSISE_1990._get_drag_model_plugin_name_metadata)
+        return self._intf.get_property(MSISE1990._metadata, MSISE1990._get_drag_model_plugin_name_metadata)
 
     _set_drag_model_plugin_name_metadata = { "offset" : _set_drag_model_plugin_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @drag_model_plugin_name.setter
     def drag_model_plugin_name(self, value:str) -> None:
-        return self._intf.set_property(MSISE_1990._metadata, MSISE_1990._set_drag_model_plugin_name_metadata, value)
+        return self._intf.set_property(MSISE1990._metadata, MSISE1990._set_drag_model_plugin_name_metadata, value)
 
     _get_drag_model_plugin_metadata = { "offset" : _get_drag_model_plugin_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -33783,7 +33783,7 @@ class MSISE_1990(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def drag_model_plugin(self) -> "DragModelPlugin":
         """Drag model plugin properties."""
-        return self._intf.get_property(MSISE_1990._metadata, MSISE_1990._get_drag_model_plugin_metadata)
+        return self._intf.get_property(MSISE1990._metadata, MSISE1990._get_drag_model_plugin_metadata)
 
     _get_variable_area_history_file_metadata = { "offset" : _get_variable_area_history_file_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -33791,14 +33791,14 @@ class MSISE_1990(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def variable_area_history_file(self) -> str:
         """Drag variable area history file."""
-        return self._intf.get_property(MSISE_1990._metadata, MSISE_1990._get_variable_area_history_file_metadata)
+        return self._intf.get_property(MSISE1990._metadata, MSISE1990._get_variable_area_history_file_metadata)
 
     _set_variable_area_history_file_metadata = { "offset" : _set_variable_area_history_file_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @variable_area_history_file.setter
     def variable_area_history_file(self, value:str) -> None:
-        return self._intf.set_property(MSISE_1990._metadata, MSISE_1990._set_variable_area_history_file_metadata, value)
+        return self._intf.set_property(MSISE1990._metadata, MSISE1990._set_variable_area_history_file_metadata, value)
 
     _get_n_plate_definition_file_metadata = { "offset" : _get_n_plate_definition_file_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -33806,14 +33806,14 @@ class MSISE_1990(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def n_plate_definition_file(self) -> str:
         """Drag N-Plate definition file."""
-        return self._intf.get_property(MSISE_1990._metadata, MSISE_1990._get_n_plate_definition_file_metadata)
+        return self._intf.get_property(MSISE1990._metadata, MSISE1990._get_n_plate_definition_file_metadata)
 
     _set_n_plate_definition_file_metadata = { "offset" : _set_n_plate_definition_file_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @n_plate_definition_file.setter
     def n_plate_definition_file(self, value:str) -> None:
-        return self._intf.set_property(MSISE_1990._metadata, MSISE_1990._set_n_plate_definition_file_metadata, value)
+        return self._intf.set_property(MSISE1990._metadata, MSISE1990._set_n_plate_definition_file_metadata, value)
 
     _property_names[use_approximate_altitude] = "use_approximate_altitude"
     _property_names[computes_temperature] = "computes_temperature"
@@ -33833,9 +33833,9 @@ class MSISE_1990(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[n_plate_definition_file] = "n_plate_definition_file"
 
     def __init__(self, source_object=None):
-        """Construct an object of type MSISE_1990."""
+        """Construct an object of type MSISE1990."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, source_object, MSISE_1990)
+        initialize_from_source_object(self, source_object, MSISE1990)
         IComponentInfo.__init__(self, source_object)
         ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
@@ -33847,12 +33847,12 @@ class MSISE_1990(IComponentInfo, ICloneable, SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, MSISE_1990, [MSISE_1990, IComponentInfo, ICloneable])
+        set_class_attribute(self, attrname, value, MSISE1990, [MSISE1990, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5340586931034210800, 11328105258405005975), MSISE_1990)
-agcls.AgTypeNameMap["MSISE_1990"] = MSISE_1990
+agcls.AgClassCatalog.add_catalog_entry((5340586931034210800, 11328105258405005975), MSISE1990)
+agcls.AgTypeNameMap["MSISE1990"] = MSISE1990
 
-class MSIS_1986(IComponentInfo, ICloneable, SupportsDeleteCallback):
+class MSIS1986(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for the MSIS 1986 atmospheric model - an empirical density model developed by Hedin based on satellite data. Finds the total density by accounting for the contribution of N2, O, O2, He, Ar and H. 1986 version, valid range of 90-1000 km."""
 
     _num_methods = 29
@@ -33892,7 +33892,7 @@ class MSIS_1986(IComponentInfo, ICloneable, SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, MSIS_1986)
+        return get_interface_property(attrname, MSIS1986)
     
     _get_use_approximate_altitude_metadata = { "offset" : _get_use_approximate_altitude_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -33900,14 +33900,14 @@ class MSIS_1986(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def use_approximate_altitude(self) -> bool:
         """True if using approximate altitude formula."""
-        return self._intf.get_property(MSIS_1986._metadata, MSIS_1986._get_use_approximate_altitude_metadata)
+        return self._intf.get_property(MSIS1986._metadata, MSIS1986._get_use_approximate_altitude_metadata)
 
     _set_use_approximate_altitude_metadata = { "offset" : _set_use_approximate_altitude_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @use_approximate_altitude.setter
     def use_approximate_altitude(self, value:bool) -> None:
-        return self._intf.set_property(MSIS_1986._metadata, MSIS_1986._set_use_approximate_altitude_metadata, value)
+        return self._intf.set_property(MSIS1986._metadata, MSIS1986._set_use_approximate_altitude_metadata, value)
 
     _get_computes_temperature_metadata = { "offset" : _get_computes_temperature_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -33915,7 +33915,7 @@ class MSIS_1986(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def computes_temperature(self) -> bool:
         """Flag indicates whether this model computes temperature."""
-        return self._intf.get_property(MSIS_1986._metadata, MSIS_1986._get_computes_temperature_metadata)
+        return self._intf.get_property(MSIS1986._metadata, MSIS1986._get_computes_temperature_metadata)
 
     _get_computes_pressure_metadata = { "offset" : _get_computes_pressure_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -33923,7 +33923,7 @@ class MSIS_1986(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def computes_pressure(self) -> bool:
         """Flag indicates whether this model computes pressure."""
-        return self._intf.get_property(MSIS_1986._metadata, MSIS_1986._get_computes_pressure_metadata)
+        return self._intf.get_property(MSIS1986._metadata, MSIS1986._get_computes_pressure_metadata)
 
     _get_sun_position_metadata = { "offset" : _get_sun_position_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -33931,14 +33931,14 @@ class MSIS_1986(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def sun_position(self) -> "SunPosition":
         """Get or set the sun position computation."""
-        return self._intf.get_property(MSIS_1986._metadata, MSIS_1986._get_sun_position_metadata)
+        return self._intf.get_property(MSIS1986._metadata, MSIS1986._get_sun_position_metadata)
 
     _set_sun_position_metadata = { "offset" : _set_sun_position_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(SunPosition),) }
     @sun_position.setter
     def sun_position(self, value:"SunPosition") -> None:
-        return self._intf.set_property(MSIS_1986._metadata, MSIS_1986._set_sun_position_metadata, value)
+        return self._intf.set_property(MSIS1986._metadata, MSIS1986._set_sun_position_metadata, value)
 
     _get_atmos_data_source_metadata = { "offset" : _get_atmos_data_source_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -33946,14 +33946,14 @@ class MSIS_1986(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def atmos_data_source(self) -> "AtmosDataSource":
         """Get or set the atmospheric model data source - data file or constant values."""
-        return self._intf.get_property(MSIS_1986._metadata, MSIS_1986._get_atmos_data_source_metadata)
+        return self._intf.get_property(MSIS1986._metadata, MSIS1986._get_atmos_data_source_metadata)
 
     _set_atmos_data_source_metadata = { "offset" : _set_atmos_data_source_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(AtmosDataSource),) }
     @atmos_data_source.setter
     def atmos_data_source(self, value:"AtmosDataSource") -> None:
-        return self._intf.set_property(MSIS_1986._metadata, MSIS_1986._set_atmos_data_source_metadata, value)
+        return self._intf.set_property(MSIS1986._metadata, MSIS1986._set_atmos_data_source_metadata, value)
 
     _get_f_10_p7_metadata = { "offset" : _get_f_10_p7_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -33961,14 +33961,14 @@ class MSIS_1986(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def f_10_p7(self) -> float:
         """Solar Flux (F10.7); the daily Ottawa 10.7 cm solar flux value. Dimensionless."""
-        return self._intf.get_property(MSIS_1986._metadata, MSIS_1986._get_f_10_p7_metadata)
+        return self._intf.get_property(MSIS1986._metadata, MSIS1986._get_f_10_p7_metadata)
 
     _set_f_10_p7_metadata = { "offset" : _set_f_10_p7_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @f_10_p7.setter
     def f_10_p7(self, value:float) -> None:
-        return self._intf.set_property(MSIS_1986._metadata, MSIS_1986._set_f_10_p7_metadata, value)
+        return self._intf.set_property(MSIS1986._metadata, MSIS1986._set_f_10_p7_metadata, value)
 
     _get_f_10_p7_avg_metadata = { "offset" : _get_f_10_p7_avg_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -33976,14 +33976,14 @@ class MSIS_1986(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def f_10_p7_avg(self) -> float:
         """Average solar Flux (F10.7); the 81-day averaged Ottawa 10.7 cm solar flux value. Dimensionless."""
-        return self._intf.get_property(MSIS_1986._metadata, MSIS_1986._get_f_10_p7_avg_metadata)
+        return self._intf.get_property(MSIS1986._metadata, MSIS1986._get_f_10_p7_avg_metadata)
 
     _set_f_10_p7_avg_metadata = { "offset" : _set_f_10_p7_avg_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @f_10_p7_avg.setter
     def f_10_p7_avg(self, value:float) -> None:
-        return self._intf.set_property(MSIS_1986._metadata, MSIS_1986._set_f_10_p7_avg_metadata, value)
+        return self._intf.set_property(MSIS1986._metadata, MSIS1986._set_f_10_p7_avg_metadata, value)
 
     _get_kp_metadata = { "offset" : _get_kp_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -33991,14 +33991,14 @@ class MSIS_1986(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def kp(self) -> float:
         """Geomagnetic Index (Kp). Dimensionless."""
-        return self._intf.get_property(MSIS_1986._metadata, MSIS_1986._get_kp_metadata)
+        return self._intf.get_property(MSIS1986._metadata, MSIS1986._get_kp_metadata)
 
     _set_kp_metadata = { "offset" : _set_kp_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @kp.setter
     def kp(self, value:float) -> None:
-        return self._intf.set_property(MSIS_1986._metadata, MSIS_1986._set_kp_metadata, value)
+        return self._intf.set_property(MSIS1986._metadata, MSIS1986._set_kp_metadata, value)
 
     _get_atmos_data_geo_magnetic_flux_source_metadata = { "offset" : _get_atmos_data_geo_magnetic_flux_source_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -34006,14 +34006,14 @@ class MSIS_1986(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def atmos_data_geo_magnetic_flux_source(self) -> "GeoMagneticFluxSource":
         """Whether to use Kp or Ap data from the flux file."""
-        return self._intf.get_property(MSIS_1986._metadata, MSIS_1986._get_atmos_data_geo_magnetic_flux_source_metadata)
+        return self._intf.get_property(MSIS1986._metadata, MSIS1986._get_atmos_data_geo_magnetic_flux_source_metadata)
 
     _set_atmos_data_geo_magnetic_flux_source_metadata = { "offset" : _set_atmos_data_geo_magnetic_flux_source_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(GeoMagneticFluxSource),) }
     @atmos_data_geo_magnetic_flux_source.setter
     def atmos_data_geo_magnetic_flux_source(self, value:"GeoMagneticFluxSource") -> None:
-        return self._intf.set_property(MSIS_1986._metadata, MSIS_1986._set_atmos_data_geo_magnetic_flux_source_metadata, value)
+        return self._intf.set_property(MSIS1986._metadata, MSIS1986._set_atmos_data_geo_magnetic_flux_source_metadata, value)
 
     _get_atmos_data_geo_magnetic_flux_update_rate_metadata = { "offset" : _get_atmos_data_geo_magnetic_flux_update_rate_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -34021,14 +34021,14 @@ class MSIS_1986(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def atmos_data_geo_magnetic_flux_update_rate(self) -> "GeoMagneticFluxUpdateRate":
         """Get or set the update rate for geomagnetic flux values from the flux file."""
-        return self._intf.get_property(MSIS_1986._metadata, MSIS_1986._get_atmos_data_geo_magnetic_flux_update_rate_metadata)
+        return self._intf.get_property(MSIS1986._metadata, MSIS1986._get_atmos_data_geo_magnetic_flux_update_rate_metadata)
 
     _set_atmos_data_geo_magnetic_flux_update_rate_metadata = { "offset" : _set_atmos_data_geo_magnetic_flux_update_rate_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(GeoMagneticFluxUpdateRate),) }
     @atmos_data_geo_magnetic_flux_update_rate.setter
     def atmos_data_geo_magnetic_flux_update_rate(self, value:"GeoMagneticFluxUpdateRate") -> None:
-        return self._intf.set_property(MSIS_1986._metadata, MSIS_1986._set_atmos_data_geo_magnetic_flux_update_rate_metadata, value)
+        return self._intf.set_property(MSIS1986._metadata, MSIS1986._set_atmos_data_geo_magnetic_flux_update_rate_metadata, value)
 
     _get_atmos_data_filename_metadata = { "offset" : _get_atmos_data_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -34036,14 +34036,14 @@ class MSIS_1986(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def atmos_data_filename(self) -> str:
         """Get or set the atmospheric model data file path."""
-        return self._intf.get_property(MSIS_1986._metadata, MSIS_1986._get_atmos_data_filename_metadata)
+        return self._intf.get_property(MSIS1986._metadata, MSIS1986._get_atmos_data_filename_metadata)
 
     _set_atmos_data_filename_metadata = { "offset" : _set_atmos_data_filename_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @atmos_data_filename.setter
     def atmos_data_filename(self, value:str) -> None:
-        return self._intf.set_property(MSIS_1986._metadata, MSIS_1986._set_atmos_data_filename_metadata, value)
+        return self._intf.set_property(MSIS1986._metadata, MSIS1986._set_atmos_data_filename_metadata, value)
 
     _get_drag_model_type_metadata = { "offset" : _get_drag_model_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -34051,14 +34051,14 @@ class MSIS_1986(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def drag_model_type(self) -> "DragModelType":
         """Drag model type."""
-        return self._intf.get_property(MSIS_1986._metadata, MSIS_1986._get_drag_model_type_metadata)
+        return self._intf.get_property(MSIS1986._metadata, MSIS1986._get_drag_model_type_metadata)
 
     _set_drag_model_type_metadata = { "offset" : _set_drag_model_type_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(DragModelType),) }
     @drag_model_type.setter
     def drag_model_type(self, value:"DragModelType") -> None:
-        return self._intf.set_property(MSIS_1986._metadata, MSIS_1986._set_drag_model_type_metadata, value)
+        return self._intf.set_property(MSIS1986._metadata, MSIS1986._set_drag_model_type_metadata, value)
 
     _get_drag_model_plugin_name_metadata = { "offset" : _get_drag_model_plugin_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -34066,14 +34066,14 @@ class MSIS_1986(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def drag_model_plugin_name(self) -> str:
         """Get or set the name of the drag model plugin."""
-        return self._intf.get_property(MSIS_1986._metadata, MSIS_1986._get_drag_model_plugin_name_metadata)
+        return self._intf.get_property(MSIS1986._metadata, MSIS1986._get_drag_model_plugin_name_metadata)
 
     _set_drag_model_plugin_name_metadata = { "offset" : _set_drag_model_plugin_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @drag_model_plugin_name.setter
     def drag_model_plugin_name(self, value:str) -> None:
-        return self._intf.set_property(MSIS_1986._metadata, MSIS_1986._set_drag_model_plugin_name_metadata, value)
+        return self._intf.set_property(MSIS1986._metadata, MSIS1986._set_drag_model_plugin_name_metadata, value)
 
     _get_drag_model_plugin_metadata = { "offset" : _get_drag_model_plugin_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -34081,7 +34081,7 @@ class MSIS_1986(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def drag_model_plugin(self) -> "DragModelPlugin":
         """Drag model plugin properties."""
-        return self._intf.get_property(MSIS_1986._metadata, MSIS_1986._get_drag_model_plugin_metadata)
+        return self._intf.get_property(MSIS1986._metadata, MSIS1986._get_drag_model_plugin_metadata)
 
     _get_variable_area_history_file_metadata = { "offset" : _get_variable_area_history_file_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -34089,14 +34089,14 @@ class MSIS_1986(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def variable_area_history_file(self) -> str:
         """Drag variable area history file."""
-        return self._intf.get_property(MSIS_1986._metadata, MSIS_1986._get_variable_area_history_file_metadata)
+        return self._intf.get_property(MSIS1986._metadata, MSIS1986._get_variable_area_history_file_metadata)
 
     _set_variable_area_history_file_metadata = { "offset" : _set_variable_area_history_file_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @variable_area_history_file.setter
     def variable_area_history_file(self, value:str) -> None:
-        return self._intf.set_property(MSIS_1986._metadata, MSIS_1986._set_variable_area_history_file_metadata, value)
+        return self._intf.set_property(MSIS1986._metadata, MSIS1986._set_variable_area_history_file_metadata, value)
 
     _get_n_plate_definition_file_metadata = { "offset" : _get_n_plate_definition_file_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -34104,14 +34104,14 @@ class MSIS_1986(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def n_plate_definition_file(self) -> str:
         """Drag N-Plate definition file."""
-        return self._intf.get_property(MSIS_1986._metadata, MSIS_1986._get_n_plate_definition_file_metadata)
+        return self._intf.get_property(MSIS1986._metadata, MSIS1986._get_n_plate_definition_file_metadata)
 
     _set_n_plate_definition_file_metadata = { "offset" : _set_n_plate_definition_file_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @n_plate_definition_file.setter
     def n_plate_definition_file(self, value:str) -> None:
-        return self._intf.set_property(MSIS_1986._metadata, MSIS_1986._set_n_plate_definition_file_metadata, value)
+        return self._intf.set_property(MSIS1986._metadata, MSIS1986._set_n_plate_definition_file_metadata, value)
 
     _property_names[use_approximate_altitude] = "use_approximate_altitude"
     _property_names[computes_temperature] = "computes_temperature"
@@ -34131,9 +34131,9 @@ class MSIS_1986(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[n_plate_definition_file] = "n_plate_definition_file"
 
     def __init__(self, source_object=None):
-        """Construct an object of type MSIS_1986."""
+        """Construct an object of type MSIS1986."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, source_object, MSIS_1986)
+        initialize_from_source_object(self, source_object, MSIS1986)
         IComponentInfo.__init__(self, source_object)
         ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
@@ -34145,12 +34145,12 @@ class MSIS_1986(IComponentInfo, ICloneable, SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, MSIS_1986, [MSIS_1986, IComponentInfo, ICloneable])
+        set_class_attribute(self, attrname, value, MSIS1986, [MSIS1986, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5240601690300521833, 8211112362243914380), MSIS_1986)
-agcls.AgTypeNameMap["MSIS_1986"] = MSIS_1986
+agcls.AgClassCatalog.add_catalog_entry((5240601690300521833, 8211112362243914380), MSIS1986)
+agcls.AgTypeNameMap["MSIS1986"] = MSIS1986
 
-class NRLMSISE_2000(IComponentInfo, ICloneable, SupportsDeleteCallback):
+class NRLMSISE2000(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for the NRLMSISE 2000 atmospheric model."""
 
     _num_methods = 29
@@ -34190,7 +34190,7 @@ class NRLMSISE_2000(IComponentInfo, ICloneable, SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, NRLMSISE_2000)
+        return get_interface_property(attrname, NRLMSISE2000)
     
     _get_use_approximate_altitude_metadata = { "offset" : _get_use_approximate_altitude_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -34198,14 +34198,14 @@ class NRLMSISE_2000(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def use_approximate_altitude(self) -> bool:
         """True if using approximate altitude formula."""
-        return self._intf.get_property(NRLMSISE_2000._metadata, NRLMSISE_2000._get_use_approximate_altitude_metadata)
+        return self._intf.get_property(NRLMSISE2000._metadata, NRLMSISE2000._get_use_approximate_altitude_metadata)
 
     _set_use_approximate_altitude_metadata = { "offset" : _set_use_approximate_altitude_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @use_approximate_altitude.setter
     def use_approximate_altitude(self, value:bool) -> None:
-        return self._intf.set_property(NRLMSISE_2000._metadata, NRLMSISE_2000._set_use_approximate_altitude_metadata, value)
+        return self._intf.set_property(NRLMSISE2000._metadata, NRLMSISE2000._set_use_approximate_altitude_metadata, value)
 
     _get_computes_temperature_metadata = { "offset" : _get_computes_temperature_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -34213,7 +34213,7 @@ class NRLMSISE_2000(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def computes_temperature(self) -> bool:
         """Flag indicates whether this model computes temperature."""
-        return self._intf.get_property(NRLMSISE_2000._metadata, NRLMSISE_2000._get_computes_temperature_metadata)
+        return self._intf.get_property(NRLMSISE2000._metadata, NRLMSISE2000._get_computes_temperature_metadata)
 
     _get_computes_pressure_metadata = { "offset" : _get_computes_pressure_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -34221,7 +34221,7 @@ class NRLMSISE_2000(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def computes_pressure(self) -> bool:
         """Flag indicates whether this model computes pressure."""
-        return self._intf.get_property(NRLMSISE_2000._metadata, NRLMSISE_2000._get_computes_pressure_metadata)
+        return self._intf.get_property(NRLMSISE2000._metadata, NRLMSISE2000._get_computes_pressure_metadata)
 
     _get_sun_position_metadata = { "offset" : _get_sun_position_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -34229,14 +34229,14 @@ class NRLMSISE_2000(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def sun_position(self) -> "SunPosition":
         """Get or set the sun position computation."""
-        return self._intf.get_property(NRLMSISE_2000._metadata, NRLMSISE_2000._get_sun_position_metadata)
+        return self._intf.get_property(NRLMSISE2000._metadata, NRLMSISE2000._get_sun_position_metadata)
 
     _set_sun_position_metadata = { "offset" : _set_sun_position_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(SunPosition),) }
     @sun_position.setter
     def sun_position(self, value:"SunPosition") -> None:
-        return self._intf.set_property(NRLMSISE_2000._metadata, NRLMSISE_2000._set_sun_position_metadata, value)
+        return self._intf.set_property(NRLMSISE2000._metadata, NRLMSISE2000._set_sun_position_metadata, value)
 
     _get_atmos_data_source_metadata = { "offset" : _get_atmos_data_source_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -34244,14 +34244,14 @@ class NRLMSISE_2000(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def atmos_data_source(self) -> "AtmosDataSource":
         """Get or set the atmospheric model data source - data file or constant values."""
-        return self._intf.get_property(NRLMSISE_2000._metadata, NRLMSISE_2000._get_atmos_data_source_metadata)
+        return self._intf.get_property(NRLMSISE2000._metadata, NRLMSISE2000._get_atmos_data_source_metadata)
 
     _set_atmos_data_source_metadata = { "offset" : _set_atmos_data_source_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(AtmosDataSource),) }
     @atmos_data_source.setter
     def atmos_data_source(self, value:"AtmosDataSource") -> None:
-        return self._intf.set_property(NRLMSISE_2000._metadata, NRLMSISE_2000._set_atmos_data_source_metadata, value)
+        return self._intf.set_property(NRLMSISE2000._metadata, NRLMSISE2000._set_atmos_data_source_metadata, value)
 
     _get_f_10_p7_metadata = { "offset" : _get_f_10_p7_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -34259,14 +34259,14 @@ class NRLMSISE_2000(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def f_10_p7(self) -> float:
         """Solar Flux (F10.7); the daily Ottawa 10.7 cm solar flux value. Dimensionless."""
-        return self._intf.get_property(NRLMSISE_2000._metadata, NRLMSISE_2000._get_f_10_p7_metadata)
+        return self._intf.get_property(NRLMSISE2000._metadata, NRLMSISE2000._get_f_10_p7_metadata)
 
     _set_f_10_p7_metadata = { "offset" : _set_f_10_p7_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @f_10_p7.setter
     def f_10_p7(self, value:float) -> None:
-        return self._intf.set_property(NRLMSISE_2000._metadata, NRLMSISE_2000._set_f_10_p7_metadata, value)
+        return self._intf.set_property(NRLMSISE2000._metadata, NRLMSISE2000._set_f_10_p7_metadata, value)
 
     _get_f_10_p7_avg_metadata = { "offset" : _get_f_10_p7_avg_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -34274,14 +34274,14 @@ class NRLMSISE_2000(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def f_10_p7_avg(self) -> float:
         """Average solar Flux (F10.7); the 81-day averaged Ottawa 10.7 cm solar flux value. Dimensionless."""
-        return self._intf.get_property(NRLMSISE_2000._metadata, NRLMSISE_2000._get_f_10_p7_avg_metadata)
+        return self._intf.get_property(NRLMSISE2000._metadata, NRLMSISE2000._get_f_10_p7_avg_metadata)
 
     _set_f_10_p7_avg_metadata = { "offset" : _set_f_10_p7_avg_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @f_10_p7_avg.setter
     def f_10_p7_avg(self, value:float) -> None:
-        return self._intf.set_property(NRLMSISE_2000._metadata, NRLMSISE_2000._set_f_10_p7_avg_metadata, value)
+        return self._intf.set_property(NRLMSISE2000._metadata, NRLMSISE2000._set_f_10_p7_avg_metadata, value)
 
     _get_kp_metadata = { "offset" : _get_kp_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -34289,14 +34289,14 @@ class NRLMSISE_2000(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def kp(self) -> float:
         """Geomagnetic Index (Kp). Dimensionless."""
-        return self._intf.get_property(NRLMSISE_2000._metadata, NRLMSISE_2000._get_kp_metadata)
+        return self._intf.get_property(NRLMSISE2000._metadata, NRLMSISE2000._get_kp_metadata)
 
     _set_kp_metadata = { "offset" : _set_kp_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
     @kp.setter
     def kp(self, value:float) -> None:
-        return self._intf.set_property(NRLMSISE_2000._metadata, NRLMSISE_2000._set_kp_metadata, value)
+        return self._intf.set_property(NRLMSISE2000._metadata, NRLMSISE2000._set_kp_metadata, value)
 
     _get_atmos_data_geo_magnetic_flux_source_metadata = { "offset" : _get_atmos_data_geo_magnetic_flux_source_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -34304,14 +34304,14 @@ class NRLMSISE_2000(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def atmos_data_geo_magnetic_flux_source(self) -> "GeoMagneticFluxSource":
         """Whether to use Kp or Ap data from the flux file."""
-        return self._intf.get_property(NRLMSISE_2000._metadata, NRLMSISE_2000._get_atmos_data_geo_magnetic_flux_source_metadata)
+        return self._intf.get_property(NRLMSISE2000._metadata, NRLMSISE2000._get_atmos_data_geo_magnetic_flux_source_metadata)
 
     _set_atmos_data_geo_magnetic_flux_source_metadata = { "offset" : _set_atmos_data_geo_magnetic_flux_source_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(GeoMagneticFluxSource),) }
     @atmos_data_geo_magnetic_flux_source.setter
     def atmos_data_geo_magnetic_flux_source(self, value:"GeoMagneticFluxSource") -> None:
-        return self._intf.set_property(NRLMSISE_2000._metadata, NRLMSISE_2000._set_atmos_data_geo_magnetic_flux_source_metadata, value)
+        return self._intf.set_property(NRLMSISE2000._metadata, NRLMSISE2000._set_atmos_data_geo_magnetic_flux_source_metadata, value)
 
     _get_atmos_data_geo_magnetic_flux_update_rate_metadata = { "offset" : _get_atmos_data_geo_magnetic_flux_update_rate_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -34319,14 +34319,14 @@ class NRLMSISE_2000(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def atmos_data_geo_magnetic_flux_update_rate(self) -> "GeoMagneticFluxUpdateRate":
         """Get or set the update rate for geomagnetic flux values from the flux file."""
-        return self._intf.get_property(NRLMSISE_2000._metadata, NRLMSISE_2000._get_atmos_data_geo_magnetic_flux_update_rate_metadata)
+        return self._intf.get_property(NRLMSISE2000._metadata, NRLMSISE2000._get_atmos_data_geo_magnetic_flux_update_rate_metadata)
 
     _set_atmos_data_geo_magnetic_flux_update_rate_metadata = { "offset" : _set_atmos_data_geo_magnetic_flux_update_rate_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(GeoMagneticFluxUpdateRate),) }
     @atmos_data_geo_magnetic_flux_update_rate.setter
     def atmos_data_geo_magnetic_flux_update_rate(self, value:"GeoMagneticFluxUpdateRate") -> None:
-        return self._intf.set_property(NRLMSISE_2000._metadata, NRLMSISE_2000._set_atmos_data_geo_magnetic_flux_update_rate_metadata, value)
+        return self._intf.set_property(NRLMSISE2000._metadata, NRLMSISE2000._set_atmos_data_geo_magnetic_flux_update_rate_metadata, value)
 
     _get_atmos_data_filename_metadata = { "offset" : _get_atmos_data_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -34334,14 +34334,14 @@ class NRLMSISE_2000(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def atmos_data_filename(self) -> str:
         """Get or set the atmospheric model data file path."""
-        return self._intf.get_property(NRLMSISE_2000._metadata, NRLMSISE_2000._get_atmos_data_filename_metadata)
+        return self._intf.get_property(NRLMSISE2000._metadata, NRLMSISE2000._get_atmos_data_filename_metadata)
 
     _set_atmos_data_filename_metadata = { "offset" : _set_atmos_data_filename_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @atmos_data_filename.setter
     def atmos_data_filename(self, value:str) -> None:
-        return self._intf.set_property(NRLMSISE_2000._metadata, NRLMSISE_2000._set_atmos_data_filename_metadata, value)
+        return self._intf.set_property(NRLMSISE2000._metadata, NRLMSISE2000._set_atmos_data_filename_metadata, value)
 
     _get_drag_model_type_metadata = { "offset" : _get_drag_model_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -34349,14 +34349,14 @@ class NRLMSISE_2000(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def drag_model_type(self) -> "DragModelType":
         """Drag model type."""
-        return self._intf.get_property(NRLMSISE_2000._metadata, NRLMSISE_2000._get_drag_model_type_metadata)
+        return self._intf.get_property(NRLMSISE2000._metadata, NRLMSISE2000._get_drag_model_type_metadata)
 
     _set_drag_model_type_metadata = { "offset" : _set_drag_model_type_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(DragModelType),) }
     @drag_model_type.setter
     def drag_model_type(self, value:"DragModelType") -> None:
-        return self._intf.set_property(NRLMSISE_2000._metadata, NRLMSISE_2000._set_drag_model_type_metadata, value)
+        return self._intf.set_property(NRLMSISE2000._metadata, NRLMSISE2000._set_drag_model_type_metadata, value)
 
     _get_drag_model_plugin_name_metadata = { "offset" : _get_drag_model_plugin_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -34364,14 +34364,14 @@ class NRLMSISE_2000(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def drag_model_plugin_name(self) -> str:
         """Get or set the name of the drag model plugin."""
-        return self._intf.get_property(NRLMSISE_2000._metadata, NRLMSISE_2000._get_drag_model_plugin_name_metadata)
+        return self._intf.get_property(NRLMSISE2000._metadata, NRLMSISE2000._get_drag_model_plugin_name_metadata)
 
     _set_drag_model_plugin_name_metadata = { "offset" : _set_drag_model_plugin_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @drag_model_plugin_name.setter
     def drag_model_plugin_name(self, value:str) -> None:
-        return self._intf.set_property(NRLMSISE_2000._metadata, NRLMSISE_2000._set_drag_model_plugin_name_metadata, value)
+        return self._intf.set_property(NRLMSISE2000._metadata, NRLMSISE2000._set_drag_model_plugin_name_metadata, value)
 
     _get_drag_model_plugin_metadata = { "offset" : _get_drag_model_plugin_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -34379,7 +34379,7 @@ class NRLMSISE_2000(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def drag_model_plugin(self) -> "DragModelPlugin":
         """Drag model plugin properties."""
-        return self._intf.get_property(NRLMSISE_2000._metadata, NRLMSISE_2000._get_drag_model_plugin_metadata)
+        return self._intf.get_property(NRLMSISE2000._metadata, NRLMSISE2000._get_drag_model_plugin_metadata)
 
     _get_variable_area_history_file_metadata = { "offset" : _get_variable_area_history_file_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -34387,14 +34387,14 @@ class NRLMSISE_2000(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def variable_area_history_file(self) -> str:
         """Drag variable area history file."""
-        return self._intf.get_property(NRLMSISE_2000._metadata, NRLMSISE_2000._get_variable_area_history_file_metadata)
+        return self._intf.get_property(NRLMSISE2000._metadata, NRLMSISE2000._get_variable_area_history_file_metadata)
 
     _set_variable_area_history_file_metadata = { "offset" : _set_variable_area_history_file_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @variable_area_history_file.setter
     def variable_area_history_file(self, value:str) -> None:
-        return self._intf.set_property(NRLMSISE_2000._metadata, NRLMSISE_2000._set_variable_area_history_file_metadata, value)
+        return self._intf.set_property(NRLMSISE2000._metadata, NRLMSISE2000._set_variable_area_history_file_metadata, value)
 
     _get_n_plate_definition_file_metadata = { "offset" : _get_n_plate_definition_file_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -34402,14 +34402,14 @@ class NRLMSISE_2000(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def n_plate_definition_file(self) -> str:
         """Drag N-Plate definition file."""
-        return self._intf.get_property(NRLMSISE_2000._metadata, NRLMSISE_2000._get_n_plate_definition_file_metadata)
+        return self._intf.get_property(NRLMSISE2000._metadata, NRLMSISE2000._get_n_plate_definition_file_metadata)
 
     _set_n_plate_definition_file_metadata = { "offset" : _set_n_plate_definition_file_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @n_plate_definition_file.setter
     def n_plate_definition_file(self, value:str) -> None:
-        return self._intf.set_property(NRLMSISE_2000._metadata, NRLMSISE_2000._set_n_plate_definition_file_metadata, value)
+        return self._intf.set_property(NRLMSISE2000._metadata, NRLMSISE2000._set_n_plate_definition_file_metadata, value)
 
     _property_names[use_approximate_altitude] = "use_approximate_altitude"
     _property_names[computes_temperature] = "computes_temperature"
@@ -34429,9 +34429,9 @@ class NRLMSISE_2000(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[n_plate_definition_file] = "n_plate_definition_file"
 
     def __init__(self, source_object=None):
-        """Construct an object of type NRLMSISE_2000."""
+        """Construct an object of type NRLMSISE2000."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, source_object, NRLMSISE_2000)
+        initialize_from_source_object(self, source_object, NRLMSISE2000)
         IComponentInfo.__init__(self, source_object)
         ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
@@ -34443,12 +34443,12 @@ class NRLMSISE_2000(IComponentInfo, ICloneable, SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, NRLMSISE_2000, [NRLMSISE_2000, IComponentInfo, ICloneable])
+        set_class_attribute(self, attrname, value, NRLMSISE2000, [NRLMSISE2000, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5294825104791739528, 9342049865198485677), NRLMSISE_2000)
-agcls.AgTypeNameMap["NRLMSISE_2000"] = NRLMSISE_2000
+agcls.AgClassCatalog.add_catalog_entry((5294825104791739528, 9342049865198485677), NRLMSISE2000)
+agcls.AgTypeNameMap["NRLMSISE2000"] = NRLMSISE2000
 
-class US_Standard_Atmosphere(IComponentInfo, ICloneable, SupportsDeleteCallback):
+class USStandardAtmosphere(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for the US Standard Atmosphere atmospheric model."""
 
     _num_methods = 13
@@ -34472,7 +34472,7 @@ class US_Standard_Atmosphere(IComponentInfo, ICloneable, SupportsDeleteCallback)
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, US_Standard_Atmosphere)
+        return get_interface_property(attrname, USStandardAtmosphere)
     
     _get_use_approximate_altitude_metadata = { "offset" : _get_use_approximate_altitude_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -34480,14 +34480,14 @@ class US_Standard_Atmosphere(IComponentInfo, ICloneable, SupportsDeleteCallback)
     @property
     def use_approximate_altitude(self) -> bool:
         """True if using approximate altitude formula."""
-        return self._intf.get_property(US_Standard_Atmosphere._metadata, US_Standard_Atmosphere._get_use_approximate_altitude_metadata)
+        return self._intf.get_property(USStandardAtmosphere._metadata, USStandardAtmosphere._get_use_approximate_altitude_metadata)
 
     _set_use_approximate_altitude_metadata = { "offset" : _set_use_approximate_altitude_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @use_approximate_altitude.setter
     def use_approximate_altitude(self, value:bool) -> None:
-        return self._intf.set_property(US_Standard_Atmosphere._metadata, US_Standard_Atmosphere._set_use_approximate_altitude_metadata, value)
+        return self._intf.set_property(USStandardAtmosphere._metadata, USStandardAtmosphere._set_use_approximate_altitude_metadata, value)
 
     _get_computes_temperature_metadata = { "offset" : _get_computes_temperature_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -34495,7 +34495,7 @@ class US_Standard_Atmosphere(IComponentInfo, ICloneable, SupportsDeleteCallback)
     @property
     def computes_temperature(self) -> bool:
         """Flag indicates whether this model computes temperature."""
-        return self._intf.get_property(US_Standard_Atmosphere._metadata, US_Standard_Atmosphere._get_computes_temperature_metadata)
+        return self._intf.get_property(USStandardAtmosphere._metadata, USStandardAtmosphere._get_computes_temperature_metadata)
 
     _get_computes_pressure_metadata = { "offset" : _get_computes_pressure_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -34503,7 +34503,7 @@ class US_Standard_Atmosphere(IComponentInfo, ICloneable, SupportsDeleteCallback)
     @property
     def computes_pressure(self) -> bool:
         """Flag indicates whether this model computes pressure."""
-        return self._intf.get_property(US_Standard_Atmosphere._metadata, US_Standard_Atmosphere._get_computes_pressure_metadata)
+        return self._intf.get_property(USStandardAtmosphere._metadata, USStandardAtmosphere._get_computes_pressure_metadata)
 
     _get_drag_model_type_metadata = { "offset" : _get_drag_model_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -34511,14 +34511,14 @@ class US_Standard_Atmosphere(IComponentInfo, ICloneable, SupportsDeleteCallback)
     @property
     def drag_model_type(self) -> "DragModelType":
         """Drag model type."""
-        return self._intf.get_property(US_Standard_Atmosphere._metadata, US_Standard_Atmosphere._get_drag_model_type_metadata)
+        return self._intf.get_property(USStandardAtmosphere._metadata, USStandardAtmosphere._get_drag_model_type_metadata)
 
     _set_drag_model_type_metadata = { "offset" : _set_drag_model_type_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(DragModelType),) }
     @drag_model_type.setter
     def drag_model_type(self, value:"DragModelType") -> None:
-        return self._intf.set_property(US_Standard_Atmosphere._metadata, US_Standard_Atmosphere._set_drag_model_type_metadata, value)
+        return self._intf.set_property(USStandardAtmosphere._metadata, USStandardAtmosphere._set_drag_model_type_metadata, value)
 
     _get_drag_model_plugin_name_metadata = { "offset" : _get_drag_model_plugin_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -34526,14 +34526,14 @@ class US_Standard_Atmosphere(IComponentInfo, ICloneable, SupportsDeleteCallback)
     @property
     def drag_model_plugin_name(self) -> str:
         """Get or set the name of the drag model plugin."""
-        return self._intf.get_property(US_Standard_Atmosphere._metadata, US_Standard_Atmosphere._get_drag_model_plugin_name_metadata)
+        return self._intf.get_property(USStandardAtmosphere._metadata, USStandardAtmosphere._get_drag_model_plugin_name_metadata)
 
     _set_drag_model_plugin_name_metadata = { "offset" : _set_drag_model_plugin_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @drag_model_plugin_name.setter
     def drag_model_plugin_name(self, value:str) -> None:
-        return self._intf.set_property(US_Standard_Atmosphere._metadata, US_Standard_Atmosphere._set_drag_model_plugin_name_metadata, value)
+        return self._intf.set_property(USStandardAtmosphere._metadata, USStandardAtmosphere._set_drag_model_plugin_name_metadata, value)
 
     _get_drag_model_plugin_metadata = { "offset" : _get_drag_model_plugin_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -34541,7 +34541,7 @@ class US_Standard_Atmosphere(IComponentInfo, ICloneable, SupportsDeleteCallback)
     @property
     def drag_model_plugin(self) -> "DragModelPlugin":
         """Drag model plugin properties."""
-        return self._intf.get_property(US_Standard_Atmosphere._metadata, US_Standard_Atmosphere._get_drag_model_plugin_metadata)
+        return self._intf.get_property(USStandardAtmosphere._metadata, USStandardAtmosphere._get_drag_model_plugin_metadata)
 
     _get_variable_area_history_file_metadata = { "offset" : _get_variable_area_history_file_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -34549,14 +34549,14 @@ class US_Standard_Atmosphere(IComponentInfo, ICloneable, SupportsDeleteCallback)
     @property
     def variable_area_history_file(self) -> str:
         """Drag variable area history file."""
-        return self._intf.get_property(US_Standard_Atmosphere._metadata, US_Standard_Atmosphere._get_variable_area_history_file_metadata)
+        return self._intf.get_property(USStandardAtmosphere._metadata, USStandardAtmosphere._get_variable_area_history_file_metadata)
 
     _set_variable_area_history_file_metadata = { "offset" : _set_variable_area_history_file_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @variable_area_history_file.setter
     def variable_area_history_file(self, value:str) -> None:
-        return self._intf.set_property(US_Standard_Atmosphere._metadata, US_Standard_Atmosphere._set_variable_area_history_file_metadata, value)
+        return self._intf.set_property(USStandardAtmosphere._metadata, USStandardAtmosphere._set_variable_area_history_file_metadata, value)
 
     _get_n_plate_definition_file_metadata = { "offset" : _get_n_plate_definition_file_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -34564,14 +34564,14 @@ class US_Standard_Atmosphere(IComponentInfo, ICloneable, SupportsDeleteCallback)
     @property
     def n_plate_definition_file(self) -> str:
         """Drag N-Plate definition file."""
-        return self._intf.get_property(US_Standard_Atmosphere._metadata, US_Standard_Atmosphere._get_n_plate_definition_file_metadata)
+        return self._intf.get_property(USStandardAtmosphere._metadata, USStandardAtmosphere._get_n_plate_definition_file_metadata)
 
     _set_n_plate_definition_file_metadata = { "offset" : _set_n_plate_definition_file_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @n_plate_definition_file.setter
     def n_plate_definition_file(self, value:str) -> None:
-        return self._intf.set_property(US_Standard_Atmosphere._metadata, US_Standard_Atmosphere._set_n_plate_definition_file_metadata, value)
+        return self._intf.set_property(USStandardAtmosphere._metadata, USStandardAtmosphere._set_n_plate_definition_file_metadata, value)
 
     _property_names[use_approximate_altitude] = "use_approximate_altitude"
     _property_names[computes_temperature] = "computes_temperature"
@@ -34583,9 +34583,9 @@ class US_Standard_Atmosphere(IComponentInfo, ICloneable, SupportsDeleteCallback)
     _property_names[n_plate_definition_file] = "n_plate_definition_file"
 
     def __init__(self, source_object=None):
-        """Construct an object of type US_Standard_Atmosphere."""
+        """Construct an object of type USStandardAtmosphere."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, source_object, US_Standard_Atmosphere)
+        initialize_from_source_object(self, source_object, USStandardAtmosphere)
         IComponentInfo.__init__(self, source_object)
         ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
@@ -34597,10 +34597,10 @@ class US_Standard_Atmosphere(IComponentInfo, ICloneable, SupportsDeleteCallback)
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, US_Standard_Atmosphere, [US_Standard_Atmosphere, IComponentInfo, ICloneable])
+        set_class_attribute(self, attrname, value, USStandardAtmosphere, [USStandardAtmosphere, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4819330301504343063, 7573866645070409350), US_Standard_Atmosphere)
-agcls.AgTypeNameMap["US_Standard_Atmosphere"] = US_Standard_Atmosphere
+agcls.AgClassCatalog.add_catalog_entry((4819330301504343063, 7573866645070409350), USStandardAtmosphere)
+agcls.AgTypeNameMap["USStandardAtmosphere"] = USStandardAtmosphere
 
 class MarsGRAM37(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for the Mars-GRAM 3.7 atmospheric model."""

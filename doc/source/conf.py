@@ -122,7 +122,7 @@ numpydoc_validation_checks = set()  # numpydoc validation is turned off due to p
 templates_path = ["_templates"]
 
 # Directories excluded when looking for source files
-exclude_examples = ["solar_panel_tool.py", "stk_tutorial.py", "stk_vgt_tutorial.py"]
+exclude_examples = []
 exclude_patterns = exclude_examples + ["conf.py", "_static/README.md", "api/generated", "links.rst"]
 
 # Ignore warnings
@@ -156,8 +156,7 @@ master_doc = "index"
 # Common content for every RST file such us links
 rst_epilog = ""
 links_filepath = pathlib.Path(__file__).parent.absolute() / "links.rst"
-with open(links_filepath) as links_file:
-    rst_epilog += links_file.read()
+rst_epilog += links_filepath.read_text(encoding="utf-8")
 
 # -- Autosectionlabel configuration ------------------------------------------
 autosectionlabel_maxdepth = 6
@@ -171,6 +170,7 @@ linkcheck_ignore = [
     f"https://github.com/{user_repo}/*",
     "https://support.agi.com/3d-models",
     "https://support.agi.com/downloads",
+    "https://www.khronos.org/collada/",
 ]
 
 # -- Declare the Jinja context -----------------------------------------------
@@ -278,9 +278,11 @@ def get_sha256_from_file(filepath: pathlib.Path):
 
     """
     sha256_hash = hashlib.sha256()
-    with open(filepath, "rb") as file:
-        while chunk := file.read(8192):
-            sha256_hash.update(chunk)
+
+    file_bytes = filepath.read_bytes()
+    for i in range(0, len(file_bytes), 8192):
+        sha256_hash.update(file_bytes[i : i + 8192])
+
     return sha256_hash.hexdigest()
 
 
@@ -643,10 +645,17 @@ def render_migration_table(app: sphinx.application.Sphinx):
                 type_old_name = type_mapping.get("OldName")
                 type_new_name = type_mapping.get("NewName")
                 mappings[type_old_name] = {"new_name": type_new_name, "members": {}}
-                member_mappings = root.findall(f'./Mapping[@ParentScope="{type_old_name}"]')
-                for member_mapping in member_mappings:
-                    member_old_name = member_mapping.get("OldName")
-                    member_new_name = member_mapping.get("NewName")
+
+        member_categories = ["enum_value", "method"]
+        for member_category in member_categories:
+            method_mappings = root.findall(f'./Mapping[@Category="{member_category}"]')
+            for method_mapping in method_mappings:
+                member_old_name = method_mapping.get("OldName")
+                if member_old_name[0] != "_": # Filter out private methods
+                    type_old_name = method_mapping.get("ParentScope")
+                    member_new_name = method_mapping.get("NewName")
+                    if not type_old_name in mappings:
+                        mappings[type_old_name] = {"new_name": type_old_name, "members": {}}
                     mappings[type_old_name]["members"][member_old_name] = member_new_name
 
         json_file = xml_file.parent / "main.json"

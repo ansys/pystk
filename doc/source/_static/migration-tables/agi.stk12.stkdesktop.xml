@@ -4,6 +4,8 @@
    <Mapping ParentScope="ThreadMarshaller" OldName="ReleaseThread" NewName="release_thread" Category="method" />
    <Mapping ParentScope="STKDesktopApplication" OldName="Root" NewName="root" Category="method" />
    <Mapping ParentScope="STKDesktopApplication" OldName="NewObjectModelContext" NewName="new_object_model_context" Category="method" />
+   <Mapping ParentScope="STKDesktopApplication" OldName="SetGrpcOptions" NewName="set_grpc_options" Category="method" />
+   <Mapping ParentScope="STKDesktopApplication" OldName="NewGrpcCallBatcher" NewName="new_grpc_call_batcher" Category="method" />
    <Mapping ParentScope="STKDesktopApplication" OldName="ShutDown" NewName="shutdown" Category="method" />
    <Mapping ParentScope="STKDesktop" OldName="StartApplication" NewName="start_application" Category="method" />
    <Mapping ParentScope="STKDesktop" OldName="AttachToApplication" NewName="attach_to_application" Category="method" />

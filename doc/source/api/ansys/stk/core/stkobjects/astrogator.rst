@@ -939,25 +939,25 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008`
               - Jacchia Bowman 2008 atmospheric propagator function.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.Jacchia_1960`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.Jacchia1960`
               - Jacchia_1960 atmospheric propagator function.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.Jacchia_1970`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.Jacchia1970`
               - Jacchia_1970 atmospheric propagator function.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.Jacchia_1971`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.Jacchia1971`
               - Jacchia_1971 atmospheric propagator function.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.MSISE_1990`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.MSISE1990`
               - MSISE 1990 atmospheric propagator function.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.MSIS_1986`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.MSIS1986`
               - MSIS 1986 atmospheric propagator function.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.NRLMSISE_2000`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.NRLMSISE2000`
               - NRLMSISE 2000 atmospheric propagator function.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.US_Standard_Atmosphere`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.USStandardAtmosphere`
               - US_Standard_Atmosphere atmospheric propagator function.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.MarsGRAM37`
@@ -2031,13 +2031,13 @@ Object Model components specifically designed to support STK Astrogator.
      DensityModelPlugin<astrogator/DensityModelPlugin>
      JacchiaRoberts<astrogator/JacchiaRoberts>
      JacchiaBowman2008<astrogator/JacchiaBowman2008>
-     Jacchia_1960<astrogator/Jacchia_1960>
-     Jacchia_1970<astrogator/Jacchia_1970>
-     Jacchia_1971<astrogator/Jacchia_1971>
-     MSISE_1990<astrogator/MSISE_1990>
-     MSIS_1986<astrogator/MSIS_1986>
-     NRLMSISE_2000<astrogator/NRLMSISE_2000>
-     US_Standard_Atmosphere<astrogator/US_Standard_Atmosphere>
+     Jacchia1960<astrogator/Jacchia1960>
+     Jacchia1970<astrogator/Jacchia1970>
+     Jacchia1971<astrogator/Jacchia1971>
+     MSISE1990<astrogator/MSISE1990>
+     MSIS1986<astrogator/MSIS1986>
+     NRLMSISE2000<astrogator/NRLMSISE2000>
+     USStandardAtmosphere<astrogator/USStandardAtmosphere>
      MarsGRAM37<astrogator/MarsGRAM37>
      MarsGRAM2000<astrogator/MarsGRAM2000>
      MarsGRAM2001<astrogator/MarsGRAM2001>

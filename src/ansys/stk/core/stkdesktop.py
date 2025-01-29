@@ -7,6 +7,7 @@
 __all__ = ["STKDesktop", "STKDesktopApplication"]
 
 import os
+import pathlib
 import socket
 import typing
 import atexit
@@ -28,7 +29,7 @@ from .uiapplication           import UiApplication
 
 class ThreadMarshaller(object):
     """Automate multiple STK instances from one Python script using threads."""
-    _iid_IUnknown = GUID.from_registry_format(IUnknown._guid)
+    _iid_iunknown = GUID.from_registry_format(IUnknown._guid)
     def __init__(self, obj):
         if os.name != "nt":
             raise STKRuntimeError("ThreadMarshaller is only available on Windows.")
@@ -39,7 +40,7 @@ class ThreadMarshaller(object):
         self._obj = obj
         self._obj_type = type(obj)
         self._pStream = PVOID()
-        if not Succeeded(OLE32Lib.CoMarshalInterThreadInterfaceInStream(byref(ThreadMarshaller._iid_IUnknown), obj._intf.p, byref(self._pStream))):
+        if not Succeeded(OLE32Lib.CoMarshalInterThreadInterfaceInStream(byref(ThreadMarshaller._iid_iunknown), obj._intf.p, byref(self._pStream))):
             raise STKRuntimeError("ThreadMarshaller failed to initialize.")
            
     def __del__(self):
@@ -51,19 +52,19 @@ class ThreadMarshaller(object):
         """Return an instance of the original stk_object that may be used on the current thread. May only be called once."""
         if self._pStream is None:
             raise STKRuntimeError(f"{self._obj_type} object has already been marshalled to a thread.")
-        pUnk_raw = PVOID()
-        hr = OLE32Lib.CoGetInterfaceAndReleaseStream(self._pStream, byref(ThreadMarshaller._iid_IUnknown), byref(pUnk_raw))
+        unknown_raw = PVOID()
+        hr = OLE32Lib.CoGetInterfaceAndReleaseStream(self._pStream, byref(ThreadMarshaller._iid_iunknown), byref(unknown_raw))
         self._pStream = None
         if not Succeeded(hr):
             if hr == CO_E_NOTINITIALIZED:
                 raise STKRuntimeError("Thread not initialized. Call InitializeThread() before the call to GetMarshalledToCurrentThread().")
             else:
                 raise STKRuntimeError("Could not marshall to thread.")
-        pUnk = IUnknown()
-        pUnk.p = pUnk_raw
+        unknown = IUnknown()
+        unknown.p = unknown_raw
         marshalled_obj = self._obj_type()
-        marshalled_obj._private_init(pUnk)
-        del(pUnk)
+        marshalled_obj._private_init(unknown)
+        del(unknown)
         return marshalled_obj
         
     def initialize_thread(self) -> None:
@@ -113,7 +114,7 @@ class STKDesktopApplication(UiApplication):
         """Create a new object model context for the STK Desktop application."""
         return self.create_object("{7A12879C-5018-4433-8415-5DB250AFBAF9}", "")
 
-    def SetGrpcOptions(self, options:dict) -> None:
+    def set_grpc_options(self, options:dict) -> None:
         """
         Set advanced-usage options for the gRPC client.
 
@@ -127,7 +128,7 @@ class STKDesktopApplication(UiApplication):
         if hasattr(self._intf, "client"):
             self._intf.client.set_grpc_options(options)
             
-    def NewGrpcCallBatcher(self, max_batch:int=None, disable_batching:bool=False) -> GrpcCallBatcher:
+    def new_grpc_call_batcher(self, max_batch:int=None, disable_batching:bool=False) -> GrpcCallBatcher:
         """
         Construct a GrpcCallBatcher linked to this gRPC client that may be used to improve API performance.
         
@@ -209,12 +210,12 @@ class STKDesktop(object):
 
             clsid_stk12application = "{7ADA6C22-FA34-4578-8BE8-65405A55EE15}"
             executable = read_registry_key(f"CLSID\\{clsid_stk12application}\\LocalServer32", silent_exception=True)
-            if executable is None or not os.path.exists(executable):
-                bin_dir = winreg_stk_binary_dir()
-                if bin_dir is not None:
-                    executable = os.path.join(bin_dir, "UiApplication.exe")
+            if executable is None or not pathlib.Path(executable).exists():
+                bin_dir = pathlib.Path(winreg_stk_binary_dir()).resolve()
+                if bin_dir.exists():
+                    executable = bin_dir / "AgUiApplication.exe"
                 else:
-                    raise STKInitializationError(f"Could not find UiApplication.exe. Verify STK 12 installation.")
+                    raise STKInitializationError(f"Could not find AgUiApplication.exe. Verify STK 12 installation.")
             cmd_line = [f"{executable}", "/pers", "STK", "/grpcServer", "On", "/grpcHost", grpc_host, "/grpcPort", str(grpc_port)]
             if STKDesktop._disable_pop_ups:
                 cmd_line.append("/Automation")
@@ -223,23 +224,23 @@ class STKDesktop(object):
             # Excluding low severity bandit check as the validity of the inputs has been ensured.
             app_process = subprocess.Popen(cmd_line) # nosec B603
             host = grpc_host
-            # Ignoring B104 warning as it is a false positive. The hardcoded string "0.0.0.0" is being filtered
+            # Ignoring B104 warning as it is a false positive. The hard-coded string "0.0.0.0" is being filtered
             # to ensure that it is not used.
-            if host=="0.0.0.0": # nosec B104
+            if grpc_host=="0.0.0.0": # nosec B104
                 host = "localhost"
             app = STKDesktop.attach_to_application(None, grpc_server, host, grpc_port, grpc_timeout_sec)
             app.visible = visible
             app.user_control = user_control
             return app
         else:
-            CLSID_AgUiApplication = GUID()
-            if Succeeded(OLE32Lib.CLSIDFromString("STK12.Application", CLSID_AgUiApplication)):
-                pUnk = IUnknown()
-                IID_IUnknown = GUID(IUnknown._guid)
-                if Succeeded(OLE32Lib.CoCreateInstance(byref(CLSID_AgUiApplication), None, CLSCTX_LOCAL_SERVER, byref(IID_IUnknown), byref(pUnk.p))):
-                    pUnk.take_ownership(isApplication=True)
+            clsid_aguiapplication = GUID()
+            if Succeeded(OLE32Lib.CLSIDFromString("STK12.Application", clsid_aguiapplication)):
+                unknown = IUnknown()
+                iid_iunknown = GUID(IUnknown._guid)
+                if Succeeded(OLE32Lib.CoCreateInstance(byref(clsid_aguiapplication), None, CLSCTX_LOCAL_SERVER, byref(iid_iunknown), byref(unknown.p))):
+                    unknown.take_ownership(isApplication=True)
                     app = STKDesktopApplication()
-                    app._private_init(pUnk)
+                    app._private_init(unknown)
                     app.visible = visible
                     app.user_control = user_control
                     return app
@@ -274,30 +275,30 @@ class STKDesktop(object):
                 raise STKInitializationError(f"gRPC use requires Python modules grpcio and protobuf.")
             client: GrpcClient = GrpcClient.new_client(grpc_host, grpc_port, grpc_timeout_sec)
             if client is not None:
-                pAppImpl = client.get_stk_application_interface()
+                app_impl = client.get_stk_application_interface()
                 app = STKDesktopApplication()
-                app._private_init(pAppImpl)
+                app._private_init(app_impl)
                 atexit.register(app._disconnect_grpc)
                 return app
             else:
                 raise STKInitializationError(f"Could not connect to gRPC server at {grpc_host}:{grpc_port}.")
         elif pid is None:
-            CLSID_AgUiApplication = GUID()
-            if Succeeded(OLE32Lib.CLSIDFromString("STK12.Application", CLSID_AgUiApplication)):
-                pUnk = IUnknown()
-                IID_IUnknown = GUID(IUnknown._guid)
-                if Succeeded(OLEAut32Lib.GetActiveObject(byref(CLSID_AgUiApplication), None, byref(pUnk.p))):
-                    pUnk.take_ownership(isApplication=True)
+            clsid_aguiapplication = GUID()
+            if Succeeded(OLE32Lib.CLSIDFromString("STK12.Application", clsid_aguiapplication)):
+                unknown = IUnknown()
+                iid_iunknown = GUID(IUnknown._guid)
+                if Succeeded(OLEAut32Lib.GetActiveObject(byref(clsid_aguiapplication), None, byref(unknown.p))):
+                    unknown.take_ownership(isApplication=True)
                     app = STKDesktopApplication()
-                    app._private_init(pUnk)
+                    app._private_init(unknown)
                     return app
                 else:
                     raise STKInitializationError("Failed to attach to an active STK 12 Application instance.")
         else:
-            pUnk = attach_to_stk_by_pid(pid)
-            if pUnk is not None: 
+            unknown = attach_to_stk_by_pid(pid)
+            if unknown is not None: 
                 app = STKDesktopApplication()
-                app._private_init(pUnk)
+                app._private_init(unknown)
                 return app
             else:
                 raise STKInitializationError("Failed to attach to STK with pid " + str(pid) + ".")

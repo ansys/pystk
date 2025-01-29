@@ -7,6 +7,7 @@
 __all__ = ["GlobeControl", "MapControl", "GfxAnalysisControl"]
 
 import os
+import pathlib
 from tkinter                    import Frame
 if os.name == "nt":
     from ctypes import (CDLL, POINTER, WinDLL, WinError, c_char_p, cdll, create_unicode_buffer,
@@ -51,25 +52,25 @@ class NativeContainerMethods:
             kernel32.GetModuleHandleW.restype = LPVOID
             kernel32.GetModuleHandleW.argtypes = [LPCWSTR]
 
-            stkxModuleHandle = kernel32.GetModuleHandleW("stkx.dll")
-            if stkxModuleHandle is None:
+            stkx_module_handle = kernel32.GetModuleHandleW("stkx.dll")
+            if stkx_module_handle is None:
                 raise STKRuntimeError(f"Error getting stkx.dll module handle ({WinError(get_last_error())})")
 
             kernel32.GetModuleFileNameA.restype = DWORD
             kernel32.GetModuleFileNameA.argtypes = [LPVOID, c_char_p, DWORD]
 
-            cPath = create_unicode_buffer(1024)
-            res = kernel32.GetModuleFileNameW(LPVOID(stkxModuleHandle), cPath, DWORD(1024))
+            c_path = create_unicode_buffer(1024)
+            res = kernel32.GetModuleFileNameW(LPVOID(stkx_module_handle), c_path, DWORD(1024))
             if res == 0:
                 err = get_last_error()
                 errormsg = "Failed to get STKX module file name"
                 if err != 0:
                     errormsg += f" ({WinError(err)})"
                 raise STKRuntimeError(errormsg)
-            stkxdllpath = cPath.value
+            stkx_dll_path = pathlib.Path(c_path.value).resolve()
 
-            jniCoreDllPath = os.path.join(os.path.dirname(stkxdllpath), "AgJNICore.dll")
-            return jniCoreDllPath
+            jni_core_dll_path = stkx_dll_path.parent / "AgJNICore.dll"
+            return str(jni_core_dll_path)
     def create_container(self, progid):
         return self.AgPythonCreateContainer(LPVOID(None), LPVOID(None), LPCWSTR(progid))
     def attach_container(self, container, winid, display):
@@ -103,8 +104,8 @@ class ControlBase(Frame):
     
     _shift = 0x0001
     _control = 0x0004
-    _lAlt = 0x0008
-    _rAlt = 0x0080
+    _lalt = 0x0008
+    _ralt = 0x0080
     _mouse1 = 0x0100
     _mouse2 = 0x0200
     _mouse3 = 0x0400
@@ -166,29 +167,29 @@ class ControlBase(Frame):
             """Occurs when a mouse button is pressed."""
             if event.num == 4:
                 if not(event.state & self._mouse1 or event.state & self._mouse2 or event.state & self._mouse3):
-                    self._nativeContainerMethods.mouse_wheel_moved(self._container, event.x, event.y, 1, event.num == 1, event.num == 2, event.num == 3, event.state & self._control, event.state & self._lAlt or event.state & self._rAlt , event.state & self._shift)
+                    self._nativeContainerMethods.mouse_wheel_moved(self._container, event.x, event.y, 1, event.num == 1, event.num == 2, event.num == 3, event.state & self._control, event.state & self._lalt or event.state & self._ralt , event.state & self._shift)
             elif event.num == 5:
                 if not(event.state & self._mouse1 or event.state & self._mouse2 or event.state & self._mouse3):
-                    self._nativeContainerMethods.mouse_wheel_moved(self._container, event.x, event.y, -1, event.num == 1, event.num == 2, event.num == 3, event.state & self._control, event.state & self._lAlt or event.state & self._rAlt , event.state & self._shift)
+                    self._nativeContainerMethods.mouse_wheel_moved(self._container, event.x, event.y, -1, event.num == 1, event.num == 2, event.num == 3, event.state & self._control, event.state & self._lalt or event.state & self._ralt , event.state & self._shift)
             else:
                 if not(event.state & self._mouse1 or event.state & self._mouse2 or event.state & self._mouse3):
-                    self._nativeContainerMethods.mouse_pressed(self._container, event.x, event.y, event.num == 1, event.num == 2, event.num == 3, event.state & self._control, event.state & self._lAlt or event.state & self._rAlt , event.state & self._shift)
+                    self._nativeContainerMethods.mouse_pressed(self._container, event.x, event.y, event.num == 1, event.num == 2, event.num == 3, event.state & self._control, event.state & self._lalt or event.state & self._ralt , event.state & self._shift)
 
         def _button_release(self, event):
             """Occurs when a mouse button is released."""
-            self._nativeContainerMethods.mouse_released(self._container, event.x, event.y, event.num == 1, event.num == 2, event.num == 3, event.state & self._control, event.state & self._lAlt or event.state & self._rAlt , event.state & self._shift)
+            self._nativeContainerMethods.mouse_released(self._container, event.x, event.y, event.num == 1, event.num == 2, event.num == 3, event.state & self._control, event.state & self._lalt or event.state & self._ralt , event.state & self._shift)
 
         def _motion(self, event):
             """Occurs when mouse motion occurs."""
-            self._nativeContainerMethods.mouse_moved(self._container, event.x, event.y, event.state & self._mouse1, event.state & self._mouse2, event.state & self._mouse3, event.state & self._control, event.state & self._lAlt or event.state & self._rAlt , event.state & self._shift)
+            self._nativeContainerMethods.mouse_moved(self._container, event.x, event.y, event.state & self._mouse1, event.state & self._mouse2, event.state & self._mouse3, event.state & self._control, event.state & self._lalt or event.state & self._ralt , event.state & self._shift)
 
         def _key_press(self, event):
             """Occurs when a key is pressed."""
-            self._nativeContainerMethods.key_pressed(self._container, event.keysym_num, event.state & self._control, event.state & self._lAlt or event.state & self._rAlt , event.state & self._shift)
+            self._nativeContainerMethods.key_pressed(self._container, event.keysym_num, event.state & self._control, event.state & self._lalt or event.state & self._ralt , event.state & self._shift)
 
         def _key_release(self, event):
             """Occurs when key is released."""
-            self._nativeContainerMethods.key_released(self._container, event.keysym_num, event.state & self._control, event.state & self._lAlt or event.state & self._rAlt , event.state & self._shift)
+            self._nativeContainerMethods.key_released(self._container, event.keysym_num, event.state & self._control, event.state & self._lalt or event.state & self._ralt , event.state & self._shift)
 
 class GlobeControl(Graphics3DControlBase, ControlBase):
     """The 3D Globe control for Tkinter."""

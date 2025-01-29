@@ -8151,7 +8151,7 @@ class CalculationToolScalarPlugin(ICalculationToolScalar, IAnalysisWorkbenchComp
 
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_ProgID_method_offset = 1
+    _get_prog_id_method_offset = 1
     _get_display_name_method_offset = 2
     _get_available_properties_method_offset = 3
     _reset_method_offset = 4
@@ -8165,13 +8165,13 @@ class CalculationToolScalarPlugin(ICalculationToolScalar, IAnalysisWorkbenchComp
     def _get_property(self, attrname):
         return get_interface_property(attrname, CalculationToolScalarPlugin)
     
-    _get_ProgID_metadata = { "offset" : _get_ProgID_method_offset,
+    _get_prog_id_metadata = { "offset" : _get_prog_id_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
-    def ProgID(self) -> str:
+    def prog_id(self) -> str:
         """A programmatic ID associated with the component."""
-        return self._intf.get_property(CalculationToolScalarPlugin._metadata, CalculationToolScalarPlugin._get_ProgID_metadata)
+        return self._intf.get_property(CalculationToolScalarPlugin._metadata, CalculationToolScalarPlugin._get_prog_id_metadata)
 
     _get_display_name_metadata = { "offset" : _get_display_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -8210,7 +8210,7 @@ class CalculationToolScalarPlugin(ICalculationToolScalar, IAnalysisWorkbenchComp
         """Read a value of the specified plugin property. This method throws an exception if the property does not exist."""
         return self._intf.invoke(CalculationToolScalarPlugin._metadata, CalculationToolScalarPlugin._get_property_metadata, name, OutArg())
 
-    _property_names[ProgID] = "ProgID"
+    _property_names[prog_id] = "prog_id"
     _property_names[display_name] = "display_name"
     _property_names[available_properties] = "available_properties"
 
@@ -20508,7 +20508,7 @@ class VectorGeometryToolAxesPlugin(IAnalysisWorkbenchComponent, IAnalysisWorkben
 
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_ProgID_method_offset = 1
+    _get_prog_id_method_offset = 1
     _get_display_name_method_offset = 2
     _get_available_properties_method_offset = 3
     _reset_method_offset = 4
@@ -20522,13 +20522,13 @@ class VectorGeometryToolAxesPlugin(IAnalysisWorkbenchComponent, IAnalysisWorkben
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolAxesPlugin)
     
-    _get_ProgID_metadata = { "offset" : _get_ProgID_method_offset,
+    _get_prog_id_metadata = { "offset" : _get_prog_id_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
-    def ProgID(self) -> str:
+    def prog_id(self) -> str:
         """A programmatic ID associated with the component."""
-        return self._intf.get_property(VectorGeometryToolAxesPlugin._metadata, VectorGeometryToolAxesPlugin._get_ProgID_metadata)
+        return self._intf.get_property(VectorGeometryToolAxesPlugin._metadata, VectorGeometryToolAxesPlugin._get_prog_id_metadata)
 
     _get_display_name_metadata = { "offset" : _get_display_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -20567,7 +20567,7 @@ class VectorGeometryToolAxesPlugin(IAnalysisWorkbenchComponent, IAnalysisWorkben
         """Read a value of the specified plugin property. This method throws an exception if the property does not exist."""
         return self._intf.invoke(VectorGeometryToolAxesPlugin._metadata, VectorGeometryToolAxesPlugin._get_property_metadata, name, OutArg())
 
-    _property_names[ProgID] = "ProgID"
+    _property_names[prog_id] = "prog_id"
     _property_names[display_name] = "display_name"
     _property_names[available_properties] = "available_properties"
 
@@ -22612,7 +22612,7 @@ class VectorGeometryToolPointPlugin(IAnalysisWorkbenchComponent, IAnalysisWorkbe
 
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_ProgID_method_offset = 1
+    _get_prog_id_method_offset = 1
     _get_display_name_method_offset = 2
     _get_available_properties_method_offset = 3
     _reset_method_offset = 4
@@ -22626,13 +22626,13 @@ class VectorGeometryToolPointPlugin(IAnalysisWorkbenchComponent, IAnalysisWorkbe
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolPointPlugin)
     
-    _get_ProgID_metadata = { "offset" : _get_ProgID_method_offset,
+    _get_prog_id_metadata = { "offset" : _get_prog_id_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
-    def ProgID(self) -> str:
+    def prog_id(self) -> str:
         """A programmatic ID associated with the component."""
-        return self._intf.get_property(VectorGeometryToolPointPlugin._metadata, VectorGeometryToolPointPlugin._get_ProgID_metadata)
+        return self._intf.get_property(VectorGeometryToolPointPlugin._metadata, VectorGeometryToolPointPlugin._get_prog_id_metadata)
 
     _get_display_name_metadata = { "offset" : _get_display_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -22671,7 +22671,7 @@ class VectorGeometryToolPointPlugin(IAnalysisWorkbenchComponent, IAnalysisWorkbe
         """Read a value of the specified plugin property. This method throws an exception if the property does not exist."""
         return self._intf.invoke(VectorGeometryToolPointPlugin._metadata, VectorGeometryToolPointPlugin._get_property_metadata, name, OutArg())
 
-    _property_names[ProgID] = "ProgID"
+    _property_names[prog_id] = "prog_id"
     _property_names[display_name] = "display_name"
     _property_names[available_properties] = "available_properties"
 
@@ -25602,7 +25602,7 @@ class VectorGeometryToolVectorPlugin(IAnalysisWorkbenchComponent, IAnalysisWorkb
 
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_ProgID_method_offset = 1
+    _get_prog_id_method_offset = 1
     _get_display_name_method_offset = 2
     _get_available_properties_method_offset = 3
     _reset_method_offset = 4
@@ -25616,13 +25616,13 @@ class VectorGeometryToolVectorPlugin(IAnalysisWorkbenchComponent, IAnalysisWorkb
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolVectorPlugin)
     
-    _get_ProgID_metadata = { "offset" : _get_ProgID_method_offset,
+    _get_prog_id_metadata = { "offset" : _get_prog_id_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
-    def ProgID(self) -> str:
+    def prog_id(self) -> str:
         """A programmatic ID associated with the component."""
-        return self._intf.get_property(VectorGeometryToolVectorPlugin._metadata, VectorGeometryToolVectorPlugin._get_ProgID_metadata)
+        return self._intf.get_property(VectorGeometryToolVectorPlugin._metadata, VectorGeometryToolVectorPlugin._get_prog_id_metadata)
 
     _get_display_name_metadata = { "offset" : _get_display_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -25661,7 +25661,7 @@ class VectorGeometryToolVectorPlugin(IAnalysisWorkbenchComponent, IAnalysisWorkb
         """Read a value of the specified plugin property. This method throws an exception if the property does not exist."""
         return self._intf.invoke(VectorGeometryToolVectorPlugin._metadata, VectorGeometryToolVectorPlugin._get_property_metadata, name, OutArg())
 
-    _property_names[ProgID] = "ProgID"
+    _property_names[prog_id] = "prog_id"
     _property_names[display_name] = "display_name"
     _property_names[available_properties] = "available_properties"
 
