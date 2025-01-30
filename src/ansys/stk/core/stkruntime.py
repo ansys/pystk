@@ -129,7 +129,7 @@ class STKRuntime(object):
         if grpc_host != "localhost":
             try:
                 socket.inet_pton(socket.AF_INET, grpc_host)
-            except:
+            except OSError:
                 try:
                     socket.inet_pton(socket.AF_INET6, grpc_host)
                 except OSError:

@@ -14,7 +14,7 @@ try:
     from ..internal.grpcutil import GrpcClient, GrpcInterfaceFuture, GrpcInterfacePimpl
     from ..internal.AgGrpcServices_pb2 import InvokeRequest, BatchedInvokeRequest
     _DEFAULT_BATCH_DISABLE = False
-except:
+except ImportError:
     _DEFAULT_BATCH_DISABLE = True
 
 class GrpcCallBatcher(object):
@@ -148,7 +148,7 @@ class GrpcCallBatcher(object):
         if callable(future_provider):
             if hasattr(source_obj, future_provider.__name__):
                 return future_provider(source_obj, *args)
-        elif type(future_provider)==property:
+        elif type(future_provider) is property:
             attr_name = None
             for superclass in reversed(source_obj.__class__.mro()):
                 if hasattr(superclass, "_property_names"):
