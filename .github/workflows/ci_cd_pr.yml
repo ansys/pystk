@@ -78,8 +78,8 @@ jobs:
         run: |
           tox -e vulnerabilities-deps
 
-      # TODO: this action requires access to "Security Advisories" which are
-      # only available for public repositories.
+      # TODO: "Security Advisories" are only available in public repositories
+      # https://github.com/ansys-internal/pystk/issues/607
       # 
       # - uses: ansys/actions/check-vulnerabilities@v8
       #   with:
