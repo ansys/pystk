@@ -58,12 +58,35 @@ jobs:
       !contains(github.event.pull_request.labels.*.name, 'ci:skip')
     needs: labeler
     steps:
-      - uses: ansys/actions/check-vulnerabilities@v8
+      - name: "Checkout project"
+        uses: actions/checkout@v4
+
+      - name: "Install Python ${{ env.MAIN_PYTHON_VERSION }}"
+        uses: actions/setup-python@v5
         with:
           python-version: ${{ env.MAIN_PYTHON_VERSION }}
-          python-package-name: ${{ env.LIBRARY_NAME }}
-          token: ${{ secrets.PYANSYS_CI_BOT_TOKEN }}
-          dev-mode: true
+
+      - name: "Install Tox"
+        run: |
+          python -m pip install tox
+
+      - name: "Scan code vulnerabilities"
+        run: |
+          tox -e vulnerabilities-code
+
+      - name: "Scan dependencies vulnerabilities"
+        run: |
+          tox -e vulnerabilities-deps
+
+      # TODO: this action requires access to "Security Advisories" which are
+      # only available for public repositories.
+      # 
+      # - uses: ansys/actions/check-vulnerabilities@v8
+      #   with:
+      #     python-version: ${{ env.MAIN_PYTHON_VERSION }}
+      #     python-package-name: ${{ env.LIBRARY_NAME }}
+      #     token: ${{ secrets.PYANSYS_CI_BOT_TOKEN }}
+      #     dev-mode: true
 
   code-style:
     name: "Code style checks"
