@@ -215,7 +215,7 @@ class STKDesktop(object):
                 if bin_dir.exists():
                     executable = bin_dir / "AgUiApplication.exe"
                 else:
-                    raise STKInitializationError("Could not find UiApplication.exe. Verify STK 12 installation.")
+                    raise STKInitializationError("Could not find AgUiApplication.exe. Verify STK 12 installation.")
             cmd_line = [f"{executable}", "/pers", "STK", "/grpcServer", "On", "/grpcHost", grpc_host, "/grpcPort", str(grpc_port)]
             if STKDesktop._disable_pop_ups:
                 cmd_line.append("/Automation")
