@@ -26,7 +26,6 @@ Overview
               - Get the catalog item interface for this object.
 
 
-
 Import detail
 -------------
 

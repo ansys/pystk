@@ -55,7 +55,7 @@ Property detail
 
 .. py:property:: state
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileChangeReturnSegment.state
-    :type: RETURN_CONTROL
+    :type: ReturnControl
 
     Gets or sets the new state for the targeted return segment.
 
@@ -65,14 +65,14 @@ Method detail
 
 
 
-.. py:method:: set_segment(self, pVAMCSReturn: MissionControlSequenceReturn) -> None
+.. py:method:: set_segment(self, mcs_return: MCSReturn) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileChangeReturnSegment.set_segment
 
     Set the return segment to target.
 
     :Parameters:
 
-    **pVAMCSReturn** : :obj:`~MissionControlSequenceReturn`
+    **mcs_return** : :obj:`~MCSReturn`
 
     :Returns:
 

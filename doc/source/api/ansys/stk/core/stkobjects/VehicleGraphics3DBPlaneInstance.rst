@@ -18,7 +18,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneInstance.is_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneInstance.show_graphics`
               - Whether the B-Plane will be displayed in the 3D Graphics window.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneInstance.name`
               - Gets or sets the name assigned to the B-Plane.
@@ -32,11 +32,11 @@ Overview
               - Returns the 3D BPlane Event properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneInstance.target_point`
               - Returns the 3D BPlane Target Point properties.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneInstance.is_label_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneInstance.show_label`
               - Whether to display all points with their appropriate labels.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneInstance.point_size`
               - Gets or sets the size at which to display all points on the B-Plane. Dimensionless.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneInstance.is_connect_points_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneInstance.connect_additional_points`
               - Whether to connect the additional points.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneInstance.connect_points_color`
               - Gets or sets the color of the lines connecting the additional points.
@@ -62,8 +62,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: is_visible
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneInstance.is_visible
+.. py:property:: show_graphics
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneInstance.show_graphics
     :type: bool
 
     Whether the B-Plane will be displayed in the 3D Graphics window.
@@ -104,8 +104,8 @@ Property detail
 
     Returns the 3D BPlane Target Point properties.
 
-.. py:property:: is_label_visible
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneInstance.is_label_visible
+.. py:property:: show_label
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneInstance.show_label
     :type: bool
 
     Whether to display all points with their appropriate labels.
@@ -116,8 +116,8 @@ Property detail
 
     Gets or sets the size at which to display all points on the B-Plane. Dimensionless.
 
-.. py:property:: is_connect_points_visible
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneInstance.is_connect_points_visible
+.. py:property:: connect_additional_points
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneInstance.connect_additional_points
     :type: bool
 
     Whether to connect the additional points.
@@ -130,7 +130,7 @@ Property detail
 
 .. py:property:: connect_point_line_width
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneInstance.connect_point_line_width
-    :type: LINE_WIDTH
+    :type: LineWidth
 
     Gets or sets the width of the lines connecting the additional points.
 

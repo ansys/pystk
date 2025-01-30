@@ -7,10 +7,6 @@ IVehiclePassNumbering
 
 .. py:currentmodule:: IVehiclePassNumbering
 
-Overview
---------
-
-
 Import detail
 -------------
 

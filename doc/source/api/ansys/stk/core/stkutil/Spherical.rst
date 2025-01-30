@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkutil.Spherical.lat`
+            * - :py:attr:`~ansys.stk.core.stkutil.Spherical.latitude`
               - Uses Latitude Dimension.
-            * - :py:attr:`~ansys.stk.core.stkutil.Spherical.lon`
+            * - :py:attr:`~ansys.stk.core.stkutil.Spherical.longitude`
               - Uses Longitude Dimension.
             * - :py:attr:`~ansys.stk.core.stkutil.Spherical.radius`
               - Dimension depends on context.
@@ -40,14 +40,14 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: lat
-    :canonical: ansys.stk.core.stkutil.Spherical.lat
+.. py:property:: latitude
+    :canonical: ansys.stk.core.stkutil.Spherical.latitude
     :type: typing.Any
 
     Uses Latitude Dimension.
 
-.. py:property:: lon
-    :canonical: ansys.stk.core.stkutil.Spherical.lon
+.. py:property:: longitude
+    :canonical: ansys.stk.core.stkutil.Spherical.longitude
     :type: typing.Any
 
     Uses Longitude Dimension.

@@ -26,7 +26,6 @@ Overview
               - Initialize a distance display condition with the inclusive distance interval [minimumDistance, maximumDistance]...
 
 
-
 Import detail
 -------------
 
@@ -48,7 +47,7 @@ Method detail
 
         :obj:`~DistanceToPositionDisplayCondition`
 
-.. py:method:: initialize_with_distances(self, position: list, minimumDistance: float, maximumDistance: float) -> DistanceToPositionDisplayCondition
+.. py:method:: initialize_with_distances(self, position: list, minimum_distance: float, maximum_distance: float) -> DistanceToPositionDisplayCondition
     :canonical: ansys.stk.core.graphics.DistanceToPositionDisplayConditionFactory.initialize_with_distances
 
     Initialize a distance display condition with the inclusive distance interval [minimumDistance, maximumDistance]...
@@ -56,24 +55,24 @@ Method detail
     :Parameters:
 
     **position** : :obj:`~list`
-    **minimumDistance** : :obj:`~float`
-    **maximumDistance** : :obj:`~float`
+    **minimum_distance** : :obj:`~float`
+    **maximum_distance** : :obj:`~float`
 
     :Returns:
 
         :obj:`~DistanceToPositionDisplayCondition`
 
-.. py:method:: initialize_with_reference_frame_and_distances(self, referenceFrame: IVectorGeometryToolSystem, position: list, minimumDistance: float, maximumDistance: float) -> DistanceToPositionDisplayCondition
+.. py:method:: initialize_with_reference_frame_and_distances(self, reference_frame: IVectorGeometryToolSystem, position: list, minimum_distance: float, maximum_distance: float) -> DistanceToPositionDisplayCondition
     :canonical: ansys.stk.core.graphics.DistanceToPositionDisplayConditionFactory.initialize_with_reference_frame_and_distances
 
     Initialize a distance display condition with the inclusive distance interval [minimumDistance, maximumDistance]...
 
     :Parameters:
 
-    **referenceFrame** : :obj:`~IVectorGeometryToolSystem`
+    **reference_frame** : :obj:`~IVectorGeometryToolSystem`
     **position** : :obj:`~list`
-    **minimumDistance** : :obj:`~float`
-    **maximumDistance** : :obj:`~float`
+    **minimum_distance** : :obj:`~float`
+    **maximum_distance** : :obj:`~float`
 
     :Returns:
 

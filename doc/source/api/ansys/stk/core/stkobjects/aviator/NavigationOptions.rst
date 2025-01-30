@@ -44,7 +44,7 @@ Property detail
 
 .. py:property:: navigation_mode
     :canonical: ansys.stk.core.stkobjects.aviator.NavigationOptions.navigation_mode
-    :type: POINT_TO_POINT_MODE
+    :type: PointToPointMode
 
     Gets or sets the navigation mode.
 
@@ -62,13 +62,13 @@ Property detail
 
 .. py:property:: enroute_first_turn
     :canonical: ansys.stk.core.stkobjects.aviator.NavigationOptions.enroute_first_turn
-    :type: NAVIGATOR_TURN_DIRECTION
+    :type: NavigatorTurnDirection
 
     Option for the first turn.
 
 .. py:property:: enroute_second_turn
     :canonical: ansys.stk.core.stkobjects.aviator.NavigationOptions.enroute_second_turn
-    :type: NAVIGATOR_TURN_DIRECTION
+    :type: NavigatorTurnDirection
 
     Option for the second turn.
 

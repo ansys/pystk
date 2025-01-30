@@ -44,7 +44,7 @@ Overview
               - Gets or sets the error control method.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.RungeKuttaV8th9th.max_iterations`
               - Gets or sets the maximum iterations. Dimensionless.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.RungeKuttaV8th9th.coeff_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.RungeKuttaV8th9th.coefficient_type`
               - Gets or sets the set of coefficients to use.
 
 
@@ -122,7 +122,7 @@ Property detail
 
 .. py:property:: error_control
     :canonical: ansys.stk.core.stkobjects.astrogator.RungeKuttaV8th9th.error_control
-    :type: ERROR_CONTROL
+    :type: ErrorControl
 
     Gets or sets the error control method.
 
@@ -132,9 +132,9 @@ Property detail
 
     Gets or sets the maximum iterations. Dimensionless.
 
-.. py:property:: coeff_type
-    :canonical: ansys.stk.core.stkobjects.astrogator.RungeKuttaV8th9th.coeff_type
-    :type: COEFF_RUNGE_KUTTA_V_8TH_9TH
+.. py:property:: coefficient_type
+    :canonical: ansys.stk.core.stkobjects.astrogator.RungeKuttaV8th9th.coefficient_type
+    :type: CoeffRungeKuttaV8th9th
 
     Gets or sets the set of coefficients to use.
 

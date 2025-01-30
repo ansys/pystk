@@ -54,6 +54,41 @@ Overview
 
 
 
+Examples
+--------
+
+Set the Coverage Interval to an object's availability Analysis interval
+
+.. code-block:: python
+
+    # Satellite satellite: Satellite object
+    # CoverageDefinition coverage: Coverage object
+    satVGT: "AnalysisWorkbenchComponentProvider" = IStkObject(satellite).analysis_workbench_components
+    intervals: "TimeToolTimeIntervalGroup" = satVGT.time_intervals
+    AvailTimeSpan: "ITimeToolTimeInterval" = intervals.item("AvailabilityTimeSpan")
+    IntResult: "TimeToolTimeIntervalResult" = AvailTimeSpan.find_interval()
+    coverage.interval.analysis_interval.set_start_and_stop_times(IntResult.interval.start, IntResult.interval.stop)
+
+
+Set Advanced Settings for Coverage
+
+.. code-block:: python
+
+    # CoverageDefinition coverage: Coverage object
+    advanced: "CoverageAdvancedSettings" = coverage.advanced
+    advanced.recompute_automatically = False
+    advanced.data_retention = CoverageDataRetention.ALL_DATA
+    advanced.save_mode = DataSaveMode.SAVE_ACCESSES
+
+
+Compute Coverage
+
+.. code-block:: python
+
+    # CoverageDefinition coverage: Coverage object
+    coverage.compute_accesses()
+
+
 Import detail
 -------------
 
@@ -85,7 +120,7 @@ Property detail
 
 .. py:property:: advanced
     :canonical: ansys.stk.core.stkobjects.CoverageDefinition.advanced
-    :type: CoverageAdvanced
+    :type: CoverageAdvancedSettings
 
     Advanced properties of the coverage definition.
 

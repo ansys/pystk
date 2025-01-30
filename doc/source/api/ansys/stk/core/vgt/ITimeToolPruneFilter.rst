@@ -35,7 +35,7 @@ Property detail
 
 .. py:property:: filter_type
     :canonical: ansys.stk.core.vgt.ITimeToolPruneFilter.filter_type
-    :type: CRDN_PRUNE_FILTER
+    :type: IntervalPruneFilterType
 
     Returns a type of the filter.
 

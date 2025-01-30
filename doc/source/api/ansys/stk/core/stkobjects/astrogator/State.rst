@@ -57,7 +57,7 @@ Overview
               - Gets or sets the reflectivity of the spacecraft used for solar radiation pressure calculations, where 2.0 is fully reflective and 1.0 is not reflective at all. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.State.cd`
               - Gets or sets the dimensionless drag coefficient associated with the drag area. Dimensionless.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.State.radiation_pressure_coeff`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.State.radiation_pressure_coefficient`
               - Gets or sets the reflectivity of the spacecraft used for central body radiation pressure (albedo / thermal pressure) calculations, where 2.0 is fully reflective and 1.0 is not reflective at all. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.State.radiation_pressure_area`
               - Gets or sets the cross-sectional area of the spacecraft assumed perpendicular to the direction of central body radiation, used for central body radiation (albedo / thermal pressure) calculations. Uses Small Area Dimension.
@@ -81,7 +81,7 @@ Property detail
 
 .. py:property:: element_type
     :canonical: ansys.stk.core.stkobjects.astrogator.State.element_type
-    :type: ELEMENT_TYPE
+    :type: ElementSetType
 
     Get the element type.
 
@@ -157,8 +157,8 @@ Property detail
 
     Gets or sets the dimensionless drag coefficient associated with the drag area. Dimensionless.
 
-.. py:property:: radiation_pressure_coeff
-    :canonical: ansys.stk.core.stkobjects.astrogator.State.radiation_pressure_coeff
+.. py:property:: radiation_pressure_coefficient
+    :canonical: ansys.stk.core.stkobjects.astrogator.State.radiation_pressure_coefficient
     :type: float
 
     Gets or sets the reflectivity of the spacecraft used for central body radiation pressure (albedo / thermal pressure) calculations, where 2.0 is fully reflective and 1.0 is not reflective at all. Dimensionless.
@@ -186,14 +186,14 @@ Method detail
 -------------
 
 
-.. py:method:: set_element_type(self, elementType: ELEMENT_TYPE) -> None
+.. py:method:: set_element_type(self, element_type: ElementSetType) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.State.set_element_type
 
     Set the element type.
 
     :Parameters:
 
-    **elementType** : :obj:`~ELEMENT_TYPE`
+    **element_type** : :obj:`~ElementSetType`
 
     :Returns:
 
@@ -229,14 +229,14 @@ Method detail
 
 
 
-.. py:method:: get_in_frame_name(self, frameName: str) -> State
+.. py:method:: get_in_frame_name(self, frame_name: str) -> State
     :canonical: ansys.stk.core.stkobjects.astrogator.State.get_in_frame_name
 
     Get the orbit state in the specified frame.
 
     :Parameters:
 
-    **frameName** : :obj:`~str`
+    **frame_name** : :obj:`~str`
 
     :Returns:
 

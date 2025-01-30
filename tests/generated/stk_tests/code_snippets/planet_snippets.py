@@ -30,7 +30,7 @@ class PlanetSnippets(CodeSnippetsTestBase):
     def setUp(self):
         PlanetSnippets.m_Object = clr.CastAs(
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-                STK_OBJECT_TYPE.PLANET, PlanetSnippets.m_DefaultName
+                STKObjectType.PLANET, PlanetSnippets.m_DefaultName
             ),
             Planet,
         )
@@ -39,9 +39,7 @@ class PlanetSnippets(CodeSnippetsTestBase):
 
     # region TestTearDown
     def tearDown(self):
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(
-            STK_OBJECT_TYPE.PLANET, PlanetSnippets.m_DefaultName
-        )
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STKObjectType.PLANET, PlanetSnippets.m_DefaultName)
         PlanetSnippets.m_Object = None
 
     # endregion
@@ -66,15 +64,15 @@ class PlanetSnippets(CodeSnippetsTestBase):
         )
 
     def ConfigurePlanet(self, planet: "Planet"):
-        planet.position_source = PLANET_POSITION_SOURCE_TYPE.POSITION_CENTRAL_BODY
+        planet.position_source = PlanetPositionSourceType.CENTRAL_BODY
 
         # Get PlanetPositionCentralBody interface
         body: "PlanetPositionCentralBody" = clr.CastAs(planet.position_source_data, PlanetPositionCentralBody)
 
-        body.auto_rename = False
+        body.rename_automatically = False
         body.central_body = "Jupiter"
-        if Array.IndexOf(body.available_ephem_source_types, int(EPHEM_SOURCE_TYPE.ANALYTIC)) != -1:
-            body.ephem_source = EPHEM_SOURCE_TYPE.ANALYTIC
+        if Array.IndexOf(body.available_ephemeris_source_types, int(EphemSourceType.ANALYTIC)) != -1:
+            body.ephemeris_source = EphemSourceType.ANALYTIC
 
     # endregion
 
@@ -88,15 +86,15 @@ class PlanetSnippets(CodeSnippetsTestBase):
 
         graphics.color = Colors.Red
         graphics.marker_style = "Circle"
-        graphics.line_style = LINE_STYLE.M_DASH_DOT
-        graphics.line_width = LINE_WIDTH.WIDTH4
+        graphics.line_style = LineStyle.M_DASH_DOT
+        graphics.line_width = LineWidth.WIDTH4
 
-        graphics.inertial_position_visible = False
-        graphics.sub_planet_point_visible = False
-        graphics.position_label_visible = False
-        graphics.sub_planet_label_visible = False
-        graphics.orbit_visible = True
-        graphics.orbit_display = PLANET_ORBIT_DISPLAY_TYPE.ORBIT_DISPLAY_TIME
+        graphics.show_inertial_position = False
+        graphics.show_sub_planet_point = False
+        graphics.show_position_label = False
+        graphics.show_sub_planet_label = False
+        graphics.show_orbit = True
+        graphics.orbit_display = PlanetOrbitDisplayType.ORBIT_DISPLAY_TIME
         displayTime: "PlanetOrbitDisplayTime" = clr.CastAs(graphics.orbit_display_data, PlanetOrbitDisplayTime)
         displayTime.time = 10000.0
 

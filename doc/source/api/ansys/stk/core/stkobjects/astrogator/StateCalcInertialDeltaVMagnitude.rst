@@ -9,10 +9,6 @@ StateCalcInertialDeltaVMagnitude
 
 .. py:currentmodule:: StateCalcInertialDeltaVMagnitude
 
-Overview
---------
-
-
 
 Import detail
 -------------

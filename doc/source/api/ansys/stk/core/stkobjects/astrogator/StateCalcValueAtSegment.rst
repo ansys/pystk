@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcValueAtSegment.calc_object_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcValueAtSegment.calculation_object_name`
               - Gets or sets the calculation object.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcValueAtSegment.other_segment_name`
               - Gets or sets the segment to be compared against.
@@ -40,8 +40,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: calc_object_name
-    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcValueAtSegment.calc_object_name
+.. py:property:: calculation_object_name
+    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcValueAtSegment.calculation_object_name
     :type: str
 
     Gets or sets the calculation object.
@@ -54,7 +54,7 @@ Property detail
 
 .. py:property:: segment_state_to_use
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcValueAtSegment.segment_state_to_use
-    :type: SEGMENT_STATE
+    :type: SegmentState
 
     Gets or sets the segment state to use in the calculation.
 

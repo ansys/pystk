@@ -22,7 +22,6 @@ Overview
               - Preview the GPS elements in the almanac. Only records associated with the current PRN are returned.
 
 
-
 Import detail
 -------------
 

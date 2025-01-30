@@ -18,7 +18,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DMarker.set_marker_image_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DMarker.set_marker_image_filename`
               - Set the marker image file.
 
     .. tab-item:: Properties
@@ -71,7 +71,7 @@ Property detail
 
 .. py:property:: marker_type
     :canonical: ansys.stk.core.stkobjects.Graphics3DMarker.marker_type
-    :type: MARKER_TYPE
+    :type: MarkerType
 
     Specify a 3D marker type to represent the object at the specified threshold. Setting the type with the enum eImageFile is invalid, use SetMarkerImageFile instead.
 
@@ -83,13 +83,13 @@ Property detail
 
 .. py:property:: x_origin
     :canonical: ansys.stk.core.stkobjects.Graphics3DMarker.x_origin
-    :type: GRAPHICS_3D_MARKER_ORIGIN_TYPE
+    :type: Graphics3DMarkerOriginType
 
     The horizontal point of origin for the marker (left, center or right).
 
 .. py:property:: y_origin
     :canonical: ansys.stk.core.stkobjects.Graphics3DMarker.y_origin
-    :type: GRAPHICS_3D_MARKER_ORIGIN_TYPE
+    :type: Graphics3DMarkerOriginType
 
     The vertical point of origin for the marker (top, center or bottom.).
 
@@ -101,7 +101,7 @@ Property detail
 
 .. py:property:: orientation_mode
     :canonical: ansys.stk.core.stkobjects.Graphics3DMarker.orientation_mode
-    :type: GRAPHICS_3D_MARKER_ORIENTATION
+    :type: Graphics3DMarkerOrientation
 
     Controls the rotation of the marker.
 
@@ -122,14 +122,14 @@ Method detail
 
 
 
-.. py:method:: set_marker_image_file(self, imageFile: str) -> None
-    :canonical: ansys.stk.core.stkobjects.Graphics3DMarker.set_marker_image_file
+.. py:method:: set_marker_image_filename(self, image_file: str) -> None
+    :canonical: ansys.stk.core.stkobjects.Graphics3DMarker.set_marker_image_filename
 
     Set the marker image file.
 
     :Parameters:
 
-    **imageFile** : :obj:`~str`
+    **image_file** : :obj:`~str`
 
     :Returns:
 

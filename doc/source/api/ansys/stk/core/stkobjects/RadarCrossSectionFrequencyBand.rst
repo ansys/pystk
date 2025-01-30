@@ -65,7 +65,7 @@ Property detail
 
 .. py:property:: swerling_case
     :canonical: ansys.stk.core.stkobjects.RadarCrossSectionFrequencyBand.swerling_case
-    :type: RADAR_SWERLING_CASE
+    :type: RadarSwerlingCase
 
     Gets or sets the band Swerling case.
 
@@ -91,14 +91,14 @@ Method detail
 
 
 
-.. py:method:: set_compute_strategy(self, computeStrategyName: str) -> None
+.. py:method:: set_compute_strategy(self, compute_strategy_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.RadarCrossSectionFrequencyBand.set_compute_strategy
 
     Set the current compute strategy by name.
 
     :Parameters:
 
-    **computeStrategyName** : :obj:`~str`
+    **compute_strategy_name** : :obj:`~str`
 
     :Returns:
 

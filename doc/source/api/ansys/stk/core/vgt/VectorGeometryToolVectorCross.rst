@@ -3,7 +3,7 @@ VectorGeometryToolVectorCross
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolVectorCross
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVector`, :py:class:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVector`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    The vector cross product of two vectors.
 
@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolVectorCross.from_method`
+            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolVectorCross.from_vector`
               - Specify one of the two vectors which define the vector cross product.
-            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolVectorCross.to`
+            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolVectorCross.to_vector`
               - Specify the second of the two vectors which define the vector cross product.
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolVectorCross.is_normalized`
               - Whether to convert the cross product of two vectors to a unit vector.
@@ -42,15 +42,15 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: from_method
-    :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorCross.from_method
-    :type: VectorGeometryToolVectorRefTo
+.. py:property:: from_vector
+    :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorCross.from_vector
+    :type: VectorGeometryToolVectorReference
 
     Specify one of the two vectors which define the vector cross product.
 
-.. py:property:: to
-    :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorCross.to
-    :type: VectorGeometryToolVectorRefTo
+.. py:property:: to_vector
+    :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorCross.to_vector
+    :type: VectorGeometryToolVectorReference
 
     Specify the second of the two vectors which define the vector cross product.
 

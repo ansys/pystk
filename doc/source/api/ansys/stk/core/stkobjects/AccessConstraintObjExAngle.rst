@@ -79,40 +79,40 @@ Method detail
 
 
 
-.. py:method:: add_exclusion_object(self, objectName: str) -> None
+.. py:method:: add_exclusion_object(self, object_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.AccessConstraintObjExAngle.add_exclusion_object
 
     Add an exclusion object.
 
     :Parameters:
 
-    **objectName** : :obj:`~str`
+    **object_name** : :obj:`~str`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_object_assigned(self, objectName: str) -> bool
+.. py:method:: is_object_assigned(self, object_name: str) -> bool
     :canonical: ansys.stk.core.stkobjects.AccessConstraintObjExAngle.is_object_assigned
 
     Return true if an exclusion object is assigned.
 
     :Parameters:
 
-    **objectName** : :obj:`~str`
+    **object_name** : :obj:`~str`
 
     :Returns:
 
         :obj:`~bool`
 
-.. py:method:: remove_exclusion_object(self, objectName: str) -> None
+.. py:method:: remove_exclusion_object(self, object_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.AccessConstraintObjExAngle.remove_exclusion_object
 
     Remove an exclusion object.
 
     :Parameters:
 
-    **objectName** : :obj:`~str`
+    **object_name** : :obj:`~str`
 
     :Returns:
 

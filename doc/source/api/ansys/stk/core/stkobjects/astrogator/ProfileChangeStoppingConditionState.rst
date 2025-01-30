@@ -59,7 +59,7 @@ Property detail
 
 .. py:property:: state
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileChangeStoppingConditionState.state
-    :type: STATE
+    :type: StateType
 
     Gets or sets the new state of the targeted stopping condition.
 
@@ -75,14 +75,14 @@ Method detail
 
 
 
-.. py:method:: set_segment(self, mCSSegment: IMissionControlSequenceSegment) -> None
+.. py:method:: set_segment(self, mcs_segment: IMCSSegment) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileChangeStoppingConditionState.set_segment
 
     Set the targeted segment.
 
     :Parameters:
 
-    **mCSSegment** : :obj:`~IMissionControlSequenceSegment`
+    **mcs_segment** : :obj:`~IMCSSegment`
 
     :Returns:
 
@@ -90,14 +90,14 @@ Method detail
 
 
 
-.. py:method:: set_trigger(self, stoppingCondition: StoppingCondition) -> None
+.. py:method:: set_trigger(self, stopping_condition: StoppingCondition) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileChangeStoppingConditionState.set_trigger
 
     Set the targeted stopping condition.
 
     :Parameters:
 
-    **stoppingCondition** : :obj:`~StoppingCondition`
+    **stopping_condition** : :obj:`~StoppingCondition`
 
     :Returns:
 

@@ -95,14 +95,14 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: export_with_filename_path(self, filenamePath: str) -> None
+.. py:method:: export_with_filename_path(self, filename_path: str) -> None
     :canonical: ansys.stk.core.stkobjects.IComponentInfo.export_with_filename_path
 
     Export the component with specified file name and location.
 
     :Parameters:
 
-    **filenamePath** : :obj:`~str`
+    **filename_path** : :obj:`~str`
 
     :Returns:
 

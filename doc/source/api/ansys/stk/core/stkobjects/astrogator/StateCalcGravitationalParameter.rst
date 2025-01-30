@@ -22,7 +22,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcGravitationalParameter.central_body_name`
               - Gets or sets the central body of the component.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcGravitationalParameter.grav_source`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcGravitationalParameter.gravitational_parameter_source`
               - Gets or sets the source for the gravitational parameter.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcGravitationalParameter.gravity_filename`
               - Source for the gravitational parameter if GravSource is set to Gravity File.
@@ -46,9 +46,9 @@ Property detail
 
     Gets or sets the central body of the component.
 
-.. py:property:: grav_source
-    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcGravitationalParameter.grav_source
-    :type: GRAVITATIONAL_PARAMETER_SOURCE
+.. py:property:: gravitational_parameter_source
+    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcGravitationalParameter.gravitational_parameter_source
+    :type: GravitationalParameterSource
 
     Gets or sets the source for the gravitational parameter.
 

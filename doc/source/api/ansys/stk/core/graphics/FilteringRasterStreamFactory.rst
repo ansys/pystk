@@ -22,7 +22,6 @@ Overview
               - Initialize a new instance with a raster stream and the raster filter that will be applied to each update of that stream.
 
 
-
 Import detail
 -------------
 
@@ -35,14 +34,14 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: initialize(self, rasterStream: IRasterStream, filter: IRasterFilter) -> FilteringRasterStream
+.. py:method:: initialize(self, raster_stream: IRasterStream, filter: IRasterFilter) -> FilteringRasterStream
     :canonical: ansys.stk.core.graphics.FilteringRasterStreamFactory.initialize
 
     Initialize a new instance with a raster stream and the raster filter that will be applied to each update of that stream.
 
     :Parameters:
 
-    **rasterStream** : :obj:`~IRasterStream`
+    **raster_stream** : :obj:`~IRasterStream`
     **filter** : :obj:`~IRasterFilter`
 
     :Returns:

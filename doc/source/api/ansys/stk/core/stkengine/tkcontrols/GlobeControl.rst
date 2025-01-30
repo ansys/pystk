@@ -3,7 +3,7 @@ GlobeControl
 
 .. py:class:: ansys.stk.core.stkengine.tkcontrols.GlobeControl
 
-   UiAxGraphics3DCntrl, ControlBase
+   Graphics3DControlBase, ControlBase
 
    The 3D Globe control for Tkinter.
 

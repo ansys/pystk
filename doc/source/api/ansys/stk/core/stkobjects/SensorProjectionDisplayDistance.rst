@@ -9,10 +9,6 @@ SensorProjectionDisplayDistance
 
 .. py:currentmodule:: SensorProjectionDisplayDistance
 
-Overview
---------
-
-
 
 Import detail
 -------------

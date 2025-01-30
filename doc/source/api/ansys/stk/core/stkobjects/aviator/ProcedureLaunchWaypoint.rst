@@ -73,7 +73,7 @@ Property detail
 
 .. py:property:: altitude_reference
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureLaunchWaypoint.altitude_reference
-    :type: ALTITUDE_REFERENCE
+    :type: AltitudeReference
 
     Gets or sets the launch altitude reference.
 
@@ -103,7 +103,7 @@ Property detail
 
 .. py:property:: airspeed_type
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureLaunchWaypoint.airspeed_type
-    :type: AIRSPEED_TYPE
+    :type: AirspeedType
 
     Get the airspeed type.
 
@@ -115,7 +115,7 @@ Property detail
 
 .. py:property:: fuel_flow_type
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureLaunchWaypoint.fuel_flow_type
-    :type: FUEL_FLOW_TYPE
+    :type: FuelFlowType
 
     Gets or sets the fuel flow type of the aircraft during the launch.
 
@@ -143,14 +143,14 @@ Method detail
 
 
 
-.. py:method:: set_airspeed(self, airspeedType: AIRSPEED_TYPE, airspeed: float) -> None
+.. py:method:: set_airspeed(self, airspeed_type: AirspeedType, airspeed: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureLaunchWaypoint.set_airspeed
 
     Set the launch airspeed.
 
     :Parameters:
 
-    **airspeedType** : :obj:`~AIRSPEED_TYPE`
+    **airspeed_type** : :obj:`~AirspeedType`
     **airspeed** : :obj:`~float`
 
     :Returns:

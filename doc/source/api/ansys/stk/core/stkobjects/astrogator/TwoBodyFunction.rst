@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.TwoBodyFunction.grav_source`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.TwoBodyFunction.gravitational_parameter_source`
               - Gets or sets the source for the gravitational parameter.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.TwoBodyFunction.mu`
               - Gets or sets the gravitational parameter. Uses Gravity Param Dimension.
@@ -40,9 +40,9 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: grav_source
-    :canonical: ansys.stk.core.stkobjects.astrogator.TwoBodyFunction.grav_source
-    :type: GRAV_PARAM_SOURCE
+.. py:property:: gravitational_parameter_source
+    :canonical: ansys.stk.core.stkobjects.astrogator.TwoBodyFunction.gravitational_parameter_source
+    :type: GravParamSource
 
     Gets or sets the source for the gravitational parameter.
 

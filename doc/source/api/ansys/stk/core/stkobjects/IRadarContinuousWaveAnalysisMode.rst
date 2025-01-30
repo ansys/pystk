@@ -35,7 +35,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.IRadarContinuousWaveAnalysisMode.type
-    :type: RADAR_CONTINUOUS_WAVE_ANALYSIS_MODE_TYPE
+    :type: RadarContinuousWaveAnalysisMode
 
     Gets the analysis type enumeration.
 

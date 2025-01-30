@@ -5,8 +5,8 @@
 __all__ = [ "COMEventHandlerImpl",
             "IStkObjectRootEventCOMHandler", 
             "ISTKXApplicationEventCOMHandler", 
-            "IUiAxGraphics2DCntrlEventCOMHandler", 
-            "IUiAxGraphics3DCntrlEventCOMHandler",
+            "IGraphics2DControlEventCOMHandler", 
+            "IGraphics3DControlEventCOMHandler",
             "ISceneEventCOMHandler",
             "IKmlGraphicsEventCOMHandler",
             "IImageCollectionEventCOMHandler",
@@ -17,8 +17,10 @@ from ctypes import CFUNCTYPE, POINTER, c_void_p, cast, addressof, Structure
 
 from .                       import marshall     as agmarshall
 from .                       import coclassutil  as agcls
-from .comutil                import *
-from ..utilities.exceptions  import *
+from .comutil import (BSTR, DISPID, DispParams, DOUBLE, ExcepInfo, E_NOINTERFACE, E_NOTIMPL, GUID,
+                      HRESULT, IDispatch, IUnknown, LCID, LONG, LPOLESTR, OLE_XPOS_PIXELS,
+                      OLE_YPOS_PIXELS, PVOID, REFIID, SHORT, S_OK, UINT, ULONG, Variant, WORD,
+                      pointer)
 
 class COMEventHandlerImpl(object):
     _IID_IUnknown  = GUID.from_registry_format(IUnknown._guid)
@@ -231,7 +233,7 @@ class IStkObjectRootEventCOMHandler(COMEventHandlerImpl):
 
     def _on_log_message(self, pThis:PVOID, message:str, msgType:int, errorCode:int, fileName:str, lineNo:int, dispID:int) -> None:
         for callback in self._events["OnLogMessage"]._callbacks:
-            callback(message, agcls.AgTypeNameMap["LOG_MESSAGE_TYPE"](msgType), errorCode, fileName, lineNo, agcls.AgTypeNameMap["LOG_MESSAGE_DISP_ID"](dispID))
+            callback(message, agcls.AgTypeNameMap["LogMessageType"](msgType), errorCode, fileName, lineNo, agcls.AgTypeNameMap["LogMessageDisplayID"](dispID))
 
     def _on_anim_update(self, pThis:PVOID, timeEpSec:float) -> None:
         for callback in self._events["OnAnimUpdate"]._callbacks:
@@ -254,7 +256,7 @@ class IStkObjectRootEventCOMHandler(COMEventHandlerImpl):
                 
     def _on_animation_playback(self, pThis:PVOID, CurrentTime:float, eAction:int, eDirection:int) -> None:
         for callback in self._events["OnAnimationPlayback"]._callbacks:
-            callback(CurrentTime, agcls.AgTypeNameMap["ANIMATION_ACTIONS"](eAction), agcls.AgTypeNameMap["ANIMATION_DIRECTIONS"](eDirection.python_val))
+            callback(CurrentTime, agcls.AgTypeNameMap["AnimationActionType"](eAction), agcls.AgTypeNameMap["AnimationDirectionType"](eDirection.python_val))
                 
     def _on_animation_rewind(self, pThis:PVOID) -> None:
         for callback in self._events["OnAnimationRewind"]._callbacks:
@@ -266,7 +268,7 @@ class IStkObjectRootEventCOMHandler(COMEventHandlerImpl):
                 
     def _on_scenario_before_save(self, pThis:PVOID, pArgs:PVOID) -> None:
         for callback in self._events["OnScenarioBeforeSave"]._callbacks:
-            with agmarshall.InterfaceEventCallbackArg(pArgs, agcls.AgTypeNameMap["ScenarioBeforeSaveEventArgs"]) as arg_pArgs:
+            with agmarshall.InterfaceEventCallbackArg(pArgs, agcls.AgTypeNameMap["ScenarioBeforeSaveEventArguments"]) as arg_pArgs:
                 callback(arg_pArgs.python_val)
                 
     def _on_animation_step(self, pThis:PVOID, CurrentTime:float) -> None:
@@ -287,7 +289,7 @@ class IStkObjectRootEventCOMHandler(COMEventHandlerImpl):
             
     def _on_percent_complete_update(self, pThis:PVOID, pArgs:PVOID) -> None:
         for callback in self._events["OnPercentCompleteUpdate"]._callbacks:
-            with agmarshall.InterfaceEventCallbackArg(pArgs, agcls.AgTypeNameMap["PctCmpltEventArgs"]) as arg_pArgs:
+            with agmarshall.InterfaceEventCallbackArg(pArgs, agcls.AgTypeNameMap["ProgressBarEventArguments"]) as arg_pArgs:
                 callback(arg_pArgs.python_val)
                 
     def _on_percent_complete_end(self, pThis:PVOID) -> None:
@@ -300,7 +302,7 @@ class IStkObjectRootEventCOMHandler(COMEventHandlerImpl):
             
     def _on_stk_object_changed(self, pThis:PVOID, pArgs:PVOID) -> None:
         for callback in self._events["OnStkObjectChanged"]._callbacks:
-            with agmarshall.InterfaceEventCallbackArg(pArgs, agcls.AgTypeNameMap["StkObjectChangedEventArgs"]) as arg_pArgs:
+            with agmarshall.InterfaceEventCallbackArg(pArgs, agcls.AgTypeNameMap["StkObjectChangedEventArguments"]) as arg_pArgs:
                 callback(arg_pArgs.python_val)
                 
     def _on_scenario_before_close(self, pThis:PVOID) -> None:
@@ -309,7 +311,7 @@ class IStkObjectRootEventCOMHandler(COMEventHandlerImpl):
             
     def _on_stk_object_pre_delete(self, pThis:PVOID, pArgs:PVOID) -> None:
         for callback in self._events["OnStkObjectPreDelete"]._callbacks:
-            with agmarshall.InterfaceEventCallbackArg(pArgs, agcls.AgTypeNameMap["StkObjectPreDeleteEventArgs"]) as arg_pArgs:
+            with agmarshall.InterfaceEventCallbackArg(pArgs, agcls.AgTypeNameMap["StkObjectPreDeleteEventArguments"]) as arg_pArgs:
                 callback(arg_pArgs.python_val)
                 
     def _on_stk_object_start_3d_editing(self, pThis:PVOID, path:str) -> None:
@@ -330,17 +332,17 @@ class IStkObjectRootEventCOMHandler(COMEventHandlerImpl):
             
     def _on_stk_object_pre_cut(self, pThis:PVOID, pArgs:PVOID) -> None:
         for callback in self._events["OnStkObjectPreCut"]._callbacks:
-            with agmarshall.InterfaceEventCallbackArg(pArgs, agcls.AgTypeNameMap["StkObjectCutCopyPasteEventArgs"]) as arg_pArgs:
+            with agmarshall.InterfaceEventCallbackArg(pArgs, agcls.AgTypeNameMap["StkObjectCutCopyPasteEventArguments"]) as arg_pArgs:
                 callback(arg_pArgs.python_val)
             
     def _on_stk_object_copy(self, pThis:PVOID, pArgs:PVOID) -> None:
         for callback in self._events["OnStkObjectCopy"]._callbacks:
-            with agmarshall.InterfaceEventCallbackArg(pArgs, agcls.AgTypeNameMap["StkObjectCutCopyPasteEventArgs"]) as arg_pArgs:
+            with agmarshall.InterfaceEventCallbackArg(pArgs, agcls.AgTypeNameMap["StkObjectCutCopyPasteEventArguments"]) as arg_pArgs:
                 callback(arg_pArgs.python_val)
             
     def _on_stk_object_paste(self, pThis:PVOID, pArgs:PVOID) -> None:
         for callback in self._events["OnStkObjectPaste"]._callbacks:
-            with agmarshall.InterfaceEventCallbackArg(pArgs, agcls.AgTypeNameMap["StkObjectCutCopyPasteEventArgs"]) as arg_pArgs:
+            with agmarshall.InterfaceEventCallbackArg(pArgs, agcls.AgTypeNameMap["StkObjectCutCopyPasteEventArguments"]) as arg_pArgs:
                 callback(arg_pArgs.python_val)
       
     
@@ -452,7 +454,7 @@ class ISTKXApplicationEventCOMHandler(COMEventHandlerImpl):
 
     def _OnLogMessage(self, pThis:PVOID, message:str, msgType:int, errorCode:int, fileName:str, lineNo:int, dispID:int) -> None:
         for callback in self._events["OnLogMessage"]._callbacks:
-            callback(message, agcls.AgTypeNameMap["LOG_MESSAGE_TYPE"](msgType), errorCode, fileName, lineNo, agcls.AgTypeNameMap["LOG_MESSAGE_DISP_ID"](dispID))
+            callback(message, agcls.AgTypeNameMap["LogMessageType"](msgType), errorCode, fileName, lineNo, agcls.AgTypeNameMap["LogMessageDisplayID"](dispID))
 
     def _OnAnimUpdate(self, pThis:PVOID, timeEpSec:float) -> int:
         for callback in self._events["OnAnimUpdate"]._callbacks:
@@ -481,7 +483,7 @@ class ISTKXApplicationEventCOMHandler(COMEventHandlerImpl):
     
     def _OnNewGfxAnalysisCtrlRequest(self, pThis:PVOID, SceneID:int, GfxAnalysisMode:int) -> None:
         for callback in self._events["OnNewGfxAnalysisCtrlRequest"]._callbacks:
-            callback(SceneID, agcls.AgTypeNameMap["GRAPHICS_2D_ANALYSIS_MODE"](GfxAnalysisMode))
+            callback(SceneID, agcls.AgTypeNameMap["Graphics2DAnalysisMode"](GfxAnalysisMode))
     
     def _OnSSLCertificateServerError(self, pThis:PVOID, pArgs:PVOID) -> None:
         for callback in self._events["OnSSLCertificateServerError"]._callbacks:
@@ -513,7 +515,7 @@ class _UiAxStockEventsUnkSink(Structure):
                  ("ole_drag_drop", c_void_p),
                  ("mouse_wheel",  c_void_p)]
                  
-class _AgUiAxGraphics3DCntrlEventsUnkSink(Structure):
+class _Graphics3DControlEventsUnkSink(Structure):
     _fields_ = [ ("IUnknown1",             c_void_p),
                  ("IUnknown2",             c_void_p),
                  ("IUnknown3",             c_void_p),
@@ -599,7 +601,7 @@ class IAgUiAxStockEventCOMHandler(object):
                 callback(arg_Data.python_val, Effect, KeyCode, Shift, X, Y)
         return S_OK
             
-class IUiAxGraphics2DCntrlEventCOMHandler(COMEventHandlerImpl, IAgUiAxStockEventCOMHandler):
+class IGraphics2DControlEventCOMHandler(COMEventHandlerImpl, IAgUiAxStockEventCOMHandler):
     _IID_IAgUiAx2DCntrlEvents    = GUID.from_registry_format("{DA0E1628-101E-4A18-B922-B4189E31AD7E}")
 
     def __init__(self, pUnk:IUnknown, events:dict):
@@ -640,21 +642,21 @@ class IUiAxGraphics2DCntrlEventCOMHandler(COMEventHandlerImpl, IAgUiAxStockEvent
         elif iid == IAgUiAxStockEventCOMHandler._IID_IAgUiAxStockRawEvents:
             ppvObject[0] = pThis
             return S_OK
-        elif iid == IUiAxGraphics2DCntrlEventCOMHandler._IID_IAgUiAx2DCntrlEvents:
+        elif iid == IGraphics2DControlEventCOMHandler._IID_IAgUiAx2DCntrlEvents:
             ppvObject[0] = pThis
             return S_OK
         else:
             ppvObject[0] = 0
             return E_NOINTERFACE
 
-class IUiAxGraphics3DCntrlEventCOMHandler(COMEventHandlerImpl, IAgUiAxStockEventCOMHandler):
+class IGraphics3DControlEventCOMHandler(COMEventHandlerImpl, IAgUiAxStockEventCOMHandler):
     _IID_IAgUiAxVOCntrlRawEvents = GUID.from_registry_format("{1ADE7AE0-B431-4ED4-8494-335EBB14007C}")
     _IID_IAgUiAxVOCntrlEvents    = GUID.from_registry_format("{C46F1BA0-22E4-432B-9259-C6DEF33FE2B2}")
 
     def __init__(self, pUnk:IUnknown, events:dict):
         IAgUiAxStockEventCOMHandler.__init__(self, events)
         self._init_vtable()
-        COMEventHandlerImpl.__init__(self, pUnk, self._pUnkSink, IUiAxGraphics3DCntrlEventCOMHandler._IID_IAgUiAxVOCntrlEvents)
+        COMEventHandlerImpl.__init__(self, pUnk, self._pUnkSink, IGraphics3DControlEventCOMHandler._IID_IAgUiAxVOCntrlEvents)
 
     def _init_vtable(self):
         if os.name == "nt":
@@ -670,7 +672,7 @@ class IUiAxGraphics3DCntrlEventCOMHandler(COMEventHandlerImpl, IAgUiAxStockEvent
         self.__dict__["_cfunc_OnObjectEditingCancel"] = CFUNCTYPE(HRESULT, PVOID, BSTR)(self._on_object_editing_cancel)
         self.__dict__["_cfunc_OnObjectEditingStop"]   = CFUNCTYPE(HRESULT, PVOID, BSTR)(self._on_object_editing_stop)
         
-        self.__dict__["_vtable"] = _AgUiAxGraphics3DCntrlEventsUnkSink( *[cast(self._cfunc_IUnknown1,             c_void_p),
+        self.__dict__["_vtable"] = _Graphics3DControlEventsUnkSink( *[cast(self._cfunc_IUnknown1,             c_void_p),
                                                                   cast(self._cfunc_IUnknown2,             c_void_p),
                                                                   cast(self._cfunc_IUnknown3,             c_void_p),
                                                                   cast(self._cfunc_KeyDown,               c_void_p),
@@ -697,10 +699,10 @@ class IUiAxGraphics3DCntrlEventCOMHandler(COMEventHandlerImpl, IAgUiAxStockEvent
         elif iid == IAgUiAxStockEventCOMHandler._IID_IAgUiAxStockRawEvents:
             ppvObject[0] = pThis
             return S_OK
-        elif iid == IUiAxGraphics3DCntrlEventCOMHandler._IID_IAgUiAxVOCntrlRawEvents:
+        elif iid == IGraphics3DControlEventCOMHandler._IID_IAgUiAxVOCntrlRawEvents:
             ppvObject[0] = pThis
             return S_OK
-        elif iid == IUiAxGraphics3DCntrlEventCOMHandler._IID_IAgUiAxVOCntrlEvents:
+        elif iid == IGraphics3DControlEventCOMHandler._IID_IAgUiAxVOCntrlEvents:
             ppvObject[0] = pThis
             return S_OK
         else:

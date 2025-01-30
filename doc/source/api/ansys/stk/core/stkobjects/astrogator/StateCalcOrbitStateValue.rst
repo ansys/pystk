@@ -33,7 +33,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.calc_object_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.calculation_object_name`
               - Gets or sets the calculation object.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.input_coord_system_name`
               - Gets or sets the coordinate system of the input state.
@@ -65,8 +65,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: calc_object_name
-    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.calc_object_name
+.. py:property:: calculation_object_name
+    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.calculation_object_name
     :type: str
 
     Gets or sets the calculation object.
@@ -139,40 +139,40 @@ Method detail
 
 
 
-.. py:method:: enable_control_parameter(self, param: CONTROL_ORBIT_STATE_VALUE) -> None
+.. py:method:: enable_control_parameter(self, param: ControlOrbitStateValue) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.enable_control_parameter
 
     Enable the specified control parameter.
 
     :Parameters:
 
-    **param** : :obj:`~CONTROL_ORBIT_STATE_VALUE`
+    **param** : :obj:`~ControlOrbitStateValue`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: disable_control_parameter(self, param: CONTROL_ORBIT_STATE_VALUE) -> None
+.. py:method:: disable_control_parameter(self, param: ControlOrbitStateValue) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.disable_control_parameter
 
     Disables the specified control parameter.
 
     :Parameters:
 
-    **param** : :obj:`~CONTROL_ORBIT_STATE_VALUE`
+    **param** : :obj:`~ControlOrbitStateValue`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_control_parameter_enabled(self, param: CONTROL_ORBIT_STATE_VALUE) -> bool
+.. py:method:: is_control_parameter_enabled(self, param: ControlOrbitStateValue) -> bool
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.is_control_parameter_enabled
 
     Sees if the specified control is enabled.
 
     :Parameters:
 
-    **param** : :obj:`~CONTROL_ORBIT_STATE_VALUE`
+    **param** : :obj:`~ControlOrbitStateValue`
 
     :Returns:
 

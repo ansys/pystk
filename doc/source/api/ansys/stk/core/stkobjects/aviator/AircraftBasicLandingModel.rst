@@ -65,7 +65,7 @@ Property detail
 
 .. py:property:: landing_speed_type
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicLandingModel.landing_speed_type
-    :type: AIRSPEED_TYPE
+    :type: AirspeedType
 
     Get the landing speed type.
 
@@ -99,15 +99,15 @@ Method detail
 
 
 
-.. py:method:: set_landing_speed(self, airspeedType: AIRSPEED_TYPE, aispeed: float) -> None
+.. py:method:: set_landing_speed(self, airspeed_type: AirspeedType, airspeed: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicLandingModel.set_landing_speed
 
     Set the landing speed of the aircraft.
 
     :Parameters:
 
-    **airspeedType** : :obj:`~AIRSPEED_TYPE`
-    **aispeed** : :obj:`~float`
+    **airspeed_type** : :obj:`~AirspeedType`
+    **airspeed** : :obj:`~float`
 
     :Returns:
 

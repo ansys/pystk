@@ -60,25 +60,25 @@ Property detail
 
 .. py:property:: static
     :canonical: ansys.stk.core.stkobjects.VehicleHPOPForceModelMoreOptions.static
-    :type: VehicleStatic
+    :type: PropagatorHPOPStaticForceModelSettings
 
     Get the static force model options concerning satellite mass and relativistic accelerations.
 
 .. py:property:: solid_tides
     :canonical: ansys.stk.core.stkobjects.VehicleHPOPForceModelMoreOptions.solid_tides
-    :type: VehicleSolidTides
+    :type: SolidTides
 
     Get the solid tides options.
 
 .. py:property:: ocean_tides
     :canonical: ansys.stk.core.stkobjects.VehicleHPOPForceModelMoreOptions.ocean_tides
-    :type: VehicleOceanTides
+    :type: OceanTides
 
     Get the ocean tides options.
 
 .. py:property:: radiation_pressure
     :canonical: ansys.stk.core.stkobjects.VehicleHPOPForceModelMoreOptions.radiation_pressure
-    :type: VehicleRadiationPressure
+    :type: RadiationPressure
 
     Get the radiation pressure options.
 

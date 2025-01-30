@@ -9,10 +9,6 @@ IAttitudeControlImpulsive
 
 .. py:currentmodule:: IAttitudeControlImpulsive
 
-Overview
---------
-
-
 Import detail
 -------------
 

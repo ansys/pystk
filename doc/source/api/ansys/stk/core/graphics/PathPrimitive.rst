@@ -71,7 +71,7 @@ Overview
               - Gets or sets the width, in pixels, of the outline around the line.
             * - :py:attr:`~ansys.stk.core.graphics.PathPrimitive.per_item_picking_enabled`
               - Gets or sets whether individual line indices will be included in the pick results returned from the scene's Pick method. Each line index that is picked will be returned as a batch primitive index.
-            * - :py:attr:`~ansys.stk.core.graphics.PathPrimitive._NewEnum`
+            * - :py:attr:`~ansys.stk.core.graphics.PathPrimitive._new_enum`
               - Returns an enumerator that iterates through the collection.
             * - :py:attr:`~ansys.stk.core.graphics.PathPrimitive.central_body_clipped`
               - Gets or sets whether the polyline will be clipped by the central body.
@@ -109,7 +109,7 @@ Property detail
 
 .. py:property:: polyline_type
     :canonical: ansys.stk.core.graphics.PathPrimitive.polyline_type
-    :type: POLYLINE_TYPE
+    :type: PolylineType
 
     Gets or sets how the primitive interprets the positions.
 
@@ -149,8 +149,8 @@ Property detail
 
     Gets or sets whether individual line indices will be included in the pick results returned from the scene's Pick method. Each line index that is picked will be returned as a batch primitive index.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.graphics.PathPrimitive._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.graphics.PathPrimitive._new_enum
     :type: EnumeratorProxy
 
     Returns an enumerator that iterates through the collection.
@@ -195,14 +195,14 @@ Method detail
         :obj:`~PathPoint`
 
 
-.. py:method:: add_front(self, pathPoint: PathPoint) -> None
+.. py:method:: add_front(self, path_point: PathPoint) -> None
     :canonical: ansys.stk.core.graphics.PathPrimitive.add_front
 
     Add a path point to the front of the line.
 
     :Parameters:
 
-    **pathPoint** : :obj:`~PathPoint`
+    **path_point** : :obj:`~PathPoint`
 
     :Returns:
 
@@ -221,14 +221,14 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add_back(self, pathPoint: PathPoint) -> None
+.. py:method:: add_back(self, path_point: PathPoint) -> None
     :canonical: ansys.stk.core.graphics.PathPrimitive.add_back
 
     Add a path point to the back of the line.
 
     :Parameters:
 
-    **pathPoint** : :obj:`~PathPoint`
+    **path_point** : :obj:`~PathPoint`
 
     :Returns:
 

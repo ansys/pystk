@@ -7,10 +7,6 @@ IAccessInterval
 
 .. py:currentmodule:: IAccessInterval
 
-Overview
---------
-
-
 Import detail
 -------------
 

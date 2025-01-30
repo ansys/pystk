@@ -39,7 +39,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGroundEllipsesCollection.count`
               - Returns the number of elements in a collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGroundEllipsesCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGroundEllipsesCollection._new_enum`
               - Returns an enumerator that can iterate through the collection.
 
 
@@ -61,8 +61,8 @@ Property detail
 
     Returns the number of elements in a collection.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.VehicleGroundEllipsesCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.VehicleGroundEllipsesCollection._new_enum
     :type: EnumeratorProxy
 
     Returns an enumerator that can iterate through the collection.
@@ -121,27 +121,27 @@ Method detail
 
         :obj:`~VehicleGroundEllipseElement`
 
-.. py:method:: remove_ellipse_set(self, ellipseSetName: str) -> None
+.. py:method:: remove_ellipse_set(self, ellipse_set_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.VehicleGroundEllipsesCollection.remove_ellipse_set
 
     Remove an element from the collection using the Ellipse Set name.
 
     :Parameters:
 
-    **ellipseSetName** : :obj:`~str`
+    **ellipse_set_name** : :obj:`~str`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: get_ellipse_set(self, ellipseSetName: str) -> VehicleGroundEllipseElement
+.. py:method:: get_ellipse_set(self, ellipse_set_name: str) -> VehicleGroundEllipseElement
     :canonical: ansys.stk.core.stkobjects.VehicleGroundEllipsesCollection.get_ellipse_set
 
     Get an element from the collection using the Ellipse Set name.
 
     :Parameters:
 
-    **ellipseSetName** : :obj:`~str`
+    **ellipse_set_name** : :obj:`~str`
 
     :Returns:
 

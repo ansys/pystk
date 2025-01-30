@@ -73,7 +73,7 @@ Overview
               - Get the maximum translation speed of the rotorcraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.RotorcraftModel.max_safe_translation_speed_type`
               - Get the maximum safe translation speed type.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.RotorcraftModel.ignore_fpa_for_climb_descent_transitions`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.RotorcraftModel.ignore_flight_path_angle_for_climb_descent_transitions`
               - Opt to ignore load factor limits when pushing over or pulling up.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.RotorcraftModel.default_configuration`
               - Get the aircraft's default configuration as saved in the catalog.
@@ -199,7 +199,7 @@ Property detail
 
 .. py:property:: max_safe_airspeed_type
     :canonical: ansys.stk.core.stkobjects.aviator.RotorcraftModel.max_safe_airspeed_type
-    :type: AIRSPEED_TYPE
+    :type: AirspeedType
 
     Get the maximum safe airspeed type.
 
@@ -211,12 +211,12 @@ Property detail
 
 .. py:property:: max_safe_translation_speed_type
     :canonical: ansys.stk.core.stkobjects.aviator.RotorcraftModel.max_safe_translation_speed_type
-    :type: AIRSPEED_TYPE
+    :type: AirspeedType
 
     Get the maximum safe translation speed type.
 
-.. py:property:: ignore_fpa_for_climb_descent_transitions
-    :canonical: ansys.stk.core.stkobjects.aviator.RotorcraftModel.ignore_fpa_for_climb_descent_transitions
+.. py:property:: ignore_flight_path_angle_for_climb_descent_transitions
+    :canonical: ansys.stk.core.stkobjects.aviator.RotorcraftModel.ignore_flight_path_angle_for_climb_descent_transitions
     :type: bool
 
     Opt to ignore load factor limits when pushing over or pulling up.
@@ -277,14 +277,14 @@ Method detail
 
 
 
-.. py:method:: set_max_safe_airspeed(self, airspeedType: AIRSPEED_TYPE, airspeed: float) -> None
+.. py:method:: set_max_safe_airspeed(self, airspeed_type: AirspeedType, airspeed: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.RotorcraftModel.set_max_safe_airspeed
 
     Set the maximum safe airspeed and airspeed type.
 
     :Parameters:
 
-    **airspeedType** : :obj:`~AIRSPEED_TYPE`
+    **airspeed_type** : :obj:`~AirspeedType`
     **airspeed** : :obj:`~float`
 
     :Returns:
@@ -293,14 +293,14 @@ Method detail
 
 
 
-.. py:method:: set_max_safe_translation_speed(self, airspeedType: AIRSPEED_TYPE, airspeed: float) -> None
+.. py:method:: set_max_safe_translation_speed(self, airspeed_type: AirspeedType, airspeed: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.RotorcraftModel.set_max_safe_translation_speed
 
     Set the maximum safe translation airspeed and airspeed type.
 
     :Parameters:
 
-    **airspeedType** : :obj:`~AIRSPEED_TYPE`
+    **airspeed_type** : :obj:`~AirspeedType`
     **airspeed** : :obj:`~float`
 
     :Returns:

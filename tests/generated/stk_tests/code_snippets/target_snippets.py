@@ -29,7 +29,7 @@ class TargetSnippets(CodeSnippetsTestBase):
     def setUp(self):
         self.m_Object = clr.CastAs(
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-                STK_OBJECT_TYPE.TARGET, TargetSnippets.m_DefaultName
+                STKObjectType.TARGET, TargetSnippets.m_DefaultName
             ),
             Target,
         )
@@ -38,9 +38,7 @@ class TargetSnippets(CodeSnippetsTestBase):
 
     # region TestTearDown
     def tearDown(self):
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(
-            STK_OBJECT_TYPE.TARGET, TargetSnippets.m_DefaultName
-        )
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STKObjectType.TARGET, TargetSnippets.m_DefaultName)
         self.m_Object = None
 
     # endregion
@@ -53,7 +51,7 @@ class TargetSnippets(CodeSnippetsTestBase):
         # Create the Target on the current scenario central body (use
         # NewOnCentralBody to specify explicitly the central body)
         areaTarget: "Target" = clr.CastAs(
-            root.current_scenario.children.new(STK_OBJECT_TYPE.AREA_TARGET, "MyAreaTarget"), Target
+            root.current_scenario.children.new(STKObjectType.AREA_TARGET, "MyAreaTarget"), Target
         )
 
     # endregion
@@ -76,11 +74,11 @@ class TargetSnippets(CodeSnippetsTestBase):
         target.use_local_time_offset = True
         target.local_time_offset = 200.0
         target.use_terrain = True
-        # Note, if SetAzElMask is set to a type other than AZ_EL_MASK_TYPE.MASK_FILE,
+        # Note, if SetAzElMask is set to a type other than AzElMaskType.MASK_FILE,
         # the second parameter is ignored.
-        target.set_az_el_mask(AZ_EL_MASK_TYPE.MASK_FILE, maskfile)
-        target.terrain_norm = TERRAIN_NORM_TYPE.SLOPE_AZIMUTH
-        target.altitude_reference = ALTITUDE_REFERENCE_TYPE.MSL
+        target.set_az_el_mask(AzElMaskType.MASK_FILE, maskfile)
+        target.terrain_normal = TerrainNormalType.SLOPE_AZIMUTH
+        target.altitude_reference = AltitudeReferenceType.MEAN_SEA_LEVEL
         target.height_above_ground = 1472.0
 
     # endregion

@@ -29,7 +29,7 @@ class GroundVehicleSnippets(CodeSnippetsTestBase):
     def setUp(self):
         GroundVehicleSnippets.m_Object = clr.CastAs(
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-                STK_OBJECT_TYPE.GROUND_VEHICLE, GroundVehicleSnippets.m_DefaultName
+                STKObjectType.GROUND_VEHICLE, GroundVehicleSnippets.m_DefaultName
             ),
             GroundVehicle,
         )
@@ -39,7 +39,7 @@ class GroundVehicleSnippets(CodeSnippetsTestBase):
     # region TestTearDown
     def tearDown(self):
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(
-            STK_OBJECT_TYPE.GROUND_VEHICLE, GroundVehicleSnippets.m_DefaultName
+            STKObjectType.GROUND_VEHICLE, GroundVehicleSnippets.m_DefaultName
         )
         GroundVehicleSnippets.m_Object = None
 
@@ -53,7 +53,7 @@ class GroundVehicleSnippets(CodeSnippetsTestBase):
     def CreateGroundVehicleOnCurrentScenarioCentralBody(self, root: "StkObjectRoot"):
         # Create the ground vehicle
         launchVehicle: "GroundVehicle" = clr.CastAs(
-            root.current_scenario.children.new(STK_OBJECT_TYPE.GROUND_VEHICLE, "MyGroundVehicle"), GroundVehicle
+            root.current_scenario.children.new(STKObjectType.GROUND_VEHICLE, "MyGroundVehicle"), GroundVehicle
         )
 
     # endregion
@@ -64,10 +64,10 @@ class GroundVehicleSnippets(CodeSnippetsTestBase):
 
     def SetGroundVehicleToUseGreatArcPropagator(self, groundVehicle: "GroundVehicle"):
         # Set ground vehicle route to great arc
-        groundVehicle.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
+        groundVehicle.set_route_type(PropagatorType.GREAT_ARC)
 
         # Retrieve propagator interface if necessary
-        propagator: "VehiclePropagatorGreatArc" = clr.CastAs(groundVehicle.route, VehiclePropagatorGreatArc)
+        propagator: "PropagatorGreatArc" = clr.CastAs(groundVehicle.route, PropagatorGreatArc)
 
     # endregion
 
@@ -77,10 +77,10 @@ class GroundVehicleSnippets(CodeSnippetsTestBase):
 
     def SetGroundVehicleToUseStkExternalPropagator(self, groundVehicle: "GroundVehicle"):
         # Set groundVehicle route to STK External propagator
-        groundVehicle.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_STK_EXTERNAL)
+        groundVehicle.set_route_type(PropagatorType.STK_EXTERNAL)
 
         # Retrieve propagator interface if necessary
-        propagator: "VehiclePropagatorStkExternal" = clr.CastAs(groundVehicle.route, VehiclePropagatorStkExternal)
+        propagator: "PropagatorStkExternal" = clr.CastAs(groundVehicle.route, PropagatorStkExternal)
 
     # endregion
 
@@ -90,31 +90,31 @@ class GroundVehicleSnippets(CodeSnippetsTestBase):
 
     def SetGroundVehicleToUseRealtimePropagator(self, groundVehicle: "GroundVehicle"):
         # Set ground vehicle route to STK External propagator
-        groundVehicle.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_REALTIME)
+        groundVehicle.set_route_type(PropagatorType.REAL_TIME)
 
         # Retrieve propagator interface if necessary
-        propagator: "VehiclePropagatorRealtime" = clr.CastAs(groundVehicle.route, VehiclePropagatorRealtime)
+        propagator: "PropagatorRealtime" = clr.CastAs(groundVehicle.route, PropagatorRealtime)
 
     # endregion
 
     # region GetExportStkEphemerisTool
     def test_GetExportStkEphemerisTool(self):
         gv: "GroundVehicle" = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.GROUND_VEHICLE, "gv1"),
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STKObjectType.GROUND_VEHICLE, "gv1"),
             GroundVehicle,
         )
         self.GetExportStkEphemerisTool(gv)
         (IStkObject(gv)).unload()
 
     def GetExportStkEphemerisTool(self, groundVehicle: "GroundVehicle"):
-        stkEphem: "VehicleEphemerisStkExportTool" = groundVehicle.export_tools.get_ephemeris_stk_export_tool()
+        stkEphem: "VehicleEphemerisExportTool" = groundVehicle.export_tools.get_ephemeris_stk_export_tool()
 
     # endregion
 
     # region GetExportAttitudeTool
     def test_GetExportAttitudeTool(self):
         gv: "GroundVehicle" = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.GROUND_VEHICLE, "gv1"),
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STKObjectType.GROUND_VEHICLE, "gv1"),
             GroundVehicle,
         )
         self.GetExportAttitudeTool(gv)
@@ -128,15 +128,13 @@ class GroundVehicleSnippets(CodeSnippetsTestBase):
     # region GetExportPropDefTool
     def test_GetExportPropDefTool(self):
         gv: "GroundVehicle" = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.GROUND_VEHICLE, "gv1"),
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STKObjectType.GROUND_VEHICLE, "gv1"),
             GroundVehicle,
         )
         self.GetExportPropDefTool(gv)
         (IStkObject(gv)).unload()
 
     def GetExportPropDefTool(self, groundVehicle: "GroundVehicle"):
-        attExTool: "VehiclePropagationDefinitionExportTool" = (
-            groundVehicle.export_tools.get_propagator_definition_export_tool()
-        )
+        attExTool: "PropagatorDefinitionExportTool" = groundVehicle.export_tools.get_propagator_definition_export_tool()
 
     # endregion

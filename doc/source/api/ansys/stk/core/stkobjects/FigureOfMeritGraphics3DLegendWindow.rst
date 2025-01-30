@@ -18,7 +18,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics3DLegendWindow.is_visible_on_map`
+            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics3DLegendWindow.show_on_map`
               - Opt whether to display a contour legend.
             * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics3DLegendWindow.position_on_map`
               - Position where the contour legend is displayed.
@@ -38,8 +38,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: is_visible_on_map
-    :canonical: ansys.stk.core.stkobjects.FigureOfMeritGraphics3DLegendWindow.is_visible_on_map
+.. py:property:: show_on_map
+    :canonical: ansys.stk.core.stkobjects.FigureOfMeritGraphics3DLegendWindow.show_on_map
     :type: bool
 
     Opt whether to display a contour legend.

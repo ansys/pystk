@@ -24,7 +24,7 @@ Overview
               - Dimension depends on context.
             * - :py:attr:`~ansys.stk.core.stkutil.Cylindrical.z`
               - Uses Angle Dimension.
-            * - :py:attr:`~ansys.stk.core.stkutil.Cylindrical.lon`
+            * - :py:attr:`~ansys.stk.core.stkutil.Cylindrical.longitude`
               - Dimension depends on context.
 
 
@@ -52,8 +52,8 @@ Property detail
 
     Uses Angle Dimension.
 
-.. py:property:: lon
-    :canonical: ansys.stk.core.stkutil.Cylindrical.lon
+.. py:property:: longitude
+    :canonical: ansys.stk.core.stkutil.Cylindrical.longitude
     :type: typing.Any
 
     Dimension depends on context.

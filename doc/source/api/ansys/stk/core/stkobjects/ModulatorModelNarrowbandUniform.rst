@@ -9,10 +9,6 @@ ModulatorModelNarrowbandUniform
 
 .. py:currentmodule:: ModulatorModelNarrowbandUniform
 
-Overview
---------
-
-
 
 Import detail
 -------------

@@ -28,7 +28,6 @@ Overview
               - Initialize the overlay with the specified position and size.
 
 
-
 Import detail
 -------------
 
@@ -54,7 +53,7 @@ Method detail
 
         :obj:`~TextOverlay`
 
-.. py:method:: initialize_with_xy_width_height(self, font: GraphicsFont, xPixels: float, yPixels: float, widthPixels: float, heightPixels: float) -> TextOverlay
+.. py:method:: initialize_with_xy_width_height(self, font: GraphicsFont, x_pixels: float, y_pixels: float, width_pixels: float, height_pixels: float) -> TextOverlay
     :canonical: ansys.stk.core.graphics.TextOverlayFactory.initialize_with_xy_width_height
 
     Initialize the overlay with the specified x position, y position, width, and height, all specified in pixels.
@@ -62,10 +61,10 @@ Method detail
     :Parameters:
 
     **font** : :obj:`~GraphicsFont`
-    **xPixels** : :obj:`~float`
-    **yPixels** : :obj:`~float`
-    **widthPixels** : :obj:`~float`
-    **heightPixels** : :obj:`~float`
+    **x_pixels** : :obj:`~float`
+    **y_pixels** : :obj:`~float`
+    **width_pixels** : :obj:`~float`
+    **height_pixels** : :obj:`~float`
 
     :Returns:
 
@@ -86,7 +85,7 @@ Method detail
 
         :obj:`~TextOverlay`
 
-.. py:method:: initialize_with_width_height_units(self, font: GraphicsFont, width: float, widthUnit: SCREEN_OVERLAY_UNIT, height: float, heightUnit: SCREEN_OVERLAY_UNIT) -> TextOverlay
+.. py:method:: initialize_with_width_height_units(self, font: GraphicsFont, width: float, width_unit: ScreenOverlayUnit, height: float, height_unit: ScreenOverlayUnit) -> TextOverlay
     :canonical: ansys.stk.core.graphics.TextOverlayFactory.initialize_with_width_height_units
 
     Initialize the overlay with the specified position and size.
@@ -95,9 +94,9 @@ Method detail
 
     **font** : :obj:`~GraphicsFont`
     **width** : :obj:`~float`
-    **widthUnit** : :obj:`~SCREEN_OVERLAY_UNIT`
+    **width_unit** : :obj:`~ScreenOverlayUnit`
     **height** : :obj:`~float`
-    **heightUnit** : :obj:`~SCREEN_OVERLAY_UNIT`
+    **height_unit** : :obj:`~ScreenOverlayUnit`
 
     :Returns:
 

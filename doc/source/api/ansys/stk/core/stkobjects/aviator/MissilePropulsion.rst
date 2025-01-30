@@ -46,7 +46,7 @@ Property detail
 
 .. py:property:: propulsion_strategy
     :canonical: ansys.stk.core.stkobjects.aviator.MissilePropulsion.propulsion_strategy
-    :type: MISSILE_PROPULSION_STRATEGY
+    :type: MissilePropulsionStrategy
 
     Gets or sets the propulsion strategy type.
 

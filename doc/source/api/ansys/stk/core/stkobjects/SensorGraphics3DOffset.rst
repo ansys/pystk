@@ -39,11 +39,11 @@ Overview
               - Offset in the Y direction. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorGraphics3DOffset.z`
               - Offset in the Z direction. Uses Distance Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.SensorGraphics3DOffset.enable_attach_point`
+            * - :py:attr:`~ansys.stk.core.stkobjects.SensorGraphics3DOffset.enable_attachment_point`
               - Enable the use of an attach point, i.e. the place from which the sensor cone emits. If this feature is not used, the sensor cone origin is the center of the parent model.
-            * - :py:attr:`~ansys.stk.core.stkobjects.SensorGraphics3DOffset.attach_point_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.SensorGraphics3DOffset.attachment_point_name`
               - Name of the attach point.
-            * - :py:attr:`~ansys.stk.core.stkobjects.SensorGraphics3DOffset.available_attach_points`
+            * - :py:attr:`~ansys.stk.core.stkobjects.SensorGraphics3DOffset.available_attachment_points`
               - Returns available attach points.
 
 
@@ -89,20 +89,20 @@ Property detail
 
     Offset in the Z direction. Uses Distance Dimension.
 
-.. py:property:: enable_attach_point
-    :canonical: ansys.stk.core.stkobjects.SensorGraphics3DOffset.enable_attach_point
+.. py:property:: enable_attachment_point
+    :canonical: ansys.stk.core.stkobjects.SensorGraphics3DOffset.enable_attachment_point
     :type: bool
 
     Enable the use of an attach point, i.e. the place from which the sensor cone emits. If this feature is not used, the sensor cone origin is the center of the parent model.
 
-.. py:property:: attach_point_name
-    :canonical: ansys.stk.core.stkobjects.SensorGraphics3DOffset.attach_point_name
+.. py:property:: attachment_point_name
+    :canonical: ansys.stk.core.stkobjects.SensorGraphics3DOffset.attachment_point_name
     :type: str
 
     Name of the attach point.
 
-.. py:property:: available_attach_points
-    :canonical: ansys.stk.core.stkobjects.SensorGraphics3DOffset.available_attach_points
+.. py:property:: available_attachment_points
+    :canonical: ansys.stk.core.stkobjects.SensorGraphics3DOffset.available_attachment_points
     :type: list
 
     Returns available attach points.
@@ -121,28 +121,28 @@ Method detail
 
 
 
-.. py:method:: get_axis_offset_value(self, offsetType: AXIS_OFFSET) -> float
+.. py:method:: get_axis_offset_value(self, offset_type: AxisOffset) -> float
     :canonical: ansys.stk.core.stkobjects.SensorGraphics3DOffset.get_axis_offset_value
 
     Get the selected axis offset type.
 
     :Parameters:
 
-    **offsetType** : :obj:`~AXIS_OFFSET`
+    **offset_type** : :obj:`~AxisOffset`
 
     :Returns:
 
         :obj:`~float`
 
-.. py:method:: set_axis_offset_value(self, offsetType: AXIS_OFFSET, axisOffsetValue: float) -> None
+.. py:method:: set_axis_offset_value(self, offset_type: AxisOffset, axis_offset_value: float) -> None
     :canonical: ansys.stk.core.stkobjects.SensorGraphics3DOffset.set_axis_offset_value
 
     Select the axis offset type.
 
     :Parameters:
 
-    **offsetType** : :obj:`~AXIS_OFFSET`
-    **axisOffsetValue** : :obj:`~float`
+    **offset_type** : :obj:`~AxisOffset`
+    **axis_offset_value** : :obj:`~float`
 
     :Returns:
 

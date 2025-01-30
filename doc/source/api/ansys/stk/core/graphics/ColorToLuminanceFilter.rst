@@ -9,10 +9,6 @@ ColorToLuminanceFilter
 
 .. py:currentmodule:: ColorToLuminanceFilter
 
-Overview
---------
-
-
 
 Import detail
 -------------

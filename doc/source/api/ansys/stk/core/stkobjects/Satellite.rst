@@ -73,13 +73,13 @@ Overview
               - Returns the radar cross sectoin.
             * - :py:attr:`~ansys.stk.core.stkobjects.Satellite.use_terrain_in_lighting_computations`
               - Opt whether to compute lighting using terrain data.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Satellite.lighting_max_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.Satellite.lighting_maximum_step`
               - This property is deprecated. Use LightingMaxStepTerrain or LightingMaxStepCbShape as appropriate. The maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Satellite.lighting_max_step_terrain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.Satellite.lighting_maximum_step_terrain`
               - Gets or sets the maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Satellite.lighting_max_step_central_body_shape`
+            * - :py:attr:`~ansys.stk.core.stkobjects.Satellite.lighting_maximum_step_central_body_shape`
               - Gets or sets the maximum step size to use when computing lighting when UseTerrainInLightingComputations is false. Uses Time Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Satellite.get_eoir`
+            * - :py:attr:`~ansys.stk.core.stkobjects.Satellite.get_eoir_settings`
               - Get the EOIR properties of the satellite.
 
 
@@ -97,19 +97,19 @@ Property detail
 
 .. py:property:: propagator_type
     :canonical: ansys.stk.core.stkobjects.Satellite.propagator_type
-    :type: VEHICLE_PROPAGATOR_TYPE
+    :type: PropagatorType
 
     Get the type of propagator used to define the satellite's orbit.
 
 .. py:property:: propagator
     :canonical: ansys.stk.core.stkobjects.Satellite.propagator
-    :type: IVehiclePropagator
+    :type: IPropagator
 
     Get information for the propagator.
 
 .. py:property:: attitude_type
     :canonical: ansys.stk.core.stkobjects.Satellite.attitude_type
-    :type: VEHICLE_ATTITUDE
+    :type: VehicleAttitude
 
     Get the type of the satellite's attitude.
 
@@ -133,7 +133,7 @@ Property detail
 
 .. py:property:: pass_break
     :canonical: ansys.stk.core.stkobjects.Satellite.pass_break
-    :type: VehiclePassBreak
+    :type: PassBreak
 
     Get the Pass Break properties of the satellite.
 
@@ -181,7 +181,7 @@ Property detail
 
 .. py:property:: space_environment
     :canonical: ansys.stk.core.stkobjects.Satellite.space_environment
-    :type: VehicleSpaceEnvironment
+    :type: SpaceEnvironment
 
     Get the SpaceEnvironment properties of the satellite.
 
@@ -209,26 +209,26 @@ Property detail
 
     Opt whether to compute lighting using terrain data.
 
-.. py:property:: lighting_max_step
-    :canonical: ansys.stk.core.stkobjects.Satellite.lighting_max_step
+.. py:property:: lighting_maximum_step
+    :canonical: ansys.stk.core.stkobjects.Satellite.lighting_maximum_step
     :type: float
 
     This property is deprecated. Use LightingMaxStepTerrain or LightingMaxStepCbShape as appropriate. The maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
 
-.. py:property:: lighting_max_step_terrain
-    :canonical: ansys.stk.core.stkobjects.Satellite.lighting_max_step_terrain
+.. py:property:: lighting_maximum_step_terrain
+    :canonical: ansys.stk.core.stkobjects.Satellite.lighting_maximum_step_terrain
     :type: float
 
     Gets or sets the maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
 
-.. py:property:: lighting_max_step_central_body_shape
-    :canonical: ansys.stk.core.stkobjects.Satellite.lighting_max_step_central_body_shape
+.. py:property:: lighting_maximum_step_central_body_shape
+    :canonical: ansys.stk.core.stkobjects.Satellite.lighting_maximum_step_central_body_shape
     :type: float
 
     Gets or sets the maximum step size to use when computing lighting when UseTerrainInLightingComputations is false. Uses Time Dimension.
 
-.. py:property:: get_eoir
-    :canonical: ansys.stk.core.stkobjects.Satellite.get_eoir
+.. py:property:: get_eoir_settings
+    :canonical: ansys.stk.core.stkobjects.Satellite.get_eoir_settings
     :type: IEOIR
 
     Get the EOIR properties of the satellite.
@@ -238,14 +238,14 @@ Method detail
 -------------
 
 
-.. py:method:: set_propagator_type(self, ePropagator: VEHICLE_PROPAGATOR_TYPE) -> None
+.. py:method:: set_propagator_type(self, propagator: PropagatorType) -> None
     :canonical: ansys.stk.core.stkobjects.Satellite.set_propagator_type
 
     Set the propagator type.
 
     :Parameters:
 
-    **ePropagator** : :obj:`~VEHICLE_PROPAGATOR_TYPE`
+    **propagator** : :obj:`~PropagatorType`
 
     :Returns:
 
@@ -253,27 +253,27 @@ Method detail
 
 
 
-.. py:method:: set_attitude_type(self, attitude: VEHICLE_ATTITUDE) -> None
+.. py:method:: set_attitude_type(self, attitude: VehicleAttitude) -> None
     :canonical: ansys.stk.core.stkobjects.Satellite.set_attitude_type
 
     Set the attitude type.
 
     :Parameters:
 
-    **attitude** : :obj:`~VEHICLE_ATTITUDE`
+    **attitude** : :obj:`~VehicleAttitude`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_attitude_type_supported(self, attitude: VEHICLE_ATTITUDE) -> bool
+.. py:method:: is_attitude_type_supported(self, attitude: VehicleAttitude) -> bool
     :canonical: ansys.stk.core.stkobjects.Satellite.is_attitude_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **attitude** : :obj:`~VEHICLE_ATTITUDE`
+    **attitude** : :obj:`~VehicleAttitude`
 
     :Returns:
 
@@ -288,14 +288,14 @@ Method detail
 
 
 
-.. py:method:: is_propagator_type_supported(self, propagator: VEHICLE_PROPAGATOR_TYPE) -> bool
+.. py:method:: is_propagator_type_supported(self, propagator: PropagatorType) -> bool
     :canonical: ansys.stk.core.stkobjects.Satellite.is_propagator_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **propagator** : :obj:`~VEHICLE_PROPAGATOR_TYPE`
+    **propagator** : :obj:`~PropagatorType`
 
     :Returns:
 

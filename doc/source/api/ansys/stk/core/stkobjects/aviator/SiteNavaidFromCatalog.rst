@@ -28,7 +28,6 @@ Overview
               - Get the site interface.
 
 
-
 Import detail
 -------------
 
@@ -50,14 +49,14 @@ Method detail
 
         :obj:`~ICatalogNavaid`
 
-.. py:method:: set_catalog_navaid(self, pVal: ICatalogNavaid) -> None
+.. py:method:: set_catalog_navaid(self, value: ICatalogNavaid) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.SiteNavaidFromCatalog.set_catalog_navaid
 
     Set the catalog navaid.
 
     :Parameters:
 
-    **pVal** : :obj:`~ICatalogNavaid`
+    **value** : :obj:`~ICatalogNavaid`
 
     :Returns:
 

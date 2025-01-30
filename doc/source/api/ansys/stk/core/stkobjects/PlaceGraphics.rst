@@ -24,13 +24,13 @@ Overview
               - The color in which the marker and label for the object is displayed in the 2D and 3D Graphics windows.
             * - :py:attr:`~ansys.stk.core.stkobjects.PlaceGraphics.marker_style`
               - The style of the marker representing the object in the 2D Graphics window. A member of the MarkerStyle enumeration.
-            * - :py:attr:`~ansys.stk.core.stkobjects.PlaceGraphics.label_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.PlaceGraphics.show_label`
               - Display the label for the place.
             * - :py:attr:`~ansys.stk.core.stkobjects.PlaceGraphics.az_el_mask`
               - The graphics az-el mask properties for the place.
             * - :py:attr:`~ansys.stk.core.stkobjects.PlaceGraphics.contours`
               - The range contours properties for the place.
-            * - :py:attr:`~ansys.stk.core.stkobjects.PlaceGraphics.use_inst_name_label`
+            * - :py:attr:`~ansys.stk.core.stkobjects.PlaceGraphics.use_instance_name_label`
               - Use the name of the object as the label for the place.
             * - :py:attr:`~ansys.stk.core.stkobjects.PlaceGraphics.label_name`
               - Use a user-specified name as the label for the place. This does not have to correspond to the name of the object in the Object Browser.
@@ -40,7 +40,7 @@ Overview
               - The color in which the marker for the object is displayed.
             * - :py:attr:`~ansys.stk.core.stkobjects.PlaceGraphics.label_color`
               - The color in which the label for the object is displayed.
-            * - :py:attr:`~ansys.stk.core.stkobjects.PlaceGraphics.is_object_graphics_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.PlaceGraphics.show_graphics`
               - Specify whether graphics attributes of the place are visible.
             * - :py:attr:`~ansys.stk.core.stkobjects.PlaceGraphics.radar_cross_section`
               - Gets the radar cross section graphics interface.
@@ -76,8 +76,8 @@ Property detail
 
     The style of the marker representing the object in the 2D Graphics window. A member of the MarkerStyle enumeration.
 
-.. py:property:: label_visible
-    :canonical: ansys.stk.core.stkobjects.PlaceGraphics.label_visible
+.. py:property:: show_label
+    :canonical: ansys.stk.core.stkobjects.PlaceGraphics.show_label
     :type: bool
 
     Display the label for the place.
@@ -94,8 +94,8 @@ Property detail
 
     The range contours properties for the place.
 
-.. py:property:: use_inst_name_label
-    :canonical: ansys.stk.core.stkobjects.PlaceGraphics.use_inst_name_label
+.. py:property:: use_instance_name_label
+    :canonical: ansys.stk.core.stkobjects.PlaceGraphics.use_instance_name_label
     :type: bool
 
     Use the name of the object as the label for the place.
@@ -124,8 +124,8 @@ Property detail
 
     The color in which the label for the object is displayed.
 
-.. py:property:: is_object_graphics_visible
-    :canonical: ansys.stk.core.stkobjects.PlaceGraphics.is_object_graphics_visible
+.. py:property:: show_graphics
+    :canonical: ansys.stk.core.stkobjects.PlaceGraphics.show_graphics
     :type: bool
 
     Specify whether graphics attributes of the place are visible.

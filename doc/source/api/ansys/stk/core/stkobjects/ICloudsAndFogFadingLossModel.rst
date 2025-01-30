@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.ICloudsAndFogFadingLossModel.type
-    :type: CLOUDS_AND_FOG_FADING_LOSS_MODEL_TYPE
+    :type: CloudsAndFogFadingLossModelType
 
     Gets the Clouds and Fog loss model type enumeration.
 

@@ -9,10 +9,6 @@ StateTransformationFunction
 
 .. py:currentmodule:: StateTransformationFunction
 
-Overview
---------
-
-
 
 Import detail
 -------------

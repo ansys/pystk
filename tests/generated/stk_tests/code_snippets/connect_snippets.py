@@ -39,7 +39,7 @@ class ConnectSnippets(CodeSnippetsTestBase):
         self.ExecuteConnectCommand(CodeSnippetsTestBase.m_Root)
 
     def ExecuteConnectCommand(self, root: "StkObjectRoot"):
-        result: "ExecCmdResult" = root.execute_command("New / */Satellite JeffSAT")
+        result: "ExecuteCommandResult" = root.execute_command("New / */Satellite JeffSAT")
 
     # endregion
 
@@ -52,18 +52,18 @@ class ConnectSnippets(CodeSnippetsTestBase):
         connectCommands = ["New / */Satellite MySatellite", "Graphics */Satellite/MySatellite SetColor red"]
 
         # ExecuteMultipleCommands expect a one dimensional array of Connect commands
-        result: "ExecMultiCmdResult" = root.execute_multiple_commands(
-            connectCommands, EXEC_MULTI_CMD_RESULT_ACTION.EXCEPTION_ON_ERROR
+        result: "ExecuteMultipleCommandsResult" = root.execute_multiple_commands(
+            connectCommands, ExecuteMultipleCommandsMode.EXCEPTION_ON_ERROR
         )
 
     # endregion
 
     # region ExtractDataFromExecConnectResult
     def test_ExtractDataFromExecConnectResult(self):
-        result: "ExecCmdResult" = CodeSnippetsTestBase.m_Root.execute_command("GetSTKVersion /")
+        result: "ExecuteCommandResult" = CodeSnippetsTestBase.m_Root.execute_command("GetSTKVersion /")
         self.ExtractDataFromExecConnectResult(result)
 
-    def ExtractDataFromExecConnectResult(self, result: "ExecCmdResult"):
+    def ExtractDataFromExecConnectResult(self, result: "ExecuteCommandResult"):
         if result.is_succeeded:
             i: int = 0
             while i < result.count:
@@ -77,12 +77,12 @@ class ConnectSnippets(CodeSnippetsTestBase):
     def test_ExtractDataFromMultiExecConnectResult(self):
         obj = ["GetSTKVersion /"]
 
-        result: "ExecMultiCmdResult" = CodeSnippetsTestBase.m_Root.execute_multiple_commands(
-            obj, EXEC_MULTI_CMD_RESULT_ACTION.CONTINUE_ON_ERROR
+        result: "ExecuteMultipleCommandsResult" = CodeSnippetsTestBase.m_Root.execute_multiple_commands(
+            obj, ExecuteMultipleCommandsMode.CONTINUE_ON_ERROR
         )
         self.ExtractDataFromMultiExecConnectResult(result)
 
-    def ExtractDataFromMultiExecConnectResult(self, result: "ExecMultiCmdResult"):
+    def ExtractDataFromMultiExecConnectResult(self, result: "ExecuteMultipleCommandsResult"):
         i: int = 0
         while i < result.count:
             if result[i].is_succeeded:

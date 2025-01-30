@@ -9,10 +9,6 @@ StateCalcDeltaV
 
 .. py:currentmodule:: StateCalcDeltaV
 
-Overview
---------
-
-
 
 Import detail
 -------------

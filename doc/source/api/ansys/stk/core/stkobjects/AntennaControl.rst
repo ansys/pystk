@@ -55,7 +55,7 @@ Property detail
 
 .. py:property:: reference_type
     :canonical: ansys.stk.core.stkobjects.AntennaControl.reference_type
-    :type: ANTENNA_CONTROL_REFERENCE_TYPE
+    :type: AntennaControlReferenceType
 
     Gets or sets the antenna control reference type.
 
@@ -99,14 +99,14 @@ Method detail
 
 
 
-.. py:method:: set_embedded_model(self, modelName: str) -> None
+.. py:method:: set_embedded_model(self, model_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.AntennaControl.set_embedded_model
 
     Set the current antenna model by name.
 
     :Parameters:
 
-    **modelName** : :obj:`~str`
+    **model_name** : :obj:`~str`
 
     :Returns:
 

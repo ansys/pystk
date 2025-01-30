@@ -41,7 +41,7 @@ Overview
               - Distance threshold.
             * - :py:attr:`~ansys.stk.core.stkobjects.AdvCAT.use_range_measure`
               - Enable/disable use range measure.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AdvCAT.display_ack_when_done`
+            * - :py:attr:`~ansys.stk.core.stkobjects.AdvCAT.display_acknowledgement_when_done`
               - Enable/disable displaying acknowledgement when done.
             * - :py:attr:`~ansys.stk.core.stkobjects.AdvCAT.primary_default_class`
               - Determine Ellipsoid Sizing method class.
@@ -79,7 +79,7 @@ Property detail
 
 .. py:property:: time_period
     :canonical: ansys.stk.core.stkobjects.AdvCAT.time_period
-    :type: ITimeToolEventIntervalSmartInterval
+    :type: ITimeToolTimeIntervalSmartInterval
 
     Get the time period for the close approach analysis.
 
@@ -95,21 +95,21 @@ Property detail
 
     Enable/disable use range measure.
 
-.. py:property:: display_ack_when_done
-    :canonical: ansys.stk.core.stkobjects.AdvCAT.display_ack_when_done
+.. py:property:: display_acknowledgement_when_done
+    :canonical: ansys.stk.core.stkobjects.AdvCAT.display_acknowledgement_when_done
     :type: bool
 
     Enable/disable displaying acknowledgement when done.
 
 .. py:property:: primary_default_class
     :canonical: ansys.stk.core.stkobjects.AdvCAT.primary_default_class
-    :type: ADV_CAT_ELLIPSOID_CLASS
+    :type: AdvCATEllipsoidClassType
 
     Determine Ellipsoid Sizing method class.
 
 .. py:property:: advanced
     :canonical: ansys.stk.core.stkobjects.AdvCAT.advanced
-    :type: AdvCATAdvanced
+    :type: AdvCATAdvancedSettings
 
     Get AdvCAT advanced properties.
 
@@ -139,7 +139,7 @@ Property detail
 
 .. py:property:: secondary_default_class
     :canonical: ansys.stk.core.stkobjects.AdvCAT.secondary_default_class
-    :type: ADV_CAT_ELLIPSOID_CLASS
+    :type: AdvCATEllipsoidClassType
 
     Determine Ellipsoid Sizing method class.
 

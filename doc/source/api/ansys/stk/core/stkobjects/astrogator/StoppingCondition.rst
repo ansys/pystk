@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StoppingCondition.copy_user_calc_object_to_clipboard`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StoppingCondition.copy_user_calculation_object_to_clipboard`
               - Copy the user-defined stopping condition calc object to the clipboard.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StoppingCondition.paste_user_calc_object_from_clipboard`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StoppingCondition.paste_user_calculation_object_from_clipboard`
               - Replace the user-defined stopping condition calc object with the calc object in the clipboard.
 
     .. tab-item:: Properties
@@ -47,9 +47,9 @@ Overview
               - Gets or sets the automatic sequence to trigger if the highlighted stopping condition is satisfied.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StoppingCondition.constraints`
               - Further conditions that must be met in order for the stopping condition to be deemed satisfied.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StoppingCondition.user_calc_object_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StoppingCondition.user_calculation_object_name`
               - User Calc Object - a User Calculation Object for the highlighted stopping condition. For user-defined stopping conditions, use this field to specify what kind of value you want to stop on.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StoppingCondition.user_calc_object`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StoppingCondition.user_calculation_object`
               - A User Calculation Object for the highlighted stopping condition. For user-defined stopping conditions, use this field to specify what kind of value you want to stop on.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StoppingCondition.central_body_name`
               - Gets or sets the central body. The default central body of a stopping condition is the Earth.
@@ -61,7 +61,7 @@ Overview
               - Get the dimension of the stopping condition.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StoppingCondition.reference_point`
               - Gets or sets the reference point used for calculation.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StoppingCondition.user_calc_object_link_embed_control`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StoppingCondition.user_calculation_object_link_embed_control`
               - Gets the link / embed controller for managing the user calc. object.
 
 
@@ -125,14 +125,14 @@ Property detail
 
     Further conditions that must be met in order for the stopping condition to be deemed satisfied.
 
-.. py:property:: user_calc_object_name
-    :canonical: ansys.stk.core.stkobjects.astrogator.StoppingCondition.user_calc_object_name
+.. py:property:: user_calculation_object_name
+    :canonical: ansys.stk.core.stkobjects.astrogator.StoppingCondition.user_calculation_object_name
     :type: str
 
     User Calc Object - a User Calculation Object for the highlighted stopping condition. For user-defined stopping conditions, use this field to specify what kind of value you want to stop on.
 
-.. py:property:: user_calc_object
-    :canonical: ansys.stk.core.stkobjects.astrogator.StoppingCondition.user_calc_object
+.. py:property:: user_calculation_object
+    :canonical: ansys.stk.core.stkobjects.astrogator.StoppingCondition.user_calculation_object
     :type: IComponentInfo
 
     A User Calculation Object for the highlighted stopping condition. For user-defined stopping conditions, use this field to specify what kind of value you want to stop on.
@@ -145,7 +145,7 @@ Property detail
 
 .. py:property:: criterion
     :canonical: ansys.stk.core.stkobjects.astrogator.StoppingCondition.criterion
-    :type: CRITERION
+    :type: Criterion
 
     Specifies the direction from which the stopping condition value must be achieved.
 
@@ -167,8 +167,8 @@ Property detail
 
     Gets or sets the reference point used for calculation.
 
-.. py:property:: user_calc_object_link_embed_control
-    :canonical: ansys.stk.core.stkobjects.astrogator.StoppingCondition.user_calc_object_link_embed_control
+.. py:property:: user_calculation_object_link_embed_control
+    :canonical: ansys.stk.core.stkobjects.astrogator.StoppingCondition.user_calculation_object_link_embed_control
     :type: IComponentLinkEmbedControl
 
     Gets the link / embed controller for managing the user calc. object.
@@ -204,8 +204,8 @@ Method detail
 
 
 
-.. py:method:: copy_user_calc_object_to_clipboard(self) -> None
-    :canonical: ansys.stk.core.stkobjects.astrogator.StoppingCondition.copy_user_calc_object_to_clipboard
+.. py:method:: copy_user_calculation_object_to_clipboard(self) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.StoppingCondition.copy_user_calculation_object_to_clipboard
 
     Copy the user-defined stopping condition calc object to the clipboard.
 
@@ -213,8 +213,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: paste_user_calc_object_from_clipboard(self) -> None
-    :canonical: ansys.stk.core.stkobjects.astrogator.StoppingCondition.paste_user_calc_object_from_clipboard
+.. py:method:: paste_user_calculation_object_from_clipboard(self) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.StoppingCondition.paste_user_calculation_object_from_clipboard
 
     Replace the user-defined stopping condition calc object with the calc object in the clipboard.
 

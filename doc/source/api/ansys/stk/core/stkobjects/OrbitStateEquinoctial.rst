@@ -60,7 +60,7 @@ Property detail
 
 .. py:property:: coordinate_system_type
     :canonical: ansys.stk.core.stkobjects.OrbitStateEquinoctial.coordinate_system_type
-    :type: COORDINATE_SYSTEM
+    :type: CoordinateSystem
 
     Gets or sets the coordinate system being used.
 
@@ -72,7 +72,7 @@ Property detail
 
 .. py:property:: size_shape_type
     :canonical: ansys.stk.core.stkobjects.OrbitStateEquinoctial.size_shape_type
-    :type: EQUINOCTIAL_SIZE_SHAPE
+    :type: EquinoctialSizeShape
 
     Gets or sets the orbit size option can be Mean Motion or Semimajor Axis.
 
@@ -114,7 +114,7 @@ Property detail
 
 .. py:property:: formulation
     :canonical: ansys.stk.core.stkobjects.OrbitStateEquinoctial.formulation
-    :type: EQUINOCTIAL_FORMULATION
+    :type: EquinoctialFormulation
 
     Gets or sets the Formulation can be Retrograde or Posigrade.
 
@@ -126,7 +126,7 @@ Property detail
 
 .. py:property:: state_epoch
     :canonical: ansys.stk.core.stkobjects.OrbitStateEquinoctial.state_epoch
-    :type: ITimeToolEventSmartEpoch
+    :type: ITimeToolInstantSmartEpoch
 
     Smart epoch component allows the user to configure the state epoch explicitly or implicitly (using a pre-defined or custom time instant component).
 

@@ -26,7 +26,6 @@ Overview
               - Initialize a text batch primitive with the specified font and setHint, optimized for 2d screen space rendering.
 
 
-
 Import detail
 -------------
 
@@ -52,7 +51,7 @@ Method detail
 
         :obj:`~TextBatchPrimitive`
 
-.. py:method:: initialize_with_graphics_font_and_set_hint(self, font: GraphicsFont, setHint: SET_HINT) -> TextBatchPrimitive
+.. py:method:: initialize_with_graphics_font_and_set_hint(self, font: GraphicsFont, set_hint: SetHint) -> TextBatchPrimitive
     :canonical: ansys.stk.core.graphics.TextBatchPrimitiveFactory.initialize_with_graphics_font_and_set_hint
 
     Initialize a marker batch primitive with the specified font and setHint.
@@ -60,13 +59,13 @@ Method detail
     :Parameters:
 
     **font** : :obj:`~GraphicsFont`
-    **setHint** : :obj:`~SET_HINT`
+    **set_hint** : :obj:`~SetHint`
 
     :Returns:
 
         :obj:`~TextBatchPrimitive`
 
-.. py:method:: initialize_with_graphics_font_and_set_hint_2d(self, font: GraphicsFont, setHint: SET_HINT, renderInScreenSpace: bool) -> TextBatchPrimitive
+.. py:method:: initialize_with_graphics_font_and_set_hint_2d(self, font: GraphicsFont, set_hint: SetHint, render_in_screen_space: bool) -> TextBatchPrimitive
     :canonical: ansys.stk.core.graphics.TextBatchPrimitiveFactory.initialize_with_graphics_font_and_set_hint_2d
 
     Initialize a text batch primitive with the specified font and setHint, optimized for 2d screen space rendering.
@@ -74,8 +73,8 @@ Method detail
     :Parameters:
 
     **font** : :obj:`~GraphicsFont`
-    **setHint** : :obj:`~SET_HINT`
-    **renderInScreenSpace** : :obj:`~bool`
+    **set_hint** : :obj:`~SetHint`
+    **render_in_screen_space** : :obj:`~bool`
 
     :Returns:
 

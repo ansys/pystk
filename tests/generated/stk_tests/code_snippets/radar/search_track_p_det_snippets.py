@@ -19,10 +19,10 @@ class SearchTrackPDetSnippets(CodeSnippetsTestBase):
     @staticmethod
     def setUpClass():
         CodeSnippetsTestBase.Initialize()
-        CodeSnippetsTestBase.m_Root.unit_preferences.set_current_unit("Angle", "deg")
-        CodeSnippetsTestBase.m_Root.unit_preferences.set_current_unit("Distance", "km")
-        CodeSnippetsTestBase.m_Root.unit_preferences.set_current_unit("Power", "dBW")
-        CodeSnippetsTestBase.m_Root.unit_preferences.set_current_unit("Ratio", "dB")
+        CodeSnippetsTestBase.m_Root.units_preferences.set_current_unit("Angle", "deg")
+        CodeSnippetsTestBase.m_Root.units_preferences.set_current_unit("Distance", "km")
+        CodeSnippetsTestBase.m_Root.units_preferences.set_current_unit("Power", "dBW")
+        CodeSnippetsTestBase.m_Root.units_preferences.set_current_unit("Ratio", "dB")
 
     # endregion
 
@@ -37,32 +37,32 @@ class SearchTrackPDetSnippets(CodeSnippetsTestBase):
     def setUp(self):
         scenario: "IStkObject" = CodeSnippetsTestBase.m_Root.current_scenario
         SearchTrackPDetSnippets.m_Facility = scenario.children.new(
-            STK_OBJECT_TYPE.FACILITY, SearchTrackPDetSnippets.m_DefaultFacilityName
+            STKObjectType.FACILITY, SearchTrackPDetSnippets.m_DefaultFacilityName
         )
         SearchTrackPDetSnippets.m_Radar = clr.CastAs(
             SearchTrackPDetSnippets.m_Facility.children.new(
-                STK_OBJECT_TYPE.RADAR, SearchTrackPDetSnippets.m_DefaultRadarName
+                STKObjectType.RADAR, SearchTrackPDetSnippets.m_DefaultRadarName
             ),
             Radar,
         )
         SearchTrackPDetSnippets.m_TargetAircraft = clr.CastAs(
-            scenario.children.new(STK_OBJECT_TYPE.AIRCRAFT, SearchTrackPDetSnippets.m_DefaultTargetName), Aircraft
+            scenario.children.new(STKObjectType.AIRCRAFT, SearchTrackPDetSnippets.m_DefaultTargetName), Aircraft
         )
-        SearchTrackPDetSnippets.m_TargetAircraft.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
-        propagator: "VehiclePropagatorGreatArc" = clr.CastAs(
-            SearchTrackPDetSnippets.m_TargetAircraft.route, VehiclePropagatorGreatArc
+        SearchTrackPDetSnippets.m_TargetAircraft.set_route_type(PropagatorType.GREAT_ARC)
+        propagator: "PropagatorGreatArc" = clr.CastAs(
+            SearchTrackPDetSnippets.m_TargetAircraft.route, PropagatorGreatArc
         )
         propagator.arc_granularity = 51.333
 
         # Set Ref type to WayPtAltRefTerrain and retreive VehicleWaypointAltitudeReferenceTerrain interface
-        propagator.set_altitude_reference_type(VEHICLE_ALTITUDE_REFERENCE.WAYPOINT_ALTITUDE_REFERENCE_TERRAIN)
+        propagator.set_altitude_reference_type(VehicleAltitudeReference.TERRAIN)
         altRef: "VehicleWaypointAltitudeReferenceTerrain" = clr.CastAs(
             propagator.altitude_reference, VehicleWaypointAltitudeReferenceTerrain
         )
         altRef.granularity = 51.33
-        altRef.interpolation_method = VEHICLE_WAYPOINT_INTERPOLATION_METHOD.WAYPOINT_ELLIPSOID_HEIGHT
+        altRef.interpolation_method = VehicleWaypointInterpolationMethod.ELLIPSOID_HEIGHT
 
-        propagator.method = VEHICLE_WAYPOINT_COMP_METHOD.DETERMINE_TIME_ACC_FROM_VEL
+        propagator.method = VehicleWaypointComputationMethod.DETERMINE_TIME_ACCELERATION_FROM_VELOCITY
 
         # Add waypoints
         point1: "VehicleWaypointsElement" = propagator.waypoints.add()
@@ -85,17 +85,17 @@ class SearchTrackPDetSnippets(CodeSnippetsTestBase):
     # region TestTearDown
     def tearDown(self):
         SearchTrackPDetSnippets.m_Facility.children.unload(
-            STK_OBJECT_TYPE.RADAR, SearchTrackPDetSnippets.m_DefaultRadarName
+            STKObjectType.RADAR, SearchTrackPDetSnippets.m_DefaultRadarName
         )
         SearchTrackPDetSnippets.m_Radar = None
 
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(
-            STK_OBJECT_TYPE.FACILITY, SearchTrackPDetSnippets.m_DefaultFacilityName
+            STKObjectType.FACILITY, SearchTrackPDetSnippets.m_DefaultFacilityName
         )
         SearchTrackPDetSnippets.m_Facility = None
 
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(
-            STK_OBJECT_TYPE.AIRCRAFT, SearchTrackPDetSnippets.m_DefaultTargetName
+            STKObjectType.AIRCRAFT, SearchTrackPDetSnippets.m_DefaultTargetName
         )
         SearchTrackPDetSnippets.m_TargetAircraft = None
 
@@ -122,9 +122,7 @@ class SearchTrackPDetSnippets(CodeSnippetsTestBase):
         monostaticModel: "RadarModelMonostatic" = clr.CastAs(radar.model, RadarModelMonostatic)
 
         # Orient the radar antenna in the direction of the target
-        monostaticModel.antenna_control.embedded_model_orientation.assign_az_el(
-            50.9, 36.8, AZ_EL_ABOUT_BORESIGHT.ROTATE
-        )
+        monostaticModel.antenna_control.embedded_model_orientation.assign_az_el(50.9, 36.8, AzElAboutBoresight.ROTATE)
 
         # Set the radar antenna model to parabolic
         monostaticModel.antenna_control.set_embedded_model("Parabolic")
@@ -133,7 +131,7 @@ class SearchTrackPDetSnippets(CodeSnippetsTestBase):
         )
 
         # Give the parabolic antenna a 2 deg beamwidth;
-        parabolic.input_type = ANTENNA_MODEL_INPUT_TYPE.BEAMWIDTH
+        parabolic.input_type = AntennaModelInputType.BEAMWIDTH
         parabolic.beamwidth = 2.0
 
         # Put the monostatic radar model in Search/Track mode
@@ -143,11 +141,11 @@ class SearchTrackPDetSnippets(CodeSnippetsTestBase):
         )
 
         # Set the waveform type to fixed prf
-        searchTrackMode.set_waveform_type(RADAR_WAVEFORM_SEARCH_TRACK_TYPE.FIXED_PRF)
+        searchTrackMode.set_waveform_type(RadarWaveformSearchTrackType.FIXED_PRF)
         fixedPrf: "RadarWaveformMonostaticSearchTrackFixedPRF" = clr.CastAs(
             searchTrackMode.waveform, RadarWaveformMonostaticSearchTrackFixedPRF
         )
-        fixedPrf.pulse_definition.prf = 0.002  # 2 kHz
+        fixedPrf.pulse_definition.pulse_repetition_frequency = 0.002  # 2 kHz
 
         # Set the pulse width to 1e-8 sec
         fixedPrf.pulse_definition.pulse_width = 1e-08  # sec
@@ -156,14 +154,14 @@ class SearchTrackPDetSnippets(CodeSnippetsTestBase):
         fixedPrf.pulse_definition.number_of_pulses = 25
 
         # Set the pulse integration strategy to goal SNR
-        fixedPrf.pulse_integration_type = RADAR_PULSE_INTEGRATION_TYPE.GOAL_SNR
+        fixedPrf.pulse_integration_type = RadarPulseIntegrationType.GOAL_SNR
         pulseIntGoalSNR: "RadarPulseIntegrationGoalSNR" = clr.CastAs(
             fixedPrf.pulse_integration, RadarPulseIntegrationGoalSNR
         )
         pulseIntGoalSNR.snr = 40.0  # dB
 
         # Set the transmit frequency
-        monostaticModel.transmitter.frequency_specification = RADAR_FREQUENCY_SPEC.FREQUENCY
+        monostaticModel.transmitter.frequency_specification = RadarFrequencySpecificationType.FREQUENCY
         monostaticModel.transmitter.frequency = 2.1  # GHz
 
         # Set the transmit power
@@ -174,11 +172,11 @@ class SearchTrackPDetSnippets(CodeSnippetsTestBase):
         monostaticModel.receiver.rain_outage_percent = 0.001
 
         # Enable the receiver system noise temperature computation.
-        monostaticModel.receiver.system_noise_temperature.compute_type = NOISE_TEMP_COMPUTE_TYPE.CALCULATE
+        monostaticModel.receiver.system_noise_temperature.compute_type = NoiseTemperatureComputeType.CALCULATE
 
         # Enable the antenna noise temperature computation
         monostaticModel.receiver.system_noise_temperature.antenna_noise_temperature.compute_type = (
-            NOISE_TEMP_COMPUTE_TYPE.CALCULATE
+            NoiseTemperatureComputeType.CALCULATE
         )
         monostaticModel.receiver.system_noise_temperature.antenna_noise_temperature.use_rain = True
 
@@ -196,13 +194,13 @@ class SearchTrackPDetSnippets(CodeSnippetsTestBase):
         constValRcs.constant_value = 0.5  # dBsm
 
         # Create an access object for the access between the radar and target
-        radarAccess: "StkAccess" = rdrAsStkObject.get_access_to_object(tgtAsStkObject)
+        radarAccess: "Access" = rdrAsStkObject.get_access_to_object(tgtAsStkObject)
 
         # Compute access
         radarAccess.compute_access()
 
         # Get the access intervals
-        accessIntervals: "IntervalCollection" = radarAccess.computed_access_interval_times
+        accessIntervals: "TimeIntervalCollection" = radarAccess.computed_access_interval_times
 
         # Extract the access intervals and the range information for each access interval
         dataPrvElements = ["Time", "S/T SNR1", "S/T PDet1", "S/T Integrated SNR", "S/T Integrated PDet"]
@@ -218,7 +216,7 @@ class SearchTrackPDetSnippets(CodeSnippetsTestBase):
 
             (startTime, stopTime) = accessIntervals.get_interval(index0)
 
-            result: "DataProviderResult" = dp.exec_elements(startTime, stopTime, 60, dataPrvElements)
+            result: "DataProviderResult" = dp.execute_elements(startTime, stopTime, 60, dataPrvElements)
 
             timeValues = result.data_sets.get_data_set_by_name("Time").get_values()
             snr1 = result.data_sets.get_data_set_by_name("S/T SNR1").get_values()

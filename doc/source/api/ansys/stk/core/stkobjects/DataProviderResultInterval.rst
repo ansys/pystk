@@ -74,28 +74,28 @@ Method detail
 
 
 
-.. py:method:: threshold_crossings(self, elemName: str, threshold: typing.Any) -> list
+.. py:method:: threshold_crossings(self, elem_name: str, threshold: typing.Any) -> list
     :canonical: ansys.stk.core.stkobjects.DataProviderResultInterval.threshold_crossings
 
     Return a two-dimensional array containing time and direction data (negative for decreasing). The DataSets property must contain the Time dataset for this method to work correctly.
 
     :Parameters:
 
-    **elemName** : :obj:`~str`
+    **elem_name** : :obj:`~str`
     **threshold** : :obj:`~typing.Any`
 
     :Returns:
 
         :obj:`~list`
 
-.. py:method:: multiple_threshold_crossings(self, elemName: str, thresholds: list) -> list
+.. py:method:: multiple_threshold_crossings(self, elem_name: str, thresholds: list) -> list
     :canonical: ansys.stk.core.stkobjects.DataProviderResultInterval.multiple_threshold_crossings
 
     Return an array of two-dimensional arrays.  Each two-dimensional array contains start and stop times based on the boundaries passed in. The DataSets property must contain the Time dataset for this method to work correctly.
 
     :Parameters:
 
-    **elemName** : :obj:`~str`
+    **elem_name** : :obj:`~str`
     **thresholds** : :obj:`~list`
 
     :Returns:

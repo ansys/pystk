@@ -18,9 +18,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.IProvideSpatialInfo.get_spatial_info`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IProvideSpatialInfo.get_spatial_information`
               - Return the spatial information for an object.
-
 
 Import detail
 -------------
@@ -34,8 +33,8 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: get_spatial_info(self, recycle: bool) -> VehicleSpatialInfo
-    :canonical: ansys.stk.core.stkobjects.IProvideSpatialInfo.get_spatial_info
+.. py:method:: get_spatial_information(self, recycle: bool) -> VehicleSpatialInformation
+    :canonical: ansys.stk.core.stkobjects.IProvideSpatialInfo.get_spatial_information
 
     Return the spatial information for an object.
 
@@ -45,5 +44,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~VehicleSpatialInfo`
+        :obj:`~VehicleSpatialInformation`
 

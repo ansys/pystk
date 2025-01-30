@@ -53,7 +53,7 @@ Property detail
 
 .. py:property:: target_position_vel_type
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVel.target_position_vel_type
-    :type: TARGET_POSITION_VEL_TYPE
+    :type: TargetPositionVelType
 
     Gets or sets the target pos vel type.
 

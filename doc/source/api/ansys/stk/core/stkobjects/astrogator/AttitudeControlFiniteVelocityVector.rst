@@ -40,7 +40,7 @@ Property detail
 
 .. py:property:: attitude_update
     :canonical: ansys.stk.core.stkobjects.astrogator.AttitudeControlFiniteVelocityVector.attitude_update
-    :type: ATTITUDE_UPDATE
+    :type: AttitudeUpdate
 
     How and when the attitude will be updated.
 

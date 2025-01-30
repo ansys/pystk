@@ -77,7 +77,7 @@ Property detail
 
 .. py:property:: refraction
     :canonical: ansys.stk.core.stkobjects.Radar.refraction
-    :type: SENSOR_REFRACTION_TYPE
+    :type: SensorRefractionType
 
     Refraction method, a member of the AgESnRefractionType enumeration.
 
@@ -122,14 +122,14 @@ Method detail
 -------------
 
 
-.. py:method:: set_model(self, modelName: str) -> None
+.. py:method:: set_model(self, model_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.Radar.set_model
 
     Set the current radar model by name.
 
     :Parameters:
 
-    **modelName** : :obj:`~str`
+    **model_name** : :obj:`~str`
 
     :Returns:
 
@@ -138,14 +138,14 @@ Method detail
 
 
 
-.. py:method:: is_refraction_type_supported(self, model: SENSOR_REFRACTION_TYPE) -> bool
+.. py:method:: is_refraction_type_supported(self, model: SensorRefractionType) -> bool
     :canonical: ansys.stk.core.stkobjects.Radar.is_refraction_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **model** : :obj:`~SENSOR_REFRACTION_TYPE`
+    **model** : :obj:`~SensorRefractionType`
 
     :Returns:
 

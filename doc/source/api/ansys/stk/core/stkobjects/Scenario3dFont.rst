@@ -59,7 +59,7 @@ Property detail
 
 .. py:property:: point_size
     :canonical: ansys.stk.core.stkobjects.Scenario3dFont.point_size
-    :type: SCENARIO_3D_POINT_SIZE
+    :type: Scenario3dPointSize
 
     Font size in points.
 

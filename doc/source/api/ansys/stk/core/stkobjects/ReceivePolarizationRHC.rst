@@ -9,10 +9,6 @@ ReceivePolarizationRHC
 
 .. py:currentmodule:: ReceivePolarizationRHC
 
-Overview
---------
-
-
 
 Import detail
 -------------

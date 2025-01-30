@@ -41,15 +41,15 @@ Overview
               - Gets the current filter model.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelSimple.pre_receive_gains_losses`
               - Gets the collection of additional pre-receive gains and losses.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelSimple.pre_demod_gains_losses`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelSimple.pre_demodulator_gains_losses`
               - Gets the collection of additional pre-demod gains and losses.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelSimple.link_margin`
               - Gets the interface for configuring the link margin computation parameters.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelSimple.auto_scale_bandwidth`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelSimple.scale_bandwidth_automatically`
               - Gets or set the auto scale bandwidth option.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelSimple.bandwidth`
               - Gets or set the bandwidth.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelSimple.auto_select_demodulator`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelSimple.select_demodulator_automatically`
               - Gets or set the auto select demodulator option.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelSimple.supported_demodulators`
               - Gets an array of supported demodulator model names.
@@ -65,7 +65,7 @@ Overview
               - Gets or sets the enable polarization option.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelSimple.polarization`
               - Gets the polarization.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelSimple.auto_track_frequency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelSimple.track_frequency_automatically`
               - Gets or set the auto track frequency option.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelSimple.frequency`
               - Gets or set the frequency.
@@ -111,8 +111,8 @@ Property detail
 
     Gets the collection of additional pre-receive gains and losses.
 
-.. py:property:: pre_demod_gains_losses
-    :canonical: ansys.stk.core.stkobjects.ReceiverModelSimple.pre_demod_gains_losses
+.. py:property:: pre_demodulator_gains_losses
+    :canonical: ansys.stk.core.stkobjects.ReceiverModelSimple.pre_demodulator_gains_losses
     :type: AdditionalGainLossCollection
 
     Gets the collection of additional pre-demod gains and losses.
@@ -123,8 +123,8 @@ Property detail
 
     Gets the interface for configuring the link margin computation parameters.
 
-.. py:property:: auto_scale_bandwidth
-    :canonical: ansys.stk.core.stkobjects.ReceiverModelSimple.auto_scale_bandwidth
+.. py:property:: scale_bandwidth_automatically
+    :canonical: ansys.stk.core.stkobjects.ReceiverModelSimple.scale_bandwidth_automatically
     :type: bool
 
     Gets or set the auto scale bandwidth option.
@@ -135,8 +135,8 @@ Property detail
 
     Gets or set the bandwidth.
 
-.. py:property:: auto_select_demodulator
-    :canonical: ansys.stk.core.stkobjects.ReceiverModelSimple.auto_select_demodulator
+.. py:property:: select_demodulator_automatically
+    :canonical: ansys.stk.core.stkobjects.ReceiverModelSimple.select_demodulator_automatically
     :type: bool
 
     Gets or set the auto select demodulator option.
@@ -183,8 +183,8 @@ Property detail
 
     Gets the polarization.
 
-.. py:property:: auto_track_frequency
-    :canonical: ansys.stk.core.stkobjects.ReceiverModelSimple.auto_track_frequency
+.. py:property:: track_frequency_automatically
+    :canonical: ansys.stk.core.stkobjects.ReceiverModelSimple.track_frequency_automatically
     :type: bool
 
     Gets or set the auto track frequency option.
@@ -259,14 +259,14 @@ Method detail
 
 
 
-.. py:method:: set_polarization_type(self, val: POLARIZATION_TYPE) -> None
+.. py:method:: set_polarization_type(self, value: PolarizationType) -> None
     :canonical: ansys.stk.core.stkobjects.ReceiverModelSimple.set_polarization_type
 
     Set the current polarization type.
 
     :Parameters:
 
-    **val** : :obj:`~POLARIZATION_TYPE`
+    **value** : :obj:`~PolarizationType`
 
     :Returns:
 

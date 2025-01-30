@@ -35,7 +35,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleTargetPointingIntervalCollection.count`
               - Returns the number of elements in a collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleTargetPointingIntervalCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleTargetPointingIntervalCollection._new_enum`
               - Returns an enumerator that can iterate through the collection.
 
 
@@ -57,8 +57,8 @@ Property detail
 
     Returns the number of elements in a collection.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.VehicleTargetPointingIntervalCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.VehicleTargetPointingIntervalCollection._new_enum
     :type: EnumeratorProxy
 
     Returns an enumerator that can iterate through the collection.
@@ -68,7 +68,7 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, index: int) -> VehicleScheduleTimesElement
+.. py:method:: item(self, index: int) -> AttitudeScheduleTimesElement
     :canonical: ansys.stk.core.stkobjects.VehicleTargetPointingIntervalCollection.item
 
     Given an index, returns an element in the collection.
@@ -79,7 +79,7 @@ Method detail
 
     :Returns:
 
-        :obj:`~VehicleScheduleTimesElement`
+        :obj:`~AttitudeScheduleTimesElement`
 
 
 .. py:method:: remove_at(self, index: int) -> None
@@ -104,17 +104,17 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, startTime: typing.Any, stopTime: typing.Any) -> VehicleScheduleTimesElement
+.. py:method:: add(self, start_time: typing.Any, stop_time: typing.Any) -> AttitudeScheduleTimesElement
     :canonical: ansys.stk.core.stkobjects.VehicleTargetPointingIntervalCollection.add
 
     Add a new element to the collection. Start/Stop Times use DateFormat Dimension.
 
     :Parameters:
 
-    **startTime** : :obj:`~typing.Any`
-    **stopTime** : :obj:`~typing.Any`
+    **start_time** : :obj:`~typing.Any`
+    **stop_time** : :obj:`~typing.Any`
 
     :Returns:
 
-        :obj:`~VehicleScheduleTimesElement`
+        :obj:`~AttitudeScheduleTimesElement`
 

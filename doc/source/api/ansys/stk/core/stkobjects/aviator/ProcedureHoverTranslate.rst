@@ -77,13 +77,13 @@ Property detail
 
 .. py:property:: heading_mode
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHoverTranslate.heading_mode
-    :type: VTOL_HEADING_MODE
+    :type: VTOLHeadingMode
 
     Gets or sets the heading mode for the aircraft.
 
 .. py:property:: final_heading_mode
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHoverTranslate.final_heading_mode
-    :type: VTOL_FINAL_HEADING_MODE
+    :type: VTOLFinalHeadingMode
 
     Get the mode to define the heading at the end of the hover.
 
@@ -107,19 +107,19 @@ Property detail
 
 .. py:property:: final_heading_rate
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHoverTranslate.final_heading_rate
-    :type: VTOL_RATE_MODE
+    :type: VTOLRateMode
 
     Gets or sets the options to define the heading rate of the aircraft at the end of the procedure.
 
 .. py:property:: final_course_mode
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHoverTranslate.final_course_mode
-    :type: VTOL_TRANSLATION_FINAL_COURSE_MODE
+    :type: VTOLTranslationFinalCourseMode
 
     Gets or sets the mode to specify the final course at the end of the hover.
 
 .. py:property:: smooth_translation_mode
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHoverTranslate.smooth_translation_mode
-    :type: VTOL_RATE_MODE
+    :type: VTOLRateMode
 
     Gets or sets the translation mode of the aircraft at the end of the procedure.
 
@@ -137,20 +137,20 @@ Method detail
 
 
 
-.. py:method:: set_relative_course(self, headingChange: typing.Any) -> None
+.. py:method:: set_relative_course(self, heading_change: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHoverTranslate.set_relative_course
 
     Set the relative heading change.
 
     :Parameters:
 
-    **headingChange** : :obj:`~typing.Any`
+    **heading_change** : :obj:`~typing.Any`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: set_absolute_course(self, course: typing.Any, isMagnetic: bool) -> None
+.. py:method:: set_absolute_course(self, course: typing.Any, is_magnetic: bool) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHoverTranslate.set_absolute_course
 
     Set the absolute heading and reference.
@@ -158,7 +158,7 @@ Method detail
     :Parameters:
 
     **course** : :obj:`~typing.Any`
-    **isMagnetic** : :obj:`~bool`
+    **is_magnetic** : :obj:`~bool`
 
     :Returns:
 

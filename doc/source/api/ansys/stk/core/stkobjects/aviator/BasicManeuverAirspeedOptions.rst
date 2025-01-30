@@ -70,37 +70,37 @@ Property detail
 
 .. py:property:: airspeed_mode
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverAirspeedOptions.airspeed_mode
-    :type: BASIC_MANEUVER_AIRSPEED_MODE
+    :type: BasicManeuverAirspeedMode
 
     Gets or sets the active airspeed mode.
 
 .. py:property:: min_speed_limits
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverAirspeedOptions.min_speed_limits
-    :type: BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS
+    :type: BasicManeuverStrategyAirspeedPerformanceLimits
 
     Gets or sets the minimum speed limit type to enforce.
 
 .. py:property:: max_speed_limits
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverAirspeedOptions.max_speed_limits
-    :type: BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS
+    :type: BasicManeuverStrategyAirspeedPerformanceLimits
 
     Gets or sets the maximum speed limit type to enforce.
 
 .. py:property:: maintain_airspeed_type
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverAirspeedOptions.maintain_airspeed_type
-    :type: AIRSPEED_TYPE
+    :type: AirspeedType
 
     Gets or sets the airspeed type option in the Maintain Current Airspeed mode.
 
 .. py:property:: specified_airspeed_type
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverAirspeedOptions.specified_airspeed_type
-    :type: AIRSPEED_TYPE
+    :type: AirspeedType
 
     Gets or sets the airspeed type option in the Maintain Specified Airspeed mode.
 
 .. py:property:: specified_acceleration_deceleration_mode
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverAirspeedOptions.specified_acceleration_deceleration_mode
-    :type: PERFORMANCE_MODEL_OVERRIDE
+    :type: PerformanceModelOverride
 
     Gets or sets the accel/decel mode for the Maintain Specified Airspeed mode.
 
@@ -130,13 +130,13 @@ Property detail
 
 .. py:property:: acceleration_mode
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverAirspeedOptions.acceleration_mode
-    :type: PERFORMANCE_MODEL_OVERRIDE
+    :type: PerformanceModelOverride
 
     Gets or sets the accel mode for the Accelerate at mode.
 
 .. py:property:: deceleration_mode
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverAirspeedOptions.deceleration_mode
-    :type: PERFORMANCE_MODEL_OVERRIDE
+    :type: PerformanceModelOverride
 
     Gets or sets the accel mode for the Decelerate at mode.
 

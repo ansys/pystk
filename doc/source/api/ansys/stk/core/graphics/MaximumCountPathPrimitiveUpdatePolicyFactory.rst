@@ -24,7 +24,6 @@ Overview
               - Initialize a policy with the specified maximumCount and removeLocation.
 
 
-
 Import detail
 -------------
 
@@ -46,15 +45,15 @@ Method detail
 
         :obj:`~MaximumCountPathPrimitiveUpdatePolicy`
 
-.. py:method:: initialize_with_parameters(self, maximumCount: int, removeLocation: PATH_PRIMITIVE_REMOVE_LOCATION) -> MaximumCountPathPrimitiveUpdatePolicy
+.. py:method:: initialize_with_parameters(self, maximum_count: int, remove_location: PathPrimitiveRemoveLocation) -> MaximumCountPathPrimitiveUpdatePolicy
     :canonical: ansys.stk.core.graphics.MaximumCountPathPrimitiveUpdatePolicyFactory.initialize_with_parameters
 
     Initialize a policy with the specified maximumCount and removeLocation.
 
     :Parameters:
 
-    **maximumCount** : :obj:`~int`
-    **removeLocation** : :obj:`~PATH_PRIMITIVE_REMOVE_LOCATION`
+    **maximum_count** : :obj:`~int`
+    **remove_location** : :obj:`~PathPrimitiveRemoveLocation`
 
     :Returns:
 

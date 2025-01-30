@@ -3,7 +3,7 @@ VectorGeometryToolPlaneQuadrant
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolPlaneQuadrant
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolPlane`, :py:class:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolPlane`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    A plane based on a selected Quadrant of a reference system.
 
@@ -40,13 +40,13 @@ Property detail
 
 .. py:property:: reference_system
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPlaneQuadrant.reference_system
-    :type: VectorGeometryToolSystemRefTo
+    :type: VectorGeometryToolSystemReference
 
     Specify a reference system.
 
 .. py:property:: quadrant
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPlaneQuadrant.quadrant
-    :type: CRDN_QUADRANT_TYPE
+    :type: PlaneQuadrantType
 
     Specify a quadrant.
 

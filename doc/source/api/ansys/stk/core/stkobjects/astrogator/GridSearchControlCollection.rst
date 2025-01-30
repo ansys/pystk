@@ -29,7 +29,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GridSearchControlCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GridSearchControlCollection._new_enum`
               - Allows you to enumerate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GridSearchControlCollection.count`
               - Returns the size of the collection.
@@ -47,8 +47,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.astrogator.GridSearchControlCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.astrogator.GridSearchControlCollection._new_enum
     :type: EnumeratorProxy
 
     Allows you to enumerate through the collection.
@@ -78,15 +78,15 @@ Method detail
 
 
 
-.. py:method:: get_control_by_paths(self, objectPath: str, controlPath: str) -> GridSearchControl
+.. py:method:: get_control_by_paths(self, object_path: str, control_path: str) -> GridSearchControl
     :canonical: ansys.stk.core.stkobjects.astrogator.GridSearchControlCollection.get_control_by_paths
 
     Return the control specified by the object/control path.
 
     :Parameters:
 
-    **objectPath** : :obj:`~str`
-    **controlPath** : :obj:`~str`
+    **object_path** : :obj:`~str`
+    **control_path** : :obj:`~str`
 
     :Returns:
 

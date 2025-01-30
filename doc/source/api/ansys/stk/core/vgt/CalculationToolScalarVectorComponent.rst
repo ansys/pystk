@@ -54,7 +54,7 @@ Property detail
 
 .. py:property:: component
     :canonical: ansys.stk.core.vgt.CalculationToolScalarVectorComponent.component
-    :type: VECTOR_GEOMETRY_TOOL_VECTOR_COMPONENT_TYPE
+    :type: VectorComponentType
 
     The component of the vector to return as the value of the scalar.
 

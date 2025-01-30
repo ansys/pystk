@@ -46,7 +46,7 @@ Property detail
 
 .. py:property:: drift_rate_model
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcDriftRateFactor.drift_rate_model
-    :type: GEO_STATIONARY_DRIFT_RATE_MODEL
+    :type: GeoStationaryDriftRateModel
 
     Gets or sets the gravity model used to compute drift rate.
 

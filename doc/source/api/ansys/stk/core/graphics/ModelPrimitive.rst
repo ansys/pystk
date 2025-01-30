@@ -112,7 +112,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: load_with_string_uri_and_up_axis(self, uri: str, upAxis: MODEL_UP_AXIS) -> None
+.. py:method:: load_with_string_uri_and_up_axis(self, uri: str, up_axis: ModelUpAxis) -> None
     :canonical: ansys.stk.core.graphics.ModelPrimitive.load_with_string_uri_and_up_axis
 
     For convenience. Loads a `COLLADA <https://www.khronos.org/collada/>`_ (DAE) or AGI `MDL <https://support.agi.com/3d-models>`_ (MDL) model using a file path.
@@ -120,20 +120,20 @@ Method detail
     :Parameters:
 
     **uri** : :obj:`~str`
-    **upAxis** : :obj:`~MODEL_UP_AXIS`
+    **up_axis** : :obj:`~ModelUpAxis`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: set_position_cartographic(self, centralBody: str, position: list) -> None
+.. py:method:: set_position_cartographic(self, central_body: str, position: list) -> None
     :canonical: ansys.stk.core.graphics.ModelPrimitive.set_position_cartographic
 
     For convenience. Sets the cartographic position of the model. This also sets position.
 
     :Parameters:
 
-    **centralBody** : :obj:`~str`
+    **central_body** : :obj:`~str`
     **position** : :obj:`~list`
 
     :Returns:

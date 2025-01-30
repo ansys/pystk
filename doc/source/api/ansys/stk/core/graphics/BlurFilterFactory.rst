@@ -24,7 +24,6 @@ Overview
               - Initialize a new instance with the specified blur method.
 
 
-
 Import detail
 -------------
 
@@ -46,14 +45,14 @@ Method detail
 
         :obj:`~BlurFilter`
 
-.. py:method:: initialize_with_method(self, method: BLUR_METHOD) -> BlurFilter
+.. py:method:: initialize_with_method(self, method: BlurMethod) -> BlurFilter
     :canonical: ansys.stk.core.graphics.BlurFilterFactory.initialize_with_method
 
     Initialize a new instance with the specified blur method.
 
     :Parameters:
 
-    **method** : :obj:`~BLUR_METHOD`
+    **method** : :obj:`~BlurMethod`
 
     :Returns:
 

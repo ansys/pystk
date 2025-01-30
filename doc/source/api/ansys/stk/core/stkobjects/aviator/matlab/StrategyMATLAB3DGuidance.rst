@@ -143,7 +143,7 @@ Property detail
 
 .. py:property:: closure_mode
     :canonical: ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.closure_mode
-    :type: CLOSURE_MODE
+    :type: ClosureMode
 
     Gets or sets the closure mode for the guidance strategy.
 

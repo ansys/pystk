@@ -22,11 +22,11 @@ Overview
               - Enables the ability to view the contours at a set altitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContour.altitude`
               - Gets or sets the altitude to view the contours.
-            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContour.relative_to_max_gain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContour.relative_to_maximum_gain`
               - The contours value represents the gain value relative to the maximum.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContour.show_labels`
               - Gets or sets the option for showing contour labels.
-            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContour.num_label_dec_digits`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContour.number_of_label_decimal_digits`
               - Gets or sets the integer number of decimal places to display in the contour label.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaContour.line_width`
               - Select the line width in which antenna 2D graphics display from the AgELineWidth enumeration.
@@ -65,8 +65,8 @@ Property detail
 
     Gets or sets the altitude to view the contours.
 
-.. py:property:: relative_to_max_gain
-    :canonical: ansys.stk.core.stkobjects.IAntennaContour.relative_to_max_gain
+.. py:property:: relative_to_maximum_gain
+    :canonical: ansys.stk.core.stkobjects.IAntennaContour.relative_to_maximum_gain
     :type: bool
 
     The contours value represents the gain value relative to the maximum.
@@ -77,21 +77,21 @@ Property detail
 
     Gets or sets the option for showing contour labels.
 
-.. py:property:: num_label_dec_digits
-    :canonical: ansys.stk.core.stkobjects.IAntennaContour.num_label_dec_digits
+.. py:property:: number_of_label_decimal_digits
+    :canonical: ansys.stk.core.stkobjects.IAntennaContour.number_of_label_decimal_digits
     :type: int
 
     Gets or sets the integer number of decimal places to display in the contour label.
 
 .. py:property:: line_width
     :canonical: ansys.stk.core.stkobjects.IAntennaContour.line_width
-    :type: LINE_WIDTH
+    :type: LineWidth
 
     Select the line width in which antenna 2D graphics display from the AgELineWidth enumeration.
 
 .. py:property:: color_method
     :canonical: ansys.stk.core.stkobjects.IAntennaContour.color_method
-    :type: FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD
+    :type: FigureOfMeritGraphics2DColorMethod
 
     Color method for contours (color ramp or explicit).
 
@@ -109,7 +109,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.IAntennaContour.type
-    :type: ANTENNA_CONTOUR_TYPE
+    :type: AntennaContourType
 
     Gets the contour type.
 

@@ -7,10 +7,6 @@ IFigureOfMeritDefinitionData
 
 .. py:currentmodule:: IFigureOfMeritDefinitionData
 
-Overview
---------
-
-
 Import detail
 -------------
 

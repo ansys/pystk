@@ -24,7 +24,6 @@ Overview
               - Initialize a new instance with the adjustment to brightness.
 
 
-
 Import detail
 -------------
 

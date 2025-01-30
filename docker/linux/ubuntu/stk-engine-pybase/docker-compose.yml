@@ -1,4 +1,3 @@
-version: '3.8'
 services:
   stk-python-common:
     image: ansys/stk:dev-ubuntu22.04-python-common

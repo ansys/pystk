@@ -60,13 +60,13 @@ Property detail
 
 .. py:property:: aberration_type
     :canonical: ansys.stk.core.stkobjects.CommSystemAccessOptions.aberration_type
-    :type: ABERRATION_TYPE
+    :type: AberrationType
 
     Gets or sets the model of aberration to be used in access computations.
 
 .. py:property:: event_detection_type
     :canonical: ansys.stk.core.stkobjects.CommSystemAccessOptions.event_detection_type
-    :type: COMM_SYSTEM_ACCESS_EVENT_DETECTION_TYPE
+    :type: CommSystemAccessEventDetectionType
 
     Gets or sets the event detection type.
 
@@ -78,7 +78,7 @@ Property detail
 
 .. py:property:: sampling_method_type
     :canonical: ansys.stk.core.stkobjects.CommSystemAccessOptions.sampling_method_type
-    :type: COMM_SYSTEM_ACCESS_SAMPLING_METHOD_TYPE
+    :type: CommSystemAccessSamplingMethodType
 
     Gets or sets the sampling method type.
 

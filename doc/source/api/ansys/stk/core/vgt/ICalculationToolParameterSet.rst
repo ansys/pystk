@@ -52,7 +52,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.vgt.ICalculationToolParameterSet.type
-    :type: CRDN_PARAMETER_SET_TYPE
+    :type: ParameterSetType
 
     Get the type of parameter set.
 

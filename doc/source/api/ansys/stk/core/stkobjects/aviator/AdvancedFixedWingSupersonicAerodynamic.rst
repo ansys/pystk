@@ -56,7 +56,7 @@ Property detail
 
 .. py:property:: geometry_type
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingSupersonicAerodynamic.geometry_type
-    :type: ADVANCED_FIXED_WING_GEOMETRY
+    :type: AdvancedFixedWingGeometry
 
     Gets or sets the type of wing geometry for the aircraft.
 

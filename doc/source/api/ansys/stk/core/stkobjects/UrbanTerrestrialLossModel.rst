@@ -9,10 +9,6 @@ UrbanTerrestrialLossModel
 
 .. py:currentmodule:: UrbanTerrestrialLossModel
 
-Overview
---------
-
-
 
 Import detail
 -------------

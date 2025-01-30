@@ -31,7 +31,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarAntennaBeam.id`
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarAntennaBeam.identifier`
               - Gets or sets the antenna beam identifier.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarAntennaBeam.pointing_strategy`
               - Gets the pointing strategy.
@@ -57,8 +57,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: id
-    :canonical: ansys.stk.core.stkobjects.RadarAntennaBeam.id
+.. py:property:: identifier
+    :canonical: ansys.stk.core.stkobjects.RadarAntennaBeam.identifier
     :type: str
 
     Gets or sets the antenna beam identifier.
@@ -99,14 +99,14 @@ Method detail
 
 
 
-.. py:method:: set_pointing_strategy_type(self, val: POINTING_STRATEGY_TYPE) -> None
+.. py:method:: set_pointing_strategy_type(self, value: PointingStrategyType) -> None
     :canonical: ansys.stk.core.stkobjects.RadarAntennaBeam.set_pointing_strategy_type
 
     Set the current pointing strategy type.
 
     :Parameters:
 
-    **val** : :obj:`~POINTING_STRATEGY_TYPE`
+    **value** : :obj:`~PointingStrategyType`
 
     :Returns:
 
@@ -117,28 +117,28 @@ Method detail
 
 
 
-.. py:method:: set_activity_type(self, activityType: RADAR_ACTIVITY_TYPE) -> None
+.. py:method:: set_activity_type(self, activity_type: RadarActivityType) -> None
     :canonical: ansys.stk.core.stkobjects.RadarAntennaBeam.set_activity_type
 
     Set the activity type.
 
     :Parameters:
 
-    **activityType** : :obj:`~RADAR_ACTIVITY_TYPE`
+    **activity_type** : :obj:`~RadarActivityType`
 
     :Returns:
 
         :obj:`~None`
 
 
-.. py:method:: set_waveform_selection_strategy(self, val: WAVEFORM_SELECTION_STRATEGY_TYPE) -> None
+.. py:method:: set_waveform_selection_strategy(self, value: WaveformSelectionStrategyType) -> None
     :canonical: ansys.stk.core.stkobjects.RadarAntennaBeam.set_waveform_selection_strategy
 
     Set the current waveform selection strategy.
 
     :Parameters:
 
-    **val** : :obj:`~WAVEFORM_SELECTION_STRATEGY_TYPE`
+    **value** : :obj:`~WaveformSelectionStrategyType`
 
     :Returns:
 

@@ -18,17 +18,17 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.ChainGraphics2DAnimation.is_highlight_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ChainGraphics2DAnimation.show_highlight`
               - Opt whether to display access in bold print during animation. A box appears around each object during access.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ChainGraphics2DAnimation.is_line_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ChainGraphics2DAnimation.show_line`
               - Opt whether to display lines between the valid strands in the chain during animation.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ChainGraphics2DAnimation.is_direction_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ChainGraphics2DAnimation.show_link_numbers_in_strands`
               - Opt whether to have each link line in the valid strand lines is numbered to show the sequence of the links between the objects in the chain.
             * - :py:attr:`~ansys.stk.core.stkobjects.ChainGraphics2DAnimation.color`
               - Gets or sets the color in which valid strand lines are to be displayed during animation.
             * - :py:attr:`~ansys.stk.core.stkobjects.ChainGraphics2DAnimation.line_width`
               - Gets or sets the width of the valid strand lines used in animation graphics.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ChainGraphics2DAnimation.optimal_path_is_line_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ChainGraphics2DAnimation.show_optimal_path_line`
               - Opt whether to display lines for the optimal strands in the chain during animation.
             * - :py:attr:`~ansys.stk.core.stkobjects.ChainGraphics2DAnimation.optimal_path_color`
               - This property is deprecated. Use OptimalPathColorRampStartColor. Gets or sets the color in which the optimal strands lines are to be displayed during animation.
@@ -36,9 +36,9 @@ Overview
               - Gets or sets the width of the optimal strands lines used in animation graphics.
             * - :py:attr:`~ansys.stk.core.stkobjects.ChainGraphics2DAnimation.use_hide_animation_graphics_2d_if_more_than_n_strands`
               - Use the maximum number of animation strand lines to show. If there are more than the specified number of valid strands, the animation lines are not displayed.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ChainGraphics2DAnimation.hide_animation_graphics_2d_if_more_than_n_strands_num`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ChainGraphics2DAnimation.hide_animation_graphics_2d_if_more_than_n_strands_number`
               - Gets or sets the maximum number of animation strand lines to show. If there are more than the specified number of valid strands, the animation lines are not displayed.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ChainGraphics2DAnimation.number_of_opt_strands_to_display`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ChainGraphics2DAnimation.number_of_optimal_strands_to_display`
               - The number of animation optimal strands lines to show.
             * - :py:attr:`~ansys.stk.core.stkobjects.ChainGraphics2DAnimation.optimal_path_color_ramp_start_color`
               - The start color for the color ramp in which the optimal strands lines are to be displayed during animation.
@@ -58,20 +58,20 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: is_highlight_visible
-    :canonical: ansys.stk.core.stkobjects.ChainGraphics2DAnimation.is_highlight_visible
+.. py:property:: show_highlight
+    :canonical: ansys.stk.core.stkobjects.ChainGraphics2DAnimation.show_highlight
     :type: bool
 
     Opt whether to display access in bold print during animation. A box appears around each object during access.
 
-.. py:property:: is_line_visible
-    :canonical: ansys.stk.core.stkobjects.ChainGraphics2DAnimation.is_line_visible
+.. py:property:: show_line
+    :canonical: ansys.stk.core.stkobjects.ChainGraphics2DAnimation.show_line
     :type: bool
 
     Opt whether to display lines between the valid strands in the chain during animation.
 
-.. py:property:: is_direction_visible
-    :canonical: ansys.stk.core.stkobjects.ChainGraphics2DAnimation.is_direction_visible
+.. py:property:: show_link_numbers_in_strands
+    :canonical: ansys.stk.core.stkobjects.ChainGraphics2DAnimation.show_link_numbers_in_strands
     :type: bool
 
     Opt whether to have each link line in the valid strand lines is numbered to show the sequence of the links between the objects in the chain.
@@ -84,12 +84,12 @@ Property detail
 
 .. py:property:: line_width
     :canonical: ansys.stk.core.stkobjects.ChainGraphics2DAnimation.line_width
-    :type: LINE_WIDTH
+    :type: LineWidth
 
     Gets or sets the width of the valid strand lines used in animation graphics.
 
-.. py:property:: optimal_path_is_line_visible
-    :canonical: ansys.stk.core.stkobjects.ChainGraphics2DAnimation.optimal_path_is_line_visible
+.. py:property:: show_optimal_path_line
+    :canonical: ansys.stk.core.stkobjects.ChainGraphics2DAnimation.show_optimal_path_line
     :type: bool
 
     Opt whether to display lines for the optimal strands in the chain during animation.
@@ -102,7 +102,7 @@ Property detail
 
 .. py:property:: optimal_path_line_width
     :canonical: ansys.stk.core.stkobjects.ChainGraphics2DAnimation.optimal_path_line_width
-    :type: LINE_WIDTH
+    :type: LineWidth
 
     Gets or sets the width of the optimal strands lines used in animation graphics.
 
@@ -112,14 +112,14 @@ Property detail
 
     Use the maximum number of animation strand lines to show. If there are more than the specified number of valid strands, the animation lines are not displayed.
 
-.. py:property:: hide_animation_graphics_2d_if_more_than_n_strands_num
-    :canonical: ansys.stk.core.stkobjects.ChainGraphics2DAnimation.hide_animation_graphics_2d_if_more_than_n_strands_num
+.. py:property:: hide_animation_graphics_2d_if_more_than_n_strands_number
+    :canonical: ansys.stk.core.stkobjects.ChainGraphics2DAnimation.hide_animation_graphics_2d_if_more_than_n_strands_number
     :type: int
 
     Gets or sets the maximum number of animation strand lines to show. If there are more than the specified number of valid strands, the animation lines are not displayed.
 
-.. py:property:: number_of_opt_strands_to_display
-    :canonical: ansys.stk.core.stkobjects.ChainGraphics2DAnimation.number_of_opt_strands_to_display
+.. py:property:: number_of_optimal_strands_to_display
+    :canonical: ansys.stk.core.stkobjects.ChainGraphics2DAnimation.number_of_optimal_strands_to_display
     :type: int
 
     The number of animation optimal strands lines to show.

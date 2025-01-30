@@ -103,13 +103,13 @@ Property detail
 
 .. py:property:: condition
     :canonical: ansys.stk.core.stkobjects.astrogator.LightingStoppingCondition.condition
-    :type: LIGHTING_CONDITION
+    :type: LightingCondition
 
     Specifies the direction from which the stopping condition value must be achieved.
 
 .. py:property:: eclipsing_bodies_list_source
     :canonical: ansys.stk.core.stkobjects.astrogator.LightingStoppingCondition.eclipsing_bodies_list_source
-    :type: ECLIPSING_BODIES_SOURCE
+    :type: EclipsingBodiesSource
 
     Eclipsing Bodies List Source.
 
@@ -143,27 +143,27 @@ Method detail
 
 
 
-.. py:method:: add_eclipsing_body(self, eclipsingBody: str) -> None
+.. py:method:: add_eclipsing_body(self, eclipsing_body: str) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.LightingStoppingCondition.add_eclipsing_body
 
     Add an eclipsing body.
 
     :Parameters:
 
-    **eclipsingBody** : :obj:`~str`
+    **eclipsing_body** : :obj:`~str`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: remove_eclipsing_body(self, eclipsingBody: str) -> None
+.. py:method:: remove_eclipsing_body(self, eclipsing_body: str) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.LightingStoppingCondition.remove_eclipsing_body
 
     Remove an eclipsing body.
 
     :Parameters:
 
-    **eclipsingBody** : :obj:`~str`
+    **eclipsing_body** : :obj:`~str`
 
     :Returns:
 

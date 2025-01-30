@@ -24,7 +24,6 @@ Overview
               - Initialize a new instance with the specified edge detect method.
 
 
-
 Import detail
 -------------
 
@@ -46,14 +45,14 @@ Method detail
 
         :obj:`~EdgeDetectFilter`
 
-.. py:method:: initialize_with_method(self, method: EDGE_DETECT_METHOD) -> EdgeDetectFilter
+.. py:method:: initialize_with_method(self, method: EdgeDetectMethod) -> EdgeDetectFilter
     :canonical: ansys.stk.core.graphics.EdgeDetectFilterFactory.initialize_with_method
 
     Initialize a new instance with the specified edge detect method.
 
     :Parameters:
 
-    **method** : :obj:`~EDGE_DETECT_METHOD`
+    **method** : :obj:`~EdgeDetectMethod`
 
     :Returns:
 

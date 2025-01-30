@@ -37,10 +37,10 @@ class ObjectCoverageSnippets(CodeSnippetsTestBase):
     # region SetObjectCoverageCustomTimeIntervalToLightingTimeOfAnObject
     def test_SetObjectCoverageCustomTimeIntervalToLightingTimeOfAnObject(self):
         scenario: "IStkObject" = TestBase.Application.current_scenario
-        aircraft: "IStkObject" = scenario.children.new(STK_OBJECT_TYPE.AIRCRAFT, "UAV")
-        aircraft.children.new(STK_OBJECT_TYPE.SENSOR, "UAV_Camera")
+        aircraft: "IStkObject" = scenario.children.new(STKObjectType.AIRCRAFT, "UAV")
+        aircraft.children.new(STKObjectType.SENSOR, "UAV_Camera")
 
-        areaTarget: "IStkObject" = scenario.children.new(STK_OBJECT_TYPE.AREA_TARGET, "Airspace")
+        areaTarget: "IStkObject" = scenario.children.new(STKObjectType.AREA_TARGET, "Airspace")
 
         try:
             self.SetObjectCoverageCustomTimeIntervalToLightingTimeOfAnObject(TestBase.Application)
@@ -54,14 +54,18 @@ class ObjectCoverageSnippets(CodeSnippetsTestBase):
         uavAircraft: "IStkObject" = root.get_object_from_path("Aircraft/UAV/Sensor/UAV_Camera")
         airspaceAreaTarget: "IStkObject" = root.get_object_from_path("AreaTarget/Airspace")
 
-        firstSunlightEpoch: "ITimeToolEvent" = airspaceAreaTarget.vgt.events["LightingIntervals.Sunlight.First.Start"]
-        lastSunlightEpoch: "ITimeToolEvent" = airspaceAreaTarget.vgt.events["LightingIntervals.Sunlight.First.Stop"]
+        firstSunlightEpoch: "ITimeToolInstant" = airspaceAreaTarget.analysis_workbench_components.time_instants[
+            "LightingIntervals.Sunlight.First.Start"
+        ]
+        lastSunlightEpoch: "ITimeToolInstant" = airspaceAreaTarget.analysis_workbench_components.time_instants[
+            "LightingIntervals.Sunlight.First.Stop"
+        ]
 
         uavAircraft.object_coverage.use_object_times = False
-        startEpoch: "TimeToolEventSmartEpoch" = uavAircraft.object_coverage.access_interval.get_start_epoch()
+        startEpoch: "TimeToolInstantSmartEpoch" = uavAircraft.object_coverage.access_interval.get_start_epoch()
         startEpoch.set_implicit_time(firstSunlightEpoch)
 
-        stopEpoch: "TimeToolEventSmartEpoch" = uavAircraft.object_coverage.access_interval.get_stop_epoch()
+        stopEpoch: "TimeToolInstantSmartEpoch" = uavAircraft.object_coverage.access_interval.get_stop_epoch()
         stopEpoch.set_implicit_time(lastSunlightEpoch)
 
         uavAircraft.object_coverage.access_interval.set_start_and_stop_epochs(startEpoch, stopEpoch)

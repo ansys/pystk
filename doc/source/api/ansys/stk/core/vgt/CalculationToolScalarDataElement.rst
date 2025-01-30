@@ -81,7 +81,7 @@ Property detail
 
 .. py:property:: interpolation
     :canonical: ansys.stk.core.vgt.CalculationToolScalarDataElement.interpolation
-    :type: IAnalysisWorkbenchInterp
+    :type: IAnalysisWorkbenchInterpolator
 
     Specify whether to use Lagrange or Hermite interpolation. See STK help on interpolation.
 
@@ -99,7 +99,7 @@ Property detail
 
 .. py:property:: save_data_option
     :canonical: ansys.stk.core.vgt.CalculationToolScalarDataElement.save_data_option
-    :type: CRDN_SAVE_DATA_OPTION
+    :type: SaveDataType
 
     Determines if computed samples are saved/loaded, otherwise if using samples they are recomputed on load.
 
@@ -124,30 +124,30 @@ Method detail
 
 
 
-.. py:method:: set(self, dataProvider: str, elementName: str) -> None
+.. py:method:: set(self, data_provider: str, element_name: str) -> None
     :canonical: ansys.stk.core.vgt.CalculationToolScalarDataElement.set
 
     Set the data provider and the element name.
 
     :Parameters:
 
-    **dataProvider** : :obj:`~str`
-    **elementName** : :obj:`~str`
+    **data_provider** : :obj:`~str`
+    **element_name** : :obj:`~str`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: set_with_group(self, dataProvider: str, typeName: str, elementName: str) -> None
+.. py:method:: set_with_group(self, data_provider: str, type_name: str, element_name: str) -> None
     :canonical: ansys.stk.core.vgt.CalculationToolScalarDataElement.set_with_group
 
     Set the data provider name, the element name, and data provider type name.
 
     :Parameters:
 
-    **dataProvider** : :obj:`~str`
-    **typeName** : :obj:`~str`
-    **elementName** : :obj:`~str`
+    **data_provider** : :obj:`~str`
+    **type_name** : :obj:`~str`
+    **element_name** : :obj:`~str`
 
     :Returns:
 

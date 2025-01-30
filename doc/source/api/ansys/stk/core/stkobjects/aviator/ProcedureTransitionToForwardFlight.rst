@@ -61,7 +61,7 @@ Property detail
 
 .. py:property:: transition_course_mode
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureTransitionToForwardFlight.transition_course_mode
-    :type: VTOL_TRANSITION_MODE
+    :type: VTOLTransitionMode
 
     Get the mode to specify the course of the transition maneuver.
 
@@ -103,7 +103,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_absolute_course(self, course: typing.Any, useMagneticCourse: bool) -> None
+.. py:method:: set_absolute_course(self, course: typing.Any, use_magnetic_course: bool) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureTransitionToForwardFlight.set_absolute_course
 
     Set the mode to absolute and specify the course and heading reference.
@@ -111,20 +111,20 @@ Method detail
     :Parameters:
 
     **course** : :obj:`~typing.Any`
-    **useMagneticCourse** : :obj:`~bool`
+    **use_magnetic_course** : :obj:`~bool`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: set_relative_course(self, headingChange: typing.Any) -> None
+.. py:method:: set_relative_course(self, heading_change: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureTransitionToForwardFlight.set_relative_course
 
     Set the mode to relative and specify the heading change.
 
     :Parameters:
 
-    **headingChange** : :obj:`~typing.Any`
+    **heading_change** : :obj:`~typing.Any`
 
     :Returns:
 

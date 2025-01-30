@@ -9,10 +9,6 @@ VehicleGraphics3DDataFraction
 
 .. py:currentmodule:: VehicleGraphics3DDataFraction
 
-Overview
---------
-
-
 
 Import detail
 -------------

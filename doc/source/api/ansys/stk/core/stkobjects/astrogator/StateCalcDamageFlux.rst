@@ -9,10 +9,6 @@ StateCalcDamageFlux
 
 .. py:currentmodule:: StateCalcDamageFlux
 
-Overview
---------
-
-
 
 Import detail
 -------------

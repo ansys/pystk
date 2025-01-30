@@ -35,7 +35,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.ICommSystemAccessSamplingMethod.type
-    :type: COMM_SYSTEM_ACCESS_SAMPLING_METHOD_TYPE
+    :type: CommSystemAccessSamplingMethodType
 
     Gets the access sampling method type.
 

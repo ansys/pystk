@@ -20,11 +20,11 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.AdvCATAdvancedEllipsoid.scale_factor`
               - Ellipsoid Scaling Factor.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AdvCATAdvancedEllipsoid.quadratic_in_time_db`
+            * - :py:attr:`~ansys.stk.core.stkobjects.AdvCATAdvancedEllipsoid.quadratic_in_time_database`
               - Quadratic Database Path.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AdvCATAdvancedEllipsoid.fixed_by_orbit_class_db`
+            * - :py:attr:`~ansys.stk.core.stkobjects.AdvCATAdvancedEllipsoid.fixed_by_orbit_class_database`
               - Fixed by Orbit Class Database Path.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AdvCATAdvancedEllipsoid.quadratic_by_orbit_class_db`
+            * - :py:attr:`~ansys.stk.core.stkobjects.AdvCATAdvancedEllipsoid.quadratic_by_orbit_class_database`
               - Quadratics by Orbit Class Database Path.
 
 
@@ -46,20 +46,20 @@ Property detail
 
     Ellipsoid Scaling Factor.
 
-.. py:property:: quadratic_in_time_db
-    :canonical: ansys.stk.core.stkobjects.AdvCATAdvancedEllipsoid.quadratic_in_time_db
+.. py:property:: quadratic_in_time_database
+    :canonical: ansys.stk.core.stkobjects.AdvCATAdvancedEllipsoid.quadratic_in_time_database
     :type: str
 
     Quadratic Database Path.
 
-.. py:property:: fixed_by_orbit_class_db
-    :canonical: ansys.stk.core.stkobjects.AdvCATAdvancedEllipsoid.fixed_by_orbit_class_db
+.. py:property:: fixed_by_orbit_class_database
+    :canonical: ansys.stk.core.stkobjects.AdvCATAdvancedEllipsoid.fixed_by_orbit_class_database
     :type: str
 
     Fixed by Orbit Class Database Path.
 
-.. py:property:: quadratic_by_orbit_class_db
-    :canonical: ansys.stk.core.stkobjects.AdvCATAdvancedEllipsoid.quadratic_by_orbit_class_db
+.. py:property:: quadratic_by_orbit_class_database
+    :canonical: ansys.stk.core.stkobjects.AdvCATAdvancedEllipsoid.quadratic_by_orbit_class_database
     :type: str
 
     Quadratics by Orbit Class Database Path.

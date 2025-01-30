@@ -45,9 +45,9 @@ Overview
               - Get the 2D Graphics properties of the place.
             * - :py:attr:`~ansys.stk.core.stkobjects.Place.position`
               - Get the position of the place.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Place.terrain_norm`
+            * - :py:attr:`~ansys.stk.core.stkobjects.Place.terrain_normal`
               - Set the normal to the local terrain.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Place.terrain_norm_data`
+            * - :py:attr:`~ansys.stk.core.stkobjects.Place.terrain_normal_data`
               - Data used in specifying terrain slope.
             * - :py:attr:`~ansys.stk.core.stkobjects.Place.graphics_3d`
               - Get the 3D Graphics properties of the place.
@@ -67,13 +67,13 @@ Overview
               - Save terrain az-el mask data in binary.
             * - :py:attr:`~ansys.stk.core.stkobjects.Place.lighting_obstruction_model`
               - Gets or sets the obstruction model used in lighting computations.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Place.lighting_max_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.Place.lighting_maximum_step`
               - Gets or sets the maximum step size to use when computing lighting. Only applies (and only can be set) when LightingObstructionModel is eLightingObstructionAzElMask or eLightingObstructionTerrain. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.Place.laser_environment`
               - Gets the laser environment.
             * - :py:attr:`~ansys.stk.core.stkobjects.Place.rf_environment`
               - Gets the RF environment.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Place.max_range_when_computing_az_el_mask`
+            * - :py:attr:`~ansys.stk.core.stkobjects.Place.maximum_range_when_computing_az_el_mask`
               - Gets or sets the maximum range to use when computing the az el mask using terrain data. Zero indicates to use algorithm default. Only applies when GetAzElMask returns eTerrainData (cannot be set if eMaskFile). Uses Distance Dimension.
 
 
@@ -119,14 +119,14 @@ Property detail
 
     Get the position of the place.
 
-.. py:property:: terrain_norm
-    :canonical: ansys.stk.core.stkobjects.Place.terrain_norm
+.. py:property:: terrain_normal
+    :canonical: ansys.stk.core.stkobjects.Place.terrain_normal
     :type: None
 
     Set the normal to the local terrain.
 
-.. py:property:: terrain_norm_data
-    :canonical: ansys.stk.core.stkobjects.Place.terrain_norm_data
+.. py:property:: terrain_normal_data
+    :canonical: ansys.stk.core.stkobjects.Place.terrain_normal_data
     :type: ITerrainNormData
 
     Data used in specifying terrain slope.
@@ -181,12 +181,12 @@ Property detail
 
 .. py:property:: lighting_obstruction_model
     :canonical: ansys.stk.core.stkobjects.Place.lighting_obstruction_model
-    :type: LIGHTING_OBSTRUCTION_MODEL_TYPE
+    :type: LightingObstructionModelType
 
     Gets or sets the obstruction model used in lighting computations.
 
-.. py:property:: lighting_max_step
-    :canonical: ansys.stk.core.stkobjects.Place.lighting_max_step
+.. py:property:: lighting_maximum_step
+    :canonical: ansys.stk.core.stkobjects.Place.lighting_maximum_step
     :type: float
 
     Gets or sets the maximum step size to use when computing lighting. Only applies (and only can be set) when LightingObstructionModel is eLightingObstructionAzElMask or eLightingObstructionTerrain. Uses Time Dimension.
@@ -203,8 +203,8 @@ Property detail
 
     Gets the RF environment.
 
-.. py:property:: max_range_when_computing_az_el_mask
-    :canonical: ansys.stk.core.stkobjects.Place.max_range_when_computing_az_el_mask
+.. py:property:: maximum_range_when_computing_az_el_mask
+    :canonical: ansys.stk.core.stkobjects.Place.maximum_range_when_computing_az_el_mask
     :type: float
 
     Gets or sets the maximum range to use when computing the az el mask using terrain data. Zero indicates to use algorithm default. Only applies when GetAzElMask returns eTerrainData (cannot be set if eMaskFile). Uses Distance Dimension.
@@ -219,14 +219,14 @@ Method detail
 
 
 
-.. py:method:: set_az_el_mask(self, type: AZ_EL_MASK_TYPE, data: typing.Any) -> None
+.. py:method:: set_az_el_mask(self, type: AzElMaskType, data: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.Place.set_az_el_mask
 
     Set an az-el mask. A member of the AgEAzElMaskType enumeration.
 
     :Parameters:
 
-    **type** : :obj:`~AZ_EL_MASK_TYPE`
+    **type** : :obj:`~AzElMaskType`
     **data** : :obj:`~typing.Any`
 
     :Returns:
@@ -249,14 +249,14 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: get_az_el_mask(self) -> AZ_EL_MASK_TYPE
+.. py:method:: get_az_el_mask(self) -> AzElMaskType
     :canonical: ansys.stk.core.stkobjects.Place.get_az_el_mask
 
     Get the az-el mask. A member of the AgEAzElMaskType enumeration.
 
     :Returns:
 
-        :obj:`~AZ_EL_MASK_TYPE`
+        :obj:`~AzElMaskType`
 
 .. py:method:: get_az_el_mask_data(self) -> typing.Any
     :canonical: ansys.stk.core.stkobjects.Place.get_az_el_mask_data

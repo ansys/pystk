@@ -22,7 +22,6 @@ Overview
               - Initialize default triangle mesh primitive optional parameters.
 
 
-
 Import detail
 -------------
 

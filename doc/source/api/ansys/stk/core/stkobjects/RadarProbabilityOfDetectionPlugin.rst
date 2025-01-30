@@ -40,7 +40,7 @@ Property detail
 
 .. py:property:: plugin_configuration
     :canonical: ansys.stk.core.stkobjects.RadarProbabilityOfDetectionPlugin.plugin_configuration
-    :type: CRPluginConfiguration
+    :type: AgCRPluginConfiguration
 
     Gets the plugin configuration interface.
 

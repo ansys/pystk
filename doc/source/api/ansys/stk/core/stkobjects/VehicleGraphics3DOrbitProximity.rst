@@ -30,7 +30,7 @@ Overview
               - Get the parameters for a bearing ellipse, defining an ellipse, relative to a bearing from the North, around the object.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DOrbitProximity.line_of_bearing`
               - Get the parameters for a line of bearing parameters drawn from an origin in the direction of a bearing.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DOrbitProximity.aou_label_swap_distance`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DOrbitProximity.uncertainty_area_label_swap_distance`
               - Area of uncertainty label swap distance.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DOrbitProximity.ellipsoid`
               - Defines the ellipsoid parameters.
@@ -78,8 +78,8 @@ Property detail
 
     Get the parameters for a line of bearing parameters drawn from an origin in the direction of a bearing.
 
-.. py:property:: aou_label_swap_distance
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DOrbitProximity.aou_label_swap_distance
+.. py:property:: uncertainty_area_label_swap_distance
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DOrbitProximity.uncertainty_area_label_swap_distance
     :type: Graphics3DLabelSwapDistance
 
     Area of uncertainty label swap distance.

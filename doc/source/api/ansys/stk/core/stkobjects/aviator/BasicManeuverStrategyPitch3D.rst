@@ -22,11 +22,11 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPitch3D.control_mode`
               - Gets or sets the control mode for the pitch 3D strategy.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPitch3D.command_fpa`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPitch3D.command_flight_path_angle`
               - Gets or sets the commanded flight path angle.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPitch3D.control_fpa_dot`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPitch3D.control_flight_path_angle_dot`
               - Gets or sets the flight path angle rate.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPitch3D.stop_when_fpa_achieved`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPitch3D.stop_when_flight_path_angle_achieved`
               - Stop when the commanded flight path angle is achieved.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPitch3D.airspeed_options`
               - Get the airspeed options.
@@ -48,24 +48,24 @@ Property detail
 
 .. py:property:: control_mode
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPitch3D.control_mode
-    :type: PITCH_3D_CONTROL_MODE
+    :type: Pitch3DControlMode
 
     Gets or sets the control mode for the pitch 3D strategy.
 
-.. py:property:: command_fpa
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPitch3D.command_fpa
+.. py:property:: command_flight_path_angle
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPitch3D.command_flight_path_angle
     :type: typing.Any
 
     Gets or sets the commanded flight path angle.
 
-.. py:property:: control_fpa_dot
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPitch3D.control_fpa_dot
+.. py:property:: control_flight_path_angle_dot
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPitch3D.control_flight_path_angle_dot
     :type: typing.Any
 
     Gets or sets the flight path angle rate.
 
-.. py:property:: stop_when_fpa_achieved
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPitch3D.stop_when_fpa_achieved
+.. py:property:: stop_when_flight_path_angle_achieved
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPitch3D.stop_when_flight_path_angle_achieved
     :type: bool
 
     Stop when the commanded flight path angle is achieved.

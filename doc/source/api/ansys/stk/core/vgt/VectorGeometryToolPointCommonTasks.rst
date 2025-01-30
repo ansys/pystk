@@ -26,7 +26,6 @@ Overview
               - Compute and returns tabulated positions and velocities of a point with respect to reference system using specified sampling parameters.
 
 
-
 Import detail
 -------------
 
@@ -39,14 +38,14 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: create_fixed_in_system_cartographic(self, referenceSystem: IVectorGeometryToolSystem, latitude: typing.Any, longitude: typing.Any, altitude: float) -> VectorGeometryToolPointFixedInSystem
+.. py:method:: create_fixed_in_system_cartographic(self, reference_system: IVectorGeometryToolSystem, latitude: typing.Any, longitude: typing.Any, altitude: float) -> VectorGeometryToolPointFixedInSystem
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPointCommonTasks.create_fixed_in_system_cartographic
 
     Create a non-persistent point fixed in a specified reference system.
 
     :Parameters:
 
-    **referenceSystem** : :obj:`~IVectorGeometryToolSystem`
+    **reference_system** : :obj:`~IVectorGeometryToolSystem`
     **latitude** : :obj:`~typing.Any`
     **longitude** : :obj:`~typing.Any`
     **altitude** : :obj:`~float`
@@ -55,14 +54,14 @@ Method detail
 
         :obj:`~VectorGeometryToolPointFixedInSystem`
 
-.. py:method:: create_fixed_in_system_cartesian(self, referenceSystem: IVectorGeometryToolSystem, x: float, y: float, z: float) -> VectorGeometryToolPointFixedInSystem
+.. py:method:: create_fixed_in_system_cartesian(self, reference_system: IVectorGeometryToolSystem, x: float, y: float, z: float) -> VectorGeometryToolPointFixedInSystem
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPointCommonTasks.create_fixed_in_system_cartesian
 
     Create a non-persistent point fixed in a specified reference system.
 
     :Parameters:
 
-    **referenceSystem** : :obj:`~IVectorGeometryToolSystem`
+    **reference_system** : :obj:`~IVectorGeometryToolSystem`
     **x** : :obj:`~float`
     **y** : :obj:`~float`
     **z** : :obj:`~float`
@@ -71,7 +70,7 @@ Method detail
 
         :obj:`~VectorGeometryToolPointFixedInSystem`
 
-.. py:method:: sample(self, point: IVectorGeometryToolPoint, referenceSystem: IVectorGeometryToolSystem, intervals: list, minStep: float, maxStep: float, targetRate: typing.Any) -> TimeToolPointSamplingResult
+.. py:method:: sample(self, point: IVectorGeometryToolPoint, reference_system: IVectorGeometryToolSystem, intervals: list, min_step: float, max_step: float, target_rate: typing.Any) -> TimeToolPointSamplingResult
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPointCommonTasks.sample
 
     Compute and returns tabulated positions and velocities of a point with respect to reference system using specified sampling parameters.
@@ -79,11 +78,11 @@ Method detail
     :Parameters:
 
     **point** : :obj:`~IVectorGeometryToolPoint`
-    **referenceSystem** : :obj:`~IVectorGeometryToolSystem`
+    **reference_system** : :obj:`~IVectorGeometryToolSystem`
     **intervals** : :obj:`~list`
-    **minStep** : :obj:`~float`
-    **maxStep** : :obj:`~float`
-    **targetRate** : :obj:`~typing.Any`
+    **min_step** : :obj:`~float`
+    **max_step** : :obj:`~float`
+    **target_rate** : :obj:`~typing.Any`
 
     :Returns:
 

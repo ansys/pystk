@@ -18,9 +18,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarWaveformSearchTrackPulseDefinition.prf_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarWaveformSearchTrackPulseDefinition.pulse_repetition_frequency_mode`
               - Gets or sets the prf mode enumeration.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarWaveformSearchTrackPulseDefinition.prf`
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarWaveformSearchTrackPulseDefinition.pulse_repetition_frequency`
               - Gets or sets the pulse repetition frequency.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarWaveformSearchTrackPulseDefinition.unambiguous_range`
               - Gets or sets the unambiguous range.
@@ -48,14 +48,14 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: prf_mode
-    :canonical: ansys.stk.core.stkobjects.RadarWaveformSearchTrackPulseDefinition.prf_mode
-    :type: RADAR_SEARCH_TRACK_PRF_MODE
+.. py:property:: pulse_repetition_frequency_mode
+    :canonical: ansys.stk.core.stkobjects.RadarWaveformSearchTrackPulseDefinition.pulse_repetition_frequency_mode
+    :type: RadarSearchTrackPRFMode
 
     Gets or sets the prf mode enumeration.
 
-.. py:property:: prf
-    :canonical: ansys.stk.core.stkobjects.RadarWaveformSearchTrackPulseDefinition.prf
+.. py:property:: pulse_repetition_frequency
+    :canonical: ansys.stk.core.stkobjects.RadarWaveformSearchTrackPulseDefinition.pulse_repetition_frequency
     :type: float
 
     Gets or sets the pulse repetition frequency.
@@ -74,7 +74,7 @@ Property detail
 
 .. py:property:: pulse_width_mode
     :canonical: ansys.stk.core.stkobjects.RadarWaveformSearchTrackPulseDefinition.pulse_width_mode
-    :type: RADAR_SEARCH_TRACK_PULSE_WIDTH_MODE
+    :type: RadarSearchTrackPulseWidthMode
 
     Gets or sets the pulse width mode enumeration.
 

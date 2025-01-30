@@ -20,15 +20,14 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.vgt.CalculationToolConditionFactory.create`
               - Create and registers a condition using specified name, description and type.
-            * - :py:attr:`~ansys.stk.core.vgt.CalculationToolConditionFactory.create_condition_scalar_bounds`
+            * - :py:attr:`~ansys.stk.core.vgt.CalculationToolConditionFactory.create_scalar_bounds`
               - Create a condition placing bounds on specified scalar.
             * - :py:attr:`~ansys.stk.core.vgt.CalculationToolConditionFactory.is_type_supported`
               - Return whether the specified type is supported.
-            * - :py:attr:`~ansys.stk.core.vgt.CalculationToolConditionFactory.create_condition_combined`
+            * - :py:attr:`~ansys.stk.core.vgt.CalculationToolConditionFactory.create_combined`
               - Create a condition which combines multiple conditions.
-            * - :py:attr:`~ansys.stk.core.vgt.CalculationToolConditionFactory.create_condition_point_in_volume`
+            * - :py:attr:`~ansys.stk.core.vgt.CalculationToolConditionFactory.create_trajectory_within_volume`
               - Create a condition for point in volume.
-
 
 
 Import detail
@@ -43,7 +42,7 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: create(self, name: str, description: str, type: CRDN_CONDITION_TYPE) -> ICalculationToolCondition
+.. py:method:: create(self, name: str, description: str, type: ConditionType) -> ICalculationToolCondition
     :canonical: ansys.stk.core.vgt.CalculationToolConditionFactory.create
 
     Create and registers a condition using specified name, description and type.
@@ -52,14 +51,14 @@ Method detail
 
     **name** : :obj:`~str`
     **description** : :obj:`~str`
-    **type** : :obj:`~CRDN_CONDITION_TYPE`
+    **type** : :obj:`~ConditionType`
 
     :Returns:
 
         :obj:`~ICalculationToolCondition`
 
-.. py:method:: create_condition_scalar_bounds(self, name: str, description: str) -> ICalculationToolCondition
-    :canonical: ansys.stk.core.vgt.CalculationToolConditionFactory.create_condition_scalar_bounds
+.. py:method:: create_scalar_bounds(self, name: str, description: str) -> ICalculationToolCondition
+    :canonical: ansys.stk.core.vgt.CalculationToolConditionFactory.create_scalar_bounds
 
     Create a condition placing bounds on specified scalar.
 
@@ -72,21 +71,21 @@ Method detail
 
         :obj:`~ICalculationToolCondition`
 
-.. py:method:: is_type_supported(self, eType: CRDN_CONDITION_TYPE) -> bool
+.. py:method:: is_type_supported(self, type: ConditionType) -> bool
     :canonical: ansys.stk.core.vgt.CalculationToolConditionFactory.is_type_supported
 
     Return whether the specified type is supported.
 
     :Parameters:
 
-    **eType** : :obj:`~CRDN_CONDITION_TYPE`
+    **type** : :obj:`~ConditionType`
 
     :Returns:
 
         :obj:`~bool`
 
-.. py:method:: create_condition_combined(self, name: str, description: str) -> ICalculationToolCondition
-    :canonical: ansys.stk.core.vgt.CalculationToolConditionFactory.create_condition_combined
+.. py:method:: create_combined(self, name: str, description: str) -> ICalculationToolCondition
+    :canonical: ansys.stk.core.vgt.CalculationToolConditionFactory.create_combined
 
     Create a condition which combines multiple conditions.
 
@@ -99,8 +98,8 @@ Method detail
 
         :obj:`~ICalculationToolCondition`
 
-.. py:method:: create_condition_point_in_volume(self, name: str, description: str) -> ICalculationToolCondition
-    :canonical: ansys.stk.core.vgt.CalculationToolConditionFactory.create_condition_point_in_volume
+.. py:method:: create_trajectory_within_volume(self, name: str, description: str) -> ICalculationToolCondition
+    :canonical: ansys.stk.core.vgt.CalculationToolConditionFactory.create_trajectory_within_volume
 
     Create a condition for point in volume.
 

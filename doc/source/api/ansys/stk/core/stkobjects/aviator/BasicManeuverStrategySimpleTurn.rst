@@ -44,7 +44,7 @@ Property detail
 
 .. py:property:: reference_frame
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategySimpleTurn.reference_frame
-    :type: BASIC_MANEUVER_REFERENCE_FRAME
+    :type: BasicManeuverReferenceFrame
 
     Gets or sets the reference frame for the simple turn.
 

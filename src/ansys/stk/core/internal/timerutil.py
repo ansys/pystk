@@ -8,7 +8,7 @@ import signal
 
 from ctypes import CFUNCTYPE, cdll, c_size_t, c_int, c_void_p
 
-from ..utilities.exceptions import *
+from ..utilities.exceptions import STKInvalidTimerError
 
 TIMERPROC = CFUNCTYPE(None, c_size_t)
 INSTALLTIMER = CFUNCTYPE(c_size_t, c_int, TIMERPROC, c_void_p)
@@ -86,7 +86,7 @@ if os.name != "nt":
     except:
         class Tcl(object):
             def __init__(self):
-                raise STKInvalidTimerError("Cannot use STK_ENGINE_TIMER_TYPE.TKINTER_MAIN_LOOP nor STK_ENGINE_TIMER_TYPE.INTERACTIVE_PYTHON because tkinter installation is not found.")
+                raise STKInvalidTimerError("Cannot use STKEngineTimerType.TKINTER_MAIN_LOOP nor STKEngineTimerType.INTERACTIVE_PYTHON because tkinter installation is not found.")
             
     class TclTimer(object):
         def __init__(self):
@@ -138,10 +138,7 @@ if os.name != "nt":
         
         def terminate(self):
             signal.setitimer(signal.ITIMER_REAL, 0, 0)
-            try:
-                signal.signal(signal.SIGALRM, self.previous_sighandler)
-            except:
-                pass
+            signal.signal(signal.SIGALRM, self.previous_sighandler)
                 
         def __install_timer(self, milliseconds, TIMERPROC, callbackData):
             id = self._next_id
@@ -181,10 +178,7 @@ if os.name != "nt":
             
         def terminate(self):
             UtilLib.uninitialize_librt_timers()
-            try:
-                signal.signal(self._signo, self.previous_sighandler)
-            except:
-                pass
+            signal.signal(self._signo, self.previous_sighandler)
             
         def _fire_timers(self, signo, frame):
             UtilLib.fire_librt_timer_callbacks()

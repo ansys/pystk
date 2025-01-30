@@ -9,10 +9,6 @@ VehicleGraphics2DTrailDataTime
 
 .. py:currentmodule:: VehicleGraphics2DTrailDataTime
 
-Overview
---------
-
-
 
 Import detail
 -------------

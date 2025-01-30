@@ -9,10 +9,6 @@ StateCalcPressure
 
 .. py:currentmodule:: StateCalcPressure
 
-Overview
---------
-
-
 
 Import detail
 -------------

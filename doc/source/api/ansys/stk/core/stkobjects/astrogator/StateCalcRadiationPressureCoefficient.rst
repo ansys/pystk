@@ -9,10 +9,6 @@ StateCalcRadiationPressureCoefficient
 
 .. py:currentmodule:: StateCalcRadiationPressureCoefficient
 
-Overview
---------
-
-
 
 Import detail
 -------------

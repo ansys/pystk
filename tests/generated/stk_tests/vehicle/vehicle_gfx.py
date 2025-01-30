@@ -23,10 +23,10 @@ class GfxAttributesBasicHelper(object):
         Assert.assertIsNotNone(oBasic)
         self.m_logger.WriteLine("GfxAttributesBasicHelper test:")
         # IsVisible (false)
-        self.m_logger.WriteLine4("\tThe current IsVisible flag is: {0}", oBasic.is_visible)
-        oBasic.is_visible = False
-        self.m_logger.WriteLine4("\tThe new IsVisible flag is: {0}", oBasic.is_visible)
-        Assert.assertEqual(False, oBasic.is_visible)
+        self.m_logger.WriteLine4("\tThe current IsVisible flag is: {0}", oBasic.show_graphics)
+        oBasic.show_graphics = False
+        self.m_logger.WriteLine4("\tThe new IsVisible flag is: {0}", oBasic.show_graphics)
+        Assert.assertEqual(False, oBasic.show_graphics)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             oBasic.color = Colors.from_argb(16711935)
@@ -35,21 +35,21 @@ class GfxAttributesBasicHelper(object):
             oBasic.marker_style = "Square"
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            oBasic.label_visible = False
+            oBasic.show_label = False
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             oBasic.inherit = False
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            oBasic.line.style = LINE_STYLE.LMS_DASH
+            oBasic.line.style = LineStyle.LMS_DASH
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            oBasic.line.width = LINE_WIDTH.WIDTH5
+            oBasic.line.width = LineWidth.WIDTH5
 
         # IsVisible (true)
-        oBasic.is_visible = True
-        self.m_logger.WriteLine4("\tThe new IsVisible flag is: {0}", oBasic.is_visible)
-        Assert.assertEqual(True, oBasic.is_visible)
+        oBasic.show_graphics = True
+        self.m_logger.WriteLine4("\tThe new IsVisible flag is: {0}", oBasic.show_graphics)
+        Assert.assertEqual(True, oBasic.show_graphics)
         # Color
         self.m_logger.WriteLine6("\t\tCurrent Color is: {0}", oBasic.color)
         oBasic.color = Colors.from_argb(16711935)
@@ -62,14 +62,14 @@ class GfxAttributesBasicHelper(object):
         Assert.assertEqual("Square", oBasic.marker_style)
         # Line.Style
         self.m_logger.WriteLine6("\t\tCurrent Line.Style is: {0}", oBasic.line.style)
-        oBasic.line.style = LINE_STYLE.M_DASH_DOT
+        oBasic.line.style = LineStyle.M_DASH_DOT
         self.m_logger.WriteLine6("\t\tNew Line.Style is: {0}", oBasic.line.style)
-        Assert.assertEqual(LINE_STYLE.M_DASH_DOT, oBasic.line.style)
+        Assert.assertEqual(LineStyle.M_DASH_DOT, oBasic.line.style)
         # Line.Width
         self.m_logger.WriteLine6("\t\tCurrent Line.Width is: {0}", oBasic.line.width)
-        oBasic.line.width = LINE_WIDTH.WIDTH5
+        oBasic.line.width = LineWidth.WIDTH5
         self.m_logger.WriteLine6("\t\tNew Line.Width is: {0}", oBasic.line.width)
-        Assert.assertEqual(LINE_WIDTH.WIDTH5, oBasic.line.width)
+        Assert.assertEqual(LineWidth.WIDTH5, oBasic.line.width)
         # Inherit (true)
         self.m_logger.WriteLine4("\t\tCurrent Inherit flag is: {0}", oBasic.inherit)
         oBasic.inherit = True
@@ -77,20 +77,20 @@ class GfxAttributesBasicHelper(object):
         Assert.assertEqual(True, oBasic.inherit)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            oBasic.label_visible = False
+            oBasic.show_label = False
 
         # Inherit (false)
         oBasic.inherit = False
         self.m_logger.WriteLine4("\t\tNew Inherit flag is: {0}", oBasic.inherit)
         Assert.assertEqual(False, oBasic.inherit)
         # LabelVisible
-        self.m_logger.WriteLine4("\t\tCurrent LabelVisible flag is: {0}", oBasic.label_visible)
-        oBasic.label_visible = True
-        self.m_logger.WriteLine4("\t\tNew LabelVisible flag is: {0}", oBasic.label_visible)
-        Assert.assertEqual(True, oBasic.label_visible)
-        oBasic.label_visible = False
-        self.m_logger.WriteLine4("\t\tNew LabelVisible flag is: {0}", oBasic.label_visible)
-        Assert.assertEqual(False, oBasic.label_visible)
+        self.m_logger.WriteLine4("\t\tCurrent LabelVisible flag is: {0}", oBasic.show_label)
+        oBasic.show_label = True
+        self.m_logger.WriteLine4("\t\tNew LabelVisible flag is: {0}", oBasic.show_label)
+        Assert.assertEqual(True, oBasic.show_label)
+        oBasic.show_label = False
+        self.m_logger.WriteLine4("\t\tNew LabelVisible flag is: {0}", oBasic.show_label)
+        Assert.assertEqual(False, oBasic.show_label)
 
 
 # endregion
@@ -114,21 +114,21 @@ class GfxAttributesRouteHelper(object):
         self.m_logger.WriteLine("GfxAttributesRouteHelper test:")
 
         # IsVisible (false)
-        self.m_logger.WriteLine4("\tThe current IsVisible flag is: {0}", oRoute.is_visible)
-        oRoute.is_visible = False
-        self.m_logger.WriteLine4("\tThe new IsVisible flag is: {0}", oRoute.is_visible)
-        Assert.assertEqual(False, oRoute.is_visible)
+        self.m_logger.WriteLine4("\tThe current IsVisible flag is: {0}", oRoute.show_graphics)
+        oRoute.show_graphics = False
+        self.m_logger.WriteLine4("\tThe new IsVisible flag is: {0}", oRoute.show_graphics)
+        Assert.assertEqual(False, oRoute.show_graphics)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            oRoute.is_route_visible = False
+            oRoute.show_route = False
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            oRoute.is_route_marker_visible = False
+            oRoute.show_route_marker = False
 
         # IsVisible (true)
-        oRoute.is_visible = True
-        self.m_logger.WriteLine4("\tThe new IsVisible flag is: {0}", oRoute.is_visible)
-        Assert.assertEqual(True, oRoute.is_visible)
+        oRoute.show_graphics = True
+        self.m_logger.WriteLine4("\tThe new IsVisible flag is: {0}", oRoute.show_graphics)
+        Assert.assertEqual(True, oRoute.show_graphics)
         # Inherit (true)
         self.m_logger.WriteLine4("\t\tCurrent Inherit flag is: {0}", oRoute.inherit)
         oRoute.inherit = True
@@ -136,25 +136,25 @@ class GfxAttributesRouteHelper(object):
         Assert.assertEqual(True, oRoute.inherit)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            oRoute.is_route_visible = False
+            oRoute.show_route = False
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            oRoute.is_route_marker_visible = False
+            oRoute.show_route_marker = False
 
         # Inherit (false)
         oRoute.inherit = False
         self.m_logger.WriteLine4("\t\tNew Inherit flag is: {0}", oRoute.inherit)
         Assert.assertEqual(False, oRoute.inherit)
         # IsRouteVisible
-        self.m_logger.WriteLine4("\t\tCurrent IsRouteVisible flag is: {0}", oRoute.is_route_visible)
-        oRoute.is_route_visible = True
-        self.m_logger.WriteLine4("\t\tNew IsRouteVisible flag is: {0}", oRoute.is_route_visible)
-        Assert.assertEqual(True, oRoute.is_route_visible)
+        self.m_logger.WriteLine4("\t\tCurrent IsRouteVisible flag is: {0}", oRoute.show_route)
+        oRoute.show_route = True
+        self.m_logger.WriteLine4("\t\tNew IsRouteVisible flag is: {0}", oRoute.show_route)
+        Assert.assertEqual(True, oRoute.show_route)
         # IsRouteMarkerVisible
-        self.m_logger.WriteLine4("\t\tCurrent IsRouteMarkerVisible flag is: {0}", oRoute.is_route_marker_visible)
-        oRoute.is_route_marker_visible = True
-        self.m_logger.WriteLine4("\t\tNew IsRouteMarkerVisible flag is: {0}", oRoute.is_route_marker_visible)
-        Assert.assertEqual(True, oRoute.is_route_marker_visible)
+        self.m_logger.WriteLine4("\t\tCurrent IsRouteMarkerVisible flag is: {0}", oRoute.show_route_marker)
+        oRoute.show_route_marker = True
+        self.m_logger.WriteLine4("\t\tNew IsRouteMarkerVisible flag is: {0}", oRoute.show_route_marker)
+        Assert.assertEqual(True, oRoute.show_route_marker)
 
 
 # endregion
@@ -178,27 +178,27 @@ class GfxAttributesOrbitHelper(object):
         self.m_logger.WriteLine("GfxAttributesOrbitHelper test:")
 
         # IsVisible (false)
-        self.m_logger.WriteLine4("\tThe current IsVisible flag is: {0}", oOrbit.is_visible)
-        oOrbit.is_visible = False
-        self.m_logger.WriteLine4("\tThe new IsVisible flag is: {0}", oOrbit.is_visible)
-        Assert.assertEqual(False, oOrbit.is_visible)
+        self.m_logger.WriteLine4("\tThe current IsVisible flag is: {0}", oOrbit.show_graphics)
+        oOrbit.show_graphics = False
+        self.m_logger.WriteLine4("\tThe new IsVisible flag is: {0}", oOrbit.show_graphics)
+        Assert.assertEqual(False, oOrbit.show_graphics)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            oOrbit.is_ground_track_visible = False
+            oOrbit.show_ground_track = False
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            oOrbit.is_ground_marker_visible = False
+            oOrbit.show_ground_marker = False
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            oOrbit.is_orbit_visible = False
+            oOrbit.show_orbit = False
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            oOrbit.is_orbit_marker_visible = False
+            oOrbit.show_orbit_marker = False
 
         # IsVisible (true)
-        oOrbit.is_visible = True
-        self.m_logger.WriteLine4("\tThe new IsVisible flag is: {0}", oOrbit.is_visible)
-        Assert.assertEqual(True, oOrbit.is_visible)
+        oOrbit.show_graphics = True
+        self.m_logger.WriteLine4("\tThe new IsVisible flag is: {0}", oOrbit.show_graphics)
+        Assert.assertEqual(True, oOrbit.show_graphics)
         # Inherit (true)
         self.m_logger.WriteLine4("\t\tCurrent Inherit flag is: {0}", oOrbit.inherit)
         oOrbit.inherit = True
@@ -206,41 +206,41 @@ class GfxAttributesOrbitHelper(object):
         Assert.assertEqual(True, oOrbit.inherit)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            oOrbit.is_ground_track_visible = False
+            oOrbit.show_ground_track = False
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            oOrbit.is_ground_marker_visible = False
+            oOrbit.show_ground_marker = False
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            oOrbit.is_orbit_visible = False
+            oOrbit.show_orbit = False
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            oOrbit.is_orbit_marker_visible = False
+            oOrbit.show_orbit_marker = False
 
         # Inherit (false)
         oOrbit.inherit = False
         self.m_logger.WriteLine4("\t\tNew Inherit flag is: {0}", oOrbit.inherit)
         Assert.assertEqual(False, oOrbit.inherit)
         # IsGroundTrackVisible
-        self.m_logger.WriteLine4("\t\tCurrent IsGroundTrackVisible flag is: {0}", oOrbit.is_ground_track_visible)
-        oOrbit.is_ground_track_visible = True
-        self.m_logger.WriteLine4("\t\tNew IsGroundTrackVisible flag is: {0}", oOrbit.is_ground_track_visible)
-        Assert.assertEqual(True, oOrbit.is_ground_track_visible)
+        self.m_logger.WriteLine4("\t\tCurrent IsGroundTrackVisible flag is: {0}", oOrbit.show_ground_track)
+        oOrbit.show_ground_track = True
+        self.m_logger.WriteLine4("\t\tNew IsGroundTrackVisible flag is: {0}", oOrbit.show_ground_track)
+        Assert.assertEqual(True, oOrbit.show_ground_track)
         # IsGroundMarkerVisible
-        self.m_logger.WriteLine4("\t\tCurrent IsGroundMarkerVisible flag is: {0}", oOrbit.is_ground_marker_visible)
-        oOrbit.is_ground_marker_visible = True
-        self.m_logger.WriteLine4("\t\tNew IsGroundMarkerVisible flag is: {0}", oOrbit.is_ground_marker_visible)
-        Assert.assertEqual(True, oOrbit.is_ground_marker_visible)
+        self.m_logger.WriteLine4("\t\tCurrent IsGroundMarkerVisible flag is: {0}", oOrbit.show_ground_marker)
+        oOrbit.show_ground_marker = True
+        self.m_logger.WriteLine4("\t\tNew IsGroundMarkerVisible flag is: {0}", oOrbit.show_ground_marker)
+        Assert.assertEqual(True, oOrbit.show_ground_marker)
         # IsOrbitVisible
-        self.m_logger.WriteLine4("\t\tCurrent IsOrbitVisible flag is: {0}", oOrbit.is_orbit_visible)
-        oOrbit.is_orbit_visible = True
-        self.m_logger.WriteLine4("\t\tNew IsOrbitVisible flag is: {0}", oOrbit.is_orbit_visible)
-        Assert.assertEqual(True, oOrbit.is_orbit_visible)
+        self.m_logger.WriteLine4("\t\tCurrent IsOrbitVisible flag is: {0}", oOrbit.show_orbit)
+        oOrbit.show_orbit = True
+        self.m_logger.WriteLine4("\t\tNew IsOrbitVisible flag is: {0}", oOrbit.show_orbit)
+        Assert.assertEqual(True, oOrbit.show_orbit)
         # IsOrbitMarkerVisible
-        self.m_logger.WriteLine4("\t\tCurrent IsOrbitMarkerVisible flag is: {0}", oOrbit.is_orbit_marker_visible)
-        oOrbit.is_orbit_marker_visible = True
-        self.m_logger.WriteLine4("\t\tNew IsOrbitMarkerVisible flag is: {0}", oOrbit.is_orbit_marker_visible)
-        Assert.assertEqual(True, oOrbit.is_orbit_marker_visible)
+        self.m_logger.WriteLine4("\t\tCurrent IsOrbitMarkerVisible flag is: {0}", oOrbit.show_orbit_marker)
+        oOrbit.show_orbit_marker = True
+        self.m_logger.WriteLine4("\t\tNew IsOrbitMarkerVisible flag is: {0}", oOrbit.show_orbit_marker)
+        Assert.assertEqual(True, oOrbit.show_orbit_marker)
 
 
 # endregion
@@ -264,27 +264,27 @@ class GfxAttributesTrajectoryHelper(object):
         self.m_logger.WriteLine("GfxAttributesTrajectoryHelper test:")
 
         # IsVisible (false)
-        self.m_logger.WriteLine4("\tThe current IsVisible flag is: {0}", oTrajectory.is_visible)
-        oTrajectory.is_visible = False
-        self.m_logger.WriteLine4("\tThe new IsVisible flag is: {0}", oTrajectory.is_visible)
-        Assert.assertEqual(False, oTrajectory.is_visible)
+        self.m_logger.WriteLine4("\tThe current IsVisible flag is: {0}", oTrajectory.show_graphics)
+        oTrajectory.show_graphics = False
+        self.m_logger.WriteLine4("\tThe new IsVisible flag is: {0}", oTrajectory.show_graphics)
+        Assert.assertEqual(False, oTrajectory.show_graphics)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            oTrajectory.is_ground_track_visible = False
+            oTrajectory.show_ground_track = False
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            oTrajectory.is_ground_marker_visible = False
+            oTrajectory.show_ground_marker = False
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            oTrajectory.is_trajectory_visible = False
+            oTrajectory.show_trajectory = False
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            oTrajectory.is_trajectory_marker_visible = False
+            oTrajectory.show_trajectory_marker = False
 
         # IsVisible (true)
-        oTrajectory.is_visible = True
-        self.m_logger.WriteLine4("\tThe new IsVisible flag is: {0}", oTrajectory.is_visible)
-        Assert.assertEqual(True, oTrajectory.is_visible)
+        oTrajectory.show_graphics = True
+        self.m_logger.WriteLine4("\tThe new IsVisible flag is: {0}", oTrajectory.show_graphics)
+        Assert.assertEqual(True, oTrajectory.show_graphics)
         # Inherit (true)
         self.m_logger.WriteLine4("\t\tCurrent Inherit flag is: {0}", oTrajectory.inherit)
         oTrajectory.inherit = True
@@ -292,45 +292,43 @@ class GfxAttributesTrajectoryHelper(object):
         Assert.assertEqual(True, oTrajectory.inherit)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            oTrajectory.is_ground_track_visible = False
+            oTrajectory.show_ground_track = False
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            oTrajectory.is_ground_marker_visible = False
+            oTrajectory.show_ground_marker = False
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            oTrajectory.is_trajectory_visible = False
+            oTrajectory.show_trajectory = False
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            oTrajectory.is_trajectory_marker_visible = False
+            oTrajectory.show_trajectory_marker = False
 
         # Inherit (false)
         oTrajectory.inherit = False
         self.m_logger.WriteLine4("\t\tNew Inherit flag is: {0}", oTrajectory.inherit)
         Assert.assertEqual(False, oTrajectory.inherit)
         # IsGroundTrackVisible
-        self.m_logger.WriteLine4("\t\tCurrent IsGroundTrackVisible flag is: {0}", oTrajectory.is_ground_track_visible)
-        oTrajectory.is_ground_track_visible = True
-        self.m_logger.WriteLine4("\t\tNew IsGroundTrackVisible flag is: {0}", oTrajectory.is_ground_track_visible)
-        Assert.assertEqual(True, oTrajectory.is_ground_track_visible)
+        self.m_logger.WriteLine4("\t\tCurrent IsGroundTrackVisible flag is: {0}", oTrajectory.show_ground_track)
+        oTrajectory.show_ground_track = True
+        self.m_logger.WriteLine4("\t\tNew IsGroundTrackVisible flag is: {0}", oTrajectory.show_ground_track)
+        Assert.assertEqual(True, oTrajectory.show_ground_track)
         # IsGroundMarkerVisible
-        self.m_logger.WriteLine4("\t\tCurrent IsGroundMarkerVisible flag is: {0}", oTrajectory.is_ground_marker_visible)
-        oTrajectory.is_ground_marker_visible = True
-        self.m_logger.WriteLine4("\t\tNew IsGroundMarkerVisible flag is: {0}", oTrajectory.is_ground_marker_visible)
-        Assert.assertEqual(True, oTrajectory.is_ground_marker_visible)
+        self.m_logger.WriteLine4("\t\tCurrent IsGroundMarkerVisible flag is: {0}", oTrajectory.show_ground_marker)
+        oTrajectory.show_ground_marker = True
+        self.m_logger.WriteLine4("\t\tNew IsGroundMarkerVisible flag is: {0}", oTrajectory.show_ground_marker)
+        Assert.assertEqual(True, oTrajectory.show_ground_marker)
         # IsTrajectoryVisible
-        self.m_logger.WriteLine4("\t\tCurrent IsTrajectoryVisible flag is: {0}", oTrajectory.is_trajectory_visible)
-        oTrajectory.is_trajectory_visible = True
-        self.m_logger.WriteLine4("\t\tNew IsTrajectoryVisible flag is: {0}", oTrajectory.is_trajectory_visible)
-        Assert.assertEqual(True, oTrajectory.is_trajectory_visible)
+        self.m_logger.WriteLine4("\t\tCurrent IsTrajectoryVisible flag is: {0}", oTrajectory.show_trajectory)
+        oTrajectory.show_trajectory = True
+        self.m_logger.WriteLine4("\t\tNew IsTrajectoryVisible flag is: {0}", oTrajectory.show_trajectory)
+        Assert.assertEqual(True, oTrajectory.show_trajectory)
         # IsTrajectoryMarkerVisible
         self.m_logger.WriteLine4(
-            "\t\tCurrent IsTrajectoryMarkerVisible flag is: {0}", oTrajectory.is_trajectory_marker_visible
+            "\t\tCurrent IsTrajectoryMarkerVisible flag is: {0}", oTrajectory.show_trajectory_marker
         )
-        oTrajectory.is_trajectory_marker_visible = True
-        self.m_logger.WriteLine4(
-            "\t\tNew IsTrajectoryMarkerVisible flag is: {0}", oTrajectory.is_trajectory_marker_visible
-        )
-        Assert.assertEqual(True, oTrajectory.is_trajectory_marker_visible)
+        oTrajectory.show_trajectory_marker = True
+        self.m_logger.WriteLine4("\t\tNew IsTrajectoryMarkerVisible flag is: {0}", oTrajectory.show_trajectory_marker)
+        Assert.assertEqual(True, oTrajectory.show_trajectory_marker)
 
 
 # endregion
@@ -368,14 +366,14 @@ class GfxAttributesAccessHelper(object):
             Assert.assertIsNotNone(oBasic)
 
             with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-                oBasic.is_visible = False
+                oBasic.show_graphics = False
 
             # NoAccess (readonly)
             oBasic = oAccess.no_access
             Assert.assertIsNotNone(oBasic)
 
             with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-                oBasic.is_visible = False
+                oBasic.show_graphics = False
 
         if oLinkCollection.count == 0:
             arObjects = oLinkCollection.available_objects
@@ -878,65 +876,65 @@ class GfxElevationContoursHelper(object):
     # endregion
 
     # region Run method
-    def Run(self, oContours: "VehicleGraphics2DElevContours"):
+    def Run(self, oContours: "VehicleGraphics2DElevationContours"):
         self.m_logger.WriteLine("----- THE GRAPHICS ELEVATION CONTOURS TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oContours)
         self.m_oUnits.reset_units()
         # IsVisible
-        self.m_logger.WriteLine4("The current IsVisible flag is: {0}", oContours.is_visible)
-        oContours.is_visible = False
-        self.m_logger.WriteLine4("The new IsVisible flag is: {0}", oContours.is_visible)
-        Assert.assertEqual(False, oContours.is_visible)
-        oContours.is_visible = True
-        self.m_logger.WriteLine4("The new IsVisible flag is: {0}", oContours.is_visible)
-        Assert.assertEqual(True, oContours.is_visible)
+        self.m_logger.WriteLine4("The current IsVisible flag is: {0}", oContours.show_graphics)
+        oContours.show_graphics = False
+        self.m_logger.WriteLine4("The new IsVisible flag is: {0}", oContours.show_graphics)
+        Assert.assertEqual(False, oContours.show_graphics)
+        oContours.show_graphics = True
+        self.m_logger.WriteLine4("The new IsVisible flag is: {0}", oContours.show_graphics)
+        Assert.assertEqual(True, oContours.show_graphics)
         # IsFillVisible
-        self.m_logger.WriteLine4("The current IsFillVisible flag is: {0}", oContours.is_fill_visible)
-        oContours.is_fill_visible = False
-        self.m_logger.WriteLine4("The new IsFillVisible flag is: {0}", oContours.is_fill_visible)
-        Assert.assertEqual(False, oContours.is_fill_visible)
+        self.m_logger.WriteLine4("The current IsFillVisible flag is: {0}", oContours.show_filled_contours)
+        oContours.show_filled_contours = False
+        self.m_logger.WriteLine4("The new IsFillVisible flag is: {0}", oContours.show_filled_contours)
+        Assert.assertEqual(False, oContours.show_filled_contours)
         with pytest.raises(Exception):
-            oContours.fill_style = FILL_STYLE.HATCH
-        oContours.is_fill_visible = True
-        self.m_logger.WriteLine4("The new IsFillVisible flag is: {0}", oContours.is_fill_visible)
-        Assert.assertEqual(True, oContours.is_fill_visible)
+            oContours.fill_style = FillStyle.HATCH
+        oContours.show_filled_contours = True
+        self.m_logger.WriteLine4("The new IsFillVisible flag is: {0}", oContours.show_filled_contours)
+        Assert.assertEqual(True, oContours.show_filled_contours)
         # FillStyle
         self.m_logger.WriteLine6("The current FillStyle is: {0}", oContours.fill_style)
-        oContours.fill_style = FILL_STYLE.DIAGONAL_HATCH
+        oContours.fill_style = FillStyle.DIAGONAL_HATCH
         self.m_logger.WriteLine6("The new FillStyle is: {0}", oContours.fill_style)
-        Assert.assertEqual(FILL_STYLE.DIAGONAL_HATCH, oContours.fill_style)
-        oContours.fill_style = FILL_STYLE.DIAGONAL_STRIPE1
+        Assert.assertEqual(FillStyle.DIAGONAL_HATCH, oContours.fill_style)
+        oContours.fill_style = FillStyle.DIAGONAL_STRIPE1
         self.m_logger.WriteLine6("The new FillStyle is: {0}", oContours.fill_style)
-        Assert.assertEqual(FILL_STYLE.DIAGONAL_STRIPE1, oContours.fill_style)
-        oContours.fill_style = FILL_STYLE.DIAGONAL_STRIPE2
+        Assert.assertEqual(FillStyle.DIAGONAL_STRIPE1, oContours.fill_style)
+        oContours.fill_style = FillStyle.DIAGONAL_STRIPE2
         self.m_logger.WriteLine6("The new FillStyle is: {0}", oContours.fill_style)
-        Assert.assertEqual(FILL_STYLE.DIAGONAL_STRIPE2, oContours.fill_style)
-        oContours.fill_style = FILL_STYLE.HATCH
+        Assert.assertEqual(FillStyle.DIAGONAL_STRIPE2, oContours.fill_style)
+        oContours.fill_style = FillStyle.HATCH
         self.m_logger.WriteLine6("The new FillStyle is: {0}", oContours.fill_style)
-        Assert.assertEqual(FILL_STYLE.HATCH, oContours.fill_style)
-        oContours.fill_style = FILL_STYLE.HORIZONTAL_STRIPE
+        Assert.assertEqual(FillStyle.HATCH, oContours.fill_style)
+        oContours.fill_style = FillStyle.HORIZONTAL_STRIPE
         self.m_logger.WriteLine6("The new FillStyle is: {0}", oContours.fill_style)
-        Assert.assertEqual(FILL_STYLE.HORIZONTAL_STRIPE, oContours.fill_style)
-        oContours.fill_style = FILL_STYLE.SCREEN
+        Assert.assertEqual(FillStyle.HORIZONTAL_STRIPE, oContours.fill_style)
+        oContours.fill_style = FillStyle.SCREEN
         self.m_logger.WriteLine6("The new FillStyle is: {0}", oContours.fill_style)
-        Assert.assertEqual(FILL_STYLE.SCREEN, oContours.fill_style)
-        oContours.fill_style = FILL_STYLE.SOLID
+        Assert.assertEqual(FillStyle.SCREEN, oContours.fill_style)
+        oContours.fill_style = FillStyle.SOLID
         self.m_logger.WriteLine6("The new FillStyle is: {0}", oContours.fill_style)
-        Assert.assertEqual(FILL_STYLE.SOLID, oContours.fill_style)
-        oContours.fill_style = FILL_STYLE.VERTICAL_STRIPE
+        Assert.assertEqual(FillStyle.SOLID, oContours.fill_style)
+        oContours.fill_style = FillStyle.VERTICAL_STRIPE
         self.m_logger.WriteLine6("The new FillStyle is: {0}", oContours.fill_style)
-        Assert.assertEqual(FILL_STYLE.VERTICAL_STRIPE, oContours.fill_style)
+        Assert.assertEqual(FillStyle.VERTICAL_STRIPE, oContours.fill_style)
 
         oContours.fill_translucency = 55.0
         Assert.assertAlmostEqual(55.0, oContours.fill_translucency, delta=Math2.Epsilon12)
 
         # NumOfDecimalDigits
-        self.m_logger.WriteLine3("The current NumOfDecimalDigits is: {0}", oContours.num_of_decimal_digits)
-        oContours.num_of_decimal_digits = 7
-        self.m_logger.WriteLine3("The new NumOfDecimalDigits is: {0}", oContours.num_of_decimal_digits)
-        Assert.assertEqual(7, oContours.num_of_decimal_digits)
+        self.m_logger.WriteLine3("The current NumOfDecimalDigits is: {0}", oContours.number_of_decimal_digits)
+        oContours.number_of_decimal_digits = 7
+        self.m_logger.WriteLine3("The new NumOfDecimalDigits is: {0}", oContours.number_of_decimal_digits)
+        Assert.assertEqual(7, oContours.number_of_decimal_digits)
         with pytest.raises(Exception):
-            oContours.num_of_decimal_digits = 123
+            oContours.number_of_decimal_digits = 123
 
         # set AngleUnit
         strUnit: str = self.m_oUnits.get_current_unit_abbrv("AngleUnit")
@@ -960,8 +958,8 @@ class GfxElevationContoursHelper(object):
                 elevationsElement.color,
                 elevationsElement.line_style,
                 elevationsElement.line_width,
-                elevationsElement.distance_visible,
-                elevationsElement.user_text_visible,
+                elevationsElement.show_distance_label,
+                elevationsElement.show_user_text_visible,
                 elevationsElement.user_text,
                 elevationsElement.label_angle,
             )
@@ -983,8 +981,8 @@ class GfxElevationContoursHelper(object):
                 elevationsElement.color,
                 elevationsElement.line_style,
                 elevationsElement.line_width,
-                elevationsElement.distance_visible,
-                elevationsElement.user_text_visible,
+                elevationsElement.show_distance_label,
+                elevationsElement.show_user_text_visible,
                 elevationsElement.user_text,
                 elevationsElement.label_angle,
             )
@@ -1015,17 +1013,17 @@ class GfxElevationContoursHelper(object):
                 elevationsElement.color,
                 elevationsElement.line_style,
                 elevationsElement.line_width,
-                elevationsElement.distance_visible,
-                elevationsElement.user_text_visible,
+                elevationsElement.show_distance_label,
+                elevationsElement.show_user_text_visible,
                 elevationsElement.user_text,
                 elevationsElement.label_angle,
             )
             elevationsElement.color = Colors.from_argb((elevationsElement.color._to_ole_color() + 250))
-            elevationsElement.line_style = LINE_STYLE.M_DASH
-            elevationsElement.line_width = LINE_WIDTH.WIDTH2
+            elevationsElement.line_style = LineStyle.M_DASH
+            elevationsElement.line_width = LineWidth.WIDTH2
             elevationsElement.elevation += 1.5
-            elevationsElement.distance_visible = not elevationsElement.distance_visible
-            elevationsElement.user_text_visible = True
+            elevationsElement.show_distance_label = not elevationsElement.show_distance_label
+            elevationsElement.show_user_text_visible = True
             elevationsElement.user_text = "User test Text"
             elevationsElement.label_angle = 15
             self.m_logger.WriteLine10(
@@ -1035,8 +1033,8 @@ class GfxElevationContoursHelper(object):
                 elevationsElement.color,
                 elevationsElement.line_style,
                 elevationsElement.line_width,
-                elevationsElement.distance_visible,
-                elevationsElement.user_text_visible,
+                elevationsElement.show_distance_label,
+                elevationsElement.show_user_text_visible,
                 elevationsElement.user_text,
                 elevationsElement.label_angle,
             )
@@ -1079,59 +1077,59 @@ class GfxRangeContoursHelper(object):
         self.m_logger.WriteLine("----- THE GRAPHICS RANGE CONTOURS TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oContours)
         # IsVisible
-        self.m_logger.WriteLine4("\tThe current IsVisible flag is: {0}", oContours.is_visible)
-        oContours.is_visible = False
-        self.m_logger.WriteLine4("\tThe new IsVisible flag is: {0}", oContours.is_visible)
-        Assert.assertFalse(oContours.is_visible)
-        oContours.is_visible = True
-        self.m_logger.WriteLine4("\tThe new IsVisible flag is: {0}", oContours.is_visible)
-        Assert.assertTrue(oContours.is_visible)
+        self.m_logger.WriteLine4("\tThe current IsVisible flag is: {0}", oContours.show_graphics)
+        oContours.show_graphics = False
+        self.m_logger.WriteLine4("\tThe new IsVisible flag is: {0}", oContours.show_graphics)
+        Assert.assertFalse(oContours.show_graphics)
+        oContours.show_graphics = True
+        self.m_logger.WriteLine4("\tThe new IsVisible flag is: {0}", oContours.show_graphics)
+        Assert.assertTrue(oContours.show_graphics)
         # IsFillVisible
-        self.m_logger.WriteLine4("\tThe current IsFillVisible flag is: {0}", oContours.is_fill_visible)
-        oContours.is_fill_visible = False
-        self.m_logger.WriteLine4("\tThe new IsFillVisible flag is: {0}", oContours.is_fill_visible)
-        Assert.assertFalse(oContours.is_fill_visible)
+        self.m_logger.WriteLine4("\tThe current IsFillVisible flag is: {0}", oContours.show_filled_contours)
+        oContours.show_filled_contours = False
+        self.m_logger.WriteLine4("\tThe new IsFillVisible flag is: {0}", oContours.show_filled_contours)
+        Assert.assertFalse(oContours.show_filled_contours)
         with pytest.raises(Exception):
-            oContours.fill_style = FILL_STYLE.HATCH
-        oContours.is_fill_visible = True
-        self.m_logger.WriteLine4("\tThe new IsFillVisible flag is: {0}", oContours.is_fill_visible)
-        Assert.assertTrue(oContours.is_fill_visible)
+            oContours.fill_style = FillStyle.HATCH
+        oContours.show_filled_contours = True
+        self.m_logger.WriteLine4("\tThe new IsFillVisible flag is: {0}", oContours.show_filled_contours)
+        Assert.assertTrue(oContours.show_filled_contours)
         # FillStyle
         self.m_logger.WriteLine6("\tThe current FillStyle is: {0}", oContours.fill_style)
-        oContours.fill_style = FILL_STYLE.DIAGONAL_HATCH
+        oContours.fill_style = FillStyle.DIAGONAL_HATCH
         self.m_logger.WriteLine6("\tThe new FillStyle is: {0}", oContours.fill_style)
-        Assert.assertEqual(FILL_STYLE.DIAGONAL_HATCH, oContours.fill_style)
-        oContours.fill_style = FILL_STYLE.DIAGONAL_STRIPE1
+        Assert.assertEqual(FillStyle.DIAGONAL_HATCH, oContours.fill_style)
+        oContours.fill_style = FillStyle.DIAGONAL_STRIPE1
         self.m_logger.WriteLine6("\tThe new FillStyle is: {0}", oContours.fill_style)
-        Assert.assertEqual(FILL_STYLE.DIAGONAL_STRIPE1, oContours.fill_style)
-        oContours.fill_style = FILL_STYLE.DIAGONAL_STRIPE2
+        Assert.assertEqual(FillStyle.DIAGONAL_STRIPE1, oContours.fill_style)
+        oContours.fill_style = FillStyle.DIAGONAL_STRIPE2
         self.m_logger.WriteLine6("\tThe new FillStyle is: {0}", oContours.fill_style)
-        Assert.assertEqual(FILL_STYLE.DIAGONAL_STRIPE2, oContours.fill_style)
-        oContours.fill_style = FILL_STYLE.HATCH
+        Assert.assertEqual(FillStyle.DIAGONAL_STRIPE2, oContours.fill_style)
+        oContours.fill_style = FillStyle.HATCH
         self.m_logger.WriteLine6("\tThe new FillStyle is: {0}", oContours.fill_style)
-        Assert.assertEqual(FILL_STYLE.HATCH, oContours.fill_style)
-        oContours.fill_style = FILL_STYLE.HORIZONTAL_STRIPE
+        Assert.assertEqual(FillStyle.HATCH, oContours.fill_style)
+        oContours.fill_style = FillStyle.HORIZONTAL_STRIPE
         self.m_logger.WriteLine6("\tThe new FillStyle is: {0}", oContours.fill_style)
-        Assert.assertEqual(FILL_STYLE.HORIZONTAL_STRIPE, oContours.fill_style)
-        oContours.fill_style = FILL_STYLE.SCREEN
+        Assert.assertEqual(FillStyle.HORIZONTAL_STRIPE, oContours.fill_style)
+        oContours.fill_style = FillStyle.SCREEN
         self.m_logger.WriteLine6("\tThe new FillStyle is: {0}", oContours.fill_style)
-        Assert.assertEqual(FILL_STYLE.SCREEN, oContours.fill_style)
-        oContours.fill_style = FILL_STYLE.SOLID
+        Assert.assertEqual(FillStyle.SCREEN, oContours.fill_style)
+        oContours.fill_style = FillStyle.SOLID
         self.m_logger.WriteLine6("\tThe new FillStyle is: {0}", oContours.fill_style)
-        Assert.assertEqual(FILL_STYLE.SOLID, oContours.fill_style)
-        oContours.fill_style = FILL_STYLE.VERTICAL_STRIPE
+        Assert.assertEqual(FillStyle.SOLID, oContours.fill_style)
+        oContours.fill_style = FillStyle.VERTICAL_STRIPE
         self.m_logger.WriteLine6("\tThe new FillStyle is: {0}", oContours.fill_style)
-        Assert.assertEqual(FILL_STYLE.VERTICAL_STRIPE, oContours.fill_style)
+        Assert.assertEqual(FillStyle.VERTICAL_STRIPE, oContours.fill_style)
         # NumOfDecimalDigits
-        self.m_logger.WriteLine3("\tThe current NumOfDecimalDigits is: {0}", oContours.num_of_decimal_digits)
-        oContours.num_of_decimal_digits = 7
-        self.m_logger.WriteLine3("\tThe new NumOfDecimalDigits is: {0}", oContours.num_of_decimal_digits)
-        Assert.assertEqual(7, oContours.num_of_decimal_digits)
+        self.m_logger.WriteLine3("\tThe current NumOfDecimalDigits is: {0}", oContours.number_of_decimal_digits)
+        oContours.number_of_decimal_digits = 7
+        self.m_logger.WriteLine3("\tThe new NumOfDecimalDigits is: {0}", oContours.number_of_decimal_digits)
+        Assert.assertEqual(7, oContours.number_of_decimal_digits)
         with pytest.raises(Exception):
-            oContours.num_of_decimal_digits = 123
+            oContours.number_of_decimal_digits = 123
 
         with pytest.raises(Exception):
-            oContours.label_unit = "test"
+            oContours.label_units = "test"
 
         oContours.fill_translucency = 55.0
         Assert.assertAlmostEqual(55.0, oContours.fill_translucency, delta=Math2.Epsilon12)
@@ -1141,8 +1139,8 @@ class GfxRangeContoursHelper(object):
         unit: str
         for unit in availableUnits:
             self.m_logger.WriteLine(unit)
-            oContours.label_unit = unit
-            Assert.assertEqual(unit, oContours.label_unit)
+            oContours.label_units = unit
+            Assert.assertEqual(unit, oContours.label_units)
 
         # set DistanceUnit
         self.m_logger.WriteLine5(
@@ -1167,9 +1165,9 @@ class GfxRangeContoursHelper(object):
                 levelAttribute.color,
                 levelAttribute.line_style,
                 levelAttribute.line_width,
-                levelAttribute.label_visible,
-                levelAttribute.label_visible,
-                levelAttribute.user_text_visible,
+                levelAttribute.show_label,
+                levelAttribute.show_label,
+                levelAttribute.show_user_text_visible,
                 levelAttribute.user_text,
                 levelAttribute.label_angle,
             )
@@ -1191,9 +1189,9 @@ class GfxRangeContoursHelper(object):
                 levelAttribute.color,
                 levelAttribute.line_style,
                 levelAttribute.line_width,
-                levelAttribute.label_visible,
-                levelAttribute.label_visible,
-                levelAttribute.user_text_visible,
+                levelAttribute.show_label,
+                levelAttribute.show_label,
+                levelAttribute.show_user_text_visible,
                 levelAttribute.user_text,
                 levelAttribute.label_angle,
             )
@@ -1221,18 +1219,18 @@ class GfxRangeContoursHelper(object):
                 levelAttribute.color,
                 levelAttribute.line_style,
                 levelAttribute.line_width,
-                levelAttribute.label_visible,
-                levelAttribute.label_visible,
-                levelAttribute.user_text_visible,
+                levelAttribute.show_label,
+                levelAttribute.show_label,
+                levelAttribute.show_user_text_visible,
                 levelAttribute.user_text,
                 levelAttribute.label_angle,
             )
             levelAttribute.color = Colors.from_argb((levelAttribute.color._to_ole_color() + 250))
-            levelAttribute.line_style = LINE_STYLE.M_DASH
-            levelAttribute.line_width = LINE_WIDTH.WIDTH2
+            levelAttribute.line_style = LineStyle.M_DASH
+            levelAttribute.line_width = LineWidth.WIDTH2
             levelAttribute.level = float(levelAttribute.level) + 1.5
-            levelAttribute.label_visible = not levelAttribute.label_visible
-            levelAttribute.user_text_visible = True
+            levelAttribute.show_label = not levelAttribute.show_label
+            levelAttribute.show_user_text_visible = True
             levelAttribute.user_text = "UserText test string"
             levelAttribute.label_angle = 15
             self.m_logger.WriteLine10(
@@ -1241,9 +1239,9 @@ class GfxRangeContoursHelper(object):
                 levelAttribute.color,
                 levelAttribute.line_style,
                 levelAttribute.line_width,
-                levelAttribute.label_visible,
-                levelAttribute.label_visible,
-                levelAttribute.user_text_visible,
+                levelAttribute.show_label,
+                levelAttribute.show_label,
+                levelAttribute.show_user_text_visible,
                 levelAttribute.user_text,
                 levelAttribute.label_angle,
             )
@@ -1277,23 +1275,23 @@ class GfxSAAContoursHelper(object):
         self.m_logger.WriteLine("----- THE GRAPHICS SAA CONTOURS TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oContours)
         # IsVisible
-        self.m_logger.WriteLine4("The current IsVisible flag is: {0}", oContours.is_visible)
-        oContours.is_visible = False
-        self.m_logger.WriteLine4("The new IsVisible flag is: {0}", oContours.is_visible)
-        Assert.assertEqual(False, oContours.is_visible)
-        oContours.is_visible = True
-        self.m_logger.WriteLine4("The new IsVisible flag is: {0}", oContours.is_visible)
-        Assert.assertEqual(True, oContours.is_visible)
+        self.m_logger.WriteLine4("The current IsVisible flag is: {0}", oContours.show_graphics)
+        oContours.show_graphics = False
+        self.m_logger.WriteLine4("The new IsVisible flag is: {0}", oContours.show_graphics)
+        Assert.assertEqual(False, oContours.show_graphics)
+        oContours.show_graphics = True
+        self.m_logger.WriteLine4("The new IsVisible flag is: {0}", oContours.show_graphics)
+        Assert.assertEqual(True, oContours.show_graphics)
         # IsFillVisible (false)
-        self.m_logger.WriteLine4("The current IsFillVisible flag is: {0}", oContours.is_fill_visible)
-        oContours.is_fill_visible = False
-        self.m_logger.WriteLine4("The new IsFillVisible flag is: {0}", oContours.is_fill_visible)
-        Assert.assertEqual(False, oContours.is_fill_visible)
+        self.m_logger.WriteLine4("The current IsFillVisible flag is: {0}", oContours.show_filled_contours)
+        oContours.show_filled_contours = False
+        self.m_logger.WriteLine4("The new IsFillVisible flag is: {0}", oContours.show_filled_contours)
+        Assert.assertEqual(False, oContours.show_filled_contours)
 
         # IsFillVisible (true)
-        oContours.is_fill_visible = True
-        self.m_logger.WriteLine4("The new IsFillVisible flag is: {0}", oContours.is_fill_visible)
-        Assert.assertEqual(True, oContours.is_fill_visible)
+        oContours.show_filled_contours = True
+        self.m_logger.WriteLine4("The new IsFillVisible flag is: {0}", oContours.show_filled_contours)
+        Assert.assertEqual(True, oContours.show_filled_contours)
 
         # Translucency
         oContours.translucency = 73.0
@@ -1365,8 +1363,8 @@ class GfxGroundEllipsesHelper(object):
                 oEllipse.static_graphics_2d,
                 oEllipse.dynamic_graphics_2d,
                 oEllipse.interpolate,
-                oEllipse.is_name_visible,
-                oEllipse.is_center_visible,
+                oEllipse.show_name,
+                oEllipse.show_center_point_marker,
                 oEllipse.color,
                 oEllipse.line_width,
             )
@@ -1381,10 +1379,10 @@ class GfxGroundEllipsesHelper(object):
             groundEllipsesElement.static_graphics_2d = True
             groundEllipsesElement.dynamic_graphics_2d = True
             groundEllipsesElement.interpolate = True
-            groundEllipsesElement.is_name_visible = True
-            groundEllipsesElement.is_center_visible = True
+            groundEllipsesElement.show_name = True
+            groundEllipsesElement.show_center_point_marker = True
             groundEllipsesElement.color = Colors.from_argb(66047)
-            groundEllipsesElement.line_width = LINE_WIDTH.WIDTH2
+            groundEllipsesElement.line_width = LineWidth.WIDTH2
 
         iIndex: int = 0
         while iIndex < oCollection.count:
@@ -1396,8 +1394,8 @@ class GfxGroundEllipsesHelper(object):
                 oEllipse.static_graphics_2d,
                 oEllipse.dynamic_graphics_2d,
                 oEllipse.interpolate,
-                oEllipse.is_name_visible,
-                oEllipse.is_center_visible,
+                oEllipse.show_name,
+                oEllipse.show_center_point_marker,
                 oEllipse.color,
                 oEllipse.line_width,
             )
@@ -1423,43 +1421,43 @@ class GfxLightingHelper(object):
         Assert.assertIsNotNone(oLighting)
         # IsSunLightPenumbraVisible
         self.m_logger.WriteLine4(
-            "The current IsSunLightPenumbraVisible flag is: {0}", oLighting.is_sun_light_penumbra_visible
+            "The current IsSunLightPenumbraVisible flag is: {0}", oLighting.show_sunlight_penumbra_divider
         )
-        oLighting.is_sun_light_penumbra_visible = False
+        oLighting.show_sunlight_penumbra_divider = False
         self.m_logger.WriteLine4(
-            "The new IsSunLightPenumbraVisible flag is: {0}", oLighting.is_sun_light_penumbra_visible
+            "The new IsSunLightPenumbraVisible flag is: {0}", oLighting.show_sunlight_penumbra_divider
         )
-        Assert.assertEqual(False, oLighting.is_sun_light_penumbra_visible)
-        oLighting.is_sun_light_penumbra_visible = True
+        Assert.assertEqual(False, oLighting.show_sunlight_penumbra_divider)
+        oLighting.show_sunlight_penumbra_divider = True
         self.m_logger.WriteLine4(
-            "The new IsSunLightPenumbraVisible flag is: {0}", oLighting.is_sun_light_penumbra_visible
+            "The new IsSunLightPenumbraVisible flag is: {0}", oLighting.show_sunlight_penumbra_divider
         )
-        Assert.assertEqual(True, oLighting.is_sun_light_penumbra_visible)
+        Assert.assertEqual(True, oLighting.show_sunlight_penumbra_divider)
         # IsPenumbraUmbraVisible
-        self.m_logger.WriteLine4("The current IsPenumbraUmbraVisible flag is: {0}", oLighting.is_penumbra_umbra_visible)
-        oLighting.is_penumbra_umbra_visible = False
-        self.m_logger.WriteLine4("The new IsPenumbraUmbraVisible flag is: {0}", oLighting.is_penumbra_umbra_visible)
-        Assert.assertEqual(False, oLighting.is_penumbra_umbra_visible)
-        oLighting.is_penumbra_umbra_visible = True
-        self.m_logger.WriteLine4("The new IsPenumbraUmbraVisible flag is: {0}", oLighting.is_penumbra_umbra_visible)
-        Assert.assertEqual(True, oLighting.is_penumbra_umbra_visible)
+        self.m_logger.WriteLine4(
+            "The current IsPenumbraUmbraVisible flag is: {0}", oLighting.show_penumbra_umbra_divider
+        )
+        oLighting.show_penumbra_umbra_divider = False
+        self.m_logger.WriteLine4("The new IsPenumbraUmbraVisible flag is: {0}", oLighting.show_penumbra_umbra_divider)
+        Assert.assertEqual(False, oLighting.show_penumbra_umbra_divider)
+        oLighting.show_penumbra_umbra_divider = True
+        self.m_logger.WriteLine4("The new IsPenumbraUmbraVisible flag is: {0}", oLighting.show_penumbra_umbra_divider)
+        Assert.assertEqual(True, oLighting.show_penumbra_umbra_divider)
         # IsSolarSpecularReflectionPointVisible
         self.m_logger.WriteLine4(
             "The current IsSolarSpecularReflectionPointVisible flag is: {0}",
-            oLighting.is_solar_specular_reflection_point_visible,
+            oLighting.show_solar_specular_reflection_point,
         )
-        oLighting.is_solar_specular_reflection_point_visible = False
+        oLighting.show_solar_specular_reflection_point = False
         self.m_logger.WriteLine4(
-            "The new IsSolarSpecularReflectionPointVisible flag is: {0}",
-            oLighting.is_solar_specular_reflection_point_visible,
+            "The new IsSolarSpecularReflectionPointVisible flag is: {0}", oLighting.show_solar_specular_reflection_point
         )
-        Assert.assertEqual(False, oLighting.is_solar_specular_reflection_point_visible)
-        oLighting.is_solar_specular_reflection_point_visible = True
+        Assert.assertEqual(False, oLighting.show_solar_specular_reflection_point)
+        oLighting.show_solar_specular_reflection_point = True
         self.m_logger.WriteLine4(
-            "The new IsSolarSpecularReflectionPointVisible flag is: {0}",
-            oLighting.is_solar_specular_reflection_point_visible,
+            "The new IsSolarSpecularReflectionPointVisible flag is: {0}", oLighting.show_solar_specular_reflection_point
         )
-        Assert.assertEqual(True, oLighting.is_solar_specular_reflection_point_visible)
+        Assert.assertEqual(True, oLighting.show_solar_specular_reflection_point)
         # Sunlight
         self.m_logger.WriteLine("Sunlight test:")
         self.LightingElement(oLighting.sunlight)
@@ -1486,10 +1484,10 @@ class GfxLightingHelper(object):
             oVeGfxLightingElement.color = Colors.from_argb(12632256)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            oVeGfxLightingElement.line_style = LINE_STYLE.DOT_DASHED
+            oVeGfxLightingElement.line_style = LineStyle.DOT_DASHED
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            oVeGfxLightingElement.line_width = LINE_WIDTH.WIDTH1
+            oVeGfxLightingElement.line_width = LineWidth.WIDTH1
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             oVeGfxLightingElement.marker_style = "Circle"
@@ -1505,15 +1503,15 @@ class GfxLightingHelper(object):
         AssertEx.AreEqual(Colors.from_argb(255), oVeGfxLightingElement.color)
         # LineStyle
         self.m_logger.WriteLine6("\tThe current LineStyle is: {0}", oVeGfxLightingElement.line_style)
-        oVeGfxLightingElement.line_style = LINE_STYLE.DOT_DASHED
+        oVeGfxLightingElement.line_style = LineStyle.DOT_DASHED
         self.m_logger.WriteLine6("\tThe new LineStyle is: {0}", oVeGfxLightingElement.line_style)
-        Assert.assertEqual(LINE_STYLE.DOT_DASHED, oVeGfxLightingElement.line_style)
+        Assert.assertEqual(LineStyle.DOT_DASHED, oVeGfxLightingElement.line_style)
 
         # LineWidth
         self.m_logger.WriteLine6("\tThe current LineWidth is: {0}", oVeGfxLightingElement.line_width)
-        oVeGfxLightingElement.line_width = LINE_WIDTH.WIDTH3
+        oVeGfxLightingElement.line_width = LineWidth.WIDTH3
         self.m_logger.WriteLine6("\tThe new LineWidth is: {0}", oVeGfxLightingElement.line_width)
-        Assert.assertEqual(LINE_WIDTH.WIDTH3, oVeGfxLightingElement.line_width)
+        Assert.assertEqual(LineWidth.WIDTH3, oVeGfxLightingElement.line_width)
         with pytest.raises(Exception):
             oVeGfxLightingElement.line_width = -1
         with pytest.raises(Exception):
@@ -1546,11 +1544,11 @@ class GfxRouteResolutionHelper(object):
         self.m_logger.WriteLine6("The new Route is: {0}", oResolution.route)
         Assert.assertEqual(12345.6789, oResolution.route)
 
-        oResolution.min_route = 1
-        Assert.assertEqual(1, oResolution.min_route)
+        oResolution.minimum_route = 1
+        Assert.assertEqual(1, oResolution.minimum_route)
 
         with pytest.raises(Exception):
-            oResolution.min_route = -1
+            oResolution.minimum_route = -1
 
         with pytest.raises(Exception):
             oResolution.route = -12345.6789
@@ -1578,11 +1576,11 @@ class GfxTrajectoryResolutionHelper(object):
         self.m_logger.WriteLine6("The new GroundTrack is: {0}", oResolution.ground_track)
         Assert.assertEqual(12345.6789, oResolution.ground_track)
 
-        oResolution.min_ground_track = 1
-        Assert.assertEqual(1, oResolution.min_ground_track)
+        oResolution.minimum_ground_track = 1
+        Assert.assertEqual(1, oResolution.minimum_ground_track)
 
         with pytest.raises(Exception):
-            oResolution.min_ground_track = -1
+            oResolution.minimum_ground_track = -1
 
         with pytest.raises(Exception):
             oResolution.ground_track = -12345.6789
@@ -1593,11 +1591,11 @@ class GfxTrajectoryResolutionHelper(object):
         self.m_logger.WriteLine6("The new Trajectory is: {0}", oResolution.trajectory)
         Assert.assertEqual(6789.12345, oResolution.trajectory)
 
-        oResolution.min_trajectory = 1
-        Assert.assertEqual(1, oResolution.min_trajectory)
+        oResolution.minimum_trajectory = 1
+        Assert.assertEqual(1, oResolution.minimum_trajectory)
 
         with pytest.raises(Exception):
-            oResolution.min_trajectory = -1
+            oResolution.minimum_trajectory = -1
 
         with pytest.raises(Exception):
             oResolution.trajectory = -12345.6789
@@ -1625,11 +1623,11 @@ class GfxPassResolutionHelper(object):
         self.m_logger.WriteLine6("The new GroundTrack is: {0}", oResolution.ground_track)
         Assert.assertEqual(12345.6789, oResolution.ground_track)
 
-        oResolution.min_ground_track = 1
-        Assert.assertEqual(1, oResolution.min_ground_track)
+        oResolution.minimum_ground_track = 1
+        Assert.assertEqual(1, oResolution.minimum_ground_track)
 
         with pytest.raises(Exception):
-            oResolution.min_ground_track = -1
+            oResolution.minimum_ground_track = -1
 
         with pytest.raises(Exception):
             oResolution.ground_track = -12345.6789
@@ -1640,11 +1638,11 @@ class GfxPassResolutionHelper(object):
         self.m_logger.WriteLine6("The new Orbit is: {0}", oResolution.orbit)
         Assert.assertEqual(6789.12345, oResolution.orbit)
 
-        oResolution.min_orbit = 1
-        Assert.assertEqual(1, oResolution.min_orbit)
+        oResolution.minimum_orbit = 1
+        Assert.assertEqual(1, oResolution.minimum_orbit)
 
         with pytest.raises(Exception):
-            oResolution.min_orbit = -1
+            oResolution.minimum_orbit = -1
 
         with pytest.raises(Exception):
             oResolution.orbit = -12345.6789
@@ -1679,7 +1677,7 @@ class GfxLeadTrailDataHelper(object):
                 "\t\tType {0} is: {1} ({2})",
                 iIndex,
                 str(arSupportedTypes[iIndex][1]),
-                LEAD_TRAIL_DATA(int(arSupportedTypes[iIndex][0])),
+                LeadTrailData(int(arSupportedTypes[iIndex][0])),
             )
 
             iIndex += 1
@@ -1689,7 +1687,7 @@ class GfxLeadTrailDataHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arSupportedTypes):
-            eType: "LEAD_TRAIL_DATA" = LEAD_TRAIL_DATA(int(arSupportedTypes[iIndex][0]))
+            eType: "LeadTrailData" = LeadTrailData(int(arSupportedTypes[iIndex][0]))
             if not leadTrailData.is_lead_data_type_supported(eType):
                 Assert.fail("The {0} LeadType should be supported!", eType)
 
@@ -1698,7 +1696,7 @@ class GfxLeadTrailDataHelper(object):
             self.m_logger.WriteLine6("\tThe new LeadDataType is: {0}", leadTrailData.lead_data_type)
             Assert.assertEqual(eType, leadTrailData.lead_data_type)
             if leadTrailData.has_lead_data:
-                if eType == LEAD_TRAIL_DATA.DATA_FRACTION:
+                if eType == LeadTrailData.FRACTION:
                     # LeadData
                     oFraction: "IVehicleLeadTrailDataFraction" = IVehicleLeadTrailDataFraction(leadTrailData.lead_data)
                     Assert.assertIsNotNone(oFraction)
@@ -1710,7 +1708,7 @@ class GfxLeadTrailDataHelper(object):
                     # range test
                     with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                         oFraction.fraction = -56.34
-                elif eType == LEAD_TRAIL_DATA.DATA_TIME:
+                elif eType == LeadTrailData.TIME:
                     # LeadData
                     oTime: "IVehicleLeadTrailDataTime" = IVehicleLeadTrailDataTime(leadTrailData.lead_data)
                     Assert.assertIsNotNone(oTime)
@@ -1752,7 +1750,7 @@ class GfxLeadTrailDataHelper(object):
                 "\t\tType {0} is: {1} ({2})",
                 iIndex,
                 str(arSupportedTypes[iIndex][1]),
-                LEAD_TRAIL_DATA(int(arSupportedTypes[iIndex][0])),
+                LeadTrailData(int(arSupportedTypes[iIndex][0])),
             )
 
             iIndex += 1
@@ -1762,7 +1760,7 @@ class GfxLeadTrailDataHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arSupportedTypes):
-            eType: "LEAD_TRAIL_DATA" = LEAD_TRAIL_DATA(int(arSupportedTypes[iIndex][0]))
+            eType: "LeadTrailData" = LeadTrailData(int(arSupportedTypes[iIndex][0]))
             if not leadTrailData.is_trail_data_type_supported(eType):
                 Assert.fail("The {0} TrailType should be supported!", eType)
 
@@ -1771,7 +1769,7 @@ class GfxLeadTrailDataHelper(object):
             self.m_logger.WriteLine6("\tThe new TrailDataType is: {0}", leadTrailData.trail_data_type)
             Assert.assertEqual(eType, leadTrailData.trail_data_type)
             if leadTrailData.has_trail_data:
-                if eType == LEAD_TRAIL_DATA.DATA_FRACTION:
+                if eType == LeadTrailData.FRACTION:
                     # TrailData
                     oFraction: "IVehicleLeadTrailDataFraction" = IVehicleLeadTrailDataFraction(leadTrailData.trail_data)
                     Assert.assertIsNotNone(oFraction)
@@ -1784,7 +1782,7 @@ class GfxLeadTrailDataHelper(object):
 
                     with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
                         oFraction.fraction = -56.34
-                elif eType == LEAD_TRAIL_DATA.DATA_TIME:
+                elif eType == LeadTrailData.TIME:
                     # TrailData
                     oTime: "IVehicleLeadTrailDataTime" = IVehicleLeadTrailDataTime(leadTrailData.trail_data)
                     Assert.assertIsNotNone(oTime)
@@ -1819,7 +1817,7 @@ class GfxLeadTrailDataHelper(object):
             iIndex += 1
 
         # SetTrailSameAsLead
-        leadTrailData.set_trail_data_type(LEAD_TRAIL_DATA(int(arSupportedTypes[0][0])))
+        leadTrailData.set_trail_data_type(LeadTrailData(int(arSupportedTypes[0][0])))
         self.m_logger.WriteLine7(
             "\tBefore: TrailDataType = {0}, LeadDataType = {1}",
             leadTrailData.trail_data_type,
@@ -1859,7 +1857,7 @@ class GfxSwathHelper(object):
 
         iIndex: int = 0
         while iIndex < len(arTypes):
-            eType: "VEHICLE_GRAPHICS_2D_ELEVATION" = VEHICLE_GRAPHICS_2D_ELEVATION(int(arTypes[iIndex][0]))
+            eType: "VehicleGraphics2DElevation" = VehicleGraphics2DElevation(int(arTypes[iIndex][0]))
             self.m_logger.WriteLine8("\tElevation type {0}: {1} ({2})", iIndex, arTypes[iIndex][1], eType)
             if not oSwath.is_elevation_type_supported(eType):
                 Assert.fail("The {0} type should be supported!", eType)
@@ -1867,8 +1865,8 @@ class GfxSwathHelper(object):
             oSwath.set_elevation_type(eType)
             self.m_logger.WriteLine6("\t\tThe new Elevation type is: {0}", oSwath.elevation_type)
             Assert.assertEqual(eType, oSwath.elevation_type)
-            if ((oSwath.elevation_type == VEHICLE_GRAPHICS_2D_ELEVATION.ELEVATION_GROUND_ELEVATION)) or (
-                (oSwath.elevation_type == VEHICLE_GRAPHICS_2D_ELEVATION.ELEVATION_GROUND_ELEVATION_ENVELOPE)
+            if ((oSwath.elevation_type == VehicleGraphics2DElevation.ELEVATION_GROUND_ELEVATION)) or (
+                (oSwath.elevation_type == VehicleGraphics2DElevation.ELEVATION_GROUND_ELEVATION_ENVELOPE)
             ):
                 # Elevation
                 gfxElevationGroundElevation: "VehicleGraphics2DElevationGroundElevation" = (
@@ -1898,7 +1896,7 @@ class GfxSwathHelper(object):
                 self.m_oUnits.set_current_unit("AngleUnit", strUnit)
                 self.m_logger.WriteLine5("\t\t\tThe new AngleUnit (restored) is: {0}", strUnit)
                 Assert.assertEqual(strUnit, self.m_oUnits.get_current_unit_abbrv("AngleUnit"))
-            elif oSwath.elevation_type == VEHICLE_GRAPHICS_2D_ELEVATION.ELEVATION_SWATH_HALF_WIDTH:
+            elif oSwath.elevation_type == VehicleGraphics2DElevation.ELEVATION_SWATH_HALF_WIDTH:
                 # Elevation
                 gfxElevationSwathHalfWidth: "VehicleGraphics2DElevationSwathHalfWidth" = (
                     VehicleGraphics2DElevationSwathHalfWidth(oSwath.elevation)
@@ -1929,8 +1927,8 @@ class GfxSwathHelper(object):
                 self.m_oUnits.set_current_unit("DistanceUnit", strUnit)
                 self.m_logger.WriteLine5("\t\t\tThe new DistanceUnit (restored) is: {0}", strUnit)
                 Assert.assertEqual(strUnit, self.m_oUnits.get_current_unit_abbrv("DistanceUnit"))
-            elif ((oSwath.elevation_type == VEHICLE_GRAPHICS_2D_ELEVATION.ELEVATION_VEHICLE_HALF_ANGLE)) or (
-                (oSwath.elevation_type == VEHICLE_GRAPHICS_2D_ELEVATION.ELEVATION_VEHICLE_HALF_ANGLE_ENVELOPE)
+            elif ((oSwath.elevation_type == VehicleGraphics2DElevation.ELEVATION_VEHICLE_HALF_ANGLE)) or (
+                (oSwath.elevation_type == VehicleGraphics2DElevation.ELEVATION_VEHICLE_HALF_ANGLE_ENVELOPE)
             ):
                 gfxElevationVehicleHalfAngle: "VehicleGraphics2DElevationVehicleHalfAngle" = (
                     VehicleGraphics2DElevationVehicleHalfAngle(oSwath.elevation)
@@ -1964,23 +1962,23 @@ class GfxSwathHelper(object):
 
             iIndex += 1
 
-        # SetElevationType(ELEVATION_UNKNOWN)
+        # SetElevationType(UNKNOWN)
         with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
-            oSwath.set_elevation_type(VEHICLE_GRAPHICS_2D_ELEVATION.ELEVATION_UNKNOWN)
+            oSwath.set_elevation_type(VehicleGraphics2DElevation.UNKNOWN)
 
-        oSwath.set_elevation_type(VEHICLE_GRAPHICS_2D_ELEVATION.ELEVATION_GROUND_ELEVATION)
+        oSwath.set_elevation_type(VehicleGraphics2DElevation.ELEVATION_GROUND_ELEVATION)
 
         # Options
         self.m_logger.WriteLine6("The current Options is: {0}", oSwath.options)
-        oSwath.options = VEHICLE_GRAPHICS_2D_OPTIONS.OPTIONS_EDGE_LIMITS
+        oSwath.options = VehicleGraphics2DOptionType.OPTIONS_EDGE_LIMITS
         self.m_logger.WriteLine6("The new Options is: {0}", oSwath.options)
-        Assert.assertEqual(VEHICLE_GRAPHICS_2D_OPTIONS.OPTIONS_EDGE_LIMITS, oSwath.options)
-        oSwath.options = VEHICLE_GRAPHICS_2D_OPTIONS.OPTIONS_FILLED_LIMITS
+        Assert.assertEqual(VehicleGraphics2DOptionType.OPTIONS_EDGE_LIMITS, oSwath.options)
+        oSwath.options = VehicleGraphics2DOptionType.OPTIONS_FILLED_LIMITS
         self.m_logger.WriteLine6("The new Options is: {0}", oSwath.options)
-        Assert.assertEqual(VEHICLE_GRAPHICS_2D_OPTIONS.OPTIONS_FILLED_LIMITS, oSwath.options)
-        oSwath.options = VEHICLE_GRAPHICS_2D_OPTIONS.OPTIONS_NO_GRAPHICS
+        Assert.assertEqual(VehicleGraphics2DOptionType.OPTIONS_FILLED_LIMITS, oSwath.options)
+        oSwath.options = VehicleGraphics2DOptionType.OPTIONS_NO_GRAPHICS
         self.m_logger.WriteLine6("The new Options is: {0}", oSwath.options)
-        Assert.assertEqual(VEHICLE_GRAPHICS_2D_OPTIONS.OPTIONS_NO_GRAPHICS, oSwath.options)
+        Assert.assertEqual(VehicleGraphics2DOptionType.OPTIONS_NO_GRAPHICS, oSwath.options)
         self.m_logger.WriteLine("----- THE GRAPHICS SWATH TEST ----- END -----")
 
 
@@ -1999,26 +1997,26 @@ class GfxWaypointMarkersHelper(object):
         self.m_logger.WriteLine("----- THE GRAPHICS WAYPOINT MARKERS TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oMarker)
         # IsWaypointMarkersVisible (false)
-        self.m_logger.WriteLine4("The current WaypointMarkersVisible flag is: {0}", oMarker.is_waypoint_markers_visible)
-        oMarker.is_waypoint_markers_visible = False
-        self.m_logger.WriteLine4("The new WaypointMarkersVisible flag is: {0}", oMarker.is_waypoint_markers_visible)
-        Assert.assertEqual(False, oMarker.is_waypoint_markers_visible)
+        self.m_logger.WriteLine4("The current WaypointMarkersVisible flag is: {0}", oMarker.show_waypoint_markers)
+        oMarker.show_waypoint_markers = False
+        self.m_logger.WriteLine4("The new WaypointMarkersVisible flag is: {0}", oMarker.show_waypoint_markers)
+        Assert.assertEqual(False, oMarker.show_waypoint_markers)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            oMarker.is_turn_markers_visible = True
+            oMarker.show_turn_markers = True
 
         # IsWaypointMarkersVisible (true)
-        oMarker.is_waypoint_markers_visible = True
-        self.m_logger.WriteLine4("The new WaypointMarkersVisible flag is: {0}", oMarker.is_waypoint_markers_visible)
-        Assert.assertEqual(True, oMarker.is_waypoint_markers_visible)
+        oMarker.show_waypoint_markers = True
+        self.m_logger.WriteLine4("The new WaypointMarkersVisible flag is: {0}", oMarker.show_waypoint_markers)
+        Assert.assertEqual(True, oMarker.show_waypoint_markers)
         # IsTurnMarkersVisible
-        self.m_logger.WriteLine4("The current IsTurnMarkersVisible flag is: {0}", oMarker.is_turn_markers_visible)
-        oMarker.is_turn_markers_visible = False
-        self.m_logger.WriteLine4("The new IsTurnMarkersVisible flag is: {0}", oMarker.is_turn_markers_visible)
-        Assert.assertEqual(False, oMarker.is_turn_markers_visible)
-        oMarker.is_turn_markers_visible = True
-        self.m_logger.WriteLine4("The new IsTurnMarkersVisible flag is: {0}", oMarker.is_turn_markers_visible)
-        Assert.assertEqual(True, oMarker.is_turn_markers_visible)
+        self.m_logger.WriteLine4("The current IsTurnMarkersVisible flag is: {0}", oMarker.show_turn_markers)
+        oMarker.show_turn_markers = False
+        self.m_logger.WriteLine4("The new IsTurnMarkersVisible flag is: {0}", oMarker.show_turn_markers)
+        Assert.assertEqual(False, oMarker.show_turn_markers)
+        oMarker.show_turn_markers = True
+        self.m_logger.WriteLine4("The new IsTurnMarkersVisible flag is: {0}", oMarker.show_turn_markers)
+        Assert.assertEqual(True, oMarker.show_turn_markers)
         # WaypointMarkers
         oCollection: "VehicleGraphics2DWaypointMarkersCollection" = oMarker.waypoint_markers
         Assert.assertIsNotNone(oCollection)
@@ -2038,11 +2036,11 @@ class GfxWaypointMarkersHelper(object):
                 iIndex,
                 waypointMarkersElement.time,
                 waypointMarkersElement.color,
-                waypointMarkersElement.use_veh_color,
+                waypointMarkersElement.use_vehicle_color,
                 waypointMarkersElement.marker_style,
-                waypointMarkersElement.is_label_visible,
+                waypointMarkersElement.show_label,
                 waypointMarkersElement.label,
-                waypointMarkersElement.is_visible,
+                waypointMarkersElement.show_graphics,
             )
 
             iIndex += 1
@@ -2051,15 +2049,15 @@ class GfxWaypointMarkersHelper(object):
         waypointMarkersElement: "VehicleGraphics2DWaypointMarkersElement"
         # _NewEnum
         for waypointMarkersElement in oCollection:
-            waypointMarkersElement.use_veh_color = True
+            waypointMarkersElement.use_vehicle_color = True
 
             with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                 waypointMarkersElement.color = Colors.from_argb(1193046)
 
-            waypointMarkersElement.is_label_visible = True
+            waypointMarkersElement.show_label = True
             waypointMarkersElement.label = "WaypointLabel"
-            waypointMarkersElement.is_visible = True
-            waypointMarkersElement.use_veh_color = False
+            waypointMarkersElement.show_graphics = True
+            waypointMarkersElement.use_vehicle_color = False
             waypointMarkersElement.color = Colors.from_argb(65280)
             waypointMarkersElement.marker_style = "X"
 
@@ -2076,11 +2074,11 @@ class GfxWaypointMarkersHelper(object):
                 iIndex,
                 waypointMarkersElement.time,
                 waypointMarkersElement.color,
-                waypointMarkersElement.use_veh_color,
+                waypointMarkersElement.use_vehicle_color,
                 waypointMarkersElement.marker_style,
-                waypointMarkersElement.is_label_visible,
+                waypointMarkersElement.show_label,
                 waypointMarkersElement.label,
-                waypointMarkersElement.is_visible,
+                waypointMarkersElement.show_graphics,
             )
 
             iIndex += 1
@@ -2116,31 +2114,31 @@ class GfxTimeEventsHelper(object):
                 "\tElement {0}: TimeEventType = {1}, IsVisible = {2}",
                 iIndex,
                 oCollection[iIndex].time_event_type,
-                oCollection[iIndex].is_visible,
+                oCollection[iIndex].show_graphics,
             )
 
             iIndex += 1
 
         # IsVisible (false)
-        self.m_logger.WriteLine4("The current IsVisible flag is: {0}", timeEventsElement.is_visible)
-        timeEventsElement.is_visible = False
-        self.m_logger.WriteLine4("The new IsVisible flag is: {0}", timeEventsElement.is_visible)
-        Assert.assertEqual(False, timeEventsElement.is_visible)
+        self.m_logger.WriteLine4("The current IsVisible flag is: {0}", timeEventsElement.show_graphics)
+        timeEventsElement.show_graphics = False
+        self.m_logger.WriteLine4("The new IsVisible flag is: {0}", timeEventsElement.show_graphics)
+        Assert.assertEqual(False, timeEventsElement.show_graphics)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            timeEventsElement.set_time_event_type(VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE.TIME_EVENT_TYPE_LINE)
+            timeEventsElement.set_time_event_type(VehicleGraphics2DTimeEventType.LINE)
 
         # IsVisible (true)
-        timeEventsElement.is_visible = True
-        self.m_logger.WriteLine4("The new IsVisible flag is: {0}", timeEventsElement.is_visible)
-        Assert.assertEqual(True, timeEventsElement.is_visible)
+        timeEventsElement.show_graphics = True
+        self.m_logger.WriteLine4("The new IsVisible flag is: {0}", timeEventsElement.show_graphics)
+        Assert.assertEqual(True, timeEventsElement.show_graphics)
         # TimeEventTypeSupportedTypes
         arTypes = timeEventsElement.time_event_type_supported_types
         self.m_logger.WriteLine3("An array of supported TimeEvent types contains: {0} elements.", len(arTypes))
 
         iIndex: int = 0
         while iIndex < len(arTypes):
-            eType: "VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE" = VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE(int(arTypes[iIndex][0]))
+            eType: "VehicleGraphics2DTimeEventType" = VehicleGraphics2DTimeEventType(int(arTypes[iIndex][0]))
             if not timeEventsElement.is_time_event_type_supported(eType):
                 Assert.fail("The {0} type should be supported!", eType)
 
@@ -2150,7 +2148,7 @@ class GfxTimeEventsHelper(object):
             # TimeEventType
             self.m_logger.WriteLine6("\t\tThe new TimeEvent type is: {0}", timeEventsElement.time_event_type)
             Assert.assertEqual(eType, timeEventsElement.time_event_type)
-            if eType == VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE.TIME_EVENT_TYPE_LINE:
+            if eType == VehicleGraphics2DTimeEventType.LINE:
                 # TimeEventTypeData
                 oLine: "VehicleGraphics2DTimeEventTypeLine" = VehicleGraphics2DTimeEventTypeLine(
                     timeEventsElement.time_event_type_data
@@ -2171,7 +2169,7 @@ class GfxTimeEventsHelper(object):
                 Assert.assertEqual("25 Jul 2005 12:00:00.000", oLine.event_interval.find_stop_time())
 
                 oLine.event_interval.set_implicit_interval(
-                    (IStkObject(AG_SAT)).vgt.event_intervals["AvailabilityTimeSpan"]
+                    (IStkObject(AG_SAT)).analysis_workbench_components.time_intervals["AvailabilityTimeSpan"]
                 )
                 Assert.assertEqual("1 Jul 1999 00:00:00.000", oLine.event_interval.find_start_time())
                 Assert.assertEqual("2 Jul 1999 00:00:00.000", oLine.event_interval.find_stop_time())
@@ -2182,20 +2180,20 @@ class GfxTimeEventsHelper(object):
                 self.m_logger.WriteLine6("\t\tThe new Color is: {0}", oLine.color)
                 AssertEx.AreEqual(Colors.from_argb(12377850), oLine.color)
                 # UniqueID
-                self.m_logger.WriteLine5("\t\tThe current UniqueID is: {0}", oLine.unique_id)
-                oLine.unique_id = "Test line"
-                self.m_logger.WriteLine5("\t\tThe new UniqueID is: {0}", oLine.unique_id)
-                Assert.assertEqual("Test line", oLine.unique_id)
+                self.m_logger.WriteLine5("\t\tThe current UniqueID is: {0}", oLine.unique_identifer)
+                oLine.unique_identifer = "Test line"
+                self.m_logger.WriteLine5("\t\tThe new UniqueID is: {0}", oLine.unique_identifer)
+                Assert.assertEqual("Test line", oLine.unique_identifer)
                 # LineStyle
                 self.m_logger.WriteLine6("\t\tThe current LineStyle is: {0}", oLine.line_style)
-                oLine.line_style = LINE_STYLE.DASH_DOT_DOTTED
+                oLine.line_style = LineStyle.DASH_DOT_DOTTED
                 self.m_logger.WriteLine6("\t\tThe new LineStyle is: {0}", oLine.line_style)
-                Assert.assertEqual(LINE_STYLE.DASH_DOT_DOTTED, oLine.line_style)
+                Assert.assertEqual(LineStyle.DASH_DOT_DOTTED, oLine.line_style)
                 # LineWidth
                 self.m_logger.WriteLine6("\t\tThe current LineWidth is: {0}", oLine.line_width)
-                oLine.line_width = LINE_WIDTH.WIDTH5
+                oLine.line_width = LineWidth.WIDTH5
                 self.m_logger.WriteLine6("\t\tThe new LineWidth is: {0}", oLine.line_width)
-                Assert.assertEqual(LINE_WIDTH.WIDTH5, oLine.line_width)
+                Assert.assertEqual(LineWidth.WIDTH5, oLine.line_width)
                 # OffsetType
                 self.m_logger.WriteLine6("\t\tThe current Offset type is: {0}", oLine.offset_type)
                 # OffsetSupportedTypes
@@ -2206,7 +2204,7 @@ class GfxTimeEventsHelper(object):
 
                 i: int = 0
                 while i < len(arOffsetTypes):
-                    eOffset: "VEHICLE_GRAPHICS_2D_OFFSET" = VEHICLE_GRAPHICS_2D_OFFSET(int(arOffsetTypes[i][0]))
+                    eOffset: "VehicleGraphics2DOffset" = VehicleGraphics2DOffset(int(arOffsetTypes[i][0]))
                     if not oLine.is_offset_type_supported(eOffset):
                         Assert.fail("The {0} type should be supported!")
 
@@ -2226,7 +2224,7 @@ class GfxTimeEventsHelper(object):
 
                     i += 1
 
-            elif eType == VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE.TIME_EVENT_TYPE_MARKER:
+            elif eType == VehicleGraphics2DTimeEventType.MARKER:
                 # TimeEventTypeData
                 oMarker: "VehicleGraphics2DTimeEventTypeMarker" = VehicleGraphics2DTimeEventTypeMarker(
                     timeEventsElement.time_event_type_data
@@ -2250,7 +2248,7 @@ class GfxTimeEventsHelper(object):
                 # BUG66610 Assert.AreEqual("24 Jul 2005 12:00:00.000", oMarker.StopTime);
 
                 oMarker.event_interval.set_implicit_interval(
-                    (IStkObject(AG_SAT)).vgt.event_intervals["AvailabilityTimeSpan"]
+                    (IStkObject(AG_SAT)).analysis_workbench_components.time_intervals["AvailabilityTimeSpan"]
                 )
                 Assert.assertEqual("1 Jul 1999 00:00:00.000", oMarker.event_interval.find_start_time())
                 # BUG66610 Assert.AreEqual("1 Jul 1999 00:00:00.000", oMarker.StopTime);
@@ -2266,11 +2264,11 @@ class GfxTimeEventsHelper(object):
                 self.m_logger.WriteLine5("\t\tThe new MarkerStyle is: {0}", oMarker.marker_style)
                 Assert.assertEqual("Star", oMarker.marker_style)
                 # UniqueID
-                self.m_logger.WriteLine5("\t\tThe current UniqueID is: {0}", oMarker.unique_id)
-                oMarker.unique_id = "Howdy"
-                self.m_logger.WriteLine5("\t\tThe new UniqueID is: {0}", oMarker.unique_id)
-                Assert.assertEqual("Howdy", oMarker.unique_id)
-            elif eType == VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE.TIME_EVENT_TYPE_TEXT:
+                self.m_logger.WriteLine5("\t\tThe current UniqueID is: {0}", oMarker.unique_identifer)
+                oMarker.unique_identifer = "Howdy"
+                self.m_logger.WriteLine5("\t\tThe new UniqueID is: {0}", oMarker.unique_identifer)
+                Assert.assertEqual("Howdy", oMarker.unique_identifer)
+            elif eType == VehicleGraphics2DTimeEventType.TEXT:
                 # TimeEventTypeData
                 oText: "VehicleGraphics2DTimeEventTypeText" = VehicleGraphics2DTimeEventTypeText(
                     timeEventsElement.time_event_type_data
@@ -2294,7 +2292,7 @@ class GfxTimeEventsHelper(object):
                 # BUG66610 Assert.AreEqual("24 Jul 2005 12:00:00.000", oText.StopTime);
 
                 oText.event_interval.set_implicit_interval(
-                    (IStkObject(AG_SAT)).vgt.event_intervals["AvailabilityTimeSpan"]
+                    (IStkObject(AG_SAT)).analysis_workbench_components.time_intervals["AvailabilityTimeSpan"]
                 )
                 Assert.assertEqual("1 Jul 1999 00:00:00.000", oText.event_interval.find_start_time())
                 # BUG66610 Assert.AreEqual("1 Jul 1999 00:00:00.000", oText.StopTime);
@@ -2305,10 +2303,10 @@ class GfxTimeEventsHelper(object):
                 self.m_logger.WriteLine6("\t\tThe new Color is: {0}", oText.color)
                 AssertEx.AreEqual(Colors.from_argb(12377850), oText.color)
                 # UniqueID
-                self.m_logger.WriteLine5("\t\tThe current UniqueID is: {0}", oText.unique_id)
-                oText.unique_id = "Test text"
-                self.m_logger.WriteLine5("\t\tThe new UniqueID is: {0}", oText.unique_id)
-                Assert.assertEqual("Test text", oText.unique_id)
+                self.m_logger.WriteLine5("\t\tThe current UniqueID is: {0}", oText.unique_identifer)
+                oText.unique_identifer = "Test text"
+                self.m_logger.WriteLine5("\t\tThe new UniqueID is: {0}", oText.unique_identifer)
+                Assert.assertEqual("Test text", oText.unique_identifer)
                 # Text
                 self.m_logger.WriteLine5("\t\tThe current Text is: {0}", oText.text)
                 oText.text = "Bla-bla-bla!"
@@ -2324,7 +2322,7 @@ class GfxTimeEventsHelper(object):
 
                 i: int = 0
                 while i < len(arOffsetTypes):
-                    eOffset: "VEHICLE_GRAPHICS_2D_OFFSET" = VEHICLE_GRAPHICS_2D_OFFSET(int(arOffsetTypes[i][0]))
+                    eOffset: "VehicleGraphics2DOffset" = VehicleGraphics2DOffset(int(arOffsetTypes[i][0]))
                     if not oText.is_offset_type_supported(eOffset):
                         Assert.fail("The {0} type should be supported!")
 
@@ -2361,7 +2359,7 @@ class GfxTimeEventsHelper(object):
         oEvent: "VehicleGraphics2DTimeEventsElement"
         for oEvent in oCollection:
             self.m_logger.WriteLine7(
-                "\tElement: TimeEventType = {0}, IsVisible = {1}", oEvent.time_event_type, oEvent.is_visible
+                "\tElement: TimeEventType = {0}, IsVisible = {1}", oEvent.time_event_type, oEvent.show_graphics
             )
 
         # RemoveAll
@@ -2398,8 +2396,8 @@ class GfxLabelNoteHelper(object):
                 "\tElement {0}: Note = {1}, NoteVisible = {2}, LabelVisible = {3}",
                 iIndex,
                 oCollection[iIndex].note,
-                oCollection[iIndex].note_visible,
-                oCollection[iIndex].label_visible,
+                oCollection[iIndex].show_note,
+                oCollection[iIndex].show_label,
             )
 
             iIndex += 1
@@ -2424,8 +2422,8 @@ class GfxLabelNoteHelper(object):
             self.m_logger.WriteLine9(
                 "\tElement {3}: Note = {0}, NoteVisible = {1}, LabelVisible = {2}",
                 oCollection[iIndex].note,
-                oCollection[iIndex].note_visible,
-                oCollection[iIndex].label_visible,
+                oCollection[iIndex].show_note,
+                oCollection[iIndex].show_label,
                 iIndex,
             )
 
@@ -2444,26 +2442,26 @@ class GfxLabelNoteHelper(object):
             self.m_logger.WriteLine8(
                 "\tBefore: Note = {0}, NoteVisible = {1}, LabelVisible = {2}",
                 labelNote.note,
-                labelNote.note_visible,
-                labelNote.label_visible,
+                labelNote.show_note,
+                labelNote.show_label,
             )
             # Note
             labelNote.note = "Modified Label Note"
             Assert.assertEqual("Modified Label Note", labelNote.note)
             # LabelVisible
-            labelNote.label_visible = True
-            Assert.assertEqual(True, labelNote.label_visible)
+            labelNote.show_label = True
+            Assert.assertEqual(True, labelNote.show_label)
             # NoteVisible
-            labelNote.note_visible = NOTE_SHOW_TYPE.ON
-            Assert.assertEqual(NOTE_SHOW_TYPE.ON, labelNote.note_visible)
-            labelNote.note_visible = NOTE_SHOW_TYPE.INTERVALS
-            Assert.assertEqual(NOTE_SHOW_TYPE.INTERVALS, labelNote.note_visible)
+            labelNote.show_note = NoteShowType.ON
+            Assert.assertEqual(NoteShowType.ON, labelNote.show_note)
+            labelNote.show_note = NoteShowType.INTERVALS
+            Assert.assertEqual(NoteShowType.INTERVALS, labelNote.show_note)
             # Intervals
             oHelper = IntervalCollectionHelper(self.m_oUnits)
             oHelper.Run(labelNote.intervals, IntervalCollectionHelper.IntervalCollectionType.LabelNotes)
             # NoteVisible
-            labelNote.note_visible = NOTE_SHOW_TYPE.OFF
-            Assert.assertEqual(NOTE_SHOW_TYPE.OFF, labelNote.note_visible)
+            labelNote.show_note = NoteShowType.OFF
+            Assert.assertEqual(NoteShowType.OFF, labelNote.show_note)
 
         self.m_logger.WriteLine("----- THE GRAPHICS LABELNOTES TEST ----- END -----")
 

@@ -13,16 +13,16 @@ class TimelineCodeSnippetsTestBase(CodeSnippetsTestBase):
         CodeSnippetsTestBase.InitializeWithNewScenario(True)
 
         satellite: "Satellite" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "LEO"), Satellite
+            TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "LEO"), Satellite
         )
-        satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
-        (clr.CastAs(satellite.propagator, VehiclePropagatorTwoBody)).propagate()
+        satellite.set_propagator_type(PropagatorType.TWO_BODY)
+        (clr.CastAs(satellite.propagator, PropagatorTwoBody)).propagate()
 
         aircraft: "Aircraft" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.AIRCRAFT, "UAV"), Aircraft
+            TestBase.Application.current_scenario.children.new(STKObjectType.AIRCRAFT, "UAV"), Aircraft
         )
-        aircraft.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
-        propagator: "VehiclePropagatorGreatArc" = clr.CastAs(aircraft.route, VehiclePropagatorGreatArc)
+        aircraft.set_route_type(PropagatorType.GREAT_ARC)
+        propagator: "PropagatorGreatArc" = clr.CastAs(aircraft.route, PropagatorGreatArc)
         waypoints = [
             [40.0399, -75.5973, 3.048, 0.045, 0],
             [40.0308, -75.592, 3.081, 0.045, 0],
@@ -31,7 +31,7 @@ class TimelineCodeSnippetsTestBase(CodeSnippetsTestBase):
         ]
         propagator.set_points_smooth_rate_and_propagate(waypoints)
 
-        TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "Facility1")
+        TestBase.Application.current_scenario.children.new(STKObjectType.FACILITY, "Facility1")
 
     # endregion
 

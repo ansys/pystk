@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: sequence
     :canonical: ansys.stk.core.stkutil.IOrientationEulerAngles.sequence
-    :type: EULER_ORIENTATION_SEQUENCE
+    :type: EulerOrientationSequenceType
 
     Euler rotation sequence. Must be set before A,B,C values. Otherwise the current A,B,C values will be converted to the Sequence specified.
 

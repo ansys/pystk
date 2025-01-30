@@ -22,7 +22,7 @@ Overview
               - Get the missile's 3D model graphics.
             * - :py:attr:`~ansys.stk.core.stkobjects.MissileGraphics3D.proximity`
               - Get the missile's 3D proximity graphics.
-            * - :py:attr:`~ansys.stk.core.stkobjects.MissileGraphics3D.elev_contours`
+            * - :py:attr:`~ansys.stk.core.stkobjects.MissileGraphics3D.elevation_contours`
               - Get the missile's 3D elevation contour graphics.
             * - :py:attr:`~ansys.stk.core.stkobjects.MissileGraphics3D.covariance_pointing_contour`
               - Get the missile's 3D covariance pointing graphics.
@@ -68,7 +68,7 @@ Property detail
 
 .. py:property:: model
     :canonical: ansys.stk.core.stkobjects.MissileGraphics3D.model
-    :type: VehicleTrajectoryGraphics3DModel
+    :type: VehicleGraphics3DModelTrajectory
 
     Get the missile's 3D model graphics.
 
@@ -78,9 +78,9 @@ Property detail
 
     Get the missile's 3D proximity graphics.
 
-.. py:property:: elev_contours
-    :canonical: ansys.stk.core.stkobjects.MissileGraphics3D.elev_contours
-    :type: VehicleGraphics3DElevContours
+.. py:property:: elevation_contours
+    :canonical: ansys.stk.core.stkobjects.MissileGraphics3D.elevation_contours
+    :type: VehicleGraphics3DElevationContours
 
     Get the missile's 3D elevation contour graphics.
 

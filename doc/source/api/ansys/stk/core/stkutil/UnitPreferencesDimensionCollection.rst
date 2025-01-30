@@ -43,7 +43,7 @@ Overview
               - The MissionElapsedTime.
             * - :py:attr:`~ansys.stk.core.stkutil.UnitPreferencesDimensionCollection.julian_date_offset`
               - The JulianDateOffset.
-            * - :py:attr:`~ansys.stk.core.stkutil.UnitPreferencesDimensionCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkutil.UnitPreferencesDimensionCollection._new_enum`
               - Returns a collection of IAgUnitPrefsDim.
 
 
@@ -77,8 +77,8 @@ Property detail
 
     The JulianDateOffset.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkutil.UnitPreferencesDimensionCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkutil.UnitPreferencesDimensionCollection._new_enum
     :type: EnumeratorProxy
 
     Returns a collection of IAgUnitPrefsDim.
@@ -87,21 +87,21 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, indexOrName: typing.Any) -> UnitPreferencesDimension
+.. py:method:: item(self, index_or_name: typing.Any) -> UnitPreferencesDimension
     :canonical: ansys.stk.core.stkutil.UnitPreferencesDimensionCollection.item
 
     Return an IAgUnitPrefsDim given a Dimension name or an index.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 
         :obj:`~UnitPreferencesDimension`
 
 
-.. py:method:: set_current_unit(self, dimension: str, unitAbbrv: str) -> None
+.. py:method:: set_current_unit(self, dimension: str, unit_abbrv: str) -> None
     :canonical: ansys.stk.core.stkutil.UnitPreferencesDimensionCollection.set_current_unit
 
     Return the Current unit for a Dimension.
@@ -109,20 +109,20 @@ Method detail
     :Parameters:
 
     **dimension** : :obj:`~str`
-    **unitAbbrv** : :obj:`~str`
+    **unit_abbrv** : :obj:`~str`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: get_current_unit_abbrv(self, indexOrDimName: typing.Any) -> str
+.. py:method:: get_current_unit_abbrv(self, index_or_dim_name: typing.Any) -> str
     :canonical: ansys.stk.core.stkutil.UnitPreferencesDimensionCollection.get_current_unit_abbrv
 
     Return the Current Unit for a Dimension.
 
     :Parameters:
 
-    **indexOrDimName** : :obj:`~typing.Any`
+    **index_or_dim_name** : :obj:`~typing.Any`
 
     :Returns:
 

@@ -26,7 +26,7 @@ Overview
               - Execute a pick in the given rectangular region and returns a depth sorted collection of picked objects. The coordinate origin is top, left. To pick screen overlays, use the PickScreenOverlays method.
             * - :py:attr:`~ansys.stk.core.graphics.Scene.pick_screen_overlays`
               - Execute a pick on screen overlays at the given x, y and returns a front to back sorted collection of picked overlays. The coordinate origin is top, left. To pick other objects in the scene, use the Pick method.
-            * - :py:attr:`~ansys.stk.core.graphics.Scene.Subscribe`
+            * - :py:attr:`~ansys.stk.core.graphics.Scene.subscribe`
               - """Return an ISceneEventHandler that is subscribed to handle events associated with this instance of Scene."""
 
     .. tab-item:: Properties
@@ -139,7 +139,7 @@ Property detail
 
 .. py:property:: anti_aliasing
     :canonical: ansys.stk.core.graphics.Scene.anti_aliasing
-    :type: ANTI_ALIASING_METHOD
+    :type: AntiAliasingMethod
 
     Gets or sets the multisample anti-aliasing (MSAA) option for this scene. As the level of anti-aliasing increases, performance will generally decrease, but the quality of the anti-aliasing will improve.
 

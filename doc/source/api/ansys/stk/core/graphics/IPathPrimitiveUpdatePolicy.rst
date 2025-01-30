@@ -21,7 +21,6 @@ Overview
             * - :py:attr:`~ansys.stk.core.graphics.IPathPrimitiveUpdatePolicy.update`
               - Update the pathPrimitive at the specified date.
 
-
 Import detail
 -------------
 
@@ -34,14 +33,14 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: update(self, pathPrimitive: PathPrimitive, date: IDate) -> None
+.. py:method:: update(self, path_primitive: PathPrimitive, date: IDate) -> None
     :canonical: ansys.stk.core.graphics.IPathPrimitiveUpdatePolicy.update
 
     Update the pathPrimitive at the specified date.
 
     :Parameters:
 
-    **pathPrimitive** : :obj:`~PathPrimitive`
+    **path_primitive** : :obj:`~PathPrimitive`
     **date** : :obj:`~IDate`
 
     :Returns:

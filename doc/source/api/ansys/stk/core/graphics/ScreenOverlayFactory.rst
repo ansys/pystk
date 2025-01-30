@@ -24,7 +24,6 @@ Overview
               - Initialize the overlay with the specified position and size.
 
 
-
 Import detail
 -------------
 
@@ -37,17 +36,17 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: initialize(self, xPixels: float, yPixels: float, widthPixels: float, heightPixels: float) -> IScreenOverlay
+.. py:method:: initialize(self, x_pixels: float, y_pixels: float, width_pixels: float, height_pixels: float) -> IScreenOverlay
     :canonical: ansys.stk.core.graphics.ScreenOverlayFactory.initialize
 
     Initialize the overlay with the specified x position, y position, width, and height, all specified in pixels.
 
     :Parameters:
 
-    **xPixels** : :obj:`~float`
-    **yPixels** : :obj:`~float`
-    **widthPixels** : :obj:`~float`
-    **heightPixels** : :obj:`~float`
+    **x_pixels** : :obj:`~float`
+    **y_pixels** : :obj:`~float`
+    **width_pixels** : :obj:`~float`
+    **height_pixels** : :obj:`~float`
 
     :Returns:
 

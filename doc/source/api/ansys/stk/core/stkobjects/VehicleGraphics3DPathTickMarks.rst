@@ -29,7 +29,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DPathTickMarks.is_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DPathTickMarks.show_graphics`
               - Opt whether to display tick marks.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DPathTickMarks.tick_data_type`
               - Get the type of tick marks to display.
@@ -51,15 +51,15 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: is_visible
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DPathTickMarks.is_visible
+.. py:property:: show_graphics
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DPathTickMarks.show_graphics
     :type: bool
 
     Opt whether to display tick marks.
 
 .. py:property:: tick_data_type
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DPathTickMarks.tick_data_type
-    :type: TICK_DATA
+    :type: TickData
 
     Get the type of tick marks to display.
 
@@ -82,27 +82,27 @@ Method detail
 
 
 
-.. py:method:: set_tick_data_type(self, tickData: TICK_DATA) -> None
+.. py:method:: set_tick_data_type(self, tick_data: TickData) -> None
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DPathTickMarks.set_tick_data_type
 
     Set the type of tick marks to display.
 
     :Parameters:
 
-    **tickData** : :obj:`~TICK_DATA`
+    **tick_data** : :obj:`~TickData`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_tick_data_type_supported(self, tickData: TICK_DATA) -> bool
+.. py:method:: is_tick_data_type_supported(self, tick_data: TickData) -> bool
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DPathTickMarks.is_tick_data_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **tickData** : :obj:`~TICK_DATA`
+    **tick_data** : :obj:`~TickData`
 
     :Returns:
 

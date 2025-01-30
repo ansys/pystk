@@ -3,7 +3,7 @@ VectorGeometryToolVectorDisplacement
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolVectorDisplacement
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVector`, :py:class:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVector`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Vector defined by its start and end points.
 
@@ -48,13 +48,13 @@ Property detail
 
 .. py:property:: origin
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorDisplacement.origin
-    :type: VectorGeometryToolPointRefTo
+    :type: VectorGeometryToolPointReference
 
     Specify the vector's origin point.
 
 .. py:property:: destination
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorDisplacement.destination
-    :type: VectorGeometryToolPointRefTo
+    :type: VectorGeometryToolPointReference
 
     Specify the vector's destination point.
 
@@ -72,13 +72,13 @@ Property detail
 
 .. py:property:: signal_sense
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorDisplacement.signal_sense
-    :type: CRDN_SIGNAL_SENSE
+    :type: SignalDirectionType
 
     Specify a sense of signal transmission. This property is read-only if Apparent is set to false.
 
 .. py:property:: reference_system
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorDisplacement.reference_system
-    :type: VectorGeometryToolSystemRefTo
+    :type: VectorGeometryToolSystemReference
 
     Specify a frame in which the light time delay is computed. This property is read-only if Apparent is set to false.
 

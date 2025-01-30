@@ -7,8 +7,13 @@
 __all__ = ["STKRuntime", "STKRuntimeApplication"]
 
 import atexit
-import subprocess
 import os
+import pathlib
+import socket
+
+# The subprocess module is needed to start the backend. 
+# Excluding low severity bandit warning as the validity of the inputs is enforced.
+import subprocess # nosec B404
 
 from .stkx import STKXApplication
 from .stkobjects import StkObjectRoot, StkObjectModelContext
@@ -60,7 +65,7 @@ class STKRuntimeApplication(STKXApplication):
             return context
         raise STKInitializationError(f"Not connected to the gRPC server.")
 
-    def SetGrpcOptions(self, options:dict) -> None:
+    def set_grpc_options(self, options:dict) -> None:
         """
         Set advanced-usage options for the gRPC client.
 
@@ -75,7 +80,7 @@ class STKRuntimeApplication(STKXApplication):
             client: GrpcClient = self._intf.client
             client.set_grpc_options(options)
             
-    def NewGrpcCallBatcher(self, max_batch:int=None, disable_batching:bool=False) -> GrpcCallBatcher:
+    def new_grpc_call_batcher(self, max_batch:int=None, disable_batching:bool=False) -> GrpcCallBatcher:
         """
         Construct a GrpcCallBatcher linked to this gRPC client that may be used to improve API performance.
         
@@ -105,44 +110,66 @@ class STKRuntime(object):
     """Connect to STKRuntime using gRPC."""
 
     @staticmethod
-    def start_application(grpc_host:str="0.0.0.0", \
+    def start_application(grpc_host:str="localhost", \
                          grpc_port:int=40704, \
                          grpc_timeout_sec:int=60, \
-                         userControl:bool=False, \
-                         noGraphics:bool=True) -> STKRuntimeApplication:
+                         user_control:bool=False, \
+                         no_graphics:bool=True) -> STKRuntimeApplication:
         """
         Create a new STK Runtime instance and attach to the remote host.  
 
         grpc_host is the IP address or DNS name of the gRPC server.
-        grpc_port is the integral port number that the gRPC server is using.
+        grpc_port is the integral port number that the gRPC server is using (valid values are integers from 0 to 65535).
         grpc_timeout_sec specifies the time allocated to wait for a grpc connection (seconds).
-        Specify userControl = True to return the application to the user's control 
+        Specify user_control = True to return the application to the user's control 
         (the application remains open) after terminating the Python API connection.
         """
-        cmd_line = None
+        if grpc_port < 0 or grpc_port > 65535:
+            raise STKInitializationError(f"{grpc_port} is not a valid port number for the gRPC server.")
+        if grpc_host != "localhost":
+            try:
+                socket.inet_pton(socket.AF_INET, grpc_host)
+            except:
+                try:
+                    socket.inet_pton(socket.AF_INET6, grpc_host)
+                except OSError:
+                    raise STKInitializationError(f"Could not resolve host \"{grpc_host}\" for the gRPC server.")
+
+        cmd_line = []
         if os.name != "nt":
             ld_env = os.getenv('LD_LIBRARY_PATH')
             if ld_env:
                 for path in ld_env.split(':'):
-                    if os.path.exists(os.path.join(path, 'stkruntime')):
-                        cmd_line = f"{os.path.join(path, 'stkruntime')} --grpcHost {grpc_host} --grpcPort {grpc_port}" + (" --noGraphics" if noGraphics else "")
+                    stkruntime_path = (pathlib.Path(path) / "stkruntime").resolve()
+                    if stkruntime_path.exists():
+                        cmd_line = [stkruntime_path, "--grpcHost", grpc_host, "--grpcPort", str(grpc_port)]
+                        if no_graphics:
+                            cmd_line.append("--noGraphics")
                         break
             else:
                 raise STKInitializationError("LD_LIBRARY_PATH not defined. Add STK bin directory to LD_LIBRARY_PATH before running.")
         else:
             clsid_stkxapplication = "{062AB565-B121-45B5-A9A9-B412CEFAB6A9}"
-            stkx_dll_path = read_registry_key(f"CLSID\\{clsid_stkxapplication}\\InprocServer32", silent_exception=True)
-            bin_dir, dll_name = (None, None) if stkx_dll_path is None else os.path.split(stkx_dll_path)
-            if bin_dir is None or not os.path.exists(os.path.join(bin_dir, "STKRuntime.exe")):
-                bin_dir = winreg_stk_binary_dir()
-                if bin_dir is None:
+            stkx_dll_registry_value = read_registry_key(f"CLSID\\{clsid_stkxapplication}\\InprocServer32", silent_exception=True)
+            stkruntime_path = None if stkx_dll_registry_value is None else pathlib.Path(stkx_dll_registry_value).parent / "STKRuntime.exe"
+            if stkruntime_path is None or not stkruntime_path.exists():
+                stkruntime_path = pathlib.Path(winreg_stk_binary_dir()) / "STKRuntime.exe"
+                if not stkruntime_path.exists():
                     raise STKInitializationError(f"Could not find STKRuntime.exe. Verify STK installation.")
-            cmd_line = f"\"{os.path.join(bin_dir, 'STKRuntime.exe')}\" /grpcHost {grpc_host} /grpcPort {grpc_port}" + (" /noGraphics" if noGraphics else "")
+            cmd_line = [str(stkruntime_path.resolve()), "/grpcHost", grpc_host, "/grpcPort", str(grpc_port)]
+            if no_graphics:
+                cmd_line.append("/noGraphics")
 
-        subprocess.Popen(cmd_line, shell=True)
-        host = "localhost" if grpc_host=="0.0.0.0" else grpc_host
+        # Calling subprocess.Popen (without shell equals true) to start the backend. 
+        # Excluding low severity bandit check as the validity of the inputs has been ensured.
+        subprocess.Popen(cmd_line) # nosec B603
+        host = grpc_host
+        # Ignoring B104 warning as it is a false positive. The hard-coded string "0.0.0.0" is being filtered
+        # to ensure that it is not used.
+        if grpc_host=="0.0.0.0": # nosec B104
+            host = "localhost"
         app = STKRuntime.attach_to_application(host, grpc_port, grpc_timeout_sec)
-        app._intf.client.set_shutdown_stkruntime(not userControl)
+        app._intf.client.set_shutdown_stkruntime(not user_control)
         return app
 
         

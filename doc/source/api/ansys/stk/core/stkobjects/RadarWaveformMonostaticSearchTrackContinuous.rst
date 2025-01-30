@@ -44,7 +44,7 @@ Property detail
 
 .. py:property:: analysis_mode_type
     :canonical: ansys.stk.core.stkobjects.RadarWaveformMonostaticSearchTrackContinuous.analysis_mode_type
-    :type: RADAR_CONTINUOUS_WAVE_ANALYSIS_MODE_TYPE
+    :type: RadarContinuousWaveAnalysisMode
 
     Gets or sets the analysis type.
 

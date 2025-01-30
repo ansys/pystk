@@ -85,45 +85,45 @@ Method detail
 
 
 
-.. py:method:: initialize(self, minificationFilter: MINIFICATION_FILTER, magnificationFilter: MAGNIFICATION_FILTER, wrapS: TEXTURE_WRAP, wrapT: TEXTURE_WRAP) -> TextureFilter2D
+.. py:method:: initialize(self, minification_filter: MinificationFilter, magnification_filter: MagnificationFilter, wrap_s: TextureWrap, wrap_t: TextureWrap) -> TextureFilter2D
     :canonical: ansys.stk.core.graphics.TextureFilter2DFactory.initialize
 
     Create a texture filter using the specified minification/magnification options and texture wrap.
 
     :Parameters:
 
-    **minificationFilter** : :obj:`~MINIFICATION_FILTER`
-    **magnificationFilter** : :obj:`~MAGNIFICATION_FILTER`
-    **wrapS** : :obj:`~TEXTURE_WRAP`
-    **wrapT** : :obj:`~TEXTURE_WRAP`
+    **minification_filter** : :obj:`~MinificationFilter`
+    **magnification_filter** : :obj:`~MagnificationFilter`
+    **wrap_s** : :obj:`~TextureWrap`
+    **wrap_t** : :obj:`~TextureWrap`
 
     :Returns:
 
         :obj:`~TextureFilter2D`
 
-.. py:method:: initialize_with_texture_wrap(self, wrapS: TEXTURE_WRAP, wrapT: TEXTURE_WRAP) -> TextureFilter2D
+.. py:method:: initialize_with_texture_wrap(self, wrap_s: TextureWrap, wrap_t: TextureWrap) -> TextureFilter2D
     :canonical: ansys.stk.core.graphics.TextureFilter2DFactory.initialize_with_texture_wrap
 
     Create a texture filter using the specified texture wrap.
 
     :Parameters:
 
-    **wrapS** : :obj:`~TEXTURE_WRAP`
-    **wrapT** : :obj:`~TEXTURE_WRAP`
+    **wrap_s** : :obj:`~TextureWrap`
+    **wrap_t** : :obj:`~TextureWrap`
 
     :Returns:
 
         :obj:`~TextureFilter2D`
 
-.. py:method:: initialize_with_minification_and_magnification(self, minificationFilter: MINIFICATION_FILTER, magnificationFilter: MAGNIFICATION_FILTER) -> TextureFilter2D
+.. py:method:: initialize_with_minification_and_magnification(self, minification_filter: MinificationFilter, magnification_filter: MagnificationFilter) -> TextureFilter2D
     :canonical: ansys.stk.core.graphics.TextureFilter2DFactory.initialize_with_minification_and_magnification
 
     Create a texture filter using the specified minification/magnification options.
 
     :Parameters:
 
-    **minificationFilter** : :obj:`~MINIFICATION_FILTER`
-    **magnificationFilter** : :obj:`~MAGNIFICATION_FILTER`
+    **minification_filter** : :obj:`~MinificationFilter`
+    **magnification_filter** : :obj:`~MagnificationFilter`
 
     :Returns:
 

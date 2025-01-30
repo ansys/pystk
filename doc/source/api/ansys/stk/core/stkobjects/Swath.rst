@@ -89,13 +89,13 @@ Property detail
 
 .. py:property:: line_style
     :canonical: ansys.stk.core.stkobjects.Swath.line_style
-    :type: LINE_STYLE
+    :type: LineStyle
 
     Gets or sets the style of the line defining the boundaries of the swath display in the 2D Graphics window. A member of the AgELineStyle enumeration.
 
 .. py:property:: line_width
     :canonical: ansys.stk.core.stkobjects.Swath.line_width
-    :type: LINE_WIDTH
+    :type: LineWidth
 
     Gets or sets the width of the line defining the boundaries of the swath display in the 2D Graphics window. A member of the AgELineWidth enumeration.
 
@@ -137,7 +137,7 @@ Property detail
 
 .. py:property:: computational_method
     :canonical: ansys.stk.core.stkobjects.Swath.computational_method
-    :type: SWATH_COMPUTATIONAL_METHOD
+    :type: SwathComputationalMethod
 
     Select the Analytical or Numerical Computaional Method for generating swaths.
 
@@ -153,15 +153,15 @@ Method detail
 
 
 
-.. py:method:: add_time_interval(self, startTime: typing.Any, stopTime: typing.Any) -> None
+.. py:method:: add_time_interval(self, start_time: typing.Any, stop_time: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.Swath.add_time_interval
 
     Add an interval to the list of valid swath intervals. Start/Stop Times use DateFormat Dimension.
 
     :Parameters:
 
-    **startTime** : :obj:`~typing.Any`
-    **stopTime** : :obj:`~typing.Any`
+    **start_time** : :obj:`~typing.Any`
+    **stop_time** : :obj:`~typing.Any`
 
     :Returns:
 

@@ -28,7 +28,6 @@ Overview
               - Get the catalog source interface for this object.
 
 
-
 Import detail
 -------------
 

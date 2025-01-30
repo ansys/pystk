@@ -18,9 +18,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorProjectionDisplayDistance.min`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorProjectionDisplayDistance.minimum`
               - Minimum altitude above the facility, place or target from which the sensor projects. Uses Distance Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorProjectionDisplayDistance.max`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ISensorProjectionDisplayDistance.maximum`
               - Maximum altitude above the facility, place or target from which the sensor projects. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ISensorProjectionDisplayDistance.number_of_steps`
               - Step count. Determines the interval between sensor projections. For a specified min/max altitude: the step count determines the number and altitude of projections to be displayed. Dimensionless.
@@ -43,14 +43,14 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: min
-    :canonical: ansys.stk.core.stkobjects.ISensorProjectionDisplayDistance.min
+.. py:property:: minimum
+    :canonical: ansys.stk.core.stkobjects.ISensorProjectionDisplayDistance.minimum
     :type: float
 
     Minimum altitude above the facility, place or target from which the sensor projects. Uses Distance Dimension.
 
-.. py:property:: max
-    :canonical: ansys.stk.core.stkobjects.ISensorProjectionDisplayDistance.max
+.. py:property:: maximum
+    :canonical: ansys.stk.core.stkobjects.ISensorProjectionDisplayDistance.maximum
     :type: float
 
     Maximum altitude above the facility, place or target from which the sensor projects. Uses Distance Dimension.
@@ -69,13 +69,13 @@ Property detail
 
 .. py:property:: altitude_crossing_sides
     :canonical: ansys.stk.core.stkobjects.ISensorProjectionDisplayDistance.altitude_crossing_sides
-    :type: SENSOR_ALTITUDE_CROSSING_SIDES
+    :type: SensorAltitudeCrossingSideType
 
     Indicates which crossings are computed and displayed in the 2D Graphics window.
 
 .. py:property:: direction
     :canonical: ansys.stk.core.stkobjects.ISensorProjectionDisplayDistance.direction
-    :type: SENSOR_ALTITUDE_CROSSING_DIRECTION
+    :type: SensorAltitudeCrossingDirection
 
     Indicates the direction in which the sensor's field of view crosses the specified altitude.
 

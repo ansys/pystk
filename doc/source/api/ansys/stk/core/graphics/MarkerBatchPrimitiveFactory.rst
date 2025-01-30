@@ -34,7 +34,6 @@ Overview
               - Determine whether or not the video card supports the marker batch primitive with the given renderingMethod.
 
 
-
 Import detail
 -------------
 
@@ -56,85 +55,85 @@ Method detail
 
         :obj:`~MarkerBatchPrimitive`
 
-.. py:method:: initialize_with_set_hint(self, setHint: SET_HINT) -> MarkerBatchPrimitive
+.. py:method:: initialize_with_set_hint(self, set_hint: SetHint) -> MarkerBatchPrimitive
     :canonical: ansys.stk.core.graphics.MarkerBatchPrimitiveFactory.initialize_with_set_hint
 
     Initialize a marker batch primitive with the specified setHint...
 
     :Parameters:
 
-    **setHint** : :obj:`~SET_HINT`
+    **set_hint** : :obj:`~SetHint`
 
     :Returns:
 
         :obj:`~MarkerBatchPrimitive`
 
-.. py:method:: initialize_with_size_source(self, sizeSource: MARKER_BATCH_SIZE_SOURCE) -> MarkerBatchPrimitive
+.. py:method:: initialize_with_size_source(self, size_source: MarkerBatchSizeSource) -> MarkerBatchPrimitive
     :canonical: ansys.stk.core.graphics.MarkerBatchPrimitiveFactory.initialize_with_size_source
 
     Initialize a marker batch primitive with the specified sizeSource...
 
     :Parameters:
 
-    **sizeSource** : :obj:`~MARKER_BATCH_SIZE_SOURCE`
+    **size_source** : :obj:`~MarkerBatchSizeSource`
 
     :Returns:
 
         :obj:`~MarkerBatchPrimitive`
 
-.. py:method:: initialize_with_size_source_and_sort_order(self, sizeSource: MARKER_BATCH_SIZE_SOURCE, sortOrder: MARKER_BATCH_SORT_ORDER) -> MarkerBatchPrimitive
+.. py:method:: initialize_with_size_source_and_sort_order(self, size_source: MarkerBatchSizeSource, sort_order: MarkerBatchSortOrder) -> MarkerBatchPrimitive
     :canonical: ansys.stk.core.graphics.MarkerBatchPrimitiveFactory.initialize_with_size_source_and_sort_order
 
     Initialize a marker batch primitive with the specified sizeSource and sortOrder...
 
     :Parameters:
 
-    **sizeSource** : :obj:`~MARKER_BATCH_SIZE_SOURCE`
-    **sortOrder** : :obj:`~MARKER_BATCH_SORT_ORDER`
+    **size_source** : :obj:`~MarkerBatchSizeSource`
+    **sort_order** : :obj:`~MarkerBatchSortOrder`
 
     :Returns:
 
         :obj:`~MarkerBatchPrimitive`
 
-.. py:method:: initialize_size_source_sort_order_and_set_hint(self, sizeSource: MARKER_BATCH_SIZE_SOURCE, sortOrder: MARKER_BATCH_SORT_ORDER, setHint: SET_HINT) -> MarkerBatchPrimitive
+.. py:method:: initialize_size_source_sort_order_and_set_hint(self, size_source: MarkerBatchSizeSource, sort_order: MarkerBatchSortOrder, set_hint: SetHint) -> MarkerBatchPrimitive
     :canonical: ansys.stk.core.graphics.MarkerBatchPrimitiveFactory.initialize_size_source_sort_order_and_set_hint
 
     Initialize a marker batch primitive with the specified sizeSource, sortOrder, and setHint. This is equivalent to constructing a marker batch with the specified arguments and a marker batch rendering method of Automatic.
 
     :Parameters:
 
-    **sizeSource** : :obj:`~MARKER_BATCH_SIZE_SOURCE`
-    **sortOrder** : :obj:`~MARKER_BATCH_SORT_ORDER`
-    **setHint** : :obj:`~SET_HINT`
+    **size_source** : :obj:`~MarkerBatchSizeSource`
+    **sort_order** : :obj:`~MarkerBatchSortOrder`
+    **set_hint** : :obj:`~SetHint`
 
     :Returns:
 
         :obj:`~MarkerBatchPrimitive`
 
-.. py:method:: initialize_size_source_sort_order_set_hint_and_rendering_method(self, sizeSource: MARKER_BATCH_SIZE_SOURCE, sortOrder: MARKER_BATCH_SORT_ORDER, setHint: SET_HINT, renderingMethod: MARKER_BATCH_RENDERING_METHOD) -> MarkerBatchPrimitive
+.. py:method:: initialize_size_source_sort_order_set_hint_and_rendering_method(self, size_source: MarkerBatchSizeSource, sort_order: MarkerBatchSortOrder, set_hint: SetHint, rendering_method: MarkerBatchRenderingMethod) -> MarkerBatchPrimitive
     :canonical: ansys.stk.core.graphics.MarkerBatchPrimitiveFactory.initialize_size_source_sort_order_set_hint_and_rendering_method
 
     Initialize a marker batch primitive with the specified arguments.
 
     :Parameters:
 
-    **sizeSource** : :obj:`~MARKER_BATCH_SIZE_SOURCE`
-    **sortOrder** : :obj:`~MARKER_BATCH_SORT_ORDER`
-    **setHint** : :obj:`~SET_HINT`
-    **renderingMethod** : :obj:`~MARKER_BATCH_RENDERING_METHOD`
+    **size_source** : :obj:`~MarkerBatchSizeSource`
+    **sort_order** : :obj:`~MarkerBatchSortOrder`
+    **set_hint** : :obj:`~SetHint`
+    **rendering_method** : :obj:`~MarkerBatchRenderingMethod`
 
     :Returns:
 
         :obj:`~MarkerBatchPrimitive`
 
-.. py:method:: supported(self, renderingMethod: MARKER_BATCH_RENDERING_METHOD) -> bool
+.. py:method:: supported(self, rendering_method: MarkerBatchRenderingMethod) -> bool
     :canonical: ansys.stk.core.graphics.MarkerBatchPrimitiveFactory.supported
 
     Determine whether or not the video card supports the marker batch primitive with the given renderingMethod.
 
     :Parameters:
 
-    **renderingMethod** : :obj:`~MARKER_BATCH_RENDERING_METHOD`
+    **rendering_method** : :obj:`~MarkerBatchRenderingMethod`
 
     :Returns:
 

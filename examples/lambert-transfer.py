@@ -21,13 +21,13 @@
 
 # ## Launch a new STK instance
 #
-# Start by launching a new STK instance. In this example, ``STKEngine`` is used with graphics (``noGraphics`` mode set to ``False``). This means that the graphic user interface (GUI) of the product is not launched but 2D and 3D visualization is still available through the STK Engine controls & Jupyter widgets:
+# Start by launching a new STK instance. In this example, ``STKEngine`` is used with graphics (``no_graphics`` mode set to ``False``). This means that the graphic user interface (GUI) of the product is not launched but 2D and 3D visualization is still available through the STK Engine controls & Jupyter widgets:
 
 # +
 from ansys.stk.core.stkengine import STKEngine
 
 
-stk = STKEngine.start_application(noGraphics=False)
+stk = STKEngine.start_application(no_graphics=False)
 print(f"Using {stk.version}")
 # -
 
@@ -36,12 +36,12 @@ print(f"Using {stk.version}")
 # Next, create a new scenario. The central body for this scenario must be the Sun.
 
 # +
-from ansys.stk.core.stkobjects import STK_OBJECT_TYPE
+from ansys.stk.core.stkobjects import STKObjectType
 
 
 root = stk.new_object_root()
 scenario = root.children.new_on_central_body(
-    STK_OBJECT_TYPE.SCENARIO, "LambertTransfer", "Sun"
+    STKObjectType.SCENARIO, "LambertTransfer", "Sun"
 )
 # -
 
@@ -67,13 +67,13 @@ plotter.show()
 
 # ## Add the planets to the scenario
 #
-# Once the scenario is created, planets can be added. The default ephemerides are used for modeling the orbit of the Earth and Mars. However, it is possible to use other sources for the ephemerides, as provided by the ``EPHEM_SOURCE_TYPE`` enumeration. Finally, a royal blue color is used for representing the Earth while a salmon color is used for Mars.
+# Once the scenario is created, planets can be added. The default ephemerides are used for modeling the orbit of the Earth and Mars. However, it is possible to use other sources for the ephemerides, as provided by the ``EphemSourceType`` enumeration. Finally, a royal blue color is used for representing the Earth while a salmon color is used for Mars.
 
 # +
 from ansys.stk.core.stkobjects import (
-    EPHEM_SOURCE_TYPE,
-    PLANET_POSITION_SOURCE_TYPE,
-    STK_OBJECT_TYPE,
+    EphemSourceType,
+    PlanetPositionSourceType,
+    STKObjectType,
 )
 from ansys.stk.core.utilities.colors import Colors
 
@@ -85,10 +85,10 @@ planet_names_and_colors = {
 
 for planet_name, color in planet_names_and_colors.items():
     planet = scenario.children.new_on_central_body(
-        STK_OBJECT_TYPE.PLANET, planet_name, "Sun"
+        STKObjectType.PLANET, planet_name, "Sun"
     )
     planet.common_tasks.set_position_source_central_body(
-        planet_name, EPHEM_SOURCE_TYPE.DEFAULT
+        planet_name, EphemSourceType.DEFAULT
     )
     planet.graphics.color = color
 # -
@@ -101,17 +101,17 @@ earth, mars = [scenario.children[planet] for planet in planet_names_and_colors]
 
 # +
 # General graphics configuration
-scenario.graphics.labels_visible = True
+scenario.graphics.show_label = True
 
 # Vehicle specific graphics
-scenario.graphics.orbits_visible = True
+scenario.graphics.show_orbits = True
 
 # Planet specific graphics
-scenario.graphics.planet_orbits_visible = True
-scenario.graphics.inertial_position_labels_visible = True
-scenario.graphics.inertial_position_visible = True
-scenario.graphics.sub_planet_points_visible = False
-scenario.graphics.sub_planet_labels_visible = False
+scenario.graphics.show_planet_orbits = True
+scenario.graphics.show_inertial_position_labels = True
+scenario.graphics.show_inertial_position = True
+scenario.graphics.show_sub_planet_points = False
+scenario.graphics.show_sub_planet_labels = False
 # -
 
 # Finally, the camera position is updated to provide a better overview of the scene with the planets orbiting the Sun.
@@ -180,7 +180,7 @@ def get_object_pos_vel_at_epoch(
             )
         )
         data = from_data_result_to_dict(
-            data_provider.exec_single_elements(epoch, ["x", "y", "z"])
+            data_provider.execute_single_elements(epoch, ["x", "y", "z"])
         )
         state[path] = [coord[0] for coord in data.values()]
     return tuple(state.values())
@@ -213,16 +213,16 @@ print(f"Mars velocity at arrival: {initial_velocity} km/s")
 # The central body for the satellite must be the Sun to be compliant with the Keplerian assumption of the Lambert transfer. Remember that the gravity for Earth and Mars are ignored in this example.
 
 satellite = root.current_scenario.children.new_on_central_body(
-    STK_OBJECT_TYPE.SATELLITE, "Satellite", "Sun"
+    STKObjectType.SATELLITE, "Satellite", "Sun"
 )
 
 # Then, indicate the type of propagator used for the satellite. In this case, the propagator must be astrogator.
 
 # +
-from ansys.stk.core.stkobjects import VEHICLE_PROPAGATOR_TYPE
+from ansys.stk.core.stkobjects import PropagatorType
 
 
-satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
+satellite.set_propagator_type(PropagatorType.ASTROGATOR)
 # -
 
 # Remove all the main sequence to ensure no prior segments lead to wrong results during the simulation.
@@ -234,11 +234,11 @@ satellite.propagator.main_sequence.remove_all()
 # Now, declare the initial state of the satellite by using an initial state segment.
 
 # +
-from ansys.stk.core.stkobjects.astrogator import ELEMENT_TYPE, SEGMENT_TYPE
+from ansys.stk.core.stkobjects.astrogator import ElementSetType, SegmentType
 
 
 initial_state = satellite.propagator.main_sequence.insert(
-    SEGMENT_TYPE.INITIAL_STATE, "Initial State", "-"
+    SegmentType.INITIAL_STATE, "Initial State", "-"
 )
 # -
 
@@ -250,7 +250,7 @@ initial_state.orbit_epoch = START_TIME
 #  The value of the initial state must match the initial state of the Earth. Cartesian elements are used in this case.
 
 # +
-initial_state.set_element_type(ELEMENT_TYPE.CARTESIAN)
+initial_state.set_element_type(ElementSetType.CARTESIAN)
 
 initial_state.element.x = initial_position[0]
 initial_state.element.y = initial_position[1]
@@ -266,27 +266,27 @@ initial_state.element.vz = initial_velocity[2]
 # The transfer sequence can be modeled as a target sequence containing three segments: a first impulsive maneuver, a propagation, and a last impulsive maneuver.
 
 # +
-from ansys.stk.core.stkobjects.astrogator import MANEUVER_TYPE, TARGET_SEQ_ACTION
+from ansys.stk.core.stkobjects.astrogator import ManeuverType
 
 
 lambert_transfer = satellite.propagator.main_sequence.insert(
-    SEGMENT_TYPE.TARGET_SEQUENCE, "Lambert Transfer", "-"
+    SegmentType.TARGET_SEQUENCE, "Lambert Transfer", "-"
 )
 
 first_impulse = lambert_transfer.segments.insert(
-    SEGMENT_TYPE.MANEUVER, "First Impulse", "-"
+    SegmentType.MANEUVER, "First Impulse", "-"
 )
-propagate = lambert_transfer.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-")
+propagate = lambert_transfer.segments.insert(SegmentType.PROPAGATE, "Propagate", "-")
 last_impulse = lambert_transfer.segments.insert(
-    SEGMENT_TYPE.MANEUVER, "Last Impulse", "-"
+    SegmentType.MANEUVER, "Last Impulse", "-"
 )
 # -
 
 # Next, configure the maneuvers to be impulsive and ensure the propagation models the Sun as a point mass.
 
-first_impulse.set_maneuver_type(MANEUVER_TYPE.IMPULSIVE)
+first_impulse.set_maneuver_type(ManeuverType.IMPULSIVE)
 propagate.propagator_name = "Sun Point Mass"
-last_impulse.set_maneuver_type(MANEUVER_TYPE.IMPULSIVE)
+last_impulse.set_maneuver_type(ManeuverType.IMPULSIVE)
 
 # Then, remove any previous profiles that could be present in the target sequence:
 
@@ -317,11 +317,11 @@ lambert = lambert_transfer.profiles.add("Lambert Profile")
 # It is also important to enable the second maneuver property. This allows to specify the target velocity.
 
 # +
-from ansys.stk.core.stkobjects.astrogator import LAMBERT_TARGET_COORD_TYPE
+from ansys.stk.core.stkobjects.astrogator import LambertTargetCoordinateType
 
 
 lambert.coord_system_name = "CentralBody/Sun Inertial"
-lambert.set_target_coord_type(LAMBERT_TARGET_COORD_TYPE.CARTESIAN)
+lambert.set_target_coord_type(LambertTargetCoordinateType.CARTESIAN)
 
 lambert.enable_second_maneuver = True
 
@@ -353,14 +353,14 @@ print(f"Time of flight: {tof} seconds")
 
 # +
 from ansys.stk.core.stkobjects.astrogator import (
-    LAMBERT_DIRECTION_OF_MOTION_TYPE,
-    LAMBERT_SOLUTION_OPTION_TYPE,
+    LambertDirectionOfMotionType,
+    LambertSolutionOptionType,
 )
 
 
-lambert.solution_option = LAMBERT_SOLUTION_OPTION_TYPE.FIXED_TIME
+lambert.solution_option = LambertSolutionOptionType.FIXED_TIME
 lambert.revolutions = 0
-lambert.direction_of_motion = LAMBERT_DIRECTION_OF_MOTION_TYPE.SHORT
+lambert.direction_of_motion = LambertDirectionOfMotionType.SHORT
 
 # TODO: the Lambert Profile does not respect user defined units.
 # https://github.com/ansys-internal/pystk/issues/439
@@ -386,13 +386,17 @@ lambert.second_maneuver_segment = last_impulse.name
 # Once the whole control sequence is declared and the Lambert profile active, the simulation can be performed. Ensure that the Lambert profile is active and that the mission control sequence runs all active profiles. In addition, any profile must run to return and continue once finished. Do not continue on failure or reset inner targeters.
 
 # +
-from ansys.stk.core.stkobjects.astrogator import PROFILE_MODE, PROFILES_FINISH
+from ansys.stk.core.stkobjects.astrogator import (
+    ProfileMode,
+    ProfilesFinish,
+    TargetSequenceAction,
+)
 
 
-lambert.mode = PROFILE_MODE.ACTIVE
+lambert.mode = ProfileMode.ACTIVE
 
-lambert_transfer.action = TARGET_SEQ_ACTION.RUN_ACTIVE_PROFILES
-lambert_transfer.when_profiles_finish = PROFILES_FINISH.RUN_TO_RETURN_AND_CONTINUE
+lambert_transfer.action = TargetSequenceAction.RUN_ACTIVE_PROFILES
+lambert_transfer.when_profiles_finish = ProfilesFinish.RUN_TO_RETURN_AND_CONTINUE
 
 lambert_transfer.continue_on_failure = False
 lambert_transfer.reset_inner_targeters = False
@@ -400,7 +404,7 @@ lambert_transfer.reset_inner_targeters = False
 
 # Finally, run the mission control sequence and apply the results to all profiles. Note that in this case, the only existing profile is the `Lambert Profile`.
 
-satellite.propagator.run_mission_control_sequence()
+satellite.propagator.run_mcs()
 satellite.propagator.apply_all_profile_changes()
 
 # ## Retrieve the results

@@ -3,7 +3,7 @@ GfxAnalysisWidget
 
 .. py:class:: ansys.stk.core.stkengine.experimental.jupyterwidgets.GfxAnalysisWidget
 
-   UiAxGraphics2DAnalysisCntrl, WidgetBase
+   GraphicsAnalysisControlBase, WidgetBase
 
    The Graphics Analysis widget for jupyter.
 

@@ -7,10 +7,6 @@ ICatalogVTOLPoint
 
 .. py:currentmodule:: ICatalogVTOLPoint
 
-Overview
---------
-
-
 Import detail
 -------------
 

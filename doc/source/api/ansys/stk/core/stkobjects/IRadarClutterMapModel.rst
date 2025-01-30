@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.IRadarClutterMapModel.type
-    :type: RADAR_CLUTTER_MAP_MODEL_TYPE
+    :type: RadarClutterMapModelType
 
     This property is deprecated. Use Type on IAgScatteringPointModel instead. Gets the radar clutter map model type enumeration.
 

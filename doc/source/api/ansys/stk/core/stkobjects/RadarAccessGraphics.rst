@@ -26,21 +26,21 @@ Overview
               - Gets or sets the SNR.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarAccessGraphics.radar_to_target_color`
               - Gets or sets the Radar to Target access color.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarAccessGraphics.show_bistatic_rdr_to_target`
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarAccessGraphics.show_bistatic_radar_to_target`
               - Gets or sets the option for showing Bistatic Radar to Target graphics.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarAccessGraphics.bistatic_rdr_to_target_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarAccessGraphics.bistatic_radar_to_target_color`
               - Gets or sets the Bistatic Radar to Target color.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarAccessGraphics.bistatic_rdr_to_target_line_style`
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarAccessGraphics.bistatic_radar_to_target_line_style`
               - Gets or sets the AgELineStyle enumeration for the Bistatic Radar to Target.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarAccessGraphics.bistatic_rdr_to_target_line_width`
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarAccessGraphics.bistatic_radar_to_target_line_width`
               - Gets or sets the AgELineWidth enumeration for the Bistatic Radar to Target.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarAccessGraphics.show_bistatic_xmtr_to_bistatic_rcvr`
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarAccessGraphics.show_bistatic_transmitter_to_bistatic_receiver`
               - Gets or sets the option for showing Bistatic Radar Transmitter to Bistatic Radar Receiver graphics.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarAccessGraphics.bistatic_xmtr_to_bistatic_rcvr_color`
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarAccessGraphics.bistatic_transmitter_to_bistatic_receiver_color`
               - Gets or sets the Bistatic Radar Transmitter to Bistatic Radar Receiver color.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarAccessGraphics.bistatic_xmtr_to_bistatic_rcvr_line_style`
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarAccessGraphics.bistatic_transmitter_to_bistatic_receiver_line_style`
               - Gets or sets the AgELineStyle enumeration for the Bistatic Radar Transmitter to Bistatic Radar Receiver.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarAccessGraphics.bistatic_xmtr_to_bistatic_rcvr_line_width`
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarAccessGraphics.bistatic_transmitter_to_bistatic_receiver_line_width`
               - Gets or sets the AgELineWidth enumeration for the Bistatic Radar Transmitter to Bistatic Radar Receiver.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarAccessGraphics.show_clutter`
               - Gets or set the option for showing clutter graphics.
@@ -68,7 +68,7 @@ Property detail
 
 .. py:property:: snr_contour_type
     :canonical: ansys.stk.core.stkobjects.RadarAccessGraphics.snr_contour_type
-    :type: RADAR_SNR_CONTOUR_TYPE
+    :type: RadarSNRContourType
 
     Gets or sets the SNR contour type.
 
@@ -84,51 +84,51 @@ Property detail
 
     Gets or sets the Radar to Target access color.
 
-.. py:property:: show_bistatic_rdr_to_target
-    :canonical: ansys.stk.core.stkobjects.RadarAccessGraphics.show_bistatic_rdr_to_target
+.. py:property:: show_bistatic_radar_to_target
+    :canonical: ansys.stk.core.stkobjects.RadarAccessGraphics.show_bistatic_radar_to_target
     :type: bool
 
     Gets or sets the option for showing Bistatic Radar to Target graphics.
 
-.. py:property:: bistatic_rdr_to_target_color
-    :canonical: ansys.stk.core.stkobjects.RadarAccessGraphics.bistatic_rdr_to_target_color
+.. py:property:: bistatic_radar_to_target_color
+    :canonical: ansys.stk.core.stkobjects.RadarAccessGraphics.bistatic_radar_to_target_color
     :type: agcolor.Color
 
     Gets or sets the Bistatic Radar to Target color.
 
-.. py:property:: bistatic_rdr_to_target_line_style
-    :canonical: ansys.stk.core.stkobjects.RadarAccessGraphics.bistatic_rdr_to_target_line_style
-    :type: LINE_STYLE
+.. py:property:: bistatic_radar_to_target_line_style
+    :canonical: ansys.stk.core.stkobjects.RadarAccessGraphics.bistatic_radar_to_target_line_style
+    :type: LineStyle
 
     Gets or sets the AgELineStyle enumeration for the Bistatic Radar to Target.
 
-.. py:property:: bistatic_rdr_to_target_line_width
-    :canonical: ansys.stk.core.stkobjects.RadarAccessGraphics.bistatic_rdr_to_target_line_width
-    :type: LINE_WIDTH
+.. py:property:: bistatic_radar_to_target_line_width
+    :canonical: ansys.stk.core.stkobjects.RadarAccessGraphics.bistatic_radar_to_target_line_width
+    :type: LineWidth
 
     Gets or sets the AgELineWidth enumeration for the Bistatic Radar to Target.
 
-.. py:property:: show_bistatic_xmtr_to_bistatic_rcvr
-    :canonical: ansys.stk.core.stkobjects.RadarAccessGraphics.show_bistatic_xmtr_to_bistatic_rcvr
+.. py:property:: show_bistatic_transmitter_to_bistatic_receiver
+    :canonical: ansys.stk.core.stkobjects.RadarAccessGraphics.show_bistatic_transmitter_to_bistatic_receiver
     :type: bool
 
     Gets or sets the option for showing Bistatic Radar Transmitter to Bistatic Radar Receiver graphics.
 
-.. py:property:: bistatic_xmtr_to_bistatic_rcvr_color
-    :canonical: ansys.stk.core.stkobjects.RadarAccessGraphics.bistatic_xmtr_to_bistatic_rcvr_color
+.. py:property:: bistatic_transmitter_to_bistatic_receiver_color
+    :canonical: ansys.stk.core.stkobjects.RadarAccessGraphics.bistatic_transmitter_to_bistatic_receiver_color
     :type: agcolor.Color
 
     Gets or sets the Bistatic Radar Transmitter to Bistatic Radar Receiver color.
 
-.. py:property:: bistatic_xmtr_to_bistatic_rcvr_line_style
-    :canonical: ansys.stk.core.stkobjects.RadarAccessGraphics.bistatic_xmtr_to_bistatic_rcvr_line_style
-    :type: LINE_STYLE
+.. py:property:: bistatic_transmitter_to_bistatic_receiver_line_style
+    :canonical: ansys.stk.core.stkobjects.RadarAccessGraphics.bistatic_transmitter_to_bistatic_receiver_line_style
+    :type: LineStyle
 
     Gets or sets the AgELineStyle enumeration for the Bistatic Radar Transmitter to Bistatic Radar Receiver.
 
-.. py:property:: bistatic_xmtr_to_bistatic_rcvr_line_width
-    :canonical: ansys.stk.core.stkobjects.RadarAccessGraphics.bistatic_xmtr_to_bistatic_rcvr_line_width
-    :type: LINE_WIDTH
+.. py:property:: bistatic_transmitter_to_bistatic_receiver_line_width
+    :canonical: ansys.stk.core.stkobjects.RadarAccessGraphics.bistatic_transmitter_to_bistatic_receiver_line_width
+    :type: LineWidth
 
     Gets or sets the AgELineWidth enumeration for the Bistatic Radar Transmitter to Bistatic Radar Receiver.
 

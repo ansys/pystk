@@ -1,0 +1,422 @@
+<Mappings>
+   <Mapping ParentScope="AgEPositionType" OldName="eCartesian" NewName="CARTESIAN" Category="enum_value" />
+   <Mapping ParentScope="AgEPositionType" OldName="eCylindrical" NewName="CYLINDRICAL" Category="enum_value" />
+   <Mapping ParentScope="AgEPositionType" OldName="eGeocentric" NewName="GEOCENTRIC" Category="enum_value" />
+   <Mapping ParentScope="AgEPositionType" OldName="eGeodetic" NewName="GEODETIC" Category="enum_value" />
+   <Mapping ParentScope="AgEPositionType" OldName="eSpherical" NewName="SPHERICAL" Category="enum_value" />
+   <Mapping ParentScope="AgEPositionType" OldName="ePlanetocentric" NewName="PLANETOCENTRIC" Category="enum_value" />
+   <Mapping ParentScope="AgEPositionType" OldName="ePlanetodetic" NewName="PLANETODETIC" Category="enum_value" />
+   <Mapping OldName="AgEPositionType" NewName="PositionType" Category="enum_type" />
+   <Mapping ParentScope="AgEEulerDirectionSequence" OldName="e12" NewName="SEQUENCE_12" Category="enum_value" />
+   <Mapping ParentScope="AgEEulerDirectionSequence" OldName="e21" NewName="SEQUENCE_21" Category="enum_value" />
+   <Mapping ParentScope="AgEEulerDirectionSequence" OldName="e31" NewName="SEQUENCE_31" Category="enum_value" />
+   <Mapping ParentScope="AgEEulerDirectionSequence" OldName="e32" NewName="SEQUENCE_32" Category="enum_value" />
+   <Mapping OldName="AgEEulerDirectionSequence" NewName="EulerDirectionSequence" Category="enum_type" />
+   <Mapping ParentScope="AgEDirectionType" OldName="eDirEuler" NewName="EULER" Category="enum_value" />
+   <Mapping ParentScope="AgEDirectionType" OldName="eDirPR" NewName="PR" Category="enum_value" />
+   <Mapping ParentScope="AgEDirectionType" OldName="eDirRADec" NewName="RA_DEC" Category="enum_value" />
+   <Mapping ParentScope="AgEDirectionType" OldName="eDirXYZ" NewName="XYZ" Category="enum_value" />
+   <Mapping OldName="AgEDirectionType" NewName="DirectionType" Category="enum_type" />
+   <Mapping ParentScope="AgEPRSequence" OldName="ePR" NewName="PR" Category="enum_value" />
+   <Mapping OldName="AgEPRSequence" NewName="PRSequence" Category="enum_type" />
+   <Mapping ParentScope="AgEOrientationType" OldName="eAzEl" NewName="AZ_EL" Category="enum_value" />
+   <Mapping ParentScope="AgEOrientationType" OldName="eEulerAngles" NewName="EULER_ANGLES" Category="enum_value" />
+   <Mapping ParentScope="AgEOrientationType" OldName="eQuaternion" NewName="QUATERNION" Category="enum_value" />
+   <Mapping ParentScope="AgEOrientationType" OldName="eYPRAngles" NewName="YPR_ANGLES" Category="enum_value" />
+   <Mapping OldName="AgEOrientationType" NewName="OrientationType" Category="enum_type" />
+   <Mapping ParentScope="AgEAzElAboutBoresight" OldName="eAzElAboutBoresightHold" NewName="HOLD" Category="enum_value" />
+   <Mapping ParentScope="AgEAzElAboutBoresight" OldName="eAzElAboutBoresightRotate" NewName="ROTATE" Category="enum_value" />
+   <Mapping OldName="AgEAzElAboutBoresight" NewName="AzElAboutBoresight" Category="enum_type" />
+   <Mapping ParentScope="AgEEulerOrientationSequence" OldName="e121" NewName="SEQUENCE_121" Category="enum_value" />
+   <Mapping ParentScope="AgEEulerOrientationSequence" OldName="e123" NewName="SEQUENCE_123" Category="enum_value" />
+   <Mapping ParentScope="AgEEulerOrientationSequence" OldName="e131" NewName="SEQUENCE_131" Category="enum_value" />
+   <Mapping ParentScope="AgEEulerOrientationSequence" OldName="e132" NewName="SEQUENCE_132" Category="enum_value" />
+   <Mapping ParentScope="AgEEulerOrientationSequence" OldName="e212" NewName="SEQUENCE_212" Category="enum_value" />
+   <Mapping ParentScope="AgEEulerOrientationSequence" OldName="e213" NewName="SEQUENCE_213" Category="enum_value" />
+   <Mapping ParentScope="AgEEulerOrientationSequence" OldName="e231" NewName="SEQUENCE_231" Category="enum_value" />
+   <Mapping ParentScope="AgEEulerOrientationSequence" OldName="e232" NewName="SEQUENCE_232" Category="enum_value" />
+   <Mapping ParentScope="AgEEulerOrientationSequence" OldName="e312" NewName="SEQUENCE_312" Category="enum_value" />
+   <Mapping ParentScope="AgEEulerOrientationSequence" OldName="e313" NewName="SEQUENCE_313" Category="enum_value" />
+   <Mapping ParentScope="AgEEulerOrientationSequence" OldName="e321" NewName="SEQUENCE_321" Category="enum_value" />
+   <Mapping ParentScope="AgEEulerOrientationSequence" OldName="e323" NewName="SEQUENCE_323" Category="enum_value" />
+   <Mapping OldName="AgEEulerOrientationSequence" NewName="EulerOrientationSequenceType" Category="enum_type" />
+   <Mapping ParentScope="AgEYPRAnglesSequence" OldName="ePRY" NewName="PRY" Category="enum_value" />
+   <Mapping ParentScope="AgEYPRAnglesSequence" OldName="ePYR" NewName="PYR" Category="enum_value" />
+   <Mapping ParentScope="AgEYPRAnglesSequence" OldName="eRPY" NewName="RPY" Category="enum_value" />
+   <Mapping ParentScope="AgEYPRAnglesSequence" OldName="eRYP" NewName="RYP" Category="enum_value" />
+   <Mapping ParentScope="AgEYPRAnglesSequence" OldName="eYPR" NewName="YPR" Category="enum_value" />
+   <Mapping ParentScope="AgEYPRAnglesSequence" OldName="eYRP" NewName="YRP" Category="enum_value" />
+   <Mapping OldName="AgEYPRAnglesSequence" NewName="YPRAnglesSequence" Category="enum_type" />
+   <Mapping ParentScope="AgEOrbitStateType" OldName="eOrbitStateCartesian" NewName="CARTESIAN" Category="enum_value" />
+   <Mapping ParentScope="AgEOrbitStateType" OldName="eOrbitStateClassical" NewName="CLASSICAL" Category="enum_value" />
+   <Mapping ParentScope="AgEOrbitStateType" OldName="eOrbitStateEquinoctial" NewName="EQUINOCTIAL" Category="enum_value" />
+   <Mapping ParentScope="AgEOrbitStateType" OldName="eOrbitStateDelaunay" NewName="DELAUNAY" Category="enum_value" />
+   <Mapping ParentScope="AgEOrbitStateType" OldName="eOrbitStateSpherical" NewName="SPHERICAL" Category="enum_value" />
+   <Mapping ParentScope="AgEOrbitStateType" OldName="eOrbitStateMixedSpherical" NewName="MIXED_SPHERICAL" Category="enum_value" />
+   <Mapping ParentScope="AgEOrbitStateType" OldName="eOrbitStateGeodetic" NewName="GEODETIC" Category="enum_value" />
+   <Mapping OldName="AgEOrbitStateType" NewName="OrbitStateType" Category="enum_type" />
+   <Mapping ParentScope="AgECoordinateSystem" OldName="eCoordinateSystemUnknown" NewName="UNKNOWN" Category="enum_value" />
+   <Mapping ParentScope="AgECoordinateSystem" OldName="eCoordinateSystemAlignmentAtEpoch" NewName="ALIGNMENT_AT_EPOCH" Category="enum_value" />
+   <Mapping ParentScope="AgECoordinateSystem" OldName="eCoordinateSystemB1950" NewName="B1950" Category="enum_value" />
+   <Mapping ParentScope="AgECoordinateSystem" OldName="eCoordinateSystemFixed" NewName="FIXED" Category="enum_value" />
+   <Mapping ParentScope="AgECoordinateSystem" OldName="eCoordinateSystemJ2000" NewName="J2000" Category="enum_value" />
+   <Mapping ParentScope="AgECoordinateSystem" OldName="eCoordinateSystemMeanOfDate" NewName="MEAN_OF_DATE" Category="enum_value" />
+   <Mapping ParentScope="AgECoordinateSystem" OldName="eCoordinateSystemMeanOfEpoch" NewName="MEAN_OF_EPOCH" Category="enum_value" />
+   <Mapping ParentScope="AgECoordinateSystem" OldName="eCoordinateSystemTEMEOfDate" NewName="TEME_OF_DATE" Category="enum_value" />
+   <Mapping ParentScope="AgECoordinateSystem" OldName="eCoordinateSystemTEMEOfEpoch" NewName="TEME_OF_EPOCH" Category="enum_value" />
+   <Mapping ParentScope="AgECoordinateSystem" OldName="eCoordinateSystemTrueOfDate" NewName="TRUE_OF_DATE" Category="enum_value" />
+   <Mapping ParentScope="AgECoordinateSystem" OldName="eCoordinateSystemTrueOfEpoch" NewName="TRUE_OF_EPOCH" Category="enum_value" />
+   <Mapping ParentScope="AgECoordinateSystem" OldName="eCoordinateSystemTrueOfRefDate" NewName="TRUE_OF_REFERENCE_DATE" Category="enum_value" />
+   <Mapping ParentScope="AgECoordinateSystem" OldName="eCoordinateSystemICRF" NewName="ICRF" Category="enum_value" />
+   <Mapping ParentScope="AgECoordinateSystem" OldName="eCoordinateSystemMeanEarth" NewName="MEAN_EARTH" Category="enum_value" />
+   <Mapping ParentScope="AgECoordinateSystem" OldName="eCoordinateSystemFixedNoLibration" NewName="FIXED_NO_LIBRATION" Category="enum_value" />
+   <Mapping ParentScope="AgECoordinateSystem" OldName="eCoordinateSystemFixedIAU2003" NewName="FIXED_IAU2003" Category="enum_value" />
+   <Mapping ParentScope="AgECoordinateSystem" OldName="eCoordinateSystemPrincipalAxes421" NewName="PRINCIPAL_AXES421" Category="enum_value" />
+   <Mapping ParentScope="AgECoordinateSystem" OldName="eCoordinateSystemPrincipalAxes403" NewName="PRINCIPAL_AXES403" Category="enum_value" />
+   <Mapping ParentScope="AgECoordinateSystem" OldName="eCoordinateSystemInertial" NewName="INERTIAL" Category="enum_value" />
+   <Mapping ParentScope="AgECoordinateSystem" OldName="eCoordinateSystemJ2000Ecliptic" NewName="J2000_ECLIPTIC" Category="enum_value" />
+   <Mapping ParentScope="AgECoordinateSystem" OldName="eCoordinateSystemTrueEclipticOfDate" NewName="TRUE_ECLIPTIC_OF_DATE" Category="enum_value" />
+   <Mapping ParentScope="AgECoordinateSystem" OldName="eCoordinateSystemPrincipalAxes430" NewName="PRINCIPAL_AXES430" Category="enum_value" />
+   <Mapping ParentScope="AgECoordinateSystem" OldName="eCoordinateSystemTrueOfDateRotating" NewName="TRUE_OF_DATE_ROTATING" Category="enum_value" />
+   <Mapping ParentScope="AgECoordinateSystem" OldName="eCoordinateSystemEclipticJ2000ICRF" NewName="ECLIPTIC_J2000ICRF" Category="enum_value" />
+   <Mapping OldName="AgECoordinateSystem" NewName="CoordinateSystem" Category="enum_type" />
+   <Mapping ParentScope="AgELogMsgType" OldName="eLogMsgDebug" NewName="DEBUG" Category="enum_value" />
+   <Mapping ParentScope="AgELogMsgType" OldName="eLogMsgInfo" NewName="INFO" Category="enum_value" />
+   <Mapping ParentScope="AgELogMsgType" OldName="eLogMsgForceInfo" NewName="FORCE_INFO" Category="enum_value" />
+   <Mapping ParentScope="AgELogMsgType" OldName="eLogMsgWarning" NewName="WARNING" Category="enum_value" />
+   <Mapping ParentScope="AgELogMsgType" OldName="eLogMsgAlarm" NewName="ALARM" Category="enum_value" />
+   <Mapping OldName="AgELogMsgType" NewName="LogMessageType" Category="enum_type" />
+   <Mapping ParentScope="AgELogMsgDispID" OldName="eLogMsgDispAll" NewName="ALL" Category="enum_value" />
+   <Mapping ParentScope="AgELogMsgDispID" OldName="eLogMsgDispDefault" NewName="DEFAULT" Category="enum_value" />
+   <Mapping ParentScope="AgELogMsgDispID" OldName="eLogMsgDispMsgWin" NewName="MESSAGE_WINDOW" Category="enum_value" />
+   <Mapping ParentScope="AgELogMsgDispID" OldName="eLogMsgDispStatusBar" NewName="STATUS_BAR" Category="enum_value" />
+   <Mapping OldName="AgELogMsgDispID" NewName="LogMessageDisplayID" Category="enum_type" />
+   <Mapping ParentScope="AgELineStyle" OldName="eSolid" NewName="SOLID" Category="enum_value" />
+   <Mapping ParentScope="AgELineStyle" OldName="eDashed" NewName="DASHED" Category="enum_value" />
+   <Mapping ParentScope="AgELineStyle" OldName="eDotted" NewName="DOTTED" Category="enum_value" />
+   <Mapping ParentScope="AgELineStyle" OldName="eDotDashed" NewName="DOT_DASHED" Category="enum_value" />
+   <Mapping ParentScope="AgELineStyle" OldName="eLongDashed" NewName="LONG_DASHED" Category="enum_value" />
+   <Mapping ParentScope="AgELineStyle" OldName="eDashDotDotted" NewName="DASH_DOT_DOTTED" Category="enum_value" />
+   <Mapping ParentScope="AgELineStyle" OldName="eMDash" NewName="M_DASH" Category="enum_value" />
+   <Mapping ParentScope="AgELineStyle" OldName="eLDash" NewName="L_DASH" Category="enum_value" />
+   <Mapping ParentScope="AgELineStyle" OldName="eSDashDot" NewName="S_DASH_DOT" Category="enum_value" />
+   <Mapping ParentScope="AgELineStyle" OldName="eMDashDot" NewName="M_DASH_DOT" Category="enum_value" />
+   <Mapping ParentScope="AgELineStyle" OldName="eLDashDot" NewName="DASH_DOT" Category="enum_value" />
+   <Mapping ParentScope="AgELineStyle" OldName="eMSDash" NewName="MS_DASH" Category="enum_value" />
+   <Mapping ParentScope="AgELineStyle" OldName="eLSDash" NewName="LS_DASH" Category="enum_value" />
+   <Mapping ParentScope="AgELineStyle" OldName="eLMDash" NewName="LM_DASH" Category="enum_value" />
+   <Mapping ParentScope="AgELineStyle" OldName="eLMSDash" NewName="LMS_DASH" Category="enum_value" />
+   <Mapping ParentScope="AgELineStyle" OldName="eDot" NewName="DOT" Category="enum_value" />
+   <Mapping ParentScope="AgELineStyle" OldName="eLongDash" NewName="LONG_DASH" Category="enum_value" />
+   <Mapping ParentScope="AgELineStyle" OldName="eSDash" NewName="S_DASH" Category="enum_value" />
+   <Mapping OldName="AgELineStyle" NewName="LineStyle" Category="enum_type" />
+   <Mapping ParentScope="AgEExecMultiCmdResultAction" OldName="eContinueOnError" NewName="CONTINUE_ON_ERROR" Category="enum_value" />
+   <Mapping ParentScope="AgEExecMultiCmdResultAction" OldName="eStopOnError" NewName="STOP_ON_ERROR" Category="enum_value" />
+   <Mapping ParentScope="AgEExecMultiCmdResultAction" OldName="eExceptionOnError" NewName="EXCEPTION_ON_ERROR" Category="enum_value" />
+   <Mapping ParentScope="AgEExecMultiCmdResultAction" OldName="eIgnoreExecCmdResult" NewName="DISCARD_RESULTS" Category="enum_value" />
+   <Mapping OldName="AgEExecMultiCmdResultAction" NewName="ExecuteMultipleCommandsMode" Category="enum_type" />
+   <Mapping ParentScope="AgEFillStyle" OldName="eFillStyleSolid" NewName="SOLID" Category="enum_value" />
+   <Mapping ParentScope="AgEFillStyle" OldName="eFillStyleHorizontalStripe" NewName="HORIZONTAL_STRIPE" Category="enum_value" />
+   <Mapping ParentScope="AgEFillStyle" OldName="eFillStyleDiagonalStripe1" NewName="DIAGONAL_STRIPE1" Category="enum_value" />
+   <Mapping ParentScope="AgEFillStyle" OldName="eFillStyleDiagonalStripe2" NewName="DIAGONAL_STRIPE2" Category="enum_value" />
+   <Mapping ParentScope="AgEFillStyle" OldName="eFillStyleHatch" NewName="HATCH" Category="enum_value" />
+   <Mapping ParentScope="AgEFillStyle" OldName="eFillStyleDiagonalHatch" NewName="DIAGONAL_HATCH" Category="enum_value" />
+   <Mapping ParentScope="AgEFillStyle" OldName="eFillStyleScreen" NewName="SCREEN" Category="enum_value" />
+   <Mapping ParentScope="AgEFillStyle" OldName="eFillStyleVerticalStripe" NewName="VERTICAL_STRIPE" Category="enum_value" />
+   <Mapping OldName="AgEFillStyle" NewName="FillStyle" Category="enum_type" />
+   <Mapping ParentScope="AgEPropertyInfoValueType" OldName="ePropertyInfoValueTypeInt" NewName="INT" Category="enum_value" />
+   <Mapping ParentScope="AgEPropertyInfoValueType" OldName="ePropertyInfoValueTypeReal" NewName="REAL" Category="enum_value" />
+   <Mapping ParentScope="AgEPropertyInfoValueType" OldName="ePropertyInfoValueTypeQuantity" NewName="QUANTITY" Category="enum_value" />
+   <Mapping ParentScope="AgEPropertyInfoValueType" OldName="ePropertyInfoValueTypeDate" NewName="DATE" Category="enum_value" />
+   <Mapping ParentScope="AgEPropertyInfoValueType" OldName="ePropertyInfoValueTypeString" NewName="STRING" Category="enum_value" />
+   <Mapping ParentScope="AgEPropertyInfoValueType" OldName="ePropertyInfoValueTypeBool" NewName="BOOL" Category="enum_value" />
+   <Mapping ParentScope="AgEPropertyInfoValueType" OldName="ePropertyInfoValueTypeInterface" NewName="INTERFACE" Category="enum_value" />
+   <Mapping OldName="AgEPropertyInfoValueType" NewName="PropertyInfoValueType" Category="enum_type" />
+   <Mapping OldName="IAgLocationData" NewName="ILocationData" Category="interface" />
+   <Mapping OldName="IAgPosition" NewName="IPosition" Category="interface" />
+   <Mapping ParentScope="IAgPosition" OldName="ConvertTo" NewName="convert_to" Category="method" />
+   <Mapping ParentScope="IAgPosition" OldName="PosType" NewName="position_type" Category="method" />
+   <Mapping ParentScope="IAgPosition" OldName="Assign" NewName="assign" Category="method" />
+   <Mapping ParentScope="IAgPosition" OldName="AssignGeocentric" NewName="assign_geocentric" Category="method" />
+   <Mapping ParentScope="IAgPosition" OldName="AssignGeodetic" NewName="assign_geodetic" Category="method" />
+   <Mapping ParentScope="IAgPosition" OldName="AssignSpherical" NewName="assign_spherical" Category="method" />
+   <Mapping ParentScope="IAgPosition" OldName="AssignCylindrical" NewName="assign_cylindrical" Category="method" />
+   <Mapping ParentScope="IAgPosition" OldName="AssignCartesian" NewName="assign_cartesian" Category="method" />
+   <Mapping ParentScope="IAgPosition" OldName="AssignPlanetocentric" NewName="assign_planetocentric" Category="method" />
+   <Mapping ParentScope="IAgPosition" OldName="AssignPlanetodetic" NewName="assign_planetodetic" Category="method" />
+   <Mapping ParentScope="IAgPosition" OldName="QueryPlanetocentric" NewName="query_planetocentric" Category="method" />
+   <Mapping ParentScope="IAgPosition" OldName="QueryPlanetodetic" NewName="query_planetodetic" Category="method" />
+   <Mapping ParentScope="IAgPosition" OldName="QuerySpherical" NewName="query_spherical" Category="method" />
+   <Mapping ParentScope="IAgPosition" OldName="QueryCylindrical" NewName="query_cylindrical" Category="method" />
+   <Mapping ParentScope="IAgPosition" OldName="QueryCartesian" NewName="query_cartesian" Category="method" />
+   <Mapping ParentScope="IAgPosition" OldName="CentralBodyName" NewName="central_body_name" Category="method" />
+   <Mapping ParentScope="IAgPosition" OldName="QueryPlanetocentricArray" NewName="query_planetocentric_array" Category="method" />
+   <Mapping ParentScope="IAgPosition" OldName="QueryPlanetodeticArray" NewName="query_planetodetic_array" Category="method" />
+   <Mapping ParentScope="IAgPosition" OldName="QuerySphericalArray" NewName="query_spherical_array" Category="method" />
+   <Mapping ParentScope="IAgPosition" OldName="QueryCylindricalArray" NewName="query_cylindrical_array" Category="method" />
+   <Mapping ParentScope="IAgPosition" OldName="QueryCartesianArray" NewName="query_cartesian_array" Category="method" />
+   <Mapping OldName="IAgPlanetocentric" NewName="Planetocentric" Category="interface" />
+   <Mapping ParentScope="IAgPlanetocentric" OldName="Lat" NewName="latitude" Category="method" />
+   <Mapping ParentScope="IAgPlanetocentric" OldName="Lon" NewName="longitude" Category="method" />
+   <Mapping ParentScope="IAgPlanetocentric" OldName="Alt" NewName="altitude" Category="method" />
+   <Mapping OldName="IAgGeocentric" NewName="Geocentric" Category="interface" />
+   <Mapping ParentScope="IAgGeocentric" OldName="Lat" NewName="latitude" Category="method" />
+   <Mapping ParentScope="IAgGeocentric" OldName="Lon" NewName="longitude" Category="method" />
+   <Mapping ParentScope="IAgGeocentric" OldName="Alt" NewName="altitude" Category="method" />
+   <Mapping OldName="IAgSpherical" NewName="Spherical" Category="interface" />
+   <Mapping ParentScope="IAgSpherical" OldName="Lat" NewName="latitude" Category="method" />
+   <Mapping ParentScope="IAgSpherical" OldName="Lon" NewName="longitude" Category="method" />
+   <Mapping ParentScope="IAgSpherical" OldName="Radius" NewName="radius" Category="method" />
+   <Mapping OldName="IAgCylindrical" NewName="Cylindrical" Category="interface" />
+   <Mapping ParentScope="IAgCylindrical" OldName="Radius" NewName="radius" Category="method" />
+   <Mapping ParentScope="IAgCylindrical" OldName="Z" NewName="z" Category="method" />
+   <Mapping ParentScope="IAgCylindrical" OldName="Lon" NewName="longitude" Category="method" />
+   <Mapping OldName="IAgCartesian" NewName="Cartesian" Category="interface" />
+   <Mapping ParentScope="IAgCartesian" OldName="X" NewName="x" Category="method" />
+   <Mapping ParentScope="IAgCartesian" OldName="Y" NewName="y" Category="method" />
+   <Mapping ParentScope="IAgCartesian" OldName="Z" NewName="z" Category="method" />
+   <Mapping OldName="IAgGeodetic" NewName="Geodetic" Category="interface" />
+   <Mapping ParentScope="IAgGeodetic" OldName="Lat" NewName="latitude" Category="method" />
+   <Mapping ParentScope="IAgGeodetic" OldName="Lon" NewName="longitude" Category="method" />
+   <Mapping ParentScope="IAgGeodetic" OldName="Alt" NewName="altitude" Category="method" />
+   <Mapping OldName="IAgPlanetodetic" NewName="Planetodetic" Category="interface" />
+   <Mapping ParentScope="IAgPlanetodetic" OldName="Lat" NewName="latitude" Category="method" />
+   <Mapping ParentScope="IAgPlanetodetic" OldName="Lon" NewName="longitude" Category="method" />
+   <Mapping ParentScope="IAgPlanetodetic" OldName="Alt" NewName="altitude" Category="method" />
+   <Mapping OldName="IAgDirection" NewName="IDirection" Category="interface" />
+   <Mapping ParentScope="IAgDirection" OldName="ConvertTo" NewName="convert_to" Category="method" />
+   <Mapping ParentScope="IAgDirection" OldName="DirectionType" NewName="direction_type" Category="method" />
+   <Mapping ParentScope="IAgDirection" OldName="Assign" NewName="assign" Category="method" />
+   <Mapping ParentScope="IAgDirection" OldName="AssignEuler" NewName="assign_euler" Category="method" />
+   <Mapping ParentScope="IAgDirection" OldName="AssignPR" NewName="assign_pr" Category="method" />
+   <Mapping ParentScope="IAgDirection" OldName="AssignRADec" NewName="assign_ra_dec" Category="method" />
+   <Mapping ParentScope="IAgDirection" OldName="AssignXYZ" NewName="assign_xyz" Category="method" />
+   <Mapping ParentScope="IAgDirection" OldName="QueryEuler" NewName="query_euler" Category="method" />
+   <Mapping ParentScope="IAgDirection" OldName="QueryPR" NewName="query_pr" Category="method" />
+   <Mapping ParentScope="IAgDirection" OldName="QueryRADec" NewName="query_ra_dec" Category="method" />
+   <Mapping ParentScope="IAgDirection" OldName="QueryXYZ" NewName="query_xyz" Category="method" />
+   <Mapping ParentScope="IAgDirection" OldName="QueryEulerArray" NewName="query_euler_array" Category="method" />
+   <Mapping ParentScope="IAgDirection" OldName="QueryPRArray" NewName="query_pr_array" Category="method" />
+   <Mapping ParentScope="IAgDirection" OldName="QueryRADecArray" NewName="query_ra_dec_array" Category="method" />
+   <Mapping ParentScope="IAgDirection" OldName="QueryXYZArray" NewName="query_xyz_array" Category="method" />
+   <Mapping OldName="IAgDirectionEuler" NewName="DirectionEuler" Category="interface" />
+   <Mapping ParentScope="IAgDirectionEuler" OldName="B" NewName="b" Category="method" />
+   <Mapping ParentScope="IAgDirectionEuler" OldName="C" NewName="c" Category="method" />
+   <Mapping ParentScope="IAgDirectionEuler" OldName="Sequence" NewName="sequence" Category="method" />
+   <Mapping OldName="IAgDirectionPR" NewName="DirectionPR" Category="interface" />
+   <Mapping ParentScope="IAgDirectionPR" OldName="Pitch" NewName="pitch" Category="method" />
+   <Mapping ParentScope="IAgDirectionPR" OldName="Roll" NewName="roll" Category="method" />
+   <Mapping ParentScope="IAgDirectionPR" OldName="Sequence" NewName="sequence" Category="method" />
+   <Mapping OldName="IAgDirectionRADec" NewName="DirectionRADec" Category="interface" />
+   <Mapping ParentScope="IAgDirectionRADec" OldName="Dec" NewName="dec" Category="method" />
+   <Mapping ParentScope="IAgDirectionRADec" OldName="RA" NewName="ra" Category="method" />
+   <Mapping ParentScope="IAgDirectionRADec" OldName="Magnitude" NewName="magnitude" Category="method" />
+   <Mapping OldName="IAgDirectionXYZ" NewName="DirectionXYZ" Category="interface" />
+   <Mapping ParentScope="IAgDirectionXYZ" OldName="X" NewName="x" Category="method" />
+   <Mapping ParentScope="IAgDirectionXYZ" OldName="Y" NewName="y" Category="method" />
+   <Mapping ParentScope="IAgDirectionXYZ" OldName="Z" NewName="z" Category="method" />
+   <Mapping OldName="IAgCartesian3Vector" NewName="ICartesian3Vector" Category="interface" />
+   <Mapping ParentScope="IAgCartesian3Vector" OldName="X" NewName="x" Category="method" />
+   <Mapping ParentScope="IAgCartesian3Vector" OldName="Y" NewName="y" Category="method" />
+   <Mapping ParentScope="IAgCartesian3Vector" OldName="Z" NewName="z" Category="method" />
+   <Mapping ParentScope="IAgCartesian3Vector" OldName="Get" NewName="get" Category="method" />
+   <Mapping ParentScope="IAgCartesian3Vector" OldName="Set" NewName="set" Category="method" />
+   <Mapping ParentScope="IAgCartesian3Vector" OldName="ToArray" NewName="to_array" Category="method" />
+   <Mapping OldName="IAgOrientation" NewName="IOrientation" Category="interface" />
+   <Mapping ParentScope="IAgOrientation" OldName="ConvertTo" NewName="convert_to" Category="method" />
+   <Mapping ParentScope="IAgOrientation" OldName="OrientationType" NewName="orientation_type" Category="method" />
+   <Mapping ParentScope="IAgOrientation" OldName="Assign" NewName="assign" Category="method" />
+   <Mapping ParentScope="IAgOrientation" OldName="AssignAzEl" NewName="assign_az_el" Category="method" />
+   <Mapping ParentScope="IAgOrientation" OldName="AssignEulerAngles" NewName="assign_euler_angles" Category="method" />
+   <Mapping ParentScope="IAgOrientation" OldName="AssignQuaternion" NewName="assign_quaternion" Category="method" />
+   <Mapping ParentScope="IAgOrientation" OldName="AssignYPRAngles" NewName="assign_ypr_angles" Category="method" />
+   <Mapping ParentScope="IAgOrientation" OldName="QueryAzEl" NewName="query_az_el" Category="method" />
+   <Mapping ParentScope="IAgOrientation" OldName="QueryEulerAngles" NewName="query_euler_angles" Category="method" />
+   <Mapping ParentScope="IAgOrientation" OldName="QueryQuaternion" NewName="query_quaternion" Category="method" />
+   <Mapping ParentScope="IAgOrientation" OldName="QueryYPRAngles" NewName="query_ypr_angles" Category="method" />
+   <Mapping ParentScope="IAgOrientation" OldName="QueryAzElArray" NewName="query_az_el_array" Category="method" />
+   <Mapping ParentScope="IAgOrientation" OldName="QueryEulerAnglesArray" NewName="query_euler_angles_array" Category="method" />
+   <Mapping ParentScope="IAgOrientation" OldName="QueryQuaternionArray" NewName="query_quaternion_array" Category="method" />
+   <Mapping ParentScope="IAgOrientation" OldName="QueryYPRAnglesArray" NewName="query_ypr_angles_array" Category="method" />
+   <Mapping OldName="IAgOrientationAzEl" NewName="IOrientationAzEl" Category="interface" />
+   <Mapping ParentScope="IAgOrientationAzEl" OldName="Azimuth" NewName="azimuth" Category="method" />
+   <Mapping ParentScope="IAgOrientationAzEl" OldName="Elevation" NewName="elevation" Category="method" />
+   <Mapping ParentScope="IAgOrientationAzEl" OldName="AboutBoresight" NewName="about_boresight" Category="method" />
+   <Mapping OldName="IAgOrientationEulerAngles" NewName="IOrientationEulerAngles" Category="interface" />
+   <Mapping ParentScope="IAgOrientationEulerAngles" OldName="Sequence" NewName="sequence" Category="method" />
+   <Mapping ParentScope="IAgOrientationEulerAngles" OldName="A" NewName="a" Category="method" />
+   <Mapping ParentScope="IAgOrientationEulerAngles" OldName="B" NewName="b" Category="method" />
+   <Mapping ParentScope="IAgOrientationEulerAngles" OldName="C" NewName="c" Category="method" />
+   <Mapping OldName="IAgOrientationQuaternion" NewName="IOrientationQuaternion" Category="interface" />
+   <Mapping ParentScope="IAgOrientationQuaternion" OldName="QX" NewName="qx" Category="method" />
+   <Mapping ParentScope="IAgOrientationQuaternion" OldName="QY" NewName="qy" Category="method" />
+   <Mapping ParentScope="IAgOrientationQuaternion" OldName="QZ" NewName="qz" Category="method" />
+   <Mapping ParentScope="IAgOrientationQuaternion" OldName="QS" NewName="qs" Category="method" />
+   <Mapping OldName="IAgOrientationYPRAngles" NewName="IOrientationYPRAngles" Category="interface" />
+   <Mapping ParentScope="IAgOrientationYPRAngles" OldName="Sequence" NewName="sequence" Category="method" />
+   <Mapping ParentScope="IAgOrientationYPRAngles" OldName="Yaw" NewName="yaw" Category="method" />
+   <Mapping ParentScope="IAgOrientationYPRAngles" OldName="Pitch" NewName="pitch" Category="method" />
+   <Mapping ParentScope="IAgOrientationYPRAngles" OldName="Roll" NewName="roll" Category="method" />
+   <Mapping OldName="IAgOrientationPositionOffset" NewName="IOrientationPositionOffset" Category="interface" />
+   <Mapping ParentScope="IAgOrientationPositionOffset" OldName="PositionOffset" NewName="position_offset" Category="method" />
+   <Mapping OldName="IAgOrbitState" NewName="IOrbitState" Category="interface" />
+   <Mapping ParentScope="IAgOrbitState" OldName="ConvertTo" NewName="convert_to" Category="method" />
+   <Mapping ParentScope="IAgOrbitState" OldName="OrbitStateType" NewName="orbit_state_type" Category="method" />
+   <Mapping ParentScope="IAgOrbitState" OldName="Assign" NewName="assign" Category="method" />
+   <Mapping ParentScope="IAgOrbitState" OldName="AssignClassical" NewName="assign_classical" Category="method" />
+   <Mapping ParentScope="IAgOrbitState" OldName="AssignCartesian" NewName="assign_cartesian" Category="method" />
+   <Mapping ParentScope="IAgOrbitState" OldName="AssignGeodetic" NewName="assign_geodetic" Category="method" />
+   <Mapping ParentScope="IAgOrbitState" OldName="AssignEquinoctialPosigrade" NewName="assign_equinoctial_posigrade" Category="method" />
+   <Mapping ParentScope="IAgOrbitState" OldName="AssignEquinoctialRetrograde" NewName="assign_equinoctial_retrograde" Category="method" />
+   <Mapping ParentScope="IAgOrbitState" OldName="AssignMixedSpherical" NewName="assign_mixed_spherical" Category="method" />
+   <Mapping ParentScope="IAgOrbitState" OldName="AssignSpherical" NewName="assign_spherical" Category="method" />
+   <Mapping ParentScope="IAgOrbitState" OldName="CentralBodyName" NewName="central_body_name" Category="method" />
+   <Mapping ParentScope="IAgOrbitState" OldName="Epoch" NewName="epoch" Category="method" />
+   <Mapping OldName="IAgCartesian2Vector" NewName="Cartesian2Vector" Category="interface" />
+   <Mapping ParentScope="IAgCartesian2Vector" OldName="X" NewName="x" Category="method" />
+   <Mapping ParentScope="IAgCartesian2Vector" OldName="Y" NewName="y" Category="method" />
+   <Mapping ParentScope="IAgCartesian2Vector" OldName="Get" NewName="get" Category="method" />
+   <Mapping ParentScope="IAgCartesian2Vector" OldName="Set" NewName="set" Category="method" />
+   <Mapping ParentScope="IAgCartesian2Vector" OldName="ToArray" NewName="to_array" Category="method" />
+   <Mapping OldName="IAgUnitPrefsDim" NewName="UnitPreferencesDimension" Category="interface" />
+   <Mapping ParentScope="IAgUnitPrefsDim" OldName="Id" NewName="identifier" Category="method" />
+   <Mapping ParentScope="IAgUnitPrefsDim" OldName="Name" NewName="name" Category="method" />
+   <Mapping ParentScope="IAgUnitPrefsDim" OldName="AvailableUnits" NewName="available_units" Category="method" />
+   <Mapping ParentScope="IAgUnitPrefsDim" OldName="CurrentUnit" NewName="current_unit" Category="method" />
+   <Mapping ParentScope="IAgUnitPrefsDim" OldName="SetCurrentUnit" NewName="set_current_unit" Category="method" />
+   <Mapping OldName="IAgPropertyInfo" NewName="PropertyInfo" Category="interface" />
+   <Mapping ParentScope="IAgPropertyInfo" OldName="Name" NewName="name" Category="method" />
+   <Mapping ParentScope="IAgPropertyInfo" OldName="PropertyType" NewName="property_type" Category="method" />
+   <Mapping ParentScope="IAgPropertyInfo" OldName="GetValue" NewName="get_value" Category="method" />
+   <Mapping ParentScope="IAgPropertyInfo" OldName="SetValue" NewName="set_value" Category="method" />
+   <Mapping ParentScope="IAgPropertyInfo" OldName="HasMin" NewName="has_min" Category="method" />
+   <Mapping ParentScope="IAgPropertyInfo" OldName="HasMax" NewName="has_max" Category="method" />
+   <Mapping ParentScope="IAgPropertyInfo" OldName="Min" NewName="min" Category="method" />
+   <Mapping ParentScope="IAgPropertyInfo" OldName="Max" NewName="max" Category="method" />
+   <Mapping OldName="IAgPropertyInfoCollection" NewName="PropertyInfoCollection" Category="interface" />
+   <Mapping ParentScope="IAgPropertyInfoCollection" OldName="Item" NewName="item" Category="method" />
+   <Mapping ParentScope="IAgPropertyInfoCollection" OldName="_NewEnum" NewName="_new_enum" Category="method" />
+   <Mapping ParentScope="IAgPropertyInfoCollection" OldName="Count" NewName="count" Category="method" />
+   <Mapping ParentScope="IAgPropertyInfoCollection" OldName="GetItemByIndex" NewName="get_item_by_index" Category="method" />
+   <Mapping ParentScope="IAgPropertyInfoCollection" OldName="GetItemByName" NewName="get_item_by_name" Category="method" />
+   <Mapping OldName="IAgRuntimeTypeInfo" NewName="RuntimeTypeInfo" Category="interface" />
+   <Mapping ParentScope="IAgRuntimeTypeInfo" OldName="Properties" NewName="properties" Category="method" />
+   <Mapping ParentScope="IAgRuntimeTypeInfo" OldName="IsCollection" NewName="is_collection" Category="method" />
+   <Mapping ParentScope="IAgRuntimeTypeInfo" OldName="Count" NewName="count" Category="method" />
+   <Mapping ParentScope="IAgRuntimeTypeInfo" OldName="GetItem" NewName="get_item" Category="method" />
+   <Mapping OldName="IAgRuntimeTypeInfoProvider" NewName="IRuntimeTypeInfoProvider" Category="interface" />
+   <Mapping ParentScope="IAgRuntimeTypeInfoProvider" OldName="ProvideRuntimeTypeInfo" NewName="provide_runtime_type_info" Category="method" />
+   <Mapping OldName="IAgExecCmdResult" NewName="ExecuteCommandResult" Category="interface" />
+   <Mapping ParentScope="IAgExecCmdResult" OldName="Count" NewName="count" Category="method" />
+   <Mapping ParentScope="IAgExecCmdResult" OldName="Item" NewName="item" Category="method" />
+   <Mapping ParentScope="IAgExecCmdResult" OldName="_NewEnum" NewName="_new_enum" Category="method" />
+   <Mapping ParentScope="IAgExecCmdResult" OldName="Range" NewName="range" Category="method" />
+   <Mapping ParentScope="IAgExecCmdResult" OldName="IsSucceeded" NewName="is_succeeded" Category="method" />
+   <Mapping OldName="IAgExecMultiCmdResult" NewName="ExecuteMultipleCommandsResult" Category="interface" />
+   <Mapping ParentScope="IAgExecMultiCmdResult" OldName="Count" NewName="count" Category="method" />
+   <Mapping ParentScope="IAgExecMultiCmdResult" OldName="Item" NewName="item" Category="method" />
+   <Mapping ParentScope="IAgExecMultiCmdResult" OldName="_NewEnum" NewName="_new_enum" Category="method" />
+   <Mapping OldName="IAgUnitPrefsUnit" NewName="UnitPreferencesUnit" Category="interface" />
+   <Mapping ParentScope="IAgUnitPrefsUnit" OldName="FullName" NewName="full_name" Category="method" />
+   <Mapping ParentScope="IAgUnitPrefsUnit" OldName="Abbrv" NewName="abbrv" Category="method" />
+   <Mapping ParentScope="IAgUnitPrefsUnit" OldName="Id" NewName="identifier" Category="method" />
+   <Mapping ParentScope="IAgUnitPrefsUnit" OldName="Dimension" NewName="dimension" Category="method" />
+   <Mapping OldName="IAgUnitPrefsUnitCollection" NewName="UnitPreferencesUnitCollection" Category="interface" />
+   <Mapping ParentScope="IAgUnitPrefsUnitCollection" OldName="Item" NewName="item" Category="method" />
+   <Mapping ParentScope="IAgUnitPrefsUnitCollection" OldName="Count" NewName="count" Category="method" />
+   <Mapping ParentScope="IAgUnitPrefsUnitCollection" OldName="_NewEnum" NewName="_new_enum" Category="method" />
+   <Mapping ParentScope="IAgUnitPrefsUnitCollection" OldName="GetItemByIndex" NewName="get_item_by_index" Category="method" />
+   <Mapping ParentScope="IAgUnitPrefsUnitCollection" OldName="GetItemByName" NewName="get_item_by_name" Category="method" />
+   <Mapping OldName="IAgUnitPrefsDimCollection" NewName="UnitPreferencesDimensionCollection" Category="interface" />
+   <Mapping ParentScope="IAgUnitPrefsDimCollection" OldName="Item" NewName="item" Category="method" />
+   <Mapping ParentScope="IAgUnitPrefsDimCollection" OldName="Count" NewName="count" Category="method" />
+   <Mapping ParentScope="IAgUnitPrefsDimCollection" OldName="SetCurrentUnit" NewName="set_current_unit" Category="method" />
+   <Mapping ParentScope="IAgUnitPrefsDimCollection" OldName="GetCurrentUnitAbbrv" NewName="get_current_unit_abbrv" Category="method" />
+   <Mapping ParentScope="IAgUnitPrefsDimCollection" OldName="MissionElapsedTime" NewName="mission_elapsed_time" Category="method" />
+   <Mapping ParentScope="IAgUnitPrefsDimCollection" OldName="JulianDateOffset" NewName="julian_date_offset" Category="method" />
+   <Mapping ParentScope="IAgUnitPrefsDimCollection" OldName="_NewEnum" NewName="_new_enum" Category="method" />
+   <Mapping ParentScope="IAgUnitPrefsDimCollection" OldName="ResetUnits" NewName="reset_units" Category="method" />
+   <Mapping ParentScope="IAgUnitPrefsDimCollection" OldName="GetItemByIndex" NewName="get_item_by_index" Category="method" />
+   <Mapping ParentScope="IAgUnitPrefsDimCollection" OldName="GetItemByName" NewName="get_item_by_name" Category="method" />
+   <Mapping OldName="IAgQuantity" NewName="Quantity" Category="interface" />
+   <Mapping ParentScope="IAgQuantity" OldName="Dimension" NewName="dimension" Category="method" />
+   <Mapping ParentScope="IAgQuantity" OldName="Unit" NewName="unit" Category="method" />
+   <Mapping ParentScope="IAgQuantity" OldName="ConvertToUnit" NewName="convert_to_unit" Category="method" />
+   <Mapping ParentScope="IAgQuantity" OldName="Value" NewName="value" Category="method" />
+   <Mapping ParentScope="IAgQuantity" OldName="Add" NewName="add" Category="method" />
+   <Mapping ParentScope="IAgQuantity" OldName="Subtract" NewName="subtract" Category="method" />
+   <Mapping ParentScope="IAgQuantity" OldName="MultiplyQty" NewName="multiply_qty" Category="method" />
+   <Mapping ParentScope="IAgQuantity" OldName="DivideQty" NewName="divide_qty" Category="method" />
+   <Mapping OldName="IAgDate" NewName="Date" Category="interface" />
+   <Mapping ParentScope="IAgDate" OldName="Format" NewName="format" Category="method" />
+   <Mapping ParentScope="IAgDate" OldName="SetDate" NewName="set_date" Category="method" />
+   <Mapping ParentScope="IAgDate" OldName="OLEDate" NewName="ole_date" Category="method" />
+   <Mapping ParentScope="IAgDate" OldName="WholeDays" NewName="whole_days" Category="method" />
+   <Mapping ParentScope="IAgDate" OldName="SecIntoDay" NewName="sec_into_day" Category="method" />
+   <Mapping ParentScope="IAgDate" OldName="WholeDaysUTC" NewName="whole_days_utc" Category="method" />
+   <Mapping ParentScope="IAgDate" OldName="SecIntoDayUTC" NewName="sec_into_day_utc" Category="method" />
+   <Mapping ParentScope="IAgDate" OldName="Add" NewName="add" Category="method" />
+   <Mapping ParentScope="IAgDate" OldName="Subtract" NewName="subtract" Category="method" />
+   <Mapping ParentScope="IAgDate" OldName="Span" NewName="span" Category="method" />
+   <Mapping OldName="IAgConversionUtility" NewName="ConversionUtility" Category="interface" />
+   <Mapping ParentScope="IAgConversionUtility" OldName="ConvertQuantity" NewName="convert_quantity" Category="method" />
+   <Mapping ParentScope="IAgConversionUtility" OldName="ConvertDate" NewName="convert_date" Category="method" />
+   <Mapping ParentScope="IAgConversionUtility" OldName="ConvertQuantityArray" NewName="convert_quantity_array" Category="method" />
+   <Mapping ParentScope="IAgConversionUtility" OldName="ConvertDateArray" NewName="convert_date_array" Category="method" />
+   <Mapping ParentScope="IAgConversionUtility" OldName="NewQuantity" NewName="new_quantity" Category="method" />
+   <Mapping ParentScope="IAgConversionUtility" OldName="NewDate" NewName="new_date" Category="method" />
+   <Mapping ParentScope="IAgConversionUtility" OldName="NewPositionOnEarth" NewName="new_position_on_earth" Category="method" />
+   <Mapping ParentScope="IAgConversionUtility" OldName="ConvertPositionArray" NewName="convert_position_array" Category="method" />
+   <Mapping ParentScope="IAgConversionUtility" OldName="NewDirection" NewName="new_direction" Category="method" />
+   <Mapping ParentScope="IAgConversionUtility" OldName="NewOrientation" NewName="new_orientation" Category="method" />
+   <Mapping ParentScope="IAgConversionUtility" OldName="NewOrbitStateOnEarth" NewName="new_orbit_state_on_earth" Category="method" />
+   <Mapping ParentScope="IAgConversionUtility" OldName="NewPositionOnCB" NewName="new_position_on_cb" Category="method" />
+   <Mapping ParentScope="IAgConversionUtility" OldName="NewOrbitStateOnCB" NewName="new_orbit_state_on_cb" Category="method" />
+   <Mapping ParentScope="IAgConversionUtility" OldName="QueryDirectionCosineMatrix" NewName="query_direction_cosine_matrix" Category="method" />
+   <Mapping ParentScope="IAgConversionUtility" OldName="QueryDirectionCosineMatrixArray" NewName="query_direction_cosine_matrix_array" Category="method" />
+   <Mapping ParentScope="IAgConversionUtility" OldName="NewCartesian3Vector" NewName="new_cartesian3_vector" Category="method" />
+   <Mapping ParentScope="IAgConversionUtility" OldName="NewCartesian3VectorFromDirection" NewName="new_cartesian3_vector_from_direction" Category="method" />
+   <Mapping ParentScope="IAgConversionUtility" OldName="NewCartesian3VectorFromPosition" NewName="new_cartesian3_vector_from_position" Category="method" />
+   <Mapping OldName="IAgDoublesCollection" NewName="DoublesCollection" Category="interface" />
+   <Mapping ParentScope="IAgDoublesCollection" OldName="Item" NewName="item" Category="method" />
+   <Mapping ParentScope="IAgDoublesCollection" OldName="Count" NewName="count" Category="method" />
+   <Mapping ParentScope="IAgDoublesCollection" OldName="_NewEnum" NewName="_new_enum" Category="method" />
+   <Mapping ParentScope="IAgDoublesCollection" OldName="Add" NewName="add" Category="method" />
+   <Mapping ParentScope="IAgDoublesCollection" OldName="RemoveAt" NewName="remove_at" Category="method" />
+   <Mapping ParentScope="IAgDoublesCollection" OldName="RemoveAll" NewName="remove_all" Category="method" />
+   <Mapping ParentScope="IAgDoublesCollection" OldName="ToArray" NewName="to_array" Category="method" />
+   <Mapping ParentScope="IAgDoublesCollection" OldName="SetAt" NewName="set_at" Category="method" />
+   <Mapping OldName="AgExecCmdResult" NewName="ExecuteCommandResult" Category="class" />
+   <Mapping OldName="AgExecMultiCmdResult" NewName="ExecuteMultipleCommandsResult" Category="class" />
+   <Mapping OldName="AgUnitPrefsUnit" NewName="UnitPreferencesUnit" Category="class" />
+   <Mapping OldName="AgUnitPrefsUnitCollection" NewName="UnitPreferencesUnitCollection" Category="class" />
+   <Mapping OldName="AgUnitPrefsDim" NewName="UnitPreferencesDimension" Category="class" />
+   <Mapping OldName="AgUnitPrefsDimCollection" NewName="UnitPreferencesDimensionCollection" Category="class" />
+   <Mapping OldName="AgConversionUtility" NewName="ConversionUtility" Category="class" />
+   <Mapping OldName="AgQuantity" NewName="Quantity" Category="class" />
+   <Mapping OldName="AgDate" NewName="Date" Category="class" />
+   <Mapping OldName="AgPosition" NewName="Position" Category="class" />
+   <Mapping OldName="AgCartesian" NewName="Cartesian" Category="class" />
+   <Mapping OldName="AgGeodetic" NewName="Geodetic" Category="class" />
+   <Mapping OldName="AgGeocentric" NewName="Geocentric" Category="class" />
+   <Mapping OldName="AgPlanetodetic" NewName="Planetodetic" Category="class" />
+   <Mapping OldName="AgPlanetocentric" NewName="Planetocentric" Category="class" />
+   <Mapping OldName="AgSpherical" NewName="Spherical" Category="class" />
+   <Mapping OldName="AgCylindrical" NewName="Cylindrical" Category="class" />
+   <Mapping OldName="AgDirection" NewName="Direction" Category="class" />
+   <Mapping OldName="AgDirectionEuler" NewName="DirectionEuler" Category="class" />
+   <Mapping OldName="AgDirectionPR" NewName="DirectionPR" Category="class" />
+   <Mapping OldName="AgDirectionRADec" NewName="DirectionRADec" Category="class" />
+   <Mapping OldName="AgDirectionXYZ" NewName="DirectionXYZ" Category="class" />
+   <Mapping OldName="AgOrientation" NewName="Orientation" Category="class" />
+   <Mapping OldName="AgOrientationAzEl" NewName="OrientationAzEl" Category="class" />
+   <Mapping OldName="AgOrientationEulerAngles" NewName="OrientationEulerAngles" Category="class" />
+   <Mapping OldName="AgOrientationQuaternion" NewName="OrientationQuaternion" Category="class" />
+   <Mapping OldName="AgOrientationYPRAngles" NewName="OrientationYPRAngles" Category="class" />
+   <Mapping OldName="AgDoublesCollection" NewName="DoublesCollection" Category="class" />
+   <Mapping OldName="AgCartesian3Vector" NewName="Cartesian3Vector" Category="class" />
+   <Mapping OldName="AgCartesian2Vector" NewName="Cartesian2Vector" Category="class" />
+   <Mapping OldName="AgPropertyInfo" NewName="PropertyInfo" Category="class" />
+   <Mapping OldName="AgPropertyInfoCollection" NewName="PropertyInfoCollection" Category="class" />
+   <Mapping OldName="AgRuntimeTypeInfo" NewName="RuntimeTypeInfo" Category="class" />
+</Mappings>

@@ -18,15 +18,15 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DProximityAreaObject.is_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DProximityAreaObject.show_graphics`
               - Specifies whether to show the proximity area object.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DProximityAreaObject.color`
               - Specifies a line color.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DProximityAreaObject.line_width`
               - Specifies a line width.
-            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DProximityAreaObject.is_label_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DProximityAreaObject.show_label`
               - Specifies whether to display a label.
-            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DProximityAreaObject.is_text_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DProximityAreaObject.show_text`
               - Specifies whether to display a text.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics3DProximityAreaObject.text`
               - Specifies a text.
@@ -45,8 +45,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: is_visible
-    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DProximityAreaObject.is_visible
+.. py:property:: show_graphics
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DProximityAreaObject.show_graphics
     :type: bool
 
     Specifies whether to show the proximity area object.
@@ -59,18 +59,18 @@ Property detail
 
 .. py:property:: line_width
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DProximityAreaObject.line_width
-    :type: LINE_WIDTH
+    :type: LineWidth
 
     Specifies a line width.
 
-.. py:property:: is_label_visible
-    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DProximityAreaObject.is_label_visible
+.. py:property:: show_label
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DProximityAreaObject.show_label
     :type: bool
 
     Specifies whether to display a label.
 
-.. py:property:: is_text_visible
-    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DProximityAreaObject.is_text_visible
+.. py:property:: show_text
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DProximityAreaObject.show_text
     :type: bool
 
     Specifies whether to display a text.
@@ -83,7 +83,7 @@ Property detail
 
 .. py:property:: line_style
     :canonical: ansys.stk.core.stkobjects.IVehicleGraphics3DProximityAreaObject.line_style
-    :type: LINE_STYLE
+    :type: LineStyle
 
     Specifies a line style type.
 

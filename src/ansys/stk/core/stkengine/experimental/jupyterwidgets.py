@@ -19,8 +19,8 @@ from jupyter_rfb._png import array2png
 from ctypes import byref, CFUNCTYPE, cdll, c_size_t, c_int, c_void_p, \
     addressof, Structure, cast, pointer
 
-from ...stkx import UiAxGraphics3DCntrl, UiAx2DCntrl, \
-    UiAxGraphics2DAnalysisCntrl, BUTTON_VALUES, SHIFT_VALUES
+from ...stkx import Graphics3DControlBase, Graphics2DControlBase, \
+    GraphicsAnalysisControlBase, ButtonValues, ShiftValues
 from ...internal.stkxrfb import IRemoteFrameBuffer, IRemoteFrameBufferHost
 from ...internal.comutil import OLE32Lib, \
     IUnknown, Succeeded, LPVOID, CLSCTX_INPROC_SERVER, \
@@ -36,12 +36,12 @@ DELETETIMER = CFUNCTYPE(c_int, c_size_t, c_void_p)
 class AsyncioTimerManager(object):
     """Provide timer support for animation in jupyter notebooks."""
     class TimerInfo(object):
-        def __init__(self, id, milliseconds, TIMERPROC, callbackData):
+        def __init__(self, id, milliseconds, timer_proc, callback_data):
             """Construct an object of type TimerInfo."""
             self.id = id
             self.interval = milliseconds/1000
-            self.callback = TIMERPROC
-            self.callback_data = callbackData
+            self.callback = timer_proc
+            self.callback_data = callback_data
             self._reset()
 
         def _reset(self):
@@ -60,7 +60,7 @@ class AsyncioTimerManager(object):
             agutillib = cdll.LoadLibrary("AgUtil.dll")
 
         functype = CFUNCTYPE(None, INSTALLTIMER, DELETETIMER, c_void_p)
-        AgUtSetTimerCallbacks = functype(
+        set_timer_callbacks = functype(
                 ("AgUtSetTimerCallbacks", agutillib),
                 (
                     (1, "pInstallTimer"),
@@ -73,24 +73,24 @@ class AsyncioTimerManager(object):
         self._timers = dict()
         self._install_timer_cfunc = INSTALLTIMER(self.__install_timer)
         self._delete_timer_cfunc = DELETETIMER(self.__delete_timer)
-        AgUtSetTimerCallbacks(
+        set_timer_callbacks(
             self._install_timer_cfunc,
             self._delete_timer_cfunc, c_void_p())
 
     def terminate(self):
         self._timers.clear()
 
-    def __install_timer(self, milliseconds, TIMERPROC, callbackData):
+    def __install_timer(self, milliseconds, timer_proc, callback_data):
         id = self._next_id
         self._next_id = id + 1
         self._timers[id] = AsyncioTimerManager.TimerInfo(
-            id, milliseconds, TIMERPROC, callbackData)
+            id, milliseconds, timer_proc, callback_data)
         self._set_alarm_for_next_timer_proc()
         return id
 
-    def __delete_timer(self, timerID, callbackData):
-        if timerID in self._timers:
-            del(self._timers[timerID])
+    def __delete_timer(self, timer_id, callback_data):
+        if timer_id in self._timers:
+            del(self._timers[timer_id])
         return 0
 
     def _fire_timers(self):
@@ -105,13 +105,13 @@ class AsyncioTimerManager(object):
 
     def _next_timer_proc(self):
         """Return time in sec until next timer proc."""
-        tempTimers = self._timers.copy()
-        if len(tempTimers) == 0:
+        temp_timers = self._timers.copy()
+        if len(temp_timers) == 0:
             return 0.050
         else:
             proc_times = list()
-            for timerid in tempTimers:
-                proc_times.append(tempTimers[timerid].next_proc)
+            for timerid in temp_timers:
+                proc_times.append(temp_timers[timerid].next_proc)
             delta_s = min(proc_times) - time.perf_counter()
             if delta_s > 0:
                 return delta_s
@@ -126,7 +126,7 @@ class AsyncioTimerManager(object):
             self._fire_timers()
 
 
-asyncioTimerManager = None
+asyncio_timer_manager = None
 
 
 class RemoteFrameBufferHostVTable(Structure):
@@ -143,8 +143,8 @@ class RemoteFrameBufferHost(object):
     
     Assemble a vtable following the layout of that interface
     """
-    _IID_IUnknown = GUID(IUnknown._guid)
-    _IID_IAgRemoteFrameBufferHost = GUID('{D229A605-D3A8-4476-B628-AC549C674B58}')
+    _iid_unknown = GUID(IUnknown._guid)
+    _iid_iagremoteframebufferhost = GUID('{D229A605-D3A8-4476-B628-AC549C674B58}')
 
     def __init__(self, owner):
         """Construct an object of type RemoteFrameBufferHost."""
@@ -174,30 +174,30 @@ class RemoteFrameBufferHost(object):
               cast(self._cfunc_IUnknown3, c_void_p),
               cast(self._cfunc_Refresh, c_void_p)]
         )
-        self.__dict__['_pUnk'] = pointer(self._vtable)
+        self.__dict__['_unknown'] = pointer(self._vtable)
 
-    def _add_ref(self, pThis: PVOID) -> int:
+    def _add_ref(self, this: PVOID) -> int:
         return 1
 
-    def _release(self, pThis: PVOID) -> int:
+    def _release(self, this: PVOID) -> int:
         return 0
 
     def _query_interface(self,
-                        pThis: PVOID,
+                        this: PVOID,
                         riid: REFIID,
-                        ppvObject: POINTER(PVOID)) -> int:
+                        object: POINTER(PVOID)) -> int:
         iid = riid.contents
-        if iid == RemoteFrameBufferHost._IID_IUnknown:
-            ppvObject[0] = addressof(self._pUnk)
+        if iid == RemoteFrameBufferHost._iid_unknown:
+            object[0] = addressof(self._unknown)
             return S_OK
-        elif iid == RemoteFrameBufferHost._IID_IAgRemoteFrameBufferHost:
-            ppvObject[0] = addressof(self._pUnk)
+        elif iid == RemoteFrameBufferHost._iid_iagremoteframebufferhost:
+            object[0] = addressof(self._unknown)
             return S_OK
         else:
-            ppvObject[0] = 0
+            object[0] = 0
             return E_NOINTERFACE
 
-    def _refresh(self, pThis: PVOID) -> None:
+    def _refresh(self, this: PVOID) -> None:
         self.owner.request_draw()
 
 
@@ -205,8 +205,8 @@ class WidgetBase(RemoteFrameBuffer):
     """Base class for Jupyter controls."""
     _shift = 0x0001
     _control = 0x0004
-    _lAlt = 0x0008
-    _rAlt = 0x0080
+    _lalt = 0x0008
+    _ralt = 0x0080
     _mouse1 = 0x0100
     _mouse2 = 0x0200
     _mouse3 = 0x0400
@@ -235,12 +235,12 @@ class WidgetBase(RemoteFrameBuffer):
         self.__create_frame_buffer(w, h)
 
         self._rfb = IRemoteFrameBuffer(self)
-        self._rfb.set_to_off_screen_rendering(w, h)
+        self._rfb.set_to_offscreen_rendering(w, h)
 
         self._rfbHostImpl = RemoteFrameBufferHost(self)
 
         self._rfbHostImplUnk = IUnknown()
-        self._rfbHostImplUnk.p = addressof(self._rfbHostImpl._pUnk)
+        self._rfbHostImplUnk.p = addressof(self._rfbHostImpl._unknown)
 
         self._rfbHost = IRemoteFrameBufferHost()
         self._rfbHost._private_init(self._rfbHostImplUnk)
@@ -249,20 +249,20 @@ class WidgetBase(RemoteFrameBuffer):
 
         self.mouse_callbacks = [
             [
-                self._rfb.notify_l_button_down,
-                self._rfb.notify_r_button_down,
-                self._rfb.notify_m_button_down
+                self._rfb.notify_left_button_down,
+                self._rfb.notify_right_button_down,
+                self._rfb.notify_middle_button_down
             ],
             [
-                self._rfb.notify_l_button_up,
-                self._rfb.notify_r_button_up,
-                self._rfb.notify_m_button_up
+                self._rfb.notify_left_button_up,
+                self._rfb.notify_right_button_up,
+                self._rfb.notify_middle_button_up
             ]
         ]
 
-        global asyncioTimerManager
-        if asyncioTimerManager is None:
-            asyncioTimerManager = AsyncioTimerManager()
+        global asyncio_timer_manager
+        if asyncio_timer_manager is None:
+            asyncio_timer_manager = AsyncioTimerManager()
 
         self.root = root
         self.title = title or self.root.current_scenario.instance_name
@@ -284,11 +284,11 @@ class WidgetBase(RemoteFrameBuffer):
     def __create_instance(self, clsid: str) -> LPVOID:
         guid = GUID()
         if Succeeded(OLE32Lib.CLSIDFromString(clsid, guid)):
-            IID_IUnknown = GUID(IUnknown._guid)
+            iid_iunknown = GUID(IUnknown._guid)
             unk = IUnknown()
             if Succeeded(OLE32Lib.CoCreateInstance(byref(guid), None,
                                           CLSCTX_INPROC_SERVER,
-                                          byref(IID_IUnknown), byref(unk.p))):
+                                          byref(iid_iunknown), byref(unk.p))):
                 unk.take_ownership()
                 return unk
         return None
@@ -303,11 +303,11 @@ class WidgetBase(RemoteFrameBuffer):
         modifiers = event['modifiers']
         result = 0
         if "Shift" in modifiers:
-            result = result | SHIFT_VALUES.PRESSED
+            result = result | ShiftValues.PRESSED
         if "Ctrl" in modifiers:
-            result = result | SHIFT_VALUES.CTRL_PRESSED
+            result = result | ShiftValues.CTRL_PRESSED
         if "Alt" in modifiers:
-            result = result | SHIFT_VALUES.ALTITUDE_PRESSED
+            result = result | ShiftValues.ALT_PRESSED
         return result
 
     def __get_position(self, event):
@@ -337,13 +337,13 @@ class WidgetBase(RemoteFrameBuffer):
             (x, y) = self.__get_position(event)
             buttons = event["buttons"]
             if len(buttons) > 0 and buttons[0] == 1:
-                self._rfb.notify_mouse_move(x, y, BUTTON_VALUES.LEFT_PRESSED,
+                self._rfb.notify_mouse_move(x, y, ButtonValues.LEFT_PRESSED,
                                           self.__get_modifiers(event))
             elif len(buttons) > 0 and buttons[0] == 2:
-                self._rfb.notify_mouse_move(x, y, BUTTON_VALUES.RIGHT_PRESSED,
+                self._rfb.notify_mouse_move(x, y, ButtonValues.RIGHT_PRESSED,
                                           self.__get_modifiers(event))
             elif len(buttons) > 0 and buttons[0] == 3:
-                self._rfb.notify_mouse_move(x, y, BUTTON_VALUES.MIDDLE_PRESSED,
+                self._rfb.notify_mouse_move(x, y, ButtonValues.MIDDLE_PRESSED,
                                           self.__get_modifiers(event))
             else:
                 self._rfb.notify_mouse_move(x, y, 0, 0)
@@ -360,7 +360,7 @@ class WidgetBase(RemoteFrameBuffer):
         return self.frame
     
     def animate(self, time_step):        
-        self.root.current_scenario.animation.anim_step_value = time_step
+        self.root.current_scenario.animation_settings.animation_step_value = time_step
         self.root.execute_command("Animate * Start Loop")
         self.show()
 
@@ -380,7 +380,7 @@ class WidgetBase(RemoteFrameBuffer):
             data = super()._repr_mimebundle_(include=include, exclude=exclude)
         else:
             data = {
-                "image/png": array2png(self.get_frame())
+                "image/png": array2png(self.snapshot().data)
             }
         return data
 
@@ -392,7 +392,7 @@ class WidgetBase(RemoteFrameBuffer):
         else:
             return self
 
-class GlobeWidget(UiAxGraphics3DCntrl, WidgetBase):
+class GlobeWidget(Graphics3DControlBase, WidgetBase):
     """The 3D Globe widget for jupyter."""
     # Example:
     #   from ansys.stk.core.stkengine import *
@@ -406,7 +406,7 @@ class GlobeWidget(UiAxGraphics3DCntrl, WidgetBase):
     #   g
 
     _progid = "STKX12.VOControl.1"
-    _interface = UiAxGraphics3DCntrl
+    _interface = Graphics3DControlBase
 
     def __init__(self, root: StkObjectRoot, w: int, h: int, title: str = None):
         """Construct an object of type GlobeWidget."""
@@ -417,10 +417,10 @@ class GlobeWidget(UiAxGraphics3DCntrl, WidgetBase):
         WidgetBase.__setattr__(self, attrname, value)
 
 
-class MapWidget(UiAx2DCntrl, WidgetBase):
+class MapWidget(Graphics2DControlBase, WidgetBase):
     """The 2D Map widget for jupyter."""
     _progid = "STKX12.2DControl.1"
-    _interface = UiAx2DCntrl
+    _interface = Graphics2DControlBase
 
     def __init__(self, root: StkObjectRoot, w: int, h: int, title: str = None):
         """Construct an object of type MapWidget."""
@@ -431,10 +431,10 @@ class MapWidget(UiAx2DCntrl, WidgetBase):
         WidgetBase.__setattr__(self, attrname, value)
 
 
-class GfxAnalysisWidget(UiAxGraphics2DAnalysisCntrl, WidgetBase):
+class GfxAnalysisWidget(GraphicsAnalysisControlBase, WidgetBase):
     """The Graphics Analysis widget for jupyter."""
     _progid = "STKX12.GfxAnalysisControl.1"
-    _interface = UiAxGraphics2DAnalysisCntrl
+    _interface = GraphicsAnalysisControlBase
 
     def __init__(self, root: StkObjectRoot, w: int, h: int, title: str = None):
         """Construct an object of type GfxAnalysisWidget."""

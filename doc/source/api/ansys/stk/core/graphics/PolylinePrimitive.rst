@@ -137,13 +137,13 @@ Property detail
 
 .. py:property:: polyline_type
     :canonical: ansys.stk.core.graphics.PolylinePrimitive.polyline_type
-    :type: POLYLINE_TYPE
+    :type: PolylineType
 
     Gets how the polyline interprets the positions passed to Set methods.
 
 .. py:property:: set_hint
     :canonical: ansys.stk.core.graphics.PolylinePrimitive.set_hint
-    :type: SET_HINT
+    :type: SetHint
 
     Gets the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with.
 
@@ -231,7 +231,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_with_colors_and_hint(self, positions: list, colors: list, renderPassHint: RENDER_PASS_HINT) -> None
+.. py:method:: set_with_colors_and_hint(self, positions: list, colors: list, render_pass_hint: RenderPassHint) -> None
     :canonical: ansys.stk.core.graphics.PolylinePrimitive.set_with_colors_and_hint
 
     Define the positions and colors of a polyline. The polyline is rendered in its reference frame. renderPassHint is provided for efficiency.
@@ -240,73 +240,73 @@ Method detail
 
     **positions** : :obj:`~list`
     **colors** : :obj:`~list`
-    **renderPassHint** : :obj:`~RENDER_PASS_HINT`
+    **render_pass_hint** : :obj:`~RenderPassHint`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: set_with_surface_shapes_result(self, surfaceShapesResult: SurfaceShapesResult) -> None
+.. py:method:: set_with_surface_shapes_result(self, surface_shapes_result: SurfaceShapesResult) -> None
     :canonical: ansys.stk.core.graphics.PolylinePrimitive.set_with_surface_shapes_result
 
     Define the positions of a polyline using the positions of the specified surfaceShapesResult.
 
     :Parameters:
 
-    **surfaceShapesResult** : :obj:`~SurfaceShapesResult`
+    **surface_shapes_result** : :obj:`~SurfaceShapesResult`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: set_with_surface_triangulator_result(self, surfaceTriangulatorResult: SurfaceTriangulatorResult) -> None
+.. py:method:: set_with_surface_triangulator_result(self, surface_triangulator_result: SurfaceTriangulatorResult) -> None
     :canonical: ansys.stk.core.graphics.PolylinePrimitive.set_with_surface_triangulator_result
 
     Define the positions of a polyline using the boundary positions of the specified surfaceTriangulatorResult.
 
     :Parameters:
 
-    **surfaceTriangulatorResult** : :obj:`~SurfaceTriangulatorResult`
+    **surface_triangulator_result** : :obj:`~SurfaceTriangulatorResult`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: set_with_solid_triangulator_result(self, solidTriangulatorResult: SolidTriangulatorResult) -> None
+.. py:method:: set_with_solid_triangulator_result(self, solid_triangulator_result: SolidTriangulatorResult) -> None
     :canonical: ansys.stk.core.graphics.PolylinePrimitive.set_with_solid_triangulator_result
 
     Define the positions of a polyline using the outline positions of the specified solidTriangulatorResult.
 
     :Parameters:
 
-    **solidTriangulatorResult** : :obj:`~SolidTriangulatorResult`
+    **solid_triangulator_result** : :obj:`~SolidTriangulatorResult`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: set_cartographic(self, centralBody: str, positions: list) -> None
+.. py:method:: set_cartographic(self, central_body: str, positions: list) -> None
     :canonical: ansys.stk.core.graphics.PolylinePrimitive.set_cartographic
 
     For convenience. Defines the positions of a polyline using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling Set.
 
     :Parameters:
 
-    **centralBody** : :obj:`~str`
+    **central_body** : :obj:`~str`
     **positions** : :obj:`~list`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: set_cartographic_with_colors(self, centralBody: str, positions: list, colors: list) -> None
+.. py:method:: set_cartographic_with_colors(self, central_body: str, positions: list, colors: list) -> None
     :canonical: ansys.stk.core.graphics.PolylinePrimitive.set_cartographic_with_colors
 
     For convenience. Defines the positions and colors of a polyline using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling Set.
 
     :Parameters:
 
-    **centralBody** : :obj:`~str`
+    **central_body** : :obj:`~str`
     **positions** : :obj:`~list`
     **colors** : :obj:`~list`
 
@@ -314,17 +314,17 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_cartographic_with_colors_and_hint(self, centralBody: str, positions: list, colors: list, renderPassHint: RENDER_PASS_HINT) -> None
+.. py:method:: set_cartographic_with_colors_and_hint(self, central_body: str, positions: list, colors: list, render_pass_hint: RenderPassHint) -> None
     :canonical: ansys.stk.core.graphics.PolylinePrimitive.set_cartographic_with_colors_and_hint
 
     For convenience. Defines the positions and colors of a polyline using cartographic positions. renderPassHint is provided for efficiency. This is equivalent to converting each position in positions to cartesian and calling Set.
 
     :Parameters:
 
-    **centralBody** : :obj:`~str`
+    **central_body** : :obj:`~str`
     **positions** : :obj:`~list`
     **colors** : :obj:`~list`
-    **renderPassHint** : :obj:`~RENDER_PASS_HINT`
+    **render_pass_hint** : :obj:`~RenderPassHint`
 
     :Returns:
 
@@ -345,14 +345,14 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_subset_cartographic(self, centralBody: str, positions: list, index: int, count: int) -> None
+.. py:method:: set_subset_cartographic(self, central_body: str, positions: list, index: int, count: int) -> None
     :canonical: ansys.stk.core.graphics.PolylinePrimitive.set_subset_cartographic
 
     For convenience. Defines the positions of a polyline using a subset of input cartographic positions. This is equivalent to converting the subset of positions to cartesian and calling SetSubset.
 
     :Parameters:
 
-    **centralBody** : :obj:`~str`
+    **central_body** : :obj:`~str`
     **positions** : :obj:`~list`
     **index** : :obj:`~int`
     **count** : :obj:`~int`
@@ -375,7 +375,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_partial_with_indices_order(self, positions: list, indices: list, indicesOrderHint: PRIMITIVE_INDICES_ORDER_HINT) -> None
+.. py:method:: set_partial_with_indices_order(self, positions: list, indices: list, indices_order_hint: PrimitiveIndicesOrderHint) -> None
     :canonical: ansys.stk.core.graphics.PolylinePrimitive.set_partial_with_indices_order
 
     Update a subset of positions in a polyline.
@@ -384,7 +384,7 @@ Method detail
 
     **positions** : :obj:`~list`
     **indices** : :obj:`~list`
-    **indicesOrderHint** : :obj:`~PRIMITIVE_INDICES_ORDER_HINT`
+    **indices_order_hint** : :obj:`~PrimitiveIndicesOrderHint`
 
     :Returns:
 
@@ -405,7 +405,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_partial_with_colors_indices_order_and_render_pass_hint(self, positions: list, colors: list, indices: list, indicesOrderHint: PRIMITIVE_INDICES_ORDER_HINT, renderPassHint: RENDER_PASS_HINT) -> None
+.. py:method:: set_partial_with_colors_indices_order_and_render_pass_hint(self, positions: list, colors: list, indices: list, indices_order_hint: PrimitiveIndicesOrderHint, render_pass_hint: RenderPassHint) -> None
     :canonical: ansys.stk.core.graphics.PolylinePrimitive.set_partial_with_colors_indices_order_and_render_pass_hint
 
     Update a subset of positions and/or colors in a polyline.
@@ -415,21 +415,21 @@ Method detail
     **positions** : :obj:`~list`
     **colors** : :obj:`~list`
     **indices** : :obj:`~list`
-    **indicesOrderHint** : :obj:`~PRIMITIVE_INDICES_ORDER_HINT`
-    **renderPassHint** : :obj:`~RENDER_PASS_HINT`
+    **indices_order_hint** : :obj:`~PrimitiveIndicesOrderHint`
+    **render_pass_hint** : :obj:`~RenderPassHint`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: set_partial_cartographic(self, centralBody: str, positions: list, indices: list) -> None
+.. py:method:: set_partial_cartographic(self, central_body: str, positions: list, indices: list) -> None
     :canonical: ansys.stk.core.graphics.PolylinePrimitive.set_partial_cartographic
 
     For convenience. Updates a subset of positions in a polyline using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial.
 
     :Parameters:
 
-    **centralBody** : :obj:`~str`
+    **central_body** : :obj:`~str`
     **positions** : :obj:`~list`
     **indices** : :obj:`~list`
 
@@ -437,30 +437,30 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_partial_cartographic_with_indices_order(self, centralBody: str, positions: list, indices: list, indicesOrderHint: PRIMITIVE_INDICES_ORDER_HINT) -> None
+.. py:method:: set_partial_cartographic_with_indices_order(self, central_body: str, positions: list, indices: list, indices_order_hint: PrimitiveIndicesOrderHint) -> None
     :canonical: ansys.stk.core.graphics.PolylinePrimitive.set_partial_cartographic_with_indices_order
 
     For convenience. Updates a subset of positions in a polyline using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial.
 
     :Parameters:
 
-    **centralBody** : :obj:`~str`
+    **central_body** : :obj:`~str`
     **positions** : :obj:`~list`
     **indices** : :obj:`~list`
-    **indicesOrderHint** : :obj:`~PRIMITIVE_INDICES_ORDER_HINT`
+    **indices_order_hint** : :obj:`~PrimitiveIndicesOrderHint`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: set_partial_cartographic_with_colors(self, centralBody: str, positions: list, colors: list, indices: list) -> None
+.. py:method:: set_partial_cartographic_with_colors(self, central_body: str, positions: list, colors: list, indices: list) -> None
     :canonical: ansys.stk.core.graphics.PolylinePrimitive.set_partial_cartographic_with_colors
 
     For convenience. Updates a subset of positions and/or colors in a polyline using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial.
 
     :Parameters:
 
-    **centralBody** : :obj:`~str`
+    **central_body** : :obj:`~str`
     **positions** : :obj:`~list`
     **colors** : :obj:`~list`
     **indices** : :obj:`~list`
@@ -469,19 +469,19 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_partial_cartographic_with_colors_indices_order_and_render_pass(self, centralBody: str, positions: list, colors: list, indices: list, indicesOrderHint: PRIMITIVE_INDICES_ORDER_HINT, renderPassHint: RENDER_PASS_HINT) -> None
+.. py:method:: set_partial_cartographic_with_colors_indices_order_and_render_pass(self, central_body: str, positions: list, colors: list, indices: list, indices_order_hint: PrimitiveIndicesOrderHint, render_pass_hint: RenderPassHint) -> None
     :canonical: ansys.stk.core.graphics.PolylinePrimitive.set_partial_cartographic_with_colors_indices_order_and_render_pass
 
     For convenience. Updates a subset of positions and/or colors in a polyline using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial.
 
     :Parameters:
 
-    **centralBody** : :obj:`~str`
+    **central_body** : :obj:`~str`
     **positions** : :obj:`~list`
     **colors** : :obj:`~list`
     **indices** : :obj:`~list`
-    **indicesOrderHint** : :obj:`~PRIMITIVE_INDICES_ORDER_HINT`
-    **renderPassHint** : :obj:`~RENDER_PASS_HINT`
+    **indices_order_hint** : :obj:`~PrimitiveIndicesOrderHint`
+    **render_pass_hint** : :obj:`~RenderPassHint`
 
     :Returns:
 
@@ -489,7 +489,7 @@ Method detail
 
 
 
-.. py:method:: set_with_colors_and_optional_parameters(self, positions: list, colors: list, optionalParameters: PolylinePrimitiveOptionalParameters) -> None
+.. py:method:: set_with_colors_and_optional_parameters(self, positions: list, colors: list, optional_parameters: PolylinePrimitiveOptionalParameters) -> None
     :canonical: ansys.stk.core.graphics.PolylinePrimitive.set_with_colors_and_optional_parameters
 
     Define the positions, colors, and/or optional point properties of a polyline. The polyline is rendered in its reference frame.
@@ -498,29 +498,29 @@ Method detail
 
     **positions** : :obj:`~list`
     **colors** : :obj:`~list`
-    **optionalParameters** : :obj:`~PolylinePrimitiveOptionalParameters`
+    **optional_parameters** : :obj:`~PolylinePrimitiveOptionalParameters`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: set_cartographic_with_colors_and_optional_parameters(self, centralBody: str, positions: list, colors: list, optionalParameters: PolylinePrimitiveOptionalParameters) -> None
+.. py:method:: set_cartographic_with_colors_and_optional_parameters(self, central_body: str, positions: list, colors: list, optional_parameters: PolylinePrimitiveOptionalParameters) -> None
     :canonical: ansys.stk.core.graphics.PolylinePrimitive.set_cartographic_with_colors_and_optional_parameters
 
     For convenience. Defines the positions, colors, and/or optional point properties of a polyline using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling Set.
 
     :Parameters:
 
-    **centralBody** : :obj:`~str`
+    **central_body** : :obj:`~str`
     **positions** : :obj:`~list`
     **colors** : :obj:`~list`
-    **optionalParameters** : :obj:`~PolylinePrimitiveOptionalParameters`
+    **optional_parameters** : :obj:`~PolylinePrimitiveOptionalParameters`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: set_partial_with_colors_and_optional_parameters(self, positions: list, colors: list, optionalParameters: PolylinePrimitiveOptionalParameters, indices: list) -> None
+.. py:method:: set_partial_with_colors_and_optional_parameters(self, positions: list, colors: list, optional_parameters: PolylinePrimitiveOptionalParameters, indices: list) -> None
     :canonical: ansys.stk.core.graphics.PolylinePrimitive.set_partial_with_colors_and_optional_parameters
 
     Update a subset of positions, colors, and/or optional point properties in a polyline.
@@ -529,24 +529,24 @@ Method detail
 
     **positions** : :obj:`~list`
     **colors** : :obj:`~list`
-    **optionalParameters** : :obj:`~PolylinePrimitiveOptionalParameters`
+    **optional_parameters** : :obj:`~PolylinePrimitiveOptionalParameters`
     **indices** : :obj:`~list`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: set_partial_cartographic_with_optional_parameters(self, centralBody: str, positions: list, colors: list, optionalParameters: PolylinePrimitiveOptionalParameters, indices: list) -> None
+.. py:method:: set_partial_cartographic_with_optional_parameters(self, central_body: str, positions: list, colors: list, optional_parameters: PolylinePrimitiveOptionalParameters, indices: list) -> None
     :canonical: ansys.stk.core.graphics.PolylinePrimitive.set_partial_cartographic_with_optional_parameters
 
     For convenience. Updates a subset of positions, colors, and/or optional point properties in a polyline using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial.
 
     :Parameters:
 
-    **centralBody** : :obj:`~str`
+    **central_body** : :obj:`~str`
     **positions** : :obj:`~list`
     **colors** : :obj:`~list`
-    **optionalParameters** : :obj:`~PolylinePrimitiveOptionalParameters`
+    **optional_parameters** : :obj:`~PolylinePrimitiveOptionalParameters`
     **indices** : :obj:`~list`
 
     :Returns:

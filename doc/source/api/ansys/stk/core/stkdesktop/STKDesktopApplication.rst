@@ -26,7 +26,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkdesktop.STKDesktopApplication.new_object_model_context`
               - Create a new object model context for the STK Desktop application.
-            * - :py:attr:`~ansys.stk.core.stkdesktop.STKDesktopApplication.SetGrpcOptions`
+            * - :py:attr:`~ansys.stk.core.stkdesktop.STKDesktopApplication.set_grpc_options`
               - Set advanced-usage options for the gRPC client.
                 
                 Available options include:
@@ -35,7 +35,7 @@ Overview
                 { "disable batching" : bool }. Disable all batching operations.
                 { "release batch size" : int }. Number of interfaces to be garbage collected before 
                 sending the entire batch to STK to be released. Default value is 12.
-            * - :py:attr:`~ansys.stk.core.stkdesktop.STKDesktopApplication.NewGrpcCallBatcher`
+            * - :py:attr:`~ansys.stk.core.stkdesktop.STKDesktopApplication.new_grpc_call_batcher`
               - Construct a GrpcCallBatcher linked to this gRPC client that may be used to improve API performance.
                 
                 If gRPC is not active, the batcher will be disabled.
@@ -86,8 +86,8 @@ Method detail
 
         :obj:`~StkObjectModelContext`
 
-.. py:method:: SetGrpcOptions(self, options: dict) -> None
-    :canonical: ansys.stk.core.stkdesktop.STKDesktopApplication.SetGrpcOptions
+.. py:method:: set_grpc_options(self, options: dict) -> None
+    :canonical: ansys.stk.core.stkdesktop.STKDesktopApplication.set_grpc_options
 
     Set advanced-usage options for the gRPC client.
     
@@ -106,8 +106,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: NewGrpcCallBatcher(self, max_batch: int = None, disable_batching: bool = None) -> GrpcCallBatcher
-    :canonical: ansys.stk.core.stkdesktop.STKDesktopApplication.NewGrpcCallBatcher
+.. py:method:: new_grpc_call_batcher(self, max_batch: int = None, disable_batching: bool = False) -> GrpcCallBatcher
+    :canonical: ansys.stk.core.stkdesktop.STKDesktopApplication.new_grpc_call_batcher
 
     Construct a GrpcCallBatcher linked to this gRPC client that may be used to improve API performance.
     

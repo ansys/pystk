@@ -56,19 +56,19 @@ Property detail
 
 .. py:property:: shadow_model
     :canonical: ansys.stk.core.stkobjects.astrogator.SRPAerospaceT30.shadow_model
-    :type: SHADOW_MODEL
+    :type: ShadowModel
 
     Gets or sets the shadow model type.
 
 .. py:property:: sun_position
     :canonical: ansys.stk.core.stkobjects.astrogator.SRPAerospaceT30.sun_position
-    :type: SUN_POSITION
+    :type: SunPosition
 
     Gets or sets the sun position computation.
 
 .. py:property:: eclipsing_bodies
     :canonical: ansys.stk.core.stkobjects.astrogator.SRPAerospaceT30.eclipsing_bodies
-    :type: CentralBodyCollection
+    :type: CentralBodyComponentCollection
 
     Other eclipsing bodies.
 

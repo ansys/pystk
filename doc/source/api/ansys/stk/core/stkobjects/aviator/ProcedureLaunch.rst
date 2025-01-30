@@ -87,7 +87,7 @@ Property detail
 
 .. py:property:: attitude_mode
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureLaunch.attitude_mode
-    :type: LAUNCH_ATTITUDE_MODE
+    :type: LaunchAttitudeMode
 
     Gets or sets the attitude mode during the launch.
 
@@ -105,7 +105,7 @@ Property detail
 
 .. py:property:: airspeed_type
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureLaunch.airspeed_type
-    :type: AIRSPEED_TYPE
+    :type: AirspeedType
 
     Get the airspeed type.
 
@@ -117,7 +117,7 @@ Property detail
 
 .. py:property:: fuel_flow_type
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureLaunch.fuel_flow_type
-    :type: FUEL_FLOW_TYPE
+    :type: FuelFlowType
 
     Gets or sets the fuel flow type of the aircraft during the launch.
 
@@ -151,14 +151,14 @@ Method detail
 
 
 
-.. py:method:: set_airspeed(self, airspeedType: AIRSPEED_TYPE, airspeed: float) -> None
+.. py:method:: set_airspeed(self, airspeed_type: AirspeedType, airspeed: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureLaunch.set_airspeed
 
     Set the launch airspeed.
 
     :Parameters:
 
-    **airspeedType** : :obj:`~AIRSPEED_TYPE`
+    **airspeed_type** : :obj:`~AirspeedType`
     **airspeed** : :obj:`~float`
 
     :Returns:

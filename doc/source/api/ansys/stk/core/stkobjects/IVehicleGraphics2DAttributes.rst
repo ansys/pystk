@@ -7,10 +7,6 @@ IVehicleGraphics2DAttributes
 
 .. py:currentmodule:: IVehicleGraphics2DAttributes
 
-Overview
---------
-
-
 Import detail
 -------------
 

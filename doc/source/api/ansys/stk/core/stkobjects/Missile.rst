@@ -69,17 +69,17 @@ Overview
               - Get the customized list of Eclipse Bodies, which are central bodies used in lighting computations.
             * - :py:attr:`~ansys.stk.core.stkobjects.Missile.use_terrain_in_lighting_computations`
               - Opt whether to compute lighting using terrain data.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Missile.lighting_max_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.Missile.lighting_maximum_step`
               - This property is deprecated. Use LightingMaxStepTerrain or LightingMaxStepCbShape as appropriate. The maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.Missile.laser_environment`
               - Gets the laser environment.
             * - :py:attr:`~ansys.stk.core.stkobjects.Missile.rf_environment`
               - Gets the RF environment.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Missile.lighting_max_step_terrain`
+            * - :py:attr:`~ansys.stk.core.stkobjects.Missile.lighting_maximum_step_terrain`
               - Gets or sets the maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Missile.lighting_max_step_central_body_shape`
+            * - :py:attr:`~ansys.stk.core.stkobjects.Missile.lighting_maximum_step_central_body_shape`
               - Gets or sets the maximum step size to use when computing lighting when UseTerrainInLightingComputations is false. Uses Time Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Missile.get_eoir`
+            * - :py:attr:`~ansys.stk.core.stkobjects.Missile.get_eoir_settings`
               - Get the EOIR properties of the missile.
 
 
@@ -97,7 +97,7 @@ Property detail
 
 .. py:property:: trajectory_type
     :canonical: ansys.stk.core.stkobjects.Missile.trajectory_type
-    :type: VEHICLE_PROPAGATOR_TYPE
+    :type: PropagatorType
 
     Get the propagator type used by the missile.
 
@@ -109,13 +109,13 @@ Property detail
 
 .. py:property:: trajectory
     :canonical: ansys.stk.core.stkobjects.Missile.trajectory
-    :type: IVehiclePropagator
+    :type: IPropagator
 
     Get the missile's trajectory properties.
 
 .. py:property:: attitude_type
     :canonical: ansys.stk.core.stkobjects.Missile.attitude_type
-    :type: VEHICLE_ATTITUDE
+    :type: VehicleAttitude
 
     Get the type of attitude profile used by the missile.
 
@@ -163,7 +163,7 @@ Property detail
 
 .. py:property:: space_environment
     :canonical: ansys.stk.core.stkobjects.Missile.space_environment
-    :type: VehicleSpaceEnvironment
+    :type: SpaceEnvironment
 
     Returns the missile's SpaceEnvironment properties.
 
@@ -197,8 +197,8 @@ Property detail
 
     Opt whether to compute lighting using terrain data.
 
-.. py:property:: lighting_max_step
-    :canonical: ansys.stk.core.stkobjects.Missile.lighting_max_step
+.. py:property:: lighting_maximum_step
+    :canonical: ansys.stk.core.stkobjects.Missile.lighting_maximum_step
     :type: float
 
     This property is deprecated. Use LightingMaxStepTerrain or LightingMaxStepCbShape as appropriate. The maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
@@ -215,20 +215,20 @@ Property detail
 
     Gets the RF environment.
 
-.. py:property:: lighting_max_step_terrain
-    :canonical: ansys.stk.core.stkobjects.Missile.lighting_max_step_terrain
+.. py:property:: lighting_maximum_step_terrain
+    :canonical: ansys.stk.core.stkobjects.Missile.lighting_maximum_step_terrain
     :type: float
 
     Gets or sets the maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
 
-.. py:property:: lighting_max_step_central_body_shape
-    :canonical: ansys.stk.core.stkobjects.Missile.lighting_max_step_central_body_shape
+.. py:property:: lighting_maximum_step_central_body_shape
+    :canonical: ansys.stk.core.stkobjects.Missile.lighting_maximum_step_central_body_shape
     :type: float
 
     Gets or sets the maximum step size to use when computing lighting when UseTerrainInLightingComputations is false. Uses Time Dimension.
 
-.. py:property:: get_eoir
-    :canonical: ansys.stk.core.stkobjects.Missile.get_eoir
+.. py:property:: get_eoir_settings
+    :canonical: ansys.stk.core.stkobjects.Missile.get_eoir_settings
     :type: IEOIR
 
     Get the EOIR properties of the missile.
@@ -238,27 +238,27 @@ Method detail
 -------------
 
 
-.. py:method:: set_trajectory_type(self, propagator: VEHICLE_PROPAGATOR_TYPE) -> None
+.. py:method:: set_trajectory_type(self, propagator: PropagatorType) -> None
     :canonical: ansys.stk.core.stkobjects.Missile.set_trajectory_type
 
     Set the propagator type.
 
     :Parameters:
 
-    **propagator** : :obj:`~VEHICLE_PROPAGATOR_TYPE`
+    **propagator** : :obj:`~PropagatorType`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_trajectory_type_supported(self, propagator: VEHICLE_PROPAGATOR_TYPE) -> bool
+.. py:method:: is_trajectory_type_supported(self, propagator: PropagatorType) -> bool
     :canonical: ansys.stk.core.stkobjects.Missile.is_trajectory_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **propagator** : :obj:`~VEHICLE_PROPAGATOR_TYPE`
+    **propagator** : :obj:`~PropagatorType`
 
     :Returns:
 
@@ -267,27 +267,27 @@ Method detail
 
 
 
-.. py:method:: set_attitude_type(self, attitude: VEHICLE_ATTITUDE) -> None
+.. py:method:: set_attitude_type(self, attitude: VehicleAttitude) -> None
     :canonical: ansys.stk.core.stkobjects.Missile.set_attitude_type
 
     Set the type of attitude profile used by the missile.
 
     :Parameters:
 
-    **attitude** : :obj:`~VEHICLE_ATTITUDE`
+    **attitude** : :obj:`~VehicleAttitude`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_attitude_type_supported(self, attitude: VEHICLE_ATTITUDE) -> bool
+.. py:method:: is_attitude_type_supported(self, attitude: VehicleAttitude) -> bool
     :canonical: ansys.stk.core.stkobjects.Missile.is_attitude_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **attitude** : :obj:`~VEHICLE_ATTITUDE`
+    **attitude** : :obj:`~VehicleAttitude`
 
     :Returns:
 

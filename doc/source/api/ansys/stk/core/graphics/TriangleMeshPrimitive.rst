@@ -89,19 +89,19 @@ Property detail
 
 .. py:property:: triangle_winding_order
     :canonical: ansys.stk.core.graphics.TriangleMeshPrimitive.triangle_winding_order
-    :type: WINDING_ORDER
+    :type: WindingOrder
 
     Gets or sets the orientation of front-facing triangles. This is used in combination with cull face for culling.
 
 .. py:property:: cull_face
     :canonical: ansys.stk.core.graphics.TriangleMeshPrimitive.cull_face
-    :type: FACE_CULLING_MODE
+    :type: FaceCullingMode
 
     Gets or sets whether front and/or back-facing triangles may be culled. This is used in combination with triangle winding order for culling.
 
 .. py:property:: shade_model
     :canonical: ansys.stk.core.graphics.TriangleMeshPrimitive.shade_model
-    :type: RENDERER_SHADING_MODEL
+    :type: RendererShadingModel
 
     Gets or sets the shading model for the mesh.
 
@@ -119,7 +119,7 @@ Property detail
 
 .. py:property:: set_hint
     :canonical: ansys.stk.core.graphics.TriangleMeshPrimitive.set_hint
-    :type: SET_HINT
+    :type: SetHint
 
     Gets the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with.
 
@@ -171,7 +171,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_with_optional_parameters(self, positions: list, normals: list, indices: list, optionalParameters: TriangleMeshPrimitiveOptionalParameters) -> None
+.. py:method:: set_with_optional_parameters(self, positions: list, normals: list, indices: list, optional_parameters: TriangleMeshPrimitiveOptionalParameters) -> None
     :canonical: ansys.stk.core.graphics.TriangleMeshPrimitive.set_with_optional_parameters
 
     Define the triangle mesh using an indexed triangle list specified by positions, normals, indices, and optionalParameters. The mesh is rendered in the primitive's reference frame.
@@ -181,7 +181,7 @@ Method detail
     **positions** : :obj:`~list`
     **normals** : :obj:`~list`
     **indices** : :obj:`~list`
-    **optionalParameters** : :obj:`~TriangleMeshPrimitiveOptionalParameters`
+    **optional_parameters** : :obj:`~TriangleMeshPrimitiveOptionalParameters`
 
     :Returns:
 

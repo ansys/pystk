@@ -9,10 +9,6 @@ OrientationQuaternion
 
 .. py:currentmodule:: OrientationQuaternion
 
-Overview
---------
-
-
 
 Import detail
 -------------

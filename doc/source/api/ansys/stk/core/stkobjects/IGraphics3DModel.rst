@@ -69,13 +69,13 @@ Property detail
 
 .. py:property:: model_type
     :canonical: ansys.stk.core.stkobjects.IGraphics3DModel.model_type
-    :type: MODEL_TYPE
+    :type: ModelType
 
     Gets or sets the model type property. A member of the AgEModelType enumeration.
 
 .. py:property:: articulation
     :canonical: ansys.stk.core.stkobjects.IGraphics3DModel.articulation
-    :type: Graphics3DModelArtic
+    :type: Graphics3DModelArticulation
 
     Articulation property.
 

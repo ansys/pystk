@@ -16,12 +16,22 @@ __all__ = [ "IStkObjectRootEventHandler",
 import typing
 
 from .comutil                import IUnknown
-from .comevents              import *
-from ..utilities.exceptions  import *
+from .comevents import (COMEventHandlerImpl, ISTKXApplicationEventCOMHandler,
+                        IImageCollectionEventCOMHandler,
+                        IKmlGraphicsEventCOMHandler,
+                        ISceneEventCOMHandler,
+                        ITerrainOverlayCollectionEventCOMHandler,
+                        IStkObjectRootEventCOMHandler, IGraphics2DControlEventCOMHandler,
+                        IGraphics3DControlEventCOMHandler)
+from ..utilities.exceptions import STKAttributeError, STKEventsAPIError, STKRuntimeError
 
 try:
     from .grpcutil   import GrpcInterface
-    from .grpcevents import *
+    from .grpcevents import (GrpcEventHandlerImpl, ISTKXApplicationEventGrpcHandler,
+                         IStkGraphicsImageCollectionEventGrpcHandler,
+                         IStkGraphicsKmlGraphicsEventGrpcHandler, IStkGraphicsSceneEventGrpcHandler,
+                         IStkGraphicsTerrainCollectionEventGrpcHandler,
+                         IStkObjectRootEventGrpcHandler)
 except:
     class GrpcInterface(object):
         def __init__(self):
@@ -37,13 +47,11 @@ class _EventSubscriptionManagerImpl(object):
     def subscribe(self, handler: STKEventSubscriber) -> int:
         self._next_id = self._next_id + 1
         self._handlers[self._next_id] = handler
-        assert(isinstance(handler, STKEventSubscriber))
         handler._subscribe_impl()
         return self._next_id
         
     def unsubscribe(self, id:int):
         if id in self._handlers:
-            assert(isinstance(self._handlers[id], STKEventSubscriber))
             self._handlers[id]._unsubscribe_impl()
             del(self._handlers[id])
         
@@ -71,8 +79,8 @@ class STKEventSubscriber(object):
             
     def _subscribe_impl(self):
         """Private method, called by EventSubscriptionManager"""
-        assert(isinstance(self._impl, COMEventHandlerImpl) or isinstance(self._impl, GrpcEventHandlerImpl))
-        self._impl.subscribe()
+        impl : COMEventHandlerImpl | GrpcEventHandlerImpl = self._impl
+        impl.subscribe()
         
     def unsubscribe(self):
         """Unsubscribe from events."""
@@ -82,8 +90,8 @@ class STKEventSubscriber(object):
             
     def _unsubscribe_impl(self):
         """Private method, called by EventSubscriptionManager"""
-        assert(isinstance(self._impl, COMEventHandlerImpl) or isinstance(self._impl, GrpcEventHandlerImpl))
-        self._impl.unsubscribe()
+        impl : COMEventHandlerImpl | GrpcEventHandlerImpl = self._impl
+        impl.unsubscribe()
         
 class _STKEvent(object):
     def __init__(self):
@@ -215,7 +223,7 @@ class IStkObjectRootEventHandler(STKEventSubscriber):
         
     @property
     def on_log_message(self):
-        """Use operator += to register or operator -= to unregister callbacks with the signature [OnLogMessage(message:str, msgType:"LOG_MESSAGE_TYPE", errorCode:int, fileName:str, lineNo:int, dispID:"LOG_MESSAGE_DISP_ID") -> None]"""
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnLogMessage(message:str, msgType:"LogMessageType", errorCode:int, fileName:str, lineNo:int, dispID:"LogMessageDisplayID") -> None]"""
         return self._events["OnLogMessage"]
         
     @on_log_message.setter
@@ -260,7 +268,7 @@ class IStkObjectRootEventHandler(STKEventSubscriber):
         
     @property
     def on_animation_playback(self):
-        """Use operator += to register or operator -= to unregister callbacks with the signature [OnAnimationPlayback(CurrentTime:float, eAction:"ANIMATION_ACTIONS", eDirection:"ANIMATION_DIRECTIONS") -> None]"""
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnAnimationPlayback(CurrentTime:float, eAction:"AnimationActionType", eDirection:"AnimationDirectionType") -> None]"""
         return self._events["OnAnimationPlayback"]
         
     @on_animation_playback.setter
@@ -287,7 +295,7 @@ class IStkObjectRootEventHandler(STKEventSubscriber):
         
     @property
     def on_scenario_before_save(self):
-        """Use operator += to register or operator -= to unregister callbacks with the signature [OnScenarioBeforeSave(pArgs:"ScenarioBeforeSaveEventArgs") -> None]"""
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnScenarioBeforeSave(pArgs:"ScenarioBeforeSaveEventArguments") -> None]"""
         return self._events["OnScenarioBeforeSave"]
         
     @on_scenario_before_save.setter
@@ -332,7 +340,7 @@ class IStkObjectRootEventHandler(STKEventSubscriber):
         
     @property
     def on_percent_complete_update(self):
-        """Use operator += to register or operator -= to unregister callbacks with the signature [OnPercentCompleteUpdate(pArgs:"PctCmpltEventArgs") -> None]"""
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnPercentCompleteUpdate(pArgs:"ProgressBarEventArguments") -> None]"""
         return self._events["OnPercentCompleteUpdate"]
         
     @on_percent_complete_update.setter
@@ -359,7 +367,7 @@ class IStkObjectRootEventHandler(STKEventSubscriber):
         
     @property
     def on_stk_object_changed(self):
-        """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectChanged(pArgs:"StkObjectChangedEventArgs") -> None]"""
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectChanged(pArgs:"StkObjectChangedEventArguments") -> None]"""
         return self._events["OnStkObjectChanged"]
         
     @on_stk_object_changed.setter
@@ -377,7 +385,7 @@ class IStkObjectRootEventHandler(STKEventSubscriber):
         
     @property
     def on_stk_object_pre_delete(self):
-        """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectPreDelete(pArgs:"StkObjectPreDeleteEventArgs") -> None]"""
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectPreDelete(pArgs:"StkObjectPreDeleteEventArguments") -> None]"""
         return self._events["OnStkObjectPreDelete"]
         
     @on_stk_object_pre_delete.setter
@@ -422,7 +430,7 @@ class IStkObjectRootEventHandler(STKEventSubscriber):
         
     @property
     def on_stk_object_pre_cut(self):
-        """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectPreCut(pArgs:"StkObjectCutCopyPasteEventArgs") -> None]"""
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectPreCut(pArgs:"StkObjectCutCopyPasteEventArguments") -> None]"""
         return self._events["OnStkObjectPreCut"]
         
     @on_stk_object_pre_cut.setter
@@ -431,7 +439,7 @@ class IStkObjectRootEventHandler(STKEventSubscriber):
         
     @property
     def on_stk_object_copy(self):
-        """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectCopy(pArgs:"StkObjectCutCopyPasteEventArgs") -> None]"""
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectCopy(pArgs:"StkObjectCutCopyPasteEventArguments") -> None]"""
         return self._events["OnStkObjectCopy"]
         
     @on_stk_object_copy.setter
@@ -440,7 +448,7 @@ class IStkObjectRootEventHandler(STKEventSubscriber):
         
     @property
     def on_stk_object_paste(self):
-        """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectPaste(pArgs:"StkObjectCutCopyPasteEventArgs") -> None]"""
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnStkObjectPaste(pArgs:"StkObjectCutCopyPasteEventArguments") -> None]"""
         return self._events["OnStkObjectPaste"]
         
     @on_stk_object_paste.setter
@@ -524,7 +532,7 @@ class ISTKXApplicationEventHandler(STKEventSubscriber):
         
     @property
     def on_log_message(self):
-        """Use operator += to register or operator -= to unregister callbacks with the signature [OnLogMessage(message:str, msgType:"LOG_MESSAGE_TYPE", errorCode:int, fileName:str, lineNo:int, dispID:"LOG_MESSAGE_DISP_ID") -> None]"""
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnLogMessage(message:str, msgType:"LogMessageType", errorCode:int, fileName:str, lineNo:int, dispID:"LogMessageDisplayID") -> None]"""
         return self._events["OnLogMessage"]
         
     @on_log_message.setter
@@ -587,7 +595,7 @@ class ISTKXApplicationEventHandler(STKEventSubscriber):
     
     @property
     def on_new_gfx_analysis_ctrl_request(self):
-        """Use operator += to register or operator -= to unregister callbacks with the signature [OnNewGfxAnalysisCtrlRequest(SceneID:int, GfxAnalysisMode:"GRAPHICS_2D_ANALYSIS_MODE") -> None]"""
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnNewGfxAnalysisCtrlRequest(SceneID:int, GfxAnalysisMode:"Graphics2DAnalysisMode") -> None]"""
         return self._events["OnNewGfxAnalysisCtrlRequest"]
         
     @on_new_gfx_analysis_ctrl_request.setter
@@ -732,7 +740,7 @@ class IUiAxGraphics2DCntrlEventHandler(STKEventSubscriber, IAgUiAxStockEventHand
         self.__dict__["_events"] = {}
         IAgUiAxStockEventHandler.__init__(self)
         if type(interface)==IUnknown:
-            impl = IUiAxGraphics2DCntrlEventCOMHandler(interface, self._events)
+            impl = IGraphics2DControlEventCOMHandler(interface, self._events)
         elif type(interface)==GrpcInterface:
             raise STKRuntimeError(f"Active X Control events are not available with gRPC.")
         else:
@@ -749,7 +757,7 @@ class IUiAxGraphics2DCntrlEventHandler(STKEventSubscriber, IAgUiAxStockEventHand
             if attrname in IUiAxGraphics2DCntrlEventHandler.__dict__ and type(IUiAxGraphics2DCntrlEventHandler.__dict__[attrname]) == property:
                 IUiAxGraphics2DCntrlEventHandler.__dict__[attrname].__set__(self, value)
             else:
-                raise STKAttributeError(attrname + " is not a recognized event in UiAx2DCntrlEvents.")
+                raise STKAttributeError(attrname + " is not a recognized event in Graphics2DControlBaseEvents.")
 
 
 class IUiAxGraphics3DCntrlEventHandler(STKEventSubscriber, IAgUiAxStockEventHandler):
@@ -760,7 +768,7 @@ class IUiAxGraphics3DCntrlEventHandler(STKEventSubscriber, IAgUiAxStockEventHand
         self._events["_OnObjectEditingCancel"]    = _STKEvent()
         self._events["_OnObjectEditingStop"]      = _STKEvent()
         if type(interface)==IUnknown:
-            impl = IUiAxGraphics3DCntrlEventCOMHandler(interface, self._events)
+            impl = IGraphics3DControlEventCOMHandler(interface, self._events)
         elif type(interface)==GrpcInterface:
             raise STKRuntimeError(f"Active X Control events are not available with gRPC.")
         else:
@@ -777,7 +785,7 @@ class IUiAxGraphics3DCntrlEventHandler(STKEventSubscriber, IAgUiAxStockEventHand
             if attrname in IUiAxGraphics3DCntrlEventHandler.__dict__ and type(IUiAxGraphics3DCntrlEventHandler.__dict__[attrname]) == property:
                 IUiAxGraphics3DCntrlEventHandler.__dict__[attrname].__set__(self, value)
             else:
-                raise STKAttributeError(attrname + " is not a recognized event in UiAxGraphics3DCntrlEvents.")
+                raise STKAttributeError(attrname + " is not a recognized event in Graphics3DControlBaseEvents.")
             
     @property
     def on_object_editing_start(self):

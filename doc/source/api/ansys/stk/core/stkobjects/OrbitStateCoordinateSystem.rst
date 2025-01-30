@@ -38,13 +38,13 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.OrbitStateCoordinateSystem.type
-    :type: COORDINATE_SYSTEM
+    :type: CoordinateSystem
 
     Get the coordinate system being used.
 
 .. py:property:: coordinate_system_epoch
     :canonical: ansys.stk.core.stkobjects.OrbitStateCoordinateSystem.coordinate_system_epoch
-    :type: ITimeToolEventSmartEpoch
+    :type: ITimeToolInstantSmartEpoch
 
     Smart epoch component representing the coordinate epoch. Disabled for coordinate systems with pre-established epochs (e.g. J2000, B1950).
 

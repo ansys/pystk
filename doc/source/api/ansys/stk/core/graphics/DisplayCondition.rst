@@ -9,10 +9,6 @@ DisplayCondition
 
 .. py:currentmodule:: DisplayCondition
 
-Overview
---------
-
-
 
 Import detail
 -------------

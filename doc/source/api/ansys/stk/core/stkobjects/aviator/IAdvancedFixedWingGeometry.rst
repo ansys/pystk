@@ -7,10 +7,6 @@ IAdvancedFixedWingGeometry
 
 .. py:currentmodule:: IAdvancedFixedWingGeometry
 
-Overview
---------
-
-
 Import detail
 -------------
 

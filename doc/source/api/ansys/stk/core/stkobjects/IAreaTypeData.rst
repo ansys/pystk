@@ -7,10 +7,6 @@ IAreaTypeData
 
 .. py:currentmodule:: IAreaTypeData
 
-Overview
---------
-
-
 Import detail
 -------------
 

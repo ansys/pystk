@@ -2,8 +2,9 @@
 
 from __future__ import annotations
 
-import typing
 import grpc
+import logging
+import typing
 from enum import IntEnum, IntFlag
 from concurrent.futures import ThreadPoolExecutor
 from queue import SimpleQueue
@@ -13,11 +14,13 @@ from . import AgGrpcServices_pb2_grpc
 
 from .marshall import EnumArg, OLEColorArg
 from .apiutil import OutArg, GcDisabler
-from ..utilities.exceptions import STKRuntimeError, GrpcUtilitiesException
+from ..utilities.exceptions import STKRuntimeError, GrpcUtilitiesError
 from ..utilities.colors import Color
 
 # comutil.GUID.from_registry_format("{00020404-0000-0000-C000-000000000046}").as_data_pair()
 IID_IEnumVARIANT = (132100, 5044031582654955712) 
+
+_logger = logging.getLogger("stk.internal.grpcutil")
         
 def _is_list_type(arg:typing.Any) -> bool:
     if type(arg) == str or not hasattr(arg, '__iter__'):
@@ -198,12 +201,10 @@ class GrpcInterfacePimpl(object):
 
     @property
     def obj(self):
-        assert type(self._impl) != GrpcInterfaceFuture
         return self._impl.obj
 
     @property
     def client(self):
-        assert type(self._impl) != GrpcInterfaceFuture
         return self._impl.client
     
     def deactivate(self):
@@ -271,7 +272,7 @@ class GrpcInterfaceFuture(object):
                 attr_metadata_name = f"_get_{attr_name}_metadata"
                 break
         if call_interface is None:
-            raise GrpcUtilitiesException(f"Cannot create gRPC future; incorrect type.")
+            raise GrpcUtilitiesError(f"Cannot create gRPC future; incorrect type.")
         self.batcher = batcher
         self.future_call_data = AgGrpcServices_pb2.STKObjectPromise()
         if type(source_obj._intf)==GrpcInterfacePimpl and type(source_obj._intf._impl)==GrpcInterfaceFuture:
@@ -304,7 +305,7 @@ class GrpcInterfaceFuture(object):
         self.batcher._enqueue_batch_request(request)
 
     def query_interface(self, intf_metadata:dict) -> "GrpcInterface":
-        raise GrpcUtilitiesException(f"gRPC futures can not be casted to other types.")
+        raise GrpcUtilitiesError(f"gRPC futures can not be casted to other types.")
 
     def invoke(self, intf_metadata:dict, method_metadata:dict, *args):
         guid = _grpc_guid(intf_metadata)
@@ -314,7 +315,7 @@ class GrpcInterfaceFuture(object):
         request.interface_guid.MergeFrom(guid)
         for arg in args:
             if type(arg) == OutArg:
-                raise GrpcUtilitiesException(f"gRPC futures do not return values.")
+                raise GrpcUtilitiesError(f"gRPC futures do not return values.")
             new_grpc_arg = AgGrpcServices_pb2.Variant()
             _marshall_input_arg(arg, new_grpc_arg)
             request.args.append(new_grpc_arg)
@@ -324,7 +325,7 @@ class GrpcInterfaceFuture(object):
             self._handle_rpc_error(rpc_error)
 
     def get_property(self, intf_metadata:dict, method_metadata:dict):
-        raise GrpcUtilitiesException(f"gRPC futures do not return values.")
+        raise GrpcUtilitiesError(f"gRPC futures do not return values.")
 
     def set_property(self, intf_metadata:dict, method_metadata:dict, value):
         guid = _grpc_guid(intf_metadata)
@@ -341,13 +342,13 @@ class GrpcInterfaceFuture(object):
             self._handle_rpc_error(rpc_error)
 
     def subscribe(self, event_handler:AgGrpcServices_pb2.EventHandler, event:str, callback:callable):
-        raise GrpcUtilitiesException(f"gRPC futures are not compatible with events.")
+        raise GrpcUtilitiesError(f"gRPC futures are not compatible with events.")
 
     def unsubscribe(self, event_handler:AgGrpcServices_pb2.EventHandler, event:str, callback:callable):
-        raise GrpcUtilitiesException(f"gRPC futures are not compatible with events.")
+        raise GrpcUtilitiesError(f"gRPC futures are not compatible with events.")
         
     def unsubscribe_all(self, event_handler:AgGrpcServices_pb2.EventHandler):
-        raise GrpcUtilitiesException(f"gRPC futures are not compatible with events.")
+        raise GrpcUtilitiesError(f"gRPC futures are not compatible with events.")
 
 class GrpcApplication(GrpcInterface):
     def __init__(self, client: "GrpcClient", obj):
@@ -453,7 +454,7 @@ class GrpcClient(object):
             elif option == "raise exceptions with STK Engine":
                 continue
             else:
-                raise GrpcUtilitiesException(f"Unrecognized gRPC option \"{option}\".")
+                raise GrpcUtilitiesError(f"Unrecognized gRPC option \"{option}\".")
 
     def __del__(self):
         self.terminate_connection()
@@ -522,7 +523,7 @@ class GrpcClient(object):
     @staticmethod
     def register_call_batcher(batcher:"GrpcCallBatcher") -> None:
         if batcher._client in GrpcClient._active_batchers:
-            raise GrpcUtilitiesException("Nested GrpcCallBatchers are not permitted.")
+            raise GrpcUtilitiesError("Nested GrpcCallBatchers are not permitted.")
         GrpcClient._active_batchers[batcher._client] = batcher
 
     @staticmethod
@@ -760,7 +761,10 @@ class GrpcClient(object):
     def _fire_event(self, callbacks, args, event_id):
         if callbacks is not None:
             for callback in callbacks:
-                callback(*args)
+                try:
+                    callback(*args)
+                except:
+                    _logger.exception(f"Exception raised during callback registered to {callback.__name__}")
                 self._execute_batched_invoke()
         self.acknowledge_event(event_id)
 
@@ -775,7 +779,7 @@ class GrpcClient(object):
                 callbacks = self._event_callbacks[handler][name][p.value]
                 self._executor.submit(self._fire_event, callbacks, args, event.event_id)
         except:
-            pass
+            _logger.exception("Exception raised during handling of STK events:")
 
     def start_event_loop(self):
         if self._event_loop_id is None:

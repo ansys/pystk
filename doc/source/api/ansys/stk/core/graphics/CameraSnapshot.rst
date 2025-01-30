@@ -30,7 +30,6 @@ Overview
               - Save a snapshot of the 3D window to a texture 2d.
 
 
-
 Import detail
 -------------
 
@@ -43,7 +42,7 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: save_to_file(self, filename: str, cameraSnapshotFormat: SNAPSHOT_FILE_FORMAT) -> None
+.. py:method:: save_to_file(self, filename: str, camera_snapshot_format: SnapshotFileFormat) -> None
     :canonical: ansys.stk.core.graphics.CameraSnapshot.save_to_file
 
     Save a snapshot of the 3D window to the filename with the specified format.
@@ -51,13 +50,13 @@ Method detail
     :Parameters:
 
     **filename** : :obj:`~str`
-    **cameraSnapshotFormat** : :obj:`~SNAPSHOT_FILE_FORMAT`
+    **camera_snapshot_format** : :obj:`~SnapshotFileFormat`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: save_to_file_with_width_and_dpi(self, filename: str, cameraSnapshotFormat: SNAPSHOT_FILE_FORMAT, widthInInches: float, dotsPerInch: float) -> None
+.. py:method:: save_to_file_with_width_and_dpi(self, filename: str, camera_snapshot_format: SnapshotFileFormat, width_in_inches: float, dots_per_inch: float) -> None
     :canonical: ansys.stk.core.graphics.CameraSnapshot.save_to_file_with_width_and_dpi
 
     Save a snapshot of the 3D window to the filename with the specified format at high resolution...
@@ -65,9 +64,9 @@ Method detail
     :Parameters:
 
     **filename** : :obj:`~str`
-    **cameraSnapshotFormat** : :obj:`~SNAPSHOT_FILE_FORMAT`
-    **widthInInches** : :obj:`~float`
-    **dotsPerInch** : :obj:`~float`
+    **camera_snapshot_format** : :obj:`~SnapshotFileFormat`
+    **width_in_inches** : :obj:`~float`
+    **dots_per_inch** : :obj:`~float`
 
     :Returns:
 

@@ -39,7 +39,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultDataSetCollection.count`
               - Returns a number of elements in collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultDataSetCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultDataSetCollection._new_enum`
               - Returns an enumerator for the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultDataSetCollection.row_count`
               - Returns the number of rows in the dataset collection.
@@ -65,8 +65,8 @@ Property detail
 
     Returns a number of elements in collection.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.DataProviderResultDataSetCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.DataProviderResultDataSetCollection._new_enum
     :type: EnumeratorProxy
 
     Returns an enumerator for the collection.
@@ -102,14 +102,14 @@ Method detail
         :obj:`~DataProviderResultDataSet`
 
 
-.. py:method:: get_data_set_by_name(self, dataSetName: str) -> DataProviderResultDataSet
+.. py:method:: get_data_set_by_name(self, data_set_name: str) -> DataProviderResultDataSet
     :canonical: ansys.stk.core.stkobjects.DataProviderResultDataSetCollection.get_data_set_by_name
 
     Return the element, given the name.
 
     :Parameters:
 
-    **dataSetName** : :obj:`~str`
+    **data_set_name** : :obj:`~str`
 
     :Returns:
 
@@ -147,7 +147,7 @@ Method detail
 
         :obj:`~ndarray`
 
-.. py:method:: to_pandas_dataframe(self, indexElementName: str, dataProviderElements: IAgDataPrvElements) -> DataFrame:
+.. py:method:: to_pandas_dataframe(self, index_element_name: str, data_provider_elements: IAgDataPrvElements) -> DataFrame:
     :canonical: ansys.stk.core.stkobjects.DataProviderResultDataSetCollection.to_pandas_dataframe
 
     Return a row formatted dataset collection as a pandas DataFrame. This function requires ``pandas``.
@@ -157,8 +157,8 @@ Method detail
 
     :Parameters:
 
-    **indexElementName** : :obj:`~str`
-    **dataProviderElements** : :obj:`~DataProviderElements`
+    **index_element_name** : :obj:`~str`
+    **data_provider_elements** : :obj:`~DataProviderElements`
 
     :Returns:
 

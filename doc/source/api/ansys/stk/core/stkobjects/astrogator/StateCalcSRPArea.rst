@@ -9,10 +9,6 @@ StateCalcSRPArea
 
 .. py:currentmodule:: StateCalcSRPArea
 
-Overview
---------
-
-
 
 Import detail
 -------------

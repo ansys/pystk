@@ -34,7 +34,7 @@ class EarlyBoundTests(TestBase):
     # region CompoundUnits
     def test_CompoundUnits(self):
         obj: "IStkObject" = TestBase.Application.current_scenario.children["Facility1"]
-        transmitter: "IStkObject" = obj.children.new(STK_OBJECT_TYPE.TRANSMITTER, "Transmitter1")
+        transmitter: "IStkObject" = obj.children.new(STKObjectType.TRANSMITTER, "Transmitter1")
 
         # Run the specific data provider that is known to return data using compound units.
         # The columns containing the compound units are "Data Rate" and "Saturated Flux Density".
@@ -43,7 +43,7 @@ class EarlyBoundTests(TestBase):
         # The unit test verifies that
         try:
             dpInfo: "IDataProviderInfo" = transmitter.data_providers["Basic Properties"]
-            resInfo: "DataProviderResult" = (clr.CastAs(dpInfo, DataProviderFixed)).exec()
+            resInfo: "DataProviderResult" = (clr.CastAs(dpInfo, DataProviderFixed)).execute()
 
             #
             root: "StkObjectRoot" = None
@@ -53,8 +53,8 @@ class EarlyBoundTests(TestBase):
                 root = TestBase.ApplicationProvider.CreateApplication("")
 
             root.isolate()
-            root.unit_preferences.set_current_unit("Bits", "Mb")
-            root.unit_preferences.set_current_unit("SmallTime", "sec")
+            root.units_preferences.set_current_unit("Bits", "Mb")
+            root.units_preferences.set_current_unit("SmallTime", "sec")
 
             dataset: "DataProviderResultDataSet"
 
@@ -162,8 +162,8 @@ class EarlyBoundTests(TestBase):
         dpTimeVar: "DataProviderTimeVarying" = clr.CastAs(dp, DataProviderTimeVarying)
         elems = ["Time", "Lat", "Lon"]
 
-        TestBase.Application.unit_preferences.set_current_unit("DateFormat", dateFormat)
-        result: "DataProviderResult" = dpTimeVar.exec_elements(startTime, stopTime, 60, elems)
+        TestBase.Application.units_preferences.set_current_unit("DateFormat", dateFormat)
+        result: "DataProviderResult" = dpTimeVar.execute_elements(startTime, stopTime, 60, elems)
         arLat = result.data_sets[1].get_values()
         arLon = result.data_sets[2].get_values()
 
@@ -196,11 +196,11 @@ class EarlyBoundTests(TestBase):
         obj: "IStkObject" = TestBase.Application.current_scenario.children["Facility1"]
         dpName: str = "Sunlight"
         dpPath: str = "Lighting Times//" + dpName
-        info: "IDataProviderInfo" = obj.data_providers.get_data_provider_info_from_path(dpPath)
+        info: "IDataProviderInfo" = obj.data_providers.get_data_provider_information_from_path(dpPath)
         Assert.assertEqual(dpName, info.name)
-        Assert.assertEqual(DATA_PROVIDER_TYPE.DATA_PROVIDER_RESULT_INTVL, info.type)
+        Assert.assertEqual(DataProviderType.INTERVAL, info.type)
         intvl: "DataProviderInterval" = obj.data_providers.get_data_provider_interval_from_path(dpPath)
-        result: "DataProviderResult" = intvl.exec("1 Jun 2004 12:00:00.000", "1 Jun 2004 12:00:20.000")
+        result: "DataProviderResult" = intvl.execute("1 Jun 2004 12:00:00.000", "1 Jun 2004 12:00:20.000")
         ElementNames = result.data_sets.element_names
         Assert.assertEqual(result.data_sets.count, Array.Length(ElementNames))
 
@@ -249,14 +249,14 @@ class EarlyBoundTests(TestBase):
         times = ["1 Jun 2004 12:00:00.000", "1 Jun 2004 12:00:20.000", "1 Jun 2004 12:00:40.000"]
 
         timeVar: "DataProviderTimeVarying" = clr.CastAs(obj.data_providers["Lighting AER"], DataProviderTimeVarying)
-        result: "DataProviderResult" = timeVar.exec_single_elements("1 Jun 2004 12:00:00.000", elems)
+        result: "DataProviderResult" = timeVar.execute_single_elements("1 Jun 2004 12:00:00.000", elems)
         dpName: str = "Lighting AER"
         dpPath: str = dpName
-        info: "IDataProviderInfo" = obj.data_providers.get_data_provider_info_from_path(dpPath)
+        info: "IDataProviderInfo" = obj.data_providers.get_data_provider_information_from_path(dpPath)
         Assert.assertEqual(dpName, info.name)
-        Assert.assertEqual(DATA_PROVIDER_TYPE.DATA_PROVIDER_RESULT_TIME_VARYING, info.type)
+        Assert.assertEqual(DataProviderType.TIME_VARYING, info.type)
         timevar: "DataProviderTimeVarying" = obj.data_providers.get_data_provider_time_varying_from_path(dpPath)
-        timearray: "DataProviderResultTimeArrayElements" = timevar.exec_single_elements_array(times, elems)
+        timearray: "DataProviderResultTimeArrayElements" = timevar.execute_single_elements_array(times, elems)
         Assert.assertEqual(timearray.count, Array.Length(elems))  # elements
 
         Assert.assertEqual(Array.Length(timearray.get_array(0)), Array.Length(times))  # times
@@ -272,7 +272,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception):
             timearray.get_array("Bogus")
 
-        result = timeVar.exec_single_elements("1 Jun 2004 12:00:00.000", elems)
+        result = timeVar.execute_single_elements("1 Jun 2004 12:00:00.000", elems)
 
         # System.logger.WriteLine(timearray.Count);
         # System.logger.WriteLine(timearray.GetArray(1).Length);
@@ -301,28 +301,28 @@ class EarlyBoundTests(TestBase):
 
         dpName = "LocalHorizontal"
         dpPath = "Terrain Info//" + dpName
-        info = obj.data_providers.get_data_provider_info_from_path(dpPath)
+        info = obj.data_providers.get_data_provider_information_from_path(dpPath)
         Assert.assertEqual(dpName, info.name)
-        Assert.assertEqual(DATA_PROVIDER_TYPE.DATA_PROVIDER_RESULT_FIXED, info.type)
+        Assert.assertEqual(DataProviderType.FIXED, info.type)
         dpfixed: "DataProviderFixed" = obj.data_providers.get_data_provider_fixed_from_path(dpPath)
-        result = dpfixed.exec_elements(elems)
+        result = dpfixed.execute_elements(elems)
         group: "DataProviderGroup" = clr.CastAs(obj.data_providers["Terrain Info"], DataProviderGroup)
         fixedDp: "DataProviderFixed" = clr.CastAs(group.group["LocalHorizontal"], DataProviderFixed)
-        result2: "DataProviderResult" = fixedDp.exec_elements(elems)
+        result2: "DataProviderResult" = fixedDp.execute_elements(elems)
         Assert.assertEqual(result2.data_sets[0].get_values()[0], result.data_sets[0].get_values()[0])
         Assert.assertEqual(result2.data_sets[1].get_values()[0], result.data_sets[1].get_values()[0])
 
         dpName = "Sunlight"
         dpPath = "Lighting Times//" + dpName
-        info = obj.data_providers.get_data_provider_info_from_path(dpPath)
+        info = obj.data_providers.get_data_provider_information_from_path(dpPath)
         Assert.assertEqual(dpName, info.name)
-        Assert.assertEqual(DATA_PROVIDER_TYPE.DATA_PROVIDER_RESULT_INTVL, info.type)
+        Assert.assertEqual(DataProviderType.INTERVAL, info.type)
         intvl: "DataProviderInterval" = obj.data_providers.get_data_provider_interval_from_path(dpPath)
-        result = intvl.exec("1 Jun 2004 12:00:00.000", "1 Jun 2004 12:00:20.000")
+        result = intvl.execute("1 Jun 2004 12:00:00.000", "1 Jun 2004 12:00:20.000")
 
         group = clr.CastAs(obj.data_providers["Lighting Times"], DataProviderGroup)
         intv: "DataProviderInterval" = clr.CastAs(group.group["Sunlight"], DataProviderInterval)
-        result2 = intv.exec("1 Jun 2004 12:00:00.000", "1 Jun 2004 12:00:20.000")
+        result2 = intv.execute("1 Jun 2004 12:00:00.000", "1 Jun 2004 12:00:20.000")
         Assert.assertEqual(result2.data_sets[0].get_values()[0], result.data_sets[0].get_values()[0])
         Assert.assertEqual(result2.data_sets[1].get_values()[0], result.data_sets[1].get_values()[0])
         Assert.assertEqual(result2.data_sets[2].get_values()[0], result.data_sets[2].get_values()[0])
@@ -332,15 +332,15 @@ class EarlyBoundTests(TestBase):
 
         dpName = "Sunlight"
         dpPath = "Lighting Times//" + dpName
-        info = obj.data_providers.get_data_provider_info_from_path(dpPath)
+        info = obj.data_providers.get_data_provider_information_from_path(dpPath)
         Assert.assertEqual(dpName, info.name)
-        Assert.assertEqual(DATA_PROVIDER_TYPE.DATA_PROVIDER_RESULT_INTVL, info.type)
+        Assert.assertEqual(DataProviderType.INTERVAL, info.type)
         intvl = obj.data_providers.get_data_provider_interval_from_path(dpPath)
-        result = intvl.exec_elements("1 Jun 2004 12:00:00.000", "1 Jun 2004 12:00:20.000", elems)
+        result = intvl.execute_elements("1 Jun 2004 12:00:00.000", "1 Jun 2004 12:00:20.000", elems)
 
         group = clr.CastAs(obj.data_providers["Lighting Times"], DataProviderGroup)
         intv = clr.CastAs(group.group["Sunlight"], DataProviderInterval)
-        result2 = intv.exec_elements("1 Jun 2004 12:00:00.000", "1 Jun 2004 12:00:20.000", elems)
+        result2 = intv.execute_elements("1 Jun 2004 12:00:00.000", "1 Jun 2004 12:00:20.000", elems)
         Assert.assertEqual(result2.data_sets[0].get_values()[0], result.data_sets[0].get_values()[0])
         Assert.assertEqual(result2.data_sets[1].get_values()[0], result.data_sets[1].get_values()[0])
 
@@ -352,7 +352,7 @@ class EarlyBoundTests(TestBase):
         # Incorrect paths
         # ------------------
         with pytest.raises(Exception):
-            info1: "IDataProviderInfo" = obj.data_providers.get_data_provider_info_from_path(
+            info1: "IDataProviderInfo" = obj.data_providers.get_data_provider_information_from_path(
                 "I'm is not a Data Provider"
             )
         with pytest.raises(Exception):
@@ -390,10 +390,10 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine(
             "----- Cartesian Position//Fixed Data Provider for a satellite TEST ----- BEGIN -----"
         )
-        TestBase.Application.unit_preferences.set_current_unit("TimeUnit", "sec")
-        Assert.assertEqual("sec", TestBase.Application.unit_preferences.get_current_unit_abbrv("TimeUnit"))
-        TestBase.Application.unit_preferences.set_current_unit("DateFormat", "UTCG")
-        Assert.assertEqual("UTCG", TestBase.Application.unit_preferences.get_current_unit_abbrv("DateFormat"))
+        TestBase.Application.units_preferences.set_current_unit("TimeUnit", "sec")
+        Assert.assertEqual("sec", TestBase.Application.units_preferences.get_current_unit_abbrv("TimeUnit"))
+        TestBase.Application.units_preferences.set_current_unit("DateFormat", "UTCG")
+        Assert.assertEqual("UTCG", TestBase.Application.units_preferences.get_current_unit_abbrv("DateFormat"))
 
         oScenario: "IStkObject" = (IStkObject(TestBase.Application)).children["DataProvidersTests"]
         Assert.assertEqual((IStkObject(TestBase.Application)).children["DataProvidersTests"], oScenario)
@@ -407,11 +407,11 @@ class EarlyBoundTests(TestBase):
         oProvider: "IDataProvider" = IDataProvider(oGroup.group["Fixed"])
         Assert.assertIsNotNone(oProvider)
 
-        oProvider.allow_user_interface = False
-        Assert.assertFalse(oProvider.allow_user_interface)
+        oProvider.allow_user_interface_for_pre_data = False
+        Assert.assertFalse(oProvider.allow_user_interface_for_pre_data)
         oProvider.pre_data = ""
         Assert.assertEqual("", oProvider.pre_data)
-        oResult: "DataProviderResult" = (DataProviderTimeVarying(oProvider)).exec(
+        oResult: "DataProviderResult" = (DataProviderTimeVarying(oProvider)).execute(
             "1 Jun 2004 12:00:00.00", "1 Jun 2004 13:00:00.00", 240.0
         )
         Assert.assertIsNotNone(oResult)
@@ -481,10 +481,10 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine(
             "----- Cartesian Position//Fixed Data Provider for a satellite TEST ----- BEGIN -----"
         )
-        TestBase.Application.unit_preferences.set_current_unit("TimeUnit", "sec")
-        Assert.assertEqual("sec", TestBase.Application.unit_preferences.get_current_unit_abbrv("TimeUnit"))
-        TestBase.Application.unit_preferences.set_current_unit("DateFormat", "UTCG")
-        Assert.assertEqual("UTCG", TestBase.Application.unit_preferences.get_current_unit_abbrv("DateFormat"))
+        TestBase.Application.units_preferences.set_current_unit("TimeUnit", "sec")
+        Assert.assertEqual("sec", TestBase.Application.units_preferences.get_current_unit_abbrv("TimeUnit"))
+        TestBase.Application.units_preferences.set_current_unit("DateFormat", "UTCG")
+        Assert.assertEqual("UTCG", TestBase.Application.units_preferences.get_current_unit_abbrv("DateFormat"))
 
         oScenario: "IStkObject" = (IStkObject(TestBase.Application)).children["DataProvidersTests"]
         Assert.assertEqual((IStkObject(TestBase.Application)).children["DataProvidersTests"], oScenario)
@@ -498,11 +498,11 @@ class EarlyBoundTests(TestBase):
         oProvider: "IDataProvider" = IDataProvider(oGroup.group["Fixed"])
         Assert.assertIsNotNone(oProvider)
 
-        oProvider.allow_user_interface = False
-        Assert.assertFalse(oProvider.allow_user_interface)
+        oProvider.allow_user_interface_for_pre_data = False
+        Assert.assertFalse(oProvider.allow_user_interface_for_pre_data)
         oProvider.pre_data = ""
         Assert.assertEqual("", oProvider.pre_data)
-        oResult: "DataProviderResult" = (DataProviderTimeVarying(oProvider)).exec_native_times(
+        oResult: "DataProviderResult" = (DataProviderTimeVarying(oProvider)).execute_native_times(
             "1 Jun 2004 12:00:00.00", "1 Jun 2004 13:00:00.00"
         )
         Assert.assertIsNotNone(oResult)
@@ -570,10 +570,10 @@ class EarlyBoundTests(TestBase):
     def test_AircraftCartPosFixedUsingDefault(self):
         # Runs Cartesian Position//Fixed Data Provider for a satellite using DataProviderTimeVarying.Exec
         TestBase.logger.WriteLine("----- Cartesian Position//Fixed Data Provider for a aircraft TEST ----- BEGIN -----")
-        TestBase.Application.unit_preferences.set_current_unit("TimeUnit", "sec")
-        Assert.assertEqual("sec", TestBase.Application.unit_preferences.get_current_unit_abbrv("TimeUnit"))
-        TestBase.Application.unit_preferences.set_current_unit("DateFormat", "UTCG")
-        Assert.assertEqual("UTCG", TestBase.Application.unit_preferences.get_current_unit_abbrv("DateFormat"))
+        TestBase.Application.units_preferences.set_current_unit("TimeUnit", "sec")
+        Assert.assertEqual("sec", TestBase.Application.units_preferences.get_current_unit_abbrv("TimeUnit"))
+        TestBase.Application.units_preferences.set_current_unit("DateFormat", "UTCG")
+        Assert.assertEqual("UTCG", TestBase.Application.units_preferences.get_current_unit_abbrv("DateFormat"))
 
         oScenario: "IStkObject" = (IStkObject(TestBase.Application)).children["DataProvidersTests"]
         Assert.assertEqual((IStkObject(TestBase.Application)).children["DataProvidersTests"], oScenario)
@@ -587,11 +587,11 @@ class EarlyBoundTests(TestBase):
         oProvider: "IDataProvider" = IDataProvider(oGroup.group["Fixed"])
         Assert.assertIsNotNone(oProvider)
 
-        oProvider.allow_user_interface = False
-        Assert.assertFalse(oProvider.allow_user_interface)
+        oProvider.allow_user_interface_for_pre_data = False
+        Assert.assertFalse(oProvider.allow_user_interface_for_pre_data)
         oProvider.pre_data = ""
         Assert.assertEqual("", oProvider.pre_data)
-        oResult: "DataProviderResult" = (DataProviderTimeVarying(oProvider)).exec_native_times(
+        oResult: "DataProviderResult" = (DataProviderTimeVarying(oProvider)).execute_native_times(
             "1 Jun 2004 12:00:00.00", "1 Jun 2004 13:00:00.00"
         )
         Assert.assertIsNotNone(oResult)
@@ -664,11 +664,11 @@ class EarlyBoundTests(TestBase):
     # region TestDataProviderInterface
     def test_TestDataProviderInterface(self):
         TestBase.logger.WriteLine("----- DATA PROVIDER INTERFACE TEST ----- BEGIN -----")
-        TestBase.Application.unit_preferences.reset_units()
-        TestBase.Application.unit_preferences.set_current_unit("TimeUnit", "sec")
-        Assert.assertEqual("sec", TestBase.Application.unit_preferences.get_current_unit_abbrv("TimeUnit"))
-        TestBase.Application.unit_preferences.set_current_unit("DateFormat", "UTCG")
-        Assert.assertEqual("UTCG", TestBase.Application.unit_preferences.get_current_unit_abbrv("DateFormat"))
+        TestBase.Application.units_preferences.reset_units()
+        TestBase.Application.units_preferences.set_current_unit("TimeUnit", "sec")
+        Assert.assertEqual("sec", TestBase.Application.units_preferences.get_current_unit_abbrv("TimeUnit"))
+        TestBase.Application.units_preferences.set_current_unit("DateFormat", "UTCG")
+        Assert.assertEqual("UTCG", TestBase.Application.units_preferences.get_current_unit_abbrv("DateFormat"))
 
         oScenario: "IStkObject" = (IStkObject(TestBase.Application)).children["DataProvidersTests"]
         Assert.assertEqual((IStkObject(TestBase.Application)).children["DataProvidersTests"], oScenario)
@@ -682,8 +682,8 @@ class EarlyBoundTests(TestBase):
         oProvider: "IDataProvider" = IDataProvider(oGroup.group["Fixed"])
         Assert.assertIsNotNone(oProvider)
 
-        oProvider.allow_user_interface = True
-        Assert.assertTrue(oProvider.allow_user_interface)
+        oProvider.allow_user_interface_for_pre_data = True
+        Assert.assertTrue(oProvider.allow_user_interface_for_pre_data)
 
         oProvider.pre_data = "This is a test"
         Assert.assertEqual("This is a test", oProvider.pre_data)
@@ -717,7 +717,7 @@ class EarlyBoundTests(TestBase):
     def test_TestDataSetNames(self):
         # Running Cartesian Position for a facility using DataProviderFixed.ExecElements
         TestBase.logger.WriteLine("----- TestDataSetNames ----- BEGIN -----")
-        TestBase.Application.unit_preferences.set_current_unit("DistanceUnit", "mi")
+        TestBase.Application.units_preferences.set_current_unit("DistanceUnit", "mi")
 
         oScenario: "IStkObject" = (IStkObject(TestBase.Application)).children["DataProvidersTests"]
         Assert.assertEqual((IStkObject(TestBase.Application)).children["DataProvidersTests"], oScenario)
@@ -730,7 +730,7 @@ class EarlyBoundTests(TestBase):
 
         # Verifying random datasets and their values
         arCols = ["x", "z"]
-        oResult: "DataProviderResult" = (DataProviderFixed(oProvider)).exec_elements(arCols)
+        oResult: "DataProviderResult" = (DataProviderFixed(oProvider)).execute_elements(arCols)
         Assert.assertIsNotNone(oResult)
         Assert.assertEqual(0, oResult.sections.count)
         Assert.assertEqual(1, oResult.intervals.count)
@@ -763,13 +763,13 @@ class EarlyBoundTests(TestBase):
     def test_FacilityLightingAER(self):
         # Runs Angles//SunAzimuth Data Provider for a facility using DataProviderTimeVarying.Exec
         TestBase.logger.WriteLine("----- FacilityLightingAER ----- BEGIN -----")
-        TestBase.Application.unit_preferences.reset_units()
-        TestBase.Application.unit_preferences.set_current_unit("AngleUnit", "deg")
-        Assert.assertEqual("deg", TestBase.Application.unit_preferences.get_current_unit_abbrv("AngleUnit"))
-        TestBase.Application.unit_preferences.set_current_unit("TimeUnit", "min")
-        Assert.assertEqual("min", TestBase.Application.unit_preferences.get_current_unit_abbrv("TimeUnit"))
-        TestBase.Application.unit_preferences.set_current_unit("DateFormat", "UTCG")
-        Assert.assertEqual("UTCG", TestBase.Application.unit_preferences.get_current_unit_abbrv("DateFormat"))
+        TestBase.Application.units_preferences.reset_units()
+        TestBase.Application.units_preferences.set_current_unit("AngleUnit", "deg")
+        Assert.assertEqual("deg", TestBase.Application.units_preferences.get_current_unit_abbrv("AngleUnit"))
+        TestBase.Application.units_preferences.set_current_unit("TimeUnit", "min")
+        Assert.assertEqual("min", TestBase.Application.units_preferences.get_current_unit_abbrv("TimeUnit"))
+        TestBase.Application.units_preferences.set_current_unit("DateFormat", "UTCG")
+        Assert.assertEqual("UTCG", TestBase.Application.units_preferences.get_current_unit_abbrv("DateFormat"))
 
         oScenario: "IStkObject" = (IStkObject(TestBase.Application)).children["DataProvidersTests"]
         Assert.assertEqual((IStkObject(TestBase.Application)).children["DataProvidersTests"], oScenario)
@@ -780,7 +780,7 @@ class EarlyBoundTests(TestBase):
         oAngles: "IDataProvider" = IDataProvider(oFacility.data_providers["Lighting AER"])
         Assert.assertIsNotNone(oAngles)
 
-        oResult: "DataProviderResult" = (DataProviderTimeVarying(oAngles)).exec(
+        oResult: "DataProviderResult" = (DataProviderTimeVarying(oAngles)).execute(
             "1 Jun 2004 12:00:00.00", "1 Jun 2004 13:00:00.00", 4
         )
         Assert.assertIsNotNone(oResult)
@@ -1053,8 +1053,8 @@ class EarlyBoundTests(TestBase):
     def test_DPSchemaAntenna(self):
         scenObj: "IStkObject" = TestBase.Application.current_scenario
         scenChildren: "IStkObjectCollection" = scenObj.children
-        satObj: "IStkObject" = scenChildren.new(STK_OBJECT_TYPE.SATELLITE, "tempSat1")
-        antObj: "IStkObject" = satObj.children.new(STK_OBJECT_TYPE.ANTENNA, "tempAnt1")
+        satObj: "IStkObject" = scenChildren.new(STKObjectType.SATELLITE, "tempSat1")
+        antObj: "IStkObject" = satObj.children.new(STKObjectType.ANTENNA, "tempAnt1")
 
         schema: str = None
         schema = antObj.data_providers.get_schema()
@@ -1114,7 +1114,7 @@ class EarlyBoundTests(TestBase):
     def test_DPSchemaAreaTarget(self):
         scenObj: "IStkObject" = TestBase.Application.current_scenario
         scenChildren: "IStkObjectCollection" = scenObj.children
-        atObj: "IStkObject" = scenChildren.new(STK_OBJECT_TYPE.AREA_TARGET, "WardsAreaTarget1")
+        atObj: "IStkObject" = scenChildren.new(STKObjectType.AREA_TARGET, "WardsAreaTarget1")
 
         schema: str = None
         schema = atObj.data_providers.get_schema()
@@ -1189,7 +1189,7 @@ class EarlyBoundTests(TestBase):
     def test_DPSchemaChain(self):
         scenObj: "IStkObject" = TestBase.Application.current_scenario
         scenChildren: "IStkObjectCollection" = scenObj.children
-        obj: "IStkObject" = scenChildren.new(STK_OBJECT_TYPE.CHAIN, "chain1")
+        obj: "IStkObject" = scenChildren.new(STKObjectType.CHAIN, "chain1")
 
         schema: str = None
         schema = obj.data_providers.get_schema()
@@ -1232,7 +1232,7 @@ class EarlyBoundTests(TestBase):
     def test_DPSchemaCommSystem(self):
         scenObj: "IStkObject" = TestBase.Application.current_scenario
         scenChildren: "IStkObjectCollection" = scenObj.children
-        obj: "IStkObject" = scenChildren.new(STK_OBJECT_TYPE.COMM_SYSTEM, "CommSystem1")
+        obj: "IStkObject" = scenChildren.new(STKObjectType.COMM_SYSTEM, "CommSystem1")
 
         schema: str = None
         schema = obj.data_providers.get_schema()
@@ -1331,7 +1331,7 @@ class EarlyBoundTests(TestBase):
     def test_DPSchemaCoverageDef(self):
         scenObj: "IStkObject" = TestBase.Application.current_scenario
         scenChildren: "IStkObjectCollection" = scenObj.children
-        obj: "IStkObject" = scenChildren.new(STK_OBJECT_TYPE.COVERAGE_DEFINITION, "covdef1")
+        obj: "IStkObject" = scenChildren.new(STKObjectType.COVERAGE_DEFINITION, "covdef1")
 
         schema: str = None
         schema = obj.data_providers.get_schema()
@@ -1441,8 +1441,8 @@ class EarlyBoundTests(TestBase):
     def test_DPSchemaFigureOfMerit(self):
         scenObj: "IStkObject" = TestBase.Application.current_scenario
         scenChildren: "IStkObjectCollection" = scenObj.children
-        cd: "IStkObject" = scenChildren.new(STK_OBJECT_TYPE.COVERAGE_DEFINITION, "cv1")
-        fom: "IStkObject" = cd.children.new(STK_OBJECT_TYPE.FIGURE_OF_MERIT, "fom1")
+        cd: "IStkObject" = scenChildren.new(STKObjectType.COVERAGE_DEFINITION, "cv1")
+        fom: "IStkObject" = cd.children.new(STKObjectType.FIGURE_OF_MERIT, "fom1")
 
         schema: str = None
         schema = fom.data_providers.get_schema()
@@ -1501,7 +1501,7 @@ class EarlyBoundTests(TestBase):
     def test_DPSchemaGrndVeh(self):
         scenObj: "IStkObject" = TestBase.Application.current_scenario
         scenChildren: "IStkObjectCollection" = scenObj.children
-        obj: "IStkObject" = scenChildren.new(STK_OBJECT_TYPE.GROUND_VEHICLE, "grndveh")
+        obj: "IStkObject" = scenChildren.new(STKObjectType.GROUND_VEHICLE, "grndveh")
 
         schema: str = None
         schema = obj.data_providers.get_schema()
@@ -1574,7 +1574,7 @@ class EarlyBoundTests(TestBase):
     def test_DPSchemaLnchVeh(self):
         scenObj: "IStkObject" = TestBase.Application.current_scenario
         scenChildren: "IStkObjectCollection" = scenObj.children
-        obj: "IStkObject" = scenChildren.new(STK_OBJECT_TYPE.LAUNCH_VEHICLE, "lnchveh")
+        obj: "IStkObject" = scenChildren.new(STKObjectType.LAUNCH_VEHICLE, "lnchveh")
 
         schema: str = None
         schema = obj.data_providers.get_schema()
@@ -1646,7 +1646,7 @@ class EarlyBoundTests(TestBase):
     def test_DPSchemaMissile(self):
         scenObj: "IStkObject" = TestBase.Application.current_scenario
         scenChildren: "IStkObjectCollection" = scenObj.children
-        obj: "IStkObject" = scenChildren.new(STK_OBJECT_TYPE.MISSILE, "mis")
+        obj: "IStkObject" = scenChildren.new(STKObjectType.MISSILE, "mis")
 
         schema: str = None
         schema = obj.data_providers.get_schema()
@@ -1718,7 +1718,7 @@ class EarlyBoundTests(TestBase):
     def test_DPSchemaPlanet(self):
         scenObj: "IStkObject" = TestBase.Application.current_scenario
         scenChildren: "IStkObjectCollection" = scenObj.children
-        obj: "IStkObject" = scenChildren.new(STK_OBJECT_TYPE.PLANET, "plnt")
+        obj: "IStkObject" = scenChildren.new(STKObjectType.PLANET, "plnt")
 
         schema: str = None
         schema = obj.data_providers.get_schema()
@@ -1774,8 +1774,8 @@ class EarlyBoundTests(TestBase):
     def test_DPSchemaRadar(self):
         scenObj: "IStkObject" = TestBase.Application.current_scenario
         scenChildren: "IStkObjectCollection" = scenObj.children
-        satObj: "IStkObject" = scenChildren.new(STK_OBJECT_TYPE.SATELLITE, "tempSat1")
-        radarObj: "IStkObject" = satObj.children.new(STK_OBJECT_TYPE.RADAR, "tempRadar1")
+        satObj: "IStkObject" = scenChildren.new(STKObjectType.SATELLITE, "tempSat1")
+        radarObj: "IStkObject" = satObj.children.new(STKObjectType.RADAR, "tempRadar1")
 
         schema: str = None
         schema = radarObj.data_providers.get_schema()
@@ -2081,7 +2081,7 @@ class EarlyBoundTests(TestBase):
     def test_DPSchemaStar(self):
         scenObj: "IStkObject" = TestBase.Application.current_scenario
         scenChildren: "IStkObjectCollection" = scenObj.children
-        obj: "IStkObject" = scenChildren.new(STK_OBJECT_TYPE.STAR, "star1")
+        obj: "IStkObject" = scenChildren.new(STKObjectType.STAR, "star1")
 
         schema: str = None
         schema = obj.data_providers.get_schema()
@@ -2129,7 +2129,7 @@ class EarlyBoundTests(TestBase):
         satObj: "IStkObject" = scenChildren["Satellite1"]
         tranObj: "IStkObject" = None
         try:
-            tranObj = satObj.children.new(STK_OBJECT_TYPE.TRANSMITTER, "Transmitter1")
+            tranObj = satObj.children.new(STKObjectType.TRANSMITTER, "Transmitter1")
 
             schema: str = None
             schema = tranObj.data_providers.get_schema()
@@ -2209,7 +2209,7 @@ class EarlyBoundTests(TestBase):
         while i < count:
             dp: "IDataProviderInfo" = o.data_providers[i]
             sName: str = dp.name
-            type: "DATA_PROVIDER_TYPE" = dp.type
+            type: "DataProviderType" = dp.type
 
             i += 1
 
@@ -2227,16 +2227,16 @@ class EarlyBoundTests(TestBase):
             oProvider: "IDataProvider" = IDataProvider(oGroup.group["Fixed"])
 
             # Get the EventArray that will be used for testing
-            # TimeToolEventArrayStartStopTimes _eventArray;
+            # TimeToolTimeArrayStartStopTimes _eventArray;
             EventArrayName: str = "TestArray1"
 
-            _EventArrayProvider: "AnalysisWorkbenchProvider" = TestBase.Application.vgt_root.get_provider(
-                "Satellite/Satellite1"
+            _EventArrayProvider: "AnalysisWorkbenchComponentProvider" = (
+                TestBase.Application.analysis_workbench_components_root.get_provider("Satellite/Satellite1")
             )
-            EventArrayTestObject: "ITimeToolEventArray" = _EventArrayProvider.event_arrays[EventArrayName]
+            EventArrayTestObject: "ITimeToolTimeArray" = _EventArrayProvider.time_arrays[EventArrayName]
 
             # Arguments are the EventArray and the object's start and stop times
-            oResult: "DataProviderResult" = (DataProviderTimeVarying(oProvider)).exec_event_array(
+            oResult: "DataProviderResult" = (DataProviderTimeVarying(oProvider)).execute_event_array(
                 EventArrayTestObject, "5 Mar 2010 17:00:00.000", "6 Mar 2010 17:00:00.000"
             )
 
@@ -2270,12 +2270,12 @@ class EarlyBoundTests(TestBase):
 
             # BUG108403
 
-            _EventArrayProvider2: "AnalysisWorkbenchProvider" = TestBase.Application.vgt_root.get_provider(
-                "Place/Place1"
+            _EventArrayProvider2: "AnalysisWorkbenchComponentProvider" = (
+                TestBase.Application.analysis_workbench_components_root.get_provider("Place/Place1")
             )
-            EventArrayTestObject2: "ITimeToolEventArray" = _EventArrayProvider2.event_arrays[EventArrayName]
+            EventArrayTestObject2: "ITimeToolTimeArray" = _EventArrayProvider2.time_arrays[EventArrayName]
 
-            oResult2: "DataProviderResult" = (DataProviderTimeVarying(oProvider)).exec_event_array(
+            oResult2: "DataProviderResult" = (DataProviderTimeVarying(oProvider)).execute_event_array(
                 EventArrayTestObject2, "5 Mar 2010 17:00:00.000", "6 Mar 2010 17:00:00.000"
             )
 
@@ -2325,16 +2325,16 @@ class EarlyBoundTests(TestBase):
             oProvider: "IDataProvider" = IDataProvider(oGroup.group["Fixed"])
 
             # Get the EventArray that will be used for testing
-            # TimeToolEventArrayStartStopTimes _eventArray;
+            # TimeToolTimeArrayStartStopTimes _eventArray;
             EventArrayName: str = "TestArray1"
 
-            _EventArrayProvider: "AnalysisWorkbenchProvider" = TestBase.Application.vgt_root.get_provider(
-                "Satellite/Satellite1"
+            _EventArrayProvider: "AnalysisWorkbenchComponentProvider" = (
+                TestBase.Application.analysis_workbench_components_root.get_provider("Satellite/Satellite1")
             )
-            EventArrayTestObject: "ITimeToolEventArray" = _EventArrayProvider.event_arrays[EventArrayName]
+            EventArrayTestObject: "ITimeToolTimeArray" = _EventArrayProvider.time_arrays[EventArrayName]
 
             elemCols = ["Time", "z"]
-            oResult: "DataProviderResult" = (DataProviderTimeVarying(oProvider)).exec_elements_event_array(
+            oResult: "DataProviderResult" = (DataProviderTimeVarying(oProvider)).execute_elements_event_array(
                 EventArrayTestObject, "5 Mar 2010 17:00:00.000", "6 Mar 2010 17:00:00.000", elemCols
             )
 
@@ -2354,13 +2354,13 @@ class EarlyBoundTests(TestBase):
 
             # BUG108403
 
-            _EventArrayProvider2: "AnalysisWorkbenchProvider" = TestBase.Application.vgt_root.get_provider(
-                "Place/Place1"
+            _EventArrayProvider2: "AnalysisWorkbenchComponentProvider" = (
+                TestBase.Application.analysis_workbench_components_root.get_provider("Place/Place1")
             )
-            EventArrayTestObject2: "ITimeToolEventArray" = _EventArrayProvider2.event_arrays[EventArrayName]
+            EventArrayTestObject2: "ITimeToolTimeArray" = _EventArrayProvider2.time_arrays[EventArrayName]
 
             # DataProviderResult oResult2 = ((DataProviderTimeVarying)oProvider).ExecEventArray(EventArrayTestObject2, "5 Mar 2010 17:00:00.000", "6 Mar 2010 17:00:00.000");
-            oResult2: "DataProviderResult" = (DataProviderTimeVarying(oProvider)).exec_elements_event_array(
+            oResult2: "DataProviderResult" = (DataProviderTimeVarying(oProvider)).execute_elements_event_array(
                 EventArrayTestObject2, "5 Mar 2010 17:00:00.000", "6 Mar 2010 17:00:00.000", elemCols
             )
 
@@ -2387,7 +2387,7 @@ class EarlyBoundTests(TestBase):
     # region IAgDataPrvTimeVar_ExecSingleElementsArray
     def test_IAgDataPrvTimeVar_ExecSingleElementsArray(self):
         TestBase.logger.WriteLine("----- ExecSingleElementsArray TEST ----- BEGIN -----")
-        TestBase.Application.unit_preferences.reset_units()
+        TestBase.Application.units_preferences.reset_units()
 
         scenObj: "IStkObject" = TestBase.Application.current_scenario
         oSatellite: "IStkObject" = TestBase.Application.current_scenario.children["Satellite1"]
@@ -2403,7 +2403,7 @@ class EarlyBoundTests(TestBase):
         arFields[0] = "Time"
         arFields[1] = "x"
 
-        data: "DataProviderResultTimeArrayElements" = oProvider.exec_single_elements_array(arTimes, arFields)
+        data: "DataProviderResultTimeArrayElements" = oProvider.execute_single_elements_array(arTimes, arFields)
 
         arResult = data.get_array("x")
 
@@ -2429,13 +2429,13 @@ class EarlyBoundTests(TestBase):
             # Get the Time Event Array that will be used for testing
             EventArrayName: str = "TestTimeArray"
 
-            _EventArrayProvider: "AnalysisWorkbenchProvider" = TestBase.Application.vgt_root.get_provider(
-                "Satellite/Satellite1"
+            _EventArrayProvider: "AnalysisWorkbenchComponentProvider" = (
+                TestBase.Application.analysis_workbench_components_root.get_provider("Satellite/Satellite1")
             )
-            EventArrayTestObject: "ITimeToolEventArray" = _EventArrayProvider.event_arrays[EventArrayName]
+            EventArrayTestObject: "ITimeToolTimeArray" = _EventArrayProvider.time_arrays[EventArrayName]
 
             elemCols = ["Time", "z"]
-            oResult: "DataProviderResult" = (DataProviderTimeVarying(oProvider)).exec_elements_event_array_only(
+            oResult: "DataProviderResult" = (DataProviderTimeVarying(oProvider)).execute_elements_event_array_only(
                 EventArrayTestObject, elemCols
             )
 
@@ -2453,12 +2453,12 @@ class EarlyBoundTests(TestBase):
             Assert.assertAlmostEqual(4432.522791342938, float(arValues[2]), delta=1.0)
             Assert.assertAlmostEqual(-2995.723486981184, float(arValues[3]), delta=1.0)
 
-            _EventArrayProvider2: "AnalysisWorkbenchProvider" = TestBase.Application.vgt_root.get_provider(
-                "Place/Place1"
+            _EventArrayProvider2: "AnalysisWorkbenchComponentProvider" = (
+                TestBase.Application.analysis_workbench_components_root.get_provider("Place/Place1")
             )
-            EventArrayTestObject2: "ITimeToolEventArray" = _EventArrayProvider2.event_arrays[EventArrayName]
+            EventArrayTestObject2: "ITimeToolTimeArray" = _EventArrayProvider2.time_arrays[EventArrayName]
 
-            oResult2: "DataProviderResult" = (DataProviderTimeVarying(oProvider)).exec_elements_event_array_only(
+            oResult2: "DataProviderResult" = (DataProviderTimeVarying(oProvider)).execute_elements_event_array_only(
                 EventArrayTestObject2, elemCols
             )
 
@@ -2486,7 +2486,7 @@ class EarlyBoundTests(TestBase):
     # region TestStartStopTimes
     def test_TestStartStopTimes(self):
         TestBase.logger.WriteLine("----- START STOP TIME TEST ----- BEGIN -----")
-        TestBase.Application.unit_preferences.reset_units()
+        TestBase.Application.units_preferences.reset_units()
 
         oSa: "IStkObject" = TestBase.Application.current_scenario.children["Satellite1"]
         Assert.assertIsNotNone(oSa)
@@ -2497,7 +2497,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(oProvider)
         oInterval: "DataProviderInterval" = DataProviderInterval(oProvider)
         Assert.assertIsNotNone(oInterval)
-        oResult: "DataProviderResult" = oInterval.exec(oScenario.start_time, oScenario.stop_time)
+        oResult: "DataProviderResult" = oInterval.execute(oScenario.start_time, oScenario.stop_time)
         Assert.assertIsNotNone(oResult)
 
         oList: "DataProviderResultIntervalCollection" = oResult.intervals
@@ -2524,14 +2524,14 @@ class EarlyBoundTests(TestBase):
     def test_FacilityLightingTimes(self):
         # Running Lighting Times//Sunlight for a facility using DataProviderInterval.Exec
         TestBase.logger.WriteLine("----- FACILITY LIGHTING TIMES TEST ----- BEGIN -----")
-        TestBase.Application.unit_preferences.set_current_unit("AngleUnit", "deg")
-        Assert.assertEqual("deg", TestBase.Application.unit_preferences.get_current_unit_abbrv("AngleUnit"))
-        TestBase.Application.unit_preferences.set_current_unit("TimeUnit", "sec")
-        Assert.assertEqual("sec", TestBase.Application.unit_preferences.get_current_unit_abbrv("TimeUnit"))
-        TestBase.Application.unit_preferences.set_current_unit("DateFormat", "UTCG")
-        Assert.assertEqual("UTCG", TestBase.Application.unit_preferences.get_current_unit_abbrv("DateFormat"))
-        TestBase.Application.unit_preferences.set_current_unit("TimeUnit", "sec")
-        Assert.assertEqual("sec", TestBase.Application.unit_preferences.get_current_unit_abbrv("TimeUnit"))
+        TestBase.Application.units_preferences.set_current_unit("AngleUnit", "deg")
+        Assert.assertEqual("deg", TestBase.Application.units_preferences.get_current_unit_abbrv("AngleUnit"))
+        TestBase.Application.units_preferences.set_current_unit("TimeUnit", "sec")
+        Assert.assertEqual("sec", TestBase.Application.units_preferences.get_current_unit_abbrv("TimeUnit"))
+        TestBase.Application.units_preferences.set_current_unit("DateFormat", "UTCG")
+        Assert.assertEqual("UTCG", TestBase.Application.units_preferences.get_current_unit_abbrv("DateFormat"))
+        TestBase.Application.units_preferences.set_current_unit("TimeUnit", "sec")
+        Assert.assertEqual("sec", TestBase.Application.units_preferences.get_current_unit_abbrv("TimeUnit"))
 
         oScenario: "IStkObject" = (IStkObject(TestBase.Application)).children["DataProvidersTests"]
         Assert.assertEqual((IStkObject(TestBase.Application)).children["DataProvidersTests"], oScenario)
@@ -2544,12 +2544,12 @@ class EarlyBoundTests(TestBase):
 
         oProvider: "IDataProvider" = IDataProvider(oGroup.group["Sunlight"])
         Assert.assertIsNotNone(oProvider)
-        oProvider.allow_user_interface = False
-        Assert.assertFalse(oProvider.allow_user_interface)
+        oProvider.allow_user_interface_for_pre_data = False
+        Assert.assertFalse(oProvider.allow_user_interface_for_pre_data)
         oProvider.pre_data = ""
         Assert.assertEqual("", oProvider.pre_data)
 
-        oResult: "DataProviderResult" = (DataProviderInterval(oProvider)).exec(
+        oResult: "DataProviderResult" = (DataProviderInterval(oProvider)).execute(
             "1 Jun 2004 12:00:00.00", "1 Jun 2004 13:00:00.00"
         )
         Assert.assertIsNotNone(oResult)
@@ -2588,7 +2588,7 @@ class EarlyBoundTests(TestBase):
     def test_FacilityCartPos(self):
         # Running Cartesian Position for a facility using DataProviderFixed.Exec
         TestBase.logger.WriteLine("----- FACILITY CARTESIAN POSITION TEST ----- BEGIN -----")
-        TestBase.Application.unit_preferences.set_current_unit("DistanceUnit", "mi")
+        TestBase.Application.units_preferences.set_current_unit("DistanceUnit", "mi")
 
         oScenario: "IStkObject" = (IStkObject(TestBase.Application)).children["DataProvidersTests"]
         Assert.assertEqual((IStkObject(TestBase.Application)).children["DataProvidersTests"], oScenario)
@@ -2598,20 +2598,20 @@ class EarlyBoundTests(TestBase):
 
         oProvider: "IDataProvider" = IDataProvider(oFacility.data_providers["Cartesian Position"])
         Assert.assertIsNotNone(oProvider)
-        oProvider.allow_user_interface = False
-        Assert.assertFalse(oProvider.allow_user_interface)
+        oProvider.allow_user_interface_for_pre_data = False
+        Assert.assertFalse(oProvider.allow_user_interface_for_pre_data)
 
         # Test unneeded PreData
         oProvider.pre_data = "Not Needed"
         Assert.assertEqual("Not Needed", oProvider.pre_data)
-        oResult: "DataProviderResult" = (DataProviderFixed(oProvider)).exec()
+        oResult: "DataProviderResult" = (DataProviderFixed(oProvider)).execute()
         Assert.assertIsNotNone(oResult)
         Assert.assertFalse(oResult.message.is_failure)
 
         # Test without PreData
         oProvider.pre_data = ""
         Assert.assertEqual("", oProvider.pre_data)
-        oResult = (DataProviderFixed(oProvider)).exec()
+        oResult = (DataProviderFixed(oProvider)).execute()
         Assert.assertIsNotNone(oResult)
         Assert.assertFalse(oResult.message.is_failure)
 
@@ -2645,10 +2645,10 @@ class EarlyBoundTests(TestBase):
     def test_SensorPatternIntersection(self):
         # Running PatternIntersection report for a sensor using DataProviderTimeVarying.Exec
         TestBase.logger.WriteLine("----- SENSOR PATTERN INTERSECTION TEST ----- BEGIN -----")
-        TestBase.Application.unit_preferences.set_current_unit("TimeUnit", "sec")
-        Assert.assertEqual("sec", TestBase.Application.unit_preferences.get_current_unit_abbrv("TimeUnit"))
-        TestBase.Application.unit_preferences.set_current_unit("DateFormat", "UTCG")
-        Assert.assertEqual("UTCG", TestBase.Application.unit_preferences.get_current_unit_abbrv("DateFormat"))
+        TestBase.Application.units_preferences.set_current_unit("TimeUnit", "sec")
+        Assert.assertEqual("sec", TestBase.Application.units_preferences.get_current_unit_abbrv("TimeUnit"))
+        TestBase.Application.units_preferences.set_current_unit("DateFormat", "UTCG")
+        Assert.assertEqual("UTCG", TestBase.Application.units_preferences.get_current_unit_abbrv("DateFormat"))
 
         oScenario: "IStkObject" = (IStkObject(TestBase.Application)).children["DataProvidersTests"]
         Assert.assertEqual((IStkObject(TestBase.Application)).children["DataProvidersTests"], oScenario)
@@ -2661,7 +2661,7 @@ class EarlyBoundTests(TestBase):
 
         oProvider: "IDataProvider" = IDataProvider(oSensor.data_providers["Pattern Intersection"])
         Assert.assertIsNotNone(oProvider)
-        oResult: "DataProviderResult" = (DataProviderTimeVarying(oProvider)).exec(
+        oResult: "DataProviderResult" = (DataProviderTimeVarying(oProvider)).execute(
             "1 Jun 2004 12:00:00.00", "1 Jun 2004 13:00:00.00", 240.0
         )
         Assert.assertIsNotNone(oResult)
@@ -2696,10 +2696,10 @@ class EarlyBoundTests(TestBase):
     # region SatelliteBetaAngle
     def test_SatelliteBetaAngle(self):
         TestBase.logger.WriteLine("----- SATELLITE BETA ANGLE TEST ----- BEGIN -----")
-        TestBase.Application.unit_preferences.set_current_unit("DateFormat", "EpSec")
-        Assert.assertEqual("EpSec", TestBase.Application.unit_preferences.get_current_unit_abbrv("DateFormat"))
-        TestBase.Application.unit_preferences.set_current_unit("TimeUnit", "sec")
-        Assert.assertEqual("sec", TestBase.Application.unit_preferences.get_current_unit_abbrv("TimeUnit"))
+        TestBase.Application.units_preferences.set_current_unit("DateFormat", "EpSec")
+        Assert.assertEqual("EpSec", TestBase.Application.units_preferences.get_current_unit_abbrv("DateFormat"))
+        TestBase.Application.units_preferences.set_current_unit("TimeUnit", "sec")
+        Assert.assertEqual("sec", TestBase.Application.units_preferences.get_current_unit_abbrv("TimeUnit"))
 
         arStartTime = Array.CreateInstance(clr.TypeOf(object), 5)
         arStartTime[0] = 0
@@ -2720,7 +2720,7 @@ class EarlyBoundTests(TestBase):
             DataProviderTimeVarying(
                 (IStkObject(TestBase.Application)).children[0].children["Satellite1"].data_providers["Beta Angle"]
             )
-        ).exec(arStartTime, arStopTime, 998)
+        ).execute(arStartTime, arStopTime, 998)
         Assert.assertIsNotNone(oResult)
         Assert.assertEqual(0, oResult.sections.count)
         Assert.assertEqual(5, oResult.intervals.count)
@@ -2786,7 +2786,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(oProvider)
 
         # Verifying random datasets and their values
-        oResult: "DataProviderResult" = (DataProviderFixed(oProvider)).exec()
+        oResult: "DataProviderResult" = (DataProviderFixed(oProvider)).execute()
         Assert.assertIsNotNone(oResult)
         Assert.assertEqual(0, oResult.sections.count)
         Assert.assertEqual(0, oResult.intervals.count)
@@ -2808,10 +2808,10 @@ class EarlyBoundTests(TestBase):
         num_RIC_datasets: int = 25
 
         TestBase.logger.WriteLine("----- SATELLITE RIC COORDINATES TEST ----- BEGIN -----")
-        TestBase.Application.unit_preferences.set_current_unit("DateFormat", "EpSec")
-        Assert.assertEqual("EpSec", TestBase.Application.unit_preferences.get_current_unit_abbrv("DateFormat"))
-        TestBase.Application.unit_preferences.set_current_unit("TimeUnit", "sec")
-        Assert.assertEqual("sec", TestBase.Application.unit_preferences.get_current_unit_abbrv("TimeUnit"))
+        TestBase.Application.units_preferences.set_current_unit("DateFormat", "EpSec")
+        Assert.assertEqual("EpSec", TestBase.Application.units_preferences.get_current_unit_abbrv("DateFormat"))
+        TestBase.Application.units_preferences.set_current_unit("TimeUnit", "sec")
+        Assert.assertEqual("sec", TestBase.Application.units_preferences.get_current_unit_abbrv("TimeUnit"))
 
         TestBase.logger.WriteLine("************************************************************************")
         TestBase.logger.WriteLine("This example demonstrates the usage of PreService For <RIC Coordinates>.")
@@ -2829,11 +2829,11 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine4("RIC-IsGroup: {0}", oProviderInfo.is_group())
         TestBase.logger.WriteLine6("RIC-Type: {0}", oProviderInfo.type)
         TestBase.logger.WriteLine5("RIC-PreData: {0}", (IDataProvider(oProviderInfo)).pre_data)
-        TestBase.logger.WriteLine4("RIC-AllowUI: {0}", (IDataProvider(oProviderInfo)).allow_user_interface)
+        TestBase.logger.WriteLine4("RIC-AllowUI: {0}", (IDataProvider(oProviderInfo)).allow_user_interface_for_pre_data)
 
         # Test missing PreData
         (IDataProvider(oProviderInfo)).pre_data = ""
-        oResult: "DataProviderResult" = (DataProviderTimeVarying(oProviderInfo)).exec(0, 90000, 1000)
+        oResult: "DataProviderResult" = (DataProviderTimeVarying(oProviderInfo)).execute(0, 90000, 1000)
         Assert.assertIsNotNone(oResult)
         Assert.assertTrue(oResult.message.is_failure)
         Assert.assertEqual("Another vehicle must be selected in order to compute this data.", oResult.message[0])
@@ -2843,7 +2843,7 @@ class EarlyBoundTests(TestBase):
 
         # Test invalid PreData
         (IDataProvider(oProviderInfo)).pre_data = "Satellite/Bogus"
-        oResult = (DataProviderTimeVarying(oProviderInfo)).exec(0, 90000, 1000)
+        oResult = (DataProviderTimeVarying(oProviderInfo)).execute(0, 90000, 1000)
         Assert.assertIsNotNone(oResult)
         Assert.assertTrue(oResult.message.is_failure)
         Assert.assertEqual("Another vehicle must be selected in order to compute this data.", oResult.message[0])
@@ -2855,11 +2855,13 @@ class EarlyBoundTests(TestBase):
         (IDataProvider(oProviderInfo)).pre_data = "Satellite/Satellite1"
 
         TestBase.logger.WriteLine5("**** new RIC-PreData: {0}", (IDataProvider(oProviderInfo)).pre_data)
-        TestBase.logger.WriteLine4("**** new RIC-AllowUI: {0}", (IDataProvider(oProviderInfo)).allow_user_interface)
+        TestBase.logger.WriteLine4(
+            "**** new RIC-AllowUI: {0}", (IDataProvider(oProviderInfo)).allow_user_interface_for_pre_data
+        )
         TestBase.logger.WriteLine("This will run RIC Coordinates for an interval")
 
         # Verifying random datasets and their values
-        oResult = (DataProviderTimeVarying(oProviderInfo)).exec(0, 90000, 1000)
+        oResult = (DataProviderTimeVarying(oProviderInfo)).execute(0, 90000, 1000)
         Assert.assertIsNotNone(oResult)
         Assert.assertFalse(oResult.message.is_failure)
         Assert.assertEqual("OK", oResult.message[0])
@@ -2903,7 +2905,7 @@ class EarlyBoundTests(TestBase):
         arStopTime[4] = 94199
 
         (IDataProvider(oProviderInfo)).pre_data = "Satellite/Satellite1"
-        oResult = (DataProviderTimeVarying(oProviderInfo)).exec(arStartTime, arStopTime, 887)
+        oResult = (DataProviderTimeVarying(oProviderInfo)).execute(arStartTime, arStopTime, 887)
         Assert.assertEqual(0, oResult.sections.count)
         Assert.assertEqual(5, oResult.intervals.count)
         Assert.assertEqual((5 * num_RIC_datasets), oResult.data_sets.count)
@@ -2933,10 +2935,10 @@ class EarlyBoundTests(TestBase):
     def test_SatelliteCartPosFixedElements(self):
         # Runs Cartesian Position//Fixed Data Provider for a satellite using DataProviderTimeVarying.ExecElements
         TestBase.logger.WriteLine("----- SATELLITE CARTESIAN POSITION FIXED ELEMENTS TEST ----- BEGIN -----")
-        TestBase.Application.unit_preferences.set_current_unit("TimeUnit", "sec")
-        Assert.assertEqual("sec", TestBase.Application.unit_preferences.get_current_unit_abbrv("TimeUnit"))
-        TestBase.Application.unit_preferences.set_current_unit("DateFormat", "UTCG")
-        Assert.assertEqual("UTCG", TestBase.Application.unit_preferences.get_current_unit_abbrv("DateFormat"))
+        TestBase.Application.units_preferences.set_current_unit("TimeUnit", "sec")
+        Assert.assertEqual("sec", TestBase.Application.units_preferences.get_current_unit_abbrv("TimeUnit"))
+        TestBase.Application.units_preferences.set_current_unit("DateFormat", "UTCG")
+        Assert.assertEqual("UTCG", TestBase.Application.units_preferences.get_current_unit_abbrv("DateFormat"))
 
         oScenario: "IStkObject" = (IStkObject(TestBase.Application)).children["DataProvidersTests"]
         Assert.assertEqual((IStkObject(TestBase.Application)).children["DataProvidersTests"], oScenario)
@@ -2952,7 +2954,7 @@ class EarlyBoundTests(TestBase):
 
         temp = ["Time", "y"]
         with pytest.raises(Exception):
-            (DataProviderTimeVarying(oProvider)).exec_elements(
+            (DataProviderTimeVarying(oProvider)).execute_elements(
                 "1 Jun 2004 12:00:00.00", "1 Jun 2004 13:00:00.00", 0, temp
             )
 
@@ -2962,17 +2964,17 @@ class EarlyBoundTests(TestBase):
         arStopTime[0] = 90000
 
         with pytest.raises(Exception):
-            (DataProviderTimeVarying(oProvider)).exec_elements(arStartTime, arStopTime, 0, temp)
+            (DataProviderTimeVarying(oProvider)).execute_elements(arStartTime, arStopTime, 0, temp)
 
         with pytest.raises(Exception):
-            (DataProviderTimeVarying(oProvider)).exec_elements(
+            (DataProviderTimeVarying(oProvider)).execute_elements(
                 "1 Jun 2004 12:00:00.00", "1 Jun 2004 13:00:00.00", -1, temp
             )
 
         # Verifying random datasets and their values
         arCols = ["Time", "y"]
 
-        oResult: "DataProviderResult" = (DataProviderTimeVarying(oProvider)).exec_elements(
+        oResult: "DataProviderResult" = (DataProviderTimeVarying(oProvider)).execute_elements(
             "1 Jun 2004 12:00:00.00", "1 Jun 2004 13:00:00.00", 240.0, arCols
         )
 
@@ -3008,10 +3010,10 @@ class EarlyBoundTests(TestBase):
     def test_SatelliteCartPosFixedElementsUsingDefault(self):
         # Runs Cartesian Position//Fixed Data Provider for a satellite using DataProviderTimeVarying.ExecElements
         TestBase.logger.WriteLine("----- SATELLITE CARTESIAN POSITION FIXED ELEMENTS TEST ----- BEGIN -----")
-        TestBase.Application.unit_preferences.set_current_unit("TimeUnit", "sec")
-        Assert.assertEqual("sec", TestBase.Application.unit_preferences.get_current_unit_abbrv("TimeUnit"))
-        TestBase.Application.unit_preferences.set_current_unit("DateFormat", "UTCG")
-        Assert.assertEqual("UTCG", TestBase.Application.unit_preferences.get_current_unit_abbrv("DateFormat"))
+        TestBase.Application.units_preferences.set_current_unit("TimeUnit", "sec")
+        Assert.assertEqual("sec", TestBase.Application.units_preferences.get_current_unit_abbrv("TimeUnit"))
+        TestBase.Application.units_preferences.set_current_unit("DateFormat", "UTCG")
+        Assert.assertEqual("UTCG", TestBase.Application.units_preferences.get_current_unit_abbrv("DateFormat"))
 
         oScenario: "IStkObject" = (IStkObject(TestBase.Application)).children["DataProvidersTests"]
         Assert.assertEqual((IStkObject(TestBase.Application)).children["DataProvidersTests"], oScenario)
@@ -3031,12 +3033,12 @@ class EarlyBoundTests(TestBase):
         arStopTime[0] = 90000
         temp = ["Time", "y"]
         with pytest.raises(Exception):
-            (DataProviderTimeVarying(oProvider)).exec_elements_native_times(arStartTime, arStopTime, temp)
+            (DataProviderTimeVarying(oProvider)).execute_elements_native_times(arStartTime, arStopTime, temp)
 
         # Verifying random datasets and their values
         arCols = ["Time", "y"]
 
-        oResult: "DataProviderResult" = (DataProviderTimeVarying(oProvider)).exec_elements_native_times(
+        oResult: "DataProviderResult" = (DataProviderTimeVarying(oProvider)).execute_elements_native_times(
             "1 Jun 2004 12:00:00.00", "1 Jun 2004 13:00:00.00", arCols
         )
         Assert.assertIsNotNone(oResult)
@@ -3071,10 +3073,10 @@ class EarlyBoundTests(TestBase):
     def test_AircraftCartPosFixedElementsUsingDefault(self):
         # Runs Cartesian Position//Fixed Data Provider for a satellite using DataProviderTimeVarying.ExecElements
         TestBase.logger.WriteLine("----- Aircraft CARTESIAN POSITION FIXED ELEMENTS TEST ----- BEGIN -----")
-        TestBase.Application.unit_preferences.set_current_unit("TimeUnit", "sec")
-        Assert.assertEqual("sec", TestBase.Application.unit_preferences.get_current_unit_abbrv("TimeUnit"))
-        TestBase.Application.unit_preferences.set_current_unit("DateFormat", "UTCG")
-        Assert.assertEqual("UTCG", TestBase.Application.unit_preferences.get_current_unit_abbrv("DateFormat"))
+        TestBase.Application.units_preferences.set_current_unit("TimeUnit", "sec")
+        Assert.assertEqual("sec", TestBase.Application.units_preferences.get_current_unit_abbrv("TimeUnit"))
+        TestBase.Application.units_preferences.set_current_unit("DateFormat", "UTCG")
+        Assert.assertEqual("UTCG", TestBase.Application.units_preferences.get_current_unit_abbrv("DateFormat"))
 
         oScenario: "IStkObject" = (IStkObject(TestBase.Application)).children["DataProvidersTests"]
         Assert.assertEqual((IStkObject(TestBase.Application)).children["DataProvidersTests"], oScenario)
@@ -3094,12 +3096,12 @@ class EarlyBoundTests(TestBase):
         arStopTime[0] = 90000
         temp = ["Time", "y"]
         with pytest.raises(Exception):
-            (DataProviderTimeVarying(oProvider)).exec_elements_native_times(arStartTime, arStopTime, temp)
+            (DataProviderTimeVarying(oProvider)).execute_elements_native_times(arStartTime, arStopTime, temp)
 
         # Verifying random datasets and their values
         arCols = ["Time", "y"]
 
-        oResult: "DataProviderResult" = (DataProviderTimeVarying(oProvider)).exec_elements_native_times(
+        oResult: "DataProviderResult" = (DataProviderTimeVarying(oProvider)).execute_elements_native_times(
             "1 Jun 2004 12:00:00.00", "1 Jun 2004 13:00:00.00", arCols
         )
         Assert.assertIsNotNone(oResult)
@@ -3140,16 +3142,16 @@ class EarlyBoundTests(TestBase):
     # region AreaTargetAreaGroupElements
     def test_AreaTargetAreaGroupElements(self):
         TestBase.logger.WriteLine("----- AREATARGET AREA GROUP ELEMENTS TEST ----- BEGIN -----")
-        TestBase.Application.unit_preferences.set_current_unit("DistanceUnit", "mi")
+        TestBase.Application.units_preferences.set_current_unit("DistanceUnit", "mi")
 
         oScenario: "IStkObject" = (IStkObject(TestBase.Application)).children["DataProvidersTests"]
         Assert.assertEqual((IStkObject(TestBase.Application)).children["DataProvidersTests"], oScenario)
 
-        oAreaTarget: "IStkObject" = oScenario.children.new(STK_OBJECT_TYPE.AREA_TARGET, "AreaTarget1")
+        oAreaTarget: "IStkObject" = oScenario.children.new(STKObjectType.AREA_TARGET, "AreaTarget1")
         Assert.assertEqual(oScenario.children["AreaTarget1"], oAreaTarget)
 
         oAT: "AreaTarget" = AreaTarget(oScenario.children["AreaTarget1"])
-        oAT.area_type = AREA_TYPE.ELLIPSE
+        oAT.area_type = AreaType.ELLIPSE
         ellipseData: "AreaTypeEllipse" = AreaTypeEllipse(oAT.area_type_data)
         ellipseData.semi_minor_axis = 150
         ellipseData.semi_major_axis = 300
@@ -3159,7 +3161,7 @@ class EarlyBoundTests(TestBase):
         oProvider: "IDataProvider" = IDataProvider(oProviderGroup.group["Geometry"])
 
         arCols = ["Area"]
-        oResult: "DataProviderResult" = (DataProviderFixed(oProvider)).exec_elements(arCols)
+        oResult: "DataProviderResult" = (DataProviderFixed(oProvider)).execute_elements(arCols)
 
         # Verifying random datasets and their values
         Assert.assertIsNotNone(oResult)
@@ -3184,7 +3186,7 @@ class EarlyBoundTests(TestBase):
     def test_FacilityCartPosElements(self):
         # Running Cartesian Position for a facility using DataProviderFixed.ExecElements
         TestBase.logger.WriteLine("----- FACILITY CARTESIAN POSITION ELEMENTS TEST ----- BEGIN -----")
-        TestBase.Application.unit_preferences.set_current_unit("DistanceUnit", "mi")
+        TestBase.Application.units_preferences.set_current_unit("DistanceUnit", "mi")
 
         oScenario: "IStkObject" = (IStkObject(TestBase.Application)).children["DataProvidersTests"]
         Assert.assertEqual((IStkObject(TestBase.Application)).children["DataProvidersTests"], oScenario)
@@ -3197,7 +3199,7 @@ class EarlyBoundTests(TestBase):
 
         # Verifying random datasets and their values
         arCols = ["x", "z"]
-        oResult: "DataProviderResult" = (DataProviderFixed(oProvider)).exec_elements(arCols)
+        oResult: "DataProviderResult" = (DataProviderFixed(oProvider)).execute_elements(arCols)
         Assert.assertIsNotNone(oResult)
         Assert.assertEqual(0, oResult.sections.count)
         Assert.assertEqual(1, oResult.intervals.count)
@@ -3228,14 +3230,14 @@ class EarlyBoundTests(TestBase):
     def test_FacilityLightingTimesElements(self):
         # Running Lighting Times//Sunlight for a facility using DataProviderInterval.ExecElements
         TestBase.logger.WriteLine("----- FACILITY LIGHTING TIMES ELEMENTS TEST ----- BEGIN -----")
-        TestBase.Application.unit_preferences.set_current_unit("AngleUnit", "deg")
-        Assert.assertEqual("deg", TestBase.Application.unit_preferences.get_current_unit_abbrv("AngleUnit"))
-        TestBase.Application.unit_preferences.set_current_unit("TimeUnit", "sec")
-        Assert.assertEqual("sec", TestBase.Application.unit_preferences.get_current_unit_abbrv("TimeUnit"))
-        TestBase.Application.unit_preferences.set_current_unit("DateFormat", "UTCG")
-        Assert.assertEqual("UTCG", TestBase.Application.unit_preferences.get_current_unit_abbrv("DateFormat"))
-        TestBase.Application.unit_preferences.set_current_unit("TimeUnit", "sec")
-        Assert.assertEqual("sec", TestBase.Application.unit_preferences.get_current_unit_abbrv("TimeUnit"))
+        TestBase.Application.units_preferences.set_current_unit("AngleUnit", "deg")
+        Assert.assertEqual("deg", TestBase.Application.units_preferences.get_current_unit_abbrv("AngleUnit"))
+        TestBase.Application.units_preferences.set_current_unit("TimeUnit", "sec")
+        Assert.assertEqual("sec", TestBase.Application.units_preferences.get_current_unit_abbrv("TimeUnit"))
+        TestBase.Application.units_preferences.set_current_unit("DateFormat", "UTCG")
+        Assert.assertEqual("UTCG", TestBase.Application.units_preferences.get_current_unit_abbrv("DateFormat"))
+        TestBase.Application.units_preferences.set_current_unit("TimeUnit", "sec")
+        Assert.assertEqual("sec", TestBase.Application.units_preferences.get_current_unit_abbrv("TimeUnit"))
 
         oScenario: "IStkObject" = (IStkObject(TestBase.Application)).children["DataProvidersTests"]
         Assert.assertEqual((IStkObject(TestBase.Application)).children["DataProvidersTests"], oScenario)
@@ -3252,7 +3254,7 @@ class EarlyBoundTests(TestBase):
         # Verifying random datasets and their values
         arCols = ["Start Time", "Stop Time", "Duration"]
 
-        oResult: "DataProviderResult" = (DataProviderInterval(oProvider)).exec_elements(
+        oResult: "DataProviderResult" = (DataProviderInterval(oProvider)).execute_elements(
             "1 Jun 2004 12:00:00.00", "1 Jun 2004 13:00:00.00", arCols
         )
         Assert.assertIsNotNone(oResult)
@@ -3287,10 +3289,10 @@ class EarlyBoundTests(TestBase):
     def test_SensorPatternIntersectionElements(self):
         # Running PatternIntersection report for a sensor using DataProviderTimeVarying.ExecElements
         TestBase.logger.WriteLine("----- SENSOR PATTERN INTERSECTION ELEMENTS TEST ----- BEGIN -----")
-        TestBase.Application.unit_preferences.set_current_unit("TimeUnit", "sec")
-        Assert.assertEqual("sec", TestBase.Application.unit_preferences.get_current_unit_abbrv("TimeUnit"))
-        TestBase.Application.unit_preferences.set_current_unit("DateFormat", "UTCG")
-        Assert.assertEqual("UTCG", TestBase.Application.unit_preferences.get_current_unit_abbrv("DateFormat"))
+        TestBase.Application.units_preferences.set_current_unit("TimeUnit", "sec")
+        Assert.assertEqual("sec", TestBase.Application.units_preferences.get_current_unit_abbrv("TimeUnit"))
+        TestBase.Application.units_preferences.set_current_unit("DateFormat", "UTCG")
+        Assert.assertEqual("UTCG", TestBase.Application.units_preferences.get_current_unit_abbrv("DateFormat"))
 
         oScenario: "IStkObject" = (IStkObject(TestBase.Application)).children["DataProvidersTests"]
         Assert.assertEqual((IStkObject(TestBase.Application)).children["DataProvidersTests"], oScenario)
@@ -3307,7 +3309,7 @@ class EarlyBoundTests(TestBase):
         # Verifying random datasets and their values
         arCols = ["Latitude", "CBF X"]
 
-        oResult: "DataProviderResult" = (DataProviderTimeVarying(oProvider)).exec_elements(
+        oResult: "DataProviderResult" = (DataProviderTimeVarying(oProvider)).execute_elements(
             "1 Jun 2004 12:00:00.00", "1 Jun 2004 13:00:00.00", 240.0, arCols
         )
         Assert.assertIsNotNone(oResult)
@@ -3414,7 +3416,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("Date", dateDataPrv.elements[0].dimension_name)
 
         realDataPrv: "IDataProvider" = IDataProvider(oGroup.group[3])
-        Assert.assertEqual(DATA_PROVIDER_ELEMENT_TYPE.REAL, realDataPrv.elements[2].type)
+        Assert.assertEqual(DataProviderElementType.REAL, realDataPrv.elements[2].type)
         TestBase.logger.WriteLine("----- ELEMENTS TEST ----- END -----")
 
     # endregion
@@ -3422,8 +3424,8 @@ class EarlyBoundTests(TestBase):
     # region TestExecMethod
     def test_TestExecMethod(self):
         TestBase.logger.WriteLine("----- EXEC METHOD TEST ----- BEGIN -----")
-        TestBase.Application.unit_preferences.set_current_unit("TimeUnit", "sec")
-        TestBase.Application.unit_preferences.set_current_unit("DateFormat", "UTCG")
+        TestBase.Application.units_preferences.set_current_unit("TimeUnit", "sec")
+        TestBase.Application.units_preferences.set_current_unit("DateFormat", "UTCG")
 
         dtStart: typing.Any = "1 Jun 2004 12:00:00.00"
         dtStop: typing.Any = "1 Jun 2004 13:00:00.00"
@@ -3438,11 +3440,11 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(oGroup)
         oTimeVar: "DataProviderTimeVarying" = clr.CastAs(oGroup.group["Fixed"], DataProviderTimeVarying)
         Assert.assertIsNotNone(oTimeVar)
-        oResult: "DataProviderResult" = oTimeVar.exec(dtStart, dtStop, 240.0)
+        oResult: "DataProviderResult" = oTimeVar.execute(dtStart, dtStop, 240.0)
         Assert.assertIsNotNone(oResult)
 
-        TestBase.Application.unit_preferences.set_current_unit("TimeUnit", "sec")
-        TestBase.Application.unit_preferences.set_current_unit("DateFormat", "EpSec")
+        TestBase.Application.units_preferences.set_current_unit("TimeUnit", "sec")
+        TestBase.Application.units_preferences.set_current_unit("DateFormat", "EpSec")
 
         oObject: "IStkObject" = (IStkObject(TestBase.Application)).children[0].children["Satellite1"]
         Assert.assertIsNotNone(oObject)
@@ -3450,14 +3452,14 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(oDataProvider)
         oTimeVar = clr.CastAs(oDataProvider, DataProviderTimeVarying)
         Assert.assertIsNotNone(oTimeVar)
-        oResult = oTimeVar.exec([0, 2000, 500, 1000, 976], [90000, 87888, 99786, 1000000, 94199], 998)
+        oResult = oTimeVar.execute([0, 2000, 500, 1000, 976], [90000, 87888, 99786, 1000000, 94199], 998)
         Assert.assertIsNotNone(oResult)
 
         with pytest.raises(Exception):
-            oTimeVar.exec([0, 2000, 500, 1000, 976], 1000000, 998)
+            oTimeVar.execute([0, 2000, 500, 1000, 976], 1000000, 998)
 
         with pytest.raises(Exception):
-            oTimeVar.exec(0, [90000, 87888, 99786, 1000000, 94199], 998)
+            oTimeVar.execute(0, [90000, 87888, 99786, 1000000, 94199], 998)
 
         oScenario: "Scenario" = Scenario(TestBase.Application.current_scenario)
         Assert.assertIsNotNone(oScenario)
@@ -3465,14 +3467,14 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(oDataProvider)
         oInterval: "DataProviderInterval" = DataProviderInterval(oDataProvider)
         Assert.assertIsNotNone(oInterval)
-        oResult = oInterval.exec(oScenario.start_time, oScenario.stop_time)
+        oResult = oInterval.execute(oScenario.start_time, oScenario.stop_time)
         Assert.assertIsNotNone(oResult)
 
         with pytest.raises(Exception):
-            oInterval.exec([0, 2000, 500, 1000, 976], 1000000)
+            oInterval.execute([0, 2000, 500, 1000, 976], 1000000)
 
         with pytest.raises(Exception):
-            oInterval.exec(0, [0, 2000, 500, 1000, 976])
+            oInterval.execute(0, [0, 2000, 500, 1000, 976])
 
         TestBase.logger.WriteLine("----- EXEC METHOD TEST ----- END -----")
 
@@ -3490,25 +3492,25 @@ class EarlyBoundTests(TestBase):
 
         # Set the a340 single object coverage calculation figure of merrit to use GDOP.
         # Note: 1.0 second is currently the smallest time increment that can be used here.
-        oObjectCoverage: "StkObjectCoverage" = oAircraft.object_coverage
+        oObjectCoverage: "ObjectCoverage" = oAircraft.object_coverage
         oObjectCoverage.clear()
         Assert.assertIsNotNone(oObjectCoverage)
         oObjectCoverage.assets.add("Constellation/gps_const")
 
-        oObjectCoverage.figure_of_merit.set_definition_type(FIGURE_OF_MERIT_DEFINITION_TYPE.DILUTION_OF_PRECISION)
+        oObjectCoverage.figure_of_merit.set_definition_type(FigureOfMeritDefinitionType.DILUTION_OF_PRECISION)
         dop: "IFigureOfMeritDefinitionDilutionOfPrecision" = clr.CastAs(
             oObjectCoverage.figure_of_merit.definition, IFigureOfMeritDefinitionDilutionOfPrecision
         )
-        dop.set_type(FIGURE_OF_MERIT_COMPUTE_TYPE.OVER_DETERMINED)
-        dop.set_compute_type(FIGURE_OF_MERIT_COMPUTE.MAXIMUM)
-        dop.set_method(FIGURE_OF_MERIT_METHOD.GDOP)
+        dop.set_type(FigureOfMeritNavigationComputeType.OVER_DETERMINED)
+        dop.set_compute_type(FigureOfMeritCompute.MAXIMUM)
+        dop.set_method(FigureOfMeritMethod.GDOP)
         dop.time_step = 600
         oObjectCoverage.compute()
 
         oProvider: "IDataProvider" = IDataProvider(oObjectCoverage.data_providers["FOM by Time"])
         Assert.assertIsNotNone(oProvider)
 
-        oResult: "DataProviderResult" = (DataProviderTimeVarying(oProvider)).exec(
+        oResult: "DataProviderResult" = (DataProviderTimeVarying(oProvider)).execute(
             "1 Jun 2004 12:00:00.00", "1 Jun 2004 13:00:00.00", 1
         )
         Assert.assertIsNotNone(oResult)
@@ -3592,7 +3594,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(recFixedPrv)
 
         elems = ["g/T"]
-        result: "DataProviderResult" = recFixedPrv.exec_elements(elems)
+        result: "DataProviderResult" = recFixedPrv.execute_elements(elems)
         Assert.assertIsNotNone(result)
 
         elemNames = result.data_sets.element_names
@@ -3613,7 +3615,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(20.0, val)
 
         elems = ["g Over T"]
-        result = recFixedPrv.exec_elements(elems)
+        result = recFixedPrv.execute_elements(elems)
         Assert.assertIsNotNone(result)
 
         elemNames = result.data_sets.element_names
@@ -3641,91 +3643,91 @@ class EarlyBoundTests(TestBase):
         scene: "Scenario" = Scenario(TestBase.Application.current_scenario)
         scene.set_time_period("1 Jul 2008 12:00:00.000", "2 Jul 2008 12:00:00.000")
         fac: "IStkObject" = None
-        fac = TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "Facility1")
+        fac = TestBase.Application.current_scenario.children.new(STKObjectType.FACILITY, "Facility1")
         self.RunAllDataProviders(fac)
         sat: "Satellite" = Satellite(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "Satellite1")
+            TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "Satellite1")
         )
-        twoBody: "VehiclePropagatorTwoBody" = VehiclePropagatorTwoBody(sat.propagator)
+        twoBody: "PropagatorTwoBody" = PropagatorTwoBody(sat.propagator)
         twoBody.ephemeris_interval.set_explicit_interval("1 Jul 2008 12:00:00.000", "2 Jul 2008 12:00:00.000")
         twoBody.propagate()
         self.RunAllDataProviders(IStkObject(sat))
-        self.RunAllDataProviders(TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.ADV_CAT, "AdvCat1"))
+        self.RunAllDataProviders(TestBase.Application.current_scenario.children.new(STKObjectType.ADVCAT, "AdvCat1"))
         ac: "Aircraft" = Aircraft(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.AIRCRAFT, "Aircraft1")
+            TestBase.Application.current_scenario.children.new(STKObjectType.AIRCRAFT, "Aircraft1")
         )
-        self.GenerateGreatArcVeh(VehiclePropagatorGreatArc(ac.route))
+        self.GenerateGreatArcVeh(PropagatorGreatArc(ac.route))
         self.RunAllDataProviders(IStkObject(ac))
-        self.RunAllDataProviders((IStkObject(sat)).children.new(STK_OBJECT_TYPE.ANTENNA, "Antenna1"))
+        self.RunAllDataProviders((IStkObject(sat)).children.new(STKObjectType.ANTENNA, "Antenna1"))
         at: "AreaTarget" = AreaTarget(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.AREA_TARGET, "AreaTarget1")
+            TestBase.Application.current_scenario.children.new(STKObjectType.AREA_TARGET, "AreaTarget1")
         )
-        at.area_type = AREA_TYPE.ELLIPSE
+        at.area_type = AreaType.ELLIPSE
         self.RunAllDataProviders(IStkObject(at))
-        attCov: "IStkObject" = (IStkObject(sat)).children.new(STK_OBJECT_TYPE.ATTITUDE_COVERAGE, "AttitudeCoverage1")
+        attCov: "IStkObject" = (IStkObject(sat)).children.new(STKObjectType.ATTITUDE_COVERAGE, "AttitudeCoverage1")
         self.RunAllDataProviders(attCov)
-        self.RunAllDataProviders(attCov.children.new(STK_OBJECT_TYPE.ATTITUDE_FIGURE_OF_MERIT, "AttitudeFOM1"))
-        chain: "Chain" = Chain(TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.CHAIN, "Chain1"))
+        self.RunAllDataProviders(attCov.children.new(STKObjectType.ATTITUDE_FIGURE_OF_MERIT, "AttitudeFOM1"))
+        chain: "Chain" = Chain(TestBase.Application.current_scenario.children.new(STKObjectType.CHAIN, "Chain1"))
         chain.objects.add_object(IStkObject(sat))
         chain.objects.add_object(IStkObject(ac))
         self.RunAllDataProviders(IStkObject(chain))
         constellation: "Constellation" = Constellation(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.CONSTELLATION, "Constellation1")
+            TestBase.Application.current_scenario.children.new(STKObjectType.CONSTELLATION, "Constellation1")
         )
         constellation.objects.add_object(IStkObject(sat))
         self.RunAllDataProviders(IStkObject(constellation))
         covDef: "IStkObject" = TestBase.Application.current_scenario.children.new(
-            STK_OBJECT_TYPE.COVERAGE_DEFINITION, "CovDef1"
+            STKObjectType.COVERAGE_DEFINITION, "CovDef1"
         )
         self.RunAllDataProviders(covDef)
-        self.RunAllDataProviders(covDef.children.new(STK_OBJECT_TYPE.FIGURE_OF_MERIT, "FOM1"))
+        self.RunAllDataProviders(covDef.children.new(STKObjectType.FIGURE_OF_MERIT, "FOM1"))
         gv: "GroundVehicle" = GroundVehicle(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.GROUND_VEHICLE, "GroundVehicle1")
+            TestBase.Application.current_scenario.children.new(STKObjectType.GROUND_VEHICLE, "GroundVehicle1")
         )
-        self.GenerateGreatArcVeh(VehiclePropagatorGreatArc(gv.route))
+        self.GenerateGreatArcVeh(PropagatorGreatArc(gv.route))
         self.RunAllDataProviders(IStkObject(gv))
         lv: "LaunchVehicle" = LaunchVehicle(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.LAUNCH_VEHICLE, "LaunchVehicle1")
+            TestBase.Application.current_scenario.children.new(STKObjectType.LAUNCH_VEHICLE, "LaunchVehicle1")
         )
-        ascent: "VehiclePropagatorSimpleAscent" = VehiclePropagatorSimpleAscent(lv.trajectory)
+        ascent: "PropagatorSimpleAscent" = PropagatorSimpleAscent(lv.trajectory)
         ascent.propagate()
         self.RunAllDataProviders(IStkObject(lv))
         lt: "LineTarget" = LineTarget(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.LINE_TARGET, "LineTarget1")
+            TestBase.Application.current_scenario.children.new(STKObjectType.LINE_TARGET, "LineTarget1")
         )
         lt.points.add(0, 0)
         lt.points.add(10, 10)
         lt.points.anchor_point = 0
         self.RunAllDataProviders(IStkObject(lt))
         missile: "Missile" = Missile(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.MISSILE, "Missile1")
+            TestBase.Application.current_scenario.children.new(STKObjectType.MISSILE, "Missile1")
         )
-        ballistic: "VehiclePropagatorBallistic" = VehiclePropagatorBallistic(missile.trajectory)
+        ballistic: "PropagatorBallistic" = PropagatorBallistic(missile.trajectory)
         ballistic.propagate()
         self.RunAllDataProviders(IStkObject(missile))
-        self.RunAllDataProviders(TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.PLANET, "Planet1"))
-        self.RunAllDataProviders((IStkObject(sat)).children.new(STK_OBJECT_TYPE.RADAR, "Radar1"))
-        self.RunAllDataProviders((IStkObject(sat)).children.new(STK_OBJECT_TYPE.RECEIVER, "Receiver1"))
-        self.RunAllDataProviders((IStkObject(sat)).children.new(STK_OBJECT_TYPE.SENSOR, "Sensor1"))
-        ship: "Ship" = Ship(TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SHIP, "Ship1"))
-        self.GenerateGreatArcVeh(VehiclePropagatorGreatArc(ship.route))
+        self.RunAllDataProviders(TestBase.Application.current_scenario.children.new(STKObjectType.PLANET, "Planet1"))
+        self.RunAllDataProviders((IStkObject(sat)).children.new(STKObjectType.RADAR, "Radar1"))
+        self.RunAllDataProviders((IStkObject(sat)).children.new(STKObjectType.RECEIVER, "Receiver1"))
+        self.RunAllDataProviders((IStkObject(sat)).children.new(STKObjectType.SENSOR, "Sensor1"))
+        ship: "Ship" = Ship(TestBase.Application.current_scenario.children.new(STKObjectType.SHIP, "Ship1"))
+        self.GenerateGreatArcVeh(PropagatorGreatArc(ship.route))
         self.RunAllDataProviders(IStkObject(ship))
-        self.RunAllDataProviders(TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.STAR, "Star1"))
-        self.RunAllDataProviders(TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.TARGET, "Target1"))
-        self.RunAllDataProviders((IStkObject(sat)).children.new(STK_OBJECT_TYPE.TRANSMITTER, "Transmitter1"))
-        self.RunAllDataProviders(fac.children.new(STK_OBJECT_TYPE.TRANSMITTER, "Transmitter1"))
-        access: "StkAccess" = (IStkObject(sat)).get_access("Facility/Facility1")
+        self.RunAllDataProviders(TestBase.Application.current_scenario.children.new(STKObjectType.STAR, "Star1"))
+        self.RunAllDataProviders(TestBase.Application.current_scenario.children.new(STKObjectType.TARGET, "Target1"))
+        self.RunAllDataProviders((IStkObject(sat)).children.new(STKObjectType.TRANSMITTER, "Transmitter1"))
+        self.RunAllDataProviders(fac.children.new(STKObjectType.TRANSMITTER, "Transmitter1"))
+        access: "Access" = (IStkObject(sat)).get_access("Facility/Facility1")
         access.compute_access()
         self.ExecDataProviders(access.data_providers, "")
-        coverage: "StkObjectCoverage" = (IStkObject(sat)).object_coverage
+        coverage: "ObjectCoverage" = (IStkObject(sat)).object_coverage
         coverage.assets.add("Facility/Facility1")
         coverage.compute()
         self.ExecDataProviders(coverage.data_providers, "")
         TestBase.Application.close_scenario()
         TestBase.LoadTestScenario(Path.Combine("DataProvidersTests", "DataProvidersTests.sc"))
 
-    def GenerateGreatArcVeh(self, ga: "VehiclePropagatorGreatArc"):
-        ga.method = VEHICLE_WAYPOINT_COMP_METHOD.DETERMINE_VEL_FROM_TIME
+    def GenerateGreatArcVeh(self, ga: "PropagatorGreatArc"):
+        ga.method = VehicleWaypointComputationMethod.DETERMINE_VELOCITY_FROM_TIME
         elem: "VehicleWaypointsElement" = ga.waypoints.add()
         elem.latitude = 0
         elem.longitude = 0
@@ -3740,18 +3742,18 @@ class EarlyBoundTests(TestBase):
     # region IAgDataPrvInterval_SmartIntervals
     def test_IAgDataPrvInterval_SmartIntervals(self):
         TestBase.logger.WriteLine("----- DataProviderInterval_SmartIntervals ----- BEGIN -----")
-        TestBase.Application.unit_preferences.reset_units()
+        TestBase.Application.units_preferences.reset_units()
 
         oSa: "IStkObject" = TestBase.Application.current_scenario.children["Satellite1"]
         oScenario: "Scenario" = Scenario(TestBase.Application.current_scenario)
 
         startTime: typing.Any = (Scenario(TestBase.Application.current_scenario)).start_time
         stopTime: typing.Any = (Scenario(TestBase.Application.current_scenario)).stop_time
-        startEpoch: "TimeToolEventSmartEpoch" = (
-            TestBase.Application.current_scenario.vgt.events.factory.create_smart_epoch_from_time(startTime)
+        startEpoch: "TimeToolInstantSmartEpoch" = TestBase.Application.current_scenario.analysis_workbench_components.time_instants.factory.create_smart_epoch_from_time(
+            startTime
         )
-        stopEpoch: "TimeToolEventSmartEpoch" = (
-            TestBase.Application.current_scenario.vgt.events.factory.create_smart_epoch_from_time(stopTime)
+        stopEpoch: "TimeToolInstantSmartEpoch" = TestBase.Application.current_scenario.analysis_workbench_components.time_instants.factory.create_smart_epoch_from_time(
+            stopTime
         )
         oScenario.analysis_interval.set_start_and_stop_epochs(startEpoch, stopEpoch)
 
@@ -3759,7 +3761,7 @@ class EarlyBoundTests(TestBase):
             IDataProvider(oSa.data_providers["Available Times"]), DataProviderInterval
         )
 
-        oResult: "DataProviderResult" = oInterval.exec(
+        oResult: "DataProviderResult" = oInterval.execute(
             oScenario.analysis_interval.get_start_epoch(), oScenario.analysis_interval.get_stop_epoch()
         )
         Assert.assertIsNotNone(oResult)
@@ -3781,7 +3783,7 @@ class EarlyBoundTests(TestBase):
 
         arFields = ["Start Time", "Stop Time"]
 
-        oResult = oInterval.exec_elements(
+        oResult = oInterval.execute_elements(
             oScenario.analysis_interval.get_start_epoch(), oScenario.analysis_interval.get_stop_epoch(), arFields
         )
 
@@ -3819,13 +3821,13 @@ class EarlyBoundTests(TestBase):
 
             EventArrayName: str = "TestIntervalArray"
 
-            _EventArrayProvider: "AnalysisWorkbenchProvider" = TestBase.Application.vgt_root.get_provider(
-                "Satellite/Satellite1"
+            _EventArrayProvider: "AnalysisWorkbenchComponentProvider" = (
+                TestBase.Application.analysis_workbench_components_root.get_provider("Satellite/Satellite1")
             )
-            EventArrayTestObject: "ITimeToolEventArray" = _EventArrayProvider.event_arrays[EventArrayName]
+            EventArrayTestObject: "ITimeToolTimeArray" = _EventArrayProvider.time_arrays[EventArrayName]
 
             elemCols = ["Start Time", "Stop Time", "Duration"]
-            oResult: "DataProviderResult" = (DataProviderInterval(oProvider)).exec_elements_event_array(
+            oResult: "DataProviderResult" = (DataProviderInterval(oProvider)).execute_elements_event_array(
                 EventArrayTestObject, "5 Mar 2010 17:00:00.000", "6 Mar 2010 17:00:00.000", elemCols
             )
 
@@ -3859,12 +3861,12 @@ class EarlyBoundTests(TestBase):
 
             EventArrayName: str = "TestIntervalArray"
 
-            _EventArrayProvider: "AnalysisWorkbenchProvider" = TestBase.Application.vgt_root.get_provider(
-                "Satellite/Satellite1"
+            _EventArrayProvider: "AnalysisWorkbenchComponentProvider" = (
+                TestBase.Application.analysis_workbench_components_root.get_provider("Satellite/Satellite1")
             )
-            EventArrayTestObject: "ITimeToolEventArray" = _EventArrayProvider.event_arrays[EventArrayName]
+            EventArrayTestObject: "ITimeToolTimeArray" = _EventArrayProvider.time_arrays[EventArrayName]
 
-            oResult: "DataProviderResult" = (DataProviderInterval(oProvider)).exec_event_array(
+            oResult: "DataProviderResult" = (DataProviderInterval(oProvider)).execute_event_array(
                 EventArrayTestObject, "5 Mar 2010 17:00:00.000", "6 Mar 2010 17:00:00.000"
             )
 
@@ -3888,18 +3890,18 @@ class EarlyBoundTests(TestBase):
     # region IAgDataPrvTimeVar_SmartIntervals
     def test_IAgDataPrvTimeVar_SmartIntervals(self):
         TestBase.logger.WriteLine("----- DataProviderTimeVarying_SmartIntervals ----- BEGIN -----")
-        TestBase.Application.unit_preferences.reset_units()
+        TestBase.Application.units_preferences.reset_units()
 
         oSa: "Satellite" = Satellite(TestBase.Application.current_scenario.children["Satellite1"])
         oScenario: "Scenario" = Scenario(TestBase.Application.current_scenario)
 
         startTime: typing.Any = (Scenario(TestBase.Application.current_scenario)).start_time
         stopTime: typing.Any = (Scenario(TestBase.Application.current_scenario)).stop_time
-        startEpoch: "TimeToolEventSmartEpoch" = (
-            TestBase.Application.current_scenario.vgt.events.factory.create_smart_epoch_from_time(startTime)
+        startEpoch: "TimeToolInstantSmartEpoch" = TestBase.Application.current_scenario.analysis_workbench_components.time_instants.factory.create_smart_epoch_from_time(
+            startTime
         )
-        stopEpoch: "TimeToolEventSmartEpoch" = (
-            TestBase.Application.current_scenario.vgt.events.factory.create_smart_epoch_from_time(stopTime)
+        stopEpoch: "TimeToolInstantSmartEpoch" = TestBase.Application.current_scenario.analysis_workbench_components.time_instants.factory.create_smart_epoch_from_time(
+            stopTime
         )
         oScenario.analysis_interval.set_start_and_stop_epochs(startEpoch, stopEpoch)
 
@@ -3909,7 +3911,7 @@ class EarlyBoundTests(TestBase):
         obj: "IStkObject" = TestBase.Application.current_scenario.children["Facility1"]
         timeVar: "DataProviderTimeVarying" = clr.CastAs(obj.data_providers["Lighting AER"], DataProviderTimeVarying)
 
-        result: "DataProviderResult" = timeVar.exec(
+        result: "DataProviderResult" = timeVar.execute(
             oScenario.analysis_interval.get_start_epoch(), oScenario.analysis_interval.get_stop_epoch(), 60
         )
         Assert.assertEqual("Time", result.data_sets.element_names[0])
@@ -3917,7 +3919,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("Azimuth", result.data_sets.element_names[1])
         Assert.assertAlmostEqual(79.63, float(result.data_sets[1].get_values()[0]), delta=0.01)
 
-        result = timeVar.exec_elements(
+        result = timeVar.execute_elements(
             oScenario.analysis_interval.get_start_epoch(), oScenario.analysis_interval.get_stop_epoch(), 60, elems
         )
         Assert.assertEqual("Time", result.data_sets.element_names[0])
@@ -3925,7 +3927,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("Azimuth", result.data_sets.element_names[1])
         Assert.assertAlmostEqual(79.63, float(result.data_sets[1].get_values()[0]), delta=0.01)
 
-        result = timeVar.exec_elements_native_times(
+        result = timeVar.execute_elements_native_times(
             oScenario.analysis_interval.get_start_epoch(), oScenario.analysis_interval.get_stop_epoch(), elems
         )
         Assert.assertEqual("Time", result.data_sets.element_names[0])
@@ -3933,7 +3935,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("Azimuth", result.data_sets.element_names[1])
         Assert.assertAlmostEqual(79.63, float(result.data_sets[1].get_values()[0]), delta=0.01)
 
-        result = timeVar.exec_native_times(
+        result = timeVar.execute_native_times(
             oScenario.analysis_interval.get_start_epoch(), oScenario.analysis_interval.get_stop_epoch()
         )
         Assert.assertEqual("Time", result.data_sets.element_names[0])
@@ -3941,19 +3943,19 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("Azimuth", result.data_sets.element_names[1])
         Assert.assertAlmostEqual(79.63, float(result.data_sets[1].get_values()[0]), delta=0.01)
 
-        result = timeVar.exec_single(oScenario.analysis_interval.get_start_epoch())
+        result = timeVar.execute_single(oScenario.analysis_interval.get_start_epoch())
         Assert.assertEqual("Time", result.data_sets.element_names[0])
         Assert.assertEqual("1 Jun 2004 12:00:00.000000000", result.data_sets[0].get_values()[0])
         Assert.assertEqual("Azimuth", result.data_sets.element_names[1])
         Assert.assertAlmostEqual(79.63, float(result.data_sets[1].get_values()[0]), delta=0.01)
 
-        result = timeVar.exec_single_elements(oScenario.analysis_interval.get_start_epoch(), elems)
+        result = timeVar.execute_single_elements(oScenario.analysis_interval.get_start_epoch(), elems)
         Assert.assertEqual("Time", result.data_sets.element_names[0])
         Assert.assertEqual("1 Jun 2004 12:00:00.000000000", result.data_sets[0].get_values()[0])
         Assert.assertEqual("Azimuth", result.data_sets.element_names[1])
         Assert.assertAlmostEqual(79.63, float(result.data_sets[1].get_values()[0]), delta=0.01)
 
-        arrayElements: "DataProviderResultTimeArrayElements" = timeVar.exec_single_elements_array(times, elems)
+        arrayElements: "DataProviderResultTimeArrayElements" = timeVar.execute_single_elements_array(times, elems)
         Assert.assertTrue(arrayElements.valid)
         Assert.assertEqual("1 Jun 2004 12:00:00.000000000", arrayElements.get_array(0)[0])
         Assert.assertAlmostEqual(79.63, float(arrayElements.get_array(1)[0]), delta=0.01)
@@ -3998,32 +4000,32 @@ class EarlyBoundTests(TestBase):
     def ExecDataPrv(self, dp: "IDataProviderInfo", path: str):
         drResult: "DataProviderResult" = None
         dProvider: "IDataProvider" = IDataProvider(dp)
-        if dp.type == DATA_PROVIDER_TYPE.DATA_PROVIDER_RESULT_FIXED:
+        if dp.type == DataProviderType.FIXED:
             dpFixed: "DataProviderFixed" = DataProviderFixed(dp)
             if dProvider.is_valid:
-                drResult = dpFixed.exec()
+                drResult = dpFixed.execute()
 
             else:
                 with pytest.raises(Exception):
-                    dpFixed.exec()
+                    dpFixed.execute()
 
-        elif dp.type == DATA_PROVIDER_TYPE.DATA_PROVIDER_RESULT_INTVL:
+        elif dp.type == DataProviderType.INTERVAL:
             dpIntvl: "DataProviderInterval" = DataProviderInterval(dp)
             if dProvider.is_valid:
-                drResult = dpIntvl.exec("1 Jul 2008 12:00:00.000", "1 Jul 2008 14:00:00.000")
+                drResult = dpIntvl.execute("1 Jul 2008 12:00:00.000", "1 Jul 2008 14:00:00.000")
 
             else:
                 with pytest.raises(Exception):
-                    dpIntvl.exec("1 Jul 2008 12:00:00.000", "1 Jul 2008 14:00:00.000")
+                    dpIntvl.execute("1 Jul 2008 12:00:00.000", "1 Jul 2008 14:00:00.000")
 
-        elif dp.type == DATA_PROVIDER_TYPE.DATA_PROVIDER_RESULT_TIME_VARYING:
+        elif dp.type == DataProviderType.TIME_VARYING:
             dpTimeVar: "DataProviderTimeVarying" = DataProviderTimeVarying(dp)
             if dProvider.is_valid:
-                drResult = dpTimeVar.exec("1 Jul 2008 12:00:00.000", "1 Jul 2008 14:00:00.000", 60)
+                drResult = dpTimeVar.execute("1 Jul 2008 12:00:00.000", "1 Jul 2008 14:00:00.000", 60)
 
             else:
                 with pytest.raises(Exception):
-                    drResult = dpTimeVar.exec("1 Jul 2008 12:00:00.000", "1 Jul 2008 14:00:00.000", 60)
+                    drResult = dpTimeVar.execute("1 Jul 2008 12:00:00.000", "1 Jul 2008 14:00:00.000", 60)
 
         if "DistanceAlong" in dp.name:
             # (See 91515) For these dataproviders, call the "Clear" command to free memory:
@@ -4082,21 +4084,21 @@ class EarlyBoundTests(TestBase):
             # logger.WriteLine("Specified provider \"{0}\" is invalid.", dpi.Name);
             return
 
-        dp.allow_user_interface = False
+        dp.allow_user_interface_for_pre_data = False
 
         startTime: typing.Any = (Scenario(TestBase.Application.current_scenario)).start_time
         stopTime: typing.Any = (Scenario(TestBase.Application.current_scenario)).stop_time
-        if dpi.type == DATA_PROVIDER_TYPE.DATA_PROVIDER_RESULT_TIME_VARYING:
+        if dpi.type == DataProviderType.TIME_VARYING:
             tv: "DataProviderTimeVarying" = DataProviderTimeVarying(dp)
-            result: "DataProviderResult" = tv.exec(startTime, stopTime, 60)
+            result: "DataProviderResult" = tv.execute(startTime, stopTime, 60)
             del result
-        elif dpi.type == DATA_PROVIDER_TYPE.DATA_PROVIDER_RESULT_FIXED:
+        elif dpi.type == DataProviderType.FIXED:
             fixed: "DataProviderFixed" = DataProviderFixed(dp)
-            result: "DataProviderResult" = fixed.exec()
+            result: "DataProviderResult" = fixed.execute()
             del result
-        elif dpi.type == DATA_PROVIDER_TYPE.DATA_PROVIDER_RESULT_INTVL:
+        elif dpi.type == DataProviderType.INTERVAL:
             interval: "DataProviderInterval" = DataProviderInterval(dp)
-            result: "DataProviderResult" = interval.exec(startTime, stopTime)
+            result: "DataProviderResult" = interval.execute(startTime, stopTime)
             del result
 
     # region Enumerate available data providers for all objects
@@ -4152,16 +4154,16 @@ class EarlyBoundTests(TestBase):
 
     @parameterized.expand(
         [
-            ("Lighting Times/Umbra", "Duration", STATISTICS.MEAN, 1736.502),
-            ("Lighting Times/Umbra", "Duration", STATISTICS.STD_DEV, 777.829),
-            ("Lighting Times/Umbra", "Duration", STATISTICS.TOTAL, 5209.5),
-            ("Lighting Times/Umbra", "Duration", STATISTICS.PERCENT_INTVL, 36.177),
-            ("Lighting Times/Umbra", "Duration", STATISTICS.PERCENT_NOT_INTVL, 63.823),
+            ("Lighting Times/Umbra", "Duration", StatisticType.MEAN, 1736.502),
+            ("Lighting Times/Umbra", "Duration", StatisticType.STANDARD_DEVIATION, 777.829),
+            ("Lighting Times/Umbra", "Duration", StatisticType.TOTAL, 5209.5),
+            ("Lighting Times/Umbra", "Duration", StatisticType.PERCENT_INTERVAL, 36.177),
+            ("Lighting Times/Umbra", "Duration", StatisticType.PERCENT_NOT_INTERVAL, 63.823),
         ]
     )
-    def test_TestComputeStatistic(self, dataPrv: str, elemName: str, stat: "STATISTICS", val: float):
+    def test_TestComputeStatistic(self, dataPrv: str, elemName: str, stat: "StatisticType", val: float):
         oSa: "IStkObject" = TestBase.Application.current_scenario.children["Satellite1"]
-        res: "DataProviderResult" = oSa.data_providers.get_data_provider_interval_from_path(dataPrv).exec(
+        res: "DataProviderResult" = oSa.data_providers.get_data_provider_interval_from_path(dataPrv).execute(
             "1 Jun 2004 12:00:00.00", "1 Jun 2004 16:00:00.00"
         )
         statRes: "DataProviderResultStatisticResult" = res.data_sets.get_data_set_by_name(
@@ -4172,17 +4174,17 @@ class EarlyBoundTests(TestBase):
 
     @parameterized.expand(
         [
-            ("LLR State/Fixed", "Lat", TIME_VARYING_EXTREMUM.MAX, 28.502, "1 Jun 2004 12:22:37.061"),
-            ("LLR State/Fixed", "Lat", TIME_VARYING_EXTREMUM.MAX_OF_SAMPLES, 28.359, "1 Jun 2004 12:24:00.000"),
-            ("LLR State/Fixed", "Lat", TIME_VARYING_EXTREMUM.MIN, -24.055, "1 Jun 2004 13:00:00.000"),
-            ("LLR State/Fixed", "Lat", TIME_VARYING_EXTREMUM.MIN_OF_SAMPLES, -24.055, "1 Jun 2004 13:00:00.000"),
+            ("LLR State/Fixed", "Lat", TimeVaryingExtremum.MAXIMUM, 28.502, "1 Jun 2004 12:22:37.061"),
+            ("LLR State/Fixed", "Lat", TimeVaryingExtremum.MAXIMUM_OF_SAMPLES, 28.359, "1 Jun 2004 12:24:00.000"),
+            ("LLR State/Fixed", "Lat", TimeVaryingExtremum.MINIMUM, -24.055, "1 Jun 2004 13:00:00.000"),
+            ("LLR State/Fixed", "Lat", TimeVaryingExtremum.MINIMUM_OF_SAMPLES, -24.055, "1 Jun 2004 13:00:00.000"),
         ]
     )
     def test_TestComputeTimeVarExtremum(
-        self, dataPrv: str, elemName: str, stat: "TIME_VARYING_EXTREMUM", val: float, time: str
+        self, dataPrv: str, elemName: str, stat: "TimeVaryingExtremum", val: float, time: str
     ):
         oSa: "IStkObject" = TestBase.Application.current_scenario.children["Satellite1"]
-        res: "DataProviderResult" = oSa.data_providers.get_data_provider_time_varying_from_path(dataPrv).exec(
+        res: "DataProviderResult" = oSa.data_providers.get_data_provider_time_varying_from_path(dataPrv).execute(
             "1 Jun 2004 12:00:00.00", "1 Jun 2004 13:00:00.00", 240.0
         )
         statRes: "DataProviderResultTimeVaryingExtremumResult" = res.data_sets.get_data_set_by_name(
@@ -4196,31 +4198,31 @@ class EarlyBoundTests(TestBase):
 
     @parameterized.expand(
         [
-            ("Shadow LLA/Fixed", "Lat", STATISTICS.MEAN),
-            ("Shadow LLA/Fixed", "Lat", STATISTICS.STD_DEV),
-            ("Shadow LLA/Fixed", "Lat", STATISTICS.TOTAL),
-            ("Shadow LLA/Fixed", "Lat", STATISTICS.PERCENT_INTVL),
-            ("Shadow LLA/Fixed", "Lat", STATISTICS.PERCENT_NOT_INTVL),
+            ("Shadow LLA/Fixed", "Lat", StatisticType.MEAN),
+            ("Shadow LLA/Fixed", "Lat", StatisticType.STANDARD_DEVIATION),
+            ("Shadow LLA/Fixed", "Lat", StatisticType.TOTAL),
+            ("Shadow LLA/Fixed", "Lat", StatisticType.PERCENT_INTERVAL),
+            ("Shadow LLA/Fixed", "Lat", StatisticType.PERCENT_NOT_INTERVAL),
         ]
     )
-    def test_TestIsStatisticAvailableFalse(self, dataPrv: str, elemName: str, stat: "STATISTICS"):
+    def test_TestIsStatisticAvailableFalse(self, dataPrv: str, elemName: str, stat: "StatisticType"):
         oSa: "IStkObject" = TestBase.Application.current_scenario.children["Satellite1"]
-        res: "DataProviderResult" = oSa.data_providers.get_data_provider_time_varying_from_path(dataPrv).exec(
+        res: "DataProviderResult" = oSa.data_providers.get_data_provider_time_varying_from_path(dataPrv).execute(
             "1 Jun 2004 12:00:00.00", "1 Jun 2004 13:00:00.00", 240.0
         )
         Assert.assertFalse(res.data_sets.get_data_set_by_name(elemName).statistics.is_statistic_available(stat))
 
     @parameterized.expand(
         [
-            ("Shadow LLA/Fixed", "Lat", TIME_VARYING_EXTREMUM.MAX),
-            ("Shadow LLA/Fixed", "Lat", TIME_VARYING_EXTREMUM.MAX_OF_SAMPLES),
-            ("Shadow LLA/Fixed", "Lat", TIME_VARYING_EXTREMUM.MIN),
-            ("Shadow LLA/Fixed", "Lat", TIME_VARYING_EXTREMUM.MIN_OF_SAMPLES),
+            ("Shadow LLA/Fixed", "Lat", TimeVaryingExtremum.MAXIMUM),
+            ("Shadow LLA/Fixed", "Lat", TimeVaryingExtremum.MAXIMUM_OF_SAMPLES),
+            ("Shadow LLA/Fixed", "Lat", TimeVaryingExtremum.MINIMUM),
+            ("Shadow LLA/Fixed", "Lat", TimeVaryingExtremum.MINIMUM_OF_SAMPLES),
         ]
     )
-    def test_TestIsTimeVarExtremumAvailableFalse(self, dataPrv: str, elemName: str, stat: "TIME_VARYING_EXTREMUM"):
+    def test_TestIsTimeVarExtremumAvailableFalse(self, dataPrv: str, elemName: str, stat: "TimeVaryingExtremum"):
         oSa: "IStkObject" = TestBase.Application.current_scenario.children["Satellite1"]
-        res: "DataProviderResult" = oSa.data_providers.get_data_provider_time_varying_from_path(dataPrv).exec(
+        res: "DataProviderResult" = oSa.data_providers.get_data_provider_time_varying_from_path(dataPrv).execute(
             "1 Jun 2004 12:00:00.00", "1 Jun 2004 13:00:00.00", 240.0
         )
         Assert.assertFalse(
@@ -4259,19 +4261,19 @@ class EarlyBoundTests(TestBase):
         expectedTimes = ["1 Jun 2004 16:49:45.864", "1 Jun 2004 18:24:55.776", "1 Jun 2004 20:00:05.225"]
 
         oSa: "IStkObject" = TestBase.Application.current_scenario.children["Satellite1"]
-        oFac: "IStkObject" = TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "Facility2")
-        acc: "StkAccess" = oSa.get_access_to_object(oFac)
+        oFac: "IStkObject" = TestBase.Application.current_scenario.children.new(STKObjectType.FACILITY, "Facility2")
+        acc: "Access" = oSa.get_access_to_object(oFac)
         acc.compute_access()
         res: "DataProviderResult" = acc.data_providers.get_data_provider_time_varying_from_path(
             "AER Data/Default"
-        ).exec("1 Jun 2004 12:00:00.00", "2 Jun 2004 12:00:00.00", 60.0)
+        ).execute("1 Jun 2004 12:00:00.00", "2 Jun 2004 12:00:00.00", 60.0)
 
         i: int = 0
         while i < res.intervals.count:
             statRes: "DataProviderResultTimeVaryingExtremumResult" = (
                 res.intervals[i]
                 .data_sets.get_data_set_by_name("Elevation")
-                .statistics.compute_time_varying_extremum(TIME_VARYING_EXTREMUM.MIN)
+                .statistics.compute_time_varying_extremum(TimeVaryingExtremum.MINIMUM)
             )
             Assert.assertAlmostEqual(float(expectedValues[i]), statRes.value, delta=0.001)
             Assert.assertEqual(expectedTimes[i], str(statRes.time)[0 : (0 + len(str(expectedTimes[i])))])
@@ -4283,73 +4285,81 @@ class EarlyBoundTests(TestBase):
         oSensor: "IStkObject" = oSatellite.children["Sensor1"]
 
         oProvider: "IDataProvider" = IDataProvider(oSensor.data_providers["Pattern Intersection"])
-        res: "DataProviderResult" = (DataProviderTimeVarying(oProvider)).exec(
+        res: "DataProviderResult" = (DataProviderTimeVarying(oProvider)).execute(
             "1 Jun 2004 12:00:00.00", "1 Jun 2004 13:00:00.00", 240.0
         )
 
         with pytest.raises(Exception, match=RegexSubstringMatch("Time Varying Extremum not available for element")):
             res.data_sets.get_data_set_by_name("UTM Easting").statistics.compute_time_varying_extremum(
-                TIME_VARYING_EXTREMUM.MIN
+                TimeVaryingExtremum.MINIMUM
             )
 
     def test_TestFailComputeStatistic(self):
         oSa: "IStkObject" = TestBase.Application.current_scenario.children["Satellite1"]
         res: "DataProviderResult" = oSa.data_providers.get_data_provider_time_varying_from_path(
             "Shadow LLA/Fixed"
-        ).exec("1 Jun 2004 12:00:00.00", "1 Jun 2004 13:00:00.00", 240.0)
+        ).execute("1 Jun 2004 12:00:00.00", "1 Jun 2004 13:00:00.00", 240.0)
         with pytest.raises(Exception, match=RegexSubstringMatch("Statistic not available for element")):
-            res.data_sets.get_data_set_by_name("Lat").statistics.compute_statistic(STATISTICS.PERCENT_INTVL)
+            res.data_sets.get_data_set_by_name("Lat").statistics.compute_statistic(StatisticType.PERCENT_INTERVAL)
 
     @parameterized.expand(
         [
-            ("Shadow LLA/Fixed", "Lat", STATISTICS.MEAN),
-            ("Shadow LLA/Fixed", "Lat", STATISTICS.STD_DEV),
-            ("Shadow LLA/Fixed", "Lat", STATISTICS.TOTAL),
-            ("Shadow LLA/Fixed", "Lat", STATISTICS.PERCENT_INTVL),
-            ("Shadow LLA/Fixed", "Lat", STATISTICS.PERCENT_NOT_INTVL),
+            ("Shadow LLA/Fixed", "Lat", StatisticType.MEAN),
+            ("Shadow LLA/Fixed", "Lat", StatisticType.STANDARD_DEVIATION),
+            ("Shadow LLA/Fixed", "Lat", StatisticType.TOTAL),
+            ("Shadow LLA/Fixed", "Lat", StatisticType.PERCENT_INTERVAL),
+            ("Shadow LLA/Fixed", "Lat", StatisticType.PERCENT_NOT_INTERVAL),
         ]
     )
-    def test_TestDPIsStatisticAvailableFalse(self, dataPrv: str, elemName: str, stat: "STATISTICS"):
+    def test_TestDPIsStatisticAvailableFalse(self, dataPrv: str, elemName: str, stat: "StatisticType"):
         oSa: "IStkObject" = TestBase.Application.current_scenario.children["Satellite1"]
-        dp: "IDataProvider" = clr.CastAs(oSa.data_providers.get_data_provider_info_from_path(dataPrv), IDataProvider)
+        dp: "IDataProvider" = clr.CastAs(
+            oSa.data_providers.get_data_provider_information_from_path(dataPrv), IDataProvider
+        )
         Assert.assertFalse(dp.is_statistic_available(stat, elemName))
 
     @parameterized.expand(
         [
-            ("Shadow LLA/Fixed", "Lat", TIME_VARYING_EXTREMUM.MAX),
-            ("Shadow LLA/Fixed", "Lat", TIME_VARYING_EXTREMUM.MAX_OF_SAMPLES),
-            ("Shadow LLA/Fixed", "Lat", TIME_VARYING_EXTREMUM.MIN),
-            ("Shadow LLA/Fixed", "Lat", TIME_VARYING_EXTREMUM.MIN_OF_SAMPLES),
+            ("Shadow LLA/Fixed", "Lat", TimeVaryingExtremum.MAXIMUM),
+            ("Shadow LLA/Fixed", "Lat", TimeVaryingExtremum.MAXIMUM_OF_SAMPLES),
+            ("Shadow LLA/Fixed", "Lat", TimeVaryingExtremum.MINIMUM),
+            ("Shadow LLA/Fixed", "Lat", TimeVaryingExtremum.MINIMUM_OF_SAMPLES),
         ]
     )
-    def test_TestDPIsTimeVarExtremumAvailableFalse(self, dataPrv: str, elemName: str, stat: "TIME_VARYING_EXTREMUM"):
+    def test_TestDPIsTimeVarExtremumAvailableFalse(self, dataPrv: str, elemName: str, stat: "TimeVaryingExtremum"):
         oSa: "IStkObject" = TestBase.Application.current_scenario.children["Satellite1"]
-        dp: "IDataProvider" = clr.CastAs(oSa.data_providers.get_data_provider_info_from_path(dataPrv), IDataProvider)
+        dp: "IDataProvider" = clr.CastAs(
+            oSa.data_providers.get_data_provider_information_from_path(dataPrv), IDataProvider
+        )
         Assert.assertFalse(dp.is_time_varying_extremum_available(stat, elemName))
 
     @parameterized.expand(
         [
-            ("Lighting Times/Umbra", "Duration", STATISTICS.MEAN),
-            ("Lighting Times/Umbra", "Duration", STATISTICS.STD_DEV),
-            ("Lighting Times/Umbra", "Duration", STATISTICS.TOTAL),
-            ("Lighting Times/Umbra", "Duration", STATISTICS.PERCENT_INTVL),
-            ("Lighting Times/Umbra", "Duration", STATISTICS.PERCENT_NOT_INTVL),
+            ("Lighting Times/Umbra", "Duration", StatisticType.MEAN),
+            ("Lighting Times/Umbra", "Duration", StatisticType.STANDARD_DEVIATION),
+            ("Lighting Times/Umbra", "Duration", StatisticType.TOTAL),
+            ("Lighting Times/Umbra", "Duration", StatisticType.PERCENT_INTERVAL),
+            ("Lighting Times/Umbra", "Duration", StatisticType.PERCENT_NOT_INTERVAL),
         ]
     )
-    def test_TestDPIsStatisticAvailableTrue(self, dataPrv: str, elemName: str, stat: "STATISTICS"):
+    def test_TestDPIsStatisticAvailableTrue(self, dataPrv: str, elemName: str, stat: "StatisticType"):
         oSa: "IStkObject" = TestBase.Application.current_scenario.children["Satellite1"]
-        dp: "IDataProvider" = clr.CastAs(oSa.data_providers.get_data_provider_info_from_path(dataPrv), IDataProvider)
+        dp: "IDataProvider" = clr.CastAs(
+            oSa.data_providers.get_data_provider_information_from_path(dataPrv), IDataProvider
+        )
         Assert.assertTrue(dp.is_statistic_available(stat, elemName))
 
     @parameterized.expand(
         [
-            ("LLR State/Fixed", "Lat", TIME_VARYING_EXTREMUM.MAX),
-            ("LLR State/Fixed", "Lat", TIME_VARYING_EXTREMUM.MAX_OF_SAMPLES),
-            ("LLR State/Fixed", "Lat", TIME_VARYING_EXTREMUM.MIN),
-            ("LLR State/Fixed", "Lat", TIME_VARYING_EXTREMUM.MIN_OF_SAMPLES),
+            ("LLR State/Fixed", "Lat", TimeVaryingExtremum.MAXIMUM),
+            ("LLR State/Fixed", "Lat", TimeVaryingExtremum.MAXIMUM_OF_SAMPLES),
+            ("LLR State/Fixed", "Lat", TimeVaryingExtremum.MINIMUM),
+            ("LLR State/Fixed", "Lat", TimeVaryingExtremum.MINIMUM_OF_SAMPLES),
         ]
     )
-    def test_TestDPIsTimeVarExtremumAvailableTrue(self, dataPrv: str, elemName: str, stat: "TIME_VARYING_EXTREMUM"):
+    def test_TestDPIsTimeVarExtremumAvailableTrue(self, dataPrv: str, elemName: str, stat: "TimeVaryingExtremum"):
         oSa: "IStkObject" = TestBase.Application.current_scenario.children["Satellite1"]
-        dp: "IDataProvider" = clr.CastAs(oSa.data_providers.get_data_provider_info_from_path(dataPrv), IDataProvider)
+        dp: "IDataProvider" = clr.CastAs(
+            oSa.data_providers.get_data_provider_information_from_path(dataPrv), IDataProvider
+        )
         Assert.assertTrue(dp.is_time_varying_extremum_available(stat, elemName))

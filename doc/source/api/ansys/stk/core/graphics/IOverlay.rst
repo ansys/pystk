@@ -144,7 +144,7 @@ Property detail
 
 .. py:property:: x_unit
     :canonical: ansys.stk.core.graphics.IOverlay.x_unit
-    :type: SCREEN_OVERLAY_UNIT
+    :type: ScreenOverlayUnit
 
     Gets or sets the unit of the x property.
 
@@ -156,7 +156,7 @@ Property detail
 
 .. py:property:: y_unit
     :canonical: ansys.stk.core.graphics.IOverlay.y_unit
-    :type: SCREEN_OVERLAY_UNIT
+    :type: ScreenOverlayUnit
 
     Gets or sets the unit of the y property.
 
@@ -174,7 +174,7 @@ Property detail
 
 .. py:property:: width_unit
     :canonical: ansys.stk.core.graphics.IOverlay.width_unit
-    :type: SCREEN_OVERLAY_UNIT
+    :type: ScreenOverlayUnit
 
     Gets or sets the unit of the width property.
 
@@ -186,7 +186,7 @@ Property detail
 
 .. py:property:: height_unit
     :canonical: ansys.stk.core.graphics.IOverlay.height_unit
-    :type: SCREEN_OVERLAY_UNIT
+    :type: ScreenOverlayUnit
 
     Gets or sets the unit of the height property.
 
@@ -270,13 +270,13 @@ Property detail
 
 .. py:property:: origin
     :canonical: ansys.stk.core.graphics.IOverlay.origin
-    :type: SCREEN_OVERLAY_ORIGIN
+    :type: ScreenOverlayOrigin
 
     Gets or sets the origin from which the overlay's position is defined. By default, the value of this property is bottom left...
 
 .. py:property:: pinning_origin
     :canonical: ansys.stk.core.graphics.IOverlay.pinning_origin
-    :type: SCREEN_OVERLAY_PINNING_ORIGIN
+    :type: ScreenOverlayPinningOrigin
 
     Gets or sets the origin of the pinning position property, relative to the overlay...
 

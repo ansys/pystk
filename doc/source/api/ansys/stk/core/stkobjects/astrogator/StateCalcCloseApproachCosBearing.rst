@@ -48,7 +48,7 @@ Property detail
 
 .. py:property:: reference_selection
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcCloseApproachCosBearing.reference_selection
-    :type: CALC_OBJECT_REFERENCE
+    :type: CalculationObjectReference
 
     Gets or sets the reference object selection.
 

@@ -80,7 +80,7 @@ Property detail
 
 .. py:property:: beam_direction_provider_type
     :canonical: ansys.stk.core.stkobjects.AntennaModelHfssEepArray.beam_direction_provider_type
-    :type: DIRECTION_PROVIDER_TYPE
+    :type: DirectionProviderType
 
     Gets or sets the beam direction provider type.
 
@@ -92,7 +92,7 @@ Property detail
 
 .. py:property:: beamformer_type
     :canonical: ansys.stk.core.stkobjects.AntennaModelHfssEepArray.beamformer_type
-    :type: BEAMFORMER_TYPE
+    :type: BeamformerType
 
     Gets or sets beamformer type.
 

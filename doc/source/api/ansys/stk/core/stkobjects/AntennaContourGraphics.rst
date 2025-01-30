@@ -73,28 +73,28 @@ Method detail
 
 
 
-.. py:method:: is_contour_type_supported(self, val: ANTENNA_CONTOUR_TYPE) -> bool
+.. py:method:: is_contour_type_supported(self, value: AntennaContourType) -> bool
     :canonical: ansys.stk.core.stkobjects.AntennaContourGraphics.is_contour_type_supported
 
     Return true if the supplied contour type is supported by this object, false otherwise.
 
     :Parameters:
 
-    **val** : :obj:`~ANTENNA_CONTOUR_TYPE`
+    **value** : :obj:`~AntennaContourType`
 
     :Returns:
 
         :obj:`~bool`
 
 
-.. py:method:: set_contour_type(self, val: ANTENNA_CONTOUR_TYPE) -> None
+.. py:method:: set_contour_type(self, value: AntennaContourType) -> None
     :canonical: ansys.stk.core.stkobjects.AntennaContourGraphics.set_contour_type
 
     Set the current contour type.
 
     :Parameters:
 
-    **val** : :obj:`~ANTENNA_CONTOUR_TYPE`
+    **value** : :obj:`~AntennaContourType`
 
     :Returns:
 

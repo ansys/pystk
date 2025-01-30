@@ -159,7 +159,7 @@ Property detail
 
 .. py:property:: outline_appearance
     :canonical: ansys.stk.core.graphics.SolidPrimitive.outline_appearance
-    :type: OUTLINE_APPEARANCE
+    :type: OutlineAppearance
 
     Gets or sets the outline's appearance.
 
@@ -201,7 +201,7 @@ Property detail
 
 .. py:property:: set_hint
     :canonical: ansys.stk.core.graphics.SolidPrimitive.set_hint
-    :type: SET_HINT
+    :type: SetHint
 
     Gets the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with.
 
@@ -246,20 +246,20 @@ Method detail
 
 
 
-.. py:method:: set_with_result(self, solidTriangulatorResult: SolidTriangulatorResult) -> None
+.. py:method:: set_with_result(self, solid_triangulator_result: SolidTriangulatorResult) -> None
     :canonical: ansys.stk.core.graphics.SolidPrimitive.set_with_result
 
     Define the solid using the specified solidTriangulatorResult. The solid is rendered in the primitive's reference frame.
 
     :Parameters:
 
-    **solidTriangulatorResult** : :obj:`~SolidTriangulatorResult`
+    **solid_triangulator_result** : :obj:`~SolidTriangulatorResult`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: set(self, positions: list, normals: list, indices: list, outlineIndices: list, windingOrder: WINDING_ORDER, boundingSphere: BoundingSphere, closed: bool) -> None
+.. py:method:: set(self, positions: list, normals: list, indices: list, outline_indices: list, winding_order: WindingOrder, bounding_sphere: BoundingSphere, closed: bool) -> None
     :canonical: ansys.stk.core.graphics.SolidPrimitive.set
 
     Define the solid using the specified parameters. The solid is rendered in the primitive's reference frame.
@@ -269,9 +269,9 @@ Method detail
     **positions** : :obj:`~list`
     **normals** : :obj:`~list`
     **indices** : :obj:`~list`
-    **outlineIndices** : :obj:`~list`
-    **windingOrder** : :obj:`~WINDING_ORDER`
-    **boundingSphere** : :obj:`~BoundingSphere`
+    **outline_indices** : :obj:`~list`
+    **winding_order** : :obj:`~WindingOrder`
+    **bounding_sphere** : :obj:`~BoundingSphere`
     **closed** : :obj:`~bool`
 
     :Returns:

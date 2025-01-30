@@ -119,40 +119,40 @@ Method detail
 
 
 
-.. py:method:: enable_control_parameter(self, param: CONTROL_ENGINE_CUSTOM) -> None
+.. py:method:: enable_control_parameter(self, param: ControlEngineCustom) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.EngineCustom.enable_control_parameter
 
     Enable the specified control parameter.
 
     :Parameters:
 
-    **param** : :obj:`~CONTROL_ENGINE_CUSTOM`
+    **param** : :obj:`~ControlEngineCustom`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: disable_control_parameter(self, param: CONTROL_ENGINE_CUSTOM) -> None
+.. py:method:: disable_control_parameter(self, param: ControlEngineCustom) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.EngineCustom.disable_control_parameter
 
     Disables the specified control parameter.
 
     :Parameters:
 
-    **param** : :obj:`~CONTROL_ENGINE_CUSTOM`
+    **param** : :obj:`~ControlEngineCustom`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_control_parameter_enabled(self, param: CONTROL_ENGINE_CUSTOM) -> bool
+.. py:method:: is_control_parameter_enabled(self, param: ControlEngineCustom) -> bool
     :canonical: ansys.stk.core.stkobjects.astrogator.EngineCustom.is_control_parameter_enabled
 
     Sees if the specified control is enabled.
 
     :Parameters:
 
-    **param** : :obj:`~CONTROL_ENGINE_CUSTOM`
+    **param** : :obj:`~ControlEngineCustom`
 
     :Returns:
 

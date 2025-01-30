@@ -67,7 +67,7 @@ Property detail
 
 .. py:property:: propulsion_mode
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicFixedWingPropulsion.propulsion_mode
-    :type: BASIC_FIXED_WING_PROPULSION_MODE
+    :type: BasicFixedWingPropulsionMode
 
     Gets or sets the option of whether to specify net thrust or net power.
 
@@ -163,14 +163,14 @@ Method detail
 
 
 
-.. py:method:: set_density_scaling(self, useScaling: bool, exponent: float) -> None
+.. py:method:: set_density_scaling(self, use_scaling: bool, exponent: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicFixedWingPropulsion.set_density_scaling
 
     Set the option to use density scaling and set the density ratio exponent.
 
     :Parameters:
 
-    **useScaling** : :obj:`~bool`
+    **use_scaling** : :obj:`~bool`
     **exponent** : :obj:`~float`
 
     :Returns:

@@ -56,7 +56,7 @@ Property detail
 
 .. py:property:: gain_type
     :canonical: ansys.stk.core.stkobjects.ElementConfigurationHfssEepFile.gain_type
-    :type: HFSS_FFD_GAIN_TYPE
+    :type: HFSSFarFieldDataGainType
 
     Gets or sets the gain type.
 

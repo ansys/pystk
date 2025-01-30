@@ -91,7 +91,7 @@ Property detail
 
 .. py:property:: minimize_site_procedure_time_diff
     :canonical: ansys.stk.core.stkobjects.aviator.SiteSTKObjectWaypoint.minimize_site_procedure_time_diff
-    :type: MINIMIZE_SITE_PROCEDURE_TIME_DIFF
+    :type: MinimizeSiteProcedureTimeDiff
 
     Gets or sets the mode to minimize the time difference between the procedure and site times.
 
@@ -103,7 +103,7 @@ Property detail
 
 .. py:property:: offset_mode
     :canonical: ansys.stk.core.stkobjects.aviator.SiteSTKObjectWaypoint.offset_mode
-    :type: STK_OBJECT_WAYPOINT_OFFSET_MODE
+    :type: STKObjectWaypointOffsetMode
 
     Gets or sets the mode to offset the site location relative from the STK Object.
 

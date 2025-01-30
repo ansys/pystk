@@ -69,19 +69,19 @@ Property detail
 
 .. py:property:: message_interpolation_type
     :canonical: ansys.stk.core.stkobjects.aviator.WindModelADDS.message_interpolation_type
-    :type: ADDS_MESSAGE_INTERPOLATION_TYPE
+    :type: ADDSMessageInterpolationType
 
     Gets or sets the message interpolation type.
 
 .. py:property:: message_extrapolation_type
     :canonical: ansys.stk.core.stkobjects.aviator.WindModelADDS.message_extrapolation_type
-    :type: ADDS_MESSAGE_EXTRAPOLATION_TYPE
+    :type: ADDSMessageExtrapolationType
 
     Gets or sets the message extrapolation type.
 
 .. py:property:: missing_message_type
     :canonical: ansys.stk.core.stkobjects.aviator.WindModelADDS.missing_message_type
-    :type: ADDS_MISSING_MESSAGE_TYPE
+    :type: ADDSMissingMessageType
 
     Gets or sets the missing message type.
 

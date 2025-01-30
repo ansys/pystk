@@ -48,7 +48,7 @@ Property detail
 
 .. py:property:: source_type
     :canonical: ansys.stk.core.stkobjects.Tileset3D.source_type
-    :type: TILESET_3D_SOURCE_TYPE
+    :type: Tileset3DSourceType
 
     Source type of the 3DTileset. A member of the AgE3DTilesetSourceType enumeration.
 

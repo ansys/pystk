@@ -79,7 +79,7 @@ Property detail
 
 .. py:property:: scan_mode
     :canonical: ansys.stk.core.stkobjects.SensorPointingSpinning.scan_mode
-    :type: SENSOR_SCAN_MODE
+    :type: SensorScanMode
 
     The scan mode of the sensor, a member of the AgESnScanMode enumeration.
 

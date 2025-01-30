@@ -56,19 +56,19 @@ Property detail
 
 .. py:property:: orbit_plane_source
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcSolarBetaAngle.orbit_plane_source
-    :type: CALC_OBJECT_ORBIT_PLANE_SOURCE
+    :type: CalculationObjectOrbitPlaneSource
 
     Selection of the satellite that will generate the orbit plane.
 
 .. py:property:: element_type
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcSolarBetaAngle.element_type
-    :type: CALC_OBJECT_ELEM
+    :type: CalculationObjectElement
 
     Choice of osculating or mean elements.
 
 .. py:property:: reference_selection
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcSolarBetaAngle.reference_selection
-    :type: CALC_OBJECT_REFERENCE
+    :type: CalculationObjectReference
 
     Gets or sets the reference object selection.
 
@@ -80,13 +80,13 @@ Property detail
 
 .. py:property:: sun_position
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcSolarBetaAngle.sun_position
-    :type: CALC_OBJECT_SUN_POSITION
+    :type: CalculationObjectSunPosition
 
     Gets or sets the type of the Sun location.
 
 .. py:property:: sign_convention
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcSolarBetaAngle.sign_convention
-    :type: CALC_OBJECT_ANGLE_SIGN
+    :type: CalculationObjectAngleSign
 
     Gets or sets the sign of the angle when the relative position has a positive component along the orbit normal.
 

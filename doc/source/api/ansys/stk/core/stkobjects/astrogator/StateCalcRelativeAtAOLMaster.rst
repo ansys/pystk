@@ -22,7 +22,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcRelativeAtAOLMaster.central_body_name`
               - Gets or sets the central body of the component.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcRelativeAtAOLMaster.calc_object_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcRelativeAtAOLMaster.calculation_object_name`
               - Gets or sets the calculation object of interest.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcRelativeAtAOLMaster.direction`
               - Gets or sets the direction to search for the desired value.
@@ -50,21 +50,21 @@ Property detail
 
     Gets or sets the central body of the component.
 
-.. py:property:: calc_object_name
-    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcRelativeAtAOLMaster.calc_object_name
+.. py:property:: calculation_object_name
+    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcRelativeAtAOLMaster.calculation_object_name
     :type: str
 
     Gets or sets the calculation object of interest.
 
 .. py:property:: direction
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcRelativeAtAOLMaster.direction
-    :type: CALC_OBJECT_DIRECTION
+    :type: CalculationObjectDirection
 
     Gets or sets the direction to search for the desired value.
 
 .. py:property:: reference_selection
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcRelativeAtAOLMaster.reference_selection
-    :type: CALC_OBJECT_REFERENCE
+    :type: CalculationObjectReference
 
     Gets or sets the reference object selection.
 

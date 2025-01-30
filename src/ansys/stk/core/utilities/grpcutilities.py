@@ -8,7 +8,7 @@ by batching together API commands that do not require return values.
 
 import typing
 
-from .exceptions import GrpcUtilitiesException
+from .exceptions import GrpcUtilitiesError
 from ..internal.apiutil import SupportsDeleteCallback
 try:
     from ..internal.grpcutil import GrpcClient, GrpcInterfaceFuture, GrpcInterfacePimpl
@@ -81,7 +81,7 @@ class GrpcCallBatcher(object):
         self._batching = False
         if max_batch is not None:
             if max_batch > GrpcCallBatcher._default_max_batch_size:
-                raise GrpcUtilitiesException(f"Batch size cannot exceed {GrpcCallBatcher._default_max_batch_size} due to gRPC message size restrictions.")
+                raise GrpcUtilitiesError(f"Batch size cannot exceed {GrpcCallBatcher._default_max_batch_size} due to gRPC message size restrictions.")
             self._max_batch = max_batch
         
     def __enter__(self):
@@ -99,7 +99,8 @@ class GrpcCallBatcher(object):
     def start_batching(self) -> None:
         """Explicitly start batching until stop_batching() is called."""
         if not self._disable_batching and not self._batching:
-            assert self._initialized, "The GrpcCallBatcher should be obtained from the STK application rather than constructed directly."
+            if not self._initialized:
+                raise RuntimeError("The GrpcCallBatcher should be obtained from the STK application rather than constructed directly.")
             GrpcClient.register_call_batcher(self)
             self._batching = True
 
@@ -155,7 +156,7 @@ class GrpcCallBatcher(object):
                         attr_name = superclass._property_names[future_provider]
                         break
             if attr_name is None:
-                raise GrpcUtilitiesException("Cannot create gRPC future; incorrect type.")
+                raise GrpcUtilitiesError("Cannot create gRPC future; incorrect type.")
             return getattr(source_obj, attr_name)
 
     def create_future(self, source_obj:typing.Any, future_provider:typing.Union[typing.Callable, property], future_type:typing.Any, *args) -> typing.Any:
@@ -170,12 +171,12 @@ class GrpcCallBatcher(object):
         if self._disable_batching:
             return GrpcCallBatcher._bypass_future_creation(source_obj, future_provider, *args)
         if not self._batching:
-            raise GrpcUtilitiesException("Batcher must be active to create futures.")
+            raise GrpcUtilitiesError("Batcher must be active to create futures.")
         if not callable(future_type):
-            raise GrpcUtilitiesException("Future class type must be a full STK Object type (e.g. Scenario, not Scenario).")
+            raise GrpcUtilitiesError("Future class type must be a full STK Object type (e.g. Scenario, not Scenario).")
         future = future_type()
         if not isinstance(future, SupportsDeleteCallback):
-            raise GrpcUtilitiesException("Future class type must be a full STK Object type (e.g. Scenario, not Scenario).")
+            raise GrpcUtilitiesError("Future class type must be a full STK Object type (e.g. Scenario, not Scenario).")
         intf_proxy = GrpcInterfaceFuture(self, self._next_future_id, source_obj, future_provider, *args)
         intf_pimpl = GrpcInterfacePimpl(intf_proxy)
         future._private_init(intf_pimpl)

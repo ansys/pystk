@@ -35,7 +35,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.IWaveformSelectionStrategy.type
-    :type: WAVEFORM_SELECTION_STRATEGY_TYPE
+    :type: WaveformSelectionStrategyType
 
     Gets the waveform selection strategy type.
 

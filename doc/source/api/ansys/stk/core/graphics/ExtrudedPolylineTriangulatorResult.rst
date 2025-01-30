@@ -54,7 +54,7 @@ Property detail
 
 .. py:property:: boundary_positions_winding_order
     :canonical: ansys.stk.core.graphics.ExtrudedPolylineTriangulatorResult.boundary_positions_winding_order
-    :type: WINDING_ORDER
+    :type: WindingOrder
 
     Gets the winding order of top boundary positions and bottom boundary positions.
 

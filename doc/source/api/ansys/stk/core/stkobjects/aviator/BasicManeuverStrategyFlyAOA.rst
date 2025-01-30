@@ -54,13 +54,13 @@ Property detail
 
 .. py:property:: turn_direction
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyFlyAOA.turn_direction
-    :type: FLY_AOA_LEFT_RIGHT
+    :type: FlyAOALeftRight
 
     Gets or sets the roll turn direction for a Fly AOA basic maneuver strategy.
 
 .. py:property:: roll_rate_mode
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyFlyAOA.roll_rate_mode
-    :type: PERFORMANCE_MODEL_OVERRIDE
+    :type: PerformanceModelOverride
 
     Gets or sets the roll rate mode for a Fly AOA basic maneuver strategy.
 

@@ -9,10 +9,6 @@ CloudsAndFogFadingLossModel
 
 .. py:currentmodule:: CloudsAndFogFadingLossModel
 
-Overview
---------
-
-
 
 Import detail
 -------------

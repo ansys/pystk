@@ -28,7 +28,6 @@ Overview
               - Return an Ephemeris file of the STK Binary ephemeris type for export.
 
 
-
 Import detail
 -------------
 
@@ -41,23 +40,23 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: get_ephemeris_stk_export_tool(self) -> VehicleEphemerisStkExportTool
+.. py:method:: get_ephemeris_stk_export_tool(self) -> VehicleEphemerisExportTool
     :canonical: ansys.stk.core.stkobjects.ShipExportTools.get_ephemeris_stk_export_tool
 
     Return the ephemeris export tool.
 
     :Returns:
 
-        :obj:`~VehicleEphemerisStkExportTool`
+        :obj:`~VehicleEphemerisExportTool`
 
-.. py:method:: get_propagator_definition_export_tool(self) -> VehiclePropagationDefinitionExportTool
+.. py:method:: get_propagator_definition_export_tool(self) -> PropagatorDefinitionExportTool
     :canonical: ansys.stk.core.stkobjects.ShipExportTools.get_propagator_definition_export_tool
 
     Return the Prop Def export tool.
 
     :Returns:
 
-        :obj:`~VehiclePropagationDefinitionExportTool`
+        :obj:`~PropagatorDefinitionExportTool`
 
 .. py:method:: get_attitude_export_tool(self) -> VehicleAttitudeExportTool
     :canonical: ansys.stk.core.stkobjects.ShipExportTools.get_attitude_export_tool
@@ -68,12 +67,12 @@ Method detail
 
         :obj:`~VehicleAttitudeExportTool`
 
-.. py:method:: get_ephemeris_stk_binary_export_tool(self) -> VehicleEphemerisStkBinaryExportTool
+.. py:method:: get_ephemeris_stk_binary_export_tool(self) -> VehicleEphemerisBinaryExportTool
     :canonical: ansys.stk.core.stkobjects.ShipExportTools.get_ephemeris_stk_binary_export_tool
 
     Return an Ephemeris file of the STK Binary ephemeris type for export.
 
     :Returns:
 
-        :obj:`~VehicleEphemerisStkBinaryExportTool`
+        :obj:`~VehicleEphemerisBinaryExportTool`
 

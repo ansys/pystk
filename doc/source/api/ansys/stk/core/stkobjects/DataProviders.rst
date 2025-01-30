@@ -35,7 +35,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviders.count`
               - Returns an element in the collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviders._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviders._new_enum`
               - Returns an enumerator for the collection.
 
 
@@ -57,8 +57,8 @@ Property detail
 
     Returns an element in the collection.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.DataProviders._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.DataProviders._new_enum
     :type: EnumeratorProxy
 
     Returns an enumerator for the collection.
@@ -68,28 +68,28 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, indexOrName: typing.Any) -> IDataProviderInfo
+.. py:method:: item(self, index_or_name: typing.Any) -> IDataProviderInfo
     :canonical: ansys.stk.core.stkobjects.DataProviders.item
 
     Given an index, returns an element in the collection.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 
         :obj:`~IDataProviderInfo`
 
 
-.. py:method:: contains(self, dataProviderName: str) -> bool
+.. py:method:: contains(self, data_provider_name: str) -> bool
     :canonical: ansys.stk.core.stkobjects.DataProviders.contains
 
     Determine whether the collection contains a specific data provider.
 
     :Parameters:
 
-    **dataProviderName** : :obj:`~str`
+    **data_provider_name** : :obj:`~str`
 
     :Returns:
 

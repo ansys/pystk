@@ -28,9 +28,7 @@ class PlaceSnippets(CodeSnippetsTestBase):
     # region TestSetUp
     def setUp(self):
         PlaceSnippets.m_Object = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-                STK_OBJECT_TYPE.PLACE, PlaceSnippets.m_DefaultName
-            ),
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STKObjectType.PLACE, PlaceSnippets.m_DefaultName),
             Place,
         )
 
@@ -38,30 +36,30 @@ class PlaceSnippets(CodeSnippetsTestBase):
 
     # region TestTearDown
     def tearDown(self):
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.PLACE, PlaceSnippets.m_DefaultName)
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STKObjectType.PLACE, PlaceSnippets.m_DefaultName)
         PlaceSnippets.m_Object = None
 
     # endregion
 
     # region CreateDefaultPlaceOnCurrentScenarioCentralBody
     def test_CreateDefaultPlaceOnCurrentScenarioCentralBody(self):
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.PLACE, PlaceSnippets.m_DefaultName)
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STKObjectType.PLACE, PlaceSnippets.m_DefaultName)
         self.CreateDefaultPlaceOnCurrentScenarioCentralBody(CodeSnippetsTestBase.m_Root)
 
     def CreateDefaultPlaceOnCurrentScenarioCentralBody(self, root: "StkObjectRoot"):
         # Create a place on current scenario central body
-        place: "Place" = clr.CastAs(root.current_scenario.children.new(STK_OBJECT_TYPE.PLACE, "MyPlace"), Place)
+        place: "Place" = clr.CastAs(root.current_scenario.children.new(STKObjectType.PLACE, "MyPlace"), Place)
 
     # endregion
 
     # region CreatePlaceOnEarth
     def test_CreatePlaceOnEarth(self):
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.PLACE, PlaceSnippets.m_DefaultName)
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STKObjectType.PLACE, PlaceSnippets.m_DefaultName)
         self.CreatePlaceOnEarth(CodeSnippetsTestBase.m_Root)
 
     def CreatePlaceOnEarth(self, root: "StkObjectRoot"):
         place: "Place" = clr.CastAs(
-            root.current_scenario.children.new_on_central_body(STK_OBJECT_TYPE.PLACE, "MyPlace", "Earth"), Place
+            root.current_scenario.children.new_on_central_body(STKObjectType.PLACE, "MyPlace", "Earth"), Place
         )
 
         # Assuming unit preferences are set to radians for latitude and longitude and km for distance
@@ -75,7 +73,7 @@ class PlaceSnippets(CodeSnippetsTestBase):
 
     def CreatePlaceOnOtherPlanet(self, root: "StkObjectRoot"):
         placeObject: "Place" = clr.CastAs(
-            root.current_scenario.children.new_on_central_body(STK_OBJECT_TYPE.PLACE, "Place1", "Mars"), Place
+            root.current_scenario.children.new_on_central_body(STKObjectType.PLACE, "Place1", "Mars"), Place
         )
 
         # Assuming unit preferences are set to radians for latitude and longitude and km for distance
@@ -89,7 +87,7 @@ class PlaceSnippets(CodeSnippetsTestBase):
 
     def CreatePlaceFromFacilityDatabase(self, root: "StkObjectRoot"):
         # Get STK database location using Connect
-        result: "ExecCmdResult" = root.execute_command("GetDirectory / Database Facility")
+        result: "ExecuteCommandResult" = root.execute_command("GetDirectory / Database Facility")
         facDataDir: str = result[0]
         filelocation: str = Path.Combine(facDataDir, "stkFacility.fd")
 

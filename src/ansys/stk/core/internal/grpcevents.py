@@ -10,10 +10,11 @@ __all__ = [ "GrpcEventHandlerImpl",
             "IStkGraphicsImageCollectionEventGrpcHandler",
             "IStkGraphicsTerrainCollectionEventGrpcHandler"]
 
-from .grpcutil import *
+import typing
+
+from .grpcutil import GrpcInterface
 from .coclassutil import AgTypeNameMap
 from . import AgGrpcServices_pb2
-from ..utilities.exceptions import *
 
 class _iadd_callback(object):
     def __init__(self, intf, event_name, handler, callback_func):
@@ -98,213 +99,123 @@ class IStkObjectRootEventGrpcHandler(GrpcEventHandlerImpl):
 
     def _on_scenario_new(self, path:str) -> None:
         for callback in self._events["OnScenarioNew"]._callbacks:
-            try:
-                callback(path)
-            except:
-                pass
+            callback(path)
                 
     def _on_scenario_load(self, path:str) -> None:
         for callback in self._events["OnScenarioLoad"]._callbacks:
-            try:
-                callback(path)
-            except:
-                pass
+            callback(path)
     
     def _on_scenario_close(self) -> None:
         for callback in self._events["OnScenarioClose"]._callbacks:
-            try:
-                callback()
-            except:
-                pass
+            callback()
     
     def _on_scenario_save(self, path:str) -> None:
         for callback in self._events["OnScenarioSave"]._callbacks:
-            try:
-                callback(path)
-            except:
-                pass
+            callback(path)
     
     def _on_log_message(self, message:str, msgType:int, errorCode:int, fileName:str, lineNo:int, dispID:int) -> None:
         for callback in self._events["OnLogMessage"]._callbacks:
-            try:
-                callback(message, AgTypeNameMap["LOG_MESSAGE_TYPE"](msgType), errorCode, fileName, lineNo, AgTypeNameMap["LOG_MESSAGE_DISP_ID"](dispID))
-            except:
-                pass
+            callback(message, AgTypeNameMap["LogMessageType"](msgType), errorCode, fileName, lineNo, AgTypeNameMap["LogMessageDisplayID"](dispID))
     
     def _on_anim_update(self, timeEpSec:float) -> None:
         for callback in self._events["OnAnimUpdate"]._callbacks:
-            try:
-                callback(timeEpSec)
-            except:
-                pass
+            callback(timeEpSec)
     
     def _on_stk_object_added(self, Sender:typing.Any) -> None:
         for callback in self._events["OnStkObjectAdded"]._callbacks:
-            try:
-                callback(Sender)
-            except:
-                pass
+            callback(Sender)
                 
     def _on_stk_object_deleted(self, Sender:typing.Any) -> None:
         for callback in self._events["OnStkObjectDeleted"]._callbacks:
-            try:
-                callback(Sender)
-            except:
-                pass
+            callback(Sender)
                 
     def _on_stk_object_renamed(self, Sender:typing.Any, OldPath:str, NewPath:str) -> None:
         for callback in self._events["OnStkObjectRenamed"]._callbacks:
-            try:
-                callback(Sender, OldPath, NewPath)
-            except:
-                pass
+            callback(Sender, OldPath, NewPath)
                 
     def _on_animation_playback(self, CurrentTime:float, eAction:int, eDirection:int) -> None:
         for callback in self._events["OnAnimationPlayback"]._callbacks:
-            try:
-                callback(CurrentTime, AgTypeNameMap["ANIMATION_ACTIONS"](eAction), AgTypeNameMap["ANIMATION_DIRECTIONS"](eDirection))
-            except:
-                pass
+            callback(CurrentTime, AgTypeNameMap["AnimationActionType"](eAction), AgTypeNameMap["AnimationDirectionType"](eDirection))
                 
     def _on_animation_rewind(self) -> None:
         for callback in self._events["OnAnimationRewind"]._callbacks:
-            try:
-                callback()
-            except:
-                pass
+            callback()
             
     def _on_animation_pause(self, CurrentTime:float) -> None:
         for callback in self._events["OnAnimationPause"]._callbacks:
-            try:
-                callback(CurrentTime)
-            except:
-                pass
+            callback(CurrentTime)
                 
-    def _on_scenario_before_save(self, pArgs:"ScenarioBeforeSaveEventArgs") -> None:
+    def _on_scenario_before_save(self, pArgs:"ScenarioBeforeSaveEventArguments") -> None:
         for callback in self._events["OnScenarioBeforeSave"]._callbacks:
-            try:
-                callback(pArgs)
-            except:
-                pass
+            callback(pArgs)
                 
     def _on_animation_step(self, CurrentTime:float) -> None:
         for callback in self._events["OnAnimationStep"]._callbacks:
-            try:
-                callback(CurrentTime)
-            except:
-                pass
+            callback(CurrentTime)
                 
     def _on_animation_step_back(self, CurrentTime:float) -> None:
         for callback in self._events["OnAnimationStepBack"]._callbacks:
-            try:
-                callback(CurrentTime)
-            except:
-                pass
+            callback(CurrentTime)
                 
     def _on_animation_slower(self) -> None:
         for callback in self._events["OnAnimationSlower"]._callbacks:
-            try:
-                callback()
-            except:
-                pass
+            callback()
             
     def _on_animation_faster(self) -> None:
         for callback in self._events["OnAnimationFaster"]._callbacks:
-            try:
-                callback()
-            except:
-                pass
+            callback()
             
-    def _on_percent_complete_update(self, pArgs:"PctCmpltEventArgs") -> None:
+    def _on_percent_complete_update(self, pArgs:"ProgressBarEventArguments") -> None:
         for callback in self._events["OnPercentCompleteUpdate"]._callbacks:
-            try:
-                callback(pArgs)
-            except:
-                pass
+            callback(pArgs)
                 
     def _on_percent_complete_end(self) -> None:
         for callback in self._events["OnPercentCompleteEnd"]._callbacks:
-            try:
-                callback()
-            except:
-                pass
+            callback()
             
     def _on_percent_complete_begin(self) -> None:
         for callback in self._events["OnPercentCompleteBegin"]._callbacks:
-            try:
-                callback()
-            except:
-                pass
+            callback()
             
-    def _on_stk_object_changed(self, pArgs:"StkObjectChangedEventArgs") -> None:
+    def _on_stk_object_changed(self, pArgs:"StkObjectChangedEventArguments") -> None:
         for callback in self._events["OnStkObjectChanged"]._callbacks:
-            try:
-                callback(pArgs)
-            except:
-                pass
+            callback(pArgs)
                 
     def _on_scenario_before_close(self) -> None:
         for callback in self._events["OnScenarioBeforeClose"]._callbacks:
-            try:
-                callback()
-            except:
-                pass
+            callback()
             
-    def _on_stk_object_pre_delete(self, pArgs:"StkObjectPreDeleteEventArgs") -> None:
+    def _on_stk_object_pre_delete(self, pArgs:"StkObjectPreDeleteEventArguments") -> None:
         for callback in self._events["OnStkObjectPreDelete"]._callbacks:
-            try:
-                callback(pArgs)
-            except:
-                pass
+            callback(pArgs)
                 
     def _on_stk_object_start_3d_editing(self, path:str) -> None:
         for callback in self._events["OnStkObjectStart3dEditing"]._callbacks:
-            try:
-                callback(path)
-            except:
-                pass
+            callback(path)
             
     def _on_stk_object_stop_3d_editing(self, path:str) -> None:
         for callback in self._events["OnStkObjectStop3dEditing"]._callbacks:
-            try:
-                callback(path)
-            except:
-                pass
+            callback(path)
             
     def _on_stk_object_apply_3d_editing(self, path:str) -> None:
         for callback in self._events["OnStkObjectApply3dEditing"]._callbacks:
-            try:
-                callback(path)
-            except:
-                pass
+            callback(path)
             
     def _on_stk_object_cancel_3d_editing(self, path:str) -> None:
         for callback in self._events["OnStkObjectCancel3dEditing"]._callbacks:
-            try:
-                callback(path)
-            except:
-                pass
+            callback(path)
             
-    def _on_stk_object_pre_cut(self, pArgs:"StkObjectCutCopyPasteEventArgs") -> None:
+    def _on_stk_object_pre_cut(self, pArgs:"StkObjectCutCopyPasteEventArguments") -> None:
         for callback in self._events["OnStkObjectPreCut"]._callbacks:
-            try:
-                callback(pArgs)
-            except:
-                pass
+            callback(pArgs)
             
-    def _on_stk_object_copy(self, pArgs:"StkObjectCutCopyPasteEventArgs") -> None:
+    def _on_stk_object_copy(self, pArgs:"StkObjectCutCopyPasteEventArguments") -> None:
         for callback in self._events["OnStkObjectCopy"]._callbacks:
-            try:
-                callback(pArgs)
-            except:
-                pass
+            callback(pArgs)
             
-    def _on_stk_object_paste(self, pArgs:"StkObjectCutCopyPasteEventArgs") -> None:
+    def _on_stk_object_paste(self, pArgs:"StkObjectCutCopyPasteEventArguments") -> None:
         for callback in self._events["OnStkObjectPaste"]._callbacks:
-            try:
-                callback(pArgs)
-            except:
-                pass
+            callback(pArgs)
       
     
 ################################################################################
@@ -332,101 +243,59 @@ class ISTKXApplicationEventGrpcHandler(GrpcEventHandlerImpl):
 
     def _on_scenario_new(self, path:str) -> None:
         for callback in self._events["OnScenarioNew"]._callbacks:
-            try:
-                callback(path)
-            except:
-                pass
+            callback(path)
                 
     def _on_scenario_load(self, path:str) -> None:
         for callback in self._events["OnScenarioLoad"]._callbacks:
-            try:
-                callback(path)
-            except:
-                pass
+            callback(path)
     
     def _on_scenario_close(self) -> None:
         for callback in self._events["OnScenarioClose"]._callbacks:
-            try:
-                callback()
-            except:
-                pass
+            callback()
     
     def _on_scenario_save(self, path:str) -> None:
         for callback in self._events["OnScenarioSave"]._callbacks:
-            try:
-                callback(path)
-            except:
-                pass
+            callback(path)
     
     def _on_log_message(self, message:str, msgType:int, errorCode:int, fileName:str, lineNo:int, dispID:int) -> None:
         for callback in self._events["OnLogMessage"]._callbacks:
-            try:
-                callback(message, AgTypeNameMap["LOG_MESSAGE_TYPE"](msgType), errorCode, fileName, lineNo, AgTypeNameMap["LOG_MESSAGE_DISP_ID"](dispID))
-            except:
-                pass
+            callback(message, AgTypeNameMap["LogMessageType"](msgType), errorCode, fileName, lineNo, AgTypeNameMap["LogMessageDisplayID"](dispID))
     
     def _on_anim_update(self, timeEpSec:float) -> None:
         for callback in self._events["OnAnimUpdate"]._callbacks:
-            try:
-                callback(timeEpSec)
-            except:
-                pass
+            callback(timeEpSec)
     
     def _on_new_globe_ctrl_request(self, SceneID:int) -> None:
         for callback in self._events["OnNewGlobeCtrlRequest"]._callbacks:
-            try:
-                callback(SceneID)
-            except:
-                pass
+            callback(SceneID)
     
     def _on_new_map_ctrl_request(self, WinID:int) -> None:
         for callback in self._events["OnNewMapCtrlRequest"]._callbacks:
-            try:
-                callback(WinID)
-            except:
-                pass
+            callback(WinID)
         
     def _on_before_new_scenario(self, Scenario:str) -> None:
         for callback in self._events["OnBeforeNewScenario"]._callbacks:
-            try:
-                callback(Scenario)
-            except:
-                pass
+            callback(Scenario)
         
     def _on_before_load_scenario(self, Scenario:str) -> None:
         for callback in self._events["OnBeforeLoadScenario"]._callbacks:
-            try:
-                callback(Scenario)
-            except:
-                pass
+            callback(Scenario)
         
     def _on_begin_scenario_close(self) -> None:
         for callback in self._events["OnBeginScenarioClose"]._callbacks:
-            try:
-                callback()
-            except:
-                pass
+            callback()
     
     def _on_new_gfx_analysis_ctrl_request(self, SceneID:int, GfxAnalysisMode:int) -> None:
         for callback in self._events["OnNewGfxAnalysisCtrlRequest"]._callbacks:
-            try:
-                callback(SceneID, AgTypeNameMap["GRAPHICS_2D_ANALYSIS_MODE"](GfxAnalysisMode))
-            except:
-                pass
+            callback(SceneID, AgTypeNameMap["Graphics2DAnalysisMode"](GfxAnalysisMode))
     
     def _on_ssl_certificate_server_error(self, pArgs:"STKXSSLCertificateErrorEventArgs") -> None:
         for callback in self._events["OnSSLCertificateServerError"]._callbacks:
-            try:
-                callback(pArgs)
-            except:
-                pass
+            callback(pArgs)
         
     def _on_con_control_quit_received(self, pArgs:"STKXConControlQuitReceivedEventArgs") -> None:
         for callback in self._events["OnConControlQuitReceived"]._callbacks:
-            try:
-                callback(pArgs)
-            except:
-                pass
+            callback(pArgs)
 
 
 ################################################################################
@@ -441,10 +310,7 @@ class IStkGraphicsSceneEventGrpcHandler(GrpcEventHandlerImpl):
 
     def _rendering(self, Sender:typing.Any, Args:"RenderingEventArgs") -> None:
         for callback in self._events["Rendering"]._callbacks:
-            try:
-                callback(Sender, Args)
-            except:
-                pass
+            callback(Sender, Args)
 
                 
 ################################################################################
@@ -459,10 +325,7 @@ class IStkGraphicsKmlGraphicsEventGrpcHandler(GrpcEventHandlerImpl):
 
     def _document_loaded(self, Sender:typing.Any, Args:"KmlDocumentLoadedEventArgs") -> None:
         for callback in self._events["DocumentLoaded"]._callbacks:
-            try:
-                callback(Sender, Args)
-            except:
-                pass
+            callback(Sender, Args)
 
 
 ################################################################################
@@ -477,10 +340,7 @@ class IStkGraphicsImageCollectionEventGrpcHandler(GrpcEventHandlerImpl):
 
     def _add_complete(self, Sender:typing.Any, Args:"GlobeImageOverlayAddCompleteEventArgs") -> None:
         for callback in self._events["AddComplete"]._callbacks:
-            try:
-                callback(Sender, Args)
-            except:
-                pass
+            callback(Sender, Args)
 
                 
 ################################################################################
@@ -495,10 +355,7 @@ class IStkGraphicsTerrainCollectionEventGrpcHandler(GrpcEventHandlerImpl):
 
     def _add_complete(self, Sender:typing.Any, Args:"TerrainOverlayAddCompleteEventArgs") -> None:
         for callback in self._events["AddComplete"]._callbacks:
-            try:
-                callback(Sender, Args)
-            except:
-                pass
+            callback(Sender, Args)
 
 
 ################################################################################

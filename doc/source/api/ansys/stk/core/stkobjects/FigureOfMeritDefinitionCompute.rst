@@ -9,10 +9,6 @@ FigureOfMeritDefinitionCompute
 
 .. py:currentmodule:: FigureOfMeritDefinitionCompute
 
-Overview
---------
-
-
 
 Import detail
 -------------

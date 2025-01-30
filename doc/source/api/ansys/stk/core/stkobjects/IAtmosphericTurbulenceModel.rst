@@ -35,7 +35,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.IAtmosphericTurbulenceModel.type
-    :type: ATMOSPHERIC_TURBULENCE_MODEL_TYPE
+    :type: AtmosphericTurbulenceModelType
 
     Gets the model type enumeration.
 

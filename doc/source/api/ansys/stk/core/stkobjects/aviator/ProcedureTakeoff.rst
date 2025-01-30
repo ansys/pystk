@@ -79,7 +79,7 @@ Property detail
 
 .. py:property:: takeoff_mode
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureTakeoff.takeoff_mode
-    :type: TAKEOFF_MODE
+    :type: TakeoffMode
 
     Gets or sets the type of takeoff the aircraft will perform.
 

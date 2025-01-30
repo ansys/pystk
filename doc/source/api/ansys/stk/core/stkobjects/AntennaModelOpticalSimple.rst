@@ -9,10 +9,6 @@ AntennaModelOpticalSimple
 
 .. py:currentmodule:: AntennaModelOpticalSimple
 
-Overview
---------
-
-
 
 Import detail
 -------------

@@ -129,7 +129,7 @@ Property detail
 
 .. py:property:: fuel_flow_type
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFormationRecover.fuel_flow_type
-    :type: FUEL_FLOW_TYPE
+    :type: FuelFlowType
 
     Gets or sets the source used to calculate the fuel flow for the maneuver.
 
@@ -171,7 +171,7 @@ Property detail
 
 .. py:property:: flight_mode
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFormationRecover.flight_mode
-    :type: PHASE_OF_FLIGHT
+    :type: PhaseOfFlight
 
     Gets or sets the type of performance model that the aircraft will use to fly the maneuver.
 
@@ -195,7 +195,7 @@ Property detail
 
 .. py:property:: delay_turn_direction
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFormationRecover.delay_turn_direction
-    :type: DELAY_TURN_DIRECTION
+    :type: DelayTurnDirection
 
     Gets or sets the turn direction of the delay.
 
@@ -214,14 +214,14 @@ Method detail
 
 
 
-.. py:method:: get_minimum_time(self, considerPrevProc: bool) -> typing.Any
+.. py:method:: get_minimum_time(self, consider_prev_proc: bool) -> typing.Any
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFormationRecover.get_minimum_time
 
     Get the minimum time at which formation might be possible. Opt whether to consider previous procedure(s) for the minimum time.
 
     :Parameters:
 
-    **considerPrevProc** : :obj:`~bool`
+    **consider_prev_proc** : :obj:`~bool`
 
     :Returns:
 
@@ -229,16 +229,16 @@ Method detail
 
 
 
-.. py:method:: find_first_valid_start_time(self, minTime: typing.Any, maxTime: typing.Any, stepTime: float) -> typing.Any
+.. py:method:: find_first_valid_start_time(self, min_time: typing.Any, max_time: typing.Any, step_time: float) -> typing.Any
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFormationRecover.find_first_valid_start_time
 
     Have Aviator calculate the earliest valid formation time.
 
     :Parameters:
 
-    **minTime** : :obj:`~typing.Any`
-    **maxTime** : :obj:`~typing.Any`
-    **stepTime** : :obj:`~float`
+    **min_time** : :obj:`~typing.Any`
+    **max_time** : :obj:`~typing.Any`
+    **step_time** : :obj:`~float`
 
     :Returns:
 

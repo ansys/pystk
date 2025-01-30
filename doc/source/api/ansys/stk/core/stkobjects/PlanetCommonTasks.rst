@@ -24,7 +24,6 @@ Overview
               - Specify the planet using a central body and a desired ephemeris source.
 
 
-
 Import detail
 -------------
 
@@ -50,15 +49,15 @@ Method detail
 
         :obj:`~PlanetPositionFile`
 
-.. py:method:: set_position_source_central_body(self, centralBody: str, ephemSource: EPHEM_SOURCE_TYPE) -> PlanetPositionCentralBody
+.. py:method:: set_position_source_central_body(self, central_body: str, ephem_source: EphemSourceType) -> PlanetPositionCentralBody
     :canonical: ansys.stk.core.stkobjects.PlanetCommonTasks.set_position_source_central_body
 
     Specify the planet using a central body and a desired ephemeris source.
 
     :Parameters:
 
-    **centralBody** : :obj:`~str`
-    **ephemSource** : :obj:`~EPHEM_SOURCE_TYPE`
+    **central_body** : :obj:`~str`
+    **ephem_source** : :obj:`~EphemSourceType`
 
     :Returns:
 

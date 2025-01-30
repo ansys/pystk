@@ -9,10 +9,6 @@ SpatialAnalysisToolVolume
 
 .. py:currentmodule:: SpatialAnalysisToolVolume
 
-Overview
---------
-
-
 
 Import detail
 -------------

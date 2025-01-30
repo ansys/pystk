@@ -34,7 +34,7 @@ Overview
               - Gets or sets the flag to use noise due to the rain.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaNoiseTemperature.use_clouds_fog`
               - Gets or sets the flag to use noise due to the clouds and fog.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaNoiseTemperature.use_tropo_scint`
+            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaNoiseTemperature.use_tropospheric_scintillation`
               - Gets or sets the flag to use noise due to the tropospheric scintillation.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaNoiseTemperature.use_cosmic_background`
               - Gets or sets the flag to use noise due to the cosmic background.
@@ -46,9 +46,9 @@ Overview
               - Gets or sets additional misc. noise temperature.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaNoiseTemperature.use_external`
               - Gets or sets the flag to use noise due to an external source.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaNoiseTemperature.external_noise_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaNoiseTemperature.external_noise_filename`
               - Gets or sets the external noise file path.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaNoiseTemperature.use_iono_fading`
+            * - :py:attr:`~ansys.stk.core.stkobjects.AntennaNoiseTemperature.use_ionospheric_fading`
               - Gets or sets the flag to use noise due to the ionospheric fading.
 
 
@@ -66,7 +66,7 @@ Property detail
 
 .. py:property:: compute_type
     :canonical: ansys.stk.core.stkobjects.AntennaNoiseTemperature.compute_type
-    :type: NOISE_TEMP_COMPUTE_TYPE
+    :type: NoiseTemperatureComputeType
 
     Gets or sets the system noise temperature compute type.
 
@@ -112,8 +112,8 @@ Property detail
 
     Gets or sets the flag to use noise due to the clouds and fog.
 
-.. py:property:: use_tropo_scint
-    :canonical: ansys.stk.core.stkobjects.AntennaNoiseTemperature.use_tropo_scint
+.. py:property:: use_tropospheric_scintillation
+    :canonical: ansys.stk.core.stkobjects.AntennaNoiseTemperature.use_tropospheric_scintillation
     :type: bool
 
     Gets or sets the flag to use noise due to the tropospheric scintillation.
@@ -148,14 +148,14 @@ Property detail
 
     Gets or sets the flag to use noise due to an external source.
 
-.. py:property:: external_noise_file
-    :canonical: ansys.stk.core.stkobjects.AntennaNoiseTemperature.external_noise_file
+.. py:property:: external_noise_filename
+    :canonical: ansys.stk.core.stkobjects.AntennaNoiseTemperature.external_noise_filename
     :type: str
 
     Gets or sets the external noise file path.
 
-.. py:property:: use_iono_fading
-    :canonical: ansys.stk.core.stkobjects.AntennaNoiseTemperature.use_iono_fading
+.. py:property:: use_ionospheric_fading
+    :canonical: ansys.stk.core.stkobjects.AntennaNoiseTemperature.use_ionospheric_fading
     :type: bool
 
     Gets or sets the flag to use noise due to the ionospheric fading.

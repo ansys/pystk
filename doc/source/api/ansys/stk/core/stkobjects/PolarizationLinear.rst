@@ -9,10 +9,6 @@ PolarizationLinear
 
 .. py:currentmodule:: PolarizationLinear
 
-Overview
---------
-
-
 
 Import detail
 -------------

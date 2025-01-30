@@ -9,10 +9,6 @@ DAFIFWaypoint
 
 .. py:currentmodule:: DAFIFWaypoint
 
-Overview
---------
-
-
 
 Import detail
 -------------

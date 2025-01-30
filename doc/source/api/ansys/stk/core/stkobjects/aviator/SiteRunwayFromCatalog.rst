@@ -28,7 +28,6 @@ Overview
               - Get the site interface.
 
 
-
 Import detail
 -------------
 
@@ -50,14 +49,14 @@ Method detail
 
         :obj:`~ICatalogRunway`
 
-.. py:method:: set_catalog_runway(self, pVal: ICatalogRunway) -> None
+.. py:method:: set_catalog_runway(self, value: ICatalogRunway) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.SiteRunwayFromCatalog.set_catalog_runway
 
     Set the catalog runway.
 
     :Parameters:
 
-    **pVal** : :obj:`~ICatalogRunway`
+    **value** : :obj:`~ICatalogRunway`
 
     :Returns:
 

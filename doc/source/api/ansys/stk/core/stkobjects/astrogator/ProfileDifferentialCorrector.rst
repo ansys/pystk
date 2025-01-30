@@ -58,7 +58,7 @@ Overview
               - Returns the Scripting tool for the sequence.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileDifferentialCorrector.root_finding_algorithm`
               - Gets or sets the root-finding algorithm to use.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileDifferentialCorrector.num_iterations`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileDifferentialCorrector.number_of_iterations`
               - Get the number of iterations of the last run.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileDifferentialCorrector.targeter_graphs`
               - Graphs.
@@ -104,7 +104,7 @@ Property detail
 
 .. py:property:: convergence_criteria
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileDifferentialCorrector.convergence_criteria
-    :type: CONVERGENCE_CRITERIA
+    :type: ConvergenceCriteria
 
     Gets or sets the convergence criteria.
 
@@ -152,7 +152,7 @@ Property detail
 
 .. py:property:: derivative_calc_method
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileDifferentialCorrector.derivative_calc_method
-    :type: DERIVE_CALC_METHOD
+    :type: DerivativeCalculationMethod
 
     Gets or sets the derivative calculation method.
 
@@ -176,7 +176,7 @@ Property detail
 
 .. py:property:: draw_perturbation
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileDifferentialCorrector.draw_perturbation
-    :type: DRAW_PERTURBATION
+    :type: DrawPerturbation
 
     Defines the display of perturbations in the 2D and 3D Graphics windows, if you have set Astrogator to draw while calculating.
 
@@ -188,12 +188,12 @@ Property detail
 
 .. py:property:: root_finding_algorithm
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileDifferentialCorrector.root_finding_algorithm
-    :type: ROOT_FINDING_ALGORITHM
+    :type: RootFindingAlgorithm
 
     Gets or sets the root-finding algorithm to use.
 
-.. py:property:: num_iterations
-    :canonical: ansys.stk.core.stkobjects.astrogator.ProfileDifferentialCorrector.num_iterations
+.. py:property:: number_of_iterations
+    :canonical: ansys.stk.core.stkobjects.astrogator.ProfileDifferentialCorrector.number_of_iterations
     :type: int
 
     Get the number of iterations of the last run.

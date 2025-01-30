@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcDifference.calc_object_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcDifference.calculation_object_name`
               - Gets or sets the calculation object.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcDifference.difference_order`
               - Gets or sets the order of the difference calculation.
@@ -38,15 +38,15 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: calc_object_name
-    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcDifference.calc_object_name
+.. py:property:: calculation_object_name
+    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcDifference.calculation_object_name
     :type: str
 
     Gets or sets the calculation object.
 
 .. py:property:: difference_order
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcDifference.difference_order
-    :type: DIFFERENCE_ORDER
+    :type: DifferenceOrder
 
     Gets or sets the order of the difference calculation.
 

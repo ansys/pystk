@@ -131,7 +131,7 @@ Property detail
 
 .. py:property:: turn_direction
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStationkeeping.turn_direction
-    :type: TURN_DIRECTION
+    :type: TurnDirection
 
     Define if the aircraft turns left or right into the holding circle.
 
@@ -143,7 +143,7 @@ Property detail
 
 .. py:property:: stop_condition
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStationkeeping.stop_condition
-    :type: STATIONKEEPING_STOP_CONDITION
+    :type: StationkeepingStopCondition
 
     Gets or sets the stopping condition for the maneuver.
 
@@ -179,7 +179,7 @@ Property detail
 
 .. py:property:: control_limit_mode
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStationkeeping.control_limit_mode
-    :type: BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT
+    :type: BasicManeuverStrategyNavigationControlLimit
 
     Get the method to define the control limits of the aircraft during the maneuver.
 
@@ -250,15 +250,15 @@ Method detail
 
 
 
-.. py:method:: set_control_limit(self, controlLimitMode: BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT, controlLimitValue: float) -> None
+.. py:method:: set_control_limit(self, control_limit_mode: BasicManeuverStrategyNavigationControlLimit, control_limit_value: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStationkeeping.set_control_limit
 
     Set the method and corresponding value to define the control limits of the aircraft during the maneuver.
 
     :Parameters:
 
-    **controlLimitMode** : :obj:`~BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT`
-    **controlLimitValue** : :obj:`~float`
+    **control_limit_mode** : :obj:`~BasicManeuverStrategyNavigationControlLimit`
+    **control_limit_value** : :obj:`~float`
 
     :Returns:
 

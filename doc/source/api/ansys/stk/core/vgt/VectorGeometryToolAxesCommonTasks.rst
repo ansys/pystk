@@ -28,7 +28,6 @@ Overview
               - Compute and returns tabulated orientations and angular velocities of axes with respect to reference axes using specified sampling parameters.
 
 
-
 Import detail
 -------------
 
@@ -41,14 +40,14 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: create_topocentric_axes_quaternion(self, originPoint: IVectorGeometryToolPoint, qx: float, qy: float, qz: float, qs: float) -> VectorGeometryToolAxesFixed
+.. py:method:: create_topocentric_axes_quaternion(self, origin_point: IVectorGeometryToolPoint, qx: float, qy: float, qz: float, qs: float) -> VectorGeometryToolAxesFixed
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesCommonTasks.create_topocentric_axes_quaternion
 
     Create non-persistent axes fixed in axes on the surface of a central body with the location specified by the origin point. The quaternion defines the axes's orientation.
 
     :Parameters:
 
-    **originPoint** : :obj:`~IVectorGeometryToolPoint`
+    **origin_point** : :obj:`~IVectorGeometryToolPoint`
     **qx** : :obj:`~float`
     **qy** : :obj:`~float`
     **qz** : :obj:`~float`
@@ -58,15 +57,15 @@ Method detail
 
         :obj:`~VectorGeometryToolAxesFixed`
 
-.. py:method:: create_topocentric_axes_euler_angles(self, originPoint: IVectorGeometryToolPoint, sequence: EULER_ORIENTATION_SEQUENCE, a: typing.Any, b: typing.Any, c: typing.Any) -> VectorGeometryToolAxesFixed
+.. py:method:: create_topocentric_axes_euler_angles(self, origin_point: IVectorGeometryToolPoint, sequence: EulerOrientationSequenceType, a: typing.Any, b: typing.Any, c: typing.Any) -> VectorGeometryToolAxesFixed
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesCommonTasks.create_topocentric_axes_euler_angles
 
     Create non-persistent axes fixed in axes on the surface of a central body with the location specified by the origin point. The euler angles define the axes's orientation.
 
     :Parameters:
 
-    **originPoint** : :obj:`~IVectorGeometryToolPoint`
-    **sequence** : :obj:`~EULER_ORIENTATION_SEQUENCE`
+    **origin_point** : :obj:`~IVectorGeometryToolPoint`
+    **sequence** : :obj:`~EulerOrientationSequenceType`
     **a** : :obj:`~typing.Any`
     **b** : :obj:`~typing.Any`
     **c** : :obj:`~typing.Any`
@@ -75,20 +74,20 @@ Method detail
 
         :obj:`~VectorGeometryToolAxesFixed`
 
-.. py:method:: create_fixed(self, referenceAxes: IVectorGeometryToolAxes) -> VectorGeometryToolAxesFixed
+.. py:method:: create_fixed(self, reference_axes: IVectorGeometryToolAxes) -> VectorGeometryToolAxesFixed
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesCommonTasks.create_fixed
 
     Create non-persistent fixed axes based on specified axes.
 
     :Parameters:
 
-    **referenceAxes** : :obj:`~IVectorGeometryToolAxes`
+    **reference_axes** : :obj:`~IVectorGeometryToolAxes`
 
     :Returns:
 
         :obj:`~VectorGeometryToolAxesFixed`
 
-.. py:method:: sample(self, axes: IVectorGeometryToolAxes, referenceAxes: IVectorGeometryToolAxes, intervals: list, minStep: float, maxStep: float, targetRate: typing.Any) -> TimeToolAxesSamplingResult
+.. py:method:: sample(self, axes: IVectorGeometryToolAxes, reference_axes: IVectorGeometryToolAxes, intervals: list, min_step: float, max_step: float, target_rate: typing.Any) -> TimeToolAxesSamplingResult
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesCommonTasks.sample
 
     Compute and returns tabulated orientations and angular velocities of axes with respect to reference axes using specified sampling parameters.
@@ -96,11 +95,11 @@ Method detail
     :Parameters:
 
     **axes** : :obj:`~IVectorGeometryToolAxes`
-    **referenceAxes** : :obj:`~IVectorGeometryToolAxes`
+    **reference_axes** : :obj:`~IVectorGeometryToolAxes`
     **intervals** : :obj:`~list`
-    **minStep** : :obj:`~float`
-    **maxStep** : :obj:`~float`
-    **targetRate** : :obj:`~typing.Any`
+    **min_step** : :obj:`~float`
+    **max_step** : :obj:`~float`
+    **target_rate** : :obj:`~typing.Any`
 
     :Returns:
 

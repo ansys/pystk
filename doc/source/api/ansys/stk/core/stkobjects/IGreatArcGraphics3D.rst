@@ -51,7 +51,7 @@ Property detail
 
 .. py:property:: model
     :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics3D.model
-    :type: VehicleRouteGraphics3DModel
+    :type: VehicleGraphics3DModelRoute
 
     Get the vehicle's 3D model properties.
 

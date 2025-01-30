@@ -9,10 +9,6 @@ StateCalcSpeedOfLight
 
 .. py:currentmodule:: StateCalcSpeedOfLight
 
-Overview
---------
-
-
 
 Import detail
 -------------

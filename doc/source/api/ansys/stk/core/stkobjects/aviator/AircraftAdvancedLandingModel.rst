@@ -61,7 +61,7 @@ Property detail
 
 .. py:property:: landing_speed_mode
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedLandingModel.landing_speed_mode
-    :type: TAKEOFF_LANDING_SPEED_MODE
+    :type: TakeoffLandingSpeedMode
 
     Gets or sets the mode to calculate the aircraft's speed at wheels down.
 
@@ -102,28 +102,28 @@ Method detail
 
 
 
-.. py:method:: set_stall_speed_ratio(self, stallSpeedRatio: float) -> None
+.. py:method:: set_stall_speed_ratio(self, stall_speed_ratio: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedLandingModel.set_stall_speed_ratio
 
     Set the landing speed mode to StallSpeedRatio and specify the stall speed ratio.
 
     :Parameters:
 
-    **stallSpeedRatio** : :obj:`~float`
+    **stall_speed_ratio** : :obj:`~float`
 
     :Returns:
 
         :obj:`~None`
 
 
-.. py:method:: set_angle_of_attack(self, angleOfAttack: typing.Any) -> None
+.. py:method:: set_angle_of_attack(self, angle_of_attack: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedLandingModel.set_angle_of_attack
 
     Set the landing speed mode to AngleOfAttack and specify the angle of attack.
 
     :Parameters:
 
-    **angleOfAttack** : :obj:`~typing.Any`
+    **angle_of_attack** : :obj:`~typing.Any`
 
     :Returns:
 

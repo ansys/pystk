@@ -26,7 +26,6 @@ Overview
               - Initialize an altitude display condition with the inclusive altitude interval [minimumAltitude, maximumAltitude]...
 
 
-
 Import detail
 -------------
 
@@ -48,30 +47,30 @@ Method detail
 
         :obj:`~AltitudeDisplayCondition`
 
-.. py:method:: initialize_with_altitudes(self, minimumAltitude: float, maximumAltitude: float) -> AltitudeDisplayCondition
+.. py:method:: initialize_with_altitudes(self, minimum_altitude: float, maximum_altitude: float) -> AltitudeDisplayCondition
     :canonical: ansys.stk.core.graphics.AltitudeDisplayConditionFactory.initialize_with_altitudes
 
     Initialize an altitude display condition with the inclusive altitude interval [minimumAltitude, maximumAltitude]...
 
     :Parameters:
 
-    **minimumAltitude** : :obj:`~float`
-    **maximumAltitude** : :obj:`~float`
+    **minimum_altitude** : :obj:`~float`
+    **maximum_altitude** : :obj:`~float`
 
     :Returns:
 
         :obj:`~AltitudeDisplayCondition`
 
-.. py:method:: initialize_with_central_body_and_altitudes(self, centralBody: str, minimumAltitude: float, maximumAltitude: float) -> AltitudeDisplayCondition
+.. py:method:: initialize_with_central_body_and_altitudes(self, central_body: str, minimum_altitude: float, maximum_altitude: float) -> AltitudeDisplayCondition
     :canonical: ansys.stk.core.graphics.AltitudeDisplayConditionFactory.initialize_with_central_body_and_altitudes
 
     Initialize an altitude display condition with the inclusive altitude interval [minimumAltitude, maximumAltitude]...
 
     :Parameters:
 
-    **centralBody** : :obj:`~str`
-    **minimumAltitude** : :obj:`~float`
-    **maximumAltitude** : :obj:`~float`
+    **central_body** : :obj:`~str`
+    **minimum_altitude** : :obj:`~float`
+    **maximum_altitude** : :obj:`~float`
 
     :Returns:
 

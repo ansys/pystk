@@ -99,13 +99,13 @@ Property detail
 
 .. py:property:: attitude_start_epoch
     :canonical: ansys.stk.core.stkobjects.VehicleAttitudeExternal.attitude_start_epoch
-    :type: ITimeToolEventSmartEpoch
+    :type: ITimeToolInstantSmartEpoch
 
     If overriding the times contained in the external file, specifies the time of the first attitude point.
 
 .. py:property:: message_level
     :canonical: ansys.stk.core.stkobjects.VehicleAttitudeExternal.message_level
-    :type: STK_EXTERNAL_FILE_MESSAGE_LEVEL
+    :type: ExternalFileMessageLevelType
 
     Message level used to report messages during file loading.
 

@@ -38,9 +38,9 @@ class VOSnippets(CodeSnippetsTestBase):
     # region DelayGraphicsUpdates
     @category("VO Tests")
     def test_DelayGraphicsUpdates(self):
-        CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "Satellite1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.new(STKObjectType.SATELLITE, "Satellite1")
         self.DelayGraphicsUpdates(CodeSnippetsTestBase.m_Root)
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "Satellite1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STKObjectType.SATELLITE, "Satellite1")
 
     def DelayGraphicsUpdates(self, root: "StkObjectRoot"):
         satellite: "Satellite" = clr.CastAs(root.current_scenario.children["Satellite1"], Satellite)
@@ -49,9 +49,9 @@ class VOSnippets(CodeSnippetsTestBase):
         root.begin_update()  # Suspend updates
 
         # Put modifications here
-        voElt.is_visible = True
+        voElt.show_graphics = True
         voElt.use_background = True
-        voElt.bg_color = Colors.Green
+        voElt.background_color = Colors.Green
         voElt.use_background = False
 
         root.end_update()  # Resume updates now

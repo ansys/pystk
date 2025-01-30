@@ -9,10 +9,6 @@ OrientationEulerAngles
 
 .. py:currentmodule:: OrientationEulerAngles
 
-Overview
---------
-
-
 
 Import detail
 -------------

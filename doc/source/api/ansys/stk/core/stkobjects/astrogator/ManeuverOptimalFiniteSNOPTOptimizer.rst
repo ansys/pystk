@@ -56,7 +56,7 @@ Property detail
 
 .. py:property:: objective
     :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSNOPTOptimizer.objective
-    :type: OPTIMAL_FINITE_SNOPT_OBJECTIVE
+    :type: OptimalFiniteSNOPTObjective
 
     Objective.
 
@@ -116,7 +116,7 @@ Property detail
 
 .. py:property:: snopt_scaling
     :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteSNOPTOptimizer.snopt_scaling
-    :type: OPTIMAL_FINITE_SNOPT_SCALING
+    :type: OptimalFiniteSNOPTScaling
 
     SNOPT scaling option.
 

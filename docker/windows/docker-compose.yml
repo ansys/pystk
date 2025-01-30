@@ -1,4 +1,3 @@
-version: '3.8'
 services:
 
   stk:
@@ -20,19 +19,6 @@ services:
       context: ./stk-engine-pybase
       args:
         baseImage: ansys/stk:dev-windowsservercore-ltsc2019
-    environment:
-      - ANSYSLMD_LICENSE_FILE=$ANSYSLMD_LICENSE_FILE
-
-  stk-python3.10:
-    image: ansys/stk:dev-windowsservercore-ltsc2019-python3.10
-    depends_on: 
-      - stk-pybase 
-    container_name: stk-python3.10
-    build: 
-      context: ./stk-engine-py310
-      args:
-        baseImage: ansys/stk:dev-windowsservercore-ltsc2019
-        basePythonImage: ansys/stk:dev-windowsservercore-ltsc2019-pybase
     environment:
       - ANSYSLMD_LICENSE_FILE=$ANSYSLMD_LICENSE_FILE
 
@@ -61,4 +47,18 @@ services:
         basePythonImage: ansys/stk:dev-windowsservercore-ltsc2019-pybase
     environment:
       - ANSYSLMD_LICENSE_FILE=$ANSYSLMD_LICENSE_FILE
+
+  stk-python3.13:
+    image: ansys/stk:dev-windowsservercore-ltsc2019-python3.13
+    depends_on: 
+      - stk-pybase 
+    container_name: stk-python3.13
+    build: 
+      context: ./stk-engine-py313
+      args:
+        baseImage: ansys/stk:dev-windowsservercore-ltsc2019
+        basePythonImage: ansys/stk:dev-windowsservercore-ltsc2019-pybase
+    environment:
+      - ANSYSLMD_LICENSE_FILE=$ANSYSLMD_LICENSE_FILE
+
 

@@ -18,7 +18,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceAnalysisWorkbenchComponent.type_id`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceAnalysisWorkbenchComponent.type_identifier`
               - Type of component (vector, axes, angle, plane, point). A member of the AgEGeometricElemType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceAnalysisWorkbenchComponent.name`
               - Get the name of the component.
@@ -26,7 +26,7 @@ Overview
               - Whether component is visible.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceAnalysisWorkbenchComponent.color`
               - Color of the component.
-            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceAnalysisWorkbenchComponent.label_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DReferenceAnalysisWorkbenchComponent.show_label`
               - Is the label for the component visible?
 
 
@@ -41,9 +41,9 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: type_id
-    :canonical: ansys.stk.core.stkobjects.IGraphics3DReferenceAnalysisWorkbenchComponent.type_id
-    :type: GEOMETRIC_ELEM_TYPE
+.. py:property:: type_identifier
+    :canonical: ansys.stk.core.stkobjects.IGraphics3DReferenceAnalysisWorkbenchComponent.type_identifier
+    :type: GeometricElementType
 
     Type of component (vector, axes, angle, plane, point). A member of the AgEGeometricElemType enumeration.
 
@@ -65,8 +65,8 @@ Property detail
 
     Color of the component.
 
-.. py:property:: label_visible
-    :canonical: ansys.stk.core.stkobjects.IGraphics3DReferenceAnalysisWorkbenchComponent.label_visible
+.. py:property:: show_label
+    :canonical: ansys.stk.core.stkobjects.IGraphics3DReferenceAnalysisWorkbenchComponent.show_label
     :type: bool
 
     Is the label for the component visible?

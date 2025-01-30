@@ -3,7 +3,7 @@ VectorGeometryToolVectorFixedInAxes
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolVectorFixedInAxes
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVector`, :py:class:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVector`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Vector fixed in reference axes.
 
@@ -40,7 +40,7 @@ Property detail
 
 .. py:property:: reference_axes
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorFixedInAxes.reference_axes
-    :type: VectorGeometryToolAxesRefTo
+    :type: VectorGeometryToolAxesReference
 
     Specify a reference axes.
 

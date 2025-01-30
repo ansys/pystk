@@ -9,10 +9,6 @@ BasicManeuverMATLABFactory
 
 .. py:currentmodule:: BasicManeuverMATLABFactory
 
-Overview
---------
-
-
 
 Import detail
 -------------

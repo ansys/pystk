@@ -20,7 +20,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePathItem.type`
               - Get the option for where to end the drop lines.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePathItem.is_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePathItem.show_graphics`
               - Opt whether to display the drop lines.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePathItem.use_2d_color`
               - Opt whether to use the color in the vehicle's 2D attributes for the drop lines.
@@ -48,12 +48,12 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePathItem.type
-    :type: VEHICLE_GRAPHICS_3D_DROP_LINE_TYPE
+    :type: VehicleGraphics3DDropLineType
 
     Get the option for where to end the drop lines.
 
-.. py:property:: is_visible
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePathItem.is_visible
+.. py:property:: show_graphics
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePathItem.show_graphics
     :type: bool
 
     Opt whether to display the drop lines.
@@ -72,7 +72,7 @@ Property detail
 
 .. py:property:: line_width
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePathItem.line_width
-    :type: LINE_WIDTH
+    :type: LineWidth
 
     Gets or sets the width of the drop line from orbit.
 
@@ -84,7 +84,7 @@ Property detail
 
 .. py:property:: line_style
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePathItem.line_style
-    :type: LINE_STYLE
+    :type: LineStyle
 
     Gets or sets the line style of the drop line.
 

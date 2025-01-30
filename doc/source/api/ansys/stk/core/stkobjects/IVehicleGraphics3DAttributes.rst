@@ -7,10 +7,6 @@ IVehicleGraphics3DAttributes
 
 .. py:currentmodule:: IVehicleGraphics3DAttributes
 
-Overview
---------
-
-
 Import detail
 -------------
 

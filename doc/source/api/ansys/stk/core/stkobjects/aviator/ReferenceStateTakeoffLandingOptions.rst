@@ -89,7 +89,7 @@ Property detail
 
 .. py:property:: airspeed_type
     :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateTakeoffLandingOptions.airspeed_type
-    :type: AIRSPEED_TYPE
+    :type: AirspeedType
 
     Get the airspeed type.
 
@@ -125,7 +125,7 @@ Property detail
 
 .. py:property:: longitudinal_acceleration_type
     :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateTakeoffLandingOptions.longitudinal_acceleration_type
-    :type: REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE
+    :type: ReferenceStateLongitudinalAccelerationMode
 
     Get the mode to specify the longitudinal acceleration.
 
@@ -167,7 +167,7 @@ Property detail
 
 .. py:property:: lateral_acceleration_type
     :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateTakeoffLandingOptions.lateral_acceleration_type
-    :type: REFERENCE_STATE_LATERAL_ACCELERATION_MODE
+    :type: ReferenceStateLateralAccelerationMode
 
     Get the mode to specify the lateral acceleration.
 
@@ -203,7 +203,7 @@ Property detail
 
 .. py:property:: attitude_rate_type
     :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateTakeoffLandingOptions.attitude_rate_type
-    :type: REFERENCE_STATE_ATTITUDE_MODE
+    :type: ReferenceStateAttitudeMode
 
     Get the mode to specify the vertical attitude rate.
 
@@ -213,14 +213,14 @@ Method detail
 
 
 
-.. py:method:: set_airspeed(self, airspeedType: AIRSPEED_TYPE, airspeed: float) -> None
+.. py:method:: set_airspeed(self, airspeed_type: AirspeedType, airspeed: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateTakeoffLandingOptions.set_airspeed
 
     Set the launch airspeed.
 
     :Parameters:
 
-    **airspeedType** : :obj:`~AIRSPEED_TYPE`
+    **airspeed_type** : :obj:`~AirspeedType`
     **airspeed** : :obj:`~float`
 
     :Returns:
@@ -234,14 +234,14 @@ Method detail
 
 
 
-.. py:method:: set_longitudinal_acceleration(self, accelType: REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE, value: float) -> None
+.. py:method:: set_longitudinal_acceleration(self, accel_type: ReferenceStateLongitudinalAccelerationMode, value: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateTakeoffLandingOptions.set_longitudinal_acceleration
 
     Set the longitudinal acceleration.
 
     :Parameters:
 
-    **accelType** : :obj:`~REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE`
+    **accel_type** : :obj:`~ReferenceStateLongitudinalAccelerationMode`
     **value** : :obj:`~float`
 
     :Returns:
@@ -259,14 +259,14 @@ Method detail
 
 
 
-.. py:method:: set_lateral_acceleration(self, accelType: REFERENCE_STATE_LATERAL_ACCELERATION_MODE, value: typing.Any) -> None
+.. py:method:: set_lateral_acceleration(self, accel_type: ReferenceStateLateralAccelerationMode, value: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateTakeoffLandingOptions.set_lateral_acceleration
 
     Set the lateral acceleration.
 
     :Parameters:
 
-    **accelType** : :obj:`~REFERENCE_STATE_LATERAL_ACCELERATION_MODE`
+    **accel_type** : :obj:`~ReferenceStateLateralAccelerationMode`
     **value** : :obj:`~typing.Any`
 
     :Returns:
@@ -282,14 +282,14 @@ Method detail
 
 
 
-.. py:method:: set_attitude_rate(self, attitudeRateType: REFERENCE_STATE_ATTITUDE_MODE, value: typing.Any) -> None
+.. py:method:: set_attitude_rate(self, attitude_rate_type: ReferenceStateAttitudeMode, value: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateTakeoffLandingOptions.set_attitude_rate
 
     Set the vertical attitude rate.
 
     :Parameters:
 
-    **attitudeRateType** : :obj:`~REFERENCE_STATE_ATTITUDE_MODE`
+    **attitude_rate_type** : :obj:`~ReferenceStateAttitudeMode`
     **value** : :obj:`~typing.Any`
 
     :Returns:

@@ -28,7 +28,6 @@ Overview
               - Get the site interface.
 
 
-
 Import detail
 -------------
 
@@ -50,14 +49,14 @@ Method detail
 
         :obj:`~ICatalogVTOLPoint`
 
-.. py:method:: set_catalog_vtol_point(self, pVal: ICatalogVTOLPoint) -> None
+.. py:method:: set_catalog_vtol_point(self, value: ICatalogVTOLPoint) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.SiteVTOLPointFromCatalog.set_catalog_vtol_point
 
     Set the catalog VTOL point.
 
     :Parameters:
 
-    **pVal** : :obj:`~ICatalogVTOLPoint`
+    **value** : :obj:`~ICatalogVTOLPoint`
 
     :Returns:
 

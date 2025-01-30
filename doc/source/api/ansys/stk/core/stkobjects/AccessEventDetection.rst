@@ -51,7 +51,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.AccessEventDetection.type
-    :type: EVENT_DETECTION
+    :type: EventDetection
 
     Get the type of event detection (e.g., with or without subsampling).
 
@@ -72,27 +72,27 @@ Method detail
 -------------
 
 
-.. py:method:: set_type(self, eventDetection: EVENT_DETECTION) -> None
+.. py:method:: set_type(self, event_detection: EventDetection) -> None
     :canonical: ansys.stk.core.stkobjects.AccessEventDetection.set_type
 
     Set the event detection type.
 
     :Parameters:
 
-    **eventDetection** : :obj:`~EVENT_DETECTION`
+    **event_detection** : :obj:`~EventDetection`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_type_supported(self, eventDetection: EVENT_DETECTION) -> bool
+.. py:method:: is_type_supported(self, event_detection: EventDetection) -> bool
     :canonical: ansys.stk.core.stkobjects.AccessEventDetection.is_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **eventDetection** : :obj:`~EVENT_DETECTION`
+    **event_detection** : :obj:`~EventDetection`
 
     :Returns:
 

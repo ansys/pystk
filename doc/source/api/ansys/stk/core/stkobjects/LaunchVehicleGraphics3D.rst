@@ -24,7 +24,7 @@ Overview
               - Get the launch vehicle's 3D trajectory frame properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicleGraphics3D.proximity`
               - Get the launch vehicle's 3D proximity properties.
-            * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicleGraphics3D.elev_contours`
+            * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicleGraphics3D.elevation_contours`
               - Get the launch vehicle's 3D elevation contour properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicleGraphics3D.covariance_pointing_contour`
               - Get the launch vehicle's 3D covariance pointing properties.
@@ -68,7 +68,7 @@ Property detail
 
 .. py:property:: model
     :canonical: ansys.stk.core.stkobjects.LaunchVehicleGraphics3D.model
-    :type: VehicleTrajectoryGraphics3DModel
+    :type: VehicleGraphics3DModelTrajectory
 
     Get the launch vehicle's 3D model properties.
 
@@ -84,9 +84,9 @@ Property detail
 
     Get the launch vehicle's 3D proximity properties.
 
-.. py:property:: elev_contours
-    :canonical: ansys.stk.core.stkobjects.LaunchVehicleGraphics3D.elev_contours
-    :type: VehicleGraphics3DElevContours
+.. py:property:: elevation_contours
+    :canonical: ansys.stk.core.stkobjects.LaunchVehicleGraphics3D.elevation_contours
+    :type: VehicleGraphics3DElevationContours
 
     Get the launch vehicle's 3D elevation contour properties.
 

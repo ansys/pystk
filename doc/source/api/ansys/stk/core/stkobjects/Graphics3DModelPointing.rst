@@ -58,15 +58,15 @@ Method detail
 -------------
 
 
-.. py:method:: add_interval(self, attachPointName: str, targetName: str, start: typing.Any, stop: typing.Any) -> None
+.. py:method:: add_interval(self, attach_point_name: str, target_name: str, start: typing.Any, stop: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.Graphics3DModelPointing.add_interval
 
     Add a new element to the collection using specified pointable model part, target name and the time period during which the pointable part targets the specified object.
 
     :Parameters:
 
-    **attachPointName** : :obj:`~str`
-    **targetName** : :obj:`~str`
+    **attach_point_name** : :obj:`~str`
+    **target_name** : :obj:`~str`
     **start** : :obj:`~typing.Any`
     **stop** : :obj:`~typing.Any`
 
@@ -74,29 +74,29 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: remove_interval(self, attachPointName: str, targetName: str) -> None
+.. py:method:: remove_interval(self, attach_point_name: str, target_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.Graphics3DModelPointing.remove_interval
 
     Remove a pointable element from the collection of pointable elements using specified pointable model part and target name.
 
     :Parameters:
 
-    **attachPointName** : :obj:`~str`
-    **targetName** : :obj:`~str`
+    **attach_point_name** : :obj:`~str`
+    **target_name** : :obj:`~str`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: load_intervals(self, fileName: str, attachPoint: str) -> None
+.. py:method:: load_intervals(self, file_name: str, attach_point: str) -> None
     :canonical: ansys.stk.core.stkobjects.Graphics3DModelPointing.load_intervals
 
     Add the intervals from the given file.
 
     :Parameters:
 
-    **fileName** : :obj:`~str`
-    **attachPoint** : :obj:`~str`
+    **file_name** : :obj:`~str`
+    **attach_point** : :obj:`~str`
 
     :Returns:
 

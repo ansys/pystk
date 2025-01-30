@@ -3,7 +3,7 @@ VectorGeometryToolVectorConing
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolVectorConing
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVector`, :py:class:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVector`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Vector created by revolving the Reference vector around the About vector with the specified rate.
 
@@ -50,13 +50,13 @@ Property detail
 
 .. py:property:: about_vector
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorConing.about_vector
-    :type: VectorGeometryToolVectorRefTo
+    :type: VectorGeometryToolVectorReference
 
     Specify a vector around which the the reference vector is revolved.
 
 .. py:property:: reference_vector
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorConing.reference_vector
-    :type: VectorGeometryToolVectorRefTo
+    :type: VectorGeometryToolVectorReference
 
     Specify a reference vector.
 
@@ -86,7 +86,7 @@ Property detail
 
 .. py:property:: mode
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorConing.mode
-    :type: CRDN_SWEEP_MODE
+    :type: RotationSweepModeType
 
     Specify either unidirectional or bidirectional mode.
 

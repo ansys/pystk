@@ -55,13 +55,13 @@ Property detail
 
 .. py:property:: access_times
     :canonical: ansys.stk.core.stkobjects.VehicleTargetTimes.access_times
-    :type: AccessTimeCollection
+    :type: AccessTargetTimesCollection
 
     Get the access times.
 
 .. py:property:: schedule_times
     :canonical: ansys.stk.core.stkobjects.VehicleTargetTimes.schedule_times
-    :type: VehicleScheduleTimesCollection
+    :type: AttitudeScheduleTimesCollection
 
     Get the scheduled times.
 

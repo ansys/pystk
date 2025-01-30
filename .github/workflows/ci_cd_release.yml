@@ -26,7 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "Run code style checks"
-        uses: ansys/actions/code-style@v7
+        uses: ansys/actions/code-style@v8
         with: 
           python-version: ${{ env.MAIN_PYTHON_VERSION }}
 
@@ -61,17 +61,34 @@ jobs:
           VALE_FILES=$(echo -e "$RST_FILES" | jq -R . | jq -s .)
           echo "VALE_FILES=$(echo $VALE_FILES)" >> $GITHUB_ENV
 
-      - uses: ansys/actions/doc-style@v7
+      - uses: ansys/actions/doc-style@v8
         with: 
           checkout: false
           files: "${{ env.VALE_FILES }}"
           vale-config: doc/.vale.ini
           token: ${{ secrets.GITHUB_TOKEN }}
 
+  build-wheelhouse:
+    name: "Build wheelhouse for latest Python versions"
+    runs-on: ${{ matrix.os }}
+    strategy:
+       matrix:
+           os: [ubuntu-latest, windows-latest]
+           python-version: ['3.10', '3.11', '3.12']
+           target: ['all', 'grpc', 'visualization']
+    steps:
+      - name: "Build a wheelhouse of the Python library"
+        uses: ansys/actions/build-wheelhouse@v8
+        with:
+          library-name: ${{ env.LIBRARY_NAME }}
+          operating-system: ${{ matrix.os }}
+          python-version: ${{ matrix.python-version }}
+          target: ${{ matrix.target }}
+
   doc-build:
     name: "Doc build"
     runs-on: [self-hosted, pystk]
-    needs: [doc-style]
+    needs: build-wheelhouse
     timeout-minutes: 90
     steps:
 
@@ -188,6 +205,13 @@ jobs:
             ${{ env.STK_CONTAINER }} /bin/bash -c \
             "export COVERAGE_FILE=vgt && tox -e tests-vgt-graphics-cov-linux"
 
+      - name: "Run the doc snippet tests"
+        run: |
+          docker exec \
+            --workdir ${{ env.PYSTK_DIR }} \
+            ${{ env.STK_CONTAINER }} /bin/bash -c \
+            "export COVERAGE_FILE=snippets && tox -e tests-snippets-graphics-cov-linux"
+
       - name: "Install coverage dependencies"
         if: ${{ matrix.python == env.MAIN_PYTHON_VERSION }}
         run: |
@@ -202,7 +226,7 @@ jobs:
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "coverage combine aviator stk vgt"
+            "coverage combine aviator stk vgt snippets"
 
       - name: "Generate total coverage report"
         if: ${{ matrix.python == env.MAIN_PYTHON_VERSION }}
@@ -231,6 +255,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: [doc-build, tests]
     steps:
-      - uses: ansys/actions/build-library@v7
+      - uses: ansys/actions/build-library@v8
         with:
           library-name: ${{ env.LIBRARY_NAME }}

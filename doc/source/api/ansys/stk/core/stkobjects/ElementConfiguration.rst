@@ -9,10 +9,6 @@ ElementConfiguration
 
 .. py:currentmodule:: ElementConfiguration
 
-Overview
---------
-
-
 
 Import detail
 -------------

@@ -7,10 +7,6 @@ IVehicleBreakAngle
 
 .. py:currentmodule:: IVehicleBreakAngle
 
-Overview
---------
-
-
 Import detail
 -------------
 

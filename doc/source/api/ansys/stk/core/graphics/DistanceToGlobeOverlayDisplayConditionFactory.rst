@@ -24,7 +24,6 @@ Overview
               - Initialize a distance display condition with the globe overlay and the inclusive distance interval [minimumDistance, maximumDistance]...
 
 
-
 Import detail
 -------------
 
@@ -46,16 +45,16 @@ Method detail
 
         :obj:`~DistanceToGlobeOverlayDisplayCondition`
 
-.. py:method:: initialize_with_distances(self, globeOverlay: IGlobeOverlay, minimumDistance: float, maximumDistance: float) -> DistanceToGlobeOverlayDisplayCondition
+.. py:method:: initialize_with_distances(self, globe_overlay: IGlobeOverlay, minimum_distance: float, maximum_distance: float) -> DistanceToGlobeOverlayDisplayCondition
     :canonical: ansys.stk.core.graphics.DistanceToGlobeOverlayDisplayConditionFactory.initialize_with_distances
 
     Initialize a distance display condition with the globe overlay and the inclusive distance interval [minimumDistance, maximumDistance]...
 
     :Parameters:
 
-    **globeOverlay** : :obj:`~IGlobeOverlay`
-    **minimumDistance** : :obj:`~float`
-    **maximumDistance** : :obj:`~float`
+    **globe_overlay** : :obj:`~IGlobeOverlay`
+    **minimum_distance** : :obj:`~float`
+    **maximum_distance** : :obj:`~float`
 
     :Returns:
 

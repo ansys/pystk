@@ -9,10 +9,6 @@ VehicleGraphics3DDataTime
 
 .. py:currentmodule:: VehicleGraphics3DDataTime
 
-Overview
---------
-
-
 
 Import detail
 -------------

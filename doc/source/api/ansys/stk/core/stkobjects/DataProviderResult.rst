@@ -46,7 +46,7 @@ Property detail
 
 .. py:property:: category
     :canonical: ansys.stk.core.stkobjects.DataProviderResult.category
-    :type: DATA_PROVIDER_RESULT_CATEGORIES
+    :type: DataProviderResultCategory
 
     Returns a value representing the category of the result.
 

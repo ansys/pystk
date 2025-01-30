@@ -43,7 +43,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.IAtmosphericAbsorptionModel.type
-    :type: ATMOSPHERIC_ABSORPTION_MODEL_TYPE
+    :type: AtmosphericAbsorptionModelType
 
     Gets the atmospheric absorption model type enumeration.
 

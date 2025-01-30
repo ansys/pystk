@@ -89,40 +89,40 @@ Method detail
 
 
 
-.. py:method:: enable_control_parameter(self, param: CONTROL_REPEATING_GROUND_TRACK_ERR) -> None
+.. py:method:: enable_control_parameter(self, param: ControlRepeatingGroundTrackErr) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcRepeatingGroundTrackErr.enable_control_parameter
 
     Enable the specified control parameter.
 
     :Parameters:
 
-    **param** : :obj:`~CONTROL_REPEATING_GROUND_TRACK_ERR`
+    **param** : :obj:`~ControlRepeatingGroundTrackErr`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: disable_control_parameter(self, param: CONTROL_REPEATING_GROUND_TRACK_ERR) -> None
+.. py:method:: disable_control_parameter(self, param: ControlRepeatingGroundTrackErr) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcRepeatingGroundTrackErr.disable_control_parameter
 
     Disables the specified control parameter.
 
     :Parameters:
 
-    **param** : :obj:`~CONTROL_REPEATING_GROUND_TRACK_ERR`
+    **param** : :obj:`~ControlRepeatingGroundTrackErr`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_control_parameter_enabled(self, param: CONTROL_REPEATING_GROUND_TRACK_ERR) -> bool
+.. py:method:: is_control_parameter_enabled(self, param: ControlRepeatingGroundTrackErr) -> bool
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcRepeatingGroundTrackErr.is_control_parameter_enabled
 
     Sees if the specified control is enabled.
 
     :Parameters:
 
-    **param** : :obj:`~CONTROL_REPEATING_GROUND_TRACK_ERR`
+    **param** : :obj:`~ControlRepeatingGroundTrackErr`
 
     :Returns:
 

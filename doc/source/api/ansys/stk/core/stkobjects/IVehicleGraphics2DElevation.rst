@@ -7,10 +7,6 @@ IVehicleGraphics2DElevation
 
 .. py:currentmodule:: IVehicleGraphics2DElevation
 
-Overview
---------
-
-
 Import detail
 -------------
 

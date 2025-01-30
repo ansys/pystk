@@ -73,13 +73,13 @@ Property detail
 
 .. py:property:: atmospheric_density_model
     :canonical: ansys.stk.core.stkobjects.VehicleHPOPForceModelDrag.atmospheric_density_model
-    :type: ATMOSPHERIC_DENSITY_MODEL
+    :type: AtmosphericDensityModel
 
     Select the atmospheric density model to be used.
 
 .. py:property:: solar_flux_geo_magnitude_type
     :canonical: ansys.stk.core.stkobjects.VehicleHPOPForceModelDrag.solar_flux_geo_magnitude_type
-    :type: VEHICLE_SOLAR_FLUX_GEO_MAGNITUDE
+    :type: VehicleSolarFluxGeomagneticType
 
     Get the method for specifying solar and geomagnetic flux.
 
@@ -91,7 +91,7 @@ Property detail
 
 .. py:property:: drag_model_type
     :canonical: ansys.stk.core.stkobjects.VehicleHPOPForceModelDrag.drag_model_type
-    :type: DRAG_MODEL
+    :type: DragModel
 
     Returns a type of the active drag model.
 
@@ -109,7 +109,7 @@ Property detail
 
 .. py:property:: low_altitude_atmospheric_density_model
     :canonical: ansys.stk.core.stkobjects.VehicleHPOPForceModelDrag.low_altitude_atmospheric_density_model
-    :type: ATMOSPHERIC_DENSITY_MODEL
+    :type: AtmosphericDensityModel
 
     This property is deprecated. Use LowAltAtmosDensityModel instead. Select the low altitude atmospheric density model to be used.
 
@@ -121,7 +121,7 @@ Property detail
 
 .. py:property:: low_altitude_atmos_density_model
     :canonical: ansys.stk.core.stkobjects.VehicleHPOPForceModelDrag.low_altitude_atmos_density_model
-    :type: LOW_ALTITUDE_ATMOSPHERIC_DENSITY_MODEL
+    :type: LowAltitudeAtmosphericDensityModel
 
     Select the low altitude atmospheric density model to be used.
 
@@ -134,14 +134,14 @@ Method detail
 
 
 
-.. py:method:: set_solar_flux_geo_magnitude_type(self, solarFluxGeoMag: VEHICLE_SOLAR_FLUX_GEO_MAGNITUDE) -> None
+.. py:method:: set_solar_flux_geo_magnitude_type(self, solar_flux_geo_mag: VehicleSolarFluxGeomagneticType) -> None
     :canonical: ansys.stk.core.stkobjects.VehicleHPOPForceModelDrag.set_solar_flux_geo_magnitude_type
 
     Set the method for specifying solar and geomagnetic flux.
 
     :Parameters:
 
-    **solarFluxGeoMag** : :obj:`~VEHICLE_SOLAR_FLUX_GEO_MAGNITUDE`
+    **solar_flux_geo_mag** : :obj:`~VehicleSolarFluxGeomagneticType`
 
     :Returns:
 
@@ -149,27 +149,27 @@ Method detail
 
 
 
-.. py:method:: set_drag_model_type(self, dragModel: DRAG_MODEL) -> None
+.. py:method:: set_drag_model_type(self, drag_model: DragModel) -> None
     :canonical: ansys.stk.core.stkobjects.VehicleHPOPForceModelDrag.set_drag_model_type
 
     Change the active drag model type.
 
     :Parameters:
 
-    **dragModel** : :obj:`~DRAG_MODEL`
+    **drag_model** : :obj:`~DragModel`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_drag_model_type_supported(self, dragModel: DRAG_MODEL) -> bool
+.. py:method:: is_drag_model_type_supported(self, drag_model: DragModel) -> bool
     :canonical: ansys.stk.core.stkobjects.VehicleHPOPForceModelDrag.is_drag_model_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **dragModel** : :obj:`~DRAG_MODEL`
+    **drag_model** : :obj:`~DragModel`
 
     :Returns:
 

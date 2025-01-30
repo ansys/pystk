@@ -29,7 +29,7 @@ class GreatArcSnippets(CodeSnippetsTestBase):
     def setUp(self):
         GreatArcSnippets.m_Object = clr.CastAs(
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-                STK_OBJECT_TYPE.GROUND_VEHICLE, GreatArcSnippets.m_DefaultName
+                STKObjectType.GROUND_VEHICLE, GreatArcSnippets.m_DefaultName
             ),
             GroundVehicle,
         )
@@ -39,7 +39,7 @@ class GreatArcSnippets(CodeSnippetsTestBase):
     # region TestTearDown
     def tearDown(self):
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(
-            STK_OBJECT_TYPE.GROUND_VEHICLE, GreatArcSnippets.m_DefaultName
+            STKObjectType.GROUND_VEHICLE, GreatArcSnippets.m_DefaultName
         )
         GreatArcSnippets.m_Object = None
 
@@ -48,14 +48,14 @@ class GreatArcSnippets(CodeSnippetsTestBase):
     # region DefineGreatArcPropFromListOfWaypointsAndTime
     def test_DefineGreatArcPropFromListOfWaypointsAndTime(self):
         # Set groundVehicle object's route to ePropagtorGreatArc
-        GreatArcSnippets.m_Object.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
+        GreatArcSnippets.m_Object.set_route_type(PropagatorType.GREAT_ARC)
 
-        # Get the VehiclePropagatorGreatArc from Route property
-        propagator: "VehiclePropagatorGreatArc" = clr.CastAs(GreatArcSnippets.m_Object.route, VehiclePropagatorGreatArc)
+        # Get the PropagatorGreatArc from Route property
+        propagator: "PropagatorGreatArc" = clr.CastAs(GreatArcSnippets.m_Object.route, PropagatorGreatArc)
 
         self.DefineGreatArcPropFromListOfWaypointsAndTime(propagator)
 
-    def DefineGreatArcPropFromListOfWaypointsAndTime(self, propagator: "VehiclePropagatorGreatArc"):
+    def DefineGreatArcPropFromListOfWaypointsAndTime(self, propagator: "PropagatorGreatArc"):
         # Array with waypoints to insert
         waypoints = [
             [20.36, 40.04, -76.304, "1 Jan 2012 12:00:00.000"],
@@ -63,7 +63,7 @@ class GreatArcSnippets(CodeSnippetsTestBase):
             [20.3, 40.028, -75.628, "1 Jan 2012 14:00:00.000"],
         ]
 
-        propagator.method = VEHICLE_WAYPOINT_COMP_METHOD.DETERMINE_VEL_FROM_TIME
+        propagator.method = VehicleWaypointComputationMethod.DETERMINE_VELOCITY_FROM_TIME
 
         # Remove any previous waypoints
         propagator.waypoints.remove_all()
@@ -86,14 +86,14 @@ class GreatArcSnippets(CodeSnippetsTestBase):
     # region ListAllWaypointsInAWaypointCollection
     def test_ListAllWaypointsInAWaypointCollection(self):
         # Set groundVehicle object's route to ePropagtorGreatArc
-        GreatArcSnippets.m_Object.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
+        GreatArcSnippets.m_Object.set_route_type(PropagatorType.GREAT_ARC)
 
-        # Get the VehiclePropagatorGreatArc from Route property
-        propagator: "VehiclePropagatorGreatArc" = clr.CastAs(GreatArcSnippets.m_Object.route, VehiclePropagatorGreatArc)
+        # Get the PropagatorGreatArc from Route property
+        propagator: "PropagatorGreatArc" = clr.CastAs(GreatArcSnippets.m_Object.route, PropagatorGreatArc)
 
         self.ListAllWaypointsInAWaypointCollection(propagator)
 
-    def ListAllWaypointsInAWaypointCollection(self, propagator: "VehiclePropagatorGreatArc"):
+    def ListAllWaypointsInAWaypointCollection(self, propagator: "PropagatorGreatArc"):
         # Array with waypoints to insert
         waypoints = [
             [20.36, 40.04, -76.304, "1 Jan 2012 12:00:00.000"],
@@ -101,7 +101,7 @@ class GreatArcSnippets(CodeSnippetsTestBase):
             [20.3, 40.028, -75.628, "1 Jan 2012 14:00:00.000"],
         ]
 
-        propagator.method = VEHICLE_WAYPOINT_COMP_METHOD.DETERMINE_VEL_FROM_TIME
+        propagator.method = VehicleWaypointComputationMethod.DETERMINE_VELOCITY_FROM_TIME
 
         # Remove any previous waypoints
         propagator.waypoints.remove_all()
@@ -136,19 +136,19 @@ class GreatArcSnippets(CodeSnippetsTestBase):
     # region DefineGreatArcPropFromListOfWaypointsAndVelocity
     def test_DefineGreatArcPropFromListOfWaypointsAndVelocity(self):
         # Set groundVehicle object's route to ePropagtorGreatArc
-        GreatArcSnippets.m_Object.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
+        GreatArcSnippets.m_Object.set_route_type(PropagatorType.GREAT_ARC)
 
-        # Get the VehiclePropagatorGreatArc from Route property
-        propagator: "VehiclePropagatorGreatArc" = clr.CastAs(GreatArcSnippets.m_Object.route, VehiclePropagatorGreatArc)
+        # Get the PropagatorGreatArc from Route property
+        propagator: "PropagatorGreatArc" = clr.CastAs(GreatArcSnippets.m_Object.route, PropagatorGreatArc)
 
         self.DefineGreatArcPropFromListOfWaypointsAndVelocity(propagator)
 
-    def DefineGreatArcPropFromListOfWaypointsAndVelocity(self, propagator: "VehiclePropagatorGreatArc"):
+    def DefineGreatArcPropFromListOfWaypointsAndVelocity(self, propagator: "PropagatorGreatArc"):
         # Array with waypoints to insert
         # Consists of: altitude, latitude, longitude, speed
         waypoints = [[20.36, 40.04, -76.304, 10.5], [20.3, 40.337, -75.922, 12.5], [20.3, 40.028, -75.628, 15.0]]
 
-        propagator.method = VEHICLE_WAYPOINT_COMP_METHOD.DETERMINE_TIME_ACC_FROM_VEL
+        propagator.method = VehicleWaypointComputationMethod.DETERMINE_TIME_ACCELERATION_FROM_VELOCITY
 
         # Remove any previous waypoints
         propagator.waypoints.remove_all()
@@ -170,14 +170,14 @@ class GreatArcSnippets(CodeSnippetsTestBase):
 
     # region ConfigurePropagatorStartEphemerisEpochExplicitly
     def test_ConfigurePropagatorStartEphemerisEpochExplicitly(self):
-        GreatArcSnippets.m_Object.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
-        propagator: "VehiclePropagatorGreatArc" = clr.CastAs(GreatArcSnippets.m_Object.route, VehiclePropagatorGreatArc)
+        GreatArcSnippets.m_Object.set_route_type(PropagatorType.GREAT_ARC)
+        propagator: "PropagatorGreatArc" = clr.CastAs(GreatArcSnippets.m_Object.route, PropagatorGreatArc)
 
         self.ConfigurePropagatorStartEphemerisEpochExplicitly(propagator)
 
-    def ConfigurePropagatorStartEphemerisEpochExplicitly(self, propagator: "VehiclePropagatorGreatArc"):
+    def ConfigurePropagatorStartEphemerisEpochExplicitly(self, propagator: "PropagatorGreatArc"):
         # Set the epoch time to tomorrow.
-        startEpoch: "TimeToolEventSmartEpoch" = propagator.ephemeris_interval.get_start_epoch()
+        startEpoch: "TimeToolInstantSmartEpoch" = propagator.ephemeris_interval.get_start_epoch()
         startEpoch.set_explicit_time("Tomorrow")
         propagator.ephemeris_interval.set_start_epoch(startEpoch)
 
@@ -208,15 +208,15 @@ class GreatArcSnippets(CodeSnippetsTestBase):
     # region SetPointsSpecifyTimeAndPropagate
     def test_SetPointsSpecifyTimeAndPropagate(self):
         # Set groundVehicle object's route to ePropagtorGreatArc
-        GreatArcSnippets.m_Object.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
+        GreatArcSnippets.m_Object.set_route_type(PropagatorType.GREAT_ARC)
 
-        # Get the VehiclePropagatorGreatArc from Route property
-        propagator: "VehiclePropagatorGreatArc" = clr.CastAs(GreatArcSnippets.m_Object.route, VehiclePropagatorGreatArc)
+        # Get the PropagatorGreatArc from Route property
+        propagator: "PropagatorGreatArc" = clr.CastAs(GreatArcSnippets.m_Object.route, PropagatorGreatArc)
 
         self.SetPointsSpecifyTimeAndPropagate(propagator)
 
-    def SetPointsSpecifyTimeAndPropagate(self, propagator: "VehiclePropagatorGreatArc"):
-        propagator.method = VEHICLE_WAYPOINT_COMP_METHOD.DETERMINE_VEL_FROM_TIME
+    def SetPointsSpecifyTimeAndPropagate(self, propagator: "PropagatorGreatArc"):
+        propagator.method = VehicleWaypointComputationMethod.DETERMINE_VELOCITY_FROM_TIME
 
         waypoints = Array.CreateInstance(clr.TypeOf(object), 4, 5)
         # Point #1
@@ -256,15 +256,15 @@ class GreatArcSnippets(CodeSnippetsTestBase):
     # region SetPointsSpecifyVelocityAndPropagate
     def test_SetPointsSpecifyVelocityAndPropagate(self):
         # Set groundVehicle object's route to ePropagtorGreatArc
-        GreatArcSnippets.m_Object.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
+        GreatArcSnippets.m_Object.set_route_type(PropagatorType.GREAT_ARC)
 
-        # Get the VehiclePropagatorGreatArc from Route property
-        propagator: "VehiclePropagatorGreatArc" = clr.CastAs(GreatArcSnippets.m_Object.route, VehiclePropagatorGreatArc)
+        # Get the PropagatorGreatArc from Route property
+        propagator: "PropagatorGreatArc" = clr.CastAs(GreatArcSnippets.m_Object.route, PropagatorGreatArc)
 
         self.SetPointsSpecifyVelocityAndPropagate(propagator)
 
-    def SetPointsSpecifyVelocityAndPropagate(self, propagator: "VehiclePropagatorGreatArc"):
-        propagator.method = VEHICLE_WAYPOINT_COMP_METHOD.DETERMINE_TIME_ACC_FROM_VEL
+    def SetPointsSpecifyVelocityAndPropagate(self, propagator: "PropagatorGreatArc"):
+        propagator.method = VehicleWaypointComputationMethod.DETERMINE_TIME_ACCELERATION_FROM_VELOCITY
 
         waypoints = Array.CreateInstance(clr.TypeOf(object), 4, 6)
 
@@ -309,15 +309,15 @@ class GreatArcSnippets(CodeSnippetsTestBase):
     # region SetPointsSmoothRateAndPropagate
     def test_SetPointsSmoothRateAndPropagate(self):
         # Set groundVehicle object's route to ePropagtorGreatArc
-        GreatArcSnippets.m_Object.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
+        GreatArcSnippets.m_Object.set_route_type(PropagatorType.GREAT_ARC)
 
-        # Get the VehiclePropagatorGreatArc from Route property
-        propagator: "VehiclePropagatorGreatArc" = clr.CastAs(GreatArcSnippets.m_Object.route, VehiclePropagatorGreatArc)
+        # Get the PropagatorGreatArc from Route property
+        propagator: "PropagatorGreatArc" = clr.CastAs(GreatArcSnippets.m_Object.route, PropagatorGreatArc)
 
         self.SetPointsSmoothRateAndPropagate(propagator)
 
-    def SetPointsSmoothRateAndPropagate(self, propagator: "VehiclePropagatorGreatArc"):
-        propagator.method = VEHICLE_WAYPOINT_COMP_METHOD.DETERMINE_TIME_FROM_VEL_ACC
+    def SetPointsSmoothRateAndPropagate(self, propagator: "PropagatorGreatArc"):
+        propagator.method = VehicleWaypointComputationMethod.DETERMINE_TIME_FROM_VELOCITY_AND_ACCELERATION
 
         waypoints = Array.CreateInstance(clr.TypeOf(object), 4, 5)
         # Point #1

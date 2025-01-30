@@ -22,13 +22,13 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesBasic.inherit`
               - Inherit certain 2D graphics settings from the scenario level.
-            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesBasic.is_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesBasic.show_graphics`
               - Show 2D Graphics for the vehicle.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesBasic.color`
               - Color in which vehicle marker, label and tracks are displayed.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesBasic.marker_style`
               - Style of marker used to represent vehicle.
-            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesBasic.label_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesBasic.show_label`
               - Opt whether to display the vehicle's label.
             * - :py:attr:`~ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesBasic.line`
               - Get the line display properties for the vehicle.
@@ -51,8 +51,8 @@ Property detail
 
     Inherit certain 2D graphics settings from the scenario level.
 
-.. py:property:: is_visible
-    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesBasic.is_visible
+.. py:property:: show_graphics
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesBasic.show_graphics
     :type: bool
 
     Show 2D Graphics for the vehicle.
@@ -69,8 +69,8 @@ Property detail
 
     Style of marker used to represent vehicle.
 
-.. py:property:: label_visible
-    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesBasic.label_visible
+.. py:property:: show_label
+    :canonical: ansys.stk.core.stkobjects.IVehicleGraphics2DAttributesBasic.show_label
     :type: bool
 
     Opt whether to display the vehicle's label.

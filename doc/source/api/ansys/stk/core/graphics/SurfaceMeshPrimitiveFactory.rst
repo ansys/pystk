@@ -30,7 +30,6 @@ Overview
               - Determine whether or not the video card supports the surface mesh primitive. This is equivalent to calling Supported with automatic.
 
 
-
 Import detail
 -------------
 
@@ -52,41 +51,41 @@ Method detail
 
         :obj:`~SurfaceMeshPrimitive`
 
-.. py:method:: initialize_with_set_hint(self, setHint: SET_HINT) -> SurfaceMeshPrimitive
+.. py:method:: initialize_with_set_hint(self, set_hint: SetHint) -> SurfaceMeshPrimitive
     :canonical: ansys.stk.core.graphics.SurfaceMeshPrimitiveFactory.initialize_with_set_hint
 
     Initialize a surface mesh primitive with the specified setHint. This is equivalent to constructing a surface mesh with the specified setHint and a surface mesh rendering method of Automatic.
 
     :Parameters:
 
-    **setHint** : :obj:`~SET_HINT`
+    **set_hint** : :obj:`~SetHint`
 
     :Returns:
 
         :obj:`~SurfaceMeshPrimitive`
 
-.. py:method:: initialize_with_set_hint_and_rendering_method(self, setHint: SET_HINT, renderingMethod: SURFACE_MESH_RENDERING_METHOD) -> SurfaceMeshPrimitive
+.. py:method:: initialize_with_set_hint_and_rendering_method(self, set_hint: SetHint, rendering_method: SurfaceMeshRenderingMethod) -> SurfaceMeshPrimitive
     :canonical: ansys.stk.core.graphics.SurfaceMeshPrimitiveFactory.initialize_with_set_hint_and_rendering_method
 
     Initialize a surface mesh primitive with the specified setHint and renderingMethod.
 
     :Parameters:
 
-    **setHint** : :obj:`~SET_HINT`
-    **renderingMethod** : :obj:`~SURFACE_MESH_RENDERING_METHOD`
+    **set_hint** : :obj:`~SetHint`
+    **rendering_method** : :obj:`~SurfaceMeshRenderingMethod`
 
     :Returns:
 
         :obj:`~SurfaceMeshPrimitive`
 
-.. py:method:: supported(self, renderingMethod: SURFACE_MESH_RENDERING_METHOD) -> bool
+.. py:method:: supported(self, rendering_method: SurfaceMeshRenderingMethod) -> bool
     :canonical: ansys.stk.core.graphics.SurfaceMeshPrimitiveFactory.supported
 
     Determine whether or not the video card supports the surface mesh primitive with the given renderingMethod.
 
     :Parameters:
 
-    **renderingMethod** : :obj:`~SURFACE_MESH_RENDERING_METHOD`
+    **rendering_method** : :obj:`~SurfaceMeshRenderingMethod`
 
     :Returns:
 

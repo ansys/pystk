@@ -29,9 +29,9 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleHPOPCentralBodyGravity.file`
               - Name of gravity (.grv) file, an ASCII file containing the Central Body geopotential model coefficients.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleHPOPCentralBodyGravity.max_degree`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleHPOPCentralBodyGravity.maximum_degree`
               - Maximum degree of geopotential coefficients to be included for Central Body gravity computations. Dimensionless.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleHPOPCentralBodyGravity.max_order`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleHPOPCentralBodyGravity.maximum_order`
               - Maximum order of geopotential coefficients to be included for Central Body gravity computations. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleHPOPCentralBodyGravity.use_ocean_tides`
               - Opt whether to include the perturbation of the gravity field caused by the effects of ocean tides.
@@ -59,14 +59,14 @@ Property detail
 
     Name of gravity (.grv) file, an ASCII file containing the Central Body geopotential model coefficients.
 
-.. py:property:: max_degree
-    :canonical: ansys.stk.core.stkobjects.VehicleHPOPCentralBodyGravity.max_degree
+.. py:property:: maximum_degree
+    :canonical: ansys.stk.core.stkobjects.VehicleHPOPCentralBodyGravity.maximum_degree
     :type: int
 
     Maximum degree of geopotential coefficients to be included for Central Body gravity computations. Dimensionless.
 
-.. py:property:: max_order
-    :canonical: ansys.stk.core.stkobjects.VehicleHPOPCentralBodyGravity.max_order
+.. py:property:: maximum_order
+    :canonical: ansys.stk.core.stkobjects.VehicleHPOPCentralBodyGravity.maximum_order
     :type: int
 
     Maximum order of geopotential coefficients to be included for Central Body gravity computations. Dimensionless.
@@ -79,7 +79,7 @@ Property detail
 
 .. py:property:: solid_tide_type
     :canonical: ansys.stk.core.stkobjects.VehicleHPOPCentralBodyGravity.solid_tide_type
-    :type: SOLID_TIDE
+    :type: SolidTide
 
     Solid Tide Type.
 
@@ -105,15 +105,15 @@ Method detail
 
 
 
-.. py:method:: set_maximum_degree_and_order(self, maximumDegree: int, maximumOrder: int) -> None
+.. py:method:: set_maximum_degree_and_order(self, maximum_degree: int, maximum_order: int) -> None
     :canonical: ansys.stk.core.stkobjects.VehicleHPOPCentralBodyGravity.set_maximum_degree_and_order
 
     Set maximum degree and maximum order of geopotential coefficients to be included for Central Body gravity computations. An exception is raised if MaximumDegree is less than MaximumOrder. Both values are dimensionless.
 
     :Parameters:
 
-    **maximumDegree** : :obj:`~int`
-    **maximumOrder** : :obj:`~int`
+    **maximum_degree** : :obj:`~int`
+    **maximum_order** : :obj:`~int`
 
     :Returns:
 

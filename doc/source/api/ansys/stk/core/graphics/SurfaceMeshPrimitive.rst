@@ -79,19 +79,19 @@ Property detail
 
 .. py:property:: triangle_winding_order
     :canonical: ansys.stk.core.graphics.SurfaceMeshPrimitive.triangle_winding_order
-    :type: WINDING_ORDER
+    :type: WindingOrder
 
     Gets the orientation of front-facing triangles in the mesh.
 
 .. py:property:: set_hint
     :canonical: ansys.stk.core.graphics.SurfaceMeshPrimitive.set_hint
-    :type: SET_HINT
+    :type: SetHint
 
     Gets the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with.
 
 .. py:property:: rendering_method
     :canonical: ansys.stk.core.graphics.SurfaceMeshPrimitive.rendering_method
-    :type: SURFACE_MESH_RENDERING_METHOD
+    :type: SurfaceMeshRenderingMethod
 
     Gets the rendering method used to render the mesh.
 
@@ -130,40 +130,40 @@ Method detail
 
 
 
-.. py:method:: set(self, surfaceTriangulator: SurfaceTriangulatorResult) -> None
+.. py:method:: set(self, surface_triangulator: SurfaceTriangulatorResult) -> None
     :canonical: ansys.stk.core.graphics.SurfaceMeshPrimitive.set
 
     Define the surface mesh using the specified surfaceTriangulator. The mesh is rendered in the primitive's reference frame.
 
     :Parameters:
 
-    **surfaceTriangulator** : :obj:`~SurfaceTriangulatorResult`
+    **surface_triangulator** : :obj:`~SurfaceTriangulatorResult`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: set_without_texturing(self, surfaceTriangulator: SurfaceTriangulatorResult) -> None
+.. py:method:: set_without_texturing(self, surface_triangulator: SurfaceTriangulatorResult) -> None
     :canonical: ansys.stk.core.graphics.SurfaceMeshPrimitive.set_without_texturing
 
     Define the surface mesh using the specified surfaceTriangulator. The mesh is rendered in the primitive's reference frame.
 
     :Parameters:
 
-    **surfaceTriangulator** : :obj:`~SurfaceTriangulatorResult`
+    **surface_triangulator** : :obj:`~SurfaceTriangulatorResult`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: supported(self, renderingMethod: SURFACE_MESH_RENDERING_METHOD) -> bool
+.. py:method:: supported(self, rendering_method: SurfaceMeshRenderingMethod) -> bool
     :canonical: ansys.stk.core.graphics.SurfaceMeshPrimitive.supported
 
     Determine whether or not the video card supports the surface mesh primitive with the given renderingMethod.
 
     :Parameters:
 
-    **renderingMethod** : :obj:`~SURFACE_MESH_RENDERING_METHOD`
+    **rendering_method** : :obj:`~SurfaceMeshRenderingMethod`
 
     :Returns:
 

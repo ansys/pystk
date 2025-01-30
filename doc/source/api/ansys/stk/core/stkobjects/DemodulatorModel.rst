@@ -9,10 +9,6 @@ DemodulatorModel
 
 .. py:currentmodule:: DemodulatorModel
 
-Overview
---------
-
-
 
 Import detail
 -------------

@@ -9,10 +9,6 @@ AnalysisWorkbenchSampling
 
 .. py:currentmodule:: AnalysisWorkbenchSampling
 
-Overview
---------
-
-
 
 Import detail
 -------------

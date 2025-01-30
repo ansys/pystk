@@ -11,15 +11,15 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
     # region DetermineIfEpochOccurredInIntervalCollection
     def test_DetermineIfEpochOccurredInIntervalCollection(self):
         self.DetermineIfEpochOccurredInIntervalCollection(
-            TestBase.Application.get_object_from_path("Satellite/LEO").vgt
+            TestBase.Application.get_object_from_path("Satellite/LEO").analysis_workbench_components
         )
 
-    def DetermineIfEpochOccurredInIntervalCollection(self, provider: "AnalysisWorkbenchProvider"):
-        intervalList: "ITimeToolEventIntervalList" = provider.event_interval_lists["AttitudeIntervals"]
+    def DetermineIfEpochOccurredInIntervalCollection(self, provider: "AnalysisWorkbenchComponentProvider"):
+        intervalList: "ITimeToolTimeIntervalList" = provider.time_interval_lists["AttitudeIntervals"]
 
         # The reference event you want to determine if event of interest happened before.
-        timeEvent: "ITimeToolEvent" = provider.events["GroundTrajectory.Detic.LLA.Altitude.TimeOfMin"]
-        occurrence: "TimeToolEventFindOccurrenceResult" = timeEvent.find_occurrence()
+        timeEvent: "ITimeToolInstant" = provider.time_instants["GroundTrajectory.Detic.LLA.Altitude.TimeOfMin"]
+        occurrence: "TimeToolInstantOccurrenceResult" = timeEvent.find_occurrence()
         if intervalList.occurred(occurrence.epoch):
             Console.WriteLine("The time of maximum altitude occurred in event interval list.")
 
@@ -30,10 +30,12 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
 
     # region DetermineIntervalsInEventIntervalLists
     def test_DetermineIntervalsInEventIntervalLists(self):
-        self.DetermineIntervalsInEventIntervalLists(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
+        self.DetermineIntervalsInEventIntervalLists(
+            TestBase.Application.get_object_from_path("Satellite/LEO").analysis_workbench_components
+        )
 
-    def DetermineIntervalsInEventIntervalLists(self, provider: "AnalysisWorkbenchProvider"):
-        intervalsList: "ITimeToolEventIntervalList" = provider.event_interval_lists["AttitudeIntervals"]
+    def DetermineIntervalsInEventIntervalLists(self, provider: "AnalysisWorkbenchComponentProvider"):
+        intervalsList: "ITimeToolTimeIntervalList" = provider.time_interval_lists["AttitudeIntervals"]
 
         intervals: "TimeToolIntervalListResult" = intervalsList.find_intervals()
         if intervals.is_valid:
@@ -47,30 +49,31 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
 
     # region CreateFilteredEventIntervalList
     def test_CreateFilteredEventIntervalList(self):
-        self.CreateFilteredEventIntervalList(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
-
-    def CreateFilteredEventIntervalList(self, provider: "AnalysisWorkbenchProvider"):
-        intervalList: "ITimeToolEventIntervalList" = (
-            provider.event_interval_lists.factory.create_event_interval_list_filtered(
-                "MyIntervalListFiltered", "MyDescription"
-            )
+        self.CreateFilteredEventIntervalList(
+            TestBase.Application.get_object_from_path("Satellite/LEO").analysis_workbench_components
         )
-        listFiltered: "TimeToolEventIntervalListFiltered" = clr.CastAs(intervalList, TimeToolEventIntervalListFiltered)
 
-        listFiltered.original_intervals = provider.event_interval_lists["AttitudeIntervals"]
+    def CreateFilteredEventIntervalList(self, provider: "AnalysisWorkbenchComponentProvider"):
+        intervalList: "ITimeToolTimeIntervalList" = provider.time_interval_lists.factory.create_filtered(
+            "MyIntervalListFiltered", "MyDescription"
+        )
+        listFiltered: "TimeToolTimeIntervalListFiltered" = clr.CastAs(intervalList, TimeToolTimeIntervalListFiltered)
 
-        firstIntervals: "TimeToolFirstIntervalsFilter" = clr.CastAs(
-            listFiltered.filter_factory.create(CRDN_PRUNE_FILTER.FIRST_INTERVALS), TimeToolFirstIntervalsFilter
+        listFiltered.original_intervals = provider.time_interval_lists["AttitudeIntervals"]
+
+        firstIntervals: "TimeToolTimeIntervalFirstIntervalsFilter" = clr.CastAs(
+            listFiltered.filter_factory.create(IntervalPruneFilterType.FIRST_INTERVALS),
+            TimeToolTimeIntervalFirstIntervalsFilter,
         )
         firstIntervals.maximum_number_of_intervals = 3
 
         # Or for example satisfaction intervals
-        asSatisfactionCondition: "TimeToolSatisfactionConditionFilter" = clr.CastAs(
-            listFiltered.filter_factory.create(CRDN_PRUNE_FILTER.SATISFACTION_INTERVALS),
-            TimeToolSatisfactionConditionFilter,
+        asSatisfactionCondition: "TimeToolTimeIntervalSatisfactionConditionFilter" = clr.CastAs(
+            listFiltered.filter_factory.create(IntervalPruneFilterType.SATISFACTION_INTERVALS),
+            TimeToolTimeIntervalSatisfactionConditionFilter,
         )
         asSatisfactionCondition.condition = provider.conditions["BeforeStop"]
-        asSatisfactionCondition.duration_kind = CRDN_INTERVAL_DURATION_KIND.AT_LEAST
+        asSatisfactionCondition.duration_type = IntervalDurationType.AT_LEAST
 
         # Uses current Time unit preference, this code snippet assumes seconds.
         asSatisfactionCondition.interval_duration = 30
@@ -86,19 +89,19 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
 
     # region CreateTimeOffsetEventIntervalList
     def test_CreateTimeOffsetEventIntervalList(self):
-        self.CreateTimeOffsetEventIntervalList(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
-
-    def CreateTimeOffsetEventIntervalList(self, provider: "AnalysisWorkbenchProvider"):
-        intervalList: "ITimeToolEventIntervalList" = (
-            provider.event_interval_lists.factory.create_event_interval_list_time_offset(
-                "MyIntervalListFixedTimeOffset", "MyDescription"
-            )
-        )
-        asTimeOffset: "TimeToolEventIntervalListTimeOffset" = clr.CastAs(
-            intervalList, TimeToolEventIntervalListTimeOffset
+        self.CreateTimeOffsetEventIntervalList(
+            TestBase.Application.get_object_from_path("Satellite/LEO").analysis_workbench_components
         )
 
-        asTimeOffset.reference_intervals = provider.event_interval_lists["AfterStart.SatisfactionIntervals"]
+    def CreateTimeOffsetEventIntervalList(self, provider: "AnalysisWorkbenchComponentProvider"):
+        intervalList: "ITimeToolTimeIntervalList" = provider.time_interval_lists.factory.create_time_offset(
+            "MyIntervalListFixedTimeOffset", "MyDescription"
+        )
+        asTimeOffset: "TimeToolTimeIntervalListTimeOffset" = clr.CastAs(
+            intervalList, TimeToolTimeIntervalListTimeOffset
+        )
+
+        asTimeOffset.reference_intervals = provider.time_interval_lists["AfterStart.SatisfactionIntervals"]
 
         # Uses current Time unit preference, this code snippet assumes seconds.
         asTimeOffset.time_offset = 300
@@ -115,9 +118,11 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
     # region CreateEventIntervalListFile
     def test_CreateEventIntervalListFile(self):
         intervalFile: str = TestBase.GetScenarioFile("CodeSnippetsTests", "VGTData", "EventIntervalListFromFile.txt")
-        self.CreateEventIntervalListFile(TestBase.Application.get_object_from_path("Satellite/LEO").vgt, intervalFile)
+        self.CreateEventIntervalListFile(
+            TestBase.Application.get_object_from_path("Satellite/LEO").analysis_workbench_components, intervalFile
+        )
 
-    def CreateEventIntervalListFile(self, provider: "AnalysisWorkbenchProvider", intervalFile: str):
+    def CreateEventIntervalListFile(self, provider: "AnalysisWorkbenchComponentProvider", intervalFile: str):
         # Example contents of a file
         #
         #  STK.V.10.0
@@ -135,12 +140,10 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
         #
         #  END IntervalList
 
-        intervalList: "ITimeToolEventIntervalList" = (
-            provider.event_interval_lists.factory.create_event_interval_list_file(
-                "MyIntervalListFromFile", "MyDescription", intervalFile
-            )
+        intervalList: "ITimeToolTimeIntervalList" = provider.time_interval_lists.factory.create_from_file(
+            "MyIntervalListFromFile", "MyDescription", intervalFile
         )
-        asListFile: "TimeToolEventIntervalListFile" = clr.CastAs(intervalList, TimeToolEventIntervalListFile)
+        asListFile: "TimeToolTimeIntervalListFile" = clr.CastAs(intervalList, TimeToolTimeIntervalListFile)
 
         intervals: "TimeToolIntervalListResult" = intervalList.find_intervals()
         if intervals.is_valid:
@@ -156,19 +159,21 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
         self.CreateMergedEventIntervalList(TestBase.Application)
 
     def CreateMergedEventIntervalList(self, stkRoot: "StkObjectRoot"):
-        satelliteVgtProvider: "AnalysisWorkbenchProvider" = stkRoot.get_object_from_path("Satellite/LEO").vgt
-        aircraftVgtProvider: "AnalysisWorkbenchProvider" = stkRoot.get_object_from_path("Aircraft/UAV").vgt
+        satelliteVgtProvider: "AnalysisWorkbenchComponentProvider" = stkRoot.get_object_from_path(
+            "Satellite/LEO"
+        ).analysis_workbench_components
+        aircraftVgtProvider: "AnalysisWorkbenchComponentProvider" = stkRoot.get_object_from_path(
+            "Aircraft/UAV"
+        ).analysis_workbench_components
 
-        intervalList: "ITimeToolEventIntervalList" = (
-            satelliteVgtProvider.event_interval_lists.factory.create_event_interval_list_merged(
-                "MyIntervalListMerged", "MyDescription"
-            )
+        intervalList: "ITimeToolTimeIntervalList" = satelliteVgtProvider.time_interval_lists.factory.create_merged(
+            "MyIntervalListMerged", "MyDescription"
         )
-        asListMerged: "TimeToolEventIntervalListMerged" = clr.CastAs(intervalList, TimeToolEventIntervalListMerged)
+        asListMerged: "TimeToolTimeIntervalListMerged" = clr.CastAs(intervalList, TimeToolTimeIntervalListMerged)
 
-        asListMerged.set_interval_list_a(satelliteVgtProvider.event_interval_lists["AvailabilityIntervals"])
-        asListMerged.set_interval_list_b(aircraftVgtProvider.event_interval_lists["AvailabilityIntervals"])
-        asListMerged.merge_operation = CRDN_EVENT_LIST_MERGE_OPERATION.MINUS
+        asListMerged.set_interval_list_a(satelliteVgtProvider.time_interval_lists["AvailabilityIntervals"])
+        asListMerged.set_interval_list_b(aircraftVgtProvider.time_interval_lists["AvailabilityIntervals"])
+        asListMerged.merge_operation = EventListMergeOperation.MINUS
 
         intervals: "TimeToolIntervalListResult" = intervalList.find_intervals()
         if intervals.is_valid:
@@ -181,16 +186,16 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
 
     # region CreateListConditionEventInterval
     def test_CreateListConditionEventInterval(self):
-        self.CreateListConditionEventInterval(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
-
-    def CreateListConditionEventInterval(self, provider: "AnalysisWorkbenchProvider"):
-        intervalList: "ITimeToolEventIntervalList" = (
-            provider.event_interval_lists.factory.create_event_interval_list_condition(
-                "MyIntervalListSatisfaction", "MyDescription"
-            )
+        self.CreateListConditionEventInterval(
+            TestBase.Application.get_object_from_path("Satellite/LEO").analysis_workbench_components
         )
-        asListCondition: "TimeToolEventIntervalListCondition" = clr.CastAs(
-            intervalList, TimeToolEventIntervalListCondition
+
+    def CreateListConditionEventInterval(self, provider: "AnalysisWorkbenchComponentProvider"):
+        intervalList: "ITimeToolTimeIntervalList" = provider.time_interval_lists.factory.create_from_condition(
+            "MyIntervalListSatisfaction", "MyDescription"
+        )
+        asListCondition: "TimeToolTimeIntervalListCondition" = clr.CastAs(
+            intervalList, TimeToolTimeIntervalListCondition
         )
 
         asListCondition.condition = provider.conditions["AfterStart"]
@@ -206,15 +211,15 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
 
     # region CreateScaledEventIntervalList
     def test_CreateScaledEventIntervalList(self):
-        self.CreateScaledEventIntervalList(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
-
-    def CreateScaledEventIntervalList(self, provider: "AnalysisWorkbenchProvider"):
-        intervalList: "ITimeToolEventIntervalList" = (
-            provider.event_interval_lists.factory.create_event_interval_list_scaled(
-                "MyIntervalListScaled", "MyDescription"
-            )
+        self.CreateScaledEventIntervalList(
+            TestBase.Application.get_object_from_path("Satellite/LEO").analysis_workbench_components
         )
-        asListScaled: "TimeToolEventIntervalListScaled" = clr.CastAs(intervalList, TimeToolEventIntervalListScaled)
+
+    def CreateScaledEventIntervalList(self, provider: "AnalysisWorkbenchComponentProvider"):
+        intervalList: "ITimeToolTimeIntervalList" = provider.time_interval_lists.factory.create_scaled(
+            "MyIntervalListScaled", "MyDescription"
+        )
+        asListScaled: "TimeToolTimeIntervalListScaled" = clr.CastAs(intervalList, TimeToolTimeIntervalListScaled)
 
         asListScaled.absolute_increment = 40
 
@@ -236,23 +241,25 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
         self.CreateSignaledEventIntervalList(TestBase.Application)
 
     def CreateSignaledEventIntervalList(self, stkRoot: "StkObjectRoot"):
-        satelliteVgtProvider: "AnalysisWorkbenchProvider" = stkRoot.get_object_from_path("Satellite/LEO").vgt
-        aircraftVgtProvider: "AnalysisWorkbenchProvider" = stkRoot.get_object_from_path("Aircraft/UAV").vgt
+        satelliteVgtProvider: "AnalysisWorkbenchComponentProvider" = stkRoot.get_object_from_path(
+            "Satellite/LEO"
+        ).analysis_workbench_components
+        aircraftVgtProvider: "AnalysisWorkbenchComponentProvider" = stkRoot.get_object_from_path(
+            "Aircraft/UAV"
+        ).analysis_workbench_components
 
-        intervalList: "ITimeToolEventIntervalList" = (
-            satelliteVgtProvider.event_interval_lists.factory.create_event_interval_list_signaled(
-                "MyIntervalListSignaled", "MyDescription"
-            )
+        intervalList: "ITimeToolTimeIntervalList" = satelliteVgtProvider.time_interval_lists.factory.create_signaled(
+            "MyIntervalListSignaled", "MyDescription"
         )
-        asListSingled: "TimeToolEventIntervalListSignaled" = clr.CastAs(intervalList, TimeToolEventIntervalListSignaled)
+        asListSingled: "TimeToolTimeIntervalListSignaled" = clr.CastAs(intervalList, TimeToolTimeIntervalListSignaled)
 
-        asListSingled.original_intervals = aircraftVgtProvider.event_interval_lists["BeforeStop.SatisfactionIntervals"]
+        asListSingled.original_intervals = aircraftVgtProvider.time_interval_lists["BeforeStop.SatisfactionIntervals"]
         asListSingled.base_clock_location = satelliteVgtProvider.points["Center"]
         asListSingled.target_clock_location = aircraftVgtProvider.points["Center"]
 
-        asListSingled.signal_sense = CRDN_SIGNAL_SENSE.TRANSMIT
+        asListSingled.signal_sense = SignalDirectionType.TRANSMIT
         basicSignalDelay: "TimeToolSignalDelayBasic" = clr.CastAs(asListSingled.signal_delay, TimeToolSignalDelayBasic)
-        basicSignalDelay.speed_option = CRDN_SPEED_OPTIONS.CUSTOM_TRANSMISSION_SPEED
+        basicSignalDelay.speed_option = SpeedType.CUSTOM_TRANSMISSION_SPEED
 
         # Uses current Time unit preference, this code snippet assumes seconds.
         basicSignalDelay.time_delay_convergence = 0.002
@@ -271,25 +278,27 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
         self.DetermineEventIntervalWhenVelocityOfAircraftIsAboveCertainVelocity(TestBase.Application)
 
     def DetermineEventIntervalWhenVelocityOfAircraftIsAboveCertainVelocity(self, stkRoot: "StkObjectRoot"):
-        aircraftVgtProvider: "AnalysisWorkbenchProvider" = stkRoot.get_object_from_path("Aircraft/UAV").vgt
+        aircraftVgtProvider: "AnalysisWorkbenchComponentProvider" = stkRoot.get_object_from_path(
+            "Aircraft/UAV"
+        ).analysis_workbench_components
 
-        intervalList: "ITimeToolEventIntervalList" = (
-            aircraftVgtProvider.event_interval_lists.factory.create_event_interval_list_condition(
+        intervalList: "ITimeToolTimeIntervalList" = (
+            aircraftVgtProvider.time_interval_lists.factory.create_from_condition(
                 "IntervalsAboveCertainVelocity", "MyDescription"
             )
         )
-        asListCondition: "TimeToolEventIntervalListCondition" = clr.CastAs(
-            intervalList, TimeToolEventIntervalListCondition
+        asListCondition: "TimeToolTimeIntervalListCondition" = clr.CastAs(
+            intervalList, TimeToolTimeIntervalListCondition
         )
 
-        aboveBoundCondition: "ICalculationToolCondition" = (
-            aircraftVgtProvider.conditions.factory.create_condition_scalar_bounds("AboveCertainBound", "MyDescription")
+        aboveBoundCondition: "ICalculationToolCondition" = aircraftVgtProvider.conditions.factory.create_scalar_bounds(
+            "AboveCertainBound", "MyDescription"
         )
         asScalarBounds: "CalculationToolConditionScalarBounds" = clr.CastAs(
             aboveBoundCondition, CalculationToolConditionScalarBounds
         )
-        asScalarBounds.operation = CRDN_CONDITION_THRESHOLD_OPTION.ABOVE_MIN
-        asScalarBounds.scalar = aircraftVgtProvider.calc_scalars["Trajectory(CBI).Cartesian.Z"]
+        asScalarBounds.operation = ConditionThresholdType.ABOVE_MINIMUM
+        asScalarBounds.scalar = aircraftVgtProvider.calculation_scalars["Trajectory(CBI).Cartesian.Z"]
         # asScalarBounds.Minimum = 4082;
 
         asListCondition.condition = aboveBoundCondition
@@ -311,19 +320,23 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
         # Compute UAV's access to the satellite
         satellite: "IStkObject" = stkRoot.get_object_from_path("Satellite/LEO")
         aircraft: "IStkObject" = stkRoot.get_object_from_path("Aircraft/UAV")
-        satelliteAccess: "StkAccess" = aircraft.get_access_to_object(satellite)
+        satelliteAccess: "Access" = aircraft.get_access_to_object(satellite)
         satelliteAccess.compute_access()
 
         # Subtract the aircraft availability time with the access times to get the times without access.
-        intervalList: "ITimeToolEventIntervalList" = (
-            aircraft.vgt.event_interval_lists.factory.create_event_interval_list_merged(
+        intervalList: "ITimeToolTimeIntervalList" = (
+            aircraft.analysis_workbench_components.time_interval_lists.factory.create_merged(
                 "IntervalsWithoutAccess", "MyDescription"
             )
         )
-        asListMerged: "TimeToolEventIntervalListMerged" = clr.CastAs(intervalList, TimeToolEventIntervalListMerged)
-        asListMerged.set_interval_list_a(aircraft.vgt.event_interval_lists["AvailabilityIntervals"])
-        asListMerged.set_interval_list_b(satelliteAccess.vgt.event_interval_lists["AccessIntervals"])
-        asListMerged.merge_operation = CRDN_EVENT_LIST_MERGE_OPERATION.MINUS
+        asListMerged: "TimeToolTimeIntervalListMerged" = clr.CastAs(intervalList, TimeToolTimeIntervalListMerged)
+        asListMerged.set_interval_list_a(
+            aircraft.analysis_workbench_components.time_interval_lists["AvailabilityIntervals"]
+        )
+        asListMerged.set_interval_list_b(
+            satelliteAccess.analysis_workbench_components.time_interval_lists["AccessIntervals"]
+        )
+        asListMerged.merge_operation = EventListMergeOperation.MINUS
 
         # Print times without access.
         intervals: "TimeToolIntervalListResult" = intervalList.find_intervals()

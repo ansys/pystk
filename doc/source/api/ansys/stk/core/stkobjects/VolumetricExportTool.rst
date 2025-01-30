@@ -53,13 +53,13 @@ Property detail
 
 .. py:property:: export_data_format_type
     :canonical: ansys.stk.core.stkobjects.VolumetricExportTool.export_data_format_type
-    :type: VOLUMETRIC_DATA_EXPORT_FORMAT_TYPE
+    :type: VolumetricDataExportFormatType
 
     Volumetric data export format type.
 
 .. py:property:: volume_grid_export_type
     :canonical: ansys.stk.core.stkobjects.VolumetricExportTool.volume_grid_export_type
-    :type: VOLUMETRIC_VOLUME_GRID_EXPORT_TYPE
+    :type: VolumetricVolumeGridExportType
 
     Volumetric data export format type.
 
@@ -95,14 +95,14 @@ Method detail
 
 
 
-.. py:method:: export(self, fileName: str) -> None
+.. py:method:: export(self, file_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.VolumetricExportTool.export
 
     Export the Volumetric data file.
 
     :Parameters:
 
-    **fileName** : :obj:`~str`
+    **file_name** : :obj:`~str`
 
     :Returns:
 

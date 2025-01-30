@@ -167,7 +167,7 @@ Property detail
 
 .. py:property:: aerodynamic_strategy
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.aerodynamic_strategy
-    :type: ADVANCED_FIXED_WING_AERODYNAMIC_STRATEGY
+    :type: AdvancedFixedWingAerodynamicStrategy
 
     Gets or sets the aerodynamic strategy type.
 
@@ -197,7 +197,7 @@ Property detail
 
 .. py:property:: powerplant_strategy
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.powerplant_strategy
-    :type: ADVANCED_FIXED_WING_POWERPLANT_STRATEGY
+    :type: AdvancedFixedWingPowerplantStrategy
 
     Gets or sets the powerplant strategy type.
 
@@ -290,7 +290,7 @@ Method detail
 
 
 
-.. py:method:: create_all_performance_models(self, name: str, overwrite: bool, makeDefault: bool) -> None
+.. py:method:: create_all_performance_models(self, name: str, overwrite: bool, make_default: bool) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.create_all_performance_models
 
     Create a set of advanced performance models for the aircraft with the given name.
@@ -299,7 +299,7 @@ Method detail
 
     **name** : :obj:`~str`
     **overwrite** : :obj:`~bool`
-    **makeDefault** : :obj:`~bool`
+    **make_default** : :obj:`~bool`
 
     :Returns:
 

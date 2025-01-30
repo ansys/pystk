@@ -9,10 +9,6 @@ FigureOfMeritDefinitionTimeAverageGap
 
 .. py:currentmodule:: FigureOfMeritDefinitionTimeAverageGap
 
-Overview
---------
-
-
 
 Import detail
 -------------

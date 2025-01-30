@@ -26,9 +26,9 @@ Overview
               - Contour line style.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DElevationsElement.line_width`
               - Contour line width.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DElevationsElement.distance_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DElevationsElement.show_distance_label`
               - Distance visible.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DElevationsElement.user_text_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DElevationsElement.show_user_text_visible`
               - Show User Defined Text on Contour.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DElevationsElement.user_text`
               - Opt whether to display user defined text for the contour.
@@ -62,24 +62,24 @@ Property detail
 
 .. py:property:: line_style
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DElevationsElement.line_style
-    :type: LINE_STYLE
+    :type: LineStyle
 
     Contour line style.
 
 .. py:property:: line_width
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DElevationsElement.line_width
-    :type: LINE_WIDTH
+    :type: LineWidth
 
     Contour line width.
 
-.. py:property:: distance_visible
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DElevationsElement.distance_visible
+.. py:property:: show_distance_label
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DElevationsElement.show_distance_label
     :type: bool
 
     Distance visible.
 
-.. py:property:: user_text_visible
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DElevationsElement.user_text_visible
+.. py:property:: show_user_text_visible
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DElevationsElement.show_user_text_visible
     :type: bool
 
     Show User Defined Text on Contour.

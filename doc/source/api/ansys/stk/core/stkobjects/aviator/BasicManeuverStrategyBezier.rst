@@ -79,7 +79,7 @@ Property detail
 
 .. py:property:: reference_frame
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyBezier.reference_frame
-    :type: BASIC_MANEUVER_REFERENCE_FRAME
+    :type: BasicManeuverReferenceFrame
 
     Gets or sets the reference frame the aircraft will use.
 
@@ -103,13 +103,13 @@ Property detail
 
 .. py:property:: airspeed_type
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyBezier.airspeed_type
-    :type: AIRSPEED_TYPE
+    :type: AirspeedType
 
     Get the airspeed type.
 
 .. py:property:: vertical_velocity_mode
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyBezier.vertical_velocity_mode
-    :type: FLY_TO_FLIGHT_PATH_ANGLE_MODE
+    :type: FlyToFlightPathAngleMode
 
     Get the option to specify the flight path angle or the altitude rate.
 
@@ -151,7 +151,7 @@ Property detail
 
 .. py:property:: stop_airspeed_type
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyBezier.stop_airspeed_type
-    :type: AIRSPEED_TYPE
+    :type: AirspeedType
 
     Get the airspeed type for the airspeed stopping condition.
 
@@ -173,14 +173,14 @@ Method detail
 
 
 
-.. py:method:: set_airspeed(self, airspeedType: AIRSPEED_TYPE, airspeed: float) -> None
+.. py:method:: set_airspeed(self, airspeed_type: AirspeedType, airspeed: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyBezier.set_airspeed
 
     Set the fly to airspeed value and type.
 
     :Parameters:
 
-    **airspeedType** : :obj:`~AIRSPEED_TYPE`
+    **airspeed_type** : :obj:`~AirspeedType`
     **airspeed** : :obj:`~float`
 
     :Returns:
@@ -190,14 +190,14 @@ Method detail
 
 
 
-.. py:method:: set_vertical_velocity(self, mode: FLY_TO_FLIGHT_PATH_ANGLE_MODE, value: typing.Any) -> None
+.. py:method:: set_vertical_velocity(self, mode: FlyToFlightPathAngleMode, value: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyBezier.set_vertical_velocity
 
     Set the flight path angle or altitude rate.
 
     :Parameters:
 
-    **mode** : :obj:`~FLY_TO_FLIGHT_PATH_ANGLE_MODE`
+    **mode** : :obj:`~FlyToFlightPathAngleMode`
     **value** : :obj:`~typing.Any`
 
     :Returns:
@@ -206,7 +206,7 @@ Method detail
 
 
 
-.. py:method:: set_stop_altitude_rate(self, enable: bool, altitudeRate: float) -> None
+.. py:method:: set_stop_altitude_rate(self, enable: bool, altitude_rate: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyBezier.set_stop_altitude_rate
 
     Set whether to enable the altitude rate stopping condition and the corresponding value.
@@ -214,7 +214,7 @@ Method detail
     :Parameters:
 
     **enable** : :obj:`~bool`
-    **altitudeRate** : :obj:`~float`
+    **altitude_rate** : :obj:`~float`
 
     :Returns:
 
@@ -223,7 +223,7 @@ Method detail
 
 
 
-.. py:method:: set_stop_airspeed(self, enable: bool, airspeedType: AIRSPEED_TYPE, airspeed: float) -> None
+.. py:method:: set_stop_airspeed(self, enable: bool, airspeed_type: AirspeedType, airspeed: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyBezier.set_stop_airspeed
 
     Set whether to enable the airspeed stopping condition and the corresponding value.
@@ -231,7 +231,7 @@ Method detail
     :Parameters:
 
     **enable** : :obj:`~bool`
-    **airspeedType** : :obj:`~AIRSPEED_TYPE`
+    **airspeed_type** : :obj:`~AirspeedType`
     **airspeed** : :obj:`~float`
 
     :Returns:

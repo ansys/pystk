@@ -4,8 +4,8 @@ on:
     types: [opened, synchronize, reopened, labeled]
 
 env:
-  MAIN_PYTHON_VERSION: '3.12'
-  MINIMUM_PYTHON_VERSION: '3.10'
+  MAIN_PYTHON_VERSION: '3.13'
+  MINIMUM_PYTHON_VERSION: '3.11'
   LIBRARY_NAME: 'ansys-stk-core'
   LIBRARY_NAMESPACE: 'ansys.stk.core'
   DOCUMENTATION_CNAME: 'stk.docs.pyansys.com'
@@ -42,15 +42,13 @@ jobs:
        with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
 
-  branch-name-style:
-    name: "Branch style checks"
+  check-pr-title:
+    name: "Check pull-request title follows conventional commits"
     runs-on: ubuntu-latest
-    if: |
-      !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
-      !contains(github.event.pull_request.labels.*.name, 'style:skip')
-    needs: labeler
     steps:
-      - uses: ansys/actions/branch-name-style@v7
+      - uses: ansys/actions/check-pr-title@v8
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
   code-style:
     name: "Code style checks"
@@ -58,9 +56,9 @@ jobs:
     if: |
       !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
       !contains(github.event.pull_request.labels.*.name, 'style:skip')
-    needs: branch-name-style
+    needs: check-pr-title
     steps:
-      - uses: ansys/actions/code-style@v7
+      - uses: ansys/actions/code-style@v8
         with: 
           python-version: ${{ env.MAIN_PYTHON_VERSION }}
 
@@ -70,7 +68,7 @@ jobs:
     if: |
       !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
       !contains(github.event.pull_request.labels.*.name, 'style:skip')
-    needs: branch-name-style
+    needs: check-pr-title
     steps:
       - name: "Checkout project"
         uses: actions/checkout@v4
@@ -95,16 +93,45 @@ jobs:
           VALE_FILES=$(echo -e "$RST_FILES" | jq -R . | jq -s .)
           echo "VALE_FILES=$(echo $VALE_FILES)" >> $GITHUB_ENV
 
-      - uses: ansys/actions/doc-style@v7
+      - uses: ansys/actions/doc-style@v8
         with:
           checkout: false
           files: "${{ env.VALE_FILES }}"
           vale-config: doc/.vale.ini
           token: ${{ secrets.GITHUB_TOKEN }}
 
+  build-wheelhouse:
+    name: "Build wheelhouse for latest Python versions"
+    runs-on: ${{ matrix.os }}
+    needs: doc-style
+    if: |
+      always() &&
+        (needs.doc-style.result == 'success' || needs.doc-style.result == 'skipped') &&
+        !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
+        !contains(github.event.pull_request.labels.*.name, 'docs:skip')
+    strategy:
+       matrix:
+           os: [ubuntu-latest, windows-latest]
+           python-version: ['3.11', '3.12', '3.13']
+           target: ['all', 'grpc', 'visualization']
+    steps:
+      - name: "Build a wheelhouse of the Python library"
+        uses: ansys/actions/build-wheelhouse@v8
+        with:
+          library-name: ${{ env.LIBRARY_NAME }}
+          operating-system: ${{ matrix.os }}
+          python-version: ${{ matrix.python-version }}
+          target: ${{ matrix.target }}
+
   doc-build:
     name: "Doc build"
     runs-on: ${{ matrix.runner }}
+    needs: build-wheelhouse
+    if: |
+      always() &&
+        (needs.build-wheelhouse.result == 'success' || needs.build-wheelhouse.result == 'skipped') &&
+        !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
+        !contains(github.event.pull_request.labels.*.name, 'docs:skip')
     # Limitations with one line GitHub actions conditionals forces us to use a
     # matrix strategy. If examples execution is required, a self-hosted runner
     # is selected. Otherwise, a GitHub runner is used.
@@ -118,15 +145,28 @@ jobs:
             runner: [self-hosted, pystk]
           - needs-self-hosted-runner: true
             runner: ubuntu-latest
-    if: |
-      !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
-      !contains(github.event.pull_request.labels.*.name, 'doc:skip')
-    needs: doc-style
     timeout-minutes: 90
     steps:
 
       - name: "Checkout the project"
         uses: actions/checkout@v4
+
+      - name: "Install Python ${{ env.MAIN_PYTHON_VERSION }}"
+        if: |
+          !contains(github.event.pull_request.labels.*.name, 'docs:examples')
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.MAIN_PYTHON_VERSION }}
+
+      - name: "Download wheelhouse into static path"
+        uses: actions/download-artifact@v4
+        with:
+          path: "doc/source/_static/wheelhouse"
+          pattern: "*-wheelhouse-*"
+
+      - name: "Display the wheelhouse layout"
+        run: |
+          tree doc/source/_static/wheelhouse
 
       - name: "Generate the name of the Docker image and the container"
         if: |
@@ -183,6 +223,7 @@ jobs:
               ${{ env.STK_CONTAINER }} /bin/bash -c \
               "python -m pip install tox && rm -rf .tox"
           else
+            python --version
             python -m pip install tox && rm -rf .tox
           fi
 
@@ -250,7 +291,6 @@ jobs:
         run: |
           cp gh-pages/version/dev/api.html doc/_build/html/api.html
           cp -r gh-pages/version/dev/api doc/_build/html/api
-          cp gh-pages/version/dev/index.html doc/_build/html/index.html
 
       - name: "Include 'Examples' section from nightly build docs"
         if: |
@@ -260,7 +300,14 @@ jobs:
           cp -r gh-pages/version/dev/_images/* doc/_build/html/_images
           cp gh-pages/version/dev/examples.html doc/_build/html/examples.html
           cp -r gh-pages/version/dev/examples doc/_build/html/examples
-          cp gh-pages/version/dev/index.html doc/_build/html/index.html
+
+      - name: "Include 'search.json' section from nightly build docs"
+        if: |
+          steps.build-doc-with-api.outcome == 'success' ||
+          steps.build-doc-with-examples.outcome == 'success' ||
+          steps.build-doc-minimum.outcome == 'success'
+        run:
+          cp gh-pages/version/dev/_static/search.json doc/_build/html/_static/search.json
 
       - name: "Upload HTML documentation artifacts"
         uses: actions/upload-artifact@v4
@@ -281,18 +328,20 @@ jobs:
     name: "Tests Python ${{ matrix.python }}"
     runs-on: [self-hosted, pystk]
     if: |
-      !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
-      !contains(github.event.pull_request.labels.*.name, 'tests:skip')
+      always() &&
+        (needs.code-style.result == 'success' || needs.code-style.result == 'skipped') &&
+        !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
+        !contains(github.event.pull_request.labels.*.name, 'tests:skip')
     needs: code-style
     strategy:
       matrix:
-        # Tests run against Python 3.10 to ensure backwards compatibility with
+        # Tests run against Python 3.11 to ensure backwards compatibility with
         # the lowest supported Python version. Testing against a single version
         # minimizes the time for CI/CD runs.
         #
         # Can not use ${{ env.MINIMUM_PYTHON_VERSION }} because GitHub actions
         # does not support ENV variable substitution in matrix definition
-        python: ['3.10']
+        python: ['3.11']
       fail-fast: false
     steps:
 
@@ -351,6 +400,13 @@ jobs:
             ${{ env.STK_CONTAINER }} /bin/bash -c \
             "export COVERAGE_FILE=vgt && tox -e tests-vgt-graphics-cov-linux"
 
+      - name: "Run the doc snippet tests"
+        run: |
+          docker exec \
+            --workdir ${{ env.PYSTK_DIR }} \
+            ${{ env.STK_CONTAINER }} /bin/bash -c \
+            "export COVERAGE_FILE=snippets && tox -e tests-snippets-graphics-cov-linux"
+
       - name: "Install coverage dependencies"
         if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
         run: |
@@ -365,7 +421,7 @@ jobs:
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "coverage combine aviator stknogfx stkgfx vgt"
+            "coverage combine aviator stknogfx stkgfx vgt snippets"
 
       - name: "Generate total coverage report"
         if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
@@ -393,9 +449,12 @@ jobs:
     name: "Build library"
     runs-on: ubuntu-latest
     if: |
-      !contains(github.event.pull_request.labels.*.name, 'ci:skip')
+      always() &&
+        (needs.doc-build.result == 'success' || needs.doc-build.result == 'skipped') &&
+        (needs.tests.result == 'success' || needs.tests.result == 'skipped') &&
+        !contains(github.event.pull_request.labels.*.name, 'ci:skip')
     needs: [doc-build, tests]
     steps:
-      - uses: ansys/actions/build-library@v7
+      - uses: ansys/actions/build-library@v8
         with:
           library-name: ${{ env.LIBRARY_NAME }}

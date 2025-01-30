@@ -41,7 +41,7 @@ Overview
               - Returns a number of elements in the collection.
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolAxesGroup.factory`
               - Returns a Factory object used to create custom axes.
-            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolAxesGroup._NewEnum`
+            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolAxesGroup._new_enum`
               - Returns a COM enumerator.
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolAxesGroup.common_tasks`
               - Provides access to common tasks that allow users quickly carry out tasks such as creating known axes, etc.
@@ -61,7 +61,7 @@ Property detail
 
 .. py:property:: context
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesGroup.context
-    :type: IAnalysisWorkbenchContext
+    :type: IAnalysisWorkbenchComponentContext
 
     Returns a context object. The context can be used to find out which central body or STK object this instance is associated with.
 
@@ -77,8 +77,8 @@ Property detail
 
     Returns a Factory object used to create custom axes.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesGroup._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesGroup._new_enum
     :type: EnumeratorProxy
 
     Returns a COM enumerator.
@@ -93,14 +93,14 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: remove(self, axesName: str) -> None
+.. py:method:: remove(self, axes_name: str) -> None
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesGroup.remove
 
     Remove a specified Axes.
 
     :Parameters:
 
-    **axesName** : :obj:`~str`
+    **axes_name** : :obj:`~str`
 
     :Returns:
 
@@ -122,14 +122,14 @@ Method detail
 
 
 
-.. py:method:: item(self, indexOrName: typing.Any) -> IVectorGeometryToolAxes
+.. py:method:: item(self, index_or_name: typing.Any) -> IVectorGeometryToolAxes
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesGroup.item
 
     Return an axes by name or at a specified position.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 

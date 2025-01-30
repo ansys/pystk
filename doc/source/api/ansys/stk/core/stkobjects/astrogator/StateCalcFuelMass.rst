@@ -9,10 +9,6 @@ StateCalcFuelMass
 
 .. py:currentmodule:: StateCalcFuelMass
 
-Overview
---------
-
-
 
 Import detail
 -------------

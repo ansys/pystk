@@ -84,7 +84,7 @@ Property detail
 
 .. py:property:: sun_position
     :canonical: ansys.stk.core.stkobjects.astrogator.MarsGRAM2005.sun_position
-    :type: SUN_POSITION
+    :type: SunPosition
 
     Gets or sets the sun position computation.
 
@@ -102,13 +102,13 @@ Property detail
 
 .. py:property:: density_type
     :canonical: ansys.stk.core.stkobjects.astrogator.MarsGRAM2005.density_type
-    :type: MARS_GRAM_DENSITY_TYPE
+    :type: MarsGRAMDensityType
 
     Low, mean, high or randomly perturbed density type.
 
 .. py:property:: atmos_data_source
     :canonical: ansys.stk.core.stkobjects.astrogator.MarsGRAM2005.atmos_data_source
-    :type: ATMOS_DATA_SOURCE
+    :type: AtmosDataSource
 
     Gets or sets the atmospheric model data source - data file or constant values.
 
@@ -126,7 +126,7 @@ Property detail
 
 .. py:property:: drag_model_type
     :canonical: ansys.stk.core.stkobjects.astrogator.MarsGRAM2005.drag_model_type
-    :type: DRAG_MODEL_TYPE
+    :type: DragModelType
 
     Drag model type.
 

@@ -39,7 +39,7 @@ Overview
               - Get the launch vehicle's 2D trajectory properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicleGraphics.resolution`
               - Get the launch vehicle's 2D resolution properties.
-            * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicleGraphics.elev_contours`
+            * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicleGraphics.elevation_contours`
               - Get the launch vehicle's 2D elevation contour properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicleGraphics.range_contours`
               - Get the launch vehicle's 2D range contour properties.
@@ -49,17 +49,17 @@ Overview
               - Get the launch vehicle's 2D swath properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicleGraphics.ground_ellipses`
               - Get the launch vehicle's 2D ground ellipses properties.
-            * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicleGraphics.use_inst_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicleGraphics.use_instance_name`
               - Opt whether to use the instance name as the label.
             * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicleGraphics.label_notes`
               - Notes attached to the object and displayed in the 2D and 3D Graphics windows.
-            * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicleGraphics.use_inst_name_label`
+            * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicleGraphics.use_instance_name_label`
               - Specify whether to use the name of the launch vehicle (as shown in the Object Browser) as its label.
             * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicleGraphics.label_name`
               - The user-specified name to use as a label for the launch vehicle.
             * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicleGraphics.saa`
               - Get the vehicle's South Atlantic Anomaly Contour properties.
-            * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicleGraphics.is_object_graphics_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicleGraphics.show_graphics`
               - Specify whether graphics attributes of the launch vehicle are visible.
             * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicleGraphics.radar_cross_section`
               - Gets the radar cross section graphics interface.
@@ -79,7 +79,7 @@ Property detail
 
 .. py:property:: attributes_type
     :canonical: ansys.stk.core.stkobjects.LaunchVehicleGraphics.attributes_type
-    :type: VEHICLE_GRAPHICS_2D_ATTRIBUTES
+    :type: VehicleGraphics2DAttributeType
 
     Get the 2D Graphics attributes type: basic, access intervals, custom intervals, or real time.
 
@@ -107,9 +107,9 @@ Property detail
 
     Get the launch vehicle's 2D resolution properties.
 
-.. py:property:: elev_contours
-    :canonical: ansys.stk.core.stkobjects.LaunchVehicleGraphics.elev_contours
-    :type: VehicleGraphics2DElevContours
+.. py:property:: elevation_contours
+    :canonical: ansys.stk.core.stkobjects.LaunchVehicleGraphics.elevation_contours
+    :type: VehicleGraphics2DElevationContours
 
     Get the launch vehicle's 2D elevation contour properties.
 
@@ -137,8 +137,8 @@ Property detail
 
     Get the launch vehicle's 2D ground ellipses properties.
 
-.. py:property:: use_inst_name
-    :canonical: ansys.stk.core.stkobjects.LaunchVehicleGraphics.use_inst_name
+.. py:property:: use_instance_name
+    :canonical: ansys.stk.core.stkobjects.LaunchVehicleGraphics.use_instance_name
     :type: bool
 
     Opt whether to use the instance name as the label.
@@ -149,8 +149,8 @@ Property detail
 
     Notes attached to the object and displayed in the 2D and 3D Graphics windows.
 
-.. py:property:: use_inst_name_label
-    :canonical: ansys.stk.core.stkobjects.LaunchVehicleGraphics.use_inst_name_label
+.. py:property:: use_instance_name_label
+    :canonical: ansys.stk.core.stkobjects.LaunchVehicleGraphics.use_instance_name_label
     :type: bool
 
     Specify whether to use the name of the launch vehicle (as shown in the Object Browser) as its label.
@@ -167,8 +167,8 @@ Property detail
 
     Get the vehicle's South Atlantic Anomaly Contour properties.
 
-.. py:property:: is_object_graphics_visible
-    :canonical: ansys.stk.core.stkobjects.LaunchVehicleGraphics.is_object_graphics_visible
+.. py:property:: show_graphics
+    :canonical: ansys.stk.core.stkobjects.LaunchVehicleGraphics.show_graphics
     :type: bool
 
     Specify whether graphics attributes of the launch vehicle are visible.
@@ -184,27 +184,27 @@ Method detail
 -------------
 
 
-.. py:method:: set_attributes_type(self, attributes: VEHICLE_GRAPHICS_2D_ATTRIBUTES) -> None
+.. py:method:: set_attributes_type(self, attributes: VehicleGraphics2DAttributeType) -> None
     :canonical: ansys.stk.core.stkobjects.LaunchVehicleGraphics.set_attributes_type
 
     Set the 2D Graphics attributes type.
 
     :Parameters:
 
-    **attributes** : :obj:`~VEHICLE_GRAPHICS_2D_ATTRIBUTES`
+    **attributes** : :obj:`~VehicleGraphics2DAttributeType`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_attributes_type_supported(self, attributes: VEHICLE_GRAPHICS_2D_ATTRIBUTES) -> bool
+.. py:method:: is_attributes_type_supported(self, attributes: VehicleGraphics2DAttributeType) -> bool
     :canonical: ansys.stk.core.stkobjects.LaunchVehicleGraphics.is_attributes_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **attributes** : :obj:`~VEHICLE_GRAPHICS_2D_ATTRIBUTES`
+    **attributes** : :obj:`~VehicleGraphics2DAttributeType`
 
     :Returns:
 

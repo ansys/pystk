@@ -9,10 +9,6 @@ PerformanceModel
 
 .. py:currentmodule:: PerformanceModel
 
-Overview
---------
-
-
 
 Import detail
 -------------

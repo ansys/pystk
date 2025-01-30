@@ -30,7 +30,6 @@ Overview
               - Initialize the overlay with a specified background texture. The size of the overlay will be the same as the size of the texture.
 
 
-
 Import detail
 -------------
 
@@ -52,17 +51,17 @@ Method detail
 
         :obj:`~TextureScreenOverlay`
 
-.. py:method:: initialize_with_xy_width_height(self, xPixels: float, yPixels: float, widthPixels: float, heightPixels: float) -> TextureScreenOverlay
+.. py:method:: initialize_with_xy_width_height(self, x_pixels: float, y_pixels: float, width_pixels: float, height_pixels: float) -> TextureScreenOverlay
     :canonical: ansys.stk.core.graphics.TextureScreenOverlayFactory.initialize_with_xy_width_height
 
     Initialize the overlay with the specified x position, y position, width, and height, all specified in pixels.
 
     :Parameters:
 
-    **xPixels** : :obj:`~float`
-    **yPixels** : :obj:`~float`
-    **widthPixels** : :obj:`~float`
-    **heightPixels** : :obj:`~float`
+    **x_pixels** : :obj:`~float`
+    **y_pixels** : :obj:`~float`
+    **width_pixels** : :obj:`~float`
+    **height_pixels** : :obj:`~float`
 
     :Returns:
 
@@ -82,15 +81,15 @@ Method detail
 
         :obj:`~TextureScreenOverlay`
 
-.. py:method:: initialize_with_xy_texture(self, xPixels: float, yPixels: float, texture: RendererTexture2D) -> TextureScreenOverlay
+.. py:method:: initialize_with_xy_texture(self, x_pixels: float, y_pixels: float, texture: RendererTexture2D) -> TextureScreenOverlay
     :canonical: ansys.stk.core.graphics.TextureScreenOverlayFactory.initialize_with_xy_texture
 
     Initialize the overlay with a specified background texture. The size of the overlay will be the same as the size of the texture.
 
     :Parameters:
 
-    **xPixels** : :obj:`~float`
-    **yPixels** : :obj:`~float`
+    **x_pixels** : :obj:`~float`
+    **y_pixels** : :obj:`~float`
     **texture** : :obj:`~RendererTexture2D`
 
     :Returns:

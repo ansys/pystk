@@ -46,7 +46,7 @@ Property detail
 
 .. py:property:: element_type
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcAltitudeOfPeriapsis.element_type
-    :type: CALC_OBJECT_ELEM
+    :type: CalculationObjectElement
 
     Gets or sets the element type.
 

@@ -41,7 +41,7 @@ Overview
               - Returns a number of elements in the collection.
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolSystemGroup.factory`
               - Returns a Factory object used to create custom VGT systems.
-            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolSystemGroup._NewEnum`
+            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolSystemGroup._new_enum`
               - Returns a COM enumerator.
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolSystemGroup.common_tasks`
               - Provides access to common tasks that allow users quickly carry out tasks such as creating known systems, etc.
@@ -61,7 +61,7 @@ Property detail
 
 .. py:property:: context
     :canonical: ansys.stk.core.vgt.VectorGeometryToolSystemGroup.context
-    :type: IAnalysisWorkbenchContext
+    :type: IAnalysisWorkbenchComponentContext
 
     Returns a context object. The context can be used to find out which central body or STK object this instance is associated with.
 
@@ -77,8 +77,8 @@ Property detail
 
     Returns a Factory object used to create custom VGT systems.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.vgt.VectorGeometryToolSystemGroup._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.vgt.VectorGeometryToolSystemGroup._new_enum
     :type: EnumeratorProxy
 
     Returns a COM enumerator.
@@ -93,14 +93,14 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: remove(self, systemName: str) -> None
+.. py:method:: remove(self, system_name: str) -> None
     :canonical: ansys.stk.core.vgt.VectorGeometryToolSystemGroup.remove
 
     Remove a specified System.
 
     :Parameters:
 
-    **systemName** : :obj:`~str`
+    **system_name** : :obj:`~str`
 
     :Returns:
 
@@ -122,14 +122,14 @@ Method detail
 
 
 
-.. py:method:: item(self, indexOrName: typing.Any) -> IVectorGeometryToolSystem
+.. py:method:: item(self, index_or_name: typing.Any) -> IVectorGeometryToolSystem
     :canonical: ansys.stk.core.vgt.VectorGeometryToolSystemGroup.item
 
     Return a System by name or at a specified position.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 
