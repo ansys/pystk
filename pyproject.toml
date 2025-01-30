@@ -60,7 +60,7 @@ doc = [
     "myst-parser==4.0.0",
     "nbsphinx==0.9.6",
     "numpydoc==1.8.0",
-    "nbconvert==7.16.5",
+    "nbconvert==7.16.6",
     "sphinx==7.4.7",
     "sphinx-design==0.6.1",
     "sphinx-jinja==2.0.2",
