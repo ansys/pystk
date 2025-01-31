@@ -53,7 +53,7 @@ class STKRuntimeApplication(STKXApplication):
             root = StkObjectRoot()
             root._private_init(root_unk)
             return root
-        raise STKInitializationError(f"Not connected to the gRPC server.")
+        raise STKInitializationError("Not connected to the gRPC server.")
             
     def new_object_model_context(self) -> StkObjectModelContext:
         """May be used to obtain an Object Model Context from a running STK Engine application."""
@@ -63,7 +63,7 @@ class STKRuntimeApplication(STKXApplication):
             context = StkObjectModelContext()
             context._private_init(context_unk)
             return context
-        raise STKInitializationError(f"Not connected to the gRPC server.")
+        raise STKInitializationError("Not connected to the gRPC server.")
 
     def set_grpc_options(self, options:dict) -> None:
         """
@@ -155,7 +155,7 @@ class STKRuntime(object):
             if stkruntime_path is None or not stkruntime_path.exists():
                 stkruntime_path = pathlib.Path(winreg_stk_binary_dir()) / "STKRuntime.exe"
                 if not stkruntime_path.exists():
-                    raise STKInitializationError(f"Could not find STKRuntime.exe. Verify STK installation.")
+                    raise STKInitializationError("Could not find STKRuntime.exe. Verify STK installation.")
             cmd_line = [str(stkruntime_path.resolve()), "/grpcHost", grpc_host, "/grpcPort", str(grpc_port)]
             if no_graphics:
                 cmd_line.append("/noGraphics")
