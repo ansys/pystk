@@ -9,7 +9,7 @@ env:
   LIBRARY_NAME: 'ansys-stk-core'
   LIBRARY_NAMESPACE: 'ansys.stk.core'
   DOCUMENTATION_CNAME: 'stk.docs.pyansys.com'
-  STK_DOCKER_IMAGE: "ansys/stk-12.9:dev-ubuntu22.04"
+  STK_DOCKER_IMAGE: 'ansys/stk-12.9:dev-ubuntu22.04'
   PYSTK_DIR: '/home/stk/pystk'
   LICENSE_SERVER_PORT: '1055'
   QUARTO_VERSION: '1.5.55'
