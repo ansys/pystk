@@ -3862,7 +3862,7 @@ class StkRFChannelModeler(SupportsDeleteCallback):
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
     def validate_analysis(self, analysis_configuration_name:str) -> "StkRfcmValidationResponse":
-        """Validates an analysis configuration."""
+        """Validate an analysis configuration."""
         return self._intf.invoke(StkRFChannelModeler._metadata, StkRFChannelModeler._validate_analysis_metadata, analysis_configuration_name, OutArg())
 
     _property_names[transceiver_collection] = "transceiver_collection"

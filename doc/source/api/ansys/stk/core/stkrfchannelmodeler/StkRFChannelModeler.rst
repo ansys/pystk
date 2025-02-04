@@ -27,7 +27,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.rfcm.StkRFChannelModeler.construct_analysis`
               - Construct an Analysis for an analysis configuration.
             * - :py:attr:`~ansys.stk.core.rfcm.StkRFChannelModeler.validate_analysis`
-              - Validates an analysis configuration.
+              - Validate an analysis configuration.
 
     .. tab-item:: Properties
         
@@ -162,7 +162,7 @@ Method detail
 .. py:method:: validate_analysis(self, analysis_configuration_name: str) -> StkRfcmValidationResponse
     :canonical: ansys.stk.core.rfcm.StkRFChannelModeler.validate_analysis
 
-    Validates an analysis configuration.
+    Validate an analysis configuration.
 
     :Parameters:
 
