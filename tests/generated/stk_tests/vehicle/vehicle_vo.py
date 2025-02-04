@@ -5370,9 +5370,14 @@ class VOVectorsHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             oAxes.draw_at_central_body = False
 
-        #
-        #  BUG121436 - Thickness property
-        #
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
+            oAxes.thickness = -1
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
+            oAxes.thickness = 0
+        oAxes.thickness = 1
+        Assert.assertEqual(1, oAxes.thickness)
+        oAxes.thickness = 100
+        Assert.assertEqual(100, oAxes.thickness)
 
         oAxes.show_persistence = False
         Assert.assertFalse(oAxes.show_persistence)
@@ -5988,9 +5993,14 @@ class VOVectorsHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             oVector.draw_at_central_body = False
 
-        #
-        #  BUG121436 - Thickness property
-        #
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
+            oVector.thickness = -1
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
+            oVector.thickness = 0
+        oVector.thickness = 1
+        Assert.assertEqual(1, oVector.thickness)
+        oVector.thickness = 100
+        Assert.assertEqual(100, oVector.thickness)
 
         oVector.show_persistence = False
         Assert.assertFalse(oVector.show_persistence)

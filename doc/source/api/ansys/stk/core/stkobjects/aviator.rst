@@ -824,6 +824,15 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVelNoisySurfTarget`
               - Class defining the position and velocity strategy, Noisy Surface Target.
 
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingFourPointAerodynamic`
+              - Class defining the FourPoint aerodynamic strategy in the Advanced Fixed Wing Tool.
+
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.MissileFourPointAerodynamic`
+              - Class defining the FourPoint aerodynamic strategy in the Missile.
+
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.FourPointAerodynamic`
+              - Class defining the FourPoint aerodynamic strategy.
+
 
     .. tab-item:: Enums
 
@@ -1528,6 +1537,9 @@ Object Model components specifically designed to support STK Aviator.
      BasicManeuverTargetPositionVel<aviator/BasicManeuverTargetPositionVel>
      BasicManeuverTargetPositionVelNoisyBearingRange<aviator/BasicManeuverTargetPositionVelNoisyBearingRange>
      BasicManeuverTargetPositionVelNoisySurfTarget<aviator/BasicManeuverTargetPositionVelNoisySurfTarget>
+     AdvancedFixedWingFourPointAerodynamic<aviator/AdvancedFixedWingFourPointAerodynamic>
+     MissileFourPointAerodynamic<aviator/MissileFourPointAerodynamic>
+     FourPointAerodynamic<aviator/FourPointAerodynamic>
 
 .. toctree::
     :titlesonly:

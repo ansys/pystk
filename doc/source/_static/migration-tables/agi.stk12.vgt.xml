@@ -417,6 +417,7 @@
    <Mapping ParentScope="AgECrdnVectorType" OldName="eCrdnVectorTypePlugin" NewName="PLUGIN" Category="enum_value" />
    <Mapping ParentScope="AgECrdnVectorType" OldName="eCrdnVectorTypeRotationVector" NewName="ROTATION_VECTOR" Category="enum_value" />
    <Mapping ParentScope="AgECrdnVectorType" OldName="eCrdnVectorTypeDisplacementOnSurface" NewName="DISPLACEMENT_ON_SURFACE" Category="enum_value" />
+   <Mapping ParentScope="AgECrdnVectorType" OldName="eCrdnVectorTypeFile" NewName="FILE" Category="enum_value" />
    <Mapping OldName="AgECrdnVectorType" NewName="VectorType" Category="enum_type" />
    <Mapping ParentScope="AgECrdnMeanElementTheory" OldName="eCrdnMeanElementTheoryOsculating" NewName="OSCULATING_ELEMENTS" Category="enum_value" />
    <Mapping ParentScope="AgECrdnMeanElementTheory" OldName="eCrdnMeanElementTheoryKozai" NewName="KOZAI" Category="enum_value" />
@@ -1876,6 +1877,9 @@
    <Mapping ParentScope="IAgCrdnVectorDispSurface" OldName="DestinationPoint" NewName="destination_point" Category="method" />
    <Mapping ParentScope="IAgCrdnVectorDispSurface" OldName="SurfaceCentralBody" NewName="surface_central_body" Category="method" />
    <Mapping ParentScope="IAgCrdnVectorDispSurface" OldName="DifferencingTimeStep" NewName="differencing_time_step" Category="method" />
+   <Mapping OldName="IAgCrdnVectorFile" NewName="VectorGeometryToolVectorFile" Category="interface" />
+   <Mapping ParentScope="IAgCrdnVectorFile" OldName="Filename" NewName="filename" Category="method" />
+   <Mapping ParentScope="IAgCrdnVectorFile" OldName="Reload" NewName="reload" Category="method" />
    <Mapping OldName="IAgCrdnVectorFactory" NewName="VectorGeometryToolVectorFactory" Category="interface" />
    <Mapping ParentScope="IAgCrdnVectorFactory" OldName="Create" NewName="create" Category="method" />
    <Mapping ParentScope="IAgCrdnVectorFactory" OldName="IsTypeSupported" NewName="is_type_supported" Category="method" />
@@ -1883,6 +1887,7 @@
    <Mapping ParentScope="IAgCrdnVectorFactory" OldName="AvailableVectorPluginDisplayNames" NewName="available_plugin_display_names" Category="method" />
    <Mapping ParentScope="IAgCrdnVectorFactory" OldName="CreateVectorPluginFromDisplayName" NewName="create_plugin_from_display_name" Category="method" />
    <Mapping ParentScope="IAgCrdnVectorFactory" OldName="CreateCrossProductVector" NewName="create_cross_product" Category="method" />
+   <Mapping ParentScope="IAgCrdnVectorFactory" OldName="CreateFileVector" NewName="create_file_vector" Category="method" />
    <Mapping OldName="IAgCrdnAxesFactory" NewName="VectorGeometryToolAxesFactory" Category="interface" />
    <Mapping ParentScope="IAgCrdnAxesFactory" OldName="Create" NewName="create" Category="method" />
    <Mapping ParentScope="IAgCrdnAxesFactory" OldName="IsTypeSupported" NewName="is_type_supported" Category="method" />
@@ -2408,6 +2413,7 @@
    <Mapping OldName="AgCrdnVectorVelocityAcceleration" NewName="VectorGeometryToolVectorVelocityAcceleration" Category="class" />
    <Mapping OldName="AgCrdnVectorPlugin" NewName="VectorGeometryToolVectorPlugin" Category="class" />
    <Mapping OldName="AgCrdnVectorDispSurface" NewName="VectorGeometryToolVectorSurfaceDisplacement" Category="class" />
+   <Mapping OldName="AgCrdnVectorFile" NewName="VectorGeometryToolVectorFile" Category="class" />
    <Mapping OldName="AgCrdnVectorFactory" NewName="VectorGeometryToolVectorFactory" Category="class" />
    <Mapping OldName="AgCrdnAxesFactory" NewName="VectorGeometryToolAxesFactory" Category="class" />
    <Mapping OldName="AgCrdnSystemFactory" NewName="VectorGeometryToolSystemFactory" Category="class" />
