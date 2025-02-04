@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelSimple.set_filter`
-              - Set the current filter model by name.
+              - Do not use this method, as it is deprecated. Use FilterComponentLinking on IAgReceiverModelSimple instead. Sets the current filter model by name.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelSimple.set_demodulator`
               - Set the current demodulator model by name.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelSimple.set_polarization_type`
@@ -36,9 +36,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelSimple.enable_filter`
               - Gets or set the flag determines whether or not to enable the Filter.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelSimple.supported_filters`
-              - Gets an array of supported filter model names.
+              - This property is deprecated. Use FilterComponentLinking on IAgReceiverModelSimple instead. Gets an array of supported filter model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelSimple.filter`
-              - Gets the current filter model.
+              - This property is deprecated. Use FilterComponentLinking on IAgReceiverModelSimple instead. Gets the current filter model.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelSimple.pre_receive_gains_losses`
               - Gets the collection of additional pre-receive gains and losses.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelSimple.pre_demodulator_gains_losses`
@@ -73,6 +73,8 @@ Overview
               - Gets or set the G/T.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelSimple.interference`
               - Gets the radio frequency interference.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelSimple.filter_component_linking`
+              - Gets the link/embed controller for managing the filter model component.
 
 
 
@@ -97,13 +99,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.ReceiverModelSimple.supported_filters
     :type: list
 
-    Gets an array of supported filter model names.
+    This property is deprecated. Use FilterComponentLinking on IAgReceiverModelSimple instead. Gets an array of supported filter model names.
 
 .. py:property:: filter
     :canonical: ansys.stk.core.stkobjects.ReceiverModelSimple.filter
     :type: IRFFilterModel
 
-    Gets the current filter model.
+    This property is deprecated. Use FilterComponentLinking on IAgReceiverModelSimple instead. Gets the current filter model.
 
 .. py:property:: pre_receive_gains_losses
     :canonical: ansys.stk.core.stkobjects.ReceiverModelSimple.pre_receive_gains_losses
@@ -207,6 +209,12 @@ Property detail
 
     Gets the radio frequency interference.
 
+.. py:property:: filter_component_linking
+    :canonical: ansys.stk.core.stkobjects.ReceiverModelSimple.filter_component_linking
+    :type: IComponentLinkEmbedControl
+
+    Gets the link/embed controller for managing the filter model component.
+
 
 Method detail
 -------------
@@ -217,7 +225,7 @@ Method detail
 .. py:method:: set_filter(self, name: str) -> None
     :canonical: ansys.stk.core.stkobjects.ReceiverModelSimple.set_filter
 
-    Set the current filter model by name.
+    Do not use this method, as it is deprecated. Use FilterComponentLinking on IAgReceiverModelSimple instead. Sets the current filter model by name.
 
     :Parameters:
 
@@ -271,6 +279,7 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
 
 
 

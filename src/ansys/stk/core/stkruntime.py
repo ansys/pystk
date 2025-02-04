@@ -113,6 +113,7 @@ class STKRuntime(object):
     def start_application(grpc_host:str="localhost", \
                          grpc_port:int=40704, \
                          grpc_timeout_sec:int=60, \
+                         grpc_max_message_size:int=0, \
                          user_control:bool=False, \
                          no_graphics:bool=True) -> STKRuntimeApplication:
         """
@@ -121,6 +122,7 @@ class STKRuntime(object):
         grpc_host is the IP address or DNS name of the gRPC server.
         grpc_port is the integral port number that the gRPC server is using (valid values are integers from 0 to 65535).
         grpc_timeout_sec specifies the time allocated to wait for a grpc connection (seconds).
+        grpc_max_message_size is the maximum size in bytes that the gRPC client can receive. Set to zero to use the gRPC default.
         Specify user_control = True to return the application to the user's control 
         (the application remains open) after terminating the Python API connection.
         """
@@ -168,7 +170,7 @@ class STKRuntime(object):
         # to ensure that it is not used.
         if grpc_host=="0.0.0.0": # nosec B104
             host = "localhost"
-        app = STKRuntime.attach_to_application(host, grpc_port, grpc_timeout_sec)
+        app = STKRuntime.attach_to_application(host, grpc_port, grpc_timeout_sec, grpc_max_message_size)
         app._intf.client.set_shutdown_stkruntime(not user_control)
         return app
 
@@ -176,15 +178,17 @@ class STKRuntime(object):
     @staticmethod
     def attach_to_application(grpc_host:str="localhost", \
                             grpc_port:int=40704, \
-                            grpc_timeout_sec:int=60) -> STKRuntimeApplication:
+                            grpc_timeout_sec:int=60,
+                            grpc_max_message_size:int=0) -> STKRuntimeApplication:
         """
         Attach to STKRuntime.
 
         grpc_host is the IP address or DNS name of the gRPC server.
         grpc_port is the integral port number that the gRPC server is using.
         grpc_timeout_sec specifies the time allocated to wait for a grpc connection (seconds).
+        grpc_max_message_size is the maximum size in bytes that the gRPC client can receive. Set to zero to use the gRPC default.
         """
-        client = GrpcClient.new_client(grpc_host, grpc_port, grpc_timeout_sec)
+        client = GrpcClient.new_client(grpc_host, grpc_port, grpc_timeout_sec, grpc_max_message_size)
         if client is not None:
             app_intf = client.get_stk_application_interface()
             app = STKRuntimeApplication()

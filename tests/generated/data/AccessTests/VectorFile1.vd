@@ -1,0 +1,22 @@
+stk.v.10.0
+# WrittenBy    STK_v10.1.0
+BEGIN VectorData
+NumberOfVectorDataPoints 6
+ScenarioEpoch            13 Nov 2013 17:00:00.000000
+# Epoch in JDate format: 2456610.20833333333333
+# Epoch in YYDDD format:   13317.70833333333333
+
+InterpolationMethod     Lagrange
+InterpolationSamplesM1      5
+CentralBody             Earth
+CoordinateAxes        ICRF
+DimensionName 		Distance
+# Time of first point: 13 Nov 2013 17:00:00.000000000 UTCG = 2456610.20833333333333 JDate = 13317.70833333333333 YYDDD
+VectorDataTimeRaDecMag
+0.0 	37.1 	89.2 	7000.0
+60.0 	17.9 	64.6 	7000.0
+120.0 	3.4 	48.3	7000.0
+180.0 	-7.1 	9.7	7000.0
+240.0 	-31.9 	-9.2	7000.0
+300.0 	-37.1 	-39.4	7000.0
+END VectorData

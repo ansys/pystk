@@ -1207,6 +1207,30 @@ class EarlyBoundTests(TestBase):
         oTrackCollection.remove_all()
         Assert.assertEqual(0, oTrackCollection.count)
 
+        # AddTracksWithPosData invalid time input
+
+        arTrackIdsAddInvalid = [10, 11]
+        arNumPtsPerTrackAddInvalid = [2, 1]
+        arTimeAddInvalid = ["1 Jul 2005 12:00:00.000", "1 Jul 2005 12:10:00.000", "1"]
+        arLatitudeAddInvalid = [0.0, 10.0, 10.0]
+        arLongitudeAddInvalid = [0.0, 10.0, 0.0]
+        arAltitudeAddInvalid = [0.0, 1000.0, 500.0]
+        ex = ExceptionAssert.Throws(
+            lambda: oTrackCollection.add_tracks_with_position_data(
+                arTrackIdsAddInvalid,
+                arNumPtsPerTrackAddInvalid,
+                MTOInputDataType.DETIC,
+                arTimeAddInvalid,
+                arLatitudeAddInvalid,
+                arLongitudeAddInvalid,
+                arAltitudeAddInvalid,
+            )
+        )
+
+        StringAssert.Contains("Invalid time or position value", str(ex), "Exception message mismatch")
+
+        oTrackCollection.remove_all()
+
         # AddTracksWithPosData using different units
         TestBase.Application.units_preferences.set_current_unit("DateFormat", "EpSec")
         TestBase.Application.units_preferences.set_current_unit("DistanceUnit", "ft")

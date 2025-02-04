@@ -79,6 +79,8 @@ Overview
               - Get the interface for a Turbojet - Basic w/ AB Powerplant strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.powerplant_mode_as_sub_super_hypersonic`
               - Get the interface for a Sub/Super/Hypersoinc Powerplant strategy.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.aerodynamic_mode_as_four_point`
+              - Get the interface for a Four Point Aerodynamics strategy.
 
 
 
@@ -249,6 +251,12 @@ Property detail
 
     Get the interface for a Sub/Super/Hypersoinc Powerplant strategy.
 
+.. py:property:: aerodynamic_mode_as_four_point
+    :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.aerodynamic_mode_as_four_point
+    :type: AdvancedFixedWingFourPointAerodynamic
+
+    Get the interface for a Four Point Aerodynamics strategy.
+
 
 Method detail
 -------------
@@ -304,6 +312,7 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
 
 
 

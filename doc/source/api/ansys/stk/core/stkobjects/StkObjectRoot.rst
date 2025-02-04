@@ -61,11 +61,11 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.save_as`
               - Save the changes made to the scenario/vdf to a specified path and file name.
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.load_vdf_from_sdf`
-              - Load a vdf from SDF using the specified path. The method throws an exception if there is a scenario already loaded. If the password isn't needed, enter an empty string.
+              - Do not use this method, as it is deprecated. SDF functionality has been removed and this will be removed in the next major release. Loads a vdf from SDF using the specified path. The method throws an exception if there is a scenario already loaded.
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.load_vdf_from_sdf_with_version`
-              - Load a vdf from SDF using the specified path. The method throws an exception if there is a scenario already loaded. If the password isn't needed, enter an empty string.
+              - Do not use this method, as it is deprecated. SDF functionality has been removed and this will be removed in the next major release. Loads a vdf from SDF using the specified path. The method throws an exception if there is a scenario already loaded.
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.save_vdf_to_sdf`
-              - Save a vdf to SDF at the specified location. The method throws an exception if the VDF creation or upload fails.
+              - Do not use this method, as it is deprecated. SDF functionality has been removed and this will be removed in the next major release. Saves a vdf to SDF at the specified location. The method throws an exception if the VDF creation or upload fails.
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.subscribe`
               - """Return an IStkObjectRootEventHandler that is subscribed to handle events associated with this instance of StkObjectRoot."""
 
@@ -95,6 +95,8 @@ Overview
               - Temporarily disable only the root events to prevent them from being raised. The event filtering can be used to improve client application performance.
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.preferences`
               - Configures STK preferences.
+            * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.rf_channel_modeler`
+              - Returns an RF Channel Modeler object.
 
 
 
@@ -168,6 +170,12 @@ Property detail
     :type: Preferences
 
     Configures STK preferences.
+
+.. py:property:: rf_channel_modeler
+    :canonical: ansys.stk.core.stkobjects.StkObjectRoot.rf_channel_modeler
+    :type: typing.Any
+
+    Returns an RF Channel Modeler object.
 
 
 Method detail
@@ -420,7 +428,7 @@ Method detail
 .. py:method:: load_vdf_from_sdf(self, vdf_path: str, password: str) -> None
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.load_vdf_from_sdf
 
-    Load a vdf from SDF using the specified path. The method throws an exception if there is a scenario already loaded. If the password isn't needed, enter an empty string.
+    Do not use this method, as it is deprecated. SDF functionality has been removed and this will be removed in the next major release. Loads a vdf from SDF using the specified path. The method throws an exception if there is a scenario already loaded.
 
     :Parameters:
 
@@ -434,7 +442,7 @@ Method detail
 .. py:method:: load_vdf_from_sdf_with_version(self, vdf_path: str, password: str, version: float) -> None
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.load_vdf_from_sdf_with_version
 
-    Load a vdf from SDF using the specified path. The method throws an exception if there is a scenario already loaded. If the password isn't needed, enter an empty string.
+    Do not use this method, as it is deprecated. SDF functionality has been removed and this will be removed in the next major release. Loads a vdf from SDF using the specified path. The method throws an exception if there is a scenario already loaded.
 
     :Parameters:
 
@@ -449,7 +457,7 @@ Method detail
 .. py:method:: save_vdf_to_sdf(self, sdf_path: str) -> None
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.save_vdf_to_sdf
 
-    Save a vdf to SDF at the specified location. The method throws an exception if the VDF creation or upload fails.
+    Do not use this method, as it is deprecated. SDF functionality has been removed and this will be removed in the next major release. Saves a vdf to SDF at the specified location. The method throws an exception if the VDF creation or upload fails.
 
     :Parameters:
 
@@ -458,4 +466,5 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
 

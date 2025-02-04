@@ -26,6 +26,8 @@ Overview
               - Get the interface for an external file aerodynamics strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileAerodynamic.mode_as_advanced`
               - Get the interface for an advanced aerodynamics strategy.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileAerodynamic.mode_as_four_point`
+              - Get the interface for an four point aerodynamics strategy.
 
 
 
@@ -63,5 +65,11 @@ Property detail
     :type: MissileAdvancedAerodynamic
 
     Get the interface for an advanced aerodynamics strategy.
+
+.. py:property:: mode_as_four_point
+    :canonical: ansys.stk.core.stkobjects.aviator.MissileAerodynamic.mode_as_four_point
+    :type: MissileFourPointAerodynamic
+
+    Get the interface for an four point aerodynamics strategy.
 
 

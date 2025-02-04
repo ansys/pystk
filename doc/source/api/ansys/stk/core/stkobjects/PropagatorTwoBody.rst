@@ -39,6 +39,8 @@ Overview
               - Gets or sets the propagation frame.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorTwoBody.supported_propagation_frames`
               - Returns supported propagation frames.
+            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorTwoBody.display_coord_type`
+              - The propagator's display coordinate type.
 
 
 
@@ -83,6 +85,12 @@ Property detail
 
     Returns supported propagation frames.
 
+.. py:property:: display_coord_type
+    :canonical: ansys.stk.core.stkobjects.PropagatorTwoBody.display_coord_type
+    :type: PropagatorDisplayCoordinateType
+
+    The propagator's display coordinate type.
+
 
 Method detail
 -------------
@@ -95,6 +103,8 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
+
 
 
 

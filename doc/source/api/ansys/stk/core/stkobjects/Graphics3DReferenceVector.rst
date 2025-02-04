@@ -52,6 +52,8 @@ Overview
               - Returns a safearray of available axes.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DReferenceVector.available_points`
               - Returns a safearray of available points.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DReferenceVector.thickness`
+              - Thickness of line.
 
 
 
@@ -161,5 +163,11 @@ Property detail
     :type: list
 
     Returns a safearray of available points.
+
+.. py:property:: thickness
+    :canonical: ansys.stk.core.stkobjects.Graphics3DReferenceVector.thickness
+    :type: float
+
+    Thickness of line.
 
 
