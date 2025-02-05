@@ -1,0 +1,55 @@
+- **Why are we presenting this today to the Engineering forum?**
+    - Open sourcing PySTK in the next few weeks
+        - Final adjustments and legal review in progress
+    - Going to become publicly visible with the other PyAnsys libraries at https://github.com/ansys
+        - In parallel with existing STK Python API for a few release cycles
+        - Version 0.1 to collect feedback and iterate
+    - Marketing strategy: targeted email to selected customers first, then more active marketing (for instance blogs) during 25R2 timeframe
+        - Let us know if you think of a customer that would be a good candidate for this activity
+        - Anyone will be able to find it on the public GitHub, so any current or prospective customer might find out on their own
+- **Show how to get access**
+    - Start at https://myapps.microsoft.com/, Ansys wiki, GitHub, GitHub Onboarding
+    - Quick overview
+        - Use your own GitHub account (create one if you do not want to reuse an existing one)
+        - Enable 2FA and SSO
+        - Configure email and notifications, ansys internal repositories notifications must be routed to Ansys email
+    - If you do not have access you will receive 404 errors when trying to access the repo or the help
+- **Why PySTK to begin with?**
+    - Show https://stk.docs.pyansys.com/version/dev/getting-started/about.html#about-pystk and talk about the various points
+- **What is PySTK?**
+    - Show help landing page https://stk.docs.pyansys.com/ and private GitHub repo landing page https://github.com/ansys-internal/pystk
+    - Walk through documentation installation pages
+        - prereq Windows/Linux local/docker
+    - Show Artifacts
+        - Mention that the wheel files will be available on Pypi once open sourced
+    - Show API reference
+        - Examples of API changes
+        - Similar logic, new names, new namespaces
+    - Show examples
+        - Curating high quality examples for human & LLM ingestion
+        - Domain focused examples
+- **How to migrate existing code using the current STK Python API to PySTK**
+    - Show migration tables at https://stk.docs.pyansys.com/version/dev/user-guide/migration.html
+    - Explain/demo api-migration-assistant (hopefully will have a doc page by then, otherwise will demo locally)
+- **What is being finalized before open sourcing?**
+    - Finishing up the users' and migration guide
+    - Adding more code snippets
+    - Finalizing copyright, license, CLA
+        - Obviously no ITAR or restricted content
+    - Tweaking, tiying up of lose ends
+- **Looking for contributions**
+    - Walk through the different section of https://stk.docs.pyansys.com/version/dev/contribute.html
+    - We could use extra eyes to make sure there is nothing embarassing
+    - Higher level APIs built on top of the existing object model
+        - for instance https://github.com/ansys-internal/pystk/pull/481/files
+- **Behind the scenes, the GitHub repo**
+    - GitHub actions (CI/CD, nightly, code/doc style checks, vulnerabilities)
+        - Show steps for PR jobs (for instance https://github.com/ansys-internal/pystk/actions/runs/13140371819)
+    - Tests
+        - Can be used to see how the API is used
+        - Mention test coverage (90%)
+            - Consider showing report
+    - Ensure high quality, security, and consistency of contributions
+- **Follow up**
+    - Try it out and provide feedback
+    - Reach out if you need help with anything, GitHub, Python, docker, getting started, migrating existing code, etc.
