@@ -48,8 +48,8 @@ class ArgumentParser:
             dest="root_directory",
             help="only migrate files under this directory (default: script directory)",
         )
-        default_mappings_directory = str((Path(__file__).parent / "api-mappings").resolve())
-        default_recordings_directory = str((Path(__file__).parent / "recordings").resolve())
+        default_mappings_directory = str((Path(__file__).parent / "api-mappings").resolve()) # points to the mappings provided with the library
+        default_recordings_directory = str((Path.cwd() / "recordings").resolve())
         record_parser.add_argument(
             "--mappings-directory",
             action="store",
