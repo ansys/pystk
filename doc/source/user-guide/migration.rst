@@ -80,6 +80,8 @@ The recordings are saved in the specified directory. Therefore, make sure to spe
 
 By default, the API migration assistant executes the provided script and invokes `main` as an entry point. If you want to trigger the execution of a different entry point, use the `--entry-point` command line option.
 
+If the `--recordings-directory=` option is not specified, a sub-directory named `recordings` is created in the current directory.
+
 This creates an XML file in the recordings directory. That file contains the calls made by your script to the STK API. Here is how it looks in the case of the snippet used for this example:
 
 .. code-block:: XML
