@@ -87,6 +87,7 @@ extensions = [
     "nbsphinx",
     "myst_parser",
     "sphinxcontrib.jquery",
+    "sphinxcontrib.mermaid"
 ]
 
 # Intersphinx mapping

@@ -1,16 +1,166 @@
 Migrate to PySTK
 ################
 
-One of the main advantages of PySTK is that identifiers, symbols, and members
-follow the `Python Enhancement Proposals (PEP8) Style Guide`_. The new naming
-conventions include:
+You might have existing Python scripts based on the `STK API for Python <https://help.agi.com/stkdevkit/Content/python/pythonIntro.htm>`_ currently shipped with the STK install. This page describes how you can migrate your code to PySTK to benefit from the improvements provided by the new API. 
 
-- Removal of ``IAg``, ``Ag``, and ``AgE`` prefixes for interfaces, classes, and enumerations
-- Spelled out obsolete and sometimes cryptic abbreviations such as `Va`, `Vo`.
-- Merged redundant interface and class types, reducing the number of types by ~30%.
-- Use of ``snake_case`` for functions, members, and variables
-- Use of ``CONSTANT_CASE`` convention for constants and enumeration values
-- Consistent use of ``ansys.stk`` namespace, similar to other `PyAnsys`_ projects
+In general, the overall logic of the code is unchanged, but namespaces, classes, interfaces, enumerations, methods, and arguments have been renamed. Migrating your code consists in replacing the old names with the new names. The :ref:`migration table <Migration table>` provided on this page provide the mappings between the old names and the new names. Updating your code manually by looking up the mappings one at a time can be time consuming. The :ref:`API Migration Assistant <API migration assistant>` included with the PySTK package facilitates that process.
+
+API migration assistant
+=======================
+
+The API migration assistant automates migrating your code to the new API. It relies on a mix of dynamic and static analysis to locate the symbols that need to be updated in your code, and then perform the required edits. The dynamic analysis phase consists in running your application while recording the calls performed to the STK APIs. The static analysis phase uses the information recorded in the first phase to identify the methods and types that need to be renamed. It also renames imports, enumerations, and type hints by inspecting the source code.
+
+.. warning::
+    Before making changes to your existing code, make sure that all changes have been committed to your source control system.
+
+The following steps are recommended:
+
+1. Upgrade your code to STK version 12.10.0.
+2. Test your code using STK version 12.10.0 to make sure it works properly.
+3. Run the API migration assistant in recording mode. Repeat to cover all the code paths.
+4. Run the API migration assistant to apply the changes.
+5. Review the changes.
+6. If you are satisfied with the changes, rename the migrated files to overwrite the original files.
+7. Test the migrated application.
+
+This workflow is depicted in the following diagram.
+
+.. mermaid::
+
+    flowchart LR
+        A[Start] --> B(Record trace)
+        B --> C[/Are all the code paths covered?/]
+        C -->|No| B
+        C -->|Yes| D[Apply the changes]
+        D --> E[Review *.py-migrated files]
+        E --> F[Overwrite the original files]
+        F --> G[Done!]
+
+To illustrate this process, the examples below will use a script in a filename named `snippet.py`:
+
+.. code-block:: python
+    :linenos:
+
+    import sys
+    from agi.stk12.stkengine import STKEngine
+    from agi.stk12.stkobjects import *
+    from agi.stk12.stkutil import *
+
+
+    def main():
+        stk = STKEngine.StartApplication(noGraphics=True)
+
+        stkRoot = stk.NewObjectRoot()
+        stkRoot.NewScenario("test")
+        scenario = stkRoot.CurrentScenario
+
+        facility = scenario.Children.New(AgESTKObjectType.eFacility, "MyFacility")
+        facility.Position.AssignGeodetic(28.62, -80.62, 0.03)
+
+        stk.ShutDown()
+
+    if __name__ == "__main__":
+        sys.exit(main())
+
+
+Recording traces
+~~~~~~~~~~~~~~~~
+
+The first phase of the process is to record one or multiple traces of the execution of your Python application using the old API. Start the recording by invoking the API migration assistant with the following options:
+
+.. code-block:: bash
+
+   python -m ansys.stk.core.tools.api_migration_assistant record --recordings-directory=... snippet.py
+   INFO: Recording ... snippet.py
+
+The recordings will be accumulated in the specified directory. Therefore, make sure to specify an empty directory if starting from scratch on migrating a new application.
+
+By default, the API migration assistant executes the provided script and invokes `main` as an entry point. If you want to trigger the execution of a different entry point, use the `--entry-point` command line option.
+
+This will create an XML file in the recordings directory. That file will contain the calls made by your script to the STK API. Here is how it looks in the case of the snippet used for this example:
+
+.. code-block:: XML
+
+    <!-- ... -->
+    <recording root_directory="D:\Dev\api_migration_interceptor">
+    <call filename="snippet.py" lineno="8" end_lineno="8" col_offset="10" end_col_offset="53" type_name="STKEngine" member_name="StartApplication"/>
+    <call filename="snippet.py" lineno="10" end_lineno="10" col_offset="14" end_col_offset="33" type_name="STKEngineApplication" member_name="NewObjectRoot"/>
+    <call filename="snippet.py" lineno="11" end_lineno="11" col_offset="4" end_col_offset="31" type_name="IAgStkObjectRoot" member_name="NewScenario"/>
+    <call filename="snippet.py" lineno="12" end_lineno="12" col_offset="15" end_col_offset="38" type_name="IAgStkObjectRoot" member_name="CurrentScenario"/>
+    <call filename="snippet.py" lineno="14" end_lineno="14" col_offset="15" end_col_offset="32" type_name="IAgStkObject" member_name="Children"/>
+    <call filename="snippet.py" lineno="14" end_lineno="14" col_offset="15" end_col_offset="78" type_name="IAgStkObjectCollection" member_name="New"/>
+    <call filename="snippet.py" lineno="15" end_lineno="15" col_offset="4" end_col_offset="21" type_name="IAgFacility" member_name="Position"/>
+    <call filename="snippet.py" lineno="15" end_lineno="15" col_offset="4" end_col_offset="57" type_name="IAgPosition" member_name="AssignGeodetic"/>
+    <call filename="snippet.py" lineno="17" end_lineno="17" col_offset="4" end_col_offset="18" type_name="STKEngineApplication" member_name="ShutDown"/>
+    </recording>
+
+.. note::
+    There are also other options available to tweak recording. Use the `--help` command line argument to display them.
+
+    .. code-block:: bash
+
+        python -m ansys.stk.core.tools.api_migration_assistant record --help
+        usage: __main__.py record [-h] [--entry-point ENTRY_POINT] [--root-directory ROOT_DIRECTORY] [--mappings-directory MAPPINGS_DIRECTORY] [--recordings-directory RECORDINGS_DIRECTORY]
+                                script ...
+
+        positional arguments:
+        script                the script to record
+        script_args           remaining arguments are forwarded to the script
+
+        options:
+        -h, --help            show this help message and exit
+        --entry-point ENTRY_POINT
+                                entry point to invoke (default: main)
+        --root-directory ROOT_DIRECTORY
+                                only migrate files under this directory (default: script directory)
+        --mappings-directory MAPPINGS_DIRECTORY
+                                directory containing the XML API mappings (default: ...)
+        --recordings-directory RECORDINGS_DIRECTORY
+                                directory receiving the XML recordings (default: ...)
+
+
+Applying the changes
+~~~~~~~~~~~~~~~~~~~~
+
+Once you have accumulated one or more traces to cover all the paths in your Python application, you can apply the changes using the following command line:
+
+.. code-block:: bash
+
+    python -m ansys.stk.core.tools.api_migration_assistant apply --recordings-directory=... snippet.py
+    INFO: Applying changes from ...
+    INFO: Writing ... snippet.py-migrated
+
+This will generate one `.py-migrated` file for each Python file in your application. Compare those files with the original files and tweak if needed. With our example, the diff looks like this:
+
+.. image:: img/migration_diff.png
+
+.. note::
+    There are also other options available to tweak applying the changes. Use the `--help` command line argument to display them.
+
+    .. code-block:: bash
+
+        python -m ansys.stk.core.tools.api_migration_assistant apply --help
+        usage: __main__.py apply [-h] [--mappings-directory MAPPINGS_DIRECTORY] [--recordings-directory RECORDINGS_DIRECTORY]
+
+        options:
+        -h, --help            show this help message and exit
+        --mappings-directory MAPPINGS_DIRECTORY
+                                directory containing the XML API mappings (default: ...)
+        --recordings-directory RECORDINGS_DIRECTORY
+                                directory receiving the XML recordings (default: ...)
+
+Review, tweak, and accept
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Review the suggested code changes. Once you are satisfied with the results, rename the `.py-migrated` files and overwrite your original files. Then retest the migrated application to ensure that the migration completed successfully.
+            
+
+    
+
+Migration table
+===============
+
+The table below lists the interface, classes, enumerations and method names that have been updated in PySTK. You can look up a specific name using the Search box to only display the rows that contain that symbol. Note that the root of the namespace has also changed from :py:attr:`agi.stk[version]` to :py:attr:`ansys.stk.core`.
 
 .. raw:: html
 

@@ -69,6 +69,7 @@ doc = [
     "pandas==2.2.3",
     "matplotlib==3.10.0",
     "sphinxcontrib-jquery==4.1",
+    "sphinxcontrib-mermaid==1.0.0",
 ]
 visualization = [
     "jupyter-rfb==0.5.1",
