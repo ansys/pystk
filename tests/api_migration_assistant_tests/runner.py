@@ -189,9 +189,11 @@ class Runner:
             self.keep_test_files = (
                 output != expected_output
             )  # keep the test files when failed
+            indented_expected_output = textwrap.indent(expected_output, "  ")
+            indented_actual_output = textwrap.indent(output, "  ")
             assert (
                 output == expected_output
-            ), f"Expected: {textwrap.indent(expected_output, "  ")}but got: {textwrap.indent(output, "  ")}(see {self.temp_directory})"
+            ), f"Expected: {indented_expected_output}but got: {indented_actual_output}(see {self.temp_directory})"
 
 
 def run(api, api_mappings, input, expected_output, api_root=None, in_process=True):
