@@ -3,7 +3,7 @@ Migrate to PySTK
 
 You might have existing Python scripts based on the `STK API for Python <https://help.agi.com/stkdevkit/Content/python/pythonIntro.htm>`_ currently shipped with the STK install. This page describes how you can migrate your code to PySTK to benefit from the improvements provided by the new API. 
 
-In general, the overall logic of the code is unchanged, but namespaces, classes, interfaces, enumerations, methods, and arguments have been renamed. Migrating your code consists in replacing the old names with the new names. The :ref:`migration table <Migration table>` provided on this page provide the mappings between the old names and the new names. Updating your code manually by looking up the mappings one at a time can be time consuming. The :ref:`API Migration Assistant <API migration assistant>` included with the PySTK package facilitates that process.
+In general, the overall logic of the code is unchanged, but namespaces, classes, interfaces, enumerations, methods, and arguments have been renamed. Migrating your code consists in replacing the old names with the new names. The :ref:`migration table <Migration table>` provided on this page contains the mappings between the old names and the new names. Updating your code manually by looking up the mappings one at a time can be time consuming. The :ref:`API Migration Assistant <API migration assistant>` included with the PySTK package facilitates that process.
 
 API migration assistant
 =======================
@@ -73,7 +73,7 @@ The first phase of the process is to record one or multiple traces of the execut
    python -m ansys.stk.core.tools.api_migration_assistant record --recordings-directory=... snippet.py
    INFO: Recording ... snippet.py
 
-The recordings will be accumulated in the specified directory. Therefore, make sure to specify an empty directory if starting from scratch on migrating a new application.
+The recordings are saved in the specified directory. Therefore, make sure to specify an empty directory if starting from scratch on migrating a new application.
 
 By default, the API migration assistant executes the provided script and invokes `main` as an entry point. If you want to trigger the execution of a different entry point, use the `--entry-point` command line option.
 
@@ -95,6 +95,7 @@ This will create an XML file in the recordings directory. That file will contain
     </recording>
 
 .. note::
+
     There are also other options available to tweak recording. Use the `--help` command line argument to display them.
 
     .. code-block:: bash
@@ -154,8 +155,6 @@ Review, tweak, and accept
 
 Review the suggested code changes. Once you are satisfied with the results, rename the `.py-migrated` files and overwrite your original files. Then retest the migrated application to ensure that the migration completed successfully.
             
-
-    
 
 Migration table
 ===============
