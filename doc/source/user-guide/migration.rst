@@ -8,7 +8,7 @@ In general, the overall logic of the code is unchanged, but namespaces, classes,
 API migration assistant
 =======================
 
-The API migration assistant automates migrating your code to the new API. It relies on a mix of dynamic and static analysis to locate the symbols that need to be updated in your code, and then perform the required edits. The dynamic analysis phase consists in running your application while recording the calls performed to the STK APIs. The static analysis phase uses the information recorded in the first phase to identify the methods and types that need to be renamed. It also renames imports, enumerations, and type hints by inspecting the source code.
+The API migration assistant automates migrating your code to the new API. It relies on a mix of dynamic and static analysis to locate the symbols that need to be updated in your code, and then perform the required edits. The dynamic analysis phase consists in running your application while recording the calls performed to the STK API. The static analysis phase uses the information recorded in the first phase to identify the methods and types that need to be renamed. It also renames imports, enumerations, and type hints by inspecting the source code.
 
 .. warning::
     Before making changes to your existing code, make sure that all changes have been committed to your source control system.
@@ -36,7 +36,9 @@ This workflow is depicted in the following diagram.
         E --> F[Overwrite the original files]
         F --> G[Done!]
 
-To illustrate this process, the examples below will use a script in a filename named `snippet.py`:
+To illustrate this process, the examples below use a script in a filename named `snippet.py`:
+
+.. vale off
 
 .. code-block:: python
     :linenos:
@@ -62,6 +64,7 @@ To illustrate this process, the examples below will use a script in a filename n
     if __name__ == "__main__":
         sys.exit(main())
 
+.. vale on
 
 Recording traces
 ~~~~~~~~~~~~~~~~
@@ -77,7 +80,7 @@ The recordings are saved in the specified directory. Therefore, make sure to spe
 
 By default, the API migration assistant executes the provided script and invokes `main` as an entry point. If you want to trigger the execution of a different entry point, use the `--entry-point` command line option.
 
-This will create an XML file in the recordings directory. That file will contain the calls made by your script to the STK API. Here is how it looks in the case of the snippet used for this example:
+This creates an XML file in the recordings directory. That file contains the calls made by your script to the STK API. Here is how it looks in the case of the snippet used for this example:
 
 .. code-block:: XML
 
@@ -131,7 +134,7 @@ Once you have accumulated one or more traces to cover all the paths in your Pyth
     INFO: Applying changes from ...
     INFO: Writing ... snippet.py-migrated
 
-This will generate one `.py-migrated` file for each Python file in your application. Compare those files with the original files and tweak if needed. With our example, the diff looks like this:
+This generates one `.py-migrated` file for each Python file in your application. Compare those files with the original files and tweak if needed. With the example, the diff looks like this:
 
 .. image:: img/migration_diff.png
 
@@ -159,7 +162,7 @@ Review the suggested code changes. Once you are satisfied with the results, rena
 Migration table
 ===============
 
-The table below lists the interface, classes, enumerations and method names that have been updated in PySTK. You can look up a specific name using the Search box to only display the rows that contain that symbol. Note that the root of the namespace has also changed from :py:attr:`agi.stk[version]` to :py:attr:`ansys.stk.core`.
+The table below lists the interface, classes, enumerations, and method names that have been updated in PySTK. You can look up a specific name using the Search box to only display the rows that contain that symbol. Note that the root of the namespace has also changed from :py:attr:`agi.stk[version]` to :py:attr:`ansys.stk.core`.
 
 .. raw:: html
 
