@@ -407,6 +407,13 @@ jobs:
             ${{ env.STK_CONTAINER }} /bin/bash -c \
             "export COVERAGE_FILE=snippets && tox -e tests-snippets-graphics-cov-linux"
 
+      - name: "Run the API migration assistant tests"
+        run: |
+          docker exec \
+            --workdir ${{ env.PYSTK_DIR }} \
+            ${{ env.STK_CONTAINER }} /bin/bash -c \
+            "export COVERAGE_FILE=migration && tox -e tests-migration-graphics-cov-linux"
+
       - name: "Install coverage dependencies"
         if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
         run: |
@@ -421,7 +428,7 @@ jobs:
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "coverage combine aviator stknogfx stkgfx vgt snippets"
+            "coverage combine aviator stknogfx stkgfx vgt snippets migration"
 
       - name: "Generate total coverage report"
         if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}

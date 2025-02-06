@@ -49,7 +49,8 @@ tests = [
     "pytz==2025.1",
     "parameterized==0.9.0",
     "pandas==2.2.3",
-    "numpy==2.2.2"
+    "numpy==2.2.2",
+    "libcst==1.6.0"
 ]
 doc = [
     "ansys-sphinx-theme==1.3.1",
