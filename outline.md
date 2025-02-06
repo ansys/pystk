@@ -1,7 +1,7 @@
 - **Why are we presenting this today to the Engineering forum?** [3:00]
     - Open sourcing PySTK in the next few weeks
         - Final adjustments and legal review in progress
-    - Going to become publicly visible with the other PyAnsys libraries at https://github.com/ansys
+    - Going to become publicly visible with the other PyAnsys libraries at https://github.com/ansys and https://docs.pyansys.com/ 
         - In parallel with existing STK Python API for a few release cycles
         - Version 0.1 to collect feedback and iterate
     - Marketing strategy: targeted email campaign to selected customers first, then more active marketing (for instance blogs) during 25R2 timeframe
