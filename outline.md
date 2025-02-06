@@ -29,8 +29,8 @@
         - Curating high quality examples for human & LLM ingestion
         - Domain focused examples
 - **How to migrate existing code using the current STK Python API to PySTK**
-    - Show migration tables at https://stk.docs.pyansys.com/version/dev/user-guide/migration.html
-    - Explain/demo api-migration-assistant (hopefully will have a doc page by then, otherwise will demo locally)
+    - Show migration page at https://stk.docs.pyansys.com/version/dev/user-guide/migration.html
+    - Walk through migrating code using the api-migration-assistant
 - **What is being finalized before open sourcing?**
     - Finishing up the users' and migration guide
     - Adding more code snippets
@@ -39,7 +39,10 @@
     - Tweaking, tiying up of lose ends
 - **Looking for contributions**
     - Walk through the different section of https://stk.docs.pyansys.com/version/dev/contribute.html
-    - We could use extra eyes to make sure there is nothing embarassing
+        - [Contributing as a user](https://stk.docs.pyansys.com/version/dev/contribute/user.html): reporting bugs, requesting features, starting discussions.
+        - [Contributing to the documentation](https://stk.docs.pyansys.com/version/dev/contribute/documentarian.html): documentation topics, code snippets, examples.
+        - [Contributing as a developer](https://stk.docs.pyansys.com/version/dev/contribute/developer.html): GitHub workflow.
+    - Reviewing the library: we could use extra eyes to make sure there is nothing embarassing
     - Higher level APIs built on top of the existing object model
         - for instance https://github.com/ansys-internal/pystk/pull/481/files
 - **Behind the scenes, the GitHub repo**
@@ -50,6 +53,7 @@
         - Mention test coverage (90%)
             - Consider showing report
     - Ensure high quality, security, and consistency of contributions
+    - Curated code and documentation for ingestion by LLM (Allie)
 - **Follow up**
     - Try it out and provide feedback
     - Reach out if you need help with anything, GitHub, Python, docker, getting started, migrating existing code, etc.
