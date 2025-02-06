@@ -37,7 +37,8 @@ all = [
     "numpy==2.2.2",
     "Pillow==11.1.0",
     "simplejpeg==1.7.6",
-    "sidecar==0.7.0"
+    "sidecar==0.7.0",
+    "libcst==1.6.0"
 ]
 grpc = [
     "grpcio",
