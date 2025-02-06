@@ -52,7 +52,8 @@ class Recording:
         sorted_call_records = sorted(self.call_records)
         with Path.open(xml_file_name, mode="wt") as f:
             if description is not None:
-                f.write(f"<!-- {escape(description).replace("--", "\\-\\-")} -->\n")
+                cmd = escape(description).replace("--", "\\-\\-")
+                f.write(f"<!-- {cmd} -->\n")
             f.write(f'<recording root_directory="{self.root_directory_path}">\n')
             for record in sorted_call_records:
                 call = f'<call filename="{record.filename}"'
