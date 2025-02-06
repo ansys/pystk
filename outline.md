@@ -1,22 +1,22 @@
-- **Why are we presenting this today to the Engineering forum?**
+- **Why are we presenting this today to the Engineering forum?** [3:00]
     - Open sourcing PySTK in the next few weeks
         - Final adjustments and legal review in progress
     - Going to become publicly visible with the other PyAnsys libraries at https://github.com/ansys
         - In parallel with existing STK Python API for a few release cycles
         - Version 0.1 to collect feedback and iterate
-    - Marketing strategy: targeted email to selected customers first, then more active marketing (for instance blogs) during 25R2 timeframe
+    - Marketing strategy: targeted email campaign to selected customers first, then more active marketing (for instance blogs) during 25R2 timeframe
         - Let us know if you think of a customer that would be a good candidate for this activity
         - Anyone will be able to find it on the public GitHub, so any current or prospective customer might find out on their own
-- **Show how to get access**
+- **Show how to get access** [2:00]
     - Start at https://myapps.microsoft.com/, Ansys wiki, GitHub, GitHub Onboarding
     - Quick overview
         - Use your own GitHub account (create one if you do not want to reuse an existing one)
         - Enable 2FA and SSO
         - Configure email and notifications, ansys internal repositories notifications must be routed to Ansys email
     - If you do not have access you will receive 404 errors when trying to access the repo or the help
-- **Why PySTK to begin with?**
+- **Why PySTK to begin with?** [3:00]
     - Show https://stk.docs.pyansys.com/version/dev/getting-started/about.html#about-pystk and talk about the various points
-- **What is PySTK?**
+- **What is PySTK?** [6:00]
     - Show help landing page https://stk.docs.pyansys.com/ and private GitHub repo landing page https://github.com/ansys-internal/pystk
     - Walk through documentation installation pages
         - prereq Windows/Linux local/docker
@@ -28,16 +28,16 @@
     - Show examples
         - Curating high quality examples for human & LLM ingestion
         - Domain focused examples
-- **How to migrate existing code using the current STK Python API to PySTK**
+- **How to migrate existing code using the current STK Python API to PySTK** [2:00]
     - Show migration page at https://stk.docs.pyansys.com/version/dev/user-guide/migration.html
     - Walk through migrating code using the api-migration-assistant
-- **What is being finalized before open sourcing?**
+- **What is being finalized before open sourcing?** [2:00]
     - Finishing up the users' and migration guide
     - Adding more code snippets
     - Finalizing copyright, license, CLA
         - Obviously no ITAR or restricted content
     - Tweaking, tiying up of lose ends
-- **Looking for contributions**
+- **Looking for contributions** [5:00]
     - Walk through the different section of https://stk.docs.pyansys.com/version/dev/contribute.html
         - [Contributing as a user](https://stk.docs.pyansys.com/version/dev/contribute/user.html): reporting bugs, requesting features, starting discussions.
         - [Contributing to the documentation](https://stk.docs.pyansys.com/version/dev/contribute/documentarian.html): documentation topics, code snippets, examples.
@@ -45,7 +45,7 @@
     - Reviewing the library: we could use extra eyes to make sure there is nothing embarassing
     - Higher level APIs built on top of the existing object model
         - for instance https://github.com/ansys-internal/pystk/pull/481/files
-- **Behind the scenes, the GitHub repo**
+- **Behind the scenes, the GitHub repo** [5:00]
     - GitHub actions (CI/CD, nightly, code/doc style checks, vulnerabilities)
         - Show steps for PR jobs (for instance https://github.com/ansys-internal/pystk/actions/runs/13140371819)
     - Tests
@@ -54,6 +54,7 @@
             - Consider showing report
     - Ensure high quality, security, and consistency of contributions
     - Curated code and documentation for ingestion by LLM (Allie)
-- **Follow up**
+- **Follow up** [2:00]
     - Try it out and provide feedback
     - Reach out if you need help with anything, GitHub, Python, docker, getting started, migrating existing code, etc.
+    - Fun fact
