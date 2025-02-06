@@ -1,0 +1,42 @@
+RfcmPolarizationType
+====================
+
+.. py:class:: ansys.stk.core.stkrfchannelmodeler.RfcmPolarizationType
+
+   IntEnum
+
+
+.. py:currentmodule:: RfcmPolarizationType
+
+Overview
+--------
+
+.. tab-set::
+
+    .. tab-item:: Members
+        
+        .. list-table::
+            :header-rows: 0
+            :widths: auto
+
+            * - :py:attr:`~VERTICAL`
+              - Vertical
+
+            * - :py:attr:`~HORIZONTAL`
+              - Horizontal
+
+            * - :py:attr:`~RHCP`
+              - RHCP
+
+            * - :py:attr:`~LHCP`
+              - LHCP
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.stk.core.stkrfchannelmodeler import RfcmPolarizationType
+
+
