@@ -62,7 +62,7 @@ def _invoke_apply(args):
     apply(args.mappings_directory, args.recordings_directory)
 
 
-def _main(argv=None):
+def main(argv=None):
     """Parse the command line argument and invoke the corresponding action."""
     if argv is None:
         argv = sys.argv[1:]
@@ -88,4 +88,4 @@ def _configure_logging(args):
 
 
 if __name__ == "__main__":
-    sys.exit(_main())
+    sys.exit(main())
