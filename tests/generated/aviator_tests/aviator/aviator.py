@@ -235,7 +235,7 @@ class EarlyBoundTests(TestBase):
         wind.wind_model_source = WindAtmosModelSource.MISSION_MODEL
         wind.wind_model_type = WindModelType.CONSTANT_WIND
         addsWind: "WindModelADDS" = None
-        with pytest.raises(Exception, match=RegexSubstringMatch("must be set")):
+        with pytest.raises(Exception, match=RegexSubstringMatch("has been deprecated")):
             addsWind = wind.mode_as_adds
 
         constWind: "WindModelConstant" = wind.mode_as_constant
@@ -304,18 +304,20 @@ class EarlyBoundTests(TestBase):
     def test_WindModelADDS(self):
         wind: "WindModel" = EarlyBoundTests.AG_Mission.wind_model
         wind.wind_model_source = WindAtmosModelSource.MISSION_MODEL
-        wind.wind_model_type = WindModelType.ADDS
-        ADDSWind: "WindModelADDS" = wind.mode_as_adds
+        with pytest.raises(Exception, match=RegexSubstringMatch("has been deprecated")):
+            wind.wind_model_type = WindModelType.ADDS
 
-        ADDSWind.name = "ADDS Name Test"
-        Assert.assertEqual("ADDS Name Test", ADDSWind.name)
+        with pytest.raises(Exception, match=RegexSubstringMatch("has been deprecated")):
+            ADDSWind: "WindModelADDS" = wind.mode_as_adds
 
-        ADDSWind.interpolation_blend_time = 1
-        Assert.assertEqual(1, ADDSWind.interpolation_blend_time)
+        # ADDSWind.Name = "ADDS Name Test";
+        # Assert.AreEqual("ADDS Name Test", ADDSWind.Name);
+
+        # ADDSWind.InterpBlendTime = 1;
+        # Assert.AreEqual(1, ADDSWind.InterpBlendTime);
 
         wind.wind_model_type = WindModelType.DISABLED
-        with pytest.raises(Exception, match=RegexSubstringMatch("must be set")):
-            ADDSWind.interpolation_blend_time = 1
+        # TryCatchAssertBlock.ExpectedException("must be set", delegate () { ADDSWind.InterpBlendTime = 1; });
 
         wind.wind_model_source = WindAtmosModelSource.SCENARIO_MODEL
         wind.copy()

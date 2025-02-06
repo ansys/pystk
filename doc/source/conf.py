@@ -331,7 +331,7 @@ jinja_globals = {
     "SUPPORTED_PYTHON_VERSIONS": ["3.11", "3.12", "3.13"],
     "SUPPORTED_PLATFORMS": ["windows", "ubuntu"],
     "PYSTK_VERSION": version,
-    "STK_VERSION": "12.9.0",
+    "STK_VERSION": "12.10.0",
 }
 
 jinja_contexts = {

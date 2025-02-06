@@ -31,6 +31,9 @@ Overview
             * - :py:attr:`~SUPERSONIC_AERODYNAMIC`
               - Define the aerodynamics for an aircraft that generally travels at supersonic speeds.
 
+            * - :py:attr:`~FOUR_POINT_AERODYNAMIC`
+              - Define the aerodynamics for an aircraft defined at 4 different points in the flight envelope.
+
 
 Import detail
 -------------

@@ -951,6 +951,7 @@
    <Mapping ParentScope="AgEChOptimalStrandMetricType" OldName="eChOptStrandMetricDistance" NewName="STRAND_METRIC_DISTANCE" Category="enum_value" />
    <Mapping ParentScope="AgEChOptimalStrandMetricType" OldName="eChOptStrandMetricProcessingDelay" NewName="STRAND_METRIC_PROCESSING_DELAY" Category="enum_value" />
    <Mapping ParentScope="AgEChOptimalStrandMetricType" OldName="eChOptStrandMetricCalculationScalar" NewName="STRAND_METRIC_CALCULATION_SCALAR" Category="enum_value" />
+   <Mapping ParentScope="AgEChOptimalStrandMetricType" OldName="eChOptStrandMetricDuration" NewName="STRAND_METRIC_DURATION" Category="enum_value" />
    <Mapping OldName="AgEChOptimalStrandMetricType" NewName="ChainOptimalStrandMetricType" Category="enum_type" />
    <Mapping ParentScope="AgEChOptimalStrandCalculationScalarMetricType" OldName="eChOptStrandCalculationScalarMetricUnknown" NewName="UNKNOWN" Category="enum_value" />
    <Mapping ParentScope="AgEChOptimalStrandCalculationScalarMetricType" OldName="eChOptStrandCalculationScalarMetricFile" NewName="STRAND_CALCULATION_SCALAR_METRIC_FILE" Category="enum_value" />
@@ -1746,6 +1747,13 @@
    <Mapping ParentScope="AgEEOIRFlightType" OldName="eAgEEOIRFlightPowered" NewName="POWERED" Category="enum_value" />
    <Mapping ParentScope="AgEEOIRFlightType" OldName="eAgEEOIRFlightFalling" NewName="FALLING" Category="enum_value" />
    <Mapping OldName="AgEEOIRFlightType" NewName="EOIRFlightType" Category="enum_type" />
+   <Mapping ParentScope="AgEPropagatorDisplayCoordinateType" OldName="ePropagatorDisplayCoordinateCartesian" NewName="CARTESIAN" Category="enum_value" />
+   <Mapping ParentScope="AgEPropagatorDisplayCoordinateType" OldName="ePropagatorDisplayCoordinateClassical" NewName="CLASSICAL" Category="enum_value" />
+   <Mapping ParentScope="AgEPropagatorDisplayCoordinateType" OldName="ePropagatorDisplayCoordinateEquinoctial" NewName="EQUINOCTIAL" Category="enum_value" />
+   <Mapping ParentScope="AgEPropagatorDisplayCoordinateType" OldName="ePropagatorDisplayCoordinateDelaunayVariables" NewName="DELAUNAY_VARIABLES" Category="enum_value" />
+   <Mapping ParentScope="AgEPropagatorDisplayCoordinateType" OldName="ePropagatorDisplayCoordinateMixedSpherical" NewName="MIXED_SPHERICAL" Category="enum_value" />
+   <Mapping ParentScope="AgEPropagatorDisplayCoordinateType" OldName="ePropagatorDisplayCoordinateSpherical" NewName="SPHERICAL" Category="enum_value" />
+   <Mapping OldName="AgEPropagatorDisplayCoordinateType" NewName="PropagatorDisplayCoordinateType" Category="enum_type" />
    <Mapping ParentScope="AgEComponentLinkEmbedControlReferenceType" OldName="eComponentLinkEmbedControlReferenceTypeUnlinked" NewName="UNLINKED" Category="enum_value" />
    <Mapping ParentScope="AgEComponentLinkEmbedControlReferenceType" OldName="eComponentLinkEmbedControlReferenceTypeLinked" NewName="LINKED" Category="enum_value" />
    <Mapping OldName="AgEComponentLinkEmbedControlReferenceType" NewName="ComponentLinkEmbedControlReferenceType" Category="enum_type" />
@@ -1953,6 +1961,7 @@
    <Mapping ParentScope="AgEBeamformerType" OldName="eBeamformerTypeHann" NewName="HANN" Category="enum_value" />
    <Mapping ParentScope="AgEBeamformerType" OldName="eBeamformerTypeRaisedCosine" NewName="RAISED_COSINE" Category="enum_value" />
    <Mapping ParentScope="AgEBeamformerType" OldName="eBeamformerTypeRaisedCosineSquared" NewName="RAISED_COSINE_SQUARED" Category="enum_value" />
+   <Mapping ParentScope="AgEBeamformerType" OldName="eBeamformerTypeTaylor" NewName="TAYLOR" Category="enum_value" />
    <Mapping OldName="AgEBeamformerType" NewName="BeamformerType" Category="enum_type" />
    <Mapping ParentScope="AgEElementConfigurationType" OldName="eElementConfigurationTypeUnknown" NewName="UNKNOWN" Category="enum_value" />
    <Mapping ParentScope="AgEElementConfigurationType" OldName="eElementConfigurationTypeCircular" NewName="CIRCULAR" Category="enum_value" />
@@ -1971,6 +1980,10 @@
    <Mapping ParentScope="AgELimitsExceededBehaviorType" OldName="eLimitsExceededBehaviorTypeClampToLimit" NewName="CLAMP_TO_LIMIT" Category="enum_value" />
    <Mapping ParentScope="AgELimitsExceededBehaviorType" OldName="eLimitsExceededBehaviorTypeIgnoreObject" NewName="IGNORE_OBJECT" Category="enum_value" />
    <Mapping OldName="AgELimitsExceededBehaviorType" NewName="LimitsExceededBehaviorType" Category="enum_type" />
+   <Mapping ParentScope="AgETargetSelectionMethodType" OldName="eTargetSelectionMethodRange" NewName="RANGE" Category="enum_value" />
+   <Mapping ParentScope="AgETargetSelectionMethodType" OldName="eTargetSelectionMethodClosingVelocity" NewName="CLOSING_VELOCITY" Category="enum_value" />
+   <Mapping ParentScope="AgETargetSelectionMethodType" OldName="eTargetSelectionMethodPriority" NewName="PRIORITY" Category="enum_value" />
+   <Mapping OldName="AgETargetSelectionMethodType" NewName="TargetSelectionMethodType" Category="enum_type" />
    <Mapping ParentScope="AgEAntennaGraphicsCoordinateSystem" OldName="eAgEAntennaGraphicsCoordinateSystemPolar" NewName="POLAR" Category="enum_value" />
    <Mapping ParentScope="AgEAntennaGraphicsCoordinateSystem" OldName="eAgEAntennaGraphicsCoordinateSystemRectangular" NewName="RECTANGULAR" Category="enum_value" />
    <Mapping ParentScope="AgEAntennaGraphicsCoordinateSystem" OldName="eAgEAntennaGraphicsCoordinateSystemSphericalAzEl" NewName="SPHERICAL_AZ_EL" Category="enum_value" />
@@ -2218,6 +2231,7 @@
    <Mapping ParentScope="AgEAtmosphericAbsorptionModelType" OldName="eAtmosphericAbsorptionModelTypeTirem550" NewName="TIREM550" Category="enum_value" />
    <Mapping ParentScope="AgEAtmosphericAbsorptionModelType" OldName="eAtmosphericAbsorptionModelTypeVoacap" NewName="GRAPHICS_3D_ACAP" Category="enum_value" />
    <Mapping ParentScope="AgEAtmosphericAbsorptionModelType" OldName="eAtmosphericAbsorptionModelTypeCOMPlugin" NewName="COM_PLUGIN" Category="enum_value" />
+   <Mapping ParentScope="AgEAtmosphericAbsorptionModelType" OldName="eAtmosphericAbsorptionModelTypeITURP676_13" NewName="ITURP676_13" Category="enum_value" />
    <Mapping OldName="AgEAtmosphericAbsorptionModelType" NewName="AtmosphericAbsorptionModelType" Category="enum_type" />
    <Mapping ParentScope="AgEUrbanTerrestrialLossModelType" OldName="eUrbanTerrestrialLossModelTypeUnknown" NewName="UNKNOWN" Category="enum_value" />
    <Mapping ParentScope="AgEUrbanTerrestrialLossModelType" OldName="eUrbanTerrestrialLossModelTypeTwoRay" NewName="TWO_RAY" Category="enum_value" />
@@ -2851,6 +2865,7 @@
    <Mapping ParentScope="IAgStkObjectRoot" OldName="LoadVDFFromSDF" NewName="load_vdf_from_sdf" Category="method" />
    <Mapping ParentScope="IAgStkObjectRoot" OldName="LoadVDFFromSDFWithVersion" NewName="load_vdf_from_sdf_with_version" Category="method" />
    <Mapping ParentScope="IAgStkObjectRoot" OldName="SaveVDFToSDF" NewName="save_vdf_to_sdf" Category="method" />
+   <Mapping ParentScope="IAgStkObjectRoot" OldName="RFChannelModeler" NewName="rf_channel_modeler" Category="method" />
    <Mapping ParentScope="IAgStkObjectRoot" OldName="Subscribe" NewName="subscribe" Category="method" />
    <Mapping OldName="IAgObjectLink" NewName="ObjectLink" Category="interface" />
    <Mapping ParentScope="IAgObjectLink" OldName="Name" NewName="name" Category="method" />
@@ -3366,6 +3381,7 @@
    <Mapping ParentScope="IAgVORefCrdnVector" OldName="TrueScale" NewName="true_scale" Category="method" />
    <Mapping ParentScope="IAgVORefCrdnVector" OldName="AvailableAxes" NewName="available_axes" Category="method" />
    <Mapping ParentScope="IAgVORefCrdnVector" OldName="AvailablePoints" NewName="available_points" Category="method" />
+   <Mapping ParentScope="IAgVORefCrdnVector" OldName="Thickness" NewName="thickness" Category="method" />
    <Mapping OldName="IAgVORefCrdnAxes" NewName="Graphics3DReferenceAxes" Category="interface" />
    <Mapping ParentScope="IAgVORefCrdnAxes" OldName="DrawAtCB" NewName="draw_at_central_body" Category="method" />
    <Mapping ParentScope="IAgVORefCrdnAxes" OldName="Axes" NewName="axes" Category="method" />
@@ -3377,6 +3393,7 @@
    <Mapping ParentScope="IAgVORefCrdnAxes" OldName="DrawAtPoint" NewName="draw_at_point" Category="method" />
    <Mapping ParentScope="IAgVORefCrdnAxes" OldName="Point" NewName="point" Category="method" />
    <Mapping ParentScope="IAgVORefCrdnAxes" OldName="AvailablePoints" NewName="available_points" Category="method" />
+   <Mapping ParentScope="IAgVORefCrdnAxes" OldName="Thickness" NewName="thickness" Category="method" />
    <Mapping OldName="IAgVORefCrdnAngle" NewName="Graphics3DReferenceAngle" Category="interface" />
    <Mapping ParentScope="IAgVORefCrdnAngle" OldName="AngleValueVisible" NewName="show_angle_value" Category="method" />
    <Mapping ParentScope="IAgVORefCrdnAngle" OldName="AngleUnitAbrv" NewName="angle_unit_abbreviation" Category="method" />
@@ -3630,6 +3647,7 @@
    <Mapping ParentScope="IAgRadarCrossSection" OldName="SupportedModels" NewName="supported_models" Category="method" />
    <Mapping ParentScope="IAgRadarCrossSection" OldName="SetModel" NewName="set_model" Category="method" />
    <Mapping ParentScope="IAgRadarCrossSection" OldName="Model" NewName="model" Category="method" />
+   <Mapping ParentScope="IAgRadarCrossSection" OldName="ModelComponentLinking" NewName="model_component_linking" Category="method" />
    <Mapping OldName="IAgRFEnvironment" NewName="RFEnvironment" Category="interface" />
    <Mapping ParentScope="IAgRFEnvironment" OldName="PropagationChannel" NewName="propagation_channel" Category="method" />
    <Mapping ParentScope="IAgRFEnvironment" OldName="SupportedContourRainOutagePercentValues" NewName="supported_contour_rain_outage_percent_values" Category="method" />
@@ -4246,6 +4264,7 @@
    <Mapping ParentScope="IAgRadarCrossSectionInheritable" OldName="SupportedModels" NewName="supported_models" Category="method" />
    <Mapping ParentScope="IAgRadarCrossSectionInheritable" OldName="SetModel" NewName="set_model" Category="method" />
    <Mapping ParentScope="IAgRadarCrossSectionInheritable" OldName="Model" NewName="model" Category="method" />
+   <Mapping ParentScope="IAgRadarCrossSectionInheritable" OldName="ModelComponentLinking" NewName="model_component_linking" Category="method" />
    <Mapping OldName="IAgPlatformLaserEnvironment" NewName="PlatformLaserEnvironment" Category="interface" />
    <Mapping ParentScope="IAgPlatformLaserEnvironment" OldName="PropagationChannel" NewName="propagation_channel" Category="method" />
    <Mapping OldName="IAgPlatformRFEnvironment" NewName="IPlatformRFEnvironment" Category="interface" />
@@ -4872,6 +4891,22 @@
    <Mapping ParentScope="IAgBeamformerRaisedCosine" OldName="P" NewName="p" Category="method" />
    <Mapping OldName="IAgBeamformerRaisedCosineSquared" NewName="BeamformerRaisedCosineSquared" Category="interface" />
    <Mapping ParentScope="IAgBeamformerRaisedCosineSquared" OldName="P" NewName="p" Category="method" />
+   <Mapping OldName="IAgBeamformerTaylor" NewName="BeamformerTaylor" Category="interface" />
+   <Mapping ParentScope="IAgBeamformerTaylor" OldName="SidelobeLevel" NewName="sidelobe_level" Category="method" />
+   <Mapping ParentScope="IAgBeamformerTaylor" OldName="SidelobeCount" NewName="sidelobe_count" Category="method" />
+   <Mapping OldName="IAgPriority" NewName="Priority" Category="interface" />
+   <Mapping ParentScope="IAgPriority" OldName="Name" NewName="name" Category="method" />
+   <Mapping ParentScope="IAgPriority" OldName="Value" NewName="value" Category="method" />
+   <Mapping OldName="IAgPriorityCollection" NewName="PriorityCollection" Category="interface" />
+   <Mapping ParentScope="IAgPriorityCollection" OldName="Count" NewName="count" Category="method" />
+   <Mapping ParentScope="IAgPriorityCollection" OldName="Item" NewName="item" Category="method" />
+   <Mapping ParentScope="IAgPriorityCollection" OldName="_NewEnum" NewName="_new_enum" Category="method" />
+   <Mapping OldName="IAgTargetSelectionMethod" NewName="ITargetSelectionMethod" Category="interface" />
+   <Mapping ParentScope="IAgTargetSelectionMethod" OldName="Type" NewName="type" Category="method" />
+   <Mapping OldName="IAgTargetSelectionMethodPriority" NewName="TargetSelectionMethodPriority" Category="interface" />
+   <Mapping ParentScope="IAgTargetSelectionMethodPriority" OldName="Priorities" NewName="priorities" Category="method" />
+   <Mapping OldName="IAgTargetSelectionMethodRange" NewName="TargetSelectionMethodRange" Category="interface" />
+   <Mapping OldName="IAgTargetSelectionMethodClosingVelocity" NewName="TargetSelectionMethodClosingVelocity" Category="interface" />
    <Mapping OldName="IAgDirectionProvider" NewName="IDirectionProvider" Category="interface" />
    <Mapping ParentScope="IAgDirectionProvider" OldName="Type" NewName="type" Category="method" />
    <Mapping OldName="IAgDirectionProviderAsciiFile" NewName="DirectionProviderASCIIFile" Category="interface" />
@@ -4886,6 +4921,9 @@
    <Mapping ParentScope="IAgDirectionProviderObject" OldName="AzimuthSteeringLimitB" NewName="azimuth_steering_limit_b" Category="method" />
    <Mapping ParentScope="IAgDirectionProviderObject" OldName="ElevationSteeringLimitA" NewName="elevation_steering_limit_a" Category="method" />
    <Mapping ParentScope="IAgDirectionProviderObject" OldName="ElevationSteeringLimitB" NewName="elevation_steering_limit_b" Category="method" />
+   <Mapping ParentScope="IAgDirectionProviderObject" OldName="MaximumSelectionCount" NewName="maximum_selection_count" Category="method" />
+   <Mapping ParentScope="IAgDirectionProviderObject" OldName="TargetSelectionMethodType" NewName="target_selection_method_type" Category="method" />
+   <Mapping ParentScope="IAgDirectionProviderObject" OldName="TargetSelectionMethod" NewName="target_selection_method" Category="method" />
    <Mapping OldName="IAgDirectionProviderLink" NewName="DirectionProviderLink" Category="interface" />
    <Mapping ParentScope="IAgDirectionProviderLink" OldName="LimitsExceededBehaviorType" NewName="limits_exceeded_behavior_type" Category="method" />
    <Mapping ParentScope="IAgDirectionProviderLink" OldName="AzimuthSteeringLimitA" NewName="azimuth_steering_limit_a" Category="method" />
@@ -5244,6 +5282,7 @@
    <Mapping ParentScope="IAgAntennaVolumeGraphics" OldName="Levels" NewName="levels" Category="method" />
    <Mapping ParentScope="IAgAntennaVolumeGraphics" OldName="RelativeToMaximum" NewName="relative_to_maximum" Category="method" />
    <Mapping ParentScope="IAgAntennaVolumeGraphics" OldName="CoordinateSystem" NewName="coordinate_system" Category="method" />
+   <Mapping ParentScope="IAgAntennaVolumeGraphics" OldName="MinimumDisplayedGain" NewName="minimum_displayed_gain" Category="method" />
    <Mapping OldName="IAgAntennaVO" NewName="AntennaGraphics3D" Category="interface" />
    <Mapping ParentScope="IAgAntennaVO" OldName="Vector" NewName="vector" Category="method" />
    <Mapping ParentScope="IAgAntennaVO" OldName="ShowBoresight" NewName="show_boresight" Category="method" />
@@ -5340,6 +5379,7 @@
    <Mapping ParentScope="IAgAntenna" OldName="Graphics" NewName="graphics" Category="method" />
    <Mapping ParentScope="IAgAntenna" OldName="RFEnvironment" NewName="rf_environment" Category="method" />
    <Mapping ParentScope="IAgAntenna" OldName="LaserEnvironment" NewName="laser_environment" Category="method" />
+   <Mapping ParentScope="IAgAntenna" OldName="ModelComponentLinking" NewName="model_component_linking" Category="method" />
    <Mapping OldName="IAgAntennaControl" NewName="AntennaControl" Category="interface" />
    <Mapping ParentScope="IAgAntennaControl" OldName="ReferenceType" NewName="reference_type" Category="method" />
    <Mapping ParentScope="IAgAntennaControl" OldName="SupportedLinkedAntennaObjects" NewName="supported_linked_antenna_objects" Category="method" />
@@ -5348,6 +5388,7 @@
    <Mapping ParentScope="IAgAntennaControl" OldName="SetEmbeddedModel" NewName="set_embedded_model" Category="method" />
    <Mapping ParentScope="IAgAntennaControl" OldName="EmbeddedModel" NewName="embedded_model" Category="method" />
    <Mapping ParentScope="IAgAntennaControl" OldName="EmbeddedModelOrientation" NewName="embedded_model_orientation" Category="method" />
+   <Mapping ParentScope="IAgAntennaControl" OldName="EmbeddedModelComponentLinking" NewName="embedded_model_component_linking" Category="method" />
    <Mapping OldName="IAgAntennaBeamSelectionStrategy" NewName="IAntennaBeamSelectionStrategy" Category="interface" />
    <Mapping ParentScope="IAgAntennaBeamSelectionStrategy" OldName="Type" NewName="type" Category="method" />
    <Mapping OldName="IAgAntennaBeamSelectionStrategyScriptPlugin" NewName="AntennaBeamSelectionStrategyScriptPlugin" Category="interface" />
@@ -5420,6 +5461,7 @@
    <Mapping ParentScope="IAgTransmitterModelSimple" OldName="SupportedModulators" NewName="supported_modulators" Category="method" />
    <Mapping ParentScope="IAgTransmitterModelSimple" OldName="SetModulator" NewName="set_modulator" Category="method" />
    <Mapping ParentScope="IAgTransmitterModelSimple" OldName="Modulator" NewName="modulator" Category="method" />
+   <Mapping ParentScope="IAgTransmitterModelSimple" OldName="FilterComponentLinking" NewName="filter_component_linking" Category="method" />
    <Mapping OldName="IAgTransmitterModelMedium" NewName="TransmitterModelMedium" Category="interface" />
    <Mapping ParentScope="IAgTransmitterModelMedium" OldName="Frequency" NewName="frequency" Category="method" />
    <Mapping ParentScope="IAgTransmitterModelMedium" OldName="DataRate" NewName="data_rate" Category="method" />
@@ -5436,6 +5478,7 @@
    <Mapping ParentScope="IAgTransmitterModelMedium" OldName="SupportedModulators" NewName="supported_modulators" Category="method" />
    <Mapping ParentScope="IAgTransmitterModelMedium" OldName="SetModulator" NewName="set_modulator" Category="method" />
    <Mapping ParentScope="IAgTransmitterModelMedium" OldName="Modulator" NewName="modulator" Category="method" />
+   <Mapping ParentScope="IAgTransmitterModelMedium" OldName="FilterComponentLinking" NewName="filter_component_linking" Category="method" />
    <Mapping OldName="IAgTransmitterModelComplex" NewName="TransmitterModelComplex" Category="interface" />
    <Mapping ParentScope="IAgTransmitterModelComplex" OldName="Frequency" NewName="frequency" Category="method" />
    <Mapping ParentScope="IAgTransmitterModelComplex" OldName="DataRate" NewName="data_rate" Category="method" />
@@ -5452,6 +5495,7 @@
    <Mapping ParentScope="IAgTransmitterModelComplex" OldName="SupportedModulators" NewName="supported_modulators" Category="method" />
    <Mapping ParentScope="IAgTransmitterModelComplex" OldName="SetModulator" NewName="set_modulator" Category="method" />
    <Mapping ParentScope="IAgTransmitterModelComplex" OldName="Modulator" NewName="modulator" Category="method" />
+   <Mapping ParentScope="IAgTransmitterModelComplex" OldName="FilterComponentLinking" NewName="filter_component_linking" Category="method" />
    <Mapping OldName="IAgTransmitterModelMultibeam" NewName="TransmitterModelMultibeam" Category="interface" />
    <Mapping ParentScope="IAgTransmitterModelMultibeam" OldName="DataRate" NewName="data_rate" Category="method" />
    <Mapping ParentScope="IAgTransmitterModelMultibeam" OldName="PostTransmitGainsLosses" NewName="post_transmit_gains_losses" Category="method" />
@@ -5463,6 +5507,7 @@
    <Mapping ParentScope="IAgTransmitterModelMultibeam" OldName="SetModulator" NewName="set_modulator" Category="method" />
    <Mapping ParentScope="IAgTransmitterModelMultibeam" OldName="Modulator" NewName="modulator" Category="method" />
    <Mapping ParentScope="IAgTransmitterModelMultibeam" OldName="AntennaSystem" NewName="antenna_system" Category="method" />
+   <Mapping ParentScope="IAgTransmitterModelMultibeam" OldName="FilterComponentLinking" NewName="filter_component_linking" Category="method" />
    <Mapping OldName="IAgTransmitterModelLaser" NewName="TransmitterModelLaser" Category="interface" />
    <Mapping ParentScope="IAgTransmitterModelLaser" OldName="Frequency" NewName="frequency" Category="method" />
    <Mapping ParentScope="IAgTransmitterModelLaser" OldName="DataRate" NewName="data_rate" Category="method" />
@@ -5479,6 +5524,7 @@
    <Mapping ParentScope="IAgTransmitterModelLaser" OldName="SupportedModulators" NewName="supported_modulators" Category="method" />
    <Mapping ParentScope="IAgTransmitterModelLaser" OldName="SetModulator" NewName="set_modulator" Category="method" />
    <Mapping ParentScope="IAgTransmitterModelLaser" OldName="Modulator" NewName="modulator" Category="method" />
+   <Mapping ParentScope="IAgTransmitterModelLaser" OldName="FilterComponentLinking" NewName="filter_component_linking" Category="method" />
    <Mapping OldName="IAgTransferFunctionInputBackOffCOverImTableRow" NewName="TransferFunctionInputBackOffVsCOverImTableRow" Category="interface" />
    <Mapping ParentScope="IAgTransferFunctionInputBackOffCOverImTableRow" OldName="InputBackOff" NewName="input_back_off" Category="method" />
    <Mapping ParentScope="IAgTransferFunctionInputBackOffCOverImTableRow" OldName="COverIm" NewName="c_over_im" Category="method" />
@@ -5529,6 +5575,7 @@
    <Mapping ParentScope="IAgReTransmitterModelSimple" OldName="SetFilter" NewName="set_filter" Category="method" />
    <Mapping ParentScope="IAgReTransmitterModelSimple" OldName="Filter" NewName="filter" Category="method" />
    <Mapping ParentScope="IAgReTransmitterModelSimple" OldName="SaturatedEirp" NewName="saturated_eirp" Category="method" />
+   <Mapping ParentScope="IAgReTransmitterModelSimple" OldName="FilterComponentLinking" NewName="filter_component_linking" Category="method" />
    <Mapping OldName="IAgReTransmitterModelMedium" NewName="ReTransmitterModelMedium" Category="interface" />
    <Mapping ParentScope="IAgReTransmitterModelMedium" OldName="EnablePolarization" NewName="enable_polarization" Category="method" />
    <Mapping ParentScope="IAgReTransmitterModelMedium" OldName="SetPolarizationType" NewName="set_polarization_type" Category="method" />
@@ -5540,6 +5587,7 @@
    <Mapping ParentScope="IAgReTransmitterModelMedium" OldName="Filter" NewName="filter" Category="method" />
    <Mapping ParentScope="IAgReTransmitterModelMedium" OldName="SaturatedPower" NewName="saturated_power" Category="method" />
    <Mapping ParentScope="IAgReTransmitterModelMedium" OldName="AntennaGain" NewName="antenna_gain" Category="method" />
+   <Mapping ParentScope="IAgReTransmitterModelMedium" OldName="FilterComponentLinking" NewName="filter_component_linking" Category="method" />
    <Mapping OldName="IAgReTransmitterModelComplex" NewName="ReTransmitterModelComplex" Category="interface" />
    <Mapping ParentScope="IAgReTransmitterModelComplex" OldName="EnablePolarization" NewName="enable_polarization" Category="method" />
    <Mapping ParentScope="IAgReTransmitterModelComplex" OldName="SetPolarizationType" NewName="set_polarization_type" Category="method" />
@@ -5551,6 +5599,7 @@
    <Mapping ParentScope="IAgReTransmitterModelComplex" OldName="Filter" NewName="filter" Category="method" />
    <Mapping ParentScope="IAgReTransmitterModelComplex" OldName="SaturatedPower" NewName="saturated_power" Category="method" />
    <Mapping ParentScope="IAgReTransmitterModelComplex" OldName="AntennaControl" NewName="antenna_control" Category="method" />
+   <Mapping ParentScope="IAgReTransmitterModelComplex" OldName="FilterComponentLinking" NewName="filter_component_linking" Category="method" />
    <Mapping OldName="IAgTransmitterVO" NewName="TransmitterGraphics3D" Category="interface" />
    <Mapping ParentScope="IAgTransmitterVO" OldName="Vector" NewName="vector" Category="method" />
    <Mapping ParentScope="IAgTransmitterVO" OldName="ShowBoresight" NewName="show_boresight" Category="method" />
@@ -5575,6 +5624,7 @@
    <Mapping ParentScope="IAgTransmitter" OldName="Graphics" NewName="graphics" Category="method" />
    <Mapping ParentScope="IAgTransmitter" OldName="RFEnvironment" NewName="rf_environment" Category="method" />
    <Mapping ParentScope="IAgTransmitter" OldName="LaserEnvironment" NewName="laser_environment" Category="method" />
+   <Mapping ParentScope="IAgTransmitter" OldName="ModelComponentLinking" NewName="model_component_linking" Category="method" />
    <Mapping OldName="IAgDemodulatorModel" NewName="IDemodulatorModel" Category="interface" />
    <Mapping ParentScope="IAgDemodulatorModel" OldName="Name" NewName="name" Category="method" />
    <Mapping ParentScope="IAgDemodulatorModel" OldName="Type" NewName="type" Category="method" />
@@ -5616,6 +5666,7 @@
    <Mapping ParentScope="IAgReceiverModelSimple" OldName="Frequency" NewName="frequency" Category="method" />
    <Mapping ParentScope="IAgReceiverModelSimple" OldName="GOverT" NewName="g_over_t" Category="method" />
    <Mapping ParentScope="IAgReceiverModelSimple" OldName="Interference" NewName="interference" Category="method" />
+   <Mapping ParentScope="IAgReceiverModelSimple" OldName="FilterComponentLinking" NewName="filter_component_linking" Category="method" />
    <Mapping OldName="IAgReceiverModelMedium" NewName="ReceiverModelMedium" Category="interface" />
    <Mapping ParentScope="IAgReceiverModelMedium" OldName="EnableFilter" NewName="enable_filter" Category="method" />
    <Mapping ParentScope="IAgReceiverModelMedium" OldName="SupportedFilters" NewName="supported_filters" Category="method" />
@@ -5644,6 +5695,7 @@
    <Mapping ParentScope="IAgReceiverModelMedium" OldName="LnaToReceiverLineLoss" NewName="lna_to_receiver_line_loss" Category="method" />
    <Mapping ParentScope="IAgReceiverModelMedium" OldName="SystemNoiseTemperature" NewName="system_noise_temperature" Category="method" />
    <Mapping ParentScope="IAgReceiverModelMedium" OldName="Interference" NewName="interference" Category="method" />
+   <Mapping ParentScope="IAgReceiverModelMedium" OldName="FilterComponentLinking" NewName="filter_component_linking" Category="method" />
    <Mapping OldName="IAgReceiverModelComplex" NewName="ReceiverModelComplex" Category="interface" />
    <Mapping ParentScope="IAgReceiverModelComplex" OldName="EnableFilter" NewName="enable_filter" Category="method" />
    <Mapping ParentScope="IAgReceiverModelComplex" OldName="SupportedFilters" NewName="supported_filters" Category="method" />
@@ -5672,6 +5724,7 @@
    <Mapping ParentScope="IAgReceiverModelComplex" OldName="LnaToReceiverLineLoss" NewName="lna_to_receiver_line_loss" Category="method" />
    <Mapping ParentScope="IAgReceiverModelComplex" OldName="SystemNoiseTemperature" NewName="system_noise_temperature" Category="method" />
    <Mapping ParentScope="IAgReceiverModelComplex" OldName="Interference" NewName="interference" Category="method" />
+   <Mapping ParentScope="IAgReceiverModelComplex" OldName="FilterComponentLinking" NewName="filter_component_linking" Category="method" />
    <Mapping OldName="IAgReceiverModelMultibeam" NewName="ReceiverModelMultibeam" Category="interface" />
    <Mapping ParentScope="IAgReceiverModelMultibeam" OldName="EnableFilter" NewName="enable_filter" Category="method" />
    <Mapping ParentScope="IAgReceiverModelMultibeam" OldName="SupportedFilters" NewName="supported_filters" Category="method" />
@@ -5696,6 +5749,7 @@
    <Mapping ParentScope="IAgReceiverModelMultibeam" OldName="SystemNoiseTemperature" NewName="system_noise_temperature" Category="method" />
    <Mapping ParentScope="IAgReceiverModelMultibeam" OldName="AntennaSystem" NewName="antenna_system" Category="method" />
    <Mapping ParentScope="IAgReceiverModelMultibeam" OldName="Interference" NewName="interference" Category="method" />
+   <Mapping ParentScope="IAgReceiverModelMultibeam" OldName="FilterComponentLinking" NewName="filter_component_linking" Category="method" />
    <Mapping OldName="IAgReceiverModelLaser" NewName="ReceiverModelLaser" Category="interface" />
    <Mapping ParentScope="IAgReceiverModelLaser" OldName="EnableFilter" NewName="enable_filter" Category="method" />
    <Mapping ParentScope="IAgReceiverModelLaser" OldName="SupportedFilters" NewName="supported_filters" Category="method" />
@@ -5724,6 +5778,7 @@
    <Mapping ParentScope="IAgReceiverModelLaser" OldName="DetectorLoadImpedance" NewName="detector_load_impedance" Category="method" />
    <Mapping ParentScope="IAgReceiverModelLaser" OldName="UseApdDetectorModel" NewName="use_avalanche_photo_detector_model" Category="method" />
    <Mapping ParentScope="IAgReceiverModelLaser" OldName="PropagationLossModels" NewName="propagation_loss_models" Category="method" />
+   <Mapping ParentScope="IAgReceiverModelLaser" OldName="FilterComponentLinking" NewName="filter_component_linking" Category="method" />
    <Mapping OldName="IAgReceiverModelScriptPlugin" NewName="IReceiverModelScriptPlugin" Category="interface" />
    <Mapping ParentScope="IAgReceiverModelScriptPlugin" OldName="Filename" NewName="filename" Category="method" />
    <Mapping ParentScope="IAgReceiverModelScriptPlugin" OldName="LinkMargin" NewName="link_margin" Category="method" />
@@ -5757,6 +5812,7 @@
    <Mapping ParentScope="IAgReceiver" OldName="Graphics" NewName="graphics" Category="method" />
    <Mapping ParentScope="IAgReceiver" OldName="RFEnvironment" NewName="rf_environment" Category="method" />
    <Mapping ParentScope="IAgReceiver" OldName="LaserEnvironment" NewName="laser_environment" Category="method" />
+   <Mapping ParentScope="IAgReceiver" OldName="ModelComponentLinking" NewName="model_component_linking" Category="method" />
    <Mapping OldName="IAgRadarActivity" NewName="IRadarActivity" Category="interface" />
    <Mapping ParentScope="IAgRadarActivity" OldName="Type" NewName="type" Category="method" />
    <Mapping OldName="IAgRadarActivityTimeComponentListElement" NewName="RadarActivityTimeComponentListElement" Category="interface" />
@@ -5839,6 +5895,7 @@
    <Mapping ParentScope="IAgRadarTransmitter" OldName="SupportedFilters" NewName="supported_filters" Category="method" />
    <Mapping ParentScope="IAgRadarTransmitter" OldName="SetFilter" NewName="set_filter" Category="method" />
    <Mapping ParentScope="IAgRadarTransmitter" OldName="Filter" NewName="filter" Category="method" />
+   <Mapping ParentScope="IAgRadarTransmitter" OldName="FilterComponentLinking" NewName="filter_component_linking" Category="method" />
    <Mapping OldName="IAgRadarTransmitterMultifunction" NewName="RadarTransmitterMultifunction" Category="interface" />
    <Mapping ParentScope="IAgRadarTransmitterMultifunction" OldName="PostTransmitGainsLosses" NewName="post_transmit_gains_losses" Category="method" />
    <Mapping ParentScope="IAgRadarTransmitterMultifunction" OldName="EnablePolarization" NewName="enable_polarization" Category="method" />
@@ -5851,6 +5908,7 @@
    <Mapping ParentScope="IAgRadarTransmitterMultifunction" OldName="SetFilter" NewName="set_filter" Category="method" />
    <Mapping ParentScope="IAgRadarTransmitterMultifunction" OldName="Filter" NewName="filter" Category="method" />
    <Mapping ParentScope="IAgRadarTransmitterMultifunction" OldName="MaxPowerLimit" NewName="maximum_power_limit" Category="method" />
+   <Mapping ParentScope="IAgRadarTransmitterMultifunction" OldName="FilterComponentLinking" NewName="filter_component_linking" Category="method" />
    <Mapping OldName="IAgRadarReceiver" NewName="RadarReceiver" Category="interface" />
    <Mapping ParentScope="IAgRadarReceiver" OldName="AntennaToLnaLineLoss" NewName="antenna_to_lna_line_loss" Category="method" />
    <Mapping ParentScope="IAgRadarReceiver" OldName="LnaGain" NewName="lna_gain" Category="method" />
@@ -5878,6 +5936,7 @@
    <Mapping ParentScope="IAgRadarReceiver" OldName="SupportedRFStcTypes" NewName="supported_rfstc_types" Category="method" />
    <Mapping ParentScope="IAgRadarReceiver" OldName="SupportedIFStcTypes" NewName="supported_ifstc_types" Category="method" />
    <Mapping ParentScope="IAgRadarReceiver" OldName="Frequency" NewName="frequency" Category="method" />
+   <Mapping ParentScope="IAgRadarReceiver" OldName="FilterComponentLinking" NewName="filter_component_linking" Category="method" />
    <Mapping OldName="IAgRadarContinuousWaveAnalysisMode" NewName="IRadarContinuousWaveAnalysisMode" Category="interface" />
    <Mapping ParentScope="IAgRadarContinuousWaveAnalysisMode" OldName="Type" NewName="type" Category="method" />
    <Mapping OldName="IAgRadarContinuousWaveAnalysisModeGoalSNR" NewName="RadarContinuousWaveAnalysisModeGoalSNR" Category="interface" />
@@ -6028,6 +6087,7 @@
    <Mapping ParentScope="IAgRadarModelMonostatic" OldName="Jamming" NewName="jamming" Category="method" />
    <Mapping ParentScope="IAgRadarModelMonostatic" OldName="AntennaControl" NewName="antenna_control" Category="method" />
    <Mapping ParentScope="IAgRadarModelMonostatic" OldName="Clutter" NewName="clutter" Category="method" />
+   <Mapping ParentScope="IAgRadarModelMonostatic" OldName="ModeComponentLinking" NewName="mode_component_linking" Category="method" />
    <Mapping OldName="IAgRadarAntennaBeam" NewName="RadarAntennaBeam" Category="interface" />
    <Mapping ParentScope="IAgRadarAntennaBeam" OldName="ID" NewName="identifier" Category="method" />
    <Mapping ParentScope="IAgRadarAntennaBeam" OldName="SetPointingStrategyType" NewName="set_pointing_strategy_type" Category="method" />
@@ -6086,6 +6146,7 @@
    <Mapping ParentScope="IAgRadarModelBistaticTransmitter" OldName="Transmitter" NewName="transmitter" Category="method" />
    <Mapping ParentScope="IAgRadarModelBistaticTransmitter" OldName="BistaticReceivers" NewName="bistatic_receivers" Category="method" />
    <Mapping ParentScope="IAgRadarModelBistaticTransmitter" OldName="AntennaControl" NewName="antenna_control" Category="method" />
+   <Mapping ParentScope="IAgRadarModelBistaticTransmitter" OldName="ModeComponentLinking" NewName="mode_component_linking" Category="method" />
    <Mapping OldName="IAgRadarModeBistaticReceiver" NewName="IRadarModeBistaticReceiver" Category="interface" />
    <Mapping ParentScope="IAgRadarModeBistaticReceiver" OldName="Name" NewName="name" Category="method" />
    <Mapping ParentScope="IAgRadarModeBistaticReceiver" OldName="Type" NewName="type" Category="method" />
@@ -6105,6 +6166,7 @@
    <Mapping ParentScope="IAgRadarModelBistaticReceiver" OldName="BistaticTransmitters" NewName="bistatic_transmitters" Category="method" />
    <Mapping ParentScope="IAgRadarModelBistaticReceiver" OldName="AntennaControl" NewName="antenna_control" Category="method" />
    <Mapping ParentScope="IAgRadarModelBistaticReceiver" OldName="Clutter" NewName="clutter" Category="method" />
+   <Mapping ParentScope="IAgRadarModelBistaticReceiver" OldName="ModeComponentLinking" NewName="mode_component_linking" Category="method" />
    <Mapping OldName="IAgRadarVO" NewName="RadarGraphics3D" Category="interface" />
    <Mapping ParentScope="IAgRadarVO" OldName="Vector" NewName="vector" Category="method" />
    <Mapping ParentScope="IAgRadarVO" OldName="ShowBoresight" NewName="show_boresight" Category="method" />
@@ -6155,6 +6217,7 @@
    <Mapping ParentScope="IAgRadar" OldName="VO" NewName="graphics_3d" Category="method" />
    <Mapping ParentScope="IAgRadar" OldName="Graphics" NewName="graphics" Category="method" />
    <Mapping ParentScope="IAgRadar" OldName="RFEnvironment" NewName="rf_environment" Category="method" />
+   <Mapping ParentScope="IAgRadar" OldName="ModelComponentLinking" NewName="model_component_linking" Category="method" />
    <Mapping OldName="IAgRadarClutterMapModel" NewName="IRadarClutterMapModel" Category="interface" />
    <Mapping ParentScope="IAgRadarClutterMapModel" OldName="Name" NewName="name" Category="method" />
    <Mapping ParentScope="IAgRadarClutterMapModel" OldName="Type" NewName="type" Category="method" />
@@ -6472,6 +6535,12 @@
    <Mapping ParentScope="IAgPropagationChannel" OldName="EnableCloudsAndFogFadingLoss" NewName="enable_clouds_and_fog_fading_loss" Category="method" />
    <Mapping ParentScope="IAgPropagationChannel" OldName="EnableTroposphericScintillationFadingLoss" NewName="enable_tropospheric_scintillation_fading_loss" Category="method" />
    <Mapping ParentScope="IAgPropagationChannel" OldName="EnableIonosphericFadingLoss" NewName="enable_ionospheric_fading_loss" Category="method" />
+   <Mapping ParentScope="IAgPropagationChannel" OldName="AtmosAbsorptionModelComponentLinking" NewName="atmos_absorption_model_component_linking" Category="method" />
+   <Mapping ParentScope="IAgPropagationChannel" OldName="RainLossModelComponentLinking" NewName="rain_loss_model_component_linking" Category="method" />
+   <Mapping ParentScope="IAgPropagationChannel" OldName="UrbanTerrestrialLossModelComponentLinking" NewName="urban_terrestrial_loss_model_component_linking" Category="method" />
+   <Mapping ParentScope="IAgPropagationChannel" OldName="CloudsAndFogFadingLossModelComponentLinking" NewName="clouds_and_fog_fading_loss_model_component_linking" Category="method" />
+   <Mapping ParentScope="IAgPropagationChannel" OldName="TroposphericScintillationFadingLossModelComponentLinking" NewName="tropospheric_scintillation_fading_loss_model_component_linking" Category="method" />
+   <Mapping ParentScope="IAgPropagationChannel" OldName="IonosphericFadingLossModelComponentLinking" NewName="ionospheric_fading_loss_model_component_linking" Category="method" />
    <Mapping OldName="IAgBeerBouguerLambertLawLayer" NewName="BeerBouguerLambertLawLayer" Category="interface" />
    <Mapping ParentScope="IAgBeerBouguerLambertLawLayer" OldName="TopHeight" NewName="top_height" Category="method" />
    <Mapping ParentScope="IAgBeerBouguerLambertLawLayer" OldName="ExtinctionCoefficient" NewName="extinction_coefficient" Category="method" />
@@ -6530,6 +6599,8 @@
    <Mapping ParentScope="IAgLaserPropagationChannel" OldName="EnableTroposphericScintillationLossModel" NewName="enable_tropospheric_scintillation_loss_model" Category="method" />
    <Mapping ParentScope="IAgLaserPropagationChannel" OldName="SetTroposphericScintillationLossModel" NewName="set_tropospheric_scintillation_loss_model" Category="method" />
    <Mapping ParentScope="IAgLaserPropagationChannel" OldName="TroposphericScintillationLossModel" NewName="tropospheric_scintillation_loss_model" Category="method" />
+   <Mapping ParentScope="IAgLaserPropagationChannel" OldName="AtmosphericLossModelComponentLinking" NewName="atmospheric_loss_model_component_linking" Category="method" />
+   <Mapping ParentScope="IAgLaserPropagationChannel" OldName="TroposphericScintillationLossModelComponentLinking" NewName="tropospheric_scintillation_loss_model_component_linking" Category="method" />
    <Mapping OldName="IAgCommSystemLinkSelectionCriteria" NewName="ICommSystemLinkSelectionCriteria" Category="interface" />
    <Mapping ParentScope="IAgCommSystemLinkSelectionCriteria" OldName="Type" NewName="type" Category="method" />
    <Mapping OldName="IAgCommSystemLinkSelectionCriteriaScriptPlugin" NewName="CommSystemLinkSelectionCriteriaScriptPlugin" Category="interface" />
@@ -6590,6 +6661,8 @@
    <Mapping ParentScope="IAgCommSystem" OldName="Graphics" NewName="graphics" Category="method" />
    <Mapping ParentScope="IAgCommSystem" OldName="VO" NewName="graphics_3d" Category="method" />
    <Mapping ParentScope="IAgCommSystem" OldName="IncludeReceiverInterferenceEmitters" NewName="include_receiver_interference_emitters" Category="method" />
+   <Mapping ParentScope="IAgCommSystem" OldName="Compute" NewName="compute" Category="method" />
+   <Mapping ParentScope="IAgCommSystem" OldName="Clear" NewName="clear" Category="method" />
    <Mapping OldName="IAgSRPModelPluginSettings" NewName="SolarRadiationPressureModelPluginSettings" Category="interface" />
    <Mapping ParentScope="IAgSRPModelPluginSettings" OldName="GetProperty" NewName="get_property" Category="method" />
    <Mapping ParentScope="IAgSRPModelPluginSettings" OldName="SetProperty" NewName="set_property" Category="method" />
@@ -6963,6 +7036,7 @@
    <Mapping ParentScope="IAgVePropagatorHPOP" OldName="Integrator" NewName="integrator" Category="method" />
    <Mapping ParentScope="IAgVePropagatorHPOP" OldName="Covariance" NewName="covariance" Category="method" />
    <Mapping ParentScope="IAgVePropagatorHPOP" OldName="EphemerisInterval" NewName="ephemeris_interval" Category="method" />
+   <Mapping ParentScope="IAgVePropagatorHPOP" OldName="DisplayCoordType" NewName="display_coord_type" Category="method" />
    <Mapping OldName="IAgVePropagatorJ2Perturbation" NewName="PropagatorJ2Perturbation" Category="interface" />
    <Mapping ParentScope="IAgVePropagatorJ2Perturbation" OldName="Propagate" NewName="propagate" Category="method" />
    <Mapping ParentScope="IAgVePropagatorJ2Perturbation" OldName="Step" NewName="step" Category="method" />
@@ -6970,6 +7044,7 @@
    <Mapping ParentScope="IAgVePropagatorJ2Perturbation" OldName="EphemerisInterval" NewName="ephemeris_interval" Category="method" />
    <Mapping ParentScope="IAgVePropagatorJ2Perturbation" OldName="PropagationFrame" NewName="propagation_frame" Category="method" />
    <Mapping ParentScope="IAgVePropagatorJ2Perturbation" OldName="SupportedPropagationFrames" NewName="supported_propagation_frames" Category="method" />
+   <Mapping ParentScope="IAgVePropagatorJ2Perturbation" OldName="DisplayCoordType" NewName="display_coord_type" Category="method" />
    <Mapping OldName="IAgVePropagatorJ4Perturbation" NewName="PropagatorJ4Perturbation" Category="interface" />
    <Mapping ParentScope="IAgVePropagatorJ4Perturbation" OldName="Propagate" NewName="propagate" Category="method" />
    <Mapping ParentScope="IAgVePropagatorJ4Perturbation" OldName="Step" NewName="step" Category="method" />
@@ -6977,12 +7052,14 @@
    <Mapping ParentScope="IAgVePropagatorJ4Perturbation" OldName="EphemerisInterval" NewName="ephemeris_interval" Category="method" />
    <Mapping ParentScope="IAgVePropagatorJ4Perturbation" OldName="PropagationFrame" NewName="propagation_frame" Category="method" />
    <Mapping ParentScope="IAgVePropagatorJ4Perturbation" OldName="SupportedPropagationFrames" NewName="supported_propagation_frames" Category="method" />
+   <Mapping ParentScope="IAgVePropagatorJ4Perturbation" OldName="DisplayCoordType" NewName="display_coord_type" Category="method" />
    <Mapping OldName="IAgVePropagatorLOP" NewName="PropagatorLOP" Category="interface" />
    <Mapping ParentScope="IAgVePropagatorLOP" OldName="Propagate" NewName="propagate" Category="method" />
    <Mapping ParentScope="IAgVePropagatorLOP" OldName="Step" NewName="step" Category="method" />
    <Mapping ParentScope="IAgVePropagatorLOP" OldName="InitialState" NewName="initial_state" Category="method" />
    <Mapping ParentScope="IAgVePropagatorLOP" OldName="ForceModel" NewName="force_model" Category="method" />
    <Mapping ParentScope="IAgVePropagatorLOP" OldName="EphemerisInterval" NewName="ephemeris_interval" Category="method" />
+   <Mapping ParentScope="IAgVePropagatorLOP" OldName="DisplayCoordType" NewName="display_coord_type" Category="method" />
    <Mapping OldName="IAgVePropagatorSGP4" NewName="PropagatorSGP4" Category="interface" />
    <Mapping ParentScope="IAgVePropagatorSGP4" OldName="Propagate" NewName="propagate" Category="method" />
    <Mapping ParentScope="IAgVePropagatorSGP4" OldName="Step" NewName="step" Category="method" />
@@ -6992,6 +7069,7 @@
    <Mapping ParentScope="IAgVePropagatorSGP4" OldName="CommonTasks" NewName="common_tasks" Category="method" />
    <Mapping ParentScope="IAgVePropagatorSGP4" OldName="Settings" NewName="settings" Category="method" />
    <Mapping ParentScope="IAgVePropagatorSGP4" OldName="EphemerisInterval" NewName="ephemeris_interval" Category="method" />
+   <Mapping ParentScope="IAgVePropagatorSGP4" OldName="IntlDesignator" NewName="intl_designator" Category="method" />
    <Mapping OldName="IAgVePropagatorSPICE" NewName="PropagatorSPICE" Category="interface" />
    <Mapping ParentScope="IAgVePropagatorSPICE" OldName="Propagate" NewName="propagate" Category="method" />
    <Mapping ParentScope="IAgVePropagatorSPICE" OldName="Step" NewName="step" Category="method" />
@@ -7018,6 +7096,7 @@
    <Mapping ParentScope="IAgVePropagatorTwoBody" OldName="EphemerisInterval" NewName="ephemeris_interval" Category="method" />
    <Mapping ParentScope="IAgVePropagatorTwoBody" OldName="PropagationFrame" NewName="propagation_frame" Category="method" />
    <Mapping ParentScope="IAgVePropagatorTwoBody" OldName="SupportedPropagationFrames" NewName="supported_propagation_frames" Category="method" />
+   <Mapping ParentScope="IAgVePropagatorTwoBody" OldName="DisplayCoordType" NewName="display_coord_type" Category="method" />
    <Mapping OldName="IAgVePropagatorUserExternal" NewName="PropagatorUserExternal" Category="interface" />
    <Mapping ParentScope="IAgVePropagatorUserExternal" OldName="Propagate" NewName="propagate" Category="method" />
    <Mapping ParentScope="IAgVePropagatorUserExternal" OldName="StartTime" NewName="start_time" Category="method" />
@@ -9041,6 +9120,29 @@
    <Mapping ParentScope="IAgCvAreaTargetsCollection" OldName="Add" NewName="add" Category="method" />
    <Mapping ParentScope="IAgCvAreaTargetsCollection" OldName="Remove" NewName="remove" Category="method" />
    <Mapping ParentScope="IAgCvAreaTargetsCollection" OldName="AvailableAreaTargets" NewName="available_area_targets" Category="method" />
+   <Mapping OldName="IAgCvEllipse" NewName="CoverageEllipse" Category="interface" />
+   <Mapping ParentScope="IAgCvEllipse" OldName="SemiMajorAxis" NewName="semi_major_axis" Category="method" />
+   <Mapping ParentScope="IAgCvEllipse" OldName="SemiMinorAxis" NewName="semi_minor_axis" Category="method" />
+   <Mapping ParentScope="IAgCvEllipse" OldName="Bearing" NewName="bearing" Category="method" />
+   <Mapping ParentScope="IAgCvEllipse" OldName="Center" NewName="center" Category="method" />
+   <Mapping OldName="IAgCvEllipseCollection" NewName="CoverageEllipseCollection" Category="interface" />
+   <Mapping ParentScope="IAgCvEllipseCollection" OldName="Count" NewName="count" Category="method" />
+   <Mapping ParentScope="IAgCvEllipseCollection" OldName="Item" NewName="item" Category="method" />
+   <Mapping ParentScope="IAgCvEllipseCollection" OldName="_NewEnum" NewName="_new_enum" Category="method" />
+   <Mapping ParentScope="IAgCvEllipseCollection" OldName="Add" NewName="add" Category="method" />
+   <Mapping ParentScope="IAgCvEllipseCollection" OldName="RemoveAt" NewName="remove_at" Category="method" />
+   <Mapping ParentScope="IAgCvEllipseCollection" OldName="RemoveAll" NewName="remove_all" Category="method" />
+   <Mapping OldName="IAgCvLatLonBox" NewName="CoverageLatLonBox" Category="interface" />
+   <Mapping ParentScope="IAgCvLatLonBox" OldName="LongitudeSpan" NewName="longitude_span" Category="method" />
+   <Mapping ParentScope="IAgCvLatLonBox" OldName="LatitudeSpan" NewName="latitude_span" Category="method" />
+   <Mapping ParentScope="IAgCvLatLonBox" OldName="Center" NewName="center" Category="method" />
+   <Mapping OldName="IAgCvLatLonBoxCollection" NewName="CoverageLatLonBoxCollection" Category="interface" />
+   <Mapping ParentScope="IAgCvLatLonBoxCollection" OldName="Count" NewName="count" Category="method" />
+   <Mapping ParentScope="IAgCvLatLonBoxCollection" OldName="Item" NewName="item" Category="method" />
+   <Mapping ParentScope="IAgCvLatLonBoxCollection" OldName="_NewEnum" NewName="_new_enum" Category="method" />
+   <Mapping ParentScope="IAgCvLatLonBoxCollection" OldName="Add" NewName="add" Category="method" />
+   <Mapping ParentScope="IAgCvLatLonBoxCollection" OldName="RemoveAt" NewName="remove_at" Category="method" />
+   <Mapping ParentScope="IAgCvLatLonBoxCollection" OldName="RemoveAll" NewName="remove_all" Category="method" />
    <Mapping OldName="IAgCvPointFileListCollection" NewName="CoveragePointFileListCollection" Category="interface" />
    <Mapping ParentScope="IAgCvPointFileListCollection" OldName="Count" NewName="count" Category="method" />
    <Mapping ParentScope="IAgCvPointFileListCollection" OldName="Item" NewName="item" Category="method" />
@@ -9058,6 +9160,8 @@
    <Mapping ParentScope="IAgCvBoundsCustomRegions" OldName="AreaTargets" NewName="area_targets" Category="method" />
    <Mapping ParentScope="IAgCvBoundsCustomRegions" OldName="CheckForHoles" NewName="check_for_holes" Category="method" />
    <Mapping ParentScope="IAgCvBoundsCustomRegions" OldName="SmallRegionAlgorithm" NewName="small_region_algorithm" Category="method" />
+   <Mapping ParentScope="IAgCvBoundsCustomRegions" OldName="Ellipses" NewName="ellipses" Category="method" />
+   <Mapping ParentScope="IAgCvBoundsCustomRegions" OldName="Boxes" NewName="boxes" Category="method" />
    <Mapping OldName="IAgCvBoundsGlobal" NewName="CoverageBoundsGlobal" Category="interface" />
    <Mapping OldName="IAgCvBoundsLat" NewName="CoverageBoundsLatitude" Category="interface" />
    <Mapping ParentScope="IAgCvBoundsLat" OldName="MinLatitude" NewName="minimum_latitude" Category="method" />
@@ -10292,6 +10396,10 @@
    <Mapping OldName="AgCvAssetListCollection" NewName="CoverageAssetListCollection" Category="class" />
    <Mapping OldName="AgCvRegionFilesCollection" NewName="CoverageRegionFilesCollection" Category="class" />
    <Mapping OldName="AgCvAreaTargetsCollection" NewName="CoverageAreaTargetsCollection" Category="class" />
+   <Mapping OldName="AgCvEllipseCollection" NewName="CoverageEllipseCollection" Category="class" />
+   <Mapping OldName="AgCvEllipse" NewName="CoverageEllipse" Category="class" />
+   <Mapping OldName="AgCvLatLonBoxCollection" NewName="CoverageLatLonBoxCollection" Category="class" />
+   <Mapping OldName="AgCvLatLonBox" NewName="CoverageLatLonBox" Category="class" />
    <Mapping OldName="AgCvPointDefinition" NewName="CoveragePointDefinition" Category="class" />
    <Mapping OldName="AgCvPointFileListCollection" NewName="CoveragePointFileListCollection" Category="class" />
    <Mapping OldName="AgCvAdvanced" NewName="CoverageAdvancedSettings" Category="class" />
@@ -10762,6 +10870,7 @@
    <Mapping OldName="AgLaserTroposphericScintillationLossModelITURP1814" NewName="LaserTroposphericScintillationLossModelITURP1814" Category="class" />
    <Mapping OldName="AgAtmosphericAbsorptionModel" NewName="AtmosphericAbsorptionModel" Category="class" />
    <Mapping OldName="AgAtmosphericAbsorptionModelITURP676_9" NewName="AtmosphericAbsorptionModelITURP676Version9" Category="class" />
+   <Mapping OldName="AgAtmosphericAbsorptionModelITURP676_13" NewName="AtmosphericAbsorptionModelITURP676Version13" Category="class" />
    <Mapping OldName="AgAtmosphericAbsorptionModelVoacap" NewName="AtmosphericAbsorptionModelGraphics3DACAP" Category="class" />
    <Mapping OldName="AgAtmosphericAbsorptionModelTirem320" NewName="AtmosphericAbsorptionModelTIREM320" Category="class" />
    <Mapping OldName="AgAtmosphericAbsorptionModelTirem331" NewName="AtmosphericAbsorptionModelTIREM331" Category="class" />
@@ -10951,11 +11060,18 @@
    <Mapping OldName="AgBeamformerCosineX" NewName="BeamformerCosineX" Category="class" />
    <Mapping OldName="AgBeamformerCustomTaperFile" NewName="BeamformerCustomTaperFile" Category="class" />
    <Mapping OldName="AgBeamformerDolphChebyshev" NewName="BeamformerDolphChebyshev" Category="class" />
+   <Mapping OldName="AgBeamformerTaylor" NewName="BeamformerTaylor" Category="class" />
    <Mapping OldName="AgBeamformerHamming" NewName="BeamformerHamming" Category="class" />
    <Mapping OldName="AgBeamformerHann" NewName="BeamformerHann" Category="class" />
    <Mapping OldName="AgBeamformerRaisedCosine" NewName="BeamformerRaisedCosine" Category="class" />
    <Mapping OldName="AgBeamformerRaisedCosineSquared" NewName="BeamformerRaisedCosineSquared" Category="class" />
    <Mapping OldName="AgBeamformerScript" NewName="BeamformerScript" Category="class" />
+   <Mapping OldName="AgPriority" NewName="Priority" Category="class" />
+   <Mapping OldName="AgPriorityCollection" NewName="PriorityCollection" Category="class" />
+   <Mapping OldName="AgTargetSelectionMethod" NewName="TargetSelectionMethod" Category="class" />
+   <Mapping OldName="AgTargetSelectionMethodPriority" NewName="TargetSelectionMethodPriority" Category="class" />
+   <Mapping OldName="AgTargetSelectionMethodRange" NewName="TargetSelectionMethodRange" Category="class" />
+   <Mapping OldName="AgTargetSelectionMethodClosingVelocity" NewName="TargetSelectionMethodClosingVelocity" Category="class" />
    <Mapping OldName="AgDirectionProvider" NewName="DirectionProvider" Category="class" />
    <Mapping OldName="AgDirectionProviderAsciiFile" NewName="DirectionProviderASCIIFile" Category="class" />
    <Mapping OldName="AgDirectionProviderObject" NewName="DirectionProviderObject" Category="class" />

@@ -7,6 +7,7 @@ from assertion_harness import *
 from display_times_helper import *
 from interfaces.stk_objects import *
 from orientation_helper import *
+from stk_util_helper import *
 from vehicle.vehicle_vo import *
 from parameterized import *
 from ansys.stk.core.utilities.colors import *
@@ -61,7 +62,9 @@ class EarlyBoundTests(TestBase):
                 STKObjectType.ANTENNA, EarlyBoundTests.ANTENNA2_NAME
             )
             EarlyBoundTests.radar = clr.CastAs(EarlyBoundTests.oRadar, Radar)
-            EarlyBoundTests.radar.set_model("Bistatic Receiver")  # Because some properties cannot be set on Monostatic
+            EarlyBoundTests.radar.model_component_linking.set_component(
+                "Bistatic Receiver"
+            )  # Because some properties cannot be set on Monostatic
 
             scenario: "Scenario" = clr.CastAs(TestBase.Application.current_scenario, Scenario)
             spplColl: "ComponentInfoCollection" = scenario.component_directory.get_components(
@@ -754,6 +757,8 @@ class EarlyBoundTests(TestBase):
 
         with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify a read only")):
             EarlyBoundTests.antennaVolumeGraphics.gain_offset = 1
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify a read only")):
+            EarlyBoundTests.antennaVolumeGraphics.minimum_displayed_gain = 1
 
         EarlyBoundTests.antennaVolumeGraphics.show = True
 
@@ -765,6 +770,15 @@ class EarlyBoundTests(TestBase):
             EarlyBoundTests.antennaVolumeGraphics.gain_offset = -101
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             EarlyBoundTests.antennaVolumeGraphics.gain_offset = 201
+
+        EarlyBoundTests.antennaVolumeGraphics.minimum_displayed_gain = -100
+        Assert.assertEqual(-100, EarlyBoundTests.antennaVolumeGraphics.minimum_displayed_gain)
+        EarlyBoundTests.antennaVolumeGraphics.minimum_displayed_gain = 200
+        Assert.assertEqual(200, EarlyBoundTests.antennaVolumeGraphics.minimum_displayed_gain)
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
+            EarlyBoundTests.antennaVolumeGraphics.minimum_displayed_gain = -101
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
+            EarlyBoundTests.antennaVolumeGraphics.minimum_displayed_gain = 201
 
     # endregion
 
@@ -2212,24 +2226,44 @@ class EarlyBoundTests(TestBase):
             radarTrans.power = 2891.0
 
         # RF Filter sub-tab
-
+        # Test deprecated filter model interface
         arSupportedFilters = radarTrans.supported_filters
+        Assert.assertEqual(18, len(arSupportedFilters))
+
+        radarTrans.enable_filter = True  # needed for SetFilter
+        radarTrans.set_filter("Bessel")
+
+        radarTrans.enable_filter = False
+        Assert.assertFalse(radarTrans.enable_filter)
+        rfFilterModelHelper = RFFilterModelHelper(TestBase.Application)
+        rfFilterModelHelper.Run(radarTrans.filter, "Bessel", False)
+
+        radarTrans.enable_filter = True
+        Assert.assertTrue(radarTrans.enable_filter)
+        rfFilterModelHelper.Run(radarTrans.filter, "Bessel", True)
+
+        STKUtilHelper.TestComponentLinking(radarTrans.filter_component_linking, 18)
+        arSupportedFilters = radarTrans.filter_component_linking.supported_components
         Assert.assertEqual(18, len(arSupportedFilters))
         filterName: str
         for filterName in arSupportedFilters:
             radarTrans.enable_filter = True  # needed for SetFilter
-            radarTrans.set_filter(filterName)
+            radarTrans.filter_component_linking.set_component(filterName)
 
             radarTrans.enable_filter = False
             Assert.assertFalse(radarTrans.enable_filter)
             rfFilterModelHelper = RFFilterModelHelper(TestBase.Application)
-            rfFilterModelHelper.Run(radarTrans.filter, filterName, False)
+            rfFilterModelHelper.Run(
+                clr.CastAs(radarTrans.filter_component_linking.component, IRFFilterModel), filterName, False
+            )
 
             radarTrans.enable_filter = True
             Assert.assertTrue(radarTrans.enable_filter)
             if filterName != "Script":
                 # "Script" does not have these properties
-                rfFilterModelHelper.Run(radarTrans.filter, filterName, True)
+                rfFilterModelHelper.Run(
+                    clr.CastAs(radarTrans.filter_component_linking.component, IRFFilterModel), filterName, True
+                )
 
         # Polarization sub-tab
 
@@ -2355,24 +2389,44 @@ class EarlyBoundTests(TestBase):
         )  # This property use to have choices but was changed to a user input. This property is deprecated.
 
         # RF Filter sub-tab
-
+        # Test deprecated filter model interface
         arSupportedFilters = radarReceiver.supported_filters
+        Assert.assertEqual(18, len(arSupportedFilters))
+
+        radarReceiver.enable_filter = True  # needed for SetFilter
+        radarReceiver.set_filter("Bessel")
+
+        radarReceiver.enable_filter = False
+        Assert.assertFalse(radarReceiver.enable_filter)
+        rfFilterModelHelper = RFFilterModelHelper(TestBase.Application)
+        rfFilterModelHelper.Run(radarReceiver.filter, "Bessel", False)
+
+        radarReceiver.enable_filter = True
+        Assert.assertTrue(radarReceiver.enable_filter)
+        rfFilterModelHelper.Run(radarReceiver.filter, "Bessel", True)
+
+        STKUtilHelper.TestComponentLinking(radarReceiver.filter_component_linking, 18)
+        arSupportedFilters = radarReceiver.filter_component_linking.supported_components
         Assert.assertEqual(18, len(arSupportedFilters))
         filterName: str
         for filterName in arSupportedFilters:
             radarReceiver.enable_filter = True  # needed for SetFilter
-            radarReceiver.set_filter(filterName)
+            radarReceiver.filter_component_linking.set_component(filterName)
 
             radarReceiver.enable_filter = False
             Assert.assertFalse(radarReceiver.enable_filter)
             rfFilterModelHelper = RFFilterModelHelper(TestBase.Application)
-            rfFilterModelHelper.Run(radarReceiver.filter, filterName, False)
+            rfFilterModelHelper.Run(
+                clr.CastAs(radarReceiver.filter_component_linking.component, IRFFilterModel), filterName, False
+            )
 
             radarReceiver.enable_filter = True
             Assert.assertTrue(radarReceiver.enable_filter)
             if filterName != "Script":
                 # "Script" does not have these properties
-                rfFilterModelHelper.Run(radarReceiver.filter, filterName, True)
+                rfFilterModelHelper.Run(
+                    clr.CastAs(radarReceiver.filter_component_linking.component, IRFFilterModel), filterName, True
+                )
 
         # Polarization sub-tab
 
@@ -2975,9 +3029,37 @@ class EarlyBoundTests(TestBase):
 
     # endregion
 
+    # region Test_IAgRadarModelMonostatic_DeprecatedModeInterface
+    def Test_IAgRadarModelMonostatic_DeprecatedModeInterface(self, monostatic: "RadarModelMonostatic"):
+        arSupportedModes = monostatic.supported_modes
+        mode: "IRadarModeMonostatic" = None
+
+        Assert.assertEqual(2, Array.Length(arSupportedModes))
+        Assert.assertEqual("SAR", arSupportedModes[0])
+        Assert.assertEqual("Search Track", arSupportedModes[1])
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid model name")):
+            monostatic.set_mode("bogus")
+
+        # Mode (SAR) - Pulse Definition sub tab
+
+        monostatic.set_mode("SAR")
+        mode = monostatic.mode
+        Assert.assertEqual("SAR", mode.name)
+        Assert.assertEqual(RadarMode.SAR, mode.type)
+
+        sar: "RadarModeMonostaticSAR" = clr.CastAs(mode, RadarModeMonostaticSAR)
+        Assert.assertEqual("SAR", mode.name)
+        Assert.assertEqual(RadarMode.SAR, mode.type)
+        self.Test_IAgRadarWaveformSarPulseDefinition(sar.pulse_definition, True)
+
+    # endregion
+
     # region Test_IAgRadarModelMonostatic
     def Test_IAgRadarModelMonostatic(self, monostatic: "RadarModelMonostatic"):
-        arSupportedModes = monostatic.supported_modes
+        numModes: int = 2
+        STKUtilHelper.TestComponentLinking(monostatic.mode_component_linking, numModes)
+        arSupportedModes = monostatic.mode_component_linking.supported_components
         mode: "IRadarModeMonostatic" = None
         if not OSHelper.IsLinux():
             # if (3 != arSupportedModes.Length)
@@ -2988,24 +3070,24 @@ class EarlyBoundTests(TestBase):
             # Assert.AreEqual("SAR", arSupportedModes.GetValue(1));
             # Assert.AreEqual("Search Track", arSupportedModes.GetValue(2));
 
-            Assert.assertEqual(2, Array.Length(arSupportedModes))
+            Assert.assertEqual(numModes, Array.Length(arSupportedModes))
             Assert.assertEqual("SAR", arSupportedModes[0])
             Assert.assertEqual("Search Track", arSupportedModes[1])
 
         else:
-            if 2 != Array.Length(arSupportedModes):
+            if numModes != Array.Length(arSupportedModes):
                 Assert.fail("Number of Monostatic supported modes <>2. RAE not on linux yet.")
 
             Assert.assertEqual("SAR", arSupportedModes[0])
             Assert.assertEqual("Search Track", arSupportedModes[1])
 
-        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid model name")):
-            monostatic.set_mode("bogus")
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid component name")):
+            monostatic.mode_component_linking.set_component("bogus")
 
         # Mode (SAR) - Pulse Definition sub tab
 
-        monostatic.set_mode("SAR")
-        mode = monostatic.mode
+        monostatic.mode_component_linking.set_component("SAR")
+        mode = clr.CastAs(monostatic.mode_component_linking.component, IRadarModeMonostatic)
         Assert.assertEqual("SAR", mode.name)
         Assert.assertEqual(RadarMode.SAR, mode.type)
 
@@ -3024,8 +3106,8 @@ class EarlyBoundTests(TestBase):
 
         # Mode (Search Track)
 
-        monostatic.set_mode("Search Track")
-        mode = monostatic.mode
+        monostatic.mode_component_linking.set_component("Search Track")
+        mode = clr.CastAs(monostatic.mode_component_linking.component, IRadarModeMonostatic)
         Assert.assertEqual("Search Track", mode.name)
         Assert.assertEqual(RadarMode.SEARCH_TRACK, mode.type)
 
@@ -3163,14 +3245,18 @@ class EarlyBoundTests(TestBase):
     # region Test_IAgRadarModelBistaticReceiver_BistaticTransmitters
     def Test_IAgRadarModelBistaticReceiver_BistaticTransmitters(self, bistaticTransmitters: "ObjectLinkCollection"):
         try:
-            objRBT1: "IStkObject" = TestBase.Application.current_scenario.children["Facility1"].children.new(
-                STKObjectType.RADAR, "RadarBistaticTransmitter1"
+            objRBT1: "Radar" = Radar(
+                TestBase.Application.current_scenario.children["Facility1"].children.new(
+                    STKObjectType.RADAR, "RadarBistaticTransmitter1"
+                )
             )
-            (clr.CastAs(objRBT1, Radar)).set_model("Bistatic Transmitter")
-            objRBT2: "IStkObject" = TestBase.Application.current_scenario.children["Facility1"].children.new(
-                STKObjectType.RADAR, "RadarBistaticTransmitter2"
+            objRBT1.model_component_linking.set_component("Bistatic Transmitter")
+            objRBT2: "Radar" = Radar(
+                TestBase.Application.current_scenario.children["Facility1"].children.new(
+                    STKObjectType.RADAR, "RadarBistaticTransmitter2"
+                )
             )
-            (clr.CastAs(objRBT2, Radar)).set_model("Bistatic Transmitter")
+            objRBT2.model_component_linking.set_component("Bistatic Transmitter")
 
             olcHelper = ObjectLinkCollectionHelper(False, True)  # Restrict collection to one element
             olcHelper.Run(bistaticTransmitters, TestBase.Application)
@@ -3185,8 +3271,10 @@ class EarlyBoundTests(TestBase):
 
     # endregion
 
-    # region Test_IAgRadarModelBistaticReceiver
-    def Test_IAgRadarModelBistaticReceiver(self, bistaticReceiver: "RadarModelBistaticReceiver"):
+    # region Test_IAgRadarModelBistaticReceiver_DeprecatedModeInterface
+    def Test_IAgRadarModelBistaticReceiver_DeprecatedModeInterface(
+        self, bistaticReceiver: "RadarModelBistaticReceiver"
+    ):
         # Mode tab (SAR)
 
         arSupportedModes = bistaticReceiver.supported_modes
@@ -3209,10 +3297,40 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(RadarMode.SAR, mode.type)
         self.Test_IAgRadarWaveformSarPulseIntegration(sar.pulse_integration)
 
+    # endregion
+
+    # region Test_IAgRadarModelBistaticReceiver
+    def Test_IAgRadarModelBistaticReceiver(self, bistaticReceiver: "RadarModelBistaticReceiver"):
+        STKUtilHelper.TestComponentLinking(bistaticReceiver.mode_component_linking, 2)
+
+        # Mode tab (SAR)
+
+        arSupportedModes = bistaticReceiver.mode_component_linking.supported_components
+        Assert.assertEqual(2, Array.Length(arSupportedModes))
+        Assert.assertEqual("SAR", arSupportedModes[0])
+        Assert.assertEqual("Search Track", arSupportedModes[1])
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid component name")):
+            bistaticReceiver.mode_component_linking.set_component("bogus")
+
+        # Mode (SAR) - Pulse Integration sub tab
+
+        bistaticReceiver.mode_component_linking.set_component("SAR")
+        mode: "IRadarModeBistaticReceiver" = clr.CastAs(
+            bistaticReceiver.mode_component_linking.component, IRadarModeBistaticReceiver
+        )
+        Assert.assertEqual("SAR", mode.name)
+        Assert.assertEqual(RadarMode.SAR, mode.type)
+
+        sar: "RadarModeBistaticReceiverSAR" = clr.CastAs(mode, RadarModeBistaticReceiverSAR)
+        Assert.assertEqual("SAR", mode.name)
+        Assert.assertEqual(RadarMode.SAR, mode.type)
+        self.Test_IAgRadarWaveformSarPulseIntegration(sar.pulse_integration)
+
         # Mode (Search Track)
 
-        bistaticReceiver.set_mode("Search Track")
-        mode = bistaticReceiver.mode
+        bistaticReceiver.mode_component_linking.set_component("Search Track")
+        mode = clr.CastAs(bistaticReceiver.mode_component_linking.component, IRadarModeBistaticReceiver)
         Assert.assertEqual("Search Track", mode.name)
         Assert.assertEqual(RadarMode.SEARCH_TRACK, mode.type)
 
@@ -3286,14 +3404,18 @@ class EarlyBoundTests(TestBase):
     # region Test_IAgRadarModelBistaticTransmitter_BistaticReceivers
     def Test_IAgRadarModelBistaticTransmitter_BistaticReceivers(self, bistaticReceivers: "ObjectLinkCollection"):
         try:
-            objRBT1: "IStkObject" = TestBase.Application.current_scenario.children["Facility1"].children.new(
-                STKObjectType.RADAR, "RadarBistaticReceiver1"
+            objRBT1: "Radar" = Radar(
+                TestBase.Application.current_scenario.children["Facility1"].children.new(
+                    STKObjectType.RADAR, "RadarBistaticReceiver1"
+                )
             )
-            (clr.CastAs(objRBT1, Radar)).set_model("Bistatic Receiver")
-            objRBT2: "IStkObject" = TestBase.Application.current_scenario.children["Facility1"].children.new(
-                STKObjectType.RADAR, "RadarBistaticReceiver2"
+            objRBT1.model_component_linking.set_component("Bistatic Receiver")
+            objRBT2: "Radar" = Radar(
+                TestBase.Application.current_scenario.children["Facility1"].children.new(
+                    STKObjectType.RADAR, "RadarBistaticReceiver2"
+                )
             )
-            (clr.CastAs(objRBT2, Radar)).set_model("Bistatic Receiver")
+            objRBT2.model_component_linking.set_component("Bistatic Receiver")
 
             olcHelper = ObjectLinkCollectionHelper(False, True)  # Restrict collection to one element
             olcHelper.Run(bistaticReceivers, TestBase.Application)
@@ -3308,8 +3430,10 @@ class EarlyBoundTests(TestBase):
 
     # endregion
 
-    # region Test_IAgRadarModelBistaticTransmitter
-    def Test_IAgRadarModelBistaticTransmitter(self, bistaticTransmitter: "RadarModelBistaticTransmitter"):
+    # region Test_IAgRadarModelBistaticTransmitter_DeprecatedModeInterface
+    def Test_IAgRadarModelBistaticTransmitter_DeprecatedModeInterface(
+        self, bistaticTransmitter: "RadarModelBistaticTransmitter"
+    ):
         # Mode tab (SAR)
 
         arSupportedModes = bistaticTransmitter.supported_modes
@@ -3332,14 +3456,44 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(RadarMode.SAR, mode.type)
         self.Test_IAgRadarWaveformSarPulseDefinition(sar.pulse_definition, False)
 
+    # endregion
+
+    # region Test_IAgRadarModelBistaticTransmitter
+    def Test_IAgRadarModelBistaticTransmitter(self, bistaticTransmitter: "RadarModelBistaticTransmitter"):
+        STKUtilHelper.TestComponentLinking(bistaticTransmitter.mode_component_linking, 2)
+
+        # Mode tab (SAR)
+
+        arSupportedModes = bistaticTransmitter.mode_component_linking.supported_components
+        Assert.assertEqual(2, Array.Length(arSupportedModes))
+        Assert.assertEqual("SAR", arSupportedModes[0])
+        Assert.assertEqual("Search Track", arSupportedModes[1])
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid component name")):
+            bistaticTransmitter.mode_component_linking.set_component("bogus")
+
+        # Mode (SAR) - Pulse Definition sub tab
+
+        bistaticTransmitter.mode_component_linking.set_component("SAR")
+        mode: "IRadarModeBistaticTransmitter" = clr.CastAs(
+            bistaticTransmitter.mode_component_linking.component, IRadarModeBistaticTransmitter
+        )
+        Assert.assertEqual("SAR", mode.name)
+        Assert.assertEqual(RadarMode.SAR, mode.type)
+
+        sar: "RadarModeBistaticTransmitterSAR" = clr.CastAs(mode, RadarModeBistaticTransmitterSAR)
+        Assert.assertEqual("SAR", mode.name)
+        Assert.assertEqual(RadarMode.SAR, mode.type)
+        self.Test_IAgRadarWaveformSarPulseDefinition(sar.pulse_definition, False)
+
         # Mode (SAR) - Modulator sub tab
 
         self.Test_IAgRadarModulator(sar.modulator)
 
         # Mode (Search Track)
 
-        bistaticTransmitter.set_mode("Search Track")
-        mode = bistaticTransmitter.mode
+        bistaticTransmitter.mode_component_linking.set_component("Search Track")
+        mode = clr.CastAs(bistaticTransmitter.mode_component_linking.component, IRadarModeBistaticTransmitter)
         Assert.assertEqual("Search Track", mode.name)
         Assert.assertEqual(RadarMode.SEARCH_TRACK, mode.type)
 
@@ -3672,8 +3826,6 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             transMultifunction.maximum_power_limit = 2891
 
-        # RF Filter
-
         transMultifunction.power_amplifier_bandwidth = 1e-06
         Assert.assertEqual(1e-06, transMultifunction.power_amplifier_bandwidth)
         transMultifunction.power_amplifier_bandwidth = 300000000000
@@ -3683,23 +3835,45 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             transMultifunction.power_amplifier_bandwidth = 10000000000000.0
 
+        # RF Filter
+        # Test deprecated filter model interface
         arSupportedFilters = transMultifunction.supported_filters
+        Assert.assertEqual(18, len(arSupportedFilters))
+
+        transMultifunction.enable_filter = True  # needed for SetFilter
+        transMultifunction.set_filter("Bessel")
+
+        transMultifunction.enable_filter = False
+        Assert.assertFalse(transMultifunction.enable_filter)
+        rfFilterModelHelper = RFFilterModelHelper(TestBase.Application)
+        rfFilterModelHelper.Run(transMultifunction.filter, "Bessel", False)
+
+        transMultifunction.enable_filter = True
+        Assert.assertTrue(transMultifunction.enable_filter)
+        rfFilterModelHelper.Run(transMultifunction.filter, "Bessel", True)
+
+        STKUtilHelper.TestComponentLinking(transMultifunction.filter_component_linking, 18)
+        arSupportedFilters = transMultifunction.filter_component_linking.supported_components
         Assert.assertEqual(18, len(arSupportedFilters))
         filterName: str
         for filterName in arSupportedFilters:
             transMultifunction.enable_filter = True  # needed for SetFilter
-            transMultifunction.set_filter(filterName)
+            transMultifunction.filter_component_linking.set_component(filterName)
 
             transMultifunction.enable_filter = False
             Assert.assertFalse(transMultifunction.enable_filter)
             rfFilterModelHelper = RFFilterModelHelper(TestBase.Application)
-            rfFilterModelHelper.Run(transMultifunction.filter, filterName, False)
+            rfFilterModelHelper.Run(
+                clr.CastAs(transMultifunction.filter_component_linking.component, IRFFilterModel), filterName, False
+            )
 
             transMultifunction.enable_filter = True
             Assert.assertTrue(transMultifunction.enable_filter)
             if filterName != "Script":
                 # "Script" does not have these properties
-                rfFilterModelHelper.Run(transMultifunction.filter, filterName, True)
+                rfFilterModelHelper.Run(
+                    clr.CastAs(transMultifunction.filter_component_linking.component, IRFFilterModel), filterName, True
+                )
 
         # Polarization
 
@@ -4217,20 +4391,27 @@ class EarlyBoundTests(TestBase):
 
     @parameterized.expand([("Monostatic",), ("Bistatic Receiver",), ("Bistatic Transmitter",), ("Multifunction",)])
     def test_Model(self, modelName: str):
-        EarlyBoundTests.radar.set_model(modelName)
-        radarModel: "IRadarModel" = EarlyBoundTests.radar.model
+        EarlyBoundTests.radar.model_component_linking.set_component(modelName)
+        radarModel: "IRadarModel" = IRadarModel(EarlyBoundTests.radar.model_component_linking.component)
         Assert.assertEqual(modelName, radarModel.name)
-        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid model name")):
-            EarlyBoundTests.radar.set_model("bogus")
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid component name")):
+            EarlyBoundTests.radar.model_component_linking.set_component("bogus")
         if modelName == "Monostatic":
             Assert.assertEqual(RadarModelType.MONOSTATIC, radarModel.type)
             self.Test_IAgRadarModelMonostatic(clr.CastAs(radarModel, RadarModelMonostatic))
+            self.Test_IAgRadarModelMonostatic_DeprecatedModeInterface(clr.CastAs(radarModel, RadarModelMonostatic))
         elif modelName == "Bistatic Receiver":
             Assert.assertEqual(RadarModelType.BISTATIC_RECEIVER, radarModel.type)
             self.Test_IAgRadarModelBistaticReceiver(clr.CastAs(radarModel, RadarModelBistaticReceiver))
+            self.Test_IAgRadarModelBistaticReceiver_DeprecatedModeInterface(
+                clr.CastAs(radarModel, RadarModelBistaticReceiver)
+            )
         elif modelName == "Bistatic Transmitter":
             Assert.assertEqual(RadarModelType.BISTATIC_TRANSMITTER, radarModel.type)
             self.Test_IAgRadarModelBistaticTransmitter(clr.CastAs(radarModel, RadarModelBistaticTransmitter))
+            self.Test_IAgRadarModelBistaticTransmitter_DeprecatedModeInterface(
+                clr.CastAs(radarModel, RadarModelBistaticTransmitter)
+            )
         elif modelName == "Multifunction":
             Assert.assertEqual(RadarModelType.MULTIFUNCTION, radarModel.type)
             self.Test_IAgRadarModelMultifunction(clr.CastAs(radarModel, RadarModelMultifunction))
@@ -4271,6 +4452,43 @@ class EarlyBoundTests(TestBase):
 
     # endregion
 
+    @staticmethod
+    def TestSupportedModels(models):
+        sModelName: str
+        for sModelName in models:
+            Console.WriteLine(sModelName)
+            if (
+                (((sModelName == "Monostatic")) or ((sModelName == "Bistatic Receiver")))
+                or ((sModelName == "Bistatic Transmitter"))
+            ) or ((sModelName == "Multifunction")):
+                pass
+            else:
+                Assert.fail(("Unknown or untested Radar Model: " + sModelName))
+
+        Assert.assertEqual(4, len(models))
+
+    # region DeprecatedModelInterface
+    def test_DeprecatedModelInterface(self):
+        EarlyBoundTests.radar.set_model("Bistatic Transmitter")
+        radarModel: "IRadarModel" = EarlyBoundTests.radar.model
+        Assert.assertEqual("Bistatic Transmitter", radarModel.name)
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid model name")):
+            EarlyBoundTests.radar.set_model("bogus")
+
+        Assert.assertEqual(RadarModelType.BISTATIC_TRANSMITTER, radarModel.type)
+        self.Test_IAgRadarModelBistaticTransmitter(clr.CastAs(radarModel, RadarModelBistaticTransmitter))
+
+        EarlyBoundTests.TestSupportedModels(EarlyBoundTests.radar.supported_models)
+
+    # endregion
+
+    # region ModelComponentLinking
+    def test_ModelComponentLinking(self):
+        STKUtilHelper.TestComponentLinking(EarlyBoundTests.radar.model_component_linking, 4)
+        EarlyBoundTests.TestSupportedModels(EarlyBoundTests.radar.model_component_linking.supported_components)
+
+    # endregion
+
     # region VOVectors
     @category("VO Tests")
     def test_VOVectors(self):
@@ -4292,6 +4510,7 @@ class EarlyBoundTests(TestBase):
     def test_RF_Environment_RainCloudFog_RainModel(self):
         helper = RF_Environment_RainCloudFog_RainModelHelper()
         helper.Run(EarlyBoundTests.radar.rf_environment, TestBase.Application)
+        helper.RunDeprecatedModelInterface(EarlyBoundTests.radar.rf_environment, TestBase.Application)
 
     # endregion
 
@@ -4299,6 +4518,7 @@ class EarlyBoundTests(TestBase):
     def test_RF_Environment_RainCloudFog_CloudsAndFogModel(self):
         helper = RF_Environment_RainCloudFog_CloudsAndFogModelHelper()
         helper.Run(EarlyBoundTests.radar.rf_environment, TestBase.Application)
+        helper.RunDeprecatedModelInterface(EarlyBoundTests.radar.rf_environment, TestBase.Application)
 
     # endregion
 
@@ -4306,6 +4526,7 @@ class EarlyBoundTests(TestBase):
     def test_RF_Environment_AtmosphericAbsorption(self):
         helper = RF_Environment_AtmosphericAbsorptionHelper(TestBase.Application)
         helper.Run(EarlyBoundTests.radar.rf_environment)
+        helper.RunDeprecatedModelInterface(EarlyBoundTests.radar.rf_environment)
 
     # endregion
 
@@ -4313,6 +4534,7 @@ class EarlyBoundTests(TestBase):
     def test_RF_Environment_UrbanAndTerrestrial(self):
         helper = RF_Environment_UrbanAndTerrestrialHelper(TestBase.Application)
         helper.Run(EarlyBoundTests.radar.rf_environment)
+        helper.RunDeprecatedModelInterface(EarlyBoundTests.radar.rf_environment)
 
     # endregion
 
@@ -4320,6 +4542,7 @@ class EarlyBoundTests(TestBase):
     def test_RF_Environment_TropoScintillation(self):
         helper = RF_Environment_TropoScintillationHelper(TestBase.Application)
         helper.Run(EarlyBoundTests.radar.rf_environment)
+        helper.RunDeprecatedModelInterface(EarlyBoundTests.radar.rf_environment)
 
     # endregion
 

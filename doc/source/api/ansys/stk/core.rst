@@ -15,8 +15,10 @@ Summary
             :header-rows: 0
             :widths: auto
         
+            * - :py:obj:`~ansys.stk.core.rfcm`
             * - :py:obj:`~ansys.stk.core.stkengine`
             * - :py:obj:`~ansys.stk.core.stkobjects`
+            * - :py:obj:`~ansys.stk.core.stkrfchannelmodeler`
             * - :py:obj:`~ansys.stk.core.utilities`
 
     .. tab-item:: Submodules
@@ -55,6 +57,7 @@ Detail
 
     🖿 stkengine<core/stkengine>
     🖿 stkobjects<core/stkobjects>
+    🖿 stkrfchannelmodeler<core/stkrfchannelmodeler>
     🖿 utilities<core/utilities>
 
 .. toctree::

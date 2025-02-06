@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.Receiver.set_model`
-              - Set the current receiver model by name.
+              - Do not use this method, as it is deprecated. Use ModelComponentLinking on IAgReceiver instead. Sets the current receiver model by name.
             * - :py:attr:`~ansys.stk.core.stkobjects.Receiver.is_refraction_type_supported`
               - Get a value indicating whether the specified type can be used.
 
@@ -32,9 +32,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.Receiver.supported_models`
-              - Gets an array of supported model names.
+              - This property is deprecated. Use ModelComponentLinking on IAgReceiver instead. Gets an array of supported model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.Receiver.model`
-              - Gets the current receiver model.
+              - This property is deprecated. Use ModelComponentLinking on IAgReceiver instead. Gets the current receiver model.
             * - :py:attr:`~ansys.stk.core.stkobjects.Receiver.refraction`
               - Refraction method, a member of the AgESnRefractionType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.Receiver.refraction_supported_types`
@@ -51,6 +51,8 @@ Overview
               - Gets the object RF environment settings.
             * - :py:attr:`~ansys.stk.core.stkobjects.Receiver.laser_environment`
               - Gets the object laser environment settings.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Receiver.model_component_linking`
+              - Gets the link/embed controller for managing the receiver model component.
 
 
 
@@ -69,13 +71,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Receiver.supported_models
     :type: list
 
-    Gets an array of supported model names.
+    This property is deprecated. Use ModelComponentLinking on IAgReceiver instead. Gets an array of supported model names.
 
 .. py:property:: model
     :canonical: ansys.stk.core.stkobjects.Receiver.model
     :type: IReceiverModel
 
-    Gets the current receiver model.
+    This property is deprecated. Use ModelComponentLinking on IAgReceiver instead. Gets the current receiver model.
 
 .. py:property:: refraction
     :canonical: ansys.stk.core.stkobjects.Receiver.refraction
@@ -125,6 +127,12 @@ Property detail
 
     Gets the object laser environment settings.
 
+.. py:property:: model_component_linking
+    :canonical: ansys.stk.core.stkobjects.Receiver.model_component_linking
+    :type: IComponentLinkEmbedControl
+
+    Gets the link/embed controller for managing the receiver model component.
+
 
 Method detail
 -------------
@@ -133,7 +141,7 @@ Method detail
 .. py:method:: set_model(self, model_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.Receiver.set_model
 
-    Set the current receiver model by name.
+    Do not use this method, as it is deprecated. Use ModelComponentLinking on IAgReceiver instead. Sets the current receiver model by name.
 
     :Parameters:
 
@@ -158,6 +166,7 @@ Method detail
     :Returns:
 
         :obj:`~bool`
+
 
 
 

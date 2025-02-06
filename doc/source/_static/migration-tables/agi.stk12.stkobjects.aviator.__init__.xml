@@ -159,6 +159,7 @@
    <Mapping ParentScope="AgEAvtrAircraftAeroStrategy" OldName="eAircraftAeroExternalFile" NewName="AIRCRAFT_AERODYNAMIC_EXTERNAL_FILE" Category="enum_value" />
    <Mapping ParentScope="AgEAvtrAircraftAeroStrategy" OldName="eAircraftAeroBasicFixedWing" NewName="AIRCRAFT_AERODYNAMIC_BASIC_FIXED_WING" Category="enum_value" />
    <Mapping ParentScope="AgEAvtrAircraftAeroStrategy" OldName="eAircraftAeroAdvancedMissile" NewName="AIRCRAFT_AERODYNAMIC_ADVANCED_MISSILE" Category="enum_value" />
+   <Mapping ParentScope="AgEAvtrAircraftAeroStrategy" OldName="eAircraftAeroFourPoint" NewName="AIRCRAFT_AERODYNAMIC_FOUR_POINT" Category="enum_value" />
    <Mapping OldName="AgEAvtrAircraftAeroStrategy" NewName="AircraftAerodynamicStrategy" Category="enum_type" />
    <Mapping ParentScope="AgEAvtrAircraftPropStrategy" OldName="eAircraftPropSimple" NewName="AIRCRAFT_PROPULSION_SIMPLE" Category="enum_value" />
    <Mapping ParentScope="AgEAvtrAircraftPropStrategy" OldName="eAircraftPropExternalFile" NewName="AIRCRAFT_PROPULSION_EXTERNAL_FILE" Category="enum_value" />
@@ -502,6 +503,7 @@
    <Mapping ParentScope="AgEAvtrAdvFixedWingAeroStrategy" OldName="eSubSuperHyperAero" NewName="SUB_SUPER_HYPER_AERODYNAMIC" Category="enum_value" />
    <Mapping ParentScope="AgEAvtrAdvFixedWingAeroStrategy" OldName="eSubsonicAero" NewName="SUBSONIC_AERODYNAMIC" Category="enum_value" />
    <Mapping ParentScope="AgEAvtrAdvFixedWingAeroStrategy" OldName="eSupersonicAero" NewName="SUPERSONIC_AERODYNAMIC" Category="enum_value" />
+   <Mapping ParentScope="AgEAvtrAdvFixedWingAeroStrategy" OldName="eFourPointAero" NewName="FOUR_POINT_AERODYNAMIC" Category="enum_value" />
    <Mapping OldName="AgEAvtrAdvFixedWingAeroStrategy" NewName="AdvancedFixedWingAerodynamicStrategy" Category="enum_type" />
    <Mapping ParentScope="AgEAvtrAdvFixedWingGeometry" OldName="eBasicGeometry" NewName="BASIC_GEOMETRY" Category="enum_value" />
    <Mapping ParentScope="AgEAvtrAdvFixedWingGeometry" OldName="eVariableGeometry" NewName="VARIABLE_GEOMETRY" Category="enum_value" />
@@ -522,6 +524,7 @@
    <Mapping ParentScope="AgEAvtrMissileAeroStrategy" OldName="eMissileAeroSimple" NewName="MISSILE_AERODYNAMIC_SIMPLE" Category="enum_value" />
    <Mapping ParentScope="AgEAvtrMissileAeroStrategy" OldName="eMissileAeroExternalFile" NewName="MISSILE_AERODYNAMIC_EXTERNAL_FILE" Category="enum_value" />
    <Mapping ParentScope="AgEAvtrMissileAeroStrategy" OldName="eMissileAeroAdvanced" NewName="MISSILE_AERODYNAMIC_ADVANCED" Category="enum_value" />
+   <Mapping ParentScope="AgEAvtrMissileAeroStrategy" OldName="eMissileAeroFourPoint" NewName="MISSILE_AERODYNAMIC_FOUR_POINT" Category="enum_value" />
    <Mapping OldName="AgEAvtrMissileAeroStrategy" NewName="MissileAerodynamicStrategy" Category="enum_type" />
    <Mapping ParentScope="AgEAvtrMissilePropStrategy" OldName="eMissilePropSimple" NewName="MISSILE_PROPULSION_SIMPLE" Category="enum_value" />
    <Mapping ParentScope="AgEAvtrMissilePropStrategy" OldName="eMissilePropExternalFile" NewName="MISSILE_PROPULSION_EXTERNAL_FILE" Category="enum_value" />
@@ -1006,10 +1009,31 @@
    <Mapping ParentScope="IAgAvtrAdvFixedWingTool" OldName="PowerplantModeAsBasicTurbofan" NewName="powerplant_mode_as_basic_turbofan" Category="method" />
    <Mapping ParentScope="IAgAvtrAdvFixedWingTool" OldName="PowerplantModeAsBasicTurbojet" NewName="powerplant_mode_as_basic_turbojet" Category="method" />
    <Mapping ParentScope="IAgAvtrAdvFixedWingTool" OldName="PowerplantModeAsSubSuperHypersonic" NewName="powerplant_mode_as_sub_super_hypersonic" Category="method" />
+   <Mapping ParentScope="IAgAvtrAdvFixedWingTool" OldName="AeroModeAsFourPoint" NewName="aerodynamic_mode_as_four_point" Category="method" />
    <Mapping OldName="IAgAvtrAdvFixedWingExternalAero" NewName="AdvancedFixedWingExternalAerodynamic" Category="interface" />
    <Mapping ParentScope="IAgAvtrAdvFixedWingExternalAero" OldName="Filepath" NewName="filepath" Category="method" />
    <Mapping ParentScope="IAgAvtrAdvFixedWingExternalAero" OldName="SetFilepath" NewName="set_filepath" Category="method" />
    <Mapping ParentScope="IAgAvtrAdvFixedWingExternalAero" OldName="IsValid" NewName="is_valid" Category="method" />
+   <Mapping OldName="IAgAvtrAdvFixedWingFourPointAero" NewName="AdvancedFixedWingFourPointAerodynamic" Category="interface" />
+   <Mapping ParentScope="IAgAvtrAdvFixedWingFourPointAero" OldName="MaxAOA" NewName="max_aoa" Category="method" />
+   <Mapping ParentScope="IAgAvtrAdvFixedWingFourPointAero" OldName="Mach_1" NewName="mach_1" Category="method" />
+   <Mapping ParentScope="IAgAvtrAdvFixedWingFourPointAero" OldName="AOA_1" NewName="a_o_a_1" Category="method" />
+   <Mapping ParentScope="IAgAvtrAdvFixedWingFourPointAero" OldName="CL_1" NewName="c_l_1" Category="method" />
+   <Mapping ParentScope="IAgAvtrAdvFixedWingFourPointAero" OldName="CD_1" NewName="c_d_1" Category="method" />
+   <Mapping ParentScope="IAgAvtrAdvFixedWingFourPointAero" OldName="Mach_2" NewName="mach_2" Category="method" />
+   <Mapping ParentScope="IAgAvtrAdvFixedWingFourPointAero" OldName="AOA_2" NewName="a_o_a_2" Category="method" />
+   <Mapping ParentScope="IAgAvtrAdvFixedWingFourPointAero" OldName="CL_2" NewName="c_l_2" Category="method" />
+   <Mapping ParentScope="IAgAvtrAdvFixedWingFourPointAero" OldName="CD_2" NewName="c_d_2" Category="method" />
+   <Mapping ParentScope="IAgAvtrAdvFixedWingFourPointAero" OldName="Mach_3" NewName="mach_3" Category="method" />
+   <Mapping ParentScope="IAgAvtrAdvFixedWingFourPointAero" OldName="AOA_3" NewName="a_o_a_3" Category="method" />
+   <Mapping ParentScope="IAgAvtrAdvFixedWingFourPointAero" OldName="CL_3" NewName="c_l_3" Category="method" />
+   <Mapping ParentScope="IAgAvtrAdvFixedWingFourPointAero" OldName="CD_3" NewName="c_d_3" Category="method" />
+   <Mapping ParentScope="IAgAvtrAdvFixedWingFourPointAero" OldName="Mach_4" NewName="mach_4" Category="method" />
+   <Mapping ParentScope="IAgAvtrAdvFixedWingFourPointAero" OldName="AOA_4" NewName="a_o_a_4" Category="method" />
+   <Mapping ParentScope="IAgAvtrAdvFixedWingFourPointAero" OldName="CL_4" NewName="c_l_4" Category="method" />
+   <Mapping ParentScope="IAgAvtrAdvFixedWingFourPointAero" OldName="CD_4" NewName="c_d_4" Category="method" />
+   <Mapping ParentScope="IAgAvtrAdvFixedWingFourPointAero" OldName="ValidateLiftDesignPoints" NewName="validate_lift_design_points" Category="method" />
+   <Mapping ParentScope="IAgAvtrAdvFixedWingFourPointAero" OldName="ValidateDragDesignPoints" NewName="validate_drag_design_points" Category="method" />
    <Mapping OldName="IAgAvtrAdvFixedWingSubsonicAero" NewName="AdvancedFixedWingSubsonicAerodynamic" Category="interface" />
    <Mapping ParentScope="IAgAvtrAdvFixedWingSubsonicAero" OldName="GeometryType" NewName="geometry_type" Category="method" />
    <Mapping ParentScope="IAgAvtrAdvFixedWingSubsonicAero" OldName="GeometryModeAsBasic" NewName="geometry_mode_as_basic" Category="method" />
@@ -1161,6 +1185,7 @@
    <Mapping ParentScope="IAgAvtrMissileAero" OldName="ModeAsSimple" NewName="mode_as_simple" Category="method" />
    <Mapping ParentScope="IAgAvtrMissileAero" OldName="ModeAsExternal" NewName="mode_as_external" Category="method" />
    <Mapping ParentScope="IAgAvtrMissileAero" OldName="ModeAsAdvanced" NewName="mode_as_advanced" Category="method" />
+   <Mapping ParentScope="IAgAvtrMissileAero" OldName="ModeAsFourPoint" NewName="mode_as_four_point" Category="method" />
    <Mapping OldName="IAgAvtrMissileProp" NewName="MissilePropulsion" Category="interface" />
    <Mapping ParentScope="IAgAvtrMissileProp" OldName="PropStrategy" NewName="propulsion_strategy" Category="method" />
    <Mapping ParentScope="IAgAvtrMissileProp" OldName="ModeAsSimple" NewName="mode_as_simple" Category="method" />
@@ -1401,6 +1426,51 @@
    <Mapping ParentScope="IAgAvtrProcedureFastTimeOptions" OldName="SetInterruptTime" NewName="set_interrupt_time" Category="method" />
    <Mapping ParentScope="IAgAvtrProcedureFastTimeOptions" OldName="StopTime" NewName="stop_time" Category="method" />
    <Mapping ParentScope="IAgAvtrProcedureFastTimeOptions" OldName="SetStopTime" NewName="set_stop_time" Category="method" />
+   <Mapping OldName="IAgAvtrMissileFourPointAero" NewName="MissileFourPointAerodynamic" Category="interface" />
+   <Mapping ParentScope="IAgAvtrMissileFourPointAero" OldName="Mach_1" NewName="mach_1" Category="method" />
+   <Mapping ParentScope="IAgAvtrMissileFourPointAero" OldName="AOA_1" NewName="a_o_a_1" Category="method" />
+   <Mapping ParentScope="IAgAvtrMissileFourPointAero" OldName="CL_1" NewName="c_l_1" Category="method" />
+   <Mapping ParentScope="IAgAvtrMissileFourPointAero" OldName="CD_1" NewName="c_d_1" Category="method" />
+   <Mapping ParentScope="IAgAvtrMissileFourPointAero" OldName="Mach_2" NewName="mach_2" Category="method" />
+   <Mapping ParentScope="IAgAvtrMissileFourPointAero" OldName="AOA_2" NewName="a_o_a_2" Category="method" />
+   <Mapping ParentScope="IAgAvtrMissileFourPointAero" OldName="CL_2" NewName="c_l_2" Category="method" />
+   <Mapping ParentScope="IAgAvtrMissileFourPointAero" OldName="CD_2" NewName="c_d_2" Category="method" />
+   <Mapping ParentScope="IAgAvtrMissileFourPointAero" OldName="Mach_3" NewName="mach_3" Category="method" />
+   <Mapping ParentScope="IAgAvtrMissileFourPointAero" OldName="AOA_3" NewName="a_o_a_3" Category="method" />
+   <Mapping ParentScope="IAgAvtrMissileFourPointAero" OldName="CL_3" NewName="c_l_3" Category="method" />
+   <Mapping ParentScope="IAgAvtrMissileFourPointAero" OldName="CD_3" NewName="c_d_3" Category="method" />
+   <Mapping ParentScope="IAgAvtrMissileFourPointAero" OldName="Mach_4" NewName="mach_4" Category="method" />
+   <Mapping ParentScope="IAgAvtrMissileFourPointAero" OldName="AOA_4" NewName="a_o_a_4" Category="method" />
+   <Mapping ParentScope="IAgAvtrMissileFourPointAero" OldName="CL_4" NewName="c_l_4" Category="method" />
+   <Mapping ParentScope="IAgAvtrMissileFourPointAero" OldName="CD_4" NewName="c_d_4" Category="method" />
+   <Mapping ParentScope="IAgAvtrMissileFourPointAero" OldName="ValidateLiftDesignPoints" NewName="validate_lift_design_points" Category="method" />
+   <Mapping ParentScope="IAgAvtrMissileFourPointAero" OldName="ValidateDragDesignPoints" NewName="validate_drag_design_points" Category="method" />
+   <Mapping ParentScope="IAgAvtrMissileFourPointAero" OldName="SRef" NewName="s_reference" Category="method" />
+   <Mapping ParentScope="IAgAvtrMissileFourPointAero" OldName="SetAOA" NewName="set_aoa" Category="method" />
+   <Mapping ParentScope="IAgAvtrMissileFourPointAero" OldName="MaxAOA" NewName="max_aoa" Category="method" />
+   <Mapping ParentScope="IAgAvtrMissileFourPointAero" OldName="MaxEnduranceAOA" NewName="max_endurance_aoa" Category="method" />
+   <Mapping ParentScope="IAgAvtrMissileFourPointAero" OldName="MaxRangeAOA" NewName="max_range_aoa" Category="method" />
+   <Mapping OldName="IAgAvtrFourPointAero" NewName="FourPointAerodynamic" Category="interface" />
+   <Mapping ParentScope="IAgAvtrFourPointAero" OldName="Mach_1" NewName="mach_1" Category="method" />
+   <Mapping ParentScope="IAgAvtrFourPointAero" OldName="AOA_1" NewName="a_o_a_1" Category="method" />
+   <Mapping ParentScope="IAgAvtrFourPointAero" OldName="CL_1" NewName="c_l_1" Category="method" />
+   <Mapping ParentScope="IAgAvtrFourPointAero" OldName="CD_1" NewName="c_d_1" Category="method" />
+   <Mapping ParentScope="IAgAvtrFourPointAero" OldName="Mach_2" NewName="mach_2" Category="method" />
+   <Mapping ParentScope="IAgAvtrFourPointAero" OldName="AOA_2" NewName="a_o_a_2" Category="method" />
+   <Mapping ParentScope="IAgAvtrFourPointAero" OldName="CL_2" NewName="c_l_2" Category="method" />
+   <Mapping ParentScope="IAgAvtrFourPointAero" OldName="CD_2" NewName="c_d_2" Category="method" />
+   <Mapping ParentScope="IAgAvtrFourPointAero" OldName="Mach_3" NewName="mach_3" Category="method" />
+   <Mapping ParentScope="IAgAvtrFourPointAero" OldName="AOA_3" NewName="a_o_a_3" Category="method" />
+   <Mapping ParentScope="IAgAvtrFourPointAero" OldName="CL_3" NewName="c_l_3" Category="method" />
+   <Mapping ParentScope="IAgAvtrFourPointAero" OldName="CD_3" NewName="c_d_3" Category="method" />
+   <Mapping ParentScope="IAgAvtrFourPointAero" OldName="Mach_4" NewName="mach_4" Category="method" />
+   <Mapping ParentScope="IAgAvtrFourPointAero" OldName="AOA_4" NewName="a_o_a_4" Category="method" />
+   <Mapping ParentScope="IAgAvtrFourPointAero" OldName="CL_4" NewName="c_l_4" Category="method" />
+   <Mapping ParentScope="IAgAvtrFourPointAero" OldName="CD_4" NewName="c_d_4" Category="method" />
+   <Mapping ParentScope="IAgAvtrFourPointAero" OldName="ValidateLiftDesignPoints" NewName="validate_lift_design_points" Category="method" />
+   <Mapping ParentScope="IAgAvtrFourPointAero" OldName="ValidateDragDesignPoints" NewName="validate_drag_design_points" Category="method" />
+   <Mapping ParentScope="IAgAvtrFourPointAero" OldName="SRef" NewName="s_reference" Category="method" />
+   <Mapping ParentScope="IAgAvtrFourPointAero" OldName="MaxAOA" NewName="max_aoa" Category="method" />
    <Mapping OldName="IAgAvtrAtmosphereModelBasic" NewName="AtmosphereModelBasic" Category="interface" />
    <Mapping ParentScope="IAgAvtrAtmosphereModelBasic" OldName="Name" NewName="name" Category="method" />
    <Mapping ParentScope="IAgAvtrAtmosphereModelBasic" OldName="BasicModelType" NewName="basic_model_type" Category="method" />
@@ -1509,6 +1579,7 @@
    <Mapping ParentScope="IAgAvtrAircraftAero" OldName="ModeAsAdvancedMissile" NewName="mode_as_advanced_missile" Category="method" />
    <Mapping ParentScope="IAgAvtrAircraftAero" OldName="LiftFactor" NewName="lift_factor" Category="method" />
    <Mapping ParentScope="IAgAvtrAircraftAero" OldName="DragFactor" NewName="drag_factor" Category="method" />
+   <Mapping ParentScope="IAgAvtrAircraftAero" OldName="ModeAsFourPoint" NewName="mode_as_four_point" Category="method" />
    <Mapping OldName="IAgAvtrAircraftProp" NewName="AircraftPropulsion" Category="interface" />
    <Mapping ParentScope="IAgAvtrAircraftProp" OldName="PropStrategy" NewName="propulsion_strategy" Category="method" />
    <Mapping ParentScope="IAgAvtrAircraftProp" OldName="ModeAsSimple" NewName="mode_as_simple" Category="method" />
@@ -3092,4 +3163,7 @@
    <Mapping OldName="AgAvtrBasicManeuverTargetPosVel" NewName="BasicManeuverTargetPositionVel" Category="class" />
    <Mapping OldName="AgAvtrBasicManeuverTargetPosVelNoisyBrgRng" NewName="BasicManeuverTargetPositionVelNoisyBearingRange" Category="class" />
    <Mapping OldName="AgAvtrBasicManeuverTargetPosVelNoisySurfTgt" NewName="BasicManeuverTargetPositionVelNoisySurfTarget" Category="class" />
+   <Mapping OldName="AgAvtrAdvFixedWingFourPointAero" NewName="AdvancedFixedWingFourPointAerodynamic" Category="class" />
+   <Mapping OldName="AgAvtrMissileFourPointAero" NewName="MissileFourPointAerodynamic" Category="class" />
+   <Mapping OldName="AgAvtrFourPointAero" NewName="FourPointAerodynamic" Category="class" />
 </Mappings>
