@@ -1,4 +1,4 @@
-<Mappings>
+<Mappings OldRootScope="agi.stk12.internal.comevents" NewRootScope="ansys.stk.core.internal.comevents">
    <Mapping OldName="_AgStkObjectRootRawEventsUnkSink" NewName="_StkObjectRootRawEventsUnkSink" Category="class" />
    <Mapping OldName="_AgStkObjectRootRawEvents2UnkSink" NewName="_StkObjectRootRawEvents2UnkSink" Category="class" />
    <Mapping OldName="_AgSTKXApplicationEventsUnkSink" NewName="_STKXApplicationEventsUnkSink" Category="class" />

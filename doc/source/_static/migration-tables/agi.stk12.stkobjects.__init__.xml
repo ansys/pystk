@@ -1,4 +1,4 @@
-<Mappings>
+<Mappings OldRootScope="agi.stk12.stkobjects" NewRootScope="ansys.stk.core.stkobjects">
    <Mapping ParentScope="AgEConstants" OldName="eErrorBase" NewName="ERROR_BASE" Category="enum_value" />
    <Mapping ParentScope="AgEConstants" OldName="eHelpContextBase" NewName="HELP_CONTEXT_BASE" Category="enum_value" />
    <Mapping OldName="AgEConstants" NewName="Constants" Category="enum_type" />

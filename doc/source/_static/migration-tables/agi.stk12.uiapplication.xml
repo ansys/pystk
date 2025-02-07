@@ -1,4 +1,4 @@
-<Mappings>
+<Mappings OldRootScope="agi.stk12.uiapplication" NewRootScope="ansys.stk.core.uiapplication">
    <Mapping ParentScope="AgEOpenLogFileMode" OldName="eOpenLogFileForWriting" NewName="FOR_WRITING" Category="enum_value" />
    <Mapping ParentScope="AgEOpenLogFileMode" OldName="eOpenLogFileForAppending" NewName="FOR_APPENDING" Category="enum_value" />
    <Mapping OldName="AgEOpenLogFileMode" NewName="ApplicationOpenLogFileMode" Category="enum_type" />

@@ -1,4 +1,4 @@
-<Mappings>
+<Mappings OldRootScope="agi.stk12.internal.coclassutil" NewRootScope="ansys.stk.core.internal.coclassutil">
    <Mapping OldName="_IAgProvideClassId" NewName="_IProvideClassId" Category="interface" />
    <Mapping OldName="_TYPEATTR" NewName="_TypeAttr" Category="class" />
    <Mapping ParentScope="_IErrorInfo" OldName="GetDescription" NewName="get_description" Category="method" />

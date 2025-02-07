@@ -1,4 +1,4 @@
-<Mappings>
+<Mappings OldRootScope="agi.stk12.internal.marshall" NewRootScope="ansys.stk.core.internal.marshall">
    <Mapping OldName="LONG_arg" NewName="LongArg" Category="class" />
    <Mapping OldName="ULONG_arg" NewName="ULongArg" Category="class" />
    <Mapping OldName="LONGLONG_arg" NewName="LongLongArg" Category="class" />

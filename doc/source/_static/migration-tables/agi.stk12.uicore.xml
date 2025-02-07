@@ -1,4 +1,4 @@
-<Mappings>
+<Mappings OldRootScope="agi.stk12.uicore" NewRootScope="ansys.stk.core.uicore">
    <Mapping ParentScope="AgEWindowService" OldName="eWindowService2DWindow" NewName="WINDOW_2D" Category="enum_value" />
    <Mapping ParentScope="AgEWindowService" OldName="eWindowService3DWindow" NewName="WINDOW_3D" Category="enum_value" />
    <Mapping OldName="AgEWindowService" NewName="WindowServiceType" Category="enum_type" />

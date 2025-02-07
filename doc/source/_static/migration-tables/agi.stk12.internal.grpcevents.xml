@@ -1,4 +1,4 @@
-<Mappings>
+<Mappings OldRootScope="agi.stk12.internal.grpcevents" NewRootScope="ansys.stk.core.internal.grpcevents">
    <Mapping ParentScope="GrpcEventHandlerImpl" OldName="Subscribe" NewName="subscribe" Category="method" />
    <Mapping ParentScope="GrpcEventHandlerImpl" OldName="Unsubscribe" NewName="unsubscribe" Category="method" />
    <Mapping ParentScope="IStkObjectRootEventGrpcHandler" OldName="_OnScenarioNew" NewName="_on_scenario_new" Category="method" />

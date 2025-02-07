@@ -1,4 +1,4 @@
-<Mappings>
+<Mappings OldRootScope="agi.stk12.internal.eventutil" NewRootScope="ansys.stk.core.internal.eventutil">
    <Mapping OldName="IAgStkObjectRootEventHandler" NewName="IStkObjectRootEventHandler" Category="interface" />
    <Mapping OldName="IAgSTKXApplicationEventHandler" NewName="ISTKXApplicationEventHandler" Category="interface" />
    <Mapping OldName="IAgUiAx2DCntrlEventHandler" NewName="IUiAxGraphics2DCntrlEventHandler" Category="interface" />

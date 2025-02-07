@@ -1,4 +1,4 @@
-<Mappings>
+<Mappings OldRootScope="agi.stk12.stkobjects.astrogator" NewRootScope="ansys.stk.core.stkobjects.astrogator">
    <Mapping ParentScope="AgEVAGraphOption" OldName="eVAGraphOptionNoGraph" NewName="NO_GRAPH" Category="enum_value" />
    <Mapping ParentScope="AgEVAGraphOption" OldName="eVAGraphOptionGraphDifference" NewName="GRAPH_DIFFERENCE" Category="enum_value" />
    <Mapping ParentScope="AgEVAGraphOption" OldName="eVAGraphOptionGraphValue" NewName="GRAPH_VALUE" Category="enum_value" />

@@ -1,4 +1,4 @@
-<Mappings>
+<Mappings OldRootScope="agi.stk12.stkx" NewRootScope="ansys.stk.core.stkx">
    <Mapping ParentScope="AgEShiftValues" OldName="eShiftPressed" NewName="PRESSED" Category="enum_value" />
    <Mapping ParentScope="AgEShiftValues" OldName="eCtrlPressed" NewName="CTRL_PRESSED" Category="enum_value" />
    <Mapping ParentScope="AgEShiftValues" OldName="eAltPressed" NewName="ALT_PRESSED" Category="enum_value" />

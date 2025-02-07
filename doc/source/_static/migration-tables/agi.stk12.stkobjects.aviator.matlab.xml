@@ -1,4 +1,4 @@
-<Mappings>
+<Mappings OldRootScope="agi.stk12.stkobjects.aviator.matlab" NewRootScope="ansys.stk.core.stkobjects.aviator.matlab">
    <Mapping OldName="AgEAvtrClosureMode" NewName="ClosureMode" Category="enum_type" />
    <Mapping OldName="IAgAvtrStrategyMATLABNav" NewName="StrategyMATLABNavigation" Category="interface" />
    <Mapping ParentScope="IAgAvtrStrategyMATLABNav" OldName="FunctionName" NewName="function_name" Category="method" />

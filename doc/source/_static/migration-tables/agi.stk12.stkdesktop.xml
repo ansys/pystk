@@ -1,4 +1,4 @@
-<Mappings>
+<Mappings OldRootScope="agi.stk12.stkdesktop" NewRootScope="ansys.stk.core.stkdesktop">
    <Mapping ParentScope="ThreadMarshaller" OldName="GetMarshalledToCurrentThread" NewName="get_marshalled_to_current_thread" Category="method" />
    <Mapping ParentScope="ThreadMarshaller" OldName="InitializeThread" NewName="initialize_thread" Category="method" />
    <Mapping ParentScope="ThreadMarshaller" OldName="ReleaseThread" NewName="release_thread" Category="method" />
@@ -11,4 +11,7 @@
    <Mapping ParentScope="STKDesktop" OldName="AttachToApplication" NewName="attach_to_application" Category="method" />
    <Mapping ParentScope="STKDesktop" OldName="ReleaseAll" NewName="release_all" Category="method" />
    <Mapping ParentScope="STKDesktop" OldName="CreateThreadMarshaller" NewName="create_thread_marshaller" Category="method" />
+
+   <!-- Named arguments -->
+   <Mapping ParentScope="STKDesktop.StartApplication" OldName="userControl" NewName="user_control" Category="argument" />
 </Mappings>

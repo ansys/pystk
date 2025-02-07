@@ -1,4 +1,4 @@
-<Mappings>
+<Mappings OldRootScope="agi.stk12.stkxrfb" NewRootScope="ansys.stk.core.stkxrfb">
    <Mapping OldName="IAgRemoteFrameBufferHost" NewName="IRemoteFrameBufferHost" Category="interface" />
    <Mapping ParentScope="IAgRemoteFrameBufferHost" OldName="Refresh" NewName="refresh" Category="method" />
    <Mapping OldName="IAgRemoteFrameBuffer" NewName="IRemoteFrameBuffer" Category="interface" />

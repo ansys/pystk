@@ -1,4 +1,4 @@
-<Mappings>
+<Mappings OldRootScope="agi.stk12.graphics" NewRootScope="ansys.stk.core.graphics">
    <Mapping ParentScope="AgEStkGraphicsCylinderFill" OldName="eStkGraphicsCylinderFillWall" NewName="WALL" Category="enum_value" />
    <Mapping ParentScope="AgEStkGraphicsCylinderFill" OldName="eStkGraphicsCylinderFillBottomCap" NewName="BOTTOM_CAP" Category="enum_value" />
    <Mapping ParentScope="AgEStkGraphicsCylinderFill" OldName="eStkGraphicsCylinderFillTopCap" NewName="TOP_CAP" Category="enum_value" />
