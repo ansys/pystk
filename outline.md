@@ -1,3 +1,4 @@
+- **How did we get here and team introduction** [2:00]
 - **Why are we presenting this today to the Engineering forum?** [3:00]
     - Open sourcing PySTK in the next few weeks
         - Final adjustments and legal review in progress
@@ -14,7 +15,7 @@
         - Enable 2FA and SSO
         - Configure email and notifications, ansys internal repositories notifications must be routed to Ansys email
     - If you do not have access you will receive 404 errors when trying to access the repo or the help
-- **Why PySTK to begin with?** [3:00]
+- **Why PySTK to begin with?** [2:30]
     - Show https://stk.docs.pyansys.com/version/dev/getting-started/about.html#about-pystk and talk about the various points
 - **What is PySTK?** [6:00]
     - Show help landing page https://stk.docs.pyansys.com/ and private GitHub repo landing page https://github.com/ansys-internal/pystk
@@ -37,7 +38,7 @@
     - Finalizing copyright, license, CLA
         - Obviously no ITAR or restricted content
     - Tweaking, tiying up of lose ends
-- **Looking for contributions** [5:00]
+- **Looking for contributions** [4:00]
     - Walk through the different section of https://stk.docs.pyansys.com/version/dev/contribute.html
         - [Contributing as a user](https://stk.docs.pyansys.com/version/dev/contribute/user.html): reporting bugs, requesting features, starting discussions.
         - [Contributing to the documentation](https://stk.docs.pyansys.com/version/dev/contribute/documentarian.html): documentation topics, code snippets, examples.
@@ -45,7 +46,7 @@
     - Reviewing the library: we could use extra eyes to make sure there is nothing embarassing
     - Higher level APIs built on top of the existing object model
         - for instance https://github.com/ansys-internal/pystk/pull/481/files
-- **Behind the scenes, the GitHub repo** [5:00]
+- **Behind the scenes, the GitHub repo** [4:30]
     - GitHub actions (CI/CD, nightly, code/doc style checks, vulnerabilities)
         - Show steps for PR jobs (for instance https://github.com/ansys-internal/pystk/actions/runs/13140371819)
     - Tests
@@ -55,6 +56,7 @@
     - Ensure high quality, security, and consistency of contributions
     - Curated code and documentation for ingestion by LLM (Allie)
 - **Follow up** [2:00]
+    - Call to action for ACE
     - Try it out and provide feedback
     - Reach out if you need help with anything, GitHub, Python, docker, getting started, migrating existing code, etc.
-    - Fun fact
+    - Fun facts (if time allows)
