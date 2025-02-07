@@ -25,11 +25,11 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DIntervalsElement.show_graphics`
               - Opt whether to display the object during the selected time using the selected graphics properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DIntervalsElement.color`
-              - Gets or sets the line color.
+              - Get or set the line color.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DIntervalsElement.line_width`
-              - Gets or sets the line width.
+              - Get or set the line width.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DIntervalsElement.translucency`
-              - Gets or sets the translucency. Dimensionless.
+              - Get or set the translucency. Dimensionless.
 
 
 
@@ -66,18 +66,18 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DIntervalsElement.color
     :type: agcolor.Color
 
-    Gets or sets the line color.
+    Get or set the line color.
 
 .. py:property:: line_width
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DIntervalsElement.line_width
     :type: LineWidth
 
-    Gets or sets the line width.
+    Get or set the line width.
 
 .. py:property:: translucency
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DIntervalsElement.translucency
     :type: float
 
-    Gets or sets the translucency. Dimensionless.
+    Get or set the translucency. Dimensionless.
 
 

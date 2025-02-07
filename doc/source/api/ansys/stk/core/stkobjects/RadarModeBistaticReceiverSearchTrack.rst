@@ -30,9 +30,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarModeBistaticReceiverSearchTrack.waveform`
-              - Gets the interface for configuring the search/track waveform.
+              - Get the interface for configuring the search/track waveform.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarModeBistaticReceiverSearchTrack.doppler_clutter_filters`
-              - Gets the IAgRadarDopplerClutterFilters interface for configuring the doppler clutter filters.
+              - Get the IAgRadarDopplerClutterFilters interface for configuring the doppler clutter filters.
 
 
 
@@ -51,13 +51,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.RadarModeBistaticReceiverSearchTrack.waveform
     :type: IRadarWaveformSearchTrack
 
-    Gets the interface for configuring the search/track waveform.
+    Get the interface for configuring the search/track waveform.
 
 .. py:property:: doppler_clutter_filters
     :canonical: ansys.stk.core.stkobjects.RadarModeBistaticReceiverSearchTrack.doppler_clutter_filters
     :type: RadarDopplerClutterFilters
 
-    Gets the IAgRadarDopplerClutterFilters interface for configuring the doppler clutter filters.
+    Get the IAgRadarDopplerClutterFilters interface for configuring the doppler clutter filters.
 
 
 Method detail

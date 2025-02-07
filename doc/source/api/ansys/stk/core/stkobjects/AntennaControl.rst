@@ -28,19 +28,19 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaControl.reference_type`
-              - Gets or sets the antenna control reference type.
+              - Get or set the antenna control reference type.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaControl.supported_linked_antenna_objects`
-              - Gets an array of available antenna objects that this object can link to and use.
+              - Get an array of available antenna objects that this object can link to and use.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaControl.linked_antenna_object`
-              - Gets or sets the linked antenna object.
+              - Get or set the linked antenna object.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaControl.supported_embedded_models`
-              - This property is deprecated. Use EmbeddedModelComponentLinking on IAgAntennaControl instead. Gets an array of supported model names.
+              - Do not use this property, as it is deprecated. Use EmbeddedModelComponentLinking on IAgAntennaControl instead. Gets an array of supported model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaControl.embedded_model`
-              - This property is deprecated. Use EmbeddedModelComponentLinking on IAgAntennaControl instead. Gets the current antenna model.
+              - Do not use this property, as it is deprecated. Use EmbeddedModelComponentLinking on IAgAntennaControl instead. Gets the current antenna model.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaControl.embedded_model_orientation`
-              - Gets or sets the antenna orientation.
+              - Get or set the antenna orientation.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaControl.embedded_model_component_linking`
-              - Gets the link/embed controller for managing the embedded antenna model component.
+              - Get the link/embed controller for managing the embedded antenna model component.
 
 
 
@@ -59,43 +59,43 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.AntennaControl.reference_type
     :type: AntennaControlReferenceType
 
-    Gets or sets the antenna control reference type.
+    Get or set the antenna control reference type.
 
 .. py:property:: supported_linked_antenna_objects
     :canonical: ansys.stk.core.stkobjects.AntennaControl.supported_linked_antenna_objects
     :type: list
 
-    Gets an array of available antenna objects that this object can link to and use.
+    Get an array of available antenna objects that this object can link to and use.
 
 .. py:property:: linked_antenna_object
     :canonical: ansys.stk.core.stkobjects.AntennaControl.linked_antenna_object
     :type: str
 
-    Gets or sets the linked antenna object.
+    Get or set the linked antenna object.
 
 .. py:property:: supported_embedded_models
     :canonical: ansys.stk.core.stkobjects.AntennaControl.supported_embedded_models
     :type: list
 
-    This property is deprecated. Use EmbeddedModelComponentLinking on IAgAntennaControl instead. Gets an array of supported model names.
+    Do not use this property, as it is deprecated. Use EmbeddedModelComponentLinking on IAgAntennaControl instead. Gets an array of supported model names.
 
 .. py:property:: embedded_model
     :canonical: ansys.stk.core.stkobjects.AntennaControl.embedded_model
     :type: IAntennaModel
 
-    This property is deprecated. Use EmbeddedModelComponentLinking on IAgAntennaControl instead. Gets the current antenna model.
+    Do not use this property, as it is deprecated. Use EmbeddedModelComponentLinking on IAgAntennaControl instead. Gets the current antenna model.
 
 .. py:property:: embedded_model_orientation
     :canonical: ansys.stk.core.stkobjects.AntennaControl.embedded_model_orientation
     :type: IOrientation
 
-    Gets or sets the antenna orientation.
+    Get or set the antenna orientation.
 
 .. py:property:: embedded_model_component_linking
     :canonical: ansys.stk.core.stkobjects.AntennaControl.embedded_model_component_linking
     :type: IComponentLinkEmbedControl
 
-    Gets the link/embed controller for managing the embedded antenna model component.
+    Get the link/embed controller for managing the embedded antenna model component.
 
 
 Method detail

@@ -19,17 +19,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IWaveform.name`
-              - Gets the waveform name.
+              - Get the waveform name.
             * - :py:attr:`~ansys.stk.core.stkobjects.IWaveform.type`
-              - Gets the waveform type enumeration.
+              - Get the waveform type enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.IWaveform.frequency_specification`
-              - Gets or sets the frequency specification.
+              - Get or set the frequency specification.
             * - :py:attr:`~ansys.stk.core.stkobjects.IWaveform.frequency`
-              - Gets or sets the frequency.
+              - Get or set the frequency.
             * - :py:attr:`~ansys.stk.core.stkobjects.IWaveform.wavelength`
-              - Gets or sets the wavelength.
+              - Get or set the wavelength.
             * - :py:attr:`~ansys.stk.core.stkobjects.IWaveform.power`
-              - Gets the power.
+              - Get the power.
 
 
 Import detail
@@ -47,36 +47,36 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.IWaveform.name
     :type: str
 
-    Gets the waveform name.
+    Get the waveform name.
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.IWaveform.type
     :type: WaveformType
 
-    Gets the waveform type enumeration.
+    Get the waveform type enumeration.
 
 .. py:property:: frequency_specification
     :canonical: ansys.stk.core.stkobjects.IWaveform.frequency_specification
     :type: FrequencySpecificationType
 
-    Gets or sets the frequency specification.
+    Get or set the frequency specification.
 
 .. py:property:: frequency
     :canonical: ansys.stk.core.stkobjects.IWaveform.frequency
     :type: float
 
-    Gets or sets the frequency.
+    Get or set the frequency.
 
 .. py:property:: wavelength
     :canonical: ansys.stk.core.stkobjects.IWaveform.wavelength
     :type: float
 
-    Gets or sets the wavelength.
+    Get or set the wavelength.
 
 .. py:property:: power
     :canonical: ansys.stk.core.stkobjects.IWaveform.power
     :type: float
 
-    Gets the power.
+    Get the power.
 
 

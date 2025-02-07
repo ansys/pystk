@@ -21,11 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.RFFilterModelSincEnvelopeSinc.order`
-              - Gets or sets the filter order.
+              - Get or set the filter order.
             * - :py:attr:`~ansys.stk.core.stkobjects.RFFilterModelSincEnvelopeSinc.cut_off_frequency`
-              - Gets or sets the filter cut off frequency.
+              - Get or set the filter cut off frequency.
             * - :py:attr:`~ansys.stk.core.stkobjects.RFFilterModelSincEnvelopeSinc.ripple`
-              - Gets or sets the ripple.
+              - Get or set the ripple.
 
 
 
@@ -44,18 +44,18 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.RFFilterModelSincEnvelopeSinc.order
     :type: int
 
-    Gets or sets the filter order.
+    Get or set the filter order.
 
 .. py:property:: cut_off_frequency
     :canonical: ansys.stk.core.stkobjects.RFFilterModelSincEnvelopeSinc.cut_off_frequency
     :type: float
 
-    Gets or sets the filter cut off frequency.
+    Get or set the filter cut off frequency.
 
 .. py:property:: ripple
     :canonical: ansys.stk.core.stkobjects.RFFilterModelSincEnvelopeSinc.ripple
     :type: float
 
-    Gets or sets the ripple.
+    Get or set the ripple.
 
 

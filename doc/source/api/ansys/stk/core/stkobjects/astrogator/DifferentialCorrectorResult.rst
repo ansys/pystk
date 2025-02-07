@@ -25,7 +25,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DifferentialCorrectorResult.name`
               - Get the name of the parameter.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DifferentialCorrectorResult.desired_value`
-              - Gets or sets the desired value. Dimension depends on context.
+              - Get or set the desired value. Dimension depends on context.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DifferentialCorrectorResult.current_value`
               - Get the value achieved for this dependent variable in the last targeter run. Dimension depends on context.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DifferentialCorrectorResult.parent_name`
@@ -35,17 +35,17 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DifferentialCorrectorResult.tolerance`
               - How close the targeter should come to the desired value before stopping. Dimension depends on context.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DifferentialCorrectorResult.scaling_method`
-              - Allows better numerical behavior if the constraints have very different magnitudes. The same scaling method is applied to all constraints.
+              - Allow better numerical behavior if the constraints have very different magnitudes. The same scaling method is applied to all constraints.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DifferentialCorrectorResult.scaling_value`
-              - Applies to the Specified Value scaling method. Dimension depends on context.
+              - Apply to the Specified Value scaling method. Dimension depends on context.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DifferentialCorrectorResult.weight`
-              - Gets or sets the factor by which the constraint error is to be multiplied. This is used to emphasize/de-emphasize the importance of one constraint relative to the others. Dimensionless.
+              - Get or set the factor by which the constraint error is to be multiplied. This is used to emphasize/de-emphasize the importance of one constraint relative to the others. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DifferentialCorrectorResult.dimension`
               - Get the dimension of the values.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DifferentialCorrectorResult.use_custom_display_unit`
               - If true, allows display of values in another unit.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DifferentialCorrectorResult.custom_display_unit`
-              - Gets or sets the unit in which the value will be displayed in the GUI.
+              - Get or set the unit in which the value will be displayed in the GUI.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DifferentialCorrectorResult.values`
               - List of values of this dependent variable at each iteration, including nominal run. Dimension depends on context.
 
@@ -78,7 +78,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.DifferentialCorrectorResult.desired_value
     :type: typing.Any
 
-    Gets or sets the desired value. Dimension depends on context.
+    Get or set the desired value. Dimension depends on context.
 
 .. py:property:: current_value
     :canonical: ansys.stk.core.stkobjects.astrogator.DifferentialCorrectorResult.current_value
@@ -108,19 +108,19 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.DifferentialCorrectorResult.scaling_method
     :type: DifferentialCorrectorScalingMethod
 
-    Allows better numerical behavior if the constraints have very different magnitudes. The same scaling method is applied to all constraints.
+    Allow better numerical behavior if the constraints have very different magnitudes. The same scaling method is applied to all constraints.
 
 .. py:property:: scaling_value
     :canonical: ansys.stk.core.stkobjects.astrogator.DifferentialCorrectorResult.scaling_value
     :type: typing.Any
 
-    Applies to the Specified Value scaling method. Dimension depends on context.
+    Apply to the Specified Value scaling method. Dimension depends on context.
 
 .. py:property:: weight
     :canonical: ansys.stk.core.stkobjects.astrogator.DifferentialCorrectorResult.weight
     :type: float
 
-    Gets or sets the factor by which the constraint error is to be multiplied. This is used to emphasize/de-emphasize the importance of one constraint relative to the others. Dimensionless.
+    Get or set the factor by which the constraint error is to be multiplied. This is used to emphasize/de-emphasize the importance of one constraint relative to the others. Dimensionless.
 
 .. py:property:: dimension
     :canonical: ansys.stk.core.stkobjects.astrogator.DifferentialCorrectorResult.dimension
@@ -138,7 +138,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.DifferentialCorrectorResult.custom_display_unit
     :type: str
 
-    Gets or sets the unit in which the value will be displayed in the GUI.
+    Get or set the unit in which the value will be displayed in the GUI.
 
 .. py:property:: values
     :canonical: ansys.stk.core.stkobjects.astrogator.DifferentialCorrectorResult.values

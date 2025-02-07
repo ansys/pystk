@@ -40,11 +40,11 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DBorderWall.use_wall_translucency`
               - Display the border wall at the specified translucency percentage.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DBorderWall.wall_translucency`
-              - Gets or sets the border wall's translucency percentage, where 100% = invisible.
+              - Get or set the border wall's translucency percentage, where 100% = invisible.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DBorderWall.use_line_translucency`
               - Display the lines at the upper and lower edges of the border wall at the specified translucency percentage.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DBorderWall.line_translucency`
-              - Gets or sets the translucency of the lines at the upper and lower edges of the border wall, where 100% = invisible.
+              - Get or set the translucency of the lines at the upper and lower edges of the border wall, where 100% = invisible.
 
 
 
@@ -99,7 +99,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Graphics3DBorderWall.wall_translucency
     :type: float
 
-    Gets or sets the border wall's translucency percentage, where 100% = invisible.
+    Get or set the border wall's translucency percentage, where 100% = invisible.
 
 .. py:property:: use_line_translucency
     :canonical: ansys.stk.core.stkobjects.Graphics3DBorderWall.use_line_translucency
@@ -111,7 +111,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Graphics3DBorderWall.line_translucency
     :type: float
 
-    Gets or sets the translucency of the lines at the upper and lower edges of the border wall, where 100% = invisible.
+    Get or set the translucency of the lines at the upper and lower edges of the border wall, where 100% = invisible.
 
 
 Method detail

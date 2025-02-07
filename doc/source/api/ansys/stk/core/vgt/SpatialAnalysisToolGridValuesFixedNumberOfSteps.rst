@@ -21,9 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolGridValuesFixedNumberOfSteps.min`
-              - This property is deprecated. Use MinEx.
+              - Do not use this property, as it is deprecated. Use MinEx.
             * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolGridValuesFixedNumberOfSteps.max`
-              - This property is deprecated. Use MaxEx.
+              - Do not use this property, as it is deprecated. Use MaxEx.
             * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolGridValuesFixedNumberOfSteps.number_of_steps`
               - The number of steps between coordinate values.
             * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolGridValuesFixedNumberOfSteps.minimum`
@@ -48,13 +48,13 @@ Property detail
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolGridValuesFixedNumberOfSteps.min
     :type: float
 
-    This property is deprecated. Use MinEx.
+    Do not use this property, as it is deprecated. Use MinEx.
 
 .. py:property:: max
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolGridValuesFixedNumberOfSteps.max
     :type: float
 
-    This property is deprecated. Use MaxEx.
+    Do not use this property, as it is deprecated. Use MaxEx.
 
 .. py:property:: number_of_steps
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolGridValuesFixedNumberOfSteps.number_of_steps

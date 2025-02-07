@@ -21,9 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverFinite.pressure_mode`
-              - Gets or sets the pressure mode.
+              - Get or set the pressure mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverFinite.thrust_efficiency`
-              - Gets or sets the thrust efficiency value. Any number above zero is valid, with typical values around 0.98 to 1.02. Dimensionless.
+              - Get or set the thrust efficiency value. Any number above zero is valid, with typical values around 0.98 to 1.02. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverFinite.thrust_efficiency_mode`
               - Thrust - the calculations that are effected by the thrust efficiency value.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverFinite.propagator`
@@ -46,13 +46,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverFinite.pressure_mode
     :type: PressureMode
 
-    Gets or sets the pressure mode.
+    Get or set the pressure mode.
 
 .. py:property:: thrust_efficiency
     :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverFinite.thrust_efficiency
     :type: float
 
-    Gets or sets the thrust efficiency value. Any number above zero is valid, with typical values around 0.98 to 1.02. Dimensionless.
+    Get or set the thrust efficiency value. Any number above zero is valid, with typical values around 0.98 to 1.02. Dimensionless.
 
 .. py:property:: thrust_efficiency_mode
     :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverFinite.thrust_efficiency_mode

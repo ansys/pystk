@@ -42,9 +42,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOTrackPointCollection.count`
-              - Returns the number of elements in a collection.
+              - Return the number of elements in a collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOTrackPointCollection._new_enum`
-              - Returns an enumerator that can iterate through the collection.
+              - Return an enumerator that can iterate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOTrackPointCollection.recycling`
               - Recycling is used for optimizing performance in iterative modification or addition of elements in a particular collection (see Remarks section for this property).
 
@@ -65,13 +65,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.MTOTrackPointCollection.count
     :type: int
 
-    Returns the number of elements in a collection.
+    Return the number of elements in a collection.
 
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkobjects.MTOTrackPointCollection._new_enum
     :type: EnumeratorProxy
 
-    Returns an enumerator that can iterate through the collection.
+    Return an enumerator that can iterate through the collection.
 
 .. py:property:: recycling
     :canonical: ansys.stk.core.stkobjects.MTOTrackPointCollection.recycling

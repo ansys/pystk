@@ -28,7 +28,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.IStkRfcmProgressTrackCancel.cancel_requested`
-              - Gets whether or not cancel was requested.
+              - Get whether or not cancel was requested.
 
 
 Import detail
@@ -46,7 +46,7 @@ Property detail
     :canonical: ansys.stk.core.stkrfchannelmodeler.IStkRfcmProgressTrackCancel.cancel_requested
     :type: bool
 
-    Gets whether or not cancel was requested.
+    Get whether or not cancel was requested.
 
 
 Method detail

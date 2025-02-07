@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarModeBistaticReceiverSAR.pulse_integration`
-              - Gets the interface for configuring the SAR waveform pulse integration.
+              - Get the interface for configuring the SAR waveform pulse integration.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.RadarModeBistaticReceiverSAR.pulse_integration
     :type: RadarWaveformSarPulseIntegration
 
-    Gets the interface for configuring the SAR waveform pulse integration.
+    Get the interface for configuring the SAR waveform pulse integration.
 
 

@@ -32,7 +32,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics.attributes_type`
               - Get the 2D Graphics attributes type for the vehicle: basic, access intervals, custom intervals, or real time.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics.attributes_supported_types`
-              - Returns an array of valid choices.
+              - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics.attributes`
               - Get the vehicle's 2D Graphics attributes.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcGraphics.pass_data`
@@ -78,7 +78,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics.attributes_supported_types
     :type: list
 
-    Returns an array of valid choices.
+    Return an array of valid choices.
 
 .. py:property:: attributes
     :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics.attributes

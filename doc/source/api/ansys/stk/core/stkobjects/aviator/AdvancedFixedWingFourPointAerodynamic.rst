@@ -30,39 +30,39 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingFourPointAerodynamic.max_aoa`
-              - Gets or sets the maximum AOA for the aircraft.
+              - Get or set the maximum AOA for the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingFourPointAerodynamic.mach_1`
-              - Gets or sets the Mach for the first design point.
+              - Get or set the Mach for the first design point.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingFourPointAerodynamic.a_o_a_1`
-              - Gets or sets the AOA for the first design point.
+              - Get or set the AOA for the first design point.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingFourPointAerodynamic.c_l_1`
-              - Gets or sets the lift coefficient for the first design point.
+              - Get or set the lift coefficient for the first design point.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingFourPointAerodynamic.c_d_1`
-              - Gets or sets the drag coefficient for the first design point.
+              - Get or set the drag coefficient for the first design point.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingFourPointAerodynamic.mach_2`
-              - Gets or sets the Mach for the second design point.
+              - Get or set the Mach for the second design point.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingFourPointAerodynamic.a_o_a_2`
-              - Gets or sets the AOA for the second design point.
+              - Get or set the AOA for the second design point.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingFourPointAerodynamic.c_l_2`
-              - Gets or sets the lift coefficient for the second design point.
+              - Get or set the lift coefficient for the second design point.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingFourPointAerodynamic.c_d_2`
-              - Gets or sets the drag coefficient for the second design point.
+              - Get or set the drag coefficient for the second design point.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingFourPointAerodynamic.mach_3`
-              - Gets or sets the Mach for the third design point.
+              - Get or set the Mach for the third design point.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingFourPointAerodynamic.a_o_a_3`
-              - Gets or sets the AOA for the third design point.
+              - Get or set the AOA for the third design point.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingFourPointAerodynamic.c_l_3`
-              - Gets or sets the lift coefficient for the third design point.
+              - Get or set the lift coefficient for the third design point.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingFourPointAerodynamic.c_d_3`
-              - Gets or sets the drag coefficient for the third design point.
+              - Get or set the drag coefficient for the third design point.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingFourPointAerodynamic.mach_4`
-              - Gets or sets the Mach for the fourth design point.
+              - Get or set the Mach for the fourth design point.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingFourPointAerodynamic.a_o_a_4`
-              - Gets or sets the AOA for the fourth design point.
+              - Get or set the AOA for the fourth design point.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingFourPointAerodynamic.c_l_4`
-              - Gets or sets the lift coefficient for the fourth design point.
+              - Get or set the lift coefficient for the fourth design point.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingFourPointAerodynamic.c_d_4`
-              - Gets or sets the drag coefficient for the fourth design point.
+              - Get or set the drag coefficient for the fourth design point.
 
 
 
@@ -81,103 +81,103 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingFourPointAerodynamic.max_aoa
     :type: typing.Any
 
-    Gets or sets the maximum AOA for the aircraft.
+    Get or set the maximum AOA for the aircraft.
 
 .. py:property:: mach_1
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingFourPointAerodynamic.mach_1
     :type: float
 
-    Gets or sets the Mach for the first design point.
+    Get or set the Mach for the first design point.
 
 .. py:property:: a_o_a_1
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingFourPointAerodynamic.a_o_a_1
     :type: typing.Any
 
-    Gets or sets the AOA for the first design point.
+    Get or set the AOA for the first design point.
 
 .. py:property:: c_l_1
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingFourPointAerodynamic.c_l_1
     :type: float
 
-    Gets or sets the lift coefficient for the first design point.
+    Get or set the lift coefficient for the first design point.
 
 .. py:property:: c_d_1
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingFourPointAerodynamic.c_d_1
     :type: float
 
-    Gets or sets the drag coefficient for the first design point.
+    Get or set the drag coefficient for the first design point.
 
 .. py:property:: mach_2
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingFourPointAerodynamic.mach_2
     :type: float
 
-    Gets or sets the Mach for the second design point.
+    Get or set the Mach for the second design point.
 
 .. py:property:: a_o_a_2
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingFourPointAerodynamic.a_o_a_2
     :type: typing.Any
 
-    Gets or sets the AOA for the second design point.
+    Get or set the AOA for the second design point.
 
 .. py:property:: c_l_2
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingFourPointAerodynamic.c_l_2
     :type: float
 
-    Gets or sets the lift coefficient for the second design point.
+    Get or set the lift coefficient for the second design point.
 
 .. py:property:: c_d_2
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingFourPointAerodynamic.c_d_2
     :type: float
 
-    Gets or sets the drag coefficient for the second design point.
+    Get or set the drag coefficient for the second design point.
 
 .. py:property:: mach_3
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingFourPointAerodynamic.mach_3
     :type: float
 
-    Gets or sets the Mach for the third design point.
+    Get or set the Mach for the third design point.
 
 .. py:property:: a_o_a_3
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingFourPointAerodynamic.a_o_a_3
     :type: typing.Any
 
-    Gets or sets the AOA for the third design point.
+    Get or set the AOA for the third design point.
 
 .. py:property:: c_l_3
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingFourPointAerodynamic.c_l_3
     :type: float
 
-    Gets or sets the lift coefficient for the third design point.
+    Get or set the lift coefficient for the third design point.
 
 .. py:property:: c_d_3
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingFourPointAerodynamic.c_d_3
     :type: float
 
-    Gets or sets the drag coefficient for the third design point.
+    Get or set the drag coefficient for the third design point.
 
 .. py:property:: mach_4
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingFourPointAerodynamic.mach_4
     :type: float
 
-    Gets or sets the Mach for the fourth design point.
+    Get or set the Mach for the fourth design point.
 
 .. py:property:: a_o_a_4
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingFourPointAerodynamic.a_o_a_4
     :type: typing.Any
 
-    Gets or sets the AOA for the fourth design point.
+    Get or set the AOA for the fourth design point.
 
 .. py:property:: c_l_4
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingFourPointAerodynamic.c_l_4
     :type: float
 
-    Gets or sets the lift coefficient for the fourth design point.
+    Get or set the lift coefficient for the fourth design point.
 
 .. py:property:: c_d_4
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingFourPointAerodynamic.c_d_4
     :type: float
 
-    Gets or sets the drag coefficient for the fourth design point.
+    Get or set the drag coefficient for the fourth design point.
 
 
 Method detail

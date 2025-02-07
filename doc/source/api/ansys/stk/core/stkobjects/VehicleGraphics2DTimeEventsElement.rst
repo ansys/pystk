@@ -34,7 +34,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventsElement.time_event_type`
               - Type of time event graphics: line, marker or text.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventsElement.time_event_type_supported_types`
-              - Returns an array of valid choices.
+              - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventsElement.time_event_type_data`
               - Time event data.
 
@@ -67,7 +67,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventsElement.time_event_type_supported_types
     :type: list
 
-    Returns an array of valid choices.
+    Return an array of valid choices.
 
 .. py:property:: time_event_type_data
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventsElement.time_event_type_data

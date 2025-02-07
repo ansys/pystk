@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ModulatorModelExternal.filename`
-              - Gets or sets the external filename.
+              - Get or set the external filename.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.ModulatorModelExternal.filename
     :type: str
 
-    Gets or sets the external filename.
+    Get or set the external filename.
 
 

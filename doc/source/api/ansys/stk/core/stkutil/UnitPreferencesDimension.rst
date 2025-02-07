@@ -28,13 +28,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkutil.UnitPreferencesDimension.identifier`
-              - Returns the ID of the dimension.
+              - Return the ID of the dimension.
             * - :py:attr:`~ansys.stk.core.stkutil.UnitPreferencesDimension.name`
-              - Returns the current Dimension's full name.
+              - Return the current Dimension's full name.
             * - :py:attr:`~ansys.stk.core.stkutil.UnitPreferencesDimension.available_units`
-              - Returns collection of Units.
+              - Return collection of Units.
             * - :py:attr:`~ansys.stk.core.stkutil.UnitPreferencesDimension.current_unit`
-              - Returns the current unit for this dimension.
+              - Return the current unit for this dimension.
 
 
 
@@ -53,25 +53,25 @@ Property detail
     :canonical: ansys.stk.core.stkutil.UnitPreferencesDimension.identifier
     :type: int
 
-    Returns the ID of the dimension.
+    Return the ID of the dimension.
 
 .. py:property:: name
     :canonical: ansys.stk.core.stkutil.UnitPreferencesDimension.name
     :type: str
 
-    Returns the current Dimension's full name.
+    Return the current Dimension's full name.
 
 .. py:property:: available_units
     :canonical: ansys.stk.core.stkutil.UnitPreferencesDimension.available_units
     :type: UnitPreferencesUnitCollection
 
-    Returns collection of Units.
+    Return collection of Units.
 
 .. py:property:: current_unit
     :canonical: ansys.stk.core.stkutil.UnitPreferencesDimension.current_unit
     :type: UnitPreferencesUnit
 
-    Returns the current unit for this dimension.
+    Return the current unit for this dimension.
 
 
 Method detail

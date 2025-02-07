@@ -36,7 +36,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AutomaticSequenceCollection._new_enum`
-              - Allows you to enumerate through the collection.
+              - Allow you to enumerate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AutomaticSequenceCollection.count`
               - Get the size of the collection.
 
@@ -57,7 +57,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.AutomaticSequenceCollection._new_enum
     :type: EnumeratorProxy
 
-    Allows you to enumerate through the collection.
+    Allow you to enumerate through the collection.
 
 .. py:property:: count
     :canonical: ansys.stk.core.stkobjects.astrogator.AutomaticSequenceCollection.count

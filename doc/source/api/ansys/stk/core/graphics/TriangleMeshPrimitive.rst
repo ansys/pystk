@@ -34,27 +34,27 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.TriangleMeshPrimitive.wireframe`
-              - Gets or sets whether the primitive is rendered in wireframe. This is useful for debugging.
+              - Get or set whether the primitive is rendered in wireframe. This is useful for debugging.
             * - :py:attr:`~ansys.stk.core.graphics.TriangleMeshPrimitive.render_back_then_front_faces`
-              - Gets or sets whether the primitive is rendered in two passes to improve the visual quality for translucent, convex meshes.
+              - Get or set whether the primitive is rendered in two passes to improve the visual quality for translucent, convex meshes.
             * - :py:attr:`~ansys.stk.core.graphics.TriangleMeshPrimitive.lighting`
-              - Gets or sets whether the primitive is lit.
+              - Get or set whether the primitive is lit.
             * - :py:attr:`~ansys.stk.core.graphics.TriangleMeshPrimitive.triangle_winding_order`
-              - Gets or sets the orientation of front-facing triangles. This is used in combination with cull face for culling.
+              - Get or set the orientation of front-facing triangles. This is used in combination with cull face for culling.
             * - :py:attr:`~ansys.stk.core.graphics.TriangleMeshPrimitive.cull_face`
-              - Gets or sets whether front and/or back-facing triangles may be culled. This is used in combination with triangle winding order for culling.
+              - Get or set whether front and/or back-facing triangles may be culled. This is used in combination with triangle winding order for culling.
             * - :py:attr:`~ansys.stk.core.graphics.TriangleMeshPrimitive.shade_model`
-              - Gets or sets the shading model for the mesh.
+              - Get or set the shading model for the mesh.
             * - :py:attr:`~ansys.stk.core.graphics.TriangleMeshPrimitive.texture`
-              - Gets or sets the texture to be drawn on the triangle mesh. Textures can be obtained from textures.
+              - Get or set the texture to be drawn on the triangle mesh. Textures can be obtained from textures.
             * - :py:attr:`~ansys.stk.core.graphics.TriangleMeshPrimitive.texture_filter`
-              - Gets or sets the filter used for the texture associated with this triangle mesh.
+              - Get or set the filter used for the texture associated with this triangle mesh.
             * - :py:attr:`~ansys.stk.core.graphics.TriangleMeshPrimitive.set_hint`
-              - Gets the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with.
+              - Get the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with.
             * - :py:attr:`~ansys.stk.core.graphics.TriangleMeshPrimitive.central_body_clipped`
-              - Gets or sets whether individual points will be clipped by the central body.
+              - Get or set whether individual points will be clipped by the central body.
             * - :py:attr:`~ansys.stk.core.graphics.TriangleMeshPrimitive.two_sided_lighting`
-              - Gets or sets whether the primitive's translucent geometry will be lit from both sides of the surface.
+              - Get or set whether the primitive's translucent geometry will be lit from both sides of the surface.
 
 
 
@@ -73,67 +73,67 @@ Property detail
     :canonical: ansys.stk.core.graphics.TriangleMeshPrimitive.wireframe
     :type: bool
 
-    Gets or sets whether the primitive is rendered in wireframe. This is useful for debugging.
+    Get or set whether the primitive is rendered in wireframe. This is useful for debugging.
 
 .. py:property:: render_back_then_front_faces
     :canonical: ansys.stk.core.graphics.TriangleMeshPrimitive.render_back_then_front_faces
     :type: bool
 
-    Gets or sets whether the primitive is rendered in two passes to improve the visual quality for translucent, convex meshes.
+    Get or set whether the primitive is rendered in two passes to improve the visual quality for translucent, convex meshes.
 
 .. py:property:: lighting
     :canonical: ansys.stk.core.graphics.TriangleMeshPrimitive.lighting
     :type: bool
 
-    Gets or sets whether the primitive is lit.
+    Get or set whether the primitive is lit.
 
 .. py:property:: triangle_winding_order
     :canonical: ansys.stk.core.graphics.TriangleMeshPrimitive.triangle_winding_order
     :type: WindingOrder
 
-    Gets or sets the orientation of front-facing triangles. This is used in combination with cull face for culling.
+    Get or set the orientation of front-facing triangles. This is used in combination with cull face for culling.
 
 .. py:property:: cull_face
     :canonical: ansys.stk.core.graphics.TriangleMeshPrimitive.cull_face
     :type: FaceCullingMode
 
-    Gets or sets whether front and/or back-facing triangles may be culled. This is used in combination with triangle winding order for culling.
+    Get or set whether front and/or back-facing triangles may be culled. This is used in combination with triangle winding order for culling.
 
 .. py:property:: shade_model
     :canonical: ansys.stk.core.graphics.TriangleMeshPrimitive.shade_model
     :type: RendererShadingModel
 
-    Gets or sets the shading model for the mesh.
+    Get or set the shading model for the mesh.
 
 .. py:property:: texture
     :canonical: ansys.stk.core.graphics.TriangleMeshPrimitive.texture
     :type: RendererTexture2D
 
-    Gets or sets the texture to be drawn on the triangle mesh. Textures can be obtained from textures.
+    Get or set the texture to be drawn on the triangle mesh. Textures can be obtained from textures.
 
 .. py:property:: texture_filter
     :canonical: ansys.stk.core.graphics.TriangleMeshPrimitive.texture_filter
     :type: TextureFilter2D
 
-    Gets or sets the filter used for the texture associated with this triangle mesh.
+    Get or set the filter used for the texture associated with this triangle mesh.
 
 .. py:property:: set_hint
     :canonical: ansys.stk.core.graphics.TriangleMeshPrimitive.set_hint
     :type: SetHint
 
-    Gets the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with.
+    Get the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with.
 
 .. py:property:: central_body_clipped
     :canonical: ansys.stk.core.graphics.TriangleMeshPrimitive.central_body_clipped
     :type: bool
 
-    Gets or sets whether individual points will be clipped by the central body.
+    Get or set whether individual points will be clipped by the central body.
 
 .. py:property:: two_sided_lighting
     :canonical: ansys.stk.core.graphics.TriangleMeshPrimitive.two_sided_lighting
     :type: bool
 
-    Gets or sets whether the primitive's translucent geometry will be lit from both sides of the surface.
+    Get or set whether the primitive's translucent geometry will be lit from both sides of the surface.
 
 
 Method detail

@@ -42,17 +42,17 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFlightLine.enroute_cruise_airspeed_options`
               - Get the enroute cruise airspeed options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFlightLine.procedure_type`
-              - Gets or sets the procedure methodology used to calculate the flight line.
+              - Get or set the procedure methodology used to calculate the flight line.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFlightLine.outbound_course`
-              - Gets or sets the outbound course.
+              - Get or set the outbound course.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFlightLine.use_magnetic_heading`
-              - Gets or sets the option to use a magnetic heading.
+              - Get or set the option to use a magnetic heading.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFlightLine.leg_length`
-              - Gets or sets the length of the flight line.
+              - Get or set the length of the flight line.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFlightLine.must_level_off`
               - Opt whether the procedure must level off.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFlightLine.level_off_mode`
-              - Gets or sets the level off mode. This is only used when the must level off option is on.
+              - Get or set the level off mode. This is only used when the must level off option is on.
 
 
 
@@ -107,25 +107,25 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFlightLine.procedure_type
     :type: FlightLineProcedureType
 
-    Gets or sets the procedure methodology used to calculate the flight line.
+    Get or set the procedure methodology used to calculate the flight line.
 
 .. py:property:: outbound_course
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFlightLine.outbound_course
     :type: typing.Any
 
-    Gets or sets the outbound course.
+    Get or set the outbound course.
 
 .. py:property:: use_magnetic_heading
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFlightLine.use_magnetic_heading
     :type: bool
 
-    Gets or sets the option to use a magnetic heading.
+    Get or set the option to use a magnetic heading.
 
 .. py:property:: leg_length
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFlightLine.leg_length
     :type: float
 
-    Gets or sets the length of the flight line.
+    Get or set the length of the flight line.
 
 .. py:property:: must_level_off
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFlightLine.must_level_off
@@ -137,7 +137,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFlightLine.level_off_mode
     :type: AltitudeConstraintManeuverMode
 
-    Gets or sets the level off mode. This is only used when the must level off option is on.
+    Get or set the level off mode. This is only used when the must level off option is on.
 
 
 Method detail

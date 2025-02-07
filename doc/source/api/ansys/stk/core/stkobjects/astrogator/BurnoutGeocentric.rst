@@ -21,11 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.BurnoutGeocentric.latitude`
-              - Gets or sets the latitude of the spacecraft burnout. Uses Angle Dimension.
+              - Get or set the latitude of the spacecraft burnout. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.BurnoutGeocentric.longitude`
-              - Gets or sets the longitude of the spacecraft burnout. Uses Angle Dimension.
+              - Get or set the longitude of the spacecraft burnout. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.BurnoutGeocentric.radius`
-              - Gets or sets the radius of the spacecraft burnout. Uses Distance Dimension.
+              - Get or set the radius of the spacecraft burnout. Uses Distance Dimension.
 
 
 
@@ -44,18 +44,18 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.BurnoutGeocentric.latitude
     :type: typing.Any
 
-    Gets or sets the latitude of the spacecraft burnout. Uses Angle Dimension.
+    Get or set the latitude of the spacecraft burnout. Uses Angle Dimension.
 
 .. py:property:: longitude
     :canonical: ansys.stk.core.stkobjects.astrogator.BurnoutGeocentric.longitude
     :type: typing.Any
 
-    Gets or sets the longitude of the spacecraft burnout. Uses Angle Dimension.
+    Get or set the longitude of the spacecraft burnout. Uses Angle Dimension.
 
 .. py:property:: radius
     :canonical: ansys.stk.core.stkobjects.astrogator.BurnoutGeocentric.radius
     :type: float
 
-    Gets or sets the radius of the spacecraft burnout. Uses Distance Dimension.
+    Get or set the radius of the spacecraft burnout. Uses Distance Dimension.
 
 

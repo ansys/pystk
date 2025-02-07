@@ -27,19 +27,19 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileSNOPTOptimizer.targeter_graphs`
               - Graphs.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileSNOPTOptimizer.scripting_tool`
-              - Returns the Scripting tool for the sequence.
+              - Return the Scripting tool for the sequence.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileSNOPTOptimizer.reset_controls_before_run`
               - Reset controls before each run.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileSNOPTOptimizer.max_major_iterations`
-              - Gets or sets the maximum number of major iterations allowed.
+              - Get or set the maximum number of major iterations allowed.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileSNOPTOptimizer.tolerance_on_major_feasibility`
-              - Specifies how accurately the nonlinear constraints should be satisfied.
+              - Specify how accurately the nonlinear constraints should be satisfied.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileSNOPTOptimizer.tolerance_on_major_optimality`
-              - Specifies the final accuracy of the dual variables.
+              - Specify the final accuracy of the dual variables.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileSNOPTOptimizer.max_minor_iterations`
-              - Gets or sets the maximum number of iterations for the QP subproblem allowed during a single major iteration.
+              - Get or set the maximum number of iterations for the QP subproblem allowed during a single major iteration.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileSNOPTOptimizer.tolerance_on_minor_feasibility`
-              - Gets or sets the tolerance which the QP subproblem must meet before being considered feasible.
+              - Get or set the tolerance which the QP subproblem must meet before being considered feasible.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileSNOPTOptimizer.tolerance_on_minor_optimality`
               - Undocumented in the SNOPT literature, and included here for completeness in terms of tolerance options.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileSNOPTOptimizer.options_filename`
@@ -82,7 +82,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileSNOPTOptimizer.scripting_tool
     :type: ScriptingTool
 
-    Returns the Scripting tool for the sequence.
+    Return the Scripting tool for the sequence.
 
 .. py:property:: reset_controls_before_run
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileSNOPTOptimizer.reset_controls_before_run
@@ -94,31 +94,31 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileSNOPTOptimizer.max_major_iterations
     :type: int
 
-    Gets or sets the maximum number of major iterations allowed.
+    Get or set the maximum number of major iterations allowed.
 
 .. py:property:: tolerance_on_major_feasibility
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileSNOPTOptimizer.tolerance_on_major_feasibility
     :type: float
 
-    Specifies how accurately the nonlinear constraints should be satisfied.
+    Specify how accurately the nonlinear constraints should be satisfied.
 
 .. py:property:: tolerance_on_major_optimality
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileSNOPTOptimizer.tolerance_on_major_optimality
     :type: float
 
-    Specifies the final accuracy of the dual variables.
+    Specify the final accuracy of the dual variables.
 
 .. py:property:: max_minor_iterations
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileSNOPTOptimizer.max_minor_iterations
     :type: int
 
-    Gets or sets the maximum number of iterations for the QP subproblem allowed during a single major iteration.
+    Get or set the maximum number of iterations for the QP subproblem allowed during a single major iteration.
 
 .. py:property:: tolerance_on_minor_feasibility
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileSNOPTOptimizer.tolerance_on_minor_feasibility
     :type: float
 
-    Gets or sets the tolerance which the QP subproblem must meet before being considered feasible.
+    Get or set the tolerance which the QP subproblem must meet before being considered feasible.
 
 .. py:property:: tolerance_on_minor_optimality
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileSNOPTOptimizer.tolerance_on_minor_optimality

@@ -33,7 +33,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteInitialBoundaryConditions.l`
               - Bound limits for element L.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteInitialBoundaryConditions.provide_runtime_type_info`
-              - Returns the IAgRuntimeTypeInfo interface to access properties at runtime.
+              - Return the IAgRuntimeTypeInfo interface to access properties at runtime.
 
 
 
@@ -94,6 +94,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteInitialBoundaryConditions.provide_runtime_type_info
     :type: IRuntimeTypeInfo
 
-    Returns the IAgRuntimeTypeInfo interface to access properties at runtime.
+    Return the IAgRuntimeTypeInfo interface to access properties at runtime.
 
 

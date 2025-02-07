@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.RungeKutta4th.initial_step`
-              - Gets or sets the initial step. Uses time dimension.
+              - Get or set the initial step. Uses time dimension.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.RungeKutta4th.initial_step
     :type: float
 
-    Gets or sets the initial step. Uses time dimension.
+    Get or set the initial step. Uses time dimension.
 
 

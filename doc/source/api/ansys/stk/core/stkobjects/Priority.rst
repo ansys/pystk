@@ -19,9 +19,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.Priority.name`
-              - Gets the target's name.
+              - Get the target's name.
             * - :py:attr:`~ansys.stk.core.stkobjects.Priority.value`
-              - Gets or set the target's priority value.
+              - Get or set the target's priority value.
 
 
 
@@ -40,12 +40,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Priority.name
     :type: str
 
-    Gets the target's name.
+    Get the target's name.
 
 .. py:property:: value
     :canonical: ansys.stk.core.stkobjects.Priority.value
     :type: int
 
-    Gets or set the target's priority value.
+    Get or set the target's priority value.
 
 

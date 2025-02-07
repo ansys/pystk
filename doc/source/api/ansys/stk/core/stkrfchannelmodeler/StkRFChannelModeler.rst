@@ -27,7 +27,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.StkRFChannelModeler.construct_analysis`
               - Construct an Analysis for an analysis configuration.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.StkRFChannelModeler.validate_analysis`
-              - Validate an analysis configuration.
+              - Validates an analysis configuration.
 
     .. tab-item:: Properties
         
@@ -36,17 +36,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.StkRFChannelModeler.transceiver_collection`
-              - Gets the collection of transceiver objects.
+              - Get the collection of transceiver objects.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.StkRFChannelModeler.analysis_configuration_collection`
-              - Gets the collection of analysis configurations.
+              - Get the collection of analysis configurations.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.StkRFChannelModeler.supported_materials`
-              - Gets the supported tileset materials
+              - Get the supported tileset materials
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.StkRFChannelModeler.default_materials`
-              - Gets the default tileset materials
+              - Get the default tileset materials
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.StkRFChannelModeler.compute_options`
-              - Gets the compute options.
+              - Get the compute options.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.StkRFChannelModeler.supported_gpu_properties_list`
-              - Gets the GPU properties list.
+              - Get the GPU properties list.
 
 
 
@@ -65,37 +65,37 @@ Property detail
     :canonical: ansys.stk.core.stkrfchannelmodeler.StkRFChannelModeler.transceiver_collection
     :type: StkRfcmTransceiverCollection
 
-    Gets the collection of transceiver objects.
+    Get the collection of transceiver objects.
 
 .. py:property:: analysis_configuration_collection
     :canonical: ansys.stk.core.stkrfchannelmodeler.StkRFChannelModeler.analysis_configuration_collection
     :type: StkRfcmAnalysisConfigurationCollection
 
-    Gets the collection of analysis configurations.
+    Get the collection of analysis configurations.
 
 .. py:property:: supported_materials
     :canonical: ansys.stk.core.stkrfchannelmodeler.StkRFChannelModeler.supported_materials
     :type: list
 
-    Gets the supported tileset materials
+    Get the supported tileset materials
 
 .. py:property:: default_materials
     :canonical: ansys.stk.core.stkrfchannelmodeler.StkRFChannelModeler.default_materials
     :type: list
 
-    Gets the default tileset materials
+    Get the default tileset materials
 
 .. py:property:: compute_options
     :canonical: ansys.stk.core.stkrfchannelmodeler.StkRFChannelModeler.compute_options
     :type: StkRfcmComputeOptions
 
-    Gets the compute options.
+    Get the compute options.
 
 .. py:property:: supported_gpu_properties_list
     :canonical: ansys.stk.core.stkrfchannelmodeler.StkRFChannelModeler.supported_gpu_properties_list
     :type: list
 
-    Gets the GPU properties list.
+    Get the GPU properties list.
 
 
 Method detail
@@ -162,7 +162,7 @@ Method detail
 .. py:method:: validate_analysis(self, analysis_configuration_name: str) -> StkRfcmValidationResponse
     :canonical: ansys.stk.core.stkrfchannelmodeler.StkRFChannelModeler.validate_analysis
 
-    Validate an analysis configuration.
+    Validates an analysis configuration.
 
     :Parameters:
 

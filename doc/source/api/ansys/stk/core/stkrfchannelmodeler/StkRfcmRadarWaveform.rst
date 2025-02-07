@@ -19,11 +19,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmRadarWaveform.rf_channel_frequency`
-              - Gets or sets the waveform frequency.
+              - Get or set the waveform frequency.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmRadarWaveform.pulse_repetition_frequency`
-              - Gets or set the pulse repetition frequency.
+              - Get or set the pulse repetition frequency.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmRadarWaveform.bandwidth`
-              - Gets or sets the waveform bandwidth.
+              - Get or set the waveform bandwidth.
 
 
 
@@ -42,18 +42,18 @@ Property detail
     :canonical: ansys.stk.core.stkrfchannelmodeler.StkRfcmRadarWaveform.rf_channel_frequency
     :type: float
 
-    Gets or sets the waveform frequency.
+    Get or set the waveform frequency.
 
 .. py:property:: pulse_repetition_frequency
     :canonical: ansys.stk.core.stkrfchannelmodeler.StkRfcmRadarWaveform.pulse_repetition_frequency
     :type: float
 
-    Gets or set the pulse repetition frequency.
+    Get or set the pulse repetition frequency.
 
 .. py:property:: bandwidth
     :canonical: ansys.stk.core.stkrfchannelmodeler.StkRfcmRadarWaveform.bandwidth
     :type: float
 
-    Gets or sets the waveform bandwidth.
+    Get or set the waveform bandwidth.
 
 

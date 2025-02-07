@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmRadarSarAnalysisConfigurationModel.image_location_collection`
-              - Gets the collection of image locations.
+              - Get the collection of image locations.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.stkrfchannelmodeler.StkRfcmRadarSarAnalysisConfigurationModel.image_location_collection
     :type: StkRfcmRadarSarImageLocationCollection
 
-    Gets the collection of image locations.
+    Get the collection of image locations.
 
 

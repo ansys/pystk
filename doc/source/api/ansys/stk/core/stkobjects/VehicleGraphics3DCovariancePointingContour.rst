@@ -36,13 +36,13 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DCovariancePointingContour.sigma_scale_type`
               - Opt whether to size the contour indirectly by specifying a probability or directly by specifying a scale.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DCovariancePointingContour.sigma_scale_supported_types`
-              - Returns an array of valid choices.
+              - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DCovariancePointingContour.sigma_scale`
               - Get the sigma scale.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DCovariancePointingContour.attributes_type`
               - Get the graphics attributes type.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DCovariancePointingContour.attributes_supported_types`
-              - Returns an array of valid choices.
+              - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DCovariancePointingContour.attributes`
               - Get the graphics attributes.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DCovariancePointingContour.show_cone`
@@ -75,7 +75,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DCovariancePointingContour.sigma_scale_supported_types
     :type: list
 
-    Returns an array of valid choices.
+    Return an array of valid choices.
 
 .. py:property:: sigma_scale
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DCovariancePointingContour.sigma_scale
@@ -93,7 +93,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DCovariancePointingContour.attributes_supported_types
     :type: list
 
-    Returns an array of valid choices.
+    Return an array of valid choices.
 
 .. py:property:: attributes
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DCovariancePointingContour.attributes

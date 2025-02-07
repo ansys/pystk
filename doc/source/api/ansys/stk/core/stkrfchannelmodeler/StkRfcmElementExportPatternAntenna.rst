@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmElementExportPatternAntenna.hfss_element_export_pattern_file`
-              - Gets or sets the HFSS element export pattern file.
+              - Get or set the HFSS element export pattern file.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.stkrfchannelmodeler.StkRfcmElementExportPatternAntenna.hfss_element_export_pattern_file
     :type: str
 
-    Gets or sets the HFSS element export pattern file.
+    Get or set the HFSS element export pattern file.
 
 

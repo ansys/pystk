@@ -32,7 +32,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicleGraphics.attributes_type`
               - Get the 2D Graphics attributes type: basic, access intervals, custom intervals, or real time.
             * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicleGraphics.attributes_supported_types`
-              - Returns an array of valid choices.
+              - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicleGraphics.attributes`
               - Get the launch vehicle's 2D Graphics attributes.
             * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicleGraphics.pass_data`
@@ -62,7 +62,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicleGraphics.show_graphics`
               - Specify whether graphics attributes of the launch vehicle are visible.
             * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicleGraphics.radar_cross_section`
-              - Gets the radar cross section graphics interface.
+              - Get the radar cross section graphics interface.
 
 
 
@@ -87,7 +87,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.LaunchVehicleGraphics.attributes_supported_types
     :type: list
 
-    Returns an array of valid choices.
+    Return an array of valid choices.
 
 .. py:property:: attributes
     :canonical: ansys.stk.core.stkobjects.LaunchVehicleGraphics.attributes
@@ -177,7 +177,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.LaunchVehicleGraphics.radar_cross_section
     :type: RadarCrossSectionGraphics
 
-    Gets the radar cross section graphics interface.
+    Get the radar cross section graphics interface.
 
 
 Method detail

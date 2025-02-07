@@ -19,7 +19,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.PassBreakNumberingDateOfFirstPass.first_pass_number`
-              - Gets or sets the number at which pass numbering begins. Dimensionless.
+              - Get or set the number at which pass numbering begins. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.PassBreakNumberingDateOfFirstPass.pass_data_epoch`
               - Get the start time of the first pass.
 
@@ -40,7 +40,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.PassBreakNumberingDateOfFirstPass.first_pass_number
     :type: int
 
-    Gets or sets the number at which pass numbering begins. Dimensionless.
+    Get or set the number at which pass numbering begins. Dimensionless.
 
 .. py:property:: pass_data_epoch
     :canonical: ansys.stk.core.stkobjects.PassBreakNumberingDateOfFirstPass.pass_data_epoch

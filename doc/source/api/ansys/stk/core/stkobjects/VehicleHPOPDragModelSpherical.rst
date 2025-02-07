@@ -23,7 +23,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleHPOPDragModelSpherical.cd`
               - Drag coefficient. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleHPOPDragModelSpherical.area_mass_ratio`
-              - Gets or sets the area-to-mass ratio to be used in drag calculations. Uses AreaPerMass Dimension.
+              - Get or set the area-to-mass ratio to be used in drag calculations. Uses AreaPerMass Dimension.
 
 
 
@@ -48,6 +48,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleHPOPDragModelSpherical.area_mass_ratio
     :type: float
 
-    Gets or sets the area-to-mass ratio to be used in drag calculations. Uses AreaPerMass Dimension.
+    Get or set the area-to-mass ratio to be used in drag calculations. Uses AreaPerMass Dimension.
 
 

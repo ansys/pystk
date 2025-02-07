@@ -38,13 +38,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultDataSetCollection.count`
-              - Returns a number of elements in collection.
+              - Return a number of elements in collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultDataSetCollection._new_enum`
-              - Returns an enumerator for the collection.
+              - Return an enumerator for the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultDataSetCollection.row_count`
-              - Returns the number of rows in the dataset collection.
+              - Return the number of rows in the dataset collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultDataSetCollection.element_names`
-              - Returns the element names.
+              - Return the element names.
 
 
 
@@ -63,25 +63,25 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.DataProviderResultDataSetCollection.count
     :type: int
 
-    Returns a number of elements in collection.
+    Return a number of elements in collection.
 
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkobjects.DataProviderResultDataSetCollection._new_enum
     :type: EnumeratorProxy
 
-    Returns an enumerator for the collection.
+    Return an enumerator for the collection.
 
 .. py:property:: row_count
     :canonical: ansys.stk.core.stkobjects.DataProviderResultDataSetCollection.row_count
     :type: int
 
-    Returns the number of rows in the dataset collection.
+    Return the number of rows in the dataset collection.
 
 .. py:property:: element_names
     :canonical: ansys.stk.core.stkobjects.DataProviderResultDataSetCollection.element_names
     :type: list
 
-    Returns the element names.
+    Return the element names.
 
 
 Method detail

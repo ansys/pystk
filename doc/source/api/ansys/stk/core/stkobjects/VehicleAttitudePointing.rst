@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleAttitudePointing.advanced`
-              - Returns advanced targeting access computation properties.
+              - Return advanced targeting access computation properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleAttitudePointing.target_slew`
               - Define the time required for the vehicle to move from its basic attitude to its target pointing attitude, and to change from the target pointing attitude back to the basic attitude.
 
@@ -42,7 +42,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleAttitudePointing.advanced
     :type: VehicleAccessAdvancedSettings
 
-    Returns advanced targeting access computation properties.
+    Return advanced targeting access computation properties.
 
 .. py:property:: target_slew
     :canonical: ansys.stk.core.stkobjects.VehicleAttitudePointing.target_slew

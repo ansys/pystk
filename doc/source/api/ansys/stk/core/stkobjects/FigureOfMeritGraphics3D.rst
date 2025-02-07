@@ -25,7 +25,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics3D.granularity`
               - Fill granularity: the sampling distance between points used when grid points are filled and smooth contours are not used.
             * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics3D.pixels_per_degree`
-              - Gets or sets the number of pixels used in one degree in the temporary file created when smooth contours are used.
+              - Get or set the number of pixels used in one degree in the temporary file created when smooth contours are used.
 
 
 
@@ -62,6 +62,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.FigureOfMeritGraphics3D.pixels_per_degree
     :type: float
 
-    Gets or sets the number of pixels used in one degree in the temporary file created when smooth contours are used.
+    Get or set the number of pixels used in one degree in the temporary file created when smooth contours are used.
 
 

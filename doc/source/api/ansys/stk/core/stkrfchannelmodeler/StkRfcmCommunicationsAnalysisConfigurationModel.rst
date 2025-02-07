@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmCommunicationsAnalysisConfigurationModel.transceiver_configuration_collection`
-              - Gets the collection of transceiver configurations.
+              - Get the collection of transceiver configurations.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.stkrfchannelmodeler.StkRfcmCommunicationsAnalysisConfigurationModel.transceiver_configuration_collection
     :type: StkRfcmCommunicationsTransceiverConfigurationCollection
 
-    Gets the collection of transceiver configurations.
+    Get the collection of transceiver configurations.
 
 

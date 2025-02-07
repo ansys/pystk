@@ -34,9 +34,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleEclipsingBodies.available_eclipsing_bodies`
-              - Gets the available eclipsing bodies.
+              - Get the available eclipsing bodies.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleEclipsingBodies.assigned_eclipsing_bodies`
-              - Gets the assigned eclipsing bodies.
+              - Get the assigned eclipsing bodies.
 
 
 
@@ -55,13 +55,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleEclipsingBodies.available_eclipsing_bodies
     :type: list
 
-    Gets the available eclipsing bodies.
+    Get the available eclipsing bodies.
 
 .. py:property:: assigned_eclipsing_bodies
     :canonical: ansys.stk.core.stkobjects.VehicleEclipsingBodies.assigned_eclipsing_bodies
     :type: list
 
-    Gets the assigned eclipsing bodies.
+    Get the assigned eclipsing bodies.
 
 
 Method detail

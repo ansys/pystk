@@ -25,7 +25,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGraphics2DStatic.show_labels`
               - Specify whether the name of each coverage region displays in the 2D Graphics window.
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGraphics2DStatic.color`
-              - Gets or sets the color in which regions and points display in the 2D Graphics window.
+              - Get or set the color in which regions and points display in the 2D Graphics window.
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGraphics2DStatic.fill_points`
               - Specify whether coverage points or regions display as filled polygons in the 2D Graphics window.
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGraphics2DStatic.marker_style`
@@ -68,7 +68,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.CoverageGraphics2DStatic.color
     :type: agcolor.Color
 
-    Gets or sets the color in which regions and points display in the 2D Graphics window.
+    Get or set the color in which regions and points display in the 2D Graphics window.
 
 .. py:property:: fill_points
     :canonical: ansys.stk.core.stkobjects.CoverageGraphics2DStatic.fill_points

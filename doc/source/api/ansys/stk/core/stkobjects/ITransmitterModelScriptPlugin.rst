@@ -19,7 +19,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModelScriptPlugin.filename`
-              - Gets or sets the script plugin filename.
+              - Get or set the script plugin filename.
 
 
 Import detail
@@ -37,6 +37,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.ITransmitterModelScriptPlugin.filename
     :type: str
 
-    Gets or sets the script plugin filename.
+    Get or set the script plugin filename.
 
 

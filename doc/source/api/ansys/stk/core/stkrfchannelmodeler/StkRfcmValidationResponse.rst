@@ -19,9 +19,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmValidationResponse.value`
-              - Gets the validation indicator.
+              - Get the validation indicator.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmValidationResponse.message`
-              - Gets the validation message.
+              - Get the validation message.
 
 
 
@@ -40,12 +40,12 @@ Property detail
     :canonical: ansys.stk.core.stkrfchannelmodeler.StkRfcmValidationResponse.value
     :type: bool
 
-    Gets the validation indicator.
+    Get the validation indicator.
 
 .. py:property:: message
     :canonical: ansys.stk.core.stkrfchannelmodeler.StkRfcmValidationResponse.message
     :type: str
 
-    Gets the validation message.
+    Get the validation message.
 
 

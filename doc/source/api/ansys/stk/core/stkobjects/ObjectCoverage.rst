@@ -32,11 +32,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ObjectCoverage.data_providers`
-              - Returns the object representing a list of available data providers for the object.
+              - Return the object representing a list of available data providers for the object.
             * - :py:attr:`~ansys.stk.core.stkobjects.ObjectCoverage.start_time`
-              - Gets or sets the start time of object coverage. Uses DateFormat Dimension.
+              - Get or set the start time of object coverage. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ObjectCoverage.stop_time`
-              - Gets or sets the stop time of object coverage. Uses DateFormat Dimension.
+              - Get or set the stop time of object coverage. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ObjectCoverage.assets`
               - Get the asset list collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.ObjectCoverage.figure_of_merit`
@@ -65,19 +65,19 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.ObjectCoverage.data_providers
     :type: DataProviderCollection
 
-    Returns the object representing a list of available data providers for the object.
+    Return the object representing a list of available data providers for the object.
 
 .. py:property:: start_time
     :canonical: ansys.stk.core.stkobjects.ObjectCoverage.start_time
     :type: typing.Any
 
-    Gets or sets the start time of object coverage. Uses DateFormat Dimension.
+    Get or set the start time of object coverage. Uses DateFormat Dimension.
 
 .. py:property:: stop_time
     :canonical: ansys.stk.core.stkobjects.ObjectCoverage.stop_time
     :type: typing.Any
 
-    Gets or sets the stop time of object coverage. Uses DateFormat Dimension.
+    Get or set the stop time of object coverage. Uses DateFormat Dimension.
 
 .. py:property:: assets
     :canonical: ansys.stk.core.stkobjects.ObjectCoverage.assets

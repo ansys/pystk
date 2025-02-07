@@ -36,13 +36,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.CalculationToolConditionGroup.context`
-              - Returns a context object. The context can be used to find out which central body or STK object this instance is associated with.
+              - Return a context object. The context can be used to find out which central body or STK object this instance is associated with.
             * - :py:attr:`~ansys.stk.core.vgt.CalculationToolConditionGroup.count`
-              - Returns a number of elements in the group.
+              - Return a number of elements in the group.
             * - :py:attr:`~ansys.stk.core.vgt.CalculationToolConditionGroup.factory`
-              - Returns a factory object used to create calc scalar components.
+              - Return a factory object used to create calc scalar components.
             * - :py:attr:`~ansys.stk.core.vgt.CalculationToolConditionGroup._new_enum`
-              - Returns a COM enumerator.
+              - Return a COM enumerator.
 
 
 
@@ -61,25 +61,25 @@ Property detail
     :canonical: ansys.stk.core.vgt.CalculationToolConditionGroup.context
     :type: IAnalysisWorkbenchComponentContext
 
-    Returns a context object. The context can be used to find out which central body or STK object this instance is associated with.
+    Return a context object. The context can be used to find out which central body or STK object this instance is associated with.
 
 .. py:property:: count
     :canonical: ansys.stk.core.vgt.CalculationToolConditionGroup.count
     :type: int
 
-    Returns a number of elements in the group.
+    Return a number of elements in the group.
 
 .. py:property:: factory
     :canonical: ansys.stk.core.vgt.CalculationToolConditionGroup.factory
     :type: CalculationToolConditionFactory
 
-    Returns a factory object used to create calc scalar components.
+    Return a factory object used to create calc scalar components.
 
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.vgt.CalculationToolConditionGroup._new_enum
     :type: EnumeratorProxy
 
-    Returns a COM enumerator.
+    Return a COM enumerator.
 
 
 Method detail

@@ -19,25 +19,25 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.FacilityGraphics3D.model`
-              - Returns Model properties.
+              - Return Model properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.FacilityGraphics3D.offsets`
-              - Returns Offsets properties.
+              - Return Offsets properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.FacilityGraphics3D.range_contours`
-              - Returns Range Contours properties.
+              - Return Range Contours properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.FacilityGraphics3D.data_displays`
-              - Returns DataDisplays collection.
+              - Return DataDisplays collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.FacilityGraphics3D.vector`
-              - Returns a vector.
+              - Return a vector.
             * - :py:attr:`~ansys.stk.core.stkobjects.FacilityGraphics3D.az_el_mask`
-              - Returns the AzElMask property.
+              - Return the AzElMask property.
             * - :py:attr:`~ansys.stk.core.stkobjects.FacilityGraphics3D.model_pointing`
-              - Returns ModelPointing properties used to point parts of a facility model toward a target, such as the Sun or Earth.
+              - Return ModelPointing properties used to point parts of a facility model toward a target, such as the Sun or Earth.
             * - :py:attr:`~ansys.stk.core.stkobjects.FacilityGraphics3D.uncertainty_area_label_swap_distance`
               - Area of uncertainty label swap distance.
             * - :py:attr:`~ansys.stk.core.stkobjects.FacilityGraphics3D.vapor_trail`
               - Vapor trail attributes.
             * - :py:attr:`~ansys.stk.core.stkobjects.FacilityGraphics3D.radar_cross_section`
-              - Gets the radar cross section graphics interface.
+              - Get the radar cross section graphics interface.
 
 
 
@@ -56,43 +56,43 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.FacilityGraphics3D.model
     :type: PointTargetGraphics3DModel
 
-    Returns Model properties.
+    Return Model properties.
 
 .. py:property:: offsets
     :canonical: ansys.stk.core.stkobjects.FacilityGraphics3D.offsets
     :type: Graphics3DOffset
 
-    Returns Offsets properties.
+    Return Offsets properties.
 
 .. py:property:: range_contours
     :canonical: ansys.stk.core.stkobjects.FacilityGraphics3D.range_contours
     :type: Graphics3DRangeContours
 
-    Returns Range Contours properties.
+    Return Range Contours properties.
 
 .. py:property:: data_displays
     :canonical: ansys.stk.core.stkobjects.FacilityGraphics3D.data_displays
     :type: Graphics3DDataDisplayCollection
 
-    Returns DataDisplays collection.
+    Return DataDisplays collection.
 
 .. py:property:: vector
     :canonical: ansys.stk.core.stkobjects.FacilityGraphics3D.vector
     :type: Graphics3DVector
 
-    Returns a vector.
+    Return a vector.
 
 .. py:property:: az_el_mask
     :canonical: ansys.stk.core.stkobjects.FacilityGraphics3D.az_el_mask
     :type: Graphics3DAzElMask
 
-    Returns the AzElMask property.
+    Return the AzElMask property.
 
 .. py:property:: model_pointing
     :canonical: ansys.stk.core.stkobjects.FacilityGraphics3D.model_pointing
     :type: Graphics3DModelPointing
 
-    Returns ModelPointing properties used to point parts of a facility model toward a target, such as the Sun or Earth.
+    Return ModelPointing properties used to point parts of a facility model toward a target, such as the Sun or Earth.
 
 .. py:property:: uncertainty_area_label_swap_distance
     :canonical: ansys.stk.core.stkobjects.FacilityGraphics3D.uncertainty_area_label_swap_distance
@@ -110,6 +110,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.FacilityGraphics3D.radar_cross_section
     :type: RadarCrossSectionGraphics3D
 
-    Gets the radar cross section graphics interface.
+    Get the radar cross section graphics interface.
 
 

@@ -21,9 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.RFFilterModelHammingWindow.sampling_frequency`
-              - Gets or sets the sampling frequency.
+              - Get or set the sampling frequency.
             * - :py:attr:`~ansys.stk.core.stkobjects.RFFilterModelHammingWindow.order`
-              - Gets or sets the filter order.
+              - Get or set the filter order.
 
 
 
@@ -42,12 +42,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.RFFilterModelHammingWindow.sampling_frequency
     :type: float
 
-    Gets or sets the sampling frequency.
+    Get or set the sampling frequency.
 
 .. py:property:: order
     :canonical: ansys.stk.core.stkobjects.RFFilterModelHammingWindow.order
     :type: int
 
-    Gets or sets the filter order.
+    Get or set the filter order.
 
 

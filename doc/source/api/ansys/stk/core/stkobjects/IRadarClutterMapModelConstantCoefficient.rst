@@ -19,7 +19,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarClutterMapModelConstantCoefficient.constant_coefficient`
-              - This property is deprecated. Use ConstantCoefficient on IAgScatteringPointModelConstantCoefficient instead. Gets the constant coefficient value.
+              - Do not use this property, as it is deprecated. Use ConstantCoefficient on IAgScatteringPointModelConstantCoefficient instead. Gets the constant coefficient value.
 
 
 Import detail
@@ -37,6 +37,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.IRadarClutterMapModelConstantCoefficient.constant_coefficient
     :type: float
 
-    This property is deprecated. Use ConstantCoefficient on IAgScatteringPointModelConstantCoefficient instead. Gets the constant coefficient value.
+    Do not use this property, as it is deprecated. Use ConstantCoefficient on IAgScatteringPointModelConstantCoefficient instead. Gets the constant coefficient value.
 
 

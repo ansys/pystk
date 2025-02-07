@@ -42,7 +42,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics3DMarker.rotate_from_north`
               - Opt whether to set the rotation angle relative to north. (By default, the rotation angle is relative to the screen.).
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics3DMarker.orientation_mode`
-              - Controls the rotation of the marker.
+              - Control the rotation of the marker.
 
 
 
@@ -103,7 +103,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.MTOGraphics3DMarker.orientation_mode
     :type: Graphics3DMarkerOrientation
 
-    Controls the rotation of the marker.
+    Control the rotation of the marker.
 
 
 Method detail

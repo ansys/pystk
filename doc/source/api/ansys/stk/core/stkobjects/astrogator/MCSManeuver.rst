@@ -40,7 +40,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSManeuver.maneuver`
               - Get the Maneuver properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSManeuver.control_parameters_available`
-              - Returns whether or not the control parameters can be set.
+              - Return whether or not the control parameters can be set.
 
 
 
@@ -71,7 +71,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSManeuver.control_parameters_available
     :type: bool
 
-    Returns whether or not the control parameters can be set.
+    Return whether or not the control parameters can be set.
 
 
 Method detail

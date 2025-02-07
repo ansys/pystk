@@ -38,7 +38,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureHoverTranslate.altitude_options`
               - Get the altitude options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureHoverTranslate.heading_mode`
-              - Gets or sets the heading mode for the aircraft.
+              - Get or set the heading mode for the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureHoverTranslate.final_heading_mode`
               - Get the mode to define the heading at the end of the hover.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureHoverTranslate.absolute_course`
@@ -48,13 +48,13 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureHoverTranslate.use_magnetic_heading`
               - Get the option to use a magnetic heading for the heading course.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureHoverTranslate.final_heading_rate`
-              - Gets or sets the options to define the heading rate of the aircraft at the end of the procedure.
+              - Get or set the options to define the heading rate of the aircraft at the end of the procedure.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureHoverTranslate.final_course_mode`
-              - Gets or sets the mode to specify the final course at the end of the hover.
+              - Get or set the mode to specify the final course at the end of the hover.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureHoverTranslate.smooth_translation_mode`
-              - Gets or sets the translation mode of the aircraft at the end of the procedure.
+              - Get or set the translation mode of the aircraft at the end of the procedure.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureHoverTranslate.radius_factor`
-              - Gets or sets the turn radius factor.
+              - Get or set the turn radius factor.
 
 
 
@@ -79,7 +79,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHoverTranslate.heading_mode
     :type: VTOLHeadingMode
 
-    Gets or sets the heading mode for the aircraft.
+    Get or set the heading mode for the aircraft.
 
 .. py:property:: final_heading_mode
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHoverTranslate.final_heading_mode
@@ -109,25 +109,25 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHoverTranslate.final_heading_rate
     :type: VTOLRateMode
 
-    Gets or sets the options to define the heading rate of the aircraft at the end of the procedure.
+    Get or set the options to define the heading rate of the aircraft at the end of the procedure.
 
 .. py:property:: final_course_mode
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHoverTranslate.final_course_mode
     :type: VTOLTranslationFinalCourseMode
 
-    Gets or sets the mode to specify the final course at the end of the hover.
+    Get or set the mode to specify the final course at the end of the hover.
 
 .. py:property:: smooth_translation_mode
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHoverTranslate.smooth_translation_mode
     :type: VTOLRateMode
 
-    Gets or sets the translation mode of the aircraft at the end of the procedure.
+    Get or set the translation mode of the aircraft at the end of the procedure.
 
 .. py:property:: radius_factor
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHoverTranslate.radius_factor
     :type: float
 
-    Gets or sets the turn radius factor.
+    Get or set the turn radius factor.
 
 
 Method detail

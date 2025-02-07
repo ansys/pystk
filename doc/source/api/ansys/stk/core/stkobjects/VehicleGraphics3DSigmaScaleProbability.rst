@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DSigmaScaleProbability.probability`
-              - Gets or sets the contour is sized indirectly by specifying the probability encompassed by the ellipsoid as a percent. Dimensionless.
+              - Get or set the contour is sized indirectly by specifying the probability encompassed by the ellipsoid as a percent. Dimensionless.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DSigmaScaleProbability.probability
     :type: float
 
-    Gets or sets the contour is sized indirectly by specifying the probability encompassed by the ellipsoid as a percent. Dimensionless.
+    Get or set the contour is sized indirectly by specifying the probability encompassed by the ellipsoid as a percent. Dimensionless.
 
 

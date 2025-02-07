@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageResolutionArea.area`
-              - Gets or sets the area used to define grid resolution. Use Area Dimension.
+              - Get or set the area used to define grid resolution. Use Area Dimension.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.CoverageResolutionArea.area
     :type: float
 
-    Gets or sets the area used to define grid resolution. Use Area Dimension.
+    Get or set the area used to define grid resolution. Use Area Dimension.
 
 

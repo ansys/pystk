@@ -29,7 +29,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControl.constraint_vector_name`
               - Constraint Vector - the vector toward which this body vector is constrained.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IAttitudeControl.custom_function`
-              - Gets or sets the attitude definition to use for other STK functions.
+              - Get or set the attitude definition to use for other STK functions.
 
 
 Import detail
@@ -77,6 +77,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.IAttitudeControl.custom_function
     :type: CustomFunction
 
-    Gets or sets the attitude definition to use for other STK functions.
+    Get or set the attitude definition to use for other STK functions.
 
 

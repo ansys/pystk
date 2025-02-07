@@ -30,27 +30,27 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.SiteSTKObjectWaypoint.object_name`
-              - Gets or sets the object name to link to.
+              - Get or set the object name to link to.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.SiteSTKObjectWaypoint.valid_object_names`
-              - Returns the valid object names.
+              - Return the valid object names.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.SiteSTKObjectWaypoint.min_time`
-              - Gets the earliest time that the object is available as a site.
+              - Get the earliest time that the object is available as a site.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.SiteSTKObjectWaypoint.waypoint_time`
-              - Gets or sets the time at which the object's position will be used as a waypoint.
+              - Get or set the time at which the object's position will be used as a waypoint.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.SiteSTKObjectWaypoint.minimize_site_procedure_time_diff`
-              - Gets or sets the mode to minimize the time difference between the procedure and site times.
+              - Get or set the mode to minimize the time difference between the procedure and site times.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.SiteSTKObjectWaypoint.max_time`
               - Get the latest time that the object is available as a site.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.SiteSTKObjectWaypoint.offset_mode`
-              - Gets or sets the mode to offset the site location relative from the STK Object.
+              - Get or set the mode to offset the site location relative from the STK Object.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.SiteSTKObjectWaypoint.bearing`
-              - Gets or sets the bearing offset of the site location relative to the object's position.
+              - Get or set the bearing offset of the site location relative to the object's position.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.SiteSTKObjectWaypoint.use_magnetic_bearing`
-              - Gets or sets the option to use a magnetic heading for the bearing.
+              - Get or set the option to use a magnetic heading for the bearing.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.SiteSTKObjectWaypoint.range`
-              - Gets or sets the range offset of the site location relative to the object's position.
+              - Get or set the range offset of the site location relative to the object's position.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.SiteSTKObjectWaypoint.vgt_point`
-              - Gets or sets the reference VGT Point.
+              - Get or set the reference VGT Point.
 
 
 
@@ -69,31 +69,31 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.SiteSTKObjectWaypoint.object_name
     :type: str
 
-    Gets or sets the object name to link to.
+    Get or set the object name to link to.
 
 .. py:property:: valid_object_names
     :canonical: ansys.stk.core.stkobjects.aviator.SiteSTKObjectWaypoint.valid_object_names
     :type: list
 
-    Returns the valid object names.
+    Return the valid object names.
 
 .. py:property:: min_time
     :canonical: ansys.stk.core.stkobjects.aviator.SiteSTKObjectWaypoint.min_time
     :type: typing.Any
 
-    Gets the earliest time that the object is available as a site.
+    Get the earliest time that the object is available as a site.
 
 .. py:property:: waypoint_time
     :canonical: ansys.stk.core.stkobjects.aviator.SiteSTKObjectWaypoint.waypoint_time
     :type: typing.Any
 
-    Gets or sets the time at which the object's position will be used as a waypoint.
+    Get or set the time at which the object's position will be used as a waypoint.
 
 .. py:property:: minimize_site_procedure_time_diff
     :canonical: ansys.stk.core.stkobjects.aviator.SiteSTKObjectWaypoint.minimize_site_procedure_time_diff
     :type: MinimizeSiteProcedureTimeDiff
 
-    Gets or sets the mode to minimize the time difference between the procedure and site times.
+    Get or set the mode to minimize the time difference between the procedure and site times.
 
 .. py:property:: max_time
     :canonical: ansys.stk.core.stkobjects.aviator.SiteSTKObjectWaypoint.max_time
@@ -105,31 +105,31 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.SiteSTKObjectWaypoint.offset_mode
     :type: STKObjectWaypointOffsetMode
 
-    Gets or sets the mode to offset the site location relative from the STK Object.
+    Get or set the mode to offset the site location relative from the STK Object.
 
 .. py:property:: bearing
     :canonical: ansys.stk.core.stkobjects.aviator.SiteSTKObjectWaypoint.bearing
     :type: typing.Any
 
-    Gets or sets the bearing offset of the site location relative to the object's position.
+    Get or set the bearing offset of the site location relative to the object's position.
 
 .. py:property:: use_magnetic_bearing
     :canonical: ansys.stk.core.stkobjects.aviator.SiteSTKObjectWaypoint.use_magnetic_bearing
     :type: bool
 
-    Gets or sets the option to use a magnetic heading for the bearing.
+    Get or set the option to use a magnetic heading for the bearing.
 
 .. py:property:: range
     :canonical: ansys.stk.core.stkobjects.aviator.SiteSTKObjectWaypoint.range
     :type: float
 
-    Gets or sets the range offset of the site location relative to the object's position.
+    Get or set the range offset of the site location relative to the object's position.
 
 .. py:property:: vgt_point
     :canonical: ansys.stk.core.stkobjects.aviator.SiteSTKObjectWaypoint.vgt_point
     :type: str
 
-    Gets or sets the reference VGT Point.
+    Get or set the reference VGT Point.
 
 
 Method detail

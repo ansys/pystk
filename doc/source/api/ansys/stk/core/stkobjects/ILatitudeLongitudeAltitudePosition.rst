@@ -34,7 +34,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ILatitudeLongitudeAltitudePosition.type`
-              - Returns the position type currently being used.
+              - Return the position type currently being used.
 
 
 Import detail
@@ -52,7 +52,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.ILatitudeLongitudeAltitudePosition.type
     :type: DeticPositionType
 
-    Returns the position type currently being used.
+    Return the position type currently being used.
 
 
 Method detail

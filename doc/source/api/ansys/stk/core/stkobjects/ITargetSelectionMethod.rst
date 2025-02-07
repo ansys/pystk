@@ -19,7 +19,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ITargetSelectionMethod.type`
-              - Gets the target selection method type enumeration.
+              - Get the target selection method type enumeration.
 
 
 Import detail
@@ -37,6 +37,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.ITargetSelectionMethod.type
     :type: TargetSelectionMethodType
 
-    Gets the target selection method type enumeration.
+    Get the target selection method type enumeration.
 
 

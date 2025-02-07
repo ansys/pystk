@@ -19,7 +19,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleBreakAngleBreakByLatitude.latitude`
-              - Gets or sets the value of the latitude crossing at which a new pass begins. Uses Latitude Dimension.
+              - Get or set the value of the latitude crossing at which a new pass begins. Uses Latitude Dimension.
 
 
 
@@ -38,6 +38,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleBreakAngleBreakByLatitude.latitude
     :type: float
 
-    Gets or sets the value of the latitude crossing at which a new pass begins. Uses Latitude Dimension.
+    Get or set the value of the latitude crossing at which a new pass begins. Uses Latitude Dimension.
 
 

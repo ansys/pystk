@@ -46,21 +46,21 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorGreatArc.altitude_reference_type`
               - Reference altitude for waypoints.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorGreatArc.altitude_reference_supported_types`
-              - Returns an array of valid choices.
+              - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorGreatArc.altitude_reference`
               - Get the altitude reference.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorGreatArc.arc_granularity`
-              - Gets or sets the frequency of interpolated points. Uses Angle Dimension.
+              - Get or set the frequency of interpolated points. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorGreatArc.waypoints`
               - Get the waypoints.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorGreatArc.ephemeris_interval`
               - Get the propagator's ephemeris interval.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorGreatArc.default_altitude`
-              - Gets or sets the default altitude used when the first waypoint is added. Uses Distance Dimension.
+              - Get or set the default altitude used when the first waypoint is added. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorGreatArc.default_rate`
-              - Gets or sets the default rate used when the first waypoint is added. Uses Rate Dimension.
+              - Get or set the default rate used when the first waypoint is added. Uses Rate Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorGreatArc.default_turn_radius`
-              - Gets or sets the default turn radius used when the first waypoint is added. Uses Distance Dimension.
+              - Get or set the default turn radius used when the first waypoint is added. Uses Distance Dimension.
 
 
 
@@ -91,7 +91,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.PropagatorGreatArc.altitude_reference_supported_types
     :type: list
 
-    Returns an array of valid choices.
+    Return an array of valid choices.
 
 .. py:property:: altitude_reference
     :canonical: ansys.stk.core.stkobjects.PropagatorGreatArc.altitude_reference
@@ -103,7 +103,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.PropagatorGreatArc.arc_granularity
     :type: float
 
-    Gets or sets the frequency of interpolated points. Uses Angle Dimension.
+    Get or set the frequency of interpolated points. Uses Angle Dimension.
 
 .. py:property:: waypoints
     :canonical: ansys.stk.core.stkobjects.PropagatorGreatArc.waypoints
@@ -121,19 +121,19 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.PropagatorGreatArc.default_altitude
     :type: float
 
-    Gets or sets the default altitude used when the first waypoint is added. Uses Distance Dimension.
+    Get or set the default altitude used when the first waypoint is added. Uses Distance Dimension.
 
 .. py:property:: default_rate
     :canonical: ansys.stk.core.stkobjects.PropagatorGreatArc.default_rate
     :type: float
 
-    Gets or sets the default rate used when the first waypoint is added. Uses Rate Dimension.
+    Get or set the default rate used when the first waypoint is added. Uses Rate Dimension.
 
 .. py:property:: default_turn_radius
     :canonical: ansys.stk.core.stkobjects.PropagatorGreatArc.default_turn_radius
     :type: float
 
-    Gets or sets the default turn radius used when the first waypoint is added. Uses Distance Dimension.
+    Get or set the default turn radius used when the first waypoint is added. Uses Distance Dimension.
 
 
 Method detail

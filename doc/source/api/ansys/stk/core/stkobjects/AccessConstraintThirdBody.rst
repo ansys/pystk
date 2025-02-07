@@ -34,9 +34,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintThirdBody.assigned_obstructions`
-              - This property is deprecated. Use AssignedObstructions on IAgAccessCnstrCbObstruction instead. Gets the Assigned Obstructions.
+              - Do not use this property, as it is deprecated. Use AssignedObstructions on IAgAccessCnstrCbObstruction instead. Gets the Assigned Obstructions.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintThirdBody.available_obstructions`
-              - This property is deprecated. Use AvailableObstructions on IAgAccessCnstrCbObstruction instead. Gets the Available Obstructions.
+              - Do not use this property, as it is deprecated. Use AvailableObstructions on IAgAccessCnstrCbObstruction instead. Gets the Available Obstructions.
 
 
 
@@ -55,13 +55,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.AccessConstraintThirdBody.assigned_obstructions
     :type: list
 
-    This property is deprecated. Use AssignedObstructions on IAgAccessCnstrCbObstruction instead. Gets the Assigned Obstructions.
+    Do not use this property, as it is deprecated. Use AssignedObstructions on IAgAccessCnstrCbObstruction instead. Gets the Assigned Obstructions.
 
 .. py:property:: available_obstructions
     :canonical: ansys.stk.core.stkobjects.AccessConstraintThirdBody.available_obstructions
     :type: list
 
-    This property is deprecated. Use AvailableObstructions on IAgAccessCnstrCbObstruction instead. Gets the Available Obstructions.
+    Do not use this property, as it is deprecated. Use AvailableObstructions on IAgAccessCnstrCbObstruction instead. Gets the Available Obstructions.
 
 
 Method detail

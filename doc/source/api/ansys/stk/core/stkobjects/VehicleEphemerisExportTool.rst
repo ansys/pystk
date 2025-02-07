@@ -28,15 +28,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleEphemerisExportTool.coordinate_system`
-              - Gets or sets the coordinate system in which to express the ephemeris.
+              - Get or set the coordinate system in which to express the ephemeris.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleEphemerisExportTool.central_body_name`
-              - Gets or sets the central body of the coordinate system in which to express the ephemeris.
+              - Get or set the central body of the coordinate system in which to express the ephemeris.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleEphemerisExportTool.version_format`
-              - Provides the option to generate files compatible with prior versions of STK.
+              - Provide the option to generate files compatible with prior versions of STK.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleEphemerisExportTool.include_interpolation_boundaries`
               - Include or ignore interpolation boundaries.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleEphemerisExportTool.time_period`
-              - Sets the time period. Options are Use Entire Ephemeris - STK creates a data file using the Start and Stop Time specified in the vehicle's Orbit tab or Specify Time Period - STK creates a data file using the Start and Stop Time specified here.
+              - Set the time period. Options are Use Entire Ephemeris - STK creates a data file using the Start and Stop Time specified in the vehicle's Orbit tab or Specify Time Period - STK creates a data file using the Start and Stop Time specified here.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleEphemerisExportTool.step_size`
               - If the Use Ephemeris Steps option is not selected, enter a Step Size to be used for the vehicle.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleEphemerisExportTool.covariance_type`
@@ -61,19 +61,19 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleEphemerisExportTool.coordinate_system
     :type: EphemerisCoordinateSystemType
 
-    Gets or sets the coordinate system in which to express the ephemeris.
+    Get or set the coordinate system in which to express the ephemeris.
 
 .. py:property:: central_body_name
     :canonical: ansys.stk.core.stkobjects.VehicleEphemerisExportTool.central_body_name
     :type: str
 
-    Gets or sets the central body of the coordinate system in which to express the ephemeris.
+    Get or set the central body of the coordinate system in which to express the ephemeris.
 
 .. py:property:: version_format
     :canonical: ansys.stk.core.stkobjects.VehicleEphemerisExportTool.version_format
     :type: ExportToolVersionFormat
 
-    Provides the option to generate files compatible with prior versions of STK.
+    Provide the option to generate files compatible with prior versions of STK.
 
 .. py:property:: include_interpolation_boundaries
     :canonical: ansys.stk.core.stkobjects.VehicleEphemerisExportTool.include_interpolation_boundaries
@@ -85,7 +85,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleEphemerisExportTool.time_period
     :type: ExportToolTimePeriod
 
-    Sets the time period. Options are Use Entire Ephemeris - STK creates a data file using the Start and Stop Time specified in the vehicle's Orbit tab or Specify Time Period - STK creates a data file using the Start and Stop Time specified here.
+    Set the time period. Options are Use Entire Ephemeris - STK creates a data file using the Start and Stop Time specified in the vehicle's Orbit tab or Specify Time Period - STK creates a data file using the Start and Stop Time specified here.
 
 .. py:property:: step_size
     :canonical: ansys.stk.core.stkobjects.VehicleEphemerisExportTool.step_size

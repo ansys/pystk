@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarWaveformBistaticTransmitterSearchTrackContinuous.modulator`
-              - Gets the interface for setting the modulator parameters.
+              - Get the interface for setting the modulator parameters.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.RadarWaveformBistaticTransmitterSearchTrackContinuous.modulator
     :type: RadarModulator
 
-    Gets the interface for setting the modulator parameters.
+    Get the interface for setting the modulator parameters.
 
 

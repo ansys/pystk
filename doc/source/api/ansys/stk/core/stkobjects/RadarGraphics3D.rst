@@ -25,7 +25,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarGraphics3D.show_contours`
               - Opt whether to display contour graphics for the radar's antenna.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarGraphics3D.volume`
-              - Gets the radar's antenna volume graphics interface.
+              - Get the radar's antenna volume graphics interface.
 
 
 
@@ -62,6 +62,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.RadarGraphics3D.volume
     :type: AntennaVolumeGraphics
 
-    Gets the radar's antenna volume graphics interface.
+    Get the radar's antenna volume graphics interface.
 
 

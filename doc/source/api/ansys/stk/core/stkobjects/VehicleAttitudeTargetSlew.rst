@@ -32,9 +32,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleAttitudeTargetSlew.slew_mode_type`
               - Select an attitude slew mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleAttitudeTargetSlew.slew_mode_supported_types`
-              - Returns an array of valid choices.
+              - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleAttitudeTargetSlew.slew_mode`
-              - Returns a currently selected attitude slew configuration.
+              - Return a currently selected attitude slew configuration.
 
 
 
@@ -59,13 +59,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleAttitudeTargetSlew.slew_mode_supported_types
     :type: list
 
-    Returns an array of valid choices.
+    Return an array of valid choices.
 
 .. py:property:: slew_mode
     :canonical: ansys.stk.core.stkobjects.VehicleAttitudeTargetSlew.slew_mode
     :type: IVehicleAttitudeSlewBase
 
-    Returns a currently selected attitude slew configuration.
+    Return a currently selected attitude slew configuration.
 
 
 Method detail

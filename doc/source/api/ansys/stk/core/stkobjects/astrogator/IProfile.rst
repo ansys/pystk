@@ -28,13 +28,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfile.name`
-              - Gets or sets the name of the profile.
+              - Get or set the name of the profile.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfile.status`
-              - Gets or sets the status of the profile.
+              - Get or set the status of the profile.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfile.user_comment`
               - A user comment.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfile.mode`
-              - Gets or sets the profile's mode.
+              - Get or set the profile's mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IProfile.type`
               - Return the current profile type.
 
@@ -54,13 +54,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfile.name
     :type: str
 
-    Gets or sets the name of the profile.
+    Get or set the name of the profile.
 
 .. py:property:: status
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfile.status
     :type: str
 
-    Gets or sets the status of the profile.
+    Get or set the status of the profile.
 
 .. py:property:: user_comment
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfile.user_comment
@@ -72,7 +72,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfile.mode
     :type: ProfileMode
 
-    Gets or sets the profile's mode.
+    Get or set the profile's mode.
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.astrogator.IProfile.type

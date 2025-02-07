@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.ConstantDisplayCondition.display`
-              - Gets or sets the value the display condition evaluates to.
+              - Get or set the value the display condition evaluates to.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.graphics.ConstantDisplayCondition.display
     :type: bool
 
-    Gets or sets the value the display condition evaluates to.
+    Get or set the value the display condition evaluates to.
 
 

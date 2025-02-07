@@ -29,7 +29,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.USStandardAtmosphere.drag_model_type`
               - Drag model type.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.USStandardAtmosphere.drag_model_plugin_name`
-              - Gets or sets the name of the drag model plugin.
+              - Get or set the name of the drag model plugin.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.USStandardAtmosphere.drag_model_plugin`
               - Drag model plugin properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.USStandardAtmosphere.variable_area_history_file`
@@ -78,7 +78,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.USStandardAtmosphere.drag_model_plugin_name
     :type: str
 
-    Gets or sets the name of the drag model plugin.
+    Get or set the name of the drag model plugin.
 
 .. py:property:: drag_model_plugin
     :canonical: ansys.stk.core.stkobjects.astrogator.USStandardAtmosphere.drag_model_plugin

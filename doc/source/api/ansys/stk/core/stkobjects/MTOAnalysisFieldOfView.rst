@@ -38,7 +38,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOAnalysisFieldOfView.sensor`
-              - Gets or sets the assigned sensor object.
+              - Get or set the assigned sensor object.
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOAnalysisFieldOfView.entirety`
               - Field Of View Entirety.
 
@@ -59,7 +59,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.MTOAnalysisFieldOfView.sensor
     :type: str
 
-    Gets or sets the assigned sensor object.
+    Get or set the assigned sensor object.
 
 .. py:property:: entirety
     :canonical: ansys.stk.core.stkobjects.MTOAnalysisFieldOfView.entirety

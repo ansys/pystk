@@ -32,13 +32,13 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTargetPoint.show_graphics`
               - Whether the Target Point is displayed.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTargetPoint.color`
-              - Gets or sets the color of the Target Point.
+              - Get or set the color of the Target Point.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTargetPoint.position_type`
               - Get the position type of the BPlane target point.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTargetPoint.position_supported_types`
-              - Returns an array of valid choices.
+              - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTargetPoint.position`
-              - Returns the BPlane target point position.
+              - Return the BPlane target point position.
 
 
 
@@ -63,7 +63,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTargetPoint.color
     :type: agcolor.Color
 
-    Gets or sets the color of the Target Point.
+    Get or set the color of the Target Point.
 
 .. py:property:: position_type
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTargetPoint.position_type
@@ -75,13 +75,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTargetPoint.position_supported_types
     :type: list
 
-    Returns an array of valid choices.
+    Return an array of valid choices.
 
 .. py:property:: position
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTargetPoint.position
     :type: IVehicleGraphics3DBPlaneTargetPointPosition
 
-    Returns the BPlane target point position.
+    Return the BPlane target point position.
 
 
 Method detail

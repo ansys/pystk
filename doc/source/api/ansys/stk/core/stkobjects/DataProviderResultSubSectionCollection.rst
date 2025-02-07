@@ -28,9 +28,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultSubSectionCollection.count`
-              - Returns a number of elements in the collection.
+              - Return a number of elements in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultSubSectionCollection._new_enum`
-              - Returns an enumerator for the collection.
+              - Return an enumerator for the collection.
 
 
 
@@ -49,13 +49,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.DataProviderResultSubSectionCollection.count
     :type: int
 
-    Returns a number of elements in the collection.
+    Return a number of elements in the collection.
 
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkobjects.DataProviderResultSubSectionCollection._new_enum
     :type: EnumeratorProxy
 
-    Returns an enumerator for the collection.
+    Return an enumerator for the collection.
 
 
 Method detail

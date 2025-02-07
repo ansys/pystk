@@ -29,7 +29,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.vgt.CalculationToolScalarDotProduct.normalize_vector_b`
               - Whether to normalize vector B.
             * - :py:attr:`~ansys.stk.core.vgt.CalculationToolScalarDotProduct.dimension`
-              - Returns a unit of measure, i.e. 'Angle', 'Distance', etc.
+              - Return a unit of measure, i.e. 'Angle', 'Distance', etc.
 
 
 
@@ -72,6 +72,6 @@ Property detail
     :canonical: ansys.stk.core.vgt.CalculationToolScalarDotProduct.dimension
     :type: str
 
-    Returns a unit of measure, i.e. 'Angle', 'Distance', etc.
+    Return a unit of measure, i.e. 'Angle', 'Distance', etc.
 
 

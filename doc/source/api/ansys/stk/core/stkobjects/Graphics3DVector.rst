@@ -19,11 +19,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DVector.vector_geometry_tool_components`
-              - Gets a collection that manages the 3D VGT visualizations.
+              - Get a collection that manages the 3D VGT visualizations.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DVector.vector_size_scale`
               - The size scale of the geometric elements. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DVector.scale_relative_to_model`
-              - Controls whether to scale the geometric elements relative to an object scale with the object's model.
+              - Control whether to scale the geometric elements relative to an object scale with the object's model.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DVector.angle_size_scale`
               - The angle size scale. Dimensionless.
 
@@ -44,7 +44,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Graphics3DVector.vector_geometry_tool_components
     :type: Graphics3DReferenceVectorGeometryToolComponentCollection
 
-    Gets a collection that manages the 3D VGT visualizations.
+    Get a collection that manages the 3D VGT visualizations.
 
 .. py:property:: vector_size_scale
     :canonical: ansys.stk.core.stkobjects.Graphics3DVector.vector_size_scale
@@ -56,7 +56,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Graphics3DVector.scale_relative_to_model
     :type: bool
 
-    Controls whether to scale the geometric elements relative to an object scale with the object's model.
+    Control whether to scale the geometric elements relative to an object scale with the object's model.
 
 .. py:property:: angle_size_scale
     :canonical: ansys.stk.core.stkobjects.Graphics3DVector.angle_size_scale

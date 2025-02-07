@@ -84,9 +84,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CentralBodyComponent.gravitational_parameter`
-              - Gets or sets the gravitational parameter to be used. Uses Gravity Parameter Dimension.
+              - Get or set the gravitational parameter to be used. Uses Gravity Parameter Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CentralBodyComponent.parent_name`
-              - Gets or sets the parent of this central body.
+              - Get or set the parent of this central body.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CentralBodyComponent.children`
               - Get the children of this central body.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CentralBodyComponent.default_gravity_model_name`
@@ -123,13 +123,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.CentralBodyComponent.gravitational_parameter
     :type: float
 
-    Gets or sets the gravitational parameter to be used. Uses Gravity Parameter Dimension.
+    Get or set the gravitational parameter to be used. Uses Gravity Parameter Dimension.
 
 .. py:property:: parent_name
     :canonical: ansys.stk.core.stkobjects.astrogator.CentralBodyComponent.parent_name
     :type: str
 
-    Gets or sets the parent of this central body.
+    Get or set the parent of this central body.
 
 .. py:property:: children
     :canonical: ansys.stk.core.stkobjects.astrogator.CentralBodyComponent.children

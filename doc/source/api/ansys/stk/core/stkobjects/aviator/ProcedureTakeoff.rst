@@ -38,7 +38,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureTakeoff.mode_as_low_transition`
               - Get the interface for a low transition takeoff.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureTakeoff.takeoff_mode`
-              - Gets or sets the type of takeoff the aircraft will perform.
+              - Get or set the type of takeoff the aircraft will perform.
 
 
 
@@ -81,7 +81,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureTakeoff.takeoff_mode
     :type: TakeoffMode
 
-    Gets or sets the type of takeoff the aircraft will perform.
+    Get or set the type of takeoff the aircraft will perform.
 
 
 Method detail

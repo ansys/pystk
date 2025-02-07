@@ -21,9 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.UrbanTerrestrialLossModelTwoRay.surface_temperature`
-              - Gets or sets the surface temperature.
+              - Get or set the surface temperature.
             * - :py:attr:`~ansys.stk.core.stkobjects.UrbanTerrestrialLossModelTwoRay.loss_factor`
-              - Gets or sets the loss factor.
+              - Get or set the loss factor.
 
 
 
@@ -42,12 +42,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.UrbanTerrestrialLossModelTwoRay.surface_temperature
     :type: float
 
-    Gets or sets the surface temperature.
+    Get or set the surface temperature.
 
 .. py:property:: loss_factor
     :canonical: ansys.stk.core.stkobjects.UrbanTerrestrialLossModelTwoRay.loss_factor
     :type: float
 
-    Gets or sets the loss factor.
+    Get or set the loss factor.
 
 

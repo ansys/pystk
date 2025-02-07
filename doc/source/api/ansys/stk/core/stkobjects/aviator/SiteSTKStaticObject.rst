@@ -30,9 +30,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.SiteSTKStaticObject.object_name`
-              - Gets or sets the object name to link to.
+              - Get or set the object name to link to.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.SiteSTKStaticObject.valid_object_names`
-              - Returns the valid object names.
+              - Return the valid object names.
 
 
 
@@ -51,13 +51,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.SiteSTKStaticObject.object_name
     :type: str
 
-    Gets or sets the object name to link to.
+    Get or set the object name to link to.
 
 .. py:property:: valid_object_names
     :canonical: ansys.stk.core.stkobjects.aviator.SiteSTKStaticObject.valid_object_names
     :type: list
 
-    Returns the valid object names.
+    Return the valid object names.
 
 
 Method detail

@@ -23,7 +23,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AttitudeControlFiniteAntiVelocityVector.attitude_update`
               - How and when the attitude will be updated.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AttitudeControlFiniteAntiVelocityVector.body_constraint_vector`
-              - Defines a constraint vector in spacecraft body coordinates to complete the attitude definition.
+              - Define a constraint vector in spacecraft body coordinates to complete the attitude definition.
 
 
 
@@ -48,6 +48,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.AttitudeControlFiniteAntiVelocityVector.body_constraint_vector
     :type: IDirection
 
-    Defines a constraint vector in spacecraft body coordinates to complete the attitude definition.
+    Define a constraint vector in spacecraft body coordinates to complete the attitude definition.
 
 

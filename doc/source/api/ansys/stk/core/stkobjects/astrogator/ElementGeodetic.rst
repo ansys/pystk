@@ -29,13 +29,13 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementGeodetic.radius_magnitude`
               - Measured from the center of the Earth. Specified as distance above or below the reference ellipsoid. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementGeodetic.latitude_rate`
-              - Gets or sets the rate of change of the satellite's latitude. Uses Rate Dimension.
+              - Get or set the rate of change of the satellite's latitude. Uses Rate Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementGeodetic.longitude_rate`
-              - Gets or sets the rate of change of the satellite's longitude. Uses Rate Dimension.
+              - Get or set the rate of change of the satellite's longitude. Uses Rate Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementGeodetic.altitude_rate`
-              - Gets or sets the rate of change of the altitude. Uses Rate Dimension.
+              - Get or set the rate of change of the altitude. Uses Rate Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementGeodetic.radius_rate`
-              - Gets or sets the rate of change of the radius. Uses Rate Dimension.
+              - Get or set the rate of change of the radius. Uses Rate Dimension.
 
 
 
@@ -78,24 +78,24 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.ElementGeodetic.latitude_rate
     :type: float
 
-    Gets or sets the rate of change of the satellite's latitude. Uses Rate Dimension.
+    Get or set the rate of change of the satellite's latitude. Uses Rate Dimension.
 
 .. py:property:: longitude_rate
     :canonical: ansys.stk.core.stkobjects.astrogator.ElementGeodetic.longitude_rate
     :type: float
 
-    Gets or sets the rate of change of the satellite's longitude. Uses Rate Dimension.
+    Get or set the rate of change of the satellite's longitude. Uses Rate Dimension.
 
 .. py:property:: altitude_rate
     :canonical: ansys.stk.core.stkobjects.astrogator.ElementGeodetic.altitude_rate
     :type: float
 
-    Gets or sets the rate of change of the altitude. Uses Rate Dimension.
+    Get or set the rate of change of the altitude. Uses Rate Dimension.
 
 .. py:property:: radius_rate
     :canonical: ansys.stk.core.stkobjects.astrogator.ElementGeodetic.radius_rate
     :type: float
 
-    Gets or sets the rate of change of the radius. Uses Rate Dimension.
+    Get or set the rate of change of the radius. Uses Rate Dimension.
 
 

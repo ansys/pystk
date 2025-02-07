@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSReturn.return_control_to_parent_sequence`
-              - Gets or sets the state of the segment.
+              - Get or set the state of the segment.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSReturn.return_control_to_parent_sequence
     :type: ReturnControl
 
-    Gets or sets the state of the segment.
+    Get or set the state of the segment.
 
 

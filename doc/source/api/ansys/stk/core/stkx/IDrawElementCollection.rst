@@ -36,7 +36,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkx.IDrawElementCollection.count`
               - Number of elements contained in the collection.
             * - :py:attr:`~ansys.stk.core.stkx.IDrawElementCollection._new_enum`
-              - Returns an object that can be used to iterate through all the strings in the collection.
+              - Return an object that can be used to iterate through all the strings in the collection.
             * - :py:attr:`~ansys.stk.core.stkx.IDrawElementCollection.visible`
               - Show or hide all the elements.
 
@@ -62,7 +62,7 @@ Property detail
     :canonical: ansys.stk.core.stkx.IDrawElementCollection._new_enum
     :type: EnumeratorProxy
 
-    Returns an object that can be used to iterate through all the strings in the collection.
+    Return an object that can be used to iterate through all the strings in the collection.
 
 .. py:property:: visible
     :canonical: ansys.stk.core.stkx.IDrawElementCollection.visible

@@ -23,9 +23,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ArcAltitudeAndDelayOptions.delay_arc_climb_descents`
               - Delay the climb/descend such that the stop arc altitude will be achieved by the end of the procedure.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ArcAltitudeAndDelayOptions.start_arc_altitude`
-              - Gets or sets the altitude at the beginning of the arc.
+              - Get or set the altitude at the beginning of the arc.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ArcAltitudeAndDelayOptions.stop_arc_altitude`
-              - Gets or sets the altitude at the end of the arc.
+              - Get or set the altitude at the end of the arc.
 
 
 
@@ -56,12 +56,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.ArcAltitudeAndDelayOptions.start_arc_altitude
     :type: float
 
-    Gets or sets the altitude at the beginning of the arc.
+    Get or set the altitude at the beginning of the arc.
 
 .. py:property:: stop_arc_altitude
     :canonical: ansys.stk.core.stkobjects.aviator.ArcAltitudeAndDelayOptions.stop_arc_altitude
     :type: float
 
-    Gets or sets the altitude at the end of the arc.
+    Get or set the altitude at the end of the arc.
 
 

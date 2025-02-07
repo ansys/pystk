@@ -36,9 +36,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileModel.max_load_factor`
-              - Gets or sets the maximum load factor that the missile can withstand while maneuvering.
+              - Get or set the maximum load factor that the missile can withstand while maneuvering.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileModel.maneuver_mode`
-              - Gets or sets the mode that the missile will adhere to the specified load factor. Scale by atmospheric density will cause the missile to consider dynamic pressure when calculating turn radius.
+              - Get or set the mode that the missile will adhere to the specified load factor. Scale by atmospheric density will cause the missile to consider dynamic pressure when calculating turn radius.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileModel.maneuver_mode_helper`
               - Get the interface for the Aero/Prop Maneuver Mode helper. The maneuver mode must be set to Aero/Prop to access this interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileModel.attitude_transitions`
@@ -50,9 +50,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileModel.climb_airspeed_type`
               - Get the climb airspeed type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileModel.climb_max_flight_path_angle`
-              - Gets or sets the maximum flight path angle of the missile's flight path while climbing.
+              - Get or set the maximum flight path angle of the missile's flight path while climbing.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileModel.climb_min_flight_path_angle`
-              - Gets or sets the minimum flight path angle of the missile's flight path while climbing.
+              - Get or set the minimum flight path angle of the missile's flight path while climbing.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileModel.climb_fail_on_insufficient_performance`
               - Opt whether to fail while climbing if there is insufficient specific excess power.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileModel.cruise_max_airspeed`
@@ -60,29 +60,29 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileModel.cruise_max_airspeed_type`
               - Get the cruise airspeed type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileModel.cruise_default_altitude`
-              - Gets or sets the missile's default cruising altitude.
+              - Get or set the missile's default cruising altitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileModel.descent_airspeed`
               - Get the standard airspeed of the missile while descending.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileModel.descent_airspeed_type`
               - Get the descent airspeed type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileModel.descent_max_flight_path_angle`
-              - Gets or sets the maximum flight path angle of the missile's flight path while descending.
+              - Get or set the maximum flight path angle of the missile's flight path while descending.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileModel.descent_min_flight_path_angle`
-              - Gets or sets the minimum flight path angle of the missile's flight path while descending.
+              - Get or set the minimum flight path angle of the missile's flight path while descending.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileModel.descent_fail_on_insufficient_performance`
               - Opt whether to fail while descending if there is insufficient specific excess power.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileModel.use_total_temp_limit`
               - Opt whether to limit the speed of the missile so the specified temperature is not exceeded.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileModel.total_temp_limit`
-              - Gets or sets the maximum total temperature limit of the missile.
+              - Get or set the maximum total temperature limit of the missile.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileModel.use_mach_limit`
               - Opt whether to limit the speed of the missile so the specified mach number is not exceeded.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileModel.mach_limit`
-              - Gets or sets the maximum allowable mach number.
+              - Get or set the maximum allowable mach number.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileModel.use_eas_limit`
               - Opt whether to limit the speed of the missile so the specified Equivalent Airspeed is not exceeded.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileModel.eas_limit`
-              - Gets or sets the maximum allowable Equivalent Airspeed.
+              - Get or set the maximum allowable Equivalent Airspeed.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileModel.default_configuration`
               - Get the aircraft's default configuration as saved in the catalog.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileModel.aerodynamics`
@@ -107,13 +107,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.MissileModel.max_load_factor
     :type: float
 
-    Gets or sets the maximum load factor that the missile can withstand while maneuvering.
+    Get or set the maximum load factor that the missile can withstand while maneuvering.
 
 .. py:property:: maneuver_mode
     :canonical: ansys.stk.core.stkobjects.aviator.MissileModel.maneuver_mode
     :type: AccelerationManeuverMode
 
-    Gets or sets the mode that the missile will adhere to the specified load factor. Scale by atmospheric density will cause the missile to consider dynamic pressure when calculating turn radius.
+    Get or set the mode that the missile will adhere to the specified load factor. Scale by atmospheric density will cause the missile to consider dynamic pressure when calculating turn radius.
 
 .. py:property:: maneuver_mode_helper
     :canonical: ansys.stk.core.stkobjects.aviator.MissileModel.maneuver_mode_helper
@@ -149,13 +149,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.MissileModel.climb_max_flight_path_angle
     :type: typing.Any
 
-    Gets or sets the maximum flight path angle of the missile's flight path while climbing.
+    Get or set the maximum flight path angle of the missile's flight path while climbing.
 
 .. py:property:: climb_min_flight_path_angle
     :canonical: ansys.stk.core.stkobjects.aviator.MissileModel.climb_min_flight_path_angle
     :type: typing.Any
 
-    Gets or sets the minimum flight path angle of the missile's flight path while climbing.
+    Get or set the minimum flight path angle of the missile's flight path while climbing.
 
 .. py:property:: climb_fail_on_insufficient_performance
     :canonical: ansys.stk.core.stkobjects.aviator.MissileModel.climb_fail_on_insufficient_performance
@@ -179,7 +179,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.MissileModel.cruise_default_altitude
     :type: float
 
-    Gets or sets the missile's default cruising altitude.
+    Get or set the missile's default cruising altitude.
 
 .. py:property:: descent_airspeed
     :canonical: ansys.stk.core.stkobjects.aviator.MissileModel.descent_airspeed
@@ -197,13 +197,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.MissileModel.descent_max_flight_path_angle
     :type: typing.Any
 
-    Gets or sets the maximum flight path angle of the missile's flight path while descending.
+    Get or set the maximum flight path angle of the missile's flight path while descending.
 
 .. py:property:: descent_min_flight_path_angle
     :canonical: ansys.stk.core.stkobjects.aviator.MissileModel.descent_min_flight_path_angle
     :type: typing.Any
 
-    Gets or sets the minimum flight path angle of the missile's flight path while descending.
+    Get or set the minimum flight path angle of the missile's flight path while descending.
 
 .. py:property:: descent_fail_on_insufficient_performance
     :canonical: ansys.stk.core.stkobjects.aviator.MissileModel.descent_fail_on_insufficient_performance
@@ -221,7 +221,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.MissileModel.total_temp_limit
     :type: float
 
-    Gets or sets the maximum total temperature limit of the missile.
+    Get or set the maximum total temperature limit of the missile.
 
 .. py:property:: use_mach_limit
     :canonical: ansys.stk.core.stkobjects.aviator.MissileModel.use_mach_limit
@@ -233,7 +233,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.MissileModel.mach_limit
     :type: float
 
-    Gets or sets the maximum allowable mach number.
+    Get or set the maximum allowable mach number.
 
 .. py:property:: use_eas_limit
     :canonical: ansys.stk.core.stkobjects.aviator.MissileModel.use_eas_limit
@@ -245,7 +245,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.MissileModel.eas_limit
     :type: float
 
-    Gets or sets the maximum allowable Equivalent Airspeed.
+    Get or set the maximum allowable Equivalent Airspeed.
 
 .. py:property:: default_configuration
     :canonical: ansys.stk.core.stkobjects.aviator.MissileModel.default_configuration
