@@ -29,11 +29,11 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.PlanetPositionCentralBody.ephemeris_source`
               - The ephemeris source for the selected central body. A member of the AgEEphemSourceType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.PlanetPositionCentralBody.available_central_bodies`
-              - Returns an array of all available Central Bodies.
+              - Return an array of all available Central Bodies.
             * - :py:attr:`~ansys.stk.core.stkobjects.PlanetPositionCentralBody.available_ephemeris_source_types`
-              - Returns an array of all available Ephemeris Source Types.
+              - Return an array of all available Ephemeris Source Types.
             * - :py:attr:`~ansys.stk.core.stkobjects.PlanetPositionCentralBody.jplde_version`
-              - Returns a JPL DE Version.
+              - Return a JPL DE Version.
 
 
 
@@ -76,18 +76,18 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.PlanetPositionCentralBody.available_central_bodies
     :type: list
 
-    Returns an array of all available Central Bodies.
+    Return an array of all available Central Bodies.
 
 .. py:property:: available_ephemeris_source_types
     :canonical: ansys.stk.core.stkobjects.PlanetPositionCentralBody.available_ephemeris_source_types
     :type: list
 
-    Returns an array of all available Ephemeris Source Types.
+    Return an array of all available Ephemeris Source Types.
 
 .. py:property:: jplde_version
     :canonical: ansys.stk.core.stkobjects.PlanetPositionCentralBody.jplde_version
     :type: str
 
-    Returns a JPL DE Version.
+    Return a JPL DE Version.
 
 

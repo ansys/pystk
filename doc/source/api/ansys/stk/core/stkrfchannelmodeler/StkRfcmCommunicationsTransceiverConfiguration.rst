@@ -19,13 +19,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmCommunicationsTransceiverConfiguration.supported_transceivers`
-              - Gets an array of available transceiver instances.
+              - Get an array of available transceiver instances.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmCommunicationsTransceiverConfiguration.transceiver`
-              - Gets or sets the transceiver.
+              - Get or set the transceiver.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmCommunicationsTransceiverConfiguration.mode`
-              - Gets or sets the transceiver mode.
+              - Get or set the transceiver mode.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmCommunicationsTransceiverConfiguration.include_parent_object_facets`
-              - Gets or sets an indicator of whether or not to include the parent object facets.
+              - Get or set an indicator of whether or not to include the parent object facets.
 
 
 
@@ -44,24 +44,24 @@ Property detail
     :canonical: ansys.stk.core.stkrfchannelmodeler.StkRfcmCommunicationsTransceiverConfiguration.supported_transceivers
     :type: list
 
-    Gets an array of available transceiver instances.
+    Get an array of available transceiver instances.
 
 .. py:property:: transceiver
     :canonical: ansys.stk.core.stkrfchannelmodeler.StkRfcmCommunicationsTransceiverConfiguration.transceiver
     :type: StkRfcmTransceiver
 
-    Gets or sets the transceiver.
+    Get or set the transceiver.
 
 .. py:property:: mode
     :canonical: ansys.stk.core.stkrfchannelmodeler.StkRfcmCommunicationsTransceiverConfiguration.mode
     :type: RfcmTransceiverMode
 
-    Gets or sets the transceiver mode.
+    Get or set the transceiver mode.
 
 .. py:property:: include_parent_object_facets
     :canonical: ansys.stk.core.stkrfchannelmodeler.StkRfcmCommunicationsTransceiverConfiguration.include_parent_object_facets
     :type: bool
 
-    Gets or sets an indicator of whether or not to include the parent object facets.
+    Get or set an indicator of whether or not to include the parent object facets.
 
 

@@ -28,13 +28,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionInheritable.inherit`
-              - Gets or set the option to inherit the radar cross section from the scenario object.
+              - Get or set the option to inherit the radar cross section from the scenario object.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionInheritable.supported_models`
-              - This property is deprecated. Use ModelComponentLinking on IAgRadarCrossSectionInheritable instead. Gets an array of supported model names.
+              - Do not use this property, as it is deprecated. Use ModelComponentLinking on IAgRadarCrossSectionInheritable instead. Gets an array of supported model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionInheritable.model`
-              - This property is deprecated. Use ModelComponentLinking on IAgRadarCrossSectionInheritable instead. Gets the current RCS model.
+              - Do not use this property, as it is deprecated. Use ModelComponentLinking on IAgRadarCrossSectionInheritable instead. Gets the current RCS model.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionInheritable.model_component_linking`
-              - Gets the link/embed controller for managing the radar cross section model component.
+              - Get the link/embed controller for managing the radar cross section model component.
 
 
 
@@ -53,25 +53,25 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.RadarCrossSectionInheritable.inherit
     :type: bool
 
-    Gets or set the option to inherit the radar cross section from the scenario object.
+    Get or set the option to inherit the radar cross section from the scenario object.
 
 .. py:property:: supported_models
     :canonical: ansys.stk.core.stkobjects.RadarCrossSectionInheritable.supported_models
     :type: list
 
-    This property is deprecated. Use ModelComponentLinking on IAgRadarCrossSectionInheritable instead. Gets an array of supported model names.
+    Do not use this property, as it is deprecated. Use ModelComponentLinking on IAgRadarCrossSectionInheritable instead. Gets an array of supported model names.
 
 .. py:property:: model
     :canonical: ansys.stk.core.stkobjects.RadarCrossSectionInheritable.model
     :type: RadarCrossSectionModel
 
-    This property is deprecated. Use ModelComponentLinking on IAgRadarCrossSectionInheritable instead. Gets the current RCS model.
+    Do not use this property, as it is deprecated. Use ModelComponentLinking on IAgRadarCrossSectionInheritable instead. Gets the current RCS model.
 
 .. py:property:: model_component_linking
     :canonical: ansys.stk.core.stkobjects.RadarCrossSectionInheritable.model_component_linking
     :type: IComponentLinkEmbedControl
 
-    Gets the link/embed controller for managing the radar cross section model component.
+    Get the link/embed controller for managing the radar cross section model component.
 
 
 Method detail

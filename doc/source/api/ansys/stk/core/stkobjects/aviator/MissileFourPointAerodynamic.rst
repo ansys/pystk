@@ -32,45 +32,45 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileFourPointAerodynamic.mach_1`
-              - Gets or sets the Mach for the first design point.
+              - Get or set the Mach for the first design point.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileFourPointAerodynamic.a_o_a_1`
-              - Gets or sets the AOA for the first design point.
+              - Get or set the AOA for the first design point.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileFourPointAerodynamic.c_l_1`
-              - Gets or sets the lift coefficient for the first design point.
+              - Get or set the lift coefficient for the first design point.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileFourPointAerodynamic.c_d_1`
-              - Gets or sets the drag coefficient for the first design point.
+              - Get or set the drag coefficient for the first design point.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileFourPointAerodynamic.mach_2`
-              - Gets or sets the Mach for the second design point.
+              - Get or set the Mach for the second design point.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileFourPointAerodynamic.a_o_a_2`
-              - Gets or sets the AOA for the second design point.
+              - Get or set the AOA for the second design point.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileFourPointAerodynamic.c_l_2`
-              - Gets or sets the lift coefficient for the second design point.
+              - Get or set the lift coefficient for the second design point.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileFourPointAerodynamic.c_d_2`
-              - Gets or sets the drag coefficient for the second design point.
+              - Get or set the drag coefficient for the second design point.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileFourPointAerodynamic.mach_3`
-              - Gets or sets the Mach for the third design point.
+              - Get or set the Mach for the third design point.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileFourPointAerodynamic.a_o_a_3`
-              - Gets or sets the AOA for the third design point.
+              - Get or set the AOA for the third design point.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileFourPointAerodynamic.c_l_3`
-              - Gets or sets the lift coefficient for the third design point.
+              - Get or set the lift coefficient for the third design point.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileFourPointAerodynamic.c_d_3`
-              - Gets or sets the drag coefficient for the third design point.
+              - Get or set the drag coefficient for the third design point.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileFourPointAerodynamic.mach_4`
-              - Gets or sets the Mach for the fourth design point.
+              - Get or set the Mach for the fourth design point.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileFourPointAerodynamic.a_o_a_4`
-              - Gets or sets the AOA for the fourth design point.
+              - Get or set the AOA for the fourth design point.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileFourPointAerodynamic.c_l_4`
-              - Gets or sets the lift coefficient for the fourth design point.
+              - Get or set the lift coefficient for the fourth design point.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileFourPointAerodynamic.c_d_4`
-              - Gets or sets the drag coefficient for the fourth design point.
+              - Get or set the drag coefficient for the fourth design point.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileFourPointAerodynamic.s_reference`
-              - Gets or sets the aerodynamic reference area for the aircraft.
+              - Get or set the aerodynamic reference area for the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileFourPointAerodynamic.max_aoa`
-              - Gets the maximum AOA for the aircraft.
+              - Get the maximum AOA for the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileFourPointAerodynamic.max_endurance_aoa`
-              - Gets the maximum endurance AOA for the aircraft.
+              - Get the maximum endurance AOA for the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileFourPointAerodynamic.max_range_aoa`
-              - Gets the maximum range AOA for the aircraft.
+              - Get the maximum range AOA for the aircraft.
 
 
 
@@ -89,121 +89,121 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.MissileFourPointAerodynamic.mach_1
     :type: float
 
-    Gets or sets the Mach for the first design point.
+    Get or set the Mach for the first design point.
 
 .. py:property:: a_o_a_1
     :canonical: ansys.stk.core.stkobjects.aviator.MissileFourPointAerodynamic.a_o_a_1
     :type: typing.Any
 
-    Gets or sets the AOA for the first design point.
+    Get or set the AOA for the first design point.
 
 .. py:property:: c_l_1
     :canonical: ansys.stk.core.stkobjects.aviator.MissileFourPointAerodynamic.c_l_1
     :type: float
 
-    Gets or sets the lift coefficient for the first design point.
+    Get or set the lift coefficient for the first design point.
 
 .. py:property:: c_d_1
     :canonical: ansys.stk.core.stkobjects.aviator.MissileFourPointAerodynamic.c_d_1
     :type: float
 
-    Gets or sets the drag coefficient for the first design point.
+    Get or set the drag coefficient for the first design point.
 
 .. py:property:: mach_2
     :canonical: ansys.stk.core.stkobjects.aviator.MissileFourPointAerodynamic.mach_2
     :type: float
 
-    Gets or sets the Mach for the second design point.
+    Get or set the Mach for the second design point.
 
 .. py:property:: a_o_a_2
     :canonical: ansys.stk.core.stkobjects.aviator.MissileFourPointAerodynamic.a_o_a_2
     :type: typing.Any
 
-    Gets or sets the AOA for the second design point.
+    Get or set the AOA for the second design point.
 
 .. py:property:: c_l_2
     :canonical: ansys.stk.core.stkobjects.aviator.MissileFourPointAerodynamic.c_l_2
     :type: float
 
-    Gets or sets the lift coefficient for the second design point.
+    Get or set the lift coefficient for the second design point.
 
 .. py:property:: c_d_2
     :canonical: ansys.stk.core.stkobjects.aviator.MissileFourPointAerodynamic.c_d_2
     :type: float
 
-    Gets or sets the drag coefficient for the second design point.
+    Get or set the drag coefficient for the second design point.
 
 .. py:property:: mach_3
     :canonical: ansys.stk.core.stkobjects.aviator.MissileFourPointAerodynamic.mach_3
     :type: float
 
-    Gets or sets the Mach for the third design point.
+    Get or set the Mach for the third design point.
 
 .. py:property:: a_o_a_3
     :canonical: ansys.stk.core.stkobjects.aviator.MissileFourPointAerodynamic.a_o_a_3
     :type: typing.Any
 
-    Gets or sets the AOA for the third design point.
+    Get or set the AOA for the third design point.
 
 .. py:property:: c_l_3
     :canonical: ansys.stk.core.stkobjects.aviator.MissileFourPointAerodynamic.c_l_3
     :type: float
 
-    Gets or sets the lift coefficient for the third design point.
+    Get or set the lift coefficient for the third design point.
 
 .. py:property:: c_d_3
     :canonical: ansys.stk.core.stkobjects.aviator.MissileFourPointAerodynamic.c_d_3
     :type: float
 
-    Gets or sets the drag coefficient for the third design point.
+    Get or set the drag coefficient for the third design point.
 
 .. py:property:: mach_4
     :canonical: ansys.stk.core.stkobjects.aviator.MissileFourPointAerodynamic.mach_4
     :type: float
 
-    Gets or sets the Mach for the fourth design point.
+    Get or set the Mach for the fourth design point.
 
 .. py:property:: a_o_a_4
     :canonical: ansys.stk.core.stkobjects.aviator.MissileFourPointAerodynamic.a_o_a_4
     :type: typing.Any
 
-    Gets or sets the AOA for the fourth design point.
+    Get or set the AOA for the fourth design point.
 
 .. py:property:: c_l_4
     :canonical: ansys.stk.core.stkobjects.aviator.MissileFourPointAerodynamic.c_l_4
     :type: float
 
-    Gets or sets the lift coefficient for the fourth design point.
+    Get or set the lift coefficient for the fourth design point.
 
 .. py:property:: c_d_4
     :canonical: ansys.stk.core.stkobjects.aviator.MissileFourPointAerodynamic.c_d_4
     :type: float
 
-    Gets or sets the drag coefficient for the fourth design point.
+    Get or set the drag coefficient for the fourth design point.
 
 .. py:property:: s_reference
     :canonical: ansys.stk.core.stkobjects.aviator.MissileFourPointAerodynamic.s_reference
     :type: typing.Any
 
-    Gets or sets the aerodynamic reference area for the aircraft.
+    Get or set the aerodynamic reference area for the aircraft.
 
 .. py:property:: max_aoa
     :canonical: ansys.stk.core.stkobjects.aviator.MissileFourPointAerodynamic.max_aoa
     :type: typing.Any
 
-    Gets the maximum AOA for the aircraft.
+    Get the maximum AOA for the aircraft.
 
 .. py:property:: max_endurance_aoa
     :canonical: ansys.stk.core.stkobjects.aviator.MissileFourPointAerodynamic.max_endurance_aoa
     :type: typing.Any
 
-    Gets the maximum endurance AOA for the aircraft.
+    Get the maximum endurance AOA for the aircraft.
 
 .. py:property:: max_range_aoa
     :canonical: ansys.stk.core.stkobjects.aviator.MissileFourPointAerodynamic.max_range_aoa
     :type: typing.Any
 
-    Gets the maximum range AOA for the aircraft.
+    Get the maximum range AOA for the aircraft.
 
 
 Method detail

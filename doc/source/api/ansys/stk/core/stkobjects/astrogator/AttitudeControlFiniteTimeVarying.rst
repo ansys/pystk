@@ -21,9 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AttitudeControlFiniteTimeVarying.thrust_axes_name`
-              - Gets or sets the thrust axes.
+              - Get or set the thrust axes.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AttitudeControlFiniteTimeVarying.body_constraint_vector`
-              - Defines a constraint vector in spacecraft body coordinates to complete the attitude definition.
+              - Define a constraint vector in spacecraft body coordinates to complete the attitude definition.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AttitudeControlFiniteTimeVarying.azimuth_polynomial_constant_term`
               - Azimuth constant term (dimension: angle).
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AttitudeControlFiniteTimeVarying.azimuth_polynomial_linear_term`
@@ -74,13 +74,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.AttitudeControlFiniteTimeVarying.thrust_axes_name
     :type: str
 
-    Gets or sets the thrust axes.
+    Get or set the thrust axes.
 
 .. py:property:: body_constraint_vector
     :canonical: ansys.stk.core.stkobjects.astrogator.AttitudeControlFiniteTimeVarying.body_constraint_vector
     :type: IDirection
 
-    Defines a constraint vector in spacecraft body coordinates to complete the attitude definition.
+    Define a constraint vector in spacecraft body coordinates to complete the attitude definition.
 
 .. py:property:: azimuth_polynomial_constant_term
     :canonical: ansys.stk.core.stkobjects.astrogator.AttitudeControlFiniteTimeVarying.azimuth_polynomial_constant_term

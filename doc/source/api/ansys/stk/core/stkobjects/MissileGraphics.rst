@@ -32,7 +32,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.MissileGraphics.attributes_type`
               - Type of display: basic, during access intervals, during custom intervals, or real time.
             * - :py:attr:`~ansys.stk.core.stkobjects.MissileGraphics.attributes_supported_types`
-              - Returns an array of valid choices.
+              - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.MissileGraphics.attributes`
               - Get the 2D Graphics attributes.
             * - :py:attr:`~ansys.stk.core.stkobjects.MissileGraphics.pass_data`
@@ -60,7 +60,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.MissileGraphics.show_graphics`
               - Specify whether graphics attributes of the missile are visible.
             * - :py:attr:`~ansys.stk.core.stkobjects.MissileGraphics.radar_cross_section`
-              - Gets the radar cross section graphics interface.
+              - Get the radar cross section graphics interface.
 
 
 
@@ -85,7 +85,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.MissileGraphics.attributes_supported_types
     :type: list
 
-    Returns an array of valid choices.
+    Return an array of valid choices.
 
 .. py:property:: attributes
     :canonical: ansys.stk.core.stkobjects.MissileGraphics.attributes
@@ -169,7 +169,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.MissileGraphics.radar_cross_section
     :type: RadarCrossSectionGraphics
 
-    Gets the radar cross section graphics interface.
+    Get the radar cross section graphics interface.
 
 
 Method detail

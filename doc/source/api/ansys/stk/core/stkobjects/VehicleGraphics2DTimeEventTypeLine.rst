@@ -42,7 +42,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeLine.offset_type`
               - Offset direction (left or right).
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeLine.offset_supported_types`
-              - Returns an array of valid choices.
+              - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeLine.offset_pixels`
               - Offset amount in pixels. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeLine.event_interval`
@@ -95,7 +95,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeLine.offset_supported_types
     :type: list
 
-    Returns an array of valid choices.
+    Return an array of valid choices.
 
 .. py:property:: offset_pixels
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeLine.offset_pixels

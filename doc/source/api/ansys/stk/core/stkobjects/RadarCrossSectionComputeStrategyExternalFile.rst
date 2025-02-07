@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionComputeStrategyExternalFile.filename`
-              - Gets or sets the external rcs data filename.
+              - Get or set the external rcs data filename.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.RadarCrossSectionComputeStrategyExternalFile.filename
     :type: str
 
-    Gets or sets the external rcs data filename.
+    Get or set the external rcs data filename.
 
 

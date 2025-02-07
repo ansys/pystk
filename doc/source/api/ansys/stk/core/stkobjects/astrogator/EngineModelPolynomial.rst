@@ -34,13 +34,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineModelPolynomial.g`
-              - Gets or sets the gravitational acceleration constant at sea level on the Earth. Uses Acceleration Dimension.
+              - Get or set the gravitational acceleration constant at sea level on the Earth. Uses Acceleration Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineModelPolynomial.thrust_coefficients`
               - Get the thrust Coefficients.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineModelPolynomial.isp_coefficients`
               - Get the Isp Coefficients.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineModelPolynomial.control_parameters_available`
-              - Returns whether or not the control parameters can be set.
+              - Return whether or not the control parameters can be set.
 
 
 
@@ -59,7 +59,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.EngineModelPolynomial.g
     :type: float
 
-    Gets or sets the gravitational acceleration constant at sea level on the Earth. Uses Acceleration Dimension.
+    Get or set the gravitational acceleration constant at sea level on the Earth. Uses Acceleration Dimension.
 
 .. py:property:: thrust_coefficients
     :canonical: ansys.stk.core.stkobjects.astrogator.EngineModelPolynomial.thrust_coefficients
@@ -77,7 +77,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.EngineModelPolynomial.control_parameters_available
     :type: bool
 
-    Returns whether or not the control parameters can be set.
+    Return whether or not the control parameters can be set.
 
 
 Method detail

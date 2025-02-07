@@ -40,7 +40,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.LevelTurns.turn_rate`
               - Get the turn rate.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.LevelTurns.maneuver_mode`
-              - Gets or sets the mode that the aircraft will adhere to the specified acceleration parameters. Scale by atmospheric density will cause the aircraft to consider dynamic pressure when calculating turn radius.
+              - Get or set the mode that the aircraft will adhere to the specified acceleration parameters. Scale by atmospheric density will cause the aircraft to consider dynamic pressure when calculating turn radius.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.LevelTurns.maneuver_mode_helper`
               - Get the interface for the Aero/Prop Maneuver Mode helper. The maneuver mode must be set to Aero/Prop to access this interface.
 
@@ -97,7 +97,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.LevelTurns.maneuver_mode
     :type: AccelerationManeuverMode
 
-    Gets or sets the mode that the aircraft will adhere to the specified acceleration parameters. Scale by atmospheric density will cause the aircraft to consider dynamic pressure when calculating turn radius.
+    Get or set the mode that the aircraft will adhere to the specified acceleration parameters. Scale by atmospheric density will cause the aircraft to consider dynamic pressure when calculating turn radius.
 
 .. py:property:: maneuver_mode_helper
     :canonical: ansys.stk.core.stkobjects.aviator.LevelTurns.maneuver_mode_helper

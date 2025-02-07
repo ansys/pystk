@@ -30,11 +30,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.SiteRelativeToPrevProcedure.bearing_mode`
-              - Gets or sets the bearing reference.
+              - Get or set the bearing reference.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.SiteRelativeToPrevProcedure.bearing`
-              - Gets or sets the bearing to define the site.
+              - Get or set the bearing to define the site.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.SiteRelativeToPrevProcedure.range`
-              - Gets or sets the range from the previous procedure.
+              - Get or set the range from the previous procedure.
 
 
 
@@ -53,19 +53,19 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.SiteRelativeToPrevProcedure.bearing_mode
     :type: RelativeAbsoluteBearing
 
-    Gets or sets the bearing reference.
+    Get or set the bearing reference.
 
 .. py:property:: bearing
     :canonical: ansys.stk.core.stkobjects.aviator.SiteRelativeToPrevProcedure.bearing
     :type: typing.Any
 
-    Gets or sets the bearing to define the site.
+    Get or set the bearing to define the site.
 
 .. py:property:: range
     :canonical: ansys.stk.core.stkobjects.aviator.SiteRelativeToPrevProcedure.range
     :type: float
 
-    Gets or sets the range from the previous procedure.
+    Get or set the range from the previous procedure.
 
 
 Method detail

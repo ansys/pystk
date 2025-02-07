@@ -21,9 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.RainLossModelITURP618Version10.surface_temperature`
-              - Gets or sets the surface temperature.
+              - Get or set the surface temperature.
             * - :py:attr:`~ansys.stk.core.stkobjects.RainLossModelITURP618Version10.enable_depolarization_loss`
-              - Gets or sets the option to user de-polarization loss.
+              - Get or set the option to user de-polarization loss.
 
 
 
@@ -42,12 +42,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.RainLossModelITURP618Version10.surface_temperature
     :type: float
 
-    Gets or sets the surface temperature.
+    Get or set the surface temperature.
 
 .. py:property:: enable_depolarization_loss
     :canonical: ansys.stk.core.stkobjects.RainLossModelITURP618Version10.enable_depolarization_loss
     :type: bool
 
-    Gets or sets the option to user de-polarization loss.
+    Get or set the option to user de-polarization loss.
 
 

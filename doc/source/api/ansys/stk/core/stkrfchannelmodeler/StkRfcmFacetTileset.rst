@@ -19,15 +19,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmFacetTileset.name`
-              - Gets the facet tileset name.
+              - Get the facet tileset name.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmFacetTileset.uri`
-              - Gets the facet tileset uri.
+              - Get the facet tileset uri.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmFacetTileset.material`
-              - Gets or sets the tileset material.
+              - Get or set the tileset material.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmFacetTileset.reference_frame`
-              - Gets the tileset reference frame.
+              - Get the tileset reference frame.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmFacetTileset.central_body_name`
-              - Gets the tileset central body name.
+              - Get the tileset central body name.
 
 
 
@@ -46,30 +46,30 @@ Property detail
     :canonical: ansys.stk.core.stkrfchannelmodeler.StkRfcmFacetTileset.name
     :type: str
 
-    Gets the facet tileset name.
+    Get the facet tileset name.
 
 .. py:property:: uri
     :canonical: ansys.stk.core.stkrfchannelmodeler.StkRfcmFacetTileset.uri
     :type: str
 
-    Gets the facet tileset uri.
+    Get the facet tileset uri.
 
 .. py:property:: material
     :canonical: ansys.stk.core.stkrfchannelmodeler.StkRfcmFacetTileset.material
     :type: str
 
-    Gets or sets the tileset material.
+    Get or set the tileset material.
 
 .. py:property:: reference_frame
     :canonical: ansys.stk.core.stkrfchannelmodeler.StkRfcmFacetTileset.reference_frame
     :type: str
 
-    Gets the tileset reference frame.
+    Get the tileset reference frame.
 
 .. py:property:: central_body_name
     :canonical: ansys.stk.core.stkrfchannelmodeler.StkRfcmFacetTileset.central_body_name
     :type: str
 
-    Gets the tileset central body name.
+    Get the tileset central body name.
 
 

@@ -19,11 +19,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AttitudeTransitions.roll_rate`
-              - Gets or sets the roll rate when the aircraft in a turn.
+              - Get or set the roll rate when the aircraft in a turn.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AttitudeTransitions.pitch_rate`
-              - Gets or sets the pitch rate when transitioning between attitude modes.
+              - Get or set the pitch rate when transitioning between attitude modes.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AttitudeTransitions.yaw_rate`
-              - Gets or sets the yaw rate when transitioning between attitude modes.
+              - Get or set the yaw rate when transitioning between attitude modes.
 
 
 
@@ -42,18 +42,18 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.AttitudeTransitions.roll_rate
     :type: typing.Any
 
-    Gets or sets the roll rate when the aircraft in a turn.
+    Get or set the roll rate when the aircraft in a turn.
 
 .. py:property:: pitch_rate
     :canonical: ansys.stk.core.stkobjects.aviator.AttitudeTransitions.pitch_rate
     :type: typing.Any
 
-    Gets or sets the pitch rate when transitioning between attitude modes.
+    Get or set the pitch rate when transitioning between attitude modes.
 
 .. py:property:: yaw_rate
     :canonical: ansys.stk.core.stkobjects.aviator.AttitudeTransitions.yaw_rate
     :type: typing.Any
 
-    Gets or sets the yaw rate when transitioning between attitude modes.
+    Get or set the yaw rate when transitioning between attitude modes.
 
 

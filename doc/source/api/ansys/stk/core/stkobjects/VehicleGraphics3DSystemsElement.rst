@@ -34,7 +34,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DSystemsElement.name`
               - Get the name of the reference system.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DSystemsElement.show_graphics`
-              - Controls whether the reference system is visible.
+              - Control whether the reference system is visible.
 
 
 
@@ -59,7 +59,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DSystemsElement.show_graphics
     :type: bool
 
-    Controls whether the reference system is visible.
+    Control whether the reference system is visible.
 
 
 Method detail

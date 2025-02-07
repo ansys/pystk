@@ -66,9 +66,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentRadiation.shift_saa`
               - Flag to shift the SAA based on the model's epoch.
             * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentRadiation.dose_integration_step`
-              - Gets or sets the sampling step used for integrating dose. Uses Time Dimension.
+              - Get or set the sampling step used for integrating dose. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentRadiation.dose_report_step`
-              - Gets or sets the stepsize to use for dose related data providers. Uses Time Dimension.
+              - Get or set the stepsize to use for dose related data providers. Uses Time Dimension.
 
 
 
@@ -165,13 +165,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentRadiation.dose_integration_step
     :type: float
 
-    Gets or sets the sampling step used for integrating dose. Uses Time Dimension.
+    Get or set the sampling step used for integrating dose. Uses Time Dimension.
 
 .. py:property:: dose_report_step
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentRadiation.dose_report_step
     :type: float
 
-    Gets or sets the stepsize to use for dose related data providers. Uses Time Dimension.
+    Get or set the stepsize to use for dose related data providers. Uses Time Dimension.
 
 
 Method detail

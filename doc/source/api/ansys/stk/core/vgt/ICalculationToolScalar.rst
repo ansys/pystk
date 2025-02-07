@@ -44,9 +44,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalar.type`
-              - Returns the scalar calculation type.
+              - Return the scalar calculation type.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalar.unit_of_measure`
-              - Returns calc scalar's unit of measure, i.e. 'AngleUnit', 'DistanceUnit', etc.
+              - Return calc scalar's unit of measure, i.e. 'AngleUnit', 'DistanceUnit', etc.
 
 
 Import detail
@@ -64,13 +64,13 @@ Property detail
     :canonical: ansys.stk.core.vgt.ICalculationToolScalar.type
     :type: CalculationScalarType
 
-    Returns the scalar calculation type.
+    Return the scalar calculation type.
 
 .. py:property:: unit_of_measure
     :canonical: ansys.stk.core.vgt.ICalculationToolScalar.unit_of_measure
     :type: str
 
-    Returns calc scalar's unit of measure, i.e. 'AngleUnit', 'DistanceUnit', etc.
+    Return calc scalar's unit of measure, i.e. 'AngleUnit', 'DistanceUnit', etc.
 
 
 Method detail

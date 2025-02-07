@@ -19,9 +19,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarClutterMapInheritable.inherit`
-              - Gets or set the option to inherit the clutter map from the scenario object.
+              - Get or set the option to inherit the clutter map from the scenario object.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarClutterMapInheritable.clutter_map`
-              - Gets the radar clutter map.
+              - Get the radar clutter map.
 
 
 Import detail
@@ -39,12 +39,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.IRadarClutterMapInheritable.inherit
     :type: bool
 
-    Gets or set the option to inherit the clutter map from the scenario object.
+    Get or set the option to inherit the clutter map from the scenario object.
 
 .. py:property:: clutter_map
     :canonical: ansys.stk.core.stkobjects.IRadarClutterMapInheritable.clutter_map
     :type: IRadarClutterMap
 
-    Gets the radar clutter map.
+    Get the radar clutter map.
 
 

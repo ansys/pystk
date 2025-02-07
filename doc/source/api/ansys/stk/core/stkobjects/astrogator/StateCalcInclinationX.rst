@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcInclinationX.central_body_name`
-              - Gets or sets the central body of the component.
+              - Get or set the central body of the component.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcInclinationX.inclination_magnitude_type`
               - Magnitude to use when computing the inclination vector.
 
@@ -42,7 +42,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcInclinationX.central_body_name
     :type: str
 
-    Gets or sets the central body of the component.
+    Get or set the central body of the component.
 
 .. py:property:: inclination_magnitude_type
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcInclinationX.inclination_magnitude_type

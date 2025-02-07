@@ -34,23 +34,23 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineIon.g`
-              - Gets or sets the gravitational acceleration constant at sea level on the Earth. Uses Acceleration Dimension.
+              - Get or set the gravitational acceleration constant at sea level on the Earth. Uses Acceleration Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineIon.input_power_source_name`
-              - Gets or sets the object that computes the power input to the engine.
+              - Get or set the object that computes the power input to the engine.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineIon.min_required_power`
-              - Gets or sets the minimum power required for engine to produce thrust. Uses Power Dimension.
+              - Get or set the minimum power required for engine to produce thrust. Uses Power Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineIon.max_input_power`
-              - Gets or sets the maximum power that can be used by engine to produce thrust. Uses Power Dimension.
+              - Get or set the maximum power that can be used by engine to produce thrust. Uses Power Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineIon.percent_degradation_per_year`
-              - Gets or sets the degradation factor is ((1-x%/yr)^(timeSinceRefEpoch)).
+              - Get or set the degradation factor is ((1-x%/yr)^(timeSinceRefEpoch)).
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineIon.reference_epoch`
-              - Gets or sets the date and Time used as reference epoch for degradation. Uses DateFormat Dimension.
+              - Get or set the date and Time used as reference epoch for degradation. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineIon.percent_throttle`
-              - Gets or sets the percentage of available thrust to use (100 is full on, 0 is off). Dimensionless.
+              - Get or set the percentage of available thrust to use (100 is full on, 0 is off). Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineIon.engine_definition`
               - Get the engine definition.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineIon.control_parameters_available`
-              - Returns whether or not the control parameters can be set.
+              - Return whether or not the control parameters can be set.
 
 
 
@@ -69,43 +69,43 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.EngineIon.g
     :type: float
 
-    Gets or sets the gravitational acceleration constant at sea level on the Earth. Uses Acceleration Dimension.
+    Get or set the gravitational acceleration constant at sea level on the Earth. Uses Acceleration Dimension.
 
 .. py:property:: input_power_source_name
     :canonical: ansys.stk.core.stkobjects.astrogator.EngineIon.input_power_source_name
     :type: str
 
-    Gets or sets the object that computes the power input to the engine.
+    Get or set the object that computes the power input to the engine.
 
 .. py:property:: min_required_power
     :canonical: ansys.stk.core.stkobjects.astrogator.EngineIon.min_required_power
     :type: float
 
-    Gets or sets the minimum power required for engine to produce thrust. Uses Power Dimension.
+    Get or set the minimum power required for engine to produce thrust. Uses Power Dimension.
 
 .. py:property:: max_input_power
     :canonical: ansys.stk.core.stkobjects.astrogator.EngineIon.max_input_power
     :type: float
 
-    Gets or sets the maximum power that can be used by engine to produce thrust. Uses Power Dimension.
+    Get or set the maximum power that can be used by engine to produce thrust. Uses Power Dimension.
 
 .. py:property:: percent_degradation_per_year
     :canonical: ansys.stk.core.stkobjects.astrogator.EngineIon.percent_degradation_per_year
     :type: float
 
-    Gets or sets the degradation factor is ((1-x%/yr)^(timeSinceRefEpoch)).
+    Get or set the degradation factor is ((1-x%/yr)^(timeSinceRefEpoch)).
 
 .. py:property:: reference_epoch
     :canonical: ansys.stk.core.stkobjects.astrogator.EngineIon.reference_epoch
     :type: typing.Any
 
-    Gets or sets the date and Time used as reference epoch for degradation. Uses DateFormat Dimension.
+    Get or set the date and Time used as reference epoch for degradation. Uses DateFormat Dimension.
 
 .. py:property:: percent_throttle
     :canonical: ansys.stk.core.stkobjects.astrogator.EngineIon.percent_throttle
     :type: float
 
-    Gets or sets the percentage of available thrust to use (100 is full on, 0 is off). Dimensionless.
+    Get or set the percentage of available thrust to use (100 is full on, 0 is off). Dimensionless.
 
 .. py:property:: engine_definition
     :canonical: ansys.stk.core.stkobjects.astrogator.EngineIon.engine_definition
@@ -117,7 +117,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.EngineIon.control_parameters_available
     :type: bool
 
-    Returns whether or not the control parameters can be set.
+    Return whether or not the control parameters can be set.
 
 
 Method detail

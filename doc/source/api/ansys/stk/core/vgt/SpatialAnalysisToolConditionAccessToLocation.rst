@@ -23,7 +23,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolConditionAccessToLocation.constraint_object`
               - A constraint object of the access.
             * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolConditionAccessToLocation.light_time_delay`
-              - Returns Light Time Delay options parameters.
+              - Return Light Time Delay options parameters.
 
 
 
@@ -48,6 +48,6 @@ Property detail
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolConditionAccessToLocation.light_time_delay
     :type: TimeToolLightTimeDelay
 
-    Returns Light Time Delay options parameters.
+    Return Light Time Delay options parameters.
 
 

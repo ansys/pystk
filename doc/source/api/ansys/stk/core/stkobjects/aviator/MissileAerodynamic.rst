@@ -19,7 +19,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileAerodynamic.aerodynamic_strategy`
-              - Gets or sets the aerodynamic strategy type.
+              - Get or set the aerodynamic strategy type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileAerodynamic.mode_as_simple`
               - Get the interface for a simple aerodynamics strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileAerodynamic.mode_as_external`
@@ -46,7 +46,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.MissileAerodynamic.aerodynamic_strategy
     :type: MissileAerodynamicStrategy
 
-    Gets or sets the aerodynamic strategy type.
+    Get or set the aerodynamic strategy type.
 
 .. py:property:: mode_as_simple
     :canonical: ansys.stk.core.stkobjects.aviator.MissileAerodynamic.mode_as_simple

@@ -32,21 +32,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ReTransmitterModelSimple.enable_polarization`
-              - Gets or sets the enable polarization option.
+              - Get or set the enable polarization option.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReTransmitterModelSimple.polarization`
-              - Gets the polarization.
+              - Get the polarization.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReTransmitterModelSimple.post_transmit_gains_losses`
-              - Gets the collection of additional post transmit gains and losses.
+              - Get the collection of additional post transmit gains and losses.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReTransmitterModelSimple.enable_filter`
-              - Gets or set the flag determines whether or not to enable the Filter.
+              - Get or set the flag determines whether or not to enable the Filter.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReTransmitterModelSimple.supported_filters`
-              - This property is deprecated. Use FilterComponentLinking on IAgReTransmitterModelSimple instead. Gets an array of supported filter model names.
+              - Do not use this property, as it is deprecated. Use FilterComponentLinking on IAgReTransmitterModelSimple instead. Gets an array of supported filter model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReTransmitterModelSimple.filter`
-              - This property is deprecated. Use FilterComponentLinking on IAgReTransmitterModelSimple instead. Gets the current filter model.
+              - Do not use this property, as it is deprecated. Use FilterComponentLinking on IAgReTransmitterModelSimple instead. Gets the current filter model.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReTransmitterModelSimple.saturated_eirp`
-              - Gets or sets the saturated eirp.
+              - Get or set the saturated eirp.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReTransmitterModelSimple.filter_component_linking`
-              - Gets the link/embed controller for managing the filter model component.
+              - Get the link/embed controller for managing the filter model component.
 
 
 
@@ -65,49 +65,49 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.ReTransmitterModelSimple.enable_polarization
     :type: bool
 
-    Gets or sets the enable polarization option.
+    Get or set the enable polarization option.
 
 .. py:property:: polarization
     :canonical: ansys.stk.core.stkobjects.ReTransmitterModelSimple.polarization
     :type: IPolarization
 
-    Gets the polarization.
+    Get the polarization.
 
 .. py:property:: post_transmit_gains_losses
     :canonical: ansys.stk.core.stkobjects.ReTransmitterModelSimple.post_transmit_gains_losses
     :type: AdditionalGainLossCollection
 
-    Gets the collection of additional post transmit gains and losses.
+    Get the collection of additional post transmit gains and losses.
 
 .. py:property:: enable_filter
     :canonical: ansys.stk.core.stkobjects.ReTransmitterModelSimple.enable_filter
     :type: bool
 
-    Gets or set the flag determines whether or not to enable the Filter.
+    Get or set the flag determines whether or not to enable the Filter.
 
 .. py:property:: supported_filters
     :canonical: ansys.stk.core.stkobjects.ReTransmitterModelSimple.supported_filters
     :type: list
 
-    This property is deprecated. Use FilterComponentLinking on IAgReTransmitterModelSimple instead. Gets an array of supported filter model names.
+    Do not use this property, as it is deprecated. Use FilterComponentLinking on IAgReTransmitterModelSimple instead. Gets an array of supported filter model names.
 
 .. py:property:: filter
     :canonical: ansys.stk.core.stkobjects.ReTransmitterModelSimple.filter
     :type: IRFFilterModel
 
-    This property is deprecated. Use FilterComponentLinking on IAgReTransmitterModelSimple instead. Gets the current filter model.
+    Do not use this property, as it is deprecated. Use FilterComponentLinking on IAgReTransmitterModelSimple instead. Gets the current filter model.
 
 .. py:property:: saturated_eirp
     :canonical: ansys.stk.core.stkobjects.ReTransmitterModelSimple.saturated_eirp
     :type: float
 
-    Gets or sets the saturated eirp.
+    Get or set the saturated eirp.
 
 .. py:property:: filter_component_linking
     :canonical: ansys.stk.core.stkobjects.ReTransmitterModelSimple.filter_component_linking
     :type: IComponentLinkEmbedControl
 
-    Gets the link/embed controller for managing the filter model component.
+    Get the link/embed controller for managing the filter model component.
 
 
 Method detail

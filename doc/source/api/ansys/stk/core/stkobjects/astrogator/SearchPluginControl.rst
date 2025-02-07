@@ -35,7 +35,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.SearchPluginControl.use_custom_display_unit`
               - If true, allows display of values in another unit.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.SearchPluginControl.custom_display_unit`
-              - Gets or sets the unit in which the value will be displayed in the GUI.
+              - Get or set the unit in which the value will be displayed in the GUI.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.SearchPluginControl.values`
               - List of values of this independent variable at each iteration, including nominal run. Dimension depends on context.
 
@@ -104,7 +104,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.SearchPluginControl.custom_display_unit
     :type: str
 
-    Gets or sets the unit in which the value will be displayed in the GUI.
+    Get or set the unit in which the value will be displayed in the GUI.
 
 .. py:property:: values
     :canonical: ansys.stk.core.stkobjects.astrogator.SearchPluginControl.values

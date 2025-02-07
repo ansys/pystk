@@ -40,7 +40,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorComplexConicPattern.maximum_clock_angle`
               - Maximum clock angle to define the range of rotation about the boresight relative to the up vector. Clock angles correspond to azimuth angles, which are defined in the sensor pointing direction. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorComplexConicPattern.angular_resolution`
-              - Allows a user to set the angular separation between the pattern data points. This is an advanced user field, available only through STK's object model interface. The default value for the number of pattern samples is...
+              - Allow a user to set the angular separation between the pattern data points. This is an advanced user field, available only through STK's object model interface. The default value for the number of pattern samples is...
 
 
 
@@ -83,7 +83,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.SensorComplexConicPattern.angular_resolution
     :type: typing.Any
 
-    Allows a user to set the angular separation between the pattern data points. This is an advanced user field, available only through STK's object model interface. The default value for the number of pattern samples is...
+    Allow a user to set the angular separation between the pattern data points. This is an advanced user field, available only through STK's object model interface. The default value for the number of pattern samples is...
 
 
 Method detail

@@ -28,17 +28,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleEphemerisSPICEExportTool.central_body_name`
-              - Gets or sets the central body of the satellite.
+              - Get or set the central body of the satellite.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleEphemerisSPICEExportTool.satellite_identifer`
-              - Gets or sets the identifying number for the satellite ephemeris being created. Dimensionless.
+              - Get or set the identifying number for the satellite ephemeris being created. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleEphemerisSPICEExportTool.interpolation_type`
-              - Gets or sets the interpolation type.
+              - Get or set the interpolation type.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleEphemerisSPICEExportTool.interpolation`
-              - Gets or sets the interpolation order value between 1 and 15. If the interpolation type is Type 13 (Hermitian), and then you are required to enter an odd interpolation order value.
+              - Get or set the interpolation order value between 1 and 15. If the interpolation type is Type 13 (Hermitian), and then you are required to enter an odd interpolation order value.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleEphemerisSPICEExportTool.step_size`
               - If the Use Ephemeris Steps option is not selected, enter a Step Size to be used for the vehicle.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleEphemerisSPICEExportTool.time_period`
-              - Sets the time period. Options are Use Entire Ephemeris - STK creates a data file using the Start and Stop Time specified in the vehicle's Orbit tab or Specify Time Period - STK creates a data file using the Start and Stop Time specified here.
+              - Set the time period. Options are Use Entire Ephemeris - STK creates a data file using the Start and Stop Time specified in the vehicle's Orbit tab or Specify Time Period - STK creates a data file using the Start and Stop Time specified here.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleEphemerisSPICEExportTool.use_vehicle_central_body`
               - Uses vehicle's central body.
 
@@ -59,25 +59,25 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleEphemerisSPICEExportTool.central_body_name
     :type: str
 
-    Gets or sets the central body of the satellite.
+    Get or set the central body of the satellite.
 
 .. py:property:: satellite_identifer
     :canonical: ansys.stk.core.stkobjects.VehicleEphemerisSPICEExportTool.satellite_identifer
     :type: int
 
-    Gets or sets the identifying number for the satellite ephemeris being created. Dimensionless.
+    Get or set the identifying number for the satellite ephemeris being created. Dimensionless.
 
 .. py:property:: interpolation_type
     :canonical: ansys.stk.core.stkobjects.VehicleEphemerisSPICEExportTool.interpolation_type
     :type: SpiceInterpolation
 
-    Gets or sets the interpolation type.
+    Get or set the interpolation type.
 
 .. py:property:: interpolation
     :canonical: ansys.stk.core.stkobjects.VehicleEphemerisSPICEExportTool.interpolation
     :type: int
 
-    Gets or sets the interpolation order value between 1 and 15. If the interpolation type is Type 13 (Hermitian), and then you are required to enter an odd interpolation order value.
+    Get or set the interpolation order value between 1 and 15. If the interpolation type is Type 13 (Hermitian), and then you are required to enter an odd interpolation order value.
 
 .. py:property:: step_size
     :canonical: ansys.stk.core.stkobjects.VehicleEphemerisSPICEExportTool.step_size
@@ -89,7 +89,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleEphemerisSPICEExportTool.time_period
     :type: ExportToolTimePeriod
 
-    Sets the time period. Options are Use Entire Ephemeris - STK creates a data file using the Start and Stop Time specified in the vehicle's Orbit tab or Specify Time Period - STK creates a data file using the Start and Stop Time specified here.
+    Set the time period. Options are Use Entire Ephemeris - STK creates a data file using the Start and Stop Time specified in the vehicle's Orbit tab or Specify Time Period - STK creates a data file using the Start and Stop Time specified here.
 
 .. py:property:: use_vehicle_central_body
     :canonical: ansys.stk.core.stkobjects.VehicleEphemerisSPICEExportTool.use_vehicle_central_body

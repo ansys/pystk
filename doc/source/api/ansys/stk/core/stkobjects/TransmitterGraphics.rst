@@ -27,7 +27,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.TransmitterGraphics.boresight_marker_style`
               - The marker style used to represent the boresight graphically.
             * - :py:attr:`~ansys.stk.core.stkobjects.TransmitterGraphics.contour_graphics`
-              - Gets the transmitter's antenna contour graphics interface.
+              - Get the transmitter's antenna contour graphics interface.
 
 
 
@@ -70,6 +70,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.TransmitterGraphics.contour_graphics
     :type: AntennaContourGraphics
 
-    Gets the transmitter's antenna contour graphics interface.
+    Get the transmitter's antenna contour graphics interface.
 
 

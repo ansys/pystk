@@ -32,7 +32,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessEventDetection.type`
               - Get the type of event detection (e.g., with or without subsampling).
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessEventDetection.supported_types`
-              - Returns an array of valid choices.
+              - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessEventDetection.strategy`
               - Get the selected event detection strategy.
 
@@ -59,7 +59,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.AccessEventDetection.supported_types
     :type: list
 
-    Returns an array of valid choices.
+    Return an array of valid choices.
 
 .. py:property:: strategy
     :canonical: ansys.stk.core.stkobjects.AccessEventDetection.strategy

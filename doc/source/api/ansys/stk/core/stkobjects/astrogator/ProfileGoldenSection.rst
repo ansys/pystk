@@ -23,13 +23,13 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileGoldenSection.targeter_graphs`
               - Graphs.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileGoldenSection.scripting_tool`
-              - Returns the Scripting tool for the sequence.
+              - Return the Scripting tool for the sequence.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileGoldenSection.controls`
               - Get the list of control parameters defined for the profile.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileGoldenSection.results`
               - Get the list of results defined for the profile.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileGoldenSection.max_iterations`
-              - Gets or sets the number of complete iterations of the profile to try before stopping. Dimensionless.
+              - Get or set the number of complete iterations of the profile to try before stopping. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileGoldenSection.log_file`
               - Name of the log file for this profile.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileGoldenSection.enable_display_status`
@@ -58,7 +58,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileGoldenSection.scripting_tool
     :type: ScriptingTool
 
-    Returns the Scripting tool for the sequence.
+    Return the Scripting tool for the sequence.
 
 .. py:property:: controls
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileGoldenSection.controls
@@ -76,7 +76,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileGoldenSection.max_iterations
     :type: int
 
-    Gets or sets the number of complete iterations of the profile to try before stopping. Dimensionless.
+    Get or set the number of complete iterations of the profile to try before stopping. Dimensionless.
 
 .. py:property:: log_file
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileGoldenSection.log_file

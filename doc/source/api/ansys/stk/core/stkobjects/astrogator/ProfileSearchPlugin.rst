@@ -29,7 +29,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileSearchPlugin.plugin_identifier`
               - Get the plugin identifier.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileSearchPlugin.scripting_tool`
-              - Returns the Scripting tool for the sequence.
+              - Return the Scripting tool for the sequence.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileSearchPlugin.reset_controls_before_run`
               - Reset controls before each run.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileSearchPlugin.targeter_graphs`
@@ -78,7 +78,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileSearchPlugin.scripting_tool
     :type: ScriptingTool
 
-    Returns the Scripting tool for the sequence.
+    Return the Scripting tool for the sequence.
 
 .. py:property:: reset_controls_before_run
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileSearchPlugin.reset_controls_before_run

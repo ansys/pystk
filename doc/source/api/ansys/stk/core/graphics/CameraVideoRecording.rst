@@ -34,7 +34,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.CameraVideoRecording.is_recording`
-              - Gets if recording is occurring or not.
+              - Get if recording is occurring or not.
 
 
 
@@ -53,7 +53,7 @@ Property detail
     :canonical: ansys.stk.core.graphics.CameraVideoRecording.is_recording
     :type: bool
 
-    Gets if recording is occurring or not.
+    Get if recording is occurring or not.
 
 
 Method detail

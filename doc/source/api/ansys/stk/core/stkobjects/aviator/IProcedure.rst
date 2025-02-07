@@ -19,7 +19,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedure.name`
-              - Gets or sets the name of the procedure.
+              - Get or set the name of the procedure.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedure.site`
               - Get the site of the current procedure.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IProcedure.time_options`
@@ -53,7 +53,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedure.name
     :type: str
 
-    Gets or sets the name of the procedure.
+    Get or set the name of the procedure.
 
 .. py:property:: site
     :canonical: ansys.stk.core.stkobjects.aviator.IProcedure.site

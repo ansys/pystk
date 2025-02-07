@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.TargetSelectionMethodPriority.priorities`
-              - Gets the collection of priorities.
+              - Get the collection of priorities.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.TargetSelectionMethodPriority.priorities
     :type: PriorityCollection
 
-    Gets the collection of priorities.
+    Get the collection of priorities.
 
 

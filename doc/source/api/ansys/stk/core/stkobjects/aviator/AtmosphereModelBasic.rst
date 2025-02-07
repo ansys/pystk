@@ -19,15 +19,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AtmosphereModelBasic.name`
-              - Gets or sets the name of the atmosphere model.
+              - Get or set the name of the atmosphere model.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AtmosphereModelBasic.basic_model_type`
-              - Gets or sets the type of basic atmosphere.
+              - Get or set the type of basic atmosphere.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AtmosphereModelBasic.use_non_standard_atmosphere`
               - Opt whether to use non standard atmosphere conditions.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AtmosphereModelBasic.temperature`
-              - Gets or sets the sea-level temperature.
+              - Get or set the sea-level temperature.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AtmosphereModelBasic.pressure`
-              - Gets or sets the sea-level pressure.
+              - Get or set the sea-level pressure.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AtmosphereModelBasic.density_altitude`
               - Get the sea-level density altitude.
 
@@ -48,13 +48,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.AtmosphereModelBasic.name
     :type: str
 
-    Gets or sets the name of the atmosphere model.
+    Get or set the name of the atmosphere model.
 
 .. py:property:: basic_model_type
     :canonical: ansys.stk.core.stkobjects.aviator.AtmosphereModelBasic.basic_model_type
     :type: AtmosphereModelType
 
-    Gets or sets the type of basic atmosphere.
+    Get or set the type of basic atmosphere.
 
 .. py:property:: use_non_standard_atmosphere
     :canonical: ansys.stk.core.stkobjects.aviator.AtmosphereModelBasic.use_non_standard_atmosphere
@@ -66,13 +66,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.AtmosphereModelBasic.temperature
     :type: float
 
-    Gets or sets the sea-level temperature.
+    Get or set the sea-level temperature.
 
 .. py:property:: pressure
     :canonical: ansys.stk.core.stkobjects.aviator.AtmosphereModelBasic.pressure
     :type: float
 
-    Gets or sets the sea-level pressure.
+    Get or set the sea-level pressure.
 
 .. py:property:: density_altitude
     :canonical: ansys.stk.core.stkobjects.aviator.AtmosphereModelBasic.density_altitude

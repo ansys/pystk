@@ -19,9 +19,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.IStkRfcmRadarAnalysisConfigurationModel.transceiver_configuration_collection`
-              - Gets the collection of transceiver configurations.
+              - Get the collection of transceiver configurations.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.IStkRfcmRadarAnalysisConfigurationModel.imaging_data_product_list`
-              - Gets the imaging product list.
+              - Get the imaging product list.
 
 
 Import detail
@@ -39,12 +39,12 @@ Property detail
     :canonical: ansys.stk.core.stkrfchannelmodeler.IStkRfcmRadarAnalysisConfigurationModel.transceiver_configuration_collection
     :type: StkRfcmRadarTransceiverConfigurationCollection
 
-    Gets the collection of transceiver configurations.
+    Get the collection of transceiver configurations.
 
 .. py:property:: imaging_data_product_list
     :canonical: ansys.stk.core.stkrfchannelmodeler.IStkRfcmRadarAnalysisConfigurationModel.imaging_data_product_list
     :type: StkRfcmRadarImagingDataProductCollection
 
-    Gets the imaging product list.
+    Get the imaging product list.
 
 

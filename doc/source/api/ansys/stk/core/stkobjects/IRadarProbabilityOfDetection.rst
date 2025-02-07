@@ -19,9 +19,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarProbabilityOfDetection.name`
-              - Gets the probability of detection algorithm name.
+              - Get the probability of detection algorithm name.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarProbabilityOfDetection.type`
-              - Gets the probability of detection type.
+              - Get the probability of detection type.
 
 
 Import detail
@@ -39,12 +39,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.IRadarProbabilityOfDetection.name
     :type: str
 
-    Gets the probability of detection algorithm name.
+    Get the probability of detection algorithm name.
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.IRadarProbabilityOfDetection.type
     :type: RadarProbabilityOfDetectionType
 
-    Gets the probability of detection type.
+    Get the probability of detection type.
 
 

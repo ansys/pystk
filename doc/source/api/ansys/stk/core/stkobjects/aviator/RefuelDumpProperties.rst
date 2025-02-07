@@ -32,9 +32,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.RefuelDumpProperties.refuel_dump_mode_value`
               - Get the RefuelDumpModeValue if applicable.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.RefuelDumpProperties.refuel_dump_rate`
-              - Gets or sets the RefuelDump rate.
+              - Get or set the RefuelDump rate.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.RefuelDumpProperties.refuel_dump_time_offset`
-              - Gets or sets the RefuelDump time offset.
+              - Get or set the RefuelDump time offset.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.RefuelDumpProperties.can_use_end_of_enroute_segment_as_epoch`
               - Can use end of enroute segment as the epoch.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.RefuelDumpProperties.use_end_of_enroute_segment_as_epoch`
@@ -69,13 +69,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.RefuelDumpProperties.refuel_dump_rate
     :type: float
 
-    Gets or sets the RefuelDump rate.
+    Get or set the RefuelDump rate.
 
 .. py:property:: refuel_dump_time_offset
     :canonical: ansys.stk.core.stkobjects.aviator.RefuelDumpProperties.refuel_dump_time_offset
     :type: float
 
-    Gets or sets the RefuelDump time offset.
+    Get or set the RefuelDump time offset.
 
 .. py:property:: can_use_end_of_enroute_segment_as_epoch
     :canonical: ansys.stk.core.stkobjects.aviator.RefuelDumpProperties.can_use_end_of_enroute_segment_as_epoch

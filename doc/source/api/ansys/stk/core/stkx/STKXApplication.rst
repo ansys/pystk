@@ -50,23 +50,23 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkx.STKXApplication.connect_port`
               - Specify TCP/IP port to be used by Connect (default: 5001).
             * - :py:attr:`~ansys.stk.core.stkx.STKXApplication.host_id`
-              - Returns the Host ID.
+              - Return the Host ID.
             * - :py:attr:`~ansys.stk.core.stkx.STKXApplication.registration_id`
-              - Returns the Registration ID.
+              - Return the Registration ID.
             * - :py:attr:`~ansys.stk.core.stkx.STKXApplication.version`
-              - Returns the version number.
+              - Return the version number.
             * - :py:attr:`~ansys.stk.core.stkx.STKXApplication.vendor_id`
-              - This property is deprecated. The identifier of the vendor.
+              - Do not use this property, as it is deprecated. The identifier of the vendor.
             * - :py:attr:`~ansys.stk.core.stkx.STKXApplication.log_file_full_name`
-              - Returns full path and log file name.
+              - Return full path and log file name.
             * - :py:attr:`~ansys.stk.core.stkx.STKXApplication.logging_mode`
-              - Controls the log file generation, and if the log file is deleted or not on application exit.
+              - Control the log file generation, and if the log file is deleted or not on application exit.
             * - :py:attr:`~ansys.stk.core.stkx.STKXApplication.connect_max_connections`
               - Specify the maximum number of Connect connections to allow.
             * - :py:attr:`~ansys.stk.core.stkx.STKXApplication.no_graphics`
               - Start engine with or without graphics (default: engine starts with graphics.).
             * - :py:attr:`~ansys.stk.core.stkx.STKXApplication.show_sla_if_not_accepted`
-              - Shows the Software License Agreement dialog if not already accepted.
+              - Show the Software License Agreement dialog if not already accepted.
             * - :py:attr:`~ansys.stk.core.stkx.STKXApplication.use_hook`
               - Start engine with or without message hook setup (default: engine starts with message hook setup.).
 
@@ -99,37 +99,37 @@ Property detail
     :canonical: ansys.stk.core.stkx.STKXApplication.host_id
     :type: str
 
-    Returns the Host ID.
+    Return the Host ID.
 
 .. py:property:: registration_id
     :canonical: ansys.stk.core.stkx.STKXApplication.registration_id
     :type: str
 
-    Returns the Registration ID.
+    Return the Registration ID.
 
 .. py:property:: version
     :canonical: ansys.stk.core.stkx.STKXApplication.version
     :type: str
 
-    Returns the version number.
+    Return the version number.
 
 .. py:property:: vendor_id
     :canonical: ansys.stk.core.stkx.STKXApplication.vendor_id
     :type: str
 
-    This property is deprecated. The identifier of the vendor.
+    Do not use this property, as it is deprecated. The identifier of the vendor.
 
 .. py:property:: log_file_full_name
     :canonical: ansys.stk.core.stkx.STKXApplication.log_file_full_name
     :type: str
 
-    Returns full path and log file name.
+    Return full path and log file name.
 
 .. py:property:: logging_mode
     :canonical: ansys.stk.core.stkx.STKXApplication.logging_mode
     :type: LoggingMode
 
-    Controls the log file generation, and if the log file is deleted or not on application exit.
+    Control the log file generation, and if the log file is deleted or not on application exit.
 
 .. py:property:: connect_max_connections
     :canonical: ansys.stk.core.stkx.STKXApplication.connect_max_connections
@@ -147,7 +147,7 @@ Property detail
     :canonical: ansys.stk.core.stkx.STKXApplication.show_sla_if_not_accepted
     :type: bool
 
-    Shows the Software License Agreement dialog if not already accepted.
+    Show the Software License Agreement dialog if not already accepted.
 
 .. py:property:: use_hook
     :canonical: ansys.stk.core.stkx.STKXApplication.use_hook

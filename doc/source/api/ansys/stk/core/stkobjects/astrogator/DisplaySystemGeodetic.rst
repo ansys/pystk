@@ -21,11 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DisplaySystemGeodetic.latitude`
-              - Gets or sets the latitude of the launch location. Uses Angle Dimension.
+              - Get or set the latitude of the launch location. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DisplaySystemGeodetic.longitude`
-              - Gets or sets the longitude of the launch location. Uses Angle Dimension.
+              - Get or set the longitude of the launch location. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DisplaySystemGeodetic.altitude`
-              - Gets or sets the altitude of the launch location. Uses Distance Dimension.
+              - Get or set the altitude of the launch location. Uses Distance Dimension.
 
 
 
@@ -44,18 +44,18 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.DisplaySystemGeodetic.latitude
     :type: typing.Any
 
-    Gets or sets the latitude of the launch location. Uses Angle Dimension.
+    Get or set the latitude of the launch location. Uses Angle Dimension.
 
 .. py:property:: longitude
     :canonical: ansys.stk.core.stkobjects.astrogator.DisplaySystemGeodetic.longitude
     :type: typing.Any
 
-    Gets or sets the longitude of the launch location. Uses Angle Dimension.
+    Get or set the longitude of the launch location. Uses Angle Dimension.
 
 .. py:property:: altitude
     :canonical: ansys.stk.core.stkobjects.astrogator.DisplaySystemGeodetic.altitude
     :type: float
 
-    Gets or sets the altitude of the launch location. Uses Distance Dimension.
+    Get or set the altitude of the launch location. Uses Distance Dimension.
 
 

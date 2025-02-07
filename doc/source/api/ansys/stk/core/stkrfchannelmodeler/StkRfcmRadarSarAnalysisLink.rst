@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmRadarSarAnalysisLink.image_location_name`
-              - Gets the analysis link image location name.
+              - Get the analysis link image location name.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.stkrfchannelmodeler.StkRfcmRadarSarAnalysisLink.image_location_name
     :type: str
 
-    Gets the analysis link image location name.
+    Get the analysis link image location name.
 
 

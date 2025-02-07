@@ -21,9 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcReferenceRadius.central_body_name`
-              - Gets or sets the central body of the component.
+              - Get or set the central body of the component.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcReferenceRadius.reference_radius_source`
-              - Gets or sets the source for the reference radius.
+              - Get or set the source for the reference radius.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcReferenceRadius.gravity_filename`
               - Source for the reference radius if RefRadSource is set to Gravity File.
 
@@ -44,13 +44,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcReferenceRadius.central_body_name
     :type: str
 
-    Gets or sets the central body of the component.
+    Get or set the central body of the component.
 
 .. py:property:: reference_radius_source
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcReferenceRadius.reference_radius_source
     :type: ReferenceRadiusSource
 
-    Gets or sets the source for the reference radius.
+    Get or set the source for the reference radius.
 
 .. py:property:: gravity_filename
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcReferenceRadius.gravity_filename

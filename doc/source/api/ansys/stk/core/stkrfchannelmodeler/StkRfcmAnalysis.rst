@@ -19,7 +19,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmAnalysis.analysis_link_collection`
-              - Gets the analysis link collection.
+              - Get the analysis link collection.
 
 
 
@@ -38,6 +38,6 @@ Property detail
     :canonical: ansys.stk.core.stkrfchannelmodeler.StkRfcmAnalysis.analysis_link_collection
     :type: StkRfcmAnalysisLinkCollection
 
-    Gets the analysis link collection.
+    Get the analysis link collection.
 
 

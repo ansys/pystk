@@ -27,19 +27,19 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileIPOPTOptimizer.targeter_graphs`
               - Graphs.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileIPOPTOptimizer.scripting_tool`
-              - Returns the Scripting tool for the sequence.
+              - Return the Scripting tool for the sequence.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileIPOPTOptimizer.reset_controls_before_run`
               - Reset controls before each run.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileIPOPTOptimizer.tolerance_on_convergence`
-              - Gets or sets the tolerance by which the optimality conditions must be satisfied for the problem to be considered converged. The default value is 1E-8.
+              - Get or set the tolerance by which the optimality conditions must be satisfied for the problem to be considered converged. The default value is 1E-8.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileIPOPTOptimizer.maximum_iterations`
-              - Gets or sets the maximum number of iterations before IPOPT should give up if it hasn't yet converged on a solution. The default value is 3000.
+              - Get or set the maximum number of iterations before IPOPT should give up if it hasn't yet converged on a solution. The default value is 3000.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileIPOPTOptimizer.tolerance_on_constraint_violation`
-              - Gets or sets the tolerance by which user-specified constraints are allowed to be violated with the solution still considered feasible. The default value is 1.0E-4.
+              - Get or set the tolerance by which user-specified constraints are allowed to be violated with the solution still considered feasible. The default value is 1.0E-4.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileIPOPTOptimizer.tolerance_on_dual_infeasibility`
-              - Gets or sets the desired absolute tolerance on the maximum norm of the dual infeasibility. The default value is 1.
+              - Get or set the desired absolute tolerance on the maximum norm of the dual infeasibility. The default value is 1.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileIPOPTOptimizer.tolerance_on_complementary_infeasibility`
-              - Gets or sets the desired absolute tolerance on the maximum norm of the complementarity conditions. The default value is 1.0E-4.
+              - Get or set the desired absolute tolerance on the maximum norm of the complementarity conditions. The default value is 1.0E-4.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileIPOPTOptimizer.options_filename`
               - If used, the associated IPOPT specifications file may define any of the various IPOPT options. Options in the file that conflict with options specified elsewhere will take precedence.
 
@@ -78,7 +78,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileIPOPTOptimizer.scripting_tool
     :type: ScriptingTool
 
-    Returns the Scripting tool for the sequence.
+    Return the Scripting tool for the sequence.
 
 .. py:property:: reset_controls_before_run
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileIPOPTOptimizer.reset_controls_before_run
@@ -90,31 +90,31 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileIPOPTOptimizer.tolerance_on_convergence
     :type: float
 
-    Gets or sets the tolerance by which the optimality conditions must be satisfied for the problem to be considered converged. The default value is 1E-8.
+    Get or set the tolerance by which the optimality conditions must be satisfied for the problem to be considered converged. The default value is 1E-8.
 
 .. py:property:: maximum_iterations
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileIPOPTOptimizer.maximum_iterations
     :type: int
 
-    Gets or sets the maximum number of iterations before IPOPT should give up if it hasn't yet converged on a solution. The default value is 3000.
+    Get or set the maximum number of iterations before IPOPT should give up if it hasn't yet converged on a solution. The default value is 3000.
 
 .. py:property:: tolerance_on_constraint_violation
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileIPOPTOptimizer.tolerance_on_constraint_violation
     :type: float
 
-    Gets or sets the tolerance by which user-specified constraints are allowed to be violated with the solution still considered feasible. The default value is 1.0E-4.
+    Get or set the tolerance by which user-specified constraints are allowed to be violated with the solution still considered feasible. The default value is 1.0E-4.
 
 .. py:property:: tolerance_on_dual_infeasibility
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileIPOPTOptimizer.tolerance_on_dual_infeasibility
     :type: float
 
-    Gets or sets the desired absolute tolerance on the maximum norm of the dual infeasibility. The default value is 1.
+    Get or set the desired absolute tolerance on the maximum norm of the dual infeasibility. The default value is 1.
 
 .. py:property:: tolerance_on_complementary_infeasibility
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileIPOPTOptimizer.tolerance_on_complementary_infeasibility
     :type: float
 
-    Gets or sets the desired absolute tolerance on the maximum norm of the complementarity conditions. The default value is 1.0E-4.
+    Get or set the desired absolute tolerance on the maximum norm of the complementarity conditions. The default value is 1.0E-4.
 
 .. py:property:: options_filename
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileIPOPTOptimizer.options_filename

@@ -19,13 +19,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.IStkRfcmResponse.type`
-              - Gets the response type.
+              - Get the response type.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.IStkRfcmResponse.data`
-              - Gets the response data.
+              - Get the response data.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.IStkRfcmResponse.transmit_antenna_count`
-              - Gets the transmit antenna count.
+              - Get the transmit antenna count.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.IStkRfcmResponse.receive_antenna_count`
-              - Gets the receive antenna count.
+              - Get the receive antenna count.
 
 
 Import detail
@@ -43,24 +43,24 @@ Property detail
     :canonical: ansys.stk.core.stkrfchannelmodeler.IStkRfcmResponse.type
     :type: RfcmChannelResponseType
 
-    Gets the response type.
+    Get the response type.
 
 .. py:property:: data
     :canonical: ansys.stk.core.stkrfchannelmodeler.IStkRfcmResponse.data
     :type: list
 
-    Gets the response data.
+    Get the response data.
 
 .. py:property:: transmit_antenna_count
     :canonical: ansys.stk.core.stkrfchannelmodeler.IStkRfcmResponse.transmit_antenna_count
     :type: int
 
-    Gets the transmit antenna count.
+    Get the transmit antenna count.
 
 .. py:property:: receive_antenna_count
     :canonical: ansys.stk.core.stkrfchannelmodeler.IStkRfcmResponse.receive_antenna_count
     :type: int
 
-    Gets the receive antenna count.
+    Get the receive antenna count.
 
 

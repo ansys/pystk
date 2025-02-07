@@ -32,7 +32,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkx.ObjectPathCollection.count`
               - Number of elements contained in the collection.
             * - :py:attr:`~ansys.stk.core.stkx.ObjectPathCollection._new_enum`
-              - Returns an object that can be used to iterate through all the object paths in the collection.
+              - Return an object that can be used to iterate through all the object paths in the collection.
 
 
 
@@ -57,7 +57,7 @@ Property detail
     :canonical: ansys.stk.core.stkx.ObjectPathCollection._new_enum
     :type: EnumeratorProxy
 
-    Returns an object that can be used to iterate through all the object paths in the collection.
+    Return an object that can be used to iterate through all the object paths in the collection.
 
 
 Method detail

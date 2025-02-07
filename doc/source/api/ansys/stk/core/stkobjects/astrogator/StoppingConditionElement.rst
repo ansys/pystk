@@ -36,7 +36,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StoppingConditionElement.active`
               - If true, the stopping condition is active.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StoppingConditionElement.control_parameters_available`
-              - Returns whether or not the control parameters can be set.
+              - Return whether or not the control parameters can be set.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StoppingConditionElement.properties`
               - Get the properties available to the stopping condition.
 
@@ -63,7 +63,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.StoppingConditionElement.control_parameters_available
     :type: bool
 
-    Returns whether or not the control parameters can be set.
+    Return whether or not the control parameters can be set.
 
 .. py:property:: properties
     :canonical: ansys.stk.core.stkobjects.astrogator.StoppingConditionElement.properties

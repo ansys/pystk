@@ -40,7 +40,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeText.offset_type`
               - Offset direction: left or right.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeText.offset_supported_types`
-              - Returns an array of valid choices.
+              - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeText.offset_pixels`
               - Offsets the position of the text to the right or the left of the ground track.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeText.event_interval`
@@ -87,7 +87,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeText.offset_supported_types
     :type: list
 
-    Returns an array of valid choices.
+    Return an array of valid choices.
 
 .. py:property:: offset_pixels
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventTypeText.offset_pixels

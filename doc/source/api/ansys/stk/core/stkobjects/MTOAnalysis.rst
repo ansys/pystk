@@ -19,13 +19,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOAnalysis.position`
-              - Returns a spatial state of the mto at specified time.
+              - Return a spatial state of the mto at specified time.
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOAnalysis.range`
-              - Returns the range from an Mto track to another object.
+              - Return the range from an Mto track to another object.
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOAnalysis.field_of_view`
-              - Returns the field of view from an Mto track to a sensor.
+              - Return the field of view from an Mto track to a sensor.
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOAnalysis.visibility`
-              - Returns the visibility from an Mto track to another object.
+              - Return the visibility from an Mto track to another object.
 
 
 
@@ -44,24 +44,24 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.MTOAnalysis.position
     :type: MTOAnalysisPosition
 
-    Returns a spatial state of the mto at specified time.
+    Return a spatial state of the mto at specified time.
 
 .. py:property:: range
     :canonical: ansys.stk.core.stkobjects.MTOAnalysis.range
     :type: MTOAnalysisRange
 
-    Returns the range from an Mto track to another object.
+    Return the range from an Mto track to another object.
 
 .. py:property:: field_of_view
     :canonical: ansys.stk.core.stkobjects.MTOAnalysis.field_of_view
     :type: MTOAnalysisFieldOfView
 
-    Returns the field of view from an Mto track to a sensor.
+    Return the field of view from an Mto track to a sensor.
 
 .. py:property:: visibility
     :canonical: ansys.stk.core.stkobjects.MTOAnalysis.visibility
     :type: MTOAnalysisVisibility
 
-    Returns the visibility from an Mto track to another object.
+    Return the visibility from an Mto track to another object.
 
 

@@ -34,7 +34,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagneticField.main_field`
-              - Gets or sets the main magnetic field.
+              - Get or set the main magnetic field.
             * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagneticField.external_field`
               - External magnetic field.
             * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagneticField.igrf_update_rate`
@@ -57,7 +57,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagneticField.main_field
     :type: SpaceEnvironmentMagneticMainField
 
-    Gets or sets the main magnetic field.
+    Get or set the main magnetic field.
 
 .. py:property:: external_field
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagneticField.external_field

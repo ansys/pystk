@@ -19,9 +19,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.CommRadComplexNumber.real`
-              - Gets or sets the real part of the complex number.
+              - Get or set the real part of the complex number.
             * - :py:attr:`~ansys.stk.core.stkobjects.CommRadComplexNumber.imaginary`
-              - Gets or sets the imaginary part of the complex number.
+              - Get or set the imaginary part of the complex number.
 
 
 
@@ -40,12 +40,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.CommRadComplexNumber.real
     :type: float
 
-    Gets or sets the real part of the complex number.
+    Get or set the real part of the complex number.
 
 .. py:property:: imaginary
     :canonical: ansys.stk.core.stkobjects.CommRadComplexNumber.imaginary
     :type: float
 
-    Gets or sets the imaginary part of the complex number.
+    Get or set the imaginary part of the complex number.
 
 

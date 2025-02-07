@@ -19,11 +19,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.SurfaceShapesResult.positions`
-              - Gets the positions of the computed shape. Three array elements (in the order x, y, z) constitute one position.
+              - Get the positions of the computed shape. Three array elements (in the order x, y, z) constitute one position.
             * - :py:attr:`~ansys.stk.core.graphics.SurfaceShapesResult.positions_winding_order`
-              - Gets the winding order of positions.
+              - Get the winding order of positions.
             * - :py:attr:`~ansys.stk.core.graphics.SurfaceShapesResult.polyline_type`
-              - Gets the polyline type of positions.
+              - Get the polyline type of positions.
 
 
 
@@ -42,18 +42,18 @@ Property detail
     :canonical: ansys.stk.core.graphics.SurfaceShapesResult.positions
     :type: list
 
-    Gets the positions of the computed shape. Three array elements (in the order x, y, z) constitute one position.
+    Get the positions of the computed shape. Three array elements (in the order x, y, z) constitute one position.
 
 .. py:property:: positions_winding_order
     :canonical: ansys.stk.core.graphics.SurfaceShapesResult.positions_winding_order
     :type: WindingOrder
 
-    Gets the winding order of positions.
+    Get the winding order of positions.
 
 .. py:property:: polyline_type
     :canonical: ansys.stk.core.graphics.SurfaceShapesResult.polyline_type
     :type: PolylineType
 
-    Gets the polyline type of positions.
+    Get the polyline type of positions.
 
 

@@ -21,11 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelDipole.length`
-              - Gets or sets the length.
+              - Get or set the length.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelDipole.efficiency`
-              - Gets or sets the efficiency.
+              - Get or set the efficiency.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelDipole.length_to_wavelength_ratio`
-              - Gets or sets the length-to-wavelength ratio.
+              - Get or set the length-to-wavelength ratio.
 
 
 
@@ -44,18 +44,18 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.AntennaModelDipole.length
     :type: float
 
-    Gets or sets the length.
+    Get or set the length.
 
 .. py:property:: efficiency
     :canonical: ansys.stk.core.stkobjects.AntennaModelDipole.efficiency
     :type: float
 
-    Gets or sets the efficiency.
+    Get or set the efficiency.
 
 .. py:property:: length_to_wavelength_ratio
     :canonical: ansys.stk.core.stkobjects.AntennaModelDipole.length_to_wavelength_ratio
     :type: float
 
-    Gets or sets the length-to-wavelength ratio.
+    Get or set the length-to-wavelength ratio.
 
 

@@ -19,7 +19,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.PassBreakNumberingFirstPassNumber.first_pass_number`
-              - Gets or sets the number at which pass numbering begins. Dimensionless.
+              - Get or set the number at which pass numbering begins. Dimensionless.
 
 
 
@@ -38,6 +38,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.PassBreakNumberingFirstPassNumber.first_pass_number
     :type: int
 
-    Gets or sets the number at which pass numbering begins. Dimensionless.
+    Get or set the number at which pass numbering begins. Dimensionless.
 
 

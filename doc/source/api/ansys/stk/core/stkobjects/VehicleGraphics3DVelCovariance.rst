@@ -34,7 +34,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DVelCovariance.attributes_type`
               - Get the velocity ellipsoid attributes type.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DVelCovariance.attributes_supported_types`
-              - Returns an array of valid choices.
+              - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DVelCovariance.attributes`
               - Get the velocity ellipsoid graphics attributes.
 
@@ -67,7 +67,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DVelCovariance.attributes_supported_types
     :type: list
 
-    Returns an array of valid choices.
+    Return an array of valid choices.
 
 .. py:property:: attributes
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DVelCovariance.attributes

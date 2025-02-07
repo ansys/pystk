@@ -23,7 +23,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkx.WindowProjectionPosition.y_position`
               - Projected window Y position.
             * - :py:attr:`~ansys.stk.core.stkx.WindowProjectionPosition.is_window_projection_position_valid`
-              - Indicates if the returned projected position is valid or not.
+              - Indicate if the returned projected position is valid or not.
 
 
 
@@ -54,6 +54,6 @@ Property detail
     :canonical: ansys.stk.core.stkx.WindowProjectionPosition.is_window_projection_position_valid
     :type: bool
 
-    Indicates if the returned projected position is valid or not.
+    Indicate if the returned projected position is valid or not.
 
 

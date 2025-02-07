@@ -46,7 +46,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureLanding.vertical_plane_options`
               - Get the vertical plane options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureLanding.approach_mode`
-              - Gets or sets the type of landing the aircraft will perform.
+              - Get or set the type of landing the aircraft will perform.
 
 
 
@@ -113,7 +113,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureLanding.approach_mode
     :type: ApproachMode
 
-    Gets or sets the type of landing the aircraft will perform.
+    Get or set the type of landing the aircraft will perform.
 
 
 Method detail

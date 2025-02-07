@@ -38,13 +38,13 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.Missile.trajectory_type`
               - Get the propagator type used by the missile.
             * - :py:attr:`~ansys.stk.core.stkobjects.Missile.trajectory_supported_types`
-              - Returns an array of valid choices.
+              - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.Missile.trajectory`
               - Get the missile's trajectory properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.Missile.attitude_type`
               - Get the type of attitude profile used by the missile.
             * - :py:attr:`~ansys.stk.core.stkobjects.Missile.attitude_supported_types`
-              - Returns an array of valid choices.
+              - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.Missile.attitude`
               - Get the missile's attitude profile.
             * - :py:attr:`~ansys.stk.core.stkobjects.Missile.graphics`
@@ -56,29 +56,29 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.Missile.access_constraints`
               - Get the constraints imposed on the missile.
             * - :py:attr:`~ansys.stk.core.stkobjects.Missile.export_tools`
-              - Returns the IAgMsExportTools interface.
+              - Return the IAgMsExportTools interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.Missile.space_environment`
-              - Returns the missile's SpaceEnvironment properties.
+              - Return the missile's SpaceEnvironment properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.Missile.atmosphere`
-              - This property is deprecated. The new RFEnvironment property can be used to configure atmospheric models.
+              - Do not use this property, as it is deprecated. The new RFEnvironment property can be used to configure atmospheric models.
             * - :py:attr:`~ansys.stk.core.stkobjects.Missile.radar_clutter_map`
-              - Returns the radar clutter map.
+              - Return the radar clutter map.
             * - :py:attr:`~ansys.stk.core.stkobjects.Missile.radar_cross_section`
-              - Returns the radar cross sectoin.
+              - Return the radar cross sectoin.
             * - :py:attr:`~ansys.stk.core.stkobjects.Missile.eclipse_bodies`
               - Get the customized list of Eclipse Bodies, which are central bodies used in lighting computations.
             * - :py:attr:`~ansys.stk.core.stkobjects.Missile.use_terrain_in_lighting_computations`
               - Opt whether to compute lighting using terrain data.
             * - :py:attr:`~ansys.stk.core.stkobjects.Missile.lighting_maximum_step`
-              - This property is deprecated. Use LightingMaxStepTerrain or LightingMaxStepCbShape as appropriate. The maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
+              - Do not use this property, as it is deprecated. Use LightingMaxStepTerrain or LightingMaxStepCbShape as appropriate. The maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.Missile.laser_environment`
-              - Gets the laser environment.
+              - Get the laser environment.
             * - :py:attr:`~ansys.stk.core.stkobjects.Missile.rf_environment`
-              - Gets the RF environment.
+              - Get the RF environment.
             * - :py:attr:`~ansys.stk.core.stkobjects.Missile.lighting_maximum_step_terrain`
-              - Gets or sets the maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
+              - Get or set the maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.Missile.lighting_maximum_step_central_body_shape`
-              - Gets or sets the maximum step size to use when computing lighting when UseTerrainInLightingComputations is false. Uses Time Dimension.
+              - Get or set the maximum step size to use when computing lighting when UseTerrainInLightingComputations is false. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.Missile.get_eoir_settings`
               - Get the EOIR properties of the missile.
 
@@ -105,7 +105,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Missile.trajectory_supported_types
     :type: list
 
-    Returns an array of valid choices.
+    Return an array of valid choices.
 
 .. py:property:: trajectory
     :canonical: ansys.stk.core.stkobjects.Missile.trajectory
@@ -123,7 +123,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Missile.attitude_supported_types
     :type: list
 
-    Returns an array of valid choices.
+    Return an array of valid choices.
 
 .. py:property:: attitude
     :canonical: ansys.stk.core.stkobjects.Missile.attitude
@@ -159,31 +159,31 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Missile.export_tools
     :type: MissileExportTools
 
-    Returns the IAgMsExportTools interface.
+    Return the IAgMsExportTools interface.
 
 .. py:property:: space_environment
     :canonical: ansys.stk.core.stkobjects.Missile.space_environment
     :type: SpaceEnvironment
 
-    Returns the missile's SpaceEnvironment properties.
+    Return the missile's SpaceEnvironment properties.
 
 .. py:property:: atmosphere
     :canonical: ansys.stk.core.stkobjects.Missile.atmosphere
     :type: Atmosphere
 
-    This property is deprecated. The new RFEnvironment property can be used to configure atmospheric models.
+    Do not use this property, as it is deprecated. The new RFEnvironment property can be used to configure atmospheric models.
 
 .. py:property:: radar_clutter_map
     :canonical: ansys.stk.core.stkobjects.Missile.radar_clutter_map
     :type: IRadarClutterMapInheritable
 
-    Returns the radar clutter map.
+    Return the radar clutter map.
 
 .. py:property:: radar_cross_section
     :canonical: ansys.stk.core.stkobjects.Missile.radar_cross_section
     :type: RadarCrossSectionInheritable
 
-    Returns the radar cross sectoin.
+    Return the radar cross sectoin.
 
 .. py:property:: eclipse_bodies
     :canonical: ansys.stk.core.stkobjects.Missile.eclipse_bodies
@@ -201,31 +201,31 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Missile.lighting_maximum_step
     :type: float
 
-    This property is deprecated. Use LightingMaxStepTerrain or LightingMaxStepCbShape as appropriate. The maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
+    Do not use this property, as it is deprecated. Use LightingMaxStepTerrain or LightingMaxStepCbShape as appropriate. The maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
 
 .. py:property:: laser_environment
     :canonical: ansys.stk.core.stkobjects.Missile.laser_environment
     :type: PlatformLaserEnvironment
 
-    Gets the laser environment.
+    Get the laser environment.
 
 .. py:property:: rf_environment
     :canonical: ansys.stk.core.stkobjects.Missile.rf_environment
     :type: IPlatformRFEnvironment
 
-    Gets the RF environment.
+    Get the RF environment.
 
 .. py:property:: lighting_maximum_step_terrain
     :canonical: ansys.stk.core.stkobjects.Missile.lighting_maximum_step_terrain
     :type: float
 
-    Gets or sets the maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
+    Get or set the maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
 
 .. py:property:: lighting_maximum_step_central_body_shape
     :canonical: ansys.stk.core.stkobjects.Missile.lighting_maximum_step_central_body_shape
     :type: float
 
-    Gets or sets the maximum step size to use when computing lighting when UseTerrainInLightingComputations is false. Uses Time Dimension.
+    Get or set the maximum step size to use when computing lighting when UseTerrainInLightingComputations is false. Uses Time Dimension.
 
 .. py:property:: get_eoir_settings
     :canonical: ansys.stk.core.stkobjects.Missile.get_eoir_settings

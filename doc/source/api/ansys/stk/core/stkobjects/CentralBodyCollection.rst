@@ -34,13 +34,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.CentralBodyCollection.earth`
-              - Returns the Earth central body.
+              - Return the Earth central body.
             * - :py:attr:`~ansys.stk.core.stkobjects.CentralBodyCollection.sun`
-              - Returns the Sun central body.
+              - Return the Sun central body.
             * - :py:attr:`~ansys.stk.core.stkobjects.CentralBodyCollection.moon`
-              - Returns the Moon central body.
+              - Return the Moon central body.
             * - :py:attr:`~ansys.stk.core.stkobjects.CentralBodyCollection.count`
-              - Returns a number of elements in the collection.
+              - Return a number of elements in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.CentralBodyCollection._new_enum`
               - Enumerates the elements in the collection.
 
@@ -61,25 +61,25 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.CentralBodyCollection.earth
     :type: CentralBody
 
-    Returns the Earth central body.
+    Return the Earth central body.
 
 .. py:property:: sun
     :canonical: ansys.stk.core.stkobjects.CentralBodyCollection.sun
     :type: CentralBody
 
-    Returns the Sun central body.
+    Return the Sun central body.
 
 .. py:property:: moon
     :canonical: ansys.stk.core.stkobjects.CentralBodyCollection.moon
     :type: CentralBody
 
-    Returns the Moon central body.
+    Return the Moon central body.
 
 .. py:property:: count
     :canonical: ansys.stk.core.stkobjects.CentralBodyCollection.count
     :type: int
 
-    Returns a number of elements in the collection.
+    Return a number of elements in the collection.
 
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkobjects.CentralBodyCollection._new_enum

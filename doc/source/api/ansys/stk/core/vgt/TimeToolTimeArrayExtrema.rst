@@ -23,7 +23,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.vgt.TimeToolTimeArrayExtrema.extremum_type`
               - The extremum type of interest (either minimum or maximum) for scalar calculation.
             * - :py:attr:`~ansys.stk.core.vgt.TimeToolTimeArrayExtrema.is_global`
-              - Indicates whether to perform local or global search. The default is false.
+              - Indicate whether to perform local or global search. The default is false.
             * - :py:attr:`~ansys.stk.core.vgt.TimeToolTimeArrayExtrema.calculation_scalar`
               - The scalar calculation.
             * - :py:attr:`~ansys.stk.core.vgt.TimeToolTimeArrayExtrema.custom_time_limits`
@@ -60,7 +60,7 @@ Property detail
     :canonical: ansys.stk.core.vgt.TimeToolTimeArrayExtrema.is_global
     :type: bool
 
-    Indicates whether to perform local or global search. The default is false.
+    Indicate whether to perform local or global search. The default is false.
 
 .. py:property:: calculation_scalar
     :canonical: ansys.stk.core.vgt.TimeToolTimeArrayExtrema.calculation_scalar

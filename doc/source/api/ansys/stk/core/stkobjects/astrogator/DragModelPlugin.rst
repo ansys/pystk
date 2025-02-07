@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DragModelPlugin.plugin_identifier`
-              - Gets or sets the plugin name.
+              - Get or set the plugin name.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DragModelPlugin.plugin_config`
               - Get the properties of the selected plugin.
 
@@ -42,7 +42,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.DragModelPlugin.plugin_identifier
     :type: str
 
-    Gets or sets the plugin name.
+    Get or set the plugin name.
 
 .. py:property:: plugin_config
     :canonical: ansys.stk.core.stkobjects.astrogator.DragModelPlugin.plugin_config

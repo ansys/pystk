@@ -38,7 +38,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DReferenceVectorGeometryToolComponentCollection.count`
-              - Returns a number of elements in the collection.
+              - Return a number of elements in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DReferenceVectorGeometryToolComponentCollection._new_enum`
               - Enumerates through the vector collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DReferenceVectorGeometryToolComponentCollection.available_vector_geometry_tool_components`
@@ -61,7 +61,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Graphics3DReferenceVectorGeometryToolComponentCollection.count
     :type: int
 
-    Returns a number of elements in the collection.
+    Return a number of elements in the collection.
 
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkobjects.Graphics3DReferenceVectorGeometryToolComponentCollection._new_enum

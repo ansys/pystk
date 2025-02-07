@@ -33,7 +33,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.RefractionModelSCFMethod.refraction_index`
               - Index of refraction at the surface. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.RefractionModelSCFMethod.coefficients`
-              - Gets the polynomial coefficients.
+              - Get the polynomial coefficients.
 
 
 
@@ -94,6 +94,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.RefractionModelSCFMethod.coefficients
     :type: RefractionCoefficients
 
-    Gets the polynomial coefficients.
+    Get the polynomial coefficients.
 
 

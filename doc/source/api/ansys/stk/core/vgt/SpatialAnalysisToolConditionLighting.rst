@@ -25,7 +25,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolConditionLighting.use_object_eclipsing_bodies`
               - When true, configure eclipsing bodies list based on that of parent STK Object.
             * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolConditionLighting.lighting_conditions`
-              - Sets/Returns the lighting conditions.
+              - Get or set the lighting conditions.
 
 
 
@@ -56,6 +56,6 @@ Property detail
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolConditionLighting.lighting_conditions
     :type: LightingConditionsType
 
-    Sets/Returns the lighting conditions.
+    Get or set the lighting conditions.
 
 

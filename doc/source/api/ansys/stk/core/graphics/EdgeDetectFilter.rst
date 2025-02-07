@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.EdgeDetectFilter.method`
-              - Gets or sets the method used to detect edges in the source raster.
+              - Get or set the method used to detect edges in the source raster.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.graphics.EdgeDetectFilter.method
     :type: EdgeDetectMethod
 
-    Gets or sets the method used to detect edges in the source raster.
+    Get or set the method used to detect edges in the source raster.
 
 

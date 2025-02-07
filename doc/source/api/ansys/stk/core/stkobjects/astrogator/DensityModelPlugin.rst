@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.plugin_identifier`
-              - Gets or sets the plugin name.
+              - Get or set the plugin name.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.plugin_config`
               - Get the properties of the selected plugin.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.use_approximate_altitude`
@@ -31,9 +31,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.computes_pressure`
               - Flag indicates whether this model computes pressure.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.sun_position`
-              - Gets or sets the sun position computation.
+              - Get or set the sun position computation.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.atmos_data_source`
-              - Gets or sets the atmospheric model data source - data file or constant values.
+              - Get or set the atmospheric model data source - data file or constant values.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.f10`
               - Solar Flux (F10). Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.f10_avg`
@@ -57,17 +57,17 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.atmos_data_geo_magnetic_flux_source`
               - Whether to use Kp or Ap data from the flux file.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.atmos_data_geo_magnetic_flux_update_rate`
-              - Gets or sets the update rate for geomagnetic flux values from the flux file.
+              - Get or set the update rate for geomagnetic flux values from the flux file.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.atmos_data_filename`
-              - Gets or sets the atmospheric model data file path.
+              - Get or set the atmospheric model data file path.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.atmos_aug_data_file`
-              - Gets or sets the atmospheric model augmented data file path.
+              - Get or set the atmospheric model augmented data file path.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.atmos_aug_dtc_file`
-              - Gets or sets the atmospheric model augmented geomagnetic data file path.
+              - Get or set the atmospheric model augmented geomagnetic data file path.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.drag_model_type`
               - Drag model type.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.drag_model_plugin_name`
-              - Gets or sets the name of the drag model plugin.
+              - Get or set the name of the drag model plugin.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.drag_model_plugin`
               - Drag model plugin properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.uses_augmented_space_weather`
@@ -94,7 +94,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.plugin_identifier
     :type: str
 
-    Gets or sets the plugin name.
+    Get or set the plugin name.
 
 .. py:property:: plugin_config
     :canonical: ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.plugin_config
@@ -124,13 +124,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.sun_position
     :type: SunPosition
 
-    Gets or sets the sun position computation.
+    Get or set the sun position computation.
 
 .. py:property:: atmos_data_source
     :canonical: ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.atmos_data_source
     :type: AtmosDataSource
 
-    Gets or sets the atmospheric model data source - data file or constant values.
+    Get or set the atmospheric model data source - data file or constant values.
 
 .. py:property:: f10
     :canonical: ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.f10
@@ -202,25 +202,25 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.atmos_data_geo_magnetic_flux_update_rate
     :type: GeoMagneticFluxUpdateRate
 
-    Gets or sets the update rate for geomagnetic flux values from the flux file.
+    Get or set the update rate for geomagnetic flux values from the flux file.
 
 .. py:property:: atmos_data_filename
     :canonical: ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.atmos_data_filename
     :type: str
 
-    Gets or sets the atmospheric model data file path.
+    Get or set the atmospheric model data file path.
 
 .. py:property:: atmos_aug_data_file
     :canonical: ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.atmos_aug_data_file
     :type: str
 
-    Gets or sets the atmospheric model augmented data file path.
+    Get or set the atmospheric model augmented data file path.
 
 .. py:property:: atmos_aug_dtc_file
     :canonical: ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.atmos_aug_dtc_file
     :type: str
 
-    Gets or sets the atmospheric model augmented geomagnetic data file path.
+    Get or set the atmospheric model augmented geomagnetic data file path.
 
 .. py:property:: drag_model_type
     :canonical: ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.drag_model_type
@@ -232,7 +232,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.drag_model_plugin_name
     :type: str
 
-    Gets or sets the name of the drag model plugin.
+    Get or set the name of the drag model plugin.
 
 .. py:property:: drag_model_plugin
     :canonical: ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.drag_model_plugin

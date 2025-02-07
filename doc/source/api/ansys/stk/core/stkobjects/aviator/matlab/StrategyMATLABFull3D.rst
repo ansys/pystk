@@ -30,11 +30,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLABFull3D.function_name`
-              - Gets or sets the name of the MATLAB function.
+              - Get or set the name of the MATLAB function.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLABFull3D.check_for_errors`
-              - Gets or sets the option to check the function for errors.
+              - Get or set the option to check the function for errors.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLABFull3D.display_output`
-              - Gets or sets the option to display the output from the MATLAB function.
+              - Get or set the option to display the output from the MATLAB function.
 
 
 
@@ -53,19 +53,19 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLABFull3D.function_name
     :type: str
 
-    Gets or sets the name of the MATLAB function.
+    Get or set the name of the MATLAB function.
 
 .. py:property:: check_for_errors
     :canonical: ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLABFull3D.check_for_errors
     :type: bool
 
-    Gets or sets the option to check the function for errors.
+    Get or set the option to check the function for errors.
 
 .. py:property:: display_output
     :canonical: ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLABFull3D.display_output
     :type: bool
 
-    Gets or sets the option to display the output from the MATLAB function.
+    Get or set the option to display the output from the MATLAB function.
 
 
 Method detail

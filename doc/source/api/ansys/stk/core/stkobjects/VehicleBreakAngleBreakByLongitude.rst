@@ -19,7 +19,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleBreakAngleBreakByLongitude.longitude`
-              - Gets or sets the value of the longitude crossing at which a new pass will begin. Uses Longitude Dimension.
+              - Get or set the value of the longitude crossing at which a new pass will begin. Uses Longitude Dimension.
 
 
 
@@ -38,6 +38,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleBreakAngleBreakByLongitude.longitude
     :type: float
 
-    Gets or sets the value of the longitude crossing at which a new pass will begin. Uses Longitude Dimension.
+    Get or set the value of the longitude crossing at which a new pass will begin. Uses Longitude Dimension.
 
 

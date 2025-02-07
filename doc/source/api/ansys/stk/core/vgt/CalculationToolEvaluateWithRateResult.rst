@@ -19,7 +19,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.CalculationToolEvaluateWithRateResult.is_valid`
-              - Indicates whether the result object is valid.
+              - Indicate whether the result object is valid.
             * - :py:attr:`~ansys.stk.core.vgt.CalculationToolEvaluateWithRateResult.value`
               - Computed scalar value.
             * - :py:attr:`~ansys.stk.core.vgt.CalculationToolEvaluateWithRateResult.rate`
@@ -42,7 +42,7 @@ Property detail
     :canonical: ansys.stk.core.vgt.CalculationToolEvaluateWithRateResult.is_valid
     :type: bool
 
-    Indicates whether the result object is valid.
+    Indicate whether the result object is valid.
 
 .. py:property:: value
     :canonical: ansys.stk.core.vgt.CalculationToolEvaluateWithRateResult.value

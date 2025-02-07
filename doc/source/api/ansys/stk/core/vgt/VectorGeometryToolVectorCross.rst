@@ -27,7 +27,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolVectorCross.is_normalized`
               - Whether to convert the cross product of two vectors to a unit vector.
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolVectorCross.dimension`
-              - Returns a unit of measure, i.e. 'AngleUnit', 'DistanceUnit', etc.
+              - Return a unit of measure, i.e. 'AngleUnit', 'DistanceUnit', etc.
 
 
 
@@ -64,6 +64,6 @@ Property detail
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorCross.dimension
     :type: str
 
-    Returns a unit of measure, i.e. 'AngleUnit', 'DistanceUnit', etc.
+    Return a unit of measure, i.e. 'AngleUnit', 'DistanceUnit', etc.
 
 

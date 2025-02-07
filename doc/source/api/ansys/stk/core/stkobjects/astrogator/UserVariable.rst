@@ -36,9 +36,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.UserVariable.variable_name`
               - Set the name of the user variable.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.UserVariable.variable_value`
-              - Gets or sets the initial value of the user variable.
+              - Get or set the initial value of the user variable.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.UserVariable.control_parameters_available`
-              - Returns whether or not the control parameters can be set.
+              - Return whether or not the control parameters can be set.
 
 
 
@@ -69,13 +69,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.UserVariable.variable_value
     :type: typing.Any
 
-    Gets or sets the initial value of the user variable.
+    Get or set the initial value of the user variable.
 
 .. py:property:: control_parameters_available
     :canonical: ansys.stk.core.stkobjects.astrogator.UserVariable.control_parameters_available
     :type: bool
 
-    Returns whether or not the control parameters can be set.
+    Return whether or not the control parameters can be set.
 
 
 Method detail

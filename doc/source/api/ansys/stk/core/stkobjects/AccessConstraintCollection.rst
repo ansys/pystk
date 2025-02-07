@@ -52,11 +52,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintCollection.count`
-              - Returns the size of the collection.
+              - Return the size of the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintCollection._new_enum`
               - Enumerate the AccessConstraint items in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintCollection.analysis_workbench_constraints`
-              - Returns a AgAccessCnstrAWBCollection constraint used to access angle, vector and condition constraint.
+              - Return a AgAccessCnstrAWBCollection constraint used to access angle, vector and condition constraint.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintCollection.use_preferred_maximum_time_step`
               - Flag indicating that the preferred max time step should be used in access computations.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintCollection.preferred_maximum_time_step`
@@ -79,7 +79,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.AccessConstraintCollection.count
     :type: int
 
-    Returns the size of the collection.
+    Return the size of the collection.
 
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkobjects.AccessConstraintCollection._new_enum
@@ -91,7 +91,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.AccessConstraintCollection.analysis_workbench_constraints
     :type: AccessConstraintAnalysisWorkbenchCollection
 
-    Returns a AgAccessCnstrAWBCollection constraint used to access angle, vector and condition constraint.
+    Return a AgAccessCnstrAWBCollection constraint used to access angle, vector and condition constraint.
 
 .. py:property:: use_preferred_maximum_time_step
     :canonical: ansys.stk.core.stkobjects.AccessConstraintCollection.use_preferred_maximum_time_step

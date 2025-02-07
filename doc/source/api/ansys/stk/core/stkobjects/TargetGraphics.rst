@@ -43,7 +43,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.TargetGraphics.show_graphics`
               - Specify whether graphics attributes of the target are visible.
             * - :py:attr:`~ansys.stk.core.stkobjects.TargetGraphics.radar_cross_section`
-              - Gets the radar cross section graphics interface.
+              - Get the radar cross section graphics interface.
 
 
 
@@ -134,6 +134,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.TargetGraphics.radar_cross_section
     :type: RadarCrossSectionGraphics
 
-    Gets the radar cross section graphics interface.
+    Get the radar cross section graphics interface.
 
 

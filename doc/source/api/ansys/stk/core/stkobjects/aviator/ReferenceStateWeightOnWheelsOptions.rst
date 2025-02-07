@@ -30,7 +30,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateWeightOnWheelsOptions.groundspeed`
-              - Gets or sets the aircraft's speed relative to the ground.
+              - Get or set the aircraft's speed relative to the ground.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateWeightOnWheelsOptions.tas_dot`
               - Get the true airspeed acceleration.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateWeightOnWheelsOptions.groundspeed_dot`
@@ -38,7 +38,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateWeightOnWheelsOptions.longitudinal_acceleration_type`
               - Get the mode to specify the longitudinal acceleration.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateWeightOnWheelsOptions.heading`
-              - Gets or sets the direction the aircraft is pointing.
+              - Get or set the direction the aircraft is pointing.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateWeightOnWheelsOptions.heading_is_magnetic`
               - Opt whether to specify the heading using magnetic North.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateWeightOnWheelsOptions.heading_dot`
@@ -65,7 +65,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateWeightOnWheelsOptions.groundspeed
     :type: float
 
-    Gets or sets the aircraft's speed relative to the ground.
+    Get or set the aircraft's speed relative to the ground.
 
 .. py:property:: tas_dot
     :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateWeightOnWheelsOptions.tas_dot
@@ -89,7 +89,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateWeightOnWheelsOptions.heading
     :type: typing.Any
 
-    Gets or sets the direction the aircraft is pointing.
+    Get or set the direction the aircraft is pointing.
 
 .. py:property:: heading_is_magnetic
     :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateWeightOnWheelsOptions.heading_is_magnetic

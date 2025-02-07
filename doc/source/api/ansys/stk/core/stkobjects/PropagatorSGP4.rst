@@ -36,7 +36,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSGP4.automatic_update_enabled`
               - Whether automatic update is enabled.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSGP4.automatic_update_settings`
-              - Allows configuring the auto-update parameters and settings.
+              - Allow configuring the auto-update parameters and settings.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSGP4.common_tasks`
               - Most commonly used tasks such as importing file data, etc.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSGP4.settings`
@@ -81,7 +81,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.PropagatorSGP4.automatic_update_settings
     :type: PropagatorSGP4AutoUpdate
 
-    Allows configuring the auto-update parameters and settings.
+    Allow configuring the auto-update parameters and settings.
 
 .. py:property:: common_tasks
     :canonical: ansys.stk.core.stkobjects.PropagatorSGP4.common_tasks

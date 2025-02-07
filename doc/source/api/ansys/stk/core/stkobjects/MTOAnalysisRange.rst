@@ -38,15 +38,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOAnalysisRange.lower_limit`
-              - Gets or sets the lower range limit in Distance Units.
+              - Get or set the lower range limit in Distance Units.
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOAnalysisRange.upper_limit`
-              - Gets or sets the upper range limit in Distance Units.
+              - Get or set the upper range limit in Distance Units.
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOAnalysisRange.object_interval`
               - Use Extended to use the last point of the ephemeris span of the object for times past the last point. Default is Normal.
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOAnalysisRange.object_data`
               - If the Object to which range will be computed is an MTO, use this option to specify the track that will be used to compute that range. By default the MTO's ComputeTrack will be used.
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOAnalysisRange.object_path`
-              - Gets or sets the object to which range is being computed.
+              - Get or set the object to which range is being computed.
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOAnalysisRange.entirety`
               - Range Entirety.
 
@@ -67,13 +67,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.MTOAnalysisRange.lower_limit
     :type: float
 
-    Gets or sets the lower range limit in Distance Units.
+    Get or set the lower range limit in Distance Units.
 
 .. py:property:: upper_limit
     :canonical: ansys.stk.core.stkobjects.MTOAnalysisRange.upper_limit
     :type: float
 
-    Gets or sets the upper range limit in Distance Units.
+    Get or set the upper range limit in Distance Units.
 
 .. py:property:: object_interval
     :canonical: ansys.stk.core.stkobjects.MTOAnalysisRange.object_interval
@@ -91,7 +91,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.MTOAnalysisRange.object_path
     :type: str
 
-    Gets or sets the object to which range is being computed.
+    Get or set the object to which range is being computed.
 
 .. py:property:: entirety
     :canonical: ansys.stk.core.stkobjects.MTOAnalysisRange.entirety

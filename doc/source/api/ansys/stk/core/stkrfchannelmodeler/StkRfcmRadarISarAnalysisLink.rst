@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmRadarISarAnalysisLink.target_object_path`
-              - Gets the analysis link target object path.
+              - Get the analysis link target object path.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.stkrfchannelmodeler.StkRfcmRadarISarAnalysisLink.target_object_path
     :type: str
 
-    Gets the analysis link target object path.
+    Get the analysis link target object path.
 
 

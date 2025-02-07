@@ -21,29 +21,29 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyLTAHover.heading_mode`
-              - Gets or sets the heading mode for the lighter than air hover.
+              - Get or set the heading mode for the lighter than air hover.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyLTAHover.relative_heading`
-              - Gets or sets the relative heading for the relative to start heading mode.
+              - Get or set the relative heading for the relative to start heading mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyLTAHover.absolute_heading`
-              - Gets or sets the absolute heading for the absolute heading mode.
+              - Get or set the absolute heading for the absolute heading mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyLTAHover.use_magnetic_heading`
-              - Gets or sets the option to use a magentic heading for the absolute heading mode.
+              - Get or set the option to use a magentic heading for the absolute heading mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyLTAHover.heading_rate`
-              - Gets or sets the maximum heading rate.
+              - Get or set the maximum heading rate.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyLTAHover.altitude_mode`
-              - Gets or sets the altitude mode for the lighter than air hover.
+              - Get or set the altitude mode for the lighter than air hover.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyLTAHover.absolute_altitude`
-              - Gets or sets the absolute altitude for the Specify Altitude mode.
+              - Get or set the absolute altitude for the Specify Altitude mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyLTAHover.relative_altitude_change`
-              - Gets or sets the relative altitude change for the Specify Altitude Change mode.
+              - Get or set the relative altitude change for the Specify Altitude Change mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyLTAHover.control_altitude_rate`
-              - Gets or sets the controlled altitude rate for the Specify Altitude or Specify Altitude Change mode.
+              - Get or set the controlled altitude rate for the Specify Altitude or Specify Altitude Change mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyLTAHover.altitude_rate`
-              - Gets or sets the altitude rate for the Specify Altitude Rate mode.
+              - Get or set the altitude rate for the Specify Altitude Rate mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyLTAHover.parachute_area`
-              - Gets or sets the parachute area for the Parachute mode.
+              - Get or set the parachute area for the Parachute mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyLTAHover.parachute_cd`
-              - Gets or sets the parachute drag coefficient for the Parachute mode.
+              - Get or set the parachute drag coefficient for the Parachute mode.
 
 
 
@@ -62,72 +62,72 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyLTAHover.heading_mode
     :type: HoverHeadingMode
 
-    Gets or sets the heading mode for the lighter than air hover.
+    Get or set the heading mode for the lighter than air hover.
 
 .. py:property:: relative_heading
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyLTAHover.relative_heading
     :type: typing.Any
 
-    Gets or sets the relative heading for the relative to start heading mode.
+    Get or set the relative heading for the relative to start heading mode.
 
 .. py:property:: absolute_heading
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyLTAHover.absolute_heading
     :type: typing.Any
 
-    Gets or sets the absolute heading for the absolute heading mode.
+    Get or set the absolute heading for the absolute heading mode.
 
 .. py:property:: use_magnetic_heading
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyLTAHover.use_magnetic_heading
     :type: bool
 
-    Gets or sets the option to use a magentic heading for the absolute heading mode.
+    Get or set the option to use a magentic heading for the absolute heading mode.
 
 .. py:property:: heading_rate
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyLTAHover.heading_rate
     :type: typing.Any
 
-    Gets or sets the maximum heading rate.
+    Get or set the maximum heading rate.
 
 .. py:property:: altitude_mode
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyLTAHover.altitude_mode
     :type: HoverAltitudeMode
 
-    Gets or sets the altitude mode for the lighter than air hover.
+    Get or set the altitude mode for the lighter than air hover.
 
 .. py:property:: absolute_altitude
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyLTAHover.absolute_altitude
     :type: float
 
-    Gets or sets the absolute altitude for the Specify Altitude mode.
+    Get or set the absolute altitude for the Specify Altitude mode.
 
 .. py:property:: relative_altitude_change
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyLTAHover.relative_altitude_change
     :type: float
 
-    Gets or sets the relative altitude change for the Specify Altitude Change mode.
+    Get or set the relative altitude change for the Specify Altitude Change mode.
 
 .. py:property:: control_altitude_rate
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyLTAHover.control_altitude_rate
     :type: float
 
-    Gets or sets the controlled altitude rate for the Specify Altitude or Specify Altitude Change mode.
+    Get or set the controlled altitude rate for the Specify Altitude or Specify Altitude Change mode.
 
 .. py:property:: altitude_rate
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyLTAHover.altitude_rate
     :type: float
 
-    Gets or sets the altitude rate for the Specify Altitude Rate mode.
+    Get or set the altitude rate for the Specify Altitude Rate mode.
 
 .. py:property:: parachute_area
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyLTAHover.parachute_area
     :type: float
 
-    Gets or sets the parachute area for the Parachute mode.
+    Get or set the parachute area for the Parachute mode.
 
 .. py:property:: parachute_cd
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyLTAHover.parachute_cd
     :type: float
 
-    Gets or sets the parachute drag coefficient for the Parachute mode.
+    Get or set the parachute drag coefficient for the Parachute mode.
 
 

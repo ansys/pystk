@@ -34,9 +34,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleCentralBodies.available_central_bodies`
-              - Returns an array of available Central Bodies.
+              - Return an array of available Central Bodies.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleCentralBodies.assigned_central_bodies`
-              - Returns an array of all assigned central bodies.
+              - Return an array of all assigned central bodies.
 
 
 
@@ -55,13 +55,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleCentralBodies.available_central_bodies
     :type: list
 
-    Returns an array of available Central Bodies.
+    Return an array of available Central Bodies.
 
 .. py:property:: assigned_central_bodies
     :canonical: ansys.stk.core.stkobjects.VehicleCentralBodies.assigned_central_bodies
     :type: list
 
-    Returns an array of all assigned central bodies.
+    Return an array of all assigned central bodies.
 
 
 Method detail

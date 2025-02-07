@@ -27,7 +27,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolVectorReflection.normal_vector`
               - The vector defines the reflection surface.
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolVectorReflection.allow_reflections_on_backside`
-              - Controls whether to reflect the indicent vector on both sides of the plane.
+              - Control whether to reflect the indicent vector on both sides of the plane.
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolVectorReflection.scale_factor`
               - The vector's scale factor.
 
@@ -66,7 +66,7 @@ Property detail
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorReflection.allow_reflections_on_backside
     :type: bool
 
-    Controls whether to reflect the indicent vector on both sides of the plane.
+    Control whether to reflect the indicent vector on both sides of the plane.
 
 .. py:property:: scale_factor
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorReflection.scale_factor

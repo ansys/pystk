@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ChainUserSpecifiedTimePeriod.time_interval`
-              - Allows configuring the time interval.
+              - Allow configuring the time interval.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.ChainUserSpecifiedTimePeriod.time_interval
     :type: ITimeToolTimeIntervalSmartInterval
 
-    Allows configuring the time interval.
+    Allow configuring the time interval.
 
 

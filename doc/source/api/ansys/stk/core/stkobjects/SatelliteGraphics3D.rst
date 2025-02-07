@@ -47,13 +47,13 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.SatelliteGraphics3D.drop_lines`
               - Get the satellite's Droplines properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.SatelliteGraphics3D.b_planes`
-              - Gets the BPlane.
+              - Get the BPlane.
             * - :py:attr:`~ansys.stk.core.stkobjects.SatelliteGraphics3D.vapor_trail`
               - Vapor trail attributes.
             * - :py:attr:`~ansys.stk.core.stkobjects.SatelliteGraphics3D.velocity_covariance`
               - Get the satellite's 3D velocity covariance properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.SatelliteGraphics3D.radar_cross_section`
-              - Gets the radar cross section graphics interface.
+              - Get the radar cross section graphics interface.
 
 
 
@@ -156,7 +156,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.SatelliteGraphics3D.b_planes
     :type: VehicleGraphics3DBPlanes
 
-    Gets the BPlane.
+    Get the BPlane.
 
 .. py:property:: vapor_trail
     :canonical: ansys.stk.core.stkobjects.SatelliteGraphics3D.vapor_trail
@@ -174,6 +174,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.SatelliteGraphics3D.radar_cross_section
     :type: RadarCrossSectionGraphics3D
 
-    Gets the radar cross section graphics interface.
+    Get the radar cross section graphics interface.
 
 

@@ -36,7 +36,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftExternalAerodynamic.forward_flight_filepath`
               - Get the filepath for the forward flight aero file.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftExternalAerodynamic.forward_flight_reference_area`
-              - Gets or sets the area of the lifting surface of the aircraft.
+              - Get or set the area of the lifting surface of the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftExternalAerodynamic.can_set_forward_flight_reference_area`
               - Check whether you can set the reference area or whether it is specified in the file.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftExternalAerodynamic.is_forward_flight_valid`
@@ -44,7 +44,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftExternalAerodynamic.takeoff_landing_filepath`
               - Get the filepath for the takeoff and landing aero file.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftExternalAerodynamic.takeoff_landing_reference_area`
-              - Gets or sets the area of the lifting surface of the aircraft.
+              - Get or set the area of the lifting surface of the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftExternalAerodynamic.can_set_takeoff_landing_reference_area`
               - Check whether you can set the reference area or whether it is specified in the file.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftExternalAerodynamic.is_takeoff_landing_valid`
@@ -73,7 +73,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftExternalAerodynamic.forward_flight_reference_area
     :type: float
 
-    Gets or sets the area of the lifting surface of the aircraft.
+    Get or set the area of the lifting surface of the aircraft.
 
 .. py:property:: can_set_forward_flight_reference_area
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftExternalAerodynamic.can_set_forward_flight_reference_area
@@ -97,7 +97,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftExternalAerodynamic.takeoff_landing_reference_area
     :type: float
 
-    Gets or sets the area of the lifting surface of the aircraft.
+    Get or set the area of the lifting surface of the aircraft.
 
 .. py:property:: can_set_takeoff_landing_reference_area
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftExternalAerodynamic.can_set_takeoff_landing_reference_area

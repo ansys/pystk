@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelScriptPlugin.filename`
-              - Gets or sets the script plugin filename.
+              - Get or set the script plugin filename.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.AntennaModelScriptPlugin.filename
     :type: str
 
-    Gets or sets the script plugin filename.
+    Get or set the script plugin filename.
 
 

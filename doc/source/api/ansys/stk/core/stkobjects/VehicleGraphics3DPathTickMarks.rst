@@ -34,7 +34,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DPathTickMarks.tick_data_type`
               - Get the type of tick marks to display.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DPathTickMarks.tick_data_supported_types`
-              - Returns an array of valid choices.
+              - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DPathTickMarks.tick_data`
               - Get the tick mark data.
 
@@ -67,7 +67,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DPathTickMarks.tick_data_supported_types
     :type: list
 
-    Returns an array of valid choices.
+    Return an array of valid choices.
 
 .. py:property:: tick_data
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DPathTickMarks.tick_data

@@ -25,7 +25,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolVectorScaled.scale`
               - A scaling multiple.
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolVectorScaled.is_normalized`
-              - Controls whether to convert the reference vector to a unit vector before scalling.
+              - Control whether to convert the reference vector to a unit vector before scalling.
 
 
 
@@ -56,6 +56,6 @@ Property detail
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorScaled.is_normalized
     :type: bool
 
-    Controls whether to convert the reference vector to a unit vector before scalling.
+    Control whether to convert the reference vector to a unit vector before scalling.
 
 

@@ -38,9 +38,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateTakeoffLandingOptions.airspeed`
               - Get the goal airspeed for the launch.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateTakeoffLandingOptions.altitude_rate`
-              - Gets or sets the rate at which the aircraft will climb or descend.
+              - Get or set the rate at which the aircraft will climb or descend.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateTakeoffLandingOptions.flight_path_angle`
-              - Gets or sets the initial pitch angle of the flight path.
+              - Get or set the initial pitch angle of the flight path.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateTakeoffLandingOptions.tas_dot`
               - Get the true airspeed acceleration.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateTakeoffLandingOptions.groundspeed_dot`
@@ -48,11 +48,11 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateTakeoffLandingOptions.longitudinal_acceleration_type`
               - Get the mode to specify the longitudinal acceleration.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateTakeoffLandingOptions.heading`
-              - Gets or sets the direction the aircraft is pointing.
+              - Get or set the direction the aircraft is pointing.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateTakeoffLandingOptions.heading_is_magnetic`
               - Opt whether to specify the heading using magnetic North.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateTakeoffLandingOptions.course`
-              - Gets or sets the direction the aircraft is traveling.
+              - Get or set the direction the aircraft is traveling.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateTakeoffLandingOptions.course_is_magnetic`
               - Opt whether to specify the course using magnetic North.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateTakeoffLandingOptions.heading_dot`
@@ -62,11 +62,11 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateTakeoffLandingOptions.lateral_acceleration_type`
               - Get the mode to specify the lateral acceleration.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateTakeoffLandingOptions.roll_angle`
-              - Gets or sets the aircraft's bank angle.
+              - Get or set the aircraft's bank angle.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateTakeoffLandingOptions.aoa`
-              - Gets or sets the aircraft's angle of attack.
+              - Get or set the aircraft's angle of attack.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateTakeoffLandingOptions.sideslip`
-              - Gets or sets the aircraft's yaw angle.
+              - Get or set the aircraft's yaw angle.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateTakeoffLandingOptions.pitch_rate`
               - Get the aircraft's pitch rate.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateTakeoffLandingOptions.push_pull_g`
@@ -103,13 +103,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateTakeoffLandingOptions.altitude_rate
     :type: float
 
-    Gets or sets the rate at which the aircraft will climb or descend.
+    Get or set the rate at which the aircraft will climb or descend.
 
 .. py:property:: flight_path_angle
     :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateTakeoffLandingOptions.flight_path_angle
     :type: typing.Any
 
-    Gets or sets the initial pitch angle of the flight path.
+    Get or set the initial pitch angle of the flight path.
 
 .. py:property:: tas_dot
     :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateTakeoffLandingOptions.tas_dot
@@ -133,7 +133,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateTakeoffLandingOptions.heading
     :type: typing.Any
 
-    Gets or sets the direction the aircraft is pointing.
+    Get or set the direction the aircraft is pointing.
 
 .. py:property:: heading_is_magnetic
     :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateTakeoffLandingOptions.heading_is_magnetic
@@ -145,7 +145,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateTakeoffLandingOptions.course
     :type: typing.Any
 
-    Gets or sets the direction the aircraft is traveling.
+    Get or set the direction the aircraft is traveling.
 
 .. py:property:: course_is_magnetic
     :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateTakeoffLandingOptions.course_is_magnetic
@@ -175,19 +175,19 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateTakeoffLandingOptions.roll_angle
     :type: typing.Any
 
-    Gets or sets the aircraft's bank angle.
+    Get or set the aircraft's bank angle.
 
 .. py:property:: aoa
     :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateTakeoffLandingOptions.aoa
     :type: typing.Any
 
-    Gets or sets the aircraft's angle of attack.
+    Get or set the aircraft's angle of attack.
 
 .. py:property:: sideslip
     :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateTakeoffLandingOptions.sideslip
     :type: typing.Any
 
-    Gets or sets the aircraft's yaw angle.
+    Get or set the aircraft's yaw angle.
 
 .. py:property:: pitch_rate
     :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateTakeoffLandingOptions.pitch_rate
