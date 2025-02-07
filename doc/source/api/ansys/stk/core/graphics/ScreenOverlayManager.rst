@@ -21,13 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.ScreenOverlayManager.bounds`
-              - Gets the overall bounds of the globe control. The array contains the properties defining the bounds in the order left x location, top y location, width, height.
+              - Get the overall bounds of the globe control. The array contains the properties defining the bounds in the order left x location, top y location, width, height.
             * - :py:attr:`~ansys.stk.core.graphics.ScreenOverlayManager.overlays`
-              - Gets the collection of overlays that are contained within this manager.
+              - Get the collection of overlays that are contained within this manager.
             * - :py:attr:`~ansys.stk.core.graphics.ScreenOverlayManager.padding`
-              - Gets or sets the padding surrounding the overlays that are contained within this manager. The array contains the components of the padding arranged in the order left, top, right, bottom.
+              - Get or set the padding surrounding the overlays that are contained within this manager. The array contains the components of the padding arranged in the order left, top, right, bottom.
             * - :py:attr:`~ansys.stk.core.graphics.ScreenOverlayManager.display`
-              - Gets or sets if the collection of overlays that are contained within this manager should be rendered.
+              - Get or set if the collection of overlays that are contained within this manager should be rendered.
 
 
 
@@ -46,24 +46,24 @@ Property detail
     :canonical: ansys.stk.core.graphics.ScreenOverlayManager.bounds
     :type: list
 
-    Gets the overall bounds of the globe control. The array contains the properties defining the bounds in the order left x location, top y location, width, height.
+    Get the overall bounds of the globe control. The array contains the properties defining the bounds in the order left x location, top y location, width, height.
 
 .. py:property:: overlays
     :canonical: ansys.stk.core.graphics.ScreenOverlayManager.overlays
     :type: ScreenOverlayCollection
 
-    Gets the collection of overlays that are contained within this manager.
+    Get the collection of overlays that are contained within this manager.
 
 .. py:property:: padding
     :canonical: ansys.stk.core.graphics.ScreenOverlayManager.padding
     :type: list
 
-    Gets or sets the padding surrounding the overlays that are contained within this manager. The array contains the components of the padding arranged in the order left, top, right, bottom.
+    Get or set the padding surrounding the overlays that are contained within this manager. The array contains the components of the padding arranged in the order left, top, right, bottom.
 
 .. py:property:: display
     :canonical: ansys.stk.core.graphics.ScreenOverlayManager.display
     :type: bool
 
-    Gets or sets if the collection of overlays that are contained within this manager should be rendered.
+    Get or set if the collection of overlays that are contained within this manager should be rendered.
 
 

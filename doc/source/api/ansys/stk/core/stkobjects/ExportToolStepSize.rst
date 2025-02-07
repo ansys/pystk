@@ -23,7 +23,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.ExportToolStepSize.step_size_type`
               - Step Size Type.
             * - :py:attr:`~ansys.stk.core.stkobjects.ExportToolStepSize.time_array`
-              - Gets or sets the time array component for the vehicle.
+              - Get or set the time array component for the vehicle.
 
 
 
@@ -54,6 +54,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.ExportToolStepSize.time_array
     :type: str
 
-    Gets or sets the time array component for the vehicle.
+    Get or set the time array component for the vehicle.
 
 

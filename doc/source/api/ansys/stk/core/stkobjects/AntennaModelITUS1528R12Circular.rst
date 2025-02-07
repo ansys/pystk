@@ -21,21 +21,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelITUS1528R12Circular.mainlobe_gain`
-              - Gets or sets the main-lobe gain.
+              - Get or set the main-lobe gain.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelITUS1528R12Circular.efficiency`
-              - Gets or sets the efficiency.
+              - Get or set the efficiency.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelITUS1528R12Circular.diameter`
-              - Gets or sets the diameter.
+              - Get or set the diameter.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelITUS1528R12Circular.use_mainlobe_model`
-              - Gets or sets the option for enabling the mainlobe model.
+              - Get or set the option for enabling the mainlobe model.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelITUS1528R12Circular.override_half_beamwidth`
-              - Gets or sets the option for overriding the half beamwidth.
+              - Get or set the option for overriding the half beamwidth.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelITUS1528R12Circular.half_beamwidth`
-              - Gets or sets the half beamwidth.
+              - Get or set the half beamwidth.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelITUS1528R12Circular.near_in_sidelobe_level`
-              - Gets or sets the near in sidelobe level.
+              - Get or set the near in sidelobe level.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelITUS1528R12Circular.farout_sidelobe_level`
-              - Gets or sets the far out sidelobe level.
+              - Get or set the far out sidelobe level.
 
 
 
@@ -54,48 +54,48 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.AntennaModelITUS1528R12Circular.mainlobe_gain
     :type: float
 
-    Gets or sets the main-lobe gain.
+    Get or set the main-lobe gain.
 
 .. py:property:: efficiency
     :canonical: ansys.stk.core.stkobjects.AntennaModelITUS1528R12Circular.efficiency
     :type: float
 
-    Gets or sets the efficiency.
+    Get or set the efficiency.
 
 .. py:property:: diameter
     :canonical: ansys.stk.core.stkobjects.AntennaModelITUS1528R12Circular.diameter
     :type: float
 
-    Gets or sets the diameter.
+    Get or set the diameter.
 
 .. py:property:: use_mainlobe_model
     :canonical: ansys.stk.core.stkobjects.AntennaModelITUS1528R12Circular.use_mainlobe_model
     :type: bool
 
-    Gets or sets the option for enabling the mainlobe model.
+    Get or set the option for enabling the mainlobe model.
 
 .. py:property:: override_half_beamwidth
     :canonical: ansys.stk.core.stkobjects.AntennaModelITUS1528R12Circular.override_half_beamwidth
     :type: bool
 
-    Gets or sets the option for overriding the half beamwidth.
+    Get or set the option for overriding the half beamwidth.
 
 .. py:property:: half_beamwidth
     :canonical: ansys.stk.core.stkobjects.AntennaModelITUS1528R12Circular.half_beamwidth
     :type: typing.Any
 
-    Gets or sets the half beamwidth.
+    Get or set the half beamwidth.
 
 .. py:property:: near_in_sidelobe_level
     :canonical: ansys.stk.core.stkobjects.AntennaModelITUS1528R12Circular.near_in_sidelobe_level
     :type: float
 
-    Gets or sets the near in sidelobe level.
+    Get or set the near in sidelobe level.
 
 .. py:property:: farout_sidelobe_level
     :canonical: ansys.stk.core.stkobjects.AntennaModelITUS1528R12Circular.farout_sidelobe_level
     :type: float
 
-    Gets or sets the far out sidelobe level.
+    Get or set the far out sidelobe level.
 
 

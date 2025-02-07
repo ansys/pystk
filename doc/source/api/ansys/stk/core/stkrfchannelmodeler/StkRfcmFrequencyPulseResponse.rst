@@ -21,9 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmFrequencyPulseResponse.pulse_count`
-              - Gets the pulse count.
+              - Get the pulse count.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmFrequencyPulseResponse.frequency_sample_count`
-              - Gets the frequency sample count.
+              - Get the frequency sample count.
 
 
 
@@ -42,12 +42,12 @@ Property detail
     :canonical: ansys.stk.core.stkrfchannelmodeler.StkRfcmFrequencyPulseResponse.pulse_count
     :type: int
 
-    Gets the pulse count.
+    Get the pulse count.
 
 .. py:property:: frequency_sample_count
     :canonical: ansys.stk.core.stkrfchannelmodeler.StkRfcmFrequencyPulseResponse.frequency_sample_count
     :type: int
 
-    Gets the frequency sample count.
+    Get the frequency sample count.
 
 

@@ -30,7 +30,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.MilitaryStandard2525bSymbols.fill_enabled`
               - Turn on or off the fill for symbol id.
             * - :py:attr:`~ansys.stk.core.stkobjects.MilitaryStandard2525bSymbols.symbol_image_size`
-              - Gets or sets the size for the symbol id. Dimensionless.
+              - Get or set the size for the symbol id. Dimensionless.
 
 
 
@@ -55,7 +55,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.MilitaryStandard2525bSymbols.symbol_image_size
     :type: int
 
-    Gets or sets the size for the symbol id. Dimensionless.
+    Get or set the size for the symbol id. Dimensionless.
 
 
 Method detail

@@ -46,11 +46,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectCollection.count`
-              - Returns the number of elements in the collection.
+              - Return the number of elements in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectCollection._new_enum`
-              - Returns an enumerator for the collection.
+              - Return an enumerator for the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectCollection.supported_child_types`
-              - Returns the available objects that can be added to this object.
+              - Return the available objects that can be added to this object.
 
 
 Import detail
@@ -68,19 +68,19 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.IStkObjectCollection.count
     :type: int
 
-    Returns the number of elements in the collection.
+    Return the number of elements in the collection.
 
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkobjects.IStkObjectCollection._new_enum
     :type: EnumeratorProxy
 
-    Returns an enumerator for the collection.
+    Return an enumerator for the collection.
 
 .. py:property:: supported_child_types
     :canonical: ansys.stk.core.stkobjects.IStkObjectCollection.supported_child_types
     :type: list
 
-    Returns the available objects that can be added to this object.
+    Return the available objects that can be added to this object.
 
 
 Method detail

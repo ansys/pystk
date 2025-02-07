@@ -23,11 +23,11 @@ Overview
             * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude.reference_central_body`
               - Get the central body for the volume grid. Both the central body reference shape and its CBF (central body centered fixed) system are used by this volume grid.
             * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude.along_bearing_grid_parameters`
-              - Returns AlongBearing Coordinates parameters for the surface bearing.
+              - Return AlongBearing Coordinates parameters for the surface bearing.
             * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude.cross_bearing_grid_parameters`
-              - Returns CrossBearing Coordinates parameters for the surface bearing.
+              - Return CrossBearing Coordinates parameters for the surface bearing.
             * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude.altitude_grid_parameters`
-              - Returns altitude Coordinates parameters for the surface bearing.
+              - Return altitude Coordinates parameters for the surface bearing.
             * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude.auto_fit_bounds`
               - Specify whether to use the auto fit bounds. Set to true to use the auto fit bounds..
             * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude.bearing_angle`
@@ -58,19 +58,19 @@ Property detail
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude.along_bearing_grid_parameters
     :type: SpatialAnalysisToolGridCoordinateDefinition
 
-    Returns AlongBearing Coordinates parameters for the surface bearing.
+    Return AlongBearing Coordinates parameters for the surface bearing.
 
 .. py:property:: cross_bearing_grid_parameters
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude.cross_bearing_grid_parameters
     :type: SpatialAnalysisToolGridCoordinateDefinition
 
-    Returns CrossBearing Coordinates parameters for the surface bearing.
+    Return CrossBearing Coordinates parameters for the surface bearing.
 
 .. py:property:: altitude_grid_parameters
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude.altitude_grid_parameters
     :type: SpatialAnalysisToolGridCoordinateDefinition
 
-    Returns altitude Coordinates parameters for the surface bearing.
+    Return altitude Coordinates parameters for the surface bearing.
 
 .. py:property:: auto_fit_bounds
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude.auto_fit_bounds

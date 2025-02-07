@@ -64,45 +64,45 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.MarkerBatchPrimitive.size_source`
-              - Gets the source used for the size of markers in the batch.
+              - Get the source used for the size of markers in the batch.
             * - :py:attr:`~ansys.stk.core.graphics.MarkerBatchPrimitive.sort_order`
-              - Gets the order in which markers in the marker batch are sorted before rendering.
+              - Get the order in which markers in the marker batch are sorted before rendering.
             * - :py:attr:`~ansys.stk.core.graphics.MarkerBatchPrimitive.set_hint`
-              - Gets the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with.
+              - Get the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with.
             * - :py:attr:`~ansys.stk.core.graphics.MarkerBatchPrimitive.rendering_method`
-              - Gets the rendering method used to render the marker batch.
+              - Get the rendering method used to render the marker batch.
             * - :py:attr:`~ansys.stk.core.graphics.MarkerBatchPrimitive.render_pass`
-              - Gets or sets the pass during which the marker batch is rendered.
+              - Get or set the pass during which the marker batch is rendered.
             * - :py:attr:`~ansys.stk.core.graphics.MarkerBatchPrimitive.bounding_sphere_scale`
-              - Gets or sets the scale applied to the radius of this primitive's bounding sphere.
+              - Get or set the scale applied to the radius of this primitive's bounding sphere.
             * - :py:attr:`~ansys.stk.core.graphics.MarkerBatchPrimitive.distance_display_condition_per_marker`
-              - Gets or sets a distance display condition that is evaluated per marker in the marker batch during rendering. This is different than display condition, which is evaluated once for the entire marker batch...
+              - Get or set a distance display condition that is evaluated per marker in the marker batch during rendering. This is different than display condition, which is evaluated once for the entire marker batch...
             * - :py:attr:`~ansys.stk.core.graphics.MarkerBatchPrimitive.texture`
-              - Gets or sets the per-batch texture, which is applied to each marker in the batch.
+              - Get or set the per-batch texture, which is applied to each marker in the batch.
             * - :py:attr:`~ansys.stk.core.graphics.MarkerBatchPrimitive.size_unit`
-              - Gets or sets the unit that each marker's size is defined in.
+              - Get or set the unit that each marker's size is defined in.
             * - :py:attr:`~ansys.stk.core.graphics.MarkerBatchPrimitive.size`
-              - Gets or sets the per-batch size, which is applied to each marker in the batch. The array contains one width followed by one height.
+              - Get or set the per-batch size, which is applied to each marker in the batch. The array contains one width followed by one height.
             * - :py:attr:`~ansys.stk.core.graphics.MarkerBatchPrimitive.origin`
-              - Gets or sets the per-batch origin, which is applied to each marker in the batch.
+              - Get or set the per-batch origin, which is applied to each marker in the batch.
             * - :py:attr:`~ansys.stk.core.graphics.MarkerBatchPrimitive.pixel_offset`
-              - Gets or sets the per-batch pixel offset, which is applied to each marker in the batch. The array contains one x pixel offset followed by one y pixel offset.
+              - Get or set the per-batch pixel offset, which is applied to each marker in the batch. The array contains one x pixel offset followed by one y pixel offset.
             * - :py:attr:`~ansys.stk.core.graphics.MarkerBatchPrimitive.eye_offset`
-              - Gets or sets the per-batch eye offset, which is applied to each marker in the batch. The array contains the components of the eye offset in the order x, y, z.
+              - Get or set the per-batch eye offset, which is applied to each marker in the batch. The array contains the components of the eye offset in the order x, y, z.
             * - :py:attr:`~ansys.stk.core.graphics.MarkerBatchPrimitive.rotation`
-              - Gets or sets the per-batch rotation angle which is applied to each marker in the batch.
+              - Get or set the per-batch rotation angle which is applied to each marker in the batch.
             * - :py:attr:`~ansys.stk.core.graphics.MarkerBatchPrimitive.texture_coordinate`
-              - Gets or sets the per-batch texture coordinate, which is applied to each marker in the batch. The array contains the texture coordinates arranged in the order s, t, p, q.
+              - Get or set the per-batch texture coordinate, which is applied to each marker in the batch. The array contains the texture coordinates arranged in the order s, t, p, q.
             * - :py:attr:`~ansys.stk.core.graphics.MarkerBatchPrimitive.wireframe`
-              - Gets or sets whether the primitive is rendered in wireframe. This is useful for debugging.
+              - Get or set whether the primitive is rendered in wireframe. This is useful for debugging.
             * - :py:attr:`~ansys.stk.core.graphics.MarkerBatchPrimitive.per_item_picking_enabled`
-              - Gets or sets whether individual marker indices will be included in the pick results returned from the scene's Pick method. Each marker index that is picked will be returned as a batch primitive index.
+              - Get or set whether individual marker indices will be included in the pick results returned from the scene's Pick method. Each marker index that is picked will be returned as a batch primitive index.
             * - :py:attr:`~ansys.stk.core.graphics.MarkerBatchPrimitive.texture_filter`
-              - Gets or sets the filter used for per-marker or per-batch textures.
+              - Get or set the filter used for per-marker or per-batch textures.
             * - :py:attr:`~ansys.stk.core.graphics.MarkerBatchPrimitive.clamp_to_pixel`
-              - Gets or sets whether the screen space position of each marker is clamped to a pixel.
+              - Get or set whether the screen space position of each marker is clamped to a pixel.
             * - :py:attr:`~ansys.stk.core.graphics.MarkerBatchPrimitive.central_body_clipped`
-              - Gets or sets whether the markers are clipped by the central body.
+              - Get or set whether the markers are clipped by the central body.
 
 
 
@@ -121,121 +121,121 @@ Property detail
     :canonical: ansys.stk.core.graphics.MarkerBatchPrimitive.size_source
     :type: MarkerBatchSizeSource
 
-    Gets the source used for the size of markers in the batch.
+    Get the source used for the size of markers in the batch.
 
 .. py:property:: sort_order
     :canonical: ansys.stk.core.graphics.MarkerBatchPrimitive.sort_order
     :type: MarkerBatchSortOrder
 
-    Gets the order in which markers in the marker batch are sorted before rendering.
+    Get the order in which markers in the marker batch are sorted before rendering.
 
 .. py:property:: set_hint
     :canonical: ansys.stk.core.graphics.MarkerBatchPrimitive.set_hint
     :type: SetHint
 
-    Gets the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with.
+    Get the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with.
 
 .. py:property:: rendering_method
     :canonical: ansys.stk.core.graphics.MarkerBatchPrimitive.rendering_method
     :type: MarkerBatchRenderingMethod
 
-    Gets the rendering method used to render the marker batch.
+    Get the rendering method used to render the marker batch.
 
 .. py:property:: render_pass
     :canonical: ansys.stk.core.graphics.MarkerBatchPrimitive.render_pass
     :type: MarkerBatchRenderPass
 
-    Gets or sets the pass during which the marker batch is rendered.
+    Get or set the pass during which the marker batch is rendered.
 
 .. py:property:: bounding_sphere_scale
     :canonical: ansys.stk.core.graphics.MarkerBatchPrimitive.bounding_sphere_scale
     :type: float
 
-    Gets or sets the scale applied to the radius of this primitive's bounding sphere.
+    Get or set the scale applied to the radius of this primitive's bounding sphere.
 
 .. py:property:: distance_display_condition_per_marker
     :canonical: ansys.stk.core.graphics.MarkerBatchPrimitive.distance_display_condition_per_marker
     :type: DistanceDisplayCondition
 
-    Gets or sets a distance display condition that is evaluated per marker in the marker batch during rendering. This is different than display condition, which is evaluated once for the entire marker batch...
+    Get or set a distance display condition that is evaluated per marker in the marker batch during rendering. This is different than display condition, which is evaluated once for the entire marker batch...
 
 .. py:property:: texture
     :canonical: ansys.stk.core.graphics.MarkerBatchPrimitive.texture
     :type: RendererTexture2D
 
-    Gets or sets the per-batch texture, which is applied to each marker in the batch.
+    Get or set the per-batch texture, which is applied to each marker in the batch.
 
 .. py:property:: size_unit
     :canonical: ansys.stk.core.graphics.MarkerBatchPrimitive.size_unit
     :type: MarkerBatchSizeUnit
 
-    Gets or sets the unit that each marker's size is defined in.
+    Get or set the unit that each marker's size is defined in.
 
 .. py:property:: size
     :canonical: ansys.stk.core.graphics.MarkerBatchPrimitive.size
     :type: list
 
-    Gets or sets the per-batch size, which is applied to each marker in the batch. The array contains one width followed by one height.
+    Get or set the per-batch size, which is applied to each marker in the batch. The array contains one width followed by one height.
 
 .. py:property:: origin
     :canonical: ansys.stk.core.graphics.MarkerBatchPrimitive.origin
     :type: Origin
 
-    Gets or sets the per-batch origin, which is applied to each marker in the batch.
+    Get or set the per-batch origin, which is applied to each marker in the batch.
 
 .. py:property:: pixel_offset
     :canonical: ansys.stk.core.graphics.MarkerBatchPrimitive.pixel_offset
     :type: list
 
-    Gets or sets the per-batch pixel offset, which is applied to each marker in the batch. The array contains one x pixel offset followed by one y pixel offset.
+    Get or set the per-batch pixel offset, which is applied to each marker in the batch. The array contains one x pixel offset followed by one y pixel offset.
 
 .. py:property:: eye_offset
     :canonical: ansys.stk.core.graphics.MarkerBatchPrimitive.eye_offset
     :type: list
 
-    Gets or sets the per-batch eye offset, which is applied to each marker in the batch. The array contains the components of the eye offset in the order x, y, z.
+    Get or set the per-batch eye offset, which is applied to each marker in the batch. The array contains the components of the eye offset in the order x, y, z.
 
 .. py:property:: rotation
     :canonical: ansys.stk.core.graphics.MarkerBatchPrimitive.rotation
     :type: float
 
-    Gets or sets the per-batch rotation angle which is applied to each marker in the batch.
+    Get or set the per-batch rotation angle which is applied to each marker in the batch.
 
 .. py:property:: texture_coordinate
     :canonical: ansys.stk.core.graphics.MarkerBatchPrimitive.texture_coordinate
     :type: list
 
-    Gets or sets the per-batch texture coordinate, which is applied to each marker in the batch. The array contains the texture coordinates arranged in the order s, t, p, q.
+    Get or set the per-batch texture coordinate, which is applied to each marker in the batch. The array contains the texture coordinates arranged in the order s, t, p, q.
 
 .. py:property:: wireframe
     :canonical: ansys.stk.core.graphics.MarkerBatchPrimitive.wireframe
     :type: bool
 
-    Gets or sets whether the primitive is rendered in wireframe. This is useful for debugging.
+    Get or set whether the primitive is rendered in wireframe. This is useful for debugging.
 
 .. py:property:: per_item_picking_enabled
     :canonical: ansys.stk.core.graphics.MarkerBatchPrimitive.per_item_picking_enabled
     :type: bool
 
-    Gets or sets whether individual marker indices will be included in the pick results returned from the scene's Pick method. Each marker index that is picked will be returned as a batch primitive index.
+    Get or set whether individual marker indices will be included in the pick results returned from the scene's Pick method. Each marker index that is picked will be returned as a batch primitive index.
 
 .. py:property:: texture_filter
     :canonical: ansys.stk.core.graphics.MarkerBatchPrimitive.texture_filter
     :type: TextureFilter2D
 
-    Gets or sets the filter used for per-marker or per-batch textures.
+    Get or set the filter used for per-marker or per-batch textures.
 
 .. py:property:: clamp_to_pixel
     :canonical: ansys.stk.core.graphics.MarkerBatchPrimitive.clamp_to_pixel
     :type: bool
 
-    Gets or sets whether the screen space position of each marker is clamped to a pixel.
+    Get or set whether the screen space position of each marker is clamped to a pixel.
 
 .. py:property:: central_body_clipped
     :canonical: ansys.stk.core.graphics.MarkerBatchPrimitive.central_body_clipped
     :type: bool
 
-    Gets or sets whether the markers are clipped by the central body.
+    Get or set whether the markers are clipped by the central body.
 
 
 Method detail

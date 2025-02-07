@@ -47,7 +47,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.AdvCATAdvancedSettings.allow_partial_ephemeris`
               - Flag to allow computation even when ephemeris does not completely overlap analysis interval.
             * - :py:attr:`~ansys.stk.core.stkobjects.AdvCATAdvancedSettings.remove_secondary_by_ssc`
-              - Removes from cosniseration any secondary whose SSC number is the same as the primary.
+              - Remove from cosniseration any secondary whose SSC number is the same as the primary.
             * - :py:attr:`~ansys.stk.core.stkobjects.AdvCATAdvancedSettings.maximum_sample_step_size`
               - Maximum step size used in sampling.
             * - :py:attr:`~ansys.stk.core.stkobjects.AdvCATAdvancedSettings.minimum_sample_step_size`
@@ -156,7 +156,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.AdvCATAdvancedSettings.remove_secondary_by_ssc
     :type: bool
 
-    Removes from cosniseration any secondary whose SSC number is the same as the primary.
+    Remove from cosniseration any secondary whose SSC number is the same as the primary.
 
 .. py:property:: maximum_sample_step_size
     :canonical: ansys.stk.core.stkobjects.AdvCATAdvancedSettings.maximum_sample_step_size

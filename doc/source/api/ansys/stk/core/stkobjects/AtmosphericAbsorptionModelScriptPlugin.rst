@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.AtmosphericAbsorptionModelScriptPlugin.filename`
-              - Gets or sets the script filename.
+              - Get or set the script filename.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.AtmosphericAbsorptionModelScriptPlugin.filename
     :type: str
 
-    Gets or sets the script filename.
+    Get or set the script filename.
 
 

@@ -19,7 +19,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IPointingStrategy.type`
-              - Gets the pointing strategy type.
+              - Get the pointing strategy type.
 
 
 Import detail
@@ -37,6 +37,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.IPointingStrategy.type
     :type: PointingStrategyType
 
-    Gets the pointing strategy type.
+    Get the pointing strategy type.
 
 

@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.AnalysisWorkbenchComponentTemplate.class_name`
-              - Returns a class name (i.e. 'Satellite', 'Facility', etc.).
+              - Return a class name (i.e. 'Satellite', 'Facility', etc.).
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.vgt.AnalysisWorkbenchComponentTemplate.class_name
     :type: str
 
-    Returns a class name (i.e. 'Satellite', 'Facility', etc.).
+    Return a class name (i.e. 'Satellite', 'Facility', etc.).
 
 

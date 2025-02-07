@@ -29,17 +29,17 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DReferenceAxes.duration`
               - The length of time during which the geometric element is visible. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DReferenceAxes.connect`
-              - Specifies the method used for connecting geometric elements.
+              - Specify the method used for connecting geometric elements.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DReferenceAxes.transparent`
               - If selected, earlier occurrences of a geometric element display fade over time so that it is drawn as completely filled at the most recent animation time and fades as the animation moves forward.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DReferenceAxes.available_axes`
-              - Returns an array of available Axes.
+              - Return an array of available Axes.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DReferenceAxes.draw_at_point`
               - If selected, the geometric element is drawn at the selected point.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DReferenceAxes.point`
               - Displays a point at the current animation time.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DReferenceAxes.available_points`
-              - Returns a safearray of available points.
+              - Return a safearray of available points.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DReferenceAxes.thickness`
               - Thickness of line.
 
@@ -84,7 +84,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Graphics3DReferenceAxes.connect
     :type: VectorAxesConnectType
 
-    Specifies the method used for connecting geometric elements.
+    Specify the method used for connecting geometric elements.
 
 .. py:property:: transparent
     :canonical: ansys.stk.core.stkobjects.Graphics3DReferenceAxes.transparent
@@ -96,7 +96,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Graphics3DReferenceAxes.available_axes
     :type: list
 
-    Returns an array of available Axes.
+    Return an array of available Axes.
 
 .. py:property:: draw_at_point
     :canonical: ansys.stk.core.stkobjects.Graphics3DReferenceAxes.draw_at_point
@@ -114,7 +114,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Graphics3DReferenceAxes.available_points
     :type: list
 
-    Returns a safearray of available points.
+    Return a safearray of available points.
 
 .. py:property:: thickness
     :canonical: ansys.stk.core.stkobjects.Graphics3DReferenceAxes.thickness

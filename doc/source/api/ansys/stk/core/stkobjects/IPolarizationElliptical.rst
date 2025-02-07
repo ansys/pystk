@@ -19,11 +19,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IPolarizationElliptical.reference_axis`
-              - Gets or sets the polarization reference axis.
+              - Get or set the polarization reference axis.
             * - :py:attr:`~ansys.stk.core.stkobjects.IPolarizationElliptical.tilt_angle`
-              - Gets or sets the polarization tilt angle.
+              - Get or set the polarization tilt angle.
             * - :py:attr:`~ansys.stk.core.stkobjects.IPolarizationElliptical.axial_ratio`
-              - Gets or sets the polarization axial ratio.
+              - Get or set the polarization axial ratio.
 
 
 Import detail
@@ -41,18 +41,18 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.IPolarizationElliptical.reference_axis
     :type: PolarizationReferenceAxis
 
-    Gets or sets the polarization reference axis.
+    Get or set the polarization reference axis.
 
 .. py:property:: tilt_angle
     :canonical: ansys.stk.core.stkobjects.IPolarizationElliptical.tilt_angle
     :type: typing.Any
 
-    Gets or sets the polarization tilt angle.
+    Get or set the polarization tilt angle.
 
 .. py:property:: axial_ratio
     :canonical: ansys.stk.core.stkobjects.IPolarizationElliptical.axial_ratio
     :type: float
 
-    Gets or sets the polarization axial ratio.
+    Get or set the polarization axial ratio.
 
 

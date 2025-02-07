@@ -21,11 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.TwoBodyFunction.gravitational_parameter_source`
-              - Gets or sets the source for the gravitational parameter.
+              - Get or set the source for the gravitational parameter.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.TwoBodyFunction.mu`
-              - Gets or sets the gravitational parameter. Uses Gravity Param Dimension.
+              - Get or set the gravitational parameter. Uses Gravity Param Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.TwoBodyFunction.min_radius_percent`
-              - Gets or sets the percentage of the central body's minimum radius at which a modified force model (only the two-body force) will be used - provided there is no altitude stopping condition. Uses Percent Dimension.
+              - Get or set the percentage of the central body's minimum radius at which a modified force model (only the two-body force) will be used - provided there is no altitude stopping condition. Uses Percent Dimension.
 
 
 
@@ -44,18 +44,18 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.TwoBodyFunction.gravitational_parameter_source
     :type: GravParamSource
 
-    Gets or sets the source for the gravitational parameter.
+    Get or set the source for the gravitational parameter.
 
 .. py:property:: mu
     :canonical: ansys.stk.core.stkobjects.astrogator.TwoBodyFunction.mu
     :type: float
 
-    Gets or sets the gravitational parameter. Uses Gravity Param Dimension.
+    Get or set the gravitational parameter. Uses Gravity Param Dimension.
 
 .. py:property:: min_radius_percent
     :canonical: ansys.stk.core.stkobjects.astrogator.TwoBodyFunction.min_radius_percent
     :type: float
 
-    Gets or sets the percentage of the central body's minimum radius at which a modified force model (only the two-body force) will be used - provided there is no altitude stopping condition. Uses Percent Dimension.
+    Get or set the percentage of the central body's minimum radius at which a modified force model (only the two-body force) will be used - provided there is no altitude stopping condition. Uses Percent Dimension.
 
 

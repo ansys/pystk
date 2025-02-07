@@ -21,15 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.UrbanTerrestrialLossModelWirelessInSite64.surface_temperature`
-              - Gets or sets the surface temperature.
+              - Get or set the surface temperature.
             * - :py:attr:`~ansys.stk.core.stkobjects.UrbanTerrestrialLossModelWirelessInSite64.supported_calculation_methods`
-              - Gets an array of supported calculation methods.
+              - Get an array of supported calculation methods.
             * - :py:attr:`~ansys.stk.core.stkobjects.UrbanTerrestrialLossModelWirelessInSite64.calculation_method`
-              - Gets or sets the calculation method.
+              - Get or set the calculation method.
             * - :py:attr:`~ansys.stk.core.stkobjects.UrbanTerrestrialLossModelWirelessInSite64.enable_ground_reflection`
-              - Gets or sets the option enabling the ground reflection.
+              - Get or set the option enabling the ground reflection.
             * - :py:attr:`~ansys.stk.core.stkobjects.UrbanTerrestrialLossModelWirelessInSite64.geometry_data`
-              - Gets the geometry data.
+              - Get the geometry data.
 
 
 
@@ -48,30 +48,30 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.UrbanTerrestrialLossModelWirelessInSite64.surface_temperature
     :type: float
 
-    Gets or sets the surface temperature.
+    Get or set the surface temperature.
 
 .. py:property:: supported_calculation_methods
     :canonical: ansys.stk.core.stkobjects.UrbanTerrestrialLossModelWirelessInSite64.supported_calculation_methods
     :type: list
 
-    Gets an array of supported calculation methods.
+    Get an array of supported calculation methods.
 
 .. py:property:: calculation_method
     :canonical: ansys.stk.core.stkobjects.UrbanTerrestrialLossModelWirelessInSite64.calculation_method
     :type: str
 
-    Gets or sets the calculation method.
+    Get or set the calculation method.
 
 .. py:property:: enable_ground_reflection
     :canonical: ansys.stk.core.stkobjects.UrbanTerrestrialLossModelWirelessInSite64.enable_ground_reflection
     :type: bool
 
-    Gets or sets the option enabling the ground reflection.
+    Get or set the option enabling the ground reflection.
 
 .. py:property:: geometry_data
     :canonical: ansys.stk.core.stkobjects.UrbanTerrestrialLossModelWirelessInSite64.geometry_data
     :type: WirelessInSite64GeometryData
 
-    Gets the geometry data.
+    Get the geometry data.
 
 

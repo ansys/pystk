@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.DelaunayG.g`
-              - Gets or sets the value of Delaunay G. Dimensionless.
+              - Get or set the value of Delaunay G. Dimensionless.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.DelaunayG.g
     :type: float
 
-    Gets or sets the value of Delaunay G. Dimensionless.
+    Get or set the value of Delaunay G. Dimensionless.
 
 

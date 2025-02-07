@@ -25,7 +25,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolVectorSurfaceDisplacement.destination_point`
               - Destination point.
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolVectorSurfaceDisplacement.surface_central_body`
-              - Gets or sets the surface central body property.
+              - Get or set the surface central body property.
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolVectorSurfaceDisplacement.differencing_time_step`
               - Time step used in displacement on surface vector. (derivatives using central differencing).
 
@@ -58,7 +58,7 @@ Property detail
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorSurfaceDisplacement.surface_central_body
     :type: str
 
-    Gets or sets the surface central body property.
+    Get or set the surface central body property.
 
 .. py:property:: differencing_time_step
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorSurfaceDisplacement.differencing_time_step

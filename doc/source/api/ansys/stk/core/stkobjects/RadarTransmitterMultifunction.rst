@@ -30,25 +30,25 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarTransmitterMultifunction.post_transmit_gains_losses`
-              - Gets the collection of additional post transmit gains and losses.
+              - Get the collection of additional post transmit gains and losses.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarTransmitterMultifunction.enable_polarization`
-              - Gets or sets the enable polarization option.
+              - Get or set the enable polarization option.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarTransmitterMultifunction.enable_orthogonal_polarization`
-              - Gets or sets the option for enabling the orthogonal polarization.
+              - Get or set the option for enabling the orthogonal polarization.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarTransmitterMultifunction.polarization`
-              - Gets the polarization.
+              - Get the polarization.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarTransmitterMultifunction.power_amplifier_bandwidth`
-              - Gets or sets the power amplifier bandwidth.
+              - Get or set the power amplifier bandwidth.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarTransmitterMultifunction.enable_filter`
-              - Gets or set the flag determines whether or not to enable the Filter.
+              - Get or set the flag determines whether or not to enable the Filter.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarTransmitterMultifunction.supported_filters`
-              - This property is deprecated. Use FilterComponentLinking on IAgRadarTransmitterMultifunction instead. Gets an array of supported filter model names.
+              - Do not use this property, as it is deprecated. Use FilterComponentLinking on IAgRadarTransmitterMultifunction instead. Gets an array of supported filter model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarTransmitterMultifunction.filter`
-              - This property is deprecated. Use FilterComponentLinking on IAgRadarTransmitterMultifunction instead. Gets the current filter model.
+              - Do not use this property, as it is deprecated. Use FilterComponentLinking on IAgRadarTransmitterMultifunction instead. Gets the current filter model.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarTransmitterMultifunction.maximum_power_limit`
-              - Gets or sets the power.
+              - Get or set the power.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarTransmitterMultifunction.filter_component_linking`
-              - Gets the link/embed controller for managing the filter model component.
+              - Get the link/embed controller for managing the filter model component.
 
 
 
@@ -67,61 +67,61 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.RadarTransmitterMultifunction.post_transmit_gains_losses
     :type: AdditionalGainLossCollection
 
-    Gets the collection of additional post transmit gains and losses.
+    Get the collection of additional post transmit gains and losses.
 
 .. py:property:: enable_polarization
     :canonical: ansys.stk.core.stkobjects.RadarTransmitterMultifunction.enable_polarization
     :type: bool
 
-    Gets or sets the enable polarization option.
+    Get or set the enable polarization option.
 
 .. py:property:: enable_orthogonal_polarization
     :canonical: ansys.stk.core.stkobjects.RadarTransmitterMultifunction.enable_orthogonal_polarization
     :type: bool
 
-    Gets or sets the option for enabling the orthogonal polarization.
+    Get or set the option for enabling the orthogonal polarization.
 
 .. py:property:: polarization
     :canonical: ansys.stk.core.stkobjects.RadarTransmitterMultifunction.polarization
     :type: IPolarization
 
-    Gets the polarization.
+    Get the polarization.
 
 .. py:property:: power_amplifier_bandwidth
     :canonical: ansys.stk.core.stkobjects.RadarTransmitterMultifunction.power_amplifier_bandwidth
     :type: float
 
-    Gets or sets the power amplifier bandwidth.
+    Get or set the power amplifier bandwidth.
 
 .. py:property:: enable_filter
     :canonical: ansys.stk.core.stkobjects.RadarTransmitterMultifunction.enable_filter
     :type: bool
 
-    Gets or set the flag determines whether or not to enable the Filter.
+    Get or set the flag determines whether or not to enable the Filter.
 
 .. py:property:: supported_filters
     :canonical: ansys.stk.core.stkobjects.RadarTransmitterMultifunction.supported_filters
     :type: list
 
-    This property is deprecated. Use FilterComponentLinking on IAgRadarTransmitterMultifunction instead. Gets an array of supported filter model names.
+    Do not use this property, as it is deprecated. Use FilterComponentLinking on IAgRadarTransmitterMultifunction instead. Gets an array of supported filter model names.
 
 .. py:property:: filter
     :canonical: ansys.stk.core.stkobjects.RadarTransmitterMultifunction.filter
     :type: IRFFilterModel
 
-    This property is deprecated. Use FilterComponentLinking on IAgRadarTransmitterMultifunction instead. Gets the current filter model.
+    Do not use this property, as it is deprecated. Use FilterComponentLinking on IAgRadarTransmitterMultifunction instead. Gets the current filter model.
 
 .. py:property:: maximum_power_limit
     :canonical: ansys.stk.core.stkobjects.RadarTransmitterMultifunction.maximum_power_limit
     :type: float
 
-    Gets or sets the power.
+    Get or set the power.
 
 .. py:property:: filter_component_linking
     :canonical: ansys.stk.core.stkobjects.RadarTransmitterMultifunction.filter_component_linking
     :type: IComponentLinkEmbedControl
 
-    Gets the link/embed controller for managing the filter model component.
+    Get the link/embed controller for managing the filter model component.
 
 
 Method detail

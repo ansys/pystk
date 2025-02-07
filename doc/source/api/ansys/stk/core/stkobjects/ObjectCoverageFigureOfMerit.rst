@@ -36,7 +36,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.ObjectCoverageFigureOfMerit.definition_type`
               - Definition type for the FOM.
             * - :py:attr:`~ansys.stk.core.stkobjects.ObjectCoverageFigureOfMerit.definition_supported_types`
-              - Returns an array of valid choices.
+              - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.ObjectCoverageFigureOfMerit.definition`
               - Definition properties of the FOM.
             * - :py:attr:`~ansys.stk.core.stkobjects.ObjectCoverageFigureOfMerit.graphics`
@@ -65,7 +65,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.ObjectCoverageFigureOfMerit.definition_supported_types
     :type: list
 
-    Returns an array of valid choices.
+    Return an array of valid choices.
 
 .. py:property:: definition
     :canonical: ansys.stk.core.stkobjects.ObjectCoverageFigureOfMerit.definition

@@ -38,11 +38,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DDataDisplayCollection.count`
-              - Returns the number of elements in a collection.
+              - Return the number of elements in a collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DDataDisplayCollection._new_enum`
-              - Returns an enumerator that can iterate through the collection.
+              - Return an enumerator that can iterate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DDataDisplayCollection.available_data`
-              - Gets the available data.
+              - Get the available data.
 
 
 
@@ -61,19 +61,19 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Graphics3DDataDisplayCollection.count
     :type: int
 
-    Returns the number of elements in a collection.
+    Return the number of elements in a collection.
 
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkobjects.Graphics3DDataDisplayCollection._new_enum
     :type: EnumeratorProxy
 
-    Returns an enumerator that can iterate through the collection.
+    Return an enumerator that can iterate through the collection.
 
 .. py:property:: available_data
     :canonical: ansys.stk.core.stkobjects.Graphics3DDataDisplayCollection.available_data
     :type: list
 
-    Gets the available data.
+    Get the available data.
 
 
 Method detail

@@ -21,11 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcRelativeMotion.central_body_name`
-              - Gets or sets the central body of the component.
+              - Get or set the central body of the component.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcRelativeMotion.origin_at_chief`
               - True if the origin is at the reference satellite, false if the origin is at the current satellite.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcRelativeMotion.reference_selection`
-              - Gets or sets the reference object selection.
+              - Get or set the reference object selection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcRelativeMotion.reference`
               - Get the reference object.
 
@@ -46,7 +46,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcRelativeMotion.central_body_name
     :type: str
 
-    Gets or sets the central body of the component.
+    Get or set the central body of the component.
 
 .. py:property:: origin_at_chief
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcRelativeMotion.origin_at_chief
@@ -58,7 +58,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcRelativeMotion.reference_selection
     :type: CalculationObjectReference
 
-    Gets or sets the reference object selection.
+    Get or set the reference object selection.
 
 .. py:property:: reference
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcRelativeMotion.reference

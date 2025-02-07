@@ -28,11 +28,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.IStkRfcmTransceiverModel.type`
-              - Gets the transceiver unique identifier.
+              - Get the transceiver unique identifier.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.IStkRfcmTransceiverModel.supported_antenna_types`
-              - Gets the supported antenna types.
+              - Get the supported antenna types.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.IStkRfcmTransceiverModel.antenna`
-              - Gets the transceiver's antenna settings.
+              - Get the transceiver's antenna settings.
 
 
 Import detail
@@ -50,19 +50,19 @@ Property detail
     :canonical: ansys.stk.core.stkrfchannelmodeler.IStkRfcmTransceiverModel.type
     :type: RfcmTransceiverModelType
 
-    Gets the transceiver unique identifier.
+    Get the transceiver unique identifier.
 
 .. py:property:: supported_antenna_types
     :canonical: ansys.stk.core.stkrfchannelmodeler.IStkRfcmTransceiverModel.supported_antenna_types
     :type: list
 
-    Gets the supported antenna types.
+    Get the supported antenna types.
 
 .. py:property:: antenna
     :canonical: ansys.stk.core.stkrfchannelmodeler.IStkRfcmTransceiverModel.antenna
     :type: IStkRfcmAntenna
 
-    Gets the transceiver's antenna settings.
+    Get the transceiver's antenna settings.
 
 
 Method detail

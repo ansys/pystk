@@ -19,9 +19,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.PreferencesPythonPlugins.access_constraint_paths`
-              - Returns a list of paths to Python access constraint plugin.
+              - Return a list of paths to Python access constraint plugin.
             * - :py:attr:`~ansys.stk.core.stkobjects.PreferencesPythonPlugins.ephemeris_file_reader_paths`
-              - Returns a list of paths to Python ephemeris file reader plugin.
+              - Return a list of paths to Python ephemeris file reader plugin.
 
 
 
@@ -40,12 +40,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.PreferencesPythonPlugins.access_constraint_paths
     :type: PathCollection
 
-    Returns a list of paths to Python access constraint plugin.
+    Return a list of paths to Python access constraint plugin.
 
 .. py:property:: ephemeris_file_reader_paths
     :canonical: ansys.stk.core.stkobjects.PreferencesPythonPlugins.ephemeris_file_reader_paths
     :type: PathCollection
 
-    Returns a list of paths to Python ephemeris file reader plugin.
+    Return a list of paths to Python ephemeris file reader plugin.
 
 

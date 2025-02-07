@@ -21,11 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DAttributesAccess.access_objects`
-              - Returns the collection of objects used for the access.
+              - Return the collection of objects used for the access.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DAttributesAccess.during_access`
-              - Returns the collection of gfx attributes used during the access.
+              - Return the collection of gfx attributes used during the access.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DAttributesAccess.no_access`
-              - Returns the collection of gfx attributes used when there is no access.
+              - Return the collection of gfx attributes used when there is no access.
 
 
 
@@ -44,18 +44,18 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DAttributesAccess.access_objects
     :type: ObjectLinkCollection
 
-    Returns the collection of objects used for the access.
+    Return the collection of objects used for the access.
 
 .. py:property:: during_access
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DAttributesAccess.during_access
     :type: IVehicleGraphics2DAttributesBasic
 
-    Returns the collection of gfx attributes used during the access.
+    Return the collection of gfx attributes used during the access.
 
 .. py:property:: no_access
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DAttributesAccess.no_access
     :type: IVehicleGraphics2DAttributesBasic
 
-    Returns the collection of gfx attributes used when there is no access.
+    Return the collection of gfx attributes used when there is no access.
 
 

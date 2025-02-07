@@ -23,11 +23,11 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DAttributesBasic.show_graphics`
               - Opt to display the selected graphics properties instead of using those defined in terms of intervals.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DAttributesBasic.color`
-              - Gets or sets the line color used when UseCustomColor is true.
+              - Get or set the line color used when UseCustomColor is true.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DAttributesBasic.line_width`
-              - Gets or sets the line width.
+              - Get or set the line width.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DAttributesBasic.translucency`
-              - Gets or sets the translucency. Dimensionless.
+              - Get or set the translucency. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DAttributesBasic.use_custom_color`
               - Use custom color for lines if true, otherwise use the vehicle color for the line color.
 
@@ -54,19 +54,19 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DAttributesBasic.color
     :type: agcolor.Color
 
-    Gets or sets the line color used when UseCustomColor is true.
+    Get or set the line color used when UseCustomColor is true.
 
 .. py:property:: line_width
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DAttributesBasic.line_width
     :type: LineWidth
 
-    Gets or sets the line width.
+    Get or set the line width.
 
 .. py:property:: translucency
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DAttributesBasic.translucency
     :type: float
 
-    Gets or sets the translucency. Dimensionless.
+    Get or set the translucency. Dimensionless.
 
 .. py:property:: use_custom_color
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DAttributesBasic.use_custom_color

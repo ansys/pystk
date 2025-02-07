@@ -25,7 +25,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AltitudeMSLAndLevelOffOptions.must_level_off`
               - Opt whether the procedure must level off.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AltitudeMSLAndLevelOffOptions.level_off_mode`
-              - Gets or sets the level off mode. This is only used when the must level off option is on.
+              - Get or set the level off mode. This is only used when the must level off option is on.
 
 
 
@@ -62,6 +62,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.AltitudeMSLAndLevelOffOptions.level_off_mode
     :type: AltitudeConstraintManeuverMode
 
-    Gets or sets the level off mode. This is only used when the must level off option is on.
+    Get or set the level off mode. This is only used when the must level off option is on.
 
 

@@ -30,7 +30,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPoint.type`
-              - Returns a type of the point object.
+              - Return a type of the point object.
 
 
 Import detail
@@ -48,7 +48,7 @@ Property detail
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPoint.type
     :type: PointType
 
-    Returns a type of the point object.
+    Return a type of the point object.
 
 
 Method detail

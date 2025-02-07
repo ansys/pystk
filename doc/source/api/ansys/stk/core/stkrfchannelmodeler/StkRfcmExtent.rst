@@ -19,13 +19,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmExtent.north_latitude`
-              - Gets or sets the north latitude.
+              - Get or set the north latitude.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmExtent.south_latitude`
-              - Gets or sets the south latitude.
+              - Get or set the south latitude.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmExtent.east_longitude`
-              - Gets or sets the east longitude.
+              - Get or set the east longitude.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmExtent.west_longitude`
-              - Gets or sets the west longitude.
+              - Get or set the west longitude.
 
 
 
@@ -44,24 +44,24 @@ Property detail
     :canonical: ansys.stk.core.stkrfchannelmodeler.StkRfcmExtent.north_latitude
     :type: float
 
-    Gets or sets the north latitude.
+    Get or set the north latitude.
 
 .. py:property:: south_latitude
     :canonical: ansys.stk.core.stkrfchannelmodeler.StkRfcmExtent.south_latitude
     :type: float
 
-    Gets or sets the south latitude.
+    Get or set the south latitude.
 
 .. py:property:: east_longitude
     :canonical: ansys.stk.core.stkrfchannelmodeler.StkRfcmExtent.east_longitude
     :type: float
 
-    Gets or sets the east longitude.
+    Get or set the east longitude.
 
 .. py:property:: west_longitude
     :canonical: ansys.stk.core.stkrfchannelmodeler.StkRfcmExtent.west_longitude
     :type: float
 
-    Gets or sets the west longitude.
+    Get or set the west longitude.
 
 

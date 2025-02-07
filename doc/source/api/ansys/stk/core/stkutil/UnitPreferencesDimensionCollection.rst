@@ -38,13 +38,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkutil.UnitPreferencesDimensionCollection.count`
-              - Returns the number of items in the collection.
+              - Return the number of items in the collection.
             * - :py:attr:`~ansys.stk.core.stkutil.UnitPreferencesDimensionCollection.mission_elapsed_time`
               - The MissionElapsedTime.
             * - :py:attr:`~ansys.stk.core.stkutil.UnitPreferencesDimensionCollection.julian_date_offset`
               - The JulianDateOffset.
             * - :py:attr:`~ansys.stk.core.stkutil.UnitPreferencesDimensionCollection._new_enum`
-              - Returns a collection of IAgUnitPrefsDim.
+              - Return a collection of IAgUnitPrefsDim.
 
 
 
@@ -63,7 +63,7 @@ Property detail
     :canonical: ansys.stk.core.stkutil.UnitPreferencesDimensionCollection.count
     :type: int
 
-    Returns the number of items in the collection.
+    Return the number of items in the collection.
 
 .. py:property:: mission_elapsed_time
     :canonical: ansys.stk.core.stkutil.UnitPreferencesDimensionCollection.mission_elapsed_time
@@ -81,7 +81,7 @@ Property detail
     :canonical: ansys.stk.core.stkutil.UnitPreferencesDimensionCollection._new_enum
     :type: EnumeratorProxy
 
-    Returns a collection of IAgUnitPrefsDim.
+    Return a collection of IAgUnitPrefsDim.
 
 
 Method detail

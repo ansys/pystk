@@ -21,9 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcDotProduct.vector1_name`
-              - Gets or sets the first vector.
+              - Get or set the first vector.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcDotProduct.vector2_name`
-              - Gets or sets the second vector.
+              - Get or set the second vector.
 
 
 
@@ -42,12 +42,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcDotProduct.vector1_name
     :type: str
 
-    Gets or sets the first vector.
+    Get or set the first vector.
 
 .. py:property:: vector2_name
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcDotProduct.vector2_name
     :type: str
 
-    Gets or sets the second vector.
+    Get or set the second vector.
 
 

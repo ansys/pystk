@@ -34,7 +34,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSGP4SegmentCollection.count`
-              - Gets the size of the collection.
+              - Get the size of the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSGP4SegmentCollection._new_enum`
               - Enumerates the elements of the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSGP4SegmentCollection.load_method_type`
@@ -42,7 +42,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSGP4SegmentCollection.load_method`
               - File Load Data.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSGP4SegmentCollection.routine_type`
-              - Gets or sets whether a routine type being used.
+              - Get or set whether a routine type being used.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSGP4SegmentCollection.available_routines`
               - An array of strings returning all available routine types.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSGP4SegmentCollection.maximum_number_of_elements`
@@ -67,7 +67,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.PropagatorSGP4SegmentCollection.count
     :type: int
 
-    Gets the size of the collection.
+    Get the size of the collection.
 
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkobjects.PropagatorSGP4SegmentCollection._new_enum
@@ -91,7 +91,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.PropagatorSGP4SegmentCollection.routine_type
     :type: str
 
-    Gets or sets whether a routine type being used.
+    Get or set whether a routine type being used.
 
 .. py:property:: available_routines
     :canonical: ansys.stk.core.stkobjects.PropagatorSGP4SegmentCollection.available_routines

@@ -37,7 +37,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteFinalBoundaryConditions.upper_delta_final_time`
               - Upper delta for final time.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteFinalBoundaryConditions.provide_runtime_type_info`
-              - Returns the IAgRuntimeTypeInfo interface to access properties at runtime.
+              - Return the IAgRuntimeTypeInfo interface to access properties at runtime.
 
 
 
@@ -110,6 +110,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFiniteFinalBoundaryConditions.provide_runtime_type_info
     :type: IRuntimeTypeInfo
 
-    Returns the IAgRuntimeTypeInfo interface to access properties at runtime.
+    Return the IAgRuntimeTypeInfo interface to access properties at runtime.
 
 

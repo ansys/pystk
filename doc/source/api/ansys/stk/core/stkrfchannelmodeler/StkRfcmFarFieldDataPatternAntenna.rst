@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmFarFieldDataPatternAntenna.hfss_far_field_data_pattern_file`
-              - Gets or sets the HFSS far field data pattern file.
+              - Get or set the HFSS far field data pattern file.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.stkrfchannelmodeler.StkRfcmFarFieldDataPatternAntenna.hfss_far_field_data_pattern_file
     :type: str
 
-    Gets or sets the HFSS far field data pattern file.
+    Get or set the HFSS far field data pattern file.
 
 

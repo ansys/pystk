@@ -36,9 +36,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleEclipseBodies.use_customized_list`
               - Property used to specify whether or not to use the customized list of central bodies.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleEclipseBodies.available_central_bodies`
-              - Returns an array of available Central Bodies.
+              - Return an array of available Central Bodies.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleEclipseBodies.assigned_central_bodies`
-              - Returns an array of all assigned central bodies.
+              - Return an array of all assigned central bodies.
 
 
 
@@ -63,13 +63,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleEclipseBodies.available_central_bodies
     :type: list
 
-    Returns an array of available Central Bodies.
+    Return an array of available Central Bodies.
 
 .. py:property:: assigned_central_bodies
     :canonical: ansys.stk.core.stkobjects.VehicleEclipseBodies.assigned_central_bodies
     :type: list
 
-    Returns an array of all assigned central bodies.
+    Return an array of all assigned central bodies.
 
 
 Method detail

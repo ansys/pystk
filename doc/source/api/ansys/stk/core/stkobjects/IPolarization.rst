@@ -19,7 +19,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IPolarization.type`
-              - Gets the polarization type.
+              - Get the polarization type.
 
 
 Import detail
@@ -37,6 +37,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.IPolarization.type
     :type: PolarizationType
 
-    Gets the polarization type.
+    Get the polarization type.
 
 

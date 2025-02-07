@@ -19,7 +19,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkutil.IOrientationPositionOffset.position_offset`
-              - Gets or sets the position offset cartesian vector.
+              - Get or set the position offset cartesian vector.
 
 
 Import detail
@@ -37,6 +37,6 @@ Property detail
     :canonical: ansys.stk.core.stkutil.IOrientationPositionOffset.position_offset
     :type: ICartesian3Vector
 
-    Gets or sets the position offset cartesian vector.
+    Get or set the position offset cartesian vector.
 
 

@@ -19,11 +19,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModel.name`
-              - Gets the antenna model name.
+              - Get the antenna model name.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModel.type`
-              - Gets the antenna model type enumeration.
+              - Get the antenna model type enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAntennaModel.design_frequency`
-              - Gets the antenna design frequency.
+              - Get the antenna design frequency.
 
 
 Import detail
@@ -41,18 +41,18 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.IAntennaModel.name
     :type: str
 
-    Gets the antenna model name.
+    Get the antenna model name.
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.IAntennaModel.type
     :type: AntennaModelType
 
-    Gets the antenna model type enumeration.
+    Get the antenna model type enumeration.
 
 .. py:property:: design_frequency
     :canonical: ansys.stk.core.stkobjects.IAntennaModel.design_frequency
     :type: float
 
-    Gets the antenna design frequency.
+    Get the antenna design frequency.
 
 

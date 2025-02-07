@@ -28,17 +28,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IKmlFeature.is_loaded`
-              - Gets whether the document associated with this feature is loaded.
+              - Get whether the document associated with this feature is loaded.
             * - :py:attr:`~ansys.stk.core.graphics.IKmlFeature.display`
-              - Gets or sets whether this feature will be displayed in the Scene.
+              - Get or set whether this feature will be displayed in the Scene.
             * - :py:attr:`~ansys.stk.core.graphics.IKmlFeature.content`
-              - Gets the content associated with this feature.
+              - Get the content associated with this feature.
             * - :py:attr:`~ansys.stk.core.graphics.IKmlFeature.name`
-              - Gets the name of this feature.
+              - Get the name of this feature.
             * - :py:attr:`~ansys.stk.core.graphics.IKmlFeature.description`
-              - Gets the description associated with this feature.
+              - Get the description associated with this feature.
             * - :py:attr:`~ansys.stk.core.graphics.IKmlFeature.snippet`
-              - Gets the snippet associated with this feature.
+              - Get the snippet associated with this feature.
             * - :py:attr:`~ansys.stk.core.graphics.IKmlFeature.bounding_sphere`
               - The bounding sphere encompassing the area associated with this feature.
 
@@ -58,37 +58,37 @@ Property detail
     :canonical: ansys.stk.core.graphics.IKmlFeature.is_loaded
     :type: bool
 
-    Gets whether the document associated with this feature is loaded.
+    Get whether the document associated with this feature is loaded.
 
 .. py:property:: display
     :canonical: ansys.stk.core.graphics.IKmlFeature.display
     :type: bool
 
-    Gets or sets whether this feature will be displayed in the Scene.
+    Get or set whether this feature will be displayed in the Scene.
 
 .. py:property:: content
     :canonical: ansys.stk.core.graphics.IKmlFeature.content
     :type: str
 
-    Gets the content associated with this feature.
+    Get the content associated with this feature.
 
 .. py:property:: name
     :canonical: ansys.stk.core.graphics.IKmlFeature.name
     :type: str
 
-    Gets the name of this feature.
+    Get the name of this feature.
 
 .. py:property:: description
     :canonical: ansys.stk.core.graphics.IKmlFeature.description
     :type: str
 
-    Gets the description associated with this feature.
+    Get the description associated with this feature.
 
 .. py:property:: snippet
     :canonical: ansys.stk.core.graphics.IKmlFeature.snippet
     :type: str
 
-    Gets the snippet associated with this feature.
+    Get the snippet associated with this feature.
 
 .. py:property:: bounding_sphere
     :canonical: ansys.stk.core.graphics.IKmlFeature.bounding_sphere

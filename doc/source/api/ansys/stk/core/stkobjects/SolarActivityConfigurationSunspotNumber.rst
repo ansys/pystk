@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.SolarActivityConfigurationSunspotNumber.sunspot_number`
-              - Gets or sets the sunspot number.
+              - Get or set the sunspot number.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.SolarActivityConfigurationSunspotNumber.sunspot_number
     :type: int
 
-    Gets or sets the sunspot number.
+    Get or set the sunspot number.
 
 

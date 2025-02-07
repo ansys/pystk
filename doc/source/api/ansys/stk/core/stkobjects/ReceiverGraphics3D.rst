@@ -25,7 +25,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverGraphics3D.show_contours`
               - Opt whether to display contour graphics for the receiver's antenna.
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverGraphics3D.volume`
-              - Gets the receiver's antenna volume graphics interface.
+              - Get the receiver's antenna volume graphics interface.
 
 
 
@@ -62,6 +62,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.ReceiverGraphics3D.volume
     :type: AntennaVolumeGraphics
 
-    Gets the receiver's antenna volume graphics interface.
+    Get the receiver's antenna volume graphics interface.
 
 

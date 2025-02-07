@@ -19,7 +19,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.IStkRfcmAntenna.type`
-              - Gets the antenna type.
+              - Get the antenna type.
 
 
 Import detail
@@ -37,6 +37,6 @@ Property detail
     :canonical: ansys.stk.core.stkrfchannelmodeler.IStkRfcmAntenna.type
     :type: str
 
-    Gets the antenna type.
+    Get the antenna type.
 
 

@@ -34,9 +34,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ARINC424Source.use_master_data_file`
               - Opt whether to use the master data file.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ARINC424Source.master_data_filepath`
-              - Gets or sets the master data file path.
+              - Get or set the master data file path.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ARINC424Source.override_data_filepath`
-              - Gets or sets the file path to the data overriding the mader data file.
+              - Get or set the file path to the data overriding the mader data file.
 
 
 
@@ -61,13 +61,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.ARINC424Source.master_data_filepath
     :type: str
 
-    Gets or sets the master data file path.
+    Get or set the master data file path.
 
 .. py:property:: override_data_filepath
     :canonical: ansys.stk.core.stkobjects.aviator.ARINC424Source.override_data_filepath
     :type: str
 
-    Gets or sets the file path to the data overriding the mader data file.
+    Get or set the file path to the data overriding the mader data file.
 
 
 Method detail

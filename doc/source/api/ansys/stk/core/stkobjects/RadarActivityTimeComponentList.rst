@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarActivityTimeComponentList.time_components`
-              - Gets the time components collection.
+              - Get the time components collection.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.RadarActivityTimeComponentList.time_components
     :type: RadarActivityTimeComponentListCollection
 
-    Gets the time components collection.
+    Get the time components collection.
 
 

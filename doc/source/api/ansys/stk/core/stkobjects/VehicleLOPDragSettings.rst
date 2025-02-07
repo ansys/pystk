@@ -19,13 +19,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleLOPDragSettings.atmospheric_density_model`
-              - This property is deprecated. Use AtmosDensityModel instead. Atmospheric density model.
+              - Do not use this property, as it is deprecated. Use AtmosDensityModel instead. Atmospheric density model.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleLOPDragSettings.use_osculating_altitude`
               - Opt whether to use osculating altitude, which uses a short period variation due to J2 perturbations when calculating altitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleLOPDragSettings.maximum_drag_altitude`
               - Maximum drag altitude, above which drag calculations are not considered. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleLOPDragSettings.density_weighing_factor`
-              - Gets or sets the scale factor to be used during density calculations. Dimensionless.
+              - Get or set the scale factor to be used during density calculations. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleLOPDragSettings.exponential_density_model_parameters`
               - Get the exponential density modeling parameters.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleLOPDragSettings.atmosphere_density_model`
@@ -48,7 +48,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleLOPDragSettings.atmospheric_density_model
     :type: AtmosphericDensityModel
 
-    This property is deprecated. Use AtmosDensityModel instead. Atmospheric density model.
+    Do not use this property, as it is deprecated. Use AtmosDensityModel instead. Atmospheric density model.
 
 .. py:property:: use_osculating_altitude
     :canonical: ansys.stk.core.stkobjects.VehicleLOPDragSettings.use_osculating_altitude
@@ -66,7 +66,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleLOPDragSettings.density_weighing_factor
     :type: float
 
-    Gets or sets the scale factor to be used during density calculations. Dimensionless.
+    Get or set the scale factor to be used during density calculations. Dimensionless.
 
 .. py:property:: exponential_density_model_parameters
     :canonical: ansys.stk.core.stkobjects.VehicleLOPDragSettings.exponential_density_model_parameters

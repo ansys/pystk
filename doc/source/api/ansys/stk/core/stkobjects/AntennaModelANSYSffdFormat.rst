@@ -21,15 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelANSYSffdFormat.filename`
-              - Gets or sets the user antenna data filename.
+              - Get or set the user antenna data filename.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelANSYSffdFormat.defined_frequencies`
-              - Gets the frequencies defined in the file.
+              - Get the frequencies defined in the file.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelANSYSffdFormat.gain_type`
-              - Gets or sets the gain type.
+              - Get or set the gain type.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelANSYSffdFormat.defined_power_value`
-              - Gets the Defined Power Value for the selected GainType.
+              - Get the Defined Power Value for the selected GainType.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelANSYSffdFormat.user_gain_factor`
-              - Gets or sets the User Gain Factor.
+              - Get or set the User Gain Factor.
 
 
 
@@ -48,30 +48,30 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.AntennaModelANSYSffdFormat.filename
     :type: str
 
-    Gets or sets the user antenna data filename.
+    Get or set the user antenna data filename.
 
 .. py:property:: defined_frequencies
     :canonical: ansys.stk.core.stkobjects.AntennaModelANSYSffdFormat.defined_frequencies
     :type: str
 
-    Gets the frequencies defined in the file.
+    Get the frequencies defined in the file.
 
 .. py:property:: gain_type
     :canonical: ansys.stk.core.stkobjects.AntennaModelANSYSffdFormat.gain_type
     :type: HFSSFarFieldDataGainType
 
-    Gets or sets the gain type.
+    Get or set the gain type.
 
 .. py:property:: defined_power_value
     :canonical: ansys.stk.core.stkobjects.AntennaModelANSYSffdFormat.defined_power_value
     :type: float
 
-    Gets the Defined Power Value for the selected GainType.
+    Get the Defined Power Value for the selected GainType.
 
 .. py:property:: user_gain_factor
     :canonical: ansys.stk.core.stkobjects.AntennaModelANSYSffdFormat.user_gain_factor
     :type: float
 
-    Gets or sets the User Gain Factor.
+    Get or set the User Gain Factor.
 
 

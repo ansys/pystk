@@ -19,7 +19,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.TimeToolInstantOccurrenceResult.is_valid`
-              - Indicates whether the result object is valid.
+              - Indicate whether the result object is valid.
             * - :py:attr:`~ansys.stk.core.vgt.TimeToolInstantOccurrenceResult.epoch`
               - The epoch at which the event occurs.
 
@@ -40,7 +40,7 @@ Property detail
     :canonical: ansys.stk.core.vgt.TimeToolInstantOccurrenceResult.is_valid
     :type: bool
 
-    Indicates whether the result object is valid.
+    Indicate whether the result object is valid.
 
 .. py:property:: epoch
     :canonical: ansys.stk.core.vgt.TimeToolInstantOccurrenceResult.epoch

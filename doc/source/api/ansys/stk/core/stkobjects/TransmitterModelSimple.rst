@@ -34,29 +34,29 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.TransmitterModelSimple.frequency`
-              - Gets or sets the carrier frequency.
+              - Get or set the carrier frequency.
             * - :py:attr:`~ansys.stk.core.stkobjects.TransmitterModelSimple.data_rate`
-              - Gets or sets the data rate.
+              - Get or set the data rate.
             * - :py:attr:`~ansys.stk.core.stkobjects.TransmitterModelSimple.eirp`
-              - Gets or sets the EIRP.
+              - Get or set the EIRP.
             * - :py:attr:`~ansys.stk.core.stkobjects.TransmitterModelSimple.enable_polarization`
-              - Gets or sets the enable polarization option.
+              - Get or set the enable polarization option.
             * - :py:attr:`~ansys.stk.core.stkobjects.TransmitterModelSimple.polarization`
-              - Gets the polarization.
+              - Get the polarization.
             * - :py:attr:`~ansys.stk.core.stkobjects.TransmitterModelSimple.post_transmit_gains_losses`
-              - Gets the collection of additional post transmit gains and losses.
+              - Get the collection of additional post transmit gains and losses.
             * - :py:attr:`~ansys.stk.core.stkobjects.TransmitterModelSimple.enable_filter`
-              - Gets or set the flag determines whether or not to enable the Filter.
+              - Get or set the flag determines whether or not to enable the Filter.
             * - :py:attr:`~ansys.stk.core.stkobjects.TransmitterModelSimple.supported_filters`
-              - This property is deprecated. Use FilterComponentLinking on IAgTransmitterModelSimple instead. Gets an array of supported filter model names.
+              - Do not use this property, as it is deprecated. Use FilterComponentLinking on IAgTransmitterModelSimple instead. Gets an array of supported filter model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.TransmitterModelSimple.filter`
-              - This property is deprecated. Use FilterComponentLinking on IAgTransmitterModelSimple instead. Gets the current filter model.
+              - Do not use this property, as it is deprecated. Use FilterComponentLinking on IAgTransmitterModelSimple instead. Gets the current filter model.
             * - :py:attr:`~ansys.stk.core.stkobjects.TransmitterModelSimple.supported_modulators`
-              - Gets an array of supported modulator model names.
+              - Get an array of supported modulator model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.TransmitterModelSimple.modulator`
-              - Gets the current modulator model.
+              - Get the current modulator model.
             * - :py:attr:`~ansys.stk.core.stkobjects.TransmitterModelSimple.filter_component_linking`
-              - Gets the link/embed controller for managing the filter model component.
+              - Get the link/embed controller for managing the filter model component.
 
 
 
@@ -75,73 +75,73 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.TransmitterModelSimple.frequency
     :type: float
 
-    Gets or sets the carrier frequency.
+    Get or set the carrier frequency.
 
 .. py:property:: data_rate
     :canonical: ansys.stk.core.stkobjects.TransmitterModelSimple.data_rate
     :type: float
 
-    Gets or sets the data rate.
+    Get or set the data rate.
 
 .. py:property:: eirp
     :canonical: ansys.stk.core.stkobjects.TransmitterModelSimple.eirp
     :type: float
 
-    Gets or sets the EIRP.
+    Get or set the EIRP.
 
 .. py:property:: enable_polarization
     :canonical: ansys.stk.core.stkobjects.TransmitterModelSimple.enable_polarization
     :type: bool
 
-    Gets or sets the enable polarization option.
+    Get or set the enable polarization option.
 
 .. py:property:: polarization
     :canonical: ansys.stk.core.stkobjects.TransmitterModelSimple.polarization
     :type: IPolarization
 
-    Gets the polarization.
+    Get the polarization.
 
 .. py:property:: post_transmit_gains_losses
     :canonical: ansys.stk.core.stkobjects.TransmitterModelSimple.post_transmit_gains_losses
     :type: AdditionalGainLossCollection
 
-    Gets the collection of additional post transmit gains and losses.
+    Get the collection of additional post transmit gains and losses.
 
 .. py:property:: enable_filter
     :canonical: ansys.stk.core.stkobjects.TransmitterModelSimple.enable_filter
     :type: bool
 
-    Gets or set the flag determines whether or not to enable the Filter.
+    Get or set the flag determines whether or not to enable the Filter.
 
 .. py:property:: supported_filters
     :canonical: ansys.stk.core.stkobjects.TransmitterModelSimple.supported_filters
     :type: list
 
-    This property is deprecated. Use FilterComponentLinking on IAgTransmitterModelSimple instead. Gets an array of supported filter model names.
+    Do not use this property, as it is deprecated. Use FilterComponentLinking on IAgTransmitterModelSimple instead. Gets an array of supported filter model names.
 
 .. py:property:: filter
     :canonical: ansys.stk.core.stkobjects.TransmitterModelSimple.filter
     :type: IRFFilterModel
 
-    This property is deprecated. Use FilterComponentLinking on IAgTransmitterModelSimple instead. Gets the current filter model.
+    Do not use this property, as it is deprecated. Use FilterComponentLinking on IAgTransmitterModelSimple instead. Gets the current filter model.
 
 .. py:property:: supported_modulators
     :canonical: ansys.stk.core.stkobjects.TransmitterModelSimple.supported_modulators
     :type: list
 
-    Gets an array of supported modulator model names.
+    Get an array of supported modulator model names.
 
 .. py:property:: modulator
     :canonical: ansys.stk.core.stkobjects.TransmitterModelSimple.modulator
     :type: IModulatorModel
 
-    Gets the current modulator model.
+    Get the current modulator model.
 
 .. py:property:: filter_component_linking
     :canonical: ansys.stk.core.stkobjects.TransmitterModelSimple.filter_component_linking
     :type: IComponentLinkEmbedControl
 
-    Gets the link/embed controller for managing the filter model component.
+    Get the link/embed controller for managing the filter model component.
 
 
 Method detail

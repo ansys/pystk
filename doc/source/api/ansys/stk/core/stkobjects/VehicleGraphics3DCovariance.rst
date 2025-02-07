@@ -36,13 +36,13 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DCovariance.sigma_scale_type`
               - Get the sigma scale type.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DCovariance.sigma_scale_supported_types`
-              - Returns an array of valid choices.
+              - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DCovariance.sigma_scale`
               - Get the sigma scale.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DCovariance.attributes_type`
               - Get the position ellipsoid attributes type.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DCovariance.attributes_supported_types`
-              - Returns an array of valid choices.
+              - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DCovariance.attributes`
               - Get the position ellipsoid graphics attributes.
 
@@ -69,7 +69,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DCovariance.sigma_scale_supported_types
     :type: list
 
-    Returns an array of valid choices.
+    Return an array of valid choices.
 
 .. py:property:: sigma_scale
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DCovariance.sigma_scale
@@ -87,7 +87,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DCovariance.attributes_supported_types
     :type: list
 
-    Returns an array of valid choices.
+    Return an array of valid choices.
 
 .. py:property:: attributes
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DCovariance.attributes

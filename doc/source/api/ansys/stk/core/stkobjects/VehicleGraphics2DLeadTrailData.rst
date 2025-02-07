@@ -38,13 +38,13 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DLeadTrailData.lead_data_type`
               - Lead data type.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DLeadTrailData.lead_data_supported_types`
-              - Returns an array of valid choices.
+              - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DLeadTrailData.lead_data`
               - Lead data.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DLeadTrailData.trail_data_type`
               - Trail data type.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DLeadTrailData.trail_data_supported_types`
-              - Returns an array of valid choices.
+              - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DLeadTrailData.trail_data`
               - Trail data.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DLeadTrailData.has_lead_data`
@@ -75,7 +75,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DLeadTrailData.lead_data_supported_types
     :type: list
 
-    Returns an array of valid choices.
+    Return an array of valid choices.
 
 .. py:property:: lead_data
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DLeadTrailData.lead_data
@@ -93,7 +93,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DLeadTrailData.trail_data_supported_types
     :type: list
 
-    Returns an array of valid choices.
+    Return an array of valid choices.
 
 .. py:property:: trail_data
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DLeadTrailData.trail_data

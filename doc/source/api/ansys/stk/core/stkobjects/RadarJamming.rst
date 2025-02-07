@@ -19,9 +19,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarJamming.enabled`
-              - Gets or sets whether the jamming is enabled or disabled.
+              - Get or set whether the jamming is enabled or disabled.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarJamming.jammers`
-              - Gets the jammers collection.
+              - Get the jammers collection.
 
 
 
@@ -40,12 +40,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.RadarJamming.enabled
     :type: bool
 
-    Gets or sets whether the jamming is enabled or disabled.
+    Get or set whether the jamming is enabled or disabled.
 
 .. py:property:: jammers
     :canonical: ansys.stk.core.stkobjects.RadarJamming.jammers
     :type: ObjectLinkCollection
 
-    Gets the jammers collection.
+    Get the jammers collection.
 
 

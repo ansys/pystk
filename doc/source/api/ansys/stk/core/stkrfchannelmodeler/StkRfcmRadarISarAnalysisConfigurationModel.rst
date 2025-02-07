@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmRadarISarAnalysisConfigurationModel.radar_target_collection`
-              - Gets the collection of radar targets.
+              - Get the collection of radar targets.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.stkrfchannelmodeler.StkRfcmRadarISarAnalysisConfigurationModel.radar_target_collection
     :type: IStkRfcmSceneContributorCollection
 
-    Gets the collection of radar targets.
+    Get the collection of radar targets.
 
 

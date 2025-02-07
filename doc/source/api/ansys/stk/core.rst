@@ -15,7 +15,6 @@ Summary
             :header-rows: 0
             :widths: auto
         
-            * - :py:obj:`~ansys.stk.core.rfcm`
             * - :py:obj:`~ansys.stk.core.stkengine`
             * - :py:obj:`~ansys.stk.core.stkobjects`
             * - :py:obj:`~ansys.stk.core.stkrfchannelmodeler`

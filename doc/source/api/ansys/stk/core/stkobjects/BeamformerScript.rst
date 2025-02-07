@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.BeamformerScript.filename`
-              - Gets or sets the filename.
+              - Get or set the filename.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.BeamformerScript.filename
     :type: str
 
-    Gets or sets the filename.
+    Get or set the filename.
 
 

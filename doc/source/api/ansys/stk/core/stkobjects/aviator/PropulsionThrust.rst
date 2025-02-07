@@ -30,17 +30,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.PropulsionThrust.use_constant_thrust`
-              - Gets or sets the option to use a constant thrust for a thrust model.
+              - Get or set the option to use a constant thrust for a thrust model.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.PropulsionThrust.constant_thrust`
-              - Gets or sets the constant thrust value for a thrust model set to Constant Thrust mode.
+              - Get or set the constant thrust value for a thrust model set to Constant Thrust mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.PropulsionThrust.boost_thrust`
-              - Gets or sets the boost thrust value for a thrust model set to Boost/Sustain Thrust mode.
+              - Get or set the boost thrust value for a thrust model set to Boost/Sustain Thrust mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.PropulsionThrust.boost_thrust_time_limit`
-              - Gets or sets the boost thrust time limit for a thrust model set to Boost/Sustain Thrust mode.
+              - Get or set the boost thrust time limit for a thrust model set to Boost/Sustain Thrust mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.PropulsionThrust.sustain_thrust`
-              - Gets or sets the sustain thrust value for a thrust model set to Boost/Sustain Thrust mode.
+              - Get or set the sustain thrust value for a thrust model set to Boost/Sustain Thrust mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.PropulsionThrust.sustain_thrust_time_limit`
-              - Gets or sets the sustain thrust time limit for a thrust model set to Boost/Sustain Thrust mode.
+              - Get or set the sustain thrust time limit for a thrust model set to Boost/Sustain Thrust mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.PropulsionThrust.min_airspeed_type`
               - Get the min airspeed type for a thrust model.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.PropulsionThrust.min_airspeed`
@@ -67,37 +67,37 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.PropulsionThrust.use_constant_thrust
     :type: bool
 
-    Gets or sets the option to use a constant thrust for a thrust model.
+    Get or set the option to use a constant thrust for a thrust model.
 
 .. py:property:: constant_thrust
     :canonical: ansys.stk.core.stkobjects.aviator.PropulsionThrust.constant_thrust
     :type: float
 
-    Gets or sets the constant thrust value for a thrust model set to Constant Thrust mode.
+    Get or set the constant thrust value for a thrust model set to Constant Thrust mode.
 
 .. py:property:: boost_thrust
     :canonical: ansys.stk.core.stkobjects.aviator.PropulsionThrust.boost_thrust
     :type: float
 
-    Gets or sets the boost thrust value for a thrust model set to Boost/Sustain Thrust mode.
+    Get or set the boost thrust value for a thrust model set to Boost/Sustain Thrust mode.
 
 .. py:property:: boost_thrust_time_limit
     :canonical: ansys.stk.core.stkobjects.aviator.PropulsionThrust.boost_thrust_time_limit
     :type: float
 
-    Gets or sets the boost thrust time limit for a thrust model set to Boost/Sustain Thrust mode.
+    Get or set the boost thrust time limit for a thrust model set to Boost/Sustain Thrust mode.
 
 .. py:property:: sustain_thrust
     :canonical: ansys.stk.core.stkobjects.aviator.PropulsionThrust.sustain_thrust
     :type: float
 
-    Gets or sets the sustain thrust value for a thrust model set to Boost/Sustain Thrust mode.
+    Get or set the sustain thrust value for a thrust model set to Boost/Sustain Thrust mode.
 
 .. py:property:: sustain_thrust_time_limit
     :canonical: ansys.stk.core.stkobjects.aviator.PropulsionThrust.sustain_thrust_time_limit
     :type: float
 
-    Gets or sets the sustain thrust time limit for a thrust model set to Boost/Sustain Thrust mode.
+    Get or set the sustain thrust time limit for a thrust model set to Boost/Sustain Thrust mode.
 
 .. py:property:: min_airspeed_type
     :canonical: ansys.stk.core.stkobjects.aviator.PropulsionThrust.min_airspeed_type

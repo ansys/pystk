@@ -28,11 +28,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarClutterGeometry.enabled`
-              - This property is deprecated. Use Enabled on IAgRadarClutter instead. Gets or sets whether clutter geometry is enabled or disabled.
+              - Do not use this property, as it is deprecated. Use Enabled on IAgRadarClutter instead. Gets or sets whether clutter geometry is enabled or disabled.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarClutterGeometry.supported_models`
-              - This property is deprecated. Use ScatteringPointProviderList on IAgRadarClutter instead. Gets an array of supported model names.
+              - Do not use this property, as it is deprecated. Use ScatteringPointProviderList on IAgRadarClutter instead. Gets an array of supported model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarClutterGeometry.model`
-              - This property is deprecated. Use ScatteringPointProviderList on IAgRadarClutter instead. Gets the current clutter geometry model.
+              - Do not use this property, as it is deprecated. Use ScatteringPointProviderList on IAgRadarClutter instead. Gets the current clutter geometry model.
 
 
 
@@ -51,19 +51,19 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.RadarClutterGeometry.enabled
     :type: bool
 
-    This property is deprecated. Use Enabled on IAgRadarClutter instead. Gets or sets whether clutter geometry is enabled or disabled.
+    Do not use this property, as it is deprecated. Use Enabled on IAgRadarClutter instead. Gets or sets whether clutter geometry is enabled or disabled.
 
 .. py:property:: supported_models
     :canonical: ansys.stk.core.stkobjects.RadarClutterGeometry.supported_models
     :type: list
 
-    This property is deprecated. Use ScatteringPointProviderList on IAgRadarClutter instead. Gets an array of supported model names.
+    Do not use this property, as it is deprecated. Use ScatteringPointProviderList on IAgRadarClutter instead. Gets an array of supported model names.
 
 .. py:property:: model
     :canonical: ansys.stk.core.stkobjects.RadarClutterGeometry.model
     :type: IRadarClutterGeometryModel
 
-    This property is deprecated. Use ScatteringPointProviderList on IAgRadarClutter instead. Gets the current clutter geometry model.
+    Do not use this property, as it is deprecated. Use ScatteringPointProviderList on IAgRadarClutter instead. Gets the current clutter geometry model.
 
 
 Method detail

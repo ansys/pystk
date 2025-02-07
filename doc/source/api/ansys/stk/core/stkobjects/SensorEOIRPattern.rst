@@ -37,9 +37,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorEOIRPattern.jitter_data_file_frequency_sampling`
               - Jitter data file frequency sampling.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorEOIRPattern.along_scan_smear_rate`
-              - Gets or sets the along-scan smear rate of the EOIR sensor.
+              - Get or set the along-scan smear rate of the EOIR sensor.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorEOIRPattern.across_scan_smear_rate`
-              - Gets or sets the across-scan smear rate of the EOIR sensor.
+              - Get or set the across-scan smear rate of the EOIR sensor.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorEOIRPattern.scan_mode`
               - Type of scan mode specification.
 
@@ -108,13 +108,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.SensorEOIRPattern.along_scan_smear_rate
     :type: float
 
-    Gets or sets the along-scan smear rate of the EOIR sensor.
+    Get or set the along-scan smear rate of the EOIR sensor.
 
 .. py:property:: across_scan_smear_rate
     :canonical: ansys.stk.core.stkobjects.SensorEOIRPattern.across_scan_smear_rate
     :type: float
 
-    Gets or sets the across-scan smear rate of the EOIR sensor.
+    Get or set the across-scan smear rate of the EOIR sensor.
 
 .. py:property:: scan_mode
     :canonical: ansys.stk.core.stkobjects.SensorEOIRPattern.scan_mode

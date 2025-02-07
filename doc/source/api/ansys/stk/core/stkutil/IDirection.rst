@@ -54,7 +54,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkutil.IDirection.direction_type`
-              - Returns the type of direction currently being used.
+              - Return the type of direction currently being used.
 
 
 Import detail
@@ -72,7 +72,7 @@ Property detail
     :canonical: ansys.stk.core.stkutil.IDirection.direction_type
     :type: DirectionType
 
-    Returns the type of direction currently being used.
+    Return the type of direction currently being used.
 
 
 Method detail

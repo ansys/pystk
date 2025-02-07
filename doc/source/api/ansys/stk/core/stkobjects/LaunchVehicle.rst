@@ -38,13 +38,13 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicle.trajectory_type`
               - Get the propagator type used by the launch vehicle.
             * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicle.trajectory_supported_types`
-              - Returns an array of valid choices.
+              - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicle.trajectory`
               - Get the launch vehicle's trajectory properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicle.attitude_type`
               - Get the type of attitude profile used by the launch vehicle.
             * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicle.attitude_supported_types`
-              - Returns an array of valid choices.
+              - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicle.attitude`
               - Get the launch vehicle's attitude profile.
             * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicle.graphics`
@@ -56,29 +56,29 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicle.access_constraints`
               - Get the constraints imposed on the launch vehicle.
             * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicle.export_tools`
-              - Returns the IAgLvExportTools interface.
+              - Return the IAgLvExportTools interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicle.space_environment`
-              - Returns the launch vehicle's SpaceEnvironment properties.
+              - Return the launch vehicle's SpaceEnvironment properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicle.atmosphere`
-              - This property is deprecated. The new RFEnvironment property can be used to configure atmospheric models.
+              - Do not use this property, as it is deprecated. The new RFEnvironment property can be used to configure atmospheric models.
             * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicle.radar_clutter_map`
-              - Returns the radar clutter map.
+              - Return the radar clutter map.
             * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicle.radar_cross_section`
-              - Returns the radar cross sectoin.
+              - Return the radar cross sectoin.
             * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicle.eclipse_bodies`
               - Get the customized list of Eclipse Bodies, which are central bodies used in lighting computations.
             * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicle.use_terrain_in_lighting_computations`
               - Opt whether to compute lighting using terrain data.
             * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicle.lighting_maximum_step`
-              - This property is deprecated. Use LightingMaxStepTerrain or LightingMaxStepCbShape as appropriate. The maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
+              - Do not use this property, as it is deprecated. Use LightingMaxStepTerrain or LightingMaxStepCbShape as appropriate. The maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicle.laser_environment`
-              - Gets the laser environment.
+              - Get the laser environment.
             * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicle.rf_environment`
-              - Gets the RF environment.
+              - Get the RF environment.
             * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicle.lighting_maximum_step_terrain`
-              - Gets or sets the maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
+              - Get or set the maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicle.lighting_maximum_step_central_body_shape`
-              - Gets or sets the maximum step size to use when computing lighting when UseTerrainInLightingComputations is false. Uses Time Dimension.
+              - Get or set the maximum step size to use when computing lighting when UseTerrainInLightingComputations is false. Uses Time Dimension.
 
 
 
@@ -103,7 +103,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.LaunchVehicle.trajectory_supported_types
     :type: list
 
-    Returns an array of valid choices.
+    Return an array of valid choices.
 
 .. py:property:: trajectory
     :canonical: ansys.stk.core.stkobjects.LaunchVehicle.trajectory
@@ -121,7 +121,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.LaunchVehicle.attitude_supported_types
     :type: list
 
-    Returns an array of valid choices.
+    Return an array of valid choices.
 
 .. py:property:: attitude
     :canonical: ansys.stk.core.stkobjects.LaunchVehicle.attitude
@@ -157,31 +157,31 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.LaunchVehicle.export_tools
     :type: LaunchVehicleExportTools
 
-    Returns the IAgLvExportTools interface.
+    Return the IAgLvExportTools interface.
 
 .. py:property:: space_environment
     :canonical: ansys.stk.core.stkobjects.LaunchVehicle.space_environment
     :type: SpaceEnvironment
 
-    Returns the launch vehicle's SpaceEnvironment properties.
+    Return the launch vehicle's SpaceEnvironment properties.
 
 .. py:property:: atmosphere
     :canonical: ansys.stk.core.stkobjects.LaunchVehicle.atmosphere
     :type: Atmosphere
 
-    This property is deprecated. The new RFEnvironment property can be used to configure atmospheric models.
+    Do not use this property, as it is deprecated. The new RFEnvironment property can be used to configure atmospheric models.
 
 .. py:property:: radar_clutter_map
     :canonical: ansys.stk.core.stkobjects.LaunchVehicle.radar_clutter_map
     :type: IRadarClutterMapInheritable
 
-    Returns the radar clutter map.
+    Return the radar clutter map.
 
 .. py:property:: radar_cross_section
     :canonical: ansys.stk.core.stkobjects.LaunchVehicle.radar_cross_section
     :type: RadarCrossSectionInheritable
 
-    Returns the radar cross sectoin.
+    Return the radar cross sectoin.
 
 .. py:property:: eclipse_bodies
     :canonical: ansys.stk.core.stkobjects.LaunchVehicle.eclipse_bodies
@@ -199,31 +199,31 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.LaunchVehicle.lighting_maximum_step
     :type: float
 
-    This property is deprecated. Use LightingMaxStepTerrain or LightingMaxStepCbShape as appropriate. The maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
+    Do not use this property, as it is deprecated. Use LightingMaxStepTerrain or LightingMaxStepCbShape as appropriate. The maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
 
 .. py:property:: laser_environment
     :canonical: ansys.stk.core.stkobjects.LaunchVehicle.laser_environment
     :type: PlatformLaserEnvironment
 
-    Gets the laser environment.
+    Get the laser environment.
 
 .. py:property:: rf_environment
     :canonical: ansys.stk.core.stkobjects.LaunchVehicle.rf_environment
     :type: IPlatformRFEnvironment
 
-    Gets the RF environment.
+    Get the RF environment.
 
 .. py:property:: lighting_maximum_step_terrain
     :canonical: ansys.stk.core.stkobjects.LaunchVehicle.lighting_maximum_step_terrain
     :type: float
 
-    Gets or sets the maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
+    Get or set the maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
 
 .. py:property:: lighting_maximum_step_central_body_shape
     :canonical: ansys.stk.core.stkobjects.LaunchVehicle.lighting_maximum_step_central_body_shape
     :type: float
 
-    Gets or sets the maximum step size to use when computing lighting when UseTerrainInLightingComputations is false. Uses Time Dimension.
+    Get or set the maximum step size to use when computing lighting when UseTerrainInLightingComputations is false. Uses Time Dimension.
 
 
 Method detail

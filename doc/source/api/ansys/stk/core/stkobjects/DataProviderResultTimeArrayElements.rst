@@ -28,7 +28,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultTimeArrayElements.valid`
-              - Returns true if the result is valid, false otherwise.
+              - Return true if the result is valid, false otherwise.
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultTimeArrayElements.count`
               - Get the number of arrays in the result.
 
@@ -49,7 +49,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.DataProviderResultTimeArrayElements.valid
     :type: bool
 
-    Returns true if the result is valid, false otherwise.
+    Return true if the result is valid, false otherwise.
 
 .. py:property:: count
     :canonical: ansys.stk.core.stkobjects.DataProviderResultTimeArrayElements.count

@@ -19,9 +19,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.TransferFunctionInputBackOffOutputBackOffTableRow.input_back_off`
-              - Gets or sets the input back off.
+              - Get or set the input back off.
             * - :py:attr:`~ansys.stk.core.stkobjects.TransferFunctionInputBackOffOutputBackOffTableRow.output_back_off`
-              - Gets or sets the output back off.
+              - Get or set the output back off.
 
 
 
@@ -40,12 +40,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.TransferFunctionInputBackOffOutputBackOffTableRow.input_back_off
     :type: float
 
-    Gets or sets the input back off.
+    Get or set the input back off.
 
 .. py:property:: output_back_off
     :canonical: ansys.stk.core.stkobjects.TransferFunctionInputBackOffOutputBackOffTableRow.output_back_off
     :type: float
 
-    Gets or sets the output back off.
+    Get or set the output back off.
 
 

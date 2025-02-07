@@ -36,11 +36,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.CompositePrimitive.count`
-              - Gets the number of primitives in the composite.
+              - Get the number of primitives in the composite.
             * - :py:attr:`~ansys.stk.core.graphics.CompositePrimitive.translucent_primitives_sort_order`
-              - Gets or sets the sort order for translucent primitives in this composite. This determines a trade-off between rendering speed and quality...
+              - Get or set the sort order for translucent primitives in this composite. This determines a trade-off between rendering speed and quality...
             * - :py:attr:`~ansys.stk.core.graphics.CompositePrimitive._new_enum`
-              - Returns an enumerator that iterates through the collection. The order of the primitives is not guaranteed to be the order that the primitives were added.
+              - Return an enumerator that iterates through the collection. The order of the primitives is not guaranteed to be the order that the primitives were added.
 
 
 
@@ -59,19 +59,19 @@ Property detail
     :canonical: ansys.stk.core.graphics.CompositePrimitive.count
     :type: int
 
-    Gets the number of primitives in the composite.
+    Get the number of primitives in the composite.
 
 .. py:property:: translucent_primitives_sort_order
     :canonical: ansys.stk.core.graphics.CompositePrimitive.translucent_primitives_sort_order
     :type: PrimitivesSortOrder
 
-    Gets or sets the sort order for translucent primitives in this composite. This determines a trade-off between rendering speed and quality...
+    Get or set the sort order for translucent primitives in this composite. This determines a trade-off between rendering speed and quality...
 
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.graphics.CompositePrimitive._new_enum
     :type: EnumeratorProxy
 
-    Returns an enumerator that iterates through the collection. The order of the primitives is not guaranteed to be the order that the primitives were added.
+    Return an enumerator that iterates through the collection. The order of the primitives is not guaranteed to be the order that the primitives were added.
 
 
 Method detail

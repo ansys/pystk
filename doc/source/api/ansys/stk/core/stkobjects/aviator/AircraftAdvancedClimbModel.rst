@@ -36,7 +36,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedClimbModel.climb_speed_type`
-              - Gets or sets the mode to calculate the aircraft's airspeed while climbing.
+              - Get or set the mode to calculate the aircraft's airspeed while climbing.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedClimbModel.climb_override_airspeed_type`
               - Get the override airspeed type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedClimbModel.climb_override_airspeed`
@@ -46,7 +46,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedClimbModel.use_airspeed_limit`
               - Opt to limit the airspeed below a specified altitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedClimbModel.altitude_limit`
-              - Gets or sets the altitude threshold, below which the airspeed limit will be applied.
+              - Get or set the altitude threshold, below which the airspeed limit will be applied.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedClimbModel.airspeed_limit_type`
               - Get the airspeed limit type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedClimbModel.airspeed_limit`
@@ -56,7 +56,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedClimbModel.flight_path_angle`
               - Get the flight path angle limit.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedClimbModel.compute_delta_altitude`
-              - Gets or sets the maximum change in altitude in a computed segment before the data is sampled again.
+              - Get or set the maximum change in altitude in a computed segment before the data is sampled again.
 
 
 
@@ -75,7 +75,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedClimbModel.climb_speed_type
     :type: ClimbSpeedType
 
-    Gets or sets the mode to calculate the aircraft's airspeed while climbing.
+    Get or set the mode to calculate the aircraft's airspeed while climbing.
 
 .. py:property:: climb_override_airspeed_type
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedClimbModel.climb_override_airspeed_type
@@ -105,7 +105,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedClimbModel.altitude_limit
     :type: float
 
-    Gets or sets the altitude threshold, below which the airspeed limit will be applied.
+    Get or set the altitude threshold, below which the airspeed limit will be applied.
 
 .. py:property:: airspeed_limit_type
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedClimbModel.airspeed_limit_type
@@ -135,7 +135,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedClimbModel.compute_delta_altitude
     :type: float
 
-    Gets or sets the maximum change in altitude in a computed segment before the data is sampled again.
+    Get or set the maximum change in altitude in a computed segment before the data is sampled again.
 
 
 Method detail

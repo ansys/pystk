@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ModulatorModelBOC.subcarrier_frequency`
-              - Gets or sets the subcarrier frequency.
+              - Get or set the subcarrier frequency.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.ModulatorModelBOC.subcarrier_frequency
     :type: float
 
-    Gets or sets the subcarrier frequency.
+    Get or set the subcarrier frequency.
 
 

@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ReceiverModelScriptPluginRF.interference`
-              - Gets the radio frequency interference.
+              - Get the radio frequency interference.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.ReceiverModelScriptPluginRF.interference
     :type: RFInterference
 
-    Gets the radio frequency interference.
+    Get the radio frequency interference.
 
 

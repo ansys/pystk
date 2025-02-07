@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmCommunicationsTransceiverModel.waveform`
-              - Gets the transceiver's waveform settings.
+              - Get the transceiver's waveform settings.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.stkrfchannelmodeler.StkRfcmCommunicationsTransceiverModel.waveform
     :type: StkRfcmCommunicationsWaveform
 
-    Gets the transceiver's waveform settings.
+    Get the transceiver's waveform settings.
 
 

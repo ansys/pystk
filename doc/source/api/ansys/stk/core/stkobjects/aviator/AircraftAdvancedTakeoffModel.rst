@@ -36,15 +36,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedTakeoffModel.takeoff_speed_mode`
-              - Gets or sets the mode to calculate the aircraft's airspeed upon leaving the ground.
+              - Get or set the mode to calculate the aircraft's airspeed upon leaving the ground.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedTakeoffModel.stall_speed_ratio`
               - Get the ratio of the airspeed to the stall speed upon leaving the ground.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedTakeoffModel.angle_of_attack`
               - Get the Angle of Attack upon leaving the ground.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedTakeoffModel.flaps`
-              - Gets or sets the extension of the flaps during takeoff.
+              - Get or set the extension of the flaps during takeoff.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedTakeoffModel.departure_speed_mode`
-              - Gets or sets the mode to calculate the airspeed upon leaving the ground.
+              - Get or set the mode to calculate the airspeed upon leaving the ground.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedTakeoffModel.departure_speed_limit`
               - Get the aircraft's maximum airspeed upon leaving the ground.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedTakeoffModel.departure_speed_limit_type`
@@ -69,7 +69,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedTakeoffModel.takeoff_speed_mode
     :type: TakeoffLandingSpeedMode
 
-    Gets or sets the mode to calculate the aircraft's airspeed upon leaving the ground.
+    Get or set the mode to calculate the aircraft's airspeed upon leaving the ground.
 
 .. py:property:: stall_speed_ratio
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedTakeoffModel.stall_speed_ratio
@@ -87,13 +87,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedTakeoffModel.flaps
     :type: float
 
-    Gets or sets the extension of the flaps during takeoff.
+    Get or set the extension of the flaps during takeoff.
 
 .. py:property:: departure_speed_mode
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedTakeoffModel.departure_speed_mode
     :type: DepartureSpeedMode
 
-    Gets or sets the mode to calculate the airspeed upon leaving the ground.
+    Get or set the mode to calculate the airspeed upon leaving the ground.
 
 .. py:property:: departure_speed_limit
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedTakeoffModel.departure_speed_limit

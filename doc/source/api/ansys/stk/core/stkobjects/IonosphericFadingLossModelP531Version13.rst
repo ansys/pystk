@@ -21,9 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IonosphericFadingLossModelP531Version13.use_alternate_ap_file`
-              - Gets or sets the option for alternate AP data file.
+              - Get or set the option for alternate AP data file.
             * - :py:attr:`~ansys.stk.core.stkobjects.IonosphericFadingLossModelP531Version13.filename`
-              - Gets or sets the alternate AP filename.
+              - Get or set the alternate AP filename.
 
 
 
@@ -42,12 +42,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.IonosphericFadingLossModelP531Version13.use_alternate_ap_file
     :type: bool
 
-    Gets or sets the option for alternate AP data file.
+    Get or set the option for alternate AP data file.
 
 .. py:property:: filename
     :canonical: ansys.stk.core.stkobjects.IonosphericFadingLossModelP531Version13.filename
     :type: str
 
-    Gets or sets the alternate AP filename.
+    Get or set the alternate AP filename.
 
 

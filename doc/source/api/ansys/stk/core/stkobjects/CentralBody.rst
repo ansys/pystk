@@ -23,7 +23,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.CentralBody.ellipsoid`
               - The central body ellipsoid.
             * - :py:attr:`~ansys.stk.core.stkobjects.CentralBody.analysis_workbench_components`
-              - Returns the central body's Vector Geometry Tool provider.
+              - Return the central body's Vector Geometry Tool provider.
             * - :py:attr:`~ansys.stk.core.stkobjects.CentralBody.gravitational_parameter`
               - The gravitational parameter of the central body in distance units cubed per time units squared (i.e. m^3*s^-2).
 
@@ -56,7 +56,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.CentralBody.analysis_workbench_components
     :type: IAnalysisWorkbenchComponentProvider
 
-    Returns the central body's Vector Geometry Tool provider.
+    Return the central body's Vector Geometry Tool provider.
 
 .. py:property:: gravitational_parameter
     :canonical: ansys.stk.core.stkobjects.CentralBody.gravitational_parameter

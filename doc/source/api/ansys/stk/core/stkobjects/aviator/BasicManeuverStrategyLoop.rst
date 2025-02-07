@@ -30,15 +30,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyLoop.loop_angle`
-              - Gets or sets the loop angle for maneuver. The total change in pitch angle the aircraft flies.
+              - Get or set the loop angle for maneuver. The total change in pitch angle the aircraft flies.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyLoop.loop_angle_mode`
-              - Gets or sets the loop angle mode for the maneuver.
+              - Get or set the loop angle mode for the maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyLoop.top_load_factor`
-              - Gets or sets the load factor at the top of the loop.
+              - Get or set the load factor at the top of the loop.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyLoop.bottom_load_factor`
-              - Gets or sets the load factor at the bottom of the loop.
+              - Get or set the load factor at the bottom of the loop.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyLoop.hold_init_tas`
-              - Gets or sets the option to hold the initial true airspeed.
+              - Get or set the option to hold the initial true airspeed.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyLoop.airspeed_type`
               - Get the airspeed type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyLoop.top_airspeed`
@@ -63,31 +63,31 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyLoop.loop_angle
     :type: typing.Any
 
-    Gets or sets the loop angle for maneuver. The total change in pitch angle the aircraft flies.
+    Get or set the loop angle for maneuver. The total change in pitch angle the aircraft flies.
 
 .. py:property:: loop_angle_mode
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyLoop.loop_angle_mode
     :type: AngleMode
 
-    Gets or sets the loop angle mode for the maneuver.
+    Get or set the loop angle mode for the maneuver.
 
 .. py:property:: top_load_factor
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyLoop.top_load_factor
     :type: float
 
-    Gets or sets the load factor at the top of the loop.
+    Get or set the load factor at the top of the loop.
 
 .. py:property:: bottom_load_factor
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyLoop.bottom_load_factor
     :type: float
 
-    Gets or sets the load factor at the bottom of the loop.
+    Get or set the load factor at the bottom of the loop.
 
 .. py:property:: hold_init_tas
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyLoop.hold_init_tas
     :type: bool
 
-    Gets or sets the option to hold the initial true airspeed.
+    Get or set the option to hold the initial true airspeed.
 
 .. py:property:: airspeed_type
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyLoop.airspeed_type

@@ -32,7 +32,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.SearchPluginControlCollection._new_enum`
               - Property that allows you to enumerate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.SearchPluginControlCollection.count`
-              - Returns the size of the collection.
+              - Return the size of the collection.
 
 
 
@@ -57,7 +57,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.SearchPluginControlCollection.count
     :type: int
 
-    Returns the size of the collection.
+    Return the size of the collection.
 
 
 Method detail

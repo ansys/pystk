@@ -51,9 +51,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSGP4Segment.range`
               - How far apart the satellites are when switching occurs.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSGP4Segment.switch_time`
-              - Gets or sets the time of the switch between one element set and a second set. Not used when the Switching Method is Disabled.
+              - Get or set the time of the switch between one element set and a second set. Not used when the Switching Method is Disabled.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSGP4Segment.enabled`
-              - Enables/disables the segment.
+              - Enable/disable the segment.
 
 
 
@@ -168,12 +168,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.PropagatorSGP4Segment.switch_time
     :type: typing.Any
 
-    Gets or sets the time of the switch between one element set and a second set. Not used when the Switching Method is Disabled.
+    Get or set the time of the switch between one element set and a second set. Not used when the Switching Method is Disabled.
 
 .. py:property:: enabled
     :canonical: ansys.stk.core.stkobjects.PropagatorSGP4Segment.enabled
     :type: bool
 
-    Enables/disables the segment.
+    Enable/disable the segment.
 
 

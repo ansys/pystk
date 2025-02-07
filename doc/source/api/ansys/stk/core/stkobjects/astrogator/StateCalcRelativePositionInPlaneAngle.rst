@@ -21,19 +21,19 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcRelativePositionInPlaneAngle.central_body_name`
-              - Gets or sets the central body of the component.
+              - Get or set the central body of the component.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcRelativePositionInPlaneAngle.orbit_plane_source`
               - Selection of the satellite that will generate the orbit plane.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcRelativePositionInPlaneAngle.element_type`
               - Choice of osculating or mean elements.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcRelativePositionInPlaneAngle.reference_selection`
-              - Gets or sets the reference object selection.
+              - Get or set the reference object selection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcRelativePositionInPlaneAngle.reference`
               - Get the reference object.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcRelativePositionInPlaneAngle.relative_position_type`
-              - Gets or sets the type of the relative position.
+              - Get or set the type of the relative position.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcRelativePositionInPlaneAngle.counter_clockwise_rotation`
-              - Sets sign of the angle for counterclockwise rotation about orbit normal.
+              - Set sign of the angle for counterclockwise rotation about orbit normal.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcRelativePositionInPlaneAngle.reference_direction`
               - Direction that establishes the zero value when projected into the orbit plane.
 
@@ -54,7 +54,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcRelativePositionInPlaneAngle.central_body_name
     :type: str
 
-    Gets or sets the central body of the component.
+    Get or set the central body of the component.
 
 .. py:property:: orbit_plane_source
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcRelativePositionInPlaneAngle.orbit_plane_source
@@ -72,7 +72,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcRelativePositionInPlaneAngle.reference_selection
     :type: CalculationObjectReference
 
-    Gets or sets the reference object selection.
+    Get or set the reference object selection.
 
 .. py:property:: reference
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcRelativePositionInPlaneAngle.reference
@@ -84,13 +84,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcRelativePositionInPlaneAngle.relative_position_type
     :type: CalculationObjectRelativePosition
 
-    Gets or sets the type of the relative position.
+    Get or set the type of the relative position.
 
 .. py:property:: counter_clockwise_rotation
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcRelativePositionInPlaneAngle.counter_clockwise_rotation
     :type: CalculationObjectAngleSign
 
-    Sets sign of the angle for counterclockwise rotation about orbit normal.
+    Set sign of the angle for counterclockwise rotation about orbit normal.
 
 .. py:property:: reference_direction
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcRelativePositionInPlaneAngle.reference_direction

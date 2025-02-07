@@ -19,9 +19,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmMaterial.type`
-              - Gets material type.
+              - Get material type.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmMaterial.properties`
-              - Gets material properties.
+              - Get material properties.
 
 
 
@@ -40,12 +40,12 @@ Property detail
     :canonical: ansys.stk.core.stkrfchannelmodeler.StkRfcmMaterial.type
     :type: str
 
-    Gets material type.
+    Get material type.
 
 .. py:property:: properties
     :canonical: ansys.stk.core.stkrfchannelmodeler.StkRfcmMaterial.properties
     :type: str
 
-    Gets material properties.
+    Get material properties.
 
 

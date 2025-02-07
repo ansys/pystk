@@ -19,13 +19,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ScatteringPointCollectionElement.latitude`
-              - Gets the scattering points latitude.
+              - Get the scattering points latitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.ScatteringPointCollectionElement.longitude`
-              - Gets the scattering points longitude.
+              - Get the scattering points longitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.ScatteringPointCollectionElement.altitude`
-              - Gets the scattering points altitude.
+              - Get the scattering points altitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.ScatteringPointCollectionElement.scattering_point_model`
-              - Gets the scattering point's scattering model component name.
+              - Get the scattering point's scattering model component name.
 
 
 
@@ -44,24 +44,24 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.ScatteringPointCollectionElement.latitude
     :type: float
 
-    Gets the scattering points latitude.
+    Get the scattering points latitude.
 
 .. py:property:: longitude
     :canonical: ansys.stk.core.stkobjects.ScatteringPointCollectionElement.longitude
     :type: float
 
-    Gets the scattering points longitude.
+    Get the scattering points longitude.
 
 .. py:property:: altitude
     :canonical: ansys.stk.core.stkobjects.ScatteringPointCollectionElement.altitude
     :type: float
 
-    Gets the scattering points altitude.
+    Get the scattering points altitude.
 
 .. py:property:: scattering_point_model
     :canonical: ansys.stk.core.stkobjects.ScatteringPointCollectionElement.scattering_point_model
     :type: str
 
-    Gets the scattering point's scattering model component name.
+    Get the scattering point's scattering model component name.
 
 

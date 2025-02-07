@@ -25,11 +25,11 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePositionItem.use_2d_color`
               - Opt whether to use the color in the vehicle's 2D attributes for the drop line.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePositionItem.color`
-              - Gets or sets the color of the drop line (if the 2D graphics color is not used).
+              - Get or set the color of the drop line (if the 2D graphics color is not used).
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePositionItem.line_width`
-              - Gets or sets the line width of the drop line.
+              - Get or set the line width of the drop line.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePositionItem.line_style`
-              - Gets or sets the line style of the drop line.
+              - Get or set the line style of the drop line.
 
 
 
@@ -66,18 +66,18 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePositionItem.color
     :type: agcolor.Color
 
-    Gets or sets the color of the drop line (if the 2D graphics color is not used).
+    Get or set the color of the drop line (if the 2D graphics color is not used).
 
 .. py:property:: line_width
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePositionItem.line_width
     :type: LineWidth
 
-    Gets or sets the line width of the drop line.
+    Get or set the line width of the drop line.
 
 .. py:property:: line_style
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePositionItem.line_style
     :type: LineStyle
 
-    Gets or sets the line style of the drop line.
+    Get or set the line style of the drop line.
 
 

@@ -21,9 +21,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics2DLeadTrailTimes.use_lead_trail`
               - Opt whether to use lead and trail times.
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics2DLeadTrailTimes.lead_time`
-              - Gets or sets the time of the interpolated track route that will be displayed ahead of the track. Uses Time Dimension.
+              - Get or set the time of the interpolated track route that will be displayed ahead of the track. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics2DLeadTrailTimes.trail_time`
-              - Gets or sets the time of the interpolated track route that will be displayed behind the track. Uses Time Dimension.
+              - Get or set the time of the interpolated track route that will be displayed behind the track. Uses Time Dimension.
 
 
 
@@ -48,12 +48,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.MTOGraphics2DLeadTrailTimes.lead_time
     :type: float
 
-    Gets or sets the time of the interpolated track route that will be displayed ahead of the track. Uses Time Dimension.
+    Get or set the time of the interpolated track route that will be displayed ahead of the track. Uses Time Dimension.
 
 .. py:property:: trail_time
     :canonical: ansys.stk.core.stkobjects.MTOGraphics2DLeadTrailTimes.trail_time
     :type: float
 
-    Gets or sets the time of the interpolated track route that will be displayed behind the track. Uses Time Dimension.
+    Get or set the time of the interpolated track route that will be displayed behind the track. Uses Time Dimension.
 
 

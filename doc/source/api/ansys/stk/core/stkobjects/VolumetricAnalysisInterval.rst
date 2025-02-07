@@ -34,7 +34,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricAnalysisInterval.time_array`
               - The time array when Evaluation of spatial calculation at times from time array is used.
             * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricAnalysisInterval.step_size`
-              - Gets or sets the step size.
+              - Get or set the step size.
             * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricAnalysisInterval.available_analysis_intervals`
               - Get the available analysis intervals.
             * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricAnalysisInterval.available_times_from_time_array`
@@ -75,7 +75,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VolumetricAnalysisInterval.step_size
     :type: float
 
-    Gets or sets the step size.
+    Get or set the step size.
 
 .. py:property:: available_analysis_intervals
     :canonical: ansys.stk.core.stkobjects.VolumetricAnalysisInterval.available_analysis_intervals

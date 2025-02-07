@@ -28,11 +28,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleEphemerisCode500ExportTool.satellite_identifer`
-              - Gets or sets the identifying number for the satellite ephemeris being created. Dimensionless.
+              - Get or set the identifying number for the satellite ephemeris being created. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleEphemerisCode500ExportTool.step_size`
               - If the Use Ephemeris Steps option is not selected, enter a Step Size to be used for the vehicle.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleEphemerisCode500ExportTool.time_period`
-              - Sets the time period. Options are Use Entire Ephemeris - STK creates a data file using the Start and Stop Time specified in the vehicle's Orbit tab or Specify Time Period - STK creates a data file using the Start and Stop Time specified here.
+              - Set the time period. Options are Use Entire Ephemeris - STK creates a data file using the Start and Stop Time specified in the vehicle's Orbit tab or Specify Time Period - STK creates a data file using the Start and Stop Time specified here.
 
 
 
@@ -51,7 +51,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleEphemerisCode500ExportTool.satellite_identifer
     :type: int
 
-    Gets or sets the identifying number for the satellite ephemeris being created. Dimensionless.
+    Get or set the identifying number for the satellite ephemeris being created. Dimensionless.
 
 .. py:property:: step_size
     :canonical: ansys.stk.core.stkobjects.VehicleEphemerisCode500ExportTool.step_size
@@ -63,7 +63,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleEphemerisCode500ExportTool.time_period
     :type: ExportToolTimePeriod
 
-    Sets the time period. Options are Use Entire Ephemeris - STK creates a data file using the Start and Stop Time specified in the vehicle's Orbit tab or Specify Time Period - STK creates a data file using the Start and Stop Time specified here.
+    Set the time period. Options are Use Entire Ephemeris - STK creates a data file using the Start and Stop Time specified in the vehicle's Orbit tab or Specify Time Period - STK creates a data file using the Start and Stop Time specified here.
 
 
 Method detail

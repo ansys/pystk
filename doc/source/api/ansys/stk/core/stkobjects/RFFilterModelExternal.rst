@@ -21,9 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.RFFilterModelExternal.override_bandwidth_limits`
-              - Gets or sets option to override the bandwidth limits.
+              - Get or set option to override the bandwidth limits.
             * - :py:attr:`~ansys.stk.core.stkobjects.RFFilterModelExternal.filename`
-              - Gets or sets the external filename.
+              - Get or set the external filename.
 
 
 
@@ -42,12 +42,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.RFFilterModelExternal.override_bandwidth_limits
     :type: bool
 
-    Gets or sets option to override the bandwidth limits.
+    Get or set option to override the bandwidth limits.
 
 .. py:property:: filename
     :canonical: ansys.stk.core.stkobjects.RFFilterModelExternal.filename
     :type: str
 
-    Gets or sets the external filename.
+    Get or set the external filename.
 
 

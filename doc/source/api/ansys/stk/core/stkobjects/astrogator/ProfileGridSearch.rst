@@ -23,7 +23,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileGridSearch.targeter_graphs`
               - Graphs.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileGridSearch.scripting_tool`
-              - Returns the Scripting tool for the sequence.
+              - Return the Scripting tool for the sequence.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileGridSearch.controls`
               - Get the list of control parameters defined for the profile.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileGridSearch.results`
@@ -58,7 +58,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileGridSearch.scripting_tool
     :type: ScriptingTool
 
-    Returns the Scripting tool for the sequence.
+    Return the Scripting tool for the sequence.
 
 .. py:property:: controls
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileGridSearch.controls

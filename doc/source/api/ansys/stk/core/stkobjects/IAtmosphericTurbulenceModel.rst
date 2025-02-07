@@ -19,7 +19,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAtmosphericTurbulenceModel.type`
-              - Gets the model type enumeration.
+              - Get the model type enumeration.
 
 
 Import detail
@@ -37,6 +37,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.IAtmosphericTurbulenceModel.type
     :type: AtmosphericTurbulenceModelType
 
-    Gets the model type enumeration.
+    Get the model type enumeration.
 
 

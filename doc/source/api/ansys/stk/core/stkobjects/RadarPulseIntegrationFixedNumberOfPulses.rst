@@ -21,15 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarPulseIntegrationFixedNumberOfPulses.pulse_number`
-              - Gets or sets the pulse number.
+              - Get or set the pulse number.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarPulseIntegrationFixedNumberOfPulses.integrator_type`
-              - Gets or sets the integrator type.
+              - Get or set the integrator type.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarPulseIntegrationFixedNumberOfPulses.constant_efficiency`
-              - Gets or sets the constant efficiency value.
+              - Get or set the constant efficiency value.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarPulseIntegrationFixedNumberOfPulses.exponent_on_pulse_number`
-              - Gets or set the exponent on pulse number value.
+              - Get or set the exponent on pulse number value.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarPulseIntegrationFixedNumberOfPulses.non_coherent_integration`
-              - Gets or sets the non-coherent integration flag.
+              - Get or set the non-coherent integration flag.
 
 
 
@@ -48,30 +48,30 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.RadarPulseIntegrationFixedNumberOfPulses.pulse_number
     :type: int
 
-    Gets or sets the pulse number.
+    Get or set the pulse number.
 
 .. py:property:: integrator_type
     :canonical: ansys.stk.core.stkobjects.RadarPulseIntegrationFixedNumberOfPulses.integrator_type
     :type: RadarPulseIntegratorType
 
-    Gets or sets the integrator type.
+    Get or set the integrator type.
 
 .. py:property:: constant_efficiency
     :canonical: ansys.stk.core.stkobjects.RadarPulseIntegrationFixedNumberOfPulses.constant_efficiency
     :type: float
 
-    Gets or sets the constant efficiency value.
+    Get or set the constant efficiency value.
 
 .. py:property:: exponent_on_pulse_number
     :canonical: ansys.stk.core.stkobjects.RadarPulseIntegrationFixedNumberOfPulses.exponent_on_pulse_number
     :type: float
 
-    Gets or set the exponent on pulse number value.
+    Get or set the exponent on pulse number value.
 
 .. py:property:: non_coherent_integration
     :canonical: ansys.stk.core.stkobjects.RadarPulseIntegrationFixedNumberOfPulses.non_coherent_integration
     :type: bool
 
-    Gets or sets the non-coherent integration flag.
+    Get or set the non-coherent integration flag.
 
 

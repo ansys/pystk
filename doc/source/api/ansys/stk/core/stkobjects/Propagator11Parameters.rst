@@ -34,7 +34,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.Propagator11Parameters.ephemeris_interval`
               - Get the propagator's ephemeris interval.
             * - :py:attr:`~ansys.stk.core.stkobjects.Propagator11Parameters.parameter_files`
-              - Returns a collection of 11-Parameter satellite definitions.
+              - Return a collection of 11-Parameter satellite definitions.
 
 
 
@@ -65,7 +65,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Propagator11Parameters.parameter_files
     :type: Propagator11ParametersDescriptorCollection
 
-    Returns a collection of 11-Parameter satellite definitions.
+    Return a collection of 11-Parameter satellite definitions.
 
 
 Method detail

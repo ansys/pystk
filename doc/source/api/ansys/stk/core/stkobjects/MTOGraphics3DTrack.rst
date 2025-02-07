@@ -33,11 +33,11 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics3DTrack.range_contours`
               - Get the MTO's 3D range contour properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics3DTrack.drop_lines`
-              - Returns an interface allowing you to configure the MTO's drop lines.
+              - Return an interface allowing you to configure the MTO's drop lines.
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics3DTrack.identifier`
               - Get the identification number of the track. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics3DTrack.should_fade_over_trail_time`
-              - Controls whether trailing line fades over trail time.
+              - Control whether trailing line fades over trail time.
 
 
 
@@ -98,7 +98,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.MTOGraphics3DTrack.drop_lines
     :type: MTOGraphics3DDropLines
 
-    Returns an interface allowing you to configure the MTO's drop lines.
+    Return an interface allowing you to configure the MTO's drop lines.
 
 .. py:property:: identifier
     :canonical: ansys.stk.core.stkobjects.MTOGraphics3DTrack.identifier
@@ -110,6 +110,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.MTOGraphics3DTrack.should_fade_over_trail_time
     :type: bool
 
-    Controls whether trailing line fades over trail time.
+    Control whether trailing line fades over trail time.
 
 

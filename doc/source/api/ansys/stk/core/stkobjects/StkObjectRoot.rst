@@ -76,27 +76,27 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.units_preferences`
-              - Provides access to the Global Unit table.
+              - Provide access to the Global Unit table.
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.current_scenario`
-              - Returns a Scenario object or null if no scenario has been loaded yet.
+              - Return a Scenario object or null if no scenario has been loaded yet.
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.isolated`
-              - Returns whether the instance is isolated.
+              - Return whether the instance is isolated.
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.conversion_utility`
-              - Returns the conversion utility interface.
+              - Return the conversion utility interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.military_standard_2525b_symbols`
-              - Returns the interface that enables creating 2525b symbols.
+              - Return the interface that enables creating 2525b symbols.
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.available_features`
-              - Allows the user to inquiry about the available features.
+              - Allow the user to inquiry about the available features.
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.analysis_workbench_components_root`
-              - Returns an instance of VGT root object.
+              - Return an instance of VGT root object.
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.central_bodies`
-              - Returns a collection of available central bodies.
+              - Return a collection of available central bodies.
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.notification_filter`
               - Temporarily disable only the root events to prevent them from being raised. The event filtering can be used to improve client application performance.
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.preferences`
               - Configures STK preferences.
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.rf_channel_modeler`
-              - Returns an RF Channel Modeler object.
+              - Return an RF Channel Modeler object.
 
 
 
@@ -115,49 +115,49 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.units_preferences
     :type: IUnitPreferencesDimensionCollection
 
-    Provides access to the Global Unit table.
+    Provide access to the Global Unit table.
 
 .. py:property:: current_scenario
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.current_scenario
     :type: IStkObject
 
-    Returns a Scenario object or null if no scenario has been loaded yet.
+    Return a Scenario object or null if no scenario has been loaded yet.
 
 .. py:property:: isolated
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.isolated
     :type: bool
 
-    Returns whether the instance is isolated.
+    Return whether the instance is isolated.
 
 .. py:property:: conversion_utility
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.conversion_utility
     :type: IConversionUtility
 
-    Returns the conversion utility interface.
+    Return the conversion utility interface.
 
 .. py:property:: military_standard_2525b_symbols
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.military_standard_2525b_symbols
     :type: MilitaryStandard2525bSymbols
 
-    Returns the interface that enables creating 2525b symbols.
+    Return the interface that enables creating 2525b symbols.
 
 .. py:property:: available_features
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.available_features
     :type: AvailableFeatures
 
-    Allows the user to inquiry about the available features.
+    Allow the user to inquiry about the available features.
 
 .. py:property:: analysis_workbench_components_root
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.analysis_workbench_components_root
     :type: IAnalysisWorkbenchRoot
 
-    Returns an instance of VGT root object.
+    Return an instance of VGT root object.
 
 .. py:property:: central_bodies
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.central_bodies
     :type: CentralBodyCollection
 
-    Returns a collection of available central bodies.
+    Return a collection of available central bodies.
 
 .. py:property:: notification_filter
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.notification_filter
@@ -175,7 +175,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.rf_channel_modeler
     :type: typing.Any
 
-    Returns an RF Channel Modeler object.
+    Return an RF Channel Modeler object.
 
 
 Method detail

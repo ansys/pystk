@@ -21,9 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.RFFilterModelRootRaisedCosine.roll_off_factor`
-              - Gets or sets the roll off factor.
+              - Get or set the roll off factor.
             * - :py:attr:`~ansys.stk.core.stkobjects.RFFilterModelRootRaisedCosine.symbol_rate`
-              - Gets or sets the symbol rate.
+              - Get or set the symbol rate.
 
 
 
@@ -42,12 +42,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.RFFilterModelRootRaisedCosine.roll_off_factor
     :type: float
 
-    Gets or sets the roll off factor.
+    Get or set the roll off factor.
 
 .. py:property:: symbol_rate
     :canonical: ansys.stk.core.stkobjects.RFFilterModelRootRaisedCosine.symbol_rate
     :type: float
 
-    Gets or sets the symbol rate.
+    Get or set the symbol rate.
 
 

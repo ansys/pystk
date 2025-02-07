@@ -21,9 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.TimeIntervalDisplayCondition.minimum_time`
-              - Gets or sets the minimum time of the inclusive time interval.
+              - Get or set the minimum time of the inclusive time interval.
             * - :py:attr:`~ansys.stk.core.graphics.TimeIntervalDisplayCondition.maximum_time`
-              - Gets or sets the maximum time of the inclusive time interval.
+              - Get or set the maximum time of the inclusive time interval.
 
 
 
@@ -42,12 +42,12 @@ Property detail
     :canonical: ansys.stk.core.graphics.TimeIntervalDisplayCondition.minimum_time
     :type: IDate
 
-    Gets or sets the minimum time of the inclusive time interval.
+    Get or set the minimum time of the inclusive time interval.
 
 .. py:property:: maximum_time
     :canonical: ansys.stk.core.graphics.TimeIntervalDisplayCondition.maximum_time
     :type: IDate
 
-    Gets or sets the maximum time of the inclusive time interval.
+    Get or set the maximum time of the inclusive time interval.
 
 

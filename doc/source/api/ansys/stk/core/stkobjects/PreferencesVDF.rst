@@ -19,9 +19,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.PreferencesVDF.save_scenario_as_vdf`
-              - Gets or sets the SaveScenarioAsVDF property determines whether a scenario will be saved as a scenario file or as a VDF file when the Save method is called. If a VDF file is loaded, then the SaveScenarioAsVDF property has no effect when Save is called.
+              - Get or set the SaveScenarioAsVDF property determines whether a scenario will be saved as a scenario file or as a VDF file when the Save method is called. If a VDF file is loaded, then the SaveScenarioAsVDF property has no effect when Save is called.
             * - :py:attr:`~ansys.stk.core.stkobjects.PreferencesVDF.base_directory`
-              - Gets or sets the Base Directory where VDF file is extracted.
+              - Get or set the Base Directory where VDF file is extracted.
 
 
 
@@ -40,12 +40,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.PreferencesVDF.save_scenario_as_vdf
     :type: bool
 
-    Gets or sets the SaveScenarioAsVDF property determines whether a scenario will be saved as a scenario file or as a VDF file when the Save method is called. If a VDF file is loaded, then the SaveScenarioAsVDF property has no effect when Save is called.
+    Get or set the SaveScenarioAsVDF property determines whether a scenario will be saved as a scenario file or as a VDF file when the Save method is called. If a VDF file is loaded, then the SaveScenarioAsVDF property has no effect when Save is called.
 
 .. py:property:: base_directory
     :canonical: ansys.stk.core.stkobjects.PreferencesVDF.base_directory
     :type: str
 
-    Gets or sets the Base Directory where VDF file is extracted.
+    Get or set the Base Directory where VDF file is extracted.
 
 

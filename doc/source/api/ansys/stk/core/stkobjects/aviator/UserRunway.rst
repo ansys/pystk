@@ -36,17 +36,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.UserRunway.altitude`
-              - Gets or sets the runway altitude.
+              - Get or set the runway altitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.UserRunway.latitude`
-              - Gets or sets the runway latitude.
+              - Get or set the runway latitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.UserRunway.longitude`
-              - Gets or sets the runway longitude.
+              - Get or set the runway longitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.UserRunway.length`
-              - Gets or sets the length of the runway.
+              - Get or set the length of the runway.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.UserRunway.low_end_heading`
-              - Gets or sets the low end heading of the runway.
+              - Get or set the low end heading of the runway.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.UserRunway.high_end_heading`
-              - Gets or sets the high end heading of the runway.
+              - Get or set the high end heading of the runway.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.UserRunway.is_magnetic`
               - Opt whether to use a magnetic heading for the runway heading.
 
@@ -67,37 +67,37 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.UserRunway.altitude
     :type: float
 
-    Gets or sets the runway altitude.
+    Get or set the runway altitude.
 
 .. py:property:: latitude
     :canonical: ansys.stk.core.stkobjects.aviator.UserRunway.latitude
     :type: typing.Any
 
-    Gets or sets the runway latitude.
+    Get or set the runway latitude.
 
 .. py:property:: longitude
     :canonical: ansys.stk.core.stkobjects.aviator.UserRunway.longitude
     :type: typing.Any
 
-    Gets or sets the runway longitude.
+    Get or set the runway longitude.
 
 .. py:property:: length
     :canonical: ansys.stk.core.stkobjects.aviator.UserRunway.length
     :type: float
 
-    Gets or sets the length of the runway.
+    Get or set the length of the runway.
 
 .. py:property:: low_end_heading
     :canonical: ansys.stk.core.stkobjects.aviator.UserRunway.low_end_heading
     :type: typing.Any
 
-    Gets or sets the low end heading of the runway.
+    Get or set the low end heading of the runway.
 
 .. py:property:: high_end_heading
     :canonical: ansys.stk.core.stkobjects.aviator.UserRunway.high_end_heading
     :type: typing.Any
 
-    Gets or sets the high end heading of the runway.
+    Get or set the high end heading of the runway.
 
 .. py:property:: is_magnetic
     :canonical: ansys.stk.core.stkobjects.aviator.UserRunway.is_magnetic

@@ -32,17 +32,17 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleAttitudeExportTool.coordinate_axes_type`
               - Get the coordinate axes to be used in the file.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleAttitudeExportTool.coordinate_axes`
-              - Selects a custom coordinate axes.
+              - Select a custom coordinate axes.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleAttitudeExportTool.time_period`
-              - Sets the time period. Options are Use Entire Ephemeris - STK creates a data file using the Start and Stop Time specified in the vehicle's Orbit tab or Specify Time Period - STK creates a data file using the Start and Stop Time specified here.
+              - Set the time period. Options are Use Entire Ephemeris - STK creates a data file using the Start and Stop Time specified in the vehicle's Orbit tab or Specify Time Period - STK creates a data file using the Start and Stop Time specified here.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleAttitudeExportTool.include`
-              - Gets or sets the details to include in the data file.
+              - Get or set the details to include in the data file.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleAttitudeExportTool.version_format`
-              - Provides the option to generate files compatible with prior versions of STK.
+              - Provide the option to generate files compatible with prior versions of STK.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleAttitudeExportTool.step_size`
               - If the Use Ephemeris Steps option is not selected, enter a Step Size to be used for the vehicle.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleAttitudeExportTool.supported_coordinate_axes`
-              - Returns an array of valid choices.
+              - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleAttitudeExportTool.central_body_name`
               - Get the central body of the satellite.
 
@@ -69,25 +69,25 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleAttitudeExportTool.coordinate_axes
     :type: IVehicleCoordinateAxes
 
-    Selects a custom coordinate axes.
+    Select a custom coordinate axes.
 
 .. py:property:: time_period
     :canonical: ansys.stk.core.stkobjects.VehicleAttitudeExportTool.time_period
     :type: ExportToolTimePeriod
 
-    Sets the time period. Options are Use Entire Ephemeris - STK creates a data file using the Start and Stop Time specified in the vehicle's Orbit tab or Specify Time Period - STK creates a data file using the Start and Stop Time specified here.
+    Set the time period. Options are Use Entire Ephemeris - STK creates a data file using the Start and Stop Time specified in the vehicle's Orbit tab or Specify Time Period - STK creates a data file using the Start and Stop Time specified here.
 
 .. py:property:: include
     :canonical: ansys.stk.core.stkobjects.VehicleAttitudeExportTool.include
     :type: AttitudeInclude
 
-    Gets or sets the details to include in the data file.
+    Get or set the details to include in the data file.
 
 .. py:property:: version_format
     :canonical: ansys.stk.core.stkobjects.VehicleAttitudeExportTool.version_format
     :type: ExportToolVersionFormat
 
-    Provides the option to generate files compatible with prior versions of STK.
+    Provide the option to generate files compatible with prior versions of STK.
 
 .. py:property:: step_size
     :canonical: ansys.stk.core.stkobjects.VehicleAttitudeExportTool.step_size
@@ -99,7 +99,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleAttitudeExportTool.supported_coordinate_axes
     :type: list
 
-    Returns an array of valid choices.
+    Return an array of valid choices.
 
 .. py:property:: central_body_name
     :canonical: ansys.stk.core.stkobjects.VehicleAttitudeExportTool.central_body_name

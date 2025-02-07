@@ -19,7 +19,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.PreferencesConnect.allow_connect`
-              - Gets or sets the connection allowed property.
+              - Get or set the connection allowed property.
             * - :py:attr:`~ansys.stk.core.stkobjects.PreferencesConnect.allow_asynchronous_communications`
               - Asynchronous allowed.
             * - :py:attr:`~ansys.stk.core.stkobjects.PreferencesConnect.maximum_connections`
@@ -29,13 +29,13 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.PreferencesConnect.socket`
               - TCP/IP Socket Port.
             * - :py:attr:`~ansys.stk.core.stkobjects.PreferencesConnect.acknowledge_message_receipt`
-              - Gets or sets the initial connect Acknowledge mode state.
+              - Get or set the initial connect Acknowledge mode state.
             * - :py:attr:`~ansys.stk.core.stkobjects.PreferencesConnect.error_notify_mode`
-              - Gets or sets the initial connect Error Notify mode state.
+              - Get or set the initial connect Error Notify mode state.
             * - :py:attr:`~ansys.stk.core.stkobjects.PreferencesConnect.wildcard_ignore_nack`
               - Ignore Backs when Wildcards used.
             * - :py:attr:`~ansys.stk.core.stkobjects.PreferencesConnect.verbose`
-              - Gets or sets the initial connect Verbose mode state.
+              - Get or set the initial connect Verbose mode state.
             * - :py:attr:`~ansys.stk.core.stkobjects.PreferencesConnect.allow_logging`
               - Allow for command logging.
             * - :py:attr:`~ansys.stk.core.stkobjects.PreferencesConnect.log_filename`
@@ -60,7 +60,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.PreferencesConnect.allow_connect
     :type: bool
 
-    Gets or sets the connection allowed property.
+    Get or set the connection allowed property.
 
 .. py:property:: allow_asynchronous_communications
     :canonical: ansys.stk.core.stkobjects.PreferencesConnect.allow_asynchronous_communications
@@ -90,13 +90,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.PreferencesConnect.acknowledge_message_receipt
     :type: bool
 
-    Gets or sets the initial connect Acknowledge mode state.
+    Get or set the initial connect Acknowledge mode state.
 
 .. py:property:: error_notify_mode
     :canonical: ansys.stk.core.stkobjects.PreferencesConnect.error_notify_mode
     :type: bool
 
-    Gets or sets the initial connect Error Notify mode state.
+    Get or set the initial connect Error Notify mode state.
 
 .. py:property:: wildcard_ignore_nack
     :canonical: ansys.stk.core.stkobjects.PreferencesConnect.wildcard_ignore_nack
@@ -108,7 +108,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.PreferencesConnect.verbose
     :type: bool
 
-    Gets or sets the initial connect Verbose mode state.
+    Get or set the initial connect Verbose mode state.
 
 .. py:property:: allow_logging
     :canonical: ansys.stk.core.stkobjects.PreferencesConnect.allow_logging
