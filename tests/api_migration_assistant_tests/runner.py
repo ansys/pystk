@@ -37,7 +37,7 @@ class Runner:
     def _setup_api(self):
         api_file = self.temp_directory / self.api_root / "api.py"
         api_file.parent.mkdir(parents=True, exist_ok=True)
-        api_file.write_text(textwrap.dedent(self.api))
+        api_file.write_text(textwrap.dedent(self.api), encoding="utf-8")
 
     def _setup_api_mappings(self):
         api_mapping_dir = self.temp_directory / "api_mappings"
@@ -45,10 +45,10 @@ class Runner:
         if isinstance(self.api_mappings, list):
             for index, api_mappings_entry in enumerate(self.api_mappings):
                 api_mappings_file = api_mapping_dir / f"api_mappings{index}.xml"
-                api_mappings_file.write_text(api_mappings_entry)
+                api_mappings_file.write_text(api_mappings_entry, encoding="utf-8")
         else:
             api_mappings_file = api_mapping_dir / "api_mappings.xml"
-            api_mappings_file.write_text(self.api_mappings)
+            api_mappings_file.write_text(self.api_mappings, encoding="utf-8")
 
     def _setup_input(self):
         test_directory = self.temp_directory / "test"
@@ -56,12 +56,12 @@ class Runner:
         if isinstance(self.input, list):
             for input_entry in self.input:
                 input_file = test_directory / input_entry["filename"]
-                input_file.write_text(textwrap.dedent(input_entry["code"]))
+                input_file.write_text(textwrap.dedent(input_entry["code"]), encoding="utf-8")
                 self.input_files.append(str(input_file.resolve()))
                 self.entry_points.append(input_entry.get("entry_point", None))
         else:
             input_file = test_directory / "input.py"
-            input_file.write_text(textwrap.dedent(self.input))
+            input_file.write_text(textwrap.dedent(self.input), encoding="utf-8")
             self.input_files.append(str(input_file.resolve()))
             self.entry_points.append("main")
 

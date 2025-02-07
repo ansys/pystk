@@ -73,7 +73,7 @@ The first phase of the process is to record one or multiple traces of the execut
 
 .. code-block:: bash
 
-   python -m ansys.stk.core.tools.api_migration_assistant record --recordings-directory=... snippet.py
+   pystk-migration-assistant record --recordings-directory=... snippet.py
    INFO: Recording ... snippet.py
 
 The recordings are saved in the specified directory. Therefore, make sure to specify an empty directory if starting from scratch on migrating a new application.
@@ -105,7 +105,7 @@ This creates an XML file in the recordings directory. That file contains the cal
 
     .. code-block:: bash
 
-        python -m ansys.stk.core.tools.api_migration_assistant record --help
+        pystk-migration-assistant record --help
         usage: __main__.py record [-h] [--entry-point ENTRY_POINT] [--root-directory ROOT_DIRECTORY] [--mappings-directory MAPPINGS_DIRECTORY] [--recordings-directory RECORDINGS_DIRECTORY]
                                 script ...
 
@@ -132,7 +132,7 @@ Once you have accumulated one or more traces to cover all the paths in your Pyth
 
 .. code-block:: bash
 
-    python -m ansys.stk.core.tools.api_migration_assistant apply --recordings-directory=... snippet.py
+    pystk-migration-assistant record apply --recordings-directory=... snippet.py
     INFO: Applying changes from ...
     INFO: Writing ... snippet.py-migrated
 
@@ -145,7 +145,7 @@ This generates one `.py-migrated` file for each Python file in your application.
 
     .. code-block:: bash
 
-        python -m ansys.stk.core.tools.api_migration_assistant apply --help
+        pystk-migration-assistant record apply --help
         usage: __main__.py apply [-h] [--mappings-directory MAPPINGS_DIRECTORY] [--recordings-directory RECORDINGS_DIRECTORY]
 
         options:
