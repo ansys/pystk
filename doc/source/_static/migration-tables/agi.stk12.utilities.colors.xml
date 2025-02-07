@@ -1,4 +1,4 @@
-<Mappings>
+<Mappings OldRootScope="agi.stk12.utilities.colors" NewRootScope="ansys.stk.core.utilities.colors">
    <Mapping ParentScope="Color" OldName="_ToOLECOLOR" NewName="_to_ole_color" Category="method" />
    <Mapping ParentScope="Color" OldName="_FromOLECOLOR" NewName="_from_ole_color" Category="method" />
    <Mapping ParentScope="Color" OldName="_ToArgb" NewName="_to_argb" Category="method" />

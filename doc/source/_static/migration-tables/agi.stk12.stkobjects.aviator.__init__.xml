@@ -1,4 +1,4 @@
-<Mappings>
+<Mappings OldRootScope="agi.stk12.stkobjects.aviator" NewRootScope="ansys.stk.core.stkobjects.aviator">
    <Mapping ParentScope="AgEAvtrErrorCodes" OldName="eAvtrErrorObjectNotFound" NewName="OBJECT_NOT_FOUND" Category="enum_value" />
    <Mapping ParentScope="AgEAvtrErrorCodes" OldName="eAvtrErrorIndexOutOfRange" NewName="INDEX_OUT_OF_RANGE" Category="enum_value" />
    <Mapping ParentScope="AgEAvtrErrorCodes" OldName="eAvtrErrorInvalidAttribute" NewName="INVALID_ATTRIBUTE" Category="enum_value" />

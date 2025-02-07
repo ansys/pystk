@@ -1,0 +1,78 @@
+<Mappings OldRootScope="agi.stk12.internal.eventutil" NewRootScope="ansys.stk.core.internal.eventutil">
+   <Mapping OldName="IAgStkObjectRootEventHandler" NewName="IStkObjectRootEventHandler" Category="interface" />
+   <Mapping OldName="IAgSTKXApplicationEventHandler" NewName="ISTKXApplicationEventHandler" Category="interface" />
+   <Mapping OldName="IAgUiAx2DCntrlEventHandler" NewName="IUiAxGraphics2DCntrlEventHandler" Category="interface" />
+   <Mapping OldName="IAgUiAxVOCntrlEventHandler" NewName="IUiAxGraphics3DCntrlEventHandler" Category="interface" />
+   <Mapping OldName="IAgStkGraphicsSceneEventHandler" NewName="ISceneEventHandler" Category="interface" />
+   <Mapping OldName="IAgStkGraphicsKmlGraphicsEventHandler" NewName="IKmlGraphicsEventHandler" Category="interface" />
+   <Mapping OldName="IAgStkGraphicsImageCollectionEventHandler" NewName="IImageCollectionEventHandler" Category="interface" />
+   <Mapping OldName="IAgStkGraphicsTerrainCollectionEventHandler" NewName="ITerrainOverlayCollectionEventHandler" Category="interface" />
+   <Mapping ParentScope="_EventSubscriptionManagerImpl" OldName="Subscribe" NewName="subscribe" Category="method" />
+   <Mapping ParentScope="_EventSubscriptionManagerImpl" OldName="Unsubscribe" NewName="unsubscribe" Category="method" />
+   <Mapping ParentScope="_EventSubscriptionManagerImpl" OldName="UnsubscribeAll" NewName="unsubscribe_all" Category="method" />
+   <Mapping ParentScope="STKEventSubscriber" OldName="Subscribe" NewName="subscribe" Category="method" />
+   <Mapping ParentScope="STKEventSubscriber" OldName="_SubscribeImpl" NewName="_subscribe_impl" Category="method" />
+   <Mapping ParentScope="STKEventSubscriber" OldName="Unsubscribe" NewName="unsubscribe" Category="method" />
+   <Mapping ParentScope="STKEventSubscriber" OldName="_UnsubscribeImpl" NewName="_unsubscribe_impl" Category="method" />
+   <Mapping ParentScope="IAgStkObjectRootEventHandler" OldName="OnScenarioNew" NewName="on_scenario_new" Category="method" />
+   <Mapping ParentScope="IAgStkObjectRootEventHandler" OldName="OnScenarioLoad" NewName="on_scenario_load" Category="method" />
+   <Mapping ParentScope="IAgStkObjectRootEventHandler" OldName="OnScenarioClose" NewName="on_scenario_close" Category="method" />
+   <Mapping ParentScope="IAgStkObjectRootEventHandler" OldName="OnScenarioSave" NewName="on_scenario_save" Category="method" />
+   <Mapping ParentScope="IAgStkObjectRootEventHandler" OldName="OnLogMessage" NewName="on_log_message" Category="method" />
+   <Mapping ParentScope="IAgStkObjectRootEventHandler" OldName="OnAnimUpdate" NewName="on_anim_update" Category="method" />
+   <Mapping ParentScope="IAgStkObjectRootEventHandler" OldName="OnStkObjectAdded" NewName="on_stk_object_added" Category="method" />
+   <Mapping ParentScope="IAgStkObjectRootEventHandler" OldName="OnStkObjectDeleted" NewName="on_stk_object_deleted" Category="method" />
+   <Mapping ParentScope="IAgStkObjectRootEventHandler" OldName="OnStkObjectRenamed" NewName="on_stk_object_renamed" Category="method" />
+   <Mapping ParentScope="IAgStkObjectRootEventHandler" OldName="OnAnimationPlayback" NewName="on_animation_playback" Category="method" />
+   <Mapping ParentScope="IAgStkObjectRootEventHandler" OldName="OnAnimationRewind" NewName="on_animation_rewind" Category="method" />
+   <Mapping ParentScope="IAgStkObjectRootEventHandler" OldName="OnAnimationPause" NewName="on_animation_pause" Category="method" />
+   <Mapping ParentScope="IAgStkObjectRootEventHandler" OldName="OnScenarioBeforeSave" NewName="on_scenario_before_save" Category="method" />
+   <Mapping ParentScope="IAgStkObjectRootEventHandler" OldName="OnAnimationStep" NewName="on_animation_step" Category="method" />
+   <Mapping ParentScope="IAgStkObjectRootEventHandler" OldName="OnAnimationStepBack" NewName="on_animation_step_back" Category="method" />
+   <Mapping ParentScope="IAgStkObjectRootEventHandler" OldName="OnAnimationSlower" NewName="on_animation_slower" Category="method" />
+   <Mapping ParentScope="IAgStkObjectRootEventHandler" OldName="OnAnimationFaster" NewName="on_animation_faster" Category="method" />
+   <Mapping ParentScope="IAgStkObjectRootEventHandler" OldName="OnPercentCompleteUpdate" NewName="on_percent_complete_update" Category="method" />
+   <Mapping ParentScope="IAgStkObjectRootEventHandler" OldName="OnPercentCompleteEnd" NewName="on_percent_complete_end" Category="method" />
+   <Mapping ParentScope="IAgStkObjectRootEventHandler" OldName="OnPercentCompleteBegin" NewName="on_percent_complete_begin" Category="method" />
+   <Mapping ParentScope="IAgStkObjectRootEventHandler" OldName="OnStkObjectChanged" NewName="on_stk_object_changed" Category="method" />
+   <Mapping ParentScope="IAgStkObjectRootEventHandler" OldName="OnScenarioBeforeClose" NewName="on_scenario_before_close" Category="method" />
+   <Mapping ParentScope="IAgStkObjectRootEventHandler" OldName="OnStkObjectPreDelete" NewName="on_stk_object_pre_delete" Category="method" />
+   <Mapping ParentScope="IAgStkObjectRootEventHandler" OldName="OnStkObjectStart3dEditing" NewName="on_stk_object_start_3d_editing" Category="method" />
+   <Mapping ParentScope="IAgStkObjectRootEventHandler" OldName="OnStkObjectStop3dEditing" NewName="on_stk_object_stop_3d_editing" Category="method" />
+   <Mapping ParentScope="IAgStkObjectRootEventHandler" OldName="OnStkObjectApply3dEditing" NewName="on_stk_object_apply_3d_editing" Category="method" />
+   <Mapping ParentScope="IAgStkObjectRootEventHandler" OldName="OnStkObjectCancel3dEditing" NewName="on_stk_object_cancel_3d_editing" Category="method" />
+   <Mapping ParentScope="IAgStkObjectRootEventHandler" OldName="OnStkObjectPreCut" NewName="on_stk_object_pre_cut" Category="method" />
+   <Mapping ParentScope="IAgStkObjectRootEventHandler" OldName="OnStkObjectCopy" NewName="on_stk_object_copy" Category="method" />
+   <Mapping ParentScope="IAgStkObjectRootEventHandler" OldName="OnStkObjectPaste" NewName="on_stk_object_paste" Category="method" />
+   <Mapping ParentScope="IAgSTKXApplicationEventHandler" OldName="OnScenarioNew" NewName="on_scenario_new" Category="method" />
+   <Mapping ParentScope="IAgSTKXApplicationEventHandler" OldName="OnScenarioLoad" NewName="on_scenario_load" Category="method" />
+   <Mapping ParentScope="IAgSTKXApplicationEventHandler" OldName="OnScenarioClose" NewName="on_scenario_close" Category="method" />
+   <Mapping ParentScope="IAgSTKXApplicationEventHandler" OldName="OnLogMessage" NewName="on_log_message" Category="method" />
+   <Mapping ParentScope="IAgSTKXApplicationEventHandler" OldName="OnAnimUpdate" NewName="on_anim_update" Category="method" />
+   <Mapping ParentScope="IAgSTKXApplicationEventHandler" OldName="OnNewGlobeCtrlRequest" NewName="on_new_globe_ctrl_request" Category="method" />
+   <Mapping ParentScope="IAgSTKXApplicationEventHandler" OldName="OnNewMapCtrlRequest" NewName="on_new_map_ctrl_request" Category="method" />
+   <Mapping ParentScope="IAgSTKXApplicationEventHandler" OldName="OnBeforeNewScenario" NewName="on_before_new_scenario" Category="method" />
+   <Mapping ParentScope="IAgSTKXApplicationEventHandler" OldName="OnBeforeLoadScenario" NewName="on_before_load_scenario" Category="method" />
+   <Mapping ParentScope="IAgSTKXApplicationEventHandler" OldName="OnBeginScenarioClose" NewName="on_begin_scenario_close" Category="method" />
+   <Mapping ParentScope="IAgSTKXApplicationEventHandler" OldName="OnNewGfxAnalysisCtrlRequest" NewName="on_new_gfx_analysis_ctrl_request" Category="method" />
+   <Mapping ParentScope="IAgSTKXApplicationEventHandler" OldName="OnSSLCertificateServerError" NewName="on_ssl_certificate_server_error" Category="method" />
+   <Mapping ParentScope="IAgSTKXApplicationEventHandler" OldName="OnConControlQuitReceived" NewName="on_con_control_quit_received" Category="method" />
+   <Mapping ParentScope="IAgUiAxStockEventHandler" OldName="KeyDown" NewName="key_down" Category="method" />
+   <Mapping ParentScope="IAgUiAxStockEventHandler" OldName="KeyPress" NewName="key_press" Category="method" />
+   <Mapping ParentScope="IAgUiAxStockEventHandler" OldName="KeyUp" NewName="key_up" Category="method" />
+   <Mapping ParentScope="IAgUiAxStockEventHandler" OldName="Click" NewName="click" Category="method" />
+   <Mapping ParentScope="IAgUiAxStockEventHandler" OldName="DblClick" NewName="dbl_click" Category="method" />
+   <Mapping ParentScope="IAgUiAxStockEventHandler" OldName="MouseDown" NewName="mouse_down" Category="method" />
+   <Mapping ParentScope="IAgUiAxStockEventHandler" OldName="MouseMove" NewName="mouse_move" Category="method" />
+   <Mapping ParentScope="IAgUiAxStockEventHandler" OldName="MouseUp" NewName="mouse_up" Category="method" />
+   <Mapping ParentScope="IAgUiAxStockEventHandler" OldName="OLEDragDrop" NewName="ole_drag_drop" Category="method" />
+   <Mapping ParentScope="IAgUiAxStockEventHandler" OldName="MouseWheel" NewName="mouse_wheel" Category="method" />
+   <Mapping ParentScope="IAgUiAxVOCntrlEventHandler" OldName="OnObjectEditingStart" NewName="on_object_editing_start" Category="method" />
+   <Mapping ParentScope="IAgUiAxVOCntrlEventHandler" OldName="OnObjectEditingApply" NewName="on_object_editing_apply" Category="method" />
+   <Mapping ParentScope="IAgUiAxVOCntrlEventHandler" OldName="OnObjectEditingCancel" NewName="on_object_editing_cancel" Category="method" />
+   <Mapping ParentScope="IAgUiAxVOCntrlEventHandler" OldName="OnObjectEditingStop" NewName="on_object_editing_stop" Category="method" />
+   <Mapping ParentScope="IAgStkGraphicsSceneEventHandler" OldName="Rendering" NewName="rendering" Category="method" />
+   <Mapping ParentScope="IAgStkGraphicsKmlGraphicsEventHandler" OldName="DocumentLoaded" NewName="document_loaded" Category="method" />
+   <Mapping ParentScope="IAgStkGraphicsImageCollectionEventHandler" OldName="AddComplete" NewName="add_complete" Category="method" />
+   <Mapping ParentScope="IAgStkGraphicsTerrainCollectionEventHandler" OldName="AddComplete" NewName="add_complete" Category="method" />
+</Mappings>

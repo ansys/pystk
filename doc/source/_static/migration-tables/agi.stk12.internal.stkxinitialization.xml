@@ -1,4 +1,4 @@
-<Mappings>
+<Mappings OldRootScope="agi.stk12.stkx" NewRootScope="ansys.stk.core.stkx">
    <Mapping OldName="IAgSTKXInitialize" NewName="STKXInitialize" Category="interface" />
    <Mapping ParentScope="IAgSTKXInitialize" OldName="InitializeActivationContext" NewName="initialize_activation_context" Category="method" />
    <Mapping ParentScope="IAgSTKXInitialize" OldName="InitializeData" NewName="initialize_data" Category="method" />

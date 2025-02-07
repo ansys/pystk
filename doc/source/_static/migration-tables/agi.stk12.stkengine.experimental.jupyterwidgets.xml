@@ -1,4 +1,4 @@
-<Mappings>
+<Mappings OldRootScope="agi.stk12.stkengine.experimental.jupyterwidgets" NewRootScope="ansys.stk.core.stkengine.experimental.jupyterwidgets">
    <Mapping ParentScope="AsyncioTimerManager" OldName="Terminate" NewName="terminate" Category="method" />
    <Mapping ParentScope="AsyncioTimerManager" OldName="__InstallTimer" NewName="__install_timer" Category="method" />
    <Mapping ParentScope="AsyncioTimerManager" OldName="__DeleteTimer" NewName="__delete_timer" Category="method" />

@@ -1,4 +1,4 @@
-<Mappings>
+<Mappings OldRootScope="agi.stk12.internal.comutil" NewRootScope="ansys.stk.core.internal.comutil">
    <Mapping OldName="VARIANT" NewName="Variant" Category="class" />
    <Mapping OldName="SAFEARRAYBOUND" NewName="SafearrayBound" Category="class" />
    <Mapping OldName="DISPPARAMS" NewName="DispParams" Category="class" />

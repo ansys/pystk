@@ -1,4 +1,4 @@
-<Mappings>
+<Mappings OldRootScope="agi.stk12.internal.grpcutil" NewRootScope="ansys.stk.core.internal.grpcutil">
     <Mapping ParentScope="GrpcClient" OldName="TerminateConnection" NewName="terminate_connection" Category="method" />
     <Mapping ParentScope="GrpcClient" OldName="AddRef" NewName="add_ref" Category="method" />
     <Mapping ParentScope="GrpcClient" OldName="Release" NewName="release" Category="method" />

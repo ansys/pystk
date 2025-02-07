@@ -1,4 +1,4 @@
-<Mappings>
+<Mappings OldRootScope="agi.stk12.stkutil" NewRootScope="ansys.stk.core.stkutil">
    <Mapping ParentScope="AgEPositionType" OldName="eCartesian" NewName="CARTESIAN" Category="enum_value" />
    <Mapping ParentScope="AgEPositionType" OldName="eCylindrical" NewName="CYLINDRICAL" Category="enum_value" />
    <Mapping ParentScope="AgEPositionType" OldName="eGeocentric" NewName="GEOCENTRIC" Category="enum_value" />

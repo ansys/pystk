@@ -1,4 +1,4 @@
-<Mappings>
+<Mappings OldRootScope="agi.stk12.vgt" NewRootScope="ansys.stk.core.vgt">
    <Mapping ParentScope="AgECrdnCalcScalarType" OldName="eCrdnCalcScalarTypeUnknown" NewName="UNKNOWN" Category="enum_value" />
    <Mapping ParentScope="AgECrdnCalcScalarType" OldName="eCrdnCalcScalarTypeAngle" NewName="ANGLE" Category="enum_value" />
    <Mapping ParentScope="AgECrdnCalcScalarType" OldName="eCrdnCalcScalarTypeFixedAtTimeInstant" NewName="FIXED_AT_TIME_INSTANT" Category="enum_value" />
