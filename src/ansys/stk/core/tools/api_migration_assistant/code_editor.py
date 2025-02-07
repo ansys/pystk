@@ -20,8 +20,7 @@ class CodeEditor:
         """Apply the code migrations."""
         files_to_edit = self.recording.get_files_to_edit()
         for file_to_edit in files_to_edit:
-            with Path.open(file_to_edit, "rt") as f:
-                source_code = f.read()
+            source_code = Path(file_to_edit).read_text(encoding="utf-8")
             tree = MetadataWrapper(parse_module(source_code))
 
             transformer = MigrationTransformer(file_to_edit, self.recording, self.mappings)
@@ -29,6 +28,5 @@ class CodeEditor:
             modified_tree = tree.visit(transformer)
 
             migrated_filename = file_to_edit + "-migrated"
-            with Path.open(migrated_filename, "wt") as f:
-                logging.info(f"Writing {migrated_filename}")
-                f.write(modified_tree.code)
+            logging.info(f"Writing {migrated_filename}")
+            Path(migrated_filename).write_text(modified_tree.code, encoding="utf-8")    

@@ -111,12 +111,6 @@ class Recording:
         )
         return files_to_edit
 
-    def get_changes_for_file(self, filename):
-        """Get the changes for the specified file based on this recording."""
-        relative_filename = str(Path(filename).relative_to(self.root_directory_path))
-        changes = set([record for record in self.call_records if record.filename == relative_filename])
-        return sorted(changes)
-
     def get_change_for_file_region(self, filename, member_name, lineno, end_lineno, col_offset, end_col_offset):
         """Find the change corresponding to the specified region."""
         relative_filename = str(Path(filename).relative_to(self.root_directory_path))

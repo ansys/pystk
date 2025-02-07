@@ -73,32 +73,33 @@ class MigrationTransformer(CSTTransformer):
         # Intercept constructor calls
         full_name = get_full_name_for_node(updated_node)
 
-        if full_name is not None:
+        if full_name is None:
+            return updated_node
 
-            full_name_parts = full_name.split(".")
-            qualifier = ".".join(full_name_parts[:-1])
-            name = full_name_parts[-1]
+        full_name_parts = full_name.split(".")
+        qualifier = ".".join(full_name_parts[:-1])
+        name = full_name_parts[-1]
 
-            if self.mappings.has_mapping_for_type(name):
-                pos = self.get_metadata(metadata.PositionProvider, original_node)
+        if self.mappings.has_mapping_for_type(name):
+            pos = self.get_metadata(metadata.PositionProvider, original_node)
 
-                change = self.recording.get_change_for_file_region(
-                    self.filename,
-                    "__init__",
-                    pos.start.line,
-                    pos.end.line,
-                    pos.start.column,
-                    pos.end.column,
+            change = self.recording.get_change_for_file_region(
+                self.filename,
+                "__init__",
+                pos.start.line,
+                pos.end.line,
+                pos.start.column,
+                pos.end.column,
+            )
+
+            if change != None:
+                new_name = self.mappings.get_replacement_for_type(None, name)
+                new_qualifier = self.mappings.get_replacement_for_namespace(qualifier)
+                updated_node = updated_node.with_deep_changes(
+                    updated_node,
+                    func=self._assemble_names([x for x in new_qualifier.split(".") if x] + [new_name]),
                 )
-
-                if change != None:
-                    new_name = self.mappings.get_replacement_for_type(None, name)
-                    new_qualifier = self.mappings.get_replacement_for_namespace(qualifier)
-                    updated_node = updated_node.with_deep_changes(
-                        updated_node,
-                        func=self._assemble_names([x for x in new_qualifier.split(".") if x] + [new_name]),
-                    )
-                    return updated_node
+                return updated_node
 
         return updated_node
 

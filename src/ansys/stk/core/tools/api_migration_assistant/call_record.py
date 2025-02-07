@@ -44,7 +44,11 @@ class CallRecord:
         )
 
     def __lt__(self, other):
-        """Define the behavior of the less-than operator (<) for this class."""
+        """
+        Define the behavior of the less-than operator (<) for this class.
+        
+        Sort by order of appearance in the source file.
+        """
         if isinstance(other, CallRecord):
             return (
                 self.filename,

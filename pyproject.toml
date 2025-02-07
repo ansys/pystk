@@ -27,6 +27,9 @@ classifiers = [
 dependencies = [
 ]
 
+[project.scripts]
+pystk-migration-assistant = "ansys.stk.core.tools.api_migration_assistant.api_migration_assistant:main"
+
 [project.optional-dependencies]
 # TODO: the approval of PEP 735 should allow the usage of dependency groups
 # https://peps.python.org/pep-0735/
