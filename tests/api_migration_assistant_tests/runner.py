@@ -12,7 +12,7 @@ from ansys.stk.core.tools.api_migration_assistant import api_migration_assistant
 
 
 class Runner:
-    def __init__(self, api, api_mappings, input, api_root=None, in_process=True):
+    def __init__(self, api, api_mappings, input, api_root=None, in_process=True, extra_args=None, run_pytest=False):
         self.temp_directory = Path(tempfile.TemporaryDirectory().name)
         self.api = api
         self.api_mappings = api_mappings
@@ -26,6 +26,8 @@ class Runner:
         self.result_files = []
         self.entry_points = []
         self.keep_test_files = False
+        self.extra_args = extra_args
+        self.run_pytest = run_pytest
 
     def __enter__(self):
         return self
@@ -74,14 +76,15 @@ class Runner:
     ):
         if self.in_process:
 
+            if self.run_pytest:
+                raise RuntimeError("Running through pytest is only supported out of process")
+
             before_modules = list(sys.modules.keys())
             with pytest.MonkeyPatch.context() as m:
                 m.syspath_prepend(pythonpath)
 
                 for index, input_file in enumerate(self.input_files):
-                    print(
-                        f"input: {input_file} -> self.entry_points[index]={self.entry_points[index]}"
-                    )
+                    print(f"input: {input_file} -> self.entry_points[index]={self.entry_points[index]}")
                     if self.entry_points[index] is not None:
                         api_migration_assistant.record(
                             mappings_directory,
@@ -89,6 +92,8 @@ class Runner:
                             recordings_directory,
                             input_file,
                             self.entry_points[index],
+                            False,
+                            self.extra_args,
                         )
 
             after_modules = list(sys.modules.keys())
@@ -101,9 +106,7 @@ class Runner:
             env = os.environ.copy()
             env["PYTHONPATH"] = pythonpath
             for index, input_file in enumerate(self.input_files):
-                print(
-                    f"input: {input_file} -> self.entry_points[index]={self.entry_points[index]}"
-                )
+                print(f"input: {input_file} -> self.entry_points[index]={self.entry_points[index]}")
                 if self.entry_points[index] is not None:
                     record_command = [
                         sys.executable,
@@ -116,10 +119,24 @@ class Runner:
                         root_directory,
                         "--recordings-directory",
                         recordings_directory,
-                        "--entry-point",
-                        self.entry_points[index],
-                        input_file,
                     ]
+                    if self.run_pytest:
+                        pytest_rootdir = str(Path(input_file).parent.resolve())
+                        record_command += [
+                            "-m",
+                            "pytest",
+                            input_file,
+                            f"--rootdir={pytest_rootdir}",
+                            "--capture=no",
+                        ]
+                    else:
+                        record_command += [
+                            "--entry-point",
+                            self.entry_points[index],
+                            input_file,
+                        ]
+                    if self.extra_args is not None:
+                        record_command += self.extra_args
                     print(" ".join(record_command))
                     record_output = subprocess.call(
                         record_command,
@@ -128,9 +145,7 @@ class Runner:
                     if record_output != 0:
                         raise RuntimeError("api-migration-assistant record failed")
 
-    def _invoke_migration_assistant_apply(
-        self, mappings_directory, recordings_directory
-    ):
+    def _invoke_migration_assistant_apply(self, mappings_directory, recordings_directory):
 
         if self.in_process:
             api_migration_assistant.apply(mappings_directory, recordings_directory)
@@ -161,12 +176,8 @@ class Runner:
 
     def _run_migration_assistant(self):
 
-        mappings_directory = str(
-            (self.temp_directory / "api_mappings").absolute().resolve()
-        )
-        recordings_directory = str(
-            (self.temp_directory / "recordings").absolute().resolve()
-        )
+        mappings_directory = str((self.temp_directory / "api_mappings").absolute().resolve())
+        recordings_directory = str((self.temp_directory / "recordings").absolute().resolve())
 
         self._invoke_migration_assistant_record(
             pythonpath=str((self.temp_directory / "api").absolute().resolve()),
@@ -186,9 +197,7 @@ class Runner:
             output_file = Path(input_file).with_suffix(".py-migrated")
             output = output_file.read_text()
             expected_output = textwrap.dedent(expected_outputs[index])
-            self.keep_test_files = (
-                output != expected_output
-            )  # keep the test files when failed
+            self.keep_test_files = output != expected_output  # keep the test files when failed
             indented_expected_output = textwrap.indent(expected_output, "  ")
             indented_actual_output = textwrap.indent(output, "  ")
             assert (
@@ -196,13 +205,11 @@ class Runner:
             ), f"Expected: {indented_expected_output}but got: {indented_actual_output}(see {self.temp_directory})"
 
 
-def run(api, api_mappings, input, expected_output, api_root=None, in_process=True):
+def run(api, api_mappings, input, expected_output, api_root=None, in_process=True, extra_args=None, run_pytest=False):
     print(api_migration_assistant.__file__)
-    with Runner(api, api_mappings, input, api_root, in_process) as runner:
+    with Runner(api, api_mappings, input, api_root, in_process, extra_args, run_pytest) as runner:
         runner._setup_api(),
         runner._setup_api_mappings(),
         runner._setup_input(),
         runner._run_migration_assistant()
-        runner._assert_outputs(
-            expected_output if isinstance(expected_output, list) else [expected_output]
-        )
+        runner._assert_outputs(expected_output if isinstance(expected_output, list) else [expected_output])

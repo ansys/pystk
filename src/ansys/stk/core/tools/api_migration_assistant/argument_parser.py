@@ -28,65 +28,81 @@ class ArgumentParser:
         )
 
         subparsers = parser.add_subparsers(help="action to execute", required=True)
+        ArgumentParser._add_record_sub_parser(subparsers, record_handler)
+        ArgumentParser._add_apply_sub_parser(subparsers, apply_handler)
 
-        # Create the parser for the "record" command
+        return parser
+
+    @staticmethod
+    def _add_record_sub_parser(subparsers, record_handler):
         record_parser = subparsers.add_parser(
             "record",
-            help="record the execution of the specified script to identify the API calls to migrate",
+            help="record the execution of the specified program to identify the API calls to migrate",
         )
-        record_parser.add_argument("script", type=str, help="the script to record")
         record_parser.add_argument(
             "--entry-point",
             action="store",
             default="main",
+            metavar="<entry point>",
             dest="entry_point",
             help="entry point to invoke (default: main)",
         )
         record_parser.add_argument(
             "--root-directory",
+            metavar="<directory>",
             action="store",
             dest="root_directory",
-            help="only migrate files under this directory (default: script directory)",
+            help="only migrate files under this directory (default: program directory)",
         )
-        default_mappings_directory = str((Path(__file__).parent / "api-mappings").resolve()) # points to the mappings provided with the library
-        default_recordings_directory = str((Path.cwd() / "recordings").resolve())
+
+        ArgumentParser._add_mappings_recordings_directory_arguments(record_parser)
+
         record_parser.add_argument(
-            "--mappings-directory",
-            action="store",
-            dest="mappings_directory",
-            default=default_mappings_directory,
-            help=f"directory containing the XML API mappings (default: {default_mappings_directory})",
-        )
-        record_parser.add_argument(
-            "--recordings-directory",
-            action="store",
-            dest="recordings_directory",
-            default=default_recordings_directory,
-            help=f"directory receiving the XML recordings (default: {default_recordings_directory})",
+            "-m",
+            action="store_true",
+            default=False,
+            dest="run_as_module",
+            help="invoke the specified program as a module",
         )
         record_parser.add_argument(
-            "script_args",
-            help="remaining arguments are forwarded to the script",
+            "program",
+            type=str,
+            help="script file or module (if -m flag) to record",
+        )
+        record_parser.add_argument(
+            "program_args",
+            metavar="...",
+            help="arguments passed to program in sys.argv[1:]",
             nargs=argparse.REMAINDER,
         )
-        record_parser.set_defaults(handler=record_handler)
+        record_parser.set_defaults(handler=lambda args: record_handler(record_parser, args))
 
-        # Create the parser for the "apply" command
+    @staticmethod
+    def _add_apply_sub_parser(subparsers, apply_handler):
         apply_parser = subparsers.add_parser("apply", help="migrate the calls previously recorded to the new API")
-        apply_parser.add_argument(
+        ArgumentParser._add_mappings_recordings_directory_arguments(apply_parser)
+        apply_parser.set_defaults(handler=lambda args: apply_handler(apply_parser, args))
+
+    @staticmethod
+    def _add_mappings_recordings_directory_arguments(parser):
+        default_mappings_directory = str(
+            (Path(__file__).parent / "api-mappings").resolve()
+        )  # points to the mappings provided with the library
+        default_recordings_directory = str((Path.cwd() / "recordings").resolve())
+
+        parser.add_argument(
             "--mappings-directory",
             action="store",
             dest="mappings_directory",
+            metavar="<directory>",
             default=default_mappings_directory,
             help=f"directory containing the XML API mappings (default: {default_mappings_directory})",
         )
-        apply_parser.add_argument(
+        parser.add_argument(
             "--recordings-directory",
             action="store",
             dest="recordings_directory",
+            metavar="<directory>",
             default=default_recordings_directory,
             help=f"directory receiving the XML recordings (default: {default_recordings_directory})",
         )
-        apply_parser.set_defaults(handler=apply_handler)
-
-        return parser
