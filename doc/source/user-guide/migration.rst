@@ -78,9 +78,9 @@ The first phase of the process is to record one or multiple traces of the execut
 
 The recordings are saved in the specified directory. Therefore, make sure to specify an empty directory if starting from scratch on migrating a new application.
 
-By default, the API migration assistant executes the provided script and invokes `main` as an entry point. If you want to trigger the execution of a different entry point, use the `--entry-point` command line option.
+By default, the API migration assistant executes the provided script and invokes ``main`` as an entry point. If you want to trigger the execution of a different entry point, use the ``--entry-point`` command line option.
 
-If the `--recordings-directory=` option is not specified, a sub-directory named `recordings` is created in the current directory.
+If the ``--recordings-directory=`` option is not specified, a sub-directory named ``recordings`` is created in the current directory.
 
 This creates an XML file in the recordings directory. That file contains the calls made by your script to the STK API. Here is how it looks in the case of the snippet used for this example:
 
@@ -99,7 +99,7 @@ This creates an XML file in the recordings directory. That file contains the cal
     <call filename="snippet.py" lineno="17" end_lineno="17" col_offset="4" end_col_offset="18" type_name="STKEngineApplication" member_name="ShutDown"/>
     </recording>
 
-There are also other options available to tweak recording. Use the `--help` command line argument to display them.
+There are also other options available to tweak recording. Use the ``--help`` command line argument to display them.
 
 .. code-block:: console
 
@@ -128,7 +128,7 @@ There are also other options available to tweak recording. Use the `--help` comm
                             D:\Dev\github_root\pystk\recordings)
     -m                    invoke the specified program as a module
 
-Note that the `-m` option is required if your program is a library module. Here is an example using `pytest`:
+Note that the ``-m`` option is required if your program is a library module. Here is an example using ``pytest``:
 
 .. code-block:: console
 
@@ -156,11 +156,11 @@ Once you have accumulated one or more traces to cover all the paths in your Pyth
     INFO: Applying changes from ...
     INFO: Writing ... snippet.py-migrated
 
-This generates one `.py-migrated` file for each Python file in your application. Compare those files with the original files and tweak if needed. With the example, the diff looks like this:
+This generates one ``.py-migrated`` file for each Python file in your application. Compare those files with the original files and tweak if needed. With the example, the diff looks like this:
 
 .. image:: img/migration_diff.png
 
-There are additional options available to control how the changes are applied. Use the `--help` command line argument to display them.
+There are additional options available to control how the changes are applied. Use the ``--help`` command line argument to display them.
 
 .. code-block:: console
 
@@ -178,7 +178,7 @@ There are additional options available to control how the changes are applied. U
 Review, tweak, and accept
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Review the suggested code changes. Once you are satisfied with the results, rename the `.py-migrated` files and overwrite your original files. Then retest the migrated application to ensure that the migration completed successfully.
+Review the suggested code changes. Once you are satisfied with the results, rename the ``.py-migrated`` files and overwrite your original files. Then retest the migrated application to ensure that the migration completed successfully.
             
 
 Migration table
