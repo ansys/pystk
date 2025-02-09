@@ -180,3 +180,40 @@ def test_rename_correct_method_when_two_methods_with_same_name():
             m.MyMethodRenamed2(1, 2, 3, 4).MyMethodRenamed1(1, 2, 3, 4, 5, 6)
         """,
     )
+
+
+def test_rename_method_with_mro():
+    run(
+        """
+        class MyBaseClass1:
+            def MyMethod1(self):
+                pass
+        class MyBaseClass2:
+            def MyMethod2(self):
+                pass
+        class MyClass(MyBaseClass1, MyBaseClass2):
+            pass
+        """,
+        """
+        <Mappings>
+            <Mapping ParentScope="MyBaseClass1" OldName="MyMethod1" NewName="MyMethod1Renamed" Category="method" />
+            <Mapping ParentScope="MyBaseClass2" OldName="MyMethod2" NewName="MyMethod2Renamed" Category="method" />
+        </Mappings>
+        """,
+        """
+        from api import MyClass
+
+        def main():
+            m = MyClass()
+            m.MyMethod1()
+            m.MyMethod2()
+        """,
+        """
+        from api import MyClass
+
+        def main():
+            m = MyClass()
+            m.MyMethod1Renamed()
+            m.MyMethod2Renamed()
+        """,
+    )

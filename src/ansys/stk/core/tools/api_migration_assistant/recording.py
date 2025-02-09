@@ -28,9 +28,12 @@ class Recording:
         end_col_offset,
     ):
         """Add a new call record to this recording."""
-        relative_filename = str(Path(filename).relative_to(self.root_directory_path))
-        self.call_records.append(
-            CallRecord(
+        try:
+            relative_filename = str(Path(filename).relative_to(self.root_directory_path))
+        except ValueError:
+            logging.warning(f"{filename} is not under {self.root_directory_path}")
+        else:
+            new_record = CallRecord(
                 relative_filename,
                 type_name,
                 member_name,
@@ -39,11 +42,12 @@ class Recording:
                 col_offset,
                 end_col_offset,
             )
-        )
+            if not new_record in self.call_records:
+                self.call_records.append(new_record)
 
     def sort_call_records(self):
         """Sort the call recorded previously added."""
-        self.call_records = sorted(self.call_records)
+        self.call_records = sorted(list(set(self.call_records)))
 
     def save_to_xml(self, xml_file_name, description=None):
         """Save this recording to an XML file."""

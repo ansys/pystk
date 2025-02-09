@@ -16,24 +16,39 @@ class Recorder:
     Uses :func:`sys.setprofile` to intercept calls.
     """
 
-    def __init__(self, script, entry_point, root_directory, is_member_name_of_interest_func):
+    def __init__(
+        self, program, entry_point, root_directory, is_member_name_of_interest_func, run_as_module, program_args=None
+    ):
         """Construct a new recorder."""
-        self.script = script
+        self.program = program
         self.entry_point = entry_point
         self.root_directory_path = Path(root_directory).resolve()
         self.root_directory = root_directory
         self.is_member_name_of_interest_func = is_member_name_of_interest_func
         self.recording = Recording(self.root_directory_path)
+        self.run_as_module = run_as_module
+        self.program_args = program_args
 
     def record(self):
-        """Record the execution of the specified script."""
-        logging.info(f"Recording {self.script}")
-        script_filepath = Path(self.script)
-        script_dirpath = str(script_filepath.parent.resolve())
+        """Record the execution of the specified program."""
+        program_args_str = " ".join(self.program_args) if self.program_args else ""
+        if not self.run_as_module:
+            logging.info(f"Recording {self.program} {program_args_str}")
+            script_filepath = Path(self.program)
+            script_dirpath = str(script_filepath.parent.resolve())
+            sys_path_append_cmd = f"sys.path.append('{script_dirpath}')".replace("\\", "\\\\\\\\")
+            module_to_import = script_filepath.stem
+        else:
+            logging.info(f"Recording -m {self.program} {program_args_str}")
+            sys_path_append_cmd = ""
+            module_to_import = self.program
 
-        sys_path_append_cmd = f"sys.path.append('{script_dirpath}')".replace("\\", "\\\\\\\\")
-
-        module_to_import = script_filepath.stem
+        # Temporarily modify sys.argv to pass arguments to the recordee
+        prev_sys_argv = sys.argv
+        new_sys_argv = [module_to_import]
+        if self.program_args is not None:
+            new_sys_argv += self.program_args
+        sys.argv = new_sys_argv
 
         bootstrap = [
             "exec('import sys')",
@@ -49,13 +64,19 @@ class Recorder:
 
         sys.setprofile(None)
 
+        # Restore initial arguments
+        sys.argv = prev_sys_argv
+
         return self.recording
 
     def _get_client_frame_of_interest(self, frame):
         """Find the client frame calling the API of interest."""
         client_frame = frame.f_back
         client_filename = client_frame.f_code.co_filename
-        is_under_root_directory = self.root_directory_path in Path(client_filename).resolve().parents
+        client_filename_path = Path(client_filename).resolve()
+        is_under_root_directory = (
+            self.root_directory_path in client_filename_path.parents
+        ) and client_filename_path.exists()
         logging.debug(
             f"Checking frame: name={frame.f_code.co_name}, root directory={self.root_directory_path}, client filename={Path(client_filename).resolve()}"
         )
@@ -78,7 +99,10 @@ class Recorder:
             arg_info = inspect.getargvalues(lookup_frame)
             if len(arg_info.args) > 1 and arg_info.locals[arg_info.args[1]] == frame.f_code.co_name:
                 client_filename = client_frame.f_code.co_filename
-                is_under_root_directory = self.root_directory_path in Path(client_filename).resolve().parents
+                client_filename_path = Path(client_filename).resolve()
+                is_under_root_directory = (
+                    self.root_directory_path in client_filename_path.parents
+                ) and client_filename_path.exists()
                 if is_under_root_directory:
                     return client_frame
 

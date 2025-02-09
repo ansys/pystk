@@ -71,9 +71,9 @@ Recording traces
 
 The first phase of the process is to record one or multiple traces of the execution of your Python application using the old API. Start the recording by invoking the API migration assistant with the following options:
 
-.. code-block:: bash
+.. code-block:: console
 
-   pystk-migration-assistant record --recordings-directory=... snippet.py
+   $ pystk-migration-assistant record --recordings-directory=... snippet.py
    INFO: Recording ... snippet.py
 
 The recordings are saved in the specified directory. Therefore, make sure to specify an empty directory if starting from scratch on migrating a new application.
@@ -99,30 +99,50 @@ This creates an XML file in the recordings directory. That file contains the cal
     <call filename="snippet.py" lineno="17" end_lineno="17" col_offset="4" end_col_offset="18" type_name="STKEngineApplication" member_name="ShutDown"/>
     </recording>
 
-.. note::
+There are also other options available to tweak recording. Use the `--help` command line argument to display them.
 
-    There are also other options available to tweak recording. Use the `--help` command line argument to display them.
+.. code-block:: console
 
-    .. code-block:: bash
+    $ pystk-migration-assistant record --help
+    usage: pystk-migration-assistant record [-h] [--entry-point <entry point>]
+                                            [--root-directory <directory>]
+                                            [--mappings-directory <directory>]
+                                            [--recordings-directory <directory>] [-m]
+                                            program ...
 
-        pystk-migration-assistant record --help
-        usage: __main__.py record [-h] [--entry-point ENTRY_POINT] [--root-directory ROOT_DIRECTORY] [--mappings-directory MAPPINGS_DIRECTORY] [--recordings-directory RECORDINGS_DIRECTORY]
-                                script ...
+    positional arguments:
+    program               script file or module (if -m flag) to record
+    ...                   arguments passed to program in sys.argv[1:]
 
-        positional arguments:
-        script                the script to record
-        script_args           remaining arguments are forwarded to the script
+    options:
+    -h, --help            show this help message and exit
+    --entry-point <entry point>
+                            entry point to invoke (default: main)
+    --root-directory <directory>
+                            only migrate files under this directory (default: program directory)
+    --mappings-directory <directory>
+                            directory containing the XML API mappings (default: D:\Dev\github_root\pyst
+                            k\src\ansys\stk\core\tools\api_migration_assistant\api-mappings)
+    --recordings-directory <directory>
+                            directory receiving the XML recordings (default:
+                            D:\Dev\github_root\pystk\recordings)
+    -m                    invoke the specified program as a module
 
-        options:
-        -h, --help            show this help message and exit
-        --entry-point ENTRY_POINT
-                                entry point to invoke (default: main)
-        --root-directory ROOT_DIRECTORY
-                                only migrate files under this directory (default: script directory)
-        --mappings-directory MAPPINGS_DIRECTORY
-                                directory containing the XML API mappings (default: ...)
-        --recordings-directory RECORDINGS_DIRECTORY
-                                directory receiving the XML recordings (default: ...)
+Note that the `-m` option is required if your program is a library module. Here is an example using `pytest`:
+
+.. code-block:: console
+
+    $ pystk-migration-assistant record --root-directory=. -m pytest .
+    INFO: Recording -m pytest .
+    ================================== test session starts =================================
+    platform win32 -- Python 3.12.7, pytest-8.3.4, pluggy-1.5.0
+    rootdir: d:\Dev\api_migration_interceptor\test_stk
+    plugins: cov-6.0.0, xdist-3.6.1
+    collected 1 item
+
+    test.py .                                                                         [100%]
+
+    ================================== 1 passed in 17.95s ==================================
 
 
 Applying the changes
@@ -130,9 +150,9 @@ Applying the changes
 
 Once you have accumulated one or more traces to cover all the paths in your Python application, you can apply the changes using the following command line:
 
-.. code-block:: bash
+.. code-block:: console
 
-    pystk-migration-assistant record apply --recordings-directory=... snippet.py
+    $ pystk-migration-assistant record apply --recordings-directory=... snippet.py
     INFO: Applying changes from ...
     INFO: Writing ... snippet.py-migrated
 
@@ -140,20 +160,20 @@ This generates one `.py-migrated` file for each Python file in your application.
 
 .. image:: img/migration_diff.png
 
-.. note::
-    There are also other options available to tweak applying the changes. Use the `--help` command line argument to display them.
+There are additional options available to control how the changes are applied. Use the `--help` command line argument to display them.
 
-    .. code-block:: bash
+.. code-block:: console
 
-        pystk-migration-assistant record apply --help
-        usage: __main__.py apply [-h] [--mappings-directory MAPPINGS_DIRECTORY] [--recordings-directory RECORDINGS_DIRECTORY]
+    $ pystk-migration-assistant apply --help
+    usage: pystk-migration-assistant apply [-h] [--mappings-directory <directory>]
+                                        [--recordings-directory <directory>]
 
-        options:
-        -h, --help            show this help message and exit
-        --mappings-directory MAPPINGS_DIRECTORY
-                                directory containing the XML API mappings (default: ...)
-        --recordings-directory RECORDINGS_DIRECTORY
-                                directory receiving the XML recordings (default: ...)
+    options:
+    -h, --help            show this help message and exit
+    --mappings-directory <directory>
+                            directory containing the XML API mappings (default: ...)
+    --recordings-directory <directory>
+                            directory receiving the XML recordings (default:...)
 
 Review, tweak, and accept
 ~~~~~~~~~~~~~~~~~~~~~~~~~

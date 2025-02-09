@@ -14,16 +14,29 @@ from .recorder import Recorder
 from .recording import Recording
 
 
-def record(mappings_directory, root_directory, recordings_directory, script, entry_point):
-    """Invoke the specified entry point for the specified script, and record its execution."""
+def record(
+    mappings_directory,
+    root_directory,
+    recordings_directory,
+    program,
+    entry_point,
+    run_as_module=False,
+    program_args=None,
+):
+    """Invoke the specified entry point for the specified script or module, and record its execution."""
     mappings = Mappings.load_from(mappings_directory)
     if root_directory is None:
-        root_directory = str(Path(script).parent)
+        if run_as_module:
+            raise RuntimeError("root_directory argument is mandatory when running as a module")
+        else:
+            root_directory = str(Path(program).parent)
     recorder = Recorder(
-        script,
+        program,
         entry_point,
         root_directory,
         is_member_name_of_interest_func=mappings.is_member_name_of_interest,
+        run_as_module=run_as_module,
+        program_args=program_args,
     )
     recording = recorder.record()
 
@@ -34,14 +47,18 @@ def record(mappings_directory, root_directory, recordings_directory, script, ent
     recording.save_to_xml(str(recordings_file.resolve()), f"{Path.cwd()}> {' '.join(sys.argv)}")
 
 
-def _invoke_record(args):
+def _invoke_record(parser, args):
     """Invoke the record function above with the parameters extracted from the arguments."""
+    if args.root_directory is None and args.run_as_module:
+        parser.error("[--root-directory <directory>] must be specified when executing a module with [-m]")
     record(
         args.mappings_directory,
         args.root_directory,
         args.recordings_directory,
-        args.script,
+        args.program,
         args.entry_point,
+        args.run_as_module,
+        args.program_args,
     )
 
 
@@ -57,7 +74,7 @@ def apply(mappings_directory, recordings_directory):
         editor.apply_changes()
 
 
-def _invoke_apply(args):
+def _invoke_apply(parser, args):
     """Invoke the apply function above with the parameters extracted from the arguments."""
     apply(args.mappings_directory, args.recordings_directory)
 
