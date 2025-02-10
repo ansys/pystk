@@ -188,7 +188,7 @@ The table below lists the interface, classes, enumerations, and method names tha
 
 .. raw:: html
 
-    <table class="datatable table dataTable no-footer display" id="migration-table" role="grid" aria-describedby="DataTables_{{ module | replace('.', '_') }}_info">
+    <table class="datatable table dataTable no-footer display" id="js-migration-table" role="grid" aria-describedby="DataTables_{{ module | replace('.', '_') }}_info">
       <thead>
         <tr class="row-odd" role="row">
           <th class="head sorting_asc" tabindex="0" aria-controls="migration-table" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Old name activate to sort column descending" style="width: 153.312px;">
@@ -214,12 +214,12 @@ The table below lists the interface, classes, enumerations, and method names tha
             .then(function (data) {
 
                 // If DataTable is already initialized, destroy it first to reset the table
-                if ($.fn.dataTable.isDataTable('#migration-table')) {
-                    $('#migration-table').DataTable().clear().destroy();
+                if ($.fn.dataTable.isDataTable('#js-migration-table')) {
+                    $('#js-migration-table').DataTable().clear().destroy();
                 }
 
                 // Initialize the table with desired options
-                migrationTable = $("#migration-table").DataTable({
+                migrationTable = $("#js-migration-table").DataTable({
                     ordering: true,
                     language: {
                         emptyTable: "Loading..."
