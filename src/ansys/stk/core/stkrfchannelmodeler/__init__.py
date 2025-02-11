@@ -706,7 +706,7 @@ class IAnalysisConfigurationModel(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def validate_configuration(self) -> "ValidationResponse":
-        """Validates whether or not the configuration is ready to run."""
+        """Validate whether or not the configuration is ready to run."""
         return self._intf.get_property(IAnalysisConfigurationModel._metadata, IAnalysisConfigurationModel._get_validate_configuration_metadata)
 
     _get_validate_platform_facets_metadata = { "offset" : _get_validate_platform_facets_method_offset,
@@ -714,7 +714,7 @@ class IAnalysisConfigurationModel(object):
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
     def validate_platform_facets(self) -> "ValidationResponse":
-        """Validates the configuration platforms which provide facets are configured properly."""
+        """Validate the configuration platforms which provide facets are configured properly."""
         return self._intf.get_property(IAnalysisConfigurationModel._metadata, IAnalysisConfigurationModel._get_validate_platform_facets_metadata)
 
     _get_interval_start_metadata = { "offset" : _get_interval_start_method_offset,
@@ -3860,7 +3860,7 @@ class StkRFChannelModeler(SupportsDeleteCallback):
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
     def validate_analysis(self, analysis_configuration_name:str) -> "ValidationResponse":
-        """Validates an analysis configuration."""
+        """Validate an analysis configuration."""
         return self._intf.invoke(StkRFChannelModeler._metadata, StkRFChannelModeler._validate_analysis_metadata, analysis_configuration_name, OutArg())
 
     _property_names[transceiver_collection] = "transceiver_collection"
