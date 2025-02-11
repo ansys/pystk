@@ -75,7 +75,13 @@ def apply(mappings_directory, recordings_directory):
 
 
 def _invoke_apply(parser, args):
-    """Invoke the apply function above with the parameters extracted from the arguments."""
+    """
+    Invoke the apply function above with the parameters extracted from the arguments.
+    
+    Callback passed to ``ArgumentParser.create_parser`` as its ``apply_handler`` parameter,
+    which dictates the signature of the function, and which is why the ``parser`` argument
+    is present even if not used in the function implementation.
+    """
     apply(args.mappings_directory, args.recordings_directory)
 
 
