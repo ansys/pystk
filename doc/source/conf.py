@@ -43,6 +43,11 @@ html_context = {
     "base_url": f"https://github.com/ansys-internal/pystk/blob/main",
     "edit_page_provider_name": "GitHub",
     "edit_page_url_template": "{{ base_url }}/{{ 'doc/source/' if 'examples/' not in file_name else '' }}{{ file_name }}",
+    "page_assets": {
+        "user-guide/migration": {
+            "needs_datatables": True,
+        },
+    },
 }
 html_theme_options = {
     "header_links_before_dropdown": 6,
@@ -68,11 +73,8 @@ html_theme_options = {
 html_static_path = ["_static"]
 html_css_files = [
     "css/highlight.css",
-    "css/datatables.css",
 ]
-html_js_files = [
-    "js/datatables.js",
-]
+html_js_files = []
 
 # Sphinx extensions
 extensions = [
