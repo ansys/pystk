@@ -193,11 +193,11 @@ The table below lists the interface, classes, enumerations, and method names tha
         <!-- Initialize DataTables -->
         <script>
             $(document).ready(function() {
-                $('migration-datatable').DataTable();
+                $('#migration-datatable').DataTable();
             });
         </script>
     
-        <table class="display" style="width: 100%" >
+        <table id="migration-datatable" class="display" style="width: 100%" >
           <thead>
             <tr class="row-odd" role="row">
               <th class="head sorting_asc" tabindex="0" aria-controls="migration-table" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Old name activate to sort column descending" style="width: 153.312px;">
@@ -210,7 +210,10 @@ The table below lists the interface, classes, enumerations, and method names tha
           </thead>
           <tbody id="{{ module | replace('.', '_') }}_body">
             {% for mapping in mappings %}
-            <tr></tr>
+            <tr>
+                <td>{{ mapping }}</td>
+                <td>{{ mappings[new_name] }}</td>
+            </tr>
             {% endfor %}
           </tbody>
         </table>
