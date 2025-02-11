@@ -17,23 +17,18 @@ __all__ = ["Analysis", "AnalysisConfiguration", "AnalysisConfigurationCollection
 "SceneContributorCollection", "StkRFChannelModeler", "Transceiver", "TransceiverCollection", "TransceiverMode", "TransceiverModelType", 
 "ValidationResponse"]
 
-import typing
 
-from ctypes   import byref, POINTER
-from datetime import datetime
-from enum     import IntEnum, IntFlag
+from ctypes   import POINTER
+from enum     import IntEnum
 
 from ..internal  import comutil          as agcom
 from ..internal  import coclassutil      as agcls
 from ..internal  import marshall         as agmarshall
-from ..internal  import dataanalysisutil as agdata
-from ..utilities import colors           as agcolor
-from ..internal.comutil     import IUnknown, IDispatch, IPictureDisp
+from ..internal.comutil     import IUnknown, IDispatch
 from ..internal.apiutil     import (InterfaceProxy, EnumeratorProxy, OutArg, 
     initialize_from_source_object, get_interface_property, set_interface_attribute, 
     set_class_attribute, SupportsDeleteCallback)
-from ..internal.eventutil   import *
-from ..utilities.exceptions import *
+from ..utilities.exceptions import STKRuntimeError
 
 
 def _raise_uninitialized_error(*args):
@@ -1116,18 +1111,18 @@ class RadarImagingDataProduct(SupportsDeleteCallback):
         return self._intf.set_property(RadarImagingDataProduct._metadata, RadarImagingDataProduct._set_velocity_pixel_count_metadata, value)
 
     _get_range_window_type_metadata = { "offset" : _get_range_window_type_method_offset,
-            "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceOutArg(ImageWindowType),) }
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(ImageWindowType),) }
     @property
     def range_window_type(self) -> "ImageWindowType":
         """Get or set the range window type."""
         return self._intf.get_property(RadarImagingDataProduct._metadata, RadarImagingDataProduct._get_range_window_type_metadata)
 
     _set_range_window_type_metadata = { "offset" : _set_range_window_type_method_offset,
-            "arg_types" : (agcom.PVOID,),
-            "marshallers" : (agmarshall.InterfaceInArg(ImageWindowType)("ImageWindowType"),) }
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.EnumArg(ImageWindowType),) }
     @range_window_type.setter
-    def range_window_type(self, value:""ImageWindowType"") -> None:
+    def range_window_type(self, value:"ImageWindowType") -> None:
         """Get or set the range window type."""
         return self._intf.set_property(RadarImagingDataProduct._metadata, RadarImagingDataProduct._set_range_window_type_metadata, value)
 
@@ -1148,18 +1143,18 @@ class RadarImagingDataProduct(SupportsDeleteCallback):
         return self._intf.set_property(RadarImagingDataProduct._metadata, RadarImagingDataProduct._set_range_window_side_lobe_level_metadata, value)
 
     _get_velocity_window_type_metadata = { "offset" : _get_velocity_window_type_method_offset,
-            "arg_types" : (POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceOutArg(ImageWindowType),) }
+            "arg_types" : (POINTER(agcom.LONG),),
+            "marshallers" : (agmarshall.EnumArg(ImageWindowType),) }
     @property
     def velocity_window_type(self) -> "ImageWindowType":
         """Get or set the velocity window type."""
         return self._intf.get_property(RadarImagingDataProduct._metadata, RadarImagingDataProduct._get_velocity_window_type_metadata)
 
     _set_velocity_window_type_metadata = { "offset" : _set_velocity_window_type_method_offset,
-            "arg_types" : (agcom.PVOID,),
-            "marshallers" : (agmarshall.InterfaceInArg(ImageWindowType)("ImageWindowType"),) }
+            "arg_types" : (agcom.LONG,),
+            "marshallers" : (agmarshall.EnumArg(ImageWindowType),) }
     @velocity_window_type.setter
-    def velocity_window_type(self, value:""ImageWindowType"") -> None:
+    def velocity_window_type(self, value:"ImageWindowType") -> None:
         """Get or set the velocity window type."""
         return self._intf.set_property(RadarImagingDataProduct._metadata, RadarImagingDataProduct._set_velocity_window_type_metadata, value)
 
