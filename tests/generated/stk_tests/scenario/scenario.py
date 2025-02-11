@@ -334,10 +334,10 @@ class EarlyBoundTests(TestBase):
         ani.animation_step_type = ScenarioTimeStepType.X_REAL_TIME
         Assert.assertEqual(ScenarioTimeStepType.X_REAL_TIME, ani.animation_step_type)
 
-        ani.ccontinue_x_real_time_from_pause = True
-        Assert.assertTrue(ani.ccontinue_x_real_time_from_pause)
-        ani.ccontinue_x_real_time_from_pause = False
-        Assert.assertFalse(ani.ccontinue_x_real_time_from_pause)
+        ani.continue_x_real_time_from_pause = True
+        Assert.assertTrue(ani.continue_x_real_time_from_pause)
+        ani.continue_x_real_time_from_pause = False
+        Assert.assertFalse(ani.continue_x_real_time_from_pause)
 
         ani.animation_step_value = 21
         Assert.assertEqual(21, ani.animation_step_value)
@@ -3053,14 +3053,14 @@ class EarlyBoundTests(TestBase):
     def test_RF_Environment_AtmosphericAbsorption(self):
         propChan: "PropagationChannel" = EarlyBoundTests.AG_SC.rf_environment.propagation_channel
         atmosAbsorb: "IAtmosphericAbsorptionModel" = clr.CastAs(
-            propChan.atmos_absorption_model_component_linking.component, IAtmosphericAbsorptionModel
+            propChan.atmospheric_absorption_model_component_linking.component, IAtmosphericAbsorptionModel
         )
 
         propChan.enable_atmospheric_absorption = False
         Assert.assertFalse(propChan.enable_atmospheric_absorption)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            propChan.atmos_absorption_model_component_linking.set_component("ITU-R P676-13")
+            propChan.atmospheric_absorption_model_component_linking.set_component("ITU-R P676-13")
 
         propChan.enable_atmospheric_absorption = True
         Assert.assertTrue(propChan.enable_atmospheric_absorption)
@@ -3069,15 +3069,15 @@ class EarlyBoundTests(TestBase):
         if OSHelper.IsLinux():
             numModels = 7
 
-        STKUtilHelper.TestComponentLinking(propChan.atmos_absorption_model_component_linking, numModels)
+        STKUtilHelper.TestComponentLinking(propChan.atmospheric_absorption_model_component_linking, numModels)
 
         helper = AtmosphereHelper(TestBase.Application)
-        supportedAtmosAbsorptionModels = propChan.atmos_absorption_model_component_linking.supported_components
+        supportedAtmosAbsorptionModels = propChan.atmospheric_absorption_model_component_linking.supported_components
         aaModelName: str
         for aaModelName in supportedAtmosAbsorptionModels:
-            propChan.atmos_absorption_model_component_linking.set_component(aaModelName)
+            propChan.atmospheric_absorption_model_component_linking.set_component(aaModelName)
             aaModel: "IAtmosphericAbsorptionModel" = clr.CastAs(
-                propChan.atmos_absorption_model_component_linking.component, IAtmosphericAbsorptionModel
+                propChan.atmospheric_absorption_model_component_linking.component, IAtmosphericAbsorptionModel
             )
             Assert.assertEqual(aaModelName, aaModel.name)
             if aaModelName == "ITU-R P676-13":
@@ -3142,7 +3142,7 @@ class EarlyBoundTests(TestBase):
                 Assert.fail("Unknown model type")
 
         with pytest.raises(Exception, match=RegexSubstringMatch("Invalid component name")):
-            propChan.atmos_absorption_model_component_linking.set_component("bogus")
+            propChan.atmospheric_absorption_model_component_linking.set_component("bogus")
 
     def Test_IAgAtmosphericAbsorptionModelITURP676(self, iturp676: "IAtmosphericAbsorptionModelITURP676"):
         iturp676.fast_approximation_method = False
@@ -3275,7 +3275,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(numModels, len(supportedAtmosAbsorptionModels))
 
         Assert.assertEqual(
-            len(propChan.atmos_absorption_model_component_linking.supported_components),
+            len(propChan.atmospheric_absorption_model_component_linking.supported_components),
             len(supportedAtmosAbsorptionModels),
         )
 

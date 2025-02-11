@@ -112,7 +112,7 @@ Property detail
 
 .. py:property:: target_selection_method_type
     :canonical: ansys.stk.core.stkobjects.DirectionProviderObject.target_selection_method_type
-    :type: TargetSelectionMethodType
+    :type: TargetSelectionMethod
 
     Get or set the method type used to determine which targets are selected for steering.
 

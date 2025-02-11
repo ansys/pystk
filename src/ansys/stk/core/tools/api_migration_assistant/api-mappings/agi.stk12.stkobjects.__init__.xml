@@ -1983,7 +1983,7 @@
    <Mapping ParentScope="AgETargetSelectionMethodType" OldName="eTargetSelectionMethodRange" NewName="RANGE" Category="enum_value" />
    <Mapping ParentScope="AgETargetSelectionMethodType" OldName="eTargetSelectionMethodClosingVelocity" NewName="CLOSING_VELOCITY" Category="enum_value" />
    <Mapping ParentScope="AgETargetSelectionMethodType" OldName="eTargetSelectionMethodPriority" NewName="PRIORITY" Category="enum_value" />
-   <Mapping OldName="AgETargetSelectionMethodType" NewName="TargetSelectionMethodType" Category="enum_type" />
+   <Mapping OldName="AgETargetSelectionMethodType" NewName="TargetSelectionMethod" Category="enum_type" />
    <Mapping ParentScope="AgEAntennaGraphicsCoordinateSystem" OldName="eAgEAntennaGraphicsCoordinateSystemPolar" NewName="POLAR" Category="enum_value" />
    <Mapping ParentScope="AgEAntennaGraphicsCoordinateSystem" OldName="eAgEAntennaGraphicsCoordinateSystemRectangular" NewName="RECTANGULAR" Category="enum_value" />
    <Mapping ParentScope="AgEAntennaGraphicsCoordinateSystem" OldName="eAgEAntennaGraphicsCoordinateSystemSphericalAzEl" NewName="SPHERICAL_AZ_EL" Category="enum_value" />
@@ -3705,7 +3705,7 @@
    <Mapping ParentScope="IAgScAnimation" OldName="AnimCycleType" NewName="animation_end_loop_type" Category="method" />
    <Mapping ParentScope="IAgScAnimation" OldName="RefreshDeltaType" NewName="refresh_delta_type" Category="method" />
    <Mapping ParentScope="IAgScAnimation" OldName="AnimStepType" NewName="animation_step_type" Category="method" />
-   <Mapping ParentScope="IAgScAnimation" OldName="ContinueXRealtimeFromPause" NewName="ccontinue_x_real_time_from_pause" Category="method" />
+   <Mapping ParentScope="IAgScAnimation" OldName="ContinueXRealtimeFromPause" NewName="continue_x_real_time_from_pause" Category="method" />
    <Mapping ParentScope="IAgScAnimation" OldName="TimePeriod" NewName="time_period" Category="method" />
    <Mapping ParentScope="IAgScAnimation" OldName="TimeArrayIncrement" NewName="time_array_increment" Category="method" />
    <Mapping ParentScope="IAgScAnimation" OldName="SetTimeArrayComponent" NewName="set_time_array_component" Category="method" />
@@ -6535,7 +6535,7 @@
    <Mapping ParentScope="IAgPropagationChannel" OldName="EnableCloudsAndFogFadingLoss" NewName="enable_clouds_and_fog_fading_loss" Category="method" />
    <Mapping ParentScope="IAgPropagationChannel" OldName="EnableTroposphericScintillationFadingLoss" NewName="enable_tropospheric_scintillation_fading_loss" Category="method" />
    <Mapping ParentScope="IAgPropagationChannel" OldName="EnableIonosphericFadingLoss" NewName="enable_ionospheric_fading_loss" Category="method" />
-   <Mapping ParentScope="IAgPropagationChannel" OldName="AtmosAbsorptionModelComponentLinking" NewName="atmos_absorption_model_component_linking" Category="method" />
+   <Mapping ParentScope="IAgPropagationChannel" OldName="AtmosAbsorptionModelComponentLinking" NewName="atmospheric_absorption_model_component_linking" Category="method" />
    <Mapping ParentScope="IAgPropagationChannel" OldName="RainLossModelComponentLinking" NewName="rain_loss_model_component_linking" Category="method" />
    <Mapping ParentScope="IAgPropagationChannel" OldName="UrbanTerrestrialLossModelComponentLinking" NewName="urban_terrestrial_loss_model_component_linking" Category="method" />
    <Mapping ParentScope="IAgPropagationChannel" OldName="CloudsAndFogFadingLossModelComponentLinking" NewName="clouds_and_fog_fading_loss_model_component_linking" Category="method" />
@@ -7036,7 +7036,7 @@
    <Mapping ParentScope="IAgVePropagatorHPOP" OldName="Integrator" NewName="integrator" Category="method" />
    <Mapping ParentScope="IAgVePropagatorHPOP" OldName="Covariance" NewName="covariance" Category="method" />
    <Mapping ParentScope="IAgVePropagatorHPOP" OldName="EphemerisInterval" NewName="ephemeris_interval" Category="method" />
-   <Mapping ParentScope="IAgVePropagatorHPOP" OldName="DisplayCoordType" NewName="display_coord_type" Category="method" />
+   <Mapping ParentScope="IAgVePropagatorHPOP" OldName="DisplayCoordType" NewName="display_coordinate_type" Category="method" />
    <Mapping OldName="IAgVePropagatorJ2Perturbation" NewName="PropagatorJ2Perturbation" Category="interface" />
    <Mapping ParentScope="IAgVePropagatorJ2Perturbation" OldName="Propagate" NewName="propagate" Category="method" />
    <Mapping ParentScope="IAgVePropagatorJ2Perturbation" OldName="Step" NewName="step" Category="method" />
@@ -7044,7 +7044,7 @@
    <Mapping ParentScope="IAgVePropagatorJ2Perturbation" OldName="EphemerisInterval" NewName="ephemeris_interval" Category="method" />
    <Mapping ParentScope="IAgVePropagatorJ2Perturbation" OldName="PropagationFrame" NewName="propagation_frame" Category="method" />
    <Mapping ParentScope="IAgVePropagatorJ2Perturbation" OldName="SupportedPropagationFrames" NewName="supported_propagation_frames" Category="method" />
-   <Mapping ParentScope="IAgVePropagatorJ2Perturbation" OldName="DisplayCoordType" NewName="display_coord_type" Category="method" />
+   <Mapping ParentScope="IAgVePropagatorJ2Perturbation" OldName="DisplayCoordType" NewName="display_coordinate_type" Category="method" />
    <Mapping OldName="IAgVePropagatorJ4Perturbation" NewName="PropagatorJ4Perturbation" Category="interface" />
    <Mapping ParentScope="IAgVePropagatorJ4Perturbation" OldName="Propagate" NewName="propagate" Category="method" />
    <Mapping ParentScope="IAgVePropagatorJ4Perturbation" OldName="Step" NewName="step" Category="method" />
@@ -7052,14 +7052,14 @@
    <Mapping ParentScope="IAgVePropagatorJ4Perturbation" OldName="EphemerisInterval" NewName="ephemeris_interval" Category="method" />
    <Mapping ParentScope="IAgVePropagatorJ4Perturbation" OldName="PropagationFrame" NewName="propagation_frame" Category="method" />
    <Mapping ParentScope="IAgVePropagatorJ4Perturbation" OldName="SupportedPropagationFrames" NewName="supported_propagation_frames" Category="method" />
-   <Mapping ParentScope="IAgVePropagatorJ4Perturbation" OldName="DisplayCoordType" NewName="display_coord_type" Category="method" />
+   <Mapping ParentScope="IAgVePropagatorJ4Perturbation" OldName="DisplayCoordType" NewName="display_coordinate_type" Category="method" />
    <Mapping OldName="IAgVePropagatorLOP" NewName="PropagatorLOP" Category="interface" />
    <Mapping ParentScope="IAgVePropagatorLOP" OldName="Propagate" NewName="propagate" Category="method" />
    <Mapping ParentScope="IAgVePropagatorLOP" OldName="Step" NewName="step" Category="method" />
    <Mapping ParentScope="IAgVePropagatorLOP" OldName="InitialState" NewName="initial_state" Category="method" />
    <Mapping ParentScope="IAgVePropagatorLOP" OldName="ForceModel" NewName="force_model" Category="method" />
    <Mapping ParentScope="IAgVePropagatorLOP" OldName="EphemerisInterval" NewName="ephemeris_interval" Category="method" />
-   <Mapping ParentScope="IAgVePropagatorLOP" OldName="DisplayCoordType" NewName="display_coord_type" Category="method" />
+   <Mapping ParentScope="IAgVePropagatorLOP" OldName="DisplayCoordType" NewName="display_coordinate_type" Category="method" />
    <Mapping OldName="IAgVePropagatorSGP4" NewName="PropagatorSGP4" Category="interface" />
    <Mapping ParentScope="IAgVePropagatorSGP4" OldName="Propagate" NewName="propagate" Category="method" />
    <Mapping ParentScope="IAgVePropagatorSGP4" OldName="Step" NewName="step" Category="method" />
@@ -7069,7 +7069,7 @@
    <Mapping ParentScope="IAgVePropagatorSGP4" OldName="CommonTasks" NewName="common_tasks" Category="method" />
    <Mapping ParentScope="IAgVePropagatorSGP4" OldName="Settings" NewName="settings" Category="method" />
    <Mapping ParentScope="IAgVePropagatorSGP4" OldName="EphemerisInterval" NewName="ephemeris_interval" Category="method" />
-   <Mapping ParentScope="IAgVePropagatorSGP4" OldName="IntlDesignator" NewName="intl_designator" Category="method" />
+   <Mapping ParentScope="IAgVePropagatorSGP4" OldName="IntlDesignator" NewName="international_designator" Category="method" />
    <Mapping OldName="IAgVePropagatorSPICE" NewName="PropagatorSPICE" Category="interface" />
    <Mapping ParentScope="IAgVePropagatorSPICE" OldName="Propagate" NewName="propagate" Category="method" />
    <Mapping ParentScope="IAgVePropagatorSPICE" OldName="Step" NewName="step" Category="method" />
@@ -7096,7 +7096,7 @@
    <Mapping ParentScope="IAgVePropagatorTwoBody" OldName="EphemerisInterval" NewName="ephemeris_interval" Category="method" />
    <Mapping ParentScope="IAgVePropagatorTwoBody" OldName="PropagationFrame" NewName="propagation_frame" Category="method" />
    <Mapping ParentScope="IAgVePropagatorTwoBody" OldName="SupportedPropagationFrames" NewName="supported_propagation_frames" Category="method" />
-   <Mapping ParentScope="IAgVePropagatorTwoBody" OldName="DisplayCoordType" NewName="display_coord_type" Category="method" />
+   <Mapping ParentScope="IAgVePropagatorTwoBody" OldName="DisplayCoordType" NewName="display_coordinate_type" Category="method" />
    <Mapping OldName="IAgVePropagatorUserExternal" NewName="PropagatorUserExternal" Category="interface" />
    <Mapping ParentScope="IAgVePropagatorUserExternal" OldName="Propagate" NewName="propagate" Category="method" />
    <Mapping ParentScope="IAgVePropagatorUserExternal" OldName="StartTime" NewName="start_time" Category="method" />

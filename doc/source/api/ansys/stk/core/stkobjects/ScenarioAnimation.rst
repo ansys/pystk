@@ -51,7 +51,7 @@ Overview
               - Refresh Delta or high speed. A member of the AgEScRefreshDeltaType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimation.animation_step_type`
               - Time step, real time (with offset) or a multiple of real time. A member of the AgEScTimeStepType enumeration.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimation.ccontinue_x_real_time_from_pause`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimation.continue_x_real_time_from_pause`
               - Animation XRealtime Continue from Paused Time.
             * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimation.time_period`
               - Allow the user to configure the scenario's animation time period.
@@ -119,8 +119,8 @@ Property detail
 
     Time step, real time (with offset) or a multiple of real time. A member of the AgEScTimeStepType enumeration.
 
-.. py:property:: ccontinue_x_real_time_from_pause
-    :canonical: ansys.stk.core.stkobjects.ScenarioAnimation.ccontinue_x_real_time_from_pause
+.. py:property:: continue_x_real_time_from_pause
+    :canonical: ansys.stk.core.stkobjects.ScenarioAnimation.continue_x_real_time_from_pause
     :type: bool
 
     Animation XRealtime Continue from Paused Time.
