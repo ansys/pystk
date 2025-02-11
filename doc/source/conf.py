@@ -3,7 +3,6 @@
 from datetime import datetime
 import fnmatch
 import hashlib
-import json
 import os
 import pathlib
 import shutil
@@ -14,7 +13,6 @@ import zipfile
 import sphinx
 from sphinx.util import logging
 from sphinx.util.display import status_iterator
-from sphinx.errors import NoUri
 
 from ansys_sphinx_theme import (
     ansys_favicon,
@@ -603,7 +601,7 @@ def render_examples_as_pdf(app: sphinx.application.Sphinx, exception: Exception)
         )
 
 
-def render_migration_table(app: sphinx.application.Sphinx):
+def read_migration_tables(app: sphinx.application.Sphinx):
     """Convert an XML migration table to a JSON format.
 
     The final JSON format is as follows:
@@ -661,9 +659,11 @@ def render_migration_table(app: sphinx.application.Sphinx):
                         mappings[type_old_name] = {"new_name": type_old_name, "members": {}}
                     mappings[type_old_name]["members"][member_old_name] = member_new_name
 
-        json_file = xml_file.parent / "main.json"
-        json_file.write_text(json.dumps(mappings, indent=4))
+        jinja_contexts["migration_table"] = {
+            "mappings": mappings,
+        }
 
+        print(jinja_contexts["migration_table"])
 
 def setup(app: sphinx.application.Sphinx):
     """
@@ -681,7 +681,7 @@ def setup(app: sphinx.application.Sphinx):
     # build has completed, no matter its success, the examples are removed from
     # the source directory.
     app.connect("builder-inited", copy_docker_files_to_static_dir)
-    app.connect("builder-inited", render_migration_table)
+    app.connect("builder-inited", read_migration_tables)
 
     if BUILD_EXAMPLES:
         app.connect("builder-inited", copy_examples_files_to_source_dir)
