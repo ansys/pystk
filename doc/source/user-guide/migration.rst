@@ -186,96 +186,47 @@ Migration table
 
 The table below lists the interface, classes, enumerations, and method names that have been updated in PySTK. You can look up a specific name using the Search box to only display the rows that contain that symbol. Note that the root of the namespace has also changed from :py:attr:`agi.stk[version]` to :py:attr:`ansys.stk.core`.
 
-.. raw:: html
+.. jinja:: migration_table
 
-    <table class="datatable table dataTable no-footer display" id="js-migration-table" role="grid" aria-describedby="DataTables_{{ module | replace('.', '_') }}_info">
-      <thead>
-        <tr class="row-odd" role="row">
-          <th class="head sorting_asc" tabindex="0" aria-controls="migration-table" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Old name activate to sort column descending" style="width: 153.312px;">
-            <p>Old name</p>
-          </th>
-          <th class="head sorting" tabindex="0" aria-controls="migration-table" rowspan="1" colspan="1" aria-label="New name activate to sort column ascending" style="width: 153.312px;">
-            <p>New name</p>
-          </th>
-        </tr>
-      </thead>
-      <tbody id="{{ module | replace('.', '_') }}_body">
-        <!-- Rows will be dynamically added here. -->
-      </tbody>
-    </table>
+    .. raw:: html
 
-    <script>
-        let migrationTable;
-
-        fetch("../_static/migration-tables/main.json")
-            .then(function (response) {
-                return response.json();
-            })
-            .then(function (data) {
-
-                // If DataTable is already initialized, destroy it first to reset the table
-                if ($.fn.dataTable.isDataTable('#js-migration-table')) {
-                    $('#js-migration-table').DataTable().clear().destroy();
-                }
-
-                // Initialize the table with desired options
-                migrationTable = $("#js-migration-table").DataTable({
-                    ordering: true,
-                    language: {
-                        emptyTable: "Loading..."
-                    },
-                    scrollX: true,
-                });
-
-                // Clear previous content
-                migrationTable.clear();
-
-                function addRows(items) {
-                    Object.entries(items).forEach(([oldTypeName, content]) => {
-
-                        // Ignore private types
-                        if (oldTypeName.startsWith("_")) {
-                            return;
-                        }
-
-                        // Add the main row for the type
-                        let rowData = [
-                            `<b>${oldTypeName}</b>`,
-                            `<b>${content.new_name || ''}</b>` // Corrected to handle null or undefined
-                        ];
-                
-                        // Check if the content has members and handle it
-                        if (content.members) {
-                            let memberOldNames = '';
-                            let memberNewNames = '';
-                
-                            if (Array.isArray(content.members)) {
-                                // If members is an array, iterate with map
-                                content.members.forEach(member => {
-                                    memberOldNames += `<br>${member.oldName}<br>`;
-                                    memberNewNames += `<br>${member.newName || ''}<br>`;
-                                });
-                            } else if (typeof content.members === 'object') {
-                                // If members is an object, use Object.entries to iterate over key-value pairs
-                                Object.entries(content.members).forEach(([oldName, newName]) => {
-                                    memberOldNames += `<br>${oldName}<br>`;
-                                    memberNewNames += `<br>${newName || ''}<br>`;
-                                });
-                            }
-                
-                            // Add the member data next to the main type row
-                            rowData[0] += `<div style="padding-left: 2em;">${memberOldNames}</div>`;
-                            rowData[1] += `<div style="padding-left: 2em;">${memberNewNames}</div>`;
-                        }
-                
-                        // Add the row to the table
-                        migrationTable.row.add(rowData);
-                    });
-                }
-                addRows(data);
-
-                // Update the display
-                migrationTable.draw();
-
+        <!-- Initialize DataTables -->
+        <script>
+            $(document).ready(function() {
+                $('#migration-datatable').DataTable();
             });
-    </script>
+        </script>
+    
+        <table id="migration-datatable" class="display" style="width: 100%" >
+          <thead>
+            <tr class="row-odd" role="row">
+              <th class="head sorting_asc" tabindex="0" aria-controls="migration-table" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Old name activate to sort column descending" style="width: 153.312px;">
+                <p>Old name</p>
+              </th>
+              <th class="head sorting" tabindex="0" aria-controls="migration-table" rowspan="1" colspan="1" aria-label="New name activate to sort column ascending" style="width: 153.312px;">
+                <p>New name</p>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for mapping in mappings %}
+            {% if not mapping.startswith("_") %}
+            <tr>
+                <td>
+                    <b>{{ mapping }}</b>
+                    {% for old_member in mappings[mapping]["members"].keys() %}
+                        <br>{{ "&nbsp;" * 8 }}{{ old_member }}
+                    {% endfor %}
+                </td>
+                <td>
+                    <b>{{ mappings[mapping]["new_name"] }}</b>
+                    {% for new_member in mappings[mapping]["members"].values() %}
+                        <br>{{ "&nbsp;" * 8 }}{{ new_member }}
+                    {% endfor %}
+                </td>
+            </tr>
+            {% endif %}
+            {% endfor %}
+          </tbody>
+        </table>
+
