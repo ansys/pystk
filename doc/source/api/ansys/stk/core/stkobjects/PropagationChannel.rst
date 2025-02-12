@@ -81,7 +81,7 @@ Overview
               - Get or set the option to use the tropospheric scintillation fading loss model.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagationChannel.enable_ionospheric_fading_loss`
               - Get or set the option to use the ionoospheric fading loss model.
-            * - :py:attr:`~ansys.stk.core.stkobjects.PropagationChannel.atmos_absorption_model_component_linking`
+            * - :py:attr:`~ansys.stk.core.stkobjects.PropagationChannel.atmospheric_absorption_model_component_linking`
               - Get the link/embed controller for managing the atmospheric absorption model component.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagationChannel.rain_loss_model_component_linking`
               - Get the link/embed controller for managing the rain loss model component.
@@ -239,8 +239,8 @@ Property detail
 
     Get or set the option to use the ionoospheric fading loss model.
 
-.. py:property:: atmos_absorption_model_component_linking
-    :canonical: ansys.stk.core.stkobjects.PropagationChannel.atmos_absorption_model_component_linking
+.. py:property:: atmospheric_absorption_model_component_linking
+    :canonical: ansys.stk.core.stkobjects.PropagationChannel.atmospheric_absorption_model_component_linking
     :type: IComponentLinkEmbedControl
 
     Get the link/embed controller for managing the atmospheric absorption model component.

@@ -41,7 +41,7 @@ Overview
               - Get the covariance parameters.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorHPOP.ephemeris_interval`
               - Get the propagator's ephemeris interval.
-            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorHPOP.display_coord_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorHPOP.display_coordinate_type`
               - The propagator's display coordinate type.
 
 
@@ -93,8 +93,8 @@ Property detail
 
     Get the propagator's ephemeris interval.
 
-.. py:property:: display_coord_type
-    :canonical: ansys.stk.core.stkobjects.PropagatorHPOP.display_coord_type
+.. py:property:: display_coordinate_type
+    :canonical: ansys.stk.core.stkobjects.PropagatorHPOP.display_coordinate_type
     :type: PropagatorDisplayCoordinateType
 
     The propagator's display coordinate type.

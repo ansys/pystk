@@ -19,28 +19,28 @@ Summary
             :widths: auto
         
 
-            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.IStkRfcmProgressTrackCancel`
+            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.IProgressTrackCancel`
               - Control for progress tracker.
 
-            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.IStkRfcmAntenna`
+            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.IAntenna`
               - Base interface for a transceiver antenna model.
 
-            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.IStkRfcmTransceiverModel`
+            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.ITransceiverModel`
               - Base interface which defines common properties for a transceiver model.
 
-            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.IStkRfcmSceneContributorCollection`
+            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.ISceneContributorCollection`
               - Represents a collection of scene contributors.
 
-            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.IStkRfcmResponse`
+            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.IResponse`
               - Properties and data for a channel characaterization response.
 
-            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.IStkRfcmAnalysisLink`
+            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.IAnalysisLink`
               - Properties for a transceiver link for an analysis.
 
-            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.IStkRfcmAnalysisConfigurationModel`
+            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.IAnalysisConfigurationModel`
               - Base interface for all analysis configuration models.
 
-            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.IStkRfcmRadarAnalysisConfigurationModel`
+            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.IRadarAnalysisConfigurationModel`
               - Properties for an analysis configuration model for a radar analysis. This contains a collection of the transceiver configurations belonging to the radar analysis.
 
     
@@ -51,124 +51,124 @@ Summary
             :widths: auto
         
 
-            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmRadarImagingDataProduct`
+            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.RadarImagingDataProduct`
               - Imaging data product that facilitates the generation of range doppler radar images.
 
-            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmMaterial`
+            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.Material`
               - A material for scene contributors.
 
-            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmFacetTileset`
+            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.FacetTileset`
               - The facet tileset information.
 
-            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmValidationResponse`
+            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.ValidationResponse`
               - The response from validating an analysis configuration.
 
-            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmExtent`
+            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.Extent`
               - The extent in which the channel characterizations will be computed.
 
-            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmCommunicationsWaveform`
+            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.CommunicationsWaveform`
               - The waveform settings of a communications transceiver.
 
-            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmRadarWaveform`
+            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.RadarWaveform`
               - The waveform settings of a radar transceiver.
 
-            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmParametricBeamAntenna`
+            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.ParametricBeamAntenna`
               - The antenna settings for a parametric beam antenna.
 
-            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmElementExportPatternAntenna`
+            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.ElementExportPatternAntenna`
               - The antenna settings for an element export pattern antenna.
 
-            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmFarFieldDataPatternAntenna`
+            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.FarFieldDataPatternAntenna`
               - The antenna settings for a far field data pattern antenna.
 
-            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmTransceiver`
+            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.Transceiver`
               - The transceiver object and its settings.
 
-            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmCommunicationsTransceiverConfiguration`
+            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.CommunicationsTransceiverConfiguration`
               - The transceiver configuration for a communications transceiver.
 
-            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmRadarTransceiverConfiguration`
+            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.RadarTransceiverConfiguration`
               - The transceiver configuration for a radar transceiver.
 
-            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmRadarImagingDataProductCollection`
+            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.RadarImagingDataProductCollection`
               - A collection of radar transceivers.
 
-            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmRadarTransceiverConfigurationCollection`
+            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.RadarTransceiverConfigurationCollection`
               - A collection of radar transceivers.
 
-            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmAnalysisConfiguration`
+            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.AnalysisConfiguration`
               - The configuration for an analysis.
 
-            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmCommunicationsAnalysisConfigurationModel`
+            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.CommunicationsAnalysisConfigurationModel`
               - The analysis configuration model for a communications analysis. This contains a collection of the transceiver configurations belonging to the communications analysis.
 
-            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmRadarISarAnalysisConfigurationModel`
+            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.RadarISarAnalysisConfigurationModel`
               - The analysis configuration model for an ISar analysis. This contains a collection of the transceiver configurations belonging to the ISar analysis.
 
-            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmRadarSarAnalysisConfigurationModel`
+            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.RadarSarAnalysisConfigurationModel`
               - The analysis configuration model for a Sar analysis. This contains a collection of the transceiver configurations belonging to the Sar analysis.
 
-            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmTransceiverCollection`
+            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.TransceiverCollection`
               - A collection of transceiver objects.
 
-            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmFacetTilesetCollection`
+            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.FacetTilesetCollection`
               - A collection of facet tilesets.
 
-            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmSceneContributor`
+            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.SceneContributor`
               - A scene contributor object.
 
-            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmSceneContributorCollection`
+            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.SceneContributorCollection`
               - A collection of scene contributor objects.
 
-            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmRadarTargetCollection`
+            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.RadarTargetCollection`
               - A collection of radar target objects.
 
-            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmRadarSarImageLocation`
+            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.RadarSarImageLocation`
               - The image location information for use by a range doppler Sar analysis.
 
-            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmRadarSarImageLocationCollection`
+            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.RadarSarImageLocationCollection`
               - A collection of image location information.
 
-            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmCommunicationsTransceiverConfigurationCollection`
+            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.CommunicationsTransceiverConfigurationCollection`
               - A collection of communication transceivers.
 
-            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmAnalysisConfigurationCollection`
+            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.AnalysisConfigurationCollection`
               - A collection of analysis configurations.
 
-            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmComputeOptions`
+            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.ComputeOptions`
               - The options for computing RF Channel Modeler.
 
             * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.StkRFChannelModeler`
               - The main RF Channel Modeler object.
 
-            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmCommunicationsTransceiverModel`
+            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.CommunicationsTransceiverModel`
               - The model for a communications transceiver.
 
-            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmRadarTransceiverModel`
+            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.RadarTransceiverModel`
               - The model for a radar transceiver.
 
-            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmRangeDopplerResponse`
+            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.RangeDopplerResponse`
               - The response data and properties for a range doppler channel characterization.
 
-            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmFrequencyPulseResponse`
+            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.FrequencyPulseResponse`
               - The response data and properties for a frequency pulse channel characterization.
 
-            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmAnalysisLink`
+            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.AnalysisLink`
               - A transceiver link for an analysis.
 
-            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmRadarSarAnalysisLink`
+            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.RadarSarAnalysisLink`
               - A transceiver link for a Sar analysis.
 
-            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmRadarISarAnalysisLink`
+            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.RadarISarAnalysisLink`
               - A transceiver link for an ISar analysis.
 
-            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmAnalysisLinkCollection`
+            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.AnalysisLinkCollection`
               - A collection of links between transceivers.
 
-            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmAnalysis`
+            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.Analysis`
               - An RF Channel Modeler analysis.
 
-            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.StkRfcmGpuProperties`
+            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.GpuProperties`
               - The properties of a GPU pertaining to RF Channel Modeler.
 
 
@@ -179,31 +179,31 @@ Summary
             :widths: auto
         
 
-            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.RfcmChannelResponseType`
+            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.ChannelResponseType`
               - Channel Response Type
 
-            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.RfcmAnalysisConfigurationModelType`
+            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.AnalysisConfigurationModelType`
               - Analysis Configuration Model Type
 
-            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.RfcmTransceiverMode`
+            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.TransceiverMode`
               - Transceiver Mode
 
-            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.RfcmAnalysisConfigurationComputeStepMode`
+            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.AnalysisConfigurationComputeStepMode`
               - Analysis configuration compute step mode.
 
-            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.RfcmAnalysisResultsFileMode`
+            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.AnalysisResultsFileMode`
               - Analysis results file mode.
 
-            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.RfcmAnalysisSolverBoundingBoxMode`
+            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.AnalysisSolverBoundingBoxMode`
               - Analysis solver bounding box mode.
 
-            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.RfcmTransceiverModelType`
+            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.TransceiverModelType`
               - Transceiver Model Type
 
-            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.RfcmPolarizationType`
+            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.PolarizationType`
               - Polarization Type
 
-            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.RfcmImageWindowType`
+            * - :py:class:`~ansys.stk.core.stkrfchannelmodeler.ImageWindowType`
               - Polarization Type
 
 
@@ -224,73 +224,73 @@ Object Model components specifically designed to support STK RF Channel Modeler.
     :maxdepth: 1
     :hidden:
 
-     IStkRfcmProgressTrackCancel<stkrfchannelmodeler/IStkRfcmProgressTrackCancel>
-     IStkRfcmAntenna<stkrfchannelmodeler/IStkRfcmAntenna>
-     IStkRfcmTransceiverModel<stkrfchannelmodeler/IStkRfcmTransceiverModel>
-     IStkRfcmSceneContributorCollection<stkrfchannelmodeler/IStkRfcmSceneContributorCollection>
-     IStkRfcmResponse<stkrfchannelmodeler/IStkRfcmResponse>
-     IStkRfcmAnalysisLink<stkrfchannelmodeler/IStkRfcmAnalysisLink>
-     IStkRfcmAnalysisConfigurationModel<stkrfchannelmodeler/IStkRfcmAnalysisConfigurationModel>
-     IStkRfcmRadarAnalysisConfigurationModel<stkrfchannelmodeler/IStkRfcmRadarAnalysisConfigurationModel>
+     IProgressTrackCancel<stkrfchannelmodeler/IProgressTrackCancel>
+     IAntenna<stkrfchannelmodeler/IAntenna>
+     ITransceiverModel<stkrfchannelmodeler/ITransceiverModel>
+     ISceneContributorCollection<stkrfchannelmodeler/ISceneContributorCollection>
+     IResponse<stkrfchannelmodeler/IResponse>
+     IAnalysisLink<stkrfchannelmodeler/IAnalysisLink>
+     IAnalysisConfigurationModel<stkrfchannelmodeler/IAnalysisConfigurationModel>
+     IRadarAnalysisConfigurationModel<stkrfchannelmodeler/IRadarAnalysisConfigurationModel>
 
 .. toctree::
     :titlesonly:
     :maxdepth: 1
     :hidden:
 
-     StkRfcmRadarImagingDataProduct<stkrfchannelmodeler/StkRfcmRadarImagingDataProduct>
-     StkRfcmMaterial<stkrfchannelmodeler/StkRfcmMaterial>
-     StkRfcmFacetTileset<stkrfchannelmodeler/StkRfcmFacetTileset>
-     StkRfcmValidationResponse<stkrfchannelmodeler/StkRfcmValidationResponse>
-     StkRfcmExtent<stkrfchannelmodeler/StkRfcmExtent>
-     StkRfcmCommunicationsWaveform<stkrfchannelmodeler/StkRfcmCommunicationsWaveform>
-     StkRfcmRadarWaveform<stkrfchannelmodeler/StkRfcmRadarWaveform>
-     StkRfcmParametricBeamAntenna<stkrfchannelmodeler/StkRfcmParametricBeamAntenna>
-     StkRfcmElementExportPatternAntenna<stkrfchannelmodeler/StkRfcmElementExportPatternAntenna>
-     StkRfcmFarFieldDataPatternAntenna<stkrfchannelmodeler/StkRfcmFarFieldDataPatternAntenna>
-     StkRfcmTransceiver<stkrfchannelmodeler/StkRfcmTransceiver>
-     StkRfcmCommunicationsTransceiverConfiguration<stkrfchannelmodeler/StkRfcmCommunicationsTransceiverConfiguration>
-     StkRfcmRadarTransceiverConfiguration<stkrfchannelmodeler/StkRfcmRadarTransceiverConfiguration>
-     StkRfcmRadarImagingDataProductCollection<stkrfchannelmodeler/StkRfcmRadarImagingDataProductCollection>
-     StkRfcmRadarTransceiverConfigurationCollection<stkrfchannelmodeler/StkRfcmRadarTransceiverConfigurationCollection>
-     StkRfcmAnalysisConfiguration<stkrfchannelmodeler/StkRfcmAnalysisConfiguration>
-     StkRfcmCommunicationsAnalysisConfigurationModel<stkrfchannelmodeler/StkRfcmCommunicationsAnalysisConfigurationModel>
-     StkRfcmRadarISarAnalysisConfigurationModel<stkrfchannelmodeler/StkRfcmRadarISarAnalysisConfigurationModel>
-     StkRfcmRadarSarAnalysisConfigurationModel<stkrfchannelmodeler/StkRfcmRadarSarAnalysisConfigurationModel>
-     StkRfcmTransceiverCollection<stkrfchannelmodeler/StkRfcmTransceiverCollection>
-     StkRfcmFacetTilesetCollection<stkrfchannelmodeler/StkRfcmFacetTilesetCollection>
-     StkRfcmSceneContributor<stkrfchannelmodeler/StkRfcmSceneContributor>
-     StkRfcmSceneContributorCollection<stkrfchannelmodeler/StkRfcmSceneContributorCollection>
-     StkRfcmRadarTargetCollection<stkrfchannelmodeler/StkRfcmRadarTargetCollection>
-     StkRfcmRadarSarImageLocation<stkrfchannelmodeler/StkRfcmRadarSarImageLocation>
-     StkRfcmRadarSarImageLocationCollection<stkrfchannelmodeler/StkRfcmRadarSarImageLocationCollection>
-     StkRfcmCommunicationsTransceiverConfigurationCollection<stkrfchannelmodeler/StkRfcmCommunicationsTransceiverConfigurationCollection>
-     StkRfcmAnalysisConfigurationCollection<stkrfchannelmodeler/StkRfcmAnalysisConfigurationCollection>
-     StkRfcmComputeOptions<stkrfchannelmodeler/StkRfcmComputeOptions>
+     RadarImagingDataProduct<stkrfchannelmodeler/RadarImagingDataProduct>
+     Material<stkrfchannelmodeler/Material>
+     FacetTileset<stkrfchannelmodeler/FacetTileset>
+     ValidationResponse<stkrfchannelmodeler/ValidationResponse>
+     Extent<stkrfchannelmodeler/Extent>
+     CommunicationsWaveform<stkrfchannelmodeler/CommunicationsWaveform>
+     RadarWaveform<stkrfchannelmodeler/RadarWaveform>
+     ParametricBeamAntenna<stkrfchannelmodeler/ParametricBeamAntenna>
+     ElementExportPatternAntenna<stkrfchannelmodeler/ElementExportPatternAntenna>
+     FarFieldDataPatternAntenna<stkrfchannelmodeler/FarFieldDataPatternAntenna>
+     Transceiver<stkrfchannelmodeler/Transceiver>
+     CommunicationsTransceiverConfiguration<stkrfchannelmodeler/CommunicationsTransceiverConfiguration>
+     RadarTransceiverConfiguration<stkrfchannelmodeler/RadarTransceiverConfiguration>
+     RadarImagingDataProductCollection<stkrfchannelmodeler/RadarImagingDataProductCollection>
+     RadarTransceiverConfigurationCollection<stkrfchannelmodeler/RadarTransceiverConfigurationCollection>
+     AnalysisConfiguration<stkrfchannelmodeler/AnalysisConfiguration>
+     CommunicationsAnalysisConfigurationModel<stkrfchannelmodeler/CommunicationsAnalysisConfigurationModel>
+     RadarISarAnalysisConfigurationModel<stkrfchannelmodeler/RadarISarAnalysisConfigurationModel>
+     RadarSarAnalysisConfigurationModel<stkrfchannelmodeler/RadarSarAnalysisConfigurationModel>
+     TransceiverCollection<stkrfchannelmodeler/TransceiverCollection>
+     FacetTilesetCollection<stkrfchannelmodeler/FacetTilesetCollection>
+     SceneContributor<stkrfchannelmodeler/SceneContributor>
+     SceneContributorCollection<stkrfchannelmodeler/SceneContributorCollection>
+     RadarTargetCollection<stkrfchannelmodeler/RadarTargetCollection>
+     RadarSarImageLocation<stkrfchannelmodeler/RadarSarImageLocation>
+     RadarSarImageLocationCollection<stkrfchannelmodeler/RadarSarImageLocationCollection>
+     CommunicationsTransceiverConfigurationCollection<stkrfchannelmodeler/CommunicationsTransceiverConfigurationCollection>
+     AnalysisConfigurationCollection<stkrfchannelmodeler/AnalysisConfigurationCollection>
+     ComputeOptions<stkrfchannelmodeler/ComputeOptions>
      StkRFChannelModeler<stkrfchannelmodeler/StkRFChannelModeler>
-     StkRfcmCommunicationsTransceiverModel<stkrfchannelmodeler/StkRfcmCommunicationsTransceiverModel>
-     StkRfcmRadarTransceiverModel<stkrfchannelmodeler/StkRfcmRadarTransceiverModel>
-     StkRfcmRangeDopplerResponse<stkrfchannelmodeler/StkRfcmRangeDopplerResponse>
-     StkRfcmFrequencyPulseResponse<stkrfchannelmodeler/StkRfcmFrequencyPulseResponse>
-     StkRfcmAnalysisLink<stkrfchannelmodeler/StkRfcmAnalysisLink>
-     StkRfcmRadarSarAnalysisLink<stkrfchannelmodeler/StkRfcmRadarSarAnalysisLink>
-     StkRfcmRadarISarAnalysisLink<stkrfchannelmodeler/StkRfcmRadarISarAnalysisLink>
-     StkRfcmAnalysisLinkCollection<stkrfchannelmodeler/StkRfcmAnalysisLinkCollection>
-     StkRfcmAnalysis<stkrfchannelmodeler/StkRfcmAnalysis>
-     StkRfcmGpuProperties<stkrfchannelmodeler/StkRfcmGpuProperties>
+     CommunicationsTransceiverModel<stkrfchannelmodeler/CommunicationsTransceiverModel>
+     RadarTransceiverModel<stkrfchannelmodeler/RadarTransceiverModel>
+     RangeDopplerResponse<stkrfchannelmodeler/RangeDopplerResponse>
+     FrequencyPulseResponse<stkrfchannelmodeler/FrequencyPulseResponse>
+     AnalysisLink<stkrfchannelmodeler/AnalysisLink>
+     RadarSarAnalysisLink<stkrfchannelmodeler/RadarSarAnalysisLink>
+     RadarISarAnalysisLink<stkrfchannelmodeler/RadarISarAnalysisLink>
+     AnalysisLinkCollection<stkrfchannelmodeler/AnalysisLinkCollection>
+     Analysis<stkrfchannelmodeler/Analysis>
+     GpuProperties<stkrfchannelmodeler/GpuProperties>
 
 .. toctree::
     :titlesonly:
     :maxdepth: 1
     :hidden:
 
-    ≔ RfcmChannelResponseType<stkrfchannelmodeler/RfcmChannelResponseType>
-    ≔ RfcmAnalysisConfigurationModelType<stkrfchannelmodeler/RfcmAnalysisConfigurationModelType>
-    ≔ RfcmTransceiverMode<stkrfchannelmodeler/RfcmTransceiverMode>
-    ≔ RfcmAnalysisConfigurationComputeStepMode<stkrfchannelmodeler/RfcmAnalysisConfigurationComputeStepMode>
-    ≔ RfcmAnalysisResultsFileMode<stkrfchannelmodeler/RfcmAnalysisResultsFileMode>
-    ≔ RfcmAnalysisSolverBoundingBoxMode<stkrfchannelmodeler/RfcmAnalysisSolverBoundingBoxMode>
-    ≔ RfcmTransceiverModelType<stkrfchannelmodeler/RfcmTransceiverModelType>
-    ≔ RfcmPolarizationType<stkrfchannelmodeler/RfcmPolarizationType>
-    ≔ RfcmImageWindowType<stkrfchannelmodeler/RfcmImageWindowType>
+    ≔ ChannelResponseType<stkrfchannelmodeler/ChannelResponseType>
+    ≔ AnalysisConfigurationModelType<stkrfchannelmodeler/AnalysisConfigurationModelType>
+    ≔ TransceiverMode<stkrfchannelmodeler/TransceiverMode>
+    ≔ AnalysisConfigurationComputeStepMode<stkrfchannelmodeler/AnalysisConfigurationComputeStepMode>
+    ≔ AnalysisResultsFileMode<stkrfchannelmodeler/AnalysisResultsFileMode>
+    ≔ AnalysisSolverBoundingBoxMode<stkrfchannelmodeler/AnalysisSolverBoundingBoxMode>
+    ≔ TransceiverModelType<stkrfchannelmodeler/TransceiverModelType>
+    ≔ PolarizationType<stkrfchannelmodeler/PolarizationType>
+    ≔ ImageWindowType<stkrfchannelmodeler/ImageWindowType>
 
