@@ -208,11 +208,21 @@ The table below lists the interface, classes, enumerations, and method names tha
               </th>
             </tr>
           </thead>
-          <tbody id="{{ module | replace('.', '_') }}_body">
+          <tbody>
             {% for mapping in mappings %}
             <tr>
-                <td>{{ mapping }}</td>
-                <td>{{ mappings[new_name] }}</td>
+                <td>
+                    <b>{{ mapping }}</b>
+                    {% for old_member in mappings[mapping]["members"].keys() %}
+                        <br>{{ "&nbsp;" * 8 }}{{ old_member }}
+                    {% endfor %}
+                </td>
+                <td>
+                    <b>{{ mappings[mapping]["new_name"] }}</b>
+                    {% for new_member in mappings[mapping]["members"].values() %}
+                        <br>{{ "&nbsp;" * 8 }}{{ new_member }}
+                    {% endfor %}
+                </td>
             </tr>
             {% endfor %}
           </tbody>
