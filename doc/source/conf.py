@@ -3,7 +3,6 @@
 from datetime import datetime
 import fnmatch
 import hashlib
-import json
 import os
 import pathlib
 import shutil
@@ -14,7 +13,6 @@ import zipfile
 import sphinx
 from sphinx.util import logging
 from sphinx.util.display import status_iterator
-from sphinx.errors import NoUri
 
 from ansys_sphinx_theme import (
     ansys_favicon,
@@ -43,6 +41,11 @@ html_context = {
     "base_url": f"https://github.com/ansys-internal/pystk/blob/main",
     "edit_page_provider_name": "GitHub",
     "edit_page_url_template": "{{ base_url }}/{{ 'doc/source/' if 'examples/' not in file_name else '' }}{{ file_name }}",
+    "page_assets": {
+        "user-guide/migration": {
+            "needs_datatables": True,
+        },
+    },
 }
 html_theme_options = {
     "header_links_before_dropdown": 6,
@@ -68,11 +71,8 @@ html_theme_options = {
 html_static_path = ["_static"]
 html_css_files = [
     "css/highlight.css",
-    "css/datatables.css",
 ]
-html_js_files = [
-    "js/datatables.js",
-]
+html_js_files = []
 
 # Sphinx extensions
 extensions = [
@@ -366,8 +366,6 @@ jinja_contexts = {
     },
 }
 
-print(jinja_contexts["wheelhouse"]["wheelhouse"])
-
 # -- autodoc configuration ---------------------------------------------------
 autodoc_default_options = {
     #'members': 'var1, var2',
@@ -601,7 +599,7 @@ def render_examples_as_pdf(app: sphinx.application.Sphinx, exception: Exception)
         )
 
 
-def render_migration_table(app: sphinx.application.Sphinx):
+def read_migration_tables(app: sphinx.application.Sphinx):
     """Convert an XML migration table to a JSON format.
 
     The final JSON format is as follows:
@@ -624,8 +622,12 @@ def render_migration_table(app: sphinx.application.Sphinx):
         Sphinx application instance containing the all the doc build configuration.
 
     """
-    MIGRATION_TABLES = STATIC_PATH / "migration-tables"
-    TABLE_FILES = [file for file in MIGRATION_TABLES.glob("*.xml") if "internal" not in file.name]
+    ROOT_DIR = pathlib.Path(app.srcdir).parent.parent
+    TOOLS_DIR = ROOT_DIR / "src" / "ansys" / "stk" / "core" / "tools"
+    API_MAPPINGS = TOOLS_DIR / "api_migration_assistant" / "api-mappings"
+    if not API_MAPPINGS.exists():
+        raise FileNotFoundError(f"API mappings directory not found at {API_MAPPINGS}")
+    TABLE_FILES = [file for file in API_MAPPINGS.glob("*.xml") if "internal" not in file.name]
 
     mappings = {}
     for xml_file in status_iterator(
@@ -659,9 +661,9 @@ def render_migration_table(app: sphinx.application.Sphinx):
                         mappings[type_old_name] = {"new_name": type_old_name, "members": {}}
                     mappings[type_old_name]["members"][member_old_name] = member_new_name
 
-        json_file = xml_file.parent / "main.json"
-        json_file.write_text(json.dumps(mappings, indent=4))
-
+        jinja_contexts["migration_table"] = {
+            "mappings": mappings,
+        }
 
 def setup(app: sphinx.application.Sphinx):
     """
@@ -679,7 +681,7 @@ def setup(app: sphinx.application.Sphinx):
     # build has completed, no matter its success, the examples are removed from
     # the source directory.
     app.connect("builder-inited", copy_docker_files_to_static_dir)
-    app.connect("builder-inited", render_migration_table)
+    app.connect("builder-inited", read_migration_tables)
 
     if BUILD_EXAMPLES:
         app.connect("builder-inited", copy_examples_files_to_source_dir)
