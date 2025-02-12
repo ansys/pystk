@@ -25,9 +25,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.IAnalysisConfigurationModel.link_count`
               - Get the link count.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.IAnalysisConfigurationModel.validate_configuration`
-              - Validates whether or not the configuration is ready to run.
+              - Validate whether or not the configuration is ready to run.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.IAnalysisConfigurationModel.validate_platform_facets`
-              - Validates the configuration platforms which provide facets are configured properly.
+              - Validate the configuration platforms which provide facets are configured properly.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.IAnalysisConfigurationModel.interval_start`
               - Get or set the interval start time.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.IAnalysisConfigurationModel.interval_stop`
@@ -85,13 +85,13 @@ Property detail
     :canonical: ansys.stk.core.stkrfchannelmodeler.IAnalysisConfigurationModel.validate_configuration
     :type: ValidationResponse
 
-    Validates whether or not the configuration is ready to run.
+    Validate whether or not the configuration is ready to run.
 
 .. py:property:: validate_platform_facets
     :canonical: ansys.stk.core.stkrfchannelmodeler.IAnalysisConfigurationModel.validate_platform_facets
     :type: ValidationResponse
 
-    Validates the configuration platforms which provide facets are configured properly.
+    Validate the configuration platforms which provide facets are configured properly.
 
 .. py:property:: interval_start
     :canonical: ansys.stk.core.stkrfchannelmodeler.IAnalysisConfigurationModel.interval_start
