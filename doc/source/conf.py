@@ -622,8 +622,12 @@ def read_migration_tables(app: sphinx.application.Sphinx):
         Sphinx application instance containing the all the doc build configuration.
 
     """
-    MIGRATION_TABLES = STATIC_PATH / "migration-tables"
-    TABLE_FILES = [file for file in MIGRATION_TABLES.glob("*.xml") if "internal" not in file.name]
+    ROOT_DIR = pathlib.Path(app.srcdir).parent.parent
+    TOOLS_DIR = ROOT_DIR / "src" / "ansys" / "stk" / "core" / "tools"
+    API_MAPPINGS = TOOLS_DIR / "api_migration_assistant" / "api-mappings"
+    if not API_MAPPINGS.exists():
+        raise FileNotFoundError(f"API mappings directory not found at {API_MAPPINGS}")
+    TABLE_FILES = [file for file in API_MAPPINGS.glob("*.xml") if "internal" not in file.name]
 
     mappings = {}
     for xml_file in status_iterator(
