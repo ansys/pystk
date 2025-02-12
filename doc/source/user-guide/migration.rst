@@ -210,6 +210,7 @@ The table below lists the interface, classes, enumerations, and method names tha
           </thead>
           <tbody>
             {% for mapping in mappings %}
+            {% if not mapping.startswith("_") %}
             <tr>
                 <td>
                     <b>{{ mapping }}</b>
@@ -224,6 +225,7 @@ The table below lists the interface, classes, enumerations, and method names tha
                     {% endfor %}
                 </td>
             </tr>
+            {% endif %}
             {% endfor %}
           </tbody>
         </table>
