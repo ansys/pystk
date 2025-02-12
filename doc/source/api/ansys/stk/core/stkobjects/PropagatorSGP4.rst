@@ -43,7 +43,7 @@ Overview
               - Propagator settings.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSGP4.ephemeris_interval`
               - Get the propagator's ephemeris interval.
-            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSGP4.intl_designator`
+            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSGP4.international_designator`
               - International designation of the satellite.
 
 
@@ -101,8 +101,8 @@ Property detail
 
     Get the propagator's ephemeris interval.
 
-.. py:property:: intl_designator
-    :canonical: ansys.stk.core.stkobjects.PropagatorSGP4.intl_designator
+.. py:property:: international_designator
+    :canonical: ansys.stk.core.stkobjects.PropagatorSGP4.international_designator
     :type: str
 
     International designation of the satellite.

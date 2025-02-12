@@ -4953,7 +4953,7 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.LimitsExceededBehaviorType`
               - Limits Exceeded Behavior types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.TargetSelectionMethodType`
+            * - :py:class:`~ansys.stk.core.stkobjects.TargetSelectionMethod`
               - Target Selection Method types.
 
             * - :py:class:`~ansys.stk.core.stkobjects.AntennaGraphicsCoordinateSystem`
@@ -6868,7 +6868,7 @@ The following is an overview of the classes, interfaces and enumerations of the 
     ≔ LatticeType<stkobjects/LatticeType>
     ≔ SpacingUnit<stkobjects/SpacingUnit>
     ≔ LimitsExceededBehaviorType<stkobjects/LimitsExceededBehaviorType>
-    ≔ TargetSelectionMethodType<stkobjects/TargetSelectionMethodType>
+    ≔ TargetSelectionMethod<stkobjects/TargetSelectionMethod>
     ≔ AntennaGraphicsCoordinateSystem<stkobjects/AntennaGraphicsCoordinateSystem>
     ≔ AntennaModelInputType<stkobjects/AntennaModelInputType>
     ≔ HFSSFarFieldDataGainType<stkobjects/HFSSFarFieldDataGainType>

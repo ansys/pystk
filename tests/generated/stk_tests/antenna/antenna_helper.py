@@ -7391,7 +7391,7 @@ class RF_Environment_AtmosphericAbsorptionHelper(object):
         Assert.assertEqual(numModels, len(supportedAtmosAbsorptionModels))
 
         Assert.assertEqual(
-            len(propChan.atmos_absorption_model_component_linking.supported_components),
+            len(propChan.atmospheric_absorption_model_component_linking.supported_components),
             len(supportedAtmosAbsorptionModels),
         )
 
@@ -7410,14 +7410,14 @@ class RF_Environment_AtmosphericAbsorptionHelper(object):
 
         propChan: "PropagationChannel" = rfEnv.propagation_channel
         atmosAbsorb: "IAtmosphericAbsorptionModel" = clr.CastAs(
-            propChan.atmos_absorption_model_component_linking.component, IAtmosphericAbsorptionModel
+            propChan.atmospheric_absorption_model_component_linking.component, IAtmosphericAbsorptionModel
         )
 
         propChan.enable_atmospheric_absorption = False
         Assert.assertFalse(propChan.enable_atmospheric_absorption)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            propChan.atmos_absorption_model_component_linking.set_component("ITU-R P676-9")
+            propChan.atmospheric_absorption_model_component_linking.set_component("ITU-R P676-9")
 
         propChan.enable_atmospheric_absorption = True
         Assert.assertTrue(propChan.enable_atmospheric_absorption)
@@ -7426,15 +7426,15 @@ class RF_Environment_AtmosphericAbsorptionHelper(object):
         if OSHelper.IsLinux():
             numModels = 7
 
-        STKUtilHelper.TestComponentLinking(propChan.atmos_absorption_model_component_linking, numModels)
+        STKUtilHelper.TestComponentLinking(propChan.atmospheric_absorption_model_component_linking, numModels)
 
         helper = AtmosphereHelper(self._root)
-        supportedAtmosAbsorptionModels = propChan.atmos_absorption_model_component_linking.supported_components
+        supportedAtmosAbsorptionModels = propChan.atmospheric_absorption_model_component_linking.supported_components
         aaModelName: str
         for aaModelName in supportedAtmosAbsorptionModels:
-            propChan.atmos_absorption_model_component_linking.set_component(aaModelName)
+            propChan.atmospheric_absorption_model_component_linking.set_component(aaModelName)
             aaModel: "IAtmosphericAbsorptionModel" = clr.CastAs(
-                propChan.atmos_absorption_model_component_linking.component, IAtmosphericAbsorptionModel
+                propChan.atmospheric_absorption_model_component_linking.component, IAtmosphericAbsorptionModel
             )
             Assert.assertEqual(aaModelName, aaModel.name)
             if aaModelName == "ITU-R P676-13":
@@ -7499,7 +7499,7 @@ class RF_Environment_AtmosphericAbsorptionHelper(object):
                 Assert.fail("Unknown model type")
 
         with pytest.raises(Exception, match=RegexSubstringMatch("Invalid component name")):
-            propChan.atmos_absorption_model_component_linking.set_component("bogus")
+            propChan.atmospheric_absorption_model_component_linking.set_component("bogus")
 
         self._root.units_preferences.set_current_unit("Temperature", holdUnit)
 
