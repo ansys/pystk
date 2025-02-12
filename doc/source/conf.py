@@ -366,8 +366,6 @@ jinja_contexts = {
     },
 }
 
-print(jinja_contexts["wheelhouse"]["wheelhouse"])
-
 # -- autodoc configuration ---------------------------------------------------
 autodoc_default_options = {
     #'members': 'var1, var2',
@@ -662,8 +660,6 @@ def read_migration_tables(app: sphinx.application.Sphinx):
         jinja_contexts["migration_table"] = {
             "mappings": mappings,
         }
-
-        print(jinja_contexts["migration_table"])
 
 def setup(app: sphinx.application.Sphinx):
     """
