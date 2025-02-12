@@ -2139,20 +2139,20 @@ class PropagatorTwoBodyHelper(object):
 
     # region DisplayCoordType
     def DisplayCoordType(self, oTwoBody: "PropagatorTwoBody"):
-        Assert.assertIsNotNone(oTwoBody.display_coord_type)
+        Assert.assertIsNotNone(oTwoBody.display_coordinate_type)
 
-        initialType: "PropagatorDisplayCoordinateType" = oTwoBody.display_coord_type
+        initialType: "PropagatorDisplayCoordinateType" = oTwoBody.display_coordinate_type
 
         type: "PropagatorDisplayCoordinateType"
 
         for type in Enum.GetValues(clr.TypeOf(PropagatorDisplayCoordinateType)):
-            oTwoBody.display_coord_type = type
-            Assert.assertEqual(type, oTwoBody.display_coord_type)
+            oTwoBody.display_coordinate_type = type
+            Assert.assertEqual(type, oTwoBody.display_coordinate_type)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
-            oTwoBody.display_coord_type = 2147483647
+            oTwoBody.display_coordinate_type = 2147483647
 
-        oTwoBody.display_coord_type = initialType
+        oTwoBody.display_coordinate_type = initialType
 
 
 # endregion
@@ -2491,20 +2491,20 @@ class PropagatorLOPHelper(object):
 
     # region DisplayCoordType
     def DisplayCoordType(self, oLOP: "PropagatorLOP"):
-        Assert.assertIsNotNone(oLOP.display_coord_type)
+        Assert.assertIsNotNone(oLOP.display_coordinate_type)
 
-        initialType: "PropagatorDisplayCoordinateType" = oLOP.display_coord_type
+        initialType: "PropagatorDisplayCoordinateType" = oLOP.display_coordinate_type
 
         type: "PropagatorDisplayCoordinateType"
 
         for type in Enum.GetValues(clr.TypeOf(PropagatorDisplayCoordinateType)):
-            oLOP.display_coord_type = type
-            Assert.assertEqual(type, oLOP.display_coord_type)
+            oLOP.display_coordinate_type = type
+            Assert.assertEqual(type, oLOP.display_coordinate_type)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
-            oLOP.display_coord_type = 2147483647
+            oLOP.display_coordinate_type = 2147483647
 
-        oLOP.display_coord_type = initialType
+        oLOP.display_coordinate_type = initialType
 
 
 # endregion
@@ -2615,20 +2615,20 @@ class PropagatorJ2PerturbationHelper(object):
 
     # region DisplayCoordType
     def DisplayCoordType(self, oJ2: "PropagatorJ2Perturbation"):
-        Assert.assertIsNotNone(oJ2.display_coord_type)
+        Assert.assertIsNotNone(oJ2.display_coordinate_type)
 
-        initialType: "PropagatorDisplayCoordinateType" = oJ2.display_coord_type
+        initialType: "PropagatorDisplayCoordinateType" = oJ2.display_coordinate_type
 
         type: "PropagatorDisplayCoordinateType"
 
         for type in Enum.GetValues(clr.TypeOf(PropagatorDisplayCoordinateType)):
-            oJ2.display_coord_type = type
-            Assert.assertEqual(type, oJ2.display_coord_type)
+            oJ2.display_coordinate_type = type
+            Assert.assertEqual(type, oJ2.display_coordinate_type)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
-            oJ2.display_coord_type = 2147483647
+            oJ2.display_coordinate_type = 2147483647
 
-        oJ2.display_coord_type = initialType
+        oJ2.display_coordinate_type = initialType
 
 
 # endregion
@@ -2739,20 +2739,20 @@ class PropagatorJ4PerturbationHelper(object):
 
     # region DisplayCoordType
     def DisplayCoordType(self, oJ4: "PropagatorJ4Perturbation"):
-        Assert.assertIsNotNone(oJ4.display_coord_type)
+        Assert.assertIsNotNone(oJ4.display_coordinate_type)
 
-        initialType: "PropagatorDisplayCoordinateType" = oJ4.display_coord_type
+        initialType: "PropagatorDisplayCoordinateType" = oJ4.display_coordinate_type
 
         type: "PropagatorDisplayCoordinateType"
 
         for type in Enum.GetValues(clr.TypeOf(PropagatorDisplayCoordinateType)):
-            oJ4.display_coord_type = type
-            Assert.assertEqual(type, oJ4.display_coord_type)
+            oJ4.display_coordinate_type = type
+            Assert.assertEqual(type, oJ4.display_coordinate_type)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
-            oJ4.display_coord_type = 2147483647
+            oJ4.display_coordinate_type = 2147483647
 
-        oJ4.display_coord_type = initialType
+        oJ4.display_coordinate_type = initialType
 
 
 # endregion
@@ -3190,12 +3190,12 @@ class PropagatorSGP4Helper(object):
 
         # Can set to standard designator
         oSGP4.automatic_update_enabled = False
-        oSGP4.intl_designator = "9999-999A"
-        Assert.assertEqual("9999-999A", oSGP4.intl_designator)
+        oSGP4.international_designator = "9999-999A"
+        Assert.assertEqual("9999-999A", oSGP4.international_designator)
 
         # Can set to max-length designator
-        oSGP4.intl_designator = "9999-999ABC"
-        Assert.assertEqual("9999-999ABC", oSGP4.intl_designator)
+        oSGP4.international_designator = "9999-999ABC"
+        Assert.assertEqual("9999-999ABC", oSGP4.international_designator)
 
         # Throws if designator is too long
         with pytest.raises(Exception):
@@ -3208,29 +3208,29 @@ class PropagatorSGP4Helper(object):
         oSGP4Segment1: "PropagatorSGP4Segment" = oSegments.add_segment()
         oSGP4Segment2: "PropagatorSGP4Segment" = oSegments.add_segment()
 
-        oSGP4.intl_designator = "9999-999A"
+        oSGP4.international_designator = "9999-999A"
         oSGP4Segment1.international_designator = "9999-999A"
         oSGP4Segment2.international_designator = "9999-999A"
 
-        oSGP4.intl_designator = "9999-999B"
-        Assert.assertEqual("9999-999B", oSGP4.intl_designator)
+        oSGP4.international_designator = "9999-999B"
+        Assert.assertEqual("9999-999B", oSGP4.international_designator)
         Assert.assertEqual("9999-999B", oSGP4Segment1.international_designator)
         Assert.assertEqual("9999-999B", oSGP4Segment2.international_designator)
 
         # Chaning propagator designator changes no segments if any segment has different designator
         oSGP4Segment1.international_designator = "0000-000A"
 
-        oSGP4.intl_designator = "9999-999C"
-        Assert.assertEqual("9999-999C", oSGP4.intl_designator)
+        oSGP4.international_designator = "9999-999C"
+        Assert.assertEqual("9999-999C", oSGP4.international_designator)
         Assert.assertEqual("0000-000A", oSGP4Segment1.international_designator)
         Assert.assertEqual("9999-999B", oSGP4Segment2.international_designator)
 
         # Changing propagator designator changes no segments if any segment is loaded from file
-        oSGP4.intl_designator = "07001001"
+        oSGP4.international_designator = "07001001"
         tasks.add_segments_from_file("799501749", fn)
 
-        oSGP4.intl_designator = "9999-999A"
-        Assert.assertEqual("9999-999A", oSGP4.intl_designator)
+        oSGP4.international_designator = "9999-999A"
+        Assert.assertEqual("9999-999A", oSGP4.international_designator)
         oSGP4Segment: "PropagatorSGP4Segment"
         for oSGP4Segment in oSGP4.segments:
             Assert.assertEqual("07001001", oSGP4Segment.international_designator)
@@ -5833,20 +5833,20 @@ class PropagatorHPOPHelper(object):
 
     # region DisplayCoordType
     def DisplayCoordType(self, oHPOP: "PropagatorHPOP"):
-        Assert.assertIsNotNone(oHPOP.display_coord_type)
+        Assert.assertIsNotNone(oHPOP.display_coordinate_type)
 
-        initialType: "PropagatorDisplayCoordinateType" = oHPOP.display_coord_type
+        initialType: "PropagatorDisplayCoordinateType" = oHPOP.display_coordinate_type
 
         type: "PropagatorDisplayCoordinateType"
 
         for type in Enum.GetValues(clr.TypeOf(PropagatorDisplayCoordinateType)):
-            oHPOP.display_coord_type = type
-            Assert.assertEqual(type, oHPOP.display_coord_type)
+            oHPOP.display_coordinate_type = type
+            Assert.assertEqual(type, oHPOP.display_coordinate_type)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
-            oHPOP.display_coord_type = 2147483647
+            oHPOP.display_coordinate_type = 2147483647
 
-        oHPOP.display_coord_type = initialType
+        oHPOP.display_coordinate_type = initialType
 
 
 # endregion
@@ -9681,25 +9681,25 @@ class PlatformRF_Environment_AtmosphericAbsorptionHelper(object):
 
         propChan: "PropagationChannel" = rfEnv.propagation_channel
         atmosAbsorb: "IAtmosphericAbsorptionModel" = clr.CastAs(
-            propChan.atmos_absorption_model_component_linking.component, IAtmosphericAbsorptionModel
+            propChan.atmospheric_absorption_model_component_linking.component, IAtmosphericAbsorptionModel
         )
 
         propChan.enable_atmospheric_absorption = False
         Assert.assertFalse(propChan.enable_atmospheric_absorption)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            propChan.atmos_absorption_model_component_linking.set_component("ITU-R P676-13")
+            propChan.atmospheric_absorption_model_component_linking.set_component("ITU-R P676-13")
 
         propChan.enable_atmospheric_absorption = True
         Assert.assertTrue(propChan.enable_atmospheric_absorption)
 
         helper = AtmosphereHelper(self._root)
-        supportedAtmosAbsorptionModels = propChan.atmos_absorption_model_component_linking.supported_components
+        supportedAtmosAbsorptionModels = propChan.atmospheric_absorption_model_component_linking.supported_components
         aaModelName: str
         for aaModelName in supportedAtmosAbsorptionModels:
-            propChan.atmos_absorption_model_component_linking.set_component(aaModelName)
+            propChan.atmospheric_absorption_model_component_linking.set_component(aaModelName)
             aaModel: "IAtmosphericAbsorptionModel" = clr.CastAs(
-                propChan.atmos_absorption_model_component_linking.component, IAtmosphericAbsorptionModel
+                propChan.atmospheric_absorption_model_component_linking.component, IAtmosphericAbsorptionModel
             )
             Assert.assertEqual(aaModelName, aaModel.name)
             if aaModelName == "ITU-R P676-13":
@@ -9758,7 +9758,7 @@ class PlatformRF_Environment_AtmosphericAbsorptionHelper(object):
                 Assert.fail("Unknown model type")
 
         with pytest.raises(Exception, match=RegexSubstringMatch("Invalid component name")):
-            propChan.atmos_absorption_model_component_linking.set_component("bogus")
+            propChan.atmospheric_absorption_model_component_linking.set_component("bogus")
 
         self._root.units_preferences.set_current_unit("Temperature", holdUnit)
 

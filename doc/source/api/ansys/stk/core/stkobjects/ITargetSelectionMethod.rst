@@ -35,7 +35,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.ITargetSelectionMethod.type
-    :type: TargetSelectionMethodType
+    :type: TargetSelectionMethod
 
     Get the target selection method type enumeration.
 

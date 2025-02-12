@@ -27,7 +27,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.StkRFChannelModeler.construct_analysis`
               - Construct an Analysis for an analysis configuration.
             * - :py:attr:`~ansys.stk.core.stkrfchannelmodeler.StkRFChannelModeler.validate_analysis`
-              - Validates an analysis configuration.
+              - Validate an analysis configuration.
 
     .. tab-item:: Properties
         
@@ -63,13 +63,13 @@ Property detail
 
 .. py:property:: transceiver_collection
     :canonical: ansys.stk.core.stkrfchannelmodeler.StkRFChannelModeler.transceiver_collection
-    :type: StkRfcmTransceiverCollection
+    :type: TransceiverCollection
 
     Get the collection of transceiver objects.
 
 .. py:property:: analysis_configuration_collection
     :canonical: ansys.stk.core.stkrfchannelmodeler.StkRFChannelModeler.analysis_configuration_collection
-    :type: StkRfcmAnalysisConfigurationCollection
+    :type: AnalysisConfigurationCollection
 
     Get the collection of analysis configurations.
 
@@ -87,7 +87,7 @@ Property detail
 
 .. py:property:: compute_options
     :canonical: ansys.stk.core.stkrfchannelmodeler.StkRFChannelModeler.compute_options
-    :type: StkRfcmComputeOptions
+    :type: ComputeOptions
 
     Get the compute options.
 
@@ -103,31 +103,31 @@ Method detail
 
 
 
-.. py:method:: duplicate_transceiver(self, transceiver: StkRfcmTransceiver) -> StkRfcmTransceiver
+.. py:method:: duplicate_transceiver(self, transceiver: Transceiver) -> Transceiver
     :canonical: ansys.stk.core.stkrfchannelmodeler.StkRFChannelModeler.duplicate_transceiver
 
     Duplicates a transceiver instance.
 
     :Parameters:
 
-    **transceiver** : :obj:`~StkRfcmTransceiver`
+    **transceiver** : :obj:`~Transceiver`
 
     :Returns:
 
-        :obj:`~StkRfcmTransceiver`
+        :obj:`~Transceiver`
 
-.. py:method:: duplicate_analysis_configuration(self, analysis_configuration: StkRfcmAnalysisConfiguration) -> StkRfcmAnalysisConfiguration
+.. py:method:: duplicate_analysis_configuration(self, analysis_configuration: AnalysisConfiguration) -> AnalysisConfiguration
     :canonical: ansys.stk.core.stkrfchannelmodeler.StkRFChannelModeler.duplicate_analysis_configuration
 
     Duplicates an analysis configuration instance.
 
     :Parameters:
 
-    **analysis_configuration** : :obj:`~StkRfcmAnalysisConfiguration`
+    **analysis_configuration** : :obj:`~AnalysisConfiguration`
 
     :Returns:
 
-        :obj:`~StkRfcmAnalysisConfiguration`
+        :obj:`~AnalysisConfiguration`
 
 
 
@@ -146,7 +146,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: construct_analysis(self, analysis_configuration_name: str) -> StkRfcmAnalysis
+.. py:method:: construct_analysis(self, analysis_configuration_name: str) -> Analysis
     :canonical: ansys.stk.core.stkrfchannelmodeler.StkRFChannelModeler.construct_analysis
 
     Construct an Analysis for an analysis configuration.
@@ -157,12 +157,12 @@ Method detail
 
     :Returns:
 
-        :obj:`~StkRfcmAnalysis`
+        :obj:`~Analysis`
 
-.. py:method:: validate_analysis(self, analysis_configuration_name: str) -> StkRfcmValidationResponse
+.. py:method:: validate_analysis(self, analysis_configuration_name: str) -> ValidationResponse
     :canonical: ansys.stk.core.stkrfchannelmodeler.StkRFChannelModeler.validate_analysis
 
-    Validates an analysis configuration.
+    Validate an analysis configuration.
 
     :Parameters:
 
@@ -170,5 +170,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~StkRfcmValidationResponse`
+        :obj:`~ValidationResponse`
 

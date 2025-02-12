@@ -38879,36 +38879,36 @@ class AdvancedFixedWingFourPointAerodynamic(SupportsDeleteCallback):
     _set_max_aoa_method_offset = 2
     _get_mach_1_method_offset = 3
     _set_mach_1_method_offset = 4
-    _get_a_o_a_1_method_offset = 5
-    _set_a_o_a_1_method_offset = 6
-    _get_c_l_1_method_offset = 7
-    _set_c_l_1_method_offset = 8
-    _get_c_d_1_method_offset = 9
-    _set_c_d_1_method_offset = 10
+    _get_aoa_1_method_offset = 5
+    _set_aoa_1_method_offset = 6
+    _get_cl_1_method_offset = 7
+    _set_cl_1_method_offset = 8
+    _get_cd_1_method_offset = 9
+    _set_cd_1_method_offset = 10
     _get_mach_2_method_offset = 11
     _set_mach_2_method_offset = 12
-    _get_a_o_a_2_method_offset = 13
-    _set_a_o_a_2_method_offset = 14
-    _get_c_l_2_method_offset = 15
-    _set_c_l_2_method_offset = 16
-    _get_c_d_2_method_offset = 17
-    _set_c_d_2_method_offset = 18
+    _get_aoa_2_method_offset = 13
+    _set_aoa_2_method_offset = 14
+    _get_cl_2_method_offset = 15
+    _set_cl_2_method_offset = 16
+    _get_cd_2_method_offset = 17
+    _set_cd_2_method_offset = 18
     _get_mach_3_method_offset = 19
     _set_mach_3_method_offset = 20
-    _get_a_o_a_3_method_offset = 21
-    _set_a_o_a_3_method_offset = 22
-    _get_c_l_3_method_offset = 23
-    _set_c_l_3_method_offset = 24
-    _get_c_d_3_method_offset = 25
-    _set_c_d_3_method_offset = 26
+    _get_aoa_3_method_offset = 21
+    _set_aoa_3_method_offset = 22
+    _get_cl_3_method_offset = 23
+    _set_cl_3_method_offset = 24
+    _get_cd_3_method_offset = 25
+    _set_cd_3_method_offset = 26
     _get_mach_4_method_offset = 27
     _set_mach_4_method_offset = 28
-    _get_a_o_a_4_method_offset = 29
-    _set_a_o_a_4_method_offset = 30
-    _get_c_l_4_method_offset = 31
-    _set_c_l_4_method_offset = 32
-    _get_c_d_4_method_offset = 33
-    _set_c_d_4_method_offset = 34
+    _get_aoa_4_method_offset = 29
+    _set_aoa_4_method_offset = 30
+    _get_cl_4_method_offset = 31
+    _set_cl_4_method_offset = 32
+    _get_cd_4_method_offset = 33
+    _set_cd_4_method_offset = 34
     _validate_lift_design_points_method_offset = 35
     _validate_drag_design_points_method_offset = 36
     _metadata = {
@@ -38951,53 +38951,53 @@ class AdvancedFixedWingFourPointAerodynamic(SupportsDeleteCallback):
         """Get or set the Mach for the first design point."""
         return self._intf.set_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._set_mach_1_metadata, value)
 
-    _get_a_o_a_1_metadata = { "offset" : _get_a_o_a_1_method_offset,
+    _get_aoa_1_metadata = { "offset" : _get_aoa_1_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
-    def a_o_a_1(self) -> typing.Any:
+    def aoa_1(self) -> typing.Any:
         """Get or set the AOA for the first design point."""
-        return self._intf.get_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._get_a_o_a_1_metadata)
+        return self._intf.get_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._get_aoa_1_metadata)
 
-    _set_a_o_a_1_metadata = { "offset" : _set_a_o_a_1_method_offset,
+    _set_aoa_1_metadata = { "offset" : _set_aoa_1_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
-    @a_o_a_1.setter
-    def a_o_a_1(self, value:typing.Any) -> None:
+    @aoa_1.setter
+    def aoa_1(self, value:typing.Any) -> None:
         """Get or set the AOA for the first design point."""
-        return self._intf.set_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._set_a_o_a_1_metadata, value)
+        return self._intf.set_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._set_aoa_1_metadata, value)
 
-    _get_c_l_1_metadata = { "offset" : _get_c_l_1_method_offset,
+    _get_cl_1_metadata = { "offset" : _get_cl_1_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def c_l_1(self) -> float:
+    def cl_1(self) -> float:
         """Get or set the lift coefficient for the first design point."""
-        return self._intf.get_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._get_c_l_1_metadata)
+        return self._intf.get_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._get_cl_1_metadata)
 
-    _set_c_l_1_metadata = { "offset" : _set_c_l_1_method_offset,
+    _set_cl_1_metadata = { "offset" : _set_cl_1_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @c_l_1.setter
-    def c_l_1(self, value:float) -> None:
+    @cl_1.setter
+    def cl_1(self, value:float) -> None:
         """Get or set the lift coefficient for the first design point."""
-        return self._intf.set_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._set_c_l_1_metadata, value)
+        return self._intf.set_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._set_cl_1_metadata, value)
 
-    _get_c_d_1_metadata = { "offset" : _get_c_d_1_method_offset,
+    _get_cd_1_metadata = { "offset" : _get_cd_1_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def c_d_1(self) -> float:
+    def cd_1(self) -> float:
         """Get or set the drag coefficient for the first design point."""
-        return self._intf.get_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._get_c_d_1_metadata)
+        return self._intf.get_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._get_cd_1_metadata)
 
-    _set_c_d_1_metadata = { "offset" : _set_c_d_1_method_offset,
+    _set_cd_1_metadata = { "offset" : _set_cd_1_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @c_d_1.setter
-    def c_d_1(self, value:float) -> None:
+    @cd_1.setter
+    def cd_1(self, value:float) -> None:
         """Get or set the drag coefficient for the first design point."""
-        return self._intf.set_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._set_c_d_1_metadata, value)
+        return self._intf.set_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._set_cd_1_metadata, value)
 
     _get_mach_2_metadata = { "offset" : _get_mach_2_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -39015,53 +39015,53 @@ class AdvancedFixedWingFourPointAerodynamic(SupportsDeleteCallback):
         """Get or set the Mach for the second design point."""
         return self._intf.set_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._set_mach_2_metadata, value)
 
-    _get_a_o_a_2_metadata = { "offset" : _get_a_o_a_2_method_offset,
+    _get_aoa_2_metadata = { "offset" : _get_aoa_2_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
-    def a_o_a_2(self) -> typing.Any:
+    def aoa_2(self) -> typing.Any:
         """Get or set the AOA for the second design point."""
-        return self._intf.get_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._get_a_o_a_2_metadata)
+        return self._intf.get_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._get_aoa_2_metadata)
 
-    _set_a_o_a_2_metadata = { "offset" : _set_a_o_a_2_method_offset,
+    _set_aoa_2_metadata = { "offset" : _set_aoa_2_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
-    @a_o_a_2.setter
-    def a_o_a_2(self, value:typing.Any) -> None:
+    @aoa_2.setter
+    def aoa_2(self, value:typing.Any) -> None:
         """Get or set the AOA for the second design point."""
-        return self._intf.set_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._set_a_o_a_2_metadata, value)
+        return self._intf.set_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._set_aoa_2_metadata, value)
 
-    _get_c_l_2_metadata = { "offset" : _get_c_l_2_method_offset,
+    _get_cl_2_metadata = { "offset" : _get_cl_2_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def c_l_2(self) -> float:
+    def cl_2(self) -> float:
         """Get or set the lift coefficient for the second design point."""
-        return self._intf.get_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._get_c_l_2_metadata)
+        return self._intf.get_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._get_cl_2_metadata)
 
-    _set_c_l_2_metadata = { "offset" : _set_c_l_2_method_offset,
+    _set_cl_2_metadata = { "offset" : _set_cl_2_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @c_l_2.setter
-    def c_l_2(self, value:float) -> None:
+    @cl_2.setter
+    def cl_2(self, value:float) -> None:
         """Get or set the lift coefficient for the second design point."""
-        return self._intf.set_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._set_c_l_2_metadata, value)
+        return self._intf.set_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._set_cl_2_metadata, value)
 
-    _get_c_d_2_metadata = { "offset" : _get_c_d_2_method_offset,
+    _get_cd_2_metadata = { "offset" : _get_cd_2_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def c_d_2(self) -> float:
+    def cd_2(self) -> float:
         """Get or set the drag coefficient for the second design point."""
-        return self._intf.get_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._get_c_d_2_metadata)
+        return self._intf.get_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._get_cd_2_metadata)
 
-    _set_c_d_2_metadata = { "offset" : _set_c_d_2_method_offset,
+    _set_cd_2_metadata = { "offset" : _set_cd_2_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @c_d_2.setter
-    def c_d_2(self, value:float) -> None:
+    @cd_2.setter
+    def cd_2(self, value:float) -> None:
         """Get or set the drag coefficient for the second design point."""
-        return self._intf.set_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._set_c_d_2_metadata, value)
+        return self._intf.set_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._set_cd_2_metadata, value)
 
     _get_mach_3_metadata = { "offset" : _get_mach_3_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -39079,53 +39079,53 @@ class AdvancedFixedWingFourPointAerodynamic(SupportsDeleteCallback):
         """Get or set the Mach for the third design point."""
         return self._intf.set_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._set_mach_3_metadata, value)
 
-    _get_a_o_a_3_metadata = { "offset" : _get_a_o_a_3_method_offset,
+    _get_aoa_3_metadata = { "offset" : _get_aoa_3_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
-    def a_o_a_3(self) -> typing.Any:
+    def aoa_3(self) -> typing.Any:
         """Get or set the AOA for the third design point."""
-        return self._intf.get_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._get_a_o_a_3_metadata)
+        return self._intf.get_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._get_aoa_3_metadata)
 
-    _set_a_o_a_3_metadata = { "offset" : _set_a_o_a_3_method_offset,
+    _set_aoa_3_metadata = { "offset" : _set_aoa_3_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
-    @a_o_a_3.setter
-    def a_o_a_3(self, value:typing.Any) -> None:
+    @aoa_3.setter
+    def aoa_3(self, value:typing.Any) -> None:
         """Get or set the AOA for the third design point."""
-        return self._intf.set_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._set_a_o_a_3_metadata, value)
+        return self._intf.set_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._set_aoa_3_metadata, value)
 
-    _get_c_l_3_metadata = { "offset" : _get_c_l_3_method_offset,
+    _get_cl_3_metadata = { "offset" : _get_cl_3_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def c_l_3(self) -> float:
+    def cl_3(self) -> float:
         """Get or set the lift coefficient for the third design point."""
-        return self._intf.get_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._get_c_l_3_metadata)
+        return self._intf.get_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._get_cl_3_metadata)
 
-    _set_c_l_3_metadata = { "offset" : _set_c_l_3_method_offset,
+    _set_cl_3_metadata = { "offset" : _set_cl_3_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @c_l_3.setter
-    def c_l_3(self, value:float) -> None:
+    @cl_3.setter
+    def cl_3(self, value:float) -> None:
         """Get or set the lift coefficient for the third design point."""
-        return self._intf.set_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._set_c_l_3_metadata, value)
+        return self._intf.set_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._set_cl_3_metadata, value)
 
-    _get_c_d_3_metadata = { "offset" : _get_c_d_3_method_offset,
+    _get_cd_3_metadata = { "offset" : _get_cd_3_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def c_d_3(self) -> float:
+    def cd_3(self) -> float:
         """Get or set the drag coefficient for the third design point."""
-        return self._intf.get_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._get_c_d_3_metadata)
+        return self._intf.get_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._get_cd_3_metadata)
 
-    _set_c_d_3_metadata = { "offset" : _set_c_d_3_method_offset,
+    _set_cd_3_metadata = { "offset" : _set_cd_3_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @c_d_3.setter
-    def c_d_3(self, value:float) -> None:
+    @cd_3.setter
+    def cd_3(self, value:float) -> None:
         """Get or set the drag coefficient for the third design point."""
-        return self._intf.set_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._set_c_d_3_metadata, value)
+        return self._intf.set_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._set_cd_3_metadata, value)
 
     _get_mach_4_metadata = { "offset" : _get_mach_4_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -39143,60 +39143,60 @@ class AdvancedFixedWingFourPointAerodynamic(SupportsDeleteCallback):
         """Get or set the Mach for the fourth design point."""
         return self._intf.set_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._set_mach_4_metadata, value)
 
-    _get_a_o_a_4_metadata = { "offset" : _get_a_o_a_4_method_offset,
+    _get_aoa_4_metadata = { "offset" : _get_aoa_4_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
-    def a_o_a_4(self) -> typing.Any:
+    def aoa_4(self) -> typing.Any:
         """Get or set the AOA for the fourth design point."""
-        return self._intf.get_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._get_a_o_a_4_metadata)
+        return self._intf.get_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._get_aoa_4_metadata)
 
-    _set_a_o_a_4_metadata = { "offset" : _set_a_o_a_4_method_offset,
+    _set_aoa_4_metadata = { "offset" : _set_aoa_4_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
-    @a_o_a_4.setter
-    def a_o_a_4(self, value:typing.Any) -> None:
+    @aoa_4.setter
+    def aoa_4(self, value:typing.Any) -> None:
         """Get or set the AOA for the fourth design point."""
-        return self._intf.set_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._set_a_o_a_4_metadata, value)
+        return self._intf.set_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._set_aoa_4_metadata, value)
 
-    _get_c_l_4_metadata = { "offset" : _get_c_l_4_method_offset,
+    _get_cl_4_metadata = { "offset" : _get_cl_4_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def c_l_4(self) -> float:
+    def cl_4(self) -> float:
         """Get or set the lift coefficient for the fourth design point."""
-        return self._intf.get_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._get_c_l_4_metadata)
+        return self._intf.get_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._get_cl_4_metadata)
 
-    _set_c_l_4_metadata = { "offset" : _set_c_l_4_method_offset,
+    _set_cl_4_metadata = { "offset" : _set_cl_4_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @c_l_4.setter
-    def c_l_4(self, value:float) -> None:
+    @cl_4.setter
+    def cl_4(self, value:float) -> None:
         """Get or set the lift coefficient for the fourth design point."""
-        return self._intf.set_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._set_c_l_4_metadata, value)
+        return self._intf.set_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._set_cl_4_metadata, value)
 
-    _get_c_d_4_metadata = { "offset" : _get_c_d_4_method_offset,
+    _get_cd_4_metadata = { "offset" : _get_cd_4_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def c_d_4(self) -> float:
+    def cd_4(self) -> float:
         """Get or set the drag coefficient for the fourth design point."""
-        return self._intf.get_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._get_c_d_4_metadata)
+        return self._intf.get_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._get_cd_4_metadata)
 
-    _set_c_d_4_metadata = { "offset" : _set_c_d_4_method_offset,
+    _set_cd_4_metadata = { "offset" : _set_cd_4_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @c_d_4.setter
-    def c_d_4(self, value:float) -> None:
+    @cd_4.setter
+    def cd_4(self, value:float) -> None:
         """Get or set the drag coefficient for the fourth design point."""
-        return self._intf.set_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._set_c_d_4_metadata, value)
+        return self._intf.set_property(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._set_cd_4_metadata, value)
 
     _validate_lift_design_points_metadata = { "offset" : _validate_lift_design_points_method_offset,
             "arg_types" : (agcom.DOUBLE, agcom.Variant, agcom.DOUBLE, agcom.Variant, agcom.DOUBLE, agcom.Variant, agcom.DOUBLE, agcom.Variant, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.DoubleArg, agmarshall.VariantArg, agmarshall.DoubleArg, agmarshall.VariantArg, agmarshall.DoubleArg, agmarshall.VariantArg, agmarshall.DoubleArg, agmarshall.VariantArg, agmarshall.VariantBoolArg,) }
-    def validate_lift_design_points(self, d_mach_1:float, d_a_o_a_1:typing.Any, d_mach_2:float, d_a_o_a_2:typing.Any, d_mach_3:float, d_a_o_a_3:typing.Any, d_mach_4:float, d_a_o_a_4:typing.Any) -> bool:
+    def validate_lift_design_points(self, d_mach_1:float, d_aoa_1:typing.Any, d_mach_2:float, d_aoa_2:typing.Any, d_mach_3:float, d_aoa_3:typing.Any, d_mach_4:float, d_aoa_4:typing.Any) -> bool:
         """Validate the lift design points - ensure the choices do not result in a singular system of equations."""
-        return self._intf.invoke(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._validate_lift_design_points_metadata, d_mach_1, d_a_o_a_1, d_mach_2, d_a_o_a_2, d_mach_3, d_a_o_a_3, d_mach_4, d_a_o_a_4, OutArg())
+        return self._intf.invoke(AdvancedFixedWingFourPointAerodynamic._metadata, AdvancedFixedWingFourPointAerodynamic._validate_lift_design_points_metadata, d_mach_1, d_aoa_1, d_mach_2, d_aoa_2, d_mach_3, d_aoa_3, d_mach_4, d_aoa_4, OutArg())
 
     _validate_drag_design_points_metadata = { "offset" : _validate_drag_design_points_method_offset,
             "arg_types" : (agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, POINTER(agcom.VARIANT_BOOL),),
@@ -39207,21 +39207,21 @@ class AdvancedFixedWingFourPointAerodynamic(SupportsDeleteCallback):
 
     _property_names[max_aoa] = "max_aoa"
     _property_names[mach_1] = "mach_1"
-    _property_names[a_o_a_1] = "a_o_a_1"
-    _property_names[c_l_1] = "c_l_1"
-    _property_names[c_d_1] = "c_d_1"
+    _property_names[aoa_1] = "aoa_1"
+    _property_names[cl_1] = "cl_1"
+    _property_names[cd_1] = "cd_1"
     _property_names[mach_2] = "mach_2"
-    _property_names[a_o_a_2] = "a_o_a_2"
-    _property_names[c_l_2] = "c_l_2"
-    _property_names[c_d_2] = "c_d_2"
+    _property_names[aoa_2] = "aoa_2"
+    _property_names[cl_2] = "cl_2"
+    _property_names[cd_2] = "cd_2"
     _property_names[mach_3] = "mach_3"
-    _property_names[a_o_a_3] = "a_o_a_3"
-    _property_names[c_l_3] = "c_l_3"
-    _property_names[c_d_3] = "c_d_3"
+    _property_names[aoa_3] = "aoa_3"
+    _property_names[cl_3] = "cl_3"
+    _property_names[cd_3] = "cd_3"
     _property_names[mach_4] = "mach_4"
-    _property_names[a_o_a_4] = "a_o_a_4"
-    _property_names[c_l_4] = "c_l_4"
-    _property_names[c_d_4] = "c_d_4"
+    _property_names[aoa_4] = "aoa_4"
+    _property_names[cl_4] = "cl_4"
+    _property_names[cd_4] = "cd_4"
 
     def __init__(self, source_object=None):
         """Construct an object of type AdvancedFixedWingFourPointAerodynamic."""
@@ -39246,36 +39246,36 @@ class MissileFourPointAerodynamic(SupportsDeleteCallback):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_mach_1_method_offset = 1
     _set_mach_1_method_offset = 2
-    _get_a_o_a_1_method_offset = 3
-    _set_a_o_a_1_method_offset = 4
-    _get_c_l_1_method_offset = 5
-    _set_c_l_1_method_offset = 6
-    _get_c_d_1_method_offset = 7
-    _set_c_d_1_method_offset = 8
+    _get_aoa_1_method_offset = 3
+    _set_aoa_1_method_offset = 4
+    _get_cl_1_method_offset = 5
+    _set_cl_1_method_offset = 6
+    _get_cd_1_method_offset = 7
+    _set_cd_1_method_offset = 8
     _get_mach_2_method_offset = 9
     _set_mach_2_method_offset = 10
-    _get_a_o_a_2_method_offset = 11
-    _set_a_o_a_2_method_offset = 12
-    _get_c_l_2_method_offset = 13
-    _set_c_l_2_method_offset = 14
-    _get_c_d_2_method_offset = 15
-    _set_c_d_2_method_offset = 16
+    _get_aoa_2_method_offset = 11
+    _set_aoa_2_method_offset = 12
+    _get_cl_2_method_offset = 13
+    _set_cl_2_method_offset = 14
+    _get_cd_2_method_offset = 15
+    _set_cd_2_method_offset = 16
     _get_mach_3_method_offset = 17
     _set_mach_3_method_offset = 18
-    _get_a_o_a_3_method_offset = 19
-    _set_a_o_a_3_method_offset = 20
-    _get_c_l_3_method_offset = 21
-    _set_c_l_3_method_offset = 22
-    _get_c_d_3_method_offset = 23
-    _set_c_d_3_method_offset = 24
+    _get_aoa_3_method_offset = 19
+    _set_aoa_3_method_offset = 20
+    _get_cl_3_method_offset = 21
+    _set_cl_3_method_offset = 22
+    _get_cd_3_method_offset = 23
+    _set_cd_3_method_offset = 24
     _get_mach_4_method_offset = 25
     _set_mach_4_method_offset = 26
-    _get_a_o_a_4_method_offset = 27
-    _set_a_o_a_4_method_offset = 28
-    _get_c_l_4_method_offset = 29
-    _set_c_l_4_method_offset = 30
-    _get_c_d_4_method_offset = 31
-    _set_c_d_4_method_offset = 32
+    _get_aoa_4_method_offset = 27
+    _set_aoa_4_method_offset = 28
+    _get_cl_4_method_offset = 29
+    _set_cl_4_method_offset = 30
+    _get_cd_4_method_offset = 31
+    _set_cd_4_method_offset = 32
     _validate_lift_design_points_method_offset = 33
     _validate_drag_design_points_method_offset = 34
     _get_s_reference_method_offset = 35
@@ -39308,53 +39308,53 @@ class MissileFourPointAerodynamic(SupportsDeleteCallback):
         """Get or set the Mach for the first design point."""
         return self._intf.set_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._set_mach_1_metadata, value)
 
-    _get_a_o_a_1_metadata = { "offset" : _get_a_o_a_1_method_offset,
+    _get_aoa_1_metadata = { "offset" : _get_aoa_1_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
-    def a_o_a_1(self) -> typing.Any:
+    def aoa_1(self) -> typing.Any:
         """Get or set the AOA for the first design point."""
-        return self._intf.get_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._get_a_o_a_1_metadata)
+        return self._intf.get_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._get_aoa_1_metadata)
 
-    _set_a_o_a_1_metadata = { "offset" : _set_a_o_a_1_method_offset,
+    _set_aoa_1_metadata = { "offset" : _set_aoa_1_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
-    @a_o_a_1.setter
-    def a_o_a_1(self, value:typing.Any) -> None:
+    @aoa_1.setter
+    def aoa_1(self, value:typing.Any) -> None:
         """Get or set the AOA for the first design point."""
-        return self._intf.set_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._set_a_o_a_1_metadata, value)
+        return self._intf.set_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._set_aoa_1_metadata, value)
 
-    _get_c_l_1_metadata = { "offset" : _get_c_l_1_method_offset,
+    _get_cl_1_metadata = { "offset" : _get_cl_1_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def c_l_1(self) -> float:
+    def cl_1(self) -> float:
         """Get or set the lift coefficient for the first design point."""
-        return self._intf.get_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._get_c_l_1_metadata)
+        return self._intf.get_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._get_cl_1_metadata)
 
-    _set_c_l_1_metadata = { "offset" : _set_c_l_1_method_offset,
+    _set_cl_1_metadata = { "offset" : _set_cl_1_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @c_l_1.setter
-    def c_l_1(self, value:float) -> None:
+    @cl_1.setter
+    def cl_1(self, value:float) -> None:
         """Get or set the lift coefficient for the first design point."""
-        return self._intf.set_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._set_c_l_1_metadata, value)
+        return self._intf.set_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._set_cl_1_metadata, value)
 
-    _get_c_d_1_metadata = { "offset" : _get_c_d_1_method_offset,
+    _get_cd_1_metadata = { "offset" : _get_cd_1_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def c_d_1(self) -> float:
+    def cd_1(self) -> float:
         """Get or set the drag coefficient for the first design point."""
-        return self._intf.get_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._get_c_d_1_metadata)
+        return self._intf.get_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._get_cd_1_metadata)
 
-    _set_c_d_1_metadata = { "offset" : _set_c_d_1_method_offset,
+    _set_cd_1_metadata = { "offset" : _set_cd_1_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @c_d_1.setter
-    def c_d_1(self, value:float) -> None:
+    @cd_1.setter
+    def cd_1(self, value:float) -> None:
         """Get or set the drag coefficient for the first design point."""
-        return self._intf.set_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._set_c_d_1_metadata, value)
+        return self._intf.set_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._set_cd_1_metadata, value)
 
     _get_mach_2_metadata = { "offset" : _get_mach_2_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -39372,53 +39372,53 @@ class MissileFourPointAerodynamic(SupportsDeleteCallback):
         """Get or set the Mach for the second design point."""
         return self._intf.set_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._set_mach_2_metadata, value)
 
-    _get_a_o_a_2_metadata = { "offset" : _get_a_o_a_2_method_offset,
+    _get_aoa_2_metadata = { "offset" : _get_aoa_2_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
-    def a_o_a_2(self) -> typing.Any:
+    def aoa_2(self) -> typing.Any:
         """Get or set the AOA for the second design point."""
-        return self._intf.get_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._get_a_o_a_2_metadata)
+        return self._intf.get_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._get_aoa_2_metadata)
 
-    _set_a_o_a_2_metadata = { "offset" : _set_a_o_a_2_method_offset,
+    _set_aoa_2_metadata = { "offset" : _set_aoa_2_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
-    @a_o_a_2.setter
-    def a_o_a_2(self, value:typing.Any) -> None:
+    @aoa_2.setter
+    def aoa_2(self, value:typing.Any) -> None:
         """Get or set the AOA for the second design point."""
-        return self._intf.set_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._set_a_o_a_2_metadata, value)
+        return self._intf.set_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._set_aoa_2_metadata, value)
 
-    _get_c_l_2_metadata = { "offset" : _get_c_l_2_method_offset,
+    _get_cl_2_metadata = { "offset" : _get_cl_2_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def c_l_2(self) -> float:
+    def cl_2(self) -> float:
         """Get or set the lift coefficient for the second design point."""
-        return self._intf.get_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._get_c_l_2_metadata)
+        return self._intf.get_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._get_cl_2_metadata)
 
-    _set_c_l_2_metadata = { "offset" : _set_c_l_2_method_offset,
+    _set_cl_2_metadata = { "offset" : _set_cl_2_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @c_l_2.setter
-    def c_l_2(self, value:float) -> None:
+    @cl_2.setter
+    def cl_2(self, value:float) -> None:
         """Get or set the lift coefficient for the second design point."""
-        return self._intf.set_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._set_c_l_2_metadata, value)
+        return self._intf.set_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._set_cl_2_metadata, value)
 
-    _get_c_d_2_metadata = { "offset" : _get_c_d_2_method_offset,
+    _get_cd_2_metadata = { "offset" : _get_cd_2_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def c_d_2(self) -> float:
+    def cd_2(self) -> float:
         """Get or set the drag coefficient for the second design point."""
-        return self._intf.get_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._get_c_d_2_metadata)
+        return self._intf.get_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._get_cd_2_metadata)
 
-    _set_c_d_2_metadata = { "offset" : _set_c_d_2_method_offset,
+    _set_cd_2_metadata = { "offset" : _set_cd_2_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @c_d_2.setter
-    def c_d_2(self, value:float) -> None:
+    @cd_2.setter
+    def cd_2(self, value:float) -> None:
         """Get or set the drag coefficient for the second design point."""
-        return self._intf.set_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._set_c_d_2_metadata, value)
+        return self._intf.set_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._set_cd_2_metadata, value)
 
     _get_mach_3_metadata = { "offset" : _get_mach_3_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -39436,53 +39436,53 @@ class MissileFourPointAerodynamic(SupportsDeleteCallback):
         """Get or set the Mach for the third design point."""
         return self._intf.set_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._set_mach_3_metadata, value)
 
-    _get_a_o_a_3_metadata = { "offset" : _get_a_o_a_3_method_offset,
+    _get_aoa_3_metadata = { "offset" : _get_aoa_3_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
-    def a_o_a_3(self) -> typing.Any:
+    def aoa_3(self) -> typing.Any:
         """Get or set the AOA for the third design point."""
-        return self._intf.get_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._get_a_o_a_3_metadata)
+        return self._intf.get_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._get_aoa_3_metadata)
 
-    _set_a_o_a_3_metadata = { "offset" : _set_a_o_a_3_method_offset,
+    _set_aoa_3_metadata = { "offset" : _set_aoa_3_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
-    @a_o_a_3.setter
-    def a_o_a_3(self, value:typing.Any) -> None:
+    @aoa_3.setter
+    def aoa_3(self, value:typing.Any) -> None:
         """Get or set the AOA for the third design point."""
-        return self._intf.set_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._set_a_o_a_3_metadata, value)
+        return self._intf.set_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._set_aoa_3_metadata, value)
 
-    _get_c_l_3_metadata = { "offset" : _get_c_l_3_method_offset,
+    _get_cl_3_metadata = { "offset" : _get_cl_3_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def c_l_3(self) -> float:
+    def cl_3(self) -> float:
         """Get or set the lift coefficient for the third design point."""
-        return self._intf.get_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._get_c_l_3_metadata)
+        return self._intf.get_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._get_cl_3_metadata)
 
-    _set_c_l_3_metadata = { "offset" : _set_c_l_3_method_offset,
+    _set_cl_3_metadata = { "offset" : _set_cl_3_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @c_l_3.setter
-    def c_l_3(self, value:float) -> None:
+    @cl_3.setter
+    def cl_3(self, value:float) -> None:
         """Get or set the lift coefficient for the third design point."""
-        return self._intf.set_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._set_c_l_3_metadata, value)
+        return self._intf.set_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._set_cl_3_metadata, value)
 
-    _get_c_d_3_metadata = { "offset" : _get_c_d_3_method_offset,
+    _get_cd_3_metadata = { "offset" : _get_cd_3_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def c_d_3(self) -> float:
+    def cd_3(self) -> float:
         """Get or set the drag coefficient for the third design point."""
-        return self._intf.get_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._get_c_d_3_metadata)
+        return self._intf.get_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._get_cd_3_metadata)
 
-    _set_c_d_3_metadata = { "offset" : _set_c_d_3_method_offset,
+    _set_cd_3_metadata = { "offset" : _set_cd_3_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @c_d_3.setter
-    def c_d_3(self, value:float) -> None:
+    @cd_3.setter
+    def cd_3(self, value:float) -> None:
         """Get or set the drag coefficient for the third design point."""
-        return self._intf.set_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._set_c_d_3_metadata, value)
+        return self._intf.set_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._set_cd_3_metadata, value)
 
     _get_mach_4_metadata = { "offset" : _get_mach_4_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -39500,60 +39500,60 @@ class MissileFourPointAerodynamic(SupportsDeleteCallback):
         """Get or set the Mach for the fourth design point."""
         return self._intf.set_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._set_mach_4_metadata, value)
 
-    _get_a_o_a_4_metadata = { "offset" : _get_a_o_a_4_method_offset,
+    _get_aoa_4_metadata = { "offset" : _get_aoa_4_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
-    def a_o_a_4(self) -> typing.Any:
+    def aoa_4(self) -> typing.Any:
         """Get or set the AOA for the fourth design point."""
-        return self._intf.get_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._get_a_o_a_4_metadata)
+        return self._intf.get_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._get_aoa_4_metadata)
 
-    _set_a_o_a_4_metadata = { "offset" : _set_a_o_a_4_method_offset,
+    _set_aoa_4_metadata = { "offset" : _set_aoa_4_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
-    @a_o_a_4.setter
-    def a_o_a_4(self, value:typing.Any) -> None:
+    @aoa_4.setter
+    def aoa_4(self, value:typing.Any) -> None:
         """Get or set the AOA for the fourth design point."""
-        return self._intf.set_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._set_a_o_a_4_metadata, value)
+        return self._intf.set_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._set_aoa_4_metadata, value)
 
-    _get_c_l_4_metadata = { "offset" : _get_c_l_4_method_offset,
+    _get_cl_4_metadata = { "offset" : _get_cl_4_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def c_l_4(self) -> float:
+    def cl_4(self) -> float:
         """Get or set the lift coefficient for the fourth design point."""
-        return self._intf.get_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._get_c_l_4_metadata)
+        return self._intf.get_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._get_cl_4_metadata)
 
-    _set_c_l_4_metadata = { "offset" : _set_c_l_4_method_offset,
+    _set_cl_4_metadata = { "offset" : _set_cl_4_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @c_l_4.setter
-    def c_l_4(self, value:float) -> None:
+    @cl_4.setter
+    def cl_4(self, value:float) -> None:
         """Get or set the lift coefficient for the fourth design point."""
-        return self._intf.set_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._set_c_l_4_metadata, value)
+        return self._intf.set_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._set_cl_4_metadata, value)
 
-    _get_c_d_4_metadata = { "offset" : _get_c_d_4_method_offset,
+    _get_cd_4_metadata = { "offset" : _get_cd_4_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def c_d_4(self) -> float:
+    def cd_4(self) -> float:
         """Get or set the drag coefficient for the fourth design point."""
-        return self._intf.get_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._get_c_d_4_metadata)
+        return self._intf.get_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._get_cd_4_metadata)
 
-    _set_c_d_4_metadata = { "offset" : _set_c_d_4_method_offset,
+    _set_cd_4_metadata = { "offset" : _set_cd_4_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @c_d_4.setter
-    def c_d_4(self, value:float) -> None:
+    @cd_4.setter
+    def cd_4(self, value:float) -> None:
         """Get or set the drag coefficient for the fourth design point."""
-        return self._intf.set_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._set_c_d_4_metadata, value)
+        return self._intf.set_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._set_cd_4_metadata, value)
 
     _validate_lift_design_points_metadata = { "offset" : _validate_lift_design_points_method_offset,
             "arg_types" : (agcom.DOUBLE, agcom.Variant, agcom.DOUBLE, agcom.Variant, agcom.DOUBLE, agcom.Variant, agcom.DOUBLE, agcom.Variant, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.DoubleArg, agmarshall.VariantArg, agmarshall.DoubleArg, agmarshall.VariantArg, agmarshall.DoubleArg, agmarshall.VariantArg, agmarshall.DoubleArg, agmarshall.VariantArg, agmarshall.VariantBoolArg,) }
-    def validate_lift_design_points(self, d_mach_1:float, d_a_o_a_1:typing.Any, d_mach_2:float, d_a_o_a_2:typing.Any, d_mach_3:float, d_a_o_a_3:typing.Any, d_mach_4:float, d_a_o_a_4:typing.Any) -> bool:
+    def validate_lift_design_points(self, d_mach_1:float, d_aoa_1:typing.Any, d_mach_2:float, d_aoa_2:typing.Any, d_mach_3:float, d_aoa_3:typing.Any, d_mach_4:float, d_aoa_4:typing.Any) -> bool:
         """Validate the lift design points - ensure the choices do not result in a singular system of equations."""
-        return self._intf.invoke(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._validate_lift_design_points_metadata, d_mach_1, d_a_o_a_1, d_mach_2, d_a_o_a_2, d_mach_3, d_a_o_a_3, d_mach_4, d_a_o_a_4, OutArg())
+        return self._intf.invoke(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._validate_lift_design_points_metadata, d_mach_1, d_aoa_1, d_mach_2, d_aoa_2, d_mach_3, d_aoa_3, d_mach_4, d_aoa_4, OutArg())
 
     _validate_drag_design_points_metadata = { "offset" : _validate_drag_design_points_method_offset,
             "arg_types" : (agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, POINTER(agcom.VARIANT_BOOL),),
@@ -39610,21 +39610,21 @@ class MissileFourPointAerodynamic(SupportsDeleteCallback):
         return self._intf.get_property(MissileFourPointAerodynamic._metadata, MissileFourPointAerodynamic._get_max_range_aoa_metadata)
 
     _property_names[mach_1] = "mach_1"
-    _property_names[a_o_a_1] = "a_o_a_1"
-    _property_names[c_l_1] = "c_l_1"
-    _property_names[c_d_1] = "c_d_1"
+    _property_names[aoa_1] = "aoa_1"
+    _property_names[cl_1] = "cl_1"
+    _property_names[cd_1] = "cd_1"
     _property_names[mach_2] = "mach_2"
-    _property_names[a_o_a_2] = "a_o_a_2"
-    _property_names[c_l_2] = "c_l_2"
-    _property_names[c_d_2] = "c_d_2"
+    _property_names[aoa_2] = "aoa_2"
+    _property_names[cl_2] = "cl_2"
+    _property_names[cd_2] = "cd_2"
     _property_names[mach_3] = "mach_3"
-    _property_names[a_o_a_3] = "a_o_a_3"
-    _property_names[c_l_3] = "c_l_3"
-    _property_names[c_d_3] = "c_d_3"
+    _property_names[aoa_3] = "aoa_3"
+    _property_names[cl_3] = "cl_3"
+    _property_names[cd_3] = "cd_3"
     _property_names[mach_4] = "mach_4"
-    _property_names[a_o_a_4] = "a_o_a_4"
-    _property_names[c_l_4] = "c_l_4"
-    _property_names[c_d_4] = "c_d_4"
+    _property_names[aoa_4] = "aoa_4"
+    _property_names[cl_4] = "cl_4"
+    _property_names[cd_4] = "cd_4"
     _property_names[s_reference] = "s_reference"
     _property_names[max_aoa] = "max_aoa"
     _property_names[max_endurance_aoa] = "max_endurance_aoa"
@@ -39653,36 +39653,36 @@ class FourPointAerodynamic(SupportsDeleteCallback):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_mach_1_method_offset = 1
     _set_mach_1_method_offset = 2
-    _get_a_o_a_1_method_offset = 3
-    _set_a_o_a_1_method_offset = 4
-    _get_c_l_1_method_offset = 5
-    _set_c_l_1_method_offset = 6
-    _get_c_d_1_method_offset = 7
-    _set_c_d_1_method_offset = 8
+    _get_aoa_1_method_offset = 3
+    _set_aoa_1_method_offset = 4
+    _get_cl_1_method_offset = 5
+    _set_cl_1_method_offset = 6
+    _get_cd_1_method_offset = 7
+    _set_cd_1_method_offset = 8
     _get_mach_2_method_offset = 9
     _set_mach_2_method_offset = 10
-    _get_a_o_a_2_method_offset = 11
-    _set_a_o_a_2_method_offset = 12
-    _get_c_l_2_method_offset = 13
-    _set_c_l_2_method_offset = 14
-    _get_c_d_2_method_offset = 15
-    _set_c_d_2_method_offset = 16
+    _get_aoa_2_method_offset = 11
+    _set_aoa_2_method_offset = 12
+    _get_cl_2_method_offset = 13
+    _set_cl_2_method_offset = 14
+    _get_cd_2_method_offset = 15
+    _set_cd_2_method_offset = 16
     _get_mach_3_method_offset = 17
     _set_mach_3_method_offset = 18
-    _get_a_o_a_3_method_offset = 19
-    _set_a_o_a_3_method_offset = 20
-    _get_c_l_3_method_offset = 21
-    _set_c_l_3_method_offset = 22
-    _get_c_d_3_method_offset = 23
-    _set_c_d_3_method_offset = 24
+    _get_aoa_3_method_offset = 19
+    _set_aoa_3_method_offset = 20
+    _get_cl_3_method_offset = 21
+    _set_cl_3_method_offset = 22
+    _get_cd_3_method_offset = 23
+    _set_cd_3_method_offset = 24
     _get_mach_4_method_offset = 25
     _set_mach_4_method_offset = 26
-    _get_a_o_a_4_method_offset = 27
-    _set_a_o_a_4_method_offset = 28
-    _get_c_l_4_method_offset = 29
-    _set_c_l_4_method_offset = 30
-    _get_c_d_4_method_offset = 31
-    _set_c_d_4_method_offset = 32
+    _get_aoa_4_method_offset = 27
+    _set_aoa_4_method_offset = 28
+    _get_cl_4_method_offset = 29
+    _set_cl_4_method_offset = 30
+    _get_cd_4_method_offset = 31
+    _set_cd_4_method_offset = 32
     _validate_lift_design_points_method_offset = 33
     _validate_drag_design_points_method_offset = 34
     _get_s_reference_method_offset = 35
@@ -39713,53 +39713,53 @@ class FourPointAerodynamic(SupportsDeleteCallback):
         """Get or set the Mach for the first design point."""
         return self._intf.set_property(FourPointAerodynamic._metadata, FourPointAerodynamic._set_mach_1_metadata, value)
 
-    _get_a_o_a_1_metadata = { "offset" : _get_a_o_a_1_method_offset,
+    _get_aoa_1_metadata = { "offset" : _get_aoa_1_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
-    def a_o_a_1(self) -> typing.Any:
+    def aoa_1(self) -> typing.Any:
         """Get or set the AOA for the first design point."""
-        return self._intf.get_property(FourPointAerodynamic._metadata, FourPointAerodynamic._get_a_o_a_1_metadata)
+        return self._intf.get_property(FourPointAerodynamic._metadata, FourPointAerodynamic._get_aoa_1_metadata)
 
-    _set_a_o_a_1_metadata = { "offset" : _set_a_o_a_1_method_offset,
+    _set_aoa_1_metadata = { "offset" : _set_aoa_1_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
-    @a_o_a_1.setter
-    def a_o_a_1(self, value:typing.Any) -> None:
+    @aoa_1.setter
+    def aoa_1(self, value:typing.Any) -> None:
         """Get or set the AOA for the first design point."""
-        return self._intf.set_property(FourPointAerodynamic._metadata, FourPointAerodynamic._set_a_o_a_1_metadata, value)
+        return self._intf.set_property(FourPointAerodynamic._metadata, FourPointAerodynamic._set_aoa_1_metadata, value)
 
-    _get_c_l_1_metadata = { "offset" : _get_c_l_1_method_offset,
+    _get_cl_1_metadata = { "offset" : _get_cl_1_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def c_l_1(self) -> float:
+    def cl_1(self) -> float:
         """Get or set the lift coefficient for the first design point."""
-        return self._intf.get_property(FourPointAerodynamic._metadata, FourPointAerodynamic._get_c_l_1_metadata)
+        return self._intf.get_property(FourPointAerodynamic._metadata, FourPointAerodynamic._get_cl_1_metadata)
 
-    _set_c_l_1_metadata = { "offset" : _set_c_l_1_method_offset,
+    _set_cl_1_metadata = { "offset" : _set_cl_1_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @c_l_1.setter
-    def c_l_1(self, value:float) -> None:
+    @cl_1.setter
+    def cl_1(self, value:float) -> None:
         """Get or set the lift coefficient for the first design point."""
-        return self._intf.set_property(FourPointAerodynamic._metadata, FourPointAerodynamic._set_c_l_1_metadata, value)
+        return self._intf.set_property(FourPointAerodynamic._metadata, FourPointAerodynamic._set_cl_1_metadata, value)
 
-    _get_c_d_1_metadata = { "offset" : _get_c_d_1_method_offset,
+    _get_cd_1_metadata = { "offset" : _get_cd_1_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def c_d_1(self) -> float:
+    def cd_1(self) -> float:
         """Get or set the drag coefficient for the first design point."""
-        return self._intf.get_property(FourPointAerodynamic._metadata, FourPointAerodynamic._get_c_d_1_metadata)
+        return self._intf.get_property(FourPointAerodynamic._metadata, FourPointAerodynamic._get_cd_1_metadata)
 
-    _set_c_d_1_metadata = { "offset" : _set_c_d_1_method_offset,
+    _set_cd_1_metadata = { "offset" : _set_cd_1_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @c_d_1.setter
-    def c_d_1(self, value:float) -> None:
+    @cd_1.setter
+    def cd_1(self, value:float) -> None:
         """Get or set the drag coefficient for the first design point."""
-        return self._intf.set_property(FourPointAerodynamic._metadata, FourPointAerodynamic._set_c_d_1_metadata, value)
+        return self._intf.set_property(FourPointAerodynamic._metadata, FourPointAerodynamic._set_cd_1_metadata, value)
 
     _get_mach_2_metadata = { "offset" : _get_mach_2_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -39777,53 +39777,53 @@ class FourPointAerodynamic(SupportsDeleteCallback):
         """Get or set the Mach for the second design point."""
         return self._intf.set_property(FourPointAerodynamic._metadata, FourPointAerodynamic._set_mach_2_metadata, value)
 
-    _get_a_o_a_2_metadata = { "offset" : _get_a_o_a_2_method_offset,
+    _get_aoa_2_metadata = { "offset" : _get_aoa_2_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
-    def a_o_a_2(self) -> typing.Any:
+    def aoa_2(self) -> typing.Any:
         """Get or set the AOA for the second design point."""
-        return self._intf.get_property(FourPointAerodynamic._metadata, FourPointAerodynamic._get_a_o_a_2_metadata)
+        return self._intf.get_property(FourPointAerodynamic._metadata, FourPointAerodynamic._get_aoa_2_metadata)
 
-    _set_a_o_a_2_metadata = { "offset" : _set_a_o_a_2_method_offset,
+    _set_aoa_2_metadata = { "offset" : _set_aoa_2_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
-    @a_o_a_2.setter
-    def a_o_a_2(self, value:typing.Any) -> None:
+    @aoa_2.setter
+    def aoa_2(self, value:typing.Any) -> None:
         """Get or set the AOA for the second design point."""
-        return self._intf.set_property(FourPointAerodynamic._metadata, FourPointAerodynamic._set_a_o_a_2_metadata, value)
+        return self._intf.set_property(FourPointAerodynamic._metadata, FourPointAerodynamic._set_aoa_2_metadata, value)
 
-    _get_c_l_2_metadata = { "offset" : _get_c_l_2_method_offset,
+    _get_cl_2_metadata = { "offset" : _get_cl_2_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def c_l_2(self) -> float:
+    def cl_2(self) -> float:
         """Get or set the lift coefficient for the second design point."""
-        return self._intf.get_property(FourPointAerodynamic._metadata, FourPointAerodynamic._get_c_l_2_metadata)
+        return self._intf.get_property(FourPointAerodynamic._metadata, FourPointAerodynamic._get_cl_2_metadata)
 
-    _set_c_l_2_metadata = { "offset" : _set_c_l_2_method_offset,
+    _set_cl_2_metadata = { "offset" : _set_cl_2_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @c_l_2.setter
-    def c_l_2(self, value:float) -> None:
+    @cl_2.setter
+    def cl_2(self, value:float) -> None:
         """Get or set the lift coefficient for the second design point."""
-        return self._intf.set_property(FourPointAerodynamic._metadata, FourPointAerodynamic._set_c_l_2_metadata, value)
+        return self._intf.set_property(FourPointAerodynamic._metadata, FourPointAerodynamic._set_cl_2_metadata, value)
 
-    _get_c_d_2_metadata = { "offset" : _get_c_d_2_method_offset,
+    _get_cd_2_metadata = { "offset" : _get_cd_2_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def c_d_2(self) -> float:
+    def cd_2(self) -> float:
         """Get or set the drag coefficient for the second design point."""
-        return self._intf.get_property(FourPointAerodynamic._metadata, FourPointAerodynamic._get_c_d_2_metadata)
+        return self._intf.get_property(FourPointAerodynamic._metadata, FourPointAerodynamic._get_cd_2_metadata)
 
-    _set_c_d_2_metadata = { "offset" : _set_c_d_2_method_offset,
+    _set_cd_2_metadata = { "offset" : _set_cd_2_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @c_d_2.setter
-    def c_d_2(self, value:float) -> None:
+    @cd_2.setter
+    def cd_2(self, value:float) -> None:
         """Get or set the drag coefficient for the second design point."""
-        return self._intf.set_property(FourPointAerodynamic._metadata, FourPointAerodynamic._set_c_d_2_metadata, value)
+        return self._intf.set_property(FourPointAerodynamic._metadata, FourPointAerodynamic._set_cd_2_metadata, value)
 
     _get_mach_3_metadata = { "offset" : _get_mach_3_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -39841,53 +39841,53 @@ class FourPointAerodynamic(SupportsDeleteCallback):
         """Get or set the Mach for the third design point."""
         return self._intf.set_property(FourPointAerodynamic._metadata, FourPointAerodynamic._set_mach_3_metadata, value)
 
-    _get_a_o_a_3_metadata = { "offset" : _get_a_o_a_3_method_offset,
+    _get_aoa_3_metadata = { "offset" : _get_aoa_3_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
-    def a_o_a_3(self) -> typing.Any:
+    def aoa_3(self) -> typing.Any:
         """Get or set the AOA for the third design point."""
-        return self._intf.get_property(FourPointAerodynamic._metadata, FourPointAerodynamic._get_a_o_a_3_metadata)
+        return self._intf.get_property(FourPointAerodynamic._metadata, FourPointAerodynamic._get_aoa_3_metadata)
 
-    _set_a_o_a_3_metadata = { "offset" : _set_a_o_a_3_method_offset,
+    _set_aoa_3_metadata = { "offset" : _set_aoa_3_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
-    @a_o_a_3.setter
-    def a_o_a_3(self, value:typing.Any) -> None:
+    @aoa_3.setter
+    def aoa_3(self, value:typing.Any) -> None:
         """Get or set the AOA for the third design point."""
-        return self._intf.set_property(FourPointAerodynamic._metadata, FourPointAerodynamic._set_a_o_a_3_metadata, value)
+        return self._intf.set_property(FourPointAerodynamic._metadata, FourPointAerodynamic._set_aoa_3_metadata, value)
 
-    _get_c_l_3_metadata = { "offset" : _get_c_l_3_method_offset,
+    _get_cl_3_metadata = { "offset" : _get_cl_3_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def c_l_3(self) -> float:
+    def cl_3(self) -> float:
         """Get or set the lift coefficient for the third design point."""
-        return self._intf.get_property(FourPointAerodynamic._metadata, FourPointAerodynamic._get_c_l_3_metadata)
+        return self._intf.get_property(FourPointAerodynamic._metadata, FourPointAerodynamic._get_cl_3_metadata)
 
-    _set_c_l_3_metadata = { "offset" : _set_c_l_3_method_offset,
+    _set_cl_3_metadata = { "offset" : _set_cl_3_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @c_l_3.setter
-    def c_l_3(self, value:float) -> None:
+    @cl_3.setter
+    def cl_3(self, value:float) -> None:
         """Get or set the lift coefficient for the third design point."""
-        return self._intf.set_property(FourPointAerodynamic._metadata, FourPointAerodynamic._set_c_l_3_metadata, value)
+        return self._intf.set_property(FourPointAerodynamic._metadata, FourPointAerodynamic._set_cl_3_metadata, value)
 
-    _get_c_d_3_metadata = { "offset" : _get_c_d_3_method_offset,
+    _get_cd_3_metadata = { "offset" : _get_cd_3_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def c_d_3(self) -> float:
+    def cd_3(self) -> float:
         """Get or set the drag coefficient for the third design point."""
-        return self._intf.get_property(FourPointAerodynamic._metadata, FourPointAerodynamic._get_c_d_3_metadata)
+        return self._intf.get_property(FourPointAerodynamic._metadata, FourPointAerodynamic._get_cd_3_metadata)
 
-    _set_c_d_3_metadata = { "offset" : _set_c_d_3_method_offset,
+    _set_cd_3_metadata = { "offset" : _set_cd_3_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @c_d_3.setter
-    def c_d_3(self, value:float) -> None:
+    @cd_3.setter
+    def cd_3(self, value:float) -> None:
         """Get or set the drag coefficient for the third design point."""
-        return self._intf.set_property(FourPointAerodynamic._metadata, FourPointAerodynamic._set_c_d_3_metadata, value)
+        return self._intf.set_property(FourPointAerodynamic._metadata, FourPointAerodynamic._set_cd_3_metadata, value)
 
     _get_mach_4_metadata = { "offset" : _get_mach_4_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -39905,60 +39905,60 @@ class FourPointAerodynamic(SupportsDeleteCallback):
         """Get or set the Mach for the fourth design point."""
         return self._intf.set_property(FourPointAerodynamic._metadata, FourPointAerodynamic._set_mach_4_metadata, value)
 
-    _get_a_o_a_4_metadata = { "offset" : _get_a_o_a_4_method_offset,
+    _get_aoa_4_metadata = { "offset" : _get_aoa_4_method_offset,
             "arg_types" : (POINTER(agcom.Variant),),
             "marshallers" : (agmarshall.VariantArg,) }
     @property
-    def a_o_a_4(self) -> typing.Any:
+    def aoa_4(self) -> typing.Any:
         """Get or set the AOA for the fourth design point."""
-        return self._intf.get_property(FourPointAerodynamic._metadata, FourPointAerodynamic._get_a_o_a_4_metadata)
+        return self._intf.get_property(FourPointAerodynamic._metadata, FourPointAerodynamic._get_aoa_4_metadata)
 
-    _set_a_o_a_4_metadata = { "offset" : _set_a_o_a_4_method_offset,
+    _set_aoa_4_metadata = { "offset" : _set_aoa_4_method_offset,
             "arg_types" : (agcom.Variant,),
             "marshallers" : (agmarshall.VariantArg,) }
-    @a_o_a_4.setter
-    def a_o_a_4(self, value:typing.Any) -> None:
+    @aoa_4.setter
+    def aoa_4(self, value:typing.Any) -> None:
         """Get or set the AOA for the fourth design point."""
-        return self._intf.set_property(FourPointAerodynamic._metadata, FourPointAerodynamic._set_a_o_a_4_metadata, value)
+        return self._intf.set_property(FourPointAerodynamic._metadata, FourPointAerodynamic._set_aoa_4_metadata, value)
 
-    _get_c_l_4_metadata = { "offset" : _get_c_l_4_method_offset,
+    _get_cl_4_metadata = { "offset" : _get_cl_4_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def c_l_4(self) -> float:
+    def cl_4(self) -> float:
         """Get or set the lift coefficient for the fourth design point."""
-        return self._intf.get_property(FourPointAerodynamic._metadata, FourPointAerodynamic._get_c_l_4_metadata)
+        return self._intf.get_property(FourPointAerodynamic._metadata, FourPointAerodynamic._get_cl_4_metadata)
 
-    _set_c_l_4_metadata = { "offset" : _set_c_l_4_method_offset,
+    _set_cl_4_metadata = { "offset" : _set_cl_4_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @c_l_4.setter
-    def c_l_4(self, value:float) -> None:
+    @cl_4.setter
+    def cl_4(self, value:float) -> None:
         """Get or set the lift coefficient for the fourth design point."""
-        return self._intf.set_property(FourPointAerodynamic._metadata, FourPointAerodynamic._set_c_l_4_metadata, value)
+        return self._intf.set_property(FourPointAerodynamic._metadata, FourPointAerodynamic._set_cl_4_metadata, value)
 
-    _get_c_d_4_metadata = { "offset" : _get_c_d_4_method_offset,
+    _get_cd_4_metadata = { "offset" : _get_cd_4_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def c_d_4(self) -> float:
+    def cd_4(self) -> float:
         """Get or set the drag coefficient for the fourth design point."""
-        return self._intf.get_property(FourPointAerodynamic._metadata, FourPointAerodynamic._get_c_d_4_metadata)
+        return self._intf.get_property(FourPointAerodynamic._metadata, FourPointAerodynamic._get_cd_4_metadata)
 
-    _set_c_d_4_metadata = { "offset" : _set_c_d_4_method_offset,
+    _set_cd_4_metadata = { "offset" : _set_cd_4_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @c_d_4.setter
-    def c_d_4(self, value:float) -> None:
+    @cd_4.setter
+    def cd_4(self, value:float) -> None:
         """Get or set the drag coefficient for the fourth design point."""
-        return self._intf.set_property(FourPointAerodynamic._metadata, FourPointAerodynamic._set_c_d_4_metadata, value)
+        return self._intf.set_property(FourPointAerodynamic._metadata, FourPointAerodynamic._set_cd_4_metadata, value)
 
     _validate_lift_design_points_metadata = { "offset" : _validate_lift_design_points_method_offset,
             "arg_types" : (agcom.DOUBLE, agcom.Variant, agcom.DOUBLE, agcom.Variant, agcom.DOUBLE, agcom.Variant, agcom.DOUBLE, agcom.Variant, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.DoubleArg, agmarshall.VariantArg, agmarshall.DoubleArg, agmarshall.VariantArg, agmarshall.DoubleArg, agmarshall.VariantArg, agmarshall.DoubleArg, agmarshall.VariantArg, agmarshall.VariantBoolArg,) }
-    def validate_lift_design_points(self, d_mach_1:float, d_a_o_a_1:typing.Any, d_mach_2:float, d_a_o_a_2:typing.Any, d_mach_3:float, d_a_o_a_3:typing.Any, d_mach_4:float, d_a_o_a_4:typing.Any) -> bool:
+    def validate_lift_design_points(self, d_mach_1:float, d_aoa_1:typing.Any, d_mach_2:float, d_aoa_2:typing.Any, d_mach_3:float, d_aoa_3:typing.Any, d_mach_4:float, d_aoa_4:typing.Any) -> bool:
         """Validate the lift design points - ensure the choices do not result in a singular system of equations."""
-        return self._intf.invoke(FourPointAerodynamic._metadata, FourPointAerodynamic._validate_lift_design_points_metadata, d_mach_1, d_a_o_a_1, d_mach_2, d_a_o_a_2, d_mach_3, d_a_o_a_3, d_mach_4, d_a_o_a_4, OutArg())
+        return self._intf.invoke(FourPointAerodynamic._metadata, FourPointAerodynamic._validate_lift_design_points_metadata, d_mach_1, d_aoa_1, d_mach_2, d_aoa_2, d_mach_3, d_aoa_3, d_mach_4, d_aoa_4, OutArg())
 
     _validate_drag_design_points_metadata = { "offset" : _validate_drag_design_points_method_offset,
             "arg_types" : (agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, POINTER(agcom.VARIANT_BOOL),),
@@ -40000,21 +40000,21 @@ class FourPointAerodynamic(SupportsDeleteCallback):
         return self._intf.set_property(FourPointAerodynamic._metadata, FourPointAerodynamic._set_max_aoa_metadata, value)
 
     _property_names[mach_1] = "mach_1"
-    _property_names[a_o_a_1] = "a_o_a_1"
-    _property_names[c_l_1] = "c_l_1"
-    _property_names[c_d_1] = "c_d_1"
+    _property_names[aoa_1] = "aoa_1"
+    _property_names[cl_1] = "cl_1"
+    _property_names[cd_1] = "cd_1"
     _property_names[mach_2] = "mach_2"
-    _property_names[a_o_a_2] = "a_o_a_2"
-    _property_names[c_l_2] = "c_l_2"
-    _property_names[c_d_2] = "c_d_2"
+    _property_names[aoa_2] = "aoa_2"
+    _property_names[cl_2] = "cl_2"
+    _property_names[cd_2] = "cd_2"
     _property_names[mach_3] = "mach_3"
-    _property_names[a_o_a_3] = "a_o_a_3"
-    _property_names[c_l_3] = "c_l_3"
-    _property_names[c_d_3] = "c_d_3"
+    _property_names[aoa_3] = "aoa_3"
+    _property_names[cl_3] = "cl_3"
+    _property_names[cd_3] = "cd_3"
     _property_names[mach_4] = "mach_4"
-    _property_names[a_o_a_4] = "a_o_a_4"
-    _property_names[c_l_4] = "c_l_4"
-    _property_names[c_d_4] = "c_d_4"
+    _property_names[aoa_4] = "aoa_4"
+    _property_names[cl_4] = "cl_4"
+    _property_names[cd_4] = "cd_4"
     _property_names[s_reference] = "s_reference"
     _property_names[max_aoa] = "max_aoa"
 
