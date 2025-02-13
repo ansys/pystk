@@ -3,19 +3,19 @@
 import logging
 
 from libcst import (
-    CSTTransformer,
-    Name,
-    metadata,
-    Call,
-    ensure_type,
+    Annotation,
+    Arg,
     Attribute,
+    Call,
+    CSTTransformer,
     Import,
+    ImportAlias,
     ImportFrom,
     ImportStar,
-    ImportAlias,
-    Arg,
-    Annotation,
+    Name,
     SimpleString,
+    ensure_type,
+    metadata,
 )
 from libcst.helpers import get_full_name_for_node
 

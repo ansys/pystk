@@ -12,19 +12,21 @@ Aerospace Toolbox functions to define the force modeling of the aircraft.
 __all__ = ["BasicManeuverMATLABFactory", "StrategyMATLAB3DGuidance", "StrategyMATLABFull3D", "StrategyMATLABNavigation", 
 "StrategyMATLABProfile"]
 
+from ctypes import POINTER
 import typing
 
-from ctypes   import POINTER
-
-from ...internal  import comutil          as agcom
-from ...internal  import coclassutil      as agcls
-from ...internal  import marshall         as agmarshall
-from ...internal.comutil     import IUnknown
-from ...internal.apiutil     import (InterfaceProxy, OutArg, initialize_from_source_object, 
-    get_interface_property, set_class_attribute, SupportsDeleteCallback)
-from ...utilities.exceptions import STKRuntimeError
-
+from ...internal import coclassutil as agcls, comutil as agcom, marshall as agmarshall
+from ...internal.apiutil import (
+    InterfaceProxy,
+    OutArg,
+    SupportsDeleteCallback,
+    get_interface_property,
+    initialize_from_source_object,
+    set_class_attribute,
+)
+from ...internal.comutil import IUnknown
 from ...stkobjects.aviator import ClosureMode, IAutomationStrategyFactory, IBasicManeuverStrategy
+from ...utilities.exceptions import STKRuntimeError
 
 
 def _raise_uninitialized_error(*args):

@@ -46,26 +46,31 @@ __all__ = ["ButtonValues", "DataObject", "DataObjectFiles", "Draw2DElemCollectio
 "STKXApplication", "STKXApplicationPartnerAccess", "STKXConControlQuitReceivedEventArgs", "STKXSSLCertificateErrorEventArgs", 
 "ShiftValues", "ShowProgressImage", "WindowProjectionPosition"]
 
+from ctypes import POINTER
+from datetime import datetime
+from enum import IntEnum
 import typing
 
-from ctypes   import POINTER
-from datetime import datetime
-from enum     import IntEnum
-
-from .internal  import comutil          as agcom
-from .internal  import coclassutil      as agcls
-from .internal  import marshall         as agmarshall
-from .utilities import colors           as agcolor
-from .internal.comutil     import IDispatch, IPictureDisp
-from .internal.apiutil     import (InterfaceProxy, EnumeratorProxy, OutArg, 
-    initialize_from_source_object, get_interface_property, set_interface_attribute, 
-    set_class_attribute, SupportsDeleteCallback)
-from .internal.eventutil import (ISTKXApplicationEventHandler, IUiAxGraphics2DCntrlEventHandler,
-                                 IUiAxGraphics3DCntrlEventHandler)
+from .internal import coclassutil as agcls, comutil as agcom, marshall as agmarshall
+from .internal.apiutil import (
+    EnumeratorProxy,
+    InterfaceProxy,
+    OutArg,
+    SupportsDeleteCallback,
+    get_interface_property,
+    initialize_from_source_object,
+    set_class_attribute,
+    set_interface_attribute,
+)
+from .internal.comutil import IDispatch, IPictureDisp
+from .internal.eventutil import (
+    ISTKXApplicationEventHandler,
+    IUiAxGraphics2DCntrlEventHandler,
+    IUiAxGraphics3DCntrlEventHandler,
+)
+from .stkutil import ExecuteCommandResult, ExecuteMultipleCommandsMode, ExecuteMultipleCommandsResult, LineStyle
+from .utilities import colors as agcolor
 from .utilities.exceptions import STKRuntimeError
-
-from .stkutil import (ExecuteCommandResult, ExecuteMultipleCommandsMode,
-                      ExecuteMultipleCommandsResult, LineStyle)
 
 
 def _raise_uninitialized_error(*args):

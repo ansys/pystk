@@ -1,7 +1,6 @@
 """Command line arguments for the API migration assistant."""
 
 import argparse
-
 from pathlib import Path
 
 

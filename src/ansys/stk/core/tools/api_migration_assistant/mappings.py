@@ -1,9 +1,8 @@
 """Specify API mappings from old names to new names."""
 
 import logging
-import xml.etree.ElementTree as ElementTree
-
 from pathlib import Path
+import xml.etree.ElementTree as ElementTree
 
 
 class Mappings:

@@ -3,6 +3,7 @@
 
 from ctypes import c_void_p
 
+
 class COMObject(object):
     """
     Holds a raw COM pointer.

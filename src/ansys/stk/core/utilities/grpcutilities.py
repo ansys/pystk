@@ -8,11 +8,12 @@ by batching together API commands that do not require return values.
 
 import typing
 
-from .exceptions import GrpcUtilitiesError
 from ..internal.apiutil import SupportsDeleteCallback
+from .exceptions import GrpcUtilitiesError
+
 try:
+    from ..internal.AgGrpcServices_pb2 import BatchedInvokeRequest, InvokeRequest
     from ..internal.grpcutil import GrpcClient, GrpcInterfaceFuture, GrpcInterfacePimpl
-    from ..internal.AgGrpcServices_pb2 import InvokeRequest, BatchedInvokeRequest
     _DEFAULT_BATCH_DISABLE = False
 except:
     _DEFAULT_BATCH_DISABLE = True
