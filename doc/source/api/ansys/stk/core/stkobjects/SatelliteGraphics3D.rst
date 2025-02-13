@@ -24,13 +24,13 @@ Overview
               - Get the satellite's OrbitSystem properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.SatelliteGraphics3D.proximity`
               - Get the satellite's Proximity properties.
-            * - :py:attr:`~ansys.stk.core.stkobjects.SatelliteGraphics3D.elev_contours`
+            * - :py:attr:`~ansys.stk.core.stkobjects.SatelliteGraphics3D.elevation_contours`
               - Get the satellite's Elevation Contours properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.SatelliteGraphics3D.saa`
               - Get the satellite's South Atlantic Anomaly Contour properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.SatelliteGraphics3D.covariance_pointing_contour`
               - Get the satellite's Covariance Pointing Contour properties.
-            * - :py:attr:`~ansys.stk.core.stkobjects.SatelliteGraphics3D.pass_method`
+            * - :py:attr:`~ansys.stk.core.stkobjects.SatelliteGraphics3D.satellite_pass`
               - Get the satellite's Pass properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.SatelliteGraphics3D.offsets`
               - Get the satellite's Offsets properties.
@@ -47,13 +47,13 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.SatelliteGraphics3D.drop_lines`
               - Get the satellite's Droplines properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.SatelliteGraphics3D.b_planes`
-              - Gets the BPlane.
+              - Get the BPlane.
             * - :py:attr:`~ansys.stk.core.stkobjects.SatelliteGraphics3D.vapor_trail`
               - Vapor trail attributes.
             * - :py:attr:`~ansys.stk.core.stkobjects.SatelliteGraphics3D.velocity_covariance`
               - Get the satellite's 3D velocity covariance properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.SatelliteGraphics3D.radar_cross_section`
-              - Gets the radar cross section graphics interface.
+              - Get the radar cross section graphics interface.
 
 
 
@@ -86,9 +86,9 @@ Property detail
 
     Get the satellite's Proximity properties.
 
-.. py:property:: elev_contours
-    :canonical: ansys.stk.core.stkobjects.SatelliteGraphics3D.elev_contours
-    :type: VehicleGraphics3DElevContours
+.. py:property:: elevation_contours
+    :canonical: ansys.stk.core.stkobjects.SatelliteGraphics3D.elevation_contours
+    :type: VehicleGraphics3DElevationContours
 
     Get the satellite's Elevation Contours properties.
 
@@ -104,8 +104,8 @@ Property detail
 
     Get the satellite's Covariance Pointing Contour properties.
 
-.. py:property:: pass_method
-    :canonical: ansys.stk.core.stkobjects.SatelliteGraphics3D.pass_method
+.. py:property:: satellite_pass
+    :canonical: ansys.stk.core.stkobjects.SatelliteGraphics3D.satellite_pass
     :type: VehicleGraphics3DPass
 
     Get the satellite's Pass properties.
@@ -156,7 +156,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.SatelliteGraphics3D.b_planes
     :type: VehicleGraphics3DBPlanes
 
-    Gets the BPlane.
+    Get the BPlane.
 
 .. py:property:: vapor_trail
     :canonical: ansys.stk.core.stkobjects.SatelliteGraphics3D.vapor_trail
@@ -174,6 +174,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.SatelliteGraphics3D.radar_cross_section
     :type: RadarCrossSectionGraphics3D
 
-    Gets the radar cross section graphics interface.
+    Get the radar cross section graphics interface.
 
 

@@ -35,16 +35,16 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.name`
               - Name of data display element.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.is_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.show_graphics`
               - Opt whether to show the data display element.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.location`
-              - Gets or sets the location where the data display is to appear: 3D window, data display area, or offset from the selected object.
+              - Get or set the location where the data display is to appear: 3D window, data display area, or offset from the selected object.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.x_origin`
-              - Gets or sets the horizontal point of origin for the marker (left, center or right).
+              - Get or set the horizontal point of origin for the marker (left, center or right).
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.x`
               - Amount of X offset from the origin. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.y_origin`
-              - Gets or sets the vertical point of origin for the marker (top, center or bottom.).
+              - Get or set the vertical point of origin for the marker (top, center or bottom.).
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.y`
               - Amount of Y offset from the origin. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.title`
@@ -57,33 +57,33 @@ Overview
               - Font format of the data display.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.use_background`
               - Opt whether to use a background with the data display.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.transparent_bg`
+            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.transparent_background`
               - Opt whether to make the background transparent.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.bg_width`
-              - Gets or sets the width of the data display background. Dimensionless.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.bg_height`
-              - Gets or sets the height of the data display background. Dimensionless.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.bg_color`
-              - Gets or sets the color of the data display background.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.background_width`
+              - Get or set the width of the data display background. Dimensionless.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.background_height`
+              - Get or set the height of the data display background. Dimensionless.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.background_color`
+              - Get or set the color of the data display background.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.available_windows`
               - Get the available 3D windows for the data display.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.title_text`
-              - Gets or sets the title of the data display.
+              - Get or set the title of the data display.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.background_translucency`
-              - Gets or sets the translucency of the background between 0 and 1 inclusive.
+              - Get or set the translucency of the background between 0 and 1 inclusive.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.use_background_texture`
               - Opt whether to use a background texture with the data display.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.background_texture_filename`
-              - Gets or sets the filename of the background texture.
+              - Get or set the filename of the background texture.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.use_background_border`
               - Opt whether to use a background border with the data display.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.background_border_color`
-              - Gets or sets the color of the border surrounding the data display background.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.use_auto_size_width`
+              - Get or set the color of the border surrounding the data display background.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.use_automatic_size_width`
               - Opt whether to allow automatic resizing of data display width.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.use_auto_size_height`
+            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.use_automatic_size_height`
               - Opt whether to allow automatic resizing of data display height.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.is_show_name_enabled`
+            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.show_name`
               - Opt whether to show an objects name in the data display title.
 
 
@@ -105,23 +105,23 @@ Property detail
 
     Name of data display element.
 
-.. py:property:: is_visible
-    :canonical: ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.is_visible
+.. py:property:: show_graphics
+    :canonical: ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.show_graphics
     :type: bool
 
     Opt whether to show the data display element.
 
 .. py:property:: location
     :canonical: ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.location
-    :type: GRAPHICS_3D_LOCATION
+    :type: Graphics3DLocation
 
-    Gets or sets the location where the data display is to appear: 3D window, data display area, or offset from the selected object.
+    Get or set the location where the data display is to appear: 3D window, data display area, or offset from the selected object.
 
 .. py:property:: x_origin
     :canonical: ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.x_origin
-    :type: GRAPHICS_3D_X_ORIGIN
+    :type: Graphics3DXOrigin
 
-    Gets or sets the horizontal point of origin for the marker (left, center or right).
+    Get or set the horizontal point of origin for the marker (left, center or right).
 
 .. py:property:: x
     :canonical: ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.x
@@ -131,9 +131,9 @@ Property detail
 
 .. py:property:: y_origin
     :canonical: ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.y_origin
-    :type: GRAPHICS_3D_Y_ORIGIN
+    :type: Graphics3DYOrigin
 
-    Gets or sets the vertical point of origin for the marker (top, center or bottom.).
+    Get or set the vertical point of origin for the marker (top, center or bottom.).
 
 .. py:property:: y
     :canonical: ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.y
@@ -149,7 +149,7 @@ Property detail
 
 .. py:property:: font_size
     :canonical: ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.font_size
-    :type: GRAPHICS_3D_FONT_SIZE
+    :type: Graphics3DFontSize
 
     Font size of the data display.
 
@@ -161,7 +161,7 @@ Property detail
 
 .. py:property:: format
     :canonical: ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.format
-    :type: GRAPHICS_3D_FORMAT
+    :type: Graphics3DFormat
 
     Font format of the data display.
 
@@ -171,29 +171,29 @@ Property detail
 
     Opt whether to use a background with the data display.
 
-.. py:property:: transparent_bg
-    :canonical: ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.transparent_bg
+.. py:property:: transparent_background
+    :canonical: ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.transparent_background
     :type: bool
 
     Opt whether to make the background transparent.
 
-.. py:property:: bg_width
-    :canonical: ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.bg_width
+.. py:property:: background_width
+    :canonical: ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.background_width
     :type: int
 
-    Gets or sets the width of the data display background. Dimensionless.
+    Get or set the width of the data display background. Dimensionless.
 
-.. py:property:: bg_height
-    :canonical: ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.bg_height
+.. py:property:: background_height
+    :canonical: ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.background_height
     :type: int
 
-    Gets or sets the height of the data display background. Dimensionless.
+    Get or set the height of the data display background. Dimensionless.
 
-.. py:property:: bg_color
-    :canonical: ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.bg_color
+.. py:property:: background_color
+    :canonical: ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.background_color
     :type: agcolor.Color
 
-    Gets or sets the color of the data display background.
+    Get or set the color of the data display background.
 
 .. py:property:: available_windows
     :canonical: ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.available_windows
@@ -205,13 +205,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.title_text
     :type: str
 
-    Gets or sets the title of the data display.
+    Get or set the title of the data display.
 
 .. py:property:: background_translucency
     :canonical: ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.background_translucency
     :type: float
 
-    Gets or sets the translucency of the background between 0 and 1 inclusive.
+    Get or set the translucency of the background between 0 and 1 inclusive.
 
 .. py:property:: use_background_texture
     :canonical: ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.use_background_texture
@@ -223,7 +223,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.background_texture_filename
     :type: str
 
-    Gets or sets the filename of the background texture.
+    Get or set the filename of the background texture.
 
 .. py:property:: use_background_border
     :canonical: ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.use_background_border
@@ -235,22 +235,22 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.background_border_color
     :type: agcolor.Color
 
-    Gets or sets the color of the border surrounding the data display background.
+    Get or set the color of the border surrounding the data display background.
 
-.. py:property:: use_auto_size_width
-    :canonical: ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.use_auto_size_width
+.. py:property:: use_automatic_size_width
+    :canonical: ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.use_automatic_size_width
     :type: bool
 
     Opt whether to allow automatic resizing of data display width.
 
-.. py:property:: use_auto_size_height
-    :canonical: ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.use_auto_size_height
+.. py:property:: use_automatic_size_height
+    :canonical: ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.use_automatic_size_height
     :type: bool
 
     Opt whether to allow automatic resizing of data display height.
 
-.. py:property:: is_show_name_enabled
-    :canonical: ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.is_show_name_enabled
+.. py:property:: show_name
+    :canonical: ansys.stk.core.stkobjects.Graphics3DDataDisplayElement.show_name
     :type: bool
 
     Opt whether to show an objects name in the data display title.

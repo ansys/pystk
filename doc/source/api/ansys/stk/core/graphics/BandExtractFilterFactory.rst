@@ -26,7 +26,6 @@ Overview
               - Initialize a new instance with the raster format containing the bands to be extracted from the source raster.
 
 
-
 Import detail
 -------------
 
@@ -48,27 +47,27 @@ Method detail
 
         :obj:`~BandExtractFilter`
 
-.. py:method:: initialize_with_band(self, rasterBand: RASTER_BAND) -> BandExtractFilter
+.. py:method:: initialize_with_band(self, raster_band: RasterBand) -> BandExtractFilter
     :canonical: ansys.stk.core.graphics.BandExtractFilterFactory.initialize_with_band
 
     Initialize a new instance with the raster band to be extracted from the source raster.
 
     :Parameters:
 
-    **rasterBand** : :obj:`~RASTER_BAND`
+    **raster_band** : :obj:`~RasterBand`
 
     :Returns:
 
         :obj:`~BandExtractFilter`
 
-.. py:method:: initialize_with_format(self, rasterFormat: RASTER_FORMAT) -> BandExtractFilter
+.. py:method:: initialize_with_format(self, raster_format: RasterFormat) -> BandExtractFilter
     :canonical: ansys.stk.core.graphics.BandExtractFilterFactory.initialize_with_format
 
     Initialize a new instance with the raster format containing the bands to be extracted from the source raster.
 
     :Parameters:
 
-    **rasterFormat** : :obj:`~RASTER_FORMAT`
+    **raster_format** : :obj:`~RasterFormat`
 
     :Returns:
 

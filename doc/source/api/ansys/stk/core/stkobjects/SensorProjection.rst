@@ -55,7 +55,7 @@ Overview
               - Show Projection on 2D map.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorProjection.use_distance`
               - Opt whether the sensor's field-of-view crossings at specified distances are to be computed and displayed in the 2D Graphics window.
-            * - :py:attr:`~ansys.stk.core.stkobjects.SensorProjection.display_times_hides_persistance`
+            * - :py:attr:`~ansys.stk.core.stkobjects.SensorProjection.display_times_hides_persistence`
               - Specify whether to allow display times to affect the sensor's persistence on/off state.
 
 
@@ -91,13 +91,13 @@ Property detail
 
 .. py:property:: intersection_type
     :canonical: ansys.stk.core.stkobjects.SensorProjection.intersection_type
-    :type: INTERSECTION_TYPE
+    :type: IntersectionType
 
     The type of intersections to be shown. A member of the AgEIntersectionType enumeration.
 
 .. py:property:: distance_type
     :canonical: ansys.stk.core.stkobjects.SensorProjection.distance_type
-    :type: SENSOR_PROJECTION_DISTANCE_TYPE
+    :type: SensorProjectionDistanceType
 
     The criterion used for determining the projection distance. A member of the AgESnProjectionDistanceType enumeration.
 
@@ -131,8 +131,8 @@ Property detail
 
     Opt whether the sensor's field-of-view crossings at specified distances are to be computed and displayed in the 2D Graphics window.
 
-.. py:property:: display_times_hides_persistance
-    :canonical: ansys.stk.core.stkobjects.SensorProjection.display_times_hides_persistance
+.. py:property:: display_times_hides_persistence
+    :canonical: ansys.stk.core.stkobjects.SensorProjection.display_times_hides_persistence
     :type: bool
 
     Specify whether to allow display times to affect the sensor's persistence on/off state.
@@ -174,27 +174,27 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: enable_constraint(self, constraintName: str) -> None
+.. py:method:: enable_constraint(self, constraint_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.SensorProjection.enable_constraint
 
     Enable the constraint with the name given.
 
     :Parameters:
 
-    **constraintName** : :obj:`~str`
+    **constraint_name** : :obj:`~str`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: disable_constraint(self, constraintName: str) -> None
+.. py:method:: disable_constraint(self, constraint_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.SensorProjection.disable_constraint
 
     Disables the constraint with the name given.
 
     :Parameters:
 
-    **constraintName** : :obj:`~str`
+    **constraint_name** : :obj:`~str`
 
     :Returns:
 

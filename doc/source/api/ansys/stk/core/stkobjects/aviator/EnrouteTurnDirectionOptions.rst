@@ -38,13 +38,13 @@ Property detail
 
 .. py:property:: enroute_first_turn
     :canonical: ansys.stk.core.stkobjects.aviator.EnrouteTurnDirectionOptions.enroute_first_turn
-    :type: NAVIGATOR_TURN_DIRECTION
+    :type: NavigatorTurnDirection
 
     Option for the first turn.
 
 .. py:property:: enroute_second_turn
     :canonical: ansys.stk.core.stkobjects.aviator.EnrouteTurnDirectionOptions.enroute_second_turn
-    :type: NAVIGATOR_TURN_DIRECTION
+    :type: NavigatorTurnDirection
 
     Option for the second turn.
 

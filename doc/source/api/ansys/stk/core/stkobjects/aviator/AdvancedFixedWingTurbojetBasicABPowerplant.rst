@@ -7,10 +7,6 @@ AdvancedFixedWingTurbojetBasicABPowerplant
 
 .. py:currentmodule:: AdvancedFixedWingTurbojetBasicABPowerplant
 
-Overview
---------
-
-
 
 Import detail
 -------------

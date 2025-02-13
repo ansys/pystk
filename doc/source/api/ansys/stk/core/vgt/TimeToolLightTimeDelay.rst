@@ -25,9 +25,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.vgt.TimeToolLightTimeDelay.aberration_type`
               - Method used to Aberration Type.
             * - :py:attr:`~ansys.stk.core.vgt.TimeToolLightTimeDelay.clock_host`
-              - Indicates whether object1 or object2 of an Access instance holds the clock for Access times.
+              - Indicate whether object1 or object2 of an Access instance holds the clock for Access times.
             * - :py:attr:`~ansys.stk.core.vgt.TimeToolLightTimeDelay.time_sense`
-              - Indicates whether apparent position is computed in a transmit or receive sense.
+              - Indicate whether apparent position is computed in a transmit or receive sense.
 
 
 
@@ -56,20 +56,20 @@ Property detail
 
 .. py:property:: aberration_type
     :canonical: ansys.stk.core.vgt.TimeToolLightTimeDelay.aberration_type
-    :type: CRDN_VOLUME_ABERRATION_TYPE
+    :type: AberrationModelType
 
     Method used to Aberration Type.
 
 .. py:property:: clock_host
     :canonical: ansys.stk.core.vgt.TimeToolLightTimeDelay.clock_host
-    :type: CRDN_VOLUME_CLOCK_HOST_TYPE
+    :type: ClockHostType
 
-    Indicates whether object1 or object2 of an Access instance holds the clock for Access times.
+    Indicate whether object1 or object2 of an Access instance holds the clock for Access times.
 
 .. py:property:: time_sense
     :canonical: ansys.stk.core.vgt.TimeToolLightTimeDelay.time_sense
-    :type: CRDN_VOLUME_TIME_SENSE_TYPE
+    :type: TimeSenseType
 
-    Indicates whether apparent position is computed in a transmit or receive sense.
+    Indicate whether apparent position is computed in a transmit or receive sense.
 
 

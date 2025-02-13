@@ -548,7 +548,7 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStationkeeping`
               - Class defining the Stationkeeping strategy for a basic maneuver procedure.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFPA`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle`
               - Class defining the Relative Flight Path Angle strategy for a basic maneuver procedure.
 
             * - :py:class:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeSpeedAltitude`
@@ -824,6 +824,15 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVelNoisySurfTarget`
               - Class defining the position and velocity strategy, Noisy Surface Target.
 
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingFourPointAerodynamic`
+              - Class defining the FourPoint aerodynamic strategy in the Advanced Fixed Wing Tool.
+
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.MissileFourPointAerodynamic`
+              - Class defining the FourPoint aerodynamic strategy in the Missile.
+
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.FourPointAerodynamic`
+              - Class defining the FourPoint aerodynamic strategy.
+
 
     .. tab-item:: Enums
 
@@ -832,406 +841,406 @@ Summary
             :widths: auto
         
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ERROR_CODES`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ErrorCodes`
               - Error Codes.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.CLOSURE_VALUE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ClosureValue`
               - The closure value.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.PROCEDURE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ProcedureType`
               - Aviator procedure types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.SITE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.SiteType`
               - Aviator site types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BASIC_MANEUVER_STRATEGY`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategy`
               - Basic maneuver strategy types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.STRAIGHT_AHEAD_REFERENCE_FRAME`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.StraightAheadReferenceFrame`
               - Straight Ahead basic maneuver Reference Frame.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AIRSPEED_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AirspeedType`
               - Airspeed types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AERODYNAMIC_PROPULSION_SIMPLE_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AerodynamicPropulsionSimpleMode`
               - Aircraft operating mode for basic acceleration models with aerodynamics set to Simple.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AERODYNAMIC_PROPULSION_FLIGHT_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AerodynamicPropulsionFlightMode`
               - Flight mode for the Aero/Prop maneuver mode helper in aircraft acceleration models.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.PHASE_OF_FLIGHT`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.PhaseOfFlight`
               - Flight mode for basic maneuver procedures.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.CRUISE_SPEED`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.CruiseSpeed`
               - Cruise airspeed type for the procedure.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.TAKEOFF_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.TakeoffMode`
               - Takeoff procedure mode.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.APPROACH_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ApproachMode`
               - Landing procedure approach mode.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.NAVIGATOR_TURN_DIRECTION`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.NavigatorTurnDirection`
               - Turn mode for procedures with Enroute Turn Direction options.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BASIC_MANEUVER_FUEL_FLOW_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BasicManeuverFuelFlowType`
               - Fuel flow type for basic maneuver procedures.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BASIC_MANEUVER_ALTITUDE_LIMIT`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BasicManeuverAltitudeLimit`
               - The type of response Aviator will have if the maneuver attempts to exceed the altitude limit.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.RUNWAY_HIGH_LOW_END`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.RunwayHighLowEnd`
               - Runway heading that the aircraft will use.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BASIC_MANEUVER_REFERENCE_FRAME`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BasicManeuverReferenceFrame`
               - Reference frame for the basic maneuver strategy.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyNavigationControlLimit`
               - Define the control limits for the aircraft during the maneuver.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ACCELERATION_MANEUVER_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AccelerationManeuverMode`
               - The mode that the aircraft will adhere to the specified acceleration parameters.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AIRCRAFT_AERODYNAMIC_STRATEGY`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AircraftAerodynamicStrategy`
               - The aerodynamic strategy used to compute lift, drag, angle of attack, sideslip and intermediate / derived values.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AIRCRAFT_PROPULSION_STRATEGY`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AircraftPropulsionStrategy`
               - The propulsion strategy used to compute thrust and throttle setting.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AGL_MSL`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AGLMSL`
               - The altitude mode.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.LANDING_APPROACH_FIX_RANGE_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.LandingApproachFixRangeMode`
               - The reference point on the runway for the Approach Fix Range.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ACCELERATION_ADVANCED_ACCELERATION_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AccelerationAdvancedAccelerationMode`
               - Acceleration mode for aircraft advanced acceleration models.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ACCELERATION_MANEUVER_AERODYNAMIC_PROPULSION_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AccelerationManeuverAerodynamicPropulsionMode`
               - The mode used for the Aero/Prop maneuver mode helper for aircraft basic acceleration models.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyAirspeedPerformanceLimits`
               - The type of response Aviator will have if the basic maneuver attempts to exceed the airspeed limit.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BASIC_MANEUVER_STRATEGY_POWERED_CRUISE_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPoweredCruiseMode`
               - Powered Cruise Options.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.TURN_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.TurnMode`
               - The mode to specify an aircraft's level turn performance for acceleration performance models.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.POINT_TO_POINT_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.PointToPointMode`
               - The heading or course of the aircraft at the beginning of the procedure.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ALTITUDE_CONSTRAINT_MANEUVER_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AltitudeConstraintManeuverMode`
               - Turn mode for procedures that may require a level off maneuver.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.WIND_MODEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.WindModelType`
               - The wind model type.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.WIND_ATMOS_MODEL_SOURCE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.WindAtmosModelSource`
               - The source for the wind or atmosphere model.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ADDS_MESSAGE_INTERPOLATION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ADDSMessageInterpolationType`
               - The interpolation method for the wind conditions.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ADDS_MISSING_MESSAGE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ADDSMissingMessageType`
               - The wind effect to apply if there is an interval gap between messages.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ADDS_MESSAGE_EXTRAPOLATION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ADDSMessageExtrapolationType`
               - The wind effect to apply if the procedure(s) extend beyond the intervals of any available messages.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ADDS_FORECAST_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ADDSForecastType`
               - The forecast type for the NOAA ADDS message.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ATMOSPHERE_MODEL`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AtmosphereModelType`
               - The basic atmosphere model type.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.SMOOTH_TURN_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.SmoothTurnMode`
               - The basic maneuver smooth turn mode.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.PERFORMANCE_MODEL_OVERRIDE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.PerformanceModelOverride`
               - The performance model override mode.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BASIC_MANEUVER_AIRSPEED_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BasicManeuverAirspeedMode`
               - The basic maneuver airspeed mode.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AILERON_ROLL_FLIGHT_PATH`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AileronRollFlightPath`
               - The flight path option for an aileron roll strategy for a basic maneuver procedure.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ROLL_LEFT_RIGHT`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.RollLeftRight`
               - The roll direction for an aileron roll strategy for a basic maneuver procedure.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ROLL_UPRIGHT_INVERTED`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.RollUprightInverted`
               - The orientation for an aileron roll strategy for a basic maneuver procedure.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AILERON_ROLL_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AileronRollMode`
               - The roll mode aileron roll strategy for a basic maneuver procedure.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.FLY_AOA_LEFT_RIGHT`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.FlyAOALeftRight`
               - The roll direction for a Fly AOA strategy for a basic maneuver procedure.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.SMOOTH_ACCELERATION_LEFT_RIGHT`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.SmoothAccelerationLeftRight`
               - The roll direction for a smooth acceleration strategy for a basic maneuver procedure.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.PULL_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.PullMode`
               - The pull mode for a pull strategy of a basic maneuver procedure.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ROLLING_PULL_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.RollingPullMode`
               - The rolling pull mode for a rolling pull strategy of a basic maneuver procedure.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.SMOOTH_ACCELERATION_STOP_CONDITIONS`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.SmoothAccelerationStopConditions`
               - The rolling pull mode for a rolling pull strategy of a basic maneuver procedure.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AUTOPILOT_HORIZONTAL_PLANE_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AutopilotHorizontalPlaneMode`
               - The autopilot mode for an autopilot - horizontal plane strategy of a basic maneuver procedure.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ANGLE_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AngleMode`
               - The angle mode for a barrel roll strategy of a basic maneuver procedure.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.HOVER_ALTITUDE_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.HoverAltitudeMode`
               - The altitude mode for the lighter than air hover strategy of a basic maneuver procedure.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.HOVER_HEADING_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.HoverHeadingMode`
               - The heading mode for the lighter than air hover strategy of a basic maneuver procedure.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AUTOPILOT_ALTITUDE_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AutopilotAltitudeMode`
               - The altitude mode for the autopilot - vertical plane strategy of a basic maneuver procedure.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AUTOPILOT_ALTITUDE_CONTROL_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AutopilotAltitudeControlMode`
               - The altitude control mode for the autopilot - vertical plane strategy of a basic maneuver procedure.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.CLOSURE_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ClosureMode`
               - The closure mode for guidance strategies of the basic maneuver procedure.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.INTERCEPT_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.InterceptMode`
               - The intercept mode for the intercept strategy of the basic maneuver procedure.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.RENDEZVOUS_STOP_CONDITION`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.RendezvousStopCondition`
               - The stop condition options for a rendezvous formation strategy of the basic maneuver procedure.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.FORMATION_FLYER_STOP_CONDITION`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.FormationFlyerStopCondition`
               - The stop condition options for a Formation Flyer procedure.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.EXT_EPHEM_FLIGHT_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ExtEphemFlightMode`
               - Flight mode enums for ExtEphem.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ACCELERATION_PERFORMANCE_MODEL_OVERRIDE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AccelerationPerformanceModelOverride`
               - The acceleration performance model override mode.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.STATIONKEEPING_STOP_CONDITION`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.StationkeepingStopCondition`
               - The stop condition options for a stationkeeping strategy.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.TURN_DIRECTION`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.TurnDirection`
               - The roll direction for an aileron roll strategy for a basic maneuver procedure.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.PROFILE_CONTROL_LIMIT`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ProfileControlLimit`
               - Define the control limits for a profile strategy of a basic maneuver procedure.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.RELATIVE_SPEED_ALTITUDE_STOP_CONDITION`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.RelativeSpeedAltitudeStopCondition`
               - The stop condition options for a relative speed/altitude strategy.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.RELATIVE_ALTITUDE_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.RelativeAltitudeMode`
               - The relative altitude mode for a relative speed/altitude strategy.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.FLY_TO_FLIGHT_PATH_ANGLE_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.FlyToFlightPathAngleMode`
               - The flight path angle mode mode for a bezier profile strategy.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.PUSH_PULL`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.PushPull`
               - The option to pull up or push over for a push/pull profile strategy.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ACCELERATION_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AccelerationMode`
               - The acceleration/decelation option for a push/pull profile strategy.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.DELAY_ALTITUDE_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.DelayAltitudeMode`
               - The altitude options for a delay procedure.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.JOIN_EXIT_ARC_METHOD`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.JoinExitArcMethod`
               - The options to join or exit an arc.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.FLIGHT_LINE_PROCEDURE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.FlightLineProcedureType`
               - The procedure methodology used to calculate the flight line.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.TRANSITION_TO_HOVER_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.TransitionToHoverMode`
               - The type of hover to transition to.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.VTOL_RATE_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.VTOLRateMode`
               - The rate mode for the VTOL procedure.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.HOLDING_PROFILE_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.HoldingProfileMode`
               - How the aircraft will perform during the holding pattern with respect to airspeed and altitude.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.HOLDING_DIRECTION`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.HoldingDirection`
               - The turn direction for the aircraft to enter the holding pattern.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.HOLD_REFUEL_DUMP_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.HoldRefuelDumpMode`
               - Define when the aircraft will leave the holding pattern after it has completed refueling or dumping fuel.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.HOLDING_ENTRY_MANEUVER`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.HoldingEntryManeuver`
               - Define how the aircraft will enter the holding pattern.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.VTOL_TRANSITION_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.VTOLTransitionMode`
               - The mode to specify the course of the transition maneuver.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.VTOL_FINAL_HEADING_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.VTOLFinalHeadingMode`
               - The mode to specify the heading at the end of the maneuver.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.VTOL_TRANSLATION_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.VTOLTranslationMode`
               - The mode to specify the translation of the VTOL maneuver.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.VTOL_TRANSLATION_FINAL_COURSE_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.VTOLTranslationFinalCourseMode`
               - The mode to specify the final course of the VTOL maneuver.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.HOVER_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.HoverMode`
               - The hover mode.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.VTOL_HEADING_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.VTOLHeadingMode`
               - The heading mode for the hover maneuver.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.VERT_LANDING_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.VertLandingMode`
               - The heading mode for a vertical landing maneuver.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.LAUNCH_ATTITUDE_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.LaunchAttitudeMode`
               - The attitude mode for the launch procedure.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.FUEL_FLOW_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.FuelFlowType`
               - The fuel flow type to use for the procedure.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.LINE_ORIENTATION`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.LineOrientation`
               - The orientation for a parallel flight line procedure.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.RELATIVE_ABSOLUTE_BEARING`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.RelativeAbsoluteBearing`
               - The options for a bearing that can be relative or absolute.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BASIC_FIXED_WING_PROPULSION_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BasicFixedWingPropulsionMode`
               - The option to specify the thrust (jet engines) or power (propellers).
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.CLIMB_SPEED_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ClimbSpeedType`
               - The mode to calculate the aircraft's airspeed while climbing for an advanced climb performance model.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.CRUISE_MAX_PERFORMANCE_SPEED_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.CruiseMaxPerformanceSpeedType`
               - The method for defining the maximum performance airspeed of the aircraft for an advanced cruise model.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.DESCENT_SPEED_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.DescentSpeedType`
               - The method for calculating the aircraft's airspeed while descending.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.TAKEOFF_LANDING_SPEED_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.TakeoffLandingSpeedMode`
               - The method for calculating the aircraft's speed upon leaving the ground or at wheels down.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.DEPARTURE_SPEED_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.DepartureSpeedMode`
               - The method for calculating the aircraft's airspeed upon leaving the ground.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ADVANCED_FIXED_WING_AERODYNAMIC_STRATEGY`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingAerodynamicStrategy`
               - The aerodynamic strategy for the Advanced Fixed Wing Tool.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ADVANCED_FIXED_WING_GEOMETRY`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingGeometry`
               - The method to define the wing geometry of an aircraft in the Advanced Fixed Wing Tool.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ADVANCED_FIXED_WING_POWERPLANT_STRATEGY`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingPowerplantStrategy`
               - The powerplant strategy for the Advanced Fixed Wing Tool.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.MISSILE_AERODYNAMIC_STRATEGY`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.MissileAerodynamicStrategy`
               - The aerodynamic strategy used to compute lift, drag, angle of attack, sideslip and intermediate / derived values.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.MISSILE_PROPULSION_STRATEGY`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.MissilePropulsionStrategy`
               - The propulsion strategy used to compute thrust and throttle setting.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ROTORCRAFT_POWERPLANT_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.RotorcraftPowerplantType`
               - The powerplant type for a rotorcraft.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.MINIMIZE_SITE_PROCEDURE_TIME_DIFF`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.MinimizeSiteProcedureTimeDiff`
               - Options for minimizing the time difference between the procedure and site times.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.STK_OBJECT_WAYPOINT_OFFSET_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.STKObjectWaypointOffsetMode`
               - The options to offset the site location relative to the STK Object.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.SEARCH_PATTERN_COURSE_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.SearchPatternCourseMode`
               - The mode to determine the course of the search pattern.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.DELAY_TURN_DIRECTION`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.DelayTurnDirection`
               - Turn mode for procedures with Delay options.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.TRAJECTORY_BLEND_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.TrajectoryBlendMode`
               - The interpolation mode to determine the aircraft's position and velocity.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.REFERENCE_STATE_PERFORMANCE_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ReferenceStatePerformanceMode`
               - The type of motion the aircraft is engaged in at the reference state.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ReferenceStateLongitudinalAccelerationMode`
               - The mode to specify the longitudinal acceleration of the aircraft.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.REFERENCE_STATE_LATERAL_ACCELERATION_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ReferenceStateLateralAccelerationMode`
               - The mode to specify the lateral acceleration of the aircraft.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.REFERENCE_STATE_ATTITUDE_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ReferenceStateAttitudeMode`
               - The mode to specify the attitude rate of change.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AND_OR`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AndOr`
               - The option to specify AND or OR.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.JET_ENGINE_TECHNOLOGY_LEVEL`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.JetEngineTechnologyLevel`
               - The technology level of the jet engine.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.JET_ENGINE_INTAKE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.JetEngineIntakeType`
               - The intake type of the jet engine.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.JET_ENGINE_TURBINE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.JetEngineTurbineType`
               - The turbine type of the jet engine.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.JET_ENGINE_EXHAUST_NOZZLE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.JetEngineExhaustNozzleType`
               - The exhaust nozzle type of the jet engine.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.JET_FUEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.JetFuelType`
               - The jet fuel type.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AFPROP_FUEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AFPROPFuelType`
               - The AFPROP fuel type.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.CEA_FUEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.CEAFuelType`
               - The CEA fuel type.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.TURBINE_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.TurbineMode`
               - The turbine mode for a Sub/Super/Hypersonic powerplant.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.RAMJET_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.RamjetMode`
               - The ramjet mode for a Sub/Super/Hypersonic powerplant.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.SCRAMJET_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ScramjetMode`
               - The scramjet mode for a Sub/Super/Hypersonic powerplant.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.NUMERICAL_INTEGRATOR`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AviatorNumericalIntegrator`
               - The numerical integrator to be used for the procedure.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BALLISTIC_3D_CONTROL_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.Ballistic3DControlMode`
               - The control mode used to define the ballistic 3D strategy of the basic maneuver procedure.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.LAUNCH_DYNAMIC_STATE_COORD_FRAME`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.LaunchDynamicStateCoordFrame`
               - The coordinate frame used for a LaunchDynState procedure.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.LAUNCH_DYNAMIC_STATE_BEARING_REFERENCE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.LaunchDynamicStateBearingReference`
               - The vector used as a bearing reference for a LaunchDynState procedure.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.ALTITUDE_REFERENCE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.AltitudeReference`
               - The altitude reference.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.SMOOTH_TURN_FPA_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.SmoothTurnFlightPathAngleMode`
               - The flight path angle mode for the Smooth Turn strategy of the Basic Maneuver procedure.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.PITCH_3D_CONTROL_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.Pitch3DControlMode`
               - The control mode used to define the pitch 3D strategy of the basic maneuver procedure.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.REFUEL_DUMP_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.RefuelDumpMode`
               - The modes used to define procedure refuel/dump modes.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BASIC_MANEUVER_GLIDE_SPEED_CONTROL_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.BasicManeuverGlideSpeedControlMode`
               - The modes used to define basic maneuver glide speed control modes.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.TARGET_POSITION_VEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.TargetPositionVelType`
               - The target pos/vel type.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.EPHEM_SHIFT_ROTATE_ALTITUDE_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.EphemShiftRotateAltitudeMode`
               - Ephem alt mode.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.aviator.EPHEM_SHIFT_ROTATE_COURSE_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.aviator.EphemShiftRotateCourseMode`
               - Ephem course mode.
 
 
@@ -1436,7 +1445,7 @@ Object Model components specifically designed to support STK Aviator.
      BasicManeuverStrategyRelativeCourse<aviator/BasicManeuverStrategyRelativeCourse>
      BasicManeuverStrategyRendezvous<aviator/BasicManeuverStrategyRendezvous>
      BasicManeuverStrategyStationkeeping<aviator/BasicManeuverStrategyStationkeeping>
-     BasicManeuverStrategyRelativeFPA<aviator/BasicManeuverStrategyRelativeFPA>
+     BasicManeuverStrategyRelativeFlightPathAngle<aviator/BasicManeuverStrategyRelativeFlightPathAngle>
      BasicManeuverStrategyRelativeSpeedAltitude<aviator/BasicManeuverStrategyRelativeSpeedAltitude>
      BasicManeuverStrategyBezier<aviator/BasicManeuverStrategyBezier>
      BasicManeuverStrategyPushPull<aviator/BasicManeuverStrategyPushPull>
@@ -1528,144 +1537,147 @@ Object Model components specifically designed to support STK Aviator.
      BasicManeuverTargetPositionVel<aviator/BasicManeuverTargetPositionVel>
      BasicManeuverTargetPositionVelNoisyBearingRange<aviator/BasicManeuverTargetPositionVelNoisyBearingRange>
      BasicManeuverTargetPositionVelNoisySurfTarget<aviator/BasicManeuverTargetPositionVelNoisySurfTarget>
+     AdvancedFixedWingFourPointAerodynamic<aviator/AdvancedFixedWingFourPointAerodynamic>
+     MissileFourPointAerodynamic<aviator/MissileFourPointAerodynamic>
+     FourPointAerodynamic<aviator/FourPointAerodynamic>
 
 .. toctree::
     :titlesonly:
     :maxdepth: 1
     :hidden:
 
-    ≔ ERROR_CODES<aviator/ERROR_CODES_enum>
-    ≔ CLOSURE_VALUE<aviator/CLOSURE_VALUE_enum>
-    ≔ PROCEDURE_TYPE<aviator/PROCEDURE_TYPE_enum>
-    ≔ SITE_TYPE<aviator/SITE_TYPE_enum>
-    ≔ BASIC_MANEUVER_STRATEGY<aviator/BASIC_MANEUVER_STRATEGY_enum>
-    ≔ STRAIGHT_AHEAD_REFERENCE_FRAME<aviator/STRAIGHT_AHEAD_REFERENCE_FRAME_enum>
-    ≔ AIRSPEED_TYPE<aviator/AIRSPEED_TYPE_enum>
-    ≔ AERODYNAMIC_PROPULSION_SIMPLE_MODE<aviator/AERODYNAMIC_PROPULSION_SIMPLE_MODE_enum>
-    ≔ AERODYNAMIC_PROPULSION_FLIGHT_MODE<aviator/AERODYNAMIC_PROPULSION_FLIGHT_MODE_enum>
-    ≔ PHASE_OF_FLIGHT<aviator/PHASE_OF_FLIGHT_enum>
-    ≔ CRUISE_SPEED<aviator/CRUISE_SPEED_enum>
-    ≔ TAKEOFF_MODE<aviator/TAKEOFF_MODE_enum>
-    ≔ APPROACH_MODE<aviator/APPROACH_MODE_enum>
-    ≔ NAVIGATOR_TURN_DIRECTION<aviator/NAVIGATOR_TURN_DIRECTION_enum>
-    ≔ BASIC_MANEUVER_FUEL_FLOW_TYPE<aviator/BASIC_MANEUVER_FUEL_FLOW_TYPE_enum>
-    ≔ BASIC_MANEUVER_ALTITUDE_LIMIT<aviator/BASIC_MANEUVER_ALTITUDE_LIMIT_enum>
-    ≔ RUNWAY_HIGH_LOW_END<aviator/RUNWAY_HIGH_LOW_END_enum>
-    ≔ BASIC_MANEUVER_REFERENCE_FRAME<aviator/BASIC_MANEUVER_REFERENCE_FRAME_enum>
-    ≔ BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT<aviator/BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT_enum>
-    ≔ ACCELERATION_MANEUVER_MODE<aviator/ACCELERATION_MANEUVER_MODE_enum>
-    ≔ AIRCRAFT_AERODYNAMIC_STRATEGY<aviator/AIRCRAFT_AERODYNAMIC_STRATEGY_enum>
-    ≔ AIRCRAFT_PROPULSION_STRATEGY<aviator/AIRCRAFT_PROPULSION_STRATEGY_enum>
-    ≔ AGL_MSL<aviator/AGL_MSL_enum>
-    ≔ LANDING_APPROACH_FIX_RANGE_MODE<aviator/LANDING_APPROACH_FIX_RANGE_MODE_enum>
-    ≔ ACCELERATION_ADVANCED_ACCELERATION_MODE<aviator/ACCELERATION_ADVANCED_ACCELERATION_MODE_enum>
-    ≔ ACCELERATION_MANEUVER_AERODYNAMIC_PROPULSION_MODE<aviator/ACCELERATION_MANEUVER_AERODYNAMIC_PROPULSION_MODE_enum>
-    ≔ BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS<aviator/BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS_enum>
-    ≔ BASIC_MANEUVER_STRATEGY_POWERED_CRUISE_MODE<aviator/BASIC_MANEUVER_STRATEGY_POWERED_CRUISE_MODE_enum>
-    ≔ TURN_MODE<aviator/TURN_MODE_enum>
-    ≔ POINT_TO_POINT_MODE<aviator/POINT_TO_POINT_MODE_enum>
-    ≔ ALTITUDE_CONSTRAINT_MANEUVER_MODE<aviator/ALTITUDE_CONSTRAINT_MANEUVER_MODE_enum>
-    ≔ WIND_MODEL_TYPE<aviator/WIND_MODEL_TYPE_enum>
-    ≔ WIND_ATMOS_MODEL_SOURCE<aviator/WIND_ATMOS_MODEL_SOURCE_enum>
-    ≔ ADDS_MESSAGE_INTERPOLATION_TYPE<aviator/ADDS_MESSAGE_INTERPOLATION_TYPE_enum>
-    ≔ ADDS_MISSING_MESSAGE_TYPE<aviator/ADDS_MISSING_MESSAGE_TYPE_enum>
-    ≔ ADDS_MESSAGE_EXTRAPOLATION_TYPE<aviator/ADDS_MESSAGE_EXTRAPOLATION_TYPE_enum>
-    ≔ ADDS_FORECAST_TYPE<aviator/ADDS_FORECAST_TYPE_enum>
-    ≔ ATMOSPHERE_MODEL<aviator/ATMOSPHERE_MODEL_enum>
-    ≔ SMOOTH_TURN_MODE<aviator/SMOOTH_TURN_MODE_enum>
-    ≔ PERFORMANCE_MODEL_OVERRIDE<aviator/PERFORMANCE_MODEL_OVERRIDE_enum>
-    ≔ BASIC_MANEUVER_AIRSPEED_MODE<aviator/BASIC_MANEUVER_AIRSPEED_MODE_enum>
-    ≔ AILERON_ROLL_FLIGHT_PATH<aviator/AILERON_ROLL_FLIGHT_PATH_enum>
-    ≔ ROLL_LEFT_RIGHT<aviator/ROLL_LEFT_RIGHT_enum>
-    ≔ ROLL_UPRIGHT_INVERTED<aviator/ROLL_UPRIGHT_INVERTED_enum>
-    ≔ AILERON_ROLL_MODE<aviator/AILERON_ROLL_MODE_enum>
-    ≔ FLY_AOA_LEFT_RIGHT<aviator/FLY_AOA_LEFT_RIGHT_enum>
-    ≔ SMOOTH_ACCELERATION_LEFT_RIGHT<aviator/SMOOTH_ACCELERATION_LEFT_RIGHT_enum>
-    ≔ PULL_MODE<aviator/PULL_MODE_enum>
-    ≔ ROLLING_PULL_MODE<aviator/ROLLING_PULL_MODE_enum>
-    ≔ SMOOTH_ACCELERATION_STOP_CONDITIONS<aviator/SMOOTH_ACCELERATION_STOP_CONDITIONS_enum>
-    ≔ AUTOPILOT_HORIZONTAL_PLANE_MODE<aviator/AUTOPILOT_HORIZONTAL_PLANE_MODE_enum>
-    ≔ ANGLE_MODE<aviator/ANGLE_MODE_enum>
-    ≔ HOVER_ALTITUDE_MODE<aviator/HOVER_ALTITUDE_MODE_enum>
-    ≔ HOVER_HEADING_MODE<aviator/HOVER_HEADING_MODE_enum>
-    ≔ AUTOPILOT_ALTITUDE_MODE<aviator/AUTOPILOT_ALTITUDE_MODE_enum>
-    ≔ AUTOPILOT_ALTITUDE_CONTROL_MODE<aviator/AUTOPILOT_ALTITUDE_CONTROL_MODE_enum>
-    ≔ CLOSURE_MODE<aviator/CLOSURE_MODE_enum>
-    ≔ INTERCEPT_MODE<aviator/INTERCEPT_MODE_enum>
-    ≔ RENDEZVOUS_STOP_CONDITION<aviator/RENDEZVOUS_STOP_CONDITION_enum>
-    ≔ FORMATION_FLYER_STOP_CONDITION<aviator/FORMATION_FLYER_STOP_CONDITION_enum>
-    ≔ EXT_EPHEM_FLIGHT_MODE<aviator/EXT_EPHEM_FLIGHT_MODE_enum>
-    ≔ ACCELERATION_PERFORMANCE_MODEL_OVERRIDE<aviator/ACCELERATION_PERFORMANCE_MODEL_OVERRIDE_enum>
-    ≔ STATIONKEEPING_STOP_CONDITION<aviator/STATIONKEEPING_STOP_CONDITION_enum>
-    ≔ TURN_DIRECTION<aviator/TURN_DIRECTION_enum>
-    ≔ PROFILE_CONTROL_LIMIT<aviator/PROFILE_CONTROL_LIMIT_enum>
-    ≔ RELATIVE_SPEED_ALTITUDE_STOP_CONDITION<aviator/RELATIVE_SPEED_ALTITUDE_STOP_CONDITION_enum>
-    ≔ RELATIVE_ALTITUDE_MODE<aviator/RELATIVE_ALTITUDE_MODE_enum>
-    ≔ FLY_TO_FLIGHT_PATH_ANGLE_MODE<aviator/FLY_TO_FLIGHT_PATH_ANGLE_MODE_enum>
-    ≔ PUSH_PULL<aviator/PUSH_PULL_enum>
-    ≔ ACCELERATION_MODE<aviator/ACCELERATION_MODE_enum>
-    ≔ DELAY_ALTITUDE_MODE<aviator/DELAY_ALTITUDE_MODE_enum>
-    ≔ JOIN_EXIT_ARC_METHOD<aviator/JOIN_EXIT_ARC_METHOD_enum>
-    ≔ FLIGHT_LINE_PROCEDURE_TYPE<aviator/FLIGHT_LINE_PROCEDURE_TYPE_enum>
-    ≔ TRANSITION_TO_HOVER_MODE<aviator/TRANSITION_TO_HOVER_MODE_enum>
-    ≔ VTOL_RATE_MODE<aviator/VTOL_RATE_MODE_enum>
-    ≔ HOLDING_PROFILE_MODE<aviator/HOLDING_PROFILE_MODE_enum>
-    ≔ HOLDING_DIRECTION<aviator/HOLDING_DIRECTION_enum>
-    ≔ HOLD_REFUEL_DUMP_MODE<aviator/HOLD_REFUEL_DUMP_MODE_enum>
-    ≔ HOLDING_ENTRY_MANEUVER<aviator/HOLDING_ENTRY_MANEUVER_enum>
-    ≔ VTOL_TRANSITION_MODE<aviator/VTOL_TRANSITION_MODE_enum>
-    ≔ VTOL_FINAL_HEADING_MODE<aviator/VTOL_FINAL_HEADING_MODE_enum>
-    ≔ VTOL_TRANSLATION_MODE<aviator/VTOL_TRANSLATION_MODE_enum>
-    ≔ VTOL_TRANSLATION_FINAL_COURSE_MODE<aviator/VTOL_TRANSLATION_FINAL_COURSE_MODE_enum>
-    ≔ HOVER_MODE<aviator/HOVER_MODE_enum>
-    ≔ VTOL_HEADING_MODE<aviator/VTOL_HEADING_MODE_enum>
-    ≔ VERT_LANDING_MODE<aviator/VERT_LANDING_MODE_enum>
-    ≔ LAUNCH_ATTITUDE_MODE<aviator/LAUNCH_ATTITUDE_MODE_enum>
-    ≔ FUEL_FLOW_TYPE<aviator/FUEL_FLOW_TYPE_enum>
-    ≔ LINE_ORIENTATION<aviator/LINE_ORIENTATION_enum>
-    ≔ RELATIVE_ABSOLUTE_BEARING<aviator/RELATIVE_ABSOLUTE_BEARING_enum>
-    ≔ BASIC_FIXED_WING_PROPULSION_MODE<aviator/BASIC_FIXED_WING_PROPULSION_MODE_enum>
-    ≔ CLIMB_SPEED_TYPE<aviator/CLIMB_SPEED_TYPE_enum>
-    ≔ CRUISE_MAX_PERFORMANCE_SPEED_TYPE<aviator/CRUISE_MAX_PERFORMANCE_SPEED_TYPE_enum>
-    ≔ DESCENT_SPEED_TYPE<aviator/DESCENT_SPEED_TYPE_enum>
-    ≔ TAKEOFF_LANDING_SPEED_MODE<aviator/TAKEOFF_LANDING_SPEED_MODE_enum>
-    ≔ DEPARTURE_SPEED_MODE<aviator/DEPARTURE_SPEED_MODE_enum>
-    ≔ ADVANCED_FIXED_WING_AERODYNAMIC_STRATEGY<aviator/ADVANCED_FIXED_WING_AERODYNAMIC_STRATEGY_enum>
-    ≔ ADVANCED_FIXED_WING_GEOMETRY<aviator/ADVANCED_FIXED_WING_GEOMETRY_enum>
-    ≔ ADVANCED_FIXED_WING_POWERPLANT_STRATEGY<aviator/ADVANCED_FIXED_WING_POWERPLANT_STRATEGY_enum>
-    ≔ MISSILE_AERODYNAMIC_STRATEGY<aviator/MISSILE_AERODYNAMIC_STRATEGY_enum>
-    ≔ MISSILE_PROPULSION_STRATEGY<aviator/MISSILE_PROPULSION_STRATEGY_enum>
-    ≔ ROTORCRAFT_POWERPLANT_TYPE<aviator/ROTORCRAFT_POWERPLANT_TYPE_enum>
-    ≔ MINIMIZE_SITE_PROCEDURE_TIME_DIFF<aviator/MINIMIZE_SITE_PROCEDURE_TIME_DIFF_enum>
-    ≔ STK_OBJECT_WAYPOINT_OFFSET_MODE<aviator/STK_OBJECT_WAYPOINT_OFFSET_MODE_enum>
-    ≔ SEARCH_PATTERN_COURSE_MODE<aviator/SEARCH_PATTERN_COURSE_MODE_enum>
-    ≔ DELAY_TURN_DIRECTION<aviator/DELAY_TURN_DIRECTION_enum>
-    ≔ TRAJECTORY_BLEND_MODE<aviator/TRAJECTORY_BLEND_MODE_enum>
-    ≔ REFERENCE_STATE_PERFORMANCE_MODE<aviator/REFERENCE_STATE_PERFORMANCE_MODE_enum>
-    ≔ REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE<aviator/REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE_enum>
-    ≔ REFERENCE_STATE_LATERAL_ACCELERATION_MODE<aviator/REFERENCE_STATE_LATERAL_ACCELERATION_MODE_enum>
-    ≔ REFERENCE_STATE_ATTITUDE_MODE<aviator/REFERENCE_STATE_ATTITUDE_MODE_enum>
-    ≔ AND_OR<aviator/AND_OR_enum>
-    ≔ JET_ENGINE_TECHNOLOGY_LEVEL<aviator/JET_ENGINE_TECHNOLOGY_LEVEL_enum>
-    ≔ JET_ENGINE_INTAKE_TYPE<aviator/JET_ENGINE_INTAKE_TYPE_enum>
-    ≔ JET_ENGINE_TURBINE_TYPE<aviator/JET_ENGINE_TURBINE_TYPE_enum>
-    ≔ JET_ENGINE_EXHAUST_NOZZLE_TYPE<aviator/JET_ENGINE_EXHAUST_NOZZLE_TYPE_enum>
-    ≔ JET_FUEL_TYPE<aviator/JET_FUEL_TYPE_enum>
-    ≔ AFPROP_FUEL_TYPE<aviator/AFPROP_FUEL_TYPE_enum>
-    ≔ CEA_FUEL_TYPE<aviator/CEA_FUEL_TYPE_enum>
-    ≔ TURBINE_MODE<aviator/TURBINE_MODE_enum>
-    ≔ RAMJET_MODE<aviator/RAMJET_MODE_enum>
-    ≔ SCRAMJET_MODE<aviator/SCRAMJET_MODE_enum>
-    ≔ NUMERICAL_INTEGRATOR<aviator/NUMERICAL_INTEGRATOR_enum>
-    ≔ BALLISTIC_3D_CONTROL_MODE<aviator/BALLISTIC_3D_CONTROL_MODE_enum>
-    ≔ LAUNCH_DYNAMIC_STATE_COORD_FRAME<aviator/LAUNCH_DYNAMIC_STATE_COORD_FRAME_enum>
-    ≔ LAUNCH_DYNAMIC_STATE_BEARING_REFERENCE<aviator/LAUNCH_DYNAMIC_STATE_BEARING_REFERENCE_enum>
-    ≔ ALTITUDE_REFERENCE<aviator/ALTITUDE_REFERENCE_enum>
-    ≔ SMOOTH_TURN_FPA_MODE<aviator/SMOOTH_TURN_FPA_MODE_enum>
-    ≔ PITCH_3D_CONTROL_MODE<aviator/PITCH_3D_CONTROL_MODE_enum>
-    ≔ REFUEL_DUMP_MODE<aviator/REFUEL_DUMP_MODE_enum>
-    ≔ BASIC_MANEUVER_GLIDE_SPEED_CONTROL_MODE<aviator/BASIC_MANEUVER_GLIDE_SPEED_CONTROL_MODE_enum>
-    ≔ TARGET_POSITION_VEL_TYPE<aviator/TARGET_POSITION_VEL_TYPE_enum>
-    ≔ EPHEM_SHIFT_ROTATE_ALTITUDE_MODE<aviator/EPHEM_SHIFT_ROTATE_ALTITUDE_MODE_enum>
-    ≔ EPHEM_SHIFT_ROTATE_COURSE_MODE<aviator/EPHEM_SHIFT_ROTATE_COURSE_MODE_enum>
+    ≔ ErrorCodes<aviator/ErrorCodes>
+    ≔ ClosureValue<aviator/ClosureValue>
+    ≔ ProcedureType<aviator/ProcedureType>
+    ≔ SiteType<aviator/SiteType>
+    ≔ BasicManeuverStrategy<aviator/BasicManeuverStrategy>
+    ≔ StraightAheadReferenceFrame<aviator/StraightAheadReferenceFrame>
+    ≔ AirspeedType<aviator/AirspeedType>
+    ≔ AerodynamicPropulsionSimpleMode<aviator/AerodynamicPropulsionSimpleMode>
+    ≔ AerodynamicPropulsionFlightMode<aviator/AerodynamicPropulsionFlightMode>
+    ≔ PhaseOfFlight<aviator/PhaseOfFlight>
+    ≔ CruiseSpeed<aviator/CruiseSpeed>
+    ≔ TakeoffMode<aviator/TakeoffMode>
+    ≔ ApproachMode<aviator/ApproachMode>
+    ≔ NavigatorTurnDirection<aviator/NavigatorTurnDirection>
+    ≔ BasicManeuverFuelFlowType<aviator/BasicManeuverFuelFlowType>
+    ≔ BasicManeuverAltitudeLimit<aviator/BasicManeuverAltitudeLimit>
+    ≔ RunwayHighLowEnd<aviator/RunwayHighLowEnd>
+    ≔ BasicManeuverReferenceFrame<aviator/BasicManeuverReferenceFrame>
+    ≔ BasicManeuverStrategyNavigationControlLimit<aviator/BasicManeuverStrategyNavigationControlLimit>
+    ≔ AccelerationManeuverMode<aviator/AccelerationManeuverMode>
+    ≔ AircraftAerodynamicStrategy<aviator/AircraftAerodynamicStrategy>
+    ≔ AircraftPropulsionStrategy<aviator/AircraftPropulsionStrategy>
+    ≔ AGLMSL<aviator/AGLMSL>
+    ≔ LandingApproachFixRangeMode<aviator/LandingApproachFixRangeMode>
+    ≔ AccelerationAdvancedAccelerationMode<aviator/AccelerationAdvancedAccelerationMode>
+    ≔ AccelerationManeuverAerodynamicPropulsionMode<aviator/AccelerationManeuverAerodynamicPropulsionMode>
+    ≔ BasicManeuverStrategyAirspeedPerformanceLimits<aviator/BasicManeuverStrategyAirspeedPerformanceLimits>
+    ≔ BasicManeuverStrategyPoweredCruiseMode<aviator/BasicManeuverStrategyPoweredCruiseMode>
+    ≔ TurnMode<aviator/TurnMode>
+    ≔ PointToPointMode<aviator/PointToPointMode>
+    ≔ AltitudeConstraintManeuverMode<aviator/AltitudeConstraintManeuverMode>
+    ≔ WindModelType<aviator/WindModelType>
+    ≔ WindAtmosModelSource<aviator/WindAtmosModelSource>
+    ≔ ADDSMessageInterpolationType<aviator/ADDSMessageInterpolationType>
+    ≔ ADDSMissingMessageType<aviator/ADDSMissingMessageType>
+    ≔ ADDSMessageExtrapolationType<aviator/ADDSMessageExtrapolationType>
+    ≔ ADDSForecastType<aviator/ADDSForecastType>
+    ≔ AtmosphereModelType<aviator/AtmosphereModelType>
+    ≔ SmoothTurnMode<aviator/SmoothTurnMode>
+    ≔ PerformanceModelOverride<aviator/PerformanceModelOverride>
+    ≔ BasicManeuverAirspeedMode<aviator/BasicManeuverAirspeedMode>
+    ≔ AileronRollFlightPath<aviator/AileronRollFlightPath>
+    ≔ RollLeftRight<aviator/RollLeftRight>
+    ≔ RollUprightInverted<aviator/RollUprightInverted>
+    ≔ AileronRollMode<aviator/AileronRollMode>
+    ≔ FlyAOALeftRight<aviator/FlyAOALeftRight>
+    ≔ SmoothAccelerationLeftRight<aviator/SmoothAccelerationLeftRight>
+    ≔ PullMode<aviator/PullMode>
+    ≔ RollingPullMode<aviator/RollingPullMode>
+    ≔ SmoothAccelerationStopConditions<aviator/SmoothAccelerationStopConditions>
+    ≔ AutopilotHorizontalPlaneMode<aviator/AutopilotHorizontalPlaneMode>
+    ≔ AngleMode<aviator/AngleMode>
+    ≔ HoverAltitudeMode<aviator/HoverAltitudeMode>
+    ≔ HoverHeadingMode<aviator/HoverHeadingMode>
+    ≔ AutopilotAltitudeMode<aviator/AutopilotAltitudeMode>
+    ≔ AutopilotAltitudeControlMode<aviator/AutopilotAltitudeControlMode>
+    ≔ ClosureMode<aviator/ClosureMode>
+    ≔ InterceptMode<aviator/InterceptMode>
+    ≔ RendezvousStopCondition<aviator/RendezvousStopCondition>
+    ≔ FormationFlyerStopCondition<aviator/FormationFlyerStopCondition>
+    ≔ ExtEphemFlightMode<aviator/ExtEphemFlightMode>
+    ≔ AccelerationPerformanceModelOverride<aviator/AccelerationPerformanceModelOverride>
+    ≔ StationkeepingStopCondition<aviator/StationkeepingStopCondition>
+    ≔ TurnDirection<aviator/TurnDirection>
+    ≔ ProfileControlLimit<aviator/ProfileControlLimit>
+    ≔ RelativeSpeedAltitudeStopCondition<aviator/RelativeSpeedAltitudeStopCondition>
+    ≔ RelativeAltitudeMode<aviator/RelativeAltitudeMode>
+    ≔ FlyToFlightPathAngleMode<aviator/FlyToFlightPathAngleMode>
+    ≔ PushPull<aviator/PushPull>
+    ≔ AccelerationMode<aviator/AccelerationMode>
+    ≔ DelayAltitudeMode<aviator/DelayAltitudeMode>
+    ≔ JoinExitArcMethod<aviator/JoinExitArcMethod>
+    ≔ FlightLineProcedureType<aviator/FlightLineProcedureType>
+    ≔ TransitionToHoverMode<aviator/TransitionToHoverMode>
+    ≔ VTOLRateMode<aviator/VTOLRateMode>
+    ≔ HoldingProfileMode<aviator/HoldingProfileMode>
+    ≔ HoldingDirection<aviator/HoldingDirection>
+    ≔ HoldRefuelDumpMode<aviator/HoldRefuelDumpMode>
+    ≔ HoldingEntryManeuver<aviator/HoldingEntryManeuver>
+    ≔ VTOLTransitionMode<aviator/VTOLTransitionMode>
+    ≔ VTOLFinalHeadingMode<aviator/VTOLFinalHeadingMode>
+    ≔ VTOLTranslationMode<aviator/VTOLTranslationMode>
+    ≔ VTOLTranslationFinalCourseMode<aviator/VTOLTranslationFinalCourseMode>
+    ≔ HoverMode<aviator/HoverMode>
+    ≔ VTOLHeadingMode<aviator/VTOLHeadingMode>
+    ≔ VertLandingMode<aviator/VertLandingMode>
+    ≔ LaunchAttitudeMode<aviator/LaunchAttitudeMode>
+    ≔ FuelFlowType<aviator/FuelFlowType>
+    ≔ LineOrientation<aviator/LineOrientation>
+    ≔ RelativeAbsoluteBearing<aviator/RelativeAbsoluteBearing>
+    ≔ BasicFixedWingPropulsionMode<aviator/BasicFixedWingPropulsionMode>
+    ≔ ClimbSpeedType<aviator/ClimbSpeedType>
+    ≔ CruiseMaxPerformanceSpeedType<aviator/CruiseMaxPerformanceSpeedType>
+    ≔ DescentSpeedType<aviator/DescentSpeedType>
+    ≔ TakeoffLandingSpeedMode<aviator/TakeoffLandingSpeedMode>
+    ≔ DepartureSpeedMode<aviator/DepartureSpeedMode>
+    ≔ AdvancedFixedWingAerodynamicStrategy<aviator/AdvancedFixedWingAerodynamicStrategy>
+    ≔ AdvancedFixedWingGeometry<aviator/AdvancedFixedWingGeometry>
+    ≔ AdvancedFixedWingPowerplantStrategy<aviator/AdvancedFixedWingPowerplantStrategy>
+    ≔ MissileAerodynamicStrategy<aviator/MissileAerodynamicStrategy>
+    ≔ MissilePropulsionStrategy<aviator/MissilePropulsionStrategy>
+    ≔ RotorcraftPowerplantType<aviator/RotorcraftPowerplantType>
+    ≔ MinimizeSiteProcedureTimeDiff<aviator/MinimizeSiteProcedureTimeDiff>
+    ≔ STKObjectWaypointOffsetMode<aviator/STKObjectWaypointOffsetMode>
+    ≔ SearchPatternCourseMode<aviator/SearchPatternCourseMode>
+    ≔ DelayTurnDirection<aviator/DelayTurnDirection>
+    ≔ TrajectoryBlendMode<aviator/TrajectoryBlendMode>
+    ≔ ReferenceStatePerformanceMode<aviator/ReferenceStatePerformanceMode>
+    ≔ ReferenceStateLongitudinalAccelerationMode<aviator/ReferenceStateLongitudinalAccelerationMode>
+    ≔ ReferenceStateLateralAccelerationMode<aviator/ReferenceStateLateralAccelerationMode>
+    ≔ ReferenceStateAttitudeMode<aviator/ReferenceStateAttitudeMode>
+    ≔ AndOr<aviator/AndOr>
+    ≔ JetEngineTechnologyLevel<aviator/JetEngineTechnologyLevel>
+    ≔ JetEngineIntakeType<aviator/JetEngineIntakeType>
+    ≔ JetEngineTurbineType<aviator/JetEngineTurbineType>
+    ≔ JetEngineExhaustNozzleType<aviator/JetEngineExhaustNozzleType>
+    ≔ JetFuelType<aviator/JetFuelType>
+    ≔ AFPROPFuelType<aviator/AFPROPFuelType>
+    ≔ CEAFuelType<aviator/CEAFuelType>
+    ≔ TurbineMode<aviator/TurbineMode>
+    ≔ RamjetMode<aviator/RamjetMode>
+    ≔ ScramjetMode<aviator/ScramjetMode>
+    ≔ AviatorNumericalIntegrator<aviator/AviatorNumericalIntegrator>
+    ≔ Ballistic3DControlMode<aviator/Ballistic3DControlMode>
+    ≔ LaunchDynamicStateCoordFrame<aviator/LaunchDynamicStateCoordFrame>
+    ≔ LaunchDynamicStateBearingReference<aviator/LaunchDynamicStateBearingReference>
+    ≔ AltitudeReference<aviator/AltitudeReference>
+    ≔ SmoothTurnFlightPathAngleMode<aviator/SmoothTurnFlightPathAngleMode>
+    ≔ Pitch3DControlMode<aviator/Pitch3DControlMode>
+    ≔ RefuelDumpMode<aviator/RefuelDumpMode>
+    ≔ BasicManeuverGlideSpeedControlMode<aviator/BasicManeuverGlideSpeedControlMode>
+    ≔ TargetPositionVelType<aviator/TargetPositionVelType>
+    ≔ EphemShiftRotateAltitudeMode<aviator/EphemShiftRotateAltitudeMode>
+    ≔ EphemShiftRotateCourseMode<aviator/EphemShiftRotateCourseMode>
 

@@ -34,9 +34,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleTargetPointingElement.constrained_vector`
               - Get the constrained vector.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleTargetPointingElement.constrained_vector_reference`
-              - Gets or sets the reference for the constrained vector.
+              - Get or set the reference for the constrained vector.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleTargetPointingElement.available_constrained_vectors`
-              - Returns the available constrained vectors.
+              - Return the available constrained vectors.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleTargetPointingElement.latitude`
               - Get the LLA position's latitude. Uses Latitude Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleTargetPointingElement.longitude`
@@ -44,7 +44,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleTargetPointingElement.altitude`
               - Get the LLA position's altitude. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleTargetPointingElement.intervals`
-              - Returns a list of scheduled time intervals for the current target.
+              - Return a list of scheduled time intervals for the current target.
 
 
 
@@ -81,13 +81,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleTargetPointingElement.constrained_vector_reference
     :type: str
 
-    Gets or sets the reference for the constrained vector.
+    Get or set the reference for the constrained vector.
 
 .. py:property:: available_constrained_vectors
     :canonical: ansys.stk.core.stkobjects.VehicleTargetPointingElement.available_constrained_vectors
     :type: list
 
-    Returns the available constrained vectors.
+    Return the available constrained vectors.
 
 .. py:property:: latitude
     :canonical: ansys.stk.core.stkobjects.VehicleTargetPointingElement.latitude
@@ -111,7 +111,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleTargetPointingElement.intervals
     :type: VehicleTargetPointingIntervalCollection
 
-    Returns a list of scheduled time intervals for the current target.
+    Return a list of scheduled time intervals for the current target.
 
 
 Method detail

@@ -19,18 +19,18 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.LineTargetGraphics.label_name`
-              - Gets or sets the label name.
-            * - :py:attr:`~ansys.stk.core.stkobjects.LineTargetGraphics.bounding_rect_visible`
+              - Get or set the label name.
+            * - :py:attr:`~ansys.stk.core.stkobjects.LineTargetGraphics.show_bounding_rectangle`
               - A bounding rectangle is displayed using the outermost points defined for the line target as its reference.
             * - :py:attr:`~ansys.stk.core.stkobjects.LineTargetGraphics.line_width`
               - Line width.
             * - :py:attr:`~ansys.stk.core.stkobjects.LineTargetGraphics.line_style`
               - Line style.
-            * - :py:attr:`~ansys.stk.core.stkobjects.LineTargetGraphics.line_pts_visible`
-              - Gets or sets the individual points used to define the line target are marked along the line. The point currently selected in the Path list is accented with a square.
-            * - :py:attr:`~ansys.stk.core.stkobjects.LineTargetGraphics.use_inst_name_label`
+            * - :py:attr:`~ansys.stk.core.stkobjects.LineTargetGraphics.show_line_points`
+              - Get or set the individual points used to define the line target are marked along the line. The point currently selected in the Path list is accented with a square.
+            * - :py:attr:`~ansys.stk.core.stkobjects.LineTargetGraphics.use_instance_name_label`
               - Use the label name instance.
-            * - :py:attr:`~ansys.stk.core.stkobjects.LineTargetGraphics.label_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.LineTargetGraphics.show_label`
               - Show the label; the Inherit property must be false or this property will be read-only.
             * - :py:attr:`~ansys.stk.core.stkobjects.LineTargetGraphics.label_color`
               - Label color.
@@ -42,7 +42,7 @@ Overview
               - Inherit 2D graphics properties from the scenario.
             * - :py:attr:`~ansys.stk.core.stkobjects.LineTargetGraphics.label_notes`
               - Get the label notes collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.LineTargetGraphics.is_object_graphics_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.LineTargetGraphics.show_graphics`
               - Specify whether graphics attributes of the line target are visible.
 
 
@@ -62,40 +62,40 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.LineTargetGraphics.label_name
     :type: str
 
-    Gets or sets the label name.
+    Get or set the label name.
 
-.. py:property:: bounding_rect_visible
-    :canonical: ansys.stk.core.stkobjects.LineTargetGraphics.bounding_rect_visible
+.. py:property:: show_bounding_rectangle
+    :canonical: ansys.stk.core.stkobjects.LineTargetGraphics.show_bounding_rectangle
     :type: bool
 
     A bounding rectangle is displayed using the outermost points defined for the line target as its reference.
 
 .. py:property:: line_width
     :canonical: ansys.stk.core.stkobjects.LineTargetGraphics.line_width
-    :type: LINE_WIDTH
+    :type: LineWidth
 
     Line width.
 
 .. py:property:: line_style
     :canonical: ansys.stk.core.stkobjects.LineTargetGraphics.line_style
-    :type: LINE_STYLE
+    :type: LineStyle
 
     Line style.
 
-.. py:property:: line_pts_visible
-    :canonical: ansys.stk.core.stkobjects.LineTargetGraphics.line_pts_visible
+.. py:property:: show_line_points
+    :canonical: ansys.stk.core.stkobjects.LineTargetGraphics.show_line_points
     :type: bool
 
-    Gets or sets the individual points used to define the line target are marked along the line. The point currently selected in the Path list is accented with a square.
+    Get or set the individual points used to define the line target are marked along the line. The point currently selected in the Path list is accented with a square.
 
-.. py:property:: use_inst_name_label
-    :canonical: ansys.stk.core.stkobjects.LineTargetGraphics.use_inst_name_label
+.. py:property:: use_instance_name_label
+    :canonical: ansys.stk.core.stkobjects.LineTargetGraphics.use_instance_name_label
     :type: bool
 
     Use the label name instance.
 
-.. py:property:: label_visible
-    :canonical: ansys.stk.core.stkobjects.LineTargetGraphics.label_visible
+.. py:property:: show_label
+    :canonical: ansys.stk.core.stkobjects.LineTargetGraphics.show_label
     :type: bool
 
     Show the label; the Inherit property must be false or this property will be read-only.
@@ -130,8 +130,8 @@ Property detail
 
     Get the label notes collection.
 
-.. py:property:: is_object_graphics_visible
-    :canonical: ansys.stk.core.stkobjects.LineTargetGraphics.is_object_graphics_visible
+.. py:property:: show_graphics
+    :canonical: ansys.stk.core.stkobjects.LineTargetGraphics.show_graphics
     :type: bool
 
     Specify whether graphics attributes of the line target are visible.

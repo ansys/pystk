@@ -48,7 +48,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineThrottleTable.reference_epoch`
               - The date and Time used as reference epoch for degradation. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineThrottleTable.control_parameters_available`
-              - Returns whether or not the control parameters can be set.
+              - Return whether or not the control parameters can be set.
 
 
 
@@ -71,7 +71,7 @@ Property detail
 
 .. py:property:: operation_mode_definition
     :canonical: ansys.stk.core.stkobjects.astrogator.EngineThrottleTable.operation_mode_definition
-    :type: THROTTLE_TABLE_OPERATION_MODE
+    :type: ThrottleTableOperationMode
 
     The engine operation mode definition.
 
@@ -109,7 +109,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.EngineThrottleTable.control_parameters_available
     :type: bool
 
-    Returns whether or not the control parameters can be set.
+    Return whether or not the control parameters can be set.
 
 
 Method detail
@@ -129,40 +129,40 @@ Method detail
 
 
 
-.. py:method:: enable_control_parameter(self, param: CONTROL_ENGINE_THROTTLE_TABLE) -> None
+.. py:method:: enable_control_parameter(self, param: ControlEngineThrottleTable) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.EngineThrottleTable.enable_control_parameter
 
     Enable the specified control parameter.
 
     :Parameters:
 
-    **param** : :obj:`~CONTROL_ENGINE_THROTTLE_TABLE`
+    **param** : :obj:`~ControlEngineThrottleTable`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: disable_control_parameter(self, param: CONTROL_ENGINE_THROTTLE_TABLE) -> None
+.. py:method:: disable_control_parameter(self, param: ControlEngineThrottleTable) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.EngineThrottleTable.disable_control_parameter
 
     Disables the specified control parameter.
 
     :Parameters:
 
-    **param** : :obj:`~CONTROL_ENGINE_THROTTLE_TABLE`
+    **param** : :obj:`~ControlEngineThrottleTable`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_control_parameter_enabled(self, param: CONTROL_ENGINE_THROTTLE_TABLE) -> bool
+.. py:method:: is_control_parameter_enabled(self, param: ControlEngineThrottleTable) -> bool
     :canonical: ansys.stk.core.stkobjects.astrogator.EngineThrottleTable.is_control_parameter_enabled
 
     Sees if the specified control is enabled.
 
     :Parameters:
 
-    **param** : :obj:`~CONTROL_ENGINE_THROTTLE_TABLE`
+    **param** : :obj:`~ControlEngineThrottleTable`
 
     :Returns:
 

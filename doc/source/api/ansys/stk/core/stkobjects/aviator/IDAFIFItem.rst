@@ -29,7 +29,6 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IDAFIFItem.get_as_catalog_item`
               - Get the catalog item interface for this object.
 
-
 Import detail
 -------------
 
@@ -42,14 +41,14 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: get_value(self, fieldName: str) -> typing.Any
+.. py:method:: get_value(self, field_name: str) -> typing.Any
     :canonical: ansys.stk.core.stkobjects.aviator.IDAFIFItem.get_value
 
     Get the value of the field with the given name.
 
     :Parameters:
 
-    **fieldName** : :obj:`~str`
+    **field_name** : :obj:`~str`
 
     :Returns:
 

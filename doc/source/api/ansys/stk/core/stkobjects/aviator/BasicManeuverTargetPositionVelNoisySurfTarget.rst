@@ -34,13 +34,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVelNoisySurfTarget.measurement_time_step`
-              - Gets or sets the measurement time step property.
+              - Get or set the measurement time step property.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVelNoisySurfTarget.position_cep`
-              - Gets or sets the position CEP property.
+              - Get or set the position CEP property.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVelNoisySurfTarget.course_error`
-              - Gets or sets the course error property.
+              - Get or set the course error property.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVelNoisySurfTarget.speed_error`
-              - Gets or sets the speed error property.
+              - Get or set the speed error property.
 
 
 
@@ -59,25 +59,25 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVelNoisySurfTarget.measurement_time_step
     :type: float
 
-    Gets or sets the measurement time step property.
+    Get or set the measurement time step property.
 
 .. py:property:: position_cep
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVelNoisySurfTarget.position_cep
     :type: float
 
-    Gets or sets the position CEP property.
+    Get or set the position CEP property.
 
 .. py:property:: course_error
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVelNoisySurfTarget.course_error
     :type: float
 
-    Gets or sets the course error property.
+    Get or set the course error property.
 
 .. py:property:: speed_error
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVelNoisySurfTarget.speed_error
     :type: float
 
-    Gets or sets the speed error property.
+    Get or set the speed error property.
 
 
 Method detail
@@ -118,14 +118,14 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_base_dynamic_state_link_name(self, newVal: str) -> None
+.. py:method:: set_base_dynamic_state_link_name(self, value: str) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVelNoisySurfTarget.set_base_dynamic_state_link_name
 
     Set the BaseDynStateLinkName.
 
     :Parameters:
 
-    **newVal** : :obj:`~str`
+    **value** : :obj:`~str`
 
     :Returns:
 

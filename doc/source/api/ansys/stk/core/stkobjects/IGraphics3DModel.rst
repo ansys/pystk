@@ -23,11 +23,11 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModel.scale_value`
               - Specify the absolute scaling value for the object. The model scale is an exponential scale. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModel.detail_threshold`
-              - Gets the detail threshold attributes.
+              - Get the detail threshold attributes.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModel.model_data`
-              - Gets the model data property.
+              - Get the model data property.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModel.model_type`
-              - Gets or sets the model type property. A member of the AgEModelType enumeration.
+              - Get or set the model type property. A member of the AgEModelType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGraphics3DModel.articulation`
               - Articulation property.
 
@@ -59,23 +59,23 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.IGraphics3DModel.detail_threshold
     :type: Graphics3DDetailThreshold
 
-    Gets the detail threshold attributes.
+    Get the detail threshold attributes.
 
 .. py:property:: model_data
     :canonical: ansys.stk.core.stkobjects.IGraphics3DModel.model_data
     :type: IGraphics3DModelData
 
-    Gets the model data property.
+    Get the model data property.
 
 .. py:property:: model_type
     :canonical: ansys.stk.core.stkobjects.IGraphics3DModel.model_type
-    :type: MODEL_TYPE
+    :type: ModelType
 
-    Gets or sets the model type property. A member of the AgEModelType enumeration.
+    Get or set the model type property. A member of the AgEModelType enumeration.
 
 .. py:property:: articulation
     :canonical: ansys.stk.core.stkobjects.IGraphics3DModel.articulation
-    :type: Graphics3DModelArtic
+    :type: Graphics3DModelArticulation
 
     Articulation property.
 

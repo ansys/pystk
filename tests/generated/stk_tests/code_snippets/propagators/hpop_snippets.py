@@ -30,18 +30,18 @@ class HPOPSnippets(CodeSnippetsTestBase):
     def setUp(self):
         HPOPSnippets.m_Object = clr.CastAs(
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-                STK_OBJECT_TYPE.SATELLITE, HPOPSnippets.m_DefaultName
+                STKObjectType.SATELLITE, HPOPSnippets.m_DefaultName
             ),
             Satellite,
         )
-        CodeSnippetsTestBase.m_Root.unit_preferences.reset_units()
+        CodeSnippetsTestBase.m_Root.units_preferences.reset_units()
 
     # endregion
 
     # region TestTearDown
     def tearDown(self):
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(
-            STK_OBJECT_TYPE.SATELLITE, HPOPSnippets.m_DefaultName
+            STKObjectType.SATELLITE, HPOPSnippets.m_DefaultName
         )
         HPOPSnippets.m_Object = None
 
@@ -53,16 +53,16 @@ class HPOPSnippets(CodeSnippetsTestBase):
 
     def ConfigureSatelliteWithHPOPPropagator(self, satellite: "Satellite"):
         # Set satellite propagator to HPOP
-        satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_HPOP)
+        satellite.set_propagator_type(PropagatorType.HPOP)
 
-        # Get VehiclePropagatorLOP interface
-        hpopProp: "VehiclePropagatorHPOP" = clr.CastAs(satellite.propagator, VehiclePropagatorHPOP)
+        # Get PropagatorLOP interface
+        hpopProp: "PropagatorHPOP" = clr.CastAs(satellite.propagator, PropagatorHPOP)
 
         # Configure force model
         hpopForceModel: "VehicleHPOPForceModel" = hpopProp.force_model
         hpopForceModel.central_body_gravity.file = r"STKData\CentralBodies\Earth\GGM02C.grv"
-        hpopForceModel.central_body_gravity.max_degree = 45
-        hpopForceModel.central_body_gravity.max_order = 10
+        hpopForceModel.central_body_gravity.maximum_degree = 45
+        hpopForceModel.central_body_gravity.maximum_order = 10
         hpopForceModel.central_body_gravity.use_ocean_tides = True
 
         hpopForceModel.drag.use = True
@@ -71,7 +71,7 @@ class HPOPSnippets(CodeSnippetsTestBase):
         )
         hpopDragModel.cd = 1.89
         hpopDragModel.area_mass_ratio = 0.05
-        hpopForceModel.drag.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.MSIS90
+        hpopForceModel.drag.atmospheric_density_model = AtmosphericDensityModel.MSIS90
 
         hpopForceModel.third_body_gravity.remove_third_body("Moon")
 

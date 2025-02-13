@@ -30,7 +30,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.ProjectionStream.update_delta`
-              - Gets or sets the update delta of the projection stream in seconds. The update delta defines the interval at which the Update method will be called...
+              - Get or set the update delta of the projection stream in seconds. The update delta defines the interval at which the Update method will be called...
 
 
 
@@ -49,7 +49,7 @@ Property detail
     :canonical: ansys.stk.core.graphics.ProjectionStream.update_delta
     :type: float
 
-    Gets or sets the update delta of the projection stream in seconds. The update delta defines the interval at which the Update method will be called...
+    Get or set the update delta of the projection stream in seconds. The update delta defines the interval at which the Update method will be called...
 
 
 Method detail
@@ -57,7 +57,7 @@ Method detail
 
 
 
-.. py:method:: update(self, time: IDate, nextTime: IDate) -> bool
+.. py:method:: update(self, time: IDate, next_time: IDate) -> bool
     :canonical: ansys.stk.core.graphics.ProjectionStream.update
 
     When overridden in a derived class, updates the projection data associated with the projection stream at the specified time. When the Update method is called, the projection stream contains the current projection data...
@@ -65,7 +65,7 @@ Method detail
     :Parameters:
 
     **time** : :obj:`~IDate`
-    **nextTime** : :obj:`~IDate`
+    **next_time** : :obj:`~IDate`
 
     :Returns:
 

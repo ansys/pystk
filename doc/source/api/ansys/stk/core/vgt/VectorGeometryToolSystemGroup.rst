@@ -36,15 +36,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolSystemGroup.context`
-              - Returns a context object. The context can be used to find out which central body or STK object this instance is associated with.
+              - Return a context object. The context can be used to find out which central body or STK object this instance is associated with.
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolSystemGroup.count`
-              - Returns a number of elements in the collection.
+              - Return a number of elements in the collection.
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolSystemGroup.factory`
-              - Returns a Factory object used to create custom VGT systems.
-            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolSystemGroup._NewEnum`
-              - Returns a COM enumerator.
+              - Return a Factory object used to create custom VGT systems.
+            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolSystemGroup._new_enum`
+              - Return a COM enumerator.
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolSystemGroup.common_tasks`
-              - Provides access to common tasks that allow users quickly carry out tasks such as creating known systems, etc.
+              - Provide access to common tasks that allow users quickly carry out tasks such as creating known systems, etc.
 
 
 
@@ -61,46 +61,46 @@ Property detail
 
 .. py:property:: context
     :canonical: ansys.stk.core.vgt.VectorGeometryToolSystemGroup.context
-    :type: IAnalysisWorkbenchContext
+    :type: IAnalysisWorkbenchComponentContext
 
-    Returns a context object. The context can be used to find out which central body or STK object this instance is associated with.
+    Return a context object. The context can be used to find out which central body or STK object this instance is associated with.
 
 .. py:property:: count
     :canonical: ansys.stk.core.vgt.VectorGeometryToolSystemGroup.count
     :type: int
 
-    Returns a number of elements in the collection.
+    Return a number of elements in the collection.
 
 .. py:property:: factory
     :canonical: ansys.stk.core.vgt.VectorGeometryToolSystemGroup.factory
     :type: VectorGeometryToolSystemFactory
 
-    Returns a Factory object used to create custom VGT systems.
+    Return a Factory object used to create custom VGT systems.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.vgt.VectorGeometryToolSystemGroup._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.vgt.VectorGeometryToolSystemGroup._new_enum
     :type: EnumeratorProxy
 
-    Returns a COM enumerator.
+    Return a COM enumerator.
 
 .. py:property:: common_tasks
     :canonical: ansys.stk.core.vgt.VectorGeometryToolSystemGroup.common_tasks
     :type: VectorGeometryToolSystemCommonTasks
 
-    Provides access to common tasks that allow users quickly carry out tasks such as creating known systems, etc.
+    Provide access to common tasks that allow users quickly carry out tasks such as creating known systems, etc.
 
 
 Method detail
 -------------
 
-.. py:method:: remove(self, systemName: str) -> None
+.. py:method:: remove(self, system_name: str) -> None
     :canonical: ansys.stk.core.vgt.VectorGeometryToolSystemGroup.remove
 
     Remove a specified System.
 
     :Parameters:
 
-    **systemName** : :obj:`~str`
+    **system_name** : :obj:`~str`
 
     :Returns:
 
@@ -122,14 +122,14 @@ Method detail
 
 
 
-.. py:method:: item(self, indexOrName: typing.Any) -> IVectorGeometryToolSystem
+.. py:method:: item(self, index_or_name: typing.Any) -> IVectorGeometryToolSystem
     :canonical: ansys.stk.core.vgt.VectorGeometryToolSystemGroup.item
 
     Return a System by name or at a specified position.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 

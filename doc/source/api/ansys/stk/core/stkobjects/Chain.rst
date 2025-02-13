@@ -38,8 +38,8 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.Chain.objects`
-              - This property is deprecated. Use the StartObject, EndObject and Connections properties to configure objects in the chain.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Chain.auto_recompute`
+              - Do not use this property, as it is deprecated. Use the StartObject, EndObject and Connections properties to configure objects in the chain.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Chain.recompute_automatically`
               - Opt to have STK automatically recompute accesses each time that an object on which the chain depends is updated.
             * - :py:attr:`~ansys.stk.core.stkobjects.Chain.time_period_type`
               - Get the option used to specify the time period for the chain.
@@ -47,14 +47,14 @@ Overview
               - Get the time period for the chain.
             * - :py:attr:`~ansys.stk.core.stkobjects.Chain.data_save_mode`
               - Specify the mode for saving or recomputing accesses.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Chain.access_intervals_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.Chain.access_intervals_filename`
               - Name of the .int file containing the strand access intervals.
             * - :py:attr:`~ansys.stk.core.stkobjects.Chain.enable_light_time_delay`
               - Specify whether to take light time delay into account in the computation.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Chain.max_time_step`
-              - Gets or sets the maximum sampling step size used when computing the chain. The maximum step size limits the amount of time that is allowed to elapse between sampling of the constraint functions during access computations. Uses Time Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Chain.maximum_time_step`
+              - Get or set the maximum sampling step size used when computing the chain. The maximum step size limits the amount of time that is allowed to elapse between sampling of the constraint functions during access computations. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.Chain.time_convergence`
-              - Gets or sets the time convergence for determining access intervals when computing the chain. Uses Time Dimension.
+              - Get or set the time convergence for determining access intervals when computing the chain. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.Chain.constraints`
               - Get the constraints applicable to the chain.
             * - :py:attr:`~ansys.stk.core.stkobjects.Chain.graphics`
@@ -71,9 +71,9 @@ Overview
               - Constellation constraints mode, apply to strands or per instance.
             * - :py:attr:`~ansys.stk.core.stkobjects.Chain.keep_empty_strands`
               - Allow strands with no access intervals to included in reports.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Chain.allow_dup_objs_in_strands`
+            * - :py:attr:`~ansys.stk.core.stkobjects.Chain.allow_duplicate_objects_in_strands`
               - Allow a strand to contain an object more than once.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Chain.cov_asset_mode`
+            * - :py:attr:`~ansys.stk.core.stkobjects.Chain.coverage_asset_mode`
               - When Computing Coverage and the Chain is used as a coverage asset, append the grid instance to the end of the chain or update the grid instance inside the chain.
             * - :py:attr:`~ansys.stk.core.stkobjects.Chain.start_object`
               - Start object for the Chain.
@@ -103,34 +103,34 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Chain.objects
     :type: ObjectLinkCollection
 
-    This property is deprecated. Use the StartObject, EndObject and Connections properties to configure objects in the chain.
+    Do not use this property, as it is deprecated. Use the StartObject, EndObject and Connections properties to configure objects in the chain.
 
-.. py:property:: auto_recompute
-    :canonical: ansys.stk.core.stkobjects.Chain.auto_recompute
+.. py:property:: recompute_automatically
+    :canonical: ansys.stk.core.stkobjects.Chain.recompute_automatically
     :type: bool
 
     Opt to have STK automatically recompute accesses each time that an object on which the chain depends is updated.
 
 .. py:property:: time_period_type
     :canonical: ansys.stk.core.stkobjects.Chain.time_period_type
-    :type: CHAIN_TIME_PERIOD_TYPE
+    :type: ChainTimePeriodType
 
     Get the option used to specify the time period for the chain.
 
 .. py:property:: time_period
     :canonical: ansys.stk.core.stkobjects.Chain.time_period
-    :type: IChainTimePeriodBase
+    :type: IChainTimePeriod
 
     Get the time period for the chain.
 
 .. py:property:: data_save_mode
     :canonical: ansys.stk.core.stkobjects.Chain.data_save_mode
-    :type: DATA_SAVE_MODE
+    :type: DataSaveMode
 
     Specify the mode for saving or recomputing accesses.
 
-.. py:property:: access_intervals_file
-    :canonical: ansys.stk.core.stkobjects.Chain.access_intervals_file
+.. py:property:: access_intervals_filename
+    :canonical: ansys.stk.core.stkobjects.Chain.access_intervals_filename
     :type: str
 
     Name of the .int file containing the strand access intervals.
@@ -141,17 +141,17 @@ Property detail
 
     Specify whether to take light time delay into account in the computation.
 
-.. py:property:: max_time_step
-    :canonical: ansys.stk.core.stkobjects.Chain.max_time_step
+.. py:property:: maximum_time_step
+    :canonical: ansys.stk.core.stkobjects.Chain.maximum_time_step
     :type: float
 
-    Gets or sets the maximum sampling step size used when computing the chain. The maximum step size limits the amount of time that is allowed to elapse between sampling of the constraint functions during access computations. Uses Time Dimension.
+    Get or set the maximum sampling step size used when computing the chain. The maximum step size limits the amount of time that is allowed to elapse between sampling of the constraint functions during access computations. Uses Time Dimension.
 
 .. py:property:: time_convergence
     :canonical: ansys.stk.core.stkobjects.Chain.time_convergence
     :type: float
 
-    Gets or sets the time convergence for determining access intervals when computing the chain. Uses Time Dimension.
+    Get or set the time convergence for determining access intervals when computing the chain. Uses Time Dimension.
 
 .. py:property:: constraints
     :canonical: ansys.stk.core.stkobjects.Chain.constraints
@@ -191,7 +191,7 @@ Property detail
 
 .. py:property:: const_constraints_mode
     :canonical: ansys.stk.core.stkobjects.Chain.const_constraints_mode
-    :type: CHAIN_CONST_CONSTRAINTS_MODE
+    :type: ChainConstellationConstraintsMode
 
     Constellation constraints mode, apply to strands or per instance.
 
@@ -201,15 +201,15 @@ Property detail
 
     Allow strands with no access intervals to included in reports.
 
-.. py:property:: allow_dup_objs_in_strands
-    :canonical: ansys.stk.core.stkobjects.Chain.allow_dup_objs_in_strands
+.. py:property:: allow_duplicate_objects_in_strands
+    :canonical: ansys.stk.core.stkobjects.Chain.allow_duplicate_objects_in_strands
     :type: bool
 
     Allow a strand to contain an object more than once.
 
-.. py:property:: cov_asset_mode
-    :canonical: ansys.stk.core.stkobjects.Chain.cov_asset_mode
-    :type: CHAIN_COV_ASSET_MODE
+.. py:property:: coverage_asset_mode
+    :canonical: ansys.stk.core.stkobjects.Chain.coverage_asset_mode
+    :type: ChainCoverageAssetMode
 
     When Computing Coverage and the Chain is used as a coverage asset, append the grid instance to the end of the chain or update the grid instance inside the chain.
 
@@ -251,14 +251,14 @@ Method detail
 
 
 
-.. py:method:: set_time_period_type(self, timePeriodType: CHAIN_TIME_PERIOD_TYPE) -> None
+.. py:method:: set_time_period_type(self, time_period_type: ChainTimePeriodType) -> None
     :canonical: ansys.stk.core.stkobjects.Chain.set_time_period_type
 
     Set the option used to specify the time period.
 
     :Parameters:
 
-    **timePeriodType** : :obj:`~CHAIN_TIME_PERIOD_TYPE`
+    **time_period_type** : :obj:`~ChainTimePeriodType`
 
     :Returns:
 

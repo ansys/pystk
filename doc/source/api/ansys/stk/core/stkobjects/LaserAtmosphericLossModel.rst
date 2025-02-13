@@ -9,10 +9,6 @@ LaserAtmosphericLossModel
 
 .. py:currentmodule:: LaserAtmosphericLossModel
 
-Overview
---------
-
-
 
 Import detail
 -------------

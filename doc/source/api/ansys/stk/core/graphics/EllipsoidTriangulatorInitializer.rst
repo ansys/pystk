@@ -24,7 +24,6 @@ Overview
               - Compute the triangulation for an ellipsoid with the specified radii, centered at the origin.
 
 
-
 Import detail
 -------------
 

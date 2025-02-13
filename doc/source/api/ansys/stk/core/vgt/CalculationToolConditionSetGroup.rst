@@ -36,13 +36,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.CalculationToolConditionSetGroup.context`
-              - Returns a context object. The context can be used to find out which central body or STK object this instance is associated with.
+              - Return a context object. The context can be used to find out which central body or STK object this instance is associated with.
             * - :py:attr:`~ansys.stk.core.vgt.CalculationToolConditionSetGroup.count`
-              - Returns a number of elements in the group.
+              - Return a number of elements in the group.
             * - :py:attr:`~ansys.stk.core.vgt.CalculationToolConditionSetGroup.factory`
-              - Returns a factory object used to create condition set components.
-            * - :py:attr:`~ansys.stk.core.vgt.CalculationToolConditionSetGroup._NewEnum`
-              - Returns a COM enumerator.
+              - Return a factory object used to create condition set components.
+            * - :py:attr:`~ansys.stk.core.vgt.CalculationToolConditionSetGroup._new_enum`
+              - Return a COM enumerator.
 
 
 
@@ -59,40 +59,40 @@ Property detail
 
 .. py:property:: context
     :canonical: ansys.stk.core.vgt.CalculationToolConditionSetGroup.context
-    :type: IAnalysisWorkbenchContext
+    :type: IAnalysisWorkbenchComponentContext
 
-    Returns a context object. The context can be used to find out which central body or STK object this instance is associated with.
+    Return a context object. The context can be used to find out which central body or STK object this instance is associated with.
 
 .. py:property:: count
     :canonical: ansys.stk.core.vgt.CalculationToolConditionSetGroup.count
     :type: int
 
-    Returns a number of elements in the group.
+    Return a number of elements in the group.
 
 .. py:property:: factory
     :canonical: ansys.stk.core.vgt.CalculationToolConditionSetGroup.factory
     :type: CalculationToolConditionSetFactory
 
-    Returns a factory object used to create condition set components.
+    Return a factory object used to create condition set components.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.vgt.CalculationToolConditionSetGroup._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.vgt.CalculationToolConditionSetGroup._new_enum
     :type: EnumeratorProxy
 
-    Returns a COM enumerator.
+    Return a COM enumerator.
 
 
 Method detail
 -------------
 
-.. py:method:: remove(self, eventName: str) -> None
+.. py:method:: remove(self, event_name: str) -> None
     :canonical: ansys.stk.core.vgt.CalculationToolConditionSetGroup.remove
 
     Remove a specified element.
 
     :Parameters:
 
-    **eventName** : :obj:`~str`
+    **event_name** : :obj:`~str`
 
     :Returns:
 
@@ -114,14 +114,14 @@ Method detail
 
 
 
-.. py:method:: item(self, indexOrName: typing.Any) -> ICalculationToolConditionSet
+.. py:method:: item(self, index_or_name: typing.Any) -> ICalculationToolConditionSet
     :canonical: ansys.stk.core.vgt.CalculationToolConditionSetGroup.item
 
     Return an element by name or at a specified position.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 

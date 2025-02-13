@@ -24,7 +24,6 @@ Overview
               - Define a collection of colors.
 
 
-
 Import detail
 -------------
 
@@ -37,14 +36,14 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: set_texture_coordinates(self, textureCoordinates: list) -> None
+.. py:method:: set_texture_coordinates(self, texture_coordinates: list) -> None
     :canonical: ansys.stk.core.graphics.TriangleMeshPrimitiveOptionalParameters.set_texture_coordinates
 
     Define a collection of texture coordinates.
 
     :Parameters:
 
-    **textureCoordinates** : :obj:`~list`
+    **texture_coordinates** : :obj:`~list`
 
     :Returns:
 

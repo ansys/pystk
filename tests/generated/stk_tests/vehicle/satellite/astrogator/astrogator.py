@@ -26,8 +26,8 @@ class EarlyBoundTests(TestBase):
             TestBase.Initialize()
             TestBase.LoadTestScenario(Path.Combine("AstrogatorTests", "AstrogatorTests.sc"))
             EarlyBoundTests.AG_SAT = Satellite(TestBase.Application.current_scenario.children["Satellite1"])
-            EarlyBoundTests.AG_SAT.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
-            EarlyBoundTests.AG_VA = DriverMissionControlSequence(EarlyBoundTests.AG_SAT.propagator)
+            EarlyBoundTests.AG_SAT.set_propagator_type(PropagatorType.ASTROGATOR)
+            EarlyBoundTests.AG_VA = MCSDriver(EarlyBoundTests.AG_SAT.propagator)
 
         except Exception as e:
             Console.WriteLine(str(e))
@@ -46,7 +46,7 @@ class EarlyBoundTests(TestBase):
 
     # region Static DataMembers
     AG_SAT: "Satellite" = None
-    AG_VA: "DriverMissionControlSequence" = None
+    AG_VA: "MCSDriver" = None
     # endregion
 
     def TestTargeterGraphsControlDisabled(self, tg: "TargeterGraphCollection", isDC: bool):
@@ -201,7 +201,7 @@ class EarlyBoundTests(TestBase):
         result: "TargeterGraphResult" = tgrc[0]
         Assert.assertEqual("prop1 : Epoch", result.name)
         Assert.assertEqual("prop1", result.parent_name)
-        Assert.assertEqual(GRAPH_OPTION.NO_GRAPH, result.graph_option)
+        Assert.assertEqual(GraphOption.NO_GRAPH, result.graph_option)
 
         # all options are read only.
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
@@ -221,11 +221,11 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             result.show_tolerance_band = True
 
-        result.graph_option = GRAPH_OPTION.GRAPH_VALUE
-        Assert.assertEqual(GRAPH_OPTION.GRAPH_VALUE, result.graph_option)
+        result.graph_option = GraphOption.GRAPH_VALUE
+        Assert.assertEqual(GraphOption.GRAPH_VALUE, result.graph_option)
         if isDC:
-            result.graph_option = GRAPH_OPTION.GRAPH_DIFFERENCE
-            Assert.assertEqual(GRAPH_OPTION.GRAPH_DIFFERENCE, result.graph_option)
+            result.graph_option = GraphOption.GRAPH_DIFFERENCE
+            Assert.assertEqual(GraphOption.GRAPH_DIFFERENCE, result.graph_option)
 
         Assert.assertFalse(result.show_desired_value)
         # show desired is readonly
@@ -256,8 +256,8 @@ class EarlyBoundTests(TestBase):
             result.show_tolerance_band = True
             Assert.assertTrue(result.show_tolerance_band)
 
-        result.graph_option = GRAPH_OPTION.GRAPH_VALUE
-        Assert.assertEqual(GRAPH_OPTION.GRAPH_VALUE, result.graph_option)
+        result.graph_option = GraphOption.GRAPH_VALUE
+        Assert.assertEqual(GraphOption.GRAPH_VALUE, result.graph_option)
         Assert.assertFalse(result.show_desired_value)
         if isDC:
             result.show_desired_value = True
@@ -266,19 +266,16 @@ class EarlyBoundTests(TestBase):
     @category("ExcludeOnLinux")
     def test_TargeterGraphs(self):
         satellite: "Satellite" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "REQ57491"), Satellite
+            TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "REQ57491"), Satellite
         )
-        satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
-        driver: "DriverMissionControlSequence" = clr.CastAs(satellite.propagator, DriverMissionControlSequence)
-        ts: "MissionControlSequenceTargetSequence" = clr.CastAs(
-            driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence1", "-"),
-            MissionControlSequenceTargetSequence,
+        satellite.set_propagator_type(PropagatorType.ASTROGATOR)
+        driver: "MCSDriver" = clr.CastAs(satellite.propagator, MCSDriver)
+        ts: "MCSTargetSequence" = clr.CastAs(
+            driver.main_sequence.insert(SegmentType.TARGET_SEQUENCE, "TargetSequence1", "-"), MCSTargetSequence
         )
-        prop1: "MissionControlSequencePropagate" = clr.CastAs(
-            ts.segments.insert(SEGMENT_TYPE.PROPAGATE, "prop1", "-"), MissionControlSequencePropagate
-        )
-        prop1.enable_control_parameter(CONTROL_ADVANCED.PROPAGATE_MAX_PROPAGATION_TIME)
-        (IMissionControlSequenceSegment(prop1)).results.add("Epoch")
+        prop1: "MCSPropagate" = clr.CastAs(ts.segments.insert(SegmentType.PROPAGATE, "prop1", "-"), MCSPropagate)
+        prop1.enable_control_parameter(ControlAdvanced.PROPAGATE_MAX_PROPATION_TIME)
+        (IMCSSegment(prop1)).results.add("Epoch")
         dc: "ProfileDifferentialCorrector" = clr.CastAs(ts.profiles[0], ProfileDifferentialCorrector)
         self.TestTargeterGraphsControlDisabled(dc.targeter_graphs, True)
         dc.control_parameters[0].enable = True
@@ -294,57 +291,50 @@ class EarlyBoundTests(TestBase):
         #    TestTargeterGraphsControlEnabled(deOptimizer.TargeterGraphs, false);
         # }
 
-        TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "REQ57491")
+        TestBase.Application.current_scenario.children.unload(STKObjectType.SATELLITE, "REQ57491")
 
     def test_CloneObject(self):
         satellite: "Satellite" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "ENG56187"), Satellite
+            TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "ENG56187"), Satellite
         )
-        satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
-        driver: "DriverMissionControlSequence" = clr.CastAs(satellite.propagator, DriverMissionControlSequence)
-        sequence: "MissionControlSequenceTargetSequence" = clr.CastAs(
-            driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence1", "-"),
-            MissionControlSequenceTargetSequence,
+        satellite.set_propagator_type(PropagatorType.ASTROGATOR)
+        driver: "MCSDriver" = clr.CastAs(satellite.propagator, MCSDriver)
+        sequence: "MCSTargetSequence" = clr.CastAs(
+            driver.main_sequence.insert(SegmentType.TARGET_SEQUENCE, "TargetSequence1", "-"), MCSTargetSequence
         )
         directory: "ComponentDirectory" = (
             clr.CastAs(TestBase.Application.current_scenario, Scenario)
         ).component_directory
-        infoCollection: "ComponentInfoCollection" = directory.get_components(COMPONENT.ASTROGATOR).get_folder(
+        infoCollection: "ComponentInfoCollection" = directory.get_components(Component.ASTROGATOR).get_folder(
             "MCS Segments"
         )
         info: "IComponentInfo" = clr.CastAs((ICloneable(sequence)).clone_object(), IComponentInfo)
         browser: "IComponentInfo" = infoCollection[info.name]
         Assert.assertIsNotNone(browser)
-        targetSequence: "MissionControlSequenceTargetSequence" = clr.CastAs(
-            browser, MissionControlSequenceTargetSequence
-        )
+        targetSequence: "MCSTargetSequence" = clr.CastAs(browser, MCSTargetSequence)
         Assert.assertIsNotNone(targetSequence)
-        prop: "MissionControlSequencePropagate" = clr.CastAs(
-            driver.main_sequence["Propagate"], MissionControlSequencePropagate
-        )
+        prop: "MCSPropagate" = clr.CastAs(driver.main_sequence["Propagate"], MCSPropagate)
         duration: "StoppingCondition" = clr.CastAs(prop.stopping_conditions["Duration"].properties, StoppingCondition)
         trigger: "AsTriggerCondition" = duration.constraints.add("UserDefined")
         trigger.value = 145
         trigger.tolerance = 0.5
         info2: "IComponentInfo" = clr.CastAs((clr.CastAs(trigger, ICloneable)).clone_object(), IComponentInfo)
-        infoCollection = directory.get_components(COMPONENT.ASTROGATOR).get_folder("Constraints")
+        infoCollection = directory.get_components(Component.ASTROGATOR).get_folder("Constraints")
         browser = infoCollection[info2.name]
         Assert.assertIsNotNone(browser)
         browserTrigger: "AsTriggerCondition" = clr.CastAs(browser, AsTriggerCondition)
         Assert.assertIsNotNone(browserTrigger)
         Assert.assertEqual(browserTrigger.value, trigger.value)
         Assert.assertEqual(browserTrigger.tolerance, trigger.tolerance)
-        TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "ENG56187")
+        TestBase.Application.current_scenario.children.unload(STKObjectType.SATELLITE, "ENG56187")
 
     def test_ReferencePoint(self):
         satellite: "Satellite" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "ReferencePoint"), Satellite
+            TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "ReferencePoint"), Satellite
         )
-        satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
-        driver: "DriverMissionControlSequence" = clr.CastAs(satellite.propagator, DriverMissionControlSequence)
-        prop: "MissionControlSequencePropagate" = clr.CastAs(
-            driver.main_sequence["Propagate"], MissionControlSequencePropagate
-        )
+        satellite.set_propagator_type(PropagatorType.ASTROGATOR)
+        driver: "MCSDriver" = clr.CastAs(satellite.propagator, MCSDriver)
+        prop: "MCSPropagate" = clr.CastAs(driver.main_sequence["Propagate"], MCSPropagate)
         stoppingCondition: "StoppingCondition" = clr.CastAs(
             prop.stopping_conditions.add("R Magnitude").properties, StoppingCondition
         )
@@ -363,20 +353,19 @@ class EarlyBoundTests(TestBase):
         except Exception as e:
             Console.WriteLine(str(e))
 
-        TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "ReferencePoint")
+        TestBase.Application.current_scenario.children.unload(STKObjectType.SATELLITE, "ReferencePoint")
 
     def test_ScriptingToolObjectNames(self):
         satellite: "Satellite" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "ENG55298"), Satellite
+            TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "ENG55298"), Satellite
         )
-        satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
-        driver: "DriverMissionControlSequence" = clr.CastAs(satellite.propagator, DriverMissionControlSequence)
-        sequence: "MissionControlSequenceTargetSequence" = clr.CastAs(
-            driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence1", "-"),
-            MissionControlSequenceTargetSequence,
+        satellite.set_propagator_type(PropagatorType.ASTROGATOR)
+        driver: "MCSDriver" = clr.CastAs(satellite.propagator, MCSDriver)
+        sequence: "MCSTargetSequence" = clr.CastAs(
+            driver.main_sequence.insert(SegmentType.TARGET_SEQUENCE, "TargetSequence1", "-"), MCSTargetSequence
         )
-        sequence.segments.insert(SEGMENT_TYPE.INITIAL_STATE, "InitState", "-")
-        sequence.segments.insert(SEGMENT_TYPE.MANEUVER, "Maneuver1", "-")
+        sequence.segments.insert(SegmentType.INITIAL_STATE, "InitState", "-")
+        sequence.segments.insert(SegmentType.MANEUVER, "Maneuver1", "-")
         tool: "ProfileScriptingTool" = clr.CastAs(sequence.profiles.add("Scripting Tool"), ProfileScriptingTool)
         segment: "ScriptingSegment" = tool.segment_properties.add("Attribute")
         objectName: str
@@ -393,13 +382,13 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("Segments.Maneuver1", segment.object_name)
         segment.object_name = "Segments.InitState"
         Assert.assertEqual("Segments.InitState", segment.object_name)
-        TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "ENG55298")
+        TestBase.Application.current_scenario.children.unload(STKObjectType.SATELLITE, "ENG55298")
 
     # region MCSOptions
     def test_MCSOptions(self):
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - MCSOptions START")
-        options: "MissionControlSequenceOptions" = EarlyBoundTests.AG_VA.options
-        # MissionControlSequenceOptions does not support RuntimeTypeInfo
+        options: "MCSOptions" = EarlyBoundTests.AG_VA.options
+        # MCSOptions does not support RuntimeTypeInfo
         # GatorHelper.TestRuntimeTypeInfo(options);
 
         options.clear_additional_b_plane_points = False
@@ -407,10 +396,10 @@ class EarlyBoundTests(TestBase):
         options.clear_additional_b_plane_points = True
         Assert.assertTrue(options.clear_additional_b_plane_points)
 
-        options.clear_dwc_graphics_before_each_run = False
-        Assert.assertFalse(options.clear_dwc_graphics_before_each_run)
-        options.clear_dwc_graphics_before_each_run = True
-        Assert.assertTrue(options.clear_dwc_graphics_before_each_run)
+        options.clear_draw_while_calculating_graphics_before_each_run = False
+        Assert.assertFalse(options.clear_draw_while_calculating_graphics_before_each_run)
+        options.clear_draw_while_calculating_graphics_before_each_run = True
+        Assert.assertTrue(options.clear_draw_while_calculating_graphics_before_each_run)
 
         options.draw_trajectory_in_2d = True
         Assert.assertTrue(options.draw_trajectory_in_2d)
@@ -491,10 +480,10 @@ class EarlyBoundTests(TestBase):
         options.generate_ephemeris = False
         Assert.assertFalse(options.generate_ephemeris)
 
-        options.smart_run_mode = SMART_RUN_MODE.ONLY_CHANGED
-        Assert.assertEqual(SMART_RUN_MODE.ONLY_CHANGED, options.smart_run_mode)
-        options.smart_run_mode = SMART_RUN_MODE.ENTIRE_MISSION_CONTROL_SEQUENCE
-        Assert.assertEqual(SMART_RUN_MODE.ENTIRE_MISSION_CONTROL_SEQUENCE, options.smart_run_mode)
+        options.smart_run_mode = SmartRunMode.ONLY_CHANGED
+        Assert.assertEqual(SmartRunMode.ONLY_CHANGED, options.smart_run_mode)
+        options.smart_run_mode = SmartRunMode.ENTIRE_MCS
+        Assert.assertEqual(SmartRunMode.ENTIRE_MCS, options.smart_run_mode)
 
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - MCSOptions END")
 
@@ -632,9 +621,8 @@ class EarlyBoundTests(TestBase):
         userVarDefn.unit_dimension = "DistanceUnit"
         Assert.assertEqual("DistanceUnit", userVarDefn.unit_dimension)
 
-        initialState: "MissionControlSequenceInitialState" = clr.CastAs(
-            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "test", "-"),
-            MissionControlSequenceInitialState,
+        initialState: "MCSInitialState" = clr.CastAs(
+            EarlyBoundTests.AG_VA.main_sequence.insert(SegmentType.INITIAL_STATE, "test", "-"), MCSInitialState
         )
         Assert.assertEqual("test1", initialState.user_variables[0].variable_name)
         Assert.assertEqual(0.001, initialState.user_variables[0].variable_value)
@@ -643,9 +631,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertFalse(initialState.user_variables[0].control_parameters_available)
         self.TestUserVariableCollection(initialState.user_variables)
 
-        launch: "MissionControlSequenceLaunch" = clr.CastAs(
-            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.LAUNCH, "launch1", "-"),
-            MissionControlSequenceLaunch,
+        launch: "MCSLaunch" = clr.CastAs(
+            EarlyBoundTests.AG_VA.main_sequence.insert(SegmentType.LAUNCH, "launch1", "-"), MCSLaunch
         )
         Assert.assertEqual("test1", launch.user_variables[0].variable_name)
         Assert.assertEqual(0.001, launch.user_variables[0].variable_value)
@@ -654,9 +641,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertFalse(launch.user_variables[0].control_parameters_available)
         self.TestUserVariableCollection(launch.user_variables)
 
-        follow: "MissionControlSequenceFollow" = clr.CastAs(
-            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.FOLLOW, "follow1", "-"),
-            MissionControlSequenceFollow,
+        follow: "MCSFollow" = clr.CastAs(
+            EarlyBoundTests.AG_VA.main_sequence.insert(SegmentType.FOLLOW, "follow1", "-"), MCSFollow
         )
         Assert.assertEqual("test1", follow.user_variables[0].variable_name)
         Assert.assertEqual(0.001, follow.user_variables[0].variable_value)
@@ -665,24 +651,23 @@ class EarlyBoundTests(TestBase):
         Assert.assertFalse(follow.user_variables[0].control_parameters_available)
         self.TestUserVariableCollection(follow.user_variables)
 
-        update: "MissionControlSequenceUpdate" = clr.CastAs(
-            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.UPDATE, "update1", "-"),
-            MissionControlSequenceUpdate,
+        update: "MCSUpdate" = clr.CastAs(
+            EarlyBoundTests.AG_VA.main_sequence.insert(SegmentType.UPDATE, "update1", "-"), MCSUpdate
         )
         Assert.assertEqual("test1", update.user_variables[0].variable_name)
         Assert.assertEqual("DistanceUnit", update.user_variables[0].unit_dimension)
-        update.user_variables[0].variable_action = UPDATE_ACTION.ADD_VALUE
-        Assert.assertEqual(UPDATE_ACTION.ADD_VALUE, update.user_variables[0].variable_action)
+        update.user_variables[0].variable_action = UpdateAction.ADD_VALUE
+        Assert.assertEqual(UpdateAction.ADD_VALUE, update.user_variables[0].variable_action)
         self.TestUserVariableUpdateCollection(update.user_variables)
 
-        update.user_variables[0].variable_action = UPDATE_ACTION.NO_CHANGE
-        Assert.assertEqual(UPDATE_ACTION.NO_CHANGE, update.user_variables[0].variable_action)
+        update.user_variables[0].variable_action = UpdateAction.NO_CHANGE
+        Assert.assertEqual(UpdateAction.NO_CHANGE, update.user_variables[0].variable_action)
 
-        update.user_variables[0].variable_action = UPDATE_ACTION.SET_TO_NEW_VALUE
-        Assert.assertEqual(UPDATE_ACTION.SET_TO_NEW_VALUE, update.user_variables[0].variable_action)
+        update.user_variables[0].variable_action = UpdateAction.SET_TO_NEW_VALUE
+        Assert.assertEqual(UpdateAction.SET_TO_NEW_VALUE, update.user_variables[0].variable_action)
 
-        update.user_variables[0].variable_action = UPDATE_ACTION.SUBTRACT_VALUE
-        Assert.assertEqual(UPDATE_ACTION.SUBTRACT_VALUE, update.user_variables[0].variable_action)
+        update.user_variables[0].variable_action = UpdateAction.SUBTRACT_VALUE
+        Assert.assertEqual(UpdateAction.SUBTRACT_VALUE, update.user_variables[0].variable_action)
 
         Assert.assertEqual("DistanceUnit", update.user_variables[0].unit_dimension)
         Assert.assertEqual(0, update.user_variables[0].variable_value)
@@ -690,23 +675,15 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(10, update.user_variables[0].variable_value)
         Assert.assertFalse(update.user_variables[0].control_parameters_available)
 
-        ts: "MissionControlSequenceTargetSequence" = clr.CastAs(
-            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "ts1", "-"),
-            MissionControlSequenceTargetSequence,
+        ts: "MCSTargetSequence" = clr.CastAs(
+            EarlyBoundTests.AG_VA.main_sequence.insert(SegmentType.TARGET_SEQUENCE, "ts1", "-"), MCSTargetSequence
         )
-        initState2: "MissionControlSequenceInitialState" = clr.CastAs(
-            ts.segments.insert_copy(IMissionControlSequenceSegment(initialState), "-"),
-            MissionControlSequenceInitialState,
+        initState2: "MCSInitialState" = clr.CastAs(
+            ts.segments.insert_copy(IMCSSegment(initialState), "-"), MCSInitialState
         )
-        launch2: "MissionControlSequenceLaunch" = clr.CastAs(
-            ts.segments.insert_copy(IMissionControlSequenceSegment(launch), "-"), MissionControlSequenceLaunch
-        )
-        follow2: "MissionControlSequenceFollow" = clr.CastAs(
-            ts.segments.insert_copy(IMissionControlSequenceSegment(follow), "-"), MissionControlSequenceFollow
-        )
-        update2: "MissionControlSequenceUpdate" = clr.CastAs(
-            ts.segments.insert_copy(IMissionControlSequenceSegment(update), "-"), MissionControlSequenceUpdate
-        )
+        launch2: "MCSLaunch" = clr.CastAs(ts.segments.insert_copy(IMCSSegment(launch), "-"), MCSLaunch)
+        follow2: "MCSFollow" = clr.CastAs(ts.segments.insert_copy(IMCSSegment(follow), "-"), MCSFollow)
+        update2: "MCSUpdate" = clr.CastAs(ts.segments.insert_copy(IMCSSegment(update), "-"), MCSUpdate)
 
         Assert.assertTrue(initState2.user_variables[0].control_parameters_available)
         initState2.user_variables[0].enable_control_parameter()
@@ -748,16 +725,16 @@ class EarlyBoundTests(TestBase):
     # region SegCollections
     def test_SegCollections(self):
         #
-        #  MissionControlSequenceSegmentCollection
+        #  MCSSegmentCollection
         #
 
-        mcsSegColl: "MissionControlSequenceSegmentCollection" = EarlyBoundTests.AG_VA.main_sequence
+        mcsSegColl: "MCSSegmentCollection" = EarlyBoundTests.AG_VA.main_sequence
 
         GatorHelper.TestRuntimeTypeInfo(mcsSegColl)
 
         initialSegCount: int = mcsSegColl.count
 
-        mcsSegment: "IMissionControlSequenceSegment"
+        mcsSegment: "IMCSSegment"
 
         for mcsSegment in mcsSegColl:
             compInfo: "IComponentInfo" = clr.CastAs(mcsSegment, IComponentInfo)
@@ -792,9 +769,9 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("value was not found")):
             compInfo: "IComponentInfo" = IComponentInfo(mcsSegColl.get_item_by_name("Bogus"))
 
-        mcsSegColl.insert(SEGMENT_TYPE.BACKWARD_SEQUENCE, "Seg1", "-")
-        mcsSegColl.insert(SEGMENT_TYPE.BACKWARD_SEQUENCE, "Seg2", "Seg1")
-        mcsSegColl.insert(SEGMENT_TYPE.BACKWARD_SEQUENCE, "Seg3", "Seg2")
+        mcsSegColl.insert(SegmentType.BACKWARD_SEQUENCE, "Seg1", "-")
+        mcsSegColl.insert(SegmentType.BACKWARD_SEQUENCE, "Seg2", "Seg1")
+        mcsSegColl.insert(SegmentType.BACKWARD_SEQUENCE, "Seg3", "Seg2")
         Assert.assertEqual((initialSegCount + 3), mcsSegColl.count, "count1 is wrong")
 
         mcsSegColl.insert_by_name("Launch", "Seg2")
@@ -874,7 +851,7 @@ class EarlyBoundTests(TestBase):
 
             bFirstTime = False
 
-            autoSeqColl2: "MissionControlSequenceSegmentCollection" = autoSeq.sequence
+            autoSeqColl2: "MCSSegmentCollection" = autoSeq.sequence
 
         autoSeqColl.remove(1)
         Assert.assertEqual(2, autoSeqColl.count)
@@ -895,25 +872,22 @@ class EarlyBoundTests(TestBase):
 
         TestBase.LoadTestScenario(Path.Combine("AstrogatorTests", "AstrogatorTests.sc"))
         EarlyBoundTests.AG_SAT = Satellite(TestBase.Application.current_scenario.children["Satellite1"])
-        EarlyBoundTests.AG_SAT.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
-        EarlyBoundTests.AG_VA = DriverMissionControlSequence(EarlyBoundTests.AG_SAT.propagator)
+        EarlyBoundTests.AG_SAT.set_propagator_type(PropagatorType.ASTROGATOR)
+        EarlyBoundTests.AG_VA = MCSDriver(EarlyBoundTests.AG_SAT.propagator)
 
     # endregion
 
     # region NestedTargetSequence
     def test_NestedTargetSequence(self):
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - NestedTargetSequence START")
-        ts1: "MissionControlSequenceTargetSequence" = clr.CastAs(
-            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "Tg1", "-"),
-            MissionControlSequenceTargetSequence,
+        ts1: "MCSTargetSequence" = clr.CastAs(
+            EarlyBoundTests.AG_VA.main_sequence.insert(SegmentType.TARGET_SEQUENCE, "Tg1", "-"), MCSTargetSequence
         )
-        ts2: "MissionControlSequenceTargetSequence" = clr.CastAs(
-            ts1.segments.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "Tg2", "-"), MissionControlSequenceTargetSequence
+        ts2: "MCSTargetSequence" = clr.CastAs(
+            ts1.segments.insert(SegmentType.TARGET_SEQUENCE, "Tg2", "-"), MCSTargetSequence
         )
-        launch: "MissionControlSequenceLaunch" = clr.CastAs(
-            ts2.segments.insert(SEGMENT_TYPE.LAUNCH, "Launch", "-"), MissionControlSequenceLaunch
-        )
-        launch.enable_control_parameter(CONTROL_LAUNCH.EPOCH)
+        launch: "MCSLaunch" = clr.CastAs(ts2.segments.insert(SegmentType.LAUNCH, "Launch", "-"), MCSLaunch)
+        launch.enable_control_parameter(ControlLaunch.EPOCH)
         EarlyBoundTests.AG_VA.options.promote_controls = True
         dc: "ProfileDifferentialCorrector" = clr.CastAs(
             ts1.profiles["Differential Corrector"], ProfileDifferentialCorrector
@@ -926,7 +900,7 @@ class EarlyBoundTests(TestBase):
             cp = dc.control_parameters.get_control_by_paths("Tg2.Launch", "Launch.Epoch")
 
         try:
-            seg: "IMissionControlSequenceSegment" = ts2.segments["SegBogus"]
+            seg: "IMCSSegment" = ts2.segments["SegBogus"]
             Assert.fail("SegBogus should not exist and should throw an exception.")
 
         except Exception as e:
@@ -942,13 +916,13 @@ class EarlyBoundTests(TestBase):
     # region InitialState
     def test_InitialState(self):
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - InitialState START")
-        initState: "MissionControlSequenceInitialState" = MissionControlSequenceInitialState(
-            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "InitState", "Propagate")
+        initState: "MCSInitialState" = MCSInitialState(
+            EarlyBoundTests.AG_VA.main_sequence.insert(SegmentType.INITIAL_STATE, "InitState", "Propagate")
         )
         GatorHelper.TestInitialState(initState, False, TestBase.Application)
         GatorHelper.TestRuntimeTypeInfo(initState)
-        self.TestSegment(clr.CastAs(initState, IMissionControlSequenceSegment))
-        oInitState: "IMissionControlSequenceSegment" = EarlyBoundTests.AG_VA.main_sequence[0]
+        self.TestSegment(clr.CastAs(initState, IMCSSegment))
+        oInitState: "IMCSSegment" = EarlyBoundTests.AG_VA.main_sequence[0]
 
         GatorHelper.TestOrbitState(oInitState.initial_state)
 
@@ -972,11 +946,11 @@ class EarlyBoundTests(TestBase):
     # region Propagate
     def test_Propagate(self):
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - Propagate START")
-        propagate: "MissionControlSequencePropagate" = MissionControlSequencePropagate(
-            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.PROPAGATE, "Prop1", "Propagate")
+        propagate: "MCSPropagate" = MCSPropagate(
+            EarlyBoundTests.AG_VA.main_sequence.insert(SegmentType.PROPAGATE, "Prop1", "Propagate")
         )
         GatorHelper.TestPropagate(propagate, False)
-        self.TestSegment(clr.CastAs(propagate, IMissionControlSequenceSegment))
+        self.TestSegment(clr.CastAs(propagate, IMCSSegment))
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - Propagate END")
 
     # endregion
@@ -984,12 +958,12 @@ class EarlyBoundTests(TestBase):
     # region TestStopping
     def test_TestStopping(self):
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - TestStopping START")
-        propagate: "MissionControlSequencePropagate" = MissionControlSequencePropagate(
-            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.PROPAGATE, "Prop1", "Propagate")
+        propagate: "MCSPropagate" = MCSPropagate(
+            EarlyBoundTests.AG_VA.main_sequence.insert(SegmentType.PROPAGATE, "Prop1", "Propagate")
         )
-        segment: "IMissionControlSequenceSegment" = clr.CastAs(propagate, IMissionControlSequenceSegment)
+        segment: "IMCSSegment" = clr.CastAs(propagate, IMCSSegment)
         self.TestSegment(segment)
-        Assert.assertEqual(SEGMENT_TYPE.PROPAGATE, segment.type)
+        Assert.assertEqual(SegmentType.PROPAGATE, segment.type)
         propagate.propagator_name = "Earth Point Mass"
         Assert.assertEqual("Earth Point Mass", propagate.propagator_name)
 
@@ -998,76 +972,76 @@ class EarlyBoundTests(TestBase):
         temp1: "AccessStoppingCondition" = AccessStoppingCondition(propagate.stopping_conditions["Access"].properties)
         Assert.assertEqual((IComponentInfo(sc1)).name, (IComponentInfo(temp1)).name)
 
-        sc1.criterion = ACCESS_CRITERION.GAIN
-        Assert.assertEqual(ACCESS_CRITERION.GAIN, sc1.criterion)
-        sc1.criterion = ACCESS_CRITERION.LOSE
-        Assert.assertEqual(ACCESS_CRITERION.LOSE, sc1.criterion)
-        sc1.criterion = ACCESS_CRITERION.EITHER
-        Assert.assertEqual(ACCESS_CRITERION.EITHER, sc1.criterion)
+        sc1.criterion = AccessCriterion.GAIN
+        Assert.assertEqual(AccessCriterion.GAIN, sc1.criterion)
+        sc1.criterion = AccessCriterion.LOSE
+        Assert.assertEqual(AccessCriterion.LOSE, sc1.criterion)
+        sc1.criterion = AccessCriterion.EITHER
+        Assert.assertEqual(AccessCriterion.EITHER, sc1.criterion)
 
-        sc1.set_base_selection(BASE_SELECTION.SPECIFY)
-        Assert.assertEqual(BASE_SELECTION.SPECIFY, sc1.base_selection_type, "wrong BaseSelectionType")
-        sc1.base_selection.bind_to("Satellite/Satellite1")
+        sc1.set_base_selection(BaseSelection.SPECIFY)
+        Assert.assertEqual(BaseSelection.SPECIFY, sc1.base_selection_type, "wrong BaseSelectionType")
+        sc1.base_selection.bind_to_object("Satellite/Satellite1")
         Assert.assertEqual("Satellite/Satellite1", sc1.base_selection.name)
 
-        sc1.target_object.bind_to("Facility/Facility1")
+        sc1.target_object.bind_to_object("Facility/Facility1")
         Assert.assertEqual("Facility/Facility1", sc1.target_object.name)
-        sc1.target_object.bind_to("Star/Star1")
+        sc1.target_object.bind_to_object("Star/Star1")
         Assert.assertEqual("Star/Star1", sc1.target_object.name)
 
         with pytest.raises(Exception):
-            sc1.base_selection.bind_to("Planet/Planet1")
+            sc1.base_selection.bind_to_object("Planet/Planet1")
 
-        sc1.target_object.bind_to("Facility/Facility1")
-        sc1.base_selection.bind_to("Planet/Planet1")
+        sc1.target_object.bind_to_object("Facility/Facility1")
+        sc1.base_selection.bind_to_object("Planet/Planet1")
         with pytest.raises(Exception):
-            sc1.target_object.bind_to("Star/Star1")
+            sc1.target_object.bind_to_object("Star/Star1")
 
-        sc1.base_selection.bind_to("Aircraft/Boing737")
+        sc1.base_selection.bind_to_object("Aircraft/Boing737")
 
         sc1.use_light_time_delay = False
         Assert.assertFalse(sc1.use_light_time_delay)
         sc1.use_light_time_delay = True
         Assert.assertTrue(sc1.use_light_time_delay)
 
-        sc1.clock_host = IV_CLOCK_HOST.TARGET
-        Assert.assertEqual(IV_CLOCK_HOST.TARGET, sc1.clock_host)
-        sc1.clock_host = IV_CLOCK_HOST.BASE
-        Assert.assertEqual(IV_CLOCK_HOST.BASE, sc1.clock_host)
+        sc1.clock_host = IvClockHost.TARGET
+        Assert.assertEqual(IvClockHost.TARGET, sc1.clock_host)
+        sc1.clock_host = IvClockHost.BASE
+        Assert.assertEqual(IvClockHost.BASE, sc1.clock_host)
 
-        sc1.base_selection.bind_to("Satellite/Satellite1")
+        sc1.base_selection.bind_to_object("Satellite/Satellite1")
         with pytest.raises(Exception):
-            sc1.clock_host = IV_CLOCK_HOST.BASE
+            sc1.clock_host = IvClockHost.BASE
 
-        sc1.base_selection.bind_to("Planet/Planet1")
+        sc1.base_selection.bind_to_object("Planet/Planet1")
         with pytest.raises(Exception):
-            sc1.clock_host = IV_CLOCK_HOST.BASE
+            sc1.clock_host = IvClockHost.BASE
 
-        sc1.base_selection.bind_to("Aircraft/Boing737")
-        sc1.target_object.bind_to("Satellite/Satellite1")
+        sc1.base_selection.bind_to_object("Aircraft/Boing737")
+        sc1.target_object.bind_to_object("Satellite/Satellite1")
         with pytest.raises(Exception):
-            sc1.clock_host = IV_CLOCK_HOST.BASE
+            sc1.clock_host = IvClockHost.BASE
 
-        sc1.target_object.bind_to("Planet/Planet1")
+        sc1.target_object.bind_to_object("Planet/Planet1")
         with pytest.raises(Exception):
-            sc1.clock_host = IV_CLOCK_HOST.BASE
+            sc1.clock_host = IvClockHost.BASE
 
-        sc1.target_object.bind_to("Facility/Facility1")
+        sc1.target_object.bind_to_object("Facility/Facility1")
 
-        sc1.signal_sense = IV_TIME_SENSE.RECEIVE
-        Assert.assertEqual(IV_TIME_SENSE.RECEIVE, sc1.signal_sense)
-        sc1.signal_sense = IV_TIME_SENSE.TRANSMIT
-        Assert.assertEqual(IV_TIME_SENSE.TRANSMIT, sc1.signal_sense)
+        sc1.signal_sense = IvTimeSense.RECEIVE
+        Assert.assertEqual(IvTimeSense.RECEIVE, sc1.signal_sense)
+        sc1.signal_sense = IvTimeSense.TRANSMIT
+        Assert.assertEqual(IvTimeSense.TRANSMIT, sc1.signal_sense)
 
         sc1.time_convergence = 1.11e-05
         Assert.assertEqual(1.11e-05, sc1.time_convergence)
 
-        sc1.aberration_type = ABERRATION_TYPE.NONE
-        Assert.assertEqual(ABERRATION_TYPE.NONE, sc1.aberration_type)
-        sc1.aberration_type = ABERRATION_TYPE.ANNUAL
-        Assert.assertEqual(ABERRATION_TYPE.ANNUAL, sc1.aberration_type)
-        sc1.aberration_type = ABERRATION_TYPE.TOTAL
-        Assert.assertEqual(ABERRATION_TYPE.TOTAL, sc1.aberration_type)
+        sc1.aberration_type = AberrationType.NONE
+        Assert.assertEqual(AberrationType.NONE, sc1.aberration_type)
+        sc1.aberration_type = AberrationType.ANNUAL
+        Assert.assertEqual(AberrationType.ANNUAL, sc1.aberration_type)
+        sc1.aberration_type = AberrationType.TOTAL
+        Assert.assertEqual(AberrationType.TOTAL, sc1.aberration_type)
 
         sc1.time_delay_convergence_tolerance = 1
         Assert.assertEqual(1, sc1.time_delay_convergence_tolerance)
@@ -1092,7 +1066,7 @@ class EarlyBoundTests(TestBase):
         sc1.sequence = "Stop"
         Assert.assertEqual("Stop", sc1.sequence)
 
-        sc1.base_selection.bind_to("Satellite/Satellite1")
+        sc1.base_selection.bind_to_object("Satellite/Satellite1")
 
         sc: "LightingStoppingCondition" = LightingStoppingCondition(
             propagate.stopping_conditions.add("Lighting").properties
@@ -1104,8 +1078,8 @@ class EarlyBoundTests(TestBase):
         scc: "StoppingConditionCollection" = sc.before_conditions
         constraintCollection2: "ConstraintCollection" = sc.constraints
 
-        sc.eclipsing_bodies_list_source = ECLIPSING_BODIES_SOURCE.USER_DEFINED
-        Assert.assertEqual(ECLIPSING_BODIES_SOURCE.USER_DEFINED, sc.eclipsing_bodies_list_source)
+        sc.eclipsing_bodies_list_source = EclipsingBodiesSource.USER_DEFINED
+        Assert.assertEqual(EclipsingBodiesSource.USER_DEFINED, sc.eclipsing_bodies_list_source)
         sc.add_eclipsing_body("Sun")
         with pytest.raises(Exception):
             sc.add_eclipsing_body("Bogus")
@@ -1142,17 +1116,17 @@ class EarlyBoundTests(TestBase):
         sc.sequence = "Stop"
         Assert.assertEqual("Stop", sc.sequence)
 
-        sct: "STOPPING_CONDITION" = sc.stopping_condition_type
+        sct: "StoppingConditionType" = sc.stopping_condition_type
 
         Assert.assertEqual((IComponentInfo(sc)).name, (IComponentInfo(temp)).name)
-        sc.condition = LIGHTING_CONDITION.CRITERION_ENTER_DIRECT_SUN
-        Assert.assertEqual(LIGHTING_CONDITION.CRITERION_ENTER_DIRECT_SUN, sc.condition)
-        sc.condition = LIGHTING_CONDITION.CRITERION_EXIT_DIRECT_SUN
-        Assert.assertEqual(LIGHTING_CONDITION.CRITERION_EXIT_DIRECT_SUN, sc.condition)
-        sc.condition = LIGHTING_CONDITION.CRITERION_ENTER_UMBRA
-        Assert.assertEqual(LIGHTING_CONDITION.CRITERION_ENTER_UMBRA, sc.condition)
-        sc.condition = LIGHTING_CONDITION.CRITERION_EXIT_UMBRA
-        Assert.assertEqual(LIGHTING_CONDITION.CRITERION_EXIT_UMBRA, sc.condition)
+        sc.condition = LightingCondition.CRITERION_ENTER_DIRECT_SUN
+        Assert.assertEqual(LightingCondition.CRITERION_ENTER_DIRECT_SUN, sc.condition)
+        sc.condition = LightingCondition.CRITERION_EXIT_DIRECT_SUN
+        Assert.assertEqual(LightingCondition.CRITERION_EXIT_DIRECT_SUN, sc.condition)
+        sc.condition = LightingCondition.CRITERION_ENTER_UMBRA
+        Assert.assertEqual(LightingCondition.CRITERION_ENTER_UMBRA, sc.condition)
+        sc.condition = LightingCondition.CRITERION_EXIT_UMBRA
+        Assert.assertEqual(LightingCondition.CRITERION_EXIT_UMBRA, sc.condition)
 
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - TestStopping END")
 
@@ -1161,11 +1135,11 @@ class EarlyBoundTests(TestBase):
     # region Sequence
     def test_Sequence(self):
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - Sequence START")
-        ts: "IMissionControlSequenceSequence" = IMissionControlSequenceSequence(
-            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.SEQUENCE, "Sequence1", "Propagate")
+        ts: "IMCSSequence" = IMCSSequence(
+            EarlyBoundTests.AG_VA.main_sequence.insert(SegmentType.SEQUENCE, "Sequence1", "Propagate")
         )
-        GatorHelper.TestSequence(ts, SEGMENT_TYPE.SEQUENCE, False)
-        self.TestSegment(clr.CastAs(ts, IMissionControlSequenceSegment))
+        GatorHelper.TestSequence(ts, SegmentType.SEQUENCE, False)
+        self.TestSegment(clr.CastAs(ts, IMCSSegment))
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - Sequence END")
 
     # endregion
@@ -1173,12 +1147,12 @@ class EarlyBoundTests(TestBase):
     # region BackwardSequence
     def test_BackwardSequence(self):
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - BackwardSequence START")
-        ts: "MissionControlSequenceBackwardSequence" = MissionControlSequenceBackwardSequence(
-            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.BACKWARD_SEQUENCE, "BackwardsSequence", "Propagate")
+        ts: "MCSBackwardSequence" = MCSBackwardSequence(
+            EarlyBoundTests.AG_VA.main_sequence.insert(SegmentType.BACKWARD_SEQUENCE, "BackwardsSequence", "Propagate")
         )
-        GatorHelper.TestSequence(ts, SEGMENT_TYPE.BACKWARD_SEQUENCE, False)
+        GatorHelper.TestSequence(ts, SegmentType.BACKWARD_SEQUENCE, False)
         GatorHelper.TestRuntimeTypeInfo(ts)
-        self.TestSegment(clr.CastAs(ts, IMissionControlSequenceSegment))
+        self.TestSegment(clr.CastAs(ts, IMCSSegment))
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - BackwardSequence END")
 
     # endregion
@@ -1186,11 +1160,11 @@ class EarlyBoundTests(TestBase):
     # region Launch
     def test_Launch(self):
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - Launch START")
-        launch: "MissionControlSequenceLaunch" = MissionControlSequenceLaunch(
-            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.LAUNCH, "Launcher", "Propagate")
+        launch: "MCSLaunch" = MCSLaunch(
+            EarlyBoundTests.AG_VA.main_sequence.insert(SegmentType.LAUNCH, "Launcher", "Propagate")
         )
         GatorHelper.TestLaunch(launch, False)
-        self.TestSegment(clr.CastAs(launch, IMissionControlSequenceSegment))
+        self.TestSegment(clr.CastAs(launch, IMCSSegment))
         EarlyBoundTests.AG_VA.main_sequence.remove("Launcher")
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - Launch END")
 
@@ -1199,13 +1173,11 @@ class EarlyBoundTests(TestBase):
     # region Follow
     def test_Follow(self):
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - Follow START")
-        follow: "MissionControlSequenceFollow" = MissionControlSequenceFollow(
-            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.FOLLOW, "Follow", "-")
-        )
-        follow.leader.bind_to("Missile/Missile1")
+        follow: "MCSFollow" = MCSFollow(EarlyBoundTests.AG_VA.main_sequence.insert(SegmentType.FOLLOW, "Follow", "-"))
+        follow.leader.bind_to_object("Missile/Missile1")
         Assert.assertEqual("Missile/Missile1", follow.leader.name)
         Assert.assertIsNotNone(follow.leader.linked_object)
-        self.TestSegment(clr.CastAs(follow, IMissionControlSequenceSegment))
+        self.TestSegment(clr.CastAs(follow, IMCSSegment))
 
         follow.x_offset = 1
         Assert.assertEqual(1, follow.x_offset)
@@ -1220,27 +1192,27 @@ class EarlyBoundTests(TestBase):
         GatorHelper.TestStoppingConditionCollection(follow.separation_conditions)
         GatorHelper.TestStoppingConditionCollection(follow.joining_conditions)
 
-        follow.joining_type = FOLLOW_JOIN.AT_BEGINNING
-        Assert.assertEqual(FOLLOW_JOIN.AT_BEGINNING, follow.joining_type)
-        follow.joining_type = FOLLOW_JOIN.AT_END
-        Assert.assertEqual(follow.joining_type, FOLLOW_JOIN.AT_END)
-        follow.joining_type = FOLLOW_JOIN.AT_FINAL_EPOCH_OF_PREVIOUS_SEG
-        Assert.assertEqual(FOLLOW_JOIN.AT_FINAL_EPOCH_OF_PREVIOUS_SEG, follow.joining_type)
-        follow.joining_type = FOLLOW_JOIN.SPECIFY
-        Assert.assertEqual(FOLLOW_JOIN.SPECIFY, follow.joining_type)
+        follow.joining_type = FollowJoin.AT_BEGINNING
+        Assert.assertEqual(FollowJoin.AT_BEGINNING, follow.joining_type)
+        follow.joining_type = FollowJoin.AT_END
+        Assert.assertEqual(follow.joining_type, FollowJoin.AT_END)
+        follow.joining_type = FollowJoin.AT_FINAL_EPOCH_OF_PREVIOUS_SEG
+        Assert.assertEqual(FollowJoin.AT_FINAL_EPOCH_OF_PREVIOUS_SEG, follow.joining_type)
+        follow.joining_type = FollowJoin.SPECIFY
+        Assert.assertEqual(FollowJoin.SPECIFY, follow.joining_type)
 
-        follow.separation_type = FOLLOW_SEPARATION.AT_END_OF_LEADERS_EPHEM
-        Assert.assertEqual(FOLLOW_SEPARATION.AT_END_OF_LEADERS_EPHEM, follow.separation_type)
-        follow.separation_type = FOLLOW_SEPARATION.SPECIFY
-        Assert.assertEqual(FOLLOW_SEPARATION.SPECIFY, follow.separation_type)
+        follow.separation_type = FollowSeparation.AT_END_OF_LEADERS_EPHEMERIS
+        Assert.assertEqual(FollowSeparation.AT_END_OF_LEADERS_EPHEMERIS, follow.separation_type)
+        follow.separation_type = FollowSeparation.SPECIFY
+        Assert.assertEqual(FollowSeparation.SPECIFY, follow.separation_type)
 
-        follow.spacecraft_and_fuel_tank_type = FOLLOW_SPACECRAFT_AND_FUEL_TANK.INHERIT
-        Assert.assertEqual(FOLLOW_SPACECRAFT_AND_FUEL_TANK.INHERIT, follow.spacecraft_and_fuel_tank_type)
-        follow.spacecraft_and_fuel_tank_type = FOLLOW_SPACECRAFT_AND_FUEL_TANK.SPECIFY
-        Assert.assertEqual(FOLLOW_SPACECRAFT_AND_FUEL_TANK.SPECIFY, follow.spacecraft_and_fuel_tank_type)
+        follow.spacecraft_and_fuel_tank_type = FollowSpacecraftAndFuelTank.INHERIT
+        Assert.assertEqual(FollowSpacecraftAndFuelTank.INHERIT, follow.spacecraft_and_fuel_tank_type)
+        follow.spacecraft_and_fuel_tank_type = FollowSpacecraftAndFuelTank.SPECIFY
+        Assert.assertEqual(FollowSpacecraftAndFuelTank.SPECIFY, follow.spacecraft_and_fuel_tank_type)
 
         try:
-            follow.spacecraft_and_fuel_tank_type = FOLLOW_SPACECRAFT_AND_FUEL_TANK.LEADER
+            follow.spacecraft_and_fuel_tank_type = FollowSpacecraftAndFuelTank.LEADER
             Assert.fail("Setting spacecraft config type to leader is invalid for non Astrogator satellites.")
 
         except Exception as ex:
@@ -1250,15 +1222,15 @@ class EarlyBoundTests(TestBase):
 
         # in order to set to inherit from leader, need an astrogator satellite to be the leader
         leader: "Satellite" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "AstgLeader57325"), Satellite
+            TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "AstgLeader57325"), Satellite
         )
-        leader.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
-        follow.leader.bind_to((IStkObject(leader)).path)
+        leader.set_propagator_type(PropagatorType.ASTROGATOR)
+        follow.leader.bind_to_object((IStkObject(leader)).path)
         Assert.assertEqual(follow.leader.name, "Satellite/AstgLeader57325")
 
-        follow.spacecraft_and_fuel_tank_type = FOLLOW_SPACECRAFT_AND_FUEL_TANK.LEADER
-        Assert.assertEqual(FOLLOW_SPACECRAFT_AND_FUEL_TANK.LEADER, follow.spacecraft_and_fuel_tank_type)
-        TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "AstgLeader57325")
+        follow.spacecraft_and_fuel_tank_type = FollowSpacecraftAndFuelTank.LEADER
+        Assert.assertEqual(FollowSpacecraftAndFuelTank.LEADER, follow.spacecraft_and_fuel_tank_type)
+        TestBase.Application.current_scenario.children.unload(STKObjectType.SATELLITE, "AstgLeader57325")
 
         EarlyBoundTests.AG_VA.main_sequence.remove("Follow")
 
@@ -1269,10 +1241,10 @@ class EarlyBoundTests(TestBase):
     # region Maneuver
     def test_Maneuver(self):
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - Maneuver START")
-        maneuver: "MissionControlSequenceManeuver" = MissionControlSequenceManeuver(
-            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.MANEUVER, "Man1", "-")
+        maneuver: "MCSManeuver" = MCSManeuver(
+            EarlyBoundTests.AG_VA.main_sequence.insert(SegmentType.MANEUVER, "Man1", "-")
         )
-        self.TestSegment(clr.CastAs(maneuver, IMissionControlSequenceSegment))
+        self.TestSegment(clr.CastAs(maneuver, IMCSSegment))
         GatorHelper.TestManeuver(maneuver, False)
         GatorHelper.TestRuntimeTypeInfo(maneuver)
         EarlyBoundTests.AG_VA.main_sequence.remove("Man1")
@@ -1286,10 +1258,10 @@ class EarlyBoundTests(TestBase):
         if (((self.Target != TestTarget.eStkX)) and ((self.Target != TestTarget.eStkNoGfx))) and (
             (self.Target != TestTarget.eStkRuntimeNoGfx)
         ):
-            maneuver: "MissionControlSequenceManeuver" = MissionControlSequenceManeuver(
-                EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.MANEUVER, "Man2", "-")
+            maneuver: "MCSManeuver" = MCSManeuver(
+                EarlyBoundTests.AG_VA.main_sequence.insert(SegmentType.MANEUVER, "Man2", "-")
             )
-            self.TestSegment(clr.CastAs(maneuver, IMissionControlSequenceSegment))
+            self.TestSegment(clr.CastAs(maneuver, IMCSSegment))
             GatorHelper.TestManeuver_OptimalFinite(maneuver, False, TestBase.Application)
             GatorHelper.TestRuntimeTypeInfo(maneuver)
             EarlyBoundTests.AG_VA.main_sequence.remove("Man2")
@@ -1301,10 +1273,8 @@ class EarlyBoundTests(TestBase):
     # region Hold
     def test_Hold(self):
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - Hold START")
-        hold: "MissionControlSequenceHold" = MissionControlSequenceHold(
-            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.HOLD, "Holder1", "-")
-        )
-        self.TestSegment(clr.CastAs(hold, IMissionControlSequenceSegment))
+        hold: "MCSHold" = MCSHold(EarlyBoundTests.AG_VA.main_sequence.insert(SegmentType.HOLD, "Holder1", "-"))
+        self.TestSegment(clr.CastAs(hold, IMCSSegment))
         GatorHelper.TestRuntimeTypeInfo(hold)
 
         hold.min_propagation_time = 0
@@ -1336,11 +1306,11 @@ class EarlyBoundTests(TestBase):
         GatorHelper.TestStoppingConditionCollection(hold.stopping_conditions)
 
         Assert.assertFalse(hold.control_parameters_available)
-        Assert.assertFalse(hold.is_control_parameter_enabled(CONTROL_ADVANCED.PROPAGATE_MAX_PROPAGATION_TIME))
+        Assert.assertFalse(hold.is_control_parameter_enabled(ControlAdvanced.PROPAGATE_MAX_PROPATION_TIME))
         with pytest.raises(Exception):
-            hold.enable_control_parameter(CONTROL_ADVANCED.PROPAGATE_MAX_PROPAGATION_TIME)
+            hold.enable_control_parameter(ControlAdvanced.PROPAGATE_MAX_PROPATION_TIME)
         with pytest.raises(Exception):
-            hold.disable_control_parameter(CONTROL_ADVANCED.PROPAGATE_MAX_PROPAGATION_TIME)
+            hold.disable_control_parameter(ControlAdvanced.PROPAGATE_MAX_PROPATION_TIME)
 
         EarlyBoundTests.AG_VA.main_sequence.remove("Holder1")
 
@@ -1351,11 +1321,9 @@ class EarlyBoundTests(TestBase):
     # region Update
     def test_Update(self):
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - Update START")
-        update: "MissionControlSequenceUpdate" = MissionControlSequenceUpdate(
-            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.UPDATE, "Updater1", "-")
-        )
+        update: "MCSUpdate" = MCSUpdate(EarlyBoundTests.AG_VA.main_sequence.insert(SegmentType.UPDATE, "Updater1", "-"))
         GatorHelper.TestUpdate(update, False)
-        self.TestSegment(clr.CastAs(update, IMissionControlSequenceSegment))
+        self.TestSegment(clr.CastAs(update, IMCSSegment))
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - Update END")
 
     # endregion
@@ -1363,25 +1331,23 @@ class EarlyBoundTests(TestBase):
     # region ReturnSegment
     def test_ReturnSegment(self):
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - Return START")
-        target: "MissionControlSequenceTargetSequence" = MissionControlSequenceTargetSequence(
-            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "target", "-")
+        target: "MCSTargetSequence" = MCSTargetSequence(
+            EarlyBoundTests.AG_VA.main_sequence.insert(SegmentType.TARGET_SEQUENCE, "target", "-")
         )
-        self.TestSegment(clr.CastAs(target, IMissionControlSequenceSegment))
+        self.TestSegment(clr.CastAs(target, IMCSSegment))
 
-        ret: "MissionControlSequenceReturn" = MissionControlSequenceReturn(
-            target.segments.insert(SEGMENT_TYPE.RETURN, "returner1", "-")
-        )
-        self.TestSegment(clr.CastAs(ret, IMissionControlSequenceSegment))
+        ret: "MCSReturn" = MCSReturn(target.segments.insert(SegmentType.RETURN, "returner1", "-"))
+        self.TestSegment(clr.CastAs(ret, IMCSSegment))
         GatorHelper.TestRuntimeTypeInfo(ret)
 
-        ret.return_control_to_parent_sequence = RETURN_CONTROL.DISABLE
-        Assert.assertEqual(RETURN_CONTROL.DISABLE, ret.return_control_to_parent_sequence)
+        ret.return_control_to_parent_sequence = ReturnControl.DISABLE
+        Assert.assertEqual(ReturnControl.DISABLE, ret.return_control_to_parent_sequence)
 
-        ret.return_control_to_parent_sequence = RETURN_CONTROL.ENABLE
-        Assert.assertEqual(RETURN_CONTROL.ENABLE, ret.return_control_to_parent_sequence)
+        ret.return_control_to_parent_sequence = ReturnControl.ENABLE
+        Assert.assertEqual(ReturnControl.ENABLE, ret.return_control_to_parent_sequence)
 
-        ret.return_control_to_parent_sequence = RETURN_CONTROL.ENABLE_EXCEPT_PROFILES_BYPASS
-        Assert.assertEqual(RETURN_CONTROL.ENABLE_EXCEPT_PROFILES_BYPASS, ret.return_control_to_parent_sequence)
+        ret.return_control_to_parent_sequence = ReturnControl.ENABLE_EXCEPT_PROFILES_BYPASS
+        Assert.assertEqual(ReturnControl.ENABLE_EXCEPT_PROFILES_BYPASS, ret.return_control_to_parent_sequence)
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - Return END")
 
     # endregion
@@ -1390,22 +1356,22 @@ class EarlyBoundTests(TestBase):
     def test_Stop(self):
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - Stop START")
 
-        mcsSegColl: "MissionControlSequenceSegmentCollection" = EarlyBoundTests.AG_VA.main_sequence
-        mcsSegment: "IMissionControlSequenceSegment"
+        mcsSegColl: "MCSSegmentCollection" = EarlyBoundTests.AG_VA.main_sequence
+        mcsSegment: "IMCSSegment"
         for mcsSegment in mcsSegColl:
             compInfo: "IComponentInfo" = clr.CastAs(mcsSegment, IComponentInfo)
             Assert.assertIsNotNone(compInfo, "compInfo should not be null")
             TestBase.logger.WriteLine5("Segment name: {0}", compInfo.name)
             TestBase.logger.WriteLine6("Segment type: {0}", mcsSegment.type)
             if compInfo.name == "-":
-                end: "MissionControlSequenceEnd" = clr.CastAs(compInfo, MissionControlSequenceEnd)
+                end: "MCSEnd" = clr.CastAs(compInfo, MCSEnd)
                 GatorHelper.TestRuntimeTypeInfo(end)
                 Assert.assertIsNotNone(end)
 
                 GatorHelper.TestRuntimeTypeInfo(end)
                 STKUtilHelper.TestComponent(clr.CastAs(end, IComponentInfo), False)
 
-                self.TestSegment(clr.CastAs(end, IMissionControlSequenceSegment))
+                self.TestSegment(clr.CastAs(end, IMCSSegment))
 
                 # IComponentInfo
                 compCopy: "IComponentInfo" = compInfo
@@ -1420,13 +1386,11 @@ class EarlyBoundTests(TestBase):
                 compCopy.name = oldName
                 compCopy.user_comment = oldUserComment
 
-        stop: "MissionControlSequenceStop" = MissionControlSequenceStop(
-            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.STOP, "stop1", "-")
-        )
-        self.TestSegment(clr.CastAs(stop, IMissionControlSequenceSegment))
+        stop: "MCSStop" = MCSStop(EarlyBoundTests.AG_VA.main_sequence.insert(SegmentType.STOP, "stop1", "-"))
+        self.TestSegment(clr.CastAs(stop, IMCSSegment))
         GatorHelper.TestRuntimeTypeInfo(stop)
 
-        mcsSegment: "IMissionControlSequenceSegment"
+        mcsSegment: "IMCSSegment"
 
         for mcsSegment in mcsSegColl:
             compInfo: "IComponentInfo" = clr.CastAs(mcsSegment, IComponentInfo)
@@ -1444,23 +1408,23 @@ class EarlyBoundTests(TestBase):
     # region TargetSequence
     def test_TargetSequence(self):
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - TargetSequence START")
-        ts: "MissionControlSequenceTargetSequence" = MissionControlSequenceTargetSequence(
-            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "ts1", "-")
+        ts: "MCSTargetSequence" = MCSTargetSequence(
+            EarlyBoundTests.AG_VA.main_sequence.insert(SegmentType.TARGET_SEQUENCE, "ts1", "-")
         )
         GatorHelper.bIsStkX = (self.Target == TestTarget.eStkX) or (self.Target == TestTarget.eStkNoGfx)
         GatorHelper.TestTargetSequence(ts, False, TestBase.Application)
         GatorHelper.TestRuntimeTypeInfo(ts)
-        self.TestSegment(clr.CastAs(ts, IMissionControlSequenceSegment))
+        self.TestSegment(clr.CastAs(ts, IMCSSegment))
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - TargetSequence END")
 
     # endregion
 
     # region TargetSequence_SequenceDeltaV
     def test_TargetSequence_SequenceDeltaV(self):
-        ts: "MissionControlSequenceTargetSequence" = MissionControlSequenceTargetSequence(
-            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "ts2", "-")
+        ts: "MCSTargetSequence" = MCSTargetSequence(
+            EarlyBoundTests.AG_VA.main_sequence.insert(SegmentType.TARGET_SEQUENCE, "ts2", "-")
         )
-        seg: "IMissionControlSequenceSegment" = clr.CastAs(ts, IMissionControlSequenceSegment)
+        seg: "IMCSSegment" = clr.CastAs(ts, IMCSSegment)
 
         sequenceDeltaV: "StateCalcSequenceDeltaV" = clr.CastAs(
             seg.results.add(r"Segments/Sequence DeltaV"), StateCalcSequenceDeltaV
@@ -1487,56 +1451,56 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - MoonMission START")
         TestBase.Application.close_scenario()
         TestBase.Application.new_scenario("Test")
-        TestBase.Application.unit_preferences.set_current_unit("DistanceUnit", "km")
+        TestBase.Application.units_preferences.set_current_unit("DistanceUnit", "km")
         #
         scene: "Scenario" = Scenario(TestBase.Application.current_scenario)
         scene.start_time = "1 Jan 1993 00:00:00.00"
         scene.stop_time = "1 Jan 1994 00:00:00.00"
         if not TestBase.NoGraphicsMode:
-            scene.animation.start_time = "1 Jan 1993 00:00:00.00"
-            scene.animation.enable_anim_cycle_time = True
-            scene.animation.anim_cycle_type = SCENARIO_END_LOOP_TYPE.END_TIME
-            scene.animation.anim_cycle_time = "1 Jan 1994 00:00:00.00"
+            scene.animation_settings.start_time = "1 Jan 1993 00:00:00.00"
+            scene.animation_settings.enable_anim_cycle_time = True
+            scene.animation_settings.animation_end_loop_type = ScenarioEndLoopType.END_TIME
+            scene.animation_settings.animation_cycle_time = "1 Jan 1994 00:00:00.00"
             (IAnimation(TestBase.Application)).rewind()
 
         else:
             with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
-                scene.animation.start_time = "1 Jan 1993 00:00:00.00"
+                scene.animation_settings.start_time = "1 Jan 1993 00:00:00.00"
 
         #
-        sun: "Planet" = Planet(TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.PLANET, "Sun"))
-        sun.position_source = PLANET_POSITION_SOURCE_TYPE.POSITION_CENTRAL_BODY
+        sun: "Planet" = Planet(TestBase.Application.current_scenario.children.new(STKObjectType.PLANET, "Sun"))
+        sun.position_source = PlanetPositionSourceType.CENTRAL_BODY
         pos: "PlanetPositionCentralBody" = PlanetPositionCentralBody(sun.position_source_data)
-        pos.auto_rename = True
+        pos.rename_automatically = True
         pos.central_body = "Sun"
         #
-        moon: "Planet" = Planet(TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.PLANET, "Moon"))
-        moon.position_source = PLANET_POSITION_SOURCE_TYPE.POSITION_CENTRAL_BODY
+        moon: "Planet" = Planet(TestBase.Application.current_scenario.children.new(STKObjectType.PLANET, "Moon"))
+        moon.position_source = PlanetPositionSourceType.CENTRAL_BODY
         pos = PlanetPositionCentralBody(moon.position_source_data)
         pos.central_body = "Moon"
         #
-        earth: "Planet" = Planet(TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.PLANET, "Earth"))
-        earth.position_source = PLANET_POSITION_SOURCE_TYPE.POSITION_CENTRAL_BODY
+        earth: "Planet" = Planet(TestBase.Application.current_scenario.children.new(STKObjectType.PLANET, "Earth"))
+        earth.position_source = PlanetPositionSourceType.CENTRAL_BODY
         pos = PlanetPositionCentralBody(earth.position_source_data)
         pos.central_body = "Earth"
 
         #
         sat: "Satellite" = Satellite(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "LunarProbe")
+            TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "LunarProbe")
         )
-        sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
-        driver: "DriverMissionControlSequence" = DriverMissionControlSequence(sat.propagator)
+        sat.set_propagator_type(PropagatorType.ASTROGATOR)
+        driver: "MCSDriver" = MCSDriver(sat.propagator)
         driver.options.draw_trajectory_in_2d = True
         driver.options.draw_trajectory_in_3d = True
         driver.options.update_animation_time_for_all_objects = True
         if not TestBase.NoGraphicsMode:
-            sat.graphics.set_attributes_type(VEHICLE_GRAPHICS_2D_ATTRIBUTES.ATTRIBUTES_BASIC)
-            sat.graphics.pass_data.ground_track.set_lead_data_type(LEAD_TRAIL_DATA.DATA_NONE)
-            sat.graphics.pass_data.orbit.set_lead_data_type(LEAD_TRAIL_DATA.DATA_ALL)
-            sat.graphics_3d.pass_method.track_data.inherit_from_2d = True
-            sat.graphics_3d.model.orbit_marker.marker_type = MARKER_TYPE.SHAPE
+            sat.graphics.set_attributes_type(VehicleGraphics2DAttributeType.BASIC)
+            sat.graphics.pass_data.ground_track.set_lead_data_type(LeadTrailData.NONE)
+            sat.graphics.pass_data.orbit.set_lead_data_type(LeadTrailData.ALL)
+            sat.graphics_3d.satellite_pass.track_data.inherit_from_2d = True
+            sat.graphics_3d.model.orbit_marker.marker_type = MarkerType.SHAPE
             markerData: "Graphics3DMarkerShape" = Graphics3DMarkerShape(sat.graphics_3d.model.orbit_marker.marker_data)
-            markerData.style = MARKER_SHAPE_3D.SHAPE_POINT
+            markerData.style = MarkerShape3d.SHAPE_POINT
             sat.graphics_3d.model.orbit_marker.pixel_size = 7
             sat.graphics_3d.model.detail_threshold.marker_label = 1000000000000.0
             sat.graphics_3d.model.detail_threshold.marker = 1000000000000.0
@@ -1544,34 +1508,30 @@ class EarlyBoundTests(TestBase):
 
         else:
             with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
-                sat.graphics.set_attributes_type(VEHICLE_GRAPHICS_2D_ATTRIBUTES.ATTRIBUTES_BASIC)
+                sat.graphics.set_attributes_type(VehicleGraphics2DAttributeType.BASIC)
             with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
-                sat.graphics_3d.pass_method.track_data.inherit_from_2d = True
+                sat.graphics_3d.satellite_pass.track_data.inherit_from_2d = True
 
         #
         driver.main_sequence.remove_all()
-        ts: "MissionControlSequenceTargetSequence" = MissionControlSequenceTargetSequence(
-            driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "Target Sequence", "-")
+        ts: "MCSTargetSequence" = MCSTargetSequence(
+            driver.main_sequence.insert(SegmentType.TARGET_SEQUENCE, "Target Sequence", "-")
         )
-        launch: "MissionControlSequenceLaunch" = MissionControlSequenceLaunch(
-            ts.segments.insert(SEGMENT_TYPE.LAUNCH, "Launch", "-")
-        )
+        launch: "MCSLaunch" = MCSLaunch(ts.segments.insert(SegmentType.LAUNCH, "Launch", "-"))
         launch.epoch = "1 Jan 1993 00:00:00.00"
         #
-        coast: "MissionControlSequencePropagate" = MissionControlSequencePropagate(
-            ts.segments.insert(SEGMENT_TYPE.PROPAGATE, "Coast", "-")
-        )
+        coast: "MCSPropagate" = MCSPropagate(ts.segments.insert(SegmentType.PROPAGATE, "Coast", "-"))
         (StoppingCondition(coast.stopping_conditions[0].properties)).trip = 2700
         #
-        transLunarInjection: "MissionControlSequenceManeuver" = MissionControlSequenceManeuver(
-            ts.segments.insert(SEGMENT_TYPE.MANEUVER, "TransLunarInjection", "-")
+        transLunarInjection: "MCSManeuver" = MCSManeuver(
+            ts.segments.insert(SegmentType.MANEUVER, "TransLunarInjection", "-")
         )
-        transLunarInjection.set_maneuver_type(MANEUVER_TYPE.IMPULSIVE)
+        transLunarInjection.set_maneuver_type(ManeuverType.IMPULSIVE)
         impulsive: "ManeuverImpulsive" = ManeuverImpulsive(transLunarInjection.maneuver)
 
         GatorHelper.TestRuntimeTypeInfo(impulsive)
 
-        impulsive.set_attitude_control_type(ATTITUDE_CONTROL.THRUST_VECTOR)
+        impulsive.set_attitude_control_type(AttitudeControl.THRUST_VECTOR)
         thrustVector: "AttitudeControlImpulsiveThrustVector" = AttitudeControlImpulsiveThrustVector(
             impulsive.attitude_control
         )
@@ -1649,12 +1609,12 @@ class EarlyBoundTests(TestBase):
         # not being changed at this time - they should be changed for the next major release. The following simply tests the ability to
         # change from Cartesian to spherical and back even though doing so still has no consequences for the API.
 
-        currentChoice: "IMP_DELTA_V_REP" = thrustVector.coord_type
+        currentChoice: "ImpulsiveDeltaVRepresentation" = thrustVector.coord_type
 
-        thrustVector.coord_type = IMP_DELTA_V_REP.CARTESIAN_IMP_DELTA_V
-        Assert.assertEqual(IMP_DELTA_V_REP.CARTESIAN_IMP_DELTA_V, thrustVector.coord_type)
-        thrustVector.coord_type = IMP_DELTA_V_REP.SPHERICAL_IMP_DELTA_V
-        Assert.assertEqual(IMP_DELTA_V_REP.SPHERICAL_IMP_DELTA_V, thrustVector.coord_type)
+        thrustVector.coord_type = ImpulsiveDeltaVRepresentation.CARTESIAN_IMPULSIVE_DELTA_V
+        Assert.assertEqual(ImpulsiveDeltaVRepresentation.CARTESIAN_IMPULSIVE_DELTA_V, thrustVector.coord_type)
+        thrustVector.coord_type = ImpulsiveDeltaVRepresentation.SPHERICAL_IMPULSIVE_DELTA_V
+        Assert.assertEqual(ImpulsiveDeltaVRepresentation.SPHERICAL_IMPULSIVE_DELTA_V, thrustVector.coord_type)
         thrustVector.coord_type = currentChoice
 
         sphVect = thrustVector.query_spherical()
@@ -1686,16 +1646,12 @@ class EarlyBoundTests(TestBase):
         GatorHelper.TestRuntimeTypeInfo(thrustVector)
 
         #
-        toSwingBy: "MissionControlSequencePropagate" = MissionControlSequencePropagate(
-            ts.segments.insert(SEGMENT_TYPE.PROPAGATE, "ToSwingBy", "-")
-        )
+        toSwingBy: "MCSPropagate" = MCSPropagate(ts.segments.insert(SegmentType.PROPAGATE, "ToSwingBy", "-"))
         toSwingBy.propagator_name = "CisLunar"
         (StoppingCondition(toSwingBy.stopping_conditions.add("R Magnitude").properties)).trip = 300000
         toSwingBy.stopping_conditions.remove("Duration")
         #
-        toPersilene: "MissionControlSequencePropagate" = MissionControlSequencePropagate(
-            ts.segments.insert(SEGMENT_TYPE.PROPAGATE, "ToPersilene", "-")
-        )
+        toPersilene: "MCSPropagate" = MCSPropagate(ts.segments.insert(SegmentType.PROPAGATE, "ToPersilene", "-"))
         toPersilene.propagator_name = "CisLunar"
         (StoppingCondition(toPersilene.stopping_conditions[0].properties)).trip = 864000
         alt: "StoppingCondition" = StoppingCondition(toPersilene.stopping_conditions.add("Altitude").properties)
@@ -1709,16 +1665,14 @@ class EarlyBoundTests(TestBase):
         thrustVector.assign_cartesian(3150.0, 0.0, 0.0)
 
         thrustVector.body_constraint_vector.assign_xyz(1.0, 2.0, 3.0)
-        driver.run_mission_control_sequence()
+        driver.run_mcs()
         #
-        launch.enable_control_parameter(CONTROL_LAUNCH.EPOCH)
-        coast.stopping_conditions[0].enable_control_parameter(CONTROL_STOPPING_CONDITION.TRIP_VALUE)
+        launch.enable_control_parameter(ControlLaunch.EPOCH)
+        coast.stopping_conditions[0].enable_control_parameter(ControlStoppingCondition.TRIP_VALUE)
         #
-        calcObject: "IComponentInfo" = (IMissionControlSequenceSegment(toPersilene)).results.add(
-            "MultiBody/Delta Right Asc"
-        )
-        (IMissionControlSequenceSegment(toPersilene)).results.add("MultiBody/Delta Declination")
-        self.TestCalcObjectCollection((IMissionControlSequenceSegment(toPersilene)).results)
+        calcObject: "IComponentInfo" = (IMCSSegment(toPersilene)).results.add("MultiBody/Delta Right Asc")
+        (IMCSSegment(toPersilene)).results.add("MultiBody/Delta Declination")
+        self.TestCalcObjectCollection((IMCSSegment(toPersilene)).results)
         #
         #
         diffCorrector: "ProfileDifferentialCorrector" = ProfileDifferentialCorrector(ts.profiles[0])
@@ -1742,25 +1696,25 @@ class EarlyBoundTests(TestBase):
         diffCorrector.results[1].desired_value = 0
         diffCorrector.results[1].enable = True
         #
-        ts.action = TARGET_SEQ_ACTION.RUN_ACTIVE_PROFILES_ONCE
-        driver.run_mission_control_sequence()
-        ts.action = TARGET_SEQ_ACTION.RUN_ACTIVE_PROFILES
-        driver.run_mission_control_sequence()
+        ts.action = TargetSequenceAction.RUN_ACTIVE_PROFILES_ONCE
+        driver.run_mcs()
+        ts.action = TargetSequenceAction.RUN_ACTIVE_PROFILES
+        driver.run_mcs()
         #
         ts.apply_profiles()
-        ts.action = TARGET_SEQ_ACTION.RUN_NOMINAL_SEQ
-        driver.run_mission_control_sequence()
+        ts.action = TargetSequenceAction.RUN_NOMINAL_SEQUENCE
+        driver.run_mcs()
         #
         dcCopy: "ProfileDifferentialCorrector" = ProfileDifferentialCorrector(ts.profiles[0].copy())
         dcCopy.name = "B_Plane_Targeting"
-        ts.profiles[0].mode = PROFILE_MODE.NOT_ACTIVE
+        ts.profiles[0].mode = ProfileMode.NOT_ACTIVE
         #
-        (IMissionControlSequenceSegment(toPersilene)).results.add("Epoch")
-        (IMissionControlSequenceSegment(toPersilene)).results.add("MultiBody/BDotT")
-        (IMissionControlSequenceSegment(toPersilene)).results.add("MultiBody/BDotR")
+        (IMCSSegment(toPersilene)).results.add("Epoch")
+        (IMCSSegment(toPersilene)).results.add("MultiBody/BDotT")
+        (IMCSSegment(toPersilene)).results.add("MultiBody/BDotR")
         #
 
-        transLunarInjection.enable_control_parameter(CONTROL_MANEUVER.IMPULSIVE_CARTESIAN_X)
+        transLunarInjection.enable_control_parameter(ControlManeuver.IMPULSIVE_CARTESIAN_X)
         #
 
         # "ImpulsiveMnvr.Cartesian.X" attribute path deprecated, but backward compatibility translation code allows
@@ -1805,14 +1759,14 @@ class EarlyBoundTests(TestBase):
             template.reference_vector = "CentralBody/Moon Orbit_Normal Vector"
             bPlane: "VehicleGraphics3DBPlaneInstance" = sat.graphics_3d.b_planes.instances.add("Lunar_B-Plane")
             bPlane.name = "LunarBPlane"
-            (IMissionControlSequenceSegment(toPersilene)).properties.b_planes.add("LunarBPlane")
+            (IMCSSegment(toPersilene)).properties.b_planes.add("LunarBPlane")
 
         else:
             with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
                 template: "VehicleGraphics3DBPlaneTemplate" = sat.graphics_3d.b_planes.templates.add()
 
         # Test BPlane collection iteration
-        bplaneColl: "BPlaneCollection" = (IMissionControlSequenceSegment(toPersilene)).properties.b_planes
+        bplaneColl: "BPlaneCollection" = (IMCSSegment(toPersilene)).properties.b_planes
         bplane: str
         for bplane in bplaneColl:
             TestBase.logger.WriteLine(bplane)
@@ -1823,17 +1777,17 @@ class EarlyBoundTests(TestBase):
 
             i += 1
 
-        (IMissionControlSequenceSegment(toPersilene)).properties.apply_final_state_to_b_planes()
+        (IMCSSegment(toPersilene)).properties.apply_final_state_to_b_planes()
         #
-        ts.action = TARGET_SEQ_ACTION.RUN_ACTIVE_PROFILES_ONCE
-        driver.run_mission_control_sequence()
+        ts.action = TargetSequenceAction.RUN_ACTIVE_PROFILES_ONCE
+        driver.run_mcs()
         #
-        ts.action = TARGET_SEQ_ACTION.RUN_ACTIVE_PROFILES
-        driver.run_mission_control_sequence()
+        ts.action = TargetSequenceAction.RUN_ACTIVE_PROFILES
+        driver.run_mcs()
         # //
         ts.apply_profiles()
-        ts.action = TARGET_SEQ_ACTION.RUN_NOMINAL_SEQ
-        driver.run_mission_control_sequence()
+        ts.action = TargetSequenceAction.RUN_NOMINAL_SEQUENCE
+        driver.run_mcs()
         #
         #
         TestBase.Application.execute_command(
@@ -1847,16 +1801,16 @@ class EarlyBoundTests(TestBase):
         altInc: "ProfileDifferentialCorrector" = ProfileDifferentialCorrector(dcCopy.copy())
         altInc.name = "Altitude and Inclination"
         #
-        ts.profiles[0].mode = PROFILE_MODE.NOT_ACTIVE
-        (dcCopy).mode = PROFILE_MODE.NOT_ACTIVE
+        ts.profiles[0].mode = ProfileMode.NOT_ACTIVE
+        (dcCopy).mode = ProfileMode.NOT_ACTIVE
         #
         #
         calcAlt: "StateCalcGeodeticElem" = StateCalcGeodeticElem(
-            (IMissionControlSequenceSegment(toPersilene)).results.add("Geodetic/Altitude")
+            (IMCSSegment(toPersilene)).results.add("Geodetic/Altitude")
         )
         calcAlt.central_body_name = "Moon"
         calcInc: "StateCalcInclination" = StateCalcInclination(
-            (IMissionControlSequenceSegment(toPersilene)).results.add("Keplerian Elems/Inclination")
+            (IMCSSegment(toPersilene)).results.add("Keplerian Elems/Inclination")
         )
         calcInc.coord_system_name = "CentralBody/Moon True_Lunar_Equatorial"
 
@@ -1874,36 +1828,32 @@ class EarlyBoundTests(TestBase):
         altInc.results.get_result_by_paths("ToPersilene", "Inclination").desired_value = 90
         altInc.results.get_result_by_paths("ToPersilene", "Epoch").desired_value = "4 Jan 1993 00:00:00.00"
         #
-        ts.action = TARGET_SEQ_ACTION.RUN_ACTIVE_PROFILES
-        driver.run_mission_control_sequence()
+        ts.action = TargetSequenceAction.RUN_ACTIVE_PROFILES
+        driver.run_mcs()
         ts.apply_profiles()
-        ts.action = TARGET_SEQ_ACTION.RUN_NOMINAL_SEQ
-        driver.run_mission_control_sequence()
+        ts.action = TargetSequenceAction.RUN_NOMINAL_SEQUENCE
+        driver.run_mcs()
         #
-        prop3Day: "MissionControlSequencePropagate" = MissionControlSequencePropagate(
-            driver.main_sequence.insert(SEGMENT_TYPE.PROPAGATE, "Prop3Days", "-")
-        )
+        prop3Day: "MCSPropagate" = MCSPropagate(driver.main_sequence.insert(SegmentType.PROPAGATE, "Prop3Days", "-"))
         prop3Day.propagator_name = "CisLunar"
         (StoppingCondition(prop3Day.stopping_conditions[0].properties)).trip = 259200
         #
-        driver.run_mission_control_sequence()
+        driver.run_mcs()
         #
-        ts2: "MissionControlSequenceTargetSequence" = MissionControlSequenceTargetSequence(
-            driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "Target Sequence2", "Prop3Days")
+        ts2: "MCSTargetSequence" = MCSTargetSequence(
+            driver.main_sequence.insert(SegmentType.TARGET_SEQUENCE, "Target Sequence2", "Prop3Days")
         )
-        loi: "MissionControlSequenceManeuver" = MissionControlSequenceManeuver(
-            ts2.segments.insert(SEGMENT_TYPE.MANEUVER, "LOI", "-")
-        )
-        loi.set_maneuver_type(MANEUVER_TYPE.IMPULSIVE)
+        loi: "MCSManeuver" = MCSManeuver(ts2.segments.insert(SegmentType.MANEUVER, "LOI", "-"))
+        loi.set_maneuver_type(ManeuverType.IMPULSIVE)
         impulsive = ManeuverImpulsive(loi.maneuver)
-        impulsive.set_attitude_control_type(ATTITUDE_CONTROL.THRUST_VECTOR)
+        impulsive.set_attitude_control_type(AttitudeControl.THRUST_VECTOR)
         thrust: "AttitudeControlImpulsiveThrustVector" = AttitudeControlImpulsiveThrustVector(
             impulsive.attitude_control
         )
         thrust.thrust_axes_name = "Satellite VNC(Moon)"
-        loi.enable_control_parameter(CONTROL_MANEUVER.IMPULSIVE_CARTESIAN_X)
+        loi.enable_control_parameter(ControlManeuver.IMPULSIVE_CARTESIAN_X)
         ecc: "StateCalcEccentricity" = StateCalcEccentricity(
-            (IMissionControlSequenceSegment(loi)).results.add("Keplerian Elems/Eccentricity")
+            (IMCSSegment(loi)).results.add("Keplerian Elems/Eccentricity")
         )
         ecc.central_body_name = "Moon"
         #
@@ -1911,11 +1861,11 @@ class EarlyBoundTests(TestBase):
         diffCorrector.control_parameters[0].enable = True
         diffCorrector.results[0].enable = True
         #
-        ts2.action = TARGET_SEQ_ACTION.RUN_ACTIVE_PROFILES
-        driver.run_mission_control_sequence()
+        ts2.action = TargetSequenceAction.RUN_ACTIVE_PROFILES
+        driver.run_mcs()
         ts2.apply_profiles()
-        ts2.action = TARGET_SEQ_ACTION.RUN_NOMINAL_SEQ
-        driver.run_mission_control_sequence()
+        ts2.action = TargetSequenceAction.RUN_NOMINAL_SEQUENCE
+        driver.run_mcs()
         if not TestBase.NoGraphicsMode:
             (IAnimation(TestBase.Application)).rewind()
 
@@ -1925,8 +1875,8 @@ class EarlyBoundTests(TestBase):
 
         TestBase.LoadTestScenario(Path.Combine("AstrogatorTests", "AstrogatorTests.sc"))
         EarlyBoundTests.AG_SAT = Satellite(TestBase.Application.current_scenario.children["Satellite1"])
-        EarlyBoundTests.AG_SAT.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
-        EarlyBoundTests.AG_VA = DriverMissionControlSequence(EarlyBoundTests.AG_SAT.propagator)
+        EarlyBoundTests.AG_SAT.set_propagator_type(PropagatorType.ASTROGATOR)
+        EarlyBoundTests.AG_VA = MCSDriver(EarlyBoundTests.AG_SAT.propagator)
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - MoonMission END")
 
     # endregion
@@ -1934,17 +1884,15 @@ class EarlyBoundTests(TestBase):
     # region ScriptingToolSetControl
     def test_ScriptingToolSetControl(self):
         # Put the target sequence in a sequence
-        s43701: "IMissionControlSequenceSequence" = IMissionControlSequenceSequence(
-            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.SEQUENCE, "s43701", "-")
+        s43701: "IMCSSequence" = IMCSSequence(
+            EarlyBoundTests.AG_VA.main_sequence.insert(SegmentType.SEQUENCE, "s43701", "-")
         )
-        ts43701: "MissionControlSequenceTargetSequence" = MissionControlSequenceTargetSequence(
-            s43701.segments.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "ts43701", "-")
+        ts43701: "MCSTargetSequence" = MCSTargetSequence(
+            s43701.segments.insert(SegmentType.TARGET_SEQUENCE, "ts43701", "-")
         )
 
         # Put a propagate segment in a target sequence
-        ps43701: "MissionControlSequencePropagate" = MissionControlSequencePropagate(
-            ts43701.segments.insert(SEGMENT_TYPE.PROPAGATE, "ps43701", "-")
-        )
+        ps43701: "MCSPropagate" = MCSPropagate(ts43701.segments.insert(SegmentType.PROPAGATE, "ps43701", "-"))
 
         # Make sure Trip Stopping Condition is enabled so can target in the DC
         Assert.assertEqual(1, ps43701.stopping_conditions.count)
@@ -1957,12 +1905,12 @@ class EarlyBoundTests(TestBase):
 
         scc: "IStoppingConditionComponent" = stopcond0.properties
         Assert.assertTrue(stopcond0.control_parameters_available)
-        stopcond0.enable_control_parameter(CONTROL_STOPPING_CONDITION.TRIP_VALUE)
-        Assert.assertTrue(stopcond0.is_control_parameter_enabled(CONTROL_STOPPING_CONDITION.TRIP_VALUE))
-        stopcond0.disable_control_parameter(CONTROL_STOPPING_CONDITION.TRIP_VALUE)
-        Assert.assertFalse(stopcond0.is_control_parameter_enabled(CONTROL_STOPPING_CONDITION.TRIP_VALUE))
-        stopcond0.enable_control_parameter(CONTROL_STOPPING_CONDITION.TRIP_VALUE)
-        Assert.assertTrue(stopcond0.is_control_parameter_enabled(CONTROL_STOPPING_CONDITION.TRIP_VALUE))
+        stopcond0.enable_control_parameter(ControlStoppingCondition.TRIP_VALUE)
+        Assert.assertTrue(stopcond0.is_control_parameter_enabled(ControlStoppingCondition.TRIP_VALUE))
+        stopcond0.disable_control_parameter(ControlStoppingCondition.TRIP_VALUE)
+        Assert.assertFalse(stopcond0.is_control_parameter_enabled(ControlStoppingCondition.TRIP_VALUE))
+        stopcond0.enable_control_parameter(ControlStoppingCondition.TRIP_VALUE)
+        Assert.assertTrue(stopcond0.is_control_parameter_enabled(ControlStoppingCondition.TRIP_VALUE))
 
         # target it's trip value in a DC
         dc: "ProfileDifferentialCorrector" = None
@@ -2032,23 +1980,23 @@ class EarlyBoundTests(TestBase):
         Assert.assertTrue(foundAttr)
 
         scriptseg.attribute = controlattr
-        EarlyBoundTests.AG_VA.run_mission_control_sequence()
+        EarlyBoundTests.AG_VA.run_mcs()
 
-        EarlyBoundTests.AG_VA.clear_dwc_graphics()
+        EarlyBoundTests.AG_VA.clear_draw_while_calculating_graphics()
 
     # endregion
 
     # region GetChangeReturnSegment
     def test_GetChangeReturnSegment(self):
-        EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "InitialState", "-")
+        EarlyBoundTests.AG_VA.main_sequence.insert(SegmentType.INITIAL_STATE, "InitialState", "-")
 
-        targSeq: "MissionControlSequenceTargetSequence" = None
-        targSeq = MissionControlSequenceTargetSequence(
-            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-")
+        targSeq: "MCSTargetSequence" = None
+        targSeq = MCSTargetSequence(
+            EarlyBoundTests.AG_VA.main_sequence.insert(SegmentType.TARGET_SEQUENCE, "TargetSequence", "-")
         )
 
-        ret: "MissionControlSequenceReturn" = None
-        ret = MissionControlSequenceReturn(targSeq.segments.insert(SEGMENT_TYPE.RETURN, "Return", "-"))
+        ret: "MCSReturn" = None
+        ret = MCSReturn(targSeq.segments.insert(SegmentType.RETURN, "Return", "-"))
 
         changeReturn: "ProfileChangeReturnSegment" = None
         changeReturn = ProfileChangeReturnSegment(targSeq.profiles.add("Change Return Segment"))
@@ -2070,14 +2018,14 @@ class EarlyBoundTests(TestBase):
     # endregion
 
     # region TestSegment
-    def TestSegment(self, seg: "IMissionControlSequenceSegment"):
+    def TestSegment(self, seg: "IMCSSegment"):
         # the follow segment needs the leader to be set with a long enough ephemeris
         EarlyBoundTests.AG_VA.begin_run()
-        if clr.Is(seg, MissionControlSequenceFollow):
+        if clr.Is(seg, MCSFollow):
             with pytest.raises(Exception):
                 orbitState: "State" = seg.run()
 
-        elif clr.Is(seg, MissionControlSequenceTargetSequence):
+        elif clr.Is(seg, MCSTargetSequence):
             pass
 
         else:
@@ -2085,20 +2033,20 @@ class EarlyBoundTests(TestBase):
 
         EarlyBoundTests.AG_VA.end_run()
 
-        type: "SEGMENT_TYPE" = seg.type
-        segProperties: "MissionControlSequenceSegmentProperties" = seg.properties
-        execSummary: "DataProviderResult" = seg.exec_summary
+        type: "SegmentType" = seg.type
+        segProperties: "MCSSegmentProperties" = seg.properties
+        execSummary: "DataProviderResult" = seg.segment_summary
         finalState: "State" = seg.final_state
         initialState: "State" = seg.initial_state
-        properties: "MissionControlSequenceSegmentProperties" = seg.properties
-        calcObjectCollection: "CalcObjectCollection" = seg.results
-        typeX: "SEGMENT_TYPE" = seg.type
+        properties: "MCSSegmentProperties" = seg.properties
+        calcObjectCollection: "CalculationObjectCollection" = seg.results
+        typeX: "SegmentType" = seg.type
         resultValue: typing.Any = seg.get_result_value("Epoch")
 
     # endregion
 
     # region TestCalcObjectCollection
-    def TestCalcObjectCollection(self, calcObjColl: "CalcObjectCollection"):
+    def TestCalcObjectCollection(self, calcObjColl: "CalculationObjectCollection"):
         origCount: int = calcObjColl.count
 
         calcObjColl.add("MultiBody/BTheta")
@@ -2153,23 +2101,23 @@ class EarlyBoundTests(TestBase):
 
     # region TestDCProfileResetAndApply
     def test_TestDCProfileResetAndApply(self):
-        ms: "MissionControlSequenceSegmentCollection" = EarlyBoundTests.AG_VA.main_sequence
+        ms: "MCSSegmentCollection" = EarlyBoundTests.AG_VA.main_sequence
 
         ms.remove_all()
-        ms.insert(SEGMENT_TYPE.INITIAL_STATE, "InitialState", "-")
+        ms.insert(SegmentType.INITIAL_STATE, "InitialState", "-")
 
-        targSeg: "IMissionControlSequenceSegment" = None
-        targSeg = ms.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-")
-        targSeq: "MissionControlSequenceTargetSequence" = clr.CastAs(targSeg, MissionControlSequenceTargetSequence)
-        targSeq.action = TARGET_SEQ_ACTION.RUN_ACTIVE_PROFILES
+        targSeg: "IMCSSegment" = None
+        targSeg = ms.insert(SegmentType.TARGET_SEQUENCE, "TargetSequence", "-")
+        targSeq: "MCSTargetSequence" = clr.CastAs(targSeg, MCSTargetSequence)
+        targSeq.action = TargetSequenceAction.RUN_ACTIVE_PROFILES
 
-        propSeg: "IMissionControlSequenceSegment" = None
-        propSeg = targSeq.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-")
-        prop: "MissionControlSequencePropagate" = clr.CastAs(propSeg, MissionControlSequencePropagate)
+        propSeg: "IMCSSegment" = None
+        propSeg = targSeq.segments.insert(SegmentType.PROPAGATE, "Propagate", "-")
+        prop: "MCSPropagate" = clr.CastAs(propSeg, MCSPropagate)
 
         durStop: "StoppingConditionElement" = prop.stopping_conditions["Duration"]
         durStop.active = True
-        durStop.enable_control_parameter(CONTROL_STOPPING_CONDITION.TRIP_VALUE)
+        durStop.enable_control_parameter(ControlStoppingCondition.TRIP_VALUE)
         stop: "StoppingCondition" = clr.CastAs(durStop.properties, StoppingCondition)
         stop.trip = 3600
 
@@ -2181,7 +2129,7 @@ class EarlyBoundTests(TestBase):
         dcc: "DifferentialCorrectorControl" = None
         dcc = dc.control_parameters.get_control_by_paths("Propagate", "StoppingConditions.Duration.TripValue")
         dcc.enable = True
-        dcc.scaling_method = DIFFERENTIAL_CORRECTOR_SCALING_METHOD.INITIAL_VALUE
+        dcc.scaling_method = DifferentialCorrectorScalingMethod.INITIAL_VALUE
         dcc.perturbation = 60
         dcc.max_step = 3600
         Assert.assertEqual(0, dcc.last_update)
@@ -2196,7 +2144,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("-Not Set-", dcr.current_value)
         Assert.assertEqual(7200, dcr.desired_value)
 
-        EarlyBoundTests.AG_VA.run_mission_control_sequence()
+        EarlyBoundTests.AG_VA.run_mcs()
 
         Assert.assertEqual(7200, dcc.final_value)
         Assert.assertEqual(3600, dcc.last_update)
@@ -2220,7 +2168,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(7200, dcr.desired_value)
         Assert.assertEqual(7200, dcr.current_value)
 
-        EarlyBoundTests.AG_VA.run_mission_control_sequence()
+        EarlyBoundTests.AG_VA.run_mcs()
 
         Assert.assertEqual(7200, dcc.final_value)
         Assert.assertEqual(3600, dcc.last_update)
@@ -2262,39 +2210,39 @@ class EarlyBoundTests(TestBase):
         for myProf in targSeq.profiles:
             targSeq.reset_profile(myProf)
             targSeq.reset_profile_by_name(myProf.name)
-            EarlyBoundTests.AG_VA.run_mission_control_sequence()
+            EarlyBoundTests.AG_VA.run_mcs()
             targSeq.apply_profile(myProf)
             targSeq.apply_profile_by_name(myProf.name)
-            EarlyBoundTests.AG_VA.run_mission_control_sequence()
+            EarlyBoundTests.AG_VA.run_mcs()
 
         TestBase.LoadTestScenario(Path.Combine("AstrogatorTests", "AstrogatorTests.sc"))
         EarlyBoundTests.AG_SAT = Satellite(TestBase.Application.current_scenario.children["Satellite1"])
-        EarlyBoundTests.AG_SAT.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
-        EarlyBoundTests.AG_VA = DriverMissionControlSequence(EarlyBoundTests.AG_SAT.propagator)
+        EarlyBoundTests.AG_SAT.set_propagator_type(PropagatorType.ASTROGATOR)
+        EarlyBoundTests.AG_VA = MCSDriver(EarlyBoundTests.AG_SAT.propagator)
 
     # endregion
 
     # region ApplyAndResetAllProfiles
     def test_ApplyAndResetAllProfiles(self):
-        ms: "MissionControlSequenceSegmentCollection" = EarlyBoundTests.AG_VA.main_sequence
+        ms: "MCSSegmentCollection" = EarlyBoundTests.AG_VA.main_sequence
 
         ms.remove_all()
-        ms.insert(SEGMENT_TYPE.INITIAL_STATE, "InitialState", "-")
+        ms.insert(SegmentType.INITIAL_STATE, "InitialState", "-")
 
         # region First Target Sequence
 
-        targSeg: "IMissionControlSequenceSegment" = None
-        targSeg = ms.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-")
-        targSeq: "MissionControlSequenceTargetSequence" = clr.CastAs(targSeg, MissionControlSequenceTargetSequence)
-        targSeq.action = TARGET_SEQ_ACTION.RUN_ACTIVE_PROFILES
+        targSeg: "IMCSSegment" = None
+        targSeg = ms.insert(SegmentType.TARGET_SEQUENCE, "TargetSequence", "-")
+        targSeq: "MCSTargetSequence" = clr.CastAs(targSeg, MCSTargetSequence)
+        targSeq.action = TargetSequenceAction.RUN_ACTIVE_PROFILES
 
-        propSeg: "IMissionControlSequenceSegment" = None
-        propSeg = targSeq.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-")
-        prop: "MissionControlSequencePropagate" = clr.CastAs(propSeg, MissionControlSequencePropagate)
+        propSeg: "IMCSSegment" = None
+        propSeg = targSeq.segments.insert(SegmentType.PROPAGATE, "Propagate", "-")
+        prop: "MCSPropagate" = clr.CastAs(propSeg, MCSPropagate)
 
         durStop: "StoppingConditionElement" = prop.stopping_conditions["Duration"]
         durStop.active = True
-        durStop.enable_control_parameter(CONTROL_STOPPING_CONDITION.TRIP_VALUE)
+        durStop.enable_control_parameter(ControlStoppingCondition.TRIP_VALUE)
         stop: "StoppingCondition" = clr.CastAs(durStop.properties, StoppingCondition)
         stop.trip = 3600
 
@@ -2304,18 +2252,18 @@ class EarlyBoundTests(TestBase):
 
         # region Second Target Sequence
 
-        targSeg2: "IMissionControlSequenceSegment" = None
-        targSeg2 = ms.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence1", "-")
-        targSeq2: "MissionControlSequenceTargetSequence" = clr.CastAs(targSeg2, MissionControlSequenceTargetSequence)
-        targSeq2.action = TARGET_SEQ_ACTION.RUN_ACTIVE_PROFILES
+        targSeg2: "IMCSSegment" = None
+        targSeg2 = ms.insert(SegmentType.TARGET_SEQUENCE, "TargetSequence1", "-")
+        targSeq2: "MCSTargetSequence" = clr.CastAs(targSeg2, MCSTargetSequence)
+        targSeq2.action = TargetSequenceAction.RUN_ACTIVE_PROFILES
 
-        propSeg2: "IMissionControlSequenceSegment" = None
-        propSeg2 = targSeq2.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-")
-        prop2: "MissionControlSequencePropagate" = clr.CastAs(propSeg2, MissionControlSequencePropagate)
+        propSeg2: "IMCSSegment" = None
+        propSeg2 = targSeq2.segments.insert(SegmentType.PROPAGATE, "Propagate", "-")
+        prop2: "MCSPropagate" = clr.CastAs(propSeg2, MCSPropagate)
 
         durStop2: "StoppingConditionElement" = prop2.stopping_conditions["Duration"]
         durStop2.active = True
-        durStop2.enable_control_parameter(CONTROL_STOPPING_CONDITION.TRIP_VALUE)
+        durStop2.enable_control_parameter(ControlStoppingCondition.TRIP_VALUE)
         stop2: "StoppingCondition" = clr.CastAs(durStop2.properties, StoppingCondition)
         stop2.trip = 3600
 
@@ -2331,7 +2279,7 @@ class EarlyBoundTests(TestBase):
         dcc: "DifferentialCorrectorControl" = None
         dcc = dc.control_parameters.get_control_by_paths("Propagate", "StoppingConditions.Duration.TripValue")
         dcc.enable = True
-        dcc.scaling_method = DIFFERENTIAL_CORRECTOR_SCALING_METHOD.INITIAL_VALUE
+        dcc.scaling_method = DifferentialCorrectorScalingMethod.INITIAL_VALUE
         dcc.perturbation = 60
         dcc.max_step = 3600
         Assert.assertAlmostEqual(0, float(dcc.last_update), delta=1e-09)
@@ -2356,7 +2304,7 @@ class EarlyBoundTests(TestBase):
         dcc2: "DifferentialCorrectorControl" = None
         dcc2 = dc2.control_parameters.get_control_by_paths("Propagate", "StoppingConditions.Duration.TripValue")
         dcc2.enable = True
-        dcc2.scaling_method = DIFFERENTIAL_CORRECTOR_SCALING_METHOD.INITIAL_VALUE
+        dcc2.scaling_method = DifferentialCorrectorScalingMethod.INITIAL_VALUE
         dcc2.perturbation = 60
         dcc2.max_step = 3600
         Assert.assertAlmostEqual(0, float(dcc2.last_update), delta=1e-09)
@@ -2373,7 +2321,7 @@ class EarlyBoundTests(TestBase):
 
         # endregion
 
-        EarlyBoundTests.AG_VA.run_mission_control_sequence()
+        EarlyBoundTests.AG_VA.run_mcs()
 
         Assert.assertAlmostEqual(7200, float(dcc.final_value), delta=1e-09)
         Assert.assertAlmostEqual(3600, float(dcc.last_update), delta=1e-09)
@@ -2413,7 +2361,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertAlmostEqual(7200, float(dcr2.desired_value), delta=1e-09)
         Assert.assertAlmostEqual(7200, float(dcr2.current_value), delta=1e-09)
 
-        EarlyBoundTests.AG_VA.run_mission_control_sequence()
+        EarlyBoundTests.AG_VA.run_mcs()
 
         Assert.assertAlmostEqual(7200, float(dcc.final_value), delta=1e-09)
         Assert.assertAlmostEqual(3600, float(dcc.last_update), delta=1e-09)
@@ -2470,29 +2418,28 @@ class EarlyBoundTests(TestBase):
         targSeq.profiles.add("Scripting Tool")
         targSeq.profiles.add("Seed Finite Maneuver")
         EarlyBoundTests.AG_VA.reset_all_profiles()
-        EarlyBoundTests.AG_VA.run_mission_control_sequence()
+        EarlyBoundTests.AG_VA.run_mcs()
         EarlyBoundTests.AG_VA.apply_all_profile_changes()
-        EarlyBoundTests.AG_VA.run_mission_control_sequence()
+        EarlyBoundTests.AG_VA.run_mcs()
 
         TestBase.LoadTestScenario(Path.Combine("AstrogatorTests", "AstrogatorTests.sc"))
         EarlyBoundTests.AG_SAT = Satellite(TestBase.Application.current_scenario.children["Satellite1"])
-        EarlyBoundTests.AG_SAT.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
-        EarlyBoundTests.AG_VA = DriverMissionControlSequence(EarlyBoundTests.AG_SAT.propagator)
+        EarlyBoundTests.AG_SAT.set_propagator_type(PropagatorType.ASTROGATOR)
+        EarlyBoundTests.AG_VA = MCSDriver(EarlyBoundTests.AG_SAT.propagator)
 
     # endregion
 
     # region ScriptingToolFunctionality
     def test_ScriptingToolFunctionality(self):
         EarlyBoundTests.AG_VA.main_sequence.remove_all()
-        EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "Initial State", "-")
+        EarlyBoundTests.AG_VA.main_sequence.insert(SegmentType.INITIAL_STATE, "Initial State", "-")
 
-        sequence: "IMissionControlSequenceSequence" = clr.CastAs(
-            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.SEQUENCE, "Sequence", "-"),
-            IMissionControlSequenceSequence,
+        sequence: "IMCSSequence" = clr.CastAs(
+            EarlyBoundTests.AG_VA.main_sequence.insert(SegmentType.SEQUENCE, "Sequence", "-"), IMCSSequence
         )
 
-        propagate: "MissionControlSequencePropagate" = clr.CastAs(
-            sequence.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), MissionControlSequencePropagate
+        propagate: "MCSPropagate" = clr.CastAs(
+            sequence.segments.insert(SegmentType.PROPAGATE, "Propagate", "-"), MCSPropagate
         )
         durationElem: "StoppingConditionElement" = propagate.stopping_conditions["Duration"]
         longitudeElem: "StoppingConditionElement" = propagate.stopping_conditions.add("Longitude")
@@ -2518,22 +2465,22 @@ class EarlyBoundTests(TestBase):
 longitude = 121;"""
         )
 
-        EarlyBoundTests.AG_VA.run_mission_control_sequence()
+        EarlyBoundTests.AG_VA.run_mcs()
         Assert.assertEqual(3600, duration.trip)
         Assert.assertAlmostEqual(120, float(longitude.trip), delta=Math2.Epsilon12)
 
         propagate.stopping_conditions.remove("Duration")
         longitude.trip = 100
 
-        EarlyBoundTests.AG_VA.run_mission_control_sequence()
+        EarlyBoundTests.AG_VA.run_mcs()
         # make sure that the scripting tool doesn't try to reset this value to 120, the old
         # archived value
         Assert.assertEqual(100, longitude.trip)
 
         # REQ 57324 - Add Matlab as available script language
 
-        sequence.scripting_tool.language_type = LANGUAGE.MATLAB
-        Assert.assertEqual(sequence.scripting_tool.language_type, LANGUAGE.MATLAB)
+        sequence.scripting_tool.language_type = Language.MATLAB
+        Assert.assertEqual(sequence.scripting_tool.language_type, Language.MATLAB)
 
         # set user comment on a parameter, REQ 59661
         param: "ScriptingParameter" = sequence.scripting_tool.parameters.add("Parameter")
@@ -2542,8 +2489,8 @@ longitude = 121;"""
 
         # Set back to default configuration
         EarlyBoundTests.AG_VA.main_sequence.remove_all()
-        EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "Initial State", "-")
-        EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-")
+        EarlyBoundTests.AG_VA.main_sequence.insert(SegmentType.INITIAL_STATE, "Initial State", "-")
+        EarlyBoundTests.AG_VA.main_sequence.insert(SegmentType.PROPAGATE, "Propagate", "-")
 
     # endregion
 
@@ -2552,66 +2499,62 @@ longitude = 121;"""
     def test_DiffAcrossAndValueAtOtherSatellites(self):
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - DiffAcrossAndValueAtOtherSatellites START")
         newSat: "Satellite" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "DiffAcross"), Satellite
+            TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "DiffAcross"), Satellite
         )
         anotherSat: "Satellite" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "NonGator"), Satellite
+            TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "NonGator"), Satellite
         )
-        newSat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
-        otherMCS: "DriverMissionControlSequence" = clr.CastAs(newSat.propagator, DriverMissionControlSequence)
-        prop: "MissionControlSequencePropagate" = clr.CastAs(
-            EarlyBoundTests.AG_VA.main_sequence["Propagate"], MissionControlSequencePropagate
-        )
-        result: "IComponentInfo" = (IMissionControlSequenceSegment(prop)).results.add(
+        newSat.set_propagator_type(PropagatorType.ASTROGATOR)
+        otherMCS: "MCSDriver" = clr.CastAs(newSat.propagator, MCSDriver)
+        prop: "MCSPropagate" = clr.CastAs(EarlyBoundTests.AG_VA.main_sequence["Propagate"], MCSPropagate)
+        result: "IComponentInfo" = (IMCSSegment(prop)).results.add(
             "Segments/Difference Across Segments Across Satellites"
         )
-        diffAcrossSegs: "StateCalcDifferenceAcrossSegmentsOtherSat" = clr.CastAs(
-            result, StateCalcDifferenceAcrossSegmentsOtherSat
+        diffAcrossSegs: "StateCalcDifferenceAcrossSegmentsOtherSatellite" = clr.CastAs(
+            result, StateCalcDifferenceAcrossSegmentsOtherSatellite
         )
-        diffAcrossSegs.segment_state_to_use = SEGMENT_STATE.FINAL
-        Assert.assertEqual(SEGMENT_STATE.FINAL, diffAcrossSegs.segment_state_to_use)
+        diffAcrossSegs.segment_state_to_use = SegmentState.FINAL
+        Assert.assertEqual(SegmentState.FINAL, diffAcrossSegs.segment_state_to_use)
         STKUtilHelper.TestComponent(clr.CastAs(diffAcrossSegs, IComponentInfo), False)
-        refSat: "LinkToObject" = diffAcrossSegs.reference_sat
-        refSat.bind_to("Satellite/DiffAcross")
+        refSat: "LinkToObject" = diffAcrossSegs.reference_satellite
+        refSat.bind_to_object("Satellite/DiffAcross")
         Assert.assertEqual("Satellite/DiffAcross", refSat.name)
         with pytest.raises(Exception):
-            refSat.bind_to("Satellite/NonGator")
-        diffAcrossSegs.calc_object_name = "Keplerian Elems/Eccentricity"
-        Assert.assertEqual("Eccentricity", diffAcrossSegs.calc_object_name)
+            refSat.bind_to_object("Satellite/NonGator")
+        diffAcrossSegs.calculation_object_name = "Keplerian Elems/Eccentricity"
+        Assert.assertEqual("Eccentricity", diffAcrossSegs.calculation_object_name)
         diffAcrossSegs.other_segment_name = "Propagate"
         Assert.assertEqual("Propagate", diffAcrossSegs.other_segment_name)
-        diffAcrossSegs.difference_order = SEGMENT_DIFFERENCE_ORDER.SEGMENT_MINUS_CURRENT
-        Assert.assertEqual(SEGMENT_DIFFERENCE_ORDER.SEGMENT_MINUS_CURRENT, diffAcrossSegs.difference_order)
+        diffAcrossSegs.difference_order = SegmentDifferenceOrder.SEGMENT_MINUS_CURRENT
+        Assert.assertEqual(SegmentDifferenceOrder.SEGMENT_MINUS_CURRENT, diffAcrossSegs.difference_order)
 
-        result = (IMissionControlSequenceSegment(prop)).results.add("Segments/Value At Segment Other Satellite")
+        result = (IMCSSegment(prop)).results.add("Segments/Value At Segment Other Satellite")
         valueAtSegment: "StateCalcValueAtSegmentOtherSat" = clr.CastAs(result, StateCalcValueAtSegmentOtherSat)
         STKUtilHelper.TestComponent(clr.CastAs(valueAtSegment, IComponentInfo), False)
-        refSat = valueAtSegment.reference_sat
-        refSat.bind_to("Satellite/DiffAcross")
+        refSat = valueAtSegment.reference_satellite
+        refSat.bind_to_object("Satellite/DiffAcross")
         Assert.assertEqual("Satellite/DiffAcross", refSat.name)
         with pytest.raises(Exception):
-            refSat.bind_to("Satellite/NonGator")
-        valueAtSegment.calc_object_name = "Keplerian Elems/Eccentricity"
-        Assert.assertEqual("Eccentricity", valueAtSegment.calc_object_name)
+            refSat.bind_to_object("Satellite/NonGator")
+        valueAtSegment.calculation_object_name = "Keplerian Elems/Eccentricity"
+        Assert.assertEqual("Eccentricity", valueAtSegment.calculation_object_name)
         valueAtSegment.other_segment_name = "Propagate"
         Assert.assertEqual("Propagate", valueAtSegment.other_segment_name)
-        valueAtSegment.segment_state_to_use = SEGMENT_STATE.INITIAL
-        Assert.assertEqual(SEGMENT_STATE.INITIAL, valueAtSegment.segment_state_to_use)
+        valueAtSegment.segment_state_to_use = SegmentState.INITIAL
+        Assert.assertEqual(SegmentState.INITIAL, valueAtSegment.segment_state_to_use)
 
-        otherMCS.run_mission_control_sequence()
-        EarlyBoundTests.AG_VA.run_mission_control_sequence()
+        otherMCS.run_mcs()
+        EarlyBoundTests.AG_VA.run_mcs()
 
-        value: float = float(
-            (IMissionControlSequenceSegment(prop)).get_result_value("Difference_Across_Segments_Across_Satellites")
-        )
+        value: float = float((IMCSSegment(prop)).get_result_value("Difference_Across_Segments_Across_Satellites"))
         Assert.assertAlmostEqual(0, Math.Round(value, 2), delta=1e-05)
-        value = float((IMissionControlSequenceSegment(prop)).get_result_value("Value_At_Segment_Other_Satellite"))
+        value = float((IMCSSegment(prop)).get_result_value("Value_At_Segment_Other_Satellite"))
         Assert.assertAlmostEqual(0, Math.Round(value, 2), delta=1e-05)
 
-        TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "DiffAcross")
-        TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "NonGator")
-        (IMissionControlSequenceSegment(prop)).results.remove("Difference_Across_Segments_Across_Satellites")
-        (IMissionControlSequenceSegment(prop)).results.remove("Value_At_Segment_Other_Satellite")
+        TestBase.Application.current_scenario.children.unload(STKObjectType.SATELLITE, "DiffAcross")
+        TestBase.Application.current_scenario.children.unload(STKObjectType.SATELLITE, "NonGator")
+        (IMCSSegment(prop)).results.remove("Difference_Across_Segments_Across_Satellites")
+        (IMCSSegment(prop)).results.remove("Value_At_Segment_Other_Satellite")
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - DiffAcrossAndValueAtOtherSatellites STOP")
 
     # endregion
@@ -2620,41 +2563,41 @@ longitude = 121;"""
     @category("Causes crashes")
     def test_AppendRun(self):
         EarlyBoundTests.AG_VA.main_sequence.remove_all()
-        initialState: "MissionControlSequenceInitialState" = MissionControlSequenceInitialState(
-            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "InitialState", "-")
+        initialState: "MCSInitialState" = MCSInitialState(
+            EarlyBoundTests.AG_VA.main_sequence.insert(SegmentType.INITIAL_STATE, "InitialState", "-")
         )
-        propagate: "MissionControlSequencePropagate" = MissionControlSequencePropagate(
-            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-")
+        propagate: "MCSPropagate" = MCSPropagate(
+            EarlyBoundTests.AG_VA.main_sequence.insert(SegmentType.PROPAGATE, "Propagate", "-")
         )
         (StoppingCondition(propagate.stopping_conditions["Duration"].properties)).trip = 3600
-        maneuver: "MissionControlSequenceManeuver" = MissionControlSequenceManeuver(
-            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.MANEUVER, "Maneuver", "-")
+        maneuver: "MCSManeuver" = MCSManeuver(
+            EarlyBoundTests.AG_VA.main_sequence.insert(SegmentType.MANEUVER, "Maneuver", "-")
         )
         (
             AttitudeControlImpulsiveVelocityVector((ManeuverImpulsive(maneuver.maneuver)).attitude_control)
         ).delta_v_magnitude = 0.5
-        propagate1: "MissionControlSequencePropagate" = MissionControlSequencePropagate(
-            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.PROPAGATE, "Propagate1", "-")
+        propagate1: "MCSPropagate" = MCSPropagate(
+            EarlyBoundTests.AG_VA.main_sequence.insert(SegmentType.PROPAGATE, "Propagate1", "-")
         )
-        propagate2: "MissionControlSequencePropagate" = MissionControlSequencePropagate(
-            EarlyBoundTests.AG_VA.main_sequence.insert(SEGMENT_TYPE.PROPAGATE, "Propagate2", "-")
+        propagate2: "MCSPropagate" = MCSPropagate(
+            EarlyBoundTests.AG_VA.main_sequence.insert(SegmentType.PROPAGATE, "Propagate2", "-")
         )
 
         # region Append
         EarlyBoundTests.AG_VA.end_run()
         EarlyBoundTests.AG_VA.begin_run()
-        (IMissionControlSequenceSegment(initialState)).run()
-        (IMissionControlSequenceSegment(propagate)).run()
-        (IMissionControlSequenceSegment(maneuver)).run()
+        (IMCSSegment(initialState)).run()
+        (IMCSSegment(propagate)).run()
+        (IMCSSegment(maneuver)).run()
         EarlyBoundTests.AG_VA.end_run()
         EarlyBoundTests.AG_VA.append_run()
         (StoppingCondition(propagate2.stopping_conditions["Duration"].properties)).trip = 3600
-        (IMissionControlSequenceSegment(propagate2)).run()
+        (IMCSSegment(propagate2)).run()
         EarlyBoundTests.AG_VA.end_run()
-        spatialInfo: "VehicleSpatialInfo" = (IProvideSpatialInfo(EarlyBoundTests.AG_SAT)).get_spatial_info(False)
-        spatialState: "SpatialState" = spatialInfo.get_state(
-            (IMissionControlSequenceSegment(initialState)).initial_state.epoch
-        )
+        spatialInfo: "VehicleSpatialInformation" = (
+            IProvideSpatialInfo(EarlyBoundTests.AG_SAT)
+        ).get_spatial_information(False)
+        spatialState: "SpatialState" = spatialInfo.get_state((IMCSSegment(initialState)).initial_state.epoch)
 
         # the appended run will be 2 hours long
         convUtil: "ConversionUtility" = TestBase.Application.conversion_utility
@@ -2670,24 +2613,24 @@ longitude = 121;"""
         # now append after the end of the first propagate and overwrite a maneuver and another propagate
         EarlyBoundTests.AG_VA.end_run()
         EarlyBoundTests.AG_VA.begin_run()
-        (IMissionControlSequenceSegment(initialState)).run()
-        (IMissionControlSequenceSegment(propagate)).run()
+        (IMCSSegment(initialState)).run()
+        (IMCSSegment(propagate)).run()
         (StoppingCondition(propagate2.stopping_conditions["Duration"].properties)).trip = 1.0
-        (IMissionControlSequenceSegment(propagate2)).run()
-        (IMissionControlSequenceSegment(maneuver)).run()
-        (IMissionControlSequenceSegment(propagate1)).run()
+        (IMCSSegment(propagate2)).run()
+        (IMCSSegment(maneuver)).run()
+        (IMCSSegment(propagate1)).run()
         EarlyBoundTests.AG_VA.end_run()
 
         EarlyBoundTests.AG_VA.append_run_from_time(
-            (IMissionControlSequenceSegment(propagate)).final_state.epoch, CLEAR_EPHEMERIS_DIRECTION.AFTER
+            (IMCSSegment(propagate)).final_state.epoch, ClearEphemerisDirection.AFTER
         )
         (StoppingCondition(propagate2.stopping_conditions["Duration"].properties)).trip = 3600
-        (IMissionControlSequenceSegment(propagate2)).run()
+        (IMCSSegment(propagate2)).run()
         EarlyBoundTests.AG_VA.end_run()
 
         # the appended run will be two hours
-        spatialInfo = (IProvideSpatialInfo(EarlyBoundTests.AG_SAT)).get_spatial_info(False)
-        spatialState = spatialInfo.get_state((IMissionControlSequenceSegment(initialState)).initial_state.epoch)
+        spatialInfo = (IProvideSpatialInfo(EarlyBoundTests.AG_SAT)).get_spatial_information(False)
+        spatialState = spatialInfo.get_state((IMCSSegment(initialState)).initial_state.epoch)
 
         startTime = convUtil.new_date("UTCG", str(spatialState.start_time))
         stopTime = convUtil.new_date("UTCG", str(spatialState.stop_time))
@@ -2702,7 +2645,7 @@ longitude = 121;"""
         elems = ["Time", "Semimajor_Axis"]
 
         # get the sma at the end of the propagate2 segment
-        resInfo: "DataProviderResult" = dp.exec_single_elements(str(spatialState.stop_time), elems)
+        resInfo: "DataProviderResult" = dp.execute_single_elements(str(spatialState.stop_time), elems)
         result = resInfo.data_sets.get_data_set_by_name("Semimajor_Axis").get_values()
 
         Assert.assertLess(float((result[0])), 7000)  # show that the maneuver doesn't occur
@@ -2716,19 +2659,19 @@ longitude = 121;"""
         # to the long propagate1 ephemeris.
         EarlyBoundTests.AG_VA.end_run()
         EarlyBoundTests.AG_VA.begin_run()
-        (IMissionControlSequenceSegment(initialState)).run()
-        (IMissionControlSequenceSegment(propagate)).run()
+        (IMCSSegment(initialState)).run()
+        (IMCSSegment(propagate)).run()
         (StoppingCondition(propagate2.stopping_conditions["Duration"].properties)).trip = 1.0
-        (IMissionControlSequenceSegment(propagate2)).run()
-        (IMissionControlSequenceSegment(maneuver)).run()
-        (IMissionControlSequenceSegment(propagate1)).run()
+        (IMCSSegment(propagate2)).run()
+        (IMCSSegment(maneuver)).run()
+        (IMCSSegment(propagate1)).run()
         EarlyBoundTests.AG_VA.end_run()
 
         EarlyBoundTests.AG_VA.append_run_from_time(
-            (IMissionControlSequenceSegment(propagate)).final_state.epoch, CLEAR_EPHEMERIS_DIRECTION.BEFORE
+            (IMCSSegment(propagate)).final_state.epoch, ClearEphemerisDirection.BEFORE
         )
         (StoppingCondition(propagate2.stopping_conditions["Duration"].properties)).trip = 3600
-        (IMissionControlSequenceSegment(propagate2)).run()
+        (IMCSSegment(propagate2)).run()
         EarlyBoundTests.AG_VA.end_run()
 
         # the appended run will start at the end of the first propagate and end at the end of the long propagate from the previous run
@@ -2736,16 +2679,14 @@ longitude = 121;"""
         # span is 12 hours 1 second.  The orbit in the first hour will have an SMA around 6678 and after that will be the larger one
         # post-maneuver
         # need to get a new spatial state since the old one isn't in the ephemeris anymore
-        spatialInfo = (IProvideSpatialInfo(EarlyBoundTests.AG_SAT)).get_spatial_info(False)
-        spatialState = spatialInfo.get_state((IMissionControlSequenceSegment(propagate)).initial_state.epoch)
+        spatialInfo = (IProvideSpatialInfo(EarlyBoundTests.AG_SAT)).get_spatial_information(False)
+        spatialState = spatialInfo.get_state((IMCSSegment(propagate)).initial_state.epoch)
         startTime.set_date("UTCG", str(spatialState.start_time))
         stopTime.set_date("UTCG", str(spatialState.stop_time))
         span = stopTime.span(startTime)
         Assert.assertEqual(43201, span.value)  # total length of ephemeris
 
-        initialStateEpoch: "Date" = convUtil.new_date(
-            "UTCG", str((IMissionControlSequenceSegment(initialState)).initial_state.epoch)
-        )
+        initialStateEpoch: "Date" = convUtil.new_date("UTCG", str((IMCSSegment(initialState)).initial_state.epoch))
         timeFromEpoch: "Quantity" = startTime.span(initialStateEpoch)
         Assert.assertEqual(3600, timeFromEpoch.value)
 
@@ -2753,12 +2694,12 @@ longitude = 121;"""
 
         firstTestPoint: "Date" = startTime.add("sec", 1800)  # puts us in the middle of the one hour propagate
 
-        resInfo = dp.exec_single_elements(firstTestPoint.format("UTCG"), elems)
+        resInfo = dp.execute_single_elements(firstTestPoint.format("UTCG"), elems)
         result = resInfo.data_sets.get_data_set_by_name("Semimajor_Axis").get_values()
         Assert.assertLess(float((result[0])), 7000)
 
         secondTestPoint: "Date" = startTime.add("sec", 21600)  # puts us in middle of long propagate
-        resInfo = dp.exec_single_elements(secondTestPoint.format("UTCG"), elems)
+        resInfo = dp.execute_single_elements(secondTestPoint.format("UTCG"), elems)
         result = resInfo.data_sets.get_data_set_by_name("Semimajor_Axis").get_values()
         Assert.assertGreater(float((result[0])), 7000)
 
@@ -2770,32 +2711,30 @@ longitude = 121;"""
         # and append on the new one and keep the old 12 hour one also...  the total span should be 13 hours 1 second
         EarlyBoundTests.AG_VA.end_run()
         EarlyBoundTests.AG_VA.begin_run()
-        (IMissionControlSequenceSegment(initialState)).run()
-        (IMissionControlSequenceSegment(propagate)).run()
+        (IMCSSegment(initialState)).run()
+        (IMCSSegment(propagate)).run()
         (StoppingCondition(propagate2.stopping_conditions["Duration"].properties)).trip = 1.0
-        (IMissionControlSequenceSegment(propagate2)).run()
-        (IMissionControlSequenceSegment(maneuver)).run()
-        (IMissionControlSequenceSegment(propagate1)).run()
+        (IMCSSegment(propagate2)).run()
+        (IMCSSegment(maneuver)).run()
+        (IMCSSegment(propagate1)).run()
         EarlyBoundTests.AG_VA.end_run()
 
         EarlyBoundTests.AG_VA.append_run_from_time(
-            (IMissionControlSequenceSegment(propagate)).final_state.epoch, CLEAR_EPHEMERIS_DIRECTION.NO_CLEAR
+            (IMCSSegment(propagate)).final_state.epoch, ClearEphemerisDirection.NO_CLEAR
         )
         (StoppingCondition(propagate2.stopping_conditions["Duration"].properties)).trip = 3600
-        (IMissionControlSequenceSegment(propagate2)).run()
+        (IMCSSegment(propagate2)).run()
         EarlyBoundTests.AG_VA.end_run()
 
-        spatialInfo = (IProvideSpatialInfo(EarlyBoundTests.AG_SAT)).get_spatial_info(False)
-        spatialState = spatialInfo.get_state((IMissionControlSequenceSegment(propagate)).initial_state.epoch)
+        spatialInfo = (IProvideSpatialInfo(EarlyBoundTests.AG_SAT)).get_spatial_information(False)
+        spatialState = spatialInfo.get_state((IMCSSegment(propagate)).initial_state.epoch)
         startTime.set_date("UTCG", str(spatialState.start_time))
         stopTime.set_date("UTCG", str(spatialState.stop_time))
         span = stopTime.span(startTime)
         # total length of ephemeris should be 13:00:01;
         Assert.assertEqual(46801, span.value)
 
-        initialStateEpoch = convUtil.new_date(
-            "UTCG", str((IMissionControlSequenceSegment(initialState)).initial_state.epoch)
-        )
+        initialStateEpoch = convUtil.new_date("UTCG", str((IMCSSegment(initialState)).initial_state.epoch))
         timeFromEpoch = startTime.span(initialStateEpoch)
         # test that ephemeris starts at initial state epoch
         Assert.assertEqual(0, timeFromEpoch.value)
@@ -2805,7 +2744,7 @@ longitude = 121;"""
         # puts us in the middle of the one hour propagate
         firstTestPoint = startTime.add("sec", 1800)
 
-        resInfo = dp.exec_single_elements(firstTestPoint.format("UTCG"), elems)
+        resInfo = dp.execute_single_elements(firstTestPoint.format("UTCG"), elems)
         result = resInfo.data_sets.get_data_set_by_name("Semimajor_Axis").get_values()
         Assert.assertLess(float((result[0])), 7000)
 
@@ -2813,14 +2752,14 @@ longitude = 121;"""
 
         # puts us in middle of second hour propagate
         secondTestPoint = startTime.add("sec", 5400)
-        resInfo = dp.exec_single_elements(secondTestPoint.format("UTCG"), elems)
+        resInfo = dp.execute_single_elements(secondTestPoint.format("UTCG"), elems)
         result = resInfo.data_sets.get_data_set_by_name("Semimajor_Axis").get_values()
         Assert.assertLess(float((result[0])), 7000)
 
         # test that the long propagate is still intact and based on the post maneuver state
 
         thirdTestPoint: "Date" = startTime.add("sec", 21600)
-        resInfo = dp.exec_single_elements(thirdTestPoint.format("UTCG"), elems)
+        resInfo = dp.execute_single_elements(thirdTestPoint.format("UTCG"), elems)
         result = resInfo.data_sets.get_data_set_by_name("Semimajor_Axis").get_values()
         Assert.assertGreater(float((result[0])), 7000)
 
@@ -2832,33 +2771,31 @@ longitude = 121;"""
 
         EarlyBoundTests.AG_VA.end_run()
         EarlyBoundTests.AG_VA.begin_run()
-        (IMissionControlSequenceSegment(initialState)).run()
-        (IMissionControlSequenceSegment(propagate)).run()
-        (IMissionControlSequenceSegment(maneuver)).run()
-        (IMissionControlSequenceSegment(propagate1)).run()
+        (IMCSSegment(initialState)).run()
+        (IMCSSegment(propagate)).run()
+        (IMCSSegment(maneuver)).run()
+        (IMCSSegment(propagate1)).run()
         EarlyBoundTests.AG_VA.end_run()
 
         EarlyBoundTests.AG_VA.append_run_from_time(
-            (IMissionControlSequenceSegment(propagate)).final_state.epoch, CLEAR_EPHEMERIS_DIRECTION.AFTER
+            (IMCSSegment(propagate)).final_state.epoch, ClearEphemerisDirection.AFTER
         )
         (StoppingCondition(propagate2.stopping_conditions["Duration"].properties)).trip = 3600
-        (IMissionControlSequenceSegment(propagate2)).run()
+        (IMCSSegment(propagate2)).run()
         EarlyBoundTests.AG_VA.end_run()
 
         # append from time using the final time of propagate, coincident with maneuver, orbit should
         # be the postmaneuver one
 
-        spatialInfo = (IProvideSpatialInfo(EarlyBoundTests.AG_SAT)).get_spatial_info(False)
-        spatialState = spatialInfo.get_state((IMissionControlSequenceSegment(propagate)).initial_state.epoch)
+        spatialInfo = (IProvideSpatialInfo(EarlyBoundTests.AG_SAT)).get_spatial_information(False)
+        spatialState = spatialInfo.get_state((IMCSSegment(propagate)).initial_state.epoch)
         startTime.set_date("UTCG", str(spatialState.start_time))
         stopTime.set_date("UTCG", str(spatialState.stop_time))
         span = stopTime.span(startTime)
         # total length of ephemeris should be 2:00:00;
         Assert.assertEqual(7200, span.value)
 
-        initialStateEpoch = convUtil.new_date(
-            "UTCG", str((IMissionControlSequenceSegment(initialState)).initial_state.epoch)
-        )
+        initialStateEpoch = convUtil.new_date("UTCG", str((IMCSSegment(initialState)).initial_state.epoch))
         timeFromEpoch = startTime.span(initialStateEpoch)
         # test that ephemeris starts at initial state epoch
         Assert.assertEqual(0, timeFromEpoch.value)
@@ -2868,7 +2805,7 @@ longitude = 121;"""
         # puts us in the middle of the one hour propagate
         firstTestPoint = startTime.add("sec", 1800)
 
-        resInfo = dp.exec_single_elements(firstTestPoint.format("UTCG"), elems)
+        resInfo = dp.execute_single_elements(firstTestPoint.format("UTCG"), elems)
         result = resInfo.data_sets.get_data_set_by_name("Semimajor_Axis").get_values()
         Assert.assertLess(float((result[0])), 7000)
 
@@ -2877,7 +2814,7 @@ longitude = 121;"""
 
         # puts us in middle of second hour propagate
         secondTestPoint = startTime.add("sec", 5400)
-        resInfo = dp.exec_single_elements(secondTestPoint.format("UTCG"), elems)
+        resInfo = dp.execute_single_elements(secondTestPoint.format("UTCG"), elems)
         result = resInfo.data_sets.get_data_set_by_name("Semimajor_Axis").get_values()
         Assert.assertGreater(float((result[0])), 7000)
 
@@ -2889,33 +2826,29 @@ longitude = 121;"""
 
         EarlyBoundTests.AG_VA.end_run()
         EarlyBoundTests.AG_VA.begin_run()
-        (IMissionControlSequenceSegment(initialState)).run()
-        (IMissionControlSequenceSegment(propagate)).run()
-        (IMissionControlSequenceSegment(maneuver)).run()
-        (IMissionControlSequenceSegment(propagate1)).run()
+        (IMCSSegment(initialState)).run()
+        (IMCSSegment(propagate)).run()
+        (IMCSSegment(maneuver)).run()
+        (IMCSSegment(propagate1)).run()
         EarlyBoundTests.AG_VA.end_run()
 
-        EarlyBoundTests.AG_VA.append_run_from_state(
-            (IMissionControlSequenceSegment(propagate)).final_state, CLEAR_EPHEMERIS_DIRECTION.AFTER
-        )
+        EarlyBoundTests.AG_VA.append_run_from_state((IMCSSegment(propagate)).final_state, ClearEphemerisDirection.AFTER)
         (StoppingCondition(propagate2.stopping_conditions["Duration"].properties)).trip = 3600
-        (IMissionControlSequenceSegment(propagate2)).run()
+        (IMCSSegment(propagate2)).run()
         EarlyBoundTests.AG_VA.end_run()
 
         # append from state using the final state of propagate, orbit should
         # be the pre maneuver one
 
-        spatialInfo = (IProvideSpatialInfo(EarlyBoundTests.AG_SAT)).get_spatial_info(False)
-        spatialState = spatialInfo.get_state((IMissionControlSequenceSegment(propagate)).initial_state.epoch)
+        spatialInfo = (IProvideSpatialInfo(EarlyBoundTests.AG_SAT)).get_spatial_information(False)
+        spatialState = spatialInfo.get_state((IMCSSegment(propagate)).initial_state.epoch)
         startTime.set_date("UTCG", str(spatialState.start_time))
         stopTime.set_date("UTCG", str(spatialState.stop_time))
         span = stopTime.span(startTime)
         # total length of ephemeris should be 2:00:00;
         Assert.assertEqual(7200, span.value)
 
-        initialStateEpoch = convUtil.new_date(
-            "UTCG", str((IMissionControlSequenceSegment(initialState)).initial_state.epoch)
-        )
+        initialStateEpoch = convUtil.new_date("UTCG", str((IMCSSegment(initialState)).initial_state.epoch))
         timeFromEpoch = startTime.span(initialStateEpoch)
         # test that ephemeris starts at initial state epoch
         Assert.assertEqual(0, timeFromEpoch.value)
@@ -2924,7 +2857,7 @@ longitude = 121;"""
         # puts us in the middle of the one hour propagate
         firstTestPoint = startTime.add("sec", 1800)
 
-        resInfo = dp.exec_single_elements(firstTestPoint.format("UTCG"), elems)
+        resInfo = dp.execute_single_elements(firstTestPoint.format("UTCG"), elems)
         result = resInfo.data_sets.get_data_set_by_name("Semimajor_Axis").get_values()
         Assert.assertLess(float((result[0])), 7000)
 
@@ -2933,7 +2866,7 @@ longitude = 121;"""
 
         # puts us in middle of second hour propagate
         secondTestPoint = startTime.add("sec", 5400)
-        resInfo = dp.exec_single_elements(secondTestPoint.format("UTCG"), elems)
+        resInfo = dp.execute_single_elements(secondTestPoint.format("UTCG"), elems)
         result = resInfo.data_sets.get_data_set_by_name("Semimajor_Axis").get_values()
         Assert.assertLess(float((result[0])), 7000)
         # endregion
@@ -2946,17 +2879,17 @@ longitude = 121;"""
 
         EarlyBoundTests.AG_VA.end_run()
         EarlyBoundTests.AG_VA.begin_run()
-        (IMissionControlSequenceSegment(initialState)).run()
-        (IMissionControlSequenceSegment(propagate)).run()
-        (IMissionControlSequenceSegment(maneuver)).run()
-        (IMissionControlSequenceSegment(propagate1)).run()
+        (IMCSSegment(initialState)).run()
+        (IMCSSegment(propagate)).run()
+        (IMCSSegment(maneuver)).run()
+        (IMCSSegment(propagate1)).run()
         EarlyBoundTests.AG_VA.end_run()
 
         EarlyBoundTests.AG_VA.append_run_from_state(
-            (IMissionControlSequenceSegment(propagate)).final_state, CLEAR_EPHEMERIS_DIRECTION.BEFORE
+            (IMCSSegment(propagate)).final_state, ClearEphemerisDirection.BEFORE
         )
         (StoppingCondition(propagate2.stopping_conditions["Duration"].properties)).trip = 3600
-        (IMissionControlSequenceSegment(propagate2)).run()
+        (IMCSSegment(propagate2)).run()
         EarlyBoundTests.AG_VA.end_run()
 
         # the appended run will start at the end of the first propagate and end at the end of the long propagate from the previous run
@@ -2964,16 +2897,14 @@ longitude = 121;"""
         # span is 12 hours.  The orbit in the first hour will have an SMA around 6678 and after that will be the larger one
         # post-maneuver
 
-        spatialInfo = (IProvideSpatialInfo(EarlyBoundTests.AG_SAT)).get_spatial_info(False)
-        spatialState = spatialInfo.get_state((IMissionControlSequenceSegment(propagate)).initial_state.epoch)
+        spatialInfo = (IProvideSpatialInfo(EarlyBoundTests.AG_SAT)).get_spatial_information(False)
+        spatialState = spatialInfo.get_state((IMCSSegment(propagate)).initial_state.epoch)
         startTime.set_date("UTCG", str(spatialState.start_time))
         stopTime.set_date("UTCG", str(spatialState.stop_time))
         span = stopTime.span(startTime)
         Assert.assertEqual(43200, span.value)  # total length of ephemeris
 
-        initialStateEpoch = convUtil.new_date(
-            "UTCG", str((IMissionControlSequenceSegment(initialState)).initial_state.epoch)
-        )
+        initialStateEpoch = convUtil.new_date("UTCG", str((IMCSSegment(initialState)).initial_state.epoch))
         timeFromEpoch = startTime.span(initialStateEpoch)
         Assert.assertEqual(3600, timeFromEpoch.value)
 
@@ -2981,12 +2912,12 @@ longitude = 121;"""
 
         firstTestPoint = startTime.add("sec", 1800)  # puts us in the middle of the one hour propagate
 
-        resInfo = dp.exec_single_elements(firstTestPoint.format("UTCG"), elems)
+        resInfo = dp.execute_single_elements(firstTestPoint.format("UTCG"), elems)
         result = resInfo.data_sets.get_data_set_by_name("Semimajor_Axis").get_values()
         Assert.assertLess(float((result[0])), 7000)
 
         secondTestPoint = startTime.add("sec", 21600)  # puts us in middle of long propagate
-        resInfo = dp.exec_single_elements(secondTestPoint.format("UTCG"), elems)
+        resInfo = dp.execute_single_elements(secondTestPoint.format("UTCG"), elems)
         result = resInfo.data_sets.get_data_set_by_name("Semimajor_Axis").get_values()
         Assert.assertGreater(float((result[0])), 7000)
         # endregion
@@ -2998,33 +2929,31 @@ longitude = 121;"""
 
         EarlyBoundTests.AG_VA.end_run()
         EarlyBoundTests.AG_VA.begin_run()
-        (IMissionControlSequenceSegment(initialState)).run()
-        (IMissionControlSequenceSegment(propagate)).run()
-        (IMissionControlSequenceSegment(maneuver)).run()
-        (IMissionControlSequenceSegment(propagate1)).run()
+        (IMCSSegment(initialState)).run()
+        (IMCSSegment(propagate)).run()
+        (IMCSSegment(maneuver)).run()
+        (IMCSSegment(propagate1)).run()
         EarlyBoundTests.AG_VA.end_run()
 
         EarlyBoundTests.AG_VA.append_run_from_state(
-            (IMissionControlSequenceSegment(propagate)).final_state, CLEAR_EPHEMERIS_DIRECTION.NO_CLEAR
+            (IMCSSegment(propagate)).final_state, ClearEphemerisDirection.NO_CLEAR
         )
         (StoppingCondition(propagate2.stopping_conditions["Duration"].properties)).trip = 3600
-        (IMissionControlSequenceSegment(propagate2)).run()
+        (IMCSSegment(propagate2)).run()
         EarlyBoundTests.AG_VA.end_run()
 
         # append from state using the final state of propagate, orbit should
         # be the pre maneuver one
 
-        spatialInfo = (IProvideSpatialInfo(EarlyBoundTests.AG_SAT)).get_spatial_info(False)
-        spatialState = spatialInfo.get_state((IMissionControlSequenceSegment(propagate)).initial_state.epoch)
+        spatialInfo = (IProvideSpatialInfo(EarlyBoundTests.AG_SAT)).get_spatial_information(False)
+        spatialState = spatialInfo.get_state((IMCSSegment(propagate)).initial_state.epoch)
         startTime.set_date("UTCG", str(spatialState.start_time))
         stopTime.set_date("UTCG", str(spatialState.stop_time))
         span = stopTime.span(startTime)
         # total length of ephemeris should be 13:00:00;
         Assert.assertEqual(46800, span.value)
 
-        initialStateEpoch = convUtil.new_date(
-            "UTCG", str((IMissionControlSequenceSegment(initialState)).initial_state.epoch)
-        )
+        initialStateEpoch = convUtil.new_date("UTCG", str((IMCSSegment(initialState)).initial_state.epoch))
         timeFromEpoch = startTime.span(initialStateEpoch)
         # test that ephemeris starts at initial state epoch
         Assert.assertEqual(0, timeFromEpoch.value)
@@ -3034,7 +2963,7 @@ longitude = 121;"""
         # puts us in the middle of the one hour propagate
         firstTestPoint = startTime.add("sec", 1800)
 
-        resInfo = dp.exec_single_elements(firstTestPoint.format("UTCG"), elems)
+        resInfo = dp.execute_single_elements(firstTestPoint.format("UTCG"), elems)
         result = resInfo.data_sets.get_data_set_by_name("Semimajor_Axis").get_values()
         Assert.assertLess(float((result[0])), 7000)
 
@@ -3042,14 +2971,14 @@ longitude = 121;"""
 
         # puts us in middle of second hour propagate
         secondTestPoint = startTime.add("sec", 5400)
-        resInfo = dp.exec_single_elements(secondTestPoint.format("UTCG"), elems)
+        resInfo = dp.execute_single_elements(secondTestPoint.format("UTCG"), elems)
         result = resInfo.data_sets.get_data_set_by_name("Semimajor_Axis").get_values()
         Assert.assertLess(float((result[0])), 7000)
 
         # test that the long propagate is still intact and based on the post maneuver state
 
         thirdTestPoint = startTime.add("sec", 21600)
-        resInfo = dp.exec_single_elements(thirdTestPoint.format("UTCG"), elems)
+        resInfo = dp.execute_single_elements(thirdTestPoint.format("UTCG"), elems)
         result = resInfo.data_sets.get_data_set_by_name("Semimajor_Axis").get_values()
         Assert.assertGreater(float((result[0])), 7000)
         # endregion
@@ -3061,33 +2990,31 @@ longitude = 121;"""
 
         EarlyBoundTests.AG_VA.end_run()
         EarlyBoundTests.AG_VA.begin_run()
-        (IMissionControlSequenceSegment(initialState)).run()
-        (IMissionControlSequenceSegment(propagate)).run()
-        (IMissionControlSequenceSegment(maneuver)).run()
-        (IMissionControlSequenceSegment(propagate1)).run()
+        (IMCSSegment(initialState)).run()
+        (IMCSSegment(propagate)).run()
+        (IMCSSegment(maneuver)).run()
+        (IMCSSegment(propagate1)).run()
         EarlyBoundTests.AG_VA.end_run()
 
         EarlyBoundTests.AG_VA.append_run_from_state(
-            (IMissionControlSequenceSegment(maneuver)).initial_state, CLEAR_EPHEMERIS_DIRECTION.AFTER
+            (IMCSSegment(maneuver)).initial_state, ClearEphemerisDirection.AFTER
         )
         (StoppingCondition(propagate2.stopping_conditions["Duration"].properties)).trip = 3600
-        (IMissionControlSequenceSegment(propagate2)).run()
+        (IMCSSegment(propagate2)).run()
         EarlyBoundTests.AG_VA.end_run()
 
         # append from state using the intial state of the maneuever, orbit should
         # be the pre maneuver one
 
-        spatialInfo = (IProvideSpatialInfo(EarlyBoundTests.AG_SAT)).get_spatial_info(False)
-        spatialState = spatialInfo.get_state((IMissionControlSequenceSegment(propagate)).initial_state.epoch)
+        spatialInfo = (IProvideSpatialInfo(EarlyBoundTests.AG_SAT)).get_spatial_information(False)
+        spatialState = spatialInfo.get_state((IMCSSegment(propagate)).initial_state.epoch)
         startTime.set_date("UTCG", str(spatialState.start_time))
         stopTime.set_date("UTCG", str(spatialState.stop_time))
         span = stopTime.span(startTime)
         # total length of ephemeris should be 2:00:00;
         Assert.assertEqual(7200, span.value)
 
-        initialStateEpoch = convUtil.new_date(
-            "UTCG", str((IMissionControlSequenceSegment(initialState)).initial_state.epoch)
-        )
+        initialStateEpoch = convUtil.new_date("UTCG", str((IMCSSegment(initialState)).initial_state.epoch))
         timeFromEpoch = startTime.span(initialStateEpoch)
         # test that ephemeris starts at initial state epoch
         Assert.assertEqual(0, timeFromEpoch.value)
@@ -3096,7 +3023,7 @@ longitude = 121;"""
         # puts us in the middle of the one hour propagate
         firstTestPoint = startTime.add("sec", 1800)
 
-        resInfo = dp.exec_single_elements(firstTestPoint.format("UTCG"), elems)
+        resInfo = dp.execute_single_elements(firstTestPoint.format("UTCG"), elems)
         result = resInfo.data_sets.get_data_set_by_name("Semimajor_Axis").get_values()
         Assert.assertLess(float((result[0])), 7000)
 
@@ -3105,7 +3032,7 @@ longitude = 121;"""
 
         # puts us in middle of second hour propagate
         secondTestPoint = startTime.add("sec", 5400)
-        resInfo = dp.exec_single_elements(secondTestPoint.format("UTCG"), elems)
+        resInfo = dp.execute_single_elements(secondTestPoint.format("UTCG"), elems)
         result = resInfo.data_sets.get_data_set_by_name("Semimajor_Axis").get_values()
         Assert.assertLess(float((result[0])), 7000)
 
@@ -3115,8 +3042,8 @@ longitude = 121;"""
 
         TestBase.LoadTestScenario(Path.Combine("AstrogatorTests", "AstrogatorTests.sc"))
         EarlyBoundTests.AG_SAT = Satellite(TestBase.Application.current_scenario.children["Satellite1"])
-        EarlyBoundTests.AG_SAT.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
-        EarlyBoundTests.AG_VA = DriverMissionControlSequence(EarlyBoundTests.AG_SAT.propagator)
+        EarlyBoundTests.AG_SAT.set_propagator_type(PropagatorType.ASTROGATOR)
+        EarlyBoundTests.AG_VA = MCSDriver(EarlyBoundTests.AG_SAT.propagator)
 
     # endregion
 
@@ -3124,21 +3051,20 @@ longitude = 121;"""
     def test_RunCodes(self):
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - DiffAcrossAndValueAtOtherSatellites START")
         sat: "Satellite" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "RunCodes"), Satellite
+            TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "RunCodes"), Satellite
         )
-        sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
-        driver: "DriverMissionControlSequence" = clr.CastAs(sat.propagator, DriverMissionControlSequence)
-        targSeq: "MissionControlSequenceTargetSequence" = clr.CastAs(
-            driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-"),
-            MissionControlSequenceTargetSequence,
+        sat.set_propagator_type(PropagatorType.ASTROGATOR)
+        driver: "MCSDriver" = clr.CastAs(sat.propagator, MCSDriver)
+        targSeq: "MCSTargetSequence" = clr.CastAs(
+            driver.main_sequence.insert(SegmentType.TARGET_SEQUENCE, "TargetSequence", "-"), MCSTargetSequence
         )
-        targSeq.action = TARGET_SEQ_ACTION.RUN_ACTIVE_PROFILES
-        code: "RUN_CODE" = driver.run_mission_control_sequence2()
-        code0: "RUN_CODE" = RUN_CODE.ERROR
+        targSeq.action = TargetSequenceAction.RUN_ACTIVE_PROFILES
+        code: "RunCode" = driver.run_mcs2()
+        code0: "RunCode" = RunCode.ERROR
         Assert.assertEqual(code0, code)
         driver.begin_run()
         try:
-            (IMissionControlSequenceSegment(targSeq)).run()
+            (IMCSSegment(targSeq)).run()
             Assert.fail("Expected an exception, none thrown.")
 
         except STKRuntimeError as e:
@@ -3151,53 +3077,51 @@ longitude = 121;"""
             Assert.fail(("Expected a COM exception, but got a " + type(e).FullName))
 
         driver.end_run()
-        Assert.assertEqual(RUN_CODE.ERROR, (IMissionControlSequenceSegment(targSeq)).properties.last_run_code)
+        Assert.assertEqual(RunCode.ERROR, (IMCSSegment(targSeq)).properties.last_run_code)
 
-        prop: "MissionControlSequencePropagate" = clr.CastAs(
-            targSeq.segments.insert(SEGMENT_TYPE.PROPAGATE, "Prop", "-"), MissionControlSequencePropagate
-        )
-        prop.stopping_conditions["Duration"].enable_control_parameter(CONTROL_STOPPING_CONDITION.TRIP_VALUE)
-        (IMissionControlSequenceSegment(prop)).results.add("Epoch")
+        prop: "MCSPropagate" = clr.CastAs(targSeq.segments.insert(SegmentType.PROPAGATE, "Prop", "-"), MCSPropagate)
+        prop.stopping_conditions["Duration"].enable_control_parameter(ControlStoppingCondition.TRIP_VALUE)
+        (IMCSSegment(prop)).results.add("Epoch")
         diffCorr: "ProfileDifferentialCorrector" = clr.CastAs(
             targSeq.profiles["Differential_Corrector"], ProfileDifferentialCorrector
         )
         diffCorr.control_parameters[0].enable = True
         diffCorr.results[0].enable = True
         diffCorr.max_iterations = 1
-        code = driver.run_mission_control_sequence2()
-        code0 = RUN_CODE.PROFILE_FAILURE
+        code = driver.run_mcs2()
+        code0 = RunCode.PROFILE_FAILURE
         Assert.assertEqual(code0, code)
         driver.begin_run()
-        (IMissionControlSequenceSegment(targSeq)).run()
+        (IMCSSegment(targSeq)).run()
         driver.end_run()
-        Assert.assertEqual(RUN_CODE.PROFILE_FAILURE, (IMissionControlSequenceSegment(targSeq)).properties.last_run_code)
+        Assert.assertEqual(RunCode.PROFILE_FAILURE, (IMCSSegment(targSeq)).properties.last_run_code)
 
         driver.main_sequence.remove("TargetSequence")
 
-        stop: "IMissionControlSequenceSegment" = driver.main_sequence.insert(SEGMENT_TYPE.STOP, "STOP", "Initial_State")
-        code = driver.run_mission_control_sequence2()
-        code0 = RUN_CODE.STOPPED
+        stop: "IMCSSegment" = driver.main_sequence.insert(SegmentType.STOP, "STOP", "Initial_State")
+        code = driver.run_mcs2()
+        code0 = RunCode.STOPPED
         Assert.assertEqual(code0, code)
         driver.begin_run()
         stop.run()
         driver.end_run()
-        Assert.assertEqual(RUN_CODE.STOPPED, (stop).properties.last_run_code)
+        Assert.assertEqual(RunCode.STOPPED, (stop).properties.last_run_code)
 
         driver.main_sequence.remove("STOP")
 
-        code = driver.run_mission_control_sequence2()
-        code0 = RUN_CODE.MARCHING
+        code = driver.run_mcs2()
+        code0 = RunCode.MARCHING
         Assert.assertEqual(code0, code)
-        seg: "IMissionControlSequenceSegment" = driver.main_sequence["Propagate"]
+        seg: "IMCSSegment" = driver.main_sequence["Propagate"]
         driver.begin_run()
         seg.run()
         driver.end_run()
-        Assert.assertEqual(RUN_CODE.MARCHING, seg.properties.last_run_code)
+        Assert.assertEqual(RunCode.MARCHING, seg.properties.last_run_code)
 
         # TODO: fix NUNIT2JUNIT test conversion to handle OnPercentCompleteUpdate tests
         (IStkObject(sat)).unload()
 
-    def Application_OnPercentCompleteUpdate(self, args: "PctCmpltEventArgs"):
+    def Application_OnPercentCompleteUpdate(self, args: "ProgressBarEventArguments"):
         args.cancel()
 
     # endregion
@@ -3206,32 +3130,29 @@ longitude = 121;"""
     def test_NumIterations(self):
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - NumIterations START")
         sat: "Satellite" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "NumIterations"), Satellite
+            TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "NumIterations"), Satellite
         )
-        sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
-        driver: "DriverMissionControlSequence" = clr.CastAs(sat.propagator, DriverMissionControlSequence)
-        targSeq: "MissionControlSequenceTargetSequence" = clr.CastAs(
-            driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-"),
-            MissionControlSequenceTargetSequence,
+        sat.set_propagator_type(PropagatorType.ASTROGATOR)
+        driver: "MCSDriver" = clr.CastAs(sat.propagator, MCSDriver)
+        targSeq: "MCSTargetSequence" = clr.CastAs(
+            driver.main_sequence.insert(SegmentType.TARGET_SEQUENCE, "TargetSequence", "-"), MCSTargetSequence
         )
-        targSeq.action = TARGET_SEQ_ACTION.RUN_ACTIVE_PROFILES
+        targSeq.action = TargetSequenceAction.RUN_ACTIVE_PROFILES
 
-        prop: "MissionControlSequencePropagate" = clr.CastAs(
-            targSeq.segments.insert(SEGMENT_TYPE.PROPAGATE, "Prop", "-"), MissionControlSequencePropagate
-        )
-        prop.stopping_conditions["Duration"].enable_control_parameter(CONTROL_STOPPING_CONDITION.TRIP_VALUE)
-        (IMissionControlSequenceSegment(prop)).results.add("Time/Duration")
+        prop: "MCSPropagate" = clr.CastAs(targSeq.segments.insert(SegmentType.PROPAGATE, "Prop", "-"), MCSPropagate)
+        prop.stopping_conditions["Duration"].enable_control_parameter(ControlStoppingCondition.TRIP_VALUE)
+        (IMCSSegment(prop)).results.add("Time/Duration")
 
         diffCorr: "ProfileDifferentialCorrector" = clr.CastAs(
             targSeq.profiles["Differential_Corrector"], ProfileDifferentialCorrector
         )
-        Assert.assertEqual(0, diffCorr.num_iterations)
+        Assert.assertEqual(0, diffCorr.number_of_iterations)
         diffCorr.control_parameters[0].enable = True
         diffCorr.results[0].enable = True
         diffCorr.results[0].desired_value = 86400
 
-        driver.run_mission_control_sequence()
-        Assert.assertEqual(12, diffCorr.num_iterations)
+        driver.run_mcs()
+        Assert.assertEqual(12, diffCorr.number_of_iterations)
 
         # test the "Values" attribute
         Assert.assertEqual(13, Array.Length(diffCorr.control_parameters[0].values))
@@ -3245,28 +3166,26 @@ longitude = 121;"""
         Assert.assertAlmostEqual(86400.0, float(diffCorr.results[0].values[12]), delta=1e-06)
 
         # make sure Values are being treated as a quantity
-        TestBase.Application.current_scenario.root.unit_preferences.set_current_unit("TimeUnit", "day")
+        TestBase.Application.current_scenario.root.units_preferences.set_current_unit("TimeUnit", "day")
         Assert.assertAlmostEqual(1.0, float(diffCorr.control_parameters[0].values[12]), delta=1e-06)
         Assert.assertAlmostEqual(1.0, float(diffCorr.results[0].values[12]), delta=1e-06)
-        TestBase.Application.current_scenario.root.unit_preferences.set_current_unit("TimeUnit", "sec")
+        TestBase.Application.current_scenario.root.units_preferences.set_current_unit("TimeUnit", "sec")
 
         # test "Values" for dates
         diffCorr.control_parameters[0].enable = False
         diffCorr.results[0].enable = False
-        initialStateSeg: "MissionControlSequenceInitialState" = clr.CastAs(
-            driver.main_sequence["Initial_State"], MissionControlSequenceInitialState
-        )
+        initialStateSeg: "MCSInitialState" = clr.CastAs(driver.main_sequence["Initial_State"], MCSInitialState)
         initialStateSeg.orbit_epoch = "01 Jul 2000 12:00:00"
 
         prop.stopping_conditions["Duration"].active = False
 
         epochStop: "StoppingConditionElement" = prop.stopping_conditions.add("Epoch")
         epochStop.active = True
-        epochStop.enable_control_parameter(CONTROL_STOPPING_CONDITION.TRIP_VALUE)
+        epochStop.enable_control_parameter(ControlStoppingCondition.TRIP_VALUE)
         stop: "StoppingCondition" = clr.CastAs(epochStop.properties, StoppingCondition)
         stop.trip = "02 Jul 2000 12:00:00.000"
 
-        (IMissionControlSequenceSegment(prop)).results.add("Epoch")
+        (IMCSSegment(prop)).results.add("Epoch")
 
         epochControl: "DifferentialCorrectorControl" = diffCorr.control_parameters.get_control_by_paths(
             "Prop", "StoppingConditions.Epoch.TripValue"
@@ -3279,7 +3198,7 @@ longitude = 121;"""
         epochResult.enable = True
         epochResult.desired_value = "2 Jul 2000 14:00:00.000"
 
-        driver.run_mission_control_sequence()
+        driver.run_mcs()
 
         Assert.assertEqual("2 Jul 2000 14:00:00.000", epochControl.values[2])
         Assert.assertEqual("2 Jul 2000 14:00:00.000", epochResult.values[2])
@@ -3293,21 +3212,18 @@ longitude = 121;"""
     def test_CustomUnits(self):
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - NumIterations START")
         sat: "Satellite" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "CustomUnits"), Satellite
+            TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "CustomUnits"), Satellite
         )
-        sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
-        driver: "DriverMissionControlSequence" = clr.CastAs(sat.propagator, DriverMissionControlSequence)
-        targSeq: "MissionControlSequenceTargetSequence" = clr.CastAs(
-            driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-"),
-            MissionControlSequenceTargetSequence,
+        sat.set_propagator_type(PropagatorType.ASTROGATOR)
+        driver: "MCSDriver" = clr.CastAs(sat.propagator, MCSDriver)
+        targSeq: "MCSTargetSequence" = clr.CastAs(
+            driver.main_sequence.insert(SegmentType.TARGET_SEQUENCE, "TargetSequence", "-"), MCSTargetSequence
         )
-        targSeq.action = TARGET_SEQ_ACTION.RUN_ACTIVE_PROFILES
+        targSeq.action = TargetSequenceAction.RUN_ACTIVE_PROFILES
 
-        prop: "MissionControlSequencePropagate" = clr.CastAs(
-            targSeq.segments.insert(SEGMENT_TYPE.PROPAGATE, "Prop", "-"), MissionControlSequencePropagate
-        )
-        prop.stopping_conditions["Duration"].enable_control_parameter(CONTROL_STOPPING_CONDITION.TRIP_VALUE)
-        (IMissionControlSequenceSegment(prop)).results.add("Time/Duration")
+        prop: "MCSPropagate" = clr.CastAs(targSeq.segments.insert(SegmentType.PROPAGATE, "Prop", "-"), MCSPropagate)
+        prop.stopping_conditions["Duration"].enable_control_parameter(ControlStoppingCondition.TRIP_VALUE)
+        (IMCSSegment(prop)).results.add("Time/Duration")
         diffCorr: "ProfileDifferentialCorrector" = clr.CastAs(
             targSeq.profiles["Differential_Corrector"], ProfileDifferentialCorrector
         )
@@ -3344,20 +3260,17 @@ longitude = 121;"""
     def test_GeodeticInitState(self):
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - GeodeticInitState START")
         sat: "Satellite" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "GeodeticInitState"),
-            Satellite,
+            TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "GeodeticInitState"), Satellite
         )
-        sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
-        driver: "DriverMissionControlSequence" = clr.CastAs(sat.propagator, DriverMissionControlSequence)
-        initState: "MissionControlSequenceInitialState" = clr.CastAs(
-            driver.main_sequence["Initial_State"], MissionControlSequenceInitialState
-        )
+        sat.set_propagator_type(PropagatorType.ASTROGATOR)
+        driver: "MCSDriver" = clr.CastAs(sat.propagator, MCSDriver)
+        initState: "MCSInitialState" = clr.CastAs(driver.main_sequence["Initial_State"], MCSInitialState)
         initState.coord_system_name = "CentralBody/Earth Inertial"
         with pytest.raises(Exception):
-            initState.set_element_type(ELEMENT_TYPE.GEODETIC)
+            initState.set_element_type(ElementSetType.GEODETIC)
         initState.coord_system_name = "CentralBody/Earth Fixed"
-        initState.set_element_type(ELEMENT_TYPE.GEODETIC)
-        Assert.assertEqual(ELEMENT_TYPE.GEODETIC, initState.element_type)
+        initState.set_element_type(ElementSetType.GEODETIC)
+        Assert.assertEqual(ElementSetType.GEODETIC, initState.element_type)
         geodetic: "ElementGeodetic" = clr.CastAs(initState.element, ElementGeodetic)
         Assert.assertIsNotNone(geodetic)
 
@@ -3393,7 +3306,7 @@ longitude = 121;"""
 
         components: "ComponentInfoCollection" = (
             Scenario(TestBase.Application.current_scenario)
-        ).component_directory.get_components(COMPONENT.ASTROGATOR)
+        ).component_directory.get_components(Component.ASTROGATOR)
         geodeticElems: "ComponentInfoCollection" = components.get_folder("Calculation Objects").get_folder("Geodetic")
         geodeticElem: "StateCalcGeodeticElem" = clr.CastAs(
             (ICloneable(geodeticElems["LatitudeRate"])).clone_object(), StateCalcGeodeticElem
@@ -3410,49 +3323,34 @@ longitude = 121;"""
     def test_NormalizedVectors(self):
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - GeodeticInitState START")
         sat: "Satellite" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "NormalizedVectors"),
-            Satellite,
+            TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "NormalizedVectors"), Satellite
         )
-        sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
-        driver: "DriverMissionControlSequence" = clr.CastAs(sat.propagator, DriverMissionControlSequence)
+        sat.set_propagator_type(PropagatorType.ASTROGATOR)
+        driver: "MCSDriver" = clr.CastAs(sat.propagator, MCSDriver)
 
-        initState: "MissionControlSequenceInitialState" = clr.CastAs(
-            driver.main_sequence["Initial_State"], MissionControlSequenceInitialState
-        )
-        initState.set_element_type(ELEMENT_TYPE.CARTESIAN)
+        initState: "MCSInitialState" = clr.CastAs(driver.main_sequence["Initial_State"], MCSInitialState)
+        initState.set_element_type(ElementSetType.CARTESIAN)
         cart: "ElementCartesian" = clr.CastAs(initState.element, ElementCartesian)
         cart.x = 5000
         cart.y = 5000
         cart.z = 5000
-        vecX: "StateCalcVectorX" = clr.CastAs(
-            (IMissionControlSequenceSegment(initState)).results.add("Vector/Vector X"), StateCalcVectorX
-        )
+        vecX: "StateCalcVectorX" = clr.CastAs((IMCSSegment(initState)).results.add("Vector/Vector X"), StateCalcVectorX)
         vecX.vector_name = "Satellite/NormalizedVectors Position"
         vecX.unit_dimension = "DistanceUnit"
 
-        vecY: "StateCalcVectorY" = clr.CastAs(
-            (IMissionControlSequenceSegment(initState)).results.add("Vector/Vector Y"), StateCalcVectorY
-        )
+        vecY: "StateCalcVectorY" = clr.CastAs((IMCSSegment(initState)).results.add("Vector/Vector Y"), StateCalcVectorY)
         vecY.vector_name = "Satellite/NormalizedVectors Position"
         vecY.unit_dimension = "DistanceUnit"
 
-        vecZ: "StateCalcVectorZ" = clr.CastAs(
-            (IMissionControlSequenceSegment(initState)).results.add("Vector/Vector Z"), StateCalcVectorZ
-        )
+        vecZ: "StateCalcVectorZ" = clr.CastAs((IMCSSegment(initState)).results.add("Vector/Vector Z"), StateCalcVectorZ)
         vecZ.vector_name = "Satellite/NormalizedVectors Position"
         vecZ.unit_dimension = "DistanceUnit"
 
-        driver.run_mission_control_sequence()
+        driver.run_mcs()
 
-        Assert.assertAlmostEqual(
-            5000, float((IMissionControlSequenceSegment(initState)).get_result_value("Vector_X")), delta=1e-09
-        )
-        Assert.assertAlmostEqual(
-            5000, float((IMissionControlSequenceSegment(initState)).get_result_value("Vector_Y")), delta=1e-09
-        )
-        Assert.assertAlmostEqual(
-            5000, float((IMissionControlSequenceSegment(initState)).get_result_value("Vector_Z")), delta=1e-09
-        )
+        Assert.assertAlmostEqual(5000, float((IMCSSegment(initState)).get_result_value("Vector_X")), delta=1e-09)
+        Assert.assertAlmostEqual(5000, float((IMCSSegment(initState)).get_result_value("Vector_Y")), delta=1e-09)
+        Assert.assertAlmostEqual(5000, float((IMCSSegment(initState)).get_result_value("Vector_Z")), delta=1e-09)
 
         vecX.normalize = True
         vecY.normalize = True
@@ -3463,19 +3361,13 @@ longitude = 121;"""
         Assert.assertEqual("Unitless", vecZ.unit_dimension)
 
         Assert.assertAlmostEqual(
-            0.5773502691896258,
-            float((IMissionControlSequenceSegment(initState)).get_result_value("Vector_X")),
-            delta=1e-09,
+            0.5773502691896258, float((IMCSSegment(initState)).get_result_value("Vector_X")), delta=1e-09
         )
         Assert.assertAlmostEqual(
-            0.5773502691896258,
-            float((IMissionControlSequenceSegment(initState)).get_result_value("Vector_Y")),
-            delta=1e-09,
+            0.5773502691896258, float((IMCSSegment(initState)).get_result_value("Vector_Y")), delta=1e-09
         )
         Assert.assertAlmostEqual(
-            0.5773502691896258,
-            float((IMissionControlSequenceSegment(initState)).get_result_value("Vector_Z")),
-            delta=1e-09,
+            0.5773502691896258, float((IMCSSegment(initState)).get_result_value("Vector_Z")), delta=1e-09
         )
         (IStkObject(sat)).unload()
 
@@ -3485,10 +3377,10 @@ longitude = 121;"""
     def test_ManeuverSummary(self):
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - ManeuverSummary START")
         sat: "Satellite" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "ManeuverSummary"), Satellite
+            TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "ManeuverSummary"), Satellite
         )
-        sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
-        driver: "DriverMissionControlSequence" = clr.CastAs(sat.propagator, DriverMissionControlSequence)
+        sat.set_propagator_type(PropagatorType.ASTROGATOR)
+        driver: "MCSDriver" = clr.CastAs(sat.propagator, MCSDriver)
 
         # set up the epochs
         scene: "Scenario" = clr.CastAs(TestBase.Application.current_scenario, Scenario)
@@ -3496,67 +3388,59 @@ longitude = 121;"""
         scene.start_time = "1 Jan 2010 12:00:00.000"
         scene.epoch = "1 Jan 2010 12:00:00.000"
 
-        initState: "MissionControlSequenceInitialState" = clr.CastAs(
-            driver.main_sequence["Initial_State"], MissionControlSequenceInitialState
-        )
+        initState: "MCSInitialState" = clr.CastAs(driver.main_sequence["Initial_State"], MCSInitialState)
         initState.orbit_epoch = "2 Jan 2010 12:00:00.000"
 
         # set up the MCS
-        man1: "MissionControlSequenceManeuver" = clr.CastAs(
-            driver.main_sequence.insert(SEGMENT_TYPE.MANEUVER, "Man1", "-"), MissionControlSequenceManeuver
-        )
-        man1.set_maneuver_type(MANEUVER_TYPE.FINITE)
+        man1: "MCSManeuver" = clr.CastAs(driver.main_sequence.insert(SegmentType.MANEUVER, "Man1", "-"), MCSManeuver)
+        man1.set_maneuver_type(ManeuverType.FINITE)
         man1Fin: "ManeuverFinite" = clr.CastAs(man1.maneuver, ManeuverFinite)
         man1FinStop: "StoppingCondition" = clr.CastAs(
             man1Fin.propagator.stopping_conditions[0].properties, StoppingCondition
         )
         man1FinStop.trip = 300.0
 
-        prop2: "MissionControlSequencePropagate" = clr.CastAs(
-            driver.main_sequence.insert(SEGMENT_TYPE.PROPAGATE, "Prop2", "-"), MissionControlSequencePropagate
+        prop2: "MCSPropagate" = clr.CastAs(
+            driver.main_sequence.insert(SegmentType.PROPAGATE, "Prop2", "-"), MCSPropagate
         )
         prop2Stop: "StoppingCondition" = clr.CastAs(prop2.stopping_conditions[0].properties, StoppingCondition)
         prop2Stop.trip = 1000.0
 
-        man2: "MissionControlSequenceManeuver" = clr.CastAs(
-            driver.main_sequence.insert(SEGMENT_TYPE.MANEUVER, "Man2", "-"), MissionControlSequenceManeuver
-        )
-        man2.set_maneuver_type(MANEUVER_TYPE.FINITE)
+        man2: "MCSManeuver" = clr.CastAs(driver.main_sequence.insert(SegmentType.MANEUVER, "Man2", "-"), MCSManeuver)
+        man2.set_maneuver_type(ManeuverType.FINITE)
         man2Fin: "ManeuverFinite" = clr.CastAs(man2.maneuver, ManeuverFinite)
         man2FinStop: "StoppingCondition" = clr.CastAs(
             man2Fin.propagator.stopping_conditions[0].properties, StoppingCondition
         )
         man2FinStop.trip = 300.0
 
-        prop3: "MissionControlSequencePropagate" = clr.CastAs(
-            driver.main_sequence.insert(SEGMENT_TYPE.PROPAGATE, "Prop3", "-"), MissionControlSequencePropagate
+        prop3: "MCSPropagate" = clr.CastAs(
+            driver.main_sequence.insert(SegmentType.PROPAGATE, "Prop3", "-"), MCSPropagate
         )
         prop3Stop: "StoppingCondition" = clr.CastAs(prop3.stopping_conditions[0].properties, StoppingCondition)
         prop3Stop.trip = 1000.0
 
-        man3: "MissionControlSequenceManeuver" = clr.CastAs(
-            driver.main_sequence.insert(SEGMENT_TYPE.MANEUVER, "Man3", "-"), MissionControlSequenceManeuver
-        )
-        man3.set_maneuver_type(MANEUVER_TYPE.FINITE)
+        man3: "MCSManeuver" = clr.CastAs(driver.main_sequence.insert(SegmentType.MANEUVER, "Man3", "-"), MCSManeuver)
+        man3.set_maneuver_type(ManeuverType.FINITE)
         man3Fin: "ManeuverFinite" = clr.CastAs(man3.maneuver, ManeuverFinite)
         man3FinStop: "StoppingCondition" = clr.CastAs(
             man3Fin.propagator.stopping_conditions[0].properties, StoppingCondition
         )
         man3FinStop.trip = 300.0
 
-        prop4: "MissionControlSequencePropagate" = clr.CastAs(
-            driver.main_sequence.insert(SEGMENT_TYPE.PROPAGATE, "Prop4", "-"), MissionControlSequencePropagate
+        prop4: "MCSPropagate" = clr.CastAs(
+            driver.main_sequence.insert(SegmentType.PROPAGATE, "Prop4", "-"), MCSPropagate
         )
         prop4Stop: "StoppingCondition" = clr.CastAs(prop4.stopping_conditions[0].properties, StoppingCondition)
         prop4Stop.trip = 1000.0
 
         # run the MCS
-        driver.run_mission_control_sequence()
+        driver.run_mcs()
 
         # Run the data provider
         satObj: "IStkObject" = clr.CastAs(sat, IStkObject)
         intvl: "DataProviderInterval" = clr.CastAs(satObj.data_providers["Maneuver Summary"], DataProviderInterval)
-        result: "DataProviderResult" = intvl.exec(scene.start_time, scene.stop_time)
+        result: "DataProviderResult" = intvl.execute(scene.start_time, scene.stop_time)
         intervals: "DataProviderResultIntervalCollection" = result.intervals
 
         Assert.assertEqual("3 Jan 2010 00:00:00.000", intervals[0].start_time)
@@ -3620,9 +3504,9 @@ longitude = 121;"""
         Assert.assertEqual("Constant_Thrust_and_Isp", dataSet[2])
 
         # now try a b/w sequence
-        bwSeq: "MissionControlSequenceBackwardSequence" = clr.CastAs(
-            driver.main_sequence.insert(SEGMENT_TYPE.BACKWARD_SEQUENCE, "Backwards Sequence", "Propagate"),
-            MissionControlSequenceBackwardSequence,
+        bwSeq: "MCSBackwardSequence" = clr.CastAs(
+            driver.main_sequence.insert(SegmentType.BACKWARD_SEQUENCE, "Backwards Sequence", "Propagate"),
+            MCSBackwardSequence,
         )
 
         driver.main_sequence.cut("Propagate")
@@ -3640,11 +3524,11 @@ longitude = 121;"""
         driver.main_sequence.cut("Prop4")
         bwSeq.segments.paste("-")
 
-        driver.run_mission_control_sequence()
+        driver.run_mcs()
 
         # Run the data provider again
         intvl = clr.CastAs(satObj.data_providers["Maneuver Summary"], DataProviderInterval)
-        result = intvl.exec(scene.start_time, scene.stop_time)
+        result = intvl.execute(scene.start_time, scene.stop_time)
         intervals = result.intervals
 
         Assert.assertEqual("1 Jan 2010 23:11:40.000", intervals[0].start_time)
@@ -3716,17 +3600,15 @@ longitude = 121;"""
     def test_ScriptingToolParameters(self):
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - ScriptingToolParameters START")
         sat: "Satellite" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "ScriptingToolParams"),
+            TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "ScriptingToolParams"),
             Satellite,
         )
-        sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
-        driver: "DriverMissionControlSequence" = clr.CastAs(sat.propagator, DriverMissionControlSequence)
-        driver.main_sequence.insert(SEGMENT_TYPE.SEQUENCE, "Sequence", "-")
+        sat.set_propagator_type(PropagatorType.ASTROGATOR)
+        driver: "MCSDriver" = clr.CastAs(sat.propagator, MCSDriver)
+        driver.main_sequence.insert(SegmentType.SEQUENCE, "Sequence", "-")
         driver.main_sequence.cut("Propagate")
-        sequence: "IMissionControlSequenceSequence" = IMissionControlSequenceSequence(driver.main_sequence["Sequence"])
-        prop: "MissionControlSequencePropagate" = clr.CastAs(
-            sequence.segments.paste("-"), MissionControlSequencePropagate
-        )
+        sequence: "IMCSSequence" = IMCSSequence(driver.main_sequence["Sequence"])
+        prop: "MCSPropagate" = clr.CastAs(sequence.segments.paste("-"), MCSPropagate)
         sequence.scripting_tool.enable = True
         parameter: "ScriptingParameter" = sequence.scripting_tool.parameters.add("Parameter")
 
@@ -3734,7 +3616,7 @@ longitude = 121;"""
         # Parameters have dimension and units and min and max.
 
         # region ChangingUnits
-        parameter.type = SCRIPTING_PARAMETER_TYPE.QUANTITY
+        parameter.type = ScriptingParameterType.QUANTITY
         parameter.dimension = "TimeUnit"
         Assert.assertEqual("TimeUnit", parameter.dimension)
         parameter.unit = "hr"
@@ -3743,9 +3625,9 @@ longitude = 121;"""
             parameter.unit = "km"
 
         # this should be 60 seconds because of the object model unit prefs
-        parameter.param_value = 60
+        parameter.parameter_value = 60
         with pytest.raises(Exception):
-            parameter.param_value = "bogus"
+            parameter.parameter_value = "bogus"
 
         attribute: "ScriptingSegment" = sequence.scripting_tool.segment_properties.add("Attribute")
         attribute.object_name = "Propagate"
@@ -3758,13 +3640,13 @@ longitude = 121;"""
             60, float((StoppingCondition(prop.stopping_conditions["Duration"].properties)).trip), delta=1e-09
         )
 
-        TestBase.Application.unit_preferences.set_current_unit("TimeUnit", "hr")
+        TestBase.Application.units_preferences.set_current_unit("TimeUnit", "hr")
         parameter.use_max_value = True
         parameter.max_value = 70  # should be hours
         Assert.assertAlmostEqual(70, float(parameter.max_value), delta=1e-13)
-        parameter.param_value = 60  # this should be 60 hours
+        parameter.parameter_value = 60  # this should be 60 hours
         sequence.apply_script()
-        TestBase.Application.unit_preferences.set_current_unit("TimeUnit", "sec")
+        TestBase.Application.units_preferences.set_current_unit("TimeUnit", "sec")
         Assert.assertAlmostEqual(
             (60 * 3600), float((StoppingCondition(prop.stopping_conditions["Duration"].properties)).trip), delta=1e-09
         )
@@ -3776,16 +3658,16 @@ longitude = 121;"""
 
         # test setting and using the new types
         # region Boolean
-        parameter.type = SCRIPTING_PARAMETER_TYPE.BOOLEAN
-        Assert.assertEqual(SCRIPTING_PARAMETER_TYPE.BOOLEAN, parameter.type)
+        parameter.type = ScriptingParameterType.BOOLEAN
+        Assert.assertEqual(ScriptingParameterType.BOOLEAN, parameter.type)
         with pytest.raises(Exception):
             parameter.dimension = "TimeUnit"
         with pytest.raises(Exception):
             parameter.unit = "hr"
-        parameter.param_value = True
-        Assert.assertEqual(True, parameter.param_value)
-        parameter.param_value = False
-        Assert.assertEqual(False, parameter.param_value)
+        parameter.parameter_value = True
+        Assert.assertEqual(True, parameter.parameter_value)
+        parameter.parameter_value = False
+        Assert.assertEqual(False, parameter.parameter_value)
         with pytest.raises(Exception):
             parameter.use_min_value = True
         with pytest.raises(Exception):
@@ -3797,33 +3679,33 @@ longitude = 121;"""
         # endregion
 
         # region Integer
-        parameter.type = SCRIPTING_PARAMETER_TYPE.INTEGER
+        parameter.type = ScriptingParameterType.INTEGER
         with pytest.raises(Exception):
             parameter.dimension = "TimeUnit"
         with pytest.raises(Exception):
             parameter.unit = "hr"
-        parameter.param_value = True
-        Assert.assertEqual(-1, parameter.param_value)  # VARIANT_TRUE is -1
-        parameter.param_value = 1
-        Assert.assertEqual(1, parameter.param_value)
-        parameter.param_value = 2.1
-        Assert.assertEqual(2, parameter.param_value)  # converted to int
+        parameter.parameter_value = True
+        Assert.assertEqual(-1, parameter.parameter_value)  # VARIANT_TRUE is -1
+        parameter.parameter_value = 1
+        Assert.assertEqual(1, parameter.parameter_value)
+        parameter.parameter_value = 2.1
+        Assert.assertEqual(2, parameter.parameter_value)  # converted to int
         with pytest.raises(Exception):
-            parameter.param_value = "integer"
-        parameter.param_value = "5"
-        Assert.assertEqual(5, parameter.param_value)
+            parameter.parameter_value = "integer"
+        parameter.parameter_value = "5"
+        Assert.assertEqual(5, parameter.parameter_value)
         parameter.use_max_value = True
         Assert.assertEqual(True, parameter.use_max_value)
         parameter.max_value = 100
         Assert.assertEqual(100, parameter.max_value)
         with pytest.raises(Exception):
-            parameter.param_value = 101
+            parameter.parameter_value = 101
         parameter.use_min_value = True
         Assert.assertEqual(True, parameter.use_min_value)
         parameter.min_value = -100
         Assert.assertEqual(-100, parameter.min_value)
         with pytest.raises(Exception):
-            parameter.param_value = -101
+            parameter.parameter_value = -101
         parameter.use_min_value = False
         parameter.use_max_value = False
         with pytest.raises(Exception):
@@ -3833,19 +3715,19 @@ longitude = 121;"""
         # endregion
 
         # region Double
-        parameter.type = SCRIPTING_PARAMETER_TYPE.DOUBLE
+        parameter.type = ScriptingParameterType.DOUBLE
         with pytest.raises(Exception):
             parameter.dimension = "TimeUnit"
         with pytest.raises(Exception):
             parameter.unit = "hr"
-        parameter.param_value = True
-        Assert.assertEqual(-1, parameter.param_value)  # VARIANT_TRUE is -1
-        parameter.param_value = 1.1
-        Assert.assertEqual(1.1, parameter.param_value)
+        parameter.parameter_value = True
+        Assert.assertEqual(-1, parameter.parameter_value)  # VARIANT_TRUE is -1
+        parameter.parameter_value = 1.1
+        Assert.assertEqual(1.1, parameter.parameter_value)
         with pytest.raises(Exception):
-            parameter.param_value = "integer"
-        parameter.param_value = "5.4"
-        Assert.assertEqual(5.4, parameter.param_value)
+            parameter.parameter_value = "integer"
+        parameter.parameter_value = "5.4"
+        Assert.assertEqual(5.4, parameter.parameter_value)
         with pytest.raises(Exception):
             parameter.max_value = 100.4
         with pytest.raises(Exception):
@@ -3855,13 +3737,13 @@ longitude = 121;"""
         parameter.max_value = 100.4
         Assert.assertAlmostEqual(100.4, float(parameter.max_value), delta=1e-13)
         with pytest.raises(Exception):
-            parameter.param_value = 101.8
+            parameter.parameter_value = 101.8
         parameter.use_min_value = True
         Assert.assertEqual(True, parameter.use_min_value)
         parameter.min_value = -100.4
         Assert.assertAlmostEqual(-100.4, float(parameter.min_value), delta=1e-13)
         with pytest.raises(Exception):
-            parameter.param_value = -101.8
+            parameter.parameter_value = -101.8
         parameter.use_min_value = False
         parameter.use_max_value = False
         with pytest.raises(Exception):
@@ -3871,7 +3753,7 @@ longitude = 121;"""
         # endregion
 
         # region Quantity
-        parameter.type = SCRIPTING_PARAMETER_TYPE.QUANTITY
+        parameter.type = ScriptingParameterType.QUANTITY
         parameter.dimension = "TimeUnit"
         Assert.assertEqual("TimeUnit", parameter.dimension)
         parameter.unit = "hr"
@@ -3880,12 +3762,12 @@ longitude = 121;"""
             parameter.dimension = "NoDimension"
         with pytest.raises(Exception):
             parameter.unit = "km"
-        parameter.param_value = 1.1
-        Assert.assertEqual(1.1, parameter.param_value)
+        parameter.parameter_value = 1.1
+        Assert.assertEqual(1.1, parameter.parameter_value)
         with pytest.raises(Exception):
-            parameter.param_value = "quantity"
-        parameter.param_value = "5.4"
-        Assert.assertEqual(5.4, parameter.param_value)
+            parameter.parameter_value = "quantity"
+        parameter.parameter_value = "5.4"
+        Assert.assertEqual(5.4, parameter.parameter_value)
         with pytest.raises(Exception):
             parameter.max_value = 100.4
         with pytest.raises(Exception):
@@ -3895,13 +3777,13 @@ longitude = 121;"""
         parameter.max_value = 100.4
         Assert.assertAlmostEqual(100.4, float(parameter.max_value), delta=1e-13)
         with pytest.raises(Exception):
-            parameter.param_value = 101.8
+            parameter.parameter_value = 101.8
         parameter.use_min_value = True
         Assert.assertEqual(True, parameter.use_min_value)
         parameter.min_value = -100.4
         Assert.assertAlmostEqual(-100.4, float(parameter.min_value), delta=1e-13)
         with pytest.raises(Exception):
-            parameter.param_value = -101.8
+            parameter.parameter_value = -101.8
         parameter.use_min_value = False
         parameter.use_max_value = False
         with pytest.raises(Exception):
@@ -3911,32 +3793,32 @@ longitude = 121;"""
         # endregion
 
         # region Date
-        parameter.type = SCRIPTING_PARAMETER_TYPE.DATE
+        parameter.type = ScriptingParameterType.DATE
         with pytest.raises(Exception):
             parameter.dimension = "DateFormat"
         parameter.unit = "EpSec"
         Assert.assertEqual("EpSec", parameter.unit)
 
         # switch object model to use epsec
-        TestBase.Application.unit_preferences.set_current_unit("DateFormat", "EpSec")
-        parameter.param_value = 0.0
+        TestBase.Application.units_preferences.set_current_unit("DateFormat", "EpSec")
+        parameter.parameter_value = 0.0
         with pytest.raises(Exception):
             parameter.max_value = 100.4
         with pytest.raises(Exception):
             parameter.min_value = 100.4
         parameter.use_max_value = True
         Assert.assertEqual(True, parameter.use_max_value)
-        Console.WriteLine(("param date value is " + str(parameter.param_value)))
+        Console.WriteLine(("param date value is " + str(parameter.parameter_value)))
         parameter.max_value = 100.4
         Assert.assertAlmostEqual(100.4, float(parameter.max_value), delta=1e-13)
         with pytest.raises(Exception):
-            parameter.param_value = 101.8
+            parameter.parameter_value = 101.8
         parameter.use_min_value = True
         Assert.assertEqual(True, parameter.use_min_value)
         parameter.min_value = -100.4
         Assert.assertAlmostEqual(-100.4, float(parameter.min_value), delta=1e-13)
         with pytest.raises(Exception):
-            parameter.param_value = -101.8
+            parameter.parameter_value = -101.8
         parameter.use_min_value = False
         parameter.use_max_value = False
         with pytest.raises(Exception):
@@ -3946,9 +3828,9 @@ longitude = 121;"""
 
         parameter.unit = "UTCG"
         Assert.assertEqual("UTCG", parameter.unit)
-        TestBase.Application.unit_preferences.set_current_unit("DateFormat", "UTCG")
-        parameter.param_value = "21 Dec 2012 12:00:00"
-        Assert.assertEqual("21 Dec 2012 12:00:00.000", parameter.param_value)
+        TestBase.Application.units_preferences.set_current_unit("DateFormat", "UTCG")
+        parameter.parameter_value = "21 Dec 2012 12:00:00"
+        Assert.assertEqual("21 Dec 2012 12:00:00.000", parameter.parameter_value)
         with pytest.raises(Exception):
             parameter.max_value = "21 Dec 2012 13:00:00"
         with pytest.raises(Exception):
@@ -3961,7 +3843,7 @@ longitude = 121;"""
         parameter.max_value = "21 Dec 2012 13:00:00"
         Assert.assertEqual("21 Dec 2012 13:00:00.000", parameter.max_value)
         with pytest.raises(Exception):
-            parameter.param_value = "21 Dec 2012 13:01:00"
+            parameter.parameter_value = "21 Dec 2012 13:01:00"
         parameter.use_min_value = True
         Assert.assertEqual(True, parameter.use_min_value)
         with pytest.raises(Exception):
@@ -3969,7 +3851,7 @@ longitude = 121;"""
         parameter.min_value = "21 Dec 2012 11:00:00"
         Assert.assertEqual("21 Dec 2012 11:00:00.000", parameter.min_value)
         with pytest.raises(Exception):
-            parameter.param_value = "21 Dec 2012 10:59:00.000"
+            parameter.parameter_value = "21 Dec 2012 10:59:00.000"
         parameter.use_min_value = False
         parameter.use_max_value = False
         with pytest.raises(Exception):
@@ -3979,13 +3861,13 @@ longitude = 121;"""
         # endregion
 
         # region String
-        parameter.type = SCRIPTING_PARAMETER_TYPE.STRING
-        parameter.param_value = "Awesome"
+        parameter.type = ScriptingParameterType.STRING
+        parameter.parameter_value = "Awesome"
         with pytest.raises(Exception):
             parameter.dimension = "TimeUnit"
         with pytest.raises(Exception):
             parameter.unit = "hr"
-        Assert.assertEqual("Awesome", parameter.param_value)
+        Assert.assertEqual("Awesome", parameter.parameter_value)
         with pytest.raises(Exception):
             parameter.use_min_value = True
         with pytest.raises(Exception):
@@ -3997,7 +3879,7 @@ longitude = 121;"""
         # endregion
 
         # region Enumeration
-        parameter.type = SCRIPTING_PARAMETER_TYPE.ENUMERATION
+        parameter.type = ScriptingParameterType.ENUMERATION
         enumChoices: "ScriptingParameterEnumerationChoiceCollection" = parameter.enumeration_choices
         choice1: "ScriptingParameterEnumerationChoice" = enumChoices[0]
         choice1A: "ScriptingParameterEnumerationChoice" = enumChoices.get_item_by_index(0)
@@ -4029,8 +3911,8 @@ longitude = 121;"""
         Assert.assertEqual(2, parameter.enumeration_choices.count)
         Assert.assertEqual("Enum2", choice2.name)
         enumChoices.add("Enum3")
-        parameter.param_value = "Enum2"
-        Assert.assertEqual("Enum2", parameter.param_value)
+        parameter.parameter_value = "Enum2"
+        Assert.assertEqual("Enum2", parameter.parameter_value)
         with pytest.raises(Exception):
             parameter.dimension = "TimeUnit"
         with pytest.raises(Exception):
@@ -4055,12 +3937,9 @@ longitude = 121;"""
                 rttip2: "IRuntimeTypeInfoProvider" = clr.CastAs(pi.get_value(), IRuntimeTypeInfoProvider)
                 if rttip2 != None:
                     rtti2: "RuntimeTypeInfo" = rttip2.provide_runtime_type_info
-
-                    name: "PropertyInfo" = rtti2.properties[0]
-                    Assert.assertEqual(enumChoices[i].name, str(name.get_value()))
-                    value: "PropertyInfo" = rtti2.properties[1]
-                    rttiValue: typing.Any = value.get_value()
-                    Assert.assertEqual(enumChoices[i].value, int(rttiValue))
+                    EarlyBoundTests.ScriptingToolParametersCheckNameValue(
+                        enumChoices[i].name, enumChoices[i].value, rtti2
+                    )
 
                 i += 1
 
@@ -4069,9 +3948,9 @@ longitude = 121;"""
         # region ENG57699
         # Parameters can be strings.
         attribute.attribute = "Propagator"
-        parameter.type = SCRIPTING_PARAMETER_TYPE.STRING
-        Assert.assertEqual(SCRIPTING_PARAMETER_TYPE.STRING, parameter.type)
-        parameter.param_value = "Earth J2"
+        parameter.type = ScriptingParameterType.STRING
+        Assert.assertEqual(ScriptingParameterType.STRING, parameter.type)
+        parameter.parameter_value = "Earth J2"
         sequence.apply_script()
         Assert.assertEqual("Earth J2", prop.propagator_name)
 
@@ -4081,21 +3960,20 @@ longitude = 121;"""
         # Parameter values can be inherited from previous profiles.
         driver.main_sequence.remove("Sequence")
 
-        targSeq: "MissionControlSequenceTargetSequence" = clr.CastAs(
-            driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "Target_Sequence", "-"),
-            MissionControlSequenceTargetSequence,
+        targSeq: "MCSTargetSequence" = clr.CastAs(
+            driver.main_sequence.insert(SegmentType.TARGET_SEQUENCE, "Target_Sequence", "-"), MCSTargetSequence
         )
-        targSeq.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-")
+        targSeq.segments.insert(SegmentType.PROPAGATE, "Propagate", "-")
         dc1: "ProfileDifferentialCorrector" = clr.CastAs(
             targSeq.profiles["Differential_Corrector"], ProfileDifferentialCorrector
         )
         dc1.scripting_tool.enable = True
         param: "ScriptingParameter" = dc1.scripting_tool.parameters.add("Parameter")
         # set up some initial parameter values
-        param.type = SCRIPTING_PARAMETER_TYPE.QUANTITY
+        param.type = ScriptingParameterType.QUANTITY
         param.dimension = "TimeUnit"
         param.unit = "hr"
-        param.param_value = "21"
+        param.parameter_value = "21"
 
         # places you shouldn't be able to inherit:  first profile, standalone profiles, sequence scripting tools
         with pytest.raises(Exception):
@@ -4105,8 +3983,8 @@ longitude = 121;"""
         standAloneParam: "ScriptingParameter" = scriptTool.parameters.add("Parameter")
         with pytest.raises(Exception):
             standAloneParam.inherit_value = True
-        standAloneSeq: "IMissionControlSequenceSequence" = clr.CastAs(
-            driver.main_sequence.insert(SEGMENT_TYPE.SEQUENCE, "Sequence", "-"), IMissionControlSequenceSequence
+        standAloneSeq: "IMCSSequence" = clr.CastAs(
+            driver.main_sequence.insert(SegmentType.SEQUENCE, "Sequence", "-"), IMCSSequence
         )
         standAloneSeq.scripting_tool.enable = True
         seqParam: "ScriptingParameter" = standAloneSeq.scripting_tool.parameters.add("Parameter")
@@ -4124,10 +4002,10 @@ longitude = 121;"""
 
         # now with identically named parameters we can get somewhere
         # set up some initial values
-        param2.type = SCRIPTING_PARAMETER_TYPE.QUANTITY
+        param2.type = ScriptingParameterType.QUANTITY
         param2.dimension = "DistanceUnit"
         param2.unit = "km"
-        param2.param_value = 42
+        param2.parameter_value = 42
 
         param2.inherit_value = True
         Assert.assertEqual(True, param2.inherit_value)
@@ -4136,13 +4014,13 @@ longitude = 121;"""
         Assert.assertEqual(param.type, param2.type)
         Assert.assertEqual(param.dimension, param2.dimension)
         Assert.assertEqual(param.unit, param2.unit)
-        Assert.assertEqual(param.param_value, param2.param_value)
+        Assert.assertEqual(param.parameter_value, param2.parameter_value)
 
         # turn off inherit and everything should go back to before
         param2.inherit_value = False
         Assert.assertEqual("DistanceUnit", param2.dimension)
         Assert.assertEqual("km", param2.unit)
-        Assert.assertEqual(42, float(param2.param_value))
+        Assert.assertEqual(42, float(param2.parameter_value))
 
         # change name and shouldn't be able to inherit
         param2.inherit_value = True
@@ -4151,23 +4029,23 @@ longitude = 121;"""
         param2.name = "Parameter"
 
         # when inherit is on, the second parameter should inherit all properties from first and shouldn't be able to set them
-        param.type = SCRIPTING_PARAMETER_TYPE.QUANTITY
+        param.type = ScriptingParameterType.QUANTITY
         param.dimension = "TimeUnit"
         param.unit = "hr"
-        param.param_value = "21"
+        param.parameter_value = "21"
         param2.inherit_value = True
-        Assert.assertEqual(SCRIPTING_PARAMETER_TYPE.QUANTITY, param2.type)
+        Assert.assertEqual(ScriptingParameterType.QUANTITY, param2.type)
         with pytest.raises(Exception):
-            param2.type = SCRIPTING_PARAMETER_TYPE.INTEGER
+            param2.type = ScriptingParameterType.INTEGER
         Assert.assertEqual("TimeUnit", param2.dimension)
         with pytest.raises(Exception):
             param2.dimension = "TimeUnit"
         Assert.assertEqual("hr", param2.unit)
         with pytest.raises(Exception):
             param2.unit = "hr"
-        Assert.assertEqual(21, param2.param_value)
+        Assert.assertEqual(21, param2.parameter_value)
         with pytest.raises(Exception):
-            param2.param_value = 21
+            param2.parameter_value = 21
 
         # rename the first guy and see that inherit is disabled
         param.name = "Rename"
@@ -4176,15 +4054,15 @@ longitude = 121;"""
 
         # change the name of the inherited parameter to another one
         anotherParam: "ScriptingParameter" = dc1.scripting_tool.parameters.add("AnotherParam")
-        anotherParam.type = SCRIPTING_PARAMETER_TYPE.QUANTITY
+        anotherParam.type = ScriptingParameterType.QUANTITY
         anotherParam.dimension = "AngleUnit"
         anotherParam.unit = "rad"
-        anotherParam.param_value = 2.6
+        anotherParam.parameter_value = 2.6
         param2.name = anotherParam.name
         Assert.assertEqual(anotherParam.type, param2.type)
         Assert.assertEqual(anotherParam.dimension, param2.dimension)
         Assert.assertEqual(anotherParam.unit, param2.unit)
-        Assert.assertEqual(anotherParam.param_value, param2.param_value)
+        Assert.assertEqual(anotherParam.parameter_value, param2.parameter_value)
 
         # turn off the first script
         dc1.scripting_tool.enable = False
@@ -4193,19 +4071,18 @@ longitude = 121;"""
         Assert.assertEqual(True, param2.inherit_value)
 
         # disable first profile
-        (dc1).mode = PROFILE_MODE.NOT_ACTIVE
+        (dc1).mode = ProfileMode.NOT_ACTIVE
         Assert.assertEqual(False, param2.inherit_value)
-        (dc1).mode = PROFILE_MODE.ITERATE
+        (dc1).mode = ProfileMode.ITERATE
         Assert.assertEqual(True, param2.inherit_value)
 
         # functional test...
         driver.main_sequence.remove_all()
 
-        initState: "MissionControlSequenceInitialState" = clr.CastAs(
-            driver.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "Initial_State", "-"),
-            MissionControlSequenceInitialState,
+        initState: "MCSInitialState" = clr.CastAs(
+            driver.main_sequence.insert(SegmentType.INITIAL_STATE, "Initial_State", "-"), MCSInitialState
         )
-        initState.set_element_type(ELEMENT_TYPE.KEPLERIAN)
+        initState.set_element_type(ElementSetType.KEPLERIAN)
         elems: "ElementKeplerian" = clr.CastAs(initState.element, ElementKeplerian)
         elems.periapsis_altitude_size = 300
         elems.eccentricity = 0.01
@@ -4215,35 +4092,30 @@ longitude = 121;"""
         elems.true_anomaly = 0
 
         targSeq = clr.CastAs(
-            driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "Target_Sequence", "-"),
-            MissionControlSequenceTargetSequence,
+            driver.main_sequence.insert(SegmentType.TARGET_SEQUENCE, "Target_Sequence", "-"), MCSTargetSequence
         )
-        man1: "MissionControlSequenceManeuver" = clr.CastAs(
-            targSeq.segments.insert(SEGMENT_TYPE.MANEUVER, "Maneuver1", "-"), MissionControlSequenceManeuver
+        man1: "MCSManeuver" = clr.CastAs(targSeq.segments.insert(SegmentType.MANEUVER, "Maneuver1", "-"), MCSManeuver)
+        prop1: "MCSPropagate" = clr.CastAs(
+            targSeq.segments.insert(SegmentType.PROPAGATE, "Propagate1", "-"), MCSPropagate
         )
-        prop1: "MissionControlSequencePropagate" = clr.CastAs(
-            targSeq.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate1", "-"), MissionControlSequencePropagate
-        )
-        man2: "MissionControlSequenceManeuver" = clr.CastAs(
-            targSeq.segments.insert(SEGMENT_TYPE.MANEUVER, "Maneuver2", "-"), MissionControlSequenceManeuver
-        )
-        prop2: "MissionControlSequencePropagate" = clr.CastAs(
-            targSeq.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate2", "-"), MissionControlSequencePropagate
+        man2: "MCSManeuver" = clr.CastAs(targSeq.segments.insert(SegmentType.MANEUVER, "Maneuver2", "-"), MCSManeuver)
+        prop2: "MCSPropagate" = clr.CastAs(
+            targSeq.segments.insert(SegmentType.PROPAGATE, "Propagate2", "-"), MCSPropagate
         )
 
-        (IMissionControlSequenceSegment(man1)).results.add("Maneuver/Inertial_DeltaV_Magnitude")
+        (IMCSSegment(man1)).results.add("Maneuver/Inertial_DeltaV_Magnitude")
 
         prop1.stopping_conditions.add("Periapsis")
         prop1.stopping_conditions.remove("Duration")
         prop1.propagator_name = "Earth Point Mass"
 
-        (IMissionControlSequenceSegment(man2)).results.add("Maneuver/Inertial_DeltaV_Magnitude")
+        (IMCSSegment(man2)).results.add("Maneuver/Inertial_DeltaV_Magnitude")
 
         prop2.stopping_conditions.add("Apoapsis")
         prop2.stopping_conditions.remove("Duration")
-        (IMissionControlSequenceSegment(prop2)).results.add("Spherical Elems/R_Mag")
+        (IMCSSegment(prop2)).results.add("Spherical Elems/R_Mag")
 
-        targSeq.action = TARGET_SEQ_ACTION.RUN_ACTIVE_PROFILES
+        targSeq.action = TargetSequenceAction.RUN_ACTIVE_PROFILES
         targSeq.profiles.remove_all()
 
         chngProp: "ProfileChangePropagator" = clr.CastAs(
@@ -4271,10 +4143,10 @@ longitude = 121;"""
         deltav22b.attribute = "ImpulsiveMnvr.Spherical.Magnitude"
         deltav22b.unit = "km/sec"
         deltaV2b: "ScriptingParameter" = scriptingTool2b.parameters.add("DeltaV")
-        deltaV2b.type = SCRIPTING_PARAMETER_TYPE.QUANTITY
+        deltaV2b.type = ScriptingParameterType.QUANTITY
         deltaV2b.dimension = "Rate"
         deltaV2b.unit = "km/sec"
-        deltaV2b.param_value = 0
+        deltaV2b.parameter_value = 0
         scriptingTool2b.script_text((("DeltaV1 = DeltaV;" + Environment.NewLine) + "DeltaV2 = DeltaV;"))
         control2b: "DifferentialCorrectorControl" = diffCorr2b.control_parameters.get_control_by_paths(
             "Scripting_Tool", "DeltaV"
@@ -4310,10 +4182,10 @@ longitude = 121;"""
         deltav2ff.attribute = "ImpulsiveMnvr.Spherical.Magnitude"
         deltav2ff.unit = "km/sec"
         deltaVff: "ScriptingParameter" = scriptingToolff.parameters.add("DeltaV")
-        deltaVff.type = SCRIPTING_PARAMETER_TYPE.QUANTITY
+        deltaVff.type = ScriptingParameterType.QUANTITY
         deltaVff.dimension = "Rate"
         deltaVff.unit = "km/sec"
-        deltaVff.param_value = 0
+        deltaVff.parameter_value = 0
         deltaVff.inherit_value = True
         scriptingToolff.script_text((("DeltaV1 = DeltaV;" + Environment.NewLine) + "DeltaV2 = DeltaV;"))
         controlff: "DifferentialCorrectorControl" = diffCorrff.control_parameters.get_control_by_paths(
@@ -4330,24 +4202,31 @@ longitude = 121;"""
 
         (IStkObject(sat)).unload()
 
+    @staticmethod
+    def ScriptingToolParametersCheckNameValue(expectedName: str, expectedValue: int, rtti2: "RuntimeTypeInfo"):
+        name: "PropertyInfo" = rtti2.properties[0]
+        Assert.assertEqual(expectedName, str(name.get_value()))
+        value: "PropertyInfo" = rtti2.properties[1]
+        rttiValue: typing.Any = value.get_value()
+        Assert.assertEqual(expectedValue, int(rttiValue))
+
     # endregion
 
     # region BUG86787
     @category("ExcludeOnLinux")
     def test_BUG86787(self):
         sat: "Satellite" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "ScriptingToolParamsBUG"),
+            TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "ScriptingToolParamsBUG"),
             Satellite,
         )
-        sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
-        driver: "DriverMissionControlSequence" = clr.CastAs(sat.propagator, DriverMissionControlSequence)
+        sat.set_propagator_type(PropagatorType.ASTROGATOR)
+        driver: "MCSDriver" = clr.CastAs(sat.propagator, MCSDriver)
         driver.main_sequence.remove_all()
 
-        initState: "MissionControlSequenceInitialState" = clr.CastAs(
-            driver.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "Initial_State", "-"),
-            MissionControlSequenceInitialState,
+        initState: "MCSInitialState" = clr.CastAs(
+            driver.main_sequence.insert(SegmentType.INITIAL_STATE, "Initial_State", "-"), MCSInitialState
         )
-        initState.set_element_type(ELEMENT_TYPE.KEPLERIAN)
+        initState.set_element_type(ElementSetType.KEPLERIAN)
         elems: "ElementKeplerian" = clr.CastAs(initState.element, ElementKeplerian)
         elems.periapsis_altitude_size = 300
         elems.eccentricity = 0.01
@@ -4356,38 +4235,33 @@ longitude = 121;"""
         elems.arg_of_periapsis = 0
         elems.true_anomaly = 0
 
-        targSeq: "MissionControlSequenceTargetSequence" = None  # I added
+        targSeq: "MCSTargetSequence" = None  # I added
         targSeq = clr.CastAs(
-            driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "Target_Sequence", "-"),
-            MissionControlSequenceTargetSequence,
+            driver.main_sequence.insert(SegmentType.TARGET_SEQUENCE, "Target_Sequence", "-"), MCSTargetSequence
         )
-        targSeq.action = TARGET_SEQ_ACTION.RUN_ACTIVE_PROFILES
+        targSeq.action = TargetSequenceAction.RUN_ACTIVE_PROFILES
         targSeq.profiles.remove_all()
 
-        man1: "MissionControlSequenceManeuver" = clr.CastAs(
-            targSeq.segments.insert(SEGMENT_TYPE.MANEUVER, "Maneuver1", "-"), MissionControlSequenceManeuver
+        man1: "MCSManeuver" = clr.CastAs(targSeq.segments.insert(SegmentType.MANEUVER, "Maneuver1", "-"), MCSManeuver)
+        prop1: "MCSPropagate" = clr.CastAs(
+            targSeq.segments.insert(SegmentType.PROPAGATE, "Propagate1", "-"), MCSPropagate
         )
-        prop1: "MissionControlSequencePropagate" = clr.CastAs(
-            targSeq.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate1", "-"), MissionControlSequencePropagate
-        )
-        man2: "MissionControlSequenceManeuver" = clr.CastAs(
-            targSeq.segments.insert(SEGMENT_TYPE.MANEUVER, "Maneuver2", "-"), MissionControlSequenceManeuver
-        )
-        prop2: "MissionControlSequencePropagate" = clr.CastAs(
-            targSeq.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate2", "-"), MissionControlSequencePropagate
+        man2: "MCSManeuver" = clr.CastAs(targSeq.segments.insert(SegmentType.MANEUVER, "Maneuver2", "-"), MCSManeuver)
+        prop2: "MCSPropagate" = clr.CastAs(
+            targSeq.segments.insert(SegmentType.PROPAGATE, "Propagate2", "-"), MCSPropagate
         )
 
-        (IMissionControlSequenceSegment(man1)).results.add("Maneuver/Inertial_DeltaV_Magnitude")
+        (IMCSSegment(man1)).results.add("Maneuver/Inertial_DeltaV_Magnitude")
 
         prop1.stopping_conditions.add("Periapsis")
         prop1.stopping_conditions.remove("Duration")
         prop1.propagator_name = "Earth Point Mass"
 
-        (IMissionControlSequenceSegment(man2)).results.add("Maneuver/Inertial_DeltaV_Magnitude")
+        (IMCSSegment(man2)).results.add("Maneuver/Inertial_DeltaV_Magnitude")
 
         prop2.stopping_conditions.add("Apoapsis")
         prop2.stopping_conditions.remove("Duration")
-        (IMissionControlSequenceSegment(prop2)).results.add("Spherical Elems/R_Mag")
+        (IMCSSegment(prop2)).results.add("Spherical Elems/R_Mag")
 
         diffCorr2b: "ProfileDifferentialCorrector" = clr.CastAs(
             targSeq.profiles.add("Differential Corrector"), ProfileDifferentialCorrector
@@ -4404,10 +4278,10 @@ longitude = 121;"""
         deltav22b.attribute = "ImpulsiveMnvr.Spherical.Magnitude"
         deltav22b.unit = "km/sec"
         deltaV2b: "ScriptingParameter" = scriptingTool2b.parameters.add("DeltaV")
-        deltaV2b.type = SCRIPTING_PARAMETER_TYPE.QUANTITY
+        deltaV2b.type = ScriptingParameterType.QUANTITY
         deltaV2b.dimension = "Rate"
         deltaV2b.unit = "km/sec"
-        deltaV2b.param_value = 0
+        deltaV2b.parameter_value = 0
         scriptingTool2b.script_text((("DeltaV1 = DeltaV;" + Environment.NewLine) + "DeltaV2 = DeltaV;"))
         control2b: "DifferentialCorrectorControl" = diffCorr2b.control_parameters.get_control_by_paths(
             "Scripting_Tool", "DeltaV"
@@ -4435,10 +4309,10 @@ longitude = 121;"""
         deltav2ff.attribute = "ImpulsiveMnvr.Spherical.Magnitude"
         deltav2ff.unit = "km/sec"
         deltaVff: "ScriptingParameter" = scriptingToolff.parameters.add("DeltaV")
-        deltaVff.type = SCRIPTING_PARAMETER_TYPE.QUANTITY
+        deltaVff.type = ScriptingParameterType.QUANTITY
         deltaVff.dimension = "Rate"
         deltaVff.unit = "km/sec"
-        deltaVff.param_value = 0
+        deltaVff.parameter_value = 0
         deltaVff.inherit_value = True
         scriptingToolff.script_text((("DeltaV1 = DeltaV;" + Environment.NewLine) + "DeltaV2 = DeltaV;"))
         controlff: "DifferentialCorrectorControl" = diffCorrff.control_parameters.get_control_by_paths(
@@ -4459,23 +4333,23 @@ longitude = 121;"""
     # region BUG108892
     def test_BUG108892(self):
         sat: "Satellite" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "BUG108892"), Satellite
+            TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "BUG108892"), Satellite
         )
-        sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
-        driver: "DriverMissionControlSequence" = clr.CastAs(sat.propagator, DriverMissionControlSequence)
-        maneuver: "MissionControlSequenceManeuver" = clr.CastAs(
-            driver.main_sequence.insert(SEGMENT_TYPE.MANEUVER, "Maneuver1", "-"), MissionControlSequenceManeuver
+        sat.set_propagator_type(PropagatorType.ASTROGATOR)
+        driver: "MCSDriver" = clr.CastAs(sat.propagator, MCSDriver)
+        maneuver: "MCSManeuver" = clr.CastAs(
+            driver.main_sequence.insert(SegmentType.MANEUVER, "Maneuver1", "-"), MCSManeuver
         )
-        maneuver.set_maneuver_type(MANEUVER_TYPE.FINITE)
-        driver.run_mission_control_sequence()
+        maneuver.set_maneuver_type(ManeuverType.FINITE)
+        driver.run_mcs()
         # Save the satellite here, and notice the "Begin OverrideTrajectory" section in the file.
 
-        sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
-        twoBody: "VehiclePropagatorTwoBody" = clr.CastAs(sat.propagator, VehiclePropagatorTwoBody)
+        sat.set_propagator_type(PropagatorType.TWO_BODY)
+        twoBody: "PropagatorTwoBody" = clr.CastAs(sat.propagator, PropagatorTwoBody)
         twoBody.propagate()
         # Save the satellite here, and notice that the "Begin OverrideTrajectory" section is NOT in the file.
 
-        TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "BUG108892")
+        TestBase.Application.current_scenario.children.unload(STKObjectType.SATELLITE, "BUG108892")
 
     # endregion
 
@@ -4490,19 +4364,17 @@ longitude = 121;"""
         deuler0: typing.Any = 10
         deuler1: typing.Any = 20
         deuler2: typing.Any = 30
-        driver: "DriverMissionControlSequence" = clr.CastAs(depl_sat.propagator, DriverMissionControlSequence)
-        maneuver: "MissionControlSequenceManeuver" = clr.CastAs(
-            driver.main_sequence["Maneuver"], MissionControlSequenceManeuver
-        )
+        driver: "MCSDriver" = clr.CastAs(depl_sat.propagator, MCSDriver)
+        maneuver: "MCSManeuver" = clr.CastAs(driver.main_sequence["Maneuver"], MCSManeuver)
         impulse: "ManeuverImpulsive" = ManeuverImpulsive(maneuver.maneuver)
         att: "AttitudeControlImpulsiveAttitude" = AttitudeControlImpulsiveAttitude(impulse.attitude_control)
-        att.orientation.assign_euler_angles(EULER_ORIENTATION_SEQUENCE.SEQUENCE_312, deuler0, deuler1, deuler2)
+        att.orientation.assign_euler_angles(EulerOrientationSequenceType.SEQUENCE_312, deuler0, deuler1, deuler2)
 
         a: typing.Any = None
         b: typing.Any = None
         c: typing.Any = None
 
-        arEulerAngles = att.orientation.query_euler_angles_array(EULER_ORIENTATION_SEQUENCE.SEQUENCE_312)
+        arEulerAngles = att.orientation.query_euler_angles_array(EulerOrientationSequenceType.SEQUENCE_312)
         a = arEulerAngles[0]
         b = arEulerAngles[1]
         c = arEulerAngles[2]
@@ -4514,14 +4386,12 @@ longitude = 121;"""
         euler0: typing.Any = -90
         euler1: typing.Any = 0
         euler2: typing.Any = 120
-        driver2: "DriverMissionControlSequence" = clr.CastAs(ref_sat.propagator, DriverMissionControlSequence)
-        settle: "MissionControlSequenceManeuver" = clr.CastAs(
-            driver2.main_sequence["Settle"], MissionControlSequenceManeuver
-        )
+        driver2: "MCSDriver" = clr.CastAs(ref_sat.propagator, MCSDriver)
+        settle: "MCSManeuver" = clr.CastAs(driver2.main_sequence["Settle"], MCSManeuver)
         impulse2: "ManeuverImpulsive" = ManeuverImpulsive(maneuver.maneuver)
         att2: "AttitudeControlImpulsiveAttitude" = AttitudeControlImpulsiveAttitude(impulse2.attitude_control)
-        att2.orientation.assign_euler_angles(EULER_ORIENTATION_SEQUENCE.SEQUENCE_312, euler0, euler1, euler2)
-        arEulerAngles = att.orientation.query_euler_angles_array(EULER_ORIENTATION_SEQUENCE.SEQUENCE_312)
+        att2.orientation.assign_euler_angles(EulerOrientationSequenceType.SEQUENCE_312, euler0, euler1, euler2)
+        arEulerAngles = att.orientation.query_euler_angles_array(EulerOrientationSequenceType.SEQUENCE_312)
         a = arEulerAngles[0]
         b = arEulerAngles[1]
         c = arEulerAngles[2]
@@ -4536,10 +4406,10 @@ longitude = 121;"""
     def test_CalculationGraphs(self):
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - Calculation Graphs START")
         sat: "Satellite" = Satellite(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "CalculationGraphs")
+            TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "CalculationGraphs")
         )
-        sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
-        driver: "DriverMissionControlSequence" = DriverMissionControlSequence(sat.propagator)
+        sat.set_propagator_type(PropagatorType.ASTROGATOR)
+        driver: "MCSDriver" = MCSDriver(sat.propagator)
 
         graphs: "CalculationGraphCollection" = driver.calculation_graphs
         graphs.add("Classical Orbit Elements")
@@ -4580,17 +4450,17 @@ longitude = 121;"""
 
     def test_DPExecElements(self):
         satellite: "Satellite" = Satellite(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "TestSat")
+            TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "TestSat")
         )
-        satellite.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
-        driver: "DriverMissionControlSequence" = DriverMissionControlSequence(satellite.propagator)
+        satellite.set_propagator_type(PropagatorType.ASTROGATOR)
+        driver: "MCSDriver" = MCSDriver(satellite.propagator)
 
-        driver.main_sequence.insert(SEGMENT_TYPE.MANEUVER, "Man1", "-")
-        driver.main_sequence.insert(SEGMENT_TYPE.PROPAGATE, "Prop2", "-")
-        driver.main_sequence.insert(SEGMENT_TYPE.MANEUVER, "Man2", "-")
-        driver.main_sequence.insert(SEGMENT_TYPE.PROPAGATE, "Prop3", "-")
+        driver.main_sequence.insert(SegmentType.MANEUVER, "Man1", "-")
+        driver.main_sequence.insert(SegmentType.PROPAGATE, "Prop2", "-")
+        driver.main_sequence.insert(SegmentType.MANEUVER, "Man2", "-")
+        driver.main_sequence.insert(SegmentType.PROPAGATE, "Prop3", "-")
 
-        driver.run_mission_control_sequence()
+        driver.run_mcs()
 
         timevar: "DataProviderTimeVarying" = (
             IStkObject(satellite)
@@ -4602,7 +4472,7 @@ longitude = 121;"""
         )
         elements = ["Maneuver Number", "Start Time"]
 
-        result: "DataProviderResult" = interval.exec_elements(
+        result: "DataProviderResult" = interval.execute_elements(
             (Scenario(TestBase.Application.current_scenario)).start_time,
             (Scenario(TestBase.Application.current_scenario)).stop_time,
             elements,
@@ -4616,7 +4486,7 @@ longitude = 121;"""
         )
         elements2 = ["Segment Name", "Segment Type", "Start Time"]
 
-        result2: "DataProviderResult" = interval2.exec_elements(
+        result2: "DataProviderResult" = interval2.execute_elements(
             (Scenario(TestBase.Application.current_scenario)).start_time,
             (Scenario(TestBase.Application.current_scenario)).stop_time,
             elements2,
@@ -4631,7 +4501,7 @@ longitude = 121;"""
 
         elements3 = []
 
-        result3: "DataProviderResult" = interval3.exec_elements(
+        result3: "DataProviderResult" = interval3.execute_elements(
             (Scenario(TestBase.Application.current_scenario)).start_time,
             (Scenario(TestBase.Application.current_scenario)).stop_time,
             elements3,
@@ -4645,13 +4515,13 @@ longitude = 121;"""
         )
         elements4 = ["Bogus"]
         with pytest.raises(Exception):
-            result4: "DataProviderResult" = interval4.exec_elements(
+            result4: "DataProviderResult" = interval4.execute_elements(
                 (Scenario(TestBase.Application.current_scenario)).start_time,
                 (Scenario(TestBase.Application.current_scenario)).stop_time,
                 elements4,
             )
 
-        TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "TestSat")
+        TestBase.Application.current_scenario.children.unload(STKObjectType.SATELLITE, "TestSat")
 
     # endregion
 
@@ -4660,22 +4530,20 @@ longitude = 121;"""
     def test_CompBrowsCutCopyPaste(self):
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - Calculation Graphs START")
         sat: "Satellite" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "CompBrowsCutCopyPaste"),
+            TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "CompBrowsCutCopyPaste"),
             Satellite,
         )
-        sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
-        driver: "DriverMissionControlSequence" = clr.CastAs(sat.propagator, DriverMissionControlSequence)
-        prop1: "MissionControlSequencePropagate" = clr.CastAs(
-            driver.main_sequence["Propagate"], MissionControlSequencePropagate
-        )
+        sat.set_propagator_type(PropagatorType.ASTROGATOR)
+        driver: "MCSDriver" = clr.CastAs(sat.propagator, MCSDriver)
+        prop1: "MCSPropagate" = clr.CastAs(driver.main_sequence["Propagate"], MCSPropagate)
 
         # StoppingConditionElement stopCondElemXXX = prop1.StoppingConditions.Add("UserSelect");
         # StoppingCondition stopCondXXX = (StoppingCondition)stopCondElemXXX.Properties;
         # stopCondXXX.PasteUserCalcObjectFromClipboard();
 
         # AsTriggerCondition cond1;
-        prop2: "MissionControlSequencePropagate" = clr.CastAs(
-            driver.main_sequence.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"), MissionControlSequencePropagate
+        prop2: "MCSPropagate" = clr.CastAs(
+            driver.main_sequence.insert(SegmentType.PROPAGATE, "Propagate", "-"), MCSPropagate
         )
 
         # StoppingConditionCollection test
@@ -4726,7 +4594,7 @@ longitude = 121;"""
         apo: "StoppingCondition" = clr.CastAs(apoElem.properties, StoppingCondition)
 
         cond1: "AsTriggerCondition" = apo.constraints.add("UserDefined")
-        cond1.calc_object_name = "Cartesian Elems/X"
+        cond1.calculation_object_name = "Cartesian Elems/X"
         Assert.assertEqual(1, apo.constraints.count)
 
         with pytest.raises(Exception):
@@ -4735,7 +4603,7 @@ longitude = 121;"""
         # test copy within stopping condition
         cond2: "AsTriggerCondition" = apo.constraints.insert_copy(cond1)
         Assert.assertEqual(2, apo.constraints.count)
-        Assert.assertEqual("X", apo.constraints[1].calc_object.name)
+        Assert.assertEqual("X", apo.constraints[1].calculation_object.name)
 
         # test copy to another stopping condition
         apoElem2a: "StoppingConditionElement" = prop2.stopping_conditions["Apoapsis1"]
@@ -4743,7 +4611,7 @@ longitude = 121;"""
         apo2: "StoppingCondition" = clr.CastAs(comp, StoppingCondition)
         condAnotherStopCond: "AsTriggerCondition" = apo2.constraints.insert_copy(cond1)
         Assert.assertEqual(1, apo2.constraints.count)
-        Assert.assertEqual("X", apo2.constraints[0].calc_object_name)
+        Assert.assertEqual("X", apo2.constraints[0].calculation_object_name)
 
         apo.constraints.cut(1)
         apo2.constraints.paste()
@@ -4762,17 +4630,16 @@ longitude = 121;"""
 
         # ProfileCollection test
 
-        targSeq: "MissionControlSequenceTargetSequence" = clr.CastAs(
-            driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "Target_Sequence", "-"),
-            MissionControlSequenceTargetSequence,
+        targSeq: "MCSTargetSequence" = clr.CastAs(
+            driver.main_sequence.insert(SegmentType.TARGET_SEQUENCE, "Target_Sequence", "-"), MCSTargetSequence
         )
         diffCorr: "ProfileDifferentialCorrector" = clr.CastAs(
             targSeq.profiles["Differential_Corrector"], ProfileDifferentialCorrector
         )
-        (diffCorr).mode = PROFILE_MODE.NOT_ACTIVE
+        (diffCorr).mode = ProfileMode.NOT_ACTIVE
 
         with pytest.raises(Exception):
-            targSeq.profiles.paste(0, PROFILE_INSERT_DIRECTION.AFTER)
+            targSeq.profiles.paste(0, ProfileInsertDirection.AFTER)
         with pytest.raises(Exception):
             targSeq.profiles.cut("bogus")
         with pytest.raises(Exception):
@@ -4781,16 +4648,16 @@ longitude = 121;"""
         targSeq.profiles.cut("Differential Corrector")
         Assert.assertEqual(0, targSeq.profiles.count)
         with pytest.raises(Exception):
-            targSeq.profiles.paste("Differential Corrector", PROFILE_INSERT_DIRECTION.BEFORE)
+            targSeq.profiles.paste("Differential Corrector", ProfileInsertDirection.BEFORE)
         with pytest.raises(Exception):
-            targSeq.profiles.paste(5, PROFILE_INSERT_DIRECTION.BEFORE)
+            targSeq.profiles.paste(5, ProfileInsertDirection.BEFORE)
 
         targSeq.profiles.add("Scripting Tool")
-        targSeq.profiles.paste(0, PROFILE_INSERT_DIRECTION.AFTER)
+        targSeq.profiles.paste(0, ProfileInsertDirection.AFTER)
         Assert.assertEqual(2, targSeq.profiles.count)
         Assert.assertEqual("Differential Corrector", targSeq.profiles[1].name)
-        targSeq.profiles.paste(1, PROFILE_INSERT_DIRECTION.AFTER)
-        targSeq.profiles.paste(2, PROFILE_INSERT_DIRECTION.AFTER)
+        targSeq.profiles.paste(1, ProfileInsertDirection.AFTER)
+        targSeq.profiles.paste(2, ProfileInsertDirection.AFTER)
         Assert.assertEqual(4, targSeq.profiles.count)
         targSeq.profiles.remove_all()
 
@@ -4813,19 +4680,19 @@ longitude = 121;"""
         targSeq.profiles.add("Scripting Tool")
         targSeq.profiles.cut(0)
 
-        targSeq.profiles.paste("Scripting Tool", PROFILE_INSERT_DIRECTION.AFTER)
+        targSeq.profiles.paste("Scripting Tool", ProfileInsertDirection.AFTER)
         Assert.assertEqual("Differential Corrector", targSeq.profiles[1].name)
         targSeq.profiles.remove(1)
 
-        targSeq.profiles.paste("Scripting Tool", PROFILE_INSERT_DIRECTION.BEFORE)
+        targSeq.profiles.paste("Scripting Tool", ProfileInsertDirection.BEFORE)
         Assert.assertEqual("Differential Corrector", targSeq.profiles[0].name)
         targSeq.profiles.remove(0)
 
-        targSeq.profiles.paste(0, PROFILE_INSERT_DIRECTION.AFTER)
+        targSeq.profiles.paste(0, ProfileInsertDirection.AFTER)
         Assert.assertEqual("Differential Corrector", targSeq.profiles[1].name)
         targSeq.profiles.remove(1)
 
-        targSeq.profiles.paste(0, PROFILE_INSERT_DIRECTION.BEFORE)
+        targSeq.profiles.paste(0, ProfileInsertDirection.BEFORE)
         Assert.assertEqual("Differential Corrector", targSeq.profiles[0].name)
         targSeq.profiles.remove(0)
 
@@ -4833,7 +4700,7 @@ longitude = 121;"""
 
         # Add2 before 0th guy
         dc: "ProfileDifferentialCorrector" = clr.CastAs(
-            targSeq.profiles.add2("Differential Corrector", 0, PROFILE_INSERT_DIRECTION.BEFORE),
+            targSeq.profiles.add2("Differential Corrector", 0, ProfileInsertDirection.BEFORE),
             ProfileDifferentialCorrector,
         )
         Assert.assertEqual(1, targSeq.profiles.count)
@@ -4841,14 +4708,14 @@ longitude = 121;"""
 
         # Add2 after 0th guy
         dc2: "ProfileDifferentialCorrector" = clr.CastAs(
-            targSeq.profiles.add2("Differential Corrector", 0, PROFILE_INSERT_DIRECTION.AFTER),
+            targSeq.profiles.add2("Differential Corrector", 0, ProfileInsertDirection.AFTER),
             ProfileDifferentialCorrector,
         )
         Assert.assertEqual(1, targSeq.profiles.count)
 
         # Add2 before 1st guy, should be new first profile
         dc3: "ProfileDifferentialCorrector" = clr.CastAs(
-            targSeq.profiles.add2("Differential Corrector", 0, PROFILE_INSERT_DIRECTION.BEFORE),
+            targSeq.profiles.add2("Differential Corrector", 0, ProfileInsertDirection.BEFORE),
             ProfileDifferentialCorrector,
         )
         dc3.name = "NewFirstProfile"
@@ -4856,7 +4723,7 @@ longitude = 121;"""
 
         # Add2 after 1st guy, should be second profile
         dc4: "ProfileDifferentialCorrector" = clr.CastAs(
-            targSeq.profiles.add2("Differential Corrector", 0, PROFILE_INSERT_DIRECTION.AFTER),
+            targSeq.profiles.add2("Differential Corrector", 0, ProfileInsertDirection.AFTER),
             ProfileDifferentialCorrector,
         )
         dc4.name = "NewSecondProfile"
@@ -4864,7 +4731,7 @@ longitude = 121;"""
 
         # Add2 after second guy, should be third profile
         dc5: "ProfileDifferentialCorrector" = clr.CastAs(
-            targSeq.profiles.add2("Differential Corrector", 1, PROFILE_INSERT_DIRECTION.AFTER),
+            targSeq.profiles.add2("Differential Corrector", 1, ProfileInsertDirection.AFTER),
             ProfileDifferentialCorrector,
         )
         dc5.name = "NewThirdProfile"
@@ -4873,16 +4740,16 @@ longitude = 121;"""
 
         # what happens if I Add2 after a nonexistent index
         with pytest.raises(Exception):
-            dc6: "IProfile" = targSeq.profiles.add2("Differential Corrector", 5, PROFILE_INSERT_DIRECTION.AFTER)
+            dc6: "IProfile" = targSeq.profiles.add2("Differential Corrector", 5, ProfileInsertDirection.AFTER)
 
         # what happens if I Add2 after the last index?
-        dc7: "IProfile" = targSeq.profiles.add2("Differential Corrector", 3, PROFILE_INSERT_DIRECTION.AFTER)
+        dc7: "IProfile" = targSeq.profiles.add2("Differential Corrector", 3, ProfileInsertDirection.AFTER)
         dc7.name = "LastProfile"
         Assert.assertEqual("LastProfile", targSeq.profiles[4].name)
         Assert.assertEqual(5, targSeq.profiles.count)
 
         # Add2 before last index?
-        dc8: "IProfile" = targSeq.profiles.add2("Differential Corrector", 4, PROFILE_INSERT_DIRECTION.BEFORE)
+        dc8: "IProfile" = targSeq.profiles.add2("Differential Corrector", 4, ProfileInsertDirection.BEFORE)
         dc8.name = "SecondToLastProfile"
         Assert.assertEqual("SecondToLastProfile", targSeq.profiles[4].name)
         Assert.assertEqual(6, targSeq.profiles.count)
@@ -4893,36 +4760,36 @@ longitude = 121;"""
         profile0: "IProfile" = targSeq.profiles["Scripting Tool"]
         profile1: "IProfile" = targSeq.profiles["Differential Corrector"]
 
-        targSeq.profiles.insert_copy(profile0, 0, PROFILE_INSERT_DIRECTION.BEFORE)
+        targSeq.profiles.insert_copy(profile0, 0, ProfileInsertDirection.BEFORE)
         Assert.assertEqual(3, targSeq.profiles.count)
         Assert.assertEqual(targSeq.profiles[0].name, "Scripting Tool1")
 
-        targSeq.profiles.insert_copy(profile0, 0, PROFILE_INSERT_DIRECTION.AFTER)
+        targSeq.profiles.insert_copy(profile0, 0, ProfileInsertDirection.AFTER)
         Assert.assertEqual(4, targSeq.profiles.count)
         Assert.assertEqual(targSeq.profiles[1].name, "Scripting Tool2")
 
-        targSeq.profiles.insert_copy(profile1, 3, PROFILE_INSERT_DIRECTION.BEFORE)
+        targSeq.profiles.insert_copy(profile1, 3, ProfileInsertDirection.BEFORE)
         Assert.assertEqual(5, targSeq.profiles.count)
         Assert.assertEqual(targSeq.profiles[3].name, "Differential Corrector1")
 
-        targSeq.profiles.insert_copy(profile1, 3, PROFILE_INSERT_DIRECTION.AFTER)
+        targSeq.profiles.insert_copy(profile1, 3, ProfileInsertDirection.AFTER)
         Assert.assertEqual(6, targSeq.profiles.count)
         Assert.assertEqual(targSeq.profiles[4].name, "Differential Corrector2")
 
-        targSeq.profiles.insert_copy(profile0, 6, PROFILE_INSERT_DIRECTION.AFTER)
+        targSeq.profiles.insert_copy(profile0, 6, ProfileInsertDirection.AFTER)
         Assert.assertEqual(7, targSeq.profiles.count)
         Assert.assertEqual(targSeq.profiles[6].name, "Scripting Tool3")
 
         with pytest.raises(Exception):
-            targSeq.profiles.insert_copy(profile0, "bogus", PROFILE_INSERT_DIRECTION.AFTER)
+            targSeq.profiles.insert_copy(profile0, "bogus", ProfileInsertDirection.AFTER)
         with pytest.raises(Exception):
-            targSeq.profiles.insert_copy(profile0, 8, PROFILE_INSERT_DIRECTION.AFTER)
+            targSeq.profiles.insert_copy(profile0, 8, ProfileInsertDirection.AFTER)
 
         # ThrusterSetCollection test
 
         astComps: "ComponentInfoCollection" = (
             Scenario(TestBase.Application.current_scenario)
-        ).component_directory.get_components(COMPONENT.ASTROGATOR)
+        ).component_directory.get_components(Component.ASTROGATOR)
         thrusterSets: "ComponentInfoCollection" = astComps.get_folder("Thruster Sets")
         newThrusterSet: "ThrusterSet" = clr.CastAs(
             (ICloneable(thrusterSets["Thruster Set"])).clone_object(), ThrusterSet
@@ -4971,7 +4838,7 @@ longitude = 121;"""
 
         astComps: "ComponentInfoCollection" = (
             Scenario(TestBase.Application.current_scenario)
-        ).component_directory.get_components(COMPONENT.ASTROGATOR)
+        ).component_directory.get_components(Component.ASTROGATOR)
         propagators: "ComponentInfoCollection" = astComps.get_folder("Propagators")
         newPropagator: "NumericalPropagatorWrapper" = clr.CastAs(
             (ICloneable(propagators["Earth J2"])).clone_object(), NumericalPropagatorWrapper
@@ -5030,10 +4897,10 @@ longitude = 121;"""
         with pytest.raises(Exception):
             propFuncColl2.insert_copy(None)
 
-        # CalcObjectCollection test
+        # CalculationObjectCollection test
 
-        initState: "IMissionControlSequenceSegment" = driver.main_sequence["Initial State"]
-        calcObjColl: "CalcObjectCollection" = initState.results
+        initState: "IMCSSegment" = driver.main_sequence["Initial State"]
+        calcObjColl: "CalculationObjectCollection" = initState.results
 
         with pytest.raises(Exception):
             calcObjColl.paste()
@@ -5052,7 +4919,7 @@ longitude = 121;"""
         pasted2: "StateCalcGeodeticElem" = clr.CastAs(calcObjColl.paste(), StateCalcGeodeticElem)
         Assert.assertEqual("Mars", pasted2.central_body_name)
 
-        prop: "IMissionControlSequenceSegment" = driver.main_sequence["Propagate"]
+        prop: "IMCSSegment" = driver.main_sequence["Propagate"]
         pasted = clr.CastAs(prop.results.paste(), StateCalcGeodeticElem)
         Assert.assertEqual("Mars", pasted.central_body_name)
 
@@ -5067,11 +4934,10 @@ longitude = 121;"""
 
         # TargeterGraphCollection test
 
-        targSeq: "MissionControlSequenceTargetSequence" = clr.CastAs(
-            driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "Target_Sequence2", "-"),
-            MissionControlSequenceTargetSequence,
+        targSeq: "MCSTargetSequence" = clr.CastAs(
+            driver.main_sequence.insert(SegmentType.TARGET_SEQUENCE, "Target_Sequence2", "-"), MCSTargetSequence
         )
-        dc8: "IProfile" = targSeq.profiles.add2("Differential Corrector", 0, PROFILE_INSERT_DIRECTION.BEFORE)
+        dc8: "IProfile" = targSeq.profiles.add2("Differential Corrector", 0, ProfileInsertDirection.BEFORE)
         diffCorr: "ProfileDifferentialCorrector" = ProfileDifferentialCorrector(dc8)
         targGraphColl: "TargeterGraphCollection" = diffCorr.targeter_graphs
 
@@ -5121,12 +4987,11 @@ longitude = 121;"""
 
         # ScriptingSegmentCollection test
 
-        targSeq: "MissionControlSequenceTargetSequence" = clr.CastAs(
-            driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "Target_Sequence3", "-"),
-            MissionControlSequenceTargetSequence,
+        targSeq: "MCSTargetSequence" = clr.CastAs(
+            driver.main_sequence.insert(SegmentType.TARGET_SEQUENCE, "Target_Sequence3", "-"), MCSTargetSequence
         )
         diffCorr: "ProfileDifferentialCorrector" = clr.CastAs(
-            targSeq.profiles.add2("Differential Corrector", 0, PROFILE_INSERT_DIRECTION.BEFORE),
+            targSeq.profiles.add2("Differential Corrector", 0, ProfileInsertDirection.BEFORE),
             ProfileDifferentialCorrector,
         )
         scriptTool: "ProfileScriptingTool" = clr.CastAs(targSeq.profiles.add("Scripting Tool"), ProfileScriptingTool)
@@ -5178,18 +5043,17 @@ longitude = 121;"""
         newObjProp2: "ScriptingSegment" = diffCorr.scripting_tool.segment_properties.paste()
         Assert.assertEqual("ObjectProperty1", newObjProp2.component_name)
 
-        # ScriptingCalcObjectCollection test
+        # ScriptingCalculationObjectCollection test
 
-        targSeq: "MissionControlSequenceTargetSequence" = clr.CastAs(
-            driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "Target_Sequence4", "-"),
-            MissionControlSequenceTargetSequence,
+        targSeq: "MCSTargetSequence" = clr.CastAs(
+            driver.main_sequence.insert(SegmentType.TARGET_SEQUENCE, "Target_Sequence4", "-"), MCSTargetSequence
         )
         diffCorr: "ProfileDifferentialCorrector" = clr.CastAs(
-            targSeq.profiles.add2("Differential Corrector", 0, PROFILE_INSERT_DIRECTION.BEFORE),
+            targSeq.profiles.add2("Differential Corrector", 0, ProfileInsertDirection.BEFORE),
             ProfileDifferentialCorrector,
         )
         scriptTool: "ProfileScriptingTool" = clr.CastAs(targSeq.profiles.add("Scripting Tool"), ProfileScriptingTool)
-        coColl: "ScriptingCalcObjectCollection" = scriptTool.calc_objects
+        coColl: "ScriptingCalculationObjectCollection" = scriptTool.calculation_objects
 
         with pytest.raises(Exception):
             coColl.paste()
@@ -5198,39 +5062,38 @@ longitude = 121;"""
         with pytest.raises(Exception):
             coColl.cut(3)
 
-        calcObj: "ScriptingCalcObject" = coColl.add("NewCalcObj")
-        calcObj2: "ScriptingCalcObject" = coColl.insert_copy(calcObj)
+        calcObj: "ScriptingCalculationObject" = coColl.add("NewCalcObj")
+        calcObj2: "ScriptingCalculationObject" = coColl.insert_copy(calcObj)
         Assert.assertEqual("NewCalcObj1", calcObj2.component_name)
 
         with pytest.raises(Exception):
             coColl.insert_copy(None)
 
-        scriptTool.calc_objects.cut("NewCalcObj1")
+        scriptTool.calculation_objects.cut("NewCalcObj1")
         Assert.assertEqual(1, coColl.count)
 
         scriptTool.enable = False
         with pytest.raises(Exception):
-            scriptTool.calc_objects.paste()
+            scriptTool.calculation_objects.paste()
 
         scriptTool.enable = True
-        newCalcObj: "ScriptingCalcObject" = scriptTool.calc_objects.paste()
+        newCalcObj: "ScriptingCalculationObject" = scriptTool.calculation_objects.paste()
         Assert.assertEqual("NewCalcObj2", newCalcObj.component_name)
-        Assert.assertEqual(2, scriptTool.calc_objects.count)
+        Assert.assertEqual(2, scriptTool.calculation_objects.count)
 
-        scriptTool.calc_objects.cut(0)
+        scriptTool.calculation_objects.cut(0)
         Assert.assertEqual(1, coColl.count)
-        newCalcObj2: "ScriptingCalcObject" = scriptTool.calc_objects.paste()
+        newCalcObj2: "ScriptingCalculationObject" = scriptTool.calculation_objects.paste()
         Assert.assertEqual("NewCalcObj1", newCalcObj2.component_name)
-        Assert.assertEqual(2, scriptTool.calc_objects.count)
+        Assert.assertEqual(2, scriptTool.calculation_objects.count)
 
         # ScriptingParameterCollection test
 
-        targSeq: "MissionControlSequenceTargetSequence" = clr.CastAs(
-            driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "Target_Sequence5", "-"),
-            MissionControlSequenceTargetSequence,
+        targSeq: "MCSTargetSequence" = clr.CastAs(
+            driver.main_sequence.insert(SegmentType.TARGET_SEQUENCE, "Target_Sequence5", "-"), MCSTargetSequence
         )
         diffCorr: "ProfileDifferentialCorrector" = clr.CastAs(
-            targSeq.profiles.add2("Differential Corrector", 0, PROFILE_INSERT_DIRECTION.BEFORE),
+            targSeq.profiles.add2("Differential Corrector", 0, ProfileInsertDirection.BEFORE),
             ProfileDifferentialCorrector,
         )
         scriptTool: "ProfileScriptingTool" = clr.CastAs(targSeq.profiles.add("Scripting Tool"), ProfileScriptingTool)
@@ -5285,12 +5148,11 @@ longitude = 121;"""
 
         # ProfileScriptingTool - CopyToClipboard and PasteFromClipboard
 
-        targSeq: "MissionControlSequenceTargetSequence" = clr.CastAs(
-            driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "Target_Sequence6", "-"),
-            MissionControlSequenceTargetSequence,
+        targSeq: "MCSTargetSequence" = clr.CastAs(
+            driver.main_sequence.insert(SegmentType.TARGET_SEQUENCE, "Target_Sequence6", "-"), MCSTargetSequence
         )
         diffCorr: "ProfileDifferentialCorrector" = clr.CastAs(
-            targSeq.profiles.add2("Differential Corrector", 0, PROFILE_INSERT_DIRECTION.BEFORE),
+            targSeq.profiles.add2("Differential Corrector", 0, ProfileInsertDirection.BEFORE),
             ProfileDifferentialCorrector,
         )
         psTool: "ProfileScriptingTool" = clr.CastAs(targSeq.profiles.add("Scripting Tool"), ProfileScriptingTool)
@@ -5303,11 +5165,11 @@ longitude = 121;"""
         Assert.assertEqual("TestParameterWoot", psTool.parameters[0].name)
 
         with pytest.raises(Exception):
-            psTool.calc_objects.paste()
+            psTool.calculation_objects.paste()
         with pytest.raises(Exception):
             psTool.segment_properties.paste()
-        calcObj: "ScriptingCalcObject" = psTool.calc_objects.add("NewCalcObj")
-        psTool.calc_objects.cut(0)
+        calcObj: "ScriptingCalculationObject" = psTool.calculation_objects.add("NewCalcObj")
+        psTool.calculation_objects.cut(0)
         with pytest.raises(Exception):
             psTool.parameters.paste()
         with pytest.raises(Exception):
@@ -5317,12 +5179,11 @@ longitude = 121;"""
 
         # ScriptingTool - CopyToClipboard and PasteFromClipboard
 
-        targSeq: "MissionControlSequenceTargetSequence" = clr.CastAs(
-            driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "Target_Sequence7", "-"),
-            MissionControlSequenceTargetSequence,
+        targSeq: "MCSTargetSequence" = clr.CastAs(
+            driver.main_sequence.insert(SegmentType.TARGET_SEQUENCE, "Target_Sequence7", "-"), MCSTargetSequence
         )
         diffCorr: "ProfileDifferentialCorrector" = clr.CastAs(
-            targSeq.profiles.add2("Differential Corrector", 0, PROFILE_INSERT_DIRECTION.BEFORE),
+            targSeq.profiles.add2("Differential Corrector", 0, ProfileInsertDirection.BEFORE),
             ProfileDifferentialCorrector,
         )
 
@@ -5336,11 +5197,11 @@ longitude = 121;"""
         Assert.assertEqual("TestParameterWoot", scriptTool.parameters[0].name)
 
         with pytest.raises(Exception):
-            scriptTool.calc_objects.paste()
+            scriptTool.calculation_objects.paste()
         with pytest.raises(Exception):
             scriptTool.segment_properties.paste()
-        calcObj: "ScriptingCalcObject" = scriptTool.calc_objects.add("NewCalcObj")
-        scriptTool.calc_objects.cut(0)
+        calcObj: "ScriptingCalculationObject" = scriptTool.calculation_objects.add("NewCalcObj")
+        scriptTool.calculation_objects.cut(0)
         with pytest.raises(Exception):
             scriptTool.parameters.paste()
         with pytest.raises(Exception):
@@ -5353,83 +5214,84 @@ longitude = 121;"""
         apo: "StoppingCondition" = clr.CastAs(apoElem.properties, StoppingCondition)
         cond1: "AsTriggerCondition" = apo.constraints.add("UserDefined")
 
-        targSeq: "MissionControlSequenceTargetSequence" = clr.CastAs(
-            driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "Target_Sequence8", "-"),
-            MissionControlSequenceTargetSequence,
+        targSeq: "MCSTargetSequence" = clr.CastAs(
+            driver.main_sequence.insert(SegmentType.TARGET_SEQUENCE, "Target_Sequence8", "-"), MCSTargetSequence
         )
         diffCorr: "ProfileDifferentialCorrector" = clr.CastAs(
-            targSeq.profiles.add2("Differential Corrector", 0, PROFILE_INSERT_DIRECTION.BEFORE),
+            targSeq.profiles.add2("Differential Corrector", 0, ProfileInsertDirection.BEFORE),
             ProfileDifferentialCorrector,
         )
         scriptTool: "ScriptingTool" = diffCorr.scripting_tool
         scriptTool.enable = True
-        newCalcObj: "ScriptingCalcObject" = scriptTool.calc_objects.add("NewCalcObj")
+        newCalcObj: "ScriptingCalculationObject" = scriptTool.calculation_objects.add("NewCalcObj")
 
         stopCondElem: "StoppingConditionElement" = prop1.stopping_conditions.add("UserSelect")
         stopCond: "StoppingCondition" = StoppingCondition(stopCondElem.properties)
 
         with pytest.raises(Exception):
-            stopCond.paste_user_calc_object_from_clipboard()
+            stopCond.paste_user_calculation_object_from_clipboard()
         with pytest.raises(Exception):
-            cond1.paste_calc_object_from_clipboard()
+            cond1.paste_calculation_object_from_clipboard()
         with pytest.raises(Exception):
-            newCalcObj.paste_calc_object_from_clipboard()
+            newCalcObj.paste_calculation_object_from_clipboard()
 
         # user select stopping condition
-        stopCond.user_calc_object_name = "Cartesian Elems/X"
-        cartX: "IComponentInfo" = stopCond.user_calc_object
-        stopCond.user_calc_object_name = "Cartesian Elems/Y"
-        stopCond.user_calc_object = cartX
-        Assert.assertEqual("X", stopCond.user_calc_object.name)
+        stopCond.user_calculation_object_name = "Cartesian Elems/X"
+        cartX: "IComponentInfo" = stopCond.user_calculation_object
+        stopCond.user_calculation_object_name = "Cartesian Elems/Y"
+        stopCond.user_calculation_object = cartX
+        Assert.assertEqual("X", stopCond.user_calculation_object.name)
 
-        newCalcObj.calc_object = cartX
-        Assert.assertEqual("X", newCalcObj.calc_object.name)
-        cond1.calc_object_name = "Cartesian Elems/Y"
-        cond1.calc_object = cartX
-        Assert.assertEqual("X", cond1.calc_object.name)
+        newCalcObj.calculation_object = cartX
+        Assert.assertEqual("X", newCalcObj.calculation_object.name)
+        cond1.calculation_object_name = "Cartesian Elems/Y"
+        cond1.calculation_object = cartX
+        Assert.assertEqual("X", cond1.calculation_object.name)
 
         cartX.name = "NewName"
-        Assert.assertEqual("X", stopCond.user_calc_object.name)
-        Assert.assertEqual("X", newCalcObj.calc_object.name)
-        Assert.assertEqual("X", cond1.calc_object.name)
+        Assert.assertEqual("X", stopCond.user_calculation_object.name)
+        Assert.assertEqual("X", newCalcObj.calculation_object.name)
+        Assert.assertEqual("X", cond1.calculation_object.name)
 
         # test that these things can be pasted on top of existing calc objects from the clipboard, including adding a copied
         # calc object to the results list.
 
-        stopCond.user_calc_object.name = "ClipboardInstance"
+        stopCond.user_calculation_object.name = "ClipboardInstance"
 
-        stopCond.copy_user_calc_object_to_clipboard()
-        stopCond.paste_user_calc_object_from_clipboard()
-        Assert.assertEqual("ClipboardInstance", stopCond.user_calc_object.name)
-        newCalcObj.paste_calc_object_from_clipboard()
-        Assert.assertEqual("ClipboardInstance", newCalcObj.calc_object.name)
-        cond1.paste_calc_object_from_clipboard()
-        Assert.assertEqual("ClipboardInstance", cond1.calc_object.name)
+        stopCond.copy_user_calculation_object_to_clipboard()
+        stopCond.paste_user_calculation_object_from_clipboard()
+        Assert.assertEqual("ClipboardInstance", stopCond.user_calculation_object.name)
+        newCalcObj.paste_calculation_object_from_clipboard()
+        Assert.assertEqual("ClipboardInstance", newCalcObj.calculation_object.name)
+        cond1.paste_calculation_object_from_clipboard()
+        Assert.assertEqual("ClipboardInstance", cond1.calculation_object.name)
 
-        newCalcObj.calc_object.name = "NewClipboardInstance"
-        newCalcObj.copy_calc_object_to_clipboard()
-        stopCond.paste_user_calc_object_from_clipboard()
-        Assert.assertEqual("NewClipboardInstance", stopCond.user_calc_object.name)
+        newCalcObj.calculation_object.name = "NewClipboardInstance"
+        newCalcObj.copy_calculation_object_to_clipboard()
+        stopCond.paste_user_calculation_object_from_clipboard()
+        Assert.assertEqual("NewClipboardInstance", stopCond.user_calculation_object.name)
 
-        cond1.calc_object.name = "ThirdClipboardInstance"
-        cond1.copy_calc_object_to_clipboard()
-        stopCond.paste_user_calc_object_from_clipboard()
-        Assert.assertEqual("ThirdClipboardInstance", stopCond.user_calc_object.name)
+        cond1.calculation_object.name = "ThirdClipboardInstance"
+        cond1.copy_calculation_object_to_clipboard()
+        stopCond.paste_user_calculation_object_from_clipboard()
+        Assert.assertEqual("ThirdClipboardInstance", stopCond.user_calculation_object.name)
 
         # paste a clipboard calc object as a result
-        fromClipboard: "IComponentInfo" = (IMissionControlSequenceSegment(prop1)).results.paste()
+        fromClipboard: "IComponentInfo" = (IMCSSegment(prop1)).results.paste()
         Assert.assertEqual("ThirdClipboardInstance", fromClipboard.name)
 
-        # AstrogatorCentralBody - Cut, Copy, Paste
+        # CentralBodyComponent - Cut, Copy, Paste
 
         # Gravity Model
         astComps: "ComponentInfoCollection" = (
             Scenario(TestBase.Application.current_scenario)
-        ).component_directory.get_components(COMPONENT.ASTROGATOR)
+        ).component_directory.get_components(Component.ASTROGATOR)
         cbs: "ComponentInfoCollection" = astComps.get_folder("Central Bodies")
-        cb: "AstrogatorCentralBody" = clr.CastAs((ICloneable(cbs["Charon"])).clone_object(), AstrogatorCentralBody)
-        model: "CentralBodyGravityModel" = cb.add_gravity_model(CENTRAL_BODY_GRAVITY_MODEL.EARTH_SIMPLE, "NewGrav")
-        model.gravitational_param = 1337
+        cb: "CentralBodyComponent" = clr.CastAs((ICloneable(cbs["Charon"])).clone_object(), CentralBodyComponent)
+        model: "CentralBodyComponentGravityModel" = cb.add_gravity_model(
+            CentralBodyGravityModel.EARTH_SIMPLE, "NewGrav"
+        )
+        model.gravitational_parameter = 1337
 
         with pytest.raises(Exception):
             cb.paste_gravity_model()
@@ -5440,24 +5302,24 @@ longitude = 121;"""
 
         # cut
         cb.cut_gravity_model_by_name("NewGrav")
-        pastedGrav: "CentralBodyGravityModel" = cb.paste_gravity_model()
-        Assert.assertEqual(1337, pastedGrav.gravitational_param)
+        pastedGrav: "CentralBodyComponentGravityModel" = cb.paste_gravity_model()
+        Assert.assertEqual(1337, pastedGrav.gravitational_parameter)
 
         # copy
         cb.copy_gravity_model_by_name("NewGrav")
-        clipGravity: "CentralBodyGravityModel" = cb.paste_gravity_model()
-        Assert.assertEqual(1337, clipGravity.gravitational_param)
+        clipGravity: "CentralBodyComponentGravityModel" = cb.paste_gravity_model()
+        Assert.assertEqual(1337, clipGravity.gravitational_parameter)
 
         # paste same name...
         pastedGrav = cb.paste_gravity_model()
 
         # insert copy
-        copiedGrav: "CentralBodyGravityModel" = cb.add_copy_of_gravity_model(pastedGrav)
-        Assert.assertEqual(1337, copiedGrav.gravitational_param)
+        copiedGrav: "CentralBodyComponentGravityModel" = cb.add_copy_of_gravity_model(pastedGrav)
+        Assert.assertEqual(1337, copiedGrav.gravitational_parameter)
 
         # make sure there's a new instance
-        copiedGrav.gravitational_param = 1336
-        Assert.assertEqual(1337, pastedGrav.gravitational_param)
+        copiedGrav.gravitational_parameter = 1336
+        Assert.assertEqual(1337, pastedGrav.gravitational_parameter)
 
         # Shape
         with pytest.raises(Exception):
@@ -5467,25 +5329,29 @@ longitude = 121;"""
         with pytest.raises(Exception):
             cb.add_copy_of_shape(None)
 
-        shape: "CentralBodyShapeOblateSpheroid" = clr.CastAs(
-            cb.add_shape(CENTRAL_BODY_SHAPE.OBLATE_SPHEROID, "NewShape"), CentralBodyShapeOblateSpheroid
+        shape: "CentralBodyComponentShapeOblateSpheroid" = clr.CastAs(
+            cb.add_shape(CentralBodyShape.OBLATE_SPHEROID, "NewShape"), CentralBodyComponentShapeOblateSpheroid
         )
         shape.min_radius = 1337
         cb.cut_shape_by_name("NewShape")
-        pastedShape: "CentralBodyShapeOblateSpheroid" = clr.CastAs(cb.paste_shape(), CentralBodyShapeOblateSpheroid)
+        pastedShape: "CentralBodyComponentShapeOblateSpheroid" = clr.CastAs(
+            cb.paste_shape(), CentralBodyComponentShapeOblateSpheroid
+        )
         Assert.assertEqual(1337, pastedShape.min_radius)
 
         # copy
         cb.copy_shape_by_name("NewShape")
-        clipShape: "CentralBodyShapeOblateSpheroid" = clr.CastAs(cb.paste_shape(), CentralBodyShapeOblateSpheroid)
+        clipShape: "CentralBodyComponentShapeOblateSpheroid" = clr.CastAs(
+            cb.paste_shape(), CentralBodyComponentShapeOblateSpheroid
+        )
         Assert.assertEqual(1337, clipShape.min_radius)
 
         # paste same name...
-        pastedShape = clr.CastAs(cb.paste_shape(), CentralBodyShapeOblateSpheroid)
+        pastedShape = clr.CastAs(cb.paste_shape(), CentralBodyComponentShapeOblateSpheroid)
 
         # insert copy
-        copiedShape: "CentralBodyShapeOblateSpheroid" = clr.CastAs(
-            cb.add_copy_of_shape(pastedShape), CentralBodyShapeOblateSpheroid
+        copiedShape: "CentralBodyComponentShapeOblateSpheroid" = clr.CastAs(
+            cb.add_copy_of_shape(pastedShape), CentralBodyComponentShapeOblateSpheroid
         )
         Assert.assertEqual(1337, copiedShape.min_radius)
 
@@ -5501,24 +5367,28 @@ longitude = 121;"""
         with pytest.raises(Exception):
             cb.add_copy_of_attitude(None)
 
-        newAtt: "CentralBodyAttitudeIAU1994" = clr.CastAs(
-            cb.add_attitude(CENTRAL_BODY_ATTITUDE.IAU1994, "NewAttitude"), CentralBodyAttitudeIAU1994
+        newAtt: "CentralBodyComponentAttitudeIAU1994" = clr.CastAs(
+            cb.add_attitude(CentralBodyAttitude.IAU1994, "NewAttitude"), CentralBodyComponentAttitudeIAU1994
         )
         newAtt.rotation_rate = 1
         cb.cut_attitude_by_name("NewAttitude")
-        pastedAttitude: "CentralBodyAttitudeIAU1994" = clr.CastAs(cb.paste_attitude(), CentralBodyAttitudeIAU1994)
+        pastedAttitude: "CentralBodyComponentAttitudeIAU1994" = clr.CastAs(
+            cb.paste_attitude(), CentralBodyComponentAttitudeIAU1994
+        )
         Assert.assertEqual(1, pastedAttitude.rotation_rate)
 
         # copy
         cb.copy_attitude_by_name("NewAttitude")
-        clipAtt: "CentralBodyAttitudeIAU1994" = clr.CastAs(cb.paste_attitude(), CentralBodyAttitudeIAU1994)
+        clipAtt: "CentralBodyComponentAttitudeIAU1994" = clr.CastAs(
+            cb.paste_attitude(), CentralBodyComponentAttitudeIAU1994
+        )
         Assert.assertEqual(1, clipAtt.rotation_rate)
 
         # paste same name...
-        pastedAttitude = clr.CastAs(cb.paste_attitude(), CentralBodyAttitudeIAU1994)
+        pastedAttitude = clr.CastAs(cb.paste_attitude(), CentralBodyComponentAttitudeIAU1994)
 
-        copiedAtt: "CentralBodyAttitudeIAU1994" = clr.CastAs(
-            cb.add_copy_of_attitude(pastedAttitude), CentralBodyAttitudeIAU1994
+        copiedAtt: "CentralBodyComponentAttitudeIAU1994" = clr.CastAs(
+            cb.add_copy_of_attitude(pastedAttitude), CentralBodyComponentAttitudeIAU1994
         )
         Assert.assertEqual(1, copiedAtt.rotation_rate)
 
@@ -5534,28 +5404,29 @@ longitude = 121;"""
         with pytest.raises(Exception):
             cb.add_copy_of_ephemeris(None)
 
-        newEphem: "CentralBodyEphemerisAnalyticOrbit" = clr.CastAs(
-            cb.add_ephemeris(CENTRAL_BODY_EPHEMERIS.ANALYTIC_ORBIT, "NewEphem"), CentralBodyEphemerisAnalyticOrbit
+        newEphem: "CentralBodyComponentEphemerisAnalyticOrbit" = clr.CastAs(
+            cb.add_ephemeris(CentralBodyEphemeris.ANALYTIC_ORBIT, "NewEphem"),
+            CentralBodyComponentEphemerisAnalyticOrbit,
         )
         newEphem.inclination = 25
         cb.cut_ephemeris_by_name("NewEphem")
-        pastedEphem: "CentralBodyEphemerisAnalyticOrbit" = clr.CastAs(
-            cb.paste_ephemeris(), CentralBodyEphemerisAnalyticOrbit
+        pastedEphem: "CentralBodyComponentEphemerisAnalyticOrbit" = clr.CastAs(
+            cb.paste_ephemeris(), CentralBodyComponentEphemerisAnalyticOrbit
         )
         Assert.assertEqual(25, pastedEphem.inclination)
 
         # copy
         cb.copy_ephemeris_by_name("NewEphem")
-        clipEphem: "CentralBodyEphemerisAnalyticOrbit" = clr.CastAs(
-            cb.paste_ephemeris(), CentralBodyEphemerisAnalyticOrbit
+        clipEphem: "CentralBodyComponentEphemerisAnalyticOrbit" = clr.CastAs(
+            cb.paste_ephemeris(), CentralBodyComponentEphemerisAnalyticOrbit
         )
         Assert.assertEqual(25, clipEphem.inclination)
 
         # paste same name...
-        pastedEphem = clr.CastAs(cb.paste_ephemeris(), CentralBodyEphemerisAnalyticOrbit)
+        pastedEphem = clr.CastAs(cb.paste_ephemeris(), CentralBodyComponentEphemerisAnalyticOrbit)
 
-        copiedEphem: "CentralBodyEphemerisAnalyticOrbit" = clr.CastAs(
-            cb.add_copy_of_ephemeris(pastedEphem), CentralBodyEphemerisAnalyticOrbit
+        copiedEphem: "CentralBodyComponentEphemerisAnalyticOrbit" = clr.CastAs(
+            cb.add_copy_of_ephemeris(pastedEphem), CentralBodyComponentEphemerisAnalyticOrbit
         )
         Assert.assertEqual(25, copiedEphem.inclination)
 
@@ -5570,15 +5441,15 @@ longitude = 121;"""
     def test_TestComponentsInFolders(self):
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - ComponentsInFolders START")
         sat: "Satellite" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "ComponentsInFolders"),
+            TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "ComponentsInFolders"),
             Satellite,
         )
-        sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
-        driver: "DriverMissionControlSequence" = clr.CastAs(sat.propagator, DriverMissionControlSequence)
+        sat.set_propagator_type(PropagatorType.ASTROGATOR)
+        driver: "MCSDriver" = clr.CastAs(sat.propagator, MCSDriver)
 
         astComps: "ComponentInfoCollection" = (
             Scenario(TestBase.Application.current_scenario)
-        ).component_directory.get_components(COMPONENT.ASTROGATOR)
+        ).component_directory.get_components(Component.ASTROGATOR)
         propagators: "ComponentInfoCollection" = astComps.get_folder("Propagators")
         newPropagator: "NumericalPropagatorWrapper" = clr.CastAs(
             (ICloneable(propagators["Earth J2"])).clone_object(), NumericalPropagatorWrapper
@@ -5604,7 +5475,7 @@ longitude = 121;"""
             propFuncColl.add("Atmospheric Models/Nonexistent")
 
         # tests Calc Object Collection
-        propagate: "IMissionControlSequenceSegment" = driver.main_sequence["Propagate"]
+        propagate: "IMCSSegment" = driver.main_sequence["Propagate"]
         propagate.results.add("Keplerian Elems/Eccentricity")
         propagate.results.add("Inclination")
         propagate.results.add("Epoch")  # top level component
@@ -5618,28 +5489,28 @@ longitude = 121;"""
 
         # tests embeds
         userSel: "StoppingCondition" = StoppingCondition(
-            (MissionControlSequencePropagate(propagate)).stopping_conditions.add("UserSelect").properties
+            (MCSPropagate(propagate)).stopping_conditions.add("UserSelect").properties
         )
-        userSel.user_calc_object_name = "Keplerian Elems/Eccentricity"
-        Assert.assertEqual("Eccentricity", userSel.user_calc_object_name)
-        userSel.user_calc_object_name = "Inclination"
-        Assert.assertEqual("Inclination", userSel.user_calc_object_name)
+        userSel.user_calculation_object_name = "Keplerian Elems/Eccentricity"
+        Assert.assertEqual("Eccentricity", userSel.user_calculation_object_name)
+        userSel.user_calculation_object_name = "Inclination"
+        Assert.assertEqual("Inclination", userSel.user_calculation_object_name)
 
         # tests links (propagators)
-        (MissionControlSequencePropagate(propagate)).propagator_name = "Previous Versions/Earth HPOP Default v8-1-1"
-        Assert.assertEqual("Earth HPOP Default v8-1-1", (MissionControlSequencePropagate(propagate)).propagator_name)
-        (MissionControlSequencePropagate(propagate)).propagator_name = "Earth HPOP Default v8-1"
-        Assert.assertEqual("Earth HPOP Default v8-1", (MissionControlSequencePropagate(propagate)).propagator_name)
+        (MCSPropagate(propagate)).propagator_name = "Previous Versions/Earth HPOP Default v8-1-1"
+        Assert.assertEqual("Earth HPOP Default v8-1-1", (MCSPropagate(propagate)).propagator_name)
+        (MCSPropagate(propagate)).propagator_name = "Earth HPOP Default v8-1"
+        Assert.assertEqual("Earth HPOP Default v8-1", (MCSPropagate(propagate)).propagator_name)
 
         # backward comp.
-        (MissionControlSequencePropagate(propagate)).propagator_name = "Earth HPOP Default v8-1-1"
-        Assert.assertEqual("Earth HPOP Default v8-1-1", (MissionControlSequencePropagate(propagate)).propagator_name)
+        (MCSPropagate(propagate)).propagator_name = "Earth HPOP Default v8-1-1"
+        Assert.assertEqual("Earth HPOP Default v8-1-1", (MCSPropagate(propagate)).propagator_name)
         with pytest.raises(Exception):
-            (MissionControlSequencePropagate(propagate)).propagator_name = "Nonexistent"
+            (MCSPropagate(propagate)).propagator_name = "Nonexistent"
         with pytest.raises(Exception):
-            (MissionControlSequencePropagate(propagate)).propagator_name = "Nonexistent/Earth HPOP Default v11"
+            (MCSPropagate(propagate)).propagator_name = "Nonexistent/Earth HPOP Default v11"
         with pytest.raises(Exception):
-            (MissionControlSequencePropagate(propagate)).propagator_name = "Previous Versions/Nonexistent"
+            (MCSPropagate(propagate)).propagator_name = "Previous Versions/Nonexistent"
 
         # test segment collection
         driver.main_sequence.insert_by_name("Hohmann Transfer", "-")
@@ -5660,15 +5531,15 @@ longitude = 121;"""
     def test_SpacesInVGTPath(self):
         TestBase.logger.WriteLine("*** Astrogator - EarlyBound - SpacesInVGTPath START")
         sat: "Satellite" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "VGT"), Satellite
+            TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "VGT"), Satellite
         )
         satWithSpaces: "Satellite" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "VGT_Space"), Satellite
+            TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "VGT_Space"), Satellite
         )
 
-        sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
-        driver: "DriverMissionControlSequence" = clr.CastAs(sat.propagator, DriverMissionControlSequence)
-        propSeg: "IMissionControlSequenceSegment" = driver.main_sequence["Propagate"]
+        sat.set_propagator_type(PropagatorType.ASTROGATOR)
+        driver: "MCSDriver" = clr.CastAs(sat.propagator, MCSDriver)
+        propSeg: "IMCSSegment" = driver.main_sequence["Propagate"]
         vecX: "StateCalcVectorX" = StateCalcVectorX(propSeg.results.add("Vector/Vector X"))
         vecX.vector_name = "Satellite/VGT_Space Position"
         Assert.assertEqual("Satellite/VGT_Space Position", vecX.vector_name)
@@ -5697,7 +5568,7 @@ longitude = 121;"""
     @category("ExcludeOnLinux")
     def test_MarsGRAM(self):
         scenario: "Scenario" = clr.CastAs(TestBase.Application.current_scenario, Scenario)
-        compCollection: "ComponentInfoCollection" = scenario.component_directory.get_components(COMPONENT.ASTROGATOR)
+        compCollection: "ComponentInfoCollection" = scenario.component_directory.get_components(Component.ASTROGATOR)
         propObjs: "ComponentInfoCollection" = compCollection.get_folder("Propagators")
         epmProp: "ICloneable" = clr.CastAs(propObjs["Earth Point Mass"], ICloneable)
         epmProp.clone_object()
@@ -5729,13 +5600,11 @@ longitude = 121;"""
 
     def test_BUG78776(self):
         sat78776: "Satellite" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "Sat78776"), Satellite
+            TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "Sat78776"), Satellite
         )
-        sat78776.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_ASTROGATOR)
-        driver: "DriverMissionControlSequence" = clr.CastAs(sat78776.propagator, DriverMissionControlSequence)
-        prop: "MissionControlSequencePropagate" = clr.CastAs(
-            driver.main_sequence.insert(SEGMENT_TYPE.PROPAGATE, "Prop", "-"), MissionControlSequencePropagate
-        )
+        sat78776.set_propagator_type(PropagatorType.ASTROGATOR)
+        driver: "MCSDriver" = clr.CastAs(sat78776.propagator, MCSDriver)
+        prop: "MCSPropagate" = clr.CastAs(driver.main_sequence.insert(SegmentType.PROPAGATE, "Prop", "-"), MCSPropagate)
 
         scePeriapsis: "StoppingConditionElement" = prop.stopping_conditions.add("Periapsis")
         scePeriapsis.active = True
@@ -5753,6 +5622,6 @@ longitude = 121;"""
         sc.tolerance = 0.01
         Assert.assertEqual(0.01, sc.tolerance)
 
-        TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "Sat78776")
+        TestBase.Application.current_scenario.children.unload(STKObjectType.SATELLITE, "Sat78776")
 
     # endregion

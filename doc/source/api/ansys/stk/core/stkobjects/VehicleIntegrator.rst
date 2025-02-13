@@ -30,11 +30,11 @@ Overview
               - Get the time regularization parameters.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleIntegrator.interpolation`
               - Get the interpolation parameters.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleIntegrator.report_ephem_on_fixed_time_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleIntegrator.report_ephemeris_on_fixed_time_step`
               - Opt whether ephemeris is to be reported on a fixed time step.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleIntegrator.do_not_propagate_below_altitude`
               - Altitude below which to stop propagation. Uses Distance Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleIntegrator.allow_position_vel_cov_interpolation`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleIntegrator.allow_position_velocity_covariance_interpolation`
               - Get whether to allow pos-vel covariance interpolation.
 
 
@@ -52,7 +52,7 @@ Property detail
 
 .. py:property:: integration_model
     :canonical: ansys.stk.core.stkobjects.VehicleIntegrator.integration_model
-    :type: VEHICLE_INTEGRATION_MODEL
+    :type: VehicleIntegrationModel
 
     Integration method to be used in propagating the orbit.
 
@@ -64,19 +64,19 @@ Property detail
 
 .. py:property:: predictor_corrector_scheme
     :canonical: ansys.stk.core.stkobjects.VehicleIntegrator.predictor_corrector_scheme
-    :type: VEHICLE_PREDICTOR_CORRECTOR_SCHEME
+    :type: VehiclePredictorCorrectorScheme
 
     Predictor corrector scheme (valid for Gauss-Jackson method only): method for updating acceleration components after corrector has converged.
 
 .. py:property:: step_size_control
     :canonical: ansys.stk.core.stkobjects.VehicleIntegrator.step_size_control
-    :type: VehicleStepSizeControl
+    :type: IntegratorStepSizeControl
 
     Get the method of integration step size control.
 
 .. py:property:: time_regularization
     :canonical: ansys.stk.core.stkobjects.VehicleIntegrator.time_regularization
-    :type: VehicleTimeRegularization
+    :type: IntegratorTimeRegularization
 
     Get the time regularization parameters.
 
@@ -86,8 +86,8 @@ Property detail
 
     Get the interpolation parameters.
 
-.. py:property:: report_ephem_on_fixed_time_step
-    :canonical: ansys.stk.core.stkobjects.VehicleIntegrator.report_ephem_on_fixed_time_step
+.. py:property:: report_ephemeris_on_fixed_time_step
+    :canonical: ansys.stk.core.stkobjects.VehicleIntegrator.report_ephemeris_on_fixed_time_step
     :type: bool
 
     Opt whether ephemeris is to be reported on a fixed time step.
@@ -98,8 +98,8 @@ Property detail
 
     Altitude below which to stop propagation. Uses Distance Dimension.
 
-.. py:property:: allow_position_vel_cov_interpolation
-    :canonical: ansys.stk.core.stkobjects.VehicleIntegrator.allow_position_vel_cov_interpolation
+.. py:property:: allow_position_velocity_covariance_interpolation
+    :canonical: ansys.stk.core.stkobjects.VehicleIntegrator.allow_position_velocity_covariance_interpolation
     :type: bool
 
     Get whether to allow pos-vel covariance interpolation.

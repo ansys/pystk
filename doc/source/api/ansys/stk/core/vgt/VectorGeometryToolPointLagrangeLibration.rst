@@ -3,7 +3,7 @@ VectorGeometryToolPointLagrangeLibration
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolPointLagrangeLibration
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolPoint`, :py:class:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolPoint`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Libration point using one primary and multiple secondary central bodies. Set the central body, secondary central bodies, and point type.
 
@@ -42,13 +42,13 @@ Property detail
 
 .. py:property:: central_body
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPointLagrangeLibration.central_body
-    :type: AnalysisWorkbenchCentralBodyRefTo
+    :type: AnalysisWorkbenchCentralBodyReference
 
     Specify a central body.
 
 .. py:property:: point_type
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPointLagrangeLibration.point_type
-    :type: CRDN_LAGRANGE_LIBRATION_POINT_TYPE
+    :type: LagrangeLibrationPointType
 
     Specify a lagrange point (L1, L2, etc.).
 

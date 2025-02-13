@@ -21,9 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.BDotTCalc.target_body_name`
-              - Gets or sets the target body for B-plane computation.
+              - Get or set the target body for B-plane computation.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.BDotTCalc.reference_vector_name`
-              - Gets or sets the reference vector to use to define the B-plane.
+              - Get or set the reference vector to use to define the B-plane.
 
 
 
@@ -42,12 +42,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.BDotTCalc.target_body_name
     :type: str
 
-    Gets or sets the target body for B-plane computation.
+    Get or set the target body for B-plane computation.
 
 .. py:property:: reference_vector_name
     :canonical: ansys.stk.core.stkobjects.astrogator.BDotTCalc.reference_vector_name
     :type: str
 
-    Gets or sets the reference vector to use to define the B-plane.
+    Get or set the reference vector to use to define the B-plane.
 
 

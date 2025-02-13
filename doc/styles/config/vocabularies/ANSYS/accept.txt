@@ -1,26 +1,34 @@
 apoapsis
+application
 ANSYS
 Ansys
 ansys
 Astrogator
 Dockerfiles
+documentarians
 ephemerides
 cartodetic
 FOM
 fom
 Hohmann
 IIF
+Python
 intervisibility
+IPython
 Keplerian
 LOD
 lod
+namespace
 Nemo
 numpy
-STK
 PySTK
 periapsis
 prograde
 Precessing
 precessing
+STK 
+STK Desktop
 STKEngine
+STK Engine
 Subpackages
+Tox

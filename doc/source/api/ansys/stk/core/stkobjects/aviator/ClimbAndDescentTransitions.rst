@@ -19,12 +19,12 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ClimbAndDescentTransitions.max_pull_up_g`
-              - Gets or sets the force normal to the velocity vector used to transition into a climb or to a transition out of a dive into the next flight segment.
+              - Get or set the force normal to the velocity vector used to transition into a climb or to a transition out of a dive into the next flight segment.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ClimbAndDescentTransitions.max_push_over_g`
-              - Gets or sets the force normal to the velocity vector used to transition into a descent or to a transition from a climb into the next flight segment.
+              - Get or set the force normal to the velocity vector used to transition into a descent or to a transition from a climb into the next flight segment.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ClimbAndDescentTransitions.maneuver_mode`
-              - Gets or sets the mode that the aircraft will adhere to the specified acceleration parameters. Scale by atmospheric density will cause the aircraft to consider dynamic pressure when calculating turn radius.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ClimbAndDescentTransitions.ignore_fpa`
+              - Get or set the mode that the aircraft will adhere to the specified acceleration parameters. Scale by atmospheric density will cause the aircraft to consider dynamic pressure when calculating turn radius.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ClimbAndDescentTransitions.ignore_flight_path_angle`
               - Opt whether to ignore the flight path angle.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ClimbAndDescentTransitions.maneuver_mode_helper`
               - Get the interface for the Aero/Prop Maneuver Mode helper. The maneuver mode must be set to Aero/Prop to access this interface.
@@ -46,22 +46,22 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.ClimbAndDescentTransitions.max_pull_up_g
     :type: float
 
-    Gets or sets the force normal to the velocity vector used to transition into a climb or to a transition out of a dive into the next flight segment.
+    Get or set the force normal to the velocity vector used to transition into a climb or to a transition out of a dive into the next flight segment.
 
 .. py:property:: max_push_over_g
     :canonical: ansys.stk.core.stkobjects.aviator.ClimbAndDescentTransitions.max_push_over_g
     :type: float
 
-    Gets or sets the force normal to the velocity vector used to transition into a descent or to a transition from a climb into the next flight segment.
+    Get or set the force normal to the velocity vector used to transition into a descent or to a transition from a climb into the next flight segment.
 
 .. py:property:: maneuver_mode
     :canonical: ansys.stk.core.stkobjects.aviator.ClimbAndDescentTransitions.maneuver_mode
-    :type: ACCELERATION_MANEUVER_MODE
+    :type: AccelerationManeuverMode
 
-    Gets or sets the mode that the aircraft will adhere to the specified acceleration parameters. Scale by atmospheric density will cause the aircraft to consider dynamic pressure when calculating turn radius.
+    Get or set the mode that the aircraft will adhere to the specified acceleration parameters. Scale by atmospheric density will cause the aircraft to consider dynamic pressure when calculating turn radius.
 
-.. py:property:: ignore_fpa
-    :canonical: ansys.stk.core.stkobjects.aviator.ClimbAndDescentTransitions.ignore_fpa
+.. py:property:: ignore_flight_path_angle
+    :canonical: ansys.stk.core.stkobjects.aviator.ClimbAndDescentTransitions.ignore_flight_path_angle
     :type: bool
 
     Opt whether to ignore the flight path angle.

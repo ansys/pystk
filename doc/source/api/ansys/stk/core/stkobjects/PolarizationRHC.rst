@@ -9,10 +9,6 @@ PolarizationRHC
 
 .. py:currentmodule:: PolarizationRHC
 
-Overview
---------
-
-
 
 Import detail
 -------------

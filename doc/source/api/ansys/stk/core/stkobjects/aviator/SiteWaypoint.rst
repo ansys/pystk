@@ -30,9 +30,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.SiteWaypoint.latitude`
-              - Gets or sets the waypoint latitude.
+              - Get or set the waypoint latitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.SiteWaypoint.longitude`
-              - Gets or sets the waypoint longitude.
+              - Get or set the waypoint longitude.
 
 
 
@@ -51,13 +51,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.SiteWaypoint.latitude
     :type: typing.Any
 
-    Gets or sets the waypoint latitude.
+    Get or set the waypoint latitude.
 
 .. py:property:: longitude
     :canonical: ansys.stk.core.stkobjects.aviator.SiteWaypoint.longitude
     :type: typing.Any
 
-    Gets or sets the waypoint longitude.
+    Get or set the waypoint longitude.
 
 
 Method detail

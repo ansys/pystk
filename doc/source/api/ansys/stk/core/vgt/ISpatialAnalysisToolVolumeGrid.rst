@@ -7,10 +7,6 @@ ISpatialAnalysisToolVolumeGrid
 
 .. py:currentmodule:: ISpatialAnalysisToolVolumeGrid
 
-Overview
---------
-
-
 Import detail
 -------------
 

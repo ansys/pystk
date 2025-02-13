@@ -19,7 +19,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.RunwayHeadingOptions.runway_mode`
-              - Gets or sets the runway heading that the aircraft will use.
+              - Get or set the runway heading that the aircraft will use.
 
 
 
@@ -36,8 +36,8 @@ Property detail
 
 .. py:property:: runway_mode
     :canonical: ansys.stk.core.stkobjects.aviator.RunwayHeadingOptions.runway_mode
-    :type: RUNWAY_HIGH_LOW_END
+    :type: RunwayHighLowEnd
 
-    Gets or sets the runway heading that the aircraft will use.
+    Get or set the runway heading that the aircraft will use.
 
 

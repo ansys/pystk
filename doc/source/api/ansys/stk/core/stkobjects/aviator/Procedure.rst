@@ -9,10 +9,6 @@ Procedure
 
 .. py:currentmodule:: Procedure
 
-Overview
---------
-
-
 
 Import detail
 -------------

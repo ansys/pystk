@@ -41,7 +41,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.Star.graphics_3d`
               - Get the star's 3D Graphics properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.Star.reference_frame`
-              - Returns a reference frame.
+              - Return a reference frame.
             * - :py:attr:`~ansys.stk.core.stkobjects.Star.proper_motion_radial_velocity`
               - Property motion radial velocity. Uses Distance dimension.
 
@@ -120,9 +120,9 @@ Property detail
 
 .. py:property:: reference_frame
     :canonical: ansys.stk.core.stkobjects.Star.reference_frame
-    :type: STAR_REFERENCE_FRAME
+    :type: StarReferenceFrame
 
-    Returns a reference frame.
+    Return a reference frame.
 
 .. py:property:: proper_motion_radial_velocity
     :canonical: ansys.stk.core.stkobjects.Star.proper_motion_radial_velocity

@@ -34,15 +34,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxes.type`
-              - Returns a type of the axes object.
+              - Return a type of the axes object.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxes.labels`
-              - Returns an object that allows modifying the axes labels.
-            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxes.x`
-              - Returns the X axis of the component.
-            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxes.y`
-              - Returns the Y axis of the component.
-            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxes.z`
-              - Returns the Z axis of the component.
+              - Return an object that allows modifying the axes labels.
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxes.x_axis`
+              - Return the X axis of the component.
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxes.y_axis`
+              - Return the Y axis of the component.
+            * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxes.z_axis`
+              - Return the Z axis of the component.
 
 
 Import detail
@@ -58,40 +58,40 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxes.type
-    :type: VECTOR_GEOMETRY_TOOL_AXES_TYPE
+    :type: AxesType
 
-    Returns a type of the axes object.
+    Return a type of the axes object.
 
 .. py:property:: labels
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxes.labels
     :type: VectorGeometryToolAxesLabels
 
-    Returns an object that allows modifying the axes labels.
+    Return an object that allows modifying the axes labels.
 
-.. py:property:: x
-    :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxes.x
+.. py:property:: x_axis
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxes.x_axis
     :type: IVectorGeometryToolVector
 
-    Returns the X axis of the component.
+    Return the X axis of the component.
 
-.. py:property:: y
-    :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxes.y
+.. py:property:: y_axis
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxes.y_axis
     :type: IVectorGeometryToolVector
 
-    Returns the Y axis of the component.
+    Return the Y axis of the component.
 
-.. py:property:: z
-    :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxes.z
+.. py:property:: z_axis
+    :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxes.z_axis
     :type: IVectorGeometryToolVector
 
-    Returns the Z axis of the component.
+    Return the Z axis of the component.
 
 
 Method detail
 -------------
 
 
-.. py:method:: find_in_axes_with_rate(self, epoch: typing.Any, axes: IVectorGeometryToolAxes) -> IVectorGeometryToolAxesFindInAxesWithRateResult
+.. py:method:: find_in_axes_with_rate(self, epoch: typing.Any, axes: IVectorGeometryToolAxes) -> AnalysisWorkbenchAxesFindInAxesWithRateResult
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxes.find_in_axes_with_rate
 
     Find an angular velocity and orientation in the specified axes.
@@ -103,9 +103,9 @@ Method detail
 
     :Returns:
 
-        :obj:`~IVectorGeometryToolAxesFindInAxesWithRateResult`
+        :obj:`~AnalysisWorkbenchAxesFindInAxesWithRateResult`
 
-.. py:method:: find_in_axes(self, epoch: typing.Any, axes: IVectorGeometryToolAxes) -> IVectorGeometryToolAxesFindInAxesResult
+.. py:method:: find_in_axes(self, epoch: typing.Any, axes: IVectorGeometryToolAxes) -> AnalysisWorkbenchAxesFindInAxesResult
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxes.find_in_axes
 
     Find an orientation in the specified axes.
@@ -117,13 +117,13 @@ Method detail
 
     :Returns:
 
-        :obj:`~IVectorGeometryToolAxesFindInAxesResult`
+        :obj:`~AnalysisWorkbenchAxesFindInAxesResult`
 
 
 
 
 
-.. py:method:: transform(self, epoch: typing.Any, outputAxes: IVectorGeometryToolAxes, vectorInMyAxes: ICartesian3Vector) -> IVectorGeometryToolAxesTransformResult
+.. py:method:: transform(self, epoch: typing.Any, output_axes: IVectorGeometryToolAxes, vector_in_my_axes: ICartesian3Vector) -> AnalysisWorkbenchAxesTransformResult
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxes.transform
 
     Transform the input vector from this axes into the output axes.
@@ -131,14 +131,14 @@ Method detail
     :Parameters:
 
     **epoch** : :obj:`~typing.Any`
-    **outputAxes** : :obj:`~IVectorGeometryToolAxes`
-    **vectorInMyAxes** : :obj:`~ICartesian3Vector`
+    **output_axes** : :obj:`~IVectorGeometryToolAxes`
+    **vector_in_my_axes** : :obj:`~ICartesian3Vector`
 
     :Returns:
 
-        :obj:`~IVectorGeometryToolAxesTransformResult`
+        :obj:`~AnalysisWorkbenchAxesTransformResult`
 
-.. py:method:: transform_with_rate(self, epoch: typing.Any, outputAxes: IVectorGeometryToolAxes, vectorInMyAxes: ICartesian3Vector, rateInMyAxes: ICartesian3Vector) -> IVectorGeometryToolAxesTransformWithRateResult
+.. py:method:: transform_with_rate(self, epoch: typing.Any, output_axes: IVectorGeometryToolAxes, vector_in_my_axes: ICartesian3Vector, rate_in_my_axes: ICartesian3Vector) -> AnalysisWorkbenchAxesTransformWithRateResult
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxes.transform_with_rate
 
     Transform the input vector and vector's rate from this axes into the output axes.
@@ -146,11 +146,11 @@ Method detail
     :Parameters:
 
     **epoch** : :obj:`~typing.Any`
-    **outputAxes** : :obj:`~IVectorGeometryToolAxes`
-    **vectorInMyAxes** : :obj:`~ICartesian3Vector`
-    **rateInMyAxes** : :obj:`~ICartesian3Vector`
+    **output_axes** : :obj:`~IVectorGeometryToolAxes`
+    **vector_in_my_axes** : :obj:`~ICartesian3Vector`
+    **rate_in_my_axes** : :obj:`~ICartesian3Vector`
 
     :Returns:
 
-        :obj:`~IVectorGeometryToolAxesTransformWithRateResult`
+        :obj:`~AnalysisWorkbenchAxesTransformWithRateResult`
 

@@ -9,10 +9,6 @@ RFFilterModel
 
 .. py:currentmodule:: RFFilterModel
 
-Overview
---------
-
-
 
 Import detail
 -------------

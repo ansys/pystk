@@ -32,9 +32,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.AnalysisWorkbenchCentralBodyCollection.count`
-              - Returns a number of elements in the collection.
-            * - :py:attr:`~ansys.stk.core.vgt.AnalysisWorkbenchCentralBodyCollection._NewEnum`
-              - Returns a COM enumerator.
+              - Return a number of elements in the collection.
+            * - :py:attr:`~ansys.stk.core.vgt.AnalysisWorkbenchCentralBodyCollection._new_enum`
+              - Return a COM enumerator.
 
 
 
@@ -53,13 +53,13 @@ Property detail
     :canonical: ansys.stk.core.vgt.AnalysisWorkbenchCentralBodyCollection.count
     :type: int
 
-    Returns a number of elements in the collection.
+    Return a number of elements in the collection.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.vgt.AnalysisWorkbenchCentralBodyCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.vgt.AnalysisWorkbenchCentralBodyCollection._new_enum
     :type: EnumeratorProxy
 
-    Returns a COM enumerator.
+    Return a COM enumerator.
 
 
 Method detail
@@ -80,27 +80,27 @@ Method detail
         :obj:`~str`
 
 
-.. py:method:: add(self, centralBodyName: str) -> bool
+.. py:method:: add(self, central_body_name: str) -> bool
     :canonical: ansys.stk.core.vgt.AnalysisWorkbenchCentralBodyCollection.add
 
     Add a central body to the collection of central bodies. True indicates success.
 
     :Parameters:
 
-    **centralBodyName** : :obj:`~str`
+    **central_body_name** : :obj:`~str`
 
     :Returns:
 
         :obj:`~bool`
 
-.. py:method:: remove(self, centralBodyName: str) -> None
+.. py:method:: remove(self, central_body_name: str) -> None
     :canonical: ansys.stk.core.vgt.AnalysisWorkbenchCentralBodyCollection.remove
 
     Remove a central body with the specified name from the collection of the central bodies.
 
     :Parameters:
 
-    **centralBodyName** : :obj:`~str`
+    **central_body_name** : :obj:`~str`
 
     :Returns:
 

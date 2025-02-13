@@ -40,11 +40,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.KeyValueCollection.count`
-              - Returns the number of elements in a collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.KeyValueCollection._NewEnum`
-              - Returns an enumerator containing the keys in the collection.
+              - Return the number of elements in a collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.KeyValueCollection._new_enum`
+              - Return an enumerator containing the keys in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.KeyValueCollection.keys`
-              - Returns an array of keys of the collection.
+              - Return an array of keys of the collection.
 
 
 
@@ -63,19 +63,19 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.KeyValueCollection.count
     :type: int
 
-    Returns the number of elements in a collection.
+    Return the number of elements in a collection.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.KeyValueCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.KeyValueCollection._new_enum
     :type: EnumeratorProxy
 
-    Returns an enumerator containing the keys in the collection.
+    Return an enumerator containing the keys in the collection.
 
 .. py:property:: keys
     :canonical: ansys.stk.core.stkobjects.KeyValueCollection.keys
     :type: list
 
-    Returns an array of keys of the collection.
+    Return an array of keys of the collection.
 
 
 Method detail
@@ -159,7 +159,7 @@ Method detail
 
         :obj:`~bool`
 
-.. py:method:: set_read_only(self, key: str, isReadOnly: bool) -> None
+.. py:method:: set_read_only(self, key: str, is_read_only: bool) -> None
     :canonical: ansys.stk.core.stkobjects.KeyValueCollection.set_read_only
 
     Given a key, sets read-only flag.
@@ -167,7 +167,7 @@ Method detail
     :Parameters:
 
     **key** : :obj:`~str`
-    **isReadOnly** : :obj:`~bool`
+    **is_read_only** : :obj:`~bool`
 
     :Returns:
 

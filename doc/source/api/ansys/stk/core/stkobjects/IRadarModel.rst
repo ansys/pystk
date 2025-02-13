@@ -19,9 +19,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModel.name`
-              - Gets the radar model name.
+              - Get the radar model name.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModel.type`
-              - Gets the radar model type enumeration.
+              - Get the radar model type enumeration.
 
 
 Import detail
@@ -39,12 +39,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.IRadarModel.name
     :type: str
 
-    Gets the radar model name.
+    Get the radar model name.
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.IRadarModel.type
-    :type: RADAR_MODEL_TYPE
+    :type: RadarModelType
 
-    Gets the radar model type enumeration.
+    Get the radar model type enumeration.
 
 

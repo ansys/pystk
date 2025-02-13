@@ -9,10 +9,6 @@ StateCalcSEETSAAFlux
 
 .. py:currentmodule:: StateCalcSEETSAAFlux
 
-Overview
---------
-
-
 
 Import detail
 -------------

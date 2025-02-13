@@ -28,7 +28,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IPositionInterpolator.polyline_type`
-              - Gets the polyline type of positions returned from interpolate.
+              - Get the polyline type of positions returned from interpolate.
 
 
 Import detail
@@ -44,9 +44,9 @@ Property detail
 
 .. py:property:: polyline_type
     :canonical: ansys.stk.core.graphics.IPositionInterpolator.polyline_type
-    :type: POLYLINE_TYPE
+    :type: PolylineType
 
-    Gets the polyline type of positions returned from interpolate.
+    Get the polyline type of positions returned from interpolate.
 
 
 Method detail

@@ -36,8 +36,8 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.LevelAttributeCollection.count`
-              - Returns the size of the collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.LevelAttributeCollection._NewEnum`
+              - Return the size of the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.LevelAttributeCollection._new_enum`
               - Enumerates through IAgLevelAttributeCollection.
 
 
@@ -57,10 +57,10 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.LevelAttributeCollection.count
     :type: int
 
-    Returns the size of the collection.
+    Return the size of the collection.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.LevelAttributeCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.LevelAttributeCollection._new_enum
     :type: EnumeratorProxy
 
     Enumerates through IAgLevelAttributeCollection.

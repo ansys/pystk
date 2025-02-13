@@ -22,12 +22,12 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridCartesian.reference_system`
               - Get the reference system in which Cartesian parameters are computed.
-            * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridCartesian.x_coordinates`
-              - Returns X Coordinates parameters for the Cartesian system.
-            * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridCartesian.y_coordinates`
-              - Returns Y Coordinates parameters for the Cartesian system.
-            * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridCartesian.z_coordinates`
-              - Returns Z Coordinates parameters for the Cartesian system.
+            * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridCartesian.x_grid_parameters`
+              - Return X Coordinates parameters for the Cartesian system.
+            * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridCartesian.y_grid_parameters`
+              - Return Y Coordinates parameters for the Cartesian system.
+            * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridCartesian.z_grid_parameters`
+              - Return Z Coordinates parameters for the Cartesian system.
 
 
 
@@ -48,22 +48,22 @@ Property detail
 
     Get the reference system in which Cartesian parameters are computed.
 
-.. py:property:: x_coordinates
-    :canonical: ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridCartesian.x_coordinates
+.. py:property:: x_grid_parameters
+    :canonical: ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridCartesian.x_grid_parameters
     :type: SpatialAnalysisToolGridCoordinateDefinition
 
-    Returns X Coordinates parameters for the Cartesian system.
+    Return X Coordinates parameters for the Cartesian system.
 
-.. py:property:: y_coordinates
-    :canonical: ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridCartesian.y_coordinates
+.. py:property:: y_grid_parameters
+    :canonical: ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridCartesian.y_grid_parameters
     :type: SpatialAnalysisToolGridCoordinateDefinition
 
-    Returns Y Coordinates parameters for the Cartesian system.
+    Return Y Coordinates parameters for the Cartesian system.
 
-.. py:property:: z_coordinates
-    :canonical: ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridCartesian.z_coordinates
+.. py:property:: z_grid_parameters
+    :canonical: ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridCartesian.z_grid_parameters
     :type: SpatialAnalysisToolGridCoordinateDefinition
 
-    Returns Z Coordinates parameters for the Cartesian system.
+    Return Z Coordinates parameters for the Cartesian system.
 
 

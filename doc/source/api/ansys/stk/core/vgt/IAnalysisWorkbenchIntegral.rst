@@ -7,10 +7,6 @@ IAnalysisWorkbenchIntegral
 
 .. py:currentmodule:: IAnalysisWorkbenchIntegral
 
-Overview
---------
-
-
 Import detail
 -------------
 

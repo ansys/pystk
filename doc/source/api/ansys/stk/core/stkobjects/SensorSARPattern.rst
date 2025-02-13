@@ -31,16 +31,16 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorSARPattern.parent_altitude`
               - The altitude of the sensor's parent object (assumed to be constant). Uses Distance Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.SensorSARPattern.min_elevation_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.SensorSARPattern.minimum_elevation_angle`
               - Minimum ground elevation angle to which the SAR sensor can provide coverage. Uses Angle Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.SensorSARPattern.max_elevation_angle`
+            * - :py:attr:`~ansys.stk.core.stkobjects.SensorSARPattern.maximum_elevation_angle`
               - Maximum ground elevation angle to which the SAR sensor can provide coverage. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorSARPattern.fore_exclusion_angle`
               - The minimum angle between the forward projection of the velocity vector and the vector to the target. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorSARPattern.aft_exclusion_angle`
               - The minimum angle between the aft projection of the velocity vector and the vector to the target. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorSARPattern.angular_resolution`
-              - Allows a user to set the angular separation between the pattern data points. This is an advanced user field, available only through STK's object model interface. The default value for the number of pattern samples is...
+              - Allow a user to set the angular separation between the pattern data points. This is an advanced user field, available only through STK's object model interface. The default value for the number of pattern samples is...
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorSARPattern.track_parent_altitude`
               - Whether or not the SAR sensor tracks the altitude of the sensor's parent object.
 
@@ -63,14 +63,14 @@ Property detail
 
     The altitude of the sensor's parent object (assumed to be constant). Uses Distance Dimension.
 
-.. py:property:: min_elevation_angle
-    :canonical: ansys.stk.core.stkobjects.SensorSARPattern.min_elevation_angle
+.. py:property:: minimum_elevation_angle
+    :canonical: ansys.stk.core.stkobjects.SensorSARPattern.minimum_elevation_angle
     :type: typing.Any
 
     Minimum ground elevation angle to which the SAR sensor can provide coverage. Uses Angle Dimension.
 
-.. py:property:: max_elevation_angle
-    :canonical: ansys.stk.core.stkobjects.SensorSARPattern.max_elevation_angle
+.. py:property:: maximum_elevation_angle
+    :canonical: ansys.stk.core.stkobjects.SensorSARPattern.maximum_elevation_angle
     :type: typing.Any
 
     Maximum ground elevation angle to which the SAR sensor can provide coverage. Uses Angle Dimension.
@@ -91,7 +91,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.SensorSARPattern.angular_resolution
     :type: typing.Any
 
-    Allows a user to set the angular separation between the pattern data points. This is an advanced user field, available only through STK's object model interface. The default value for the number of pattern samples is...
+    Allow a user to set the angular separation between the pattern data points. This is an advanced user field, available only through STK's object model interface. The default value for the number of pattern samples is...
 
 .. py:property:: track_parent_altitude
     :canonical: ansys.stk.core.stkobjects.SensorSARPattern.track_parent_altitude

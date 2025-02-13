@@ -28,9 +28,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTemplateDisplayCollection.count`
-              - Returns the number of elements in a collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTemplateDisplayCollection._NewEnum`
-              - Returns an enumerator that can iterate through the collection.
+              - Return the number of elements in a collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTemplateDisplayCollection._new_enum`
+              - Return an enumerator that can iterate through the collection.
 
 
 
@@ -49,13 +49,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTemplateDisplayCollection.count
     :type: int
 
-    Returns the number of elements in a collection.
+    Return the number of elements in a collection.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTemplateDisplayCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTemplateDisplayCollection._new_enum
     :type: EnumeratorProxy
 
-    Returns an enumerator that can iterate through the collection.
+    Return an enumerator that can iterate through the collection.
 
 
 Method detail

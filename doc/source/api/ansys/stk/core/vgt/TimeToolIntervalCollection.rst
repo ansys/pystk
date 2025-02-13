@@ -29,8 +29,8 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.vgt.TimeToolIntervalCollection.count`
               - Return a number of elements in the collection.
-            * - :py:attr:`~ansys.stk.core.vgt.TimeToolIntervalCollection._NewEnum`
-              - Returns a COM enumerator.
+            * - :py:attr:`~ansys.stk.core.vgt.TimeToolIntervalCollection._new_enum`
+              - Return a COM enumerator.
 
 
 
@@ -51,11 +51,11 @@ Property detail
 
     Return a number of elements in the collection.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.vgt.TimeToolIntervalCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.vgt.TimeToolIntervalCollection._new_enum
     :type: EnumeratorProxy
 
-    Returns a COM enumerator.
+    Return a COM enumerator.
 
 
 Method detail

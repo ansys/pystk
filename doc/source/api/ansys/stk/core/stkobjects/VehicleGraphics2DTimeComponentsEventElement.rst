@@ -30,7 +30,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeComponentsEventElement.attributes`
-              - Returns the 2D attributes used to configure the appearance of ground tracks, orbits, etc. in 2D and 3D views.
+              - Return the 2D attributes used to configure the appearance of ground tracks, orbits, etc. in 2D and 3D views.
 
 
 
@@ -49,7 +49,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeComponentsEventElement.attributes
     :type: IVehicleGraphics2DAttributesBasic
 
-    Returns the 2D attributes used to configure the appearance of ground tracks, orbits, etc. in 2D and 3D views.
+    Return the 2D attributes used to configure the appearance of ground tracks, orbits, etc. in 2D and 3D views.
 
 
 Method detail

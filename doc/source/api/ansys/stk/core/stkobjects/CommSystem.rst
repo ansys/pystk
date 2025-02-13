@@ -22,6 +22,10 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.CommSystem.set_link_selection_criteria_type`
               - Set the link selection criteria by name.
+            * - :py:attr:`~ansys.stk.core.stkobjects.CommSystem.compute`
+              - Unconditionally computes the CommSystem.
+            * - :py:attr:`~ansys.stk.core.stkobjects.CommSystem.clear`
+              - Unconditionally clears any computed values of the CommSystem.
 
     .. tab-item:: Properties
         
@@ -30,23 +34,23 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.CommSystem.transmitters`
-              - Gets the transmitter collection.
+              - Get the transmitter collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.CommSystem.receivers`
-              - Gets the receiver collection.
+              - Get the receiver collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.CommSystem.interference_sources`
-              - Gets the interference source collection.
+              - Get the interference source collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.CommSystem.calculate_interference`
-              - Gets or sets the option for calculating interference.
+              - Get or set the option for calculating interference.
             * - :py:attr:`~ansys.stk.core.stkobjects.CommSystem.reference_bandwidth`
-              - Gets or sets the reference bandwidth.
+              - Get or set the reference bandwidth.
             * - :py:attr:`~ansys.stk.core.stkobjects.CommSystem.constraining_role`
-              - Gets or sets the constraining role.
+              - Get or set the constraining role.
             * - :py:attr:`~ansys.stk.core.stkobjects.CommSystem.time_period`
-              - Allows configuring the time period.
+              - Allow configuring the time period.
             * - :py:attr:`~ansys.stk.core.stkobjects.CommSystem.step_size`
-              - Gets or sets the step size.
+              - Get or set the step size.
             * - :py:attr:`~ansys.stk.core.stkobjects.CommSystem.save_mode`
-              - Gets or sets the save mode.
+              - Get or set the save mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.CommSystem.access_options`
               - Get the access options.
             * - :py:attr:`~ansys.stk.core.stkobjects.CommSystem.link_selection_criteria`
@@ -56,7 +60,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.CommSystem.graphics_3d`
               - Get the 3D Graphics properties for the CommSystem.
             * - :py:attr:`~ansys.stk.core.stkobjects.CommSystem.include_receiver_interference_emitters`
-              - Gets or sets whether the emitters from each receiver is included in their interference computation.
+              - Get or set whether the emitters from each receiver is included in their interference computation.
 
 
 
@@ -75,55 +79,55 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.CommSystem.transmitters
     :type: ObjectLinkCollection
 
-    Gets the transmitter collection.
+    Get the transmitter collection.
 
 .. py:property:: receivers
     :canonical: ansys.stk.core.stkobjects.CommSystem.receivers
     :type: ObjectLinkCollection
 
-    Gets the receiver collection.
+    Get the receiver collection.
 
 .. py:property:: interference_sources
     :canonical: ansys.stk.core.stkobjects.CommSystem.interference_sources
     :type: ObjectLinkCollection
 
-    Gets the interference source collection.
+    Get the interference source collection.
 
 .. py:property:: calculate_interference
     :canonical: ansys.stk.core.stkobjects.CommSystem.calculate_interference
     :type: bool
 
-    Gets or sets the option for calculating interference.
+    Get or set the option for calculating interference.
 
 .. py:property:: reference_bandwidth
     :canonical: ansys.stk.core.stkobjects.CommSystem.reference_bandwidth
-    :type: COMM_SYSTEM_REFERENCE_BANDWIDTH
+    :type: CommSystemReferenceBandwidth
 
-    Gets or sets the reference bandwidth.
+    Get or set the reference bandwidth.
 
 .. py:property:: constraining_role
     :canonical: ansys.stk.core.stkobjects.CommSystem.constraining_role
-    :type: COMM_SYSTEM_CONSTRAINING_ROLE
+    :type: CommSystemConstrainingRole
 
-    Gets or sets the constraining role.
+    Get or set the constraining role.
 
 .. py:property:: time_period
     :canonical: ansys.stk.core.stkobjects.CommSystem.time_period
-    :type: ITimeToolEventIntervalSmartInterval
+    :type: ITimeToolTimeIntervalSmartInterval
 
-    Allows configuring the time period.
+    Allow configuring the time period.
 
 .. py:property:: step_size
     :canonical: ansys.stk.core.stkobjects.CommSystem.step_size
     :type: float
 
-    Gets or sets the step size.
+    Get or set the step size.
 
 .. py:property:: save_mode
     :canonical: ansys.stk.core.stkobjects.CommSystem.save_mode
-    :type: COMM_SYSTEM_SAVE_MODE
+    :type: CommSystemSaveMode
 
-    Gets or sets the save mode.
+    Get or set the save mode.
 
 .. py:property:: access_options
     :canonical: ansys.stk.core.stkobjects.CommSystem.access_options
@@ -153,7 +157,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.CommSystem.include_receiver_interference_emitters
     :type: bool
 
-    Gets or sets whether the emitters from each receiver is included in their interference computation.
+    Get or set whether the emitters from each receiver is included in their interference computation.
 
 
 Method detail
@@ -174,14 +178,14 @@ Method detail
 
 
 
-.. py:method:: set_link_selection_criteria_type(self, val: COMM_SYSTEM_LINK_SELECTION_CRITERIA_TYPE) -> None
+.. py:method:: set_link_selection_criteria_type(self, value: CommSystemLinkSelectionCriteriaType) -> None
     :canonical: ansys.stk.core.stkobjects.CommSystem.set_link_selection_criteria_type
 
     Set the link selection criteria by name.
 
     :Parameters:
 
-    **val** : :obj:`~COMM_SYSTEM_LINK_SELECTION_CRITERIA_TYPE`
+    **value** : :obj:`~CommSystemLinkSelectionCriteriaType`
 
     :Returns:
 
@@ -191,4 +195,22 @@ Method detail
 
 
 
+
+.. py:method:: compute(self) -> None
+    :canonical: ansys.stk.core.stkobjects.CommSystem.compute
+
+    Unconditionally computes the CommSystem.
+
+    :Returns:
+
+        :obj:`~None`
+
+.. py:method:: clear(self) -> None
+    :canonical: ansys.stk.core.stkobjects.CommSystem.clear
+
+    Unconditionally clears any computed values of the CommSystem.
+
+    :Returns:
+
+        :obj:`~None`
 

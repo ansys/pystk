@@ -6,6 +6,7 @@ from assertion_harness import *
 from display_times_helper import *
 from interfaces.stk_objects import *
 from orientation_helper import *
+from stk_util_helper import *
 from vehicle.vehicle_vo import *
 from ansys.stk.core.utilities.colors import *
 from parameterized import *
@@ -50,13 +51,13 @@ class EarlyBoundTests(TestBase):
 
             EarlyBoundTests.oFac = TestBase.Application.current_scenario.children["Facility1"]
             EarlyBoundTests.oTransmitter = EarlyBoundTests.oFac.children.new(
-                STK_OBJECT_TYPE.TRANSMITTER, EarlyBoundTests.TRANSMITTER_NAME
+                STKObjectType.TRANSMITTER, EarlyBoundTests.TRANSMITTER_NAME
             )
             EarlyBoundTests.oAntenna1 = EarlyBoundTests.oFac.children.new(
-                STK_OBJECT_TYPE.ANTENNA, EarlyBoundTests.ANTENNA1_NAME
+                STKObjectType.ANTENNA, EarlyBoundTests.ANTENNA1_NAME
             )
             EarlyBoundTests.oAntenna2 = EarlyBoundTests.oFac.children.new(
-                STK_OBJECT_TYPE.ANTENNA, EarlyBoundTests.ANTENNA2_NAME
+                STKObjectType.ANTENNA, EarlyBoundTests.ANTENNA2_NAME
             )
             EarlyBoundTests.transmitter = clr.CastAs(EarlyBoundTests.oTransmitter, Transmitter)
             if not TestBase.NoGraphicsMode:
@@ -72,12 +73,15 @@ class EarlyBoundTests(TestBase):
 
     # region SetUp
     def setUp(self):
-        TestBase.Application.unit_preferences.set_current_unit("AngleUnit", "deg")
-        TestBase.Application.unit_preferences.set_current_unit("FrequencyUnit", "GHz")
+        TestBase.Application.units_preferences.set_current_unit("AngleUnit", "deg")
+        TestBase.Application.units_preferences.set_current_unit("FrequencyUnit", "GHz")
 
         # Needs to be something other than Simple transmitter for 2D properties to be available
-        EarlyBoundTests.transmitter.set_model("Complex Transmitter Model")
-        Assert.assertEqual(TRANSMITTER_MODEL_TYPE.COMPLEX, EarlyBoundTests.transmitter.model.type)
+        EarlyBoundTests.transmitter.model_component_linking.set_component("Complex Transmitter Model")
+        Assert.assertEqual(
+            TransmitterModelType.COMPLEX,
+            (ITransmitterModel(EarlyBoundTests.transmitter.model_component_linking.component)).type,
+        )
         if not TestBase.NoGraphicsMode:
             EarlyBoundTests.transmitterGraphics = EarlyBoundTests.transmitter.graphics
             EarlyBoundTests.antennaContourGraphics = EarlyBoundTests.transmitterGraphics.contour_graphics
@@ -92,21 +96,21 @@ class EarlyBoundTests(TestBase):
 
     # region TearDown
     def tearDown(self):
-        TestBase.Application.unit_preferences.reset_units()
+        TestBase.Application.units_preferences.reset_units()
 
     # endregion
 
     # region OneTimeTearDown
     @staticmethod
     def tearDownClass():
-        if EarlyBoundTests.oFac.children.contains(STK_OBJECT_TYPE.ANTENNA, EarlyBoundTests.ANTENNA1_NAME):
-            EarlyBoundTests.oFac.children.unload(STK_OBJECT_TYPE.ANTENNA, EarlyBoundTests.ANTENNA1_NAME)
+        if EarlyBoundTests.oFac.children.contains(STKObjectType.ANTENNA, EarlyBoundTests.ANTENNA1_NAME):
+            EarlyBoundTests.oFac.children.unload(STKObjectType.ANTENNA, EarlyBoundTests.ANTENNA1_NAME)
 
-        if EarlyBoundTests.oFac.children.contains(STK_OBJECT_TYPE.ANTENNA, EarlyBoundTests.ANTENNA2_NAME):
-            EarlyBoundTests.oFac.children.unload(STK_OBJECT_TYPE.ANTENNA, EarlyBoundTests.ANTENNA2_NAME)
+        if EarlyBoundTests.oFac.children.contains(STKObjectType.ANTENNA, EarlyBoundTests.ANTENNA2_NAME):
+            EarlyBoundTests.oFac.children.unload(STKObjectType.ANTENNA, EarlyBoundTests.ANTENNA2_NAME)
 
-        if EarlyBoundTests.oFac.children.contains(STK_OBJECT_TYPE.TRANSMITTER, EarlyBoundTests.TRANSMITTER_NAME):
-            EarlyBoundTests.oFac.children.unload(STK_OBJECT_TYPE.TRANSMITTER, EarlyBoundTests.TRANSMITTER_NAME)
+        if EarlyBoundTests.oFac.children.contains(STKObjectType.TRANSMITTER, EarlyBoundTests.TRANSMITTER_NAME):
+            EarlyBoundTests.oFac.children.unload(STKObjectType.TRANSMITTER, EarlyBoundTests.TRANSMITTER_NAME)
 
         EarlyBoundTests.oTransmitter = None
 
@@ -150,16 +154,16 @@ class EarlyBoundTests(TestBase):
 
     # region Test_IAgAntennaContour_Colors
     def Test_IAgAntennaContour_Colors(self, antennaContour: "IAntennaContour"):
-        antennaContour.color_method = FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD.COLOR_RAMP
-        Assert.assertEqual(FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD.COLOR_RAMP, antennaContour.color_method)
+        antennaContour.color_method = FigureOfMeritGraphics2DColorMethod.COLOR_RAMP
+        Assert.assertEqual(FigureOfMeritGraphics2DColorMethod.COLOR_RAMP, antennaContour.color_method)
 
         antennaContour.start_color = Colors.Red
         Assert.assertEqual(Colors.Red, antennaContour.start_color)
         antennaContour.stop_color = Colors.Blue
         Assert.assertEqual(Colors.Blue, antennaContour.stop_color)
 
-        antennaContour.color_method = FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD.EXPLICIT
-        Assert.assertEqual(FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD.EXPLICIT, antennaContour.color_method)
+        antennaContour.color_method = FigureOfMeritGraphics2DColorMethod.EXPLICIT
+        Assert.assertEqual(FigureOfMeritGraphics2DColorMethod.EXPLICIT, antennaContour.color_method)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             antennaContour.start_color = Colors.Red
@@ -213,12 +217,12 @@ class EarlyBoundTests(TestBase):
 
         level4: "AntennaContourLevel" = levelCollection.get_level(4.0)
         Assert.assertEqual(4.0, level4.value)
-        level4.line_style = LINE_STYLE.DASH_DOT_DOTTED
-        Assert.assertEqual(LINE_STYLE.DASH_DOT_DOTTED, level4.line_style)
-        antennaContour.color_method = FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD.EXPLICIT
+        level4.line_style = LineStyle.DASH_DOT_DOTTED
+        Assert.assertEqual(LineStyle.DASH_DOT_DOTTED, level4.line_style)
+        antennaContour.color_method = FigureOfMeritGraphics2DColorMethod.EXPLICIT
         level4.color = Colors.Red
         Assert.assertEqual(Colors.Red, level4.color)
-        antennaContour.color_method = FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD.COLOR_RAMP
+        antennaContour.color_method = FigureOfMeritGraphics2DColorMethod.COLOR_RAMP
         color: Color = level4.color
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             level4.color = Colors.Red
@@ -247,10 +251,10 @@ class EarlyBoundTests(TestBase):
 
     # region Test_IAgAntennaContour_RelativeToMaxGain
     def Test_IAgAntennaContour_RelativeToMaxGain(self, antennaContour: "IAntennaContour"):
-        antennaContour.relative_to_max_gain = True
-        Assert.assertTrue(antennaContour.relative_to_max_gain)
-        antennaContour.relative_to_max_gain = False
-        Assert.assertFalse(antennaContour.relative_to_max_gain)
+        antennaContour.relative_to_maximum_gain = True
+        Assert.assertTrue(antennaContour.relative_to_maximum_gain)
+        antennaContour.relative_to_maximum_gain = False
+        Assert.assertFalse(antennaContour.relative_to_maximum_gain)
 
     # endregion
 
@@ -259,33 +263,33 @@ class EarlyBoundTests(TestBase):
         antennaContour.show_labels = True
         Assert.assertTrue(antennaContour.show_labels)
 
-        antennaContour.num_label_dec_digits = 0
-        Assert.assertEqual(0, antennaContour.num_label_dec_digits)
-        antennaContour.num_label_dec_digits = 12
-        Assert.assertEqual(12, antennaContour.num_label_dec_digits)
+        antennaContour.number_of_label_decimal_digits = 0
+        Assert.assertEqual(0, antennaContour.number_of_label_decimal_digits)
+        antennaContour.number_of_label_decimal_digits = 12
+        Assert.assertEqual(12, antennaContour.number_of_label_decimal_digits)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            antennaContour.num_label_dec_digits = -1
+            antennaContour.number_of_label_decimal_digits = -1
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            antennaContour.num_label_dec_digits = 13
+            antennaContour.number_of_label_decimal_digits = 13
 
         antennaContour.show_labels = False
         Assert.assertFalse(antennaContour.show_labels)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            antennaContour.num_label_dec_digits = 1
+            antennaContour.number_of_label_decimal_digits = 1
 
     # endregion
 
     # region Test_IAgAntennaContour_LineWidth
     def Test_IAgAntennaContour_LineWidth(self, antennaContour: "IAntennaContour"):
-        antennaContour.line_width = LINE_WIDTH.WIDTH1
-        Assert.assertEqual(LINE_WIDTH.WIDTH1, antennaContour.line_width)
-        antennaContour.line_width = LINE_WIDTH.WIDTH5
-        Assert.assertEqual(LINE_WIDTH.WIDTH5, antennaContour.line_width)
+        antennaContour.line_width = LineWidth.WIDTH1
+        Assert.assertEqual(LineWidth.WIDTH1, antennaContour.line_width)
+        antennaContour.line_width = LineWidth.WIDTH5
+        Assert.assertEqual(LineWidth.WIDTH5, antennaContour.line_width)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("maximum value")):
-            antennaContour.line_width = LINE_WIDTH.WIDTH6
+            antennaContour.line_width = LineWidth.WIDTH6
 
     # endregion
     # endregion
@@ -293,15 +297,15 @@ class EarlyBoundTests(TestBase):
     # region ContourTypes
     @parameterized.expand(
         [
-            (ANTENNA_CONTOUR_TYPE.GAIN,),
-            (ANTENNA_CONTOUR_TYPE.EIRP,),
-            (ANTENNA_CONTOUR_TYPE.FLUX_DENSITY,),
-            (ANTENNA_CONTOUR_TYPE.RIP,),
-            (ANTENNA_CONTOUR_TYPE.SPECTRAL_FLUX_DENSITY,),
+            (AntennaContourType.GAIN,),
+            (AntennaContourType.EIRP,),
+            (AntennaContourType.FLUX_DENSITY,),
+            (AntennaContourType.RIP,),
+            (AntennaContourType.SPECTRAL_FLUX_DENSITY,),
         ]
     )
     @category("Graphics Tests")
-    def test_ContourTypes(self, type: "ANTENNA_CONTOUR_TYPE"):
+    def test_ContourTypes(self, type: "AntennaContourType"):
         EarlyBoundTests.antennaContourGraphics.set_contour_type(type)
         EarlyBoundTests.antennaContour = EarlyBoundTests.antennaContourGraphics.contour
 
@@ -311,8 +315,8 @@ class EarlyBoundTests(TestBase):
         self.Test_IAgAntennaContour_RelativeToMaxGain(EarlyBoundTests.antennaContour)
         self.Test_IAgAntennaContour_Labels(EarlyBoundTests.antennaContour)
         self.Test_IAgAntennaContour_LineWidth(EarlyBoundTests.antennaContour)
-        if type == ANTENNA_CONTOUR_TYPE.GAIN:
-            Assert.assertEqual(ANTENNA_CONTOUR_TYPE.GAIN, EarlyBoundTests.antennaContourGraphics.contour.type)
+        if type == AntennaContourType.GAIN:
+            Assert.assertEqual(AntennaContourType.GAIN, EarlyBoundTests.antennaContourGraphics.contour.type)
             antennaContourGain: "AntennaContourGain" = clr.CastAs(EarlyBoundTests.antennaContour, AntennaContourGain)
 
             antennaContourGain_Helper = IAgAntennaContourGain_Helper()
@@ -432,9 +436,9 @@ class EarlyBoundTests(TestBase):
             )
 
             antennaContourGain_Helper.CoordinateSystem(antennaContourGain)
-        elif type == ANTENNA_CONTOUR_TYPE.EIRP:
-            Assert.assertEqual(ANTENNA_CONTOUR_TYPE.EIRP, EarlyBoundTests.antennaContourGraphics.contour.type)
-            antennaContourEirp: "AntennaContourEirp" = clr.CastAs(EarlyBoundTests.antennaContour, AntennaContourEirp)
+        elif type == AntennaContourType.EIRP:
+            Assert.assertEqual(AntennaContourType.EIRP, EarlyBoundTests.antennaContourGraphics.contour.type)
+            antennaContourEirp: "AntennaContourEIRP" = clr.CastAs(EarlyBoundTests.antennaContour, AntennaContourEIRP)
 
             antennaContourEirp_Helper = IAgAntennaContourEirp_Helper()
 
@@ -553,8 +557,8 @@ class EarlyBoundTests(TestBase):
             )
 
             antennaContourEirp_Helper.CoordinateSystem(antennaContourEirp)
-        elif type == ANTENNA_CONTOUR_TYPE.FLUX_DENSITY:
-            Assert.assertEqual(ANTENNA_CONTOUR_TYPE.FLUX_DENSITY, EarlyBoundTests.antennaContourGraphics.contour.type)
+        elif type == AntennaContourType.FLUX_DENSITY:
+            Assert.assertEqual(AntennaContourType.FLUX_DENSITY, EarlyBoundTests.antennaContourGraphics.contour.type)
             antennaContourFluxDensity: "AntennaContourFluxDensity" = clr.CastAs(
                 EarlyBoundTests.antennaContour, AntennaContourFluxDensity
             )
@@ -588,9 +592,9 @@ class EarlyBoundTests(TestBase):
             antennaContourFluxDensity_Helper.SetResolution_ExpectedException(
                 antennaContourFluxDensity, 9, 9, 181
             )  # above max maxEl
-        elif type == ANTENNA_CONTOUR_TYPE.RIP:
-            Assert.assertEqual(ANTENNA_CONTOUR_TYPE.RIP, EarlyBoundTests.antennaContourGraphics.contour.type)
-            antennaContourRip: "AntennaContourRip" = clr.CastAs(EarlyBoundTests.antennaContour, AntennaContourRip)
+        elif type == AntennaContourType.RIP:
+            Assert.assertEqual(AntennaContourType.RIP, EarlyBoundTests.antennaContourGraphics.contour.type)
+            antennaContourRip: "AntennaContourRIP" = clr.CastAs(EarlyBoundTests.antennaContour, AntennaContourRIP)
 
             antennaContourRip_Helper = IAgAntennaContourRip_Helper()
 
@@ -605,9 +609,9 @@ class EarlyBoundTests(TestBase):
             antennaContourRip_Helper.SetResolution_ExpectedException(antennaContourRip, 9, 31, 9)  # above max elRes
             antennaContourRip_Helper.SetResolution_ExpectedException(antennaContourRip, 9, 9, 0)  # below min maxEl
             antennaContourRip_Helper.SetResolution_ExpectedException(antennaContourRip, 9, 9, 181)  # above max maxEl
-        elif type == ANTENNA_CONTOUR_TYPE.SPECTRAL_FLUX_DENSITY:
+        elif type == AntennaContourType.SPECTRAL_FLUX_DENSITY:
             Assert.assertEqual(
-                ANTENNA_CONTOUR_TYPE.SPECTRAL_FLUX_DENSITY, EarlyBoundTests.antennaContourGraphics.contour.type
+                AntennaContourType.SPECTRAL_FLUX_DENSITY, EarlyBoundTests.antennaContourGraphics.contour.type
             )
             antennaContourSpectralFluxDensity: "AntennaContourSpectralFluxDensity" = clr.CastAs(
                 EarlyBoundTests.antennaContour, AntennaContourSpectralFluxDensity
@@ -655,8 +659,11 @@ class EarlyBoundTests(TestBase):
     @category("Graphics Tests")
     def test_IAgAntennaContourGraphics_Show(self):
         # Needs to be something other than Simple transmitter for 2D properties to be available
-        EarlyBoundTests.transmitter.set_model("Complex Transmitter Model")
-        Assert.assertEqual(TRANSMITTER_MODEL_TYPE.COMPLEX, EarlyBoundTests.transmitter.model.type)
+        EarlyBoundTests.transmitter.model_component_linking.set_component("Complex Transmitter Model")
+        Assert.assertEqual(
+            TransmitterModelType.COMPLEX,
+            (ITransmitterModel(EarlyBoundTests.transmitter.model_component_linking.component)).type,
+        )
 
         EarlyBoundTests.antennaContourGraphics.show = True
         Assert.assertTrue(EarlyBoundTests.antennaContourGraphics.show)
@@ -670,16 +677,16 @@ class EarlyBoundTests(TestBase):
     def test_IAgAntennaContourGraphics_SupportedContourTypes(self):
         arSupportedContourTypes = EarlyBoundTests.antennaContourGraphics.supported_contour_types
         Assert.assertEqual(5, len(arSupportedContourTypes))
-        Assert.assertEqual(ANTENNA_CONTOUR_TYPE.GAIN, ANTENNA_CONTOUR_TYPE(int(arSupportedContourTypes[0][0])))
+        Assert.assertEqual(AntennaContourType.GAIN, AntennaContourType(int(arSupportedContourTypes[0][0])))
         Assert.assertEqual("Antenna Gain", arSupportedContourTypes[0][1])
-        Assert.assertEqual(ANTENNA_CONTOUR_TYPE.EIRP, ANTENNA_CONTOUR_TYPE(int(arSupportedContourTypes[1][0])))
+        Assert.assertEqual(AntennaContourType.EIRP, AntennaContourType(int(arSupportedContourTypes[1][0])))
         Assert.assertEqual("EIRP", arSupportedContourTypes[1][1])
-        Assert.assertEqual(ANTENNA_CONTOUR_TYPE.FLUX_DENSITY, ANTENNA_CONTOUR_TYPE(int(arSupportedContourTypes[2][0])))
+        Assert.assertEqual(AntennaContourType.FLUX_DENSITY, AntennaContourType(int(arSupportedContourTypes[2][0])))
         Assert.assertEqual("Flux Density", arSupportedContourTypes[2][1])
-        Assert.assertEqual(ANTENNA_CONTOUR_TYPE.RIP, ANTENNA_CONTOUR_TYPE(int(arSupportedContourTypes[3][0])))
+        Assert.assertEqual(AntennaContourType.RIP, AntennaContourType(int(arSupportedContourTypes[3][0])))
         Assert.assertEqual("RIP", arSupportedContourTypes[3][1])
         Assert.assertEqual(
-            ANTENNA_CONTOUR_TYPE.SPECTRAL_FLUX_DENSITY, ANTENNA_CONTOUR_TYPE(int(arSupportedContourTypes[4][0]))
+            AntennaContourType.SPECTRAL_FLUX_DENSITY, AntennaContourType(int(arSupportedContourTypes[4][0]))
         )
         Assert.assertEqual("Spectral Flux Density", arSupportedContourTypes[4][1])
 
@@ -688,8 +695,8 @@ class EarlyBoundTests(TestBase):
     # region IAgAntennaContourGraphics_IsContourTypeSupported
     @category("Graphics Tests")
     def test_IAgAntennaContourGraphics_IsContourTypeSupported(self):
-        contourType: "ANTENNA_CONTOUR_TYPE"
-        for contourType in Enum.GetValues(clr.TypeOf(ANTENNA_CONTOUR_TYPE)):
+        contourType: "AntennaContourType"
+        for contourType in Enum.GetValues(clr.TypeOf(AntennaContourType)):
             if EarlyBoundTests.antennaContourGraphics.is_contour_type_supported(contourType):
                 EarlyBoundTests.antennaContourGraphics.set_contour_type(contourType)
                 Assert.assertEqual(contourType, EarlyBoundTests.antennaContourGraphics.contour.type)
@@ -776,10 +783,14 @@ class EarlyBoundTests(TestBase):
             EarlyBoundTests.antennaVolumeGraphics.show = False
             with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify a read only")):
                 EarlyBoundTests.antennaVolumeGraphics.gain_offset = gainOffset
+            with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify a read only")):
+                EarlyBoundTests.antennaVolumeGraphics.minimum_displayed_gain = gainOffset
 
             EarlyBoundTests.antennaVolumeGraphics.show = True
             EarlyBoundTests.antennaVolumeGraphics.gain_offset = gainOffset
             Assert.assertEqual(gainOffset, EarlyBoundTests.antennaVolumeGraphics.gain_offset)
+            EarlyBoundTests.antennaVolumeGraphics.minimum_displayed_gain = gainOffset
+            Assert.assertEqual(gainOffset, EarlyBoundTests.antennaVolumeGraphics.minimum_displayed_gain)
 
         ExceptionAssert.ThrowsIfExceptionProvided(expectedException, expectedMessage, matchType, code2)
 
@@ -809,20 +820,22 @@ class EarlyBoundTests(TestBase):
         elNumPoints: int,
         elExpectedRes: float,
     ):
-        EarlyBoundTests.antennaVolumeGraphics.set_num_points(azStart, azStop, azNumPoints, elStart, elStop, elNumPoints)
+        EarlyBoundTests.antennaVolumeGraphics.set_number_of_points(
+            azStart, azStop, azNumPoints, elStart, elStop, elNumPoints
+        )
 
         Assert.assertEqual(azStart, EarlyBoundTests.antennaVolumeGraphics.azimuth_start)
         Assert.assertEqual(azStop, EarlyBoundTests.antennaVolumeGraphics.azimuth_stop)
-        Assert.assertEqual(azNumPoints, EarlyBoundTests.antennaVolumeGraphics.azimuth_num_points)
+        Assert.assertEqual(azNumPoints, EarlyBoundTests.antennaVolumeGraphics.azimuth_number_of_points)
         Assert.assertAlmostEqual(azExpectedRes, EarlyBoundTests.antennaVolumeGraphics.azimuth_resolution, delta=0.001)
 
         Assert.assertEqual(elStart, EarlyBoundTests.antennaVolumeGraphics.elevation_start)
         Assert.assertEqual(elStop, EarlyBoundTests.antennaVolumeGraphics.elevation_stop)
-        Assert.assertEqual(elNumPoints, EarlyBoundTests.antennaVolumeGraphics.elevation_num_points)
+        Assert.assertEqual(elNumPoints, EarlyBoundTests.antennaVolumeGraphics.elevation_number_of_points)
         Assert.assertAlmostEqual(elExpectedRes, EarlyBoundTests.antennaVolumeGraphics.elevation_resolution, delta=0.001)
 
         # Set back to defaults so other tests are not affected
-        EarlyBoundTests.antennaVolumeGraphics.set_num_points(-180, 180, 50, 0, 90, 50)
+        EarlyBoundTests.antennaVolumeGraphics.set_number_of_points(-180, 180, 50, 0, 90, 50)
 
     # endregion
 
@@ -846,7 +859,7 @@ class EarlyBoundTests(TestBase):
         self, azStart: float, azStop: float, azNumPoints: int, elStart: float, elStop: float, elNumPoints: int
     ):
         def code3():
-            EarlyBoundTests.antennaVolumeGraphics.set_num_points(
+            EarlyBoundTests.antennaVolumeGraphics.set_number_of_points(
                 azStart, azStop, azNumPoints, elStart, elStop, elNumPoints
             )
 
@@ -862,7 +875,7 @@ class EarlyBoundTests(TestBase):
         self, azStart: float, azStop: float, azNumPoints: int, elStart: float, elStop: float, elNumPoints: int
     ):
         def code4():
-            EarlyBoundTests.antennaVolumeGraphics.set_num_points(
+            EarlyBoundTests.antennaVolumeGraphics.set_number_of_points(
                 azStart, azStop, azNumPoints, elStart, elStop, elNumPoints
             )
 
@@ -901,14 +914,14 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(azStop, EarlyBoundTests.antennaVolumeGraphics.azimuth_stop)
         Assert.assertAlmostEqual(azRes, EarlyBoundTests.antennaVolumeGraphics.azimuth_resolution, delta=0.001)
         Assert.assertAlmostEqual(
-            azExpectedNumPoints, EarlyBoundTests.antennaVolumeGraphics.azimuth_num_points, delta=2.0
+            azExpectedNumPoints, EarlyBoundTests.antennaVolumeGraphics.azimuth_number_of_points, delta=2.0
         )
 
         Assert.assertEqual(elStart, EarlyBoundTests.antennaVolumeGraphics.elevation_start)
         Assert.assertEqual(elStop, EarlyBoundTests.antennaVolumeGraphics.elevation_stop)
         Assert.assertAlmostEqual(elRes, EarlyBoundTests.antennaVolumeGraphics.elevation_resolution, delta=0.001)
         Assert.assertAlmostEqual(
-            elExpectedNumPoints, EarlyBoundTests.antennaVolumeGraphics.elevation_num_points, delta=2.0
+            elExpectedNumPoints, EarlyBoundTests.antennaVolumeGraphics.elevation_number_of_points, delta=2.0
         )
 
         # Set back to defaults so other tests are not affected
@@ -964,9 +977,14 @@ class EarlyBoundTests(TestBase):
         i: int = 0
         while i < len(arRefrSuppTypes):
             if (
-                ((SENSOR_REFRACTION_TYPE(int(arRefrSuppTypes[1][0])) == SENSOR_REFRACTION_TYPE.EARTH_4_3_RADIUS_METHOD))
-                or ((SENSOR_REFRACTION_TYPE(int(arRefrSuppTypes[1][0])) == SENSOR_REFRACTION_TYPE.ITU_R_P834_4))
-            ) or ((SENSOR_REFRACTION_TYPE(int(arRefrSuppTypes[1][0])) == SENSOR_REFRACTION_TYPE.SCF_METHOD)):
+                (
+                    (
+                        SensorRefractionType(int(arRefrSuppTypes[1][0]))
+                        == SensorRefractionType.EARTH_FOUR_THIRDS_RADIUS_METHOD
+                    )
+                )
+                or ((SensorRefractionType(int(arRefrSuppTypes[1][0])) == SensorRefractionType.ITU_R_P834_4))
+            ) or ((SensorRefractionType(int(arRefrSuppTypes[1][0])) == SensorRefractionType.SCF_METHOD)):
                 pass
             else:
                 Assert.fail("Unknown or untested Refraction Type")
@@ -977,14 +995,14 @@ class EarlyBoundTests(TestBase):
 
     # region RefractionModel Interface tests
     def Test_IAgRfModelEffectiveRadiusMethod(self, EffectiveRadiusMethod: "RefractionModelEffectiveRadiusMethod"):
-        EffectiveRadiusMethod.eff_rad = 0.1
-        Assert.assertEqual(0.1, EffectiveRadiusMethod.eff_rad)
-        EffectiveRadiusMethod.eff_rad = 100
-        Assert.assertEqual(100, EffectiveRadiusMethod.eff_rad)
+        EffectiveRadiusMethod.effective_radius = 0.1
+        Assert.assertEqual(0.1, EffectiveRadiusMethod.effective_radius)
+        EffectiveRadiusMethod.effective_radius = 100
+        Assert.assertEqual(100, EffectiveRadiusMethod.effective_radius)
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            EffectiveRadiusMethod.eff_rad = 0.0
+            EffectiveRadiusMethod.effective_radius = 0.0
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            EffectiveRadiusMethod.eff_rad = 101.0
+            EffectiveRadiusMethod.effective_radius = 101.0
 
         EffectiveRadiusMethod.ceiling = 0.0
         Assert.assertEqual(0.0, EffectiveRadiusMethod.ceiling)
@@ -993,12 +1011,12 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             EffectiveRadiusMethod.ceiling = -1.0
 
-        EffectiveRadiusMethod.max_target_altitude = 0.0
-        Assert.assertEqual(0.0, EffectiveRadiusMethod.max_target_altitude)
-        EffectiveRadiusMethod.max_target_altitude = 1000000000
-        Assert.assertEqual(1000000000, EffectiveRadiusMethod.max_target_altitude)
+        EffectiveRadiusMethod.maximum_target_altitude = 0.0
+        Assert.assertEqual(0.0, EffectiveRadiusMethod.maximum_target_altitude)
+        EffectiveRadiusMethod.maximum_target_altitude = 1000000000
+        Assert.assertEqual(1000000000, EffectiveRadiusMethod.maximum_target_altitude)
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            EffectiveRadiusMethod.max_target_altitude = -1.0
+            EffectiveRadiusMethod.maximum_target_altitude = -1.0
 
         EffectiveRadiusMethod.use_extrapolation = True
         Assert.assertTrue(EffectiveRadiusMethod.use_extrapolation)
@@ -1013,12 +1031,12 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             ITURP8344.ceiling = -1.0
 
-        ITURP8344.atmos_altitude = 0.0
-        Assert.assertEqual(0.0, ITURP8344.atmos_altitude)
-        ITURP8344.atmos_altitude = 1000000000
-        Assert.assertEqual(1000000000, ITURP8344.atmos_altitude)
+        ITURP8344.atmosphere_altitude = 0.0
+        Assert.assertEqual(0.0, ITURP8344.atmosphere_altitude)
+        ITURP8344.atmosphere_altitude = 1000000000
+        Assert.assertEqual(1000000000, ITURP8344.atmosphere_altitude)
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            ITURP8344.atmos_altitude = -1.0
+            ITURP8344.atmosphere_altitude = -1.0
 
         ITURP8344.knee_bend_factor = 0.0
         Assert.assertEqual(0.0, ITURP8344.knee_bend_factor)
@@ -1101,12 +1119,12 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             SCFMethod.ceiling = -1.0
 
-        SCFMethod.atmos_altitude = 0.0
-        Assert.assertEqual(0.0, SCFMethod.atmos_altitude)
-        SCFMethod.atmos_altitude = 1000000000
-        Assert.assertEqual(1000000000, SCFMethod.atmos_altitude)
+        SCFMethod.atmosphere_altitude = 0.0
+        Assert.assertEqual(0.0, SCFMethod.atmosphere_altitude)
+        SCFMethod.atmosphere_altitude = 1000000000
+        Assert.assertEqual(1000000000, SCFMethod.atmosphere_altitude)
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            SCFMethod.atmos_altitude = -1.0
+            SCFMethod.atmosphere_altitude = -1.0
 
         SCFMethod.knee_bend_factor = 0.0
         Assert.assertEqual(0.0, SCFMethod.knee_bend_factor)
@@ -1117,12 +1135,12 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             SCFMethod.knee_bend_factor = 1.1
 
-        SCFMethod.min_target_altitude = 0.0
-        Assert.assertEqual(0.0, SCFMethod.min_target_altitude)
-        SCFMethod.min_target_altitude = 1000000000
-        Assert.assertEqual(1000000000, SCFMethod.min_target_altitude)
+        SCFMethod.minimum_target_altitude = 0.0
+        Assert.assertEqual(0.0, SCFMethod.minimum_target_altitude)
+        SCFMethod.minimum_target_altitude = 1000000000
+        Assert.assertEqual(1000000000, SCFMethod.minimum_target_altitude)
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            SCFMethod.min_target_altitude = -1.0
+            SCFMethod.minimum_target_altitude = -1.0
 
         SCFMethod.use_extrapolation = True
         Assert.assertTrue(SCFMethod.use_extrapolation)
@@ -1134,24 +1152,24 @@ class EarlyBoundTests(TestBase):
     # region IAgTransmitter_Refraction
     @parameterized.expand(
         [
-            (SENSOR_REFRACTION_TYPE.EARTH_4_3_RADIUS_METHOD,),
-            (SENSOR_REFRACTION_TYPE.ITU_R_P834_4,),
-            (SENSOR_REFRACTION_TYPE.SCF_METHOD,),
+            (SensorRefractionType.EARTH_FOUR_THIRDS_RADIUS_METHOD,),
+            (SensorRefractionType.ITU_R_P834_4,),
+            (SensorRefractionType.SCF_METHOD,),
         ]
     )
-    def test_IAgTransmitter_Refraction(self, eSnRefractionType: "SENSOR_REFRACTION_TYPE"):
+    def test_IAgTransmitter_Refraction(self, eSnRefractionType: "SensorRefractionType"):
         if EarlyBoundTests.transmitter.is_refraction_type_supported(eSnRefractionType):
             EarlyBoundTests.transmitter.refraction = eSnRefractionType
             Assert.assertEqual(eSnRefractionType, EarlyBoundTests.transmitter.refraction)
-            if eSnRefractionType == SENSOR_REFRACTION_TYPE.EARTH_4_3_RADIUS_METHOD:
+            if eSnRefractionType == SensorRefractionType.EARTH_FOUR_THIRDS_RADIUS_METHOD:
                 self.Test_IAgRfModelEffectiveRadiusMethod(
                     clr.CastAs(EarlyBoundTests.transmitter.refraction_model, RefractionModelEffectiveRadiusMethod)
                 )
-            elif eSnRefractionType == SENSOR_REFRACTION_TYPE.ITU_R_P834_4:
+            elif eSnRefractionType == SensorRefractionType.ITU_R_P834_4:
                 self.Test_IAgRfModelITURP8344(
                     clr.CastAs(EarlyBoundTests.transmitter.refraction_model, RefractionModelITURP8344)
                 )
-            elif eSnRefractionType == SENSOR_REFRACTION_TYPE.SCF_METHOD:
+            elif eSnRefractionType == SensorRefractionType.SCF_METHOD:
                 self.Test_IAgRfModelSCFMethod(
                     clr.CastAs(EarlyBoundTests.transmitter.refraction_model, RefractionModelSCFMethod)
                 )
@@ -1201,9 +1219,10 @@ class EarlyBoundTests(TestBase):
     @category("Graphics Tests")
     def test_IAgTransmitterGraphics_Show(self):
         # Needs to be something other than Simple transmitter for 2D properties to be available
-        EarlyBoundTests.transmitter.set_model("Complex Re-Transmitter Model")
+        EarlyBoundTests.transmitter.model_component_linking.set_component("Complex Re-Transmitter Model")
         Assert.assertEqual(
-            TRANSMITTER_MODEL_TYPE.RE_TRANSMITTER_MODEL_TYPE_COMPLEX, EarlyBoundTests.transmitter.model.type
+            TransmitterModelType.RETRANSMITTER_MODEL_TYPE_COMPLEX,
+            (ITransmitterModel(EarlyBoundTests.transmitter.model_component_linking.component)).type,
         )
 
         EarlyBoundTests.transmitterGraphics.show = True
@@ -1212,8 +1231,11 @@ class EarlyBoundTests(TestBase):
         Assert.assertFalse(EarlyBoundTests.transmitterGraphics.show)
 
         # Simple transmitter - 2D properties - should fail
-        EarlyBoundTests.transmitter.set_model("Simple Transmitter Model")
-        Assert.assertEqual(TRANSMITTER_MODEL_TYPE.SIMPLE, EarlyBoundTests.transmitter.model.type)
+        EarlyBoundTests.transmitter.model_component_linking.set_component("Simple Transmitter Model")
+        Assert.assertEqual(
+            TransmitterModelType.SIMPLE,
+            (ITransmitterModel(EarlyBoundTests.transmitter.model_component_linking.component)).type,
+        )
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             EarlyBoundTests.transmitterGraphics.show = True
@@ -1243,12 +1265,10 @@ class EarlyBoundTests(TestBase):
     # endregion
 
     # ----------------------------------------------------------------
-
-    # region SupportedModels
-    def test_SupportedModels(self):
-        arModels = EarlyBoundTests.transmitter.supported_models
+    @staticmethod
+    def TestSupportedModels(models):
         sModelName: str
-        for sModelName in arModels:
+        for sModelName in models:
             Console.WriteLine(sModelName)
             if (
                 (
@@ -1285,7 +1305,27 @@ class EarlyBoundTests(TestBase):
             else:
                 Assert.fail(("Unknown or untested Transmitter Model: " + sModelName))
 
-        Assert.assertEqual(12, len(arModels))
+        Assert.assertEqual(12, len(models))
+
+    # region DeprecatedModelInterface
+    def test_DeprecatedModelInterface(self):
+        EarlyBoundTests.transmitter.set_model("Complex Transmitter Model")
+        transmitterModel: "ITransmitterModel" = EarlyBoundTests.transmitter.model
+        Assert.assertEqual("Complex Transmitter Model", transmitterModel.name)
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid model name")):
+            EarlyBoundTests.transmitter.set_model("bogus")
+
+        Assert.assertEqual(TransmitterModelType.COMPLEX, transmitterModel.type)
+        self.Test_IAgTransmitterModelComplex(clr.CastAs(transmitterModel, TransmitterModelComplex))
+
+        EarlyBoundTests.TestSupportedModels(EarlyBoundTests.transmitter.supported_models)
+
+    # endregion
+
+    # region ModelComponentLinking
+    def test_ModelComponentLinking(self):
+        STKUtilHelper.TestComponentLinking(EarlyBoundTests.transmitter.model_component_linking, 12)
+        EarlyBoundTests.TestSupportedModels(EarlyBoundTests.transmitter.model_component_linking.supported_components)
 
     # endregion
 
@@ -1390,7 +1430,7 @@ class EarlyBoundTests(TestBase):
     # endregion
 
     # region Test_IAgTransferFunctionInputBackOffCOverImTable
-    def Test_IAgTransferFunctionInputBackOffCOverImTable(self, table: "TransferFunctionInputBackOffCOverImTable"):
+    def Test_IAgTransferFunctionInputBackOffCOverImTable(self, table: "TransferFunctionInputBackOffVsCOverImTable"):
         with pytest.raises(Exception, match=RegexSubstringMatch("Cannot erase elements")):
             table.remove_at(0)
         with pytest.raises(Exception, match=RegexSubstringMatch("Cannot erase elements")):
@@ -1399,7 +1439,7 @@ class EarlyBoundTests(TestBase):
             table.remove_at(2)
 
         Assert.assertEqual(2, table.count)  # initial value, always at least 2
-        row: "TransferFunctionInputBackOffCOverImTableRow" = None
+        row: "TransferFunctionInputBackOffVsCOverImTableRow" = None
         row = table.add(10, 10.1)
         row = table.insert_at(0, 100, 100.1)
         row = table.add(20, 20.1)
@@ -1427,7 +1467,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(30, table[7].input_back_off)
         Assert.assertEqual(30.1, table[7].c_over_im)
 
-        row2: "TransferFunctionInputBackOffCOverImTableRow"
+        row2: "TransferFunctionInputBackOffVsCOverImTableRow"
 
         for row2 in table:
             hold: float = row2.input_back_off
@@ -1466,14 +1506,14 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             reTransmitterModel.saturated_flux_density = 1001
 
-        reTransmitterModel.operational_mode = RE_TRANSMITTER_OP_MODE.CONSTANT_OUTPUT_POWER
-        Assert.assertEqual(RE_TRANSMITTER_OP_MODE.CONSTANT_OUTPUT_POWER, reTransmitterModel.operational_mode)
-        reTransmitterModel.operational_mode = RE_TRANSMITTER_OP_MODE.RCV_ANT_GAIN_DELTA_ADJUSTED_FLUX_DENSITY
+        reTransmitterModel.operational_mode = ReTransmitterOpMode.CONSTANT_OUTPUT_POWER
+        Assert.assertEqual(ReTransmitterOpMode.CONSTANT_OUTPUT_POWER, reTransmitterModel.operational_mode)
+        reTransmitterModel.operational_mode = ReTransmitterOpMode.RECEIVER_ANTENNA_GAIN_DELTA_ADJUSTED_FLUX_DENSITY
         Assert.assertEqual(
-            RE_TRANSMITTER_OP_MODE.RCV_ANT_GAIN_DELTA_ADJUSTED_FLUX_DENSITY, reTransmitterModel.operational_mode
+            ReTransmitterOpMode.RECEIVER_ANTENNA_GAIN_DELTA_ADJUSTED_FLUX_DENSITY, reTransmitterModel.operational_mode
         )
-        reTransmitterModel.operational_mode = RE_TRANSMITTER_OP_MODE.UNADJUSTED_RCV_FLUX_DENSITY
-        Assert.assertEqual(RE_TRANSMITTER_OP_MODE.UNADJUSTED_RCV_FLUX_DENSITY, reTransmitterModel.operational_mode)
+        reTransmitterModel.operational_mode = ReTransmitterOpMode.UNADJUSTED_RECEIVE_FLUX_DENSITY
+        Assert.assertEqual(ReTransmitterOpMode.UNADJUSTED_RECEIVE_FLUX_DENSITY, reTransmitterModel.operational_mode)
 
         # Transfer Functions tab - Frequency sub-tab
 
@@ -1486,13 +1526,13 @@ class EarlyBoundTests(TestBase):
         reTransmitterModel.power_back_off_linear_scale = False
         Assert.assertFalse(reTransmitterModel.power_back_off_linear_scale)
 
-        reTransmitterModel.power_back_off_transfer_function_type = TRANSFER_FUNCTION_TYPE.POLYNOMIAL
+        reTransmitterModel.power_back_off_transfer_function_type = TransferFunctionType.POLYNOMIAL
         polyColl: "TransferFunctionPolynomialCollection" = (
             reTransmitterModel.power_back_off_transfer_function_polynomial
         )
         self.Test_IAgTransferFunctionPolynomialCollection(polyColl)
 
-        reTransmitterModel.power_back_off_transfer_function_type = TRANSFER_FUNCTION_TYPE.TABLE_DATA
+        reTransmitterModel.power_back_off_transfer_function_type = TransferFunctionType.TABLE_DATA
         self.Test_IAgTransferFunctionInputBackOffOutputBackOffTable(
             reTransmitterModel.power_back_off_transfer_function_table
         )
@@ -1505,7 +1545,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             reTransmitterModel.c_over_im_linear_scale = True
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-            reTransmitterModel.c_over_im_transfer_function_type = TRANSFER_FUNCTION_TYPE.TABLE_DATA
+            reTransmitterModel.c_over_im_transfer_function_type = TransferFunctionType.TABLE_DATA
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             reTransmitterModel.c_over_im_transfer_function_polynomial.remove_at(0)
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
@@ -1519,10 +1559,10 @@ class EarlyBoundTests(TestBase):
         reTransmitterModel.c_over_im_linear_scale = False
         Assert.assertFalse(reTransmitterModel.c_over_im_linear_scale)
 
-        reTransmitterModel.c_over_im_transfer_function_type = TRANSFER_FUNCTION_TYPE.POLYNOMIAL
+        reTransmitterModel.c_over_im_transfer_function_type = TransferFunctionType.POLYNOMIAL
         self.Test_IAgTransferFunctionPolynomialCollection(reTransmitterModel.c_over_im_transfer_function_polynomial)
 
-        reTransmitterModel.c_over_im_transfer_function_type = TRANSFER_FUNCTION_TYPE.TABLE_DATA
+        reTransmitterModel.c_over_im_transfer_function_type = TransferFunctionType.TABLE_DATA
         self.Test_IAgTransferFunctionInputBackOffCOverImTable(reTransmitterModel.c_over_im_transfer_function_table)
 
     # endregion
@@ -1532,14 +1572,14 @@ class EarlyBoundTests(TestBase):
 
     # region Test_IAgTransmitterModelCable
     def Test_IAgTransmitterModelCable(self, cable: "TransmitterModelCable"):
-        cable.data_rate = 1e-07
-        Assert.assertEqual(1e-07, cable.data_rate)
-        cable.data_rate = 1000000
-        Assert.assertEqual(1000000, cable.data_rate)
+        cable.data_rate = 1e-12
+        Assert.assertEqual(1e-12, cable.data_rate)
+        cable.data_rate = 1000000000000.0
+        Assert.assertEqual(1000000000000.0, cable.data_rate)
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             cable.data_rate = 0.0
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            cable.data_rate = 10000000
+            cable.data_rate = 10000000000000.0
 
         cable.chips_per_bit = 1
         Assert.assertEqual(1, cable.chips_per_bit)
@@ -1585,14 +1625,14 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             complex.power = 2891
 
-        complex.data_rate = 1e-07
-        Assert.assertEqual(1e-07, complex.data_rate)
-        complex.data_rate = 1000000
-        Assert.assertEqual(1000000, complex.data_rate)
+        complex.data_rate = 1e-12
+        Assert.assertEqual(1e-12, complex.data_rate)
+        complex.data_rate = 1000000000000.0
+        Assert.assertEqual(1000000000000.0, complex.data_rate)
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             complex.data_rate = 0.0
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            complex.data_rate = 10000000
+            complex.data_rate = 10000000000000.0
 
         # Antenna tab (Embed or Link)          tested in the call below
         # Antenna tab - Model Specs sub-tab    tested in the call below
@@ -1605,12 +1645,12 @@ class EarlyBoundTests(TestBase):
         complex.enable_polarization = False
         Assert.assertFalse(complex.enable_polarization)
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            complex.set_polarization_type(POLARIZATION_TYPE.ELLIPTICAL)
+            complex.set_polarization_type(PolarizationType.ELLIPTICAL)
         complex.enable_polarization = True
         Assert.assertTrue(complex.enable_polarization)
-        type: "POLARIZATION_TYPE"
-        for type in Enum.GetValues(clr.TypeOf(POLARIZATION_TYPE)):
-            if POLARIZATION_TYPE.UNKNOWN == type:
+        type: "PolarizationType"
+        for type in Enum.GetValues(clr.TypeOf(PolarizationType)):
+            if PolarizationType.UNKNOWN == type:
                 with pytest.raises(Exception, match=RegexSubstringMatch("Unrecognized")):
                     complex.set_polarization_type(type)
                 continue
@@ -1622,8 +1662,8 @@ class EarlyBoundTests(TestBase):
 
         # Antenna tab - Orientation sub-tab
 
-        complex.antenna_control.reference_type = ANTENNA_CONTROL_REFERENCE_TYPE.EMBED  # to make orientation read-write
-        oHelper = OrientationTest(TestBase.Application.unit_preferences)
+        complex.antenna_control.reference_type = AntennaControlReferenceType.EMBED  # to make orientation read-write
+        oHelper = OrientationTest(TestBase.Application.units_preferences)
         oHelper.Run(complex.antenna_control.embedded_model_orientation, Orientations.All)
 
         # Modulator tab
@@ -1646,24 +1686,44 @@ class EarlyBoundTests(TestBase):
             complex.set_modulator("bogus")
 
         # Filter tab
-
+        # Test deprecated filter model interface
         arSupportedFilters = complex.supported_filters
+        Assert.assertEqual(18, len(arSupportedFilters))
+
+        complex.enable_filter = True  # needed for SetFilter
+        complex.set_filter("Bessel")
+
+        complex.enable_filter = False
+        Assert.assertFalse(complex.enable_filter)
+        rfFilterModelHelper = RFFilterModelHelper(TestBase.Application)
+        rfFilterModelHelper.Run(complex.filter, "Bessel", False)
+
+        complex.enable_filter = True
+        Assert.assertTrue(complex.enable_filter)
+        rfFilterModelHelper.Run(complex.filter, "Bessel", True)
+
+        STKUtilHelper.TestComponentLinking(complex.filter_component_linking, 18)
+        arSupportedFilters = complex.filter_component_linking.supported_components
         Assert.assertEqual(18, len(arSupportedFilters))
         filterName: str
         for filterName in arSupportedFilters:
             complex.enable_filter = True  # needed for SetFilter
-            complex.set_filter(filterName)
+            complex.filter_component_linking.set_component(filterName)
 
             complex.enable_filter = False
             Assert.assertFalse(complex.enable_filter)
             rfFilterModelHelper = RFFilterModelHelper(TestBase.Application)
-            rfFilterModelHelper.Run(complex.filter, filterName, False)
+            rfFilterModelHelper.Run(
+                clr.CastAs(complex.filter_component_linking.component, IRFFilterModel), filterName, False
+            )
 
             complex.enable_filter = True
             Assert.assertTrue(complex.enable_filter)
             if filterName != "Script":
                 # "Script" does not have these properties
-                rfFilterModelHelper.Run(complex.filter, filterName, True)
+                rfFilterModelHelper.Run(
+                    clr.CastAs(complex.filter_component_linking.component, IRFFilterModel), filterName, True
+                )
 
         # Additional Gains and Losses tab
 
@@ -1705,12 +1765,12 @@ class EarlyBoundTests(TestBase):
         complexRe.enable_polarization = False
         Assert.assertFalse(complexRe.enable_polarization)
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            complexRe.set_polarization_type(POLARIZATION_TYPE.ELLIPTICAL)
+            complexRe.set_polarization_type(PolarizationType.ELLIPTICAL)
         complexRe.enable_polarization = True
         Assert.assertTrue(complexRe.enable_polarization)
-        type: "POLARIZATION_TYPE"
-        for type in Enum.GetValues(clr.TypeOf(POLARIZATION_TYPE)):
-            if POLARIZATION_TYPE.UNKNOWN == type:
+        type: "PolarizationType"
+        for type in Enum.GetValues(clr.TypeOf(PolarizationType)):
+            if PolarizationType.UNKNOWN == type:
                 with pytest.raises(Exception, match=RegexSubstringMatch("Unrecognized")):
                     complexRe.set_polarization_type(type)
                 continue
@@ -1722,10 +1782,8 @@ class EarlyBoundTests(TestBase):
 
         # Antenna tab - Orientation sub-tab
 
-        complexRe.antenna_control.reference_type = (
-            ANTENNA_CONTROL_REFERENCE_TYPE.EMBED
-        )  # to make orientation read-write
-        oHelper = OrientationTest(TestBase.Application.unit_preferences)
+        complexRe.antenna_control.reference_type = AntennaControlReferenceType.EMBED  # to make orientation read-write
+        oHelper = OrientationTest(TestBase.Application.units_preferences)
         oHelper.Run(complexRe.antenna_control.embedded_model_orientation, Orientations.All)
 
         # Modulator tab
@@ -1737,24 +1795,44 @@ class EarlyBoundTests(TestBase):
         # Tested in Test_IAgReTransmitterModel
 
         # Filter tab
-
+        # Test deprecated filter model interface
         arSupportedFilters = complexRe.supported_filters
+        Assert.assertEqual(18, len(arSupportedFilters))
+
+        complexRe.enable_filter = True  # needed for SetFilter
+        complexRe.set_filter("Bessel")
+
+        complexRe.enable_filter = False
+        Assert.assertFalse(complexRe.enable_filter)
+        rfFilterModelHelper = RFFilterModelHelper(TestBase.Application)
+        rfFilterModelHelper.Run(complexRe.filter, "Bessel", False)
+
+        complexRe.enable_filter = True
+        Assert.assertTrue(complexRe.enable_filter)
+        rfFilterModelHelper.Run(complexRe.filter, "Bessel", True)
+
+        STKUtilHelper.TestComponentLinking(complexRe.filter_component_linking, 18)
+        arSupportedFilters = complexRe.filter_component_linking.supported_components
         Assert.assertEqual(18, len(arSupportedFilters))
         filterName: str
         for filterName in arSupportedFilters:
             complexRe.enable_filter = True  # needed for SetFilter
-            complexRe.set_filter(filterName)
+            complexRe.filter_component_linking.set_component(filterName)
 
             complexRe.enable_filter = False
             Assert.assertFalse(complexRe.enable_filter)
             rfFilterModelHelper = RFFilterModelHelper(TestBase.Application)
-            rfFilterModelHelper.Run(complexRe.filter, filterName, False)
+            rfFilterModelHelper.Run(
+                clr.CastAs(complexRe.filter_component_linking.component, IRFFilterModel), filterName, False
+            )
 
             complexRe.enable_filter = True
             Assert.assertTrue(complexRe.enable_filter)
             if filterName != "Script":
                 # "Script" does not have these properties
-                rfFilterModelHelper.Run(complexRe.filter, filterName, True)
+                rfFilterModelHelper.Run(
+                    clr.CastAs(complexRe.filter_component_linking.component, IRFFilterModel), filterName, True
+                )
 
         # Additional Gains and Losses tab
 
@@ -1808,17 +1886,17 @@ class EarlyBoundTests(TestBase):
         antennaControl: "AntennaControl" = laser.antenna_control
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-            antennaControl.reference_type = ANTENNA_CONTROL_REFERENCE_TYPE.EMBED
+            antennaControl.reference_type = AntennaControlReferenceType.EMBED
 
-        arSupportedEmbeddedModels = antennaControl.supported_embedded_models
+        arSupportedEmbeddedModels = antennaControl.embedded_model_component_linking.supported_components
         Assert.assertEqual(2, len(arSupportedEmbeddedModels))
         modelName: str
         for modelName in arSupportedEmbeddedModels:
-            antennaControl.set_embedded_model(modelName)
-            Assert.assertEqual(modelName, antennaControl.embedded_model.name)
+            antennaControl.embedded_model_component_linking.set_component(modelName)
+            Assert.assertEqual(modelName, antennaControl.embedded_model_component_linking.component.name)
 
-        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid model name")):
-            antennaControl.set_embedded_model("Bogus")
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid component name")):
+            antennaControl.embedded_model_component_linking.set_component("Bogus")
 
         arSupportedLinkedAntennaObjects = antennaControl.supported_linked_antenna_objects
         Assert.assertTrue((len(arSupportedLinkedAntennaObjects) == 0))
@@ -1826,32 +1904,34 @@ class EarlyBoundTests(TestBase):
             antennaControl.linked_antenna_object = "Antenna/Antenna1Test"
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-            antennaControl.reference_type = ANTENNA_CONTROL_REFERENCE_TYPE.LINK
+            antennaControl.reference_type = AntennaControlReferenceType.LINK
 
         # Antenna tab - Model Specs sub-tab
 
-        TestBase.Application.unit_preferences.set_current_unit("FrequencyUnit", "GHz")
+        TestBase.Application.units_preferences.set_current_unit("FrequencyUnit", "GHz")
         antennaHelper = AntennaHelper(TestBase.Application)
-        antennaModelType: "ANTENNA_MODEL_TYPE"
-        for antennaModelType in Enum.GetValues(clr.TypeOf(ANTENNA_MODEL_TYPE)):
-            if (ANTENNA_MODEL_TYPE.OPTICAL_SIMPLE == antennaModelType) or (
-                ANTENNA_MODEL_TYPE.OPTICAL_GAUSSIAN == antennaModelType
+        antennaModelType: "AntennaModelType"
+        for antennaModelType in Enum.GetValues(clr.TypeOf(AntennaModelType)):
+            if (AntennaModelType.OPTICAL_SIMPLE == antennaModelType) or (
+                AntennaModelType.OPTICAL_GAUSSIAN == antennaModelType
             ):
                 antennaModelName: str = AntennaHelper.TypeToName(antennaModelType)
-                antennaControl.set_embedded_model(antennaModelName)
-                antennaHelper.Run(antennaControl.embedded_model, antennaModelName, True)
+                antennaControl.embedded_model_component_linking.set_component(antennaModelName)
+                antennaHelper.Run(
+                    IAntennaModel(antennaControl.embedded_model_component_linking.component), antennaModelName, True
+                )
 
         # Antenna tab - Polarization sub-tab
 
         laser.enable_polarization = False
         Assert.assertFalse(laser.enable_polarization)
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            laser.set_polarization_type(POLARIZATION_TYPE.ELLIPTICAL)
+            laser.set_polarization_type(PolarizationType.ELLIPTICAL)
         laser.enable_polarization = True
         Assert.assertTrue(laser.enable_polarization)
-        type: "POLARIZATION_TYPE"
-        for type in Enum.GetValues(clr.TypeOf(POLARIZATION_TYPE)):
-            if POLARIZATION_TYPE.UNKNOWN == type:
+        type: "PolarizationType"
+        for type in Enum.GetValues(clr.TypeOf(PolarizationType)):
+            if PolarizationType.UNKNOWN == type:
                 with pytest.raises(Exception, match=RegexSubstringMatch("Unrecognized")):
                     laser.set_polarization_type(type)
                 continue
@@ -1863,7 +1943,7 @@ class EarlyBoundTests(TestBase):
 
         # Antenna tab - Orientation sub-tab
 
-        oHelper = OrientationTest(TestBase.Application.unit_preferences)
+        oHelper = OrientationTest(TestBase.Application.units_preferences)
         oHelper.Run(laser.antenna_control.embedded_model_orientation, Orientations.All)
 
         # Modulator tab
@@ -1886,24 +1966,44 @@ class EarlyBoundTests(TestBase):
             laser.set_modulator("bogus")
 
         # Filter tab
-
+        # Test deprecated filter model interface
         arSupportedFilters = laser.supported_filters
+        Assert.assertEqual(18, len(arSupportedFilters))
+
+        laser.enable_filter = True  # needed for SetFilter
+        laser.set_filter("Bessel")
+
+        laser.enable_filter = False
+        Assert.assertFalse(laser.enable_filter)
+        rfFilterModelHelper = RFFilterModelHelper(TestBase.Application)
+        rfFilterModelHelper.Run(laser.filter, "Bessel", False)
+
+        laser.enable_filter = True
+        Assert.assertTrue(laser.enable_filter)
+        rfFilterModelHelper.Run(laser.filter, "Bessel", True)
+
+        STKUtilHelper.TestComponentLinking(laser.filter_component_linking, 18)
+        arSupportedFilters = laser.filter_component_linking.supported_components
         Assert.assertEqual(18, len(arSupportedFilters))
         filterName: str
         for filterName in arSupportedFilters:
             laser.enable_filter = True  # needed for SetFilter
-            laser.set_filter(filterName)
+            laser.filter_component_linking.set_component(filterName)
 
             laser.enable_filter = False
             Assert.assertFalse(laser.enable_filter)
             rfFilterModelHelper = RFFilterModelHelper(TestBase.Application)
-            rfFilterModelHelper.Run(laser.filter, filterName, False)
+            rfFilterModelHelper.Run(
+                clr.CastAs(laser.filter_component_linking.component, IRFFilterModel), filterName, False
+            )
 
             laser.enable_filter = True
             Assert.assertTrue(laser.enable_filter)
             if filterName != "Script":
                 # "Script" does not have these properties
-                rfFilterModelHelper.Run(laser.filter, filterName, True)
+                rfFilterModelHelper.Run(
+                    clr.CastAs(laser.filter_component_linking.component, IRFFilterModel), filterName, True
+                )
 
         # Additional Gains and Losses tab
 
@@ -1959,14 +2059,14 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             medium.antenna_gain = 2891
 
-        medium.data_rate = 1e-07
-        Assert.assertEqual(1e-07, medium.data_rate)
-        medium.data_rate = 1000000
-        Assert.assertEqual(1000000, medium.data_rate)
+        medium.data_rate = 1e-12
+        Assert.assertEqual(1e-12, medium.data_rate)
+        medium.data_rate = 1000000000000.0
+        Assert.assertEqual(1000000000000.0, medium.data_rate)
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             medium.data_rate = 0.0
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            medium.data_rate = 10000000
+            medium.data_rate = 10000000000000.0
 
         # Antenna tab (Embed or Link)
 
@@ -1981,12 +2081,12 @@ class EarlyBoundTests(TestBase):
         medium.enable_polarization = False
         Assert.assertFalse(medium.enable_polarization)
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            medium.set_polarization_type(POLARIZATION_TYPE.ELLIPTICAL)
+            medium.set_polarization_type(PolarizationType.ELLIPTICAL)
         medium.enable_polarization = True
         Assert.assertTrue(medium.enable_polarization)
-        type: "POLARIZATION_TYPE"
-        for type in Enum.GetValues(clr.TypeOf(POLARIZATION_TYPE)):
-            if POLARIZATION_TYPE.UNKNOWN == type:
+        type: "PolarizationType"
+        for type in Enum.GetValues(clr.TypeOf(PolarizationType)):
+            if PolarizationType.UNKNOWN == type:
                 with pytest.raises(Exception, match=RegexSubstringMatch("Unrecognized")):
                     medium.set_polarization_type(type)
                 continue
@@ -2020,24 +2120,44 @@ class EarlyBoundTests(TestBase):
             medium.set_modulator("bogus")
 
         # Filter tab
-
+        # Test deprecated filter model interface
         arSupportedFilters = medium.supported_filters
+        Assert.assertEqual(18, len(arSupportedFilters))
+
+        medium.enable_filter = True  # needed for SetFilter
+        medium.set_filter("Bessel")
+
+        medium.enable_filter = False
+        Assert.assertFalse(medium.enable_filter)
+        rfFilterModelHelper = RFFilterModelHelper(TestBase.Application)
+        rfFilterModelHelper.Run(medium.filter, "Bessel", False)
+
+        medium.enable_filter = True
+        Assert.assertTrue(medium.enable_filter)
+        rfFilterModelHelper.Run(medium.filter, "Bessel", True)
+
+        STKUtilHelper.TestComponentLinking(medium.filter_component_linking, 18)
+        arSupportedFilters = medium.filter_component_linking.supported_components
         Assert.assertEqual(18, len(arSupportedFilters))
         filterName: str
         for filterName in arSupportedFilters:
             medium.enable_filter = True  # needed for SetFilter
-            medium.set_filter(filterName)
+            medium.filter_component_linking.set_component(filterName)
 
             medium.enable_filter = False
             Assert.assertFalse(medium.enable_filter)
             rfFilterModelHelper = RFFilterModelHelper(TestBase.Application)
-            rfFilterModelHelper.Run(medium.filter, filterName, False)
+            rfFilterModelHelper.Run(
+                clr.CastAs(medium.filter_component_linking.component, IRFFilterModel), filterName, False
+            )
 
             medium.enable_filter = True
             Assert.assertTrue(medium.enable_filter)
             if filterName != "Script":
                 # "Script" does not have these properties
-                rfFilterModelHelper.Run(medium.filter, filterName, True)
+                rfFilterModelHelper.Run(
+                    clr.CastAs(medium.filter_component_linking.component, IRFFilterModel), filterName, True
+                )
 
         # Additional Gains and Losses tab
 
@@ -2097,12 +2217,12 @@ class EarlyBoundTests(TestBase):
         mediumRe.enable_polarization = False
         Assert.assertFalse(mediumRe.enable_polarization)
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            mediumRe.set_polarization_type(POLARIZATION_TYPE.ELLIPTICAL)
+            mediumRe.set_polarization_type(PolarizationType.ELLIPTICAL)
         mediumRe.enable_polarization = True
         Assert.assertTrue(mediumRe.enable_polarization)
-        type: "POLARIZATION_TYPE"
-        for type in Enum.GetValues(clr.TypeOf(POLARIZATION_TYPE)):
-            if POLARIZATION_TYPE.UNKNOWN == type:
+        type: "PolarizationType"
+        for type in Enum.GetValues(clr.TypeOf(PolarizationType)):
+            if PolarizationType.UNKNOWN == type:
                 with pytest.raises(Exception, match=RegexSubstringMatch("Unrecognized")):
                     mediumRe.set_polarization_type(type)
                 continue
@@ -2125,24 +2245,44 @@ class EarlyBoundTests(TestBase):
         # Tested in Test_IAgReTransmitterModel
 
         # Filter tab
-
+        # Test deprecated filter model interface
         arSupportedFilters = mediumRe.supported_filters
+        Assert.assertEqual(18, len(arSupportedFilters))
+
+        mediumRe.enable_filter = True  # needed for SetFilter
+        mediumRe.set_filter("Bessel")
+
+        mediumRe.enable_filter = False
+        Assert.assertFalse(mediumRe.enable_filter)
+        rfFilterModelHelper = RFFilterModelHelper(TestBase.Application)
+        rfFilterModelHelper.Run(mediumRe.filter, "Bessel", False)
+
+        mediumRe.enable_filter = True
+        Assert.assertTrue(mediumRe.enable_filter)
+        rfFilterModelHelper.Run(mediumRe.filter, "Bessel", True)
+
+        STKUtilHelper.TestComponentLinking(mediumRe.filter_component_linking, 18)
+        arSupportedFilters = mediumRe.filter_component_linking.supported_components
         Assert.assertEqual(18, len(arSupportedFilters))
         filterName: str
         for filterName in arSupportedFilters:
             mediumRe.enable_filter = True  # needed for SetFilter
-            mediumRe.set_filter(filterName)
+            mediumRe.filter_component_linking.set_component(filterName)
 
             mediumRe.enable_filter = False
             Assert.assertFalse(mediumRe.enable_filter)
             rfFilterModelHelper = RFFilterModelHelper(TestBase.Application)
-            rfFilterModelHelper.Run(mediumRe.filter, filterName, False)
+            rfFilterModelHelper.Run(
+                clr.CastAs(mediumRe.filter_component_linking.component, IRFFilterModel), filterName, False
+            )
 
             mediumRe.enable_filter = True
             Assert.assertTrue(mediumRe.enable_filter)
             if filterName != "Script":
                 # "Script" does not have these properties
-                rfFilterModelHelper.Run(mediumRe.filter, filterName, True)
+                rfFilterModelHelper.Run(
+                    clr.CastAs(mediumRe.filter_component_linking.component, IRFFilterModel), filterName, True
+                )
 
         # Additional Gains and Losses tab
 
@@ -2178,14 +2318,14 @@ class EarlyBoundTests(TestBase):
 
         simple.frequency = 1.0  # RESTORE TO THIS VALUE TO BE CONSISTENT WITH ANTENNA TESTS. IMPORTANT SO THAT OTHER TEST VALUES ARE CONSISTENT.
 
-        simple.data_rate = 1e-07
-        Assert.assertEqual(1e-07, simple.data_rate)
-        simple.data_rate = 1000000
-        Assert.assertEqual(1000000, simple.data_rate)
+        simple.data_rate = 1e-12
+        Assert.assertEqual(1e-12, simple.data_rate)
+        simple.data_rate = 1000000000000.0
+        Assert.assertEqual(1000000000000.0, simple.data_rate)
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             simple.data_rate = 0.0
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            simple.data_rate = 10000000
+            simple.data_rate = 10000000000000.0
 
         # Antenna tab (Embed or Link)
 
@@ -2200,12 +2340,12 @@ class EarlyBoundTests(TestBase):
         simple.enable_polarization = False
         Assert.assertFalse(simple.enable_polarization)
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            simple.set_polarization_type(POLARIZATION_TYPE.ELLIPTICAL)
+            simple.set_polarization_type(PolarizationType.ELLIPTICAL)
         simple.enable_polarization = True
         Assert.assertTrue(simple.enable_polarization)
-        type: "POLARIZATION_TYPE"
-        for type in Enum.GetValues(clr.TypeOf(POLARIZATION_TYPE)):
-            if POLARIZATION_TYPE.UNKNOWN == type:
+        type: "PolarizationType"
+        for type in Enum.GetValues(clr.TypeOf(PolarizationType)):
+            if PolarizationType.UNKNOWN == type:
                 with pytest.raises(Exception, match=RegexSubstringMatch("Unrecognized")):
                     simple.set_polarization_type(type)
                 continue
@@ -2239,24 +2379,44 @@ class EarlyBoundTests(TestBase):
             simple.set_modulator("bogus")
 
         # Filter tab
-
+        # Test deprecated filter model interface
         arSupportedFilters = simple.supported_filters
+        Assert.assertEqual(18, len(arSupportedFilters))
+
+        simple.enable_filter = True  # needed for SetFilter
+        simple.set_filter("Bessel")
+
+        simple.enable_filter = False
+        Assert.assertFalse(simple.enable_filter)
+        rfFilterModelHelper = RFFilterModelHelper(TestBase.Application)
+        rfFilterModelHelper.Run(simple.filter, "Bessel", False)
+
+        simple.enable_filter = True
+        Assert.assertTrue(simple.enable_filter)
+        rfFilterModelHelper.Run(simple.filter, "Bessel", True)
+
+        STKUtilHelper.TestComponentLinking(simple.filter_component_linking, 18)
+        arSupportedFilters = simple.filter_component_linking.supported_components
         Assert.assertEqual(18, len(arSupportedFilters))
         filterName: str
         for filterName in arSupportedFilters:
             simple.enable_filter = True  # needed for SetFilter
-            simple.set_filter(filterName)
+            simple.filter_component_linking.set_component(filterName)
 
             simple.enable_filter = False
             Assert.assertFalse(simple.enable_filter)
             rfFilterModelHelper = RFFilterModelHelper(TestBase.Application)
-            rfFilterModelHelper.Run(simple.filter, filterName, False)
+            rfFilterModelHelper.Run(
+                clr.CastAs(simple.filter_component_linking.component, IRFFilterModel), filterName, False
+            )
 
             simple.enable_filter = True
             Assert.assertTrue(simple.enable_filter)
             if filterName != "Script":
                 # "Script" does not have these properties
-                rfFilterModelHelper.Run(simple.filter, filterName, True)
+                rfFilterModelHelper.Run(
+                    clr.CastAs(simple.filter_component_linking.component, IRFFilterModel), filterName, True
+                )
 
         # Additional Gains and Losses tab
 
@@ -2298,12 +2458,12 @@ class EarlyBoundTests(TestBase):
         simpleRe.enable_polarization = False
         Assert.assertFalse(simpleRe.enable_polarization)
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            simpleRe.set_polarization_type(POLARIZATION_TYPE.ELLIPTICAL)
+            simpleRe.set_polarization_type(PolarizationType.ELLIPTICAL)
         simpleRe.enable_polarization = True
         Assert.assertTrue(simpleRe.enable_polarization)
-        type: "POLARIZATION_TYPE"
-        for type in Enum.GetValues(clr.TypeOf(POLARIZATION_TYPE)):
-            if POLARIZATION_TYPE.UNKNOWN == type:
+        type: "PolarizationType"
+        for type in Enum.GetValues(clr.TypeOf(PolarizationType)):
+            if PolarizationType.UNKNOWN == type:
                 with pytest.raises(Exception, match=RegexSubstringMatch("Unrecognized")):
                     simpleRe.set_polarization_type(type)
                 continue
@@ -2326,24 +2486,44 @@ class EarlyBoundTests(TestBase):
         # Tested in Test_IAgReTransmitterModel
 
         # Filter tab
-
+        # Test deprecated filter model interface
         arSupportedFilters = simpleRe.supported_filters
+        Assert.assertEqual(18, len(arSupportedFilters))
+
+        simpleRe.enable_filter = True  # needed for SetFilter
+        simpleRe.set_filter("Bessel")
+
+        simpleRe.enable_filter = False
+        Assert.assertFalse(simpleRe.enable_filter)
+        rfFilterModelHelper = RFFilterModelHelper(TestBase.Application)
+        rfFilterModelHelper.Run(simpleRe.filter, "Bessel", False)
+
+        simpleRe.enable_filter = True
+        Assert.assertTrue(simpleRe.enable_filter)
+        rfFilterModelHelper.Run(simpleRe.filter, "Bessel", True)
+
+        STKUtilHelper.TestComponentLinking(simpleRe.filter_component_linking, 18)
+        arSupportedFilters = simpleRe.filter_component_linking.supported_components
         Assert.assertEqual(18, len(arSupportedFilters))
         filterName: str
         for filterName in arSupportedFilters:
             simpleRe.enable_filter = True  # needed for SetFilter
-            simpleRe.set_filter(filterName)
+            simpleRe.filter_component_linking.set_component(filterName)
 
             simpleRe.enable_filter = False
             Assert.assertFalse(simpleRe.enable_filter)
             rfFilterModelHelper = RFFilterModelHelper(TestBase.Application)
-            rfFilterModelHelper.Run(simpleRe.filter, filterName, False)
+            rfFilterModelHelper.Run(
+                clr.CastAs(simpleRe.filter_component_linking.component, IRFFilterModel), filterName, False
+            )
 
             simpleRe.enable_filter = True
             Assert.assertTrue(simpleRe.enable_filter)
             if filterName != "Script":
                 # "Script" does not have these properties
-                rfFilterModelHelper.Run(simpleRe.filter, filterName, True)
+                rfFilterModelHelper.Run(
+                    clr.CastAs(simpleRe.filter_component_linking.component, IRFFilterModel), filterName, True
+                )
 
         # Additional Gains and Losses tab
 
@@ -2359,20 +2539,22 @@ class EarlyBoundTests(TestBase):
         antennaSystem: "AntennaSystem" = multibeam.antenna_system
 
         with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
-            antennaSystem.set_beam_selection_strategy_type(BEAM_SELECTION_STRATEGY_TYPE.UNKNOWN)
+            antennaSystem.set_beam_selection_strategy_type(BeamSelectionStrategyType.UNKNOWN)
 
-        antennaSystem.set_beam_selection_strategy_type(BEAM_SELECTION_STRATEGY_TYPE.AGGREGATE)
-        Assert.assertEqual(BEAM_SELECTION_STRATEGY_TYPE.AGGREGATE, antennaSystem.beam_selection_strategy.type)
+        antennaSystem.set_beam_selection_strategy_type(BeamSelectionStrategyType.AGGREGATE)
+        Assert.assertEqual(BeamSelectionStrategyType.AGGREGATE, antennaSystem.beam_selection_strategy.type)
 
-        antennaSystem.set_beam_selection_strategy_type(BEAM_SELECTION_STRATEGY_TYPE.MAX_GAIN)
-        Assert.assertEqual(BEAM_SELECTION_STRATEGY_TYPE.MAX_GAIN, antennaSystem.beam_selection_strategy.type)
+        antennaSystem.set_beam_selection_strategy_type(BeamSelectionStrategyType.MAXIMUM_GAIN)
+        Assert.assertEqual(BeamSelectionStrategyType.MAXIMUM_GAIN, antennaSystem.beam_selection_strategy.type)
 
-        antennaSystem.set_beam_selection_strategy_type(BEAM_SELECTION_STRATEGY_TYPE.MIN_BORESIGHT_ANGLE)
-        Assert.assertEqual(BEAM_SELECTION_STRATEGY_TYPE.MIN_BORESIGHT_ANGLE, antennaSystem.beam_selection_strategy.type)
+        antennaSystem.set_beam_selection_strategy_type(BeamSelectionStrategyType.MINIMUM_BORESIGHT_ANGLE)
+        Assert.assertEqual(
+            BeamSelectionStrategyType.MINIMUM_BORESIGHT_ANGLE, antennaSystem.beam_selection_strategy.type
+        )
         if not OSHelper.IsLinux():
             # script plugins do not work on linux
-            antennaSystem.set_beam_selection_strategy_type(BEAM_SELECTION_STRATEGY_TYPE.SCRIPT_PLUGIN)
-            Assert.assertEqual(BEAM_SELECTION_STRATEGY_TYPE.SCRIPT_PLUGIN, antennaSystem.beam_selection_strategy.type)
+            antennaSystem.set_beam_selection_strategy_type(BeamSelectionStrategyType.SCRIPT_PLUGIN)
+            Assert.assertEqual(BeamSelectionStrategyType.SCRIPT_PLUGIN, antennaSystem.beam_selection_strategy.type)
             helper = AntennaBeamSelectionStrategyScriptPluginHelper(TestBase.Application)
             helper.Run(clr.CastAs(antennaSystem.beam_selection_strategy, AntennaBeamSelectionStrategyScriptPlugin))
 
@@ -2381,14 +2563,14 @@ class EarlyBoundTests(TestBase):
 
         # Model Specs tab
 
-        multibeam.data_rate = 1e-07
-        Assert.assertEqual(1e-07, multibeam.data_rate)
-        multibeam.data_rate = 1000000
-        Assert.assertEqual(1000000, multibeam.data_rate)
+        multibeam.data_rate = 1e-12
+        Assert.assertEqual(1e-12, multibeam.data_rate)
+        multibeam.data_rate = 1000000000000.0
+        Assert.assertEqual(1000000000000.0, multibeam.data_rate)
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             multibeam.data_rate = 0.0
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
-            multibeam.data_rate = 10000000
+            multibeam.data_rate = 10000000000000.0
 
         # Modulator tab
 
@@ -2410,24 +2592,44 @@ class EarlyBoundTests(TestBase):
             multibeam.set_modulator("bogus")
 
         # Filter tab
-
+        # Test deprecated filter model interface
         arSupportedFilters = multibeam.supported_filters
+        Assert.assertEqual(18, len(arSupportedFilters))
+
+        multibeam.enable_filter = True  # needed for SetFilter
+        multibeam.set_filter("Bessel")
+
+        multibeam.enable_filter = False
+        Assert.assertFalse(multibeam.enable_filter)
+        rfFilterModelHelper = RFFilterModelHelper(TestBase.Application)
+        rfFilterModelHelper.Run(multibeam.filter, "Bessel", False)
+
+        multibeam.enable_filter = True
+        Assert.assertTrue(multibeam.enable_filter)
+        rfFilterModelHelper.Run(multibeam.filter, "Bessel", True)
+
+        STKUtilHelper.TestComponentLinking(multibeam.filter_component_linking, 18)
+        arSupportedFilters = multibeam.filter_component_linking.supported_components
         Assert.assertEqual(18, len(arSupportedFilters))
         filterName: str
         for filterName in arSupportedFilters:
             multibeam.enable_filter = True  # needed for SetFilter
-            multibeam.set_filter(filterName)
+            multibeam.filter_component_linking.set_component(filterName)
 
             multibeam.enable_filter = False
             Assert.assertFalse(multibeam.enable_filter)
             rfFilterModelHelper = RFFilterModelHelper(TestBase.Application)
-            rfFilterModelHelper.Run(multibeam.filter, filterName, False)
+            rfFilterModelHelper.Run(
+                clr.CastAs(multibeam.filter_component_linking.component, IRFFilterModel), filterName, False
+            )
 
             multibeam.enable_filter = True
             Assert.assertTrue(multibeam.enable_filter)
             if filterName != "Script":
                 # "Script" does not have these properties
-                rfFilterModelHelper.Run(multibeam.filter, filterName, True)
+                rfFilterModelHelper.Run(
+                    clr.CastAs(multibeam.filter_component_linking.component, IRFFilterModel), filterName, True
+                )
 
         # Additional Gains and Losses tab
 
@@ -2453,55 +2655,57 @@ class EarlyBoundTests(TestBase):
         ]
     )
     def test_Model(self, modelName: str):
-        EarlyBoundTests.transmitter.set_model(modelName)
-        transmitterModel: "ITransmitterModel" = EarlyBoundTests.transmitter.model
+        EarlyBoundTests.transmitter.model_component_linking.set_component(modelName)
+        transmitterModel: "ITransmitterModel" = clr.CastAs(
+            EarlyBoundTests.transmitter.model_component_linking.component, ITransmitterModel
+        )
         Assert.assertEqual(modelName, transmitterModel.name)
-        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid model name")):
-            EarlyBoundTests.transmitter.set_model("bogus")
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid component name")):
+            EarlyBoundTests.transmitter.model_component_linking.set_component("bogus")
         if modelName == "Cable Transmitter Model":
-            Assert.assertEqual(TRANSMITTER_MODEL_TYPE.CABLE, transmitterModel.type)
+            Assert.assertEqual(TransmitterModelType.CABLE, transmitterModel.type)
             self.Test_IAgTransmitterModelCable(clr.CastAs(transmitterModel, TransmitterModelCable))
         elif modelName == "Complex Re-Transmitter Model":
-            Assert.assertEqual(TRANSMITTER_MODEL_TYPE.RE_TRANSMITTER_MODEL_TYPE_COMPLEX, transmitterModel.type)
+            Assert.assertEqual(TransmitterModelType.RETRANSMITTER_MODEL_TYPE_COMPLEX, transmitterModel.type)
             self.Test_IAgReTransmitterModelComplex(clr.CastAs(transmitterModel, ReTransmitterModelComplex))
             self.Test_IAgReTransmitterModel(clr.CastAs(transmitterModel, IReTransmitterModel))
         elif modelName == "Complex Transmitter Model":
-            Assert.assertEqual(TRANSMITTER_MODEL_TYPE.COMPLEX, transmitterModel.type)
+            Assert.assertEqual(TransmitterModelType.COMPLEX, transmitterModel.type)
             self.Test_IAgTransmitterModelComplex(clr.CastAs(transmitterModel, TransmitterModelComplex))
         elif modelName == "GPS Satellite Transmitter Model":
-            Assert.assertEqual(TRANSMITTER_MODEL_TYPE.MULTIBEAM, transmitterModel.type)
+            Assert.assertEqual(TransmitterModelType.MULTIBEAM, transmitterModel.type)
             self.Test_IAgTransmitterModelMultibeam(clr.CastAs(transmitterModel, TransmitterModelMultibeam))
         elif modelName == "Laser Transmitter Model":
-            Assert.assertEqual(TRANSMITTER_MODEL_TYPE.LASER, transmitterModel.type)
+            Assert.assertEqual(TransmitterModelType.LASER, transmitterModel.type)
             self.Test_IAgTransmitterModelLaser(clr.CastAs(transmitterModel, TransmitterModelLaser))
         elif modelName == "Medium Re-Transmitter Model":
-            Assert.assertEqual(TRANSMITTER_MODEL_TYPE.RE_TRANSMITTER_MODEL_TYPE_MEDIUM, transmitterModel.type)
+            Assert.assertEqual(TransmitterModelType.RETRANSMITTER_MODEL_TYPE_MEDIUM, transmitterModel.type)
             self.Test_IAgReTransmitterModelMedium(clr.CastAs(transmitterModel, ReTransmitterModelMedium))
             self.Test_IAgReTransmitterModel(clr.CastAs(transmitterModel, IReTransmitterModel))
         elif modelName == "Medium Transmitter Model":
-            Assert.assertEqual(TRANSMITTER_MODEL_TYPE.MEDIUM, transmitterModel.type)
+            Assert.assertEqual(TransmitterModelType.MEDIUM, transmitterModel.type)
             self.Test_IAgTransmitterModelMedium(clr.CastAs(transmitterModel, TransmitterModelMedium))
         elif modelName == "Multibeam Transmitter Model":
-            Assert.assertEqual(TRANSMITTER_MODEL_TYPE.MULTIBEAM, transmitterModel.type)
+            Assert.assertEqual(TransmitterModelType.MULTIBEAM, transmitterModel.type)
             self.Test_IAgTransmitterModelMultibeam(clr.CastAs(transmitterModel, TransmitterModelMultibeam))
         elif modelName == "Script Plugin Laser Transmitter Model":
             if not OSHelper.IsLinux():
                 # script plugins do not work on linux
-                Assert.assertEqual(TRANSMITTER_MODEL_TYPE.SCRIPT_PLUGIN_LASER, transmitterModel.type)
+                Assert.assertEqual(TransmitterModelType.SCRIPT_PLUGIN_LASER, transmitterModel.type)
                 self.Test_IAgTransmitterModelScriptPlugin(clr.CastAs(transmitterModel, ITransmitterModelScriptPlugin))
 
         elif modelName == "Script Plugin RF Transmitter Model":
             if not OSHelper.IsLinux():
                 # script plugins do not work on linux
-                Assert.assertEqual(TRANSMITTER_MODEL_TYPE.SCRIPT_PLUGIN_RF, transmitterModel.type)
+                Assert.assertEqual(TransmitterModelType.SCRIPT_PLUGIN_RF, transmitterModel.type)
                 self.Test_IAgTransmitterModelScriptPlugin(clr.CastAs(transmitterModel, ITransmitterModelScriptPlugin))
 
         elif modelName == "Simple Re-Transmitter Model":
-            Assert.assertEqual(TRANSMITTER_MODEL_TYPE.RE_TRANSMITTER_MODEL_TYPE_SIMPLE, transmitterModel.type)
+            Assert.assertEqual(TransmitterModelType.RETRANSMITTER_MODEL_TYPE_SIMPLE, transmitterModel.type)
             self.Test_IAgReTransmitterModelSimple(clr.CastAs(transmitterModel, ReTransmitterModelSimple))
             self.Test_IAgReTransmitterModel(clr.CastAs(transmitterModel, IReTransmitterModel))
         elif modelName == "Simple Transmitter Model":
-            Assert.assertEqual(TRANSMITTER_MODEL_TYPE.SIMPLE, transmitterModel.type)
+            Assert.assertEqual(TransmitterModelType.SIMPLE, transmitterModel.type)
             self.Test_IAgTransmitterModelSimple(clr.CastAs(transmitterModel, TransmitterModelSimple))
         else:
             Assert.fail(("Unknown Transmitter Model name: " + modelName))
@@ -2523,7 +2727,7 @@ class EarlyBoundTests(TestBase):
             mm.psd_limit_multiplier = 1001
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            mm.auto_scale_bandwidth = True
+            mm.scale_bandwidth_automatically = True
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             mm.symmetric_bandwidth = True
@@ -2565,8 +2769,8 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             mm.psd_limit_multiplier = 1
 
-        mm.auto_scale_bandwidth = True
-        Assert.assertTrue(mm.auto_scale_bandwidth)
+        mm.scale_bandwidth_automatically = True
+        Assert.assertTrue(mm.scale_bandwidth_automatically)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             mm.symmetric_bandwidth = True
@@ -2602,8 +2806,8 @@ class EarlyBoundTests(TestBase):
 
         Assert.assertEqual(90, mm.spreading_gain)
 
-        mm.auto_scale_bandwidth = False
-        Assert.assertFalse(mm.auto_scale_bandwidth)
+        mm.scale_bandwidth_automatically = False
+        Assert.assertFalse(mm.scale_bandwidth_automatically)
 
         mm.symmetric_bandwidth = True
         Assert.assertTrue(mm.symmetric_bandwidth)
@@ -2666,82 +2870,82 @@ class EarlyBoundTests(TestBase):
     def Test_IAgModulatorModel2(self, mm: "IModulatorModel", modulatorName: str):
         Assert.assertEqual(modulatorName, mm.name)
         if modulatorName == "16PSK":
-            Assert.assertEqual(MODULATOR_MODEL_TYPE.TYPE16_PSK, mm.type)
+            Assert.assertEqual(ModulatorModelType.TYPE16_PSK, mm.type)
             self.Test_IAgModulatorModel(mm)
         elif modulatorName == "8PSK":
-            Assert.assertEqual(MODULATOR_MODEL_TYPE.TYPE8_PSK, mm.type)
+            Assert.assertEqual(ModulatorModelType.TYPE8_PSK, mm.type)
             self.Test_IAgModulatorModel(mm)
         elif modulatorName == "BOC":
-            Assert.assertEqual(MODULATOR_MODEL_TYPE.BOC, mm.type)
+            Assert.assertEqual(ModulatorModelType.BOC, mm.type)
             self.Test_IAgModulatorModel(mm)
-            self.Test_IAgModulatorModelBoc(clr.CastAs(mm, ModulatorModelBoc))
+            self.Test_IAgModulatorModelBoc(clr.CastAs(mm, ModulatorModelBOC))
         elif modulatorName == "BPSK":
-            Assert.assertEqual(MODULATOR_MODEL_TYPE.BPSK, mm.type)
+            Assert.assertEqual(ModulatorModelType.BPSK, mm.type)
             self.Test_IAgModulatorModel(mm)
         elif modulatorName == "DPSK":
-            Assert.assertEqual(MODULATOR_MODEL_TYPE.DPSK, mm.type)
+            Assert.assertEqual(ModulatorModelType.DPSK, mm.type)
             self.Test_IAgModulatorModel(mm)
         elif modulatorName == "External":
-            Assert.assertEqual(MODULATOR_MODEL_TYPE.EXTERNAL, mm.type)
+            Assert.assertEqual(ModulatorModelType.EXTERNAL, mm.type)
             self.Test_IAgModulatorModel(mm)
             self.Test_IAgModulatorModelExternal(clr.CastAs(mm, ModulatorModelExternal))
         elif modulatorName == "FSK":
-            Assert.assertEqual(MODULATOR_MODEL_TYPE.FSK, mm.type)
+            Assert.assertEqual(ModulatorModelType.FSK, mm.type)
             self.Test_IAgModulatorModel(mm)
         elif modulatorName == "MSK":
-            Assert.assertEqual(MODULATOR_MODEL_TYPE.MSK, mm.type)
+            Assert.assertEqual(ModulatorModelType.MSK, mm.type)
             self.Test_IAgModulatorModel(mm)
         elif modulatorName == "Narrowband Uniform":
-            Assert.assertEqual(MODULATOR_MODEL_TYPE.NARROWBAND_UNIFORM, mm.type)
+            Assert.assertEqual(ModulatorModelType.NARROWBAND_UNIFORM, mm.type)
             self.Test_IAgModulatorModel_Subset(mm)
         elif modulatorName == "NFSK":
-            Assert.assertEqual(MODULATOR_MODEL_TYPE.NFSK, mm.type)
+            Assert.assertEqual(ModulatorModelType.NFSK, mm.type)
             self.Test_IAgModulatorModel(mm)
         elif modulatorName == "OQPSK":
-            Assert.assertEqual(MODULATOR_MODEL_TYPE.OQPSK, mm.type)
+            Assert.assertEqual(ModulatorModelType.OQPSK, mm.type)
             self.Test_IAgModulatorModel(mm)
         elif modulatorName == "Pulsed Signal":
-            Assert.assertEqual(MODULATOR_MODEL_TYPE.PULSED_SIGNAL, mm.type)
+            Assert.assertEqual(ModulatorModelType.PULSED_SIGNAL, mm.type)
             self.Test_IAgModulatorModel(mm)
             self.Test_IAgModulatorModelPulsedSignal(clr.CastAs(mm, ModulatorModelPulsedSignal))
         elif modulatorName == "QAM1024":
-            Assert.assertEqual(MODULATOR_MODEL_TYPE.QAM1024, mm.type)
+            Assert.assertEqual(ModulatorModelType.QAM1024, mm.type)
             self.Test_IAgModulatorModel(mm)
         elif modulatorName == "QAM128":
-            Assert.assertEqual(MODULATOR_MODEL_TYPE.QAM128, mm.type)
+            Assert.assertEqual(ModulatorModelType.QAM128, mm.type)
             self.Test_IAgModulatorModel(mm)
         elif modulatorName == "QAM16":
-            Assert.assertEqual(MODULATOR_MODEL_TYPE.QAM16, mm.type)
+            Assert.assertEqual(ModulatorModelType.QAM16, mm.type)
             self.Test_IAgModulatorModel(mm)
         elif modulatorName == "QAM256":
-            Assert.assertEqual(MODULATOR_MODEL_TYPE.QAM256, mm.type)
+            Assert.assertEqual(ModulatorModelType.QAM256, mm.type)
             self.Test_IAgModulatorModel(mm)
         elif modulatorName == "QAM32":
-            Assert.assertEqual(MODULATOR_MODEL_TYPE.QAM32, mm.type)
+            Assert.assertEqual(ModulatorModelType.QAM32, mm.type)
             self.Test_IAgModulatorModel(mm)
         elif modulatorName == "QAM64":
-            Assert.assertEqual(MODULATOR_MODEL_TYPE.QAM64, mm.type)
+            Assert.assertEqual(ModulatorModelType.QAM64, mm.type)
             self.Test_IAgModulatorModel(mm)
         elif modulatorName == "QPSK":
-            Assert.assertEqual(MODULATOR_MODEL_TYPE.QPSK, mm.type)
+            Assert.assertEqual(ModulatorModelType.QPSK, mm.type)
             self.Test_IAgModulatorModel(mm)
         elif modulatorName == "Script - Custom PSD":
             if not OSHelper.IsLinux():
                 # script plugins do not work on linux
-                Assert.assertEqual(MODULATOR_MODEL_TYPE.SCRIPT_PLUGIN_CUSTOM_PSD, mm.type)
+                Assert.assertEqual(ModulatorModelType.SCRIPT_PLUGIN_CUSTOM_PSD, mm.type)
                 self.Test_IAgModulatorModelScriptPlugin(clr.CastAs(mm, IModulatorModelScriptPlugin), True)
 
         elif modulatorName == "Script - Ideal PSD":
             if not OSHelper.IsLinux():
                 # script plugins do not work on linux
-                Assert.assertEqual(MODULATOR_MODEL_TYPE.SCRIPT_PLUGIN_IDEAL_PSD, mm.type)
+                Assert.assertEqual(ModulatorModelType.SCRIPT_PLUGIN_IDEAL_PSD, mm.type)
                 self.Test_IAgModulatorModelScriptPlugin(clr.CastAs(mm, IModulatorModelScriptPlugin), False)
 
         elif modulatorName == "Wideband Gaussian":
-            Assert.assertEqual(MODULATOR_MODEL_TYPE.WIDEBAND_GAUSSIAN, mm.type)
+            Assert.assertEqual(ModulatorModelType.WIDEBAND_GAUSSIAN, mm.type)
             self.Test_IAgModulatorModel_Subset(mm)
         elif modulatorName == "Wideband Uniform":
-            Assert.assertEqual(MODULATOR_MODEL_TYPE.WIDEBAND_UNIFORM, mm.type)
+            Assert.assertEqual(ModulatorModelType.WIDEBAND_UNIFORM, mm.type)
             self.Test_IAgModulatorModel_Subset(mm)
         elif (
             (
@@ -2783,21 +2987,21 @@ class EarlyBoundTests(TestBase):
             )
             or ((modulatorName == "NFSK-BCH-511-385"))
         ) or ((modulatorName == "NFSK-BCH-63-45")):
-            Assert.assertEqual(MODULATOR_MODEL_TYPE.EXTERNAL_SOURCE, mm.type)
+            Assert.assertEqual(ModulatorModelType.EXTERNAL_SOURCE, mm.type)
             self.Test_IAgModulatorModel(mm)
         else:
             Assert.fail("Unknown Modulator name")
 
     def Test_IAgModulatorModel_Subset(self, mm: "IModulatorModel"):
-        if MODULATOR_MODEL_TYPE.WIDEBAND_GAUSSIAN == mm.type:
+        if ModulatorModelType.WIDEBAND_GAUSSIAN == mm.type:
             mm.enable_signal_psd = True
             Assert.assertTrue(mm.enable_signal_psd)
 
             mm.enable_signal_psd = False
             Assert.assertFalse(mm.enable_signal_psd)
 
-        mm.auto_scale_bandwidth = True
-        Assert.assertTrue(mm.auto_scale_bandwidth)
+        mm.scale_bandwidth_automatically = True
+        Assert.assertTrue(mm.scale_bandwidth_automatically)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             mm.symmetric_bandwidth = True
@@ -2811,8 +3015,8 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             mm.bandwidth = 1
 
-        mm.auto_scale_bandwidth = False
-        Assert.assertFalse(mm.auto_scale_bandwidth)
+        mm.scale_bandwidth_automatically = False
+        Assert.assertFalse(mm.scale_bandwidth_automatically)
 
         mm.symmetric_bandwidth = True
         Assert.assertTrue(mm.symmetric_bandwidth)
@@ -2856,7 +3060,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             mm.bandwidth = 1000000000
 
-    def Test_IAgModulatorModelBoc(self, boc: "ModulatorModelBoc"):
+    def Test_IAgModulatorModelBoc(self, boc: "ModulatorModelBOC"):
         boc.subcarrier_frequency = 0
         Assert.assertEqual(0, boc.subcarrier_frequency)
         boc.subcarrier_frequency = 1000000000
@@ -2922,13 +3126,13 @@ class EarlyBoundTests(TestBase):
     def test_STKObject(self):
         oHelper = STKObjectHelper()
         oFac: "IStkObject" = TestBase.Application.current_scenario.children["Facility1"]
-        oTransmitter: "IStkObject" = oFac.children.new(STK_OBJECT_TYPE.TRANSMITTER, "Transmitter1")
+        oTransmitter: "IStkObject" = oFac.children.new(STKObjectType.TRANSMITTER, "Transmitter1")
         Assert.assertIsNotNone(oTransmitter)
-        Assert.assertEqual(STK_OBJECT_TYPE.TRANSMITTER, oTransmitter.class_type)
+        Assert.assertEqual(STKObjectType.TRANSMITTER, oTransmitter.class_type)
 
         oHelper.Run(oTransmitter)
         oHelper.TestObjectFilesArray(oTransmitter.object_files)
-        oFac.children.unload(STK_OBJECT_TYPE.TRANSMITTER, oTransmitter.instance_name)
+        oFac.children.unload(STKObjectType.TRANSMITTER, oTransmitter.instance_name)
 
     # endregion
 
@@ -2948,6 +3152,7 @@ class EarlyBoundTests(TestBase):
     def test_Laser_Environment_AtmosphericLoss_BBLL(self):
         helper = LaserEnvAtmosLossBBLLHelper()
         helper.Run(EarlyBoundTests.transmitter.laser_environment)
+        helper.RunDeprecatedModelInterface(EarlyBoundTests.transmitter.laser_environment)
 
     # endregion
 
@@ -2955,6 +3160,7 @@ class EarlyBoundTests(TestBase):
     def test_Laser_Environment_AtmosphericLoss_Modtran(self):
         helper = LaserEnvAtmosLossModtranHelper()
         helper.Run(EarlyBoundTests.transmitter.laser_environment)
+        helper.RunDeprecatedModelInterface(EarlyBoundTests.transmitter.laser_environment)
 
     # endregion
 
@@ -2962,6 +3168,7 @@ class EarlyBoundTests(TestBase):
     def test_Laser_Environment_TroposphericScintillationLoss(self):
         helper = LaserEnvTropoScintLossHelper()
         helper.Run(EarlyBoundTests.transmitter.laser_environment)
+        helper.RunDeprecatedModelInterface(EarlyBoundTests.transmitter.laser_environment)
 
     # endregion
 
@@ -2978,6 +3185,7 @@ class EarlyBoundTests(TestBase):
     def test_RF_Environment_RainCloudFog_RainModel(self):
         helper = RF_Environment_RainCloudFog_RainModelHelper()
         helper.Run(EarlyBoundTests.transmitter.rf_environment, TestBase.Application)
+        helper.RunDeprecatedModelInterface(EarlyBoundTests.transmitter.rf_environment, TestBase.Application)
 
     # endregion
 
@@ -2985,6 +3193,7 @@ class EarlyBoundTests(TestBase):
     def test_RF_Environment_RainCloudFog_CloudsAndFogModel(self):
         helper = RF_Environment_RainCloudFog_CloudsAndFogModelHelper()
         helper.Run(EarlyBoundTests.transmitter.rf_environment, TestBase.Application)
+        helper.RunDeprecatedModelInterface(EarlyBoundTests.transmitter.rf_environment, TestBase.Application)
 
     # endregion
 
@@ -2992,6 +3201,7 @@ class EarlyBoundTests(TestBase):
     def test_RF_Environment_AtmosphericAbsorption(self):
         helper = RF_Environment_AtmosphericAbsorptionHelper(TestBase.Application)
         helper.Run(EarlyBoundTests.transmitter.rf_environment)
+        helper.RunDeprecatedModelInterface(EarlyBoundTests.transmitter.rf_environment)
 
     # endregion
 
@@ -2999,6 +3209,7 @@ class EarlyBoundTests(TestBase):
     def test_RF_Environment_UrbanAndTerrestrial(self):
         helper = RF_Environment_UrbanAndTerrestrialHelper(TestBase.Application)
         helper.Run(EarlyBoundTests.transmitter.rf_environment)
+        helper.RunDeprecatedModelInterface(EarlyBoundTests.transmitter.rf_environment)
 
     # endregion
 
@@ -3006,6 +3217,7 @@ class EarlyBoundTests(TestBase):
     def test_RF_Environment_TropoScintillation(self):
         helper = RF_Environment_TropoScintillationHelper(TestBase.Application)
         helper.Run(EarlyBoundTests.transmitter.rf_environment)
+        helper.RunDeprecatedModelInterface(EarlyBoundTests.transmitter.rf_environment)
 
     # endregion
 

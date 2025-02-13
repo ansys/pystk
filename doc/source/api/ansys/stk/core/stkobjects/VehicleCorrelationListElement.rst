@@ -40,13 +40,13 @@ Property detail
 
 .. py:property:: row
     :canonical: ansys.stk.core.stkobjects.VehicleCorrelationListElement.row
-    :type: VEHICLE_CORRELATION_LIST_TYPE
+    :type: VehicleCorrelationListType
 
     Consider parameter for row.
 
 .. py:property:: column
     :canonical: ansys.stk.core.stkobjects.VehicleCorrelationListElement.column
-    :type: VEHICLE_CORRELATION_LIST_TYPE
+    :type: VehicleCorrelationListType
 
     Consider parameter for column.
 

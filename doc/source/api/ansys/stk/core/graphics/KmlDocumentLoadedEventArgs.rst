@@ -19,9 +19,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.KmlDocumentLoadedEventArgs.document`
-              - Gets the KML document associated with the load event.
+              - Get the KML document associated with the load event.
             * - :py:attr:`~ansys.stk.core.graphics.KmlDocumentLoadedEventArgs.exception`
-              - Returns an error message, if an error occurred while loading the KML; otherwise an empty string.
+              - Return an error message, if an error occurred while loading the KML; otherwise an empty string.
 
 
 
@@ -40,12 +40,12 @@ Property detail
     :canonical: ansys.stk.core.graphics.KmlDocumentLoadedEventArgs.document
     :type: KmlDocument
 
-    Gets the KML document associated with the load event.
+    Get the KML document associated with the load event.
 
 .. py:property:: exception
     :canonical: ansys.stk.core.graphics.KmlDocumentLoadedEventArgs.exception
     :type: str
 
-    Returns an error message, if an error occurred while loading the KML; otherwise an empty string.
+    Return an error message, if an error occurred while loading the KML; otherwise an empty string.
 
 

@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.FlipFilter.flip_axis`
-              - Gets or sets the flip axis along which the source raster will be flipped.
+              - Get or set the flip axis along which the source raster will be flipped.
 
 
 
@@ -38,8 +38,8 @@ Property detail
 
 .. py:property:: flip_axis
     :canonical: ansys.stk.core.graphics.FlipFilter.flip_axis
-    :type: RASTER_FLIP_AXIS
+    :type: RasterFlipAxis
 
-    Gets or sets the flip axis along which the source raster will be flipped.
+    Get or set the flip axis along which the source raster will be flipped.
 
 

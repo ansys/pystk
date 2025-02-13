@@ -44,11 +44,11 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDilutionOfPrecision.supported_types`
               - Supported compute options.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDilutionOfPrecision.time_step`
-              - Gets or sets the value to be used during the sampling of the dynamic definition for use in the static definition.
+              - Get or set the value to be used during the sampling of the dynamic definition for use in the static definition.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDilutionOfPrecision.type_data`
               - DOP type data.
             * - :py:attr:`~ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDilutionOfPrecision.invalid_value_action`
-              - Controls consideration of time samples usage for computing navigation solution.
+              - Control consideration of time samples usage for computing navigation solution.
 
 
 Import detail
@@ -64,7 +64,7 @@ Property detail
 
 .. py:property:: method
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDilutionOfPrecision.method
-    :type: FIGURE_OF_MERIT_METHOD
+    :type: FigureOfMeritMethod
 
     Calculate dilution of precision.
 
@@ -76,7 +76,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDilutionOfPrecision.type
-    :type: FIGURE_OF_MERIT_COMPUTE_TYPE
+    :type: FigureOfMeritNavigationComputeType
 
     Compute options for the DOP Figure of Merit.
 
@@ -90,7 +90,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDilutionOfPrecision.time_step
     :type: float
 
-    Gets or sets the value to be used during the sampling of the dynamic definition for use in the static definition.
+    Get or set the value to be used during the sampling of the dynamic definition for use in the static definition.
 
 .. py:property:: type_data
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDilutionOfPrecision.type_data
@@ -100,36 +100,36 @@ Property detail
 
 .. py:property:: invalid_value_action
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDilutionOfPrecision.invalid_value_action
-    :type: FIGURE_OF_MERIT_INVALID_VALUE_ACTION_TYPE
+    :type: FigureOfMeritInvalidValueActionType
 
-    Controls consideration of time samples usage for computing navigation solution.
+    Control consideration of time samples usage for computing navigation solution.
 
 
 Method detail
 -------------
 
 
-.. py:method:: set_method(self, method: FIGURE_OF_MERIT_METHOD) -> None
+.. py:method:: set_method(self, method: FigureOfMeritMethod) -> None
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDilutionOfPrecision.set_method
 
     Set a static DOP value over the entire coverage interval.
 
     :Parameters:
 
-    **method** : :obj:`~FIGURE_OF_MERIT_METHOD`
+    **method** : :obj:`~FigureOfMeritMethod`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_method_supported(self, method: FIGURE_OF_MERIT_METHOD) -> bool
+.. py:method:: is_method_supported(self, method: FigureOfMeritMethod) -> bool
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDilutionOfPrecision.is_method_supported
 
     Is the DOP method supported?
 
     :Parameters:
 
-    **method** : :obj:`~FIGURE_OF_MERIT_METHOD`
+    **method** : :obj:`~FigureOfMeritMethod`
 
     :Returns:
 
@@ -137,27 +137,27 @@ Method detail
 
 
 
-.. py:method:: set_type(self, computeType: FIGURE_OF_MERIT_COMPUTE_TYPE) -> None
+.. py:method:: set_type(self, compute_type: FigureOfMeritNavigationComputeType) -> None
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDilutionOfPrecision.set_type
 
     Set the compute option.
 
     :Parameters:
 
-    **computeType** : :obj:`~FIGURE_OF_MERIT_COMPUTE_TYPE`
+    **compute_type** : :obj:`~FigureOfMeritNavigationComputeType`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_type_supported(self, computeType: FIGURE_OF_MERIT_COMPUTE_TYPE) -> bool
+.. py:method:: is_type_supported(self, compute_type: FigureOfMeritNavigationComputeType) -> bool
     :canonical: ansys.stk.core.stkobjects.IFigureOfMeritDefinitionDilutionOfPrecision.is_type_supported
 
     Is the compute option supported?
 
     :Parameters:
 
-    **computeType** : :obj:`~FIGURE_OF_MERIT_COMPUTE_TYPE`
+    **compute_type** : :obj:`~FigureOfMeritNavigationComputeType`
 
     :Returns:
 

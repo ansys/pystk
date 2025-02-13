@@ -34,11 +34,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.ModelArticulation.name`
-              - Gets the name of the articulation.
+              - Get the name of the articulation.
             * - :py:attr:`~ansys.stk.core.graphics.ModelArticulation.count`
-              - Gets the number of transformations in the collection.
-            * - :py:attr:`~ansys.stk.core.graphics.ModelArticulation._NewEnum`
-              - Returns the enumerator for this collection.
+              - Get the number of transformations in the collection.
+            * - :py:attr:`~ansys.stk.core.graphics.ModelArticulation._new_enum`
+              - Return the enumerator for this collection.
 
 
 
@@ -57,19 +57,19 @@ Property detail
     :canonical: ansys.stk.core.graphics.ModelArticulation.name
     :type: str
 
-    Gets the name of the articulation.
+    Get the name of the articulation.
 
 .. py:property:: count
     :canonical: ansys.stk.core.graphics.ModelArticulation.count
     :type: int
 
-    Gets the number of transformations in the collection.
+    Get the number of transformations in the collection.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.graphics.ModelArticulation._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.graphics.ModelArticulation._new_enum
     :type: EnumeratorProxy
 
-    Returns the enumerator for this collection.
+    Return the enumerator for this collection.
 
 
 Method detail

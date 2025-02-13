@@ -19,11 +19,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.ScreenOverlayPickResult.position`
-              - Gets the position that was picked within the picked overlay. The array represents the picked position and has a size of 4. The elements are in the order x position, y position, x screen overlay unit, y screen overlay unit.
+              - Get the position that was picked within the picked overlay. The array represents the picked position and has a size of 4. The elements are in the order x position, y position, x screen overlay unit, y screen overlay unit.
             * - :py:attr:`~ansys.stk.core.graphics.ScreenOverlayPickResult.control_position`
-              - Gets the position that was picked within the overall globe control. This is essentially the same position that was passed to pick screen overlays. The array represents the picked position and has a size of 4...
+              - Get the position that was picked within the overall globe control. This is essentially the same position that was passed to pick screen overlays. The array represents the picked position and has a size of 4...
             * - :py:attr:`~ansys.stk.core.graphics.ScreenOverlayPickResult.overlay`
-              - Gets the screen overlay that was picked.
+              - Get the screen overlay that was picked.
 
 
 
@@ -42,18 +42,18 @@ Property detail
     :canonical: ansys.stk.core.graphics.ScreenOverlayPickResult.position
     :type: list
 
-    Gets the position that was picked within the picked overlay. The array represents the picked position and has a size of 4. The elements are in the order x position, y position, x screen overlay unit, y screen overlay unit.
+    Get the position that was picked within the picked overlay. The array represents the picked position and has a size of 4. The elements are in the order x position, y position, x screen overlay unit, y screen overlay unit.
 
 .. py:property:: control_position
     :canonical: ansys.stk.core.graphics.ScreenOverlayPickResult.control_position
     :type: list
 
-    Gets the position that was picked within the overall globe control. This is essentially the same position that was passed to pick screen overlays. The array represents the picked position and has a size of 4...
+    Get the position that was picked within the overall globe control. This is essentially the same position that was passed to pick screen overlays. The array represents the picked position and has a size of 4...
 
 .. py:property:: overlay
     :canonical: ansys.stk.core.graphics.ScreenOverlayPickResult.overlay
     :type: IScreenOverlay
 
-    Gets the screen overlay that was picked.
+    Get the screen overlay that was picked.
 
 

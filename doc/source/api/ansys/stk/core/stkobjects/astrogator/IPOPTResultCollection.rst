@@ -29,10 +29,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPOPTResultCollection._NewEnum`
-              - Allows you to enumerate through the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPOPTResultCollection._new_enum`
+              - Allow you to enumerate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPOPTResultCollection.count`
-              - Returns the size of the collection.
+              - Return the size of the collection.
 
 
 
@@ -47,17 +47,17 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.astrogator.IPOPTResultCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.astrogator.IPOPTResultCollection._new_enum
     :type: EnumeratorProxy
 
-    Allows you to enumerate through the collection.
+    Allow you to enumerate through the collection.
 
 .. py:property:: count
     :canonical: ansys.stk.core.stkobjects.astrogator.IPOPTResultCollection.count
     :type: int
 
-    Returns the size of the collection.
+    Return the size of the collection.
 
 
 Method detail
@@ -78,15 +78,15 @@ Method detail
 
 
 
-.. py:method:: get_result_by_paths(self, objectPath: str, resultPath: str) -> IPOPTResult
+.. py:method:: get_result_by_paths(self, object_path: str, result_path: str) -> IPOPTResult
     :canonical: ansys.stk.core.stkobjects.astrogator.IPOPTResultCollection.get_result_by_paths
 
     Return the result specified by the object/result names.
 
     :Parameters:
 
-    **objectPath** : :obj:`~str`
-    **resultPath** : :obj:`~str`
+    **object_path** : :obj:`~str`
+    **result_path** : :obj:`~str`
 
     :Returns:
 

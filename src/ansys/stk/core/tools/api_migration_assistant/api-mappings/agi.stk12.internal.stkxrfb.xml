@@ -1,0 +1,20 @@
+<Mappings OldRootScope="agi.stk12.stkxrfb" NewRootScope="ansys.stk.core.stkxrfb">
+   <Mapping OldName="IAgRemoteFrameBufferHost" NewName="IRemoteFrameBufferHost" Category="interface" />
+   <Mapping ParentScope="IAgRemoteFrameBufferHost" OldName="Refresh" NewName="refresh" Category="method" />
+   <Mapping OldName="IAgRemoteFrameBuffer" NewName="IRemoteFrameBuffer" Category="interface" />
+   <Mapping ParentScope="IAgRemoteFrameBuffer" OldName="SnapToRBGRaster" NewName="snap_to_rbg_raster" Category="method" />
+   <Mapping ParentScope="IAgRemoteFrameBuffer" OldName="SetToOffScreenRendering" NewName="set_to_offscreen_rendering" Category="method" />
+   <Mapping ParentScope="IAgRemoteFrameBuffer" OldName="NotifyResize" NewName="notify_resize" Category="method" />
+   <Mapping ParentScope="IAgRemoteFrameBuffer" OldName="NotifyLButtonUp" NewName="notify_left_button_up" Category="method" />
+   <Mapping ParentScope="IAgRemoteFrameBuffer" OldName="NotifyRButtonUp" NewName="notify_right_button_up" Category="method" />
+   <Mapping ParentScope="IAgRemoteFrameBuffer" OldName="NotifyMButtonUp" NewName="notify_middle_button_up" Category="method" />
+   <Mapping ParentScope="IAgRemoteFrameBuffer" OldName="NotifyLButtonDown" NewName="notify_left_button_down" Category="method" />
+   <Mapping ParentScope="IAgRemoteFrameBuffer" OldName="NotifyRButtonDown" NewName="notify_right_button_down" Category="method" />
+   <Mapping ParentScope="IAgRemoteFrameBuffer" OldName="NotifyMButtonDown" NewName="notify_middle_button_down" Category="method" />
+   <Mapping ParentScope="IAgRemoteFrameBuffer" OldName="NotifyMouseMove" NewName="notify_mouse_move" Category="method" />
+   <Mapping ParentScope="IAgRemoteFrameBuffer" OldName="NotifyMouseWheel" NewName="notify_mouse_wheel" Category="method" />
+   <Mapping ParentScope="IAgRemoteFrameBuffer" OldName="SetHost" NewName="set_host" Category="method" />
+   <Mapping ParentScope="IAgRemoteFrameBuffer" OldName="RenderToDirectXTexture" NewName="render_to_directx_texture" Category="method" />
+   <Mapping ParentScope="IAgRemoteFrameBuffer" OldName="SetToDirectXRendering" NewName="set_to_directx_rendering" Category="method" />
+   <Mapping ParentScope="IAgRemoteFrameBuffer" OldName="UpdateDirectXRenderingTexture" NewName="update_directx_rendering_texture" Category="method" />
+</Mappings>

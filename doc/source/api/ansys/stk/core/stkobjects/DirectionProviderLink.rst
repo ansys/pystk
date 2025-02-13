@@ -21,15 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.DirectionProviderLink.limits_exceeded_behavior_type`
-              - Gets or sets the Limits Exceeded Behavior type.
+              - Get or set the Limits Exceeded Behavior type.
             * - :py:attr:`~ansys.stk.core.stkobjects.DirectionProviderLink.azimuth_steering_limit_a`
-              - Gets or sets Azimuth Steering Limit A.
+              - Get or set Azimuth Steering Limit A.
             * - :py:attr:`~ansys.stk.core.stkobjects.DirectionProviderLink.azimuth_steering_limit_b`
-              - Gets or sets Azimuth Steering Limit B.
+              - Get or set Azimuth Steering Limit B.
             * - :py:attr:`~ansys.stk.core.stkobjects.DirectionProviderLink.elevation_steering_limit_a`
-              - Gets or sets Elevation Steering Limit A.
+              - Get or set Elevation Steering Limit A.
             * - :py:attr:`~ansys.stk.core.stkobjects.DirectionProviderLink.elevation_steering_limit_b`
-              - Gets or sets Elevation Steering Limit B.
+              - Get or set Elevation Steering Limit B.
 
 
 
@@ -46,32 +46,32 @@ Property detail
 
 .. py:property:: limits_exceeded_behavior_type
     :canonical: ansys.stk.core.stkobjects.DirectionProviderLink.limits_exceeded_behavior_type
-    :type: LIMITS_EXCEEDED_BEHAVIOR_TYPE
+    :type: LimitsExceededBehaviorType
 
-    Gets or sets the Limits Exceeded Behavior type.
+    Get or set the Limits Exceeded Behavior type.
 
 .. py:property:: azimuth_steering_limit_a
     :canonical: ansys.stk.core.stkobjects.DirectionProviderLink.azimuth_steering_limit_a
     :type: float
 
-    Gets or sets Azimuth Steering Limit A.
+    Get or set Azimuth Steering Limit A.
 
 .. py:property:: azimuth_steering_limit_b
     :canonical: ansys.stk.core.stkobjects.DirectionProviderLink.azimuth_steering_limit_b
     :type: float
 
-    Gets or sets Azimuth Steering Limit B.
+    Get or set Azimuth Steering Limit B.
 
 .. py:property:: elevation_steering_limit_a
     :canonical: ansys.stk.core.stkobjects.DirectionProviderLink.elevation_steering_limit_a
     :type: float
 
-    Gets or sets Elevation Steering Limit A.
+    Get or set Elevation Steering Limit A.
 
 .. py:property:: elevation_steering_limit_b
     :canonical: ansys.stk.core.stkobjects.DirectionProviderLink.elevation_steering_limit_b
     :type: float
 
-    Gets or sets Elevation Steering Limit B.
+    Get or set Elevation Steering Limit B.
 
 

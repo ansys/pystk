@@ -9,10 +9,6 @@ CoverageBoundsGlobal
 
 .. py:currentmodule:: CoverageBoundsGlobal
 
-Overview
---------
-
-
 
 Import detail
 -------------

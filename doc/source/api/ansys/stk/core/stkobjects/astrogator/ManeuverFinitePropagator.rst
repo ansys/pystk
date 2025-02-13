@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverFinitePropagator.propagator_name`
-              - Gets or sets the propagator.
+              - Get or set the propagator.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverFinitePropagator.stopping_conditions`
               - Get the stopping conditions list.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverFinitePropagator.min_propagation_time`
@@ -33,9 +33,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverFinitePropagator.enable_warning_message`
               - Issue a warning message if propagation is stopped by the Maximum Propagation Time parameter.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverFinitePropagator.enable_center_burn`
-              - Gets or sets the option to start the maneuver half the time before the previous segment ended. This property is only available for use with a duration stopping condition.
+              - Get or set the option to start the maneuver half the time before the previous segment ended. This property is only available for use with a duration stopping condition.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverFinitePropagator.bias`
-              - Gets or sets the value by which to adjust the centering of the burn. A positive value will center the burn after the previous segment ends by the amount specified in the Burn Center Bias field. Uses Time Dimension.
+              - Get or set the value by which to adjust the centering of the burn. A positive value will center the burn after the previous segment ends by the amount specified in the Burn Center Bias field. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverFinitePropagator.override_max_propagation_time`
               - Override Maximum Propagation Time - if there is a duration or epoch stopping condition that occurs after the maximum propagation time, ignore the maximum propagation time.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverFinitePropagator.should_stop_for_initially_surpassed_epoch_stopping_conditions`
@@ -60,7 +60,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverFinitePropagator.propagator_name
     :type: str
 
-    Gets or sets the propagator.
+    Get or set the propagator.
 
 .. py:property:: stopping_conditions
     :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverFinitePropagator.stopping_conditions
@@ -96,13 +96,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverFinitePropagator.enable_center_burn
     :type: bool
 
-    Gets or sets the option to start the maneuver half the time before the previous segment ended. This property is only available for use with a duration stopping condition.
+    Get or set the option to start the maneuver half the time before the previous segment ended. This property is only available for use with a duration stopping condition.
 
 .. py:property:: bias
     :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverFinitePropagator.bias
     :type: float
 
-    Gets or sets the value by which to adjust the centering of the burn. A positive value will center the burn after the previous segment ends by the amount specified in the Burn Center Bias field. Uses Time Dimension.
+    Get or set the value by which to adjust the centering of the burn. A positive value will center the burn after the previous segment ends by the amount specified in the Burn Center Bias field. Uses Time Dimension.
 
 .. py:property:: override_max_propagation_time
     :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverFinitePropagator.override_max_propagation_time

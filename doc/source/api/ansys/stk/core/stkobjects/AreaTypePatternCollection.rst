@@ -39,10 +39,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.AreaTypePatternCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.AreaTypePatternCollection._new_enum`
               - Enumerates through patterns collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.AreaTypePatternCollection.count`
-              - Returns the number of lat lons.
+              - Return the number of lat lons.
 
 
 
@@ -57,8 +57,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.AreaTypePatternCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.AreaTypePatternCollection._new_enum
     :type: EnumeratorProxy
 
     Enumerates through patterns collection.
@@ -67,7 +67,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.AreaTypePatternCollection.count
     :type: int
 
-    Returns the number of lat lons.
+    Return the number of lat lons.
 
 
 Method detail
@@ -102,14 +102,14 @@ Method detail
 
         :obj:`~AreaTypePattern`
 
-.. py:method:: remove(self, itemIndex: int) -> None
+.. py:method:: remove(self, item_index: int) -> None
     :canonical: ansys.stk.core.stkobjects.AreaTypePatternCollection.remove
 
     Remove an Item using a given index.
 
     :Parameters:
 
-    **itemIndex** : :obj:`~int`
+    **item_index** : :obj:`~int`
 
     :Returns:
 

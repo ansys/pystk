@@ -9,10 +9,6 @@ Position
 
 .. py:currentmodule:: Position
 
-Overview
---------
-
-
 
 Import detail
 -------------

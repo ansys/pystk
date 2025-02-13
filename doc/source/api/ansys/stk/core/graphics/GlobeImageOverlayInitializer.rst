@@ -19,7 +19,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.GlobeImageOverlayInitializer.more_than_one_image_globe_overlay_supported`
-              - Gets whether or not the video card allows for more than one image globe overlay globe image overlay to be added.
+              - Get whether or not the video card allows for more than one image globe overlay globe image overlay to be added.
 
 
 
@@ -38,6 +38,6 @@ Property detail
     :canonical: ansys.stk.core.graphics.GlobeImageOverlayInitializer.more_than_one_image_globe_overlay_supported
     :type: bool
 
-    Gets whether or not the video card allows for more than one image globe overlay globe image overlay to be added.
+    Get whether or not the video card allows for more than one image globe overlay globe image overlay to be added.
 
 

@@ -21,7 +21,6 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.IAutomationStrategyFactory.construct_strategy`
               - Construct the strategy.
 
-
 Import detail
 -------------
 
@@ -34,14 +33,14 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: construct_strategy(self, pUnk: IUnknown) -> IBasicManeuverStrategy
+.. py:method:: construct_strategy(self, obj: IUnknown) -> IBasicManeuverStrategy
     :canonical: ansys.stk.core.stkobjects.aviator.IAutomationStrategyFactory.construct_strategy
 
     Construct the strategy.
 
     :Parameters:
 
-    **pUnk** : :obj:`~IUnknown`
+    **obj** : :obj:`~IUnknown`
 
     :Returns:
 

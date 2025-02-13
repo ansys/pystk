@@ -34,7 +34,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.CameraVideoRecording.is_recording`
-              - Gets if recording is occurring or not.
+              - Get if recording is occurring or not.
 
 
 
@@ -53,40 +53,40 @@ Property detail
     :canonical: ansys.stk.core.graphics.CameraVideoRecording.is_recording
     :type: bool
 
-    Gets if recording is occurring or not.
+    Get if recording is occurring or not.
 
 
 Method detail
 -------------
 
 
-.. py:method:: start_recording(self, wmvFilename: str, videoBitRate: int, videoFrameRate: int) -> None
+.. py:method:: start_recording(self, wmv_filename: str, video_bit_rate: int, video_frame_rate: int) -> None
     :canonical: ansys.stk.core.graphics.CameraVideoRecording.start_recording
 
     Do not use this method, as it is deprecated. Use the overload taking a video format instead. Starts recording a file in the WMV format at the specified bit and frame rate.
 
     :Parameters:
 
-    **wmvFilename** : :obj:`~str`
-    **videoBitRate** : :obj:`~int`
-    **videoFrameRate** : :obj:`~int`
+    **wmv_filename** : :obj:`~str`
+    **video_bit_rate** : :obj:`~int`
+    **video_frame_rate** : :obj:`~int`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: start_recording_frame_stack(self, fileDirectory: str, filePrefix: str, cameraSnapshotFileFormat: SNAPSHOT_FILE_FORMAT, startingFrameNumber: int, numberOfFrameDigits: int) -> None
+.. py:method:: start_recording_frame_stack(self, file_directory: str, file_prefix: str, camera_snapshot_file_format: SnapshotFileFormat, starting_frame_number: int, number_of_frame_digits: int) -> None
     :canonical: ansys.stk.core.graphics.CameraVideoRecording.start_recording_frame_stack
 
     Start recording a frame stack. Each frame is saved as a separate image file. The filename of each frame is defined by a prefix followed by a frame number.
 
     :Parameters:
 
-    **fileDirectory** : :obj:`~str`
-    **filePrefix** : :obj:`~str`
-    **cameraSnapshotFileFormat** : :obj:`~SNAPSHOT_FILE_FORMAT`
-    **startingFrameNumber** : :obj:`~int`
-    **numberOfFrameDigits** : :obj:`~int`
+    **file_directory** : :obj:`~str`
+    **file_prefix** : :obj:`~str`
+    **camera_snapshot_file_format** : :obj:`~SnapshotFileFormat`
+    **starting_frame_number** : :obj:`~int`
+    **number_of_frame_digits** : :obj:`~int`
 
     :Returns:
 
@@ -101,18 +101,18 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: start_recording_video(self, fileDirectory: str, filePrefix: str, videoFormat: VIDEO_FORMAT, videoBitRate: int, videoFrameRate: int) -> None
+.. py:method:: start_recording_video(self, file_directory: str, file_prefix: str, video_format: VideoFormat, video_bit_rate: int, video_frame_rate: int) -> None
     :canonical: ansys.stk.core.graphics.CameraVideoRecording.start_recording_video
 
     Start recording a video file at the specified bit and frame rate.
 
     :Parameters:
 
-    **fileDirectory** : :obj:`~str`
-    **filePrefix** : :obj:`~str`
-    **videoFormat** : :obj:`~VIDEO_FORMAT`
-    **videoBitRate** : :obj:`~int`
-    **videoFrameRate** : :obj:`~int`
+    **file_directory** : :obj:`~str`
+    **file_prefix** : :obj:`~str`
+    **video_format** : :obj:`~VideoFormat`
+    **video_bit_rate** : :obj:`~int`
+    **video_frame_rate** : :obj:`~int`
 
     :Returns:
 

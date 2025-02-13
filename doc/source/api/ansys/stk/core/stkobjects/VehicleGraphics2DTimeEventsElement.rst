@@ -29,12 +29,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventsElement.is_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventsElement.show_graphics`
               - Opt whether to display time event graphics.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventsElement.time_event_type`
               - Type of time event graphics: line, marker or text.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventsElement.time_event_type_supported_types`
-              - Returns an array of valid choices.
+              - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventsElement.time_event_type_data`
               - Time event data.
 
@@ -51,15 +51,15 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: is_visible
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventsElement.is_visible
+.. py:property:: show_graphics
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventsElement.show_graphics
     :type: bool
 
     Opt whether to display time event graphics.
 
 .. py:property:: time_event_type
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventsElement.time_event_type
-    :type: VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE
+    :type: VehicleGraphics2DTimeEventType
 
     Type of time event graphics: line, marker or text.
 
@@ -67,7 +67,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventsElement.time_event_type_supported_types
     :type: list
 
-    Returns an array of valid choices.
+    Return an array of valid choices.
 
 .. py:property:: time_event_type_data
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventsElement.time_event_type_data
@@ -82,27 +82,27 @@ Method detail
 
 
 
-.. py:method:: set_time_event_type(self, timeEventType: VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE) -> None
+.. py:method:: set_time_event_type(self, time_event_type: VehicleGraphics2DTimeEventType) -> None
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventsElement.set_time_event_type
 
     Type of time event graphics: line, marker or text.
 
     :Parameters:
 
-    **timeEventType** : :obj:`~VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE`
+    **time_event_type** : :obj:`~VehicleGraphics2DTimeEventType`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_time_event_type_supported(self, timeEventType: VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE) -> bool
+.. py:method:: is_time_event_type_supported(self, time_event_type: VehicleGraphics2DTimeEventType) -> bool
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventsElement.is_time_event_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **timeEventType** : :obj:`~VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE`
+    **time_event_type** : :obj:`~VehicleGraphics2DTimeEventType`
 
     :Returns:
 

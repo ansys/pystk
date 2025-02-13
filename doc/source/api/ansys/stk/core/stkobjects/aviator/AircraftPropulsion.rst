@@ -19,7 +19,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftPropulsion.propulsion_strategy`
-              - Gets or sets the propulsion strategy type.
+              - Get or set the propulsion strategy type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftPropulsion.mode_as_simple`
               - Get the interface for a simple propulsion strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftPropulsion.mode_as_basic_fixed_wing`
@@ -27,9 +27,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftPropulsion.mode_as_external`
               - Get the interface for an external file propulsion strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftPropulsion.lift_factor`
-              - Gets or sets the scalar value applied to the lift for parametric analysis.
+              - Get or set the scalar value applied to the lift for parametric analysis.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftPropulsion.drag_factor`
-              - Gets or sets the scalar value applied to the drag for parametric analysis.
+              - Get or set the scalar value applied to the drag for parametric analysis.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftPropulsion.mode_as_ramjet`
               - Get the interface for a Ramjet propulsion strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftPropulsion.mode_as_turbojet`
@@ -52,9 +52,9 @@ Property detail
 
 .. py:property:: propulsion_strategy
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftPropulsion.propulsion_strategy
-    :type: AIRCRAFT_PROPULSION_STRATEGY
+    :type: AircraftPropulsionStrategy
 
-    Gets or sets the propulsion strategy type.
+    Get or set the propulsion strategy type.
 
 .. py:property:: mode_as_simple
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftPropulsion.mode_as_simple
@@ -78,13 +78,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftPropulsion.lift_factor
     :type: float
 
-    Gets or sets the scalar value applied to the lift for parametric analysis.
+    Get or set the scalar value applied to the lift for parametric analysis.
 
 .. py:property:: drag_factor
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftPropulsion.drag_factor
     :type: float
 
-    Gets or sets the scalar value applied to the drag for parametric analysis.
+    Get or set the scalar value applied to the drag for parametric analysis.
 
 .. py:property:: mode_as_ramjet
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftPropulsion.mode_as_ramjet

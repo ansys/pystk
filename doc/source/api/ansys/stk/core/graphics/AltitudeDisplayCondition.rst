@@ -21,11 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.AltitudeDisplayCondition.minimum_altitude`
-              - Gets or sets the minimum altitude of the inclusive altitude interval. Use Double.MinValue to ignore checking the minimum altitude.
+              - Get or set the minimum altitude of the inclusive altitude interval. Use Double.MinValue to ignore checking the minimum altitude.
             * - :py:attr:`~ansys.stk.core.graphics.AltitudeDisplayCondition.maximum_altitude`
-              - Gets or sets the maximum altitude of the inclusive altitude interval. Use Double.MaxValue to ignore checking the maximum altitude.
+              - Get or set the maximum altitude of the inclusive altitude interval. Use Double.MaxValue to ignore checking the maximum altitude.
             * - :py:attr:`~ansys.stk.core.graphics.AltitudeDisplayCondition.central_body`
-              - Gets or sets the central body to which the altitude is relative.
+              - Get or set the central body to which the altitude is relative.
 
 
 
@@ -44,18 +44,18 @@ Property detail
     :canonical: ansys.stk.core.graphics.AltitudeDisplayCondition.minimum_altitude
     :type: float
 
-    Gets or sets the minimum altitude of the inclusive altitude interval. Use Double.MinValue to ignore checking the minimum altitude.
+    Get or set the minimum altitude of the inclusive altitude interval. Use Double.MinValue to ignore checking the minimum altitude.
 
 .. py:property:: maximum_altitude
     :canonical: ansys.stk.core.graphics.AltitudeDisplayCondition.maximum_altitude
     :type: float
 
-    Gets or sets the maximum altitude of the inclusive altitude interval. Use Double.MaxValue to ignore checking the maximum altitude.
+    Get or set the maximum altitude of the inclusive altitude interval. Use Double.MaxValue to ignore checking the maximum altitude.
 
 .. py:property:: central_body
     :canonical: ansys.stk.core.graphics.AltitudeDisplayCondition.central_body
     :type: str
 
-    Gets or sets the central body to which the altitude is relative.
+    Get or set the central body to which the altitude is relative.
 
 

@@ -36,11 +36,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.IScreenOverlayCollectionBase.count`
-              - Gets the number of screen overlays in the collection.
+              - Get the number of screen overlays in the collection.
             * - :py:attr:`~ansys.stk.core.graphics.IScreenOverlayCollectionBase.is_read_only`
-              - Gets a value indicating whether the collection is read-only.
-            * - :py:attr:`~ansys.stk.core.graphics.IScreenOverlayCollectionBase._NewEnum`
-              - Returns an enumerator that iterates through the collection.
+              - Get a value indicating whether the collection is read-only.
+            * - :py:attr:`~ansys.stk.core.graphics.IScreenOverlayCollectionBase._new_enum`
+              - Return an enumerator that iterates through the collection.
 
 
 Import detail
@@ -58,19 +58,19 @@ Property detail
     :canonical: ansys.stk.core.graphics.IScreenOverlayCollectionBase.count
     :type: int
 
-    Gets the number of screen overlays in the collection.
+    Get the number of screen overlays in the collection.
 
 .. py:property:: is_read_only
     :canonical: ansys.stk.core.graphics.IScreenOverlayCollectionBase.is_read_only
     :type: bool
 
-    Gets a value indicating whether the collection is read-only.
+    Get a value indicating whether the collection is read-only.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.graphics.IScreenOverlayCollectionBase._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.graphics.IScreenOverlayCollectionBase._new_enum
     :type: EnumeratorProxy
 
-    Returns an enumerator that iterates through the collection.
+    Return an enumerator that iterates through the collection.
 
 
 Method detail

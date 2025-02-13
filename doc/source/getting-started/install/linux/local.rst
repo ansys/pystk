@@ -27,7 +27,7 @@ Start by downloading PySTK wheel or source artifacts for Linux:
                 :widths: auto
 
                 * - **Artifact**
-                  - `{{ wheels }} <_static/artifacts/{{ wheels }}>`_
+                  - `{{ wheels }} <../../../_static/artifacts/{{ wheels }}>`_
                 * - **Size**
                   - {{ wheels_size }}
                 * - **SHA-256**
@@ -42,7 +42,7 @@ Start by downloading PySTK wheel or source artifacts for Linux:
                 :widths: auto
         
                 * - **Artifact**
-                  - `{{ source }} <_static/artifacts/{{ source }}>`_
+                  - `{{ source }} <../../../_static/artifacts/{{ source }}>`_
                 * - **Size**
                   - {{ source_size }}
                 * - **SHA-256**
@@ -57,6 +57,13 @@ Install Linux artifacts by using the `pip`_ command:
 
     .. tab-set::
         :sync-group: artifacts
+
+        .. tab-item:: **PyPI install**
+            :sync: pypi
+
+            .. code-block:: text
+            
+                python -m pip install "ansys-stk-core=={{ PYSTK_VERSION }}"
 
         .. tab-item:: **Wheels install**
             :sync: wheels
@@ -77,7 +84,7 @@ Verify installation
 
 Verify a successful installation of PySTK by running:
 
-.. jinja:: install_guide
+.. jinja::
 
     .. code-block:: python
         
@@ -91,6 +98,6 @@ Verify a successful installation of PySTK by running:
 
     .. code-block:: text
 
-        STK version is {{ stk_version }}
+        STK version is {{ STK_VERSION }}
 
         

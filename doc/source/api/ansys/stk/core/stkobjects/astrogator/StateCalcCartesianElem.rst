@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcCartesianElem.coord_system_name`
-              - Gets or sets the coordinate system within which the element is defined.
+              - Get or set the coordinate system within which the element is defined.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcCartesianElem.coord_system_name
     :type: str
 
-    Gets or sets the coordinate system within which the element is defined.
+    Get or set the coordinate system within which the element is defined.
 
 

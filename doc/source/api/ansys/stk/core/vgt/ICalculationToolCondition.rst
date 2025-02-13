@@ -30,7 +30,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolCondition.type`
-              - Returns the type of condition.
+              - Return the type of condition.
 
 
 Import detail
@@ -46,9 +46,9 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.vgt.ICalculationToolCondition.type
-    :type: CRDN_CONDITION_TYPE
+    :type: ConditionType
 
-    Returns the type of condition.
+    Return the type of condition.
 
 
 Method detail

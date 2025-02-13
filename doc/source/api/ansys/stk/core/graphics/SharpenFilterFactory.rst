@@ -24,7 +24,6 @@ Overview
               - Initialize a new instance with the specified sharpen method.
 
 
-
 Import detail
 -------------
 
@@ -46,14 +45,14 @@ Method detail
 
         :obj:`~SharpenFilter`
 
-.. py:method:: initialize_with_method(self, method: RASTER_SHARPEN_METHOD) -> SharpenFilter
+.. py:method:: initialize_with_method(self, method: RasterSharpenMethod) -> SharpenFilter
     :canonical: ansys.stk.core.graphics.SharpenFilterFactory.initialize_with_method
 
     Initialize a new instance with the specified sharpen method.
 
     :Parameters:
 
-    **method** : :obj:`~RASTER_SHARPEN_METHOD`
+    **method** : :obj:`~RasterSharpenMethod`
 
     :Returns:
 

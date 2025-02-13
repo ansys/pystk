@@ -22,7 +22,6 @@ Overview
               - Compute the triangulation for a box of the specified size, centered at the origin.
 
 
-
 Import detail
 -------------
 

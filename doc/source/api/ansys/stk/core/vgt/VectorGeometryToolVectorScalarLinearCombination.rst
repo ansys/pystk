@@ -3,7 +3,7 @@ VectorGeometryToolVectorScalarLinearCombination
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolVectorScalarLinearCombination
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`, :py:class:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVector`
+   Bases: :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVector`
 
    Linear combination of two input vectors using scalars.
 
@@ -26,9 +26,9 @@ Overview
               - Scale factor for vector A.
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolVectorScalarLinearCombination.normalize_vector_a`
               - Whether to normalize vector A.
-            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolVectorScalarLinearCombination.use_scale_from_scalar_a`
+            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolVectorScalarLinearCombination.use_scale_from_calculation_scalar_a`
               - Whether to use a scale from scalar A.
-            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolVectorScalarLinearCombination.use_scale_from_scalar_b`
+            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolVectorScalarLinearCombination.use_scale_from_calculation_scalar_b`
               - Whether to use a scale from scalar B.
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolVectorScalarLinearCombination.scalar_a`
               - Scalar scale A. Can be any Scalar calculation.
@@ -41,7 +41,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolVectorScalarLinearCombination.normalize_vector_b`
               - Whether to normalize vector B.
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolVectorScalarLinearCombination.output_dimension_inheritance`
-              - Determines whether the output dimension is inherited or explicitly specified using OutputDimension.
+              - Determine whether the output dimension is inherited or explicitly specified using OutputDimension.
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolVectorScalarLinearCombination.output_dimension`
               - A dimension to interpret the output vector.
 
@@ -76,14 +76,14 @@ Property detail
 
     Whether to normalize vector A.
 
-.. py:property:: use_scale_from_scalar_a
-    :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorScalarLinearCombination.use_scale_from_scalar_a
+.. py:property:: use_scale_from_calculation_scalar_a
+    :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorScalarLinearCombination.use_scale_from_calculation_scalar_a
     :type: bool
 
     Whether to use a scale from scalar A.
 
-.. py:property:: use_scale_from_scalar_b
-    :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorScalarLinearCombination.use_scale_from_scalar_b
+.. py:property:: use_scale_from_calculation_scalar_b
+    :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorScalarLinearCombination.use_scale_from_calculation_scalar_b
     :type: bool
 
     Whether to use a scale from scalar B.
@@ -120,9 +120,9 @@ Property detail
 
 .. py:property:: output_dimension_inheritance
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorScalarLinearCombination.output_dimension_inheritance
-    :type: CRDN_DIMENSION_INHERITANCE
+    :type: InheritDimensionType
 
-    Determines whether the output dimension is inherited or explicitly specified using OutputDimension.
+    Determine whether the output dimension is inherited or explicitly specified using OutputDimension.
 
 .. py:property:: output_dimension
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorScalarLinearCombination.output_dimension

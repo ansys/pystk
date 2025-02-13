@@ -3,7 +3,7 @@ VectorGeometryToolAxesAngularOffset
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolAxesAngularOffset
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolAxes`, :py:class:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolAxes`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Axes created by rotating the Reference axes about the Spin vector through the specified rotation angle plus the additional rotational offset.
 
@@ -44,19 +44,19 @@ Property detail
 
 .. py:property:: spin_vector
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesAngularOffset.spin_vector
-    :type: VectorGeometryToolVectorRefTo
+    :type: VectorGeometryToolVectorReference
 
     Specify a spin vector.
 
 .. py:property:: rotation_angle
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesAngularOffset.rotation_angle
-    :type: VectorGeometryToolAngleRefTo
+    :type: VectorGeometryToolAngleReference
 
     Specify a rotational angle.
 
 .. py:property:: reference_axes
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesAngularOffset.reference_axes
-    :type: VectorGeometryToolAxesRefTo
+    :type: VectorGeometryToolAxesReference
 
     Specify a reference axes.
 

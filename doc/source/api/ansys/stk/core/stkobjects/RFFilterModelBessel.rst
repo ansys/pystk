@@ -21,9 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.RFFilterModelBessel.order`
-              - Gets or sets the filter order.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RFFilterModelBessel.cutoff_frequency`
-              - Gets or sets the filter cut off frequency.
+              - Get or set the filter order.
+            * - :py:attr:`~ansys.stk.core.stkobjects.RFFilterModelBessel.cut_off_frequency`
+              - Get or set the filter cut off frequency.
 
 
 
@@ -42,12 +42,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.RFFilterModelBessel.order
     :type: int
 
-    Gets or sets the filter order.
+    Get or set the filter order.
 
-.. py:property:: cutoff_frequency
-    :canonical: ansys.stk.core.stkobjects.RFFilterModelBessel.cutoff_frequency
+.. py:property:: cut_off_frequency
+    :canonical: ansys.stk.core.stkobjects.RFFilterModelBessel.cut_off_frequency
     :type: float
 
-    Gets or sets the filter cut off frequency.
+    Get or set the filter cut off frequency.
 
 

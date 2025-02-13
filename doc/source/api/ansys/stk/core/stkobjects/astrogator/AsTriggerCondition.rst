@@ -20,9 +20,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AsTriggerCondition.copy_calc_object_to_clipboard`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AsTriggerCondition.copy_calculation_object_to_clipboard`
               - Copy calculation object to clipboard.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AsTriggerCondition.paste_calc_object_from_clipboard`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AsTriggerCondition.paste_calculation_object_from_clipboard`
               - Replace calculation object with instance in clipboard.
 
     .. tab-item:: Properties
@@ -32,13 +32,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AsTriggerCondition.criteria`
-              - Gets or sets the criteria to be applied to the desired value.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AsTriggerCondition.calc_object`
-              - Gets or sets the calculation object to perform calculation to evaluate condition.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AsTriggerCondition.calc_object_name`
-              - Gets or sets the name of the calculation object to perform calculation to evaluate condition.
+              - Get or set the criteria to be applied to the desired value.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AsTriggerCondition.calculation_object`
+              - Get or set the calculation object to perform calculation to evaluate condition.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AsTriggerCondition.calculation_object_name`
+              - Get or set the name of the calculation object to perform calculation to evaluate condition.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AsTriggerCondition.value`
-              - Gets or sets the value to satisfy the condition. Dimension depends on CalcObject.
+              - Get or set the value to satisfy the condition. Dimension depends on CalcObject.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AsTriggerCondition.tolerance`
               - How closely the test parameter must approximate the desired value for the constraint. Dimension depends on CalcObject.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AsTriggerCondition.use_absolute_value`
@@ -59,27 +59,27 @@ Property detail
 
 .. py:property:: criteria
     :canonical: ansys.stk.core.stkobjects.astrogator.AsTriggerCondition.criteria
-    :type: CRITERIA
+    :type: Criteria
 
-    Gets or sets the criteria to be applied to the desired value.
+    Get or set the criteria to be applied to the desired value.
 
-.. py:property:: calc_object
-    :canonical: ansys.stk.core.stkobjects.astrogator.AsTriggerCondition.calc_object
+.. py:property:: calculation_object
+    :canonical: ansys.stk.core.stkobjects.astrogator.AsTriggerCondition.calculation_object
     :type: IComponentInfo
 
-    Gets or sets the calculation object to perform calculation to evaluate condition.
+    Get or set the calculation object to perform calculation to evaluate condition.
 
-.. py:property:: calc_object_name
-    :canonical: ansys.stk.core.stkobjects.astrogator.AsTriggerCondition.calc_object_name
+.. py:property:: calculation_object_name
+    :canonical: ansys.stk.core.stkobjects.astrogator.AsTriggerCondition.calculation_object_name
     :type: str
 
-    Gets or sets the name of the calculation object to perform calculation to evaluate condition.
+    Get or set the name of the calculation object to perform calculation to evaluate condition.
 
 .. py:property:: value
     :canonical: ansys.stk.core.stkobjects.astrogator.AsTriggerCondition.value
     :type: typing.Any
 
-    Gets or sets the value to satisfy the condition. Dimension depends on CalcObject.
+    Get or set the value to satisfy the condition. Dimension depends on CalcObject.
 
 .. py:property:: tolerance
     :canonical: ansys.stk.core.stkobjects.astrogator.AsTriggerCondition.tolerance
@@ -109,8 +109,8 @@ Method detail
 
 
 
-.. py:method:: copy_calc_object_to_clipboard(self) -> None
-    :canonical: ansys.stk.core.stkobjects.astrogator.AsTriggerCondition.copy_calc_object_to_clipboard
+.. py:method:: copy_calculation_object_to_clipboard(self) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.AsTriggerCondition.copy_calculation_object_to_clipboard
 
     Copy calculation object to clipboard.
 
@@ -118,8 +118,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: paste_calc_object_from_clipboard(self) -> None
-    :canonical: ansys.stk.core.stkobjects.astrogator.AsTriggerCondition.paste_calc_object_from_clipboard
+.. py:method:: paste_calculation_object_from_clipboard(self) -> None
+    :canonical: ansys.stk.core.stkobjects.astrogator.AsTriggerCondition.paste_calculation_object_from_clipboard
 
     Replace calculation object with instance in clipboard.
 

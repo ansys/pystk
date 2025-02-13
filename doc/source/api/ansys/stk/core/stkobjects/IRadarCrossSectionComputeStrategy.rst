@@ -19,9 +19,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionComputeStrategy.name`
-              - Gets the radar cross section compute strategy name.
+              - Get the radar cross section compute strategy name.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarCrossSectionComputeStrategy.type`
-              - Gets the radar cross section compute strategy enumeration.
+              - Get the radar cross section compute strategy enumeration.
 
 
 Import detail
@@ -39,12 +39,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.IRadarCrossSectionComputeStrategy.name
     :type: str
 
-    Gets the radar cross section compute strategy name.
+    Get the radar cross section compute strategy name.
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.IRadarCrossSectionComputeStrategy.type
-    :type: RCS_COMPUTE_STRATEGY
+    :type: RCSComputeStrategy
 
-    Gets the radar cross section compute strategy enumeration.
+    Get the radar cross section compute strategy enumeration.
 
 

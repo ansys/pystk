@@ -24,7 +24,6 @@ Overview
               - Initialize a new instance with a counterclockwise rotation angle.
 
 
-
 Import detail
 -------------
 
@@ -46,14 +45,14 @@ Method detail
 
         :obj:`~RotateFilter`
 
-.. py:method:: initialize_with_angle(self, rotateAngle: float) -> RotateFilter
+.. py:method:: initialize_with_angle(self, rotate_angle: float) -> RotateFilter
     :canonical: ansys.stk.core.graphics.RotateFilterFactory.initialize_with_angle
 
     Initialize a new instance with a counterclockwise rotation angle.
 
     :Parameters:
 
-    **rotateAngle** : :obj:`~float`
+    **rotate_angle** : :obj:`~float`
 
     :Returns:
 

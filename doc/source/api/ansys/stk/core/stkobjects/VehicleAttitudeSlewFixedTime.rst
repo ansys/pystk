@@ -21,9 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleAttitudeSlewFixedTime.slew_time`
-              - Gets or sets the time required to change attitude.
+              - Get or set the time required to change attitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleAttitudeSlewFixedTime.match_angular_velocity`
-              - Indicates whether to take account of the angular velocity (slope) at the beginning and the end of the slew.
+              - Indicate whether to take account of the angular velocity (slope) at the beginning and the end of the slew.
 
 
 
@@ -42,12 +42,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleAttitudeSlewFixedTime.slew_time
     :type: float
 
-    Gets or sets the time required to change attitude.
+    Get or set the time required to change attitude.
 
 .. py:property:: match_angular_velocity
     :canonical: ansys.stk.core.stkobjects.VehicleAttitudeSlewFixedTime.match_angular_velocity
     :type: bool
 
-    Indicates whether to take account of the angular velocity (slope) at the beginning and the end of the slew.
+    Indicate whether to take account of the angular velocity (slope) at the beginning and the end of the slew.
 
 

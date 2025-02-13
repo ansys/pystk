@@ -9,10 +9,6 @@ TimeToolPruneFilter
 
 .. py:currentmodule:: TimeToolPruneFilter
 
-Overview
---------
-
-
 
 Import detail
 -------------

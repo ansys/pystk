@@ -9,10 +9,6 @@ RadarActivityAlwaysActive
 
 .. py:currentmodule:: RadarActivityAlwaysActive
 
-Overview
---------
-
-
 
 Import detail
 -------------

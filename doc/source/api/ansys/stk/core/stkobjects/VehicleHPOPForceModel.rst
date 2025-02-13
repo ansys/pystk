@@ -64,7 +64,7 @@ Property detail
 
 .. py:property:: third_body_gravity
     :canonical: ansys.stk.core.stkobjects.VehicleHPOPForceModel.third_body_gravity
-    :type: VehicleThirdBodyGravityCollection
+    :type: PropagatorHPOPThirdBodyGravityCollection
 
     Get the 3rd-body gravity properties.
 

@@ -32,9 +32,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.CentralBodyTerrainCollection.count`
-              - Returns the number of elements in a collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.CentralBodyTerrainCollection._NewEnum`
-              - Returns an enumerator that can iterate through the collection.
+              - Return the number of elements in a collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.CentralBodyTerrainCollection._new_enum`
+              - Return an enumerator that can iterate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.CentralBodyTerrainCollection.total_cache_size`
               - Total cache size (not individual terrain sources) for the analytical terrain in the scenario. Dimensionless.
 
@@ -55,13 +55,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.CentralBodyTerrainCollection.count
     :type: int
 
-    Returns the number of elements in a collection.
+    Return the number of elements in a collection.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.CentralBodyTerrainCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.CentralBodyTerrainCollection._new_enum
     :type: EnumeratorProxy
 
-    Returns an enumerator that can iterate through the collection.
+    Return an enumerator that can iterate through the collection.
 
 .. py:property:: total_cache_size
     :canonical: ansys.stk.core.stkobjects.CentralBodyTerrainCollection.total_cache_size
@@ -74,14 +74,14 @@ Method detail
 -------------
 
 
-.. py:method:: item(self, vtIndex: typing.Any) -> CentralBodyTerrainCollectionElement
+.. py:method:: item(self, index: typing.Any) -> CentralBodyTerrainCollectionElement
     :canonical: ansys.stk.core.stkobjects.CentralBodyTerrainCollection.item
 
     Given an index or a name of a central body, returns an element in the collection.
 
     :Parameters:
 
-    **vtIndex** : :obj:`~typing.Any`
+    **index** : :obj:`~typing.Any`
 
     :Returns:
 

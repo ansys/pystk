@@ -7,12 +7,17 @@
 __all__ = ["GlobeControl", "MapControl", "GfxAnalysisControl"]
 
 import os
+import pathlib
 from tkinter                    import Frame
-from ctypes                     import *
+if os.name == "nt":
+    from ctypes import (CDLL, POINTER, WinDLL, WinError, c_char_p, cdll, create_unicode_buffer,
+                        get_last_error)
+else:
+    from ctypes import (CDLL, POINTER, cdll)
 
-from ..stkx             import UiAxGraphics3DCntrl, UiAx2DCntrl, UiAxGraphics2DAnalysisCntrl
+from ..stkx             import Graphics3DControlBase, Graphics2DControlBase, GraphicsAnalysisControlBase
 from ..internal.comutil import IUnknown, INT, LONG, CHAR, LPVOID, LPCWSTR, DWORD, BOOL, WINFUNCTYPE
-from ..stkengine        import *
+from ..stkengine import STKEngine
 
 if os.name != "nt":
     from ctypes.util import find_library
@@ -37,7 +42,7 @@ class NativeContainerMethods:
             self.AgPythonKeyReleased                                                                        = WINFUNCTYPE(LPVOID, LPVOID, LPVOID, LPVOID, LONG, BOOL, BOOL, BOOL)(("AgPythonKeyReleased", self.jniCore), ((1, "env"), (1, "_this"), (1, "pContainer"), (1, "keyCode"), (1, "ctrlKeyDown"), (1, "altKeyDown"), (1, "shiftKeyDown")))
     def _get_jni_core_path(self):
         if not STKEngine._is_engine_running:
-            raise STKRuntimeError(f"STKEngine.StartApplication() must be called before using the STK Engine controls")
+            raise STKRuntimeError("STKEngine.StartApplication() must be called before using the STK Engine controls")
             
         if os.name != "nt":
             return "libagjnicore.so"
@@ -47,60 +52,60 @@ class NativeContainerMethods:
             kernel32.GetModuleHandleW.restype = LPVOID
             kernel32.GetModuleHandleW.argtypes = [LPCWSTR]
 
-            stkxModuleHandle = kernel32.GetModuleHandleW("stkx.dll")
-            if stkxModuleHandle is None:
+            stkx_module_handle = kernel32.GetModuleHandleW("stkx.dll")
+            if stkx_module_handle is None:
                 raise STKRuntimeError(f"Error getting stkx.dll module handle ({WinError(get_last_error())})")
 
             kernel32.GetModuleFileNameA.restype = DWORD
             kernel32.GetModuleFileNameA.argtypes = [LPVOID, c_char_p, DWORD]
 
-            cPath = create_unicode_buffer(1024)
-            res = kernel32.GetModuleFileNameW(LPVOID(stkxModuleHandle), cPath, DWORD(1024))
+            c_path = create_unicode_buffer(1024)
+            res = kernel32.GetModuleFileNameW(LPVOID(stkx_module_handle), c_path, DWORD(1024))
             if res == 0:
                 err = get_last_error()
                 errormsg = "Failed to get STKX module file name"
                 if err != 0:
                     errormsg += f" ({WinError(err)})"
                 raise STKRuntimeError(errormsg)
-            stkxdllpath = cPath.value
+            stkx_dll_path = pathlib.Path(c_path.value).resolve()
 
-            jniCoreDllPath = os.path.join(os.path.dirname(stkxdllpath), "AgJNICore.dll")
-            return jniCoreDllPath
+            jni_core_dll_path = stkx_dll_path.parent / "AgJNICore.dll"
+            return str(jni_core_dll_path)
     def create_container(self, progid):
         return self.AgPythonCreateContainer(LPVOID(None), LPVOID(None), LPCWSTR(progid))
-    def attach_container(self, pContainer, winid, display):
-        self.Java_agi_core_awt_AgAwtNativeContainer_AttachContainer(LPVOID(None), LPVOID(None), winid, display, LPVOID(pContainer))
-    def resize_container(self, pContainer, x, y, width, height):
-        self.Java_agi_core_awt_AgAwtNativeContainer_ResizeContainer(LPVOID(None), LPVOID(None), LPVOID(pContainer), INT(x), INT(y), INT(width), INT(height))
-    def get_unknown(self, pContainer):
-        return self.AgPythonGetIAgUnknown(LPVOID(None), LPVOID(None), LPVOID(pContainer))
-    def detach_container(self, pContainer):
-        self.Java_agi_core_awt_AgAwtNativeContainer_DetachContainer(LPVOID(None), LPVOID(None), LPVOID(pContainer))
-    def release_container(self, pContainer):
-        self.Java_agi_core_awt_AgAwtNativeContainer_ReleaseContainer(LPVOID(None), LPVOID(None), LPVOID(pContainer))
+    def attach_container(self, container, winid, display):
+        self.Java_agi_core_awt_AgAwtNativeContainer_AttachContainer(LPVOID(None), LPVOID(None), winid, display, LPVOID(container))
+    def resize_container(self, container, x, y, width, height):
+        self.Java_agi_core_awt_AgAwtNativeContainer_ResizeContainer(LPVOID(None), LPVOID(None), LPVOID(container), INT(x), INT(y), INT(width), INT(height))
+    def get_unknown(self, container):
+        return self.AgPythonGetIAgUnknown(LPVOID(None), LPVOID(None), LPVOID(container))
+    def detach_container(self, container):
+        self.Java_agi_core_awt_AgAwtNativeContainer_DetachContainer(LPVOID(None), LPVOID(None), LPVOID(container))
+    def release_container(self, container):
+        self.Java_agi_core_awt_AgAwtNativeContainer_ReleaseContainer(LPVOID(None), LPVOID(None), LPVOID(container))
     if os.name!="nt":
-        def paint(self, pContainer):
-            self.Java_agi_core_awt_AgAwtNativeContainer_Paint(LPVOID(None), LPVOID(None), LPVOID(pContainer))
-        def mouse_pressed(self, pContainer, x, y, leftButtonDown, middleButtonDown, rightButtonDown, ctrlKeyDown, altKeyDown, shiftKeyDown):
-            self.Java_agi_core_awt_AgAwtNativeContainer_00024AgAwtCanvasMouseAdapter_MousePressed(LPVOID(None), LPVOID(None), LPVOID(pContainer), INT(x), INT(y), BOOL(leftButtonDown), BOOL(middleButtonDown), BOOL(rightButtonDown), BOOL(ctrlKeyDown), BOOL(altKeyDown), BOOL(shiftKeyDown))
-        def mouse_released(self, pContainer, x, y, leftButtonDown, middleButtonDown, rightButtonDown, ctrlKeyDown, altKeyDown, shiftKeyDown):
-            self.Java_agi_core_awt_AgAwtNativeContainer_00024AgAwtCanvasMouseAdapter_MouseReleased(LPVOID(None), LPVOID(None), LPVOID(pContainer), INT(x), INT(y), BOOL(leftButtonDown), BOOL(middleButtonDown), BOOL(rightButtonDown), BOOL(ctrlKeyDown), BOOL(altKeyDown), BOOL(shiftKeyDown))
-        def mouse_moved(self, pContainer, x, y, leftButtonDown, middleButtonDown, rightButtonDown, ctrlKeyDown, altKeyDown, shiftKeyDown):
-            self.Java_agi_core_awt_AgAwtNativeContainer_00024AgAwtCanvasMouseMotionAdapter_MouseMoved(LPVOID(None), LPVOID(None), LPVOID(pContainer), INT(x), INT(y), BOOL(leftButtonDown), BOOL(middleButtonDown), BOOL(rightButtonDown), BOOL(ctrlKeyDown), BOOL(altKeyDown), BOOL(shiftKeyDown))
-        def mouse_wheel_moved(self, pContainer, x, y, ticks, leftButtonDown, middleButtonDown, rightButtonDown, ctrlKeyDown, altKeyDown, shiftKeyDown):
-            self.Java_agi_core_awt_AgAwtNativeContainer_00024AgAwtCanvasMouseWheelAdapter_MouseWheelMoved(LPVOID(None), LPVOID(None), LPVOID(pContainer), INT(x), INT(y), INT(ticks), BOOL(leftButtonDown), BOOL(middleButtonDown), BOOL(rightButtonDown), BOOL(ctrlKeyDown), BOOL(altKeyDown), BOOL(shiftKeyDown))
-        def key_pressed(self, pContainer, keyCode, ctrlKeyDown, altKeyDown, shiftKeyDown):
-            self.AgPythonKeyPressed(LPVOID(None), LPVOID(None), LPVOID(pContainer), INT(keyCode), BOOL(ctrlKeyDown), BOOL(altKeyDown), BOOL(shiftKeyDown))
-        def key_released(self, pContainer, keyCode, ctrlKeyDown, altKeyDown, shiftKeyDown):
-            self.AgPythonKeyReleased(LPVOID(None), LPVOID(None), LPVOID(pContainer), INT(keyCode), BOOL(ctrlKeyDown), BOOL(altKeyDown), BOOL(shiftKeyDown))
+        def paint(self, container):
+            self.Java_agi_core_awt_AgAwtNativeContainer_Paint(LPVOID(None), LPVOID(None), LPVOID(container))
+        def mouse_pressed(self, container, x, y, left_button_down, middle_button_down, right_button_down, ctrl_key_down, alt_key_down, shift_key_down):
+            self.Java_agi_core_awt_AgAwtNativeContainer_00024AgAwtCanvasMouseAdapter_MousePressed(LPVOID(None), LPVOID(None), LPVOID(container), INT(x), INT(y), BOOL(left_button_down), BOOL(middle_button_down), BOOL(right_button_down), BOOL(ctrl_key_down), BOOL(alt_key_down), BOOL(shift_key_down))
+        def mouse_released(self, container, x, y, left_button_down, middle_button_down, right_button_down, ctrl_key_down, alt_key_down, shift_key_down):
+            self.Java_agi_core_awt_AgAwtNativeContainer_00024AgAwtCanvasMouseAdapter_MouseReleased(LPVOID(None), LPVOID(None), LPVOID(container), INT(x), INT(y), BOOL(left_button_down), BOOL(middle_button_down), BOOL(right_button_down), BOOL(ctrl_key_down), BOOL(alt_key_down), BOOL(shift_key_down))
+        def mouse_moved(self, container, x, y, left_button_down, middle_button_down, right_button_down, ctrl_key_down, alt_key_down, shift_key_down):
+            self.Java_agi_core_awt_AgAwtNativeContainer_00024AgAwtCanvasMouseMotionAdapter_MouseMoved(LPVOID(None), LPVOID(None), LPVOID(container), INT(x), INT(y), BOOL(left_button_down), BOOL(middle_button_down), BOOL(right_button_down), BOOL(ctrl_key_down), BOOL(alt_key_down), BOOL(shift_key_down))
+        def mouse_wheel_moved(self, container, x, y, ticks, left_button_down, middle_button_down, right_button_down, ctrl_key_down, alt_key_down, shift_key_down):
+            self.Java_agi_core_awt_AgAwtNativeContainer_00024AgAwtCanvasMouseWheelAdapter_MouseWheelMoved(LPVOID(None), LPVOID(None), LPVOID(container), INT(x), INT(y), INT(ticks), BOOL(left_button_down), BOOL(middle_button_down), BOOL(right_button_down), BOOL(ctrl_key_down), BOOL(alt_key_down), BOOL(shift_key_down))
+        def key_pressed(self, container, key_code, ctrl_key_down, alt_key_down, shift_key_down):
+            self.AgPythonKeyPressed(LPVOID(None), LPVOID(None), LPVOID(container), INT(key_code), BOOL(ctrl_key_down), BOOL(alt_key_down), BOOL(shift_key_down))
+        def key_released(self, container, key_code, ctrl_key_down, alt_key_down, shift_key_down):
+            self.AgPythonKeyReleased(LPVOID(None), LPVOID(None), LPVOID(container), INT(key_code), BOOL(ctrl_key_down), BOOL(alt_key_down), BOOL(shift_key_down))
         
 class ControlBase(Frame):
     """Base class for Tkinter controls."""
     
     _shift = 0x0001
     _control = 0x0004
-    _lAlt = 0x0008
-    _rAlt = 0x0080
+    _lalt = 0x0008
+    _ralt = 0x0080
     _mouse1 = 0x0100
     _mouse2 = 0x0200
     _mouse3 = 0x0400
@@ -162,69 +167,69 @@ class ControlBase(Frame):
             """Occurs when a mouse button is pressed."""
             if event.num == 4:
                 if not(event.state & self._mouse1 or event.state & self._mouse2 or event.state & self._mouse3):
-                    self._nativeContainerMethods.mouse_wheel_moved(self._container, event.x, event.y, 1, event.num == 1, event.num == 2, event.num == 3, event.state & self._control, event.state & self._lAlt or event.state & self._rAlt , event.state & self._shift)
+                    self._nativeContainerMethods.mouse_wheel_moved(self._container, event.x, event.y, 1, event.num == 1, event.num == 2, event.num == 3, event.state & self._control, event.state & self._lalt or event.state & self._ralt , event.state & self._shift)
             elif event.num == 5:
                 if not(event.state & self._mouse1 or event.state & self._mouse2 or event.state & self._mouse3):
-                    self._nativeContainerMethods.mouse_wheel_moved(self._container, event.x, event.y, -1, event.num == 1, event.num == 2, event.num == 3, event.state & self._control, event.state & self._lAlt or event.state & self._rAlt , event.state & self._shift)
+                    self._nativeContainerMethods.mouse_wheel_moved(self._container, event.x, event.y, -1, event.num == 1, event.num == 2, event.num == 3, event.state & self._control, event.state & self._lalt or event.state & self._ralt , event.state & self._shift)
             else:
                 if not(event.state & self._mouse1 or event.state & self._mouse2 or event.state & self._mouse3):
-                    self._nativeContainerMethods.mouse_pressed(self._container, event.x, event.y, event.num == 1, event.num == 2, event.num == 3, event.state & self._control, event.state & self._lAlt or event.state & self._rAlt , event.state & self._shift)
+                    self._nativeContainerMethods.mouse_pressed(self._container, event.x, event.y, event.num == 1, event.num == 2, event.num == 3, event.state & self._control, event.state & self._lalt or event.state & self._ralt , event.state & self._shift)
 
         def _button_release(self, event):
             """Occurs when a mouse button is released."""
-            self._nativeContainerMethods.mouse_released(self._container, event.x, event.y, event.num == 1, event.num == 2, event.num == 3, event.state & self._control, event.state & self._lAlt or event.state & self._rAlt , event.state & self._shift)
+            self._nativeContainerMethods.mouse_released(self._container, event.x, event.y, event.num == 1, event.num == 2, event.num == 3, event.state & self._control, event.state & self._lalt or event.state & self._ralt , event.state & self._shift)
 
         def _motion(self, event):
             """Occurs when mouse motion occurs."""
-            self._nativeContainerMethods.mouse_moved(self._container, event.x, event.y, event.state & self._mouse1, event.state & self._mouse2, event.state & self._mouse3, event.state & self._control, event.state & self._lAlt or event.state & self._rAlt , event.state & self._shift)
+            self._nativeContainerMethods.mouse_moved(self._container, event.x, event.y, event.state & self._mouse1, event.state & self._mouse2, event.state & self._mouse3, event.state & self._control, event.state & self._lalt or event.state & self._ralt , event.state & self._shift)
 
         def _key_press(self, event):
             """Occurs when a key is pressed."""
-            self._nativeContainerMethods.key_pressed(self._container, event.keysym_num, event.state & self._control, event.state & self._lAlt or event.state & self._rAlt , event.state & self._shift)
+            self._nativeContainerMethods.key_pressed(self._container, event.keysym_num, event.state & self._control, event.state & self._lalt or event.state & self._ralt , event.state & self._shift)
 
         def _key_release(self, event):
             """Occurs when key is released."""
-            self._nativeContainerMethods.key_released(self._container, event.keysym_num, event.state & self._control, event.state & self._lAlt or event.state & self._rAlt , event.state & self._shift)
+            self._nativeContainerMethods.key_released(self._container, event.keysym_num, event.state & self._control, event.state & self._lalt or event.state & self._ralt , event.state & self._shift)
 
-class GlobeControl(UiAxGraphics3DCntrl, ControlBase):
+class GlobeControl(Graphics3DControlBase, ControlBase):
     """The 3D Globe control for Tkinter."""
     
     _progid = "STKX12.VOControl.1"
-    _interface = UiAxGraphics3DCntrl
+    _interface = Graphics3DControlBase
 
     def __init__(self, parent, *args, **kwargs):
         """Construct an object of type GlobeControl."""
-        UiAxGraphics3DCntrl.__init__(self)
+        Graphics3DControlBase.__init__(self)
         ControlBase.__init__(self, parent, *args, **kwargs)
         
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         ControlBase.__setattr__(self, attrname, value)
 
-class MapControl(UiAx2DCntrl, ControlBase):
+class MapControl(Graphics2DControlBase, ControlBase):
     """The 2D Map control for Tkinter."""
     
     _progid = "STKX12.2DControl.1"
-    _interface = UiAx2DCntrl
+    _interface = Graphics2DControlBase
 
     def __init__(self, parent, *args, **kwargs):
         """Construct an object of type MapControl."""
-        UiAx2DCntrl.__init__(self)
+        Graphics2DControlBase.__init__(self)
         ControlBase.__init__(self, parent, *args, **kwargs)
         
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
         ControlBase.__setattr__(self, attrname, value)
 
-class GfxAnalysisControl(UiAxGraphics2DAnalysisCntrl, ControlBase):
+class GfxAnalysisControl(GraphicsAnalysisControlBase, ControlBase):
     """The Graphics Analysis control for Tkinter."""
     
     _progid = "STKX12.GfxAnalysisControl.1"
-    _interface = UiAxGraphics2DAnalysisCntrl
+    _interface = GraphicsAnalysisControlBase
 
     def __init__(self, parent, *args, **kwargs):
         """Construct an object of type GfxAnalysisControl."""
-        UiAxGraphics2DAnalysisCntrl.__init__(self)
+        GraphicsAnalysisControlBase.__init__(self)
         ControlBase.__init__(self, parent, *args, **kwargs)
         
     def __setattr__(self, attrname, value):

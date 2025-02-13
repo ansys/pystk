@@ -20,7 +20,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.vgt.TimeToolIntervalsFilter.duration_kind`
+            * - :py:attr:`~ansys.stk.core.vgt.TimeToolIntervalsFilter.duration_type`
               - Choose a duration type (at least/at most).
             * - :py:attr:`~ansys.stk.core.vgt.TimeToolIntervalsFilter.interval_duration`
               - The interval duration.
@@ -38,9 +38,9 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: duration_kind
-    :canonical: ansys.stk.core.vgt.TimeToolIntervalsFilter.duration_kind
-    :type: CRDN_INTERVAL_DURATION_KIND
+.. py:property:: duration_type
+    :canonical: ansys.stk.core.vgt.TimeToolIntervalsFilter.duration_type
+    :type: IntervalDurationType
 
     Choose a duration type (at least/at most).
 

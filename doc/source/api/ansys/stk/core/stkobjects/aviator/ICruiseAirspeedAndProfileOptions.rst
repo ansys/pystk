@@ -28,7 +28,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICruiseAirspeedAndProfileOptions.cruise_speed_type`
-              - Gets or sets the method for determining the aircraft's airspeed.
+              - Get or set the method for determining the aircraft's airspeed.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICruiseAirspeedAndProfileOptions.other_airspeed_type`
               - Get the airspeed type for the other airspeed option.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICruiseAirspeedAndProfileOptions.other_airspeed`
@@ -50,13 +50,13 @@ Property detail
 
 .. py:property:: cruise_speed_type
     :canonical: ansys.stk.core.stkobjects.aviator.ICruiseAirspeedAndProfileOptions.cruise_speed_type
-    :type: CRUISE_SPEED
+    :type: CruiseSpeed
 
-    Gets or sets the method for determining the aircraft's airspeed.
+    Get or set the method for determining the aircraft's airspeed.
 
 .. py:property:: other_airspeed_type
     :canonical: ansys.stk.core.stkobjects.aviator.ICruiseAirspeedAndProfileOptions.other_airspeed_type
-    :type: AIRSPEED_TYPE
+    :type: AirspeedType
 
     Get the airspeed type for the other airspeed option.
 
@@ -80,14 +80,14 @@ Method detail
 
 
 
-.. py:method:: set_other_airspeed(self, airspeedType: AIRSPEED_TYPE, airspeed: float) -> None
+.. py:method:: set_other_airspeed(self, airspeed_type: AirspeedType, airspeed: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.ICruiseAirspeedAndProfileOptions.set_other_airspeed
 
     Set the cruise airspeed. This option is only enabled if the cruise speed type is set to other.
 
     :Parameters:
 
-    **airspeedType** : :obj:`~AIRSPEED_TYPE`
+    **airspeed_type** : :obj:`~AirspeedType`
     **airspeed** : :obj:`~float`
 
     :Returns:

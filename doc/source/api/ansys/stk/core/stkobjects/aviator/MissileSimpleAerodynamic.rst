@@ -28,11 +28,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileSimpleAerodynamic.s_reference`
-              - Gets or sets the area of the lifting surface of the missile.
+              - Get or set the area of the lifting surface of the missile.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileSimpleAerodynamic.cl_max`
-              - Gets or sets the max coefficient of lift.
+              - Get or set the max coefficient of lift.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileSimpleAerodynamic.cd`
-              - Gets or sets the coefficient of drag.
+              - Get or set the coefficient of drag.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileSimpleAerodynamic.calculate_aoa`
               - Opt to allow Aviator to calculate the Angle of Attack. Otherwise, the value will be 0 by default.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissileSimpleAerodynamic.max_aoa`
@@ -55,19 +55,19 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.MissileSimpleAerodynamic.s_reference
     :type: float
 
-    Gets or sets the area of the lifting surface of the missile.
+    Get or set the area of the lifting surface of the missile.
 
 .. py:property:: cl_max
     :canonical: ansys.stk.core.stkobjects.aviator.MissileSimpleAerodynamic.cl_max
     :type: float
 
-    Gets or sets the max coefficient of lift.
+    Get or set the max coefficient of lift.
 
 .. py:property:: cd
     :canonical: ansys.stk.core.stkobjects.aviator.MissileSimpleAerodynamic.cd
     :type: float
 
-    Gets or sets the coefficient of drag.
+    Get or set the coefficient of drag.
 
 .. py:property:: calculate_aoa
     :canonical: ansys.stk.core.stkobjects.aviator.MissileSimpleAerodynamic.calculate_aoa
@@ -93,15 +93,15 @@ Method detail
 
 
 
-.. py:method:: set_max_aoa(self, calculateAoA: bool, maxAoA: typing.Any) -> None
+.. py:method:: set_max_aoa(self, calculate_aoa: bool, max_aoa: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.MissileSimpleAerodynamic.set_max_aoa
 
     Set whether to calculate the Angle of Attack and the corresponding value.
 
     :Parameters:
 
-    **calculateAoA** : :obj:`~bool`
-    **maxAoA** : :obj:`~typing.Any`
+    **calculate_aoa** : :obj:`~bool`
+    **max_aoa** : :obj:`~typing.Any`
 
     :Returns:
 

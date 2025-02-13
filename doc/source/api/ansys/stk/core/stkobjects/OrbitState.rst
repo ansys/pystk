@@ -9,10 +9,6 @@ OrbitState
 
 .. py:currentmodule:: OrbitState
 
-Overview
---------
-
-
 
 Import detail
 -------------

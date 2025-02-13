@@ -9,10 +9,6 @@ ScatteringPointModel
 
 .. py:currentmodule:: ScatteringPointModel
 
-Overview
---------
-
-
 
 Import detail
 -------------

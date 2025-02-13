@@ -28,9 +28,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ScatteringPointCollection.count`
-              - Returns the number of elements in the collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ScatteringPointCollection._NewEnum`
-              - Returns an enumerator for the collection.
+              - Return the number of elements in the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ScatteringPointCollection._new_enum`
+              - Return an enumerator for the collection.
 
 
 
@@ -49,13 +49,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.ScatteringPointCollection.count
     :type: int
 
-    Returns the number of elements in the collection.
+    Return the number of elements in the collection.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.ScatteringPointCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.ScatteringPointCollection._new_enum
     :type: EnumeratorProxy
 
-    Returns an enumerator for the collection.
+    Return an enumerator for the collection.
 
 
 Method detail

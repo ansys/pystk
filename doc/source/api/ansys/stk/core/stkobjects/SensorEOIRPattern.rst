@@ -30,16 +30,16 @@ Overview
               - Get the collection of Bands for the sensor.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorEOIRPattern.jitter_type`
               - Type of jitter specification.
-            * - :py:attr:`~ansys.stk.core.stkobjects.SensorEOIRPattern.jitter_data_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.SensorEOIRPattern.jitter_data_filename`
               - Jitter description data file.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorEOIRPattern.jitter_data_file_spatial_sampling`
               - Jitter data file spatial sampling.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorEOIRPattern.jitter_data_file_frequency_sampling`
               - Jitter data file frequency sampling.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorEOIRPattern.along_scan_smear_rate`
-              - Gets or sets the along-scan smear rate of the EOIR sensor.
+              - Get or set the along-scan smear rate of the EOIR sensor.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorEOIRPattern.across_scan_smear_rate`
-              - Gets or sets the across-scan smear rate of the EOIR sensor.
+              - Get or set the across-scan smear rate of the EOIR sensor.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorEOIRPattern.scan_mode`
               - Type of scan mode specification.
 
@@ -64,7 +64,7 @@ Property detail
 
 .. py:property:: processing_level
     :canonical: ansys.stk.core.stkobjects.SensorEOIRPattern.processing_level
-    :type: SENSOR_EOIR_PROCESSING_LEVELS
+    :type: SensorEOIRProcessingLevelType
 
     The tap point output ProcessingLevel for the sensor specifying the stage in the imaging pipeline to produce simulated images and output files.
 
@@ -82,12 +82,12 @@ Property detail
 
 .. py:property:: jitter_type
     :canonical: ansys.stk.core.stkobjects.SensorEOIRPattern.jitter_type
-    :type: SENSOR_EOIR_JITTER_TYPES
+    :type: SensorEOIRJitterType
 
     Type of jitter specification.
 
-.. py:property:: jitter_data_file
-    :canonical: ansys.stk.core.stkobjects.SensorEOIRPattern.jitter_data_file
+.. py:property:: jitter_data_filename
+    :canonical: ansys.stk.core.stkobjects.SensorEOIRPattern.jitter_data_filename
     :type: str
 
     Jitter description data file.
@@ -108,17 +108,17 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.SensorEOIRPattern.along_scan_smear_rate
     :type: float
 
-    Gets or sets the along-scan smear rate of the EOIR sensor.
+    Get or set the along-scan smear rate of the EOIR sensor.
 
 .. py:property:: across_scan_smear_rate
     :canonical: ansys.stk.core.stkobjects.SensorEOIRPattern.across_scan_smear_rate
     :type: float
 
-    Gets or sets the across-scan smear rate of the EOIR sensor.
+    Get or set the across-scan smear rate of the EOIR sensor.
 
 .. py:property:: scan_mode
     :canonical: ansys.stk.core.stkobjects.SensorEOIRPattern.scan_mode
-    :type: SENSOR_EOIR_SCAN_MODES
+    :type: SensorEOIRScanMode
 
     Type of scan mode specification.
 

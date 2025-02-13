@@ -38,13 +38,13 @@ Property detail
 
 .. py:property:: style
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DLine.style
-    :type: LINE_STYLE
+    :type: LineStyle
 
     Line style to use in displaying vehicle tracks.
 
 .. py:property:: width
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DLine.width
-    :type: LINE_WIDTH
+    :type: LineWidth
 
     Line width to use in displaying vehicle tracks.
 

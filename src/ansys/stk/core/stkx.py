@@ -39,12 +39,12 @@ keyboard and mouse interactions and modes.
 .
 """
 
-__all__ = ["BUTTON_VALUES", "DataObject", "DataObjectFiles", "Draw2DElemCollection", "Draw2DElemRect", "DrawElemCollection", 
-"DrawElemLine", "DrawElemRect", "FEATURE_CODES", "GRAPHICS_2D_ANALYSIS_MODE", "GRAPHICS_2D_DRAW_COORDS", "IDrawElem", "IDrawElemCollection", 
-"IDrawElemRect", "LOGGING_MODE", "MOUSE_MODE", "OLE_DROP_MODE", "ObjPathCollection", "PROGRESS_IMAGE_X_ORIGIN", "PROGRESS_IMAGE_Y_ORIGIN", 
-"PickInfoData", "RubberBandPickInfoData", "SHIFT_VALUES", "SHOW_PROGRESS_IMAGE", "STKXApplication", "STKXApplicationPartnerAccess", 
-"STKXConControlQuitReceivedEventArgs", "STKXSSLCertificateErrorEventArgs", "UiAx2DCntrl", "UiAxGraphics2DAnalysisCntrl", 
-"UiAxGraphics3DCntrl", "WinProjectionPosition"]
+__all__ = ["ButtonValues", "DataObject", "DataObjectFiles", "Draw2DElemCollection", "Draw2DElemRect", "DrawElementCollection", 
+"DrawElementLine", "DrawElementRect", "FeatureCodes", "Graphics2DAnalysisMode", "Graphics2DControlBase", "Graphics2DDrawCoordinates", 
+"Graphics3DControlBase", "GraphicsAnalysisControlBase", "IDrawElement", "IDrawElementCollection", "IDrawElementRect", "LoggingMode", 
+"MouseMode", "OLEDropMode", "ObjectPathCollection", "PickInfoData", "ProgressImageXOrigin", "ProgressImageYOrigin", "RubberBandPickInfoData", 
+"STKXApplication", "STKXApplicationPartnerAccess", "STKXConControlQuitReceivedEventArgs", "STKXSSLCertificateErrorEventArgs", 
+"ShiftValues", "ShowProgressImage", "WindowProjectionPosition"]
 
 import typing
 
@@ -60,32 +60,34 @@ from .internal.comutil     import IDispatch, IPictureDisp
 from .internal.apiutil     import (InterfaceProxy, EnumeratorProxy, OutArg, 
     initialize_from_source_object, get_interface_property, set_interface_attribute, 
     set_class_attribute, SupportsDeleteCallback)
-from .internal.eventutil   import *
-from .utilities.exceptions import *
+from .internal.eventutil import (ISTKXApplicationEventHandler, IUiAxGraphics2DCntrlEventHandler,
+                                 IUiAxGraphics3DCntrlEventHandler)
+from .utilities.exceptions import STKRuntimeError
 
-from .stkutil import *
+from .stkutil import (ExecuteCommandResult, ExecuteMultipleCommandsMode,
+                      ExecuteMultipleCommandsResult, LineStyle)
 
 
 def _raise_uninitialized_error(*args):
     raise STKRuntimeError("Valid STK object model classes are returned from STK methods and should not be created independently.")
 
-class SHIFT_VALUES(IntEnum):
+class ShiftValues(IntEnum):
     """State of the Shift/Ctrl/Alt keys."""
    
     PRESSED = 1
     """The Shift key was pressed."""
     CTRL_PRESSED = 2
     """The Ctrl key was pressed."""
-    ALTITUDE_PRESSED = 4
+    ALT_PRESSED = 4
     """The ALT key was pressed."""
 
-SHIFT_VALUES.PRESSED.__doc__ = "The Shift key was pressed."
-SHIFT_VALUES.CTRL_PRESSED.__doc__ = "The Ctrl key was pressed."
-SHIFT_VALUES.ALTITUDE_PRESSED.__doc__ = "The ALT key was pressed."
+ShiftValues.PRESSED.__doc__ = "The Shift key was pressed."
+ShiftValues.CTRL_PRESSED.__doc__ = "The Ctrl key was pressed."
+ShiftValues.ALT_PRESSED.__doc__ = "The ALT key was pressed."
 
-agcls.AgTypeNameMap["SHIFT_VALUES"] = SHIFT_VALUES
+agcls.AgTypeNameMap["ShiftValues"] = ShiftValues
 
-class BUTTON_VALUES(IntEnum):
+class ButtonValues(IntEnum):
     """Numeric value of the mouse button pressed."""
    
     LEFT_PRESSED = 1
@@ -95,13 +97,13 @@ class BUTTON_VALUES(IntEnum):
     MIDDLE_PRESSED = 4
     """The middle button is pressed."""
 
-BUTTON_VALUES.LEFT_PRESSED.__doc__ = "The left button is pressed."
-BUTTON_VALUES.RIGHT_PRESSED.__doc__ = "The right button is pressed."
-BUTTON_VALUES.MIDDLE_PRESSED.__doc__ = "The middle button is pressed."
+ButtonValues.LEFT_PRESSED.__doc__ = "The left button is pressed."
+ButtonValues.RIGHT_PRESSED.__doc__ = "The right button is pressed."
+ButtonValues.MIDDLE_PRESSED.__doc__ = "The middle button is pressed."
 
-agcls.AgTypeNameMap["BUTTON_VALUES"] = BUTTON_VALUES
+agcls.AgTypeNameMap["ButtonValues"] = ButtonValues
 
-class OLE_DROP_MODE(IntEnum):
+class OLEDropMode(IntEnum):
     """Specify how to handle OLE drop operations."""
    
     NONE = 0
@@ -111,13 +113,13 @@ class OLE_DROP_MODE(IntEnum):
     AUTOMATIC = 2
     """Automatic. The control automatically accepts OLE drops if the DataObject object contains data in a format it recognizes. No OLE drag/drop events on the target will occur when OLEDropMode is set to eAutomatic."""
 
-OLE_DROP_MODE.NONE.__doc__ = "None. The control does not accept OLE drops and displays the No Drop cursor."
-OLE_DROP_MODE.MANUAL.__doc__ = "Manual. The control triggers the OLE drop events, allowing the programmer to handle the OLE drop operation in code."
-OLE_DROP_MODE.AUTOMATIC.__doc__ = "Automatic. The control automatically accepts OLE drops if the DataObject object contains data in a format it recognizes. No OLE drag/drop events on the target will occur when OLEDropMode is set to eAutomatic."
+OLEDropMode.NONE.__doc__ = "None. The control does not accept OLE drops and displays the No Drop cursor."
+OLEDropMode.MANUAL.__doc__ = "Manual. The control triggers the OLE drop events, allowing the programmer to handle the OLE drop operation in code."
+OLEDropMode.AUTOMATIC.__doc__ = "Automatic. The control automatically accepts OLE drops if the DataObject object contains data in a format it recognizes. No OLE drag/drop events on the target will occur when OLEDropMode is set to eAutomatic."
 
-agcls.AgTypeNameMap["OLE_DROP_MODE"] = OLE_DROP_MODE
+agcls.AgTypeNameMap["OLEDropMode"] = OLEDropMode
 
-class MOUSE_MODE(IntEnum):
+class MouseMode(IntEnum):
     """Mouse modes."""
    
     AUTOMATIC = 0
@@ -125,12 +127,12 @@ class MOUSE_MODE(IntEnum):
     MANUAL = 1
     """None. No default action happens on mouse events. Events are fired to the container."""
 
-MOUSE_MODE.AUTOMATIC.__doc__ = "Automatic. The control handles the mouse events and then fires the events to the container for additional processing."
-MOUSE_MODE.MANUAL.__doc__ = "None. No default action happens on mouse events. Events are fired to the container."
+MouseMode.AUTOMATIC.__doc__ = "Automatic. The control handles the mouse events and then fires the events to the container for additional processing."
+MouseMode.MANUAL.__doc__ = "None. No default action happens on mouse events. Events are fired to the container."
 
-agcls.AgTypeNameMap["MOUSE_MODE"] = MOUSE_MODE
+agcls.AgTypeNameMap["MouseMode"] = MouseMode
 
-class LOGGING_MODE(IntEnum):
+class LoggingMode(IntEnum):
     """Specify the state of the log file."""
    
     INACTIVE = 0
@@ -140,13 +142,13 @@ class LOGGING_MODE(IntEnum):
     ACTIVE_KEEP_FILE = 2
     """The log file is created and kept even after application is terminated."""
 
-LOGGING_MODE.INACTIVE.__doc__ = "The log file is not created."
-LOGGING_MODE.ACTIVE.__doc__ = "The log file is created but deleted upon application termination."
-LOGGING_MODE.ACTIVE_KEEP_FILE.__doc__ = "The log file is created and kept even after application is terminated."
+LoggingMode.INACTIVE.__doc__ = "The log file is not created."
+LoggingMode.ACTIVE.__doc__ = "The log file is created but deleted upon application termination."
+LoggingMode.ACTIVE_KEEP_FILE.__doc__ = "The log file is created and kept even after application is terminated."
 
-agcls.AgTypeNameMap["LOGGING_MODE"] = LOGGING_MODE
+agcls.AgTypeNameMap["LoggingMode"] = LoggingMode
 
-class GRAPHICS_2D_ANALYSIS_MODE(IntEnum):
+class Graphics2DAnalysisMode(IntEnum):
     """Specify the mode of Gfx Analysis Control."""
    
     SOLAR_PANEL_TOOL = 1
@@ -158,27 +160,27 @@ class GRAPHICS_2D_ANALYSIS_MODE(IntEnum):
     AZ_EL_MASK_TOOL = 4
     """The AzElMask Tool mode."""
 
-GRAPHICS_2D_ANALYSIS_MODE.SOLAR_PANEL_TOOL.__doc__ = "The Solar Panel Tool mode."
-GRAPHICS_2D_ANALYSIS_MODE.AREA_TOOL.__doc__ = "The Area Tool mode."
-GRAPHICS_2D_ANALYSIS_MODE.OBSCURATION_TOOL.__doc__ = "The Obscuration Tool mode."
-GRAPHICS_2D_ANALYSIS_MODE.AZ_EL_MASK_TOOL.__doc__ = "The AzElMask Tool mode."
+Graphics2DAnalysisMode.SOLAR_PANEL_TOOL.__doc__ = "The Solar Panel Tool mode."
+Graphics2DAnalysisMode.AREA_TOOL.__doc__ = "The Area Tool mode."
+Graphics2DAnalysisMode.OBSCURATION_TOOL.__doc__ = "The Obscuration Tool mode."
+Graphics2DAnalysisMode.AZ_EL_MASK_TOOL.__doc__ = "The AzElMask Tool mode."
 
-agcls.AgTypeNameMap["GRAPHICS_2D_ANALYSIS_MODE"] = GRAPHICS_2D_ANALYSIS_MODE
+agcls.AgTypeNameMap["Graphics2DAnalysisMode"] = Graphics2DAnalysisMode
 
-class GRAPHICS_2D_DRAW_COORDS(IntEnum):
+class Graphics2DDrawCoordinates(IntEnum):
     """Specify the draw coordinates for Map Control."""
    
-    PIXEL_DRAW_COORDS = 1
+    PIXEL_DRAW_COORDINATES = 1
     """The draw coordinates values in pixels."""
-    SCREEN_DRAW_COORDS = 2
+    SCREEN_DRAW_COORDINATES = 2
     """The draw coordinates values in screen coordinates."""
 
-GRAPHICS_2D_DRAW_COORDS.PIXEL_DRAW_COORDS.__doc__ = "The draw coordinates values in pixels."
-GRAPHICS_2D_DRAW_COORDS.SCREEN_DRAW_COORDS.__doc__ = "The draw coordinates values in screen coordinates."
+Graphics2DDrawCoordinates.PIXEL_DRAW_COORDINATES.__doc__ = "The draw coordinates values in pixels."
+Graphics2DDrawCoordinates.SCREEN_DRAW_COORDINATES.__doc__ = "The draw coordinates values in screen coordinates."
 
-agcls.AgTypeNameMap["GRAPHICS_2D_DRAW_COORDS"] = GRAPHICS_2D_DRAW_COORDS
+agcls.AgTypeNameMap["Graphics2DDrawCoordinates"] = Graphics2DDrawCoordinates
 
-class SHOW_PROGRESS_IMAGE(IntEnum):
+class ShowProgressImage(IntEnum):
     """Specify to show progress image."""
    
     NONE = 1
@@ -188,13 +190,13 @@ class SHOW_PROGRESS_IMAGE(IntEnum):
     USER = 3
     """Show the user specified progress image."""
 
-SHOW_PROGRESS_IMAGE.NONE.__doc__ = "Do not show any progress Image."
-SHOW_PROGRESS_IMAGE.DEFAULT.__doc__ = "Show the default progress image."
-SHOW_PROGRESS_IMAGE.USER.__doc__ = "Show the user specified progress image."
+ShowProgressImage.NONE.__doc__ = "Do not show any progress Image."
+ShowProgressImage.DEFAULT.__doc__ = "Show the default progress image."
+ShowProgressImage.USER.__doc__ = "Show the user specified progress image."
 
-agcls.AgTypeNameMap["SHOW_PROGRESS_IMAGE"] = SHOW_PROGRESS_IMAGE
+agcls.AgTypeNameMap["ShowProgressImage"] = ShowProgressImage
 
-class FEATURE_CODES(IntEnum):
+class FeatureCodes(IntEnum):
     """The enumeration values are used to check availability of a given feature."""
    
     ENGINE_RUNTIME = 1
@@ -202,12 +204,12 @@ class FEATURE_CODES(IntEnum):
     GLOBE_CONTROL = 2
     """The enumeration is used to check whether the globe is available."""
 
-FEATURE_CODES.ENGINE_RUNTIME.__doc__ = "The enumeration is used to check whether the engine runtime is available."
-FEATURE_CODES.GLOBE_CONTROL.__doc__ = "The enumeration is used to check whether the globe is available."
+FeatureCodes.ENGINE_RUNTIME.__doc__ = "The enumeration is used to check whether the engine runtime is available."
+FeatureCodes.GLOBE_CONTROL.__doc__ = "The enumeration is used to check whether the globe is available."
 
-agcls.AgTypeNameMap["FEATURE_CODES"] = FEATURE_CODES
+agcls.AgTypeNameMap["FeatureCodes"] = FeatureCodes
 
-class PROGRESS_IMAGE_X_ORIGIN(IntEnum):
+class ProgressImageXOrigin(IntEnum):
     """Specify to align progress image X origin."""
    
     LEFT = 1
@@ -217,13 +219,13 @@ class PROGRESS_IMAGE_X_ORIGIN(IntEnum):
     CENTER = 3
     """Align progress Image from X center."""
 
-PROGRESS_IMAGE_X_ORIGIN.LEFT.__doc__ = "Align progress Image from X left."
-PROGRESS_IMAGE_X_ORIGIN.RIGHT.__doc__ = "Align progress Image from X right."
-PROGRESS_IMAGE_X_ORIGIN.CENTER.__doc__ = "Align progress Image from X center."
+ProgressImageXOrigin.LEFT.__doc__ = "Align progress Image from X left."
+ProgressImageXOrigin.RIGHT.__doc__ = "Align progress Image from X right."
+ProgressImageXOrigin.CENTER.__doc__ = "Align progress Image from X center."
 
-agcls.AgTypeNameMap["PROGRESS_IMAGE_X_ORIGIN"] = PROGRESS_IMAGE_X_ORIGIN
+agcls.AgTypeNameMap["ProgressImageXOrigin"] = ProgressImageXOrigin
 
-class PROGRESS_IMAGE_Y_ORIGIN(IntEnum):
+class ProgressImageYOrigin(IntEnum):
     """Specify to align progress image Y origin."""
    
     TOP = 1
@@ -233,14 +235,14 @@ class PROGRESS_IMAGE_Y_ORIGIN(IntEnum):
     CENTER = 3
     """Align progress Image from Y center."""
 
-PROGRESS_IMAGE_Y_ORIGIN.TOP.__doc__ = "Align progress Image from Y top."
-PROGRESS_IMAGE_Y_ORIGIN.BOTTOM.__doc__ = "Align progress Image from Y bottom."
-PROGRESS_IMAGE_Y_ORIGIN.CENTER.__doc__ = "Align progress Image from Y center."
+ProgressImageYOrigin.TOP.__doc__ = "Align progress Image from Y top."
+ProgressImageYOrigin.BOTTOM.__doc__ = "Align progress Image from Y bottom."
+ProgressImageYOrigin.CENTER.__doc__ = "Align progress Image from Y center."
 
-agcls.AgTypeNameMap["PROGRESS_IMAGE_Y_ORIGIN"] = PROGRESS_IMAGE_Y_ORIGIN
+agcls.AgTypeNameMap["ProgressImageYOrigin"] = ProgressImageYOrigin
 
 
-class IDrawElem(object):
+class IDrawElement(object):
     """Draw element."""
 
     _num_methods = 2
@@ -252,19 +254,19 @@ class IDrawElem(object):
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
-        """Construct an object of type IDrawElem."""
-        initialize_from_source_object(self, sourceObject, IDrawElem)
+    def __init__(self, source_object=None):
+        """Construct an object of type IDrawElement."""
+        initialize_from_source_object(self, source_object, IDrawElement)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        return get_interface_property(attrname, IDrawElem)
+        return get_interface_property(attrname, IDrawElement)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_interface_attribute(self, attrname, value, IDrawElem, None)
+        set_interface_attribute(self, attrname, value, IDrawElement, None)
     
     _get_visible_metadata = { "offset" : _get_visible_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -272,26 +274,26 @@ class IDrawElem(object):
     @property
     def visible(self) -> bool:
         """Show or hide the element."""
-        return self._intf.get_property(IDrawElem._metadata, IDrawElem._get_visible_metadata)
+        return self._intf.get_property(IDrawElement._metadata, IDrawElement._get_visible_metadata)
 
     _set_visible_metadata = { "offset" : _set_visible_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @visible.setter
-    def visible(self, newVal:bool) -> None:
-        return self._intf.set_property(IDrawElem._metadata, IDrawElem._set_visible_metadata, newVal)
+    def visible(self, value:bool) -> None:
+        return self._intf.set_property(IDrawElement._metadata, IDrawElement._set_visible_metadata, value)
 
     _property_names[visible] = "visible"
 
 
-agcls.AgClassCatalog.add_catalog_entry((4799429500509160029, 14297494079902626208), IDrawElem)
-agcls.AgTypeNameMap["IDrawElem"] = IDrawElem
+agcls.AgClassCatalog.add_catalog_entry((4799429500509160029, 14297494079902626208), IDrawElement)
+agcls.AgTypeNameMap["IDrawElement"] = IDrawElement
 
-class IDrawElemRect(IDrawElem):
+class IDrawElementRect(IDrawElement):
     """Define a rectangle in control coordinates."""
 
     _num_methods = 11
-    _vtable_offset = IDrawElem._vtable_offset + IDrawElem._num_methods
+    _vtable_offset = IDrawElement._vtable_offset + IDrawElement._num_methods
     _get_left_method_offset = 1
     _get_right_method_offset = 2
     _get_top_method_offset = 3
@@ -305,23 +307,23 @@ class IDrawElemRect(IDrawElem):
     _set_line_style_method_offset = 11
     _metadata = {
         "iid_data" : (5216817853639421657, 10124586112684702141),
-        "vtable_reference" : IDrawElem._vtable_offset + IDrawElem._num_methods - 1,
+        "vtable_reference" : IDrawElement._vtable_offset + IDrawElement._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
-        """Construct an object of type IDrawElemRect."""
-        initialize_from_source_object(self, sourceObject, IDrawElemRect)
+    def __init__(self, source_object=None):
+        """Construct an object of type IDrawElementRect."""
+        initialize_from_source_object(self, source_object, IDrawElementRect)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IDrawElem._private_init(self, intf)
+        IDrawElement._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        return get_interface_property(attrname, IDrawElemRect)
+        return get_interface_property(attrname, IDrawElementRect)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_interface_attribute(self, attrname, value, IDrawElemRect, IDrawElem)
+        set_interface_attribute(self, attrname, value, IDrawElementRect, IDrawElement)
     
     _get_left_metadata = { "offset" : _get_left_method_offset,
             "arg_types" : (POINTER(agcom.OLE_XPOS_PIXELS),),
@@ -329,7 +331,7 @@ class IDrawElemRect(IDrawElem):
     @property
     def left(self) -> int:
         """The x-coordinate of the left edge of this rectangle."""
-        return self._intf.get_property(IDrawElemRect._metadata, IDrawElemRect._get_left_metadata)
+        return self._intf.get_property(IDrawElementRect._metadata, IDrawElementRect._get_left_metadata)
 
     _get_right_metadata = { "offset" : _get_right_method_offset,
             "arg_types" : (POINTER(agcom.OLE_XPOS_PIXELS),),
@@ -337,7 +339,7 @@ class IDrawElemRect(IDrawElem):
     @property
     def right(self) -> int:
         """The x-coordinate of the right edge of this rectangle."""
-        return self._intf.get_property(IDrawElemRect._metadata, IDrawElemRect._get_right_metadata)
+        return self._intf.get_property(IDrawElementRect._metadata, IDrawElementRect._get_right_metadata)
 
     _get_top_metadata = { "offset" : _get_top_method_offset,
             "arg_types" : (POINTER(agcom.OLE_YPOS_PIXELS),),
@@ -345,7 +347,7 @@ class IDrawElemRect(IDrawElem):
     @property
     def top(self) -> int:
         """The y-coordinate of the top edge of this rectangle."""
-        return self._intf.get_property(IDrawElemRect._metadata, IDrawElemRect._get_top_metadata)
+        return self._intf.get_property(IDrawElementRect._metadata, IDrawElementRect._get_top_metadata)
 
     _get_bottom_metadata = { "offset" : _get_bottom_method_offset,
             "arg_types" : (POINTER(agcom.OLE_YPOS_PIXELS),),
@@ -353,14 +355,14 @@ class IDrawElemRect(IDrawElem):
     @property
     def bottom(self) -> int:
         """The y-coordinate of the bottom edge of this rectangle."""
-        return self._intf.get_property(IDrawElemRect._metadata, IDrawElemRect._get_bottom_metadata)
+        return self._intf.get_property(IDrawElementRect._metadata, IDrawElementRect._get_bottom_metadata)
 
     _set_metadata = { "offset" : _set_method_offset,
             "arg_types" : (agcom.OLE_XPOS_PIXELS, agcom.OLE_YPOS_PIXELS, agcom.OLE_XPOS_PIXELS, agcom.OLE_YPOS_PIXELS,),
             "marshallers" : (agmarshall.OLEXPosPixelsArg, agmarshall.OLEYPosPixelsArg, agmarshall.OLEXPosPixelsArg, agmarshall.OLEYPosPixelsArg,) }
     def set(self, left:int, top:int, right:int, bottom:int) -> None:
         """Set the rectangle coordinates."""
-        return self._intf.invoke(IDrawElemRect._metadata, IDrawElemRect._set_metadata, left, top, right, bottom)
+        return self._intf.invoke(IDrawElementRect._metadata, IDrawElementRect._set_metadata, left, top, right, bottom)
 
     _get_color_metadata = { "offset" : _get_color_method_offset,
             "arg_types" : (POINTER(agcom.OLE_COLOR),),
@@ -368,14 +370,14 @@ class IDrawElemRect(IDrawElem):
     @property
     def color(self) -> agcolor.Color:
         """Color of the rectangle."""
-        return self._intf.get_property(IDrawElemRect._metadata, IDrawElemRect._get_color_metadata)
+        return self._intf.get_property(IDrawElementRect._metadata, IDrawElementRect._get_color_metadata)
 
     _set_color_metadata = { "offset" : _set_color_method_offset,
             "arg_types" : (agcom.OLE_COLOR,),
             "marshallers" : (agmarshall.OLEColorArg,) }
     @color.setter
-    def color(self, newVal:agcolor.Color) -> None:
-        return self._intf.set_property(IDrawElemRect._metadata, IDrawElemRect._set_color_metadata, newVal)
+    def color(self, value:agcolor.Color) -> None:
+        return self._intf.set_property(IDrawElementRect._metadata, IDrawElementRect._set_color_metadata, value)
 
     _get_line_width_metadata = { "offset" : _get_line_width_method_offset,
             "arg_types" : (POINTER(agcom.FLOAT),),
@@ -383,29 +385,29 @@ class IDrawElemRect(IDrawElem):
     @property
     def line_width(self) -> float:
         """Specify the width of the line."""
-        return self._intf.get_property(IDrawElemRect._metadata, IDrawElemRect._get_line_width_metadata)
+        return self._intf.get_property(IDrawElementRect._metadata, IDrawElementRect._get_line_width_metadata)
 
     _set_line_width_metadata = { "offset" : _set_line_width_method_offset,
             "arg_types" : (agcom.FLOAT,),
             "marshallers" : (agmarshall.FloatArg,) }
     @line_width.setter
-    def line_width(self, newVal:float) -> None:
-        return self._intf.set_property(IDrawElemRect._metadata, IDrawElemRect._set_line_width_metadata, newVal)
+    def line_width(self, value:float) -> None:
+        return self._intf.set_property(IDrawElementRect._metadata, IDrawElementRect._set_line_width_metadata, value)
 
     _get_line_style_metadata = { "offset" : _get_line_style_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(LINE_STYLE),) }
+            "marshallers" : (agmarshall.EnumArg(LineStyle),) }
     @property
-    def line_style(self) -> "LINE_STYLE":
+    def line_style(self) -> "LineStyle":
         """Specify the style of the line."""
-        return self._intf.get_property(IDrawElemRect._metadata, IDrawElemRect._get_line_style_metadata)
+        return self._intf.get_property(IDrawElementRect._metadata, IDrawElementRect._get_line_style_metadata)
 
     _set_line_style_metadata = { "offset" : _set_line_style_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(LINE_STYLE),) }
+            "marshallers" : (agmarshall.EnumArg(LineStyle),) }
     @line_style.setter
-    def line_style(self, newVal:"LINE_STYLE") -> None:
-        return self._intf.set_property(IDrawElemRect._metadata, IDrawElemRect._set_line_style_metadata, newVal)
+    def line_style(self, value:"LineStyle") -> None:
+        return self._intf.set_property(IDrawElementRect._metadata, IDrawElementRect._set_line_style_metadata, value)
 
     _property_names[left] = "left"
     _property_names[right] = "right"
@@ -416,17 +418,17 @@ class IDrawElemRect(IDrawElem):
     _property_names[line_style] = "line_style"
 
 
-agcls.AgClassCatalog.add_catalog_entry((5216817853639421657, 10124586112684702141), IDrawElemRect)
-agcls.AgTypeNameMap["IDrawElemRect"] = IDrawElemRect
+agcls.AgClassCatalog.add_catalog_entry((5216817853639421657, 10124586112684702141), IDrawElementRect)
+agcls.AgTypeNameMap["IDrawElementRect"] = IDrawElementRect
 
-class IDrawElemCollection(object):
+class IDrawElementCollection(object):
     """Collection of elements to draw on the control."""
 
     _num_methods = 8
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _get_count_method_offset = 1
     _item_method_offset = 2
-    _get__NewEnum_method_offset = 3
+    _get__new_enum_method_offset = 3
     _clear_method_offset = 4
     _add_method_offset = 5
     _remove_method_offset = 6
@@ -437,9 +439,9 @@ class IDrawElemCollection(object):
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
-    def __init__(self, sourceObject=None):
-        """Construct an object of type IDrawElemCollection."""
-        initialize_from_source_object(self, sourceObject, IDrawElemCollection)
+    def __init__(self, source_object=None):
+        """Construct an object of type IDrawElementCollection."""
+        initialize_from_source_object(self, source_object, IDrawElementCollection)
         self.__dict__["_enumerator"] = None
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
@@ -447,16 +449,16 @@ class IDrawElemCollection(object):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def _get_property(self, attrname):
-        return get_interface_property(attrname, IDrawElemCollection)
+        return get_interface_property(attrname, IDrawElementCollection)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_interface_attribute(self, attrname, value, IDrawElemCollection, None)
+        set_interface_attribute(self, attrname, value, IDrawElementCollection, None)
     def __iter__(self):
-        """Create an iterator for the IDrawElemCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        """Create an iterator for the IDrawElementCollection object."""
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
-    def __next__(self) -> "IDrawElem":
+    def __next__(self) -> "IDrawElement":
         """Return the next element in the collection."""
         if self._enumerator is None:
             raise StopIteration
@@ -471,43 +473,43 @@ class IDrawElemCollection(object):
     @property
     def count(self) -> int:
         """Number of elements contained in the collection."""
-        return self._intf.get_property(IDrawElemCollection._metadata, IDrawElemCollection._get_count_metadata)
+        return self._intf.get_property(IDrawElementCollection._metadata, IDrawElementCollection._get_count_metadata)
 
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.LongArg, agmarshall.InterfaceOutArg,) }
-    def item(self, index:int) -> "IDrawElem":
+    def item(self, index:int) -> "IDrawElement":
         """Get the element at the specified index (0-based)."""
-        return self._intf.invoke(IDrawElemCollection._metadata, IDrawElemCollection._item_metadata, index, OutArg())
+        return self._intf.invoke(IDrawElementCollection._metadata, IDrawElementCollection._item_metadata, index, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return an object that can be used to iterate through all the strings in the collection."""
-        return self._intf.get_property(IDrawElemCollection._metadata, IDrawElemCollection._get__NewEnum_metadata)
+        return self._intf.get_property(IDrawElementCollection._metadata, IDrawElementCollection._get__new_enum_metadata)
 
     _clear_metadata = { "offset" : _clear_method_offset,
             "arg_types" : (),
             "marshallers" : () }
     def clear(self) -> None:
         """Clear the contents of the collection and updates the display."""
-        return self._intf.invoke(IDrawElemCollection._metadata, IDrawElemCollection._clear_metadata, )
+        return self._intf.invoke(IDrawElementCollection._metadata, IDrawElementCollection._clear_metadata, )
 
     _add_metadata = { "offset" : _add_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
-    def add(self, elemType:str) -> "IDrawElem":
+    def add(self, elem_type:str) -> "IDrawElement":
         """Create and add a new element to the end of the sequence."""
-        return self._intf.invoke(IDrawElemCollection._metadata, IDrawElemCollection._add_metadata, elemType, OutArg())
+        return self._intf.invoke(IDrawElementCollection._metadata, IDrawElementCollection._add_metadata, elem_type, OutArg())
 
     _remove_metadata = { "offset" : _remove_method_offset,
             "arg_types" : (agcom.PVOID,),
-            "marshallers" : (agmarshall.InterfaceInArg("IDrawElem"),) }
-    def remove(self, drawElem:"IDrawElem") -> None:
+            "marshallers" : (agmarshall.InterfaceInArg("IDrawElement"),) }
+    def remove(self, draw_elem:"IDrawElement") -> None:
         """Remove the specified element."""
-        return self._intf.invoke(IDrawElemCollection._metadata, IDrawElemCollection._remove_metadata, drawElem)
+        return self._intf.invoke(IDrawElementCollection._metadata, IDrawElementCollection._remove_metadata, draw_elem)
 
     _get_visible_metadata = { "offset" : _get_visible_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -515,29 +517,29 @@ class IDrawElemCollection(object):
     @property
     def visible(self) -> bool:
         """Show or hide all the elements."""
-        return self._intf.get_property(IDrawElemCollection._metadata, IDrawElemCollection._get_visible_metadata)
+        return self._intf.get_property(IDrawElementCollection._metadata, IDrawElementCollection._get_visible_metadata)
 
     _set_visible_metadata = { "offset" : _set_visible_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @visible.setter
-    def visible(self, newVal:bool) -> None:
-        return self._intf.set_property(IDrawElemCollection._metadata, IDrawElemCollection._set_visible_metadata, newVal)
+    def visible(self, value:bool) -> None:
+        return self._intf.set_property(IDrawElementCollection._metadata, IDrawElementCollection._set_visible_metadata, value)
 
     __getitem__ = item
 
 
     _property_names[count] = "count"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
     _property_names[visible] = "visible"
 
 
-agcls.AgClassCatalog.add_catalog_entry((5345909665096890445, 1033150257057093781), IDrawElemCollection)
-agcls.AgTypeNameMap["IDrawElemCollection"] = IDrawElemCollection
+agcls.AgClassCatalog.add_catalog_entry((5345909665096890445, 1033150257057093781), IDrawElementCollection)
+agcls.AgTypeNameMap["IDrawElementCollection"] = IDrawElementCollection
 
 
 
-class UiAxGraphics3DCntrl(SupportsDeleteCallback):
+class Graphics3DControlBase(SupportsDeleteCallback):
     """AGI Globe control."""
 
     _num_methods = 48
@@ -548,8 +550,8 @@ class UiAxGraphics3DCntrl(SupportsDeleteCallback):
     _picture_put_reference_method_offset = 4
     _set_picture_method_offset = 5
     _pick_info_method_offset = 6
-    _get_win_id_method_offset = 7
-    _set_win_id_method_offset = 8
+    _get_window_id_method_offset = 7
+    _set_window_id_method_offset = 8
     _get_application_method_offset = 9
     _zoom_in_method_offset = 10
     _get_no_logo_method_offset = 11
@@ -567,7 +569,7 @@ class UiAxGraphics3DCntrl(SupportsDeleteCallback):
     _set_ppt_preload_mode_method_offset = 23
     _get_advanced_pick_mode_method_offset = 24
     _set_advanced_pick_mode_method_offset = 25
-    _copy_from_win_id_method_offset = 26
+    _copy_from_window_id_method_offset = 26
     _start_object_editing_method_offset = 27
     _apply_object_editing_method_offset = 28
     _stop_object_editing_method_offset = 29
@@ -596,9 +598,9 @@ class UiAxGraphics3DCntrl(SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, UiAxGraphics3DCntrl)
-    def Subscribe(self) -> IUiAxGraphics3DCntrlEventHandler:
-        """Return an IUiAxGraphics3DCntrlEventHandler that is subscribed to handle events associated with this instance of UiAxGraphics3DCntrl."""
+        return get_interface_property(attrname, Graphics3DControlBase)
+    def subscribe(self) -> IUiAxGraphics3DCntrlEventHandler:
+        """Return an IUiAxGraphics3DCntrlEventHandler that is subscribed to handle events associated with this instance of Graphics3DControlBase."""
         return IUiAxGraphics3DCntrlEventHandler(self._intf)
     
     _get_back_color_metadata = { "offset" : _get_back_color_method_offset,
@@ -607,14 +609,14 @@ class UiAxGraphics3DCntrl(SupportsDeleteCallback):
     @property
     def back_color(self) -> agcolor.Color:
         """The background color of the control."""
-        return self._intf.get_property(UiAxGraphics3DCntrl._metadata, UiAxGraphics3DCntrl._get_back_color_metadata)
+        return self._intf.get_property(Graphics3DControlBase._metadata, Graphics3DControlBase._get_back_color_metadata)
 
     _set_back_color_metadata = { "offset" : _set_back_color_method_offset,
             "arg_types" : (agcom.OLE_COLOR,),
             "marshallers" : (agmarshall.OLEColorArg,) }
     @back_color.setter
     def back_color(self, clr:agcolor.Color) -> None:
-        return self._intf.set_property(UiAxGraphics3DCntrl._metadata, UiAxGraphics3DCntrl._set_back_color_metadata, clr)
+        return self._intf.set_property(Graphics3DControlBase._metadata, Graphics3DControlBase._set_back_color_metadata, clr)
 
     _get_picture_metadata = { "offset" : _get_picture_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -622,43 +624,43 @@ class UiAxGraphics3DCntrl(SupportsDeleteCallback):
     @property
     def picture(self) -> IPictureDisp:
         """The splash logo graphic to be displayed in the control."""
-        return self._intf.get_property(UiAxGraphics3DCntrl._metadata, UiAxGraphics3DCntrl._get_picture_metadata)
+        return self._intf.get_property(Graphics3DControlBase._metadata, Graphics3DControlBase._get_picture_metadata)
 
     _picture_put_reference_metadata = { "offset" : _picture_put_reference_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IPictureDispArg,) }
-    def picture_put_reference(self, pPicture:IPictureDisp) -> None:
+    def picture_put_reference(self, picture:IPictureDisp) -> None:
         """Set a reference to the splash logo graphic to be displayed in the control."""
-        return self._intf.invoke(UiAxGraphics3DCntrl._metadata, UiAxGraphics3DCntrl._picture_put_reference_metadata, pPicture)
+        return self._intf.invoke(Graphics3DControlBase._metadata, Graphics3DControlBase._picture_put_reference_metadata, picture)
 
     _set_picture_metadata = { "offset" : _set_picture_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IPictureDispArg,) }
     @picture.setter
-    def picture(self, pPicture:IPictureDisp) -> None:
-        return self._intf.set_property(UiAxGraphics3DCntrl._metadata, UiAxGraphics3DCntrl._set_picture_metadata, pPicture)
+    def picture(self, picture:IPictureDisp) -> None:
+        return self._intf.set_property(Graphics3DControlBase._metadata, Graphics3DControlBase._set_picture_metadata, picture)
 
     _pick_info_metadata = { "offset" : _pick_info_method_offset,
             "arg_types" : (agcom.OLE_XPOS_PIXELS, agcom.OLE_YPOS_PIXELS, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.OLEXPosPixelsArg, agmarshall.OLEYPosPixelsArg, agmarshall.InterfaceOutArg,) }
     def pick_info(self, x:int, y:int) -> "PickInfoData":
         """Get detailed information about a mouse pick."""
-        return self._intf.invoke(UiAxGraphics3DCntrl._metadata, UiAxGraphics3DCntrl._pick_info_metadata, x, y, OutArg())
+        return self._intf.invoke(Graphics3DControlBase._metadata, Graphics3DControlBase._pick_info_metadata, x, y, OutArg())
 
-    _get_win_id_metadata = { "offset" : _get_win_id_method_offset,
+    _get_window_id_metadata = { "offset" : _get_window_id_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
     @property
-    def win_id(self) -> int:
+    def window_id(self) -> int:
         """Window identifier (for Connect commands)."""
-        return self._intf.get_property(UiAxGraphics3DCntrl._metadata, UiAxGraphics3DCntrl._get_win_id_metadata)
+        return self._intf.get_property(Graphics3DControlBase._metadata, Graphics3DControlBase._get_window_id_metadata)
 
-    _set_win_id_metadata = { "offset" : _set_win_id_method_offset,
+    _set_window_id_metadata = { "offset" : _set_window_id_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.LongArg,) }
-    @win_id.setter
-    def win_id(self, newVal:int) -> None:
-        return self._intf.set_property(UiAxGraphics3DCntrl._metadata, UiAxGraphics3DCntrl._set_win_id_metadata, newVal)
+    @window_id.setter
+    def window_id(self, value:int) -> None:
+        return self._intf.set_property(Graphics3DControlBase._metadata, Graphics3DControlBase._set_window_id_metadata, value)
 
     _get_application_metadata = { "offset" : _get_application_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -666,14 +668,14 @@ class UiAxGraphics3DCntrl(SupportsDeleteCallback):
     @property
     def application(self) -> "STKXApplication":
         """Reference to the STK X application object."""
-        return self._intf.get_property(UiAxGraphics3DCntrl._metadata, UiAxGraphics3DCntrl._get_application_metadata)
+        return self._intf.get_property(Graphics3DControlBase._metadata, Graphics3DControlBase._get_application_metadata)
 
     _zoom_in_metadata = { "offset" : _zoom_in_method_offset,
             "arg_types" : (),
             "marshallers" : () }
     def zoom_in(self) -> None:
         """Enter zoom-in mode. User must left click-and-drag mouse to define area to zoom."""
-        return self._intf.invoke(UiAxGraphics3DCntrl._metadata, UiAxGraphics3DCntrl._zoom_in_metadata, )
+        return self._intf.invoke(Graphics3DControlBase._metadata, Graphics3DControlBase._zoom_in_metadata, )
 
     _get_no_logo_metadata = { "offset" : _get_no_logo_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -681,29 +683,29 @@ class UiAxGraphics3DCntrl(SupportsDeleteCallback):
     @property
     def no_logo(self) -> bool:
         """If true, the splash logo is not shown."""
-        return self._intf.get_property(UiAxGraphics3DCntrl._metadata, UiAxGraphics3DCntrl._get_no_logo_metadata)
+        return self._intf.get_property(Graphics3DControlBase._metadata, Graphics3DControlBase._get_no_logo_metadata)
 
     _set_no_logo_metadata = { "offset" : _set_no_logo_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @no_logo.setter
-    def no_logo(self, bNoLogo:bool) -> None:
-        return self._intf.set_property(UiAxGraphics3DCntrl._metadata, UiAxGraphics3DCntrl._set_no_logo_metadata, bNoLogo)
+    def no_logo(self, no_logo:bool) -> None:
+        return self._intf.set_property(Graphics3DControlBase._metadata, Graphics3DControlBase._set_no_logo_metadata, no_logo)
 
     _get_ole_drop_mode_metadata = { "offset" : _get_ole_drop_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(OLE_DROP_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(OLEDropMode),) }
     @property
-    def ole_drop_mode(self) -> "OLE_DROP_MODE":
+    def ole_drop_mode(self) -> "OLEDropMode":
         """How the control handles drop operations."""
-        return self._intf.get_property(UiAxGraphics3DCntrl._metadata, UiAxGraphics3DCntrl._get_ole_drop_mode_metadata)
+        return self._intf.get_property(Graphics3DControlBase._metadata, Graphics3DControlBase._get_ole_drop_mode_metadata)
 
     _set_ole_drop_mode_metadata = { "offset" : _set_ole_drop_mode_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(OLE_DROP_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(OLEDropMode),) }
     @ole_drop_mode.setter
-    def ole_drop_mode(self, psOLEDropMode:"OLE_DROP_MODE") -> None:
-        return self._intf.set_property(UiAxGraphics3DCntrl._metadata, UiAxGraphics3DCntrl._set_ole_drop_mode_metadata, psOLEDropMode)
+    def ole_drop_mode(self, ole_drop_mode:"OLEDropMode") -> None:
+        return self._intf.set_property(Graphics3DControlBase._metadata, Graphics3DControlBase._set_ole_drop_mode_metadata, ole_drop_mode)
 
     _get_vendor_id_metadata = { "offset" : _get_vendor_id_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -711,44 +713,44 @@ class UiAxGraphics3DCntrl(SupportsDeleteCallback):
     @property
     def vendor_id(self) -> str:
         """Do not use this property, as it is deprecated. The identifier of the vendor."""
-        return self._intf.get_property(UiAxGraphics3DCntrl._metadata, UiAxGraphics3DCntrl._get_vendor_id_metadata)
+        return self._intf.get_property(Graphics3DControlBase._metadata, Graphics3DControlBase._get_vendor_id_metadata)
 
     _set_vendor_id_metadata = { "offset" : _set_vendor_id_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @vendor_id.setter
-    def vendor_id(self, vendorID:str) -> None:
-        return self._intf.set_property(UiAxGraphics3DCntrl._metadata, UiAxGraphics3DCntrl._set_vendor_id_metadata, vendorID)
+    def vendor_id(self, vendor_id:str) -> None:
+        return self._intf.set_property(Graphics3DControlBase._metadata, Graphics3DControlBase._set_vendor_id_metadata, vendor_id)
 
     _rubber_band_pick_info_metadata = { "offset" : _rubber_band_pick_info_method_offset,
             "arg_types" : (agcom.OLE_XPOS_PIXELS, agcom.OLE_YPOS_PIXELS, agcom.OLE_XPOS_PIXELS, agcom.OLE_YPOS_PIXELS, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.OLEXPosPixelsArg, agmarshall.OLEYPosPixelsArg, agmarshall.OLEXPosPixelsArg, agmarshall.OLEYPosPixelsArg, agmarshall.InterfaceOutArg,) }
     def rubber_band_pick_info(self, left:int, top:int, right:int, bottom:int) -> "RubberBandPickInfoData":
         """Get detailed information about a rubber-band mouse pick. The values must be within the VO window (0 to width-1 for left and right, 0 to height-1 for top and bottom)."""
-        return self._intf.invoke(UiAxGraphics3DCntrl._metadata, UiAxGraphics3DCntrl._rubber_band_pick_info_metadata, left, top, right, bottom, OutArg())
+        return self._intf.invoke(Graphics3DControlBase._metadata, Graphics3DControlBase._rubber_band_pick_info_metadata, left, top, right, bottom, OutArg())
 
     _get_mouse_mode_metadata = { "offset" : _get_mouse_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(MOUSE_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(MouseMode),) }
     @property
-    def mouse_mode(self) -> "MOUSE_MODE":
+    def mouse_mode(self) -> "MouseMode":
         """Whether this control responds to mouse events."""
-        return self._intf.get_property(UiAxGraphics3DCntrl._metadata, UiAxGraphics3DCntrl._get_mouse_mode_metadata)
+        return self._intf.get_property(Graphics3DControlBase._metadata, Graphics3DControlBase._get_mouse_mode_metadata)
 
     _set_mouse_mode_metadata = { "offset" : _set_mouse_mode_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(MOUSE_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(MouseMode),) }
     @mouse_mode.setter
-    def mouse_mode(self, psMouseMode:"MOUSE_MODE") -> None:
-        return self._intf.set_property(UiAxGraphics3DCntrl._metadata, UiAxGraphics3DCntrl._set_mouse_mode_metadata, psMouseMode)
+    def mouse_mode(self, mouse_mode:"MouseMode") -> None:
+        return self._intf.set_property(Graphics3DControlBase._metadata, Graphics3DControlBase._set_mouse_mode_metadata, mouse_mode)
 
     _get_draw_elements_metadata = { "offset" : _get_draw_elements_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def draw_elements(self) -> "IDrawElemCollection":
+    def draw_elements(self) -> "IDrawElementCollection":
         """Elements to draw on the control."""
-        return self._intf.get_property(UiAxGraphics3DCntrl._metadata, UiAxGraphics3DCntrl._get_draw_elements_metadata)
+        return self._intf.get_property(Graphics3DControlBase._metadata, Graphics3DControlBase._get_draw_elements_metadata)
 
     _get_ready_state_metadata = { "offset" : _get_ready_state_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -756,7 +758,7 @@ class UiAxGraphics3DCntrl(SupportsDeleteCallback):
     @property
     def ready_state(self) -> int:
         """Return/sets the background color of the control."""
-        return self._intf.get_property(UiAxGraphics3DCntrl._metadata, UiAxGraphics3DCntrl._get_ready_state_metadata)
+        return self._intf.get_property(Graphics3DControlBase._metadata, Graphics3DControlBase._get_ready_state_metadata)
 
     _get_ppt_preload_mode_metadata = { "offset" : _get_ppt_preload_mode_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -764,14 +766,14 @@ class UiAxGraphics3DCntrl(SupportsDeleteCallback):
     @property
     def ppt_preload_mode(self) -> bool:
         """Special mode for PowerPoint : if true the VO control window is kept around when switching between slides."""
-        return self._intf.get_property(UiAxGraphics3DCntrl._metadata, UiAxGraphics3DCntrl._get_ppt_preload_mode_metadata)
+        return self._intf.get_property(Graphics3DControlBase._metadata, Graphics3DControlBase._get_ppt_preload_mode_metadata)
 
     _set_ppt_preload_mode_metadata = { "offset" : _set_ppt_preload_mode_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @ppt_preload_mode.setter
-    def ppt_preload_mode(self, bPptPreloadMode:bool) -> None:
-        return self._intf.set_property(UiAxGraphics3DCntrl._metadata, UiAxGraphics3DCntrl._set_ppt_preload_mode_metadata, bPptPreloadMode)
+    def ppt_preload_mode(self, ppt_preload_mode:bool) -> None:
+        return self._intf.set_property(Graphics3DControlBase._metadata, Graphics3DControlBase._set_ppt_preload_mode_metadata, ppt_preload_mode)
 
     _get_advanced_pick_mode_metadata = { "offset" : _get_advanced_pick_mode_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -779,42 +781,42 @@ class UiAxGraphics3DCntrl(SupportsDeleteCallback):
     @property
     def advanced_pick_mode(self) -> bool:
         """If true, sets the advance pick mode."""
-        return self._intf.get_property(UiAxGraphics3DCntrl._metadata, UiAxGraphics3DCntrl._get_advanced_pick_mode_metadata)
+        return self._intf.get_property(Graphics3DControlBase._metadata, Graphics3DControlBase._get_advanced_pick_mode_metadata)
 
     _set_advanced_pick_mode_metadata = { "offset" : _set_advanced_pick_mode_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @advanced_pick_mode.setter
-    def advanced_pick_mode(self, bAdvancePickMode:bool) -> None:
-        return self._intf.set_property(UiAxGraphics3DCntrl._metadata, UiAxGraphics3DCntrl._set_advanced_pick_mode_metadata, bAdvancePickMode)
+    def advanced_pick_mode(self, advanced_pick_mode:bool) -> None:
+        return self._intf.set_property(Graphics3DControlBase._metadata, Graphics3DControlBase._set_advanced_pick_mode_metadata, advanced_pick_mode)
 
-    _copy_from_win_id_metadata = { "offset" : _copy_from_win_id_method_offset,
+    _copy_from_window_id_metadata = { "offset" : _copy_from_window_id_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.LongArg,) }
-    def copy_from_win_id(self, winID:int) -> None:
+    def copy_from_window_id(self, win_id:int) -> None:
         """Copy an existing Window's scene into this control."""
-        return self._intf.invoke(UiAxGraphics3DCntrl._metadata, UiAxGraphics3DCntrl._copy_from_win_id_metadata, winID)
+        return self._intf.invoke(Graphics3DControlBase._metadata, Graphics3DControlBase._copy_from_window_id_metadata, win_id)
 
     _start_object_editing_metadata = { "offset" : _start_object_editing_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    def start_object_editing(self, objEditPath:str) -> None:
+    def start_object_editing(self, obj_edit_path:str) -> None:
         """Enters into 3D object editing mode."""
-        return self._intf.invoke(UiAxGraphics3DCntrl._metadata, UiAxGraphics3DCntrl._start_object_editing_metadata, objEditPath)
+        return self._intf.invoke(Graphics3DControlBase._metadata, Graphics3DControlBase._start_object_editing_metadata, obj_edit_path)
 
     _apply_object_editing_metadata = { "offset" : _apply_object_editing_method_offset,
             "arg_types" : (),
             "marshallers" : () }
     def apply_object_editing(self) -> None:
         """Commit changes when in 3D object editing mode."""
-        return self._intf.invoke(UiAxGraphics3DCntrl._metadata, UiAxGraphics3DCntrl._apply_object_editing_metadata, )
+        return self._intf.invoke(Graphics3DControlBase._metadata, Graphics3DControlBase._apply_object_editing_metadata, )
 
     _stop_object_editing_metadata = { "offset" : _stop_object_editing_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     def stop_object_editing(self, canceled:bool) -> None:
         """End 3D object editing mode."""
-        return self._intf.invoke(UiAxGraphics3DCntrl._metadata, UiAxGraphics3DCntrl._stop_object_editing_metadata, canceled)
+        return self._intf.invoke(Graphics3DControlBase._metadata, Graphics3DControlBase._stop_object_editing_metadata, canceled)
 
     _get_is_object_editing_metadata = { "offset" : _get_is_object_editing_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -822,7 +824,7 @@ class UiAxGraphics3DCntrl(SupportsDeleteCallback):
     @property
     def is_object_editing(self) -> bool:
         """Return true if in 3D object editing mode."""
-        return self._intf.get_property(UiAxGraphics3DCntrl._metadata, UiAxGraphics3DCntrl._get_is_object_editing_metadata)
+        return self._intf.get_property(Graphics3DControlBase._metadata, Graphics3DControlBase._get_is_object_editing_metadata)
 
     _get_in_zoom_mode_metadata = { "offset" : _get_in_zoom_mode_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -830,43 +832,43 @@ class UiAxGraphics3DCntrl(SupportsDeleteCallback):
     @property
     def in_zoom_mode(self) -> bool:
         """Return true if in zoom in mode."""
-        return self._intf.get_property(UiAxGraphics3DCntrl._metadata, UiAxGraphics3DCntrl._get_in_zoom_mode_metadata)
+        return self._intf.get_property(Graphics3DControlBase._metadata, Graphics3DControlBase._get_in_zoom_mode_metadata)
 
     _set_mouse_cursor_from_file_metadata = { "offset" : _set_mouse_cursor_from_file_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    def set_mouse_cursor_from_file(self, cursorFileName:str) -> None:
+    def set_mouse_cursor_from_file(self, cursor_file_name:str) -> None:
         """Set mouse cursor to the selected cursor file."""
-        return self._intf.invoke(UiAxGraphics3DCntrl._metadata, UiAxGraphics3DCntrl._set_mouse_cursor_from_file_metadata, cursorFileName)
+        return self._intf.invoke(Graphics3DControlBase._metadata, Graphics3DControlBase._set_mouse_cursor_from_file_metadata, cursor_file_name)
 
     _restore_mouse_cursor_metadata = { "offset" : _restore_mouse_cursor_method_offset,
             "arg_types" : (),
             "marshallers" : () }
     def restore_mouse_cursor(self) -> None:
         """Restores mouse cursor back to normal."""
-        return self._intf.invoke(UiAxGraphics3DCntrl._metadata, UiAxGraphics3DCntrl._restore_mouse_cursor_metadata, )
+        return self._intf.invoke(Graphics3DControlBase._metadata, Graphics3DControlBase._restore_mouse_cursor_metadata, )
 
     _set_mouse_cursor_from_handle_metadata = { "offset" : _set_mouse_cursor_from_handle_method_offset,
             "arg_types" : (agcom.OLE_HANDLE,),
             "marshallers" : (agmarshall.OLEHandleArg,) }
-    def set_mouse_cursor_from_handle(self, cursorHandle:int) -> None:
+    def set_mouse_cursor_from_handle(self, cursor_handle:int) -> None:
         """Set mouse cursor to the passed cursor handle."""
-        return self._intf.invoke(UiAxGraphics3DCntrl._metadata, UiAxGraphics3DCntrl._set_mouse_cursor_from_handle_metadata, cursorHandle)
+        return self._intf.invoke(Graphics3DControlBase._metadata, Graphics3DControlBase._set_mouse_cursor_from_handle_metadata, cursor_handle)
 
     _get_show_progress_image_metadata = { "offset" : _get_show_progress_image_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(SHOW_PROGRESS_IMAGE),) }
+            "marshallers" : (agmarshall.EnumArg(ShowProgressImage),) }
     @property
-    def show_progress_image(self) -> "SHOW_PROGRESS_IMAGE":
+    def show_progress_image(self) -> "ShowProgressImage":
         """The animated progress image type."""
-        return self._intf.get_property(UiAxGraphics3DCntrl._metadata, UiAxGraphics3DCntrl._get_show_progress_image_metadata)
+        return self._intf.get_property(Graphics3DControlBase._metadata, Graphics3DControlBase._get_show_progress_image_metadata)
 
     _set_show_progress_image_metadata = { "offset" : _set_show_progress_image_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(SHOW_PROGRESS_IMAGE),) }
+            "marshallers" : (agmarshall.EnumArg(ShowProgressImage),) }
     @show_progress_image.setter
-    def show_progress_image(self, psProgressImage:"SHOW_PROGRESS_IMAGE") -> None:
-        return self._intf.set_property(UiAxGraphics3DCntrl._metadata, UiAxGraphics3DCntrl._set_show_progress_image_metadata, psProgressImage)
+    def show_progress_image(self, progress_image:"ShowProgressImage") -> None:
+        return self._intf.set_property(Graphics3DControlBase._metadata, Graphics3DControlBase._set_show_progress_image_metadata, progress_image)
 
     _get_progress_image_x_offset_metadata = { "offset" : _get_progress_image_x_offset_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -874,14 +876,14 @@ class UiAxGraphics3DCntrl(SupportsDeleteCallback):
     @property
     def progress_image_x_offset(self) -> int:
         """The horizontal X offset for animated progress image."""
-        return self._intf.get_property(UiAxGraphics3DCntrl._metadata, UiAxGraphics3DCntrl._get_progress_image_x_offset_metadata)
+        return self._intf.get_property(Graphics3DControlBase._metadata, Graphics3DControlBase._get_progress_image_x_offset_metadata)
 
     _set_progress_image_x_offset_metadata = { "offset" : _set_progress_image_x_offset_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.LongArg,) }
     @progress_image_x_offset.setter
-    def progress_image_x_offset(self, xOffset:int) -> None:
-        return self._intf.set_property(UiAxGraphics3DCntrl._metadata, UiAxGraphics3DCntrl._set_progress_image_x_offset_metadata, xOffset)
+    def progress_image_x_offset(self, x_offset:int) -> None:
+        return self._intf.set_property(Graphics3DControlBase._metadata, Graphics3DControlBase._set_progress_image_x_offset_metadata, x_offset)
 
     _get_progress_image_y_offset_metadata = { "offset" : _get_progress_image_y_offset_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -889,14 +891,14 @@ class UiAxGraphics3DCntrl(SupportsDeleteCallback):
     @property
     def progress_image_y_offset(self) -> int:
         """The vertical Y offset for animated progress image."""
-        return self._intf.get_property(UiAxGraphics3DCntrl._metadata, UiAxGraphics3DCntrl._get_progress_image_y_offset_metadata)
+        return self._intf.get_property(Graphics3DControlBase._metadata, Graphics3DControlBase._get_progress_image_y_offset_metadata)
 
     _set_progress_image_y_offset_metadata = { "offset" : _set_progress_image_y_offset_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.LongArg,) }
     @progress_image_y_offset.setter
-    def progress_image_y_offset(self, yOffset:int) -> None:
-        return self._intf.set_property(UiAxGraphics3DCntrl._metadata, UiAxGraphics3DCntrl._set_progress_image_y_offset_metadata, yOffset)
+    def progress_image_y_offset(self, y_offset:int) -> None:
+        return self._intf.set_property(Graphics3DControlBase._metadata, Graphics3DControlBase._set_progress_image_y_offset_metadata, y_offset)
 
     _get_progress_image_file_metadata = { "offset" : _get_progress_image_file_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -904,44 +906,44 @@ class UiAxGraphics3DCntrl(SupportsDeleteCallback):
     @property
     def progress_image_file(self) -> str:
         """The complete image file name/path for animated progress image."""
-        return self._intf.get_property(UiAxGraphics3DCntrl._metadata, UiAxGraphics3DCntrl._get_progress_image_file_metadata)
+        return self._intf.get_property(Graphics3DControlBase._metadata, Graphics3DControlBase._get_progress_image_file_metadata)
 
     _set_progress_image_file_metadata = { "offset" : _set_progress_image_file_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @progress_image_file.setter
-    def progress_image_file(self, imageFile:str) -> None:
-        return self._intf.set_property(UiAxGraphics3DCntrl._metadata, UiAxGraphics3DCntrl._set_progress_image_file_metadata, imageFile)
+    def progress_image_file(self, image_file:str) -> None:
+        return self._intf.set_property(Graphics3DControlBase._metadata, Graphics3DControlBase._set_progress_image_file_metadata, image_file)
 
     _get_progress_image_x_origin_metadata = { "offset" : _get_progress_image_x_origin_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(PROGRESS_IMAGE_X_ORIGIN),) }
+            "marshallers" : (agmarshall.EnumArg(ProgressImageXOrigin),) }
     @property
-    def progress_image_x_origin(self) -> "PROGRESS_IMAGE_X_ORIGIN":
+    def progress_image_x_origin(self) -> "ProgressImageXOrigin":
         """The X origin alignment for animated progress image."""
-        return self._intf.get_property(UiAxGraphics3DCntrl._metadata, UiAxGraphics3DCntrl._get_progress_image_x_origin_metadata)
+        return self._intf.get_property(Graphics3DControlBase._metadata, Graphics3DControlBase._get_progress_image_x_origin_metadata)
 
     _set_progress_image_x_origin_metadata = { "offset" : _set_progress_image_x_origin_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(PROGRESS_IMAGE_X_ORIGIN),) }
+            "marshallers" : (agmarshall.EnumArg(ProgressImageXOrigin),) }
     @progress_image_x_origin.setter
-    def progress_image_x_origin(self, progressImageXOrigin:"PROGRESS_IMAGE_X_ORIGIN") -> None:
-        return self._intf.set_property(UiAxGraphics3DCntrl._metadata, UiAxGraphics3DCntrl._set_progress_image_x_origin_metadata, progressImageXOrigin)
+    def progress_image_x_origin(self, progress_image_x_origin:"ProgressImageXOrigin") -> None:
+        return self._intf.set_property(Graphics3DControlBase._metadata, Graphics3DControlBase._set_progress_image_x_origin_metadata, progress_image_x_origin)
 
     _get_progress_image_y_origin_metadata = { "offset" : _get_progress_image_y_origin_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(PROGRESS_IMAGE_Y_ORIGIN),) }
+            "marshallers" : (agmarshall.EnumArg(ProgressImageYOrigin),) }
     @property
-    def progress_image_y_origin(self) -> "PROGRESS_IMAGE_Y_ORIGIN":
+    def progress_image_y_origin(self) -> "ProgressImageYOrigin":
         """The Y origin alignment for animated progress image."""
-        return self._intf.get_property(UiAxGraphics3DCntrl._metadata, UiAxGraphics3DCntrl._get_progress_image_y_origin_metadata)
+        return self._intf.get_property(Graphics3DControlBase._metadata, Graphics3DControlBase._get_progress_image_y_origin_metadata)
 
     _set_progress_image_y_origin_metadata = { "offset" : _set_progress_image_y_origin_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(PROGRESS_IMAGE_Y_ORIGIN),) }
+            "marshallers" : (agmarshall.EnumArg(ProgressImageYOrigin),) }
     @progress_image_y_origin.setter
-    def progress_image_y_origin(self, progressImageYOrigin:"PROGRESS_IMAGE_Y_ORIGIN") -> None:
-        return self._intf.set_property(UiAxGraphics3DCntrl._metadata, UiAxGraphics3DCntrl._set_progress_image_y_origin_metadata, progressImageYOrigin)
+    def progress_image_y_origin(self, progress_image_y_origin:"ProgressImageYOrigin") -> None:
+        return self._intf.set_property(Graphics3DControlBase._metadata, Graphics3DControlBase._set_progress_image_y_origin_metadata, progress_image_y_origin)
 
     _get_picture_from_file_metadata = { "offset" : _get_picture_from_file_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -949,19 +951,19 @@ class UiAxGraphics3DCntrl(SupportsDeleteCallback):
     @property
     def picture_from_file(self) -> str:
         """Get or set the splash logo graphic file to be displayed in the control."""
-        return self._intf.get_property(UiAxGraphics3DCntrl._metadata, UiAxGraphics3DCntrl._get_picture_from_file_metadata)
+        return self._intf.get_property(Graphics3DControlBase._metadata, Graphics3DControlBase._get_picture_from_file_metadata)
 
     _set_picture_from_file_metadata = { "offset" : _set_picture_from_file_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @picture_from_file.setter
-    def picture_from_file(self, pictureFile:str) -> None:
+    def picture_from_file(self, picture_file:str) -> None:
         """Get or set the splash logo graphic file to be displayed in the control."""
-        return self._intf.set_property(UiAxGraphics3DCntrl._metadata, UiAxGraphics3DCntrl._set_picture_from_file_metadata, pictureFile)
+        return self._intf.set_property(Graphics3DControlBase._metadata, Graphics3DControlBase._set_picture_from_file_metadata, picture_file)
 
     _property_names[back_color] = "back_color"
     _property_names[picture] = "picture"
-    _property_names[win_id] = "win_id"
+    _property_names[window_id] = "window_id"
     _property_names[application] = "application"
     _property_names[no_logo] = "no_logo"
     _property_names[ole_drop_mode] = "ole_drop_mode"
@@ -981,10 +983,10 @@ class UiAxGraphics3DCntrl(SupportsDeleteCallback):
     _property_names[progress_image_y_origin] = "progress_image_y_origin"
     _property_names[picture_from_file] = "picture_from_file"
 
-    def __init__(self, sourceObject=None):
-        """Construct an object of type UiAxGraphics3DCntrl."""
+    def __init__(self, source_object=None):
+        """Construct an object of type Graphics3DControlBase."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, UiAxGraphics3DCntrl)
+        initialize_from_source_object(self, source_object, Graphics3DControlBase)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -992,12 +994,12 @@ class UiAxGraphics3DCntrl(SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, UiAxGraphics3DCntrl, [UiAxGraphics3DCntrl, ])
+        set_class_attribute(self, attrname, value, Graphics3DControlBase, [Graphics3DControlBase, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5003010835586718402, 17495775815022733215), UiAxGraphics3DCntrl)
-agcls.AgTypeNameMap["UiAxGraphics3DCntrl"] = UiAxGraphics3DCntrl
+agcls.AgClassCatalog.add_catalog_entry((5003010835586718402, 17495775815022733215), Graphics3DControlBase)
+agcls.AgTypeNameMap["Graphics3DControlBase"] = Graphics3DControlBase
 
-class UiAx2DCntrl(SupportsDeleteCallback):
+class Graphics2DControlBase(SupportsDeleteCallback):
     """AGI Map control."""
 
     _num_methods = 45
@@ -1007,8 +1009,8 @@ class UiAx2DCntrl(SupportsDeleteCallback):
     _get_picture_method_offset = 3
     _picture_put_reference_method_offset = 4
     _set_picture_method_offset = 5
-    _get_win_id_method_offset = 6
-    _set_win_id_method_offset = 7
+    _get_window_id_method_offset = 6
+    _set_window_id_method_offset = 7
     _zoom_in_method_offset = 8
     _zoom_out_method_offset = 9
     _pick_info_method_offset = 10
@@ -1022,7 +1024,7 @@ class UiAx2DCntrl(SupportsDeleteCallback):
     _get_mouse_mode_method_offset = 18
     _set_mouse_mode_method_offset = 19
     _get_ready_state_method_offset = 20
-    _copy_from_win_id_method_offset = 21
+    _copy_from_window_id_method_offset = 21
     _rubber_band_pick_info_method_offset = 22
     _get_advanced_pick_mode_method_offset = 23
     _set_advanced_pick_mode_method_offset = 24
@@ -1053,9 +1055,9 @@ class UiAx2DCntrl(SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, UiAx2DCntrl)
-    def Subscribe(self) -> IUiAxGraphics2DCntrlEventHandler:
-        """Return an IUiAxGraphics2DCntrlEventHandler that is subscribed to handle events associated with this instance of UiAx2DCntrl."""
+        return get_interface_property(attrname, Graphics2DControlBase)
+    def subscribe(self) -> IUiAxGraphics2DCntrlEventHandler:
+        """Return an IUiAxGraphics2DCntrlEventHandler that is subscribed to handle events associated with this instance of Graphics2DControlBase."""
         return IUiAxGraphics2DCntrlEventHandler(self._intf)
     
     _get_back_color_metadata = { "offset" : _get_back_color_method_offset,
@@ -1064,14 +1066,14 @@ class UiAx2DCntrl(SupportsDeleteCallback):
     @property
     def back_color(self) -> agcolor.Color:
         """The background color of the control."""
-        return self._intf.get_property(UiAx2DCntrl._metadata, UiAx2DCntrl._get_back_color_metadata)
+        return self._intf.get_property(Graphics2DControlBase._metadata, Graphics2DControlBase._get_back_color_metadata)
 
     _set_back_color_metadata = { "offset" : _set_back_color_method_offset,
             "arg_types" : (agcom.OLE_COLOR,),
             "marshallers" : (agmarshall.OLEColorArg,) }
     @back_color.setter
     def back_color(self, clr:agcolor.Color) -> None:
-        return self._intf.set_property(UiAx2DCntrl._metadata, UiAx2DCntrl._set_back_color_metadata, clr)
+        return self._intf.set_property(Graphics2DControlBase._metadata, Graphics2DControlBase._set_back_color_metadata, clr)
 
     _get_picture_metadata = { "offset" : _get_picture_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -1079,57 +1081,57 @@ class UiAx2DCntrl(SupportsDeleteCallback):
     @property
     def picture(self) -> IPictureDisp:
         """The splash logo graphic to be displayed in the control."""
-        return self._intf.get_property(UiAx2DCntrl._metadata, UiAx2DCntrl._get_picture_metadata)
+        return self._intf.get_property(Graphics2DControlBase._metadata, Graphics2DControlBase._get_picture_metadata)
 
     _picture_put_reference_metadata = { "offset" : _picture_put_reference_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IPictureDispArg,) }
-    def picture_put_reference(self, pPicture:IPictureDisp) -> None:
+    def picture_put_reference(self, picture:IPictureDisp) -> None:
         """Set a reference to the splash logo graphic to be displayed in the control."""
-        return self._intf.invoke(UiAx2DCntrl._metadata, UiAx2DCntrl._picture_put_reference_metadata, pPicture)
+        return self._intf.invoke(Graphics2DControlBase._metadata, Graphics2DControlBase._picture_put_reference_metadata, picture)
 
     _set_picture_metadata = { "offset" : _set_picture_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IPictureDispArg,) }
     @picture.setter
-    def picture(self, pPicture:IPictureDisp) -> None:
-        return self._intf.set_property(UiAx2DCntrl._metadata, UiAx2DCntrl._set_picture_metadata, pPicture)
+    def picture(self, picture:IPictureDisp) -> None:
+        return self._intf.set_property(Graphics2DControlBase._metadata, Graphics2DControlBase._set_picture_metadata, picture)
 
-    _get_win_id_metadata = { "offset" : _get_win_id_method_offset,
+    _get_window_id_metadata = { "offset" : _get_window_id_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
     @property
-    def win_id(self) -> int:
+    def window_id(self) -> int:
         """Window identifier (for Connect commands)."""
-        return self._intf.get_property(UiAx2DCntrl._metadata, UiAx2DCntrl._get_win_id_metadata)
+        return self._intf.get_property(Graphics2DControlBase._metadata, Graphics2DControlBase._get_window_id_metadata)
 
-    _set_win_id_metadata = { "offset" : _set_win_id_method_offset,
+    _set_window_id_metadata = { "offset" : _set_window_id_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.LongArg,) }
-    @win_id.setter
-    def win_id(self, newVal:int) -> None:
-        return self._intf.set_property(UiAx2DCntrl._metadata, UiAx2DCntrl._set_win_id_metadata, newVal)
+    @window_id.setter
+    def window_id(self, value:int) -> None:
+        return self._intf.set_property(Graphics2DControlBase._metadata, Graphics2DControlBase._set_window_id_metadata, value)
 
     _zoom_in_metadata = { "offset" : _zoom_in_method_offset,
             "arg_types" : (),
             "marshallers" : () }
     def zoom_in(self) -> None:
         """Enter zoom-in mode. User must left click-and-drag mouse to define area to zoom."""
-        return self._intf.invoke(UiAx2DCntrl._metadata, UiAx2DCntrl._zoom_in_metadata, )
+        return self._intf.invoke(Graphics2DControlBase._metadata, Graphics2DControlBase._zoom_in_metadata, )
 
     _zoom_out_metadata = { "offset" : _zoom_out_method_offset,
             "arg_types" : (),
             "marshallers" : () }
     def zoom_out(self) -> None:
         """Zoom out to view a larger portion of a previously magnified map."""
-        return self._intf.invoke(UiAx2DCntrl._metadata, UiAx2DCntrl._zoom_out_metadata, )
+        return self._intf.invoke(Graphics2DControlBase._metadata, Graphics2DControlBase._zoom_out_metadata, )
 
     _pick_info_metadata = { "offset" : _pick_info_method_offset,
             "arg_types" : (agcom.OLE_XPOS_PIXELS, agcom.OLE_YPOS_PIXELS, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.OLEXPosPixelsArg, agmarshall.OLEYPosPixelsArg, agmarshall.InterfaceOutArg,) }
     def pick_info(self, x:int, y:int) -> "PickInfoData":
         """Get detailed information about a mouse pick."""
-        return self._intf.invoke(UiAx2DCntrl._metadata, UiAx2DCntrl._pick_info_metadata, x, y, OutArg())
+        return self._intf.invoke(Graphics2DControlBase._metadata, Graphics2DControlBase._pick_info_metadata, x, y, OutArg())
 
     _get_application_metadata = { "offset" : _get_application_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -1137,7 +1139,7 @@ class UiAx2DCntrl(SupportsDeleteCallback):
     @property
     def application(self) -> "STKXApplication":
         """Reference to the STK X application object."""
-        return self._intf.get_property(UiAx2DCntrl._metadata, UiAx2DCntrl._get_application_metadata)
+        return self._intf.get_property(Graphics2DControlBase._metadata, Graphics2DControlBase._get_application_metadata)
 
     _get_no_logo_metadata = { "offset" : _get_no_logo_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -1145,29 +1147,29 @@ class UiAx2DCntrl(SupportsDeleteCallback):
     @property
     def no_logo(self) -> bool:
         """If true, the splash logo is not shown."""
-        return self._intf.get_property(UiAx2DCntrl._metadata, UiAx2DCntrl._get_no_logo_metadata)
+        return self._intf.get_property(Graphics2DControlBase._metadata, Graphics2DControlBase._get_no_logo_metadata)
 
     _set_no_logo_metadata = { "offset" : _set_no_logo_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @no_logo.setter
-    def no_logo(self, bNoLogo:bool) -> None:
-        return self._intf.set_property(UiAx2DCntrl._metadata, UiAx2DCntrl._set_no_logo_metadata, bNoLogo)
+    def no_logo(self, no_logo:bool) -> None:
+        return self._intf.set_property(Graphics2DControlBase._metadata, Graphics2DControlBase._set_no_logo_metadata, no_logo)
 
     _get_ole_drop_mode_metadata = { "offset" : _get_ole_drop_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(OLE_DROP_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(OLEDropMode),) }
     @property
-    def ole_drop_mode(self) -> "OLE_DROP_MODE":
+    def ole_drop_mode(self) -> "OLEDropMode":
         """How the control handles drop operations."""
-        return self._intf.get_property(UiAx2DCntrl._metadata, UiAx2DCntrl._get_ole_drop_mode_metadata)
+        return self._intf.get_property(Graphics2DControlBase._metadata, Graphics2DControlBase._get_ole_drop_mode_metadata)
 
     _set_ole_drop_mode_metadata = { "offset" : _set_ole_drop_mode_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(OLE_DROP_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(OLEDropMode),) }
     @ole_drop_mode.setter
-    def ole_drop_mode(self, psOLEDropMode:"OLE_DROP_MODE") -> None:
-        return self._intf.set_property(UiAx2DCntrl._metadata, UiAx2DCntrl._set_ole_drop_mode_metadata, psOLEDropMode)
+    def ole_drop_mode(self, ole_drop_mode:"OLEDropMode") -> None:
+        return self._intf.set_property(Graphics2DControlBase._metadata, Graphics2DControlBase._set_ole_drop_mode_metadata, ole_drop_mode)
 
     _get_vendor_id_metadata = { "offset" : _get_vendor_id_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -1175,29 +1177,29 @@ class UiAx2DCntrl(SupportsDeleteCallback):
     @property
     def vendor_id(self) -> str:
         """Do not use this property, as it is deprecated. The identifier of the vendor."""
-        return self._intf.get_property(UiAx2DCntrl._metadata, UiAx2DCntrl._get_vendor_id_metadata)
+        return self._intf.get_property(Graphics2DControlBase._metadata, Graphics2DControlBase._get_vendor_id_metadata)
 
     _set_vendor_id_metadata = { "offset" : _set_vendor_id_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @vendor_id.setter
-    def vendor_id(self, vendorID:str) -> None:
-        return self._intf.set_property(UiAx2DCntrl._metadata, UiAx2DCntrl._set_vendor_id_metadata, vendorID)
+    def vendor_id(self, vendor_id:str) -> None:
+        return self._intf.set_property(Graphics2DControlBase._metadata, Graphics2DControlBase._set_vendor_id_metadata, vendor_id)
 
     _get_mouse_mode_metadata = { "offset" : _get_mouse_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(MOUSE_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(MouseMode),) }
     @property
-    def mouse_mode(self) -> "MOUSE_MODE":
+    def mouse_mode(self) -> "MouseMode":
         """Whether this control responds to mouse events."""
-        return self._intf.get_property(UiAx2DCntrl._metadata, UiAx2DCntrl._get_mouse_mode_metadata)
+        return self._intf.get_property(Graphics2DControlBase._metadata, Graphics2DControlBase._get_mouse_mode_metadata)
 
     _set_mouse_mode_metadata = { "offset" : _set_mouse_mode_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(MOUSE_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(MouseMode),) }
     @mouse_mode.setter
-    def mouse_mode(self, psMouseMode:"MOUSE_MODE") -> None:
-        return self._intf.set_property(UiAx2DCntrl._metadata, UiAx2DCntrl._set_mouse_mode_metadata, psMouseMode)
+    def mouse_mode(self, mouse_mode:"MouseMode") -> None:
+        return self._intf.set_property(Graphics2DControlBase._metadata, Graphics2DControlBase._set_mouse_mode_metadata, mouse_mode)
 
     _get_ready_state_metadata = { "offset" : _get_ready_state_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -1205,21 +1207,21 @@ class UiAx2DCntrl(SupportsDeleteCallback):
     @property
     def ready_state(self) -> int:
         """Return/sets the background color of the control."""
-        return self._intf.get_property(UiAx2DCntrl._metadata, UiAx2DCntrl._get_ready_state_metadata)
+        return self._intf.get_property(Graphics2DControlBase._metadata, Graphics2DControlBase._get_ready_state_metadata)
 
-    _copy_from_win_id_metadata = { "offset" : _copy_from_win_id_method_offset,
+    _copy_from_window_id_metadata = { "offset" : _copy_from_window_id_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.LongArg,) }
-    def copy_from_win_id(self, winID:int) -> None:
+    def copy_from_window_id(self, win_id:int) -> None:
         """Copy an existing Window's scene into this control."""
-        return self._intf.invoke(UiAx2DCntrl._metadata, UiAx2DCntrl._copy_from_win_id_metadata, winID)
+        return self._intf.invoke(Graphics2DControlBase._metadata, Graphics2DControlBase._copy_from_window_id_metadata, win_id)
 
     _rubber_band_pick_info_metadata = { "offset" : _rubber_band_pick_info_method_offset,
             "arg_types" : (agcom.OLE_XPOS_PIXELS, agcom.OLE_YPOS_PIXELS, agcom.OLE_XPOS_PIXELS, agcom.OLE_YPOS_PIXELS, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.OLEXPosPixelsArg, agmarshall.OLEYPosPixelsArg, agmarshall.OLEXPosPixelsArg, agmarshall.OLEYPosPixelsArg, agmarshall.InterfaceOutArg,) }
     def rubber_band_pick_info(self, left:int, top:int, right:int, bottom:int) -> "RubberBandPickInfoData":
         """Get detailed information about a rubber-band mouse pick. The values must be within the 2D window (0 to width-1 for left and right, 0 to height-1 for top and bottom)."""
-        return self._intf.invoke(UiAx2DCntrl._metadata, UiAx2DCntrl._rubber_band_pick_info_metadata, left, top, right, bottom, OutArg())
+        return self._intf.invoke(Graphics2DControlBase._metadata, Graphics2DControlBase._rubber_band_pick_info_metadata, left, top, right, bottom, OutArg())
 
     _get_advanced_pick_mode_metadata = { "offset" : _get_advanced_pick_mode_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -1227,21 +1229,21 @@ class UiAx2DCntrl(SupportsDeleteCallback):
     @property
     def advanced_pick_mode(self) -> bool:
         """If true, sets the advance pick mode."""
-        return self._intf.get_property(UiAx2DCntrl._metadata, UiAx2DCntrl._get_advanced_pick_mode_metadata)
+        return self._intf.get_property(Graphics2DControlBase._metadata, Graphics2DControlBase._get_advanced_pick_mode_metadata)
 
     _set_advanced_pick_mode_metadata = { "offset" : _set_advanced_pick_mode_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @advanced_pick_mode.setter
-    def advanced_pick_mode(self, bAdvancePickMode:bool) -> None:
-        return self._intf.set_property(UiAx2DCntrl._metadata, UiAx2DCntrl._set_advanced_pick_mode_metadata, bAdvancePickMode)
+    def advanced_pick_mode(self, advanced_pick_mode:bool) -> None:
+        return self._intf.set_property(Graphics2DControlBase._metadata, Graphics2DControlBase._set_advanced_pick_mode_metadata, advanced_pick_mode)
 
     _get_window_projected_position_metadata = { "offset" : _get_window_projected_position_method_offset,
             "arg_types" : (agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.EnumArg(GRAPHICS_2D_DRAW_COORDS), agmarshall.InterfaceOutArg,) }
-    def get_window_projected_position(self, lat:float, lon:float, alt:float, drawCoords:"GRAPHICS_2D_DRAW_COORDS") -> "WinProjectionPosition":
+            "marshallers" : (agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.EnumArg(Graphics2DDrawCoordinates), agmarshall.InterfaceOutArg,) }
+    def get_window_projected_position(self, lat:float, lon:float, alt:float, draw_coords:"Graphics2DDrawCoordinates") -> "WindowProjectionPosition":
         """Get the window projected position for given values."""
-        return self._intf.invoke(UiAx2DCntrl._metadata, UiAx2DCntrl._get_window_projected_position_metadata, lat, lon, alt, drawCoords, OutArg())
+        return self._intf.invoke(Graphics2DControlBase._metadata, Graphics2DControlBase._get_window_projected_position_metadata, lat, lon, alt, draw_coords, OutArg())
 
     _get_in_zoom_mode_metadata = { "offset" : _get_in_zoom_mode_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -1249,43 +1251,43 @@ class UiAx2DCntrl(SupportsDeleteCallback):
     @property
     def in_zoom_mode(self) -> bool:
         """Return true if in zoom in mode."""
-        return self._intf.get_property(UiAx2DCntrl._metadata, UiAx2DCntrl._get_in_zoom_mode_metadata)
+        return self._intf.get_property(Graphics2DControlBase._metadata, Graphics2DControlBase._get_in_zoom_mode_metadata)
 
     _set_mouse_cursor_from_file_metadata = { "offset" : _set_mouse_cursor_from_file_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    def set_mouse_cursor_from_file(self, cursorFileName:str) -> None:
+    def set_mouse_cursor_from_file(self, cursor_file_name:str) -> None:
         """Set mouse cursor to the selected cursor file."""
-        return self._intf.invoke(UiAx2DCntrl._metadata, UiAx2DCntrl._set_mouse_cursor_from_file_metadata, cursorFileName)
+        return self._intf.invoke(Graphics2DControlBase._metadata, Graphics2DControlBase._set_mouse_cursor_from_file_metadata, cursor_file_name)
 
     _restore_mouse_cursor_metadata = { "offset" : _restore_mouse_cursor_method_offset,
             "arg_types" : (),
             "marshallers" : () }
     def restore_mouse_cursor(self) -> None:
         """Restores mouse cursor back to normal."""
-        return self._intf.invoke(UiAx2DCntrl._metadata, UiAx2DCntrl._restore_mouse_cursor_metadata, )
+        return self._intf.invoke(Graphics2DControlBase._metadata, Graphics2DControlBase._restore_mouse_cursor_metadata, )
 
     _set_mouse_cursor_from_handle_metadata = { "offset" : _set_mouse_cursor_from_handle_method_offset,
             "arg_types" : (agcom.OLE_HANDLE,),
             "marshallers" : (agmarshall.OLEHandleArg,) }
-    def set_mouse_cursor_from_handle(self, cursorHandle:int) -> None:
+    def set_mouse_cursor_from_handle(self, cursor_handle:int) -> None:
         """Set mouse cursor to the passed cursor handle."""
-        return self._intf.invoke(UiAx2DCntrl._metadata, UiAx2DCntrl._set_mouse_cursor_from_handle_metadata, cursorHandle)
+        return self._intf.invoke(Graphics2DControlBase._metadata, Graphics2DControlBase._set_mouse_cursor_from_handle_metadata, cursor_handle)
 
     _get_show_progress_image_metadata = { "offset" : _get_show_progress_image_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(SHOW_PROGRESS_IMAGE),) }
+            "marshallers" : (agmarshall.EnumArg(ShowProgressImage),) }
     @property
-    def show_progress_image(self) -> "SHOW_PROGRESS_IMAGE":
+    def show_progress_image(self) -> "ShowProgressImage":
         """The animated progress image type."""
-        return self._intf.get_property(UiAx2DCntrl._metadata, UiAx2DCntrl._get_show_progress_image_metadata)
+        return self._intf.get_property(Graphics2DControlBase._metadata, Graphics2DControlBase._get_show_progress_image_metadata)
 
     _set_show_progress_image_metadata = { "offset" : _set_show_progress_image_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(SHOW_PROGRESS_IMAGE),) }
+            "marshallers" : (agmarshall.EnumArg(ShowProgressImage),) }
     @show_progress_image.setter
-    def show_progress_image(self, psProgressImage:"SHOW_PROGRESS_IMAGE") -> None:
-        return self._intf.set_property(UiAx2DCntrl._metadata, UiAx2DCntrl._set_show_progress_image_metadata, psProgressImage)
+    def show_progress_image(self, progress_image:"ShowProgressImage") -> None:
+        return self._intf.set_property(Graphics2DControlBase._metadata, Graphics2DControlBase._set_show_progress_image_metadata, progress_image)
 
     _get_progress_image_x_offset_metadata = { "offset" : _get_progress_image_x_offset_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -1293,14 +1295,14 @@ class UiAx2DCntrl(SupportsDeleteCallback):
     @property
     def progress_image_x_offset(self) -> int:
         """The horizontal X offset for animated progress image."""
-        return self._intf.get_property(UiAx2DCntrl._metadata, UiAx2DCntrl._get_progress_image_x_offset_metadata)
+        return self._intf.get_property(Graphics2DControlBase._metadata, Graphics2DControlBase._get_progress_image_x_offset_metadata)
 
     _set_progress_image_x_offset_metadata = { "offset" : _set_progress_image_x_offset_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.LongArg,) }
     @progress_image_x_offset.setter
-    def progress_image_x_offset(self, xOffset:int) -> None:
-        return self._intf.set_property(UiAx2DCntrl._metadata, UiAx2DCntrl._set_progress_image_x_offset_metadata, xOffset)
+    def progress_image_x_offset(self, x_offset:int) -> None:
+        return self._intf.set_property(Graphics2DControlBase._metadata, Graphics2DControlBase._set_progress_image_x_offset_metadata, x_offset)
 
     _get_progress_image_y_offset_metadata = { "offset" : _get_progress_image_y_offset_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -1308,14 +1310,14 @@ class UiAx2DCntrl(SupportsDeleteCallback):
     @property
     def progress_image_y_offset(self) -> int:
         """The vertical Y offset for animated progress image."""
-        return self._intf.get_property(UiAx2DCntrl._metadata, UiAx2DCntrl._get_progress_image_y_offset_metadata)
+        return self._intf.get_property(Graphics2DControlBase._metadata, Graphics2DControlBase._get_progress_image_y_offset_metadata)
 
     _set_progress_image_y_offset_metadata = { "offset" : _set_progress_image_y_offset_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.LongArg,) }
     @progress_image_y_offset.setter
-    def progress_image_y_offset(self, yOffset:int) -> None:
-        return self._intf.set_property(UiAx2DCntrl._metadata, UiAx2DCntrl._set_progress_image_y_offset_metadata, yOffset)
+    def progress_image_y_offset(self, y_offset:int) -> None:
+        return self._intf.set_property(Graphics2DControlBase._metadata, Graphics2DControlBase._set_progress_image_y_offset_metadata, y_offset)
 
     _get_progress_image_file_metadata = { "offset" : _get_progress_image_file_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -1323,44 +1325,44 @@ class UiAx2DCntrl(SupportsDeleteCallback):
     @property
     def progress_image_file(self) -> str:
         """The complete image file name/path for animated progress image."""
-        return self._intf.get_property(UiAx2DCntrl._metadata, UiAx2DCntrl._get_progress_image_file_metadata)
+        return self._intf.get_property(Graphics2DControlBase._metadata, Graphics2DControlBase._get_progress_image_file_metadata)
 
     _set_progress_image_file_metadata = { "offset" : _set_progress_image_file_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @progress_image_file.setter
-    def progress_image_file(self, imageFile:str) -> None:
-        return self._intf.set_property(UiAx2DCntrl._metadata, UiAx2DCntrl._set_progress_image_file_metadata, imageFile)
+    def progress_image_file(self, image_file:str) -> None:
+        return self._intf.set_property(Graphics2DControlBase._metadata, Graphics2DControlBase._set_progress_image_file_metadata, image_file)
 
     _get_progress_image_x_origin_metadata = { "offset" : _get_progress_image_x_origin_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(PROGRESS_IMAGE_X_ORIGIN),) }
+            "marshallers" : (agmarshall.EnumArg(ProgressImageXOrigin),) }
     @property
-    def progress_image_x_origin(self) -> "PROGRESS_IMAGE_X_ORIGIN":
+    def progress_image_x_origin(self) -> "ProgressImageXOrigin":
         """The X origin alignment for animated progress image."""
-        return self._intf.get_property(UiAx2DCntrl._metadata, UiAx2DCntrl._get_progress_image_x_origin_metadata)
+        return self._intf.get_property(Graphics2DControlBase._metadata, Graphics2DControlBase._get_progress_image_x_origin_metadata)
 
     _set_progress_image_x_origin_metadata = { "offset" : _set_progress_image_x_origin_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(PROGRESS_IMAGE_X_ORIGIN),) }
+            "marshallers" : (agmarshall.EnumArg(ProgressImageXOrigin),) }
     @progress_image_x_origin.setter
-    def progress_image_x_origin(self, progressImageXOrigin:"PROGRESS_IMAGE_X_ORIGIN") -> None:
-        return self._intf.set_property(UiAx2DCntrl._metadata, UiAx2DCntrl._set_progress_image_x_origin_metadata, progressImageXOrigin)
+    def progress_image_x_origin(self, progress_image_x_origin:"ProgressImageXOrigin") -> None:
+        return self._intf.set_property(Graphics2DControlBase._metadata, Graphics2DControlBase._set_progress_image_x_origin_metadata, progress_image_x_origin)
 
     _get_progress_image_y_origin_metadata = { "offset" : _get_progress_image_y_origin_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(PROGRESS_IMAGE_Y_ORIGIN),) }
+            "marshallers" : (agmarshall.EnumArg(ProgressImageYOrigin),) }
     @property
-    def progress_image_y_origin(self) -> "PROGRESS_IMAGE_Y_ORIGIN":
+    def progress_image_y_origin(self) -> "ProgressImageYOrigin":
         """The Y origin alignment for animated progress image."""
-        return self._intf.get_property(UiAx2DCntrl._metadata, UiAx2DCntrl._get_progress_image_y_origin_metadata)
+        return self._intf.get_property(Graphics2DControlBase._metadata, Graphics2DControlBase._get_progress_image_y_origin_metadata)
 
     _set_progress_image_y_origin_metadata = { "offset" : _set_progress_image_y_origin_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(PROGRESS_IMAGE_Y_ORIGIN),) }
+            "marshallers" : (agmarshall.EnumArg(ProgressImageYOrigin),) }
     @progress_image_y_origin.setter
-    def progress_image_y_origin(self, progressImageYOrigin:"PROGRESS_IMAGE_Y_ORIGIN") -> None:
-        return self._intf.set_property(UiAx2DCntrl._metadata, UiAx2DCntrl._set_progress_image_y_origin_metadata, progressImageYOrigin)
+    def progress_image_y_origin(self, progress_image_y_origin:"ProgressImageYOrigin") -> None:
+        return self._intf.set_property(Graphics2DControlBase._metadata, Graphics2DControlBase._set_progress_image_y_origin_metadata, progress_image_y_origin)
 
     _get_picture_from_file_metadata = { "offset" : _get_picture_from_file_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -1368,15 +1370,15 @@ class UiAx2DCntrl(SupportsDeleteCallback):
     @property
     def picture_from_file(self) -> str:
         """Get or set the splash logo graphic file to be displayed in the control."""
-        return self._intf.get_property(UiAx2DCntrl._metadata, UiAx2DCntrl._get_picture_from_file_metadata)
+        return self._intf.get_property(Graphics2DControlBase._metadata, Graphics2DControlBase._get_picture_from_file_metadata)
 
     _set_picture_from_file_metadata = { "offset" : _set_picture_from_file_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @picture_from_file.setter
-    def picture_from_file(self, pictureFile:str) -> None:
+    def picture_from_file(self, picture_file:str) -> None:
         """Get or set the splash logo graphic file to be displayed in the control."""
-        return self._intf.set_property(UiAx2DCntrl._metadata, UiAx2DCntrl._set_picture_from_file_metadata, pictureFile)
+        return self._intf.set_property(Graphics2DControlBase._metadata, Graphics2DControlBase._set_picture_from_file_metadata, picture_file)
 
     _get_pan_mode_enabled_metadata = { "offset" : _get_pan_mode_enabled_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -1384,18 +1386,18 @@ class UiAx2DCntrl(SupportsDeleteCallback):
     @property
     def pan_mode_enabled(self) -> bool:
         """Enable/disable pan mode for map control."""
-        return self._intf.get_property(UiAx2DCntrl._metadata, UiAx2DCntrl._get_pan_mode_enabled_metadata)
+        return self._intf.get_property(Graphics2DControlBase._metadata, Graphics2DControlBase._get_pan_mode_enabled_metadata)
 
     _set_pan_mode_enabled_metadata = { "offset" : _set_pan_mode_enabled_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @pan_mode_enabled.setter
-    def pan_mode_enabled(self, bPanMode:bool) -> None:
-        return self._intf.set_property(UiAx2DCntrl._metadata, UiAx2DCntrl._set_pan_mode_enabled_metadata, bPanMode)
+    def pan_mode_enabled(self, pan_mode:bool) -> None:
+        return self._intf.set_property(Graphics2DControlBase._metadata, Graphics2DControlBase._set_pan_mode_enabled_metadata, pan_mode)
 
     _property_names[back_color] = "back_color"
     _property_names[picture] = "picture"
-    _property_names[win_id] = "win_id"
+    _property_names[window_id] = "window_id"
     _property_names[application] = "application"
     _property_names[no_logo] = "no_logo"
     _property_names[ole_drop_mode] = "ole_drop_mode"
@@ -1413,10 +1415,10 @@ class UiAx2DCntrl(SupportsDeleteCallback):
     _property_names[picture_from_file] = "picture_from_file"
     _property_names[pan_mode_enabled] = "pan_mode_enabled"
 
-    def __init__(self, sourceObject=None):
-        """Construct an object of type UiAx2DCntrl."""
+    def __init__(self, source_object=None):
+        """Construct an object of type Graphics2DControlBase."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, UiAx2DCntrl)
+        initialize_from_source_object(self, source_object, Graphics2DControlBase)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -1424,21 +1426,21 @@ class UiAx2DCntrl(SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, UiAx2DCntrl, [UiAx2DCntrl, ])
+        set_class_attribute(self, attrname, value, Graphics2DControlBase, [Graphics2DControlBase, ])
 
-agcls.AgClassCatalog.add_catalog_entry((4768515753680544793, 142788673313023873), UiAx2DCntrl)
-agcls.AgTypeNameMap["UiAx2DCntrl"] = UiAx2DCntrl
+agcls.AgClassCatalog.add_catalog_entry((4768515753680544793, 142788673313023873), Graphics2DControlBase)
+agcls.AgTypeNameMap["Graphics2DControlBase"] = Graphics2DControlBase
 
 class PickInfoData(SupportsDeleteCallback):
     """Mouse pick details."""
 
     _num_methods = 6
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
-    _get_obj_path_method_offset = 1
-    _get_lat_method_offset = 2
-    _get_lon_method_offset = 3
+    _get_object_path_method_offset = 1
+    _get_latitude_method_offset = 2
+    _get_longitude_method_offset = 3
     _get_altitude_method_offset = 4
-    _get_is_obj_path_valid_method_offset = 5
+    _get_is_object_path_valid_method_offset = 5
     _get_is_lat_lon_altitude_valid_method_offset = 6
     _metadata = {
         "iid_data" : (5698141537397851098, 16489903714142238396),
@@ -1448,29 +1450,29 @@ class PickInfoData(SupportsDeleteCallback):
     def _get_property(self, attrname):
         return get_interface_property(attrname, PickInfoData)
     
-    _get_obj_path_metadata = { "offset" : _get_obj_path_method_offset,
+    _get_object_path_metadata = { "offset" : _get_object_path_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
-    def obj_path(self) -> str:
+    def object_path(self) -> str:
         """Path of the STK object picked if any (or empty string)."""
-        return self._intf.get_property(PickInfoData._metadata, PickInfoData._get_obj_path_metadata)
+        return self._intf.get_property(PickInfoData._metadata, PickInfoData._get_object_path_metadata)
 
-    _get_lat_metadata = { "offset" : _get_lat_method_offset,
+    _get_latitude_metadata = { "offset" : _get_latitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def lat(self) -> float:
+    def latitude(self) -> float:
         """Latitude of point clicked (if available)."""
-        return self._intf.get_property(PickInfoData._metadata, PickInfoData._get_lat_metadata)
+        return self._intf.get_property(PickInfoData._metadata, PickInfoData._get_latitude_metadata)
 
-    _get_lon_metadata = { "offset" : _get_lon_method_offset,
+    _get_longitude_metadata = { "offset" : _get_longitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def lon(self) -> float:
+    def longitude(self) -> float:
         """Longitude of point clicked (if available)."""
-        return self._intf.get_property(PickInfoData._metadata, PickInfoData._get_lon_metadata)
+        return self._intf.get_property(PickInfoData._metadata, PickInfoData._get_longitude_metadata)
 
     _get_altitude_metadata = { "offset" : _get_altitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -1480,13 +1482,13 @@ class PickInfoData(SupportsDeleteCallback):
         """Altitude of point clicked (if available)."""
         return self._intf.get_property(PickInfoData._metadata, PickInfoData._get_altitude_metadata)
 
-    _get_is_obj_path_valid_metadata = { "offset" : _get_is_obj_path_valid_method_offset,
+    _get_is_object_path_valid_metadata = { "offset" : _get_is_object_path_valid_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
-    def is_obj_path_valid(self) -> bool:
+    def is_object_path_valid(self) -> bool:
         """Indicate if the ObjPath property is valid."""
-        return self._intf.get_property(PickInfoData._metadata, PickInfoData._get_is_obj_path_valid_metadata)
+        return self._intf.get_property(PickInfoData._metadata, PickInfoData._get_is_object_path_valid_metadata)
 
     _get_is_lat_lon_altitude_valid_metadata = { "offset" : _get_is_lat_lon_altitude_valid_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -1496,17 +1498,17 @@ class PickInfoData(SupportsDeleteCallback):
         """Indicate if the Lat/Lon/Alt properties are valid."""
         return self._intf.get_property(PickInfoData._metadata, PickInfoData._get_is_lat_lon_altitude_valid_metadata)
 
-    _property_names[obj_path] = "obj_path"
-    _property_names[lat] = "lat"
-    _property_names[lon] = "lon"
+    _property_names[object_path] = "object_path"
+    _property_names[latitude] = "latitude"
+    _property_names[longitude] = "longitude"
     _property_names[altitude] = "altitude"
-    _property_names[is_obj_path_valid] = "is_obj_path_valid"
+    _property_names[is_object_path_valid] = "is_object_path_valid"
     _property_names[is_lat_lon_altitude_valid] = "is_lat_lon_altitude_valid"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type PickInfoData."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, PickInfoData)
+        initialize_from_source_object(self, source_object, PickInfoData)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -1559,14 +1561,14 @@ class STKXApplication(SupportsDeleteCallback):
     _property_names = {}
     def _get_property(self, attrname):
         return get_interface_property(attrname, STKXApplication)
-    def Subscribe(self) -> ISTKXApplicationEventHandler:
+    def subscribe(self) -> ISTKXApplicationEventHandler:
         """Return an ISTKXApplicationEventHandler that is subscribed to handle events associated with this instance of STKXApplication."""
         return ISTKXApplicationEventHandler(self._intf)
     
     _execute_command_metadata = { "offset" : _execute_command_method_offset,
             "arg_types" : (agcom.BSTR, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
-    def execute_command(self, command:str) -> "ExecCmdResult":
+    def execute_command(self, command:str) -> "ExecuteCommandResult":
         """Send a connect command to STK X."""
         return self._intf.invoke(STKXApplication._metadata, STKXApplication._execute_command_metadata, command, OutArg())
 
@@ -1582,8 +1584,8 @@ class STKXApplication(SupportsDeleteCallback):
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @enable_connect.setter
-    def enable_connect(self, newVal:bool) -> None:
-        return self._intf.set_property(STKXApplication._metadata, STKXApplication._set_enable_connect_metadata, newVal)
+    def enable_connect(self, value:bool) -> None:
+        return self._intf.set_property(STKXApplication._metadata, STKXApplication._set_enable_connect_metadata, value)
 
     _get_connect_port_metadata = { "offset" : _get_connect_port_method_offset,
             "arg_types" : (POINTER(agcom.SHORT),),
@@ -1597,8 +1599,8 @@ class STKXApplication(SupportsDeleteCallback):
             "arg_types" : (agcom.SHORT,),
             "marshallers" : (agmarshall.ShortArg,) }
     @connect_port.setter
-    def connect_port(self, newVal:int) -> None:
-        return self._intf.set_property(STKXApplication._metadata, STKXApplication._set_connect_port_metadata, newVal)
+    def connect_port(self, value:int) -> None:
+        return self._intf.set_property(STKXApplication._metadata, STKXApplication._set_connect_port_metadata, value)
 
     _get_host_id_metadata = { "offset" : _get_host_id_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -1643,15 +1645,15 @@ class STKXApplication(SupportsDeleteCallback):
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @vendor_id.setter
-    def vendor_id(self, vendorID:str) -> None:
-        return self._intf.set_property(STKXApplication._metadata, STKXApplication._set_vendor_id_metadata, vendorID)
+    def vendor_id(self, vendor_id:str) -> None:
+        return self._intf.set_property(STKXApplication._metadata, STKXApplication._set_vendor_id_metadata, vendor_id)
 
     _set_online_options_metadata = { "offset" : _set_online_options_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL, agcom.BSTR, agcom.LONG, agcom.BSTR, agcom.BSTR, agcom.VARIANT_BOOL, POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg, agmarshall.BStrArg, agmarshall.LongArg, agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.VariantBoolArg, agmarshall.VariantBoolArg,) }
-    def set_online_options(self, useProxy:bool, serverName:str, portNum:int, userName:str, password:str, savePassword:bool) -> bool:
+    def set_online_options(self, use_proxy:bool, server_name:str, port_num:int, user_name:str, password:str, save_password:bool) -> bool:
         """Set http proxy online options."""
-        return self._intf.invoke(STKXApplication._metadata, STKXApplication._set_online_options_metadata, useProxy, serverName, portNum, userName, password, savePassword, OutArg())
+        return self._intf.invoke(STKXApplication._metadata, STKXApplication._set_online_options_metadata, use_proxy, server_name, port_num, user_name, password, save_password, OutArg())
 
     _get_online_options_metadata = { "offset" : _get_online_options_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL), POINTER(agcom.BSTR), POINTER(agcom.LONG), POINTER(agcom.BSTR), POINTER(agcom.VARIANT_BOOL),),
@@ -1663,9 +1665,9 @@ class STKXApplication(SupportsDeleteCallback):
     _set_connect_handler_metadata = { "offset" : _set_connect_handler_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg,) }
-    def set_connect_handler(self, commandID:str, progID:str) -> None:
+    def set_connect_handler(self, command_id:str, prog_id:str) -> None:
         """Set callback to handle a certain connect command."""
-        return self._intf.invoke(STKXApplication._metadata, STKXApplication._set_connect_handler_metadata, commandID, progID)
+        return self._intf.invoke(STKXApplication._metadata, STKXApplication._set_connect_handler_metadata, command_id, prog_id)
 
     _get_log_file_full_name_metadata = { "offset" : _get_log_file_full_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -1677,18 +1679,18 @@ class STKXApplication(SupportsDeleteCallback):
 
     _get_logging_mode_metadata = { "offset" : _get_logging_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(LOGGING_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(LoggingMode),) }
     @property
-    def logging_mode(self) -> "LOGGING_MODE":
+    def logging_mode(self) -> "LoggingMode":
         """Control the log file generation, and if the log file is deleted or not on application exit."""
         return self._intf.get_property(STKXApplication._metadata, STKXApplication._get_logging_mode_metadata)
 
     _set_logging_mode_metadata = { "offset" : _set_logging_mode_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(LOGGING_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(LoggingMode),) }
     @logging_mode.setter
-    def logging_mode(self, newVal:"LOGGING_MODE") -> None:
-        return self._intf.set_property(STKXApplication._metadata, STKXApplication._set_logging_mode_metadata, newVal)
+    def logging_mode(self, value:"LoggingMode") -> None:
+        return self._intf.set_property(STKXApplication._metadata, STKXApplication._set_logging_mode_metadata, value)
 
     _get_connect_max_connections_metadata = { "offset" : _get_connect_max_connections_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -1702,22 +1704,22 @@ class STKXApplication(SupportsDeleteCallback):
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.LongArg,) }
     @connect_max_connections.setter
-    def connect_max_connections(self, newVal:int) -> None:
-        return self._intf.set_property(STKXApplication._metadata, STKXApplication._set_connect_max_connections_metadata, newVal)
+    def connect_max_connections(self, value:int) -> None:
+        return self._intf.set_property(STKXApplication._metadata, STKXApplication._set_connect_max_connections_metadata, value)
 
     _execute_multiple_commands_metadata = { "offset" : _execute_multiple_commands_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.EnumArg(EXEC_MULTI_CMD_RESULT_ACTION), agmarshall.InterfaceOutArg,) }
-    def execute_multiple_commands(self, connectCommands:list, eAction:"EXEC_MULTI_CMD_RESULT_ACTION") -> "ExecMultiCmdResult":
+            "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.EnumArg(ExecuteMultipleCommandsMode), agmarshall.InterfaceOutArg,) }
+    def execute_multiple_commands(self, connect_commands:list, action:"ExecuteMultipleCommandsMode") -> "ExecuteMultipleCommandsResult":
         """Execute multiple CONNECT actions. The method throws an exception if any of the specified commands have failed."""
-        return self._intf.invoke(STKXApplication._metadata, STKXApplication._execute_multiple_commands_metadata, connectCommands, eAction, OutArg())
+        return self._intf.invoke(STKXApplication._metadata, STKXApplication._execute_multiple_commands_metadata, connect_commands, action, OutArg())
 
     _is_feature_available_metadata = { "offset" : _is_feature_available_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.EnumArg(FEATURE_CODES), agmarshall.VariantBoolArg,) }
-    def is_feature_available(self, featureCode:"FEATURE_CODES") -> bool:
+            "marshallers" : (agmarshall.EnumArg(FeatureCodes), agmarshall.VariantBoolArg,) }
+    def is_feature_available(self, feature_code:"FeatureCodes") -> bool:
         """Return true if the specified feature is available."""
-        return self._intf.invoke(STKXApplication._metadata, STKXApplication._is_feature_available_metadata, featureCode, OutArg())
+        return self._intf.invoke(STKXApplication._metadata, STKXApplication._is_feature_available_metadata, feature_code, OutArg())
 
     _get_no_graphics_metadata = { "offset" : _get_no_graphics_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -1731,8 +1733,8 @@ class STKXApplication(SupportsDeleteCallback):
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @no_graphics.setter
-    def no_graphics(self, newVal:bool) -> None:
-        return self._intf.set_property(STKXApplication._metadata, STKXApplication._set_no_graphics_metadata, newVal)
+    def no_graphics(self, value:bool) -> None:
+        return self._intf.set_property(STKXApplication._metadata, STKXApplication._set_no_graphics_metadata, value)
 
     _terminate_metadata = { "offset" : _terminate_method_offset,
             "arg_types" : (),
@@ -1753,8 +1755,8 @@ class STKXApplication(SupportsDeleteCallback):
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @show_sla_if_not_accepted.setter
-    def show_sla_if_not_accepted(self, newVal:bool) -> None:
-        return self._intf.set_property(STKXApplication._metadata, STKXApplication._set_show_sla_if_not_accepted_metadata, newVal)
+    def show_sla_if_not_accepted(self, value:bool) -> None:
+        return self._intf.set_property(STKXApplication._metadata, STKXApplication._set_show_sla_if_not_accepted_metadata, value)
 
     _get_use_hook_metadata = { "offset" : 0,
             "arg_types" : (),
@@ -1769,9 +1771,9 @@ class STKXApplication(SupportsDeleteCallback):
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @use_hook.setter
-    def use_hook(self, newVal:bool) -> None:
+    def use_hook(self, value:bool) -> None:
         """Start engine with or without message hook setup (default: engine starts with message hook setup.)."""
-        return self._intf.set_property(STKXApplication._metadata, STKXApplication._set_use_hook_metadata, newVal)
+        return self._intf.set_property(STKXApplication._metadata, STKXApplication._set_use_hook_metadata, value)
 
     _use_software_renderer_metadata = { "offset" : _use_software_renderer_method_offset,
             "arg_types" : (),
@@ -1793,10 +1795,10 @@ class STKXApplication(SupportsDeleteCallback):
     _property_names[show_sla_if_not_accepted] = "show_sla_if_not_accepted"
     _property_names[use_hook] = "use_hook"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type STKXApplication."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, STKXApplication)
+        initialize_from_source_object(self, source_object, STKXApplication)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -1831,10 +1833,10 @@ class STKXApplicationPartnerAccess(SupportsDeleteCallback):
         return self._intf.invoke(STKXApplicationPartnerAccess._metadata, STKXApplicationPartnerAccess._grant_partner_access_metadata, vendor, product, key, OutArg())
 
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type STKXApplicationPartnerAccess."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, STKXApplicationPartnerAccess)
+        initialize_from_source_object(self, source_object, STKXApplicationPartnerAccess)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -1871,10 +1873,10 @@ class DataObject(SupportsDeleteCallback):
 
     _property_names[files] = "files"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type DataObject."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, DataObject)
+        initialize_from_source_object(self, source_object, DataObject)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -1892,7 +1894,7 @@ class DataObjectFiles(SupportsDeleteCallback):
 
     _num_methods = 3
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
-    _get__NewEnum_method_offset = 1
+    _get__new_enum_method_offset = 1
     _item_method_offset = 2
     _get_count_method_offset = 3
     _metadata = {
@@ -1904,7 +1906,7 @@ class DataObjectFiles(SupportsDeleteCallback):
         return get_interface_property(attrname, DataObjectFiles)
     def __iter__(self):
         """Create an iterator for the DataObjectFiles object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> str:
@@ -1916,13 +1918,13 @@ class DataObjectFiles(SupportsDeleteCallback):
             raise StopIteration
         return nextval
     
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return an object that can be used to iterate through all the file names in the collection."""
-        return self._intf.get_property(DataObjectFiles._metadata, DataObjectFiles._get__NewEnum_metadata)
+        return self._intf.get_property(DataObjectFiles._metadata, DataObjectFiles._get__new_enum_metadata)
 
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.BSTR),),
@@ -1942,13 +1944,13 @@ class DataObjectFiles(SupportsDeleteCallback):
     __getitem__ = item
 
 
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
     _property_names[count] = "count"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type DataObjectFiles."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, DataObjectFiles)
+        initialize_from_source_object(self, source_object, DataObjectFiles)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -1966,7 +1968,7 @@ class RubberBandPickInfoData(SupportsDeleteCallback):
 
     _num_methods = 1
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
-    _get_obj_paths_method_offset = 1
+    _get_object_paths_method_offset = 1
     _metadata = {
         "iid_data" : (5465369937390436249, 5504180940665807527),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
@@ -1975,20 +1977,20 @@ class RubberBandPickInfoData(SupportsDeleteCallback):
     def _get_property(self, attrname):
         return get_interface_property(attrname, RubberBandPickInfoData)
     
-    _get_obj_paths_metadata = { "offset" : _get_obj_paths_method_offset,
+    _get_object_paths_metadata = { "offset" : _get_object_paths_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def obj_paths(self) -> "ObjPathCollection":
+    def object_paths(self) -> "ObjectPathCollection":
         """List of object paths selected."""
-        return self._intf.get_property(RubberBandPickInfoData._metadata, RubberBandPickInfoData._get_obj_paths_metadata)
+        return self._intf.get_property(RubberBandPickInfoData._metadata, RubberBandPickInfoData._get_object_paths_metadata)
 
-    _property_names[obj_paths] = "obj_paths"
+    _property_names[object_paths] = "object_paths"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type RubberBandPickInfoData."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, RubberBandPickInfoData)
+        initialize_from_source_object(self, source_object, RubberBandPickInfoData)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -2001,14 +2003,14 @@ class RubberBandPickInfoData(SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((4985968678511795353, 17743300322106185909), RubberBandPickInfoData)
 agcls.AgTypeNameMap["RubberBandPickInfoData"] = RubberBandPickInfoData
 
-class ObjPathCollection(SupportsDeleteCallback):
+class ObjectPathCollection(SupportsDeleteCallback):
     """Collection of object paths."""
 
     _num_methods = 4
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _get_count_method_offset = 1
     _item_method_offset = 2
-    _get__NewEnum_method_offset = 3
+    _get__new_enum_method_offset = 3
     _range_method_offset = 4
     _metadata = {
         "iid_data" : (5633526467684881384, 4210768304776055218),
@@ -2016,10 +2018,10 @@ class ObjPathCollection(SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, ObjPathCollection)
+        return get_interface_property(attrname, ObjectPathCollection)
     def __iter__(self):
-        """Create an iterator for the ObjPathCollection object."""
-        self.__dict__["_enumerator"] = self._NewEnum
+        """Create an iterator for the ObjectPathCollection object."""
+        self.__dict__["_enumerator"] = self._new_enum
         self._enumerator.reset()
         return self
     def __next__(self) -> str:
@@ -2037,40 +2039,40 @@ class ObjPathCollection(SupportsDeleteCallback):
     @property
     def count(self) -> int:
         """Number of elements contained in the collection."""
-        return self._intf.get_property(ObjPathCollection._metadata, ObjPathCollection._get_count_metadata)
+        return self._intf.get_property(ObjectPathCollection._metadata, ObjectPathCollection._get_count_metadata)
 
     _item_metadata = { "offset" : _item_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.LongArg, agmarshall.BStrArg,) }
     def item(self, index:int) -> str:
         """Get the element at the specified index (0-based)."""
-        return self._intf.invoke(ObjPathCollection._metadata, ObjPathCollection._item_metadata, index, OutArg())
+        return self._intf.invoke(ObjectPathCollection._metadata, ObjectPathCollection._item_metadata, index, OutArg())
 
-    _get__NewEnum_metadata = { "offset" : _get__NewEnum_method_offset,
+    _get__new_enum_metadata = { "offset" : _get__new_enum_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IEnumVariantArg,) }
     @property
-    def _NewEnum(self) -> EnumeratorProxy:
+    def _new_enum(self) -> EnumeratorProxy:
         """Return an object that can be used to iterate through all the object paths in the collection."""
-        return self._intf.get_property(ObjPathCollection._metadata, ObjPathCollection._get__NewEnum_metadata)
+        return self._intf.get_property(ObjectPathCollection._metadata, ObjectPathCollection._get__new_enum_metadata)
 
     _range_metadata = { "offset" : _range_method_offset,
             "arg_types" : (agcom.LONG, agcom.LONG, POINTER(agcom.LPSAFEARRAY),),
             "marshallers" : (agmarshall.LongArg, agmarshall.LongArg, agmarshall.LPSafearrayArg,) }
-    def range(self, startIndex:int, stopIndex:int) -> list:
+    def range(self, start_index:int, stop_index:int) -> list:
         """Return the elements within the specified range."""
-        return self._intf.invoke(ObjPathCollection._metadata, ObjPathCollection._range_metadata, startIndex, stopIndex, OutArg())
+        return self._intf.invoke(ObjectPathCollection._metadata, ObjectPathCollection._range_metadata, start_index, stop_index, OutArg())
 
     __getitem__ = item
 
 
     _property_names[count] = "count"
-    _property_names[_NewEnum] = "_NewEnum"
+    _property_names[_new_enum] = "_new_enum"
 
-    def __init__(self, sourceObject=None):
-        """Construct an object of type ObjPathCollection."""
+    def __init__(self, source_object=None):
+        """Construct an object of type ObjectPathCollection."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, ObjPathCollection)
+        initialize_from_source_object(self, source_object, ObjectPathCollection)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -2078,88 +2080,88 @@ class ObjPathCollection(SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, ObjPathCollection, [ObjPathCollection, ])
+        set_class_attribute(self, attrname, value, ObjectPathCollection, [ObjectPathCollection, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5468637706198187096, 15368573397963727005), ObjPathCollection)
-agcls.AgTypeNameMap["ObjPathCollection"] = ObjPathCollection
+agcls.AgClassCatalog.add_catalog_entry((5468637706198187096, 15368573397963727005), ObjectPathCollection)
+agcls.AgTypeNameMap["ObjectPathCollection"] = ObjectPathCollection
 
-class DrawElemRect(IDrawElemRect, SupportsDeleteCallback):
+class DrawElementRect(IDrawElementRect, SupportsDeleteCallback):
     """Define a rectangle in window coordinates."""
-    def __init__(self, sourceObject=None):
-        """Construct an object of type DrawElemRect."""
+    def __init__(self, source_object=None):
+        """Construct an object of type DrawElementRect."""
         SupportsDeleteCallback.__init__(self)
-        IDrawElemRect.__init__(self, sourceObject)
+        IDrawElementRect.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IDrawElemRect._private_init(self, intf)
+        IDrawElementRect._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, DrawElemRect, [IDrawElemRect])
+        set_class_attribute(self, attrname, value, DrawElementRect, [IDrawElementRect])
 
-agcls.AgClassCatalog.add_catalog_entry((5240823309103310773, 8687967398961860752), DrawElemRect)
-agcls.AgTypeNameMap["DrawElemRect"] = DrawElemRect
+agcls.AgClassCatalog.add_catalog_entry((5240823309103310773, 8687967398961860752), DrawElementRect)
+agcls.AgTypeNameMap["DrawElementRect"] = DrawElementRect
 
-class DrawElemCollection(IDrawElemCollection, SupportsDeleteCallback):
+class DrawElementCollection(IDrawElementCollection, SupportsDeleteCallback):
     """Collection of elements to draw on the control."""
-    def __init__(self, sourceObject=None):
-        """Construct an object of type DrawElemCollection."""
+    def __init__(self, source_object=None):
+        """Construct an object of type DrawElementCollection."""
         SupportsDeleteCallback.__init__(self)
-        IDrawElemCollection.__init__(self, sourceObject)
+        IDrawElementCollection.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IDrawElemCollection._private_init(self, intf)
+        IDrawElementCollection._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, DrawElemCollection, [IDrawElemCollection])
+        set_class_attribute(self, attrname, value, DrawElementCollection, [IDrawElementCollection])
 
-agcls.AgClassCatalog.add_catalog_entry((4818369897478707705, 12447301819569005480), DrawElemCollection)
-agcls.AgTypeNameMap["DrawElemCollection"] = DrawElemCollection
+agcls.AgClassCatalog.add_catalog_entry((4818369897478707705, 12447301819569005480), DrawElementCollection)
+agcls.AgTypeNameMap["DrawElementCollection"] = DrawElementCollection
 
-class Draw2DElemRect(IDrawElemRect, SupportsDeleteCallback):
+class Draw2DElemRect(IDrawElementRect, SupportsDeleteCallback):
     """Define a rectangle in window coordinates for map control."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type Draw2DElemRect."""
         SupportsDeleteCallback.__init__(self)
-        IDrawElemRect.__init__(self, sourceObject)
+        IDrawElementRect.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IDrawElemRect._private_init(self, intf)
+        IDrawElementRect._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, Draw2DElemRect, [IDrawElemRect])
+        set_class_attribute(self, attrname, value, Draw2DElemRect, [IDrawElementRect])
 
 agcls.AgClassCatalog.add_catalog_entry((5576559474231799426, 4548115262096126086), Draw2DElemRect)
 agcls.AgTypeNameMap["Draw2DElemRect"] = Draw2DElemRect
 
-class Draw2DElemCollection(IDrawElemCollection, SupportsDeleteCallback):
+class Draw2DElemCollection(IDrawElementCollection, SupportsDeleteCallback):
     """Collection of elements to draw on map control."""
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type Draw2DElemCollection."""
         SupportsDeleteCallback.__init__(self)
-        IDrawElemCollection.__init__(self, sourceObject)
+        IDrawElementCollection.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
-        IDrawElemCollection._private_init(self, intf)
+        IDrawElementCollection._private_init(self, intf)
     def __eq__(self, other):
         """Check equality of the underlying STK references."""
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, Draw2DElemCollection, [IDrawElemCollection])
+        set_class_attribute(self, attrname, value, Draw2DElemCollection, [IDrawElementCollection])
 
 agcls.AgClassCatalog.add_catalog_entry((5331482112311797798, 13317960878959927180), Draw2DElemCollection)
 agcls.AgTypeNameMap["Draw2DElemCollection"] = Draw2DElemCollection
 
-class UiAxGraphics2DAnalysisCntrl(SupportsDeleteCallback):
+class GraphicsAnalysisControlBase(SupportsDeleteCallback):
     """AGI Gfx Analysis control."""
 
     _num_methods = 17
@@ -2179,15 +2181,15 @@ class UiAxGraphics2DAnalysisCntrl(SupportsDeleteCallback):
     _set_control_mode_method_offset = 13
     _get_picture_from_file_method_offset = 14
     _set_picture_from_file_method_offset = 15
-    _get_win_id_method_offset = 16
-    _set_win_id_method_offset = 17
+    _get_window_id_method_offset = 16
+    _set_window_id_method_offset = 17
     _metadata = {
         "iid_data" : (5436709951419699304, 6539416614287221654),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, UiAxGraphics2DAnalysisCntrl)
+        return get_interface_property(attrname, GraphicsAnalysisControlBase)
     
     _get_back_color_metadata = { "offset" : _get_back_color_method_offset,
             "arg_types" : (POINTER(agcom.OLE_COLOR),),
@@ -2195,14 +2197,14 @@ class UiAxGraphics2DAnalysisCntrl(SupportsDeleteCallback):
     @property
     def back_color(self) -> agcolor.Color:
         """The background color of the control."""
-        return self._intf.get_property(UiAxGraphics2DAnalysisCntrl._metadata, UiAxGraphics2DAnalysisCntrl._get_back_color_metadata)
+        return self._intf.get_property(GraphicsAnalysisControlBase._metadata, GraphicsAnalysisControlBase._get_back_color_metadata)
 
     _set_back_color_metadata = { "offset" : _set_back_color_method_offset,
             "arg_types" : (agcom.OLE_COLOR,),
             "marshallers" : (agmarshall.OLEColorArg,) }
     @back_color.setter
     def back_color(self, clr:agcolor.Color) -> None:
-        return self._intf.set_property(UiAxGraphics2DAnalysisCntrl._metadata, UiAxGraphics2DAnalysisCntrl._set_back_color_metadata, clr)
+        return self._intf.set_property(GraphicsAnalysisControlBase._metadata, GraphicsAnalysisControlBase._set_back_color_metadata, clr)
 
     _get_picture_metadata = { "offset" : _get_picture_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -2210,21 +2212,21 @@ class UiAxGraphics2DAnalysisCntrl(SupportsDeleteCallback):
     @property
     def picture(self) -> IPictureDisp:
         """The splash logo graphic to be displayed in the control."""
-        return self._intf.get_property(UiAxGraphics2DAnalysisCntrl._metadata, UiAxGraphics2DAnalysisCntrl._get_picture_metadata)
+        return self._intf.get_property(GraphicsAnalysisControlBase._metadata, GraphicsAnalysisControlBase._get_picture_metadata)
 
     _picture_put_reference_metadata = { "offset" : _picture_put_reference_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IPictureDispArg,) }
-    def picture_put_reference(self, pPicture:IPictureDisp) -> None:
+    def picture_put_reference(self, picture:IPictureDisp) -> None:
         """Set a reference to the splash logo graphic to be displayed in the control."""
-        return self._intf.invoke(UiAxGraphics2DAnalysisCntrl._metadata, UiAxGraphics2DAnalysisCntrl._picture_put_reference_metadata, pPicture)
+        return self._intf.invoke(GraphicsAnalysisControlBase._metadata, GraphicsAnalysisControlBase._picture_put_reference_metadata, picture)
 
     _set_picture_metadata = { "offset" : _set_picture_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.IPictureDispArg,) }
     @picture.setter
-    def picture(self, pPicture:IPictureDisp) -> None:
-        return self._intf.set_property(UiAxGraphics2DAnalysisCntrl._metadata, UiAxGraphics2DAnalysisCntrl._set_picture_metadata, pPicture)
+    def picture(self, picture:IPictureDisp) -> None:
+        return self._intf.set_property(GraphicsAnalysisControlBase._metadata, GraphicsAnalysisControlBase._set_picture_metadata, picture)
 
     _get_no_logo_metadata = { "offset" : _get_no_logo_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -2232,14 +2234,14 @@ class UiAxGraphics2DAnalysisCntrl(SupportsDeleteCallback):
     @property
     def no_logo(self) -> bool:
         """If true, the splash logo is not shown."""
-        return self._intf.get_property(UiAxGraphics2DAnalysisCntrl._metadata, UiAxGraphics2DAnalysisCntrl._get_no_logo_metadata)
+        return self._intf.get_property(GraphicsAnalysisControlBase._metadata, GraphicsAnalysisControlBase._get_no_logo_metadata)
 
     _set_no_logo_metadata = { "offset" : _set_no_logo_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @no_logo.setter
-    def no_logo(self, bNoLogo:bool) -> None:
-        return self._intf.set_property(UiAxGraphics2DAnalysisCntrl._metadata, UiAxGraphics2DAnalysisCntrl._set_no_logo_metadata, bNoLogo)
+    def no_logo(self, no_logo:bool) -> None:
+        return self._intf.set_property(GraphicsAnalysisControlBase._metadata, GraphicsAnalysisControlBase._set_no_logo_metadata, no_logo)
 
     _get_vendor_id_metadata = { "offset" : _get_vendor_id_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -2247,14 +2249,14 @@ class UiAxGraphics2DAnalysisCntrl(SupportsDeleteCallback):
     @property
     def vendor_id(self) -> str:
         """Do not use this property, as it is deprecated. The identifier of the vendor."""
-        return self._intf.get_property(UiAxGraphics2DAnalysisCntrl._metadata, UiAxGraphics2DAnalysisCntrl._get_vendor_id_metadata)
+        return self._intf.get_property(GraphicsAnalysisControlBase._metadata, GraphicsAnalysisControlBase._get_vendor_id_metadata)
 
     _set_vendor_id_metadata = { "offset" : _set_vendor_id_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @vendor_id.setter
-    def vendor_id(self, vendorID:str) -> None:
-        return self._intf.set_property(UiAxGraphics2DAnalysisCntrl._metadata, UiAxGraphics2DAnalysisCntrl._set_vendor_id_metadata, vendorID)
+    def vendor_id(self, vendor_id:str) -> None:
+        return self._intf.set_property(GraphicsAnalysisControlBase._metadata, GraphicsAnalysisControlBase._set_vendor_id_metadata, vendor_id)
 
     _get_ready_state_metadata = { "offset" : _get_ready_state_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -2262,7 +2264,7 @@ class UiAxGraphics2DAnalysisCntrl(SupportsDeleteCallback):
     @property
     def ready_state(self) -> int:
         """Return the ready state of the control."""
-        return self._intf.get_property(UiAxGraphics2DAnalysisCntrl._metadata, UiAxGraphics2DAnalysisCntrl._get_ready_state_metadata)
+        return self._intf.get_property(GraphicsAnalysisControlBase._metadata, GraphicsAnalysisControlBase._get_ready_state_metadata)
 
     _get_application_metadata = { "offset" : _get_application_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
@@ -2270,22 +2272,22 @@ class UiAxGraphics2DAnalysisCntrl(SupportsDeleteCallback):
     @property
     def application(self) -> "STKXApplication":
         """Reference to the STK X application object."""
-        return self._intf.get_property(UiAxGraphics2DAnalysisCntrl._metadata, UiAxGraphics2DAnalysisCntrl._get_application_metadata)
+        return self._intf.get_property(GraphicsAnalysisControlBase._metadata, GraphicsAnalysisControlBase._get_application_metadata)
 
     _get_control_mode_metadata = { "offset" : _get_control_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(GRAPHICS_2D_ANALYSIS_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(Graphics2DAnalysisMode),) }
     @property
-    def control_mode(self) -> "GRAPHICS_2D_ANALYSIS_MODE":
+    def control_mode(self) -> "Graphics2DAnalysisMode":
         """The Graphics control mode."""
-        return self._intf.get_property(UiAxGraphics2DAnalysisCntrl._metadata, UiAxGraphics2DAnalysisCntrl._get_control_mode_metadata)
+        return self._intf.get_property(GraphicsAnalysisControlBase._metadata, GraphicsAnalysisControlBase._get_control_mode_metadata)
 
     _set_control_mode_metadata = { "offset" : _set_control_mode_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(GRAPHICS_2D_ANALYSIS_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(Graphics2DAnalysisMode),) }
     @control_mode.setter
-    def control_mode(self, eGfxAnalysisMode:"GRAPHICS_2D_ANALYSIS_MODE") -> None:
-        return self._intf.set_property(UiAxGraphics2DAnalysisCntrl._metadata, UiAxGraphics2DAnalysisCntrl._set_control_mode_metadata, eGfxAnalysisMode)
+    def control_mode(self, gfx_analysis_mode:"Graphics2DAnalysisMode") -> None:
+        return self._intf.set_property(GraphicsAnalysisControlBase._metadata, GraphicsAnalysisControlBase._set_control_mode_metadata, gfx_analysis_mode)
 
     _get_picture_from_file_metadata = { "offset" : _get_picture_from_file_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -2293,30 +2295,30 @@ class UiAxGraphics2DAnalysisCntrl(SupportsDeleteCallback):
     @property
     def picture_from_file(self) -> str:
         """Get or set the splash logo graphic file to be displayed in the control."""
-        return self._intf.get_property(UiAxGraphics2DAnalysisCntrl._metadata, UiAxGraphics2DAnalysisCntrl._get_picture_from_file_metadata)
+        return self._intf.get_property(GraphicsAnalysisControlBase._metadata, GraphicsAnalysisControlBase._get_picture_from_file_metadata)
 
     _set_picture_from_file_metadata = { "offset" : _set_picture_from_file_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @picture_from_file.setter
-    def picture_from_file(self, pictureFile:str) -> None:
+    def picture_from_file(self, picture_file:str) -> None:
         """Get or set the splash logo graphic file to be displayed in the control."""
-        return self._intf.set_property(UiAxGraphics2DAnalysisCntrl._metadata, UiAxGraphics2DAnalysisCntrl._set_picture_from_file_metadata, pictureFile)
+        return self._intf.set_property(GraphicsAnalysisControlBase._metadata, GraphicsAnalysisControlBase._set_picture_from_file_metadata, picture_file)
 
-    _get_win_id_metadata = { "offset" : _get_win_id_method_offset,
+    _get_window_id_metadata = { "offset" : _get_window_id_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.LongArg,) }
     @property
-    def win_id(self) -> int:
+    def window_id(self) -> int:
         """Window identifier (for Connect commands)."""
-        return self._intf.get_property(UiAxGraphics2DAnalysisCntrl._metadata, UiAxGraphics2DAnalysisCntrl._get_win_id_metadata)
+        return self._intf.get_property(GraphicsAnalysisControlBase._metadata, GraphicsAnalysisControlBase._get_window_id_metadata)
 
-    _set_win_id_metadata = { "offset" : _set_win_id_method_offset,
+    _set_window_id_metadata = { "offset" : _set_window_id_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.LongArg,) }
-    @win_id.setter
-    def win_id(self, newVal:int) -> None:
-        return self._intf.set_property(UiAxGraphics2DAnalysisCntrl._metadata, UiAxGraphics2DAnalysisCntrl._set_win_id_metadata, newVal)
+    @window_id.setter
+    def window_id(self, value:int) -> None:
+        return self._intf.set_property(GraphicsAnalysisControlBase._metadata, GraphicsAnalysisControlBase._set_window_id_metadata, value)
 
     _property_names[back_color] = "back_color"
     _property_names[picture] = "picture"
@@ -2326,12 +2328,12 @@ class UiAxGraphics2DAnalysisCntrl(SupportsDeleteCallback):
     _property_names[application] = "application"
     _property_names[control_mode] = "control_mode"
     _property_names[picture_from_file] = "picture_from_file"
-    _property_names[win_id] = "win_id"
+    _property_names[window_id] = "window_id"
 
-    def __init__(self, sourceObject=None):
-        """Construct an object of type UiAxGraphics2DAnalysisCntrl."""
+    def __init__(self, source_object=None):
+        """Construct an object of type GraphicsAnalysisControlBase."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, UiAxGraphics2DAnalysisCntrl)
+        initialize_from_source_object(self, source_object, GraphicsAnalysisControlBase)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -2339,26 +2341,26 @@ class UiAxGraphics2DAnalysisCntrl(SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, UiAxGraphics2DAnalysisCntrl, [UiAxGraphics2DAnalysisCntrl, ])
+        set_class_attribute(self, attrname, value, GraphicsAnalysisControlBase, [GraphicsAnalysisControlBase, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5164937275880325572, 6916941637376451755), UiAxGraphics2DAnalysisCntrl)
-agcls.AgTypeNameMap["UiAxGraphics2DAnalysisCntrl"] = UiAxGraphics2DAnalysisCntrl
+agcls.AgClassCatalog.add_catalog_entry((5164937275880325572, 6916941637376451755), GraphicsAnalysisControlBase)
+agcls.AgTypeNameMap["GraphicsAnalysisControlBase"] = GraphicsAnalysisControlBase
 
-class WinProjectionPosition(SupportsDeleteCallback):
+class WindowProjectionPosition(SupportsDeleteCallback):
     """Projected window position detail."""
 
     _num_methods = 3
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
     _get_x_position_method_offset = 1
     _get_y_position_method_offset = 2
-    _get_is_win_projection_position_valid_method_offset = 3
+    _get_is_window_projection_position_valid_method_offset = 3
     _metadata = {
         "iid_data" : (5662259557636712932, 6540783716662451641),
         "vtable_reference" : IDispatch._vtable_offset + IDispatch._num_methods - 1,
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, WinProjectionPosition)
+        return get_interface_property(attrname, WindowProjectionPosition)
     
     _get_x_position_metadata = { "offset" : _get_x_position_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -2366,7 +2368,7 @@ class WinProjectionPosition(SupportsDeleteCallback):
     @property
     def x_position(self) -> float:
         """Projected window X position."""
-        return self._intf.get_property(WinProjectionPosition._metadata, WinProjectionPosition._get_x_position_metadata)
+        return self._intf.get_property(WindowProjectionPosition._metadata, WindowProjectionPosition._get_x_position_metadata)
 
     _get_y_position_metadata = { "offset" : _get_y_position_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -2374,24 +2376,24 @@ class WinProjectionPosition(SupportsDeleteCallback):
     @property
     def y_position(self) -> float:
         """Projected window Y position."""
-        return self._intf.get_property(WinProjectionPosition._metadata, WinProjectionPosition._get_y_position_metadata)
+        return self._intf.get_property(WindowProjectionPosition._metadata, WindowProjectionPosition._get_y_position_metadata)
 
-    _get_is_win_projection_position_valid_metadata = { "offset" : _get_is_win_projection_position_valid_method_offset,
+    _get_is_window_projection_position_valid_metadata = { "offset" : _get_is_window_projection_position_valid_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
-    def is_win_projection_position_valid(self) -> bool:
+    def is_window_projection_position_valid(self) -> bool:
         """Indicate if the returned projected position is valid or not."""
-        return self._intf.get_property(WinProjectionPosition._metadata, WinProjectionPosition._get_is_win_projection_position_valid_metadata)
+        return self._intf.get_property(WindowProjectionPosition._metadata, WindowProjectionPosition._get_is_window_projection_position_valid_metadata)
 
     _property_names[x_position] = "x_position"
     _property_names[y_position] = "y_position"
-    _property_names[is_win_projection_position_valid] = "is_win_projection_position_valid"
+    _property_names[is_window_projection_position_valid] = "is_window_projection_position_valid"
 
-    def __init__(self, sourceObject=None):
-        """Construct an object of type WinProjectionPosition."""
+    def __init__(self, source_object=None):
+        """Construct an object of type WindowProjectionPosition."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, WinProjectionPosition)
+        initialize_from_source_object(self, source_object, WindowProjectionPosition)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -2399,16 +2401,16 @@ class WinProjectionPosition(SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, WinProjectionPosition, [WinProjectionPosition, ])
+        set_class_attribute(self, attrname, value, WindowProjectionPosition, [WindowProjectionPosition, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5214780816983359777, 2472702336144982961), WinProjectionPosition)
-agcls.AgTypeNameMap["WinProjectionPosition"] = WinProjectionPosition
+agcls.AgClassCatalog.add_catalog_entry((5214780816983359777, 2472702336144982961), WindowProjectionPosition)
+agcls.AgTypeNameMap["WindowProjectionPosition"] = WindowProjectionPosition
 
-class DrawElemLine(SupportsDeleteCallback):
+class DrawElementLine(SupportsDeleteCallback):
     """Define a line in control coordinates."""
 
     _num_methods = 11
-    _vtable_offset = IDrawElem._vtable_offset + IDrawElem._num_methods
+    _vtable_offset = IDrawElement._vtable_offset + IDrawElement._num_methods
     _get_left_method_offset = 1
     _get_right_method_offset = 2
     _get_top_method_offset = 3
@@ -2422,11 +2424,11 @@ class DrawElemLine(SupportsDeleteCallback):
     _set_line_style_method_offset = 11
     _metadata = {
         "iid_data" : (5362792549588471260, 16309530468251733149),
-        "vtable_reference" : IDrawElem._vtable_offset + IDrawElem._num_methods - 1,
+        "vtable_reference" : IDrawElement._vtable_offset + IDrawElement._num_methods - 1,
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, DrawElemLine)
+        return get_interface_property(attrname, DrawElementLine)
     
     _get_left_metadata = { "offset" : _get_left_method_offset,
             "arg_types" : (POINTER(agcom.OLE_XPOS_PIXELS),),
@@ -2434,7 +2436,7 @@ class DrawElemLine(SupportsDeleteCallback):
     @property
     def left(self) -> int:
         """The x-coordinate of the left edge of this line."""
-        return self._intf.get_property(DrawElemLine._metadata, DrawElemLine._get_left_metadata)
+        return self._intf.get_property(DrawElementLine._metadata, DrawElementLine._get_left_metadata)
 
     _get_right_metadata = { "offset" : _get_right_method_offset,
             "arg_types" : (POINTER(agcom.OLE_XPOS_PIXELS),),
@@ -2442,7 +2444,7 @@ class DrawElemLine(SupportsDeleteCallback):
     @property
     def right(self) -> int:
         """The x-coordinate of the right edge of this line."""
-        return self._intf.get_property(DrawElemLine._metadata, DrawElemLine._get_right_metadata)
+        return self._intf.get_property(DrawElementLine._metadata, DrawElementLine._get_right_metadata)
 
     _get_top_metadata = { "offset" : _get_top_method_offset,
             "arg_types" : (POINTER(agcom.OLE_YPOS_PIXELS),),
@@ -2450,7 +2452,7 @@ class DrawElemLine(SupportsDeleteCallback):
     @property
     def top(self) -> int:
         """The y-coordinate of the top edge of this line."""
-        return self._intf.get_property(DrawElemLine._metadata, DrawElemLine._get_top_metadata)
+        return self._intf.get_property(DrawElementLine._metadata, DrawElementLine._get_top_metadata)
 
     _get_bottom_metadata = { "offset" : _get_bottom_method_offset,
             "arg_types" : (POINTER(agcom.OLE_YPOS_PIXELS),),
@@ -2458,14 +2460,14 @@ class DrawElemLine(SupportsDeleteCallback):
     @property
     def bottom(self) -> int:
         """The y-coordinate of the bottom edge of this line."""
-        return self._intf.get_property(DrawElemLine._metadata, DrawElemLine._get_bottom_metadata)
+        return self._intf.get_property(DrawElementLine._metadata, DrawElementLine._get_bottom_metadata)
 
     _set_metadata = { "offset" : _set_method_offset,
             "arg_types" : (agcom.OLE_XPOS_PIXELS, agcom.OLE_YPOS_PIXELS, agcom.OLE_XPOS_PIXELS, agcom.OLE_YPOS_PIXELS,),
             "marshallers" : (agmarshall.OLEXPosPixelsArg, agmarshall.OLEYPosPixelsArg, agmarshall.OLEXPosPixelsArg, agmarshall.OLEYPosPixelsArg,) }
     def set(self, left:int, top:int, right:int, bottom:int) -> None:
         """Set the rectangle coordinates."""
-        return self._intf.invoke(DrawElemLine._metadata, DrawElemLine._set_metadata, left, top, right, bottom)
+        return self._intf.invoke(DrawElementLine._metadata, DrawElementLine._set_metadata, left, top, right, bottom)
 
     _get_color_metadata = { "offset" : _get_color_method_offset,
             "arg_types" : (POINTER(agcom.OLE_COLOR),),
@@ -2473,14 +2475,14 @@ class DrawElemLine(SupportsDeleteCallback):
     @property
     def color(self) -> agcolor.Color:
         """Color of the rectangle."""
-        return self._intf.get_property(DrawElemLine._metadata, DrawElemLine._get_color_metadata)
+        return self._intf.get_property(DrawElementLine._metadata, DrawElementLine._get_color_metadata)
 
     _set_color_metadata = { "offset" : _set_color_method_offset,
             "arg_types" : (agcom.OLE_COLOR,),
             "marshallers" : (agmarshall.OLEColorArg,) }
     @color.setter
-    def color(self, newVal:agcolor.Color) -> None:
-        return self._intf.set_property(DrawElemLine._metadata, DrawElemLine._set_color_metadata, newVal)
+    def color(self, value:agcolor.Color) -> None:
+        return self._intf.set_property(DrawElementLine._metadata, DrawElementLine._set_color_metadata, value)
 
     _get_line_width_metadata = { "offset" : _get_line_width_method_offset,
             "arg_types" : (POINTER(agcom.FLOAT),),
@@ -2488,29 +2490,29 @@ class DrawElemLine(SupportsDeleteCallback):
     @property
     def line_width(self) -> float:
         """Specify the width of the line."""
-        return self._intf.get_property(DrawElemLine._metadata, DrawElemLine._get_line_width_metadata)
+        return self._intf.get_property(DrawElementLine._metadata, DrawElementLine._get_line_width_metadata)
 
     _set_line_width_metadata = { "offset" : _set_line_width_method_offset,
             "arg_types" : (agcom.FLOAT,),
             "marshallers" : (agmarshall.FloatArg,) }
     @line_width.setter
-    def line_width(self, newVal:float) -> None:
-        return self._intf.set_property(DrawElemLine._metadata, DrawElemLine._set_line_width_metadata, newVal)
+    def line_width(self, value:float) -> None:
+        return self._intf.set_property(DrawElementLine._metadata, DrawElementLine._set_line_width_metadata, value)
 
     _get_line_style_metadata = { "offset" : _get_line_style_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(LINE_STYLE),) }
+            "marshallers" : (agmarshall.EnumArg(LineStyle),) }
     @property
-    def line_style(self) -> "LINE_STYLE":
+    def line_style(self) -> "LineStyle":
         """Specify the style of the line."""
-        return self._intf.get_property(DrawElemLine._metadata, DrawElemLine._get_line_style_metadata)
+        return self._intf.get_property(DrawElementLine._metadata, DrawElementLine._get_line_style_metadata)
 
     _set_line_style_metadata = { "offset" : _set_line_style_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(LINE_STYLE),) }
+            "marshallers" : (agmarshall.EnumArg(LineStyle),) }
     @line_style.setter
-    def line_style(self, newVal:"LINE_STYLE") -> None:
-        return self._intf.set_property(DrawElemLine._metadata, DrawElemLine._set_line_style_metadata, newVal)
+    def line_style(self, value:"LineStyle") -> None:
+        return self._intf.set_property(DrawElementLine._metadata, DrawElementLine._set_line_style_metadata, value)
 
     _property_names[left] = "left"
     _property_names[right] = "right"
@@ -2520,10 +2522,10 @@ class DrawElemLine(SupportsDeleteCallback):
     _property_names[line_width] = "line_width"
     _property_names[line_style] = "line_style"
 
-    def __init__(self, sourceObject=None):
-        """Construct an object of type DrawElemLine."""
+    def __init__(self, source_object=None):
+        """Construct an object of type DrawElementLine."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, DrawElemLine)
+        initialize_from_source_object(self, source_object, DrawElementLine)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -2531,10 +2533,10 @@ class DrawElemLine(SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, DrawElemLine, [DrawElemLine, ])
+        set_class_attribute(self, attrname, value, DrawElementLine, [DrawElementLine, ])
 
-agcls.AgClassCatalog.add_catalog_entry((5698625807246192592, 13092199471832302782), DrawElemLine)
-agcls.AgTypeNameMap["DrawElemLine"] = DrawElemLine
+agcls.AgClassCatalog.add_catalog_entry((5698625807246192592, 13092199471832302782), DrawElementLine)
+agcls.AgTypeNameMap["DrawElementLine"] = DrawElementLine
 
 class STKXSSLCertificateErrorEventArgs(SupportsDeleteCallback):
     """Provide information about an SSL certificate that is expired or invalid."""
@@ -2564,9 +2566,9 @@ class STKXSSLCertificateErrorEventArgs(SupportsDeleteCallback):
     _set_ignore_error_metadata = { "offset" : _set_ignore_error_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
-    def set_ignore_error(self, ignoreError:bool) -> None:
+    def set_ignore_error(self, ignore_error:bool) -> None:
         """Specify True to ignore the certificate error and continue with establishing secure HTTP connection to the remote server."""
-        return self._intf.invoke(STKXSSLCertificateErrorEventArgs._metadata, STKXSSLCertificateErrorEventArgs._set_ignore_error_metadata, ignoreError)
+        return self._intf.invoke(STKXSSLCertificateErrorEventArgs._metadata, STKXSSLCertificateErrorEventArgs._set_ignore_error_metadata, ignore_error)
 
     _get_is_error_ignored_metadata = { "offset" : _get_is_error_ignored_method_offset,
             "arg_types" : (POINTER(agcom.VARIANT_BOOL),),
@@ -2579,9 +2581,9 @@ class STKXSSLCertificateErrorEventArgs(SupportsDeleteCallback):
     _set_ignore_error_permanently_metadata = { "offset" : _set_ignore_error_permanently_method_offset,
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
-    def set_ignore_error_permanently(self, ignoreErrorPermanently:bool) -> None:
+    def set_ignore_error_permanently(self, ignore_error_permanently:bool) -> None:
         """Specify True to ignore the certificate error and add the certificate to the list of trusted certificates."""
-        return self._intf.invoke(STKXSSLCertificateErrorEventArgs._metadata, STKXSSLCertificateErrorEventArgs._set_ignore_error_permanently_metadata, ignoreErrorPermanently)
+        return self._intf.invoke(STKXSSLCertificateErrorEventArgs._metadata, STKXSSLCertificateErrorEventArgs._set_ignore_error_permanently_metadata, ignore_error_permanently)
 
     _get_serial_number_metadata = { "offset" : _get_serial_number_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -2651,9 +2653,9 @@ class STKXSSLCertificateErrorEventArgs(SupportsDeleteCallback):
             "arg_types" : (agcom.VARIANT_BOOL,),
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @handled.setter
-    def handled(self, bHandled:bool) -> None:
+    def handled(self, handled:bool) -> None:
         """Indicate whether the event should continue be routed to the listeners. Setting Handled to true will prevent the event from reaching any remaining listeners."""
-        return self._intf.set_property(STKXSSLCertificateErrorEventArgs._metadata, STKXSSLCertificateErrorEventArgs._set_handled_metadata, bHandled)
+        return self._intf.set_property(STKXSSLCertificateErrorEventArgs._metadata, STKXSSLCertificateErrorEventArgs._set_handled_metadata, handled)
 
     _property_names[is_error_ignored] = "is_error_ignored"
     _property_names[serial_number] = "serial_number"
@@ -2665,10 +2667,10 @@ class STKXSSLCertificateErrorEventArgs(SupportsDeleteCallback):
     _property_names[pem_data] = "pem_data"
     _property_names[handled] = "handled"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type STKXSSLCertificateErrorEventArgs."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, STKXSSLCertificateErrorEventArgs)
+        initialize_from_source_object(self, source_object, STKXSSLCertificateErrorEventArgs)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):
@@ -2714,10 +2716,10 @@ class STKXConControlQuitReceivedEventArgs(SupportsDeleteCallback):
 
     _property_names[acknowledge] = "acknowledge"
 
-    def __init__(self, sourceObject=None):
+    def __init__(self, source_object=None):
         """Construct an object of type STKXConControlQuitReceivedEventArgs."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, sourceObject, STKXConControlQuitReceivedEventArgs)
+        initialize_from_source_object(self, source_object, STKXConControlQuitReceivedEventArgs)
     def _private_init(self, intf:InterfaceProxy):
         self.__dict__["_intf"] = intf
     def __eq__(self, other):

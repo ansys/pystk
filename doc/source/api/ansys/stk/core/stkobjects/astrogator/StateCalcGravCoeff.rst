@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcGravCoeff.central_body_name`
-              - Gets or sets the central body of the component.
+              - Get or set the central body of the component.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcGravCoeff.gravity_filename`
               - Source for the gravity coefficient.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcGravCoeff.coefficient_type`
@@ -50,7 +50,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcGravCoeff.central_body_name
     :type: str
 
-    Gets or sets the central body of the component.
+    Get or set the central body of the component.
 
 .. py:property:: gravity_filename
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcGravCoeff.gravity_filename
@@ -60,7 +60,7 @@ Property detail
 
 .. py:property:: coefficient_type
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcGravCoeff.coefficient_type
-    :type: GRAV_COEFF_COEFFICIENT_TYPE
+    :type: GravityCoefficientType
 
     Coefficient type.
 
@@ -78,7 +78,7 @@ Property detail
 
 .. py:property:: normalization_type
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcGravCoeff.normalization_type
-    :type: GRAV_COEFF_NORMALIZATION_TYPE
+    :type: GravityCoefficientNormalizationType
 
     Normalization type.
 

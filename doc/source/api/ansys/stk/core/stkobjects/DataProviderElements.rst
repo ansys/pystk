@@ -32,9 +32,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderElements.count`
-              - Returns number of elements for this data provider.
-            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderElements._NewEnum`
-              - Returns enum of AgDataPrvElement object.
+              - Return number of elements for this data provider.
+            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderElements._new_enum`
+              - Return enum of AgDataPrvElement object.
 
 
 
@@ -53,26 +53,26 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.DataProviderElements.count
     :type: int
 
-    Returns number of elements for this data provider.
+    Return number of elements for this data provider.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.DataProviderElements._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.DataProviderElements._new_enum
     :type: EnumeratorProxy
 
-    Returns enum of AgDataPrvElement object.
+    Return enum of AgDataPrvElement object.
 
 
 Method detail
 -------------
 
-.. py:method:: item(self, indexOrName: typing.Any) -> DataProviderElement
+.. py:method:: item(self, index_or_name: typing.Any) -> DataProviderElement
     :canonical: ansys.stk.core.stkobjects.DataProviderElements.item
 
     Return the specific item provided an Index.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 

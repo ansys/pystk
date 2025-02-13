@@ -20,13 +20,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintAnalysisWorkbench.enable_min`
-              - Enables the Min property.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintAnalysisWorkbench.enable_max`
-              - Enables the Max property.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintAnalysisWorkbench.min`
+            * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintAnalysisWorkbench.enable_minimum`
+              - Enable the Min property.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintAnalysisWorkbench.enable_maximum`
+              - Enable the Max property.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintAnalysisWorkbench.minimum`
               - Min value for the access constraint.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintAnalysisWorkbench.max`
+            * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintAnalysisWorkbench.maximum`
               - Max value for the access constraint.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintAnalysisWorkbench.reference`
               - Reference value for the access constraint.
@@ -44,26 +44,26 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: enable_min
-    :canonical: ansys.stk.core.stkobjects.AccessConstraintAnalysisWorkbench.enable_min
+.. py:property:: enable_minimum
+    :canonical: ansys.stk.core.stkobjects.AccessConstraintAnalysisWorkbench.enable_minimum
     :type: bool
 
-    Enables the Min property.
+    Enable the Min property.
 
-.. py:property:: enable_max
-    :canonical: ansys.stk.core.stkobjects.AccessConstraintAnalysisWorkbench.enable_max
+.. py:property:: enable_maximum
+    :canonical: ansys.stk.core.stkobjects.AccessConstraintAnalysisWorkbench.enable_maximum
     :type: bool
 
-    Enables the Max property.
+    Enable the Max property.
 
-.. py:property:: min
-    :canonical: ansys.stk.core.stkobjects.AccessConstraintAnalysisWorkbench.min
+.. py:property:: minimum
+    :canonical: ansys.stk.core.stkobjects.AccessConstraintAnalysisWorkbench.minimum
     :type: typing.Any
 
     Min value for the access constraint.
 
-.. py:property:: max
-    :canonical: ansys.stk.core.stkobjects.AccessConstraintAnalysisWorkbench.max
+.. py:property:: maximum
+    :canonical: ansys.stk.core.stkobjects.AccessConstraintAnalysisWorkbench.maximum
     :type: typing.Any
 
     Max value for the access constraint.

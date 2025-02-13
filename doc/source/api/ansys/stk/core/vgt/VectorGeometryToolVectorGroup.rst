@@ -36,13 +36,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolVectorGroup.context`
-              - Returns a context object. The context can be used to find out which central body or STK object this instance is associated with.
+              - Return a context object. The context can be used to find out which central body or STK object this instance is associated with.
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolVectorGroup.count`
-              - Returns a number of elements in the group.
+              - Return a number of elements in the group.
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolVectorGroup.factory`
-              - Returns a Factory object used to create custom vectors.
-            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolVectorGroup._NewEnum`
-              - Returns a COM enumerator.
+              - Return a Factory object used to create custom vectors.
+            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolVectorGroup._new_enum`
+              - Return a COM enumerator.
 
 
 
@@ -59,40 +59,40 @@ Property detail
 
 .. py:property:: context
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorGroup.context
-    :type: IAnalysisWorkbenchContext
+    :type: IAnalysisWorkbenchComponentContext
 
-    Returns a context object. The context can be used to find out which central body or STK object this instance is associated with.
+    Return a context object. The context can be used to find out which central body or STK object this instance is associated with.
 
 .. py:property:: count
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorGroup.count
     :type: int
 
-    Returns a number of elements in the group.
+    Return a number of elements in the group.
 
 .. py:property:: factory
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorGroup.factory
     :type: VectorGeometryToolVectorFactory
 
-    Returns a Factory object used to create custom vectors.
+    Return a Factory object used to create custom vectors.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorGroup._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorGroup._new_enum
     :type: EnumeratorProxy
 
-    Returns a COM enumerator.
+    Return a COM enumerator.
 
 
 Method detail
 -------------
 
-.. py:method:: remove(self, vectorName: str) -> None
+.. py:method:: remove(self, vector_name: str) -> None
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorGroup.remove
 
     Remove a specified vector.
 
     :Parameters:
 
-    **vectorName** : :obj:`~str`
+    **vector_name** : :obj:`~str`
 
     :Returns:
 
@@ -114,14 +114,14 @@ Method detail
 
 
 
-.. py:method:: item(self, indexOrName: typing.Any) -> IVectorGeometryToolVector
+.. py:method:: item(self, index_or_name: typing.Any) -> IVectorGeometryToolVector
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorGroup.item
 
     Return a vector by name or at a specified position.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 

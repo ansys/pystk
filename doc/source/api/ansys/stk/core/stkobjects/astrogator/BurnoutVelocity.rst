@@ -21,12 +21,12 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.BurnoutVelocity.burnout_option`
               - Select to use the fixed or inertial frame.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.BurnoutVelocity.fixed_velocity`
-              - Gets or sets the velocity magnitude . Uses Rate Dimension.
+              - Get or set the velocity magnitude . Uses Rate Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.BurnoutVelocity.inertial_velocity`
-              - Gets or sets the velocity magnitude. Uses Rate Dimension.
+              - Get or set the velocity magnitude. Uses Rate Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.BurnoutVelocity.inertial_velocity_azimuth`
-              - Gets or sets the inertial velocity azimuth. Inertial velocity azimuth is the angle from the projection of north in the local horizontal plane to the inertial velocity vector, right handed. Uses Angle Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.BurnoutVelocity.inertial_horizontal_fpa`
+              - Get or set the inertial velocity azimuth. Inertial velocity azimuth is the angle from the projection of north in the local horizontal plane to the inertial velocity vector, right handed. Uses Angle Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.BurnoutVelocity.inertial_horizontal_flight_path_angle`
               - Inertial horizontal flight path angle is the angle from the local horizontal to the inertial velocity vector, positive towards radius. It is also 90 degrees minus vertical flight path angle. Uses Angle Dimension.
 
 
@@ -44,7 +44,7 @@ Property detail
 
 .. py:property:: burnout_option
     :canonical: ansys.stk.core.stkobjects.astrogator.BurnoutVelocity.burnout_option
-    :type: BURNOUT_OPTIONS
+    :type: BurnoutOptions
 
     Select to use the fixed or inertial frame.
 
@@ -52,22 +52,22 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.BurnoutVelocity.fixed_velocity
     :type: float
 
-    Gets or sets the velocity magnitude . Uses Rate Dimension.
+    Get or set the velocity magnitude . Uses Rate Dimension.
 
 .. py:property:: inertial_velocity
     :canonical: ansys.stk.core.stkobjects.astrogator.BurnoutVelocity.inertial_velocity
     :type: float
 
-    Gets or sets the velocity magnitude. Uses Rate Dimension.
+    Get or set the velocity magnitude. Uses Rate Dimension.
 
 .. py:property:: inertial_velocity_azimuth
     :canonical: ansys.stk.core.stkobjects.astrogator.BurnoutVelocity.inertial_velocity_azimuth
     :type: typing.Any
 
-    Gets or sets the inertial velocity azimuth. Inertial velocity azimuth is the angle from the projection of north in the local horizontal plane to the inertial velocity vector, right handed. Uses Angle Dimension.
+    Get or set the inertial velocity azimuth. Inertial velocity azimuth is the angle from the projection of north in the local horizontal plane to the inertial velocity vector, right handed. Uses Angle Dimension.
 
-.. py:property:: inertial_horizontal_fpa
-    :canonical: ansys.stk.core.stkobjects.astrogator.BurnoutVelocity.inertial_horizontal_fpa
+.. py:property:: inertial_horizontal_flight_path_angle
+    :canonical: ansys.stk.core.stkobjects.astrogator.BurnoutVelocity.inertial_horizontal_flight_path_angle
     :type: typing.Any
 
     Inertial horizontal flight path angle is the angle from the local horizontal to the inertial velocity vector, positive towards radius. It is also 90 degrees minus vertical flight path angle. Uses Angle Dimension.

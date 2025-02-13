@@ -30,9 +30,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileChangeStopSegment.segment_name`
-              - Gets or sets the targeted stop segment.
+              - Get or set the targeted stop segment.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileChangeStopSegment.state`
-              - Gets or sets the new state of the targeted stop segment.
+              - Get or set the new state of the targeted stop segment.
 
 
 
@@ -51,13 +51,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileChangeStopSegment.segment_name
     :type: str
 
-    Gets or sets the targeted stop segment.
+    Get or set the targeted stop segment.
 
 .. py:property:: state
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileChangeStopSegment.state
-    :type: STATE
+    :type: StateType
 
-    Gets or sets the new state of the targeted stop segment.
+    Get or set the new state of the targeted stop segment.
 
 
 Method detail
@@ -65,14 +65,14 @@ Method detail
 
 
 
-.. py:method:: set_segment(self, pVAMCSStop: MissionControlSequenceStop) -> None
+.. py:method:: set_segment(self, mcs_stop: MCSStop) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileChangeStopSegment.set_segment
 
     Set the stop segment to target.
 
     :Parameters:
 
-    **pVAMCSStop** : :obj:`~MissionControlSequenceStop`
+    **mcs_stop** : :obj:`~MCSStop`
 
     :Returns:
 

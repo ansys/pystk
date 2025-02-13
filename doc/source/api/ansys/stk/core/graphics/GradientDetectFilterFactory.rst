@@ -24,7 +24,6 @@ Overview
               - Initialize a new instance with specified gradient detect method.
 
 
-
 Import detail
 -------------
 
@@ -46,14 +45,14 @@ Method detail
 
         :obj:`~GradientDetectFilter`
 
-.. py:method:: initialize_with_method(self, method: GRADIENT_DETECT_METHOD) -> GradientDetectFilter
+.. py:method:: initialize_with_method(self, method: GradientDetectMethod) -> GradientDetectFilter
     :canonical: ansys.stk.core.graphics.GradientDetectFilterFactory.initialize_with_method
 
     Initialize a new instance with specified gradient detect method.
 
     :Parameters:
 
-    **method** : :obj:`~GRADIENT_DETECT_METHOD`
+    **method** : :obj:`~GradientDetectMethod`
 
     :Returns:
 

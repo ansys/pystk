@@ -31,8 +31,8 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.vgt.CalculationToolScalarCustom.filename`
               - A path to MATLAB (.m or .dll), Perl or VBScript file.
-            * - :py:attr:`~ansys.stk.core.vgt.CalculationToolScalarCustom.invalidate_on_exec_error`
-              - Specifies InvalidOnExecError flag for a custom scalar.
+            * - :py:attr:`~ansys.stk.core.vgt.CalculationToolScalarCustom.invalidate_on_execution_error`
+              - Specify InvalidOnExecError flag for a custom scalar.
 
 
 
@@ -53,11 +53,11 @@ Property detail
 
     A path to MATLAB (.m or .dll), Perl or VBScript file.
 
-.. py:property:: invalidate_on_exec_error
-    :canonical: ansys.stk.core.vgt.CalculationToolScalarCustom.invalidate_on_exec_error
+.. py:property:: invalidate_on_execution_error
+    :canonical: ansys.stk.core.vgt.CalculationToolScalarCustom.invalidate_on_execution_error
     :type: bool
 
-    Specifies InvalidOnExecError flag for a custom scalar.
+    Specify InvalidOnExecError flag for a custom scalar.
 
 
 Method detail

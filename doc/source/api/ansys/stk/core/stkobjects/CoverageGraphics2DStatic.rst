@@ -18,14 +18,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGraphics2DStatic.is_region_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGraphics2DStatic.show_region`
               - Specify whether the boundary of each coverage region displays in the 2D Graphics window.
-            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGraphics2DStatic.is_points_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGraphics2DStatic.show_points`
               - Specify whether each grid point is shown in the 2D Graphics window as coverage computations are completed.
-            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGraphics2DStatic.is_labels_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGraphics2DStatic.show_labels`
               - Specify whether the name of each coverage region displays in the 2D Graphics window.
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGraphics2DStatic.color`
-              - Gets or sets the color in which regions and points display in the 2D Graphics window.
+              - Get or set the color in which regions and points display in the 2D Graphics window.
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGraphics2DStatic.fill_points`
               - Specify whether coverage points or regions display as filled polygons in the 2D Graphics window.
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGraphics2DStatic.marker_style`
@@ -46,20 +46,20 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: is_region_visible
-    :canonical: ansys.stk.core.stkobjects.CoverageGraphics2DStatic.is_region_visible
+.. py:property:: show_region
+    :canonical: ansys.stk.core.stkobjects.CoverageGraphics2DStatic.show_region
     :type: bool
 
     Specify whether the boundary of each coverage region displays in the 2D Graphics window.
 
-.. py:property:: is_points_visible
-    :canonical: ansys.stk.core.stkobjects.CoverageGraphics2DStatic.is_points_visible
+.. py:property:: show_points
+    :canonical: ansys.stk.core.stkobjects.CoverageGraphics2DStatic.show_points
     :type: bool
 
     Specify whether each grid point is shown in the 2D Graphics window as coverage computations are completed.
 
-.. py:property:: is_labels_visible
-    :canonical: ansys.stk.core.stkobjects.CoverageGraphics2DStatic.is_labels_visible
+.. py:property:: show_labels
+    :canonical: ansys.stk.core.stkobjects.CoverageGraphics2DStatic.show_labels
     :type: bool
 
     Specify whether the name of each coverage region displays in the 2D Graphics window.
@@ -68,7 +68,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.CoverageGraphics2DStatic.color
     :type: agcolor.Color
 
-    Gets or sets the color in which regions and points display in the 2D Graphics window.
+    Get or set the color in which regions and points display in the 2D Graphics window.
 
 .. py:property:: fill_points
     :canonical: ansys.stk.core.stkobjects.CoverageGraphics2DStatic.fill_points

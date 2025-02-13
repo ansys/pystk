@@ -18,7 +18,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricAnalysisInterval.set_evaluation_of_spatial_calc_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricAnalysisInterval.set_spatial_calcuation_evaluation_type`
               - Evaluate spatial calculation type, using the AgEVmSpatialCalcEvalType enumeration.
 
     .. tab-item:: Properties
@@ -29,12 +29,12 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricAnalysisInterval.analysis_interval`
               - The volume analysis interval or interval list.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricAnalysisInterval.evaluation_of_spatial_calc_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricAnalysisInterval.evaluation_of_spatial_calculation_type`
               - Get evaluation of spatial calculation type. A member of the AgEVmSpatialCalcEvalType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricAnalysisInterval.time_array`
               - The time array when Evaluation of spatial calculation at times from time array is used.
             * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricAnalysisInterval.step_size`
-              - Gets or sets the step size.
+              - Get or set the step size.
             * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricAnalysisInterval.available_analysis_intervals`
               - Get the available analysis intervals.
             * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricAnalysisInterval.available_times_from_time_array`
@@ -59,9 +59,9 @@ Property detail
 
     The volume analysis interval or interval list.
 
-.. py:property:: evaluation_of_spatial_calc_type
-    :canonical: ansys.stk.core.stkobjects.VolumetricAnalysisInterval.evaluation_of_spatial_calc_type
-    :type: VOLUMETRIC_SPATIAL_CALC_EVAL_TYPE
+.. py:property:: evaluation_of_spatial_calculation_type
+    :canonical: ansys.stk.core.stkobjects.VolumetricAnalysisInterval.evaluation_of_spatial_calculation_type
+    :type: VolumetricSpatialCalculationEvaluationType
 
     Get evaluation of spatial calculation type. A member of the AgEVmSpatialCalcEvalType enumeration.
 
@@ -75,7 +75,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VolumetricAnalysisInterval.step_size
     :type: float
 
-    Gets or sets the step size.
+    Get or set the step size.
 
 .. py:property:: available_analysis_intervals
     :canonical: ansys.stk.core.stkobjects.VolumetricAnalysisInterval.available_analysis_intervals
@@ -96,14 +96,14 @@ Method detail
 
 
 
-.. py:method:: set_evaluation_of_spatial_calc_type(self, spatialCalcEvalType: VOLUMETRIC_SPATIAL_CALC_EVAL_TYPE) -> None
-    :canonical: ansys.stk.core.stkobjects.VolumetricAnalysisInterval.set_evaluation_of_spatial_calc_type
+.. py:method:: set_spatial_calcuation_evaluation_type(self, spatial_calc_eval_type: VolumetricSpatialCalculationEvaluationType) -> None
+    :canonical: ansys.stk.core.stkobjects.VolumetricAnalysisInterval.set_spatial_calcuation_evaluation_type
 
     Evaluate spatial calculation type, using the AgEVmSpatialCalcEvalType enumeration.
 
     :Parameters:
 
-    **spatialCalcEvalType** : :obj:`~VOLUMETRIC_SPATIAL_CALC_EVAL_TYPE`
+    **spatial_calc_eval_type** : :obj:`~VolumetricSpatialCalculationEvaluationType`
 
     :Returns:
 

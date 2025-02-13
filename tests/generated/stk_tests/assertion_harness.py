@@ -66,12 +66,12 @@ class CodeRunner(object):
         temp = []
         try:
             for unit in units:
-                saved = Unit(unit.Dimension, self._root.unit_preferences.get_current_unit_abbrv(unit.Dimension))
+                saved = Unit(unit.Dimension, self._root.units_preferences.get_current_unit_abbrv(unit.Dimension))
                 temp.append(saved)
-                self._root.unit_preferences.set_current_unit(unit.Dimension, unit.UnitName)
+                self._root.units_preferences.set_current_unit(unit.Dimension, unit.UnitName)
 
             action()
 
         finally:
             for unit in temp:
-                self._root.unit_preferences.set_current_unit(unit.Dimension, unit.UnitName)
+                self._root.units_preferences.set_current_unit(unit.Dimension, unit.UnitName)

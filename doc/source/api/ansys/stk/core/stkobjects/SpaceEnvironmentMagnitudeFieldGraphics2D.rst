@@ -20,11 +20,11 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.compute_b_field_as_array`
               - Compute geomagnetic field in Earth Fixed components, returned as the array (Bx, By, Bz), at the specified Earth location. Uses Date, Angle, Longitude, Distance, and MagneticField Dimensions.
-            * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.compute_dipole_l`
+            * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.compute_dipole__shell`
               - Compute dipole L-shell parameter at the specified Earth location. Uses Date, Angle, Longitude, and Distance Dimensions.
-            * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.compute_mc_ilwain_l`
+            * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.compute_mcilwain_l_shell`
               - Compute McIlwain L-shell parameter at the specified Earth location. Uses Date, Angle, Longitude, and Distance Dimensions.
-            * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.compute_b_beq`
+            * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.compute_b_over_beq`
               - Compute B/Beq (i.e., the ratio of the magnetic field at the specified Earth location to the minimum field intensity along the field line thru the location). Uses Date, Angle, Longitude, and Distance Dimensions.
 
     .. tab-item:: Properties
@@ -33,7 +33,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.is_magnitude_field_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.show_magnetic_field`
               - Flag to show magnetic field.
             * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.color_mode`
               - Mode by which color is assigned.
@@ -42,30 +42,30 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.field_line_refresh`
               - Time between refresh of magnetic field lines. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.color_ramp_start`
-              - This property is deprecated. Magnetic field start color.
+              - Do not use this property, as it is deprecated. Magnetic field start color.
             * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.color_ramp_stop`
-              - This property is deprecated. Magnetic field stop color.
+              - Do not use this property, as it is deprecated. Magnetic field stop color.
             * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.line_style`
               - Magnetic field line style.
             * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.line_width`
               - Magnetic field line width.
             * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.reference_longitude`
-              - Sets initial longitude sample. Longitude is measured about the Z-axis of the Solar Magnetic axes from the -X-axis. Uses Longtitude Dimension.
+              - Set initial longitude sample. Longitude is measured about the Z-axis of the Solar Magnetic axes from the -X-axis. Uses Longtitude Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.start_latitude`
-              - Gets or sets the starting magnetic latitude field line to show. Uses Latitude Dimension.
+              - Get or set the starting magnetic latitude field line to show. Uses Latitude Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.stop_latitude`
-              - Gets or sets the ending magnetic latitude field line to show. Uses Latitude Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.num_field_lines`
-              - Gets or sets the number of field lines to show per longitude.
-            * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.num_longitudes`
-              - Gets or sets the number of longitudes to show.
+              - Get or set the ending magnetic latitude field line to show. Uses Latitude Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.number_of_field_lines`
+              - Get or set the number of field lines to show per longitude.
+            * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.number_of_longitudes`
+              - Get or set the number of longitudes to show.
             * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.main_field`
-              - Gets or sets the main magnetic field.
+              - Get or set the main magnetic field.
             * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.external_field`
               - External magnetic field.
             * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.igrf_update_rate`
               - Duration between updates of IGRF magnetic field model coefficients. Uses Time Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.max_translucency`
+            * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.maximum_translucency`
               - Maximum translucency expressed as a percentage.
             * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.color_ramp_start_color`
               - Magnetic field start color.
@@ -85,21 +85,21 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: is_magnitude_field_visible
-    :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.is_magnitude_field_visible
+.. py:property:: show_magnetic_field
+    :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.show_magnetic_field
     :type: bool
 
     Flag to show magnetic field.
 
 .. py:property:: color_mode
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.color_mode
-    :type: SPACE_ENVIRONMENT_MAGNITUDE_FIELD_COLOR_MODE
+    :type: SpaceEnvironmentMagneticFieldColorMode
 
     Mode by which color is assigned.
 
 .. py:property:: color_scale
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.color_scale
-    :type: SPACE_ENVIRONMENT_MAGNITUDE_FIELD_COLOR_SCALE
+    :type: SpaceEnvironmentMagneticFieldColorScaleType
 
     Scaling of magnetic field to use when assigning color/translucency.
 
@@ -113,23 +113,23 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.color_ramp_start
     :type: agcolor.Color
 
-    This property is deprecated. Magnetic field start color.
+    Do not use this property, as it is deprecated. Magnetic field start color.
 
 .. py:property:: color_ramp_stop
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.color_ramp_stop
     :type: agcolor.Color
 
-    This property is deprecated. Magnetic field stop color.
+    Do not use this property, as it is deprecated. Magnetic field stop color.
 
 .. py:property:: line_style
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.line_style
-    :type: LINE_STYLE
+    :type: LineStyle
 
     Magnetic field line style.
 
 .. py:property:: line_width
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.line_width
-    :type: LINE_WIDTH
+    :type: LineWidth
 
     Magnetic field line width.
 
@@ -137,41 +137,41 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.reference_longitude
     :type: float
 
-    Sets initial longitude sample. Longitude is measured about the Z-axis of the Solar Magnetic axes from the -X-axis. Uses Longtitude Dimension.
+    Set initial longitude sample. Longitude is measured about the Z-axis of the Solar Magnetic axes from the -X-axis. Uses Longtitude Dimension.
 
 .. py:property:: start_latitude
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.start_latitude
     :type: float
 
-    Gets or sets the starting magnetic latitude field line to show. Uses Latitude Dimension.
+    Get or set the starting magnetic latitude field line to show. Uses Latitude Dimension.
 
 .. py:property:: stop_latitude
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.stop_latitude
     :type: float
 
-    Gets or sets the ending magnetic latitude field line to show. Uses Latitude Dimension.
+    Get or set the ending magnetic latitude field line to show. Uses Latitude Dimension.
 
-.. py:property:: num_field_lines
-    :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.num_field_lines
+.. py:property:: number_of_field_lines
+    :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.number_of_field_lines
     :type: int
 
-    Gets or sets the number of field lines to show per longitude.
+    Get or set the number of field lines to show per longitude.
 
-.. py:property:: num_longitudes
-    :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.num_longitudes
+.. py:property:: number_of_longitudes
+    :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.number_of_longitudes
     :type: int
 
-    Gets or sets the number of longitudes to show.
+    Get or set the number of longitudes to show.
 
 .. py:property:: main_field
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.main_field
-    :type: SPACE_ENVIRONMENT_MAGNETIC_MAIN_FIELD
+    :type: SpaceEnvironmentMagneticMainField
 
-    Gets or sets the main magnetic field.
+    Get or set the main magnetic field.
 
 .. py:property:: external_field
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.external_field
-    :type: SPACE_ENVIRONMENT_MAGNETIC_EXTERNAL_FIELD
+    :type: SpaceEnvironmentMagneticExternalField
 
     External magnetic field.
 
@@ -181,8 +181,8 @@ Property detail
 
     Duration between updates of IGRF magnetic field model coefficients. Uses Time Dimension.
 
-.. py:property:: max_translucency
-    :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.max_translucency
+.. py:property:: maximum_translucency
+    :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.maximum_translucency
     :type: float
 
     Maximum translucency expressed as a percentage.
@@ -251,8 +251,8 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: compute_dipole_l(self, time: typing.Any, lat: float, lon: float, alt: float) -> float
-    :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.compute_dipole_l
+.. py:method:: compute_dipole__shell(self, time: typing.Any, lat: float, lon: float, alt: float) -> float
+    :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.compute_dipole__shell
 
     Compute dipole L-shell parameter at the specified Earth location. Uses Date, Angle, Longitude, and Distance Dimensions.
 
@@ -267,8 +267,8 @@ Method detail
 
         :obj:`~float`
 
-.. py:method:: compute_mc_ilwain_l(self, time: typing.Any, lat: float, lon: float, alt: float) -> float
-    :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.compute_mc_ilwain_l
+.. py:method:: compute_mcilwain_l_shell(self, time: typing.Any, lat: float, lon: float, alt: float) -> float
+    :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.compute_mcilwain_l_shell
 
     Compute McIlwain L-shell parameter at the specified Earth location. Uses Date, Angle, Longitude, and Distance Dimensions.
 
@@ -283,8 +283,8 @@ Method detail
 
         :obj:`~float`
 
-.. py:method:: compute_b_beq(self, time: typing.Any, lat: float, lon: float, alt: float) -> float
-    :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.compute_b_beq
+.. py:method:: compute_b_over_beq(self, time: typing.Any, lat: float, lon: float, alt: float) -> float
+    :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.compute_b_over_beq
 
     Compute B/Beq (i.e., the ratio of the magnetic field at the specified Earth location to the minimum field intensity along the field line thru the location). Uses Date, Angle, Longitude, and Distance Dimensions.
 

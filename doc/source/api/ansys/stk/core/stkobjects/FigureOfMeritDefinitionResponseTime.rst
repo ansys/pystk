@@ -9,10 +9,6 @@ FigureOfMeritDefinitionResponseTime
 
 .. py:currentmodule:: FigureOfMeritDefinitionResponseTime
 
-Overview
---------
-
-
 
 Import detail
 -------------

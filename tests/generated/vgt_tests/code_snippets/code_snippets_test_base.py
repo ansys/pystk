@@ -34,7 +34,7 @@ class CodeSnippetsTestBase(TestBase):
     @staticmethod
     def Uninitialize():
         CodeSnippetsTestBase.SafeScenarioUnload()
-        CodeSnippetsTestBase.m_Root.unit_preferences.reset_units()
+        CodeSnippetsTestBase.m_Root.units_preferences.reset_units()
         TestBase.Uninitialize()
 
     @staticmethod

@@ -19,9 +19,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IDemodulatorModel.name`
-              - Gets the demodulator model name.
+              - Get the demodulator model name.
             * - :py:attr:`~ansys.stk.core.stkobjects.IDemodulatorModel.type`
-              - Gets the demodulator model type enumeration.
+              - Get the demodulator model type enumeration.
 
 
 Import detail
@@ -39,12 +39,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.IDemodulatorModel.name
     :type: str
 
-    Gets the demodulator model name.
+    Get the demodulator model name.
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.IDemodulatorModel.type
-    :type: DEMODULATOR_MODEL_TYPE
+    :type: DemodulatorModelType
 
-    Gets the demodulator model type enumeration.
+    Get the demodulator model type enumeration.
 
 

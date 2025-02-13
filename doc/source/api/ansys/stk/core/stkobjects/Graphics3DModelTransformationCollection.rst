@@ -28,8 +28,8 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DModelTransformationCollection.count`
-              - Returns a number of elements in the collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DModelTransformationCollection._NewEnum`
+              - Return a number of elements in the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DModelTransformationCollection._new_enum`
               - Enumerates the elements in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DModelTransformationCollection.name`
               - Name of the Model Transformation.
@@ -51,10 +51,10 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Graphics3DModelTransformationCollection.count
     :type: int
 
-    Returns a number of elements in the collection.
+    Return a number of elements in the collection.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.Graphics3DModelTransformationCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.Graphics3DModelTransformationCollection._new_enum
     :type: EnumeratorProxy
 
     Enumerates the elements in the collection.

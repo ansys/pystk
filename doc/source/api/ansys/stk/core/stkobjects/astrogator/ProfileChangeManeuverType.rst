@@ -21,9 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileChangeManeuverType.segment`
-              - Gets or sets the targeted maneuver segment.
+              - Get or set the targeted maneuver segment.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileChangeManeuverType.maneuver_type`
-              - Gets or sets the new maneuver type for the targeted segment.
+              - Get or set the new maneuver type for the targeted segment.
 
 
 
@@ -40,14 +40,14 @@ Property detail
 
 .. py:property:: segment
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileChangeManeuverType.segment
-    :type: MissionControlSequenceManeuver
+    :type: MCSManeuver
 
-    Gets or sets the targeted maneuver segment.
+    Get or set the targeted maneuver segment.
 
 .. py:property:: maneuver_type
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileChangeManeuverType.maneuver_type
-    :type: MANEUVER_TYPE
+    :type: ManeuverType
 
-    Gets or sets the new maneuver type for the targeted segment.
+    Get or set the new maneuver type for the targeted segment.
 
 

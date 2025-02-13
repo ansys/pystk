@@ -20,8 +20,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageResolutionLatLon.lat_lon`
-              - Gets or sets the latitude/longitude value used to define grid resolution. Uses Angle Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageResolutionLatLon.latitude_longitude`
+              - Get or set the latitude/longitude value used to define grid resolution. Uses Angle Dimension.
 
 
 
@@ -36,10 +36,10 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: lat_lon
-    :canonical: ansys.stk.core.stkobjects.CoverageResolutionLatLon.lat_lon
+.. py:property:: latitude_longitude
+    :canonical: ansys.stk.core.stkobjects.CoverageResolutionLatLon.latitude_longitude
     :type: typing.Any
 
-    Gets or sets the latitude/longitude value used to define grid resolution. Uses Angle Dimension.
+    Get or set the latitude/longitude value used to define grid resolution. Uses Angle Dimension.
 
 

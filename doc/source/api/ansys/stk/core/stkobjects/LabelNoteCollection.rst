@@ -33,7 +33,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.LabelNoteCollection.count`
               - Number of label notes.
-            * - :py:attr:`~ansys.stk.core.stkobjects.LabelNoteCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.LabelNoteCollection._new_enum`
               - Enumerates through the LabelNotes.
 
 
@@ -55,8 +55,8 @@ Property detail
 
     Number of label notes.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.LabelNoteCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.LabelNoteCollection._new_enum
     :type: EnumeratorProxy
 
     Enumerates through the LabelNotes.

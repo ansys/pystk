@@ -36,7 +36,7 @@ Overview
               - Set the sensor's location type, a member of the AgESnLocation enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.Sensor.is_refraction_type_supported`
               - Get a value indicating whether the specified type can be used.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Sensor.get_stars_in_fov`
+            * - :py:attr:`~ansys.stk.core.stkobjects.Sensor.get_stars_in_field_of_view`
               - Return celestial bodies within the sensor's field of view.
 
     .. tab-item:: Properties
@@ -76,13 +76,13 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.Sensor.swath`
               - Get the sensor's swath.
             * - :py:attr:`~ansys.stk.core.stkobjects.Sensor.refraction_supported_types`
-              - Returns an array of valid choices.
+              - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.Sensor.refraction_model`
-              - Gets a refraction model.
+              - Get a refraction model.
             * - :py:attr:`~ansys.stk.core.stkobjects.Sensor.use_refraction_in_access`
               - Flag controls whether refraction is applied when computing relative position in Access.
             * - :py:attr:`~ansys.stk.core.stkobjects.Sensor.common_tasks`
-              - Returns an interface that exposes common tasks.
+              - Return an interface that exposes common tasks.
 
 
 
@@ -99,7 +99,7 @@ Property detail
 
 .. py:property:: pattern_type
     :canonical: ansys.stk.core.stkobjects.Sensor.pattern_type
-    :type: SENSOR_PATTERN
+    :type: SensorPattern
 
     Criterion for defining the sensor pattern. A member of the AgESnPattern enumeration.
 
@@ -111,7 +111,7 @@ Property detail
 
 .. py:property:: pointing_type
     :canonical: ansys.stk.core.stkobjects.Sensor.pointing_type
-    :type: SENSOR_POINTING
+    :type: SensorPointing
 
     The sensor's pointing type. A member of the AgESnPointing enumeration.
 
@@ -123,7 +123,7 @@ Property detail
 
 .. py:property:: az_el_mask
     :canonical: ansys.stk.core.stkobjects.Sensor.az_el_mask
-    :type: AZ_EL_MASK_TYPE
+    :type: AzElMaskType
 
     Get the az-el mask.
 
@@ -147,7 +147,7 @@ Property detail
 
 .. py:property:: refraction
     :canonical: ansys.stk.core.stkobjects.Sensor.refraction
-    :type: SENSOR_REFRACTION_TYPE
+    :type: SensorRefractionType
 
     Refraction method, a member of the AgESnRefractionType enumeration.
 
@@ -165,7 +165,7 @@ Property detail
 
 .. py:property:: location_type
     :canonical: ansys.stk.core.stkobjects.Sensor.location_type
-    :type: SENSOR_LOCATION
+    :type: SensorLocation
 
     The location type being used by the sensor.
 
@@ -191,13 +191,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Sensor.refraction_supported_types
     :type: list
 
-    Returns an array of valid choices.
+    Return an array of valid choices.
 
 .. py:property:: refraction_model
     :canonical: ansys.stk.core.stkobjects.Sensor.refraction_model
     :type: IRefractionModelBase
 
-    Gets a refraction model.
+    Get a refraction model.
 
 .. py:property:: use_refraction_in_access
     :canonical: ansys.stk.core.stkobjects.Sensor.use_refraction_in_access
@@ -209,21 +209,21 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Sensor.common_tasks
     :type: SensorCommonTasks
 
-    Returns an interface that exposes common tasks.
+    Return an interface that exposes common tasks.
 
 
 Method detail
 -------------
 
 
-.. py:method:: set_pattern_type(self, patternType: SENSOR_PATTERN) -> None
+.. py:method:: set_pattern_type(self, pattern_type: SensorPattern) -> None
     :canonical: ansys.stk.core.stkobjects.Sensor.set_pattern_type
 
     Set the pattern type.
 
     :Parameters:
 
-    **patternType** : :obj:`~SENSOR_PATTERN`
+    **pattern_type** : :obj:`~SensorPattern`
 
     :Returns:
 
@@ -231,27 +231,27 @@ Method detail
 
 
 
-.. py:method:: set_pointing_type(self, pointingType: SENSOR_POINTING) -> None
+.. py:method:: set_pointing_type(self, pointing_type: SensorPointing) -> None
     :canonical: ansys.stk.core.stkobjects.Sensor.set_pointing_type
 
     Set the sensor's pointing type, using the AgESnPointing enumeration.
 
     :Parameters:
 
-    **pointingType** : :obj:`~SENSOR_POINTING`
+    **pointing_type** : :obj:`~SensorPointing`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: set_pointing_external_file(self, sensorPointingFile: str) -> None
+.. py:method:: set_pointing_external_file(self, sensor_pointing_file: str) -> None
     :canonical: ansys.stk.core.stkobjects.Sensor.set_pointing_external_file
 
     Set the external pointing type.
 
     :Parameters:
 
-    **sensorPointingFile** : :obj:`~str`
+    **sensor_pointing_file** : :obj:`~str`
 
     :Returns:
 
@@ -268,14 +268,14 @@ Method detail
         :obj:`~None`
 
 
-.. py:method:: set_az_el_mask(self, azElMaskType: AZ_EL_MASK_TYPE) -> None
+.. py:method:: set_az_el_mask(self, az_el_mask_type: AzElMaskType) -> None
     :canonical: ansys.stk.core.stkobjects.Sensor.set_az_el_mask
 
     Set the az-el mask type, using the AgEAzElMaskType enumeration.
 
     :Parameters:
 
-    **azElMaskType** : :obj:`~AZ_EL_MASK_TYPE`
+    **az_el_mask_type** : :obj:`~AzElMaskType`
 
     :Returns:
 
@@ -304,14 +304,14 @@ Method detail
 
 
 
-.. py:method:: set_location_type(self, locationType: SENSOR_LOCATION) -> None
+.. py:method:: set_location_type(self, location_type: SensorLocation) -> None
     :canonical: ansys.stk.core.stkobjects.Sensor.set_location_type
 
     Set the sensor's location type, a member of the AgESnLocation enumeration.
 
     :Parameters:
 
-    **locationType** : :obj:`~SENSOR_LOCATION`
+    **location_type** : :obj:`~SensorLocation`
 
     :Returns:
 
@@ -320,14 +320,14 @@ Method detail
 
 
 
-.. py:method:: is_refraction_type_supported(self, model: SENSOR_REFRACTION_TYPE) -> bool
+.. py:method:: is_refraction_type_supported(self, model: SensorRefractionType) -> bool
     :canonical: ansys.stk.core.stkobjects.Sensor.is_refraction_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **model** : :obj:`~SENSOR_REFRACTION_TYPE`
+    **model** : :obj:`~SensorRefractionType`
 
     :Returns:
 
@@ -338,8 +338,8 @@ Method detail
 
 
 
-.. py:method:: get_stars_in_fov(self, epoch: typing.Any) -> CelestialBodyCollection
-    :canonical: ansys.stk.core.stkobjects.Sensor.get_stars_in_fov
+.. py:method:: get_stars_in_field_of_view(self, epoch: typing.Any) -> ICelestialBodyInformationCollection
+    :canonical: ansys.stk.core.stkobjects.Sensor.get_stars_in_field_of_view
 
     Return celestial bodies within the sensor's field of view.
 
@@ -349,5 +349,5 @@ Method detail
 
     :Returns:
 
-        :obj:`~CelestialBodyCollection`
+        :obj:`~ICelestialBodyInformationCollection`
 

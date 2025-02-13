@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateDelaunay.coordinate_system_type`
-              - Gets or sets the coordinate system being used.
+              - Get or set the coordinate system being used.
             * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateDelaunay.coordinate_system`
               - Get the coordinate system and coordinate epoch.
             * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateDelaunay.l_type`
@@ -37,12 +37,12 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateDelaunay.g`
               - Value of G or G/SQRT(mu).
             * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateDelaunay.supported_coordinate_system_types`
-              - Returns an array of supported coordinate system types.
+              - Return an array of supported coordinate system types.
             * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateDelaunay.mean_anomaly`
               - Mean Anomaly (l). Uses Angle Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateDelaunay.arg_of_periapsis`
+            * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateDelaunay.argument_of_periapsis`
               - Argument of periapsis (g). Uses Angle Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateDelaunay.raan`
+            * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateDelaunay.right_ascension_ascending_node`
               - RAAN (h). Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateDelaunay.state_epoch`
               - Smart epoch component allows the user to configure the state epoch explicitly or implicitly (using a pre-defined or custom time instant component).
@@ -62,9 +62,9 @@ Property detail
 
 .. py:property:: coordinate_system_type
     :canonical: ansys.stk.core.stkobjects.OrbitStateDelaunay.coordinate_system_type
-    :type: COORDINATE_SYSTEM
+    :type: CoordinateSystem
 
-    Gets or sets the coordinate system being used.
+    Get or set the coordinate system being used.
 
 .. py:property:: coordinate_system
     :canonical: ansys.stk.core.stkobjects.OrbitStateDelaunay.coordinate_system
@@ -74,7 +74,7 @@ Property detail
 
 .. py:property:: l_type
     :canonical: ansys.stk.core.stkobjects.OrbitStateDelaunay.l_type
-    :type: DELAUNAY_L_TYPE
+    :type: DelaunayLType
 
     Option for Delaunay L (default or L/SQRT(mu).
 
@@ -86,7 +86,7 @@ Property detail
 
 .. py:property:: h_type
     :canonical: ansys.stk.core.stkobjects.OrbitStateDelaunay.h_type
-    :type: DELAUNAY_H_TYPE
+    :type: DelaunayHType
 
     Option for Delaunay H (default or H/SQRT(mu).
 
@@ -98,7 +98,7 @@ Property detail
 
 .. py:property:: g_type
     :canonical: ansys.stk.core.stkobjects.OrbitStateDelaunay.g_type
-    :type: DELAUNAY_G_TYPE
+    :type: DelaunayGType
 
     Option for Delaunay G (default or G/SQRT(mu).
 
@@ -112,7 +112,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.OrbitStateDelaunay.supported_coordinate_system_types
     :type: list
 
-    Returns an array of supported coordinate system types.
+    Return an array of supported coordinate system types.
 
 .. py:property:: mean_anomaly
     :canonical: ansys.stk.core.stkobjects.OrbitStateDelaunay.mean_anomaly
@@ -120,21 +120,21 @@ Property detail
 
     Mean Anomaly (l). Uses Angle Dimension.
 
-.. py:property:: arg_of_periapsis
-    :canonical: ansys.stk.core.stkobjects.OrbitStateDelaunay.arg_of_periapsis
+.. py:property:: argument_of_periapsis
+    :canonical: ansys.stk.core.stkobjects.OrbitStateDelaunay.argument_of_periapsis
     :type: float
 
     Argument of periapsis (g). Uses Angle Dimension.
 
-.. py:property:: raan
-    :canonical: ansys.stk.core.stkobjects.OrbitStateDelaunay.raan
+.. py:property:: right_ascension_ascending_node
+    :canonical: ansys.stk.core.stkobjects.OrbitStateDelaunay.right_ascension_ascending_node
     :type: float
 
     RAAN (h). Uses Angle Dimension.
 
 .. py:property:: state_epoch
     :canonical: ansys.stk.core.stkobjects.OrbitStateDelaunay.state_epoch
-    :type: ITimeToolEventSmartEpoch
+    :type: ITimeToolInstantSmartEpoch
 
     Smart epoch component allows the user to configure the state epoch explicitly or implicitly (using a pre-defined or custom time instant component).
 

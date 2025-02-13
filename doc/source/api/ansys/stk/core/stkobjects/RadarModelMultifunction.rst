@@ -30,25 +30,25 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelMultifunction.transmitter`
-              - Gets the radar transmitter.
+              - Get the radar transmitter.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelMultifunction.receiver`
-              - Gets the radar receiver.
+              - Get the radar receiver.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelMultifunction.clutter_geometry`
-              - This property is deprecated.Use the Clutter property instead.Gets the radar clutter geometry.
+              - Do not use this property, as it is deprecated.Use the Clutter property instead.Gets the radar clutter geometry.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelMultifunction.jamming`
-              - Gets the radar jamming.
+              - Get the radar jamming.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelMultifunction.location`
-              - Gets the radar location object.
+              - Get the radar location object.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelMultifunction.detection_processing`
-              - Gets the radar detection processing object.
+              - Get the radar detection processing object.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelMultifunction.pointing_strategy`
-              - Gets the pointing strategy.
+              - Get the pointing strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelMultifunction.antenna_beams`
-              - Gets the antenna beams collection.
+              - Get the antenna beams collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelMultifunction.waveform_strategy_settings`
-              - Gets the waveform selection strategy settings.
+              - Get the waveform selection strategy settings.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarModelMultifunction.clutter`
-              - Gets the radar clutter settings.
+              - Get the radar clutter settings.
 
 
 
@@ -67,61 +67,61 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.RadarModelMultifunction.transmitter
     :type: RadarTransmitterMultifunction
 
-    Gets the radar transmitter.
+    Get the radar transmitter.
 
 .. py:property:: receiver
     :canonical: ansys.stk.core.stkobjects.RadarModelMultifunction.receiver
     :type: RadarReceiver
 
-    Gets the radar receiver.
+    Get the radar receiver.
 
 .. py:property:: clutter_geometry
     :canonical: ansys.stk.core.stkobjects.RadarModelMultifunction.clutter_geometry
     :type: RadarClutterGeometry
 
-    This property is deprecated.Use the Clutter property instead.Gets the radar clutter geometry.
+    Do not use this property, as it is deprecated.Use the Clutter property instead.Gets the radar clutter geometry.
 
 .. py:property:: jamming
     :canonical: ansys.stk.core.stkobjects.RadarModelMultifunction.jamming
     :type: RadarJamming
 
-    Gets the radar jamming.
+    Get the radar jamming.
 
 .. py:property:: location
     :canonical: ansys.stk.core.stkobjects.RadarModelMultifunction.location
-    :type: CRLocation
+    :type: CommRadCartesianLocation
 
-    Gets the radar location object.
+    Get the radar location object.
 
 .. py:property:: detection_processing
     :canonical: ansys.stk.core.stkobjects.RadarModelMultifunction.detection_processing
     :type: RadarMultifunctionDetectionProcessing
 
-    Gets the radar detection processing object.
+    Get the radar detection processing object.
 
 .. py:property:: pointing_strategy
     :canonical: ansys.stk.core.stkobjects.RadarModelMultifunction.pointing_strategy
     :type: IPointingStrategy
 
-    Gets the pointing strategy.
+    Get the pointing strategy.
 
 .. py:property:: antenna_beams
     :canonical: ansys.stk.core.stkobjects.RadarModelMultifunction.antenna_beams
     :type: RadarAntennaBeamCollection
 
-    Gets the antenna beams collection.
+    Get the antenna beams collection.
 
 .. py:property:: waveform_strategy_settings
     :canonical: ansys.stk.core.stkobjects.RadarModelMultifunction.waveform_strategy_settings
     :type: RadarMultifunctionWaveformStrategySettings
 
-    Gets the waveform selection strategy settings.
+    Get the waveform selection strategy settings.
 
 .. py:property:: clutter
     :canonical: ansys.stk.core.stkobjects.RadarModelMultifunction.clutter
     :type: RadarClutter
 
-    Gets the radar clutter settings.
+    Get the radar clutter settings.
 
 
 Method detail
@@ -133,14 +133,14 @@ Method detail
 
 
 
-.. py:method:: set_pointing_strategy_type(self, val: POINTING_STRATEGY_TYPE) -> None
+.. py:method:: set_pointing_strategy_type(self, value: PointingStrategyType) -> None
     :canonical: ansys.stk.core.stkobjects.RadarModelMultifunction.set_pointing_strategy_type
 
     Set the current pointing strategy type.
 
     :Parameters:
 
-    **val** : :obj:`~POINTING_STRATEGY_TYPE`
+    **value** : :obj:`~PointingStrategyType`
 
     :Returns:
 

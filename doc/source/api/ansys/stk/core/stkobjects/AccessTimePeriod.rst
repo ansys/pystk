@@ -21,13 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessTimePeriod.start_time`
-              - Gets a start time. Uses DateFormat Dimension.
+              - Get a start time. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessTimePeriod.stop_time`
-              - Gets a stop time. Uses DateFormat Dimension.
+              - Get a stop time. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessTimePeriod.duration`
-              - A time duration. The value is a relative duration (i.e. \"+1 day\", \"+1 hour\").
+              - A time duration. The value is a relative duration (i.e. ``+1 day``, ``+1 hour``).
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessTimePeriod.access_interval`
-              - Returns an access interval.
+              - Return an access interval.
 
 
 
@@ -46,24 +46,24 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.AccessTimePeriod.start_time
     :type: TimePeriodValue
 
-    Gets a start time. Uses DateFormat Dimension.
+    Get a start time. Uses DateFormat Dimension.
 
 .. py:property:: stop_time
     :canonical: ansys.stk.core.stkobjects.AccessTimePeriod.stop_time
     :type: TimePeriodValue
 
-    Gets a stop time. Uses DateFormat Dimension.
+    Get a stop time. Uses DateFormat Dimension.
 
 .. py:property:: duration
     :canonical: ansys.stk.core.stkobjects.AccessTimePeriod.duration
     :type: typing.Any
 
-    A time duration. The value is a relative duration (i.e. \"+1 day\", \"+1 hour\").
+    A time duration. The value is a relative duration (i.e. ``+1 day``, ``+1 hour``).
 
 .. py:property:: access_interval
     :canonical: ansys.stk.core.stkobjects.AccessTimePeriod.access_interval
-    :type: ITimeToolEventIntervalSmartInterval
+    :type: ITimeToolTimeIntervalSmartInterval
 
-    Returns an access interval.
+    Return an access interval.
 
 

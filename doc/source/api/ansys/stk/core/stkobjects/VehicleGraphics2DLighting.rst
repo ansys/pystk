@@ -24,11 +24,11 @@ Overview
               - Get the display options for regions of penumbra.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DLighting.umbra`
               - Get the display options for regions of umbra.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DLighting.is_sun_light_penumbra_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DLighting.show_sunlight_penumbra_divider`
               - Opt whether to show the dividing line between regions of sunlight and penumbra at the current altitude of the vehicle.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DLighting.is_penumbra_umbra_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DLighting.show_penumbra_umbra_divider`
               - Opt whether to show the dividing line between regions of penumbra and umbra at the current altitude of the vehicle.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DLighting.is_solar_specular_reflection_point_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DLighting.show_solar_specular_reflection_point`
               - Opt whether to draw the solar specular reflection point on the surface of the globe as a white '*'.
 
 
@@ -62,20 +62,20 @@ Property detail
 
     Get the display options for regions of umbra.
 
-.. py:property:: is_sun_light_penumbra_visible
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DLighting.is_sun_light_penumbra_visible
+.. py:property:: show_sunlight_penumbra_divider
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DLighting.show_sunlight_penumbra_divider
     :type: bool
 
     Opt whether to show the dividing line between regions of sunlight and penumbra at the current altitude of the vehicle.
 
-.. py:property:: is_penumbra_umbra_visible
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DLighting.is_penumbra_umbra_visible
+.. py:property:: show_penumbra_umbra_divider
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DLighting.show_penumbra_umbra_divider
     :type: bool
 
     Opt whether to show the dividing line between regions of penumbra and umbra at the current altitude of the vehicle.
 
-.. py:property:: is_solar_specular_reflection_point_visible
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DLighting.is_solar_specular_reflection_point_visible
+.. py:property:: show_solar_specular_reflection_point
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DLighting.show_solar_specular_reflection_point
     :type: bool
 
     Opt whether to draw the solar specular reflection point on the surface of the globe as a white '*'.

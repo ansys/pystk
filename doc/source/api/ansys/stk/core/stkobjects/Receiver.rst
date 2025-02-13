@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.Receiver.set_model`
-              - Set the current receiver model by name.
+              - Do not use this method, as it is deprecated. Use ModelComponentLinking on IAgReceiver instead. Sets the current receiver model by name.
             * - :py:attr:`~ansys.stk.core.stkobjects.Receiver.is_refraction_type_supported`
               - Get a value indicating whether the specified type can be used.
 
@@ -32,15 +32,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.Receiver.supported_models`
-              - Gets an array of supported model names.
+              - Do not use this property, as it is deprecated. Use ModelComponentLinking on IAgReceiver instead. Gets an array of supported model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.Receiver.model`
-              - Gets the current receiver model.
+              - Do not use this property, as it is deprecated. Use ModelComponentLinking on IAgReceiver instead. Gets the current receiver model.
             * - :py:attr:`~ansys.stk.core.stkobjects.Receiver.refraction`
               - Refraction method, a member of the AgESnRefractionType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.Receiver.refraction_supported_types`
-              - Returns an array of valid choices.
+              - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.Receiver.refraction_model`
-              - Gets a refraction model.
+              - Get a refraction model.
             * - :py:attr:`~ansys.stk.core.stkobjects.Receiver.use_refraction_in_access`
               - Flag controls whether refraction is applied when computing relative position in Access.
             * - :py:attr:`~ansys.stk.core.stkobjects.Receiver.graphics_3d`
@@ -48,9 +48,11 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.Receiver.graphics`
               - Get the 2D Graphics properties for the receiver.
             * - :py:attr:`~ansys.stk.core.stkobjects.Receiver.rf_environment`
-              - Gets the object RF environment settings.
+              - Get the object RF environment settings.
             * - :py:attr:`~ansys.stk.core.stkobjects.Receiver.laser_environment`
-              - Gets the object laser environment settings.
+              - Get the object laser environment settings.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Receiver.model_component_linking`
+              - Get the link/embed controller for managing the receiver model component.
 
 
 
@@ -69,17 +71,17 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Receiver.supported_models
     :type: list
 
-    Gets an array of supported model names.
+    Do not use this property, as it is deprecated. Use ModelComponentLinking on IAgReceiver instead. Gets an array of supported model names.
 
 .. py:property:: model
     :canonical: ansys.stk.core.stkobjects.Receiver.model
     :type: IReceiverModel
 
-    Gets the current receiver model.
+    Do not use this property, as it is deprecated. Use ModelComponentLinking on IAgReceiver instead. Gets the current receiver model.
 
 .. py:property:: refraction
     :canonical: ansys.stk.core.stkobjects.Receiver.refraction
-    :type: SENSOR_REFRACTION_TYPE
+    :type: SensorRefractionType
 
     Refraction method, a member of the AgESnRefractionType enumeration.
 
@@ -87,13 +89,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Receiver.refraction_supported_types
     :type: list
 
-    Returns an array of valid choices.
+    Return an array of valid choices.
 
 .. py:property:: refraction_model
     :canonical: ansys.stk.core.stkobjects.Receiver.refraction_model
     :type: IRefractionModelBase
 
-    Gets a refraction model.
+    Get a refraction model.
 
 .. py:property:: use_refraction_in_access
     :canonical: ansys.stk.core.stkobjects.Receiver.use_refraction_in_access
@@ -117,27 +119,33 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Receiver.rf_environment
     :type: ObjectRFEnvironment
 
-    Gets the object RF environment settings.
+    Get the object RF environment settings.
 
 .. py:property:: laser_environment
     :canonical: ansys.stk.core.stkobjects.Receiver.laser_environment
     :type: ObjectLaserEnvironment
 
-    Gets the object laser environment settings.
+    Get the object laser environment settings.
+
+.. py:property:: model_component_linking
+    :canonical: ansys.stk.core.stkobjects.Receiver.model_component_linking
+    :type: IComponentLinkEmbedControl
+
+    Get the link/embed controller for managing the receiver model component.
 
 
 Method detail
 -------------
 
 
-.. py:method:: set_model(self, modelName: str) -> None
+.. py:method:: set_model(self, model_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.Receiver.set_model
 
-    Set the current receiver model by name.
+    Do not use this method, as it is deprecated. Use ModelComponentLinking on IAgReceiver instead. Sets the current receiver model by name.
 
     :Parameters:
 
-    **modelName** : :obj:`~str`
+    **model_name** : :obj:`~str`
 
     :Returns:
 
@@ -146,18 +154,19 @@ Method detail
 
 
 
-.. py:method:: is_refraction_type_supported(self, model: SENSOR_REFRACTION_TYPE) -> bool
+.. py:method:: is_refraction_type_supported(self, model: SensorRefractionType) -> bool
     :canonical: ansys.stk.core.stkobjects.Receiver.is_refraction_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **model** : :obj:`~SENSOR_REFRACTION_TYPE`
+    **model** : :obj:`~SensorRefractionType`
 
     :Returns:
 
         :obj:`~bool`
+
 
 
 

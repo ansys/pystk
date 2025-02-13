@@ -42,11 +42,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.StationCollection.count`
-              - Returns the number of elements in a collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.StationCollection._NewEnum`
-              - Returns an enumerator that can iterate through the collection.
+              - Return the number of elements in a collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.StationCollection._new_enum`
+              - Return an enumerator that can iterate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.StationCollection.station_names`
-              - Returns the station names.
+              - Return the station names.
 
 
 
@@ -65,19 +65,19 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.StationCollection.count
     :type: int
 
-    Returns the number of elements in a collection.
+    Return the number of elements in a collection.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.aviator.StationCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.aviator.StationCollection._new_enum
     :type: EnumeratorProxy
 
-    Returns an enumerator that can iterate through the collection.
+    Return an enumerator that can iterate through the collection.
 
 .. py:property:: station_names
     :canonical: ansys.stk.core.stkobjects.aviator.StationCollection.station_names
     :type: list
 
-    Returns the station names.
+    Return the station names.
 
 
 Method detail

@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.RFFilterModelCosineWindow.sampling_frequency`
-              - Gets or sets the sampling frequency.
+              - Get or set the sampling frequency.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.RFFilterModelCosineWindow.sampling_frequency
     :type: float
 
-    Gets or sets the sampling frequency.
+    Get or set the sampling frequency.
 
 

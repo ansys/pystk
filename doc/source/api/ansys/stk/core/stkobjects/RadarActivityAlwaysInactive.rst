@@ -9,10 +9,6 @@ RadarActivityAlwaysInactive
 
 .. py:currentmodule:: RadarActivityAlwaysInactive
 
-Overview
---------
-
-
 
 Import detail
 -------------

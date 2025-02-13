@@ -21,8 +21,8 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionScalarCalculation.time_step`
-              - Gets or sets the value to be used during the sampling of the dynamic definition for use in the static definition.
-            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionScalarCalculation.calc_scalar`
+              - Get or set the value to be used during the sampling of the dynamic definition for use in the static definition.
+            * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionScalarCalculation.calculation_scalar`
               - Reference Scalar Calculation component.
             * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionScalarCalculation.should_update_accesses`
               - Update Accesses computed outside Coverage.
@@ -44,10 +44,10 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.FigureOfMeritDefinitionScalarCalculation.time_step
     :type: float
 
-    Gets or sets the value to be used during the sampling of the dynamic definition for use in the static definition.
+    Get or set the value to be used during the sampling of the dynamic definition for use in the static definition.
 
-.. py:property:: calc_scalar
-    :canonical: ansys.stk.core.stkobjects.FigureOfMeritDefinitionScalarCalculation.calc_scalar
+.. py:property:: calculation_scalar
+    :canonical: ansys.stk.core.stkobjects.FigureOfMeritDefinitionScalarCalculation.calculation_scalar
     :type: str
 
     Reference Scalar Calculation component.

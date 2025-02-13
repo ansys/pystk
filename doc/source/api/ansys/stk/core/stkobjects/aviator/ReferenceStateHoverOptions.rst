@@ -30,9 +30,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateHoverOptions.groundspeed`
-              - Gets or sets the aircraft's speed relative to the ground.
+              - Get or set the aircraft's speed relative to the ground.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateHoverOptions.altitude_rate`
-              - Gets or sets the rate at which the aircraft will climb or descend.
+              - Get or set the rate at which the aircraft will climb or descend.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateHoverOptions.tas_dot`
               - Get the true airspeed acceleration.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateHoverOptions.groundspeed_dot`
@@ -40,21 +40,21 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateHoverOptions.longitudinal_acceleration_type`
               - Get the mode to specify the longitudinal acceleration.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateHoverOptions.heading`
-              - Gets or sets the direction the aircraft is pointing.
+              - Get or set the direction the aircraft is pointing.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateHoverOptions.heading_is_magnetic`
               - Opt whether to specify the heading using magnetic North.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateHoverOptions.course`
-              - Gets or sets the direction the aircraft is traveling.
+              - Get or set the direction the aircraft is traveling.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateHoverOptions.course_is_magnetic`
               - Opt whether to specify the course using magnetic North.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateHoverOptions.heading_dot`
-              - Gets or sets the heading rate of change.
+              - Get or set the heading rate of change.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateHoverOptions.course_dot`
-              - Gets or sets the course rate of change.
+              - Get or set the course rate of change.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateHoverOptions.roll_angle`
-              - Gets or sets the aircraft's bank angle.
+              - Get or set the aircraft's bank angle.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateHoverOptions.aoa`
-              - Gets or sets the aircraft's angle of attack.
+              - Get or set the aircraft's angle of attack.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateHoverOptions.pitch_rate`
               - Get the aircraft's pitch rate.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateHoverOptions.push_pull_g`
@@ -79,13 +79,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateHoverOptions.groundspeed
     :type: float
 
-    Gets or sets the aircraft's speed relative to the ground.
+    Get or set the aircraft's speed relative to the ground.
 
 .. py:property:: altitude_rate
     :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateHoverOptions.altitude_rate
     :type: float
 
-    Gets or sets the rate at which the aircraft will climb or descend.
+    Get or set the rate at which the aircraft will climb or descend.
 
 .. py:property:: tas_dot
     :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateHoverOptions.tas_dot
@@ -101,7 +101,7 @@ Property detail
 
 .. py:property:: longitudinal_acceleration_type
     :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateHoverOptions.longitudinal_acceleration_type
-    :type: REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE
+    :type: ReferenceStateLongitudinalAccelerationMode
 
     Get the mode to specify the longitudinal acceleration.
 
@@ -109,7 +109,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateHoverOptions.heading
     :type: typing.Any
 
-    Gets or sets the direction the aircraft is pointing.
+    Get or set the direction the aircraft is pointing.
 
 .. py:property:: heading_is_magnetic
     :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateHoverOptions.heading_is_magnetic
@@ -121,7 +121,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateHoverOptions.course
     :type: typing.Any
 
-    Gets or sets the direction the aircraft is traveling.
+    Get or set the direction the aircraft is traveling.
 
 .. py:property:: course_is_magnetic
     :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateHoverOptions.course_is_magnetic
@@ -133,25 +133,25 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateHoverOptions.heading_dot
     :type: typing.Any
 
-    Gets or sets the heading rate of change.
+    Get or set the heading rate of change.
 
 .. py:property:: course_dot
     :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateHoverOptions.course_dot
     :type: typing.Any
 
-    Gets or sets the course rate of change.
+    Get or set the course rate of change.
 
 .. py:property:: roll_angle
     :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateHoverOptions.roll_angle
     :type: typing.Any
 
-    Gets or sets the aircraft's bank angle.
+    Get or set the aircraft's bank angle.
 
 .. py:property:: aoa
     :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateHoverOptions.aoa
     :type: typing.Any
 
-    Gets or sets the aircraft's angle of attack.
+    Get or set the aircraft's angle of attack.
 
 .. py:property:: pitch_rate
     :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateHoverOptions.pitch_rate
@@ -167,7 +167,7 @@ Property detail
 
 .. py:property:: attitude_rate_type
     :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateHoverOptions.attitude_rate_type
-    :type: REFERENCE_STATE_ATTITUDE_MODE
+    :type: ReferenceStateAttitudeMode
 
     Get the mode to specify the vertical attitude rate.
 
@@ -182,14 +182,14 @@ Method detail
 
 
 
-.. py:method:: set_longitudinal_acceleration(self, accelType: REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE, value: float) -> None
+.. py:method:: set_longitudinal_acceleration(self, accel_type: ReferenceStateLongitudinalAccelerationMode, value: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateHoverOptions.set_longitudinal_acceleration
 
     Set the longitudinal acceleration.
 
     :Parameters:
 
-    **accelType** : :obj:`~REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE`
+    **accel_type** : :obj:`~ReferenceStateLongitudinalAccelerationMode`
     **value** : :obj:`~float`
 
     :Returns:
@@ -215,14 +215,14 @@ Method detail
 
 
 
-.. py:method:: set_attitude_rate(self, attitudeRateType: REFERENCE_STATE_ATTITUDE_MODE, value: typing.Any) -> None
+.. py:method:: set_attitude_rate(self, attitude_rate_type: ReferenceStateAttitudeMode, value: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateHoverOptions.set_attitude_rate
 
     Set the vertical attitude rate.
 
     :Parameters:
 
-    **attitudeRateType** : :obj:`~REFERENCE_STATE_ATTITUDE_MODE`
+    **attitude_rate_type** : :obj:`~ReferenceStateAttitudeMode`
     **value** : :obj:`~typing.Any`
 
     :Returns:

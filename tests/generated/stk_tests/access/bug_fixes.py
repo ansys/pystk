@@ -30,14 +30,14 @@ class BugFixes(TestBase):
         TestBase.LoadTestScenario(Path.Combine("AccessTests", "AccessTests.sc"))
 
         BugFixes.satellite = Satellite(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "AccessBugFixesSat")
+            TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "AccessBugFixesSat")
         )
-        oPropagator: "VehiclePropagatorTwoBody" = VehiclePropagatorTwoBody(BugFixes.satellite.propagator)
+        oPropagator: "PropagatorTwoBody" = PropagatorTwoBody(BugFixes.satellite.propagator)
         Assert.assertIsNotNone(oPropagator)
         oPropagator.propagate()
 
         BugFixes.facility = Facility(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "AccessBugFixesFac")
+            TestBase.Application.current_scenario.children.new(STKObjectType.FACILITY, "AccessBugFixesFac")
         )
         BugFixes.facility.position.assign_geodetic(26.6255, -78.2985, -0.010997)
 
@@ -54,14 +54,14 @@ class BugFixes(TestBase):
         scene: "Scenario" = clr.CastAs(TestBase.Application.current_scenario, Scenario)
         scene.set_time_period("17 Feb 2010 05:00:00.000", "18 Feb 2010 05:00:00.000")
 
-        myAccess: "StkAccess" = (IStkObject(BugFixes.satellite)).get_access_to_object(IStkObject(BugFixes.facility))
-        myAccess.access_time_period = ACCESS_TIME_TYPE.USER_SPEC_ACCESS_TIME
+        myAccess: "Access" = (IStkObject(BugFixes.satellite)).get_access_to_object(IStkObject(BugFixes.facility))
+        myAccess.access_time_period = AccessTimeType.SPECIFIED_TIME_PERIOD
 
         # these intervals were chosen to be in the inerior of the first access interval if computed using object times
         myAccess.specify_access_time_period("17 Feb 2010 06:13:49.789", "17 Feb 2010 06:17:59.678")
         myAccess.compute_access()
 
-        intColl: "IntervalCollection" = myAccess.computed_access_interval_times
+        intColl: "TimeIntervalCollection" = myAccess.computed_access_interval_times
         Assert.assertEqual(1, intColl.count)
 
         pStart: typing.Any = None
@@ -76,18 +76,18 @@ class BugFixes(TestBase):
         BugFixes.InitHelper()
 
         fac: "Facility" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "fac72385"), Facility
+            TestBase.Application.current_scenario.children.new(STKObjectType.FACILITY, "fac72385"), Facility
         )
         sat: "Satellite" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "sat72385"), Satellite
+            TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "sat72385"), Satellite
         )
-        sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
-        twoBody: "VehiclePropagatorTwoBody" = clr.CastAs(sat.propagator, VehiclePropagatorTwoBody)
+        sat.set_propagator_type(PropagatorType.TWO_BODY)
+        twoBody: "PropagatorTwoBody" = clr.CastAs(sat.propagator, PropagatorTwoBody)
         twoBody.propagate()
         satObj: "IStkObject" = clr.CastAs(sat, IStkObject)
-        access: "StkAccess" = satObj.get_access_to_object(clr.CastAs(fac, IStkObject))
+        access: "Access" = satObj.get_access_to_object(clr.CastAs(fac, IStkObject))
 
-        sat.graphics.set_attributes_type(VEHICLE_GRAPHICS_2D_ATTRIBUTES.ATTRIBUTES_CUSTOM)
+        sat.graphics.set_attributes_type(VehicleGraphics2DAttributeType.CUSTOM)
         custom: "VehicleGraphics2DAttributesCustom" = clr.CastAs(
             sat.graphics.attributes, VehicleGraphics2DAttributesCustom
         )
@@ -96,7 +96,7 @@ class BugFixes(TestBase):
         custom.intervals.add("1 Jul 1999 15:00:00.000", "1 Jul 1999 16:00:00.000")
 
         access.compute_access()
-        intervals: "IntervalCollection" = access.computed_access_interval_times
+        intervals: "TimeIntervalCollection" = access.computed_access_interval_times
         accessTimes = intervals.to_array(0, -1)
         Assert.assertEqual(4, len(accessTimes))
         Assert.assertEqual("1 Jul 1999 13:48:07.978", accessTimes[0][0])
@@ -123,21 +123,21 @@ class BugFixes(TestBase):
         Assert.assertEqual("1 Jul 1999 18:32:43.541", accessTimes[3][0])
         Assert.assertEqual("1 Jul 1999 18:37:36.132", accessTimes[3][1])
 
-        TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.FACILITY, "fac72385")
-        TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "sat72385")
+        TestBase.Application.current_scenario.children.unload(STKObjectType.FACILITY, "fac72385")
+        TestBase.Application.current_scenario.children.unload(STKObjectType.SATELLITE, "sat72385")
 
     @category("VO Tests")
     def test_BUG68749_and_BUG75680_Axes_AvailableAxes(self):
-        access: "StkAccess" = (clr.CastAs(BugFixes.satellite, IStkObject)).get_access_to_object(
+        access: "Access" = (clr.CastAs(BugFixes.satellite, IStkObject)).get_access_to_object(
             (clr.CastAs(BugFixes.facility, IStkObject))
         )
         access.compute_access()
 
-        axes: "Graphics3DReferenceVectorGeometryToolAxes" = clr.CastAs(
-            BugFixes.satellite.graphics_3d.vector.reference_crdns.get_crdn_by_name(
-                GEOMETRIC_ELEM_TYPE.AXES_ELEM, "Satellite/AccessBugFixesSat Body Axes"
+        axes: "Graphics3DReferenceAxes" = clr.CastAs(
+            BugFixes.satellite.graphics_3d.vector.vector_geometry_tool_components.get_component_by_name(
+                GeometricElementType.AXES_ELEMENT, "Satellite/AccessBugFixesSat Body Axes"
             ),
-            Graphics3DReferenceVectorGeometryToolAxes,
+            Graphics3DReferenceAxes,
         )
         (clr.CastAs(axes, IGraphics3DReferenceAnalysisWorkbenchComponent)).visible = True
 
@@ -161,16 +161,16 @@ class BugFixes(TestBase):
 
     @category("VO Tests")
     def test_BUG68749_and_BUG75680_Vector_AvailableAxes(self):
-        access: "StkAccess" = (clr.CastAs(BugFixes.satellite, IStkObject)).get_access_to_object(
+        access: "Access" = (clr.CastAs(BugFixes.satellite, IStkObject)).get_access_to_object(
             (clr.CastAs(BugFixes.facility, IStkObject))
         )
         access.compute_access()
 
-        vector: "Graphics3DReferenceVectorGeometryToolVector" = clr.CastAs(
-            BugFixes.satellite.graphics_3d.vector.reference_crdns.get_crdn_by_name(
-                GEOMETRIC_ELEM_TYPE.VECTOR_ELEM, "Satellite/AccessBugFixesSat Sun Vector"
+        vector: "Graphics3DReferenceVector" = clr.CastAs(
+            BugFixes.satellite.graphics_3d.vector.vector_geometry_tool_components.get_component_by_name(
+                GeometricElementType.VECTOR_ELEMENT, "Satellite/AccessBugFixesSat Sun Vector"
             ),
-            Graphics3DReferenceVectorGeometryToolVector,
+            Graphics3DReferenceVector,
         )
         (clr.CastAs(vector, IGraphics3DReferenceAnalysisWorkbenchComponent)).visible = True
 
@@ -190,16 +190,16 @@ class BugFixes(TestBase):
 
     @category("VO Tests")
     def test_BUG68749_and_BUG75680_Vector_AvailablePoints(self):
-        access: "StkAccess" = (clr.CastAs(BugFixes.satellite, IStkObject)).get_access_to_object(
+        access: "Access" = (clr.CastAs(BugFixes.satellite, IStkObject)).get_access_to_object(
             (clr.CastAs(BugFixes.facility, IStkObject))
         )
         access.compute_access()
 
-        vector: "Graphics3DReferenceVectorGeometryToolVector" = clr.CastAs(
-            BugFixes.satellite.graphics_3d.vector.reference_crdns.get_crdn_by_name(
-                GEOMETRIC_ELEM_TYPE.VECTOR_ELEM, "Satellite/AccessBugFixesSat Sun Vector"
+        vector: "Graphics3DReferenceVector" = clr.CastAs(
+            BugFixes.satellite.graphics_3d.vector.vector_geometry_tool_components.get_component_by_name(
+                GeometricElementType.VECTOR_ELEMENT, "Satellite/AccessBugFixesSat Sun Vector"
             ),
-            Graphics3DReferenceVectorGeometryToolVector,
+            Graphics3DReferenceVector,
         )
         (clr.CastAs(vector, IGraphics3DReferenceAnalysisWorkbenchComponent)).visible = True
 
@@ -220,16 +220,16 @@ class BugFixes(TestBase):
 
     @category("VO Tests")
     def test_BUG68749_and_BUG75680_Point_AvailableSystems(self):
-        access: "StkAccess" = (clr.CastAs(BugFixes.satellite, IStkObject)).get_access_to_object(
+        access: "Access" = (clr.CastAs(BugFixes.satellite, IStkObject)).get_access_to_object(
             (clr.CastAs(BugFixes.facility, IStkObject))
         )
         access.compute_access()
 
-        point: "Graphics3DReferenceVectorGeometryToolPoint" = clr.CastAs(
-            BugFixes.satellite.graphics_3d.vector.reference_crdns.add(
-                GEOMETRIC_ELEM_TYPE.POINT_ELEM, "Satellite/AccessBugFixesSat Center Point"
+        point: "Graphics3DReferencePoint" = clr.CastAs(
+            BugFixes.satellite.graphics_3d.vector.vector_geometry_tool_components.add(
+                GeometricElementType.POINT_ELEMENT, "Satellite/AccessBugFixesSat Center Point"
             ),
-            Graphics3DReferenceVectorGeometryToolPoint,
+            Graphics3DReferencePoint,
         )
         (clr.CastAs(point, IGraphics3DReferenceAnalysisWorkbenchComponent)).visible = True
 
@@ -249,7 +249,7 @@ class BugFixes(TestBase):
 
     @category("VO Tests")
     def test_BUG68749_and_BUG75680_OrbitSystems_SupportedSystems(self):
-        access: "StkAccess" = (clr.CastAs(BugFixes.satellite, IStkObject)).get_access_to_object(
+        access: "Access" = (clr.CastAs(BugFixes.satellite, IStkObject)).get_access_to_object(
             (clr.CastAs(BugFixes.facility, IStkObject))
         )
         access.compute_access()
@@ -347,13 +347,13 @@ class BugFixes(TestBase):
         SatFacStartA: str = "1 Jul 1999 11:08:25.658"
         SatFacStopA: str = "1 Jul 1999 11:14:48.079"
 
-        oAccess: "StkAccess" = oFacility.get_access_to_object(oSatellite)
-        advanced: "StkAccessAdvanced" = oAccess.advanced
+        oAccess: "Access" = oFacility.get_access_to_object(oSatellite)
+        advanced: "AccessAdvancedSettings" = oAccess.advanced
         advanced.enable_light_time_delay = True
         advanced.use_default_clock_host_and_signal_sense = False
-        advanced.clock_host = IV_CLOCK_HOST.BASE
-        advanced.signal_sense_of_clock_host = IV_TIME_SENSE.RECEIVE
-        advanced.aberration_type = ABERRATION_TYPE.ANNUAL
+        advanced.clock_host = IvClockHost.BASE
+        advanced.signal_sense_of_clock_host = IvTimeSense.RECEIVE
+        advanced.aberration_type = AberrationType.ANNUAL
 
         oAccess.compute_access()
         (accStart, accStop) = IntervalCollectionExtensionMethods.GetIntervalHelper(
@@ -365,8 +365,8 @@ class BugFixes(TestBase):
         )
 
         # NOW... get another handle to this existing Access
-        oAccess2: "StkAccess" = oFacility.get_access_to_object(oSatellite)
-        advanced2: "StkAccessAdvanced" = oAccess2.advanced
+        oAccess2: "Access" = oFacility.get_access_to_object(oSatellite)
+        advanced2: "AccessAdvancedSettings" = oAccess2.advanced
         Assert.assertFalse(advanced2.use_default_clock_host_and_signal_sense)
         oAccess2.clear_access()
 
@@ -396,8 +396,8 @@ class BugFixes(TestBase):
         oFacNoCon: "IStkObject" = None
 
         try:
-            oReceiver: "IStkObject" = oSatellite.children.new(STK_OBJECT_TYPE.RECEIVER, "TestReceiver")
-            oTransmitter: "IStkObject" = oSatellite.children.new(STK_OBJECT_TYPE.TRANSMITTER, "TestTransmitter")
+            oReceiver: "IStkObject" = oSatellite.children.new(STKObjectType.RECEIVER, "TestReceiver")
+            oTransmitter: "IStkObject" = oSatellite.children.new(STKObjectType.TRANSMITTER, "TestTransmitter")
 
             accStart: typing.Any = None
             accStop: typing.Any = None
@@ -419,7 +419,7 @@ class BugFixes(TestBase):
             agAssert = None
 
             # A) Facility to Transmitter: Default values
-            oAccess: "StkAccess" = oFacility.get_access_to_object(oTransmitter)
+            oAccess: "Access" = oFacility.get_access_to_object(oTransmitter)
             oAccess.compute_access()
             (accStart, accStop) = IntervalCollectionExtensionMethods.GetIntervalHelper(
                 oAccess.computed_access_interval_times, 0
@@ -431,7 +431,7 @@ class BugFixes(TestBase):
 
             # B) Facility to Transmitter: With a specified interval = scenario interval
             oAccess = oFacility.get_access_to_object(oTransmitter)
-            oAccess.access_time_period = ACCESS_TIME_TYPE.USER_SPEC_ACCESS_TIME
+            oAccess.access_time_period = AccessTimeType.SPECIFIED_TIME_PERIOD
             period: "AccessTimePeriod" = AccessTimePeriod(oAccess.access_time_period_data)
             period.access_interval.set_start_and_stop_times(str(scene.start_time), str(scene.stop_time))
             oAccess.compute_access()
@@ -445,7 +445,7 @@ class BugFixes(TestBase):
             # C) Facility to Transmitter: Mode Receive
             oAccess = oFacility.get_access_to_object(oTransmitter)
             oAccess.advanced.use_default_clock_host_and_signal_sense = False
-            oAccess.advanced.signal_sense_of_clock_host = IV_TIME_SENSE.RECEIVE
+            oAccess.advanced.signal_sense_of_clock_host = IvTimeSense.RECEIVE
             oAccess.compute_access()
             (accStart, accStop) = IntervalCollectionExtensionMethods.GetIntervalHelper(
                 oAccess.computed_access_interval_times, 0
@@ -457,7 +457,7 @@ class BugFixes(TestBase):
             # D) Facility to Transmitter: Mode Transmit
             oAccess = oFacility.get_access_to_object(oTransmitter)
             oAccess.advanced.use_default_clock_host_and_signal_sense = False
-            oAccess.advanced.signal_sense_of_clock_host = IV_TIME_SENSE.TRANSMIT
+            oAccess.advanced.signal_sense_of_clock_host = IvTimeSense.TRANSMIT
             oAccess.compute_access()
             (accStart, accStop) = IntervalCollectionExtensionMethods.GetIntervalHelper(
                 oAccess.computed_access_interval_times, 0
@@ -469,8 +469,8 @@ class BugFixes(TestBase):
             # E) Facility to Transmitter: With a specified interval, Mode Receive
             oAccess = oFacility.get_access_to_object(oTransmitter)
             oAccess.advanced.use_default_clock_host_and_signal_sense = False
-            oAccess.advanced.signal_sense_of_clock_host = IV_TIME_SENSE.RECEIVE
-            oAccess.access_time_period = ACCESS_TIME_TYPE.USER_SPEC_ACCESS_TIME
+            oAccess.advanced.signal_sense_of_clock_host = IvTimeSense.RECEIVE
+            oAccess.access_time_period = AccessTimeType.SPECIFIED_TIME_PERIOD
             period = AccessTimePeriod(oAccess.access_time_period_data)
             period.access_interval.set_start_and_stop_times(str(scene.start_time), str(scene.stop_time))
             oAccess.compute_access()
@@ -484,8 +484,8 @@ class BugFixes(TestBase):
             # F) Facility to Transmitter: With a specified interval, Mode Transmit
             oAccess = oFacility.get_access_to_object(oTransmitter)
             oAccess.advanced.use_default_clock_host_and_signal_sense = False
-            oAccess.advanced.signal_sense_of_clock_host = IV_TIME_SENSE.TRANSMIT
-            oAccess.access_time_period = ACCESS_TIME_TYPE.USER_SPEC_ACCESS_TIME
+            oAccess.advanced.signal_sense_of_clock_host = IvTimeSense.TRANSMIT
+            oAccess.access_time_period = AccessTimeType.SPECIFIED_TIME_PERIOD
             period = AccessTimePeriod(oAccess.access_time_period_data)
             period.access_interval.set_start_and_stop_times(str(scene.start_time), str(scene.stop_time))
             oAccess.compute_access()
@@ -499,7 +499,7 @@ class BugFixes(TestBase):
             # G) Facility to Transmitter: Reverse ClockHost
             oAccess = oFacility.get_access_to_object(oTransmitter)
             oAccess.advanced.use_default_clock_host_and_signal_sense = False
-            oAccess.advanced.clock_host = IV_CLOCK_HOST.TARGET
+            oAccess.advanced.clock_host = IvClockHost.TARGET
             oAccess.compute_access()
             (accStart, accStop) = IntervalCollectionExtensionMethods.GetIntervalHelper(
                 oAccess.computed_access_interval_times, 0
@@ -511,8 +511,8 @@ class BugFixes(TestBase):
             # H) Facility to Transmitter: With a specified interval, Reverse ClockHost
             oAccess = oFacility.get_access_to_object(oTransmitter)
             oAccess.advanced.use_default_clock_host_and_signal_sense = False
-            oAccess.advanced.clock_host = IV_CLOCK_HOST.TARGET
-            oAccess.access_time_period = ACCESS_TIME_TYPE.USER_SPEC_ACCESS_TIME
+            oAccess.advanced.clock_host = IvClockHost.TARGET
+            oAccess.access_time_period = AccessTimeType.SPECIFIED_TIME_PERIOD
             period = AccessTimePeriod(oAccess.access_time_period_data)
             period.access_interval.set_start_and_stop_times(str(scene.start_time), str(scene.stop_time))
             oAccess.compute_access()
@@ -538,7 +538,7 @@ class BugFixes(TestBase):
 
             # J) Receiver to Facility: With a specified interval = scenario interval
             oAccess = oReceiver.get_access_to_object(oFacility)
-            oAccess.access_time_period = ACCESS_TIME_TYPE.USER_SPEC_ACCESS_TIME
+            oAccess.access_time_period = AccessTimeType.SPECIFIED_TIME_PERIOD
             period = AccessTimePeriod(oAccess.access_time_period_data)
             period.access_interval.set_start_and_stop_times(str(scene.start_time), str(scene.stop_time))
             oAccess.compute_access()
@@ -552,7 +552,7 @@ class BugFixes(TestBase):
             # K) Receiver to Facility: Mode Receive
             oAccess = oReceiver.get_access_to_object(oFacility)
             oAccess.advanced.use_default_clock_host_and_signal_sense = False
-            oAccess.advanced.signal_sense_of_clock_host = IV_TIME_SENSE.RECEIVE
+            oAccess.advanced.signal_sense_of_clock_host = IvTimeSense.RECEIVE
             oAccess.compute_access()
             (accStart, accStop) = IntervalCollectionExtensionMethods.GetIntervalHelper(
                 oAccess.computed_access_interval_times, 0
@@ -564,7 +564,7 @@ class BugFixes(TestBase):
             # L) Receiver to Facility: Mode Transmit
             oAccess = oReceiver.get_access_to_object(oFacility)
             oAccess.advanced.use_default_clock_host_and_signal_sense = False
-            oAccess.advanced.signal_sense_of_clock_host = IV_TIME_SENSE.TRANSMIT
+            oAccess.advanced.signal_sense_of_clock_host = IvTimeSense.TRANSMIT
             oAccess.compute_access()
             (accStart, accStop) = IntervalCollectionExtensionMethods.GetIntervalHelper(
                 oAccess.computed_access_interval_times, 0
@@ -576,8 +576,8 @@ class BugFixes(TestBase):
             # M) Receiver to Facility: With a specified interval, Mode Receive
             oAccess = oReceiver.get_access_to_object(oFacility)
             oAccess.advanced.use_default_clock_host_and_signal_sense = False
-            oAccess.advanced.signal_sense_of_clock_host = IV_TIME_SENSE.RECEIVE
-            oAccess.access_time_period = ACCESS_TIME_TYPE.USER_SPEC_ACCESS_TIME
+            oAccess.advanced.signal_sense_of_clock_host = IvTimeSense.RECEIVE
+            oAccess.access_time_period = AccessTimeType.SPECIFIED_TIME_PERIOD
             period = AccessTimePeriod(oAccess.access_time_period_data)
             period.access_interval.set_start_and_stop_times(str(scene.start_time), str(scene.stop_time))
             oAccess.compute_access()
@@ -591,8 +591,8 @@ class BugFixes(TestBase):
             # N) Receiver to Facility: With a specified interval, Mode Transmit
             oAccess = oReceiver.get_access_to_object(oFacility)
             oAccess.advanced.use_default_clock_host_and_signal_sense = False
-            oAccess.advanced.signal_sense_of_clock_host = IV_TIME_SENSE.TRANSMIT
-            oAccess.access_time_period = ACCESS_TIME_TYPE.USER_SPEC_ACCESS_TIME
+            oAccess.advanced.signal_sense_of_clock_host = IvTimeSense.TRANSMIT
+            oAccess.access_time_period = AccessTimeType.SPECIFIED_TIME_PERIOD
             period = AccessTimePeriod(oAccess.access_time_period_data)
             period.access_interval.set_start_and_stop_times(str(scene.start_time), str(scene.stop_time))
             oAccess.compute_access()
@@ -606,7 +606,7 @@ class BugFixes(TestBase):
             # O) Receiver to Facility: Reverse ClockHost
             oAccess = oReceiver.get_access_to_object(oFacility)
             oAccess.advanced.use_default_clock_host_and_signal_sense = False
-            oAccess.advanced.clock_host = IV_CLOCK_HOST.TARGET
+            oAccess.advanced.clock_host = IvClockHost.TARGET
             oAccess.compute_access()
             (accStart, accStop) = IntervalCollectionExtensionMethods.GetIntervalHelper(
                 oAccess.computed_access_interval_times, 0
@@ -618,8 +618,8 @@ class BugFixes(TestBase):
             # P) Receiver to Facility: With a specified interval, Reverse ClockHost
             oAccess = oReceiver.get_access_to_object(oFacility)
             oAccess.advanced.use_default_clock_host_and_signal_sense = False
-            oAccess.advanced.clock_host = IV_CLOCK_HOST.TARGET
-            oAccess.access_time_period = ACCESS_TIME_TYPE.USER_SPEC_ACCESS_TIME
+            oAccess.advanced.clock_host = IvClockHost.TARGET
+            oAccess.access_time_period = AccessTimeType.SPECIFIED_TIME_PERIOD
             period = AccessTimePeriod(oAccess.access_time_period_data)
             period.access_interval.set_start_and_stop_times(str(scene.start_time), str(scene.stop_time))
             oAccess.compute_access()
@@ -648,7 +648,7 @@ class BugFixes(TestBase):
 
             # R) Planet to Facility: With a specified interval = scenario interval
             oAccess = oPlanet.get_access_to_object(oFacility)
-            oAccess.access_time_period = ACCESS_TIME_TYPE.USER_SPEC_ACCESS_TIME
+            oAccess.access_time_period = AccessTimeType.SPECIFIED_TIME_PERIOD
             period = AccessTimePeriod(oAccess.access_time_period_data)
             period.access_interval.set_start_and_stop_times(str(scene.start_time), str(scene.stop_time))
             oAccess.compute_access()
@@ -664,37 +664,37 @@ class BugFixes(TestBase):
 
             # create FacNoConstraints
             oFacNoCon = TestBase.Application.current_scenario.children.new_on_central_body(
-                STK_OBJECT_TYPE.FACILITY, "FacNoConstraints", "Earth"
+                STKObjectType.FACILITY, "FacNoConstraints", "Earth"
             )
             facNoConColl: "AccessConstraintCollection" = oFacNoCon.access_constraints
-            facNoConColl.remove_constraint(ACCESS_CONSTRAINTS.LINE_OF_SIGHT)  # so, the facility has no constraints
+            facNoConColl.remove_constraint(AccessConstraintType.LINE_OF_SIGHT)  # so, the facility has no constraints
 
             # create MarsSat
             oMarsSat = TestBase.Application.current_scenario.children.new_on_central_body(
-                STK_OBJECT_TYPE.SATELLITE, "MarsSat", "Mars"
+                STKObjectType.SATELLITE, "MarsSat", "Mars"
             )
             sat: "Satellite" = clr.CastAs(oMarsSat, Satellite)
-            sat.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
-            twobody: "VehiclePropagatorTwoBody" = VehiclePropagatorTwoBody(sat.propagator)
+            sat.set_propagator_type(PropagatorType.TWO_BODY)
+            twobody: "PropagatorTwoBody" = PropagatorTwoBody(sat.propagator)
             twobody.ephemeris_interval.set_explicit_interval(str(scene.start_time), str(scene.stop_time))
 
             classical: "OrbitStateClassical" = OrbitStateClassical(
-                twobody.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CLASSICAL)
+                twobody.initial_state.representation.convert_to(OrbitStateType.CLASSICAL)
             )
-            classical.location_type = CLASSICAL_LOCATION.LOCATION_TRUE_ANOMALY
+            classical.location_type = ClassicalLocation.TRUE_ANOMALY
             trueanomaly: "ClassicalLocationTrueAnomaly" = ClassicalLocationTrueAnomaly(classical.location)
             trueanomaly.value = 60.0
             twobody.initial_state.representation.assign(classical)
-            (clr.CastAs(sat.propagator, VehiclePropagatorTwoBody)).propagate()
+            (clr.CastAs(sat.propagator, PropagatorTwoBody)).propagate()
 
             marsColl: "AccessConstraintCollection" = oMarsSat.access_constraints
-            marsColl.remove_constraint(ACCESS_CONSTRAINTS.LINE_OF_SIGHT)  # so, the satellite has no constraints
+            marsColl.remove_constraint(AccessConstraintType.LINE_OF_SIGHT)  # so, the satellite has no constraints
 
             oAccess = oFacNoCon.get_access_to_object(oMarsSat)
-            oAccess.access_time_period = ACCESS_TIME_TYPE.OBJECT_ACCESS_TIME
+            oAccess.access_time_period = AccessTimeType.OBJECT_ACCESS_TIME
             oAccess.advanced.use_default_clock_host_and_signal_sense = False
-            oAccess.advanced.clock_host = IV_CLOCK_HOST.BASE
-            oAccess.advanced.signal_sense_of_clock_host = IV_TIME_SENSE.RECEIVE
+            oAccess.advanced.clock_host = IvClockHost.BASE
+            oAccess.advanced.signal_sense_of_clock_host = IvTimeSense.RECEIVE
             oAccess.compute_access()
 
             availStartTrunc: str = "1 Jul 1999 00:06:47"  # truncated to whole secs, not rounded
@@ -710,7 +710,7 @@ class BugFixes(TestBase):
                 agAssert, self.CompareIntervalTimes("S", availStartTrunc, availStopTrunc, startTrunc, stopTrunc)
             )
 
-            oAccess.advanced.signal_sense_of_clock_host = IV_TIME_SENSE.TRANSMIT
+            oAccess.advanced.signal_sense_of_clock_host = IvTimeSense.TRANSMIT
             oAccess.compute_access()
 
             availStartTrunc = "30 Jun 1999 23:53:12"  # truncated to whole secs, not rounded
@@ -731,18 +731,18 @@ class BugFixes(TestBase):
 
             oAccess.remove_access()
 
-            marsColl.add_constraint(ACCESS_CONSTRAINTS.LINE_OF_SIGHT)
+            marsColl.add_constraint(AccessConstraintType.LINE_OF_SIGHT)
 
             oAccess = oFacNoCon.get_access_to_object(oMarsSat)
             oAccess.advanced.use_default_clock_host_and_signal_sense = False
-            oAccess.advanced.clock_host = IV_CLOCK_HOST.BASE
-            oAccess.advanced.signal_sense_of_clock_host = IV_TIME_SENSE.RECEIVE
-            oAccess.access_time_period = ACCESS_TIME_TYPE.USER_SPEC_ACCESS_TIME
+            oAccess.advanced.clock_host = IvClockHost.BASE
+            oAccess.advanced.signal_sense_of_clock_host = IvTimeSense.RECEIVE
+            oAccess.access_time_period = AccessTimeType.SPECIFIED_TIME_PERIOD
             period = AccessTimePeriod(oAccess.access_time_period_data)
             period.access_interval.set_start_and_stop_times("1 Jul 1999 21:00:00", "2 Jul 1999 00:03:00")
             oAccess.compute_access()
 
-            intColl: "IntervalCollection" = oAccess.computed_access_interval_times
+            intColl: "TimeIntervalCollection" = oAccess.computed_access_interval_times
             Assert.assertEqual(3, intColl.count)
 
             expectedStartTrunc: str = "1 Jul 1999 23:50:28"  # truncated to whole secs, not rounded
@@ -762,8 +762,8 @@ class BugFixes(TestBase):
 
         finally:
             # Clean-up the objects created for this test
-            oSatellite.children.unload(STK_OBJECT_TYPE.RECEIVER, "TestReceiver")
-            oSatellite.children.unload(STK_OBJECT_TYPE.TRANSMITTER, "TestTransmitter")
+            oSatellite.children.unload(STKObjectType.RECEIVER, "TestReceiver")
+            oSatellite.children.unload(STKObjectType.TRANSMITTER, "TestTransmitter")
             if oMarsSat != None:
                 oMarsSat.unload()
 
@@ -782,10 +782,10 @@ class BugFixes(TestBase):
         accStop: typing.Any = None
 
         try:
-            oReceiver: "IStkObject" = oSatellite.children.new(STK_OBJECT_TYPE.RECEIVER, "TestReceiver")
+            oReceiver: "IStkObject" = oSatellite.children.new(STKObjectType.RECEIVER, "TestReceiver")
 
             # Specify a 1-minute time step to see that it is used (interval times will be forced to land on the minute)
-            oAccess: "StkAccess" = oFacility.get_access_to_object(oReceiver)
+            oAccess: "Access" = oFacility.get_access_to_object(oReceiver)
             oAccess.advanced.use_fixed_time_step = True
             oAccess.advanced.fixed_step_size = 60.0
             oAccess.advanced.use_precise_event_times = False
@@ -799,7 +799,7 @@ class BugFixes(TestBase):
 
         finally:
             # Clean-up the objects created for this test
-            oSatellite.children.unload(STK_OBJECT_TYPE.RECEIVER, "TestReceiver")
+            oSatellite.children.unload(STKObjectType.RECEIVER, "TestReceiver")
 
         TestBase.logger.WriteLine("----- BUG108448_SpecifyFixedStepSize ACCESS TEST ----- END -----")
 
@@ -814,17 +814,17 @@ class BugFixes(TestBase):
         bDeleteReceiver: bool = True
 
         try:
-            oReceiver: "IStkObject" = oSatellite.children.new(STK_OBJECT_TYPE.RECEIVER, "TestReceiver")
+            oReceiver: "IStkObject" = oSatellite.children.new(STKObjectType.RECEIVER, "TestReceiver")
 
-            oAccess: "StkAccess" = oFacility.get_access_to_object(oReceiver)
+            oAccess: "Access" = oFacility.get_access_to_object(oReceiver)
 
             # Delete the Receiver, invalidating the Access
-            oSatellite.children.unload(STK_OBJECT_TYPE.RECEIVER, "TestReceiver")
+            oSatellite.children.unload(STKObjectType.RECEIVER, "TestReceiver")
             bDeleteReceiver = False
 
             def code1():
                 nonlocal oAccess
-                oAccess.access_time_period = ACCESS_TIME_TYPE.USER_SPEC_ACCESS_TIME
+                oAccess.access_time_period = AccessTimeType.SPECIFIED_TIME_PERIOD
 
             Assert.assertRaises(code1)
 
@@ -880,7 +880,7 @@ class BugFixes(TestBase):
 
             Assert.assertRaises(code9)
             with pytest.raises(Exception):
-                oAccess.access_time_period = ACCESS_TIME_TYPE.USER_SPEC_ACCESS_TIME
+                oAccess.access_time_period = AccessTimeType.SPECIFIED_TIME_PERIOD
             with pytest.raises(Exception):
                 o: typing.Any = oAccess.access_time_period_data
             with pytest.raises(Exception):
@@ -888,7 +888,7 @@ class BugFixes(TestBase):
 
         finally:
             if bDeleteReceiver:
-                oSatellite.children.unload(STK_OBJECT_TYPE.RECEIVER, "TestReceiver")
+                oSatellite.children.unload(STKObjectType.RECEIVER, "TestReceiver")
 
         TestBase.logger.WriteLine("----- BUG108187_ExceptionThrownWhenAccessHasBeenDeleted ACCESS TEST ----- END -----")
 
@@ -899,26 +899,26 @@ class BugFixes(TestBase):
         oSatellite: "IStkObject" = TestBase.Application.current_scenario.children["CalcScalSat"]
 
         try:
-            oReceiver: "IStkObject" = oSatellite.children.new(STK_OBJECT_TYPE.RECEIVER, "TestReceiver")
+            oReceiver: "IStkObject" = oSatellite.children.new(STKObjectType.RECEIVER, "TestReceiver")
 
-            oAccess: "StkAccess" = oFacility.get_access_to_object(oReceiver)
+            oAccess: "Access" = oFacility.get_access_to_object(oReceiver)
             bSaveData: bool = oAccess.save_computed_data
             Assert.assertTrue((bSaveData == True))
             oAccess.save_computed_data = False
             oAccess.compute_access()
 
-            oAccess2: "StkAccess" = oFacility.get_access_to_object(oReceiver)
+            oAccess2: "Access" = oFacility.get_access_to_object(oReceiver)
             bSaveData2: bool = oAccess2.save_computed_data
             Assert.assertTrue((bSaveData2 == False))
             oAccess2.save_computed_data = True
             oAccess2.compute_access()
 
-            oAccess3: "StkAccess" = oFacility.get_access_to_object(oReceiver)
+            oAccess3: "Access" = oFacility.get_access_to_object(oReceiver)
             bSaveData3: bool = oAccess3.save_computed_data
             Assert.assertTrue((bSaveData3 == True))
 
         finally:
-            oSatellite.children.unload(STK_OBJECT_TYPE.RECEIVER, "TestReceiver")
+            oSatellite.children.unload(STKObjectType.RECEIVER, "TestReceiver")
 
         TestBase.logger.WriteLine("----- BUG108228_SaveComputedDataParameter ACCESS TEST ----- END -----")
 
@@ -929,20 +929,20 @@ class BugFixes(TestBase):
         oFacility: "IStkObject" = TestBase.Application.current_scenario.children["AccessBugFixesFac"]
         oMarsPlanet: "IStkObject" = TestBase.Application.current_scenario.children["MarsJPL"]
 
-        oAccess: "StkAccess" = None
+        oAccess: "Access" = None
 
         try:
             # compute over scenario
             oAccess = oFacility.get_access_to_object(oMarsPlanet)
-            oAccess.access_time_period = ACCESS_TIME_TYPE.SCENARIO_ACCESS_TIME
+            oAccess.access_time_period = AccessTimeType.SCENARIO_INTERVAL
             oAccess.compute_access()
-            intColl: "IntervalCollection" = oAccess.computed_access_interval_times
+            intColl: "TimeIntervalCollection" = oAccess.computed_access_interval_times
             Assert.assertEqual(2, intColl.count)
 
             # compute 3 days after scenario - still should have same number of accesses
             dateObj: "Date" = TestBase.Application.conversion_utility.new_date("UTCG", str(scene.start_time))
             startDateObj: "Date" = dateObj.add("Day", 3.0)
-            oAccess.access_time_period = ACCESS_TIME_TYPE.USER_SPEC_ACCESS_TIME
+            oAccess.access_time_period = AccessTimeType.SPECIFIED_TIME_PERIOD
             period: "AccessTimePeriod" = AccessTimePeriod(oAccess.access_time_period_data)
             period.access_interval.set_start_time_and_duration(startDateObj.format("UTCG"), "+1 day")
             oAccess.compute_access()
@@ -962,35 +962,37 @@ class BugFixes(TestBase):
         oFacility: "IStkObject" = TestBase.Application.current_scenario.children["AccessBugFixesFac"]
 
         oSatellite: "IStkObject" = TestBase.Application.current_scenario.children.new(
-            STK_OBJECT_TYPE.SATELLITE, "sat108055"
+            STKObjectType.SATELLITE, "sat108055"
         )
 
-        oAccess: "StkAccess" = None
+        oAccess: "Access" = None
 
         try:
             leo: "Satellite" = Satellite(oSatellite)
 
-            leo.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
-            twobody: "VehiclePropagatorTwoBody" = VehiclePropagatorTwoBody(leo.propagator)
+            leo.set_propagator_type(PropagatorType.TWO_BODY)
+            twobody: "PropagatorTwoBody" = PropagatorTwoBody(leo.propagator)
 
             twobody.ephemeris_interval.set_explicit_interval(str(scene.start_time), str(scene.stop_time))
 
             classical: "OrbitStateClassical" = OrbitStateClassical(
-                twobody.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CLASSICAL)
+                twobody.initial_state.representation.convert_to(OrbitStateType.CLASSICAL)
             )
 
             (classical).epoch = str(scene.start_time)
 
-            classical.location_type = CLASSICAL_LOCATION.LOCATION_TRUE_ANOMALY
+            classical.location_type = ClassicalLocation.TRUE_ANOMALY
             trueanomaly: "ClassicalLocationTrueAnomaly" = ClassicalLocationTrueAnomaly(classical.location)
             trueanomaly.value = 0
-            classical.coordinate_system_type = COORDINATE_SYSTEM.ICRF
-            classical.orientation.arg_of_perigee = 0.0
+            classical.coordinate_system_type = CoordinateSystem.ICRF
+            classical.orientation.argument_of_periapsis = 0.0
             classical.orientation.inclination = 45.0
-            classical.orientation.asc_node_type = ORIENTATION_ASC_NODE.ASC_NODE_RAAN
-            oRAAN: "OrientationAscNodeRAAN" = OrientationAscNodeRAAN(classical.orientation.asc_node)
+            classical.orientation.ascending_node_type = OrientationAscNode.RIGHT_ASCENSION_ASCENDING_NODE
+            oRAAN: "OrientationRightAscensionOfAscendingNode" = OrientationRightAscensionOfAscendingNode(
+                classical.orientation.ascending_node
+            )
             oRAAN.value = 0.0
-            classical.size_shape_type = CLASSICAL_SIZE_SHAPE.SIZE_SHAPE_ALTITUDE
+            classical.size_shape_type = ClassicalSizeShape.ALTITUDE
             sizeAlt: "ClassicalSizeShapeAltitude" = ClassicalSizeShapeAltitude(classical.size_shape)
             sizeAlt.apogee_altitude = 400.0
             sizeAlt.perigee_altitude = 300.0
@@ -999,14 +1001,16 @@ class BugFixes(TestBase):
 
             # compute over object times
             oAccess = oFacility.get_access_to_object(oSatellite)
-            oAccess.access_time_period = ACCESS_TIME_TYPE.OBJECT_ACCESS_TIME
+            oAccess.access_time_period = AccessTimeType.OBJECT_ACCESS_TIME
             oAccess.compute_access()
-            intColl: "IntervalCollection" = oAccess.computed_access_interval_times
+            intColl: "TimeIntervalCollection" = oAccess.computed_access_interval_times
             Assert.assertEqual(8, intColl.count)
 
             # compute over umbra times
-            oAccess.access_time_period = ACCESS_TIME_TYPE.EVENT_INTERVALS
-            oAccess.specify_access_event_intervals(oSatellite.vgt.event_interval_lists["LightingIntervals.Umbra"])
+            oAccess.access_time_period = AccessTimeType.TIME_INTERVAL_LIST
+            oAccess.specify_access_event_intervals(
+                oSatellite.analysis_workbench_components.time_interval_lists["LightingIntervals.Umbra"]
+            )
             oAccess.compute_access()
             intColl = oAccess.computed_access_interval_times
             Assert.assertEqual(0, intColl.count)
@@ -1020,14 +1024,16 @@ class BugFixes(TestBase):
 
             # compute over object times
             oAccess = oFacility.get_access_to_object(oSatellite)
-            oAccess.access_time_period = ACCESS_TIME_TYPE.OBJECT_ACCESS_TIME
+            oAccess.access_time_period = AccessTimeType.OBJECT_ACCESS_TIME
             oAccess.compute_access()
             intColl = oAccess.computed_access_interval_times
             Assert.assertEqual(7, intColl.count)
 
             # compute over umbra times
-            oAccess.access_time_period = ACCESS_TIME_TYPE.EVENT_INTERVALS
-            oAccess.specify_access_event_intervals(oSatellite.vgt.event_interval_lists["LightingIntervals.Umbra"])
+            oAccess.access_time_period = AccessTimeType.TIME_INTERVAL_LIST
+            oAccess.specify_access_event_intervals(
+                oSatellite.analysis_workbench_components.time_interval_lists["LightingIntervals.Umbra"]
+            )
             oAccess.compute_access()
             intColl = oAccess.computed_access_interval_times
             Assert.assertEqual(1, intColl.count)
@@ -1036,8 +1042,10 @@ class BugFixes(TestBase):
 
             # start over - assign the time component, don't compute, update the satellite, then compute
             oAccess = oFacility.get_access_to_object(oSatellite)
-            oAccess.access_time_period = ACCESS_TIME_TYPE.EVENT_INTERVALS
-            oAccess.specify_access_event_intervals(oSatellite.vgt.event_interval_lists["LightingIntervals.Umbra"])
+            oAccess.access_time_period = AccessTimeType.TIME_INTERVAL_LIST
+            oAccess.specify_access_event_intervals(
+                oSatellite.analysis_workbench_components.time_interval_lists["LightingIntervals.Umbra"]
+            )
             # update raan
             oRAAN.value = 0.0
             twobody.initial_state.representation.assign(classical)
@@ -1061,18 +1069,18 @@ class BugFixes(TestBase):
         oSatellite: "IStkObject" = TestBase.Application.current_scenario.children["AccessBugFixesSat"]
 
         compName: str = "bug108208FixedIntrvl"
-        group: "TimeToolEventIntervalListGroup" = None
-        oAccess: "StkAccess" = None
+        group: "TimeToolTimeIntervalListGroup" = None
+        oAccess: "Access" = None
 
         try:
-            group = oSatellite.vgt.event_interval_lists
-            factory: "TimeToolEventIntervalListFactory" = group.factory
-            intrvlList: "ITimeToolEventIntervalList" = factory.create_event_interval_list_fixed(
+            group = oSatellite.analysis_workbench_components.time_interval_lists
+            factory: "TimeToolTimeIntervalListFactory" = group.factory
+            intrvlList: "ITimeToolTimeIntervalList" = factory.create_fixed(
                 compName, "Fixed interval to test bug 108208"
             )
             Assert.assertIsNotNone(intrvlList)
 
-            intrvlListFxd: "TimeToolEventIntervalListFixed" = clr.CastAs(intrvlList, TimeToolEventIntervalListFixed)
+            intrvlListFxd: "TimeToolTimeIntervalListFixed" = clr.CastAs(intrvlList, TimeToolTimeIntervalListFixed)
 
             # these intervals are within withe normal access intervals
             start1: str = "1 Jul 1999 13:45:00.000"
@@ -1082,10 +1090,12 @@ class BugFixes(TestBase):
             arIntervals = [start1, stop1, start2, stop2]
             intrvlListFxd.set_intervals(arIntervals)
             oAccess = oFacility.get_access_to_object(oSatellite)
-            oAccess.access_time_period = ACCESS_TIME_TYPE.EVENT_INTERVALS
-            oAccess.specify_access_event_intervals(oSatellite.vgt.event_interval_lists[compName])
+            oAccess.access_time_period = AccessTimeType.TIME_INTERVAL_LIST
+            oAccess.specify_access_event_intervals(
+                oSatellite.analysis_workbench_components.time_interval_lists[compName]
+            )
             oAccess.compute_access()
-            intColl: "IntervalCollection" = oAccess.computed_access_interval_times
+            intColl: "TimeIntervalCollection" = oAccess.computed_access_interval_times
             Assert.assertEqual(2, intColl.count)
 
             # now delete the time component
@@ -1096,9 +1106,9 @@ class BugFixes(TestBase):
             # access should have been notified, and updated itself to keep the intervals as before
             intColl = oAccess.computed_access_interval_times
             Assert.assertEqual(2, intColl.count)
-            Assert.assertEqual(oAccess.access_time_period, ACCESS_TIME_TYPE.EVENT_INTERVALS)
-            accInvtlList: "AccessTimeEventIntervals" = AccessTimeEventIntervals(oAccess.access_time_period_data)
-            accInvtlListVals: "ITimeToolEventIntervalList" = accInvtlList.list_of_intervals
+            Assert.assertEqual(oAccess.access_time_period, AccessTimeType.TIME_INTERVAL_LIST)
+            accInvtlList: "AccessAllowedTimeIntervals" = AccessAllowedTimeIntervals(oAccess.access_time_period_data)
+            accInvtlListVals: "ITimeToolTimeIntervalList" = accInvtlList.list_of_intervals
             accCrdn: "IAnalysisWorkbenchComponent" = clr.CastAs(accInvtlListVals, IAnalysisWorkbenchComponent)
             if BugFixes._verbose:
                 Console.WriteLine(("Component name is " + accCrdn.name))
@@ -1113,8 +1123,8 @@ class BugFixes(TestBase):
             accCrdnInstPath: str = accCrdn.path[0 : (0 + Math.Min(expectedLen, len(accCrdn.path)))]
             Assert.assertEqual(expectedInstPath, accCrdnInstPath)
 
-            accIntrvlListType: "CRDN_EVENT_INTERVAL_LIST_TYPE" = accInvtlListVals.type
-            Assert.assertEqual(accIntrvlListType, CRDN_EVENT_INTERVAL_LIST_TYPE.FIXED)
+            accIntrvlListType: "EventIntervalListType" = accInvtlListVals.type
+            Assert.assertEqual(accIntrvlListType, EventIntervalListType.FIXED)
             res: "TimeToolIntervalListResult" = accInvtlListVals.find_intervals()
             Assert.assertTrue(res.is_valid)
             coll: "TimeToolIntervalCollection" = res.intervals

@@ -32,13 +32,13 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingGeometryVariable.aspect_ratio`
               - Get the aspect ratio of the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingGeometryVariable.start_sweep_mach`
-              - Gets or sets the mach number at which the wings start to sweep from the min sweep angle.
+              - Get or set the mach number at which the wings start to sweep from the min sweep angle.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingGeometryVariable.stop_sweep_mach`
-              - Gets or sets the mach number at which the wings are swept to the max sweep angle.
+              - Get or set the mach number at which the wings are swept to the max sweep angle.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingGeometryVariable.min_sweep_angle`
-              - Gets or sets the minimum sweep angle of the wings.
+              - Get or set the minimum sweep angle of the wings.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingGeometryVariable.max_sweep_angle`
-              - Gets or sets the maximum sweep angle of the wings.
+              - Get or set the maximum sweep angle of the wings.
 
 
 
@@ -63,39 +63,39 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingGeometryVariable.start_sweep_mach
     :type: float
 
-    Gets or sets the mach number at which the wings start to sweep from the min sweep angle.
+    Get or set the mach number at which the wings start to sweep from the min sweep angle.
 
 .. py:property:: stop_sweep_mach
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingGeometryVariable.stop_sweep_mach
     :type: float
 
-    Gets or sets the mach number at which the wings are swept to the max sweep angle.
+    Get or set the mach number at which the wings are swept to the max sweep angle.
 
 .. py:property:: min_sweep_angle
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingGeometryVariable.min_sweep_angle
     :type: typing.Any
 
-    Gets or sets the minimum sweep angle of the wings.
+    Get or set the minimum sweep angle of the wings.
 
 .. py:property:: max_sweep_angle
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingGeometryVariable.max_sweep_angle
     :type: typing.Any
 
-    Gets or sets the maximum sweep angle of the wings.
+    Get or set the maximum sweep angle of the wings.
 
 
 Method detail
 -------------
 
 
-.. py:method:: set_aspect_ratio(self, aspectRatio: float) -> None
+.. py:method:: set_aspect_ratio(self, aspect_ratio: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingGeometryVariable.set_aspect_ratio
 
     Set the aspect ratio of the aircraft.
 
     :Parameters:
 
-    **aspectRatio** : :obj:`~float`
+    **aspect_ratio** : :obj:`~float`
 
     :Returns:
 

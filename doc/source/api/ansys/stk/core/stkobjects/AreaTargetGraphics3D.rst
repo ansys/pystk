@@ -20,7 +20,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.AreaTargetGraphics3D.enable_label_max_viewing_dist`
               - Use the maximum viewing distance for displaying the area target label.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AreaTargetGraphics3D.label_max_viewing_dist`
+            * - :py:attr:`~ansys.stk.core.stkobjects.AreaTargetGraphics3D.label_maximum_viewing_dist`
               - Specify the maximum distance (distance from the viewer's eye position in 3D to the centroid) at which the area target label is displayed. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.AreaTargetGraphics3D.fill_interior`
               - Display the area target as a filled polygon indicating the portion of the globe that the area target covers.
@@ -29,9 +29,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.AreaTargetGraphics3D.border_wall`
               - Retrieve the border wall properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.AreaTargetGraphics3D.vector`
-              - Gets Vector.
+              - Get Vector.
             * - :py:attr:`~ansys.stk.core.stkobjects.AreaTargetGraphics3D.fill_granularity`
-              - Allows the user to control the speed vs. visual quality of a filled area target. Uses Angle Dimension.
+              - Allow the user to control the speed vs. visual quality of a filled area target. Uses Angle Dimension.
 
 
 
@@ -52,8 +52,8 @@ Property detail
 
     Use the maximum viewing distance for displaying the area target label.
 
-.. py:property:: label_max_viewing_dist
-    :canonical: ansys.stk.core.stkobjects.AreaTargetGraphics3D.label_max_viewing_dist
+.. py:property:: label_maximum_viewing_dist
+    :canonical: ansys.stk.core.stkobjects.AreaTargetGraphics3D.label_maximum_viewing_dist
     :type: float
 
     Specify the maximum distance (distance from the viewer's eye position in 3D to the centroid) at which the area target label is displayed. Uses Distance Dimension.
@@ -80,12 +80,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.AreaTargetGraphics3D.vector
     :type: Graphics3DVector
 
-    Gets Vector.
+    Get Vector.
 
 .. py:property:: fill_granularity
     :canonical: ansys.stk.core.stkobjects.AreaTargetGraphics3D.fill_granularity
     :type: float
 
-    Allows the user to control the speed vs. visual quality of a filled area target. Uses Angle Dimension.
+    Allow the user to control the speed vs. visual quality of a filled area target. Uses Angle Dimension.
 
 

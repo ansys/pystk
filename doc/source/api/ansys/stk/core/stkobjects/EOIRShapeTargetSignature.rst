@@ -9,10 +9,6 @@ EOIRShapeTargetSignature
 
 .. py:currentmodule:: EOIRShapeTargetSignature
 
-Overview
---------
-
-
 
 Import detail
 -------------

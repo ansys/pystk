@@ -32,13 +32,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.LaserPropagationLossModels.enable_atmospheric_loss_model`
-              - Gets or set the option for computing atmospheric absorption propagation loss.
+              - Get or set the option for computing atmospheric absorption propagation loss.
             * - :py:attr:`~ansys.stk.core.stkobjects.LaserPropagationLossModels.atmospheric_loss_model`
-              - Gets the laser atmospheric absorption loss model.
+              - Get the laser atmospheric absorption loss model.
             * - :py:attr:`~ansys.stk.core.stkobjects.LaserPropagationLossModels.enable_tropospheric_scintillation_loss_model`
-              - Gets or set the option for computing tropospheric scintillation propagation loss.
+              - Get or set the option for computing tropospheric scintillation propagation loss.
             * - :py:attr:`~ansys.stk.core.stkobjects.LaserPropagationLossModels.tropospheric_scintillation_loss_model`
-              - Gets the laser propagation loss model.
+              - Get the laser propagation loss model.
 
 
 
@@ -57,25 +57,25 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.LaserPropagationLossModels.enable_atmospheric_loss_model
     :type: bool
 
-    Gets or set the option for computing atmospheric absorption propagation loss.
+    Get or set the option for computing atmospheric absorption propagation loss.
 
 .. py:property:: atmospheric_loss_model
     :canonical: ansys.stk.core.stkobjects.LaserPropagationLossModels.atmospheric_loss_model
     :type: ILaserAtmosphericLossModel
 
-    Gets the laser atmospheric absorption loss model.
+    Get the laser atmospheric absorption loss model.
 
 .. py:property:: enable_tropospheric_scintillation_loss_model
     :canonical: ansys.stk.core.stkobjects.LaserPropagationLossModels.enable_tropospheric_scintillation_loss_model
     :type: bool
 
-    Gets or set the option for computing tropospheric scintillation propagation loss.
+    Get or set the option for computing tropospheric scintillation propagation loss.
 
 .. py:property:: tropospheric_scintillation_loss_model
     :canonical: ansys.stk.core.stkobjects.LaserPropagationLossModels.tropospheric_scintillation_loss_model
     :type: ILaserTroposphericScintillationLossModel
 
-    Gets the laser propagation loss model.
+    Get the laser propagation loss model.
 
 
 Method detail
@@ -83,14 +83,14 @@ Method detail
 
 
 
-.. py:method:: set_atmospheric_loss_model(self, modelName: str) -> None
+.. py:method:: set_atmospheric_loss_model(self, model_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.LaserPropagationLossModels.set_atmospheric_loss_model
 
     Set the current atmospheric absorption loss model by name.
 
     :Parameters:
 
-    **modelName** : :obj:`~str`
+    **model_name** : :obj:`~str`
 
     :Returns:
 
@@ -99,14 +99,14 @@ Method detail
 
 
 
-.. py:method:: set_tropospheric_scintillation_loss_model(self, modelName: str) -> None
+.. py:method:: set_tropospheric_scintillation_loss_model(self, model_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.LaserPropagationLossModels.set_tropospheric_scintillation_loss_model
 
     Set the current tropospheric scintillation loss model by name.
 
     :Parameters:
 
-    **modelName** : :obj:`~str`
+    **model_name** : :obj:`~str`
 
     :Returns:
 

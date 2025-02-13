@@ -22,7 +22,6 @@ Overview
               - Create and initializes a new prune filter using default configuration.
 
 
-
 Import detail
 -------------
 
@@ -35,14 +34,14 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: create(self, eFilter: CRDN_PRUNE_FILTER) -> ITimeToolPruneFilter
+.. py:method:: create(self, filter: IntervalPruneFilterType) -> ITimeToolPruneFilter
     :canonical: ansys.stk.core.vgt.TimeToolPruneFilterFactory.create
 
     Create and initializes a new prune filter using default configuration.
 
     :Parameters:
 
-    **eFilter** : :obj:`~CRDN_PRUNE_FILTER`
+    **filter** : :obj:`~IntervalPruneFilterType`
 
     :Returns:
 

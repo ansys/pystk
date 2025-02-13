@@ -32,27 +32,27 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureLaunch.launch_time`
-              - Gets or sets the launch time of the aircraft.
+              - Get or set the launch time of the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureLaunch.position_point_name`
-              - Gets or sets the name of the point used for the launch position.
+              - Get or set the name of the point used for the launch position.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureLaunch.direction_vec_name`
-              - Gets or sets the name of the vector used for the launch direction.
+              - Get or set the name of the vector used for the launch direction.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureLaunch.attitude_mode`
-              - Gets or sets the attitude mode during the launch.
+              - Get or set the attitude mode during the launch.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureLaunch.specify_launch_airspeed`
               - Opt to specify a minimum launch speed the aircraft will accelerate to.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureLaunch.acceleration_g`
-              - Gets or sets the acceleration of the aircraft during the launch.
+              - Get or set the acceleration of the aircraft during the launch.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureLaunch.airspeed_type`
               - Get the airspeed type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureLaunch.airspeed`
               - Get the goal airspeed for the launch.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureLaunch.fuel_flow_type`
-              - Gets or sets the fuel flow type of the aircraft during the launch.
+              - Get or set the fuel flow type of the aircraft during the launch.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureLaunch.override_fuel_flow`
-              - Gets or sets the fuel flow value for a fuel flow type set to Override.
+              - Get or set the fuel flow value for a fuel flow type set to Override.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureLaunch.true_course_hint`
-              - Gets or sets the true course used when the vehicle's direction vector is set to Zenith.
+              - Get or set the true course used when the vehicle's direction vector is set to Zenith.
 
 
 
@@ -71,25 +71,25 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureLaunch.launch_time
     :type: typing.Any
 
-    Gets or sets the launch time of the aircraft.
+    Get or set the launch time of the aircraft.
 
 .. py:property:: position_point_name
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureLaunch.position_point_name
     :type: str
 
-    Gets or sets the name of the point used for the launch position.
+    Get or set the name of the point used for the launch position.
 
 .. py:property:: direction_vec_name
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureLaunch.direction_vec_name
     :type: str
 
-    Gets or sets the name of the vector used for the launch direction.
+    Get or set the name of the vector used for the launch direction.
 
 .. py:property:: attitude_mode
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureLaunch.attitude_mode
-    :type: LAUNCH_ATTITUDE_MODE
+    :type: LaunchAttitudeMode
 
-    Gets or sets the attitude mode during the launch.
+    Get or set the attitude mode during the launch.
 
 .. py:property:: specify_launch_airspeed
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureLaunch.specify_launch_airspeed
@@ -101,11 +101,11 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureLaunch.acceleration_g
     :type: float
 
-    Gets or sets the acceleration of the aircraft during the launch.
+    Get or set the acceleration of the aircraft during the launch.
 
 .. py:property:: airspeed_type
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureLaunch.airspeed_type
-    :type: AIRSPEED_TYPE
+    :type: AirspeedType
 
     Get the airspeed type.
 
@@ -117,21 +117,21 @@ Property detail
 
 .. py:property:: fuel_flow_type
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureLaunch.fuel_flow_type
-    :type: FUEL_FLOW_TYPE
+    :type: FuelFlowType
 
-    Gets or sets the fuel flow type of the aircraft during the launch.
+    Get or set the fuel flow type of the aircraft during the launch.
 
 .. py:property:: override_fuel_flow
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureLaunch.override_fuel_flow
     :type: float
 
-    Gets or sets the fuel flow value for a fuel flow type set to Override.
+    Get or set the fuel flow value for a fuel flow type set to Override.
 
 .. py:property:: true_course_hint
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureLaunch.true_course_hint
     :type: typing.Any
 
-    Gets or sets the true course used when the vehicle's direction vector is set to Zenith.
+    Get or set the true course used when the vehicle's direction vector is set to Zenith.
 
 
 Method detail
@@ -151,14 +151,14 @@ Method detail
 
 
 
-.. py:method:: set_airspeed(self, airspeedType: AIRSPEED_TYPE, airspeed: float) -> None
+.. py:method:: set_airspeed(self, airspeed_type: AirspeedType, airspeed: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureLaunch.set_airspeed
 
     Set the launch airspeed.
 
     :Parameters:
 
-    **airspeedType** : :obj:`~AIRSPEED_TYPE`
+    **airspeed_type** : :obj:`~AirspeedType`
     **airspeed** : :obj:`~float`
 
     :Returns:

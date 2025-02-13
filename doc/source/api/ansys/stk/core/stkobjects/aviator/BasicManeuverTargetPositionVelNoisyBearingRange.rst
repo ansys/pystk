@@ -34,13 +34,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVelNoisyBearingRange.smoothing_constant`
-              - Gets or sets the smoothing constant property.
+              - Get or set the smoothing constant property.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVelNoisyBearingRange.velocity_time_step`
-              - Gets or sets the velocity time step property.
+              - Get or set the velocity time step property.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVelNoisyBearingRange.angle_error_std_dev`
-              - Gets or sets the angle error standard deviation property.
+              - Get or set the angle error standard deviation property.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVelNoisyBearingRange.range_error_std_dev`
-              - Gets or sets the range error standard deviation property.
+              - Get or set the range error standard deviation property.
 
 
 
@@ -59,25 +59,25 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVelNoisyBearingRange.smoothing_constant
     :type: float
 
-    Gets or sets the smoothing constant property.
+    Get or set the smoothing constant property.
 
 .. py:property:: velocity_time_step
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVelNoisyBearingRange.velocity_time_step
     :type: float
 
-    Gets or sets the velocity time step property.
+    Get or set the velocity time step property.
 
 .. py:property:: angle_error_std_dev
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVelNoisyBearingRange.angle_error_std_dev
     :type: float
 
-    Gets or sets the angle error standard deviation property.
+    Get or set the angle error standard deviation property.
 
 .. py:property:: range_error_std_dev
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVelNoisyBearingRange.range_error_std_dev
     :type: float
 
-    Gets or sets the range error standard deviation property.
+    Get or set the range error standard deviation property.
 
 
 Method detail
@@ -118,14 +118,14 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_base_dynamic_state_link_name(self, newVal: str) -> None
+.. py:method:: set_base_dynamic_state_link_name(self, value: str) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverTargetPositionVelNoisyBearingRange.set_base_dynamic_state_link_name
 
     Set the BaseDynStateLinkName.
 
     :Parameters:
 
-    **newVal** : :obj:`~str`
+    **value** : :obj:`~str`
 
     :Returns:
 

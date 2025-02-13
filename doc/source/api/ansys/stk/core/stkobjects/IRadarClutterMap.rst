@@ -28,9 +28,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarClutterMap.supported_models`
-              - Gets an array of supported model names.
+              - Get an array of supported model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarClutterMap.model`
-              - Gets the current clutter map model.
+              - Get the current clutter map model.
 
 
 Import detail
@@ -48,27 +48,27 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.IRadarClutterMap.supported_models
     :type: list
 
-    Gets an array of supported model names.
+    Get an array of supported model names.
 
 .. py:property:: model
     :canonical: ansys.stk.core.stkobjects.IRadarClutterMap.model
     :type: IRadarClutterMapModel
 
-    Gets the current clutter map model.
+    Get the current clutter map model.
 
 
 Method detail
 -------------
 
 
-.. py:method:: set_model(self, modelName: str) -> None
+.. py:method:: set_model(self, model_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.IRadarClutterMap.set_model
 
     Set the current clutter map model by name.
 
     :Parameters:
 
-    **modelName** : :obj:`~str`
+    **model_name** : :obj:`~str`
 
     :Returns:
 

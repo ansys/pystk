@@ -19,11 +19,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderElement.name`
-              - Returns a name of the element.
+              - Return a name of the element.
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderElement.type`
-              - Returns a type of the element.
+              - Return a type of the element.
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderElement.dimension_name`
-              - Returns the dimension of the element.
+              - Return the dimension of the element.
 
 
 
@@ -42,18 +42,18 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.DataProviderElement.name
     :type: str
 
-    Returns a name of the element.
+    Return a name of the element.
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.DataProviderElement.type
-    :type: DATA_PROVIDER_ELEMENT_TYPE
+    :type: DataProviderElementType
 
-    Returns a type of the element.
+    Return a type of the element.
 
 .. py:property:: dimension_name
     :canonical: ansys.stk.core.stkobjects.DataProviderElement.dimension_name
     :type: str
 
-    Returns the dimension of the element.
+    Return the dimension of the element.
 
 

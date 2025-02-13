@@ -26,9 +26,9 @@ Overview
               - The style of the line representing contours at the given level. A member of the AgELineStyle enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.LevelAttribute.line_width`
               - The width of the line representing contours at the given level.
-            * - :py:attr:`~ansys.stk.core.stkobjects.LevelAttribute.label_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.LevelAttribute.show_label`
               - Display a label identifying the given contour level.
-            * - :py:attr:`~ansys.stk.core.stkobjects.LevelAttribute.user_text_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.LevelAttribute.show_user_text_visible`
               - Whether the user-specified text is displayed.
             * - :py:attr:`~ansys.stk.core.stkobjects.LevelAttribute.label_angle`
               - The angle from the contour at which the label is displayed. Dimensionless.
@@ -62,24 +62,24 @@ Property detail
 
 .. py:property:: line_style
     :canonical: ansys.stk.core.stkobjects.LevelAttribute.line_style
-    :type: LINE_STYLE
+    :type: LineStyle
 
     The style of the line representing contours at the given level. A member of the AgELineStyle enumeration.
 
 .. py:property:: line_width
     :canonical: ansys.stk.core.stkobjects.LevelAttribute.line_width
-    :type: LINE_WIDTH
+    :type: LineWidth
 
     The width of the line representing contours at the given level.
 
-.. py:property:: label_visible
-    :canonical: ansys.stk.core.stkobjects.LevelAttribute.label_visible
+.. py:property:: show_label
+    :canonical: ansys.stk.core.stkobjects.LevelAttribute.show_label
     :type: bool
 
     Display a label identifying the given contour level.
 
-.. py:property:: user_text_visible
-    :canonical: ansys.stk.core.stkobjects.LevelAttribute.user_text_visible
+.. py:property:: show_user_text_visible
+    :canonical: ansys.stk.core.stkobjects.LevelAttribute.show_user_text_visible
     :type: bool
 
     Whether the user-specified text is displayed.

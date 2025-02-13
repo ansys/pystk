@@ -36,7 +36,7 @@ class EarlyBoundTests(TestBase):
 
     # region SetUp
     def setUp(self):
-        TestBase.Application.unit_preferences.set_current_unit("DateFormat", "epSec")
+        TestBase.Application.units_preferences.set_current_unit("DateFormat", "epSec")
         if not TestBase.NoGraphicsMode:
             EarlyBoundTests._animation.rewind()
 
@@ -50,14 +50,14 @@ class EarlyBoundTests(TestBase):
 
     @parameterized.expand(
         [
-            (ANIMATION_MODES.NORMAL,),
-            (ANIMATION_MODES.X_REALTIME,),
-            (ANIMATION_MODES.REALTIME,),
-            (ANIMATION_MODES.TIME_ARRAY,),
+            (AnimationEndTimeMode.NORMAL,),
+            (AnimationEndTimeMode.X_REAL_TIME,),
+            (AnimationEndTimeMode.REAL_TIME,),
+            (AnimationEndTimeMode.TIME_ARRAY,),
         ]
     )
     @category("Graphics Tests")
-    def test_AnimationModes(self, mode: "ANIMATION_MODES"):
+    def test_AnimationModes(self, mode: "AnimationEndTimeMode"):
         (Scenario(TestBase.Application.current_scenario)).set_time_period(0, 360)
 
         EarlyBoundTests._animation.mode = mode
@@ -70,8 +70,8 @@ class EarlyBoundTests(TestBase):
         sc.set_time_period(startTime, stopTime)
 
         # Change the animation step to test the animation mode
-        sc.animation.anim_step_type = SCENARIO_TIME_STEP_TYPE.STEP
-        sc.animation.anim_step_value = stepInSecs
+        sc.animation_settings.animation_step_type = ScenarioTimeStepType.STEP
+        sc.animation_settings.animation_step_value = stepInSecs
 
         EarlyBoundTests._animation.high_speed = False
         Assert.assertFalse(EarlyBoundTests._animation.high_speed)
@@ -137,7 +137,7 @@ class EarlyBoundTests(TestBase):
         TestBase.LoadTestScenario(Path.Combine("ScenarioTests", "ScenarioTests.sc"))
 
     def test_BUG65596_SetTimePeriod(self):
-        TestBase.Application.unit_preferences.set_current_unit("DateFormat", "UTCG")
+        TestBase.Application.units_preferences.set_current_unit("DateFormat", "UTCG")
         sc: "Scenario" = Scenario(TestBase.Application.current_scenario)
 
         starttime1: str = str(sc.start_time)
@@ -166,7 +166,7 @@ class EarlyBoundTests(TestBase):
         TestBase.Application.new_scenario("BUG66310")
 
         covDef: "CoverageDefinition" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.COVERAGE_DEFINITION, "CovDef"),
+            TestBase.Application.current_scenario.children.new(STKObjectType.COVERAGE_DEFINITION, "CovDef"),
             CoverageDefinition,
         )
         covDef.interval.use_scenario_interval = True
@@ -180,24 +180,24 @@ class EarlyBoundTests(TestBase):
 
         scenario: "Scenario" = clr.CastAs(TestBase.Application.current_scenario, Scenario)
 
-        TestBase.Application.unit_preferences.set_current_unit("DateFormat", "UTCG")
+        TestBase.Application.units_preferences.set_current_unit("DateFormat", "UTCG")
         scenario.analysis_interval.set_explicit_interval("11 Jul 2011 15:00:00.000", "12 Jul 2011 15:00:00.000")
         covDef = clr.CastAs(TestBase.Application.current_scenario.children["CovDef"], CoverageDefinition)
         Assert.assertTrue(covDef.interval.use_scenario_interval)
 
     def test_BUG68297_HeapCorruption(self):
-        dateFormat: str = TestBase.Application.unit_preferences.get_current_unit_abbrv("DateFormat")
+        dateFormat: str = TestBase.Application.units_preferences.get_current_unit_abbrv("DateFormat")
         try:
-            TestBase.Application.unit_preferences.set_current_unit("DateFormat", "UTCG")
+            TestBase.Application.units_preferences.set_current_unit("DateFormat", "UTCG")
             self.HeapCorruption()
 
         finally:
-            TestBase.Application.unit_preferences.set_current_unit("DateFormat", dateFormat)
+            TestBase.Application.units_preferences.set_current_unit("DateFormat", dateFormat)
 
     def HeapCorruption(self):
         sc: "Scenario" = Scenario(TestBase.Application.current_scenario)
         oSatOnMars: "IStkObject" = TestBase.Application.current_scenario.children.new_on_central_body(
-            STK_OBJECT_TYPE.SATELLITE, "SatelliteOnMars", "Mars"
+            STKObjectType.SATELLITE, "SatelliteOnMars", "Mars"
         )
         Assert.assertIsNotNone(oSatOnMars)
 
@@ -221,16 +221,16 @@ class EarlyBoundTests(TestBase):
         scen: "Scenario" = clr.CastAs(TestBase.Application.current_scenario, Scenario)
 
         sat1: "Satellite" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "sat1"), Satellite
+            TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "sat1"), Satellite
         )
-        sat1.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
-        (clr.CastAs(sat1.propagator, VehiclePropagatorTwoBody)).propagate()
+        sat1.set_propagator_type(PropagatorType.TWO_BODY)
+        (clr.CastAs(sat1.propagator, PropagatorTwoBody)).propagate()
 
         sat2: "Satellite" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "sat2"), Satellite
+            TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "sat2"), Satellite
         )
-        sat2.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
-        (clr.CastAs(sat2.propagator, VehiclePropagatorTwoBody)).propagate()
+        sat2.set_propagator_type(PropagatorType.TWO_BODY)
+        (clr.CastAs(sat2.propagator, PropagatorTwoBody)).propagate()
 
         sat1.graphics_3d.data_display.remove_all()
 
@@ -238,8 +238,8 @@ class EarlyBoundTests(TestBase):
         ele: "Graphics3DDataDisplayElement" = sat1.graphics_3d.data_display.add_data_display_requiring_pre_data(
             "RIC", "Satellite/Satellite2"
         )
-        ele.is_visible = True
-        Assert.assertTrue(ele.is_visible)
+        ele.show_graphics = True
+        Assert.assertTrue(ele.show_graphics)
         Assert.assertEqual("RIC", ele.name)
         (IAnimation(TestBase.Application)).rewind()
 
@@ -251,16 +251,16 @@ class EarlyBoundTests(TestBase):
             scen: "Scenario" = clr.CastAs(TestBase.Application.current_scenario, Scenario)
 
             sat1: "Satellite" = clr.CastAs(
-                TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "sat1"), Satellite
+                TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "sat1"), Satellite
             )
-            sat1.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
-            (clr.CastAs(sat1.propagator, VehiclePropagatorTwoBody)).propagate()
+            sat1.set_propagator_type(PropagatorType.TWO_BODY)
+            (clr.CastAs(sat1.propagator, PropagatorTwoBody)).propagate()
 
             sat2: "Satellite" = clr.CastAs(
-                TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "sat2"), Satellite
+                TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "sat2"), Satellite
             )
-            sat2.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
-            (clr.CastAs(sat2.propagator, VehiclePropagatorTwoBody)).propagate()
+            sat2.set_propagator_type(PropagatorType.TWO_BODY)
+            (clr.CastAs(sat2.propagator, PropagatorTwoBody)).propagate()
 
             sat1.graphics_3d.data_display.remove_all()
 

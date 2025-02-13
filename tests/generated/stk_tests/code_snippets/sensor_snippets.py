@@ -32,10 +32,10 @@ class SensorSnippets(CodeSnippetsTestBase):
     # region TestSetUp
     def setUp(self):
         SensorSnippets.m_Satellite = CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-            STK_OBJECT_TYPE.SATELLITE, SensorSnippets.m_SatelliteName
+            STKObjectType.SATELLITE, SensorSnippets.m_SatelliteName
         )
         SensorSnippets.m_Object = clr.CastAs(
-            SensorSnippets.m_Satellite.children.new(STK_OBJECT_TYPE.SENSOR, SensorSnippets.m_DefaultName), Sensor
+            SensorSnippets.m_Satellite.children.new(STKObjectType.SENSOR, SensorSnippets.m_DefaultName), Sensor
         )
 
     # endregion
@@ -43,7 +43,7 @@ class SensorSnippets(CodeSnippetsTestBase):
     # region TestTearDown
     def tearDown(self):
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(
-            STK_OBJECT_TYPE.SATELLITE, SensorSnippets.m_SatelliteName
+            STKObjectType.SATELLITE, SensorSnippets.m_SatelliteName
         )
 
     # endregion
@@ -109,7 +109,7 @@ class SensorSnippets(CodeSnippetsTestBase):
 
     def DefineSensorPointingFixedAzEl(self, sensor: "Sensor"):
         fixedSensor: "SensorPointingFixed" = sensor.common_tasks.set_pointing_fixed_az_el(
-            4.5, -45.0, AZ_EL_ABOUT_BORESIGHT.ROTATE
+            4.5, -45.0, AzElAboutBoresight.ROTATE
         )
 
     # endregion
@@ -119,8 +119,8 @@ class SensorSnippets(CodeSnippetsTestBase):
         self.DefineSensorPointingFixedAxesAzEl(SensorSnippets.m_Object)
 
     def DefineSensorPointingFixedAxesAzEl(self, sensor: "Sensor"):
-        fixedAxesSensor: "SensorPointingFixedAxes" = sensor.common_tasks.set_pointing_fixed_axes_az_el(
-            "CentralBody/Sun J2000 Axes", 11, 22, AZ_EL_ABOUT_BORESIGHT.HOLD
+        fixedAxesSensor: "SensorPointingFixedInAxes" = sensor.common_tasks.set_pointing_fixed_axes_az_el(
+            "CentralBody/Sun J2000 Axes", 11, 22, AzElAboutBoresight.HOLD
         )
 
     # endregion
@@ -131,7 +131,7 @@ class SensorSnippets(CodeSnippetsTestBase):
 
     def DefineSensorPointingFixedEuler(self, sensor: "Sensor"):
         fixedSensor: "SensorPointingFixed" = sensor.common_tasks.set_pointing_fixed_euler(
-            EULER_ORIENTATION_SEQUENCE.SEQUENCE_132, 30, 40, 50
+            EulerOrientationSequenceType.SEQUENCE_132, 30, 40, 50
         )
 
     # endregion
@@ -141,8 +141,8 @@ class SensorSnippets(CodeSnippetsTestBase):
         self.DefineSensorPointingFixedAxesEuler(SensorSnippets.m_Object)
 
     def DefineSensorPointingFixedAxesEuler(self, sensor: "Sensor"):
-        fixedAxesSensor: "SensorPointingFixedAxes" = sensor.common_tasks.set_pointing_fixed_axes_euler(
-            "CentralBody/Sun J2000 Axes", EULER_ORIENTATION_SEQUENCE.SEQUENCE_132, 30, 40, 50
+        fixedAxesSensor: "SensorPointingFixedInAxes" = sensor.common_tasks.set_pointing_fixed_axes_euler(
+            "CentralBody/Sun J2000 Axes", EulerOrientationSequenceType.SEQUENCE_132, 30, 40, 50
         )
 
     # endregion
@@ -152,7 +152,7 @@ class SensorSnippets(CodeSnippetsTestBase):
         self.DefineSensorPointingFixedQuaternion(SensorSnippets.m_Object)
 
     def DefineSensorPointingFixedQuaternion(self, sensor: "Sensor"):
-        fixedSensor: "SensorPointingFixed" = sensor.common_tasks.set_pointing_fixed_quat(0.1, 0.2, 0.3, 0.4)
+        fixedSensor: "SensorPointingFixed" = sensor.common_tasks.set_pointing_fixed_quaternion(0.1, 0.2, 0.3, 0.4)
 
     # endregion
 
@@ -161,7 +161,7 @@ class SensorSnippets(CodeSnippetsTestBase):
         self.DefineSensorPointingFixedAxesQuaternion(SensorSnippets.m_Object)
 
     def DefineSensorPointingFixedAxesQuaternion(self, sensor: "Sensor"):
-        fixedAxesSensor: "SensorPointingFixedAxes" = sensor.common_tasks.set_pointing_fixed_axes_quat(
+        fixedAxesSensor: "SensorPointingFixedInAxes" = sensor.common_tasks.set_pointing_fixed_axes_quaternion(
             "CentralBody/Sun J2000 Axes", 0.1, 0.2, 0.3, 0.4
         )
 
@@ -173,7 +173,7 @@ class SensorSnippets(CodeSnippetsTestBase):
 
     def DefineSensorPointingFixedYPR(self, sensor: "Sensor"):
         fixedSensor: "SensorPointingFixed" = sensor.common_tasks.set_pointing_fixed_ypr(
-            YPR_ANGLES_SEQUENCE.RPY, 12, 24, 36
+            YPRAnglesSequence.RPY, 12, 24, 36
         )
 
     # endregion
@@ -183,21 +183,21 @@ class SensorSnippets(CodeSnippetsTestBase):
         self.DefineSensorPointingFixedAxesYPR(SensorSnippets.m_Object)
 
     def DefineSensorPointingFixedAxesYPR(self, sensor: "Sensor"):
-        fixedAxesSensor: "SensorPointingFixedAxes" = sensor.common_tasks.set_pointing_fixed_axes_ypr(
-            "CentralBody/Sun J2000 Axes", YPR_ANGLES_SEQUENCE.RYP, 11, 22, 33
+        fixedAxesSensor: "SensorPointingFixedInAxes" = sensor.common_tasks.set_pointing_fixed_axes_ypr(
+            "CentralBody/Sun J2000 Axes", YPRAnglesSequence.RYP, 11, 22, 33
         )
 
     # endregion
 
     # region DefineTargetSensorPointing
     def test_DefineTargetSensorPointing(self):
-        CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.AREA_TARGET, "AreaTarget1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.new(STKObjectType.AREA_TARGET, "AreaTarget1")
         self.DefineTargetSensorPointing(SensorSnippets.m_Object)
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.AREA_TARGET, "AreaTarget1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STKObjectType.AREA_TARGET, "AreaTarget1")
 
     def DefineTargetSensorPointing(self, sensor: "Sensor"):
         targetedSensor: "SensorPointingTargeted" = sensor.common_tasks.set_pointing_targeted_tracking(
-            TRACK_MODE_TYPE.TRANSMIT, BORESIGHT_TYPE.LEVEL, "*/AreaTarget/AreaTarget1"
+            TrackMode.TRANSMIT, BoresightType.LEVEL, "*/AreaTarget/AreaTarget1"
         )
 
     # endregion
@@ -208,14 +208,14 @@ class SensorSnippets(CodeSnippetsTestBase):
 
     def DefineSpinningSensorPointing(self, root: "StkObjectRoot", sensor: "Sensor"):
         # Set pattern type to Spinning
-        sensor.set_pointing_type(SENSOR_POINTING.POINT_SPINNING)
+        sensor.set_pointing_type(SensorPointing.SPINNING)
         spinning: "SensorPointingSpinning" = clr.CastAs(sensor.pointing, SensorPointingSpinning)
 
         # Configure sensor
         spinning.spin_axis_azimuth = 14.24
         spinning.spin_axis_elevation = 7.68
         spinning.spin_axis_cone_angle = 42.46
-        spinning.scan_mode = SENSOR_SCAN_MODE.CONTINUOUS
+        spinning.scan_mode = SensorScanMode.CONTINUOUS
         spinning.spin_rate = 88.921
         spinning.offset_angle = 110.44
 
@@ -228,7 +228,7 @@ class SensorSnippets(CodeSnippetsTestBase):
     def DefineSpinningSensorPointingUsingCommonTasks(self, sensor: "Sensor"):
         # Configure sensor (using common taks)
         sensor.common_tasks.set_pointing_spinning(
-            14.24, 7.68, 42.46, SENSOR_SCAN_MODE.CONTINUOUS, 88.921, 110.44, 1.2, 3.5
+            14.24, 7.68, 42.46, SensorScanMode.CONTINUOUS, 88.921, 110.44, 1.2, 3.5
         )
 
     # endregion
@@ -253,7 +253,7 @@ class SensorSnippets(CodeSnippetsTestBase):
 
     def DefineFixedLocation(self, sensor: "Sensor"):
         # Set sensor's location to fixed
-        sensor.set_location_type(SENSOR_LOCATION.FIXED)
+        sensor.set_location_type(SensorLocation.FIXED)
 
         # Configure sensor location
         pos: "IPosition" = clr.CastAs(sensor.location_data, IPosition)
@@ -274,7 +274,7 @@ class SensorSnippets(CodeSnippetsTestBase):
 
     def DefineLocationOn3DModel(self, sensor: "Sensor"):
         # Set pointing type to 3d model
-        sensor.set_pointing_type(SENSOR_POINTING.POINT_3D_MODEL)
+        sensor.set_pointing_type(SensorPointing.ELEMENT_OF_3D_MODEL)
 
         # Point to model attach point (in this example: "SolarPanels")
         model: "SensorPointing3DModel" = sensor.common_tasks.set_pointing_3d_model("SolarPanels")
@@ -283,13 +283,13 @@ class SensorSnippets(CodeSnippetsTestBase):
 
     # region DefineLocationFromCrdnPoint
     def test_DefineLocationFromCrdnPoint(self):
-        CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "Facility1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.new(STKObjectType.FACILITY, "Facility1")
         self.DefineLocationFromCrdnPoint(SensorSnippets.m_Object)
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.FACILITY, "Facility1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STKObjectType.FACILITY, "Facility1")
 
     def DefineLocationFromCrdnPoint(self, sensor: "Sensor"):
         # Set location type to VGT
-        sensor.set_location_type(SENSOR_LOCATION.VECTOR_GEOMETRY_TOOL_POINT)
+        sensor.set_location_type(SensorLocation.POINT)
 
         # Get LocationVectorGeometryToolPoint interface
         vgtPoint: "LocationVectorGeometryToolPoint" = clr.CastAs(sensor.location_data, LocationVectorGeometryToolPoint)
@@ -313,7 +313,7 @@ class SensorSnippets(CodeSnippetsTestBase):
         maskFile: "SensorAzElMaskFile" = clr.CastAs(sensor.az_el_mask_data, SensorAzElMaskFile)
 
         # Configure MaskFile as needed
-        maskFile.boresight_axis = SENSOR_AZ_EL_BORESIGHT_AXIS_TYPE.PLUS_MINUS_Z
+        maskFile.boresight_axis = SensorAzElBoresightAxisType.Z_AXIS
 
     # endregion
 
@@ -323,10 +323,8 @@ class SensorSnippets(CodeSnippetsTestBase):
         if TestBase.NoGraphicsMode:
             Assert.skipTest("Test cannot be run in NoGraphicsMode (because it uses swath)")
 
-        (Satellite(SensorSnippets.m_Satellite)).set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_TWO_BODY)
-        tb: "VehiclePropagatorTwoBody" = clr.CastAs(
-            (Satellite(SensorSnippets.m_Satellite)).propagator, VehiclePropagatorTwoBody
-        )
+        (Satellite(SensorSnippets.m_Satellite)).set_propagator_type(PropagatorType.TWO_BODY)
+        tb: "PropagatorTwoBody" = clr.CastAs((Satellite(SensorSnippets.m_Satellite)).propagator, PropagatorTwoBody)
         # Propagate
         tb.propagate()
         self.ConfigureAndComputeSensorSwath(SensorSnippets.m_Object)
@@ -336,8 +334,8 @@ class SensorSnippets(CodeSnippetsTestBase):
         swath: "Swath" = sensor.swath
         swath.enable = True
         swath.color = Colors.Red  # red
-        swath.line_style = LINE_STYLE.LMS_DASH
-        swath.line_width = LINE_WIDTH.WIDTH2
+        swath.line_style = LineStyle.LMS_DASH
+        swath.line_width = LineWidth.WIDTH2
 
         # New swath properties
         swath.use_maximum_cone = True
@@ -360,8 +358,8 @@ class SensorSnippets(CodeSnippetsTestBase):
         self.ConfigureSensorVOProjection(SensorSnippets.m_Object.graphics_3d)
 
     def ConfigureSensorVOProjection(self, sensorVo: "SensorGraphics3D"):
-        sensorVo.projection_type = SENSOR_GRAPHICS_3D_PROJECTION_TYPE.PROJECTION_ALL_INTERSECTIONS
-        sensorVo.inherit_from_2d = SENSOR_GRAPHICS_3D_INHERIT_FROM_2D.EXTENT_ONLY
+        sensorVo.projection_type = SensorGraphics3DProjectionType.ALL_INTERSECTIONS
+        sensorVo.inherit_from_2d = SensorGraphics3DInheritFrom2D.EXTENT_ONLY
         sensorVo.space_projection = 2000.0
 
     # endregion
@@ -375,8 +373,8 @@ class SensorSnippets(CodeSnippetsTestBase):
         self.ConfigureSensorVOProjectionTimeVarying(SensorSnippets.m_Object.graphics_3d)
 
     def ConfigureSensorVOProjectionTimeVarying(self, sensorVo: "SensorGraphics3D"):
-        sensorVo.projection_type = SENSOR_GRAPHICS_3D_PROJECTION_TYPE.PROJECTION_ALL_INTERSECTIONS
-        sensorVo.projection_time_dependency = SENSOR_GRAPHICS_3D_PROJECTION_TIME_DEPENDENCY_TYPE.TIME_VARYING
+        sensorVo.projection_type = SensorGraphics3DProjectionType.ALL_INTERSECTIONS
+        sensorVo.projection_time_dependency = SensorGraphics3DProjectionTimeDependencyType.TIME_VARYING
         elem1: "SensorGraphics3DProjectionElement" = sensorVo.space_projection_intervals.add()
         elem1.distance = 5000.0
         elem1.time = "1 Jan 2012 12:00:00.000"

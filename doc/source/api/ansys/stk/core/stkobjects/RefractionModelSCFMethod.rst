@@ -18,13 +18,13 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.RefractionModelSCFMethod.min_target_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.RefractionModelSCFMethod.minimum_target_altitude`
               - Minimum altitude of target for which the refraction will be computed unless extrapolation is used. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.RefractionModelSCFMethod.use_extrapolation`
               - Flag controls whether extrapolation is used past the minimum target altitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.RefractionModelSCFMethod.ceiling`
               - Refraction will be ignored if object altitude is higher than the ceiling. Uses Distance Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.RefractionModelSCFMethod.atmos_altitude`
+            * - :py:attr:`~ansys.stk.core.stkobjects.RefractionModelSCFMethod.atmosphere_altitude`
               - Altitude of the atmosphere. Used to compute the knee bend point of the refracted path. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.RefractionModelSCFMethod.knee_bend_factor`
               - Used to compute the distance to the knee bend point of the refracted path. Dimensionless.
@@ -33,7 +33,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.RefractionModelSCFMethod.refraction_index`
               - Index of refraction at the surface. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.RefractionModelSCFMethod.coefficients`
-              - Gets the polynomial coefficients.
+              - Get the polynomial coefficients.
 
 
 
@@ -48,8 +48,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: min_target_altitude
-    :canonical: ansys.stk.core.stkobjects.RefractionModelSCFMethod.min_target_altitude
+.. py:property:: minimum_target_altitude
+    :canonical: ansys.stk.core.stkobjects.RefractionModelSCFMethod.minimum_target_altitude
     :type: float
 
     Minimum altitude of target for which the refraction will be computed unless extrapolation is used. Uses Distance Dimension.
@@ -66,8 +66,8 @@ Property detail
 
     Refraction will be ignored if object altitude is higher than the ceiling. Uses Distance Dimension.
 
-.. py:property:: atmos_altitude
-    :canonical: ansys.stk.core.stkobjects.RefractionModelSCFMethod.atmos_altitude
+.. py:property:: atmosphere_altitude
+    :canonical: ansys.stk.core.stkobjects.RefractionModelSCFMethod.atmosphere_altitude
     :type: float
 
     Altitude of the atmosphere. Used to compute the knee bend point of the refracted path. Uses Distance Dimension.
@@ -94,6 +94,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.RefractionModelSCFMethod.coefficients
     :type: RefractionCoefficients
 
-    Gets the polynomial coefficients.
+    Get the polynomial coefficients.
 
 

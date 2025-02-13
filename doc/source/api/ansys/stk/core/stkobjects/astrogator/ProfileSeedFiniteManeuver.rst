@@ -30,7 +30,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileSeedFiniteManeuver.segment_name`
-              - Gets or sets the targeted maneuver segment.
+              - Get or set the targeted maneuver segment.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileSeedFiniteManeuver.leave_all_active_stopping_conditions_active`
               - If true, all active stopping conditions on the seeded maneuver will remain active during run.
 
@@ -51,7 +51,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileSeedFiniteManeuver.segment_name
     :type: str
 
-    Gets or sets the targeted maneuver segment.
+    Get or set the targeted maneuver segment.
 
 .. py:property:: leave_all_active_stopping_conditions_active
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileSeedFiniteManeuver.leave_all_active_stopping_conditions_active
@@ -65,14 +65,14 @@ Method detail
 
 
 
-.. py:method:: set_segment(self, pVAMCSManeuver: MissionControlSequenceManeuver) -> None
+.. py:method:: set_segment(self, mcs_maneuver: MCSManeuver) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileSeedFiniteManeuver.set_segment
 
     Set the maneuver segment to target.
 
     :Parameters:
 
-    **pVAMCSManeuver** : :obj:`~MissionControlSequenceManeuver`
+    **mcs_maneuver** : :obj:`~MCSManeuver`
 
     :Returns:
 

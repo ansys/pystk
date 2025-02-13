@@ -26,7 +26,7 @@ Overview
               - Execute a pick in the given rectangular region and returns a depth sorted collection of picked objects. The coordinate origin is top, left. To pick screen overlays, use the PickScreenOverlays method.
             * - :py:attr:`~ansys.stk.core.graphics.Scene.pick_screen_overlays`
               - Execute a pick on screen overlays at the given x, y and returns a front to back sorted collection of picked overlays. The coordinate origin is top, left. To pick other objects in the scene, use the Pick method.
-            * - :py:attr:`~ansys.stk.core.graphics.Scene.Subscribe`
+            * - :py:attr:`~ansys.stk.core.graphics.Scene.subscribe`
               - """Return an ISceneEventHandler that is subscribed to handle events associated with this instance of Scene."""
 
     .. tab-item:: Properties
@@ -36,33 +36,33 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.Scene.camera`
-              - Gets the camera associated with the scene, which affects the view that is rendered by the scene.
+              - Get the camera associated with the scene, which affects the view that is rendered by the scene.
             * - :py:attr:`~ansys.stk.core.graphics.Scene.lighting`
-              - Gets the lighting associated with the scene.
+              - Get the lighting associated with the scene.
             * - :py:attr:`~ansys.stk.core.graphics.Scene.show_sunshine`
-              - Gets or sets whether sunshine is rendered by the Sun central body. Sunshine renders a halo effect around the sun when it is viewed in the scene.
+              - Get or set whether sunshine is rendered by the Sun central body. Sunshine renders a halo effect around the sun when it is viewed in the scene.
             * - :py:attr:`~ansys.stk.core.graphics.Scene.central_bodies`
-              - Gets the central body graphics for a specified central body.
+              - Get the central body graphics for a specified central body.
             * - :py:attr:`~ansys.stk.core.graphics.Scene.background_color`
-              - Gets or sets the background color of the scene.
+              - Get or set the background color of the scene.
             * - :py:attr:`~ansys.stk.core.graphics.Scene.shade_sky_based_on_altitude`
-              - Gets or sets whether the sky will be shaded based on camera altitude. When shade sky based on altitude is set to true, the sky will become more blue as the Camera gets closer to the surface of the central body.
+              - Get or set whether the sky will be shaded based on camera altitude. When shade sky based on altitude is set to true, the sky will become more blue as the Camera gets closer to the surface of the central body.
             * - :py:attr:`~ansys.stk.core.graphics.Scene.show_stars`
-              - Gets or sets whether stars are shown or hidden in the scene.
+              - Get or set whether stars are shown or hidden in the scene.
             * - :py:attr:`~ansys.stk.core.graphics.Scene.globe_overlay_settings`
-              - Gets the scene globe overlay settings for the scene.
+              - Get the scene globe overlay settings for the scene.
             * - :py:attr:`~ansys.stk.core.graphics.Scene.scene_id`
-              - Returns the scene identifier.
+              - Return the scene identifier.
             * - :py:attr:`~ansys.stk.core.graphics.Scene.show_water_surface`
-              - Gets or sets whether water surface on earth is shown or hidden in the scene.
+              - Get or set whether water surface on earth is shown or hidden in the scene.
             * - :py:attr:`~ansys.stk.core.graphics.Scene.anti_aliasing`
-              - Gets or sets the multisample anti-aliasing (MSAA) option for this scene. As the level of anti-aliasing increases, performance will generally decrease, but the quality of the anti-aliasing will improve.
+              - Get or set the multisample anti-aliasing (MSAA) option for this scene. As the level of anti-aliasing increases, performance will generally decrease, but the quality of the anti-aliasing will improve.
             * - :py:attr:`~ansys.stk.core.graphics.Scene.visual_effects`
-              - Gets the visual  effects associated with the scene.
+              - Get the visual  effects associated with the scene.
             * - :py:attr:`~ansys.stk.core.graphics.Scene.clouds`
-              - Gets the clouds for the scene.
+              - Get the clouds for the scene.
             * - :py:attr:`~ansys.stk.core.graphics.Scene.show_star_labels`
-              - Gets or sets whether stars labels are shown or hidden in the scene.
+              - Get or set whether stars labels are shown or hidden in the scene.
 
 
 
@@ -81,85 +81,85 @@ Property detail
     :canonical: ansys.stk.core.graphics.Scene.camera
     :type: Camera
 
-    Gets the camera associated with the scene, which affects the view that is rendered by the scene.
+    Get the camera associated with the scene, which affects the view that is rendered by the scene.
 
 .. py:property:: lighting
     :canonical: ansys.stk.core.graphics.Scene.lighting
     :type: Lighting
 
-    Gets the lighting associated with the scene.
+    Get the lighting associated with the scene.
 
 .. py:property:: show_sunshine
     :canonical: ansys.stk.core.graphics.Scene.show_sunshine
     :type: bool
 
-    Gets or sets whether sunshine is rendered by the Sun central body. Sunshine renders a halo effect around the sun when it is viewed in the scene.
+    Get or set whether sunshine is rendered by the Sun central body. Sunshine renders a halo effect around the sun when it is viewed in the scene.
 
 .. py:property:: central_bodies
     :canonical: ansys.stk.core.graphics.Scene.central_bodies
     :type: CentralBodyGraphicsIndexer
 
-    Gets the central body graphics for a specified central body.
+    Get the central body graphics for a specified central body.
 
 .. py:property:: background_color
     :canonical: ansys.stk.core.graphics.Scene.background_color
     :type: agcolor.Color
 
-    Gets or sets the background color of the scene.
+    Get or set the background color of the scene.
 
 .. py:property:: shade_sky_based_on_altitude
     :canonical: ansys.stk.core.graphics.Scene.shade_sky_based_on_altitude
     :type: bool
 
-    Gets or sets whether the sky will be shaded based on camera altitude. When shade sky based on altitude is set to true, the sky will become more blue as the Camera gets closer to the surface of the central body.
+    Get or set whether the sky will be shaded based on camera altitude. When shade sky based on altitude is set to true, the sky will become more blue as the Camera gets closer to the surface of the central body.
 
 .. py:property:: show_stars
     :canonical: ansys.stk.core.graphics.Scene.show_stars
     :type: bool
 
-    Gets or sets whether stars are shown or hidden in the scene.
+    Get or set whether stars are shown or hidden in the scene.
 
 .. py:property:: globe_overlay_settings
     :canonical: ansys.stk.core.graphics.Scene.globe_overlay_settings
     :type: SceneGlobeOverlaySettings
 
-    Gets the scene globe overlay settings for the scene.
+    Get the scene globe overlay settings for the scene.
 
 .. py:property:: scene_id
     :canonical: ansys.stk.core.graphics.Scene.scene_id
     :type: int
 
-    Returns the scene identifier.
+    Return the scene identifier.
 
 .. py:property:: show_water_surface
     :canonical: ansys.stk.core.graphics.Scene.show_water_surface
     :type: bool
 
-    Gets or sets whether water surface on earth is shown or hidden in the scene.
+    Get or set whether water surface on earth is shown or hidden in the scene.
 
 .. py:property:: anti_aliasing
     :canonical: ansys.stk.core.graphics.Scene.anti_aliasing
-    :type: ANTI_ALIASING_METHOD
+    :type: AntiAliasingMethod
 
-    Gets or sets the multisample anti-aliasing (MSAA) option for this scene. As the level of anti-aliasing increases, performance will generally decrease, but the quality of the anti-aliasing will improve.
+    Get or set the multisample anti-aliasing (MSAA) option for this scene. As the level of anti-aliasing increases, performance will generally decrease, but the quality of the anti-aliasing will improve.
 
 .. py:property:: visual_effects
     :canonical: ansys.stk.core.graphics.Scene.visual_effects
     :type: VisualEffects
 
-    Gets the visual  effects associated with the scene.
+    Get the visual  effects associated with the scene.
 
 .. py:property:: clouds
     :canonical: ansys.stk.core.graphics.Scene.clouds
     :type: Clouds
 
-    Gets the clouds for the scene.
+    Get the clouds for the scene.
 
 .. py:property:: show_star_labels
     :canonical: ansys.stk.core.graphics.Scene.show_star_labels
     :type: bool
 
-    Gets or sets whether stars labels are shown or hidden in the scene.
+    Get or set whether stars labels are shown or hidden in the scene.
 
 
 Method detail

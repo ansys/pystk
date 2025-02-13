@@ -30,11 +30,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyAutopilotNavigation.active_mode`
-              - Gets or sets the autopilot - horizontal plane mode.
+              - Get or set the autopilot - horizontal plane mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyAutopilotNavigation.active_heading_course_value`
-              - Gets or sets the heading/course angle or rate for the active mode.
+              - Get or set the heading/course angle or rate for the active mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyAutopilotNavigation.damping_ratio`
-              - Gets or sets the damping ratio of the control law.
+              - Get or set the damping ratio of the control law.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyAutopilotNavigation.control_limit_mode`
               - Get the method to define the control limits of the aircraft during the maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyAutopilotNavigation.control_limit_turn_radius`
@@ -44,7 +44,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyAutopilotNavigation.control_limit_horizontal_acceleration`
               - Get the specified horizontal acceleration for a control limit mode of specify max horiz accel.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyAutopilotNavigation.compensate_for_coriolis_acceleration`
-              - Gets or sets the option to compensate for the acceleration due to the Coriolis effect.
+              - Get or set the option to compensate for the acceleration due to the Coriolis effect.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyAutopilotNavigation.stop_when_conditions_met`
               - Stop when conditions are met.
 
@@ -63,25 +63,25 @@ Property detail
 
 .. py:property:: active_mode
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyAutopilotNavigation.active_mode
-    :type: AUTOPILOT_HORIZONTAL_PLANE_MODE
+    :type: AutopilotHorizontalPlaneMode
 
-    Gets or sets the autopilot - horizontal plane mode.
+    Get or set the autopilot - horizontal plane mode.
 
 .. py:property:: active_heading_course_value
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyAutopilotNavigation.active_heading_course_value
     :type: typing.Any
 
-    Gets or sets the heading/course angle or rate for the active mode.
+    Get or set the heading/course angle or rate for the active mode.
 
 .. py:property:: damping_ratio
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyAutopilotNavigation.damping_ratio
     :type: float
 
-    Gets or sets the damping ratio of the control law.
+    Get or set the damping ratio of the control law.
 
 .. py:property:: control_limit_mode
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyAutopilotNavigation.control_limit_mode
-    :type: BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT
+    :type: BasicManeuverStrategyNavigationControlLimit
 
     Get the method to define the control limits of the aircraft during the maneuver.
 
@@ -107,7 +107,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyAutopilotNavigation.compensate_for_coriolis_acceleration
     :type: bool
 
-    Gets or sets the option to compensate for the acceleration due to the Coriolis effect.
+    Get or set the option to compensate for the acceleration due to the Coriolis effect.
 
 .. py:property:: stop_when_conditions_met
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyAutopilotNavigation.stop_when_conditions_met
@@ -129,15 +129,15 @@ Method detail
 
 
 
-.. py:method:: set_control_limit(self, controlLimitMode: BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT, controlLimitValue: float) -> None
+.. py:method:: set_control_limit(self, control_limit_mode: BasicManeuverStrategyNavigationControlLimit, control_limit_value: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyAutopilotNavigation.set_control_limit
 
     Set the method and corresponding value to define the control limits of the aircraft during the maneuver.
 
     :Parameters:
 
-    **controlLimitMode** : :obj:`~BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT`
-    **controlLimitValue** : :obj:`~float`
+    **control_limit_mode** : :obj:`~BasicManeuverStrategyNavigationControlLimit`
+    **control_limit_value** : :obj:`~float`
 
     :Returns:
 

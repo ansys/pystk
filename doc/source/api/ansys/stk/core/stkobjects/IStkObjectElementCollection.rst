@@ -34,9 +34,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectElementCollection.count`
-              - Returns the number of elements in a collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectElementCollection._NewEnum`
-              - Returns an enumerator that can iterate through the collection.
+              - Return the number of elements in a collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectElementCollection._new_enum`
+              - Return an enumerator that can iterate through the collection.
 
 
 Import detail
@@ -54,41 +54,41 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.IStkObjectElementCollection.count
     :type: int
 
-    Returns the number of elements in a collection.
+    Return the number of elements in a collection.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.IStkObjectElementCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.IStkObjectElementCollection._new_enum
     :type: EnumeratorProxy
 
-    Returns an enumerator that can iterate through the collection.
+    Return an enumerator that can iterate through the collection.
 
 
 Method detail
 -------------
 
 
-.. py:method:: item(self, indexOrName: typing.Any) -> IStkObject
+.. py:method:: item(self, index_or_name: typing.Any) -> IStkObject
     :canonical: ansys.stk.core.stkobjects.IStkObjectElementCollection.item
 
     Given an index, returns an element in the collection. If the index is an integer, then the method returns the element in the collection at the given position. If the index is a string, then the method returns the element with the specified name.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 
         :obj:`~IStkObject`
 
 
-.. py:method:: contains(self, instName: str) -> bool
+.. py:method:: contains(self, inst_name: str) -> bool
     :canonical: ansys.stk.core.stkobjects.IStkObjectElementCollection.contains
 
     Check whether an object with the given name exists.
 
     :Parameters:
 
-    **instName** : :obj:`~str`
+    **inst_name** : :obj:`~str`
 
     :Returns:
 

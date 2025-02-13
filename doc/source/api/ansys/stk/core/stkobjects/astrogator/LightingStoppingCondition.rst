@@ -34,7 +34,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.LightingStoppingCondition.max_trip_times`
               - Rhe maximum number of times that the stopping condition will be applied - and any resulting automatic sequences executed. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.LightingStoppingCondition.repeat_count`
-              - Gets or sets the number of times the condition must be satisfied before the propagation ends or moves on to the designated automatic sequence. Dimensionless.
+              - Get or set the number of times the condition must be satisfied before the propagation ends or moves on to the designated automatic sequence. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.LightingStoppingCondition.constraints`
               - Further conditions that must be met in order for the stopping condition to be deemed satisfied.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.LightingStoppingCondition.before_conditions`
@@ -42,15 +42,15 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.LightingStoppingCondition.inherited`
               - Condition Inherited by Automatic Sequences - if true, the stopping condition will be applied to any automatic sequences activated within the same segment.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.LightingStoppingCondition.sequence`
-              - Gets or sets the automatic sequence to trigger if the highlighted stopping condition is satisfied.
+              - Get or set the automatic sequence to trigger if the highlighted stopping condition is satisfied.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.LightingStoppingCondition.condition`
-              - Specifies the direction from which the stopping condition value must be achieved.
+              - Specify the direction from which the stopping condition value must be achieved.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.LightingStoppingCondition.eclipsing_bodies_list_source`
               - Eclipsing Bodies List Source.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.LightingStoppingCondition.eclipsing_bodies`
-              - Returns a list of user selected eclipsing bodies.
+              - Return a list of user selected eclipsing bodies.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.LightingStoppingCondition.available_eclipsing_bodies`
-              - Returns a list of available eclipsing bodies.
+              - Return a list of available eclipsing bodies.
 
 
 
@@ -75,7 +75,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.LightingStoppingCondition.repeat_count
     :type: float
 
-    Gets or sets the number of times the condition must be satisfied before the propagation ends or moves on to the designated automatic sequence. Dimensionless.
+    Get or set the number of times the condition must be satisfied before the propagation ends or moves on to the designated automatic sequence. Dimensionless.
 
 .. py:property:: constraints
     :canonical: ansys.stk.core.stkobjects.astrogator.LightingStoppingCondition.constraints
@@ -99,17 +99,17 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.LightingStoppingCondition.sequence
     :type: str
 
-    Gets or sets the automatic sequence to trigger if the highlighted stopping condition is satisfied.
+    Get or set the automatic sequence to trigger if the highlighted stopping condition is satisfied.
 
 .. py:property:: condition
     :canonical: ansys.stk.core.stkobjects.astrogator.LightingStoppingCondition.condition
-    :type: LIGHTING_CONDITION
+    :type: LightingCondition
 
-    Specifies the direction from which the stopping condition value must be achieved.
+    Specify the direction from which the stopping condition value must be achieved.
 
 .. py:property:: eclipsing_bodies_list_source
     :canonical: ansys.stk.core.stkobjects.astrogator.LightingStoppingCondition.eclipsing_bodies_list_source
-    :type: ECLIPSING_BODIES_SOURCE
+    :type: EclipsingBodiesSource
 
     Eclipsing Bodies List Source.
 
@@ -117,13 +117,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.LightingStoppingCondition.eclipsing_bodies
     :type: list
 
-    Returns a list of user selected eclipsing bodies.
+    Return a list of user selected eclipsing bodies.
 
 .. py:property:: available_eclipsing_bodies
     :canonical: ansys.stk.core.stkobjects.astrogator.LightingStoppingCondition.available_eclipsing_bodies
     :type: list
 
-    Returns a list of available eclipsing bodies.
+    Return a list of available eclipsing bodies.
 
 
 Method detail
@@ -143,27 +143,27 @@ Method detail
 
 
 
-.. py:method:: add_eclipsing_body(self, eclipsingBody: str) -> None
+.. py:method:: add_eclipsing_body(self, eclipsing_body: str) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.LightingStoppingCondition.add_eclipsing_body
 
     Add an eclipsing body.
 
     :Parameters:
 
-    **eclipsingBody** : :obj:`~str`
+    **eclipsing_body** : :obj:`~str`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: remove_eclipsing_body(self, eclipsingBody: str) -> None
+.. py:method:: remove_eclipsing_body(self, eclipsing_body: str) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.LightingStoppingCondition.remove_eclipsing_body
 
     Remove an eclipsing body.
 
     :Parameters:
 
-    **eclipsingBody** : :obj:`~str`
+    **eclipsing_body** : :obj:`~str`
 
     :Returns:
 

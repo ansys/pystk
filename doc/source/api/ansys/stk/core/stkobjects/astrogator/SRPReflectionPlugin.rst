@@ -21,15 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.SRPReflectionPlugin.plugin_identifier`
-              - Gets or sets the plugin name.
+              - Get or set the plugin name.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.SRPReflectionPlugin.plugin_config`
               - Get the properties of the selected plugin.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.SRPReflectionPlugin.atmos_altitude`
-              - Gets or sets the atmospheric altitude for eclipse. A simple model to account for some measure of attenuation that simply increases the shape of the Earth by the defined altitude height, often taken to be 23 km. Uses Distance Dimension.
+              - Get or set the atmospheric altitude for eclipse. A simple model to account for some measure of attenuation that simply increases the shape of the Earth by the defined altitude height, often taken to be 23 km. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.SRPReflectionPlugin.shadow_model`
-              - Gets or sets the shadow model type.
+              - Get or set the shadow model type.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.SRPReflectionPlugin.sun_position`
-              - Gets or sets the sun position computation.
+              - Get or set the sun position computation.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.SRPReflectionPlugin.eclipsing_bodies`
               - Other eclipsing bodies.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.SRPReflectionPlugin.include_boundary_mitigation`
@@ -56,7 +56,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.SRPReflectionPlugin.plugin_identifier
     :type: str
 
-    Gets or sets the plugin name.
+    Get or set the plugin name.
 
 .. py:property:: plugin_config
     :canonical: ansys.stk.core.stkobjects.astrogator.SRPReflectionPlugin.plugin_config
@@ -68,23 +68,23 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.SRPReflectionPlugin.atmos_altitude
     :type: float
 
-    Gets or sets the atmospheric altitude for eclipse. A simple model to account for some measure of attenuation that simply increases the shape of the Earth by the defined altitude height, often taken to be 23 km. Uses Distance Dimension.
+    Get or set the atmospheric altitude for eclipse. A simple model to account for some measure of attenuation that simply increases the shape of the Earth by the defined altitude height, often taken to be 23 km. Uses Distance Dimension.
 
 .. py:property:: shadow_model
     :canonical: ansys.stk.core.stkobjects.astrogator.SRPReflectionPlugin.shadow_model
-    :type: SHADOW_MODEL
+    :type: ShadowModel
 
-    Gets or sets the shadow model type.
+    Get or set the shadow model type.
 
 .. py:property:: sun_position
     :canonical: ansys.stk.core.stkobjects.astrogator.SRPReflectionPlugin.sun_position
-    :type: SUN_POSITION
+    :type: SunPosition
 
-    Gets or sets the sun position computation.
+    Get or set the sun position computation.
 
 .. py:property:: eclipsing_bodies
     :canonical: ansys.stk.core.stkobjects.astrogator.SRPReflectionPlugin.eclipsing_bodies
-    :type: CentralBodyCollection
+    :type: CentralBodyComponentCollection
 
     Other eclipsing bodies.
 

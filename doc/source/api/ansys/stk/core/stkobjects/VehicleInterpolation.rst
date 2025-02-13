@@ -19,9 +19,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleInterpolation.method`
-              - Gets or sets the interpolation method.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleInterpolation.graphics_3d_pmu`
-              - Gets or sets the gravitational parameter used by the VOP method, in the range 1.993002209e+14 to 7.972008836e+14 for Earth based vehicles. Dimensionless.
+              - Get or set the interpolation method.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleInterpolation.vop_mu`
+              - Get or set the gravitational parameter used by the VOP method, in the range 1.993002209e+14 to 7.972008836e+14 for Earth based vehicles. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleInterpolation.order`
               - Interpolation order. Dimensionless.
 
@@ -40,15 +40,15 @@ Property detail
 
 .. py:property:: method
     :canonical: ansys.stk.core.stkobjects.VehicleInterpolation.method
-    :type: VEHICLE_INTERPOLATION_METHOD
+    :type: VehicleInterpolationMethod
 
-    Gets or sets the interpolation method.
+    Get or set the interpolation method.
 
-.. py:property:: graphics_3d_pmu
-    :canonical: ansys.stk.core.stkobjects.VehicleInterpolation.graphics_3d_pmu
+.. py:property:: vop_mu
+    :canonical: ansys.stk.core.stkobjects.VehicleInterpolation.vop_mu
     :type: float
 
-    Gets or sets the gravitational parameter used by the VOP method, in the range 1.993002209e+14 to 7.972008836e+14 for Earth based vehicles. Dimensionless.
+    Get or set the gravitational parameter used by the VOP method, in the range 1.993002209e+14 to 7.972008836e+14 for Earth based vehicles. Dimensionless.
 
 .. py:property:: order
     :canonical: ansys.stk.core.stkobjects.VehicleInterpolation.order

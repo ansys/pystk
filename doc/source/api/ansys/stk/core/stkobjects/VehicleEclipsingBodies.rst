@@ -34,9 +34,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleEclipsingBodies.available_eclipsing_bodies`
-              - Gets the available eclipsing bodies.
+              - Get the available eclipsing bodies.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleEclipsingBodies.assigned_eclipsing_bodies`
-              - Gets the assigned eclipsing bodies.
+              - Get the assigned eclipsing bodies.
 
 
 
@@ -55,13 +55,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleEclipsingBodies.available_eclipsing_bodies
     :type: list
 
-    Gets the available eclipsing bodies.
+    Get the available eclipsing bodies.
 
 .. py:property:: assigned_eclipsing_bodies
     :canonical: ansys.stk.core.stkobjects.VehicleEclipsingBodies.assigned_eclipsing_bodies
     :type: list
 
-    Gets the assigned eclipsing bodies.
+    Get the assigned eclipsing bodies.
 
 
 Method detail
@@ -69,40 +69,40 @@ Method detail
 
 
 
-.. py:method:: is_eclipsing_body_assigned(self, eclipsingBody: str) -> bool
+.. py:method:: is_eclipsing_body_assigned(self, eclipsing_body: str) -> bool
     :canonical: ansys.stk.core.stkobjects.VehicleEclipsingBodies.is_eclipsing_body_assigned
 
     Return true if the eclipsing body is assigned.
 
     :Parameters:
 
-    **eclipsingBody** : :obj:`~str`
+    **eclipsing_body** : :obj:`~str`
 
     :Returns:
 
         :obj:`~bool`
 
-.. py:method:: assign_eclipsing_body(self, eclipsingBody: str) -> None
+.. py:method:: assign_eclipsing_body(self, eclipsing_body: str) -> None
     :canonical: ansys.stk.core.stkobjects.VehicleEclipsingBodies.assign_eclipsing_body
 
     Add an eclipsing body.
 
     :Parameters:
 
-    **eclipsingBody** : :obj:`~str`
+    **eclipsing_body** : :obj:`~str`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: remove_eclipsing_body(self, eclipsingBody: str) -> None
+.. py:method:: remove_eclipsing_body(self, eclipsing_body: str) -> None
     :canonical: ansys.stk.core.stkobjects.VehicleEclipsingBodies.remove_eclipsing_body
 
     Remove an eclipsing body.
 
     :Parameters:
 
-    **eclipsingBody** : :obj:`~str`
+    **eclipsing_body** : :obj:`~str`
 
     :Returns:
 

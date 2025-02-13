@@ -18,7 +18,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGraphics2DAnimation.is_satisfaction_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGraphics2DAnimation.show_satisfaction`
               - Show Satisfaction: display graphics for regions of the grid that satisfy multiple figure of merit satisfaction criteria simultaneously during animation.
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageGraphics2DAnimation.color`
               - Color of the animation graphics display.
@@ -38,8 +38,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: is_satisfaction_visible
-    :canonical: ansys.stk.core.stkobjects.CoverageGraphics2DAnimation.is_satisfaction_visible
+.. py:property:: show_satisfaction
+    :canonical: ansys.stk.core.stkobjects.CoverageGraphics2DAnimation.show_satisfaction
     :type: bool
 
     Show Satisfaction: display graphics for regions of the grid that satisfy multiple figure of merit satisfaction criteria simultaneously during animation.

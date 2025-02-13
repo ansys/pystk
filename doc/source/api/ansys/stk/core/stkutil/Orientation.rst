@@ -9,10 +9,6 @@ Orientation
 
 .. py:currentmodule:: Orientation
 
-Overview
---------
-
-
 
 Import detail
 -------------

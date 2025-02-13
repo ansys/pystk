@@ -22,7 +22,6 @@ Overview
               - Initialize an axes primitive with the specified reference frame as its source.
 
 
-
 Import detail
 -------------
 
@@ -35,14 +34,14 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: initialize_with_direction(self, referenceFrame: IVectorGeometryToolSystem, axes: IVectorGeometryToolAxes, font: GraphicsFont) -> AxesPrimitive
+.. py:method:: initialize_with_direction(self, reference_frame: IVectorGeometryToolSystem, axes: IVectorGeometryToolAxes, font: GraphicsFont) -> AxesPrimitive
     :canonical: ansys.stk.core.graphics.AxesPrimitiveFactory.initialize_with_direction
 
     Initialize an axes primitive with the specified reference frame as its source.
 
     :Parameters:
 
-    **referenceFrame** : :obj:`~IVectorGeometryToolSystem`
+    **reference_frame** : :obj:`~IVectorGeometryToolSystem`
     **axes** : :obj:`~IVectorGeometryToolAxes`
     **font** : :obj:`~GraphicsFont`
 

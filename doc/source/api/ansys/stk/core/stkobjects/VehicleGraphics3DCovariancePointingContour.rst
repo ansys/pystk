@@ -36,16 +36,16 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DCovariancePointingContour.sigma_scale_type`
               - Opt whether to size the contour indirectly by specifying a probability or directly by specifying a scale.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DCovariancePointingContour.sigma_scale_supported_types`
-              - Returns an array of valid choices.
+              - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DCovariancePointingContour.sigma_scale`
               - Get the sigma scale.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DCovariancePointingContour.attributes_type`
               - Get the graphics attributes type.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DCovariancePointingContour.attributes_supported_types`
-              - Returns an array of valid choices.
+              - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DCovariancePointingContour.attributes`
               - Get the graphics attributes.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DCovariancePointingContour.is_cone_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DCovariancePointingContour.show_cone`
               - Opt whether to display a cone connecting the center of the current object with the contour.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DCovariancePointingContour.size`
               - Get the size of the contour.
@@ -67,7 +67,7 @@ Property detail
 
 .. py:property:: sigma_scale_type
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DCovariancePointingContour.sigma_scale_type
-    :type: VEHICLE_GRAPHICS_3D_SIGMA_SCALE
+    :type: VehicleGraphics3DSigmaScale
 
     Opt whether to size the contour indirectly by specifying a probability or directly by specifying a scale.
 
@@ -75,7 +75,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DCovariancePointingContour.sigma_scale_supported_types
     :type: list
 
-    Returns an array of valid choices.
+    Return an array of valid choices.
 
 .. py:property:: sigma_scale
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DCovariancePointingContour.sigma_scale
@@ -85,7 +85,7 @@ Property detail
 
 .. py:property:: attributes_type
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DCovariancePointingContour.attributes_type
-    :type: VEHICLE_GRAPHICS_3D_ATTRIBUTES
+    :type: VehicleGraphics3DAttributeType
 
     Get the graphics attributes type.
 
@@ -93,7 +93,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DCovariancePointingContour.attributes_supported_types
     :type: list
 
-    Returns an array of valid choices.
+    Return an array of valid choices.
 
 .. py:property:: attributes
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DCovariancePointingContour.attributes
@@ -101,8 +101,8 @@ Property detail
 
     Get the graphics attributes.
 
-.. py:property:: is_cone_visible
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DCovariancePointingContour.is_cone_visible
+.. py:property:: show_cone
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DCovariancePointingContour.show_cone
     :type: bool
 
     Opt whether to display a cone connecting the center of the current object with the contour.
@@ -124,27 +124,27 @@ Method detail
 -------------
 
 
-.. py:method:: set_sigma_scale_type(self, sigmaScale: VEHICLE_GRAPHICS_3D_SIGMA_SCALE) -> None
+.. py:method:: set_sigma_scale_type(self, sigma_scale: VehicleGraphics3DSigmaScale) -> None
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DCovariancePointingContour.set_sigma_scale_type
 
     Set the sigma scale type.
 
     :Parameters:
 
-    **sigmaScale** : :obj:`~VEHICLE_GRAPHICS_3D_SIGMA_SCALE`
+    **sigma_scale** : :obj:`~VehicleGraphics3DSigmaScale`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_sigma_scale_type_supported(self, sigmaScale: VEHICLE_GRAPHICS_3D_SIGMA_SCALE) -> bool
+.. py:method:: is_sigma_scale_type_supported(self, sigma_scale: VehicleGraphics3DSigmaScale) -> bool
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DCovariancePointingContour.is_sigma_scale_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **sigmaScale** : :obj:`~VEHICLE_GRAPHICS_3D_SIGMA_SCALE`
+    **sigma_scale** : :obj:`~VehicleGraphics3DSigmaScale`
 
     :Returns:
 
@@ -153,27 +153,27 @@ Method detail
 
 
 
-.. py:method:: set_attributes_type(self, attributes: VEHICLE_GRAPHICS_3D_ATTRIBUTES) -> None
+.. py:method:: set_attributes_type(self, attributes: VehicleGraphics3DAttributeType) -> None
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DCovariancePointingContour.set_attributes_type
 
     Set the graphics attributes type.
 
     :Parameters:
 
-    **attributes** : :obj:`~VEHICLE_GRAPHICS_3D_ATTRIBUTES`
+    **attributes** : :obj:`~VehicleGraphics3DAttributeType`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_attributes_type_supported(self, attributes: VEHICLE_GRAPHICS_3D_ATTRIBUTES) -> bool
+.. py:method:: is_attributes_type_supported(self, attributes: VehicleGraphics3DAttributeType) -> bool
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DCovariancePointingContour.is_attributes_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **attributes** : :obj:`~VEHICLE_GRAPHICS_3D_ATTRIBUTES`
+    **attributes** : :obj:`~VehicleGraphics3DAttributeType`
 
     :Returns:
 

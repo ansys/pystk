@@ -18,10 +18,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTargetPointPositionCartesian.b_mul_t`
-              - Gets or sets the value of a dot product of vector B and unit vector T. Uses Distance Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTargetPointPositionCartesian.b_mul_r`
-              - Gets or sets the value of a dot product of vector B and unit vector R. Uses Distance Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTargetPointPositionCartesian.b_dot_t`
+              - Get or set the value of a dot product of vector B and unit vector T. Uses Distance Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTargetPointPositionCartesian.b_dot_r`
+              - Get or set the value of a dot product of vector B and unit vector R. Uses Distance Dimension.
 
 
 
@@ -36,16 +36,16 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: b_mul_t
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTargetPointPositionCartesian.b_mul_t
+.. py:property:: b_dot_t
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTargetPointPositionCartesian.b_dot_t
     :type: float
 
-    Gets or sets the value of a dot product of vector B and unit vector T. Uses Distance Dimension.
+    Get or set the value of a dot product of vector B and unit vector T. Uses Distance Dimension.
 
-.. py:property:: b_mul_r
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTargetPointPositionCartesian.b_mul_r
+.. py:property:: b_dot_r
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTargetPointPositionCartesian.b_dot_r
     :type: float
 
-    Gets or sets the value of a dot product of vector B and unit vector R. Uses Distance Dimension.
+    Get or set the value of a dot product of vector B and unit vector R. Uses Distance Dimension.
 
 

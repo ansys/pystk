@@ -7,10 +7,6 @@ IPerformanceModel
 
 .. py:currentmodule:: IPerformanceModel
 
-Overview
---------
-
-
 Import detail
 -------------
 

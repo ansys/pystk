@@ -9,10 +9,6 @@ SensorUnknownPattern
 
 .. py:currentmodule:: SensorUnknownPattern
 
-Overview
---------
-
-
 
 Import detail
 -------------

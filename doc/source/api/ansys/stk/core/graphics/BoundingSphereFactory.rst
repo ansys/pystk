@@ -28,7 +28,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.BoundingSphereFactory.maximum_radius_bounding_sphere`
-              - Gets the bounding sphere of maximum possible radius.
+              - Get the bounding sphere of maximum possible radius.
 
 
 
@@ -47,7 +47,7 @@ Property detail
     :canonical: ansys.stk.core.graphics.BoundingSphereFactory.maximum_radius_bounding_sphere
     :type: BoundingSphere
 
-    Gets the bounding sphere of maximum possible radius.
+    Get the bounding sphere of maximum possible radius.
 
 
 Method detail

@@ -35,32 +35,32 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent.kind`
-              - Returns the component kind.
+            * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent.component_type`
+              - Return the component kind.
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent.category`
-              - Allows the user to access or change the component category (Folder).
+              - Allow the user to access or change the component category (Folder).
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent.name`
-              - Returns the component name.
+              - Return the component name.
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent.description`
-              - Returns the component description.
+              - Return the component description.
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent.path`
-              - Returns the component's fully qualified path (ie. \"CentralBody/Earth Body\", etc.).
+              - Return the component's fully qualified path (ie. ``CentralBody/Earth Body``, etc.).
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent.is_duplicable`
-              - Returns whether the VGT component can be duplicated.
+              - Return whether the VGT component can be duplicated.
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent.context`
-              - Returns the context object associated with the instance. The returned object is either an instance of IAgCrdnInstance or IAgCrdnTemplate interface.
-            * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent.type_info`
-              - Returns the component type information.
+              - Return the context object associated with the instance. The returned object is either an instance of IAgCrdnInstance or IAgCrdnTemplate interface.
+            * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent.type_information`
+              - Return the component type information.
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent.qualified_path`
-              - An STK-conformant path to the VGT component that can be used to visualize the VGT components in 3D (i.e. \"CentralBody/Earth Body Vector\", etc.).
+              - An STK-conformant path to the VGT component that can be used to visualize the VGT components in 3D (i.e. ``CentralBody/Earth Body Vector``, etc.).
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent.is_valid`
-              - Returns whether the component is valid.
+              - Return whether the component is valid.
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent.is_ready`
-              - Returns whether the component is ready. The component is ready if it's been fully initialized.
+              - Return whether the component is ready. The component is ready if it's been fully initialized.
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent.is_read_only`
-              - Returns whether the component is modifiable.
+              - Return whether the component is modifiable.
             * - :py:attr:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent.embedded_components`
-              - Returns a collection of embedded components.
+              - Return a collection of embedded components.
 
 
 Import detail
@@ -74,83 +74,83 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: kind
-    :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchComponent.kind
-    :type: CRDN_KIND
+.. py:property:: component_type
+    :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchComponent.component_type
+    :type: VectorGeometryToolComponentType
 
-    Returns the component kind.
+    Return the component kind.
 
 .. py:property:: category
     :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchComponent.category
     :type: str
 
-    Allows the user to access or change the component category (Folder).
+    Allow the user to access or change the component category (Folder).
 
 .. py:property:: name
     :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchComponent.name
     :type: str
 
-    Returns the component name.
+    Return the component name.
 
 .. py:property:: description
     :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchComponent.description
     :type: str
 
-    Returns the component description.
+    Return the component description.
 
 .. py:property:: path
     :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchComponent.path
     :type: str
 
-    Returns the component's fully qualified path (ie. \"CentralBody/Earth Body\", etc.).
+    Return the component's fully qualified path (ie. ``CentralBody/Earth Body``, etc.).
 
 .. py:property:: is_duplicable
     :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchComponent.is_duplicable
     :type: bool
 
-    Returns whether the VGT component can be duplicated.
+    Return whether the VGT component can be duplicated.
 
 .. py:property:: context
     :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchComponent.context
-    :type: IAnalysisWorkbenchContext
+    :type: IAnalysisWorkbenchComponentContext
 
-    Returns the context object associated with the instance. The returned object is either an instance of IAgCrdnInstance or IAgCrdnTemplate interface.
+    Return the context object associated with the instance. The returned object is either an instance of IAgCrdnInstance or IAgCrdnTemplate interface.
 
-.. py:property:: type_info
-    :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchComponent.type_info
-    :type: AnalysisWorkbenchTypeInfo
+.. py:property:: type_information
+    :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchComponent.type_information
+    :type: AnalysisWorkbenchComponentTypeInformation
 
-    Returns the component type information.
+    Return the component type information.
 
 .. py:property:: qualified_path
     :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchComponent.qualified_path
     :type: str
 
-    An STK-conformant path to the VGT component that can be used to visualize the VGT components in 3D (i.e. \"CentralBody/Earth Body Vector\", etc.).
+    An STK-conformant path to the VGT component that can be used to visualize the VGT components in 3D (i.e. ``CentralBody/Earth Body Vector``, etc.).
 
 .. py:property:: is_valid
     :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchComponent.is_valid
     :type: bool
 
-    Returns whether the component is valid.
+    Return whether the component is valid.
 
 .. py:property:: is_ready
     :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchComponent.is_ready
     :type: bool
 
-    Returns whether the component is ready. The component is ready if it's been fully initialized.
+    Return whether the component is ready. The component is ready if it's been fully initialized.
 
 .. py:property:: is_read_only
     :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchComponent.is_read_only
     :type: bool
 
-    Returns whether the component is modifiable.
+    Return whether the component is modifiable.
 
 .. py:property:: embedded_components
     :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchComponent.embedded_components
-    :type: AnalysisWorkbenchCollection
+    :type: AnalysisWorkbenchComponentCollection
 
-    Returns a collection of embedded components.
+    Return a collection of embedded components.
 
 
 Method detail
@@ -169,14 +169,14 @@ Method detail
 
 
 
-.. py:method:: duplicate(self, newName: str, description: str) -> IAnalysisWorkbenchComponent
+.. py:method:: duplicate(self, new_name: str, description: str) -> IAnalysisWorkbenchComponent
     :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchComponent.duplicate
 
     Create a copy of the instance of a VGT component. The new component is automatically registered and will be persisted or restored when a scenario is saved or loaded.
 
     :Parameters:
 
-    **newName** : :obj:`~str`
+    **new_name** : :obj:`~str`
     **description** : :obj:`~str`
 
     :Returns:
@@ -220,14 +220,14 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: rename(self, newName: str) -> None
+.. py:method:: rename(self, new_name: str) -> None
     :canonical: ansys.stk.core.vgt.IAnalysisWorkbenchComponent.rename
 
     Rename the component.
 
     :Parameters:
 
-    **newName** : :obj:`~str`
+    **new_name** : :obj:`~str`
 
     :Returns:
 

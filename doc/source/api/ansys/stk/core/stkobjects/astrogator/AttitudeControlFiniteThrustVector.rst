@@ -23,11 +23,11 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AttitudeControlFiniteThrustVector.attitude_update`
               - How and when the attitude will be updated.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AttitudeControlFiniteThrustVector.thrust_axes_name`
-              - Gets or sets the thrust axes.
+              - Get or set the thrust axes.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AttitudeControlFiniteThrustVector.body_constraint_vector`
-              - Defines a constraint vector in spacecraft body coordinates to complete the attitude definition.
+              - Define a constraint vector in spacecraft body coordinates to complete the attitude definition.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AttitudeControlFiniteThrustVector.thrust_vector`
-              - Defines the thrust vector in the reference axes.
+              - Define the thrust vector in the reference axes.
 
 
 
@@ -44,7 +44,7 @@ Property detail
 
 .. py:property:: attitude_update
     :canonical: ansys.stk.core.stkobjects.astrogator.AttitudeControlFiniteThrustVector.attitude_update
-    :type: ATTITUDE_UPDATE
+    :type: AttitudeUpdate
 
     How and when the attitude will be updated.
 
@@ -52,18 +52,18 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.AttitudeControlFiniteThrustVector.thrust_axes_name
     :type: str
 
-    Gets or sets the thrust axes.
+    Get or set the thrust axes.
 
 .. py:property:: body_constraint_vector
     :canonical: ansys.stk.core.stkobjects.astrogator.AttitudeControlFiniteThrustVector.body_constraint_vector
     :type: IDirection
 
-    Defines a constraint vector in spacecraft body coordinates to complete the attitude definition.
+    Define a constraint vector in spacecraft body coordinates to complete the attitude definition.
 
 .. py:property:: thrust_vector
     :canonical: ansys.stk.core.stkobjects.astrogator.AttitudeControlFiniteThrustVector.thrust_vector
     :type: IDirection
 
-    Defines the thrust vector in the reference axes.
+    Define the thrust vector in the reference axes.
 
 

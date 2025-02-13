@@ -18,8 +18,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.IPolarizationCrossPolLeakage.cross_pol_leakage`
-              - Gets or sets the polarization cross pol leakage.
+            * - :py:attr:`~ansys.stk.core.stkobjects.IPolarizationCrossPolLeakage.cross_polarization_leakage`
+              - Get or set the polarization cross pol leakage.
 
 
 Import detail
@@ -33,10 +33,10 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: cross_pol_leakage
-    :canonical: ansys.stk.core.stkobjects.IPolarizationCrossPolLeakage.cross_pol_leakage
+.. py:property:: cross_polarization_leakage
+    :canonical: ansys.stk.core.stkobjects.IPolarizationCrossPolLeakage.cross_polarization_leakage
     :type: float
 
-    Gets or sets the polarization cross pol leakage.
+    Get or set the polarization cross pol leakage.
 
 

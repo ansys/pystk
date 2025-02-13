@@ -48,7 +48,7 @@ Property detail
 
 .. py:property:: slew_timing_between_targets
     :canonical: ansys.stk.core.stkobjects.VehicleAttitudeSlewFixedRate.slew_timing_between_targets
-    :type: VEHICLE_SLEW_TIMING_BETWEEN_TARGETS
+    :type: VehicleSlewTimingBetweenTargetType
 
     Choose an event within the window of opportunity to trigger each slew, or select Optimal to change attitude whenever the slew can be performed most efficiently.
 

@@ -19,13 +19,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.PropulsionEfficiencies.technology_level`
-              - Gets or sets the technology level of the jet engine.
+              - Get or set the technology level of the jet engine.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.PropulsionEfficiencies.intake_type`
-              - Gets or sets the jet engine intake type.
+              - Get or set the jet engine intake type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.PropulsionEfficiencies.turbine_type`
-              - Gets or sets the jet engine turbine type.
+              - Get or set the jet engine turbine type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.PropulsionEfficiencies.exhaust_nozzle_type`
-              - Gets or sets the jet engine exhaust nozzle type.
+              - Get or set the jet engine exhaust nozzle type.
 
 
 
@@ -42,26 +42,26 @@ Property detail
 
 .. py:property:: technology_level
     :canonical: ansys.stk.core.stkobjects.aviator.PropulsionEfficiencies.technology_level
-    :type: JET_ENGINE_TECHNOLOGY_LEVEL
+    :type: JetEngineTechnologyLevel
 
-    Gets or sets the technology level of the jet engine.
+    Get or set the technology level of the jet engine.
 
 .. py:property:: intake_type
     :canonical: ansys.stk.core.stkobjects.aviator.PropulsionEfficiencies.intake_type
-    :type: JET_ENGINE_INTAKE_TYPE
+    :type: JetEngineIntakeType
 
-    Gets or sets the jet engine intake type.
+    Get or set the jet engine intake type.
 
 .. py:property:: turbine_type
     :canonical: ansys.stk.core.stkobjects.aviator.PropulsionEfficiencies.turbine_type
-    :type: JET_ENGINE_TURBINE_TYPE
+    :type: JetEngineTurbineType
 
-    Gets or sets the jet engine turbine type.
+    Get or set the jet engine turbine type.
 
 .. py:property:: exhaust_nozzle_type
     :canonical: ansys.stk.core.stkobjects.aviator.PropulsionEfficiencies.exhaust_nozzle_type
-    :type: JET_ENGINE_EXHAUST_NOZZLE_TYPE
+    :type: JetEngineExhaustNozzleType
 
-    Gets or sets the jet engine exhaust nozzle type.
+    Get or set the jet engine exhaust nozzle type.
 
 

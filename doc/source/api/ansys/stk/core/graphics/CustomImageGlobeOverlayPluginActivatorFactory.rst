@@ -22,7 +22,6 @@ Overview
               - Initialize a new instance of the Activator type.
 
 
-
 Import detail
 -------------
 

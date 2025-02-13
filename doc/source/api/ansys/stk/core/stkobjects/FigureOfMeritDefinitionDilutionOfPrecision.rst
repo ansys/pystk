@@ -9,10 +9,6 @@ FigureOfMeritDefinitionDilutionOfPrecision
 
 .. py:currentmodule:: FigureOfMeritDefinitionDilutionOfPrecision
 
-Overview
---------
-
-
 
 Import detail
 -------------

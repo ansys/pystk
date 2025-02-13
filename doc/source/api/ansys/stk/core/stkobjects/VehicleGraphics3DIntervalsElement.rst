@@ -22,14 +22,14 @@ Overview
               - Time at which the interval begins and the selected graphics display in the 3D window. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DIntervalsElement.stop_time`
               - Time at which the interval ends. Uses DateFormat Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DIntervalsElement.is_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DIntervalsElement.show_graphics`
               - Opt whether to display the object during the selected time using the selected graphics properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DIntervalsElement.color`
-              - Gets or sets the line color.
+              - Get or set the line color.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DIntervalsElement.line_width`
-              - Gets or sets the line width.
+              - Get or set the line width.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DIntervalsElement.translucency`
-              - Gets or sets the translucency. Dimensionless.
+              - Get or set the translucency. Dimensionless.
 
 
 
@@ -56,8 +56,8 @@ Property detail
 
     Time at which the interval ends. Uses DateFormat Dimension.
 
-.. py:property:: is_visible
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DIntervalsElement.is_visible
+.. py:property:: show_graphics
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DIntervalsElement.show_graphics
     :type: bool
 
     Opt whether to display the object during the selected time using the selected graphics properties.
@@ -66,18 +66,18 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DIntervalsElement.color
     :type: agcolor.Color
 
-    Gets or sets the line color.
+    Get or set the line color.
 
 .. py:property:: line_width
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DIntervalsElement.line_width
-    :type: LINE_WIDTH
+    :type: LineWidth
 
-    Gets or sets the line width.
+    Get or set the line width.
 
 .. py:property:: translucency
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DIntervalsElement.translucency
     :type: float
 
-    Gets or sets the translucency. Dimensionless.
+    Get or set the translucency. Dimensionless.
 
 

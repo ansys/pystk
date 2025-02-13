@@ -7,10 +7,6 @@ ICoverageBounds
 
 .. py:currentmodule:: ICoverageBounds
 
-Overview
---------
-
-
 Import detail
 -------------
 

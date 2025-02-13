@@ -9,10 +9,6 @@ DemodulatorModelWidebandGaussian
 
 .. py:currentmodule:: DemodulatorModelWidebandGaussian
 
-Overview
---------
-
-
 
 Import detail
 -------------

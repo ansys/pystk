@@ -28,7 +28,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.Scenario3dFont.name`
-              - Gets or sets the font name.
+              - Get or set the font name.
             * - :py:attr:`~ansys.stk.core.stkobjects.Scenario3dFont.point_size`
               - Font size in points.
             * - :py:attr:`~ansys.stk.core.stkobjects.Scenario3dFont.bold`
@@ -55,11 +55,11 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Scenario3dFont.name
     :type: str
 
-    Gets or sets the font name.
+    Get or set the font name.
 
 .. py:property:: point_size
     :canonical: ansys.stk.core.stkobjects.Scenario3dFont.point_size
-    :type: SCENARIO_3D_POINT_SIZE
+    :type: Scenario3dPointSize
 
     Font size in points.
 

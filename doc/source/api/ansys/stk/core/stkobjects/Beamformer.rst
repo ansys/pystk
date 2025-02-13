@@ -9,10 +9,6 @@ Beamformer
 
 .. py:currentmodule:: Beamformer
 
-Overview
---------
-
-
 
 Import detail
 -------------

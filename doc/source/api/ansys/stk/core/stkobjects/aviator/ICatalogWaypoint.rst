@@ -7,10 +7,6 @@ ICatalogWaypoint
 
 .. py:currentmodule:: ICatalogWaypoint
 
-Overview
---------
-
-
 Import detail
 -------------
 

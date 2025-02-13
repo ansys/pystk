@@ -23,7 +23,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.TransmitterModelMedium.set_polarization_type`
               - Set the current polarization type.
             * - :py:attr:`~ansys.stk.core.stkobjects.TransmitterModelMedium.set_filter`
-              - Set the current filter model by name.
+              - Do not use this method, as it is deprecated. Use FilterComponentLinking on IAgTransmitterModelMedium instead. Sets the current filter model by name.
             * - :py:attr:`~ansys.stk.core.stkobjects.TransmitterModelMedium.set_modulator`
               - Set the current modulator model by name.
 
@@ -34,29 +34,31 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.TransmitterModelMedium.frequency`
-              - Gets or sets the carrier frequency.
+              - Get or set the carrier frequency.
             * - :py:attr:`~ansys.stk.core.stkobjects.TransmitterModelMedium.data_rate`
-              - Gets or sets the data rate.
+              - Get or set the data rate.
             * - :py:attr:`~ansys.stk.core.stkobjects.TransmitterModelMedium.power`
-              - Gets or sets the power.
+              - Get or set the power.
             * - :py:attr:`~ansys.stk.core.stkobjects.TransmitterModelMedium.antenna_gain`
-              - Gets or sets the antenna gain.
+              - Get or set the antenna gain.
             * - :py:attr:`~ansys.stk.core.stkobjects.TransmitterModelMedium.enable_polarization`
-              - Gets or sets the enable polarization option.
+              - Get or set the enable polarization option.
             * - :py:attr:`~ansys.stk.core.stkobjects.TransmitterModelMedium.polarization`
-              - Gets the polarization.
+              - Get the polarization.
             * - :py:attr:`~ansys.stk.core.stkobjects.TransmitterModelMedium.post_transmit_gains_losses`
-              - Gets the collection of additional post transmit gains and losses.
+              - Get the collection of additional post transmit gains and losses.
             * - :py:attr:`~ansys.stk.core.stkobjects.TransmitterModelMedium.enable_filter`
-              - Gets or set the flag determines whether or not to enable the Filter.
+              - Get or set the flag determines whether or not to enable the Filter.
             * - :py:attr:`~ansys.stk.core.stkobjects.TransmitterModelMedium.supported_filters`
-              - Gets an array of supported filter model names.
+              - Do not use this property, as it is deprecated. Use FilterComponentLinking on IAgTransmitterModelMedium instead. Gets an array of supported filter model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.TransmitterModelMedium.filter`
-              - Gets the current filter model.
+              - Do not use this property, as it is deprecated. Use FilterComponentLinking on IAgTransmitterModelMedium instead. Gets the current filter model.
             * - :py:attr:`~ansys.stk.core.stkobjects.TransmitterModelMedium.supported_modulators`
-              - Gets an array of supported modulator model names.
+              - Get an array of supported modulator model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.TransmitterModelMedium.modulator`
-              - Gets the current modulator model.
+              - Get the current modulator model.
+            * - :py:attr:`~ansys.stk.core.stkobjects.TransmitterModelMedium.filter_component_linking`
+              - Get the link/embed controller for managing the filter model component.
 
 
 
@@ -75,73 +77,79 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.TransmitterModelMedium.frequency
     :type: float
 
-    Gets or sets the carrier frequency.
+    Get or set the carrier frequency.
 
 .. py:property:: data_rate
     :canonical: ansys.stk.core.stkobjects.TransmitterModelMedium.data_rate
     :type: float
 
-    Gets or sets the data rate.
+    Get or set the data rate.
 
 .. py:property:: power
     :canonical: ansys.stk.core.stkobjects.TransmitterModelMedium.power
     :type: float
 
-    Gets or sets the power.
+    Get or set the power.
 
 .. py:property:: antenna_gain
     :canonical: ansys.stk.core.stkobjects.TransmitterModelMedium.antenna_gain
     :type: float
 
-    Gets or sets the antenna gain.
+    Get or set the antenna gain.
 
 .. py:property:: enable_polarization
     :canonical: ansys.stk.core.stkobjects.TransmitterModelMedium.enable_polarization
     :type: bool
 
-    Gets or sets the enable polarization option.
+    Get or set the enable polarization option.
 
 .. py:property:: polarization
     :canonical: ansys.stk.core.stkobjects.TransmitterModelMedium.polarization
     :type: IPolarization
 
-    Gets the polarization.
+    Get the polarization.
 
 .. py:property:: post_transmit_gains_losses
     :canonical: ansys.stk.core.stkobjects.TransmitterModelMedium.post_transmit_gains_losses
     :type: AdditionalGainLossCollection
 
-    Gets the collection of additional post transmit gains and losses.
+    Get the collection of additional post transmit gains and losses.
 
 .. py:property:: enable_filter
     :canonical: ansys.stk.core.stkobjects.TransmitterModelMedium.enable_filter
     :type: bool
 
-    Gets or set the flag determines whether or not to enable the Filter.
+    Get or set the flag determines whether or not to enable the Filter.
 
 .. py:property:: supported_filters
     :canonical: ansys.stk.core.stkobjects.TransmitterModelMedium.supported_filters
     :type: list
 
-    Gets an array of supported filter model names.
+    Do not use this property, as it is deprecated. Use FilterComponentLinking on IAgTransmitterModelMedium instead. Gets an array of supported filter model names.
 
 .. py:property:: filter
     :canonical: ansys.stk.core.stkobjects.TransmitterModelMedium.filter
     :type: IRFFilterModel
 
-    Gets the current filter model.
+    Do not use this property, as it is deprecated. Use FilterComponentLinking on IAgTransmitterModelMedium instead. Gets the current filter model.
 
 .. py:property:: supported_modulators
     :canonical: ansys.stk.core.stkobjects.TransmitterModelMedium.supported_modulators
     :type: list
 
-    Gets an array of supported modulator model names.
+    Get an array of supported modulator model names.
 
 .. py:property:: modulator
     :canonical: ansys.stk.core.stkobjects.TransmitterModelMedium.modulator
     :type: IModulatorModel
 
-    Gets the current modulator model.
+    Get the current modulator model.
+
+.. py:property:: filter_component_linking
+    :canonical: ansys.stk.core.stkobjects.TransmitterModelMedium.filter_component_linking
+    :type: IComponentLinkEmbedControl
+
+    Get the link/embed controller for managing the filter model component.
 
 
 Method detail
@@ -157,14 +165,14 @@ Method detail
 
 
 
-.. py:method:: set_polarization_type(self, val: POLARIZATION_TYPE) -> None
+.. py:method:: set_polarization_type(self, value: PolarizationType) -> None
     :canonical: ansys.stk.core.stkobjects.TransmitterModelMedium.set_polarization_type
 
     Set the current polarization type.
 
     :Parameters:
 
-    **val** : :obj:`~POLARIZATION_TYPE`
+    **value** : :obj:`~PolarizationType`
 
     :Returns:
 
@@ -178,7 +186,7 @@ Method detail
 .. py:method:: set_filter(self, name: str) -> None
     :canonical: ansys.stk.core.stkobjects.TransmitterModelMedium.set_filter
 
-    Set the current filter model by name.
+    Do not use this method, as it is deprecated. Use FilterComponentLinking on IAgTransmitterModelMedium instead. Sets the current filter model by name.
 
     :Parameters:
 
@@ -202,5 +210,6 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
 
 

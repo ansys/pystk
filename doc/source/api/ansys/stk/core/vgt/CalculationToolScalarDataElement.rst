@@ -44,9 +44,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.vgt.CalculationToolScalarDataElement.use_samples`
               - If set to true, selected data provider is presampled over its entire availability span using sampling method specified in Advanced options...
             * - :py:attr:`~ansys.stk.core.vgt.CalculationToolScalarDataElement.save_data_option`
-              - Determines if computed samples are saved/loaded, otherwise if using samples they are recomputed on load.
+              - Determine if computed samples are saved/loaded, otherwise if using samples they are recomputed on load.
             * - :py:attr:`~ansys.stk.core.vgt.CalculationToolScalarDataElement.invalid_data_indicator`
-              - Sets the value to display in a report or graph when the actual value is not a valid real number.
+              - Set the value to display in a report or graph when the actual value is not a valid real number.
 
 
 
@@ -81,7 +81,7 @@ Property detail
 
 .. py:property:: interpolation
     :canonical: ansys.stk.core.vgt.CalculationToolScalarDataElement.interpolation
-    :type: IAnalysisWorkbenchInterp
+    :type: IAnalysisWorkbenchInterpolator
 
     Specify whether to use Lagrange or Hermite interpolation. See STK help on interpolation.
 
@@ -99,15 +99,15 @@ Property detail
 
 .. py:property:: save_data_option
     :canonical: ansys.stk.core.vgt.CalculationToolScalarDataElement.save_data_option
-    :type: CRDN_SAVE_DATA_OPTION
+    :type: SaveDataType
 
-    Determines if computed samples are saved/loaded, otherwise if using samples they are recomputed on load.
+    Determine if computed samples are saved/loaded, otherwise if using samples they are recomputed on load.
 
 .. py:property:: invalid_data_indicator
     :canonical: ansys.stk.core.vgt.CalculationToolScalarDataElement.invalid_data_indicator
     :type: float
 
-    Sets the value to display in a report or graph when the actual value is not a valid real number.
+    Set the value to display in a report or graph when the actual value is not a valid real number.
 
 
 Method detail
@@ -124,30 +124,30 @@ Method detail
 
 
 
-.. py:method:: set(self, dataProvider: str, elementName: str) -> None
+.. py:method:: set(self, data_provider: str, element_name: str) -> None
     :canonical: ansys.stk.core.vgt.CalculationToolScalarDataElement.set
 
     Set the data provider and the element name.
 
     :Parameters:
 
-    **dataProvider** : :obj:`~str`
-    **elementName** : :obj:`~str`
+    **data_provider** : :obj:`~str`
+    **element_name** : :obj:`~str`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: set_with_group(self, dataProvider: str, typeName: str, elementName: str) -> None
+.. py:method:: set_with_group(self, data_provider: str, type_name: str, element_name: str) -> None
     :canonical: ansys.stk.core.vgt.CalculationToolScalarDataElement.set_with_group
 
     Set the data provider name, the element name, and data provider type name.
 
     :Parameters:
 
-    **dataProvider** : :obj:`~str`
-    **typeName** : :obj:`~str`
-    **elementName** : :obj:`~str`
+    **data_provider** : :obj:`~str`
+    **type_name** : :obj:`~str`
+    **element_name** : :obj:`~str`
 
     :Returns:
 

@@ -7,10 +7,6 @@ IFigureOfMeritNavigationAccuracyMethod
 
 .. py:currentmodule:: IFigureOfMeritNavigationAccuracyMethod
 
-Overview
---------
-
-
 Import detail
 -------------
 

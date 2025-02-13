@@ -30,7 +30,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateWeightOnWheelsOptions.groundspeed`
-              - Gets or sets the aircraft's speed relative to the ground.
+              - Get or set the aircraft's speed relative to the ground.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateWeightOnWheelsOptions.tas_dot`
               - Get the true airspeed acceleration.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateWeightOnWheelsOptions.groundspeed_dot`
@@ -38,7 +38,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateWeightOnWheelsOptions.longitudinal_acceleration_type`
               - Get the mode to specify the longitudinal acceleration.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateWeightOnWheelsOptions.heading`
-              - Gets or sets the direction the aircraft is pointing.
+              - Get or set the direction the aircraft is pointing.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateWeightOnWheelsOptions.heading_is_magnetic`
               - Opt whether to specify the heading using magnetic North.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ReferenceStateWeightOnWheelsOptions.heading_dot`
@@ -65,7 +65,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateWeightOnWheelsOptions.groundspeed
     :type: float
 
-    Gets or sets the aircraft's speed relative to the ground.
+    Get or set the aircraft's speed relative to the ground.
 
 .. py:property:: tas_dot
     :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateWeightOnWheelsOptions.tas_dot
@@ -81,7 +81,7 @@ Property detail
 
 .. py:property:: longitudinal_acceleration_type
     :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateWeightOnWheelsOptions.longitudinal_acceleration_type
-    :type: REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE
+    :type: ReferenceStateLongitudinalAccelerationMode
 
     Get the mode to specify the longitudinal acceleration.
 
@@ -89,7 +89,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateWeightOnWheelsOptions.heading
     :type: typing.Any
 
-    Gets or sets the direction the aircraft is pointing.
+    Get or set the direction the aircraft is pointing.
 
 .. py:property:: heading_is_magnetic
     :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateWeightOnWheelsOptions.heading_is_magnetic
@@ -111,7 +111,7 @@ Property detail
 
 .. py:property:: lateral_acceleration_type
     :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateWeightOnWheelsOptions.lateral_acceleration_type
-    :type: REFERENCE_STATE_LATERAL_ACCELERATION_MODE
+    :type: ReferenceStateLateralAccelerationMode
 
     Get the mode to specify the lateral acceleration.
 
@@ -124,14 +124,14 @@ Method detail
 
 
 
-.. py:method:: set_longitudinal_acceleration(self, accelType: REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE, value: float) -> None
+.. py:method:: set_longitudinal_acceleration(self, accel_type: ReferenceStateLongitudinalAccelerationMode, value: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateWeightOnWheelsOptions.set_longitudinal_acceleration
 
     Set the longitudinal acceleration.
 
     :Parameters:
 
-    **accelType** : :obj:`~REFERENCE_STATE_LONGITUDINAL_ACCELERATION_MODE`
+    **accel_type** : :obj:`~ReferenceStateLongitudinalAccelerationMode`
     **value** : :obj:`~float`
 
     :Returns:
@@ -145,14 +145,14 @@ Method detail
 
 
 
-.. py:method:: set_lateral_acceleration(self, accelType: REFERENCE_STATE_LATERAL_ACCELERATION_MODE, value: typing.Any) -> None
+.. py:method:: set_lateral_acceleration(self, accel_type: ReferenceStateLateralAccelerationMode, value: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.ReferenceStateWeightOnWheelsOptions.set_lateral_acceleration
 
     Set the lateral acceleration.
 
     :Parameters:
 
-    **accelType** : :obj:`~REFERENCE_STATE_LATERAL_ACCELERATION_MODE`
+    **accel_type** : :obj:`~ReferenceStateLateralAccelerationMode`
     **value** : :obj:`~typing.Any`
 
     :Returns:

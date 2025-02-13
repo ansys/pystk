@@ -19,12 +19,12 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ClassicalOrientation.inclination`
-              - Gets or sets the angle between the angular momentum vector (perpendicular to the plane of the orbit) and the inertial Z axis. Uses Angle Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ClassicalOrientation.arg_of_perigee`
-              - Gets or sets the angle from the ascending node to the eccentricity vector (lowest point of orbit) measured in the direction of the satellite's motion and in the orbit plane. Uses Angle Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ClassicalOrientation.asc_node_type`
+              - Get or set the angle between the angular momentum vector (perpendicular to the plane of the orbit) and the inertial Z axis. Uses Angle Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ClassicalOrientation.argument_of_periapsis`
+              - Get or set the angle from the ascending node to the eccentricity vector (lowest point of orbit) measured in the direction of the satellite's motion and in the orbit plane. Uses Angle Dimension.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ClassicalOrientation.ascending_node_type`
               - Select Longitude of Ascending Node or Right Ascension of Ascending Node.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ClassicalOrientation.asc_node`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ClassicalOrientation.ascending_node`
               - Value of Longitude of Ascending Node or Right Ascension of Ascending Node.
 
 
@@ -44,22 +44,22 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.ClassicalOrientation.inclination
     :type: float
 
-    Gets or sets the angle between the angular momentum vector (perpendicular to the plane of the orbit) and the inertial Z axis. Uses Angle Dimension.
+    Get or set the angle between the angular momentum vector (perpendicular to the plane of the orbit) and the inertial Z axis. Uses Angle Dimension.
 
-.. py:property:: arg_of_perigee
-    :canonical: ansys.stk.core.stkobjects.ClassicalOrientation.arg_of_perigee
+.. py:property:: argument_of_periapsis
+    :canonical: ansys.stk.core.stkobjects.ClassicalOrientation.argument_of_periapsis
     :type: float
 
-    Gets or sets the angle from the ascending node to the eccentricity vector (lowest point of orbit) measured in the direction of the satellite's motion and in the orbit plane. Uses Angle Dimension.
+    Get or set the angle from the ascending node to the eccentricity vector (lowest point of orbit) measured in the direction of the satellite's motion and in the orbit plane. Uses Angle Dimension.
 
-.. py:property:: asc_node_type
-    :canonical: ansys.stk.core.stkobjects.ClassicalOrientation.asc_node_type
-    :type: ORIENTATION_ASC_NODE
+.. py:property:: ascending_node_type
+    :canonical: ansys.stk.core.stkobjects.ClassicalOrientation.ascending_node_type
+    :type: OrientationAscNode
 
     Select Longitude of Ascending Node or Right Ascension of Ascending Node.
 
-.. py:property:: asc_node
-    :canonical: ansys.stk.core.stkobjects.ClassicalOrientation.asc_node
+.. py:property:: ascending_node
+    :canonical: ansys.stk.core.stkobjects.ClassicalOrientation.ascending_node
     :type: IOrientationAscNode
 
     Value of Longitude of Ascending Node or Right Ascension of Ascending Node.

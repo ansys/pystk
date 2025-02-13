@@ -45,12 +45,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ScriptingParameterCollection._NewEnum`
-              - Allows you to enumerate through the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ScriptingParameterCollection._new_enum`
+              - Allow you to enumerate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ScriptingParameterCollection.count`
-              - Returns the size of the collection.
+              - Return the size of the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ScriptingParameterCollection.provide_runtime_type_info`
-              - Returns the IAgRuntimeTypeInfo interface to access properties at runtime.
+              - Return the IAgRuntimeTypeInfo interface to access properties at runtime.
 
 
 
@@ -65,62 +65,62 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingParameterCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingParameterCollection._new_enum
     :type: EnumeratorProxy
 
-    Allows you to enumerate through the collection.
+    Allow you to enumerate through the collection.
 
 .. py:property:: count
     :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingParameterCollection.count
     :type: int
 
-    Returns the size of the collection.
+    Return the size of the collection.
 
 .. py:property:: provide_runtime_type_info
     :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingParameterCollection.provide_runtime_type_info
     :type: IRuntimeTypeInfo
 
-    Returns the IAgRuntimeTypeInfo interface to access properties at runtime.
+    Return the IAgRuntimeTypeInfo interface to access properties at runtime.
 
 
 Method detail
 -------------
 
-.. py:method:: item(self, indexOrName: typing.Any) -> ScriptingParameter
+.. py:method:: item(self, index_or_name: typing.Any) -> ScriptingParameter
     :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingParameterCollection.item
 
     Allow you to iterate through the collection.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 
         :obj:`~ScriptingParameter`
 
-.. py:method:: add(self, parameterName: str) -> ScriptingParameter
+.. py:method:: add(self, parameter_name: str) -> ScriptingParameter
     :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingParameterCollection.add
 
     Add a parameter to the collection.
 
     :Parameters:
 
-    **parameterName** : :obj:`~str`
+    **parameter_name** : :obj:`~str`
 
     :Returns:
 
         :obj:`~ScriptingParameter`
 
-.. py:method:: remove(self, indexOrName: typing.Any) -> None
+.. py:method:: remove(self, index_or_name: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingParameterCollection.remove
 
     Remove a parameter.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 
@@ -138,14 +138,14 @@ Method detail
 
 
 
-.. py:method:: cut(self, indexOrName: typing.Any) -> None
+.. py:method:: cut(self, index_or_name: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingParameterCollection.cut
 
     Copy the parameter into the clipboard and removes the parameter from the list.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 

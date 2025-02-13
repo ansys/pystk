@@ -39,14 +39,14 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.ComponentInfoCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ComponentInfoCollection._new_enum`
               - Enumerates through the components.
             * - :py:attr:`~ansys.stk.core.stkobjects.ComponentInfoCollection.count`
               - Get the number of components available.
             * - :py:attr:`~ansys.stk.core.stkobjects.ComponentInfoCollection.folder_count`
               - Get the number of folders available.
             * - :py:attr:`~ansys.stk.core.stkobjects.ComponentInfoCollection.available_folders`
-              - Returns an array of Folder names.
+              - Return an array of Folder names.
             * - :py:attr:`~ansys.stk.core.stkobjects.ComponentInfoCollection.folder_name`
               - Get the current folder's name.
 
@@ -63,8 +63,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.ComponentInfoCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.ComponentInfoCollection._new_enum
     :type: EnumeratorProxy
 
     Enumerates through the components.
@@ -85,7 +85,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.ComponentInfoCollection.available_folders
     :type: list
 
-    Returns an array of Folder names.
+    Return an array of Folder names.
 
 .. py:property:: folder_name
     :canonical: ansys.stk.core.stkobjects.ComponentInfoCollection.folder_name
@@ -97,14 +97,14 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: item(self, indexOrName: typing.Any) -> IComponentInfo
+.. py:method:: item(self, index_or_name: typing.Any) -> IComponentInfo
     :canonical: ansys.stk.core.stkobjects.ComponentInfoCollection.item
 
     Allow the user to iterate through the components.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 
@@ -112,14 +112,14 @@ Method detail
 
 
 
-.. py:method:: get_folder(self, indexOrName: typing.Any) -> ComponentInfoCollection
+.. py:method:: get_folder(self, index_or_name: typing.Any) -> ComponentInfoCollection
     :canonical: ansys.stk.core.stkobjects.ComponentInfoCollection.get_folder
 
     Return the specified folder.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 
@@ -141,28 +141,28 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: duplicate_component(self, indexOrComponentName: typing.Any, newComponentName: str) -> IComponentInfo
+.. py:method:: duplicate_component(self, index_or_component_name: typing.Any, new_component_name: str) -> IComponentInfo
     :canonical: ansys.stk.core.stkobjects.ComponentInfoCollection.duplicate_component
 
     Duplicates and adds the component, with the supplied name or index, to the collection and then returns the duplicated component.
 
     :Parameters:
 
-    **indexOrComponentName** : :obj:`~typing.Any`
-    **newComponentName** : :obj:`~str`
+    **index_or_component_name** : :obj:`~typing.Any`
+    **new_component_name** : :obj:`~str`
 
     :Returns:
 
         :obj:`~IComponentInfo`
 
-.. py:method:: load_component(self, fileName: str) -> IComponentInfo
+.. py:method:: load_component(self, file_name: str) -> IComponentInfo
     :canonical: ansys.stk.core.stkobjects.ComponentInfoCollection.load_component
 
     Load a component from a specified file (full path) into the current folder and then returns the loaded component.
 
     :Parameters:
 
-    **fileName** : :obj:`~str`
+    **file_name** : :obj:`~str`
 
     :Returns:
 

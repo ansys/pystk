@@ -64,9 +64,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkutil.IPosition.position_type`
-              - Gets the type of position currently being used.
+              - Get the type of position currently being used.
             * - :py:attr:`~ansys.stk.core.stkutil.IPosition.central_body_name`
-              - Gets the central body.
+              - Get the central body.
 
 
 Import detail
@@ -82,42 +82,42 @@ Property detail
 
 .. py:property:: position_type
     :canonical: ansys.stk.core.stkutil.IPosition.position_type
-    :type: POSITION_TYPE
+    :type: PositionType
 
-    Gets the type of position currently being used.
+    Get the type of position currently being used.
 
 .. py:property:: central_body_name
     :canonical: ansys.stk.core.stkutil.IPosition.central_body_name
     :type: str
 
-    Gets the central body.
+    Get the central body.
 
 
 Method detail
 -------------
 
-.. py:method:: convert_to(self, type: POSITION_TYPE) -> IPosition
+.. py:method:: convert_to(self, type: PositionType) -> IPosition
     :canonical: ansys.stk.core.stkutil.IPosition.convert_to
 
     Change the position coordinates to type specified.
 
     :Parameters:
 
-    **type** : :obj:`~POSITION_TYPE`
+    **type** : :obj:`~PositionType`
 
     :Returns:
 
         :obj:`~IPosition`
 
 
-.. py:method:: assign(self, pPosition: IPosition) -> None
+.. py:method:: assign(self, position: IPosition) -> None
     :canonical: ansys.stk.core.stkutil.IPosition.assign
 
     Assign the coordinates into the system.
 
     :Parameters:
 
-    **pPosition** : :obj:`~IPosition`
+    **position** : :obj:`~IPosition`
 
     :Returns:
 

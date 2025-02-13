@@ -28,16 +28,16 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageAssetListElement.asset_status`
-              - Gets or sets the current status of the coverage asset (active or not).
+              - Get or set the current status of the coverage asset (active or not).
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageAssetListElement.grouping`
               - Opt whether to consider the members of a constellation as a group or as separate entities.
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageAssetListElement.object_name`
               - Name of the object assigned as a coverage asset.
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageAssetListElement.sub_asset_list`
-              - Returns the sub assets for this asset.
+              - Return the sub assets for this asset.
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageAssetListElement.required`
               - Flag sets whether Asset is required for all valid access intervals.
-            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageAssetListElement.use_const_constraints`
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageAssetListElement.use_constellation_constraints`
               - Flag determines whether constellation constraints are considered.
 
 
@@ -55,13 +55,13 @@ Property detail
 
 .. py:property:: asset_status
     :canonical: ansys.stk.core.stkobjects.CoverageAssetListElement.asset_status
-    :type: COVERAGE_ASSET_STATUS
+    :type: CoverageAssetStatus
 
-    Gets or sets the current status of the coverage asset (active or not).
+    Get or set the current status of the coverage asset (active or not).
 
 .. py:property:: grouping
     :canonical: ansys.stk.core.stkobjects.CoverageAssetListElement.grouping
-    :type: COVERAGE_ASSET_GROUPING
+    :type: CoverageAssetGrouping
 
     Opt whether to consider the members of a constellation as a group or as separate entities.
 
@@ -75,7 +75,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.CoverageAssetListElement.sub_asset_list
     :type: CoverageAssetListCollection
 
-    Returns the sub assets for this asset.
+    Return the sub assets for this asset.
 
 .. py:property:: required
     :canonical: ansys.stk.core.stkobjects.CoverageAssetListElement.required
@@ -83,8 +83,8 @@ Property detail
 
     Flag sets whether Asset is required for all valid access intervals.
 
-.. py:property:: use_const_constraints
-    :canonical: ansys.stk.core.stkobjects.CoverageAssetListElement.use_const_constraints
+.. py:property:: use_constellation_constraints
+    :canonical: ansys.stk.core.stkobjects.CoverageAssetListElement.use_constellation_constraints
     :type: bool
 
     Flag determines whether constellation constraints are considered.

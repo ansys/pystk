@@ -28,18 +28,18 @@ class SGP4Snippets(CodeSnippetsTestBase):
     def setUp(self):
         SGP4Snippets.m_Object = clr.CastAs(
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-                STK_OBJECT_TYPE.SATELLITE, SGP4Snippets.m_DefaultName
+                STKObjectType.SATELLITE, SGP4Snippets.m_DefaultName
             ),
             Satellite,
         )
-        CodeSnippetsTestBase.m_Root.unit_preferences.reset_units()
+        CodeSnippetsTestBase.m_Root.units_preferences.reset_units()
 
     # endregion
 
     # region TestTearDown
     def tearDown(self):
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(
-            STK_OBJECT_TYPE.SATELLITE, SGP4Snippets.m_DefaultName
+            STKObjectType.SATELLITE, SGP4Snippets.m_DefaultName
         )
         SGP4Snippets.m_Object = None
 
@@ -47,27 +47,27 @@ class SGP4Snippets(CodeSnippetsTestBase):
 
     # region ConfigureSGP4WithFileSource
     def test_ConfigureSGP4WithFileSource(self):
-        SGP4Snippets.m_Object.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_SGP4)
+        SGP4Snippets.m_Object.set_propagator_type(PropagatorType.SGP4)
 
-        sgp4: "VehiclePropagatorSGP4" = clr.CastAs(SGP4Snippets.m_Object.propagator, VehiclePropagatorSGP4)
+        sgp4: "PropagatorSGP4" = clr.CastAs(SGP4Snippets.m_Object.propagator, PropagatorSGP4)
         self.ConfigureSGP4WithFileSource(
             sgp4, TestBase.PathCombine(TestBase.GetSTKDBDir(), "Databases", "Satellite", "stkAllTLE.tce")
         )
 
-    def ConfigureSGP4WithFileSource(self, propagator: "VehiclePropagatorSGP4", tleFilePath: str):
+    def ConfigureSGP4WithFileSource(self, propagator: "PropagatorSGP4", tleFilePath: str):
         # Configure propagator's TLE file path
-        propagator.common_tasks.add_segs_from_file("2215", tleFilePath)
+        propagator.common_tasks.add_segments_from_file("2215", tleFilePath)
 
         # Propagate
         propagator.propagate()
 
-    def ConfigureSGP4WithOnlineSource(self, propagator: "VehiclePropagatorSGP4"):
+    def ConfigureSGP4WithOnlineSource(self, propagator: "PropagatorSGP4"):
         # Configure time period
         propagator.ephemeris_interval.set_explicit_interval("1 Jan 2012 12:00:00.000", "2 Jan 2012 12:00:00.000")
         propagator.step = 60.0
 
         # Add segments
-        propagator.common_tasks.add_segs_from_online_source("25544")
+        propagator.common_tasks.add_segments_from_online_source("25544")
 
         # Propagate
         propagator.propagate()
@@ -77,23 +77,23 @@ class SGP4Snippets(CodeSnippetsTestBase):
     # region SetSGP4ToAutoUpdateFromFileSource
     def test_SetSGP4ToAutoUpdateFromFileSource(self):
         # Set propagator
-        SGP4Snippets.m_Object.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_SGP4)
-        sgp4: "VehiclePropagatorSGP4" = clr.CastAs(SGP4Snippets.m_Object.propagator, VehiclePropagatorSGP4)
+        SGP4Snippets.m_Object.set_propagator_type(PropagatorType.SGP4)
+        sgp4: "PropagatorSGP4" = clr.CastAs(SGP4Snippets.m_Object.propagator, PropagatorSGP4)
 
-        sgp4.common_tasks.add_segs_from_file(
+        sgp4.common_tasks.add_segments_from_file(
             "2215", TestBase.PathCombine(TestBase.GetSTKDBDir(), "Databases", "Satellite", "stkAllTLE.tce")
         )
 
         self.SetSGP4ToAutoUpdateFromFileSource(sgp4, TestBase.GetScenarioFile("CodeSnippetsTests", "stkAllTLE.tle"))
 
-    def SetSGP4ToAutoUpdateFromFileSource(self, propagator: "VehiclePropagatorSGP4", fileUpdateSource: str):
-        propagator.auto_update_enabled = True
-        propagator.auto_update.selected_source = VEHICLE_SGP4_AUTO_UPDATE_SOURCE.SGP4_AUTO_UPDATE_SOURCE_FILE
-        propagator.auto_update.file_source.filename = fileUpdateSource
+    def SetSGP4ToAutoUpdateFromFileSource(self, propagator: "PropagatorSGP4", fileUpdateSource: str):
+        propagator.automatic_update_enabled = True
+        propagator.automatic_update_settings.selected_source = VehicleSGP4AutomaticUpdateSourceType.FILE
+        propagator.automatic_update_settings.file_source.filename = fileUpdateSource
 
         # Preview TLEs (optional)
         # Preview() returns a one dimension string of tles
-        tles = propagator.auto_update.file_source.preview()
+        tles = propagator.automatic_update_settings.file_source.preview()
 
         rx = Regex(r"^(?<ssc>[-]?\d+) (?<orbitepoch>[-]?\d+[.]?\d+) (?<revnumber>[-]?\d+)$")
         line: typing.Any
@@ -114,22 +114,22 @@ class SGP4Snippets(CodeSnippetsTestBase):
     # region SetSGP4ToAutoUpdateFromOnlineSource
     def test_SetSGP4ToAutoUpdateFromOnlineSource(self):
         # Set propagator
-        SGP4Snippets.m_Object.set_propagator_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_SGP4)
-        sgp4: "VehiclePropagatorSGP4" = clr.CastAs(SGP4Snippets.m_Object.propagator, VehiclePropagatorSGP4)
+        SGP4Snippets.m_Object.set_propagator_type(PropagatorType.SGP4)
+        sgp4: "PropagatorSGP4" = clr.CastAs(SGP4Snippets.m_Object.propagator, PropagatorSGP4)
 
-        sgp4.common_tasks.add_segs_from_file(
+        sgp4.common_tasks.add_segments_from_file(
             "2215", TestBase.PathCombine(TestBase.GetSTKDBDir(), "Databases", "Satellite", "stkAllTLE.tce")
         )
 
         self.SetSGP4ToAutoUpdateFromOnlineSource(sgp4)
 
-    def SetSGP4ToAutoUpdateFromOnlineSource(self, propagator: "VehiclePropagatorSGP4"):
-        propagator.auto_update_enabled = True
-        propagator.auto_update.selected_source = VEHICLE_SGP4_AUTO_UPDATE_SOURCE.SGP4_AUTO_UPDATE_SOURCE_ONLINE
+    def SetSGP4ToAutoUpdateFromOnlineSource(self, propagator: "PropagatorSGP4"):
+        propagator.automatic_update_enabled = True
+        propagator.automatic_update_settings.selected_source = VehicleSGP4AutomaticUpdateSourceType.ONLINE
 
         # Preview TLEs (optional)
         # Preview() returns a one dimension string of tles
-        tles = propagator.auto_update.file_source.preview()
+        tles = propagator.automatic_update_settings.file_source.preview()
 
         rx = Regex(r"^(?<ssc>[-]?\d+) (?<orbitepoch>[-]?\d+[.]?\d+) (?<revnumber>[-]?\d+)$")
         line: typing.Any

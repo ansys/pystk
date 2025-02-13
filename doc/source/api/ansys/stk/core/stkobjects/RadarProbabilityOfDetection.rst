@@ -9,10 +9,6 @@ RadarProbabilityOfDetection
 
 .. py:currentmodule:: RadarProbabilityOfDetection
 
-Overview
---------
-
-
 
 Import detail
 -------------

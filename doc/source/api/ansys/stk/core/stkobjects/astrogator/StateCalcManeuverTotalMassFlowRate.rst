@@ -9,10 +9,6 @@ StateCalcManeuverTotalMassFlowRate
 
 .. py:currentmodule:: StateCalcManeuverTotalMassFlowRate
 
-Overview
---------
-
-
 
 Import detail
 -------------

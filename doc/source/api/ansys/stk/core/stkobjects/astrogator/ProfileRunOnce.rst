@@ -9,10 +9,6 @@ ProfileRunOnce
 
 .. py:currentmodule:: ProfileRunOnce
 
-Overview
---------
-
-
 
 Import detail
 -------------

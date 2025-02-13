@@ -9,10 +9,6 @@ CommSystemAccessEventDetection
 
 .. py:currentmodule:: CommSystemAccessEventDetection
 
-Overview
---------
-
-
 
 Import detail
 -------------

@@ -19,13 +19,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.Element.x`
-              - Gets the x position, in wavelengths.
+              - Get the x position, in wavelengths.
             * - :py:attr:`~ansys.stk.core.stkobjects.Element.y`
-              - Gets the y position, in wavelengths.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Element.id`
-              - Gets the element Id.
+              - Get the y position, in wavelengths.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Element.identifier`
+              - Get the element Id.
             * - :py:attr:`~ansys.stk.core.stkobjects.Element.enabled`
-              - Gets or set whether or not the element is enabled.
+              - Get or set whether or not the element is enabled.
 
 
 
@@ -44,24 +44,24 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Element.x
     :type: float
 
-    Gets the x position, in wavelengths.
+    Get the x position, in wavelengths.
 
 .. py:property:: y
     :canonical: ansys.stk.core.stkobjects.Element.y
     :type: float
 
-    Gets the y position, in wavelengths.
+    Get the y position, in wavelengths.
 
-.. py:property:: id
-    :canonical: ansys.stk.core.stkobjects.Element.id
+.. py:property:: identifier
+    :canonical: ansys.stk.core.stkobjects.Element.identifier
     :type: int
 
-    Gets the element Id.
+    Get the element Id.
 
 .. py:property:: enabled
     :canonical: ansys.stk.core.stkobjects.Element.enabled
     :type: bool
 
-    Gets or set whether or not the element is enabled.
+    Get or set whether or not the element is enabled.
 
 

@@ -9,10 +9,6 @@ BeamformerUniform
 
 .. py:currentmodule:: BeamformerUniform
 
-Overview
---------
-
-
 
 Import detail
 -------------

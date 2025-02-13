@@ -43,10 +43,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StoppingConditionCollection._NewEnum`
-              - Allows you to enumerate through the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StoppingConditionCollection._new_enum`
+              - Allow you to enumerate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StoppingConditionCollection.count`
-              - Returns the size of the collection.
+              - Return the size of the collection.
 
 
 
@@ -61,56 +61,56 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.astrogator.StoppingConditionCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.astrogator.StoppingConditionCollection._new_enum
     :type: EnumeratorProxy
 
-    Allows you to enumerate through the collection.
+    Allow you to enumerate through the collection.
 
 .. py:property:: count
     :canonical: ansys.stk.core.stkobjects.astrogator.StoppingConditionCollection.count
     :type: int
 
-    Returns the size of the collection.
+    Return the size of the collection.
 
 
 Method detail
 -------------
 
-.. py:method:: item(self, indexOrName: typing.Any) -> StoppingConditionElement
+.. py:method:: item(self, index_or_name: typing.Any) -> StoppingConditionElement
     :canonical: ansys.stk.core.stkobjects.astrogator.StoppingConditionCollection.item
 
     Allow you to iterate through the collection.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 
         :obj:`~StoppingConditionElement`
 
-.. py:method:: add(self, conditionName: str) -> StoppingConditionElement
+.. py:method:: add(self, condition_name: str) -> StoppingConditionElement
     :canonical: ansys.stk.core.stkobjects.astrogator.StoppingConditionCollection.add
 
     Add a stopping condition.
 
     :Parameters:
 
-    **conditionName** : :obj:`~str`
+    **condition_name** : :obj:`~str`
 
     :Returns:
 
         :obj:`~StoppingConditionElement`
 
-.. py:method:: remove(self, indexOrName: typing.Any) -> None
+.. py:method:: remove(self, index_or_name: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.StoppingConditionCollection.remove
 
     Remove a stopping condition.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 
@@ -118,14 +118,14 @@ Method detail
 
 
 
-.. py:method:: cut(self, indexOrName: typing.Any) -> None
+.. py:method:: cut(self, index_or_name: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.StoppingConditionCollection.cut
 
     Copy the stopping condition into the clipboard and removes the stopping condition from the list.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 
@@ -140,14 +140,14 @@ Method detail
 
         :obj:`~StoppingConditionElement`
 
-.. py:method:: insert_copy(self, stopCond: StoppingConditionElement) -> StoppingConditionElement
+.. py:method:: insert_copy(self, stop_cond: StoppingConditionElement) -> StoppingConditionElement
     :canonical: ansys.stk.core.stkobjects.astrogator.StoppingConditionCollection.insert_copy
 
     Copy the stopping condition and inserts the copy into the list.
 
     :Parameters:
 
-    **stopCond** : :obj:`~StoppingConditionElement`
+    **stop_cond** : :obj:`~StoppingConditionElement`
 
     :Returns:
 

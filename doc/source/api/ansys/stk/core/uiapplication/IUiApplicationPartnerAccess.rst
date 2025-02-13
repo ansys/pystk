@@ -21,7 +21,6 @@ Overview
             * - :py:attr:`~ansys.stk.core.uiapplication.IUiApplicationPartnerAccess.grant_partner_access`
               - Provide object model root for authorized business partners.
 
-
 Import detail
 -------------
 

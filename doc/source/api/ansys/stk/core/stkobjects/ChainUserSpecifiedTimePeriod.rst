@@ -3,7 +3,7 @@ ChainUserSpecifiedTimePeriod
 
 .. py:class:: ansys.stk.core.stkobjects.ChainUserSpecifiedTimePeriod
 
-   Bases: :py:class:`~ansys.stk.core.stkobjects.IChainTimePeriodBase`
+   Bases: :py:class:`~ansys.stk.core.stkobjects.IChainTimePeriod`
 
    User-specified time period for the chain.
 
@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ChainUserSpecifiedTimePeriod.time_interval`
-              - Allows configuring the time interval.
+              - Allow configuring the time interval.
 
 
 
@@ -38,8 +38,8 @@ Property detail
 
 .. py:property:: time_interval
     :canonical: ansys.stk.core.stkobjects.ChainUserSpecifiedTimePeriod.time_interval
-    :type: ITimeToolEventIntervalSmartInterval
+    :type: ITimeToolTimeIntervalSmartInterval
 
-    Allows configuring the time interval.
+    Allow configuring the time interval.
 
 

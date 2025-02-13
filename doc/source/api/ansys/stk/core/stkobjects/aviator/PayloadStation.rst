@@ -36,7 +36,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.PayloadStation.name`
-              - Gets or sets the name of the payload station.
+              - Get or set the name of the payload station.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.PayloadStation.position_x`
               - Get the X value of the payload station's parent relative position.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.PayloadStation.position_y`
@@ -61,7 +61,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.PayloadStation.name
     :type: str
 
-    Gets or sets the name of the payload station.
+    Get or set the name of the payload station.
 
 .. py:property:: position_x
     :canonical: ansys.stk.core.stkobjects.aviator.PayloadStation.position_x

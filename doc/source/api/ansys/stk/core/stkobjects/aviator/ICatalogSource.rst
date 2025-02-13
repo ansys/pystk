@@ -32,7 +32,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICatalogSource.child_names`
-              - Returns the child names.
+              - Return the child names.
 
 
 Import detail
@@ -50,34 +50,34 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.ICatalogSource.child_names
     :type: list
 
-    Returns the child names.
+    Return the child names.
 
 
 Method detail
 -------------
 
 
-.. py:method:: contains(self, aircraftName: str) -> bool
+.. py:method:: contains(self, aircraft_name: str) -> bool
     :canonical: ansys.stk.core.stkobjects.aviator.ICatalogSource.contains
 
     Check whether the catalog source contains the catalog item with the given name.
 
     :Parameters:
 
-    **aircraftName** : :obj:`~str`
+    **aircraft_name** : :obj:`~str`
 
     :Returns:
 
         :obj:`~bool`
 
-.. py:method:: remove_child(self, childName: str) -> None
+.. py:method:: remove_child(self, child_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.ICatalogSource.remove_child
 
     Remove the child with the given name.
 
     :Parameters:
 
-    **childName** : :obj:`~str`
+    **child_name** : :obj:`~str`
 
     :Returns:
 

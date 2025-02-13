@@ -29,7 +29,7 @@ class FacilitySnippets(CodeSnippetsTestBase):
     def setUp(self):
         FacilitySnippets.m_Object = clr.CastAs(
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-                STK_OBJECT_TYPE.FACILITY, FacilitySnippets.m_DefaultName
+                STKObjectType.FACILITY, FacilitySnippets.m_DefaultName
             ),
             Facility,
         )
@@ -39,7 +39,7 @@ class FacilitySnippets(CodeSnippetsTestBase):
     # region TestTearDown
     def tearDown(self):
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(
-            STK_OBJECT_TYPE.FACILITY, FacilitySnippets.m_DefaultName
+            STKObjectType.FACILITY, FacilitySnippets.m_DefaultName
         )
         FacilitySnippets.m_Object = None
 
@@ -48,14 +48,14 @@ class FacilitySnippets(CodeSnippetsTestBase):
     # region CreateDefaultFacilityOnCurrentScenarioCentralBody
     def test_CreateDefaultFacilityOnCurrentScenarioCentralBody(self):
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(
-            STK_OBJECT_TYPE.FACILITY, FacilitySnippets.m_DefaultName
+            STKObjectType.FACILITY, FacilitySnippets.m_DefaultName
         )
         self.CreateDefaultFacilityOnCurrentScenarioCentralBody(CodeSnippetsTestBase.m_Root)
 
     def CreateDefaultFacilityOnCurrentScenarioCentralBody(self, root: "StkObjectRoot"):
         # Create a facility on current scenario central body
         facility: "Facility" = clr.CastAs(
-            root.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "MyFacility"), Facility
+            root.current_scenario.children.new(STKObjectType.FACILITY, "MyFacility"), Facility
         )
 
     # endregion
@@ -63,14 +63,13 @@ class FacilitySnippets(CodeSnippetsTestBase):
     # region CreateFacilityOnEarth
     def test_CreateFacilityOnEarth(self):
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(
-            STK_OBJECT_TYPE.FACILITY, FacilitySnippets.m_DefaultName
+            STKObjectType.FACILITY, FacilitySnippets.m_DefaultName
         )
         self.CreateFacilityOnEarth(CodeSnippetsTestBase.m_Root)
 
     def CreateFacilityOnEarth(self, root: "StkObjectRoot"):
         facility: "Facility" = clr.CastAs(
-            root.current_scenario.children.new_on_central_body(STK_OBJECT_TYPE.FACILITY, "MyFacility", "Earth"),
-            Facility,
+            root.current_scenario.children.new_on_central_body(STKObjectType.FACILITY, "MyFacility", "Earth"), Facility
         )
 
         # Assuming unit preferences are set to radians for latitude and longitude and km for distance
@@ -84,7 +83,7 @@ class FacilitySnippets(CodeSnippetsTestBase):
 
     def CreateFacilityOnOtherPlanet(self, root: "StkObjectRoot"):
         facObject: "Facility" = clr.CastAs(
-            root.current_scenario.children.new_on_central_body(STK_OBJECT_TYPE.FACILITY, "Facility1", "Mars"), Facility
+            root.current_scenario.children.new_on_central_body(STKObjectType.FACILITY, "Facility1", "Mars"), Facility
         )
 
         # Assuming unit preferences are set to radians for latitude and longitude and km for distance
@@ -98,7 +97,7 @@ class FacilitySnippets(CodeSnippetsTestBase):
 
     def CreateFacilityFromFacilityDatabase(self, root: "StkObjectRoot"):
         # Get STK database location using Connect
-        result: "ExecCmdResult" = root.execute_command("GetDirectory / Database Facility")
+        result: "ExecuteCommandResult" = root.execute_command("GetDirectory / Database Facility")
         facDataDir: str = result[0]
         filelocation: str = Path.Combine(facDataDir, r"stkFacility.fd")
 

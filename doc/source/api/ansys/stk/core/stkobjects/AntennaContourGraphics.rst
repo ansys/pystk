@@ -32,9 +32,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaContourGraphics.show`
               - Opt whether to display volume graphics for the antenna.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaContourGraphics.supported_contour_types`
-              - Gets an array of the supported contour types.
+              - Get an array of the supported contour types.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaContourGraphics.contour`
-              - Gets the current contour type's properties.
+              - Get the current contour type's properties.
 
 
 
@@ -59,13 +59,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.AntennaContourGraphics.supported_contour_types
     :type: list
 
-    Gets an array of the supported contour types.
+    Get an array of the supported contour types.
 
 .. py:property:: contour
     :canonical: ansys.stk.core.stkobjects.AntennaContourGraphics.contour
     :type: IAntennaContour
 
-    Gets the current contour type's properties.
+    Get the current contour type's properties.
 
 
 Method detail
@@ -73,28 +73,28 @@ Method detail
 
 
 
-.. py:method:: is_contour_type_supported(self, val: ANTENNA_CONTOUR_TYPE) -> bool
+.. py:method:: is_contour_type_supported(self, value: AntennaContourType) -> bool
     :canonical: ansys.stk.core.stkobjects.AntennaContourGraphics.is_contour_type_supported
 
     Return true if the supplied contour type is supported by this object, false otherwise.
 
     :Parameters:
 
-    **val** : :obj:`~ANTENNA_CONTOUR_TYPE`
+    **value** : :obj:`~AntennaContourType`
 
     :Returns:
 
         :obj:`~bool`
 
 
-.. py:method:: set_contour_type(self, val: ANTENNA_CONTOUR_TYPE) -> None
+.. py:method:: set_contour_type(self, value: AntennaContourType) -> None
     :canonical: ansys.stk.core.stkobjects.AntennaContourGraphics.set_contour_type
 
     Set the current contour type.
 
     :Parameters:
 
-    **val** : :obj:`~ANTENNA_CONTOUR_TYPE`
+    **value** : :obj:`~AntennaContourType`
 
     :Returns:
 

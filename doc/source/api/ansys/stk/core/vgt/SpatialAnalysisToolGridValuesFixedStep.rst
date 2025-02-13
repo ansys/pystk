@@ -20,11 +20,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolGridValuesFixedStep.min`
+            * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolGridValuesFixedStep.minimum`
               - Minimum coordinate value.
-            * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolGridValuesFixedStep.max`
+            * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolGridValuesFixedStep.maximum`
               - Maximum coordinate value.
-            * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolGridValuesFixedStep.include_min_max`
+            * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolGridValuesFixedStep.include_minimum_maximum`
               - Flag indicating whether to include minimum and maximum coordinate values in the defined set of values.
             * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolGridValuesFixedStep.reference_value`
               - Reference coordinate value from which steps are taken.
@@ -44,20 +44,20 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: min
-    :canonical: ansys.stk.core.vgt.SpatialAnalysisToolGridValuesFixedStep.min
+.. py:property:: minimum
+    :canonical: ansys.stk.core.vgt.SpatialAnalysisToolGridValuesFixedStep.minimum
     :type: float
 
     Minimum coordinate value.
 
-.. py:property:: max
-    :canonical: ansys.stk.core.vgt.SpatialAnalysisToolGridValuesFixedStep.max
+.. py:property:: maximum
+    :canonical: ansys.stk.core.vgt.SpatialAnalysisToolGridValuesFixedStep.maximum
     :type: float
 
     Maximum coordinate value.
 
-.. py:property:: include_min_max
-    :canonical: ansys.stk.core.vgt.SpatialAnalysisToolGridValuesFixedStep.include_min_max
+.. py:property:: include_minimum_maximum
+    :canonical: ansys.stk.core.vgt.SpatialAnalysisToolGridValuesFixedStep.include_minimum_maximum
     :type: bool
 
     Flag indicating whether to include minimum and maximum coordinate values in the defined set of values.

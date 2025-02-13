@@ -9,10 +9,6 @@ VehicleGraphics2DTrailDataFraction
 
 .. py:currentmodule:: VehicleGraphics2DTrailDataFraction
 
-Overview
---------
-
-
 
 Import detail
 -------------

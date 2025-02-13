@@ -22,7 +22,7 @@
 from ansys.stk.core.stkengine import STKEngine
 
 
-stk = STKEngine.start_application(noGraphics=False)
+stk = STKEngine.start_application(no_graphics=False)
 print(f"Using {stk.version}")
 # -
 
@@ -66,10 +66,10 @@ root.rewind()
 # To best display Aviator graphics, set the scenario's 3D graphics to use mean sea level as the surface reference:
 
 # +
-from ansys.stk.core.stkobjects import SURFACE_REFERENCE
+from ansys.stk.core.stkobjects import SurfaceReference
 
 
-scenario.graphics_3d.surface_reference = SURFACE_REFERENCE.MEAN_SEA_LEVEL
+scenario.graphics_3d.surface_reference = SurfaceReference.MEAN_SEA_LEVEL
 # -
 
 # ## Add Oceana Naval Air Station
@@ -77,11 +77,11 @@ scenario.graphics_3d.surface_reference = SURFACE_REFERENCE.MEAN_SEA_LEVEL
 # The aircraft leaves from Oceana Naval Air Station. Insert a facility object to represent the station:
 
 # +
-from ansys.stk.core.stkobjects import STK_OBJECT_TYPE
+from ansys.stk.core.stkobjects import STKObjectType
 
 
 oceana_station = root.current_scenario.children.new(
-    STK_OBJECT_TYPE.FACILITY, "OceanaStation"
+    STKObjectType.FACILITY, "OceanaStation"
 )
 # -
 
@@ -97,26 +97,24 @@ oceana_station.position.assign_geodetic(36.822744, -76.031892, 0.0)
 
 # The aircraft lands on the USS Abraham Lincoln carrier ship, which is sailing off the coast near the Oceana Naval Air Station. Insert a ship object to represent the carrier:
 
-carrier = root.current_scenario.children.new(STK_OBJECT_TYPE.SHIP, "USSAbrahamLincoln")
+carrier = root.current_scenario.children.new(STKObjectType.SHIP, "USSAbrahamLincoln")
 
 # The carrier is modeled with a Great Arc propagator, which propagates the ship's route based on waypoints. Assign a Great Arc propagator to the ship:
 
 # +
-from ansys.stk.core.stkobjects import VEHICLE_PROPAGATOR_TYPE
+from ansys.stk.core.stkobjects import PropagatorType
 
 
-carrier.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_GREAT_ARC)
+carrier.set_route_type(PropagatorType.GREAT_ARC)
 # -
 
 # Configure the propagator to use terrain along the ship's route as the altitude reference for its waypoints:
 
 # +
-from ansys.stk.core.stkobjects import VEHICLE_ALTITUDE_REFERENCE
+from ansys.stk.core.stkobjects import VehicleAltitudeReference
 
 
-carrier.route.set_altitude_reference_type(
-    VEHICLE_ALTITUDE_REFERENCE.WAYPOINT_ALTITUDE_REFERENCE_TERRAIN
-)
+carrier.route.set_altitude_reference_type(VehicleAltitudeReference.TERRAIN)
 # -
 
 # Next, define the distance between sampling points along the ship's route. This option is used when waypoint altitudes are referenced to terrain. Set the distance to $1$ km:
@@ -157,12 +155,12 @@ map_plotter.show()
 # Two aircraft fly in formation from the Oceana Station to the USS Abraham Lincoln. Insert the first plane, which will lead the formation:
 
 lead_aircraft = root.current_scenario.children.new(
-    STK_OBJECT_TYPE.AIRCRAFT, "LeadAircraft"
+    STKObjectType.AIRCRAFT, "LeadAircraft"
 )
 
 # Next, set the aircraft's propagator to the Aviator propagator:
 
-lead_aircraft.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_AVIATOR)
+lead_aircraft.set_route_type(PropagatorType.AVIATOR)
 
 # Get the propagator object:
 
@@ -226,11 +224,11 @@ oceana_runway = runway_catalog.arinc424_runways.get_arinc424_item(
 # Next, add a takeoff procedure to the aircraft's first phase. The aircraft takes off from the Oceana runway in this procedure, so the procedure has a site type of runway and a procedure type of takeoff.
 
 # +
-from ansys.stk.core.stkobjects.aviator import PROCEDURE_TYPE, SITE_TYPE
+from ansys.stk.core.stkobjects.aviator import ProcedureType, SiteType
 
 
 takeoff_procedure = lead_procedures.add(
-    SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF
+    SiteType.SITE_RUNWAY, ProcedureType.PROCEDURE_TAKEOFF
 )
 # -
 
@@ -244,19 +242,19 @@ takeoff_procedure.site.name = (
 # Then, set the runway heading, which describes the direction the aircraft points on the runway. Set the heading to low:
 
 # +
-from ansys.stk.core.stkobjects.aviator import RUNWAY_HIGH_LOW_END
+from ansys.stk.core.stkobjects.aviator import RunwayHighLowEnd
 
 
-takeoff_procedure.runway_heading_options.runway_mode = RUNWAY_HIGH_LOW_END.LOW_END
+takeoff_procedure.runway_heading_options.runway_mode = RunwayHighLowEnd.LOW_END
 # -
 
 # Then, set the takeoff mode to normal. In a normal takeoff, the aircraft pulls up off the runway and flies up to the departure altitude at the takeoff climb angle.
 
 # +
-from ansys.stk.core.stkobjects.aviator import TAKEOFF_MODE
+from ansys.stk.core.stkobjects.aviator import TakeoffMode
 
 
-takeoff_procedure.takeoff_mode = TAKEOFF_MODE.TAKEOFF_NORMAL
+takeoff_procedure.takeoff_mode = TakeoffMode.TAKEOFF_NORMAL
 # -
 
 # Then, set the takeoff climb angle to $3^\circ$, the departure altitude to $500$ ft, and the runway altitude offset to $0$. To do so, use the takeoff procedure's `mode_as_normal` property, which converts the takeoff procedure to an `ITakeoffNormal` object:
@@ -276,7 +274,7 @@ takeoff_procedure.mode_as_normal.use_runway_terrain = True
 # In this case, an enroute procedure is used to begin the aircraft's approach to the ship. Insert an enroute procedure:
 
 enroute_procedure = lead_procedures.add(
-    SITE_TYPE.SITE_STK_OBJECT_WAYPOINT, PROCEDURE_TYPE.PROCEDURE_ENROUTE
+    SiteType.SITE_STK_OBJECT_WAYPOINT, ProcedureType.PROCEDURE_ENROUTE
 )
 
 # The aircraft flies to the USS Abraham Lincoln in this procedure, so set the procedure's site to the ship:
@@ -290,11 +288,11 @@ enroute_procedure.site.waypoint_time = scenario.start_time
 # Then, set the waypoint's offset mode, which offsets the site location relative from the STK Object. Set the mode to use a bearing/range relative to the aircraft's course:
 
 # +
-from ansys.stk.core.stkobjects.aviator import STK_OBJECT_WAYPOINT_OFFSET_MODE
+from ansys.stk.core.stkobjects.aviator import STKObjectWaypointOffsetMode
 
 
 enroute_procedure.site.offset_mode = (
-    STK_OBJECT_WAYPOINT_OFFSET_MODE.OFFSET_RELATIVE_BEARING_RANGE
+    STKObjectWaypointOffsetMode.OFFSET_RELATIVE_BEARING_RANGE
 )
 # -
 
@@ -311,12 +309,10 @@ enroute_procedure.altitude_msl_options.msl_altitude = 20000
 # Finally, set the procedure's navigation options, which define the heading or course of the aircraft at the beginning of the procedure and the direction of the turns taken to arrive at the procedure site. Set the navigation mode to arrive on course, which means that the aircraft arrives at the procedure site on a specific course:
 
 # +
-from ansys.stk.core.stkobjects.aviator import POINT_TO_POINT_MODE
+from ansys.stk.core.stkobjects.aviator import PointToPointMode
 
 
-enroute_procedure.navigation_options.navigation_mode = (
-    POINT_TO_POINT_MODE.ARRIVE_ON_COURSE
-)
+enroute_procedure.navigation_options.navigation_mode = PointToPointMode.ARRIVE_ON_COURSE
 # -
 
 # Then, set the aircraft to arrive on course at $135^\circ$:
@@ -328,7 +324,7 @@ enroute_procedure.navigation_options.arrive_on_course = 135
 # The aircraft then flies an additional enroute procedure to maintain its position after approaching the ship. Insert another enroute procedure:
 
 enroute_procedure2 = lead_procedures.add(
-    SITE_TYPE.SITE_STK_OBJECT_WAYPOINT, PROCEDURE_TYPE.PROCEDURE_ENROUTE
+    SiteType.SITE_STK_OBJECT_WAYPOINT, ProcedureType.PROCEDURE_ENROUTE
 )
 
 # First, set the procedure's name to "Enter the stack":
@@ -346,7 +342,7 @@ enroute_procedure2.site.waypoint_time = "20 Jan 2020 17:09:06.858"
 # Set the procedure's waypoint offset mode to offset with a relative bearing and range, then set the relative bearing to $180^\circ$ and the relative range to $10$ nm:
 
 enroute_procedure2.site.offset_mode = (
-    STK_OBJECT_WAYPOINT_OFFSET_MODE.OFFSET_RELATIVE_BEARING_RANGE
+    STKObjectWaypointOffsetMode.OFFSET_RELATIVE_BEARING_RANGE
 )
 enroute_procedure2.site.bearing = 180
 enroute_procedure2.site.range = 10
@@ -359,17 +355,17 @@ enroute_procedure2.altitude_msl_options.msl_altitude = 10000
 # Set the navigation mode to arrive on course for the next procedure:
 
 enroute_procedure2.navigation_options.navigation_mode = (
-    POINT_TO_POINT_MODE.ARRIVE_ON_COURSE_FOR_NEXT
+    PointToPointMode.ARRIVE_ON_COURSE_FOR_NEXT
 )
 
 # Then, set the enroute cruise airspeed speed type to max endurance airspeed. This option uses a variable airspeed to maximize the length of time that the aircraft can remain in flight.
 
 # +
-from ansys.stk.core.stkobjects.aviator import CRUISE_SPEED
+from ansys.stk.core.stkobjects.aviator import CruiseSpeed
 
 
 enroute_procedure2.enroute_cruise_airspeed_options.cruise_speed_type = (
-    CRUISE_SPEED.MAX_ENDURANCE_AIRSPEED
+    CruiseSpeed.MAX_ENDURANCE_AIRSPEED
 )
 # -
 
@@ -388,7 +384,7 @@ station_keeping_phase.name = "StationKeeping"
 # Then, add the first procedure in the phase, which is a basic maneuver from the end of the previous procedure:
 
 station_keeping_basic_maneuver = station_keeping_phase.procedures.add(
-    SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_BASIC_MANEUVER
+    SiteType.SITE_END_OF_PREV_PROCEDURE, ProcedureType.PROCEDURE_BASIC_MANEUVER
 )
 
 # Set the maneuver's strategy type to station keeping. This strategy is a horizontal plane strategy in which the aircraft orbits a point relative to a stationary or moving object, in this case the USS Abraham Lincoln.
@@ -402,23 +398,23 @@ station_keeping_basic_maneuver.navigation.target_name = "Ship/USSAbrahamLincoln"
 # Then, set the station options. The aircraft maintains a bearing relative to the ship of $-90^\circ$, holds a range of $2.7$ nm from the ship, flies while waiting on the station with a holding circle goal radius of $2.5$ nm, and turns left into the holding circle.
 
 # +
-from ansys.stk.core.stkobjects.aviator import TURN_DIRECTION
+from ansys.stk.core.stkobjects.aviator import TurnDirection
 
 
 station_keeping_basic_maneuver.navigation.relative_bearing = -90
 station_keeping_basic_maneuver.navigation.relative_range = 2.7
 station_keeping_basic_maneuver.navigation.desired_radius = 2.5
-station_keeping_basic_maneuver.navigation.turn_direction = TURN_DIRECTION.TURN_LEFT
+station_keeping_basic_maneuver.navigation.turn_direction = TurnDirection.TURN_LEFT
 # -
 
 # Next, set the maneuver's stopping condition, which dictates when the maneuver ends regardless of whether any other goals are met. Each maneuver requires at least one stopping condition, and stops if any of the conditions are met. Set the aircraft to stop after 5 turns:
 
 # +
-from ansys.stk.core.stkobjects.aviator import STATIONKEEPING_STOP_CONDITION
+from ansys.stk.core.stkobjects.aviator import StationkeepingStopCondition
 
 
 station_keeping_basic_maneuver.navigation.stop_condition = (
-    STATIONKEEPING_STOP_CONDITION.STOP_AFTER_TURN_COUNT
+    StationkeepingStopCondition.STOP_AFTER_TURN_COUNT
 )
 station_keeping_basic_maneuver.navigation.stop_after_turn_count = 5
 # -
@@ -439,23 +435,21 @@ station_keeping_profile = station_keeping_basic_maneuver.profile
 # Next, configure the autopilot strategy. First, set the autopilot profile to use an absolute altitude of $2000$ ft by setting the autopilot altitude mode to specify altitude:
 
 # +
-from ansys.stk.core.stkobjects.aviator import AUTOPILOT_ALTITUDE_MODE
+from ansys.stk.core.stkobjects.aviator import AutopilotAltitudeMode
 
 
-station_keeping_profile.altitude_mode = (
-    AUTOPILOT_ALTITUDE_MODE.AUTOPILOT_SPECIFY_ALTITUDE
-)
+station_keeping_profile.altitude_mode = AutopilotAltitudeMode.AUTOPILOT_SPECIFY_ALTITUDE
 station_keeping_profile.absolute_altitude = 2000
 # -
 
 # Then, set a control altitude rate of $2000$ ft/min by first setting the altitude control mode:
 
 # +
-from ansys.stk.core.stkobjects.aviator import AUTOPILOT_ALTITUDE_CONTROL_MODE
+from ansys.stk.core.stkobjects.aviator import AutopilotAltitudeControlMode
 
 
 station_keeping_profile.altitude_control_mode = (
-    AUTOPILOT_ALTITUDE_CONTROL_MODE.AUTOPILOT_ALTITUDE_RATE
+    AutopilotAltitudeControlMode.AUTOPILOT_ALTITUDE_RATE
 )
 station_keeping_profile.control_altitude_rate_value = 2000
 # -
@@ -463,10 +457,10 @@ station_keeping_profile.control_altitude_rate_value = 2000
 # Then, set the control limit mode to override the performance model value:
 
 # +
-from ansys.stk.core.stkobjects.aviator import PERFORMANCE_MODEL_OVERRIDE
+from ansys.stk.core.stkobjects.aviator import PerformanceModelOverride
 
 
-station_keeping_profile.control_limit_mode = PERFORMANCE_MODEL_OVERRIDE.OVERRIDE
+station_keeping_profile.control_limit_mode = PerformanceModelOverride.OVERRIDE
 # -
 
 # Set the maximum pitch rate to $10^\circ$ and the damping ratio to $2$:
@@ -478,39 +472,39 @@ station_keeping_profile.damping_ratio = 2
 
 # +
 from ansys.stk.core.stkobjects.aviator import (
-    BASIC_MANEUVER_AIRSPEED_MODE,
-    BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS,
+    BasicManeuverAirspeedMode,
+    BasicManeuverStrategyAirspeedPerformanceLimits,
 )
 
 
 station_keeping_profile.airspeed_options.airspeed_mode = (
-    BASIC_MANEUVER_AIRSPEED_MODE.MAINTAIN_MAX_ENDURANCE_AIRSPEED
+    BasicManeuverAirspeedMode.MAINTAIN_MAX_ENDURANCE_AIRSPEED
 )
 station_keeping_profile.airspeed_options.min_speed_limits = (
-    BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS.CONSTRAIN_IF_VIOLATED
+    BasicManeuverStrategyAirspeedPerformanceLimits.CONSTRAIN_IF_VIOLATED
 )
 station_keeping_profile.airspeed_options.max_speed_limits = (
-    BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS.CONSTRAIN_IF_VIOLATED
+    BasicManeuverStrategyAirspeedPerformanceLimits.CONSTRAIN_IF_VIOLATED
 )
 # -
 
 # Next, set the maneuver's flight mode, which designates the type of performance model that the aircraft uses to fly the maneuver. Set the flight mode to cruise:
 
 # +
-from ansys.stk.core.stkobjects.aviator import PHASE_OF_FLIGHT
+from ansys.stk.core.stkobjects.aviator import PhaseOfFlight
 
 
-station_keeping_basic_maneuver.flight_mode = PHASE_OF_FLIGHT.FLIGHT_PHASE_CRUISE
+station_keeping_basic_maneuver.flight_mode = PhaseOfFlight.FLIGHT_PHASE_CRUISE
 # -
 
 # Then, set the fuel flow type, which sets which performance model is used to calculate the fuel flow for the maneuver. Set the fuel flow type to cruise:
 
 # +
-from ansys.stk.core.stkobjects.aviator import BASIC_MANEUVER_FUEL_FLOW_TYPE
+from ansys.stk.core.stkobjects.aviator import BasicManeuverFuelFlowType
 
 
 station_keeping_basic_maneuver.fuel_flow_type = (
-    BASIC_MANEUVER_FUEL_FLOW_TYPE.BASIC_MANEUVER_FUEL_FLOW_CRUISE
+    BasicManeuverFuelFlowType.BASIC_MANEUVER_FUEL_FLOW_CRUISE
 )
 # -
 
@@ -528,18 +522,18 @@ station_keeping_basic_maneuver.max_downrange = 500
 # Then, set the altitude limit mode to create an error if the aircraft exceeds the altitude limit during the maneuver:
 
 # +
-from ansys.stk.core.stkobjects.aviator import BASIC_MANEUVER_ALTITUDE_LIMIT
+from ansys.stk.core.stkobjects.aviator import BasicManeuverAltitudeLimit
 
 
 station_keeping_basic_maneuver.altitude_limit_mode = (
-    BASIC_MANEUVER_ALTITUDE_LIMIT.BASIC_MANEUVER_ALTITUDE_LIMIT_ERROR
+    BasicManeuverAltitudeLimit.BASIC_MANEUVER_ALTITUDE_LIMIT_ERROR
 )
 # -
 
 # Set the terrain impact mode to continue if its limit is reached:
 
 station_keeping_basic_maneuver.terrain_impact_mode = (
-    BASIC_MANEUVER_ALTITUDE_LIMIT.BASIC_MANEUVER_ALTITUDE_LIMIT_CONTINUE
+    BasicManeuverAltitudeLimit.BASIC_MANEUVER_ALTITUDE_LIMIT_CONTINUE
 )
 
 # ### Relative course procedure
@@ -547,7 +541,7 @@ station_keeping_basic_maneuver.terrain_impact_mode = (
 # Next, the aircraft flies a constant relative course to the ship. Add another basic maneuver in the mission's second phase, starting from the end of the last procedure:
 
 relative_course_basic_maneuver = station_keeping_phase.procedures.add(
-    SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_BASIC_MANEUVER
+    SiteType.SITE_END_OF_PREV_PROCEDURE, ProcedureType.PROCEDURE_BASIC_MANEUVER
 )
 
 # Set the navigation strategy type to a relative course:
@@ -578,10 +572,10 @@ relative_course_basic_maneuver.navigation.use_approach_turn_mode = True
 # Next, configure the procedure's closure mode, which defines the closure requirement for the maneuver. Set the closure mode to High Off Boresight, which indicates that the maneuver stops if closure stops, unless the aircraft is within the HOBs Max Angle Off and HOBs Angle Tolerance values:
 
 # +
-from ansys.stk.core.stkobjects.aviator import CLOSURE_MODE
+from ansys.stk.core.stkobjects.aviator import ClosureMode
 
 
-relative_course_basic_maneuver.navigation.closure_mode = CLOSURE_MODE.HOBS
+relative_course_basic_maneuver.navigation.closure_mode = ClosureMode.HOBS
 # -
 
 # Set the closure's downrange offset to $0$ nm and the maximum HOBs angle to $90^\circ$:
@@ -596,21 +590,21 @@ relative_course_basic_maneuver.profile_strategy_type = "Autopilot - Vertical Pla
 # Next, set the autopilot altitude options. Specify a constant absolute altitude of $800$ ft:
 
 relative_course_basic_maneuver.profile.altitude_mode = (
-    AUTOPILOT_ALTITUDE_MODE.AUTOPILOT_SPECIFY_ALTITUDE
+    AutopilotAltitudeMode.AUTOPILOT_SPECIFY_ALTITUDE
 )
 relative_course_basic_maneuver.profile.absolute_altitude = 800
 
 # Set the altitude control mode to the control altitude rate mode, and specify a control altitude rate value of $2000$ ft/min:
 
 relative_course_basic_maneuver.profile.altitude_control_mode = (
-    AUTOPILOT_ALTITUDE_CONTROL_MODE.AUTOPILOT_ALTITUDE_RATE
+    AutopilotAltitudeControlMode.AUTOPILOT_ALTITUDE_RATE
 )
 relative_course_basic_maneuver.profile.control_altitude_rate_value = 2000
 
 # Next, set the control limit mode to override the performance model value:
 
 relative_course_basic_maneuver.profile.control_limit_mode = (
-    PERFORMANCE_MODEL_OVERRIDE.OVERRIDE
+    PerformanceModelOverride.OVERRIDE
 )
 
 # Then, set the maximum pitch rate to $10^\circ$/s, and the damping ratio to $2$:
@@ -622,16 +616,16 @@ relative_course_basic_maneuver.profile.damping_ratio = 2
 
 # +
 from ansys.stk.core.stkobjects.aviator import (
-    AIRSPEED_TYPE,
-    BASIC_MANEUVER_AIRSPEED_MODE,
+    AirspeedType,
+    BasicManeuverAirspeedMode,
 )
 
 
 relative_course_basic_maneuver.profile.airspeed_options.airspeed_mode = (
-    BASIC_MANEUVER_AIRSPEED_MODE.MAINTAIN_SPECIFIED_AIRSPEED
+    BasicManeuverAirspeedMode.MAINTAIN_SPECIFIED_AIRSPEED
 )
 relative_course_basic_maneuver.profile.airspeed_options.specified_airspeed_type = (
-    AIRSPEED_TYPE.CAS
+    AirspeedType.CAS
 )
 relative_course_basic_maneuver.profile.airspeed_options.specified_airspeed = 350
 # -
@@ -639,17 +633,17 @@ relative_course_basic_maneuver.profile.airspeed_options.specified_airspeed = 350
 # Constrain the aircraft to not pass the minimum and maximum speed limits:
 
 relative_course_basic_maneuver.profile.airspeed_options.min_speed_limits = (
-    BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS.CONSTRAIN_IF_VIOLATED
+    BasicManeuverStrategyAirspeedPerformanceLimits.CONSTRAIN_IF_VIOLATED
 )
 relative_course_basic_maneuver.profile.airspeed_options.max_speed_limits = (
-    BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS.CONSTRAIN_IF_VIOLATED
+    BasicManeuverStrategyAirspeedPerformanceLimits.CONSTRAIN_IF_VIOLATED
 )
 
 # Next, set the flight mode and fuel flow type properties to use the cruise performance model:
 
-relative_course_basic_maneuver.flight_mode = PHASE_OF_FLIGHT.FLIGHT_PHASE_CRUISE
+relative_course_basic_maneuver.flight_mode = PhaseOfFlight.FLIGHT_PHASE_CRUISE
 relative_course_basic_maneuver.fuel_flow_type = (
-    BASIC_MANEUVER_FUEL_FLOW_TYPE.BASIC_MANEUVER_FUEL_FLOW_CRUISE
+    BasicManeuverFuelFlowType.BASIC_MANEUVER_FUEL_FLOW_CRUISE
 )
 
 # Then, set the procedure's stopping conditions. The procedure stops when the aircraft reaches $0$ lb of fuel, or a maximum downrange of $100$ nm, but does not have a constraint on time of flight. Set the conditions accordingly:
@@ -663,10 +657,10 @@ relative_course_basic_maneuver.max_downrange = 100
 # Finally, configure the procedure to create an error if the altitude limit is exceeded, but to continue if the terrain impact limit is exceeded:
 
 relative_course_basic_maneuver.altitude_limit_mode = (
-    BASIC_MANEUVER_ALTITUDE_LIMIT.BASIC_MANEUVER_ALTITUDE_LIMIT_ERROR
+    BasicManeuverAltitudeLimit.BASIC_MANEUVER_ALTITUDE_LIMIT_ERROR
 )
 relative_course_basic_maneuver.terrain_impact_mode = (
-    BASIC_MANEUVER_ALTITUDE_LIMIT.BASIC_MANEUVER_ALTITUDE_LIMIT_CONTINUE
+    BasicManeuverAltitudeLimit.BASIC_MANEUVER_ALTITUDE_LIMIT_CONTINUE
 )
 
 # ### Second relative course maneuver
@@ -674,7 +668,7 @@ relative_course_basic_maneuver.terrain_impact_mode = (
 # Add another relative course basic maneuver to the second phase of the mission. The procedure begins from the end of the last procedure.
 
 relative_course_basic_maneuver2 = station_keeping_phase.procedures.add(
-    SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_BASIC_MANEUVER
+    SiteType.SITE_END_OF_PREV_PROCEDURE, ProcedureType.PROCEDURE_BASIC_MANEUVER
 )
 
 # Set the navigation type to a relative course strategy:
@@ -707,18 +701,18 @@ relative_course_basic_maneuver2.navigation.maneuver_factor = 1
 
 # +
 from ansys.stk.core.stkobjects.aviator import (
-    BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT,
+    BasicManeuverStrategyNavigationControlLimit,
 )
 
 
 relative_course_basic_maneuver2.navigation.set_control_limit(
-    BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT.NAVIGATION_MAX_TURN_RATE, 29.9725
+    BasicManeuverStrategyNavigationControlLimit.NAVIGATION_MAX_TURN_RATE, 29.9725
 )
 # -
 
 # Next, set the closure options. Set the closure mode to High Off Boresight, the closure's downrange offset to $0$ nm and the maximum HOBs angle to $90^\circ$:
 
-relative_course_basic_maneuver2.navigation.closure_mode = CLOSURE_MODE.HOBS
+relative_course_basic_maneuver2.navigation.closure_mode = ClosureMode.HOBS
 relative_course_basic_maneuver2.navigation.downrange_offset = 0
 relative_course_basic_maneuver2.navigation.hobs_max_angle = 90
 
@@ -729,21 +723,21 @@ relative_course_basic_maneuver2.profile_strategy_type = "Autopilot - Vertical Pl
 # Next, set the autopilot altitude options. Specify a constant absolute altitude of $600$ ft:
 
 relative_course_basic_maneuver2.profile.altitude_mode = (
-    AUTOPILOT_ALTITUDE_MODE.AUTOPILOT_SPECIFY_ALTITUDE
+    AutopilotAltitudeMode.AUTOPILOT_SPECIFY_ALTITUDE
 )
 relative_course_basic_maneuver2.profile.absolute_altitude = 600
 
 # Set the altitude control mode to the control altitude rate mode, and specify a control altitude rate value of $2000$ ft/min:
 
 relative_course_basic_maneuver2.profile.altitude_control_mode = (
-    AUTOPILOT_ALTITUDE_CONTROL_MODE.AUTOPILOT_ALTITUDE_RATE
+    AutopilotAltitudeControlMode.AUTOPILOT_ALTITUDE_RATE
 )
 relative_course_basic_maneuver2.profile.control_altitude_rate_value = 2000
 
 # Next, set the control limit mode to override the performance model value:
 
 relative_course_basic_maneuver2.profile.control_limit_mode = (
-    PERFORMANCE_MODEL_OVERRIDE.OVERRIDE
+    PerformanceModelOverride.OVERRIDE
 )
 
 # Then, set the maximum pitch ratio to $10^\circ$, and the damping ratio to $2$:
@@ -754,32 +748,32 @@ relative_course_basic_maneuver2.profile.damping_ratio = 2
 # Next, set the autopilot airspeed options. Set the airspeed mode to maintain a specified airspeed of $145$ nm/hr, designated with calibrated airspeed:
 
 relative_course_basic_maneuver2.profile.airspeed_options.airspeed_mode = (
-    BASIC_MANEUVER_AIRSPEED_MODE.MAINTAIN_SPECIFIED_AIRSPEED
+    BasicManeuverAirspeedMode.MAINTAIN_SPECIFIED_AIRSPEED
 )
 relative_course_basic_maneuver2.profile.airspeed_options.specified_airspeed_type = (
-    AIRSPEED_TYPE.CAS
+    AirspeedType.CAS
 )
 relative_course_basic_maneuver2.profile.airspeed_options.specified_airspeed = 145
 
 # Then, override the performance model's acceleration/deceleration, and instead designate a fixed acceleration/deceleration of $0.3$g:
 
-relative_course_basic_maneuver2.profile.airspeed_options.specified_acceleration_deceleration_mode = PERFORMANCE_MODEL_OVERRIDE.OVERRIDE
+relative_course_basic_maneuver2.profile.airspeed_options.specified_acceleration_deceleration_mode = PerformanceModelOverride.OVERRIDE
 relative_course_basic_maneuver2.profile.airspeed_options.specified_acceleration_deceleration_g = 0.3
 
 # Constrain the aircraft to not pass the minimum and maximum speed limits:
 
 relative_course_basic_maneuver2.profile.airspeed_options.min_speed_limits = (
-    BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS.CONSTRAIN_IF_VIOLATED
+    BasicManeuverStrategyAirspeedPerformanceLimits.CONSTRAIN_IF_VIOLATED
 )
 relative_course_basic_maneuver2.profile.airspeed_options.max_speed_limits = (
-    BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS.CONSTRAIN_IF_VIOLATED
+    BasicManeuverStrategyAirspeedPerformanceLimits.CONSTRAIN_IF_VIOLATED
 )
 
 # Set the maneuver's flight mode and fuel flow type to cruise:
 
-relative_course_basic_maneuver2.flight_mode = PHASE_OF_FLIGHT.FLIGHT_PHASE_CRUISE
+relative_course_basic_maneuver2.flight_mode = PhaseOfFlight.FLIGHT_PHASE_CRUISE
 relative_course_basic_maneuver2.fuel_flow_type = (
-    BASIC_MANEUVER_FUEL_FLOW_TYPE.BASIC_MANEUVER_FUEL_FLOW_CRUISE
+    BasicManeuverFuelFlowType.BASIC_MANEUVER_FUEL_FLOW_CRUISE
 )
 
 # Set the stopping conditions. Enable a fuel state stopping condition of $0$ lb, disable the maximum time of flight constraint, and enable a maximum downrange flight constraint of $50$ nm:
@@ -793,10 +787,10 @@ relative_course_basic_maneuver2.max_downrange = 50
 # Finally, set the procedure to create an error if the altitude limit is exceeded, but to continue if the terrain impact limit is exceeded:
 
 relative_course_basic_maneuver2.altitude_limit_mode = (
-    BASIC_MANEUVER_ALTITUDE_LIMIT.BASIC_MANEUVER_ALTITUDE_LIMIT_ERROR
+    BasicManeuverAltitudeLimit.BASIC_MANEUVER_ALTITUDE_LIMIT_ERROR
 )
 relative_course_basic_maneuver2.terrain_impact_mode = (
-    BASIC_MANEUVER_ALTITUDE_LIMIT.BASIC_MANEUVER_ALTITUDE_LIMIT_CONTINUE
+    BasicManeuverAltitudeLimit.BASIC_MANEUVER_ALTITUDE_LIMIT_CONTINUE
 )
 
 # ### Landing procedure
@@ -804,7 +798,7 @@ relative_course_basic_maneuver2.terrain_impact_mode = (
 # After completing the station keeping procedures, the aircraft lands on the USS Abraham Lincoln. Add a basic maneuver starting from the end of the last procedure to correspond to the landing:
 
 landing = station_keeping_phase.procedures.add(
-    SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_BASIC_MANEUVER
+    SiteType.SITE_END_OF_PREV_PROCEDURE, ProcedureType.PROCEDURE_BASIC_MANEUVER
 )
 
 # Name the procedure:
@@ -831,7 +825,7 @@ landing.navigation.cross_track = 0.0123434
 
 # Next, set the closure options. Set the closure mode to High Off Boresight, the closure's downrange offset to $0.1$ nm and the maximum HOBs angle to $90^\circ$:
 
-landing.navigation.closure_mode = CLOSURE_MODE.HOBS
+landing.navigation.closure_mode = ClosureMode.HOBS
 landing.navigation.downrange_offset = 0.1
 landing.navigation.hobs_max_angle = 90
 
@@ -841,7 +835,7 @@ landing.profile_strategy_type = "Relative Flight Path Angle"
 
 # Set the flight path angle to $-3.5^\circ$:
 
-landing.profile.fpa = -3.5
+landing.profile.flight_path_angle = -3.5
 
 # Set the anchor altitude offset, which is the height above or below the target that the aircraft attempts to achieve. Set the offset to $100$ ft:
 
@@ -850,32 +844,32 @@ landing.profile.anchor_altitude_offset = 100
 # Next, set the control limit, which constrains the aircraft's performance during the maneuver. Constrain the pitch rate, which represents the maximum rate at which the aircraft can climb or descend. Set the maximum pitch rate to $10^\circ$/s:
 
 # +
-from ansys.stk.core.stkobjects.aviator import PROFILE_CONTROL_LIMIT
+from ansys.stk.core.stkobjects.aviator import ProfileControlLimit
 
 
-landing.profile.set_control_limit(PROFILE_CONTROL_LIMIT.PROFILE_PITCH_RATE, 10)
+landing.profile.set_control_limit(ProfileControlLimit.PROFILE_PITCH_RATE, 10)
 # -
 
 # Then, set the profile's airspeed mode to maintain the current airspeed, defined in true airspeed:
 
 landing.profile.airspeed_options.airspeed_mode = (
-    BASIC_MANEUVER_AIRSPEED_MODE.MAINTAIN_CURRENT_AIRSPEED
+    BasicManeuverAirspeedMode.MAINTAIN_CURRENT_AIRSPEED
 )
-landing.profile.airspeed_options.maintain_airspeed_type = AIRSPEED_TYPE.TAS
+landing.profile.airspeed_options.maintain_airspeed_type = AirspeedType.TAS
 
 # Set the profile to constrain the aircraft to stay between its minimum and maximum speed limits:
 
 landing.profile.airspeed_options.min_speed_limits = (
-    BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS.CONSTRAIN_IF_VIOLATED
+    BasicManeuverStrategyAirspeedPerformanceLimits.CONSTRAIN_IF_VIOLATED
 )
 landing.profile.airspeed_options.max_speed_limits = (
-    BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS.CONSTRAIN_IF_VIOLATED
+    BasicManeuverStrategyAirspeedPerformanceLimits.CONSTRAIN_IF_VIOLATED
 )
 
 # Set the procedure to use the cruise performance model for its flight mode and fuel flow calculations:
 
-landing.flight_mode = PHASE_OF_FLIGHT.FLIGHT_PHASE_CRUISE
-landing.fuel_flow_type = BASIC_MANEUVER_FUEL_FLOW_TYPE.BASIC_MANEUVER_FUEL_FLOW_CRUISE
+landing.flight_mode = PhaseOfFlight.FLIGHT_PHASE_CRUISE
+landing.fuel_flow_type = BasicManeuverFuelFlowType.BASIC_MANEUVER_FUEL_FLOW_CRUISE
 
 # Then, set the stopping conditions. Set a stopping condition of $0$ lb, disable the maximum time of flight condition, and set a maximum downrange condition of $50$ nm:
 
@@ -888,10 +882,10 @@ landing.max_downrange = 50
 # Finally, configure the maneuver to create an error if it exceeds its altitude limits, but continue if it passes its terrain impact limits:
 
 landing.altitude_limit_mode = (
-    BASIC_MANEUVER_ALTITUDE_LIMIT.BASIC_MANEUVER_ALTITUDE_LIMIT_ERROR
+    BasicManeuverAltitudeLimit.BASIC_MANEUVER_ALTITUDE_LIMIT_ERROR
 )
 landing.terrain_impact_mode = (
-    BASIC_MANEUVER_ALTITUDE_LIMIT.BASIC_MANEUVER_ALTITUDE_LIMIT_CONTINUE
+    BasicManeuverAltitudeLimit.BASIC_MANEUVER_ALTITUDE_LIMIT_CONTINUE
 )
 
 # ## Propagate the lead aircraft
@@ -909,11 +903,11 @@ map_plotter.show()
 
 # A second basic fighter wing aircraft flies in formation with the lead aircraft. Insert the wing aircraft:
 
-wing_aircraft = scenario.children.new(STK_OBJECT_TYPE.AIRCRAFT, "WingAircraft")
+wing_aircraft = scenario.children.new(STKObjectType.AIRCRAFT, "WingAircraft")
 
 # Assign an Aviator propagator to the aircraft:
 
-wing_aircraft.set_route_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_AVIATOR)
+wing_aircraft.set_route_type(PropagatorType.AVIATOR)
 wing_propagator = wing_aircraft.route.aviator_propagator
 
 # ### Configure the aircraft's mission
@@ -928,7 +922,7 @@ wing_propagator.aviator_mission.vehicle = basic_fighter
 
 wing_first_procedures = wing_propagator.aviator_mission.phases[0].procedures
 wing_enroute = wing_first_procedures.add(
-    SITE_TYPE.SITE_WAYPOINT, PROCEDURE_TYPE.PROCEDURE_ENROUTE
+    SiteType.SITE_WAYPOINT, ProcedureType.PROCEDURE_ENROUTE
 )
 
 # Name the procedure's site to "Waypoint":
@@ -946,7 +940,7 @@ wing_enroute.altitude_msl_options.use_default_cruise_altitude = True
 
 # Finally, set the procedure to arrive on course at $340.691^\circ$:
 
-wing_enroute.navigation_options.navigation_mode = POINT_TO_POINT_MODE.ARRIVE_ON_COURSE
+wing_enroute.navigation_options.navigation_mode = PointToPointMode.ARRIVE_ON_COURSE
 wing_enroute.navigation_options.arrive_on_course = 340.691
 
 # ### Basic maneuver to intercept lead aircraft
@@ -954,7 +948,7 @@ wing_enroute.navigation_options.arrive_on_course = 340.691
 # After the enroute procedure, the wing aircraft completes a basic maneuver to intercept the lead aircraft. Insert a basic maneuver procedure starting from the end of the last procedure:
 
 wing_intercept = wing_first_procedures.add(
-    SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_BASIC_MANEUVER
+    SiteType.SITE_END_OF_PREV_PROCEDURE, ProcedureType.PROCEDURE_BASIC_MANEUVER
 )
 
 # Name the maneuver:
@@ -974,7 +968,7 @@ wing_intercept.navigation.min_range = 15
 # Set the maneuver's control limit to use the control limits specified in the current acceleration performance model:
 
 wing_intercept.navigation.set_control_limit(
-    BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT.NAVIGATION_USE_ACCELERATION_PERFORMANCE_MODEL,
+    BasicManeuverStrategyNavigationControlLimit.NAVIGATION_USE_ACCELERATION_PERFORMANCE_MODEL,
     0,
 )
 
@@ -985,29 +979,29 @@ wing_intercept.profile_strategy_type = "Cruise Profile"
 # Then, configure the autopilot profile. Set the profile to use the Earth as its reference frame, and request an altitude of $18000$ ft:
 
 # +
-from ansys.stk.core.stkobjects.aviator import BASIC_MANEUVER_REFERENCE_FRAME
+from ansys.stk.core.stkobjects.aviator import BasicManeuverReferenceFrame
 
 
-wing_intercept.profile.reference_frame = BASIC_MANEUVER_REFERENCE_FRAME.EARTH_FRAME
+wing_intercept.profile.reference_frame = BasicManeuverReferenceFrame.EARTH_FRAME
 wing_intercept.profile.requested_altitude = 18000
 # -
 
 # Configure the profile to use the maximum range airspeed:
 
 # +
-from ansys.stk.core.stkobjects.aviator import CRUISE_SPEED
+from ansys.stk.core.stkobjects.aviator import CruiseSpeed
 
 
 wing_intercept.profile.cruise_airspeed_options.cruise_speed_type = (
-    CRUISE_SPEED.MAX_RANGE_AIRSPEED
+    CruiseSpeed.MAX_RANGE_AIRSPEED
 )
 # -
 
 # Set the maneuver to use the cruise performance model for its flight mode and fuel flow calculations:
 
-wing_intercept.flight_mode = PHASE_OF_FLIGHT.FLIGHT_PHASE_CRUISE
+wing_intercept.flight_mode = PhaseOfFlight.FLIGHT_PHASE_CRUISE
 wing_intercept.fuel_flow_type = (
-    BASIC_MANEUVER_FUEL_FLOW_TYPE.BASIC_MANEUVER_FUEL_FLOW_CRUISE
+    BasicManeuverFuelFlowType.BASIC_MANEUVER_FUEL_FLOW_CRUISE
 )
 
 # Then, set a fuel state stopping condition of $0$ lb, and disable the maximum time of flight and maximum downrange conditions:
@@ -1020,10 +1014,10 @@ wing_intercept.use_max_downrange = False
 # Finally, configure the maneuver to create an error if it passes its altitude limits, but continue if it violates its terrain impact limits:
 
 wing_intercept.altitude_limit_mode = (
-    BASIC_MANEUVER_ALTITUDE_LIMIT.BASIC_MANEUVER_ALTITUDE_LIMIT_ERROR
+    BasicManeuverAltitudeLimit.BASIC_MANEUVER_ALTITUDE_LIMIT_ERROR
 )
 wing_intercept.terrain_impact_mode = (
-    BASIC_MANEUVER_ALTITUDE_LIMIT.BASIC_MANEUVER_ALTITUDE_LIMIT_CONTINUE
+    BasicManeuverAltitudeLimit.BASIC_MANEUVER_ALTITUDE_LIMIT_CONTINUE
 )
 
 # ### Rendezvous procedure
@@ -1033,7 +1027,7 @@ wing_intercept.terrain_impact_mode = (
 # Insert a basic maneuver procedure beginning from the end of the previous procedure:
 
 wing_rendezvous = wing_first_procedures.add(
-    SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_BASIC_MANEUVER
+    SiteType.SITE_END_OF_PREV_PROCEDURE, ProcedureType.PROCEDURE_BASIC_MANEUVER
 )
 
 # Set a navigation strategy type of Rendezvous/Formation:
@@ -1075,11 +1069,11 @@ wing_rendezvous.navigation.max_speed_advantage = 75
 # Finally, set the maneuver to stop after the target completes the mission phase that it is performing when the aircraft rendezvous with it:
 
 # +
-from ansys.stk.core.stkobjects.aviator import RENDEZVOUS_STOP_CONDITION
+from ansys.stk.core.stkobjects.aviator import RendezvousStopCondition
 
 
 wing_rendezvous.navigation.stop_condition = (
-    RENDEZVOUS_STOP_CONDITION.STOP_AFTER_TARGET_CURRENT_PHASE
+    RendezvousStopCondition.STOP_AFTER_TARGET_CURRENT_PHASE
 )
 # -
 
@@ -1095,10 +1089,10 @@ wing_rendezvous.max_downrange = 500
 # Finally, configure the procedure to create an error if the altitude limits are exceeded, but to continue if the terrain impact limits are reached:
 
 wing_rendezvous.altitude_limit_mode = (
-    BASIC_MANEUVER_ALTITUDE_LIMIT.BASIC_MANEUVER_ALTITUDE_LIMIT_ERROR
+    BasicManeuverAltitudeLimit.BASIC_MANEUVER_ALTITUDE_LIMIT_ERROR
 )
 wing_rendezvous.terrain_impact_mode = (
-    BASIC_MANEUVER_ALTITUDE_LIMIT.BASIC_MANEUVER_ALTITUDE_LIMIT_CONTINUE
+    BasicManeuverAltitudeLimit.BASIC_MANEUVER_ALTITUDE_LIMIT_CONTINUE
 )
 
 # ### Stationkeeping procedure
@@ -1106,7 +1100,7 @@ wing_rendezvous.terrain_impact_mode = (
 # After the rendezvous procedure, the wing aircraft keeps its station while flying in formation with the lead aircraft. Add a basic maneuver procedure, and assign it a stationkeeping navigation strategy type:
 
 wing_stationkeeping = wing_first_procedures.add(
-    SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_BASIC_MANEUVER
+    SiteType.SITE_END_OF_PREV_PROCEDURE, ProcedureType.PROCEDURE_BASIC_MANEUVER
 )
 wing_stationkeeping.navigation_strategy_type = "Stationkeeping"
 
@@ -1122,12 +1116,12 @@ wing_stationkeeping.navigation.desired_radius = 2.5
 
 # Set the maneuver's turn direction to turn left:
 
-wing_stationkeeping.navigation.turn_direction = TURN_DIRECTION.TURN_LEFT
+wing_stationkeeping.navigation.turn_direction = TurnDirection.TURN_LEFT
 
 # Next, set the maneuver's stop conditions so that the maneuver stops after a turn count of $5$:
 
 wing_stationkeeping.navigation.stop_condition = (
-    STATIONKEEPING_STOP_CONDITION.STOP_AFTER_TURN_COUNT
+    StationkeepingStopCondition.STOP_AFTER_TURN_COUNT
 )
 wing_stationkeeping.navigation.stop_after_turn_count = 5
 
@@ -1143,20 +1137,20 @@ wing_stationkeeping.profile_strategy_type = "Autopilot - Vertical Plane"
 # Configure the autopilot to maintain an absolute altitude of $3000$ ft:
 
 wing_stationkeeping.profile.altitude_mode = (
-    AUTOPILOT_ALTITUDE_MODE.AUTOPILOT_SPECIFY_ALTITUDE
+    AutopilotAltitudeMode.AUTOPILOT_SPECIFY_ALTITUDE
 )
 wing_stationkeeping.profile.absolute_altitude = 3000
 
 # Then, set the autpilot to use an altitude control rate of $2000$ ft/min:
 
 wing_stationkeeping.profile.altitude_control_mode = (
-    AUTOPILOT_ALTITUDE_CONTROL_MODE.AUTOPILOT_ALTITUDE_RATE
+    AutopilotAltitudeControlMode.AUTOPILOT_ALTITUDE_RATE
 )
 wing_stationkeeping.profile.control_altitude_rate_value = 2000
 
 # Override the performance value's control limit:
 
-wing_stationkeeping.profile.control_limit_mode = PERFORMANCE_MODEL_OVERRIDE.OVERRIDE
+wing_stationkeeping.profile.control_limit_mode = PerformanceModelOverride.OVERRIDE
 
 # Then, set the maximum pitch rate to $10^\circ$/s and the damping ratio to $2$:
 
@@ -1166,20 +1160,20 @@ wing_stationkeeping.profile.damping_ratio = 2
 # Next, set the airspeed mode to maintain the maximum endurance airspeed for the aircraft, and constrain the aircraft to its minimum and maximum speed limits:
 
 wing_stationkeeping.profile.airspeed_options.airspeed_mode = (
-    BASIC_MANEUVER_AIRSPEED_MODE.MAINTAIN_MAX_ENDURANCE_AIRSPEED
+    BasicManeuverAirspeedMode.MAINTAIN_MAX_ENDURANCE_AIRSPEED
 )
 wing_stationkeeping.profile.airspeed_options.min_speed_limits = (
-    BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS.CONSTRAIN_IF_VIOLATED
+    BasicManeuverStrategyAirspeedPerformanceLimits.CONSTRAIN_IF_VIOLATED
 )
 wing_stationkeeping.profile.airspeed_options.max_speed_limits = (
-    BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS.CONSTRAIN_IF_VIOLATED
+    BasicManeuverStrategyAirspeedPerformanceLimits.CONSTRAIN_IF_VIOLATED
 )
 
 # Configure the maneuver to use the cruise performance model for its flight mode and fuel flow calculations:
 
-wing_stationkeeping.flight_mode = PHASE_OF_FLIGHT.FLIGHT_PHASE_CRUISE
+wing_stationkeeping.flight_mode = PhaseOfFlight.FLIGHT_PHASE_CRUISE
 wing_stationkeeping.fuel_flow_type = (
-    BASIC_MANEUVER_FUEL_FLOW_TYPE.BASIC_MANEUVER_FUEL_FLOW_CRUISE
+    BasicManeuverFuelFlowType.BASIC_MANEUVER_FUEL_FLOW_CRUISE
 )
 
 # Then, disable the fuel state and maximum time of flight stopping conditions, and enable a maximum downrange stopping condition of $500$ nm:
@@ -1192,10 +1186,10 @@ wing_stationkeeping.max_downrange = 500
 # Finally, configure the maneuver to create an error if the altitude limits are passed, but to continue if the terrain impact limits are reached:
 
 wing_stationkeeping.altitude_limit_mode = (
-    BASIC_MANEUVER_ALTITUDE_LIMIT.BASIC_MANEUVER_ALTITUDE_LIMIT_ERROR
+    BasicManeuverAltitudeLimit.BASIC_MANEUVER_ALTITUDE_LIMIT_ERROR
 )
 wing_stationkeeping.terrain_impact_mode = (
-    BASIC_MANEUVER_ALTITUDE_LIMIT.BASIC_MANEUVER_ALTITUDE_LIMIT_CONTINUE
+    BasicManeuverAltitudeLimit.BASIC_MANEUVER_ALTITUDE_LIMIT_CONTINUE
 )
 
 # ### Second stationkeeping procedure
@@ -1203,7 +1197,7 @@ wing_stationkeeping.terrain_impact_mode = (
 # After the first stationkeeping procedure, the wing aircraft flies a second stationkeeping procedure to decrease its altitude. Insert a basic maneuver beginning from the end of the last procedure:
 
 wing_stationkeeping2 = wing_first_procedures.add(
-    SITE_TYPE.SITE_END_OF_PREV_PROCEDURE, PROCEDURE_TYPE.PROCEDURE_BASIC_MANEUVER
+    SiteType.SITE_END_OF_PREV_PROCEDURE, ProcedureType.PROCEDURE_BASIC_MANEUVER
 )
 
 # Assign a stationkeeping navigation strategy to the maneuver:
@@ -1219,12 +1213,12 @@ wing_stationkeeping2.navigation.target_name = "Ship/USSAbrahamLincoln"
 wing_stationkeeping2.navigation.relative_bearing = -90
 wing_stationkeeping2.navigation.relative_range = 2.7
 wing_stationkeeping2.navigation.desired_radius = 2.5
-wing_stationkeeping2.navigation.turn_direction = TURN_DIRECTION.TURN_LEFT
+wing_stationkeeping2.navigation.turn_direction = TurnDirection.TURN_LEFT
 
 # Next, configure the maneuever to stop after a single turn or after reaching a relative course of $-180^\circ$:
 
 wing_stationkeeping2.navigation.stop_condition = (
-    STATIONKEEPING_STOP_CONDITION.STOP_AFTER_TURN_COUNT
+    StationkeepingStopCondition.STOP_AFTER_TURN_COUNT
 )
 wing_stationkeeping2.navigation.stop_after_turn_count = 1
 wing_stationkeeping2.navigation.use_relative_course = True
@@ -1237,40 +1231,40 @@ wing_stationkeeping2.profile_strategy_type = "Autopilot - Vertical Plane"
 # Configure the autopilot to maintain an altitude of $2000$ ft:
 
 wing_stationkeeping2.profile.altitude_mode = (
-    AUTOPILOT_ALTITUDE_MODE.AUTOPILOT_SPECIFY_ALTITUDE
+    AutopilotAltitudeMode.AUTOPILOT_SPECIFY_ALTITUDE
 )
 wing_stationkeeping2.profile.absolute_altitude = 2000
 
 # Set the autopilot to maintain a control altitude rate of $2000$ ft/min:
 
 wing_stationkeeping2.profile.altitude_control_mode = (
-    AUTOPILOT_ALTITUDE_CONTROL_MODE.AUTOPILOT_ALTITUDE_RATE
+    AutopilotAltitudeControlMode.AUTOPILOT_ALTITUDE_RATE
 )
 wing_stationkeeping2.profile.control_altitude_rate_value = 2000
 
 # Then, override the performance model's control limits, and set a maximum pitch rate of $10^\circ$/s and a damping ratio of $2$:
 
-wing_stationkeeping2.profile.control_limit_mode = PERFORMANCE_MODEL_OVERRIDE.OVERRIDE
+wing_stationkeeping2.profile.control_limit_mode = PerformanceModelOverride.OVERRIDE
 wing_stationkeeping2.profile.max_pitch_rate = 10
 wing_stationkeeping2.profile.damping_ratio = 2
 
 # Configure the autopilot to maintain the maximum endurance airspeed and constrain the maneuver to the minimum and maximum speed limits:
 
 wing_stationkeeping2.profile.airspeed_options.airspeed_mode = (
-    BASIC_MANEUVER_AIRSPEED_MODE.MAINTAIN_MAX_ENDURANCE_AIRSPEED
+    BasicManeuverAirspeedMode.MAINTAIN_MAX_ENDURANCE_AIRSPEED
 )
 wing_stationkeeping2.profile.airspeed_options.min_speed_limits = (
-    BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS.CONSTRAIN_IF_VIOLATED
+    BasicManeuverStrategyAirspeedPerformanceLimits.CONSTRAIN_IF_VIOLATED
 )
 wing_stationkeeping2.profile.airspeed_options.max_speed_limits = (
-    BASIC_MANEUVER_STRATEGY_AIRSPEED_PERFORMANCE_LIMITS.CONSTRAIN_IF_VIOLATED
+    BasicManeuverStrategyAirspeedPerformanceLimits.CONSTRAIN_IF_VIOLATED
 )
 
 # Configure the maneuver to use the cruise performance model for flight and fuel flow calculations:
 
-wing_stationkeeping2.flight_mode = PHASE_OF_FLIGHT.FLIGHT_PHASE_CRUISE
+wing_stationkeeping2.flight_mode = PhaseOfFlight.FLIGHT_PHASE_CRUISE
 wing_stationkeeping2.fuel_flow_type = (
-    BASIC_MANEUVER_FUEL_FLOW_TYPE.BASIC_MANEUVER_FUEL_FLOW_CRUISE
+    BasicManeuverFuelFlowType.BASIC_MANEUVER_FUEL_FLOW_CRUISE
 )
 
 # Set a fuel state stopping condition of $0$ lb, disable the maximum time of flight stopping condition, and set a maximum downrange condition of $500$ nm:
@@ -1284,10 +1278,10 @@ wing_stationkeeping2.max_downrange = 500
 # Finally, configure the maneuver to create an error upon passing altitude limits, but to continue if the terrain impact limits are met:
 
 wing_stationkeeping2.altitude_limit_mode = (
-    BASIC_MANEUVER_ALTITUDE_LIMIT.BASIC_MANEUVER_ALTITUDE_LIMIT_ERROR
+    BasicManeuverAltitudeLimit.BASIC_MANEUVER_ALTITUDE_LIMIT_ERROR
 )
 wing_stationkeeping2.terrain_impact_mode = (
-    BASIC_MANEUVER_ALTITUDE_LIMIT.BASIC_MANEUVER_ALTITUDE_LIMIT_CONTINUE
+    BasicManeuverAltitudeLimit.BASIC_MANEUVER_ALTITUDE_LIMIT_CONTINUE
 )
 
 # ## Propagate the wing aircraft
@@ -1307,7 +1301,7 @@ map_plotter.show()
 
 lead_flight_profile_df = (
     lead_aircraft.data_providers.item("Flight Profile By Time")
-    .exec(scenario.start_time, scenario.stop_time, 60)
+    .execute(scenario.start_time, scenario.stop_time, 60)
     .data_sets.to_pandas_dataframe()
 )
 
@@ -1323,7 +1317,7 @@ print(
 
 wing_flight_profile_df = (
     wing_aircraft.data_providers.item("Flight Profile By Time")
-    .exec(scenario.start_time, scenario.stop_time, 60)
+    .execute(scenario.start_time, scenario.stop_time, 60)
     .data_sets.to_pandas_dataframe()
 )
 

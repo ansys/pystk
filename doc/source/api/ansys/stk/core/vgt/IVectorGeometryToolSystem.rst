@@ -32,7 +32,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolSystem.type`
-              - Returns a type of the system object.
+              - Return a type of the system object.
 
 
 Import detail
@@ -48,16 +48,16 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolSystem.type
-    :type: CRDN_SYSTEM_TYPE
+    :type: SystemType
 
-    Returns a type of the system object.
+    Return a type of the system object.
 
 
 Method detail
 -------------
 
 
-.. py:method:: find_in_system(self, epoch: typing.Any, system: IVectorGeometryToolSystem) -> IVectorGeometryToolSystemFindInSystemResult
+.. py:method:: find_in_system(self, epoch: typing.Any, system: IVectorGeometryToolSystem) -> AnalysisWorkbenchSystemFindInSystemResult
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolSystem.find_in_system
 
     Find position, velocity, rate and orientation using the specified system.
@@ -69,9 +69,9 @@ Method detail
 
     :Returns:
 
-        :obj:`~IVectorGeometryToolSystemFindInSystemResult`
+        :obj:`~AnalysisWorkbenchSystemFindInSystemResult`
 
-.. py:method:: transform(self, epoch: typing.Any, outputSystem: IVectorGeometryToolSystem, positionInMySystem: ICartesian3Vector) -> IVectorGeometryToolSystemTransformResult
+.. py:method:: transform(self, epoch: typing.Any, output_system: IVectorGeometryToolSystem, position_in_my_system: ICartesian3Vector) -> AnalysisWorkbenchSystemTransformResult
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolSystem.transform
 
     Translate the position vector from this system into the output system.
@@ -79,14 +79,14 @@ Method detail
     :Parameters:
 
     **epoch** : :obj:`~typing.Any`
-    **outputSystem** : :obj:`~IVectorGeometryToolSystem`
-    **positionInMySystem** : :obj:`~ICartesian3Vector`
+    **output_system** : :obj:`~IVectorGeometryToolSystem`
+    **position_in_my_system** : :obj:`~ICartesian3Vector`
 
     :Returns:
 
-        :obj:`~IVectorGeometryToolSystemTransformResult`
+        :obj:`~AnalysisWorkbenchSystemTransformResult`
 
-.. py:method:: transform_with_rate(self, epoch: typing.Any, outputSystem: IVectorGeometryToolSystem, positionInMySystem: ICartesian3Vector, velocityInMySystem: ICartesian3Vector) -> IVectorGeometryToolSystemTransformWithRateResult
+.. py:method:: transform_with_rate(self, epoch: typing.Any, output_system: IVectorGeometryToolSystem, position_in_my_system: ICartesian3Vector, velocity_in_my_system: ICartesian3Vector) -> AnalysisWorkbenchSystemTransformWithRateResult
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolSystem.transform_with_rate
 
     Translate the position and rate vectors from this system into the output system.
@@ -94,11 +94,11 @@ Method detail
     :Parameters:
 
     **epoch** : :obj:`~typing.Any`
-    **outputSystem** : :obj:`~IVectorGeometryToolSystem`
-    **positionInMySystem** : :obj:`~ICartesian3Vector`
-    **velocityInMySystem** : :obj:`~ICartesian3Vector`
+    **output_system** : :obj:`~IVectorGeometryToolSystem`
+    **position_in_my_system** : :obj:`~ICartesian3Vector`
+    **velocity_in_my_system** : :obj:`~ICartesian3Vector`
 
     :Returns:
 
-        :obj:`~IVectorGeometryToolSystemTransformWithRateResult`
+        :obj:`~AnalysisWorkbenchSystemTransformWithRateResult`
 

@@ -21,9 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.BandOrderFilter.band_order`
-              - Gets or sets the raster format indicating the desired order of the bands in the source raster.
+              - Get or set the raster format indicating the desired order of the bands in the source raster.
             * - :py:attr:`~ansys.stk.core.graphics.BandOrderFilter.maintain_raster_format`
-              - Gets or sets a value indicating whether to maintain the source raster's format after the filter is applied. When true, the source raster's format is maintained after swizzling.
+              - Get or set a value indicating whether to maintain the source raster's format after the filter is applied. When true, the source raster's format is maintained after swizzling.
 
 
 
@@ -40,14 +40,14 @@ Property detail
 
 .. py:property:: band_order
     :canonical: ansys.stk.core.graphics.BandOrderFilter.band_order
-    :type: RASTER_FORMAT
+    :type: RasterFormat
 
-    Gets or sets the raster format indicating the desired order of the bands in the source raster.
+    Get or set the raster format indicating the desired order of the bands in the source raster.
 
 .. py:property:: maintain_raster_format
     :canonical: ansys.stk.core.graphics.BandOrderFilter.maintain_raster_format
     :type: bool
 
-    Gets or sets a value indicating whether to maintain the source raster's format after the filter is applied. When true, the source raster's format is maintained after swizzling.
+    Get or set a value indicating whether to maintain the source raster's format after the filter is applied. When true, the source raster's format is maintained after swizzling.
 
 

@@ -9,10 +9,6 @@ RadarModeMonostatic
 
 .. py:currentmodule:: RadarModeMonostatic
 
-Overview
---------
-
-
 
 Import detail
 -------------

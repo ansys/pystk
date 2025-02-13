@@ -9,10 +9,6 @@ EOIRShapeLEOImaging
 
 .. py:currentmodule:: EOIRShapeLEOImaging
 
-Overview
---------
-
-
 
 Import detail
 -------------

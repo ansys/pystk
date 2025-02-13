@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionComputeStrategyConstantValue.constant_value`
-              - Gets or sets the constant RCS value.
+              - Get or set the constant RCS value.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.RadarCrossSectionComputeStrategyConstantValue.constant_value
     :type: float
 
-    Gets or sets the constant RCS value.
+    Get or set the constant RCS value.
 
 

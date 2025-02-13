@@ -18,9 +18,9 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.AreaTypePattern.lat`
+            * - :py:attr:`~ansys.stk.core.stkobjects.AreaTypePattern.latitude`
               - Latitude of a point used in defining an area target as a pattern. Uses Latitude Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AreaTypePattern.lon`
+            * - :py:attr:`~ansys.stk.core.stkobjects.AreaTypePattern.longitude`
               - Longitude of a point used in defining an area target as a pattern. Uses Longitude Dimension.
 
 
@@ -36,14 +36,14 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: lat
-    :canonical: ansys.stk.core.stkobjects.AreaTypePattern.lat
+.. py:property:: latitude
+    :canonical: ansys.stk.core.stkobjects.AreaTypePattern.latitude
     :type: typing.Any
 
     Latitude of a point used in defining an area target as a pattern. Uses Latitude Dimension.
 
-.. py:property:: lon
-    :canonical: ansys.stk.core.stkobjects.AreaTypePattern.lon
+.. py:property:: longitude
+    :canonical: ansys.stk.core.stkobjects.AreaTypePattern.longitude
     :type: typing.Any
 
     Longitude of a point used in defining an area target as a pattern. Uses Longitude Dimension.

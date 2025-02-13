@@ -9,10 +9,6 @@ Cartesian3Vector
 
 .. py:currentmodule:: Cartesian3Vector
 
-Overview
---------
-
-
 
 Import detail
 -------------

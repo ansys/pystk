@@ -19,18 +19,18 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleAttitudeMaximumSlewAcceleration.magnitude`
-              - Gets or sets the maximum overall magnitude.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleAttitudeMaximumSlewAcceleration.per_axis_x_acceleration_enabled`
+              - Get or set the maximum overall magnitude.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleAttitudeMaximumSlewAcceleration.slew_acceleration_along_x_axis_enabled`
               - Whether to constrain the slew acceleration along the direction of X axis.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleAttitudeMaximumSlewAcceleration.per_axis_y_acceleration_enabled`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleAttitudeMaximumSlewAcceleration.slew_acceleration_along_y_axis_enabled`
               - Whether to constrain the slew acceleration along the direction of Y axis.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleAttitudeMaximumSlewAcceleration.per_axis_z_acceleration_enabled`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleAttitudeMaximumSlewAcceleration.slew_acceleration_along_z_axis_enabled`
               - Whether to constrain the slew acceleration along the direction of Z axis.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleAttitudeMaximumSlewAcceleration.per_axis_x_acceleration`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleAttitudeMaximumSlewAcceleration.slew_acceleration_along_x_axis`
               - Constraint the slew acceleration along the direction of X axis.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleAttitudeMaximumSlewAcceleration.per_axis_y_acceleration`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleAttitudeMaximumSlewAcceleration.slew_acceleration_along_y_axis`
               - Constraint the slew acceleration along the direction of Y axis.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleAttitudeMaximumSlewAcceleration.per_axis_z_acceleration`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleAttitudeMaximumSlewAcceleration.slew_acceleration_along_z_axis`
               - Constraint the slew acceleration along the direction of Z axis.
 
 
@@ -50,40 +50,40 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleAttitudeMaximumSlewAcceleration.magnitude
     :type: float
 
-    Gets or sets the maximum overall magnitude.
+    Get or set the maximum overall magnitude.
 
-.. py:property:: per_axis_x_acceleration_enabled
-    :canonical: ansys.stk.core.stkobjects.VehicleAttitudeMaximumSlewAcceleration.per_axis_x_acceleration_enabled
+.. py:property:: slew_acceleration_along_x_axis_enabled
+    :canonical: ansys.stk.core.stkobjects.VehicleAttitudeMaximumSlewAcceleration.slew_acceleration_along_x_axis_enabled
     :type: bool
 
     Whether to constrain the slew acceleration along the direction of X axis.
 
-.. py:property:: per_axis_y_acceleration_enabled
-    :canonical: ansys.stk.core.stkobjects.VehicleAttitudeMaximumSlewAcceleration.per_axis_y_acceleration_enabled
+.. py:property:: slew_acceleration_along_y_axis_enabled
+    :canonical: ansys.stk.core.stkobjects.VehicleAttitudeMaximumSlewAcceleration.slew_acceleration_along_y_axis_enabled
     :type: bool
 
     Whether to constrain the slew acceleration along the direction of Y axis.
 
-.. py:property:: per_axis_z_acceleration_enabled
-    :canonical: ansys.stk.core.stkobjects.VehicleAttitudeMaximumSlewAcceleration.per_axis_z_acceleration_enabled
+.. py:property:: slew_acceleration_along_z_axis_enabled
+    :canonical: ansys.stk.core.stkobjects.VehicleAttitudeMaximumSlewAcceleration.slew_acceleration_along_z_axis_enabled
     :type: bool
 
     Whether to constrain the slew acceleration along the direction of Z axis.
 
-.. py:property:: per_axis_x_acceleration
-    :canonical: ansys.stk.core.stkobjects.VehicleAttitudeMaximumSlewAcceleration.per_axis_x_acceleration
+.. py:property:: slew_acceleration_along_x_axis
+    :canonical: ansys.stk.core.stkobjects.VehicleAttitudeMaximumSlewAcceleration.slew_acceleration_along_x_axis
     :type: float
 
     Constraint the slew acceleration along the direction of X axis.
 
-.. py:property:: per_axis_y_acceleration
-    :canonical: ansys.stk.core.stkobjects.VehicleAttitudeMaximumSlewAcceleration.per_axis_y_acceleration
+.. py:property:: slew_acceleration_along_y_axis
+    :canonical: ansys.stk.core.stkobjects.VehicleAttitudeMaximumSlewAcceleration.slew_acceleration_along_y_axis
     :type: float
 
     Constraint the slew acceleration along the direction of Y axis.
 
-.. py:property:: per_axis_z_acceleration
-    :canonical: ansys.stk.core.stkobjects.VehicleAttitudeMaximumSlewAcceleration.per_axis_z_acceleration
+.. py:property:: slew_acceleration_along_z_axis
+    :canonical: ansys.stk.core.stkobjects.VehicleAttitudeMaximumSlewAcceleration.slew_acceleration_along_z_axis
     :type: float
 
     Constraint the slew acceleration along the direction of Z axis.

@@ -24,7 +24,6 @@ Overview
               - Get a list of available custom image globe overlay Display Names (Programmatic Identifiers).
 
 
-
 Import detail
 -------------
 
@@ -37,14 +36,14 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: create_from_display_name(self, displayName: str) -> CustomImageGlobeOverlayPluginProxy
+.. py:method:: create_from_display_name(self, display_name: str) -> CustomImageGlobeOverlayPluginProxy
     :canonical: ansys.stk.core.graphics.CustomImageGlobeOverlayPluginActivator.create_from_display_name
 
     Load a custom image globe overlay COM plugin associated with the specified display name and returns a proxy object that allows accessing the custom image globe overlays implemented by the plugin.
 
     :Parameters:
 
-    **displayName** : :obj:`~str`
+    **display_name** : :obj:`~str`
 
     :Returns:
 

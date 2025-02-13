@@ -9,10 +9,6 @@ EnrouteAndDelayOptions
 
 .. py:currentmodule:: EnrouteAndDelayOptions
 
-Overview
---------
-
-
 
 Import detail
 -------------

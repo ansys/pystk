@@ -34,9 +34,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleCentralBodies.available_central_bodies`
-              - Returns an array of available Central Bodies.
+              - Return an array of available Central Bodies.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleCentralBodies.assigned_central_bodies`
-              - Returns an array of all assigned central bodies.
+              - Return an array of all assigned central bodies.
 
 
 
@@ -55,54 +55,54 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleCentralBodies.available_central_bodies
     :type: list
 
-    Returns an array of available Central Bodies.
+    Return an array of available Central Bodies.
 
 .. py:property:: assigned_central_bodies
     :canonical: ansys.stk.core.stkobjects.VehicleCentralBodies.assigned_central_bodies
     :type: list
 
-    Returns an array of all assigned central bodies.
+    Return an array of all assigned central bodies.
 
 
 Method detail
 -------------
 
 
-.. py:method:: is_central_body_assigned(self, centralBody: str) -> bool
+.. py:method:: is_central_body_assigned(self, central_body: str) -> bool
     :canonical: ansys.stk.core.stkobjects.VehicleCentralBodies.is_central_body_assigned
 
     Check whether a central body is already assigned.
 
     :Parameters:
 
-    **centralBody** : :obj:`~str`
+    **central_body** : :obj:`~str`
 
     :Returns:
 
         :obj:`~bool`
 
 
-.. py:method:: assign_central_body(self, centralBody: str) -> None
+.. py:method:: assign_central_body(self, central_body: str) -> None
     :canonical: ansys.stk.core.stkobjects.VehicleCentralBodies.assign_central_body
 
     Assign a central body.
 
     :Parameters:
 
-    **centralBody** : :obj:`~str`
+    **central_body** : :obj:`~str`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: remove_central_body(self, centralBody: str) -> None
+.. py:method:: remove_central_body(self, central_body: str) -> None
     :canonical: ansys.stk.core.stkobjects.VehicleCentralBodies.remove_central_body
 
     Remove a central body.
 
     :Parameters:
 
-    **centralBody** : :obj:`~str`
+    **central_body** : :obj:`~str`
 
     :Returns:
 

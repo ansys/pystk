@@ -3,7 +3,7 @@ CalculationToolConvergeBasic
 
 .. py:class:: ansys.stk.core.vgt.CalculationToolConvergeBasic
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchConverge`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchConvergence`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Convergence definition includes parameters that determine criteria for accurate detection of extrema or condition crossings for scalar calculations.
 
@@ -44,7 +44,7 @@ Property detail
 
 .. py:property:: sense
     :canonical: ansys.stk.core.vgt.CalculationToolConvergeBasic.sense
-    :type: CRDN_THRESH_CONVERGE_SENSE
+    :type: ThresholdConvergenceSenseType
 
     Get the convergence sense which determines whether the converged value should be limited to just within or just outside of condition boundaries.
 

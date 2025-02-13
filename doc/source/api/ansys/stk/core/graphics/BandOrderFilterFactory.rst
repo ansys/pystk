@@ -26,7 +26,6 @@ Overview
               - Initialize a new instance with a raster format indicating the desired order of the bands in the source raster, and whether to maintain the source raster's format after swizzling.
 
 
-
 Import detail
 -------------
 
@@ -48,28 +47,28 @@ Method detail
 
         :obj:`~BandOrderFilter`
 
-.. py:method:: initialize_with_order(self, bandOrder: RASTER_FORMAT) -> BandOrderFilter
+.. py:method:: initialize_with_order(self, band_order: RasterFormat) -> BandOrderFilter
     :canonical: ansys.stk.core.graphics.BandOrderFilterFactory.initialize_with_order
 
     Initialize a new instance with a raster format indicating the desired order of the bands in the source raster.
 
     :Parameters:
 
-    **bandOrder** : :obj:`~RASTER_FORMAT`
+    **band_order** : :obj:`~RasterFormat`
 
     :Returns:
 
         :obj:`~BandOrderFilter`
 
-.. py:method:: initialize_with_order_and_bool(self, bandOrder: RASTER_FORMAT, maintainImageFormat: bool) -> BandOrderFilter
+.. py:method:: initialize_with_order_and_bool(self, band_order: RasterFormat, maintain_image_format: bool) -> BandOrderFilter
     :canonical: ansys.stk.core.graphics.BandOrderFilterFactory.initialize_with_order_and_bool
 
     Initialize a new instance with a raster format indicating the desired order of the bands in the source raster, and whether to maintain the source raster's format after swizzling.
 
     :Parameters:
 
-    **bandOrder** : :obj:`~RASTER_FORMAT`
-    **maintainImageFormat** : :obj:`~bool`
+    **band_order** : :obj:`~RasterFormat`
+    **maintain_image_format** : :obj:`~bool`
 
     :Returns:
 

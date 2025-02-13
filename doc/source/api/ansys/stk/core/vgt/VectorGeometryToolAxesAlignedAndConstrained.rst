@@ -3,7 +3,7 @@ VectorGeometryToolAxesAlignedAndConstrained
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolAxesAlignedAndConstrained
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolAxes`, :py:class:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolAxes`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    Axes aligned using two pairs of vectors. One vector in each pair is fixed in these axes and the other vector serves as an independent reference.
 
@@ -44,13 +44,13 @@ Property detail
 
 .. py:property:: alignment_reference_vector
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesAlignedAndConstrained.alignment_reference_vector
-    :type: VectorGeometryToolVectorRefTo
+    :type: VectorGeometryToolVectorReference
 
     Specify an alignment reference vector.
 
 .. py:property:: constraint_reference_vector
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesAlignedAndConstrained.constraint_reference_vector
-    :type: VectorGeometryToolVectorRefTo
+    :type: VectorGeometryToolVectorReference
 
     Specify a constraint reference vector.
 

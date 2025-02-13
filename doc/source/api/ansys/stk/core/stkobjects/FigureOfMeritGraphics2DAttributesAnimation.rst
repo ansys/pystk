@@ -38,7 +38,7 @@ Property detail
 
 .. py:property:: accumulation
     :canonical: ansys.stk.core.stkobjects.FigureOfMeritGraphics2DAttributesAnimation.accumulation
-    :type: FIGURE_OF_MERIT_GRAPHICS_2D_ACCUMULATION
+    :type: FigureOfMeritGraphics2DAccumulation
 
     Accumulation method to control the sense and persistence of the animation graphics.
 

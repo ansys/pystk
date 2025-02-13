@@ -30,7 +30,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.NumericalPropagatorWrapperCR3BP.central_body_name`
-              - Gets or sets the central body for Propagation.
+              - Get or set the central body for Propagation.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.NumericalPropagatorWrapperCR3BP.propagator_functions`
               - Get the list of propagator functions.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.NumericalPropagatorWrapperCR3BP.numerical_integrator`
@@ -55,7 +55,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.NumericalPropagatorWrapperCR3BP.central_body_name
     :type: str
 
-    Gets or sets the central body for Propagation.
+    Get or set the central body for Propagation.
 
 .. py:property:: propagator_functions
     :canonical: ansys.stk.core.stkobjects.astrogator.NumericalPropagatorWrapperCR3BP.propagator_functions
@@ -71,7 +71,7 @@ Property detail
 
 .. py:property:: numerical_integrator_type
     :canonical: ansys.stk.core.stkobjects.astrogator.NumericalPropagatorWrapperCR3BP.numerical_integrator_type
-    :type: NUMERICAL_INTEGRATOR
+    :type: NumericalIntegrator
 
     Get the numerical integrator type.
 
@@ -84,14 +84,14 @@ Method detail
 
 
 
-.. py:method:: set_numerical_integrator(self, integrator: NUMERICAL_INTEGRATOR) -> None
+.. py:method:: set_numerical_integrator(self, integrator: NumericalIntegrator) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.NumericalPropagatorWrapperCR3BP.set_numerical_integrator
 
     Change the numerical integrator.
 
     :Parameters:
 
-    **integrator** : :obj:`~NUMERICAL_INTEGRATOR`
+    **integrator** : :obj:`~NumericalIntegrator`
 
     :Returns:
 

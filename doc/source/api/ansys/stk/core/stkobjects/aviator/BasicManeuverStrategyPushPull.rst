@@ -34,21 +34,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPushPull.reference_frame`
-              - Gets or sets the reference frame the aircraft will use.
+              - Get or set the reference frame the aircraft will use.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPushPull.push_pull`
-              - Gets or sets the option to push over or pull up.
+              - Get or set the option to push over or pull up.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPushPull.push_pull_g`
-              - Gets or sets the G force of the maneuver.
+              - Get or set the G force of the maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPushPull.acceleration_mode`
-              - Gets or sets the option to accelerate, decelerate, or maintain the current airspeed.
+              - Get or set the option to accelerate, decelerate, or maintain the current airspeed.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPushPull.acceleration_deceleration_g`
-              - Gets or sets the specific G force rate to accelerate/decelerate at.
+              - Get or set the specific G force rate to accelerate/decelerate at.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPushPull.maintain_airspeed_type`
-              - Gets or sets the airspeed type for the maintain airspeed.
+              - Get or set the airspeed type for the maintain airspeed.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPushPull.maintain_airspeed`
               - Get the airspeed to maintain.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPushPull.stop_flight_path_angle`
-              - Gets or sets the flight path angle the maneuver will stop at if achieved.
+              - Get or set the flight path angle the maneuver will stop at if achieved.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPushPull.use_stop_at_altitude`
               - Get the option to stop the maneuver if a specified altitude is achieved.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPushPull.stop_altitude`
@@ -64,7 +64,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPushPull.stop_airspeed_type`
               - Get the airspeed type for the airspeed stopping condition.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPushPull.compensate_for_coriolis_acceleration`
-              - Gets or sets the option to compensate for the acceleration due to the Coriolis effect.
+              - Get or set the option to compensate for the acceleration due to the Coriolis effect.
 
 
 
@@ -81,39 +81,39 @@ Property detail
 
 .. py:property:: reference_frame
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPushPull.reference_frame
-    :type: BASIC_MANEUVER_REFERENCE_FRAME
+    :type: BasicManeuverReferenceFrame
 
-    Gets or sets the reference frame the aircraft will use.
+    Get or set the reference frame the aircraft will use.
 
 .. py:property:: push_pull
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPushPull.push_pull
-    :type: PUSH_PULL
+    :type: PushPull
 
-    Gets or sets the option to push over or pull up.
+    Get or set the option to push over or pull up.
 
 .. py:property:: push_pull_g
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPushPull.push_pull_g
     :type: float
 
-    Gets or sets the G force of the maneuver.
+    Get or set the G force of the maneuver.
 
 .. py:property:: acceleration_mode
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPushPull.acceleration_mode
-    :type: ACCELERATION_MODE
+    :type: AccelerationMode
 
-    Gets or sets the option to accelerate, decelerate, or maintain the current airspeed.
+    Get or set the option to accelerate, decelerate, or maintain the current airspeed.
 
 .. py:property:: acceleration_deceleration_g
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPushPull.acceleration_deceleration_g
     :type: float
 
-    Gets or sets the specific G force rate to accelerate/decelerate at.
+    Get or set the specific G force rate to accelerate/decelerate at.
 
 .. py:property:: maintain_airspeed_type
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPushPull.maintain_airspeed_type
-    :type: AIRSPEED_TYPE
+    :type: AirspeedType
 
-    Gets or sets the airspeed type for the maintain airspeed.
+    Get or set the airspeed type for the maintain airspeed.
 
 .. py:property:: maintain_airspeed
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPushPull.maintain_airspeed
@@ -125,7 +125,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPushPull.stop_flight_path_angle
     :type: typing.Any
 
-    Gets or sets the flight path angle the maneuver will stop at if achieved.
+    Get or set the flight path angle the maneuver will stop at if achieved.
 
 .. py:property:: use_stop_at_altitude
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPushPull.use_stop_at_altitude
@@ -165,7 +165,7 @@ Property detail
 
 .. py:property:: stop_airspeed_type
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPushPull.stop_airspeed_type
-    :type: AIRSPEED_TYPE
+    :type: AirspeedType
 
     Get the airspeed type for the airspeed stopping condition.
 
@@ -173,7 +173,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPushPull.compensate_for_coriolis_acceleration
     :type: bool
 
-    Gets or sets the option to compensate for the acceleration due to the Coriolis effect.
+    Get or set the option to compensate for the acceleration due to the Coriolis effect.
 
 
 Method detail
@@ -196,7 +196,7 @@ Method detail
 
 
 
-.. py:method:: set_stop_altitude(self, enable: bool, altitudeRate: float) -> None
+.. py:method:: set_stop_altitude(self, enable: bool, altitude_rate: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPushPull.set_stop_altitude
 
     Set whether to enable the altitude stopping condition and the corresponding value.
@@ -204,7 +204,7 @@ Method detail
     :Parameters:
 
     **enable** : :obj:`~bool`
-    **altitudeRate** : :obj:`~float`
+    **altitude_rate** : :obj:`~float`
 
     :Returns:
 
@@ -212,7 +212,7 @@ Method detail
 
 
 
-.. py:method:: set_stop_altitude_rate(self, enable: bool, altitudeRate: float) -> None
+.. py:method:: set_stop_altitude_rate(self, enable: bool, altitude_rate: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPushPull.set_stop_altitude_rate
 
     Set whether to enable the altitude rate stopping condition and the corresponding value.
@@ -220,7 +220,7 @@ Method detail
     :Parameters:
 
     **enable** : :obj:`~bool`
-    **altitudeRate** : :obj:`~float`
+    **altitude_rate** : :obj:`~float`
 
     :Returns:
 
@@ -229,7 +229,7 @@ Method detail
 
 
 
-.. py:method:: set_stop_airspeed(self, enable: bool, airspeedType: AIRSPEED_TYPE, airspeed: float) -> None
+.. py:method:: set_stop_airspeed(self, enable: bool, airspeed_type: AirspeedType, airspeed: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyPushPull.set_stop_airspeed
 
     Set whether to enable the airspeed stopping condition and the corresponding value.
@@ -237,7 +237,7 @@ Method detail
     :Parameters:
 
     **enable** : :obj:`~bool`
-    **airspeedType** : :obj:`~AIRSPEED_TYPE`
+    **airspeed_type** : :obj:`~AirspeedType`
     **airspeed** : :obj:`~float`
 
     :Returns:

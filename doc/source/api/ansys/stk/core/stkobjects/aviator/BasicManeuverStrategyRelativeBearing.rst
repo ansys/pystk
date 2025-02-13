@@ -32,15 +32,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeBearing.target_name`
-              - Gets or sets the target name.
+              - Get or set the target name.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeBearing.valid_target_names`
-              - Returns the valid target names.
+              - Return the valid target names.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeBearing.target_resolution`
-              - Gets or sets the target position/velocity sampling resolution.
+              - Get or set the target position/velocity sampling resolution.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeBearing.relative_bearing`
-              - Gets or sets the relative bearing angle.
+              - Get or set the relative bearing angle.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeBearing.min_range`
-              - Gets or sets the range from the target at which the aircraft will stop.
+              - Get or set the range from the target at which the aircraft will stop.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeBearing.control_limit_mode`
               - Get the method to define the control limits of the aircraft during the maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeBearing.control_limit_turn_radius`
@@ -50,7 +50,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeBearing.control_limit_horizontal_acceleration`
               - Get the specified horizontal acceleration for a control limit mode of specify max horiz accel.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeBearing.compensate_for_coriolis_acceleration`
-              - Gets or sets the option to compensate for the acceleration due to the Coriolis effect.
+              - Get or set the option to compensate for the acceleration due to the Coriolis effect.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeBearing.position_vel_strategies`
               - Get the position velocity strategies for Relative Bearing.
 
@@ -71,35 +71,35 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeBearing.target_name
     :type: str
 
-    Gets or sets the target name.
+    Get or set the target name.
 
 .. py:property:: valid_target_names
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeBearing.valid_target_names
     :type: list
 
-    Returns the valid target names.
+    Return the valid target names.
 
 .. py:property:: target_resolution
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeBearing.target_resolution
     :type: float
 
-    Gets or sets the target position/velocity sampling resolution.
+    Get or set the target position/velocity sampling resolution.
 
 .. py:property:: relative_bearing
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeBearing.relative_bearing
     :type: typing.Any
 
-    Gets or sets the relative bearing angle.
+    Get or set the relative bearing angle.
 
 .. py:property:: min_range
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeBearing.min_range
     :type: float
 
-    Gets or sets the range from the target at which the aircraft will stop.
+    Get or set the range from the target at which the aircraft will stop.
 
 .. py:property:: control_limit_mode
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeBearing.control_limit_mode
-    :type: BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT
+    :type: BasicManeuverStrategyNavigationControlLimit
 
     Get the method to define the control limits of the aircraft during the maneuver.
 
@@ -125,7 +125,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeBearing.compensate_for_coriolis_acceleration
     :type: bool
 
-    Gets or sets the option to compensate for the acceleration due to the Coriolis effect.
+    Get or set the option to compensate for the acceleration due to the Coriolis effect.
 
 .. py:property:: position_vel_strategies
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeBearing.position_vel_strategies
@@ -150,15 +150,15 @@ Method detail
 
 
 
-.. py:method:: set_control_limit(self, controlLimitMode: BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT, controlLimitValue: float) -> None
+.. py:method:: set_control_limit(self, control_limit_mode: BasicManeuverStrategyNavigationControlLimit, control_limit_value: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeBearing.set_control_limit
 
     Set the method and corresponding value to define the control limits of the aircraft during the maneuver.
 
     :Parameters:
 
-    **controlLimitMode** : :obj:`~BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT`
-    **controlLimitValue** : :obj:`~float`
+    **control_limit_mode** : :obj:`~BasicManeuverStrategyNavigationControlLimit`
+    **control_limit_value** : :obj:`~float`
 
     :Returns:
 

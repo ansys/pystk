@@ -34,9 +34,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.TransferFunctionInputBackOffOutputBackOffTable.count`
-              - Returns the number of elements in the collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.TransferFunctionInputBackOffOutputBackOffTable._NewEnum`
-              - Returns an enumerator for the collection.
+              - Return the number of elements in the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.TransferFunctionInputBackOffOutputBackOffTable._new_enum`
+              - Return an enumerator for the collection.
 
 
 
@@ -55,13 +55,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.TransferFunctionInputBackOffOutputBackOffTable.count
     :type: int
 
-    Returns the number of elements in the collection.
+    Return the number of elements in the collection.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.TransferFunctionInputBackOffOutputBackOffTable._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.TransferFunctionInputBackOffOutputBackOffTable._new_enum
     :type: EnumeratorProxy
 
-    Returns an enumerator for the collection.
+    Return an enumerator for the collection.
 
 
 Method detail
@@ -95,21 +95,21 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, inputBackOff: float, outputBackOff: float) -> TransferFunctionInputBackOffOutputBackOffTableRow
+.. py:method:: add(self, input_back_off: float, output_back_off: float) -> TransferFunctionInputBackOffOutputBackOffTableRow
     :canonical: ansys.stk.core.stkobjects.TransferFunctionInputBackOffOutputBackOffTable.add
 
     Add and returns a new row.
 
     :Parameters:
 
-    **inputBackOff** : :obj:`~float`
-    **outputBackOff** : :obj:`~float`
+    **input_back_off** : :obj:`~float`
+    **output_back_off** : :obj:`~float`
 
     :Returns:
 
         :obj:`~TransferFunctionInputBackOffOutputBackOffTableRow`
 
-.. py:method:: insert_at(self, index: int, inputBackOff: float, outputBackOff: float) -> TransferFunctionInputBackOffOutputBackOffTableRow
+.. py:method:: insert_at(self, index: int, input_back_off: float, output_back_off: float) -> TransferFunctionInputBackOffOutputBackOffTableRow
     :canonical: ansys.stk.core.stkobjects.TransferFunctionInputBackOffOutputBackOffTable.insert_at
 
     Insert and returns a new row at the supplied index.
@@ -117,8 +117,8 @@ Method detail
     :Parameters:
 
     **index** : :obj:`~int`
-    **inputBackOff** : :obj:`~float`
-    **outputBackOff** : :obj:`~float`
+    **input_back_off** : :obj:`~float`
+    **output_back_off** : :obj:`~float`
 
     :Returns:
 

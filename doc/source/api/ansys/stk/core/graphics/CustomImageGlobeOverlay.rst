@@ -38,11 +38,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.CustomImageGlobeOverlay.is_translucent`
-              - Gets whether the overlay contains translucent imagery.
+              - Get whether the overlay contains translucent imagery.
             * - :py:attr:`~ansys.stk.core.graphics.CustomImageGlobeOverlay.maximum_meters_per_pixel`
-              - Gets the maximum resolution of the inlay in meters per pixel.
+              - Get the maximum resolution of the inlay in meters per pixel.
             * - :py:attr:`~ansys.stk.core.graphics.CustomImageGlobeOverlay.projection`
-              - Gets the map projection. Valid values are mercator and equidistant cylindrical.
+              - Get the map projection. Valid values are mercator and equidistant cylindrical.
 
 
 
@@ -61,19 +61,19 @@ Property detail
     :canonical: ansys.stk.core.graphics.CustomImageGlobeOverlay.is_translucent
     :type: bool
 
-    Gets whether the overlay contains translucent imagery.
+    Get whether the overlay contains translucent imagery.
 
 .. py:property:: maximum_meters_per_pixel
     :canonical: ansys.stk.core.graphics.CustomImageGlobeOverlay.maximum_meters_per_pixel
     :type: float
 
-    Gets the maximum resolution of the inlay in meters per pixel.
+    Get the maximum resolution of the inlay in meters per pixel.
 
 .. py:property:: projection
     :canonical: ansys.stk.core.graphics.CustomImageGlobeOverlay.projection
-    :type: MAP_PROJECTION
+    :type: MapProjection
 
-    Gets the map projection. Valid values are mercator and equidistant cylindrical.
+    Get the map projection. Valid values are mercator and equidistant cylindrical.
 
 
 Method detail
@@ -126,7 +126,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: read(self, extent: list, userTileData: typing.Any, image: IPictureDisp) -> bool
+.. py:method:: read(self, extent: list, user_tile_data: typing.Any, image: IPictureDisp) -> bool
     :canonical: ansys.stk.core.graphics.CustomImageGlobeOverlay.read
 
     Read a tile from the specified extent, scales it to and stores the result in image.
@@ -134,7 +134,7 @@ Method detail
     :Parameters:
 
     **extent** : :obj:`~list`
-    **userTileData** : :obj:`~typing.Any`
+    **user_tile_data** : :obj:`~typing.Any`
     **image** : :obj:`~IPictureDisp`
 
     :Returns:

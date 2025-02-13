@@ -42,9 +42,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageAssetListCollection.count`
-              - Returns the number of elements in a collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageAssetListCollection._NewEnum`
-              - Returns an enumerator that can iterate through the collection.
+              - Return the number of elements in a collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageAssetListCollection._new_enum`
+              - Return an enumerator that can iterate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageAssetListCollection.available_assets`
               - Available objects to assign as coverage assets.
 
@@ -65,13 +65,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.CoverageAssetListCollection.count
     :type: int
 
-    Returns the number of elements in a collection.
+    Return the number of elements in a collection.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.CoverageAssetListCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.CoverageAssetListCollection._new_enum
     :type: EnumeratorProxy
 
-    Returns an enumerator that can iterate through the collection.
+    Return an enumerator that can iterate through the collection.
 
 .. py:property:: available_assets
     :canonical: ansys.stk.core.stkobjects.CoverageAssetListCollection.available_assets
@@ -120,67 +120,67 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, objectPath: str) -> CoverageAssetListElement
+.. py:method:: add(self, object_path: str) -> CoverageAssetListElement
     :canonical: ansys.stk.core.stkobjects.CoverageAssetListCollection.add
 
     Add a new element to the collection.
 
     :Parameters:
 
-    **objectPath** : :obj:`~str`
+    **object_path** : :obj:`~str`
 
     :Returns:
 
         :obj:`~CoverageAssetListElement`
 
 
-.. py:method:: remove(self, objectPath: str) -> None
+.. py:method:: remove(self, object_path: str) -> None
     :canonical: ansys.stk.core.stkobjects.CoverageAssetListCollection.remove
 
     Remove an element from the collection given a ObjectPath.
 
     :Parameters:
 
-    **objectPath** : :obj:`~str`
+    **object_path** : :obj:`~str`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: get_asset_from_path(self, objectPath: str) -> CoverageAssetListElement
+.. py:method:: get_asset_from_path(self, object_path: str) -> CoverageAssetListElement
     :canonical: ansys.stk.core.stkobjects.CoverageAssetListCollection.get_asset_from_path
 
     Retrieve an element, given an object path.
 
     :Parameters:
 
-    **objectPath** : :obj:`~str`
+    **object_path** : :obj:`~str`
 
     :Returns:
 
         :obj:`~CoverageAssetListElement`
 
-.. py:method:: is_asset_assigned(self, objectPath: str) -> bool
+.. py:method:: is_asset_assigned(self, object_path: str) -> bool
     :canonical: ansys.stk.core.stkobjects.CoverageAssetListCollection.is_asset_assigned
 
     Return true if an asset is already assigned.
 
     :Parameters:
 
-    **objectPath** : :obj:`~str`
+    **object_path** : :obj:`~str`
 
     :Returns:
 
         :obj:`~bool`
 
-.. py:method:: can_assign_asset(self, objectPath: str) -> bool
+.. py:method:: can_assign_asset(self, object_path: str) -> bool
     :canonical: ansys.stk.core.stkobjects.CoverageAssetListCollection.can_assign_asset
 
     Return true is you can assign an asset.
 
     :Parameters:
 
-    **objectPath** : :obj:`~str`
+    **object_path** : :obj:`~str`
 
     :Returns:
 

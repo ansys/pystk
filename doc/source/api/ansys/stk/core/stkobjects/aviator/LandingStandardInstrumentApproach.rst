@@ -19,17 +19,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.LandingStandardInstrumentApproach.approach_altitude`
-              - Gets or sets the aircraft's altitude at the Initial Approach Fix Range.
+              - Get or set the aircraft's altitude at the Initial Approach Fix Range.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.LandingStandardInstrumentApproach.level_off_mode`
-              - Gets or sets the level off mode. This is only used when the must level off option is on.
+              - Get or set the level off mode. This is only used when the must level off option is on.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.LandingStandardInstrumentApproach.approach_fix_range`
-              - Gets or sets the range from the reference point of the runway at which the aircraft begins its landing approach.
+              - Get or set the range from the reference point of the runway at which the aircraft begins its landing approach.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.LandingStandardInstrumentApproach.approach_fix_range_mode`
-              - Gets or sets the reference point on the runway for the Approach Fix Range.
+              - Get or set the reference point on the runway for the Approach Fix Range.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.LandingStandardInstrumentApproach.glideslope`
-              - Gets or sets the angle from the horizontal on which the aircraft descends to touchdown.
+              - Get or set the angle from the horizontal on which the aircraft descends to touchdown.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.LandingStandardInstrumentApproach.runway_altitude_offset`
-              - Gets or sets the altitude offset above the ground level.
+              - Get or set the altitude offset above the ground level.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.LandingStandardInstrumentApproach.use_runway_terrain`
               - Opt whether to use terrain data to define the runway's ground level attitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.LandingStandardInstrumentApproach.touch_and_go`
@@ -52,37 +52,37 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.LandingStandardInstrumentApproach.approach_altitude
     :type: float
 
-    Gets or sets the aircraft's altitude at the Initial Approach Fix Range.
+    Get or set the aircraft's altitude at the Initial Approach Fix Range.
 
 .. py:property:: level_off_mode
     :canonical: ansys.stk.core.stkobjects.aviator.LandingStandardInstrumentApproach.level_off_mode
-    :type: ALTITUDE_CONSTRAINT_MANEUVER_MODE
+    :type: AltitudeConstraintManeuverMode
 
-    Gets or sets the level off mode. This is only used when the must level off option is on.
+    Get or set the level off mode. This is only used when the must level off option is on.
 
 .. py:property:: approach_fix_range
     :canonical: ansys.stk.core.stkobjects.aviator.LandingStandardInstrumentApproach.approach_fix_range
     :type: float
 
-    Gets or sets the range from the reference point of the runway at which the aircraft begins its landing approach.
+    Get or set the range from the reference point of the runway at which the aircraft begins its landing approach.
 
 .. py:property:: approach_fix_range_mode
     :canonical: ansys.stk.core.stkobjects.aviator.LandingStandardInstrumentApproach.approach_fix_range_mode
-    :type: LANDING_APPROACH_FIX_RANGE_MODE
+    :type: LandingApproachFixRangeMode
 
-    Gets or sets the reference point on the runway for the Approach Fix Range.
+    Get or set the reference point on the runway for the Approach Fix Range.
 
 .. py:property:: glideslope
     :canonical: ansys.stk.core.stkobjects.aviator.LandingStandardInstrumentApproach.glideslope
     :type: typing.Any
 
-    Gets or sets the angle from the horizontal on which the aircraft descends to touchdown.
+    Get or set the angle from the horizontal on which the aircraft descends to touchdown.
 
 .. py:property:: runway_altitude_offset
     :canonical: ansys.stk.core.stkobjects.aviator.LandingStandardInstrumentApproach.runway_altitude_offset
     :type: float
 
-    Gets or sets the altitude offset above the ground level.
+    Get or set the altitude offset above the ground level.
 
 .. py:property:: use_runway_terrain
     :canonical: ansys.stk.core.stkobjects.aviator.LandingStandardInstrumentApproach.use_runway_terrain

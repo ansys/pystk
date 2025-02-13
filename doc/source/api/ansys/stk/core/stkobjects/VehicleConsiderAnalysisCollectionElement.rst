@@ -52,7 +52,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.VehicleConsiderAnalysisCollectionElement.type
-    :type: VEHICLE_CONSIDER_ANALYSIS_TYPE
+    :type: VehicleConsiderAnalysisType
 
     Parameter type.
 

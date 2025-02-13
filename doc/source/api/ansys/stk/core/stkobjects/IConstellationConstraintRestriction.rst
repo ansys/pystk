@@ -7,10 +7,6 @@ IConstellationConstraintRestriction
 
 .. py:currentmodule:: IConstellationConstraintRestriction
 
-Overview
---------
-
-
 Import detail
 -------------
 

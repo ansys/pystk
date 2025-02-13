@@ -56,15 +56,15 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureBasicManeuver.profile`
               - Get the interface for the profile strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureBasicManeuver.flight_mode`
-              - Gets or sets the type of performance model  that the aircraft will use to fly the maneuver.
+              - Get or set the type of performance model  that the aircraft will use to fly the maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureBasicManeuver.fuel_flow_type`
-              - Gets or sets the source used to calculate the fuel flow for the maneuver.
+              - Get or set the source used to calculate the fuel flow for the maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureBasicManeuver.override_fuel_flow_value`
-              - Gets or sets the value used for the Override Fuel Flow type. The fuel flow type must be set to Override to access this value.
+              - Get or set the value used for the Override Fuel Flow type. The fuel flow type must be set to Override to access this value.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureBasicManeuver.scale_fuel_flow`
               - Opt whether to scale the fuel flow based on the aircraft's actual attitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureBasicManeuver.attitude_blend_time`
-              - Gets or sets the amount of time that the aircraft will spend transitioning from the attitude of the previous maneuver to the attitude at the beginning of the current maneuver.
+              - Get or set the amount of time that the aircraft will spend transitioning from the attitude of the previous maneuver to the attitude at the beginning of the current maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureBasicManeuver.control_time_constant`
               - A smoothing constant for the performance of control surfaces.
 
@@ -119,13 +119,13 @@ Property detail
 
 .. py:property:: altitude_limit_mode
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureBasicManeuver.altitude_limit_mode
-    :type: BASIC_MANEUVER_ALTITUDE_LIMIT
+    :type: BasicManeuverAltitudeLimit
 
     Get the altitude limit mode.
 
 .. py:property:: terrain_impact_mode
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureBasicManeuver.terrain_impact_mode
-    :type: BASIC_MANEUVER_ALTITUDE_LIMIT
+    :type: BasicManeuverAltitudeLimit
 
     Get the terrain impact mode.
 
@@ -161,21 +161,21 @@ Property detail
 
 .. py:property:: flight_mode
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureBasicManeuver.flight_mode
-    :type: PHASE_OF_FLIGHT
+    :type: PhaseOfFlight
 
-    Gets or sets the type of performance model  that the aircraft will use to fly the maneuver.
+    Get or set the type of performance model  that the aircraft will use to fly the maneuver.
 
 .. py:property:: fuel_flow_type
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureBasicManeuver.fuel_flow_type
-    :type: BASIC_MANEUVER_FUEL_FLOW_TYPE
+    :type: BasicManeuverFuelFlowType
 
-    Gets or sets the source used to calculate the fuel flow for the maneuver.
+    Get or set the source used to calculate the fuel flow for the maneuver.
 
 .. py:property:: override_fuel_flow_value
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureBasicManeuver.override_fuel_flow_value
     :type: float
 
-    Gets or sets the value used for the Override Fuel Flow type. The fuel flow type must be set to Override to access this value.
+    Get or set the value used for the Override Fuel Flow type. The fuel flow type must be set to Override to access this value.
 
 .. py:property:: scale_fuel_flow
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureBasicManeuver.scale_fuel_flow
@@ -187,7 +187,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureBasicManeuver.attitude_blend_time
     :type: float
 
-    Gets or sets the amount of time that the aircraft will spend transitioning from the attitude of the previous maneuver to the attitude at the beginning of the current maneuver.
+    Get or set the amount of time that the aircraft will spend transitioning from the attitude of the previous maneuver to the attitude at the beginning of the current maneuver.
 
 .. py:property:: control_time_constant
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureBasicManeuver.control_time_constant

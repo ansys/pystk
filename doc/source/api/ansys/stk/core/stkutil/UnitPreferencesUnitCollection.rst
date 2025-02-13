@@ -32,9 +32,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkutil.UnitPreferencesUnitCollection.count`
-              - Returns the number of items in the collection.
-            * - :py:attr:`~ansys.stk.core.stkutil.UnitPreferencesUnitCollection._NewEnum`
-              - Returns an enumeration of AgUnitPrefsUnit.
+              - Return the number of items in the collection.
+            * - :py:attr:`~ansys.stk.core.stkutil.UnitPreferencesUnitCollection._new_enum`
+              - Return an enumeration of AgUnitPrefsUnit.
 
 
 
@@ -53,26 +53,26 @@ Property detail
     :canonical: ansys.stk.core.stkutil.UnitPreferencesUnitCollection.count
     :type: int
 
-    Returns the number of items in the collection.
+    Return the number of items in the collection.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkutil.UnitPreferencesUnitCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkutil.UnitPreferencesUnitCollection._new_enum
     :type: EnumeratorProxy
 
-    Returns an enumeration of AgUnitPrefsUnit.
+    Return an enumeration of AgUnitPrefsUnit.
 
 
 Method detail
 -------------
 
-.. py:method:: item(self, indexOrName: typing.Any) -> UnitPreferencesUnit
+.. py:method:: item(self, index_or_name: typing.Any) -> UnitPreferencesUnit
     :canonical: ansys.stk.core.stkutil.UnitPreferencesUnitCollection.item
 
     Return the specific item in the collection given a unit identifier or an index.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 

@@ -18,8 +18,8 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.OnePointAccessResult.access_satisfied`
-              - Indicates whether all constraints are satisfied at this time.
+            * - :py:attr:`~ansys.stk.core.stkobjects.OnePointAccessResult.access_is_satisfied`
+              - Indicate whether all constraints are satisfied at this time.
             * - :py:attr:`~ansys.stk.core.stkobjects.OnePointAccessResult.time`
               - Get the time of evaluation of the constraints in a IAgOnePtAccess Compute request.
             * - :py:attr:`~ansys.stk.core.stkobjects.OnePointAccessResult.constraints`
@@ -38,11 +38,11 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: access_satisfied
-    :canonical: ansys.stk.core.stkobjects.OnePointAccessResult.access_satisfied
+.. py:property:: access_is_satisfied
+    :canonical: ansys.stk.core.stkobjects.OnePointAccessResult.access_is_satisfied
     :type: bool
 
-    Indicates whether all constraints are satisfied at this time.
+    Indicate whether all constraints are satisfied at this time.
 
 .. py:property:: time
     :canonical: ansys.stk.core.stkobjects.OnePointAccessResult.time

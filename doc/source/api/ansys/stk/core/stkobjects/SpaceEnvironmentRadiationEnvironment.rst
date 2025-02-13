@@ -57,25 +57,25 @@ Property detail
 
 .. py:property:: crres_proton_activity
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentRadiationEnvironment.crres_proton_activity
-    :type: SPACE_ENVIRONMENT_CRRES_PROTON_ACTIVITY
+    :type: SpaceEnvironmentCrresProtonActivity
 
     Activity level for CRRES proton model.
 
 .. py:property:: crres_radiation_activity
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentRadiationEnvironment.crres_radiation_activity
-    :type: SPACE_ENVIRONMENT_CRRES_RADIATION_ACTIVITY
+    :type: SpaceEnvironmentCrresRadiationActivity
 
     Activity level for CRRES radiation model.
 
 .. py:property:: nasa_energy_values
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentRadiationEnvironment.nasa_energy_values
-    :type: SpaceEnvironmentRadEnergyValues
+    :type: SpaceEnvironmentRadiationEnergyValues
 
     Proton and electron energies for the NASA models.
 
 .. py:property:: nasa_models_activity
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentRadiationEnvironment.nasa_models_activity
-    :type: SPACE_ENVIRONMENT_NASA_MODELS_ACTIVITY
+    :type: SpaceEnvironmentNasaModelsActivity
 
     Activity level for the NASA models.
 

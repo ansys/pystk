@@ -28,31 +28,31 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftVTOLModel.max_hover_altitude`
-              - Gets or sets the maximum altitude at which the aircraft is capable of hovering.
+              - Get or set the maximum altitude at which the aircraft is capable of hovering.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftVTOLModel.use_aerodynamic_propulsion_fuel`
-              - Gets or sets whether to use Aero/Propulsion fuel flow.
+              - Get or set whether to use Aero/Propulsion fuel flow.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftVTOLModel.scale_fuel_flow_by_non_std_density`
-              - Gets or sets whether to scale fuel flow by non std density.
+              - Get or set whether to scale fuel flow by non std density.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftVTOLModel.hover_fuel`
-              - Gets or sets the aircraft's fuel flow rate while hovering.
+              - Get or set the aircraft's fuel flow rate while hovering.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftVTOLModel.heading_rate`
-              - Gets or sets the rate at which the aircraft can change heading while hovering.
+              - Get or set the rate at which the aircraft can change heading while hovering.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftVTOLModel.heading_transition_time`
-              - Gets or sets the time required to transition from another maneuvering mode to heading change maneuver mode.
+              - Get or set the time required to transition from another maneuvering mode to heading change maneuver mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftVTOLModel.vertical_rate`
-              - Gets or sets the aircraft's vertical rate.
+              - Get or set the aircraft's vertical rate.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftVTOLModel.vertical_transition_time`
-              - Gets or sets the time required to transition from another maneuvering mode to vertical maneuver mode.
+              - Get or set the time required to transition from another maneuvering mode to vertical maneuver mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftVTOLModel.translation_rate`
-              - Gets or sets the rate at which the aircraft can translate while hovering.
+              - Get or set the rate at which the aircraft can translate while hovering.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftVTOLModel.translation_transition_time`
-              - Gets or sets the time required to transition from another maneuvering mode to translation maneuver mode.
+              - Get or set the time required to transition from another maneuvering mode to translation maneuver mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftVTOLModel.forward_flight_airspeed`
               - Get the speed at which the aircraft can begin forward flight.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftVTOLModel.forward_flight_airspeed_type`
               - Get the forward flight airspeed type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftVTOLModel.forward_flight_transition_time`
-              - Gets or sets the time required to transition from another maneuvering mode to forward flight at sea level.
+              - Get or set the time required to transition from another maneuvering mode to forward flight at sea level.
 
 
 
@@ -71,61 +71,61 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftVTOLModel.max_hover_altitude
     :type: float
 
-    Gets or sets the maximum altitude at which the aircraft is capable of hovering.
+    Get or set the maximum altitude at which the aircraft is capable of hovering.
 
 .. py:property:: use_aerodynamic_propulsion_fuel
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftVTOLModel.use_aerodynamic_propulsion_fuel
     :type: bool
 
-    Gets or sets whether to use Aero/Propulsion fuel flow.
+    Get or set whether to use Aero/Propulsion fuel flow.
 
 .. py:property:: scale_fuel_flow_by_non_std_density
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftVTOLModel.scale_fuel_flow_by_non_std_density
     :type: bool
 
-    Gets or sets whether to scale fuel flow by non std density.
+    Get or set whether to scale fuel flow by non std density.
 
 .. py:property:: hover_fuel
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftVTOLModel.hover_fuel
     :type: float
 
-    Gets or sets the aircraft's fuel flow rate while hovering.
+    Get or set the aircraft's fuel flow rate while hovering.
 
 .. py:property:: heading_rate
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftVTOLModel.heading_rate
     :type: typing.Any
 
-    Gets or sets the rate at which the aircraft can change heading while hovering.
+    Get or set the rate at which the aircraft can change heading while hovering.
 
 .. py:property:: heading_transition_time
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftVTOLModel.heading_transition_time
     :type: float
 
-    Gets or sets the time required to transition from another maneuvering mode to heading change maneuver mode.
+    Get or set the time required to transition from another maneuvering mode to heading change maneuver mode.
 
 .. py:property:: vertical_rate
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftVTOLModel.vertical_rate
     :type: float
 
-    Gets or sets the aircraft's vertical rate.
+    Get or set the aircraft's vertical rate.
 
 .. py:property:: vertical_transition_time
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftVTOLModel.vertical_transition_time
     :type: float
 
-    Gets or sets the time required to transition from another maneuvering mode to vertical maneuver mode.
+    Get or set the time required to transition from another maneuvering mode to vertical maneuver mode.
 
 .. py:property:: translation_rate
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftVTOLModel.translation_rate
     :type: float
 
-    Gets or sets the rate at which the aircraft can translate while hovering.
+    Get or set the rate at which the aircraft can translate while hovering.
 
 .. py:property:: translation_transition_time
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftVTOLModel.translation_transition_time
     :type: float
 
-    Gets or sets the time required to transition from another maneuvering mode to translation maneuver mode.
+    Get or set the time required to transition from another maneuvering mode to translation maneuver mode.
 
 .. py:property:: forward_flight_airspeed
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftVTOLModel.forward_flight_airspeed
@@ -135,7 +135,7 @@ Property detail
 
 .. py:property:: forward_flight_airspeed_type
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftVTOLModel.forward_flight_airspeed_type
-    :type: AIRSPEED_TYPE
+    :type: AirspeedType
 
     Get the forward flight airspeed type.
 
@@ -143,7 +143,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftVTOLModel.forward_flight_transition_time
     :type: float
 
-    Gets or sets the time required to transition from another maneuvering mode to forward flight at sea level.
+    Get or set the time required to transition from another maneuvering mode to forward flight at sea level.
 
 
 Method detail
@@ -171,14 +171,14 @@ Method detail
 
 
 
-.. py:method:: set_forward_flight_airspeed(self, airspeedType: AIRSPEED_TYPE, airspeed: float) -> None
+.. py:method:: set_forward_flight_airspeed(self, airspeed_type: AirspeedType, airspeed: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftVTOLModel.set_forward_flight_airspeed
 
     Set the speed at which the aircraft can begin forward flight.
 
     :Parameters:
 
-    **airspeedType** : :obj:`~AIRSPEED_TYPE`
+    **airspeed_type** : :obj:`~AirspeedType`
     **airspeed** : :obj:`~float`
 
     :Returns:

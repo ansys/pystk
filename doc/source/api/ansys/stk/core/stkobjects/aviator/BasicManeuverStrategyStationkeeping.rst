@@ -32,35 +32,35 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStationkeeping.target_name`
-              - Gets or sets the target name.
+              - Get or set the target name.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStationkeeping.valid_target_names`
-              - Returns the valid target names.
+              - Return the valid target names.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStationkeeping.target_resolution`
-              - Gets or sets the target position/velocity sampling resolution.
+              - Get or set the target position/velocity sampling resolution.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStationkeeping.max_target_speed_fraction`
-              - Gets or sets the maximum speed relative to the target.
+              - Get or set the maximum speed relative to the target.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStationkeeping.relative_bearing`
-              - Gets or sets the bearing relative to the target that the aircraft will hold.
+              - Get or set the bearing relative to the target that the aircraft will hold.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStationkeeping.relative_range`
-              - Gets or sets the range from the target where the aircraft will hold.
+              - Get or set the range from the target where the aircraft will hold.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStationkeeping.desired_radius`
-              - Gets or sets the goal radius of the holding circle.
+              - Get or set the goal radius of the holding circle.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStationkeeping.turn_direction`
               - Define if the aircraft turns left or right into the holding circle.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStationkeeping.maneuver_factor`
-              - Gets or sets the maneuver factor, a dimensionless factor that determines how tightly or gently the aircraft will maneuver.
+              - Get or set the maneuver factor, a dimensionless factor that determines how tightly or gently the aircraft will maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStationkeeping.stop_condition`
-              - Gets or sets the stopping condition for the maneuver.
+              - Get or set the stopping condition for the maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStationkeeping.use_relative_course`
               - Option to use a relative course as opposed to an absolute course.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStationkeeping.stop_course`
-              - Gets or sets the course stop condition.
+              - Get or set the course stop condition.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStationkeeping.stop_after_turn_count`
-              - Gets or sets the number of turns stop condition.
+              - Get or set the number of turns stop condition.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStationkeeping.stop_after_duration`
-              - Gets or sets the duration stop condition.
+              - Get or set the duration stop condition.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStationkeeping.stop_after_time`
-              - Gets or sets the time stop condition.
+              - Get or set the time stop condition.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStationkeeping.control_limit_mode`
               - Get the method to define the control limits of the aircraft during the maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStationkeeping.control_limit_turn_radius`
@@ -70,7 +70,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStationkeeping.control_limit_horizontal_acceleration`
               - Get the specified horizontal acceleration for a control limit mode of specify max horiz accel.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStationkeeping.compensate_for_coriolis_acceleration`
-              - Gets or sets the option to compensate for the acceleration due to the Coriolis effect.
+              - Get or set the option to compensate for the acceleration due to the Coriolis effect.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStationkeeping.position_vel_strategies`
               - Get the position velocity strategies for Station Keeping.
 
@@ -91,47 +91,47 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStationkeeping.target_name
     :type: str
 
-    Gets or sets the target name.
+    Get or set the target name.
 
 .. py:property:: valid_target_names
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStationkeeping.valid_target_names
     :type: list
 
-    Returns the valid target names.
+    Return the valid target names.
 
 .. py:property:: target_resolution
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStationkeeping.target_resolution
     :type: float
 
-    Gets or sets the target position/velocity sampling resolution.
+    Get or set the target position/velocity sampling resolution.
 
 .. py:property:: max_target_speed_fraction
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStationkeeping.max_target_speed_fraction
     :type: float
 
-    Gets or sets the maximum speed relative to the target.
+    Get or set the maximum speed relative to the target.
 
 .. py:property:: relative_bearing
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStationkeeping.relative_bearing
     :type: typing.Any
 
-    Gets or sets the bearing relative to the target that the aircraft will hold.
+    Get or set the bearing relative to the target that the aircraft will hold.
 
 .. py:property:: relative_range
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStationkeeping.relative_range
     :type: float
 
-    Gets or sets the range from the target where the aircraft will hold.
+    Get or set the range from the target where the aircraft will hold.
 
 .. py:property:: desired_radius
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStationkeeping.desired_radius
     :type: float
 
-    Gets or sets the goal radius of the holding circle.
+    Get or set the goal radius of the holding circle.
 
 .. py:property:: turn_direction
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStationkeeping.turn_direction
-    :type: TURN_DIRECTION
+    :type: TurnDirection
 
     Define if the aircraft turns left or right into the holding circle.
 
@@ -139,13 +139,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStationkeeping.maneuver_factor
     :type: float
 
-    Gets or sets the maneuver factor, a dimensionless factor that determines how tightly or gently the aircraft will maneuver.
+    Get or set the maneuver factor, a dimensionless factor that determines how tightly or gently the aircraft will maneuver.
 
 .. py:property:: stop_condition
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStationkeeping.stop_condition
-    :type: STATIONKEEPING_STOP_CONDITION
+    :type: StationkeepingStopCondition
 
-    Gets or sets the stopping condition for the maneuver.
+    Get or set the stopping condition for the maneuver.
 
 .. py:property:: use_relative_course
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStationkeeping.use_relative_course
@@ -157,29 +157,29 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStationkeeping.stop_course
     :type: typing.Any
 
-    Gets or sets the course stop condition.
+    Get or set the course stop condition.
 
 .. py:property:: stop_after_turn_count
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStationkeeping.stop_after_turn_count
     :type: int
 
-    Gets or sets the number of turns stop condition.
+    Get or set the number of turns stop condition.
 
 .. py:property:: stop_after_duration
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStationkeeping.stop_after_duration
     :type: float
 
-    Gets or sets the duration stop condition.
+    Get or set the duration stop condition.
 
 .. py:property:: stop_after_time
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStationkeeping.stop_after_time
     :type: typing.Any
 
-    Gets or sets the time stop condition.
+    Get or set the time stop condition.
 
 .. py:property:: control_limit_mode
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStationkeeping.control_limit_mode
-    :type: BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT
+    :type: BasicManeuverStrategyNavigationControlLimit
 
     Get the method to define the control limits of the aircraft during the maneuver.
 
@@ -205,7 +205,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStationkeeping.compensate_for_coriolis_acceleration
     :type: bool
 
-    Gets or sets the option to compensate for the acceleration due to the Coriolis effect.
+    Get or set the option to compensate for the acceleration due to the Coriolis effect.
 
 .. py:property:: position_vel_strategies
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStationkeeping.position_vel_strategies
@@ -250,15 +250,15 @@ Method detail
 
 
 
-.. py:method:: set_control_limit(self, controlLimitMode: BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT, controlLimitValue: float) -> None
+.. py:method:: set_control_limit(self, control_limit_mode: BasicManeuverStrategyNavigationControlLimit, control_limit_value: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStationkeeping.set_control_limit
 
     Set the method and corresponding value to define the control limits of the aircraft during the maneuver.
 
     :Parameters:
 
-    **controlLimitMode** : :obj:`~BASIC_MANEUVER_STRATEGY_NAVIGATION_CONTROL_LIMIT`
-    **controlLimitValue** : :obj:`~float`
+    **control_limit_mode** : :obj:`~BasicManeuverStrategyNavigationControlLimit`
+    **control_limit_value** : :obj:`~float`
 
     :Returns:
 

@@ -9,10 +9,6 @@ CalculationToolScalar
 
 .. py:currentmodule:: CalculationToolScalar
 
-Overview
---------
-
-
 
 Import detail
 -------------

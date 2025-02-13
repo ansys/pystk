@@ -40,7 +40,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.LevelTurns.turn_rate`
               - Get the turn rate.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.LevelTurns.maneuver_mode`
-              - Gets or sets the mode that the aircraft will adhere to the specified acceleration parameters. Scale by atmospheric density will cause the aircraft to consider dynamic pressure when calculating turn radius.
+              - Get or set the mode that the aircraft will adhere to the specified acceleration parameters. Scale by atmospheric density will cause the aircraft to consider dynamic pressure when calculating turn radius.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.LevelTurns.maneuver_mode_helper`
               - Get the interface for the Aero/Prop Maneuver Mode helper. The maneuver mode must be set to Aero/Prop to access this interface.
 
@@ -59,7 +59,7 @@ Property detail
 
 .. py:property:: turn_mode
     :canonical: ansys.stk.core.stkobjects.aviator.LevelTurns.turn_mode
-    :type: TURN_MODE
+    :type: TurnMode
 
     Get the turn mode.
 
@@ -95,9 +95,9 @@ Property detail
 
 .. py:property:: maneuver_mode
     :canonical: ansys.stk.core.stkobjects.aviator.LevelTurns.maneuver_mode
-    :type: ACCELERATION_MANEUVER_MODE
+    :type: AccelerationManeuverMode
 
-    Gets or sets the mode that the aircraft will adhere to the specified acceleration parameters. Scale by atmospheric density will cause the aircraft to consider dynamic pressure when calculating turn radius.
+    Get or set the mode that the aircraft will adhere to the specified acceleration parameters. Scale by atmospheric density will cause the aircraft to consider dynamic pressure when calculating turn radius.
 
 .. py:property:: maneuver_mode_helper
     :canonical: ansys.stk.core.stkobjects.aviator.LevelTurns.maneuver_mode_helper
@@ -115,15 +115,15 @@ Method detail
 
 
 
-.. py:method:: set_level_turn(self, turnMode: TURN_MODE, turnValue: typing.Any) -> None
+.. py:method:: set_level_turn(self, turn_mode: TurnMode, turn_value: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.LevelTurns.set_level_turn
 
     Set the level turn mode and corresponding value.
 
     :Parameters:
 
-    **turnMode** : :obj:`~TURN_MODE`
-    **turnValue** : :obj:`~typing.Any`
+    **turn_mode** : :obj:`~TurnMode`
+    **turn_value** : :obj:`~typing.Any`
 
     :Returns:
 

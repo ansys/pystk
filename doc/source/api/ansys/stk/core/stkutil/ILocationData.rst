@@ -7,10 +7,6 @@ ILocationData
 
 .. py:currentmodule:: ILocationData
 
-Overview
---------
-
-
 Import detail
 -------------
 

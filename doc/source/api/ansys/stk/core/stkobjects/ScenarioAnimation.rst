@@ -21,7 +21,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimation.set_time_array_component`
               - Configure the time array using the specified time component. Allowed are only event arrays.
             * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimation.set_time_array_qualified_path`
-              - Configure the time array using the specified time component. Allowed are only event arrays. QualifiedPath format adheres to the format used throughout VGT API (i.e. \"Scenario/Scenario1 OneMinuteSampleTimes EventArray\").
+              - Configure the time array using the specified time component. Allowed are only event arrays. QualifiedPath format adheres to the format used throughout VGT API (i.e. ``Scenario/Scenario1 OneMinuteSampleTimes EventArray``).
             * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimation.get_time_array_component`
               - Return a time array component used to configure the time array or null if component has not been configured yet.
             * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimation.get_time_array_qualified_path`
@@ -39,22 +39,22 @@ Overview
               - Animation start time. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimation.enable_anim_cycle_time`
               - Enable a selection between end time and loop-at time.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimation.anim_cycle_time`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimation.animation_cycle_time`
               - Animation end time. Uses DateFormat Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimation.anim_step_value`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimation.animation_step_value`
               - Animation time step. Dimension depends on context.
             * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimation.refresh_delta`
               - Amount of time between refresh updates. The actual refresh delta is limited by the minimum time necessary to draw the scenario. The refresh time varies with processor performance, graphics hardware and scenario complexity. Uses Time Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimation.anim_cycle_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimation.animation_end_loop_type`
               - Animation end time or loop-at time. A member of the AgEScEndLoopType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimation.refresh_delta_type`
               - Refresh Delta or high speed. A member of the AgEScRefreshDeltaType enumeration.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimation.anim_step_type`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimation.animation_step_type`
               - Time step, real time (with offset) or a multiple of real time. A member of the AgEScTimeStepType enumeration.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimation.continue_x_realtime_from_pause`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimation.continue_x_real_time_from_pause`
               - Animation XRealtime Continue from Paused Time.
             * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimation.time_period`
-              - Allows the user to configure the scenario's animation time period.
+              - Allow the user to configure the scenario's animation time period.
             * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimation.time_array_increment`
               - Animation Time Array Increment.
 
@@ -83,14 +83,14 @@ Property detail
 
     Enable a selection between end time and loop-at time.
 
-.. py:property:: anim_cycle_time
-    :canonical: ansys.stk.core.stkobjects.ScenarioAnimation.anim_cycle_time
+.. py:property:: animation_cycle_time
+    :canonical: ansys.stk.core.stkobjects.ScenarioAnimation.animation_cycle_time
     :type: typing.Any
 
     Animation end time. Uses DateFormat Dimension.
 
-.. py:property:: anim_step_value
-    :canonical: ansys.stk.core.stkobjects.ScenarioAnimation.anim_step_value
+.. py:property:: animation_step_value
+    :canonical: ansys.stk.core.stkobjects.ScenarioAnimation.animation_step_value
     :type: float
 
     Animation time step. Dimension depends on context.
@@ -101,26 +101,26 @@ Property detail
 
     Amount of time between refresh updates. The actual refresh delta is limited by the minimum time necessary to draw the scenario. The refresh time varies with processor performance, graphics hardware and scenario complexity. Uses Time Dimension.
 
-.. py:property:: anim_cycle_type
-    :canonical: ansys.stk.core.stkobjects.ScenarioAnimation.anim_cycle_type
-    :type: SCENARIO_END_LOOP_TYPE
+.. py:property:: animation_end_loop_type
+    :canonical: ansys.stk.core.stkobjects.ScenarioAnimation.animation_end_loop_type
+    :type: ScenarioEndLoopType
 
     Animation end time or loop-at time. A member of the AgEScEndLoopType enumeration.
 
 .. py:property:: refresh_delta_type
     :canonical: ansys.stk.core.stkobjects.ScenarioAnimation.refresh_delta_type
-    :type: SCENARIO_REFRESH_DELTA_TYPE
+    :type: ScenarioRefreshDeltaType
 
     Refresh Delta or high speed. A member of the AgEScRefreshDeltaType enumeration.
 
-.. py:property:: anim_step_type
-    :canonical: ansys.stk.core.stkobjects.ScenarioAnimation.anim_step_type
-    :type: SCENARIO_TIME_STEP_TYPE
+.. py:property:: animation_step_type
+    :canonical: ansys.stk.core.stkobjects.ScenarioAnimation.animation_step_type
+    :type: ScenarioTimeStepType
 
     Time step, real time (with offset) or a multiple of real time. A member of the AgEScTimeStepType enumeration.
 
-.. py:property:: continue_x_realtime_from_pause
-    :canonical: ansys.stk.core.stkobjects.ScenarioAnimation.continue_x_realtime_from_pause
+.. py:property:: continue_x_real_time_from_pause
+    :canonical: ansys.stk.core.stkobjects.ScenarioAnimation.continue_x_real_time_from_pause
     :type: bool
 
     Animation XRealtime Continue from Paused Time.
@@ -129,7 +129,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.ScenarioAnimation.time_period
     :type: ScenarioAnimationTimePeriod
 
-    Allows the user to configure the scenario's animation time period.
+    Allow the user to configure the scenario's animation time period.
 
 .. py:property:: time_array_increment
     :canonical: ansys.stk.core.stkobjects.ScenarioAnimation.time_array_increment
@@ -175,14 +175,14 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_time_array_qualified_path(self, qualifiedPath: str) -> None
+.. py:method:: set_time_array_qualified_path(self, qualified_path: str) -> None
     :canonical: ansys.stk.core.stkobjects.ScenarioAnimation.set_time_array_qualified_path
 
-    Configure the time array using the specified time component. Allowed are only event arrays. QualifiedPath format adheres to the format used throughout VGT API (i.e. \"Scenario/Scenario1 OneMinuteSampleTimes EventArray\").
+    Configure the time array using the specified time component. Allowed are only event arrays. QualifiedPath format adheres to the format used throughout VGT API (i.e. ``Scenario/Scenario1 OneMinuteSampleTimes EventArray``).
 
     :Parameters:
 
-    **qualifiedPath** : :obj:`~str`
+    **qualified_path** : :obj:`~str`
 
     :Returns:
 

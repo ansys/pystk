@@ -19,14 +19,14 @@ class FOMHelper(object):
     def Definition(
         self,
         oDefinition: "IFigureOfMeritDefinition",
-        eType: "FIGURE_OF_MERIT_DEFINITION_TYPE",
+        eType: "FigureOfMeritDefinitionType",
         assets: "CoverageAssetListCollection",
     ):
         Assert.assertIsNotNone(oDefinition)
 
         # Satisfaction
         self.Satisfaction(oDefinition.satisfaction, eType)
-        if eType == FIGURE_OF_MERIT_DEFINITION_TYPE.ACCESS_CONSTRAINT:
+        if eType == FigureOfMeritDefinitionType.ACCESS_CONSTRAINT:
             # Compute
             self.Compute(clr.CastAs(oDefinition, IFigureOfMeritDefinitionCompute))
             # AccessConstraint
@@ -36,17 +36,17 @@ class FOMHelper(object):
             Assert.assertIsNotNone(oConstraint)
             # AcrossAssets
             self.m_logger.WriteLine6("\t\t\tThe current AcrossAssets is: {0}", oConstraint.across_assets)
-            oConstraint.across_assets = FIGURE_OF_MERIT_ACROSS_ASSETS.AVERAGE
+            oConstraint.across_assets = FigureOfMeritAcrossAssets.AVERAGE
             self.m_logger.WriteLine6("\t\t\tThe new AcrossAssets is: {0}", oConstraint.across_assets)
-            Assert.assertEqual(FIGURE_OF_MERIT_ACROSS_ASSETS.AVERAGE, oConstraint.across_assets)
-            oConstraint.across_assets = FIGURE_OF_MERIT_ACROSS_ASSETS.MAXIMUM
+            Assert.assertEqual(FigureOfMeritAcrossAssets.AVERAGE, oConstraint.across_assets)
+            oConstraint.across_assets = FigureOfMeritAcrossAssets.MAXIMUM
             self.m_logger.WriteLine6("\t\t\tThe new AcrossAssets is: {0}", oConstraint.across_assets)
-            Assert.assertEqual(FIGURE_OF_MERIT_ACROSS_ASSETS.MAXIMUM, oConstraint.across_assets)
-            oConstraint.across_assets = FIGURE_OF_MERIT_ACROSS_ASSETS.MINIMUM
+            Assert.assertEqual(FigureOfMeritAcrossAssets.MAXIMUM, oConstraint.across_assets)
+            oConstraint.across_assets = FigureOfMeritAcrossAssets.MINIMUM
             self.m_logger.WriteLine6("\t\t\tThe new AcrossAssets is: {0}", oConstraint.across_assets)
-            Assert.assertEqual(FIGURE_OF_MERIT_ACROSS_ASSETS.MINIMUM, oConstraint.across_assets)
+            Assert.assertEqual(FigureOfMeritAcrossAssets.MINIMUM, oConstraint.across_assets)
             with pytest.raises(Exception):
-                oConstraint.across_assets = FIGURE_OF_MERIT_ACROSS_ASSETS.UNKNOWN
+                oConstraint.across_assets = FigureOfMeritAcrossAssets.UNKNOWN
 
             # TimeStep
             self.m_logger.WriteLine6("\t\t\tThe current TimeStep is: {0}", oConstraint.time_step)
@@ -64,36 +64,36 @@ class FOMHelper(object):
             oConstraint.constraint = "AngularRate"
             Assert.assertEqual("AngularRate", oConstraint.constraint)
             self.m_logger.WriteLine6("\t\t\tThe current ConstraintName is: {0}", oConstraint.constraint_name)
-            oConstraint.constraint_name = FIGURE_OF_MERIT_CONSTRAINT_NAME.ALTITUDE
+            oConstraint.constraint_name = FigureOfMeritConstraintName.ALTITUDE
             self.m_logger.WriteLine6("\t\t\tThe new ConstraintName is: {0}", oConstraint.constraint_name)
-            Assert.assertEqual(FIGURE_OF_MERIT_CONSTRAINT_NAME.ALTITUDE, oConstraint.constraint_name)
+            Assert.assertEqual(FigureOfMeritConstraintName.ALTITUDE, oConstraint.constraint_name)
             with pytest.raises(Exception):
-                oConstraint.constraint_name = FIGURE_OF_MERIT_CONSTRAINT_NAME.UNKNOWN
+                oConstraint.constraint_name = FigureOfMeritConstraintName.UNKNOWN
         elif (
             (
                 (
-                    ((eType == FIGURE_OF_MERIT_DEFINITION_TYPE.ACCESS_DURATION))
-                    or ((eType == FIGURE_OF_MERIT_DEFINITION_TYPE.COVERAGE_TIME))
+                    ((eType == FigureOfMeritDefinitionType.ACCESS_DURATION))
+                    or ((eType == FigureOfMeritDefinitionType.COVERAGE_TIME))
                 )
-                or ((eType == FIGURE_OF_MERIT_DEFINITION_TYPE.N_ASSET_COVERAGE))
+                or ((eType == FigureOfMeritDefinitionType.N_ASSET_COVERAGE))
             )
-            or ((eType == FIGURE_OF_MERIT_DEFINITION_TYPE.NUMBER_OF_ACCESSES))
-        ) or ((eType == FIGURE_OF_MERIT_DEFINITION_TYPE.NUMBER_OF_GAPS)):
+            or ((eType == FigureOfMeritDefinitionType.NUMBER_OF_ACCESSES))
+        ) or ((eType == FigureOfMeritDefinitionType.NUMBER_OF_GAPS)):
             # Compute
             self.Compute(clr.CastAs(oDefinition, IFigureOfMeritDefinitionCompute))
-        elif eType == FIGURE_OF_MERIT_DEFINITION_TYPE.ACCESS_SEPARATION:
+        elif eType == FigureOfMeritDefinitionType.ACCESS_SEPARATION:
             oSeparation: "FigureOfMeritDefinitionAccessSeparation" = clr.CastAs(
                 oDefinition, FigureOfMeritDefinitionAccessSeparation
             )
             Assert.assertIsNotNone(oSeparation)
             # MinMaxData
-            self.DataMinMax(oSeparation.min_max_data)
-        elif eType == FIGURE_OF_MERIT_DEFINITION_TYPE.DILUTION_OF_PRECISION:
+            self.DataMinMax(oSeparation.minimum_maximum_data)
+        elif eType == FigureOfMeritDefinitionType.DILUTION_OF_PRECISION:
             # Compute
             self.Compute(clr.CastAs(oDefinition, IFigureOfMeritDefinitionCompute))
             # DilutionOfPrecision
             self.DilutionOfPrecision(clr.CastAs(oDefinition, IFigureOfMeritDefinitionDilutionOfPrecision))
-        elif eType == FIGURE_OF_MERIT_DEFINITION_TYPE.NAVIGATION_ACCURACY:
+        elif eType == FigureOfMeritDefinitionType.NAVIGATION_ACCURACY:
             # Compute
             self.Compute(clr.CastAs(oDefinition, IFigureOfMeritDefinitionCompute))
             # DilutionOfPrecision
@@ -144,9 +144,9 @@ class FOMHelper(object):
             # MethodType
             self.m_logger.WriteLine6("\t\t\tThe current MethodType is: {0}", assetListElement.method_type)
             # SetMethodType (CONSTANT)
-            assetListElement.method_type = FIGURE_OF_MERIT_NAVIGATION_ACCURACY_METHOD_TYPE.CONSTANT
+            assetListElement.method_type = FigureOfMeritNavigationAccuracyMethod.CONSTANT
             self.m_logger.WriteLine6("\t\t\tThe new MethodType is: {0}", assetListElement.method_type)
-            Assert.assertEqual(FIGURE_OF_MERIT_NAVIGATION_ACCURACY_METHOD_TYPE.CONSTANT, assetListElement.method_type)
+            Assert.assertEqual(FigureOfMeritNavigationAccuracyMethod.CONSTANT, assetListElement.method_type)
             # Method
             oMC: "FigureOfMeritNavigationAccuracyMethodConstant" = clr.CastAs(
                 assetListElement.method, FigureOfMeritNavigationAccuracyMethodConstant
@@ -160,11 +160,9 @@ class FOMHelper(object):
             with pytest.raises(Exception):
                 oMC.value = -1.2
             # SetMethodType (CONSTANT)
-            assetListElement.method_type = FIGURE_OF_MERIT_NAVIGATION_ACCURACY_METHOD_TYPE.ELEVATION_ANGLE
+            assetListElement.method_type = FigureOfMeritNavigationAccuracyMethod.ELEVATION_ANGLE
             self.m_logger.WriteLine6("\t\t\tThe new MethodType is: {0}", assetListElement.method_type)
-            Assert.assertEqual(
-                FIGURE_OF_MERIT_NAVIGATION_ACCURACY_METHOD_TYPE.ELEVATION_ANGLE, assetListElement.method_type
-            )
+            Assert.assertEqual(FigureOfMeritNavigationAccuracyMethod.ELEVATION_ANGLE, assetListElement.method_type)
             # Method
             oMEA: "FigureOfMeritNavigationAccuracyMethodElevationAngle" = clr.CastAs(
                 assetListElement.method, FigureOfMeritNavigationAccuracyMethodElevationAngle
@@ -180,7 +178,7 @@ class FOMHelper(object):
                 oMEA.filename = ""
             with pytest.raises(Exception):
                 oMEA.filename = "InvalidFile.Name"
-        elif eType == FIGURE_OF_MERIT_DEFINITION_TYPE.RESPONSE_TIME:
+        elif eType == FigureOfMeritDefinitionType.RESPONSE_TIME:
             # Compute
             self.Compute(clr.CastAs(oDefinition, IFigureOfMeritDefinitionCompute))
             # ResponseTime
@@ -189,34 +187,34 @@ class FOMHelper(object):
             )
             Assert.assertIsNotNone(oTime)
             # MinAssets
-            self.m_logger.WriteLine3("\t\t\tThe current MinAssets is: {0}", oTime.min_assets)
-            oTime.min_assets = 123
-            self.m_logger.WriteLine3("\t\t\tThe new MinAssets is: {0}", oTime.min_assets)
-            Assert.assertEqual(123, oTime.min_assets)
-        elif eType == FIGURE_OF_MERIT_DEFINITION_TYPE.REVISIT_TIME:
+            self.m_logger.WriteLine3("\t\t\tThe current MinAssets is: {0}", oTime.minimum_assets)
+            oTime.minimum_assets = 123
+            self.m_logger.WriteLine3("\t\t\tThe new MinAssets is: {0}", oTime.minimum_assets)
+            Assert.assertEqual(123, oTime.minimum_assets)
+        elif eType == FigureOfMeritDefinitionType.REVISIT_TIME:
             # Compute
             self.Compute(clr.CastAs(oDefinition, IFigureOfMeritDefinitionCompute))
             # RevisitTime
             oTime: "FigureOfMeritDefinitionRevisitTime" = clr.CastAs(oDefinition, FigureOfMeritDefinitionRevisitTime)
             Assert.assertIsNotNone(oTime)
             # MinAssets
-            self.m_logger.WriteLine3("\t\t\tThe current MinAssets is: {0}", oTime.min_assets)
-            oTime.min_assets = 123
-            self.m_logger.WriteLine3("\t\t\tThe new MinAssets is: {0}", oTime.min_assets)
-            Assert.assertEqual(123, oTime.min_assets)
+            self.m_logger.WriteLine3("\t\t\tThe current MinAssets is: {0}", oTime.minimum_assets)
+            oTime.minimum_assets = 123
+            self.m_logger.WriteLine3("\t\t\tThe new MinAssets is: {0}", oTime.minimum_assets)
+            Assert.assertEqual(123, oTime.minimum_assets)
             # EndGapOption
             self.m_logger.WriteLine6("\t\t\tThe current EndGapOption is: {0}", oTime.end_gap_option)
-            oTime.end_gap_option = FIGURE_OF_MERIT_END_GAP_OPTION.IGNORE
+            oTime.end_gap_option = FigureOfMeritEndGapOption.IGNORE
             self.m_logger.WriteLine6("\t\t\tThe new EndGapOption is: {0}", oTime.end_gap_option)
-            Assert.assertEqual(FIGURE_OF_MERIT_END_GAP_OPTION.IGNORE, oTime.end_gap_option)
-            oTime.end_gap_option = FIGURE_OF_MERIT_END_GAP_OPTION.INCLUDE
+            Assert.assertEqual(FigureOfMeritEndGapOption.IGNORE, oTime.end_gap_option)
+            oTime.end_gap_option = FigureOfMeritEndGapOption.INCLUDE
             self.m_logger.WriteLine6("\t\t\tThe new EndGapOption is: {0}", oTime.end_gap_option)
-            Assert.assertEqual(FIGURE_OF_MERIT_END_GAP_OPTION.INCLUDE, oTime.end_gap_option)
-        elif ((eType == FIGURE_OF_MERIT_DEFINITION_TYPE.SIMPLE_COVERAGE)) or (
-            (eType == FIGURE_OF_MERIT_DEFINITION_TYPE.TIME_AVERAGE_GAP)
+            Assert.assertEqual(FigureOfMeritEndGapOption.INCLUDE, oTime.end_gap_option)
+        elif ((eType == FigureOfMeritDefinitionType.SIMPLE_COVERAGE)) or (
+            (eType == FigureOfMeritDefinitionType.TIME_AVERAGE_GAP)
         ):
             pass
-        elif eType == FIGURE_OF_MERIT_DEFINITION_TYPE.SYSTEM_RESPONSE_TIME:
+        elif eType == FigureOfMeritDefinitionType.SYSTEM_RESPONSE_TIME:
             # Compute
             self.Compute(clr.CastAs(oDefinition, IFigureOfMeritDefinitionCompute))
 
@@ -241,10 +239,10 @@ class FOMHelper(object):
             with pytest.raises(Exception):
                 srt.commanding_time = -10
 
-            srt.command_perp_time = 30
-            Assert.assertEqual(30, srt.command_perp_time)
+            srt.command_preparation_time = 30
+            Assert.assertEqual(30, srt.command_preparation_time)
             with pytest.raises(Exception):
-                srt.command_perp_time = -10
+                srt.command_preparation_time = -10
 
             srt.command_station_path = (
                 r"/Application/STK/Scenario/" + self.m_oRoot.current_scenario.instance_name
@@ -299,7 +297,7 @@ class FOMHelper(object):
             Assert.assertEqual(60, srt.time_step)
             with pytest.raises(Exception):
                 srt.time_step = -10
-        elif eType == FIGURE_OF_MERIT_DEFINITION_TYPE.AGE_OF_DATA:
+        elif eType == FigureOfMeritDefinitionType.AGE_OF_DATA:
             # Compute
             self.Compute(clr.CastAs(oDefinition, FigureOfMeritDefinitionAgeOfData))
 
@@ -307,15 +305,15 @@ class FOMHelper(object):
             aod: "FigureOfMeritDefinitionAgeOfData" = clr.CastAs(oDefinition, FigureOfMeritDefinitionAgeOfData)
             Assert.assertIsNotNone(aod)
 
-            aod.min_assets = 1
-            Assert.assertEqual(1, aod.min_assets)
-            aod.min_assets = 9999
-            Assert.assertEqual(9999, aod.min_assets)
+            aod.minimum_assets = 1
+            Assert.assertEqual(1, aod.minimum_assets)
+            aod.minimum_assets = 9999
+            Assert.assertEqual(9999, aod.minimum_assets)
             with pytest.raises(Exception):
-                aod.min_assets = 0
+                aod.minimum_assets = 0
             with pytest.raises(Exception):
-                aod.min_assets = 10000
-        elif eType == FIGURE_OF_MERIT_DEFINITION_TYPE.SCALAR_CALCULATION:
+                aod.minimum_assets = 10000
+        elif eType == FigureOfMeritDefinitionType.SCALAR_CALCULATION:
             # Compute
             self.Compute(clr.CastAs(oDefinition, FigureOfMeritDefinitionScalarCalculation))
 
@@ -325,16 +323,16 @@ class FOMHelper(object):
             )
             Assert.assertIsNotNone(sd)
 
-            sd.calc_scalar = "CentralBody/Earth ElapsedTimeFromStart"
-            Assert.assertEqual("CentralBody/Earth ElapsedTimeFromStart", sd.calc_scalar)
+            sd.calculation_scalar = "CentralBody/Earth ElapsedTimeFromStart"
+            Assert.assertEqual("CentralBody/Earth ElapsedTimeFromStart", sd.calculation_scalar)
             with pytest.raises(Exception):
-                sd.calc_scalar = "Bogus"
+                sd.calculation_scalar = "Bogus"
 
             sd.should_update_accesses = True
             Assert.assertTrue(sd.should_update_accesses)
             sd.should_update_accesses = False
             Assert.assertFalse(sd.should_update_accesses)
-        elif eType == FIGURE_OF_MERIT_DEFINITION_TYPE.SYSTEM_AGE_OF_DATA:
+        elif eType == FigureOfMeritDefinitionType.SYSTEM_AGE_OF_DATA:
             # Compute
             self.Compute(clr.CastAs(oDefinition, IFigureOfMeritDefinitionCompute))
 
@@ -378,12 +376,12 @@ class FOMHelper(object):
                     r"/Application/STK/Scenario/" + self.m_oRoot.current_scenario.instance_name
                 ) + "/Satellite/Bogus"
 
-            saod.command_prep_time = 0
-            Assert.assertEqual(0, saod.command_prep_time)
-            saod.command_prep_time = 10
-            Assert.assertEqual(10, saod.command_prep_time)
+            saod.command_preparation_time = 0
+            Assert.assertEqual(0, saod.command_preparation_time)
+            saod.command_preparation_time = 10
+            Assert.assertEqual(10, saod.command_preparation_time)
             with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-                saod.command_prep_time = -10
+                saod.command_preparation_time = -10
 
             saod.commanding_time = 0
             Assert.assertEqual(0, saod.commanding_time)
@@ -449,7 +447,7 @@ class FOMHelper(object):
 
         iIndex: int = 0
         while iIndex < Array.Length(arTypes):
-            eComputeType: "FIGURE_OF_MERIT_COMPUTE" = FIGURE_OF_MERIT_COMPUTE(int(arTypes[iIndex]))
+            eComputeType: "FigureOfMeritCompute" = FigureOfMeritCompute(int(arTypes[iIndex]))
             if not oCompute.is_compute_type_supported(eComputeType):
                 Assert.fail("The {0} Compute Type should be supported!", eComputeType)
 
@@ -472,90 +470,77 @@ class FOMHelper(object):
                                                             (
                                                                 (
                                                                     (
-                                                                        (
-                                                                            (
-                                                                                eComputeType
-                                                                                == FIGURE_OF_MERIT_COMPUTE.AVERAGE
-                                                                            )
-                                                                        )
+                                                                        ((eComputeType == FigureOfMeritCompute.AVERAGE))
                                                                         or (
                                                                             (
                                                                                 eComputeType
-                                                                                == FIGURE_OF_MERIT_COMPUTE.MAXIMUM
+                                                                                == FigureOfMeritCompute.MAXIMUM
                                                                             )
                                                                         )
                                                                     )
-                                                                    or (
-                                                                        (
-                                                                            eComputeType
-                                                                            == FIGURE_OF_MERIT_COMPUTE.MINIMUM
-                                                                        )
-                                                                    )
+                                                                    or ((eComputeType == FigureOfMeritCompute.MINIMUM))
                                                                 )
                                                                 or (
-                                                                    (
-                                                                        eComputeType
-                                                                        == FIGURE_OF_MERIT_COMPUTE.STD_DEVIATION
-                                                                    )
+                                                                    (eComputeType == FigureOfMeritCompute.STD_DEVIATION)
                                                                 )
                                                             )
-                                                            or ((eComputeType == FIGURE_OF_MERIT_COMPUTE.MAX_PER_DAY))
+                                                            or ((eComputeType == FigureOfMeritCompute.MAXIMUM_PER_DAY))
                                                         )
                                                         or (
                                                             (
                                                                 eComputeType
-                                                                == FIGURE_OF_MERIT_COMPUTE.MAX_PERCENT_PER_DAY
+                                                                == FigureOfMeritCompute.MAXIMUM_PERCENT_PER_DAY
                                                             )
                                                         )
                                                     )
-                                                    or ((eComputeType == FIGURE_OF_MERIT_COMPUTE.MIN_PER_DAY))
+                                                    or ((eComputeType == FigureOfMeritCompute.MINIMUM_PER_DAY))
                                                 )
-                                                or ((eComputeType == FIGURE_OF_MERIT_COMPUTE.MIN_PERCENT_PER_DAY))
+                                                or ((eComputeType == FigureOfMeritCompute.MINIMUM_PERCENT_PER_DAY))
                                             )
-                                            or ((eComputeType == FIGURE_OF_MERIT_COMPUTE.PER_DAY))
+                                            or ((eComputeType == FigureOfMeritCompute.PER_DAY))
                                         )
-                                        or ((eComputeType == FIGURE_OF_MERIT_COMPUTE.PER_DAY_STD_DEV))
+                                        or ((eComputeType == FigureOfMeritCompute.PER_DAY_STANDARD_DEVIATION))
                                     )
-                                    or ((eComputeType == FIGURE_OF_MERIT_COMPUTE.PERCENT))
+                                    or ((eComputeType == FigureOfMeritCompute.PERCENT))
                                 )
-                                or ((eComputeType == FIGURE_OF_MERIT_COMPUTE.PERCENT_PER_DAY))
+                                or ((eComputeType == FigureOfMeritCompute.PERCENT_PER_DAY))
                             )
-                            or ((eComputeType == FIGURE_OF_MERIT_COMPUTE.PERCENT_PER_DAY_STD_DEV))
+                            or ((eComputeType == FigureOfMeritCompute.PERCENT_PER_DAY_STANDARD_DEVIATION))
                         )
-                        or ((eComputeType == FIGURE_OF_MERIT_COMPUTE.TOTAL))
+                        or ((eComputeType == FigureOfMeritCompute.TOTAL))
                     )
-                    or ((eComputeType == FIGURE_OF_MERIT_COMPUTE.AVG_PER_DAY))
+                    or ((eComputeType == FigureOfMeritCompute.AVERAGE_PER_DAY))
                 )
-                or ((eComputeType == FIGURE_OF_MERIT_COMPUTE.SUM))
-            ) or ((eComputeType == FIGURE_OF_MERIT_COMPUTE.UNIQUE)):
+                or ((eComputeType == FigureOfMeritCompute.SUM))
+            ) or ((eComputeType == FigureOfMeritCompute.UNIQUE)):
                 with pytest.raises(Exception):
                     definitionData: "IFigureOfMeritDefinitionData" = oCompute.compute
-            elif ((eComputeType == FIGURE_OF_MERIT_COMPUTE.PERCENT_TIME_ABOVE)) or (
-                (eComputeType == FIGURE_OF_MERIT_COMPUTE.TOTAL_TIME_ABOVE)
+            elif ((eComputeType == FigureOfMeritCompute.PERCENT_TIME_ABOVE)) or (
+                (eComputeType == FigureOfMeritCompute.TOTAL_TIME_ABOVE)
             ):
-                # FigureOfMeritDefinitionDataMinAssets
-                dataMinAssets: "FigureOfMeritDefinitionDataMinAssets" = clr.CastAs(
-                    oCompute.compute, FigureOfMeritDefinitionDataMinAssets
+                # FigureOfMeritDefinitionDataMinimumNumberOfAssets
+                dataMinAssets: "FigureOfMeritDefinitionDataMinimumNumberOfAssets" = clr.CastAs(
+                    oCompute.compute, FigureOfMeritDefinitionDataMinimumNumberOfAssets
                 )
                 Assert.assertIsNotNone(dataMinAssets)
                 # MinAssets
-                self.m_logger.WriteLine3("\t\t\t\t\tThe current MinAssets is: {0}", dataMinAssets.min_assets)
-                dataMinAssets.min_assets = 123
-                self.m_logger.WriteLine3("\t\t\t\t\tThe new MinAssets is: {0}", dataMinAssets.min_assets)
-                Assert.assertEqual(123, dataMinAssets.min_assets)
+                self.m_logger.WriteLine3("\t\t\t\t\tThe current MinAssets is: {0}", dataMinAssets.minimum_assets)
+                dataMinAssets.minimum_assets = 123
+                self.m_logger.WriteLine3("\t\t\t\t\tThe new MinAssets is: {0}", dataMinAssets.minimum_assets)
+                Assert.assertEqual(123, dataMinAssets.minimum_assets)
                 with pytest.raises(Exception):
-                    dataMinAssets.min_assets = 1234
-            elif ((eComputeType == FIGURE_OF_MERIT_COMPUTE.IN_SPAN)) or (
-                (eComputeType == FIGURE_OF_MERIT_COMPUTE.IN_SPAN_PER_DAY)
+                    dataMinAssets.minimum_assets = 1234
+            elif ((eComputeType == FigureOfMeritCompute.IN_SPAN)) or (
+                (eComputeType == FigureOfMeritCompute.IN_SPAN_PER_DAY)
             ):
-                self.DataMinMax(clr.CastAs(oCompute.compute, FigureOfMeritDefinitionDataMinMax))
+                self.DataMinMax(clr.CastAs(oCompute.compute, FigureOfMeritDefinitionDataMinimumMaximum))
             elif (
                 (
-                    ((eComputeType == FIGURE_OF_MERIT_COMPUTE.PERCENT_ABOVE))
-                    or ((eComputeType == FIGURE_OF_MERIT_COMPUTE.PERCENT_BELOW))
+                    ((eComputeType == FigureOfMeritCompute.PERCENT_ABOVE))
+                    or ((eComputeType == FigureOfMeritCompute.PERCENT_BELOW))
                 )
-                or ((eComputeType == FIGURE_OF_MERIT_COMPUTE.PERCENT_BELOW_GAPS_ONLY))
-            ) or ((eComputeType == FIGURE_OF_MERIT_COMPUTE.NUM_PERCENT_BELOW)):
+                or ((eComputeType == FigureOfMeritCompute.PERCENT_BELOW_GAPS_ONLY))
+            ) or ((eComputeType == FigureOfMeritCompute.NUMBER_PERCENT_BELOW)):
                 dataPercentLevel: "FigureOfMeritDefinitionDataPercentLevel" = clr.CastAs(
                     oCompute.compute, FigureOfMeritDefinitionDataPercentLevel
                 )
@@ -575,12 +560,12 @@ class FOMHelper(object):
     # endregion
 
     # region Satisfaction
-    def Satisfaction(self, oSatisfaction: "FigureOfMeritSatisfaction", eType: "FIGURE_OF_MERIT_DEFINITION_TYPE"):
+    def Satisfaction(self, oSatisfaction: "FigureOfMeritSatisfaction", eType: "FigureOfMeritDefinitionType"):
         Assert.assertIsNotNone(oSatisfaction)
 
         bReadOnly: bool = False
-        if (eType == FIGURE_OF_MERIT_DEFINITION_TYPE.ACCESS_SEPARATION) or (
-            eType == FIGURE_OF_MERIT_DEFINITION_TYPE.SIMPLE_COVERAGE
+        if (eType == FigureOfMeritDefinitionType.ACCESS_SEPARATION) or (
+            eType == FigureOfMeritDefinitionType.SIMPLE_COVERAGE
         ):
             bReadOnly = True
 
@@ -590,7 +575,7 @@ class FOMHelper(object):
                 oSatisfaction.enable_satisfaction = True
             # SatisfactionType
             with pytest.raises(Exception):
-                oSatisfaction.satisfaction_type = FIGURE_OF_MERIT_SATISFACTION_TYPE.AT_LEAST
+                oSatisfaction.satisfaction_type = FigureOfMeritSatisfactionType.AT_LEAST
             # SatisfactionThreshold
             with pytest.raises(Exception):
                 oSatisfaction.satisfaction_threshold = 123.456
@@ -602,10 +587,10 @@ class FOMHelper(object):
                 oSatisfaction.use_value_range_check = True
             # MinValueRange
             with pytest.raises(Exception):
-                oSatisfaction.min_value_range = 1.2
+                oSatisfaction.minimum_value_range = 1.2
             # MaxValueRange
             with pytest.raises(Exception):
-                oSatisfaction.max_value_range = 1.2
+                oSatisfaction.maximum_value_range = 1.2
             # ExcludeValueRange
             with pytest.raises(Exception):
                 oSatisfaction.exclude_value_range = True
@@ -618,7 +603,7 @@ class FOMHelper(object):
             Assert.assertFalse(oSatisfaction.enable_satisfaction)
             # SatisfactionType
             with pytest.raises(Exception):
-                oSatisfaction.satisfaction_type = FIGURE_OF_MERIT_SATISFACTION_TYPE.AT_LEAST
+                oSatisfaction.satisfaction_type = FigureOfMeritSatisfactionType.AT_LEAST
             # SatisfactionThreshold
             with pytest.raises(Exception):
                 oSatisfaction.satisfaction_threshold = 123.456
@@ -628,17 +613,17 @@ class FOMHelper(object):
             Assert.assertTrue(oSatisfaction.enable_satisfaction)
             # SatisfactionType
             self.m_logger.WriteLine6("\t\t\t\tThe current SatisfactionType is: {0}", oSatisfaction.satisfaction_type)
-            oSatisfaction.satisfaction_type = FIGURE_OF_MERIT_SATISFACTION_TYPE.AT_LEAST
+            oSatisfaction.satisfaction_type = FigureOfMeritSatisfactionType.AT_LEAST
             self.m_logger.WriteLine6("\t\t\t\tThe new SatisfactionType is: {0}", oSatisfaction.satisfaction_type)
-            Assert.assertEqual(FIGURE_OF_MERIT_SATISFACTION_TYPE.AT_LEAST, oSatisfaction.satisfaction_type)
+            Assert.assertEqual(FigureOfMeritSatisfactionType.AT_LEAST, oSatisfaction.satisfaction_type)
             # SatisfactionThreshold
             self.m_logger.WriteLine6(
                 "\t\t\t\tThe current SatisfactionThreshold is: {0}", oSatisfaction.satisfaction_threshold
             )
             if (
-                (eType == FIGURE_OF_MERIT_DEFINITION_TYPE.N_ASSET_COVERAGE)
-                or (eType == FIGURE_OF_MERIT_DEFINITION_TYPE.NUMBER_OF_ACCESSES)
-            ) or (eType == FIGURE_OF_MERIT_DEFINITION_TYPE.NUMBER_OF_GAPS):
+                (eType == FigureOfMeritDefinitionType.N_ASSET_COVERAGE)
+                or (eType == FigureOfMeritDefinitionType.NUMBER_OF_ACCESSES)
+            ) or (eType == FigureOfMeritDefinitionType.NUMBER_OF_GAPS):
                 oSatisfaction.satisfaction_threshold = 12
                 self.m_logger.WriteLine6(
                     "\t\t\t\tThe new SatisfactionThreshold is: {0}", oSatisfaction.satisfaction_threshold
@@ -652,7 +637,7 @@ class FOMHelper(object):
                 )
                 Assert.assertEqual(12.34, oSatisfaction.satisfaction_threshold)
 
-            if eType == FIGURE_OF_MERIT_DEFINITION_TYPE.COVERAGE_TIME:
+            if eType == FigureOfMeritDefinitionType.COVERAGE_TIME:
                 with pytest.raises(Exception):
                     oSatisfaction.satisfaction_threshold = 123.456
 
@@ -664,15 +649,15 @@ class FOMHelper(object):
                 (
                     (
                         (
-                            (eType == FIGURE_OF_MERIT_DEFINITION_TYPE.ACCESS_CONSTRAINT)
-                            or (eType == FIGURE_OF_MERIT_DEFINITION_TYPE.DILUTION_OF_PRECISION)
+                            (eType == FigureOfMeritDefinitionType.ACCESS_CONSTRAINT)
+                            or (eType == FigureOfMeritDefinitionType.DILUTION_OF_PRECISION)
                         )
-                        or (eType == FIGURE_OF_MERIT_DEFINITION_TYPE.NAVIGATION_ACCURACY)
+                        or (eType == FigureOfMeritDefinitionType.NAVIGATION_ACCURACY)
                     )
-                    or (eType == FIGURE_OF_MERIT_DEFINITION_TYPE.SCALAR_CALCULATION)
+                    or (eType == FigureOfMeritDefinitionType.SCALAR_CALCULATION)
                 )
-                or (eType == FIGURE_OF_MERIT_DEFINITION_TYPE.SYSTEM_RESPONSE_TIME)
-            ) or (eType == FIGURE_OF_MERIT_DEFINITION_TYPE.SYSTEM_AGE_OF_DATA):
+                or (eType == FigureOfMeritDefinitionType.SYSTEM_RESPONSE_TIME)
+            ) or (eType == FigureOfMeritDefinitionType.SYSTEM_AGE_OF_DATA):
                 oSatisfaction.invalid_data_indicator = 12.34
                 self.m_logger.WriteLine6(
                     "\t\t\t\tThe new InvalidDataIndicator is: {0}", oSatisfaction.invalid_data_indicator
@@ -689,10 +674,10 @@ class FOMHelper(object):
                 Assert.assertFalse(oSatisfaction.use_value_range_check)
                 # MinValueRange
                 with pytest.raises(Exception):
-                    oSatisfaction.min_value_range = 1.2
+                    oSatisfaction.minimum_value_range = 1.2
                 # MaxValueRange
                 with pytest.raises(Exception):
-                    oSatisfaction.max_value_range = 1.2
+                    oSatisfaction.maximum_value_range = 1.2
                 # ExcludeValueRange
                 with pytest.raises(Exception):
                     oSatisfaction.exclude_value_range = True
@@ -703,15 +688,15 @@ class FOMHelper(object):
                 )
                 Assert.assertTrue(oSatisfaction.use_value_range_check)
                 # MinValueRange
-                self.m_logger.WriteLine6("\t\t\t\tThe current MinValueRange is: {0}", oSatisfaction.min_value_range)
-                oSatisfaction.min_value_range = 1
-                self.m_logger.WriteLine6("\t\t\t\tThe new MinValueRange is: {0}", oSatisfaction.min_value_range)
-                Assert.assertEqual(1, oSatisfaction.min_value_range)
+                self.m_logger.WriteLine6("\t\t\t\tThe current MinValueRange is: {0}", oSatisfaction.minimum_value_range)
+                oSatisfaction.minimum_value_range = 1
+                self.m_logger.WriteLine6("\t\t\t\tThe new MinValueRange is: {0}", oSatisfaction.minimum_value_range)
+                Assert.assertEqual(1, oSatisfaction.minimum_value_range)
                 # MaxValueRange
-                self.m_logger.WriteLine6("\t\t\t\tThe current MaxValueRange is: {0}", oSatisfaction.max_value_range)
-                oSatisfaction.max_value_range = 3
-                self.m_logger.WriteLine6("\t\t\t\tThe new MaxValueRange is: {0}", oSatisfaction.max_value_range)
-                Assert.assertEqual(3, oSatisfaction.max_value_range)
+                self.m_logger.WriteLine6("\t\t\t\tThe current MaxValueRange is: {0}", oSatisfaction.maximum_value_range)
+                oSatisfaction.maximum_value_range = 3
+                self.m_logger.WriteLine6("\t\t\t\tThe new MaxValueRange is: {0}", oSatisfaction.maximum_value_range)
+                Assert.assertEqual(3, oSatisfaction.maximum_value_range)
                 # ExcludeValueRange
                 self.m_logger.WriteLine4(
                     "\t\t\t\tThe current ExcludeValueRange is: {0}", oSatisfaction.exclude_value_range
@@ -731,10 +716,10 @@ class FOMHelper(object):
                     oSatisfaction.use_value_range_check = True
                 # MinValueRange
                 with pytest.raises(Exception):
-                    oSatisfaction.min_value_range = 1.2
+                    oSatisfaction.minimum_value_range = 1.2
                 # MaxValueRange
                 with pytest.raises(Exception):
-                    oSatisfaction.max_value_range = 1.2
+                    oSatisfaction.maximum_value_range = 1.2
                 # ExcludeValueRange
                 with pytest.raises(Exception):
                     oSatisfaction.exclude_value_range = True
@@ -742,28 +727,28 @@ class FOMHelper(object):
     # endregion
 
     # region DataMinMax
-    def DataMinMax(self, dataMinMax: "FigureOfMeritDefinitionDataMinMax"):
+    def DataMinMax(self, dataMinMax: "FigureOfMeritDefinitionDataMinimumMaximum"):
         Assert.assertIsNotNone(dataMinMax)
         # MinValue
-        min: float = dataMinMax.min_value
-        max: float = dataMinMax.max_value
+        min: float = dataMinMax.minimum_value
+        max: float = dataMinMax.maximum_value
         self.m_logger.WriteLine6("\t\t\tThe current MinValue is: {0}", min)
         if (min == 0) and (max == 0):
-            dataMinMax.max_value = 200
-            Assert.assertEqual(200, dataMinMax.max_value)
+            dataMinMax.maximum_value = 200
+            Assert.assertEqual(200, dataMinMax.maximum_value)
 
-        dataMinMax.min_value = 123.456
-        self.m_logger.WriteLine6("\t\t\tThe new MinValue is: {0}", dataMinMax.min_value)
-        Assert.assertEqual(123.456, dataMinMax.min_value)
+        dataMinMax.minimum_value = 123.456
+        self.m_logger.WriteLine6("\t\t\tThe new MinValue is: {0}", dataMinMax.minimum_value)
+        Assert.assertEqual(123.456, dataMinMax.minimum_value)
         # MaxValue
-        self.m_logger.WriteLine6("\t\t\tThe current MaxValue is: {0}", dataMinMax.max_value)
-        dataMinMax.max_value = 456.123
-        self.m_logger.WriteLine6("\t\t\tThe new MaxValue is: {0}", dataMinMax.max_value)
-        Assert.assertEqual(456.123, dataMinMax.max_value)
+        self.m_logger.WriteLine6("\t\t\tThe current MaxValue is: {0}", dataMinMax.maximum_value)
+        dataMinMax.maximum_value = 456.123
+        self.m_logger.WriteLine6("\t\t\tThe new MaxValue is: {0}", dataMinMax.maximum_value)
+        Assert.assertEqual(456.123, dataMinMax.maximum_value)
         with pytest.raises(Exception):
-            dataMinMax.min_value = 1234.56
+            dataMinMax.minimum_value = 1234.56
         with pytest.raises(Exception):
-            dataMinMax.max_value = 45.6123
+            dataMinMax.maximum_value = 45.6123
 
     # endregion
 
@@ -778,7 +763,7 @@ class FOMHelper(object):
 
         iIndex: int = 0
         while iIndex < Array.Length(arMethods):
-            eMethod: "FIGURE_OF_MERIT_METHOD" = FIGURE_OF_MERIT_METHOD(int(arMethods[iIndex]))
+            eMethod: "FigureOfMeritMethod" = FigureOfMeritMethod(int(arMethods[iIndex]))
             if not oDOP.is_method_supported(eMethod):
                 Assert.fail("The {0} Method should be supported!", eMethod)
 
@@ -797,7 +782,7 @@ class FOMHelper(object):
 
         iIndex: int = 0
         while iIndex < Array.Length(arTypes):
-            eType: "FIGURE_OF_MERIT_COMPUTE_TYPE" = FIGURE_OF_MERIT_COMPUTE_TYPE(int(arTypes[iIndex]))
+            eType: "FigureOfMeritNavigationComputeType" = FigureOfMeritNavigationComputeType(int(arTypes[iIndex]))
             if not oDOP.is_type_supported(eType):
                 Assert.fail("The {0} Type should be supported!", eType)
 
@@ -805,12 +790,12 @@ class FOMHelper(object):
             oDOP.set_type(eType)
             self.m_logger.WriteLine6("\t\t\t\tThe new Type is: {0}", oDOP.type)
             Assert.assertEqual(eType, oDOP.type)
-            if ((eType == FIGURE_OF_MERIT_COMPUTE_TYPE.BEST_FOUR_ACC)) or (
-                (eType == FIGURE_OF_MERIT_COMPUTE_TYPE.OVER_DETERMINED)
+            if ((eType == FigureOfMeritNavigationComputeType.BEST_4_ACCURACY)) or (
+                (eType == FigureOfMeritNavigationComputeType.OVER_DETERMINED)
             ):
                 with pytest.raises(Exception):
                     definitionData: "IFigureOfMeritDefinitionData" = oDOP.type_data
-            elif eType == FIGURE_OF_MERIT_COMPUTE_TYPE.BEST4:
+            elif eType == FigureOfMeritNavigationComputeType.BEST_4:
                 definitionData: "IFigureOfMeritDefinitionData" = clr.CastAs(
                     oDOP.type_data, IFigureOfMeritDefinitionData
                 )
@@ -819,22 +804,22 @@ class FOMHelper(object):
                 )
                 Assert.assertIsNotNone(oBest4)
                 # BestN
-                self.m_logger.WriteLine6("\t\t\t\t\tThe current Best4 metric is: {0}", oBest4.best4_metric)
-                oBest4.best4_metric = FIGURE_OF_MERIT_METHOD.NDOP
-                self.m_logger.WriteLine6("\t\t\t\t\tThe new Best4 metric is: {0}", oBest4.best4_metric)
-                supportedTypes = oBest4.best4_metric_supported_types
+                self.m_logger.WriteLine6("\t\t\t\t\tThe current Best4 metric is: {0}", oBest4.best_4_metric)
+                oBest4.best_4_metric = FigureOfMeritMethod.NDOP
+                self.m_logger.WriteLine6("\t\t\t\t\tThe new Best4 metric is: {0}", oBest4.best_4_metric)
+                supportedTypes = oBest4.best_4_metric_supported_types
                 omethod: typing.Any
                 for omethod in supportedTypes:
-                    method: "FIGURE_OF_MERIT_METHOD" = FIGURE_OF_MERIT_METHOD(int(omethod))
-                    Assert.assertTrue(oBest4.is_best4_metric_supported(method))
-                    oBest4.best4_metric = method
-                    Assert.assertEqual(method, oBest4.best4_metric)
+                    method: "FigureOfMeritMethod" = FigureOfMeritMethod(int(omethod))
+                    Assert.assertTrue(oBest4.is_best_4_metric_supported(method))
+                    oBest4.best_4_metric = method
+                    Assert.assertEqual(method, oBest4.best_4_metric)
 
-                Assert.assertFalse(oBest4.is_best4_metric_supported(FIGURE_OF_MERIT_METHOD.HDOP3))
+                Assert.assertFalse(oBest4.is_best_4_metric_supported(FigureOfMeritMethod.HDOP3))
                 with pytest.raises(Exception):
-                    oBest4.best4_metric = FIGURE_OF_MERIT_METHOD.HDOP3
-            elif ((eType == FIGURE_OF_MERIT_COMPUTE_TYPE.BEST_N)) or (
-                (eType == FIGURE_OF_MERIT_COMPUTE_TYPE.BEST_N_ACC)
+                    oBest4.best_4_metric = FigureOfMeritMethod.HDOP3
+            elif ((eType == FigureOfMeritNavigationComputeType.BEST_N)) or (
+                (eType == FigureOfMeritNavigationComputeType.BEST_N_ACCURACY)
             ):
                 oBestN: "FigureOfMeritDefinitionDataBestN" = clr.CastAs(
                     oDOP.type_data, FigureOfMeritDefinitionDataBestN
@@ -850,28 +835,24 @@ class FOMHelper(object):
                 supportedTypes = oBestN.best_n_metric_supported_types
                 omethod: typing.Any
                 for omethod in supportedTypes:
-                    method: "FIGURE_OF_MERIT_METHOD" = FIGURE_OF_MERIT_METHOD(int(omethod))
+                    method: "FigureOfMeritMethod" = FigureOfMeritMethod(int(omethod))
                     Assert.assertTrue(oBestN.is_best_n_metric_supported(method))
                     oBestN.best_n_metric = method
                     Assert.assertEqual(method, oBestN.best_n_metric)
 
-                Assert.assertFalse(oBestN.is_best_n_metric_supported(FIGURE_OF_MERIT_METHOD.HDOP3))
+                Assert.assertFalse(oBestN.is_best_n_metric_supported(FigureOfMeritMethod.HDOP3))
                 with pytest.raises(Exception):
-                    oBestN.best_n_metric = FIGURE_OF_MERIT_METHOD.HDOP3
+                    oBestN.best_n_metric = FigureOfMeritMethod.HDOP3
             else:
                 Assert.fail("Invalid Type - {0}!", eType)
 
             iIndex += 1
 
         # Invalid Value Action
-        oDOP.invalid_value_action = FIGURE_OF_MERIT_INVALID_VALUE_ACTION_TYPE.INVALID_VALUE_ACTION_IGNORE
-        Assert.assertEqual(
-            FIGURE_OF_MERIT_INVALID_VALUE_ACTION_TYPE.INVALID_VALUE_ACTION_IGNORE, oDOP.invalid_value_action
-        )
-        oDOP.invalid_value_action = FIGURE_OF_MERIT_INVALID_VALUE_ACTION_TYPE.INVALID_VALUE_ACTION_INCLUDE
-        Assert.assertEqual(
-            FIGURE_OF_MERIT_INVALID_VALUE_ACTION_TYPE.INVALID_VALUE_ACTION_INCLUDE, oDOP.invalid_value_action
-        )
+        oDOP.invalid_value_action = FigureOfMeritInvalidValueActionType.IGNORE
+        Assert.assertEqual(FigureOfMeritInvalidValueActionType.IGNORE, oDOP.invalid_value_action)
+        oDOP.invalid_value_action = FigureOfMeritInvalidValueActionType.INCLUDE
+        Assert.assertEqual(FigureOfMeritInvalidValueActionType.INCLUDE, oDOP.invalid_value_action)
 
         # TimeStep
         self.m_logger.WriteLine6("\t\t\tThe current TimeStep is: {0}", oDOP.time_step)
@@ -890,7 +871,7 @@ class FOMHelper(object):
         if bReadOnly:
             # IsVisible
             with pytest.raises(Exception):
-                oAttributes.is_visible = True
+                oAttributes.show_graphics = True
             # FillPoints
             with pytest.raises(Exception):
                 oAttributes.fill_points = True
@@ -903,10 +884,10 @@ class FOMHelper(object):
 
         else:
             # IsVisible (false)
-            self.m_logger.WriteLine4("\tThe current IsVisible is: {0}", oAttributes.is_visible)
-            oAttributes.is_visible = False
-            self.m_logger.WriteLine4("\tThe new IsVisible is: {0}", oAttributes.is_visible)
-            Assert.assertFalse(oAttributes.is_visible)
+            self.m_logger.WriteLine4("\tThe current IsVisible is: {0}", oAttributes.show_graphics)
+            oAttributes.show_graphics = False
+            self.m_logger.WriteLine4("\tThe new IsVisible is: {0}", oAttributes.show_graphics)
+            Assert.assertFalse(oAttributes.show_graphics)
             # FillPoints (readonly)
             with pytest.raises(Exception):
                 oAttributes.fill_points = True
@@ -917,9 +898,9 @@ class FOMHelper(object):
             with pytest.raises(Exception):
                 oAttributes.color = Colors.from_argb(1122867)
             # IsVisible (true)
-            oAttributes.is_visible = True
-            self.m_logger.WriteLine4("\tThe new IsVisible is: {0}", oAttributes.is_visible)
-            Assert.assertTrue(oAttributes.is_visible)
+            oAttributes.show_graphics = True
+            self.m_logger.WriteLine4("\tThe new IsVisible is: {0}", oAttributes.show_graphics)
+            Assert.assertTrue(oAttributes.show_graphics)
             # FillPoints
             self.m_logger.WriteLine4("\tThe current FillPoints is: {0}", oAttributes.fill_points)
             oAttributes.fill_points = True
@@ -961,7 +942,7 @@ class FOMHelper(object):
             self.GfxAttributes(clr.CastAs(oAttributes, IFigureOfMeritGraphics2DAttributes), bReadOnly)
             # Accumulation (readonly)
             with pytest.raises(Exception):
-                oAttributes.accumulation = FIGURE_OF_MERIT_GRAPHICS_2D_ACCUMULATION.NOT_CURRENT
+                oAttributes.accumulation = FigureOfMeritGraphics2DAccumulation.NOT_CURRENT
 
         else:
             klass: "FigureOfMeritGraphics2DAttributesAnimation" = clr.CastAs(
@@ -978,18 +959,18 @@ class FOMHelper(object):
             self.GfxAttributes(clr.CastAs(oAttributes, IFigureOfMeritGraphics2DAttributes), bReadOnly)
             # Accumulation
             self.m_logger.WriteLine6("\tThe current Accumulation is: {0}", oAttributes.accumulation)
-            oAttributes.accumulation = FIGURE_OF_MERIT_GRAPHICS_2D_ACCUMULATION.CURRENT_TIME
+            oAttributes.accumulation = FigureOfMeritGraphics2DAccumulation.CURRENT_TIME
             self.m_logger.WriteLine6("\tThe new Accumulation is: {0}", oAttributes.accumulation)
-            Assert.assertEqual(FIGURE_OF_MERIT_GRAPHICS_2D_ACCUMULATION.CURRENT_TIME, oAttributes.accumulation)
-            oAttributes.accumulation = FIGURE_OF_MERIT_GRAPHICS_2D_ACCUMULATION.NOT_CURRENT
+            Assert.assertEqual(FigureOfMeritGraphics2DAccumulation.CURRENT_TIME, oAttributes.accumulation)
+            oAttributes.accumulation = FigureOfMeritGraphics2DAccumulation.NOT_CURRENT
             self.m_logger.WriteLine6("\tThe new Accumulation is: {0}", oAttributes.accumulation)
-            Assert.assertEqual(FIGURE_OF_MERIT_GRAPHICS_2D_ACCUMULATION.NOT_CURRENT, oAttributes.accumulation)
-            oAttributes.accumulation = FIGURE_OF_MERIT_GRAPHICS_2D_ACCUMULATION.NOT_UP_TO_CURRENT
+            Assert.assertEqual(FigureOfMeritGraphics2DAccumulation.NOT_CURRENT, oAttributes.accumulation)
+            oAttributes.accumulation = FigureOfMeritGraphics2DAccumulation.NOT_UP_TO_CURRENT
             self.m_logger.WriteLine6("\tThe new Accumulation is: {0}", oAttributes.accumulation)
-            Assert.assertEqual(FIGURE_OF_MERIT_GRAPHICS_2D_ACCUMULATION.NOT_UP_TO_CURRENT, oAttributes.accumulation)
-            oAttributes.accumulation = FIGURE_OF_MERIT_GRAPHICS_2D_ACCUMULATION.UP_TO_CURRENT
+            Assert.assertEqual(FigureOfMeritGraphics2DAccumulation.NOT_UP_TO_CURRENT, oAttributes.accumulation)
+            oAttributes.accumulation = FigureOfMeritGraphics2DAccumulation.UP_TO_CURRENT
             self.m_logger.WriteLine6("\tThe new Accumulation is: {0}", oAttributes.accumulation)
-            Assert.assertEqual(FIGURE_OF_MERIT_GRAPHICS_2D_ACCUMULATION.UP_TO_CURRENT, oAttributes.accumulation)
+            Assert.assertEqual(FigureOfMeritGraphics2DAccumulation.UP_TO_CURRENT, oAttributes.accumulation)
 
             oAttributes.fill_points = True
             oAttributes.fill_translucency = 55.0
@@ -1006,14 +987,14 @@ class FOMHelper(object):
         if bReadOnly:
             if bIsVisibleReadOnly:
                 with pytest.raises(Exception):
-                    oContours.is_visible = True
+                    oContours.show_graphics = True
 
             # ContourType (readonly)
             with pytest.raises(Exception):
-                oContours.contour_type = FIGURE_OF_MERIT_GRAPHICS_2D_CONTOUR_TYPE.BLOCK_FILL
+                oContours.contour_type = FigureOfMeritGraphics2DContourType.BLOCK_FILL
             # ColorMethod (readonly)
             with pytest.raises(Exception):
-                oContours.color_method = FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD.EXPLICIT
+                oContours.color_method = FigureOfMeritGraphics2DColorMethod.EXPLICIT
             # RampColor (readonly)
             self.GfxRampColor(oContours.ramp_color, bReadOnly)
             # LevelAttributes (readonly)
@@ -1023,38 +1004,38 @@ class FOMHelper(object):
 
         else:
             # IsVisible (false)
-            self.m_logger.WriteLine4("\tThe current IsVisible is: {0}", oContours.is_visible)
-            oContours.is_visible = False
-            self.m_logger.WriteLine4("\tThe new IsVisible is: {0}", oContours.is_visible)
-            Assert.assertFalse(oContours.is_visible)
+            self.m_logger.WriteLine4("\tThe current IsVisible is: {0}", oContours.show_graphics)
+            oContours.show_graphics = False
+            self.m_logger.WriteLine4("\tThe new IsVisible is: {0}", oContours.show_graphics)
+            Assert.assertFalse(oContours.show_graphics)
             # ContourType (readonly)
             with pytest.raises(Exception):
-                oContours.contour_type = FIGURE_OF_MERIT_GRAPHICS_2D_CONTOUR_TYPE.BLOCK_FILL
+                oContours.contour_type = FigureOfMeritGraphics2DContourType.BLOCK_FILL
             # ColorMethod (readonly)
             with pytest.raises(Exception):
-                oContours.color_method = FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD.EXPLICIT
+                oContours.color_method = FigureOfMeritGraphics2DColorMethod.EXPLICIT
             # IsVisible (true)
-            oContours.is_visible = True
-            self.m_logger.WriteLine4("\tThe new IsVisible is: {0}", oContours.is_visible)
-            Assert.assertTrue(oContours.is_visible)
+            oContours.show_graphics = True
+            self.m_logger.WriteLine4("\tThe new IsVisible is: {0}", oContours.show_graphics)
+            Assert.assertTrue(oContours.show_graphics)
             # ContourType
             self.m_logger.WriteLine6("\tThe current ContourType is: {0}", oContours.contour_type)
-            oContours.contour_type = FIGURE_OF_MERIT_GRAPHICS_2D_CONTOUR_TYPE.BLOCK_FILL
+            oContours.contour_type = FigureOfMeritGraphics2DContourType.BLOCK_FILL
             self.m_logger.WriteLine6("\tThe new ContourType is: {0}", oContours.contour_type)
-            Assert.assertEqual(FIGURE_OF_MERIT_GRAPHICS_2D_CONTOUR_TYPE.BLOCK_FILL, oContours.contour_type)
-            oContours.contour_type = FIGURE_OF_MERIT_GRAPHICS_2D_CONTOUR_TYPE.SMOOTH_FILL
+            Assert.assertEqual(FigureOfMeritGraphics2DContourType.BLOCK_FILL, oContours.contour_type)
+            oContours.contour_type = FigureOfMeritGraphics2DContourType.SMOOTH_FILL
             self.m_logger.WriteLine6("\tThe new ContourType is: {0}", oContours.contour_type)
-            Assert.assertEqual(FIGURE_OF_MERIT_GRAPHICS_2D_CONTOUR_TYPE.SMOOTH_FILL, oContours.contour_type)
+            Assert.assertEqual(FigureOfMeritGraphics2DContourType.SMOOTH_FILL, oContours.contour_type)
             # ColorMethod
             self.m_logger.WriteLine6("\tThe current ColorMethod is: {0}", oContours.color_method)
-            oContours.color_method = FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD.EXPLICIT
+            oContours.color_method = FigureOfMeritGraphics2DColorMethod.EXPLICIT
             self.m_logger.WriteLine6("\tThe new ColorMethod is: {0}", oContours.color_method)
-            Assert.assertEqual(FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD.EXPLICIT, oContours.color_method)
+            Assert.assertEqual(FigureOfMeritGraphics2DColorMethod.EXPLICIT, oContours.color_method)
             # LevelAttributes
             self.GfxLevelAttributes(oContours.level_attributes, oContours.color_method, bReadOnly)
-            oContours.color_method = FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD.COLOR_RAMP
+            oContours.color_method = FigureOfMeritGraphics2DColorMethod.COLOR_RAMP
             self.m_logger.WriteLine6("\tThe new ColorMethod is: {0}", oContours.color_method)
-            Assert.assertEqual(FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD.COLOR_RAMP, oContours.color_method)
+            Assert.assertEqual(FigureOfMeritGraphics2DColorMethod.COLOR_RAMP, oContours.color_method)
             # RampColor
             self.GfxRampColor(oContours.ramp_color, bReadOnly)
             # LevelAttributes
@@ -1063,10 +1044,10 @@ class FOMHelper(object):
             self.GfxLegend(oContours.legend, bReadOnly, bIsVisibleReadOnly)
 
             # Show up to max only option
-            oContours.show_up_to_max_only = True
-            Assert.assertTrue(oContours.show_up_to_max_only)
-            oContours.show_up_to_max_only = False
-            Assert.assertFalse(oContours.show_up_to_max_only)
+            oContours.show_up_to_maximum_only = True
+            Assert.assertTrue(oContours.show_up_to_maximum_only)
+            oContours.show_up_to_maximum_only = False
+            Assert.assertFalse(oContours.show_up_to_maximum_only)
 
         self.m_logger.WriteLine("----- GRAPHICS CONTOURS TEST ----- END -----")
 
@@ -1170,7 +1151,7 @@ class FOMHelper(object):
     def GfxLevelAttributes(
         self,
         oCollection: "FigureOfMeritGraphics2DLevelAttributesCollection",
-        eMethod: "FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD",
+        eMethod: "FigureOfMeritGraphics2DColorMethod",
         bReadOnly: bool,
     ):
         self.m_logger.WriteLine("----- GRAPHICS LEVEL ATTRIBUTES TEST ----- BEGIN -----")
@@ -1228,7 +1209,7 @@ class FOMHelper(object):
             Assert.assertEqual(47, gfxLevelAttributesElement.level)
             # Color
             self.m_logger.WriteLine6("\tThe current Color is: 0x{0:X}", gfxLevelAttributesElement.color)
-            if eMethod == FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD.EXPLICIT:
+            if eMethod == FigureOfMeritGraphics2DColorMethod.EXPLICIT:
                 gfxLevelAttributesElement.color = Colors.from_argb(13426158)
                 self.m_logger.WriteLine6("\tThe new Color is: 0x{0:X}", gfxLevelAttributesElement.color)
                 AssertEx.AreEqual(Colors.from_argb(13426158), gfxLevelAttributesElement.color)
@@ -1351,10 +1332,10 @@ class FOMHelper(object):
                 oOptions.title = "Text Options ReadOnly Title"
             # NumDecimalDigits
             with pytest.raises(Exception):
-                oOptions.num_decimal_digits = 12
+                oOptions.number_of_decimal_digits = 12
             # FloatingPointFormat
             with pytest.raises(Exception):
-                oOptions.floating_point_format = FIGURE_OF_MERIT_GRAPHICS_2D_FLOATING_POINT_FORMAT.FLOATING_POINT
+                oOptions.floating_point_format = FigureOfMeritGraphics2DFloatingPointFormat.FLOATING_POINT
 
         else:
             # Title
@@ -1366,28 +1347,28 @@ class FOMHelper(object):
             self.m_logger.WriteLine5("\tThe new Title is: {0}", oOptions.title)
             Assert.assertEqual("A new Legend title", oOptions.title)
             # NumDecimalDigits
-            self.m_logger.WriteLine3("\tThe current NumDecimalDigits is: {0}", oOptions.num_decimal_digits)
-            oOptions.num_decimal_digits = 12
-            self.m_logger.WriteLine3("\tThe new NumDecimalDigits is: {0}", oOptions.num_decimal_digits)
-            Assert.assertEqual(12, oOptions.num_decimal_digits)
+            self.m_logger.WriteLine3("\tThe current NumDecimalDigits is: {0}", oOptions.number_of_decimal_digits)
+            oOptions.number_of_decimal_digits = 12
+            self.m_logger.WriteLine3("\tThe new NumDecimalDigits is: {0}", oOptions.number_of_decimal_digits)
+            Assert.assertEqual(12, oOptions.number_of_decimal_digits)
             with pytest.raises(Exception):
-                oOptions.num_decimal_digits = 123
+                oOptions.number_of_decimal_digits = 123
             # FloatingPointFormat
             self.m_logger.WriteLine6("\tThe current FloatingPointFormat is: {0}", oOptions.floating_point_format)
-            oOptions.floating_point_format = FIGURE_OF_MERIT_GRAPHICS_2D_FLOATING_POINT_FORMAT.FLOATING_POINT
+            oOptions.floating_point_format = FigureOfMeritGraphics2DFloatingPointFormat.FLOATING_POINT
             self.m_logger.WriteLine6("\tThe new FloatingPointFormat is: {0}", oOptions.floating_point_format)
             Assert.assertEqual(
-                FIGURE_OF_MERIT_GRAPHICS_2D_FLOATING_POINT_FORMAT.FLOATING_POINT, oOptions.floating_point_format
+                FigureOfMeritGraphics2DFloatingPointFormat.FLOATING_POINT, oOptions.floating_point_format
             )
-            oOptions.floating_point_format = FIGURE_OF_MERIT_GRAPHICS_2D_FLOATING_POINT_FORMAT.SCIENTIFIC_LOWERCASE_E
+            oOptions.floating_point_format = FigureOfMeritGraphics2DFloatingPointFormat.SCIENTIFIC_LOWERCASE_E
             self.m_logger.WriteLine6("\tThe new FloatingPointFormat is: {0}", oOptions.floating_point_format)
             Assert.assertEqual(
-                FIGURE_OF_MERIT_GRAPHICS_2D_FLOATING_POINT_FORMAT.SCIENTIFIC_LOWERCASE_E, oOptions.floating_point_format
+                FigureOfMeritGraphics2DFloatingPointFormat.SCIENTIFIC_LOWERCASE_E, oOptions.floating_point_format
             )
-            oOptions.floating_point_format = FIGURE_OF_MERIT_GRAPHICS_2D_FLOATING_POINT_FORMAT.SCIENTIFIC_UPPERCASE_E
+            oOptions.floating_point_format = FigureOfMeritGraphics2DFloatingPointFormat.SCIENTIFIC_UPPERCASE_E
             self.m_logger.WriteLine6("\tThe new FloatingPointFormat is: {0}", oOptions.floating_point_format)
             Assert.assertEqual(
-                FIGURE_OF_MERIT_GRAPHICS_2D_FLOATING_POINT_FORMAT.SCIENTIFIC_UPPERCASE_E, oOptions.floating_point_format
+                FigureOfMeritGraphics2DFloatingPointFormat.SCIENTIFIC_UPPERCASE_E, oOptions.floating_point_format
             )
 
     # endregion
@@ -1406,13 +1387,13 @@ class FOMHelper(object):
                 oOptions.color_square_width = 34
             # Direction
             with pytest.raises(Exception):
-                oOptions.direction = FIGURE_OF_MERIT_GRAPHICS_2D_DIRECTION.HORIZONTAL_MAX_TO_MIN
+                oOptions.direction = FigureOfMeritGraphics2DDirection.HORIZONTAL_MAXIMUM_TO_MINIMUM
             # MaxSquaresPerRow
             with pytest.raises(Exception):
-                oOptions.max_squares_per_row = 12
+                oOptions.maximum_squares_per_row = 12
             # MaxSquaresPerColumn
             with pytest.raises(Exception):
-                oOptions.max_squares_per_column = 34
+                oOptions.maximum_squares_per_column = 34
 
         else:
             # ColorSquareHeight
@@ -1429,63 +1410,63 @@ class FOMHelper(object):
             Assert.assertEqual(34, oOptions.color_square_width)
             with pytest.raises(Exception):
                 oOptions.color_square_width = 123
-            # Direction (HORIZONTAL_MAX_TO_MIN)
+            # Direction (HORIZONTAL_MAXIMUM_TO_MINIMUM)
             self.m_logger.WriteLine6("\tThe current Direction is: {0}", oOptions.direction)
-            oOptions.direction = FIGURE_OF_MERIT_GRAPHICS_2D_DIRECTION.HORIZONTAL_MAX_TO_MIN
+            oOptions.direction = FigureOfMeritGraphics2DDirection.HORIZONTAL_MAXIMUM_TO_MINIMUM
             self.m_logger.WriteLine6("\tThe new Direction is: {0}", oOptions.direction)
-            Assert.assertEqual(FIGURE_OF_MERIT_GRAPHICS_2D_DIRECTION.HORIZONTAL_MAX_TO_MIN, oOptions.direction)
+            Assert.assertEqual(FigureOfMeritGraphics2DDirection.HORIZONTAL_MAXIMUM_TO_MINIMUM, oOptions.direction)
             # MaxSquaresPerRow
-            self.m_logger.WriteLine3("\tThe current MaxSquaresPerRow is: {0}", oOptions.max_squares_per_row)
-            oOptions.max_squares_per_row = 34
-            self.m_logger.WriteLine3("\tThe new MaxSquaresPerRow is: {0}", oOptions.max_squares_per_row)
-            Assert.assertEqual(34, oOptions.max_squares_per_row)
+            self.m_logger.WriteLine3("\tThe current MaxSquaresPerRow is: {0}", oOptions.maximum_squares_per_row)
+            oOptions.maximum_squares_per_row = 34
+            self.m_logger.WriteLine3("\tThe new MaxSquaresPerRow is: {0}", oOptions.maximum_squares_per_row)
+            Assert.assertEqual(34, oOptions.maximum_squares_per_row)
             with pytest.raises(Exception):
-                oOptions.max_squares_per_row = 123456
+                oOptions.maximum_squares_per_row = 123456
             # MaxSquaresPerColumn
             with pytest.raises(Exception):
-                oOptions.max_squares_per_column = 34
-            # Direction (HORIZONTAL_MIN_TO_MAX)
-            oOptions.direction = FIGURE_OF_MERIT_GRAPHICS_2D_DIRECTION.HORIZONTAL_MIN_TO_MAX
+                oOptions.maximum_squares_per_column = 34
+            # Direction (HORIZONTAL_MINIMUM_TO_MAXIMUM)
+            oOptions.direction = FigureOfMeritGraphics2DDirection.HORIZONTAL_MINIMUM_TO_MAXIMUM
             self.m_logger.WriteLine6("\tThe new Direction is: {0}", oOptions.direction)
-            Assert.assertEqual(FIGURE_OF_MERIT_GRAPHICS_2D_DIRECTION.HORIZONTAL_MIN_TO_MAX, oOptions.direction)
+            Assert.assertEqual(FigureOfMeritGraphics2DDirection.HORIZONTAL_MINIMUM_TO_MAXIMUM, oOptions.direction)
             # MaxSquaresPerRow
-            self.m_logger.WriteLine3("\tThe current MaxSquaresPerRow is: {0}", oOptions.max_squares_per_row)
-            oOptions.max_squares_per_row = 56
-            self.m_logger.WriteLine3("\tThe new MaxSquaresPerRow is: {0}", oOptions.max_squares_per_row)
-            Assert.assertEqual(56, oOptions.max_squares_per_row)
+            self.m_logger.WriteLine3("\tThe current MaxSquaresPerRow is: {0}", oOptions.maximum_squares_per_row)
+            oOptions.maximum_squares_per_row = 56
+            self.m_logger.WriteLine3("\tThe new MaxSquaresPerRow is: {0}", oOptions.maximum_squares_per_row)
+            Assert.assertEqual(56, oOptions.maximum_squares_per_row)
             with pytest.raises(Exception):
-                oOptions.max_squares_per_row = 12345
+                oOptions.maximum_squares_per_row = 12345
             # MaxSquaresPerColumn
             with pytest.raises(Exception):
-                oOptions.max_squares_per_column = 12
-            # Direction (VERTICAL_MAX_TO_MIN)
-            oOptions.direction = FIGURE_OF_MERIT_GRAPHICS_2D_DIRECTION.VERTICAL_MAX_TO_MIN
+                oOptions.maximum_squares_per_column = 12
+            # Direction (VERTICAL_MAXIMUM_TO_MINIMUM)
+            oOptions.direction = FigureOfMeritGraphics2DDirection.VERTICAL_MAXIMUM_TO_MINIMUM
             self.m_logger.WriteLine6("\tThe new Direction is: {0}", oOptions.direction)
-            Assert.assertEqual(FIGURE_OF_MERIT_GRAPHICS_2D_DIRECTION.VERTICAL_MAX_TO_MIN, oOptions.direction)
+            Assert.assertEqual(FigureOfMeritGraphics2DDirection.VERTICAL_MAXIMUM_TO_MINIMUM, oOptions.direction)
             # MaxSquaresPerColumn
-            self.m_logger.WriteLine3("\tThe current MaxSquaresPerColumn is: {0}", oOptions.max_squares_per_column)
-            oOptions.max_squares_per_column = 56
-            self.m_logger.WriteLine3("\tThe new MaxSquaresPerColumn is: {0}", oOptions.max_squares_per_column)
-            Assert.assertEqual(56, oOptions.max_squares_per_column)
+            self.m_logger.WriteLine3("\tThe current MaxSquaresPerColumn is: {0}", oOptions.maximum_squares_per_column)
+            oOptions.maximum_squares_per_column = 56
+            self.m_logger.WriteLine3("\tThe new MaxSquaresPerColumn is: {0}", oOptions.maximum_squares_per_column)
+            Assert.assertEqual(56, oOptions.maximum_squares_per_column)
             with pytest.raises(Exception):
-                oOptions.max_squares_per_column = 12345
+                oOptions.maximum_squares_per_column = 12345
             # MaxSquaresPerRow
             with pytest.raises(Exception):
-                oOptions.max_squares_per_row = 12
-            # Direction (VERTICAL_MIN_TO_MAX)
-            oOptions.direction = FIGURE_OF_MERIT_GRAPHICS_2D_DIRECTION.VERTICAL_MIN_TO_MAX
+                oOptions.maximum_squares_per_row = 12
+            # Direction (VERTICAL_MINIMUM_TO_MAXIMUM)
+            oOptions.direction = FigureOfMeritGraphics2DDirection.VERTICAL_MINIMUM_TO_MAXIMUM
             self.m_logger.WriteLine6("\tThe new Direction is: {0}", oOptions.direction)
-            Assert.assertEqual(FIGURE_OF_MERIT_GRAPHICS_2D_DIRECTION.VERTICAL_MIN_TO_MAX, oOptions.direction)
+            Assert.assertEqual(FigureOfMeritGraphics2DDirection.VERTICAL_MINIMUM_TO_MAXIMUM, oOptions.direction)
             # MaxSquaresPerColumn
-            self.m_logger.WriteLine3("\tThe current MaxSquaresPerColumn is: {0}", oOptions.max_squares_per_column)
-            oOptions.max_squares_per_column = 32
-            self.m_logger.WriteLine3("\tThe new MaxSquaresPerColumn is: {0}", oOptions.max_squares_per_column)
-            Assert.assertEqual(32, oOptions.max_squares_per_column)
+            self.m_logger.WriteLine3("\tThe current MaxSquaresPerColumn is: {0}", oOptions.maximum_squares_per_column)
+            oOptions.maximum_squares_per_column = 32
+            self.m_logger.WriteLine3("\tThe new MaxSquaresPerColumn is: {0}", oOptions.maximum_squares_per_column)
+            Assert.assertEqual(32, oOptions.maximum_squares_per_column)
             with pytest.raises(Exception):
-                oOptions.max_squares_per_column = 12345
+                oOptions.maximum_squares_per_column = 12345
             # MaxSquaresPerRow
             with pytest.raises(Exception):
-                oOptions.max_squares_per_row = 34
+                oOptions.maximum_squares_per_row = 34
 
     # endregion
 
@@ -1497,22 +1478,22 @@ class FOMHelper(object):
         if bReadOnly and bIsVisibleReadOnly:
             # IsVisibleOnMap (readonly)
             with pytest.raises(Exception):
-                oWindow.is_visible_on_map = True
+                oWindow.show_on_map = True
             # PositionOnMap (readonly)
             self.GfxLegendPositionOnMap(oWindow.position_on_map, bReadOnly)
 
         else:
             # IsVisibleOnMap (false)
-            self.m_logger.WriteLine4("\tThe current IsVisibleOnMap is: {0}", oWindow.is_visible_on_map)
-            oWindow.is_visible_on_map = False
-            self.m_logger.WriteLine4("\tThe new IsVisibleOnMap is: {0}", oWindow.is_visible_on_map)
-            Assert.assertFalse(oWindow.is_visible_on_map)
+            self.m_logger.WriteLine4("\tThe current IsVisibleOnMap is: {0}", oWindow.show_on_map)
+            oWindow.show_on_map = False
+            self.m_logger.WriteLine4("\tThe new IsVisibleOnMap is: {0}", oWindow.show_on_map)
+            Assert.assertFalse(oWindow.show_on_map)
             # PositionOnMap (readonly)
             self.GfxLegendPositionOnMap(oWindow.position_on_map, True)
             # IsVisibleOnMap (true)
-            oWindow.is_visible_on_map = True
-            self.m_logger.WriteLine4("\tThe new IsVisibleOnMap is: {0}", oWindow.is_visible_on_map)
-            Assert.assertTrue(oWindow.is_visible_on_map)
+            oWindow.show_on_map = True
+            self.m_logger.WriteLine4("\tThe new IsVisibleOnMap is: {0}", oWindow.show_on_map)
+            Assert.assertTrue(oWindow.show_on_map)
             # PositionOnMap
             self.GfxLegendPositionOnMap(oWindow.position_on_map, False)
 
@@ -1526,7 +1507,7 @@ class FOMHelper(object):
         if bReadOnly and bIsVisibleReadOnly:
             # IsVisibleOnMap (readonly)
             with pytest.raises(Exception):
-                oWindow.is_visible_on_map = True
+                oWindow.show_on_map = True
             # Translucency (readonly)
             with pytest.raises(Exception):
                 oWindow.translucency = 67.89
@@ -1535,16 +1516,16 @@ class FOMHelper(object):
 
         else:
             # IsVisibleOnMap (false)
-            self.m_logger.WriteLine4("\tThe current IsVisibleOnMap is: {0}", oWindow.is_visible_on_map)
-            oWindow.is_visible_on_map = False
-            self.m_logger.WriteLine4("\tThe new IsVisibleOnMap is: {0}", oWindow.is_visible_on_map)
-            Assert.assertFalse(oWindow.is_visible_on_map)
+            self.m_logger.WriteLine4("\tThe current IsVisibleOnMap is: {0}", oWindow.show_on_map)
+            oWindow.show_on_map = False
+            self.m_logger.WriteLine4("\tThe new IsVisibleOnMap is: {0}", oWindow.show_on_map)
+            Assert.assertFalse(oWindow.show_on_map)
             # PositionOnMap (readonly)
             self.GfxLegendPositionOnMap(oWindow.position_on_map, True)
             # IsVisibleOnMap (true)
-            oWindow.is_visible_on_map = True
-            self.m_logger.WriteLine4("\tThe new IsVisibleOnMap is: {0}", oWindow.is_visible_on_map)
-            Assert.assertTrue(oWindow.is_visible_on_map)
+            oWindow.show_on_map = True
+            self.m_logger.WriteLine4("\tThe new IsVisibleOnMap is: {0}", oWindow.show_on_map)
+            Assert.assertTrue(oWindow.show_on_map)
             # PositionOnMap
             self.GfxLegendPositionOnMap(oWindow.position_on_map, False)
             # Translucency
@@ -1587,7 +1568,7 @@ class FOMHelper(object):
     # endregion
 
     # region GfxObjectCoverage
-    def GfxObjectCoverage(self, oStkObjectCoverage: "StkObjectCoverage"):
+    def GfxObjectCoverage(self, oStkObjectCoverage: "ObjectCoverage"):
         self.m_logger.WriteLine("----- OBJECT COVERAGE GRAPHICS TEST ----- BEGIN -----")
         Assert.assertIsNotNone(oStkObjectCoverage)
         oObjCovFOM: "ObjectCoverageFigureOfMerit" = clr.CastAs(
@@ -1596,7 +1577,7 @@ class FOMHelper(object):
         Assert.assertIsNotNone(oObjCovFOM)
 
         facAssetName: str = "Facility/Facility1"
-        oObjCovFOM.set_access_constraint_definition(FIGURE_OF_MERIT_CONSTRAINT_NAME.ALTITUDE)
+        oObjCovFOM.set_access_constraint_definition(FigureOfMeritConstraintName.ALTITUDE)
         oCollection: "CoverageAssetListCollection" = oStkObjectCoverage.assets
         if Array.IndexOf(oCollection.available_assets, facAssetName) != -1:
             if oCollection.can_assign_asset(facAssetName):
@@ -1620,35 +1601,35 @@ class FOMHelper(object):
                     "\tThe current object coverage (static) contour LineStyle is: {0}",
                     oObjCovFOM.graphics.static.contours.line_style,
                 )
-                oObjCovFOM.graphics.static.contours.line_style = LINE_STYLE.DOT_DASHED
+                oObjCovFOM.graphics.static.contours.line_style = LineStyle.DOT_DASHED
                 self.m_logger.WriteLine6(
                     "\tThe new object coverage (static)  contour LineStyle is: {0}",
                     oObjCovFOM.graphics.static.contours.line_style,
                 )
-                Assert.assertEqual(LINE_STYLE.DOT_DASHED, oObjCovFOM.graphics.static.contours.line_style)
+                Assert.assertEqual(LineStyle.DOT_DASHED, oObjCovFOM.graphics.static.contours.line_style)
 
                 # animation
                 self.m_logger.WriteLine3(
                     "\tThe current object coverage (animation) contour LineWidth is: {0}",
-                    oObjCovFOM.graphics.animation.contours.line_width,
+                    oObjCovFOM.graphics.animation_settings.contours.line_width,
                 )
-                oObjCovFOM.graphics.animation.contours.line_width = 4
+                oObjCovFOM.graphics.animation_settings.contours.line_width = 4
                 self.m_logger.WriteLine3(
                     "\tThe new object coverage (animation) contour LineWidth is: {0}",
-                    oObjCovFOM.graphics.animation.contours.line_width,
+                    oObjCovFOM.graphics.animation_settings.contours.line_width,
                 )
-                Assert.assertEqual(4, oObjCovFOM.graphics.animation.contours.line_width)
+                Assert.assertEqual(4, oObjCovFOM.graphics.animation_settings.contours.line_width)
 
                 self.m_logger.WriteLine6(
                     "\tThe current object coverage (animation) contour LineStyle is: {0}",
-                    oObjCovFOM.graphics.animation.contours.line_style,
+                    oObjCovFOM.graphics.animation_settings.contours.line_style,
                 )
-                oObjCovFOM.graphics.animation.contours.line_style = LINE_STYLE.DOT_DASHED
+                oObjCovFOM.graphics.animation_settings.contours.line_style = LineStyle.DOT_DASHED
                 self.m_logger.WriteLine6(
                     "\tThe new object coverage (animation)  contour LineStyle is: {0}",
-                    oObjCovFOM.graphics.animation.contours.line_style,
+                    oObjCovFOM.graphics.animation_settings.contours.line_style,
                 )
-                Assert.assertEqual(LINE_STYLE.DOT_DASHED, oObjCovFOM.graphics.animation.contours.line_style)
+                Assert.assertEqual(LineStyle.DOT_DASHED, oObjCovFOM.graphics.animation_settings.contours.line_style)
 
                 oStkObjectCoverage.clear_coverage()
 

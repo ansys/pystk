@@ -18,11 +18,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.SensorGraphics3D.boresight_marker_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.SensorGraphics3D.show_boresight_marker`
               - Opt whether to display the sensor's boresight marker.
-            * - :py:attr:`~ansys.stk.core.stkobjects.SensorGraphics3D.radial_lines_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.SensorGraphics3D.show_radial_lines`
               - Opt whether to display radial lines, i.e. a series of solid lines extending from the vertex to the base of the sensor.
-            * - :py:attr:`~ansys.stk.core.stkobjects.SensorGraphics3D.translucent_lines_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.SensorGraphics3D.show_translucent_lines`
               - Opt whether sensor lines are set to the translucency of the cone.Otherwise, the sensor and radial lines are solid.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorGraphics3D.percent_translucency`
               - Specify the percent translucency of the sensor projection. Translucency ranges from 0 to 100 percent, where 100 percent is invisible. Dimensionless.
@@ -32,7 +32,7 @@ Overview
               - Length of the sensor's projection when it is not intersecting the Earth. In this case, distance is computed so that the projection of the outermost point on the contour along the boresight is equal to the specified distance. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorGraphics3D.targeting`
               - For a targeted sensor, specify the targeting distance, or how far past the target a sensor is projected (typically zero). Uses Distance Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.SensorGraphics3D.enable_const_ext_length`
+            * - :py:attr:`~ansys.stk.core.stkobjects.SensorGraphics3D.enable_constant_extension_length`
               - Opt whether to use the extension distance as the maximum, i.e. to scale the maximum distance drawn along the sensor boundary to the targeting extension distance for a targeting sensor or the space projection extension distance for a non-targeting sensor.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorGraphics3D.enable_range_constraint`
               - If a range constraint has been imposed on the sensor, opt whether the sensor graphics display a dome-shaped cap on the end of the sensor projection.
@@ -44,7 +44,7 @@ Overview
               - Get the sensor's Data Display properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorGraphics3D.vector`
               - Get the sensor's Vector properties.
-            * - :py:attr:`~ansys.stk.core.stkobjects.SensorGraphics3D.fill_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.SensorGraphics3D.show_fill`
               - Opt whether to display fill for the sensor projection, i.e. to display the sensor's footprint as a filled area on the surface of the central body.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorGraphics3D.fill_translucency`
               - Specify the fill translucency percentage for the sensor. Dimensionless.
@@ -53,9 +53,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorGraphics3D.is_targeted`
               - Is the sensor targeted?
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorGraphics3D.space_projection_intervals`
-              - Returns time dependent space projection list.
+              - Return time dependent space projection list.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorGraphics3D.target_projection_intervals`
-              - Returns time dependent target projection list.
+              - Return time dependent target projection list.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorGraphics3D.fill_resolution`
               - Specify the fill resolution angle for the sensor. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorGraphics3D.persist_projected_lines_in_space`
@@ -78,20 +78,20 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: boresight_marker_visible
-    :canonical: ansys.stk.core.stkobjects.SensorGraphics3D.boresight_marker_visible
+.. py:property:: show_boresight_marker
+    :canonical: ansys.stk.core.stkobjects.SensorGraphics3D.show_boresight_marker
     :type: bool
 
     Opt whether to display the sensor's boresight marker.
 
-.. py:property:: radial_lines_visible
-    :canonical: ansys.stk.core.stkobjects.SensorGraphics3D.radial_lines_visible
+.. py:property:: show_radial_lines
+    :canonical: ansys.stk.core.stkobjects.SensorGraphics3D.show_radial_lines
     :type: bool
 
     Opt whether to display radial lines, i.e. a series of solid lines extending from the vertex to the base of the sensor.
 
-.. py:property:: translucent_lines_visible
-    :canonical: ansys.stk.core.stkobjects.SensorGraphics3D.translucent_lines_visible
+.. py:property:: show_translucent_lines
+    :canonical: ansys.stk.core.stkobjects.SensorGraphics3D.show_translucent_lines
     :type: bool
 
     Opt whether sensor lines are set to the translucency of the cone.Otherwise, the sensor and radial lines are solid.
@@ -104,7 +104,7 @@ Property detail
 
 .. py:property:: projection_type
     :canonical: ansys.stk.core.stkobjects.SensorGraphics3D.projection_type
-    :type: SENSOR_GRAPHICS_3D_PROJECTION_TYPE
+    :type: SensorGraphics3DProjectionType
 
     Select the projection type from the AgESnVOProjectionType enumeration.
 
@@ -120,8 +120,8 @@ Property detail
 
     For a targeted sensor, specify the targeting distance, or how far past the target a sensor is projected (typically zero). Uses Distance Dimension.
 
-.. py:property:: enable_const_ext_length
-    :canonical: ansys.stk.core.stkobjects.SensorGraphics3D.enable_const_ext_length
+.. py:property:: enable_constant_extension_length
+    :canonical: ansys.stk.core.stkobjects.SensorGraphics3D.enable_constant_extension_length
     :type: bool
 
     Opt whether to use the extension distance as the maximum, i.e. to scale the maximum distance drawn along the sensor boundary to the targeting extension distance for a targeting sensor or the space projection extension distance for a non-targeting sensor.
@@ -156,8 +156,8 @@ Property detail
 
     Get the sensor's Vector properties.
 
-.. py:property:: fill_visible
-    :canonical: ansys.stk.core.stkobjects.SensorGraphics3D.fill_visible
+.. py:property:: show_fill
+    :canonical: ansys.stk.core.stkobjects.SensorGraphics3D.show_fill
     :type: bool
 
     Opt whether to display fill for the sensor projection, i.e. to display the sensor's footprint as a filled area on the surface of the central body.
@@ -170,7 +170,7 @@ Property detail
 
 .. py:property:: inherit_from_2d
     :canonical: ansys.stk.core.stkobjects.SensorGraphics3D.inherit_from_2d
-    :type: SENSOR_GRAPHICS_3D_INHERIT_FROM_2D
+    :type: SensorGraphics3DInheritFrom2D
 
     Specify how projection distances that are computed based on 2D Graphics projection settings are displayed in the 3D Graphics window.
 
@@ -184,13 +184,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.SensorGraphics3D.space_projection_intervals
     :type: SensorGraphics3DSpaceProjectionCollection
 
-    Returns time dependent space projection list.
+    Return time dependent space projection list.
 
 .. py:property:: target_projection_intervals
     :canonical: ansys.stk.core.stkobjects.SensorGraphics3D.target_projection_intervals
     :type: SensorGraphics3DTargetProjectionCollection
 
-    Returns time dependent target projection list.
+    Return time dependent target projection list.
 
 .. py:property:: fill_resolution
     :canonical: ansys.stk.core.stkobjects.SensorGraphics3D.fill_resolution
@@ -212,7 +212,7 @@ Property detail
 
 .. py:property:: projection_time_dependency
     :canonical: ansys.stk.core.stkobjects.SensorGraphics3D.projection_time_dependency
-    :type: SENSOR_GRAPHICS_3D_PROJECTION_TIME_DEPENDENCY_TYPE
+    :type: SensorGraphics3DProjectionTimeDependencyType
 
     Specify how projection distances are determined in the 3D Graphics window. Either using a constant distance at all times or set of user defined intervals and distance values.
 

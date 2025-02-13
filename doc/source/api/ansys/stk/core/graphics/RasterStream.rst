@@ -9,10 +9,6 @@ RasterStream
 
 .. py:currentmodule:: RasterStream
 
-Overview
---------
-
-
 
 Import detail
 -------------

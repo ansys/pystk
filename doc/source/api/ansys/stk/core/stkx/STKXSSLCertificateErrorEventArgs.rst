@@ -30,7 +30,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkx.STKXSSLCertificateErrorEventArgs.is_error_ignored`
-              - Returns whether the invalid certificate error is ignored.
+              - Return whether the invalid certificate error is ignored.
             * - :py:attr:`~ansys.stk.core.stkx.STKXSSLCertificateErrorEventArgs.serial_number`
               - Certificate's serial number.
             * - :py:attr:`~ansys.stk.core.stkx.STKXSSLCertificateErrorEventArgs.issuer`
@@ -46,7 +46,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkx.STKXSSLCertificateErrorEventArgs.pem_data`
               - Certificate's PEM data encoded as base-64.
             * - :py:attr:`~ansys.stk.core.stkx.STKXSSLCertificateErrorEventArgs.handled`
-              - Indicates whether the event should continue be routed to the listeners. Setting Handled to true will prevent the event from reaching any remaining listeners.
+              - Indicate whether the event should continue be routed to the listeners. Setting Handled to true will prevent the event from reaching any remaining listeners.
 
 
 
@@ -65,7 +65,7 @@ Property detail
     :canonical: ansys.stk.core.stkx.STKXSSLCertificateErrorEventArgs.is_error_ignored
     :type: bool
 
-    Returns whether the invalid certificate error is ignored.
+    Return whether the invalid certificate error is ignored.
 
 .. py:property:: serial_number
     :canonical: ansys.stk.core.stkx.STKXSSLCertificateErrorEventArgs.serial_number
@@ -113,34 +113,34 @@ Property detail
     :canonical: ansys.stk.core.stkx.STKXSSLCertificateErrorEventArgs.handled
     :type: bool
 
-    Indicates whether the event should continue be routed to the listeners. Setting Handled to true will prevent the event from reaching any remaining listeners.
+    Indicate whether the event should continue be routed to the listeners. Setting Handled to true will prevent the event from reaching any remaining listeners.
 
 
 Method detail
 -------------
 
-.. py:method:: set_ignore_error(self, ignoreError: bool) -> None
+.. py:method:: set_ignore_error(self, ignore_error: bool) -> None
     :canonical: ansys.stk.core.stkx.STKXSSLCertificateErrorEventArgs.set_ignore_error
 
     Specify True to ignore the certificate error and continue with establishing secure HTTP connection to the remote server.
 
     :Parameters:
 
-    **ignoreError** : :obj:`~bool`
+    **ignore_error** : :obj:`~bool`
 
     :Returns:
 
         :obj:`~None`
 
 
-.. py:method:: set_ignore_error_permanently(self, ignoreErrorPermanently: bool) -> None
+.. py:method:: set_ignore_error_permanently(self, ignore_error_permanently: bool) -> None
     :canonical: ansys.stk.core.stkx.STKXSSLCertificateErrorEventArgs.set_ignore_error_permanently
 
     Specify True to ignore the certificate error and add the certificate to the list of trusted certificates.
 
     :Parameters:
 
-    **ignoreErrorPermanently** : :obj:`~bool`
+    **ignore_error_permanently** : :obj:`~bool`
 
     :Returns:
 

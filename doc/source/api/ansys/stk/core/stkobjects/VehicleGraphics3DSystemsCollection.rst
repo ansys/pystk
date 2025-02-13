@@ -38,15 +38,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.count`
-              - Returns the number of elements in a collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection._NewEnum`
-              - Returns an enumerator that can iterate through the collection.
+              - Return the number of elements in a collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection._new_enum`
+              - Return an enumerator that can iterate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.supported_systems`
-              - Returns a list of element types that can be added to the collection.
+              - Return a list of element types that can be added to the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.inertial_by_window`
-              - Gets the Inertial By Window System.
+              - Get the Inertial By Window System.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.fixed_by_window`
-              - Gets the Fixed By Window System.
+              - Get the Fixed By Window System.
 
 
 
@@ -65,31 +65,31 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.count
     :type: int
 
-    Returns the number of elements in a collection.
+    Return the number of elements in a collection.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection._new_enum
     :type: EnumeratorProxy
 
-    Returns an enumerator that can iterate through the collection.
+    Return an enumerator that can iterate through the collection.
 
 .. py:property:: supported_systems
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.supported_systems
     :type: list
 
-    Returns a list of element types that can be added to the collection.
+    Return a list of element types that can be added to the collection.
 
 .. py:property:: inertial_by_window
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.inertial_by_window
     :type: VehicleGraphics3DSystemsSpecialElement
 
-    Gets the Inertial By Window System.
+    Get the Inertial By Window System.
 
 .. py:property:: fixed_by_window
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.fixed_by_window
     :type: VehicleGraphics3DSystemsSpecialElement
 
-    Gets the Fixed By Window System.
+    Get the Fixed By Window System.
 
 
 Method detail
@@ -132,28 +132,28 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, systemName: str) -> VehicleGraphics3DSystemsElement
+.. py:method:: add(self, system_name: str) -> VehicleGraphics3DSystemsElement
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.add
 
     Add a new element to the collection.
 
     :Parameters:
 
-    **systemName** : :obj:`~str`
+    **system_name** : :obj:`~str`
 
     :Returns:
 
         :obj:`~VehicleGraphics3DSystemsElement`
 
 
-.. py:method:: contains(self, systemName: str) -> bool
+.. py:method:: contains(self, system_name: str) -> bool
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.contains
 
     Check whether the given frame is already in the list.
 
     :Parameters:
 
-    **systemName** : :obj:`~str`
+    **system_name** : :obj:`~str`
 
     :Returns:
 
@@ -161,14 +161,14 @@ Method detail
 
 
 
-.. py:method:: remove(self, systemName: str) -> None
+.. py:method:: remove(self, system_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.remove
 
     Remove a system by name.
 
     :Parameters:
 
-    **systemName** : :obj:`~str`
+    **system_name** : :obj:`~str`
 
     :Returns:
 

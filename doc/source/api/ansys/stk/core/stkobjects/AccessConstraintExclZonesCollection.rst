@@ -24,11 +24,11 @@ Overview
               - Remove an item given an index.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.remove_all`
               - Remove all items from the collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.remove_excl_zone`
+            * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.remove_exclusion_zone`
               - Remove an Exclusion Zone using the min and max lat/lon values. Lat/Lon Values use Latitude and Longitude Dimensions respectively.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.change_excl_zone`
+            * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.change_exclusion_zone`
               - Update Exclusion Zone data at a given index. Lat/Lon Values use Latitude and Longitude Dimensions respectively.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.get_excl_zone`
+            * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.get_exclusion_zone`
               - Return min and max lat/lon values at a given index. Lat/Lon Values use Latitude and Longitude Dimensions respectively.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.to_array`
               - Return a four-dimensional array of min/max lat/lon values beginning at a given position and having specified number of rows.
@@ -44,18 +44,18 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.count`
               - Number of items in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.constraint_name`
-              - Gets the constraint name.
+              - Get the constraint name.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.is_plugin`
-              - Returns true if the access constraint is a plugin.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.excl_intvl`
-              - Gets or sets the ExclInterval.
+              - Return true if the access constraint is a plugin.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.exclusion_interval`
+              - Get or set the ExclInterval.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.constraint_type`
-              - Gets the constraint type.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection._NewEnum`
+              - Get the constraint type.
+            * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection._new_enum`
               - Enumerate the IAgAccessCnstrZone interfaces.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.max_time_step`
+            * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.maximum_time_step`
               - Maximum time step used in adaptive sampling.
-            * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.max_relative_motion`
+            * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.maximum_relative_motion`
               - Maximum relative motion used in adaptive sampling.
 
 
@@ -81,40 +81,40 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.constraint_name
     :type: str
 
-    Gets the constraint name.
+    Get the constraint name.
 
 .. py:property:: is_plugin
     :canonical: ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.is_plugin
     :type: bool
 
-    Returns true if the access constraint is a plugin.
+    Return true if the access constraint is a plugin.
 
-.. py:property:: excl_intvl
-    :canonical: ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.excl_intvl
+.. py:property:: exclusion_interval
+    :canonical: ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.exclusion_interval
     :type: bool
 
-    Gets or sets the ExclInterval.
+    Get or set the ExclInterval.
 
 .. py:property:: constraint_type
     :canonical: ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.constraint_type
-    :type: ACCESS_CONSTRAINTS
+    :type: AccessConstraintType
 
-    Gets the constraint type.
+    Get the constraint type.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection._new_enum
     :type: EnumeratorProxy
 
     Enumerate the IAgAccessCnstrZone interfaces.
 
-.. py:property:: max_time_step
-    :canonical: ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.max_time_step
+.. py:property:: maximum_time_step
+    :canonical: ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.maximum_time_step
     :type: float
 
     Maximum time step used in adaptive sampling.
 
-.. py:property:: max_relative_motion
-    :canonical: ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.max_relative_motion
+.. py:property:: maximum_relative_motion
+    :canonical: ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.maximum_relative_motion
     :type: float
 
     Maximum relative motion used in adaptive sampling.
@@ -146,41 +146,41 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: remove_excl_zone(self, minLat: typing.Any, minLon: typing.Any, maxLat: typing.Any, maxLon: typing.Any) -> None
-    :canonical: ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.remove_excl_zone
+.. py:method:: remove_exclusion_zone(self, min_lat: typing.Any, min_lon: typing.Any, max_lat: typing.Any, max_lon: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.remove_exclusion_zone
 
     Remove an Exclusion Zone using the min and max lat/lon values. Lat/Lon Values use Latitude and Longitude Dimensions respectively.
 
     :Parameters:
 
-    **minLat** : :obj:`~typing.Any`
-    **minLon** : :obj:`~typing.Any`
-    **maxLat** : :obj:`~typing.Any`
-    **maxLon** : :obj:`~typing.Any`
+    **min_lat** : :obj:`~typing.Any`
+    **min_lon** : :obj:`~typing.Any`
+    **max_lat** : :obj:`~typing.Any`
+    **max_lon** : :obj:`~typing.Any`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: change_excl_zone(self, index: int, minLat: typing.Any, minLon: typing.Any, maxLat: typing.Any, maxLon: typing.Any) -> None
-    :canonical: ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.change_excl_zone
+.. py:method:: change_exclusion_zone(self, index: int, min_lat: typing.Any, min_lon: typing.Any, max_lat: typing.Any, max_lon: typing.Any) -> None
+    :canonical: ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.change_exclusion_zone
 
     Update Exclusion Zone data at a given index. Lat/Lon Values use Latitude and Longitude Dimensions respectively.
 
     :Parameters:
 
     **index** : :obj:`~int`
-    **minLat** : :obj:`~typing.Any`
-    **minLon** : :obj:`~typing.Any`
-    **maxLat** : :obj:`~typing.Any`
-    **maxLon** : :obj:`~typing.Any`
+    **min_lat** : :obj:`~typing.Any`
+    **min_lon** : :obj:`~typing.Any`
+    **max_lat** : :obj:`~typing.Any`
+    **max_lon** : :obj:`~typing.Any`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: get_excl_zone(self, index: int) -> typing.Tuple[typing.Any, typing.Any, typing.Any, typing.Any]
-    :canonical: ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.get_excl_zone
+.. py:method:: get_exclusion_zone(self, index: int) -> typing.Tuple[typing.Any, typing.Any, typing.Any, typing.Any]
+    :canonical: ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.get_exclusion_zone
 
     Return min and max lat/lon values at a given index. Lat/Lon Values use Latitude and Longitude Dimensions respectively.
 
@@ -211,7 +211,7 @@ Method detail
 
 
 
-.. py:method:: item(self, index: int) -> AccessConstraintZone
+.. py:method:: item(self, index: int) -> AccessConstraintLatitudeLongitudeZone
     :canonical: ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.item
 
     Get an IAgAccessCnstrZone interface using an index.
@@ -222,7 +222,7 @@ Method detail
 
     :Returns:
 
-        :obj:`~AccessConstraintZone`
+        :obj:`~AccessConstraintLatitudeLongitudeZone`
 
 
 

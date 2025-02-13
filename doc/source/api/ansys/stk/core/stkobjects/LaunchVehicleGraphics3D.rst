@@ -24,7 +24,7 @@ Overview
               - Get the launch vehicle's 3D trajectory frame properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicleGraphics3D.proximity`
               - Get the launch vehicle's 3D proximity properties.
-            * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicleGraphics3D.elev_contours`
+            * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicleGraphics3D.elevation_contours`
               - Get the launch vehicle's 3D elevation contour properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicleGraphics3D.covariance_pointing_contour`
               - Get the launch vehicle's 3D covariance pointing properties.
@@ -43,7 +43,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicleGraphics3D.model_pointing`
               - Use to point parts of a launch vehicle's model toward a target, such as the Sun or Earth.
             * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicleGraphics3D.drop_lines`
-              - Returns an interface allowing to configure launch vehicle's drop lines.
+              - Return an interface allowing to configure launch vehicle's drop lines.
             * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicleGraphics3D.vapor_trail`
               - Vapor trail attributes.
             * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicleGraphics3D.saa`
@@ -51,7 +51,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicleGraphics3D.velocity_covariance`
               - Get the launch vehicle's 3D velocity covariance properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.LaunchVehicleGraphics3D.radar_cross_section`
-              - Gets the radar cross section graphics interface.
+              - Get the radar cross section graphics interface.
 
 
 
@@ -68,7 +68,7 @@ Property detail
 
 .. py:property:: model
     :canonical: ansys.stk.core.stkobjects.LaunchVehicleGraphics3D.model
-    :type: VehicleTrajectoryGraphics3DModel
+    :type: VehicleGraphics3DModelTrajectory
 
     Get the launch vehicle's 3D model properties.
 
@@ -84,9 +84,9 @@ Property detail
 
     Get the launch vehicle's 3D proximity properties.
 
-.. py:property:: elev_contours
-    :canonical: ansys.stk.core.stkobjects.LaunchVehicleGraphics3D.elev_contours
-    :type: VehicleGraphics3DElevContours
+.. py:property:: elevation_contours
+    :canonical: ansys.stk.core.stkobjects.LaunchVehicleGraphics3D.elevation_contours
+    :type: VehicleGraphics3DElevationContours
 
     Get the launch vehicle's 3D elevation contour properties.
 
@@ -142,7 +142,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.LaunchVehicleGraphics3D.drop_lines
     :type: VehicleGraphics3DTrajectoryDropLines
 
-    Returns an interface allowing to configure launch vehicle's drop lines.
+    Return an interface allowing to configure launch vehicle's drop lines.
 
 .. py:property:: vapor_trail
     :canonical: ansys.stk.core.stkobjects.LaunchVehicleGraphics3D.vapor_trail
@@ -166,6 +166,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.LaunchVehicleGraphics3D.radar_cross_section
     :type: RadarCrossSectionGraphics3D
 
-    Gets the radar cross section graphics interface.
+    Get the radar cross section graphics interface.
 
 

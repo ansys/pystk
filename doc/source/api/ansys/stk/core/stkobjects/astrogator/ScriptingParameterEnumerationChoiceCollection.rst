@@ -43,12 +43,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ScriptingParameterEnumerationChoiceCollection._NewEnum`
-              - Allows you to enumerate through the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ScriptingParameterEnumerationChoiceCollection._new_enum`
+              - Allow you to enumerate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ScriptingParameterEnumerationChoiceCollection.count`
-              - Returns the size of the collection.
+              - Return the size of the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ScriptingParameterEnumerationChoiceCollection.provide_runtime_type_info`
-              - Returns the IAgRuntimeTypeInfo interface to access properties at runtime.
+              - Return the IAgRuntimeTypeInfo interface to access properties at runtime.
 
 
 
@@ -63,62 +63,62 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingParameterEnumerationChoiceCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingParameterEnumerationChoiceCollection._new_enum
     :type: EnumeratorProxy
 
-    Allows you to enumerate through the collection.
+    Allow you to enumerate through the collection.
 
 .. py:property:: count
     :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingParameterEnumerationChoiceCollection.count
     :type: int
 
-    Returns the size of the collection.
+    Return the size of the collection.
 
 .. py:property:: provide_runtime_type_info
     :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingParameterEnumerationChoiceCollection.provide_runtime_type_info
     :type: IRuntimeTypeInfo
 
-    Returns the IAgRuntimeTypeInfo interface to access properties at runtime.
+    Return the IAgRuntimeTypeInfo interface to access properties at runtime.
 
 
 Method detail
 -------------
 
-.. py:method:: item(self, indexOrName: typing.Any) -> ScriptingParameterEnumerationChoice
+.. py:method:: item(self, index_or_name: typing.Any) -> ScriptingParameterEnumerationChoice
     :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingParameterEnumerationChoiceCollection.item
 
     Allow you to iterate through the collection.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 
         :obj:`~ScriptingParameterEnumerationChoice`
 
-.. py:method:: add(self, choiceName: str) -> ScriptingParameterEnumerationChoice
+.. py:method:: add(self, choice_name: str) -> ScriptingParameterEnumerationChoice
     :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingParameterEnumerationChoiceCollection.add
 
     Add an enumeration choice to the collection.
 
     :Parameters:
 
-    **choiceName** : :obj:`~str`
+    **choice_name** : :obj:`~str`
 
     :Returns:
 
         :obj:`~ScriptingParameterEnumerationChoice`
 
-.. py:method:: remove(self, indexOrName: typing.Any) -> None
+.. py:method:: remove(self, index_or_name: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingParameterEnumerationChoiceCollection.remove
 
     Remove an enumeration choice.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 
@@ -126,14 +126,14 @@ Method detail
 
 
 
-.. py:method:: cut(self, indexOrName: typing.Any) -> None
+.. py:method:: cut(self, index_or_name: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingParameterEnumerationChoiceCollection.cut
 
     Copy the enumeration choice into the clipboard and removes the enumeration choice from the list.
 
     :Parameters:
 
-    **indexOrName** : :obj:`~typing.Any`
+    **index_or_name** : :obj:`~typing.Any`
 
     :Returns:
 

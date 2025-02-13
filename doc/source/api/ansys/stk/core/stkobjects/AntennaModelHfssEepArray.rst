@@ -21,25 +21,25 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelHfssEepArray.width`
-              - Gets the array width.
+              - Get the array width.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelHfssEepArray.height`
-              - Gets the array height.
+              - Get the array height.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelHfssEepArray.number_of_elements`
-              - Gets the number of array elements.
+              - Get the number of array elements.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelHfssEepArray.supported_beam_direction_provider_types`
-              - Gets an array of valid beam direction provider types.
+              - Get an array of valid beam direction provider types.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelHfssEepArray.beam_direction_provider_type`
-              - Gets or sets the beam direction provider type.
+              - Get or set the beam direction provider type.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelHfssEepArray.beam_direction_provider`
-              - Gets the beam direction provider.
+              - Get the beam direction provider.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelHfssEepArray.beamformer_type`
-              - Gets or sets beamformer type.
+              - Get or set beamformer type.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelHfssEepArray.beamformer`
-              - Gets the beamformer.
+              - Get the beamformer.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelHfssEepArray.element_configuration`
-              - Gets the element configuration.
+              - Get the element configuration.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelHfssEepArray.elements`
-              - Gets the collection of elements.
+              - Get the collection of elements.
 
 
 
@@ -58,60 +58,60 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.AntennaModelHfssEepArray.width
     :type: float
 
-    Gets the array width.
+    Get the array width.
 
 .. py:property:: height
     :canonical: ansys.stk.core.stkobjects.AntennaModelHfssEepArray.height
     :type: float
 
-    Gets the array height.
+    Get the array height.
 
 .. py:property:: number_of_elements
     :canonical: ansys.stk.core.stkobjects.AntennaModelHfssEepArray.number_of_elements
     :type: int
 
-    Gets the number of array elements.
+    Get the number of array elements.
 
 .. py:property:: supported_beam_direction_provider_types
     :canonical: ansys.stk.core.stkobjects.AntennaModelHfssEepArray.supported_beam_direction_provider_types
     :type: list
 
-    Gets an array of valid beam direction provider types.
+    Get an array of valid beam direction provider types.
 
 .. py:property:: beam_direction_provider_type
     :canonical: ansys.stk.core.stkobjects.AntennaModelHfssEepArray.beam_direction_provider_type
-    :type: DIRECTION_PROVIDER_TYPE
+    :type: DirectionProviderType
 
-    Gets or sets the beam direction provider type.
+    Get or set the beam direction provider type.
 
 .. py:property:: beam_direction_provider
     :canonical: ansys.stk.core.stkobjects.AntennaModelHfssEepArray.beam_direction_provider
     :type: IDirectionProvider
 
-    Gets the beam direction provider.
+    Get the beam direction provider.
 
 .. py:property:: beamformer_type
     :canonical: ansys.stk.core.stkobjects.AntennaModelHfssEepArray.beamformer_type
-    :type: BEAMFORMER_TYPE
+    :type: BeamformerType
 
-    Gets or sets beamformer type.
+    Get or set beamformer type.
 
 .. py:property:: beamformer
     :canonical: ansys.stk.core.stkobjects.AntennaModelHfssEepArray.beamformer
     :type: IBeamformer
 
-    Gets the beamformer.
+    Get the beamformer.
 
 .. py:property:: element_configuration
     :canonical: ansys.stk.core.stkobjects.AntennaModelHfssEepArray.element_configuration
     :type: ElementConfigurationHfssEepFile
 
-    Gets the element configuration.
+    Get the element configuration.
 
 .. py:property:: elements
     :canonical: ansys.stk.core.stkobjects.AntennaModelHfssEepArray.elements
     :type: ElementCollection
 
-    Gets the collection of elements.
+    Get the collection of elements.
 
 

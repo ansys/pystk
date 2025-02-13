@@ -22,9 +22,9 @@ Overview
               - The Name property.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DModelTransformation.value`
               - The Value property. Dimensionless.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DModelTransformation.min`
+            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DModelTransformation.minimum`
               - The Min property. Dimensionless.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DModelTransformation.max`
+            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DModelTransformation.maximum`
               - The Max property. Dimensionless.
 
 
@@ -52,14 +52,14 @@ Property detail
 
     The Value property. Dimensionless.
 
-.. py:property:: min
-    :canonical: ansys.stk.core.stkobjects.Graphics3DModelTransformation.min
+.. py:property:: minimum
+    :canonical: ansys.stk.core.stkobjects.Graphics3DModelTransformation.minimum
     :type: float
 
     The Min property. Dimensionless.
 
-.. py:property:: max
-    :canonical: ansys.stk.core.stkobjects.Graphics3DModelTransformation.max
+.. py:property:: maximum
+    :canonical: ansys.stk.core.stkobjects.Graphics3DModelTransformation.maximum
     :type: float
 
     The Max property. Dimensionless.

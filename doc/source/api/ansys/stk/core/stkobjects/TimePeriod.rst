@@ -9,10 +9,6 @@ TimePeriod
 
 .. py:currentmodule:: TimePeriod
 
-Overview
---------
-
-
 
 Import detail
 -------------

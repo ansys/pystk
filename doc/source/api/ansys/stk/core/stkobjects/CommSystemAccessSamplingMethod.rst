@@ -9,10 +9,6 @@ CommSystemAccessSamplingMethod
 
 .. py:currentmodule:: CommSystemAccessSamplingMethod
 
-Overview
---------
-
-
 
 Import detail
 -------------

@@ -28,13 +28,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultTextMessage.count`
-              - Returns a number of strings in the message.
-            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultTextMessage._NewEnum`
-              - Returns a string enumeration.
+              - Return a number of strings in the message.
+            * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultTextMessage._new_enum`
+              - Return a string enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultTextMessage.messages`
-              - Returns an array of strings in the message.
+              - Return an array of strings in the message.
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultTextMessage.is_failure`
-              - Determines if the message represents a failure notification.
+              - Determine if the message represents a failure notification.
 
 
 
@@ -53,25 +53,25 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.DataProviderResultTextMessage.count
     :type: int
 
-    Returns a number of strings in the message.
+    Return a number of strings in the message.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.DataProviderResultTextMessage._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.DataProviderResultTextMessage._new_enum
     :type: EnumeratorProxy
 
-    Returns a string enumeration.
+    Return a string enumeration.
 
 .. py:property:: messages
     :canonical: ansys.stk.core.stkobjects.DataProviderResultTextMessage.messages
     :type: list
 
-    Returns an array of strings in the message.
+    Return an array of strings in the message.
 
 .. py:property:: is_failure
     :canonical: ansys.stk.core.stkobjects.DataProviderResultTextMessage.is_failure
     :type: bool
 
-    Determines if the message represents a failure notification.
+    Determine if the message represents a failure notification.
 
 
 Method detail

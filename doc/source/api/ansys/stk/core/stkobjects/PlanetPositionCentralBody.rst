@@ -22,18 +22,18 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.PlanetPositionCentralBody.central_body`
               - The central body used in defining the planet object.
-            * - :py:attr:`~ansys.stk.core.stkobjects.PlanetPositionCentralBody.auto_rename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.PlanetPositionCentralBody.rename_automatically`
               - Specify whether the object should automatically be renamed to have the same name as the selected central body.
             * - :py:attr:`~ansys.stk.core.stkobjects.PlanetPositionCentralBody.radius`
               - The radius of the selected central body. Uses Distance Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.PlanetPositionCentralBody.ephem_source`
+            * - :py:attr:`~ansys.stk.core.stkobjects.PlanetPositionCentralBody.ephemeris_source`
               - The ephemeris source for the selected central body. A member of the AgEEphemSourceType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.PlanetPositionCentralBody.available_central_bodies`
-              - Returns an array of all available Central Bodies.
-            * - :py:attr:`~ansys.stk.core.stkobjects.PlanetPositionCentralBody.available_ephem_source_types`
-              - Returns an array of all available Ephemeris Source Types.
+              - Return an array of all available Central Bodies.
+            * - :py:attr:`~ansys.stk.core.stkobjects.PlanetPositionCentralBody.available_ephemeris_source_types`
+              - Return an array of all available Ephemeris Source Types.
             * - :py:attr:`~ansys.stk.core.stkobjects.PlanetPositionCentralBody.jplde_version`
-              - Returns a JPL DE Version.
+              - Return a JPL DE Version.
 
 
 
@@ -54,8 +54,8 @@ Property detail
 
     The central body used in defining the planet object.
 
-.. py:property:: auto_rename
-    :canonical: ansys.stk.core.stkobjects.PlanetPositionCentralBody.auto_rename
+.. py:property:: rename_automatically
+    :canonical: ansys.stk.core.stkobjects.PlanetPositionCentralBody.rename_automatically
     :type: bool
 
     Specify whether the object should automatically be renamed to have the same name as the selected central body.
@@ -66,9 +66,9 @@ Property detail
 
     The radius of the selected central body. Uses Distance Dimension.
 
-.. py:property:: ephem_source
-    :canonical: ansys.stk.core.stkobjects.PlanetPositionCentralBody.ephem_source
-    :type: EPHEM_SOURCE_TYPE
+.. py:property:: ephemeris_source
+    :canonical: ansys.stk.core.stkobjects.PlanetPositionCentralBody.ephemeris_source
+    :type: EphemSourceType
 
     The ephemeris source for the selected central body. A member of the AgEEphemSourceType enumeration.
 
@@ -76,18 +76,18 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.PlanetPositionCentralBody.available_central_bodies
     :type: list
 
-    Returns an array of all available Central Bodies.
+    Return an array of all available Central Bodies.
 
-.. py:property:: available_ephem_source_types
-    :canonical: ansys.stk.core.stkobjects.PlanetPositionCentralBody.available_ephem_source_types
+.. py:property:: available_ephemeris_source_types
+    :canonical: ansys.stk.core.stkobjects.PlanetPositionCentralBody.available_ephemeris_source_types
     :type: list
 
-    Returns an array of all available Ephemeris Source Types.
+    Return an array of all available Ephemeris Source Types.
 
 .. py:property:: jplde_version
     :canonical: ansys.stk.core.stkobjects.PlanetPositionCentralBody.jplde_version
     :type: str
 
-    Returns a JPL DE Version.
+    Return a JPL DE Version.
 
 

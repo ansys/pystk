@@ -19,7 +19,7 @@ class EarlyBoundTests(TestBase):
         TestBase.LoadTestScenario(Path.Combine("MissileTests", "MissileTests.sc"))
         EarlyBoundTests.AG_MSL = Missile(TestBase.Application.current_scenario.children["Missile1"])
         EarlyBoundTests.AG_SENSOR = Sensor(
-            (IStkObject(EarlyBoundTests.AG_MSL)).children.new(STK_OBJECT_TYPE.SENSOR, "Sensor1")
+            (IStkObject(EarlyBoundTests.AG_MSL)).children.new(STKObjectType.SENSOR, "Sensor1")
         )
 
     @staticmethod
@@ -29,9 +29,9 @@ class EarlyBoundTests(TestBase):
         TestBase.Uninitialize()
 
     def setUp(self):
-        TestBase.Application.unit_preferences.set_current_unit("AngleUnit", "deg")
-        TestBase.Application.unit_preferences.set_current_unit("LatitudeUnit", "deg")
-        TestBase.Application.unit_preferences.set_current_unit("LongitudeUnit", "deg")
+        TestBase.Application.units_preferences.set_current_unit("AngleUnit", "deg")
+        TestBase.Application.units_preferences.set_current_unit("LatitudeUnit", "deg")
+        TestBase.Application.units_preferences.set_current_unit("LongitudeUnit", "deg")
 
     @parameterized.expand([(90, 81, 2.0), (90, 81, 4.0), (92, 83, 2.1), (93.6, 85.2, 2.23)])
     def test_BUG85667_ImpactLocationIsSetCorrectlyForBallisticPropagators(
@@ -40,33 +40,33 @@ class EarlyBoundTests(TestBase):
         # Verifies the impact location is set correctly for ballistic propagators
 
         with UnitPreferenceState(TestBase.Application) as unitState:
-            TestBase.Application.unit_preferences.set_current_unit("LatitudeUnit", "deg")
-            TestBase.Application.unit_preferences.set_current_unit("LongitudeUnit", "deg")
-            TestBase.Application.unit_preferences.set_current_unit("AngleUnit", "deg")
-            TestBase.Application.unit_preferences.set_current_unit("DistanceUnit", "km")
-            TestBase.Application.unit_preferences.set_current_unit("TimeUnit", "sec")
-            if TestBase.Application.current_scenario.children.contains(STK_OBJECT_TYPE.MISSILE, "Test"):
-                TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.MISSILE, "Test")
+            TestBase.Application.units_preferences.set_current_unit("LatitudeUnit", "deg")
+            TestBase.Application.units_preferences.set_current_unit("LongitudeUnit", "deg")
+            TestBase.Application.units_preferences.set_current_unit("AngleUnit", "deg")
+            TestBase.Application.units_preferences.set_current_unit("DistanceUnit", "km")
+            TestBase.Application.units_preferences.set_current_unit("TimeUnit", "sec")
+            if TestBase.Application.current_scenario.children.contains(STKObjectType.MISSILE, "Test"):
+                TestBase.Application.current_scenario.children.unload(STKObjectType.MISSILE, "Test")
 
             missile: "Missile" = Missile(
-                TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.MISSILE, "Test")
+                TestBase.Application.current_scenario.children.new(STKObjectType.MISSILE, "Test")
             )
             Assert.assertIsNotNone(missile)
 
-            missile.set_trajectory_type(VEHICLE_PROPAGATOR_TYPE.PROPAGATOR_BALLISTIC)
+            missile.set_trajectory_type(PropagatorType.BALLISTIC)
 
-            propagator: "VehiclePropagatorBallistic" = VehiclePropagatorBallistic(missile.trajectory)
+            propagator: "PropagatorBallistic" = PropagatorBallistic(missile.trajectory)
             Assert.assertIsNotNone(propagator)
 
-            propagator.set_launch_type(VEHICLE_LAUNCH.LAUNCH_LLA)
-            launch: "VehicleLaunchLLA" = VehicleLaunchLLA(propagator.launch)
+            propagator.set_launch_type(VehicleLaunch.DETIC)
+            launch: "LaunchVehicleLocationDetic" = LaunchVehicleLocationDetic(propagator.launch)
             Assert.assertIsNotNone(launch)
 
-            launch.lat = 37.9249
-            launch.lon = -75.4765
+            launch.latitude = 37.9249
+            launch.longitude = -75.4765
             launch.altitude = 0.0
 
-            propagator.set_impact_location_type(VEHICLE_IMPACT_LOCATION.IMPACT_LOCATION_LAUNCH_AZ_EL)
+            propagator.set_impact_location_type(VehicleImpactLocation.LAUNCH_AZ_EL)
             impact: "VehicleImpactLocationLaunchAzEl" = VehicleImpactLocationLaunchAzEl(propagator.impact_location)
 
             impact.azimuth = azimuthInDeg
@@ -88,15 +88,15 @@ class EarlyBoundTests(TestBase):
     # region BUG97203
     def test_BUG97203(self):
         missile: "Missile" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.MISSILE, "mymissile"), Missile
+            TestBase.Application.current_scenario.children.new(STKObjectType.MISSILE, "mymissile"), Missile
         )
-        traj: "VehiclePropagatorBallistic" = clr.CastAs(missile.trajectory, VehiclePropagatorBallistic)
-        traj.set_launch_type(VEHICLE_LAUNCH.LAUNCH_LLA)
-        launch: "VehicleLaunchLLA" = clr.CastAs(traj.launch, VehicleLaunchLLA)
-        launch.lat = 77
-        launch.lon = 77
+        traj: "PropagatorBallistic" = clr.CastAs(missile.trajectory, PropagatorBallistic)
+        traj.set_launch_type(VehicleLaunch.DETIC)
+        launch: "LaunchVehicleLocationDetic" = clr.CastAs(traj.launch, LaunchVehicleLocationDetic)
+        launch.latitude = 77
+        launch.longitude = 77
         launch.altitude = 7
-        traj.set_impact_location_type(VEHICLE_IMPACT_LOCATION.IMPACT_LOCATION_LAUNCH_AZ_EL)
+        traj.set_impact_location_type(VehicleImpactLocation.LAUNCH_AZ_EL)
         impact: "VehicleImpactLocationLaunchAzEl" = clr.CastAs(traj.impact_location, VehicleImpactLocationLaunchAzEl)
         impact.azimuth = 77
         impact.delta_v = 7
@@ -110,7 +110,7 @@ class EarlyBoundTests(TestBase):
         dpTimeVar: "DataProviderTimeVarying" = clr.CastAs(dp, DataProviderTimeVarying)
         elems = ["Time", "Lat", "Lon", "Alt"]
 
-        result: "DataProviderResult" = dpTimeVar.exec_elements(
+        result: "DataProviderResult" = dpTimeVar.execute_elements(
             traj.ephemeris_interval.find_start_time(), traj.ephemeris_interval.find_stop_time(), 240, elems
         )
         arTime = result.data_sets[0].get_values()

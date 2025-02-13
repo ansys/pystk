@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcPower.power_source_name`
-              - Gets or sets the power source.
+              - Get or set the power source.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcPower.power_source_name
     :type: str
 
-    Gets or sets the power source.
+    Get or set the power source.
 
 

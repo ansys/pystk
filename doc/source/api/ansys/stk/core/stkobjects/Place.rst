@@ -45,9 +45,9 @@ Overview
               - Get the 2D Graphics properties of the place.
             * - :py:attr:`~ansys.stk.core.stkobjects.Place.position`
               - Get the position of the place.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Place.terrain_norm`
+            * - :py:attr:`~ansys.stk.core.stkobjects.Place.terrain_normal`
               - Set the normal to the local terrain.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Place.terrain_norm_data`
+            * - :py:attr:`~ansys.stk.core.stkobjects.Place.terrain_normal_data`
               - Data used in specifying terrain slope.
             * - :py:attr:`~ansys.stk.core.stkobjects.Place.graphics_3d`
               - Get the 3D Graphics properties of the place.
@@ -56,25 +56,25 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.Place.height_above_ground`
               - Height of place above its model of the ground. Height is measured along the normal to surface defined by reference ellipsoid of the central body. Place models the ground as an ellipsoid passing through the ground position. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.Place.altitude_reference`
-              - Gets or sets the altitude reference of the object.
+              - Get or set the altitude reference of the object.
             * - :py:attr:`~ansys.stk.core.stkobjects.Place.atmosphere`
-              - This property is deprecated. The new RFEnvironment property can be used to configure atmospheric models.
+              - Do not use this property, as it is deprecated. The new RFEnvironment property can be used to configure atmospheric models.
             * - :py:attr:`~ansys.stk.core.stkobjects.Place.radar_clutter_map`
-              - Returns the radar clutter map.
+              - Return the radar clutter map.
             * - :py:attr:`~ansys.stk.core.stkobjects.Place.radar_cross_section`
-              - Returns the radar cross sectoin.
+              - Return the radar cross sectoin.
             * - :py:attr:`~ansys.stk.core.stkobjects.Place.save_terrain_mask_data_in_binary`
               - Save terrain az-el mask data in binary.
             * - :py:attr:`~ansys.stk.core.stkobjects.Place.lighting_obstruction_model`
-              - Gets or sets the obstruction model used in lighting computations.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Place.lighting_max_step`
-              - Gets or sets the maximum step size to use when computing lighting. Only applies (and only can be set) when LightingObstructionModel is eLightingObstructionAzElMask or eLightingObstructionTerrain. Uses Time Dimension.
+              - Get or set the obstruction model used in lighting computations.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Place.lighting_maximum_step`
+              - Get or set the maximum step size to use when computing lighting. Only applies (and only can be set) when LightingObstructionModel is eLightingObstructionAzElMask or eLightingObstructionTerrain. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.Place.laser_environment`
-              - Gets the laser environment.
+              - Get the laser environment.
             * - :py:attr:`~ansys.stk.core.stkobjects.Place.rf_environment`
-              - Gets the RF environment.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Place.max_range_when_computing_az_el_mask`
-              - Gets or sets the maximum range to use when computing the az el mask using terrain data. Zero indicates to use algorithm default. Only applies when GetAzElMask returns eTerrainData (cannot be set if eMaskFile). Uses Distance Dimension.
+              - Get the RF environment.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Place.maximum_range_when_computing_az_el_mask`
+              - Get or set the maximum range to use when computing the az el mask using terrain data. Zero indicates to use algorithm default. Only applies when GetAzElMask returns eTerrainData (cannot be set if eMaskFile). Uses Distance Dimension.
 
 
 
@@ -119,14 +119,14 @@ Property detail
 
     Get the position of the place.
 
-.. py:property:: terrain_norm
-    :canonical: ansys.stk.core.stkobjects.Place.terrain_norm
+.. py:property:: terrain_normal
+    :canonical: ansys.stk.core.stkobjects.Place.terrain_normal
     :type: None
 
     Set the normal to the local terrain.
 
-.. py:property:: terrain_norm_data
-    :canonical: ansys.stk.core.stkobjects.Place.terrain_norm_data
+.. py:property:: terrain_normal_data
+    :canonical: ansys.stk.core.stkobjects.Place.terrain_normal_data
     :type: ITerrainNormData
 
     Data used in specifying terrain slope.
@@ -153,25 +153,25 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Place.altitude_reference
     :type: None
 
-    Gets or sets the altitude reference of the object.
+    Get or set the altitude reference of the object.
 
 .. py:property:: atmosphere
     :canonical: ansys.stk.core.stkobjects.Place.atmosphere
     :type: Atmosphere
 
-    This property is deprecated. The new RFEnvironment property can be used to configure atmospheric models.
+    Do not use this property, as it is deprecated. The new RFEnvironment property can be used to configure atmospheric models.
 
 .. py:property:: radar_clutter_map
     :canonical: ansys.stk.core.stkobjects.Place.radar_clutter_map
     :type: IRadarClutterMapInheritable
 
-    Returns the radar clutter map.
+    Return the radar clutter map.
 
 .. py:property:: radar_cross_section
     :canonical: ansys.stk.core.stkobjects.Place.radar_cross_section
     :type: RadarCrossSectionInheritable
 
-    Returns the radar cross sectoin.
+    Return the radar cross sectoin.
 
 .. py:property:: save_terrain_mask_data_in_binary
     :canonical: ansys.stk.core.stkobjects.Place.save_terrain_mask_data_in_binary
@@ -181,33 +181,33 @@ Property detail
 
 .. py:property:: lighting_obstruction_model
     :canonical: ansys.stk.core.stkobjects.Place.lighting_obstruction_model
-    :type: LIGHTING_OBSTRUCTION_MODEL_TYPE
+    :type: LightingObstructionModelType
 
-    Gets or sets the obstruction model used in lighting computations.
+    Get or set the obstruction model used in lighting computations.
 
-.. py:property:: lighting_max_step
-    :canonical: ansys.stk.core.stkobjects.Place.lighting_max_step
+.. py:property:: lighting_maximum_step
+    :canonical: ansys.stk.core.stkobjects.Place.lighting_maximum_step
     :type: float
 
-    Gets or sets the maximum step size to use when computing lighting. Only applies (and only can be set) when LightingObstructionModel is eLightingObstructionAzElMask or eLightingObstructionTerrain. Uses Time Dimension.
+    Get or set the maximum step size to use when computing lighting. Only applies (and only can be set) when LightingObstructionModel is eLightingObstructionAzElMask or eLightingObstructionTerrain. Uses Time Dimension.
 
 .. py:property:: laser_environment
     :canonical: ansys.stk.core.stkobjects.Place.laser_environment
     :type: PlatformLaserEnvironment
 
-    Gets the laser environment.
+    Get the laser environment.
 
 .. py:property:: rf_environment
     :canonical: ansys.stk.core.stkobjects.Place.rf_environment
     :type: IPlatformRFEnvironment
 
-    Gets the RF environment.
+    Get the RF environment.
 
-.. py:property:: max_range_when_computing_az_el_mask
-    :canonical: ansys.stk.core.stkobjects.Place.max_range_when_computing_az_el_mask
+.. py:property:: maximum_range_when_computing_az_el_mask
+    :canonical: ansys.stk.core.stkobjects.Place.maximum_range_when_computing_az_el_mask
     :type: float
 
-    Gets or sets the maximum range to use when computing the az el mask using terrain data. Zero indicates to use algorithm default. Only applies when GetAzElMask returns eTerrainData (cannot be set if eMaskFile). Uses Distance Dimension.
+    Get or set the maximum range to use when computing the az el mask using terrain data. Zero indicates to use algorithm default. Only applies when GetAzElMask returns eTerrainData (cannot be set if eMaskFile). Uses Distance Dimension.
 
 
 Method detail
@@ -219,14 +219,14 @@ Method detail
 
 
 
-.. py:method:: set_az_el_mask(self, type: AZ_EL_MASK_TYPE, data: typing.Any) -> None
+.. py:method:: set_az_el_mask(self, type: AzElMaskType, data: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.Place.set_az_el_mask
 
     Set an az-el mask. A member of the AgEAzElMaskType enumeration.
 
     :Parameters:
 
-    **type** : :obj:`~AZ_EL_MASK_TYPE`
+    **type** : :obj:`~AzElMaskType`
     **data** : :obj:`~typing.Any`
 
     :Returns:
@@ -249,14 +249,14 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: get_az_el_mask(self) -> AZ_EL_MASK_TYPE
+.. py:method:: get_az_el_mask(self) -> AzElMaskType
     :canonical: ansys.stk.core.stkobjects.Place.get_az_el_mask
 
     Get the az-el mask. A member of the AgEAzElMaskType enumeration.
 
     :Returns:
 
-        :obj:`~AZ_EL_MASK_TYPE`
+        :obj:`~AzElMaskType`
 
 .. py:method:: get_az_el_mask_data(self) -> typing.Any
     :canonical: ansys.stk.core.stkobjects.Place.get_az_el_mask_data

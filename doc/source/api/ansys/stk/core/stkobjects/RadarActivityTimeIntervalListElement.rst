@@ -18,12 +18,12 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarActivityTimeIntervalListElement.active`
-              - Gets or sets whether or not the time component is active.
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarActivityTimeIntervalListElement.is_active`
+              - Get or set whether or not the time component is active.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarActivityTimeIntervalListElement.start`
-              - Gets or sets the interval start time.
+              - Get or set the interval start time.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarActivityTimeIntervalListElement.stop`
-              - Gets or sets the interval start time.
+              - Get or set the interval start time.
 
 
 
@@ -38,22 +38,22 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: active
-    :canonical: ansys.stk.core.stkobjects.RadarActivityTimeIntervalListElement.active
+.. py:property:: is_active
+    :canonical: ansys.stk.core.stkobjects.RadarActivityTimeIntervalListElement.is_active
     :type: bool
 
-    Gets or sets whether or not the time component is active.
+    Get or set whether or not the time component is active.
 
 .. py:property:: start
     :canonical: ansys.stk.core.stkobjects.RadarActivityTimeIntervalListElement.start
     :type: typing.Any
 
-    Gets or sets the interval start time.
+    Get or set the interval start time.
 
 .. py:property:: stop
     :canonical: ansys.stk.core.stkobjects.RadarActivityTimeIntervalListElement.stop
     :type: typing.Any
 
-    Gets or sets the interval start time.
+    Get or set the interval start time.
 
 

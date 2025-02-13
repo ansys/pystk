@@ -26,7 +26,6 @@ Overview
               - Initialize a rhumb line interpolator with the specified centralBody and granularity.
 
 
-
 Import detail
 -------------
 
@@ -48,27 +47,27 @@ Method detail
 
         :obj:`~RhumbLineInterpolator`
 
-.. py:method:: initialize_with_central_body(self, centralBody: str) -> RhumbLineInterpolator
+.. py:method:: initialize_with_central_body(self, central_body: str) -> RhumbLineInterpolator
     :canonical: ansys.stk.core.graphics.RhumbLineInterpolatorFactory.initialize_with_central_body
 
     Initialize a rhumb line interpolator with the specified centralBody and a granularity of 1 degree.
 
     :Parameters:
 
-    **centralBody** : :obj:`~str`
+    **central_body** : :obj:`~str`
 
     :Returns:
 
         :obj:`~RhumbLineInterpolator`
 
-.. py:method:: initialize_with_central_body_and_granularity(self, centralBody: str, granularity: float) -> RhumbLineInterpolator
+.. py:method:: initialize_with_central_body_and_granularity(self, central_body: str, granularity: float) -> RhumbLineInterpolator
     :canonical: ansys.stk.core.graphics.RhumbLineInterpolatorFactory.initialize_with_central_body_and_granularity
 
     Initialize a rhumb line interpolator with the specified centralBody and granularity.
 
     :Parameters:
 
-    **centralBody** : :obj:`~str`
+    **central_body** : :obj:`~str`
     **granularity** : :obj:`~float`
 
     :Returns:

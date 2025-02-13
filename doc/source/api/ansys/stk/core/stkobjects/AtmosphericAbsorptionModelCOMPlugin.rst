@@ -21,9 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.AtmosphericAbsorptionModelCOMPlugin.plugin_configuration`
-              - Gets the plugin configuration interface.
+              - Get the plugin configuration interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.AtmosphericAbsorptionModelCOMPlugin.raw_plugin_object`
-              - Gets the raw plugin IUnknown interface.
+              - Get the raw plugin IUnknown interface.
 
 
 
@@ -40,14 +40,14 @@ Property detail
 
 .. py:property:: plugin_configuration
     :canonical: ansys.stk.core.stkobjects.AtmosphericAbsorptionModelCOMPlugin.plugin_configuration
-    :type: CRPluginConfiguration
+    :type: AgCRPluginConfiguration
 
-    Gets the plugin configuration interface.
+    Get the plugin configuration interface.
 
 .. py:property:: raw_plugin_object
     :canonical: ansys.stk.core.stkobjects.AtmosphericAbsorptionModelCOMPlugin.raw_plugin_object
     :type: typing.Any
 
-    Gets the raw plugin IUnknown interface.
+    Get the raw plugin IUnknown interface.
 
 

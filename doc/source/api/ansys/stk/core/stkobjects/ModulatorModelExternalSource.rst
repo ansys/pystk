@@ -9,10 +9,6 @@ ModulatorModelExternalSource
 
 .. py:currentmodule:: ModulatorModelExternalSource
 
-Overview
---------
-
-
 
 Import detail
 -------------

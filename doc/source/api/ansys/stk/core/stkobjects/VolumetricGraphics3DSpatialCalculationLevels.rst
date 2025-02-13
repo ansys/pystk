@@ -24,8 +24,8 @@ Overview
               - Access and manipulate the collection of Spatial Calculation Boundary Levels for Volumetric object.
             * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGraphics3DSpatialCalculationLevels.show_fill_levels`
               - Show or hide Fill Levels.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGraphics3DSpatialCalculationLevels.display_colors_outside_min_max`
-              - Sets/gets Display Colors Outside MinMax.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGraphics3DSpatialCalculationLevels.display_colors_outside_minimum_maximum`
+              - Get or set Display Colors Outside MinMax.
             * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGraphics3DSpatialCalculationLevels.fill_levels`
               - Access and manipulate the collection of Spatial Calculation Fill Levels for Volumetric object.
 
@@ -60,11 +60,11 @@ Property detail
 
     Show or hide Fill Levels.
 
-.. py:property:: display_colors_outside_min_max
-    :canonical: ansys.stk.core.stkobjects.VolumetricGraphics3DSpatialCalculationLevels.display_colors_outside_min_max
+.. py:property:: display_colors_outside_minimum_maximum
+    :canonical: ansys.stk.core.stkobjects.VolumetricGraphics3DSpatialCalculationLevels.display_colors_outside_minimum_maximum
     :type: bool
 
-    Sets/gets Display Colors Outside MinMax.
+    Get or set Display Colors Outside MinMax.
 
 .. py:property:: fill_levels
     :canonical: ansys.stk.core.stkobjects.VolumetricGraphics3DSpatialCalculationLevels.fill_levels

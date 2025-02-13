@@ -7,10 +7,6 @@ IGraphics3DMarkerData
 
 .. py:currentmodule:: IGraphics3DMarkerData
 
-Overview
---------
-
-
 Import detail
 -------------
 

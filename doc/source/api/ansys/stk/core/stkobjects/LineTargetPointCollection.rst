@@ -33,10 +33,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.LineTargetPointCollection._NewEnum`
+            * - :py:attr:`~ansys.stk.core.stkobjects.LineTargetPointCollection._new_enum`
               - Enumerates through the collection of points.
             * - :py:attr:`~ansys.stk.core.stkobjects.LineTargetPointCollection.count`
-              - Returns the number of latitude-longitude pairs.
+              - Return the number of latitude-longitude pairs.
             * - :py:attr:`~ansys.stk.core.stkobjects.LineTargetPointCollection.anchor_point`
               - Specify the anchor point. Dimensionless.
 
@@ -53,8 +53,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.LineTargetPointCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.LineTargetPointCollection._new_enum
     :type: EnumeratorProxy
 
     Enumerates through the collection of points.
@@ -63,7 +63,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.LineTargetPointCollection.count
     :type: int
 
-    Returns the number of latitude-longitude pairs.
+    Return the number of latitude-longitude pairs.
 
 .. py:property:: anchor_point
     :canonical: ansys.stk.core.stkobjects.LineTargetPointCollection.anchor_point
@@ -104,14 +104,14 @@ Method detail
 
         :obj:`~LineTargetPoint`
 
-.. py:method:: remove(self, itemIndex: int) -> None
+.. py:method:: remove(self, item_index: int) -> None
     :canonical: ansys.stk.core.stkobjects.LineTargetPointCollection.remove
 
     Remove an item using a given index.
 
     :Parameters:
 
-    **itemIndex** : :obj:`~int`
+    **item_index** : :obj:`~int`
 
     :Returns:
 

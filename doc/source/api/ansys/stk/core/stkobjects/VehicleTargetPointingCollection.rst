@@ -40,11 +40,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleTargetPointingCollection.count`
-              - Returns the number of elements in a collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleTargetPointingCollection._NewEnum`
-              - Returns an enumerator that can iterate through the collection.
+              - Return the number of elements in a collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleTargetPointingCollection._new_enum`
+              - Return an enumerator that can iterate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleTargetPointingCollection.available_targets`
-              - Returns an array of available targets.
+              - Return an array of available targets.
 
 
 
@@ -63,19 +63,19 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleTargetPointingCollection.count
     :type: int
 
-    Returns the number of elements in a collection.
+    Return the number of elements in a collection.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.VehicleTargetPointingCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.VehicleTargetPointingCollection._new_enum
     :type: EnumeratorProxy
 
-    Returns an enumerator that can iterate through the collection.
+    Return an enumerator that can iterate through the collection.
 
 .. py:property:: available_targets
     :canonical: ansys.stk.core.stkobjects.VehicleTargetPointingCollection.available_targets
     :type: list
 
-    Returns an array of available targets.
+    Return an array of available targets.
 
 
 Method detail
@@ -118,14 +118,14 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, shortPath: str) -> VehicleTargetPointingElement
+.. py:method:: add(self, short_path: str) -> VehicleTargetPointingElement
     :canonical: ansys.stk.core.stkobjects.VehicleTargetPointingCollection.add
 
     Add a new element to the collection.
 
     :Parameters:
 
-    **shortPath** : :obj:`~str`
+    **short_path** : :obj:`~str`
 
     :Returns:
 

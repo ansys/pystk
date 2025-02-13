@@ -23,11 +23,11 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.ShipGraphics3D.proximity`
               - Get the ship's 3D proximity properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.ShipGraphics3D.drop_lines`
-              - Returns an interface allowing to configure vehicle's drop lines.
+              - Return an interface allowing to configure vehicle's drop lines.
             * - :py:attr:`~ansys.stk.core.stkobjects.ShipGraphics3D.vapor_trail`
               - Vapor trail attributes.
             * - :py:attr:`~ansys.stk.core.stkobjects.ShipGraphics3D.radar_cross_section`
-              - Gets the radar cross section graphics interface.
+              - Get the radar cross section graphics interface.
 
 
 
@@ -52,7 +52,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.ShipGraphics3D.drop_lines
     :type: VehicleGraphics3DRouteDropLines
 
-    Returns an interface allowing to configure vehicle's drop lines.
+    Return an interface allowing to configure vehicle's drop lines.
 
 .. py:property:: vapor_trail
     :canonical: ansys.stk.core.stkobjects.ShipGraphics3D.vapor_trail
@@ -64,6 +64,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.ShipGraphics3D.radar_cross_section
     :type: RadarCrossSectionGraphics3D
 
-    Gets the radar cross section graphics interface.
+    Get the radar cross section graphics interface.
 
 

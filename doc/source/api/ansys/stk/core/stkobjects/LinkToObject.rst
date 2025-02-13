@@ -18,7 +18,7 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.LinkToObject.bind_to`
+            * - :py:attr:`~ansys.stk.core.stkobjects.LinkToObject.bind_to_object`
               - Binds to existing object instance using the specified object path.
 
     .. tab-item:: Properties
@@ -28,13 +28,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.LinkToObject.name`
-              - Returns a name of linked object.
+              - Return a name of linked object.
             * - :py:attr:`~ansys.stk.core.stkobjects.LinkToObject.linked_object`
               - Dereferences the link and returns the linked object.
             * - :py:attr:`~ansys.stk.core.stkobjects.LinkToObject.available_objects`
-              - Returns a list of available objects that can be linked to.
+              - Return a list of available objects that can be linked to.
             * - :py:attr:`~ansys.stk.core.stkobjects.LinkToObject.is_intrinsic`
-              - Returns true if the link references an intrinsic object, otherwise returns false.
+              - Return true if the link references an intrinsic object, otherwise returns false.
 
 
 
@@ -53,7 +53,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.LinkToObject.name
     :type: str
 
-    Returns a name of linked object.
+    Return a name of linked object.
 
 .. py:property:: linked_object
     :canonical: ansys.stk.core.stkobjects.LinkToObject.linked_object
@@ -65,13 +65,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.LinkToObject.available_objects
     :type: list
 
-    Returns a list of available objects that can be linked to.
+    Return a list of available objects that can be linked to.
 
 .. py:property:: is_intrinsic
     :canonical: ansys.stk.core.stkobjects.LinkToObject.is_intrinsic
     :type: bool
 
-    Returns true if the link references an intrinsic object, otherwise returns false.
+    Return true if the link references an intrinsic object, otherwise returns false.
 
 
 Method detail
@@ -79,8 +79,8 @@ Method detail
 
 
 
-.. py:method:: bind_to(self, path: str) -> IStkObject
-    :canonical: ansys.stk.core.stkobjects.LinkToObject.bind_to
+.. py:method:: bind_to_object(self, path: str) -> IStkObject
+    :canonical: ansys.stk.core.stkobjects.LinkToObject.bind_to_object
 
     Binds to existing object instance using the specified object path.
 

@@ -34,13 +34,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.PowerProcessed.load`
-              - Gets or sets the power diverted from power source and unavailable to PPU. Uses Power Dimension.
+              - Get or set the power diverted from power source and unavailable to PPU. Uses Power Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.PowerProcessed.efficiency`
-              - Gets or sets the efficiency of the PPU unit. Dimensionless.
+              - Get or set the efficiency of the PPU unit. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.PowerProcessed.input_power_source_name`
-              - Gets or sets the source of power available to PPU.
+              - Get or set the source of power available to PPU.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.PowerProcessed.control_parameters_available`
-              - Returns whether or not the control parameters can be set.
+              - Return whether or not the control parameters can be set.
 
 
 
@@ -59,25 +59,25 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.PowerProcessed.load
     :type: float
 
-    Gets or sets the power diverted from power source and unavailable to PPU. Uses Power Dimension.
+    Get or set the power diverted from power source and unavailable to PPU. Uses Power Dimension.
 
 .. py:property:: efficiency
     :canonical: ansys.stk.core.stkobjects.astrogator.PowerProcessed.efficiency
     :type: float
 
-    Gets or sets the efficiency of the PPU unit. Dimensionless.
+    Get or set the efficiency of the PPU unit. Dimensionless.
 
 .. py:property:: input_power_source_name
     :canonical: ansys.stk.core.stkobjects.astrogator.PowerProcessed.input_power_source_name
     :type: str
 
-    Gets or sets the source of power available to PPU.
+    Get or set the source of power available to PPU.
 
 .. py:property:: control_parameters_available
     :canonical: ansys.stk.core.stkobjects.astrogator.PowerProcessed.control_parameters_available
     :type: bool
 
-    Returns whether or not the control parameters can be set.
+    Return whether or not the control parameters can be set.
 
 
 Method detail
@@ -89,40 +89,40 @@ Method detail
 
 
 
-.. py:method:: enable_control_parameter(self, param: CONTROL_POWER_PROCESSED) -> None
+.. py:method:: enable_control_parameter(self, param: ControlPowerProcessed) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.PowerProcessed.enable_control_parameter
 
     Enable the specified control parameter.
 
     :Parameters:
 
-    **param** : :obj:`~CONTROL_POWER_PROCESSED`
+    **param** : :obj:`~ControlPowerProcessed`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: disable_control_parameter(self, param: CONTROL_POWER_PROCESSED) -> None
+.. py:method:: disable_control_parameter(self, param: ControlPowerProcessed) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.PowerProcessed.disable_control_parameter
 
     Disables the specified control parameter.
 
     :Parameters:
 
-    **param** : :obj:`~CONTROL_POWER_PROCESSED`
+    **param** : :obj:`~ControlPowerProcessed`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_control_parameter_enabled(self, param: CONTROL_POWER_PROCESSED) -> bool
+.. py:method:: is_control_parameter_enabled(self, param: ControlPowerProcessed) -> bool
     :canonical: ansys.stk.core.stkobjects.astrogator.PowerProcessed.is_control_parameter_enabled
 
     Sees if the specified control is enabled.
 
     :Parameters:
 
-    **param** : :obj:`~CONTROL_POWER_PROCESSED`
+    **param** : :obj:`~ControlPowerProcessed`
 
     :Returns:
 

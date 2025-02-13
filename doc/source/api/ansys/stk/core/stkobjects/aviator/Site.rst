@@ -9,10 +9,6 @@ Site
 
 .. py:currentmodule:: Site
 
-Overview
---------
-
-
 
 Import detail
 -------------

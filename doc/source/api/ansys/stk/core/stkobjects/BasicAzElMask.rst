@@ -18,11 +18,11 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.BasicAzElMask.altitude_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.BasicAzElMask.display_mask_over_altitude_range`
               - Display the terrain mask at a specified number of steps from the minimum to the maximum altitude above the central body.
             * - :py:attr:`~ansys.stk.core.stkobjects.BasicAzElMask.number_of_altitude_steps`
               - The relative intervals at which the terrain mask is displayed, e.g. if this value is 3 steps, and the minimum and maximum altitudes are 500 and 1500 km, respectively, then the terrain mask is displayed at altitudes of 500, 1000 and 1500 km.
-            * - :py:attr:`~ansys.stk.core.stkobjects.BasicAzElMask.range_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.BasicAzElMask.show_mask_over_range`
               - Display the terrain mask at the specified number of steps from the minimum to the maximum range from the facility, place or target.
             * - :py:attr:`~ansys.stk.core.stkobjects.BasicAzElMask.number_of_range_steps`
               - The relative intervals at which the terrain mask is displayed, e.g. if this value is 3 steps, and the minimum and maximum ranges are 500 abd 1500 km, respectively, then the terrain mask is displayed at ranges of 500, 1000 and 1500 km.
@@ -34,14 +34,14 @@ Overview
               - The lowest altitude at which the terrain mask is displayed. The minimum altitude must be at least equal to the altitude of the facility, place or target, including the height above ground, if specified. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.BasicAzElMask.display_altitude_maximum`
               - The highest altitude above the central body at which the terrain mask is displayed. Uses Distance Dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.BasicAzElMask.altitude_color_visible`
+            * - :py:attr:`~ansys.stk.core.stkobjects.BasicAzElMask.display_color_at_altitude`
               - Display the color at altitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.BasicAzElMask.altitude_color`
-              - Gets or sets the altitude color.
-            * - :py:attr:`~ansys.stk.core.stkobjects.BasicAzElMask.range_color_visible`
+              - Get or set the altitude color.
+            * - :py:attr:`~ansys.stk.core.stkobjects.BasicAzElMask.show_color_at_range`
               - Display the color at range.
             * - :py:attr:`~ansys.stk.core.stkobjects.BasicAzElMask.range_color`
-              - Gets or sets the range color.
+              - Get or set the range color.
 
 
 
@@ -56,8 +56,8 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: altitude_visible
-    :canonical: ansys.stk.core.stkobjects.BasicAzElMask.altitude_visible
+.. py:property:: display_mask_over_altitude_range
+    :canonical: ansys.stk.core.stkobjects.BasicAzElMask.display_mask_over_altitude_range
     :type: bool
 
     Display the terrain mask at a specified number of steps from the minimum to the maximum altitude above the central body.
@@ -68,8 +68,8 @@ Property detail
 
     The relative intervals at which the terrain mask is displayed, e.g. if this value is 3 steps, and the minimum and maximum altitudes are 500 and 1500 km, respectively, then the terrain mask is displayed at altitudes of 500, 1000 and 1500 km.
 
-.. py:property:: range_visible
-    :canonical: ansys.stk.core.stkobjects.BasicAzElMask.range_visible
+.. py:property:: show_mask_over_range
+    :canonical: ansys.stk.core.stkobjects.BasicAzElMask.show_mask_over_range
     :type: bool
 
     Display the terrain mask at the specified number of steps from the minimum to the maximum range from the facility, place or target.
@@ -104,8 +104,8 @@ Property detail
 
     The highest altitude above the central body at which the terrain mask is displayed. Uses Distance Dimension.
 
-.. py:property:: altitude_color_visible
-    :canonical: ansys.stk.core.stkobjects.BasicAzElMask.altitude_color_visible
+.. py:property:: display_color_at_altitude
+    :canonical: ansys.stk.core.stkobjects.BasicAzElMask.display_color_at_altitude
     :type: bool
 
     Display the color at altitude.
@@ -114,10 +114,10 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.BasicAzElMask.altitude_color
     :type: agcolor.Color
 
-    Gets or sets the altitude color.
+    Get or set the altitude color.
 
-.. py:property:: range_color_visible
-    :canonical: ansys.stk.core.stkobjects.BasicAzElMask.range_color_visible
+.. py:property:: show_color_at_range
+    :canonical: ansys.stk.core.stkobjects.BasicAzElMask.show_color_at_range
     :type: bool
 
     Display the color at range.
@@ -126,6 +126,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.BasicAzElMask.range_color
     :type: agcolor.Color
 
-    Gets or sets the range color.
+    Get or set the range color.
 
 

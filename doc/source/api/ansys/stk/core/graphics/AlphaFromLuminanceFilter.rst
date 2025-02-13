@@ -9,10 +9,6 @@ AlphaFromLuminanceFilter
 
 .. py:currentmodule:: AlphaFromLuminanceFilter
 
-Overview
---------
-
-
 
 Import detail
 -------------

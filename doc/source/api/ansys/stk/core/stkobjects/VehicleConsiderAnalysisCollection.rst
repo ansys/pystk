@@ -36,9 +36,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleConsiderAnalysisCollection.count`
-              - Returns the number of elements in a collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleConsiderAnalysisCollection._NewEnum`
-              - Returns an enumerator that can iterate through the collection.
+              - Return the number of elements in a collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleConsiderAnalysisCollection._new_enum`
+              - Return an enumerator that can iterate through the collection.
 
 
 
@@ -57,13 +57,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleConsiderAnalysisCollection.count
     :type: int
 
-    Returns the number of elements in a collection.
+    Return the number of elements in a collection.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.VehicleConsiderAnalysisCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.VehicleConsiderAnalysisCollection._new_enum
     :type: EnumeratorProxy
 
-    Returns an enumerator that can iterate through the collection.
+    Return an enumerator that can iterate through the collection.
 
 
 Method detail
@@ -106,27 +106,27 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, paramType: VEHICLE_CONSIDER_ANALYSIS_TYPE) -> VehicleConsiderAnalysisCollectionElement
+.. py:method:: add(self, param_type: VehicleConsiderAnalysisType) -> VehicleConsiderAnalysisCollectionElement
     :canonical: ansys.stk.core.stkobjects.VehicleConsiderAnalysisCollection.add
 
     Add a new element to the collection.
 
     :Parameters:
 
-    **paramType** : :obj:`~VEHICLE_CONSIDER_ANALYSIS_TYPE`
+    **param_type** : :obj:`~VehicleConsiderAnalysisType`
 
     :Returns:
 
         :obj:`~VehicleConsiderAnalysisCollectionElement`
 
-.. py:method:: remove_by_type(self, eParamType: VEHICLE_CONSIDER_ANALYSIS_TYPE) -> None
+.. py:method:: remove_by_type(self, param_type: VehicleConsiderAnalysisType) -> None
     :canonical: ansys.stk.core.stkobjects.VehicleConsiderAnalysisCollection.remove_by_type
 
     Remove an element from the collection using the AgEVeConsiderAnalysisType type.
 
     :Parameters:
 
-    **eParamType** : :obj:`~VEHICLE_CONSIDER_ANALYSIS_TYPE`
+    **param_type** : :obj:`~VehicleConsiderAnalysisType`
 
     :Returns:
 

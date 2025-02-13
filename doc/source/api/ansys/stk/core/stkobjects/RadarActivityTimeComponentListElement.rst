@@ -18,10 +18,10 @@ Overview
             :header-rows: 0
             :widths: auto
 
-            * - :py:attr:`~ansys.stk.core.stkobjects.RadarActivityTimeComponentListElement.active`
-              - Gets or sets whether or not the time component is active.
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarActivityTimeComponentListElement.is_active`
+              - Get or set whether or not the time component is active.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarActivityTimeComponentListElement.component`
-              - Gets or sets the desired time component.
+              - Get or set the desired time component.
 
 
 
@@ -36,16 +36,16 @@ Import detail
 Property detail
 ---------------
 
-.. py:property:: active
-    :canonical: ansys.stk.core.stkobjects.RadarActivityTimeComponentListElement.active
+.. py:property:: is_active
+    :canonical: ansys.stk.core.stkobjects.RadarActivityTimeComponentListElement.is_active
     :type: bool
 
-    Gets or sets whether or not the time component is active.
+    Get or set whether or not the time component is active.
 
 .. py:property:: component
     :canonical: ansys.stk.core.stkobjects.RadarActivityTimeComponentListElement.component
     :type: str
 
-    Gets or sets the desired time component.
+    Get or set the desired time component.
 
 

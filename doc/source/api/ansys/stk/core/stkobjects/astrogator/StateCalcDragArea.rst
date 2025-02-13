@@ -9,10 +9,6 @@ StateCalcDragArea
 
 .. py:currentmodule:: StateCalcDragArea
 
-Overview
---------
-
-
 
 Import detail
 -------------

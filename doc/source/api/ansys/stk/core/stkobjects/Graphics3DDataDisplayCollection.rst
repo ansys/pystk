@@ -38,11 +38,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DDataDisplayCollection.count`
-              - Returns the number of elements in a collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DDataDisplayCollection._NewEnum`
-              - Returns an enumerator that can iterate through the collection.
+              - Return the number of elements in a collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DDataDisplayCollection._new_enum`
+              - Return an enumerator that can iterate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DDataDisplayCollection.available_data`
-              - Gets the available data.
+              - Get the available data.
 
 
 
@@ -61,19 +61,19 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Graphics3DDataDisplayCollection.count
     :type: int
 
-    Returns the number of elements in a collection.
+    Return the number of elements in a collection.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.Graphics3DDataDisplayCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.Graphics3DDataDisplayCollection._new_enum
     :type: EnumeratorProxy
 
-    Returns an enumerator that can iterate through the collection.
+    Return an enumerator that can iterate through the collection.
 
 .. py:property:: available_data
     :canonical: ansys.stk.core.stkobjects.Graphics3DDataDisplayCollection.available_data
     :type: list
 
-    Gets the available data.
+    Get the available data.
 
 
 Method detail
@@ -130,20 +130,20 @@ Method detail
         :obj:`~Graphics3DDataDisplayElement`
 
 
-.. py:method:: is_pre_data_required(self, dataDisplayName: str) -> bool
+.. py:method:: is_pre_data_required(self, data_display_name: str) -> bool
     :canonical: ansys.stk.core.stkobjects.Graphics3DDataDisplayCollection.is_pre_data_required
 
     Determine if the data display needs additional data, such as a comparison object for an RIC report or a set of axes for a vector.
 
     :Parameters:
 
-    **dataDisplayName** : :obj:`~str`
+    **data_display_name** : :obj:`~str`
 
     :Returns:
 
         :obj:`~bool`
 
-.. py:method:: add_data_display_requiring_pre_data(self, name: str, preData: str) -> Graphics3DDataDisplayElement
+.. py:method:: add_data_display_requiring_pre_data(self, name: str, pre_data: str) -> Graphics3DDataDisplayElement
     :canonical: ansys.stk.core.stkobjects.Graphics3DDataDisplayCollection.add_data_display_requiring_pre_data
 
     Add a data display using additional data, such as a comparison object for an RIC report or a set of axes for a vector.
@@ -151,7 +151,7 @@ Method detail
     :Parameters:
 
     **name** : :obj:`~str`
-    **preData** : :obj:`~str`
+    **pre_data** : :obj:`~str`
 
     :Returns:
 

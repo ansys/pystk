@@ -7,10 +7,6 @@ IElement
 
 .. py:currentmodule:: IElement
 
-Overview
---------
-
-
 Import detail
 -------------
 

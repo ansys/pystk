@@ -32,7 +32,7 @@ Overview
               - Evaluate the scalar calculation, and rate, over an array of times, entered as strings in the Scenario date unit. It returns an array corresponding to the input times...
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalar.quick_evaluate_with_rate_array`
               - Evaluate the scalar calculation over the array of times provided by an Event Array component. It returns an array corresponding to the input times...
-            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalar.quick_evaluate_event_array`
+            * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalar.quick_evaluate_time_array`
               - Evaluate the scalar calculation, and rate, over the array of times provided by an Event Array component. It returns an array corresponding to the input times...
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalar.quick_evaluate_with_rate_event_array`
               - Evaluate the scalar calculation, and rate, over the array of times provided by an Event Array component. It returns an array corresponding to the input times...
@@ -44,9 +44,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalar.type`
-              - Returns the scalar calculation type.
+              - Return the scalar calculation type.
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolScalar.unit_of_measure`
-              - Returns calc scalar's unit of measure, i.e. 'AngleUnit', 'DistanceUnit', etc.
+              - Return calc scalar's unit of measure, i.e. 'AngleUnit', 'DistanceUnit', etc.
 
 
 Import detail
@@ -62,15 +62,15 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.vgt.ICalculationToolScalar.type
-    :type: CRDN_CALC_SCALAR_TYPE
+    :type: CalculationScalarType
 
-    Returns the scalar calculation type.
+    Return the scalar calculation type.
 
 .. py:property:: unit_of_measure
     :canonical: ansys.stk.core.vgt.ICalculationToolScalar.unit_of_measure
     :type: str
 
-    Returns calc scalar's unit of measure, i.e. 'AngleUnit', 'DistanceUnit', etc.
+    Return calc scalar's unit of measure, i.e. 'AngleUnit', 'DistanceUnit', etc.
 
 
 Method detail
@@ -165,27 +165,27 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: quick_evaluate_event_array(self, refArray: ITimeToolEventArray) -> list
-    :canonical: ansys.stk.core.vgt.ICalculationToolScalar.quick_evaluate_event_array
+.. py:method:: quick_evaluate_time_array(self, ref_array: ITimeToolTimeArray) -> list
+    :canonical: ansys.stk.core.vgt.ICalculationToolScalar.quick_evaluate_time_array
 
     Evaluate the scalar calculation, and rate, over the array of times provided by an Event Array component. It returns an array corresponding to the input times...
 
     :Parameters:
 
-    **refArray** : :obj:`~ITimeToolEventArray`
+    **ref_array** : :obj:`~ITimeToolTimeArray`
 
     :Returns:
 
         :obj:`~list`
 
-.. py:method:: quick_evaluate_with_rate_event_array(self, refArray: ITimeToolEventArray) -> list
+.. py:method:: quick_evaluate_with_rate_event_array(self, ref_array: ITimeToolTimeArray) -> list
     :canonical: ansys.stk.core.vgt.ICalculationToolScalar.quick_evaluate_with_rate_event_array
 
     Evaluate the scalar calculation, and rate, over the array of times provided by an Event Array component. It returns an array corresponding to the input times...
 
     :Parameters:
 
-    **refArray** : :obj:`~ITimeToolEventArray`
+    **ref_array** : :obj:`~ITimeToolTimeArray`
 
     :Returns:
 

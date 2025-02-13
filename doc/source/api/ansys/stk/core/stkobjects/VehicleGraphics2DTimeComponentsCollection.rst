@@ -25,7 +25,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeComponentsCollection.remove_all`
               - Remove all elements from the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeComponentsCollection.add`
-              - Add a new element to the collection using the specified fully qualified component's path (i.e. \"Scenario/Scenario1 AnalysisInterval EventInterval\"). Only intervals, interval lists or interval collections are allowed.
+              - Add a new element to the collection using the specified fully qualified component's path (i.e. ``Scenario/Scenario1 AnalysisInterval EventInterval``). Only intervals, interval lists or interval collections are allowed.
 
     .. tab-item:: Properties
         
@@ -34,9 +34,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeComponentsCollection.count`
-              - Returns the number of elements in a collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeComponentsCollection._NewEnum`
-              - Returns an enumerator that can iterate through the collection.
+              - Return the number of elements in a collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeComponentsCollection._new_enum`
+              - Return an enumerator that can iterate through the collection.
 
 
 
@@ -55,13 +55,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeComponentsCollection.count
     :type: int
 
-    Returns the number of elements in a collection.
+    Return the number of elements in a collection.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeComponentsCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeComponentsCollection._new_enum
     :type: EnumeratorProxy
 
-    Returns an enumerator that can iterate through the collection.
+    Return an enumerator that can iterate through the collection.
 
 
 Method detail
@@ -104,14 +104,14 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add(self, qualifiedPath: str) -> IVehicleGraphics2DTimeComponentsElement
+.. py:method:: add(self, qualified_path: str) -> IVehicleGraphics2DTimeComponentsElement
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DTimeComponentsCollection.add
 
-    Add a new element to the collection using the specified fully qualified component's path (i.e. \"Scenario/Scenario1 AnalysisInterval EventInterval\"). Only intervals, interval lists or interval collections are allowed.
+    Add a new element to the collection using the specified fully qualified component's path (i.e. ``Scenario/Scenario1 AnalysisInterval EventInterval``). Only intervals, interval lists or interval collections are allowed.
 
     :Parameters:
 
-    **qualifiedPath** : :obj:`~str`
+    **qualified_path** : :obj:`~str`
 
     :Returns:
 

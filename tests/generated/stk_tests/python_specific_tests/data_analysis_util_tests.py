@@ -32,7 +32,7 @@ class DataAnalysisUtilTests(unittest.TestCase):
         # note, the coverage and access data provider results need to be reshaped be properly converted row
         # formatted numpy array
         all_regions_dprv: DataProviderFixed = world_coverage_def.data_providers.item("All Regions By Pass")
-        all_regions_data: DataProviderResult = all_regions_dprv.exec()
+        all_regions_data: DataProviderResult = all_regions_dprv.execute()
         all_regions_data_sets: DataProviderResultDataSetCollection = all_regions_data.data_sets
 
         expected_results = all_regions_data_sets.to_numpy_array()
@@ -50,7 +50,7 @@ class DataAnalysisUtilTests(unittest.TestCase):
         # note, FOM data is shaped properly without the need to reshape...this test ensures the data is still in the
         # proper format in the returned numpy array
         fom_dprv: DataProviderFixed = num_access_coverage.data_providers.item("FOM Definition")
-        fom_dprv_data: DataProviderResult = fom_dprv.exec()
+        fom_dprv_data: DataProviderResult = fom_dprv.execute()
         fom_dprv_data_sets: DataProviderResultDataSetCollection = fom_dprv_data.data_sets
 
         expected_results = fom_dprv_data_sets.to_numpy_array()
@@ -69,7 +69,7 @@ class DataAnalysisUtilTests(unittest.TestCase):
 
         # query a data provider that returns an empty result set
         global_coverage_dprv: DataProviderFixed = world_coverage_def.data_providers.item("Global Coverage")
-        global_coverage_data: DataProviderResult = global_coverage_dprv.exec(scen.start_time, scen.stop_time)
+        global_coverage_data: DataProviderResult = global_coverage_dprv.execute(scen.start_time, scen.stop_time)
         global_coverage_data_sets: DataProviderResultDataSetCollection = global_coverage_data.data_sets
 
         expected_results = global_coverage_data_sets.to_numpy_array()
@@ -86,7 +86,7 @@ class DataAnalysisUtilTests(unittest.TestCase):
         # note, the coverage and access data provider results need to be reshaped be properly converted row
         # formatted numpy array
         all_regions_dprv: DataProviderFixed = world_coverage_def.data_providers.item("All Regions By Pass")
-        all_regions_data: DataProviderResult = all_regions_dprv.exec()
+        all_regions_data: DataProviderResult = all_regions_dprv.execute()
         all_regions_data_sets: DataProviderResultDataSetCollection = all_regions_data.data_sets
 
         expected_results_df = all_regions_data_sets.to_pandas_dataframe()
@@ -103,7 +103,7 @@ class DataAnalysisUtilTests(unittest.TestCase):
         # note, FOM data is shaped properly without the need to reshape...this test ensures the data is still in the
         # proper format in the returned pandas DataFrame
         fom_dprv: DataProviderFixed = num_access_coverage.data_providers.item("FOM Definition")
-        fom_dprv_data: DataProviderResult = fom_dprv.exec()
+        fom_dprv_data: DataProviderResult = fom_dprv.execute()
         fom_dprv_data_sets: DataProviderResultDataSetCollection = fom_dprv_data.data_sets
 
         expected_results_df = fom_dprv_data_sets.to_pandas_dataframe()
@@ -121,7 +121,7 @@ class DataAnalysisUtilTests(unittest.TestCase):
 
         # query a data provider that returns an empty result set
         global_coverage_dprv: DataProviderFixed = world_coverage_def.data_providers.item("Global Coverage")
-        global_coverage_data: DataProviderResult = global_coverage_dprv.exec(scen.start_time, scen.stop_time)
+        global_coverage_data: DataProviderResult = global_coverage_dprv.execute(scen.start_time, scen.stop_time)
         global_coverage_data_sets: DataProviderResultDataSetCollection = global_coverage_data.data_sets
 
         expected_results_df = global_coverage_data_sets.to_pandas_dataframe()
@@ -136,12 +136,12 @@ class DataAnalysisUtilTests(unittest.TestCase):
         num_access_coverage = TestBase.root.get_object_from_path(num_access_coverage)
 
         region_stats_dprv: DataProviderFixed = num_access_coverage.data_providers.item("Region Stats")
-        region_stats_data: DataProviderResult = region_stats_dprv.exec()
+        region_stats_data: DataProviderResult = region_stats_dprv.execute()
         region_stats_data_sets: DataProviderResultDataSetCollection = region_stats_data.data_sets
 
         index_element_name = "Region Name"
 
-        expected_results_df = region_stats_data_sets.to_pandas_dataframe(indexElementName=index_element_name)
+        expected_results_df = region_stats_data_sets.to_pandas_dataframe(index_element_name=index_element_name)
 
         self.assertIsInstance(expected_results_df, pd.DataFrame)
         self.assertEqual(len(expected_results_df.index), 288)
@@ -154,13 +154,13 @@ class DataAnalysisUtilTests(unittest.TestCase):
         num_access_coverage = TestBase.root.get_object_from_path(num_access_coverage)
 
         region_stats_dprv: DataProviderFixed = num_access_coverage.data_providers.item("Region Stats")
-        region_stats_data: DataProviderResult = region_stats_dprv.exec()
+        region_stats_data: DataProviderResult = region_stats_dprv.execute()
         region_stats_data_sets: DataProviderResultDataSetCollection = region_stats_data.data_sets
 
         index_element_name = "Faux Invalid Element Name"
 
         with self.assertRaises(ValueError):
-            expected_results_df = region_stats_data_sets.to_pandas_dataframe(indexElementName=index_element_name)
+            expected_results_df = region_stats_data_sets.to_pandas_dataframe(index_element_name=index_element_name)
 
     @unittest.skipIf(skip_test, test_skipped_msg)
     def test_to_dataframe_map_types_to_dtypes(self):
@@ -170,12 +170,14 @@ class DataAnalysisUtilTests(unittest.TestCase):
         all_regions_dprv_as_dprv_fixed: DataProviderFixed = world_coverage_def.data_providers.item(
             "All Regions By Pass"
         )
-        all_regions_data: DataProviderResult = all_regions_dprv_as_dprv_fixed.exec()
+        all_regions_data: DataProviderResult = all_regions_dprv_as_dprv_fixed.execute()
         all_regions_data_sets: DataProviderResultDataSetCollection = all_regions_data.data_sets
 
         all_regions_dprv_as_dprv: IDataProvider = IDataProvider(all_regions_dprv_as_dprv_fixed)
         all_regions_dprv_elements = all_regions_dprv_as_dprv.elements
-        expected_results_df = all_regions_data_sets.to_pandas_dataframe(dataProviderElements=all_regions_dprv_elements)
+        expected_results_df = all_regions_data_sets.to_pandas_dataframe(
+            data_provider_elements=all_regions_dprv_elements
+        )
 
         self.assertIsInstance(expected_results_df, pd.DataFrame)
         self.assertEqual(len(expected_results_df.index), 11352)

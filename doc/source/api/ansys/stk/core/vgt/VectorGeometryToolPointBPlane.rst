@@ -3,7 +3,7 @@ VectorGeometryToolPointBPlane
 
 .. py:class:: ansys.stk.core.vgt.VectorGeometryToolPointBPlane
 
-   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolPoint`, :py:class:`~ansys.stk.core.vgt.ITimeToolTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
+   Bases: :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolPoint`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponentTimeProperties`, :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
 
    B-Plane point using the selected target body.
 
@@ -44,25 +44,25 @@ Property detail
 
 .. py:property:: target_body
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPointBPlane.target_body
-    :type: AnalysisWorkbenchCentralBodyRefTo
+    :type: AnalysisWorkbenchCentralBodyReference
 
     Specify a target central body.
 
 .. py:property:: trajectory
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPointBPlane.trajectory
-    :type: VectorGeometryToolPointRefTo
+    :type: VectorGeometryToolPointReference
 
     Specify a trajectory point.
 
 .. py:property:: point_type
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPointBPlane.point_type
-    :type: VECTOR_GEOMETRY_TOOL_POINT_B_PLANE_TYPE
+    :type: PointBPlaneType
 
     Specify a point type.
 
 .. py:property:: direction
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPointBPlane.direction
-    :type: CRDN_DIRECTION_TYPE
+    :type: AsymptoteDirectionType
 
     Specify a direction (incoming or outgoing).
 

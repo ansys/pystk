@@ -7,6 +7,7 @@ import os
 import pathlib
 import shutil
 import subprocess
+import xml.etree.ElementTree as ET
 import zipfile
 
 import sphinx
@@ -40,8 +41,14 @@ html_context = {
     "base_url": f"https://github.com/ansys-internal/pystk/blob/main",
     "edit_page_provider_name": "GitHub",
     "edit_page_url_template": "{{ base_url }}/{{ 'doc/source/' if 'examples/' not in file_name else '' }}{{ file_name }}",
+    "page_assets": {
+        "user-guide/migration": {
+            "needs_datatables": True,
+        },
+    },
 }
 html_theme_options = {
+    "header_links_before_dropdown": 6,
     "github_url": "https://github.com/ansys-internal/pystk",
     "show_prev_next": True,
     "show_breadcrumbs": True,
@@ -56,14 +63,22 @@ html_theme_options = {
     "check_switcher": False,
     "navigation_with_keys": True,
     "logo": "pyansys",
+    "static_search": {
+        "limit": 10,
+        "minMatchCharLength": 2,
+    },
 }
 html_static_path = ["_static"]
-html_css_files = ["css/highlight.css", "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"]
+html_css_files = [
+    "css/highlight.css",
+]
+html_js_files = []
 
 # Sphinx extensions
 extensions = [
     "sphinx_copybutton",
     "sphinx.ext.autodoc",
+    "sphinx.ext.autosectionlabel",
     "sphinx.ext.autosummary",
     "sphinx.ext.intersphinx",
     "sphinx_design",
@@ -71,6 +86,8 @@ extensions = [
     "numpydoc",
     "nbsphinx",
     "myst_parser",
+    "sphinxcontrib.jquery",
+    "sphinxcontrib.mermaid"
 ]
 
 # Intersphinx mapping
@@ -106,7 +123,7 @@ numpydoc_validation_checks = set()  # numpydoc validation is turned off due to p
 templates_path = ["_templates"]
 
 # Directories excluded when looking for source files
-exclude_examples = ["solar_panel_tool.py", "stk_tutorial.py", "stk_vgt_tutorial.py"]
+exclude_examples = []
 exclude_patterns = exclude_examples + ["conf.py", "_static/README.md", "api/generated", "links.rst"]
 
 # Ignore warnings
@@ -114,6 +131,17 @@ suppress_warnings = [
     # TODO: Reactivate warnings for duplicated cross-references in documentation
     # https://github.com/ansys-internal/pystk/issues/414
     "ref.python",
+    # Sphinx-design downloads some font-awesome icons that conflict with the
+    # ones in pydata-sphinx-theme.
+    "design.fa-build",
+    # If Jinja is used to skip the rendering of the examples and the API reference,
+    # Sphinx design complains about the indentation of these cards.
+    "design.grid",
+    # Some pages, like the API reference, follow a template. This template
+    # contains some sections for every object. Because multiple objects are
+    # documented, the same sections repeat across the documentation, fooling
+    # `autosectionlabel` into thinking that the same section is being repeated.
+    "autosectionlabel.*",
 ]
 
 # The suffix(es) of source filenames
@@ -129,18 +157,31 @@ master_doc = "index"
 # Common content for every RST file such us links
 rst_epilog = ""
 links_filepath = pathlib.Path(__file__).parent.absolute() / "links.rst"
-with open(links_filepath) as links_file:
-    rst_epilog += links_file.read()
+rst_epilog += links_filepath.read_text(encoding="utf-8")
 
+# -- Autosectionlabel configuration ------------------------------------------
+autosectionlabel_maxdepth = 6
+
+
+# -- Linkcheck configuration -------------------------------------------------
+user_repo = f"{html_context['github_user']}/{html_context['github_repo']}"
+linkcheck_ignore = [
+    "https://www.ansys.com/*",
+    # Requires sign-in
+    f"https://github.com/{user_repo}/*",
+    "https://support.agi.com/3d-models",
+    "https://support.agi.com/downloads",
+    "https://www.khronos.org/collada/",
+]
 
 # -- Declare the Jinja context -----------------------------------------------
 BUILD_API = True if os.environ.get("BUILD_API", "true") == "true" else False
 if not BUILD_API:
-    exclude_patterns.extend(["api.rst", "api/**"])
+    exclude_patterns.extend(["api/**"])
 
 BUILD_EXAMPLES = True if os.environ.get("BUILD_EXAMPLES", "true") == "true" else False
 if not BUILD_EXAMPLES:
-    exclude_patterns.extend(["examples.rst", "examples/**"])
+    exclude_patterns.extend(["examples/**"])
 else:
     extensions.extend(["myst_parser", "nbsphinx"])
     nbsphinx_execute = "always"
@@ -238,9 +279,11 @@ def get_sha256_from_file(filepath: pathlib.Path):
 
     """
     sha256_hash = hashlib.sha256()
-    with open(filepath, "rb") as file:
-        while chunk := file.read(8192):
-            sha256_hash.update(chunk)
+
+    file_bytes = filepath.read_bytes()
+    for i in range(0, len(file_bytes), 8192):
+        sha256_hash.update(file_bytes[i : i + 8192])
+
     return sha256_hash.hexdigest()
 
 
@@ -275,12 +318,27 @@ def get_file_size_in_mb(file_path):
     return file_size_bytes / (1024 * 1024)
 
 
-ARTIFACTS_PATH = pathlib.Path().parent / "_static" / "artifacts"
+STATIC_PATH = pathlib.Path(__file__).parent / "_static"
+ARTIFACTS_PATH = STATIC_PATH / "artifacts"
 ARTIFACTS_WHEEL = ARTIFACTS_PATH / f"{project.replace('-', '_')}-{version}-py3-none-any.whl"
 ARTIFACTS_SDIST = ARTIFACTS_PATH / f"{project.replace('-', '_')}-{version}.tar.gz"
 
+WHEELHOUSE_PATH = pathlib.Path().parent / "_static" / "wheelhouse"
+if not WHEELHOUSE_PATH.exists():
+    linkcheck_ignore.append(r".*/wheelhouse/.*")
+
+
+jinja_globals = {
+    "SUPPORTED_PYTHON_VERSIONS": ["3.11", "3.12", "3.13"],
+    "SUPPORTED_PLATFORMS": ["windows", "ubuntu"],
+    "PYSTK_VERSION": version,
+    "STK_VERSION": "12.10.0",
+}
+
 jinja_contexts = {
-    "install_guide": {"stk_version": "12.9.0"},
+    "toxenvs": {
+        "envs": subprocess.run(["tox", "list", "-d", "-q"], capture_output=True, text=True).stdout.splitlines()[1:],
+    },
     "main_toctree": {
         "build_api": BUILD_API,
         "build_examples": BUILD_EXAMPLES,
@@ -292,7 +350,19 @@ jinja_contexts = {
         "source": ARTIFACTS_SDIST.name,
         "source_size": f"{get_file_size_in_mb(ARTIFACTS_SDIST):.2f} MB",
         "source_hash": get_sha256_from_file(ARTIFACTS_SDIST),
-        "platforms": ["Windows", "Linux"],
+    },
+    # NOTE: wheelhouse artifacts are only available during CI/CD runs
+    "wheelhouse": {
+        "wheelhouse": {
+            platform: {
+                python: {
+                    target: WHEELHOUSE_PATH / f"{project}-v{version}-{target}-wheelhouse-{platform}-latest-{python}"
+                    for target in ["all", "grpc", "visualization"]
+                }
+                for python in jinja_globals["SUPPORTED_PYTHON_VERSIONS"]
+            }
+            for platform in ["windows", "ubuntu"]
+        }
     },
 }
 
@@ -308,18 +378,13 @@ autodoc_default_options = {
 autodoc_class_signature = "separated"
 autodoc_mock_imports = ["tkinter"]
 
-# -- Linkcheck configuration -------------------------------------------------
-user_repo = f"{html_context['github_user']}/{html_context['github_repo']}"
-linkcheck_ignore = [
-    "https://www.ansys.com/*",
-    # Requires sign-in
-    f"https://github.com/{user_repo}/*",
-    "https://support.agi.com/3d-models",
-    "https://support.agi.com/downloads",
-]
-
 # -- MyST Sphinx configuration -----------------------------------------------
 myst_heading_anchors = 3
+
+# -- LaTeX configuration
+latex_elements = {
+    "extraclassoptions": "openany,oneside",
+}
 
 # -- Sphinx application setup ------------------------------------------------
 
@@ -381,15 +446,18 @@ def copy_examples_to_output_dir(app: sphinx.application.Sphinx, exception: Excep
     # TODO: investigate issues when using OUTPUT_EXAMPLES instead of SOURCE_EXAMPLES
     # https://github.com/ansys-internal/pystk/issues/415
     OUTPUT_EXAMPLES = pathlib.Path(app.outdir) / "examples"
-    if not OUTPUT_EXAMPLES.exists():
-        OUTPUT_EXAMPLES.mkdir(parents=True, exist_ok=True)
+    OUTPUT_IMAGES = OUTPUT_EXAMPLES / "img"
+    for directory in [OUTPUT_EXAMPLES, OUTPUT_IMAGES]:
+        if not directory.exists():
+            directory.mkdir(parents=True, exist_ok=True)
 
     SOURCE_EXAMPLES = pathlib.Path(app.srcdir) / "examples"
     EXAMPLES_DIRECTORY = SOURCE_EXAMPLES.parent.parent.parent / "examples"
+    IMAGES_DIRECTORY = EXAMPLES_DIRECTORY / "img"
 
+    # Copyt the examples
     all_examples = list(EXAMPLES_DIRECTORY.glob("*.py"))
     examples = [file for file in all_examples if f"{file.name}" not in exclude_examples]
-
     for file in status_iterator(
         examples,
         f"Copying example to doc/_build/examples/",
@@ -400,6 +468,19 @@ def copy_examples_to_output_dir(app: sphinx.application.Sphinx, exception: Excep
     ):
         destination_file = OUTPUT_EXAMPLES / file.name
         destination_file.write_text(file.read_text(encoding="utf-8"), encoding="utf-8")
+
+    # Copy the static images
+    images = list(IMAGES_DIRECTORY.glob("*.png"))
+    for file in status_iterator(
+        images,
+        f"Copying image to doc/source/examples/img",
+        "green",
+        len(images),
+        verbosity=1,
+        stringify_func=(lambda file: file.name),
+    ):
+        destination_file = OUTPUT_IMAGES / file.name
+        destination_file.write_bytes(file.read_bytes())
 
 
 def copy_examples_files_to_source_dir(app: sphinx.application.Sphinx):
@@ -413,16 +494,17 @@ def copy_examples_files_to_source_dir(app: sphinx.application.Sphinx):
 
     """
     SOURCE_EXAMPLES = pathlib.Path(app.srcdir) / "examples"
-    if not SOURCE_EXAMPLES.exists():
-        SOURCE_EXAMPLES.mkdir(parents=True, exist_ok=True)
+    SOURCE_IMAGES = SOURCE_EXAMPLES / "img"
+    for directory in [SOURCE_EXAMPLES, SOURCE_IMAGES]:
+        if not directory.exists():
+            directory.mkdir(parents=True, exist_ok=True)
 
     EXAMPLES_DIRECTORY = SOURCE_EXAMPLES.parent.parent.parent / "examples"
+    IMAGES_DIRECTORY = EXAMPLES_DIRECTORY / "img"
 
+    # Copy the the examples
     all_examples = list(EXAMPLES_DIRECTORY.glob("*.py"))
     examples = [file for file in all_examples if f"{file.name}" not in exclude_examples]
-
-    print(f"BUILDER: {app.builder.name}")
-
     for file in status_iterator(
         examples,
         f"Copying example to doc/source/examples/",
@@ -433,6 +515,19 @@ def copy_examples_files_to_source_dir(app: sphinx.application.Sphinx):
     ):
         destination_file = SOURCE_EXAMPLES / file.name
         destination_file.write_text(file.read_text(encoding="utf-8"), encoding="utf-8")
+
+    # Copy the static images
+    images = list(IMAGES_DIRECTORY.glob("*.png"))
+    for file in status_iterator(
+        images,
+        f"Copying image to doc/source/examples/img",
+        "green",
+        len(images),
+        verbosity=1,
+        stringify_func=(lambda file: file.name),
+    ):
+        destination_file = SOURCE_IMAGES / file.name
+        destination_file.write_bytes(file.read_bytes())
 
 
 def remove_examples_from_source_dir(app: sphinx.application.Sphinx, exception: Exception):
@@ -504,6 +599,72 @@ def render_examples_as_pdf(app: sphinx.application.Sphinx, exception: Exception)
         )
 
 
+def read_migration_tables(app: sphinx.application.Sphinx):
+    """Convert an XML migration table to a JSON format.
+
+    The final JSON format is as follows:
+
+    .. code-block:: json
+
+        { <old_type_name>:
+              {
+                  'new_name': <new_type_name>,
+                  'members':
+                  {
+                      <old__name>: <new__name>
+                  }
+              }
+        }
+
+    Parameters
+    ----------
+    app : sphinx.application.Sphinx
+        Sphinx application instance containing the all the doc build configuration.
+
+    """
+    ROOT_DIR = pathlib.Path(app.srcdir).parent.parent
+    TOOLS_DIR = ROOT_DIR / "src" / "ansys" / "stk" / "core" / "tools"
+    API_MAPPINGS = TOOLS_DIR / "api_migration_assistant" / "api-mappings"
+    if not API_MAPPINGS.exists():
+        raise FileNotFoundError(f"API mappings directory not found at {API_MAPPINGS}")
+    TABLE_FILES = [file for file in API_MAPPINGS.glob("*.xml") if "internal" not in file.name]
+
+    mappings = {}
+    for xml_file in status_iterator(
+        TABLE_FILES,
+        "Rendering migration table",
+        "green",
+        len(TABLE_FILES),
+        verbosity=1,
+        stringify_func=(lambda x: x.name),
+    ):
+        tree = ET.parse(xml_file)
+        root = tree.getroot()
+
+        type_categories = ["enum_type", "class", "interface"]
+        for type_category in type_categories:
+            type_mappings = root.findall(f'./Mapping[@Category="{type_category}"]')
+            for type_mapping in type_mappings:
+                type_old_name = type_mapping.get("OldName")
+                type_new_name = type_mapping.get("NewName")
+                mappings[type_old_name] = {"new_name": type_new_name, "members": {}}
+
+        member_categories = ["enum_value", "method"]
+        for member_category in member_categories:
+            method_mappings = root.findall(f'./Mapping[@Category="{member_category}"]')
+            for method_mapping in method_mappings:
+                member_old_name = method_mapping.get("OldName")
+                if member_old_name[0] != "_": # Filter out private methods
+                    type_old_name = method_mapping.get("ParentScope")
+                    member_new_name = method_mapping.get("NewName")
+                    if not type_old_name in mappings:
+                        mappings[type_old_name] = {"new_name": type_old_name, "members": {}}
+                    mappings[type_old_name]["members"][member_old_name] = member_new_name
+
+        jinja_contexts["migration_table"] = {
+            "mappings": mappings,
+        }
+
 def setup(app: sphinx.application.Sphinx):
     """
     Run different hook functions during the documentation build.
@@ -520,6 +681,8 @@ def setup(app: sphinx.application.Sphinx):
     # build has completed, no matter its success, the examples are removed from
     # the source directory.
     app.connect("builder-inited", copy_docker_files_to_static_dir)
+    app.connect("builder-inited", read_migration_tables)
+
     if BUILD_EXAMPLES:
         app.connect("builder-inited", copy_examples_files_to_source_dir)
         app.connect("build-finished", remove_examples_from_source_dir)

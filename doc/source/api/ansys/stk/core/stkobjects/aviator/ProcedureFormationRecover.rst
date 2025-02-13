@@ -38,39 +38,39 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFormationRecover.delay_cruise_airspeed_options`
               - Get the delay cruise airspeed options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFormationRecover.start_time`
-              - Gets or sets the time at which the formation begins.
+              - Get or set the time at which the formation begins.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFormationRecover.maximum_time`
               - Get the maximum time at which formation might be possible.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFormationRecover.formation_point`
-              - Gets or sets the position that the aircraft will be locked onto while in formation.
+              - Get or set the position that the aircraft will be locked onto while in formation.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFormationRecover.interpolate_point_position_vel`
-              - Gets or sets the option to use interpolation to determine the formation point's speed and position.
+              - Get or set the option to use interpolation to determine the formation point's speed and position.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFormationRecover.altitude_offset`
-              - Gets or sets the altitude distance between the aircraft and the formation point during the first or second pause.
+              - Get or set the altitude distance between the aircraft and the formation point during the first or second pause.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFormationRecover.fuel_flow_type`
-              - Gets or sets the source used to calculate the fuel flow for the maneuver.
+              - Get or set the source used to calculate the fuel flow for the maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFormationRecover.override_fuel_flow_value`
-              - Gets or sets the value used for the Override Fuel Flow type. The fuel flow type must be set to Override to access this value.
+              - Get or set the value used for the Override Fuel Flow type. The fuel flow type must be set to Override to access this value.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFormationRecover.consider_acceleration_for_fuel_flow`
-              - Gets or sets the option to calculate the fuel flow rate according to the acceleration of the aircraft.
+              - Get or set the option to calculate the fuel flow rate according to the acceleration of the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFormationRecover.first_pause`
-              - Gets or sets the amount of time that the aircraft will pause at the specified altitude offset.
+              - Get or set the amount of time that the aircraft will pause at the specified altitude offset.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFormationRecover.transition_time`
-              - Gets or sets the amount of time that the aircraft will spend transitioning from the specified altitude offset to a zero altitude offset.
+              - Get or set the amount of time that the aircraft will spend transitioning from the specified altitude offset to a zero altitude offset.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFormationRecover.second_pause`
-              - Gets or sets the amount of time that the aircraft will pause at a zero altitude offset.
+              - Get or set the amount of time that the aircraft will pause at a zero altitude offset.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFormationRecover.display_step_time`
-              - Gets or sets the time interval at which ephemeris is generated for display purposes.
+              - Get or set the time interval at which ephemeris is generated for display purposes.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFormationRecover.flight_mode`
-              - Gets or sets the type of performance model that the aircraft will use to fly the maneuver.
+              - Get or set the type of performance model that the aircraft will use to fly the maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFormationRecover.flight_path_angle`
-              - Gets or sets the flight path angle at the beginning of the first pause.
+              - Get or set the flight path angle at the beginning of the first pause.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFormationRecover.radius_factor`
-              - Gets or sets the maximum amount the radius of vertical curve will be increased to minimize the flight path angle required to complete it.
+              - Get or set the maximum amount the radius of vertical curve will be increased to minimize the flight path angle required to complete it.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFormationRecover.use_delay`
-              - Gets or sets the option to insert a delay at the beginning of the procedure.
+              - Get or set the option to insert a delay at the beginning of the procedure.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureFormationRecover.delay_turn_direction`
-              - Gets or sets the turn direction of the delay.
+              - Get or set the turn direction of the delay.
 
 
 
@@ -101,7 +101,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFormationRecover.start_time
     :type: typing.Any
 
-    Gets or sets the time at which the formation begins.
+    Get or set the time at which the formation begins.
 
 .. py:property:: maximum_time
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFormationRecover.maximum_time
@@ -113,91 +113,91 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFormationRecover.formation_point
     :type: str
 
-    Gets or sets the position that the aircraft will be locked onto while in formation.
+    Get or set the position that the aircraft will be locked onto while in formation.
 
 .. py:property:: interpolate_point_position_vel
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFormationRecover.interpolate_point_position_vel
     :type: bool
 
-    Gets or sets the option to use interpolation to determine the formation point's speed and position.
+    Get or set the option to use interpolation to determine the formation point's speed and position.
 
 .. py:property:: altitude_offset
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFormationRecover.altitude_offset
     :type: float
 
-    Gets or sets the altitude distance between the aircraft and the formation point during the first or second pause.
+    Get or set the altitude distance between the aircraft and the formation point during the first or second pause.
 
 .. py:property:: fuel_flow_type
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFormationRecover.fuel_flow_type
-    :type: FUEL_FLOW_TYPE
+    :type: FuelFlowType
 
-    Gets or sets the source used to calculate the fuel flow for the maneuver.
+    Get or set the source used to calculate the fuel flow for the maneuver.
 
 .. py:property:: override_fuel_flow_value
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFormationRecover.override_fuel_flow_value
     :type: float
 
-    Gets or sets the value used for the Override Fuel Flow type. The fuel flow type must be set to Override to access this value.
+    Get or set the value used for the Override Fuel Flow type. The fuel flow type must be set to Override to access this value.
 
 .. py:property:: consider_acceleration_for_fuel_flow
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFormationRecover.consider_acceleration_for_fuel_flow
     :type: bool
 
-    Gets or sets the option to calculate the fuel flow rate according to the acceleration of the aircraft.
+    Get or set the option to calculate the fuel flow rate according to the acceleration of the aircraft.
 
 .. py:property:: first_pause
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFormationRecover.first_pause
     :type: typing.Any
 
-    Gets or sets the amount of time that the aircraft will pause at the specified altitude offset.
+    Get or set the amount of time that the aircraft will pause at the specified altitude offset.
 
 .. py:property:: transition_time
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFormationRecover.transition_time
     :type: float
 
-    Gets or sets the amount of time that the aircraft will spend transitioning from the specified altitude offset to a zero altitude offset.
+    Get or set the amount of time that the aircraft will spend transitioning from the specified altitude offset to a zero altitude offset.
 
 .. py:property:: second_pause
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFormationRecover.second_pause
     :type: typing.Any
 
-    Gets or sets the amount of time that the aircraft will pause at a zero altitude offset.
+    Get or set the amount of time that the aircraft will pause at a zero altitude offset.
 
 .. py:property:: display_step_time
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFormationRecover.display_step_time
     :type: float
 
-    Gets or sets the time interval at which ephemeris is generated for display purposes.
+    Get or set the time interval at which ephemeris is generated for display purposes.
 
 .. py:property:: flight_mode
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFormationRecover.flight_mode
-    :type: PHASE_OF_FLIGHT
+    :type: PhaseOfFlight
 
-    Gets or sets the type of performance model that the aircraft will use to fly the maneuver.
+    Get or set the type of performance model that the aircraft will use to fly the maneuver.
 
 .. py:property:: flight_path_angle
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFormationRecover.flight_path_angle
     :type: typing.Any
 
-    Gets or sets the flight path angle at the beginning of the first pause.
+    Get or set the flight path angle at the beginning of the first pause.
 
 .. py:property:: radius_factor
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFormationRecover.radius_factor
     :type: float
 
-    Gets or sets the maximum amount the radius of vertical curve will be increased to minimize the flight path angle required to complete it.
+    Get or set the maximum amount the radius of vertical curve will be increased to minimize the flight path angle required to complete it.
 
 .. py:property:: use_delay
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFormationRecover.use_delay
     :type: bool
 
-    Gets or sets the option to insert a delay at the beginning of the procedure.
+    Get or set the option to insert a delay at the beginning of the procedure.
 
 .. py:property:: delay_turn_direction
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFormationRecover.delay_turn_direction
-    :type: DELAY_TURN_DIRECTION
+    :type: DelayTurnDirection
 
-    Gets or sets the turn direction of the delay.
+    Get or set the turn direction of the delay.
 
 
 Method detail
@@ -214,14 +214,14 @@ Method detail
 
 
 
-.. py:method:: get_minimum_time(self, considerPrevProc: bool) -> typing.Any
+.. py:method:: get_minimum_time(self, consider_prev_proc: bool) -> typing.Any
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFormationRecover.get_minimum_time
 
     Get the minimum time at which formation might be possible. Opt whether to consider previous procedure(s) for the minimum time.
 
     :Parameters:
 
-    **considerPrevProc** : :obj:`~bool`
+    **consider_prev_proc** : :obj:`~bool`
 
     :Returns:
 
@@ -229,16 +229,16 @@ Method detail
 
 
 
-.. py:method:: find_first_valid_start_time(self, minTime: typing.Any, maxTime: typing.Any, stepTime: float) -> typing.Any
+.. py:method:: find_first_valid_start_time(self, min_time: typing.Any, max_time: typing.Any, step_time: float) -> typing.Any
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFormationRecover.find_first_valid_start_time
 
     Have Aviator calculate the earliest valid formation time.
 
     :Parameters:
 
-    **minTime** : :obj:`~typing.Any`
-    **maxTime** : :obj:`~typing.Any`
-    **stepTime** : :obj:`~float`
+    **min_time** : :obj:`~typing.Any`
+    **max_time** : :obj:`~typing.Any`
+    **step_time** : :obj:`~float`
 
     :Returns:
 

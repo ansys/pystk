@@ -24,7 +24,6 @@ Overview
               - Initialize a triangle mesh primitive with the specified setHint .
 
 
-
 Import detail
 -------------
 
@@ -46,14 +45,14 @@ Method detail
 
         :obj:`~TriangleMeshPrimitive`
 
-.. py:method:: initialize_with_set_hint(self, setHint: SET_HINT) -> TriangleMeshPrimitive
+.. py:method:: initialize_with_set_hint(self, set_hint: SetHint) -> TriangleMeshPrimitive
     :canonical: ansys.stk.core.graphics.TriangleMeshPrimitiveFactory.initialize_with_set_hint
 
     Initialize a triangle mesh primitive with the specified setHint .
 
     :Parameters:
 
-    **setHint** : :obj:`~SET_HINT`
+    **set_hint** : :obj:`~SetHint`
 
     :Returns:
 

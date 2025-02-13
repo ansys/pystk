@@ -9,10 +9,6 @@ TerrainOverlay
 
 .. py:currentmodule:: TerrainOverlay
 
-Overview
---------
-
-
 
 Import detail
 -------------

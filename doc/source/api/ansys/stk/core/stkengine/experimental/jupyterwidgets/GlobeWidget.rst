@@ -3,7 +3,7 @@ GlobeWidget
 
 .. py:class:: ansys.stk.core.stkengine.experimental.jupyterwidgets.GlobeWidget
 
-   UiAxGraphics3DCntrl, WidgetBase
+   Graphics3DControlBase, WidgetBase
 
    The 3D Globe widget for jupyter.
 

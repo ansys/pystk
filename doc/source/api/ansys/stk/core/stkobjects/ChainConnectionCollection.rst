@@ -40,9 +40,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ChainConnectionCollection.count`
-              - Returns the number of elements in the collection.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ChainConnectionCollection._NewEnum`
-              - Returns an enumerator for the collection.
+              - Return the number of elements in the collection.
+            * - :py:attr:`~ansys.stk.core.stkobjects.ChainConnectionCollection._new_enum`
+              - Return an enumerator for the collection.
 
 
 
@@ -61,13 +61,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.ChainConnectionCollection.count
     :type: int
 
-    Returns the number of elements in the collection.
+    Return the number of elements in the collection.
 
-.. py:property:: _NewEnum
-    :canonical: ansys.stk.core.stkobjects.ChainConnectionCollection._NewEnum
+.. py:property:: _new_enum
+    :canonical: ansys.stk.core.stkobjects.ChainConnectionCollection._new_enum
     :type: EnumeratorProxy
 
-    Returns an enumerator for the collection.
+    Return an enumerator for the collection.
 
 
 Method detail
@@ -88,15 +88,15 @@ Method detail
         :obj:`~ChainConnection`
 
 
-.. py:method:: item_by_from_to_objects(self, pFromObject: IStkObject, pToObject: IStkObject) -> ChainConnection
+.. py:method:: item_by_from_to_objects(self, from_object: IStkObject, to_object: IStkObject) -> ChainConnection
     :canonical: ansys.stk.core.stkobjects.ChainConnectionCollection.item_by_from_to_objects
 
     Given the From and To objects of a connection, returns the element in the collection.
 
     :Parameters:
 
-    **pFromObject** : :obj:`~IStkObject`
-    **pToObject** : :obj:`~IStkObject`
+    **from_object** : :obj:`~IStkObject`
+    **to_object** : :obj:`~IStkObject`
 
     :Returns:
 
@@ -115,48 +115,48 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: remove(self, pFromObject: IStkObject, pToObject: IStkObject) -> None
+.. py:method:: remove(self, from_object: IStkObject, to_object: IStkObject) -> None
     :canonical: ansys.stk.core.stkobjects.ChainConnectionCollection.remove
 
     Remove the connection for the input from-to object pair.
 
     :Parameters:
 
-    **pFromObject** : :obj:`~IStkObject`
-    **pToObject** : :obj:`~IStkObject`
+    **from_object** : :obj:`~IStkObject`
+    **to_object** : :obj:`~IStkObject`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: add(self, pFromObject: IStkObject, pToObject: IStkObject, minNumUses: int, maxNumUses: int) -> ChainConnection
+.. py:method:: add(self, from_object: IStkObject, to_object: IStkObject, min_num_uses: int, max_num_uses: int) -> ChainConnection
     :canonical: ansys.stk.core.stkobjects.ChainConnectionCollection.add
 
     Add and returns a new connection with the corresponding values.
 
     :Parameters:
 
-    **pFromObject** : :obj:`~IStkObject`
-    **pToObject** : :obj:`~IStkObject`
-    **minNumUses** : :obj:`~int`
-    **maxNumUses** : :obj:`~int`
+    **from_object** : :obj:`~IStkObject`
+    **to_object** : :obj:`~IStkObject`
+    **min_num_uses** : :obj:`~int`
+    **max_num_uses** : :obj:`~int`
 
     :Returns:
 
         :obj:`~ChainConnection`
 
-.. py:method:: add_with_parent_restriction(self, pFromObject: IStkObject, pToObject: IStkObject, minNumUses: int, maxNumUses: int, parentRestriction: CHAIN_PARENT_PLATFORM_RESTRICTION) -> ChainConnection
+.. py:method:: add_with_parent_restriction(self, from_object: IStkObject, to_object: IStkObject, min_num_uses: int, max_num_uses: int, parent_restriction: ChainParentPlatformRestriction) -> ChainConnection
     :canonical: ansys.stk.core.stkobjects.ChainConnectionCollection.add_with_parent_restriction
 
     Add with the option for a parent restriction and returns a new connection with the corresponding values. A Constellation or Subset must be one of the input objects.
 
     :Parameters:
 
-    **pFromObject** : :obj:`~IStkObject`
-    **pToObject** : :obj:`~IStkObject`
-    **minNumUses** : :obj:`~int`
-    **maxNumUses** : :obj:`~int`
-    **parentRestriction** : :obj:`~CHAIN_PARENT_PLATFORM_RESTRICTION`
+    **from_object** : :obj:`~IStkObject`
+    **to_object** : :obj:`~IStkObject`
+    **min_num_uses** : :obj:`~int`
+    **max_num_uses** : :obj:`~int`
+    **parent_restriction** : :obj:`~ChainParentPlatformRestriction`
 
     :Returns:
 

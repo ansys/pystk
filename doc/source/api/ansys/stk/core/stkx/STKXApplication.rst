@@ -36,7 +36,7 @@ Overview
               - Terminates the use of STK Engine. This must be the last call to STK Engine.
             * - :py:attr:`~ansys.stk.core.stkx.STKXApplication.use_software_renderer`
               - Configure engine graphics to use a software renderer in order to meet minimum graphics requirements. Enabling this option will result in significant performance impacts.
-            * - :py:attr:`~ansys.stk.core.stkx.STKXApplication.Subscribe`
+            * - :py:attr:`~ansys.stk.core.stkx.STKXApplication.subscribe`
               - """Return an ISTKXApplicationEventHandler that is subscribed to handle events associated with this instance of STKXApplication."""
 
     .. tab-item:: Properties
@@ -50,23 +50,23 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkx.STKXApplication.connect_port`
               - Specify TCP/IP port to be used by Connect (default: 5001).
             * - :py:attr:`~ansys.stk.core.stkx.STKXApplication.host_id`
-              - Returns the Host ID.
+              - Return the Host ID.
             * - :py:attr:`~ansys.stk.core.stkx.STKXApplication.registration_id`
-              - Returns the Registration ID.
+              - Return the Registration ID.
             * - :py:attr:`~ansys.stk.core.stkx.STKXApplication.version`
-              - Returns the version number.
+              - Return the version number.
             * - :py:attr:`~ansys.stk.core.stkx.STKXApplication.vendor_id`
-              - This property is deprecated. The identifier of the vendor.
+              - Do not use this property, as it is deprecated. The identifier of the vendor.
             * - :py:attr:`~ansys.stk.core.stkx.STKXApplication.log_file_full_name`
-              - Returns full path and log file name.
+              - Return full path and log file name.
             * - :py:attr:`~ansys.stk.core.stkx.STKXApplication.logging_mode`
-              - Controls the log file generation, and if the log file is deleted or not on application exit.
+              - Control the log file generation, and if the log file is deleted or not on application exit.
             * - :py:attr:`~ansys.stk.core.stkx.STKXApplication.connect_max_connections`
               - Specify the maximum number of Connect connections to allow.
             * - :py:attr:`~ansys.stk.core.stkx.STKXApplication.no_graphics`
               - Start engine with or without graphics (default: engine starts with graphics.).
             * - :py:attr:`~ansys.stk.core.stkx.STKXApplication.show_sla_if_not_accepted`
-              - Shows the Software License Agreement dialog if not already accepted.
+              - Show the Software License Agreement dialog if not already accepted.
             * - :py:attr:`~ansys.stk.core.stkx.STKXApplication.use_hook`
               - Start engine with or without message hook setup (default: engine starts with message hook setup.).
 
@@ -99,37 +99,37 @@ Property detail
     :canonical: ansys.stk.core.stkx.STKXApplication.host_id
     :type: str
 
-    Returns the Host ID.
+    Return the Host ID.
 
 .. py:property:: registration_id
     :canonical: ansys.stk.core.stkx.STKXApplication.registration_id
     :type: str
 
-    Returns the Registration ID.
+    Return the Registration ID.
 
 .. py:property:: version
     :canonical: ansys.stk.core.stkx.STKXApplication.version
     :type: str
 
-    Returns the version number.
+    Return the version number.
 
 .. py:property:: vendor_id
     :canonical: ansys.stk.core.stkx.STKXApplication.vendor_id
     :type: str
 
-    This property is deprecated. The identifier of the vendor.
+    Do not use this property, as it is deprecated. The identifier of the vendor.
 
 .. py:property:: log_file_full_name
     :canonical: ansys.stk.core.stkx.STKXApplication.log_file_full_name
     :type: str
 
-    Returns full path and log file name.
+    Return full path and log file name.
 
 .. py:property:: logging_mode
     :canonical: ansys.stk.core.stkx.STKXApplication.logging_mode
-    :type: LOGGING_MODE
+    :type: LoggingMode
 
-    Controls the log file generation, and if the log file is deleted or not on application exit.
+    Control the log file generation, and if the log file is deleted or not on application exit.
 
 .. py:property:: connect_max_connections
     :canonical: ansys.stk.core.stkx.STKXApplication.connect_max_connections
@@ -147,7 +147,7 @@ Property detail
     :canonical: ansys.stk.core.stkx.STKXApplication.show_sla_if_not_accepted
     :type: bool
 
-    Shows the Software License Agreement dialog if not already accepted.
+    Show the Software License Agreement dialog if not already accepted.
 
 .. py:property:: use_hook
     :canonical: ansys.stk.core.stkx.STKXApplication.use_hook
@@ -159,7 +159,7 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: execute_command(self, command: str) -> ExecCmdResult
+.. py:method:: execute_command(self, command: str) -> ExecuteCommandResult
     :canonical: ansys.stk.core.stkx.STKXApplication.execute_command
 
     Send a connect command to STK X.
@@ -170,7 +170,7 @@ Method detail
 
     :Returns:
 
-        :obj:`~ExecCmdResult`
+        :obj:`~ExecuteCommandResult`
 
 
 
@@ -190,19 +190,19 @@ Method detail
 
 
 
-.. py:method:: set_online_options(self, useProxy: bool, serverName: str, portNum: int, userName: str, password: str, savePassword: bool) -> bool
+.. py:method:: set_online_options(self, use_proxy: bool, server_name: str, port_num: int, user_name: str, password: str, save_password: bool) -> bool
     :canonical: ansys.stk.core.stkx.STKXApplication.set_online_options
 
     Set http proxy online options.
 
     :Parameters:
 
-    **useProxy** : :obj:`~bool`
-    **serverName** : :obj:`~str`
-    **portNum** : :obj:`~int`
-    **userName** : :obj:`~str`
+    **use_proxy** : :obj:`~bool`
+    **server_name** : :obj:`~str`
+    **port_num** : :obj:`~int`
+    **user_name** : :obj:`~str`
     **password** : :obj:`~str`
-    **savePassword** : :obj:`~bool`
+    **save_password** : :obj:`~bool`
 
     :Returns:
 
@@ -217,15 +217,15 @@ Method detail
 
         :obj:`~typing.Tuple[bool, str, int, str, bool]`
 
-.. py:method:: set_connect_handler(self, commandID: str, progID: str) -> None
+.. py:method:: set_connect_handler(self, command_id: str, prog_id: str) -> None
     :canonical: ansys.stk.core.stkx.STKXApplication.set_connect_handler
 
     Set callback to handle a certain connect command.
 
     :Parameters:
 
-    **commandID** : :obj:`~str`
-    **progID** : :obj:`~str`
+    **command_id** : :obj:`~str`
+    **prog_id** : :obj:`~str`
 
     :Returns:
 
@@ -236,28 +236,28 @@ Method detail
 
 
 
-.. py:method:: execute_multiple_commands(self, connectCommands: list, eAction: EXEC_MULTI_CMD_RESULT_ACTION) -> ExecMultiCmdResult
+.. py:method:: execute_multiple_commands(self, connect_commands: list, action: ExecuteMultipleCommandsMode) -> ExecuteMultipleCommandsResult
     :canonical: ansys.stk.core.stkx.STKXApplication.execute_multiple_commands
 
     Execute multiple CONNECT actions. The method throws an exception if any of the specified commands have failed.
 
     :Parameters:
 
-    **connectCommands** : :obj:`~list`
-    **eAction** : :obj:`~EXEC_MULTI_CMD_RESULT_ACTION`
+    **connect_commands** : :obj:`~list`
+    **action** : :obj:`~ExecuteMultipleCommandsMode`
 
     :Returns:
 
-        :obj:`~ExecMultiCmdResult`
+        :obj:`~ExecuteMultipleCommandsResult`
 
-.. py:method:: is_feature_available(self, featureCode: FEATURE_CODES) -> bool
+.. py:method:: is_feature_available(self, feature_code: FeatureCodes) -> bool
     :canonical: ansys.stk.core.stkx.STKXApplication.is_feature_available
 
     Return true if the specified feature is available.
 
     :Parameters:
 
-    **featureCode** : :obj:`~FEATURE_CODES`
+    **feature_code** : :obj:`~FeatureCodes`
 
     :Returns:
 

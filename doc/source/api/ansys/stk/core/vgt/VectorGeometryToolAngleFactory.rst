@@ -24,7 +24,6 @@ Overview
               - Return true if the type is supported.
 
 
-
 Import detail
 -------------
 
@@ -37,29 +36,29 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: create(self, angleName: str, description: str, angleType: VECTOR_GEOMETRY_TOOL_ANGLE_TYPE) -> IVectorGeometryToolAngle
+.. py:method:: create(self, angle_name: str, description: str, angle_type: AngleType) -> IVectorGeometryToolAngle
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAngleFactory.create
 
     Create a VGT angle using specified name, description and type.
 
     :Parameters:
 
-    **angleName** : :obj:`~str`
+    **angle_name** : :obj:`~str`
     **description** : :obj:`~str`
-    **angleType** : :obj:`~VECTOR_GEOMETRY_TOOL_ANGLE_TYPE`
+    **angle_type** : :obj:`~AngleType`
 
     :Returns:
 
         :obj:`~IVectorGeometryToolAngle`
 
-.. py:method:: is_type_supported(self, type: VECTOR_GEOMETRY_TOOL_ANGLE_TYPE) -> bool
+.. py:method:: is_type_supported(self, type: AngleType) -> bool
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAngleFactory.is_type_supported
 
     Return true if the type is supported.
 
     :Parameters:
 
-    **type** : :obj:`~VECTOR_GEOMETRY_TOOL_ANGLE_TYPE`
+    **type** : :obj:`~AngleType`
 
     :Returns:
 

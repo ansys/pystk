@@ -1,8 +1,7 @@
-version: '3.8'
 services:
 
   stk:
-    image: ansys/stk:dev-ubuntu22.04
+    image: ansys/stk-12.10:dev-ubuntu22.04
     container_name: stk
     build: 
       context: ./stk-engine
@@ -12,53 +11,54 @@ services:
       - ANSYSLMD_LICENSE_FILE=$ANSYSLMD_LICENSE_FILE
 
   stk-pybase:
-    image: ansys/stk:dev-ubuntu22.04-pybase
+    image: ansys/stk-12.10:dev-ubuntu22.04-pybase
     depends_on:
       - stk
     container_name: stk-pybase
     build: 
       context: ./stk-engine-pybase
       args:
-        baseImage: ansys/stk:dev-ubuntu22.04
-    environment:
-      - ANSYSLMD_LICENSE_FILE=$ANSYSLMD_LICENSE_FILE
-
-  stk-python3.10:
-    image: ansys/stk:dev-ubuntu22.04-python3.10
-    depends_on: 
-      - stk-pybase 
-    container_name: stk-python3.10
-    build: 
-      context: ./stk-engine-py310
-      args:
-        baseImage: ansys/stk:dev-ubuntu22.04
-        basePythonImage: ansys/stk:dev-ubuntu22.04-pybase
+        baseImage: ansys/stk-12.10:dev-ubuntu22.04
     environment:
       - ANSYSLMD_LICENSE_FILE=$ANSYSLMD_LICENSE_FILE
 
   stk-python3.11:
-    image: ansys/stk:dev-ubuntu22.04-python3.11
+    image: ansys/stk-12.10:dev-ubuntu22.04-python3.11
     depends_on: 
       - stk-pybase 
     container_name: stk-python3.11
     build: 
       context: ./stk-engine-py311
       args:
-        baseImage: ansys/stk:dev-ubuntu22.04
-        basePythonImage: ansys/stk:dev-ubuntu22.04-pybase
+        baseImage: ansys/stk-12.10:dev-ubuntu22.04
+        basePythonImage: ansys/stk-12.10:dev-ubuntu22.04-pybase
     environment:
       - ANSYSLMD_LICENSE_FILE=$ANSYSLMD_LICENSE_FILE
 
   stk-python3.12:
-    image: ansys/stk:dev-ubuntu22.04-python3.12
+    image: ansys/stk-12.10:dev-ubuntu22.04-python3.12
     depends_on:
       - stk-pybase 
     container_name: stk-python3.12
     build: 
       context: ./stk-engine-py312
       args:
-        baseImage: ansys/stk:dev-ubuntu22.04
-        basePythonImage: ansys/stk:dev-ubuntu22.04-pybase
+        baseImage: ansys/stk-12.10:dev-ubuntu22.04
+        basePythonImage: ansys/stk-12.10:dev-ubuntu22.04-pybase
     environment:
       - ANSYSLMD_LICENSE_FILE=$ANSYSLMD_LICENSE_FILE
+
+  stk-python3.13:
+    image: ansys/stk-12.10:dev-ubuntu22.04-python3.13
+    depends_on: 
+      - stk-pybase 
+    container_name: stk-python3.13
+    build: 
+      context: ./stk-engine-py313
+      args:
+        baseImage: ansys/stk-12.10:dev-ubuntu22.04
+        basePythonImage: ansys/stk-12.10:dev-ubuntu22.04-pybase
+    environment:
+      - ANSYSLMD_LICENSE_FILE=$ANSYSLMD_LICENSE_FILE
+
 

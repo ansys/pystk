@@ -37,7 +37,7 @@ Summary
             * - :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolPlane`
               - The interface defines methods and properties common to all VGT planes.
 
-            * - :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchContext`
+            * - :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponentContext`
               - The interface represents a context associated with a VGT component. All VGT components are associated with a valid context. A context can represent a VGT instance or a VGT template.
 
             * - :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponent`
@@ -52,31 +52,31 @@ Summary
             * - :py:class:`~ansys.stk.core.vgt.ICalculationToolConditionSet`
               - Condition set returns an array of non-dimensional metrics, one for each condition in the set; each metric is positive if corresponding condition is satisfied, negative if not satisfied and 0 if on boundary; this provides computational methods needed for...
 
-            * - :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchConverge`
+            * - :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchConvergence`
               - Represents a base class for convergence definitions.
 
             * - :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchDerivative`
               - Represents a base class for derivative definitions.
 
-            * - :py:class:`~ansys.stk.core.vgt.ITimeToolEvent`
+            * - :py:class:`~ansys.stk.core.vgt.ITimeToolInstant`
               - Define an event (time instant).
 
-            * - :py:class:`~ansys.stk.core.vgt.ITimeToolEventArray`
+            * - :py:class:`~ansys.stk.core.vgt.ITimeToolTimeArray`
               - An ordered array of times, which may or may not be evenly spaced.
 
-            * - :py:class:`~ansys.stk.core.vgt.ITimeToolEventInterval`
+            * - :py:class:`~ansys.stk.core.vgt.ITimeToolTimeInterval`
               - A single time interval.
 
-            * - :py:class:`~ansys.stk.core.vgt.ITimeToolEventIntervalCollection`
+            * - :py:class:`~ansys.stk.core.vgt.ITimeToolTimeIntervalCollection`
               - A collection of related interval lists.
 
-            * - :py:class:`~ansys.stk.core.vgt.ITimeToolEventIntervalList`
+            * - :py:class:`~ansys.stk.core.vgt.ITimeToolTimeIntervalList`
               - An ordered list of time intervals.
 
             * - :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchIntegral`
               - Represents a base class for integral definitions.
 
-            * - :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchInterp`
+            * - :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchInterpolator`
               - Represents a base class for interpolation definitions.
 
             * - :py:class:`~ansys.stk.core.vgt.ICalculationToolParameterSet`
@@ -100,74 +100,17 @@ Summary
             * - :py:class:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolume`
               - A volume interface. The methods and properties of the interface provide Volume functions.
 
-            * - :py:class:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeCalc`
+            * - :py:class:`~ansys.stk.core.vgt.ISpatialAnalysisToolSpatialCalculation`
               - A volume calc interface. The methods and properties of the interface provide Volumetric calc functions.
 
             * - :py:class:`~ansys.stk.core.vgt.ISpatialAnalysisToolVolumeGrid`
               - A volume grid interface. The methods and properties of the interface provide Volumetric Grid functions.
 
-            * - :py:class:`~ansys.stk.core.vgt.ITimeToolTimeProperties`
+            * - :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponentTimeProperties`
               - Define methods to compute time properties such as availability and special times.
 
-            * - :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchRefTo`
+            * - :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchComponentReference`
               - A base interface for all VGT component references.
-
-            * - :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolAngleFindAngleResult`
-              - Contains the results returned with IAgCrdnAngle.FindAngle method.
-
-            * - :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolAngleFindAngleWithRateResult`
-              - Contains the results returned with IAgCrdnAngle.FindAngleWithRate method.
-
-            * - :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolAngleFindWithRateResult`
-              - Contains the results returned with IAgCrdnAngle.FindCoordinatesWithRate method.
-
-            * - :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolAngleFindResult`
-              - Contains the results returned with IAgCrdnAngle.FindCoordinates method.
-
-            * - :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolAxesTransformResult`
-              - Contains the results returned with IAgCrdnAxes.TransformFrom method.
-
-            * - :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolAxesTransformWithRateResult`
-              - Contains the results returned with IAgCrdnAxes.TransformFromWithRate method.
-
-            * - :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneFindInAxesResult`
-              - Contains the results returned with IAgCrdnPlane.FindInAxes method.
-
-            * - :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneFindInAxesWithRateResult`
-              - Contains the results returned with IAgCrdnPlane.FindInAxesWithRate method.
-
-            * - :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneFindInSystemResult`
-              - Contains the results returned with IAgCrdnPlane.FindInSystem method.
-
-            * - :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolPlaneFindInSystemWithRateResult`
-              - Contains the results returned with IAgCrdnPlane.FindInSystemWithRate method.
-
-            * - :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolAxesFindInAxesResult`
-              - Contains the results returned with IAgCrdnAxes.FindInAxes method.
-
-            * - :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolAxesFindInAxesWithRateResult`
-              - Contains the results returned with IAgCrdnAxes.FindInAxesWithRate method.
-
-            * - :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolPointLocateInSystemResult`
-              - Contains the results returned with IAgCrdnPoint.LocateInSystem method.
-
-            * - :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolPointLocateInSystemWithRateResult`
-              - Contains the results returned with IAgCrdnPoint.LocateInSystemWithRate method.
-
-            * - :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolSystemTransformResult`
-              - Contains the results returned with IAgCrdnSystem.TransformFrom and IAgCrdnSystem.TransformTo methods.
-
-            * - :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolSystemTransformWithRateResult`
-              - Contains the results returned with IAgCrdnSystem.TransformFromWithRate and IAgCrdnSystem.TransformToWithRate methods.
-
-            * - :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolSystemFindInSystemResult`
-              - Contains the results returned with IAgCrdnSystem.FindInSystem method.
-
-            * - :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVectorFindInAxesResult`
-              - Contains the results returned with IAgCrdnVector.FindInAxes method.
-
-            * - :py:class:`~ansys.stk.core.vgt.IVectorGeometryToolVectorFindInAxesWithRateResult`
-              - Contains the results returned with IAgCrdnVector.FindInAxesWithRate method.
 
             * - :py:class:`~ansys.stk.core.vgt.IAnalysisWorkbenchMethodCallResult`
               - Instances of the interface are used to return the result of a computation.
@@ -186,19 +129,19 @@ Summary
             * - :py:class:`~ansys.stk.core.vgt.CalculationToolEvaluateWithRateResult`
               - Represents the results of evaluating a scalar component.
 
-            * - :py:class:`~ansys.stk.core.vgt.TimeToolEventIntervalResult`
+            * - :py:class:`~ansys.stk.core.vgt.TimeToolTimeIntervalResult`
               - Contains the results returned with IAgCrdnEventIntervalList.FindIntervals method.
 
-            * - :py:class:`~ansys.stk.core.vgt.TimeToolEventFindOccurrenceResult`
+            * - :py:class:`~ansys.stk.core.vgt.TimeToolInstantOccurrenceResult`
               - Contains the results returned with IAgCrdnEvent.FindOccurrence method.
 
-            * - :py:class:`~ansys.stk.core.vgt.TimeToolFindTimesResult`
+            * - :py:class:`~ansys.stk.core.vgt.TimeToolTimeArrayFindTimesResult`
               - Return a collection of intervals and an array of times.
 
             * - :py:class:`~ansys.stk.core.vgt.TimeToolIntervalsVectorResult`
               - Contains the results returned with IAgCrdnEventIntervalCollection.FindIntervalCollection method.
 
-            * - :py:class:`~ansys.stk.core.vgt.TimeToolEventIntervalCollectionOccurredResult`
+            * - :py:class:`~ansys.stk.core.vgt.TimeToolTimeIntervalCollectionOccurredResult`
               - Contains the results returned with IAgCrdnEventIntervalCollection.Occurred method.
 
             * - :py:class:`~ansys.stk.core.vgt.TimeToolIntervalListResult`
@@ -207,22 +150,22 @@ Summary
             * - :py:class:`~ansys.stk.core.vgt.TimeToolIntervalVectorCollection`
               - A collection of interval collections.
 
-            * - :py:class:`~ansys.stk.core.vgt.TimeToolEventGroup`
+            * - :py:class:`~ansys.stk.core.vgt.TimeToolInstantGroup`
               - Access or create VGT events associated with an object.
 
-            * - :py:class:`~ansys.stk.core.vgt.TimeToolEventIntervalGroup`
+            * - :py:class:`~ansys.stk.core.vgt.TimeToolTimeIntervalGroup`
               - Access or create VGT event intervals associated with an object.
 
-            * - :py:class:`~ansys.stk.core.vgt.TimeToolEventIntervalListGroup`
+            * - :py:class:`~ansys.stk.core.vgt.TimeToolTimeIntervalListGroup`
               - Access or create VGT event interval lists associated with an object.
 
-            * - :py:class:`~ansys.stk.core.vgt.TimeToolEventArrayGroup`
+            * - :py:class:`~ansys.stk.core.vgt.TimeToolTimeArrayGroup`
               - Access or create VGT event arrays associated with an object.
 
             * - :py:class:`~ansys.stk.core.vgt.CalculationToolScalarGroup`
               - Access or create VGT calculation scalars associated with an object or a central body.
 
-            * - :py:class:`~ansys.stk.core.vgt.TimeToolEventIntervalCollectionGroup`
+            * - :py:class:`~ansys.stk.core.vgt.TimeToolTimeIntervalCollectionGroup`
               - Access or create VGT event interval collections associated with an object.
 
             * - :py:class:`~ansys.stk.core.vgt.CalculationToolParameterSetGroup`
@@ -243,10 +186,10 @@ Summary
             * - :py:class:`~ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridGroup`
               - Access or create VGT volume grids associated with an object or a central body.
 
-            * - :py:class:`~ansys.stk.core.vgt.SpatialAnalysisToolVolumeGroup`
+            * - :py:class:`~ansys.stk.core.vgt.SpatialAnalysisToolConditionGroup`
               - Access or create spatial conditions associated with a volume grid.
 
-            * - :py:class:`~ansys.stk.core.vgt.SpatialAnalysisToolVolumeCalcGroup`
+            * - :py:class:`~ansys.stk.core.vgt.SpatialAnalysisToolCalculationGroup`
               - Access or create VGT volume calc associated with an object or a central body.
 
             * - :py:class:`~ansys.stk.core.vgt.CalculationToolScalar`
@@ -264,7 +207,7 @@ Summary
             * - :py:class:`~ansys.stk.core.vgt.CalculationToolScalarCustom`
               - A calc scalar based on a scripted algorithm in MATLAB (.m or .dll), Perl or VBScript to define its value and rate.
 
-            * - :py:class:`~ansys.stk.core.vgt.CalculationToolScalarCustomInline`
+            * - :py:class:`~ansys.stk.core.vgt.CalculationToolScalarCustomInlineScript`
               - A calc scalar based on using an inline scripted algorithm in MATLAB, Perl, VBScript or JScript to define its value and rate.
 
             * - :py:class:`~ansys.stk.core.vgt.CalculationToolScalarDataElement`
@@ -291,7 +234,7 @@ Summary
             * - :py:class:`~ansys.stk.core.vgt.CalculationToolScalarFunction`
               - Defined by performing the specified function on the input scalar or time instant.
 
-            * - :py:class:`~ansys.stk.core.vgt.CalculationToolScalarFunction2Var`
+            * - :py:class:`~ansys.stk.core.vgt.CalculationToolScalarFunctionOf2Variables`
               - Defined by performing a function(x,y) on two scalar arguments.
 
             * - :py:class:`~ansys.stk.core.vgt.CalculationToolScalarIntegral`
@@ -300,7 +243,7 @@ Summary
             * - :py:class:`~ansys.stk.core.vgt.CalculationToolScalarPlugin`
               - Use a scalar calculation plugin.
 
-            * - :py:class:`~ansys.stk.core.vgt.CalculationToolScalarPointInVolumeCalc`
+            * - :py:class:`~ansys.stk.core.vgt.CalculationToolScalarAlongTrajectory`
               - Scalar value of spatial calculation evaluated along trajectory of point.
 
             * - :py:class:`~ansys.stk.core.vgt.CalculationToolScalarStandardDeviation`
@@ -324,7 +267,7 @@ Summary
             * - :py:class:`~ansys.stk.core.vgt.CalculationToolConditionFactory`
               - The factory creates condition components.
 
-            * - :py:class:`~ansys.stk.core.vgt.CalculationToolConditionPointInVolume`
+            * - :py:class:`~ansys.stk.core.vgt.CalculationToolConditionTrajectoryWithinVolume`
               - Defined by determining if input trajectory poiny is within extents of specified volume grid coordinate.
 
             * - :py:class:`~ansys.stk.core.vgt.CalculationToolConditionScalarBounds`
@@ -339,7 +282,7 @@ Summary
             * - :py:class:`~ansys.stk.core.vgt.CalculationToolConditionSetScalarThresholds`
               - Condition set based on single scalar calculation compared to set of threshold values.
 
-            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchConverge`
+            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchConvergence`
               - Represents a base class for convergence definitions.
 
             * - :py:class:`~ansys.stk.core.vgt.CalculationToolConvergeBasic`
@@ -351,139 +294,139 @@ Summary
             * - :py:class:`~ansys.stk.core.vgt.CalculationToolDerivativeBasic`
               - Derivative definition determines how numerical differencing is used to compute derivatives.
 
-            * - :py:class:`~ansys.stk.core.vgt.TimeToolEvent`
+            * - :py:class:`~ansys.stk.core.vgt.TimeToolInstant`
               - Define an event (time instant).
 
-            * - :py:class:`~ansys.stk.core.vgt.TimeToolEventArray`
+            * - :py:class:`~ansys.stk.core.vgt.TimeToolTimeArray`
               - An ordered array of times, which may or may not be evenly spaced.
 
-            * - :py:class:`~ansys.stk.core.vgt.TimeToolEventArrayConditionCrossings`
+            * - :py:class:`~ansys.stk.core.vgt.TimeToolTimeArrayConditionCrossings`
               - Time array containing times at which the specified condition will change its satisfaction status. Determination is performed within the interval list using Sampling and Convergence parameters.
 
-            * - :py:class:`~ansys.stk.core.vgt.TimeToolEventArrayExtrema`
+            * - :py:class:`~ansys.stk.core.vgt.TimeToolTimeArrayExtrema`
               - Determine times of local minimum and/or maximum of specified scalar calculation. Determination is performed within interval list using Sampling and Convergence parameters.
 
-            * - :py:class:`~ansys.stk.core.vgt.TimeToolEventArrayFactory`
+            * - :py:class:`~ansys.stk.core.vgt.TimeToolTimeArrayFactory`
               - The factory creates event arrays.
 
-            * - :py:class:`~ansys.stk.core.vgt.TimeToolEventArrayFiltered`
+            * - :py:class:`~ansys.stk.core.vgt.TimeToolTimeArrayFiltered`
               - Defined by filtering times from original time array according to specified filtering method.
 
-            * - :py:class:`~ansys.stk.core.vgt.TimeToolEventArrayFixedStep`
+            * - :py:class:`~ansys.stk.core.vgt.TimeToolTimeArrayFixedStep`
               - Defined by taking fixed time steps from specified time reference and adding sampled times to array if they fall within specified bounding interval list.
 
-            * - :py:class:`~ansys.stk.core.vgt.TimeToolEventArrayFixedTimes`
+            * - :py:class:`~ansys.stk.core.vgt.TimeToolTimeArrayFixedTimes`
               - Array defined by time ordered instants each explicitly specified.
 
-            * - :py:class:`~ansys.stk.core.vgt.TimeToolEventArrayMerged`
+            * - :py:class:`~ansys.stk.core.vgt.TimeToolTimeArrayMerged`
               - Defined by merging times from two other arrays by creating a union of bounding intervals from two constituent arrays. If some intervals overlap, then within overlap times from both arrays are merged together.
 
-            * - :py:class:`~ansys.stk.core.vgt.TimeToolEventArraySignaled`
+            * - :py:class:`~ansys.stk.core.vgt.TimeToolTimeArraySignaled`
               - Determine what time array is recorded at target clock location by performing signal transmission of original time array between base and target clock locations...
 
-            * - :py:class:`~ansys.stk.core.vgt.TimeToolEventArrayStartStopTimes`
+            * - :py:class:`~ansys.stk.core.vgt.TimeToolTimeArrayStartStopTimes`
               - Defined by taking start and/or stop times of every interval in specified reference interval list and adding them to array. The array is then bounded by single interval spanning specified reference interval list...
 
-            * - :py:class:`~ansys.stk.core.vgt.TimeToolEventEpoch`
+            * - :py:class:`~ansys.stk.core.vgt.TimeToolInstantEpoch`
               - Event set at specified date/time.
 
-            * - :py:class:`~ansys.stk.core.vgt.TimeToolEventExtremum`
+            * - :py:class:`~ansys.stk.core.vgt.TimeToolInstantExtremum`
               - Determine time of global minimum or maximum of specified scalar calculation. Determination is performed within interval list using Sampling and Convergence parameters.
 
-            * - :py:class:`~ansys.stk.core.vgt.TimeToolEventFactory`
+            * - :py:class:`~ansys.stk.core.vgt.TimeToolInstantFactory`
               - The factory creates events.
 
-            * - :py:class:`~ansys.stk.core.vgt.TimeToolEventInterval`
+            * - :py:class:`~ansys.stk.core.vgt.TimeToolTimeInterval`
               - A single time interval.
 
-            * - :py:class:`~ansys.stk.core.vgt.TimeToolEventIntervalBetweenTimeInstants`
+            * - :py:class:`~ansys.stk.core.vgt.TimeToolTimeIntervalBetweenTimeInstants`
               - Interval between specified start and stop time instants. If start instant occurs after stop, then interval is undefined.
 
-            * - :py:class:`~ansys.stk.core.vgt.TimeToolEventIntervalCollection`
+            * - :py:class:`~ansys.stk.core.vgt.TimeToolTimeIntervalCollection`
               - A collection of related interval lists.
 
-            * - :py:class:`~ansys.stk.core.vgt.TimeToolEventIntervalCollectionCondition`
+            * - :py:class:`~ansys.stk.core.vgt.TimeToolTimeIntervalCollectionCondition`
               - Interval list containing intervals during which specified condition is satisfied. Determination is performed within interval list using Sampling and Convergence parameters.
 
-            * - :py:class:`~ansys.stk.core.vgt.TimeToolEventIntervalCollectionFactory`
+            * - :py:class:`~ansys.stk.core.vgt.TimeToolTimeIntervalCollectionFactory`
               - The factory creates collections of event interval lists.
 
-            * - :py:class:`~ansys.stk.core.vgt.TimeToolEventIntervalCollectionLighting`
+            * - :py:class:`~ansys.stk.core.vgt.TimeToolTimeIntervalCollectionLighting`
               - Defined by computing sunlight, penumbra and umbra intervals as seen at specified location using specified selection of eclipsing bodies.
 
-            * - :py:class:`~ansys.stk.core.vgt.TimeToolEventIntervalCollectionSignaled`
+            * - :py:class:`~ansys.stk.core.vgt.TimeToolTimeIntervalCollectionSignaled`
               - Determine what interval list collection is recorded at target clock location by performing signal transmission of original interval list collection between base and target clock locations...
 
-            * - :py:class:`~ansys.stk.core.vgt.TimeToolEventIntervalFactory`
+            * - :py:class:`~ansys.stk.core.vgt.TimeToolTimeIntervalFactory`
               - The factory creates event intervals.
 
-            * - :py:class:`~ansys.stk.core.vgt.TimeToolEventIntervalFixed`
+            * - :py:class:`~ansys.stk.core.vgt.TimeToolTimeIntervalFixed`
               - Interval defined between two explicitly specified start and stop times. Stop date/time is required to be at or after start.
 
-            * - :py:class:`~ansys.stk.core.vgt.TimeToolEventIntervalFixedDuration`
+            * - :py:class:`~ansys.stk.core.vgt.TimeToolTimeIntervalFixedDuration`
               - Interval of fixed duration specified using start and stop offsets relative to specified reference time instant.
 
-            * - :py:class:`~ansys.stk.core.vgt.TimeToolEventIntervalFromIntervalList`
+            * - :py:class:`~ansys.stk.core.vgt.TimeToolTimeIntervalFromIntervalList`
               - Interval created from specified interval list by using one of several selection methods.
 
-            * - :py:class:`~ansys.stk.core.vgt.TimeToolEventIntervalList`
+            * - :py:class:`~ansys.stk.core.vgt.TimeToolTimeIntervalList`
               - An ordered list of time intervals.
 
-            * - :py:class:`~ansys.stk.core.vgt.TimeToolEventIntervalListCondition`
+            * - :py:class:`~ansys.stk.core.vgt.TimeToolTimeIntervalListCondition`
               - Interval list containing intervals during which specified condition is satisfied. Determination is performed within interval list using Sampling and Convergence parameters.
 
-            * - :py:class:`~ansys.stk.core.vgt.TimeToolEventIntervalListFactory`
+            * - :py:class:`~ansys.stk.core.vgt.TimeToolTimeIntervalListFactory`
               - The factory creates event interval lists.
 
-            * - :py:class:`~ansys.stk.core.vgt.TimeToolEventIntervalListFile`
+            * - :py:class:`~ansys.stk.core.vgt.TimeToolTimeIntervalListFile`
               - Interval list loaded from specified interval file - ASCII file with .int extension. See STK help.
 
-            * - :py:class:`~ansys.stk.core.vgt.TimeToolEventIntervalListFiltered`
+            * - :py:class:`~ansys.stk.core.vgt.TimeToolTimeIntervalListFiltered`
               - Defined by filtering intervals from original interval list using specified filtering method.
 
-            * - :py:class:`~ansys.stk.core.vgt.TimeToolEventIntervalListFixed`
+            * - :py:class:`~ansys.stk.core.vgt.TimeToolTimeIntervalListFixed`
               - Interval list defined by time ordered non-overlapping intervals each explicitly specified by its start and stop times. Stop date/time is required to be at or after start for each interval.
 
-            * - :py:class:`~ansys.stk.core.vgt.TimeToolEventIntervalListMerged`
+            * - :py:class:`~ansys.stk.core.vgt.TimeToolTimeIntervalListMerged`
               - Interval list created by merging two constituent interval lists using specified logical operation. It is possible to select either interval list or interval types for either or both constituents.
 
-            * - :py:class:`~ansys.stk.core.vgt.TimeToolEventIntervalListScaled`
+            * - :py:class:`~ansys.stk.core.vgt.TimeToolTimeIntervalListScaled`
               - Interval List defined by scaling every interval in original interval list using either absolute or relative scale. If resulting interval's start becomes after its stop, the interval is removed from scaled list...
 
-            * - :py:class:`~ansys.stk.core.vgt.TimeToolEventIntervalListSignaled`
+            * - :py:class:`~ansys.stk.core.vgt.TimeToolTimeIntervalListSignaled`
               - Determine what interval list is recorded at target clock location by performing signal transmission of original interval list between base and target clock locations...
 
-            * - :py:class:`~ansys.stk.core.vgt.TimeToolEventIntervalListTimeOffset`
+            * - :py:class:`~ansys.stk.core.vgt.TimeToolTimeIntervalListTimeOffset`
               - Interval List defined by shifting the specified reference interval list by a fixed time offset.
 
-            * - :py:class:`~ansys.stk.core.vgt.TimeToolEventIntervalScaled`
+            * - :py:class:`~ansys.stk.core.vgt.TimeToolTimeIntervalScaled`
               - Interval defined by scaling original interval using either absolute or relative scale. If resulting interval's start becomes after its stop, the interval becomes undefined.
 
-            * - :py:class:`~ansys.stk.core.vgt.TimeToolEventIntervalSignaled`
+            * - :py:class:`~ansys.stk.core.vgt.TimeToolTimeIntervalSignaled`
               - Determine what interval is recorded at target clock location by performing signal transmission of original interval between base and target clock locations.
 
-            * - :py:class:`~ansys.stk.core.vgt.TimeToolEventIntervalSmartInterval`
+            * - :py:class:`~ansys.stk.core.vgt.TimeToolTimeIntervalSmartInterval`
               - A smart interval.
 
-            * - :py:class:`~ansys.stk.core.vgt.TimeToolEventIntervalTimeOffset`
+            * - :py:class:`~ansys.stk.core.vgt.TimeToolTimeIntervalTimeOffset`
               - Interval defined by shifting specified reference interval by fixed time offset.
 
-            * - :py:class:`~ansys.stk.core.vgt.TimeToolEventSignaled`
+            * - :py:class:`~ansys.stk.core.vgt.TimeToolInstantSignaled`
               - Event recorded on specified clock via signal transmission from original time instant recorded on different clock.
 
-            * - :py:class:`~ansys.stk.core.vgt.TimeToolEventSmartEpoch`
+            * - :py:class:`~ansys.stk.core.vgt.TimeToolInstantSmartEpoch`
               - A smart epoch.
 
-            * - :py:class:`~ansys.stk.core.vgt.TimeToolEventStartStopTime`
+            * - :py:class:`~ansys.stk.core.vgt.TimeToolInstantStartStopTime`
               - Event is either start or stop time selected from a reference interval.
 
-            * - :py:class:`~ansys.stk.core.vgt.TimeToolEventTimeOffset`
+            * - :py:class:`~ansys.stk.core.vgt.TimeToolInstantTimeOffset`
               - Event at fixed offset from specified reference event.
 
-            * - :py:class:`~ansys.stk.core.vgt.TimeToolFirstIntervalsFilter`
+            * - :py:class:`~ansys.stk.core.vgt.TimeToolTimeIntervalFirstIntervalsFilter`
               - The filter selects a portion of first intervals.
 
-            * - :py:class:`~ansys.stk.core.vgt.TimeToolGapsFilter`
+            * - :py:class:`~ansys.stk.core.vgt.TimeToolTimeIntervalGapsFilter`
               - The filter merges intervals unless they are separated by gaps of at least/most certain duration.
 
             * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchIntegral`
@@ -492,16 +435,16 @@ Summary
             * - :py:class:`~ansys.stk.core.vgt.CalculationToolIntegralBasic`
               - Integral definition determines how scalar calculation is numerically integrated.
 
-            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchInterp`
+            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchInterpolator`
               - Represents a base class for interpolation definitions.
 
-            * - :py:class:`~ansys.stk.core.vgt.CalculationToolInterpBasic`
+            * - :py:class:`~ansys.stk.core.vgt.CalculationToolInterpolatorBasic`
               - Interpolation definition determines how to obtain values in between tabulated samples. See STK help on interpolation for further details.
 
             * - :py:class:`~ansys.stk.core.vgt.TimeToolIntervalsFilter`
               - The filter selects intervals of at least/most certain duration.
 
-            * - :py:class:`~ansys.stk.core.vgt.TimeToolLastIntervalsFilter`
+            * - :py:class:`~ansys.stk.core.vgt.TimeToolTimeIntervalLastIntervalsFilter`
               - The filter selects a portion of last intervals.
 
             * - :py:class:`~ansys.stk.core.vgt.CalculationToolParameterSet`
@@ -531,7 +474,7 @@ Summary
             * - :py:class:`~ansys.stk.core.vgt.TimeToolPruneFilterFactory`
               - The factory creates pruning filters.
 
-            * - :py:class:`~ansys.stk.core.vgt.TimeToolRelativeSatisfactionConditionFilter`
+            * - :py:class:`~ansys.stk.core.vgt.TimeToolTimeIntervalRelativeSatisfactionConditionFilter`
               - The filter selects intervals if certain side condition is satisfied at least/most certain percentage of time.
 
             * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchSampling`
@@ -555,7 +498,7 @@ Summary
             * - :py:class:`~ansys.stk.core.vgt.CalculationToolSamplingRelativeTolerance`
               - Relative tolerance definition includes parameters that determine how scalar data should be sampled based on limits on difference between actual changes between samples and changes predicted by dead reckoning.
 
-            * - :py:class:`~ansys.stk.core.vgt.TimeToolSatisfactionConditionFilter`
+            * - :py:class:`~ansys.stk.core.vgt.TimeToolTimeIntervalSatisfactionConditionFilter`
               - The filter selects intervals if certain side condition is satisfied at least/most certain duration.
 
             * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchSignalDelay`
@@ -564,10 +507,10 @@ Summary
             * - :py:class:`~ansys.stk.core.vgt.TimeToolSignalDelayBasic`
               - Signal delay definition determines how long it takes for a signal to propagate from one location to another.
 
-            * - :py:class:`~ansys.stk.core.vgt.SpatialAnalysisToolVolumeCalcFactory`
+            * - :py:class:`~ansys.stk.core.vgt.SpatialAnalysisToolCalculationFactory`
               - The factory is used to create instances of volume calcs.
 
-            * - :py:class:`~ansys.stk.core.vgt.SpatialAnalysisToolVolumeFactory`
+            * - :py:class:`~ansys.stk.core.vgt.SpatialAnalysisToolConditionFactory`
               - The factory is used to create instances of volumes.
 
             * - :py:class:`~ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridFactory`
@@ -594,52 +537,52 @@ Summary
             * - :py:class:`~ansys.stk.core.vgt.SpatialAnalysisToolVolume`
               - A volume interface. The methods and properties of the interface provide Volume functions.
 
-            * - :py:class:`~ansys.stk.core.vgt.SpatialAnalysisToolVolumeCalc`
+            * - :py:class:`~ansys.stk.core.vgt.SpatialAnalysisToolSpatialCalculation`
               - A volume calc interface. The methods and properties of the interface provide Volumetric calc functions.
 
-            * - :py:class:`~ansys.stk.core.vgt.SpatialAnalysisToolVolumeCalcAltitude`
+            * - :py:class:`~ansys.stk.core.vgt.SpatialAnalysisToolCalculationAltitude`
               - A volume calc altitude interface.
 
-            * - :py:class:`~ansys.stk.core.vgt.SpatialAnalysisToolVolumeCalcAngleOffVector`
+            * - :py:class:`~ansys.stk.core.vgt.SpatialAnalysisToolCalculationAngleToLocation`
               - A volume calc angle off vector interface.
 
-            * - :py:class:`~ansys.stk.core.vgt.SpatialAnalysisToolVolumeCalcConditionSatMetric`
+            * - :py:class:`~ansys.stk.core.vgt.SpatialAnalysisToolCalculationConditionSatisfactionMetric`
               - A volume calc condition satisfaction interface.
 
-            * - :py:class:`~ansys.stk.core.vgt.SpatialAnalysisToolVolumeCalcDelayRange`
+            * - :py:class:`~ansys.stk.core.vgt.SpatialAnalysisToolCalculationPropagationDelayToLocation`
               - A volume calc propagation delay to location interface.
 
-            * - :py:class:`~ansys.stk.core.vgt.SpatialAnalysisToolVolumeCalcFile`
+            * - :py:class:`~ansys.stk.core.vgt.SpatialAnalysisToolCalculationFile`
               - Volumetric data loaded from a specified file - A file with .h5 extension. See STK help.
 
-            * - :py:class:`~ansys.stk.core.vgt.SpatialAnalysisToolVolumeCalcFromScalar`
+            * - :py:class:`~ansys.stk.core.vgt.SpatialAnalysisToolCalculationFromCalculationScalar`
               - A volume calc scalar to location interface.
 
-            * - :py:class:`~ansys.stk.core.vgt.SpatialAnalysisToolVolumeCalcRange`
+            * - :py:class:`~ansys.stk.core.vgt.SpatialAnalysisToolCalculationDistanceToLocation`
               - A volume calc distance to location interface.
 
-            * - :py:class:`~ansys.stk.core.vgt.SpatialAnalysisToolVolumeCalcSolarIntensity`
+            * - :py:class:`~ansys.stk.core.vgt.SpatialAnalysisToolCalculationSolarIntensity`
               - A volume calc solar intensityn interface.
 
-            * - :py:class:`~ansys.stk.core.vgt.SpatialAnalysisToolVolumeCombined`
+            * - :py:class:`~ansys.stk.core.vgt.SpatialAnalysisToolConditionCombined`
               - A combined volume interface.
 
-            * - :py:class:`~ansys.stk.core.vgt.SpatialAnalysisToolVolumeFromCalc`
+            * - :py:class:`~ansys.stk.core.vgt.SpatialAnalysisToolConditionSpatialCalculationBounds`
               - An volume from calc volume interface.
 
-            * - :py:class:`~ansys.stk.core.vgt.SpatialAnalysisToolVolumeFromCondition`
+            * - :py:class:`~ansys.stk.core.vgt.SpatialAnalysisToolConditionConditionAtLocation`
               - A volume from conditioninterface.
 
-            * - :py:class:`~ansys.stk.core.vgt.SpatialAnalysisToolVolumeFromGrid`
+            * - :py:class:`~ansys.stk.core.vgt.SpatialAnalysisToolConditionGridBoundingVolume`
               - An over time volume interface.
 
-            * - :py:class:`~ansys.stk.core.vgt.SpatialAnalysisToolVolumeFromTimeSatisfaction`
+            * - :py:class:`~ansys.stk.core.vgt.SpatialAnalysisToolConditionValidTimeAtLocation`
               - An volume from time satisfaction volume interface.
 
             * - :py:class:`~ansys.stk.core.vgt.SpatialAnalysisToolVolumeGrid`
               - A volume grid interface. The methods and properties of the interface provide Volumetric Grid functions.
 
-            * - :py:class:`~ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridBearingAlt`
+            * - :py:class:`~ansys.stk.core.vgt.SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude`
               - A volume grid bearing alt (Surface Bearing) interface.
 
             * - :py:class:`~ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridCartesian`
@@ -651,7 +594,7 @@ Summary
             * - :py:class:`~ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridCylindrical`
               - A volume grid cylindrical interface.
 
-            * - :py:class:`~ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridLatLonAlt`
+            * - :py:class:`~ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude`
               - A volume grid lat lon alt (Cartogrographic) interface.
 
             * - :py:class:`~ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridResult`
@@ -660,43 +603,43 @@ Summary
             * - :py:class:`~ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridSpherical`
               - A volume grid spherical interface.
 
-            * - :py:class:`~ansys.stk.core.vgt.SpatialAnalysisToolVolumeInview`
+            * - :py:class:`~ansys.stk.core.vgt.SpatialAnalysisToolConditionAccessToLocation`
               - An Inview volume interface.
 
-            * - :py:class:`~ansys.stk.core.vgt.SpatialAnalysisToolVolumeLighting`
+            * - :py:class:`~ansys.stk.core.vgt.SpatialAnalysisToolConditionLighting`
               - A lighting volume interface.
 
-            * - :py:class:`~ansys.stk.core.vgt.SpatialAnalysisToolVolumeOverTime`
+            * - :py:class:`~ansys.stk.core.vgt.SpatialAnalysisToolConditionOverTime`
               - An over time volume interface.
 
-            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchGeneric`
+            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchComponent`
               - Generic VGT component.
 
-            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchTypeInfo`
+            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchComponentTypeInformation`
               - VGT component info.
 
-            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchInstance`
+            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchComponentInstance`
               - Enable to obtain information about the parent object that owns the VGT component.
 
-            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchTemplate`
+            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchComponentTemplate`
               - Enable to obtain information about the STK class that owns the VGT component.
 
-            * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolPointRefTo`
+            * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolPointReference`
               - Represents a reference to a VGT point.
 
-            * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolVectorRefTo`
+            * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolVectorReference`
               - Represents a vector reference.
 
-            * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolAxesRefTo`
+            * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolAxesReference`
               - Represents a reference to a VGT axes.
 
-            * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolAngleRefTo`
+            * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolAngleReference`
               - Represents a reference to a VGT angle.
 
-            * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolSystemRefTo`
+            * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolSystemReference`
               - Represents a System reference.
 
-            * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolPlaneRefTo`
+            * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolPlaneReference`
               - Represents a Plane reference.
 
             * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolVector`
@@ -744,7 +687,7 @@ Summary
             * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolAxesFixed`
               - Axes fixed in reference axes.
 
-            * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolAxesModelAttach`
+            * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolAxesModelAttachment`
               - Axes aligned with the specified pointable element of the object's 3D model. The axes follow the model as well as any articulations that affect the specified pointable element.
 
             * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolAxesSpinning`
@@ -822,7 +765,7 @@ Summary
             * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolPointOnSurface`
               - The detic subpoint of the reference point as projected onto the central body.
 
-            * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolPointModelAttach`
+            * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolPointModelAttachment`
               - A point placed at the specified attachment point of the object's 3D model. The point follows the model as well as any articulations that affect the specified attachment point.
 
             * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolPointSatelliteCollectionEntry`
@@ -837,7 +780,7 @@ Summary
             * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolPointCommonTasks`
               - Provide methods to create non-persistent VGT point components. Non-persistent components do not have names, do not get saved/loaded and are not shown in the VGT browser.
 
-            * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolPointCentBodyIntersect`
+            * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolPointCentralBodyIntersect`
               - Point on central body surface along direction vector originating at source point.
 
             * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolPointAtTimeInstant`
@@ -846,7 +789,7 @@ Summary
             * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolPointPlugin`
               - A VGT point plugin.
 
-            * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolPointCBFixedOffset`
+            * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolPointCentralBodyFixedOffset`
               - Point specified by fixed components with respect to central body.
 
             * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolSystemAssembled`
@@ -855,7 +798,7 @@ Summary
             * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolSystemOnSurface`
               - A system with an origin on the surface of the central body with topocentric axes rotated on a clock angle. Specify the central body, angle, and the latitude, longitude, and altitude of the origin.
 
-            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchLLAPosition`
+            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchPositionLLA`
               - A position represented by the Latitude, longtitude and Latitude.
 
             * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolSystemCommonTasks`
@@ -891,7 +834,7 @@ Summary
             * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolVectorTwoPlanesIntersection`
               - Defined along the intersection of two planes.
 
-            * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolVectorModelAttach`
+            * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolVectorModelAttachment`
               - Unit vector along the specified pointable element of the object's 3D model. The vector's direction follows the model as well as any articulations that affect the specified pointable element.
 
             * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolVectorProjection`
@@ -933,7 +876,7 @@ Summary
             * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolVectorLinearCombination`
               - Linear combination of two input vectors.
 
-            * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolVectorProjectAlongVector`
+            * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolVectorProjectionAlongVector`
               - A projection of a source vector in the direction of another vector.
 
             * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolVectorScalarLinearCombination`
@@ -948,8 +891,11 @@ Summary
             * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolVectorPlugin`
               - A VGT vector plugin.
 
-            * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolVectorDispSurface`
+            * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolVectorSurfaceDisplacement`
               - Displacement between origin and destination points using surface distance and altitude difference.
+
+            * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolVectorFile`
+              - Vector interpolated from tabulated data from file.
 
             * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolVectorFactory`
               - A Factory object to create vectors.
@@ -987,7 +933,7 @@ Summary
             * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolSystemGroup`
               - Access or create VGT systems associated with an object or a central body.
 
-            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchProvider`
+            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchComponentProvider`
               - Allow accessing existing Vector Geometry Tool components.
 
             * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchRoot`
@@ -1011,61 +957,61 @@ Summary
             * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolWellKnownAxes`
               - Represents well-known VGT Axes.
 
-            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchMethodCallAngleFindResult`
+            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchAngleFindResult`
               - Represents result returned with IAgCrdnAngle.FindCoordinates method.
 
-            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchMethodCallAngleFindWithRateResult`
+            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchAngleFindWithRateResult`
               - Contains the results returned with IAgCrdnAngle.FindCoordinatesWithRate method.
 
-            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchMethodCallAxesTransformResult`
+            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchAxesTransformResult`
               - Contains the results returned with IAgCrdnAxes.TransformFrom method.
 
-            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchMethodCallAxesTransformWithRateResult`
+            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchAxesTransformWithRateResult`
               - Contains the results returned with IAgCrdnAxes.TransformFromWithRate method.
 
-            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchMethodCallAxesFindInAxesResult`
+            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchAxesFindInAxesResult`
               - Contains the results returned with IAgCrdnAxes.FindInAxes method.
 
-            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchMethodCallAxesFindInAxesWithRateResult`
+            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchAxesFindInAxesWithRateResult`
               - Contains the results returned with IAgCrdnAxes.FindInAxesWithRate method.
 
-            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchMethodCallPlaneFindInAxesResult`
+            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchPlaneFindInAxesResult`
               - Contains the results returned with IAgCrdnPlane.FindInAxes method.
 
-            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchMethodCallPlaneFindInAxesWithRateResult`
+            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchPlaneFindInAxesWithRateResult`
               - Contains the results returned with IAgCrdnPlane.FindInAxesWithRate method.
 
-            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchMethodCallPlaneFindInSystemResult`
+            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchPlaneFindInSystemResult`
               - Contains the results returned with IAgCrdnPlane.FindInSystem method.
 
-            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchMethodCallPlaneFindInSystemWithRateResult`
+            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchPlaneFindInSystemWithRateResult`
               - Contains the results returned with IAgCrdnPlane.FindInSystemWithRate method.
 
-            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchMethodCallPointLocateInSystemResult`
+            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchPointLocateInSystemResult`
               - Contains the results returned with IAgCrdnPlane.FindInSystemWithRate method.
 
-            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchMethodCallPointLocateInSystemWithRateResult`
+            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchPointLocateInSystemWithRateResult`
               - Contains the results returned with IAgCrdnPoint.LocateInSystemWithRate method.
 
-            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchMethodCallSystemTransformResult`
+            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchSystemTransformResult`
               - Contains the results returned with IAgCrdnSystem.TransformFrom and IAgCrdnSystem.TransformTo methods.
 
-            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchMethodCallSystemTransformWithRateResult`
+            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchSystemTransformWithRateResult`
               - Contains the results returned with IAgCrdnSystem.TransformFromWithRate and IAgCrdnSystem.TransformToWithRate methods.
 
-            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchMethodCallSystemFindInSystemResult`
+            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchSystemFindInSystemResult`
               - Contains the results returned with IAgCrdnSystem.FindInSystem method.
 
-            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchMethodCallVectorFindInAxesResult`
+            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchVectorFindInAxesResult`
               - Contains the results returned with IAgCrdnVector.FindInAxes method.
 
-            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchMethodCallVectorFindInAxesWithRateResult`
+            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchVectorFindInAxesWithRateResult`
               - Contains the results returned with IAgCrdnVector.FindInAxesWithRate method.
 
-            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchMethodCallAngleFindAngleWithRateResult`
+            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchAngleFindAngleWithRateResult`
               - Contains the results returned with IAgCrdnAngle.FindAngleWithRate method.
 
-            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchMethodCallAngleFindAngleResult`
+            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchAngleFindAngleResult`
               - Contains the results returned with IAgCrdnAngle.FindAngle method.
 
             * - :py:class:`~ansys.stk.core.vgt.TimeToolInterval`
@@ -1077,13 +1023,13 @@ Summary
             * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchCentralBody`
               - Represents an central body.
 
-            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchCentralBodyRefTo`
+            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchCentralBodyReference`
               - Represents a central body reference.
 
             * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchCentralBodyCollection`
               - A collection of central body names.
 
-            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchCollection`
+            * - :py:class:`~ansys.stk.core.vgt.AnalysisWorkbenchComponentCollection`
               - A collection of VGT objects.
 
             * - :py:class:`~ansys.stk.core.vgt.TimeToolPointSamplingResult`
@@ -1112,226 +1058,226 @@ Summary
             :widths: auto
         
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_CALC_SCALAR_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.CalculationScalarType`
               - Define available calculation scalar types.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_CONDITION_COMBINED_OPERATION_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.ConditionCombinedOperationType`
               - Define scalar condition combined operation types.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_CONDITION_SET_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.ConditionSetType`
               - Define available condition set types.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_CONDITION_THRESHOLD_OPTION`
+            * - :py:class:`~ansys.stk.core.vgt.ConditionThresholdType`
               - Operations for Scalar Bounds Condition.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_CONDITION_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.ConditionType`
               - Define available condition types.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_DIMENSION_INHERITANCE`
+            * - :py:class:`~ansys.stk.core.vgt.InheritDimensionType`
               - Define how dimension is inherited.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_EVENT_ARRAY_FILTER_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.EventArrayFilterType`
               - Event array filter types.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_EVENT_ARRAY_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.EventArrayType`
               - Define available time array types.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_EVENT_INTERVAL_COLLECTION_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.EventIntervalCollectionType`
               - Define available interval collection types.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_EVENT_INTERVAL_LIST_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.EventIntervalListType`
               - Define available interval list types.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_EVENT_INTERVAL_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.EventIntervalType`
               - Define available interval types.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_EVENT_LIST_MERGE_OPERATION`
+            * - :py:class:`~ansys.stk.core.vgt.EventListMergeOperation`
               - Define merge operations for interval lists.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_EVENT_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.TimeEventType`
               - Define available time instant types.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_EXTREMUM_CONSTANTS`
+            * - :py:class:`~ansys.stk.core.vgt.ExtremumType`
               - These constants are utilized when finding a local or global minimum or maximum, or the threshold crossing.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_FILE_INTERPOLATOR_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.FileInterpolatorType`
               - Interpolator types.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_INTEGRAL_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.QuadratureType`
               - Integral types.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_INTEGRATION_WINDOW_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.IntegrationWindowType`
               - Define the interval of times during which an integral is evaluated.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_INTERPOLATOR_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.InterpolationMethodType`
               - Interpolator types.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_INTERVAL_DURATION_KIND`
+            * - :py:class:`~ansys.stk.core.vgt.IntervalDurationType`
               - Duration for filtering intervals or gaps from interval lists or time arrays.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_INTERVAL_SELECTION`
+            * - :py:class:`~ansys.stk.core.vgt.IntervalFromIntervalListSelectionType`
               - Select the method to choose an interval from an interval list.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_PARAMETER_SET_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.ParameterSetType`
               - Define parameter set types.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_PRUNE_FILTER`
+            * - :py:class:`~ansys.stk.core.vgt.IntervalPruneFilterType`
               - Specify the filter for filtering interval lists or time arrays.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_SAMPLED_REFERENCE_TIME`
+            * - :py:class:`~ansys.stk.core.vgt.SampleReferenceTimeType`
               - Event array reference type.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_SAMPLING_METHOD`
+            * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolSamplingMethod`
               - Define the Sampling Method.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_SATISFACTION_CROSSING`
+            * - :py:class:`~ansys.stk.core.vgt.SatisfactionCrossing`
               - Direction crossing flags.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_SAVE_DATA_OPTION`
+            * - :py:class:`~ansys.stk.core.vgt.SaveDataType`
               - Method for saving computed data.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_SIGNAL_PATH_REFERENCE_SYSTEM`
+            * - :py:class:`~ansys.stk.core.vgt.SignalPathReferenceSystem`
               - Signal path reference system types.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_SMART_EPOCH_STATE`
+            * - :py:class:`~ansys.stk.core.vgt.SmartEpochState`
               - Smart epoch states.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_SMART_INTERVAL_STATE`
+            * - :py:class:`~ansys.stk.core.vgt.SmartIntervalState`
               - Smart interval states.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_SPEED_OPTIONS`
+            * - :py:class:`~ansys.stk.core.vgt.SpeedType`
               - Define various speed options.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_START_STOP_OPTION`
+            * - :py:class:`~ansys.stk.core.vgt.StartStopType`
               - Start/stop options.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_THRESH_CONVERGE_SENSE`
+            * - :py:class:`~ansys.stk.core.vgt.ThresholdConvergenceSenseType`
               - Specify the desired sense of the results from threshold crossing computations.
 
-            * - :py:class:`~ansys.stk.core.vgt.VECTOR_GEOMETRY_TOOL_VECTOR_COMPONENT_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.VectorComponentType`
               - Define component directions for a vector.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_VOLUME_CALC_ALTITUDE_REFERENCE_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.SpatialCalculationAltitudeReferenceType`
               - Define volume calc altitude reference types.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_VOLUME_CALC_ANGLE_OFF_VECTOR_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.AngleToLocationType`
               - Define volume calc angle off vector reference types.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_VOLUME_CALC_RANGE_DISTANCE_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.DistanceToLocationType`
               - Define volume calc range distance types.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_VOLUME_CALC_RANGE_SPEED_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.RangeSpeedType`
               - Define volume calc range distance types.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_VOLUME_CALC_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.SpatialCalculationType`
               - Define volume calc types.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_VOLUME_CALC_VOLUME_SATISFACTION_ACCUMULATION_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.VolumeSatisfactionAccumulationType`
               - Define volume calc spatial condition accumulation types.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_VOLUME_CALC_VOLUME_SATISFACTION_DURATION_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.VolumeSatisfactionDurationType`
               - Define volume calc spatial condition duration types.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_VOLUME_CALC_VOLUME_SATISFACTION_FILTER_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.VolumeSatisfactionFilterType`
               - Define volume calc spatial condition filter types.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_VOLUME_CALC_VOLUME_SATISFACTION_METRIC_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.VolumeSatisfactionMetricType`
               - Define volume calc spatial condition satisfaction metric types.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_VOLUME_GRID_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.VolumeGridType`
               - Define volume grid types.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_VOLUME_RESULT_VECTOR_REQUEST`
+            * - :py:class:`~ansys.stk.core.vgt.ResultVectorRequestType`
               - Define volume result vector request types.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_VOLUME_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.VolumeType`
               - Define volume grid types.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_VOLUME_ABERRATION_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.AberrationModelType`
               - Define the model of aberration to use.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_VOLUME_CLOCK_HOST_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.ClockHostType`
               - Define whether base or target of an Access instance holds the clock for Access times.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_VOLUME_COMBINED_OPERATION_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.VolumeCombinedOperationType`
               - Define spatial condition combined operation types.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_VOLUME_FROM_GRID_EDGE_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.VolumeFromGridEdgeType`
               - Define spatial condition from grid edge type.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_VOLUME_LIGHTING_CONDITIONS_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.LightingConditionsType`
               - Define spatial condition lighting conditions types.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_VOLUME_OVER_TIME_DURATION_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.SpatialConditionOverTypeDurationType`
               - Define spatial condition over time duration type.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_VOLUME_TIME_SENSE_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.TimeSenseType`
               - Define whether object1 or object2 of an Access instance holds the clock for Access times.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_VOLUMETRIC_GRID_VALUES_METHOD_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.GridValuesMethodType`
               - Define volumetric grid values method types.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_KIND`
+            * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolComponentType`
               - Represents kinds of vectory geometry components.
 
-            * - :py:class:`~ansys.stk.core.vgt.VECTOR_GEOMETRY_TOOL_ANGLE_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.AngleType`
               - Represents angle types.
 
-            * - :py:class:`~ansys.stk.core.vgt.VECTOR_GEOMETRY_TOOL_AXES_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.AxesType`
               - Represents vector types.
 
-            * - :py:class:`~ansys.stk.core.vgt.VECTOR_GEOMETRY_TOOL_PLANE_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.PlaneType`
               - Represents plane types.
 
-            * - :py:class:`~ansys.stk.core.vgt.VECTOR_GEOMETRY_TOOL_POINT_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.PointType`
               - Represents point types.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_SYSTEM_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.SystemType`
               - Represents system types.
 
-            * - :py:class:`~ansys.stk.core.vgt.VECTOR_GEOMETRY_TOOL_VECTOR_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.VectorType`
               - Represents vector types.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_MEAN_ELEMENT_THEORY`
+            * - :py:class:`~ansys.stk.core.vgt.MeanElementTheory`
               - Mean element theory types for approximating motion.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_DIRECTION_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.AsymptoteDirectionType`
               - Direction options.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_LAGRANGE_LIBRATION_POINT_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.LagrangeLibrationPointType`
               - Types of the Lagrange points, also known as libration points. Lagrange points are points in space where gravitational forces and the orbital motion of a body balance each other.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_QUADRANT_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.PlaneQuadrantType`
               - Quadrants from a reference system (e.g., XY, XZ, YZ, YX, ZX, ZY).
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_TRAJECTORY_AXES_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.TrajectoryAxesCoordinatesType`
               - Trajectory axes coordinate types.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_DISPLAY_AXIS_SELECTOR`
+            * - :py:class:`~ansys.stk.core.vgt.PrincipalAxisOfRotationType`
               - Rotation directions.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_SIGNED_ANGLE_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.SignedAngleType`
               - Define options for computing an angle.
 
-            * - :py:class:`~ansys.stk.core.vgt.VECTOR_GEOMETRY_TOOL_POINT_B_PLANE_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.PointBPlaneType`
               - B-Plane point types.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_REFERENCE_SHAPE_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.SurfaceReferenceShapeType`
               - Surface shape types.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_SURFACE_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.SurfaceShapeType`
               - Surface types.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_SWEEP_MODE`
+            * - :py:class:`~ansys.stk.core.vgt.RotationSweepModeType`
               - The rotation sweeping modes.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_SIGNAL_SENSE`
+            * - :py:class:`~ansys.stk.core.vgt.SignalDirectionType`
               - Signal sense transmission options.
 
-            * - :py:class:`~ansys.stk.core.vgt.CRDN_INTERSECTION_SURFACE`
+            * - :py:class:`~ansys.stk.core.vgt.IntersectionSurfaceType`
               - Intersection surface flags.
 
-            * - :py:class:`~ansys.stk.core.vgt.VECTOR_GEOMETRY_TOOL_VECTOR_SCALED_DIMENSION_INHERITANCE`
+            * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolScaledVectorDimensionInheritanceOptionType`
               - Dimension inheritance constants used to configure the dimension inheritance of a vector scaled by a scalar.
 
 
@@ -1362,20 +1308,20 @@ analysis.
      IVectorGeometryToolAxes<vgt/IVectorGeometryToolAxes>
      IVectorGeometryToolAngle<vgt/IVectorGeometryToolAngle>
      IVectorGeometryToolPlane<vgt/IVectorGeometryToolPlane>
-     IAnalysisWorkbenchContext<vgt/IAnalysisWorkbenchContext>
+     IAnalysisWorkbenchComponentContext<vgt/IAnalysisWorkbenchComponentContext>
      IAnalysisWorkbenchComponent<vgt/IAnalysisWorkbenchComponent>
      ICalculationToolScalar<vgt/ICalculationToolScalar>
      ICalculationToolCondition<vgt/ICalculationToolCondition>
      ICalculationToolConditionSet<vgt/ICalculationToolConditionSet>
-     IAnalysisWorkbenchConverge<vgt/IAnalysisWorkbenchConverge>
+     IAnalysisWorkbenchConvergence<vgt/IAnalysisWorkbenchConvergence>
      IAnalysisWorkbenchDerivative<vgt/IAnalysisWorkbenchDerivative>
-     ITimeToolEvent<vgt/ITimeToolEvent>
-     ITimeToolEventArray<vgt/ITimeToolEventArray>
-     ITimeToolEventInterval<vgt/ITimeToolEventInterval>
-     ITimeToolEventIntervalCollection<vgt/ITimeToolEventIntervalCollection>
-     ITimeToolEventIntervalList<vgt/ITimeToolEventIntervalList>
+     ITimeToolInstant<vgt/ITimeToolInstant>
+     ITimeToolTimeArray<vgt/ITimeToolTimeArray>
+     ITimeToolTimeInterval<vgt/ITimeToolTimeInterval>
+     ITimeToolTimeIntervalCollection<vgt/ITimeToolTimeIntervalCollection>
+     ITimeToolTimeIntervalList<vgt/ITimeToolTimeIntervalList>
      IAnalysisWorkbenchIntegral<vgt/IAnalysisWorkbenchIntegral>
-     IAnalysisWorkbenchInterp<vgt/IAnalysisWorkbenchInterp>
+     IAnalysisWorkbenchInterpolator<vgt/IAnalysisWorkbenchInterpolator>
      ICalculationToolParameterSet<vgt/ICalculationToolParameterSet>
      ITimeToolPruneFilter<vgt/ITimeToolPruneFilter>
      IAnalysisWorkbenchSampling<vgt/IAnalysisWorkbenchSampling>
@@ -1383,29 +1329,10 @@ analysis.
      IAnalysisWorkbenchSignalDelay<vgt/IAnalysisWorkbenchSignalDelay>
      ISpatialAnalysisToolGridValuesMethod<vgt/ISpatialAnalysisToolGridValuesMethod>
      ISpatialAnalysisToolVolume<vgt/ISpatialAnalysisToolVolume>
-     ISpatialAnalysisToolVolumeCalc<vgt/ISpatialAnalysisToolVolumeCalc>
+     ISpatialAnalysisToolSpatialCalculation<vgt/ISpatialAnalysisToolSpatialCalculation>
      ISpatialAnalysisToolVolumeGrid<vgt/ISpatialAnalysisToolVolumeGrid>
-     ITimeToolTimeProperties<vgt/ITimeToolTimeProperties>
-     IAnalysisWorkbenchRefTo<vgt/IAnalysisWorkbenchRefTo>
-     IVectorGeometryToolAngleFindAngleResult<vgt/IVectorGeometryToolAngleFindAngleResult>
-     IVectorGeometryToolAngleFindAngleWithRateResult<vgt/IVectorGeometryToolAngleFindAngleWithRateResult>
-     IVectorGeometryToolAngleFindWithRateResult<vgt/IVectorGeometryToolAngleFindWithRateResult>
-     IVectorGeometryToolAngleFindResult<vgt/IVectorGeometryToolAngleFindResult>
-     IVectorGeometryToolAxesTransformResult<vgt/IVectorGeometryToolAxesTransformResult>
-     IVectorGeometryToolAxesTransformWithRateResult<vgt/IVectorGeometryToolAxesTransformWithRateResult>
-     IVectorGeometryToolPlaneFindInAxesResult<vgt/IVectorGeometryToolPlaneFindInAxesResult>
-     IVectorGeometryToolPlaneFindInAxesWithRateResult<vgt/IVectorGeometryToolPlaneFindInAxesWithRateResult>
-     IVectorGeometryToolPlaneFindInSystemResult<vgt/IVectorGeometryToolPlaneFindInSystemResult>
-     IVectorGeometryToolPlaneFindInSystemWithRateResult<vgt/IVectorGeometryToolPlaneFindInSystemWithRateResult>
-     IVectorGeometryToolAxesFindInAxesResult<vgt/IVectorGeometryToolAxesFindInAxesResult>
-     IVectorGeometryToolAxesFindInAxesWithRateResult<vgt/IVectorGeometryToolAxesFindInAxesWithRateResult>
-     IVectorGeometryToolPointLocateInSystemResult<vgt/IVectorGeometryToolPointLocateInSystemResult>
-     IVectorGeometryToolPointLocateInSystemWithRateResult<vgt/IVectorGeometryToolPointLocateInSystemWithRateResult>
-     IVectorGeometryToolSystemTransformResult<vgt/IVectorGeometryToolSystemTransformResult>
-     IVectorGeometryToolSystemTransformWithRateResult<vgt/IVectorGeometryToolSystemTransformWithRateResult>
-     IVectorGeometryToolSystemFindInSystemResult<vgt/IVectorGeometryToolSystemFindInSystemResult>
-     IVectorGeometryToolVectorFindInAxesResult<vgt/IVectorGeometryToolVectorFindInAxesResult>
-     IVectorGeometryToolVectorFindInAxesWithRateResult<vgt/IVectorGeometryToolVectorFindInAxesWithRateResult>
+     IAnalysisWorkbenchComponentTimeProperties<vgt/IAnalysisWorkbenchComponentTimeProperties>
+     IAnalysisWorkbenchComponentReference<vgt/IAnalysisWorkbenchComponentReference>
      IAnalysisWorkbenchMethodCallResult<vgt/IAnalysisWorkbenchMethodCallResult>
 
 .. toctree::
@@ -1415,33 +1342,33 @@ analysis.
 
      CalculationToolEvaluateResult<vgt/CalculationToolEvaluateResult>
      CalculationToolEvaluateWithRateResult<vgt/CalculationToolEvaluateWithRateResult>
-     TimeToolEventIntervalResult<vgt/TimeToolEventIntervalResult>
-     TimeToolEventFindOccurrenceResult<vgt/TimeToolEventFindOccurrenceResult>
-     TimeToolFindTimesResult<vgt/TimeToolFindTimesResult>
+     TimeToolTimeIntervalResult<vgt/TimeToolTimeIntervalResult>
+     TimeToolInstantOccurrenceResult<vgt/TimeToolInstantOccurrenceResult>
+     TimeToolTimeArrayFindTimesResult<vgt/TimeToolTimeArrayFindTimesResult>
      TimeToolIntervalsVectorResult<vgt/TimeToolIntervalsVectorResult>
-     TimeToolEventIntervalCollectionOccurredResult<vgt/TimeToolEventIntervalCollectionOccurredResult>
+     TimeToolTimeIntervalCollectionOccurredResult<vgt/TimeToolTimeIntervalCollectionOccurredResult>
      TimeToolIntervalListResult<vgt/TimeToolIntervalListResult>
      TimeToolIntervalVectorCollection<vgt/TimeToolIntervalVectorCollection>
-     TimeToolEventGroup<vgt/TimeToolEventGroup>
-     TimeToolEventIntervalGroup<vgt/TimeToolEventIntervalGroup>
-     TimeToolEventIntervalListGroup<vgt/TimeToolEventIntervalListGroup>
-     TimeToolEventArrayGroup<vgt/TimeToolEventArrayGroup>
+     TimeToolInstantGroup<vgt/TimeToolInstantGroup>
+     TimeToolTimeIntervalGroup<vgt/TimeToolTimeIntervalGroup>
+     TimeToolTimeIntervalListGroup<vgt/TimeToolTimeIntervalListGroup>
+     TimeToolTimeArrayGroup<vgt/TimeToolTimeArrayGroup>
      CalculationToolScalarGroup<vgt/CalculationToolScalarGroup>
-     TimeToolEventIntervalCollectionGroup<vgt/TimeToolEventIntervalCollectionGroup>
+     TimeToolTimeIntervalCollectionGroup<vgt/TimeToolTimeIntervalCollectionGroup>
      CalculationToolParameterSetGroup<vgt/CalculationToolParameterSetGroup>
      CalculationToolConditionGroup<vgt/CalculationToolConditionGroup>
      CalculationToolConditionSetGroup<vgt/CalculationToolConditionSetGroup>
      CalculationToolConditionSetEvaluateResult<vgt/CalculationToolConditionSetEvaluateResult>
      CalculationToolConditionSetEvaluateWithRateResult<vgt/CalculationToolConditionSetEvaluateWithRateResult>
      SpatialAnalysisToolVolumeGridGroup<vgt/SpatialAnalysisToolVolumeGridGroup>
-     SpatialAnalysisToolVolumeGroup<vgt/SpatialAnalysisToolVolumeGroup>
-     SpatialAnalysisToolVolumeCalcGroup<vgt/SpatialAnalysisToolVolumeCalcGroup>
+     SpatialAnalysisToolConditionGroup<vgt/SpatialAnalysisToolConditionGroup>
+     SpatialAnalysisToolCalculationGroup<vgt/SpatialAnalysisToolCalculationGroup>
      CalculationToolScalar<vgt/CalculationToolScalar>
      CalculationToolScalarAngle<vgt/CalculationToolScalarAngle>
      CalculationToolScalarAverage<vgt/CalculationToolScalarAverage>
      CalculationToolScalarConstant<vgt/CalculationToolScalarConstant>
      CalculationToolScalarCustom<vgt/CalculationToolScalarCustom>
-     CalculationToolScalarCustomInline<vgt/CalculationToolScalarCustomInline>
+     CalculationToolScalarCustomInlineScript<vgt/CalculationToolScalarCustomInlineScript>
      CalculationToolScalarDataElement<vgt/CalculationToolScalarDataElement>
      CalculationToolScalarDerivative<vgt/CalculationToolScalarDerivative>
      CalculationToolScalarDotProduct<vgt/CalculationToolScalarDotProduct>
@@ -1450,10 +1377,10 @@ analysis.
      CalculationToolScalarFile<vgt/CalculationToolScalarFile>
      CalculationToolScalarFixedAtTimeInstant<vgt/CalculationToolScalarFixedAtTimeInstant>
      CalculationToolScalarFunction<vgt/CalculationToolScalarFunction>
-     CalculationToolScalarFunction2Var<vgt/CalculationToolScalarFunction2Var>
+     CalculationToolScalarFunctionOf2Variables<vgt/CalculationToolScalarFunctionOf2Variables>
      CalculationToolScalarIntegral<vgt/CalculationToolScalarIntegral>
      CalculationToolScalarPlugin<vgt/CalculationToolScalarPlugin>
-     CalculationToolScalarPointInVolumeCalc<vgt/CalculationToolScalarPointInVolumeCalc>
+     CalculationToolScalarAlongTrajectory<vgt/CalculationToolScalarAlongTrajectory>
      CalculationToolScalarStandardDeviation<vgt/CalculationToolScalarStandardDeviation>
      CalculationToolScalarSurfaceDistanceBetweenPoints<vgt/CalculationToolScalarSurfaceDistanceBetweenPoints>
      CalculationToolScalarVectorComponent<vgt/CalculationToolScalarVectorComponent>
@@ -1461,66 +1388,66 @@ analysis.
      CalculationToolCondition<vgt/CalculationToolCondition>
      CalculationToolConditionCombined<vgt/CalculationToolConditionCombined>
      CalculationToolConditionFactory<vgt/CalculationToolConditionFactory>
-     CalculationToolConditionPointInVolume<vgt/CalculationToolConditionPointInVolume>
+     CalculationToolConditionTrajectoryWithinVolume<vgt/CalculationToolConditionTrajectoryWithinVolume>
      CalculationToolConditionScalarBounds<vgt/CalculationToolConditionScalarBounds>
      CalculationToolConditionSet<vgt/CalculationToolConditionSet>
      CalculationToolConditionSetFactory<vgt/CalculationToolConditionSetFactory>
      CalculationToolConditionSetScalarThresholds<vgt/CalculationToolConditionSetScalarThresholds>
-     AnalysisWorkbenchConverge<vgt/AnalysisWorkbenchConverge>
+     AnalysisWorkbenchConvergence<vgt/AnalysisWorkbenchConvergence>
      CalculationToolConvergeBasic<vgt/CalculationToolConvergeBasic>
      AnalysisWorkbenchDerivative<vgt/AnalysisWorkbenchDerivative>
      CalculationToolDerivativeBasic<vgt/CalculationToolDerivativeBasic>
-     TimeToolEvent<vgt/TimeToolEvent>
-     TimeToolEventArray<vgt/TimeToolEventArray>
-     TimeToolEventArrayConditionCrossings<vgt/TimeToolEventArrayConditionCrossings>
-     TimeToolEventArrayExtrema<vgt/TimeToolEventArrayExtrema>
-     TimeToolEventArrayFactory<vgt/TimeToolEventArrayFactory>
-     TimeToolEventArrayFiltered<vgt/TimeToolEventArrayFiltered>
-     TimeToolEventArrayFixedStep<vgt/TimeToolEventArrayFixedStep>
-     TimeToolEventArrayFixedTimes<vgt/TimeToolEventArrayFixedTimes>
-     TimeToolEventArrayMerged<vgt/TimeToolEventArrayMerged>
-     TimeToolEventArraySignaled<vgt/TimeToolEventArraySignaled>
-     TimeToolEventArrayStartStopTimes<vgt/TimeToolEventArrayStartStopTimes>
-     TimeToolEventEpoch<vgt/TimeToolEventEpoch>
-     TimeToolEventExtremum<vgt/TimeToolEventExtremum>
-     TimeToolEventFactory<vgt/TimeToolEventFactory>
-     TimeToolEventInterval<vgt/TimeToolEventInterval>
-     TimeToolEventIntervalBetweenTimeInstants<vgt/TimeToolEventIntervalBetweenTimeInstants>
-     TimeToolEventIntervalCollection<vgt/TimeToolEventIntervalCollection>
-     TimeToolEventIntervalCollectionCondition<vgt/TimeToolEventIntervalCollectionCondition>
-     TimeToolEventIntervalCollectionFactory<vgt/TimeToolEventIntervalCollectionFactory>
-     TimeToolEventIntervalCollectionLighting<vgt/TimeToolEventIntervalCollectionLighting>
-     TimeToolEventIntervalCollectionSignaled<vgt/TimeToolEventIntervalCollectionSignaled>
-     TimeToolEventIntervalFactory<vgt/TimeToolEventIntervalFactory>
-     TimeToolEventIntervalFixed<vgt/TimeToolEventIntervalFixed>
-     TimeToolEventIntervalFixedDuration<vgt/TimeToolEventIntervalFixedDuration>
-     TimeToolEventIntervalFromIntervalList<vgt/TimeToolEventIntervalFromIntervalList>
-     TimeToolEventIntervalList<vgt/TimeToolEventIntervalList>
-     TimeToolEventIntervalListCondition<vgt/TimeToolEventIntervalListCondition>
-     TimeToolEventIntervalListFactory<vgt/TimeToolEventIntervalListFactory>
-     TimeToolEventIntervalListFile<vgt/TimeToolEventIntervalListFile>
-     TimeToolEventIntervalListFiltered<vgt/TimeToolEventIntervalListFiltered>
-     TimeToolEventIntervalListFixed<vgt/TimeToolEventIntervalListFixed>
-     TimeToolEventIntervalListMerged<vgt/TimeToolEventIntervalListMerged>
-     TimeToolEventIntervalListScaled<vgt/TimeToolEventIntervalListScaled>
-     TimeToolEventIntervalListSignaled<vgt/TimeToolEventIntervalListSignaled>
-     TimeToolEventIntervalListTimeOffset<vgt/TimeToolEventIntervalListTimeOffset>
-     TimeToolEventIntervalScaled<vgt/TimeToolEventIntervalScaled>
-     TimeToolEventIntervalSignaled<vgt/TimeToolEventIntervalSignaled>
-     TimeToolEventIntervalSmartInterval<vgt/TimeToolEventIntervalSmartInterval>
-     TimeToolEventIntervalTimeOffset<vgt/TimeToolEventIntervalTimeOffset>
-     TimeToolEventSignaled<vgt/TimeToolEventSignaled>
-     TimeToolEventSmartEpoch<vgt/TimeToolEventSmartEpoch>
-     TimeToolEventStartStopTime<vgt/TimeToolEventStartStopTime>
-     TimeToolEventTimeOffset<vgt/TimeToolEventTimeOffset>
-     TimeToolFirstIntervalsFilter<vgt/TimeToolFirstIntervalsFilter>
-     TimeToolGapsFilter<vgt/TimeToolGapsFilter>
+     TimeToolInstant<vgt/TimeToolInstant>
+     TimeToolTimeArray<vgt/TimeToolTimeArray>
+     TimeToolTimeArrayConditionCrossings<vgt/TimeToolTimeArrayConditionCrossings>
+     TimeToolTimeArrayExtrema<vgt/TimeToolTimeArrayExtrema>
+     TimeToolTimeArrayFactory<vgt/TimeToolTimeArrayFactory>
+     TimeToolTimeArrayFiltered<vgt/TimeToolTimeArrayFiltered>
+     TimeToolTimeArrayFixedStep<vgt/TimeToolTimeArrayFixedStep>
+     TimeToolTimeArrayFixedTimes<vgt/TimeToolTimeArrayFixedTimes>
+     TimeToolTimeArrayMerged<vgt/TimeToolTimeArrayMerged>
+     TimeToolTimeArraySignaled<vgt/TimeToolTimeArraySignaled>
+     TimeToolTimeArrayStartStopTimes<vgt/TimeToolTimeArrayStartStopTimes>
+     TimeToolInstantEpoch<vgt/TimeToolInstantEpoch>
+     TimeToolInstantExtremum<vgt/TimeToolInstantExtremum>
+     TimeToolInstantFactory<vgt/TimeToolInstantFactory>
+     TimeToolTimeInterval<vgt/TimeToolTimeInterval>
+     TimeToolTimeIntervalBetweenTimeInstants<vgt/TimeToolTimeIntervalBetweenTimeInstants>
+     TimeToolTimeIntervalCollection<vgt/TimeToolTimeIntervalCollection>
+     TimeToolTimeIntervalCollectionCondition<vgt/TimeToolTimeIntervalCollectionCondition>
+     TimeToolTimeIntervalCollectionFactory<vgt/TimeToolTimeIntervalCollectionFactory>
+     TimeToolTimeIntervalCollectionLighting<vgt/TimeToolTimeIntervalCollectionLighting>
+     TimeToolTimeIntervalCollectionSignaled<vgt/TimeToolTimeIntervalCollectionSignaled>
+     TimeToolTimeIntervalFactory<vgt/TimeToolTimeIntervalFactory>
+     TimeToolTimeIntervalFixed<vgt/TimeToolTimeIntervalFixed>
+     TimeToolTimeIntervalFixedDuration<vgt/TimeToolTimeIntervalFixedDuration>
+     TimeToolTimeIntervalFromIntervalList<vgt/TimeToolTimeIntervalFromIntervalList>
+     TimeToolTimeIntervalList<vgt/TimeToolTimeIntervalList>
+     TimeToolTimeIntervalListCondition<vgt/TimeToolTimeIntervalListCondition>
+     TimeToolTimeIntervalListFactory<vgt/TimeToolTimeIntervalListFactory>
+     TimeToolTimeIntervalListFile<vgt/TimeToolTimeIntervalListFile>
+     TimeToolTimeIntervalListFiltered<vgt/TimeToolTimeIntervalListFiltered>
+     TimeToolTimeIntervalListFixed<vgt/TimeToolTimeIntervalListFixed>
+     TimeToolTimeIntervalListMerged<vgt/TimeToolTimeIntervalListMerged>
+     TimeToolTimeIntervalListScaled<vgt/TimeToolTimeIntervalListScaled>
+     TimeToolTimeIntervalListSignaled<vgt/TimeToolTimeIntervalListSignaled>
+     TimeToolTimeIntervalListTimeOffset<vgt/TimeToolTimeIntervalListTimeOffset>
+     TimeToolTimeIntervalScaled<vgt/TimeToolTimeIntervalScaled>
+     TimeToolTimeIntervalSignaled<vgt/TimeToolTimeIntervalSignaled>
+     TimeToolTimeIntervalSmartInterval<vgt/TimeToolTimeIntervalSmartInterval>
+     TimeToolTimeIntervalTimeOffset<vgt/TimeToolTimeIntervalTimeOffset>
+     TimeToolInstantSignaled<vgt/TimeToolInstantSignaled>
+     TimeToolInstantSmartEpoch<vgt/TimeToolInstantSmartEpoch>
+     TimeToolInstantStartStopTime<vgt/TimeToolInstantStartStopTime>
+     TimeToolInstantTimeOffset<vgt/TimeToolInstantTimeOffset>
+     TimeToolTimeIntervalFirstIntervalsFilter<vgt/TimeToolTimeIntervalFirstIntervalsFilter>
+     TimeToolTimeIntervalGapsFilter<vgt/TimeToolTimeIntervalGapsFilter>
      AnalysisWorkbenchIntegral<vgt/AnalysisWorkbenchIntegral>
      CalculationToolIntegralBasic<vgt/CalculationToolIntegralBasic>
-     AnalysisWorkbenchInterp<vgt/AnalysisWorkbenchInterp>
-     CalculationToolInterpBasic<vgt/CalculationToolInterpBasic>
+     AnalysisWorkbenchInterpolator<vgt/AnalysisWorkbenchInterpolator>
+     CalculationToolInterpolatorBasic<vgt/CalculationToolInterpolatorBasic>
      TimeToolIntervalsFilter<vgt/TimeToolIntervalsFilter>
-     TimeToolLastIntervalsFilter<vgt/TimeToolLastIntervalsFilter>
+     TimeToolTimeIntervalLastIntervalsFilter<vgt/TimeToolTimeIntervalLastIntervalsFilter>
      CalculationToolParameterSet<vgt/CalculationToolParameterSet>
      CalculationToolParameterSetAttitude<vgt/CalculationToolParameterSetAttitude>
      CalculationToolParameterSetFactory<vgt/CalculationToolParameterSetFactory>
@@ -1530,7 +1457,7 @@ analysis.
      CalculationToolParameterSetVector<vgt/CalculationToolParameterSetVector>
      TimeToolPruneFilter<vgt/TimeToolPruneFilter>
      TimeToolPruneFilterFactory<vgt/TimeToolPruneFilterFactory>
-     TimeToolRelativeSatisfactionConditionFilter<vgt/TimeToolRelativeSatisfactionConditionFilter>
+     TimeToolTimeIntervalRelativeSatisfactionConditionFilter<vgt/TimeToolTimeIntervalRelativeSatisfactionConditionFilter>
      AnalysisWorkbenchSampling<vgt/AnalysisWorkbenchSampling>
      CalculationToolSamplingBasic<vgt/CalculationToolSamplingBasic>
      CalculationToolSamplingCurvatureTolerance<vgt/CalculationToolSamplingCurvatureTolerance>
@@ -1538,11 +1465,11 @@ analysis.
      CalculationToolSamplingMethod<vgt/CalculationToolSamplingMethod>
      CalculationToolSamplingMethodFactory<vgt/CalculationToolSamplingMethodFactory>
      CalculationToolSamplingRelativeTolerance<vgt/CalculationToolSamplingRelativeTolerance>
-     TimeToolSatisfactionConditionFilter<vgt/TimeToolSatisfactionConditionFilter>
+     TimeToolTimeIntervalSatisfactionConditionFilter<vgt/TimeToolTimeIntervalSatisfactionConditionFilter>
      AnalysisWorkbenchSignalDelay<vgt/AnalysisWorkbenchSignalDelay>
      TimeToolSignalDelayBasic<vgt/TimeToolSignalDelayBasic>
-     SpatialAnalysisToolVolumeCalcFactory<vgt/SpatialAnalysisToolVolumeCalcFactory>
-     SpatialAnalysisToolVolumeFactory<vgt/SpatialAnalysisToolVolumeFactory>
+     SpatialAnalysisToolCalculationFactory<vgt/SpatialAnalysisToolCalculationFactory>
+     SpatialAnalysisToolConditionFactory<vgt/SpatialAnalysisToolConditionFactory>
      SpatialAnalysisToolVolumeGridFactory<vgt/SpatialAnalysisToolVolumeGridFactory>
      SpatialAnalysisToolGridCoordinateDefinition<vgt/SpatialAnalysisToolGridCoordinateDefinition>
      SpatialAnalysisToolGridValuesCustom<vgt/SpatialAnalysisToolGridValuesCustom>
@@ -1551,41 +1478,41 @@ analysis.
      SpatialAnalysisToolGridValuesMethod<vgt/SpatialAnalysisToolGridValuesMethod>
      TimeToolLightTimeDelay<vgt/TimeToolLightTimeDelay>
      SpatialAnalysisToolVolume<vgt/SpatialAnalysisToolVolume>
-     SpatialAnalysisToolVolumeCalc<vgt/SpatialAnalysisToolVolumeCalc>
-     SpatialAnalysisToolVolumeCalcAltitude<vgt/SpatialAnalysisToolVolumeCalcAltitude>
-     SpatialAnalysisToolVolumeCalcAngleOffVector<vgt/SpatialAnalysisToolVolumeCalcAngleOffVector>
-     SpatialAnalysisToolVolumeCalcConditionSatMetric<vgt/SpatialAnalysisToolVolumeCalcConditionSatMetric>
-     SpatialAnalysisToolVolumeCalcDelayRange<vgt/SpatialAnalysisToolVolumeCalcDelayRange>
-     SpatialAnalysisToolVolumeCalcFile<vgt/SpatialAnalysisToolVolumeCalcFile>
-     SpatialAnalysisToolVolumeCalcFromScalar<vgt/SpatialAnalysisToolVolumeCalcFromScalar>
-     SpatialAnalysisToolVolumeCalcRange<vgt/SpatialAnalysisToolVolumeCalcRange>
-     SpatialAnalysisToolVolumeCalcSolarIntensity<vgt/SpatialAnalysisToolVolumeCalcSolarIntensity>
-     SpatialAnalysisToolVolumeCombined<vgt/SpatialAnalysisToolVolumeCombined>
-     SpatialAnalysisToolVolumeFromCalc<vgt/SpatialAnalysisToolVolumeFromCalc>
-     SpatialAnalysisToolVolumeFromCondition<vgt/SpatialAnalysisToolVolumeFromCondition>
-     SpatialAnalysisToolVolumeFromGrid<vgt/SpatialAnalysisToolVolumeFromGrid>
-     SpatialAnalysisToolVolumeFromTimeSatisfaction<vgt/SpatialAnalysisToolVolumeFromTimeSatisfaction>
+     SpatialAnalysisToolSpatialCalculation<vgt/SpatialAnalysisToolSpatialCalculation>
+     SpatialAnalysisToolCalculationAltitude<vgt/SpatialAnalysisToolCalculationAltitude>
+     SpatialAnalysisToolCalculationAngleToLocation<vgt/SpatialAnalysisToolCalculationAngleToLocation>
+     SpatialAnalysisToolCalculationConditionSatisfactionMetric<vgt/SpatialAnalysisToolCalculationConditionSatisfactionMetric>
+     SpatialAnalysisToolCalculationPropagationDelayToLocation<vgt/SpatialAnalysisToolCalculationPropagationDelayToLocation>
+     SpatialAnalysisToolCalculationFile<vgt/SpatialAnalysisToolCalculationFile>
+     SpatialAnalysisToolCalculationFromCalculationScalar<vgt/SpatialAnalysisToolCalculationFromCalculationScalar>
+     SpatialAnalysisToolCalculationDistanceToLocation<vgt/SpatialAnalysisToolCalculationDistanceToLocation>
+     SpatialAnalysisToolCalculationSolarIntensity<vgt/SpatialAnalysisToolCalculationSolarIntensity>
+     SpatialAnalysisToolConditionCombined<vgt/SpatialAnalysisToolConditionCombined>
+     SpatialAnalysisToolConditionSpatialCalculationBounds<vgt/SpatialAnalysisToolConditionSpatialCalculationBounds>
+     SpatialAnalysisToolConditionConditionAtLocation<vgt/SpatialAnalysisToolConditionConditionAtLocation>
+     SpatialAnalysisToolConditionGridBoundingVolume<vgt/SpatialAnalysisToolConditionGridBoundingVolume>
+     SpatialAnalysisToolConditionValidTimeAtLocation<vgt/SpatialAnalysisToolConditionValidTimeAtLocation>
      SpatialAnalysisToolVolumeGrid<vgt/SpatialAnalysisToolVolumeGrid>
-     SpatialAnalysisToolVolumeGridBearingAlt<vgt/SpatialAnalysisToolVolumeGridBearingAlt>
+     SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude<vgt/SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude>
      SpatialAnalysisToolVolumeGridCartesian<vgt/SpatialAnalysisToolVolumeGridCartesian>
      SpatialAnalysisToolVolumeGridConstrained<vgt/SpatialAnalysisToolVolumeGridConstrained>
      SpatialAnalysisToolVolumeGridCylindrical<vgt/SpatialAnalysisToolVolumeGridCylindrical>
-     SpatialAnalysisToolVolumeGridLatLonAlt<vgt/SpatialAnalysisToolVolumeGridLatLonAlt>
+     SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude<vgt/SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude>
      SpatialAnalysisToolVolumeGridResult<vgt/SpatialAnalysisToolVolumeGridResult>
      SpatialAnalysisToolVolumeGridSpherical<vgt/SpatialAnalysisToolVolumeGridSpherical>
-     SpatialAnalysisToolVolumeInview<vgt/SpatialAnalysisToolVolumeInview>
-     SpatialAnalysisToolVolumeLighting<vgt/SpatialAnalysisToolVolumeLighting>
-     SpatialAnalysisToolVolumeOverTime<vgt/SpatialAnalysisToolVolumeOverTime>
-     AnalysisWorkbenchGeneric<vgt/AnalysisWorkbenchGeneric>
-     AnalysisWorkbenchTypeInfo<vgt/AnalysisWorkbenchTypeInfo>
-     AnalysisWorkbenchInstance<vgt/AnalysisWorkbenchInstance>
-     AnalysisWorkbenchTemplate<vgt/AnalysisWorkbenchTemplate>
-     VectorGeometryToolPointRefTo<vgt/VectorGeometryToolPointRefTo>
-     VectorGeometryToolVectorRefTo<vgt/VectorGeometryToolVectorRefTo>
-     VectorGeometryToolAxesRefTo<vgt/VectorGeometryToolAxesRefTo>
-     VectorGeometryToolAngleRefTo<vgt/VectorGeometryToolAngleRefTo>
-     VectorGeometryToolSystemRefTo<vgt/VectorGeometryToolSystemRefTo>
-     VectorGeometryToolPlaneRefTo<vgt/VectorGeometryToolPlaneRefTo>
+     SpatialAnalysisToolConditionAccessToLocation<vgt/SpatialAnalysisToolConditionAccessToLocation>
+     SpatialAnalysisToolConditionLighting<vgt/SpatialAnalysisToolConditionLighting>
+     SpatialAnalysisToolConditionOverTime<vgt/SpatialAnalysisToolConditionOverTime>
+     AnalysisWorkbenchComponent<vgt/AnalysisWorkbenchComponent>
+     AnalysisWorkbenchComponentTypeInformation<vgt/AnalysisWorkbenchComponentTypeInformation>
+     AnalysisWorkbenchComponentInstance<vgt/AnalysisWorkbenchComponentInstance>
+     AnalysisWorkbenchComponentTemplate<vgt/AnalysisWorkbenchComponentTemplate>
+     VectorGeometryToolPointReference<vgt/VectorGeometryToolPointReference>
+     VectorGeometryToolVectorReference<vgt/VectorGeometryToolVectorReference>
+     VectorGeometryToolAxesReference<vgt/VectorGeometryToolAxesReference>
+     VectorGeometryToolAngleReference<vgt/VectorGeometryToolAngleReference>
+     VectorGeometryToolSystemReference<vgt/VectorGeometryToolSystemReference>
+     VectorGeometryToolPlaneReference<vgt/VectorGeometryToolPlaneReference>
      VectorGeometryToolVector<vgt/VectorGeometryToolVector>
      VectorGeometryToolAxesLabels<vgt/VectorGeometryToolAxesLabels>
      VectorGeometryToolAxes<vgt/VectorGeometryToolAxes>
@@ -1601,7 +1528,7 @@ analysis.
      VectorGeometryToolAxesCustomScript<vgt/VectorGeometryToolAxesCustomScript>
      VectorGeometryToolAxesAttitudeFile<vgt/VectorGeometryToolAxesAttitudeFile>
      VectorGeometryToolAxesFixed<vgt/VectorGeometryToolAxesFixed>
-     VectorGeometryToolAxesModelAttach<vgt/VectorGeometryToolAxesModelAttach>
+     VectorGeometryToolAxesModelAttachment<vgt/VectorGeometryToolAxesModelAttachment>
      VectorGeometryToolAxesSpinning<vgt/VectorGeometryToolAxesSpinning>
      VectorGeometryToolAxesOnSurface<vgt/VectorGeometryToolAxesOnSurface>
      VectorGeometryToolAxesTrajectory<vgt/VectorGeometryToolAxesTrajectory>
@@ -1627,18 +1554,18 @@ analysis.
      VectorGeometryToolPointCovarianceGrazing<vgt/VectorGeometryToolPointCovarianceGrazing>
      VectorGeometryToolPointPlaneIntersection<vgt/VectorGeometryToolPointPlaneIntersection>
      VectorGeometryToolPointOnSurface<vgt/VectorGeometryToolPointOnSurface>
-     VectorGeometryToolPointModelAttach<vgt/VectorGeometryToolPointModelAttach>
+     VectorGeometryToolPointModelAttachment<vgt/VectorGeometryToolPointModelAttachment>
      VectorGeometryToolPointSatelliteCollectionEntry<vgt/VectorGeometryToolPointSatelliteCollectionEntry>
      VectorGeometryToolPointPlaneProjection<vgt/VectorGeometryToolPointPlaneProjection>
      VectorGeometryToolPointLagrangeLibration<vgt/VectorGeometryToolPointLagrangeLibration>
      VectorGeometryToolPointCommonTasks<vgt/VectorGeometryToolPointCommonTasks>
-     VectorGeometryToolPointCentBodyIntersect<vgt/VectorGeometryToolPointCentBodyIntersect>
+     VectorGeometryToolPointCentralBodyIntersect<vgt/VectorGeometryToolPointCentralBodyIntersect>
      VectorGeometryToolPointAtTimeInstant<vgt/VectorGeometryToolPointAtTimeInstant>
      VectorGeometryToolPointPlugin<vgt/VectorGeometryToolPointPlugin>
-     VectorGeometryToolPointCBFixedOffset<vgt/VectorGeometryToolPointCBFixedOffset>
+     VectorGeometryToolPointCentralBodyFixedOffset<vgt/VectorGeometryToolPointCentralBodyFixedOffset>
      VectorGeometryToolSystemAssembled<vgt/VectorGeometryToolSystemAssembled>
      VectorGeometryToolSystemOnSurface<vgt/VectorGeometryToolSystemOnSurface>
-     AnalysisWorkbenchLLAPosition<vgt/AnalysisWorkbenchLLAPosition>
+     AnalysisWorkbenchPositionLLA<vgt/AnalysisWorkbenchPositionLLA>
      VectorGeometryToolSystemCommonTasks<vgt/VectorGeometryToolSystemCommonTasks>
      VectorGeometryToolVectorAngleRate<vgt/VectorGeometryToolVectorAngleRate>
      VectorGeometryToolVectorApoapsis<vgt/VectorGeometryToolVectorApoapsis>
@@ -1650,7 +1577,7 @@ analysis.
      VectorGeometryToolVectorDerivative<vgt/VectorGeometryToolVectorDerivative>
      VectorGeometryToolVectorDisplacement<vgt/VectorGeometryToolVectorDisplacement>
      VectorGeometryToolVectorTwoPlanesIntersection<vgt/VectorGeometryToolVectorTwoPlanesIntersection>
-     VectorGeometryToolVectorModelAttach<vgt/VectorGeometryToolVectorModelAttach>
+     VectorGeometryToolVectorModelAttachment<vgt/VectorGeometryToolVectorModelAttachment>
      VectorGeometryToolVectorProjection<vgt/VectorGeometryToolVectorProjection>
      VectorGeometryToolVectorScaled<vgt/VectorGeometryToolVectorScaled>
      VectorGeometryToolVectorEccentricity<vgt/VectorGeometryToolVectorEccentricity>
@@ -1664,12 +1591,13 @@ analysis.
      VectorGeometryToolVectorDirectionToStar<vgt/VectorGeometryToolVectorDirectionToStar>
      VectorGeometryToolVectorFixedAtTimeInstant<vgt/VectorGeometryToolVectorFixedAtTimeInstant>
      VectorGeometryToolVectorLinearCombination<vgt/VectorGeometryToolVectorLinearCombination>
-     VectorGeometryToolVectorProjectAlongVector<vgt/VectorGeometryToolVectorProjectAlongVector>
+     VectorGeometryToolVectorProjectionAlongVector<vgt/VectorGeometryToolVectorProjectionAlongVector>
      VectorGeometryToolVectorScalarLinearCombination<vgt/VectorGeometryToolVectorScalarLinearCombination>
      VectorGeometryToolVectorScalarScaled<vgt/VectorGeometryToolVectorScalarScaled>
      VectorGeometryToolVectorVelocityAcceleration<vgt/VectorGeometryToolVectorVelocityAcceleration>
      VectorGeometryToolVectorPlugin<vgt/VectorGeometryToolVectorPlugin>
-     VectorGeometryToolVectorDispSurface<vgt/VectorGeometryToolVectorDispSurface>
+     VectorGeometryToolVectorSurfaceDisplacement<vgt/VectorGeometryToolVectorSurfaceDisplacement>
+     VectorGeometryToolVectorFile<vgt/VectorGeometryToolVectorFile>
      VectorGeometryToolVectorFactory<vgt/VectorGeometryToolVectorFactory>
      VectorGeometryToolAxesFactory<vgt/VectorGeometryToolAxesFactory>
      VectorGeometryToolSystemFactory<vgt/VectorGeometryToolSystemFactory>
@@ -1682,7 +1610,7 @@ analysis.
      VectorGeometryToolAxesGroup<vgt/VectorGeometryToolAxesGroup>
      VectorGeometryToolPlaneGroup<vgt/VectorGeometryToolPlaneGroup>
      VectorGeometryToolSystemGroup<vgt/VectorGeometryToolSystemGroup>
-     AnalysisWorkbenchProvider<vgt/AnalysisWorkbenchProvider>
+     AnalysisWorkbenchComponentProvider<vgt/AnalysisWorkbenchComponentProvider>
      AnalysisWorkbenchRoot<vgt/AnalysisWorkbenchRoot>
      VectorGeometryToolWellKnownEarthSystems<vgt/VectorGeometryToolWellKnownEarthSystems>
      VectorGeometryToolWellKnownEarthAxes<vgt/VectorGeometryToolWellKnownEarthAxes>
@@ -1690,31 +1618,31 @@ analysis.
      VectorGeometryToolWellKnownSunAxes<vgt/VectorGeometryToolWellKnownSunAxes>
      VectorGeometryToolWellKnownSystems<vgt/VectorGeometryToolWellKnownSystems>
      VectorGeometryToolWellKnownAxes<vgt/VectorGeometryToolWellKnownAxes>
-     AnalysisWorkbenchMethodCallAngleFindResult<vgt/AnalysisWorkbenchMethodCallAngleFindResult>
-     AnalysisWorkbenchMethodCallAngleFindWithRateResult<vgt/AnalysisWorkbenchMethodCallAngleFindWithRateResult>
-     AnalysisWorkbenchMethodCallAxesTransformResult<vgt/AnalysisWorkbenchMethodCallAxesTransformResult>
-     AnalysisWorkbenchMethodCallAxesTransformWithRateResult<vgt/AnalysisWorkbenchMethodCallAxesTransformWithRateResult>
-     AnalysisWorkbenchMethodCallAxesFindInAxesResult<vgt/AnalysisWorkbenchMethodCallAxesFindInAxesResult>
-     AnalysisWorkbenchMethodCallAxesFindInAxesWithRateResult<vgt/AnalysisWorkbenchMethodCallAxesFindInAxesWithRateResult>
-     AnalysisWorkbenchMethodCallPlaneFindInAxesResult<vgt/AnalysisWorkbenchMethodCallPlaneFindInAxesResult>
-     AnalysisWorkbenchMethodCallPlaneFindInAxesWithRateResult<vgt/AnalysisWorkbenchMethodCallPlaneFindInAxesWithRateResult>
-     AnalysisWorkbenchMethodCallPlaneFindInSystemResult<vgt/AnalysisWorkbenchMethodCallPlaneFindInSystemResult>
-     AnalysisWorkbenchMethodCallPlaneFindInSystemWithRateResult<vgt/AnalysisWorkbenchMethodCallPlaneFindInSystemWithRateResult>
-     AnalysisWorkbenchMethodCallPointLocateInSystemResult<vgt/AnalysisWorkbenchMethodCallPointLocateInSystemResult>
-     AnalysisWorkbenchMethodCallPointLocateInSystemWithRateResult<vgt/AnalysisWorkbenchMethodCallPointLocateInSystemWithRateResult>
-     AnalysisWorkbenchMethodCallSystemTransformResult<vgt/AnalysisWorkbenchMethodCallSystemTransformResult>
-     AnalysisWorkbenchMethodCallSystemTransformWithRateResult<vgt/AnalysisWorkbenchMethodCallSystemTransformWithRateResult>
-     AnalysisWorkbenchMethodCallSystemFindInSystemResult<vgt/AnalysisWorkbenchMethodCallSystemFindInSystemResult>
-     AnalysisWorkbenchMethodCallVectorFindInAxesResult<vgt/AnalysisWorkbenchMethodCallVectorFindInAxesResult>
-     AnalysisWorkbenchMethodCallVectorFindInAxesWithRateResult<vgt/AnalysisWorkbenchMethodCallVectorFindInAxesWithRateResult>
-     AnalysisWorkbenchMethodCallAngleFindAngleWithRateResult<vgt/AnalysisWorkbenchMethodCallAngleFindAngleWithRateResult>
-     AnalysisWorkbenchMethodCallAngleFindAngleResult<vgt/AnalysisWorkbenchMethodCallAngleFindAngleResult>
+     AnalysisWorkbenchAngleFindResult<vgt/AnalysisWorkbenchAngleFindResult>
+     AnalysisWorkbenchAngleFindWithRateResult<vgt/AnalysisWorkbenchAngleFindWithRateResult>
+     AnalysisWorkbenchAxesTransformResult<vgt/AnalysisWorkbenchAxesTransformResult>
+     AnalysisWorkbenchAxesTransformWithRateResult<vgt/AnalysisWorkbenchAxesTransformWithRateResult>
+     AnalysisWorkbenchAxesFindInAxesResult<vgt/AnalysisWorkbenchAxesFindInAxesResult>
+     AnalysisWorkbenchAxesFindInAxesWithRateResult<vgt/AnalysisWorkbenchAxesFindInAxesWithRateResult>
+     AnalysisWorkbenchPlaneFindInAxesResult<vgt/AnalysisWorkbenchPlaneFindInAxesResult>
+     AnalysisWorkbenchPlaneFindInAxesWithRateResult<vgt/AnalysisWorkbenchPlaneFindInAxesWithRateResult>
+     AnalysisWorkbenchPlaneFindInSystemResult<vgt/AnalysisWorkbenchPlaneFindInSystemResult>
+     AnalysisWorkbenchPlaneFindInSystemWithRateResult<vgt/AnalysisWorkbenchPlaneFindInSystemWithRateResult>
+     AnalysisWorkbenchPointLocateInSystemResult<vgt/AnalysisWorkbenchPointLocateInSystemResult>
+     AnalysisWorkbenchPointLocateInSystemWithRateResult<vgt/AnalysisWorkbenchPointLocateInSystemWithRateResult>
+     AnalysisWorkbenchSystemTransformResult<vgt/AnalysisWorkbenchSystemTransformResult>
+     AnalysisWorkbenchSystemTransformWithRateResult<vgt/AnalysisWorkbenchSystemTransformWithRateResult>
+     AnalysisWorkbenchSystemFindInSystemResult<vgt/AnalysisWorkbenchSystemFindInSystemResult>
+     AnalysisWorkbenchVectorFindInAxesResult<vgt/AnalysisWorkbenchVectorFindInAxesResult>
+     AnalysisWorkbenchVectorFindInAxesWithRateResult<vgt/AnalysisWorkbenchVectorFindInAxesWithRateResult>
+     AnalysisWorkbenchAngleFindAngleWithRateResult<vgt/AnalysisWorkbenchAngleFindAngleWithRateResult>
+     AnalysisWorkbenchAngleFindAngleResult<vgt/AnalysisWorkbenchAngleFindAngleResult>
      TimeToolInterval<vgt/TimeToolInterval>
      TimeToolIntervalCollection<vgt/TimeToolIntervalCollection>
      AnalysisWorkbenchCentralBody<vgt/AnalysisWorkbenchCentralBody>
-     AnalysisWorkbenchCentralBodyRefTo<vgt/AnalysisWorkbenchCentralBodyRefTo>
+     AnalysisWorkbenchCentralBodyReference<vgt/AnalysisWorkbenchCentralBodyReference>
      AnalysisWorkbenchCentralBodyCollection<vgt/AnalysisWorkbenchCentralBodyCollection>
-     AnalysisWorkbenchCollection<vgt/AnalysisWorkbenchCollection>
+     AnalysisWorkbenchComponentCollection<vgt/AnalysisWorkbenchComponentCollection>
      TimeToolPointSamplingResult<vgt/TimeToolPointSamplingResult>
      TimeToolPointSamplingInterval<vgt/TimeToolPointSamplingInterval>
      TimeToolPointSamplingIntervalCollection<vgt/TimeToolPointSamplingIntervalCollection>
@@ -1727,78 +1655,78 @@ analysis.
     :maxdepth: 1
     :hidden:
 
-    ≔ CRDN_CALC_SCALAR_TYPE<vgt/CRDN_CALC_SCALAR_TYPE_enum>
-    ≔ CRDN_CONDITION_COMBINED_OPERATION_TYPE<vgt/CRDN_CONDITION_COMBINED_OPERATION_TYPE_enum>
-    ≔ CRDN_CONDITION_SET_TYPE<vgt/CRDN_CONDITION_SET_TYPE_enum>
-    ≔ CRDN_CONDITION_THRESHOLD_OPTION<vgt/CRDN_CONDITION_THRESHOLD_OPTION_enum>
-    ≔ CRDN_CONDITION_TYPE<vgt/CRDN_CONDITION_TYPE_enum>
-    ≔ CRDN_DIMENSION_INHERITANCE<vgt/CRDN_DIMENSION_INHERITANCE_enum>
-    ≔ CRDN_EVENT_ARRAY_FILTER_TYPE<vgt/CRDN_EVENT_ARRAY_FILTER_TYPE_enum>
-    ≔ CRDN_EVENT_ARRAY_TYPE<vgt/CRDN_EVENT_ARRAY_TYPE_enum>
-    ≔ CRDN_EVENT_INTERVAL_COLLECTION_TYPE<vgt/CRDN_EVENT_INTERVAL_COLLECTION_TYPE_enum>
-    ≔ CRDN_EVENT_INTERVAL_LIST_TYPE<vgt/CRDN_EVENT_INTERVAL_LIST_TYPE_enum>
-    ≔ CRDN_EVENT_INTERVAL_TYPE<vgt/CRDN_EVENT_INTERVAL_TYPE_enum>
-    ≔ CRDN_EVENT_LIST_MERGE_OPERATION<vgt/CRDN_EVENT_LIST_MERGE_OPERATION_enum>
-    ≔ CRDN_EVENT_TYPE<vgt/CRDN_EVENT_TYPE_enum>
-    ≔ CRDN_EXTREMUM_CONSTANTS<vgt/CRDN_EXTREMUM_CONSTANTS_enum>
-    ≔ CRDN_FILE_INTERPOLATOR_TYPE<vgt/CRDN_FILE_INTERPOLATOR_TYPE_enum>
-    ≔ CRDN_INTEGRAL_TYPE<vgt/CRDN_INTEGRAL_TYPE_enum>
-    ≔ CRDN_INTEGRATION_WINDOW_TYPE<vgt/CRDN_INTEGRATION_WINDOW_TYPE_enum>
-    ≔ CRDN_INTERPOLATOR_TYPE<vgt/CRDN_INTERPOLATOR_TYPE_enum>
-    ≔ CRDN_INTERVAL_DURATION_KIND<vgt/CRDN_INTERVAL_DURATION_KIND_enum>
-    ≔ CRDN_INTERVAL_SELECTION<vgt/CRDN_INTERVAL_SELECTION_enum>
-    ≔ CRDN_PARAMETER_SET_TYPE<vgt/CRDN_PARAMETER_SET_TYPE_enum>
-    ≔ CRDN_PRUNE_FILTER<vgt/CRDN_PRUNE_FILTER_enum>
-    ≔ CRDN_SAMPLED_REFERENCE_TIME<vgt/CRDN_SAMPLED_REFERENCE_TIME_enum>
-    ≔ CRDN_SAMPLING_METHOD<vgt/CRDN_SAMPLING_METHOD_enum>
-    ≔ CRDN_SATISFACTION_CROSSING<vgt/CRDN_SATISFACTION_CROSSING_enum>
-    ≔ CRDN_SAVE_DATA_OPTION<vgt/CRDN_SAVE_DATA_OPTION_enum>
-    ≔ CRDN_SIGNAL_PATH_REFERENCE_SYSTEM<vgt/CRDN_SIGNAL_PATH_REFERENCE_SYSTEM_enum>
-    ≔ CRDN_SMART_EPOCH_STATE<vgt/CRDN_SMART_EPOCH_STATE_enum>
-    ≔ CRDN_SMART_INTERVAL_STATE<vgt/CRDN_SMART_INTERVAL_STATE_enum>
-    ≔ CRDN_SPEED_OPTIONS<vgt/CRDN_SPEED_OPTIONS_enum>
-    ≔ CRDN_START_STOP_OPTION<vgt/CRDN_START_STOP_OPTION_enum>
-    ≔ CRDN_THRESH_CONVERGE_SENSE<vgt/CRDN_THRESH_CONVERGE_SENSE_enum>
-    ≔ VECTOR_GEOMETRY_TOOL_VECTOR_COMPONENT_TYPE<vgt/VECTOR_GEOMETRY_TOOL_VECTOR_COMPONENT_TYPE_enum>
-    ≔ CRDN_VOLUME_CALC_ALTITUDE_REFERENCE_TYPE<vgt/CRDN_VOLUME_CALC_ALTITUDE_REFERENCE_TYPE_enum>
-    ≔ CRDN_VOLUME_CALC_ANGLE_OFF_VECTOR_TYPE<vgt/CRDN_VOLUME_CALC_ANGLE_OFF_VECTOR_TYPE_enum>
-    ≔ CRDN_VOLUME_CALC_RANGE_DISTANCE_TYPE<vgt/CRDN_VOLUME_CALC_RANGE_DISTANCE_TYPE_enum>
-    ≔ CRDN_VOLUME_CALC_RANGE_SPEED_TYPE<vgt/CRDN_VOLUME_CALC_RANGE_SPEED_TYPE_enum>
-    ≔ CRDN_VOLUME_CALC_TYPE<vgt/CRDN_VOLUME_CALC_TYPE_enum>
-    ≔ CRDN_VOLUME_CALC_VOLUME_SATISFACTION_ACCUMULATION_TYPE<vgt/CRDN_VOLUME_CALC_VOLUME_SATISFACTION_ACCUMULATION_TYPE_enum>
-    ≔ CRDN_VOLUME_CALC_VOLUME_SATISFACTION_DURATION_TYPE<vgt/CRDN_VOLUME_CALC_VOLUME_SATISFACTION_DURATION_TYPE_enum>
-    ≔ CRDN_VOLUME_CALC_VOLUME_SATISFACTION_FILTER_TYPE<vgt/CRDN_VOLUME_CALC_VOLUME_SATISFACTION_FILTER_TYPE_enum>
-    ≔ CRDN_VOLUME_CALC_VOLUME_SATISFACTION_METRIC_TYPE<vgt/CRDN_VOLUME_CALC_VOLUME_SATISFACTION_METRIC_TYPE_enum>
-    ≔ CRDN_VOLUME_GRID_TYPE<vgt/CRDN_VOLUME_GRID_TYPE_enum>
-    ≔ CRDN_VOLUME_RESULT_VECTOR_REQUEST<vgt/CRDN_VOLUME_RESULT_VECTOR_REQUEST_enum>
-    ≔ CRDN_VOLUME_TYPE<vgt/CRDN_VOLUME_TYPE_enum>
-    ≔ CRDN_VOLUME_ABERRATION_TYPE<vgt/CRDN_VOLUME_ABERRATION_TYPE_enum>
-    ≔ CRDN_VOLUME_CLOCK_HOST_TYPE<vgt/CRDN_VOLUME_CLOCK_HOST_TYPE_enum>
-    ≔ CRDN_VOLUME_COMBINED_OPERATION_TYPE<vgt/CRDN_VOLUME_COMBINED_OPERATION_TYPE_enum>
-    ≔ CRDN_VOLUME_FROM_GRID_EDGE_TYPE<vgt/CRDN_VOLUME_FROM_GRID_EDGE_TYPE_enum>
-    ≔ CRDN_VOLUME_LIGHTING_CONDITIONS_TYPE<vgt/CRDN_VOLUME_LIGHTING_CONDITIONS_TYPE_enum>
-    ≔ CRDN_VOLUME_OVER_TIME_DURATION_TYPE<vgt/CRDN_VOLUME_OVER_TIME_DURATION_TYPE_enum>
-    ≔ CRDN_VOLUME_TIME_SENSE_TYPE<vgt/CRDN_VOLUME_TIME_SENSE_TYPE_enum>
-    ≔ CRDN_VOLUMETRIC_GRID_VALUES_METHOD_TYPE<vgt/CRDN_VOLUMETRIC_GRID_VALUES_METHOD_TYPE_enum>
-    ≔ CRDN_KIND<vgt/CRDN_KIND_enum>
-    ≔ VECTOR_GEOMETRY_TOOL_ANGLE_TYPE<vgt/VECTOR_GEOMETRY_TOOL_ANGLE_TYPE_enum>
-    ≔ VECTOR_GEOMETRY_TOOL_AXES_TYPE<vgt/VECTOR_GEOMETRY_TOOL_AXES_TYPE_enum>
-    ≔ VECTOR_GEOMETRY_TOOL_PLANE_TYPE<vgt/VECTOR_GEOMETRY_TOOL_PLANE_TYPE_enum>
-    ≔ VECTOR_GEOMETRY_TOOL_POINT_TYPE<vgt/VECTOR_GEOMETRY_TOOL_POINT_TYPE_enum>
-    ≔ CRDN_SYSTEM_TYPE<vgt/CRDN_SYSTEM_TYPE_enum>
-    ≔ VECTOR_GEOMETRY_TOOL_VECTOR_TYPE<vgt/VECTOR_GEOMETRY_TOOL_VECTOR_TYPE_enum>
-    ≔ CRDN_MEAN_ELEMENT_THEORY<vgt/CRDN_MEAN_ELEMENT_THEORY_enum>
-    ≔ CRDN_DIRECTION_TYPE<vgt/CRDN_DIRECTION_TYPE_enum>
-    ≔ CRDN_LAGRANGE_LIBRATION_POINT_TYPE<vgt/CRDN_LAGRANGE_LIBRATION_POINT_TYPE_enum>
-    ≔ CRDN_QUADRANT_TYPE<vgt/CRDN_QUADRANT_TYPE_enum>
-    ≔ CRDN_TRAJECTORY_AXES_TYPE<vgt/CRDN_TRAJECTORY_AXES_TYPE_enum>
-    ≔ CRDN_DISPLAY_AXIS_SELECTOR<vgt/CRDN_DISPLAY_AXIS_SELECTOR_enum>
-    ≔ CRDN_SIGNED_ANGLE_TYPE<vgt/CRDN_SIGNED_ANGLE_TYPE_enum>
-    ≔ VECTOR_GEOMETRY_TOOL_POINT_B_PLANE_TYPE<vgt/VECTOR_GEOMETRY_TOOL_POINT_B_PLANE_TYPE_enum>
-    ≔ CRDN_REFERENCE_SHAPE_TYPE<vgt/CRDN_REFERENCE_SHAPE_TYPE_enum>
-    ≔ CRDN_SURFACE_TYPE<vgt/CRDN_SURFACE_TYPE_enum>
-    ≔ CRDN_SWEEP_MODE<vgt/CRDN_SWEEP_MODE_enum>
-    ≔ CRDN_SIGNAL_SENSE<vgt/CRDN_SIGNAL_SENSE_enum>
-    ≔ CRDN_INTERSECTION_SURFACE<vgt/CRDN_INTERSECTION_SURFACE_enum>
-    ≔ VECTOR_GEOMETRY_TOOL_VECTOR_SCALED_DIMENSION_INHERITANCE<vgt/VECTOR_GEOMETRY_TOOL_VECTOR_SCALED_DIMENSION_INHERITANCE_enum>
+    ≔ CalculationScalarType<vgt/CalculationScalarType>
+    ≔ ConditionCombinedOperationType<vgt/ConditionCombinedOperationType>
+    ≔ ConditionSetType<vgt/ConditionSetType>
+    ≔ ConditionThresholdType<vgt/ConditionThresholdType>
+    ≔ ConditionType<vgt/ConditionType>
+    ≔ InheritDimensionType<vgt/InheritDimensionType>
+    ≔ EventArrayFilterType<vgt/EventArrayFilterType>
+    ≔ EventArrayType<vgt/EventArrayType>
+    ≔ EventIntervalCollectionType<vgt/EventIntervalCollectionType>
+    ≔ EventIntervalListType<vgt/EventIntervalListType>
+    ≔ EventIntervalType<vgt/EventIntervalType>
+    ≔ EventListMergeOperation<vgt/EventListMergeOperation>
+    ≔ TimeEventType<vgt/TimeEventType>
+    ≔ ExtremumType<vgt/ExtremumType>
+    ≔ FileInterpolatorType<vgt/FileInterpolatorType>
+    ≔ QuadratureType<vgt/QuadratureType>
+    ≔ IntegrationWindowType<vgt/IntegrationWindowType>
+    ≔ InterpolationMethodType<vgt/InterpolationMethodType>
+    ≔ IntervalDurationType<vgt/IntervalDurationType>
+    ≔ IntervalFromIntervalListSelectionType<vgt/IntervalFromIntervalListSelectionType>
+    ≔ ParameterSetType<vgt/ParameterSetType>
+    ≔ IntervalPruneFilterType<vgt/IntervalPruneFilterType>
+    ≔ SampleReferenceTimeType<vgt/SampleReferenceTimeType>
+    ≔ VectorGeometryToolSamplingMethod<vgt/VectorGeometryToolSamplingMethod>
+    ≔ SatisfactionCrossing<vgt/SatisfactionCrossing>
+    ≔ SaveDataType<vgt/SaveDataType>
+    ≔ SignalPathReferenceSystem<vgt/SignalPathReferenceSystem>
+    ≔ SmartEpochState<vgt/SmartEpochState>
+    ≔ SmartIntervalState<vgt/SmartIntervalState>
+    ≔ SpeedType<vgt/SpeedType>
+    ≔ StartStopType<vgt/StartStopType>
+    ≔ ThresholdConvergenceSenseType<vgt/ThresholdConvergenceSenseType>
+    ≔ VectorComponentType<vgt/VectorComponentType>
+    ≔ SpatialCalculationAltitudeReferenceType<vgt/SpatialCalculationAltitudeReferenceType>
+    ≔ AngleToLocationType<vgt/AngleToLocationType>
+    ≔ DistanceToLocationType<vgt/DistanceToLocationType>
+    ≔ RangeSpeedType<vgt/RangeSpeedType>
+    ≔ SpatialCalculationType<vgt/SpatialCalculationType>
+    ≔ VolumeSatisfactionAccumulationType<vgt/VolumeSatisfactionAccumulationType>
+    ≔ VolumeSatisfactionDurationType<vgt/VolumeSatisfactionDurationType>
+    ≔ VolumeSatisfactionFilterType<vgt/VolumeSatisfactionFilterType>
+    ≔ VolumeSatisfactionMetricType<vgt/VolumeSatisfactionMetricType>
+    ≔ VolumeGridType<vgt/VolumeGridType>
+    ≔ ResultVectorRequestType<vgt/ResultVectorRequestType>
+    ≔ VolumeType<vgt/VolumeType>
+    ≔ AberrationModelType<vgt/AberrationModelType>
+    ≔ ClockHostType<vgt/ClockHostType>
+    ≔ VolumeCombinedOperationType<vgt/VolumeCombinedOperationType>
+    ≔ VolumeFromGridEdgeType<vgt/VolumeFromGridEdgeType>
+    ≔ LightingConditionsType<vgt/LightingConditionsType>
+    ≔ SpatialConditionOverTypeDurationType<vgt/SpatialConditionOverTypeDurationType>
+    ≔ TimeSenseType<vgt/TimeSenseType>
+    ≔ GridValuesMethodType<vgt/GridValuesMethodType>
+    ≔ VectorGeometryToolComponentType<vgt/VectorGeometryToolComponentType>
+    ≔ AngleType<vgt/AngleType>
+    ≔ AxesType<vgt/AxesType>
+    ≔ PlaneType<vgt/PlaneType>
+    ≔ PointType<vgt/PointType>
+    ≔ SystemType<vgt/SystemType>
+    ≔ VectorType<vgt/VectorType>
+    ≔ MeanElementTheory<vgt/MeanElementTheory>
+    ≔ AsymptoteDirectionType<vgt/AsymptoteDirectionType>
+    ≔ LagrangeLibrationPointType<vgt/LagrangeLibrationPointType>
+    ≔ PlaneQuadrantType<vgt/PlaneQuadrantType>
+    ≔ TrajectoryAxesCoordinatesType<vgt/TrajectoryAxesCoordinatesType>
+    ≔ PrincipalAxisOfRotationType<vgt/PrincipalAxisOfRotationType>
+    ≔ SignedAngleType<vgt/SignedAngleType>
+    ≔ PointBPlaneType<vgt/PointBPlaneType>
+    ≔ SurfaceReferenceShapeType<vgt/SurfaceReferenceShapeType>
+    ≔ SurfaceShapeType<vgt/SurfaceShapeType>
+    ≔ RotationSweepModeType<vgt/RotationSweepModeType>
+    ≔ SignalDirectionType<vgt/SignalDirectionType>
+    ≔ IntersectionSurfaceType<vgt/IntersectionSurfaceType>
+    ≔ VectorGeometryToolScaledVectorDimensionInheritanceOptionType<vgt/VectorGeometryToolScaledVectorDimensionInheritanceOptionType>
 

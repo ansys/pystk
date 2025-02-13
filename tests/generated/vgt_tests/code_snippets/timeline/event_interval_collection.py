@@ -11,19 +11,17 @@ class EventIntervalCollection(TimelineCodeSnippetsTestBase):
     # region DetermineIfEpochOccurredInIntervalCollection
     def test_DetermineIfEpochOccurredInIntervalCollection(self):
         self.DetermineIfEpochOccurredInIntervalCollection(
-            TestBase.Application.get_object_from_path("Satellite/LEO").vgt
+            TestBase.Application.get_object_from_path("Satellite/LEO").analysis_workbench_components
         )
 
-    def DetermineIfEpochOccurredInIntervalCollection(self, provider: "AnalysisWorkbenchProvider"):
+    def DetermineIfEpochOccurredInIntervalCollection(self, provider: "AnalysisWorkbenchComponentProvider"):
         eventCollName: str = "LightingIntervals"
-        intervalVectorCollection: "ITimeToolEventIntervalCollection" = provider.event_interval_collections[
-            eventCollName
-        ]
+        intervalVectorCollection: "ITimeToolTimeIntervalCollection" = provider.time_interval_collections[eventCollName]
 
         # any time that the vehicle has ephemeris its time will occur in the LightingIntervals collection (as a sunlit, penumbra or umbra time)
         dateDuringEphem: str = "1 Jan 2012 20:00:00"
 
-        occurredResult: "TimeToolEventIntervalCollectionOccurredResult" = intervalVectorCollection.occurred(
+        occurredResult: "TimeToolTimeIntervalCollectionOccurredResult" = intervalVectorCollection.occurred(
             dateDuringEphem
         )
 
@@ -31,12 +29,12 @@ class EventIntervalCollection(TimelineCodeSnippetsTestBase):
 
         Console.WriteLine("Occurred at {0} index", occurredResult.index)
 
-        # Use the index from TimeToolEventIntervalCollectionOccurredResult as the index to TimeToolIntervalsVectorResult.IntervalCollections
+        # Use the index from TimeToolTimeIntervalCollectionOccurredResult as the index to TimeToolIntervalsVectorResult.IntervalCollections
         intervalResult: "TimeToolIntervalsVectorResult" = intervalVectorCollection.find_interval_collection()
         intervalCollection: "TimeToolIntervalCollection" = intervalResult.interval_collections[occurredResult.index]
 
         dateNotDuringEphem: str = "1 May 1980 04:30:00.000"
-        occurredResult2: "TimeToolEventIntervalCollectionOccurredResult" = intervalVectorCollection.occurred(
+        occurredResult2: "TimeToolTimeIntervalCollectionOccurredResult" = intervalVectorCollection.occurred(
             dateNotDuringEphem
         )
 
@@ -49,12 +47,12 @@ class EventIntervalCollection(TimelineCodeSnippetsTestBase):
 
     # region DetermineIntervalsInEventIntervalCollection
     def test_DetermineIntervalsInEventIntervalCollection(self):
-        self.DetermineIntervalsInEventIntervalCollection(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
+        self.DetermineIntervalsInEventIntervalCollection(
+            TestBase.Application.get_object_from_path("Satellite/LEO").analysis_workbench_components
+        )
 
-    def DetermineIntervalsInEventIntervalCollection(self, provider: "AnalysisWorkbenchProvider"):
-        intervalCollection: "ITimeToolEventIntervalCollection" = provider.event_interval_collections[
-            "LightingIntervals"
-        ]
+    def DetermineIntervalsInEventIntervalCollection(self, provider: "AnalysisWorkbenchComponentProvider"):
+        intervalCollection: "ITimeToolTimeIntervalCollection" = provider.time_interval_collections["LightingIntervals"]
 
         intervalResult: "TimeToolIntervalsVectorResult" = intervalCollection.find_interval_collection()
         if intervalResult.is_valid:
@@ -74,27 +72,31 @@ class EventIntervalCollection(TimelineCodeSnippetsTestBase):
         self.CreateSignaledEventIntervalCollection(TestBase.Application)
 
     def CreateSignaledEventIntervalCollection(self, stkRoot: "StkObjectRoot"):
-        satelliteVgtProvider: "AnalysisWorkbenchProvider" = stkRoot.get_object_from_path("Satellite/LEO").vgt
-        aircraftVgtProvider: "AnalysisWorkbenchProvider" = stkRoot.get_object_from_path("Aircraft/UAV").vgt
+        satelliteVgtProvider: "AnalysisWorkbenchComponentProvider" = stkRoot.get_object_from_path(
+            "Satellite/LEO"
+        ).analysis_workbench_components
+        aircraftVgtProvider: "AnalysisWorkbenchComponentProvider" = stkRoot.get_object_from_path(
+            "Aircraft/UAV"
+        ).analysis_workbench_components
 
-        intervalCollection: "ITimeToolEventIntervalCollection" = (
-            satelliteVgtProvider.event_interval_collections.factory.create_event_interval_collection_signaled(
+        intervalCollection: "ITimeToolTimeIntervalCollection" = (
+            satelliteVgtProvider.time_interval_collections.factory.create_signaled(
                 "MyIntervalCollectionSignaled", "MyDescription"
             )
         )
-        asCollectionSignaled: "TimeToolEventIntervalCollectionSignaled" = clr.CastAs(
-            intervalCollection, TimeToolEventIntervalCollectionSignaled
+        asCollectionSignaled: "TimeToolTimeIntervalCollectionSignaled" = clr.CastAs(
+            intervalCollection, TimeToolTimeIntervalCollectionSignaled
         )
 
-        asCollectionSignaled.original_collection = aircraftVgtProvider.event_interval_collections["LightingIntervals"]
+        asCollectionSignaled.original_collection = aircraftVgtProvider.time_interval_collections["LightingIntervals"]
         asCollectionSignaled.base_clock_location = satelliteVgtProvider.points["Center"]
         asCollectionSignaled.target_clock_location = aircraftVgtProvider.points["Center"]
 
-        asCollectionSignaled.signal_sense = CRDN_SIGNAL_SENSE.TRANSMIT
+        asCollectionSignaled.signal_sense = SignalDirectionType.TRANSMIT
         basicSignalDelay: "TimeToolSignalDelayBasic" = clr.CastAs(
             asCollectionSignaled.signal_delay, TimeToolSignalDelayBasic
         )
-        basicSignalDelay.speed_option = CRDN_SPEED_OPTIONS.LIGHT_TRANSMISSION_SPEED
+        basicSignalDelay.speed_option = SpeedType.LIGHT_TRANSMISSION_SPEED
 
         # Uses current Time unit preference, this code snippet assumes seconds.
         basicSignalDelay.time_delay_convergence = 0.002
@@ -112,16 +114,16 @@ class EventIntervalCollection(TimelineCodeSnippetsTestBase):
 
     # region CreateLightingEventIntervalCollection
     def test_CreateLightingEventIntervalCollection(self):
-        self.CreateLightingEventIntervalCollection(TestBase.Application.get_object_from_path("Satellite/LEO").vgt)
-
-    def CreateLightingEventIntervalCollection(self, provider: "AnalysisWorkbenchProvider"):
-        intervalCollection: "ITimeToolEventIntervalCollection" = (
-            provider.event_interval_collections.factory.create_event_interval_collection_lighting(
-                "MyIntervalCollectionLightning", "MyDescription"
-            )
+        self.CreateLightingEventIntervalCollection(
+            TestBase.Application.get_object_from_path("Satellite/LEO").analysis_workbench_components
         )
-        asCollectionLightning: "TimeToolEventIntervalCollectionLighting" = clr.CastAs(
-            intervalCollection, TimeToolEventIntervalCollectionLighting
+
+    def CreateLightingEventIntervalCollection(self, provider: "AnalysisWorkbenchComponentProvider"):
+        intervalCollection: "ITimeToolTimeIntervalCollection" = (
+            provider.time_interval_collections.factory.create_lighting("MyIntervalCollectionLightning", "MyDescription")
+        )
+        asCollectionLightning: "TimeToolTimeIntervalCollectionLighting" = clr.CastAs(
+            intervalCollection, TimeToolTimeIntervalCollectionLighting
         )
 
         # Optionally use a separate central body

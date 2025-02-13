@@ -40,11 +40,11 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DBorderWall.use_wall_translucency`
               - Display the border wall at the specified translucency percentage.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DBorderWall.wall_translucency`
-              - Gets or sets the border wall's translucency percentage, where 100% = invisible.
+              - Get or set the border wall's translucency percentage, where 100% = invisible.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DBorderWall.use_line_translucency`
               - Display the lines at the upper and lower edges of the border wall at the specified translucency percentage.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DBorderWall.line_translucency`
-              - Gets or sets the translucency of the lines at the upper and lower edges of the border wall, where 100% = invisible.
+              - Get or set the translucency of the lines at the upper and lower edges of the border wall, where 100% = invisible.
 
 
 
@@ -67,7 +67,7 @@ Property detail
 
 .. py:property:: upper_edge_altitude_reference
     :canonical: ansys.stk.core.stkobjects.Graphics3DBorderWall.upper_edge_altitude_reference
-    :type: BORDER_WALL_UPPER_LOWER_EDGE_ALTITUDE_REFERENCE
+    :type: BorderWallUpperLowerEdgeAltitudeReference
 
     Reference used in defining the upper edge of the border wall. A member of the AgEBorderWallUpperLowerEdgeAltRef enumeration.
 
@@ -79,7 +79,7 @@ Property detail
 
 .. py:property:: lower_edge_altitude_reference
     :canonical: ansys.stk.core.stkobjects.Graphics3DBorderWall.lower_edge_altitude_reference
-    :type: BORDER_WALL_UPPER_LOWER_EDGE_ALTITUDE_REFERENCE
+    :type: BorderWallUpperLowerEdgeAltitudeReference
 
     Reference used in defining the lower edge of the border wall. A member of the AgEBorderWallUpperLowerEdgeAltRef enumeration.
 
@@ -99,7 +99,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Graphics3DBorderWall.wall_translucency
     :type: float
 
-    Gets or sets the border wall's translucency percentage, where 100% = invisible.
+    Get or set the border wall's translucency percentage, where 100% = invisible.
 
 .. py:property:: use_line_translucency
     :canonical: ansys.stk.core.stkobjects.Graphics3DBorderWall.use_line_translucency
@@ -111,7 +111,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Graphics3DBorderWall.line_translucency
     :type: float
 
-    Gets or sets the translucency of the lines at the upper and lower edges of the border wall, where 100% = invisible.
+    Get or set the translucency of the lines at the upper and lower edges of the border wall, where 100% = invisible.
 
 
 Method detail
@@ -135,14 +135,14 @@ Method detail
 
 
 
-.. py:method:: is_altitude_reference_type_supported(self, refType: BORDER_WALL_UPPER_LOWER_EDGE_ALTITUDE_REFERENCE) -> bool
+.. py:method:: is_altitude_reference_type_supported(self, ref_type: BorderWallUpperLowerEdgeAltitudeReference) -> bool
     :canonical: ansys.stk.core.stkobjects.Graphics3DBorderWall.is_altitude_reference_type_supported
 
     Provide verification of the availability of borderwall edge altitude reference.
 
     :Parameters:
 
-    **refType** : :obj:`~BORDER_WALL_UPPER_LOWER_EDGE_ALTITUDE_REFERENCE`
+    **ref_type** : :obj:`~BorderWallUpperLowerEdgeAltitudeReference`
 
     :Returns:
 

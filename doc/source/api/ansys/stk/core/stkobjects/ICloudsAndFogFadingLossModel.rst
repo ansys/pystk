@@ -19,9 +19,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ICloudsAndFogFadingLossModel.name`
-              - Gets the Clouds and Fog loss model name.
+              - Get the Clouds and Fog loss model name.
             * - :py:attr:`~ansys.stk.core.stkobjects.ICloudsAndFogFadingLossModel.type`
-              - Gets the Clouds and Fog loss model type enumeration.
+              - Get the Clouds and Fog loss model type enumeration.
 
 
 Import detail
@@ -39,12 +39,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.ICloudsAndFogFadingLossModel.name
     :type: str
 
-    Gets the Clouds and Fog loss model name.
+    Get the Clouds and Fog loss model name.
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.ICloudsAndFogFadingLossModel.type
-    :type: CLOUDS_AND_FOG_FADING_LOSS_MODEL_TYPE
+    :type: CloudsAndFogFadingLossModelType
 
-    Gets the Clouds and Fog loss model type enumeration.
+    Get the Clouds and Fog loss model type enumeration.
 
 

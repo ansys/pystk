@@ -45,10 +45,10 @@ class EarlyBoundTests(TestBase):
     @category("Basic Tests")
     def test_AzElMask(self):
         EarlyBoundTests.AG_TG.reset_az_el_mask()
-        Assert.assertEqual(AZ_EL_MASK_TYPE.NONE, EarlyBoundTests.AG_TG.get_az_el_mask())
+        Assert.assertEqual(AzElMaskType.NONE, EarlyBoundTests.AG_TG.get_az_el_mask())
 
-        EarlyBoundTests.AG_TG.set_az_el_mask(AZ_EL_MASK_TYPE.NONE, "dummy data")
-        Assert.assertEqual(AZ_EL_MASK_TYPE.NONE, EarlyBoundTests.AG_TG.get_az_el_mask())
+        EarlyBoundTests.AG_TG.set_az_el_mask(AzElMaskType.NONE, "dummy data")
+        Assert.assertEqual(AzElMaskType.NONE, EarlyBoundTests.AG_TG.get_az_el_mask())
         Assert.assertEqual(None, EarlyBoundTests.AG_TG.get_az_el_mask_data())
 
         with pytest.raises(Exception, match=RegexSubstringMatch("not available")):
@@ -56,10 +56,10 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("Read only")):
             EarlyBoundTests.AG_TG.save_terrain_mask_data_in_binary = True
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-            EarlyBoundTests.AG_TG.max_range_when_computing_az_el_mask = 11.0
+            EarlyBoundTests.AG_TG.maximum_range_when_computing_az_el_mask = 11.0
 
-        EarlyBoundTests.AG_TG.set_az_el_mask(AZ_EL_MASK_TYPE.MASK_FILE, TestBase.GetScenarioFile(r"maskfile.aem"))
-        Assert.assertEqual(AZ_EL_MASK_TYPE.MASK_FILE, EarlyBoundTests.AG_TG.get_az_el_mask())
+        EarlyBoundTests.AG_TG.set_az_el_mask(AzElMaskType.MASK_FILE, TestBase.GetScenarioFile(r"maskfile.aem"))
+        Assert.assertEqual(AzElMaskType.MASK_FILE, EarlyBoundTests.AG_TG.get_az_el_mask())
         Assert.assertEqual("maskfile.aem", EarlyBoundTests.AG_TG.get_az_el_mask_data())
 
         with pytest.raises(Exception, match=RegexSubstringMatch("not available")):
@@ -67,12 +67,12 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("Read only")):
             EarlyBoundTests.AG_TG.save_terrain_mask_data_in_binary = True
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-            EarlyBoundTests.AG_TG.max_range_when_computing_az_el_mask = 11.0
+            EarlyBoundTests.AG_TG.maximum_range_when_computing_az_el_mask = 11.0
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
-            EarlyBoundTests.AG_TG.set_az_el_mask(AZ_EL_MASK_TYPE.MASK_FILE, TestBase.GetScenarioFile("bogus.aem"))
+            EarlyBoundTests.AG_TG.set_az_el_mask(AzElMaskType.MASK_FILE, TestBase.GetScenarioFile("bogus.aem"))
 
-        EarlyBoundTests.AG_TG.set_az_el_mask(AZ_EL_MASK_TYPE.TERRAIN_DATA, 22)
-        Assert.assertEqual(AZ_EL_MASK_TYPE.TERRAIN_DATA, EarlyBoundTests.AG_TG.get_az_el_mask())
+        EarlyBoundTests.AG_TG.set_az_el_mask(AzElMaskType.TERRAIN_DATA, 22)
+        Assert.assertEqual(AzElMaskType.TERRAIN_DATA, EarlyBoundTests.AG_TG.get_az_el_mask())
         Assert.assertEqual(22, EarlyBoundTests.AG_TG.get_az_el_mask_data())
 
         EarlyBoundTests.AG_TG.save_terrain_mask_data_in_binary = True
@@ -80,17 +80,17 @@ class EarlyBoundTests(TestBase):
         EarlyBoundTests.AG_TG.save_terrain_mask_data_in_binary = False
         Assert.assertFalse(EarlyBoundTests.AG_TG.save_terrain_mask_data_in_binary)
 
-        EarlyBoundTests.AG_TG.max_range_when_computing_az_el_mask = 0.0
-        Assert.assertEqual(0.0, EarlyBoundTests.AG_TG.max_range_when_computing_az_el_mask)
-        EarlyBoundTests.AG_TG.max_range_when_computing_az_el_mask = 1000.0
-        Assert.assertEqual(1000.0, EarlyBoundTests.AG_TG.max_range_when_computing_az_el_mask)
+        EarlyBoundTests.AG_TG.maximum_range_when_computing_az_el_mask = 0.0
+        Assert.assertEqual(0.0, EarlyBoundTests.AG_TG.maximum_range_when_computing_az_el_mask)
+        EarlyBoundTests.AG_TG.maximum_range_when_computing_az_el_mask = 1000.0
+        Assert.assertEqual(1000.0, EarlyBoundTests.AG_TG.maximum_range_when_computing_az_el_mask)
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            EarlyBoundTests.AG_TG.max_range_when_computing_az_el_mask = -1.0
+            EarlyBoundTests.AG_TG.maximum_range_when_computing_az_el_mask = -1.0
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
-            EarlyBoundTests.AG_TG.max_range_when_computing_az_el_mask = 1001.0
+            EarlyBoundTests.AG_TG.maximum_range_when_computing_az_el_mask = 1001.0
 
         EarlyBoundTests.AG_TG.reset_az_el_mask()
-        Assert.assertEqual(AZ_EL_MASK_TYPE.NONE, EarlyBoundTests.AG_TG.get_az_el_mask())
+        Assert.assertEqual(AzElMaskType.NONE, EarlyBoundTests.AG_TG.get_az_el_mask())
 
     # endregion
 
@@ -117,20 +117,20 @@ class EarlyBoundTests(TestBase):
     def test_Graphics(self):
         gfx: "TargetGraphics" = EarlyBoundTests.AG_TG.graphics
         Assert.assertIsNotNone(gfx)
-        gfx.is_object_graphics_visible = False
-        Assert.assertFalse(gfx.is_object_graphics_visible)
-        gfx.is_object_graphics_visible = True
-        Assert.assertTrue(gfx.is_object_graphics_visible)
+        gfx.show_graphics = False
+        Assert.assertFalse(gfx.show_graphics)
+        gfx.show_graphics = True
+        Assert.assertTrue(gfx.show_graphics)
         gfx.inherit_from_scenario = True
         Assert.assertEqual(True, gfx.inherit_from_scenario)
-        gfx.use_inst_name_label = False
-        Assert.assertEqual(False, gfx.use_inst_name_label)
+        gfx.use_instance_name_label = False
+        Assert.assertEqual(False, gfx.use_instance_name_label)
         gfx.label_name = "new label"
         Assert.assertEqual("new label", gfx.label_name)
         gfx.label_color = Colors.from_argb(((128 * 256) * 256))
         AssertEx.AreEqual(Colors.from_argb(((128 * 256) * 256)), gfx.label_color)
-        gfx.label_visible = True
-        Assert.assertEqual(True, gfx.label_visible)
+        gfx.show_label = True
+        Assert.assertEqual(True, gfx.show_label)
         gfx.marker_color = Colors.from_argb((255 * 256))
         AssertEx.AreEqual(Colors.from_argb((255 * 256)), gfx.marker_color)
         gfx.marker_style = "Star"
@@ -167,10 +167,10 @@ class EarlyBoundTests(TestBase):
     @category("Graphics Tests")
     def test_GfxAzElMask(self):
         azel: "BasicAzElMask" = EarlyBoundTests.AG_TG.graphics.az_el_mask
-        azel.range_visible = True
-        Assert.assertEqual(True, azel.range_visible)
-        azel.altitude_visible = True
-        Assert.assertEqual(True, azel.altitude_visible)
+        azel.show_mask_over_range = True
+        Assert.assertEqual(True, azel.show_mask_over_range)
+        azel.display_mask_over_altitude_range = True
+        Assert.assertEqual(True, azel.display_mask_over_altitude_range)
         azel.number_of_altitude_steps = 3
         Assert.assertEqual(3, azel.number_of_altitude_steps)
         azel.number_of_range_steps = 4
@@ -187,12 +187,12 @@ class EarlyBoundTests(TestBase):
             azel.altitude_color = Colors.Yellow
         with pytest.raises(Exception):
             azel.range_color = Colors.Yellow
-        azel.altitude_color_visible = True
-        Assert.assertTrue(azel.altitude_color_visible)
+        azel.display_color_at_altitude = True
+        Assert.assertTrue(azel.display_color_at_altitude)
         azel.altitude_color = Colors.Yellow
         AssertEx.AreEqual(Colors.Yellow, azel.altitude_color)
-        azel.range_color_visible = True
-        Assert.assertTrue(azel.range_color_visible)
+        azel.show_color_at_range = True
+        Assert.assertTrue(azel.show_color_at_range)
         azel.range_color = Colors.Yellow
         AssertEx.AreEqual(Colors.Yellow, azel.range_color)
 
@@ -210,7 +210,7 @@ class EarlyBoundTests(TestBase):
     @category("VO Tests")
     def test_VOAOULabelSwapDistance(self):
         oLabelSwapHelper = VOLabelSwapDistanceHelper()
-        oLabelSwapHelper.Run(EarlyBoundTests.AG_TG.graphics_3d.aou_label_swap_distance)
+        oLabelSwapHelper.Run(EarlyBoundTests.AG_TG.graphics_3d.uncertainty_area_label_swap_distance)
 
     # endregion
 
@@ -269,9 +269,9 @@ class EarlyBoundTests(TestBase):
     def test_VOModelPointing(self):
         oModel: "IGraphics3DModel" = EarlyBoundTests.AG_TG.graphics_3d.model
         TestBase.logger.WriteLine6("\tThe current ModelType is: {0}", oModel.model_type)
-        oModel.model_type = MODEL_TYPE.FILE
+        oModel.model_type = ModelType.FILE
         TestBase.logger.WriteLine6("\tThe new ModelType is: {0}", oModel.model_type)
-        Assert.assertEqual(MODEL_TYPE.FILE, oModel.model_type)
+        Assert.assertEqual(ModelType.FILE, oModel.model_type)
         oModelFile: "Graphics3DModelFile" = Graphics3DModelFile(oModel.model_data)
         Assert.assertIsNotNone(oModelFile)
         TestBase.logger.WriteLine5("\t\tThe current Filename is: {0}", oModelFile.filename)
@@ -340,6 +340,7 @@ class EarlyBoundTests(TestBase):
     def test_RF_RadarCrossSection(self):
         helper = RadarCrossSectionInheritableHelper()
         helper.Run(EarlyBoundTests.AG_TG.radar_cross_section)
+        helper.Run_DeprecatedModelInterface(EarlyBoundTests.AG_TG.radar_cross_section)
 
     # endregion
 

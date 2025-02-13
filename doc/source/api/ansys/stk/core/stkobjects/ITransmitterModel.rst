@@ -19,9 +19,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModel.name`
-              - Gets the transmitter model name.
+              - Get the transmitter model name.
             * - :py:attr:`~ansys.stk.core.stkobjects.ITransmitterModel.type`
-              - Gets the transmitter model type enumeration.
+              - Get the transmitter model type enumeration.
 
 
 Import detail
@@ -39,12 +39,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.ITransmitterModel.name
     :type: str
 
-    Gets the transmitter model name.
+    Get the transmitter model name.
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.ITransmitterModel.type
-    :type: TRANSMITTER_MODEL_TYPE
+    :type: TransmitterModelType
 
-    Gets the transmitter model type enumeration.
+    Get the transmitter model type enumeration.
 
 

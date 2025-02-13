@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.DelaunayH.h`
-              - Gets or sets the value of Delaunay H. Dimensionless.
+              - Get or set the value of Delaunay H. Dimensionless.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.DelaunayH.h
     :type: float
 
-    Gets or sets the value of Delaunay H. Dimensionless.
+    Get or set the value of Delaunay H. Dimensionless.
 
 
