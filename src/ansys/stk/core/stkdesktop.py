@@ -6,26 +6,37 @@
 
 __all__ = ["STKDesktop", "STKDesktopApplication"]
 
+import atexit
+from ctypes import byref
 import os
 import pathlib
 import socket
-import typing
-import atexit
-from ctypes import byref
 
 # The subprocess module is needed to start the backend. 
 # Excluding low severity bandit warning as the validity of the inputs is enforced.
-import subprocess # nosec B404
+import subprocess  # nosec B404
+import typing
 
-from .internal.comutil        import (OLE32Lib, OLEAut32Lib, GUID, IUnknown, CoInitializeManager, Succeeded,
-                                  CLSCTX_LOCAL_SERVER, ObjectLifetimeManager, PVOID, COINIT_APARTMENTTHREADED)
-from .internal.coclassutil    import attach_to_stk_by_pid
-from .internal.eventutil      import EventSubscriptionManager
-from .internal.apiutil        import InterfaceProxy, read_registry_key, winreg_stk_binary_dir
+from .internal.apiutil import InterfaceProxy, read_registry_key, winreg_stk_binary_dir
+from .internal.coclassutil import attach_to_stk_by_pid
+from .internal.comutil import (
+    CLSCTX_LOCAL_SERVER,
+    COINIT_APARTMENTTHREADED,
+    GUID,
+    PVOID,
+    CoInitializeManager,
+    IUnknown,
+    ObjectLifetimeManager,
+    OLE32Lib,
+    OLEAut32Lib,
+    Succeeded,
+)
+from .internal.eventutil import EventSubscriptionManager
+from .stkobjects import StkObjectModelContext, StkObjectRoot
+from .uiapplication import UiApplication
+from .utilities.exceptions import STKInitializationError, STKRuntimeError
 from .utilities.grpcutilities import GrpcCallBatcher
-from .utilities.exceptions    import STKRuntimeError, STKInitializationError
-from .stkobjects              import StkObjectModelContext, StkObjectRoot
-from .uiapplication           import UiApplication
+
 
 class ThreadMarshaller(object):
     """Automate multiple STK instances from one Python script using threads."""

@@ -112,25 +112,36 @@ __all__ = ["AccessCriterion", "AccessStoppingCondition", "AsTriggerCondition", "
 "UserVariableDefinitionCollection", "UserVariableUpdate", "UserVariableUpdateCollection", "VenusGRAM2005", "VenusGRAMDensityType", 
 "YarkovskyFunc"]
 
+from ctypes import POINTER
+from enum import IntEnum
 import typing
 
-from ctypes   import POINTER
-from enum     import IntEnum
-
-from ..internal  import comutil          as agcom
-from ..internal  import coclassutil      as agcls
-from ..internal  import marshall         as agmarshall
-from ..utilities import colors           as agcolor
-from ..internal.comutil     import IUnknown, IDispatch
-from ..internal.apiutil     import (InterfaceProxy, EnumeratorProxy, OutArg, 
-    initialize_from_source_object, get_interface_property, set_interface_attribute, 
-    set_class_attribute, SupportsDeleteCallback)
-from ..utilities.exceptions import STKRuntimeError
-
+from ..internal import coclassutil as agcls, comutil as agcom, marshall as agmarshall
+from ..internal.apiutil import (
+    EnumeratorProxy,
+    InterfaceProxy,
+    OutArg,
+    SupportsDeleteCallback,
+    get_interface_property,
+    initialize_from_source_object,
+    set_class_attribute,
+    set_interface_attribute,
+)
+from ..internal.comutil import IDispatch, IUnknown
+from ..stkobjects import (
+    AberrationType,
+    ComponentLinkEmbedControlReferenceType,
+    ICloneable,
+    IComponentInfo,
+    IComponentLinkEmbedControl,
+    IPropagator,
+    IvClockHost,
+    IvTimeSense,
+    SolidTide,
+)
 from ..stkutil import IDirection, IOrientation, IRuntimeTypeInfoProvider
-from ..stkobjects import (AberrationType, ComponentLinkEmbedControlReferenceType, ICloneable,
-                          IComponentInfo, IComponentLinkEmbedControl, IPropagator, IvClockHost,
-                          IvTimeSense, SolidTide)
+from ..utilities import colors as agcolor
+from ..utilities.exceptions import STKRuntimeError
 
 
 def _raise_uninitialized_error(*args):

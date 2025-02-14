@@ -69,26 +69,32 @@ __all__ = ["AGICustomTerrainOverlay", "AGICustomTerrainOverlayFactory", "AGIProc
 "VectorPrimitiveFactory", "VideoFormat", "VideoPlayback", "VideoStream", "VideoStreamFactory", "Visibility", "VisualEffects", 
 "WindingOrder"]
 
+from ctypes import POINTER
+from enum import IntEnum, IntFlag
 import typing
 
-from ctypes   import POINTER
-from enum     import IntEnum, IntFlag
-
-from .internal  import comutil          as agcom
-from .internal  import coclassutil      as agcls
-from .internal  import marshall         as agmarshall
-from .utilities import colors           as agcolor
-from .internal.comutil     import IUnknown, IPictureDisp
-from .internal.apiutil     import (InterfaceProxy, EnumeratorProxy, OutArg, 
-    initialize_from_source_object, get_interface_property, set_interface_attribute, 
-    set_class_attribute, SupportsDeleteCallback)
-from .internal.eventutil import (IImageCollectionEventHandler, IKmlGraphicsEventHandler,
-                                 ISceneEventHandler, ITerrainOverlayCollectionEventHandler)
-from .utilities.exceptions import STKRuntimeError
-
+from .internal import coclassutil as agcls, comutil as agcom, marshall as agmarshall
+from .internal.apiutil import (
+    EnumeratorProxy,
+    InterfaceProxy,
+    OutArg,
+    SupportsDeleteCallback,
+    get_interface_property,
+    initialize_from_source_object,
+    set_class_attribute,
+    set_interface_attribute,
+)
+from .internal.comutil import IPictureDisp, IUnknown
+from .internal.eventutil import (
+    IImageCollectionEventHandler,
+    IKmlGraphicsEventHandler,
+    ISceneEventHandler,
+    ITerrainOverlayCollectionEventHandler,
+)
 from .stkutil import IOrientation
-from .vgt import (IVectorGeometryToolAxes, IVectorGeometryToolPoint, IVectorGeometryToolSystem,
-                  IVectorGeometryToolVector)
+from .utilities import colors as agcolor
+from .utilities.exceptions import STKRuntimeError
+from .vgt import IVectorGeometryToolAxes, IVectorGeometryToolPoint, IVectorGeometryToolSystem, IVectorGeometryToolVector
 
 
 def _raise_uninitialized_error(*args):

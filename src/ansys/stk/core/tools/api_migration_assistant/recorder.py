@@ -2,10 +2,10 @@
 
 import inspect
 import logging
+from pathlib import Path
 import re
 import sys
 
-from pathlib import Path
 from .recording import Recording
 
 

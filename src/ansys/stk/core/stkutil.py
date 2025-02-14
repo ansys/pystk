@@ -22,19 +22,23 @@ __all__ = ["AgCROrientationAzEl", "AgCROrientationEulerAngles", "AgCROrientation
 "PropertyInfoValueType", "Quantity", "RuntimeTypeInfo", "Spherical", "UnitPreferencesDimension", "UnitPreferencesDimensionCollection", 
 "UnitPreferencesUnit", "UnitPreferencesUnitCollection", "YPRAnglesSequence"]
 
+from ctypes import POINTER
+from datetime import datetime
+from enum import IntEnum, IntFlag
 import typing
 
-from ctypes   import POINTER
-from datetime import datetime
-from enum     import IntEnum, IntFlag
-
-from .internal  import comutil          as agcom
-from .internal  import coclassutil      as agcls
-from .internal  import marshall         as agmarshall
-from .internal.comutil     import IUnknown, IDispatch
-from .internal.apiutil     import (InterfaceProxy, EnumeratorProxy, OutArg, 
-    initialize_from_source_object, get_interface_property, set_interface_attribute, 
-    set_class_attribute, SupportsDeleteCallback)
+from .internal import coclassutil as agcls, comutil as agcom, marshall as agmarshall
+from .internal.apiutil import (
+    EnumeratorProxy,
+    InterfaceProxy,
+    OutArg,
+    SupportsDeleteCallback,
+    get_interface_property,
+    initialize_from_source_object,
+    set_class_attribute,
+    set_interface_attribute,
+)
+from .internal.comutil import IDispatch, IUnknown
 from .utilities.exceptions import STKRuntimeError
 
 

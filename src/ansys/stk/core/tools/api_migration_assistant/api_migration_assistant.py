@@ -3,9 +3,8 @@
 import datetime
 import importlib.util
 import logging
-import sys
-
 from pathlib import Path
+import sys
 
 from .argument_parser import ArgumentParser
 from .code_editor import CodeEditor

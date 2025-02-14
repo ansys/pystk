@@ -13,14 +13,15 @@ import socket
 
 # The subprocess module is needed to start the backend. 
 # Excluding low severity bandit warning as the validity of the inputs is enforced.
-import subprocess # nosec B404
+import subprocess  # nosec B404
 
+from .internal.apiutil import InterfaceProxy, read_registry_key, winreg_stk_binary_dir
+from .internal.grpcutil import GrpcClient
+from .stkobjects import StkObjectModelContext, StkObjectRoot
 from .stkx import STKXApplication
-from .stkobjects import StkObjectRoot, StkObjectModelContext
 from .utilities.exceptions import STKInitializationError
 from .utilities.grpcutilities import GrpcCallBatcher
-from .internal.grpcutil import GrpcClient
-from .internal.apiutil import InterfaceProxy, read_registry_key, winreg_stk_binary_dir
+
 
 class STKRuntimeApplication(STKXApplication):
     """

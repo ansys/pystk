@@ -5,15 +5,9 @@ A Python API for Systems Tool Kit (STK).
 """
  
 
-from . import graphics
-from . import stkobjects
-from . import stkutil
-from . import vgt
-from . import stkrfchannelmodeler
-from .stkobjects import astrogator
-from .stkobjects import aviator
+from . import graphics, stkobjects, stkrfchannelmodeler, stkutil, vgt
+from .stkobjects import astrogator, aviator
 
- 
 __version__ = "0.1.dev0"
 """Current version of PySTK."""
 

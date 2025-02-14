@@ -1,11 +1,9 @@
 """Recording of API calls."""
 
 import logging
-import sys
-
-import xml.etree.ElementTree as ElementTree
-
 from pathlib import Path
+import sys
+import xml.etree.ElementTree as ElementTree
 
 from .call_record import CallRecord
 

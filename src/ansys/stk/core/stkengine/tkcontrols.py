@@ -8,16 +8,16 @@ __all__ = ["GlobeControl", "MapControl", "GfxAnalysisControl"]
 
 import os
 import pathlib
-from tkinter                    import Frame
-if os.name == "nt":
-    from ctypes import (CDLL, POINTER, WinDLL, WinError, c_char_p, cdll, create_unicode_buffer,
-                        get_last_error)
-else:
-    from ctypes import (CDLL, POINTER, cdll)
+from tkinter import Frame
 
-from ..stkx             import Graphics3DControlBase, Graphics2DControlBase, GraphicsAnalysisControlBase
-from ..internal.comutil import IUnknown, INT, LONG, CHAR, LPVOID, LPCWSTR, DWORD, BOOL, WINFUNCTYPE
+if os.name == "nt":
+    from ctypes import CDLL, POINTER, WinDLL, WinError, c_char_p, cdll, create_unicode_buffer, get_last_error
+else:
+    from ctypes import CDLL, POINTER, cdll
+
+from ..internal.comutil import BOOL, CHAR, DWORD, INT, LONG, LPCWSTR, LPVOID, WINFUNCTYPE, IUnknown
 from ..stkengine import STKEngine
+from ..stkx import Graphics2DControlBase, Graphics3DControlBase, GraphicsAnalysisControlBase
 
 if os.name != "nt":
     from ctypes.util import find_library
