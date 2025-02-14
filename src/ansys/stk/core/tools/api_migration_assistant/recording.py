@@ -40,7 +40,7 @@ class Recording:
                 col_offset,
                 end_col_offset,
             )
-            if not new_record in self.call_records:
+            if new_record not in self.call_records:
                 self.call_records.append(new_record)
 
     def sort_call_records(self):
