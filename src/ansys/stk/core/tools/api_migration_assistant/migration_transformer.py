@@ -34,7 +34,7 @@ class MigrationTransformer(CSTTransformer):
 
     def leave_Arg(self, original_node: Arg, updated_node: Arg) -> Arg:  # noqa: N802, D102
         # The keyword of Arg is neither an Assignment nor an Access and we explicitly don't visit it.
-        if updated_node.keyword != None:
+        if updated_node.keyword is not None:
             function_call = self.call_stack[-1]
             member_name = function_call.split(".")[-1]
             named_argument_name = updated_node.keyword.value
@@ -51,7 +51,7 @@ class MigrationTransformer(CSTTransformer):
                 pos.end.column,
             )
 
-            if change != None:
+            if change is not None:
                 if (
                     new_named_argument_name := self.mappings.get_mapping_for_named_argument(
                         change.type_name + "." + member_name,
@@ -92,7 +92,7 @@ class MigrationTransformer(CSTTransformer):
                 pos.end.column,
             )
 
-            if change != None:
+            if change is not None:
                 new_name = self.mappings.get_replacement_for_type(None, name)
                 new_qualifier = self.mappings.get_replacement_for_namespace(qualifier)
                 updated_node = updated_node.with_deep_changes(
@@ -118,7 +118,7 @@ class MigrationTransformer(CSTTransformer):
                 pos.end.column,
             )
 
-            if change != None:
+            if change is not None:
                 new_name = self.mappings.get_replacement_for_member(change.type_name, change.member_name)
                 logging.debug(f"Leaving name: {name}: {change is not None} - {pos} -> {new_name}")
                 updated_node = updated_node.with_changes(value=new_name)
