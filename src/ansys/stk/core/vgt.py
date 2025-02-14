@@ -104,35 +104,37 @@ __all__ = ["AberrationModelType", "AnalysisWorkbenchAngleFindAngleResult", "Anal
 "VectorGeometryToolSystemOnSurface", "VectorGeometryToolSystemReference", "VectorGeometryToolVector", "VectorGeometryToolVectorAngleRate", 
 "VectorGeometryToolVectorAngularVelocity", "VectorGeometryToolVectorApoapsis", "VectorGeometryToolVectorConing", "VectorGeometryToolVectorCross", 
 "VectorGeometryToolVectorCustomScript", "VectorGeometryToolVectorDerivative", "VectorGeometryToolVectorDirectionToStar", 
-"VectorGeometryToolVectorDisplacement", "VectorGeometryToolVectorEccentricity", "VectorGeometryToolVectorFactory", "VectorGeometryToolVectorFixedAtEpoch", 
-"VectorGeometryToolVectorFixedAtTimeInstant", "VectorGeometryToolVectorFixedInAxes", "VectorGeometryToolVectorGroup", "VectorGeometryToolVectorLineOfNodes", 
-"VectorGeometryToolVectorLinearCombination", "VectorGeometryToolVectorModelAttachment", "VectorGeometryToolVectorOrbitAngularMomentum", 
-"VectorGeometryToolVectorOrbitNormal", "VectorGeometryToolVectorPeriapsis", "VectorGeometryToolVectorPlugin", "VectorGeometryToolVectorProjection", 
-"VectorGeometryToolVectorProjectionAlongVector", "VectorGeometryToolVectorReference", "VectorGeometryToolVectorReflection", 
-"VectorGeometryToolVectorRotationVector", "VectorGeometryToolVectorScalarLinearCombination", "VectorGeometryToolVectorScalarScaled", 
-"VectorGeometryToolVectorScaled", "VectorGeometryToolVectorSurfaceDisplacement", "VectorGeometryToolVectorTwoPlanesIntersection", 
-"VectorGeometryToolVectorVelocityAcceleration", "VectorGeometryToolWellKnownAxes", "VectorGeometryToolWellKnownEarthAxes", 
-"VectorGeometryToolWellKnownEarthSystems", "VectorGeometryToolWellKnownSunAxes", "VectorGeometryToolWellKnownSunSystems", 
-"VectorGeometryToolWellKnownSystems", "VectorType", "VolumeCombinedOperationType", "VolumeFromGridEdgeType", "VolumeGridType", 
-"VolumeSatisfactionAccumulationType", "VolumeSatisfactionDurationType", "VolumeSatisfactionFilterType", "VolumeSatisfactionMetricType", 
-"VolumeType"]
+"VectorGeometryToolVectorDisplacement", "VectorGeometryToolVectorEccentricity", "VectorGeometryToolVectorFactory", "VectorGeometryToolVectorFile", 
+"VectorGeometryToolVectorFixedAtEpoch", "VectorGeometryToolVectorFixedAtTimeInstant", "VectorGeometryToolVectorFixedInAxes", 
+"VectorGeometryToolVectorGroup", "VectorGeometryToolVectorLineOfNodes", "VectorGeometryToolVectorLinearCombination", "VectorGeometryToolVectorModelAttachment", 
+"VectorGeometryToolVectorOrbitAngularMomentum", "VectorGeometryToolVectorOrbitNormal", "VectorGeometryToolVectorPeriapsis", 
+"VectorGeometryToolVectorPlugin", "VectorGeometryToolVectorProjection", "VectorGeometryToolVectorProjectionAlongVector", 
+"VectorGeometryToolVectorReference", "VectorGeometryToolVectorReflection", "VectorGeometryToolVectorRotationVector", "VectorGeometryToolVectorScalarLinearCombination", 
+"VectorGeometryToolVectorScalarScaled", "VectorGeometryToolVectorScaled", "VectorGeometryToolVectorSurfaceDisplacement", 
+"VectorGeometryToolVectorTwoPlanesIntersection", "VectorGeometryToolVectorVelocityAcceleration", "VectorGeometryToolWellKnownAxes", 
+"VectorGeometryToolWellKnownEarthAxes", "VectorGeometryToolWellKnownEarthSystems", "VectorGeometryToolWellKnownSunAxes", 
+"VectorGeometryToolWellKnownSunSystems", "VectorGeometryToolWellKnownSystems", "VectorType", "VolumeCombinedOperationType", 
+"VolumeFromGridEdgeType", "VolumeGridType", "VolumeSatisfactionAccumulationType", "VolumeSatisfactionDurationType", "VolumeSatisfactionFilterType", 
+"VolumeSatisfactionMetricType", "VolumeType"]
 
+from ctypes import POINTER
+from enum import IntEnum, IntFlag
 import typing
 
-from ctypes   import POINTER
-from enum     import IntEnum, IntFlag
-
-from .internal  import comutil          as agcom
-from .internal  import coclassutil      as agcls
-from .internal  import marshall         as agmarshall
-from .internal.comutil     import IUnknown, IDispatch
-from .internal.apiutil     import (InterfaceProxy, EnumeratorProxy, OutArg, 
-    initialize_from_source_object, get_interface_property, set_interface_attribute, 
-    set_class_attribute, SupportsDeleteCallback)
+from .internal import coclassutil as agcls, comutil as agcom, marshall as agmarshall
+from .internal.apiutil import (
+    EnumeratorProxy,
+    InterfaceProxy,
+    OutArg,
+    SupportsDeleteCallback,
+    get_interface_property,
+    initialize_from_source_object,
+    set_class_attribute,
+    set_interface_attribute,
+)
+from .internal.comutil import IDispatch, IUnknown
+from .stkutil import EulerOrientationSequenceType, ICartesian3Vector, IDirection, IOrientation, IPosition, Quantity
 from .utilities.exceptions import STKRuntimeError
-
-from .stkutil import (EulerOrientationSequenceType, ICartesian3Vector, IDirection, IOrientation,
-                      IPosition, Quantity)
 
 
 def _raise_uninitialized_error(*args):
@@ -1596,6 +1598,8 @@ class VectorType(IntEnum):
     """Rotation vector representing the rotation of one axes relative to reference axes, expressed as angle*rotationAxis."""
     DISPLACEMENT_ON_SURFACE = 31
     """Displacement between origin and destination points using surface distance and altitude difference."""
+    FILE = 32
+    """Vector interpolated from tabulated data from file."""
 
 VectorType.UNKNOWN.__doc__ = "Unknown or unsupported vector type."
 VectorType.DISPLACEMENT.__doc__ = "Vector defined by its start and end points."
@@ -1629,6 +1633,7 @@ VectorType.VELOCITY.__doc__ = "Velocity vector of a point in a coordinate system
 VectorType.PLUGIN.__doc__ = "A vector plugin point."
 VectorType.ROTATION_VECTOR.__doc__ = "Rotation vector representing the rotation of one axes relative to reference axes, expressed as angle*rotationAxis."
 VectorType.DISPLACEMENT_ON_SURFACE.__doc__ = "Displacement between origin and destination points using surface distance and altitude difference."
+VectorType.FILE.__doc__ = "Vector interpolated from tabulated data from file."
 
 agcls.AgTypeNameMap["VectorType"] = VectorType
 
@@ -25792,13 +25797,75 @@ class VectorGeometryToolVectorSurfaceDisplacement(IAnalysisWorkbenchComponent, I
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorSurfaceDisplacement, [VectorGeometryToolVectorSurfaceDisplacement, IAnalysisWorkbenchComponent, IAnalysisWorkbenchComponentTimeProperties, IVectorGeometryToolVector])
 
-agcls.AgClassCatalog.add_catalog_entry((5165198519091638019, 11878832301117811344), VectorGeometryToolVectorSurfaceDisplacement)
+agcls.AgClassCatalog.add_catalog_entry((4763064220756248717, 8260778239053244854), VectorGeometryToolVectorSurfaceDisplacement)
 agcls.AgTypeNameMap["VectorGeometryToolVectorSurfaceDisplacement"] = VectorGeometryToolVectorSurfaceDisplacement
+
+class VectorGeometryToolVectorFile(IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
+    """Vector interpolated from tabulated data from file."""
+
+    _num_methods = 3
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_filename_method_offset = 1
+    _set_filename_method_offset = 2
+    _reload_method_offset = 3
+    _metadata = {
+        "iid_data" : (5543542084215610396, 17802732676296453806),
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+    }
+    _property_names = {}
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, VectorGeometryToolVectorFile)
+    
+    _get_filename_metadata = { "offset" : _get_filename_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @property
+    def filename(self) -> str:
+        """>A path to vector data file."""
+        return self._intf.get_property(VectorGeometryToolVectorFile._metadata, VectorGeometryToolVectorFile._get_filename_metadata)
+
+    _set_filename_metadata = { "offset" : _set_filename_method_offset,
+            "arg_types" : (agcom.BSTR,),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @filename.setter
+    def filename(self, filename:str) -> None:
+        return self._intf.set_property(VectorGeometryToolVectorFile._metadata, VectorGeometryToolVectorFile._set_filename_metadata, filename)
+
+    _reload_metadata = { "offset" : _reload_method_offset,
+            "arg_types" : (),
+            "marshallers" : () }
+    def reload(self) -> None:
+        """Reload the file specified with Filename property."""
+        return self._intf.invoke(VectorGeometryToolVectorFile._metadata, VectorGeometryToolVectorFile._reload_metadata, )
+
+    _property_names[filename] = "filename"
+
+    def __init__(self, source_object=None):
+        """Construct an object of type VectorGeometryToolVectorFile."""
+        SupportsDeleteCallback.__init__(self)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorFile)
+        IVectorGeometryToolVector.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
+    def _private_init(self, intf:InterfaceProxy):
+        self.__dict__["_intf"] = intf
+        IVectorGeometryToolVector._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
+    def __eq__(self, other):
+        """Check equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorFile, [VectorGeometryToolVectorFile, IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
+
+agcls.AgClassCatalog.add_catalog_entry((5754310198593178934, 4508541946230252443), VectorGeometryToolVectorFile)
+agcls.AgTypeNameMap["VectorGeometryToolVectorFile"] = VectorGeometryToolVectorFile
 
 class VectorGeometryToolVectorFactory(SupportsDeleteCallback):
     """A Factory object to create vectors."""
 
-    _num_methods = 6
+    _num_methods = 7
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _create_method_offset = 1
     _is_type_supported_method_offset = 2
@@ -25806,6 +25873,7 @@ class VectorGeometryToolVectorFactory(SupportsDeleteCallback):
     _get_available_plugin_display_names_method_offset = 4
     _create_plugin_from_display_name_method_offset = 5
     _create_cross_product_method_offset = 6
+    _create_file_vector_method_offset = 7
     _metadata = {
         "iid_data" : (4961059317243966035, 3728998091371643287),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -25856,6 +25924,13 @@ class VectorGeometryToolVectorFactory(SupportsDeleteCallback):
     def create_cross_product(self, vector_name:str, vector_a:"IVectorGeometryToolVector", vector_b:"IVectorGeometryToolVector") -> "VectorGeometryToolVectorCross":
         """Create a cross product C = A x B."""
         return self._intf.invoke(VectorGeometryToolVectorFactory._metadata, VectorGeometryToolVectorFactory._create_cross_product_metadata, vector_name, vector_a, vector_b, OutArg())
+
+    _create_file_vector_metadata = { "offset" : _create_file_vector_method_offset,
+            "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
+    def create_file_vector(self, vector_name:str, description:str, file_name:str) -> "VectorGeometryToolVectorFile":
+        """Create a vector interpolated from tabulated data from file."""
+        return self._intf.invoke(VectorGeometryToolVectorFactory._metadata, VectorGeometryToolVectorFactory._create_file_vector_metadata, vector_name, description, file_name, OutArg())
 
     _property_names[available_plugin_display_names] = "available_plugin_display_names"
 

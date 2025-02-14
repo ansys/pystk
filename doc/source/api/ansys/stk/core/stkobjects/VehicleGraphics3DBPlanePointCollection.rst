@@ -34,13 +34,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlanePointCollection.count`
-              - Returns the number of elements in a collection.
+              - Return the number of elements in a collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlanePointCollection._new_enum`
-              - Returns an enumerator that can iterate through the collection.
+              - Return an enumerator that can iterate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlanePointCollection.point_color`
               - Whether to display the first point in the same color as the other points.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlanePointCollection.first_point_color`
-              - Gets or sets the specified color of the first point, if different from the others.
+              - Get or set the specified color of the first point, if different from the others.
 
 
 
@@ -59,13 +59,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlanePointCollection.count
     :type: int
 
-    Returns the number of elements in a collection.
+    Return the number of elements in a collection.
 
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlanePointCollection._new_enum
     :type: EnumeratorProxy
 
-    Returns an enumerator that can iterate through the collection.
+    Return an enumerator that can iterate through the collection.
 
 .. py:property:: point_color
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlanePointCollection.point_color
@@ -77,7 +77,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DBPlanePointCollection.first_point_color
     :type: agcolor.Color
 
-    Gets or sets the specified color of the first point, if different from the others.
+    Get or set the specified color of the first point, if different from the others.
 
 
 Method detail

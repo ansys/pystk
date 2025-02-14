@@ -37,7 +37,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateCartesian.z_velocity`
               - Z velocity component. Uses Rate Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateCartesian.supported_coordinate_system_types`
-              - Returns an array of supported coordinate system types.
+              - Return an array of supported coordinate system types.
             * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateCartesian.state_epoch`
               - Smart epoch component allows the user to configure the state epoch explicitly or implicitly (using a pre-defined or custom time instant component).
 
@@ -106,7 +106,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.OrbitStateCartesian.supported_coordinate_system_types
     :type: list
 
-    Returns an array of supported coordinate system types.
+    Return an array of supported coordinate system types.
 
 .. py:property:: state_epoch
     :canonical: ansys.stk.core.stkobjects.OrbitStateCartesian.state_epoch

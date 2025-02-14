@@ -19,15 +19,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.ProjectionRasterStreamPluginProxy.raster_stream`
-              - Returns a raster stream.
+              - Return a raster stream.
             * - :py:attr:`~ansys.stk.core.graphics.ProjectionRasterStreamPluginProxy.projection_stream`
-              - Returns a projection stream.
+              - Return a projection stream.
             * - :py:attr:`~ansys.stk.core.graphics.ProjectionRasterStreamPluginProxy.is_raster_stream_supported`
-              - Returns true if the raster streaming is supported.
+              - Return true if the raster streaming is supported.
             * - :py:attr:`~ansys.stk.core.graphics.ProjectionRasterStreamPluginProxy.is_projection_stream_supported`
-              - Returns true if the projection streaming is supported.
+              - Return true if the projection streaming is supported.
             * - :py:attr:`~ansys.stk.core.graphics.ProjectionRasterStreamPluginProxy.real_plugin_object`
-              - Returns a pointer to plugin object's IUnknown interface.
+              - Return a pointer to plugin object's IUnknown interface.
 
 
 
@@ -46,30 +46,30 @@ Property detail
     :canonical: ansys.stk.core.graphics.ProjectionRasterStreamPluginProxy.raster_stream
     :type: IRasterStream
 
-    Returns a raster stream.
+    Return a raster stream.
 
 .. py:property:: projection_stream
     :canonical: ansys.stk.core.graphics.ProjectionRasterStreamPluginProxy.projection_stream
     :type: ProjectionStream
 
-    Returns a projection stream.
+    Return a projection stream.
 
 .. py:property:: is_raster_stream_supported
     :canonical: ansys.stk.core.graphics.ProjectionRasterStreamPluginProxy.is_raster_stream_supported
     :type: bool
 
-    Returns true if the raster streaming is supported.
+    Return true if the raster streaming is supported.
 
 .. py:property:: is_projection_stream_supported
     :canonical: ansys.stk.core.graphics.ProjectionRasterStreamPluginProxy.is_projection_stream_supported
     :type: bool
 
-    Returns true if the projection streaming is supported.
+    Return true if the projection streaming is supported.
 
 .. py:property:: real_plugin_object
     :canonical: ansys.stk.core.graphics.ProjectionRasterStreamPluginProxy.real_plugin_object
     :type: typing.Any
 
-    Returns a pointer to plugin object's IUnknown interface.
+    Return a pointer to plugin object's IUnknown interface.
 
 

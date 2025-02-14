@@ -28,13 +28,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ProgressBarEventArguments.canceled`
-              - Returns whether the lengthy operation has been canceled.
+              - Return whether the lengthy operation has been canceled.
             * - :py:attr:`~ansys.stk.core.stkobjects.ProgressBarEventArguments.can_cancel`
-              - Returns whether the lengthy operation can be canceled.
+              - Return whether the lengthy operation can be canceled.
             * - :py:attr:`~ansys.stk.core.stkobjects.ProgressBarEventArguments.percent_completed`
-              - Returns the current progress status. The value returned is greater or equal to 0 and less or equal to 100.
+              - Return the current progress status. The value returned is greater or equal to 0 and less or equal to 100.
             * - :py:attr:`~ansys.stk.core.stkobjects.ProgressBarEventArguments.message`
-              - Gets a progress message.
+              - Get a progress message.
 
 
 
@@ -53,25 +53,25 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.ProgressBarEventArguments.canceled
     :type: bool
 
-    Returns whether the lengthy operation has been canceled.
+    Return whether the lengthy operation has been canceled.
 
 .. py:property:: can_cancel
     :canonical: ansys.stk.core.stkobjects.ProgressBarEventArguments.can_cancel
     :type: bool
 
-    Returns whether the lengthy operation can be canceled.
+    Return whether the lengthy operation can be canceled.
 
 .. py:property:: percent_completed
     :canonical: ansys.stk.core.stkobjects.ProgressBarEventArguments.percent_completed
     :type: int
 
-    Returns the current progress status. The value returned is greater or equal to 0 and less or equal to 100.
+    Return the current progress status. The value returned is greater or equal to 0 and less or equal to 100.
 
 .. py:property:: message
     :canonical: ansys.stk.core.stkobjects.ProgressBarEventArguments.message
     :type: str
 
-    Gets a progress message.
+    Get a progress message.
 
 
 Method detail

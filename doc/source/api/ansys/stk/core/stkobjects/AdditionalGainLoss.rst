@@ -19,9 +19,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.AdditionalGainLoss.gain`
-              - Gets or sets the gain/loss value.
+              - Get or set the gain/loss value.
             * - :py:attr:`~ansys.stk.core.stkobjects.AdditionalGainLoss.identifier`
-              - Gets or sets the gain/loss identifier.
+              - Get or set the gain/loss identifier.
 
 
 
@@ -40,12 +40,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.AdditionalGainLoss.gain
     :type: float
 
-    Gets or sets the gain/loss value.
+    Get or set the gain/loss value.
 
 .. py:property:: identifier
     :canonical: ansys.stk.core.stkobjects.AdditionalGainLoss.identifier
     :type: str
 
-    Gets or sets the gain/loss identifier.
+    Get or set the gain/loss identifier.
 
 

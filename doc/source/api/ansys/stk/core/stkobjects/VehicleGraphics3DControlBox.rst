@@ -21,23 +21,23 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DControlBox.use_translucency`
-              - Specifies a translucency of the object.
+              - Specify a translucency of the object.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DControlBox.translucency`
-              - Gets or sets the translucency of the object. Valid values are 0 - 100, where 0 is opaque and 100 is transparent. Dimensionless.
+              - Get or set the translucency of the object. Valid values are 0 - 100, where 0 is opaque and 100 is transparent. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DControlBox.reference_frame`
-              - Gets or sets the reference axes that is used to align the ellipsoid.
+              - Get or set the reference axes that is used to align the ellipsoid.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DControlBox.x_axis_length`
-              - Indicates how far along the velocity vector the box extends. Uses Distance Dimension.
+              - Indicate how far along the velocity vector the box extends. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DControlBox.y_axis_length`
-              - Indicates how far along the orbit normal the box extends. Uses Distance Dimension.
+              - Indicate how far along the orbit normal the box extends. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DControlBox.z_axis_length`
-              - Indicates how far along the orbit plane the box extends. Uses Distance Dimension.
+              - Indicate how far along the orbit plane the box extends. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DControlBox.x_offset`
-              - Gets or sets the distance to offset the box (forward or backward) along the velocity vector. A positive value moves the box forward along the velocity vector. Uses Distance Dimension.
+              - Get or set the distance to offset the box (forward or backward) along the velocity vector. A positive value moves the box forward along the velocity vector. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DControlBox.y_offset`
-              - Gets or sets the distance to offset the box (left or right) along the velocity vector. A positive value moves the box right along the vector 90 degrees clockwise from the velocity vector. Uses Distance Dimension.
+              - Get or set the distance to offset the box (left or right) along the velocity vector. A positive value moves the box right along the vector 90 degrees clockwise from the velocity vector. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DControlBox.z_offset`
-              - Gets or sets the distance to offset the box (up or down). A positive value moves the box down, towards the ground. Uses Distance Dimension.
+              - Get or set the distance to offset the box (up or down). A positive value moves the box down, towards the ground. Uses Distance Dimension.
 
 
 
@@ -56,54 +56,54 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DControlBox.use_translucency
     :type: bool
 
-    Specifies a translucency of the object.
+    Specify a translucency of the object.
 
 .. py:property:: translucency
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DControlBox.translucency
     :type: float
 
-    Gets or sets the translucency of the object. Valid values are 0 - 100, where 0 is opaque and 100 is transparent. Dimensionless.
+    Get or set the translucency of the object. Valid values are 0 - 100, where 0 is opaque and 100 is transparent. Dimensionless.
 
 .. py:property:: reference_frame
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DControlBox.reference_frame
     :type: IVectorGeometryToolAxes
 
-    Gets or sets the reference axes that is used to align the ellipsoid.
+    Get or set the reference axes that is used to align the ellipsoid.
 
 .. py:property:: x_axis_length
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DControlBox.x_axis_length
     :type: float
 
-    Indicates how far along the velocity vector the box extends. Uses Distance Dimension.
+    Indicate how far along the velocity vector the box extends. Uses Distance Dimension.
 
 .. py:property:: y_axis_length
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DControlBox.y_axis_length
     :type: float
 
-    Indicates how far along the orbit normal the box extends. Uses Distance Dimension.
+    Indicate how far along the orbit normal the box extends. Uses Distance Dimension.
 
 .. py:property:: z_axis_length
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DControlBox.z_axis_length
     :type: float
 
-    Indicates how far along the orbit plane the box extends. Uses Distance Dimension.
+    Indicate how far along the orbit plane the box extends. Uses Distance Dimension.
 
 .. py:property:: x_offset
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DControlBox.x_offset
     :type: float
 
-    Gets or sets the distance to offset the box (forward or backward) along the velocity vector. A positive value moves the box forward along the velocity vector. Uses Distance Dimension.
+    Get or set the distance to offset the box (forward or backward) along the velocity vector. A positive value moves the box forward along the velocity vector. Uses Distance Dimension.
 
 .. py:property:: y_offset
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DControlBox.y_offset
     :type: float
 
-    Gets or sets the distance to offset the box (left or right) along the velocity vector. A positive value moves the box right along the vector 90 degrees clockwise from the velocity vector. Uses Distance Dimension.
+    Get or set the distance to offset the box (left or right) along the velocity vector. A positive value moves the box right along the vector 90 degrees clockwise from the velocity vector. Uses Distance Dimension.
 
 .. py:property:: z_offset
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DControlBox.z_offset
     :type: float
 
-    Gets or sets the distance to offset the box (up or down). A positive value moves the box down, towards the ground. Uses Distance Dimension.
+    Get or set the distance to offset the box (up or down). A positive value moves the box down, towards the ground. Uses Distance Dimension.
 
 

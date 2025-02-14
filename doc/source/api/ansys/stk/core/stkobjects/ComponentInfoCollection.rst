@@ -46,7 +46,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.ComponentInfoCollection.folder_count`
               - Get the number of folders available.
             * - :py:attr:`~ansys.stk.core.stkobjects.ComponentInfoCollection.available_folders`
-              - Returns an array of Folder names.
+              - Return an array of Folder names.
             * - :py:attr:`~ansys.stk.core.stkobjects.ComponentInfoCollection.folder_name`
               - Get the current folder's name.
 
@@ -85,7 +85,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.ComponentInfoCollection.available_folders
     :type: list
 
-    Returns an array of Folder names.
+    Return an array of Folder names.
 
 .. py:property:: folder_name
     :canonical: ansys.stk.core.stkobjects.ComponentInfoCollection.folder_name

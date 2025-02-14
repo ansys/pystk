@@ -36,11 +36,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkutil.Quantity.dimension`
-              - Gets the name of the dimension.
+              - Get the name of the dimension.
             * - :py:attr:`~ansys.stk.core.stkutil.Quantity.unit`
               - Get the current Unit abbreviation.
             * - :py:attr:`~ansys.stk.core.stkutil.Quantity.value`
-              - Gets or sets the current value.
+              - Get or set the current value.
 
 
 
@@ -59,7 +59,7 @@ Property detail
     :canonical: ansys.stk.core.stkutil.Quantity.dimension
     :type: str
 
-    Gets the name of the dimension.
+    Get the name of the dimension.
 
 .. py:property:: unit
     :canonical: ansys.stk.core.stkutil.Quantity.unit
@@ -71,7 +71,7 @@ Property detail
     :canonical: ansys.stk.core.stkutil.Quantity.value
     :type: float
 
-    Gets or sets the current value.
+    Get or set the current value.
 
 
 Method detail

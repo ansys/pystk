@@ -19,9 +19,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarClutter.enabled`
-              - Gets or sets whether clutter is enabled or disabled.
+              - Get or set whether clutter is enabled or disabled.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarClutter.scattering_point_provider_list`
-              - Gets the link/embed controller for managing the scattering point provider list component.
+              - Get the link/embed controller for managing the scattering point provider list component.
 
 
 
@@ -40,12 +40,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.RadarClutter.enabled
     :type: bool
 
-    Gets or sets whether clutter is enabled or disabled.
+    Get or set whether clutter is enabled or disabled.
 
 .. py:property:: scattering_point_provider_list
     :canonical: ansys.stk.core.stkobjects.RadarClutter.scattering_point_provider_list
     :type: IComponentLinkEmbedControl
 
-    Gets the link/embed controller for managing the scattering point provider list component.
+    Get the link/embed controller for managing the scattering point provider list component.
 
 

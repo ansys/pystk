@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.BeamformerDolphChebyshev.sidelobe_level`
-              - Gets or sets the sidelobe level relative to the maximum gain.
+              - Get or set the sidelobe level relative to the maximum gain.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.BeamformerDolphChebyshev.sidelobe_level
     :type: float
 
-    Gets or sets the sidelobe level relative to the maximum gain.
+    Get or set the sidelobe level relative to the maximum gain.
 
 

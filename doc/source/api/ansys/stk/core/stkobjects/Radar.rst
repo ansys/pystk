@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.Radar.set_model`
-              - Set the current radar model by name.
+              - Do not use this method, as it is deprecated. Use ModelComponentLinking on IAgRadar instead. Sets the current radar model by name.
             * - :py:attr:`~ansys.stk.core.stkobjects.Radar.is_refraction_type_supported`
               - Get a value indicating whether the specified type can be used.
 
@@ -32,15 +32,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.Radar.supported_models`
-              - Gets an array of supported model names.
+              - Do not use this property, as it is deprecated. Use ModelComponentLinking on IAgRadar instead. Gets an array of supported model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.Radar.model`
-              - Gets the current radar model.
+              - Do not use this property, as it is deprecated. Use ModelComponentLinking on IAgRadar instead. Gets the current radar model.
             * - :py:attr:`~ansys.stk.core.stkobjects.Radar.refraction`
               - Refraction method, a member of the AgESnRefractionType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.Radar.refraction_supported_types`
-              - Returns an array of valid choices.
+              - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.Radar.refraction_model`
-              - Gets a refraction model.
+              - Get a refraction model.
             * - :py:attr:`~ansys.stk.core.stkobjects.Radar.use_refraction_in_access`
               - Flag controls whether refraction is applied when computing relative position in Access.
             * - :py:attr:`~ansys.stk.core.stkobjects.Radar.graphics_3d`
@@ -48,7 +48,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.Radar.graphics`
               - Get the 2D Graphics properties for the radar.
             * - :py:attr:`~ansys.stk.core.stkobjects.Radar.rf_environment`
-              - Gets the object RF Environment settings.
+              - Get the object RF Environment settings.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Radar.model_component_linking`
+              - Get the link/embed controller for managing the radar model component.
 
 
 
@@ -67,13 +69,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Radar.supported_models
     :type: list
 
-    Gets an array of supported model names.
+    Do not use this property, as it is deprecated. Use ModelComponentLinking on IAgRadar instead. Gets an array of supported model names.
 
 .. py:property:: model
     :canonical: ansys.stk.core.stkobjects.Radar.model
     :type: IRadarModel
 
-    Gets the current radar model.
+    Do not use this property, as it is deprecated. Use ModelComponentLinking on IAgRadar instead. Gets the current radar model.
 
 .. py:property:: refraction
     :canonical: ansys.stk.core.stkobjects.Radar.refraction
@@ -85,13 +87,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Radar.refraction_supported_types
     :type: list
 
-    Returns an array of valid choices.
+    Return an array of valid choices.
 
 .. py:property:: refraction_model
     :canonical: ansys.stk.core.stkobjects.Radar.refraction_model
     :type: IRefractionModelBase
 
-    Gets a refraction model.
+    Get a refraction model.
 
 .. py:property:: use_refraction_in_access
     :canonical: ansys.stk.core.stkobjects.Radar.use_refraction_in_access
@@ -115,7 +117,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Radar.rf_environment
     :type: ObjectRFEnvironment
 
-    Gets the object RF Environment settings.
+    Get the object RF Environment settings.
+
+.. py:property:: model_component_linking
+    :canonical: ansys.stk.core.stkobjects.Radar.model_component_linking
+    :type: IComponentLinkEmbedControl
+
+    Get the link/embed controller for managing the radar model component.
 
 
 Method detail
@@ -125,7 +133,7 @@ Method detail
 .. py:method:: set_model(self, model_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.Radar.set_model
 
-    Set the current radar model by name.
+    Do not use this method, as it is deprecated. Use ModelComponentLinking on IAgRadar instead. Sets the current radar model by name.
 
     :Parameters:
 
@@ -150,6 +158,7 @@ Method detail
     :Returns:
 
         :obj:`~bool`
+
 
 
 

@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ICentralBodyComponentEphemerisJPLDevelopmentalEphemerides.jplde_filename`
-              - Gets or sets the DE file name.
+              - Get or set the DE file name.
 
 
 Import detail
@@ -39,6 +39,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.ICentralBodyComponentEphemerisJPLDevelopmentalEphemerides.jplde_filename
     :type: str
 
-    Gets or sets the DE file name.
+    Get or set the DE file name.
 
 

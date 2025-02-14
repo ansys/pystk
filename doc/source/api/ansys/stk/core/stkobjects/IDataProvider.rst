@@ -30,17 +30,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IDataProvider.elements`
-              - Returns a collection of elements associated with a DataProvider or a SubDataProvider.
+              - Return a collection of elements associated with a DataProvider or a SubDataProvider.
             * - :py:attr:`~ansys.stk.core.stkobjects.IDataProvider.pre_data`
               - The string associated with the current PreData parameter.
             * - :py:attr:`~ansys.stk.core.stkobjects.IDataProvider.allow_user_interface_for_pre_data`
               - When set to true the data provider will display a user interface to select/enter the pre-data required.
             * - :py:attr:`~ansys.stk.core.stkobjects.IDataProvider.is_valid`
-              - Returns whether the data provider is valid.
+              - Return whether the data provider is valid.
             * - :py:attr:`~ansys.stk.core.stkobjects.IDataProvider.pre_data_required`
-              - Returns whether the data provider requires pre data.
+              - Return whether the data provider requires pre data.
             * - :py:attr:`~ansys.stk.core.stkobjects.IDataProvider.pre_data_description`
-              - Returns a description of the required pre data.
+              - Return a description of the required pre data.
 
 
 Import detail
@@ -58,7 +58,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.IDataProvider.elements
     :type: DataProviderElements
 
-    Returns a collection of elements associated with a DataProvider or a SubDataProvider.
+    Return a collection of elements associated with a DataProvider or a SubDataProvider.
 
 .. py:property:: pre_data
     :canonical: ansys.stk.core.stkobjects.IDataProvider.pre_data
@@ -76,19 +76,19 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.IDataProvider.is_valid
     :type: bool
 
-    Returns whether the data provider is valid.
+    Return whether the data provider is valid.
 
 .. py:property:: pre_data_required
     :canonical: ansys.stk.core.stkobjects.IDataProvider.pre_data_required
     :type: bool
 
-    Returns whether the data provider requires pre data.
+    Return whether the data provider requires pre data.
 
 .. py:property:: pre_data_description
     :canonical: ansys.stk.core.stkobjects.IDataProvider.pre_data_description
     :type: str
 
-    Returns a description of the required pre data.
+    Return a description of the required pre data.
 
 
 Method detail

@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.BandExtractFilter.extract_format`
-              - Gets or sets the raster format containing the bands and the order of the bands that will be extracted.
+              - Get or set the raster format containing the bands and the order of the bands that will be extracted.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.graphics.BandExtractFilter.extract_format
     :type: RasterFormat
 
-    Gets or sets the raster format containing the bands and the order of the bands that will be extracted.
+    Get or set the raster format containing the bands and the order of the bands that will be extracted.
 
 

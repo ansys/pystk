@@ -30,7 +30,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureTerrainFollow.altitude_agl`
-              - Gets or sets the altitude above ground level the aircraft will fly.
+              - Get or set the altitude above ground level the aircraft will fly.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureTerrainFollow.navigation_options`
               - Get the navigation options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureTerrainFollow.terrain_following_airspeed_options`
@@ -38,7 +38,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureTerrainFollow.reduce_turn_radii`
               - Option to use the minimum speed to compute the turn radius.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureTerrainFollow.turn_factor`
-              - Gets or sets the maximum turn radius factor.
+              - Get or set the maximum turn radius factor.
 
 
 
@@ -57,7 +57,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureTerrainFollow.altitude_agl
     :type: float
 
-    Gets or sets the altitude above ground level the aircraft will fly.
+    Get or set the altitude above ground level the aircraft will fly.
 
 .. py:property:: navigation_options
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureTerrainFollow.navigation_options
@@ -81,7 +81,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureTerrainFollow.turn_factor
     :type: float
 
-    Gets or sets the maximum turn radius factor.
+    Get or set the maximum turn radius factor.
 
 
 Method detail

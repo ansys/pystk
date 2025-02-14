@@ -21,9 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcScalar.scalar_name`
-              - Gets or sets the scalar name.
+              - Get or set the scalar name.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcScalar.unit_dimension`
-              - Gets or sets the unit dimension.
+              - Get or set the unit dimension.
 
 
 
@@ -42,12 +42,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcScalar.scalar_name
     :type: str
 
-    Gets or sets the scalar name.
+    Get or set the scalar name.
 
 .. py:property:: unit_dimension
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcScalar.unit_dimension
     :type: str
 
-    Gets or sets the unit dimension.
+    Get or set the unit dimension.
 
 

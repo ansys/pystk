@@ -21,9 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarModeBistaticTransmitterSAR.pulse_definition`
-              - Gets the interface for configuring the SAR waveform pulse definition.
+              - Get the interface for configuring the SAR waveform pulse definition.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarModeBistaticTransmitterSAR.modulator`
-              - Gets the interface for setting the modulator parameters.
+              - Get the interface for setting the modulator parameters.
 
 
 
@@ -42,12 +42,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.RadarModeBistaticTransmitterSAR.pulse_definition
     :type: RadarWaveformSarPulseDefinition
 
-    Gets the interface for configuring the SAR waveform pulse definition.
+    Get the interface for configuring the SAR waveform pulse definition.
 
 .. py:property:: modulator
     :canonical: ansys.stk.core.stkobjects.RadarModeBistaticTransmitterSAR.modulator
     :type: RadarModulator
 
-    Gets the interface for setting the modulator parameters.
+    Get the interface for setting the modulator parameters.
 
 

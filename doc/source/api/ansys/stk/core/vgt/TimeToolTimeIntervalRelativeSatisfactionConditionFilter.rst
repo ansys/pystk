@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.TimeToolTimeIntervalRelativeSatisfactionConditionFilter.condition`
-              - Gets or sets the additional condition to be satisfied At Most or At Least specified duration within any interval for it to be considered in filtered list.
+              - Get or set the additional condition to be satisfied At Most or At Least specified duration within any interval for it to be considered in filtered list.
             * - :py:attr:`~ansys.stk.core.vgt.TimeToolTimeIntervalRelativeSatisfactionConditionFilter.duration_type`
               - Choose a duration type (at least/at most).
             * - :py:attr:`~ansys.stk.core.vgt.TimeToolTimeIntervalRelativeSatisfactionConditionFilter.relative_interval_duration`
@@ -44,7 +44,7 @@ Property detail
     :canonical: ansys.stk.core.vgt.TimeToolTimeIntervalRelativeSatisfactionConditionFilter.condition
     :type: ICalculationToolCondition
 
-    Gets or sets the additional condition to be satisfied At Most or At Least specified duration within any interval for it to be considered in filtered list.
+    Get or set the additional condition to be satisfied At Most or At Least specified duration within any interval for it to be considered in filtered list.
 
 .. py:property:: duration_type
     :canonical: ansys.stk.core.vgt.TimeToolTimeIntervalRelativeSatisfactionConditionFilter.duration_type

@@ -1,11 +1,11 @@
 services:
   stk-python3.12:
-    image: ansys/stk:dev-ubuntu22.04-python3.12
+    image: ansys/stk-12.10:dev-ubuntu22.04-python3.12
     container_name: stk-python3.12
     build: 
       context: .
       args:
-        baseImage: ansys/stk:dev-ubuntu22.04
-        basePythonImage: ansys/stk:dev-ubuntu22.04-pybase
+        baseImage: ansys/stk-12.10:dev-ubuntu22.04
+        basePythonImage: ansys/stk-12.10:dev-ubuntu22.04-pybase
     environment:
       - ANSYSLMD_LICENSE_FILE=$ANSYSLMD_LICENSE_FILE

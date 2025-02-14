@@ -21,9 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarWaveformBistaticTransmitterSearchTrackFixedPRF.pulse_definition`
-              - Gets the interface for setting the pulse definition parameters.
+              - Get the interface for setting the pulse definition parameters.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarWaveformBistaticTransmitterSearchTrackFixedPRF.modulator`
-              - Gets the interface for setting the modulator parameters.
+              - Get the interface for setting the modulator parameters.
 
 
 
@@ -42,12 +42,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.RadarWaveformBistaticTransmitterSearchTrackFixedPRF.pulse_definition
     :type: RadarWaveformSearchTrackPulseDefinition
 
-    Gets the interface for setting the pulse definition parameters.
+    Get the interface for setting the pulse definition parameters.
 
 .. py:property:: modulator
     :canonical: ansys.stk.core.stkobjects.RadarWaveformBistaticTransmitterSearchTrackFixedPRF.modulator
     :type: RadarModulator
 
-    Gets the interface for setting the modulator parameters.
+    Get the interface for setting the modulator parameters.
 
 

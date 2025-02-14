@@ -21,9 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcVectorMagnitude.vector_name`
-              - Gets or sets the vector.
+              - Get or set the vector.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcVectorMagnitude.unit_dimension`
-              - Gets or sets the unit dimension.
+              - Get or set the unit dimension.
 
 
 
@@ -42,12 +42,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcVectorMagnitude.vector_name
     :type: str
 
-    Gets or sets the vector.
+    Get or set the vector.
 
 .. py:property:: unit_dimension
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcVectorMagnitude.unit_dimension
     :type: str
 
-    Gets or sets the unit dimension.
+    Get or set the unit dimension.
 
 

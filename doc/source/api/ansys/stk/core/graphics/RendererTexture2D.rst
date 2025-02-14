@@ -19,7 +19,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.RendererTexture2D.template`
-              - Gets a template from which the texture was created.
+              - Get a template from which the texture was created.
 
 
 
@@ -38,6 +38,6 @@ Property detail
     :canonical: ansys.stk.core.graphics.RendererTexture2D.template
     :type: RendererTextureTemplate2D
 
-    Gets a template from which the texture was created.
+    Get a template from which the texture was created.
 
 

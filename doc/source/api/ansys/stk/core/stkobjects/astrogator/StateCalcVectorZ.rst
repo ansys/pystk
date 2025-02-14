@@ -21,11 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcVectorZ.coord_axes_name`
-              - Gets or sets the coordinate axes.
+              - Get or set the coordinate axes.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcVectorZ.vector_name`
-              - Gets or sets the vector.
+              - Get or set the vector.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcVectorZ.unit_dimension`
-              - Gets or sets the unit dimension.
+              - Get or set the unit dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcVectorZ.normalize`
               - If true, return the normalized magnitude.
 
@@ -46,19 +46,19 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcVectorZ.coord_axes_name
     :type: str
 
-    Gets or sets the coordinate axes.
+    Get or set the coordinate axes.
 
 .. py:property:: vector_name
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcVectorZ.vector_name
     :type: str
 
-    Gets or sets the vector.
+    Get or set the vector.
 
 .. py:property:: unit_dimension
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcVectorZ.unit_dimension
     :type: str
 
-    Gets or sets the unit dimension.
+    Get or set the unit dimension.
 
 .. py:property:: normalize
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcVectorZ.normalize

@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DReferencePoint.trajectory_type`
-              - Specifies the arrow type used to represent the geometric element.
+              - Specify the arrow type used to represent the geometric element.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DReferencePoint.show_right_ascension_declination_values`
               - Displays right-ascension and declination values with the selected point.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DReferencePoint.right_ascension_declination_units_abbreviation`
@@ -37,9 +37,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DReferencePoint.system`
               - The name of the system used to define the coordinate frame associated with the selected RefCrdn.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DReferencePoint.size`
-              - Gets or sets the size of the selected geometric plane or point. Dimensionless.
+              - Get or set the size of the selected geometric plane or point. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DReferencePoint.available_systems`
-              - Returns an array of available Systems.
+              - Return an array of available Systems.
 
 
 
@@ -58,7 +58,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Graphics3DReferencePoint.trajectory_type
     :type: TrajectoryType
 
-    Specifies the arrow type used to represent the geometric element.
+    Specify the arrow type used to represent the geometric element.
 
 .. py:property:: show_right_ascension_declination_values
     :canonical: ansys.stk.core.stkobjects.Graphics3DReferencePoint.show_right_ascension_declination_values
@@ -106,12 +106,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Graphics3DReferencePoint.size
     :type: float
 
-    Gets or sets the size of the selected geometric plane or point. Dimensionless.
+    Get or set the size of the selected geometric plane or point. Dimensionless.
 
 .. py:property:: available_systems
     :canonical: ansys.stk.core.stkobjects.Graphics3DReferencePoint.available_systems
     :type: list
 
-    Returns an array of available Systems.
+    Return an array of available Systems.
 
 

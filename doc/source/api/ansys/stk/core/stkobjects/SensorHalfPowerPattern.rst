@@ -27,7 +27,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorHalfPowerPattern.half_angle`
               - Get the half angle of the cone for, calculated on the basis of the Frequency and AntennaDiameter properties. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorHalfPowerPattern.angular_resolution`
-              - Allows a user to set the angular separation between the pattern data points. This is an advanced user field, available only through STK's object model interface. The default value for the number of pattern samples is...
+              - Allow a user to set the angular separation between the pattern data points. This is an advanced user field, available only through STK's object model interface. The default value for the number of pattern samples is...
 
 
 
@@ -64,6 +64,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.SensorHalfPowerPattern.angular_resolution
     :type: typing.Any
 
-    Allows a user to set the angular separation between the pattern data points. This is an advanced user field, available only through STK's object model interface. The default value for the number of pattern samples is...
+    Allow a user to set the angular separation between the pattern data points. This is an advanced user field, available only through STK's object model interface. The default value for the number of pattern samples is...
 
 

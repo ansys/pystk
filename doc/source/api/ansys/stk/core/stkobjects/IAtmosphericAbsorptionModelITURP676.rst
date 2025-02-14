@@ -19,9 +19,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelITURP676.fast_approximation_method`
-              - Gets or sets the option for using the fast approximation method.
+              - Get or set the option for using the fast approximation method.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelITURP676.seasonal_regional_method`
-              - Gets or sets the option for using the seasonal/regional method.
+              - Get or set the option for using the seasonal/regional method.
 
 
 Import detail
@@ -39,12 +39,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelITURP676.fast_approximation_method
     :type: bool
 
-    Gets or sets the option for using the fast approximation method.
+    Get or set the option for using the fast approximation method.
 
 .. py:property:: seasonal_regional_method
     :canonical: ansys.stk.core.stkobjects.IAtmosphericAbsorptionModelITURP676.seasonal_regional_method
     :type: bool
 
-    Gets or sets the option for using the seasonal/regional method.
+    Get or set the option for using the seasonal/regional method.
 
 

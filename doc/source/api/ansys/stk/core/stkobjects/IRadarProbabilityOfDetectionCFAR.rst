@@ -19,9 +19,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarProbabilityOfDetectionCFAR.probability_of_false_alarm`
-              - Gets or sets the probability of false alarm.
+              - Get or set the probability of false alarm.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarProbabilityOfDetectionCFAR.number_of_cfar_reference_cells`
-              - Gets or sets the number of CFAR reference cells.
+              - Get or set the number of CFAR reference cells.
 
 
 Import detail
@@ -39,12 +39,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.IRadarProbabilityOfDetectionCFAR.probability_of_false_alarm
     :type: float
 
-    Gets or sets the probability of false alarm.
+    Get or set the probability of false alarm.
 
 .. py:property:: number_of_cfar_reference_cells
     :canonical: ansys.stk.core.stkobjects.IRadarProbabilityOfDetectionCFAR.number_of_cfar_reference_cells
     :type: int
 
-    Gets or sets the number of CFAR reference cells.
+    Get or set the number of CFAR reference cells.
 
 

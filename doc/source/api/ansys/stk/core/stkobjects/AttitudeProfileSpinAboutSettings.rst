@@ -21,9 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.AttitudeProfileSpinAboutSettings.rate`
-              - Gets or sets the spin rate in revolutions per minute; positive values indicate rotation in a right-handed sense with respect to the spin axis. Uses AngleRate Dimension.
+              - Get or set the spin rate in revolutions per minute; positive values indicate rotation in a right-handed sense with respect to the spin axis. Uses AngleRate Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.AttitudeProfileSpinAboutSettings.offset`
-              - Gets or sets the initial spin offset as an angular measure of the difference between the satellite orientation at the offset epoch and the orientation achieved by orienting the spin axis. Uses Angle Dimension.
+              - Get or set the initial spin offset as an angular measure of the difference between the satellite orientation at the offset epoch and the orientation achieved by orienting the spin axis. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.AttitudeProfileSpinAboutSettings.smart_epoch`
               - Epoch of the offset.
 
@@ -44,13 +44,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.AttitudeProfileSpinAboutSettings.rate
     :type: float
 
-    Gets or sets the spin rate in revolutions per minute; positive values indicate rotation in a right-handed sense with respect to the spin axis. Uses AngleRate Dimension.
+    Get or set the spin rate in revolutions per minute; positive values indicate rotation in a right-handed sense with respect to the spin axis. Uses AngleRate Dimension.
 
 .. py:property:: offset
     :canonical: ansys.stk.core.stkobjects.AttitudeProfileSpinAboutSettings.offset
     :type: float
 
-    Gets or sets the initial spin offset as an angular measure of the difference between the satellite orientation at the offset epoch and the orientation achieved by orienting the spin axis. Uses Angle Dimension.
+    Get or set the initial spin offset as an angular measure of the difference between the satellite orientation at the offset epoch and the orientation achieved by orienting the spin axis. Uses Angle Dimension.
 
 .. py:property:: smart_epoch
     :canonical: ansys.stk.core.stkobjects.AttitudeProfileSpinAboutSettings.smart_epoch

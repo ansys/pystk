@@ -30,13 +30,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ScriptingCalculationObject.component_name`
-              - Gets or sets the name of the component.
+              - Get or set the name of the component.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ScriptingCalculationObject.calculation_object_name`
-              - Gets or sets the name of the calculation object.
+              - Get or set the name of the calculation object.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ScriptingCalculationObject.calculation_object`
-              - Gets or sets the calculation object type.
+              - Get or set the calculation object type.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ScriptingCalculationObject.unit`
-              - Gets or sets the unit.
+              - Get or set the unit.
 
 
 
@@ -55,25 +55,25 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingCalculationObject.component_name
     :type: str
 
-    Gets or sets the name of the component.
+    Get or set the name of the component.
 
 .. py:property:: calculation_object_name
     :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingCalculationObject.calculation_object_name
     :type: str
 
-    Gets or sets the name of the calculation object.
+    Get or set the name of the calculation object.
 
 .. py:property:: calculation_object
     :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingCalculationObject.calculation_object
     :type: IComponentInfo
 
-    Gets or sets the calculation object type.
+    Get or set the calculation object type.
 
 .. py:property:: unit
     :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingCalculationObject.unit
     :type: str
 
-    Gets or sets the unit.
+    Get or set the unit.
 
 
 Method detail

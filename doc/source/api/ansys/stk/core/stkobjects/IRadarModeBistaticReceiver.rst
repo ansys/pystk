@@ -19,9 +19,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModeBistaticReceiver.name`
-              - Gets the radar mode name.
+              - Get the radar mode name.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarModeBistaticReceiver.type`
-              - Gets the radar mode type enumeration.
+              - Get the radar mode type enumeration.
 
 
 Import detail
@@ -39,12 +39,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.IRadarModeBistaticReceiver.name
     :type: str
 
-    Gets the radar mode name.
+    Get the radar mode name.
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.IRadarModeBistaticReceiver.type
     :type: RadarMode
 
-    Gets the radar mode type enumeration.
+    Get the radar mode type enumeration.
 
 

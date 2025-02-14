@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarContinuousWaveAnalysisModeFixedTime.fixed_time`
-              - Gets or sets the fixed time value.
+              - Get or set the fixed time value.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.RadarContinuousWaveAnalysisModeFixedTime.fixed_time
     :type: float
 
-    Gets or sets the fixed time value.
+    Get or set the fixed time value.
 
 

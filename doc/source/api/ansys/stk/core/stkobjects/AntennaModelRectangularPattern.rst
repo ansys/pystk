@@ -21,13 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelRectangularPattern.mainlobe_gain`
-              - Gets or sets the main-lobe gain.
+              - Get or set the main-lobe gain.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelRectangularPattern.theta_angle`
-              - Gets or sets the theta angle.
+              - Get or set the theta angle.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelRectangularPattern.phi_angle`
-              - Gets or sets the phi angle.
+              - Get or set the phi angle.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelRectangularPattern.sidelobe_gain`
-              - Gets or sets the side-lobe gain.
+              - Get or set the side-lobe gain.
 
 
 
@@ -46,24 +46,24 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.AntennaModelRectangularPattern.mainlobe_gain
     :type: float
 
-    Gets or sets the main-lobe gain.
+    Get or set the main-lobe gain.
 
 .. py:property:: theta_angle
     :canonical: ansys.stk.core.stkobjects.AntennaModelRectangularPattern.theta_angle
     :type: typing.Any
 
-    Gets or sets the theta angle.
+    Get or set the theta angle.
 
 .. py:property:: phi_angle
     :canonical: ansys.stk.core.stkobjects.AntennaModelRectangularPattern.phi_angle
     :type: typing.Any
 
-    Gets or sets the phi angle.
+    Get or set the phi angle.
 
 .. py:property:: sidelobe_gain
     :canonical: ansys.stk.core.stkobjects.AntennaModelRectangularPattern.sidelobe_gain
     :type: float
 
-    Gets or sets the side-lobe gain.
+    Get or set the side-lobe gain.
 
 

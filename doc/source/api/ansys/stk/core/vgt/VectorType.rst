@@ -115,6 +115,9 @@ Overview
             * - :py:attr:`~DISPLACEMENT_ON_SURFACE`
               - Displacement between origin and destination points using surface distance and altitude difference.
 
+            * - :py:attr:`~FILE`
+              - Vector interpolated from tabulated data from file.
+
 
 Import detail
 -------------

@@ -1,0 +1,3 @@
+<Mappings OldRootScope="agi.stk12.utilities.exceptions" NewRootScope="ansys.stk.core.utilities.exceptions">
+   <Mapping OldName="GrpcUtilitiesException" NewName="GrpcUtilitiesError" Category="class" />
+</Mappings>

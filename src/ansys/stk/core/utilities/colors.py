@@ -9,6 +9,7 @@ import typing
 
 from .exceptions import STKColorError
 
+
 class Color(object):
     """An opaque color representation that can be used with the STK Object Model."""
     

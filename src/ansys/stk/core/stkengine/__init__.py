@@ -6,26 +6,35 @@
 
 __all__ = ["STKEngine", "STKEngineApplication", "STKEngineTimerType"]
 
-import os
 import atexit
 from ctypes import byref
 from enum import IntEnum
+import os
 
 if os.name != "nt":
     from ctypes import CFUNCTYPE, cdll
     from ctypes.util import find_library
+
     from ..internal.timerutil import NullTimer, SigAlarmTimer, SigRtTimer, TclTimer
 else:
     from ..internal.timerutil import NullTimer
 
-from ..internal.comutil            import CLSCTX_INPROC_SERVER, GUID
-from ..internal.comutil            import OLE32Lib, CoInitializeManager, IUnknown, ObjectLifetimeManager, Succeeded
-from ..internal.eventutil          import EventSubscriptionManager
-from ..utilities.grpcutilities     import GrpcCallBatcher
+from ..internal.comutil import (
+    CLSCTX_INPROC_SERVER,
+    GUID,
+    CoInitializeManager,
+    IUnknown,
+    ObjectLifetimeManager,
+    OLE32Lib,
+    Succeeded,
+)
+from ..internal.eventutil import EventSubscriptionManager
 from ..internal.stkxinitialization import STKXInitialize
-from ..utilities.exceptions        import STKRuntimeError, STKInitializationError, GrpcUtilitiesError
-from ..stkobjects                  import StkObjectRoot, StkObjectModelContext
-from ..stkx                        import STKXApplication
+from ..stkobjects import StkObjectModelContext, StkObjectRoot
+from ..stkx import STKXApplication
+from ..utilities.exceptions import GrpcUtilitiesError, STKInitializationError, STKRuntimeError
+from ..utilities.grpcutilities import GrpcCallBatcher
+
 
 class STKEngineTimerType(IntEnum):
     """

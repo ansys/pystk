@@ -30,21 +30,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.start_time`
-              - Gets or sets the start time of the reference state.
+              - Get or set the start time of the reference state.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.latitude`
-              - Gets or sets the waypoint latitude.
+              - Get or set the waypoint latitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.longitude`
-              - Gets or sets the waypoint longitude.
+              - Get or set the waypoint longitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.use_default_cruise_altitude`
               - Opt whether to use the default cruise altitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.msl_altitude`
               - Get the MSL altitude. Can only be used when the option to use the default cruise altitude is off.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.performance_mode`
-              - Gets or sets the type of motion the aircraft is engaged in.
+              - Get or set the type of motion the aircraft is engaged in.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.reference_frame`
-              - Gets or sets the reference frame the aircraft will use.
+              - Get or set the reference frame the aircraft will use.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.fuel_flow`
-              - Gets or sets the rate of fuel consumption.
+              - Get or set the rate of fuel consumption.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.mode_as_forward_flight`
               - Get the forward flight options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.mode_as_takeoff_landing`
@@ -71,19 +71,19 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.start_time
     :type: typing.Any
 
-    Gets or sets the start time of the reference state.
+    Get or set the start time of the reference state.
 
 .. py:property:: latitude
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.latitude
     :type: typing.Any
 
-    Gets or sets the waypoint latitude.
+    Get or set the waypoint latitude.
 
 .. py:property:: longitude
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.longitude
     :type: typing.Any
 
-    Gets or sets the waypoint longitude.
+    Get or set the waypoint longitude.
 
 .. py:property:: use_default_cruise_altitude
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.use_default_cruise_altitude
@@ -101,19 +101,19 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.performance_mode
     :type: ReferenceStatePerformanceMode
 
-    Gets or sets the type of motion the aircraft is engaged in.
+    Get or set the type of motion the aircraft is engaged in.
 
 .. py:property:: reference_frame
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.reference_frame
     :type: BasicManeuverReferenceFrame
 
-    Gets or sets the reference frame the aircraft will use.
+    Get or set the reference frame the aircraft will use.
 
 .. py:property:: fuel_flow
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.fuel_flow
     :type: float
 
-    Gets or sets the rate of fuel consumption.
+    Get or set the rate of fuel consumption.
 
 .. py:property:: mode_as_forward_flight
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureReferenceState.mode_as_forward_flight

@@ -25,7 +25,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleHPOPSolarRadiationPressure.use_boundary_mitigation`
               - Opt whether to correct the state of the satellite after crossing a shadow boundary for errors that may have been introduced by the sudden change in the SRP which occurred during the integration step.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleHPOPSolarRadiationPressure.solar_radiation_pressure_model`
-              - Returns a solar radiation pressure model.
+              - Return a solar radiation pressure model.
 
 
 
@@ -62,6 +62,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleHPOPSolarRadiationPressure.solar_radiation_pressure_model
     :type: VehicleHPOPSolarRadiationPressureModel
 
-    Returns a solar radiation pressure model.
+    Return a solar radiation pressure model.
 
 

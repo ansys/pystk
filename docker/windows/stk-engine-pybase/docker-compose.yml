@@ -1,10 +1,10 @@
 services:
   stk-pybase:
-    image: ansys/stk:dev-windowsservercore-ltsc2019-pybase
+    image: ansys/stk-12.10:dev-windowsservercore-ltsc2019-pybase
     container_name: stk-pybase
     build: 
       context: .
       args:
-        baseImage: ansys/stk:dev-windowsservercore-ltsc2019
+        baseImage: ansys/stk-12.10:dev-windowsservercore-ltsc2019
     environment:
       - ANSYSLMD_LICENSE_FILE=$ANSYSLMD_LICENSE_FILE

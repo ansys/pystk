@@ -28,6 +28,10 @@ Overview
               - Check for holes in custom region.
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageBoundsCustomRegions.small_region_algorithm`
               - Disables or enables one of the two special gridding algorithms triggered when Custom Region grid includes a single small region (longitude span less than 1 deg).
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageBoundsCustomRegions.ellipses`
+              - Ellipses to be used as part of the coverage area.
+            * - :py:attr:`~ansys.stk.core.stkobjects.CoverageBoundsCustomRegions.boxes`
+              - Latitude/longitude boxes to be used as part of the coverage area.
 
 
 
@@ -65,5 +69,17 @@ Property detail
     :type: CoverageCustomRegionAlgorithm
 
     Disables or enables one of the two special gridding algorithms triggered when Custom Region grid includes a single small region (longitude span less than 1 deg).
+
+.. py:property:: ellipses
+    :canonical: ansys.stk.core.stkobjects.CoverageBoundsCustomRegions.ellipses
+    :type: CoverageEllipseCollection
+
+    Ellipses to be used as part of the coverage area.
+
+.. py:property:: boxes
+    :canonical: ansys.stk.core.stkobjects.CoverageBoundsCustomRegions.boxes
+    :type: CoverageLatLonBoxCollection
+
+    Latitude/longitude boxes to be used as part of the coverage area.
 
 

@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderGroup.group`
-              - Returns a collection of data providers in the group.
+              - Return a collection of data providers in the group.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.DataProviderGroup.group
     :type: DataProviders
 
-    Returns a collection of data providers in the group.
+    Return a collection of data providers in the group.
 
 

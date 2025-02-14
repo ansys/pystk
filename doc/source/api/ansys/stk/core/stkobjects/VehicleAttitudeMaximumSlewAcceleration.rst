@@ -19,7 +19,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleAttitudeMaximumSlewAcceleration.magnitude`
-              - Gets or sets the maximum overall magnitude.
+              - Get or set the maximum overall magnitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleAttitudeMaximumSlewAcceleration.slew_acceleration_along_x_axis_enabled`
               - Whether to constrain the slew acceleration along the direction of X axis.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleAttitudeMaximumSlewAcceleration.slew_acceleration_along_y_axis_enabled`
@@ -50,7 +50,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleAttitudeMaximumSlewAcceleration.magnitude
     :type: float
 
-    Gets or sets the maximum overall magnitude.
+    Get or set the maximum overall magnitude.
 
 .. py:property:: slew_acceleration_along_x_axis_enabled
     :canonical: ansys.stk.core.stkobjects.VehicleAttitudeMaximumSlewAcceleration.slew_acceleration_along_x_axis_enabled

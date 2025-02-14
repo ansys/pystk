@@ -44,11 +44,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkutil.IOrbitState.orbit_state_type`
-              - Returns the coordinate type currently being used.
+              - Return the coordinate type currently being used.
             * - :py:attr:`~ansys.stk.core.stkutil.IOrbitState.central_body_name`
-              - Gets the central body.
+              - Get the central body.
             * - :py:attr:`~ansys.stk.core.stkutil.IOrbitState.epoch`
-              - Gets or sets the state epoch.
+              - Get or set the state epoch.
 
 
 Import detail
@@ -66,19 +66,19 @@ Property detail
     :canonical: ansys.stk.core.stkutil.IOrbitState.orbit_state_type
     :type: OrbitStateType
 
-    Returns the coordinate type currently being used.
+    Return the coordinate type currently being used.
 
 .. py:property:: central_body_name
     :canonical: ansys.stk.core.stkutil.IOrbitState.central_body_name
     :type: str
 
-    Gets the central body.
+    Get the central body.
 
 .. py:property:: epoch
     :canonical: ansys.stk.core.stkutil.IOrbitState.epoch
     :type: typing.Any
 
-    Gets or sets the state epoch.
+    Get or set the state epoch.
 
 
 Method detail

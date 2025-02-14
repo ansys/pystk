@@ -47,6 +47,58 @@ class EarlyBoundTests(TestBase):
         ex = ExceptionAssert.Throws(code1)
         StringAssert.Contains("Invalid", str(ex), "Exception message mismatch")
 
+    @category("VO Tests")
+    def test_PLAT_40277_IAgVORefCrdnCollection_input_formats(self):
+        refColl: "Graphics3DReferenceVectorGeometryToolComponentCollection" = (
+            EarlyBoundTests.AG_SAT.graphics_3d.vector.vector_geometry_tool_components
+        )
+
+        # Axes
+
+        refColl.add(GeometricElementType.AXES_ELEMENT, "Satellite/Satellite2 Equinoctial Axes")  # full name
+        refColl.add(GeometricElementType.AXES_ELEMENT, "ICR Axes")  # short name
+
+        refCrdn: "IGraphics3DReferenceAnalysisWorkbenchComponent" = refColl.get_component_by_name(
+            GeometricElementType.AXES_ELEMENT, "Satellite/Satellite2 Equinoctial Axes"
+        )
+        Assert.assertEqual("Satellite/Satellite2 Equinoctial Axes", refCrdn.name)
+
+        refCrdn = refColl.get_component_by_name(GeometricElementType.AXES_ELEMENT, "Equinoctial Axes")
+        Assert.assertEqual("Satellite/Satellite2 Equinoctial Axes", refCrdn.name)
+
+        refCrdn = refColl.get_component_by_name(GeometricElementType.AXES_ELEMENT, "Satellite/Satellite2 ICR Axes")
+        Assert.assertEqual("Satellite/Satellite2 ICR Axes", refCrdn.name)
+
+        refCrdn = refColl.get_component_by_name(GeometricElementType.AXES_ELEMENT, "ICR Axes")
+        Assert.assertEqual("Satellite/Satellite2 ICR Axes", refCrdn.name)
+
+        refColl.remove_by_name(GeometricElementType.AXES_ELEMENT, "Satellite/Satellite2 Equinoctial Axes")
+        refColl.remove_by_name(GeometricElementType.AXES_ELEMENT, "Satellite/Satellite2 ICR Axes")
+
+        # Vectors
+
+        refColl.add(GeometricElementType.VECTOR_ELEMENT, "Satellite/Satellite2 AngMomentum Vector")  # full name
+        refColl.add(GeometricElementType.VECTOR_ELEMENT, "AngVelocity Vector")  # short name
+
+        refCrdn = refColl.get_component_by_name(
+            GeometricElementType.VECTOR_ELEMENT, "Satellite/Satellite2 AngMomentum Vector"
+        )
+        Assert.assertEqual("Satellite/Satellite2 AngMomentum Vector", refCrdn.name)
+
+        refCrdn = refColl.get_component_by_name(GeometricElementType.VECTOR_ELEMENT, "AngMomentum Vector")
+        Assert.assertEqual("Satellite/Satellite2 AngMomentum Vector", refCrdn.name)
+
+        refCrdn = refColl.get_component_by_name(
+            GeometricElementType.VECTOR_ELEMENT, "Satellite/Satellite2 AngVelocity Vector"
+        )
+        Assert.assertEqual("Satellite/Satellite2 AngVelocity Vector", refCrdn.name)
+
+        refCrdn = refColl.get_component_by_name(GeometricElementType.VECTOR_ELEMENT, "AngVelocity Vector")
+        Assert.assertEqual("Satellite/Satellite2 AngVelocity Vector", refCrdn.name)
+
+        refColl.remove_by_name(GeometricElementType.VECTOR_ELEMENT, "Satellite/Satellite2 AngMomentum Vector")
+        refColl.remove_by_name(GeometricElementType.VECTOR_ELEMENT, "Satellite/Satellite2 AngVelocity Vector")
+
     def test_BUG62983_BUG67662_StkExternalOverride(self):
         # Improper default value of false for PropagatorStkExternal.Override
         satellite: "Satellite" = clr.CastAs(

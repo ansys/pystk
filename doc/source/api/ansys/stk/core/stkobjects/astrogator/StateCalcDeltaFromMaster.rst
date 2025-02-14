@@ -21,9 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcDeltaFromMaster.calculation_object_name`
-              - Gets or sets the calculation object of interest.
+              - Get or set the calculation object of interest.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcDeltaFromMaster.reference_selection`
-              - Gets or sets the reference object selection.
+              - Get or set the reference object selection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcDeltaFromMaster.reference`
               - Get the reference object.
 
@@ -44,13 +44,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcDeltaFromMaster.calculation_object_name
     :type: str
 
-    Gets or sets the calculation object of interest.
+    Get or set the calculation object of interest.
 
 .. py:property:: reference_selection
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcDeltaFromMaster.reference_selection
     :type: CalculationObjectReference
 
-    Gets or sets the reference object selection.
+    Get or set the reference object selection.
 
 .. py:property:: reference
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcDeltaFromMaster.reference

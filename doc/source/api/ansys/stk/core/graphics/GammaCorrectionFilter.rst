@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.GammaCorrectionFilter.gamma`
-              - Gets or sets the gamma value for the filter. The value must be between .2 and 5. The default gamma value is 2.2.
+              - Get or set the gamma value for the filter. The value must be between .2 and 5. The default gamma value is 2.2.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.graphics.GammaCorrectionFilter.gamma
     :type: float
 
-    Gets or sets the gamma value for the filter. The value must be between .2 and 5. The default gamma value is 2.2.
+    Get or set the gamma value for the filter. The value must be between .2 and 5. The default gamma value is 2.2.
 
 

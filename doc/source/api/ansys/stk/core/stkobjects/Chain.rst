@@ -38,7 +38,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.Chain.objects`
-              - This property is deprecated. Use the StartObject, EndObject and Connections properties to configure objects in the chain.
+              - Do not use this property, as it is deprecated. Use the StartObject, EndObject and Connections properties to configure objects in the chain.
             * - :py:attr:`~ansys.stk.core.stkobjects.Chain.recompute_automatically`
               - Opt to have STK automatically recompute accesses each time that an object on which the chain depends is updated.
             * - :py:attr:`~ansys.stk.core.stkobjects.Chain.time_period_type`
@@ -52,9 +52,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.Chain.enable_light_time_delay`
               - Specify whether to take light time delay into account in the computation.
             * - :py:attr:`~ansys.stk.core.stkobjects.Chain.maximum_time_step`
-              - Gets or sets the maximum sampling step size used when computing the chain. The maximum step size limits the amount of time that is allowed to elapse between sampling of the constraint functions during access computations. Uses Time Dimension.
+              - Get or set the maximum sampling step size used when computing the chain. The maximum step size limits the amount of time that is allowed to elapse between sampling of the constraint functions during access computations. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.Chain.time_convergence`
-              - Gets or sets the time convergence for determining access intervals when computing the chain. Uses Time Dimension.
+              - Get or set the time convergence for determining access intervals when computing the chain. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.Chain.constraints`
               - Get the constraints applicable to the chain.
             * - :py:attr:`~ansys.stk.core.stkobjects.Chain.graphics`
@@ -103,7 +103,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Chain.objects
     :type: ObjectLinkCollection
 
-    This property is deprecated. Use the StartObject, EndObject and Connections properties to configure objects in the chain.
+    Do not use this property, as it is deprecated. Use the StartObject, EndObject and Connections properties to configure objects in the chain.
 
 .. py:property:: recompute_automatically
     :canonical: ansys.stk.core.stkobjects.Chain.recompute_automatically
@@ -145,13 +145,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Chain.maximum_time_step
     :type: float
 
-    Gets or sets the maximum sampling step size used when computing the chain. The maximum step size limits the amount of time that is allowed to elapse between sampling of the constraint functions during access computations. Uses Time Dimension.
+    Get or set the maximum sampling step size used when computing the chain. The maximum step size limits the amount of time that is allowed to elapse between sampling of the constraint functions during access computations. Uses Time Dimension.
 
 .. py:property:: time_convergence
     :canonical: ansys.stk.core.stkobjects.Chain.time_convergence
     :type: float
 
-    Gets or sets the time convergence for determining access intervals when computing the chain. Uses Time Dimension.
+    Get or set the time convergence for determining access intervals when computing the chain. Uses Time Dimension.
 
 .. py:property:: constraints
     :canonical: ansys.stk.core.stkobjects.Chain.constraints

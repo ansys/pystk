@@ -91,6 +91,8 @@ def evaluate_hresult(hr:HRESULT) -> None:
             del(punk)
         elif (hr & 0xFFFFFFFF) == 0x80070057: # E_INVALIDARG
             msg = "One or more arguments are invalid."
+        elif (hr & 0xFFFFFFFF) == 0x8007000E: # E_OUTOFMEMORY
+            msg = "Data size exceeds memory limit. Try chunking the data request."
         hresult_val = "(HRESULT = 0x%x)" % (hr & 0xFFFFFFFF)
         raise STKRuntimeError(msg if msg is not None else hresult_val)
             

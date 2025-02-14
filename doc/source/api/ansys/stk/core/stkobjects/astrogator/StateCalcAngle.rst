@@ -21,9 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcAngle.vector1_name`
-              - Gets or sets the first vector of the angle.
+              - Get or set the first vector of the angle.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcAngle.vector2_name`
-              - Gets or sets the second vector of the angle.
+              - Get or set the second vector of the angle.
 
 
 
@@ -42,12 +42,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcAngle.vector1_name
     :type: str
 
-    Gets or sets the first vector of the angle.
+    Get or set the first vector of the angle.
 
 .. py:property:: vector2_name
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcAngle.vector2_name
     :type: str
 
-    Gets or sets the second vector of the angle.
+    Get or set the second vector of the angle.
 
 

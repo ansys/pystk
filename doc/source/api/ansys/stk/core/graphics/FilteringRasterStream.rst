@@ -21,9 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.FilteringRasterStream.filter`
-              - Gets the raster filter that will be applied to the raster stream on each update.
+              - Get the raster filter that will be applied to the raster stream on each update.
             * - :py:attr:`~ansys.stk.core.graphics.FilteringRasterStream.stream`
-              - Gets the raster stream that will have the raster filter applied on each update.
+              - Get the raster stream that will have the raster filter applied on each update.
 
 
 
@@ -42,12 +42,12 @@ Property detail
     :canonical: ansys.stk.core.graphics.FilteringRasterStream.filter
     :type: IRasterFilter
 
-    Gets the raster filter that will be applied to the raster stream on each update.
+    Get the raster filter that will be applied to the raster stream on each update.
 
 .. py:property:: stream
     :canonical: ansys.stk.core.graphics.FilteringRasterStream.stream
     :type: IRasterStream
 
-    Gets the raster stream that will have the raster filter applied on each update.
+    Get the raster stream that will have the raster filter applied on each update.
 
 

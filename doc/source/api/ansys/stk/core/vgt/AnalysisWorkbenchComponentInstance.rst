@@ -21,9 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.AnalysisWorkbenchComponentInstance.instance_path`
-              - Returns a path to the parent object that owns the VGT component.
+              - Return a path to the parent object that owns the VGT component.
             * - :py:attr:`~ansys.stk.core.vgt.AnalysisWorkbenchComponentInstance.template`
-              - Returns a template object the VGT component was created from or null if the VGT component was not created from a template.
+              - Return a template object the VGT component was created from or null if the VGT component was not created from a template.
 
 
 
@@ -42,12 +42,12 @@ Property detail
     :canonical: ansys.stk.core.vgt.AnalysisWorkbenchComponentInstance.instance_path
     :type: str
 
-    Returns a path to the parent object that owns the VGT component.
+    Return a path to the parent object that owns the VGT component.
 
 .. py:property:: template
     :canonical: ansys.stk.core.vgt.AnalysisWorkbenchComponentInstance.template
     :type: IAnalysisWorkbenchComponent
 
-    Returns a template object the VGT component was created from or null if the VGT component was not created from a template.
+    Return a template object the VGT component was created from or null if the VGT component was not created from a template.
 
 

@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ScatteringPointProviderRangeOverCFARCells.scattering_point_model`
-              - Gets the link/embed controller for managing the scattering point model component.
+              - Get the link/embed controller for managing the scattering point model component.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.ScatteringPointProviderRangeOverCFARCells.scattering_point_model
     :type: IComponentLinkEmbedControl
 
-    Gets the link/embed controller for managing the scattering point model component.
+    Get the link/embed controller for managing the scattering point model component.
 
 

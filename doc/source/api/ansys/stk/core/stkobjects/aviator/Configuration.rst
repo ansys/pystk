@@ -34,11 +34,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.Configuration.empty_weight`
-              - Gets or sets the empty weight of the aircraft.
+              - Get or set the empty weight of the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.Configuration.max_landing_weight`
-              - Gets or sets the max landing weight of the aircraft.
+              - Get or set the max landing weight of the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.Configuration.base_drag_index`
-              - Gets or sets the base drag index of the aircraft.
+              - Get or set the base drag index of the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.Configuration.empty_cgx`
               - Get the X value of the aircraft's Empty CG position.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.Configuration.empty_cgy`
@@ -79,19 +79,19 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.Configuration.empty_weight
     :type: float
 
-    Gets or sets the empty weight of the aircraft.
+    Get or set the empty weight of the aircraft.
 
 .. py:property:: max_landing_weight
     :canonical: ansys.stk.core.stkobjects.aviator.Configuration.max_landing_weight
     :type: float
 
-    Gets or sets the max landing weight of the aircraft.
+    Get or set the max landing weight of the aircraft.
 
 .. py:property:: base_drag_index
     :canonical: ansys.stk.core.stkobjects.aviator.Configuration.base_drag_index
     :type: float
 
-    Gets or sets the base drag index of the aircraft.
+    Get or set the base drag index of the aircraft.
 
 .. py:property:: empty_cgx
     :canonical: ansys.stk.core.stkobjects.aviator.Configuration.empty_cgx

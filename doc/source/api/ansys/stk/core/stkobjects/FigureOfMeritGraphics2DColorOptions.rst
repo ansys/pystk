@@ -19,9 +19,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics2DColorOptions.background`
-              - This property is deprecated. Background color of legend.
+              - Do not use this property, as it is deprecated. Background color of legend.
             * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics2DColorOptions.text`
-              - This property is deprecated. Text color of legend.
+              - Do not use this property, as it is deprecated. Text color of legend.
             * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics2DColorOptions.background_color`
               - Background color of legend.
             * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics2DColorOptions.text_color`
@@ -44,13 +44,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.FigureOfMeritGraphics2DColorOptions.background
     :type: agcolor.Color
 
-    This property is deprecated. Background color of legend.
+    Do not use this property, as it is deprecated. Background color of legend.
 
 .. py:property:: text
     :canonical: ansys.stk.core.stkobjects.FigureOfMeritGraphics2DColorOptions.text
     :type: agcolor.Color
 
-    This property is deprecated. Text color of legend.
+    Do not use this property, as it is deprecated. Text color of legend.
 
 .. py:property:: background_color
     :canonical: ansys.stk.core.stkobjects.FigureOfMeritGraphics2DColorOptions.background_color

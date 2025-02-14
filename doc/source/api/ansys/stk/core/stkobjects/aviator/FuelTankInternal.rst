@@ -30,13 +30,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.FuelTankInternal.name`
-              - Gets or sets the name of the fuel tank.
+              - Get or set the name of the fuel tank.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.FuelTankInternal.capacity`
-              - Gets or sets the capacity of the fuel tank.
+              - Get or set the capacity of the fuel tank.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.FuelTankInternal.consumption_order`
-              - Gets or sets the consumption order of the fuel tank.
+              - Get or set the consumption order of the fuel tank.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.FuelTankInternal.initial_fuel_state`
-              - Gets or sets the initial fuel state of the fuel tank.
+              - Get or set the initial fuel state of the fuel tank.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.FuelTankInternal.position_x`
               - Get the X value of the fuel tank's parent relative position.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.FuelTankInternal.position_y`
@@ -61,25 +61,25 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.FuelTankInternal.name
     :type: str
 
-    Gets or sets the name of the fuel tank.
+    Get or set the name of the fuel tank.
 
 .. py:property:: capacity
     :canonical: ansys.stk.core.stkobjects.aviator.FuelTankInternal.capacity
     :type: float
 
-    Gets or sets the capacity of the fuel tank.
+    Get or set the capacity of the fuel tank.
 
 .. py:property:: consumption_order
     :canonical: ansys.stk.core.stkobjects.aviator.FuelTankInternal.consumption_order
     :type: int
 
-    Gets or sets the consumption order of the fuel tank.
+    Get or set the consumption order of the fuel tank.
 
 .. py:property:: initial_fuel_state
     :canonical: ansys.stk.core.stkobjects.aviator.FuelTankInternal.initial_fuel_state
     :type: float
 
-    Gets or sets the initial fuel state of the fuel tank.
+    Get or set the initial fuel state of the fuel tank.
 
 .. py:property:: position_x
     :canonical: ansys.stk.core.stkobjects.aviator.FuelTankInternal.position_x

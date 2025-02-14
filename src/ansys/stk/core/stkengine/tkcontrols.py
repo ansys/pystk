@@ -8,16 +8,16 @@ __all__ = ["GlobeControl", "MapControl", "GfxAnalysisControl"]
 
 import os
 import pathlib
-from tkinter                    import Frame
-if os.name == "nt":
-    from ctypes import (CDLL, POINTER, WinDLL, WinError, c_char_p, cdll, create_unicode_buffer,
-                        get_last_error)
-else:
-    from ctypes import (CDLL, POINTER, cdll)
+from tkinter import Frame
 
-from ..stkx             import Graphics3DControlBase, Graphics2DControlBase, GraphicsAnalysisControlBase
-from ..internal.comutil import IUnknown, INT, LONG, CHAR, LPVOID, LPCWSTR, DWORD, BOOL, WINFUNCTYPE
+if os.name == "nt":
+    from ctypes import CDLL, POINTER, WinDLL, WinError, c_char_p, cdll, create_unicode_buffer, get_last_error
+else:
+    from ctypes import CDLL, POINTER, cdll
+
+from ..internal.comutil import BOOL, CHAR, DWORD, INT, LONG, LPCWSTR, LPVOID, WINFUNCTYPE, IUnknown
 from ..stkengine import STKEngine
+from ..stkx import Graphics2DControlBase, Graphics3DControlBase, GraphicsAnalysisControlBase
 
 if os.name != "nt":
     from ctypes.util import find_library
@@ -42,7 +42,7 @@ class NativeContainerMethods:
             self.AgPythonKeyReleased                                                                        = WINFUNCTYPE(LPVOID, LPVOID, LPVOID, LPVOID, LONG, BOOL, BOOL, BOOL)(("AgPythonKeyReleased", self.jniCore), ((1, "env"), (1, "_this"), (1, "pContainer"), (1, "keyCode"), (1, "ctrlKeyDown"), (1, "altKeyDown"), (1, "shiftKeyDown")))
     def _get_jni_core_path(self):
         if not STKEngine._is_engine_running:
-            raise STKRuntimeError(f"STKEngine.StartApplication() must be called before using the STK Engine controls")
+            raise STKRuntimeError("STKEngine.StartApplication() must be called before using the STK Engine controls")
             
         if os.name != "nt":
             return "libagjnicore.so"

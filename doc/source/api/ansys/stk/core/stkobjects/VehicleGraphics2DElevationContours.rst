@@ -23,7 +23,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DElevationContours.show_filled_contours`
               - Opt whether to display a fill over the area within the contours.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DElevationContours.fill_style`
-              - Gets or sets the type of fill to display.
+              - Get or set the type of fill to display.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DElevationContours.number_of_decimal_digits`
               - Number of decimal digits. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DElevationContours.elevations`
@@ -60,7 +60,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DElevationContours.fill_style
     :type: FillStyle
 
-    Gets or sets the type of fill to display.
+    Get or set the type of fill to display.
 
 .. py:property:: number_of_decimal_digits
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DElevationContours.number_of_decimal_digits

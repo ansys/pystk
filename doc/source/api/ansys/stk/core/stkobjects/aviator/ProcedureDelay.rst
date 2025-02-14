@@ -21,15 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureDelay.altitude_mode`
-              - Gets or sets the mode for handling the altitude of the aircraft.
+              - Get or set the mode for handling the altitude of the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureDelay.altitude`
-              - Gets or sets the requested altitude of the procedure.
+              - Get or set the requested altitude of the procedure.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureDelay.cruise_airspeed_options`
               - Get the interface for the cruise airspeed options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureDelay.turn_direction`
-              - Gets or sets the turn direction of the procedure.
+              - Get or set the turn direction of the procedure.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureDelay.turn_radius_factor`
-              - Gets or sets the turn radius factor.
+              - Get or set the turn radius factor.
 
 
 
@@ -48,13 +48,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureDelay.altitude_mode
     :type: DelayAltitudeMode
 
-    Gets or sets the mode for handling the altitude of the aircraft.
+    Get or set the mode for handling the altitude of the aircraft.
 
 .. py:property:: altitude
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureDelay.altitude
     :type: float
 
-    Gets or sets the requested altitude of the procedure.
+    Get or set the requested altitude of the procedure.
 
 .. py:property:: cruise_airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureDelay.cruise_airspeed_options
@@ -66,12 +66,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureDelay.turn_direction
     :type: NavigatorTurnDirection
 
-    Gets or sets the turn direction of the procedure.
+    Get or set the turn direction of the procedure.
 
 .. py:property:: turn_radius_factor
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureDelay.turn_radius_factor
     :type: float
 
-    Gets or sets the turn radius factor.
+    Get or set the turn radius factor.
 
 

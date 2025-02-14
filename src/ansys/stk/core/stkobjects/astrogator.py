@@ -112,25 +112,36 @@ __all__ = ["AccessCriterion", "AccessStoppingCondition", "AsTriggerCondition", "
 "UserVariableDefinitionCollection", "UserVariableUpdate", "UserVariableUpdateCollection", "VenusGRAM2005", "VenusGRAMDensityType", 
 "YarkovskyFunc"]
 
+from ctypes import POINTER
+from enum import IntEnum
 import typing
 
-from ctypes   import POINTER
-from enum     import IntEnum
-
-from ..internal  import comutil          as agcom
-from ..internal  import coclassutil      as agcls
-from ..internal  import marshall         as agmarshall
-from ..utilities import colors           as agcolor
-from ..internal.comutil     import IUnknown, IDispatch
-from ..internal.apiutil     import (InterfaceProxy, EnumeratorProxy, OutArg, 
-    initialize_from_source_object, get_interface_property, set_interface_attribute, 
-    set_class_attribute, SupportsDeleteCallback)
-from ..utilities.exceptions import STKRuntimeError
-
+from ..internal import coclassutil as agcls, comutil as agcom, marshall as agmarshall
+from ..internal.apiutil import (
+    EnumeratorProxy,
+    InterfaceProxy,
+    OutArg,
+    SupportsDeleteCallback,
+    get_interface_property,
+    initialize_from_source_object,
+    set_class_attribute,
+    set_interface_attribute,
+)
+from ..internal.comutil import IDispatch, IUnknown
+from ..stkobjects import (
+    AberrationType,
+    ComponentLinkEmbedControlReferenceType,
+    ICloneable,
+    IComponentInfo,
+    IComponentLinkEmbedControl,
+    IPropagator,
+    IvClockHost,
+    IvTimeSense,
+    SolidTide,
+)
 from ..stkutil import IDirection, IOrientation, IRuntimeTypeInfoProvider
-from ..stkobjects import (AberrationType, ComponentLinkEmbedControlReferenceType, ICloneable,
-                          IComponentInfo, IComponentLinkEmbedControl, IPropagator, IvClockHost,
-                          IvTimeSense, SolidTide)
+from ..utilities import colors as agcolor
+from ..utilities.exceptions import STKRuntimeError
 
 
 def _raise_uninitialized_error(*args):
@@ -30547,7 +30558,7 @@ class RadiationPressureFunction(IComponentInfo, ICloneable, SupportsDeleteCallba
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
     def override_segment_settings(self) -> bool:
-        """True to use Ck and area values defined on this component for radiation pressure computations, rather than those defined in the MCS segments."""
+        """Do not use this property, as it is deprecated. True to use Ck and area values defined on this component for radiation pressure computations, rather than those defined in the MCS segments."""
         return self._intf.get_property(RadiationPressureFunction._metadata, RadiationPressureFunction._get_override_segment_settings_metadata)
 
     _set_override_segment_settings_metadata = { "offset" : _set_override_segment_settings_method_offset,
@@ -30562,7 +30573,7 @@ class RadiationPressureFunction(IComponentInfo, ICloneable, SupportsDeleteCallba
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def radiation_pressure_coefficient(self) -> float:
-        """Coefficient, Ck, for use with radiation pressure computation."""
+        """Do not use this property, as it is deprecated. Coefficient, Ck, for use with radiation pressure computation."""
         return self._intf.get_property(RadiationPressureFunction._metadata, RadiationPressureFunction._get_radiation_pressure_coefficient_metadata)
 
     _set_radiation_pressure_coefficient_metadata = { "offset" : _set_radiation_pressure_coefficient_method_offset,
@@ -30577,7 +30588,7 @@ class RadiationPressureFunction(IComponentInfo, ICloneable, SupportsDeleteCallba
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def radiation_pressure_area(self) -> float:
-        """Area to be used for radiation pressure computations. Small area dimension."""
+        """Do not use this property, as it is deprecated. Area to be used for radiation pressure computations. Small area dimension."""
         return self._intf.get_property(RadiationPressureFunction._metadata, RadiationPressureFunction._get_radiation_pressure_area_metadata)
 
     _set_radiation_pressure_area_metadata = { "offset" : _set_radiation_pressure_area_method_offset,

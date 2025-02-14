@@ -46,7 +46,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOAnalysisVisibility.object_data`
               - If the Object to which range will be computed is an MTO, use this option to specify the track that will be used to compute that range. By default the MTO's ComputeTrack will be used.
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOAnalysisVisibility.object_path`
-              - Gets or sets the object used for the visibility computation.
+              - Get or set the object used for the visibility computation.
 
 
 
@@ -89,7 +89,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.MTOAnalysisVisibility.object_path
     :type: str
 
-    Gets or sets the object used for the visibility computation.
+    Get or set the object used for the visibility computation.
 
 
 Method detail

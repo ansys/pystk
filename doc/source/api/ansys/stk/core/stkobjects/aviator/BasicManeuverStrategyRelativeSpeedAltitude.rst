@@ -36,33 +36,33 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeSpeedAltitude.target_name`
-              - Gets or sets the target name.
+              - Get or set the target name.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeSpeedAltitude.valid_target_names`
-              - Returns the valid target names.
+              - Return the valid target names.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeSpeedAltitude.target_resolution`
-              - Gets or sets the target position/velocity sampling resolution.
+              - Get or set the target position/velocity sampling resolution.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeSpeedAltitude.relative_altitude_mode`
-              - Gets or sets the mode to define the hold objective for the maneuver.
+              - Get or set the mode to define the hold objective for the maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeSpeedAltitude.elevation_angle`
-              - Gets or sets the goal elevation angle from the target to the aircraft.
+              - Get or set the goal elevation angle from the target to the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeSpeedAltitude.altitude_offset`
-              - Gets or sets the goal altitude offset from the target to the aircraft.
+              - Get or set the goal altitude offset from the target to the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeSpeedAltitude.airspeed_offset_type`
               - Get the airspeed type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeSpeedAltitude.airspeed_offset`
               - Get the airspeed offset from the target.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeSpeedAltitude.use_target_aspect_for_airspeed`
-              - Gets or sets the option to use the target aspect to compute the enforced airspeed difference.
+              - Get or set the option to use the target aspect to compute the enforced airspeed difference.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeSpeedAltitude.use_performance_model_limits`
-              - Gets or sets the option to use the performance model limits for the aircraft.
+              - Get or set the option to use the performance model limits for the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeSpeedAltitude.range_for_equal_speed`
-              - Gets or sets the range at which the aircraft will achieve the same airspeed as the target.
+              - Get or set the range at which the aircraft will achieve the same airspeed as the target.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeSpeedAltitude.range_to_transition_speed`
-              - Gets or sets the range at which the aircraft will begin to slow down to match the speed of the target.
+              - Get or set the range at which the aircraft will begin to slow down to match the speed of the target.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeSpeedAltitude.min_altitude`
-              - Gets or sets the minimum altitude boundary for the maneuver.
+              - Get or set the minimum altitude boundary for the maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeSpeedAltitude.max_altitude`
-              - Gets or sets the maximum altitude boundary for the maneuver.
+              - Get or set the maximum altitude boundary for the maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeSpeedAltitude.min_airspeed`
               - Get the minimum airspeed limit for the maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeSpeedAltitude.min_airspeed_type`
@@ -72,9 +72,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeSpeedAltitude.max_airspeed_type`
               - Get the airspeed type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeSpeedAltitude.stop_condition`
-              - Gets or sets the stopping condition for the maneuver.
+              - Get or set the stopping condition for the maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeSpeedAltitude.compensate_for_coriolis_acceleration`
-              - Gets or sets the option to compensate for the acceleration due to the Coriolis effect.
+              - Get or set the option to compensate for the acceleration due to the Coriolis effect.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeSpeedAltitude.position_vel_strategies`
               - Get the position velocity strategies for Rel Speed Alt.
 
@@ -95,37 +95,37 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeSpeedAltitude.target_name
     :type: str
 
-    Gets or sets the target name.
+    Get or set the target name.
 
 .. py:property:: valid_target_names
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeSpeedAltitude.valid_target_names
     :type: list
 
-    Returns the valid target names.
+    Return the valid target names.
 
 .. py:property:: target_resolution
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeSpeedAltitude.target_resolution
     :type: float
 
-    Gets or sets the target position/velocity sampling resolution.
+    Get or set the target position/velocity sampling resolution.
 
 .. py:property:: relative_altitude_mode
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeSpeedAltitude.relative_altitude_mode
     :type: RelativeAltitudeMode
 
-    Gets or sets the mode to define the hold objective for the maneuver.
+    Get or set the mode to define the hold objective for the maneuver.
 
 .. py:property:: elevation_angle
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeSpeedAltitude.elevation_angle
     :type: typing.Any
 
-    Gets or sets the goal elevation angle from the target to the aircraft.
+    Get or set the goal elevation angle from the target to the aircraft.
 
 .. py:property:: altitude_offset
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeSpeedAltitude.altitude_offset
     :type: float
 
-    Gets or sets the goal altitude offset from the target to the aircraft.
+    Get or set the goal altitude offset from the target to the aircraft.
 
 .. py:property:: airspeed_offset_type
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeSpeedAltitude.airspeed_offset_type
@@ -143,37 +143,37 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeSpeedAltitude.use_target_aspect_for_airspeed
     :type: bool
 
-    Gets or sets the option to use the target aspect to compute the enforced airspeed difference.
+    Get or set the option to use the target aspect to compute the enforced airspeed difference.
 
 .. py:property:: use_performance_model_limits
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeSpeedAltitude.use_performance_model_limits
     :type: bool
 
-    Gets or sets the option to use the performance model limits for the aircraft.
+    Get or set the option to use the performance model limits for the aircraft.
 
 .. py:property:: range_for_equal_speed
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeSpeedAltitude.range_for_equal_speed
     :type: float
 
-    Gets or sets the range at which the aircraft will achieve the same airspeed as the target.
+    Get or set the range at which the aircraft will achieve the same airspeed as the target.
 
 .. py:property:: range_to_transition_speed
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeSpeedAltitude.range_to_transition_speed
     :type: float
 
-    Gets or sets the range at which the aircraft will begin to slow down to match the speed of the target.
+    Get or set the range at which the aircraft will begin to slow down to match the speed of the target.
 
 .. py:property:: min_altitude
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeSpeedAltitude.min_altitude
     :type: float
 
-    Gets or sets the minimum altitude boundary for the maneuver.
+    Get or set the minimum altitude boundary for the maneuver.
 
 .. py:property:: max_altitude
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeSpeedAltitude.max_altitude
     :type: float
 
-    Gets or sets the maximum altitude boundary for the maneuver.
+    Get or set the maximum altitude boundary for the maneuver.
 
 .. py:property:: min_airspeed
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeSpeedAltitude.min_airspeed
@@ -203,13 +203,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeSpeedAltitude.stop_condition
     :type: RelativeSpeedAltitudeStopCondition
 
-    Gets or sets the stopping condition for the maneuver.
+    Get or set the stopping condition for the maneuver.
 
 .. py:property:: compensate_for_coriolis_acceleration
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeSpeedAltitude.compensate_for_coriolis_acceleration
     :type: bool
 
-    Gets or sets the option to compensate for the acceleration due to the Coriolis effect.
+    Get or set the option to compensate for the acceleration due to the Coriolis effect.
 
 .. py:property:: position_vel_strategies
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeSpeedAltitude.position_vel_strategies

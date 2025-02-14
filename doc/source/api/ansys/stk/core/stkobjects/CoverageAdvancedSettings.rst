@@ -25,7 +25,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageAdvancedSettings.save_mode`
               - Specify whether accesses are saved with the coverage definition and, if not, whether they are recomputed on load.
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageAdvancedSettings.region_access_acceleration`
-              - Controls the use of region access computations to speedup overall coverage computations.
+              - Control the use of region access computations to speedup overall coverage computations.
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageAdvancedSettings.enable_light_time_delay`
               - Specify whether to take light time delay into account in the coverage computation.
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageAdvancedSettings.event_detection`
@@ -72,7 +72,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.CoverageAdvancedSettings.region_access_acceleration
     :type: CoverageRegionAccessAccelerationType
 
-    Controls the use of region access computations to speedup overall coverage computations.
+    Control the use of region access computations to speedup overall coverage computations.
 
 .. py:property:: enable_light_time_delay
     :canonical: ansys.stk.core.stkobjects.CoverageAdvancedSettings.enable_light_time_delay

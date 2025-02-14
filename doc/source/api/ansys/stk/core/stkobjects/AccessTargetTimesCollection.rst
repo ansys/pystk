@@ -28,7 +28,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessTargetTimesCollection.count`
-              - Returns a number of elements in the collection.
+              - Return a number of elements in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessTargetTimesCollection._new_enum`
               - Enumerates the elements in the collection.
 
@@ -49,7 +49,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.AccessTargetTimesCollection.count
     :type: int
 
-    Returns a number of elements in the collection.
+    Return a number of elements in the collection.
 
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkobjects.AccessTargetTimesCollection._new_enum

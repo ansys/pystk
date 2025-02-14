@@ -21,7 +21,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGPSSpecifyAlmanac.filename`
               - Almanac file name.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGPSSpecifyAlmanac.properties`
-              - Gets the almanac properties.
+              - Get the almanac properties.
 
 
 
@@ -46,6 +46,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleGPSSpecifyAlmanac.properties
     :type: IVehicleGPSAlmanacProperties
 
-    Gets the almanac properties.
+    Get the almanac properties.
 
 

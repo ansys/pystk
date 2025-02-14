@@ -19,7 +19,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ISite.name`
-              - Gets or sets the name of the site.
+              - Get or set the name of the site.
 
 
 Import detail
@@ -37,6 +37,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.ISite.name
     :type: str
 
-    Gets or sets the name of the site.
+    Get or set the name of the site.
 
 

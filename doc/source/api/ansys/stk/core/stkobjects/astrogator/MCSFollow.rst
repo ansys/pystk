@@ -36,11 +36,11 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSFollow.leader`
               - Get the leader object.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSFollow.x_offset`
-              - Gets or sets the distance that the spacecraft will be offset from the leader's body frame along the X axis. Uses Distance Dimension.
+              - Get or set the distance that the spacecraft will be offset from the leader's body frame along the X axis. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSFollow.y_offset`
-              - Gets or sets the distance that the spacecraft will be offset from the leader's body frame along the Y axis. Uses Distance Dimension.
+              - Get or set the distance that the spacecraft will be offset from the leader's body frame along the Y axis. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSFollow.z_offset`
-              - Gets or sets the distance that the spacecraft will be offset from the leader's body frame along the Z axis. Uses Distance Dimension.
+              - Get or set the distance that the spacecraft will be offset from the leader's body frame along the Z axis. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSFollow.separation_conditions`
               - If separation conditions are specified, the list of separation conditions.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSFollow.spacecraft_parameters`
@@ -48,15 +48,15 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSFollow.fuel_tank`
               - Get the spacecraft's fuel tank properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSFollow.joining_type`
-              - Gets or sets the joining type.
+              - Get or set the joining type.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSFollow.separation_type`
-              - Gets or sets the separation type.
+              - Get or set the separation type.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSFollow.spacecraft_and_fuel_tank_type`
-              - Gets or sets the spacecraft snd fuel tank configuration type.
+              - Get or set the spacecraft snd fuel tank configuration type.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSFollow.joining_conditions`
               - If joining conditions are specified, the list of joining conditions.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSFollow.control_parameters_available`
-              - Returns whether or not the control parameters can be set.
+              - Return whether or not the control parameters can be set.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSFollow.user_variables`
               - Interface used to modify user variables for the follow segment.
 
@@ -83,19 +83,19 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSFollow.x_offset
     :type: float
 
-    Gets or sets the distance that the spacecraft will be offset from the leader's body frame along the X axis. Uses Distance Dimension.
+    Get or set the distance that the spacecraft will be offset from the leader's body frame along the X axis. Uses Distance Dimension.
 
 .. py:property:: y_offset
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSFollow.y_offset
     :type: float
 
-    Gets or sets the distance that the spacecraft will be offset from the leader's body frame along the Y axis. Uses Distance Dimension.
+    Get or set the distance that the spacecraft will be offset from the leader's body frame along the Y axis. Uses Distance Dimension.
 
 .. py:property:: z_offset
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSFollow.z_offset
     :type: float
 
-    Gets or sets the distance that the spacecraft will be offset from the leader's body frame along the Z axis. Uses Distance Dimension.
+    Get or set the distance that the spacecraft will be offset from the leader's body frame along the Z axis. Uses Distance Dimension.
 
 .. py:property:: separation_conditions
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSFollow.separation_conditions
@@ -119,19 +119,19 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSFollow.joining_type
     :type: FollowJoin
 
-    Gets or sets the joining type.
+    Get or set the joining type.
 
 .. py:property:: separation_type
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSFollow.separation_type
     :type: FollowSeparation
 
-    Gets or sets the separation type.
+    Get or set the separation type.
 
 .. py:property:: spacecraft_and_fuel_tank_type
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSFollow.spacecraft_and_fuel_tank_type
     :type: FollowSpacecraftAndFuelTank
 
-    Gets or sets the spacecraft snd fuel tank configuration type.
+    Get or set the spacecraft snd fuel tank configuration type.
 
 .. py:property:: joining_conditions
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSFollow.joining_conditions
@@ -143,7 +143,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSFollow.control_parameters_available
     :type: bool
 
-    Returns whether or not the control parameters can be set.
+    Return whether or not the control parameters can be set.
 
 .. py:property:: user_variables
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSFollow.user_variables

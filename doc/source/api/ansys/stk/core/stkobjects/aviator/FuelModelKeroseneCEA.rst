@@ -19,9 +19,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.FuelModelKeroseneCEA.subtype`
-              - Gets or sets the fuel subtype.
+              - Get or set the fuel subtype.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.FuelModelKeroseneCEA.specific_energy`
-              - Gets or sets the specific energy of the jet fuel.
+              - Get or set the specific energy of the jet fuel.
 
 
 
@@ -40,12 +40,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.FuelModelKeroseneCEA.subtype
     :type: CEAFuelType
 
-    Gets or sets the fuel subtype.
+    Get or set the fuel subtype.
 
 .. py:property:: specific_energy
     :canonical: ansys.stk.core.stkobjects.aviator.FuelModelKeroseneCEA.specific_energy
     :type: float
 
-    Gets or sets the specific energy of the jet fuel.
+    Get or set the specific energy of the jet fuel.
 
 

@@ -64,9 +64,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkutil.IPosition.position_type`
-              - Gets the type of position currently being used.
+              - Get the type of position currently being used.
             * - :py:attr:`~ansys.stk.core.stkutil.IPosition.central_body_name`
-              - Gets the central body.
+              - Get the central body.
 
 
 Import detail
@@ -84,13 +84,13 @@ Property detail
     :canonical: ansys.stk.core.stkutil.IPosition.position_type
     :type: PositionType
 
-    Gets the type of position currently being used.
+    Get the type of position currently being used.
 
 .. py:property:: central_body_name
     :canonical: ansys.stk.core.stkutil.IPosition.central_body_name
     :type: str
 
-    Gets the central body.
+    Get the central body.
 
 
 Method detail

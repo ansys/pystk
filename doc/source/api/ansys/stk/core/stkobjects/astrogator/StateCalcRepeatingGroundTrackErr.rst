@@ -34,13 +34,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcRepeatingGroundTrackErr.central_body_name`
-              - Gets or sets the central body of the component.
+              - Get or set the central body of the component.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcRepeatingGroundTrackErr.reference_longitude`
-              - Gets or sets the longitude at the equator to be used as a reference for the repeating ground track. Uses Angle Dimension.
+              - Get or set the longitude at the equator to be used as a reference for the repeating ground track. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcRepeatingGroundTrackErr.repeat_count`
-              - Gets or sets the number of orbits before the ground track repeats over the same longitude. Dimensionless.
+              - Get or set the number of orbits before the ground track repeats over the same longitude. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcRepeatingGroundTrackErr.control_parameters_available`
-              - Returns whether or not the control parameters can be set.
+              - Return whether or not the control parameters can be set.
 
 
 
@@ -59,25 +59,25 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcRepeatingGroundTrackErr.central_body_name
     :type: str
 
-    Gets or sets the central body of the component.
+    Get or set the central body of the component.
 
 .. py:property:: reference_longitude
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcRepeatingGroundTrackErr.reference_longitude
     :type: typing.Any
 
-    Gets or sets the longitude at the equator to be used as a reference for the repeating ground track. Uses Angle Dimension.
+    Get or set the longitude at the equator to be used as a reference for the repeating ground track. Uses Angle Dimension.
 
 .. py:property:: repeat_count
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcRepeatingGroundTrackErr.repeat_count
     :type: float
 
-    Gets or sets the number of orbits before the ground track repeats over the same longitude. Dimensionless.
+    Get or set the number of orbits before the ground track repeats over the same longitude. Dimensionless.
 
 .. py:property:: control_parameters_available
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcRepeatingGroundTrackErr.control_parameters_available
     :type: bool
 
-    Returns whether or not the control parameters can be set.
+    Return whether or not the control parameters can be set.
 
 
 Method detail

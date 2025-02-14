@@ -32,7 +32,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICatalogSource.child_names`
-              - Returns the child names.
+              - Return the child names.
 
 
 Import detail
@@ -50,7 +50,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.ICatalogSource.child_names
     :type: list
 
-    Returns the child names.
+    Return the child names.
 
 
 Method detail

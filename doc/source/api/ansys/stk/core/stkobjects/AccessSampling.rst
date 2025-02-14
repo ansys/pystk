@@ -32,7 +32,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessSampling.type`
               - Type of sampling method used.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessSampling.supported_types`
-              - Returns an array of valid choices.
+              - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessSampling.strategy`
               - Sampling method strategy.
 
@@ -59,7 +59,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.AccessSampling.supported_types
     :type: list
 
-    Returns an array of valid choices.
+    Return an array of valid choices.
 
 .. py:property:: strategy
     :canonical: ansys.stk.core.stkobjects.AccessSampling.strategy
