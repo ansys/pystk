@@ -106,7 +106,7 @@ extend-exclude = [
 
 [tool.ruff.lint]
 select = [
-#    "E",    # pycodestyle, see https://beta.ruff.rs/docs/rules/#pycodestyle-e-w
+    "E",    # pycodestyle, see https://beta.ruff.rs/docs/rules/#pycodestyle-e-w
     "D",     # pydocstyle, see https://beta.ruff.rs/docs/rules/#pydocstyle-d
     "F",     # pyflakes, see https://beta.ruff.rs/docs/rules/#pyflakes-f
     "PYI",   # flake8-pyi, see https://docs.astral.sh/ruff/rules/#flake8-pyi-pyi 
@@ -116,12 +116,13 @@ select = [
     "TD",    # flake8-todos, https://docs.astral.sh/ruff/rules/#flake8-todos-td
 ]
 ignore = [
-#   "E501",  # Line too long. Ignoring this so "ruff.formatter" manages line length.
-    "D204",  # One blank line required after class docstring.
-    "D212",  # Multi-line docstring summary should start at the first line.
-    "D400",  # First line should end with a period.
+    "E501",  # Line too long. Ignoring this so "ruff.formatter" manages line length.
+    "E743",  # Ambiguous function name. N802 and Python naming restrictions ensure unambiguous names.
+    "D204",  # One blank line required after class docstring
+    "D212",  # Multi-line docstring summary should start at the first line
+    "D400",  # First line should end with a period
     "F821",  # Undefined name. PyFlakes can not handle forward reference annotations. Using flake8-pyi instead.
-    "TD002", # Missing author in TODOs comment.
+    "TD002", # Missing author in TODOs comment
 ]
 
 [tool.ruff.lint.pydocstyle]

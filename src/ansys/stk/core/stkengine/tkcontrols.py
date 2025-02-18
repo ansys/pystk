@@ -18,6 +18,7 @@ else:
 from ..internal.comutil import BOOL, CHAR, DWORD, INT, LONG, LPCWSTR, LPVOID, WINFUNCTYPE, IUnknown
 from ..stkengine import STKEngine
 from ..stkx import Graphics2DControlBase, Graphics3DControlBase, GraphicsAnalysisControlBase
+from ..utilities.exceptions import STKAttributeError
 
 if os.name != "nt":
     from ctypes.util import find_library
@@ -140,7 +141,7 @@ class ControlBase(Frame):
     def __setattr__(self, attrname, value):
         try:
             self._interface.__setattr__(self, attrname, value)
-        except:
+        except STKAttributeError:
             Frame.__setattr__(self, attrname, value)
         
     def _configure(self, event):
