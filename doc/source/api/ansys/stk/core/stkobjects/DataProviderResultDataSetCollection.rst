@@ -147,7 +147,7 @@ Method detail
 
         :obj:`~ndarray`
 
-.. py:method:: to_pandas_dataframe(self, index_element_name: str, data_provider_elements: IAgDataPrvElements) -> DataFrame:
+.. py:method:: to_pandas_dataframe(self, index_element_name: str, data_provider_elements: DataProviderElements) -> DataFrame:
     :canonical: ansys.stk.core.stkobjects.DataProviderResultDataSetCollection.to_pandas_dataframe
 
     Return a row formatted dataset collection as a pandas DataFrame. This function requires ``pandas``.
