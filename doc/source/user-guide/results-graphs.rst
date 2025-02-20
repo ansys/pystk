@@ -18,19 +18,19 @@ Report styles
 To browse the various Report styles available for a particular object in STK, and their corresponding Data Providers,
 right-click an object in the STK Object Browser and navigate to the Graph and Report Manager menu. In the manager dialog, expand the Installed Styles folder. This displays a list of the various report styles that are available for particular object.
 
-[INSERT IMAGE: report-styles-expand]
+(./img/report-styles-expand.png)
 
 To view the Data Providers being used by a particular report style, click a report style, and click the Properties
-button [INSERT IMAGE: properties-button] to display the Report Style window. 
+button (./img/properties-button.png) to display the Report Style window. 
 
-[INSERT IMAGE: report-style-window]
+(./img/report-style-window.png)
 
 Report contents
 ===============
 
 In the Report Contents section of the Report Style window, the various Data Providers that are used to derive the particular report are listed. These Data Providers provide the actual data content to the report. 
 
-[INSERT IMAGE: report-contents]
+(./img/report-contents.png)
 
 .. note::
     The Section, Line, and Time elements are used to provide formatting for the report style; they are not actual data providers.
@@ -40,7 +40,7 @@ Data Providers
 
 In the Data Providers section of the Report Style window, the Data Providers available for a particular object are listed. Expand a particular group to view the nested Data Providers associated with that group. Expanding a particular Data Provider further to display the data Elements that are associated with it. 
 
-[INSERT IMAGE: data-providers]
+(./img/data-providers.png)
 
 Groups, Data Providers, and Elements are the organizing principles of the Data Provider functionality provided by the STK Object Model. 
 
@@ -49,7 +49,7 @@ Object Model
 
 Now that you have explored the concepts of Report Styles and Data Providers, continue to use the example report used above, J2000 Position Velocity, to demonstrate retrieving it's data through the Object Model. First, recall what Data Providers the report was constructed from. In the Report Contents window, the J2000 Position Velocity Report is made up of specific elements of the J2000 Data Provider from two groups — Cartesian Velocity and Cartesian Position. 
 
-[INSERT IMAGE: object-model-report-contents]
+(./img/object-model-report-contents.png)
 
 Get connected
 =============
@@ -122,7 +122,7 @@ Data Provider Time Inputs
 
 In the Time Period section of the Report Window in STK, highlight J2000 Position Velocity and click the Specify Time Properties radio button. The J2000 Position Velocity Report uses a time period to provide the underlying Data Providers information about what data to compute. You need to provide the same information to the Object Model Data Providers. 
 
-[INSERT IMAGE: specify-time-properties]
+(./img/specify-time-properties.png)
 
 Retrieve the Data 
 =================
@@ -155,7 +155,7 @@ Retrieve Specific Elements
 
 Recall that your original Cartesian Position Velocity Report contained only four elements of the Cartesian Velocity J2000 Group — x, y, z, and speed. Similarly, the Cartesian Position J2000 Data Provider contained within your Report Style only contains 3 elements — x, y, and z.
 
-[INSERT IMAGE: object-model-report-contents]
+(./img/object-model-report-contents.png)
 
 When you executed the J2000 Data Provider of Cartesian Velocity, you actually retrieved seven elements instead of the four specifically contained in the
 report, adding the Time, radial, and intrack elements to your DataProvider Result. To be precise as possible, you want IAgDRResult to contain only the elements which were contained in the original report. To do this, use the ExecElements() method. 
@@ -179,7 +179,7 @@ Traverse the result data
 
 If you review look your original report, the data in the report consisted of time intervals with various elements. 
 
-[INSERT IMAGE: original-report-data]
+(./img/original-report-data.png)
 
 Similarly, you need to cast your result to the appropriate interface to make use of your data. In the case of our J2000 Cartesian Velocity and Position DataProviders, that interface is the IAgDrIntervalCollection. Since each data provider result shares the same result type, you can consolidate the data traversal into one method, which takes an IAgDrResult interface: 
 
