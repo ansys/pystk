@@ -31,7 +31,9 @@ from ctypes import CFUNCTYPE, Structure, addressof, byref, c_int, c_size_t, c_vo
 import os
 import time
 
+from IPython.display import display
 from jupyter_rfb import RemoteFrameBuffer
+from jupyter_rfb._png import array2png
 import numpy as np
 
 from ...internal.comutil import (
@@ -50,7 +52,7 @@ from ...internal.comutil import (
     Succeeded,
 )
 from ...internal.stkxrfb import IRemoteFrameBuffer, IRemoteFrameBufferHost
-from ...stkengine import STKEngineApplication
+from ...stkobjects import StkObjectRoot
 from ...stkx import ButtonValues, Graphics2DControlBase, Graphics3DControlBase, GraphicsAnalysisControlBase, ShiftValues
 from ...utilities.exceptions import STKAttributeError
 
@@ -238,9 +240,10 @@ class WidgetBase(RemoteFrameBuffer):
     _mouse3 = 0x0400
 
     def __init__(self,
-                 stk: STKEngineApplication,
+                 root: StkObjectRoot,
                  w: int = 800,
                  h: int = 600,
+                 title: str = None,
                  resizable: bool = True):
         """Construct an object of type WidgetBase."""
         super().__init__()
@@ -289,14 +292,16 @@ class WidgetBase(RemoteFrameBuffer):
         if asyncio_timer_manager is None:
             asyncio_timer_manager = AsyncioTimerManager()
 
-        self.stk = stk
+        self.root = root
+        self.title = title or self.root.current_scenario.instance_name
+        self.camera = self.root.current_scenario.scene_manager.scenes.item(0).camera
 
     def __del__(self):
         del self._rfb
         del self._rfbHostImpl
         del self._rfbHost
         del self._unk
-        self.stk = None
+        self.root = None
 
     def __create_frame_buffer(self, w: int, h: int):
         if self.frame is not None:
@@ -375,10 +380,45 @@ class WidgetBase(RemoteFrameBuffer):
             dy = int(event["dy"] * self.pixel_ratio/100)
             self._rfb.notify_mouse_wheel(x, y, -dy, self.__get_modifiers(event))
 
+    def set_title(self, title):
+        self.title = title
+
     def get_frame(self):
         self._rfb.snap_to_rbg_raster(self.pointer)
         return self.frame
+    
+    def animate(self, time_step):        
+        self.root.current_scenario.animation_settings.animation_step_value = time_step
+        self.root.execute_command("Animate * Start Loop")
+        self.show()
 
+    def _repr_mimebundle_(self, include=None, exclude=None):
+        """Return the desired MIME type representation.
+
+        The MIME type representation is a dictionary relating MIME types to
+        the data that should be rendered in that format.
+
+        The main goal of this function is to provide the right type of data when
+        renedring different types of documents, including HTML, Notebooks, and
+        PDF files.
+
+        """
+        needs_snapshot = os.getenv("BUILD_EXAMPLES", "false") == "true"
+        if not needs_snapshot:
+            data = super()._repr_mimebundle_(include=include, exclude=exclude)
+        else:
+            data = {
+                "image/png": array2png(self.snapshot().data)
+            }
+        return data
+
+    def show(self, in_sidecar=False, **snapshot_kwargs):
+        if in_sidecar:
+            from sidecar import Sidecar
+            with Sidecar(title=self.title):
+                display(self)
+        else:
+            return self
 
 class GlobeWidget(Graphics3DControlBase, WidgetBase):
     """The 3D Globe widget for jupyter."""
@@ -388,7 +428,7 @@ class GlobeWidget(Graphics3DControlBase, WidgetBase):
 
     #   stk = STKEngine.StartApplication(noGraphics=False)
     #   root = stk.NewObjectRoot()
-    #   g = GlobeWidget(stk, 600, 400)
+    #   g = GlobeWidget(root, 600, 400)
     #   root.NewScenario("RemoteFrameBuffer")
     #   root.ExecuteCommand('Animate * Start Loop')
     #   g
@@ -396,9 +436,9 @@ class GlobeWidget(Graphics3DControlBase, WidgetBase):
     _progid = "STKX12.VOControl.1"
     _interface = Graphics3DControlBase
 
-    def __init__(self, stk: STKEngineApplication, w: int, h: int):
+    def __init__(self, root: StkObjectRoot, w: int, h: int, title: str = None):
         """Construct an object of type GlobeWidget."""
-        WidgetBase.__init__(self, stk, w, h)
+        WidgetBase.__init__(self, root, w, h, title)
 
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
@@ -410,9 +450,9 @@ class MapWidget(Graphics2DControlBase, WidgetBase):
     _progid = "STKX12.2DControl.1"
     _interface = Graphics2DControlBase
 
-    def __init__(self, stk: STKEngineApplication, w: int, h: int):
+    def __init__(self, root: StkObjectRoot, w: int, h: int, title: str = None):
         """Construct an object of type MapWidget."""
-        WidgetBase.__init__(self, stk, w, h)
+        WidgetBase.__init__(self, root, w, h, title)
 
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
@@ -424,9 +464,9 @@ class GfxAnalysisWidget(GraphicsAnalysisControlBase, WidgetBase):
     _progid = "STKX12.GfxAnalysisControl.1"
     _interface = GraphicsAnalysisControlBase
 
-    def __init__(self, stk: STKEngineApplication, w: int, h: int):
+    def __init__(self, root: StkObjectRoot, w: int, h: int, title: str = None):
         """Construct an object of type GfxAnalysisWidget."""
-        WidgetBase.__init__(self, stk, w, h)
+        WidgetBase.__init__(self, root, w, h, title)
 
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
