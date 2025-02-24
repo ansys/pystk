@@ -158,7 +158,7 @@ class Recorder:
 
             type_name = self._get_classname(frame, member)
 
-            if type_name != None:
+            if type_name is not None:
 
                 import inspect
 

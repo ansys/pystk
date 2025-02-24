@@ -207,7 +207,7 @@ class STKEngine(object):
             x11lib = cdll.LoadLibrary(find_library("X11"))
             xinit_threads = CFUNCTYPE(None)(("XInitThreads", x11lib))
             xinit_threads()
-        except:
+        except OSError:
             raise STKRuntimeError("Failed attempting to run graphics mode without X11.")
             
     @staticmethod

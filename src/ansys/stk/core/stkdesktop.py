@@ -46,7 +46,7 @@ class ThreadMarshaller(object):
             raise STKRuntimeError("ThreadMarshaller is only available on Windows.")
         if not hasattr(obj, "_intf"):
             raise STKRuntimeError("Invalid object to passed to ThreadMarshaller.")
-        if type(obj._intf) != IUnknown:
+        if type(obj._intf) is not IUnknown:
             raise STKRuntimeError("ThreadMarshaller is not available on the gRPC API.")
         self._obj = obj
         self._obj_type = type(obj)
@@ -107,7 +107,7 @@ class STKDesktopApplication(UiApplication):
         
     def __del__(self):
         """Destruct the STKDesktopApplication object after all references to the object are deleted."""
-        if self._intf and type(self._intf) == IUnknown:
+        if self._intf and type(self._intf) is IUnknown:
             CoInitializeManager.uninitialize()
 
     @property
@@ -215,7 +215,7 @@ class STKDesktop(object):
             if grpc_host != "localhost":
                 try:
                     socket.inet_pton(socket.AF_INET, grpc_host)
-                except:
+                except OSError:
                     try:
                         socket.inet_pton(socket.AF_INET6, grpc_host)
                     except OSError:
