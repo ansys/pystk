@@ -23,7 +23,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DModelglTFImageBased.file_path`
               - Absolute path and filename of the glTF image based file.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DModelglTFImageBased.reflection_reference_frame`
-              - Gets or sets the system used to orient an environment map around a glTF model.
+              - Get or set the system used to orient an environment map around a glTF model.
 
 
 
@@ -54,6 +54,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Graphics3DModelglTFImageBased.reflection_reference_frame
     :type: str
 
-    Gets or sets the system used to orient an environment map around a glTF model.
+    Get or set the system used to orient an environment map around a glTF model.
 
 

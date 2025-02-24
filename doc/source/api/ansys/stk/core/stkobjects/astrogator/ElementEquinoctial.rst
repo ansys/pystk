@@ -23,7 +23,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementEquinoctial.semimajor_axis`
               - Half the length of the major axis of the orbital ellipse. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementEquinoctial.mean_motion`
-              - Gets or sets the average angular rate of the satellite based on 2 body motion. Uses Rate Dimension.
+              - Get or set the average angular rate of the satellite based on 2 body motion. Uses Rate Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementEquinoctial.h`
               - h/k collectively describe the shape of the satellite's orbit and the position of perigee. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementEquinoctial.k`
@@ -33,7 +33,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementEquinoctial.q`
               - p/q collectively describe the orientation of the satellite's orbit plane. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementEquinoctial.mean_longitude`
-              - Specifies a satellite's position within its orbit at epoch and equals the sum of the classical Right Ascension of the Ascending Node, Argument of Perigee, and Mean Anomaly. Uses Angle Dimension.
+              - Specify a satellite's position within its orbit at epoch and equals the sum of the classical Right Ascension of the Ascending Node, Argument of Perigee, and Mean Anomaly. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ElementEquinoctial.formulation`
               - Retrograde, which has its singularity at an inclination of 0 deg. Posigrade, which has its singularity at an inclination of 180 deg.
 
@@ -60,7 +60,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.ElementEquinoctial.mean_motion
     :type: float
 
-    Gets or sets the average angular rate of the satellite based on 2 body motion. Uses Rate Dimension.
+    Get or set the average angular rate of the satellite based on 2 body motion. Uses Rate Dimension.
 
 .. py:property:: h
     :canonical: ansys.stk.core.stkobjects.astrogator.ElementEquinoctial.h
@@ -90,7 +90,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.ElementEquinoctial.mean_longitude
     :type: typing.Any
 
-    Specifies a satellite's position within its orbit at epoch and equals the sum of the classical Right Ascension of the Ascending Node, Argument of Perigee, and Mean Anomaly. Uses Angle Dimension.
+    Specify a satellite's position within its orbit at epoch and equals the sum of the classical Right Ascension of the Ascending Node, Argument of Perigee, and Mean Anomaly. Uses Angle Dimension.
 
 .. py:property:: formulation
     :canonical: ansys.stk.core.stkobjects.astrogator.ElementEquinoctial.formulation

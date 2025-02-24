@@ -21,19 +21,19 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ScriptingSegment.component_name`
-              - Gets or sets the name of the component.
+              - Get or set the name of the component.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ScriptingSegment.attribute`
-              - Gets or sets the name of the attribute.
+              - Get or set the name of the attribute.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ScriptingSegment.unit`
-              - Gets or sets the unit.
+              - Get or set the unit.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ScriptingSegment.available_attribute_values`
-              - Returns a list of available attribute values.
+              - Return a list of available attribute values.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ScriptingSegment.read_only_property`
               - True if it is a read-only property.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ScriptingSegment.object_name`
-              - Gets or sets the profile/segment that contains the attribute.
+              - Get or set the profile/segment that contains the attribute.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ScriptingSegment.available_object_names`
-              - Returns a list of available profile/segment names.
+              - Return a list of available profile/segment names.
 
 
 
@@ -52,25 +52,25 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingSegment.component_name
     :type: str
 
-    Gets or sets the name of the component.
+    Get or set the name of the component.
 
 .. py:property:: attribute
     :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingSegment.attribute
     :type: str
 
-    Gets or sets the name of the attribute.
+    Get or set the name of the attribute.
 
 .. py:property:: unit
     :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingSegment.unit
     :type: str
 
-    Gets or sets the unit.
+    Get or set the unit.
 
 .. py:property:: available_attribute_values
     :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingSegment.available_attribute_values
     :type: list
 
-    Returns a list of available attribute values.
+    Return a list of available attribute values.
 
 .. py:property:: read_only_property
     :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingSegment.read_only_property
@@ -82,12 +82,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingSegment.object_name
     :type: str
 
-    Gets or sets the profile/segment that contains the attribute.
+    Get or set the profile/segment that contains the attribute.
 
 .. py:property:: available_object_names
     :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingSegment.available_object_names
     :type: list
 
-    Returns a list of available profile/segment names.
+    Return a list of available profile/segment names.
 
 

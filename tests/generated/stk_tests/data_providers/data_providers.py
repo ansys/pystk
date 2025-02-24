@@ -1272,7 +1272,7 @@ class EarlyBoundTests(TestBase):
             '<Element Name="Pol. Rel. Angle" Type="0" Dim="AngleUnit"/>',
             '<Element Name="Atmos Loss" Type="0" Dim="RatioUnit"/>',
             '<DataPrv Name="Interferers" Desc="Interferer Information" PropBitMask="17">',
-            '<DataPrv Name="LinkInfo" Desc="Link Information" PropBitMask="770">',
+            '<DataPrv Name="LinkInfo" Desc="Link Information" PropBitMask="514">',
             '<Element Name="EIRP" Type="0" Dim="PowerUnit"/>',
             '<Element Name="Rcvd. Frequency" Type="0" Dim="FrequencyUnit"/>',
             '<Element Name="Tantenna" Type="0" Dim="Temperature"/>',

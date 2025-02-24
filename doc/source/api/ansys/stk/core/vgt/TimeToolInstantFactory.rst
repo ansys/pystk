@@ -44,9 +44,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.TimeToolInstantFactory.today`
-              - Returns Today time instant.
+              - Return Today time instant.
             * - :py:attr:`~ansys.stk.core.vgt.TimeToolInstantFactory.tomorrow`
-              - Returns Tomorrow time instant.
+              - Return Tomorrow time instant.
 
 
 
@@ -65,13 +65,13 @@ Property detail
     :canonical: ansys.stk.core.vgt.TimeToolInstantFactory.today
     :type: ITimeToolInstant
 
-    Returns Today time instant.
+    Return Today time instant.
 
 .. py:property:: tomorrow
     :canonical: ansys.stk.core.vgt.TimeToolInstantFactory.tomorrow
     :type: ITimeToolInstant
 
-    Returns Tomorrow time instant.
+    Return Tomorrow time instant.
 
 
 Method detail

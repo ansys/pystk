@@ -21,9 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcDriftRateFactor.central_body_name`
-              - Gets or sets the central body of the component.
+              - Get or set the central body of the component.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcDriftRateFactor.drift_rate_model`
-              - Gets or sets the gravity model used to compute drift rate.
+              - Get or set the gravity model used to compute drift rate.
 
 
 
@@ -42,12 +42,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcDriftRateFactor.central_body_name
     :type: str
 
-    Gets or sets the central body of the component.
+    Get or set the central body of the component.
 
 .. py:property:: drift_rate_model
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcDriftRateFactor.drift_rate_model
     :type: GeoStationaryDriftRateModel
 
-    Gets or sets the gravity model used to compute drift rate.
+    Get or set the gravity model used to compute drift rate.
 
 

@@ -21,13 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.PointingStrategySpinning.spin_axes_orientation`
-              - Gets the spin axes orientation.
+              - Get the spin axes orientation.
             * - :py:attr:`~ansys.stk.core.stkobjects.PointingStrategySpinning.cone_angle`
-              - Gets the cone angle.
+              - Get the cone angle.
             * - :py:attr:`~ansys.stk.core.stkobjects.PointingStrategySpinning.spin_rate`
-              - Gets the spin rate.
+              - Get the spin rate.
             * - :py:attr:`~ansys.stk.core.stkobjects.PointingStrategySpinning.initial_offset_angle`
-              - Gets the initial offset angle.
+              - Get the initial offset angle.
 
 
 
@@ -46,24 +46,24 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.PointingStrategySpinning.spin_axes_orientation
     :type: IOrientation
 
-    Gets the spin axes orientation.
+    Get the spin axes orientation.
 
 .. py:property:: cone_angle
     :canonical: ansys.stk.core.stkobjects.PointingStrategySpinning.cone_angle
     :type: float
 
-    Gets the cone angle.
+    Get the cone angle.
 
 .. py:property:: spin_rate
     :canonical: ansys.stk.core.stkobjects.PointingStrategySpinning.spin_rate
     :type: float
 
-    Gets the spin rate.
+    Get the spin rate.
 
 .. py:property:: initial_offset_angle
     :canonical: ansys.stk.core.stkobjects.PointingStrategySpinning.initial_offset_angle
     :type: float
 
-    Gets the initial offset angle.
+    Get the initial offset angle.
 
 

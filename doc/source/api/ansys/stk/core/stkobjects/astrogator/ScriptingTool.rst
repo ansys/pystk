@@ -36,13 +36,13 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ScriptingTool.enable`
               - If true, the scripting tool is enabled.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ScriptingTool.segment_properties`
-              - Returns the collection of the segment properties.
+              - Return the collection of the segment properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ScriptingTool.calculation_objects`
-              - Returns the collection of the calculation objects.
+              - Return the collection of the calculation objects.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ScriptingTool.parameters`
-              - Returns the collection of parameters.
+              - Return the collection of parameters.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ScriptingTool.language_type`
-              - Gets or sets the scripting language being used.
+              - Get or set the scripting language being used.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ScriptingTool.pre_iterate`
               - If true, the sequence will run once before executing the script.
 
@@ -69,25 +69,25 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingTool.segment_properties
     :type: ScriptingSegmentCollection
 
-    Returns the collection of the segment properties.
+    Return the collection of the segment properties.
 
 .. py:property:: calculation_objects
     :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingTool.calculation_objects
     :type: ScriptingCalculationObjectCollection
 
-    Returns the collection of the calculation objects.
+    Return the collection of the calculation objects.
 
 .. py:property:: parameters
     :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingTool.parameters
     :type: ScriptingParameterCollection
 
-    Returns the collection of parameters.
+    Return the collection of parameters.
 
 .. py:property:: language_type
     :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingTool.language_type
     :type: Language
 
-    Gets or sets the scripting language being used.
+    Get or set the scripting language being used.
 
 .. py:property:: pre_iterate
     :canonical: ansys.stk.core.stkobjects.astrogator.ScriptingTool.pre_iterate

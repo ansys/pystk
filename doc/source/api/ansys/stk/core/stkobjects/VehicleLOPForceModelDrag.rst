@@ -21,7 +21,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleLOPForceModelDrag.use`
               - Opt whether to use drag parameters.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleLOPForceModelDrag.cd`
-              - Gets or sets the atmospheric drag coefficient. Dimensionless.
+              - Get or set the atmospheric drag coefficient. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleLOPForceModelDrag.advanced`
               - Get the advanced drag parameters.
 
@@ -48,7 +48,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleLOPForceModelDrag.cd
     :type: float
 
-    Gets or sets the atmospheric drag coefficient. Dimensionless.
+    Get or set the atmospheric drag coefficient. Dimensionless.
 
 .. py:property:: advanced
     :canonical: ansys.stk.core.stkobjects.VehicleLOPForceModelDrag.advanced

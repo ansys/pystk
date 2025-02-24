@@ -38,9 +38,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftExternalPropulsion.can_set_acceleration_deceleration`
               - Check whether you can set the acceleration and deceleration values or whether they are specified in the file.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftExternalPropulsion.max_thrust_acceleration`
-              - Gets or sets the rate at which the aircraft speeds up at max throttle.
+              - Get or set the rate at which the aircraft speeds up at max throttle.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftExternalPropulsion.min_thrust_deceleration`
-              - Gets or sets the rate at which the aircraft slows down at minimum throttle setting.
+              - Get or set the rate at which the aircraft slows down at minimum throttle setting.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftExternalPropulsion.use_density_scaling`
               - Opt whether to scale the accel/decel performance by the density ratio.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftExternalPropulsion.density_ratio_exponent`
@@ -81,13 +81,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftExternalPropulsion.max_thrust_acceleration
     :type: float
 
-    Gets or sets the rate at which the aircraft speeds up at max throttle.
+    Get or set the rate at which the aircraft speeds up at max throttle.
 
 .. py:property:: min_thrust_deceleration
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftExternalPropulsion.min_thrust_deceleration
     :type: float
 
-    Gets or sets the rate at which the aircraft slows down at minimum throttle setting.
+    Get or set the rate at which the aircraft slows down at minimum throttle setting.
 
 .. py:property:: use_density_scaling
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftExternalPropulsion.use_density_scaling

@@ -30,7 +30,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleSpatialInformation.recycle`
-              - Controls whether to reuse the same spatial state object in subsequent calls to GetState.
+              - Control whether to reuse the same spatial state object in subsequent calls to GetState.
 
 
 
@@ -49,7 +49,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleSpatialInformation.recycle
     :type: bool
 
-    Controls whether to reuse the same spatial state object in subsequent calls to GetState.
+    Control whether to reuse the same spatial state object in subsequent calls to GetState.
 
 
 Method detail

@@ -30,7 +30,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarModeBistaticTransmitterSearchTrack.waveform`
-              - Gets the interface for configuring the search/track waveform.
+              - Get the interface for configuring the search/track waveform.
 
 
 
@@ -49,7 +49,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.RadarModeBistaticTransmitterSearchTrack.waveform
     :type: IRadarWaveformSearchTrack
 
-    Gets the interface for configuring the search/track waveform.
+    Get the interface for configuring the search/track waveform.
 
 
 Method detail

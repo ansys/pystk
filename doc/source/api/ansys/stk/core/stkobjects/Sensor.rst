@@ -76,13 +76,13 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.Sensor.swath`
               - Get the sensor's swath.
             * - :py:attr:`~ansys.stk.core.stkobjects.Sensor.refraction_supported_types`
-              - Returns an array of valid choices.
+              - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.Sensor.refraction_model`
-              - Gets a refraction model.
+              - Get a refraction model.
             * - :py:attr:`~ansys.stk.core.stkobjects.Sensor.use_refraction_in_access`
               - Flag controls whether refraction is applied when computing relative position in Access.
             * - :py:attr:`~ansys.stk.core.stkobjects.Sensor.common_tasks`
-              - Returns an interface that exposes common tasks.
+              - Return an interface that exposes common tasks.
 
 
 
@@ -191,13 +191,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Sensor.refraction_supported_types
     :type: list
 
-    Returns an array of valid choices.
+    Return an array of valid choices.
 
 .. py:property:: refraction_model
     :canonical: ansys.stk.core.stkobjects.Sensor.refraction_model
     :type: IRefractionModelBase
 
-    Gets a refraction model.
+    Get a refraction model.
 
 .. py:property:: use_refraction_in_access
     :canonical: ansys.stk.core.stkobjects.Sensor.use_refraction_in_access
@@ -209,7 +209,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Sensor.common_tasks
     :type: SensorCommonTasks
 
-    Returns an interface that exposes common tasks.
+    Return an interface that exposes common tasks.
 
 
 Method detail

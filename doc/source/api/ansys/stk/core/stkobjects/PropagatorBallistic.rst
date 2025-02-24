@@ -42,13 +42,13 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorBallistic.launch_type`
               - Get flight parameters type.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorBallistic.launch_supported_types`
-              - Returns an array of valid choices.
+              - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorBallistic.launch`
               - Get launch parameters.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorBallistic.impact_location_type`
               - Get impact location type.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorBallistic.impact_location_supported_types`
-              - Returns an array of valid choices.
+              - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorBallistic.impact_location`
               - Get the impact location.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorBallistic.ephemeris_interval`
@@ -83,7 +83,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.PropagatorBallistic.launch_supported_types
     :type: list
 
-    Returns an array of valid choices.
+    Return an array of valid choices.
 
 .. py:property:: launch
     :canonical: ansys.stk.core.stkobjects.PropagatorBallistic.launch
@@ -101,7 +101,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.PropagatorBallistic.impact_location_supported_types
     :type: list
 
-    Returns an array of valid choices.
+    Return an array of valid choices.
 
 .. py:property:: impact_location
     :canonical: ansys.stk.core.stkobjects.PropagatorBallistic.impact_location

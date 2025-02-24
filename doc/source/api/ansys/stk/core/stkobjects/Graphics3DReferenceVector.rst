@@ -37,7 +37,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DReferenceVector.duration`
               - The length of time during which the geometric element is visible. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DReferenceVector.connect`
-              - Specifies the method used for connecting geometric elements.
+              - Specify the method used for connecting geometric elements.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DReferenceVector.transparent`
               - If selected, earlier occurrences of a geometric element display fade over time so that it is drawn as completely filled at the most recent animation time and fades as the animation moves forward.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DReferenceVector.axes`
@@ -49,9 +49,11 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DReferenceVector.true_scale`
               - If the Scale Relative to Model is selected, the scale of the model is multiplied by the scale of the vector. If the Scale Relative to Model is not selected, you can set the size of the geometric elements independent of the model scale.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DReferenceVector.available_axes`
-              - Returns a safearray of available axes.
+              - Return a safearray of available axes.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DReferenceVector.available_points`
-              - Returns a safearray of available points.
+              - Return a safearray of available points.
+            * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DReferenceVector.thickness`
+              - Thickness of line.
 
 
 
@@ -118,7 +120,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Graphics3DReferenceVector.connect
     :type: VectorAxesConnectType
 
-    Specifies the method used for connecting geometric elements.
+    Specify the method used for connecting geometric elements.
 
 .. py:property:: transparent
     :canonical: ansys.stk.core.stkobjects.Graphics3DReferenceVector.transparent
@@ -154,12 +156,18 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Graphics3DReferenceVector.available_axes
     :type: list
 
-    Returns a safearray of available axes.
+    Return a safearray of available axes.
 
 .. py:property:: available_points
     :canonical: ansys.stk.core.stkobjects.Graphics3DReferenceVector.available_points
     :type: list
 
-    Returns a safearray of available points.
+    Return a safearray of available points.
+
+.. py:property:: thickness
+    :canonical: ansys.stk.core.stkobjects.Graphics3DReferenceVector.thickness
+    :type: float
+
+    Thickness of line.
 
 

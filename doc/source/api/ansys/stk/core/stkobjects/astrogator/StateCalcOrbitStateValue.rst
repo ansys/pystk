@@ -34,23 +34,23 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.calculation_object_name`
-              - Gets or sets the calculation object.
+              - Get or set the calculation object.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.input_coord_system_name`
-              - Gets or sets the coordinate system of the input state.
+              - Get or set the coordinate system of the input state.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.x`
-              - Gets or sets the x position component. Uses Distance Dimension.
+              - Get or set the x position component. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.y`
-              - Gets or sets the y position component. Uses Distance Dimension.
+              - Get or set the y position component. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.z`
-              - Gets or sets the z position component. Uses Distance Dimension.
+              - Get or set the z position component. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.vx`
-              - Gets or sets the x velocity component. Uses Rate Dimension.
+              - Get or set the x velocity component. Uses Rate Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.vy`
-              - Gets or sets the y velocity component. Uses Rate Dimension.
+              - Get or set the y velocity component. Uses Rate Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.vz`
-              - Gets or sets the z velocity component. Uses Rate Dimension.
+              - Get or set the z velocity component. Uses Rate Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.control_parameters_available`
-              - Returns whether or not the control parameters can be set.
+              - Return whether or not the control parameters can be set.
 
 
 
@@ -69,55 +69,55 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.calculation_object_name
     :type: str
 
-    Gets or sets the calculation object.
+    Get or set the calculation object.
 
 .. py:property:: input_coord_system_name
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.input_coord_system_name
     :type: str
 
-    Gets or sets the coordinate system of the input state.
+    Get or set the coordinate system of the input state.
 
 .. py:property:: x
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.x
     :type: typing.Any
 
-    Gets or sets the x position component. Uses Distance Dimension.
+    Get or set the x position component. Uses Distance Dimension.
 
 .. py:property:: y
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.y
     :type: typing.Any
 
-    Gets or sets the y position component. Uses Distance Dimension.
+    Get or set the y position component. Uses Distance Dimension.
 
 .. py:property:: z
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.z
     :type: typing.Any
 
-    Gets or sets the z position component. Uses Distance Dimension.
+    Get or set the z position component. Uses Distance Dimension.
 
 .. py:property:: vx
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.vx
     :type: typing.Any
 
-    Gets or sets the x velocity component. Uses Rate Dimension.
+    Get or set the x velocity component. Uses Rate Dimension.
 
 .. py:property:: vy
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.vy
     :type: typing.Any
 
-    Gets or sets the y velocity component. Uses Rate Dimension.
+    Get or set the y velocity component. Uses Rate Dimension.
 
 .. py:property:: vz
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.vz
     :type: typing.Any
 
-    Gets or sets the z velocity component. Uses Rate Dimension.
+    Get or set the z velocity component. Uses Rate Dimension.
 
 .. py:property:: control_parameters_available
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcOrbitStateValue.control_parameters_available
     :type: bool
 
-    Returns whether or not the control parameters can be set.
+    Return whether or not the control parameters can be set.
 
 
 Method detail

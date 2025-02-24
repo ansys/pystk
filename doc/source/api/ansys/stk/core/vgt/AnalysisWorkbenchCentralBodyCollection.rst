@@ -32,9 +32,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.AnalysisWorkbenchCentralBodyCollection.count`
-              - Returns a number of elements in the collection.
+              - Return a number of elements in the collection.
             * - :py:attr:`~ansys.stk.core.vgt.AnalysisWorkbenchCentralBodyCollection._new_enum`
-              - Returns a COM enumerator.
+              - Return a COM enumerator.
 
 
 
@@ -53,13 +53,13 @@ Property detail
     :canonical: ansys.stk.core.vgt.AnalysisWorkbenchCentralBodyCollection.count
     :type: int
 
-    Returns a number of elements in the collection.
+    Return a number of elements in the collection.
 
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.vgt.AnalysisWorkbenchCentralBodyCollection._new_enum
     :type: EnumeratorProxy
 
-    Returns a COM enumerator.
+    Return a COM enumerator.
 
 
 Method detail

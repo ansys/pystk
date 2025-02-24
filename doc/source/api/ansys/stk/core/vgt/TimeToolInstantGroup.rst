@@ -36,13 +36,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.TimeToolInstantGroup.context`
-              - Returns a context object. The context can be used to find out which central body or STK object this instance is associated with.
+              - Return a context object. The context can be used to find out which central body or STK object this instance is associated with.
             * - :py:attr:`~ansys.stk.core.vgt.TimeToolInstantGroup.count`
-              - Returns a number of elements in the group.
+              - Return a number of elements in the group.
             * - :py:attr:`~ansys.stk.core.vgt.TimeToolInstantGroup.factory`
-              - Returns a Factory object used to create custom events.
+              - Return a Factory object used to create custom events.
             * - :py:attr:`~ansys.stk.core.vgt.TimeToolInstantGroup._new_enum`
-              - Returns a COM enumerator.
+              - Return a COM enumerator.
 
 
 
@@ -61,25 +61,25 @@ Property detail
     :canonical: ansys.stk.core.vgt.TimeToolInstantGroup.context
     :type: IAnalysisWorkbenchComponentContext
 
-    Returns a context object. The context can be used to find out which central body or STK object this instance is associated with.
+    Return a context object. The context can be used to find out which central body or STK object this instance is associated with.
 
 .. py:property:: count
     :canonical: ansys.stk.core.vgt.TimeToolInstantGroup.count
     :type: int
 
-    Returns a number of elements in the group.
+    Return a number of elements in the group.
 
 .. py:property:: factory
     :canonical: ansys.stk.core.vgt.TimeToolInstantGroup.factory
     :type: TimeToolInstantFactory
 
-    Returns a Factory object used to create custom events.
+    Return a Factory object used to create custom events.
 
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.vgt.TimeToolInstantGroup._new_enum
     :type: EnumeratorProxy
 
-    Returns a COM enumerator.
+    Return a COM enumerator.
 
 
 Method detail

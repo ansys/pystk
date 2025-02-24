@@ -19,9 +19,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.TransferFunctionInputBackOffVsCOverImTableRow.input_back_off`
-              - Gets or sets the input back off.
+              - Get or set the input back off.
             * - :py:attr:`~ansys.stk.core.stkobjects.TransferFunctionInputBackOffVsCOverImTableRow.c_over_im`
-              - Gets or sets the C/Im value.
+              - Get or set the C/Im value.
 
 
 
@@ -40,12 +40,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.TransferFunctionInputBackOffVsCOverImTableRow.input_back_off
     :type: float
 
-    Gets or sets the input back off.
+    Get or set the input back off.
 
 .. py:property:: c_over_im
     :canonical: ansys.stk.core.stkobjects.TransferFunctionInputBackOffVsCOverImTableRow.c_over_im
     :type: float
 
-    Gets or sets the C/Im value.
+    Get or set the C/Im value.
 
 

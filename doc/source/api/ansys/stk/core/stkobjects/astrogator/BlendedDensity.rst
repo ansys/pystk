@@ -32,11 +32,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.BlendedDensity.density_blending_altitude_range`
-              - Gets or sets the blending range (distance dimension), begins at lower bound of upper model.
+              - Get or set the blending range (distance dimension), begins at lower bound of upper model.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.BlendedDensity.atmos_density_model_name`
-              - Returns the name of the embedded nominal atmospheric model.
+              - Return the name of the embedded nominal atmospheric model.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.BlendedDensity.low_altitude_atmosphere_density_model_name`
-              - Returns the name of the embedded low altitude atmospheric model.
+              - Return the name of the embedded low altitude atmospheric model.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.BlendedDensity.use_approx_altitude`
               - True if using approximate altitude formula (enforced on embedded models).
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.BlendedDensity.lower_bound_upper_atmosphere_model`
@@ -59,19 +59,19 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.BlendedDensity.density_blending_altitude_range
     :type: float
 
-    Gets or sets the blending range (distance dimension), begins at lower bound of upper model.
+    Get or set the blending range (distance dimension), begins at lower bound of upper model.
 
 .. py:property:: atmos_density_model_name
     :canonical: ansys.stk.core.stkobjects.astrogator.BlendedDensity.atmos_density_model_name
     :type: str
 
-    Returns the name of the embedded nominal atmospheric model.
+    Return the name of the embedded nominal atmospheric model.
 
 .. py:property:: low_altitude_atmosphere_density_model_name
     :canonical: ansys.stk.core.stkobjects.astrogator.BlendedDensity.low_altitude_atmosphere_density_model_name
     :type: str
 
-    Returns the name of the embedded low altitude atmospheric model.
+    Return the name of the embedded low altitude atmospheric model.
 
 .. py:property:: use_approx_altitude
     :canonical: ansys.stk.core.stkobjects.astrogator.BlendedDensity.use_approx_altitude

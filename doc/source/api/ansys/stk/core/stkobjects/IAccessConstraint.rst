@@ -21,7 +21,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraint.constraint_name`
               - Property used to access the constraint name.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraint.is_plugin`
-              - Returns true if the access constraint is a plugin.
+              - Return true if the access constraint is a plugin.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraint.exclusion_interval`
               - Exclude Time Intervals.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAccessConstraint.constraint_type`
@@ -68,7 +68,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.IAccessConstraint.is_plugin
     :type: bool
 
-    Returns true if the access constraint is a plugin.
+    Return true if the access constraint is a plugin.
 
 .. py:property:: exclusion_interval
     :canonical: ansys.stk.core.stkobjects.IAccessConstraint.exclusion_interval

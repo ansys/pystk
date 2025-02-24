@@ -19,11 +19,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleExponentialDensityModelParameters.reference_density`
-              - Gets or sets the reference density. Uses Density Dimension.
+              - Get or set the reference density. Uses Density Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleExponentialDensityModelParameters.reference_height`
-              - Gets or sets the reference height. Uses Distance Dimension.
+              - Get or set the reference height. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleExponentialDensityModelParameters.scale_height`
-              - Gets or sets the scale height. Uses Distance Dimension.
+              - Get or set the scale height. Uses Distance Dimension.
 
 
 
@@ -42,18 +42,18 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleExponentialDensityModelParameters.reference_density
     :type: float
 
-    Gets or sets the reference density. Uses Density Dimension.
+    Get or set the reference density. Uses Density Dimension.
 
 .. py:property:: reference_height
     :canonical: ansys.stk.core.stkobjects.VehicleExponentialDensityModelParameters.reference_height
     :type: float
 
-    Gets or sets the reference height. Uses Distance Dimension.
+    Get or set the reference height. Uses Distance Dimension.
 
 .. py:property:: scale_height
     :canonical: ansys.stk.core.stkobjects.VehicleExponentialDensityModelParameters.scale_height
     :type: float
 
-    Gets or sets the scale height. Uses Distance Dimension.
+    Get or set the scale height. Uses Distance Dimension.
 
 

@@ -27,7 +27,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MarsGRAM2000.computes_pressure`
               - Flag indicates whether this model computes pressure.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MarsGRAM2000.sun_position`
-              - Gets or sets the sun position computation.
+              - Get or set the sun position computation.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MarsGRAM2000.data_directory`
               - Path to the data directory.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MarsGRAM2000.namelist_file`
@@ -35,15 +35,15 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MarsGRAM2000.density_type`
               - Low, mean, high or randomly perturbed density type.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MarsGRAM2000.atmos_data_source`
-              - Gets or sets the atmospheric model data source - data file or constant values.
+              - Get or set the atmospheric model data source - data file or constant values.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MarsGRAM2000.f_10_p7`
               - Solar Flux (F10.7); the daily Ottawa 10.7 cm solar flux value. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MarsGRAM2000.atmos_data_filename`
-              - Gets or sets the atmospheric model data file path.
+              - Get or set the atmospheric model data file path.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MarsGRAM2000.drag_model_type`
               - Drag model type.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MarsGRAM2000.drag_model_plugin_name`
-              - Gets or sets the name of the drag model plugin.
+              - Get or set the name of the drag model plugin.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MarsGRAM2000.drag_model_plugin`
               - Drag model plugin properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MarsGRAM2000.variable_area_history_file`
@@ -86,7 +86,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.MarsGRAM2000.sun_position
     :type: SunPosition
 
-    Gets or sets the sun position computation.
+    Get or set the sun position computation.
 
 .. py:property:: data_directory
     :canonical: ansys.stk.core.stkobjects.astrogator.MarsGRAM2000.data_directory
@@ -110,7 +110,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.MarsGRAM2000.atmos_data_source
     :type: AtmosDataSource
 
-    Gets or sets the atmospheric model data source - data file or constant values.
+    Get or set the atmospheric model data source - data file or constant values.
 
 .. py:property:: f_10_p7
     :canonical: ansys.stk.core.stkobjects.astrogator.MarsGRAM2000.f_10_p7
@@ -122,7 +122,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.MarsGRAM2000.atmos_data_filename
     :type: str
 
-    Gets or sets the atmospheric model data file path.
+    Get or set the atmospheric model data file path.
 
 .. py:property:: drag_model_type
     :canonical: ansys.stk.core.stkobjects.astrogator.MarsGRAM2000.drag_model_type
@@ -134,7 +134,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.MarsGRAM2000.drag_model_plugin_name
     :type: str
 
-    Gets or sets the name of the drag model plugin.
+    Get or set the name of the drag model plugin.
 
 .. py:property:: drag_model_plugin
     :canonical: ansys.stk.core.stkobjects.astrogator.MarsGRAM2000.drag_model_plugin

@@ -21,9 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.DirectionProviderASCIIFile.enabled`
-              - Gets or set the option for enabling steering.
+              - Get or set the option for enabling steering.
             * - :py:attr:`~ansys.stk.core.stkobjects.DirectionProviderASCIIFile.filename`
-              - Gets or sets the steering ascii file.
+              - Get or set the steering ascii file.
 
 
 
@@ -42,12 +42,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.DirectionProviderASCIIFile.enabled
     :type: bool
 
-    Gets or set the option for enabling steering.
+    Get or set the option for enabling steering.
 
 .. py:property:: filename
     :canonical: ansys.stk.core.stkobjects.DirectionProviderASCIIFile.filename
     :type: str
 
-    Gets or sets the steering ascii file.
+    Get or set the steering ascii file.
 
 

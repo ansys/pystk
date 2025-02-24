@@ -21,7 +21,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimation.set_time_array_component`
               - Configure the time array using the specified time component. Allowed are only event arrays.
             * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimation.set_time_array_qualified_path`
-              - Configure the time array using the specified time component. Allowed are only event arrays. QualifiedPath format adheres to the format used throughout VGT API (i.e. \"Scenario/Scenario1 OneMinuteSampleTimes EventArray\").
+              - Configure the time array using the specified time component. Allowed are only event arrays. QualifiedPath format adheres to the format used throughout VGT API (i.e. ``Scenario/Scenario1 OneMinuteSampleTimes EventArray``).
             * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimation.get_time_array_component`
               - Return a time array component used to configure the time array or null if component has not been configured yet.
             * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimation.get_time_array_qualified_path`
@@ -51,10 +51,10 @@ Overview
               - Refresh Delta or high speed. A member of the AgEScRefreshDeltaType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimation.animation_step_type`
               - Time step, real time (with offset) or a multiple of real time. A member of the AgEScTimeStepType enumeration.
-            * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimation.ccontinue_x_real_time_from_pause`
+            * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimation.continue_x_real_time_from_pause`
               - Animation XRealtime Continue from Paused Time.
             * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimation.time_period`
-              - Allows the user to configure the scenario's animation time period.
+              - Allow the user to configure the scenario's animation time period.
             * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimation.time_array_increment`
               - Animation Time Array Increment.
 
@@ -119,8 +119,8 @@ Property detail
 
     Time step, real time (with offset) or a multiple of real time. A member of the AgEScTimeStepType enumeration.
 
-.. py:property:: ccontinue_x_real_time_from_pause
-    :canonical: ansys.stk.core.stkobjects.ScenarioAnimation.ccontinue_x_real_time_from_pause
+.. py:property:: continue_x_real_time_from_pause
+    :canonical: ansys.stk.core.stkobjects.ScenarioAnimation.continue_x_real_time_from_pause
     :type: bool
 
     Animation XRealtime Continue from Paused Time.
@@ -129,7 +129,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.ScenarioAnimation.time_period
     :type: ScenarioAnimationTimePeriod
 
-    Allows the user to configure the scenario's animation time period.
+    Allow the user to configure the scenario's animation time period.
 
 .. py:property:: time_array_increment
     :canonical: ansys.stk.core.stkobjects.ScenarioAnimation.time_array_increment
@@ -178,7 +178,7 @@ Method detail
 .. py:method:: set_time_array_qualified_path(self, qualified_path: str) -> None
     :canonical: ansys.stk.core.stkobjects.ScenarioAnimation.set_time_array_qualified_path
 
-    Configure the time array using the specified time component. Allowed are only event arrays. QualifiedPath format adheres to the format used throughout VGT API (i.e. \"Scenario/Scenario1 OneMinuteSampleTimes EventArray\").
+    Configure the time array using the specified time component. Allowed are only event arrays. QualifiedPath format adheres to the format used throughout VGT API (i.e. ``Scenario/Scenario1 OneMinuteSampleTimes EventArray``).
 
     :Parameters:
 

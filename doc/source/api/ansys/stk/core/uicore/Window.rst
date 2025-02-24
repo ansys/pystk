@@ -34,7 +34,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.uicore.Window.caption`
-              - Gets or sets the window caption. Can only be set within UI plugins for the non unique windows they own.
+              - Get or set the window caption. Can only be set within UI plugins for the non unique windows they own.
             * - :py:attr:`~ansys.stk.core.uicore.Window.window_state`
               - The window state.
             * - :py:attr:`~ansys.stk.core.uicore.Window.height`
@@ -52,9 +52,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.uicore.Window.unpinned`
               - The window's pinned state.
             * - :py:attr:`~ansys.stk.core.uicore.Window.can_pin`
-              - Returns whether the window supports pinning.
+              - Return whether the window supports pinning.
             * - :py:attr:`~ansys.stk.core.uicore.Window.toolbars`
-              - Returns the window's toolbar collection.
+              - Return the window's toolbar collection.
 
 
 
@@ -73,7 +73,7 @@ Property detail
     :canonical: ansys.stk.core.uicore.Window.caption
     :type: str
 
-    Gets or sets the window caption. Can only be set within UI plugins for the non unique windows they own.
+    Get or set the window caption. Can only be set within UI plugins for the non unique windows they own.
 
 .. py:property:: window_state
     :canonical: ansys.stk.core.uicore.Window.window_state
@@ -127,13 +127,13 @@ Property detail
     :canonical: ansys.stk.core.uicore.Window.can_pin
     :type: bool
 
-    Returns whether the window supports pinning.
+    Return whether the window supports pinning.
 
 .. py:property:: toolbars
     :canonical: ansys.stk.core.uicore.Window.toolbars
     :type: ToolbarCollection
 
-    Returns the window's toolbar collection.
+    Return the window's toolbar collection.
 
 
 Method detail

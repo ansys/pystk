@@ -27,7 +27,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.AttitudeStandardOrbit.external`
               - Get the precomputed (external) attitude properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.AttitudeStandardOrbit.integrated_attitude`
-              - Returns a reference to the Integrated Attitude Tool.
+              - Return a reference to the Integrated Attitude Tool.
 
 
 
@@ -64,6 +64,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.AttitudeStandardOrbit.integrated_attitude
     :type: VehicleIntegratedAttitude
 
-    Returns a reference to the Integrated Attitude Tool.
+    Return a reference to the Integrated Attitude Tool.
 
 

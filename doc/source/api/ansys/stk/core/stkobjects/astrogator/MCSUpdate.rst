@@ -44,7 +44,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSUpdate.control_parameters_available`
-              - Returns whether or not the control parameters can be set.
+              - Return whether or not the control parameters can be set.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSUpdate.user_variables`
               - Interface used to modify user variables for the update segment.
 
@@ -65,7 +65,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSUpdate.control_parameters_available
     :type: bool
 
-    Returns whether or not the control parameters can be set.
+    Return whether or not the control parameters can be set.
 
 .. py:property:: user_variables
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSUpdate.user_variables

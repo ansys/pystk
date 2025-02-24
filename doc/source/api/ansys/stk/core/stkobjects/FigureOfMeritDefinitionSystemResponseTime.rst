@@ -37,9 +37,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionSystemResponseTime.downlink_time`
               - Amount of time in seconds required for transmission of the collected data from the assets to the ReceiveStation.
             * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionSystemResponseTime.allow_forward_crosslink`
-              - Determines if a single cross-link between assets is allowed to be used to minimize the response time.
+              - Determine if a single cross-link between assets is allowed to be used to minimize the response time.
             * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionSystemResponseTime.time_step`
-              - Gets or sets the value in seconds to be used during the computation of satisfaction intervals.
+              - Get or set the value in seconds to be used during the computation of satisfaction intervals.
 
 
 
@@ -106,12 +106,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.FigureOfMeritDefinitionSystemResponseTime.allow_forward_crosslink
     :type: bool
 
-    Determines if a single cross-link between assets is allowed to be used to minimize the response time.
+    Determine if a single cross-link between assets is allowed to be used to minimize the response time.
 
 .. py:property:: time_step
     :canonical: ansys.stk.core.stkobjects.FigureOfMeritDefinitionSystemResponseTime.time_step
     :type: float
 
-    Gets or sets the value in seconds to be used during the computation of satisfaction intervals.
+    Get or set the value in seconds to be used during the computation of satisfaction intervals.
 
 

@@ -21,17 +21,17 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.CommSystemAccessOptions.enable_light_time_delay`
               - Specify whether to take light time delay into account in the computation.
             * - :py:attr:`~ansys.stk.core.stkobjects.CommSystemAccessOptions.time_light_delay_convergence`
-              - Gets or sets the tolerance used when iterating to determine the light time delay. Uses Time Dimension.
+              - Get or set the tolerance used when iterating to determine the light time delay. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.CommSystemAccessOptions.aberration_type`
-              - Gets or sets the model of aberration to be used in access computations.
+              - Get or set the model of aberration to be used in access computations.
             * - :py:attr:`~ansys.stk.core.stkobjects.CommSystemAccessOptions.event_detection_type`
-              - Gets or sets the event detection type.
+              - Get or set the event detection type.
             * - :py:attr:`~ansys.stk.core.stkobjects.CommSystemAccessOptions.event_detection`
-              - Gets the event detection algorithm.
+              - Get the event detection algorithm.
             * - :py:attr:`~ansys.stk.core.stkobjects.CommSystemAccessOptions.sampling_method_type`
-              - Gets or sets the sampling method type.
+              - Get or set the sampling method type.
             * - :py:attr:`~ansys.stk.core.stkobjects.CommSystemAccessOptions.sampling_method`
-              - Gets the sampling method.
+              - Get the sampling method.
 
 
 
@@ -56,36 +56,36 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.CommSystemAccessOptions.time_light_delay_convergence
     :type: float
 
-    Gets or sets the tolerance used when iterating to determine the light time delay. Uses Time Dimension.
+    Get or set the tolerance used when iterating to determine the light time delay. Uses Time Dimension.
 
 .. py:property:: aberration_type
     :canonical: ansys.stk.core.stkobjects.CommSystemAccessOptions.aberration_type
     :type: AberrationType
 
-    Gets or sets the model of aberration to be used in access computations.
+    Get or set the model of aberration to be used in access computations.
 
 .. py:property:: event_detection_type
     :canonical: ansys.stk.core.stkobjects.CommSystemAccessOptions.event_detection_type
     :type: CommSystemAccessEventDetectionType
 
-    Gets or sets the event detection type.
+    Get or set the event detection type.
 
 .. py:property:: event_detection
     :canonical: ansys.stk.core.stkobjects.CommSystemAccessOptions.event_detection
     :type: ICommSystemAccessEventDetection
 
-    Gets the event detection algorithm.
+    Get the event detection algorithm.
 
 .. py:property:: sampling_method_type
     :canonical: ansys.stk.core.stkobjects.CommSystemAccessOptions.sampling_method_type
     :type: CommSystemAccessSamplingMethodType
 
-    Gets or sets the sampling method type.
+    Get or set the sampling method type.
 
 .. py:property:: sampling_method
     :canonical: ansys.stk.core.stkobjects.CommSystemAccessOptions.sampling_method
     :type: ICommSystemAccessSamplingMethod
 
-    Gets the sampling method.
+    Get the sampling method.
 
 

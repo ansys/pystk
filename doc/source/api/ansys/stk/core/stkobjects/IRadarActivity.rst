@@ -19,7 +19,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarActivity.type`
-              - Gets the activity times type.
+              - Get the activity times type.
 
 
 Import detail
@@ -37,6 +37,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.IRadarActivity.type
     :type: RadarActivityType
 
-    Gets the activity times type.
+    Get the activity times type.
 
 

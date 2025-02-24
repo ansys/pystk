@@ -25,7 +25,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkutil.IOrientationAzEl.elevation`
               - Defined as the angle between the XY plane of the parent reference frame and the sensor or antenna boresight measured toward the positive Z axis. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkutil.IOrientationAzEl.about_boresight`
-              - Determines orientation of the X and Y axes with respect to the parent's reference frame.
+              - Determine orientation of the X and Y axes with respect to the parent's reference frame.
 
 
 Import detail
@@ -55,6 +55,6 @@ Property detail
     :canonical: ansys.stk.core.stkutil.IOrientationAzEl.about_boresight
     :type: AzElAboutBoresight
 
-    Determines orientation of the X and Y axes with respect to the parent's reference frame.
+    Determine orientation of the X and Y axes with respect to the parent's reference frame.
 
 

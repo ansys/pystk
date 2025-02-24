@@ -36,13 +36,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolConditionGroup.context`
-              - Returns a context object. The context can be used to find out which central body or STK object this instance is associated with.
+              - Return a context object. The context can be used to find out which central body or STK object this instance is associated with.
             * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolConditionGroup.count`
-              - Returns a number of elements in the group.
+              - Return a number of elements in the group.
             * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolConditionGroup.factory`
-              - Returns a factory object used to create spatial condition components.
+              - Return a factory object used to create spatial condition components.
             * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolConditionGroup._new_enum`
-              - Returns a COM enumerator.
+              - Return a COM enumerator.
 
 
 
@@ -61,25 +61,25 @@ Property detail
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolConditionGroup.context
     :type: IAnalysisWorkbenchComponentContext
 
-    Returns a context object. The context can be used to find out which central body or STK object this instance is associated with.
+    Return a context object. The context can be used to find out which central body or STK object this instance is associated with.
 
 .. py:property:: count
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolConditionGroup.count
     :type: int
 
-    Returns a number of elements in the group.
+    Return a number of elements in the group.
 
 .. py:property:: factory
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolConditionGroup.factory
     :type: SpatialAnalysisToolConditionFactory
 
-    Returns a factory object used to create spatial condition components.
+    Return a factory object used to create spatial condition components.
 
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolConditionGroup._new_enum
     :type: EnumeratorProxy
 
-    Returns a COM enumerator.
+    Return a COM enumerator.
 
 
 Method detail

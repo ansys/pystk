@@ -32,9 +32,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleAttitudeRealTimeDataReference.profile_type`
               - Get realtime data reference profile type.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleAttitudeRealTimeDataReference.profile_supported_types`
-              - Returns an array of valid profiles.
+              - Return an array of valid profiles.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleAttitudeRealTimeDataReference.profile`
-              - Returns a data reference profile or null if no data reference profile has yet been selected.
+              - Return a data reference profile or null if no data reference profile has yet been selected.
 
 
 
@@ -59,13 +59,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleAttitudeRealTimeDataReference.profile_supported_types
     :type: list
 
-    Returns an array of valid profiles.
+    Return an array of valid profiles.
 
 .. py:property:: profile
     :canonical: ansys.stk.core.stkobjects.VehicleAttitudeRealTimeDataReference.profile
     :type: IVehicleAttitudeProfile
 
-    Returns a data reference profile or null if no data reference profile has yet been selected.
+    Return a data reference profile or null if no data reference profile has yet been selected.
 
 
 Method detail

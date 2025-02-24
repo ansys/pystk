@@ -27,11 +27,11 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileBisection.targeter_graphs`
               - Graphs.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileBisection.scripting_tool`
-              - Returns the Scripting tool for the sequence.
+              - Return the Scripting tool for the sequence.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileBisection.reset_controls_before_run`
               - Reset controls before each run.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileBisection.maximum_iterations`
-              - Gets or sets the maximum number of iterations allowed.
+              - Get or set the maximum number of iterations allowed.
 
 
 
@@ -68,7 +68,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileBisection.scripting_tool
     :type: ScriptingTool
 
-    Returns the Scripting tool for the sequence.
+    Return the Scripting tool for the sequence.
 
 .. py:property:: reset_controls_before_run
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileBisection.reset_controls_before_run
@@ -80,6 +80,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileBisection.maximum_iterations
     :type: int
 
-    Gets or sets the maximum number of iterations allowed.
+    Get or set the maximum number of iterations allowed.
 
 

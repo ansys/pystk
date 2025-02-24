@@ -27,6 +27,9 @@ classifiers = [
 dependencies = [
 ]
 
+[project.scripts]
+pystk-migration-assistant = "ansys.stk.core.tools.api_migration_assistant.api_migration_assistant:main"
+
 [project.optional-dependencies]
 # TODO: the approval of PEP 735 should allow the usage of dependency groups
 # https://peps.python.org/pep-0735/
@@ -36,8 +39,9 @@ all = [
     "jupyter-rfb==0.5.1",
     "numpy==2.2.2",
     "Pillow==11.1.0",
-    "simplejpeg==1.7.6",
-    "sidecar==0.7.0"
+    "simplejpeg==1.8.1",
+    "sidecar==0.7.0",
+    "libcst==1.6.0"
 ]
 grpc = [
     "grpcio",
@@ -46,18 +50,19 @@ grpc = [
 tests = [
     "pytest==8.3.4",
     "pytest-cov==6.0.0",
-    "pytz==2024.2",
+    "pytz==2025.1",
     "parameterized==0.9.0",
     "pandas==2.2.3",
-    "numpy==2.2.2"
+    "numpy==2.2.2",
+    "libcst==1.6.0"
 ]
 doc = [
-    "ansys-sphinx-theme==1.2.6",
+    "ansys-sphinx-theme==1.3.1",
     "build==1.2.2.post1",
-    "jupyterlab==4.3.4",
-    "jupytext==1.16.6",
+    "jupyterlab==4.3.5",
+    "jupytext==1.16.7",
     "jupyter-server==2.15.0",
-    "myst-parser==4.0.0",
+    "myst-parser==4.0.1",
     "nbsphinx==0.9.6",
     "numpydoc==1.8.0",
     "nbconvert==7.16.6",
@@ -68,17 +73,18 @@ doc = [
     "pandas==2.2.3",
     "matplotlib==3.10.0",
     "sphinxcontrib-jquery==4.1",
+    "sphinxcontrib-mermaid==1.0.0",
 ]
 visualization = [
     "jupyter-rfb==0.5.1",
     "numpy==2.2.2",
     "Pillow==11.1.0",
-    "simplejpeg==1.7.6",
+    "simplejpeg==1.8.1",
     "sidecar==0.7.0"
 ]
 vulnerabilities = [
-    "bandit==1.8.2",
-    "safety==3.2.14",
+    "bandit==1.8.3",
+    "safety==3.3.0",
 ]
 
 [tool.flit.module]
@@ -100,19 +106,22 @@ extend-exclude = [
 
 [tool.ruff.lint]
 select = [
-#    "E",    # pycodestyle, see https://beta.ruff.rs/docs/rules/#pycodestyle-e-w
+    "E",    # pycodestyle, see https://beta.ruff.rs/docs/rules/#pycodestyle-e-w
     "D",     # pydocstyle, see https://beta.ruff.rs/docs/rules/#pydocstyle-d
-#    "F",    # pyflakes, see https://beta.ruff.rs/docs/rules/#pyflakes-f
-#    "I",    # isort, see https://beta.ruff.rs/docs/rules/#isort-i
+    "F",     # pyflakes, see https://beta.ruff.rs/docs/rules/#pyflakes-f
+    "PYI",   # flake8-pyi, see https://docs.astral.sh/ruff/rules/#flake8-pyi-pyi 
+    "I",    # isort, see https://beta.ruff.rs/docs/rules/#isort-i
     "N",    # pep8-naming, see https://beta.ruff.rs/docs/rules/#pep8-naming-n
     "PTH",  # flake8-use-pathlib, https://beta.ruff.rs/docs/rules/#flake8-use-pathlib-pth
     "TD",    # flake8-todos, https://docs.astral.sh/ruff/rules/#flake8-todos-td
 ]
 ignore = [
-#   "E501",  # Line too long. Ignoring this so "ruff.formatter" manages line length.
+    "E501",  # Line too long. Ignoring this so "ruff.formatter" manages line length.
+    "E743",  # Ambiguous function name. N802 and Python naming restrictions ensure unambiguous names.
     "D204",  # One blank line required after class docstring
     "D212",  # Multi-line docstring summary should start at the first line
     "D400",  # First line should end with a period
+    "F821",  # Undefined name. PyFlakes can not handle forward reference annotations. Using flake8-pyi instead.
     "TD002", # Missing author in TODOs comment
 ]
 
@@ -124,10 +133,10 @@ convention = "numpy"
 # quote-style = "double"
 # indent-style = "tab"
 
-# [tool.ruff.isort]
-# combine-as-imports = true
-# force-sort-within-sections = true
-# known-first-party = ["ansys"]
+[tool.ruff.lint.isort]
+combine-as-imports = true
+force-sort-within-sections = true
+known-first-party = ["ansys"]
 
 # TODO: the following configuration has no effect, see issue
 # https://github.com/codespell-project/codespell/issues/2375

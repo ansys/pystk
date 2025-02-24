@@ -30,15 +30,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultDataSet.element_name`
-              - Returns a name of the dataset.
+              - Return a name of the dataset.
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultDataSet.element_type`
-              - Returns a type of elements of the dataset. Dimensionless.
+              - Return a type of elements of the dataset. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultDataSet.dimension_name`
-              - Returns the dimension of elements of the dataset.
+              - Return the dimension of elements of the dataset.
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultDataSet.count`
-              - Returns a number of elements in the dataset. Dimensionless.
+              - Return a number of elements in the dataset. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultDataSet.statistics`
-              - Returns an interface for computing statistics on the results.
+              - Return an interface for computing statistics on the results.
 
 
 
@@ -57,31 +57,31 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.DataProviderResultDataSet.element_name
     :type: str
 
-    Returns a name of the dataset.
+    Return a name of the dataset.
 
 .. py:property:: element_type
     :canonical: ansys.stk.core.stkobjects.DataProviderResultDataSet.element_type
     :type: int
 
-    Returns a type of elements of the dataset. Dimensionless.
+    Return a type of elements of the dataset. Dimensionless.
 
 .. py:property:: dimension_name
     :canonical: ansys.stk.core.stkobjects.DataProviderResultDataSet.dimension_name
     :type: str
 
-    Returns the dimension of elements of the dataset.
+    Return the dimension of elements of the dataset.
 
 .. py:property:: count
     :canonical: ansys.stk.core.stkobjects.DataProviderResultDataSet.count
     :type: int
 
-    Returns a number of elements in the dataset. Dimensionless.
+    Return a number of elements in the dataset. Dimensionless.
 
 .. py:property:: statistics
     :canonical: ansys.stk.core.stkobjects.DataProviderResultDataSet.statistics
     :type: DataProviderResultStatistics
 
-    Returns an interface for computing statistics on the results.
+    Return an interface for computing statistics on the results.
 
 
 Method detail

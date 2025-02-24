@@ -36,13 +36,13 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicLandingModel.landing_speed_type`
               - Get the landing speed type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicLandingModel.sea_level_ground_roll`
-              - Gets or sets the distance the aircraft travels along the ground while decelerating to a stop at sea level.
+              - Get or set the distance the aircraft travels along the ground while decelerating to a stop at sea level.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicLandingModel.use_aerodynamic_propulsion_fuel`
-              - Gets or sets whether to use Aero/Propulsion fuel flow.
+              - Get or set whether to use Aero/Propulsion fuel flow.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicLandingModel.scale_fuel_flow_by_non_std_density`
-              - Gets or sets whether to scale fuel flow by non std density.
+              - Get or set whether to scale fuel flow by non std density.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicLandingModel.fuel_flow`
-              - Gets or sets the Sea Level Fuel Flow.
+              - Get or set the Sea Level Fuel Flow.
 
 
 
@@ -73,25 +73,25 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicLandingModel.sea_level_ground_roll
     :type: float
 
-    Gets or sets the distance the aircraft travels along the ground while decelerating to a stop at sea level.
+    Get or set the distance the aircraft travels along the ground while decelerating to a stop at sea level.
 
 .. py:property:: use_aerodynamic_propulsion_fuel
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicLandingModel.use_aerodynamic_propulsion_fuel
     :type: bool
 
-    Gets or sets whether to use Aero/Propulsion fuel flow.
+    Get or set whether to use Aero/Propulsion fuel flow.
 
 .. py:property:: scale_fuel_flow_by_non_std_density
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicLandingModel.scale_fuel_flow_by_non_std_density
     :type: bool
 
-    Gets or sets whether to scale fuel flow by non std density.
+    Get or set whether to scale fuel flow by non std density.
 
 .. py:property:: fuel_flow
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicLandingModel.fuel_flow
     :type: float
 
-    Gets or sets the Sea Level Fuel Flow.
+    Get or set the Sea Level Fuel Flow.
 
 
 Method detail

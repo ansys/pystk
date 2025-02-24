@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarProbabilityOfDetectionNonCFAR.probability_of_false_alarm`
-              - Gets or sets the probability of false alarm.
+              - Get or set the probability of false alarm.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.RadarProbabilityOfDetectionNonCFAR.probability_of_false_alarm
     :type: float
 
-    Gets or sets the probability of false alarm.
+    Get or set the probability of false alarm.
 
 

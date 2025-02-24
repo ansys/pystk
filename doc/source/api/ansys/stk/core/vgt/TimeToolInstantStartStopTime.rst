@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.TimeToolInstantStartStopTime.use_start`
-              - Indicates whether to use start (true) or stop (false).
+              - Indicate whether to use start (true) or stop (false).
             * - :py:attr:`~ansys.stk.core.vgt.TimeToolInstantStartStopTime.reference_interval`
               - The reference interval.
 
@@ -42,7 +42,7 @@ Property detail
     :canonical: ansys.stk.core.vgt.TimeToolInstantStartStopTime.use_start
     :type: bool
 
-    Indicates whether to use start (true) or stop (false).
+    Indicate whether to use start (true) or stop (false).
 
 .. py:property:: reference_interval
     :canonical: ansys.stk.core.vgt.TimeToolInstantStartStopTime.reference_interval

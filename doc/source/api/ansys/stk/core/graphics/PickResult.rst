@@ -19,11 +19,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.PickResult.objects`
-              - Gets a collection of objects that were on the pick stack for the picked object.
+              - Get a collection of objects that were on the pick stack for the picked object.
             * - :py:attr:`~ansys.stk.core.graphics.PickResult.depth`
-              - Gets the depth of the picked location in the 3D scene.
+              - Get the depth of the picked location in the 3D scene.
             * - :py:attr:`~ansys.stk.core.graphics.PickResult.position`
-              - Gets the position of the picked location in the central body's fixed reference frame. The array contains the components of the position arranged in the order x, y, z.
+              - Get the position of the picked location in the central body's fixed reference frame. The array contains the components of the position arranged in the order x, y, z.
 
 
 
@@ -42,18 +42,18 @@ Property detail
     :canonical: ansys.stk.core.graphics.PickResult.objects
     :type: ObjectCollection
 
-    Gets a collection of objects that were on the pick stack for the picked object.
+    Get a collection of objects that were on the pick stack for the picked object.
 
 .. py:property:: depth
     :canonical: ansys.stk.core.graphics.PickResult.depth
     :type: float
 
-    Gets the depth of the picked location in the 3D scene.
+    Get the depth of the picked location in the 3D scene.
 
 .. py:property:: position
     :canonical: ansys.stk.core.graphics.PickResult.position
     :type: list
 
-    Gets the position of the picked location in the central body's fixed reference frame. The array contains the components of the position arranged in the order x, y, z.
+    Get the position of the picked location in the central body's fixed reference frame. The array contains the components of the position arranged in the order x, y, z.
 
 

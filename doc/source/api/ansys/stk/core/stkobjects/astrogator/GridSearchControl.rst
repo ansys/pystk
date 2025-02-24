@@ -33,9 +33,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GridSearchControl.use_custom_display_unit`
               - If true, allows display of values in another unit.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GridSearchControl.custom_display_unit`
-              - Gets or sets the unit in which the value will be displayed in the GUI.
+              - Get or set the unit in which the value will be displayed in the GUI.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GridSearchControl.step`
-              - Specifies the step size to use when evaluating the grid search. Dimension depends on context.
+              - Specify the step size to use when evaluating the grid search. Dimension depends on context.
 
 
 
@@ -96,12 +96,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.GridSearchControl.custom_display_unit
     :type: str
 
-    Gets or sets the unit in which the value will be displayed in the GUI.
+    Get or set the unit in which the value will be displayed in the GUI.
 
 .. py:property:: step
     :canonical: ansys.stk.core.stkobjects.astrogator.GridSearchControl.step
     :type: typing.Any
 
-    Specifies the step size to use when evaluating the grid search. Dimension depends on context.
+    Specify the step size to use when evaluating the grid search. Dimension depends on context.
 
 

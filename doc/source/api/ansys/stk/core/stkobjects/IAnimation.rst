@@ -50,7 +50,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.IAnimation.animation_options`
               - Animation options.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAnimation.high_speed`
-              - Controls the animation speed.
+              - Control the animation speed.
 
 
 Import detail
@@ -92,7 +92,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.IAnimation.high_speed
     :type: bool
 
-    Controls the animation speed.
+    Control the animation speed.
 
 
 Method detail

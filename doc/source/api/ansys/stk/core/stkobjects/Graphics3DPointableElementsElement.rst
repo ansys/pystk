@@ -23,7 +23,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DPointableElementsElement.assigned_target_object`
               - Get the assigned target for the pointable element.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DPointableElementsElement.intervals`
-              - Gets a collection of intervals during which an 3d model part points towards selected targets.
+              - Get a collection of intervals during which an 3d model part points towards selected targets.
 
 
 
@@ -54,6 +54,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Graphics3DPointableElementsElement.intervals
     :type: TimeIntervalCollection
 
-    Gets a collection of intervals during which an 3d model part points towards selected targets.
+    Get a collection of intervals during which an 3d model part points towards selected targets.
 
 

@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.AnalysisWorkbenchAxesTransformWithRateResult.is_valid`
-              - Indicates whether the result object is valid.
+              - Indicate whether the result object is valid.
             * - :py:attr:`~ansys.stk.core.vgt.AnalysisWorkbenchAxesTransformWithRateResult.vector`
               - The output vector in the current axes.
             * - :py:attr:`~ansys.stk.core.vgt.AnalysisWorkbenchAxesTransformWithRateResult.velocity`
@@ -44,7 +44,7 @@ Property detail
     :canonical: ansys.stk.core.vgt.AnalysisWorkbenchAxesTransformWithRateResult.is_valid
     :type: bool
 
-    Indicates whether the result object is valid.
+    Indicate whether the result object is valid.
 
 .. py:property:: vector
     :canonical: ansys.stk.core.vgt.AnalysisWorkbenchAxesTransformWithRateResult.vector

@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateDelaunay.coordinate_system_type`
-              - Gets or sets the coordinate system being used.
+              - Get or set the coordinate system being used.
             * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateDelaunay.coordinate_system`
               - Get the coordinate system and coordinate epoch.
             * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateDelaunay.l_type`
@@ -37,7 +37,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateDelaunay.g`
               - Value of G or G/SQRT(mu).
             * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateDelaunay.supported_coordinate_system_types`
-              - Returns an array of supported coordinate system types.
+              - Return an array of supported coordinate system types.
             * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateDelaunay.mean_anomaly`
               - Mean Anomaly (l). Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateDelaunay.argument_of_periapsis`
@@ -64,7 +64,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.OrbitStateDelaunay.coordinate_system_type
     :type: CoordinateSystem
 
-    Gets or sets the coordinate system being used.
+    Get or set the coordinate system being used.
 
 .. py:property:: coordinate_system
     :canonical: ansys.stk.core.stkobjects.OrbitStateDelaunay.coordinate_system
@@ -112,7 +112,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.OrbitStateDelaunay.supported_coordinate_system_types
     :type: list
 
-    Returns an array of supported coordinate system types.
+    Return an array of supported coordinate system types.
 
 .. py:property:: mean_anomaly
     :canonical: ansys.stk.core.stkobjects.OrbitStateDelaunay.mean_anomaly

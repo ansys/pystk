@@ -40,7 +40,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.UserVariableUpdate.variable_action`
               - Action to be performed using the value.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.UserVariableUpdate.control_parameters_available`
-              - Returns whether or not the control parameters can be set.
+              - Return whether or not the control parameters can be set.
 
 
 
@@ -83,7 +83,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.UserVariableUpdate.control_parameters_available
     :type: bool
 
-    Returns whether or not the control parameters can be set.
+    Return whether or not the control parameters can be set.
 
 
 Method detail

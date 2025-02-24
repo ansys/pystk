@@ -19,7 +19,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSGP4AutoUpdate.selected_source`
-              - Gets or sets the source type for element updates.
+              - Get or set the source type for element updates.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSGP4AutoUpdate.properties`
               - Get the Automatic Update selection and method.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSGP4AutoUpdate.file_source`
@@ -44,7 +44,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.PropagatorSGP4AutoUpdate.selected_source
     :type: VehicleSGP4AutomaticUpdateSourceType
 
-    Gets or sets the source type for element updates.
+    Get or set the source type for element updates.
 
 .. py:property:: properties
     :canonical: ansys.stk.core.stkobjects.PropagatorSGP4AutoUpdate.properties

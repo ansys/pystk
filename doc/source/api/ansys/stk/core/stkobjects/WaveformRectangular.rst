@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.WaveformRectangular.pulse_definition`
-              - Gets the pulse definition parameters.
+              - Get the pulse definition parameters.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.WaveformRectangular.pulse_definition
     :type: WaveformPulseDefinition
 
-    Gets the pulse definition parameters.
+    Get the pulse definition parameters.
 
 

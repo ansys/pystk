@@ -38,9 +38,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.PolylinePrimitiveFactory.minimum_width_supported`
-              - Gets the minimum width, in pixels, supported by the video card.
+              - Get the minimum width, in pixels, supported by the video card.
             * - :py:attr:`~ansys.stk.core.graphics.PolylinePrimitiveFactory.maximum_width_supported`
-              - Gets the maximum width, in pixels, supported by the video card.
+              - Get the maximum width, in pixels, supported by the video card.
 
 
 
@@ -59,13 +59,13 @@ Property detail
     :canonical: ansys.stk.core.graphics.PolylinePrimitiveFactory.minimum_width_supported
     :type: float
 
-    Gets the minimum width, in pixels, supported by the video card.
+    Get the minimum width, in pixels, supported by the video card.
 
 .. py:property:: maximum_width_supported
     :canonical: ansys.stk.core.graphics.PolylinePrimitiveFactory.maximum_width_supported
     :type: float
 
-    Gets the maximum width, in pixels, supported by the video card.
+    Get the maximum width, in pixels, supported by the video card.
 
 
 Method detail

@@ -33,7 +33,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DOrbitProximity.uncertainty_area_label_swap_distance`
               - Area of uncertainty label swap distance.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DOrbitProximity.ellipsoid`
-              - Defines the ellipsoid parameters.
+              - Define the ellipsoid parameters.
 
 
 
@@ -88,6 +88,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DOrbitProximity.ellipsoid
     :type: VehicleGraphics3DEllipsoid
 
-    Defines the ellipsoid parameters.
+    Define the ellipsoid parameters.
 
 

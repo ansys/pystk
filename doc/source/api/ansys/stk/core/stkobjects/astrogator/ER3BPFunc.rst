@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ER3BPFunc.secondary_name`
-              - Gets or sets the secondary body  which should be consistently defined with ER3BP model definitions.
+              - Get or set the secondary body  which should be consistently defined with ER3BP model definitions.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ER3BPFunc.ephemeris_epoch`
               - Get the epoch from which the eccentricity value is reported from the secondary.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ER3BPFunc.true_anomaly`
@@ -56,7 +56,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.ER3BPFunc.secondary_name
     :type: str
 
-    Gets or sets the secondary body  which should be consistently defined with ER3BP model definitions.
+    Get or set the secondary body  which should be consistently defined with ER3BP model definitions.
 
 .. py:property:: ephemeris_epoch
     :canonical: ansys.stk.core.stkobjects.astrogator.ER3BPFunc.ephemeris_epoch

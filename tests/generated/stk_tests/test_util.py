@@ -17,6 +17,7 @@ from ansys.stk.core.stkengine import *
 if os.name == "nt":
     from ansys.stk.core.stkdesktop import *
 from ansys.stk.core.stkobjects import *
+from ansys.stk.core.stkrfchannelmodeler import *
 from ansys.stk.core.stkobjects.astrogator import *
 from ansys.stk.core.stkobjects.aviator import *
 from ansys.stk.core.stkutil import *

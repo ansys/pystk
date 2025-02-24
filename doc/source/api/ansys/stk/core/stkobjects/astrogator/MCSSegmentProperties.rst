@@ -30,9 +30,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSSegmentProperties.display_coordinate_system`
-              - Gets or sets the coordinate system that will be used in the segment summary report.
+              - Get or set the coordinate system that will be used in the segment summary report.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSSegmentProperties.color`
-              - Gets or sets the display color of the segment.
+              - Get or set the display color of the segment.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSSegmentProperties.update_animation_time_after_run`
               - If true, Astrogator will set the animation time to the final epoch of the segment when the segment finishes running.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSSegmentProperties.b_planes`
@@ -57,13 +57,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSSegmentProperties.display_coordinate_system
     :type: str
 
-    Gets or sets the coordinate system that will be used in the segment summary report.
+    Get or set the coordinate system that will be used in the segment summary report.
 
 .. py:property:: color
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSSegmentProperties.color
     :type: agcolor.Color
 
-    Gets or sets the display color of the segment.
+    Get or set the display color of the segment.
 
 .. py:property:: update_animation_time_after_run
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSSegmentProperties.update_animation_time_after_run

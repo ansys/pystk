@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.BMagnitudeCalc.target_body_name`
-              - Gets or sets the target body for B-plane computation.
+              - Get or set the target body for B-plane computation.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.BMagnitudeCalc.target_body_name
     :type: str
 
-    Gets or sets the target body for B-plane computation.
+    Get or set the target body for B-plane computation.
 
 

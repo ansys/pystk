@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageResolutionDistance.distance`
-              - Gets or sets the distance used to define grid resolution. Uses Distance Dimension.
+              - Get or set the distance used to define grid resolution. Uses Distance Dimension.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.CoverageResolutionDistance.distance
     :type: float
 
-    Gets or sets the distance used to define grid resolution. Uses Distance Dimension.
+    Get or set the distance used to define grid resolution. Uses Distance Dimension.
 
 

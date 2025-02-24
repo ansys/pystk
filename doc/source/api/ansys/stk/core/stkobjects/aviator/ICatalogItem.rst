@@ -40,7 +40,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICatalogItem.name`
-              - Gets or sets the name of the catalog item.
+              - Get or set the name of the catalog item.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICatalogItem.description`
               - Get the description of the catalog item.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICatalogItem.is_read_only`
@@ -66,7 +66,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.ICatalogItem.name
     :type: str
 
-    Gets or sets the name of the catalog item.
+    Get or set the name of the catalog item.
 
 .. py:property:: description
     :canonical: ansys.stk.core.stkobjects.aviator.ICatalogItem.description

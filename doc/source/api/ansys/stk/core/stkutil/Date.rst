@@ -36,13 +36,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkutil.Date.ole_date`
-              - Gets or sets the current time in OLE DATE Format.
+              - Get or set the current time in OLE DATE Format.
             * - :py:attr:`~ansys.stk.core.stkutil.Date.whole_days`
-              - Gets or sets the Julian Day Number of the date of interest.
+              - Get or set the Julian Day Number of the date of interest.
             * - :py:attr:`~ansys.stk.core.stkutil.Date.sec_into_day`
               - Contains values between 0.0 and 86400 with the exception of when the date is inside a leap second in which case the SecIntoDay can become as large as 86401.0.
             * - :py:attr:`~ansys.stk.core.stkutil.Date.whole_days_utc`
-              - Gets or sets the UTC Day Number of the date of interest.
+              - Get or set the UTC Day Number of the date of interest.
             * - :py:attr:`~ansys.stk.core.stkutil.Date.sec_into_day_utc`
               - Contains values between 0.0 and 86400 with the exception of when the date is inside a leap second in which case the SecIntoDay can become as large as 86401.0.
 
@@ -63,13 +63,13 @@ Property detail
     :canonical: ansys.stk.core.stkutil.Date.ole_date
     :type: datetime
 
-    Gets or sets the current time in OLE DATE Format.
+    Get or set the current time in OLE DATE Format.
 
 .. py:property:: whole_days
     :canonical: ansys.stk.core.stkutil.Date.whole_days
     :type: int
 
-    Gets or sets the Julian Day Number of the date of interest.
+    Get or set the Julian Day Number of the date of interest.
 
 .. py:property:: sec_into_day
     :canonical: ansys.stk.core.stkutil.Date.sec_into_day
@@ -81,7 +81,7 @@ Property detail
     :canonical: ansys.stk.core.stkutil.Date.whole_days_utc
     :type: int
 
-    Gets or sets the UTC Day Number of the date of interest.
+    Get or set the UTC Day Number of the date of interest.
 
 .. py:property:: sec_into_day_utc
     :canonical: ansys.stk.core.stkutil.Date.sec_into_day_utc

@@ -19,7 +19,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkx.DataObject.files`
-              - Returns a collection of filenames.
+              - Return a collection of filenames.
 
 
 
@@ -38,6 +38,6 @@ Property detail
     :canonical: ansys.stk.core.stkx.DataObject.files
     :type: DataObjectFiles
 
-    Returns a collection of filenames.
+    Return a collection of filenames.
 
 

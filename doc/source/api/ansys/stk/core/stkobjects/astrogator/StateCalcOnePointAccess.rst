@@ -30,19 +30,19 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcOnePointAccess.aberration_type`
-              - Gets or sets the type of aberration to use, if light time delay is applied.
+              - Get or set the type of aberration to use, if light time delay is applied.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcOnePointAccess.base_selection_type`
               - Get the base selection type.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcOnePointAccess.base_selection`
               - Get the base selection object.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcOnePointAccess.clock_host`
-              - Gets or sets the object whose location is associated with time.
+              - Get or set the object whose location is associated with time.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcOnePointAccess.signal_sense`
               - Sense of the signal at the base object.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcOnePointAccess.target_object`
               - Get the target object.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcOnePointAccess.time_delay_convergence_tolerance`
-              - Gets or sets the time delay convergence tolerance, if light time delay is applied. Uses Time Dimension.
+              - Get or set the time delay convergence tolerance, if light time delay is applied. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcOnePointAccess.use_light_time_delay`
               - Tue if light time delay is applied.
 
@@ -63,7 +63,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcOnePointAccess.aberration_type
     :type: AberrationType
 
-    Gets or sets the type of aberration to use, if light time delay is applied.
+    Get or set the type of aberration to use, if light time delay is applied.
 
 .. py:property:: base_selection_type
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcOnePointAccess.base_selection_type
@@ -81,7 +81,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcOnePointAccess.clock_host
     :type: IvClockHost
 
-    Gets or sets the object whose location is associated with time.
+    Get or set the object whose location is associated with time.
 
 .. py:property:: signal_sense
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcOnePointAccess.signal_sense
@@ -99,7 +99,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcOnePointAccess.time_delay_convergence_tolerance
     :type: float
 
-    Gets or sets the time delay convergence tolerance, if light time delay is applied. Uses Time Dimension.
+    Get or set the time delay convergence tolerance, if light time delay is applied. Uses Time Dimension.
 
 .. py:property:: use_light_time_delay
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcOnePointAccess.use_light_time_delay

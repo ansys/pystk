@@ -21,11 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.ExtrudedPolylineTriangulatorResult.top_boundary_positions`
-              - Gets the boundary positions along the top of the extrusion. Three array elements (in the order x, y, z) constitute one position.
+              - Get the boundary positions along the top of the extrusion. Three array elements (in the order x, y, z) constitute one position.
             * - :py:attr:`~ansys.stk.core.graphics.ExtrudedPolylineTriangulatorResult.bottom_boundary_positions`
-              - Gets the boundary positions along the bottom of the extrusion. Three array elements (in the order x, y, z) constitute one position.
+              - Get the boundary positions along the bottom of the extrusion. Three array elements (in the order x, y, z) constitute one position.
             * - :py:attr:`~ansys.stk.core.graphics.ExtrudedPolylineTriangulatorResult.boundary_positions_winding_order`
-              - Gets the winding order of top boundary positions and bottom boundary positions.
+              - Get the winding order of top boundary positions and bottom boundary positions.
 
 
 
@@ -44,18 +44,18 @@ Property detail
     :canonical: ansys.stk.core.graphics.ExtrudedPolylineTriangulatorResult.top_boundary_positions
     :type: list
 
-    Gets the boundary positions along the top of the extrusion. Three array elements (in the order x, y, z) constitute one position.
+    Get the boundary positions along the top of the extrusion. Three array elements (in the order x, y, z) constitute one position.
 
 .. py:property:: bottom_boundary_positions
     :canonical: ansys.stk.core.graphics.ExtrudedPolylineTriangulatorResult.bottom_boundary_positions
     :type: list
 
-    Gets the boundary positions along the bottom of the extrusion. Three array elements (in the order x, y, z) constitute one position.
+    Get the boundary positions along the bottom of the extrusion. Three array elements (in the order x, y, z) constitute one position.
 
 .. py:property:: boundary_positions_winding_order
     :canonical: ansys.stk.core.graphics.ExtrudedPolylineTriangulatorResult.boundary_positions_winding_order
     :type: WindingOrder
 
-    Gets the winding order of top boundary positions and bottom boundary positions.
+    Get the winding order of top boundary positions and bottom boundary positions.
 
 

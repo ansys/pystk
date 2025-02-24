@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.RFFilterModelSinc.cut_off_frequency`
-              - Gets or sets the analog filter cut off frequency.
+              - Get or set the analog filter cut off frequency.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.RFFilterModelSinc.cut_off_frequency
     :type: float
 
-    Gets or sets the analog filter cut off frequency.
+    Get or set the analog filter cut off frequency.
 
 

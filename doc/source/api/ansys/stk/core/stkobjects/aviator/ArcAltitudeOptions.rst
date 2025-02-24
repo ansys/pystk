@@ -21,9 +21,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ArcAltitudeOptions.use_default_cruise_altitude`
               - Opt whether to use the default cruise altitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ArcAltitudeOptions.start_arc_altitude`
-              - Gets or sets the altitude at the beginning of the arc.
+              - Get or set the altitude at the beginning of the arc.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ArcAltitudeOptions.stop_arc_altitude`
-              - Gets or sets the altitude at the end of the arc.
+              - Get or set the altitude at the end of the arc.
 
 
 
@@ -48,12 +48,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.ArcAltitudeOptions.start_arc_altitude
     :type: float
 
-    Gets or sets the altitude at the beginning of the arc.
+    Get or set the altitude at the beginning of the arc.
 
 .. py:property:: stop_arc_altitude
     :canonical: ansys.stk.core.stkobjects.aviator.ArcAltitudeOptions.stop_arc_altitude
     :type: float
 
-    Gets or sets the altitude at the end of the arc.
+    Get or set the altitude at the end of the arc.
 
 

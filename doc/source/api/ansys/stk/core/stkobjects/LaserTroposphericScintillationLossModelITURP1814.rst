@@ -30,7 +30,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.LaserTroposphericScintillationLossModelITURP1814.atmospheric_turbulence_model`
-              - Gets the atmospheric turbulence model.
+              - Get the atmospheric turbulence model.
 
 
 
@@ -49,7 +49,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.LaserTroposphericScintillationLossModelITURP1814.atmospheric_turbulence_model
     :type: IAtmosphericTurbulenceModel
 
-    Gets the atmospheric turbulence model.
+    Get the atmospheric turbulence model.
 
 
 Method detail

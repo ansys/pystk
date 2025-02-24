@@ -69,26 +69,32 @@ __all__ = ["AGICustomTerrainOverlay", "AGICustomTerrainOverlayFactory", "AGIProc
 "VectorPrimitiveFactory", "VideoFormat", "VideoPlayback", "VideoStream", "VideoStreamFactory", "Visibility", "VisualEffects", 
 "WindingOrder"]
 
+from ctypes import POINTER
+from enum import IntEnum, IntFlag
 import typing
 
-from ctypes   import POINTER
-from enum     import IntEnum, IntFlag
-
-from .internal  import comutil          as agcom
-from .internal  import coclassutil      as agcls
-from .internal  import marshall         as agmarshall
-from .utilities import colors           as agcolor
-from .internal.comutil     import IUnknown, IPictureDisp
-from .internal.apiutil     import (InterfaceProxy, EnumeratorProxy, OutArg, 
-    initialize_from_source_object, get_interface_property, set_interface_attribute, 
-    set_class_attribute, SupportsDeleteCallback)
-from .internal.eventutil import (IImageCollectionEventHandler, IKmlGraphicsEventHandler,
-                                 ISceneEventHandler, ITerrainOverlayCollectionEventHandler)
-from .utilities.exceptions import STKRuntimeError
-
+from .internal import coclassutil as agcls, comutil as agcom, marshall as agmarshall
+from .internal.apiutil import (
+    EnumeratorProxy,
+    InterfaceProxy,
+    OutArg,
+    SupportsDeleteCallback,
+    get_interface_property,
+    initialize_from_source_object,
+    set_class_attribute,
+    set_interface_attribute,
+)
+from .internal.comutil import IPictureDisp, IUnknown
+from .internal.eventutil import (
+    IImageCollectionEventHandler,
+    IKmlGraphicsEventHandler,
+    ISceneEventHandler,
+    ITerrainOverlayCollectionEventHandler,
+)
 from .stkutil import IOrientation
-from .vgt import (IVectorGeometryToolAxes, IVectorGeometryToolPoint, IVectorGeometryToolSystem,
-                  IVectorGeometryToolVector)
+from .utilities import colors as agcolor
+from .utilities.exceptions import STKRuntimeError
+from .vgt import IVectorGeometryToolAxes, IVectorGeometryToolPoint, IVectorGeometryToolSystem, IVectorGeometryToolVector
 
 
 def _raise_uninitialized_error(*args):
@@ -19976,12 +19982,13 @@ agcls.AgTypeNameMap["GradientDetectFilterFactory"] = GradientDetectFilterFactory
 class Jpeg2000WriterInitializer(SupportsDeleteCallback):
     """Convert an image, such as a BMP, to a GeoJP2 file that can be used as an image globe overlay."""
 
-    _num_methods = 4
+    _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _write_string_method_offset = 1
     _write_extent_string_method_offset = 2
     _write_extent_and_sub_extent_string_method_offset = 3
     _write_extent_and_sub_extent_transparent_color_string_method_offset = 4
+    _write_extent_and_sub_extent_transparent_color_string_central_body_method_offset = 5
     _metadata = {
         "iid_data" : (5092380299587909893, 11808721769516081064),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -20017,6 +20024,13 @@ class Jpeg2000WriterInitializer(SupportsDeleteCallback):
     def write_extent_and_sub_extent_transparent_color_string(self, image_uri:str, extent:list, sub_extent:list, compression_profile:"Jpeg2000CompressionProfile", compression_rate:int, jpeg2000_uri:str, overwrite_existing_file:bool, transparent_color:agcolor.Color) -> None:
         """Convert an image, such as a BMP, to a GeoJP2 file that can be used as an image globe overlay. The extent of the image can be defined as an input parameter if necessary."""
         return self._intf.invoke(Jpeg2000WriterInitializer._metadata, Jpeg2000WriterInitializer._write_extent_and_sub_extent_transparent_color_string_metadata, image_uri, extent, sub_extent, compression_profile, compression_rate, jpeg2000_uri, overwrite_existing_file, transparent_color)
+
+    _write_extent_and_sub_extent_transparent_color_string_central_body_metadata = { "offset" : _write_extent_and_sub_extent_transparent_color_string_central_body_method_offset,
+            "arg_types" : (agcom.BSTR, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.LPSAFEARRAY), agcom.LONG, agcom.INT, agcom.BSTR, agcom.VARIANT_BOOL, agcom.OLE_COLOR, agcom.BSTR,),
+            "marshallers" : (agmarshall.BStrArg, agmarshall.LPSafearrayArg, agmarshall.LPSafearrayArg, agmarshall.EnumArg(Jpeg2000CompressionProfile), agmarshall.IntArg, agmarshall.BStrArg, agmarshall.VariantBoolArg, agmarshall.OLEColorArg, agmarshall.BStrArg,) }
+    def write_extent_and_sub_extent_transparent_color_string_central_body(self, image_uri:str, extent:list, sub_extent:list, compression_profile:"Jpeg2000CompressionProfile", compression_rate:int, jpeg2000_uri:str, overwrite_existing_file:bool, transparent_color:agcolor.Color, central_body_name:str) -> None:
+        """Convert an image, such as a BMP, to a GeoJP2 file that can be used as an image globe overlay. The extent of the image can be defined as an input parameter if necessary."""
+        return self._intf.invoke(Jpeg2000WriterInitializer._metadata, Jpeg2000WriterInitializer._write_extent_and_sub_extent_transparent_color_string_central_body_metadata, image_uri, extent, sub_extent, compression_profile, compression_rate, jpeg2000_uri, overwrite_existing_file, transparent_color, central_body_name)
 
 
     def __init__(self, source_object=None):

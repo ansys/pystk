@@ -21,9 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.AtmosphericTurbulenceModelHufnagelValley.nominal_ground_refractive_index_structure_parameter`
-              - Gets or sets the refractive index structure parameter value.
+              - Get or set the refractive index structure parameter value.
             * - :py:attr:`~ansys.stk.core.stkobjects.AtmosphericTurbulenceModelHufnagelValley.wind_speed`
-              - Gets or sets the wind speed value.
+              - Get or set the wind speed value.
 
 
 
@@ -42,12 +42,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.AtmosphericTurbulenceModelHufnagelValley.nominal_ground_refractive_index_structure_parameter
     :type: float
 
-    Gets or sets the refractive index structure parameter value.
+    Get or set the refractive index structure parameter value.
 
 .. py:property:: wind_speed
     :canonical: ansys.stk.core.stkobjects.AtmosphericTurbulenceModelHufnagelValley.wind_speed
     :type: float
 
-    Gets or sets the wind speed value.
+    Get or set the wind speed value.
 
 

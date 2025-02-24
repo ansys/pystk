@@ -36,13 +36,15 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSGP4.automatic_update_enabled`
               - Whether automatic update is enabled.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSGP4.automatic_update_settings`
-              - Allows configuring the auto-update parameters and settings.
+              - Allow configuring the auto-update parameters and settings.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSGP4.common_tasks`
               - Most commonly used tasks such as importing file data, etc.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSGP4.settings`
               - Propagator settings.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSGP4.ephemeris_interval`
               - Get the propagator's ephemeris interval.
+            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSGP4.international_designator`
+              - International designation of the satellite.
 
 
 
@@ -79,7 +81,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.PropagatorSGP4.automatic_update_settings
     :type: PropagatorSGP4AutoUpdate
 
-    Allows configuring the auto-update parameters and settings.
+    Allow configuring the auto-update parameters and settings.
 
 .. py:property:: common_tasks
     :canonical: ansys.stk.core.stkobjects.PropagatorSGP4.common_tasks
@@ -99,6 +101,12 @@ Property detail
 
     Get the propagator's ephemeris interval.
 
+.. py:property:: international_designator
+    :canonical: ansys.stk.core.stkobjects.PropagatorSGP4.international_designator
+    :type: str
+
+    International designation of the satellite.
+
 
 Method detail
 -------------
@@ -111,6 +119,8 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
+
 
 
 

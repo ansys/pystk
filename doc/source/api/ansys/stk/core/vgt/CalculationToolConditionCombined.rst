@@ -42,7 +42,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.vgt.CalculationToolConditionCombined.boolean_operation`
               - Get the operation from the condition that determines how the conditions are combined. The operation can be set to AND, OR, XOR, MINUS.
             * - :py:attr:`~ansys.stk.core.vgt.CalculationToolConditionCombined.count`
-              - Gets the number of conditions in the combined condition.
+              - Get the number of conditions in the combined condition.
 
 
 
@@ -67,7 +67,7 @@ Property detail
     :canonical: ansys.stk.core.vgt.CalculationToolConditionCombined.count
     :type: int
 
-    Gets the number of conditions in the combined condition.
+    Get the number of conditions in the combined condition.
 
 
 Method detail

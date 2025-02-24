@@ -25,7 +25,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DReferencePlane.is_plane_transparent`
               - If enabled, the plane is see-through; otherwise it is opaque. Only available for planes.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DReferencePlane.size`
-              - Gets or sets the size of the selected geometric plane or point. Dimensionless.
+              - Get or set the size of the selected geometric plane or point. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DReferencePlane.transparency`
               - Use the slide control to set the transparency of the plane. Transparency can be adjusted from 0 to 100 percent, where 100 percent is completely invisible. Only available for planes. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DReferencePlane.draw_at_object`
@@ -66,7 +66,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Graphics3DReferencePlane.size
     :type: float
 
-    Gets or sets the size of the selected geometric plane or point. Dimensionless.
+    Get or set the size of the selected geometric plane or point. Dimensionless.
 
 .. py:property:: transparency
     :canonical: ansys.stk.core.stkobjects.Graphics3DReferencePlane.transparency

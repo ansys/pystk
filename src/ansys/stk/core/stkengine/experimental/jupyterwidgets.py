@@ -9,23 +9,33 @@
 __all__ = ['GlobeWidget', 'MapWidget', 'GfxAnalysisWidget']
 
 import asyncio
-import numpy as np
+from ctypes import CFUNCTYPE, Structure, addressof, byref, c_int, c_size_t, c_void_p, cast, cdll, pointer
 import os
 import time
 
 from IPython.display import display
 from jupyter_rfb import RemoteFrameBuffer
 from jupyter_rfb._png import array2png
-from ctypes import byref, CFUNCTYPE, cdll, c_size_t, c_int, c_void_p, \
-    addressof, Structure, cast, pointer
+import numpy as np
 
-from ...stkx import Graphics3DControlBase, Graphics2DControlBase, \
-    GraphicsAnalysisControlBase, ButtonValues, ShiftValues
+from ...internal.comutil import (
+    CLSCTX_INPROC_SERVER,
+    E_NOINTERFACE,
+    GUID,
+    HRESULT,
+    LPVOID,
+    POINTER,
+    PVOID,
+    REFIID,
+    S_OK,
+    ULONG,
+    IUnknown,
+    OLE32Lib,
+    Succeeded,
+)
 from ...internal.stkxrfb import IRemoteFrameBuffer, IRemoteFrameBufferHost
-from ...internal.comutil import OLE32Lib, \
-    IUnknown, Succeeded, LPVOID, CLSCTX_INPROC_SERVER, \
-    GUID, PVOID, REFIID, POINTER, HRESULT, ULONG, S_OK, E_NOINTERFACE
 from ...stkobjects import StkObjectRoot
+from ...stkx import ButtonValues, Graphics2DControlBase, Graphics3DControlBase, GraphicsAnalysisControlBase, ShiftValues
 from ...utilities.exceptions import STKAttributeError
 
 TIMERPROC = CFUNCTYPE(None, c_size_t)

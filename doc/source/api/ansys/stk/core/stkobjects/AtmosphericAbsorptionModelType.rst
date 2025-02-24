@@ -46,6 +46,9 @@ Overview
             * - :py:attr:`~COM_PLUGIN`
               - COM Plugin atmospheric absorption model type.
 
+            * - :py:attr:`~ITURP676_13`
+              - ITU-R P676-13 atmospheric absorption model type.
+
 
 Import detail
 -------------

@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcInertialDeltaVx.coord_axes_name`
-              - Gets or sets the coordinate axes.
+              - Get or set the coordinate axes.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcInertialDeltaVx.coord_axes_name
     :type: str
 
-    Gets or sets the coordinate axes.
+    Get or set the coordinate axes.
 
 

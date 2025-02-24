@@ -28,7 +28,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSGP4AutoUpdateFileSource.filename`
-              - Gets or sets the name of the source file containing GP data (either TLEs or CCSDS OMM content).
+              - Get or set the name of the source file containing GP data (either TLEs or CCSDS OMM content).
 
 
 
@@ -47,7 +47,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.PropagatorSGP4AutoUpdateFileSource.filename
     :type: str
 
-    Gets or sets the name of the source file containing GP data (either TLEs or CCSDS OMM content).
+    Get or set the name of the source file containing GP data (either TLEs or CCSDS OMM content).
 
 
 Method detail

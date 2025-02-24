@@ -38,21 +38,21 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch.enroute_cruise_airspeed_options`
               - Get the enroute cruise airspeed options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch.procedure_type`
-              - Gets or sets the procedure methodology used to calculate the flight line.
+              - Get or set the procedure methodology used to calculate the flight line.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch.max_separation`
-              - Gets or sets the maximum distance between the parallel flight lines of the search pattern.
+              - Get or set the maximum distance between the parallel flight lines of the search pattern.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch.course_mode`
-              - Gets or sets the mode to determine the course of the search pattern.
+              - Get or set the mode to determine the course of the search pattern.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch.first_leg_retrograde`
-              - Gets or sets the option to fly the first leg of the search pattern on the reverse heading.
+              - Get or set the option to fly the first leg of the search pattern on the reverse heading.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch.centroid_true_course`
-              - Gets or sets the specific course of the search pattern.
+              - Get or set the specific course of the search pattern.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch.fly_cruise_airspeed_profile`
               - Opt whether the aircraft immediately adopts the selected cruise airspeed or gradually begins accelerating/decelerating in the previous procedure.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch.must_level_off`
               - Opt whether the procedure must level off.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch.level_off_mode`
-              - Gets or sets the level off mode. This is only used when the must level off option is on.
+              - Get or set the level off mode. This is only used when the must level off option is on.
 
 
 
@@ -89,31 +89,31 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch.procedure_type
     :type: FlightLineProcedureType
 
-    Gets or sets the procedure methodology used to calculate the flight line.
+    Get or set the procedure methodology used to calculate the flight line.
 
 .. py:property:: max_separation
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch.max_separation
     :type: float
 
-    Gets or sets the maximum distance between the parallel flight lines of the search pattern.
+    Get or set the maximum distance between the parallel flight lines of the search pattern.
 
 .. py:property:: course_mode
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch.course_mode
     :type: SearchPatternCourseMode
 
-    Gets or sets the mode to determine the course of the search pattern.
+    Get or set the mode to determine the course of the search pattern.
 
 .. py:property:: first_leg_retrograde
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch.first_leg_retrograde
     :type: bool
 
-    Gets or sets the option to fly the first leg of the search pattern on the reverse heading.
+    Get or set the option to fly the first leg of the search pattern on the reverse heading.
 
 .. py:property:: centroid_true_course
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch.centroid_true_course
     :type: typing.Any
 
-    Gets or sets the specific course of the search pattern.
+    Get or set the specific course of the search pattern.
 
 .. py:property:: fly_cruise_airspeed_profile
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch.fly_cruise_airspeed_profile
@@ -131,7 +131,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureAreaTargetSearch.level_off_mode
     :type: AltitudeConstraintManeuverMode
 
-    Gets or sets the level off mode. This is only used when the must level off option is on.
+    Get or set the level off mode. This is only used when the must level off option is on.
 
 
 Method detail

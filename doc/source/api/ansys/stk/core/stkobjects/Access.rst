@@ -40,21 +40,21 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.Access.data_providers`
-              - Returns the object representing a list of available data providers for the object.
+              - Return the object representing a list of available data providers for the object.
             * - :py:attr:`~ansys.stk.core.stkobjects.Access.access_time_period`
-              - Specifies the time period option. A member of the AgEAccessTimeType enumeration.
+              - Specify the time period option. A member of the AgEAccessTimeType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.Access.graphics`
-              - Gets the Graphics properties for the Access computations.
+              - Get the Graphics properties for the Access computations.
             * - :py:attr:`~ansys.stk.core.stkobjects.Access.advanced`
-              - Gets the Advanced properties for the Access computations.
+              - Get the Advanced properties for the Access computations.
             * - :py:attr:`~ansys.stk.core.stkobjects.Access.data_displays`
-              - Gets the VO Data Display Collection.
+              - Get the VO Data Display Collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.Access.computed_access_interval_times`
-              - Returns a list of the computed access interval times.
+              - Return a list of the computed access interval times.
             * - :py:attr:`~ansys.stk.core.stkobjects.Access.access_time_period_data`
-              - Returns an IAgIntervalCollection if AccessTimePeriod is eAccessTimeIntervals; returns an IAgAccessTimePeriod if AccessTimePeriod is eUserSpecAccessTime; returns an IAgAccessTimeEventIntervals if AccessTimePeriod is eAccessTimeEventIntervals.
+              - Return an IAgIntervalCollection if AccessTimePeriod is eAccessTimeIntervals; returns an IAgAccessTimePeriod if AccessTimePeriod is eUserSpecAccessTime; returns an IAgAccessTimeEventIntervals if AccessTimePeriod is eAccessTimeEventIntervals.
             * - :py:attr:`~ansys.stk.core.stkobjects.Access.analysis_workbench_components`
-              - Gets a VGT provider to access the analytical vector geometry, timeline, calculation and other types of components.
+              - Get a VGT provider to access the analytical vector geometry, timeline, calculation and other types of components.
             * - :py:attr:`~ansys.stk.core.stkobjects.Access.save_computed_data`
               - Flag indicating whether to save computed data with the Access instance.
             * - :py:attr:`~ansys.stk.core.stkobjects.Access.base`
@@ -81,49 +81,49 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Access.data_providers
     :type: DataProviderCollection
 
-    Returns the object representing a list of available data providers for the object.
+    Return the object representing a list of available data providers for the object.
 
 .. py:property:: access_time_period
     :canonical: ansys.stk.core.stkobjects.Access.access_time_period
     :type: AccessTimeType
 
-    Specifies the time period option. A member of the AgEAccessTimeType enumeration.
+    Specify the time period option. A member of the AgEAccessTimeType enumeration.
 
 .. py:property:: graphics
     :canonical: ansys.stk.core.stkobjects.Access.graphics
     :type: AccessGraphics
 
-    Gets the Graphics properties for the Access computations.
+    Get the Graphics properties for the Access computations.
 
 .. py:property:: advanced
     :canonical: ansys.stk.core.stkobjects.Access.advanced
     :type: AccessAdvancedSettings
 
-    Gets the Advanced properties for the Access computations.
+    Get the Advanced properties for the Access computations.
 
 .. py:property:: data_displays
     :canonical: ansys.stk.core.stkobjects.Access.data_displays
     :type: Graphics3DDataDisplayCollection
 
-    Gets the VO Data Display Collection.
+    Get the VO Data Display Collection.
 
 .. py:property:: computed_access_interval_times
     :canonical: ansys.stk.core.stkobjects.Access.computed_access_interval_times
     :type: TimeIntervalCollection
 
-    Returns a list of the computed access interval times.
+    Return a list of the computed access interval times.
 
 .. py:property:: access_time_period_data
     :canonical: ansys.stk.core.stkobjects.Access.access_time_period_data
     :type: IAccessInterval
 
-    Returns an IAgIntervalCollection if AccessTimePeriod is eAccessTimeIntervals; returns an IAgAccessTimePeriod if AccessTimePeriod is eUserSpecAccessTime; returns an IAgAccessTimeEventIntervals if AccessTimePeriod is eAccessTimeEventIntervals.
+    Return an IAgIntervalCollection if AccessTimePeriod is eAccessTimeIntervals; returns an IAgAccessTimePeriod if AccessTimePeriod is eUserSpecAccessTime; returns an IAgAccessTimeEventIntervals if AccessTimePeriod is eAccessTimeEventIntervals.
 
 .. py:property:: analysis_workbench_components
     :canonical: ansys.stk.core.stkobjects.Access.analysis_workbench_components
     :type: IAnalysisWorkbenchComponentProvider
 
-    Gets a VGT provider to access the analytical vector geometry, timeline, calculation and other types of components.
+    Get a VGT provider to access the analytical vector geometry, timeline, calculation and other types of components.
 
 .. py:property:: save_computed_data
     :canonical: ansys.stk.core.stkobjects.Access.save_computed_data

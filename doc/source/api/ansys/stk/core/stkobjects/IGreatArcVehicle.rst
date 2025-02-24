@@ -36,13 +36,13 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.route_type`
               - Get the propagator type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.route_supported_types`
-              - Returns an array of valid choices.
+              - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.route`
               - Get the route properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.attitude_type`
               - Get the type of attitude profile.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.attitude_supported_types`
-              - Returns an array of valid choices.
+              - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.attitude`
               - Get the  attitude profile.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.ground_ellipses`
@@ -54,7 +54,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.use_terrain_in_lighting_computations`
               - Opt whether to compute lighting using terrain data.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.lighting_maximum_step`
-              - This property is deprecated. Use LightingMaxStepTerrain or LightingMaxStepCbShape as appropriate. The maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
+              - Do not use this property, as it is deprecated. Use LightingMaxStepTerrain or LightingMaxStepCbShape as appropriate. The maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
 
 
 Import detail
@@ -78,7 +78,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.route_supported_types
     :type: list
 
-    Returns an array of valid choices.
+    Return an array of valid choices.
 
 .. py:property:: route
     :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.route
@@ -96,7 +96,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.attitude_supported_types
     :type: list
 
-    Returns an array of valid choices.
+    Return an array of valid choices.
 
 .. py:property:: attitude
     :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.attitude
@@ -132,7 +132,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.lighting_maximum_step
     :type: float
 
-    This property is deprecated. Use LightingMaxStepTerrain or LightingMaxStepCbShape as appropriate. The maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
+    Do not use this property, as it is deprecated. Use LightingMaxStepTerrain or LightingMaxStepCbShape as appropriate. The maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
 
 
 Method detail

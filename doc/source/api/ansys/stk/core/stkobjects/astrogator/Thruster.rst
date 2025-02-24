@@ -34,19 +34,19 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.Thruster.name`
-              - Gets or sets the thruster name.
+              - Get or set the thruster name.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.Thruster.user_comment`
               - A user comment.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.Thruster.engine_model_name`
-              - Gets or sets the engine model.
+              - Get or set the engine model.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.Thruster.thruster_efficiency`
-              - Gets or sets the thruster efficiency. Dimensionless.
+              - Get or set the thruster efficiency. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.Thruster.equivalent_on_time`
-              - Gets or sets the equivalent on-time percentage is a factor multiplied by the thrust. The thrust is applied continuously throughout the maneuver and is reduced by the percentage. The mass flow rate is likewise reduced. Dimensionless.
+              - Get or set the equivalent on-time percentage is a factor multiplied by the thrust. The thrust is applied continuously throughout the maneuver and is reduced by the percentage. The mass flow rate is likewise reduced. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.Thruster.thruster_direction`
               - A thruster direction value.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.Thruster.control_parameters_available`
-              - Returns whether or not the control parameters can be set.
+              - Return whether or not the control parameters can be set.
 
 
 
@@ -65,7 +65,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.Thruster.name
     :type: str
 
-    Gets or sets the thruster name.
+    Get or set the thruster name.
 
 .. py:property:: user_comment
     :canonical: ansys.stk.core.stkobjects.astrogator.Thruster.user_comment
@@ -77,19 +77,19 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.Thruster.engine_model_name
     :type: str
 
-    Gets or sets the engine model.
+    Get or set the engine model.
 
 .. py:property:: thruster_efficiency
     :canonical: ansys.stk.core.stkobjects.astrogator.Thruster.thruster_efficiency
     :type: float
 
-    Gets or sets the thruster efficiency. Dimensionless.
+    Get or set the thruster efficiency. Dimensionless.
 
 .. py:property:: equivalent_on_time
     :canonical: ansys.stk.core.stkobjects.astrogator.Thruster.equivalent_on_time
     :type: float
 
-    Gets or sets the equivalent on-time percentage is a factor multiplied by the thrust. The thrust is applied continuously throughout the maneuver and is reduced by the percentage. The mass flow rate is likewise reduced. Dimensionless.
+    Get or set the equivalent on-time percentage is a factor multiplied by the thrust. The thrust is applied continuously throughout the maneuver and is reduced by the percentage. The mass flow rate is likewise reduced. Dimensionless.
 
 .. py:property:: thruster_direction
     :canonical: ansys.stk.core.stkobjects.astrogator.Thruster.thruster_direction
@@ -101,7 +101,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.Thruster.control_parameters_available
     :type: bool
 
-    Returns whether or not the control parameters can be set.
+    Return whether or not the control parameters can be set.
 
 
 Method detail

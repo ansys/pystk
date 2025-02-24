@@ -23,7 +23,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics3DAttributes.translucency`
               - Percentage translucency of the static graphics when grid points are filled.
             * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics3DAttributes.point_size`
-              - Gets or sets the size of a grid point for static graphics when grid points are not filled and smooth contours are not used.
+              - Get or set the size of a grid point for static graphics when grid points are not filled and smooth contours are not used.
 
 
 
@@ -54,6 +54,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.FigureOfMeritGraphics3DAttributes.point_size
     :type: float
 
-    Gets or sets the size of a grid point for static graphics when grid points are not filled and smooth contours are not used.
+    Get or set the size of a grid point for static graphics when grid points are not filled and smooth contours are not used.
 
 

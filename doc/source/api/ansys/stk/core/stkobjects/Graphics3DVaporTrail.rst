@@ -19,7 +19,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DVaporTrail.visible`
-              - Controls whether to display the vapor trail in the 3D window.
+              - Control whether to display the vapor trail in the 3D window.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DVaporTrail.maximum_number_of_puffs`
               - Maximum number of puffs trailing the vapor source. A higher number represents a longer vapor trail. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DVaporTrail.density`
@@ -35,9 +35,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DVaporTrail.image_filename`
               - Image file used to display the vapor trail.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DVaporTrail.available_attachment_points`
-              - Gets a list of available attach points.
+              - Get a list of available attach points.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DVaporTrail.display_interval`
-              - Defines a display interval of the vapor trail in the 3D window.
+              - Define a display interval of the vapor trail in the 3D window.
 
 
 
@@ -56,7 +56,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Graphics3DVaporTrail.visible
     :type: bool
 
-    Controls whether to display the vapor trail in the 3D window.
+    Control whether to display the vapor trail in the 3D window.
 
 .. py:property:: maximum_number_of_puffs
     :canonical: ansys.stk.core.stkobjects.Graphics3DVaporTrail.maximum_number_of_puffs
@@ -104,12 +104,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Graphics3DVaporTrail.available_attachment_points
     :type: list
 
-    Gets a list of available attach points.
+    Get a list of available attach points.
 
 .. py:property:: display_interval
     :canonical: ansys.stk.core.stkobjects.Graphics3DVaporTrail.display_interval
     :type: ITimeToolTimeIntervalSmartInterval
 
-    Defines a display interval of the vapor trail in the 3D window.
+    Define a display interval of the vapor trail in the 3D window.
 
 

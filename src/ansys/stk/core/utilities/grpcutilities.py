@@ -8,13 +8,14 @@ by batching together API commands that do not require return values.
 
 import typing
 
-from .exceptions import GrpcUtilitiesError
 from ..internal.apiutil import SupportsDeleteCallback
+from .exceptions import GrpcUtilitiesError
+
 try:
+    from ..internal.AgGrpcServices_pb2 import BatchedInvokeRequest, InvokeRequest
     from ..internal.grpcutil import GrpcClient, GrpcInterfaceFuture, GrpcInterfacePimpl
-    from ..internal.AgGrpcServices_pb2 import InvokeRequest, BatchedInvokeRequest
     _DEFAULT_BATCH_DISABLE = False
-except:
+except ImportError:
     _DEFAULT_BATCH_DISABLE = True
 
 class GrpcCallBatcher(object):
@@ -148,7 +149,7 @@ class GrpcCallBatcher(object):
         if callable(future_provider):
             if hasattr(source_obj, future_provider.__name__):
                 return future_provider(source_obj, *args)
-        elif type(future_provider)==property:
+        elif type(future_provider) is property:
             attr_name = None
             for superclass in reversed(source_obj.__class__.mro()):
                 if hasattr(superclass, "_property_names"):

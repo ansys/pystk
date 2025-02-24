@@ -30,7 +30,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.PluginProperties.available_properties`
-              - Returns an array of all available properties.
+              - Return an array of all available properties.
 
 
 
@@ -49,7 +49,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.PluginProperties.available_properties
     :type: list
 
-    Returns an array of all available properties.
+    Return an array of all available properties.
 
 
 Method detail

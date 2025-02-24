@@ -22,19 +22,23 @@ __all__ = ["AgCROrientationAzEl", "AgCROrientationEulerAngles", "AgCROrientation
 "PropertyInfoValueType", "Quantity", "RuntimeTypeInfo", "Spherical", "UnitPreferencesDimension", "UnitPreferencesDimensionCollection", 
 "UnitPreferencesUnit", "UnitPreferencesUnitCollection", "YPRAnglesSequence"]
 
+from ctypes import POINTER
+from datetime import datetime
+from enum import IntEnum, IntFlag
 import typing
 
-from ctypes   import POINTER
-from datetime import datetime
-from enum     import IntEnum, IntFlag
-
-from .internal  import comutil          as agcom
-from .internal  import coclassutil      as agcls
-from .internal  import marshall         as agmarshall
-from .internal.comutil     import IUnknown, IDispatch
-from .internal.apiutil     import (InterfaceProxy, EnumeratorProxy, OutArg, 
-    initialize_from_source_object, get_interface_property, set_interface_attribute, 
-    set_class_attribute, SupportsDeleteCallback)
+from .internal import coclassutil as agcls, comutil as agcom, marshall as agmarshall
+from .internal.apiutil import (
+    EnumeratorProxy,
+    InterfaceProxy,
+    OutArg,
+    SupportsDeleteCallback,
+    get_interface_property,
+    initialize_from_source_object,
+    set_class_attribute,
+    set_interface_attribute,
+)
+from .internal.comutil import IDispatch, IUnknown
 from .utilities.exceptions import STKRuntimeError
 
 
@@ -2551,21 +2555,21 @@ class Quantity(SupportsDeleteCallback):
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceInArg("Quantity"), agmarshall.InterfaceOutArg,) }
     def add(self, quantity:"Quantity") -> "Quantity":
-        """Add the value from the Quantity interface to this interface. Returns a new IQuantity. The dimensions must be similar."""
+        """Add the value from the Quantity interface to this interface. Returns a new IAgQuantity. The dimensions must be similar."""
         return self._intf.invoke(Quantity._metadata, Quantity._add_metadata, quantity, OutArg())
 
     _subtract_metadata = { "offset" : _subtract_method_offset,
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceInArg("Quantity"), agmarshall.InterfaceOutArg,) }
     def subtract(self, quantity:"Quantity") -> "Quantity":
-        """Subtracts the value from the Quantity interface to this interface. Returns a new IQuantity. The dimensions must be similar."""
+        """Subtracts the value from the Quantity interface to this interface. Returns a new IAgQuantity. The dimensions must be similar."""
         return self._intf.invoke(Quantity._metadata, Quantity._subtract_metadata, quantity, OutArg())
 
     _multiply_qty_metadata = { "offset" : _multiply_qty_method_offset,
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceInArg("Quantity"), agmarshall.InterfaceOutArg,) }
     def multiply_qty(self, quantity:"Quantity") -> "Quantity":
-        """Multiplies the value from the Quantity interface to this interface. Returns a new IQuantity. The dimensions must be similar."""
+        """Multiplies the value from the Quantity interface to this interface. Returns a new IAgQuantity. The dimensions must be similar."""
         return self._intf.invoke(Quantity._metadata, Quantity._multiply_qty_metadata, quantity, OutArg())
 
     _divide_qty_metadata = { "offset" : _divide_qty_method_offset,

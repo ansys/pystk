@@ -61,11 +61,11 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.save_as`
               - Save the changes made to the scenario/vdf to a specified path and file name.
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.load_vdf_from_sdf`
-              - Load a vdf from SDF using the specified path. The method throws an exception if there is a scenario already loaded. If the password isn't needed, enter an empty string.
+              - Do not use this method, as it is deprecated. SDF functionality has been removed and this will be removed in the next major release. Loads a vdf from SDF using the specified path. The method throws an exception if there is a scenario already loaded.
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.load_vdf_from_sdf_with_version`
-              - Load a vdf from SDF using the specified path. The method throws an exception if there is a scenario already loaded. If the password isn't needed, enter an empty string.
+              - Do not use this method, as it is deprecated. SDF functionality has been removed and this will be removed in the next major release. Loads a vdf from SDF using the specified path. The method throws an exception if there is a scenario already loaded.
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.save_vdf_to_sdf`
-              - Save a vdf to SDF at the specified location. The method throws an exception if the VDF creation or upload fails.
+              - Do not use this method, as it is deprecated. SDF functionality has been removed and this will be removed in the next major release. Saves a vdf to SDF at the specified location. The method throws an exception if the VDF creation or upload fails.
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.subscribe`
               - """Return an IStkObjectRootEventHandler that is subscribed to handle events associated with this instance of StkObjectRoot."""
 
@@ -76,25 +76,27 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.units_preferences`
-              - Provides access to the Global Unit table.
+              - Provide access to the Global Unit table.
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.current_scenario`
-              - Returns a Scenario object or null if no scenario has been loaded yet.
+              - Return a Scenario object or null if no scenario has been loaded yet.
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.isolated`
-              - Returns whether the instance is isolated.
+              - Return whether the instance is isolated.
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.conversion_utility`
-              - Returns the conversion utility interface.
+              - Return the conversion utility interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.military_standard_2525b_symbols`
-              - Returns the interface that enables creating 2525b symbols.
+              - Return the interface that enables creating 2525b symbols.
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.available_features`
-              - Allows the user to inquiry about the available features.
+              - Allow the user to inquiry about the available features.
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.analysis_workbench_components_root`
-              - Returns an instance of VGT root object.
+              - Return an instance of VGT root object.
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.central_bodies`
-              - Returns a collection of available central bodies.
+              - Return a collection of available central bodies.
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.notification_filter`
               - Temporarily disable only the root events to prevent them from being raised. The event filtering can be used to improve client application performance.
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.preferences`
               - Configures STK preferences.
+            * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectRoot.rf_channel_modeler`
+              - Return an RF Channel Modeler object.
 
 
 
@@ -113,49 +115,49 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.units_preferences
     :type: IUnitPreferencesDimensionCollection
 
-    Provides access to the Global Unit table.
+    Provide access to the Global Unit table.
 
 .. py:property:: current_scenario
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.current_scenario
     :type: IStkObject
 
-    Returns a Scenario object or null if no scenario has been loaded yet.
+    Return a Scenario object or null if no scenario has been loaded yet.
 
 .. py:property:: isolated
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.isolated
     :type: bool
 
-    Returns whether the instance is isolated.
+    Return whether the instance is isolated.
 
 .. py:property:: conversion_utility
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.conversion_utility
     :type: IConversionUtility
 
-    Returns the conversion utility interface.
+    Return the conversion utility interface.
 
 .. py:property:: military_standard_2525b_symbols
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.military_standard_2525b_symbols
     :type: MilitaryStandard2525bSymbols
 
-    Returns the interface that enables creating 2525b symbols.
+    Return the interface that enables creating 2525b symbols.
 
 .. py:property:: available_features
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.available_features
     :type: AvailableFeatures
 
-    Allows the user to inquiry about the available features.
+    Allow the user to inquiry about the available features.
 
 .. py:property:: analysis_workbench_components_root
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.analysis_workbench_components_root
     :type: IAnalysisWorkbenchRoot
 
-    Returns an instance of VGT root object.
+    Return an instance of VGT root object.
 
 .. py:property:: central_bodies
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.central_bodies
     :type: CentralBodyCollection
 
-    Returns a collection of available central bodies.
+    Return a collection of available central bodies.
 
 .. py:property:: notification_filter
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.notification_filter
@@ -168,6 +170,12 @@ Property detail
     :type: Preferences
 
     Configures STK preferences.
+
+.. py:property:: rf_channel_modeler
+    :canonical: ansys.stk.core.stkobjects.StkObjectRoot.rf_channel_modeler
+    :type: typing.Any
+
+    Return an RF Channel Modeler object.
 
 
 Method detail
@@ -420,7 +428,7 @@ Method detail
 .. py:method:: load_vdf_from_sdf(self, vdf_path: str, password: str) -> None
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.load_vdf_from_sdf
 
-    Load a vdf from SDF using the specified path. The method throws an exception if there is a scenario already loaded. If the password isn't needed, enter an empty string.
+    Do not use this method, as it is deprecated. SDF functionality has been removed and this will be removed in the next major release. Loads a vdf from SDF using the specified path. The method throws an exception if there is a scenario already loaded.
 
     :Parameters:
 
@@ -434,7 +442,7 @@ Method detail
 .. py:method:: load_vdf_from_sdf_with_version(self, vdf_path: str, password: str, version: float) -> None
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.load_vdf_from_sdf_with_version
 
-    Load a vdf from SDF using the specified path. The method throws an exception if there is a scenario already loaded. If the password isn't needed, enter an empty string.
+    Do not use this method, as it is deprecated. SDF functionality has been removed and this will be removed in the next major release. Loads a vdf from SDF using the specified path. The method throws an exception if there is a scenario already loaded.
 
     :Parameters:
 
@@ -449,7 +457,7 @@ Method detail
 .. py:method:: save_vdf_to_sdf(self, sdf_path: str) -> None
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.save_vdf_to_sdf
 
-    Save a vdf to SDF at the specified location. The method throws an exception if the VDF creation or upload fails.
+    Do not use this method, as it is deprecated. SDF functionality has been removed and this will be removed in the next major release. Saves a vdf to SDF at the specified location. The method throws an exception if the VDF creation or upload fails.
 
     :Parameters:
 
@@ -458,4 +466,5 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
 

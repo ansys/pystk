@@ -23,7 +23,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionAccessConstraint.across_assets`
               - Value of the constraint that is to be selected based on all currently available assets.
             * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionAccessConstraint.time_step`
-              - Gets or sets the value to be used during the sampling of the dynamic definition for use in the static definition.
+              - Get or set the value to be used during the sampling of the dynamic definition for use in the static definition.
             * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionAccessConstraint.constraint_name`
               - Name of the access constraint as an enumeration. If the constraint is not in AgEFmConstraintName then use Constraint instead.
             * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionAccessConstraint.constraint`
@@ -52,7 +52,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.FigureOfMeritDefinitionAccessConstraint.time_step
     :type: float
 
-    Gets or sets the value to be used during the sampling of the dynamic definition for use in the static definition.
+    Get or set the value to be used during the sampling of the dynamic definition for use in the static definition.
 
 .. py:property:: constraint_name
     :canonical: ansys.stk.core.stkobjects.FigureOfMeritDefinitionAccessConstraint.constraint_name

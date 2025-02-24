@@ -23,9 +23,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleZonalPropagatorInitialState.representation`
               - Representation.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleZonalPropagatorInitialState.propagation_frame`
-              - Gets or sets the propagation frame.
+              - Get or set the propagation frame.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleZonalPropagatorInitialState.supported_propagation_frames`
-              - Returns supported propagation frames.
+              - Return supported propagation frames.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleZonalPropagatorInitialState.orbit_epoch`
               - Get the smart epoch component to configure the orbit state epoch.
 
@@ -58,13 +58,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleZonalPropagatorInitialState.propagation_frame
     :type: VehiclePropagationFrame
 
-    Gets or sets the propagation frame.
+    Get or set the propagation frame.
 
 .. py:property:: supported_propagation_frames
     :canonical: ansys.stk.core.stkobjects.VehicleZonalPropagatorInitialState.supported_propagation_frames
     :type: list
 
-    Returns supported propagation frames.
+    Return supported propagation frames.
 
 .. py:property:: orbit_epoch
     :canonical: ansys.stk.core.stkobjects.VehicleZonalPropagatorInitialState.orbit_epoch

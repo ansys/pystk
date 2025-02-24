@@ -36,11 +36,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageAreaTargetsCollection.count`
-              - Returns the number of elements in a collection.
+              - Return the number of elements in a collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageAreaTargetsCollection._new_enum`
-              - Returns an enumerator that can iterate through the collection.
+              - Return an enumerator that can iterate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.CoverageAreaTargetsCollection.available_area_targets`
-              - Gets the available area targets.
+              - Get the available area targets.
 
 
 
@@ -59,19 +59,19 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.CoverageAreaTargetsCollection.count
     :type: int
 
-    Returns the number of elements in a collection.
+    Return the number of elements in a collection.
 
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkobjects.CoverageAreaTargetsCollection._new_enum
     :type: EnumeratorProxy
 
-    Returns an enumerator that can iterate through the collection.
+    Return an enumerator that can iterate through the collection.
 
 .. py:property:: available_area_targets
     :canonical: ansys.stk.core.stkobjects.CoverageAreaTargetsCollection.available_area_targets
     :type: list
 
-    Gets the available area targets.
+    Get the available area targets.
 
 
 Method detail

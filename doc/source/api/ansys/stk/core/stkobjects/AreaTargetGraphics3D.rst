@@ -29,9 +29,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.AreaTargetGraphics3D.border_wall`
               - Retrieve the border wall properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.AreaTargetGraphics3D.vector`
-              - Gets Vector.
+              - Get Vector.
             * - :py:attr:`~ansys.stk.core.stkobjects.AreaTargetGraphics3D.fill_granularity`
-              - Allows the user to control the speed vs. visual quality of a filled area target. Uses Angle Dimension.
+              - Allow the user to control the speed vs. visual quality of a filled area target. Uses Angle Dimension.
 
 
 
@@ -80,12 +80,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.AreaTargetGraphics3D.vector
     :type: Graphics3DVector
 
-    Gets Vector.
+    Get Vector.
 
 .. py:property:: fill_granularity
     :canonical: ansys.stk.core.stkobjects.AreaTargetGraphics3D.fill_granularity
     :type: float
 
-    Allows the user to control the speed vs. visual quality of a filled area target. Uses Angle Dimension.
+    Allow the user to control the speed vs. visual quality of a filled area target. Uses Angle Dimension.
 
 

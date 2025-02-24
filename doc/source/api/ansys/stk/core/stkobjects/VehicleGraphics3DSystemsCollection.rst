@@ -38,15 +38,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.count`
-              - Returns the number of elements in a collection.
+              - Return the number of elements in a collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection._new_enum`
-              - Returns an enumerator that can iterate through the collection.
+              - Return an enumerator that can iterate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.supported_systems`
-              - Returns a list of element types that can be added to the collection.
+              - Return a list of element types that can be added to the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.inertial_by_window`
-              - Gets the Inertial By Window System.
+              - Get the Inertial By Window System.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.fixed_by_window`
-              - Gets the Fixed By Window System.
+              - Get the Fixed By Window System.
 
 
 
@@ -65,31 +65,31 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.count
     :type: int
 
-    Returns the number of elements in a collection.
+    Return the number of elements in a collection.
 
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection._new_enum
     :type: EnumeratorProxy
 
-    Returns an enumerator that can iterate through the collection.
+    Return an enumerator that can iterate through the collection.
 
 .. py:property:: supported_systems
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.supported_systems
     :type: list
 
-    Returns a list of element types that can be added to the collection.
+    Return a list of element types that can be added to the collection.
 
 .. py:property:: inertial_by_window
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.inertial_by_window
     :type: VehicleGraphics3DSystemsSpecialElement
 
-    Gets the Inertial By Window System.
+    Get the Inertial By Window System.
 
 .. py:property:: fixed_by_window
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DSystemsCollection.fixed_by_window
     :type: VehicleGraphics3DSystemsSpecialElement
 
-    Gets the Fixed By Window System.
+    Get the Fixed By Window System.
 
 
 Method detail

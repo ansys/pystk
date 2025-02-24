@@ -28,15 +28,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionFrequencyBand.minimum_frequency`
-              - Gets or sets the frequency band minimum frequency.
+              - Get or set the frequency band minimum frequency.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionFrequencyBand.maximum_frequency`
-              - Gets or sets the frequency band maximum frequency.
+              - Get or set the frequency band maximum frequency.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionFrequencyBand.swerling_case`
-              - Gets or sets the band Swerling case.
+              - Get or set the band Swerling case.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionFrequencyBand.supported_compute_strategies`
-              - Gets an array of supported compute strategy names.
+              - Get an array of supported compute strategy names.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionFrequencyBand.compute_strategy`
-              - Gets the current compute strategy.
+              - Get the current compute strategy.
 
 
 
@@ -55,31 +55,31 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.RadarCrossSectionFrequencyBand.minimum_frequency
     :type: float
 
-    Gets or sets the frequency band minimum frequency.
+    Get or set the frequency band minimum frequency.
 
 .. py:property:: maximum_frequency
     :canonical: ansys.stk.core.stkobjects.RadarCrossSectionFrequencyBand.maximum_frequency
     :type: float
 
-    Gets or sets the frequency band maximum frequency.
+    Get or set the frequency band maximum frequency.
 
 .. py:property:: swerling_case
     :canonical: ansys.stk.core.stkobjects.RadarCrossSectionFrequencyBand.swerling_case
     :type: RadarSwerlingCase
 
-    Gets or sets the band Swerling case.
+    Get or set the band Swerling case.
 
 .. py:property:: supported_compute_strategies
     :canonical: ansys.stk.core.stkobjects.RadarCrossSectionFrequencyBand.supported_compute_strategies
     :type: list
 
-    Gets an array of supported compute strategy names.
+    Get an array of supported compute strategy names.
 
 .. py:property:: compute_strategy
     :canonical: ansys.stk.core.stkobjects.RadarCrossSectionFrequencyBand.compute_strategy
     :type: IRadarCrossSectionComputeStrategy
 
-    Gets the current compute strategy.
+    Get the current compute strategy.
 
 
 Method detail

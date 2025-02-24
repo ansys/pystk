@@ -61,6 +61,9 @@ Overview
             * - :py:attr:`~RAISED_COSINE_SQUARED`
               - Raised Cosine^2 type.
 
+            * - :py:attr:`~TAYLOR`
+              - Taylor type.
+
 
 Import detail
 -------------

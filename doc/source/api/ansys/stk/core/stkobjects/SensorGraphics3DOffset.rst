@@ -44,7 +44,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorGraphics3DOffset.attachment_point_name`
               - Name of the attach point.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorGraphics3DOffset.available_attachment_points`
-              - Returns available attach points.
+              - Return available attach points.
 
 
 
@@ -105,7 +105,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.SensorGraphics3DOffset.available_attachment_points
     :type: list
 
-    Returns available attach points.
+    Return available attach points.
 
 
 Method detail

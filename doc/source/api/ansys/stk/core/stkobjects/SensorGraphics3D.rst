@@ -53,9 +53,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorGraphics3D.is_targeted`
               - Is the sensor targeted?
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorGraphics3D.space_projection_intervals`
-              - Returns time dependent space projection list.
+              - Return time dependent space projection list.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorGraphics3D.target_projection_intervals`
-              - Returns time dependent target projection list.
+              - Return time dependent target projection list.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorGraphics3D.fill_resolution`
               - Specify the fill resolution angle for the sensor. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorGraphics3D.persist_projected_lines_in_space`
@@ -184,13 +184,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.SensorGraphics3D.space_projection_intervals
     :type: SensorGraphics3DSpaceProjectionCollection
 
-    Returns time dependent space projection list.
+    Return time dependent space projection list.
 
 .. py:property:: target_projection_intervals
     :canonical: ansys.stk.core.stkobjects.SensorGraphics3D.target_projection_intervals
     :type: SensorGraphics3DTargetProjectionCollection
 
-    Returns time dependent target projection list.
+    Return time dependent target projection list.
 
 .. py:property:: fill_resolution
     :canonical: ansys.stk.core.stkobjects.SensorGraphics3D.fill_resolution
