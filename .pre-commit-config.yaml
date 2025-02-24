@@ -30,5 +30,8 @@ repos:
   rev: v0.5.1
   hooks:
     - id: add-license-headers
+      # Having a license on the examples causes it to render as Markdown in the
+      # documentation of the project.
+      exclude: "^examples/"
       args:
       - --start_year=2025
