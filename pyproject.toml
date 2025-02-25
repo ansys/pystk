@@ -37,7 +37,7 @@ all = [
     "grpcio",
     "protobuf",
     "jupyter-rfb==0.5.1",
-    "numpy==2.2.2",
+    "numpy==2.2.3",
     "Pillow==11.1.0",
     "simplejpeg==1.8.1",
     "sidecar==0.7.0",
@@ -53,11 +53,11 @@ tests = [
     "pytz==2025.1",
     "parameterized==0.9.0",
     "pandas==2.2.3",
-    "numpy==2.2.2",
+    "numpy==2.2.3",
     "libcst==1.6.0"
 ]
 doc = [
-    "ansys-sphinx-theme==1.3.1",
+    "ansys-sphinx-theme==1.3.2",
     "build==1.2.2.post1",
     "jupyterlab==4.3.5",
     "jupytext==1.16.7",
@@ -77,14 +77,14 @@ doc = [
 ]
 visualization = [
     "jupyter-rfb==0.5.1",
-    "numpy==2.2.2",
+    "numpy==2.2.3",
     "Pillow==11.1.0",
     "simplejpeg==1.8.1",
     "sidecar==0.7.0"
 ]
 vulnerabilities = [
-    "bandit==1.8.2",
-    "safety==3.2.14",
+    "bandit==1.8.3",
+    "safety==3.3.0",
 ]
 
 [tool.flit.module]
