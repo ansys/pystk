@@ -39,7 +39,7 @@ all = [
     "jupyter-rfb==0.5.1",
     "numpy==2.2.3",
     "Pillow==11.1.0",
-    "simplejpeg==1.8.1",
+    "simplejpeg==1.8.2",
     "sidecar==0.7.0",
     "libcst==1.6.0"
 ]
@@ -79,7 +79,7 @@ visualization = [
     "jupyter-rfb==0.5.1",
     "numpy==2.2.3",
     "Pillow==11.1.0",
-    "simplejpeg==1.8.1",
+    "simplejpeg==1.8.2",
     "sidecar==0.7.0"
 ]
 vulnerabilities = [
