@@ -32,6 +32,6 @@ repos:
     - id: add-license-headers
       # Having a license on the examples causes it to render as Markdown in the
       # documentation of the project.
-      exclude: "^examples/"
+      exclude: "^examples/|.*_pb2.*\\.py"
       args:
       - --start_year=2025
