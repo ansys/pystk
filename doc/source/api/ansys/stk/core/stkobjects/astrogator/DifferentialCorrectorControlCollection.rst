@@ -65,7 +65,7 @@ Property detail
 
 .. py:property:: provide_runtime_type_info
     :canonical: ansys.stk.core.stkobjects.astrogator.DifferentialCorrectorControlCollection.provide_runtime_type_info
-    :type: IRuntimeTypeInfo
+    :type: RuntimeTypeInfo
 
     Return the IAgRuntimeTypeInfo interface to access properties at runtime.
 

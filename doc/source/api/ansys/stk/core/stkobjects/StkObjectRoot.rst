@@ -131,7 +131,7 @@ Property detail
 
 .. py:property:: conversion_utility
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.conversion_utility
-    :type: IConversionUtility
+    :type: ConversionUtility
 
     Return the conversion utility interface.
 
