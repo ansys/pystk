@@ -19,7 +19,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IWaveformSelectionStrategy.type`
-              - Gets the waveform selection strategy type.
+              - Get the waveform selection strategy type.
 
 
 Import detail
@@ -35,8 +35,8 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.IWaveformSelectionStrategy.type
-    :type: WAVEFORM_SELECTION_STRATEGY_TYPE
+    :type: WaveformSelectionStrategyType
 
-    Gets the waveform selection strategy type.
+    Get the waveform selection strategy type.
 
 

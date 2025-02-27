@@ -1,3 +1,25 @@
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
 import pytest
 from test_util import *
 from access_constraints.access_constraint_helper import *
@@ -51,7 +73,7 @@ class EarlyBoundTests(TestBase):
     # region CommonTasks
     def test_CommonTasks(self):
         EarlyBoundTests.AG_AT.common_tasks.set_area_type_ellipse(1, 2, 12)
-        Assert.assertEqual(AREA_TYPE.ELLIPSE, EarlyBoundTests.AG_AT.area_type)
+        Assert.assertEqual(AreaType.ELLIPSE, EarlyBoundTests.AG_AT.area_type)
         ellipse: "AreaTypeEllipse" = clr.CastAs(EarlyBoundTests.AG_AT.area_type_data, AreaTypeEllipse)
         Assert.assertEqual(1, ellipse.semi_major_axis)
         Assert.assertEqual(2, ellipse.semi_minor_axis)
@@ -69,8 +91,8 @@ class EarlyBoundTests(TestBase):
     @category("Basic Tests")
     def test_Basic(self):
         TestBase.logger.WriteLine("----- BASIC TEST ----- BEGIN -----")
-        EarlyBoundTests.AG_AT.area_type = AREA_TYPE.ELLIPSE
-        Assert.assertEqual(AREA_TYPE.ELLIPSE, EarlyBoundTests.AG_AT.area_type)
+        EarlyBoundTests.AG_AT.area_type = AreaType.ELLIPSE
+        Assert.assertEqual(AreaType.ELLIPSE, EarlyBoundTests.AG_AT.area_type)
         ellipse: "AreaTypeEllipse" = AreaTypeEllipse(EarlyBoundTests.AG_AT.area_type_data)
         ellipse.bearing = 1
         Assert.assertEqual(1, ellipse.bearing)
@@ -79,8 +101,8 @@ class EarlyBoundTests(TestBase):
         ellipse.semi_minor_axis = 151
         Assert.assertEqual(151, ellipse.semi_minor_axis)
 
-        EarlyBoundTests.AG_AT.area_type = AREA_TYPE.PATTERN
-        Assert.assertEqual(AREA_TYPE.PATTERN, EarlyBoundTests.AG_AT.area_type)
+        EarlyBoundTests.AG_AT.area_type = AreaType.PATTERN
+        Assert.assertEqual(AreaType.PATTERN, EarlyBoundTests.AG_AT.area_type)
         patterns: "AreaTypePatternCollection" = AreaTypePatternCollection(EarlyBoundTests.AG_AT.area_type_data)
         Assert.assertIsNotNone(patterns)
         self.Units.set_current_unit("LongitudeUnit", "deg")
@@ -236,10 +258,10 @@ class EarlyBoundTests(TestBase):
         AssertEx.AreEqual(EarlyBoundTests.boundaryColorRedGreen, gfx.boundary_color)
         gfx.show_boundary_points = True
         Assert.assertTrue(gfx.show_boundary_points)
-        gfx.boundary_style = LINE_STYLE.DASH_DOT_DOTTED
-        Assert.assertEqual(LINE_STYLE.DASH_DOT_DOTTED, gfx.boundary_style)
-        gfx.boundary_style = LINE_STYLE.DOTTED
-        Assert.assertEqual(LINE_STYLE.DOTTED, gfx.boundary_style)
+        gfx.boundary_style = LineStyle.DASH_DOT_DOTTED
+        Assert.assertEqual(LineStyle.DASH_DOT_DOTTED, gfx.boundary_style)
+        gfx.boundary_style = LineStyle.DOTTED
+        Assert.assertEqual(LineStyle.DOTTED, gfx.boundary_style)
         gfx.show_boundary = True
         Assert.assertTrue(gfx.show_boundary)
         gfx.boundary_width = 2
@@ -400,8 +422,8 @@ class EarlyBoundTests(TestBase):
         # test Access VO DataDisplays
         oSatellite: "Satellite" = Satellite(TestBase.Application.current_scenario.children["Satellite1"])
         Assert.assertNotEqual(None, oSatellite)
-        oSatellite.set_propagator_type(PROPAGATOR_TYPE.TWO_BODY)
-        Assert.assertEqual(PROPAGATOR_TYPE.TWO_BODY, oSatellite.propagator_type)
+        oSatellite.set_propagator_type(PropagatorType.TWO_BODY)
+        Assert.assertEqual(PropagatorType.TWO_BODY, oSatellite.propagator_type)
         oPropagator: "PropagatorTwoBody" = PropagatorTwoBody(oSatellite.propagator)
         Assert.assertNotEqual(None, oPropagator)
         oPropagator.propagate()

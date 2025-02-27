@@ -105,7 +105,7 @@ Property detail
 
 .. py:property:: ideal_orbit_radius
     :canonical: ansys.stk.core.stkobjects.astrogator.DesignCR3BPSetup.ideal_orbit_radius
-    :type: IDEAL_ORBIT_RADIUS
+    :type: IdealOrbitRadius
 
     Orbital radius of the idealized secondary definition.
 
@@ -147,7 +147,7 @@ Property detail
 
 .. py:property:: rotating_system_choice
     :canonical: ansys.stk.core.stkobjects.astrogator.DesignCR3BPSetup.rotating_system_choice
-    :type: ROTATING_COORDINATE_SYSTEM
+    :type: RotatingCoordinateSystem
 
     Get the rotating coordinate system and associated calculation objects to interact with.
 

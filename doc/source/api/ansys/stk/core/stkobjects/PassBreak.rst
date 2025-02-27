@@ -30,9 +30,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.PassBreak.definition`
               - Get the break angle type and, in the case of latitude, the direction at latitiude crossing.
             * - :py:attr:`~ansys.stk.core.stkobjects.PassBreak.partial_pass_measurement`
-              - Gets or sets the method for calculating partial passes.
+              - Get or set the method for calculating partial passes.
             * - :py:attr:`~ansys.stk.core.stkobjects.PassBreak.coordinate_system`
-              - Gets or sets the coordinate system in which latitude and longitude are to be measured.
+              - Get or set the coordinate system in which latitude and longitude are to be measured.
             * - :py:attr:`~ansys.stk.core.stkobjects.PassBreak.repeat_ground_track_numbering`
               - Get data on repeat ground track numbering.
             * - :py:attr:`~ansys.stk.core.stkobjects.PassBreak.pass_numbering_type`
@@ -40,7 +40,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.PassBreak.pass_numbering`
               - Get pass numbering data.
             * - :py:attr:`~ansys.stk.core.stkobjects.PassBreak.supported_coordinate_systems`
-              - Returns supported coordinate systems.
+              - Return supported coordinate systems.
 
 
 
@@ -63,15 +63,15 @@ Property detail
 
 .. py:property:: partial_pass_measurement
     :canonical: ansys.stk.core.stkobjects.PassBreak.partial_pass_measurement
-    :type: VEHICLE_PARTIAL_PASS_MEASUREMENT
+    :type: VehiclePartialPassMeasurement
 
-    Gets or sets the method for calculating partial passes.
+    Get or set the method for calculating partial passes.
 
 .. py:property:: coordinate_system
     :canonical: ansys.stk.core.stkobjects.PassBreak.coordinate_system
-    :type: VEHICLE_COORDINATE_SYSTEM
+    :type: VehicleCoordinateSystem
 
-    Gets or sets the coordinate system in which latitude and longitude are to be measured.
+    Get or set the coordinate system in which latitude and longitude are to be measured.
 
 .. py:property:: repeat_ground_track_numbering
     :canonical: ansys.stk.core.stkobjects.PassBreak.repeat_ground_track_numbering
@@ -81,7 +81,7 @@ Property detail
 
 .. py:property:: pass_numbering_type
     :canonical: ansys.stk.core.stkobjects.PassBreak.pass_numbering_type
-    :type: VEHICLE_PASS_NUMBERING
+    :type: VehiclePassNumbering
 
     Get the criterion for pass numbering.
 
@@ -95,7 +95,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.PassBreak.supported_coordinate_systems
     :type: list
 
-    Returns supported coordinate systems.
+    Return supported coordinate systems.
 
 
 Method detail
@@ -108,14 +108,14 @@ Method detail
 
 
 
-.. py:method:: set_pass_numbering_type(self, pass_numbering: VEHICLE_PASS_NUMBERING) -> None
+.. py:method:: set_pass_numbering_type(self, pass_numbering: VehiclePassNumbering) -> None
     :canonical: ansys.stk.core.stkobjects.PassBreak.set_pass_numbering_type
 
     Set the pass number corresponding to the initial conditions of the satellite.
 
     :Parameters:
 
-    **pass_numbering** : :obj:`~VEHICLE_PASS_NUMBERING`
+    **pass_numbering** : :obj:`~VehiclePassNumbering`
 
     :Returns:
 

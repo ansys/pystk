@@ -60,11 +60,11 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.show_warning_whether_missile_achieves_orbit_or_not`
               - Generate a message that warns the user if the missile achieves orbit (and give the perigee) or impacts the surface (and give the interval after missile's stop time).
             * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.terrain`
-              - Returns a list of central bodies and their terrains.
+              - Return a list of central bodies and their terrains.
             * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.component_directory`
               - Get the component directory interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.scenario_files`
-              - Returns list of scenario files.
+              - Return list of scenario files.
             * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.is_dirty`
               - Specify whether scenario needs to be saved.
             * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.use_analysis_start_time_for_epoch`
@@ -74,19 +74,19 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.scene_manager`
               - A scene manager.
             * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.analysis_interval`
-              - Allows the user to configure the scenario's analysis time period.
+              - Allow the user to configure the scenario's analysis time period.
             * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.analysis_epoch`
-              - Allows the user to configure the scenario's analysis epoch.
+              - Allow the user to configure the scenario's analysis epoch.
             * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.radar_clutter_map`
-              - Returns the global radar clutter map.
+              - Return the global radar clutter map.
             * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.radar_cross_section`
-              - Returns the global radar cross section.
+              - Return the global radar cross section.
             * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.rf_environment`
-              - Returns the RF environment.
+              - Return the RF environment.
             * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.tilesets`
-              - Returns a list of 3D Tilesets used for Analysis.
+              - Return a list of 3D Tilesets used for Analysis.
             * - :py:attr:`~ansys.stk.core.stkobjects.Scenario.laser_environment`
-              - Returns the laser environment.
+              - Return the laser environment.
 
 
 
@@ -163,7 +163,7 @@ Property detail
 
 .. py:property:: aircraft_wgs84_warning
     :canonical: ansys.stk.core.stkobjects.Scenario.aircraft_wgs84_warning
-    :type: AIRCRAFT_WGS84_WARNING_TYPE
+    :type: AircraftWGS84WarningType
 
     Specify when to display the aircraft mission modeler WGS84 warning.
 
@@ -177,7 +177,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Scenario.terrain
     :type: CentralBodyTerrainCollection
 
-    Returns a list of central bodies and their terrains.
+    Return a list of central bodies and their terrains.
 
 .. py:property:: component_directory
     :canonical: ansys.stk.core.stkobjects.Scenario.component_directory
@@ -189,7 +189,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Scenario.scenario_files
     :type: list
 
-    Returns list of scenario files.
+    Return list of scenario files.
 
 .. py:property:: is_dirty
     :canonical: ansys.stk.core.stkobjects.Scenario.is_dirty
@@ -219,43 +219,43 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Scenario.analysis_interval
     :type: ITimeToolTimeIntervalSmartInterval
 
-    Allows the user to configure the scenario's analysis time period.
+    Allow the user to configure the scenario's analysis time period.
 
 .. py:property:: analysis_epoch
     :canonical: ansys.stk.core.stkobjects.Scenario.analysis_epoch
     :type: ITimeToolInstantSmartEpoch
 
-    Allows the user to configure the scenario's analysis epoch.
+    Allow the user to configure the scenario's analysis epoch.
 
 .. py:property:: radar_clutter_map
     :canonical: ansys.stk.core.stkobjects.Scenario.radar_clutter_map
     :type: IRadarClutterMap
 
-    Returns the global radar clutter map.
+    Return the global radar clutter map.
 
 .. py:property:: radar_cross_section
     :canonical: ansys.stk.core.stkobjects.Scenario.radar_cross_section
     :type: RadarCrossSection
 
-    Returns the global radar cross section.
+    Return the global radar cross section.
 
 .. py:property:: rf_environment
     :canonical: ansys.stk.core.stkobjects.Scenario.rf_environment
     :type: RFEnvironment
 
-    Returns the RF environment.
+    Return the RF environment.
 
 .. py:property:: tilesets
     :canonical: ansys.stk.core.stkobjects.Scenario.tilesets
     :type: Tileset3DCollection
 
-    Returns a list of 3D Tilesets used for Analysis.
+    Return a list of 3D Tilesets used for Analysis.
 
 .. py:property:: laser_environment
     :canonical: ansys.stk.core.stkobjects.Scenario.laser_environment
     :type: LaserEnvironment
 
-    Returns the laser environment.
+    Return the laser environment.
 
 
 Method detail

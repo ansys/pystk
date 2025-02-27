@@ -48,11 +48,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSSegmentCollection._new_enum`
-              - Allows you to enumerate through the collection.
+              - Allow you to enumerate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSSegmentCollection.count`
-              - Returns the size of the collection.
+              - Return the size of the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSSegmentCollection.provide_runtime_type_info`
-              - Returns the IAgRuntimeTypeInfo interface to access properties at runtime.
+              - Return the IAgRuntimeTypeInfo interface to access properties at runtime.
 
 
 
@@ -71,19 +71,19 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSSegmentCollection._new_enum
     :type: EnumeratorProxy
 
-    Allows you to enumerate through the collection.
+    Allow you to enumerate through the collection.
 
 .. py:property:: count
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSSegmentCollection.count
     :type: int
 
-    Returns the size of the collection.
+    Return the size of the collection.
 
 .. py:property:: provide_runtime_type_info
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSSegmentCollection.provide_runtime_type_info
-    :type: IRuntimeTypeInfo
+    :type: RuntimeTypeInfo
 
-    Returns the IAgRuntimeTypeInfo interface to access properties at runtime.
+    Return the IAgRuntimeTypeInfo interface to access properties at runtime.
 
 
 Method detail
@@ -102,14 +102,14 @@ Method detail
 
         :obj:`~IMCSSegment`
 
-.. py:method:: insert(self, segment_type: SEGMENT_TYPE, segment_name: str, segment_to_insert_before: str) -> IMCSSegment
+.. py:method:: insert(self, segment_type: SegmentType, segment_name: str, segment_to_insert_before: str) -> IMCSSegment
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSSegmentCollection.insert
 
     Add a segment to the segment collection.
 
     :Parameters:
 
-    **segment_type** : :obj:`~SEGMENT_TYPE`
+    **segment_type** : :obj:`~SegmentType`
     **segment_name** : :obj:`~str`
     **segment_to_insert_before** : :obj:`~str`
 

@@ -21,11 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcValueAtSegmentOtherSat.calculation_object_name`
-              - Gets or sets the calculation object.
+              - Get or set the calculation object.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcValueAtSegmentOtherSat.other_segment_name`
-              - Gets or sets the segment to be compared against.
+              - Get or set the segment to be compared against.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcValueAtSegmentOtherSat.segment_state_to_use`
-              - Gets or sets the segment state to use in the calculation.
+              - Get or set the segment state to use in the calculation.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcValueAtSegmentOtherSat.reference_satellite`
               - Get the Astrogator satellite on which the segment to be compared exists.
 
@@ -46,19 +46,19 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcValueAtSegmentOtherSat.calculation_object_name
     :type: str
 
-    Gets or sets the calculation object.
+    Get or set the calculation object.
 
 .. py:property:: other_segment_name
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcValueAtSegmentOtherSat.other_segment_name
     :type: str
 
-    Gets or sets the segment to be compared against.
+    Get or set the segment to be compared against.
 
 .. py:property:: segment_state_to_use
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcValueAtSegmentOtherSat.segment_state_to_use
-    :type: SEGMENT_STATE
+    :type: SegmentState
 
-    Gets or sets the segment state to use in the calculation.
+    Get or set the segment state to use in the calculation.
 
 .. py:property:: reference_satellite
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcValueAtSegmentOtherSat.reference_satellite

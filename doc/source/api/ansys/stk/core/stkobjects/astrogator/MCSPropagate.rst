@@ -34,19 +34,19 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSPropagate.propagator_name`
-              - Gets or sets the propagator.
+              - Get or set the propagator.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSPropagate.stopping_conditions`
               - Get the list of stopping conditions defined for the segment.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSPropagate.min_propagation_time`
-              - Gets or sets the minimum time that must elapse from the beginning of the segment until Astrogator will begin checking stopping conditions for satisfaction. Uses Time Dimension.
+              - Get or set the minimum time that must elapse from the beginning of the segment until Astrogator will begin checking stopping conditions for satisfaction. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSPropagate.max_propagation_time`
-              - Gets or sets the maximum propagation time, after which the segment will end regardless of whether the stopping conditions have been satisfied. Uses Time Dimension.
+              - Get or set the maximum propagation time, after which the segment will end regardless of whether the stopping conditions have been satisfied. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSPropagate.enable_max_propagation_time`
               - If true, the maximum propagation time is enforced.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSPropagate.enable_warning_message`
               - If true, Astrogator will issue a warning message if propagation is stopped by the Maximum Propagation Time parameter.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSPropagate.control_parameters_available`
-              - Returns whether or not the control parameters can be set.
+              - Return whether or not the control parameters can be set.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSPropagate.override_max_propagation_time`
               - Override Maximum Propagation Time - if there is a duration or epoch stopping condition that occurs after the maximum propagation time, ignore the maximum propagation time.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSPropagate.should_stop_for_initially_surpassed_epoch_stopping_conditions`
@@ -71,7 +71,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSPropagate.propagator_name
     :type: str
 
-    Gets or sets the propagator.
+    Get or set the propagator.
 
 .. py:property:: stopping_conditions
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSPropagate.stopping_conditions
@@ -83,13 +83,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSPropagate.min_propagation_time
     :type: float
 
-    Gets or sets the minimum time that must elapse from the beginning of the segment until Astrogator will begin checking stopping conditions for satisfaction. Uses Time Dimension.
+    Get or set the minimum time that must elapse from the beginning of the segment until Astrogator will begin checking stopping conditions for satisfaction. Uses Time Dimension.
 
 .. py:property:: max_propagation_time
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSPropagate.max_propagation_time
     :type: float
 
-    Gets or sets the maximum propagation time, after which the segment will end regardless of whether the stopping conditions have been satisfied. Uses Time Dimension.
+    Get or set the maximum propagation time, after which the segment will end regardless of whether the stopping conditions have been satisfied. Uses Time Dimension.
 
 .. py:property:: enable_max_propagation_time
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSPropagate.enable_max_propagation_time
@@ -107,7 +107,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSPropagate.control_parameters_available
     :type: bool
 
-    Returns whether or not the control parameters can be set.
+    Return whether or not the control parameters can be set.
 
 .. py:property:: override_max_propagation_time
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSPropagate.override_max_propagation_time
@@ -142,40 +142,40 @@ Method detail
 
 
 
-.. py:method:: enable_control_parameter(self, param: CONTROL_ADVANCED) -> None
+.. py:method:: enable_control_parameter(self, param: ControlAdvanced) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSPropagate.enable_control_parameter
 
     Enable or disables the specified control parameter.
 
     :Parameters:
 
-    **param** : :obj:`~CONTROL_ADVANCED`
+    **param** : :obj:`~ControlAdvanced`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: disable_control_parameter(self, param: CONTROL_ADVANCED) -> None
+.. py:method:: disable_control_parameter(self, param: ControlAdvanced) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSPropagate.disable_control_parameter
 
     Disables the specified control parameter.
 
     :Parameters:
 
-    **param** : :obj:`~CONTROL_ADVANCED`
+    **param** : :obj:`~ControlAdvanced`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_control_parameter_enabled(self, param: CONTROL_ADVANCED) -> bool
+.. py:method:: is_control_parameter_enabled(self, param: ControlAdvanced) -> bool
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSPropagate.is_control_parameter_enabled
 
     Sees if the specified control is enabled.
 
     :Parameters:
 
-    **param** : :obj:`~CONTROL_ADVANCED`
+    **param** : :obj:`~ControlAdvanced`
 
     :Returns:
 

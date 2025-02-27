@@ -27,11 +27,11 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GridSearchResult.current_value`
               - Get the value of the independent variable after the last targeter run.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GridSearchResult.desired_operation`
-              - Gets or sets the Desired Operation/Objective of grid search.
+              - Get or set the Desired Operation/Objective of grid search.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GridSearchResult.use_custom_display_unit`
               - If true, allows display of values in another unit.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GridSearchResult.custom_display_unit`
-              - Gets or sets the unit in which the value will be displayed in the GUI.
+              - Get or set the unit in which the value will be displayed in the GUI.
 
 
 
@@ -72,9 +72,9 @@ Property detail
 
 .. py:property:: desired_operation
     :canonical: ansys.stk.core.stkobjects.astrogator.GridSearchResult.desired_operation
-    :type: GRID_SEARCH_DESIRED_OPERATION
+    :type: GridSearchDesiredOperation
 
-    Gets or sets the Desired Operation/Objective of grid search.
+    Get or set the Desired Operation/Objective of grid search.
 
 .. py:property:: use_custom_display_unit
     :canonical: ansys.stk.core.stkobjects.astrogator.GridSearchResult.use_custom_display_unit
@@ -86,6 +86,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.GridSearchResult.custom_display_unit
     :type: str
 
-    Gets or sets the unit in which the value will be displayed in the GUI.
+    Get or set the unit in which the value will be displayed in the GUI.
 
 

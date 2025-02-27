@@ -30,7 +30,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DLabelSwapDistance.distance_value`
               - Distance at which one level of detail is swapped for another. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DLabelSwapDistance.distance_level`
-              - Gets Distance Level.
+              - Get Distance Level.
 
 
 
@@ -53,9 +53,9 @@ Property detail
 
 .. py:property:: distance_level
     :canonical: ansys.stk.core.stkobjects.Graphics3DLabelSwapDistance.distance_level
-    :type: GRAPHICS_3D_LABEL_SWAP_DISTANCE
+    :type: Graphics3DLabelSwapDistanceType
 
-    Gets Distance Level.
+    Get Distance Level.
 
 
 Method detail
@@ -63,14 +63,14 @@ Method detail
 
 
 
-.. py:method:: set_distance_level(self, value: GRAPHICS_3D_LABEL_SWAP_DISTANCE) -> None
+.. py:method:: set_distance_level(self, value: Graphics3DLabelSwapDistanceType) -> None
     :canonical: ansys.stk.core.stkobjects.Graphics3DLabelSwapDistance.set_distance_level
 
     Select the screen object(s) for which swapping occurs at the specified distance.
 
     :Parameters:
 
-    **value** : :obj:`~GRAPHICS_3D_LABEL_SWAP_DISTANCE`
+    **value** : :obj:`~Graphics3DLabelSwapDistanceType`
 
     :Returns:
 

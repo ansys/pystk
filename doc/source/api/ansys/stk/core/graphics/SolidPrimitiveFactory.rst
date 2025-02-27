@@ -30,9 +30,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.SolidPrimitiveFactory.minimum_silhouette_width_supported`
-              - Gets the minimum silhouette width, in pixels, supported by the video card.
+              - Get the minimum silhouette width, in pixels, supported by the video card.
             * - :py:attr:`~ansys.stk.core.graphics.SolidPrimitiveFactory.maximum_silhouette_width_supported`
-              - Gets the maximum silhouette width, in pixels, supported by the video card.
+              - Get the maximum silhouette width, in pixels, supported by the video card.
 
 
 
@@ -51,13 +51,13 @@ Property detail
     :canonical: ansys.stk.core.graphics.SolidPrimitiveFactory.minimum_silhouette_width_supported
     :type: float
 
-    Gets the minimum silhouette width, in pixels, supported by the video card.
+    Get the minimum silhouette width, in pixels, supported by the video card.
 
 .. py:property:: maximum_silhouette_width_supported
     :canonical: ansys.stk.core.graphics.SolidPrimitiveFactory.maximum_silhouette_width_supported
     :type: float
 
-    Gets the maximum silhouette width, in pixels, supported by the video card.
+    Get the maximum silhouette width, in pixels, supported by the video card.
 
 
 Method detail
@@ -72,14 +72,14 @@ Method detail
 
         :obj:`~SolidPrimitive`
 
-.. py:method:: initialize_with_hint(self, set_hint: SET_HINT) -> SolidPrimitive
+.. py:method:: initialize_with_hint(self, set_hint: SetHint) -> SolidPrimitive
     :canonical: ansys.stk.core.graphics.SolidPrimitiveFactory.initialize_with_hint
 
     Initialize a solid primitive with the specified setHint.
 
     :Parameters:
 
-    **set_hint** : :obj:`~SET_HINT`
+    **set_hint** : :obj:`~SetHint`
 
     :Returns:
 

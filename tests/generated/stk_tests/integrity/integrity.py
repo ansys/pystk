@@ -1,3 +1,25 @@
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
 import pytest
 from test_util import *
 from assertion_harness import *
@@ -31,14 +53,14 @@ class Propagation(TestBase):
         Propagation.AG_SH = Ship(TestBase.Application.current_scenario.children["Ship1"])
         Propagation.AG_MS = Missile(TestBase.Application.current_scenario.children["Missile1"])
         satelliteName: str = "Satellite_BUG76220"
-        if TestBase.Application.current_scenario.children.contains(STK_OBJECT_TYPE.SATELLITE, satelliteName):
-            TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, satelliteName)
+        if TestBase.Application.current_scenario.children.contains(STKObjectType.SATELLITE, satelliteName):
+            TestBase.Application.current_scenario.children.unload(STKObjectType.SATELLITE, satelliteName)
 
         # Create a test satellite
         Propagation._SGP_SAT = Satellite(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, satelliteName)
+            TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, satelliteName)
         )
-        Propagation._SGP_SAT.set_propagator_type(PROPAGATOR_TYPE.SGP4)
+        Propagation._SGP_SAT.set_propagator_type(PropagatorType.SGP4)
         prop: "PropagatorSGP4" = PropagatorSGP4(Propagation._SGP_SAT.propagator)
         prop.automatic_update_enabled = False
 
@@ -101,9 +123,9 @@ class Propagation(TestBase):
         seg.right_ascension_ascending_node = 208.9552
         # READ ONLY  seg.Range = 0.0;
         seg.revolution_number = 84282
-        seg.switching_method = PROPAGATOR_SGP4_SWITCH_METHOD.OVERRIDE  # so SwitchTime can be set
+        seg.switching_method = PropagatorSGP4SwitchMethod.OVERRIDE  # so SwitchTime can be set
         seg.switch_time = "8 Aug 2013 12:51:20.104"
-        seg.switching_method = PROPAGATOR_SGP4_SWITCH_METHOD.EPOCH
+        seg.switching_method = PropagatorSGP4SwitchMethod.EPOCH
 
     def AddAndConfigureSeg2(self, segments: "PropagatorSGP4SegmentCollection"):
         seg: "PropagatorSGP4Segment" = segments.add_segment()
@@ -120,9 +142,9 @@ class Propagation(TestBase):
         seg.right_ascension_ascending_node = 208.0924
         # READ ONLY  seg.Range = 0.0;
         seg.revolution_number = 84284
-        seg.switching_method = PROPAGATOR_SGP4_SWITCH_METHOD.OVERRIDE  # so SwitchTime can be set
+        seg.switching_method = PropagatorSGP4SwitchMethod.OVERRIDE  # so SwitchTime can be set
         seg.switch_time = "8 Aug 2013 17:02:00.000"
-        seg.switching_method = PROPAGATOR_SGP4_SWITCH_METHOD.EPOCH
+        seg.switching_method = PropagatorSGP4SwitchMethod.EPOCH
 
     def AddAndConfigureSeg3(self, segments: "PropagatorSGP4SegmentCollection"):
         seg: "PropagatorSGP4Segment" = segments.add_segment()
@@ -139,9 +161,9 @@ class Propagation(TestBase):
         seg.right_ascension_ascending_node = 207.7649
         # READ ONLY seg.Range = 0.0;
         seg.revolution_number = 84285
-        seg.switching_method = PROPAGATOR_SGP4_SWITCH_METHOD.OVERRIDE  # so SwitchTime can be set
+        seg.switching_method = PropagatorSGP4SwitchMethod.OVERRIDE  # so SwitchTime can be set
         seg.switch_time = "8 Aug 2013 18:36:58.000"
-        seg.switching_method = PROPAGATOR_SGP4_SWITCH_METHOD.EPOCH
+        seg.switching_method = PropagatorSGP4SwitchMethod.EPOCH
 
     def CompareTleEphemeris(self, sat1: "Satellite", sat2: "Satellite", startTime: typing.Any, stopTime: typing.Any):
         elements = ["x", "y", "z"]
@@ -190,8 +212,8 @@ class Propagation(TestBase):
         satName: str
         # Setup
         for satName in ["tle-25544", "tle-25544-viaOM"]:
-            if TestBase.Application.current_scenario.children.contains(STK_OBJECT_TYPE.SATELLITE, satName):
-                TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, satName)
+            if TestBase.Application.current_scenario.children.contains(STKObjectType.SATELLITE, satName):
+                TestBase.Application.current_scenario.children.unload(STKObjectType.SATELLITE, satName)
 
         # Create a satellite by loading a TLE file, then propagate it.
         TestBase.Application.execute_command(
@@ -201,7 +223,7 @@ class Propagation(TestBase):
             )
         )
         sat1: "Satellite" = clr.CastAs(TestBase.Application.current_scenario.children["tle-25544"], Satellite)
-        sat1.set_propagator_type(PROPAGATOR_TYPE.SGP4)
+        sat1.set_propagator_type(PropagatorType.SGP4)
         sgp4_1: "PropagatorSGP4" = clr.CastAs(sat1.propagator, PropagatorSGP4)
         sgp4_1.ephemeris_interval.set_explicit_interval("8 Aug 2013 12:51:21", "8 Aug 2013 14:24:14")
         sgp4_1.step = 60
@@ -209,9 +231,9 @@ class Propagation(TestBase):
 
         # Create an SGP4 satellite, set the segment properties, and propagate it.
         sat2: "Satellite" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "tle-25544-viaOM"), Satellite
+            TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "tle-25544-viaOM"), Satellite
         )
-        sat2.set_propagator_type(PROPAGATOR_TYPE.SGP4)
+        sat2.set_propagator_type(PropagatorType.SGP4)
         sgp4_2: "PropagatorSGP4" = clr.CastAs(sat2.propagator, PropagatorSGP4)
         sgp4_2.ephemeris_interval.set_explicit_interval(
             sgp4_1.ephemeris_interval.find_start_time(), sgp4_1.ephemeris_interval.find_stop_time()
@@ -257,7 +279,7 @@ class Propagation(TestBase):
         ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, IStkObject), '"Euler Angles"')
 
         # OM Setup
-        Propagation.AG_SAT.set_propagator_type(PROPAGATOR_TYPE.STK_EXTERNAL)
+        Propagation.AG_SAT.set_propagator_type(PropagatorType.STK_EXTERNAL)
         ext: "PropagatorStkExternal" = PropagatorStkExternal(Propagation.AG_SAT.propagator)
         strPath: str = TestBase.GetScenarioFile("TestEph.e")
         ext.filename = strPath
@@ -296,23 +318,23 @@ class Propagation(TestBase):
         )
         ComparisionUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Propagation.AG_MS.set_trajectory_type(PROPAGATOR_TYPE.BALLISTIC)
+        Propagation.AG_MS.set_trajectory_type(PropagatorType.BALLISTIC)
         trajectory: "PropagatorBallistic" = PropagatorBallistic(Propagation.AG_MS.trajectory)
         trajectory.ephemeris_interval.set_explicit_interval("1 oct 1999 00:00:00", "1 oct 1999 01:00:00")
         trajectory.step = 30.0
-        trajectory.set_launch_type(VEHICLE_LAUNCH.DETIC)
+        trajectory.set_launch_type(VehicleLaunch.DETIC)
         launch: "LaunchVehicleLocationDetic" = LaunchVehicleLocationDetic(trajectory.launch)
         launch.latitude = 55.0
         launch.longitude = 100.0
         launch.altitude = 1.5
-        trajectory.set_impact_location_type(VEHICLE_IMPACT_LOCATION.POINT)
+        trajectory.set_impact_location_type(VehicleImpactLocation.POINT)
         impactloc: "VehicleImpactLocationPoint" = VehicleImpactLocationPoint(trajectory.impact_location)
-        impactloc.set_launch_control_type(VEHICLE_LAUNCH_CONTROL.FIXED_TIME_OF_FLIGHT)
+        impactloc.set_launch_control_type(VehicleLaunchControl.FIXED_TIME_OF_FLIGHT)
         launchcontrol3: "LaunchVehicleControlFixedTimeOfFlight" = LaunchVehicleControlFixedTimeOfFlight(
             impactloc.launch_control
         )
         launchcontrol3.time_of_flight = 9000.0
-        impactloc.set_impact_type(VEHICLE_IMPACT.IMPACT_LOCATION_DETIC)
+        impactloc.set_impact_type(VehicleImpact.IMPACT_LOCATION_DETIC)
         impact: "VehicleImpactLocationDetic" = VehicleImpactLocationDetic(impactloc.impact)
         impact.latitude = 12.0
         impact.longitude = 5.0
@@ -326,24 +348,24 @@ class Propagation(TestBase):
         )
         ComparisionUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Propagation.AG_MS.set_trajectory_type(PROPAGATOR_TYPE.BALLISTIC)
+        Propagation.AG_MS.set_trajectory_type(PropagatorType.BALLISTIC)
         trajectory = PropagatorBallistic(Propagation.AG_MS.trajectory)
         trajectory.ephemeris_interval.set_explicit_interval("1 oct 1999 00:00:00", "1 oct 1999 01:00:00")
         trajectory.step = 30.0
-        trajectory.set_launch_type(VEHICLE_LAUNCH.DETIC)
+        trajectory.set_launch_type(VehicleLaunch.DETIC)
         launch10: "LaunchVehicleLocationDetic" = LaunchVehicleLocationDetic(trajectory.launch)
         launch10.latitude = 55.0
         launch10.longitude = 100.0
         launch10.altitude = 1.5
-        trajectory.set_impact_location_type(VEHICLE_IMPACT_LOCATION.POINT)
+        trajectory.set_impact_location_type(VehicleImpactLocation.POINT)
         impactloc33: "VehicleImpactLocationPoint" = VehicleImpactLocationPoint(trajectory.impact_location)
-        impactloc33.set_launch_control_type(VEHICLE_LAUNCH_CONTROL.FIXED_TIME_OF_FLIGHT)
+        impactloc33.set_launch_control_type(VehicleLaunchControl.FIXED_TIME_OF_FLIGHT)
         launchcontrol2: "LaunchVehicleControlFixedTimeOfFlight" = LaunchVehicleControlFixedTimeOfFlight(
             impactloc33.launch_control
         )
         launchcontrol2.time_of_flight = 9000.0
-        trajectory.set_impact_location_type(VEHICLE_IMPACT_LOCATION.POINT)
-        impactloc33.set_impact_type(VEHICLE_IMPACT.IMPACT_LOCATION_CENTRIC)
+        trajectory.set_impact_location_type(VehicleImpactLocation.POINT)
+        impactloc33.set_impact_type(VehicleImpact.IMPACT_LOCATION_CENTRIC)
         impact2: "VehicleImpactLocationCentric" = VehicleImpactLocationCentric(impactloc33.impact)
         impact2.latitude = 12.0
         impact2.longitude = 5.0
@@ -357,21 +379,21 @@ class Propagation(TestBase):
         )
         ComparisionUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Propagation.AG_MS.set_trajectory_type(PROPAGATOR_TYPE.BALLISTIC)
+        Propagation.AG_MS.set_trajectory_type(PropagatorType.BALLISTIC)
         trajectory = PropagatorBallistic(Propagation.AG_MS.trajectory)
         trajectory.ephemeris_interval.set_explicit_interval("1 oct 1999 00:00:00", "1 oct 1999 01:00:00")
         trajectory.step = 30.0
-        trajectory.set_launch_type(VEHICLE_LAUNCH.DETIC)
+        trajectory.set_launch_type(VehicleLaunch.DETIC)
         launch12: "LaunchVehicleLocationDetic" = LaunchVehicleLocationDetic(trajectory.launch)
         launch12.latitude = 55.0
         launch12.longitude = 100.0
         launch12.altitude = 1.5
-        trajectory.set_impact_location_type(VEHICLE_IMPACT_LOCATION.POINT)
+        trajectory.set_impact_location_type(VehicleImpactLocation.POINT)
         impactloc2: "VehicleImpactLocationPoint" = VehicleImpactLocationPoint(trajectory.impact_location)
-        impactloc.set_launch_control_type(VEHICLE_LAUNCH_CONTROL.FIXED_DELTA_V)
+        impactloc.set_launch_control_type(VehicleLaunchControl.FIXED_DELTA_V)
         launchcontrol: "LaunchVehicleControlFixedDeltaV" = LaunchVehicleControlFixedDeltaV(impactloc.launch_control)
         launchcontrol.delta_v = 9500.0
-        impactloc2.set_impact_type(VEHICLE_IMPACT.IMPACT_LOCATION_DETIC)
+        impactloc2.set_impact_type(VehicleImpact.IMPACT_LOCATION_DETIC)
         impact0: "VehicleImpactLocationDetic" = VehicleImpactLocationDetic(impactloc.impact)
         impact0.latitude = 12.0
         impact0.longitude = 5.0
@@ -385,21 +407,21 @@ class Propagation(TestBase):
         )
         ComparisionUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Propagation.AG_MS.set_trajectory_type(PROPAGATOR_TYPE.BALLISTIC)
+        Propagation.AG_MS.set_trajectory_type(PropagatorType.BALLISTIC)
         trajectory = PropagatorBallistic(Propagation.AG_MS.trajectory)
         trajectory.ephemeris_interval.set_explicit_interval("1 oct 1999 00:00:00", "1 oct 1999 01:00:00")
         trajectory.step = 30.0
-        trajectory.set_launch_type(VEHICLE_LAUNCH.DETIC)
+        trajectory.set_launch_type(VehicleLaunch.DETIC)
         launch9: "LaunchVehicleLocationDetic" = LaunchVehicleLocationDetic(trajectory.launch)
         launch9.latitude = 55.0
         launch9.longitude = 100.0
         launch9.altitude = 1.5
-        trajectory.set_impact_location_type(VEHICLE_IMPACT_LOCATION.POINT)
+        trajectory.set_impact_location_type(VehicleImpactLocation.POINT)
         locpoint12: "VehicleImpactLocationPoint" = VehicleImpactLocationPoint(trajectory.impact_location)
-        locpoint12.set_launch_control_type(VEHICLE_LAUNCH_CONTROL.FIXED_DELTA_V)
+        locpoint12.set_launch_control_type(VehicleLaunchControl.FIXED_DELTA_V)
         launchcontrol8: "LaunchVehicleControlFixedDeltaV" = LaunchVehicleControlFixedDeltaV(locpoint12.launch_control)
         launchcontrol8.delta_v = 9500.0
-        locpoint12.set_impact_type(VEHICLE_IMPACT.IMPACT_LOCATION_CENTRIC)
+        locpoint12.set_impact_type(VehicleImpact.IMPACT_LOCATION_CENTRIC)
         impact3: "VehicleImpactLocationCentric" = VehicleImpactLocationCentric(locpoint12.impact)
         impact3.latitude = 12.0
         impact3.longitude = 5.0
@@ -413,16 +435,16 @@ class Propagation(TestBase):
         )
         ComparisionUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Propagation.AG_MS.set_trajectory_type(PROPAGATOR_TYPE.BALLISTIC)
+        Propagation.AG_MS.set_trajectory_type(PropagatorType.BALLISTIC)
         trajectory = PropagatorBallistic(Propagation.AG_MS.trajectory)
         trajectory.ephemeris_interval.set_explicit_interval("1 oct 1999 00:00:00", "1 oct 1999 01:00:00")
         trajectory.step = 30.0
-        trajectory.set_launch_type(VEHICLE_LAUNCH.DETIC)
+        trajectory.set_launch_type(VehicleLaunch.DETIC)
         launch2: "LaunchVehicleLocationDetic" = LaunchVehicleLocationDetic(trajectory.launch)
         launch2.latitude = 55.0
         launch2.longitude = 100.0
         launch2.altitude = 1.5
-        trajectory.set_impact_location_type(VEHICLE_IMPACT_LOCATION.LAUNCH_AZ_EL)
+        trajectory.set_impact_location_type(VehicleImpactLocation.LAUNCH_AZ_EL)
         impactloc4: "VehicleImpactLocationLaunchAzEl" = VehicleImpactLocationLaunchAzEl(trajectory.impact_location)
         impactloc4.delta_v = 9500.0
         impactloc4.azimuth = 20.0
@@ -436,23 +458,23 @@ class Propagation(TestBase):
         )
         ComparisionUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Propagation.AG_MS.set_trajectory_type(PROPAGATOR_TYPE.BALLISTIC)
+        Propagation.AG_MS.set_trajectory_type(PropagatorType.BALLISTIC)
         trajectory = PropagatorBallistic(Propagation.AG_MS.trajectory)
         trajectory.ephemeris_interval.set_explicit_interval("1 oct 1999 00:00:00", "1 oct 1999 01:00:00")
         trajectory.step = 30.0
-        trajectory.set_launch_type(VEHICLE_LAUNCH.DETIC)
+        trajectory.set_launch_type(VehicleLaunch.DETIC)
         launch3: "LaunchVehicleLocationDetic" = LaunchVehicleLocationDetic(trajectory.launch)
         launch3.latitude = 55.0
         launch3.longitude = 100.0
         launch3.altitude = 1.5
-        trajectory.set_impact_location_type(VEHICLE_IMPACT_LOCATION.POINT)
+        trajectory.set_impact_location_type(VehicleImpactLocation.POINT)
         impactloc1: "VehicleImpactLocationPoint" = VehicleImpactLocationPoint(trajectory.impact_location)
-        impactloc1.set_launch_control_type(VEHICLE_LAUNCH_CONTROL.FIXED_APOGEE_ALTITUDE)
+        impactloc1.set_launch_control_type(VehicleLaunchControl.FIXED_APOGEE_ALTITUDE)
         launchcontrol5: "LaunchVehicleControlFixedApogeeAltitude" = LaunchVehicleControlFixedApogeeAltitude(
             impactloc1.launch_control
         )
         launchcontrol5.apogee_altitude = 2000000.0
-        impactloc1.set_impact_type(VEHICLE_IMPACT.IMPACT_LOCATION_DETIC)
+        impactloc1.set_impact_type(VehicleImpact.IMPACT_LOCATION_DETIC)
         impact8: "VehicleImpactLocationDetic" = VehicleImpactLocationDetic(impactloc1.impact)
         impact8.latitude = 12.0
         impact8.longitude = 5.0
@@ -466,23 +488,23 @@ class Propagation(TestBase):
         )
         ComparisionUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Propagation.AG_MS.set_trajectory_type(PROPAGATOR_TYPE.BALLISTIC)
+        Propagation.AG_MS.set_trajectory_type(PropagatorType.BALLISTIC)
         trajectory = PropagatorBallistic(Propagation.AG_MS.trajectory)
         trajectory.ephemeris_interval.set_explicit_interval("1 oct 1999 00:00:00", "1 oct 1999 01:00:00")
         trajectory.step = 30.0
-        trajectory.set_launch_type(VEHICLE_LAUNCH.DETIC)
+        trajectory.set_launch_type(VehicleLaunch.DETIC)
         launch4: "LaunchVehicleLocationDetic" = LaunchVehicleLocationDetic(trajectory.launch)
         launch4.latitude = 55.0
         launch4.longitude = 100.0
         launch4.altitude = 1.5
-        trajectory.set_impact_location_type(VEHICLE_IMPACT_LOCATION.POINT)
+        trajectory.set_impact_location_type(VehicleImpactLocation.POINT)
         locpoint00: "VehicleImpactLocationPoint" = VehicleImpactLocationPoint(trajectory.impact_location)
-        locpoint00.set_launch_control_type(VEHICLE_LAUNCH_CONTROL.FIXED_APOGEE_ALTITUDE)
+        locpoint00.set_launch_control_type(VehicleLaunchControl.FIXED_APOGEE_ALTITUDE)
         launchcontrol7: "LaunchVehicleControlFixedApogeeAltitude" = LaunchVehicleControlFixedApogeeAltitude(
             locpoint00.launch_control
         )
         launchcontrol7.apogee_altitude = 2000000.0
-        locpoint00.set_impact_type(VEHICLE_IMPACT.IMPACT_LOCATION_CENTRIC)
+        locpoint00.set_impact_type(VehicleImpact.IMPACT_LOCATION_CENTRIC)
         impact6: "VehicleImpactLocationCentric" = VehicleImpactLocationCentric(locpoint00.impact)
         impact6.latitude = 12.0
         impact6.longitude = 5.0
@@ -496,23 +518,23 @@ class Propagation(TestBase):
         )
         ComparisionUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Propagation.AG_MS.set_trajectory_type(PROPAGATOR_TYPE.BALLISTIC)
+        Propagation.AG_MS.set_trajectory_type(PropagatorType.BALLISTIC)
         trajectory = PropagatorBallistic(Propagation.AG_MS.trajectory)
         trajectory.ephemeris_interval.set_explicit_interval("1 oct 1999 00:00:00", "1 oct 1999 01:00:00")
         trajectory.step = 30.0
-        trajectory.set_launch_type(VEHICLE_LAUNCH.CENTRIC)
+        trajectory.set_launch_type(VehicleLaunch.CENTRIC)
         launch5: "LaunchVehicleLocationCentric" = LaunchVehicleLocationCentric(trajectory.launch)
         launch5.latitude = 55.0
         launch5.longitude = 100.0
         launch5.radius = 6400000.0
-        trajectory.set_impact_location_type(VEHICLE_IMPACT_LOCATION.POINT)
+        trajectory.set_impact_location_type(VehicleImpactLocation.POINT)
         locpoint14: "VehicleImpactLocationPoint" = VehicleImpactLocationPoint(trajectory.impact_location)
-        locpoint14.set_launch_control_type(VEHICLE_LAUNCH_CONTROL.FIXED_TIME_OF_FLIGHT)
+        locpoint14.set_launch_control_type(VehicleLaunchControl.FIXED_TIME_OF_FLIGHT)
         launchcontrol6: "LaunchVehicleControlFixedTimeOfFlight" = LaunchVehicleControlFixedTimeOfFlight(
             locpoint14.launch_control
         )
         launchcontrol6.time_of_flight = 9000.0
-        locpoint14.set_impact_type(VEHICLE_IMPACT.IMPACT_LOCATION_DETIC)
+        locpoint14.set_impact_type(VehicleImpact.IMPACT_LOCATION_DETIC)
         impact1: "VehicleImpactLocationDetic" = VehicleImpactLocationDetic(locpoint14.impact)
         impact1.latitude = 12.0
         impact1.longitude = 5.0
@@ -526,23 +548,23 @@ class Propagation(TestBase):
         )
         ComparisionUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Propagation.AG_MS.set_trajectory_type(PROPAGATOR_TYPE.BALLISTIC)
+        Propagation.AG_MS.set_trajectory_type(PropagatorType.BALLISTIC)
         trajectory = PropagatorBallistic(Propagation.AG_MS.trajectory)
         trajectory.ephemeris_interval.set_explicit_interval("1 oct 1999 00:00:00", "1 oct 1999 01:00:00")
         trajectory.step = 30.0
-        trajectory.set_launch_type(VEHICLE_LAUNCH.CENTRIC)
+        trajectory.set_launch_type(VehicleLaunch.CENTRIC)
         launch6: "LaunchVehicleLocationCentric" = LaunchVehicleLocationCentric(trajectory.launch)
         launch6.latitude = 55.0
         launch6.longitude = 100.0
         launch6.radius = 6400000.0
-        trajectory.set_impact_location_type(VEHICLE_IMPACT_LOCATION.POINT)
+        trajectory.set_impact_location_type(VehicleImpactLocation.POINT)
         locpoint: "VehicleImpactLocationPoint" = VehicleImpactLocationPoint(trajectory.impact_location)
-        locpoint.set_launch_control_type(VEHICLE_LAUNCH_CONTROL.FIXED_TIME_OF_FLIGHT)
+        locpoint.set_launch_control_type(VehicleLaunchControl.FIXED_TIME_OF_FLIGHT)
         launchcontrol4: "LaunchVehicleControlFixedTimeOfFlight" = LaunchVehicleControlFixedTimeOfFlight(
             locpoint.launch_control
         )
         launchcontrol4.time_of_flight = 9000.0
-        locpoint.set_impact_type(VEHICLE_IMPACT.IMPACT_LOCATION_CENTRIC)
+        locpoint.set_impact_type(VehicleImpact.IMPACT_LOCATION_CENTRIC)
         impact11: "VehicleImpactLocationCentric" = VehicleImpactLocationCentric(locpoint.impact)
         impact11.latitude = 12.0
         impact11.longitude = 5.0
@@ -556,21 +578,21 @@ class Propagation(TestBase):
         )
         ComparisionUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Propagation.AG_MS.set_trajectory_type(PROPAGATOR_TYPE.BALLISTIC)
+        Propagation.AG_MS.set_trajectory_type(PropagatorType.BALLISTIC)
         trajectory = PropagatorBallistic(Propagation.AG_MS.trajectory)
         trajectory.ephemeris_interval.set_explicit_interval("1 oct 1999 00:00:00", "1 oct 1999 01:00:00")
         trajectory.step = 30.0
-        trajectory.set_launch_type(VEHICLE_LAUNCH.CENTRIC)
+        trajectory.set_launch_type(VehicleLaunch.CENTRIC)
         launch7: "LaunchVehicleLocationCentric" = LaunchVehicleLocationCentric(trajectory.launch)
         launch7.latitude = 55.0
         launch7.longitude = 100.0
         launch7.radius = 6400000.0
-        trajectory.set_impact_location_type(VEHICLE_IMPACT_LOCATION.POINT)
+        trajectory.set_impact_location_type(VehicleImpactLocation.POINT)
         locpoint15: "VehicleImpactLocationPoint" = VehicleImpactLocationPoint(trajectory.impact_location)
-        locpoint15.set_launch_control_type(VEHICLE_LAUNCH_CONTROL.FIXED_DELTA_V)
+        locpoint15.set_launch_control_type(VehicleLaunchControl.FIXED_DELTA_V)
         launchcontrol9: "LaunchVehicleControlFixedDeltaV" = LaunchVehicleControlFixedDeltaV(locpoint15.launch_control)
         launchcontrol9.delta_v = 9500.0
-        locpoint15.set_impact_type(VEHICLE_IMPACT.IMPACT_LOCATION_DETIC)
+        locpoint15.set_impact_type(VehicleImpact.IMPACT_LOCATION_DETIC)
         impact9: "VehicleImpactLocationDetic" = VehicleImpactLocationDetic(locpoint15.impact)
         impact9.latitude = 12.0
         impact9.longitude = 5.0
@@ -584,21 +606,21 @@ class Propagation(TestBase):
         )
         ComparisionUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Propagation.AG_MS.set_trajectory_type(PROPAGATOR_TYPE.BALLISTIC)
+        Propagation.AG_MS.set_trajectory_type(PropagatorType.BALLISTIC)
         trajectory = PropagatorBallistic(Propagation.AG_MS.trajectory)
         trajectory.ephemeris_interval.set_explicit_interval("1 oct 1999 00:00:00", "1 oct 1999 01:00:00")
         trajectory.step = 30.0
-        trajectory.set_launch_type(VEHICLE_LAUNCH.CENTRIC)
+        trajectory.set_launch_type(VehicleLaunch.CENTRIC)
         launch8: "LaunchVehicleLocationCentric" = LaunchVehicleLocationCentric(trajectory.launch)
         launch8.latitude = 55.0
         launch8.longitude = 100.0
         launch8.radius = 6400000.0
-        trajectory.set_impact_location_type(VEHICLE_IMPACT_LOCATION.POINT)
+        trajectory.set_impact_location_type(VehicleImpactLocation.POINT)
         locp: "VehicleImpactLocationPoint" = VehicleImpactLocationPoint(trajectory.impact_location)
-        locp.set_launch_control_type(VEHICLE_LAUNCH_CONTROL.FIXED_DELTA_V)
+        locp.set_launch_control_type(VehicleLaunchControl.FIXED_DELTA_V)
         launchcontrol10: "LaunchVehicleControlFixedDeltaV" = LaunchVehicleControlFixedDeltaV(locp.launch_control)
         launchcontrol10.delta_v = 9500.0
-        locp.set_impact_type(VEHICLE_IMPACT.IMPACT_LOCATION_CENTRIC)
+        locp.set_impact_type(VehicleImpact.IMPACT_LOCATION_CENTRIC)
         impact7: "VehicleImpactLocationCentric" = VehicleImpactLocationCentric(locp.impact)
         impact7.latitude = 12.0
         impact7.longitude = 5.0
@@ -612,16 +634,16 @@ class Propagation(TestBase):
         )
         ComparisionUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Propagation.AG_MS.set_trajectory_type(PROPAGATOR_TYPE.BALLISTIC)
+        Propagation.AG_MS.set_trajectory_type(PropagatorType.BALLISTIC)
         trajectory = PropagatorBallistic(Propagation.AG_MS.trajectory)
         trajectory.ephemeris_interval.set_explicit_interval("1 oct 1999 00:00:00", "1 oct 1999 01:00:00")
         trajectory.step = 30.0
-        trajectory.set_launch_type(VEHICLE_LAUNCH.CENTRIC)
+        trajectory.set_launch_type(VehicleLaunch.CENTRIC)
         launch1: "LaunchVehicleLocationCentric" = LaunchVehicleLocationCentric(trajectory.launch)
         launch1.latitude = 55.0
         launch1.longitude = 100.0
         launch1.radius = 6400000.0
-        trajectory.set_impact_location_type(VEHICLE_IMPACT_LOCATION.LAUNCH_AZ_EL)
+        trajectory.set_impact_location_type(VehicleImpactLocation.LAUNCH_AZ_EL)
         impactloc22: "VehicleImpactLocationLaunchAzEl" = VehicleImpactLocationLaunchAzEl(trajectory.impact_location)
         impactloc22.delta_v = 9500.0
         impactloc22.azimuth = 20.0
@@ -635,23 +657,23 @@ class Propagation(TestBase):
         )
         ComparisionUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Propagation.AG_MS.set_trajectory_type(PROPAGATOR_TYPE.BALLISTIC)
+        Propagation.AG_MS.set_trajectory_type(PropagatorType.BALLISTIC)
         trajectory = PropagatorBallistic(Propagation.AG_MS.trajectory)
         trajectory.ephemeris_interval.set_explicit_interval("1 oct 1999 00:00:00", "1 oct 1999 01:00:00")
         trajectory.step = 30.0
-        trajectory.set_launch_type(VEHICLE_LAUNCH.CENTRIC)
+        trajectory.set_launch_type(VehicleLaunch.CENTRIC)
         launch11: "LaunchVehicleLocationCentric" = LaunchVehicleLocationCentric(trajectory.launch)
         launch11.latitude = 55.0
         launch11.longitude = 100.0
         launch11.radius = 6400000.0
-        trajectory.set_impact_location_type(VEHICLE_IMPACT_LOCATION.POINT)
+        trajectory.set_impact_location_type(VehicleImpactLocation.POINT)
         impactloc01: "VehicleImpactLocationPoint" = VehicleImpactLocationPoint(trajectory.impact_location)
         impactloc01.set_launch_control_type(0)
         launchcontrol0: "LaunchVehicleControlFixedApogeeAltitude" = LaunchVehicleControlFixedApogeeAltitude(
             impactloc01.launch_control
         )
         launchcontrol0.apogee_altitude = 2000000.0
-        impactloc01.set_impact_type(VEHICLE_IMPACT.IMPACT_LOCATION_DETIC)
+        impactloc01.set_impact_type(VehicleImpact.IMPACT_LOCATION_DETIC)
         impact4: "VehicleImpactLocationDetic" = VehicleImpactLocationDetic(impactloc01.impact)
         impact4.latitude = 12.0
         impact4.longitude = 5.0
@@ -665,23 +687,23 @@ class Propagation(TestBase):
         )
         ComparisionUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Propagation.AG_MS.set_trajectory_type(PROPAGATOR_TYPE.BALLISTIC)
+        Propagation.AG_MS.set_trajectory_type(PropagatorType.BALLISTIC)
         trajectory = PropagatorBallistic(Propagation.AG_MS.trajectory)
         trajectory.ephemeris_interval.set_explicit_interval("1 oct 1999 00:00:00", "1 oct 1999 01:00:00")
         trajectory.step = 30.0
-        trajectory.set_launch_type(VEHICLE_LAUNCH.CENTRIC)
+        trajectory.set_launch_type(VehicleLaunch.CENTRIC)
         launch13: "LaunchVehicleLocationCentric" = LaunchVehicleLocationCentric(trajectory.launch)
         launch13.latitude = 55.0
         launch13.longitude = 100.0
         launch13.radius = 6400000.0
-        trajectory.set_impact_location_type(VEHICLE_IMPACT_LOCATION.POINT)
+        trajectory.set_impact_location_type(VehicleImpactLocation.POINT)
         locpoint1: "VehicleImpactLocationPoint" = VehicleImpactLocationPoint(trajectory.impact_location)
-        locpoint1.set_launch_control_type(VEHICLE_LAUNCH_CONTROL.FIXED_APOGEE_ALTITUDE)
+        locpoint1.set_launch_control_type(VehicleLaunchControl.FIXED_APOGEE_ALTITUDE)
         launchcontrol1: "LaunchVehicleControlFixedApogeeAltitude" = LaunchVehicleControlFixedApogeeAltitude(
             locpoint1.launch_control
         )
         launchcontrol1.apogee_altitude = 2000000.0
-        locpoint1.set_impact_type(VEHICLE_IMPACT.IMPACT_LOCATION_CENTRIC)
+        locpoint1.set_impact_type(VehicleImpact.IMPACT_LOCATION_CENTRIC)
         impact5: "VehicleImpactLocationCentric" = VehicleImpactLocationCentric(locpoint1.impact)
         impact5.latitude = 12.0
         impact5.longitude = 5.0
@@ -697,7 +719,7 @@ class Propagation(TestBase):
     def test_SimpleAscent(self):
         ComparisionUtility = ReportComparison(self.Units)
         oLV: "LaunchVehicle" = LaunchVehicle(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.LAUNCH_VEHICLE, "LaunchVehicle1")
+            TestBase.Application.current_scenario.children.new(STKObjectType.LAUNCH_VEHICLE, "LaunchVehicle1")
         )
         Assert.assertIsNotNone(oLV)
         ComparisionUtility.AddReport2(
@@ -717,7 +739,7 @@ class Propagation(TestBase):
         oPropagator.step = 60
         oInitState: "LaunchVehicleInitialState" = oPropagator.initial_state
         Launch: "LatitudeLongitudeAltitudeDetic" = LatitudeLongitudeAltitudeDetic(
-            oInitState.launch.convert_to(DETIC_POSITION_TYPE.DETIC)
+            oInitState.launch.convert_to(DeticPositionType.DETIC)
         )
         Launch.latitude = 12.0
         Launch.longitude = -40.0
@@ -725,7 +747,7 @@ class Propagation(TestBase):
         oInitState.burnout_velocity = 7800.0
         oInitState.launch.assign(Launch)
         Burnout: "LatitudeLongitudeAltitudeDetic" = LatitudeLongitudeAltitudeDetic(
-            oInitState.burnout.convert_to(DETIC_POSITION_TYPE.DETIC)
+            oInitState.burnout.convert_to(DeticPositionType.DETIC)
         )
         Burnout.latitude = 23.0
         Burnout.longitude = 10.0
@@ -744,7 +766,7 @@ class Propagation(TestBase):
         oPropagator.step = 60
         oInitState = oPropagator.initial_state
         LaunchGeoCent: "LatitudeLongitudeAltitudeCentric" = LatitudeLongitudeAltitudeCentric(
-            oInitState.launch.convert_to(DETIC_POSITION_TYPE.CENTRIC)
+            oInitState.launch.convert_to(DeticPositionType.CENTRIC)
         )
         LaunchGeoCent.latitude = 12.0
         LaunchGeoCent.longitude = -40.0
@@ -752,7 +774,7 @@ class Propagation(TestBase):
         oInitState.burnout_velocity = 7800.0
         oInitState.launch.assign(LaunchGeoCent)
         BurnoutGeoCent: "LatitudeLongitudeAltitudeCentric" = LatitudeLongitudeAltitudeCentric(
-            oInitState.burnout.convert_to(DETIC_POSITION_TYPE.CENTRIC)
+            oInitState.burnout.convert_to(DeticPositionType.CENTRIC)
         )
         BurnoutGeoCent.latitude = 23.0
         BurnoutGeoCent.longitude = 10.0
@@ -778,10 +800,10 @@ class Propagation(TestBase):
         self.Units.set_current_unit("DistanceUnit", "km")
 
         # OM Setup
-        Propagation.AG_AC.set_route_type(PROPAGATOR_TYPE.GREAT_ARC)
+        Propagation.AG_AC.set_route_type(PropagatorType.GREAT_ARC)
         greatarc: "PropagatorGreatArc" = PropagatorGreatArc(Propagation.AG_AC.route)
         greatarc.waypoints.remove_all()
-        greatarc.method = VEHICLE_WAYPOINT_COMPUTATION_METHOD.DETERMINE_VELOCITY_FROM_TIME
+        greatarc.method = VehicleWaypointComputationMethod.DETERMINE_VELOCITY_FROM_TIME
         waypt: "VehicleWaypointsElement" = greatarc.waypoints.add()
         waypt.latitude = 32.8
         waypt.longitude = -99.0
@@ -832,14 +854,14 @@ class Propagation(TestBase):
         ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, IStkObject), '"Euler Angles"')
 
         # OM Setup
-        Propagation.AG_SAT.set_propagator_type(PROPAGATOR_TYPE.LOP)
+        Propagation.AG_SAT.set_propagator_type(PropagatorType.LOP)
         lop: "PropagatorLOP" = PropagatorLOP(Propagation.AG_SAT.propagator)
         lop.ephemeris_interval.set_explicit_interval("1 Nov 2000 00:00:00.00", "10 Nov 2000 00:00:00.00")
         lop.step = 86400.0
         spher: "OrbitStateSpherical" = OrbitStateSpherical(
-            lop.initial_state.representation.convert_to(ORBIT_STATE_TYPE.SPHERICAL)
+            lop.initial_state.representation.convert_to(OrbitStateType.SPHERICAL)
         )
-        spher.coordinate_system_type = COORDINATE_SYSTEM.J2000
+        spher.coordinate_system_type = CoordinateSystem.J2000
         # Epoch was deprecated
         # lop.InitialState.Epoch = "1 Nov 2000 00:00:00.00";
         (spher).epoch = "1 Nov 2000 00:00:00.00"
@@ -866,7 +888,7 @@ class Propagation(TestBase):
         lop.force_model.drag.use = True
         lop.force_model.drag.cd = 3.5
         lop.force_model.physical_data.drag_cross_sectional_area = 20
-        lop.force_model.drag.advanced.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.EXPONENTIAL_MODEL
+        lop.force_model.drag.advanced.atmospheric_density_model = AtmosphericDensityModel.EXPONENTIAL_MODEL
         lop.force_model.drag.advanced.exponential_density_model_parameters.reference_density = 0.003
         lop.force_model.drag.advanced.exponential_density_model_parameters.reference_height = 123.0
         lop.force_model.drag.advanced.exponential_density_model_parameters.scale_height = 234.0
@@ -908,7 +930,7 @@ class Propagation(TestBase):
         ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, IStkObject), '"Euler Angles"')
 
         # OM Setup
-        Propagation.AG_SAT.set_propagator_type(PROPAGATOR_TYPE.SGP4)
+        Propagation.AG_SAT.set_propagator_type(PropagatorType.SGP4)
         sgp4: "PropagatorSGP4" = PropagatorSGP4(Propagation.AG_SAT.propagator)
         sgp4.ephemeris_interval.set_explicit_interval("1 Nov 2000 00:00:00.00", "1 Nov 2000 01:00:00.00")
         sgp4.step = 120.0
@@ -945,13 +967,13 @@ class Propagation(TestBase):
         ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, IStkObject), '"Euler Angles"')
 
         # OM Setup
-        Propagation.AG_SAT.set_propagator_type(PROPAGATOR_TYPE.SGP4)
+        Propagation.AG_SAT.set_propagator_type(PropagatorType.SGP4)
         sgp4: "PropagatorSGP4" = PropagatorSGP4(Propagation.AG_SAT.propagator)
         sgp4.ephemeris_interval.set_explicit_interval("1 Jul 2009 15:00:00.00", "1 Jul 2009 19:00:00.00")
         sgp4.step = 60
         sgp4.segments.ssc_number = "11417"
         sgp4.automatic_update_enabled = True
-        sgp4.automatic_update_settings.selected_source = VEHICLE_SGP4_AUTOMATIC_UPDATE_SOURCE_TYPE.FILE
+        sgp4.automatic_update_settings.selected_source = VehicleSGP4AutomaticUpdateSourceType.FILE
         sgp4.automatic_update_settings.file_source.filename = TestBase.GetScenarioFile("B44150.tle")
         sgp4.propagate()
 
@@ -977,7 +999,7 @@ class Propagation(TestBase):
         ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, IStkObject), '"Cartesian Position Velocity"')
 
         # OM Setup
-        Propagation.AG_SAT.set_propagator_type(PROPAGATOR_TYPE.GPS)
+        Propagation.AG_SAT.set_propagator_type(PropagatorType.GPS)
         gps: "PropagatorGPS" = PropagatorGPS(Propagation.AG_SAT.propagator)
         gps.prn = 23
         gps.automatic_update_enabled = False
@@ -986,7 +1008,7 @@ class Propagation(TestBase):
             gps.specify_catalog.properties, VehicleGPSAlmanacPropertiesSEM
         )
         Assert.assertIsNotNone(almanacPropertiesSEM)
-        almanacPropertiesSEM.reference_week = GPS_REFERENCE_WEEK.WEEK06_JAN1980
+        almanacPropertiesSEM.reference_week = GPSReferenceWeek.WEEK06_JAN1980
         gps.propagate()
 
         ComparisionUtility.TakeOMSnapshot(TestBase.Application)
@@ -1007,17 +1029,17 @@ class Propagation(TestBase):
         ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, IStkObject), '"Cartesian Position Velocity"')
 
         # OM Setup
-        Propagation.AG_SAT.set_propagator_type(PROPAGATOR_TYPE.GPS)
+        Propagation.AG_SAT.set_propagator_type(PropagatorType.GPS)
         gps: "PropagatorGPS" = PropagatorGPS(Propagation.AG_SAT.propagator)
         gps.prn = 23
         gps.automatic_update_enabled = True
-        gps.automatic_update_settings.selected_source = VEHICLE_GPS_AUTOMATIC_UPDATE_SOURCE_TYPE.FILE
+        gps.automatic_update_settings.selected_source = VehicleGPSAutomaticUpdateSourceType.FILE
         gps.automatic_update_settings.file_source.filename = TestBase.GetScenarioFile("GPSAlmanac.al3")
         autoUpdateProperties: "VehicleGPSAutoUpdateProperties" = clr.CastAs(
             gps.automatic_update_settings.properties, VehicleGPSAutoUpdateProperties
         )
         Assert.assertIsNotNone(autoUpdateProperties)
-        autoUpdateProperties.week_reference_epoch = GPS_REFERENCE_WEEK.WEEK06_JAN1980
+        autoUpdateProperties.week_reference_epoch = GPSReferenceWeek.WEEK06_JAN1980
         gps.propagate()
 
         ComparisionUtility.TakeOMSnapshot(TestBase.Application)
@@ -1043,15 +1065,15 @@ class Propagation(TestBase):
         ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, IStkObject), '"Euler Angles"')
 
         # OM Setup
-        Propagation.AG_SAT.set_propagator_type(PROPAGATOR_TYPE.ASTROGATOR)
+        Propagation.AG_SAT.set_propagator_type(PropagatorType.ASTROGATOR)
         driverMCS: "MCSDriver" = MCSDriver(Propagation.AG_SAT.propagator)
-        driverMCS.main_sequence.insert(SEGMENT_TYPE.MANEUVER, "Maneuver", "Propagate")
+        driverMCS.main_sequence.insert(SegmentType.MANEUVER, "Maneuver", "Propagate")
         ts: "MCSTargetSequence" = MCSTargetSequence(
-            driverMCS.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "Target_Sequence", "-")
+            driverMCS.main_sequence.insert(SegmentType.TARGET_SEQUENCE, "Target_Sequence", "-")
         )
-        maneuver: "MCSManeuver" = MCSManeuver(ts.segments.insert(SEGMENT_TYPE.MANEUVER, "Maneuver", "-"))
+        maneuver: "MCSManeuver" = MCSManeuver(ts.segments.insert(SegmentType.MANEUVER, "Maneuver", "-"))
 
-        maneuver.enable_control_parameter(CONTROL_MANEUVER.IMPULSIVE_CARTESIAN_X)
+        maneuver.enable_control_parameter(ControlManeuver.IMPULSIVE_CARTESIAN_X)
 
         driverMCS.run_mcs()
 
@@ -1090,9 +1112,9 @@ class Propagation(TestBase):
     def test_InvalidPropagationIntervals(self):
         # J2 propagator type
         TestBase.logger.WriteLine6("The current Propagator type is: {0}", Propagation.AG_SAT.propagator_type)
-        Propagation.AG_SAT.set_propagator_type(PROPAGATOR_TYPE.J2_PERTURBATION)
+        Propagation.AG_SAT.set_propagator_type(PropagatorType.J2_PERTURBATION)
         TestBase.logger.WriteLine6("The new Propagator type is: {0}", Propagation.AG_SAT.propagator_type)
-        Assert.assertEqual(PROPAGATOR_TYPE.J2_PERTURBATION, Propagation.AG_SAT.propagator_type)
+        Assert.assertEqual(PropagatorType.J2_PERTURBATION, Propagation.AG_SAT.propagator_type)
         # J2 propagator
         j2prop: "PropagatorJ2Perturbation" = PropagatorJ2Perturbation(Propagation.AG_SAT.propagator)
         Assert.assertIsNotNone(j2prop)
@@ -1104,9 +1126,9 @@ class Propagation(TestBase):
 
         # LOP propagator type
         TestBase.logger.WriteLine6("The current Propagator type is: {0}", Propagation.AG_SAT.propagator_type)
-        Propagation.AG_SAT.set_propagator_type(PROPAGATOR_TYPE.LOP)
+        Propagation.AG_SAT.set_propagator_type(PropagatorType.LOP)
         TestBase.logger.WriteLine6("The new Propagator type is: {0}", Propagation.AG_SAT.propagator_type)
-        Assert.assertEqual(PROPAGATOR_TYPE.LOP, Propagation.AG_SAT.propagator_type)
+        Assert.assertEqual(PropagatorType.LOP, Propagation.AG_SAT.propagator_type)
         # LOP propagator
         oLOP: "PropagatorLOP" = PropagatorLOP(Propagation.AG_SAT.propagator)
         Assert.assertIsNotNone(oLOP)
@@ -1119,9 +1141,9 @@ class Propagation(TestBase):
 
         # SGP4 propagator type
         TestBase.logger.WriteLine6("The current Propagator type is: {0}", Propagation.AG_SAT.propagator_type)
-        Propagation.AG_SAT.set_propagator_type(PROPAGATOR_TYPE.SGP4)
+        Propagation.AG_SAT.set_propagator_type(PropagatorType.SGP4)
         TestBase.logger.WriteLine6("The new Propagator type is: {0}", Propagation.AG_SAT.propagator_type)
-        Assert.assertEqual(PROPAGATOR_TYPE.SGP4, Propagation.AG_SAT.propagator_type)
+        Assert.assertEqual(PropagatorType.SGP4, Propagation.AG_SAT.propagator_type)
         # SGP4 propagator
         oSGP4: "PropagatorSGP4" = PropagatorSGP4(Propagation.AG_SAT.propagator)
         Assert.assertIsNotNone(oSGP4)
@@ -1133,9 +1155,9 @@ class Propagation(TestBase):
 
         # SPICE propagator type
         TestBase.logger.WriteLine6("The current Propagator type is: {0}", Propagation.AG_SAT.propagator_type)
-        Propagation.AG_SAT.set_propagator_type(PROPAGATOR_TYPE.SPICE)
+        Propagation.AG_SAT.set_propagator_type(PropagatorType.SPICE)
         TestBase.logger.WriteLine6("The new Propagator type is: {0}", Propagation.AG_SAT.propagator_type)
-        Assert.assertEqual(PROPAGATOR_TYPE.SPICE, Propagation.AG_SAT.propagator_type)
+        Assert.assertEqual(PropagatorType.SPICE, Propagation.AG_SAT.propagator_type)
         # SPICE propagator
         oSPICE: "PropagatorSPICE" = PropagatorSPICE(Propagation.AG_SAT.propagator)
         Assert.assertIsNotNone(oSPICE)
@@ -1147,13 +1169,13 @@ class Propagation(TestBase):
 
         # LaunchVehicle propagator test
         oLV: "LaunchVehicle" = LaunchVehicle(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.LAUNCH_VEHICLE, "LV")
+            TestBase.Application.current_scenario.children.new(STKObjectType.LAUNCH_VEHICLE, "LV")
         )
         # SimpleAscent propagator type
         TestBase.logger.WriteLine6("The current TrajectoryType is: {0}", oLV.trajectory_type)
-        oLV.set_trajectory_type(PROPAGATOR_TYPE.SIMPLE_ASCENT)
+        oLV.set_trajectory_type(PropagatorType.SIMPLE_ASCENT)
         TestBase.logger.WriteLine6("The new TrajectoryType is: {0}", oLV.trajectory_type)
-        Assert.assertEqual(PROPAGATOR_TYPE.SIMPLE_ASCENT, oLV.trajectory_type)
+        Assert.assertEqual(PropagatorType.SIMPLE_ASCENT, oLV.trajectory_type)
         # SimpleAscent propagator
         oSimple: "PropagatorSimpleAscent" = PropagatorSimpleAscent(oLV.trajectory)
         Assert.assertIsNotNone(oSimple)
@@ -1167,9 +1189,9 @@ class Propagation(TestBase):
         Propagation.AG_MS = Missile(TestBase.Application.current_scenario.children["Missile1"])
         Assert.assertIsNotNone(Propagation.AG_MS)
         TestBase.logger.WriteLine6("The current TrajectoryType is: {0}", Propagation.AG_MS.trajectory_type)
-        Propagation.AG_MS.set_trajectory_type(PROPAGATOR_TYPE.TWO_BODY)
+        Propagation.AG_MS.set_trajectory_type(PropagatorType.TWO_BODY)
         TestBase.logger.WriteLine6("The new TrajectoryType is: {0}", Propagation.AG_MS.trajectory_type)
-        Assert.assertEqual(PROPAGATOR_TYPE.TWO_BODY, Propagation.AG_MS.trajectory_type)
+        Assert.assertEqual(PropagatorType.TWO_BODY, Propagation.AG_MS.trajectory_type)
         # TwoBody propagator
         oTwoBody: "PropagatorTwoBody" = PropagatorTwoBody(Propagation.AG_MS.trajectory)
         Assert.assertIsNotNone(oTwoBody)
@@ -1192,33 +1214,33 @@ class Propagation(TestBase):
         ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, IStkObject), '"Euler Angles"')
 
         # OM Setup
-        Propagation.AG_SAT.set_propagator_type(PROPAGATOR_TYPE.J2_PERTURBATION)
+        Propagation.AG_SAT.set_propagator_type(PropagatorType.J2_PERTURBATION)
         j2prop: "PropagatorJ2Perturbation" = PropagatorJ2Perturbation(Propagation.AG_SAT.propagator)
-        j2prop.initial_state.ellipse_options = VEHICLE_ELLIPSE_OPTION_TYPE.OSCULATING
+        j2prop.initial_state.ellipse_options = VehicleEllipseOptionType.OSCULATING
         j2prop.ephemeris_interval.set_explicit_interval("1 Nov 2000 03:00:00.00", "1 Nov 2000 04:00:00.00")
         j2prop.step = 60
         classical: "OrbitStateClassical" = OrbitStateClassical(
-            j2prop.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CLASSICAL)
+            j2prop.initial_state.representation.convert_to(OrbitStateType.CLASSICAL)
         )
-        classical.coordinate_system_type = COORDINATE_SYSTEM.J2000
+        classical.coordinate_system_type = CoordinateSystem.J2000
         coordsys: "OrbitStateCoordinateSystem" = classical.coordinate_system
         # Epoch is deprecated
         # j2prop.InitialState.Epoch = "1 Nov 2000 02:00:00.00";
         (classical).epoch = "1 Nov 2000 02:00:00.00"
-        classical.size_shape_type = CLASSICAL_SIZE_SHAPE.SEMIMAJOR_AXIS
+        classical.size_shape_type = ClassicalSizeShape.SEMIMAJOR_AXIS
         sizeshape: "ClassicalSizeShapeSemimajorAxis" = ClassicalSizeShapeSemimajorAxis(classical.size_shape)
         sizeshape.semi_major_axis = 7322000.122
-        classical.size_shape_type = CLASSICAL_SIZE_SHAPE.MEAN_MOTION
+        classical.size_shape_type = ClassicalSizeShape.MEAN_MOTION
         sizeshape1: "ClassicalSizeShapeMeanMotion" = ClassicalSizeShapeMeanMotion(classical.size_shape)
         sizeshape1.eccentricity = 0.099
         classical.orientation.inclination = 99.5
         classical.orientation.argument_of_periapsis = 1.2
-        classical.orientation.ascending_node_type = ORIENTATION_ASC_NODE.RIGHT_ASCENSION_ASCENDING_NODE
+        classical.orientation.ascending_node_type = OrientationAscNode.RIGHT_ASCENSION_ASCENDING_NODE
         raan: "OrientationRightAscensionOfAscendingNode" = OrientationRightAscensionOfAscendingNode(
             classical.orientation.ascending_node
         )
         raan.value = 122.2
-        classical.location_type = CLASSICAL_LOCATION.MEAN_ANOMALY
+        classical.location_type = ClassicalLocation.MEAN_ANOMALY
         loc: "ClassicalLocationMeanAnomaly" = ClassicalLocationMeanAnomaly(classical.location)
         loc.value = 22.2
         j2prop.initial_state.representation.assign(classical)
@@ -1233,7 +1255,7 @@ class Propagation(TestBase):
 
         ComparisionUtility.TakeConnectSnapshot(TestBase.Application)
 
-        j2prop.initial_state.ellipse_options = VEHICLE_ELLIPSE_OPTION_TYPE.SECULARLY_PRECESSING
+        j2prop.initial_state.ellipse_options = VehicleEllipseOptionType.SECULARLY_PRECESSING
         j2prop.propagate()
 
         ComparisionUtility.TakeOMSnapshot(TestBase.Application)
@@ -1256,33 +1278,33 @@ class Propagation(TestBase):
         ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, IStkObject), '"Euler Angles"')
 
         # OM Setup
-        Propagation.AG_SAT.set_propagator_type(PROPAGATOR_TYPE.J4_PERTURBATION)
+        Propagation.AG_SAT.set_propagator_type(PropagatorType.J4_PERTURBATION)
         j4prop: "PropagatorJ4Perturbation" = PropagatorJ4Perturbation(Propagation.AG_SAT.propagator)
-        j4prop.initial_state.ellipse_options = VEHICLE_ELLIPSE_OPTION_TYPE.OSCULATING
+        j4prop.initial_state.ellipse_options = VehicleEllipseOptionType.OSCULATING
         j4prop.ephemeris_interval.set_explicit_interval("1 Nov 2000 00:00:00.00", "1 Nov 2000 12:00:00.00")
         j4prop.step = 600
         classical: "OrbitStateClassical" = OrbitStateClassical(
-            j4prop.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CLASSICAL)
+            j4prop.initial_state.representation.convert_to(OrbitStateType.CLASSICAL)
         )
-        classical.coordinate_system_type = COORDINATE_SYSTEM.J2000
+        classical.coordinate_system_type = CoordinateSystem.J2000
         coordsys: "OrbitStateCoordinateSystem" = classical.coordinate_system
         # Epoch was deprecated
         # j4prop.InitialState.Epoch = "1 Nov 2000 02:00:00.00";
         (classical).epoch = "1 Nov 2000 02:00:00.00"
-        classical.size_shape_type = CLASSICAL_SIZE_SHAPE.SEMIMAJOR_AXIS
+        classical.size_shape_type = ClassicalSizeShape.SEMIMAJOR_AXIS
         sizeshape: "ClassicalSizeShapeSemimajorAxis" = ClassicalSizeShapeSemimajorAxis(classical.size_shape)
         sizeshape.semi_major_axis = 8322000.122
-        classical.size_shape_type = CLASSICAL_SIZE_SHAPE.MEAN_MOTION
+        classical.size_shape_type = ClassicalSizeShape.MEAN_MOTION
         sizeshape1: "ClassicalSizeShapeMeanMotion" = ClassicalSizeShapeMeanMotion(classical.size_shape)
         sizeshape1.eccentricity = 0.079
         classical.orientation.inclination = 88.4
         classical.orientation.argument_of_periapsis = 1.8
-        classical.orientation.ascending_node_type = ORIENTATION_ASC_NODE.RIGHT_ASCENSION_ASCENDING_NODE
+        classical.orientation.ascending_node_type = OrientationAscNode.RIGHT_ASCENSION_ASCENDING_NODE
         raan: "OrientationRightAscensionOfAscendingNode" = OrientationRightAscensionOfAscendingNode(
             classical.orientation.ascending_node
         )
         raan.value = 132.4
-        classical.location_type = CLASSICAL_LOCATION.MEAN_ANOMALY
+        classical.location_type = ClassicalLocation.MEAN_ANOMALY
         loc: "ClassicalLocationMeanAnomaly" = ClassicalLocationMeanAnomaly(classical.location)
         loc.value = 26.4
 
@@ -1298,7 +1320,7 @@ class Propagation(TestBase):
 
         ComparisionUtility.TakeConnectSnapshot(TestBase.Application)
 
-        j4prop.initial_state.ellipse_options = VEHICLE_ELLIPSE_OPTION_TYPE.SECULARLY_PRECESSING
+        j4prop.initial_state.ellipse_options = VehicleEllipseOptionType.SECULARLY_PRECESSING
         j4prop.propagate()
 
         ComparisionUtility.TakeOMSnapshot(TestBase.Application)
@@ -1321,32 +1343,32 @@ class Propagation(TestBase):
         ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, IStkObject), '"Euler Angles"')
 
         # OM Setup
-        Propagation.AG_SAT.set_propagator_type(PROPAGATOR_TYPE.TWO_BODY)
+        Propagation.AG_SAT.set_propagator_type(PropagatorType.TWO_BODY)
         twobody: "PropagatorTwoBody" = PropagatorTwoBody(Propagation.AG_SAT.propagator)
         twobody.ephemeris_interval.set_explicit_interval("1 Nov 2000 00:00:00.00", "1 Nov 2000 12:00:00.00")
         twobody.step = 600
         classical: "OrbitStateClassical" = OrbitStateClassical(
-            twobody.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CLASSICAL)
+            twobody.initial_state.representation.convert_to(OrbitStateType.CLASSICAL)
         )
-        classical.coordinate_system_type = COORDINATE_SYSTEM.J2000
+        classical.coordinate_system_type = CoordinateSystem.J2000
         coordsys: "OrbitStateCoordinateSystem" = classical.coordinate_system
         # Epoch was deprecated
         # twobody.InitialState.Epoch = "1 Nov 2000 02:00:00.00";
         (classical).epoch = "1 Nov 2000 02:00:00.00"
-        classical.size_shape_type = CLASSICAL_SIZE_SHAPE.SEMIMAJOR_AXIS
+        classical.size_shape_type = ClassicalSizeShape.SEMIMAJOR_AXIS
         sizeshape: "ClassicalSizeShapeSemimajorAxis" = ClassicalSizeShapeSemimajorAxis(classical.size_shape)
         sizeshape.semi_major_axis = 8022000.122
-        classical.size_shape_type = CLASSICAL_SIZE_SHAPE.MEAN_MOTION
+        classical.size_shape_type = ClassicalSizeShape.MEAN_MOTION
         sizeshape1: "ClassicalSizeShapeMeanMotion" = ClassicalSizeShapeMeanMotion(classical.size_shape)
         sizeshape1.eccentricity = 0.09
         classical.orientation.inclination = 88.4
         classical.orientation.argument_of_periapsis = 1.3
-        classical.orientation.ascending_node_type = ORIENTATION_ASC_NODE.RIGHT_ASCENSION_ASCENDING_NODE
+        classical.orientation.ascending_node_type = OrientationAscNode.RIGHT_ASCENSION_ASCENDING_NODE
         raan: "OrientationRightAscensionOfAscendingNode" = OrientationRightAscensionOfAscendingNode(
             classical.orientation.ascending_node
         )
         raan.value = 122.4
-        classical.location_type = CLASSICAL_LOCATION.MEAN_ANOMALY
+        classical.location_type = ClassicalLocation.MEAN_ANOMALY
         loc: "ClassicalLocationMeanAnomaly" = ClassicalLocationMeanAnomaly(classical.location)
         loc.value = 21.4
         twobody.initial_state.representation.assign(classical)
@@ -1372,7 +1394,7 @@ class Propagation(TestBase):
         ComparisionUtility.AddReport(clr.CastAs(Propagation.AG_SAT, IStkObject), '"LLA Position"')
 
         # OM Setup
-        Propagation.AG_SAT.set_propagator_type(PROPAGATOR_TYPE.TWO_BODY)
+        Propagation.AG_SAT.set_propagator_type(PropagatorType.TWO_BODY)
         twobody: "PropagatorTwoBody" = PropagatorTwoBody(Propagation.AG_SAT.propagator)
 
         # "30 Jun 2012 23:59:55.000" "1 Jul 2012 00:00:05.000"  - across a leap second
@@ -1380,25 +1402,25 @@ class Propagation(TestBase):
         twobody.ephemeris_interval.set_explicit_interval("30 Jun 2012 23:59:55.000", "1 Jul 2012 00:00:05.000")
         twobody.step = 1
         classical: "OrbitStateClassical" = OrbitStateClassical(
-            twobody.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CLASSICAL)
+            twobody.initial_state.representation.convert_to(OrbitStateType.CLASSICAL)
         )
-        classical.coordinate_system_type = COORDINATE_SYSTEM.J2000
+        classical.coordinate_system_type = CoordinateSystem.J2000
         coordsys: "OrbitStateCoordinateSystem" = classical.coordinate_system
         (classical).epoch = "30 Jun 2012 23:59:55.000"
-        classical.size_shape_type = CLASSICAL_SIZE_SHAPE.SEMIMAJOR_AXIS
+        classical.size_shape_type = ClassicalSizeShape.SEMIMAJOR_AXIS
         sizeshape: "ClassicalSizeShapeSemimajorAxis" = ClassicalSizeShapeSemimajorAxis(classical.size_shape)
         sizeshape.semi_major_axis = 8022000.122
-        classical.size_shape_type = CLASSICAL_SIZE_SHAPE.MEAN_MOTION
+        classical.size_shape_type = ClassicalSizeShape.MEAN_MOTION
         sizeshape1: "ClassicalSizeShapeMeanMotion" = ClassicalSizeShapeMeanMotion(classical.size_shape)
         sizeshape1.eccentricity = 0.09
         classical.orientation.inclination = 88.4
         classical.orientation.argument_of_periapsis = 1.3
-        classical.orientation.ascending_node_type = ORIENTATION_ASC_NODE.RIGHT_ASCENSION_ASCENDING_NODE
+        classical.orientation.ascending_node_type = OrientationAscNode.RIGHT_ASCENSION_ASCENDING_NODE
         raan: "OrientationRightAscensionOfAscendingNode" = OrientationRightAscensionOfAscendingNode(
             classical.orientation.ascending_node
         )
         raan.value = 122.4
-        classical.location_type = CLASSICAL_LOCATION.MEAN_ANOMALY
+        classical.location_type = ClassicalLocation.MEAN_ANOMALY
         loc: "ClassicalLocationMeanAnomaly" = ClassicalLocationMeanAnomaly(classical.location)
         loc.value = 21.4
         twobody.initial_state.representation.assign(classical)
@@ -1419,22 +1441,22 @@ class Propagation(TestBase):
     # region MeanMotion
     def test_MeanMotion(self):
         # OM Setup
-        Propagation.AG_SAT.set_propagator_type(PROPAGATOR_TYPE.HPOP)
+        Propagation.AG_SAT.set_propagator_type(PropagatorType.HPOP)
         hpop: "PropagatorHPOP" = PropagatorHPOP(Propagation.AG_SAT.propagator)
         hpop.ephemeris_interval.set_explicit_interval("1 Nov 2000 00:00:00.00", "1 Nov 2000 12:00:00.00")
         hpop.step = 120
         classical: "OrbitStateClassical" = OrbitStateClassical(
-            hpop.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CLASSICAL)
+            hpop.initial_state.representation.convert_to(OrbitStateType.CLASSICAL)
         )
-        classical.coordinate_system_type = COORDINATE_SYSTEM.J2000
+        classical.coordinate_system_type = CoordinateSystem.J2000
         coordsys: "OrbitStateCoordinateSystem" = classical.coordinate_system
         # Epoch was deprecated
         # hpop.InitialState.Epoch = "1 Nov 2000 02:00:00.00";
         (classical).epoch = "1 Nov 2000 02:00:00.00"
-        classical.size_shape_type = CLASSICAL_SIZE_SHAPE.SEMIMAJOR_AXIS
+        classical.size_shape_type = ClassicalSizeShape.SEMIMAJOR_AXIS
         sizeshape: "ClassicalSizeShapeSemimajorAxis" = ClassicalSizeShapeSemimajorAxis(classical.size_shape)
         sizeshape.semi_major_axis = 8322000.122
-        classical.size_shape_type = CLASSICAL_SIZE_SHAPE.MEAN_MOTION
+        classical.size_shape_type = ClassicalSizeShape.MEAN_MOTION
         sizeshape1: "ClassicalSizeShapeMeanMotion" = ClassicalSizeShapeMeanMotion(classical.size_shape)
         sizeshape1.eccentricity = 0.079
 
@@ -1471,32 +1493,32 @@ class Propagation(TestBase):
         )
 
         # OM Setup
-        Propagation.AG_SAT.set_propagator_type(PROPAGATOR_TYPE.HPOP)
+        Propagation.AG_SAT.set_propagator_type(PropagatorType.HPOP)
         hpop: "PropagatorHPOP" = PropagatorHPOP(Propagation.AG_SAT.propagator)
         hpop.ephemeris_interval.set_explicit_interval("1 Nov 2000 00:00:00.00", "1 Nov 2000 12:00:00.00")
         hpop.step = 120
         classical: "OrbitStateClassical" = OrbitStateClassical(
-            hpop.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CLASSICAL)
+            hpop.initial_state.representation.convert_to(OrbitStateType.CLASSICAL)
         )
-        classical.coordinate_system_type = COORDINATE_SYSTEM.J2000
+        classical.coordinate_system_type = CoordinateSystem.J2000
         coordsys: "OrbitStateCoordinateSystem" = classical.coordinate_system
         # Epoch was deprecated
         # hpop.InitialState.Epoch = "1 Nov 2000 02:00:00.00";
         (classical).epoch = "1 Nov 2000 02:00:00.00"
-        classical.size_shape_type = CLASSICAL_SIZE_SHAPE.SEMIMAJOR_AXIS
+        classical.size_shape_type = ClassicalSizeShape.SEMIMAJOR_AXIS
         sizeshape: "ClassicalSizeShapeSemimajorAxis" = ClassicalSizeShapeSemimajorAxis(classical.size_shape)
         sizeshape.semi_major_axis = 8322000.122
-        classical.size_shape_type = CLASSICAL_SIZE_SHAPE.MEAN_MOTION
+        classical.size_shape_type = ClassicalSizeShape.MEAN_MOTION
         sizeshape1: "ClassicalSizeShapeMeanMotion" = ClassicalSizeShapeMeanMotion(classical.size_shape)
         sizeshape1.eccentricity = 0.079
         classical.orientation.inclination = 88.4
         classical.orientation.argument_of_periapsis = 1.8
-        classical.orientation.ascending_node_type = ORIENTATION_ASC_NODE.RIGHT_ASCENSION_ASCENDING_NODE
+        classical.orientation.ascending_node_type = OrientationAscNode.RIGHT_ASCENSION_ASCENDING_NODE
         raan: "OrientationRightAscensionOfAscendingNode" = OrientationRightAscensionOfAscendingNode(
             classical.orientation.ascending_node
         )
         raan.value = 132.4
-        classical.location_type = CLASSICAL_LOCATION.MEAN_ANOMALY
+        classical.location_type = ClassicalLocation.MEAN_ANOMALY
         loc: "ClassicalLocationMeanAnomaly" = ClassicalLocationMeanAnomaly(classical.location)
         loc.value = 26.4
         hpop.force_model.central_body_gravity.file = TestBase.GetScenarioFile("WGS84_EGM96.grv")
@@ -1505,7 +1527,7 @@ class Propagation(TestBase):
 
         hpop.force_model.solar_radiation_pressure.use = True
         hpop.force_model.solar_radiation_pressure.solar_radiation_pressure_model.set_model_type(
-            SOLAR_RADIATION_PRESSURE_MODEL_TYPE.SPHERICAL
+            SolarRadiationPressureModelType.SPHERICAL
         )
         (
             SolarRadiationPressureModelSpherical(
@@ -1518,9 +1540,9 @@ class Propagation(TestBase):
             )
         ).area_mass_ratio = 5.6
         merc: "PropagatorHPOPThirdBodyGravityElement" = hpop.force_model.third_body_gravity.add_third_body("Mercury")
-        merc.source = THIRD_BODY_GRAVITY_SOURCE_TYPE.USER_SPECIFIED
+        merc.source = ThirdBodyGravitySourceType.USER_SPECIFIED
         merc.gravity_value = 123.89
-        hpop.force_model.central_body_gravity.solid_tide_type = SOLID_TIDE.FULL
+        hpop.force_model.central_body_gravity.solid_tide_type = SolidTide.FULL
         hpop.force_model.more_options.solid_tides.include_time_dependent_solid_tides = True
         hpop.force_model.more_options.solid_tides.minimum_amplitude = 0.02
         hpop.force_model.more_options.radiation_pressure.include_albedo = True
@@ -1528,11 +1550,11 @@ class Propagation(TestBase):
         hpop.force_model.more_options.radiation_pressure.include_thermal = True
         hpop.force_model.more_options.radiation_pressure.area_mass_ratio = 4
         hpop.force_model.drag.use = True
-        hpop.force_model.drag.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.MSIS90
-        hpop.force_model.drag.set_drag_model_type(DRAG_MODEL.SPHERICAL)
+        hpop.force_model.drag.atmospheric_density_model = AtmosphericDensityModel.MSIS90
+        hpop.force_model.drag.set_drag_model_type(DragModel.SPHERICAL)
         (VehicleHPOPDragModelSpherical(hpop.force_model.drag.drag_model)).cd = 2.08
         (VehicleHPOPDragModelSpherical(hpop.force_model.drag.drag_model)).area_mass_ratio = 0.175
-        hpop.force_model.drag.set_solar_flux_geo_magnitude_type(VEHICLE_SOLAR_FLUX_GEOMAGNETIC_TYPE.MANUAL_ENTRY)
+        hpop.force_model.drag.set_solar_flux_geo_magnitude_type(VehicleSolarFluxGeomagneticType.MANUAL_ENTRY)
         solarflux: "SolarFluxGeoMagneticValueSettings" = SolarFluxGeoMagneticValueSettings(
             hpop.force_model.drag.solar_flux_geo_magnitude
         )
@@ -1568,7 +1590,7 @@ class Propagation(TestBase):
 
         hpop.covariance.include_consider_analysis = True
         drag: "VehicleConsiderAnalysisCollectionElement" = hpop.covariance.consider_analysis_list.add(
-            VEHICLE_CONSIDER_ANALYSIS_TYPE.DRAG
+            VehicleConsiderAnalysisType.DRAG
         )
         drag.value = 0.1
         drag.x = 0.0
@@ -1578,7 +1600,7 @@ class Propagation(TestBase):
         drag.vy = 0.0
         drag.vz = 0.0
         srp: "VehicleConsiderAnalysisCollectionElement" = hpop.covariance.consider_analysis_list.add(
-            VEHICLE_CONSIDER_ANALYSIS_TYPE.SOLAR_RADIATION_PRESSURE
+            VehicleConsiderAnalysisType.SOLAR_RADIATION_PRESSURE
         )
         srp.value = 0.4
         srp.x = 0.0
@@ -1590,12 +1612,12 @@ class Propagation(TestBase):
 
         hpop.covariance.include_consider_cross_correlation = True
         correlation: "VehicleCorrelationListElement" = hpop.covariance.correlation_list.add()
-        correlation.row = VEHICLE_CORRELATION_LIST_TYPE.DRAG
-        correlation.column = VEHICLE_CORRELATION_LIST_TYPE.SOLAR_RADIATION_PRESSURE
+        correlation.row = VehicleCorrelationListType.DRAG
+        correlation.column = VehicleCorrelationListType.SOLAR_RADIATION_PRESSURE
         correlation.value = 0.16
 
-        hpop.integrator.integration_model = VEHICLE_INTEGRATION_MODEL.RUNGE_KUTTA_FEHLBERG_78
-        hpop.integrator.step_size_control.method = VEHICLE_METHOD.RELATIVE_ERROR
+        hpop.integrator.integration_model = VehicleIntegrationModel.RUNGE_KUTTA_FEHLBERG_78
+        hpop.integrator.step_size_control.method = VehicleMethod.RELATIVE_ERROR
         hpop.integrator.step_size_control.error_tolerance = 1e-13
 
         #
@@ -1784,8 +1806,8 @@ class Propagation(TestBase):
         Propagation.AG_SAT = None
         Propagation.AG_SAT = Satellite(TestBase.Application.current_scenario.children["HpopSun"])
         Assert.assertIsNotNone(Propagation.AG_SAT)
-        Propagation.AG_SAT.set_propagator_type(PROPAGATOR_TYPE.HPOP)
-        Assert.assertEqual(PROPAGATOR_TYPE.HPOP, Propagation.AG_SAT.propagator_type)
+        Propagation.AG_SAT.set_propagator_type(PropagatorType.HPOP)
+        Assert.assertEqual(PropagatorType.HPOP, Propagation.AG_SAT.propagator_type)
         oHPOP: "PropagatorHPOP" = clr.CastAs(Propagation.AG_SAT.propagator, PropagatorHPOP)
         Assert.assertIsNotNone(oHPOP)
         oHPOP.ephemeris_interval.set_explicit_interval("1 Jul 2007 12:00:00.000", "11 Jul 2007 12:00:00.000")
@@ -1794,7 +1816,7 @@ class Propagation(TestBase):
         oHPOP.propagate()
         # Astrogator is not implemented in OM
         AstgSun: "Satellite" = clr.CastAs(TestBase.Application.current_scenario.children["AstgSun"], Satellite)
-        AstgSun.set_propagator_type(PROPAGATOR_TYPE.ASTROGATOR)
+        AstgSun.set_propagator_type(PropagatorType.ASTROGATOR)
         astgSunDriver: "MCSDriver" = clr.CastAs(AstgSun.propagator, MCSDriver)
         astgSunInitialState: "MCSInitialState" = clr.CastAs(
             astgSunDriver.main_sequence["Initial State"], MCSInitialState
@@ -1812,8 +1834,8 @@ class Propagation(TestBase):
         Propagation.AG_SAT = None
         Propagation.AG_SAT = Satellite(TestBase.Application.current_scenario.children["HpopMoon"])
         Assert.assertIsNotNone(Propagation.AG_SAT)
-        Propagation.AG_SAT.set_propagator_type(PROPAGATOR_TYPE.HPOP)
-        Assert.assertEqual(PROPAGATOR_TYPE.HPOP, Propagation.AG_SAT.propagator_type)
+        Propagation.AG_SAT.set_propagator_type(PropagatorType.HPOP)
+        Assert.assertEqual(PropagatorType.HPOP, Propagation.AG_SAT.propagator_type)
         oHPOP = None
         oHPOP = clr.CastAs(Propagation.AG_SAT.propagator, PropagatorHPOP)
         Assert.assertIsNotNone(oHPOP)
@@ -1826,7 +1848,7 @@ class Propagation(TestBase):
 
         # Application.ExecuteCommand("Propagate */Satellite/AstgMoon \"1 Jul 2007 12:00:00.00\" \"2 Jul 2007 12:00:00.00\" 60.0");
         AstgMoon: "Satellite" = clr.CastAs(TestBase.Application.current_scenario.children["AstgMoon"], Satellite)
-        AstgMoon.set_propagator_type(PROPAGATOR_TYPE.ASTROGATOR)
+        AstgMoon.set_propagator_type(PropagatorType.ASTROGATOR)
         astgMoonDriver: "MCSDriver" = clr.CastAs(AstgMoon.propagator, MCSDriver)
         astgMoonInitialState: "MCSInitialState" = clr.CastAs(
             astgMoonDriver.main_sequence["Initial State"], MCSInitialState
@@ -1842,8 +1864,8 @@ class Propagation(TestBase):
         Propagation.AG_SAT = None
         Propagation.AG_SAT = Satellite(TestBase.Application.current_scenario.children["HpopMars"])
         Assert.assertIsNotNone(Propagation.AG_SAT)
-        Propagation.AG_SAT.set_propagator_type(PROPAGATOR_TYPE.HPOP)
-        Assert.assertEqual(PROPAGATOR_TYPE.HPOP, Propagation.AG_SAT.propagator_type)
+        Propagation.AG_SAT.set_propagator_type(PropagatorType.HPOP)
+        Assert.assertEqual(PropagatorType.HPOP, Propagation.AG_SAT.propagator_type)
         oHPOP = None
         oHPOP = clr.CastAs(Propagation.AG_SAT.propagator, PropagatorHPOP)
         Assert.assertIsNotNone(oHPOP)
@@ -1856,7 +1878,7 @@ class Propagation(TestBase):
 
         # Application.ExecuteCommand("Propagate */Satellite/AstgMars \"1 Jul 2007 12:00:00.00\" \"2 Jul 2007 12:00:00.00\" 60.0");
         AstgMars: "Satellite" = clr.CastAs(TestBase.Application.current_scenario.children["AstgMars"], Satellite)
-        AstgMars.set_propagator_type(PROPAGATOR_TYPE.ASTROGATOR)
+        AstgMars.set_propagator_type(PropagatorType.ASTROGATOR)
         astgMarsDriver: "MCSDriver" = clr.CastAs(AstgMars.propagator, MCSDriver)
         astgMarsInitialState: "MCSInitialState" = clr.CastAs(
             astgMarsDriver.main_sequence["Initial State"], MCSInitialState
@@ -1872,8 +1894,8 @@ class Propagation(TestBase):
         Propagation.AG_SAT = None
         Propagation.AG_SAT = Satellite(TestBase.Application.current_scenario.children["HpopEuropa"])
         Assert.assertIsNotNone(Propagation.AG_SAT)
-        Propagation.AG_SAT.set_propagator_type(PROPAGATOR_TYPE.HPOP)
-        Assert.assertEqual(PROPAGATOR_TYPE.HPOP, Propagation.AG_SAT.propagator_type)
+        Propagation.AG_SAT.set_propagator_type(PropagatorType.HPOP)
+        Assert.assertEqual(PropagatorType.HPOP, Propagation.AG_SAT.propagator_type)
         oHPOP = None
         oHPOP = clr.CastAs(Propagation.AG_SAT.propagator, PropagatorHPOP)
         Assert.assertIsNotNone(oHPOP)
@@ -1886,7 +1908,7 @@ class Propagation(TestBase):
 
         # Application.ExecuteCommand("Propagate */Satellite/AstgEuropa \"1 Jul 2007 12:00:00.00\" \"2 Jul 2007 12:00:00.00\" 60.0");
         AstgEuropa: "Satellite" = clr.CastAs(TestBase.Application.current_scenario.children["AstgEuropa"], Satellite)
-        AstgEuropa.set_propagator_type(PROPAGATOR_TYPE.ASTROGATOR)
+        AstgEuropa.set_propagator_type(PropagatorType.ASTROGATOR)
         astgEuropaDriver: "MCSDriver" = clr.CastAs(AstgEuropa.propagator, MCSDriver)
         astgEuropaInitialState: "MCSInitialState" = clr.CastAs(
             astgEuropaDriver.main_sequence["Initial State"], MCSInitialState
@@ -1902,8 +1924,8 @@ class Propagation(TestBase):
         Propagation.AG_SAT = None
         Propagation.AG_SAT = Satellite(TestBase.Application.current_scenario.children["HpopJupiterVOP"])
         Assert.assertIsNotNone(Propagation.AG_SAT)
-        Propagation.AG_SAT.set_propagator_type(PROPAGATOR_TYPE.HPOP)
-        Assert.assertEqual(PROPAGATOR_TYPE.HPOP, Propagation.AG_SAT.propagator_type)
+        Propagation.AG_SAT.set_propagator_type(PropagatorType.HPOP)
+        Assert.assertEqual(PropagatorType.HPOP, Propagation.AG_SAT.propagator_type)
         oHPOP = None
         oHPOP = clr.CastAs(Propagation.AG_SAT.propagator, PropagatorHPOP)
         Assert.assertIsNotNone(oHPOP)
@@ -1918,7 +1940,7 @@ class Propagation(TestBase):
         AstgJupiterVOP: "Satellite" = clr.CastAs(
             TestBase.Application.current_scenario.children["AstgJupiterVOP"], Satellite
         )
-        AstgJupiterVOP.set_propagator_type(PROPAGATOR_TYPE.ASTROGATOR)
+        AstgJupiterVOP.set_propagator_type(PropagatorType.ASTROGATOR)
         astgJupiterVOPDriver: "MCSDriver" = clr.CastAs(AstgJupiterVOP.propagator, MCSDriver)
         astgJupiterVOPInitialState: "MCSInitialState" = clr.CastAs(
             astgJupiterVOPDriver.main_sequence["Initial State"], MCSInitialState
@@ -1937,8 +1959,8 @@ class Propagation(TestBase):
         Propagation.AG_SAT = None
         Propagation.AG_SAT = Satellite(TestBase.Application.current_scenario.children["LopEarth"])
         Assert.assertIsNotNone(Propagation.AG_SAT)
-        Propagation.AG_SAT.set_propagator_type(PROPAGATOR_TYPE.LOP)
-        Assert.assertEqual(PROPAGATOR_TYPE.LOP, Propagation.AG_SAT.propagator_type)
+        Propagation.AG_SAT.set_propagator_type(PropagatorType.LOP)
+        Assert.assertEqual(PropagatorType.LOP, Propagation.AG_SAT.propagator_type)
         oLOP: "PropagatorLOP" = clr.CastAs(Propagation.AG_SAT.propagator, PropagatorLOP)
         Assert.assertIsNotNone(oLOP)
         oLOP.ephemeris_interval.set_explicit_interval("1 Jul 2007 12:00:00.000", "10 Jul 2007 12:00:00.000")
@@ -2005,16 +2027,16 @@ class Coordinate(TestBase):
         ComparisionUtility.AddReport(clr.CastAs(Coordinate.AG_SAT, IStkObject), '"Euler Angles"')
 
         # OM Setup
-        Coordinate.AG_SAT.set_propagator_type(PROPAGATOR_TYPE.J2_PERTURBATION)
+        Coordinate.AG_SAT.set_propagator_type(PropagatorType.J2_PERTURBATION)
         j2prop: "PropagatorJ2Perturbation" = PropagatorJ2Perturbation(Coordinate.AG_SAT.propagator)
         j2prop.ephemeris_interval.set_explicit_interval("1 Nov 2000 00:00:00.00", "1 Nov 2000 01:00:00.00")
         j2prop.step = 60
         # Epoch was deprecated
         # j2prop.InitialState.Epoch = "1 Nov 2000 00:30:00.00";
         cart: "OrbitStateCartesian" = OrbitStateCartesian(
-            j2prop.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CARTESIAN)
+            j2prop.initial_state.representation.convert_to(OrbitStateType.CARTESIAN)
         )
-        cart.coordinate_system_type = COORDINATE_SYSTEM.FIXED
+        cart.coordinate_system_type = CoordinateSystem.FIXED
         coordsys: "OrbitStateCoordinateSystem" = cart.coordinate_system
 
         (cart).epoch = "1 Nov 2000 00:30:00.00"
@@ -2052,16 +2074,16 @@ class Coordinate(TestBase):
         ComparisionUtility.AddReport(clr.CastAs(Coordinate.AG_SAT, IStkObject), '"Euler Angles"')
 
         # OM Setup
-        Coordinate.AG_SAT.set_propagator_type(PROPAGATOR_TYPE.J2_PERTURBATION)
+        Coordinate.AG_SAT.set_propagator_type(PropagatorType.J2_PERTURBATION)
         j2prop: "PropagatorJ2Perturbation" = PropagatorJ2Perturbation(Coordinate.AG_SAT.propagator)
         j2prop.ephemeris_interval.set_explicit_interval("1 Nov 2000 00:00:00.00", "1 Nov 2000 01:00:00.00")
         j2prop.step = 60
         # Epoch was deprecated
         # j2prop.InitialState.Epoch = "1 Nov 2000 00:30:00.00";
         cart: "OrbitStateCartesian" = OrbitStateCartesian(
-            j2prop.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CARTESIAN)
+            j2prop.initial_state.representation.convert_to(OrbitStateType.CARTESIAN)
         )
-        cart.coordinate_system_type = COORDINATE_SYSTEM.J2000
+        cart.coordinate_system_type = CoordinateSystem.J2000
         coordsys: "OrbitStateCoordinateSystem" = cart.coordinate_system
 
         (cart).epoch = "1 Nov 2000 00:30:00.00"
@@ -2099,16 +2121,16 @@ class Coordinate(TestBase):
         ComparisionUtility.AddReport(clr.CastAs(Coordinate.AG_SAT, IStkObject), '"Euler Angles"')
 
         # OM Setup
-        Coordinate.AG_SAT.set_propagator_type(PROPAGATOR_TYPE.J2_PERTURBATION)
+        Coordinate.AG_SAT.set_propagator_type(PropagatorType.J2_PERTURBATION)
         j2prop: "PropagatorJ2Perturbation" = PropagatorJ2Perturbation(Coordinate.AG_SAT.propagator)
         j2prop.ephemeris_interval.set_explicit_interval("1 Nov 2000 00:00:00.00", "1 Nov 2000 01:00:00.00")
         j2prop.step = 60
         # Epoch was deprecated
         # j2prop.InitialState.Epoch = "1 Nov 2000 00:30:00.00";
         cart: "OrbitStateCartesian" = OrbitStateCartesian(
-            j2prop.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CARTESIAN)
+            j2prop.initial_state.representation.convert_to(OrbitStateType.CARTESIAN)
         )
-        cart.coordinate_system_type = COORDINATE_SYSTEM.B1950
+        cart.coordinate_system_type = CoordinateSystem.B1950
         coordsys: "OrbitStateCoordinateSystem" = cart.coordinate_system
 
         (cart).epoch = "1 Nov 2000 00:30:00.00"
@@ -2145,19 +2167,19 @@ class Coordinate(TestBase):
         ComparisionUtility.AddReport(clr.CastAs(Coordinate.AG_SAT, IStkObject), '"Euler Angles"')
         ComparisionUtility.ResetUnits()
 
-        Coordinate.AG_SAT.set_propagator_type(PROPAGATOR_TYPE.J2_PERTURBATION)
+        Coordinate.AG_SAT.set_propagator_type(PropagatorType.J2_PERTURBATION)
         j2prop: "PropagatorJ2Perturbation" = PropagatorJ2Perturbation(Coordinate.AG_SAT.propagator)
         j2prop.ephemeris_interval.set_explicit_interval("1 Nov 2000 00:00:00.00", "1 Nov 2000 01:00:00.00")
         j2prop.step = 60
         # Epoch was deprecated
         #            j2prop.InitialState.Epoch = "1 Nov 2000 00:30:00.00";
         cart: "OrbitStateCartesian" = OrbitStateCartesian(
-            j2prop.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CARTESIAN)
+            j2prop.initial_state.representation.convert_to(OrbitStateType.CARTESIAN)
         )
 
         (cart).epoch = "1 Nov 2000 00:30:00.00"
 
-        cart.coordinate_system_type = COORDINATE_SYSTEM.MEAN_OF_DATE
+        cart.coordinate_system_type = CoordinateSystem.MEAN_OF_DATE
 
         coordsys: "OrbitStateCoordinateSystem" = cart.coordinate_system
 
@@ -2178,11 +2200,11 @@ class Coordinate(TestBase):
         j2prop.step = 60
         # Epoch was deprecated
         # j2prop.InitialState.Epoch = "1 Nov 2000 00:30:00.00";
-        cart = OrbitStateCartesian(j2prop.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CARTESIAN))
+        cart = OrbitStateCartesian(j2prop.initial_state.representation.convert_to(OrbitStateType.CARTESIAN))
 
         (cart).epoch = "1 Nov 2000 00:30:00.00"
 
-        cart.coordinate_system_type = COORDINATE_SYSTEM.TEME_OF_DATE
+        cart.coordinate_system_type = CoordinateSystem.TEME_OF_DATE
         coordsys = cart.coordinate_system
 
         cart.x_position = -4485030.694
@@ -2202,11 +2224,11 @@ class Coordinate(TestBase):
         j2prop.step = 60
         # Epoch was deprecated
         # j2prop.InitialState.Epoch = "1 Nov 2000 00:30:00.00";
-        cart = OrbitStateCartesian(j2prop.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CARTESIAN))
+        cart = OrbitStateCartesian(j2prop.initial_state.representation.convert_to(OrbitStateType.CARTESIAN))
 
         (cart).epoch = "1 Nov 2000 00:30:00.00"
 
-        cart.coordinate_system_type = COORDINATE_SYSTEM.TRUE_OF_DATE
+        cart.coordinate_system_type = CoordinateSystem.TRUE_OF_DATE
         coordsys = cart.coordinate_system
 
         cart.x_position = -4485030.694
@@ -2226,7 +2248,7 @@ class Coordinate(TestBase):
         j2prop.step = 60
         # Epoch was deprecated
         # j2prop.InitialState.Epoch = "1 Nov 2000 00:30:00.00";
-        cart = OrbitStateCartesian(j2prop.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CARTESIAN))
+        cart = OrbitStateCartesian(j2prop.initial_state.representation.convert_to(OrbitStateType.CARTESIAN))
 
         (cart).epoch = "1 Nov 2000 00:30:00.00"
 
@@ -2236,7 +2258,7 @@ class Coordinate(TestBase):
                 "Enumeration, must be in {AlignmentAtEpoch, B1950, Fixed, ICRF, J2000, MeanOfDate, MeanOfEpoch, TEMEOfDate, TEMEOfEpoch, TrueOfDate, TrueOfDateRotating, TrueOfEpoch}"
             ),
         ):
-            cart.coordinate_system_type = COORDINATE_SYSTEM.TRUE_OF_REFERENCE_DATE
+            cart.coordinate_system_type = CoordinateSystem.TRUE_OF_REFERENCE_DATE
 
         coordsys = cart.coordinate_system
 
@@ -2279,19 +2301,19 @@ class Coordinate(TestBase):
         ComparisionUtility.AddReport(clr.CastAs(Coordinate.AG_SAT, IStkObject), '"Euler Angles"')
 
         # OM Setup
-        Coordinate.AG_SAT.set_propagator_type(PROPAGATOR_TYPE.J2_PERTURBATION)
+        Coordinate.AG_SAT.set_propagator_type(PropagatorType.J2_PERTURBATION)
         j2prop: "PropagatorJ2Perturbation" = PropagatorJ2Perturbation(Coordinate.AG_SAT.propagator)
         j2prop.ephemeris_interval.set_explicit_interval("1 Nov 2000 00:00:00.00", "1 Nov 2000 01:00:00.00")
         j2prop.step = 60
         # Epoch was deprecated
         # j2prop.InitialState.Epoch = "1 Nov 2000 00:30:00.00";
         cart: "OrbitStateCartesian" = OrbitStateCartesian(
-            j2prop.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CARTESIAN)
+            j2prop.initial_state.representation.convert_to(OrbitStateType.CARTESIAN)
         )
 
         (cart).epoch = "1 Nov 2000 00:30:00.00"
 
-        cart.coordinate_system_type = COORDINATE_SYSTEM.ALIGNMENT_AT_EPOCH
+        cart.coordinate_system_type = CoordinateSystem.ALIGNMENT_AT_EPOCH
         coordsys: "OrbitStateCoordinateSystem" = cart.coordinate_system
         coordsys.coordinate_system_epoch.set_explicit_time("1 Nov 2000 00:45:00.000")
 
@@ -2312,11 +2334,11 @@ class Coordinate(TestBase):
         j2prop.step = 60
         # Epoch was deprecated
         # j2prop.InitialState.Epoch = "1 Nov 2000 00:30:00.00";
-        cart = OrbitStateCartesian(j2prop.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CARTESIAN))
+        cart = OrbitStateCartesian(j2prop.initial_state.representation.convert_to(OrbitStateType.CARTESIAN))
 
         (cart).epoch = "1 Nov 2000 00:30:00.00"
 
-        cart.coordinate_system_type = COORDINATE_SYSTEM.MEAN_OF_EPOCH
+        cart.coordinate_system_type = CoordinateSystem.MEAN_OF_EPOCH
         coordsys = cart.coordinate_system
         coordsys.coordinate_system_epoch.set_explicit_time("1 Nov 2000 00:45:00.000")
 
@@ -2337,11 +2359,11 @@ class Coordinate(TestBase):
         j2prop.step = 60
         # Epoch was deprecated
         # j2prop.InitialState.Epoch = "1 Nov 2000 00:30:00.00";
-        cart = OrbitStateCartesian(j2prop.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CARTESIAN))
+        cart = OrbitStateCartesian(j2prop.initial_state.representation.convert_to(OrbitStateType.CARTESIAN))
 
         (cart).epoch = "1 Nov 2000 00:30:00.00"
 
-        cart.coordinate_system_type = COORDINATE_SYSTEM.TEME_OF_EPOCH
+        cart.coordinate_system_type = CoordinateSystem.TEME_OF_EPOCH
         coordsys = cart.coordinate_system
         coordsys.coordinate_system_epoch.set_explicit_time("1 Nov 2000 00:45:00.000")
 
@@ -2362,11 +2384,11 @@ class Coordinate(TestBase):
         j2prop.step = 60
         # Epoch was deprecated
         # j2prop.InitialState.Epoch = "1 Nov 2000 00:30:00.00";
-        cart = OrbitStateCartesian(j2prop.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CARTESIAN))
+        cart = OrbitStateCartesian(j2prop.initial_state.representation.convert_to(OrbitStateType.CARTESIAN))
 
         (cart).epoch = "1 Nov 2000 00:30:00.00"
 
-        cart.coordinate_system_type = COORDINATE_SYSTEM.TRUE_OF_EPOCH
+        cart.coordinate_system_type = CoordinateSystem.TRUE_OF_EPOCH
         coordsys = cart.coordinate_system
         coordsys.coordinate_system_epoch.set_explicit_time("1 Nov 2000 00:45:00.000")
 
@@ -2449,25 +2471,25 @@ class Representation(TestBase):
         ComparisionUtility.AddReport(clr.CastAs(Representation.AG_SAT, IStkObject), '"Euler Angles"')
 
         # OM Setup
-        Representation.AG_SAT.set_propagator_type(PROPAGATOR_TYPE.HPOP)
+        Representation.AG_SAT.set_propagator_type(PropagatorType.HPOP)
         hpop: "PropagatorHPOP" = PropagatorHPOP(Representation.AG_SAT.propagator)
         hpop.ephemeris_interval.set_explicit_interval("1 Nov 2000 00:00:00.00", "1 Nov 2000 01:00:00.00")
         hpop.step = 120.0
         # Epoch was deprecated
         # hpop.InitialState.Epoch = "1 Nov 2000 00:30:00.00";
         mixed: "OrbitStateMixedSpherical" = OrbitStateMixedSpherical(
-            hpop.initial_state.representation.convert_to(ORBIT_STATE_TYPE.MIXED_SPHERICAL)
+            hpop.initial_state.representation.convert_to(OrbitStateType.MIXED_SPHERICAL)
         )
 
         (mixed).epoch = "1 Nov 2000 00:30:00.00"
 
-        mixed.coordinate_system_type = COORDINATE_SYSTEM.J2000
+        mixed.coordinate_system_type = CoordinateSystem.J2000
         coordsys: "OrbitStateCoordinateSystem" = mixed.coordinate_system
 
         mixed.longitude = 110.0
         mixed.latitude = 0.0
         mixed.altitude = 1681000.0
-        mixed.flight_path_angle_type = MIXED_SPHERICAL_FLIGHT_PATH_ANGLE_TYPE.HORIZONTAL
+        mixed.flight_path_angle_type = MixedSphericalFlightPathAngleType.HORIZONTAL
         hor: "MixedSphericalFlightPathAngleHorizontal" = MixedSphericalFlightPathAngleHorizontal(
             mixed.flight_path_angle
         )
@@ -2501,34 +2523,34 @@ class Representation(TestBase):
         ComparisionUtility.AddReport(clr.CastAs(Representation.AG_SAT, IStkObject), '"Euler Angles"')
 
         # OM Setup
-        Representation.AG_SAT.set_propagator_type(PROPAGATOR_TYPE.HPOP)
+        Representation.AG_SAT.set_propagator_type(PropagatorType.HPOP)
         hpop: "PropagatorHPOP" = PropagatorHPOP(Representation.AG_SAT.propagator)
         hpop.ephemeris_interval.set_explicit_interval("1 Nov 2000 00:00:00.00", "1 Nov 2000 02:00:00.00")
         hpop.step = 120
         # Epoch was deprecated
         # hpop.InitialState.Epoch = "1 Nov 2000 02:00:00.00";
         classical: "OrbitStateClassical" = OrbitStateClassical(
-            hpop.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CLASSICAL)
+            hpop.initial_state.representation.convert_to(OrbitStateType.CLASSICAL)
         )
 
         (classical).epoch = "1 Nov 2000 02:00:00.00"
 
-        classical.coordinate_system_type = COORDINATE_SYSTEM.J2000
+        classical.coordinate_system_type = CoordinateSystem.J2000
         coordsys: "OrbitStateCoordinateSystem" = classical.coordinate_system
-        classical.size_shape_type = CLASSICAL_SIZE_SHAPE.SEMIMAJOR_AXIS
+        classical.size_shape_type = ClassicalSizeShape.SEMIMAJOR_AXIS
         sizeshape: "ClassicalSizeShapeSemimajorAxis" = ClassicalSizeShapeSemimajorAxis(classical.size_shape)
         sizeshape.semi_major_axis = 8322000.122
-        classical.size_shape_type = CLASSICAL_SIZE_SHAPE.MEAN_MOTION
+        classical.size_shape_type = ClassicalSizeShape.MEAN_MOTION
         sizeshape1: "ClassicalSizeShapeMeanMotion" = ClassicalSizeShapeMeanMotion(classical.size_shape)
         sizeshape1.eccentricity = 0.079
         classical.orientation.inclination = 88.4
         classical.orientation.argument_of_periapsis = 1.8
-        classical.orientation.ascending_node_type = ORIENTATION_ASC_NODE.RIGHT_ASCENSION_ASCENDING_NODE
+        classical.orientation.ascending_node_type = OrientationAscNode.RIGHT_ASCENSION_ASCENDING_NODE
         raan: "OrientationRightAscensionOfAscendingNode" = OrientationRightAscensionOfAscendingNode(
             classical.orientation.ascending_node
         )
         raan.value = 132.4
-        classical.location_type = CLASSICAL_LOCATION.MEAN_ANOMALY
+        classical.location_type = ClassicalLocation.MEAN_ANOMALY
         loc: "ClassicalLocationMeanAnomaly" = ClassicalLocationMeanAnomaly(classical.location)
         loc.value = 26.4
 
@@ -2558,19 +2580,19 @@ class Representation(TestBase):
         ComparisionUtility.AddReport(clr.CastAs(Representation.AG_SAT, IStkObject), '"Euler Angles"')
 
         # OM Setup
-        Representation.AG_SAT.set_propagator_type(PROPAGATOR_TYPE.HPOP)
+        Representation.AG_SAT.set_propagator_type(PropagatorType.HPOP)
         hpop: "PropagatorHPOP" = PropagatorHPOP(Representation.AG_SAT.propagator)
         hpop.ephemeris_interval.set_explicit_interval("1 Nov 2000 00:00:00.00", "1 Nov 2000 01:00:00.00")
         hpop.step = 120.0
         # Epoch was deprecated
         # hpop.InitialState.Epoch = "1 Nov 2000 00:30:00.00";
         cart: "OrbitStateCartesian" = OrbitStateCartesian(
-            hpop.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CARTESIAN)
+            hpop.initial_state.representation.convert_to(OrbitStateType.CARTESIAN)
         )
 
         (cart).epoch = "1 Nov 2000 00:30:00.00"
 
-        cart.coordinate_system_type = COORDINATE_SYSTEM.J2000
+        cart.coordinate_system_type = CoordinateSystem.J2000
         coordsys: "OrbitStateCoordinateSystem" = cart.coordinate_system
         cart.x_position = -4485030.694
         cart.y_position = 4738911.923
@@ -2609,25 +2631,25 @@ class Representation(TestBase):
         ComparisionUtility.AddReport(clr.CastAs(Representation.AG_SAT, IStkObject), '"Euler Angles"')
 
         # OM Setup
-        Representation.AG_SAT.set_propagator_type(PROPAGATOR_TYPE.HPOP)
+        Representation.AG_SAT.set_propagator_type(PropagatorType.HPOP)
         hpop: "PropagatorHPOP" = PropagatorHPOP(Representation.AG_SAT.propagator)
         hpop.ephemeris_interval.set_explicit_interval("1 Nov 2000 00:00:00.00", "1 Nov 2000 01:00:00.00")
         hpop.step = 120.0
         # Epoch was deprecated
         # hpop.InitialState.Epoch = "1 Nov 2000 00:30:00.00";
         spher: "OrbitStateSpherical" = OrbitStateSpherical(
-            hpop.initial_state.representation.convert_to(ORBIT_STATE_TYPE.SPHERICAL)
+            hpop.initial_state.representation.convert_to(OrbitStateType.SPHERICAL)
         )
 
         (spher).epoch = "1 Nov 2000 00:30:00.00"
 
-        spher.coordinate_system_type = COORDINATE_SYSTEM.J2000
+        spher.coordinate_system_type = CoordinateSystem.J2000
         coordsys: "OrbitStateCoordinateSystem" = spher.coordinate_system
 
         spher.right_ascension = 133.32
         spher.declination = -71.2
         spher.radius = 7744584.2
-        spher.flight_path_angle_type = SPHERICAL_FLIGHT_PATH_AZIMUTH_TYPE.HORIZONTAL
+        spher.flight_path_angle_type = SphericalFlightPathAzimuthType.HORIZONTAL
         hor: "SphericalFlightPathAngleHorizontal" = SphericalFlightPathAngleHorizontal(spher.flight_path_angle)
         hor.flight_path_angle = 2.5
         spher.azimuth = 82.4
@@ -2659,22 +2681,22 @@ class Representation(TestBase):
         ComparisionUtility.AddReport(clr.CastAs(Representation.AG_SAT, IStkObject), '"Euler Angles"')
 
         # OM Setup
-        Representation.AG_SAT.set_propagator_type(PROPAGATOR_TYPE.HPOP)
+        Representation.AG_SAT.set_propagator_type(PropagatorType.HPOP)
         hpop: "PropagatorHPOP" = PropagatorHPOP(Representation.AG_SAT.propagator)
         hpop.ephemeris_interval.set_explicit_interval("1 Nov 2000 00:00:00.00", "1 Nov 2000 01:00:00.00")
         hpop.step = 120.0
         # Epoch was deprecated
         # hpop.InitialState.Epoch = "1 Nov 2000 00:30:00.00";
         equin: "OrbitStateEquinoctial" = OrbitStateEquinoctial(
-            hpop.initial_state.representation.convert_to(ORBIT_STATE_TYPE.EQUINOCTIAL)
+            hpop.initial_state.representation.convert_to(OrbitStateType.EQUINOCTIAL)
         )
 
         (equin).epoch = "1 Nov 2000 00:30:00.00"
 
-        equin.coordinate_system_type = COORDINATE_SYSTEM.J2000
+        equin.coordinate_system_type = CoordinateSystem.J2000
         coordsys: "OrbitStateCoordinateSystem" = equin.coordinate_system
 
-        equin.size_shape_type = EQUINOCTIAL_SIZE_SHAPE.SEMIMAJOR_AXIS
+        equin.size_shape_type = EquinoctialSizeShape.SEMIMAJOR_AXIS
         eqsizeshape: "EquinoctialSizeShapeSemimajorAxis" = EquinoctialSizeShapeSemimajorAxis(equin.size_shape)
         eqsizeshape.semi_major_axis = 8321993.91
         equin.h = 0.08177
@@ -2682,7 +2704,7 @@ class Representation(TestBase):
         equin.p = -0.41498
         equin.q = -0.5861
         equin.mean_longitude = 122.795
-        equin.formulation = EQUINOCTIAL_FORMULATION.POSIGRADE
+        equin.formulation = EquinoctialFormulation.POSIGRADE
 
         hpop.initial_state.representation.assign(equin)
         hpop.propagate()
@@ -2757,46 +2779,46 @@ class Attitude(TestBase):
         )
 
         # Propagator Initialization
-        Attitude.AG_SAT.set_propagator_type(PROPAGATOR_TYPE.J2_PERTURBATION)
+        Attitude.AG_SAT.set_propagator_type(PropagatorType.J2_PERTURBATION)
         j2prop: "PropagatorJ2Perturbation" = PropagatorJ2Perturbation(Attitude.AG_SAT.propagator)
         j2prop.ephemeris_interval.set_explicit_interval("1 Nov 2000 00:00:00.00", "1 Nov 2000 4:00:00.00")
         j2prop.step = 60
         classical: "OrbitStateClassical" = OrbitStateClassical(
-            j2prop.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CLASSICAL)
+            j2prop.initial_state.representation.convert_to(OrbitStateType.CLASSICAL)
         )
-        classical.coordinate_system_type = COORDINATE_SYSTEM.J2000
+        classical.coordinate_system_type = CoordinateSystem.J2000
         coordsys: "OrbitStateCoordinateSystem" = classical.coordinate_system
         # Epoch was deprecated
         # j2prop.InitialState.Epoch = "1 Nov 2000 02:00:00.00";
 
         (classical).epoch = "1 Nov 2000 02:00:00.00"
-        classical.size_shape_type = CLASSICAL_SIZE_SHAPE.SEMIMAJOR_AXIS
+        classical.size_shape_type = ClassicalSizeShape.SEMIMAJOR_AXIS
         sizeshape: "ClassicalSizeShapeSemimajorAxis" = ClassicalSizeShapeSemimajorAxis(classical.size_shape)
         sizeshape.semi_major_axis = 7322000.122
-        classical.size_shape_type = CLASSICAL_SIZE_SHAPE.MEAN_MOTION
+        classical.size_shape_type = ClassicalSizeShape.MEAN_MOTION
         sizeshape1: "ClassicalSizeShapeMeanMotion" = ClassicalSizeShapeMeanMotion(classical.size_shape)
         sizeshape1.eccentricity = 0.099
         classical.orientation.inclination = 99.5
         classical.orientation.argument_of_periapsis = 1.2
-        classical.orientation.ascending_node_type = ORIENTATION_ASC_NODE.RIGHT_ASCENSION_ASCENDING_NODE
+        classical.orientation.ascending_node_type = OrientationAscNode.RIGHT_ASCENSION_ASCENDING_NODE
         raan: "OrientationRightAscensionOfAscendingNode" = OrientationRightAscensionOfAscendingNode(
             classical.orientation.ascending_node
         )
         raan.value = 122.2
-        classical.location_type = CLASSICAL_LOCATION.MEAN_ANOMALY
+        classical.location_type = ClassicalLocation.MEAN_ANOMALY
         loc: "ClassicalLocationMeanAnomaly" = ClassicalLocationMeanAnomaly(classical.location)
         loc.value = 22.2
         j2prop.initial_state.representation.assign(classical)
         j2prop.propagate()
 
         # Test Attitude
-        Attitude.AG_SAT.set_attitude_type(VEHICLE_ATTITUDE.STANDARD)
+        Attitude.AG_SAT.set_attitude_type(VehicleAttitude.STANDARD)
         standard: "AttitudeStandardOrbit" = AttitudeStandardOrbit(Attitude.AG_SAT.attitude)
-        standard.basic.set_profile_type(ATTITUDE_PROFILE.INERTIALLY_FIXED)
+        standard.basic.set_profile_type(AttitudeProfile.INERTIALLY_FIXED)
         interfix: "AttitudeProfileInertial" = AttitudeProfileInertial(standard.basic.profile)
 
         quat: "IOrientationQuaternion" = IOrientationQuaternion(
-            interfix.inertial.convert_to(ORIENTATION_TYPE.QUATERNION)
+            interfix.inertial.convert_to(OrientationType.QUATERNION)
         )
         quat.qx = 0.5
         quat.qy = 0.5
@@ -2808,13 +2830,13 @@ class Attitude(TestBase):
         TestBase.Application.execute_command("SetAttitudeType */Satellite/Satellite1 InertFix Quat 0.5 0.5 0.5 0.5")
         QuatCompare.TakeConnectSnapshot(TestBase.Application)
 
-        Attitude.AG_SAT.set_attitude_type(VEHICLE_ATTITUDE.STANDARD)
+        Attitude.AG_SAT.set_attitude_type(VehicleAttitude.STANDARD)
         standard = AttitudeStandardOrbit(Attitude.AG_SAT.attitude)
-        standard.basic.set_profile_type(ATTITUDE_PROFILE.INERTIALLY_FIXED)
+        standard.basic.set_profile_type(AttitudeProfile.INERTIALLY_FIXED)
         interfix = AttitudeProfileInertial(standard.basic.profile)
 
-        ypr: "IOrientationYPRAngles" = IOrientationYPRAngles(interfix.inertial.convert_to(ORIENTATION_TYPE.YPR_ANGLES))
-        ypr.sequence = YPR_ANGLES_SEQUENCE.RPY
+        ypr: "IOrientationYPRAngles" = IOrientationYPRAngles(interfix.inertial.convert_to(OrientationType.YPR_ANGLES))
+        ypr.sequence = YPRAnglesSequence.RPY
         ypr.yaw = 10.0
         ypr.pitch = 20.0
         ypr.roll = 30.0
@@ -2824,13 +2846,13 @@ class Attitude(TestBase):
         TestBase.Application.execute_command("SetAttitudeType */Satellite/Satellite1 InertFix YPR 10.0 20.0 30.0 RPY")
         YPRCompare.TakeConnectSnapshot(TestBase.Application)
 
-        Attitude.AG_SAT.set_attitude_type(VEHICLE_ATTITUDE.STANDARD)
+        Attitude.AG_SAT.set_attitude_type(VehicleAttitude.STANDARD)
         standard = AttitudeStandardOrbit(Attitude.AG_SAT.attitude)
-        standard.basic.set_profile_type(ATTITUDE_PROFILE.INERTIALLY_FIXED)
+        standard.basic.set_profile_type(AttitudeProfile.INERTIALLY_FIXED)
         interfix = AttitudeProfileInertial(standard.basic.profile)
 
-        ypr = IOrientationYPRAngles(interfix.inertial.convert_to(ORIENTATION_TYPE.YPR_ANGLES))
-        ypr.sequence = YPR_ANGLES_SEQUENCE.RYP
+        ypr = IOrientationYPRAngles(interfix.inertial.convert_to(OrientationType.YPR_ANGLES))
+        ypr.sequence = YPRAnglesSequence.RYP
         ypr.yaw = 10.0
         ypr.pitch = 20.0
         ypr.roll = 30.0
@@ -2840,13 +2862,13 @@ class Attitude(TestBase):
         TestBase.Application.execute_command("SetAttitudeType */Satellite/Satellite1 InertFix YPR 10.0 20.0 30.0 RYP")
         YPRCompare.TakeConnectSnapshot(TestBase.Application)
 
-        Attitude.AG_SAT.set_attitude_type(VEHICLE_ATTITUDE.STANDARD)
+        Attitude.AG_SAT.set_attitude_type(VehicleAttitude.STANDARD)
         standard = AttitudeStandardOrbit(Attitude.AG_SAT.attitude)
-        standard.basic.set_profile_type(ATTITUDE_PROFILE.INERTIALLY_FIXED)
+        standard.basic.set_profile_type(AttitudeProfile.INERTIALLY_FIXED)
         interfix = AttitudeProfileInertial(standard.basic.profile)
 
-        ypr = IOrientationYPRAngles(interfix.inertial.convert_to(ORIENTATION_TYPE.YPR_ANGLES))
-        ypr.sequence = YPR_ANGLES_SEQUENCE.PRY
+        ypr = IOrientationYPRAngles(interfix.inertial.convert_to(OrientationType.YPR_ANGLES))
+        ypr.sequence = YPRAnglesSequence.PRY
         ypr.yaw = 10.0
         ypr.pitch = 20.0
         ypr.roll = 30.0
@@ -2856,13 +2878,13 @@ class Attitude(TestBase):
         TestBase.Application.execute_command("SetAttitudeType */Satellite/Satellite1 InertFix YPR 10.0 20.0 30.0 PRY")
         YPRCompare.TakeConnectSnapshot(TestBase.Application)
 
-        Attitude.AG_SAT.set_attitude_type(VEHICLE_ATTITUDE.STANDARD)
+        Attitude.AG_SAT.set_attitude_type(VehicleAttitude.STANDARD)
         standard = AttitudeStandardOrbit(Attitude.AG_SAT.attitude)
-        standard.basic.set_profile_type(ATTITUDE_PROFILE.INERTIALLY_FIXED)
+        standard.basic.set_profile_type(AttitudeProfile.INERTIALLY_FIXED)
         interfix = AttitudeProfileInertial(standard.basic.profile)
 
-        ypr = IOrientationYPRAngles(interfix.inertial.convert_to(ORIENTATION_TYPE.YPR_ANGLES))
-        ypr.sequence = YPR_ANGLES_SEQUENCE.PYR
+        ypr = IOrientationYPRAngles(interfix.inertial.convert_to(OrientationType.YPR_ANGLES))
+        ypr.sequence = YPRAnglesSequence.PYR
         ypr.yaw = 10.0
         ypr.pitch = 20.0
         ypr.roll = 30.0
@@ -2872,13 +2894,13 @@ class Attitude(TestBase):
         TestBase.Application.execute_command("SetAttitudeType */Satellite/Satellite1 InertFix YPR 10.0 20.0 30.0 PYR")
         YPRCompare.TakeConnectSnapshot(TestBase.Application)
 
-        Attitude.AG_SAT.set_attitude_type(VEHICLE_ATTITUDE.STANDARD)
+        Attitude.AG_SAT.set_attitude_type(VehicleAttitude.STANDARD)
         standard = AttitudeStandardOrbit(Attitude.AG_SAT.attitude)
-        standard.basic.set_profile_type(ATTITUDE_PROFILE.INERTIALLY_FIXED)
+        standard.basic.set_profile_type(AttitudeProfile.INERTIALLY_FIXED)
         interfix = AttitudeProfileInertial(standard.basic.profile)
 
-        ypr = IOrientationYPRAngles(interfix.inertial.convert_to(ORIENTATION_TYPE.YPR_ANGLES))
-        ypr.sequence = YPR_ANGLES_SEQUENCE.YRP
+        ypr = IOrientationYPRAngles(interfix.inertial.convert_to(OrientationType.YPR_ANGLES))
+        ypr.sequence = YPRAnglesSequence.YRP
         ypr.yaw = 10.0
         ypr.pitch = 20.0
         ypr.roll = 30.0
@@ -2888,15 +2910,15 @@ class Attitude(TestBase):
         TestBase.Application.execute_command("SetAttitudeType */Satellite/Satellite1 InertFix YPR 10.0 20.0 30.0 YRP")
         YPRCompare.TakeConnectSnapshot(TestBase.Application)
 
-        Attitude.AG_SAT.set_attitude_type(VEHICLE_ATTITUDE.STANDARD)
+        Attitude.AG_SAT.set_attitude_type(VehicleAttitude.STANDARD)
         standard = AttitudeStandardOrbit(Attitude.AG_SAT.attitude)
-        standard.basic.set_profile_type(ATTITUDE_PROFILE.INERTIALLY_FIXED)
+        standard.basic.set_profile_type(AttitudeProfile.INERTIALLY_FIXED)
         interfix = AttitudeProfileInertial(standard.basic.profile)
 
         EulerCompare.ResetUnits()
 
-        ypr = IOrientationYPRAngles(interfix.inertial.convert_to(ORIENTATION_TYPE.YPR_ANGLES))
-        ypr.sequence = YPR_ANGLES_SEQUENCE.YPR
+        ypr = IOrientationYPRAngles(interfix.inertial.convert_to(OrientationType.YPR_ANGLES))
+        ypr.sequence = YPRAnglesSequence.YPR
         ypr.yaw = 10.0
         ypr.pitch = 20.0
         ypr.roll = 30.0
@@ -2906,15 +2928,15 @@ class Attitude(TestBase):
         TestBase.Application.execute_command("SetAttitudeType */Satellite/Satellite1 InertFix YPR 10.0 20.0 30.0 YPR")
         YPRCompare.TakeConnectSnapshot(TestBase.Application)
 
-        Attitude.AG_SAT.set_attitude_type(VEHICLE_ATTITUDE.STANDARD)
+        Attitude.AG_SAT.set_attitude_type(VehicleAttitude.STANDARD)
         standard = AttitudeStandardOrbit(Attitude.AG_SAT.attitude)
-        standard.basic.set_profile_type(ATTITUDE_PROFILE.INERTIALLY_FIXED)
+        standard.basic.set_profile_type(AttitudeProfile.INERTIALLY_FIXED)
         interfix = AttitudeProfileInertial(standard.basic.profile)
 
         euler: "IOrientationEulerAngles" = IOrientationEulerAngles(
-            interfix.inertial.convert_to(ORIENTATION_TYPE.EULER_ANGLES)
+            interfix.inertial.convert_to(OrientationType.EULER_ANGLES)
         )
-        euler.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_121
+        euler.sequence = EulerOrientationSequenceType.SEQUENCE_121
         euler.a = 10.0
         euler.b = 20.0
         euler.c = 30.0
@@ -2924,13 +2946,13 @@ class Attitude(TestBase):
         TestBase.Application.execute_command("SetAttitudeType */Satellite/Satellite1 InertFix Euler 10.0 20.0 30.0 121")
         EulerCompare.TakeConnectSnapshot(TestBase.Application)
 
-        Attitude.AG_SAT.set_attitude_type(VEHICLE_ATTITUDE.STANDARD)
+        Attitude.AG_SAT.set_attitude_type(VehicleAttitude.STANDARD)
         standard = AttitudeStandardOrbit(Attitude.AG_SAT.attitude)
-        standard.basic.set_profile_type(ATTITUDE_PROFILE.INERTIALLY_FIXED)
+        standard.basic.set_profile_type(AttitudeProfile.INERTIALLY_FIXED)
         interfix = AttitudeProfileInertial(standard.basic.profile)
 
-        euler = IOrientationEulerAngles(interfix.inertial.convert_to(ORIENTATION_TYPE.EULER_ANGLES))
-        euler.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_123
+        euler = IOrientationEulerAngles(interfix.inertial.convert_to(OrientationType.EULER_ANGLES))
+        euler.sequence = EulerOrientationSequenceType.SEQUENCE_123
         euler.a = 10.0
         euler.b = 20.0
         euler.c = 30.0
@@ -2940,13 +2962,13 @@ class Attitude(TestBase):
         TestBase.Application.execute_command("SetAttitudeType */Satellite/Satellite1 InertFix Euler 10.0 20.0 30.0 123")
         EulerCompare.TakeConnectSnapshot(TestBase.Application)
 
-        Attitude.AG_SAT.set_attitude_type(VEHICLE_ATTITUDE.STANDARD)
+        Attitude.AG_SAT.set_attitude_type(VehicleAttitude.STANDARD)
         standard = AttitudeStandardOrbit(Attitude.AG_SAT.attitude)
-        standard.basic.set_profile_type(ATTITUDE_PROFILE.INERTIALLY_FIXED)
+        standard.basic.set_profile_type(AttitudeProfile.INERTIALLY_FIXED)
         interfix = AttitudeProfileInertial(standard.basic.profile)
 
-        euler = IOrientationEulerAngles(interfix.inertial.convert_to(ORIENTATION_TYPE.EULER_ANGLES))
-        euler.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_131
+        euler = IOrientationEulerAngles(interfix.inertial.convert_to(OrientationType.EULER_ANGLES))
+        euler.sequence = EulerOrientationSequenceType.SEQUENCE_131
         euler.a = 10.0
         euler.b = 20.0
         euler.c = 30.0
@@ -2956,13 +2978,13 @@ class Attitude(TestBase):
         TestBase.Application.execute_command("SetAttitudeType */Satellite/Satellite1 InertFix Euler 10.0 20.0 30.0 131")
         EulerCompare.TakeConnectSnapshot(TestBase.Application)
 
-        Attitude.AG_SAT.set_attitude_type(VEHICLE_ATTITUDE.STANDARD)
+        Attitude.AG_SAT.set_attitude_type(VehicleAttitude.STANDARD)
         standard = AttitudeStandardOrbit(Attitude.AG_SAT.attitude)
-        standard.basic.set_profile_type(ATTITUDE_PROFILE.INERTIALLY_FIXED)
+        standard.basic.set_profile_type(AttitudeProfile.INERTIALLY_FIXED)
         interfix = AttitudeProfileInertial(standard.basic.profile)
 
-        euler = IOrientationEulerAngles(interfix.inertial.convert_to(ORIENTATION_TYPE.EULER_ANGLES))
-        euler.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_132
+        euler = IOrientationEulerAngles(interfix.inertial.convert_to(OrientationType.EULER_ANGLES))
+        euler.sequence = EulerOrientationSequenceType.SEQUENCE_132
         euler.a = 10.0
         euler.b = 20.0
         euler.c = 30.0
@@ -2972,13 +2994,13 @@ class Attitude(TestBase):
         TestBase.Application.execute_command("SetAttitudeType */Satellite/Satellite1 InertFix Euler 10.0 20.0 30.0 132")
         EulerCompare.TakeConnectSnapshot(TestBase.Application)
 
-        Attitude.AG_SAT.set_attitude_type(VEHICLE_ATTITUDE.STANDARD)
+        Attitude.AG_SAT.set_attitude_type(VehicleAttitude.STANDARD)
         standard = AttitudeStandardOrbit(Attitude.AG_SAT.attitude)
-        standard.basic.set_profile_type(ATTITUDE_PROFILE.INERTIALLY_FIXED)
+        standard.basic.set_profile_type(AttitudeProfile.INERTIALLY_FIXED)
         interfix = AttitudeProfileInertial(standard.basic.profile)
 
-        euler = IOrientationEulerAngles(interfix.inertial.convert_to(ORIENTATION_TYPE.EULER_ANGLES))
-        euler.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_212
+        euler = IOrientationEulerAngles(interfix.inertial.convert_to(OrientationType.EULER_ANGLES))
+        euler.sequence = EulerOrientationSequenceType.SEQUENCE_212
         euler.a = 10.0
         euler.b = 20.0
         euler.c = 30.0
@@ -2988,13 +3010,13 @@ class Attitude(TestBase):
         TestBase.Application.execute_command("SetAttitudeType */Satellite/Satellite1 InertFix Euler 10.0 20.0 30.0 212")
         EulerCompare.TakeConnectSnapshot(TestBase.Application)
 
-        Attitude.AG_SAT.set_attitude_type(VEHICLE_ATTITUDE.STANDARD)
+        Attitude.AG_SAT.set_attitude_type(VehicleAttitude.STANDARD)
         standard = AttitudeStandardOrbit(Attitude.AG_SAT.attitude)
-        standard.basic.set_profile_type(ATTITUDE_PROFILE.INERTIALLY_FIXED)
+        standard.basic.set_profile_type(AttitudeProfile.INERTIALLY_FIXED)
         interfix = AttitudeProfileInertial(standard.basic.profile)
 
-        euler = IOrientationEulerAngles(interfix.inertial.convert_to(ORIENTATION_TYPE.EULER_ANGLES))
-        euler.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_213
+        euler = IOrientationEulerAngles(interfix.inertial.convert_to(OrientationType.EULER_ANGLES))
+        euler.sequence = EulerOrientationSequenceType.SEQUENCE_213
         euler.a = 10.0
         euler.b = 20.0
         euler.c = 30.0
@@ -3004,13 +3026,13 @@ class Attitude(TestBase):
         TestBase.Application.execute_command("SetAttitudeType */Satellite/Satellite1 InertFix Euler 10.0 20.0 30.0 213")
         EulerCompare.TakeConnectSnapshot(TestBase.Application)
 
-        Attitude.AG_SAT.set_attitude_type(VEHICLE_ATTITUDE.STANDARD)
+        Attitude.AG_SAT.set_attitude_type(VehicleAttitude.STANDARD)
         standard = AttitudeStandardOrbit(Attitude.AG_SAT.attitude)
-        standard.basic.set_profile_type(ATTITUDE_PROFILE.INERTIALLY_FIXED)
+        standard.basic.set_profile_type(AttitudeProfile.INERTIALLY_FIXED)
         interfix = AttitudeProfileInertial(standard.basic.profile)
 
-        euler = IOrientationEulerAngles(interfix.inertial.convert_to(ORIENTATION_TYPE.EULER_ANGLES))
-        euler.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_231
+        euler = IOrientationEulerAngles(interfix.inertial.convert_to(OrientationType.EULER_ANGLES))
+        euler.sequence = EulerOrientationSequenceType.SEQUENCE_231
         euler.a = 10.0
         euler.b = 20.0
         euler.c = 30.0
@@ -3020,13 +3042,13 @@ class Attitude(TestBase):
         TestBase.Application.execute_command("SetAttitudeType */Satellite/Satellite1 InertFix Euler 10.0 20.0 30.0 231")
         EulerCompare.TakeConnectSnapshot(TestBase.Application)
 
-        Attitude.AG_SAT.set_attitude_type(VEHICLE_ATTITUDE.STANDARD)
+        Attitude.AG_SAT.set_attitude_type(VehicleAttitude.STANDARD)
         standard = AttitudeStandardOrbit(Attitude.AG_SAT.attitude)
-        standard.basic.set_profile_type(ATTITUDE_PROFILE.INERTIALLY_FIXED)
+        standard.basic.set_profile_type(AttitudeProfile.INERTIALLY_FIXED)
         interfix = AttitudeProfileInertial(standard.basic.profile)
 
-        euler = IOrientationEulerAngles(interfix.inertial.convert_to(ORIENTATION_TYPE.EULER_ANGLES))
-        euler.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_231
+        euler = IOrientationEulerAngles(interfix.inertial.convert_to(OrientationType.EULER_ANGLES))
+        euler.sequence = EulerOrientationSequenceType.SEQUENCE_231
         euler.a = 10.0
         euler.b = 20.0
         euler.c = 30.0
@@ -3038,13 +3060,13 @@ class Attitude(TestBase):
         )
         EulerCompare.TakeConnectSnapshot(TestBase.Application)
 
-        Attitude.AG_SAT.set_attitude_type(VEHICLE_ATTITUDE.STANDARD)
+        Attitude.AG_SAT.set_attitude_type(VehicleAttitude.STANDARD)
         standard = AttitudeStandardOrbit(Attitude.AG_SAT.attitude)
-        standard.basic.set_profile_type(ATTITUDE_PROFILE.INERTIALLY_FIXED)
+        standard.basic.set_profile_type(AttitudeProfile.INERTIALLY_FIXED)
         interfix = AttitudeProfileInertial(standard.basic.profile)
 
-        euler = IOrientationEulerAngles(interfix.inertial.convert_to(ORIENTATION_TYPE.EULER_ANGLES))
-        euler.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_232
+        euler = IOrientationEulerAngles(interfix.inertial.convert_to(OrientationType.EULER_ANGLES))
+        euler.sequence = EulerOrientationSequenceType.SEQUENCE_232
         euler.a = 10.0
         euler.b = 20.0
         euler.c = 30.0
@@ -3054,13 +3076,13 @@ class Attitude(TestBase):
         TestBase.Application.execute_command("SetAttitudeType */Satellite/Satellite1 InertFix Euler 10.0 20.0 30.0 232")
         EulerCompare.TakeConnectSnapshot(TestBase.Application)
 
-        Attitude.AG_SAT.set_attitude_type(VEHICLE_ATTITUDE.STANDARD)
+        Attitude.AG_SAT.set_attitude_type(VehicleAttitude.STANDARD)
         standard = AttitudeStandardOrbit(Attitude.AG_SAT.attitude)
-        standard.basic.set_profile_type(ATTITUDE_PROFILE.INERTIALLY_FIXED)
+        standard.basic.set_profile_type(AttitudeProfile.INERTIALLY_FIXED)
         interfix = AttitudeProfileInertial(standard.basic.profile)
 
-        euler = IOrientationEulerAngles(interfix.inertial.convert_to(ORIENTATION_TYPE.EULER_ANGLES))
-        euler.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_312
+        euler = IOrientationEulerAngles(interfix.inertial.convert_to(OrientationType.EULER_ANGLES))
+        euler.sequence = EulerOrientationSequenceType.SEQUENCE_312
         euler.a = 10.0
         euler.b = 20.0
         euler.c = 30.0
@@ -3070,13 +3092,13 @@ class Attitude(TestBase):
         TestBase.Application.execute_command("SetAttitudeType */Satellite/Satellite1 InertFix Euler 10.0 20.0 30.0 312")
         EulerCompare.TakeConnectSnapshot(TestBase.Application)
 
-        Attitude.AG_SAT.set_attitude_type(VEHICLE_ATTITUDE.STANDARD)
+        Attitude.AG_SAT.set_attitude_type(VehicleAttitude.STANDARD)
         standard = AttitudeStandardOrbit(Attitude.AG_SAT.attitude)
-        standard.basic.set_profile_type(ATTITUDE_PROFILE.INERTIALLY_FIXED)
+        standard.basic.set_profile_type(AttitudeProfile.INERTIALLY_FIXED)
         interfix = AttitudeProfileInertial(standard.basic.profile)
 
-        euler = IOrientationEulerAngles(interfix.inertial.convert_to(ORIENTATION_TYPE.EULER_ANGLES))
-        euler.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_313
+        euler = IOrientationEulerAngles(interfix.inertial.convert_to(OrientationType.EULER_ANGLES))
+        euler.sequence = EulerOrientationSequenceType.SEQUENCE_313
         euler.a = 10.0
         euler.b = 20.0
         euler.c = 30.0
@@ -3086,13 +3108,13 @@ class Attitude(TestBase):
         TestBase.Application.execute_command("SetAttitudeType */Satellite/Satellite1 InertFix Euler 10.0 20.0 30.0 313")
         EulerCompare.TakeConnectSnapshot(TestBase.Application)
 
-        Attitude.AG_SAT.set_attitude_type(VEHICLE_ATTITUDE.STANDARD)
+        Attitude.AG_SAT.set_attitude_type(VehicleAttitude.STANDARD)
         standard = AttitudeStandardOrbit(Attitude.AG_SAT.attitude)
-        standard.basic.set_profile_type(ATTITUDE_PROFILE.INERTIALLY_FIXED)
+        standard.basic.set_profile_type(AttitudeProfile.INERTIALLY_FIXED)
         interfix = AttitudeProfileInertial(standard.basic.profile)
 
-        euler = IOrientationEulerAngles(interfix.inertial.convert_to(ORIENTATION_TYPE.EULER_ANGLES))
-        euler.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_321
+        euler = IOrientationEulerAngles(interfix.inertial.convert_to(OrientationType.EULER_ANGLES))
+        euler.sequence = EulerOrientationSequenceType.SEQUENCE_321
         euler.a = 10.0
         euler.b = 20.0
         euler.c = 30.0
@@ -3102,13 +3124,13 @@ class Attitude(TestBase):
         TestBase.Application.execute_command("SetAttitudeType */Satellite/Satellite1 InertFix Euler 10.0 20.0 30.0 321")
         EulerCompare.TakeConnectSnapshot(TestBase.Application)
 
-        Attitude.AG_SAT.set_attitude_type(VEHICLE_ATTITUDE.STANDARD)
+        Attitude.AG_SAT.set_attitude_type(VehicleAttitude.STANDARD)
         standard = AttitudeStandardOrbit(Attitude.AG_SAT.attitude)
-        standard.basic.set_profile_type(ATTITUDE_PROFILE.INERTIALLY_FIXED)
+        standard.basic.set_profile_type(AttitudeProfile.INERTIALLY_FIXED)
         interfix = AttitudeProfileInertial(standard.basic.profile)
 
-        euler = IOrientationEulerAngles(interfix.inertial.convert_to(ORIENTATION_TYPE.EULER_ANGLES))
-        euler.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_323
+        euler = IOrientationEulerAngles(interfix.inertial.convert_to(OrientationType.EULER_ANGLES))
+        euler.sequence = EulerOrientationSequenceType.SEQUENCE_323
         euler.a = 10.0
         euler.b = 20.0
         euler.c = 30.0
@@ -3146,43 +3168,43 @@ class Attitude(TestBase):
         )
 
         # Propagator Initialization
-        Attitude.AG_SAT.set_propagator_type(PROPAGATOR_TYPE.J2_PERTURBATION)
+        Attitude.AG_SAT.set_propagator_type(PropagatorType.J2_PERTURBATION)
         j2prop: "PropagatorJ2Perturbation" = PropagatorJ2Perturbation(Attitude.AG_SAT.propagator)
         j2prop.ephemeris_interval.set_explicit_interval("1 Nov 2000 00:00:00.00", "1 Nov 2000 4:00:00.00")
         j2prop.step = 60
         classical: "OrbitStateClassical" = OrbitStateClassical(
-            j2prop.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CLASSICAL)
+            j2prop.initial_state.representation.convert_to(OrbitStateType.CLASSICAL)
         )
-        classical.coordinate_system_type = COORDINATE_SYSTEM.J2000
+        classical.coordinate_system_type = CoordinateSystem.J2000
         coordsys: "OrbitStateCoordinateSystem" = classical.coordinate_system
         # Epoch was deprecated
         # j2prop.InitialState.Epoch = "1 Nov 2000 02:00:00.00";
         (classical).epoch = "1 Nov 2000 02:00:00.00"
-        classical.size_shape_type = CLASSICAL_SIZE_SHAPE.SEMIMAJOR_AXIS
+        classical.size_shape_type = ClassicalSizeShape.SEMIMAJOR_AXIS
         sizeshape: "ClassicalSizeShapeSemimajorAxis" = ClassicalSizeShapeSemimajorAxis(classical.size_shape)
         sizeshape.semi_major_axis = 7322000.122
-        classical.size_shape_type = CLASSICAL_SIZE_SHAPE.MEAN_MOTION
+        classical.size_shape_type = ClassicalSizeShape.MEAN_MOTION
         sizeshape1: "ClassicalSizeShapeMeanMotion" = ClassicalSizeShapeMeanMotion(classical.size_shape)
         sizeshape1.eccentricity = 0.099
         classical.orientation.inclination = 99.5
         classical.orientation.argument_of_periapsis = 1.2
-        classical.orientation.ascending_node_type = ORIENTATION_ASC_NODE.RIGHT_ASCENSION_ASCENDING_NODE
+        classical.orientation.ascending_node_type = OrientationAscNode.RIGHT_ASCENSION_ASCENDING_NODE
         raan: "OrientationRightAscensionOfAscendingNode" = OrientationRightAscensionOfAscendingNode(
             classical.orientation.ascending_node
         )
         raan.value = 122.2
-        classical.location_type = CLASSICAL_LOCATION.MEAN_ANOMALY
+        classical.location_type = ClassicalLocation.MEAN_ANOMALY
         loc: "ClassicalLocationMeanAnomaly" = ClassicalLocationMeanAnomaly(classical.location)
         loc.value = 22.2
         j2prop.initial_state.representation.assign(classical)
         j2prop.propagate()
 
         # Test Attitude
-        Attitude.AG_SAT.set_attitude_type(VEHICLE_ATTITUDE.STANDARD)
+        Attitude.AG_SAT.set_attitude_type(VehicleAttitude.STANDARD)
         standard: "AttitudeStandardOrbit" = AttitudeStandardOrbit(Attitude.AG_SAT.attitude)
-        standard.basic.set_profile_type(ATTITUDE_PROFILE.YAW_TO_NADIR)
+        standard.basic.set_profile_type(AttitudeProfile.YAW_TO_NADIR)
         inertial: "AttitudeProfileYawToNadir" = AttitudeProfileYawToNadir(standard.basic.profile)
-        pr: "DirectionPR" = DirectionPR(inertial.inertial.convert_to(DIRECTION_TYPE.PR))
+        pr: "DirectionPR" = DirectionPR(inertial.inertial.convert_to(DirectionType.PR))
         pr.pitch = 10.0
         pr.roll = 20.0
         inertial.inertial.assign(pr)
@@ -3191,12 +3213,12 @@ class Attitude(TestBase):
         TestBase.Application.execute_command("SetAttitudeType */Satellite/Satellite1 YawNadir PR 10.0 20.0")
         YPRCompare.TakeConnectSnapshot(TestBase.Application)
 
-        Attitude.AG_SAT.set_attitude_type(VEHICLE_ATTITUDE.STANDARD)
+        Attitude.AG_SAT.set_attitude_type(VehicleAttitude.STANDARD)
         standard = AttitudeStandardOrbit(Attitude.AG_SAT.attitude)
-        standard.basic.set_profile_type(ATTITUDE_PROFILE.YAW_TO_NADIR)
+        standard.basic.set_profile_type(AttitudeProfile.YAW_TO_NADIR)
         inertial = AttitudeProfileYawToNadir(standard.basic.profile)
 
-        spher: "DirectionRADec" = DirectionRADec(inertial.inertial.convert_to(DIRECTION_TYPE.RA_DEC))
+        spher: "DirectionRADec" = DirectionRADec(inertial.inertial.convert_to(DirectionType.RA_DEC))
         spher.ra = 10.0
         spher.dec = 20.0
         inertial.inertial.assign(spher)
@@ -3205,13 +3227,13 @@ class Attitude(TestBase):
         TestBase.Application.execute_command("SetAttitudeType */Satellite/Satellite1 YawNadir RaDec 10.0 20.0")
         YPRCompare.TakeConnectSnapshot(TestBase.Application)
 
-        Attitude.AG_SAT.set_attitude_type(VEHICLE_ATTITUDE.STANDARD)
+        Attitude.AG_SAT.set_attitude_type(VehicleAttitude.STANDARD)
         standard = AttitudeStandardOrbit(Attitude.AG_SAT.attitude)
-        standard.basic.set_profile_type(ATTITUDE_PROFILE.YAW_TO_NADIR)
+        standard.basic.set_profile_type(AttitudeProfile.YAW_TO_NADIR)
         inertial = AttitudeProfileYawToNadir(standard.basic.profile)
 
-        euler: "DirectionEuler" = DirectionEuler(inertial.inertial.convert_to(DIRECTION_TYPE.EULER))
-        euler.sequence = EULER_DIRECTION_SEQUENCE.SEQUENCE_12
+        euler: "DirectionEuler" = DirectionEuler(inertial.inertial.convert_to(DirectionType.EULER))
+        euler.sequence = EulerDirectionSequence.SEQUENCE_12
         euler.b = 10.0
         euler.c = 20.0
         inertial.inertial.assign(euler)
@@ -3220,13 +3242,13 @@ class Attitude(TestBase):
         TestBase.Application.execute_command("SetAttitudeType */Satellite/Satellite1 YawNadir Euler 10.0 20.0 12")
         EulerCompare.TakeConnectSnapshot(TestBase.Application)
 
-        Attitude.AG_SAT.set_attitude_type(VEHICLE_ATTITUDE.STANDARD)
+        Attitude.AG_SAT.set_attitude_type(VehicleAttitude.STANDARD)
         standard = AttitudeStandardOrbit(Attitude.AG_SAT.attitude)
-        standard.basic.set_profile_type(ATTITUDE_PROFILE.YAW_TO_NADIR)
+        standard.basic.set_profile_type(AttitudeProfile.YAW_TO_NADIR)
         inertial = AttitudeProfileYawToNadir(standard.basic.profile)
 
-        euler = DirectionEuler(inertial.inertial.convert_to(DIRECTION_TYPE.EULER))
-        euler.sequence = EULER_DIRECTION_SEQUENCE.SEQUENCE_21
+        euler = DirectionEuler(inertial.inertial.convert_to(DirectionType.EULER))
+        euler.sequence = EulerDirectionSequence.SEQUENCE_21
         euler.b = 10.0
         euler.c = 20.0
         inertial.inertial.assign(euler)
@@ -3235,13 +3257,13 @@ class Attitude(TestBase):
         TestBase.Application.execute_command("SetAttitude */Satellite/Satellite1 Profile YawNadir Euler 10.0 20.0 21")
         EulerCompare.TakeConnectSnapshot(TestBase.Application)
 
-        Attitude.AG_SAT.set_attitude_type(VEHICLE_ATTITUDE.STANDARD)
+        Attitude.AG_SAT.set_attitude_type(VehicleAttitude.STANDARD)
         standard = AttitudeStandardOrbit(Attitude.AG_SAT.attitude)
-        standard.basic.set_profile_type(ATTITUDE_PROFILE.YAW_TO_NADIR)
+        standard.basic.set_profile_type(AttitudeProfile.YAW_TO_NADIR)
         inertial = AttitudeProfileYawToNadir(standard.basic.profile)
 
-        euler = DirectionEuler(inertial.inertial.convert_to(DIRECTION_TYPE.EULER))
-        euler.sequence = EULER_DIRECTION_SEQUENCE.SEQUENCE_31
+        euler = DirectionEuler(inertial.inertial.convert_to(DirectionType.EULER))
+        euler.sequence = EulerDirectionSequence.SEQUENCE_31
         euler.b = 10.0
         euler.c = 20.0
         inertial.inertial.assign(euler)
@@ -3250,13 +3272,13 @@ class Attitude(TestBase):
         TestBase.Application.execute_command("SetAttitudeType */Satellite/Satellite1 YawNadir Euler 10.0 20.0 31")
         EulerCompare.TakeConnectSnapshot(TestBase.Application)
 
-        Attitude.AG_SAT.set_attitude_type(VEHICLE_ATTITUDE.STANDARD)
+        Attitude.AG_SAT.set_attitude_type(VehicleAttitude.STANDARD)
         standard = AttitudeStandardOrbit(Attitude.AG_SAT.attitude)
-        standard.basic.set_profile_type(ATTITUDE_PROFILE.YAW_TO_NADIR)
+        standard.basic.set_profile_type(AttitudeProfile.YAW_TO_NADIR)
         inertial = AttitudeProfileYawToNadir(standard.basic.profile)
 
-        euler = DirectionEuler(inertial.inertial.convert_to(DIRECTION_TYPE.EULER))
-        euler.sequence = EULER_DIRECTION_SEQUENCE.SEQUENCE_32
+        euler = DirectionEuler(inertial.inertial.convert_to(DirectionType.EULER))
+        euler.sequence = EulerDirectionSequence.SEQUENCE_32
         euler.b = 10.0
         euler.c = 20.0
         inertial.inertial.assign(euler)
@@ -3289,41 +3311,41 @@ class Attitude(TestBase):
         )
 
         # Propagator Initialization
-        Attitude.AG_SAT.set_propagator_type(PROPAGATOR_TYPE.J2_PERTURBATION)
+        Attitude.AG_SAT.set_propagator_type(PropagatorType.J2_PERTURBATION)
         j2prop: "PropagatorJ2Perturbation" = PropagatorJ2Perturbation(Attitude.AG_SAT.propagator)
         j2prop.ephemeris_interval.set_explicit_interval("1 Nov 2000 00:00:00.00", "1 Nov 2000 4:00:00.00")
         j2prop.step = 60
         classical: "OrbitStateClassical" = OrbitStateClassical(
-            j2prop.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CLASSICAL)
+            j2prop.initial_state.representation.convert_to(OrbitStateType.CLASSICAL)
         )
-        classical.coordinate_system_type = COORDINATE_SYSTEM.J2000
+        classical.coordinate_system_type = CoordinateSystem.J2000
         coordsys: "OrbitStateCoordinateSystem" = classical.coordinate_system
         # Epoch was deprecated
         # j2prop.InitialState.Epoch = "1 Nov 2000 02:00:00.00";
         (classical).epoch = "1 Nov 2000 02:00:00.00"
-        classical.size_shape_type = CLASSICAL_SIZE_SHAPE.SEMIMAJOR_AXIS
+        classical.size_shape_type = ClassicalSizeShape.SEMIMAJOR_AXIS
         sizeshape: "ClassicalSizeShapeSemimajorAxis" = ClassicalSizeShapeSemimajorAxis(classical.size_shape)
         sizeshape.semi_major_axis = 7322000.122
-        classical.size_shape_type = CLASSICAL_SIZE_SHAPE.MEAN_MOTION
+        classical.size_shape_type = ClassicalSizeShape.MEAN_MOTION
         sizeshape1: "ClassicalSizeShapeMeanMotion" = ClassicalSizeShapeMeanMotion(classical.size_shape)
         sizeshape1.eccentricity = 0.099
         classical.orientation.inclination = 99.5
         classical.orientation.argument_of_periapsis = 1.2
-        classical.orientation.ascending_node_type = ORIENTATION_ASC_NODE.RIGHT_ASCENSION_ASCENDING_NODE
+        classical.orientation.ascending_node_type = OrientationAscNode.RIGHT_ASCENSION_ASCENDING_NODE
         raan: "OrientationRightAscensionOfAscendingNode" = OrientationRightAscensionOfAscendingNode(
             classical.orientation.ascending_node
         )
         raan.value = 122.2
-        classical.location_type = CLASSICAL_LOCATION.MEAN_ANOMALY
+        classical.location_type = ClassicalLocation.MEAN_ANOMALY
         loc: "ClassicalLocationMeanAnomaly" = ClassicalLocationMeanAnomaly(classical.location)
         loc.value = 22.2
         j2prop.initial_state.representation.assign(classical)
         j2prop.propagate()
 
         # Test Attitude
-        Attitude.AG_SAT.set_attitude_type(VEHICLE_ATTITUDE.STANDARD)
+        Attitude.AG_SAT.set_attitude_type(VehicleAttitude.STANDARD)
         standard: "AttitudeStandardOrbit" = AttitudeStandardOrbit(Attitude.AG_SAT.attitude)
-        standard.basic.set_profile_type(ATTITUDE_PROFILE.SPIN_ABOUT_NADIR)
+        standard.basic.set_profile_type(AttitudeProfile.SPIN_ABOUT_NADIR)
         spin: "AttitudeProfileSpinAboutSettings" = AttitudeProfileSpinAboutSettings(standard.basic.profile)
         spin.smart_epoch.set_explicit_time("1 nov 2000 00:00:00")
         spin.offset = 10.0
@@ -3339,9 +3361,9 @@ class Attitude(TestBase):
         )
         YPRCompare.TakeConnectSnapshot(TestBase.Application)
 
-        Attitude.AG_SAT.set_attitude_type(VEHICLE_ATTITUDE.STANDARD)
+        Attitude.AG_SAT.set_attitude_type(VehicleAttitude.STANDARD)
         standard = AttitudeStandardOrbit(Attitude.AG_SAT.attitude)
-        standard.basic.set_profile_type(ATTITUDE_PROFILE.SPIN_ABOUT_SUN_VECTOR)
+        standard.basic.set_profile_type(AttitudeProfile.SPIN_ABOUT_SUN_VECTOR)
         spin = AttitudeProfileSpinAboutSettings(standard.basic.profile)
 
         spin.smart_epoch.set_explicit_time("1 nov 2000 00:00:00")
@@ -3359,12 +3381,12 @@ class Attitude(TestBase):
         YPRCompare.TakeConnectSnapshot(TestBase.Application)
 
         # Spinning
-        Attitude.AG_SAT.set_attitude_type(VEHICLE_ATTITUDE.STANDARD)
+        Attitude.AG_SAT.set_attitude_type(VehicleAttitude.STANDARD)
         standard = AttitudeStandardOrbit(Attitude.AG_SAT.attitude)
-        standard.basic.set_profile_type(ATTITUDE_PROFILE.SPINNING)
+        standard.basic.set_profile_type(AttitudeProfile.SPINNING)
         spinning: "AttitudeProfileSpinning" = AttitudeProfileSpinning(standard.basic.profile)
 
-        pr: "DirectionPR" = DirectionPR(spinning.inertial.convert_to(DIRECTION_TYPE.PR))
+        pr: "DirectionPR" = DirectionPR(spinning.inertial.convert_to(DirectionType.PR))
         pr.pitch = 10.0
         pr.roll = 20.0
         spinning.inertial.assign(pr)
@@ -3383,12 +3405,12 @@ class Attitude(TestBase):
         )
         YPRCompare.TakeConnectSnapshot(TestBase.Application)
 
-        Attitude.AG_SAT.set_attitude_type(VEHICLE_ATTITUDE.STANDARD)
+        Attitude.AG_SAT.set_attitude_type(VehicleAttitude.STANDARD)
         standard = AttitudeStandardOrbit(Attitude.AG_SAT.attitude)
-        standard.basic.set_profile_type(ATTITUDE_PROFILE.SPINNING)
+        standard.basic.set_profile_type(AttitudeProfile.SPINNING)
         spinning = AttitudeProfileSpinning(standard.basic.profile)
 
-        spher: "DirectionRADec" = DirectionRADec(spinning.inertial.convert_to(DIRECTION_TYPE.RA_DEC))
+        spher: "DirectionRADec" = DirectionRADec(spinning.inertial.convert_to(DirectionType.RA_DEC))
         spher.ra = 10.0
         spher.dec = 20.0
         spinning.inertial.assign(spher)
@@ -3407,13 +3429,13 @@ class Attitude(TestBase):
         )
         YPRCompare.TakeConnectSnapshot(TestBase.Application)
 
-        Attitude.AG_SAT.set_attitude_type(VEHICLE_ATTITUDE.STANDARD)
+        Attitude.AG_SAT.set_attitude_type(VehicleAttitude.STANDARD)
         standard = AttitudeStandardOrbit(Attitude.AG_SAT.attitude)
-        standard.basic.set_profile_type(ATTITUDE_PROFILE.SPINNING)
+        standard.basic.set_profile_type(AttitudeProfile.SPINNING)
         spinning = AttitudeProfileSpinning(standard.basic.profile)
 
-        euler: "DirectionEuler" = DirectionEuler(spinning.inertial.convert_to(DIRECTION_TYPE.EULER))
-        euler.sequence = EULER_DIRECTION_SEQUENCE.SEQUENCE_12
+        euler: "DirectionEuler" = DirectionEuler(spinning.inertial.convert_to(DirectionType.EULER))
+        euler.sequence = EulerDirectionSequence.SEQUENCE_12
         euler.b = 10.0
         euler.c = 20.0
         spinning.inertial.assign(euler)
@@ -3432,13 +3454,13 @@ class Attitude(TestBase):
         )
         EulerCompare.TakeConnectSnapshot(TestBase.Application)
 
-        Attitude.AG_SAT.set_attitude_type(VEHICLE_ATTITUDE.STANDARD)
+        Attitude.AG_SAT.set_attitude_type(VehicleAttitude.STANDARD)
         standard = AttitudeStandardOrbit(Attitude.AG_SAT.attitude)
-        standard.basic.set_profile_type(ATTITUDE_PROFILE.SPINNING)
+        standard.basic.set_profile_type(AttitudeProfile.SPINNING)
         spinning = AttitudeProfileSpinning(standard.basic.profile)
 
-        euler = DirectionEuler(spinning.inertial.convert_to(DIRECTION_TYPE.EULER))
-        euler.sequence = EULER_DIRECTION_SEQUENCE.SEQUENCE_21
+        euler = DirectionEuler(spinning.inertial.convert_to(DirectionType.EULER))
+        euler.sequence = EulerDirectionSequence.SEQUENCE_21
         euler.b = 10.0
         euler.c = 20.0
         spinning.inertial.assign(euler)
@@ -3457,13 +3479,13 @@ class Attitude(TestBase):
         )
         EulerCompare.TakeConnectSnapshot(TestBase.Application)
 
-        Attitude.AG_SAT.set_attitude_type(VEHICLE_ATTITUDE.STANDARD)
+        Attitude.AG_SAT.set_attitude_type(VehicleAttitude.STANDARD)
         standard = AttitudeStandardOrbit(Attitude.AG_SAT.attitude)
-        standard.basic.set_profile_type(ATTITUDE_PROFILE.SPINNING)
+        standard.basic.set_profile_type(AttitudeProfile.SPINNING)
         spinning = AttitudeProfileSpinning(standard.basic.profile)
 
-        euler = DirectionEuler(spinning.inertial.convert_to(DIRECTION_TYPE.EULER))
-        euler.sequence = EULER_DIRECTION_SEQUENCE.SEQUENCE_31
+        euler = DirectionEuler(spinning.inertial.convert_to(DirectionType.EULER))
+        euler.sequence = EulerDirectionSequence.SEQUENCE_31
         euler.b = 10.0
         euler.c = 20.0
         spinning.inertial.assign(euler)
@@ -3482,13 +3504,13 @@ class Attitude(TestBase):
         )
         EulerCompare.TakeConnectSnapshot(TestBase.Application)
 
-        Attitude.AG_SAT.set_attitude_type(VEHICLE_ATTITUDE.STANDARD)
+        Attitude.AG_SAT.set_attitude_type(VehicleAttitude.STANDARD)
         standard = AttitudeStandardOrbit(Attitude.AG_SAT.attitude)
-        standard.basic.set_profile_type(ATTITUDE_PROFILE.SPINNING)
+        standard.basic.set_profile_type(AttitudeProfile.SPINNING)
         spinning = AttitudeProfileSpinning(standard.basic.profile)
 
-        euler = DirectionEuler(spinning.inertial.convert_to(DIRECTION_TYPE.EULER))
-        euler.sequence = EULER_DIRECTION_SEQUENCE.SEQUENCE_32
+        euler = DirectionEuler(spinning.inertial.convert_to(DirectionType.EULER))
+        euler.sequence = EulerDirectionSequence.SEQUENCE_32
         euler.b = 10.0
         euler.c = 20.0
         spinning.inertial.assign(euler)
@@ -3525,41 +3547,41 @@ class Attitude(TestBase):
         )
 
         # Propagator Initialization
-        Attitude.AG_SAT.set_propagator_type(PROPAGATOR_TYPE.J2_PERTURBATION)
+        Attitude.AG_SAT.set_propagator_type(PropagatorType.J2_PERTURBATION)
         j2prop: "PropagatorJ2Perturbation" = PropagatorJ2Perturbation(Attitude.AG_SAT.propagator)
         j2prop.ephemeris_interval.set_explicit_interval("1 Nov 2000 00:00:00.00", "1 Nov 2000 4:00:00.00")
         j2prop.step = 60
         classical: "OrbitStateClassical" = OrbitStateClassical(
-            j2prop.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CLASSICAL)
+            j2prop.initial_state.representation.convert_to(OrbitStateType.CLASSICAL)
         )
-        classical.coordinate_system_type = COORDINATE_SYSTEM.J2000
+        classical.coordinate_system_type = CoordinateSystem.J2000
         coordsys: "OrbitStateCoordinateSystem" = classical.coordinate_system
         # Epoch was deprecated
         # j2prop.InitialState.Epoch = "1 Nov 2000 02:00:00.00";
         (classical).epoch = "1 Nov 2000 02:00:00.00"
-        classical.size_shape_type = CLASSICAL_SIZE_SHAPE.SEMIMAJOR_AXIS
+        classical.size_shape_type = ClassicalSizeShape.SEMIMAJOR_AXIS
         sizeshape: "ClassicalSizeShapeSemimajorAxis" = ClassicalSizeShapeSemimajorAxis(classical.size_shape)
         sizeshape.semi_major_axis = 7322000.122
-        classical.size_shape_type = CLASSICAL_SIZE_SHAPE.MEAN_MOTION
+        classical.size_shape_type = ClassicalSizeShape.MEAN_MOTION
         sizeshape1: "ClassicalSizeShapeMeanMotion" = ClassicalSizeShapeMeanMotion(classical.size_shape)
         sizeshape1.eccentricity = 0.099
         classical.orientation.inclination = 99.5
         classical.orientation.argument_of_periapsis = 1.2
-        classical.orientation.ascending_node_type = ORIENTATION_ASC_NODE.RIGHT_ASCENSION_ASCENDING_NODE
+        classical.orientation.ascending_node_type = OrientationAscNode.RIGHT_ASCENSION_ASCENDING_NODE
         raan: "OrientationRightAscensionOfAscendingNode" = OrientationRightAscensionOfAscendingNode(
             classical.orientation.ascending_node
         )
         raan.value = 122.2
-        classical.location_type = CLASSICAL_LOCATION.MEAN_ANOMALY
+        classical.location_type = ClassicalLocation.MEAN_ANOMALY
         loc: "ClassicalLocationMeanAnomaly" = ClassicalLocationMeanAnomaly(classical.location)
         loc.value = 22.2
         j2prop.initial_state.representation.assign(classical)
         j2prop.propagate()
 
         # Test Attitude
-        Attitude.AG_SAT.set_attitude_type(VEHICLE_ATTITUDE.STANDARD)
+        Attitude.AG_SAT.set_attitude_type(VehicleAttitude.STANDARD)
         standard: "AttitudeStandardOrbit" = AttitudeStandardOrbit(Attitude.AG_SAT.attitude)
-        standard.basic.set_profile_type(ATTITUDE_PROFILE.SUN_ALIGNMENT_WITH_NADIR_CONSTRAINT)
+        standard.basic.set_profile_type(AttitudeProfile.SUN_ALIGNMENT_WITH_NADIR_CONSTRAINT)
         constraint: "AttitudeProfileAlignmentOffset" = AttitudeProfileAlignmentOffset(standard.basic.profile)
         constraint.alignment_offset = 20.0
         j2prop.propagate()
@@ -3568,9 +3590,9 @@ class Attitude(TestBase):
         TestBase.Application.execute_command("SetAttitude */Satellite/Satellite1 Profile SunNadir 20.0")
         YPRCompare.TakeConnectSnapshot(TestBase.Application)
 
-        Attitude.AG_SAT.set_attitude_type(VEHICLE_ATTITUDE.STANDARD)
+        Attitude.AG_SAT.set_attitude_type(VehicleAttitude.STANDARD)
         standard = AttitudeStandardOrbit(Attitude.AG_SAT.attitude)
-        standard.basic.set_profile_type(ATTITUDE_PROFILE.SUN_ALIGNMENT_WITH_ECLIPTIC_NORMAL_CONSTRAINT)
+        standard.basic.set_profile_type(AttitudeProfile.SUN_ALIGNMENT_WITH_ECLIPTIC_NORMAL_CONSTRAINT)
         constraint = AttitudeProfileAlignmentOffset(standard.basic.profile)
         constraint.alignment_offset = 10.0
 
@@ -3578,9 +3600,9 @@ class Attitude(TestBase):
         TestBase.Application.execute_command("SetAttitudeType */Satellite/Satellite1 SunEcliptic 10.0")
         YPRCompare.TakeConnectSnapshot(TestBase.Application)
 
-        Attitude.AG_SAT.set_attitude_type(VEHICLE_ATTITUDE.STANDARD)
+        Attitude.AG_SAT.set_attitude_type(VehicleAttitude.STANDARD)
         standard = AttitudeStandardOrbit(Attitude.AG_SAT.attitude)
-        standard.basic.set_profile_type(ATTITUDE_PROFILE.SUN_ALIGNMENT_WITH_INERTIAL_Z_AXIS_CONSTRAINT)
+        standard.basic.set_profile_type(AttitudeProfile.SUN_ALIGNMENT_WITH_INERTIAL_Z_AXIS_CONSTRAINT)
         constraint = AttitudeProfileAlignmentOffset(standard.basic.profile)
         constraint.alignment_offset = 10.0
 
@@ -3588,9 +3610,9 @@ class Attitude(TestBase):
         TestBase.Application.execute_command("SetAttitudeType */Satellite/Satellite1 SunEciZ 10.0")
         YPRCompare.TakeConnectSnapshot(TestBase.Application)
 
-        Attitude.AG_SAT.set_attitude_type(VEHICLE_ATTITUDE.STANDARD)
+        Attitude.AG_SAT.set_attitude_type(VehicleAttitude.STANDARD)
         standard = AttitudeStandardOrbit(Attitude.AG_SAT.attitude)
-        standard.basic.set_profile_type(ATTITUDE_PROFILE.SUN_ALIGNMENT_OCCULTATION_NORMAL_CONSTRAINT)
+        standard.basic.set_profile_type(AttitudeProfile.SUN_ALIGNMENT_OCCULTATION_NORMAL_CONSTRAINT)
         constraint = AttitudeProfileAlignmentOffset(standard.basic.profile)
         constraint.alignment_offset = 10.0
 
@@ -3616,40 +3638,40 @@ class Attitude(TestBase):
         )
 
         # Propagator Initialization
-        Attitude.AG_SAT.set_propagator_type(PROPAGATOR_TYPE.J2_PERTURBATION)
+        Attitude.AG_SAT.set_propagator_type(PropagatorType.J2_PERTURBATION)
         j2prop: "PropagatorJ2Perturbation" = PropagatorJ2Perturbation(Attitude.AG_SAT.propagator)
         j2prop.ephemeris_interval.set_explicit_interval("1 Nov 2000 00:00:00.00", "1 Nov 2000 4:00:00.00")
         j2prop.step = 60
         classical: "OrbitStateClassical" = OrbitStateClassical(
-            j2prop.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CLASSICAL)
+            j2prop.initial_state.representation.convert_to(OrbitStateType.CLASSICAL)
         )
-        classical.coordinate_system_type = COORDINATE_SYSTEM.J2000
+        classical.coordinate_system_type = CoordinateSystem.J2000
         coordsys: "OrbitStateCoordinateSystem" = classical.coordinate_system
         # Epoch was deprecated
         # j2prop.InitialState.Epoch = "1 Nov 2000 02:00:00.00";
         (classical).epoch = "1 Nov 2000 02:00:00.00"
-        classical.size_shape_type = CLASSICAL_SIZE_SHAPE.SEMIMAJOR_AXIS
+        classical.size_shape_type = ClassicalSizeShape.SEMIMAJOR_AXIS
         sizeshape: "ClassicalSizeShapeSemimajorAxis" = ClassicalSizeShapeSemimajorAxis(classical.size_shape)
         sizeshape.semi_major_axis = 7322000.122
-        classical.size_shape_type = CLASSICAL_SIZE_SHAPE.MEAN_MOTION
+        classical.size_shape_type = ClassicalSizeShape.MEAN_MOTION
         sizeshape1: "ClassicalSizeShapeMeanMotion" = ClassicalSizeShapeMeanMotion(classical.size_shape)
         sizeshape1.eccentricity = 0.099
         classical.orientation.inclination = 99.5
         classical.orientation.argument_of_periapsis = 1.2
-        classical.orientation.ascending_node_type = ORIENTATION_ASC_NODE.RIGHT_ASCENSION_ASCENDING_NODE
+        classical.orientation.ascending_node_type = OrientationAscNode.RIGHT_ASCENSION_ASCENDING_NODE
         raan: "OrientationRightAscensionOfAscendingNode" = OrientationRightAscensionOfAscendingNode(
             classical.orientation.ascending_node
         )
         raan.value = 122.2
-        classical.location_type = CLASSICAL_LOCATION.MEAN_ANOMALY
+        classical.location_type = ClassicalLocation.MEAN_ANOMALY
         loc: "ClassicalLocationMeanAnomaly" = ClassicalLocationMeanAnomaly(classical.location)
         loc.value = 22.2
         j2prop.initial_state.representation.assign(classical)
 
         # Nadir
-        Attitude.AG_SAT.set_attitude_type(VEHICLE_ATTITUDE.STANDARD)
+        Attitude.AG_SAT.set_attitude_type(VehicleAttitude.STANDARD)
         standard: "AttitudeStandardOrbit" = AttitudeStandardOrbit(Attitude.AG_SAT.attitude)
-        standard.basic.set_profile_type(ATTITUDE_PROFILE.NADIR_ALIGNMENT_WITH_INERTIAL_VELOCITY_CONSTRAINT)
+        standard.basic.set_profile_type(AttitudeProfile.NADIR_ALIGNMENT_WITH_INERTIAL_VELOCITY_CONSTRAINT)
         constraint: "AttitudeProfileConstraintOffset" = AttitudeProfileConstraintOffset(standard.basic.profile)
         constraint.constraint_offset = 20.0
 
@@ -3657,9 +3679,9 @@ class Attitude(TestBase):
         TestBase.Application.execute_command("SetAttitude */Satellite/Satellite1 Profile NadirEciVel 20.0")
         YPRCompare.TakeConnectSnapshot(TestBase.Application)
 
-        Attitude.AG_SAT.set_attitude_type(VEHICLE_ATTITUDE.STANDARD)
+        Attitude.AG_SAT.set_attitude_type(VehicleAttitude.STANDARD)
         standard = AttitudeStandardOrbit(Attitude.AG_SAT.attitude)
-        standard.basic.set_profile_type(ATTITUDE_PROFILE.NADIR_ALIGNMENT_WITH_FIXED_VELOCITY_CONSTRAINT)
+        standard.basic.set_profile_type(AttitudeProfile.NADIR_ALIGNMENT_WITH_FIXED_VELOCITY_CONSTRAINT)
         constraint = AttitudeProfileConstraintOffset(standard.basic.profile)
         constraint.constraint_offset = 10.0
 
@@ -3667,9 +3689,9 @@ class Attitude(TestBase):
         TestBase.Application.execute_command("SetAttitudeType */Satellite/Satellite1 NadirEcfVel 10.0")
         YPRCompare.TakeConnectSnapshot(TestBase.Application)
 
-        Attitude.AG_SAT.set_attitude_type(VEHICLE_ATTITUDE.STANDARD)
+        Attitude.AG_SAT.set_attitude_type(VehicleAttitude.STANDARD)
         standard = AttitudeStandardOrbit(Attitude.AG_SAT.attitude)
-        standard.basic.set_profile_type(ATTITUDE_PROFILE.NADIR_ALIGNMENT_WITH_SUN_CONSTRAINT)
+        standard.basic.set_profile_type(AttitudeProfile.NADIR_ALIGNMENT_WITH_SUN_CONSTRAINT)
         constraint = AttitudeProfileConstraintOffset(standard.basic.profile)
         constraint.constraint_offset = 10.0
         j2prop.propagate()
@@ -3678,9 +3700,9 @@ class Attitude(TestBase):
         TestBase.Application.execute_command("SetAttitudeType */Satellite/Satellite1 NadirSun 10.0")
         YPRCompare.TakeConnectSnapshot(TestBase.Application)
 
-        Attitude.AG_SAT.set_attitude_type(VEHICLE_ATTITUDE.STANDARD)
+        Attitude.AG_SAT.set_attitude_type(VehicleAttitude.STANDARD)
         standard = AttitudeStandardOrbit(Attitude.AG_SAT.attitude)
-        standard.basic.set_profile_type(ATTITUDE_PROFILE.NADIR_ALIGNMENT_WITH_ORBIT_NORMAL_CONSTRAINT)
+        standard.basic.set_profile_type(AttitudeProfile.NADIR_ALIGNMENT_WITH_ORBIT_NORMAL_CONSTRAINT)
         constraint = AttitudeProfileConstraintOffset(standard.basic.profile)
         constraint.constraint_offset = 10.0
 
@@ -3688,9 +3710,9 @@ class Attitude(TestBase):
         TestBase.Application.execute_command("SetAttitudeType */Satellite/Satellite1 NadirOrbit 10.0")
         YPRCompare.TakeConnectSnapshot(TestBase.Application)
 
-        Attitude.AG_SAT.set_attitude_type(VEHICLE_ATTITUDE.STANDARD)
+        Attitude.AG_SAT.set_attitude_type(VehicleAttitude.STANDARD)
         standard = AttitudeStandardOrbit(Attitude.AG_SAT.attitude)
-        standard.basic.set_profile_type(ATTITUDE_PROFILE.INERTIAL_VELOCITY_ALIGNMENT_WITH_NADIR_CONSTRAINT)
+        standard.basic.set_profile_type(AttitudeProfile.INERTIAL_VELOCITY_ALIGNMENT_WITH_NADIR_CONSTRAINT)
         constraint = AttitudeProfileConstraintOffset(standard.basic.profile)
         constraint.constraint_offset = 10.0
         j2prop.propagate()
@@ -3699,9 +3721,9 @@ class Attitude(TestBase):
         TestBase.Application.execute_command("SetAttitudeType */Satellite/Satellite1 EciVelNadir 10.0")
         YPRCompare.TakeConnectSnapshot(TestBase.Application)
 
-        Attitude.AG_SAT.set_attitude_type(VEHICLE_ATTITUDE.STANDARD)
+        Attitude.AG_SAT.set_attitude_type(VehicleAttitude.STANDARD)
         standard = AttitudeStandardOrbit(Attitude.AG_SAT.attitude)
-        standard.basic.set_profile_type(ATTITUDE_PROFILE.FIXED_VELOCITY_ALIGNMENT_WITH_NADIR_CONSTRAINT)
+        standard.basic.set_profile_type(AttitudeProfile.FIXED_VELOCITY_ALIGNMENT_WITH_NADIR_CONSTRAINT)
         constraint = AttitudeProfileConstraintOffset(standard.basic.profile)
         constraint.constraint_offset = 10.0
 
@@ -3717,23 +3739,23 @@ class Attitude(TestBase):
     # BUG76799 [Test]
     def Slew(self):
         fac: "Facility" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "FacSlew"), Facility
+            TestBase.Application.current_scenario.children.new(STKObjectType.FACILITY, "FacSlew"), Facility
         )
         fac.position.assign_geodetic(0.0, 0.0, 0.0)
 
         miss: "Missile" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.MISSILE, "MissSlew"), Missile
+            TestBase.Application.current_scenario.children.new(STKObjectType.MISSILE, "MissSlew"), Missile
         )
-        miss.set_trajectory_type(PROPAGATOR_TYPE.BALLISTIC)
+        miss.set_trajectory_type(PropagatorType.BALLISTIC)
         ballistic: "PropagatorBallistic" = clr.CastAs(miss.trajectory, PropagatorBallistic)
         ballistic.step = 60.0
         ballistic.propagate()
 
-        miss.set_attitude_type(VEHICLE_ATTITUDE.STANDARD)
+        miss.set_attitude_type(VehicleAttitude.STANDARD)
         trajAttStandard: "AttitudeStandardTrajectory" = clr.CastAs(miss.attitude, AttitudeStandardTrajectory)
         trajAttStandard.pointing.use_target_pointing = True
         trajAttStandard.pointing.targets.add("Facility/FacSlew")
-        trajAttStandard.pointing.target_slew.set_slew_mode_type(VEHICLE_SLEW_MODE.FIXED_RATE)
+        trajAttStandard.pointing.target_slew.set_slew_mode_type(VehicleSlewMode.FIXED_RATE)
 
         realtimeCompare = ReportComparison(self.Units)
         # realtimeCompare.AddReport(miss as IStkObject, "\"Attitude Quaternions\" \"1 Jul 1999 00:00:00.00\" \"2 Jul 1999 00:00:00.00\" 60.0");
@@ -3765,20 +3787,20 @@ class Attitude(TestBase):
 
         # Create satellite
         testSat: "Satellite" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "TestSatellite"), Satellite
+            TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "TestSatellite"), Satellite
         )
-        testSat.set_propagator_type(PROPAGATOR_TYPE.TWO_BODY)
+        testSat.set_propagator_type(PropagatorType.TWO_BODY)
         twoBody: "PropagatorTwoBody" = clr.CastAs(testSat.propagator, PropagatorTwoBody)
         twoBody.propagate()
 
         # Configure realtime attitude
-        testSat.set_attitude_type(VEHICLE_ATTITUDE.REAL_TIME)
+        testSat.set_attitude_type(VehicleAttitude.REAL_TIME)
         attitude: "VehicleAttitudeRealTime" = clr.CastAs(testSat.attitude, VehicleAttitudeRealTime)
-        attitude.look_ahead_method = VEHICLE_LOOK_AHEAD_METHOD.HOLD
+        attitude.look_ahead_method = VehicleLookAheadMethod.HOLD
         attitude.duration.look_ahead = 1800
         attitude.duration.look_behind = 1800
         attitude.block_factor = 20
-        attitude.data_reference.set_profile_type(ATTITUDE_PROFILE.FIXED_IN_AXES)
+        attitude.data_reference.set_profile_type(AttitudeProfile.FIXED_IN_AXES)
         profile: "AttitudeProfileFixedInAxes" = clr.CastAs(attitude.data_reference.profile, AttitudeProfileFixedInAxes)
         profile.reference_axes = "CentralBody/Earth Fixed"
         profile.orientation.assign_quaternion(0, 0, 0, 1)
@@ -3898,18 +3920,18 @@ class Pointing(TestBase):
 
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Pointing.AG_SN1.set_pointing_type(SENSOR_POINTING.FIXED_IN_PARENT_BODY_AXES)
+        Pointing.AG_SN1.set_pointing_type(SensorPointing.FIXED_IN_PARENT_BODY_AXES)
         oFixed: "SensorPointingFixed" = SensorPointingFixed(Pointing.AG_SN1.pointing)
         oOrientation: "IOrientation" = oFixed.orientation
-        oAzEl: "IOrientationAzEl" = IOrientationAzEl(oOrientation.convert_to(ORIENTATION_TYPE.AZ_EL))
+        oAzEl: "IOrientationAzEl" = IOrientationAzEl(oOrientation.convert_to(OrientationType.AZ_EL))
         oAzEl.azimuth = 10.0
         oAzEl.elevation = -45.0
         oOrientation.assign(oAzEl)
 
-        Pointing.AG_SN2.set_pointing_type(SENSOR_POINTING.FIXED_IN_PARENT_BODY_AXES)
+        Pointing.AG_SN2.set_pointing_type(SensorPointing.FIXED_IN_PARENT_BODY_AXES)
         oFixed = SensorPointingFixed(Pointing.AG_SN2.pointing)
         oOrientation = oFixed.orientation
-        oAzEl = IOrientationAzEl(oOrientation.convert_to(ORIENTATION_TYPE.AZ_EL))
+        oAzEl = IOrientationAzEl(oOrientation.convert_to(OrientationType.AZ_EL))
         oAzEl.azimuth = 10.0
         oAzEl.elevation = 75.0
         oOrientation.assign(oAzEl)
@@ -3925,23 +3947,23 @@ class Pointing(TestBase):
 
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Pointing.AG_SN1.set_pointing_type(SENSOR_POINTING.FIXED_IN_PARENT_BODY_AXES)
+        Pointing.AG_SN1.set_pointing_type(SensorPointing.FIXED_IN_PARENT_BODY_AXES)
         oFixed = SensorPointingFixed(Pointing.AG_SN1.pointing)
         oOrientation = oFixed.orientation
         oEuler: "IOrientationEulerAngles" = IOrientationEulerAngles(
-            oOrientation.convert_to(ORIENTATION_TYPE.EULER_ANGLES)
+            oOrientation.convert_to(OrientationType.EULER_ANGLES)
         )
-        oEuler.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_321
+        oEuler.sequence = EulerOrientationSequenceType.SEQUENCE_321
         oEuler.a = 90.0
         oEuler.b = 125.0
         oEuler.c = -45.0
         oOrientation.assign(oEuler)
 
-        Pointing.AG_SN2.set_pointing_type(SENSOR_POINTING.FIXED_IN_PARENT_BODY_AXES)
+        Pointing.AG_SN2.set_pointing_type(SensorPointing.FIXED_IN_PARENT_BODY_AXES)
         oFixed = SensorPointingFixed(Pointing.AG_SN2.pointing)
         oOrientation = oFixed.orientation
-        oEuler = IOrientationEulerAngles(oOrientation.convert_to(ORIENTATION_TYPE.EULER_ANGLES))
-        oEuler.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_321
+        oEuler = IOrientationEulerAngles(oOrientation.convert_to(OrientationType.EULER_ANGLES))
+        oEuler.sequence = EulerOrientationSequenceType.SEQUENCE_321
         oEuler.a = 90.0
         oEuler.b = 125.0
         oEuler.c = -125.0
@@ -3958,22 +3980,22 @@ class Pointing(TestBase):
 
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Pointing.AG_SN1.set_pointing_type(SENSOR_POINTING.FIXED_IN_PARENT_BODY_AXES)
+        Pointing.AG_SN1.set_pointing_type(SensorPointing.FIXED_IN_PARENT_BODY_AXES)
         oFixed = SensorPointingFixed(Pointing.AG_SN1.pointing)
         oOrientation = oFixed.orientation
-        oYPR: "IOrientationYPRAngles" = IOrientationYPRAngles(oOrientation.convert_to(ORIENTATION_TYPE.YPR_ANGLES))
-        oYPR.sequence = YPR_ANGLES_SEQUENCE.YPR
+        oYPR: "IOrientationYPRAngles" = IOrientationYPRAngles(oOrientation.convert_to(OrientationType.YPR_ANGLES))
+        oYPR.sequence = YPRAnglesSequence.YPR
         oYPR.yaw = 150.0
         oYPR.pitch = -160.0
         oYPR.roll = 50.0
         oOrientation.assign(oYPR)
 
-        Pointing.AG_SN2.set_pointing_type(SENSOR_POINTING.FIXED_IN_PARENT_BODY_AXES)
+        Pointing.AG_SN2.set_pointing_type(SensorPointing.FIXED_IN_PARENT_BODY_AXES)
         oFixed = SensorPointingFixed(Pointing.AG_SN2.pointing)
         oOrientation = oFixed.orientation
-        oYPR = IOrientationYPRAngles(oOrientation.convert_to(ORIENTATION_TYPE.YPR_ANGLES))
+        oYPR = IOrientationYPRAngles(oOrientation.convert_to(OrientationType.YPR_ANGLES))
 
-        oYPR.sequence = YPR_ANGLES_SEQUENCE.YPR
+        oYPR.sequence = YPRAnglesSequence.YPR
         oYPR.yaw = 150.0
         oYPR.pitch = -60.0
         oYPR.roll = 50.0
@@ -3990,10 +4012,10 @@ class Pointing(TestBase):
 
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Pointing.AG_SN1.set_pointing_type(SENSOR_POINTING.FIXED_IN_PARENT_BODY_AXES)
+        Pointing.AG_SN1.set_pointing_type(SensorPointing.FIXED_IN_PARENT_BODY_AXES)
         oFixed = SensorPointingFixed(Pointing.AG_SN1.pointing)
         oOrientation = oFixed.orientation
-        oQuater: "IOrientationQuaternion" = IOrientationQuaternion(oOrientation.convert_to(ORIENTATION_TYPE.QUATERNION))
+        oQuater: "IOrientationQuaternion" = IOrientationQuaternion(oOrientation.convert_to(OrientationType.QUATERNION))
 
         oQuater.qx = -0.34298
         oQuater.qy = -0.470812
@@ -4001,10 +4023,10 @@ class Pointing(TestBase):
         oQuater.qs = 0.40725
         oOrientation.assign(oQuater)
 
-        Pointing.AG_SN2.set_pointing_type(SENSOR_POINTING.FIXED_IN_PARENT_BODY_AXES)
+        Pointing.AG_SN2.set_pointing_type(SensorPointing.FIXED_IN_PARENT_BODY_AXES)
         oFixed = SensorPointingFixed(Pointing.AG_SN2.pointing)
         oOrientation = oFixed.orientation
-        oQuater = IOrientationQuaternion(oOrientation.convert_to(ORIENTATION_TYPE.QUATERNION))
+        oQuater = IOrientationQuaternion(oOrientation.convert_to(OrientationType.QUATERNION))
 
         oQuater.qx = -0.34298
         oQuater.qy = -0.470812
@@ -4019,24 +4041,24 @@ class Pointing(TestBase):
 
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Pointing.AG_SN1.set_pointing_type(SENSOR_POINTING.FIXED_IN_PARENT_BODY_AXES)
+        Pointing.AG_SN1.set_pointing_type(SensorPointing.FIXED_IN_PARENT_BODY_AXES)
         oFixed = SensorPointingFixed(Pointing.AG_SN1.pointing)
         oOrientation = oFixed.orientation
-        oAzEl = IOrientationAzEl(oOrientation.convert_to(ORIENTATION_TYPE.AZ_EL))
+        oAzEl = IOrientationAzEl(oOrientation.convert_to(OrientationType.AZ_EL))
 
         oAzEl.azimuth = 10.0
         oAzEl.elevation = -45.0
-        oAzEl.about_boresight = AZ_EL_ABOUT_BORESIGHT.ROTATE
+        oAzEl.about_boresight = AzElAboutBoresight.ROTATE
         oOrientation.assign(oAzEl)
 
-        Pointing.AG_SN2.set_pointing_type(SENSOR_POINTING.FIXED_IN_PARENT_BODY_AXES)
+        Pointing.AG_SN2.set_pointing_type(SensorPointing.FIXED_IN_PARENT_BODY_AXES)
         oFixed = SensorPointingFixed(Pointing.AG_SN2.pointing)
         oOrientation = oFixed.orientation
-        oAzEl = IOrientationAzEl(oOrientation.convert_to(ORIENTATION_TYPE.AZ_EL))
+        oAzEl = IOrientationAzEl(oOrientation.convert_to(OrientationType.AZ_EL))
 
         oAzEl.azimuth = 10.0
         oAzEl.elevation = 75.0
-        oAzEl.about_boresight = AZ_EL_ABOUT_BORESIGHT.HOLD
+        oAzEl.about_boresight = AzElAboutBoresight.HOLD
         oOrientation.assign(oAzEl)
 
         CompareUtility.TakeOMSnapshot(TestBase.Application)
@@ -4063,10 +4085,10 @@ class Pointing(TestBase):
             '"Pattern Intersection" "1 Jul 1999 02:30:00.00" "1 Jul 1999 02:30:00.00" 60.0',
         )
 
-        Pointing.AG_SN1.set_pointing_type(SENSOR_POINTING.FIXED_IN_AXES)
+        Pointing.AG_SN1.set_pointing_type(SensorPointing.FIXED_IN_AXES)
         oFixedAxes: "SensorPointingFixedInAxes" = SensorPointingFixedInAxes(Pointing.AG_SN1.pointing)
         quat: "IOrientationQuaternion" = IOrientationQuaternion(
-            oFixedAxes.orientation.convert_to(ORIENTATION_TYPE.QUATERNION)
+            oFixedAxes.orientation.convert_to(OrientationType.QUATERNION)
         )
         quat.qx = -0.34298
         quat.qy = -0.470812
@@ -4075,9 +4097,9 @@ class Pointing(TestBase):
         oFixedAxes.orientation.assign(quat)
         oFixedAxes.reference_axes = "CentralBody/Sun MOJ2000 Axes"
 
-        Pointing.AG_SN2.set_pointing_type(SENSOR_POINTING.FIXED_IN_AXES)
+        Pointing.AG_SN2.set_pointing_type(SensorPointing.FIXED_IN_AXES)
         oFixedAxes = SensorPointingFixedInAxes(Pointing.AG_SN2.pointing)
-        quat = IOrientationQuaternion(oFixedAxes.orientation.convert_to(ORIENTATION_TYPE.QUATERNION))
+        quat = IOrientationQuaternion(oFixedAxes.orientation.convert_to(OrientationType.QUATERNION))
         quat.qx = -0.34298
         quat.qy = -0.470812
         quat.qz = 0.70345
@@ -4122,13 +4144,13 @@ class Pointing(TestBase):
             '"Boresight AzEl" "1 Jul 1999 01:00:00.00" "1 Jul 1999 01:00:00.00" 60.0',
         )
 
-        Pointing.AG_SN1.set_pointing_type(SENSOR_POINTING.SPINNING)
+        Pointing.AG_SN1.set_pointing_type(SensorPointing.SPINNING)
         oSpinning: "SensorPointingSpinning" = SensorPointingSpinning(Pointing.AG_SN1.pointing)
 
         oSpinning.spin_axis_azimuth = 12.34
         oSpinning.spin_axis_elevation = 9.87654321
         oSpinning.spin_axis_cone_angle = 43.21
-        oSpinning.scan_mode = SENSOR_SCAN_MODE.CONTINUOUS
+        oSpinning.scan_mode = SensorScanMode.CONTINUOUS
         self.Units.set_current_unit("AngleUnit", "revs")
         self.Units.set_current_unit("TimeUnit", "min")
         oSpinning.spin_rate = 98.7654321
@@ -4136,13 +4158,13 @@ class Pointing(TestBase):
         self.Units.set_current_unit("TimeUnit", "sec")
         oSpinning.offset_angle = 123.456789
 
-        Pointing.AG_SN2.set_pointing_type(SENSOR_POINTING.SPINNING)
+        Pointing.AG_SN2.set_pointing_type(SensorPointing.SPINNING)
         oSpinning = SensorPointingSpinning(Pointing.AG_SN2.pointing)
 
         oSpinning.spin_axis_azimuth = 12.34
         oSpinning.spin_axis_elevation = 9.87654321
         oSpinning.spin_axis_cone_angle = 43.21
-        oSpinning.scan_mode = SENSOR_SCAN_MODE.CONTINUOUS
+        oSpinning.scan_mode = SensorScanMode.CONTINUOUS
         self.Units.set_current_unit("AngleUnit", "revs")
         self.Units.set_current_unit("TimeUnit", "min")
         oSpinning.spin_rate = 98.7654321
@@ -4161,13 +4183,13 @@ class Pointing(TestBase):
 
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Pointing.AG_SN1.set_pointing_type(SENSOR_POINTING.SPINNING)
+        Pointing.AG_SN1.set_pointing_type(SensorPointing.SPINNING)
         oSpinning = SensorPointingSpinning(Pointing.AG_SN1.pointing)
 
         oSpinning.spin_axis_azimuth = 9.34
         oSpinning.spin_axis_elevation = 8.876543
         oSpinning.spin_axis_cone_angle = 35.21
-        oSpinning.scan_mode = SENSOR_SCAN_MODE.BIDIRECTIONAL
+        oSpinning.scan_mode = SensorScanMode.BIDIRECTIONAL
         oSpinning.clock_angle_start = -100.456789
         oSpinning.clock_angle_stop = 70.456789
         self.Units.set_current_unit("AngleUnit", "revs")
@@ -4177,13 +4199,13 @@ class Pointing(TestBase):
         self.Units.set_current_unit("TimeUnit", "sec")
         oSpinning.offset_angle = 100.456789
 
-        Pointing.AG_SN2.set_pointing_type(SENSOR_POINTING.SPINNING)
+        Pointing.AG_SN2.set_pointing_type(SensorPointing.SPINNING)
         oSpinning = SensorPointingSpinning(Pointing.AG_SN2.pointing)
 
         oSpinning.spin_axis_azimuth = 9.34
         oSpinning.spin_axis_elevation = 8.876543
         oSpinning.spin_axis_cone_angle = 35.21
-        oSpinning.scan_mode = SENSOR_SCAN_MODE.BIDIRECTIONAL
+        oSpinning.scan_mode = SensorScanMode.BIDIRECTIONAL
         oSpinning.clock_angle_start = -100.456789
         oSpinning.clock_angle_stop = 70.456789
         self.Units.set_current_unit("AngleUnit", "revs")
@@ -4230,7 +4252,7 @@ class Pointing(TestBase):
 
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Pointing.AG_SN2.set_pattern_type(SENSOR_PATTERN.SIMPLE_CONIC)
+        Pointing.AG_SN2.set_pattern_type(SensorPattern.SIMPLE_CONIC)
         patterndata: "SensorSimpleConicPattern" = SensorSimpleConicPattern(Pointing.AG_SN2.pattern)
         patterndata.cone_angle = 40.0
 
@@ -4245,16 +4267,16 @@ class Pointing(TestBase):
 
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Pointing.AG_SN1.set_pointing_type(SENSOR_POINTING.TARGETED)
+        Pointing.AG_SN1.set_pointing_type(SensorPointing.TARGETED)
         oTarget: "SensorPointingTargeted" = SensorPointingTargeted(Pointing.AG_SN1.pointing)
-        oTarget.boresight = SENSOR_POINTING_TARGETED_BORESIGHT_TYPE.TRACKING
+        oTarget.boresight = SensorPointingTargetedBoresightType.TRACKING
         oTargetCollection: "SensorTargetCollection" = oTarget.targets
         oTargetCollection.remove_all()
         oTargetCollection.add("*/Satellite/Satellite1")
 
-        Pointing.AG_SN2.set_pointing_type(SENSOR_POINTING.TARGETED)
+        Pointing.AG_SN2.set_pointing_type(SensorPointing.TARGETED)
         oTarget = SensorPointingTargeted(Pointing.AG_SN2.pointing)
-        oTarget.boresight = SENSOR_POINTING_TARGETED_BORESIGHT_TYPE.TRACKING
+        oTarget.boresight = SensorPointingTargetedBoresightType.TRACKING
         oTargetCollection = oTarget.targets
         oTargetCollection.remove_all()
         oTargetCollection.add("*/Facility/Facility1")
@@ -4270,18 +4292,18 @@ class Pointing(TestBase):
 
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Pointing.AG_SN1.set_pointing_type(SENSOR_POINTING.TARGETED)
+        Pointing.AG_SN1.set_pointing_type(SensorPointing.TARGETED)
         oTarget = SensorPointingTargeted(Pointing.AG_SN1.pointing)
-        oTarget.boresight = SENSOR_POINTING_TARGETED_BORESIGHT_TYPE.TRACKING
+        oTarget.boresight = SensorPointingTargetedBoresightType.TRACKING
         oTracking: "SensorPointingTargetedBoresightTrack" = SensorPointingTargetedBoresightTrack(oTarget.boresight_data)
-        oTracking.about_boresight = BORESIGHT_TYPE.LEVEL
+        oTracking.about_boresight = BoresightType.LEVEL
         oTargetCollection = oTarget.targets
 
-        Pointing.AG_SN2.set_pointing_type(SENSOR_POINTING.TARGETED)
+        Pointing.AG_SN2.set_pointing_type(SensorPointing.TARGETED)
         oTarget = SensorPointingTargeted(Pointing.AG_SN2.pointing)
-        oTarget.boresight = SENSOR_POINTING_TARGETED_BORESIGHT_TYPE.TRACKING
+        oTarget.boresight = SensorPointingTargetedBoresightType.TRACKING
         oTracking = SensorPointingTargetedBoresightTrack(oTarget.boresight_data)
-        oTracking.about_boresight = BORESIGHT_TYPE.HOLD
+        oTracking.about_boresight = BoresightType.HOLD
         oTargetCollection = oTarget.targets
 
         CompareUtility.TakeOMSnapshot(TestBase.Application)
@@ -4295,30 +4317,30 @@ class Pointing(TestBase):
 
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Pointing.AG_SN1.set_pointing_type(SENSOR_POINTING.TARGETED)
+        Pointing.AG_SN1.set_pointing_type(SensorPointing.TARGETED)
         oTarget = SensorPointingTargeted(Pointing.AG_SN1.pointing)
-        oTarget.boresight = SENSOR_POINTING_TARGETED_BORESIGHT_TYPE.FIXED
+        oTarget.boresight = SensorPointingTargetedBoresightType.FIXED
         oBrstFixed: "SensorPointingTargetedBoresightFixed" = SensorPointingTargetedBoresightFixed(
             oTarget.boresight_data
         )
         oOrientation: "IOrientation" = oBrstFixed.orientation
-        oAzEl: "IOrientationAzEl" = IOrientationAzEl(oOrientation.convert_to(ORIENTATION_TYPE.AZ_EL))
+        oAzEl: "IOrientationAzEl" = IOrientationAzEl(oOrientation.convert_to(OrientationType.AZ_EL))
 
         oAzEl.azimuth = 12.0
         oAzEl.elevation = -45.0
-        oAzEl.about_boresight = AZ_EL_ABOUT_BORESIGHT.ROTATE
+        oAzEl.about_boresight = AzElAboutBoresight.ROTATE
         oOrientation.assign(oAzEl)
 
-        Pointing.AG_SN2.set_pointing_type(SENSOR_POINTING.TARGETED)
+        Pointing.AG_SN2.set_pointing_type(SensorPointing.TARGETED)
         oTarget = SensorPointingTargeted(Pointing.AG_SN2.pointing)
-        oTarget.boresight = SENSOR_POINTING_TARGETED_BORESIGHT_TYPE.FIXED
+        oTarget.boresight = SensorPointingTargetedBoresightType.FIXED
         oBrstFixed = SensorPointingTargetedBoresightFixed(oTarget.boresight_data)
         oOrientation = oBrstFixed.orientation
-        oAzEl = IOrientationAzEl(oOrientation.convert_to(ORIENTATION_TYPE.AZ_EL))
+        oAzEl = IOrientationAzEl(oOrientation.convert_to(OrientationType.AZ_EL))
 
         oAzEl.azimuth = 10.0
         oAzEl.elevation = 75.0
-        oAzEl.about_boresight = AZ_EL_ABOUT_BORESIGHT.ROTATE
+        oAzEl.about_boresight = AzElAboutBoresight.ROTATE
         oOrientation.assign(oAzEl)
 
         CompareUtility.TakeOMSnapshot(TestBase.Application)
@@ -4332,12 +4354,12 @@ class Pointing(TestBase):
 
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Pointing.AG_SN1.set_pointing_type(SENSOR_POINTING.TARGETED)
+        Pointing.AG_SN1.set_pointing_type(SensorPointing.TARGETED)
         oTarget = SensorPointingTargeted(Pointing.AG_SN1.pointing)
-        oTarget.boresight = SENSOR_POINTING_TARGETED_BORESIGHT_TYPE.FIXED
+        oTarget.boresight = SensorPointingTargetedBoresightType.FIXED
         oBrstFixed = SensorPointingTargetedBoresightFixed(oTarget.boresight_data)
         oOrientation = oBrstFixed.orientation
-        oQuater: "IOrientationQuaternion" = IOrientationQuaternion(oOrientation.convert_to(ORIENTATION_TYPE.QUATERNION))
+        oQuater: "IOrientationQuaternion" = IOrientationQuaternion(oOrientation.convert_to(OrientationType.QUATERNION))
 
         oQuater.qx = -0.34298
         oQuater.qy = -0.470812
@@ -4346,12 +4368,12 @@ class Pointing(TestBase):
         oOrientation.assign(oQuater)
         oTargetCollection = oTarget.targets
 
-        Pointing.AG_SN2.set_pointing_type(SENSOR_POINTING.TARGETED)
+        Pointing.AG_SN2.set_pointing_type(SensorPointing.TARGETED)
         oTarget = SensorPointingTargeted(Pointing.AG_SN2.pointing)
-        oTarget.boresight = SENSOR_POINTING_TARGETED_BORESIGHT_TYPE.FIXED
+        oTarget.boresight = SensorPointingTargetedBoresightType.FIXED
         oBrstFixed = SensorPointingTargetedBoresightFixed(oTarget.boresight_data)
         oOrientation = oBrstFixed.orientation
-        oQuater = IOrientationQuaternion(oOrientation.convert_to(ORIENTATION_TYPE.QUATERNION))
+        oQuater = IOrientationQuaternion(oOrientation.convert_to(OrientationType.QUATERNION))
 
         oQuater.qx = -0.34298
         oQuater.qy = -0.470812
@@ -4371,30 +4393,30 @@ class Pointing(TestBase):
 
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Pointing.AG_SN1.set_pointing_type(SENSOR_POINTING.TARGETED)
+        Pointing.AG_SN1.set_pointing_type(SensorPointing.TARGETED)
         oTarget = SensorPointingTargeted(Pointing.AG_SN1.pointing)
-        oTarget.boresight = SENSOR_POINTING_TARGETED_BORESIGHT_TYPE.FIXED
+        oTarget.boresight = SensorPointingTargetedBoresightType.FIXED
         oBrstFixed = SensorPointingTargetedBoresightFixed(oTarget.boresight_data)
         oOrientation = oBrstFixed.orientation
         oEuler: "IOrientationEulerAngles" = IOrientationEulerAngles(
-            oOrientation.convert_to(ORIENTATION_TYPE.EULER_ANGLES)
+            oOrientation.convert_to(OrientationType.EULER_ANGLES)
         )
 
-        oEuler.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_232
+        oEuler.sequence = EulerOrientationSequenceType.SEQUENCE_232
         oEuler.a = 100.0
         oEuler.b = 130.0
         oEuler.c = -95.0
         oOrientation.assign(oEuler)
         oTargetCollection = oTarget.targets
 
-        Pointing.AG_SN2.set_pointing_type(SENSOR_POINTING.TARGETED)
+        Pointing.AG_SN2.set_pointing_type(SensorPointing.TARGETED)
         oTarget = SensorPointingTargeted(Pointing.AG_SN2.pointing)
-        oTarget.boresight = SENSOR_POINTING_TARGETED_BORESIGHT_TYPE.FIXED
+        oTarget.boresight = SensorPointingTargetedBoresightType.FIXED
         oBrstFixed = SensorPointingTargetedBoresightFixed(oTarget.boresight_data)
         oOrientation = oBrstFixed.orientation
-        oEuler = IOrientationEulerAngles(oOrientation.convert_to(ORIENTATION_TYPE.EULER_ANGLES))
+        oEuler = IOrientationEulerAngles(oOrientation.convert_to(OrientationType.EULER_ANGLES))
 
-        oEuler.sequence = EULER_ORIENTATION_SEQUENCE_TYPE.SEQUENCE_232
+        oEuler.sequence = EulerOrientationSequenceType.SEQUENCE_232
         oEuler.a = 140.0
         oEuler.b = 132.0
         oEuler.c = -141.0
@@ -4412,28 +4434,28 @@ class Pointing(TestBase):
 
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Pointing.AG_SN1.set_pointing_type(SENSOR_POINTING.TARGETED)
+        Pointing.AG_SN1.set_pointing_type(SensorPointing.TARGETED)
         oTarget = SensorPointingTargeted(Pointing.AG_SN1.pointing)
-        oTarget.boresight = SENSOR_POINTING_TARGETED_BORESIGHT_TYPE.FIXED
+        oTarget.boresight = SensorPointingTargetedBoresightType.FIXED
         oBrstFixed = SensorPointingTargetedBoresightFixed(oTarget.boresight_data)
         oOrientation = oBrstFixed.orientation
-        oYPR: "IOrientationYPRAngles" = IOrientationYPRAngles(oOrientation.convert_to(ORIENTATION_TYPE.YPR_ANGLES))
+        oYPR: "IOrientationYPRAngles" = IOrientationYPRAngles(oOrientation.convert_to(OrientationType.YPR_ANGLES))
 
-        oYPR.sequence = YPR_ANGLES_SEQUENCE.RPY
+        oYPR.sequence = YPRAnglesSequence.RPY
         oYPR.yaw = -8.5
         oYPR.pitch = -15.0
         oYPR.roll = 135.0
         oOrientation.assign(oYPR)
         oTargetCollection = oTarget.targets
 
-        Pointing.AG_SN2.set_pointing_type(SENSOR_POINTING.TARGETED)
+        Pointing.AG_SN2.set_pointing_type(SensorPointing.TARGETED)
         oTarget = SensorPointingTargeted(Pointing.AG_SN2.pointing)
-        oTarget.boresight = SENSOR_POINTING_TARGETED_BORESIGHT_TYPE.FIXED
+        oTarget.boresight = SensorPointingTargetedBoresightType.FIXED
         oBrstFixed = SensorPointingTargetedBoresightFixed(oTarget.boresight_data)
         oOrientation = oBrstFixed.orientation
-        oYPR = IOrientationYPRAngles(oOrientation.convert_to(ORIENTATION_TYPE.YPR_ANGLES))
+        oYPR = IOrientationYPRAngles(oOrientation.convert_to(OrientationType.YPR_ANGLES))
 
-        oYPR.sequence = YPR_ANGLES_SEQUENCE.RPY
+        oYPR.sequence = YPRAnglesSequence.RPY
         oYPR.yaw = 116
         oYPR.pitch = 5.68
         oYPR.roll = -71
@@ -4451,29 +4473,29 @@ class Pointing(TestBase):
 
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Pointing.AG_SN1.set_pointing_type(SENSOR_POINTING.TARGETED)
+        Pointing.AG_SN1.set_pointing_type(SensorPointing.TARGETED)
         oTarget = SensorPointingTargeted(Pointing.AG_SN1.pointing)
-        oTarget.boresight = SENSOR_POINTING_TARGETED_BORESIGHT_TYPE.FIXED
+        oTarget.boresight = SensorPointingTargetedBoresightType.FIXED
         oBrstFixed = SensorPointingTargetedBoresightFixed(oTarget.boresight_data)
         oOrientation = oBrstFixed.orientation
-        oAzEl = IOrientationAzEl(oOrientation.convert_to(ORIENTATION_TYPE.AZ_EL))
+        oAzEl = IOrientationAzEl(oOrientation.convert_to(OrientationType.AZ_EL))
 
         oAzEl.azimuth = 12.0
         oAzEl.elevation = -45.0
-        oAzEl.about_boresight = AZ_EL_ABOUT_BORESIGHT.HOLD
+        oAzEl.about_boresight = AzElAboutBoresight.HOLD
         oOrientation.assign(oAzEl)
         oTargetCollection = oTarget.targets
 
-        Pointing.AG_SN2.set_pointing_type(SENSOR_POINTING.TARGETED)
+        Pointing.AG_SN2.set_pointing_type(SensorPointing.TARGETED)
         oTarget = SensorPointingTargeted(Pointing.AG_SN2.pointing)
-        oTarget.boresight = SENSOR_POINTING_TARGETED_BORESIGHT_TYPE.FIXED
+        oTarget.boresight = SensorPointingTargetedBoresightType.FIXED
         oBrstFixed = SensorPointingTargetedBoresightFixed(oTarget.boresight_data)
         oOrientation = oBrstFixed.orientation
-        oAzEl = IOrientationAzEl(oOrientation.convert_to(ORIENTATION_TYPE.AZ_EL))
+        oAzEl = IOrientationAzEl(oOrientation.convert_to(OrientationType.AZ_EL))
 
         oAzEl.azimuth = 10.0
         oAzEl.elevation = 75.0
-        oAzEl.about_boresight = AZ_EL_ABOUT_BORESIGHT.ROTATE
+        oAzEl.about_boresight = AzElAboutBoresight.ROTATE
         oOrientation.assign(oAzEl)
         oTargetCollection = oTarget.targets
 
@@ -4485,12 +4507,12 @@ class Pointing(TestBase):
 
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Pointing.AG_SN2.set_pointing_type(SENSOR_POINTING.TARGETED)
+        Pointing.AG_SN2.set_pointing_type(SensorPointing.TARGETED)
         oTarget = SensorPointingTargeted(Pointing.AG_SN2.pointing)
-        oTarget.boresight = SENSOR_POINTING_TARGETED_BORESIGHT_TYPE.FIXED
+        oTarget.boresight = SensorPointingTargetedBoresightType.FIXED
         oBrstFixed = SensorPointingTargetedBoresightFixed(oTarget.boresight_data)
         oOrientation = oBrstFixed.orientation
-        oAzEl = IOrientationAzEl(oOrientation.convert_to(ORIENTATION_TYPE.AZ_EL))
+        oAzEl = IOrientationAzEl(oOrientation.convert_to(OrientationType.AZ_EL))
 
         oAzEl.azimuth = 0.0
         oAzEl.elevation = 90.0
@@ -4500,11 +4522,11 @@ class Pointing(TestBase):
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         secondSat: "Satellite" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "SecondSat"), Satellite
+            TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "SecondSat"), Satellite
         )
         twoBody: "PropagatorTwoBody" = clr.CastAs(secondSat.propagator, PropagatorTwoBody)
         twoBody.propagate()
-        TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "SecondFac")
+        TestBase.Application.current_scenario.children.new(STKObjectType.FACILITY, "SecondFac")
 
         TestBase.Application.execute_command(
             "Point */Facility/Facility1/Sensor/Sensor1 Targeted AssignTarget Satellite/SecondSat"
@@ -4555,9 +4577,9 @@ class Pointing(TestBase):
 
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Pointing.AG_SN2.set_pointing_type(SENSOR_POINTING.TARGETED)
+        Pointing.AG_SN2.set_pointing_type(SensorPointing.TARGETED)
         oTarget = SensorPointingTargeted(Pointing.AG_SN2.pointing)
-        oTarget.boresight = SENSOR_POINTING_TARGETED_BORESIGHT_TYPE.TRACKING
+        oTarget.boresight = SensorPointingTargetedBoresightType.TRACKING
         oTargetCollection = oTarget.targets
         oTargetCollection.remove_all()
         oTargetCollection.add("*/Facility/Facility1")
@@ -4636,7 +4658,7 @@ class Pointing(TestBase):
 
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Pointing.AG_SN2.set_pattern_type(SENSOR_PATTERN.SIMPLE_CONIC)
+        Pointing.AG_SN2.set_pattern_type(SensorPattern.SIMPLE_CONIC)
         patterndata: "SensorSimpleConicPattern" = SensorSimpleConicPattern(Pointing.AG_SN2.pattern)
         patterndata.cone_angle = 40.0
 
@@ -4646,7 +4668,7 @@ class Pointing(TestBase):
 
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Pointing.AG_SN2.set_pointing_type(SENSOR_POINTING.BORESIGHT_GRAZING_ALTITUDE)
+        Pointing.AG_SN2.set_pointing_type(SensorPointing.BORESIGHT_GRAZING_ALTITUDE)
         oGraze: "SensorPointingGrazingAltitude" = SensorPointingGrazingAltitude(Pointing.AG_SN2.pointing)
         oGraze.azimuth_offset = 127.0
         oGraze.grazing_altitude = 2000.0
@@ -4712,7 +4734,7 @@ class Definition(TestBase):
 
     # region CopyObject
     def test_CopyObject(self):
-        (IStkObject(Definition.AG_SAT)).children.new(STK_OBJECT_TYPE.SENSOR, "SensorIntegrity")
+        (IStkObject(Definition.AG_SAT)).children.new(STKObjectType.SENSOR, "SensorIntegrity")
 
         # Copy Satellite1 with sensor via OM
         satCopy: "IStkObject" = TestBase.Application.current_scenario.children.copy_object(
@@ -4735,32 +4757,32 @@ class Definition(TestBase):
         CompareUtility.AddReport(clr.CastAs(Definition.AG_SAT, IStkObject), '"Mass"')
 
         # Propagator Initialization
-        Definition.AG_SAT.set_propagator_type(PROPAGATOR_TYPE.J2_PERTURBATION)
+        Definition.AG_SAT.set_propagator_type(PropagatorType.J2_PERTURBATION)
         j2prop: "PropagatorJ2Perturbation" = PropagatorJ2Perturbation(Definition.AG_SAT.propagator)
         j2prop.ephemeris_interval.set_explicit_interval("1 Nov 2000 00:00:00.00", "1 Nov 2000 4:00:00.00")
         j2prop.step = 60
         classical: "OrbitStateClassical" = OrbitStateClassical(
-            j2prop.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CLASSICAL)
+            j2prop.initial_state.representation.convert_to(OrbitStateType.CLASSICAL)
         )
-        classical.coordinate_system_type = COORDINATE_SYSTEM.J2000
+        classical.coordinate_system_type = CoordinateSystem.J2000
         coordsys: "OrbitStateCoordinateSystem" = classical.coordinate_system
         # Epoch was deprecated
         # j2prop.InitialState.Epoch = "1 Nov 2000 02:00:00.00";
         (classical).epoch = "1 Nov 2000 02:00:00.00"
-        classical.size_shape_type = CLASSICAL_SIZE_SHAPE.SEMIMAJOR_AXIS
+        classical.size_shape_type = ClassicalSizeShape.SEMIMAJOR_AXIS
         sizeshape: "ClassicalSizeShapeSemimajorAxis" = ClassicalSizeShapeSemimajorAxis(classical.size_shape)
         sizeshape.semi_major_axis = 7322000.122
-        classical.size_shape_type = CLASSICAL_SIZE_SHAPE.MEAN_MOTION
+        classical.size_shape_type = ClassicalSizeShape.MEAN_MOTION
         sizeshape1: "ClassicalSizeShapeMeanMotion" = ClassicalSizeShapeMeanMotion(classical.size_shape)
         sizeshape1.eccentricity = 0.099
         classical.orientation.inclination = 99.5
         classical.orientation.argument_of_periapsis = 1.2
-        classical.orientation.ascending_node_type = ORIENTATION_ASC_NODE.RIGHT_ASCENSION_ASCENDING_NODE
+        classical.orientation.ascending_node_type = OrientationAscNode.RIGHT_ASCENSION_ASCENDING_NODE
         raan: "OrientationRightAscensionOfAscendingNode" = OrientationRightAscensionOfAscendingNode(
             classical.orientation.ascending_node
         )
         raan.value = 122.2
-        classical.location_type = CLASSICAL_LOCATION.MEAN_ANOMALY
+        classical.location_type = ClassicalLocation.MEAN_ANOMALY
         loc: "ClassicalLocationMeanAnomaly" = ClassicalLocationMeanAnomaly(classical.location)
         loc.value = 22.2
         j2prop.initial_state.representation.assign(classical)
@@ -4770,7 +4792,7 @@ class Definition(TestBase):
         TestBase.Application.execute_command("SetPassNumber */Satellite/Satellite1 786")
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Definition.AG_SAT.pass_break.set_pass_numbering_type(VEHICLE_PASS_NUMBERING.FIRST_PASS_NUMBER)
+        Definition.AG_SAT.pass_break.set_pass_numbering_type(VehiclePassNumbering.FIRST_PASS_NUMBER)
         first: "PassBreakNumberingFirstPassNumber" = PassBreakNumberingFirstPassNumber(
             Definition.AG_SAT.pass_break.pass_numbering
         )
@@ -4785,7 +4807,7 @@ class Definition(TestBase):
 
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Definition.AG_SAT.pass_break.set_pass_numbering_type(VEHICLE_PASS_NUMBERING.DATE_OF_FIRST_PASS)
+        Definition.AG_SAT.pass_break.set_pass_numbering_type(VehiclePassNumbering.DATE_OF_FIRST_PASS)
         date: "PassBreakNumberingDateOfFirstPass" = PassBreakNumberingDateOfFirstPass(
             Definition.AG_SAT.pass_break.pass_numbering
         )
@@ -4803,15 +4825,15 @@ class Definition(TestBase):
 
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Definition.AG_SAT.pass_break.definition.direction = VEHICLE_DIRECTION.DESCENDING
-        Definition.AG_SAT.pass_break.definition.set_break_angle_type(VEHICLE_BREAK_ANGLE_TYPE.BY_LATITUDE)
+        Definition.AG_SAT.pass_break.definition.direction = VehicleDirection.DESCENDING
+        Definition.AG_SAT.pass_break.definition.set_break_angle_type(VehicleBreakAngleType.BY_LATITUDE)
         lat: "VehicleBreakAngleBreakByLatitude" = VehicleBreakAngleBreakByLatitude(
             Definition.AG_SAT.pass_break.definition.break_angle
         )
         lat.latitude = 45.0
-        Definition.AG_SAT.pass_break.set_pass_numbering_type(VEHICLE_PASS_NUMBERING.MAINTAIN_PASS_NUMBER)
-        Definition.AG_SAT.pass_break.partial_pass_measurement = VEHICLE_PARTIAL_PASS_MEASUREMENT.ANGLE
-        Definition.AG_SAT.pass_break.coordinate_system = VEHICLE_COORDINATE_SYSTEM.CENTRAL_BODY_FIXED
+        Definition.AG_SAT.pass_break.set_pass_numbering_type(VehiclePassNumbering.MAINTAIN_PASS_NUMBER)
+        Definition.AG_SAT.pass_break.partial_pass_measurement = VehiclePartialPassMeasurement.ANGLE
+        Definition.AG_SAT.pass_break.coordinate_system = VehicleCoordinateSystem.CENTRAL_BODY_FIXED
 
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
@@ -4865,7 +4887,7 @@ class Definition(TestBase):
 
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        geodet: "Geodetic" = Geodetic(pos.convert_to(POSITION_TYPE.GEODETIC))
+        geodet: "Geodetic" = Geodetic(pos.convert_to(PositionType.GEODETIC))
         geodet.latitude = 40.0
         geodet.longitude = -106.0
         geodet.altitude = 10.0
@@ -4877,7 +4899,7 @@ class Definition(TestBase):
 
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        cart: "Cartesian" = Cartesian(pos.convert_to(POSITION_TYPE.CARTESIAN))
+        cart: "Cartesian" = Cartesian(pos.convert_to(PositionType.CARTESIAN))
         cart.x = 0.0
         cart.y = -6400000.0
         cart.z = 0.0
@@ -4889,7 +4911,7 @@ class Definition(TestBase):
 
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        cyl: "Cylindrical" = Cylindrical(pos.convert_to(POSITION_TYPE.CYLINDRICAL))
+        cyl: "Cylindrical" = Cylindrical(pos.convert_to(PositionType.CYLINDRICAL))
         cyl.radius = 6400000.0
         cyl.longitude = 180.0
         cyl.z = -100000.0
@@ -4901,7 +4923,7 @@ class Definition(TestBase):
 
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        sph: "Spherical" = Spherical(pos.convert_to(POSITION_TYPE.SPHERICAL))
+        sph: "Spherical" = Spherical(pos.convert_to(PositionType.SPHERICAL))
         sph.latitude = 90.0
         sph.longitude = -270.0
         sph.radius = 6400000.0
@@ -4913,7 +4935,7 @@ class Definition(TestBase):
 
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        geo: "Geocentric" = Geocentric(pos.convert_to(POSITION_TYPE.GEOCENTRIC))
+        geo: "Geocentric" = Geocentric(pos.convert_to(PositionType.GEOCENTRIC))
         geo.latitude = 0.0
         geo.longitude = -180.0
         geo.altitude = 100.0
@@ -4925,7 +4947,7 @@ class Definition(TestBase):
 
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        geodet = Geodetic(pos.convert_to(POSITION_TYPE.GEODETIC))
+        geodet = Geodetic(pos.convert_to(PositionType.GEODETIC))
         geodet.latitude = 40.0
         geodet.longitude = -106.0
         geodet.altitude = 10.0
@@ -4937,7 +4959,7 @@ class Definition(TestBase):
 
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        geodet = Geodetic(pos.convert_to(POSITION_TYPE.GEODETIC))
+        geodet = Geodetic(pos.convert_to(PositionType.GEODETIC))
         geodet.latitude = 40.0
         geodet.longitude = -106.0
         Definition.AG_FA.use_terrain = True
@@ -4950,7 +4972,7 @@ class Definition(TestBase):
 
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        geo = Geocentric(pos.convert_to(POSITION_TYPE.GEOCENTRIC))
+        geo = Geocentric(pos.convert_to(PositionType.GEOCENTRIC))
         geo.latitude = 0.0
         geo.longitude = -180.0
         Definition.AG_FA.use_terrain = True
@@ -4962,7 +4984,7 @@ class Definition(TestBase):
 
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        sph = Spherical(pos.convert_to(POSITION_TYPE.SPHERICAL))
+        sph = Spherical(pos.convert_to(PositionType.SPHERICAL))
         sph.latitude = 90.0
         sph.longitude = -270.0
         Definition.AG_FA.use_terrain = True
@@ -4975,7 +4997,7 @@ class Definition(TestBase):
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
         Definition.AG_FA.use_terrain = False
-        geodet = Geodetic(pos.convert_to(POSITION_TYPE.GEODETIC))
+        geodet = Geodetic(pos.convert_to(PositionType.GEODETIC))
         geodet.latitude = 40.0
         geodet.longitude = -106.0
         geodet.altitude = 0.0
@@ -5014,13 +5036,13 @@ class Definition(TestBase):
 
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        (IStkObject(Definition.AG_SC)).children.new(STK_OBJECT_TYPE.FACILITY, "TestFacility")
-        (IStkObject(Definition.AG_SC)).children.new(STK_OBJECT_TYPE.SHIP, "TestShip")
+        (IStkObject(Definition.AG_SC)).children.new(STKObjectType.FACILITY, "TestFacility")
+        (IStkObject(Definition.AG_SC)).children.new(STKObjectType.SHIP, "TestShip")
 
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
-        (IStkObject(Definition.AG_SC)).children.unload(STK_OBJECT_TYPE.FACILITY, "TestFacility")
-        (IStkObject(Definition.AG_SC)).children.unload(STK_OBJECT_TYPE.SHIP, "TestShip")
+        (IStkObject(Definition.AG_SC)).children.unload(STKObjectType.FACILITY, "TestFacility")
+        (IStkObject(Definition.AG_SC)).children.unload(STKObjectType.SHIP, "TestShip")
 
         CompareUtility.TakeOMSnapshot(TestBase.Application)
         CompareUtility.CompareReportSnapshots()
@@ -5039,7 +5061,7 @@ class Definition(TestBase):
 
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Definition.AG_AT.area_type = AREA_TYPE.ELLIPSE
+        Definition.AG_AT.area_type = AreaType.ELLIPSE
         ellipse: "AreaTypeEllipse" = AreaTypeEllipse(Definition.AG_AT.area_type_data)
         ellipse.semi_minor_axis = 50.0
         ellipse.bearing = 45.0
@@ -5053,7 +5075,7 @@ class Definition(TestBase):
 
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Definition.AG_AT.area_type = AREA_TYPE.PATTERN
+        Definition.AG_AT.area_type = AreaType.PATTERN
         patterns: "AreaTypePatternCollection" = AreaTypePatternCollection(Definition.AG_AT.area_type_data)
         patterns.remove_all()
         patterns.add(20.0, -10.0)
@@ -5071,7 +5093,7 @@ class Definition(TestBase):
 
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        geodet: "Geodetic" = Geodetic(pos.convert_to(POSITION_TYPE.GEODETIC))
+        geodet: "Geodetic" = Geodetic(pos.convert_to(PositionType.GEODETIC))
         geodet.latitude = 40.0
         geodet.longitude = -106.0
         geodet.altitude = 10.0
@@ -5083,7 +5105,7 @@ class Definition(TestBase):
 
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        cart: "Cartesian" = Cartesian(pos.convert_to(POSITION_TYPE.CARTESIAN))
+        cart: "Cartesian" = Cartesian(pos.convert_to(PositionType.CARTESIAN))
         cart.x = 0.0
         cart.y = -6400000.0
         cart.z = 0.0
@@ -5097,7 +5119,7 @@ class Definition(TestBase):
 
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        cyl: "Cylindrical" = Cylindrical(pos.convert_to(POSITION_TYPE.CYLINDRICAL))
+        cyl: "Cylindrical" = Cylindrical(pos.convert_to(PositionType.CYLINDRICAL))
         cyl.radius = 6400000.0
         cyl.longitude = 180.0
         cyl.z = -100000.0
@@ -5109,7 +5131,7 @@ class Definition(TestBase):
 
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        sph: "Spherical" = Spherical(pos.convert_to(POSITION_TYPE.SPHERICAL))
+        sph: "Spherical" = Spherical(pos.convert_to(PositionType.SPHERICAL))
         sph.latitude = 90.0
         sph.longitude = -270.0
         sph.radius = 6400000.0
@@ -5121,7 +5143,7 @@ class Definition(TestBase):
 
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        geo: "Geocentric" = Geocentric(pos.convert_to(POSITION_TYPE.GEOCENTRIC))
+        geo: "Geocentric" = Geocentric(pos.convert_to(PositionType.GEOCENTRIC))
         geo.latitude = 0.0
         geo.longitude = -180.0
         geo.altitude = 100.0
@@ -5133,7 +5155,7 @@ class Definition(TestBase):
 
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        geodet = Geodetic(pos.convert_to(POSITION_TYPE.GEODETIC))
+        geodet = Geodetic(pos.convert_to(PositionType.GEODETIC))
         geodet.latitude = 40.0
         geodet.longitude = -106.0
         geodet.altitude = 10.0
@@ -5145,7 +5167,7 @@ class Definition(TestBase):
 
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        geodet = Geodetic(pos.convert_to(POSITION_TYPE.GEODETIC))
+        geodet = Geodetic(pos.convert_to(PositionType.GEODETIC))
         geodet.latitude = 40.0
         geodet.longitude = -106.0
         Definition.AG_AT.use_terrain_data = True
@@ -5158,7 +5180,7 @@ class Definition(TestBase):
 
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        geo = Geocentric(pos.convert_to(POSITION_TYPE.GEOCENTRIC))
+        geo = Geocentric(pos.convert_to(PositionType.GEOCENTRIC))
         geo.latitude = 0.0
         geo.longitude = -180.0
         Definition.AG_AT.use_terrain_data = True
@@ -5171,7 +5193,7 @@ class Definition(TestBase):
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
         Definition.AG_AT.use_terrain_data = False
-        geodet = Geodetic(pos.convert_to(POSITION_TYPE.GEODETIC))
+        geodet = Geodetic(pos.convert_to(PositionType.GEODETIC))
         geodet.latitude = 40.0
         geodet.longitude = -106.0
         geodet.altitude = 0.0
@@ -5208,7 +5230,7 @@ class Definition(TestBase):
 
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        geodet: "Geodetic" = Geodetic(pos.convert_to(POSITION_TYPE.GEODETIC))
+        geodet: "Geodetic" = Geodetic(pos.convert_to(PositionType.GEODETIC))
         geodet.latitude = 40.0
         geodet.longitude = -106.0
         geodet.altitude = 10.0
@@ -5220,7 +5242,7 @@ class Definition(TestBase):
 
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        cart: "Cartesian" = Cartesian(pos.convert_to(POSITION_TYPE.CARTESIAN))
+        cart: "Cartesian" = Cartesian(pos.convert_to(PositionType.CARTESIAN))
         cart.x = 0.0
         cart.y = -6400000.0
         cart.z = 0.0
@@ -5232,7 +5254,7 @@ class Definition(TestBase):
 
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        cyl: "Cylindrical" = Cylindrical(pos.convert_to(POSITION_TYPE.CYLINDRICAL))
+        cyl: "Cylindrical" = Cylindrical(pos.convert_to(PositionType.CYLINDRICAL))
         cyl.radius = 6400000.0
         cyl.longitude = 180.0
         cyl.z = -100000.0
@@ -5244,7 +5266,7 @@ class Definition(TestBase):
 
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        sph: "Spherical" = Spherical(pos.convert_to(POSITION_TYPE.SPHERICAL))
+        sph: "Spherical" = Spherical(pos.convert_to(PositionType.SPHERICAL))
         sph.latitude = 90.0
         sph.longitude = -270.0
         sph.radius = 6400000.0
@@ -5256,7 +5278,7 @@ class Definition(TestBase):
 
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        geo: "Geocentric" = Geocentric(pos.convert_to(POSITION_TYPE.GEOCENTRIC))
+        geo: "Geocentric" = Geocentric(pos.convert_to(PositionType.GEOCENTRIC))
         geo.latitude = 0.0
         geo.longitude = -180.0
         geo.altitude = 100.0
@@ -5268,7 +5290,7 @@ class Definition(TestBase):
 
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        geodet = Geodetic(pos.convert_to(POSITION_TYPE.GEODETIC))
+        geodet = Geodetic(pos.convert_to(PositionType.GEODETIC))
         geodet.latitude = 40.0
         geodet.longitude = -106.0
         geodet.altitude = 10.0
@@ -5280,7 +5302,7 @@ class Definition(TestBase):
 
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        geodet = Geodetic(pos.convert_to(POSITION_TYPE.GEODETIC))
+        geodet = Geodetic(pos.convert_to(PositionType.GEODETIC))
         geodet.latitude = 40.0
         geodet.longitude = -106.0
         Definition.AG_TA.use_terrain = True
@@ -5293,7 +5315,7 @@ class Definition(TestBase):
 
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        geo = Geocentric(pos.convert_to(POSITION_TYPE.GEOCENTRIC))
+        geo = Geocentric(pos.convert_to(PositionType.GEOCENTRIC))
         geo.latitude = 0.0
         geo.longitude = -180.0
         Definition.AG_TA.use_terrain = True
@@ -5305,7 +5327,7 @@ class Definition(TestBase):
 
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        sph = Spherical(pos.convert_to(POSITION_TYPE.SPHERICAL))
+        sph = Spherical(pos.convert_to(PositionType.SPHERICAL))
         sph.latitude = 90.0
         sph.longitude = -270.0
         Definition.AG_TA.use_terrain = True
@@ -5318,7 +5340,7 @@ class Definition(TestBase):
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
         Definition.AG_TA.use_terrain = False
-        geodet = Geodetic(pos.convert_to(POSITION_TYPE.GEODETIC))
+        geodet = Geodetic(pos.convert_to(PositionType.GEODETIC))
         geodet.latitude = 40.0
         geodet.longitude = -106.0
         geodet.altitude = 0.0
@@ -5345,9 +5367,9 @@ class Definition(TestBase):
         TestBase.Application.execute_command("Define */Planet/Planet1 JPLDEFile Mercury")
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Definition.AG_PL.position_source = PLANET_POSITION_SOURCE_TYPE.CENTRAL_BODY
+        Definition.AG_PL.position_source = PlanetPositionSourceType.CENTRAL_BODY
         body.central_body = "Mercury"
-        ephemSource: "EPHEM_SOURCE_TYPE" = EPHEM_SOURCE_TYPE.JPL_DEVELOPMENTAL_EPHEMERIS
+        ephemSource: "EphemSourceType" = EphemSourceType.JPL_DEVELOPMENTAL_EPHEMERIS
         body.ephemeris_source = ephemSource
 
         CompareUtility.TakeOMSnapshot(TestBase.Application)
@@ -5355,7 +5377,7 @@ class Definition(TestBase):
         TestBase.Application.execute_command("Define */Planet/Planet1 JPLDEFile Venus")
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Definition.AG_PL.position_source = PLANET_POSITION_SOURCE_TYPE.CENTRAL_BODY
+        Definition.AG_PL.position_source = PlanetPositionSourceType.CENTRAL_BODY
         body.central_body = "Venus"
         body.ephemeris_source = ephemSource
         CompareUtility.TakeOMSnapshot(TestBase.Application)
@@ -5363,7 +5385,7 @@ class Definition(TestBase):
         TestBase.Application.execute_command("Define */Planet/Planet1 JPLDEFile Earth")
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Definition.AG_PL.position_source = PLANET_POSITION_SOURCE_TYPE.CENTRAL_BODY
+        Definition.AG_PL.position_source = PlanetPositionSourceType.CENTRAL_BODY
         body.central_body = "Earth"
         body.ephemeris_source = ephemSource
         CompareUtility.TakeOMSnapshot(TestBase.Application)
@@ -5371,7 +5393,7 @@ class Definition(TestBase):
         TestBase.Application.execute_command("Define */Planet/Planet1 CentralBody Mars JPL")
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Definition.AG_PL.position_source = PLANET_POSITION_SOURCE_TYPE.CENTRAL_BODY
+        Definition.AG_PL.position_source = PlanetPositionSourceType.CENTRAL_BODY
         body.central_body = "Mars"
         body.ephemeris_source = ephemSource
         CompareUtility.TakeOMSnapshot(TestBase.Application)
@@ -5379,7 +5401,7 @@ class Definition(TestBase):
         TestBase.Application.execute_command("Define */Planet/Planet1 JPLDEFile Jupiter")
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Definition.AG_PL.position_source = PLANET_POSITION_SOURCE_TYPE.CENTRAL_BODY
+        Definition.AG_PL.position_source = PlanetPositionSourceType.CENTRAL_BODY
         body.central_body = "Jupiter"
         body.ephemeris_source = ephemSource
         CompareUtility.TakeOMSnapshot(TestBase.Application)
@@ -5387,7 +5409,7 @@ class Definition(TestBase):
         TestBase.Application.execute_command("Define */Planet/Planet1 JPLDEFile Saturn")
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Definition.AG_PL.position_source = PLANET_POSITION_SOURCE_TYPE.CENTRAL_BODY
+        Definition.AG_PL.position_source = PlanetPositionSourceType.CENTRAL_BODY
         body.central_body = "Saturn"
         body.ephemeris_source = ephemSource
         CompareUtility.TakeOMSnapshot(TestBase.Application)
@@ -5395,7 +5417,7 @@ class Definition(TestBase):
         TestBase.Application.execute_command("Define */Planet/Planet1 JPLDEFile Neptune")
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Definition.AG_PL.position_source = PLANET_POSITION_SOURCE_TYPE.CENTRAL_BODY
+        Definition.AG_PL.position_source = PlanetPositionSourceType.CENTRAL_BODY
         body.central_body = "Neptune"
         body.ephemeris_source = ephemSource
         CompareUtility.TakeOMSnapshot(TestBase.Application)
@@ -5403,7 +5425,7 @@ class Definition(TestBase):
         TestBase.Application.execute_command("Define */Planet/Planet1 JPLDEFile Uranus")
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Definition.AG_PL.position_source = PLANET_POSITION_SOURCE_TYPE.CENTRAL_BODY
+        Definition.AG_PL.position_source = PlanetPositionSourceType.CENTRAL_BODY
         body.central_body = "Uranus"
         body.ephemeris_source = ephemSource
         CompareUtility.TakeOMSnapshot(TestBase.Application)
@@ -5411,7 +5433,7 @@ class Definition(TestBase):
         TestBase.Application.execute_command("Define */Planet/Planet1 JPLDEFile Pluto")
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Definition.AG_PL.position_source = PLANET_POSITION_SOURCE_TYPE.CENTRAL_BODY
+        Definition.AG_PL.position_source = PlanetPositionSourceType.CENTRAL_BODY
         body.central_body = "Pluto"
         body.ephemeris_source = ephemSource
         CompareUtility.TakeOMSnapshot(TestBase.Application)
@@ -5419,7 +5441,7 @@ class Definition(TestBase):
         TestBase.Application.execute_command("Define */Planet/Planet1 JPLDEFile Moon")
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Definition.AG_PL.position_source = PLANET_POSITION_SOURCE_TYPE.CENTRAL_BODY
+        Definition.AG_PL.position_source = PlanetPositionSourceType.CENTRAL_BODY
         body.central_body = "Moon"
         body.ephemeris_source = ephemSource
         CompareUtility.TakeOMSnapshot(TestBase.Application)
@@ -5427,7 +5449,7 @@ class Definition(TestBase):
         TestBase.Application.execute_command("Define */Planet/Planet1 JPLDEFile Sun")
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Definition.AG_PL.position_source = PLANET_POSITION_SOURCE_TYPE.CENTRAL_BODY
+        Definition.AG_PL.position_source = PlanetPositionSourceType.CENTRAL_BODY
         body.central_body = "Sun"
         body.ephemeris_source = ephemSource
         CompareUtility.TakeOMSnapshot(TestBase.Application)
@@ -5435,80 +5457,80 @@ class Definition(TestBase):
         TestBase.Application.execute_command("Define */Planet/Planet1 CentralBody Mercury Analytic")
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Definition.AG_PL.position_source = PLANET_POSITION_SOURCE_TYPE.CENTRAL_BODY
+        Definition.AG_PL.position_source = PlanetPositionSourceType.CENTRAL_BODY
         body.central_body = "Mercury"
-        body.ephemeris_source = EPHEM_SOURCE_TYPE.ANALYTIC
+        body.ephemeris_source = EphemSourceType.ANALYTIC
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command("Define */Planet/Planet1 CentralBody Venus Analytic")
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Definition.AG_PL.position_source = PLANET_POSITION_SOURCE_TYPE.CENTRAL_BODY
+        Definition.AG_PL.position_source = PlanetPositionSourceType.CENTRAL_BODY
         body.central_body = "Venus"
-        body.ephemeris_source = EPHEM_SOURCE_TYPE.ANALYTIC
+        body.ephemeris_source = EphemSourceType.ANALYTIC
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command("Define */Planet/Planet1 CentralBody Mars Analytic")
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Definition.AG_PL.position_source = PLANET_POSITION_SOURCE_TYPE.CENTRAL_BODY
+        Definition.AG_PL.position_source = PlanetPositionSourceType.CENTRAL_BODY
         body.central_body = "Mars"
-        body.ephemeris_source = EPHEM_SOURCE_TYPE.ANALYTIC
+        body.ephemeris_source = EphemSourceType.ANALYTIC
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command("Define */Planet/Planet1 CentralBody Jupiter Analytic")
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Definition.AG_PL.position_source = PLANET_POSITION_SOURCE_TYPE.CENTRAL_BODY
+        Definition.AG_PL.position_source = PlanetPositionSourceType.CENTRAL_BODY
         body.central_body = "Jupiter"
-        body.ephemeris_source = EPHEM_SOURCE_TYPE.ANALYTIC
+        body.ephemeris_source = EphemSourceType.ANALYTIC
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command("Define */Planet/Planet1 CentralBody Saturn Analytic")
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Definition.AG_PL.position_source = PLANET_POSITION_SOURCE_TYPE.CENTRAL_BODY
+        Definition.AG_PL.position_source = PlanetPositionSourceType.CENTRAL_BODY
         body.central_body = "Saturn"
-        body.ephemeris_source = EPHEM_SOURCE_TYPE.ANALYTIC
+        body.ephemeris_source = EphemSourceType.ANALYTIC
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command("Define */Planet/Planet1 CentralBody Neptune Analytic")
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Definition.AG_PL.position_source = PLANET_POSITION_SOURCE_TYPE.CENTRAL_BODY
+        Definition.AG_PL.position_source = PlanetPositionSourceType.CENTRAL_BODY
         body.central_body = "Neptune"
-        body.ephemeris_source = EPHEM_SOURCE_TYPE.ANALYTIC
+        body.ephemeris_source = EphemSourceType.ANALYTIC
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command("Define */Planet/Planet1 CentralBody Uranus Analytic")
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Definition.AG_PL.position_source = PLANET_POSITION_SOURCE_TYPE.CENTRAL_BODY
+        Definition.AG_PL.position_source = PlanetPositionSourceType.CENTRAL_BODY
         body.central_body = "Uranus"
-        body.ephemeris_source = EPHEM_SOURCE_TYPE.ANALYTIC
+        body.ephemeris_source = EphemSourceType.ANALYTIC
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command("Define */Planet/Planet1 CentralBody Pluto Analytic")
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Definition.AG_PL.position_source = PLANET_POSITION_SOURCE_TYPE.CENTRAL_BODY
+        Definition.AG_PL.position_source = PlanetPositionSourceType.CENTRAL_BODY
         body.central_body = "Pluto"
-        body.ephemeris_source = EPHEM_SOURCE_TYPE.ANALYTIC
+        body.ephemeris_source = EphemSourceType.ANALYTIC
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command("Define */Planet/Planet1 CentralBody Sun Default")
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Definition.AG_PL.position_source = PLANET_POSITION_SOURCE_TYPE.CENTRAL_BODY
+        Definition.AG_PL.position_source = PlanetPositionSourceType.CENTRAL_BODY
         body.central_body = "Sun"
-        body.ephemeris_source = EPHEM_SOURCE_TYPE.DEFAULT
+        body.ephemeris_source = EphemSourceType.DEFAULT
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         strPath: str = TestBase.GetScenarioFile("Venus.pe")
         TestBase.Application.execute_command((('Define */Planet/Planet1 File "' + strPath) + '"'))
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Definition.AG_PL.position_source = PLANET_POSITION_SOURCE_TYPE.FILE
+        Definition.AG_PL.position_source = PlanetPositionSourceType.FILE
         file: "PlanetPositionFile" = PlanetPositionFile(Definition.AG_PL.position_source_data)
         file.filename = strPath
         CompareUtility.TakeOMSnapshot(TestBase.Application)
@@ -5559,11 +5581,11 @@ class Definition(TestBase):
 
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Definition.AG_SN1.set_pattern_type(SENSOR_PATTERN.SIMPLE_CONIC)
+        Definition.AG_SN1.set_pattern_type(SensorPattern.SIMPLE_CONIC)
         patterndata: "SensorSimpleConicPattern" = SensorSimpleConicPattern(Definition.AG_SN1.pattern)
         patterndata.cone_angle = 80.0
 
-        Definition.AG_SN2.set_pattern_type(SENSOR_PATTERN.SIMPLE_CONIC)
+        Definition.AG_SN2.set_pattern_type(SensorPattern.SIMPLE_CONIC)
         patterndata = SensorSimpleConicPattern(Definition.AG_SN2.pattern)
         patterndata.cone_angle = 80.0
 
@@ -5576,14 +5598,14 @@ class Definition(TestBase):
 
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Definition.AG_SN1.set_pattern_type(SENSOR_PATTERN.COMPLEX_CONIC)
+        Definition.AG_SN1.set_pattern_type(SensorPattern.COMPLEX_CONIC)
         patterndata1: "SensorComplexConicPattern" = SensorComplexConicPattern(Definition.AG_SN1.pattern)
         patterndata1.inner_cone_half_angle = 10.0
         patterndata1.outer_cone_half_angle = 70.0
         patterndata1.minimum_clock_angle = 20.0
         patterndata1.maximum_clock_angle = 220.0
 
-        Definition.AG_SN2.set_pattern_type(SENSOR_PATTERN.COMPLEX_CONIC)
+        Definition.AG_SN2.set_pattern_type(SensorPattern.COMPLEX_CONIC)
         patterndata1 = SensorComplexConicPattern(Definition.AG_SN2.pattern)
         patterndata1.inner_cone_half_angle = 10.0
         patterndata1.outer_cone_half_angle = 70.0
@@ -5597,12 +5619,12 @@ class Definition(TestBase):
 
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Definition.AG_SN1.set_pattern_type(SENSOR_PATTERN.HALF_POWER)
+        Definition.AG_SN1.set_pattern_type(SensorPattern.HALF_POWER)
         patterndata2: "SensorHalfPowerPattern" = SensorHalfPowerPattern(Definition.AG_SN1.pattern)
         patterndata2.frequency = 12.5
         patterndata2.antenna_diameter = 3.4
 
-        Definition.AG_SN2.set_pattern_type(SENSOR_PATTERN.HALF_POWER)
+        Definition.AG_SN2.set_pattern_type(SensorPattern.HALF_POWER)
         patterndata2 = SensorHalfPowerPattern(Definition.AG_SN2.pattern)
         patterndata2.frequency = 12.5
         patterndata2.antenna_diameter = 3.4
@@ -5614,12 +5636,12 @@ class Definition(TestBase):
 
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Definition.AG_SN1.set_pattern_type(SENSOR_PATTERN.RECTANGULAR)
+        Definition.AG_SN1.set_pattern_type(SensorPattern.RECTANGULAR)
         patterndata3: "SensorRectangularPattern" = SensorRectangularPattern(Definition.AG_SN1.pattern)
         patterndata3.vertical_half_angle = 30.0
         patterndata3.horizontal_half_angle = 40.0
 
-        Definition.AG_SN2.set_pattern_type(SENSOR_PATTERN.RECTANGULAR)
+        Definition.AG_SN2.set_pattern_type(SensorPattern.RECTANGULAR)
         patterndata3 = SensorRectangularPattern(Definition.AG_SN2.pattern)
         patterndata3.vertical_half_angle = 30.0
         patterndata3.horizontal_half_angle = 40.0
@@ -5634,11 +5656,11 @@ class Definition(TestBase):
 
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Definition.AG_SN1.set_pattern_type(SENSOR_PATTERN.CUSTOM)
+        Definition.AG_SN1.set_pattern_type(SensorPattern.CUSTOM)
         patterndata4: "SensorCustomPattern" = SensorCustomPattern(Definition.AG_SN1.pattern)
         patterndata4.filename = strPath
 
-        Definition.AG_SN2.set_pattern_type(SENSOR_PATTERN.CUSTOM)
+        Definition.AG_SN2.set_pattern_type(SensorPattern.CUSTOM)
         patterndata4 = SensorCustomPattern(Definition.AG_SN2.pattern)
         patterndata4.filename = strPath
 
@@ -5650,7 +5672,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Definition.AG_SN1.set_pattern_type(SENSOR_PATTERN.SAR)
+        Definition.AG_SN1.set_pattern_type(SensorPattern.SAR)
         patterndata5: "SensorSARPattern" = SensorSARPattern(Definition.AG_SN1.pattern)
         patterndata5.minimum_elevation_angle = 10.0
         patterndata5.maximum_elevation_angle = 60.0
@@ -5658,7 +5680,7 @@ class Definition(TestBase):
         patterndata5.aft_exclusion_angle = 30.0
         patterndata5.parent_altitude = 700.0
 
-        Definition.AG_SN2.set_pattern_type(SENSOR_PATTERN.SAR)
+        Definition.AG_SN2.set_pattern_type(SensorPattern.SAR)
         patterndata5 = SensorSARPattern(Definition.AG_SN2.pattern)
         patterndata5.minimum_elevation_angle = 10.0
         patterndata5.maximum_elevation_angle = 60.0
@@ -5741,24 +5763,24 @@ class Definition(TestBase):
         TestBase.Application.close_scenario()
         TestBase.Application.load_scenario(TestBase.GetScenarioFile("ChainTest", "ChainTest.sc"))
 
-        TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.CHAIN, "MolnyaChain")
+        TestBase.Application.current_scenario.children.new(STKObjectType.CHAIN, "MolnyaChain")
         oJeffChain: "Chain" = Chain(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.CHAIN, "JeffChain")
+            TestBase.Application.current_scenario.children.new(STKObjectType.CHAIN, "JeffChain")
         )
-        TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "JeffSAT")
+        TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "JeffSAT")
 
         oJeffChain.objects.add("Satellite/JeffSAT")
         oJeffChain.recompute_automatically = True
         oJeffChain.recompute_automatically = False
-        oJeffChain.set_time_period_type(CHAIN_TIME_PERIOD_TYPE.OBJECT_TIME_PERIODS)
-        oJeffChain.set_time_period_type(CHAIN_TIME_PERIOD_TYPE.SCENARIO_TIME_PERIOD)
-        oJeffChain.set_time_period_type(CHAIN_TIME_PERIOD_TYPE.SPECIFIED_TIME_PERIOD)
+        oJeffChain.set_time_period_type(ChainTimePeriodType.OBJECT_TIME_PERIODS)
+        oJeffChain.set_time_period_type(ChainTimePeriodType.SCENARIO_TIME_PERIOD)
+        oJeffChain.set_time_period_type(ChainTimePeriodType.SPECIFIED_TIME_PERIOD)
         oUser: "ChainUserSpecifiedTimePeriod" = ChainUserSpecifiedTimePeriod(oJeffChain.time_period)
         oUser.time_interval.set_explicit_interval("1 Jun 2002 12:00:00.00", "2 Jun 2002 12:00:00.00")
         oJeffChain.objects.remove_name("Satellite/JeffSAT")
 
         oJeffCon: "Constellation" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.CONSTELLATION, "JeffCon"), Constellation
+            TestBase.Application.current_scenario.children.new(STKObjectType.CONSTELLATION, "JeffCon"), Constellation
         )
         oJeffCon.objects.add("Planet/Jupiter")
         oJeffCon.objects.add("Satellite/Molnya")
@@ -5868,8 +5890,8 @@ class Definition(TestBase):
         TestBase.Application.close_scenario()
         TestBase.Application.load_scenario(TestBase.GetScenarioFile("ChainV2Test", "ChainV2Scenario.sc"))
         constSat = Constellation(TestBase.Application.current_scenario.children["ConstSat"])
-        constSat.constraints.set_from_restriction_type(CONSTELLATION_CONSTRAINT_RESTRICTION.ANY_OF)
-        constSat.constraints.set_to_restriction_type(CONSTELLATION_CONSTRAINT_RESTRICTION.ANY_OF)
+        constSat.constraints.set_from_restriction_type(ConstellationConstraintRestrictionType.ANY_OF)
+        constSat.constraints.set_to_restriction_type(ConstellationConstraintRestrictionType.ANY_OF)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         # Compare
@@ -5893,8 +5915,8 @@ class Definition(TestBase):
         TestBase.Application.close_scenario()
         TestBase.Application.load_scenario(TestBase.GetScenarioFile("ChainV2Test", "ChainV2Scenario.sc"))
         constSat = Constellation(TestBase.Application.current_scenario.children["ConstSat"])
-        constSat.constraints.set_from_restriction_type(CONSTELLATION_CONSTRAINT_RESTRICTION.ALL_OF)
-        constSat.constraints.set_to_restriction_type(CONSTELLATION_CONSTRAINT_RESTRICTION.ALL_OF)
+        constSat.constraints.set_from_restriction_type(ConstellationConstraintRestrictionType.ALL_OF)
+        constSat.constraints.set_to_restriction_type(ConstellationConstraintRestrictionType.ALL_OF)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         # Compare
@@ -5918,8 +5940,8 @@ class Definition(TestBase):
         TestBase.Application.close_scenario()
         TestBase.Application.load_scenario(TestBase.GetScenarioFile("ChainV2Test", "ChainV2Scenario.sc"))
         constSat = Constellation(TestBase.Application.current_scenario.children["ConstSat"])
-        constSat.constraints.set_from_restriction_type(CONSTELLATION_CONSTRAINT_RESTRICTION.AT_LEAST_N)
-        constSat.constraints.set_to_restriction_type(CONSTELLATION_CONSTRAINT_RESTRICTION.AT_LEAST_N)
+        constSat.constraints.set_from_restriction_type(ConstellationConstraintRestrictionType.AT_LEAST_N)
+        constSat.constraints.set_to_restriction_type(ConstellationConstraintRestrictionType.AT_LEAST_N)
         (ConstellationConstraintObjectRestriction(constSat.constraints.from_restriction)).number_of_objects = 2
         (ConstellationConstraintObjectRestriction(constSat.constraints.to_restriction)).number_of_objects = 2
         CompareUtility.TakeOMSnapshot(TestBase.Application)
@@ -5945,8 +5967,8 @@ class Definition(TestBase):
         TestBase.Application.close_scenario()
         TestBase.Application.load_scenario(TestBase.GetScenarioFile("ChainV2Test", "ChainV2Scenario.sc"))
         constSat = Constellation(TestBase.Application.current_scenario.children["ConstSat"])
-        constSat.constraints.set_from_restriction_type(CONSTELLATION_CONSTRAINT_RESTRICTION.EXACTLY_N)
-        constSat.constraints.set_to_restriction_type(CONSTELLATION_CONSTRAINT_RESTRICTION.EXACTLY_N)
+        constSat.constraints.set_from_restriction_type(ConstellationConstraintRestrictionType.EXACTLY_N)
+        constSat.constraints.set_to_restriction_type(ConstellationConstraintRestrictionType.EXACTLY_N)
         (ConstellationConstraintObjectRestriction(constSat.constraints.from_restriction)).number_of_objects = 2
         (ConstellationConstraintObjectRestriction(constSat.constraints.to_restriction)).number_of_objects = 2
         CompareUtility.TakeOMSnapshot(TestBase.Application)
@@ -5972,8 +5994,8 @@ class Definition(TestBase):
         TestBase.Application.close_scenario()
         TestBase.Application.load_scenario(TestBase.GetScenarioFile("ChainV2Test", "ChainV2Scenario.sc"))
         constSat = Constellation(TestBase.Application.current_scenario.children["ConstSat"])
-        constSat.constraints.set_from_restriction_type(CONSTELLATION_CONSTRAINT_RESTRICTION.NONE_OF)
-        constSat.constraints.set_to_restriction_type(CONSTELLATION_CONSTRAINT_RESTRICTION.NONE_OF)
+        constSat.constraints.set_from_restriction_type(ConstellationConstraintRestrictionType.NONE_OF)
+        constSat.constraints.set_to_restriction_type(ConstellationConstraintRestrictionType.NONE_OF)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         # Compare
@@ -6000,7 +6022,7 @@ class Definition(TestBase):
         TestBase.Application.close_scenario()
         TestBase.Application.load_scenario(TestBase.GetScenarioFile("CovDefTest", "CovDefTest.sc"))
         Definition.AG_COV = CoverageDefinition(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.COVERAGE_DEFINITION, "TestCovDef")
+            TestBase.Application.current_scenario.children.new(STKObjectType.COVERAGE_DEFINITION, "TestCovDef")
         )
 
         CompareUtility = ReportComparison(self.Units)
@@ -6369,32 +6391,32 @@ class Definition(TestBase):
         TestBase.Application.close_scenario()
         TestBase.Application.load_scenario(TestBase.GetScenarioFile("CovDefTest", "CovDefTest.sc"))
         Definition.AG_COV = CoverageDefinition(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.COVERAGE_DEFINITION, "TestCovDef")
+            TestBase.Application.current_scenario.children.new(STKObjectType.COVERAGE_DEFINITION, "TestCovDef")
         )
 
         oGrid: "CoverageGrid" = Definition.AG_COV.grid
-        oGrid.resolution_type = COVERAGE_RESOLUTION.RESOLUTION_LATITUDE_LONGITUDE
+        oGrid.resolution_type = CoverageResolution.RESOLUTION_LATITUDE_LONGITUDE
         oResolution: "ICoverageResolution" = oGrid.resolution
         oLat: "CoverageResolutionLatLon" = clr.CastAs(oResolution, CoverageResolutionLatLon)
         oLat.latitude_longitude = 3.0
 
-        oGrid.resolution_type = COVERAGE_RESOLUTION.RESOLUTION_AREA
+        oGrid.resolution_type = CoverageResolution.RESOLUTION_AREA
         oResolution = oGrid.resolution
         oArea: "CoverageResolutionArea" = clr.CastAs(oResolution, CoverageResolutionArea)
         TestBase.Application.units_preferences.set_current_unit("DistanceUnit", "km")
         oArea.area = 200000
 
-        oGrid.resolution_type = COVERAGE_RESOLUTION.RESOLUTION_DISTANCE
+        oGrid.resolution_type = CoverageResolution.RESOLUTION_DISTANCE
         oResolution = oGrid.resolution
         oDistance: "CoverageResolutionDistance" = clr.CastAs(oResolution, CoverageResolutionDistance)
         oDistance.distance = 300
 
         # 1
-        oGrid.bounds_type = COVERAGE_BOUNDS.GLOBAL
+        oGrid.bounds_type = CoverageBounds.GLOBAL
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         # 2
-        oGrid.bounds_type = COVERAGE_BOUNDS.LATITUDE
+        oGrid.bounds_type = CoverageBounds.LATITUDE
         oBounds: "ICoverageBounds" = oGrid.bounds
         oBoundsLat: "CoverageBoundsLatitude" = clr.CastAs(oBounds, CoverageBoundsLatitude)
         oBoundsLat.minimum_latitude = -10.0
@@ -6402,7 +6424,7 @@ class Definition(TestBase):
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         # 3
-        oGrid.bounds_type = COVERAGE_BOUNDS.LONGITUDE_LINE
+        oGrid.bounds_type = CoverageBounds.LONGITUDE_LINE
         oBoundsLonLine: "CoverageBoundsLongitudeLine" = clr.CastAs(oGrid.bounds, CoverageBoundsLongitudeLine)
         oBoundsLonLine.minimum_latitude = -60.0
         oBoundsLonLine.maximum_latitude = 30.0
@@ -6410,7 +6432,7 @@ class Definition(TestBase):
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         # 4
-        oGrid.bounds_type = COVERAGE_BOUNDS.CUSTOM_REGIONS
+        oGrid.bounds_type = CoverageBounds.CUSTOM_REGIONS
         oBoundsCustom: "CoverageBoundsCustomRegions" = clr.CastAs(oGrid.bounds, CoverageBoundsCustomRegions)
         oBoundsCustom.area_targets.add("AreaTarget/Crosses0AT")
         oBoundsCustom.area_targets.add("AreaTarget/Crosses180AT")
@@ -6426,72 +6448,70 @@ class Definition(TestBase):
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         # 7
-        Definition.AG_COV.point_definition.grid_class = COVERAGE_GRID_CLASS.AIRCRAFT
+        Definition.AG_COV.point_definition.grid_class = CoverageGridClass.AIRCRAFT
         TestBase.logger.WriteLine2(Definition.AG_COV.point_definition.ground_altitude_method)
-        Definition.AG_COV.point_definition.altitude_method = COVERAGE_ALTITUDE_METHOD.ABOVE_ELLIPSOID
+        Definition.AG_COV.point_definition.altitude_method = CoverageAltitudeMethod.ABOVE_ELLIPSOID
         Definition.AG_COV.point_definition.altitude = 100000.0
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         # 8
         Definition.AG_COV.point_definition.use_grid_seed = True
         Definition.AG_COV.point_definition.use_object_as_seed = True
-        Definition.AG_COV.point_definition.grid_class = COVERAGE_GRID_CLASS.FACILITY
+        Definition.AG_COV.point_definition.grid_class = CoverageGridClass.FACILITY
         Definition.AG_COV.point_definition.altitude = 0
-        Definition.AG_COV.point_definition.altitude_method = COVERAGE_ALTITUDE_METHOD.ABOVE_ELLIPSOID
-        Definition.AG_COV.point_definition.ground_altitude_method = COVERAGE_GROUND_ALTITUDE_METHOD.USE_POINT_ALTITUDE
+        Definition.AG_COV.point_definition.altitude_method = CoverageAltitudeMethod.ABOVE_ELLIPSOID
+        Definition.AG_COV.point_definition.ground_altitude_method = CoverageGroundAltitudeMethod.USE_POINT_ALTITUDE
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         # 9
         Definition.AG_COV.point_definition.use_grid_seed = True
         Definition.AG_COV.point_definition.use_object_as_seed = True
-        Definition.AG_COV.point_definition.grid_class = COVERAGE_GRID_CLASS.FACILITY
+        Definition.AG_COV.point_definition.grid_class = CoverageGridClass.FACILITY
         Definition.AG_COV.point_definition.seed_instance = "Facility/CovDefTest"
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         # 10
-        Definition.AG_COV.point_definition.grid_class = COVERAGE_GRID_CLASS.RADAR
+        Definition.AG_COV.point_definition.grid_class = CoverageGridClass.RADAR
         Definition.AG_COV.point_definition.use_object_as_seed = True
         Definition.AG_COV.point_definition.seed_instance = "Aircraft/CovDefTest/Radar/CovDefTest"
-        Definition.AG_COV.point_definition.altitude_method = COVERAGE_ALTITUDE_METHOD.ABOVE_ELLIPSOID
+        Definition.AG_COV.point_definition.altitude_method = CoverageAltitudeMethod.ABOVE_ELLIPSOID
         Definition.AG_COV.point_definition.altitude = 100000.0
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         # // 11
-        Definition.AG_COV.point_definition.grid_class = COVERAGE_GRID_CLASS.RECEIVER
+        Definition.AG_COV.point_definition.grid_class = CoverageGridClass.RECEIVER
         Definition.AG_COV.point_definition.seed_instance = "Facility/CovDefTest/Receiver/CovDefTest"
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         # 12
-        Definition.AG_COV.point_definition.grid_class = COVERAGE_GRID_CLASS.SATELLITE
-        Definition.AG_COV.point_definition.altitude_method = COVERAGE_ALTITUDE_METHOD.ABOVE_ELLIPSOID
+        Definition.AG_COV.point_definition.grid_class = CoverageGridClass.SATELLITE
+        Definition.AG_COV.point_definition.altitude_method = CoverageAltitudeMethod.ABOVE_ELLIPSOID
         Definition.AG_COV.point_definition.altitude = 200000
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         # 13
-        Definition.AG_COV.point_definition.grid_class = COVERAGE_GRID_CLASS.SATELLITE
+        Definition.AG_COV.point_definition.grid_class = CoverageGridClass.SATELLITE
         Definition.AG_COV.point_definition.use_grid_seed = True
-        Definition.AG_COV.point_definition.altitude_method = COVERAGE_ALTITUDE_METHOD.ABOVE_ELLIPSOID
+        Definition.AG_COV.point_definition.altitude_method = CoverageAltitudeMethod.ABOVE_ELLIPSOID
         Definition.AG_COV.point_definition.altitude = 200000
         Definition.AG_COV.point_definition.seed_instance = "Satellite/CovDefTest1"
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         # 14
-        Definition.AG_COV.point_definition.grid_class = COVERAGE_GRID_CLASS.TRANSMITTER
+        Definition.AG_COV.point_definition.grid_class = CoverageGridClass.TRANSMITTER
         Definition.AG_COV.point_definition.seed_instance = "Aircraft/CovDefTest/Transmitter/CovDefTest"
-        Definition.AG_COV.point_definition.altitude_method = COVERAGE_ALTITUDE_METHOD.ABOVE_ELLIPSOID
+        Definition.AG_COV.point_definition.altitude_method = CoverageAltitudeMethod.ABOVE_ELLIPSOID
         Definition.AG_COV.point_definition.altitude = 100000
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         # 15
-        Definition.AG_COV.point_definition.grid_class = COVERAGE_GRID_CLASS.TARGET
-        Definition.AG_COV.point_definition.ground_altitude_method = COVERAGE_GROUND_ALTITUDE_METHOD.USE_POINT_ALTITUDE
+        Definition.AG_COV.point_definition.grid_class = CoverageGridClass.TARGET
+        Definition.AG_COV.point_definition.ground_altitude_method = CoverageGroundAltitudeMethod.USE_POINT_ALTITUDE
         Definition.AG_COV.point_definition.altitude = 0
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         # 16
-        Definition.AG_COV.point_definition.point_location_method = (
-            COVERAGE_POINT_LOCATION_METHOD.SPECIFY_CUSTOM_LOCATIONS
-        )
+        Definition.AG_COV.point_definition.point_location_method = CoveragePointLocationMethod.SPECIFY_CUSTOM_LOCATIONS
         Definition.AG_COV.point_definition.point_file_list.add(TestBase.GetScenarioFile("CovDefTest", "Sample.pnt"))
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
@@ -6525,14 +6545,14 @@ class Definition(TestBase):
             if (assetListElement.object_name == "Chain/CovDefTest") or (
                 assetListElement.object_name == "Aircraft/CovDefTest"
             ):
-                assetListElement.asset_status = COVERAGE_ASSET_STATUS.INACTIVE
+                assetListElement.asset_status = CoverageAssetStatus.INACTIVE
 
             elif assetListElement.object_name == "Constellation/CovDefTest2":
                 subAssets: "CoverageAssetListCollection" = assetListElement.sub_asset_list
                 subAsset: "CoverageAssetListElement"
                 for subAsset in subAssets:
                     if subAsset.object_name == "Satellite/CovDefTest1":
-                        subAsset.asset_status = COVERAGE_ASSET_STATUS.INACTIVE
+                        subAsset.asset_status = CoverageAssetStatus.INACTIVE
 
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
@@ -6548,14 +6568,14 @@ class Definition(TestBase):
             if (assetListElement.object_name == "Chain/CovDefTest") or (
                 assetListElement.object_name == "Aircraft/CovDefTest"
             ):
-                assetListElement.asset_status = COVERAGE_ASSET_STATUS.ACTIVE
+                assetListElement.asset_status = CoverageAssetStatus.ACTIVE
 
             elif assetListElement.object_name == "Constellation/CovDefTest2":
                 subAssets: "CoverageAssetListCollection" = assetListElement.sub_asset_list
                 subAsset: "CoverageAssetListElement"
                 for subAsset in subAssets:
                     if subAsset.object_name == "Satellite/CovDefTest1":
-                        subAsset.asset_status = COVERAGE_ASSET_STATUS.ACTIVE
+                        subAsset.asset_status = CoverageAssetStatus.ACTIVE
 
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
@@ -6568,9 +6588,9 @@ class Definition(TestBase):
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         # 24
-        Definition.AG_COV.advanced.save_mode = DATA_SAVE_MODE.SAVE_ACCESSES
+        Definition.AG_COV.advanced.save_mode = DataSaveMode.SAVE_ACCESSES
         (IStkObject(Definition.AG_COV)).export(TestBase.GetScenarioFile("CovDefTest", "Test", "TestCovDef"))
-        TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.COVERAGE_DEFINITION, "TestCovDef")
+        TestBase.Application.current_scenario.children.unload(STKObjectType.COVERAGE_DEFINITION, "TestCovDef")
         TestBase.Application.current_scenario.children.import_object(
             TestBase.GetScenarioFile("CovDefTest", "Test", "TestCovDef.cv")
         )
@@ -6578,9 +6598,9 @@ class Definition(TestBase):
 
         # 25
         Definition.AG_COV = CoverageDefinition(TestBase.Application.current_scenario.children["TestCovDef"])
-        Definition.AG_COV.advanced.save_mode = DATA_SAVE_MODE.DONT_SAVE_ACCESSES
+        Definition.AG_COV.advanced.save_mode = DataSaveMode.DONT_SAVE_ACCESSES
         (IStkObject(Definition.AG_COV)).export(TestBase.GetScenarioFile("CovDefTest", "Test", "TestCovDef"))
-        TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.COVERAGE_DEFINITION, "TestCovDef")
+        TestBase.Application.current_scenario.children.unload(STKObjectType.COVERAGE_DEFINITION, "TestCovDef")
         TestBase.Application.current_scenario.children.import_object(
             TestBase.GetScenarioFile("CovDefTest", "Test", "TestCovDef.cv")
         )
@@ -6588,9 +6608,9 @@ class Definition(TestBase):
 
         # 26
         Definition.AG_COV = CoverageDefinition(TestBase.Application.current_scenario.children["TestCovDef"])
-        Definition.AG_COV.advanced.save_mode = DATA_SAVE_MODE.DONT_SAVE_COMPUTE_ON_LOAD
+        Definition.AG_COV.advanced.save_mode = DataSaveMode.DONT_SAVE_COMPUTE_ON_LOAD
         (IStkObject(Definition.AG_COV)).export(TestBase.GetScenarioFile("CovDefTest", "Test", "TestCovDef"))
-        TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.COVERAGE_DEFINITION, "TestCovDef")
+        TestBase.Application.current_scenario.children.unload(STKObjectType.COVERAGE_DEFINITION, "TestCovDef")
         TestBase.Application.current_scenario.children.import_object(
             TestBase.GetScenarioFile("CovDefTest", "Test", "TestCovDef.cv")
         )
@@ -6598,13 +6618,13 @@ class Definition(TestBase):
 
         # 27
         Definition.AG_COV = CoverageDefinition(TestBase.Application.current_scenario.children["TestCovDef"])
-        Definition.AG_COV.advanced.data_retention = COVERAGE_DATA_RETENTION.STATIC_DATA_ONLY
+        Definition.AG_COV.advanced.data_retention = CoverageDataRetention.STATIC_DATA_ONLY
         Definition.AG_COV.clear_accesses()
         Definition.AG_COV.compute_accesses()
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         # 28
-        Definition.AG_COV.advanced.data_retention = COVERAGE_DATA_RETENTION.ALL_DATA
+        Definition.AG_COV.advanced.data_retention = CoverageDataRetention.ALL_DATA
         Definition.AG_COV.clear_accesses()
         Definition.AG_COV.compute_accesses()
         CompareUtility.TakeOMSnapshot(TestBase.Application)
@@ -6622,12 +6642,12 @@ class Definition(TestBase):
 
         # 31 - Report new CovDef data
         Definition.AG_COV.clear_accesses()
-        Definition.AG_COV.grid.bounds_type = COVERAGE_BOUNDS.CUSTOM_REGIONS
+        Definition.AG_COV.grid.bounds_type = CoverageBounds.CUSTOM_REGIONS
         oBoundsCustom = clr.CastAs(Definition.AG_COV.grid.bounds, CoverageBoundsCustomRegions)
         oBoundsCustom.region_files.remove_all()
         oBoundsCustom.area_targets.remove_all()
         oBoundsCustom.area_targets.add("AreaTarget/Crosses0AT")
-        Definition.AG_COV.grid.resolution_type = COVERAGE_RESOLUTION.RESOLUTION_LATITUDE_LONGITUDE
+        Definition.AG_COV.grid.resolution_type = CoverageResolution.RESOLUTION_LATITUDE_LONGITUDE
         oLat = clr.CastAs(Definition.AG_COV.grid.resolution, CoverageResolutionLatLon)
         oLat.latitude_longitude = 2.0
         Definition.AG_COV.compute_accesses()
@@ -6648,7 +6668,7 @@ class Definition(TestBase):
         oComparator6.TakeOMSnapshot(TestBase.Application)
 
         # 34 - Coverage Grid sending custom points directly 1
-        Definition.AG_COV.grid.bounds_type = COVERAGE_BOUNDS.CUSTOM_REGIONS
+        Definition.AG_COV.grid.bounds_type = CoverageBounds.CUSTOM_REGIONS
         oBoundsCustom = clr.CastAs(Definition.AG_COV.grid.bounds, CoverageBoundsCustomRegions)
         oBoundsCustom.region_files.remove_all()
         oBoundsCustom.region_files.add(TestBase.GetScenarioFile("CovDefTest", "usstates.rl"))
@@ -6685,19 +6705,19 @@ class Definition(TestBase):
         points[3][0] = 33
         points[3][1] = -115
         points[3][2] = 0
-        Definition.AG_COV.point_definition.ground_altitude_method = COVERAGE_GROUND_ALTITUDE_METHOD.USE_POINT_ALTITUDE
+        Definition.AG_COV.point_definition.ground_altitude_method = CoverageGroundAltitudeMethod.USE_POINT_ALTITUDE
         Definition.AG_COV.point_definition.set_points_detic(points)
         Definition.AG_COV.compute_accesses()
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         # 36 - Coverage Grid sending custom points directly 3
-        Definition.AG_COV.point_definition.grid_class = COVERAGE_GRID_CLASS.SATELLITE
+        Definition.AG_COV.point_definition.grid_class = CoverageGridClass.SATELLITE
         Definition.AG_COV.point_definition.altitude = 200
         Definition.AG_COV.compute_accesses()
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         # 37 - Coverage Grid sending custom points directly 4
-        Definition.AG_COV.point_definition.altitude_method = COVERAGE_ALTITUDE_METHOD.ABOVE_TERRAIN
+        Definition.AG_COV.point_definition.altitude_method = CoverageAltitudeMethod.ABOVE_TERRAIN
         Definition.AG_COV.point_definition.altitude = 200
         Definition.AG_COV.compute_accesses()
         CompareUtility.TakeOMSnapshot(TestBase.Application)
@@ -6705,11 +6725,11 @@ class Definition(TestBase):
         # 38 - Coverage Asset group and separate actions 1
         Definition.AG_COV.asset_list.remove("Chain/CovDefTest")
         oAssetElement: "CoverageAssetListElement" = Definition.AG_COV.asset_list.add("Constellation/CovDefTest1")
-        oAssetElement.grouping = COVERAGE_ASSET_GROUPING.GROUPED
+        oAssetElement.grouping = CoverageAssetGrouping.GROUPED
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         # 39 - Coverage Asset group and separate actions 2
-        oAssetElement.grouping = COVERAGE_ASSET_GROUPING.SEPARATE
+        oAssetElement.grouping = CoverageAssetGrouping.SEPARATE
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         CompareUtility.CompareReportSnapshots()
@@ -6736,7 +6756,7 @@ class Definition(TestBase):
 
         # 1 - Facility LLA Position
         Definition.AG_FA = Facility(
-            TestBase.Application.current_scenario.children.get_elements(STK_OBJECT_TYPE.FACILITY)["MidNorth"]
+            TestBase.Application.current_scenario.children.get_elements(STKObjectType.FACILITY)["MidNorth"]
         )
         Assert.assertIsNotNone(Definition.AG_FA)
 
@@ -7037,7 +7057,7 @@ class Definition(TestBase):
         # 1 - Facility LLA Position
         Definition.AG_FA = None
         Definition.AG_FA = Facility(
-            TestBase.Application.current_scenario.children.get_elements(STK_OBJECT_TYPE.FACILITY)["MidNorth"]
+            TestBase.Application.current_scenario.children.get_elements(STKObjectType.FACILITY)["MidNorth"]
         )
         Assert.assertIsNotNone(Definition.AG_FA)
 
@@ -7051,8 +7071,8 @@ class Definition(TestBase):
         Definition.AG_COV.clear_accesses()
         Definition.AG_COV.advanced.recompute_automatically = False
         Definition.AG_COV.advanced.enable_light_time_delay = False
-        Definition.AG_COV.advanced.save_mode = DATA_SAVE_MODE.DONT_SAVE_ACCESSES
-        Definition.AG_COV.advanced.n_assets_satisfaction_type = COVERAGE_SATISFACTION_TYPE.AT_LEAST
+        Definition.AG_COV.advanced.save_mode = DataSaveMode.DONT_SAVE_ACCESSES
+        Definition.AG_COV.advanced.n_assets_satisfaction_type = CoverageSatisfactionType.AT_LEAST
         Definition.AG_COV.advanced.n_assets_satisfaction_threshold = 1
         Definition.AG_COV.interval.use_scenario_interval = False
         Definition.AG_COV.interval.analysis_interval.set_explicit_interval("1 Jul 2005 12:00:00", "2 Jul 2005 12:00:00")
@@ -7068,8 +7088,8 @@ class Definition(TestBase):
         Definition.AG_COV.clear_accesses()
         Definition.AG_COV.advanced.recompute_automatically = False
         Definition.AG_COV.advanced.enable_light_time_delay = False
-        Definition.AG_COV.advanced.save_mode = DATA_SAVE_MODE.DONT_SAVE_ACCESSES
-        Definition.AG_COV.advanced.n_assets_satisfaction_type = COVERAGE_SATISFACTION_TYPE.AT_LEAST
+        Definition.AG_COV.advanced.save_mode = DataSaveMode.DONT_SAVE_ACCESSES
+        Definition.AG_COV.advanced.n_assets_satisfaction_type = CoverageSatisfactionType.AT_LEAST
         Definition.AG_COV.advanced.n_assets_satisfaction_threshold = 1
         Definition.AG_COV.interval.use_scenario_interval = False
         Definition.AG_COV.interval.analysis_interval.set_explicit_interval("1 Jul 2005 12:00:00", "2 Jul 2005 12:00:00")
@@ -7085,8 +7105,8 @@ class Definition(TestBase):
         Definition.AG_COV.clear_accesses()
         Definition.AG_COV.advanced.recompute_automatically = False
         Definition.AG_COV.advanced.enable_light_time_delay = False
-        Definition.AG_COV.advanced.save_mode = DATA_SAVE_MODE.DONT_SAVE_ACCESSES
-        Definition.AG_COV.advanced.n_assets_satisfaction_type = COVERAGE_SATISFACTION_TYPE.AT_LEAST
+        Definition.AG_COV.advanced.save_mode = DataSaveMode.DONT_SAVE_ACCESSES
+        Definition.AG_COV.advanced.n_assets_satisfaction_type = CoverageSatisfactionType.AT_LEAST
         Definition.AG_COV.advanced.n_assets_satisfaction_threshold = 1
         Definition.AG_COV.interval.use_scenario_interval = False
         Definition.AG_COV.interval.analysis_interval.set_explicit_interval("1 Jul 2005 12:00:00", "2 Jul 2005 12:00:00")
@@ -7102,8 +7122,8 @@ class Definition(TestBase):
         Definition.AG_COV.clear_accesses()
         Definition.AG_COV.advanced.recompute_automatically = False
         Definition.AG_COV.advanced.enable_light_time_delay = False
-        Definition.AG_COV.advanced.save_mode = DATA_SAVE_MODE.DONT_SAVE_ACCESSES
-        Definition.AG_COV.advanced.n_assets_satisfaction_type = COVERAGE_SATISFACTION_TYPE.AT_LEAST
+        Definition.AG_COV.advanced.save_mode = DataSaveMode.DONT_SAVE_ACCESSES
+        Definition.AG_COV.advanced.n_assets_satisfaction_type = CoverageSatisfactionType.AT_LEAST
         Definition.AG_COV.advanced.n_assets_satisfaction_threshold = 1
         Definition.AG_COV.interval.use_scenario_interval = False
         Definition.AG_COV.interval.analysis_interval.set_explicit_interval("1 Jul 2005 12:00:00", "2 Jul 2005 12:00:00")
@@ -7120,7 +7140,7 @@ class Definition(TestBase):
         Definition.AG_CHAIN.recompute_automatically = False
         Definition.AG_CHAIN.enable_light_time_delay = False
         Definition.AG_CHAIN.time_convergence = 0.001
-        Definition.AG_CHAIN.set_time_period_type(CHAIN_TIME_PERIOD_TYPE.SPECIFIED_TIME_PERIOD)
+        Definition.AG_CHAIN.set_time_period_type(ChainTimePeriodType.SPECIFIED_TIME_PERIOD)
         (ChainUserSpecifiedTimePeriod(Definition.AG_CHAIN.time_period)).time_interval.set_explicit_interval(
             "1 Jul 2005 12:00:00", "2 Jul 2005 12:00:00"
         )
@@ -7133,7 +7153,7 @@ class Definition(TestBase):
         Definition.AG_CHAIN.recompute_automatically = False
         Definition.AG_CHAIN.enable_light_time_delay = False
         Definition.AG_CHAIN.time_convergence = 0.001
-        Definition.AG_CHAIN.set_time_period_type(CHAIN_TIME_PERIOD_TYPE.SPECIFIED_TIME_PERIOD)
+        Definition.AG_CHAIN.set_time_period_type(ChainTimePeriodType.SPECIFIED_TIME_PERIOD)
         (ChainUserSpecifiedTimePeriod(Definition.AG_CHAIN.time_period)).time_interval.set_explicit_interval(
             "1 Jul 2005 12:00:00", "2 Jul 2005 12:00:00"
         )
@@ -7146,7 +7166,7 @@ class Definition(TestBase):
         Definition.AG_CHAIN.recompute_automatically = False
         Definition.AG_CHAIN.enable_light_time_delay = False
         Definition.AG_CHAIN.time_convergence = 0.001
-        Definition.AG_CHAIN.set_time_period_type(CHAIN_TIME_PERIOD_TYPE.SPECIFIED_TIME_PERIOD)
+        Definition.AG_CHAIN.set_time_period_type(ChainTimePeriodType.SPECIFIED_TIME_PERIOD)
         (ChainUserSpecifiedTimePeriod(Definition.AG_CHAIN.time_period)).time_interval.set_explicit_interval(
             "1 Jul 2005 12:00:00", "2 Jul 2005 12:00:00"
         )
@@ -7159,7 +7179,7 @@ class Definition(TestBase):
         Definition.AG_CHAIN.recompute_automatically = False
         Definition.AG_CHAIN.enable_light_time_delay = False
         Definition.AG_CHAIN.time_convergence = 0.001
-        Definition.AG_CHAIN.set_time_period_type(CHAIN_TIME_PERIOD_TYPE.SPECIFIED_TIME_PERIOD)
+        Definition.AG_CHAIN.set_time_period_type(ChainTimePeriodType.SPECIFIED_TIME_PERIOD)
         (ChainUserSpecifiedTimePeriod(Definition.AG_CHAIN.time_period)).time_interval.set_explicit_interval(
             "1 Jul 2005 12:00:00", "2 Jul 2005 12:00:00"
         )
@@ -7172,7 +7192,7 @@ class Definition(TestBase):
         Definition.AG_CHAIN.recompute_automatically = False
         Definition.AG_CHAIN.enable_light_time_delay = False
         Definition.AG_CHAIN.time_convergence = 0.001
-        Definition.AG_CHAIN.set_time_period_type(CHAIN_TIME_PERIOD_TYPE.SPECIFIED_TIME_PERIOD)
+        Definition.AG_CHAIN.set_time_period_type(ChainTimePeriodType.SPECIFIED_TIME_PERIOD)
         (ChainUserSpecifiedTimePeriod(Definition.AG_CHAIN.time_period)).time_interval.set_explicit_interval(
             "1 Jul 2005 12:00:00", "2 Jul 2005 12:00:00"
         )
@@ -7185,7 +7205,7 @@ class Definition(TestBase):
         Definition.AG_CHAIN.recompute_automatically = False
         Definition.AG_CHAIN.enable_light_time_delay = False
         Definition.AG_CHAIN.time_convergence = 0.001
-        Definition.AG_CHAIN.set_time_period_type(CHAIN_TIME_PERIOD_TYPE.SPECIFIED_TIME_PERIOD)
+        Definition.AG_CHAIN.set_time_period_type(ChainTimePeriodType.SPECIFIED_TIME_PERIOD)
         (ChainUserSpecifiedTimePeriod(Definition.AG_CHAIN.time_period)).time_interval.set_explicit_interval(
             "1 Jul 2005 12:00:00", "2 Jul 2005 12:00:00"
         )
@@ -7194,26 +7214,26 @@ class Definition(TestBase):
         # 7 - Constellations
         AG_CON: "Constellation" = Constellation(TestBase.Application.current_scenario.children["OnlyLeo28"])
         Assert.assertIsNotNone(AG_CON)
-        AG_CON.constraints.set_from_restriction_type(CONSTELLATION_CONSTRAINT_RESTRICTION.ANY_OF)
-        AG_CON.constraints.set_to_restriction_type(CONSTELLATION_CONSTRAINT_RESTRICTION.ANY_OF)
-        Assert.assertEqual(CONSTELLATION_CONSTRAINT_RESTRICTION.ANY_OF, AG_CON.constraints.from_restriction_type)
-        Assert.assertEqual(CONSTELLATION_CONSTRAINT_RESTRICTION.ANY_OF, AG_CON.constraints.to_restriction_type)
+        AG_CON.constraints.set_from_restriction_type(ConstellationConstraintRestrictionType.ANY_OF)
+        AG_CON.constraints.set_to_restriction_type(ConstellationConstraintRestrictionType.ANY_OF)
+        Assert.assertEqual(ConstellationConstraintRestrictionType.ANY_OF, AG_CON.constraints.from_restriction_type)
+        Assert.assertEqual(ConstellationConstraintRestrictionType.ANY_OF, AG_CON.constraints.to_restriction_type)
 
         AG_CON = None
         AG_CON = Constellation(TestBase.Application.current_scenario.children["Leos"])
         Assert.assertIsNotNone(AG_CON)
-        AG_CON.constraints.set_from_restriction_type(CONSTELLATION_CONSTRAINT_RESTRICTION.ANY_OF)
-        AG_CON.constraints.set_to_restriction_type(CONSTELLATION_CONSTRAINT_RESTRICTION.ANY_OF)
-        Assert.assertEqual(CONSTELLATION_CONSTRAINT_RESTRICTION.ANY_OF, AG_CON.constraints.from_restriction_type)
-        Assert.assertEqual(CONSTELLATION_CONSTRAINT_RESTRICTION.ANY_OF, AG_CON.constraints.to_restriction_type)
+        AG_CON.constraints.set_from_restriction_type(ConstellationConstraintRestrictionType.ANY_OF)
+        AG_CON.constraints.set_to_restriction_type(ConstellationConstraintRestrictionType.ANY_OF)
+        Assert.assertEqual(ConstellationConstraintRestrictionType.ANY_OF, AG_CON.constraints.from_restriction_type)
+        Assert.assertEqual(ConstellationConstraintRestrictionType.ANY_OF, AG_CON.constraints.to_restriction_type)
 
         AG_CON = None
         AG_CON = Constellation(TestBase.Application.current_scenario.children["Meos"])
         Assert.assertIsNotNone(AG_CON)
-        AG_CON.constraints.set_from_restriction_type(CONSTELLATION_CONSTRAINT_RESTRICTION.ANY_OF)
-        AG_CON.constraints.set_to_restriction_type(CONSTELLATION_CONSTRAINT_RESTRICTION.ANY_OF)
-        Assert.assertEqual(CONSTELLATION_CONSTRAINT_RESTRICTION.ANY_OF, AG_CON.constraints.from_restriction_type)
-        Assert.assertEqual(CONSTELLATION_CONSTRAINT_RESTRICTION.ANY_OF, AG_CON.constraints.to_restriction_type)
+        AG_CON.constraints.set_from_restriction_type(ConstellationConstraintRestrictionType.ANY_OF)
+        AG_CON.constraints.set_to_restriction_type(ConstellationConstraintRestrictionType.ANY_OF)
+        Assert.assertEqual(ConstellationConstraintRestrictionType.ANY_OF, AG_CON.constraints.from_restriction_type)
+        Assert.assertEqual(ConstellationConstraintRestrictionType.ANY_OF, AG_CON.constraints.to_restriction_type)
 
         # Section 2: Test capabilities for previous to STK 8.1
         # Asset: Single Object
@@ -7227,7 +7247,7 @@ class Definition(TestBase):
         # Asset: Constellation of 1 object
         Definition.AG_COV.asset_list.remove("Satellite/Leo_28")
         assetListElement: "CoverageAssetListElement" = Definition.AG_COV.asset_list.add("Constellation/OnlyLeo28")
-        assetListElement.asset_status = COVERAGE_ASSET_STATUS.ACTIVE
+        assetListElement.asset_status = CoverageAssetStatus.ACTIVE
         Definition.AG_COV.compute_accesses()
 
         oComparator6.TakeOMSnapshot(TestBase.Application)
@@ -7313,13 +7333,13 @@ class Definition(TestBase):
         )
         Assert.assertIsNotNone(Definition.AG_FOM)
 
-        Definition.AG_FOM.definition.satisfaction.satisfaction_type = FIGURE_OF_MERIT_SATISFACTION_TYPE.AT_LEAST
+        Definition.AG_FOM.definition.satisfaction.satisfaction_type = FigureOfMeritSatisfactionType.AT_LEAST
         Definition.AG_FOM.definition.satisfaction.satisfaction_threshold = 2
 
         oComparator10.TakeOMSnapshot(TestBase.Application)
 
         Definition.AG_COV.clear_accesses()
-        Definition.AG_COV.advanced.n_assets_satisfaction_type = COVERAGE_SATISFACTION_TYPE.AT_LEAST
+        Definition.AG_COV.advanced.n_assets_satisfaction_type = CoverageSatisfactionType.AT_LEAST
         Definition.AG_COV.advanced.n_assets_satisfaction_threshold = 2
         Definition.AG_COV.compute_accesses()
 
@@ -7338,8 +7358,8 @@ class Definition(TestBase):
         AG_CON = None
         AG_CON = Constellation(TestBase.Application.current_scenario.children["Meos"])
         Assert.assertIsNotNone(AG_CON)
-        AG_CON.constraints.set_from_restriction_type(CONSTELLATION_CONSTRAINT_RESTRICTION.AT_LEAST_N)
-        AG_CON.constraints.set_to_restriction_type(CONSTELLATION_CONSTRAINT_RESTRICTION.AT_LEAST_N)
+        AG_CON.constraints.set_from_restriction_type(ConstellationConstraintRestrictionType.AT_LEAST_N)
+        AG_CON.constraints.set_to_restriction_type(ConstellationConstraintRestrictionType.AT_LEAST_N)
         (ConstellationConstraintObjectRestriction(AG_CON.constraints.from_restriction)).number_of_objects = 2
         (ConstellationConstraintObjectRestriction(AG_CON.constraints.to_restriction)).number_of_objects = 2
 
@@ -7372,10 +7392,10 @@ class Definition(TestBase):
         TestBase.Application.close_scenario()
         TestBase.Application.load_scenario(TestBase.GetScenarioFile("FOMTest", "FOMTest.sc"))
         Definition.AG_COV = CoverageDefinition(
-            TestBase.Application.current_scenario.children.get_elements(STK_OBJECT_TYPE.COVERAGE_DEFINITION)["FOMTest"]
+            TestBase.Application.current_scenario.children.get_elements(STKObjectType.COVERAGE_DEFINITION)["FOMTest"]
         )
         Definition.AG_FOM = FigureOfMerit(
-            (IStkObject(Definition.AG_COV)).children.new(STK_OBJECT_TYPE.FIGURE_OF_MERIT, "FOMTest")
+            (IStkObject(Definition.AG_COV)).children.new(STKObjectType.FIGURE_OF_MERIT, "FOMTest")
         )
         Definition.AG_FOM2 = FigureOfMerit(
             TestBase.Application.current_scenario.children["FOMTestDOP"].children["FOMTestDOP"]
@@ -7401,7 +7421,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Definition.AG_FOM.set_definition_type(FIGURE_OF_MERIT_DEFINITION_TYPE.SIMPLE_COVERAGE)
+        Definition.AG_FOM.set_definition_type(FigureOfMeritDefinitionType.SIMPLE_COVERAGE)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command(
@@ -7409,9 +7429,9 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Definition.AG_FOM.set_definition_type(FIGURE_OF_MERIT_DEFINITION_TYPE.N_ASSET_COVERAGE)
+        Definition.AG_FOM.set_definition_type(FigureOfMeritDefinitionType.N_ASSET_COVERAGE)
         oDefCompute: "IFigureOfMeritDefinitionCompute" = IFigureOfMeritDefinitionCompute(Definition.AG_FOM.definition)
-        oDefCompute.set_compute_type(FIGURE_OF_MERIT_COMPUTE.MINIMUM)
+        oDefCompute.set_compute_type(FigureOfMeritCompute.MINIMUM)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command(
@@ -7419,7 +7439,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oDefCompute.set_compute_type(FIGURE_OF_MERIT_COMPUTE.MAXIMUM)
+        oDefCompute.set_compute_type(FigureOfMeritCompute.MAXIMUM)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command(
@@ -7427,7 +7447,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oDefCompute.set_compute_type(FIGURE_OF_MERIT_COMPUTE.AVERAGE)
+        oDefCompute.set_compute_type(FigureOfMeritCompute.AVERAGE)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command(
@@ -7435,7 +7455,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oDefCompute.set_compute_type(FIGURE_OF_MERIT_COMPUTE.PERCENT_ABOVE)
+        oDefCompute.set_compute_type(FigureOfMeritCompute.PERCENT_ABOVE)
         dataPercentLevel: "FigureOfMeritDefinitionDataPercentLevel" = FigureOfMeritDefinitionDataPercentLevel(
             oDefCompute.compute
         )
@@ -7449,9 +7469,9 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Definition.AG_FOM.set_definition_type(FIGURE_OF_MERIT_DEFINITION_TYPE.COVERAGE_TIME)
+        Definition.AG_FOM.set_definition_type(FigureOfMeritDefinitionType.COVERAGE_TIME)
         oDefCompute = IFigureOfMeritDefinitionCompute(Definition.AG_FOM.definition)
-        oDefCompute.set_compute_type(FIGURE_OF_MERIT_COMPUTE.PERCENT)
+        oDefCompute.set_compute_type(FigureOfMeritCompute.PERCENT)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command(
@@ -7459,7 +7479,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oDefCompute.set_compute_type(FIGURE_OF_MERIT_COMPUTE.TOTAL)
+        oDefCompute.set_compute_type(FigureOfMeritCompute.TOTAL)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command(
@@ -7467,7 +7487,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oDefCompute.set_compute_type(FIGURE_OF_MERIT_COMPUTE.PER_DAY)
+        oDefCompute.set_compute_type(FigureOfMeritCompute.PER_DAY)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command(
@@ -7475,7 +7495,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oDefCompute.set_compute_type(FIGURE_OF_MERIT_COMPUTE.PERCENT_PER_DAY)
+        oDefCompute.set_compute_type(FigureOfMeritCompute.PERCENT_PER_DAY)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command(
@@ -7483,7 +7503,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oDefCompute.set_compute_type(FIGURE_OF_MERIT_COMPUTE.MINIMUM_PERCENT_PER_DAY)
+        oDefCompute.set_compute_type(FigureOfMeritCompute.MINIMUM_PERCENT_PER_DAY)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command(
@@ -7491,7 +7511,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oDefCompute.set_compute_type(FIGURE_OF_MERIT_COMPUTE.MAXIMUM_PERCENT_PER_DAY)
+        oDefCompute.set_compute_type(FigureOfMeritCompute.MAXIMUM_PERCENT_PER_DAY)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command(
@@ -7499,7 +7519,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oDefCompute.set_compute_type(FIGURE_OF_MERIT_COMPUTE.MINIMUM_PER_DAY)
+        oDefCompute.set_compute_type(FigureOfMeritCompute.MINIMUM_PER_DAY)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command(
@@ -7507,7 +7527,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oDefCompute.set_compute_type(FIGURE_OF_MERIT_COMPUTE.MAXIMUM_PER_DAY)
+        oDefCompute.set_compute_type(FigureOfMeritCompute.MAXIMUM_PER_DAY)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command(
@@ -7515,7 +7535,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oDefCompute.set_compute_type(FIGURE_OF_MERIT_COMPUTE.PERCENT_PER_DAY_STANDARD_DEVIATION)
+        oDefCompute.set_compute_type(FigureOfMeritCompute.PERCENT_PER_DAY_STANDARD_DEVIATION)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command(
@@ -7523,7 +7543,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oDefCompute.set_compute_type(FIGURE_OF_MERIT_COMPUTE.PER_DAY_STANDARD_DEVIATION)
+        oDefCompute.set_compute_type(FigureOfMeritCompute.PER_DAY_STANDARD_DEVIATION)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command(
@@ -7531,7 +7551,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oDefCompute.set_compute_type(FIGURE_OF_MERIT_COMPUTE.PERCENT_TIME_ABOVE)
+        oDefCompute.set_compute_type(FigureOfMeritCompute.PERCENT_TIME_ABOVE)
         oDataAssets: "FigureOfMeritDefinitionDataMinimumNumberOfAssets" = clr.CastAs(
             oDefCompute.compute, FigureOfMeritDefinitionDataMinimumNumberOfAssets
         )
@@ -7543,7 +7563,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oDefCompute.set_compute_type(FIGURE_OF_MERIT_COMPUTE.TOTAL_TIME_ABOVE)
+        oDefCompute.set_compute_type(FigureOfMeritCompute.TOTAL_TIME_ABOVE)
         oDataAssets = clr.CastAs(oDefCompute.compute, FigureOfMeritDefinitionDataMinimumNumberOfAssets)
         oDataAssets.minimum_assets = 2
         CompareUtility.TakeOMSnapshot(TestBase.Application)
@@ -7555,11 +7575,11 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Definition.AG_FOM.set_definition_type(FIGURE_OF_MERIT_DEFINITION_TYPE.REVISIT_TIME)
+        Definition.AG_FOM.set_definition_type(FigureOfMeritDefinitionType.REVISIT_TIME)
         oDefRevisit: "FigureOfMeritDefinitionRevisitTime" = FigureOfMeritDefinitionRevisitTime(
             Definition.AG_FOM.definition
         )
-        oDefRevisit.set_compute_type(FIGURE_OF_MERIT_COMPUTE.MINIMUM)
+        oDefRevisit.set_compute_type(FigureOfMeritCompute.MINIMUM)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command(
@@ -7567,7 +7587,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oDefRevisit.set_compute_type(FIGURE_OF_MERIT_COMPUTE.MAXIMUM)
+        oDefRevisit.set_compute_type(FigureOfMeritCompute.MAXIMUM)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command(
@@ -7575,7 +7595,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oDefRevisit.set_compute_type(FIGURE_OF_MERIT_COMPUTE.AVERAGE)
+        oDefRevisit.set_compute_type(FigureOfMeritCompute.AVERAGE)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command(
@@ -7583,7 +7603,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oDefRevisit.set_compute_type(FIGURE_OF_MERIT_COMPUTE.STD_DEVIATION)
+        oDefRevisit.set_compute_type(FigureOfMeritCompute.STD_DEVIATION)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command(
@@ -7591,7 +7611,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oDefRevisit.set_compute_type(FIGURE_OF_MERIT_COMPUTE.PERCENT_BELOW)
+        oDefRevisit.set_compute_type(FigureOfMeritCompute.PERCENT_BELOW)
         oDataPercent: "FigureOfMeritDefinitionDataPercentLevel" = clr.CastAs(
             oDefRevisit.compute, FigureOfMeritDefinitionDataPercentLevel
         )
@@ -7603,7 +7623,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oDefRevisit.set_compute_type(FIGURE_OF_MERIT_COMPUTE.PERCENT_BELOW_GAPS_ONLY)
+        oDefRevisit.set_compute_type(FigureOfMeritCompute.PERCENT_BELOW_GAPS_ONLY)
         oDataPercent = clr.CastAs(oDefRevisit.compute, FigureOfMeritDefinitionDataPercentLevel)
         oDataPercent.percent_level = 90.0
         CompareUtility.TakeOMSnapshot(TestBase.Application)
@@ -7613,7 +7633,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oDefRevisit.set_compute_type(FIGURE_OF_MERIT_COMPUTE.NUMBER_PERCENT_BELOW)
+        oDefRevisit.set_compute_type(FigureOfMeritCompute.NUMBER_PERCENT_BELOW)
         oDataPercent = clr.CastAs(oDefCompute.compute, FigureOfMeritDefinitionDataPercentLevel)
         oDataPercent.percent_level = 90.0
         CompareUtility.TakeOMSnapshot(TestBase.Application)
@@ -7623,7 +7643,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oDefRevisit.set_compute_type(FIGURE_OF_MERIT_COMPUTE.MAXIMUM)
+        oDefRevisit.set_compute_type(FigureOfMeritCompute.MAXIMUM)
         oDefRevisit.minimum_assets = 2
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
@@ -7632,7 +7652,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oDefRevisit.set_compute_type(FIGURE_OF_MERIT_COMPUTE.PERCENT_BELOW)
+        oDefRevisit.set_compute_type(FigureOfMeritCompute.PERCENT_BELOW)
         oDataPercent = clr.CastAs(oDefRevisit.compute, FigureOfMeritDefinitionDataPercentLevel)
         oDataPercent.percent_level = 90.0
         oDefRevisit.minimum_assets = 2
@@ -7645,9 +7665,9 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Definition.AG_FOM.set_definition_type(FIGURE_OF_MERIT_DEFINITION_TYPE.ACCESS_DURATION)
+        Definition.AG_FOM.set_definition_type(FigureOfMeritDefinitionType.ACCESS_DURATION)
         oDefCompute = IFigureOfMeritDefinitionCompute(Definition.AG_FOM.definition)
-        oDefCompute.set_compute_type(FIGURE_OF_MERIT_COMPUTE.MINIMUM)
+        oDefCompute.set_compute_type(FigureOfMeritCompute.MINIMUM)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command(
@@ -7655,7 +7675,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oDefCompute.set_compute_type(FIGURE_OF_MERIT_COMPUTE.MAXIMUM)
+        oDefCompute.set_compute_type(FigureOfMeritCompute.MAXIMUM)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command(
@@ -7663,7 +7683,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oDefCompute.set_compute_type(FIGURE_OF_MERIT_COMPUTE.AVERAGE)
+        oDefCompute.set_compute_type(FigureOfMeritCompute.AVERAGE)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command(
@@ -7671,7 +7691,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oDefCompute.set_compute_type(FIGURE_OF_MERIT_COMPUTE.STD_DEVIATION)
+        oDefCompute.set_compute_type(FigureOfMeritCompute.STD_DEVIATION)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command(
@@ -7679,7 +7699,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oDefCompute.set_compute_type(FIGURE_OF_MERIT_COMPUTE.PERCENT_ABOVE)
+        oDefCompute.set_compute_type(FigureOfMeritCompute.PERCENT_ABOVE)
         oDataPercent = clr.CastAs(oDefCompute.compute, FigureOfMeritDefinitionDataPercentLevel)
         oDataPercent.percent_level = 80.0
         CompareUtility.TakeOMSnapshot(TestBase.Application)
@@ -7691,9 +7711,9 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Definition.AG_FOM.set_definition_type(FIGURE_OF_MERIT_DEFINITION_TYPE.NUMBER_OF_ACCESSES)
+        Definition.AG_FOM.set_definition_type(FigureOfMeritDefinitionType.NUMBER_OF_ACCESSES)
         oDefCompute = IFigureOfMeritDefinitionCompute(Definition.AG_FOM.definition)
-        oDefCompute.set_compute_type(FIGURE_OF_MERIT_COMPUTE.TOTAL)
+        oDefCompute.set_compute_type(FigureOfMeritCompute.TOTAL)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command(
@@ -7701,7 +7721,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oDefCompute.set_compute_type(FIGURE_OF_MERIT_COMPUTE.MINIMUM_PER_DAY)
+        oDefCompute.set_compute_type(FigureOfMeritCompute.MINIMUM_PER_DAY)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command(
@@ -7709,7 +7729,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oDefCompute.set_compute_type(FIGURE_OF_MERIT_COMPUTE.MAXIMUM_PER_DAY)
+        oDefCompute.set_compute_type(FigureOfMeritCompute.MAXIMUM_PER_DAY)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command(
@@ -7717,7 +7737,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oDefCompute.set_compute_type(FIGURE_OF_MERIT_COMPUTE.AVERAGE_PER_DAY)
+        oDefCompute.set_compute_type(FigureOfMeritCompute.AVERAGE_PER_DAY)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command(
@@ -7725,7 +7745,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oDefCompute.set_compute_type(FIGURE_OF_MERIT_COMPUTE.IN_SPAN)
+        oDefCompute.set_compute_type(FigureOfMeritCompute.IN_SPAN)
         oDataMinMax: "FigureOfMeritDefinitionDataMinimumMaximum" = clr.CastAs(
             oDefCompute.compute, FigureOfMeritDefinitionDataMinimumMaximum
         )
@@ -7738,7 +7758,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oDefCompute.set_compute_type(FIGURE_OF_MERIT_COMPUTE.IN_SPAN_PER_DAY)
+        oDefCompute.set_compute_type(FigureOfMeritCompute.IN_SPAN_PER_DAY)
         oDataMinMax = clr.CastAs(oDefCompute.compute, FigureOfMeritDefinitionDataMinimumMaximum)
         oDataMinMax.minimum_value = 60
         oDataMinMax.maximum_value = 120
@@ -7751,7 +7771,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Definition.AG_FOM.set_definition_type(FIGURE_OF_MERIT_DEFINITION_TYPE.ACCESS_SEPARATION)
+        Definition.AG_FOM.set_definition_type(FigureOfMeritDefinitionType.ACCESS_SEPARATION)
         oSeparation: "FigureOfMeritDefinitionAccessSeparation" = clr.CastAs(
             Definition.AG_FOM.definition, FigureOfMeritDefinitionAccessSeparation
         )
@@ -7766,9 +7786,9 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Definition.AG_FOM.set_definition_type(FIGURE_OF_MERIT_DEFINITION_TYPE.NUMBER_OF_GAPS)
+        Definition.AG_FOM.set_definition_type(FigureOfMeritDefinitionType.NUMBER_OF_GAPS)
         oDefCompute = IFigureOfMeritDefinitionCompute(Definition.AG_FOM.definition)
-        oDefCompute.set_compute_type(FIGURE_OF_MERIT_COMPUTE.TOTAL)
+        oDefCompute.set_compute_type(FigureOfMeritCompute.TOTAL)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command(
@@ -7776,7 +7796,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oDefCompute.set_compute_type(FIGURE_OF_MERIT_COMPUTE.MINIMUM_PER_DAY)
+        oDefCompute.set_compute_type(FigureOfMeritCompute.MINIMUM_PER_DAY)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command(
@@ -7784,7 +7804,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oDefCompute.set_compute_type(FIGURE_OF_MERIT_COMPUTE.MAXIMUM_PER_DAY)
+        oDefCompute.set_compute_type(FigureOfMeritCompute.MAXIMUM_PER_DAY)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command(
@@ -7792,7 +7812,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oDefCompute.set_compute_type(FIGURE_OF_MERIT_COMPUTE.AVERAGE_PER_DAY)
+        oDefCompute.set_compute_type(FigureOfMeritCompute.AVERAGE_PER_DAY)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command(
@@ -7800,7 +7820,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oDefCompute.set_compute_type(FIGURE_OF_MERIT_COMPUTE.IN_SPAN)
+        oDefCompute.set_compute_type(FigureOfMeritCompute.IN_SPAN)
         oDataMinMax = clr.CastAs(oDefCompute.compute, FigureOfMeritDefinitionDataMinimumMaximum)
         oDataMinMax.minimum_value = 60
         oDataMinMax.maximum_value = 120
@@ -7811,7 +7831,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oDefCompute.set_compute_type(FIGURE_OF_MERIT_COMPUTE.IN_SPAN_PER_DAY)
+        oDefCompute.set_compute_type(FigureOfMeritCompute.IN_SPAN_PER_DAY)
         oDataMinMax = clr.CastAs(oDefCompute.compute, FigureOfMeritDefinitionDataMinimumMaximum)
         oDataMinMax.minimum_value = 60
         oDataMinMax.maximum_value = 120
@@ -7824,7 +7844,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Definition.AG_FOM.set_definition_type(FIGURE_OF_MERIT_DEFINITION_TYPE.TIME_AVERAGE_GAP)
+        Definition.AG_FOM.set_definition_type(FigureOfMeritDefinitionType.TIME_AVERAGE_GAP)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         # ResponseTime
@@ -7834,11 +7854,11 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Definition.AG_FOM.set_definition_type(FIGURE_OF_MERIT_DEFINITION_TYPE.RESPONSE_TIME)
+        Definition.AG_FOM.set_definition_type(FigureOfMeritDefinitionType.RESPONSE_TIME)
         oDefResponse: "IFigureOfMeritDefinitionResponseTime" = IFigureOfMeritDefinitionResponseTime(
             Definition.AG_FOM.definition
         )
-        oDefResponse.set_compute_type(FIGURE_OF_MERIT_COMPUTE.MINIMUM)
+        oDefResponse.set_compute_type(FigureOfMeritCompute.MINIMUM)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command(
@@ -7846,7 +7866,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oDefResponse.set_compute_type(FIGURE_OF_MERIT_COMPUTE.MAXIMUM)
+        oDefResponse.set_compute_type(FigureOfMeritCompute.MAXIMUM)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command(
@@ -7854,7 +7874,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oDefResponse.set_compute_type(FIGURE_OF_MERIT_COMPUTE.AVERAGE)
+        oDefResponse.set_compute_type(FigureOfMeritCompute.AVERAGE)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command(
@@ -7862,7 +7882,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oDefCompute.set_compute_type(FIGURE_OF_MERIT_COMPUTE.PERCENT_BELOW)
+        oDefCompute.set_compute_type(FigureOfMeritCompute.PERCENT_BELOW)
         oDataPercent = clr.CastAs(oDefCompute.compute, FigureOfMeritDefinitionDataPercentLevel)
         oDataPercent.percent_level = 85.0
         CompareUtility.TakeOMSnapshot(TestBase.Application)
@@ -7872,7 +7892,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oDefCompute.set_compute_type(FIGURE_OF_MERIT_COMPUTE.PERCENT_BELOW_GAPS_ONLY)
+        oDefCompute.set_compute_type(FigureOfMeritCompute.PERCENT_BELOW_GAPS_ONLY)
         oDataPercent = clr.CastAs(oDefCompute.compute, FigureOfMeritDefinitionDataPercentLevel)
         oDataPercent.percent_level = 85.0
         CompareUtility.TakeOMSnapshot(TestBase.Application)
@@ -7882,7 +7902,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oDefResponse.set_compute_type(FIGURE_OF_MERIT_COMPUTE.MAXIMUM)
+        oDefResponse.set_compute_type(FigureOfMeritCompute.MAXIMUM)
         oDefResponse.minimum_assets = 2
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
@@ -7891,7 +7911,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oDefResponse.set_compute_type(FIGURE_OF_MERIT_COMPUTE.PERCENT_BELOW_GAPS_ONLY)
+        oDefResponse.set_compute_type(FigureOfMeritCompute.PERCENT_BELOW_GAPS_ONLY)
         oDataPercent = clr.CastAs(oDefResponse.compute, FigureOfMeritDefinitionDataPercentLevel)
         oDataPercent.percent_level = 85.0
         oDefResponse.minimum_assets = 2
@@ -7904,12 +7924,12 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Definition.AG_FOM.set_access_constraint_definition(FIGURE_OF_MERIT_CONSTRAINT_NAME.ALTITUDE)
+        Definition.AG_FOM.set_access_constraint_definition(FigureOfMeritConstraintName.ALTITUDE)
         oDefAccessCnstr: "FigureOfMeritDefinitionAccessConstraint" = FigureOfMeritDefinitionAccessConstraint(
             Definition.AG_FOM.definition
         )
-        oDefAccessCnstr.set_compute_type(FIGURE_OF_MERIT_COMPUTE.MINIMUM)
-        oDefAccessCnstr.across_assets = FIGURE_OF_MERIT_ACROSS_ASSETS.MINIMUM
+        oDefAccessCnstr.set_compute_type(FigureOfMeritCompute.MINIMUM)
+        oDefAccessCnstr.across_assets = FigureOfMeritAcrossAssets.MINIMUM
         oDefAccessCnstr.time_step = 120
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
@@ -7918,7 +7938,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oDefAccessCnstr.across_assets = FIGURE_OF_MERIT_ACROSS_ASSETS.MAXIMUM
+        oDefAccessCnstr.across_assets = FigureOfMeritAcrossAssets.MAXIMUM
         oDefAccessCnstr.time_step = 120
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
@@ -7927,7 +7947,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oDefAccessCnstr.across_assets = FIGURE_OF_MERIT_ACROSS_ASSETS.AVERAGE
+        oDefAccessCnstr.across_assets = FigureOfMeritAcrossAssets.AVERAGE
         oDefAccessCnstr.time_step = 120
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
@@ -7936,8 +7956,8 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oDefAccessCnstr.set_compute_type(FIGURE_OF_MERIT_COMPUTE.MAXIMUM)
-        oDefAccessCnstr.across_assets = FIGURE_OF_MERIT_ACROSS_ASSETS.MINIMUM
+        oDefAccessCnstr.set_compute_type(FigureOfMeritCompute.MAXIMUM)
+        oDefAccessCnstr.across_assets = FigureOfMeritAcrossAssets.MINIMUM
         oDefAccessCnstr.time_step = 60
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
@@ -7948,13 +7968,13 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Definition.AG_FOM2.set_definition_type(FIGURE_OF_MERIT_DEFINITION_TYPE.DILUTION_OF_PRECISION)
+        Definition.AG_FOM2.set_definition_type(FigureOfMeritDefinitionType.DILUTION_OF_PRECISION)
         oDefDOP: "IFigureOfMeritDefinitionDilutionOfPrecision" = IFigureOfMeritDefinitionDilutionOfPrecision(
             Definition.AG_FOM2.definition
         )
-        oDefDOP.set_compute_type(FIGURE_OF_MERIT_COMPUTE.MINIMUM)
-        oDefDOP.set_method(FIGURE_OF_MERIT_METHOD.GDOP)
-        oDefDOP.set_type(FIGURE_OF_MERIT_NAVIGATION_COMPUTE_TYPE.OVER_DETERMINED)
+        oDefDOP.set_compute_type(FigureOfMeritCompute.MINIMUM)
+        oDefDOP.set_method(FigureOfMeritMethod.GDOP)
+        oDefDOP.set_type(FigureOfMeritNavigationComputeType.OVER_DETERMINED)
         oDefDOP.time_step = 360
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
@@ -7963,7 +7983,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oDefDOP.set_type(FIGURE_OF_MERIT_NAVIGATION_COMPUTE_TYPE.BEST_4)
+        oDefDOP.set_type(FigureOfMeritNavigationComputeType.BEST_4)
         oDefDOP.time_step = 120
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
@@ -7972,7 +7992,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oDefDOP.set_type(FIGURE_OF_MERIT_NAVIGATION_COMPUTE_TYPE.BEST_N)
+        oDefDOP.set_type(FigureOfMeritNavigationComputeType.BEST_N)
         oBestN: "FigureOfMeritDefinitionDataBestN" = clr.CastAs(oDefDOP.type_data, FigureOfMeritDefinitionDataBestN)
         oBestN.best_n = 5
         oDefDOP.time_step = 360
@@ -7983,8 +8003,8 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oDefDOP.set_method(FIGURE_OF_MERIT_METHOD.PDOP)
-        oDefDOP.set_type(FIGURE_OF_MERIT_NAVIGATION_COMPUTE_TYPE.OVER_DETERMINED)
+        oDefDOP.set_method(FigureOfMeritMethod.PDOP)
+        oDefDOP.set_type(FigureOfMeritNavigationComputeType.OVER_DETERMINED)
         oDefDOP.time_step = 120
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
@@ -7993,7 +8013,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oDefDOP.set_type(FIGURE_OF_MERIT_NAVIGATION_COMPUTE_TYPE.BEST_4)
+        oDefDOP.set_type(FigureOfMeritNavigationComputeType.BEST_4)
         oDefDOP.time_step = 360
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
@@ -8002,7 +8022,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oDefDOP.set_type(FIGURE_OF_MERIT_NAVIGATION_COMPUTE_TYPE.BEST_N)
+        oDefDOP.set_type(FigureOfMeritNavigationComputeType.BEST_N)
         oBestN = clr.CastAs(oDefDOP.type_data, FigureOfMeritDefinitionDataBestN)
         oBestN.best_n = 6
         oDefDOP.time_step = 120
@@ -8013,8 +8033,8 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oDefDOP.set_method(FIGURE_OF_MERIT_METHOD.HDOP)
-        oDefDOP.set_type(FIGURE_OF_MERIT_NAVIGATION_COMPUTE_TYPE.OVER_DETERMINED)
+        oDefDOP.set_method(FigureOfMeritMethod.HDOP)
+        oDefDOP.set_type(FigureOfMeritNavigationComputeType.OVER_DETERMINED)
         oDefDOP.time_step = 360
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
@@ -8023,7 +8043,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oDefDOP.set_type(FIGURE_OF_MERIT_NAVIGATION_COMPUTE_TYPE.BEST_4)
+        oDefDOP.set_type(FigureOfMeritNavigationComputeType.BEST_4)
         oDefDOP.time_step = 120
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
@@ -8032,7 +8052,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oDefDOP.set_type(FIGURE_OF_MERIT_NAVIGATION_COMPUTE_TYPE.BEST_N)
+        oDefDOP.set_type(FigureOfMeritNavigationComputeType.BEST_N)
         oBestN = clr.CastAs(oDefDOP.type_data, FigureOfMeritDefinitionDataBestN)
         oBestN.best_n = 5
         oDefDOP.time_step = 360
@@ -8043,8 +8063,8 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oDefDOP.set_method(FIGURE_OF_MERIT_METHOD.VDOP)
-        oDefDOP.set_type(FIGURE_OF_MERIT_NAVIGATION_COMPUTE_TYPE.OVER_DETERMINED)
+        oDefDOP.set_method(FigureOfMeritMethod.VDOP)
+        oDefDOP.set_type(FigureOfMeritNavigationComputeType.OVER_DETERMINED)
         oDefDOP.time_step = 120
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
@@ -8053,7 +8073,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oDefDOP.set_type(FIGURE_OF_MERIT_NAVIGATION_COMPUTE_TYPE.BEST_4)
+        oDefDOP.set_type(FigureOfMeritNavigationComputeType.BEST_4)
         oDefDOP.time_step = 360
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
@@ -8062,7 +8082,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oDefDOP.set_type(FIGURE_OF_MERIT_NAVIGATION_COMPUTE_TYPE.BEST_N)
+        oDefDOP.set_type(FigureOfMeritNavigationComputeType.BEST_N)
         oBestN = clr.CastAs(oDefDOP.type_data, FigureOfMeritDefinitionDataBestN)
         oBestN.best_n = 6
         oDefDOP.time_step = 120
@@ -8073,8 +8093,8 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oDefDOP.set_method(FIGURE_OF_MERIT_METHOD.TDOP)
-        oDefDOP.set_type(FIGURE_OF_MERIT_NAVIGATION_COMPUTE_TYPE.OVER_DETERMINED)
+        oDefDOP.set_method(FigureOfMeritMethod.TDOP)
+        oDefDOP.set_type(FigureOfMeritNavigationComputeType.OVER_DETERMINED)
         oDefDOP.time_step = 360
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
@@ -8083,7 +8103,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oDefDOP.set_type(FIGURE_OF_MERIT_NAVIGATION_COMPUTE_TYPE.BEST_4)
+        oDefDOP.set_type(FigureOfMeritNavigationComputeType.BEST_4)
         oDefDOP.time_step = 120
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
@@ -8092,7 +8112,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oDefDOP.set_type(FIGURE_OF_MERIT_NAVIGATION_COMPUTE_TYPE.BEST_N)
+        oDefDOP.set_type(FigureOfMeritNavigationComputeType.BEST_N)
         oBestN = clr.CastAs(oDefDOP.type_data, FigureOfMeritDefinitionDataBestN)
         oBestN.best_n = 5
         oDefDOP.time_step = 360
@@ -8103,10 +8123,10 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oDefDOP.set_compute_type(FIGURE_OF_MERIT_COMPUTE.PERCENT_BELOW)
+        oDefDOP.set_compute_type(FigureOfMeritCompute.PERCENT_BELOW)
         oDataPercent = clr.CastAs(oDefDOP.compute, FigureOfMeritDefinitionDataPercentLevel)
         oDataPercent.percent_level = 95
-        oDefDOP.set_type(FIGURE_OF_MERIT_NAVIGATION_COMPUTE_TYPE.BEST_N)
+        oDefDOP.set_type(FigureOfMeritNavigationComputeType.BEST_N)
         oBestN = clr.CastAs(oDefDOP.type_data, FigureOfMeritDefinitionDataBestN)
         oBestN.best_n = 99
         oDefDOP.time_step = 300
@@ -8119,9 +8139,9 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Definition.AG_FOM.set_definition_type(FIGURE_OF_MERIT_DEFINITION_TYPE.RESPONSE_TIME)
+        Definition.AG_FOM.set_definition_type(FigureOfMeritDefinitionType.RESPONSE_TIME)
         oDefResponse = IFigureOfMeritDefinitionResponseTime(Definition.AG_FOM.definition)
-        oDefResponse.set_compute_type(FIGURE_OF_MERIT_COMPUTE.PERCENT_BELOW)
+        oDefResponse.set_compute_type(FigureOfMeritCompute.PERCENT_BELOW)
         oDataPercent = clr.CastAs(oDefResponse.compute, FigureOfMeritDefinitionDataPercentLevel)
         oDataPercent.percent_level = 90
         CompareUtility.TakeOMSnapshot(TestBase.Application)
@@ -8133,7 +8153,7 @@ class Definition(TestBase):
 
         oSatisfaction: "FigureOfMeritSatisfaction" = oDefResponse.satisfaction
         oSatisfaction.enable_satisfaction = True
-        oSatisfaction.satisfaction_type = FIGURE_OF_MERIT_SATISFACTION_TYPE.GREATER_THAN
+        oSatisfaction.satisfaction_type = FigureOfMeritSatisfactionType.GREATER_THAN
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command(
@@ -8141,7 +8161,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oSatisfaction.satisfaction_type = FIGURE_OF_MERIT_SATISFACTION_TYPE.GREATER_THAN
+        oSatisfaction.satisfaction_type = FigureOfMeritSatisfactionType.GREATER_THAN
         oSatisfaction.satisfaction_threshold = 5.0
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
@@ -8150,7 +8170,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oSatisfaction.satisfaction_type = FIGURE_OF_MERIT_SATISFACTION_TYPE.AT_LEAST
+        oSatisfaction.satisfaction_type = FigureOfMeritSatisfactionType.AT_LEAST
         oSatisfaction.satisfaction_threshold = 2.0
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
@@ -8159,7 +8179,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oSatisfaction.satisfaction_type = FIGURE_OF_MERIT_SATISFACTION_TYPE.EQUAL_TO
+        oSatisfaction.satisfaction_type = FigureOfMeritSatisfactionType.EQUAL_TO
         oSatisfaction.satisfaction_threshold = 3.0
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
@@ -8168,7 +8188,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oSatisfaction.satisfaction_type = FIGURE_OF_MERIT_SATISFACTION_TYPE.AT_MOST
+        oSatisfaction.satisfaction_type = FigureOfMeritSatisfactionType.AT_MOST
         oSatisfaction.satisfaction_threshold = 5.0
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
@@ -8177,7 +8197,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oSatisfaction.satisfaction_type = FIGURE_OF_MERIT_SATISFACTION_TYPE.LESS_THAN
+        oSatisfaction.satisfaction_type = FigureOfMeritSatisfactionType.LESS_THAN
         oSatisfaction.satisfaction_threshold = 6.0
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
@@ -8194,9 +8214,9 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        Definition.AG_FOM.set_definition_type(FIGURE_OF_MERIT_DEFINITION_TYPE.N_ASSET_COVERAGE)
+        Definition.AG_FOM.set_definition_type(FigureOfMeritDefinitionType.N_ASSET_COVERAGE)
         oDefCompute = IFigureOfMeritDefinitionCompute(Definition.AG_FOM.definition)
-        oDefCompute.set_compute_type(FIGURE_OF_MERIT_COMPUTE.MAXIMUM)
+        oDefCompute.set_compute_type(FigureOfMeritCompute.MAXIMUM)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command(
@@ -8205,7 +8225,7 @@ class Definition(TestBase):
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
         oSatisfaction.enable_satisfaction = True
-        oSatisfaction.satisfaction_type = FIGURE_OF_MERIT_SATISFACTION_TYPE.GREATER_THAN
+        oSatisfaction.satisfaction_type = FigureOfMeritSatisfactionType.GREATER_THAN
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command(
@@ -8213,7 +8233,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oSatisfaction.satisfaction_type = FIGURE_OF_MERIT_SATISFACTION_TYPE.GREATER_THAN
+        oSatisfaction.satisfaction_type = FigureOfMeritSatisfactionType.GREATER_THAN
         oSatisfaction.satisfaction_threshold = 5
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
@@ -8222,7 +8242,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oSatisfaction.satisfaction_type = FIGURE_OF_MERIT_SATISFACTION_TYPE.AT_LEAST
+        oSatisfaction.satisfaction_type = FigureOfMeritSatisfactionType.AT_LEAST
         oSatisfaction.satisfaction_threshold = 2
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
@@ -8231,7 +8251,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oSatisfaction.satisfaction_type = FIGURE_OF_MERIT_SATISFACTION_TYPE.EQUAL_TO
+        oSatisfaction.satisfaction_type = FigureOfMeritSatisfactionType.EQUAL_TO
         oSatisfaction.satisfaction_threshold = 3
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
@@ -8240,7 +8260,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oSatisfaction.satisfaction_type = FIGURE_OF_MERIT_SATISFACTION_TYPE.AT_MOST
+        oSatisfaction.satisfaction_type = FigureOfMeritSatisfactionType.AT_MOST
         oSatisfaction.satisfaction_threshold = 5
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
@@ -8249,7 +8269,7 @@ class Definition(TestBase):
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
 
-        oSatisfaction.satisfaction_type = FIGURE_OF_MERIT_SATISFACTION_TYPE.LESS_THAN
+        oSatisfaction.satisfaction_type = FigureOfMeritSatisfactionType.LESS_THAN
         oSatisfaction.satisfaction_threshold = 6
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
@@ -8266,95 +8286,95 @@ class Definition(TestBase):
         CompareUtility = ReportComparison(self.Units)
         CompareUtility.AddReport(clr.CastAs(Definition.AG_FOM2, IStkObject), '"Grid Stats"')
 
-        Definition.AG_FOM2.set_definition_type(FIGURE_OF_MERIT_DEFINITION_TYPE.DILUTION_OF_PRECISION)
+        Definition.AG_FOM2.set_definition_type(FigureOfMeritDefinitionType.DILUTION_OF_PRECISION)
         dop: "IFigureOfMeritDefinitionDilutionOfPrecision" = IFigureOfMeritDefinitionDilutionOfPrecision(
             Definition.AG_FOM2.definition
         )
-        dop.set_type(FIGURE_OF_MERIT_NAVIGATION_COMPUTE_TYPE.OVER_DETERMINED)
+        dop.set_type(FigureOfMeritNavigationComputeType.OVER_DETERMINED)
         dop.time_step = 360
 
         TestBase.Application.execute_command(
             "Cov */CoverageDefinition/FOMTestDOP/FigureOfMerit/FOMTestDOP FomDefine Definition DOP Minimum EDOP OverDetermined 360"
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
-        dop.set_method(FIGURE_OF_MERIT_METHOD.EDOP)
+        dop.set_method(FigureOfMeritMethod.EDOP)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command(
             "Cov */CoverageDefinition/FOMTestDOP/FigureOfMerit/FOMTestDOP FomDefine Definition DOP Minimum EDOP_3 OverDetermined 360"
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
-        dop.set_method(FIGURE_OF_MERIT_METHOD.EDOP3)
+        dop.set_method(FigureOfMeritMethod.EDOP3)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command(
             "Cov */CoverageDefinition/FOMTestDOP/FigureOfMerit/FOMTestDOP FomDefine Definition DOP Minimum GDOP OverDetermined 360"
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
-        dop.set_method(FIGURE_OF_MERIT_METHOD.GDOP)
+        dop.set_method(FigureOfMeritMethod.GDOP)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command(
             "Cov */CoverageDefinition/FOMTestDOP/FigureOfMerit/FOMTestDOP FomDefine Definition DOP Minimum HDOP OverDetermined 360"
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
-        dop.set_method(FIGURE_OF_MERIT_METHOD.HDOP)
+        dop.set_method(FigureOfMeritMethod.HDOP)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command(
             "Cov */CoverageDefinition/FOMTestDOP/FigureOfMerit/FOMTestDOP FomDefine Definition DOP Minimum HDOP_3 OverDetermined 360"
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
-        dop.set_method(FIGURE_OF_MERIT_METHOD.HDOP3)
+        dop.set_method(FigureOfMeritMethod.HDOP3)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command(
             "Cov */CoverageDefinition/FOMTestDOP/FigureOfMerit/FOMTestDOP FomDefine Definition DOP Minimum NDOP OverDetermined 360"
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
-        dop.set_method(FIGURE_OF_MERIT_METHOD.NDOP)
+        dop.set_method(FigureOfMeritMethod.NDOP)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command(
             "Cov */CoverageDefinition/FOMTestDOP/FigureOfMerit/FOMTestDOP FomDefine Definition DOP Minimum NDOP_3 OverDetermined 360"
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
-        dop.set_method(FIGURE_OF_MERIT_METHOD.NDOP3)
+        dop.set_method(FigureOfMeritMethod.NDOP3)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command(
             "Cov */CoverageDefinition/FOMTestDOP/FigureOfMerit/FOMTestDOP FomDefine Definition DOP Minimum PDOP OverDetermined 360"
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
-        dop.set_method(FIGURE_OF_MERIT_METHOD.PDOP)
+        dop.set_method(FigureOfMeritMethod.PDOP)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command(
             "Cov */CoverageDefinition/FOMTestDOP/FigureOfMerit/FOMTestDOP FomDefine Definition DOP Minimum PDOP_3 OverDetermined 360"
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
-        dop.set_method(FIGURE_OF_MERIT_METHOD.PDOP3)
+        dop.set_method(FigureOfMeritMethod.PDOP3)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command(
             "Cov */CoverageDefinition/FOMTestDOP/FigureOfMerit/FOMTestDOP FomDefine Definition DOP Minimum TDOP OverDetermined 360"
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
-        dop.set_method(FIGURE_OF_MERIT_METHOD.TDOP)
+        dop.set_method(FigureOfMeritMethod.TDOP)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command(
             "Cov */CoverageDefinition/FOMTestDOP/FigureOfMerit/FOMTestDOP FomDefine Definition DOP Minimum VDOP OverDetermined 360"
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
-        dop.set_method(FIGURE_OF_MERIT_METHOD.VDOP)
+        dop.set_method(FigureOfMeritMethod.VDOP)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command(
             "Cov */CoverageDefinition/FOMTestDOP/FigureOfMerit/FOMTestDOP FomDefine Definition DOP Minimum VDOP_3 OverDetermined 360"
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
-        dop.set_method(FIGURE_OF_MERIT_METHOD.VDOP3)
+        dop.set_method(FigureOfMeritMethod.VDOP3)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         CompareUtility.CompareReportSnapshots()
@@ -8370,95 +8390,95 @@ class Definition(TestBase):
         CompareUtility = ReportComparison(self.Units)
         CompareUtility.AddReport(clr.CastAs(Definition.AG_FOM2, IStkObject), '"Grid Stats"')
 
-        Definition.AG_FOM2.set_definition_type(FIGURE_OF_MERIT_DEFINITION_TYPE.NAVIGATION_ACCURACY)
+        Definition.AG_FOM2.set_definition_type(FigureOfMeritDefinitionType.NAVIGATION_ACCURACY)
         navAccuracy: "FigureOfMeritDefinitionNavigationAccuracy" = FigureOfMeritDefinitionNavigationAccuracy(
             Definition.AG_FOM2.definition
         )
-        navAccuracy.set_type(FIGURE_OF_MERIT_NAVIGATION_COMPUTE_TYPE.OVER_DETERMINED)
+        navAccuracy.set_type(FigureOfMeritNavigationComputeType.OVER_DETERMINED)
         navAccuracy.time_step = 360
 
         TestBase.Application.execute_command(
             "Cov */CoverageDefinition/FOMTestDOP/FigureOfMerit/FOMTestDOP FomDefine Definition NAVACCURACY Minimum EACC OverDetermined 360"
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
-        navAccuracy.set_method(FIGURE_OF_MERIT_METHOD.EACC)
+        navAccuracy.set_method(FigureOfMeritMethod.EACC)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command(
             "Cov */CoverageDefinition/FOMTestDOP/FigureOfMerit/FOMTestDOP FomDefine Definition NAVACCURACY Minimum EACC_3 OverDetermined 360"
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
-        navAccuracy.set_method(FIGURE_OF_MERIT_METHOD.EACC3)
+        navAccuracy.set_method(FigureOfMeritMethod.EACC3)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command(
             "Cov */CoverageDefinition/FOMTestDOP/FigureOfMerit/FOMTestDOP FomDefine Definition NAVACCURACY Minimum GACC OverDetermined 360"
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
-        navAccuracy.set_method(FIGURE_OF_MERIT_METHOD.GACC)
+        navAccuracy.set_method(FigureOfMeritMethod.GACC)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command(
             "Cov */CoverageDefinition/FOMTestDOP/FigureOfMerit/FOMTestDOP FomDefine Definition NAVACCURACY Minimum HACC OverDetermined 360"
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
-        navAccuracy.set_method(FIGURE_OF_MERIT_METHOD.HACC)
+        navAccuracy.set_method(FigureOfMeritMethod.HACC)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command(
             "Cov */CoverageDefinition/FOMTestDOP/FigureOfMerit/FOMTestDOP FomDefine Definition NAVACCURACY Minimum HACC_3 OverDetermined 360"
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
-        navAccuracy.set_method(FIGURE_OF_MERIT_METHOD.HACC3)
+        navAccuracy.set_method(FigureOfMeritMethod.HACC3)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command(
             "Cov */CoverageDefinition/FOMTestDOP/FigureOfMerit/FOMTestDOP FomDefine Definition NAVACCURACY Minimum NACC OverDetermined 360"
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
-        navAccuracy.set_method(FIGURE_OF_MERIT_METHOD.NACC)
+        navAccuracy.set_method(FigureOfMeritMethod.NACC)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command(
             "Cov */CoverageDefinition/FOMTestDOP/FigureOfMerit/FOMTestDOP FomDefine Definition NAVACCURACY Minimum NACC_3 OverDetermined 360"
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
-        navAccuracy.set_method(FIGURE_OF_MERIT_METHOD.NACC3)
+        navAccuracy.set_method(FigureOfMeritMethod.NACC3)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command(
             "Cov */CoverageDefinition/FOMTestDOP/FigureOfMerit/FOMTestDOP FomDefine Definition NAVACCURACY Minimum PACC OverDetermined 360"
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
-        navAccuracy.set_method(FIGURE_OF_MERIT_METHOD.PACC)
+        navAccuracy.set_method(FigureOfMeritMethod.PACC)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command(
             "Cov */CoverageDefinition/FOMTestDOP/FigureOfMerit/FOMTestDOP FomDefine Definition NAVACCURACY Minimum PACC_3 OverDetermined 360"
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
-        navAccuracy.set_method(FIGURE_OF_MERIT_METHOD.PACC3)
+        navAccuracy.set_method(FigureOfMeritMethod.PACC3)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command(
             "Cov */CoverageDefinition/FOMTestDOP/FigureOfMerit/FOMTestDOP FomDefine Definition NAVACCURACY Minimum TACC OverDetermined 360"
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
-        navAccuracy.set_method(FIGURE_OF_MERIT_METHOD.TACC)
+        navAccuracy.set_method(FigureOfMeritMethod.TACC)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command(
             "Cov */CoverageDefinition/FOMTestDOP/FigureOfMerit/FOMTestDOP FomDefine Definition NAVACCURACY Minimum VACC OverDetermined 360"
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
-        navAccuracy.set_method(FIGURE_OF_MERIT_METHOD.VACC)
+        navAccuracy.set_method(FigureOfMeritMethod.VACC)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         TestBase.Application.execute_command(
             "Cov */CoverageDefinition/FOMTestDOP/FigureOfMerit/FOMTestDOP FomDefine Definition NAVACCURACY Minimum VACC_3 OverDetermined 360"
         )
         CompareUtility.TakeConnectSnapshot(TestBase.Application)
-        navAccuracy.set_method(FIGURE_OF_MERIT_METHOD.VACC3)
+        navAccuracy.set_method(FigureOfMeritMethod.VACC3)
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         CompareUtility.CompareReportSnapshots()
@@ -8498,7 +8518,7 @@ class Definition(TestBase):
         Definition.AG_SN1 = Sensor(
             TestBase.Application.current_scenario.children["Aircraft1"].children["SensorAirComplex"]
         )
-        Definition.AG_SN1.set_pattern_type(SENSOR_PATTERN.COMPLEX_CONIC)
+        Definition.AG_SN1.set_pattern_type(SensorPattern.COMPLEX_CONIC)
         oComplexConic: "SensorComplexConicPattern" = SensorComplexConicPattern(Definition.AG_SN1.pattern)
         oComplexConic.inner_cone_half_angle = 30.0
         oComplexConic.outer_cone_half_angle = 40.0
@@ -8682,18 +8702,18 @@ class Definition(TestBase):
         Assert.assertEqual(Convert.ToInt32(results[0]), Convert.ToInt32(isInFOV))
 
         self.MTOFOVHelper(MasterMap, "FieldOfView_RM */MTO/A_MTO Object */Satellite/Geo1/Sensor/A_Sensor Mode Each")
-        self.CompareFOVResults(MasterMap, fov.compute_all_tracks(MTO_VISIBILITY_MODE.EACH, date.format("UTCG")))
+        self.CompareFOVResults(MasterMap, fov.compute_all_tracks(MTOVisibilityMode.EACH, date.format("UTCG")))
 
         self.MTOFOVHelper(
             MasterMap, "FieldOfView_RM */MTO/A_MTO Object */Satellite/Geo1/Sensor/A_Sensor Mode EachVisible"
         )
-        self.CompareFOVResults(MasterMap, fov.compute_all_tracks(MTO_VISIBILITY_MODE.EACH_VISIBLE, date.format("UTCG")))
+        self.CompareFOVResults(MasterMap, fov.compute_all_tracks(MTOVisibilityMode.EACH_VISIBLE, date.format("UTCG")))
 
         self.MTOFOVHelper(
             MasterMap, "FieldOfView_RM */MTO/A_MTO Object */Satellite/Geo1/Sensor/A_Sensor Mode EachNotVisible"
         )
         self.CompareFOVResults(
-            MasterMap, fov.compute_all_tracks(MTO_VISIBILITY_MODE.EACH_NOT_VISIBLE, date.format("UTCG"))
+            MasterMap, fov.compute_all_tracks(MTOVisibilityMode.EACH_NOT_VISIBLE, date.format("UTCG"))
         )
 
         results = TestBase.Application.execute_command(
@@ -8718,35 +8738,35 @@ class Definition(TestBase):
         results = TestBase.Application.execute_command(
             "FieldOfView_RM */MTO/A_MTO Object */Satellite/Geo1/Sensor/A_Sensor Tracks 1 2 3 4"
         )
-        isInFOV = fov.are_tracks_in_field_of_view(MTO_TRACK_EVALUATION_TYPE.ANY, refTracks, date.format("UTCG"))
+        isInFOV = fov.are_tracks_in_field_of_view(MTOTrackEvaluationType.ANY, refTracks, date.format("UTCG"))
         Assert.assertEqual(Convert.ToInt32(results[0]), Convert.ToInt32(isInFOV))
 
         results = TestBase.Application.execute_command(
             "FieldOfView_RM */MTO/A_MTO Object */Satellite/Geo1/Sensor/A_Sensor Entirety All"
         )
-        fov.entirety = MTO_ENTIRETY.ALL
+        fov.entirety = MTOEntirety.ALL
         isInFOV = fov.is_any_track_in_field_of_view(date.format("UTCG"))
         Assert.assertEqual(Convert.ToInt32(results[0]), Convert.ToInt32(isInFOV))
 
         results = TestBase.Application.execute_command(
             "FieldOfView_RM */MTO/A_MTO Object */Satellite/Geo1/Sensor/A_Sensor Entirety Partial"
         )
-        fov.entirety = MTO_ENTIRETY.PARTIAL
+        fov.entirety = MTOEntirety.PARTIAL
         isInFOV = fov.is_any_track_in_field_of_view(date.format("UTCG"))
         Assert.assertEqual(Convert.ToInt32(results[0]), Convert.ToInt32(isInFOV))
 
         results = TestBase.Application.execute_command(
             'FieldOfView_RM */MTO/A_MTO Object */Satellite/Geo1/Sensor/A_Sensor Time "1 Jul 2005 12:00:00.000" Mode Any Track 1 Track 2 Track 3 Track 4 Entirety All'
         )
-        fov.entirety = MTO_ENTIRETY.ALL
-        isInFOV = fov.are_tracks_in_field_of_view(MTO_TRACK_EVALUATION_TYPE.ANY, refTracks, "1 Jul 2005 12:00:00.000")
+        fov.entirety = MTOEntirety.ALL
+        isInFOV = fov.are_tracks_in_field_of_view(MTOTrackEvaluationType.ANY, refTracks, "1 Jul 2005 12:00:00.000")
         Assert.assertEqual(Convert.ToInt32(results[0]), Convert.ToInt32(isInFOV))
 
         results = TestBase.Application.execute_command(
             "FieldOfView_RM */MTO/A_MTO Object */Satellite/Geo1/Sensor/A_Sensor Entirety Partial Mode All Tracks 1 2 4 3"
         )
-        fov.entirety = MTO_ENTIRETY.PARTIAL
-        isInFOV = fov.are_tracks_in_field_of_view(MTO_TRACK_EVALUATION_TYPE.ALL, refTracks, date.format("UTCG"))
+        fov.entirety = MTOEntirety.PARTIAL
+        isInFOV = fov.are_tracks_in_field_of_view(MTOTrackEvaluationType.ALL, refTracks, date.format("UTCG"))
         Assert.assertEqual(Convert.ToInt32(results[0]), Convert.ToInt32(isInFOV))
 
         tracks.clear()
@@ -8758,14 +8778,14 @@ class Definition(TestBase):
             'FieldOfView_RM */MTO/A_MTO Object */Satellite/Geo1/Sensor/A_Sensor Mode each Track 1 Track 4 Time "1 Jul 2005 12:00:00.000"',
         )
         self.CompareFOVResults(
-            MasterMap, fov.compute_tracks(MTO_VISIBILITY_MODE.EACH, refTracks, "1 Jul 2005 12:00:00.000")
+            MasterMap, fov.compute_tracks(MTOVisibilityMode.EACH, refTracks, "1 Jul 2005 12:00:00.000")
         )
 
         results = TestBase.Application.execute_command(
             'FieldOfView_RM */MTO/A_MTO Object */Satellite/Geo1/Sensor/A_Sensor Track 1 Track 4 Mode eachVisible Time "1 Jul 2005 23:00:00.000"'
         )
         Assert.assertEqual("No Visibility", results[0])
-        noTracks = fov.compute_tracks(MTO_VISIBILITY_MODE.EACH_VISIBLE, refTracks, "1 Jul 2005 23:00:00.000")
+        noTracks = fov.compute_tracks(MTOVisibilityMode.EACH_VISIBLE, refTracks, "1 Jul 2005 23:00:00.000")
         Assert.assertEqual(0, Array.Length(noTracks))
 
         tracks.clear()
@@ -8781,7 +8801,7 @@ class Definition(TestBase):
         results = TestBase.Application.execute_command(
             'FieldOfView_RM */MTO/A_MTO Object */Satellite/Geo1/Sensor/A_Sensor Time "1 Jul 2005 12:00:00.000" Mode Any Tracks 1 2 3 4 4 3 2 1'
         )
-        isInFOV = fov.are_tracks_in_field_of_view(MTO_TRACK_EVALUATION_TYPE.ANY, refTracks, "1 Jul 2005 12:00:00.000")
+        isInFOV = fov.are_tracks_in_field_of_view(MTOTrackEvaluationType.ANY, refTracks, "1 Jul 2005 12:00:00.000")
         Assert.assertEqual(Convert.ToInt32(results[0]), Convert.ToInt32(isInFOV))
 
     def CompareFOVResults(self, MasterMap, tracksVisibility):
@@ -9111,16 +9131,14 @@ class Definition(TestBase):
         MasterList = []
 
         self.MTORangeHelper(MasterList, "Range_RM */MTO/A_MTO Object */Satellite/Geo1 Mode Each")
-        self.CompareRangeResults(MasterList, range.compute_all_ranges(MTO_RANGE_MODE.EACH, date.format("UTCG")))
+        self.CompareRangeResults(MasterList, range.compute_all_ranges(MTORangeMode.EACH, date.format("UTCG")))
 
         self.MTORangeHelper(MasterList, "Range_RM */MTO/A_MTO Object */Satellite/Geo1 Mode EachInRange")
-        self.CompareRangeResults(
-            MasterList, range.compute_all_ranges(MTO_RANGE_MODE.EACH_IN_RANGE, date.format("UTCG"))
-        )
+        self.CompareRangeResults(MasterList, range.compute_all_ranges(MTORangeMode.EACH_IN_RANGE, date.format("UTCG")))
 
         self.MTORangeHelper(MasterList, "Range_RM */MTO/A_MTO Object */Satellite/Geo1 Mode EachNotInRange")
         self.CompareRangeResults(
-            MasterList, range.compute_all_ranges(MTO_RANGE_MODE.EACH_NOT_IN_RANGE, date.format("UTCG"))
+            MasterList, range.compute_all_ranges(MTORangeMode.EACH_NOT_IN_RANGE, date.format("UTCG"))
         )
 
         results = TestBase.Application.execute_command("Range_RM */MTO/A_MTO Object */Satellite/Geo1 Track 2")
@@ -9134,7 +9152,7 @@ class Definition(TestBase):
         results = TestBase.Application.execute_command("Range_RM */MTO/A_MTO Object */Satellite/Geo1 Tracks 1 2 3 4")
         tracks = [1, 2, 3, 4]
 
-        isInRange = range.are_tracks_in_range(MTO_TRACK_EVALUATION_TYPE.ANY, tracks, date.format("UTCG"))
+        isInRange = range.are_tracks_in_range(MTOTrackEvaluationType.ANY, tracks, date.format("UTCG"))
         Assert.assertEqual(Convert.ToInt32(results[0]), Convert.ToInt32(isInRange))
 
         results = TestBase.Application.execute_command("Range_RM */MTO/A_MTO Object */Satellite/Geo1 LowerLimit 500.2")
@@ -9154,12 +9172,12 @@ class Definition(TestBase):
         range.upper_limit = upperLimit
 
         results = TestBase.Application.execute_command("Range_RM */MTO/A_MTO Object */Satellite/Geo1 Entirety All")
-        range.entirety = MTO_ENTIRETY.ALL
+        range.entirety = MTOEntirety.ALL
         isInRange = range.is_any_track_in_range(date.format("UTCG"))
         Assert.assertEqual(Convert.ToInt32(results[0]), Convert.ToInt32(isInRange))
 
         results = TestBase.Application.execute_command("Range_RM */MTO/A_MTO Object */Satellite/Geo1 Entirety Partial")
-        range.entirety = MTO_ENTIRETY.PARTIAL
+        range.entirety = MTOEntirety.PARTIAL
 
         results = TestBase.Application.execute_command("Range_RM */MTO/A_MTO Object */Satellite/Geo1 Objectdata -1")
         range.object_data = -1
@@ -9178,21 +9196,21 @@ class Definition(TestBase):
         results = TestBase.Application.execute_command(
             'Range_RM */MTO/A_MTO Object */Satellite/Geo1 Time "1 Jul 2005 12:00:00.000" Mode Any Track 1 Track 2 Track 3 Track 4 Entirety All LowerLimit 45 UpperLimit 900 Objectdata 3'
         )
-        range.entirety = MTO_ENTIRETY.ALL
+        range.entirety = MTOEntirety.ALL
         range.lower_limit = 45
         range.upper_limit = 900
         range.object_data = 3
-        isInRange = range.are_tracks_in_range(MTO_TRACK_EVALUATION_TYPE.ANY, tracks, "1 Jul 2005 12:00:00.000")
+        isInRange = range.are_tracks_in_range(MTOTrackEvaluationType.ANY, tracks, "1 Jul 2005 12:00:00.000")
         Assert.assertEqual(Convert.ToInt32(results[0]), Convert.ToInt32(isInRange))
 
         results = TestBase.Application.execute_command(
             "Range_RM */MTO/A_MTO Object */Satellite/Geo1 Entirety Partial Mode All Objectdata 5 Tracks 1 2 4 3"
         )
-        range.entirety = MTO_ENTIRETY.PARTIAL
+        range.entirety = MTOEntirety.PARTIAL
         range.object_data = 5
         range.upper_limit = upperLimit
         range.lower_limit = lowerLimit
-        isInRange = range.are_tracks_in_range(MTO_TRACK_EVALUATION_TYPE.ALL, tracks, date.format("UTCG"))
+        isInRange = range.are_tracks_in_range(MTOTrackEvaluationType.ALL, tracks, date.format("UTCG"))
         Assert.assertEqual(Convert.ToInt32(results[0]), Convert.ToInt32(isInRange))
 
         self.MTORangeHelper(
@@ -9203,16 +9221,14 @@ class Definition(TestBase):
         range.upper_limit = 8004.34
         tracks = [1, 4]
 
-        self.CompareRangeResults(
-            MasterList, range.compute_ranges(MTO_RANGE_MODE.EACH, tracks, "1 Jul 2005 12:00:00.000")
-        )
+        self.CompareRangeResults(MasterList, range.compute_ranges(MTORangeMode.EACH, tracks, "1 Jul 2005 12:00:00.000"))
         range.upper_limit = upperLimit
 
         self.MTORangeHelper(
             MasterList, 'Range_RM */MTO/A_MTO Object */Satellite/Geo1 Mode eachInRange Time "1 Jul 2005 23:00:00.000"'
         )
         self.CompareRangeResults(
-            MasterList, range.compute_all_ranges(MTO_RANGE_MODE.EACH_IN_RANGE, "1 Jul 2005 23:00:00.000")
+            MasterList, range.compute_all_ranges(MTORangeMode.EACH_IN_RANGE, "1 Jul 2005 23:00:00.000")
         )
 
         results = TestBase.Application.execute_command(
@@ -9220,7 +9236,7 @@ class Definition(TestBase):
         )
         tracks = [1, 2, 3, 4, 4, 5, 2, 1]
 
-        isInRange = range.are_tracks_in_range(MTO_TRACK_EVALUATION_TYPE.ANY, tracks, "1 Jul 2005 12:00:00.000")
+        isInRange = range.are_tracks_in_range(MTOTrackEvaluationType.ANY, tracks, "1 Jul 2005 12:00:00.000")
         Assert.assertEqual(Convert.ToInt32(results[0]), Convert.ToInt32(isInRange))
 
     def CompareRangeResults(self, MasterList, tracksRange):
@@ -9276,7 +9292,7 @@ class Definition(TestBase):
 
         tracksRef = tracks
 
-        tracksVisibility = visibility.compute_tracks(MTO_VISIBILITY_MODE.EACH, tracksRef, "1 Jul 2007 12:05:00.000")
+        tracksVisibility = visibility.compute_tracks(MTOVisibilityMode.EACH, tracksRef, "1 Jul 2007 12:05:00.000")
         self.CompareVisibilityResults(MasterMap, tracksVisibility)
 
         self.MTOVisibilityHelper(
@@ -9288,7 +9304,7 @@ class Definition(TestBase):
         tracks.append(550)
         tracksRef = tracks
         self.CompareVisibilityResults(
-            MasterMap, visibility.compute_tracks(MTO_VISIBILITY_MODE.EACH, tracksRef, "1 Jul 2007 12:05:00.000")
+            MasterMap, visibility.compute_tracks(MTOVisibilityMode.EACH, tracksRef, "1 Jul 2007 12:05:00.000")
         )
 
         self.MTOVisibilityHelper(
@@ -9301,7 +9317,7 @@ class Definition(TestBase):
         tracks.append(470)
         tracksRef = tracks
         self.CompareVisibilityResults(
-            MasterMap, visibility.compute_tracks(MTO_VISIBILITY_MODE.EACH, tracksRef, "1 Jul 2007 12:05:00.000")
+            MasterMap, visibility.compute_tracks(MTOVisibilityMode.EACH, tracksRef, "1 Jul 2007 12:05:00.000")
         )
 
         self.MTOVisibilityHelper(
@@ -9311,7 +9327,7 @@ class Definition(TestBase):
         tracks.append(550)
         tracksRef = tracks
         self.CompareVisibilityResults(
-            MasterMap, visibility.compute_tracks(MTO_VISIBILITY_MODE.EACH, tracksRef, "1 Jul 2007 12:05:00.000")
+            MasterMap, visibility.compute_tracks(MTOVisibilityMode.EACH, tracksRef, "1 Jul 2007 12:05:00.000")
         )
 
         self.MTOVisibilityHelper(
@@ -9319,19 +9335,19 @@ class Definition(TestBase):
             'Visibility_RM */MTO/AircraftMTO Object */Aircraft/Aircraft1 Time "1 Jul 2007 12:05:00" Terrain No Mode Each Tracks 500  549  470 550',
         )
         self.CompareVisibilityResults(
-            MasterMap, visibility.compute_tracks(MTO_VISIBILITY_MODE.EACH, tracksRef, "1 Jul 2007 12:05:00.000")
+            MasterMap, visibility.compute_tracks(MTOVisibilityMode.EACH, tracksRef, "1 Jul 2007 12:05:00.000")
         )
 
         result: "ExecuteCommandResult" = TestBase.Application.execute_command(
             'Visibility_RM */MTO/AircraftMTO Object */Aircraft/Aircraft1 Time "1 Jul 2007 12:05:00" Terrain No Mode Any Tracks 500  549  470 550'
         )
-        isVis: bool = visibility.are_tracks_visible(MTO_TRACK_EVALUATION_TYPE.ANY, tracksRef, "1 Jul 2007 12:05:00")
+        isVis: bool = visibility.are_tracks_visible(MTOTrackEvaluationType.ANY, tracksRef, "1 Jul 2007 12:05:00")
         Assert.assertEqual(Convert.ToInt32(result[0]), Convert.ToInt32(isVis))
 
         result = TestBase.Application.execute_command(
             'Visibility_RM */MTO/AircraftMTO Object */Aircraft/Aircraft1 Time "1 Jul 2007 12:05:00" Terrain No Mode All Tracks 500  549  470 550'
         )
-        isVis = visibility.are_tracks_visible(MTO_TRACK_EVALUATION_TYPE.ALL, tracksRef, "1 Jul 2007 12:05:00")
+        isVis = visibility.are_tracks_visible(MTOTrackEvaluationType.ALL, tracksRef, "1 Jul 2007 12:05:00")
         Assert.assertEqual(Convert.ToInt32(result[0]), Convert.ToInt32(isVis))
 
         Assert.assertFalse(visibility.are_all_tracks_visible("1 Jul 2007 12:05:00"))
@@ -9343,7 +9359,7 @@ class Definition(TestBase):
             'Visibility_RM */MTO/AircraftMTO Object */Aircraft/Aircraft1 Time "1 Jul 2007 12:05:00" Terrain No Mode Each Tracks 500  549  470 550',
         )
         self.CompareVisibilityResults(
-            MasterMap, visibility.compute_tracks(MTO_VISIBILITY_MODE.EACH, tracksRef, "1 Jul 2007 12:05:00")
+            MasterMap, visibility.compute_tracks(MTOVisibilityMode.EACH, tracksRef, "1 Jul 2007 12:05:00")
         )
 
         self.MTOVisibilityHelper(
@@ -9351,7 +9367,7 @@ class Definition(TestBase):
             'Visibility_RM */MTO/AircraftMTO Object */Aircraft/Aircraft1 Time "1 Jul 2007 12:05:00" Terrain No Mode Each',
         )
         self.CompareVisibilityResults(
-            MasterMap, visibility.compute_all_tracks(MTO_VISIBILITY_MODE.EACH, "1 Jul 2007 12:05:00")
+            MasterMap, visibility.compute_all_tracks(MTOVisibilityMode.EACH, "1 Jul 2007 12:05:00")
         )
 
         self.MTOVisibilityHelper(
@@ -9359,7 +9375,7 @@ class Definition(TestBase):
             'Visibility_RM */MTO/AircraftMTO Object */Aircraft/Aircraft1 Time "1 Jul 2007 12:05:00" Terrain No Mode EachVisible',
         )
         self.CompareVisibilityResults(
-            MasterMap, visibility.compute_all_tracks(MTO_VISIBILITY_MODE.EACH_VISIBLE, "1 Jul 2007 12:05:00")
+            MasterMap, visibility.compute_all_tracks(MTOVisibilityMode.EACH_VISIBLE, "1 Jul 2007 12:05:00")
         )
 
         self.MTOVisibilityHelper(
@@ -9367,7 +9383,7 @@ class Definition(TestBase):
             'Visibility_RM */MTO/AircraftMTO Object */Aircraft/Aircraft1 Time "1 Jul 2007 12:37:00" Terrain No Mode EachVisible',
         )
         self.CompareVisibilityResults(
-            MasterMap, visibility.compute_all_tracks(MTO_VISIBILITY_MODE.EACH_VISIBLE, "1 Jul 2007 12:37:00")
+            MasterMap, visibility.compute_all_tracks(MTOVisibilityMode.EACH_VISIBLE, "1 Jul 2007 12:37:00")
         )
 
         result = TestBase.Application.execute_command(
@@ -9377,7 +9393,7 @@ class Definition(TestBase):
         tracks.clear()
         tracks.append(390)
         tracksRef = tracks
-        emptyArray = visibility.compute_tracks(MTO_VISIBILITY_MODE.EACH_VISIBLE, tracksRef, "1 Jul 2007 12:37:00")
+        emptyArray = visibility.compute_tracks(MTOVisibilityMode.EACH_VISIBLE, tracksRef, "1 Jul 2007 12:37:00")
         Assert.assertEqual(0, len(emptyArray))
 
         self.MTOVisibilityHelper(
@@ -9385,7 +9401,7 @@ class Definition(TestBase):
             'Visibility_RM */MTO/AircraftMTO Object */Aircraft/Aircraft1 Time "1 Jul 2007 13:31:00" Terrain No Mode EachVisible',
         )
         self.CompareVisibilityResults(
-            MasterMap, visibility.compute_all_tracks(MTO_VISIBILITY_MODE.EACH_VISIBLE, "1 Jul 2007 13:31:00")
+            MasterMap, visibility.compute_all_tracks(MTOVisibilityMode.EACH_VISIBLE, "1 Jul 2007 13:31:00")
         )
 
         self.MTOVisibilityHelper(
@@ -9394,7 +9410,7 @@ class Definition(TestBase):
         )
         visibility.use_terrain = True
         self.CompareVisibilityResults(
-            MasterMap, visibility.compute_all_tracks(MTO_VISIBILITY_MODE.EACH_VISIBLE, "1 Jul 2007 13:40:00")
+            MasterMap, visibility.compute_all_tracks(MTOVisibilityMode.EACH_VISIBLE, "1 Jul 2007 13:40:00")
         )
 
         self.MTOVisibilityHelper(
@@ -9408,7 +9424,7 @@ class Definition(TestBase):
         tracks.append(393)
         tracksRef = tracks
         self.CompareVisibilityResults(
-            MasterMap, visibility.compute_tracks(MTO_VISIBILITY_MODE.EACH_VISIBLE, tracksRef, "1 Jul 2007 13:40:00")
+            MasterMap, visibility.compute_tracks(MTOVisibilityMode.EACH_VISIBLE, tracksRef, "1 Jul 2007 13:40:00")
         )
 
         self.MTOVisibilityHelper(
@@ -9417,7 +9433,7 @@ class Definition(TestBase):
         )
         visibility.use_terrain = False
         self.CompareVisibilityResults(
-            MasterMap, visibility.compute_tracks(MTO_VISIBILITY_MODE.EACH_VISIBLE, tracksRef, "1 Jul 2007 13:40:00")
+            MasterMap, visibility.compute_tracks(MTOVisibilityMode.EACH_VISIBLE, tracksRef, "1 Jul 2007 13:40:00")
         )
 
     def CompareVisibilityResults(self, MasterMap, tracksVisibility):
@@ -9503,15 +9519,15 @@ class Definition(TestBase):
         tracksOfInterest = [2, 3]
 
         bAreTracksVisible1a: bool = visibility.are_tracks_visible(
-            MTO_TRACK_EVALUATION_TYPE.ANY, tracksOfInterest, "23 Feb 2009 17:07:00.000"
+            MTOTrackEvaluationType.ANY, tracksOfInterest, "23 Feb 2009 17:07:00.000"
         )
         Assert.assertEqual(True, bAreTracksVisible1a, "MTOVisibility2 - 13")
         bAreTracksVisible2a: bool = visibility.are_tracks_visible(
-            MTO_TRACK_EVALUATION_TYPE.ANY, tracksOfInterest, "23 Feb 2009 17:08:00.000"
+            MTOTrackEvaluationType.ANY, tracksOfInterest, "23 Feb 2009 17:08:00.000"
         )
         Assert.assertEqual(True, bAreTracksVisible2a, "MTOVisibility2 - 14")
         bAreTracksVisible3a: bool = visibility.are_tracks_visible(
-            MTO_TRACK_EVALUATION_TYPE.ANY, tracksOfInterest, "23 Feb 2009 17:09:00.000"
+            MTOTrackEvaluationType.ANY, tracksOfInterest, "23 Feb 2009 17:09:00.000"
         )
         Assert.assertEqual(False, bAreTracksVisible3a, "MTOVisibility2 - 15")
 
@@ -9526,15 +9542,15 @@ class Definition(TestBase):
             visibility.show_any_track("23 Bad 2009 17:09:00.000")
 
         bAreTracksVisible1b: bool = visibility.are_tracks_visible(
-            MTO_TRACK_EVALUATION_TYPE.ALL, tracksOfInterest, "23 Feb 2009 17:07:00.000"
+            MTOTrackEvaluationType.ALL, tracksOfInterest, "23 Feb 2009 17:07:00.000"
         )
         Assert.assertEqual(True, bAreTracksVisible1b, "MTOVisibility2 - 19")
         bAreTracksVisible2b: bool = visibility.are_tracks_visible(
-            MTO_TRACK_EVALUATION_TYPE.ALL, tracksOfInterest, "23 Feb 2009 17:08:00.000"
+            MTOTrackEvaluationType.ALL, tracksOfInterest, "23 Feb 2009 17:08:00.000"
         )
         Assert.assertEqual(False, bAreTracksVisible2b, "MTOVisibility2 - 20")
         bAreTracksVisible3b: bool = visibility.are_tracks_visible(
-            MTO_TRACK_EVALUATION_TYPE.ALL, tracksOfInterest, "23 Feb 2009 17:09:00.000"
+            MTOTrackEvaluationType.ALL, tracksOfInterest, "23 Feb 2009 17:09:00.000"
         )
         Assert.assertEqual(False, bAreTracksVisible3b, "MTOVisibility2 - 21")
 
@@ -9549,7 +9565,7 @@ class Definition(TestBase):
             visibility.are_all_tracks_visible("23 Bad 2009 17:09:00.000")
 
         with pytest.raises(Exception):
-            visibility.are_tracks_visible(MTO_TRACK_EVALUATION_TYPE.ALL, tracksOfInterest, "23 Bad 2009 17:09:00.000")
+            visibility.are_tracks_visible(MTOTrackEvaluationType.ALL, tracksOfInterest, "23 Bad 2009 17:09:00.000")
 
         with pytest.raises(Exception):
             visibility.are_tracks_visible(-1, tracksOfInterest, "23 Feb 2009 17:09:00.000")
@@ -9557,7 +9573,7 @@ class Definition(TestBase):
         tracksOfInterest2 = [-2, -3]
 
         with pytest.raises(Exception):
-            visibility.are_tracks_visible(MTO_TRACK_EVALUATION_TYPE.ALL, tracksOfInterest2, "23 Feb 2009 17:09:00.000")
+            visibility.are_tracks_visible(MTOTrackEvaluationType.ALL, tracksOfInterest2, "23 Feb 2009 17:09:00.000")
 
 
 @category("EarlyBoundTests")
@@ -9627,49 +9643,49 @@ class Constraints(TestBase):
         # OM Setup
         acc: "AccessConstraintCollection" = Constraints.AG_SAT.access_constraints
         minmax: "IAccessConstraintMinMaxBase" = IAccessConstraintMinMaxBase(
-            acc.add_constraint(ACCESS_CONSTRAINT_TYPE.GRAZING_ALTITUDE)
+            acc.add_constraint(AccessConstraintType.GRAZING_ALTITUDE)
         )
         minmax.enable_minimum = True
         minmax.minimum = -50.0
         minmax.enable_maximum = True
         minmax.maximum = 700000.0
 
-        minmax = IAccessConstraintMinMaxBase(acc.add_constraint(ACCESS_CONSTRAINT_TYPE.GRAZING_ANGLE))
+        minmax = IAccessConstraintMinMaxBase(acc.add_constraint(AccessConstraintType.GRAZING_ANGLE))
         minmax.enable_minimum = True
         minmax.minimum = -22.2
         minmax.enable_maximum = True
         minmax.maximum = 66.6
 
-        minmax = IAccessConstraintMinMaxBase(acc.add_constraint(ACCESS_CONSTRAINT_TYPE.GROUND_ELEVATION_ANGLE))
+        minmax = IAccessConstraintMinMaxBase(acc.add_constraint(AccessConstraintType.GROUND_ELEVATION_ANGLE))
         minmax.enable_minimum = True
         minmax.minimum = -4.32
         minmax.enable_maximum = True
         minmax.maximum = 67.89
 
-        minmax = IAccessConstraintMinMaxBase(acc.add_constraint(ACCESS_CONSTRAINT_TYPE.BETA_ANGLE))
+        minmax = IAccessConstraintMinMaxBase(acc.add_constraint(AccessConstraintType.BETA_ANGLE))
         minmax.enable_minimum = True
         minmax.minimum = -83.38
         minmax.enable_maximum = True
         minmax.maximum = 78.99
 
         back: "AccessConstraintBackground" = AccessConstraintBackground(
-            acc.add_constraint(ACCESS_CONSTRAINT_TYPE.BACKGROUND)
+            acc.add_constraint(AccessConstraintType.BACKGROUND)
         )
-        back.background = CONSTRAINT_BACKGROUND.GROUND
+        back.background = ConstraintBackground.GROUND
 
         ground: "AccessConstraintGroundTrack" = AccessConstraintGroundTrack(
-            acc.add_constraint(ACCESS_CONSTRAINT_TYPE.GROUND_TRACK)
+            acc.add_constraint(AccessConstraintType.GROUND_TRACK)
         )
-        ground.direction = CONSTRAINT_GROUND_TRACK.DESCENDING
+        ground.direction = ConstraintGroundTrack.DESCENDING
 
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
-        acc.remove_constraint(ACCESS_CONSTRAINT_TYPE.GRAZING_ALTITUDE)
-        acc.remove_constraint(ACCESS_CONSTRAINT_TYPE.GRAZING_ANGLE)
-        acc.remove_constraint(ACCESS_CONSTRAINT_TYPE.GROUND_ELEVATION_ANGLE)
-        acc.remove_constraint(ACCESS_CONSTRAINT_TYPE.BETA_ANGLE)
-        acc.remove_constraint(ACCESS_CONSTRAINT_TYPE.BACKGROUND)
-        acc.remove_constraint(ACCESS_CONSTRAINT_TYPE.GROUND_TRACK)
+        acc.remove_constraint(AccessConstraintType.GRAZING_ALTITUDE)
+        acc.remove_constraint(AccessConstraintType.GRAZING_ANGLE)
+        acc.remove_constraint(AccessConstraintType.GROUND_ELEVATION_ANGLE)
+        acc.remove_constraint(AccessConstraintType.BETA_ANGLE)
+        acc.remove_constraint(AccessConstraintType.BACKGROUND)
+        acc.remove_constraint(AccessConstraintType.GROUND_TRACK)
 
         CompareUtility.TakeOMSnapshot(TestBase.Application)
         CompareUtility.CompareReportSnapshots()
@@ -9707,31 +9723,31 @@ class Constraints(TestBase):
         # OM Setup
         acc: "AccessConstraintCollection" = Constraints.AG_SAT.access_constraints
         minmax: "IAccessConstraintMinMaxBase" = IAccessConstraintMinMaxBase(
-            acc.add_constraint(ACCESS_CONSTRAINT_TYPE.LATITUDE)
+            acc.add_constraint(AccessConstraintType.LATITUDE)
         )
         minmax.enable_minimum = True
         minmax.minimum = -56.78
         minmax.enable_maximum = True
         minmax.maximum = 76.54
         exczone: "AccessConstraintLatitudeLongitudeZone" = AccessConstraintLatitudeLongitudeZone(
-            acc.add_constraint(ACCESS_CONSTRAINT_TYPE.EXCLUSION_ZONE)
+            acc.add_constraint(AccessConstraintType.EXCLUSION_ZONE)
         )
         exc: "AccessConstraintExclZonesCollection" = AccessConstraintExclZonesCollection(
-            acc.get_active_constraint(ACCESS_CONSTRAINT_TYPE.EXCLUSION_ZONE)
+            acc.get_active_constraint(AccessConstraintType.EXCLUSION_ZONE)
         )
         exc.change_exclusion_zone(0, -20, -30, 40, 50)
-        exczone = AccessConstraintLatitudeLongitudeZone(acc.add_constraint(ACCESS_CONSTRAINT_TYPE.EXCLUSION_ZONE))
-        exc = AccessConstraintExclZonesCollection(acc.get_active_constraint(ACCESS_CONSTRAINT_TYPE.EXCLUSION_ZONE))
+        exczone = AccessConstraintLatitudeLongitudeZone(acc.add_constraint(AccessConstraintType.EXCLUSION_ZONE))
+        exc = AccessConstraintExclZonesCollection(acc.get_active_constraint(AccessConstraintType.EXCLUSION_ZONE))
         exc.change_exclusion_zone(1, -15, -20, 20, 40)
 
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
-        acc.remove_constraint(ACCESS_CONSTRAINT_TYPE.LATITUDE)
+        acc.remove_constraint(AccessConstraintType.LATITUDE)
         exc.remove_all()
 
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
-        acc.add_constraint(ACCESS_CONSTRAINT_TYPE.EXCLUSION_ZONE)
+        acc.add_constraint(AccessConstraintType.EXCLUSION_ZONE)
 
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
@@ -9801,35 +9817,35 @@ class Constraints(TestBase):
         # OM Setup
         acc: "AccessConstraintCollection" = Constraints.AG_SAT.access_constraints
         minmax: "IAccessConstraintMinMaxBase" = IAccessConstraintMinMaxBase(
-            acc.add_constraint(ACCESS_CONSTRAINT_TYPE.SUN_ELEVATION_ANGLE)
+            acc.add_constraint(AccessConstraintType.SUN_ELEVATION_ANGLE)
         )
         minmax.enable_minimum = True
         minmax.minimum = 22.2
         minmax.enable_maximum = True
         minmax.maximum = 77.7
 
-        minmax = IAccessConstraintMinMaxBase(acc.add_constraint(ACCESS_CONSTRAINT_TYPE.LUNAR_ELEVATION_ANGLE))
+        minmax = IAccessConstraintMinMaxBase(acc.add_constraint(AccessConstraintType.LUNAR_ELEVATION_ANGLE))
         minmax.enable_minimum = True
         minmax.minimum = 11.1
         minmax.enable_maximum = True
         minmax.maximum = 88.8
 
-        minmax = IAccessConstraintMinMaxBase(acc.add_constraint(ACCESS_CONSTRAINT_TYPE.SUN_GROUND_ELEVATION_ANGLE))
+        minmax = IAccessConstraintMinMaxBase(acc.add_constraint(AccessConstraintType.SUN_GROUND_ELEVATION_ANGLE))
         minmax.enable_minimum = True
         minmax.minimum = 33.3
         minmax.enable_maximum = True
         minmax.maximum = 87.6
 
         angle: "AccessConstraintAngle" = AccessConstraintAngle(
-            acc.add_constraint(ACCESS_CONSTRAINT_TYPE.LIGHT_OF_SIGHT_SOLAR_EXCLUSION_ANGLE)
+            acc.add_constraint(AccessConstraintType.LIGHT_OF_SIGHT_SOLAR_EXCLUSION_ANGLE)
         )
         angle.angle = 176.0
 
-        angle = AccessConstraintAngle(acc.add_constraint(ACCESS_CONSTRAINT_TYPE.LIGHT_OF_SIGHT_LUNAR_EXCLUSION_ANGLE))
+        angle = AccessConstraintAngle(acc.add_constraint(AccessConstraintType.LIGHT_OF_SIGHT_LUNAR_EXCLUSION_ANGLE))
         angle.angle = 111.1
 
         thirdbody: "AccessConstraintThirdBody" = AccessConstraintThirdBody(
-            acc.add_constraint(ACCESS_CONSTRAINT_TYPE.THIRD_BODY_OBSTRUCTION)
+            acc.add_constraint(AccessConstraintType.THIRD_BODY_OBSTRUCTION)
         )
         availableThirdBodies = thirdbody.available_obstructions
         body: str
@@ -9837,44 +9853,44 @@ class Constraints(TestBase):
             thirdbody.add_obstruction(body)
 
         light: "AccessConstraintCondition" = AccessConstraintCondition(
-            acc.add_constraint(ACCESS_CONSTRAINT_TYPE.LIGHTING)
+            acc.add_constraint(AccessConstraintType.LIGHTING)
         )
-        light.condition = CONSTRAINT_LIGHTING.DIRECT_SUN
+        light.condition = ConstraintLighting.DIRECT_SUN
 
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
-        acc.remove_constraint(ACCESS_CONSTRAINT_TYPE.SUN_ELEVATION_ANGLE)
-        acc.remove_constraint(ACCESS_CONSTRAINT_TYPE.LUNAR_ELEVATION_ANGLE)
-        acc.remove_constraint(ACCESS_CONSTRAINT_TYPE.SUN_GROUND_ELEVATION_ANGLE)
-        acc.remove_constraint(ACCESS_CONSTRAINT_TYPE.LIGHT_OF_SIGHT_SOLAR_EXCLUSION_ANGLE)
-        acc.remove_constraint(ACCESS_CONSTRAINT_TYPE.LIGHT_OF_SIGHT_LUNAR_EXCLUSION_ANGLE)
+        acc.remove_constraint(AccessConstraintType.SUN_ELEVATION_ANGLE)
+        acc.remove_constraint(AccessConstraintType.LUNAR_ELEVATION_ANGLE)
+        acc.remove_constraint(AccessConstraintType.SUN_GROUND_ELEVATION_ANGLE)
+        acc.remove_constraint(AccessConstraintType.LIGHT_OF_SIGHT_SOLAR_EXCLUSION_ANGLE)
+        acc.remove_constraint(AccessConstraintType.LIGHT_OF_SIGHT_LUNAR_EXCLUSION_ANGLE)
         body: str
         for body in availableThirdBodies:
             thirdbody.remove_obstruction(body)
 
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
-        light.condition = CONSTRAINT_LIGHTING.UMBRA
+        light.condition = ConstraintLighting.UMBRA
 
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
-        light.condition = CONSTRAINT_LIGHTING.PENUMBRA_OR_DIRECT_SUN
+        light.condition = ConstraintLighting.PENUMBRA_OR_DIRECT_SUN
 
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
-        light.condition = CONSTRAINT_LIGHTING.PENUMBRA_OR_UMBRA
+        light.condition = ConstraintLighting.PENUMBRA_OR_UMBRA
 
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
-        light.condition = CONSTRAINT_LIGHTING.PENUMBRA
+        light.condition = ConstraintLighting.PENUMBRA
 
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
-        light.condition = CONSTRAINT_LIGHTING.UMBRA_OR_DIRECT_SUN
+        light.condition = ConstraintLighting.UMBRA_OR_DIRECT_SUN
 
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
-        acc.remove_constraint(ACCESS_CONSTRAINT_TYPE.LIGHTING)
+        acc.remove_constraint(AccessConstraintType.LIGHTING)
 
         CompareUtility.TakeOMSnapshot(TestBase.Application)
         CompareUtility.CompareReportSnapshots()
@@ -9920,54 +9936,54 @@ class Constraints(TestBase):
         # OM Setup
         acc: "AccessConstraintCollection" = Constraints.AG_SAT.access_constraints
         minmax: "IAccessConstraintMinMaxBase" = IAccessConstraintMinMaxBase(
-            acc.add_constraint(ACCESS_CONSTRAINT_TYPE.DURATION)
+            acc.add_constraint(AccessConstraintType.DURATION)
         )
         minmax.enable_minimum = True
         minmax.minimum = 22.2
         minmax.enable_maximum = True
         minmax.maximum = 12345.6
 
-        minmax = IAccessConstraintMinMaxBase(acc.add_constraint(ACCESS_CONSTRAINT_TYPE.LOCAL_TIME))
+        minmax = IAccessConstraintMinMaxBase(acc.add_constraint(AccessConstraintType.LOCAL_TIME))
         minmax.enable_minimum = True
         minmax.minimum = "00:04:56"
         minmax.enable_maximum = True
         minmax.maximum = "12:34:56"
 
-        minmax = IAccessConstraintMinMaxBase(acc.add_constraint(ACCESS_CONSTRAINT_TYPE.GMT))
+        minmax = IAccessConstraintMinMaxBase(acc.add_constraint(AccessConstraintType.GMT))
         minmax.enable_minimum = True
         minmax.minimum = "-12:12:12"
         minmax.enable_maximum = True
         minmax.maximum = "12:12:12"
 
-        minmax = IAccessConstraintMinMaxBase(acc.add_constraint(ACCESS_CONSTRAINT_TYPE.APPARENT_TIME))
+        minmax = IAccessConstraintMinMaxBase(acc.add_constraint(AccessConstraintType.APPARENT_TIME))
         minmax.enable_minimum = True
         minmax.minimum = "-04:00:00"
         minmax.enable_maximum = True
         minmax.maximum = "18:00:00"
 
         intervals: "AccessConstraintIntervals" = AccessConstraintIntervals(
-            acc.add_constraint(ACCESS_CONSTRAINT_TYPE.INTERVALS)
+            acc.add_constraint(AccessConstraintType.INTERVALS)
         )
-        intervals.action_type = ACTION_TYPE.EXCLUDE
+        intervals.action_type = ActionType.EXCLUDE
         intervals.filename = strPath
 
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
-        acc.remove_constraint(ACCESS_CONSTRAINT_TYPE.DURATION)
-        acc.remove_constraint(ACCESS_CONSTRAINT_TYPE.LOCAL_TIME)
-        acc.remove_constraint(ACCESS_CONSTRAINT_TYPE.GMT)
-        acc.remove_constraint(ACCESS_CONSTRAINT_TYPE.APPARENT_TIME)
-        acc.remove_constraint(ACCESS_CONSTRAINT_TYPE.INTERVALS)
+        acc.remove_constraint(AccessConstraintType.DURATION)
+        acc.remove_constraint(AccessConstraintType.LOCAL_TIME)
+        acc.remove_constraint(AccessConstraintType.GMT)
+        acc.remove_constraint(AccessConstraintType.APPARENT_TIME)
+        acc.remove_constraint(AccessConstraintType.INTERVALS)
 
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
-        intervals = AccessConstraintIntervals(acc.add_constraint(ACCESS_CONSTRAINT_TYPE.INTERVALS))
-        intervals.action_type = ACTION_TYPE.INCLUDE
+        intervals = AccessConstraintIntervals(acc.add_constraint(AccessConstraintType.INTERVALS))
+        intervals.action_type = ActionType.INCLUDE
         intervals.filename = strPath
 
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
-        acc.remove_constraint(ACCESS_CONSTRAINT_TYPE.INTERVALS)
+        acc.remove_constraint(AccessConstraintType.INTERVALS)
 
         CompareUtility.TakeOMSnapshot(TestBase.Application)
         CompareUtility.CompareReportSnapshots()
@@ -10026,7 +10042,7 @@ class Constraints(TestBase):
         # OM Setup
         acc: "AccessConstraintCollection" = Constraints.AG_SAT.access_constraints
         azimuthangle: "IAccessConstraintMinMaxBase" = IAccessConstraintMinMaxBase(
-            acc.add_constraint(ACCESS_CONSTRAINT_TYPE.AZIMUTH_ANGLE)
+            acc.add_constraint(AccessConstraintType.AZIMUTH_ANGLE)
         )
         azimuthangle.enable_minimum = True
         azimuthangle.minimum = -11.22
@@ -10034,7 +10050,7 @@ class Constraints(TestBase):
         azimuthangle.maximum = 123.4
 
         elevationangle: "IAccessConstraintMinMaxBase" = IAccessConstraintMinMaxBase(
-            acc.add_constraint(ACCESS_CONSTRAINT_TYPE.ELEVATION_ANGLE)
+            acc.add_constraint(AccessConstraintType.ELEVATION_ANGLE)
         )
         elevationangle.enable_minimum = True
         elevationangle.minimum = 22.2
@@ -10042,7 +10058,7 @@ class Constraints(TestBase):
         elevationangle.maximum = 44.4
 
         rangerate: "IAccessConstraintMinMaxBase" = IAccessConstraintMinMaxBase(
-            acc.add_constraint(ACCESS_CONSTRAINT_TYPE.RANGE_RATE)
+            acc.add_constraint(AccessConstraintType.RANGE_RATE)
         )
         rangerate.enable_minimum = True
         rangerate.minimum = -1111.11
@@ -10050,7 +10066,7 @@ class Constraints(TestBase):
         rangerate.maximum = 4444.44
 
         range: "IAccessConstraintMinMaxBase" = IAccessConstraintMinMaxBase(
-            acc.add_constraint(ACCESS_CONSTRAINT_TYPE.RANGE)
+            acc.add_constraint(AccessConstraintType.RANGE)
         )
         range.enable_minimum = True
         range.minimum = 4000000.0
@@ -10058,7 +10074,7 @@ class Constraints(TestBase):
         range.maximum = 8000000.0
 
         altit: "IAccessConstraintMinMaxBase" = IAccessConstraintMinMaxBase(
-            acc.add_constraint(ACCESS_CONSTRAINT_TYPE.ALTITUDE)
+            acc.add_constraint(AccessConstraintType.ALTITUDE)
         )
         altit.enable_minimum = True
         altit.minimum = -300.0
@@ -10066,7 +10082,7 @@ class Constraints(TestBase):
         altit.maximum = 1300.0
 
         angularrate: "IAccessConstraintMinMaxBase" = IAccessConstraintMinMaxBase(
-            acc.add_constraint(ACCESS_CONSTRAINT_TYPE.ANGULAR_RATE)
+            acc.add_constraint(AccessConstraintType.ANGULAR_RATE)
         )
         angularrate.enable_minimum = True
         angularrate.minimum = 0.0
@@ -10074,7 +10090,7 @@ class Constraints(TestBase):
         angularrate.maximum = 12.3
 
         propdelay: "IAccessConstraintMinMaxBase" = IAccessConstraintMinMaxBase(
-            acc.add_constraint(ACCESS_CONSTRAINT_TYPE.PROPAGATION_DELAY)
+            acc.add_constraint(AccessConstraintType.PROPAGATION_DELAY)
         )
         propdelay.enable_minimum = True
         propdelay.minimum = 0.004
@@ -10082,35 +10098,35 @@ class Constraints(TestBase):
         propdelay.maximum = 4.5
 
         with pytest.raises(Exception):
-            acc.add_constraint(ACCESS_CONSTRAINT_TYPE.LINE_OF_SIGHT)
+            acc.add_constraint(AccessConstraintType.LINE_OF_SIGHT)
 
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
-        acc.remove_constraint(ACCESS_CONSTRAINT_TYPE.AZIMUTH_ANGLE)
-        acc.remove_constraint(ACCESS_CONSTRAINT_TYPE.ELEVATION_ANGLE)
-        acc.remove_constraint(ACCESS_CONSTRAINT_TYPE.RANGE_RATE)
-        acc.remove_constraint(ACCESS_CONSTRAINT_TYPE.RANGE)
-        acc.remove_constraint(ACCESS_CONSTRAINT_TYPE.ALTITUDE)
-        acc.remove_constraint(ACCESS_CONSTRAINT_TYPE.ANGULAR_RATE)
-        acc.remove_constraint(ACCESS_CONSTRAINT_TYPE.PROPAGATION_DELAY)
+        acc.remove_constraint(AccessConstraintType.AZIMUTH_ANGLE)
+        acc.remove_constraint(AccessConstraintType.ELEVATION_ANGLE)
+        acc.remove_constraint(AccessConstraintType.RANGE_RATE)
+        acc.remove_constraint(AccessConstraintType.RANGE)
+        acc.remove_constraint(AccessConstraintType.ALTITUDE)
+        acc.remove_constraint(AccessConstraintType.ANGULAR_RATE)
+        acc.remove_constraint(AccessConstraintType.PROPAGATION_DELAY)
 
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
         minmax: "IAccessConstraintMinMaxBase" = IAccessConstraintMinMaxBase(
-            acc.add_constraint(ACCESS_CONSTRAINT_TYPE.AZIMUTH_ANGLE)
+            acc.add_constraint(AccessConstraintType.AZIMUTH_ANGLE)
         )
         minmax.enable_minimum = True
         minmax.minimum = -11.22
         minmax.enable_maximum = True
         minmax.maximum = 360.0
-        minmax = IAccessConstraintMinMaxBase(acc.add_constraint(ACCESS_CONSTRAINT_TYPE.ELEVATION_ANGLE))
+        minmax = IAccessConstraintMinMaxBase(acc.add_constraint(AccessConstraintType.ELEVATION_ANGLE))
         minmax.enable_minimum = True
         minmax.minimum = 22.2
 
         CompareUtility.TakeOMSnapshot(TestBase.Application)
 
-        acc.remove_constraint(ACCESS_CONSTRAINT_TYPE.AZIMUTH_ANGLE)
-        acc.remove_constraint(ACCESS_CONSTRAINT_TYPE.ELEVATION_ANGLE)
+        acc.remove_constraint(AccessConstraintType.AZIMUTH_ANGLE)
+        acc.remove_constraint(AccessConstraintType.ELEVATION_ANGLE)
 
         CompareUtility.TakeOMSnapshot(TestBase.Application)
         CompareUtility.CompareReportSnapshots()
@@ -10138,8 +10154,8 @@ class Access(TestBase):
     # region OneTimeTearDown
     @staticmethod
     def tearDownClass():
-        if TestBase.Application.current_scenario.children.contains(STK_OBJECT_TYPE.SATELLITE, "Sat_Access"):
-            TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "Sat_Access")
+        if TestBase.Application.current_scenario.children.contains(STKObjectType.SATELLITE, "Sat_Access"):
+            TestBase.Application.current_scenario.children.unload(STKObjectType.SATELLITE, "Sat_Access")
 
         TestBase.Uninitialize()
 
@@ -10222,7 +10238,7 @@ class Access(TestBase):
         TestBase.Application.execute_command(((("RemoveAccess " + objPath1) + " ") + objPath2))
 
         access: "Access" = obj1.get_access_to_object(obj2)
-        access.access_time_period = ACCESS_TIME_TYPE.OBJECT_ACCESS_TIME
+        access.access_time_period = AccessTimeType.OBJECT_ACCESS_TIME
         access.compute_access()
         intervalDp: "DataProviderInterval" = DataProviderInterval(access.data_providers["Access Data"])
         drResult: "DataProviderResult" = intervalDp.execute_elements(startTime, stopTime, arCols)
@@ -10237,7 +10253,7 @@ class Access(TestBase):
         TestBase.Application.execute_command(((("RemoveAccess " + objPath1) + " ") + objPath2))
 
         access = obj1.get_access_to_object(obj2)
-        access.access_time_period = ACCESS_TIME_TYPE.SCENARIO_INTERVAL
+        access.access_time_period = AccessTimeType.SCENARIO_INTERVAL
         access.compute_access()
         intervalDp = DataProviderInterval(access.data_providers["Access Data"])
         drResult = intervalDp.execute_elements(startTime, stopTime, arCols)
@@ -10257,7 +10273,7 @@ class Access(TestBase):
         TestBase.Application.execute_command(((("RemoveAccess " + objPath1) + " ") + objPath2))
 
         access = obj1.get_access_to_object(obj2)
-        access.access_time_period = ACCESS_TIME_TYPE.TIME_INTERVAL_LIST
+        access.access_time_period = AccessTimeType.TIME_INTERVAL_LIST
         access.specify_access_event_intervals(
             TestBase.Application.current_scenario.analysis_workbench_components.time_interval_lists[
                 "AvailabilityIntervals"
@@ -10279,7 +10295,7 @@ class Access(TestBase):
         TestBase.Application.execute_command(((("RemoveAccess " + objPath1) + " ") + objPath2))
 
         access = obj1.get_access_to_object(obj2)
-        access.access_time_period = ACCESS_TIME_TYPE.SPECIFIED_TIME_PERIOD
+        access.access_time_period = AccessTimeType.SPECIFIED_TIME_PERIOD
         access.specify_access_time_period(0, 84600)
         access.compute_access()
         intervalDp = DataProviderInterval(access.data_providers["Access Data"])
@@ -10300,7 +10316,7 @@ class Access(TestBase):
         TestBase.Application.execute_command(((("RemoveAccess " + objPath1) + " ") + objPath2))
 
         access = obj1.get_access_to_object(obj2)
-        access.access_time_period = ACCESS_TIME_TYPE.TIME_INTERVALS
+        access.access_time_period = AccessTimeType.TIME_INTERVALS
         intervalCollection: "TimeIntervalCollection" = clr.CastAs(
             access.access_time_period_data, TimeIntervalCollection
         )
@@ -10344,7 +10360,7 @@ class Access(TestBase):
         onePtAccess.start_time = "1 Jul 1999 00:00:00.000"
         onePtAccess.stop_time = "2 Jul 1999 00:00:00.000"
         onePtAccess.step_size = 2400
-        onePtAccess.summary_option = ONE_POINT_ACCESS_SUMMARY.DETAILED
+        onePtAccess.summary_option = OnePointAccessSummary.DETAILED
         omResults: "OnePointAccessResultCollection" = onePtAccess.compute()
         # foreach (OnePointAccessResult r in omResults)
         # {
@@ -10403,12 +10419,12 @@ class Access(TestBase):
             Assert.assertEqual(connectConstraint1, "LineOfSight", "OnePointAccess Connect Constraint1 differ")
             Assert.assertEqual(
                 omResult.constraints[0].constraint,
-                ACCESS_CONSTRAINT_TYPE.LINE_OF_SIGHT,
+                AccessConstraintType.LINE_OF_SIGHT,
                 "OnePointAccess OM Constraint1 differ",
             )
             Assert.assertEqual(connectStatus1, "Ok", "OnePointAccess Connect Status1 differ")
             Assert.assertEqual(
-                omResult.constraints[0].status, ONE_POINT_ACCESS_STATUS.OK, "OnePointAccess OM Status1 differ"
+                omResult.constraints[0].status, OnePointAccessStatus.OK, "OnePointAccess OM Status1 differ"
             )
             Assert.assertAlmostEqual(
                 connectValue1, omResult.constraints[0].value, delta=1e-08, msg="OnePointAccess Value1 differ"
@@ -10420,12 +10436,12 @@ class Access(TestBase):
             Assert.assertEqual(connectConstraint2, "ElevationAngle", "OnePointAccess Connect Constraint1 differ")
             Assert.assertEqual(
                 omResult.constraints[1].constraint,
-                ACCESS_CONSTRAINT_TYPE.ELEVATION_ANGLE,
+                AccessConstraintType.ELEVATION_ANGLE,
                 "OnePointAccess OM Constraint1 differ",
             )
             Assert.assertEqual(connectStatus2, "Ok", "OnePointAccess Connect Status1 differ")
             Assert.assertEqual(
-                omResult.constraints[1].status, ONE_POINT_ACCESS_STATUS.OK, "OnePointAccess OM Status1 differ"
+                omResult.constraints[1].status, OnePointAccessStatus.OK, "OnePointAccess OM Status1 differ"
             )
             Assert.assertAlmostEqual(
                 connectValue2, omResult.constraints[1].value, delta=1e-08, msg="OnePointAccess Value1 differ"

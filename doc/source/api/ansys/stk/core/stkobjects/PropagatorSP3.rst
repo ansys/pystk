@@ -38,7 +38,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSP3.extrapolate_one_step_past_end`
               - Extrapolate 1 step beyond last data point. If this option is selected, STK will calculate an additional ephemeris step beyond the last data point provided by the SP3 file(s) assigned to the satellite.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSP3.satellite_identifier`
-              - Gets or sets a selected satellite identifier.
+              - Get or set a selected satellite identifier.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSP3.files`
               - Access and manipulate the collection of SP3 files. You can add multiple files to a single satellite object and - if there are no gaps between the files - the whole ephemeris will be propagated in sequence.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSP3.available_identifiers`
@@ -65,7 +65,7 @@ Property detail
 
 .. py:property:: interpolation_method
     :canonical: ansys.stk.core.stkobjects.PropagatorSP3.interpolation_method
-    :type: VEHICLE_INTERPOLATION_METHOD
+    :type: VehicleInterpolationMethod
 
     By default, the SP3 propagator uses the standard Lagrange interpolation scheme, interpolating position and velocity separately. Some files may be configured to allow the Hermitian interpolation.
 
@@ -85,7 +85,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.PropagatorSP3.satellite_identifier
     :type: str
 
-    Gets or sets a selected satellite identifier.
+    Get or set a selected satellite identifier.
 
 .. py:property:: files
     :canonical: ansys.stk.core.stkobjects.PropagatorSP3.files

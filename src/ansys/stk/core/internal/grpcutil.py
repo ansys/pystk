@@ -1,9 +1,31 @@
-# Copyright 2020-2024, Ansys Government Initiatives 
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
 
 from __future__ import annotations
 
-import typing
 import grpc
+import logging
+import typing
 from enum import IntEnum, IntFlag
 from concurrent.futures import ThreadPoolExecutor
 from queue import SimpleQueue
@@ -13,11 +35,13 @@ from . import AgGrpcServices_pb2_grpc
 
 from .marshall import EnumArg, OLEColorArg
 from .apiutil import OutArg, GcDisabler
-from ..utilities.exceptions import STKRuntimeError, GrpcUtilitiesException
+from ..utilities.exceptions import STKRuntimeError, GrpcUtilitiesError
 from ..utilities.colors import Color
 
 # comutil.GUID.from_registry_format("{00020404-0000-0000-C000-000000000046}").as_data_pair()
-IID_IEnumVARIANT = (132100, 5044031582654955712) 
+IID_IEnumVARIANT = (132100, 5044031582654955712)
+
+_logger = logging.getLogger("stk.internal.grpcutil")
         
 def _is_list_type(arg:typing.Any) -> bool:
     if type(arg) == str or not hasattr(arg, '__iter__'):
@@ -269,7 +293,7 @@ class GrpcInterfaceFuture(object):
                 attr_metadata_name = f"_get_{attr_name}_metadata"
                 break
         if call_interface is None:
-            raise GrpcUtilitiesException(f"Cannot create gRPC future; incorrect type.")
+            raise GrpcUtilitiesError(f"Cannot create gRPC future; incorrect type.")
         self.batcher = batcher
         self.future_call_data = AgGrpcServices_pb2.STKObjectPromise()
         if type(source_obj._intf)==GrpcInterfacePimpl and type(source_obj._intf._impl)==GrpcInterfaceFuture:
@@ -302,7 +326,7 @@ class GrpcInterfaceFuture(object):
         self.batcher._enqueue_batch_request(request)
 
     def query_interface(self, intf_metadata:dict) -> "GrpcInterface":
-        raise GrpcUtilitiesException(f"gRPC futures can not be casted to other types.")
+        raise GrpcUtilitiesError(f"gRPC futures can not be casted to other types.")
 
     def invoke(self, intf_metadata:dict, method_metadata:dict, *args):
         guid = _grpc_guid(intf_metadata)
@@ -312,7 +336,7 @@ class GrpcInterfaceFuture(object):
         request.interface_guid.MergeFrom(guid)
         for arg in args:
             if type(arg) == OutArg:
-                raise GrpcUtilitiesException(f"gRPC futures do not return values.")
+                raise GrpcUtilitiesError(f"gRPC futures do not return values.")
             new_grpc_arg = AgGrpcServices_pb2.Variant()
             _marshall_input_arg(arg, new_grpc_arg)
             request.args.append(new_grpc_arg)
@@ -322,7 +346,7 @@ class GrpcInterfaceFuture(object):
             self._handle_rpc_error(rpc_error)
 
     def get_property(self, intf_metadata:dict, method_metadata:dict):
-        raise GrpcUtilitiesException(f"gRPC futures do not return values.")
+        raise GrpcUtilitiesError(f"gRPC futures do not return values.")
 
     def set_property(self, intf_metadata:dict, method_metadata:dict, value):
         guid = _grpc_guid(intf_metadata)
@@ -339,13 +363,13 @@ class GrpcInterfaceFuture(object):
             self._handle_rpc_error(rpc_error)
 
     def subscribe(self, event_handler:AgGrpcServices_pb2.EventHandler, event:str, callback:callable):
-        raise GrpcUtilitiesException(f"gRPC futures are not compatible with events.")
+        raise GrpcUtilitiesError(f"gRPC futures are not compatible with events.")
 
     def unsubscribe(self, event_handler:AgGrpcServices_pb2.EventHandler, event:str, callback:callable):
-        raise GrpcUtilitiesException(f"gRPC futures are not compatible with events.")
+        raise GrpcUtilitiesError(f"gRPC futures are not compatible with events.")
         
     def unsubscribe_all(self, event_handler:AgGrpcServices_pb2.EventHandler):
-        raise GrpcUtilitiesException(f"gRPC futures are not compatible with events.")
+        raise GrpcUtilitiesError(f"gRPC futures are not compatible with events.")
 
 class GrpcApplication(GrpcInterface):
     def __init__(self, client: "GrpcClient", obj):
@@ -451,7 +475,7 @@ class GrpcClient(object):
             elif option == "raise exceptions with STK Engine":
                 continue
             else:
-                raise GrpcUtilitiesException(f"Unrecognized gRPC option \"{option}\".")
+                raise GrpcUtilitiesError(f"Unrecognized gRPC option \"{option}\".")
 
     def __del__(self):
         self.terminate_connection()
@@ -488,7 +512,7 @@ class GrpcClient(object):
         connect_request = AgGrpcServices_pb2.EmptyMessage()
         connect_response = self.stub.GetConnectionMetadata(connect_request)
         server_version = f"{connect_response.version}.{connect_response.release}.{connect_response.update}"
-        expected_version = "12.9.0"
+        expected_version = "12.10.0"
         if server_version != expected_version:
             raise STKRuntimeError(f"Version mismatch between Python client and gRPC server. Expected STK {expected_version}, found STK {server_version}.")
         self._connection_id = connect_response.connection_id
@@ -520,7 +544,7 @@ class GrpcClient(object):
     @staticmethod
     def register_call_batcher(batcher:"GrpcCallBatcher") -> None:
         if batcher._client in GrpcClient._active_batchers:
-            raise GrpcUtilitiesException("Nested GrpcCallBatchers are not permitted.")
+            raise GrpcUtilitiesError("Nested GrpcCallBatchers are not permitted.")
         GrpcClient._active_batchers[batcher._client] = batcher
 
     @staticmethod
@@ -534,10 +558,13 @@ class GrpcClient(object):
         future.reset_impl(bound_intf)
 
     @staticmethod
-    def new_client(host, port, timeout_sec:int=60) -> "GrpcClient":
+    def new_client(host, port, timeout_sec:int=60, max_receive_message_size:int=0) -> "GrpcClient":
         addr = f"{host}:{port}"
         new_grpc_client = GrpcClient()
-        new_grpc_client.channel = grpc.insecure_channel(addr)
+        channel_args = []
+        if max_receive_message_size > 0:
+            channel_args.append(("grpc.max_receive_message_length", max_receive_message_size))
+        new_grpc_client.channel = grpc.insecure_channel(addr, options=channel_args)
         try:
             grpc.channel_ready_future(new_grpc_client.channel).result(timeout=timeout_sec)
 
@@ -703,7 +730,10 @@ class GrpcClient(object):
                 else:
                     return tuple([self._marshall_return_arg(arg) for arg in response.return_vals])
         except grpc.RpcError as rpc_error:
-            self._handle_rpc_error(rpc_error)
+            if rpc_error.code() == grpc.StatusCode.RESOURCE_EXHAUSTED:
+                raise RuntimeError("gRPC message size limit exceeded. Try chunking the data request or specify a larger limit using grpc_max_message_size when starting the application.")
+            else:
+                self._handle_rpc_error(rpc_error)
 
     def get_property(self, p:AgGrpcServices_pb2.STKObject, guid:AgGrpcServices_pb2.InterfaceID, method_offset) -> typing.Any:
         self._execute_batched_invoke()
@@ -758,7 +788,10 @@ class GrpcClient(object):
     def _fire_event(self, callbacks, args, event_id):
         if callbacks is not None:
             for callback in callbacks:
-                callback(*args)
+                try:
+                    callback(*args)
+                except:
+                    _logger.exception(f"Exception raised during callback registered to {callback.__name__}:")
                 self._execute_batched_invoke()
         self.acknowledge_event(event_id)
 
@@ -773,7 +806,7 @@ class GrpcClient(object):
                 callbacks = self._event_callbacks[handler][name][p.value]
                 self._executor.submit(self._fire_event, callbacks, args, event.event_id)
         except:
-            pass
+            _logger.exception("Exception raised during handling of STK events:")
 
     def start_event_loop(self):
         if self._event_loop_id is None:

@@ -32,15 +32,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGridInspector.region_figure_of_merit`
-              - Retrieves the Region FOM data provider.
+              - Retrieve the Region FOM data provider.
             * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGridInspector.region_satisfaction`
-              - Retrieves the Region Satisfaction data provider.
+              - Retrieve the Region Satisfaction data provider.
             * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGridInspector.point_figure_of_merit`
-              - Retrieves the Point FOM data provider.
+              - Retrieve the Point FOM data provider.
             * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGridInspector.point_satisfaction`
-              - Retrieves the Point Satisfaction data provider.
+              - Retrieve the Point Satisfaction data provider.
             * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritGridInspector.message`
-              - Retrieves the message when a point or region is selected.
+              - Retrieve the message when a point or region is selected.
 
 
 
@@ -59,31 +59,31 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.FigureOfMeritGridInspector.region_figure_of_merit
     :type: IDataProviderInfo
 
-    Retrieves the Region FOM data provider.
+    Retrieve the Region FOM data provider.
 
 .. py:property:: region_satisfaction
     :canonical: ansys.stk.core.stkobjects.FigureOfMeritGridInspector.region_satisfaction
     :type: IDataProviderInfo
 
-    Retrieves the Region Satisfaction data provider.
+    Retrieve the Region Satisfaction data provider.
 
 .. py:property:: point_figure_of_merit
     :canonical: ansys.stk.core.stkobjects.FigureOfMeritGridInspector.point_figure_of_merit
     :type: IDataProviderInfo
 
-    Retrieves the Point FOM data provider.
+    Retrieve the Point FOM data provider.
 
 .. py:property:: point_satisfaction
     :canonical: ansys.stk.core.stkobjects.FigureOfMeritGridInspector.point_satisfaction
     :type: IDataProviderInfo
 
-    Retrieves the Point Satisfaction data provider.
+    Retrieve the Point Satisfaction data provider.
 
 .. py:property:: message
     :canonical: ansys.stk.core.stkobjects.FigureOfMeritGridInspector.message
     :type: str
 
-    Retrieves the message when a point or region is selected.
+    Retrieve the message when a point or region is selected.
 
 
 Method detail

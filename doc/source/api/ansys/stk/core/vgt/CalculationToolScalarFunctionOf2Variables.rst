@@ -35,7 +35,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.vgt.CalculationToolScalarFunctionOf2Variables.coefficient_c`
               - The constant coefficient C.
             * - :py:attr:`~ansys.stk.core.vgt.CalculationToolScalarFunctionOf2Variables.output_dimension_inheritance`
-              - Specifies whether the output dimension is inherited or explicitly specified using OutputDimension.
+              - Specify whether the output dimension is inherited or explicitly specified using OutputDimension.
             * - :py:attr:`~ansys.stk.core.vgt.CalculationToolScalarFunctionOf2Variables.output_dimension`
               - The output dimension. Use any of STK supported dimensions. This value will be used if OutputDimensionInheritance is false.
             * - :py:attr:`~ansys.stk.core.vgt.CalculationToolScalarFunctionOf2Variables.available_functions`
@@ -102,9 +102,9 @@ Property detail
 
 .. py:property:: output_dimension_inheritance
     :canonical: ansys.stk.core.vgt.CalculationToolScalarFunctionOf2Variables.output_dimension_inheritance
-    :type: INHERIT_DIMENSION_TYPE
+    :type: InheritDimensionType
 
-    Specifies whether the output dimension is inherited or explicitly specified using OutputDimension.
+    Specify whether the output dimension is inherited or explicitly specified using OutputDimension.
 
 .. py:property:: output_dimension
     :canonical: ansys.stk.core.vgt.CalculationToolScalarFunctionOf2Variables.output_dimension

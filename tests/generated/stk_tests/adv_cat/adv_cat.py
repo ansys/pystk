@@ -1,3 +1,25 @@
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
 import pytest
 from test_util import *
 from assertion_harness import *
@@ -24,7 +46,7 @@ class EarlyBoundTests(TestBase):
 
             TestBase.LoadTestScenario(Path.Combine("AdvCATTests", "AdvCATTests.sc"))
             EarlyBoundTests.AG_ACAT = clr.CastAs(
-                TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.ADVCAT, "TestAdvCAT"), AdvCAT
+                TestBase.Application.current_scenario.children.new(STKObjectType.ADVCAT, "TestAdvCAT"), AdvCAT
             )
 
         except Exception as e:
@@ -39,7 +61,7 @@ class EarlyBoundTests(TestBase):
             TestBase.Application.preferences.python_plugins_preferences.ephemeris_file_reader_paths
         )
         paths.remove_all()
-        TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.ADVCAT, "TestAdvCAT")
+        TestBase.Application.current_scenario.children.unload(STKObjectType.ADVCAT, "TestAdvCAT")
         EarlyBoundTests.AG_ACAT = None
         TestBase.Uninitialize()
 
@@ -120,8 +142,8 @@ class EarlyBoundTests(TestBase):
         chosenObject: "AdvCATChosenObject" = primaryChosenObjColl.add("GPSAlmanac.al3")
         Assert.assertEqual("GPSAlmanac.al3", chosenObject.name)
 
-        chosenObject.ellipsoid_class = ADVCAT_ELLIPSOID_CLASS_TYPE.CLASS_COVARIANCE_OFFSET
-        Assert.assertEqual(ADVCAT_ELLIPSOID_CLASS_TYPE.CLASS_COVARIANCE_OFFSET, chosenObject.ellipsoid_class)
+        chosenObject.ellipsoid_class = AdvCATEllipsoidClassType.CLASS_COVARIANCE_OFFSET
+        Assert.assertEqual(AdvCATEllipsoidClassType.CLASS_COVARIANCE_OFFSET, chosenObject.ellipsoid_class)
 
         chosenObject.tangential = 0
         Assert.assertEqual(0, chosenObject.tangential)
@@ -150,8 +172,8 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             chosenObject.normal = 1001
 
-        chosenObject.ellipsoid_class = ADVCAT_ELLIPSOID_CLASS_TYPE.CLASS_FIXED
-        Assert.assertEqual(ADVCAT_ELLIPSOID_CLASS_TYPE.CLASS_FIXED, chosenObject.ellipsoid_class)
+        chosenObject.ellipsoid_class = AdvCATEllipsoidClassType.CLASS_FIXED
+        Assert.assertEqual(AdvCATEllipsoidClassType.CLASS_FIXED, chosenObject.ellipsoid_class)
 
         chosenObject.tangential = 0
         Assert.assertEqual(0, chosenObject.tangential)
@@ -180,8 +202,8 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             chosenObject.normal = 1001
 
-        chosenObject.ellipsoid_class = ADVCAT_ELLIPSOID_CLASS_TYPE.CLASS_COVARIANCE
-        Assert.assertEqual(ADVCAT_ELLIPSOID_CLASS_TYPE.CLASS_COVARIANCE, chosenObject.ellipsoid_class)
+        chosenObject.ellipsoid_class = AdvCATEllipsoidClassType.CLASS_COVARIANCE
+        Assert.assertEqual(AdvCATEllipsoidClassType.CLASS_COVARIANCE, chosenObject.ellipsoid_class)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("is not valid for Class")):
             chosenObject.tangential = 0
@@ -190,8 +212,8 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("is not valid for Class")):
             chosenObject.normal = 0
 
-        chosenObject.ellipsoid_class = ADVCAT_ELLIPSOID_CLASS_TYPE.CLASS_QUADRATIC_IN_TIME
-        Assert.assertEqual(ADVCAT_ELLIPSOID_CLASS_TYPE.CLASS_QUADRATIC_IN_TIME, chosenObject.ellipsoid_class)
+        chosenObject.ellipsoid_class = AdvCATEllipsoidClassType.CLASS_QUADRATIC_IN_TIME
+        Assert.assertEqual(AdvCATEllipsoidClassType.CLASS_QUADRATIC_IN_TIME, chosenObject.ellipsoid_class)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("is not valid for Class")):
             chosenObject.tangential = 0
@@ -200,8 +222,8 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("is not valid for Class")):
             chosenObject.normal = 0
 
-        chosenObject.ellipsoid_class = ADVCAT_ELLIPSOID_CLASS_TYPE.CLASS_ORBIT_CLASS
-        Assert.assertEqual(ADVCAT_ELLIPSOID_CLASS_TYPE.CLASS_ORBIT_CLASS, chosenObject.ellipsoid_class)
+        chosenObject.ellipsoid_class = AdvCATEllipsoidClassType.CLASS_ORBIT_CLASS
+        Assert.assertEqual(AdvCATEllipsoidClassType.CLASS_ORBIT_CLASS, chosenObject.ellipsoid_class)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("is not valid for Class")):
             chosenObject.tangential = 0
@@ -210,9 +232,9 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("is not valid for Class")):
             chosenObject.normal = 0
 
-        chosenObject.ellipsoid_class = ADVCAT_ELLIPSOID_CLASS_TYPE.CLASS_QUADRATIC_IN_TIME_BY_ORBIT_CLASS
+        chosenObject.ellipsoid_class = AdvCATEllipsoidClassType.CLASS_QUADRATIC_IN_TIME_BY_ORBIT_CLASS
         Assert.assertEqual(
-            ADVCAT_ELLIPSOID_CLASS_TYPE.CLASS_QUADRATIC_IN_TIME_BY_ORBIT_CLASS, chosenObject.ellipsoid_class
+            AdvCATEllipsoidClassType.CLASS_QUADRATIC_IN_TIME_BY_ORBIT_CLASS, chosenObject.ellipsoid_class
         )
 
         with pytest.raises(Exception, match=RegexSubstringMatch("is not valid for Class")):
@@ -298,26 +320,24 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             EarlyBoundTests.AG_ACAT.primary_default_normal = 1001
 
-        EarlyBoundTests.AG_ACAT.primary_default_class = ADVCAT_ELLIPSOID_CLASS_TYPE.CLASS_COVARIANCE_OFFSET
+        EarlyBoundTests.AG_ACAT.primary_default_class = AdvCATEllipsoidClassType.CLASS_COVARIANCE_OFFSET
         Assert.assertEqual(
-            ADVCAT_ELLIPSOID_CLASS_TYPE.CLASS_COVARIANCE_OFFSET, EarlyBoundTests.AG_ACAT.primary_default_class
+            AdvCATEllipsoidClassType.CLASS_COVARIANCE_OFFSET, EarlyBoundTests.AG_ACAT.primary_default_class
         )
-        EarlyBoundTests.AG_ACAT.primary_default_class = ADVCAT_ELLIPSOID_CLASS_TYPE.CLASS_COVARIANCE
-        Assert.assertEqual(ADVCAT_ELLIPSOID_CLASS_TYPE.CLASS_COVARIANCE, EarlyBoundTests.AG_ACAT.primary_default_class)
-        EarlyBoundTests.AG_ACAT.primary_default_class = ADVCAT_ELLIPSOID_CLASS_TYPE.CLASS_FIXED
-        Assert.assertEqual(ADVCAT_ELLIPSOID_CLASS_TYPE.CLASS_FIXED, EarlyBoundTests.AG_ACAT.primary_default_class)
-        EarlyBoundTests.AG_ACAT.primary_default_class = ADVCAT_ELLIPSOID_CLASS_TYPE.CLASS_ORBIT_CLASS
-        Assert.assertEqual(ADVCAT_ELLIPSOID_CLASS_TYPE.CLASS_ORBIT_CLASS, EarlyBoundTests.AG_ACAT.primary_default_class)
-        EarlyBoundTests.AG_ACAT.primary_default_class = (
-            ADVCAT_ELLIPSOID_CLASS_TYPE.CLASS_QUADRATIC_IN_TIME_BY_ORBIT_CLASS
-        )
+        EarlyBoundTests.AG_ACAT.primary_default_class = AdvCATEllipsoidClassType.CLASS_COVARIANCE
+        Assert.assertEqual(AdvCATEllipsoidClassType.CLASS_COVARIANCE, EarlyBoundTests.AG_ACAT.primary_default_class)
+        EarlyBoundTests.AG_ACAT.primary_default_class = AdvCATEllipsoidClassType.CLASS_FIXED
+        Assert.assertEqual(AdvCATEllipsoidClassType.CLASS_FIXED, EarlyBoundTests.AG_ACAT.primary_default_class)
+        EarlyBoundTests.AG_ACAT.primary_default_class = AdvCATEllipsoidClassType.CLASS_ORBIT_CLASS
+        Assert.assertEqual(AdvCATEllipsoidClassType.CLASS_ORBIT_CLASS, EarlyBoundTests.AG_ACAT.primary_default_class)
+        EarlyBoundTests.AG_ACAT.primary_default_class = AdvCATEllipsoidClassType.CLASS_QUADRATIC_IN_TIME_BY_ORBIT_CLASS
         Assert.assertEqual(
-            ADVCAT_ELLIPSOID_CLASS_TYPE.CLASS_QUADRATIC_IN_TIME_BY_ORBIT_CLASS,
+            AdvCATEllipsoidClassType.CLASS_QUADRATIC_IN_TIME_BY_ORBIT_CLASS,
             EarlyBoundTests.AG_ACAT.primary_default_class,
         )
-        EarlyBoundTests.AG_ACAT.primary_default_class = ADVCAT_ELLIPSOID_CLASS_TYPE.CLASS_QUADRATIC_IN_TIME
+        EarlyBoundTests.AG_ACAT.primary_default_class = AdvCATEllipsoidClassType.CLASS_QUADRATIC_IN_TIME
         Assert.assertEqual(
-            ADVCAT_ELLIPSOID_CLASS_TYPE.CLASS_QUADRATIC_IN_TIME, EarlyBoundTests.AG_ACAT.primary_default_class
+            AdvCATEllipsoidClassType.CLASS_QUADRATIC_IN_TIME, EarlyBoundTests.AG_ACAT.primary_default_class
         )
 
         availObjColl: "AdvCATAvailableObjectCollection" = EarlyBoundTests.AG_ACAT.get_available_objects()
@@ -434,30 +454,26 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
             EarlyBoundTests.AG_ACAT.secondary_default_normal = 1001
 
-        EarlyBoundTests.AG_ACAT.secondary_default_class = ADVCAT_ELLIPSOID_CLASS_TYPE.CLASS_COVARIANCE_OFFSET
+        EarlyBoundTests.AG_ACAT.secondary_default_class = AdvCATEllipsoidClassType.CLASS_COVARIANCE_OFFSET
         Assert.assertEqual(
-            ADVCAT_ELLIPSOID_CLASS_TYPE.CLASS_COVARIANCE_OFFSET, EarlyBoundTests.AG_ACAT.secondary_default_class
+            AdvCATEllipsoidClassType.CLASS_COVARIANCE_OFFSET, EarlyBoundTests.AG_ACAT.secondary_default_class
         )
-        EarlyBoundTests.AG_ACAT.secondary_default_class = ADVCAT_ELLIPSOID_CLASS_TYPE.CLASS_COVARIANCE
-        Assert.assertEqual(
-            ADVCAT_ELLIPSOID_CLASS_TYPE.CLASS_COVARIANCE, EarlyBoundTests.AG_ACAT.secondary_default_class
-        )
-        EarlyBoundTests.AG_ACAT.secondary_default_class = ADVCAT_ELLIPSOID_CLASS_TYPE.CLASS_FIXED
-        Assert.assertEqual(ADVCAT_ELLIPSOID_CLASS_TYPE.CLASS_FIXED, EarlyBoundTests.AG_ACAT.secondary_default_class)
-        EarlyBoundTests.AG_ACAT.secondary_default_class = ADVCAT_ELLIPSOID_CLASS_TYPE.CLASS_ORBIT_CLASS
-        Assert.assertEqual(
-            ADVCAT_ELLIPSOID_CLASS_TYPE.CLASS_ORBIT_CLASS, EarlyBoundTests.AG_ACAT.secondary_default_class
-        )
+        EarlyBoundTests.AG_ACAT.secondary_default_class = AdvCATEllipsoidClassType.CLASS_COVARIANCE
+        Assert.assertEqual(AdvCATEllipsoidClassType.CLASS_COVARIANCE, EarlyBoundTests.AG_ACAT.secondary_default_class)
+        EarlyBoundTests.AG_ACAT.secondary_default_class = AdvCATEllipsoidClassType.CLASS_FIXED
+        Assert.assertEqual(AdvCATEllipsoidClassType.CLASS_FIXED, EarlyBoundTests.AG_ACAT.secondary_default_class)
+        EarlyBoundTests.AG_ACAT.secondary_default_class = AdvCATEllipsoidClassType.CLASS_ORBIT_CLASS
+        Assert.assertEqual(AdvCATEllipsoidClassType.CLASS_ORBIT_CLASS, EarlyBoundTests.AG_ACAT.secondary_default_class)
         EarlyBoundTests.AG_ACAT.secondary_default_class = (
-            ADVCAT_ELLIPSOID_CLASS_TYPE.CLASS_QUADRATIC_IN_TIME_BY_ORBIT_CLASS
+            AdvCATEllipsoidClassType.CLASS_QUADRATIC_IN_TIME_BY_ORBIT_CLASS
         )
         Assert.assertEqual(
-            ADVCAT_ELLIPSOID_CLASS_TYPE.CLASS_QUADRATIC_IN_TIME_BY_ORBIT_CLASS,
+            AdvCATEllipsoidClassType.CLASS_QUADRATIC_IN_TIME_BY_ORBIT_CLASS,
             EarlyBoundTests.AG_ACAT.secondary_default_class,
         )
-        EarlyBoundTests.AG_ACAT.secondary_default_class = ADVCAT_ELLIPSOID_CLASS_TYPE.CLASS_QUADRATIC_IN_TIME
+        EarlyBoundTests.AG_ACAT.secondary_default_class = AdvCATEllipsoidClassType.CLASS_QUADRATIC_IN_TIME
         Assert.assertEqual(
-            ADVCAT_ELLIPSOID_CLASS_TYPE.CLASS_QUADRATIC_IN_TIME, EarlyBoundTests.AG_ACAT.secondary_default_class
+            AdvCATEllipsoidClassType.CLASS_QUADRATIC_IN_TIME, EarlyBoundTests.AG_ACAT.secondary_default_class
         )
 
         availObjColl: "AdvCATAvailableObjectCollection" = EarlyBoundTests.AG_ACAT.get_available_objects()
@@ -602,14 +618,14 @@ class EarlyBoundTests(TestBase):
         advanced.minimum_sample_step_size = 10000000000
         Assert.assertEqual(10000000000, advanced.minimum_sample_step_size)
 
-        advanced.conjunction_type = ADVCAT_CONJUNCTION_TYPE.GLOBAL_PLUS_LOCAL
-        Assert.assertEqual(ADVCAT_CONJUNCTION_TYPE.GLOBAL_PLUS_LOCAL, advanced.conjunction_type)
-        advanced.conjunction_type = ADVCAT_CONJUNCTION_TYPE.LOCAL_PLUS_END_POINTS
-        Assert.assertEqual(ADVCAT_CONJUNCTION_TYPE.LOCAL_PLUS_END_POINTS, advanced.conjunction_type)
-        advanced.conjunction_type = ADVCAT_CONJUNCTION_TYPE.GLOBAL_ONLY
-        Assert.assertEqual(ADVCAT_CONJUNCTION_TYPE.GLOBAL_ONLY, advanced.conjunction_type)
-        advanced.conjunction_type = ADVCAT_CONJUNCTION_TYPE.LOCAL_ONLY
-        Assert.assertEqual(ADVCAT_CONJUNCTION_TYPE.LOCAL_ONLY, advanced.conjunction_type)
+        advanced.conjunction_type = AdvCATConjunctionType.GLOBAL_PLUS_LOCAL
+        Assert.assertEqual(AdvCATConjunctionType.GLOBAL_PLUS_LOCAL, advanced.conjunction_type)
+        advanced.conjunction_type = AdvCATConjunctionType.LOCAL_PLUS_END_POINTS
+        Assert.assertEqual(AdvCATConjunctionType.LOCAL_PLUS_END_POINTS, advanced.conjunction_type)
+        advanced.conjunction_type = AdvCATConjunctionType.GLOBAL_ONLY
+        Assert.assertEqual(AdvCATConjunctionType.GLOBAL_ONLY, advanced.conjunction_type)
+        advanced.conjunction_type = AdvCATConjunctionType.LOCAL_ONLY
+        Assert.assertEqual(AdvCATConjunctionType.LOCAL_ONLY, advanced.conjunction_type)
 
     # endregion
 
@@ -707,7 +723,7 @@ class EarlyBoundTests(TestBase):
             advCATVO.show_secondary_ellipsoids = False
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             advCATVO.show_secondary_ellipsoids_type = (
-                ADVCAT_SECONDARY_ELLIPSOIDS_VISIBILITY_TYPE.SHOW_ALL_SECONDARY_ELLIPSOIDS
+                AdvCATSecondaryEllipsoidsVisibilityType.SHOW_ALL_SECONDARY_ELLIPSOIDS
             )
 
         advCATVO.show = True
@@ -723,24 +739,22 @@ class EarlyBoundTests(TestBase):
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             advCATVO.show_secondary_ellipsoids_type = (
-                ADVCAT_SECONDARY_ELLIPSOIDS_VISIBILITY_TYPE.SHOW_ALL_SECONDARY_ELLIPSOIDS
+                AdvCATSecondaryEllipsoidsVisibilityType.SHOW_ALL_SECONDARY_ELLIPSOIDS
             )
 
         advCATVO.show_secondary_ellipsoids = True
         Assert.assertTrue(advCATVO.show_secondary_ellipsoids)
 
-        advCATVO.show_secondary_ellipsoids_type = (
-            ADVCAT_SECONDARY_ELLIPSOIDS_VISIBILITY_TYPE.SHOW_ALL_SECONDARY_ELLIPSOIDS
-        )
+        advCATVO.show_secondary_ellipsoids_type = AdvCATSecondaryEllipsoidsVisibilityType.SHOW_ALL_SECONDARY_ELLIPSOIDS
         Assert.assertEqual(
-            ADVCAT_SECONDARY_ELLIPSOIDS_VISIBILITY_TYPE.SHOW_ALL_SECONDARY_ELLIPSOIDS,
+            AdvCATSecondaryEllipsoidsVisibilityType.SHOW_ALL_SECONDARY_ELLIPSOIDS,
             advCATVO.show_secondary_ellipsoids_type,
         )
         advCATVO.show_secondary_ellipsoids_type = (
-            ADVCAT_SECONDARY_ELLIPSOIDS_VISIBILITY_TYPE.SHOW_SECONDARY_ELLIPSOIDS_WITH_CONJUNCTIONS
+            AdvCATSecondaryEllipsoidsVisibilityType.SHOW_SECONDARY_ELLIPSOIDS_WITH_CONJUNCTIONS
         )
         Assert.assertEqual(
-            ADVCAT_SECONDARY_ELLIPSOIDS_VISIBILITY_TYPE.SHOW_SECONDARY_ELLIPSOIDS_WITH_CONJUNCTIONS,
+            AdvCATSecondaryEllipsoidsVisibilityType.SHOW_SECONDARY_ELLIPSOIDS_WITH_CONJUNCTIONS,
             advCATVO.show_secondary_ellipsoids_type,
         )
 

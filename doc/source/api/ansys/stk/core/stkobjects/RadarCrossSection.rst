@@ -19,7 +19,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSection.set_model`
-              - Set the current RCS model by name.
+              - Do not use this method, as it is deprecated. Use ModelComponentLinking on IAgRadarCrossSection instead. Sets the current RCS model by name.
 
     .. tab-item:: Properties
         
@@ -28,9 +28,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSection.supported_models`
-              - Gets an array of supported model names.
+              - Do not use this property, as it is deprecated. Use ModelComponentLinking on IAgRadarCrossSection instead. Gets an array of supported model names.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSection.model`
-              - Gets the current RCS model.
+              - Do not use this property, as it is deprecated. Use ModelComponentLinking on IAgRadarCrossSection instead. Gets the current RCS model.
+            * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSection.model_component_linking`
+              - Get the link/embed controller for managing the radar cross section model component.
 
 
 
@@ -49,13 +51,19 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.RadarCrossSection.supported_models
     :type: list
 
-    Gets an array of supported model names.
+    Do not use this property, as it is deprecated. Use ModelComponentLinking on IAgRadarCrossSection instead. Gets an array of supported model names.
 
 .. py:property:: model
     :canonical: ansys.stk.core.stkobjects.RadarCrossSection.model
     :type: RadarCrossSectionModel
 
-    Gets the current RCS model.
+    Do not use this property, as it is deprecated. Use ModelComponentLinking on IAgRadarCrossSection instead. Gets the current RCS model.
+
+.. py:property:: model_component_linking
+    :canonical: ansys.stk.core.stkobjects.RadarCrossSection.model_component_linking
+    :type: IComponentLinkEmbedControl
+
+    Get the link/embed controller for managing the radar cross section model component.
 
 
 Method detail
@@ -65,7 +73,7 @@ Method detail
 .. py:method:: set_model(self, model_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.RadarCrossSection.set_model
 
-    Set the current RCS model by name.
+    Do not use this method, as it is deprecated. Use ModelComponentLinking on IAgRadarCrossSection instead. Sets the current RCS model by name.
 
     :Parameters:
 
@@ -74,5 +82,6 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
 
 

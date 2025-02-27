@@ -19,9 +19,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarSTCAttenuation.type`
-              - Gets the STC type.
+              - Get the STC type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarSTCAttenuation.name`
-              - Gets the radar STC string name.
+              - Get the radar STC string name.
 
 
 Import detail
@@ -37,14 +37,14 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.IRadarSTCAttenuation.type
-    :type: RADAR_STC_ATTENUATION_TYPE
+    :type: RadarSTCAttenuationType
 
-    Gets the STC type.
+    Get the STC type.
 
 .. py:property:: name
     :canonical: ansys.stk.core.stkobjects.IRadarSTCAttenuation.name
     :type: str
 
-    Gets the radar STC string name.
+    Get the radar STC string name.
 
 

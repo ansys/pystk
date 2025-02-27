@@ -87,7 +87,7 @@ Property detail
 
 .. py:property:: stop_condition
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureFormationFlyer.stop_condition
-    :type: FORMATION_FLYER_STOP_CONDITION
+    :type: FormationFlyerStopCondition
 
     Get Stop condition.
 

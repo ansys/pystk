@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.DelaunayGOverSQRTmu.g_over_sqrt_mu`
-              - Gets or sets the value of G/SQRT(mu). Dimensionless.
+              - Get or set the value of G/SQRT(mu). Dimensionless.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.DelaunayGOverSQRTmu.g_over_sqrt_mu
     :type: float
 
-    Gets or sets the value of G/SQRT(mu). Dimensionless.
+    Get or set the value of G/SQRT(mu). Dimensionless.
 
 

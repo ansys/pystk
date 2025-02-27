@@ -1,3 +1,25 @@
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
 from test_util import *
 from code_snippets.timeline.timeline_code_snippets_test_base import *
 from ansys.stk.core.stkobjects import *
@@ -49,7 +71,7 @@ class Event(TimelineCodeSnippetsTestBase):
 
         # create a satellite with no ephem and find that there's no ocurrence of PassIntervals.First.Start
         noEphemObj: "IStkObject" = stkRoot.current_scenario.children.new(
-            STK_OBJECT_TYPE.SATELLITE, "NoEphem_FindOccurenceTest"
+            STKObjectType.SATELLITE, "NoEphem_FindOccurenceTest"
         )
         provider2: "AnalysisWorkbenchComponentProvider" = noEphemObj.analysis_workbench_components
         timeEvent2: "ITimeToolInstant" = provider2.time_instants["EphemerisStartTime"]
@@ -128,9 +150,9 @@ class Event(TimelineCodeSnippetsTestBase):
         asSignaled.base_clock_location = satelliteVgtProvider.points["Center"]
         asSignaled.target_clock_location = aircraftVgtProvider.points["Center"]
 
-        asSignaled.signal_sense = SIGNAL_DIRECTION_TYPE.TRANSMIT
+        asSignaled.signal_sense = SignalDirectionType.TRANSMIT
         basicSignalDelay: "TimeToolSignalDelayBasic" = clr.CastAs(asSignaled.signal_delay, TimeToolSignalDelayBasic)
-        basicSignalDelay.speed_option = SPEED_TYPE.CUSTOM_TRANSMISSION_SPEED
+        basicSignalDelay.speed_option = SpeedType.CUSTOM_TRANSMISSION_SPEED
 
         # Uses current Time unit preference, this code snippet assumes seconds.
         basicSignalDelay.time_delay_convergence = 0.002
@@ -177,7 +199,7 @@ class Event(TimelineCodeSnippetsTestBase):
 
         # For instance, time at highest altitude
         asExtremum.calculation_scalar = provider.calculation_scalars["GroundTrajectory.Detic.LLA.Altitude"]
-        asExtremum.extremum_type = EXTREMUM_TYPE.MAXIMUM
+        asExtremum.extremum_type = ExtremumType.MAXIMUM
 
         occurrence: "TimeToolInstantOccurrenceResult" = timeEvent.find_occurrence()
         if occurrence.is_valid:

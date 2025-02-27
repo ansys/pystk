@@ -1,3 +1,25 @@
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
 from test_util import *
 from code_snippets.code_snippets_test_base import *
 from ansys.stk.core.stkobjects import *
@@ -28,9 +50,7 @@ class PlaceSnippets(CodeSnippetsTestBase):
     # region TestSetUp
     def setUp(self):
         PlaceSnippets.m_Object = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-                STK_OBJECT_TYPE.PLACE, PlaceSnippets.m_DefaultName
-            ),
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STKObjectType.PLACE, PlaceSnippets.m_DefaultName),
             Place,
         )
 
@@ -38,30 +58,30 @@ class PlaceSnippets(CodeSnippetsTestBase):
 
     # region TestTearDown
     def tearDown(self):
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.PLACE, PlaceSnippets.m_DefaultName)
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STKObjectType.PLACE, PlaceSnippets.m_DefaultName)
         PlaceSnippets.m_Object = None
 
     # endregion
 
     # region CreateDefaultPlaceOnCurrentScenarioCentralBody
     def test_CreateDefaultPlaceOnCurrentScenarioCentralBody(self):
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.PLACE, PlaceSnippets.m_DefaultName)
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STKObjectType.PLACE, PlaceSnippets.m_DefaultName)
         self.CreateDefaultPlaceOnCurrentScenarioCentralBody(CodeSnippetsTestBase.m_Root)
 
     def CreateDefaultPlaceOnCurrentScenarioCentralBody(self, root: "StkObjectRoot"):
         # Create a place on current scenario central body
-        place: "Place" = clr.CastAs(root.current_scenario.children.new(STK_OBJECT_TYPE.PLACE, "MyPlace"), Place)
+        place: "Place" = clr.CastAs(root.current_scenario.children.new(STKObjectType.PLACE, "MyPlace"), Place)
 
     # endregion
 
     # region CreatePlaceOnEarth
     def test_CreatePlaceOnEarth(self):
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.PLACE, PlaceSnippets.m_DefaultName)
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STKObjectType.PLACE, PlaceSnippets.m_DefaultName)
         self.CreatePlaceOnEarth(CodeSnippetsTestBase.m_Root)
 
     def CreatePlaceOnEarth(self, root: "StkObjectRoot"):
         place: "Place" = clr.CastAs(
-            root.current_scenario.children.new_on_central_body(STK_OBJECT_TYPE.PLACE, "MyPlace", "Earth"), Place
+            root.current_scenario.children.new_on_central_body(STKObjectType.PLACE, "MyPlace", "Earth"), Place
         )
 
         # Assuming unit preferences are set to radians for latitude and longitude and km for distance
@@ -75,7 +95,7 @@ class PlaceSnippets(CodeSnippetsTestBase):
 
     def CreatePlaceOnOtherPlanet(self, root: "StkObjectRoot"):
         placeObject: "Place" = clr.CastAs(
-            root.current_scenario.children.new_on_central_body(STK_OBJECT_TYPE.PLACE, "Place1", "Mars"), Place
+            root.current_scenario.children.new_on_central_body(STKObjectType.PLACE, "Place1", "Mars"), Place
         )
 
         # Assuming unit preferences are set to radians for latitude and longitude and km for distance

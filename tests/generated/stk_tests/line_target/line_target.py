@@ -1,3 +1,25 @@
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
 import pytest
 from test_util import *
 from access_constraints.access_constraint_helper import *
@@ -212,9 +234,9 @@ class EarlyBoundTests(TestBase):
 
         # LineWidth
         TestBase.logger.WriteLine6("\tThe current LineWidth is: {0}", gfx.line_width)
-        gfx.line_width = LINE_WIDTH.WIDTH2
+        gfx.line_width = LineWidth.WIDTH2
         TestBase.logger.WriteLine6("\tThe new LineWidth is: {0}", gfx.line_width)
-        Assert.assertEqual(LINE_WIDTH.WIDTH2, gfx.line_width)
+        Assert.assertEqual(LineWidth.WIDTH2, gfx.line_width)
         with pytest.raises(Exception):
             gfx.line_width = -1
         with pytest.raises(Exception):
@@ -222,9 +244,9 @@ class EarlyBoundTests(TestBase):
 
         # LineStyle
         TestBase.logger.WriteLine6("\tThe current LineStyle is: {0}", gfx.line_style)
-        gfx.line_style = LINE_STYLE.DASHED
+        gfx.line_style = LineStyle.DASHED
         TestBase.logger.WriteLine6("\tThe new LineStyle is: {0}", gfx.line_style)
-        Assert.assertEqual(LINE_STYLE.DASHED, gfx.line_style)
+        Assert.assertEqual(LineStyle.DASHED, gfx.line_style)
         # LinePtsVisible
         TestBase.logger.WriteLine4("\tThe current LinePtsVisible is: {0}", gfx.show_line_points)
         gfx.show_line_points = False
@@ -330,8 +352,8 @@ class EarlyBoundTests(TestBase):
         # test Access VO DataDisplays
         oSatellite: "Satellite" = Satellite(TestBase.Application.current_scenario.children["Satellite1"])
         Assert.assertNotEqual(None, oSatellite)
-        oSatellite.set_propagator_type(PROPAGATOR_TYPE.TWO_BODY)
-        Assert.assertEqual(PROPAGATOR_TYPE.TWO_BODY, oSatellite.propagator_type)
+        oSatellite.set_propagator_type(PropagatorType.TWO_BODY)
+        Assert.assertEqual(PropagatorType.TWO_BODY, oSatellite.propagator_type)
         oPropagator: "PropagatorTwoBody" = PropagatorTwoBody(oSatellite.propagator)
         Assert.assertNotEqual(None, oPropagator)
         oPropagator.propagate()

@@ -19,11 +19,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimationTimePeriod.start_time`
-              - Gets the animation's start time. Uses DateFormat Dimension.
+              - Get the animation's start time. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimationTimePeriod.stop_time`
-              - Gets the animation's stop time. Uses DateFormat Dimension.
+              - Get the animation's stop time. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimationTimePeriod.duration`
-              - A time duration. The value is a relative duration (i.e. \"+1 day\", \"+1 hour\").
+              - A time duration. The value is a relative duration (i.e. ``+1 day``, ``+1 hour``).
             * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimationTimePeriod.use_analysis_start_time`
               - Whether the animation start time is the same as the analysis's start time.
             * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioAnimationTimePeriod.use_analysis_stop_time`
@@ -46,19 +46,19 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.ScenarioAnimationTimePeriod.start_time
     :type: TimePeriodValue
 
-    Gets the animation's start time. Uses DateFormat Dimension.
+    Get the animation's start time. Uses DateFormat Dimension.
 
 .. py:property:: stop_time
     :canonical: ansys.stk.core.stkobjects.ScenarioAnimationTimePeriod.stop_time
     :type: TimePeriodValue
 
-    Gets the animation's stop time. Uses DateFormat Dimension.
+    Get the animation's stop time. Uses DateFormat Dimension.
 
 .. py:property:: duration
     :canonical: ansys.stk.core.stkobjects.ScenarioAnimationTimePeriod.duration
     :type: typing.Any
 
-    A time duration. The value is a relative duration (i.e. \"+1 day\", \"+1 hour\").
+    A time duration. The value is a relative duration (i.e. ``+1 day``, ``+1 hour``).
 
 .. py:property:: use_analysis_start_time
     :canonical: ansys.stk.core.stkobjects.ScenarioAnimationTimePeriod.use_analysis_start_time

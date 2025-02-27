@@ -52,7 +52,7 @@ Property detail
 
 .. py:property:: signal_sense
     :canonical: ansys.stk.core.vgt.TimeToolTimeIntervalCollectionSignaled.signal_sense
-    :type: SIGNAL_DIRECTION_TYPE
+    :type: SignalDirectionType
 
     The direction of the signal, whether you are Transmitting or Receiving from the Base Clock Location.
 

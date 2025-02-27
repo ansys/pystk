@@ -894,6 +894,9 @@ Summary
             * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolVectorSurfaceDisplacement`
               - Displacement between origin and destination points using surface distance and altitude difference.
 
+            * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolVectorFile`
+              - Vector interpolated from tabulated data from file.
+
             * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolVectorFactory`
               - A Factory object to create vectors.
 
@@ -1055,226 +1058,226 @@ Summary
             :widths: auto
         
 
-            * - :py:class:`~ansys.stk.core.vgt.CALCULATION_SCALAR_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.CalculationScalarType`
               - Define available calculation scalar types.
 
-            * - :py:class:`~ansys.stk.core.vgt.CONDITION_COMBINED_OPERATION_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.ConditionCombinedOperationType`
               - Define scalar condition combined operation types.
 
-            * - :py:class:`~ansys.stk.core.vgt.CONDITION_SET_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.ConditionSetType`
               - Define available condition set types.
 
-            * - :py:class:`~ansys.stk.core.vgt.CONDITION_THRESHOLD_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.ConditionThresholdType`
               - Operations for Scalar Bounds Condition.
 
-            * - :py:class:`~ansys.stk.core.vgt.CONDITION_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.ConditionType`
               - Define available condition types.
 
-            * - :py:class:`~ansys.stk.core.vgt.INHERIT_DIMENSION_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.InheritDimensionType`
               - Define how dimension is inherited.
 
-            * - :py:class:`~ansys.stk.core.vgt.EVENT_ARRAY_FILTER_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.EventArrayFilterType`
               - Event array filter types.
 
-            * - :py:class:`~ansys.stk.core.vgt.EVENT_ARRAY_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.EventArrayType`
               - Define available time array types.
 
-            * - :py:class:`~ansys.stk.core.vgt.EVENT_INTERVAL_COLLECTION_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.EventIntervalCollectionType`
               - Define available interval collection types.
 
-            * - :py:class:`~ansys.stk.core.vgt.EVENT_INTERVAL_LIST_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.EventIntervalListType`
               - Define available interval list types.
 
-            * - :py:class:`~ansys.stk.core.vgt.EVENT_INTERVAL_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.EventIntervalType`
               - Define available interval types.
 
-            * - :py:class:`~ansys.stk.core.vgt.EVENT_LIST_MERGE_OPERATION`
+            * - :py:class:`~ansys.stk.core.vgt.EventListMergeOperation`
               - Define merge operations for interval lists.
 
-            * - :py:class:`~ansys.stk.core.vgt.TIME_EVENT_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.TimeEventType`
               - Define available time instant types.
 
-            * - :py:class:`~ansys.stk.core.vgt.EXTREMUM_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.ExtremumType`
               - These constants are utilized when finding a local or global minimum or maximum, or the threshold crossing.
 
-            * - :py:class:`~ansys.stk.core.vgt.FILE_INTERPOLATOR_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.FileInterpolatorType`
               - Interpolator types.
 
-            * - :py:class:`~ansys.stk.core.vgt.QUADRATURE_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.QuadratureType`
               - Integral types.
 
-            * - :py:class:`~ansys.stk.core.vgt.INTEGRATION_WINDOW_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.IntegrationWindowType`
               - Define the interval of times during which an integral is evaluated.
 
-            * - :py:class:`~ansys.stk.core.vgt.INTERPOLATON_METHOD_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.InterpolationMethodType`
               - Interpolator types.
 
-            * - :py:class:`~ansys.stk.core.vgt.INTERVAL_DURATION_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.IntervalDurationType`
               - Duration for filtering intervals or gaps from interval lists or time arrays.
 
-            * - :py:class:`~ansys.stk.core.vgt.INTERVAL_FROM_INTERVAL_LIST_SELECTION_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.IntervalFromIntervalListSelectionType`
               - Select the method to choose an interval from an interval list.
 
-            * - :py:class:`~ansys.stk.core.vgt.PARAMETER_SET_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.ParameterSetType`
               - Define parameter set types.
 
-            * - :py:class:`~ansys.stk.core.vgt.INTERVAL_PRUNE_FILTER_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.IntervalPruneFilterType`
               - Specify the filter for filtering interval lists or time arrays.
 
-            * - :py:class:`~ansys.stk.core.vgt.SAMPLE_REFERENCE_TIME_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.SampleReferenceTimeType`
               - Event array reference type.
 
-            * - :py:class:`~ansys.stk.core.vgt.VECTOR_GEOMETRY_TOOL_SAMPLING_METHOD`
+            * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolSamplingMethod`
               - Define the Sampling Method.
 
-            * - :py:class:`~ansys.stk.core.vgt.SATISFACTION_CROSSING`
+            * - :py:class:`~ansys.stk.core.vgt.SatisfactionCrossing`
               - Direction crossing flags.
 
-            * - :py:class:`~ansys.stk.core.vgt.SAVE_DATA_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.SaveDataType`
               - Method for saving computed data.
 
-            * - :py:class:`~ansys.stk.core.vgt.SIGNAL_PATH_REFERENCE_SYSTEM`
+            * - :py:class:`~ansys.stk.core.vgt.SignalPathReferenceSystem`
               - Signal path reference system types.
 
-            * - :py:class:`~ansys.stk.core.vgt.SMART_EPOCH_STATE`
+            * - :py:class:`~ansys.stk.core.vgt.SmartEpochState`
               - Smart epoch states.
 
-            * - :py:class:`~ansys.stk.core.vgt.SMART_INTERVAL_STATE`
+            * - :py:class:`~ansys.stk.core.vgt.SmartIntervalState`
               - Smart interval states.
 
-            * - :py:class:`~ansys.stk.core.vgt.SPEED_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.SpeedType`
               - Define various speed options.
 
-            * - :py:class:`~ansys.stk.core.vgt.START_STOP_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.StartStopType`
               - Start/stop options.
 
-            * - :py:class:`~ansys.stk.core.vgt.THRESHOLD_CONVERGENCE_SENSE_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.ThresholdConvergenceSenseType`
               - Specify the desired sense of the results from threshold crossing computations.
 
-            * - :py:class:`~ansys.stk.core.vgt.VECTOR_COMPONENT_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.VectorComponentType`
               - Define component directions for a vector.
 
-            * - :py:class:`~ansys.stk.core.vgt.SPATIAL_CALCULATION_ALTITUDE_REFERENCE_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.SpatialCalculationAltitudeReferenceType`
               - Define volume calc altitude reference types.
 
-            * - :py:class:`~ansys.stk.core.vgt.ANGLE_TO_LOCATION_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.AngleToLocationType`
               - Define volume calc angle off vector reference types.
 
-            * - :py:class:`~ansys.stk.core.vgt.DISTANCE_TO_LOCATION_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.DistanceToLocationType`
               - Define volume calc range distance types.
 
-            * - :py:class:`~ansys.stk.core.vgt.RANGE_SPEED_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.RangeSpeedType`
               - Define volume calc range distance types.
 
-            * - :py:class:`~ansys.stk.core.vgt.SPATIAL_CALCULATION_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.SpatialCalculationType`
               - Define volume calc types.
 
-            * - :py:class:`~ansys.stk.core.vgt.VOLUME_SATISFACTION_ACCUMULATION_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.VolumeSatisfactionAccumulationType`
               - Define volume calc spatial condition accumulation types.
 
-            * - :py:class:`~ansys.stk.core.vgt.VOLUME_SATISFACTION_DURATION_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.VolumeSatisfactionDurationType`
               - Define volume calc spatial condition duration types.
 
-            * - :py:class:`~ansys.stk.core.vgt.VOLUME_SATISFACTION_FILTER_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.VolumeSatisfactionFilterType`
               - Define volume calc spatial condition filter types.
 
-            * - :py:class:`~ansys.stk.core.vgt.VOLUME_SATISFACTION_METRIC_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.VolumeSatisfactionMetricType`
               - Define volume calc spatial condition satisfaction metric types.
 
-            * - :py:class:`~ansys.stk.core.vgt.VOLUME_GRID_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.VolumeGridType`
               - Define volume grid types.
 
-            * - :py:class:`~ansys.stk.core.vgt.RESULT_VECTOR_REQUEST_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.ResultVectorRequestType`
               - Define volume result vector request types.
 
-            * - :py:class:`~ansys.stk.core.vgt.VOLUME_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.VolumeType`
               - Define volume grid types.
 
-            * - :py:class:`~ansys.stk.core.vgt.ABERRATION_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.AberrationModelType`
               - Define the model of aberration to use.
 
-            * - :py:class:`~ansys.stk.core.vgt.CLOCK_HOST_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.ClockHostType`
               - Define whether base or target of an Access instance holds the clock for Access times.
 
-            * - :py:class:`~ansys.stk.core.vgt.VOLUME_COMBINED_OPERATION_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.VolumeCombinedOperationType`
               - Define spatial condition combined operation types.
 
-            * - :py:class:`~ansys.stk.core.vgt.VOLUME_FROM_GRID_EDGE_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.VolumeFromGridEdgeType`
               - Define spatial condition from grid edge type.
 
-            * - :py:class:`~ansys.stk.core.vgt.LIGHTING_CONDITIONS_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.LightingConditionsType`
               - Define spatial condition lighting conditions types.
 
-            * - :py:class:`~ansys.stk.core.vgt.SPATIAL_CONDITION_OVER_TYPE_DURATION_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.SpatialConditionOverTypeDurationType`
               - Define spatial condition over time duration type.
 
-            * - :py:class:`~ansys.stk.core.vgt.TIME_SENSE_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.TimeSenseType`
               - Define whether object1 or object2 of an Access instance holds the clock for Access times.
 
-            * - :py:class:`~ansys.stk.core.vgt.GRID_VALUES_METHOD_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.GridValuesMethodType`
               - Define volumetric grid values method types.
 
-            * - :py:class:`~ansys.stk.core.vgt.VECTOR_GEOMETRY_TOOL_COMPONENT_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolComponentType`
               - Represents kinds of vectory geometry components.
 
-            * - :py:class:`~ansys.stk.core.vgt.ANGLE_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.AngleType`
               - Represents angle types.
 
-            * - :py:class:`~ansys.stk.core.vgt.AXES_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.AxesType`
               - Represents vector types.
 
-            * - :py:class:`~ansys.stk.core.vgt.PLANE_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.PlaneType`
               - Represents plane types.
 
-            * - :py:class:`~ansys.stk.core.vgt.POINT_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.PointType`
               - Represents point types.
 
-            * - :py:class:`~ansys.stk.core.vgt.SYSTEM_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.SystemType`
               - Represents system types.
 
-            * - :py:class:`~ansys.stk.core.vgt.VECTOR_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.VectorType`
               - Represents vector types.
 
-            * - :py:class:`~ansys.stk.core.vgt.MEAN_ELEMENT_THEORY`
+            * - :py:class:`~ansys.stk.core.vgt.MeanElementTheory`
               - Mean element theory types for approximating motion.
 
-            * - :py:class:`~ansys.stk.core.vgt.ASYMPTOTE_DIRECTION_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.AsymptoteDirectionType`
               - Direction options.
 
-            * - :py:class:`~ansys.stk.core.vgt.LAGRANGE_LIBRATION_POINT_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.LagrangeLibrationPointType`
               - Types of the Lagrange points, also known as libration points. Lagrange points are points in space where gravitational forces and the orbital motion of a body balance each other.
 
-            * - :py:class:`~ansys.stk.core.vgt.PLANE_QUADRANT_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.PlaneQuadrantType`
               - Quadrants from a reference system (e.g., XY, XZ, YZ, YX, ZX, ZY).
 
-            * - :py:class:`~ansys.stk.core.vgt.TRAJECTORY_AXES_COORDINATES_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.TrajectoryAxesCoordinatesType`
               - Trajectory axes coordinate types.
 
-            * - :py:class:`~ansys.stk.core.vgt.PRINCIPAL_AXIS_OF_ROTATION_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.PrincipalAxisOfRotationType`
               - Rotation directions.
 
-            * - :py:class:`~ansys.stk.core.vgt.SIGNED_ANGLE_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.SignedAngleType`
               - Define options for computing an angle.
 
-            * - :py:class:`~ansys.stk.core.vgt.POINT_B_PLANE_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.PointBPlaneType`
               - B-Plane point types.
 
-            * - :py:class:`~ansys.stk.core.vgt.SURFACE_REFERENCE_SHAPE_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.SurfaceReferenceShapeType`
               - Surface shape types.
 
-            * - :py:class:`~ansys.stk.core.vgt.SURFACE_SHAPE_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.SurfaceShapeType`
               - Surface types.
 
-            * - :py:class:`~ansys.stk.core.vgt.ROTATION_SWEEP_MODE_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.RotationSweepModeType`
               - The rotation sweeping modes.
 
-            * - :py:class:`~ansys.stk.core.vgt.SIGNAL_DIRECTION_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.SignalDirectionType`
               - Signal sense transmission options.
 
-            * - :py:class:`~ansys.stk.core.vgt.INTERSECTION_SURFACE_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.IntersectionSurfaceType`
               - Intersection surface flags.
 
-            * - :py:class:`~ansys.stk.core.vgt.VECTOR_GEOMETRY_TOOL_SCALED_VECTOR_DIMENSION_INHERITANCE_OPTION_TYPE`
+            * - :py:class:`~ansys.stk.core.vgt.VectorGeometryToolScaledVectorDimensionInheritanceOptionType`
               - Dimension inheritance constants used to configure the dimension inheritance of a vector scaled by a scalar.
 
 
@@ -1594,6 +1597,7 @@ analysis.
      VectorGeometryToolVectorVelocityAcceleration<vgt/VectorGeometryToolVectorVelocityAcceleration>
      VectorGeometryToolVectorPlugin<vgt/VectorGeometryToolVectorPlugin>
      VectorGeometryToolVectorSurfaceDisplacement<vgt/VectorGeometryToolVectorSurfaceDisplacement>
+     VectorGeometryToolVectorFile<vgt/VectorGeometryToolVectorFile>
      VectorGeometryToolVectorFactory<vgt/VectorGeometryToolVectorFactory>
      VectorGeometryToolAxesFactory<vgt/VectorGeometryToolAxesFactory>
      VectorGeometryToolSystemFactory<vgt/VectorGeometryToolSystemFactory>
@@ -1651,78 +1655,78 @@ analysis.
     :maxdepth: 1
     :hidden:
 
-    ≔ CALCULATION_SCALAR_TYPE<vgt/CALCULATION_SCALAR_TYPE_enum>
-    ≔ CONDITION_COMBINED_OPERATION_TYPE<vgt/CONDITION_COMBINED_OPERATION_TYPE_enum>
-    ≔ CONDITION_SET_TYPE<vgt/CONDITION_SET_TYPE_enum>
-    ≔ CONDITION_THRESHOLD_TYPE<vgt/CONDITION_THRESHOLD_TYPE_enum>
-    ≔ CONDITION_TYPE<vgt/CONDITION_TYPE_enum>
-    ≔ INHERIT_DIMENSION_TYPE<vgt/INHERIT_DIMENSION_TYPE_enum>
-    ≔ EVENT_ARRAY_FILTER_TYPE<vgt/EVENT_ARRAY_FILTER_TYPE_enum>
-    ≔ EVENT_ARRAY_TYPE<vgt/EVENT_ARRAY_TYPE_enum>
-    ≔ EVENT_INTERVAL_COLLECTION_TYPE<vgt/EVENT_INTERVAL_COLLECTION_TYPE_enum>
-    ≔ EVENT_INTERVAL_LIST_TYPE<vgt/EVENT_INTERVAL_LIST_TYPE_enum>
-    ≔ EVENT_INTERVAL_TYPE<vgt/EVENT_INTERVAL_TYPE_enum>
-    ≔ EVENT_LIST_MERGE_OPERATION<vgt/EVENT_LIST_MERGE_OPERATION_enum>
-    ≔ TIME_EVENT_TYPE<vgt/TIME_EVENT_TYPE_enum>
-    ≔ EXTREMUM_TYPE<vgt/EXTREMUM_TYPE_enum>
-    ≔ FILE_INTERPOLATOR_TYPE<vgt/FILE_INTERPOLATOR_TYPE_enum>
-    ≔ QUADRATURE_TYPE<vgt/QUADRATURE_TYPE_enum>
-    ≔ INTEGRATION_WINDOW_TYPE<vgt/INTEGRATION_WINDOW_TYPE_enum>
-    ≔ INTERPOLATON_METHOD_TYPE<vgt/INTERPOLATON_METHOD_TYPE_enum>
-    ≔ INTERVAL_DURATION_TYPE<vgt/INTERVAL_DURATION_TYPE_enum>
-    ≔ INTERVAL_FROM_INTERVAL_LIST_SELECTION_TYPE<vgt/INTERVAL_FROM_INTERVAL_LIST_SELECTION_TYPE_enum>
-    ≔ PARAMETER_SET_TYPE<vgt/PARAMETER_SET_TYPE_enum>
-    ≔ INTERVAL_PRUNE_FILTER_TYPE<vgt/INTERVAL_PRUNE_FILTER_TYPE_enum>
-    ≔ SAMPLE_REFERENCE_TIME_TYPE<vgt/SAMPLE_REFERENCE_TIME_TYPE_enum>
-    ≔ VECTOR_GEOMETRY_TOOL_SAMPLING_METHOD<vgt/VECTOR_GEOMETRY_TOOL_SAMPLING_METHOD_enum>
-    ≔ SATISFACTION_CROSSING<vgt/SATISFACTION_CROSSING_enum>
-    ≔ SAVE_DATA_TYPE<vgt/SAVE_DATA_TYPE_enum>
-    ≔ SIGNAL_PATH_REFERENCE_SYSTEM<vgt/SIGNAL_PATH_REFERENCE_SYSTEM_enum>
-    ≔ SMART_EPOCH_STATE<vgt/SMART_EPOCH_STATE_enum>
-    ≔ SMART_INTERVAL_STATE<vgt/SMART_INTERVAL_STATE_enum>
-    ≔ SPEED_TYPE<vgt/SPEED_TYPE_enum>
-    ≔ START_STOP_TYPE<vgt/START_STOP_TYPE_enum>
-    ≔ THRESHOLD_CONVERGENCE_SENSE_TYPE<vgt/THRESHOLD_CONVERGENCE_SENSE_TYPE_enum>
-    ≔ VECTOR_COMPONENT_TYPE<vgt/VECTOR_COMPONENT_TYPE_enum>
-    ≔ SPATIAL_CALCULATION_ALTITUDE_REFERENCE_TYPE<vgt/SPATIAL_CALCULATION_ALTITUDE_REFERENCE_TYPE_enum>
-    ≔ ANGLE_TO_LOCATION_TYPE<vgt/ANGLE_TO_LOCATION_TYPE_enum>
-    ≔ DISTANCE_TO_LOCATION_TYPE<vgt/DISTANCE_TO_LOCATION_TYPE_enum>
-    ≔ RANGE_SPEED_TYPE<vgt/RANGE_SPEED_TYPE_enum>
-    ≔ SPATIAL_CALCULATION_TYPE<vgt/SPATIAL_CALCULATION_TYPE_enum>
-    ≔ VOLUME_SATISFACTION_ACCUMULATION_TYPE<vgt/VOLUME_SATISFACTION_ACCUMULATION_TYPE_enum>
-    ≔ VOLUME_SATISFACTION_DURATION_TYPE<vgt/VOLUME_SATISFACTION_DURATION_TYPE_enum>
-    ≔ VOLUME_SATISFACTION_FILTER_TYPE<vgt/VOLUME_SATISFACTION_FILTER_TYPE_enum>
-    ≔ VOLUME_SATISFACTION_METRIC_TYPE<vgt/VOLUME_SATISFACTION_METRIC_TYPE_enum>
-    ≔ VOLUME_GRID_TYPE<vgt/VOLUME_GRID_TYPE_enum>
-    ≔ RESULT_VECTOR_REQUEST_TYPE<vgt/RESULT_VECTOR_REQUEST_TYPE_enum>
-    ≔ VOLUME_TYPE<vgt/VOLUME_TYPE_enum>
-    ≔ ABERRATION_TYPE<vgt/ABERRATION_TYPE_enum>
-    ≔ CLOCK_HOST_TYPE<vgt/CLOCK_HOST_TYPE_enum>
-    ≔ VOLUME_COMBINED_OPERATION_TYPE<vgt/VOLUME_COMBINED_OPERATION_TYPE_enum>
-    ≔ VOLUME_FROM_GRID_EDGE_TYPE<vgt/VOLUME_FROM_GRID_EDGE_TYPE_enum>
-    ≔ LIGHTING_CONDITIONS_TYPE<vgt/LIGHTING_CONDITIONS_TYPE_enum>
-    ≔ SPATIAL_CONDITION_OVER_TYPE_DURATION_TYPE<vgt/SPATIAL_CONDITION_OVER_TYPE_DURATION_TYPE_enum>
-    ≔ TIME_SENSE_TYPE<vgt/TIME_SENSE_TYPE_enum>
-    ≔ GRID_VALUES_METHOD_TYPE<vgt/GRID_VALUES_METHOD_TYPE_enum>
-    ≔ VECTOR_GEOMETRY_TOOL_COMPONENT_TYPE<vgt/VECTOR_GEOMETRY_TOOL_COMPONENT_TYPE_enum>
-    ≔ ANGLE_TYPE<vgt/ANGLE_TYPE_enum>
-    ≔ AXES_TYPE<vgt/AXES_TYPE_enum>
-    ≔ PLANE_TYPE<vgt/PLANE_TYPE_enum>
-    ≔ POINT_TYPE<vgt/POINT_TYPE_enum>
-    ≔ SYSTEM_TYPE<vgt/SYSTEM_TYPE_enum>
-    ≔ VECTOR_TYPE<vgt/VECTOR_TYPE_enum>
-    ≔ MEAN_ELEMENT_THEORY<vgt/MEAN_ELEMENT_THEORY_enum>
-    ≔ ASYMPTOTE_DIRECTION_TYPE<vgt/ASYMPTOTE_DIRECTION_TYPE_enum>
-    ≔ LAGRANGE_LIBRATION_POINT_TYPE<vgt/LAGRANGE_LIBRATION_POINT_TYPE_enum>
-    ≔ PLANE_QUADRANT_TYPE<vgt/PLANE_QUADRANT_TYPE_enum>
-    ≔ TRAJECTORY_AXES_COORDINATES_TYPE<vgt/TRAJECTORY_AXES_COORDINATES_TYPE_enum>
-    ≔ PRINCIPAL_AXIS_OF_ROTATION_TYPE<vgt/PRINCIPAL_AXIS_OF_ROTATION_TYPE_enum>
-    ≔ SIGNED_ANGLE_TYPE<vgt/SIGNED_ANGLE_TYPE_enum>
-    ≔ POINT_B_PLANE_TYPE<vgt/POINT_B_PLANE_TYPE_enum>
-    ≔ SURFACE_REFERENCE_SHAPE_TYPE<vgt/SURFACE_REFERENCE_SHAPE_TYPE_enum>
-    ≔ SURFACE_SHAPE_TYPE<vgt/SURFACE_SHAPE_TYPE_enum>
-    ≔ ROTATION_SWEEP_MODE_TYPE<vgt/ROTATION_SWEEP_MODE_TYPE_enum>
-    ≔ SIGNAL_DIRECTION_TYPE<vgt/SIGNAL_DIRECTION_TYPE_enum>
-    ≔ INTERSECTION_SURFACE_TYPE<vgt/INTERSECTION_SURFACE_TYPE_enum>
-    ≔ VECTOR_GEOMETRY_TOOL_SCALED_VECTOR_DIMENSION_INHERITANCE_OPTION_TYPE<vgt/VECTOR_GEOMETRY_TOOL_SCALED_VECTOR_DIMENSION_INHERITANCE_OPTION_TYPE_enum>
+    ≔ CalculationScalarType<vgt/CalculationScalarType>
+    ≔ ConditionCombinedOperationType<vgt/ConditionCombinedOperationType>
+    ≔ ConditionSetType<vgt/ConditionSetType>
+    ≔ ConditionThresholdType<vgt/ConditionThresholdType>
+    ≔ ConditionType<vgt/ConditionType>
+    ≔ InheritDimensionType<vgt/InheritDimensionType>
+    ≔ EventArrayFilterType<vgt/EventArrayFilterType>
+    ≔ EventArrayType<vgt/EventArrayType>
+    ≔ EventIntervalCollectionType<vgt/EventIntervalCollectionType>
+    ≔ EventIntervalListType<vgt/EventIntervalListType>
+    ≔ EventIntervalType<vgt/EventIntervalType>
+    ≔ EventListMergeOperation<vgt/EventListMergeOperation>
+    ≔ TimeEventType<vgt/TimeEventType>
+    ≔ ExtremumType<vgt/ExtremumType>
+    ≔ FileInterpolatorType<vgt/FileInterpolatorType>
+    ≔ QuadratureType<vgt/QuadratureType>
+    ≔ IntegrationWindowType<vgt/IntegrationWindowType>
+    ≔ InterpolationMethodType<vgt/InterpolationMethodType>
+    ≔ IntervalDurationType<vgt/IntervalDurationType>
+    ≔ IntervalFromIntervalListSelectionType<vgt/IntervalFromIntervalListSelectionType>
+    ≔ ParameterSetType<vgt/ParameterSetType>
+    ≔ IntervalPruneFilterType<vgt/IntervalPruneFilterType>
+    ≔ SampleReferenceTimeType<vgt/SampleReferenceTimeType>
+    ≔ VectorGeometryToolSamplingMethod<vgt/VectorGeometryToolSamplingMethod>
+    ≔ SatisfactionCrossing<vgt/SatisfactionCrossing>
+    ≔ SaveDataType<vgt/SaveDataType>
+    ≔ SignalPathReferenceSystem<vgt/SignalPathReferenceSystem>
+    ≔ SmartEpochState<vgt/SmartEpochState>
+    ≔ SmartIntervalState<vgt/SmartIntervalState>
+    ≔ SpeedType<vgt/SpeedType>
+    ≔ StartStopType<vgt/StartStopType>
+    ≔ ThresholdConvergenceSenseType<vgt/ThresholdConvergenceSenseType>
+    ≔ VectorComponentType<vgt/VectorComponentType>
+    ≔ SpatialCalculationAltitudeReferenceType<vgt/SpatialCalculationAltitudeReferenceType>
+    ≔ AngleToLocationType<vgt/AngleToLocationType>
+    ≔ DistanceToLocationType<vgt/DistanceToLocationType>
+    ≔ RangeSpeedType<vgt/RangeSpeedType>
+    ≔ SpatialCalculationType<vgt/SpatialCalculationType>
+    ≔ VolumeSatisfactionAccumulationType<vgt/VolumeSatisfactionAccumulationType>
+    ≔ VolumeSatisfactionDurationType<vgt/VolumeSatisfactionDurationType>
+    ≔ VolumeSatisfactionFilterType<vgt/VolumeSatisfactionFilterType>
+    ≔ VolumeSatisfactionMetricType<vgt/VolumeSatisfactionMetricType>
+    ≔ VolumeGridType<vgt/VolumeGridType>
+    ≔ ResultVectorRequestType<vgt/ResultVectorRequestType>
+    ≔ VolumeType<vgt/VolumeType>
+    ≔ AberrationModelType<vgt/AberrationModelType>
+    ≔ ClockHostType<vgt/ClockHostType>
+    ≔ VolumeCombinedOperationType<vgt/VolumeCombinedOperationType>
+    ≔ VolumeFromGridEdgeType<vgt/VolumeFromGridEdgeType>
+    ≔ LightingConditionsType<vgt/LightingConditionsType>
+    ≔ SpatialConditionOverTypeDurationType<vgt/SpatialConditionOverTypeDurationType>
+    ≔ TimeSenseType<vgt/TimeSenseType>
+    ≔ GridValuesMethodType<vgt/GridValuesMethodType>
+    ≔ VectorGeometryToolComponentType<vgt/VectorGeometryToolComponentType>
+    ≔ AngleType<vgt/AngleType>
+    ≔ AxesType<vgt/AxesType>
+    ≔ PlaneType<vgt/PlaneType>
+    ≔ PointType<vgt/PointType>
+    ≔ SystemType<vgt/SystemType>
+    ≔ VectorType<vgt/VectorType>
+    ≔ MeanElementTheory<vgt/MeanElementTheory>
+    ≔ AsymptoteDirectionType<vgt/AsymptoteDirectionType>
+    ≔ LagrangeLibrationPointType<vgt/LagrangeLibrationPointType>
+    ≔ PlaneQuadrantType<vgt/PlaneQuadrantType>
+    ≔ TrajectoryAxesCoordinatesType<vgt/TrajectoryAxesCoordinatesType>
+    ≔ PrincipalAxisOfRotationType<vgt/PrincipalAxisOfRotationType>
+    ≔ SignedAngleType<vgt/SignedAngleType>
+    ≔ PointBPlaneType<vgt/PointBPlaneType>
+    ≔ SurfaceReferenceShapeType<vgt/SurfaceReferenceShapeType>
+    ≔ SurfaceShapeType<vgt/SurfaceShapeType>
+    ≔ RotationSweepModeType<vgt/RotationSweepModeType>
+    ≔ SignalDirectionType<vgt/SignalDirectionType>
+    ≔ IntersectionSurfaceType<vgt/IntersectionSurfaceType>
+    ≔ VectorGeometryToolScaledVectorDimensionInheritanceOptionType<vgt/VectorGeometryToolScaledVectorDimensionInheritanceOptionType>
 

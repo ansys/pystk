@@ -36,9 +36,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSInitialState.coord_system_name`
-              - Gets or sets the coordinate system.
+              - Get or set the coordinate system.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSInitialState.orbit_epoch`
-              - Gets or sets the orbit epoch. Uses DateFormat Dimension.
+              - Get or set the orbit epoch. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSInitialState.spacecraft_parameters`
               - Get the spacecraft  parameters.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSInitialState.fuel_tank`
@@ -48,7 +48,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSInitialState.element`
               - Get the elements of the selected coordinate type.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSInitialState.control_parameters_available`
-              - Returns whether or not the control parameters can be set.
+              - Return whether or not the control parameters can be set.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSInitialState.user_variables`
               - Interface used to modify user variables for the initial state segment.
 
@@ -69,13 +69,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSInitialState.coord_system_name
     :type: str
 
-    Gets or sets the coordinate system.
+    Get or set the coordinate system.
 
 .. py:property:: orbit_epoch
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSInitialState.orbit_epoch
     :type: typing.Any
 
-    Gets or sets the orbit epoch. Uses DateFormat Dimension.
+    Get or set the orbit epoch. Uses DateFormat Dimension.
 
 .. py:property:: spacecraft_parameters
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSInitialState.spacecraft_parameters
@@ -91,7 +91,7 @@ Property detail
 
 .. py:property:: element_type
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSInitialState.element_type
-    :type: ELEMENT_TYPE
+    :type: ElementSetType
 
     Get the coordinate type.
 
@@ -105,7 +105,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSInitialState.control_parameters_available
     :type: bool
 
-    Returns whether or not the control parameters can be set.
+    Return whether or not the control parameters can be set.
 
 .. py:property:: user_variables
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSInitialState.user_variables
@@ -124,54 +124,54 @@ Method detail
 
 
 
-.. py:method:: set_element_type(self, element_type: ELEMENT_TYPE) -> None
+.. py:method:: set_element_type(self, element_type: ElementSetType) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSInitialState.set_element_type
 
     Select an coordinate type.
 
     :Parameters:
 
-    **element_type** : :obj:`~ELEMENT_TYPE`
+    **element_type** : :obj:`~ElementSetType`
 
     :Returns:
 
         :obj:`~None`
 
 
-.. py:method:: enable_control_parameter(self, param: CONTROL_INIT_STATE) -> None
+.. py:method:: enable_control_parameter(self, param: ControlInitState) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSInitialState.enable_control_parameter
 
     Enable a control parameter.
 
     :Parameters:
 
-    **param** : :obj:`~CONTROL_INIT_STATE`
+    **param** : :obj:`~ControlInitState`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: disable_control_parameter(self, param: CONTROL_INIT_STATE) -> None
+.. py:method:: disable_control_parameter(self, param: ControlInitState) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSInitialState.disable_control_parameter
 
     Disables a control parameter.
 
     :Parameters:
 
-    **param** : :obj:`~CONTROL_INIT_STATE`
+    **param** : :obj:`~ControlInitState`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_control_parameter_enabled(self, param: CONTROL_INIT_STATE) -> bool
+.. py:method:: is_control_parameter_enabled(self, param: ControlInitState) -> bool
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSInitialState.is_control_parameter_enabled
 
     Sees if a control is enabled.
 
     :Parameters:
 
-    **param** : :obj:`~CONTROL_INIT_STATE`
+    **param** : :obj:`~ControlInitState`
 
     :Returns:
 

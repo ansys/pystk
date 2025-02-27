@@ -27,7 +27,7 @@ Start by downloading PySTK wheel or source artifacts for Windows:
                 :widths: auto
 
                 * - **Artifact**
-                  - `{{ wheels }} <_static/artifacts/{{ wheels }}>`_
+                  - `{{ wheels }} <../../../_static/artifacts/{{ wheels }}>`_
                 * - **Size**
                   - {{ wheels_size }}
                 * - **SHA-256**
@@ -42,7 +42,7 @@ Start by downloading PySTK wheel or source artifacts for Windows:
                 :widths: auto
         
                 * - **Artifact**
-                  - `{{ source }} <_static/artifacts/{{ source }}>`_
+                  - `{{ source }} <../../../_static/artifacts/{{ source }}>`_
                 * - **Size**
                   - {{ source_size }}
                 * - **SHA-256**
@@ -57,6 +57,13 @@ Install Windows artifacts by using the `pip`_ command:
 
     .. tab-set::
         :sync-group: artifacts
+
+        .. tab-item:: **PyPI install**
+            :sync: pypi
+
+            .. code-block:: text
+            
+                python -m pip install "ansys-stk-core=={{ PYSTK_VERSION }}"
 
         .. tab-item:: **Wheels install**
             :sync: wheels

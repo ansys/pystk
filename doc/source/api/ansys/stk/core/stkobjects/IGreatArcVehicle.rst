@@ -36,13 +36,13 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.route_type`
               - Get the propagator type.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.route_supported_types`
-              - Returns an array of valid choices.
+              - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.route`
               - Get the route properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.attitude_type`
               - Get the type of attitude profile.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.attitude_supported_types`
-              - Returns an array of valid choices.
+              - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.attitude`
               - Get the  attitude profile.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.ground_ellipses`
@@ -54,7 +54,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.use_terrain_in_lighting_computations`
               - Opt whether to compute lighting using terrain data.
             * - :py:attr:`~ansys.stk.core.stkobjects.IGreatArcVehicle.lighting_maximum_step`
-              - This property is deprecated. Use LightingMaxStepTerrain or LightingMaxStepCbShape as appropriate. The maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
+              - Do not use this property, as it is deprecated. Use LightingMaxStepTerrain or LightingMaxStepCbShape as appropriate. The maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
 
 
 Import detail
@@ -70,7 +70,7 @@ Property detail
 
 .. py:property:: route_type
     :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.route_type
-    :type: PROPAGATOR_TYPE
+    :type: PropagatorType
 
     Get the propagator type.
 
@@ -78,7 +78,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.route_supported_types
     :type: list
 
-    Returns an array of valid choices.
+    Return an array of valid choices.
 
 .. py:property:: route
     :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.route
@@ -88,7 +88,7 @@ Property detail
 
 .. py:property:: attitude_type
     :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.attitude_type
-    :type: VEHICLE_ATTITUDE
+    :type: VehicleAttitude
 
     Get the type of attitude profile.
 
@@ -96,7 +96,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.attitude_supported_types
     :type: list
 
-    Returns an array of valid choices.
+    Return an array of valid choices.
 
 .. py:property:: attitude
     :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.attitude
@@ -132,34 +132,34 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.lighting_maximum_step
     :type: float
 
-    This property is deprecated. Use LightingMaxStepTerrain or LightingMaxStepCbShape as appropriate. The maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
+    Do not use this property, as it is deprecated. Use LightingMaxStepTerrain or LightingMaxStepCbShape as appropriate. The maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
 
 
 Method detail
 -------------
 
 
-.. py:method:: set_route_type(self, route: PROPAGATOR_TYPE) -> None
+.. py:method:: set_route_type(self, route: PropagatorType) -> None
     :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.set_route_type
 
     Set the propagator type.
 
     :Parameters:
 
-    **route** : :obj:`~PROPAGATOR_TYPE`
+    **route** : :obj:`~PropagatorType`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_route_type_supported(self, route: PROPAGATOR_TYPE) -> bool
+.. py:method:: is_route_type_supported(self, route: PropagatorType) -> bool
     :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.is_route_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **route** : :obj:`~PROPAGATOR_TYPE`
+    **route** : :obj:`~PropagatorType`
 
     :Returns:
 
@@ -168,27 +168,27 @@ Method detail
 
 
 
-.. py:method:: set_attitude_type(self, attitude: VEHICLE_ATTITUDE) -> None
+.. py:method:: set_attitude_type(self, attitude: VehicleAttitude) -> None
     :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.set_attitude_type
 
     Set the type of attitude profile.
 
     :Parameters:
 
-    **attitude** : :obj:`~VEHICLE_ATTITUDE`
+    **attitude** : :obj:`~VehicleAttitude`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_attitude_type_supported(self, attitude: VEHICLE_ATTITUDE) -> bool
+.. py:method:: is_attitude_type_supported(self, attitude: VehicleAttitude) -> bool
     :canonical: ansys.stk.core.stkobjects.IGreatArcVehicle.is_attitude_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **attitude** : :obj:`~VEHICLE_ATTITUDE`
+    **attitude** : :obj:`~VehicleAttitude`
 
     :Returns:
 

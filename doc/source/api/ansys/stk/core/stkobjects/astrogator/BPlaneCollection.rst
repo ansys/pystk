@@ -34,7 +34,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.BPlaneCollection._new_enum`
-              - Allows you to enumerate through the collection.
+              - Allow you to enumerate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.BPlaneCollection.count`
               - Get the number of active BPlanes.
 
@@ -55,7 +55,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.BPlaneCollection._new_enum
     :type: EnumeratorProxy
 
-    Allows you to enumerate through the collection.
+    Allow you to enumerate through the collection.
 
 .. py:property:: count
     :canonical: ansys.stk.core.stkobjects.astrogator.BPlaneCollection.count

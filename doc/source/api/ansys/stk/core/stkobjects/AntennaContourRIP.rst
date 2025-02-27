@@ -30,11 +30,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaContourRIP.azimuth_resolution`
-              - Gets the azimuth resolution.
+              - Get the azimuth resolution.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaContourRIP.elevation_resolution`
-              - Gets the elevation resolution.
+              - Get the elevation resolution.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaContourRIP.maximum_elevation_angle`
-              - Gets the maximum elevation.
+              - Get the maximum elevation.
 
 
 
@@ -53,19 +53,19 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.AntennaContourRIP.azimuth_resolution
     :type: typing.Any
 
-    Gets the azimuth resolution.
+    Get the azimuth resolution.
 
 .. py:property:: elevation_resolution
     :canonical: ansys.stk.core.stkobjects.AntennaContourRIP.elevation_resolution
     :type: typing.Any
 
-    Gets the elevation resolution.
+    Get the elevation resolution.
 
 .. py:property:: maximum_elevation_angle
     :canonical: ansys.stk.core.stkobjects.AntennaContourRIP.maximum_elevation_angle
     :type: typing.Any
 
-    Gets the maximum elevation.
+    Get the maximum elevation.
 
 
 Method detail

@@ -30,9 +30,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorUserExternal.start_time`
-              - Gets or sets the start time of ephemeris interval. Uses DateFormat Dimension.
+              - Get or set the start time of ephemeris interval. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorUserExternal.stop_time`
-              - Gets or sets the stop time of ephemeris interval. Uses DateFormat Dimension.
+              - Get or set the stop time of ephemeris interval. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorUserExternal.step`
               - Step size. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorUserExternal.propagator`
@@ -67,13 +67,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.PropagatorUserExternal.start_time
     :type: typing.Any
 
-    Gets or sets the start time of ephemeris interval. Uses DateFormat Dimension.
+    Get or set the start time of ephemeris interval. Uses DateFormat Dimension.
 
 .. py:property:: stop_time
     :canonical: ansys.stk.core.stkobjects.PropagatorUserExternal.stop_time
     :type: typing.Any
 
-    Gets or sets the stop time of ephemeris interval. Uses DateFormat Dimension.
+    Get or set the stop time of ephemeris interval. Uses DateFormat Dimension.
 
 .. py:property:: step
     :canonical: ansys.stk.core.stkobjects.PropagatorUserExternal.step

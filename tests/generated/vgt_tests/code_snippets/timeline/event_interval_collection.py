@@ -1,3 +1,25 @@
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
 from test_util import *
 from code_snippets.timeline.timeline_code_snippets_test_base import *
 from ansys.stk.core.stkobjects import *
@@ -92,11 +114,11 @@ class EventIntervalCollection(TimelineCodeSnippetsTestBase):
         asCollectionSignaled.base_clock_location = satelliteVgtProvider.points["Center"]
         asCollectionSignaled.target_clock_location = aircraftVgtProvider.points["Center"]
 
-        asCollectionSignaled.signal_sense = SIGNAL_DIRECTION_TYPE.TRANSMIT
+        asCollectionSignaled.signal_sense = SignalDirectionType.TRANSMIT
         basicSignalDelay: "TimeToolSignalDelayBasic" = clr.CastAs(
             asCollectionSignaled.signal_delay, TimeToolSignalDelayBasic
         )
-        basicSignalDelay.speed_option = SPEED_TYPE.LIGHT_TRANSMISSION_SPEED
+        basicSignalDelay.speed_option = SpeedType.LIGHT_TRANSMISSION_SPEED
 
         # Uses current Time unit preference, this code snippet assumes seconds.
         basicSignalDelay.time_delay_convergence = 0.002

@@ -1,3 +1,25 @@
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
 from test_util import *
 from code_snippets.code_snippets_test_base import *
 
@@ -30,7 +52,7 @@ class LOPSnippets(CodeSnippetsTestBase):
     def setUp(self):
         LOPSnippets.m_Object = clr.CastAs(
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-                STK_OBJECT_TYPE.SATELLITE, LOPSnippets.m_DefaultName
+                STKObjectType.SATELLITE, LOPSnippets.m_DefaultName
             ),
             Satellite,
         )
@@ -40,9 +62,7 @@ class LOPSnippets(CodeSnippetsTestBase):
 
     # region TestTearDown
     def tearDown(self):
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(
-            STK_OBJECT_TYPE.SATELLITE, LOPSnippets.m_DefaultName
-        )
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STKObjectType.SATELLITE, LOPSnippets.m_DefaultName)
         LOPSnippets.m_Object = None
 
     # endregion
@@ -53,7 +73,7 @@ class LOPSnippets(CodeSnippetsTestBase):
 
     def ConfigureLOPPropagator(self, satellite: "Satellite"):
         # Set satellite propagator to LOP
-        satellite.set_propagator_type(PROPAGATOR_TYPE.LOP)
+        satellite.set_propagator_type(PropagatorType.LOP)
 
         # Get PropagatorLOP interface
         lopProp: "PropagatorLOP" = clr.CastAs(satellite.propagator, PropagatorLOP)
@@ -66,7 +86,7 @@ class LOPSnippets(CodeSnippetsTestBase):
         orbit: "IOrbitState" = lopProp.initial_state.representation
         orbit.epoch = "1 Jan 2012 12:00:00.000"
         orbit.assign_cartesian(
-            COORDINATE_SYSTEM.FIXED, -1120.32, -9520.84, 0.129, 2.155, -1.54416, 5.668412
+            CoordinateSystem.FIXED, -1120.32, -9520.84, 0.129, 2.155, -1.54416, 5.668412
         )  # in km/sec
 
         # Configure force model

@@ -30,11 +30,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.WindModel.wind_model_type`
-              - Gets or sets the wind model type.
+              - Get or set the wind model type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.WindModel.wind_model_type_string`
-              - Gets or sets the wind model type as a string value. Use this for custom models.
+              - Get or set the wind model type as a string value. Use this for custom models.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.WindModel.wind_model_source`
-              - Gets or sets the wind model source.
+              - Get or set the wind model source.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.WindModel.mode_as_constant`
               - Get the options for a Constant Bearing/Speed wind model.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.WindModel.mode_as_adds`
@@ -55,21 +55,21 @@ Property detail
 
 .. py:property:: wind_model_type
     :canonical: ansys.stk.core.stkobjects.aviator.WindModel.wind_model_type
-    :type: WIND_MODEL_TYPE
+    :type: WindModelType
 
-    Gets or sets the wind model type.
+    Get or set the wind model type.
 
 .. py:property:: wind_model_type_string
     :canonical: ansys.stk.core.stkobjects.aviator.WindModel.wind_model_type_string
     :type: str
 
-    Gets or sets the wind model type as a string value. Use this for custom models.
+    Get or set the wind model type as a string value. Use this for custom models.
 
 .. py:property:: wind_model_source
     :canonical: ansys.stk.core.stkobjects.aviator.WindModel.wind_model_source
-    :type: WIND_ATMOS_MODEL_SOURCE
+    :type: WindAtmosModelSource
 
-    Gets or sets the wind model source.
+    Get or set the wind model source.
 
 .. py:property:: mode_as_constant
     :canonical: ansys.stk.core.stkobjects.aviator.WindModel.mode_as_constant

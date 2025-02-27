@@ -19,7 +19,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGroundEllipseElement.ellipse_name`
-              - Gets or sets the name of the ground ellipse.
+              - Get or set the name of the ground ellipse.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGroundEllipseElement.ellipse_data`
               - Get the ground ellipse data.
 
@@ -40,7 +40,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleGroundEllipseElement.ellipse_name
     :type: str
 
-    Gets or sets the name of the ground ellipse.
+    Get or set the name of the ground ellipse.
 
 .. py:property:: ellipse_data
     :canonical: ansys.stk.core.stkobjects.VehicleGroundEllipseElement.ellipse_data

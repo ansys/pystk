@@ -1,3 +1,25 @@
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
 from test_util import *
 from code_snippets.code_snippets_test_base import *
 from ansys.stk.core.stkobjects import *
@@ -29,7 +51,7 @@ class FacilitySnippets(CodeSnippetsTestBase):
     def setUp(self):
         FacilitySnippets.m_Object = clr.CastAs(
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-                STK_OBJECT_TYPE.FACILITY, FacilitySnippets.m_DefaultName
+                STKObjectType.FACILITY, FacilitySnippets.m_DefaultName
             ),
             Facility,
         )
@@ -39,7 +61,7 @@ class FacilitySnippets(CodeSnippetsTestBase):
     # region TestTearDown
     def tearDown(self):
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(
-            STK_OBJECT_TYPE.FACILITY, FacilitySnippets.m_DefaultName
+            STKObjectType.FACILITY, FacilitySnippets.m_DefaultName
         )
         FacilitySnippets.m_Object = None
 
@@ -48,14 +70,14 @@ class FacilitySnippets(CodeSnippetsTestBase):
     # region CreateDefaultFacilityOnCurrentScenarioCentralBody
     def test_CreateDefaultFacilityOnCurrentScenarioCentralBody(self):
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(
-            STK_OBJECT_TYPE.FACILITY, FacilitySnippets.m_DefaultName
+            STKObjectType.FACILITY, FacilitySnippets.m_DefaultName
         )
         self.CreateDefaultFacilityOnCurrentScenarioCentralBody(CodeSnippetsTestBase.m_Root)
 
     def CreateDefaultFacilityOnCurrentScenarioCentralBody(self, root: "StkObjectRoot"):
         # Create a facility on current scenario central body
         facility: "Facility" = clr.CastAs(
-            root.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "MyFacility"), Facility
+            root.current_scenario.children.new(STKObjectType.FACILITY, "MyFacility"), Facility
         )
 
     # endregion
@@ -63,14 +85,13 @@ class FacilitySnippets(CodeSnippetsTestBase):
     # region CreateFacilityOnEarth
     def test_CreateFacilityOnEarth(self):
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(
-            STK_OBJECT_TYPE.FACILITY, FacilitySnippets.m_DefaultName
+            STKObjectType.FACILITY, FacilitySnippets.m_DefaultName
         )
         self.CreateFacilityOnEarth(CodeSnippetsTestBase.m_Root)
 
     def CreateFacilityOnEarth(self, root: "StkObjectRoot"):
         facility: "Facility" = clr.CastAs(
-            root.current_scenario.children.new_on_central_body(STK_OBJECT_TYPE.FACILITY, "MyFacility", "Earth"),
-            Facility,
+            root.current_scenario.children.new_on_central_body(STKObjectType.FACILITY, "MyFacility", "Earth"), Facility
         )
 
         # Assuming unit preferences are set to radians for latitude and longitude and km for distance
@@ -84,7 +105,7 @@ class FacilitySnippets(CodeSnippetsTestBase):
 
     def CreateFacilityOnOtherPlanet(self, root: "StkObjectRoot"):
         facObject: "Facility" = clr.CastAs(
-            root.current_scenario.children.new_on_central_body(STK_OBJECT_TYPE.FACILITY, "Facility1", "Mars"), Facility
+            root.current_scenario.children.new_on_central_body(STKObjectType.FACILITY, "Facility1", "Mars"), Facility
         )
 
         # Assuming unit preferences are set to radians for latitude and longitude and km for distance

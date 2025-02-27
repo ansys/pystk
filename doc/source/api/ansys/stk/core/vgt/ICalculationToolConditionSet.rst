@@ -30,7 +30,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ICalculationToolConditionSet.type`
-              - Returns the type of condition set.
+              - Return the type of condition set.
 
 
 Import detail
@@ -46,9 +46,9 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.vgt.ICalculationToolConditionSet.type
-    :type: CONDITION_SET_TYPE
+    :type: ConditionSetType
 
-    Returns the type of condition set.
+    Return the type of condition set.
 
 
 Method detail

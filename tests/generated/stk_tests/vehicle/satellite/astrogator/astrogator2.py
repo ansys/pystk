@@ -1,3 +1,25 @@
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
 from test_util import *
 from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkobjects.astrogator import *
@@ -20,9 +42,9 @@ class EarlyBoundTests(TestBase):
         TestBase.LoadTestScenario(Path.Combine("AstrogatorTests", "AstrogatorTests.sc"))
 
         EarlyBoundTests.m_satellite = Satellite(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "CopyPasteTest")
+            TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "CopyPasteTest")
         )
-        EarlyBoundTests.m_satellite.set_propagator_type(PROPAGATOR_TYPE.ASTROGATOR)
+        EarlyBoundTests.m_satellite.set_propagator_type(PropagatorType.ASTROGATOR)
         EarlyBoundTests.m_driver = MCSDriver(EarlyBoundTests.m_satellite.propagator)
 
     # endregion
@@ -39,15 +61,15 @@ class EarlyBoundTests(TestBase):
     # region CutPropagateControlTest
     def test_CutPropagateControlTest(self):
         EarlyBoundTests.m_driver.main_sequence.remove_all()
-        EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "InitialState", "-")
+        EarlyBoundTests.m_driver.main_sequence.insert(SegmentType.INITIAL_STATE, "InitialState", "-")
         targSeq: "MCSTargetSequence" = MCSTargetSequence(
-            EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-")
+            EarlyBoundTests.m_driver.main_sequence.insert(SegmentType.TARGET_SEQUENCE, "TargetSequence", "-")
         )
         targSeq2: "MCSTargetSequence" = MCSTargetSequence(
-            targSeq.segments.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-")
+            targSeq.segments.insert(SegmentType.TARGET_SEQUENCE, "TargetSequence", "-")
         )
-        prop: "MCSPropagate" = MCSPropagate(targSeq2.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"))
-        prop.stopping_conditions["Duration"].enable_control_parameter(CONTROL_STOPPING_CONDITION.TRIP_VALUE)
+        prop: "MCSPropagate" = MCSPropagate(targSeq2.segments.insert(SegmentType.PROPAGATE, "Propagate", "-"))
+        prop.stopping_conditions["Duration"].enable_control_parameter(ControlStoppingCondition.TRIP_VALUE)
         (IMCSSegment(prop)).results.add("Keplerian Elems/Inclination")
         diffCorr: "ProfileDifferentialCorrector" = ProfileDifferentialCorrector(
             targSeq.profiles["Differential Corrector"]
@@ -63,7 +85,7 @@ class EarlyBoundTests(TestBase):
         constraint.enable = True
         constraint.desired_value = 45
         targSeq2.segments.cut("Propagate")
-        EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "TargetSequence")
+        EarlyBoundTests.m_driver.main_sequence.insert(SegmentType.PROPAGATE, "Propagate", "TargetSequence")
         targSeq2.segments.paste("-")
         control = diffCorr.control_parameters.get_control_by_paths(
             "TargetSequence.Propagate", "StoppingConditions.Duration.TripValue"
@@ -81,14 +103,14 @@ class EarlyBoundTests(TestBase):
     # region ChangeResultStayActive
     def test_ChangeResultStayActive(self):
         EarlyBoundTests.m_driver.main_sequence.remove_all()
-        EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "InitialState", "-")
+        EarlyBoundTests.m_driver.main_sequence.insert(SegmentType.INITIAL_STATE, "InitialState", "-")
         targSeq: "MCSTargetSequence" = MCSTargetSequence(
-            EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-")
+            EarlyBoundTests.m_driver.main_sequence.insert(SegmentType.TARGET_SEQUENCE, "TargetSequence", "-")
         )
         targSeq2: "MCSTargetSequence" = MCSTargetSequence(
-            targSeq.segments.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-")
+            targSeq.segments.insert(SegmentType.TARGET_SEQUENCE, "TargetSequence", "-")
         )
-        prop: "MCSPropagate" = MCSPropagate(targSeq2.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"))
+        prop: "MCSPropagate" = MCSPropagate(targSeq2.segments.insert(SegmentType.PROPAGATE, "Propagate", "-"))
         result: "IComponentInfo" = (IMCSSegment(prop)).results.add("Keplerian Elems/Inclination")
 
         diffCorr: "ProfileDifferentialCorrector" = ProfileDifferentialCorrector(
@@ -105,31 +127,31 @@ class EarlyBoundTests(TestBase):
     # region ChangeProfilesHoldReference
     def test_ChangeProfilesHoldReference(self):
         EarlyBoundTests.m_driver.main_sequence.remove_all()
-        EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "InitialState", "-")
+        EarlyBoundTests.m_driver.main_sequence.insert(SegmentType.INITIAL_STATE, "InitialState", "-")
 
         targSeq: "MCSTargetSequence" = None
 
         targSeq = MCSTargetSequence(
-            EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-")
+            EarlyBoundTests.m_driver.main_sequence.insert(SegmentType.TARGET_SEQUENCE, "TargetSequence", "-")
         )
 
         prop: "MCSPropagate" = None
-        prop = MCSPropagate(targSeq.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"))
+        prop = MCSPropagate(targSeq.segments.insert(SegmentType.PROPAGATE, "Propagate", "-"))
 
         man: "MCSManeuver" = None
-        man = MCSManeuver(targSeq.segments.insert(SEGMENT_TYPE.MANEUVER, "Maneuver", "-"))
-        man.set_maneuver_type(MANEUVER_TYPE.FINITE)
+        man = MCSManeuver(targSeq.segments.insert(SegmentType.MANEUVER, "Maneuver", "-"))
+        man.set_maneuver_type(ManeuverType.FINITE)
 
         ret: "MCSReturn" = None
-        ret = MCSReturn(targSeq.segments.insert(SEGMENT_TYPE.RETURN, "Return", "-"))
+        ret = MCSReturn(targSeq.segments.insert(SegmentType.RETURN, "Return", "-"))
 
         stop: "MCSStop" = None
-        stop = MCSStop(targSeq.segments.insert(SEGMENT_TYPE.STOP, "Stop", "-"))
+        stop = MCSStop(targSeq.segments.insert(SegmentType.STOP, "Stop", "-"))
 
         sequence: "IMCSSequence" = None
-        sequence = IMCSSequence(targSeq.segments.insert(SEGMENT_TYPE.SEQUENCE, "Sequence", "-"))
+        sequence = IMCSSequence(targSeq.segments.insert(SegmentType.SEQUENCE, "Sequence", "-"))
         propInsideSequence: "MCSPropagate" = None
-        propInsideSequence = MCSPropagate(sequence.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"))
+        propInsideSequence = MCSPropagate(sequence.segments.insert(SegmentType.PROPAGATE, "Propagate", "-"))
 
         sequence.scripting_tool.enable = True
         seqAttr: "ScriptingSegment" = sequence.scripting_tool.segment_properties.add("Attribute")
@@ -195,29 +217,29 @@ class EarlyBoundTests(TestBase):
     # region ChangeProfilesHoldReferenceNested
     def test_ChangeProfilesHoldReferenceNested(self):
         EarlyBoundTests.m_driver.main_sequence.remove_all()
-        EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "InitialState", "-")
+        EarlyBoundTests.m_driver.main_sequence.insert(SegmentType.INITIAL_STATE, "InitialState", "-")
 
         targSeq: "MCSTargetSequence" = None
 
         targSeq = MCSTargetSequence(
-            EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-")
+            EarlyBoundTests.m_driver.main_sequence.insert(SegmentType.TARGET_SEQUENCE, "TargetSequence", "-")
         )
 
         sequence: "IMCSSequence" = None
-        sequence = IMCSSequence(targSeq.segments.insert(SEGMENT_TYPE.SEQUENCE, "Sequence", "-"))
+        sequence = IMCSSequence(targSeq.segments.insert(SegmentType.SEQUENCE, "Sequence", "-"))
 
         prop: "MCSPropagate" = None
-        prop = MCSPropagate(sequence.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"))
+        prop = MCSPropagate(sequence.segments.insert(SegmentType.PROPAGATE, "Propagate", "-"))
 
         man: "MCSManeuver" = None
-        man = MCSManeuver(sequence.segments.insert(SEGMENT_TYPE.MANEUVER, "Maneuver", "-"))
-        man.set_maneuver_type(MANEUVER_TYPE.FINITE)
+        man = MCSManeuver(sequence.segments.insert(SegmentType.MANEUVER, "Maneuver", "-"))
+        man.set_maneuver_type(ManeuverType.FINITE)
 
         ret: "MCSReturn" = None
-        ret = MCSReturn(sequence.segments.insert(SEGMENT_TYPE.RETURN, "Return", "-"))
+        ret = MCSReturn(sequence.segments.insert(SegmentType.RETURN, "Return", "-"))
 
         stop: "MCSStop" = None
-        stop = MCSStop(sequence.segments.insert(SEGMENT_TYPE.STOP, "Stop", "-"))
+        stop = MCSStop(sequence.segments.insert(SegmentType.STOP, "Stop", "-"))
 
         diffCorr: "ProfileDifferentialCorrector" = None
         diffCorr = ProfileDifferentialCorrector(targSeq.profiles["Differential Corrector"])
@@ -279,26 +301,26 @@ class EarlyBoundTests(TestBase):
     # region ChangeProfilesHoldReferenceCopyTargSeq
     def test_ChangeProfilesHoldReferenceCopyTargSeq(self):
         EarlyBoundTests.m_driver.main_sequence.remove_all()
-        EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "InitialState", "-")
+        EarlyBoundTests.m_driver.main_sequence.insert(SegmentType.INITIAL_STATE, "InitialState", "-")
 
         targSeq: "MCSTargetSequence" = None
 
         targSeq = MCSTargetSequence(
-            EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-")
+            EarlyBoundTests.m_driver.main_sequence.insert(SegmentType.TARGET_SEQUENCE, "TargetSequence", "-")
         )
 
         prop: "MCSPropagate" = None
-        prop = MCSPropagate(targSeq.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"))
+        prop = MCSPropagate(targSeq.segments.insert(SegmentType.PROPAGATE, "Propagate", "-"))
 
         man: "MCSManeuver" = None
-        man = MCSManeuver(targSeq.segments.insert(SEGMENT_TYPE.MANEUVER, "Maneuver", "-"))
-        man.set_maneuver_type(MANEUVER_TYPE.FINITE)
+        man = MCSManeuver(targSeq.segments.insert(SegmentType.MANEUVER, "Maneuver", "-"))
+        man.set_maneuver_type(ManeuverType.FINITE)
 
         ret: "MCSReturn" = None
-        ret = MCSReturn(targSeq.segments.insert(SEGMENT_TYPE.RETURN, "Return", "-"))
+        ret = MCSReturn(targSeq.segments.insert(SegmentType.RETURN, "Return", "-"))
 
         stop: "MCSStop" = None
-        stop = MCSStop(targSeq.segments.insert(SEGMENT_TYPE.STOP, "Stop", "-"))
+        stop = MCSStop(targSeq.segments.insert(SegmentType.STOP, "Stop", "-"))
 
         diffCorr: "ProfileDifferentialCorrector" = None
         diffCorr = ProfileDifferentialCorrector(targSeq.profiles["Differential Corrector"])
@@ -360,20 +382,20 @@ class EarlyBoundTests(TestBase):
     # region RenameActiveControl
     def test_RenameActiveControl(self):
         EarlyBoundTests.m_driver.main_sequence.remove_all()
-        EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "InitialState", "-")
+        EarlyBoundTests.m_driver.main_sequence.insert(SegmentType.INITIAL_STATE, "InitialState", "-")
 
         targSeq: "MCSTargetSequence" = None
 
         targSeq = MCSTargetSequence(
-            EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-")
+            EarlyBoundTests.m_driver.main_sequence.insert(SegmentType.TARGET_SEQUENCE, "TargetSequence", "-")
         )
 
         targSeq2: "MCSTargetSequence" = None
 
-        targSeq2 = MCSTargetSequence(targSeq.segments.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "Target Sequence", "-"))
+        targSeq2 = MCSTargetSequence(targSeq.segments.insert(SegmentType.TARGET_SEQUENCE, "Target Sequence", "-"))
         prop: "MCSPropagate" = None
 
-        prop = MCSPropagate(targSeq2.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"))
+        prop = MCSPropagate(targSeq2.segments.insert(SegmentType.PROPAGATE, "Propagate", "-"))
 
         diffCorr: "ProfileDifferentialCorrector" = None
         diffCorr = ProfileDifferentialCorrector(targSeq.profiles["Differential Corrector"])
@@ -383,47 +405,47 @@ class EarlyBoundTests(TestBase):
     # region CutNestedSequences
     def test_CutNestedSequences(self):
         EarlyBoundTests.m_driver.main_sequence.remove_all()
-        EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "InitialState", "-")
+        EarlyBoundTests.m_driver.main_sequence.insert(SegmentType.INITIAL_STATE, "InitialState", "-")
 
         targSeqOuter: "MCSTargetSequence" = None
 
         targSeqOuter = MCSTargetSequence(
-            EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-")
+            EarlyBoundTests.m_driver.main_sequence.insert(SegmentType.TARGET_SEQUENCE, "TargetSequence", "-")
         )
 
         sequence: "IMCSSequence" = None
-        sequence = IMCSSequence(targSeqOuter.segments.insert(SEGMENT_TYPE.SEQUENCE, "Sequence", "-"))
+        sequence = IMCSSequence(targSeqOuter.segments.insert(SegmentType.SEQUENCE, "Sequence", "-"))
 
         prop: "MCSPropagate" = None
-        prop = MCSPropagate(sequence.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"))
+        prop = MCSPropagate(sequence.segments.insert(SegmentType.PROPAGATE, "Propagate", "-"))
 
         man: "MCSManeuver" = None
-        man = MCSManeuver(sequence.segments.insert(SEGMENT_TYPE.MANEUVER, "Maneuver", "-"))
-        man.set_maneuver_type(MANEUVER_TYPE.FINITE)
+        man = MCSManeuver(sequence.segments.insert(SegmentType.MANEUVER, "Maneuver", "-"))
+        man.set_maneuver_type(ManeuverType.FINITE)
 
         ret: "MCSReturn" = None
-        ret = MCSReturn(sequence.segments.insert(SEGMENT_TYPE.RETURN, "Return", "-"))
+        ret = MCSReturn(sequence.segments.insert(SegmentType.RETURN, "Return", "-"))
 
         stop: "MCSStop" = None
-        stop = MCSStop(sequence.segments.insert(SEGMENT_TYPE.STOP, "Stop", "-"))
+        stop = MCSStop(sequence.segments.insert(SegmentType.STOP, "Stop", "-"))
 
         targSeqInner: "MCSTargetSequence" = None
         targSeqInner = MCSTargetSequence(
-            targSeqOuter.segments.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "Target Sequence", "-")
+            targSeqOuter.segments.insert(SegmentType.TARGET_SEQUENCE, "Target Sequence", "-")
         )
 
         prop2: "MCSPropagate" = None
-        prop2 = MCSPropagate(targSeqInner.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"))
+        prop2 = MCSPropagate(targSeqInner.segments.insert(SegmentType.PROPAGATE, "Propagate", "-"))
 
         man2: "MCSManeuver" = None
-        man2 = MCSManeuver(targSeqInner.segments.insert(SEGMENT_TYPE.MANEUVER, "Maneuver", "-"))
-        man2.set_maneuver_type(MANEUVER_TYPE.FINITE)
+        man2 = MCSManeuver(targSeqInner.segments.insert(SegmentType.MANEUVER, "Maneuver", "-"))
+        man2.set_maneuver_type(ManeuverType.FINITE)
 
         ret2: "MCSReturn" = None
-        ret2 = MCSReturn(targSeqInner.segments.insert(SEGMENT_TYPE.RETURN, "Return", "-"))
+        ret2 = MCSReturn(targSeqInner.segments.insert(SegmentType.RETURN, "Return", "-"))
 
         stop2: "MCSStop" = None
-        stop2 = MCSStop(targSeqInner.segments.insert(SEGMENT_TYPE.STOP, "Stop", "-"))
+        stop2 = MCSStop(targSeqInner.segments.insert(SegmentType.STOP, "Stop", "-"))
 
         diffCorr: "ProfileDifferentialCorrector" = None
         diffCorr = ProfileDifferentialCorrector(targSeqOuter.profiles["Differential Corrector"])
@@ -485,15 +507,15 @@ class EarlyBoundTests(TestBase):
     # region ParameterStaysEnabled
     def test_ParameterStaysEnabled(self):
         EarlyBoundTests.m_driver.main_sequence.remove_all()
-        EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "InitialState", "-")
+        EarlyBoundTests.m_driver.main_sequence.insert(SegmentType.INITIAL_STATE, "InitialState", "-")
 
         targSeq: "MCSTargetSequence" = None
         targSeq = MCSTargetSequence(
-            EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-")
+            EarlyBoundTests.m_driver.main_sequence.insert(SegmentType.TARGET_SEQUENCE, "TargetSequence", "-")
         )
 
         prop: "MCSPropagate" = None
-        prop = MCSPropagate(targSeq.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"))
+        prop = MCSPropagate(targSeq.segments.insert(SegmentType.PROPAGATE, "Propagate", "-"))
 
         diffCorr: "ProfileDifferentialCorrector" = None
         diffCorr = ProfileDifferentialCorrector(targSeq.profiles["Differential Corrector"])
@@ -515,20 +537,20 @@ class EarlyBoundTests(TestBase):
     # region NestedParameterStaysEnabled
     def test_NestedParameterStaysEnabled(self):
         EarlyBoundTests.m_driver.main_sequence.remove_all()
-        EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "InitialState", "-")
+        EarlyBoundTests.m_driver.main_sequence.insert(SegmentType.INITIAL_STATE, "InitialState", "-")
 
         targSeqOuter: "MCSTargetSequence" = None
         targSeqOuter = MCSTargetSequence(
-            EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-")
+            EarlyBoundTests.m_driver.main_sequence.insert(SegmentType.TARGET_SEQUENCE, "TargetSequence", "-")
         )
 
         targSeqInner: "MCSTargetSequence" = None
         targSeqInner = MCSTargetSequence(
-            targSeqOuter.segments.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-")
+            targSeqOuter.segments.insert(SegmentType.TARGET_SEQUENCE, "TargetSequence", "-")
         )
 
         prop: "MCSPropagate" = None
-        prop = MCSPropagate(targSeqInner.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"))
+        prop = MCSPropagate(targSeqInner.segments.insert(SegmentType.PROPAGATE, "Propagate", "-"))
 
         diffCorrOuter: "ProfileDifferentialCorrector" = None
         diffCorrOuter = ProfileDifferentialCorrector(targSeqOuter.profiles["Differential Corrector"])
@@ -547,22 +569,22 @@ class EarlyBoundTests(TestBase):
     # region SimilarNamesStayEnabled
     def test_SimilarNamesStayEnabled(self):
         EarlyBoundTests.m_driver.main_sequence.remove_all()
-        EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "InitialState", "-")
+        EarlyBoundTests.m_driver.main_sequence.insert(SegmentType.INITIAL_STATE, "InitialState", "-")
 
         targSeq: "MCSTargetSequence" = None
         targSeq = MCSTargetSequence(
-            EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-")
+            EarlyBoundTests.m_driver.main_sequence.insert(SegmentType.TARGET_SEQUENCE, "TargetSequence", "-")
         )
 
         prop: "MCSPropagate" = None
-        prop = MCSPropagate(targSeq.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"))
+        prop = MCSPropagate(targSeq.segments.insert(SegmentType.PROPAGATE, "Propagate", "-"))
 
         durationControl: "StoppingConditionElement" = prop.stopping_conditions["Duration"]
 
         duration2Control: "StoppingConditionElement" = prop.stopping_conditions.add("Duration")
 
-        durationControl.enable_control_parameter(CONTROL_STOPPING_CONDITION.TRIP_VALUE)
-        duration2Control.enable_control_parameter(CONTROL_STOPPING_CONDITION.TRIP_VALUE)
+        durationControl.enable_control_parameter(ControlStoppingCondition.TRIP_VALUE)
+        duration2Control.enable_control_parameter(ControlStoppingCondition.TRIP_VALUE)
 
         durationResult: "IComponentInfo" = (IMCSSegment(prop)).results.add("Time/Duration")
         duration2Result: "IComponentInfo" = (IMCSSegment(prop)).results.add("Time/Duration")
@@ -576,20 +598,20 @@ class EarlyBoundTests(TestBase):
     # region NestedParameterStaysEnabledCutPaste
     def test_NestedParameterStaysEnabledCutPaste(self):
         EarlyBoundTests.m_driver.main_sequence.remove_all()
-        EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "InitialState", "-")
+        EarlyBoundTests.m_driver.main_sequence.insert(SegmentType.INITIAL_STATE, "InitialState", "-")
 
         targSeqOuter: "MCSTargetSequence" = None
         targSeqOuter = MCSTargetSequence(
-            EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-")
+            EarlyBoundTests.m_driver.main_sequence.insert(SegmentType.TARGET_SEQUENCE, "TargetSequence", "-")
         )
 
         targSeqInner: "MCSTargetSequence" = None
         targSeqInner = MCSTargetSequence(
-            targSeqOuter.segments.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-")
+            targSeqOuter.segments.insert(SegmentType.TARGET_SEQUENCE, "TargetSequence", "-")
         )
 
         prop: "MCSPropagate" = None
-        prop = MCSPropagate(targSeqInner.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"))
+        prop = MCSPropagate(targSeqInner.segments.insert(SegmentType.PROPAGATE, "Propagate", "-"))
 
         diffCorrOuter: "ProfileDifferentialCorrector" = None
         diffCorrOuter = ProfileDifferentialCorrector(targSeqOuter.profiles["Differential Corrector"])
@@ -610,18 +632,18 @@ class EarlyBoundTests(TestBase):
     # Perhaps test 42791 also?
     def test_MaintainSegmentLinkThroughCutPaste(self):
         EarlyBoundTests.m_driver.main_sequence.remove_all()
-        EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.INITIAL_STATE, "InitialState", "-")
+        EarlyBoundTests.m_driver.main_sequence.insert(SegmentType.INITIAL_STATE, "InitialState", "-")
 
         targSeq: "MCSTargetSequence" = None
         targSeq = MCSTargetSequence(
-            EarlyBoundTests.m_driver.main_sequence.insert(SEGMENT_TYPE.TARGET_SEQUENCE, "TargetSequence", "-")
+            EarlyBoundTests.m_driver.main_sequence.insert(SegmentType.TARGET_SEQUENCE, "TargetSequence", "-")
         )
 
         prop: "MCSPropagate" = None
-        prop = MCSPropagate(targSeq.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"))
+        prop = MCSPropagate(targSeq.segments.insert(SegmentType.PROPAGATE, "Propagate", "-"))
 
         prop2: "MCSPropagate" = None
-        prop2 = MCSPropagate(targSeq.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-"))
+        prop2 = MCSPropagate(targSeq.segments.insert(SegmentType.PROPAGATE, "Propagate", "-"))
 
         result: "IComponentInfo" = (IMCSSegment(prop2)).results.add("Segments/Difference Across Segments")
         (StateCalcDifferenceOtherSegment(result)).other_segment_name = "TargetSequence.Propagate"

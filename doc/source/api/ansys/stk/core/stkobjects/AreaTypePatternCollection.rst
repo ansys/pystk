@@ -42,7 +42,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.AreaTypePatternCollection._new_enum`
               - Enumerates through patterns collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.AreaTypePatternCollection.count`
-              - Returns the number of lat lons.
+              - Return the number of lat lons.
 
 
 
@@ -67,7 +67,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.AreaTypePatternCollection.count
     :type: int
 
-    Returns the number of lat lons.
+    Return the number of lat lons.
 
 
 Method detail

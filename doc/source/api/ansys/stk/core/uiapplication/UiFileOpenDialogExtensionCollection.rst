@@ -28,7 +28,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.uiapplication.UiFileOpenDialogExtensionCollection.count`
-              - Gets the total count of files in the collection.
+              - Get the total count of files in the collection.
             * - :py:attr:`~ansys.stk.core.uiapplication.UiFileOpenDialogExtensionCollection._new_enum`
               - Enumerates through the file collection.
 
@@ -49,7 +49,7 @@ Property detail
     :canonical: ansys.stk.core.uiapplication.UiFileOpenDialogExtensionCollection.count
     :type: int
 
-    Gets the total count of files in the collection.
+    Get the total count of files in the collection.
 
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.uiapplication.UiFileOpenDialogExtensionCollection._new_enum

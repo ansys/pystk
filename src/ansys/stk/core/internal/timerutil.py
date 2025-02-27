@@ -1,6 +1,24 @@
-################################################################################
-#          Copyright 2021-2021, Ansys Government Initiatives
-################################################################################
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
 
 import os
 import time
@@ -86,7 +104,7 @@ if os.name != "nt":
     except:
         class Tcl(object):
             def __init__(self):
-                raise STKInvalidTimerError("Cannot use STK_ENGINE_TIMER_TYPE.TKINTER_MAIN_LOOP nor STK_ENGINE_TIMER_TYPE.INTERACTIVE_PYTHON because tkinter installation is not found.")
+                raise STKInvalidTimerError("Cannot use STKEngineTimerType.TKINTER_MAIN_LOOP nor STKEngineTimerType.INTERACTIVE_PYTHON because tkinter installation is not found.")
             
     class TclTimer(object):
         def __init__(self):
@@ -138,10 +156,7 @@ if os.name != "nt":
         
         def terminate(self):
             signal.setitimer(signal.ITIMER_REAL, 0, 0)
-            try:
-                signal.signal(signal.SIGALRM, self.previous_sighandler)
-            except:
-                pass
+            signal.signal(signal.SIGALRM, self.previous_sighandler)
                 
         def __install_timer(self, milliseconds, TIMERPROC, callbackData):
             id = self._next_id
@@ -181,16 +196,9 @@ if os.name != "nt":
             
         def terminate(self):
             UtilLib.uninitialize_librt_timers()
-            try:
-                signal.signal(self._signo, self.previous_sighandler)
-            except:
-                pass
+            signal.signal(self._signo, self.previous_sighandler)
             
         def _fire_timers(self, signo, frame):
             UtilLib.fire_librt_timer_callbacks()
 
     
-
-################################################################################
-#          Copyright 2021-2021, Ansys Government Initiatives
-################################################################################

@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.BeamformerMVDR.constraint`
-              - Gets or sets the constraint.
+              - Get or set the constraint.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.BeamformerMVDR.constraint
     :type: float
 
-    Gets or sets the constraint.
+    Get or set the constraint.
 
 

@@ -19,15 +19,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CentralBodyComponentGravityModel.gravitational_parameter`
-              - Gets or sets the gravitational parameter to be used for purposes of this gravity model. Uses Gravitational Param Dimension.
+              - Get or set the gravitational parameter to be used for purposes of this gravity model. Uses Gravitational Param Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CentralBodyComponentGravityModel.reference_distance`
               - Distance from the center of mass of the central body to its surface. Typically defaults to the Maximum Radius entered in the Shape frame of the Central Body parameters window. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CentralBodyComponentGravityModel.j2`
-              - Gets or sets the J2 property. Taking into account first order Earth oblateness effects. Dimensionless.
+              - Get or set the J2 property. Taking into account first order Earth oblateness effects. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CentralBodyComponentGravityModel.j3`
-              - Gets or sets the J3 property. Taking into account first order longitudinal variations of the Earth's shape. Dimensionless.
+              - Get or set the J3 property. Taking into account first order longitudinal variations of the Earth's shape. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CentralBodyComponentGravityModel.j4`
-              - Gets or sets the J4 property. Taking into account first and second order Earth oblateness effects. Dimensionless.
+              - Get or set the J4 property. Taking into account first and second order Earth oblateness effects. Dimensionless.
 
 
 
@@ -46,7 +46,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.CentralBodyComponentGravityModel.gravitational_parameter
     :type: float
 
-    Gets or sets the gravitational parameter to be used for purposes of this gravity model. Uses Gravitational Param Dimension.
+    Get or set the gravitational parameter to be used for purposes of this gravity model. Uses Gravitational Param Dimension.
 
 .. py:property:: reference_distance
     :canonical: ansys.stk.core.stkobjects.astrogator.CentralBodyComponentGravityModel.reference_distance
@@ -58,18 +58,18 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.CentralBodyComponentGravityModel.j2
     :type: float
 
-    Gets or sets the J2 property. Taking into account first order Earth oblateness effects. Dimensionless.
+    Get or set the J2 property. Taking into account first order Earth oblateness effects. Dimensionless.
 
 .. py:property:: j3
     :canonical: ansys.stk.core.stkobjects.astrogator.CentralBodyComponentGravityModel.j3
     :type: float
 
-    Gets or sets the J3 property. Taking into account first order longitudinal variations of the Earth's shape. Dimensionless.
+    Get or set the J3 property. Taking into account first order longitudinal variations of the Earth's shape. Dimensionless.
 
 .. py:property:: j4
     :canonical: ansys.stk.core.stkobjects.astrogator.CentralBodyComponentGravityModel.j4
     :type: float
 
-    Gets or sets the J4 property. Taking into account first and second order Earth oblateness effects. Dimensionless.
+    Get or set the J4 property. Taking into account first and second order Earth oblateness effects. Dimensionless.
 
 

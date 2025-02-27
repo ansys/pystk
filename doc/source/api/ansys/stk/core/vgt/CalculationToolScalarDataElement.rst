@@ -44,9 +44,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.vgt.CalculationToolScalarDataElement.use_samples`
               - If set to true, selected data provider is presampled over its entire availability span using sampling method specified in Advanced options...
             * - :py:attr:`~ansys.stk.core.vgt.CalculationToolScalarDataElement.save_data_option`
-              - Determines if computed samples are saved/loaded, otherwise if using samples they are recomputed on load.
+              - Determine if computed samples are saved/loaded, otherwise if using samples they are recomputed on load.
             * - :py:attr:`~ansys.stk.core.vgt.CalculationToolScalarDataElement.invalid_data_indicator`
-              - Sets the value to display in a report or graph when the actual value is not a valid real number.
+              - Set the value to display in a report or graph when the actual value is not a valid real number.
 
 
 
@@ -99,15 +99,15 @@ Property detail
 
 .. py:property:: save_data_option
     :canonical: ansys.stk.core.vgt.CalculationToolScalarDataElement.save_data_option
-    :type: SAVE_DATA_TYPE
+    :type: SaveDataType
 
-    Determines if computed samples are saved/loaded, otherwise if using samples they are recomputed on load.
+    Determine if computed samples are saved/loaded, otherwise if using samples they are recomputed on load.
 
 .. py:property:: invalid_data_indicator
     :canonical: ansys.stk.core.vgt.CalculationToolScalarDataElement.invalid_data_indicator
     :type: float
 
-    Sets the value to display in a report or graph when the actual value is not a valid real number.
+    Set the value to display in a report or graph when the actual value is not a valid real number.
 
 
 Method detail

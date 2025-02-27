@@ -1,3 +1,25 @@
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
 from test_util import *
 from math2 import *
 from unit_preference_extension import *
@@ -19,7 +41,7 @@ class EarlyBoundTests(TestBase):
         TestBase.LoadTestScenario(Path.Combine("MissileTests", "MissileTests.sc"))
         EarlyBoundTests.AG_MSL = Missile(TestBase.Application.current_scenario.children["Missile1"])
         EarlyBoundTests.AG_SENSOR = Sensor(
-            (IStkObject(EarlyBoundTests.AG_MSL)).children.new(STK_OBJECT_TYPE.SENSOR, "Sensor1")
+            (IStkObject(EarlyBoundTests.AG_MSL)).children.new(STKObjectType.SENSOR, "Sensor1")
         )
 
     @staticmethod
@@ -45,20 +67,20 @@ class EarlyBoundTests(TestBase):
             TestBase.Application.units_preferences.set_current_unit("AngleUnit", "deg")
             TestBase.Application.units_preferences.set_current_unit("DistanceUnit", "km")
             TestBase.Application.units_preferences.set_current_unit("TimeUnit", "sec")
-            if TestBase.Application.current_scenario.children.contains(STK_OBJECT_TYPE.MISSILE, "Test"):
-                TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.MISSILE, "Test")
+            if TestBase.Application.current_scenario.children.contains(STKObjectType.MISSILE, "Test"):
+                TestBase.Application.current_scenario.children.unload(STKObjectType.MISSILE, "Test")
 
             missile: "Missile" = Missile(
-                TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.MISSILE, "Test")
+                TestBase.Application.current_scenario.children.new(STKObjectType.MISSILE, "Test")
             )
             Assert.assertIsNotNone(missile)
 
-            missile.set_trajectory_type(PROPAGATOR_TYPE.BALLISTIC)
+            missile.set_trajectory_type(PropagatorType.BALLISTIC)
 
             propagator: "PropagatorBallistic" = PropagatorBallistic(missile.trajectory)
             Assert.assertIsNotNone(propagator)
 
-            propagator.set_launch_type(VEHICLE_LAUNCH.DETIC)
+            propagator.set_launch_type(VehicleLaunch.DETIC)
             launch: "LaunchVehicleLocationDetic" = LaunchVehicleLocationDetic(propagator.launch)
             Assert.assertIsNotNone(launch)
 
@@ -66,7 +88,7 @@ class EarlyBoundTests(TestBase):
             launch.longitude = -75.4765
             launch.altitude = 0.0
 
-            propagator.set_impact_location_type(VEHICLE_IMPACT_LOCATION.LAUNCH_AZ_EL)
+            propagator.set_impact_location_type(VehicleImpactLocation.LAUNCH_AZ_EL)
             impact: "VehicleImpactLocationLaunchAzEl" = VehicleImpactLocationLaunchAzEl(propagator.impact_location)
 
             impact.azimuth = azimuthInDeg
@@ -88,15 +110,15 @@ class EarlyBoundTests(TestBase):
     # region BUG97203
     def test_BUG97203(self):
         missile: "Missile" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.MISSILE, "mymissile"), Missile
+            TestBase.Application.current_scenario.children.new(STKObjectType.MISSILE, "mymissile"), Missile
         )
         traj: "PropagatorBallistic" = clr.CastAs(missile.trajectory, PropagatorBallistic)
-        traj.set_launch_type(VEHICLE_LAUNCH.DETIC)
+        traj.set_launch_type(VehicleLaunch.DETIC)
         launch: "LaunchVehicleLocationDetic" = clr.CastAs(traj.launch, LaunchVehicleLocationDetic)
         launch.latitude = 77
         launch.longitude = 77
         launch.altitude = 7
-        traj.set_impact_location_type(VEHICLE_IMPACT_LOCATION.LAUNCH_AZ_EL)
+        traj.set_impact_location_type(VehicleImpactLocation.LAUNCH_AZ_EL)
         impact: "VehicleImpactLocationLaunchAzEl" = clr.CastAs(traj.impact_location, VehicleImpactLocationLaunchAzEl)
         impact.azimuth = 77
         impact.delta_v = 7

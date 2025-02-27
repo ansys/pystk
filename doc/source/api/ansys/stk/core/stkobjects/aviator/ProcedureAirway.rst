@@ -44,15 +44,15 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAirway.enroute_cruise_airspeed_options`
               - Get the enroute cruise airspeed options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAirway.router`
-              - Gets or sets the router used to provide available airways.
+              - Get or set the router used to provide available airways.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAirway.airway_id`
-              - Gets or sets the airway ID.
+              - Get or set the airway ID.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAirway.sequence`
-              - Gets or sets the direction the aircraft will fly the route.
+              - Get or set the direction the aircraft will fly the route.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAirway.entry_id`
-              - Gets or sets the ID of the entry waypoint.
+              - Get or set the ID of the entry waypoint.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAirway.exit_id`
-              - Gets or sets the ID of the exit waypoint.
+              - Get or set the ID of the exit waypoint.
 
 
 
@@ -89,31 +89,31 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureAirway.router
     :type: str
 
-    Gets or sets the router used to provide available airways.
+    Get or set the router used to provide available airways.
 
 .. py:property:: airway_id
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureAirway.airway_id
     :type: str
 
-    Gets or sets the airway ID.
+    Get or set the airway ID.
 
 .. py:property:: sequence
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureAirway.sequence
     :type: str
 
-    Gets or sets the direction the aircraft will fly the route.
+    Get or set the direction the aircraft will fly the route.
 
 .. py:property:: entry_id
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureAirway.entry_id
     :type: str
 
-    Gets or sets the ID of the entry waypoint.
+    Get or set the ID of the entry waypoint.
 
 .. py:property:: exit_id
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureAirway.exit_id
     :type: str
 
-    Gets or sets the ID of the exit waypoint.
+    Get or set the ID of the exit waypoint.
 
 
 Method detail

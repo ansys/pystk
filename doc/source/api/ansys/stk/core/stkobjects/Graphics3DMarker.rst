@@ -42,7 +42,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DMarker.marker_data`
               - The MarkerData property.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DMarker.orientation_mode`
-              - Controls the rotation of the marker.
+              - Control the rotation of the marker.
 
 
 
@@ -71,7 +71,7 @@ Property detail
 
 .. py:property:: marker_type
     :canonical: ansys.stk.core.stkobjects.Graphics3DMarker.marker_type
-    :type: MARKER_TYPE
+    :type: MarkerType
 
     Specify a 3D marker type to represent the object at the specified threshold. Setting the type with the enum eImageFile is invalid, use SetMarkerImageFile instead.
 
@@ -83,13 +83,13 @@ Property detail
 
 .. py:property:: x_origin
     :canonical: ansys.stk.core.stkobjects.Graphics3DMarker.x_origin
-    :type: GRAPHICS_3D_MARKER_ORIGIN_TYPE
+    :type: Graphics3DMarkerOriginType
 
     The horizontal point of origin for the marker (left, center or right).
 
 .. py:property:: y_origin
     :canonical: ansys.stk.core.stkobjects.Graphics3DMarker.y_origin
-    :type: GRAPHICS_3D_MARKER_ORIGIN_TYPE
+    :type: Graphics3DMarkerOriginType
 
     The vertical point of origin for the marker (top, center or bottom.).
 
@@ -101,9 +101,9 @@ Property detail
 
 .. py:property:: orientation_mode
     :canonical: ansys.stk.core.stkobjects.Graphics3DMarker.orientation_mode
-    :type: GRAPHICS_3D_MARKER_ORIENTATION
+    :type: Graphics3DMarkerOrientation
 
-    Controls the rotation of the marker.
+    Control the rotation of the marker.
 
 
 Method detail

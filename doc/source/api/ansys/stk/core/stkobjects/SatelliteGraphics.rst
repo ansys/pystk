@@ -32,7 +32,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.SatelliteGraphics.attributes_type`
               - Type of 2D Graphics attributes: basic, access intervals or custom intervals.
             * - :py:attr:`~ansys.stk.core.stkobjects.SatelliteGraphics.attributes_supported_types`
-              - Returns an array of valid choices.
+              - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.SatelliteGraphics.attributes`
               - Get the satellite's 2D Graphics Attributes.
             * - :py:attr:`~ansys.stk.core.stkobjects.SatelliteGraphics.time_events`
@@ -58,7 +58,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.SatelliteGraphics.label_notes`
               - Notes attached to the object and displayed in the 2D and 3D Graphics windows.
             * - :py:attr:`~ansys.stk.core.stkobjects.SatelliteGraphics.ground_track_central_body_display`
-              - Gets the ground track display central bodies.
+              - Get the ground track display central bodies.
             * - :py:attr:`~ansys.stk.core.stkobjects.SatelliteGraphics.use_instance_name_label`
               - Specify whether to use the name of the satellite (as shown in the Object Browser) as its label.
             * - :py:attr:`~ansys.stk.core.stkobjects.SatelliteGraphics.label_name`
@@ -66,7 +66,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.SatelliteGraphics.show_graphics`
               - Specify whether graphics attributes of the satellite are visible.
             * - :py:attr:`~ansys.stk.core.stkobjects.SatelliteGraphics.radar_cross_section`
-              - Gets the radar cross section graphics interface.
+              - Get the radar cross section graphics interface.
 
 
 
@@ -83,7 +83,7 @@ Property detail
 
 .. py:property:: attributes_type
     :canonical: ansys.stk.core.stkobjects.SatelliteGraphics.attributes_type
-    :type: VEHICLE_GRAPHICS_2D_ATTRIBUTE_TYPE
+    :type: VehicleGraphics2DAttributeType
 
     Type of 2D Graphics attributes: basic, access intervals or custom intervals.
 
@@ -91,7 +91,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.SatelliteGraphics.attributes_supported_types
     :type: list
 
-    Returns an array of valid choices.
+    Return an array of valid choices.
 
 .. py:property:: attributes
     :canonical: ansys.stk.core.stkobjects.SatelliteGraphics.attributes
@@ -169,7 +169,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.SatelliteGraphics.ground_track_central_body_display
     :type: VehicleCentralBodies
 
-    Gets the ground track display central bodies.
+    Get the ground track display central bodies.
 
 .. py:property:: use_instance_name_label
     :canonical: ansys.stk.core.stkobjects.SatelliteGraphics.use_instance_name_label
@@ -193,34 +193,34 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.SatelliteGraphics.radar_cross_section
     :type: RadarCrossSectionGraphics
 
-    Gets the radar cross section graphics interface.
+    Get the radar cross section graphics interface.
 
 
 Method detail
 -------------
 
 
-.. py:method:: set_attributes_type(self, attributes: VEHICLE_GRAPHICS_2D_ATTRIBUTE_TYPE) -> None
+.. py:method:: set_attributes_type(self, attributes: VehicleGraphics2DAttributeType) -> None
     :canonical: ansys.stk.core.stkobjects.SatelliteGraphics.set_attributes_type
 
     Set the attributes type.
 
     :Parameters:
 
-    **attributes** : :obj:`~VEHICLE_GRAPHICS_2D_ATTRIBUTE_TYPE`
+    **attributes** : :obj:`~VehicleGraphics2DAttributeType`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_attributes_type_supported(self, attributes: VEHICLE_GRAPHICS_2D_ATTRIBUTE_TYPE) -> bool
+.. py:method:: is_attributes_type_supported(self, attributes: VehicleGraphics2DAttributeType) -> bool
     :canonical: ansys.stk.core.stkobjects.SatelliteGraphics.is_attributes_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **attributes** : :obj:`~VEHICLE_GRAPHICS_2D_ATTRIBUTE_TYPE`
+    **attributes** : :obj:`~VehicleGraphics2DAttributeType`
 
     :Returns:
 

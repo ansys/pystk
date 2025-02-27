@@ -30,9 +30,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMCSSegment.type`
-              - Returns the type of segment.
+              - Return the type of segment.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMCSSegment.properties`
-              - Returns the properties of the segment.
+              - Return the properties of the segment.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMCSSegment.initial_state`
               - Get the initial state of the segment.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMCSSegment.final_state`
@@ -56,15 +56,15 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.astrogator.IMCSSegment.type
-    :type: SEGMENT_TYPE
+    :type: SegmentType
 
-    Returns the type of segment.
+    Return the type of segment.
 
 .. py:property:: properties
     :canonical: ansys.stk.core.stkobjects.astrogator.IMCSSegment.properties
     :type: MCSSegmentProperties
 
-    Returns the properties of the segment.
+    Return the properties of the segment.
 
 .. py:property:: initial_state
     :canonical: ansys.stk.core.stkobjects.astrogator.IMCSSegment.initial_state

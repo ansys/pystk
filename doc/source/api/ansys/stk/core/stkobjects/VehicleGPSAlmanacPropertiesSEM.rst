@@ -25,7 +25,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGPSAlmanacPropertiesSEM.almanac_week`
               - Get the week number from the reference week.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGPSAlmanacPropertiesSEM.reference_week`
-              - Gets or sets the almanac reference week (VINA) for all almanacs in this file per the ICD-GPS-200.
+              - Get or set the almanac reference week (VINA) for all almanacs in this file per the ICD-GPS-200.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGPSAlmanacPropertiesSEM.time_of_almanac`
               - Get the almanac reference time (Time of Appilcability) for all almanacs in the file per ICD-GPS-200.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGPSAlmanacPropertiesSEM.date_of_almanac`
@@ -60,9 +60,9 @@ Property detail
 
 .. py:property:: reference_week
     :canonical: ansys.stk.core.stkobjects.VehicleGPSAlmanacPropertiesSEM.reference_week
-    :type: GPS_REFERENCE_WEEK
+    :type: GPSReferenceWeek
 
-    Gets or sets the almanac reference week (VINA) for all almanacs in this file per the ICD-GPS-200.
+    Get or set the almanac reference week (VINA) for all almanacs in this file per the ICD-GPS-200.
 
 .. py:property:: time_of_almanac
     :canonical: ansys.stk.core.stkobjects.VehicleGPSAlmanacPropertiesSEM.time_of_almanac

@@ -28,17 +28,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.WindModelADDS.name`
-              - Gets or sets the name of the wind model.
+              - Get or set the name of the wind model.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.WindModelADDS.blend_time`
-              - Gets or sets the blend time to transition from the previous wind model if one exists.
+              - Get or set the blend time to transition from the previous wind model if one exists.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.WindModelADDS.message_interpolation_type`
-              - Gets or sets the message interpolation type.
+              - Get or set the message interpolation type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.WindModelADDS.message_extrapolation_type`
-              - Gets or sets the message extrapolation type.
+              - Get or set the message extrapolation type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.WindModelADDS.missing_message_type`
-              - Gets or sets the missing message type.
+              - Get or set the missing message type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.WindModelADDS.interpolation_blend_time`
-              - Gets or sets the blend time to transition from the previous wind condition.
+              - Get or set the blend time to transition from the previous wind condition.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.WindModelADDS.messages`
               - Get the messages from the current forecast.
 
@@ -59,37 +59,37 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.WindModelADDS.name
     :type: str
 
-    Gets or sets the name of the wind model.
+    Get or set the name of the wind model.
 
 .. py:property:: blend_time
     :canonical: ansys.stk.core.stkobjects.aviator.WindModelADDS.blend_time
     :type: float
 
-    Gets or sets the blend time to transition from the previous wind model if one exists.
+    Get or set the blend time to transition from the previous wind model if one exists.
 
 .. py:property:: message_interpolation_type
     :canonical: ansys.stk.core.stkobjects.aviator.WindModelADDS.message_interpolation_type
-    :type: ADDS_MESSAGE_INTERPOLATION_TYPE
+    :type: ADDSMessageInterpolationType
 
-    Gets or sets the message interpolation type.
+    Get or set the message interpolation type.
 
 .. py:property:: message_extrapolation_type
     :canonical: ansys.stk.core.stkobjects.aviator.WindModelADDS.message_extrapolation_type
-    :type: ADDS_MESSAGE_EXTRAPOLATION_TYPE
+    :type: ADDSMessageExtrapolationType
 
-    Gets or sets the message extrapolation type.
+    Get or set the message extrapolation type.
 
 .. py:property:: missing_message_type
     :canonical: ansys.stk.core.stkobjects.aviator.WindModelADDS.missing_message_type
-    :type: ADDS_MISSING_MESSAGE_TYPE
+    :type: ADDSMissingMessageType
 
-    Gets or sets the missing message type.
+    Get or set the missing message type.
 
 .. py:property:: interpolation_blend_time
     :canonical: ansys.stk.core.stkobjects.aviator.WindModelADDS.interpolation_blend_time
     :type: float
 
-    Gets or sets the blend time to transition from the previous wind condition.
+    Get or set the blend time to transition from the previous wind condition.
 
 .. py:property:: messages
     :canonical: ansys.stk.core.stkobjects.aviator.WindModelADDS.messages

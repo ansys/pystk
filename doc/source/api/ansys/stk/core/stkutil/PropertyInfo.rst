@@ -63,7 +63,7 @@ Property detail
 
 .. py:property:: property_type
     :canonical: ansys.stk.core.stkutil.PropertyInfo.property_type
-    :type: PROPERTY_INFO_VALUE_TYPE
+    :type: PropertyInfoValueType
 
     Get the type of property.
 

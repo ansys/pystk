@@ -21,9 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcVectorRA.coord_axes_name`
-              - Gets or sets the coordinate axes.
+              - Get or set the coordinate axes.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcVectorRA.vector_name`
-              - Gets or sets the vector.
+              - Get or set the vector.
 
 
 
@@ -42,12 +42,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcVectorRA.coord_axes_name
     :type: str
 
-    Gets or sets the coordinate axes.
+    Get or set the coordinate axes.
 
 .. py:property:: vector_name
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcVectorRA.vector_name
     :type: str
 
-    Gets or sets the vector.
+    Get or set the vector.
 
 

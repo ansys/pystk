@@ -54,7 +54,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkutil.IOrientation.orientation_type`
-              - Returns the orientation method currently being used.
+              - Return the orientation method currently being used.
 
 
 Import detail
@@ -70,22 +70,22 @@ Property detail
 
 .. py:property:: orientation_type
     :canonical: ansys.stk.core.stkutil.IOrientation.orientation_type
-    :type: ORIENTATION_TYPE
+    :type: OrientationType
 
-    Returns the orientation method currently being used.
+    Return the orientation method currently being used.
 
 
 Method detail
 -------------
 
-.. py:method:: convert_to(self, type: ORIENTATION_TYPE) -> IOrientation
+.. py:method:: convert_to(self, type: OrientationType) -> IOrientation
     :canonical: ansys.stk.core.stkutil.IOrientation.convert_to
 
     Change the orientation method to the type specified.
 
     :Parameters:
 
-    **type** : :obj:`~ORIENTATION_TYPE`
+    **type** : :obj:`~OrientationType`
 
     :Returns:
 
@@ -105,7 +105,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: assign_az_el(self, azimuth: typing.Any, elevation: typing.Any, about_boresight: AZ_EL_ABOUT_BORESIGHT) -> None
+.. py:method:: assign_az_el(self, azimuth: typing.Any, elevation: typing.Any, about_boresight: AzElAboutBoresight) -> None
     :canonical: ansys.stk.core.stkutil.IOrientation.assign_az_el
 
     Set orientation using the AzEl representation.
@@ -114,20 +114,20 @@ Method detail
 
     **azimuth** : :obj:`~typing.Any`
     **elevation** : :obj:`~typing.Any`
-    **about_boresight** : :obj:`~AZ_EL_ABOUT_BORESIGHT`
+    **about_boresight** : :obj:`~AzElAboutBoresight`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: assign_euler_angles(self, sequence: EULER_ORIENTATION_SEQUENCE_TYPE, a: typing.Any, b: typing.Any, c: typing.Any) -> None
+.. py:method:: assign_euler_angles(self, sequence: EulerOrientationSequenceType, a: typing.Any, b: typing.Any, c: typing.Any) -> None
     :canonical: ansys.stk.core.stkutil.IOrientation.assign_euler_angles
 
     Set orientation using the Euler angles representation.
 
     :Parameters:
 
-    **sequence** : :obj:`~EULER_ORIENTATION_SEQUENCE_TYPE`
+    **sequence** : :obj:`~EulerOrientationSequenceType`
     **a** : :obj:`~typing.Any`
     **b** : :obj:`~typing.Any`
     **c** : :obj:`~typing.Any`
@@ -152,14 +152,14 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: assign_ypr_angles(self, sequence: YPR_ANGLES_SEQUENCE, yaw: typing.Any, pitch: typing.Any, roll: typing.Any) -> None
+.. py:method:: assign_ypr_angles(self, sequence: YPRAnglesSequence, yaw: typing.Any, pitch: typing.Any, roll: typing.Any) -> None
     :canonical: ansys.stk.core.stkutil.IOrientation.assign_ypr_angles
 
     Set orientation using the YPR angles representation.
 
     :Parameters:
 
-    **sequence** : :obj:`~YPR_ANGLES_SEQUENCE`
+    **sequence** : :obj:`~YPRAnglesSequence`
     **yaw** : :obj:`~typing.Any`
     **pitch** : :obj:`~typing.Any`
     **roll** : :obj:`~typing.Any`
@@ -168,23 +168,23 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: query_az_el(self) -> typing.Tuple[typing.Any, typing.Any, AZ_EL_ABOUT_BORESIGHT]
+.. py:method:: query_az_el(self) -> typing.Tuple[typing.Any, typing.Any, AzElAboutBoresight]
     :canonical: ansys.stk.core.stkutil.IOrientation.query_az_el
 
     Get orientation using the AzEl representation.
 
     :Returns:
 
-        :obj:`~typing.Tuple[typing.Any, typing.Any, AZ_EL_ABOUT_BORESIGHT]`
+        :obj:`~typing.Tuple[typing.Any, typing.Any, AzElAboutBoresight]`
 
-.. py:method:: query_euler_angles(self, sequence: EULER_ORIENTATION_SEQUENCE_TYPE) -> typing.Tuple[typing.Any, typing.Any, typing.Any]
+.. py:method:: query_euler_angles(self, sequence: EulerOrientationSequenceType) -> typing.Tuple[typing.Any, typing.Any, typing.Any]
     :canonical: ansys.stk.core.stkutil.IOrientation.query_euler_angles
 
     Get orientation using the Euler angles representation.
 
     :Parameters:
 
-    **sequence** : :obj:`~EULER_ORIENTATION_SEQUENCE_TYPE`
+    **sequence** : :obj:`~EulerOrientationSequenceType`
 
     :Returns:
 
@@ -199,14 +199,14 @@ Method detail
 
         :obj:`~typing.Tuple[float, float, float, float]`
 
-.. py:method:: query_ypr_angles(self, sequence: YPR_ANGLES_SEQUENCE) -> typing.Tuple[typing.Any, typing.Any, typing.Any]
+.. py:method:: query_ypr_angles(self, sequence: YPRAnglesSequence) -> typing.Tuple[typing.Any, typing.Any, typing.Any]
     :canonical: ansys.stk.core.stkutil.IOrientation.query_ypr_angles
 
     Get orientation using the YPR angles representation.
 
     :Parameters:
 
-    **sequence** : :obj:`~YPR_ANGLES_SEQUENCE`
+    **sequence** : :obj:`~YPRAnglesSequence`
 
     :Returns:
 
@@ -221,14 +221,14 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: query_euler_angles_array(self, sequence: EULER_ORIENTATION_SEQUENCE_TYPE) -> list
+.. py:method:: query_euler_angles_array(self, sequence: EulerOrientationSequenceType) -> list
     :canonical: ansys.stk.core.stkutil.IOrientation.query_euler_angles_array
 
     Return the Euler elements as an array.
 
     :Parameters:
 
-    **sequence** : :obj:`~EULER_ORIENTATION_SEQUENCE_TYPE`
+    **sequence** : :obj:`~EulerOrientationSequenceType`
 
     :Returns:
 
@@ -243,14 +243,14 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: query_ypr_angles_array(self, sequence: YPR_ANGLES_SEQUENCE) -> list
+.. py:method:: query_ypr_angles_array(self, sequence: YPRAnglesSequence) -> list
     :canonical: ansys.stk.core.stkutil.IOrientation.query_ypr_angles_array
 
     Return the YPR Angles elements as an array.
 
     :Parameters:
 
-    **sequence** : :obj:`~YPR_ANGLES_SEQUENCE`
+    **sequence** : :obj:`~YPRAnglesSequence`
 
     :Returns:
 

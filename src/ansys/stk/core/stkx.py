@@ -1,6 +1,24 @@
-################################################################################
-#          Copyright 2020-2023, Ansys Government Initiatives
-################################################################################ 
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
 
 """
 STK X allows developers to add advanced STK 2D, 3D visualization and analytical capabilities to applications.
@@ -39,39 +57,44 @@ keyboard and mouse interactions and modes.
 .
 """
 
-__all__ = ["BUTTON_VALUES", "DataObject", "DataObjectFiles", "Draw2DElemCollection", "Draw2DElemRect", "DrawElementCollection", 
-"DrawElementLine", "DrawElementRect", "FEATURE_CODES", "GRAPHICS_2D_ANALYSIS_MODE", "GRAPHICS_2D_DRAW_COORDINATES", "Graphics2DControlBase", 
-"Graphics3DControlBase", "GraphicsAnalysisControlBase", "IDrawElement", "IDrawElementCollection", "IDrawElementRect", "LOGGING_MODE", 
-"MOUSE_MODE", "OLE_DROP_MODE", "ObjectPathCollection", "PROGRESS_IMAGE_X_ORIGIN", "PROGRESS_IMAGE_Y_ORIGIN", "PickInfoData", 
-"RubberBandPickInfoData", "SHIFT_VALUES", "SHOW_PROGRESS_IMAGE", "STKXApplication", "STKXApplicationPartnerAccess", "STKXConControlQuitReceivedEventArgs", 
-"STKXSSLCertificateErrorEventArgs", "WindowProjectionPosition"]
+__all__ = ["ButtonValues", "DataObject", "DataObjectFiles", "Draw2DElemCollection", "Draw2DElemRect", "DrawElementCollection", 
+"DrawElementLine", "DrawElementRect", "FeatureCodes", "Graphics2DAnalysisMode", "Graphics2DControlBase", "Graphics2DDrawCoordinates", 
+"Graphics3DControlBase", "GraphicsAnalysisControlBase", "IDrawElement", "IDrawElementCollection", "IDrawElementRect", "LoggingMode", 
+"MouseMode", "OLEDropMode", "ObjectPathCollection", "PickInfoData", "ProgressImageXOrigin", "ProgressImageYOrigin", "RubberBandPickInfoData", 
+"STKXApplication", "STKXApplicationPartnerAccess", "STKXConControlQuitReceivedEventArgs", "STKXSSLCertificateErrorEventArgs", 
+"ShiftValues", "ShowProgressImage", "WindowProjectionPosition"]
 
+from ctypes import POINTER
+from datetime import datetime
+from enum import IntEnum
 import typing
 
-from ctypes   import POINTER
-from datetime import datetime
-from enum     import IntEnum
-
-from .internal  import comutil          as agcom
-from .internal  import coclassutil      as agcls
-from .internal  import marshall         as agmarshall
-from .utilities import colors           as agcolor
-from .internal.comutil     import IDispatch, IPictureDisp
-from .internal.apiutil     import (InterfaceProxy, EnumeratorProxy, OutArg, 
-    initialize_from_source_object, get_interface_property, set_interface_attribute, 
-    set_class_attribute, SupportsDeleteCallback)
-from .internal.eventutil import (ISTKXApplicationEventHandler, IUiAxGraphics2DCntrlEventHandler,
-                                 IUiAxGraphics3DCntrlEventHandler)
+from .internal import coclassutil as agcls, comutil as agcom, marshall as agmarshall
+from .internal.apiutil import (
+    EnumeratorProxy,
+    InterfaceProxy,
+    OutArg,
+    SupportsDeleteCallback,
+    get_interface_property,
+    initialize_from_source_object,
+    set_class_attribute,
+    set_interface_attribute,
+)
+from .internal.comutil import IDispatch, IPictureDisp
+from .internal.eventutil import (
+    ISTKXApplicationEventHandler,
+    IUiAxGraphics2DCntrlEventHandler,
+    IUiAxGraphics3DCntrlEventHandler,
+)
+from .stkutil import ExecuteCommandResult, ExecuteMultipleCommandsMode, ExecuteMultipleCommandsResult, LineStyle
+from .utilities import colors as agcolor
 from .utilities.exceptions import STKRuntimeError
-
-from .stkutil import (EXECUTE_MULTIPLE_COMMANDS_MODE, ExecuteCommandResult,
-                      ExecuteMultipleCommandsResult, LINE_STYLE)
 
 
 def _raise_uninitialized_error(*args):
     raise STKRuntimeError("Valid STK object model classes are returned from STK methods and should not be created independently.")
 
-class SHIFT_VALUES(IntEnum):
+class ShiftValues(IntEnum):
     """State of the Shift/Ctrl/Alt keys."""
    
     PRESSED = 1
@@ -81,13 +104,13 @@ class SHIFT_VALUES(IntEnum):
     ALT_PRESSED = 4
     """The ALT key was pressed."""
 
-SHIFT_VALUES.PRESSED.__doc__ = "The Shift key was pressed."
-SHIFT_VALUES.CTRL_PRESSED.__doc__ = "The Ctrl key was pressed."
-SHIFT_VALUES.ALT_PRESSED.__doc__ = "The ALT key was pressed."
+ShiftValues.PRESSED.__doc__ = "The Shift key was pressed."
+ShiftValues.CTRL_PRESSED.__doc__ = "The Ctrl key was pressed."
+ShiftValues.ALT_PRESSED.__doc__ = "The ALT key was pressed."
 
-agcls.AgTypeNameMap["SHIFT_VALUES"] = SHIFT_VALUES
+agcls.AgTypeNameMap["ShiftValues"] = ShiftValues
 
-class BUTTON_VALUES(IntEnum):
+class ButtonValues(IntEnum):
     """Numeric value of the mouse button pressed."""
    
     LEFT_PRESSED = 1
@@ -97,13 +120,13 @@ class BUTTON_VALUES(IntEnum):
     MIDDLE_PRESSED = 4
     """The middle button is pressed."""
 
-BUTTON_VALUES.LEFT_PRESSED.__doc__ = "The left button is pressed."
-BUTTON_VALUES.RIGHT_PRESSED.__doc__ = "The right button is pressed."
-BUTTON_VALUES.MIDDLE_PRESSED.__doc__ = "The middle button is pressed."
+ButtonValues.LEFT_PRESSED.__doc__ = "The left button is pressed."
+ButtonValues.RIGHT_PRESSED.__doc__ = "The right button is pressed."
+ButtonValues.MIDDLE_PRESSED.__doc__ = "The middle button is pressed."
 
-agcls.AgTypeNameMap["BUTTON_VALUES"] = BUTTON_VALUES
+agcls.AgTypeNameMap["ButtonValues"] = ButtonValues
 
-class OLE_DROP_MODE(IntEnum):
+class OLEDropMode(IntEnum):
     """Specify how to handle OLE drop operations."""
    
     NONE = 0
@@ -113,13 +136,13 @@ class OLE_DROP_MODE(IntEnum):
     AUTOMATIC = 2
     """Automatic. The control automatically accepts OLE drops if the DataObject object contains data in a format it recognizes. No OLE drag/drop events on the target will occur when OLEDropMode is set to eAutomatic."""
 
-OLE_DROP_MODE.NONE.__doc__ = "None. The control does not accept OLE drops and displays the No Drop cursor."
-OLE_DROP_MODE.MANUAL.__doc__ = "Manual. The control triggers the OLE drop events, allowing the programmer to handle the OLE drop operation in code."
-OLE_DROP_MODE.AUTOMATIC.__doc__ = "Automatic. The control automatically accepts OLE drops if the DataObject object contains data in a format it recognizes. No OLE drag/drop events on the target will occur when OLEDropMode is set to eAutomatic."
+OLEDropMode.NONE.__doc__ = "None. The control does not accept OLE drops and displays the No Drop cursor."
+OLEDropMode.MANUAL.__doc__ = "Manual. The control triggers the OLE drop events, allowing the programmer to handle the OLE drop operation in code."
+OLEDropMode.AUTOMATIC.__doc__ = "Automatic. The control automatically accepts OLE drops if the DataObject object contains data in a format it recognizes. No OLE drag/drop events on the target will occur when OLEDropMode is set to eAutomatic."
 
-agcls.AgTypeNameMap["OLE_DROP_MODE"] = OLE_DROP_MODE
+agcls.AgTypeNameMap["OLEDropMode"] = OLEDropMode
 
-class MOUSE_MODE(IntEnum):
+class MouseMode(IntEnum):
     """Mouse modes."""
    
     AUTOMATIC = 0
@@ -127,12 +150,12 @@ class MOUSE_MODE(IntEnum):
     MANUAL = 1
     """None. No default action happens on mouse events. Events are fired to the container."""
 
-MOUSE_MODE.AUTOMATIC.__doc__ = "Automatic. The control handles the mouse events and then fires the events to the container for additional processing."
-MOUSE_MODE.MANUAL.__doc__ = "None. No default action happens on mouse events. Events are fired to the container."
+MouseMode.AUTOMATIC.__doc__ = "Automatic. The control handles the mouse events and then fires the events to the container for additional processing."
+MouseMode.MANUAL.__doc__ = "None. No default action happens on mouse events. Events are fired to the container."
 
-agcls.AgTypeNameMap["MOUSE_MODE"] = MOUSE_MODE
+agcls.AgTypeNameMap["MouseMode"] = MouseMode
 
-class LOGGING_MODE(IntEnum):
+class LoggingMode(IntEnum):
     """Specify the state of the log file."""
    
     INACTIVE = 0
@@ -142,13 +165,13 @@ class LOGGING_MODE(IntEnum):
     ACTIVE_KEEP_FILE = 2
     """The log file is created and kept even after application is terminated."""
 
-LOGGING_MODE.INACTIVE.__doc__ = "The log file is not created."
-LOGGING_MODE.ACTIVE.__doc__ = "The log file is created but deleted upon application termination."
-LOGGING_MODE.ACTIVE_KEEP_FILE.__doc__ = "The log file is created and kept even after application is terminated."
+LoggingMode.INACTIVE.__doc__ = "The log file is not created."
+LoggingMode.ACTIVE.__doc__ = "The log file is created but deleted upon application termination."
+LoggingMode.ACTIVE_KEEP_FILE.__doc__ = "The log file is created and kept even after application is terminated."
 
-agcls.AgTypeNameMap["LOGGING_MODE"] = LOGGING_MODE
+agcls.AgTypeNameMap["LoggingMode"] = LoggingMode
 
-class GRAPHICS_2D_ANALYSIS_MODE(IntEnum):
+class Graphics2DAnalysisMode(IntEnum):
     """Specify the mode of Gfx Analysis Control."""
    
     SOLAR_PANEL_TOOL = 1
@@ -160,14 +183,14 @@ class GRAPHICS_2D_ANALYSIS_MODE(IntEnum):
     AZ_EL_MASK_TOOL = 4
     """The AzElMask Tool mode."""
 
-GRAPHICS_2D_ANALYSIS_MODE.SOLAR_PANEL_TOOL.__doc__ = "The Solar Panel Tool mode."
-GRAPHICS_2D_ANALYSIS_MODE.AREA_TOOL.__doc__ = "The Area Tool mode."
-GRAPHICS_2D_ANALYSIS_MODE.OBSCURATION_TOOL.__doc__ = "The Obscuration Tool mode."
-GRAPHICS_2D_ANALYSIS_MODE.AZ_EL_MASK_TOOL.__doc__ = "The AzElMask Tool mode."
+Graphics2DAnalysisMode.SOLAR_PANEL_TOOL.__doc__ = "The Solar Panel Tool mode."
+Graphics2DAnalysisMode.AREA_TOOL.__doc__ = "The Area Tool mode."
+Graphics2DAnalysisMode.OBSCURATION_TOOL.__doc__ = "The Obscuration Tool mode."
+Graphics2DAnalysisMode.AZ_EL_MASK_TOOL.__doc__ = "The AzElMask Tool mode."
 
-agcls.AgTypeNameMap["GRAPHICS_2D_ANALYSIS_MODE"] = GRAPHICS_2D_ANALYSIS_MODE
+agcls.AgTypeNameMap["Graphics2DAnalysisMode"] = Graphics2DAnalysisMode
 
-class GRAPHICS_2D_DRAW_COORDINATES(IntEnum):
+class Graphics2DDrawCoordinates(IntEnum):
     """Specify the draw coordinates for Map Control."""
    
     PIXEL_DRAW_COORDINATES = 1
@@ -175,12 +198,12 @@ class GRAPHICS_2D_DRAW_COORDINATES(IntEnum):
     SCREEN_DRAW_COORDINATES = 2
     """The draw coordinates values in screen coordinates."""
 
-GRAPHICS_2D_DRAW_COORDINATES.PIXEL_DRAW_COORDINATES.__doc__ = "The draw coordinates values in pixels."
-GRAPHICS_2D_DRAW_COORDINATES.SCREEN_DRAW_COORDINATES.__doc__ = "The draw coordinates values in screen coordinates."
+Graphics2DDrawCoordinates.PIXEL_DRAW_COORDINATES.__doc__ = "The draw coordinates values in pixels."
+Graphics2DDrawCoordinates.SCREEN_DRAW_COORDINATES.__doc__ = "The draw coordinates values in screen coordinates."
 
-agcls.AgTypeNameMap["GRAPHICS_2D_DRAW_COORDINATES"] = GRAPHICS_2D_DRAW_COORDINATES
+agcls.AgTypeNameMap["Graphics2DDrawCoordinates"] = Graphics2DDrawCoordinates
 
-class SHOW_PROGRESS_IMAGE(IntEnum):
+class ShowProgressImage(IntEnum):
     """Specify to show progress image."""
    
     NONE = 1
@@ -190,13 +213,13 @@ class SHOW_PROGRESS_IMAGE(IntEnum):
     USER = 3
     """Show the user specified progress image."""
 
-SHOW_PROGRESS_IMAGE.NONE.__doc__ = "Do not show any progress Image."
-SHOW_PROGRESS_IMAGE.DEFAULT.__doc__ = "Show the default progress image."
-SHOW_PROGRESS_IMAGE.USER.__doc__ = "Show the user specified progress image."
+ShowProgressImage.NONE.__doc__ = "Do not show any progress Image."
+ShowProgressImage.DEFAULT.__doc__ = "Show the default progress image."
+ShowProgressImage.USER.__doc__ = "Show the user specified progress image."
 
-agcls.AgTypeNameMap["SHOW_PROGRESS_IMAGE"] = SHOW_PROGRESS_IMAGE
+agcls.AgTypeNameMap["ShowProgressImage"] = ShowProgressImage
 
-class FEATURE_CODES(IntEnum):
+class FeatureCodes(IntEnum):
     """The enumeration values are used to check availability of a given feature."""
    
     ENGINE_RUNTIME = 1
@@ -204,12 +227,12 @@ class FEATURE_CODES(IntEnum):
     GLOBE_CONTROL = 2
     """The enumeration is used to check whether the globe is available."""
 
-FEATURE_CODES.ENGINE_RUNTIME.__doc__ = "The enumeration is used to check whether the engine runtime is available."
-FEATURE_CODES.GLOBE_CONTROL.__doc__ = "The enumeration is used to check whether the globe is available."
+FeatureCodes.ENGINE_RUNTIME.__doc__ = "The enumeration is used to check whether the engine runtime is available."
+FeatureCodes.GLOBE_CONTROL.__doc__ = "The enumeration is used to check whether the globe is available."
 
-agcls.AgTypeNameMap["FEATURE_CODES"] = FEATURE_CODES
+agcls.AgTypeNameMap["FeatureCodes"] = FeatureCodes
 
-class PROGRESS_IMAGE_X_ORIGIN(IntEnum):
+class ProgressImageXOrigin(IntEnum):
     """Specify to align progress image X origin."""
    
     LEFT = 1
@@ -219,13 +242,13 @@ class PROGRESS_IMAGE_X_ORIGIN(IntEnum):
     CENTER = 3
     """Align progress Image from X center."""
 
-PROGRESS_IMAGE_X_ORIGIN.LEFT.__doc__ = "Align progress Image from X left."
-PROGRESS_IMAGE_X_ORIGIN.RIGHT.__doc__ = "Align progress Image from X right."
-PROGRESS_IMAGE_X_ORIGIN.CENTER.__doc__ = "Align progress Image from X center."
+ProgressImageXOrigin.LEFT.__doc__ = "Align progress Image from X left."
+ProgressImageXOrigin.RIGHT.__doc__ = "Align progress Image from X right."
+ProgressImageXOrigin.CENTER.__doc__ = "Align progress Image from X center."
 
-agcls.AgTypeNameMap["PROGRESS_IMAGE_X_ORIGIN"] = PROGRESS_IMAGE_X_ORIGIN
+agcls.AgTypeNameMap["ProgressImageXOrigin"] = ProgressImageXOrigin
 
-class PROGRESS_IMAGE_Y_ORIGIN(IntEnum):
+class ProgressImageYOrigin(IntEnum):
     """Specify to align progress image Y origin."""
    
     TOP = 1
@@ -235,11 +258,11 @@ class PROGRESS_IMAGE_Y_ORIGIN(IntEnum):
     CENTER = 3
     """Align progress Image from Y center."""
 
-PROGRESS_IMAGE_Y_ORIGIN.TOP.__doc__ = "Align progress Image from Y top."
-PROGRESS_IMAGE_Y_ORIGIN.BOTTOM.__doc__ = "Align progress Image from Y bottom."
-PROGRESS_IMAGE_Y_ORIGIN.CENTER.__doc__ = "Align progress Image from Y center."
+ProgressImageYOrigin.TOP.__doc__ = "Align progress Image from Y top."
+ProgressImageYOrigin.BOTTOM.__doc__ = "Align progress Image from Y bottom."
+ProgressImageYOrigin.CENTER.__doc__ = "Align progress Image from Y center."
 
-agcls.AgTypeNameMap["PROGRESS_IMAGE_Y_ORIGIN"] = PROGRESS_IMAGE_Y_ORIGIN
+agcls.AgTypeNameMap["ProgressImageYOrigin"] = ProgressImageYOrigin
 
 
 class IDrawElement(object):
@@ -396,17 +419,17 @@ class IDrawElementRect(IDrawElement):
 
     _get_line_style_metadata = { "offset" : _get_line_style_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(LINE_STYLE),) }
+            "marshallers" : (agmarshall.EnumArg(LineStyle),) }
     @property
-    def line_style(self) -> "LINE_STYLE":
+    def line_style(self) -> "LineStyle":
         """Specify the style of the line."""
         return self._intf.get_property(IDrawElementRect._metadata, IDrawElementRect._get_line_style_metadata)
 
     _set_line_style_metadata = { "offset" : _set_line_style_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(LINE_STYLE),) }
+            "marshallers" : (agmarshall.EnumArg(LineStyle),) }
     @line_style.setter
-    def line_style(self, value:"LINE_STYLE") -> None:
+    def line_style(self, value:"LineStyle") -> None:
         return self._intf.set_property(IDrawElementRect._metadata, IDrawElementRect._set_line_style_metadata, value)
 
     _property_names[left] = "left"
@@ -694,17 +717,17 @@ class Graphics3DControlBase(SupportsDeleteCallback):
 
     _get_ole_drop_mode_metadata = { "offset" : _get_ole_drop_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(OLE_DROP_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(OLEDropMode),) }
     @property
-    def ole_drop_mode(self) -> "OLE_DROP_MODE":
+    def ole_drop_mode(self) -> "OLEDropMode":
         """How the control handles drop operations."""
         return self._intf.get_property(Graphics3DControlBase._metadata, Graphics3DControlBase._get_ole_drop_mode_metadata)
 
     _set_ole_drop_mode_metadata = { "offset" : _set_ole_drop_mode_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(OLE_DROP_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(OLEDropMode),) }
     @ole_drop_mode.setter
-    def ole_drop_mode(self, ole_drop_mode:"OLE_DROP_MODE") -> None:
+    def ole_drop_mode(self, ole_drop_mode:"OLEDropMode") -> None:
         return self._intf.set_property(Graphics3DControlBase._metadata, Graphics3DControlBase._set_ole_drop_mode_metadata, ole_drop_mode)
 
     _get_vendor_id_metadata = { "offset" : _get_vendor_id_method_offset,
@@ -731,17 +754,17 @@ class Graphics3DControlBase(SupportsDeleteCallback):
 
     _get_mouse_mode_metadata = { "offset" : _get_mouse_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(MOUSE_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(MouseMode),) }
     @property
-    def mouse_mode(self) -> "MOUSE_MODE":
+    def mouse_mode(self) -> "MouseMode":
         """Whether this control responds to mouse events."""
         return self._intf.get_property(Graphics3DControlBase._metadata, Graphics3DControlBase._get_mouse_mode_metadata)
 
     _set_mouse_mode_metadata = { "offset" : _set_mouse_mode_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(MOUSE_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(MouseMode),) }
     @mouse_mode.setter
-    def mouse_mode(self, mouse_mode:"MOUSE_MODE") -> None:
+    def mouse_mode(self, mouse_mode:"MouseMode") -> None:
         return self._intf.set_property(Graphics3DControlBase._metadata, Graphics3DControlBase._set_mouse_mode_metadata, mouse_mode)
 
     _get_draw_elements_metadata = { "offset" : _get_draw_elements_method_offset,
@@ -857,17 +880,17 @@ class Graphics3DControlBase(SupportsDeleteCallback):
 
     _get_show_progress_image_metadata = { "offset" : _get_show_progress_image_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(SHOW_PROGRESS_IMAGE),) }
+            "marshallers" : (agmarshall.EnumArg(ShowProgressImage),) }
     @property
-    def show_progress_image(self) -> "SHOW_PROGRESS_IMAGE":
+    def show_progress_image(self) -> "ShowProgressImage":
         """The animated progress image type."""
         return self._intf.get_property(Graphics3DControlBase._metadata, Graphics3DControlBase._get_show_progress_image_metadata)
 
     _set_show_progress_image_metadata = { "offset" : _set_show_progress_image_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(SHOW_PROGRESS_IMAGE),) }
+            "marshallers" : (agmarshall.EnumArg(ShowProgressImage),) }
     @show_progress_image.setter
-    def show_progress_image(self, progress_image:"SHOW_PROGRESS_IMAGE") -> None:
+    def show_progress_image(self, progress_image:"ShowProgressImage") -> None:
         return self._intf.set_property(Graphics3DControlBase._metadata, Graphics3DControlBase._set_show_progress_image_metadata, progress_image)
 
     _get_progress_image_x_offset_metadata = { "offset" : _get_progress_image_x_offset_method_offset,
@@ -917,32 +940,32 @@ class Graphics3DControlBase(SupportsDeleteCallback):
 
     _get_progress_image_x_origin_metadata = { "offset" : _get_progress_image_x_origin_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(PROGRESS_IMAGE_X_ORIGIN),) }
+            "marshallers" : (agmarshall.EnumArg(ProgressImageXOrigin),) }
     @property
-    def progress_image_x_origin(self) -> "PROGRESS_IMAGE_X_ORIGIN":
+    def progress_image_x_origin(self) -> "ProgressImageXOrigin":
         """The X origin alignment for animated progress image."""
         return self._intf.get_property(Graphics3DControlBase._metadata, Graphics3DControlBase._get_progress_image_x_origin_metadata)
 
     _set_progress_image_x_origin_metadata = { "offset" : _set_progress_image_x_origin_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(PROGRESS_IMAGE_X_ORIGIN),) }
+            "marshallers" : (agmarshall.EnumArg(ProgressImageXOrigin),) }
     @progress_image_x_origin.setter
-    def progress_image_x_origin(self, progress_image_x_origin:"PROGRESS_IMAGE_X_ORIGIN") -> None:
+    def progress_image_x_origin(self, progress_image_x_origin:"ProgressImageXOrigin") -> None:
         return self._intf.set_property(Graphics3DControlBase._metadata, Graphics3DControlBase._set_progress_image_x_origin_metadata, progress_image_x_origin)
 
     _get_progress_image_y_origin_metadata = { "offset" : _get_progress_image_y_origin_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(PROGRESS_IMAGE_Y_ORIGIN),) }
+            "marshallers" : (agmarshall.EnumArg(ProgressImageYOrigin),) }
     @property
-    def progress_image_y_origin(self) -> "PROGRESS_IMAGE_Y_ORIGIN":
+    def progress_image_y_origin(self) -> "ProgressImageYOrigin":
         """The Y origin alignment for animated progress image."""
         return self._intf.get_property(Graphics3DControlBase._metadata, Graphics3DControlBase._get_progress_image_y_origin_metadata)
 
     _set_progress_image_y_origin_metadata = { "offset" : _set_progress_image_y_origin_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(PROGRESS_IMAGE_Y_ORIGIN),) }
+            "marshallers" : (agmarshall.EnumArg(ProgressImageYOrigin),) }
     @progress_image_y_origin.setter
-    def progress_image_y_origin(self, progress_image_y_origin:"PROGRESS_IMAGE_Y_ORIGIN") -> None:
+    def progress_image_y_origin(self, progress_image_y_origin:"ProgressImageYOrigin") -> None:
         return self._intf.set_property(Graphics3DControlBase._metadata, Graphics3DControlBase._set_progress_image_y_origin_metadata, progress_image_y_origin)
 
     _get_picture_from_file_metadata = { "offset" : _get_picture_from_file_method_offset,
@@ -1158,17 +1181,17 @@ class Graphics2DControlBase(SupportsDeleteCallback):
 
     _get_ole_drop_mode_metadata = { "offset" : _get_ole_drop_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(OLE_DROP_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(OLEDropMode),) }
     @property
-    def ole_drop_mode(self) -> "OLE_DROP_MODE":
+    def ole_drop_mode(self) -> "OLEDropMode":
         """How the control handles drop operations."""
         return self._intf.get_property(Graphics2DControlBase._metadata, Graphics2DControlBase._get_ole_drop_mode_metadata)
 
     _set_ole_drop_mode_metadata = { "offset" : _set_ole_drop_mode_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(OLE_DROP_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(OLEDropMode),) }
     @ole_drop_mode.setter
-    def ole_drop_mode(self, ole_drop_mode:"OLE_DROP_MODE") -> None:
+    def ole_drop_mode(self, ole_drop_mode:"OLEDropMode") -> None:
         return self._intf.set_property(Graphics2DControlBase._metadata, Graphics2DControlBase._set_ole_drop_mode_metadata, ole_drop_mode)
 
     _get_vendor_id_metadata = { "offset" : _get_vendor_id_method_offset,
@@ -1188,17 +1211,17 @@ class Graphics2DControlBase(SupportsDeleteCallback):
 
     _get_mouse_mode_metadata = { "offset" : _get_mouse_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(MOUSE_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(MouseMode),) }
     @property
-    def mouse_mode(self) -> "MOUSE_MODE":
+    def mouse_mode(self) -> "MouseMode":
         """Whether this control responds to mouse events."""
         return self._intf.get_property(Graphics2DControlBase._metadata, Graphics2DControlBase._get_mouse_mode_metadata)
 
     _set_mouse_mode_metadata = { "offset" : _set_mouse_mode_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(MOUSE_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(MouseMode),) }
     @mouse_mode.setter
-    def mouse_mode(self, mouse_mode:"MOUSE_MODE") -> None:
+    def mouse_mode(self, mouse_mode:"MouseMode") -> None:
         return self._intf.set_property(Graphics2DControlBase._metadata, Graphics2DControlBase._set_mouse_mode_metadata, mouse_mode)
 
     _get_ready_state_metadata = { "offset" : _get_ready_state_method_offset,
@@ -1240,8 +1263,8 @@ class Graphics2DControlBase(SupportsDeleteCallback):
 
     _get_window_projected_position_metadata = { "offset" : _get_window_projected_position_method_offset,
             "arg_types" : (agcom.DOUBLE, agcom.DOUBLE, agcom.DOUBLE, agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.EnumArg(GRAPHICS_2D_DRAW_COORDINATES), agmarshall.InterfaceOutArg,) }
-    def get_window_projected_position(self, lat:float, lon:float, alt:float, draw_coords:"GRAPHICS_2D_DRAW_COORDINATES") -> "WindowProjectionPosition":
+            "marshallers" : (agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.DoubleArg, agmarshall.EnumArg(Graphics2DDrawCoordinates), agmarshall.InterfaceOutArg,) }
+    def get_window_projected_position(self, lat:float, lon:float, alt:float, draw_coords:"Graphics2DDrawCoordinates") -> "WindowProjectionPosition":
         """Get the window projected position for given values."""
         return self._intf.invoke(Graphics2DControlBase._metadata, Graphics2DControlBase._get_window_projected_position_metadata, lat, lon, alt, draw_coords, OutArg())
 
@@ -1276,17 +1299,17 @@ class Graphics2DControlBase(SupportsDeleteCallback):
 
     _get_show_progress_image_metadata = { "offset" : _get_show_progress_image_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(SHOW_PROGRESS_IMAGE),) }
+            "marshallers" : (agmarshall.EnumArg(ShowProgressImage),) }
     @property
-    def show_progress_image(self) -> "SHOW_PROGRESS_IMAGE":
+    def show_progress_image(self) -> "ShowProgressImage":
         """The animated progress image type."""
         return self._intf.get_property(Graphics2DControlBase._metadata, Graphics2DControlBase._get_show_progress_image_metadata)
 
     _set_show_progress_image_metadata = { "offset" : _set_show_progress_image_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(SHOW_PROGRESS_IMAGE),) }
+            "marshallers" : (agmarshall.EnumArg(ShowProgressImage),) }
     @show_progress_image.setter
-    def show_progress_image(self, progress_image:"SHOW_PROGRESS_IMAGE") -> None:
+    def show_progress_image(self, progress_image:"ShowProgressImage") -> None:
         return self._intf.set_property(Graphics2DControlBase._metadata, Graphics2DControlBase._set_show_progress_image_metadata, progress_image)
 
     _get_progress_image_x_offset_metadata = { "offset" : _get_progress_image_x_offset_method_offset,
@@ -1336,32 +1359,32 @@ class Graphics2DControlBase(SupportsDeleteCallback):
 
     _get_progress_image_x_origin_metadata = { "offset" : _get_progress_image_x_origin_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(PROGRESS_IMAGE_X_ORIGIN),) }
+            "marshallers" : (agmarshall.EnumArg(ProgressImageXOrigin),) }
     @property
-    def progress_image_x_origin(self) -> "PROGRESS_IMAGE_X_ORIGIN":
+    def progress_image_x_origin(self) -> "ProgressImageXOrigin":
         """The X origin alignment for animated progress image."""
         return self._intf.get_property(Graphics2DControlBase._metadata, Graphics2DControlBase._get_progress_image_x_origin_metadata)
 
     _set_progress_image_x_origin_metadata = { "offset" : _set_progress_image_x_origin_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(PROGRESS_IMAGE_X_ORIGIN),) }
+            "marshallers" : (agmarshall.EnumArg(ProgressImageXOrigin),) }
     @progress_image_x_origin.setter
-    def progress_image_x_origin(self, progress_image_x_origin:"PROGRESS_IMAGE_X_ORIGIN") -> None:
+    def progress_image_x_origin(self, progress_image_x_origin:"ProgressImageXOrigin") -> None:
         return self._intf.set_property(Graphics2DControlBase._metadata, Graphics2DControlBase._set_progress_image_x_origin_metadata, progress_image_x_origin)
 
     _get_progress_image_y_origin_metadata = { "offset" : _get_progress_image_y_origin_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(PROGRESS_IMAGE_Y_ORIGIN),) }
+            "marshallers" : (agmarshall.EnumArg(ProgressImageYOrigin),) }
     @property
-    def progress_image_y_origin(self) -> "PROGRESS_IMAGE_Y_ORIGIN":
+    def progress_image_y_origin(self) -> "ProgressImageYOrigin":
         """The Y origin alignment for animated progress image."""
         return self._intf.get_property(Graphics2DControlBase._metadata, Graphics2DControlBase._get_progress_image_y_origin_metadata)
 
     _set_progress_image_y_origin_metadata = { "offset" : _set_progress_image_y_origin_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(PROGRESS_IMAGE_Y_ORIGIN),) }
+            "marshallers" : (agmarshall.EnumArg(ProgressImageYOrigin),) }
     @progress_image_y_origin.setter
-    def progress_image_y_origin(self, progress_image_y_origin:"PROGRESS_IMAGE_Y_ORIGIN") -> None:
+    def progress_image_y_origin(self, progress_image_y_origin:"ProgressImageYOrigin") -> None:
         return self._intf.set_property(Graphics2DControlBase._metadata, Graphics2DControlBase._set_progress_image_y_origin_metadata, progress_image_y_origin)
 
     _get_picture_from_file_metadata = { "offset" : _get_picture_from_file_method_offset,
@@ -1679,17 +1702,17 @@ class STKXApplication(SupportsDeleteCallback):
 
     _get_logging_mode_metadata = { "offset" : _get_logging_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(LOGGING_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(LoggingMode),) }
     @property
-    def logging_mode(self) -> "LOGGING_MODE":
+    def logging_mode(self) -> "LoggingMode":
         """Control the log file generation, and if the log file is deleted or not on application exit."""
         return self._intf.get_property(STKXApplication._metadata, STKXApplication._get_logging_mode_metadata)
 
     _set_logging_mode_metadata = { "offset" : _set_logging_mode_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(LOGGING_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(LoggingMode),) }
     @logging_mode.setter
-    def logging_mode(self, value:"LOGGING_MODE") -> None:
+    def logging_mode(self, value:"LoggingMode") -> None:
         return self._intf.set_property(STKXApplication._metadata, STKXApplication._set_logging_mode_metadata, value)
 
     _get_connect_max_connections_metadata = { "offset" : _get_connect_max_connections_method_offset,
@@ -1709,15 +1732,15 @@ class STKXApplication(SupportsDeleteCallback):
 
     _execute_multiple_commands_metadata = { "offset" : _execute_multiple_commands_method_offset,
             "arg_types" : (POINTER(agcom.LPSAFEARRAY), agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.EnumArg(EXECUTE_MULTIPLE_COMMANDS_MODE), agmarshall.InterfaceOutArg,) }
-    def execute_multiple_commands(self, connect_commands:list, action:"EXECUTE_MULTIPLE_COMMANDS_MODE") -> "ExecuteMultipleCommandsResult":
+            "marshallers" : (agmarshall.LPSafearrayArg, agmarshall.EnumArg(ExecuteMultipleCommandsMode), agmarshall.InterfaceOutArg,) }
+    def execute_multiple_commands(self, connect_commands:list, action:"ExecuteMultipleCommandsMode") -> "ExecuteMultipleCommandsResult":
         """Execute multiple CONNECT actions. The method throws an exception if any of the specified commands have failed."""
         return self._intf.invoke(STKXApplication._metadata, STKXApplication._execute_multiple_commands_metadata, connect_commands, action, OutArg())
 
     _is_feature_available_metadata = { "offset" : _is_feature_available_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.EnumArg(FEATURE_CODES), agmarshall.VariantBoolArg,) }
-    def is_feature_available(self, feature_code:"FEATURE_CODES") -> bool:
+            "marshallers" : (agmarshall.EnumArg(FeatureCodes), agmarshall.VariantBoolArg,) }
+    def is_feature_available(self, feature_code:"FeatureCodes") -> bool:
         """Return true if the specified feature is available."""
         return self._intf.invoke(STKXApplication._metadata, STKXApplication._is_feature_available_metadata, feature_code, OutArg())
 
@@ -2276,17 +2299,17 @@ class GraphicsAnalysisControlBase(SupportsDeleteCallback):
 
     _get_control_mode_metadata = { "offset" : _get_control_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(GRAPHICS_2D_ANALYSIS_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(Graphics2DAnalysisMode),) }
     @property
-    def control_mode(self) -> "GRAPHICS_2D_ANALYSIS_MODE":
+    def control_mode(self) -> "Graphics2DAnalysisMode":
         """The Graphics control mode."""
         return self._intf.get_property(GraphicsAnalysisControlBase._metadata, GraphicsAnalysisControlBase._get_control_mode_metadata)
 
     _set_control_mode_metadata = { "offset" : _set_control_mode_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(GRAPHICS_2D_ANALYSIS_MODE),) }
+            "marshallers" : (agmarshall.EnumArg(Graphics2DAnalysisMode),) }
     @control_mode.setter
-    def control_mode(self, gfx_analysis_mode:"GRAPHICS_2D_ANALYSIS_MODE") -> None:
+    def control_mode(self, gfx_analysis_mode:"Graphics2DAnalysisMode") -> None:
         return self._intf.set_property(GraphicsAnalysisControlBase._metadata, GraphicsAnalysisControlBase._set_control_mode_metadata, gfx_analysis_mode)
 
     _get_picture_from_file_metadata = { "offset" : _get_picture_from_file_method_offset,
@@ -2501,17 +2524,17 @@ class DrawElementLine(SupportsDeleteCallback):
 
     _get_line_style_metadata = { "offset" : _get_line_style_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(LINE_STYLE),) }
+            "marshallers" : (agmarshall.EnumArg(LineStyle),) }
     @property
-    def line_style(self) -> "LINE_STYLE":
+    def line_style(self) -> "LineStyle":
         """Specify the style of the line."""
         return self._intf.get_property(DrawElementLine._metadata, DrawElementLine._get_line_style_metadata)
 
     _set_line_style_metadata = { "offset" : _set_line_style_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(LINE_STYLE),) }
+            "marshallers" : (agmarshall.EnumArg(LineStyle),) }
     @line_style.setter
-    def line_style(self, value:"LINE_STYLE") -> None:
+    def line_style(self, value:"LineStyle") -> None:
         return self._intf.set_property(DrawElementLine._metadata, DrawElementLine._set_line_style_metadata, value)
 
     _property_names[left] = "left"
@@ -2731,8 +2754,3 @@ class STKXConControlQuitReceivedEventArgs(SupportsDeleteCallback):
 
 agcls.AgClassCatalog.add_catalog_entry((5130572763297124902, 5647256661091814069), STKXConControlQuitReceivedEventArgs)
 agcls.AgTypeNameMap["STKXConControlQuitReceivedEventArgs"] = STKXConControlQuitReceivedEventArgs
-
-
-################################################################################
-#          Copyright 2020-2023, Ansys Government Initiatives
-################################################################################

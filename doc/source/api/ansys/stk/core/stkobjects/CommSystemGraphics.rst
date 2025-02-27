@@ -78,13 +78,13 @@ Property detail
 
 .. py:property:: desired_links_line_style
     :canonical: ansys.stk.core.stkobjects.CommSystemGraphics.desired_links_line_style
-    :type: LINE_STYLE
+    :type: LineStyle
 
     Select the line style in which desired links line graphics display from the AgELineStyle enumeration.
 
 .. py:property:: desired_links_line_width
     :canonical: ansys.stk.core.stkobjects.CommSystemGraphics.desired_links_line_width
-    :type: LINE_WIDTH
+    :type: LineWidth
 
     Select the line width in which desired links line graphics display from the AgELineWidth enumeration.
 
@@ -102,13 +102,13 @@ Property detail
 
 .. py:property:: interference_links_line_style
     :canonical: ansys.stk.core.stkobjects.CommSystemGraphics.interference_links_line_style
-    :type: LINE_STYLE
+    :type: LineStyle
 
     Select the line style in which interference links line graphics display from the AgELineStyle enumeration.
 
 .. py:property:: interference_links_line_width
     :canonical: ansys.stk.core.stkobjects.CommSystemGraphics.interference_links_line_width
-    :type: LINE_WIDTH
+    :type: LineWidth
 
     Select the line width in which interference links line graphics display from the AgELineWidth enumeration.
 
@@ -126,13 +126,13 @@ Property detail
 
 .. py:property:: primary_interferer_link_line_style
     :canonical: ansys.stk.core.stkobjects.CommSystemGraphics.primary_interferer_link_line_style
-    :type: LINE_STYLE
+    :type: LineStyle
 
     Select the line style in which the primary interferer link line graphics display from the AgELineStyle enumeration.
 
 .. py:property:: primary_interferer_link_line_width
     :canonical: ansys.stk.core.stkobjects.CommSystemGraphics.primary_interferer_link_line_width
-    :type: LINE_WIDTH
+    :type: LineWidth
 
     Select the line width in which the primary interferer link line graphics display from the AgELineWidth enumeration.
 

@@ -44,9 +44,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.TimeToolInstantFactory.today`
-              - Returns Today time instant.
+              - Return Today time instant.
             * - :py:attr:`~ansys.stk.core.vgt.TimeToolInstantFactory.tomorrow`
-              - Returns Tomorrow time instant.
+              - Return Tomorrow time instant.
 
 
 
@@ -65,13 +65,13 @@ Property detail
     :canonical: ansys.stk.core.vgt.TimeToolInstantFactory.today
     :type: ITimeToolInstant
 
-    Returns Today time instant.
+    Return Today time instant.
 
 .. py:property:: tomorrow
     :canonical: ansys.stk.core.vgt.TimeToolInstantFactory.tomorrow
     :type: ITimeToolInstant
 
-    Returns Tomorrow time instant.
+    Return Tomorrow time instant.
 
 
 Method detail
@@ -79,7 +79,7 @@ Method detail
 
 
 
-.. py:method:: create(self, name: str, description: str, type: TIME_EVENT_TYPE) -> ITimeToolInstant
+.. py:method:: create(self, name: str, description: str, type: TimeEventType) -> ITimeToolInstant
     :canonical: ansys.stk.core.vgt.TimeToolInstantFactory.create
 
     Create and registers an event using specified name, description, and type.
@@ -88,7 +88,7 @@ Method detail
 
     **name** : :obj:`~str`
     **description** : :obj:`~str`
-    **type** : :obj:`~TIME_EVENT_TYPE`
+    **type** : :obj:`~TimeEventType`
 
     :Returns:
 
@@ -190,14 +190,14 @@ Method detail
 
         :obj:`~TimeToolInstantSmartEpoch`
 
-.. py:method:: is_type_supported(self, type: TIME_EVENT_TYPE) -> bool
+.. py:method:: is_type_supported(self, type: TimeEventType) -> bool
     :canonical: ansys.stk.core.vgt.TimeToolInstantFactory.is_type_supported
 
     Return whether the specified type is supported.
 
     :Parameters:
 
-    **type** : :obj:`~TIME_EVENT_TYPE`
+    **type** : :obj:`~TimeEventType`
 
     :Returns:
 

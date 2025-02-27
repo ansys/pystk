@@ -44,7 +44,7 @@ Property detail
 
 .. py:property:: sense
     :canonical: ansys.stk.core.vgt.CalculationToolConvergeBasic.sense
-    :type: THRESHOLD_CONVERGENCE_SENSE_TYPE
+    :type: ThresholdConvergenceSenseType
 
     Get the convergence sense which determines whether the converged value should be limited to just within or just outside of condition boundaries.
 

@@ -1,3 +1,25 @@
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
 from test_util import *
 from code_snippets.code_snippets_test_base import *
 
@@ -30,7 +52,7 @@ class J4PerturbationSnippets(CodeSnippetsTestBase):
     def setUp(self):
         J4PerturbationSnippets.m_Object = clr.CastAs(
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-                STK_OBJECT_TYPE.SATELLITE, J4PerturbationSnippets.m_DefaultName
+                STKObjectType.SATELLITE, J4PerturbationSnippets.m_DefaultName
             ),
             Satellite,
         )
@@ -41,7 +63,7 @@ class J4PerturbationSnippets(CodeSnippetsTestBase):
     # region TestTearDown
     def tearDown(self):
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(
-            STK_OBJECT_TYPE.SATELLITE, J4PerturbationSnippets.m_DefaultName
+            STKObjectType.SATELLITE, J4PerturbationSnippets.m_DefaultName
         )
         J4PerturbationSnippets.m_Object = None
 
@@ -53,14 +75,14 @@ class J4PerturbationSnippets(CodeSnippetsTestBase):
 
     # This code snippet is taken from SatelliteOrbitWizard.cs in the test suite
     def ConfigureJ4PerturbationPropagatorOrbitToCircular(self, satellite: "Satellite", incl: float, altitude: float):
-        satellite.set_propagator_type(PROPAGATOR_TYPE.J4_PERTURBATION)
+        satellite.set_propagator_type(PropagatorType.J4_PERTURBATION)
         prop: "PropagatorJ4Perturbation" = clr.CastAs(satellite.propagator, PropagatorJ4Perturbation)
 
         keplerian: "OrbitStateClassical" = clr.CastAs(
-            prop.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CLASSICAL), OrbitStateClassical
+            prop.initial_state.representation.convert_to(OrbitStateType.CLASSICAL), OrbitStateClassical
         )
 
-        keplerian.size_shape_type = CLASSICAL_SIZE_SHAPE.ALTITUDE
+        keplerian.size_shape_type = ClassicalSizeShape.ALTITUDE
         size: "ClassicalSizeShapeAltitude" = clr.CastAs(keplerian.size_shape, ClassicalSizeShapeAltitude)
 
         size.apogee_altitude = altitude
@@ -68,10 +90,10 @@ class J4PerturbationSnippets(CodeSnippetsTestBase):
 
         keplerian.orientation.inclination = incl
         keplerian.orientation.argument_of_periapsis = 0
-        keplerian.orientation.ascending_node_type = ORIENTATION_ASC_NODE.RIGHT_ASCENSION_ASCENDING_NODE
+        keplerian.orientation.ascending_node_type = OrientationAscNode.RIGHT_ASCENSION_ASCENDING_NODE
         (clr.CastAs(keplerian.orientation.ascending_node, OrientationRightAscensionOfAscendingNode)).value = 0
 
-        keplerian.location_type = CLASSICAL_LOCATION.TRUE_ANOMALY
+        keplerian.location_type = ClassicalLocation.TRUE_ANOMALY
         (clr.CastAs(keplerian.location, ClassicalLocationTrueAnomaly)).value = 0
 
         prop.initial_state.representation.assign(keplerian)
@@ -89,14 +111,14 @@ class J4PerturbationSnippets(CodeSnippetsTestBase):
     def ConfigureJ4PerturbationPropagatorOrbitToCritcallyInclined(
         self, satellite: "Satellite", apogeeAlt: float, perigeeAlt: float, ascNodeLon: float
     ):
-        satellite.set_propagator_type(PROPAGATOR_TYPE.J4_PERTURBATION)
+        satellite.set_propagator_type(PropagatorType.J4_PERTURBATION)
         prop: "PropagatorJ4Perturbation" = clr.CastAs(satellite.propagator, PropagatorJ4Perturbation)
 
         keplerian: "OrbitStateClassical" = clr.CastAs(
-            prop.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CLASSICAL), OrbitStateClassical
+            prop.initial_state.representation.convert_to(OrbitStateType.CLASSICAL), OrbitStateClassical
         )
 
-        keplerian.size_shape_type = CLASSICAL_SIZE_SHAPE.ALTITUDE
+        keplerian.size_shape_type = ClassicalSizeShape.ALTITUDE
         size: "ClassicalSizeShapeAltitude" = clr.CastAs(keplerian.size_shape, ClassicalSizeShapeAltitude)
 
         size.apogee_altitude = apogeeAlt
@@ -104,10 +126,10 @@ class J4PerturbationSnippets(CodeSnippetsTestBase):
 
         keplerian.orientation.inclination = 63.434949
         keplerian.orientation.argument_of_periapsis = 270.0
-        keplerian.orientation.ascending_node_type = ORIENTATION_ASC_NODE.LONGITUDE_ASCENDING_NODE
+        keplerian.orientation.ascending_node_type = OrientationAscNode.LONGITUDE_ASCENDING_NODE
         (clr.CastAs(keplerian.orientation.ascending_node, OrientationLongitudeOfAscending)).value = ascNodeLon
 
-        keplerian.location_type = CLASSICAL_LOCATION.TRUE_ANOMALY
+        keplerian.location_type = ClassicalLocation.TRUE_ANOMALY
         (clr.CastAs(keplerian.location, ClassicalLocationTrueAnomaly)).value = 90.0
 
         prop.initial_state.representation.assign(keplerian)

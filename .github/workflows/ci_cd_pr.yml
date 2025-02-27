@@ -9,7 +9,7 @@ env:
   LIBRARY_NAME: 'ansys-stk-core'
   LIBRARY_NAMESPACE: 'ansys.stk.core'
   DOCUMENTATION_CNAME: 'stk.docs.pyansys.com'
-  STK_DOCKER_IMAGE: 'ansys/stk:dev-ubuntu22.04'
+  STK_DOCKER_IMAGE: 'ansys/stk-12.10:dev-ubuntu22.04'
   PYSTK_DIR: '/home/stk/pystk'
   LICENSE_SERVER_PORT: '1055'
   QUARTO_VERSION: '1.5.55'
@@ -372,6 +372,13 @@ jobs:
             ${{ env.STK_CONTAINER }} /bin/bash -c \
             "python -m pip install tox && rm -rf .tox"
 
+      - name: "Run the API migration assistant tests"
+        run: |
+          docker exec \
+            --workdir ${{ env.PYSTK_DIR }} \
+            ${{ env.STK_CONTAINER }} /bin/bash -c \
+            "export COVERAGE_FILE=migration && tox -e tests-migration-graphics-cov-linux"
+
       - name: "Run the aviator tests"
         run: |
           docker exec \
@@ -400,6 +407,13 @@ jobs:
             ${{ env.STK_CONTAINER }} /bin/bash -c \
             "export COVERAGE_FILE=vgt && tox -e tests-vgt-graphics-cov-linux"
 
+      - name: "Run the doc snippet tests"
+        run: |
+          docker exec \
+            --workdir ${{ env.PYSTK_DIR }} \
+            ${{ env.STK_CONTAINER }} /bin/bash -c \
+            "export COVERAGE_FILE=snippets && tox -e tests-snippets-graphics-cov-linux"
+
       - name: "Install coverage dependencies"
         if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}
         run: |
@@ -414,7 +428,7 @@ jobs:
           docker exec \
             --workdir ${{ env.PYSTK_DIR }} \
             ${{ env.STK_CONTAINER }} /bin/bash -c \
-            "coverage combine aviator stknogfx stkgfx vgt"
+            "coverage combine aviator stknogfx stkgfx vgt snippets migration"
 
       - name: "Generate total coverage report"
         if: ${{ matrix.python == env.MINIMUM_PYTHON_VERSION }}

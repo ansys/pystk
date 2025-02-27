@@ -19,11 +19,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.LinkMargin.enable`
-              - Gets or set the option for computing link margin.
+              - Get or set the option for computing link margin.
             * - :py:attr:`~ansys.stk.core.stkobjects.LinkMargin.type`
-              - Gets or sets the link margin type.
+              - Get or set the link margin type.
             * - :py:attr:`~ansys.stk.core.stkobjects.LinkMargin.threshold`
-              - Gets or sets the link margin threshold.
+              - Get or set the link margin threshold.
 
 
 
@@ -42,18 +42,18 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.LinkMargin.enable
     :type: bool
 
-    Gets or set the option for computing link margin.
+    Get or set the option for computing link margin.
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.LinkMargin.type
-    :type: LINK_MARGIN_TYPE
+    :type: LinkMarginType
 
-    Gets or sets the link margin type.
+    Get or set the link margin type.
 
 .. py:property:: threshold
     :canonical: ansys.stk.core.stkobjects.LinkMargin.threshold
     :type: float
 
-    Gets or sets the link margin threshold.
+    Get or set the link margin threshold.
 
 

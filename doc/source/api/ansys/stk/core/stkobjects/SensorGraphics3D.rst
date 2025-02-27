@@ -53,9 +53,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorGraphics3D.is_targeted`
               - Is the sensor targeted?
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorGraphics3D.space_projection_intervals`
-              - Returns time dependent space projection list.
+              - Return time dependent space projection list.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorGraphics3D.target_projection_intervals`
-              - Returns time dependent target projection list.
+              - Return time dependent target projection list.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorGraphics3D.fill_resolution`
               - Specify the fill resolution angle for the sensor. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorGraphics3D.persist_projected_lines_in_space`
@@ -104,7 +104,7 @@ Property detail
 
 .. py:property:: projection_type
     :canonical: ansys.stk.core.stkobjects.SensorGraphics3D.projection_type
-    :type: SENSOR_GRAPHICS_3D_PROJECTION_TYPE
+    :type: SensorGraphics3DProjectionType
 
     Select the projection type from the AgESnVOProjectionType enumeration.
 
@@ -170,7 +170,7 @@ Property detail
 
 .. py:property:: inherit_from_2d
     :canonical: ansys.stk.core.stkobjects.SensorGraphics3D.inherit_from_2d
-    :type: SENSOR_GRAPHICS_3D_INHERIT_FROM_2D
+    :type: SensorGraphics3DInheritFrom2D
 
     Specify how projection distances that are computed based on 2D Graphics projection settings are displayed in the 3D Graphics window.
 
@@ -184,13 +184,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.SensorGraphics3D.space_projection_intervals
     :type: SensorGraphics3DSpaceProjectionCollection
 
-    Returns time dependent space projection list.
+    Return time dependent space projection list.
 
 .. py:property:: target_projection_intervals
     :canonical: ansys.stk.core.stkobjects.SensorGraphics3D.target_projection_intervals
     :type: SensorGraphics3DTargetProjectionCollection
 
-    Returns time dependent target projection list.
+    Return time dependent target projection list.
 
 .. py:property:: fill_resolution
     :canonical: ansys.stk.core.stkobjects.SensorGraphics3D.fill_resolution
@@ -212,7 +212,7 @@ Property detail
 
 .. py:property:: projection_time_dependency
     :canonical: ansys.stk.core.stkobjects.SensorGraphics3D.projection_time_dependency
-    :type: SENSOR_GRAPHICS_3D_PROJECTION_TIME_DEPENDENCY_TYPE
+    :type: SensorGraphics3DProjectionTimeDependencyType
 
     Specify how projection distances are determined in the 3D Graphics window. Either using a constant distance at all times or set of user defined intervals and distance values.
 

@@ -21,9 +21,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectCutCopyPasteEventArguments.selected_object_path`
               - Selected Object path that is being cut, copied or pasted.
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectCutCopyPasteEventArguments.object_paths`
-              - Returns an array of object paths that are cut, copied or pasted.
+              - Return an array of object paths that are cut, copied or pasted.
             * - :py:attr:`~ansys.stk.core.stkobjects.StkObjectCutCopyPasteEventArguments.pasted_object_paths`
-              - Returns an array of object paths that are being pasted. The new object paths corresposnd to the old paths at the same array location in ObjectPaths array.
+              - Return an array of object paths that are being pasted. The new object paths corresposnd to the old paths at the same array location in ObjectPaths array.
 
 
 
@@ -48,12 +48,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.StkObjectCutCopyPasteEventArguments.object_paths
     :type: list
 
-    Returns an array of object paths that are cut, copied or pasted.
+    Return an array of object paths that are cut, copied or pasted.
 
 .. py:property:: pasted_object_paths
     :canonical: ansys.stk.core.stkobjects.StkObjectCutCopyPasteEventArguments.pasted_object_paths
     :type: list
 
-    Returns an array of object paths that are being pasted. The new object paths corresposnd to the old paths at the same array location in ObjectPaths array.
+    Return an array of object paths that are being pasted. The new object paths corresposnd to the old paths at the same array location in ObjectPaths array.
 
 

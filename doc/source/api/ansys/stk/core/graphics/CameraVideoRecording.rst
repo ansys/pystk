@@ -34,7 +34,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.CameraVideoRecording.is_recording`
-              - Gets if recording is occurring or not.
+              - Get if recording is occurring or not.
 
 
 
@@ -53,7 +53,7 @@ Property detail
     :canonical: ansys.stk.core.graphics.CameraVideoRecording.is_recording
     :type: bool
 
-    Gets if recording is occurring or not.
+    Get if recording is occurring or not.
 
 
 Method detail
@@ -75,7 +75,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: start_recording_frame_stack(self, file_directory: str, file_prefix: str, camera_snapshot_file_format: SNAPSHOT_FILE_FORMAT, starting_frame_number: int, number_of_frame_digits: int) -> None
+.. py:method:: start_recording_frame_stack(self, file_directory: str, file_prefix: str, camera_snapshot_file_format: SnapshotFileFormat, starting_frame_number: int, number_of_frame_digits: int) -> None
     :canonical: ansys.stk.core.graphics.CameraVideoRecording.start_recording_frame_stack
 
     Start recording a frame stack. Each frame is saved as a separate image file. The filename of each frame is defined by a prefix followed by a frame number.
@@ -84,7 +84,7 @@ Method detail
 
     **file_directory** : :obj:`~str`
     **file_prefix** : :obj:`~str`
-    **camera_snapshot_file_format** : :obj:`~SNAPSHOT_FILE_FORMAT`
+    **camera_snapshot_file_format** : :obj:`~SnapshotFileFormat`
     **starting_frame_number** : :obj:`~int`
     **number_of_frame_digits** : :obj:`~int`
 
@@ -101,7 +101,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: start_recording_video(self, file_directory: str, file_prefix: str, video_format: VIDEO_FORMAT, video_bit_rate: int, video_frame_rate: int) -> None
+.. py:method:: start_recording_video(self, file_directory: str, file_prefix: str, video_format: VideoFormat, video_bit_rate: int, video_frame_rate: int) -> None
     :canonical: ansys.stk.core.graphics.CameraVideoRecording.start_recording_video
 
     Start recording a video file at the specified bit and frame rate.
@@ -110,7 +110,7 @@ Method detail
 
     **file_directory** : :obj:`~str`
     **file_prefix** : :obj:`~str`
-    **video_format** : :obj:`~VIDEO_FORMAT`
+    **video_format** : :obj:`~VideoFormat`
     **video_bit_rate** : :obj:`~int`
     **video_frame_rate** : :obj:`~int`
 

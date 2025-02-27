@@ -19,9 +19,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarClutterGeometryModel.name`
-              - This property is deprecated. Use Name on IAgScatteringPointProvider instead. Gets the radar clutter geometry model name.
+              - Do not use this property, as it is deprecated. Use Name on IAgScatteringPointProvider instead. Gets the radar clutter geometry model name.
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarClutterGeometryModel.type`
-              - This property is deprecated. Use PointProviderType on IAgScatteringPointProvider instead. Gets the radar clutter geometry model type enumeration.
+              - Do not use this property, as it is deprecated. Use PointProviderType on IAgScatteringPointProvider instead. Gets the radar clutter geometry model type enumeration.
 
 
 Import detail
@@ -39,12 +39,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.IRadarClutterGeometryModel.name
     :type: str
 
-    This property is deprecated. Use Name on IAgScatteringPointProvider instead. Gets the radar clutter geometry model name.
+    Do not use this property, as it is deprecated. Use Name on IAgScatteringPointProvider instead. Gets the radar clutter geometry model name.
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.IRadarClutterGeometryModel.type
-    :type: RADAR_CLUTTER_GEOMETRY_MODEL_TYPE
+    :type: RadarClutterGeometryModelType
 
-    This property is deprecated. Use PointProviderType on IAgScatteringPointProvider instead. Gets the radar clutter geometry model type enumeration.
+    Do not use this property, as it is deprecated. Use PointProviderType on IAgScatteringPointProvider instead. Gets the radar clutter geometry model type enumeration.
 
 

@@ -38,13 +38,13 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DLeadTrailData.lead_data_type`
               - Lead data type.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DLeadTrailData.lead_data_supported_types`
-              - Returns an array of valid choices.
+              - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DLeadTrailData.lead_data`
               - Lead data.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DLeadTrailData.trail_data_type`
               - Trail data type.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DLeadTrailData.trail_data_supported_types`
-              - Returns an array of valid choices.
+              - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DLeadTrailData.trail_data`
               - Trail data.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DLeadTrailData.has_lead_data`
@@ -67,7 +67,7 @@ Property detail
 
 .. py:property:: lead_data_type
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DLeadTrailData.lead_data_type
-    :type: LEAD_TRAIL_DATA
+    :type: LeadTrailData
 
     Lead data type.
 
@@ -75,7 +75,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DLeadTrailData.lead_data_supported_types
     :type: list
 
-    Returns an array of valid choices.
+    Return an array of valid choices.
 
 .. py:property:: lead_data
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DLeadTrailData.lead_data
@@ -85,7 +85,7 @@ Property detail
 
 .. py:property:: trail_data_type
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DLeadTrailData.trail_data_type
-    :type: LEAD_TRAIL_DATA
+    :type: LeadTrailData
 
     Trail data type.
 
@@ -93,7 +93,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DLeadTrailData.trail_data_supported_types
     :type: list
 
-    Returns an array of valid choices.
+    Return an array of valid choices.
 
 .. py:property:: trail_data
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DLeadTrailData.trail_data
@@ -118,27 +118,27 @@ Method detail
 -------------
 
 
-.. py:method:: set_lead_data_type(self, lead_data: LEAD_TRAIL_DATA) -> None
+.. py:method:: set_lead_data_type(self, lead_data: LeadTrailData) -> None
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DLeadTrailData.set_lead_data_type
 
     Lead data type.
 
     :Parameters:
 
-    **lead_data** : :obj:`~LEAD_TRAIL_DATA`
+    **lead_data** : :obj:`~LeadTrailData`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_lead_data_type_supported(self, lead_data: LEAD_TRAIL_DATA) -> bool
+.. py:method:: is_lead_data_type_supported(self, lead_data: LeadTrailData) -> bool
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DLeadTrailData.is_lead_data_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **lead_data** : :obj:`~LEAD_TRAIL_DATA`
+    **lead_data** : :obj:`~LeadTrailData`
 
     :Returns:
 
@@ -147,27 +147,27 @@ Method detail
 
 
 
-.. py:method:: set_trail_data_type(self, trail_data: LEAD_TRAIL_DATA) -> None
+.. py:method:: set_trail_data_type(self, trail_data: LeadTrailData) -> None
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DLeadTrailData.set_trail_data_type
 
     Trail data type.
 
     :Parameters:
 
-    **trail_data** : :obj:`~LEAD_TRAIL_DATA`
+    **trail_data** : :obj:`~LeadTrailData`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_trail_data_type_supported(self, trail_data: LEAD_TRAIL_DATA) -> bool
+.. py:method:: is_trail_data_type_supported(self, trail_data: LeadTrailData) -> bool
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DLeadTrailData.is_trail_data_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **trail_data** : :obj:`~LEAD_TRAIL_DATA`
+    **trail_data** : :obj:`~LeadTrailData`
 
     :Returns:
 

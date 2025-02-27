@@ -23,7 +23,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.DisplayTimesTimeComponent.set_time_component`
               - Configure the display times using the specified time component. Allowed are only intervals and interval lists.
             * - :py:attr:`~ansys.stk.core.stkobjects.DisplayTimesTimeComponent.set_qualified_path`
-              - Configure the display times using the specified time component. Allowed are only intervals and interval lists. QualifiedPath format adheres to the format used throughout VGT API (i.e. \"Scenario/Scenario1 AnalysisInterval EventInterval\").
+              - Configure the display times using the specified time component. Allowed are only intervals and interval lists. QualifiedPath format adheres to the format used throughout VGT API (i.e. ``Scenario/Scenario1 AnalysisInterval EventInterval``).
             * - :py:attr:`~ansys.stk.core.stkobjects.DisplayTimesTimeComponent.get_time_component`
               - Return a time component used to configure the display times or null if component has not been configured yet.
             * - :py:attr:`~ansys.stk.core.stkobjects.DisplayTimesTimeComponent.get_qualified_path`
@@ -60,7 +60,7 @@ Method detail
 .. py:method:: set_qualified_path(self, qualified_path: str) -> None
     :canonical: ansys.stk.core.stkobjects.DisplayTimesTimeComponent.set_qualified_path
 
-    Configure the display times using the specified time component. Allowed are only intervals and interval lists. QualifiedPath format adheres to the format used throughout VGT API (i.e. \"Scenario/Scenario1 AnalysisInterval EventInterval\").
+    Configure the display times using the specified time component. Allowed are only intervals and interval lists. QualifiedPath format adheres to the format used throughout VGT API (i.e. ``Scenario/Scenario1 AnalysisInterval EventInterval``).
 
     :Parameters:
 

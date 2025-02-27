@@ -19,9 +19,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IIonosphericFadingLossModel.name`
-              - Gets the IonoSpheric Fading loss model name.
+              - Get the IonoSpheric Fading loss model name.
             * - :py:attr:`~ansys.stk.core.stkobjects.IIonosphericFadingLossModel.type`
-              - Gets the IonoSpheric Fading loss model type enumeration.
+              - Get the IonoSpheric Fading loss model type enumeration.
 
 
 Import detail
@@ -39,12 +39,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.IIonosphericFadingLossModel.name
     :type: str
 
-    Gets the IonoSpheric Fading loss model name.
+    Get the IonoSpheric Fading loss model name.
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.IIonosphericFadingLossModel.type
-    :type: IONOSPHERIC_FADING_LOSS_MODEL_TYPE
+    :type: IonosphericFadingLossModelType
 
-    Gets the IonoSpheric Fading loss model type enumeration.
+    Get the IonoSpheric Fading loss model type enumeration.
 
 

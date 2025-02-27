@@ -38,15 +38,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOAnalysisRange.lower_limit`
-              - Gets or sets the lower range limit in Distance Units.
+              - Get or set the lower range limit in Distance Units.
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOAnalysisRange.upper_limit`
-              - Gets or sets the upper range limit in Distance Units.
+              - Get or set the upper range limit in Distance Units.
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOAnalysisRange.object_interval`
               - Use Extended to use the last point of the ephemeris span of the object for times past the last point. Default is Normal.
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOAnalysisRange.object_data`
               - If the Object to which range will be computed is an MTO, use this option to specify the track that will be used to compute that range. By default the MTO's ComputeTrack will be used.
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOAnalysisRange.object_path`
-              - Gets or sets the object to which range is being computed.
+              - Get or set the object to which range is being computed.
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOAnalysisRange.entirety`
               - Range Entirety.
 
@@ -67,17 +67,17 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.MTOAnalysisRange.lower_limit
     :type: float
 
-    Gets or sets the lower range limit in Distance Units.
+    Get or set the lower range limit in Distance Units.
 
 .. py:property:: upper_limit
     :canonical: ansys.stk.core.stkobjects.MTOAnalysisRange.upper_limit
     :type: float
 
-    Gets or sets the upper range limit in Distance Units.
+    Get or set the upper range limit in Distance Units.
 
 .. py:property:: object_interval
     :canonical: ansys.stk.core.stkobjects.MTOAnalysisRange.object_interval
-    :type: MTO_OBJECT_INTERVAL
+    :type: MTOObjectInterval
 
     Use Extended to use the last point of the ephemeris span of the object for times past the last point. Default is Normal.
 
@@ -91,11 +91,11 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.MTOAnalysisRange.object_path
     :type: str
 
-    Gets or sets the object to which range is being computed.
+    Get or set the object to which range is being computed.
 
 .. py:property:: entirety
     :canonical: ansys.stk.core.stkobjects.MTOAnalysisRange.entirety
-    :type: MTO_ENTIRETY
+    :type: MTOEntirety
 
     Range Entirety.
 
@@ -153,14 +153,14 @@ Method detail
 
         :obj:`~bool`
 
-.. py:method:: compute_ranges(self, mode: MTO_RANGE_MODE, track_ids: list, time: typing.Any) -> list
+.. py:method:: compute_ranges(self, mode: MTORangeMode, track_ids: list, time: typing.Any) -> list
     :canonical: ansys.stk.core.stkobjects.MTOAnalysisRange.compute_ranges
 
     Return an array of track ids with a bool value if it's in range of the object.
 
     :Parameters:
 
-    **mode** : :obj:`~MTO_RANGE_MODE`
+    **mode** : :obj:`~MTORangeMode`
     **track_ids** : :obj:`~list`
     **time** : :obj:`~typing.Any`
 
@@ -168,14 +168,14 @@ Method detail
 
         :obj:`~list`
 
-.. py:method:: compute_all_ranges(self, mode: MTO_RANGE_MODE, time: typing.Any) -> list
+.. py:method:: compute_all_ranges(self, mode: MTORangeMode, time: typing.Any) -> list
     :canonical: ansys.stk.core.stkobjects.MTOAnalysisRange.compute_all_ranges
 
     Compute the range of all track ids. Returns an array of track ids with a bool value if it's in range of the object.
 
     :Parameters:
 
-    **mode** : :obj:`~MTO_RANGE_MODE`
+    **mode** : :obj:`~MTORangeMode`
     **time** : :obj:`~typing.Any`
 
     :Returns:
@@ -184,14 +184,14 @@ Method detail
 
 
 
-.. py:method:: are_tracks_in_range(self, all_or_any: MTO_TRACK_EVALUATION_TYPE, track_ids: list, time: typing.Any) -> bool
+.. py:method:: are_tracks_in_range(self, all_or_any: MTOTrackEvaluationType, track_ids: list, time: typing.Any) -> bool
     :canonical: ansys.stk.core.stkobjects.MTOAnalysisRange.are_tracks_in_range
 
     Return true if any track in the array is visible to the object.
 
     :Parameters:
 
-    **all_or_any** : :obj:`~MTO_TRACK_EVALUATION_TYPE`
+    **all_or_any** : :obj:`~MTOTrackEvaluationType`
     **track_ids** : :obj:`~list`
     **time** : :obj:`~typing.Any`
 

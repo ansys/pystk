@@ -34,7 +34,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ILatitudeLongitudeAltitudePosition.type`
-              - Returns the position type currently being used.
+              - Return the position type currently being used.
 
 
 Import detail
@@ -50,22 +50,22 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.ILatitudeLongitudeAltitudePosition.type
-    :type: DETIC_POSITION_TYPE
+    :type: DeticPositionType
 
-    Returns the position type currently being used.
+    Return the position type currently being used.
 
 
 Method detail
 -------------
 
-.. py:method:: convert_to(self, type: DETIC_POSITION_TYPE) -> ILatitudeLongitudeAltitudePosition
+.. py:method:: convert_to(self, type: DeticPositionType) -> ILatitudeLongitudeAltitudePosition
     :canonical: ansys.stk.core.stkobjects.ILatitudeLongitudeAltitudePosition.convert_to
 
     Change the position representation.
 
     :Parameters:
 
-    **type** : :obj:`~DETIC_POSITION_TYPE`
+    **type** : :obj:`~DeticPositionType`
 
     :Returns:
 

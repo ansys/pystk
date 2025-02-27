@@ -1,3 +1,25 @@
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
 from test_util import *
 from code_snippets.code_snippets_test_base import *
 
@@ -30,7 +52,7 @@ class HPOPSnippets(CodeSnippetsTestBase):
     def setUp(self):
         HPOPSnippets.m_Object = clr.CastAs(
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-                STK_OBJECT_TYPE.SATELLITE, HPOPSnippets.m_DefaultName
+                STKObjectType.SATELLITE, HPOPSnippets.m_DefaultName
             ),
             Satellite,
         )
@@ -41,7 +63,7 @@ class HPOPSnippets(CodeSnippetsTestBase):
     # region TestTearDown
     def tearDown(self):
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(
-            STK_OBJECT_TYPE.SATELLITE, HPOPSnippets.m_DefaultName
+            STKObjectType.SATELLITE, HPOPSnippets.m_DefaultName
         )
         HPOPSnippets.m_Object = None
 
@@ -53,7 +75,7 @@ class HPOPSnippets(CodeSnippetsTestBase):
 
     def ConfigureSatelliteWithHPOPPropagator(self, satellite: "Satellite"):
         # Set satellite propagator to HPOP
-        satellite.set_propagator_type(PROPAGATOR_TYPE.HPOP)
+        satellite.set_propagator_type(PropagatorType.HPOP)
 
         # Get PropagatorLOP interface
         hpopProp: "PropagatorHPOP" = clr.CastAs(satellite.propagator, PropagatorHPOP)
@@ -71,7 +93,7 @@ class HPOPSnippets(CodeSnippetsTestBase):
         )
         hpopDragModel.cd = 1.89
         hpopDragModel.area_mass_ratio = 0.05
-        hpopForceModel.drag.atmospheric_density_model = ATMOSPHERIC_DENSITY_MODEL.MSIS90
+        hpopForceModel.drag.atmospheric_density_model = AtmosphericDensityModel.MSIS90
 
         hpopForceModel.third_body_gravity.remove_third_body("Moon")
 

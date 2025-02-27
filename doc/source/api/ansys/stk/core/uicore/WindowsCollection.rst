@@ -36,7 +36,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.uicore.WindowsCollection.count`
-              - Returns a total number of window objects in the collection.
+              - Return a total number of window objects in the collection.
             * - :py:attr:`~ansys.stk.core.uicore.WindowsCollection._new_enum`
               - Enumerates the windows in the collection.
 
@@ -57,7 +57,7 @@ Property detail
     :canonical: ansys.stk.core.uicore.WindowsCollection.count
     :type: int
 
-    Returns a total number of window objects in the collection.
+    Return a total number of window objects in the collection.
 
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.uicore.WindowsCollection._new_enum
@@ -83,14 +83,14 @@ Method detail
         :obj:`~Window`
 
 
-.. py:method:: arrange(self, arrange_style: WINDOW_ARRANGE_STYLE) -> None
+.. py:method:: arrange(self, arrange_style: WindowArrangeStyle) -> None
     :canonical: ansys.stk.core.uicore.WindowsCollection.arrange
 
     Arranges the application windows using the specified style.
 
     :Parameters:
 
-    **arrange_style** : :obj:`~WINDOW_ARRANGE_STYLE`
+    **arrange_style** : :obj:`~WindowArrangeStyle`
 
     :Returns:
 

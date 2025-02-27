@@ -38,13 +38,13 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorRealtime.look_ahead_propagator`
               - A name of the lookahead propagator.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorRealtime.supported_look_ahead_propagators`
-              - Returns an array of supported lookahead propagators.
+              - Return an array of supported lookahead propagators.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorRealtime.time_step`
               - Specify the interval between computed ephemeris output points. Valid value is between 0.1 and 9999.0 seconds.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorRealtime.timeout_gap`
-              - Specify the time after which look ahead values are considered to be \"stale\" (that is, the data has dropped out). Valid value is between 1.0 and 1000000.0 seconds.
+              - Specify the time after which look ahead values are considered to be ``stale`` (that is, the data has dropped out). Valid value is between 1.0 and 1000000.0 seconds.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorRealtime.point_builder`
-              - Gets a object to create ephemeris data for a vehicle by sending it point by point.
+              - Get a object to create ephemeris data for a vehicle by sending it point by point.
 
 
 
@@ -73,7 +73,7 @@ Property detail
 
 .. py:property:: look_ahead_propagator
     :canonical: ansys.stk.core.stkobjects.PropagatorRealtime.look_ahead_propagator
-    :type: LOOK_AHEAD_PROPAGATOR
+    :type: LookAheadPropagator
 
     A name of the lookahead propagator.
 
@@ -81,7 +81,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.PropagatorRealtime.supported_look_ahead_propagators
     :type: list
 
-    Returns an array of supported lookahead propagators.
+    Return an array of supported lookahead propagators.
 
 .. py:property:: time_step
     :canonical: ansys.stk.core.stkobjects.PropagatorRealtime.time_step
@@ -93,13 +93,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.PropagatorRealtime.timeout_gap
     :type: float
 
-    Specify the time after which look ahead values are considered to be \"stale\" (that is, the data has dropped out). Valid value is between 1.0 and 1000000.0 seconds.
+    Specify the time after which look ahead values are considered to be ``stale`` (that is, the data has dropped out). Valid value is between 1.0 and 1000000.0 seconds.
 
 .. py:property:: point_builder
     :canonical: ansys.stk.core.stkobjects.PropagatorRealtime.point_builder
     :type: PropagatorRealtimePointBuilder
 
-    Gets a object to create ephemeris data for a vehicle by sending it point by point.
+    Get a object to create ephemeris data for a vehicle by sending it point by point.
 
 
 Method detail
@@ -120,14 +120,14 @@ Method detail
 
 
 
-.. py:method:: is_look_ahead_propagator_supported(self, propagator: LOOK_AHEAD_PROPAGATOR) -> bool
+.. py:method:: is_look_ahead_propagator_supported(self, propagator: LookAheadPropagator) -> bool
     :canonical: ansys.stk.core.stkobjects.PropagatorRealtime.is_look_ahead_propagator_supported
 
     Return whether the specified look ahead propagator is supported.
 
     :Parameters:
 
-    **propagator** : :obj:`~LOOK_AHEAD_PROPAGATOR`
+    **propagator** : :obj:`~LookAheadPropagator`
 
     :Returns:
 

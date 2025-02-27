@@ -1,3 +1,25 @@
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
 import pytest
 from test_util import *
 from assert_extension import *
@@ -93,26 +115,26 @@ class EarlyBoundTests(TestBase):
         Assert.assertTrue(EarlyBoundTests.AG_CH.recompute_automatically)
         # DataSaveMode
         TestBase.logger.WriteLine6("\tThe current DataSaveMode is: {0}", EarlyBoundTests.AG_CH.data_save_mode)
-        EarlyBoundTests.AG_CH.data_save_mode = DATA_SAVE_MODE.DONT_SAVE_ACCESSES
+        EarlyBoundTests.AG_CH.data_save_mode = DataSaveMode.DONT_SAVE_ACCESSES
         TestBase.logger.WriteLine6("\tThe new DataSaveMode is: {0}", EarlyBoundTests.AG_CH.data_save_mode)
-        Assert.assertEqual(DATA_SAVE_MODE.DONT_SAVE_ACCESSES, EarlyBoundTests.AG_CH.data_save_mode)
-        EarlyBoundTests.AG_CH.data_save_mode = DATA_SAVE_MODE.DONT_SAVE_COMPUTE_ON_LOAD
+        Assert.assertEqual(DataSaveMode.DONT_SAVE_ACCESSES, EarlyBoundTests.AG_CH.data_save_mode)
+        EarlyBoundTests.AG_CH.data_save_mode = DataSaveMode.DONT_SAVE_COMPUTE_ON_LOAD
         TestBase.logger.WriteLine6("\tThe new DataSaveMode is: {0}", EarlyBoundTests.AG_CH.data_save_mode)
-        Assert.assertEqual(DATA_SAVE_MODE.DONT_SAVE_COMPUTE_ON_LOAD, EarlyBoundTests.AG_CH.data_save_mode)
-        EarlyBoundTests.AG_CH.data_save_mode = DATA_SAVE_MODE.SAVE_ACCESSES
+        Assert.assertEqual(DataSaveMode.DONT_SAVE_COMPUTE_ON_LOAD, EarlyBoundTests.AG_CH.data_save_mode)
+        EarlyBoundTests.AG_CH.data_save_mode = DataSaveMode.SAVE_ACCESSES
         TestBase.logger.WriteLine6("\tThe new DataSaveMode is: {0}", EarlyBoundTests.AG_CH.data_save_mode)
-        Assert.assertEqual(DATA_SAVE_MODE.SAVE_ACCESSES, EarlyBoundTests.AG_CH.data_save_mode)
+        Assert.assertEqual(DataSaveMode.SAVE_ACCESSES, EarlyBoundTests.AG_CH.data_save_mode)
         with pytest.raises(Exception):
-            EarlyBoundTests.AG_CH.data_save_mode = DATA_SAVE_MODE.UNKNOWN
+            EarlyBoundTests.AG_CH.data_save_mode = DataSaveMode.UNKNOWN
         # TimePeriodType
         TestBase.logger.WriteLine6("\tThe current TimePeriodType is: {0}", EarlyBoundTests.AG_CH.time_period_type)
         # SetTimePeriodType
 
-        eType: "CHAIN_TIME_PERIOD_TYPE"
+        eType: "ChainTimePeriodType"
         # SetTimePeriodType
 
-        for eType in Enum.GetValues(clr.TypeOf(CHAIN_TIME_PERIOD_TYPE)):
-            if eType == CHAIN_TIME_PERIOD_TYPE.UNKNOWN:
+        for eType in Enum.GetValues(clr.TypeOf(ChainTimePeriodType)):
+            if eType == ChainTimePeriodType.UNKNOWN:
                 with pytest.raises(Exception):
                     EarlyBoundTests.AG_CH.set_time_period_type(eType)
                 continue
@@ -128,7 +150,7 @@ class EarlyBoundTests(TestBase):
             # Type
             TestBase.logger.WriteLine6("\t\tThe Type is: {0}", oBase.type)
             Assert.assertEqual(eType, oBase.type)
-            if eType == CHAIN_TIME_PERIOD_TYPE.SPECIFIED_TIME_PERIOD:
+            if eType == ChainTimePeriodType.SPECIFIED_TIME_PERIOD:
                 oUser: "ChainUserSpecifiedTimePeriod" = ChainUserSpecifiedTimePeriod(oBase)
                 Assert.assertIsNotNone(oUser)
                 # Set Time Interval
@@ -211,24 +233,22 @@ class EarlyBoundTests(TestBase):
         oSHelper = AccessSamplingHelper()
         oSHelper.Run(EarlyBoundTests.AG_CH.sampling, False)
         # ConstConstraintsMode
-        currentConstConstraintsMode: "CHAIN_CONSTELLATION_CONSTRAINTS_MODE" = (
-            EarlyBoundTests.AG_CH.const_constraints_mode
-        )
+        currentConstConstraintsMode: "ChainConstellationConstraintsMode" = EarlyBoundTests.AG_CH.const_constraints_mode
         TestBase.logger.WriteLine6(
             "\tThe current ConstConstraintsMode is: {0}", EarlyBoundTests.AG_CH.const_constraints_mode
         )
-        EarlyBoundTests.AG_CH.const_constraints_mode = CHAIN_CONSTELLATION_CONSTRAINTS_MODE.OBJECTS
+        EarlyBoundTests.AG_CH.const_constraints_mode = ChainConstellationConstraintsMode.OBJECTS
         TestBase.logger.WriteLine6(
             "\tThe new ConstConstraintsMode is: {0}", EarlyBoundTests.AG_CH.const_constraints_mode
         )
-        Assert.assertEqual(CHAIN_CONSTELLATION_CONSTRAINTS_MODE.OBJECTS, EarlyBoundTests.AG_CH.const_constraints_mode)
-        EarlyBoundTests.AG_CH.const_constraints_mode = CHAIN_CONSTELLATION_CONSTRAINTS_MODE.STRANDS
+        Assert.assertEqual(ChainConstellationConstraintsMode.OBJECTS, EarlyBoundTests.AG_CH.const_constraints_mode)
+        EarlyBoundTests.AG_CH.const_constraints_mode = ChainConstellationConstraintsMode.STRANDS
         TestBase.logger.WriteLine6(
             "\tThe new ConstConstraintsMode is: {0}", EarlyBoundTests.AG_CH.const_constraints_mode
         )
-        Assert.assertEqual(CHAIN_CONSTELLATION_CONSTRAINTS_MODE.STRANDS, EarlyBoundTests.AG_CH.const_constraints_mode)
+        Assert.assertEqual(ChainConstellationConstraintsMode.STRANDS, EarlyBoundTests.AG_CH.const_constraints_mode)
         with pytest.raises(Exception):
-            EarlyBoundTests.AG_CH.const_constraints_mode = CHAIN_CONSTELLATION_CONSTRAINTS_MODE.UNKNOWN
+            EarlyBoundTests.AG_CH.const_constraints_mode = ChainConstellationConstraintsMode.UNKNOWN
         EarlyBoundTests.AG_CH.const_constraints_mode = currentConstConstraintsMode
         TestBase.logger.WriteLine("----- THE CHAIN ADVANCED TEST ----- END -----")
 
@@ -240,7 +260,7 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine("----- THE CHAIN ADVANCED ROUTING USING INDIVIDUAL OBJECTS TEST ----- BEGIN -----")
 
         newChain: "Chain" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.CHAIN, "TestChain"), Chain
+            TestBase.Application.current_scenario.children.new(STKObjectType.CHAIN, "TestChain"), Chain
         )
 
         newChain.max_strand_depth = 2
@@ -359,80 +379,82 @@ class EarlyBoundTests(TestBase):
 
         # Optimal Strands StrandComparisonType
         newChain.optimal_strand_opts.strand_comparison_type = (
-            CHAIN_OPTIMAL_STRAND_COMPARE_STRANDS_TYPE.STRAND_COMPARE_TYPE_MAX
+            ChainOptimalStrandCompareStrandsType.STRAND_COMPARE_TYPE_MAX
         )
         Assert.assertEqual(
-            CHAIN_OPTIMAL_STRAND_COMPARE_STRANDS_TYPE.STRAND_COMPARE_TYPE_MAX,
+            ChainOptimalStrandCompareStrandsType.STRAND_COMPARE_TYPE_MAX,
             newChain.optimal_strand_opts.strand_comparison_type,
         )
         newChain.optimal_strand_opts.strand_comparison_type = (
-            CHAIN_OPTIMAL_STRAND_COMPARE_STRANDS_TYPE.STRAND_COMPARE_TYPE_MIN
+            ChainOptimalStrandCompareStrandsType.STRAND_COMPARE_TYPE_MIN
         )
         Assert.assertEqual(
-            CHAIN_OPTIMAL_STRAND_COMPARE_STRANDS_TYPE.STRAND_COMPARE_TYPE_MIN,
+            ChainOptimalStrandCompareStrandsType.STRAND_COMPARE_TYPE_MIN,
             newChain.optimal_strand_opts.strand_comparison_type,
         )
 
         # Optimal Strands Type
-        newChain.optimal_strand_opts.type = CHAIN_OPTIMAL_STRAND_METRIC_TYPE.STRAND_METRIC_DISTANCE
-        Assert.assertEqual(CHAIN_OPTIMAL_STRAND_METRIC_TYPE.STRAND_METRIC_DISTANCE, newChain.optimal_strand_opts.type)
-        newChain.optimal_strand_opts.type = CHAIN_OPTIMAL_STRAND_METRIC_TYPE.STRAND_METRIC_PROCESSING_DELAY
+        newChain.optimal_strand_opts.type = ChainOptimalStrandMetricType.STRAND_METRIC_DISTANCE
+        Assert.assertEqual(ChainOptimalStrandMetricType.STRAND_METRIC_DISTANCE, newChain.optimal_strand_opts.type)
+        newChain.optimal_strand_opts.type = ChainOptimalStrandMetricType.STRAND_METRIC_DURATION
+        Assert.assertEqual(ChainOptimalStrandMetricType.STRAND_METRIC_DURATION, newChain.optimal_strand_opts.type)
+        newChain.optimal_strand_opts.type = ChainOptimalStrandMetricType.STRAND_METRIC_PROCESSING_DELAY
         Assert.assertEqual(
-            CHAIN_OPTIMAL_STRAND_METRIC_TYPE.STRAND_METRIC_PROCESSING_DELAY, newChain.optimal_strand_opts.type
+            ChainOptimalStrandMetricType.STRAND_METRIC_PROCESSING_DELAY, newChain.optimal_strand_opts.type
         )
-        newChain.optimal_strand_opts.type = CHAIN_OPTIMAL_STRAND_METRIC_TYPE.STRAND_METRIC_CALCULATION_SCALAR
+        newChain.optimal_strand_opts.type = ChainOptimalStrandMetricType.STRAND_METRIC_CALCULATION_SCALAR
         Assert.assertEqual(
-            CHAIN_OPTIMAL_STRAND_METRIC_TYPE.STRAND_METRIC_CALCULATION_SCALAR, newChain.optimal_strand_opts.type
+            ChainOptimalStrandMetricType.STRAND_METRIC_CALCULATION_SCALAR, newChain.optimal_strand_opts.type
         )
 
         # Optimal Strands Calculation Scalar Name Type
-        newChain.optimal_strand_opts.type = CHAIN_OPTIMAL_STRAND_METRIC_TYPE.STRAND_METRIC_CALCULATION_SCALAR
+        newChain.optimal_strand_opts.type = ChainOptimalStrandMetricType.STRAND_METRIC_CALCULATION_SCALAR
         Assert.assertEqual(
-            CHAIN_OPTIMAL_STRAND_METRIC_TYPE.STRAND_METRIC_CALCULATION_SCALAR, newChain.optimal_strand_opts.type
+            ChainOptimalStrandMetricType.STRAND_METRIC_CALCULATION_SCALAR, newChain.optimal_strand_opts.type
         )
         newChain.optimal_strand_opts.calc_scalar_type = (
-            CHAIN_OPTIMAL_STRAND_CALCULATION_SCALAR_METRIC_TYPE.STRAND_CALCULATION_SCALAR_METRIC_NAME
+            ChainOptimalStrandCalculationScalarMetricType.STRAND_CALCULATION_SCALAR_METRIC_NAME
         )
         Assert.assertEqual(
-            CHAIN_OPTIMAL_STRAND_CALCULATION_SCALAR_METRIC_TYPE.STRAND_CALCULATION_SCALAR_METRIC_NAME,
+            ChainOptimalStrandCalculationScalarMetricType.STRAND_CALCULATION_SCALAR_METRIC_NAME,
             newChain.optimal_strand_opts.calc_scalar_type,
         )
         newChain.optimal_strand_opts.calc_scalar_name = "From-To-AER(Body).Cartesian.Magnitude"
         Assert.assertEqual("From-To-AER(Body).Cartesian.Magnitude", newChain.optimal_strand_opts.calc_scalar_name)
 
         # Optimal Strands LinkComparisonType, testing against distance Calculation Scalar Name
-        # (only settable for OptimalStrandOpts.Type = CHAIN_OPTIMAL_STRAND_METRIC_TYPE.eChOptStrandMetricCalcuationScalar
+        # (only settable for OptimalStrandOpts.Type = ChainOptimalStrandMetricType.eChOptStrandMetricCalcuationScalar
         newChain.optimal_strand_opts.link_comparison_type = (
-            CHAIN_OPTIMAL_STRAND_LINK_COMPARE_TYPE.STRAND_LINK_COMPARE_TYPE_MAX
+            ChainOptimalStrandLinkCompareType.STRAND_LINK_COMPARE_TYPE_MAX
         )
         Assert.assertEqual(
-            CHAIN_OPTIMAL_STRAND_LINK_COMPARE_TYPE.STRAND_LINK_COMPARE_TYPE_MAX,
+            ChainOptimalStrandLinkCompareType.STRAND_LINK_COMPARE_TYPE_MAX,
             newChain.optimal_strand_opts.link_comparison_type,
         )
         newChain.optimal_strand_opts.link_comparison_type = (
-            CHAIN_OPTIMAL_STRAND_LINK_COMPARE_TYPE.STRAND_LINK_COMPARE_TYPE_MIN
+            ChainOptimalStrandLinkCompareType.STRAND_LINK_COMPARE_TYPE_MIN
         )
         Assert.assertEqual(
-            CHAIN_OPTIMAL_STRAND_LINK_COMPARE_TYPE.STRAND_LINK_COMPARE_TYPE_MIN,
+            ChainOptimalStrandLinkCompareType.STRAND_LINK_COMPARE_TYPE_MIN,
             newChain.optimal_strand_opts.link_comparison_type,
         )
 
         # Optimal Strands Calculation Scalar Name Type
-        newChain.optimal_strand_opts.type = CHAIN_OPTIMAL_STRAND_METRIC_TYPE.STRAND_METRIC_CALCULATION_SCALAR
+        newChain.optimal_strand_opts.type = ChainOptimalStrandMetricType.STRAND_METRIC_CALCULATION_SCALAR
         Assert.assertEqual(
-            CHAIN_OPTIMAL_STRAND_METRIC_TYPE.STRAND_METRIC_CALCULATION_SCALAR, newChain.optimal_strand_opts.type
+            ChainOptimalStrandMetricType.STRAND_METRIC_CALCULATION_SCALAR, newChain.optimal_strand_opts.type
         )
         newChain.optimal_strand_opts.calc_scalar_type = (
-            CHAIN_OPTIMAL_STRAND_CALCULATION_SCALAR_METRIC_TYPE.STRAND_CALCULATION_SCALAR_METRIC_FILE
+            ChainOptimalStrandCalculationScalarMetricType.STRAND_CALCULATION_SCALAR_METRIC_FILE
         )
         Assert.assertEqual(
-            CHAIN_OPTIMAL_STRAND_CALCULATION_SCALAR_METRIC_TYPE.STRAND_CALCULATION_SCALAR_METRIC_FILE,
+            ChainOptimalStrandCalculationScalarMetricType.STRAND_CALCULATION_SCALAR_METRIC_FILE,
             newChain.optimal_strand_opts.calc_scalar_type,
         )
         newChain.optimal_strand_opts.calc_scalar_file_name = "My_CS.awb"
         Assert.assertEqual("My_CS.awb", newChain.optimal_strand_opts.calc_scalar_file_name)
 
-        TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.CHAIN, "TestChain")
+        TestBase.Application.current_scenario.children.unload(STKObjectType.CHAIN, "TestChain")
 
         TestBase.logger.WriteLine("----- THE CHAIN ADVANCED ROUTING USING INDIVIDUAL OBJECTS TEST ----- END -----")
 
@@ -444,7 +466,7 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine("----- THE CHAIN ADVANCED ROUTING USING SATELLITE COLLECTION TEST ----- BEGIN -----")
 
         newChain: "Chain" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.CHAIN, "TestChain"), Chain
+            TestBase.Application.current_scenario.children.new(STKObjectType.CHAIN, "TestChain"), Chain
         )
 
         # turn off auto-recompute to set up connections
@@ -516,10 +538,10 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(newChain.connections.count, 2)
 
         newChain.connections.add_with_parent_restriction(
-            allRcvrsSubset, allXmtrsSubset, 0, 2, CHAIN_PARENT_PLATFORM_RESTRICTION.SAME
+            allRcvrsSubset, allXmtrsSubset, 0, 2, ChainParentPlatformRestriction.SAME
         )
         newChain.connections.add_with_parent_restriction(
-            allXmtrsSubset, allRcvrsSubset, 0, 2, CHAIN_PARENT_PLATFORM_RESTRICTION.DIFFERENT
+            allXmtrsSubset, allRcvrsSubset, 0, 2, ChainParentPlatformRestriction.DIFFERENT
         )
         newChain.compute_access()
 
@@ -530,28 +552,28 @@ class EarlyBoundTests(TestBase):
 
         # // Set platform restriction through item interface
         Assert.assertEqual(
-            CHAIN_PARENT_PLATFORM_RESTRICTION.SAME,
+            ChainParentPlatformRestriction.SAME,
             newChain.connections.item_by_from_to_objects(allRcvrsSubset, allXmtrsSubset).parent_platform_restriction,
         )
         Assert.assertEqual(
-            CHAIN_PARENT_PLATFORM_RESTRICTION.DIFFERENT,
+            ChainParentPlatformRestriction.DIFFERENT,
             newChain.connections.item_by_from_to_objects(allXmtrsSubset, allRcvrsSubset).parent_platform_restriction,
         )
         Assert.assertEqual(
-            CHAIN_PARENT_PLATFORM_RESTRICTION.NONE,
+            ChainParentPlatformRestriction.NONE,
             newChain.connections.item_by_from_to_objects(place1Xmtr1, allRcvrsSubset).parent_platform_restriction,
         )
         Assert.assertEqual(
-            CHAIN_PARENT_PLATFORM_RESTRICTION.NONE,
+            ChainParentPlatformRestriction.NONE,
             newChain.connections.item_by_from_to_objects(allXmtrsSubset, place2Rcvr2).parent_platform_restriction,
         )
 
         newChain.connections.item_by_from_to_objects(
             allRcvrsSubset, allXmtrsSubset
-        ).parent_platform_restriction = CHAIN_PARENT_PLATFORM_RESTRICTION.NONE
+        ).parent_platform_restriction = ChainParentPlatformRestriction.NONE
         newChain.connections.item_by_from_to_objects(
             allXmtrsSubset, allRcvrsSubset
-        ).parent_platform_restriction = CHAIN_PARENT_PLATFORM_RESTRICTION.NONE
+        ).parent_platform_restriction = ChainParentPlatformRestriction.NONE
         newChain.compute_access()
 
         resInfo = dpInfo.execute()
@@ -561,10 +583,10 @@ class EarlyBoundTests(TestBase):
 
         newChain.connections.item_by_from_to_objects(
             allRcvrsSubset, allXmtrsSubset
-        ).parent_platform_restriction = CHAIN_PARENT_PLATFORM_RESTRICTION.SAME
+        ).parent_platform_restriction = ChainParentPlatformRestriction.SAME
         newChain.connections.item_by_from_to_objects(
             allXmtrsSubset, allRcvrsSubset
-        ).parent_platform_restriction = CHAIN_PARENT_PLATFORM_RESTRICTION.DIFFERENT
+        ).parent_platform_restriction = ChainParentPlatformRestriction.DIFFERENT
         newChain.compute_access()
 
         resInfo = dpInfo.execute()
@@ -607,7 +629,7 @@ class EarlyBoundTests(TestBase):
         newChain.connections.remove(allXmtrsSubset, allRcvrsSubset)
 
         # Done, unload temp chain object
-        TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.CHAIN, "TestChain")
+        TestBase.Application.current_scenario.children.unload(STKObjectType.CHAIN, "TestChain")
 
         TestBase.logger.WriteLine("----- THE CHAIN ADVANCED ROUTING USING SATELLITE COLLECTION TEST ----- END -----")
 
@@ -680,7 +702,7 @@ class EarlyBoundTests(TestBase):
 
         with pytest.raises(Exception, match=RegexSubstringMatch("Subset or Constellation")):
             connColl.add_with_parent_restriction(
-                place1Xmtr1, satellite2Receiver2, 0, 2, CHAIN_PARENT_PLATFORM_RESTRICTION.SAME
+                place1Xmtr1, satellite2Receiver2, 0, 2, ChainParentPlatformRestriction.SAME
             )
 
         connColl.clear()
@@ -695,7 +717,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("Receiver2", chConn.to_object.instance_name)
         Assert.assertEqual(0, chConn.min_num_uses)
         Assert.assertEqual(1, chConn.max_num_uses)
-        Assert.assertEqual(CHAIN_PARENT_PLATFORM_RESTRICTION.NONE, chConn.parent_platform_restriction)
+        Assert.assertEqual(ChainParentPlatformRestriction.NONE, chConn.parent_platform_restriction)
 
         # Make changes
         chConn.from_object = TestBase.Application.current_scenario.children["Satellite2"].children["Transmitter2"]
@@ -707,7 +729,7 @@ class EarlyBoundTests(TestBase):
         chConn.max_num_uses = 3
         Assert.assertEqual(3, chConn.max_num_uses)
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            chConn.parent_platform_restriction = CHAIN_PARENT_PLATFORM_RESTRICTION.SAME
+            chConn.parent_platform_restriction = ChainParentPlatformRestriction.SAME
 
         # Restore to initial
         chConn.from_object = TestBase.Application.current_scenario.children["Place1"].children["Transmitter1"]
@@ -723,19 +745,19 @@ class EarlyBoundTests(TestBase):
         Assert.assertFalse(optStrandOpts.compute)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            optStrandOpts.type = CHAIN_OPTIMAL_STRAND_METRIC_TYPE.STRAND_METRIC_PROCESSING_DELAY
+            optStrandOpts.type = ChainOptimalStrandMetricType.STRAND_METRIC_PROCESSING_DELAY
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             optStrandOpts.calc_scalar_type = (
-                CHAIN_OPTIMAL_STRAND_CALCULATION_SCALAR_METRIC_TYPE.STRAND_CALCULATION_SCALAR_METRIC_NAME
+                ChainOptimalStrandCalculationScalarMetricType.STRAND_CALCULATION_SCALAR_METRIC_NAME
             )
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             optStrandOpts.calc_scalar_file_name = "My_CS.awb"
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             optStrandOpts.calc_scalar_name = "From-To-AER(Body).Cartesian.Magnitude"
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            optStrandOpts.link_comparison_type = CHAIN_OPTIMAL_STRAND_LINK_COMPARE_TYPE.STRAND_LINK_COMPARE_TYPE_SUM
+            optStrandOpts.link_comparison_type = ChainOptimalStrandLinkCompareType.STRAND_LINK_COMPARE_TYPE_SUM
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            optStrandOpts.strand_comparison_type = CHAIN_OPTIMAL_STRAND_COMPARE_STRANDS_TYPE.STRAND_COMPARE_TYPE_MIN
+            optStrandOpts.strand_comparison_type = ChainOptimalStrandCompareStrandsType.STRAND_COMPARE_TYPE_MIN
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             optStrandOpts.sampling_time_step = 0.001
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
@@ -747,47 +769,61 @@ class EarlyBoundTests(TestBase):
         Assert.assertTrue(optStrandOpts.compute)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid.")):
-            optStrandOpts.type = CHAIN_OPTIMAL_STRAND_METRIC_TYPE.UNKNOWN
+            optStrandOpts.type = ChainOptimalStrandMetricType.UNKNOWN
 
-        optStrandOpts.type = CHAIN_OPTIMAL_STRAND_METRIC_TYPE.STRAND_METRIC_DISTANCE
-        Assert.assertEqual(CHAIN_OPTIMAL_STRAND_METRIC_TYPE.STRAND_METRIC_DISTANCE, optStrandOpts.type)
+        optStrandOpts.type = ChainOptimalStrandMetricType.STRAND_METRIC_DISTANCE
+        Assert.assertEqual(ChainOptimalStrandMetricType.STRAND_METRIC_DISTANCE, optStrandOpts.type)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             optStrandOpts.calc_scalar_type = (
-                CHAIN_OPTIMAL_STRAND_CALCULATION_SCALAR_METRIC_TYPE.STRAND_CALCULATION_SCALAR_METRIC_NAME
+                ChainOptimalStrandCalculationScalarMetricType.STRAND_CALCULATION_SCALAR_METRIC_NAME
             )
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             optStrandOpts.calc_scalar_file_name = "My_CS.awb"
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             optStrandOpts.calc_scalar_name = "From-To-AER(Body).Cartesian.Magnitude"
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            optStrandOpts.link_comparison_type = CHAIN_OPTIMAL_STRAND_LINK_COMPARE_TYPE.STRAND_LINK_COMPARE_TYPE_MIN
+            optStrandOpts.link_comparison_type = ChainOptimalStrandLinkCompareType.STRAND_LINK_COMPARE_TYPE_MIN
 
-        optStrandOpts.type = CHAIN_OPTIMAL_STRAND_METRIC_TYPE.STRAND_METRIC_PROCESSING_DELAY
-        Assert.assertEqual(CHAIN_OPTIMAL_STRAND_METRIC_TYPE.STRAND_METRIC_PROCESSING_DELAY, optStrandOpts.type)
+        optStrandOpts.type = ChainOptimalStrandMetricType.STRAND_METRIC_DURATION
+        Assert.assertEqual(ChainOptimalStrandMetricType.STRAND_METRIC_DURATION, optStrandOpts.type)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             optStrandOpts.calc_scalar_type = (
-                CHAIN_OPTIMAL_STRAND_CALCULATION_SCALAR_METRIC_TYPE.STRAND_CALCULATION_SCALAR_METRIC_NAME
+                ChainOptimalStrandCalculationScalarMetricType.STRAND_CALCULATION_SCALAR_METRIC_NAME
             )
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             optStrandOpts.calc_scalar_file_name = "My_CS.awb"
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             optStrandOpts.calc_scalar_name = "From-To-AER(Body).Cartesian.Magnitude"
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            optStrandOpts.link_comparison_type = CHAIN_OPTIMAL_STRAND_LINK_COMPARE_TYPE.STRAND_LINK_COMPARE_TYPE_MIN
+            optStrandOpts.link_comparison_type = ChainOptimalStrandLinkCompareType.STRAND_LINK_COMPARE_TYPE_MIN
 
-        optStrandOpts.type = CHAIN_OPTIMAL_STRAND_METRIC_TYPE.STRAND_METRIC_CALCULATION_SCALAR
-        Assert.assertEqual(CHAIN_OPTIMAL_STRAND_METRIC_TYPE.STRAND_METRIC_CALCULATION_SCALAR, optStrandOpts.type)
+        optStrandOpts.type = ChainOptimalStrandMetricType.STRAND_METRIC_PROCESSING_DELAY
+        Assert.assertEqual(ChainOptimalStrandMetricType.STRAND_METRIC_PROCESSING_DELAY, optStrandOpts.type)
+
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            optStrandOpts.calc_scalar_type = (
+                ChainOptimalStrandCalculationScalarMetricType.STRAND_CALCULATION_SCALAR_METRIC_NAME
+            )
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            optStrandOpts.calc_scalar_file_name = "My_CS.awb"
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            optStrandOpts.calc_scalar_name = "From-To-AER(Body).Cartesian.Magnitude"
+        with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
+            optStrandOpts.link_comparison_type = ChainOptimalStrandLinkCompareType.STRAND_LINK_COMPARE_TYPE_MIN
+
+        optStrandOpts.type = ChainOptimalStrandMetricType.STRAND_METRIC_CALCULATION_SCALAR
+        Assert.assertEqual(ChainOptimalStrandMetricType.STRAND_METRIC_CALCULATION_SCALAR, optStrandOpts.type)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid.")):
-            optStrandOpts.calc_scalar_type = CHAIN_OPTIMAL_STRAND_CALCULATION_SCALAR_METRIC_TYPE.UNKNOWN
+            optStrandOpts.calc_scalar_type = ChainOptimalStrandCalculationScalarMetricType.UNKNOWN
 
         optStrandOpts.calc_scalar_type = (
-            CHAIN_OPTIMAL_STRAND_CALCULATION_SCALAR_METRIC_TYPE.STRAND_CALCULATION_SCALAR_METRIC_NAME
+            ChainOptimalStrandCalculationScalarMetricType.STRAND_CALCULATION_SCALAR_METRIC_NAME
         )
         Assert.assertEqual(
-            CHAIN_OPTIMAL_STRAND_CALCULATION_SCALAR_METRIC_TYPE.STRAND_CALCULATION_SCALAR_METRIC_NAME,
+            ChainOptimalStrandCalculationScalarMetricType.STRAND_CALCULATION_SCALAR_METRIC_NAME,
             optStrandOpts.calc_scalar_type,
         )
 
@@ -798,10 +834,10 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("From-To-AER(Body).Cartesian.Magnitude", optStrandOpts.calc_scalar_name)
 
         optStrandOpts.calc_scalar_type = (
-            CHAIN_OPTIMAL_STRAND_CALCULATION_SCALAR_METRIC_TYPE.STRAND_CALCULATION_SCALAR_METRIC_FILE
+            ChainOptimalStrandCalculationScalarMetricType.STRAND_CALCULATION_SCALAR_METRIC_FILE
         )
         Assert.assertEqual(
-            CHAIN_OPTIMAL_STRAND_CALCULATION_SCALAR_METRIC_TYPE.STRAND_CALCULATION_SCALAR_METRIC_FILE,
+            ChainOptimalStrandCalculationScalarMetricType.STRAND_CALCULATION_SCALAR_METRIC_FILE,
             optStrandOpts.calc_scalar_type,
         )
 
@@ -814,28 +850,28 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("My_CS.awb", optStrandOpts.calc_scalar_file_name)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid.")):
-            optStrandOpts.link_comparison_type = CHAIN_OPTIMAL_STRAND_LINK_COMPARE_TYPE.UNKNOWN
+            optStrandOpts.link_comparison_type = ChainOptimalStrandLinkCompareType.UNKNOWN
 
-        optStrandOpts.link_comparison_type = CHAIN_OPTIMAL_STRAND_LINK_COMPARE_TYPE.STRAND_LINK_COMPARE_TYPE_MIN
+        optStrandOpts.link_comparison_type = ChainOptimalStrandLinkCompareType.STRAND_LINK_COMPARE_TYPE_MIN
         Assert.assertEqual(
-            CHAIN_OPTIMAL_STRAND_LINK_COMPARE_TYPE.STRAND_LINK_COMPARE_TYPE_MIN, optStrandOpts.link_comparison_type
+            ChainOptimalStrandLinkCompareType.STRAND_LINK_COMPARE_TYPE_MIN, optStrandOpts.link_comparison_type
         )
-        optStrandOpts.link_comparison_type = CHAIN_OPTIMAL_STRAND_LINK_COMPARE_TYPE.STRAND_LINK_COMPARE_TYPE_MAX
+        optStrandOpts.link_comparison_type = ChainOptimalStrandLinkCompareType.STRAND_LINK_COMPARE_TYPE_MAX
         Assert.assertEqual(
-            CHAIN_OPTIMAL_STRAND_LINK_COMPARE_TYPE.STRAND_LINK_COMPARE_TYPE_MAX, optStrandOpts.link_comparison_type
+            ChainOptimalStrandLinkCompareType.STRAND_LINK_COMPARE_TYPE_MAX, optStrandOpts.link_comparison_type
         )
-        optStrandOpts.link_comparison_type = CHAIN_OPTIMAL_STRAND_LINK_COMPARE_TYPE.STRAND_LINK_COMPARE_TYPE_SUM
+        optStrandOpts.link_comparison_type = ChainOptimalStrandLinkCompareType.STRAND_LINK_COMPARE_TYPE_SUM
         Assert.assertEqual(
-            CHAIN_OPTIMAL_STRAND_LINK_COMPARE_TYPE.STRAND_LINK_COMPARE_TYPE_SUM, optStrandOpts.link_comparison_type
+            ChainOptimalStrandLinkCompareType.STRAND_LINK_COMPARE_TYPE_SUM, optStrandOpts.link_comparison_type
         )
 
-        optStrandOpts.strand_comparison_type = CHAIN_OPTIMAL_STRAND_COMPARE_STRANDS_TYPE.STRAND_COMPARE_TYPE_MIN
+        optStrandOpts.strand_comparison_type = ChainOptimalStrandCompareStrandsType.STRAND_COMPARE_TYPE_MIN
         Assert.assertEqual(
-            CHAIN_OPTIMAL_STRAND_COMPARE_STRANDS_TYPE.STRAND_COMPARE_TYPE_MIN, optStrandOpts.strand_comparison_type
+            ChainOptimalStrandCompareStrandsType.STRAND_COMPARE_TYPE_MIN, optStrandOpts.strand_comparison_type
         )
-        optStrandOpts.strand_comparison_type = CHAIN_OPTIMAL_STRAND_COMPARE_STRANDS_TYPE.STRAND_COMPARE_TYPE_MAX
+        optStrandOpts.strand_comparison_type = ChainOptimalStrandCompareStrandsType.STRAND_COMPARE_TYPE_MAX
         Assert.assertEqual(
-            CHAIN_OPTIMAL_STRAND_COMPARE_STRANDS_TYPE.STRAND_COMPARE_TYPE_MAX, optStrandOpts.strand_comparison_type
+            ChainOptimalStrandCompareStrandsType.STRAND_COMPARE_TYPE_MAX, optStrandOpts.strand_comparison_type
         )
 
         optStrandOpts.sampling_time_step = 0.001
@@ -887,7 +923,7 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception):
             oStatic.color = Colors.from_argb(1122867)
         with pytest.raises(Exception):
-            oStatic.line_width = LINE_WIDTH.WIDTH4
+            oStatic.line_width = LineWidth.WIDTH4
         # IsVisible (true)
         oStatic.show_graphics = True
         TestBase.logger.WriteLine4("\tThe new IsVisible is: {0}", oStatic.show_graphics)
@@ -900,9 +936,9 @@ class EarlyBoundTests(TestBase):
 
         # LineWidth
         TestBase.logger.WriteLine6("\tThe current LineWidth is: {0}", oStatic.line_width)
-        oStatic.line_width = LINE_WIDTH.WIDTH3
+        oStatic.line_width = LineWidth.WIDTH3
         TestBase.logger.WriteLine6("\tThe new LineWidth is: {0}", oStatic.line_width)
-        Assert.assertEqual(LINE_WIDTH.WIDTH3, oStatic.line_width)
+        Assert.assertEqual(LineWidth.WIDTH3, oStatic.line_width)
         with pytest.raises(Exception):
             oStatic.line_width = -1
         with pytest.raises(Exception):
@@ -971,7 +1007,7 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine4("\tThe new IsLineVisible is: {0}", oAnimation.show_line)
         Assert.assertFalse(oAnimation.show_line)
         with pytest.raises(Exception):
-            oAnimation.line_width = LINE_WIDTH.WIDTH2
+            oAnimation.line_width = LineWidth.WIDTH2
         TestBase.logger.WriteLine4("\tThe current OptimalPathIsLineVisible is: {0}", oAnimation.show_optimal_path_line)
         oAnimation.show_optimal_path_line = False
         TestBase.logger.WriteLine4("\tThe new OptimalPathIsLineVisible is: {0}", oAnimation.show_optimal_path_line)
@@ -989,17 +1025,17 @@ class EarlyBoundTests(TestBase):
 
         # LineWidth
         TestBase.logger.WriteLine6("\tThe current LineWidth is: {0}", oAnimation.line_width)
-        oAnimation.line_width = LINE_WIDTH.WIDTH2
+        oAnimation.line_width = LineWidth.WIDTH2
         TestBase.logger.WriteLine6("\tThe new LineWidth is: {0}", oAnimation.line_width)
-        Assert.assertEqual(LINE_WIDTH.WIDTH2, oAnimation.line_width)
+        Assert.assertEqual(LineWidth.WIDTH2, oAnimation.line_width)
         with pytest.raises(Exception):
             oAnimation.line_width = -1
         with pytest.raises(Exception):
             oAnimation.line_width = 11
         TestBase.logger.WriteLine6("\tThe current OptimalPathLineWidth is: {0}", oAnimation.optimal_path_line_width)
-        oAnimation.optimal_path_line_width = LINE_WIDTH.WIDTH2
+        oAnimation.optimal_path_line_width = LineWidth.WIDTH2
         TestBase.logger.WriteLine6("\tThe new OptimalPathLineWidth is: {0}", oAnimation.optimal_path_line_width)
-        Assert.assertEqual(LINE_WIDTH.WIDTH2, oAnimation.optimal_path_line_width)
+        Assert.assertEqual(LineWidth.WIDTH2, oAnimation.optimal_path_line_width)
         with pytest.raises(Exception):
             oAnimation.optimal_path_line_width = -1
         with pytest.raises(Exception):

@@ -44,13 +44,13 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.count`
               - Number of items in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.constraint_name`
-              - Gets the constraint name.
+              - Get the constraint name.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.is_plugin`
-              - Returns true if the access constraint is a plugin.
+              - Return true if the access constraint is a plugin.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.exclusion_interval`
-              - Gets or sets the ExclInterval.
+              - Get or set the ExclInterval.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.constraint_type`
-              - Gets the constraint type.
+              - Get the constraint type.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection._new_enum`
               - Enumerate the IAgAccessCnstrZone interfaces.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.maximum_time_step`
@@ -81,25 +81,25 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.constraint_name
     :type: str
 
-    Gets the constraint name.
+    Get the constraint name.
 
 .. py:property:: is_plugin
     :canonical: ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.is_plugin
     :type: bool
 
-    Returns true if the access constraint is a plugin.
+    Return true if the access constraint is a plugin.
 
 .. py:property:: exclusion_interval
     :canonical: ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.exclusion_interval
     :type: bool
 
-    Gets or sets the ExclInterval.
+    Get or set the ExclInterval.
 
 .. py:property:: constraint_type
     :canonical: ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection.constraint_type
-    :type: ACCESS_CONSTRAINT_TYPE
+    :type: AccessConstraintType
 
-    Gets the constraint type.
+    Get the constraint type.
 
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkobjects.AccessConstraintExclZonesCollection._new_enum

@@ -23,7 +23,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.vgt.TimeToolInstantTimeOffset.reference_time_instant`
               - The reference time instant.
             * - :py:attr:`~ansys.stk.core.vgt.TimeToolInstantTimeOffset.time_offset`
-              - The time offset from the ReferenceTimeInstant. The value is in \'TimeUnit\' dimension.
+              - The time offset from the ReferenceTimeInstant. The value is in ``TimeUnit`` dimension.
 
 
 
@@ -48,6 +48,6 @@ Property detail
     :canonical: ansys.stk.core.vgt.TimeToolInstantTimeOffset.time_offset
     :type: float
 
-    The time offset from the ReferenceTimeInstant. The value is in \'TimeUnit\' dimension.
+    The time offset from the ReferenceTimeInstant. The value is in ``TimeUnit`` dimension.
 
 

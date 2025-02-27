@@ -1,6 +1,24 @@
-################################################################################
-#          Copyright 2020-2023, Ansys Government Initiatives
-################################################################################ 
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
 
 """
 The Vector Geometry (VGT) API enables users define new or utilize existing geometric constructs such as coordinate systems, vectors, points, angles, axes and planes.
@@ -10,19 +28,18 @@ systems, compute first and second derivatives, or perform other types of
 analysis.
 """
 
-__all__ = ["ABERRATION_TYPE", "ANGLE_TO_LOCATION_TYPE", "ANGLE_TYPE", "ASYMPTOTE_DIRECTION_TYPE", "AXES_TYPE", "AnalysisWorkbenchAngleFindAngleResult", 
-"AnalysisWorkbenchAngleFindAngleWithRateResult", "AnalysisWorkbenchAngleFindResult", "AnalysisWorkbenchAngleFindWithRateResult", 
-"AnalysisWorkbenchAxesFindInAxesResult", "AnalysisWorkbenchAxesFindInAxesWithRateResult", "AnalysisWorkbenchAxesTransformResult", 
-"AnalysisWorkbenchAxesTransformWithRateResult", "AnalysisWorkbenchCentralBody", "AnalysisWorkbenchCentralBodyCollection", 
-"AnalysisWorkbenchCentralBodyReference", "AnalysisWorkbenchComponent", "AnalysisWorkbenchComponentCollection", "AnalysisWorkbenchComponentInstance", 
-"AnalysisWorkbenchComponentProvider", "AnalysisWorkbenchComponentTemplate", "AnalysisWorkbenchComponentTypeInformation", 
-"AnalysisWorkbenchConvergence", "AnalysisWorkbenchDerivative", "AnalysisWorkbenchIntegral", "AnalysisWorkbenchInterpolator", 
-"AnalysisWorkbenchPlaneFindInAxesResult", "AnalysisWorkbenchPlaneFindInAxesWithRateResult", "AnalysisWorkbenchPlaneFindInSystemResult", 
-"AnalysisWorkbenchPlaneFindInSystemWithRateResult", "AnalysisWorkbenchPointLocateInSystemResult", "AnalysisWorkbenchPointLocateInSystemWithRateResult", 
-"AnalysisWorkbenchPositionLLA", "AnalysisWorkbenchRoot", "AnalysisWorkbenchSampling", "AnalysisWorkbenchSignalDelay", "AnalysisWorkbenchSystemFindInSystemResult", 
-"AnalysisWorkbenchSystemTransformResult", "AnalysisWorkbenchSystemTransformWithRateResult", "AnalysisWorkbenchVectorFindInAxesResult", 
-"AnalysisWorkbenchVectorFindInAxesWithRateResult", "CALCULATION_SCALAR_TYPE", "CLOCK_HOST_TYPE", "CONDITION_COMBINED_OPERATION_TYPE", 
-"CONDITION_SET_TYPE", "CONDITION_THRESHOLD_TYPE", "CONDITION_TYPE", "CalculationToolCondition", "CalculationToolConditionCombined", 
+__all__ = ["AberrationModelType", "AnalysisWorkbenchAngleFindAngleResult", "AnalysisWorkbenchAngleFindAngleWithRateResult", 
+"AnalysisWorkbenchAngleFindResult", "AnalysisWorkbenchAngleFindWithRateResult", "AnalysisWorkbenchAxesFindInAxesResult", 
+"AnalysisWorkbenchAxesFindInAxesWithRateResult", "AnalysisWorkbenchAxesTransformResult", "AnalysisWorkbenchAxesTransformWithRateResult", 
+"AnalysisWorkbenchCentralBody", "AnalysisWorkbenchCentralBodyCollection", "AnalysisWorkbenchCentralBodyReference", "AnalysisWorkbenchComponent", 
+"AnalysisWorkbenchComponentCollection", "AnalysisWorkbenchComponentInstance", "AnalysisWorkbenchComponentProvider", "AnalysisWorkbenchComponentTemplate", 
+"AnalysisWorkbenchComponentTypeInformation", "AnalysisWorkbenchConvergence", "AnalysisWorkbenchDerivative", "AnalysisWorkbenchIntegral", 
+"AnalysisWorkbenchInterpolator", "AnalysisWorkbenchPlaneFindInAxesResult", "AnalysisWorkbenchPlaneFindInAxesWithRateResult", 
+"AnalysisWorkbenchPlaneFindInSystemResult", "AnalysisWorkbenchPlaneFindInSystemWithRateResult", "AnalysisWorkbenchPointLocateInSystemResult", 
+"AnalysisWorkbenchPointLocateInSystemWithRateResult", "AnalysisWorkbenchPositionLLA", "AnalysisWorkbenchRoot", "AnalysisWorkbenchSampling", 
+"AnalysisWorkbenchSignalDelay", "AnalysisWorkbenchSystemFindInSystemResult", "AnalysisWorkbenchSystemTransformResult", "AnalysisWorkbenchSystemTransformWithRateResult", 
+"AnalysisWorkbenchVectorFindInAxesResult", "AnalysisWorkbenchVectorFindInAxesWithRateResult", "AngleToLocationType", "AngleType", 
+"AsymptoteDirectionType", "AxesType", "CalculationScalarType", "CalculationToolCondition", "CalculationToolConditionCombined", 
 "CalculationToolConditionFactory", "CalculationToolConditionGroup", "CalculationToolConditionScalarBounds", "CalculationToolConditionSet", 
 "CalculationToolConditionSetEvaluateResult", "CalculationToolConditionSetEvaluateWithRateResult", "CalculationToolConditionSetFactory", 
 "CalculationToolConditionSetGroup", "CalculationToolConditionSetScalarThresholds", "CalculationToolConditionTrajectoryWithinVolume", 
@@ -37,40 +54,40 @@ __all__ = ["ABERRATION_TYPE", "ANGLE_TO_LOCATION_TYPE", "ANGLE_TYPE", "ASYMPTOTE
 "CalculationToolScalarFactory", "CalculationToolScalarFile", "CalculationToolScalarFixedAtTimeInstant", "CalculationToolScalarFunction", 
 "CalculationToolScalarFunctionOf2Variables", "CalculationToolScalarGroup", "CalculationToolScalarIntegral", "CalculationToolScalarPlugin", 
 "CalculationToolScalarStandardDeviation", "CalculationToolScalarSurfaceDistanceBetweenPoints", "CalculationToolScalarVectorComponent", 
-"CalculationToolScalarVectorMagnitude", "DISTANCE_TO_LOCATION_TYPE", "EVENT_ARRAY_FILTER_TYPE", "EVENT_ARRAY_TYPE", "EVENT_INTERVAL_COLLECTION_TYPE", 
-"EVENT_INTERVAL_LIST_TYPE", "EVENT_INTERVAL_TYPE", "EVENT_LIST_MERGE_OPERATION", "EXTREMUM_TYPE", "FILE_INTERPOLATOR_TYPE", 
-"GRID_VALUES_METHOD_TYPE", "IAnalysisWorkbenchComponent", "IAnalysisWorkbenchComponentContext", "IAnalysisWorkbenchComponentReference", 
-"IAnalysisWorkbenchComponentTimeProperties", "IAnalysisWorkbenchConvergence", "IAnalysisWorkbenchDerivative", "IAnalysisWorkbenchIntegral", 
-"IAnalysisWorkbenchInterpolator", "IAnalysisWorkbenchMethodCallResult", "IAnalysisWorkbenchSampling", "IAnalysisWorkbenchSignalDelay", 
-"ICalculationToolCondition", "ICalculationToolConditionSet", "ICalculationToolParameterSet", "ICalculationToolSamplingMethod", 
-"ICalculationToolScalar", "INHERIT_DIMENSION_TYPE", "INTEGRATION_WINDOW_TYPE", "INTERPOLATON_METHOD_TYPE", "INTERSECTION_SURFACE_TYPE", 
-"INTERVAL_DURATION_TYPE", "INTERVAL_FROM_INTERVAL_LIST_SELECTION_TYPE", "INTERVAL_PRUNE_FILTER_TYPE", "ISpatialAnalysisToolGridValuesMethod", 
-"ISpatialAnalysisToolSpatialCalculation", "ISpatialAnalysisToolVolume", "ISpatialAnalysisToolVolumeGrid", "ITimeToolInstant", 
-"ITimeToolPruneFilter", "ITimeToolTimeArray", "ITimeToolTimeInterval", "ITimeToolTimeIntervalCollection", "ITimeToolTimeIntervalList", 
-"IVectorGeometryToolAngle", "IVectorGeometryToolAxes", "IVectorGeometryToolPlane", "IVectorGeometryToolPoint", "IVectorGeometryToolSystem", 
-"IVectorGeometryToolVector", "LAGRANGE_LIBRATION_POINT_TYPE", "LIGHTING_CONDITIONS_TYPE", "MEAN_ELEMENT_THEORY", "PARAMETER_SET_TYPE", 
-"PLANE_QUADRANT_TYPE", "PLANE_TYPE", "POINT_B_PLANE_TYPE", "POINT_TYPE", "PRINCIPAL_AXIS_OF_ROTATION_TYPE", "QUADRATURE_TYPE", 
-"RANGE_SPEED_TYPE", "RESULT_VECTOR_REQUEST_TYPE", "ROTATION_SWEEP_MODE_TYPE", "SAMPLE_REFERENCE_TIME_TYPE", "SATISFACTION_CROSSING", 
-"SAVE_DATA_TYPE", "SIGNAL_DIRECTION_TYPE", "SIGNAL_PATH_REFERENCE_SYSTEM", "SIGNED_ANGLE_TYPE", "SMART_EPOCH_STATE", "SMART_INTERVAL_STATE", 
-"SPATIAL_CALCULATION_ALTITUDE_REFERENCE_TYPE", "SPATIAL_CALCULATION_TYPE", "SPATIAL_CONDITION_OVER_TYPE_DURATION_TYPE", 
-"SPEED_TYPE", "START_STOP_TYPE", "SURFACE_REFERENCE_SHAPE_TYPE", "SURFACE_SHAPE_TYPE", "SYSTEM_TYPE", "SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude", 
-"SpatialAnalysisToolCalculationAltitude", "SpatialAnalysisToolCalculationAngleToLocation", "SpatialAnalysisToolCalculationConditionSatisfactionMetric", 
-"SpatialAnalysisToolCalculationDistanceToLocation", "SpatialAnalysisToolCalculationFactory", "SpatialAnalysisToolCalculationFile", 
-"SpatialAnalysisToolCalculationFromCalculationScalar", "SpatialAnalysisToolCalculationGroup", "SpatialAnalysisToolCalculationPropagationDelayToLocation", 
-"SpatialAnalysisToolCalculationSolarIntensity", "SpatialAnalysisToolConditionAccessToLocation", "SpatialAnalysisToolConditionCombined", 
-"SpatialAnalysisToolConditionConditionAtLocation", "SpatialAnalysisToolConditionFactory", "SpatialAnalysisToolConditionGridBoundingVolume", 
-"SpatialAnalysisToolConditionGroup", "SpatialAnalysisToolConditionLighting", "SpatialAnalysisToolConditionOverTime", "SpatialAnalysisToolConditionSpatialCalculationBounds", 
+"CalculationToolScalarVectorMagnitude", "ClockHostType", "ConditionCombinedOperationType", "ConditionSetType", "ConditionThresholdType", 
+"ConditionType", "DistanceToLocationType", "EventArrayFilterType", "EventArrayType", "EventIntervalCollectionType", "EventIntervalListType", 
+"EventIntervalType", "EventListMergeOperation", "ExtremumType", "FileInterpolatorType", "GridValuesMethodType", "IAnalysisWorkbenchComponent", 
+"IAnalysisWorkbenchComponentContext", "IAnalysisWorkbenchComponentReference", "IAnalysisWorkbenchComponentTimeProperties", 
+"IAnalysisWorkbenchConvergence", "IAnalysisWorkbenchDerivative", "IAnalysisWorkbenchIntegral", "IAnalysisWorkbenchInterpolator", 
+"IAnalysisWorkbenchMethodCallResult", "IAnalysisWorkbenchSampling", "IAnalysisWorkbenchSignalDelay", "ICalculationToolCondition", 
+"ICalculationToolConditionSet", "ICalculationToolParameterSet", "ICalculationToolSamplingMethod", "ICalculationToolScalar", 
+"ISpatialAnalysisToolGridValuesMethod", "ISpatialAnalysisToolSpatialCalculation", "ISpatialAnalysisToolVolume", "ISpatialAnalysisToolVolumeGrid", 
+"ITimeToolInstant", "ITimeToolPruneFilter", "ITimeToolTimeArray", "ITimeToolTimeInterval", "ITimeToolTimeIntervalCollection", 
+"ITimeToolTimeIntervalList", "IVectorGeometryToolAngle", "IVectorGeometryToolAxes", "IVectorGeometryToolPlane", "IVectorGeometryToolPoint", 
+"IVectorGeometryToolSystem", "IVectorGeometryToolVector", "InheritDimensionType", "IntegrationWindowType", "InterpolationMethodType", 
+"IntersectionSurfaceType", "IntervalDurationType", "IntervalFromIntervalListSelectionType", "IntervalPruneFilterType", "LagrangeLibrationPointType", 
+"LightingConditionsType", "MeanElementTheory", "ParameterSetType", "PlaneQuadrantType", "PlaneType", "PointBPlaneType", 
+"PointType", "PrincipalAxisOfRotationType", "QuadratureType", "RangeSpeedType", "ResultVectorRequestType", "RotationSweepModeType", 
+"SampleReferenceTimeType", "SatisfactionCrossing", "SaveDataType", "SignalDirectionType", "SignalPathReferenceSystem", "SignedAngleType", 
+"SmartEpochState", "SmartIntervalState", "SpatialAnalysisToolAnalysisToolVolumeGridBearingAltitude", "SpatialAnalysisToolCalculationAltitude", 
+"SpatialAnalysisToolCalculationAngleToLocation", "SpatialAnalysisToolCalculationConditionSatisfactionMetric", "SpatialAnalysisToolCalculationDistanceToLocation", 
+"SpatialAnalysisToolCalculationFactory", "SpatialAnalysisToolCalculationFile", "SpatialAnalysisToolCalculationFromCalculationScalar", 
+"SpatialAnalysisToolCalculationGroup", "SpatialAnalysisToolCalculationPropagationDelayToLocation", "SpatialAnalysisToolCalculationSolarIntensity", 
+"SpatialAnalysisToolConditionAccessToLocation", "SpatialAnalysisToolConditionCombined", "SpatialAnalysisToolConditionConditionAtLocation", 
+"SpatialAnalysisToolConditionFactory", "SpatialAnalysisToolConditionGridBoundingVolume", "SpatialAnalysisToolConditionGroup", 
+"SpatialAnalysisToolConditionLighting", "SpatialAnalysisToolConditionOverTime", "SpatialAnalysisToolConditionSpatialCalculationBounds", 
 "SpatialAnalysisToolConditionValidTimeAtLocation", "SpatialAnalysisToolGridCoordinateDefinition", "SpatialAnalysisToolGridValuesCustom", 
 "SpatialAnalysisToolGridValuesFixedNumberOfSteps", "SpatialAnalysisToolGridValuesFixedStep", "SpatialAnalysisToolGridValuesMethod", 
 "SpatialAnalysisToolSpatialCalculation", "SpatialAnalysisToolVolume", "SpatialAnalysisToolVolumeGrid", "SpatialAnalysisToolVolumeGridCartesian", 
 "SpatialAnalysisToolVolumeGridConstrained", "SpatialAnalysisToolVolumeGridCylindrical", "SpatialAnalysisToolVolumeGridFactory", 
 "SpatialAnalysisToolVolumeGridGroup", "SpatialAnalysisToolVolumeGridLatitudeLongitudeAltitude", "SpatialAnalysisToolVolumeGridResult", 
-"SpatialAnalysisToolVolumeGridSpherical", "THRESHOLD_CONVERGENCE_SENSE_TYPE", "TIME_EVENT_TYPE", "TIME_SENSE_TYPE", "TRAJECTORY_AXES_COORDINATES_TYPE", 
-"TimeToolAxesSamplingInterval", "TimeToolAxesSamplingIntervalCollection", "TimeToolAxesSamplingResult", "TimeToolInstant", 
-"TimeToolInstantEpoch", "TimeToolInstantExtremum", "TimeToolInstantFactory", "TimeToolInstantGroup", "TimeToolInstantOccurrenceResult", 
-"TimeToolInstantSignaled", "TimeToolInstantSmartEpoch", "TimeToolInstantStartStopTime", "TimeToolInstantTimeOffset", "TimeToolInterval", 
-"TimeToolIntervalCollection", "TimeToolIntervalListResult", "TimeToolIntervalVectorCollection", "TimeToolIntervalsFilter", 
-"TimeToolIntervalsVectorResult", "TimeToolLightTimeDelay", "TimeToolPointSamplingInterval", "TimeToolPointSamplingIntervalCollection", 
+"SpatialAnalysisToolVolumeGridSpherical", "SpatialCalculationAltitudeReferenceType", "SpatialCalculationType", "SpatialConditionOverTypeDurationType", 
+"SpeedType", "StartStopType", "SurfaceReferenceShapeType", "SurfaceShapeType", "SystemType", "ThresholdConvergenceSenseType", 
+"TimeEventType", "TimeSenseType", "TimeToolAxesSamplingInterval", "TimeToolAxesSamplingIntervalCollection", "TimeToolAxesSamplingResult", 
+"TimeToolInstant", "TimeToolInstantEpoch", "TimeToolInstantExtremum", "TimeToolInstantFactory", "TimeToolInstantGroup", 
+"TimeToolInstantOccurrenceResult", "TimeToolInstantSignaled", "TimeToolInstantSmartEpoch", "TimeToolInstantStartStopTime", 
+"TimeToolInstantTimeOffset", "TimeToolInterval", "TimeToolIntervalCollection", "TimeToolIntervalListResult", "TimeToolIntervalVectorCollection", 
+"TimeToolIntervalsFilter", "TimeToolIntervalsVectorResult", "TimeToolLightTimeDelay", "TimeToolPointSamplingInterval", "TimeToolPointSamplingIntervalCollection", 
 "TimeToolPointSamplingResult", "TimeToolPruneFilter", "TimeToolPruneFilterFactory", "TimeToolSignalDelayBasic", "TimeToolTimeArray", 
 "TimeToolTimeArrayConditionCrossings", "TimeToolTimeArrayExtrema", "TimeToolTimeArrayFactory", "TimeToolTimeArrayFiltered", 
 "TimeToolTimeArrayFindTimesResult", "TimeToolTimeArrayFixedStep", "TimeToolTimeArrayFixedTimes", "TimeToolTimeArrayGroup", 
@@ -83,10 +100,7 @@ __all__ = ["ABERRATION_TYPE", "ANGLE_TO_LOCATION_TYPE", "ANGLE_TYPE", "ASYMPTOTE
 "TimeToolTimeIntervalListFiltered", "TimeToolTimeIntervalListFixed", "TimeToolTimeIntervalListGroup", "TimeToolTimeIntervalListMerged", 
 "TimeToolTimeIntervalListScaled", "TimeToolTimeIntervalListSignaled", "TimeToolTimeIntervalListTimeOffset", "TimeToolTimeIntervalRelativeSatisfactionConditionFilter", 
 "TimeToolTimeIntervalResult", "TimeToolTimeIntervalSatisfactionConditionFilter", "TimeToolTimeIntervalScaled", "TimeToolTimeIntervalSignaled", 
-"TimeToolTimeIntervalSmartInterval", "TimeToolTimeIntervalTimeOffset", "VECTOR_COMPONENT_TYPE", "VECTOR_GEOMETRY_TOOL_COMPONENT_TYPE", 
-"VECTOR_GEOMETRY_TOOL_SAMPLING_METHOD", "VECTOR_GEOMETRY_TOOL_SCALED_VECTOR_DIMENSION_INHERITANCE_OPTION_TYPE", "VECTOR_TYPE", 
-"VOLUME_COMBINED_OPERATION_TYPE", "VOLUME_FROM_GRID_EDGE_TYPE", "VOLUME_GRID_TYPE", "VOLUME_SATISFACTION_ACCUMULATION_TYPE", 
-"VOLUME_SATISFACTION_DURATION_TYPE", "VOLUME_SATISFACTION_FILTER_TYPE", "VOLUME_SATISFACTION_METRIC_TYPE", "VOLUME_TYPE", 
+"TimeToolTimeIntervalSmartInterval", "TimeToolTimeIntervalTimeOffset", "TrajectoryAxesCoordinatesType", "VectorComponentType", 
 "VectorGeometryToolAngle", "VectorGeometryToolAngleBetweenPlanes", "VectorGeometryToolAngleBetweenVectors", "VectorGeometryToolAngleDihedral", 
 "VectorGeometryToolAngleFactory", "VectorGeometryToolAngleGroup", "VectorGeometryToolAngleReference", "VectorGeometryToolAngleRotation", 
 "VectorGeometryToolAngleToPlane", "VectorGeometryToolAxes", "VectorGeometryToolAxesAlignedAndConstrained", "VectorGeometryToolAxesAngularOffset", 
@@ -94,52 +108,57 @@ __all__ = ["ABERRATION_TYPE", "ANGLE_TO_LOCATION_TYPE", "ANGLE_TYPE", "ASYMPTOTE
 "VectorGeometryToolAxesCustomScript", "VectorGeometryToolAxesFactory", "VectorGeometryToolAxesFixed", "VectorGeometryToolAxesFixedAtEpoch", 
 "VectorGeometryToolAxesGroup", "VectorGeometryToolAxesLabels", "VectorGeometryToolAxesLagrangeLibration", "VectorGeometryToolAxesModelAttachment", 
 "VectorGeometryToolAxesOnSurface", "VectorGeometryToolAxesPlugin", "VectorGeometryToolAxesReference", "VectorGeometryToolAxesSpinning", 
-"VectorGeometryToolAxesTrajectory", "VectorGeometryToolPlane", "VectorGeometryToolPlaneFactory", "VectorGeometryToolPlaneGroup", 
-"VectorGeometryToolPlaneLabels", "VectorGeometryToolPlaneNormal", "VectorGeometryToolPlaneQuadrant", "VectorGeometryToolPlaneReference", 
-"VectorGeometryToolPlaneTrajectory", "VectorGeometryToolPlaneTriad", "VectorGeometryToolPlaneTwoVector", "VectorGeometryToolPoint", 
-"VectorGeometryToolPointAtTimeInstant", "VectorGeometryToolPointBPlane", "VectorGeometryToolPointCentralBodyFixedOffset", 
+"VectorGeometryToolAxesTrajectory", "VectorGeometryToolComponentType", "VectorGeometryToolPlane", "VectorGeometryToolPlaneFactory", 
+"VectorGeometryToolPlaneGroup", "VectorGeometryToolPlaneLabels", "VectorGeometryToolPlaneNormal", "VectorGeometryToolPlaneQuadrant", 
+"VectorGeometryToolPlaneReference", "VectorGeometryToolPlaneTrajectory", "VectorGeometryToolPlaneTriad", "VectorGeometryToolPlaneTwoVector", 
+"VectorGeometryToolPoint", "VectorGeometryToolPointAtTimeInstant", "VectorGeometryToolPointBPlane", "VectorGeometryToolPointCentralBodyFixedOffset", 
 "VectorGeometryToolPointCentralBodyIntersect", "VectorGeometryToolPointCommonTasks", "VectorGeometryToolPointCovarianceGrazing", 
 "VectorGeometryToolPointFactory", "VectorGeometryToolPointFile", "VectorGeometryToolPointFixedInSystem", "VectorGeometryToolPointGlint", 
 "VectorGeometryToolPointGrazing", "VectorGeometryToolPointGroup", "VectorGeometryToolPointLagrangeLibration", "VectorGeometryToolPointModelAttachment", 
 "VectorGeometryToolPointOnSurface", "VectorGeometryToolPointPlaneIntersection", "VectorGeometryToolPointPlaneProjection", 
 "VectorGeometryToolPointPlugin", "VectorGeometryToolPointReference", "VectorGeometryToolPointSatelliteCollectionEntry", 
-"VectorGeometryToolSystem", "VectorGeometryToolSystemAssembled", "VectorGeometryToolSystemCommonTasks", "VectorGeometryToolSystemFactory", 
-"VectorGeometryToolSystemGroup", "VectorGeometryToolSystemOnSurface", "VectorGeometryToolSystemReference", "VectorGeometryToolVector", 
-"VectorGeometryToolVectorAngleRate", "VectorGeometryToolVectorAngularVelocity", "VectorGeometryToolVectorApoapsis", "VectorGeometryToolVectorConing", 
-"VectorGeometryToolVectorCross", "VectorGeometryToolVectorCustomScript", "VectorGeometryToolVectorDerivative", "VectorGeometryToolVectorDirectionToStar", 
-"VectorGeometryToolVectorDisplacement", "VectorGeometryToolVectorEccentricity", "VectorGeometryToolVectorFactory", "VectorGeometryToolVectorFixedAtEpoch", 
-"VectorGeometryToolVectorFixedAtTimeInstant", "VectorGeometryToolVectorFixedInAxes", "VectorGeometryToolVectorGroup", "VectorGeometryToolVectorLineOfNodes", 
-"VectorGeometryToolVectorLinearCombination", "VectorGeometryToolVectorModelAttachment", "VectorGeometryToolVectorOrbitAngularMomentum", 
-"VectorGeometryToolVectorOrbitNormal", "VectorGeometryToolVectorPeriapsis", "VectorGeometryToolVectorPlugin", "VectorGeometryToolVectorProjection", 
-"VectorGeometryToolVectorProjectionAlongVector", "VectorGeometryToolVectorReference", "VectorGeometryToolVectorReflection", 
-"VectorGeometryToolVectorRotationVector", "VectorGeometryToolVectorScalarLinearCombination", "VectorGeometryToolVectorScalarScaled", 
-"VectorGeometryToolVectorScaled", "VectorGeometryToolVectorSurfaceDisplacement", "VectorGeometryToolVectorTwoPlanesIntersection", 
-"VectorGeometryToolVectorVelocityAcceleration", "VectorGeometryToolWellKnownAxes", "VectorGeometryToolWellKnownEarthAxes", 
-"VectorGeometryToolWellKnownEarthSystems", "VectorGeometryToolWellKnownSunAxes", "VectorGeometryToolWellKnownSunSystems", 
-"VectorGeometryToolWellKnownSystems"]
+"VectorGeometryToolSamplingMethod", "VectorGeometryToolScaledVectorDimensionInheritanceOptionType", "VectorGeometryToolSystem", 
+"VectorGeometryToolSystemAssembled", "VectorGeometryToolSystemCommonTasks", "VectorGeometryToolSystemFactory", "VectorGeometryToolSystemGroup", 
+"VectorGeometryToolSystemOnSurface", "VectorGeometryToolSystemReference", "VectorGeometryToolVector", "VectorGeometryToolVectorAngleRate", 
+"VectorGeometryToolVectorAngularVelocity", "VectorGeometryToolVectorApoapsis", "VectorGeometryToolVectorConing", "VectorGeometryToolVectorCross", 
+"VectorGeometryToolVectorCustomScript", "VectorGeometryToolVectorDerivative", "VectorGeometryToolVectorDirectionToStar", 
+"VectorGeometryToolVectorDisplacement", "VectorGeometryToolVectorEccentricity", "VectorGeometryToolVectorFactory", "VectorGeometryToolVectorFile", 
+"VectorGeometryToolVectorFixedAtEpoch", "VectorGeometryToolVectorFixedAtTimeInstant", "VectorGeometryToolVectorFixedInAxes", 
+"VectorGeometryToolVectorGroup", "VectorGeometryToolVectorLineOfNodes", "VectorGeometryToolVectorLinearCombination", "VectorGeometryToolVectorModelAttachment", 
+"VectorGeometryToolVectorOrbitAngularMomentum", "VectorGeometryToolVectorOrbitNormal", "VectorGeometryToolVectorPeriapsis", 
+"VectorGeometryToolVectorPlugin", "VectorGeometryToolVectorProjection", "VectorGeometryToolVectorProjectionAlongVector", 
+"VectorGeometryToolVectorReference", "VectorGeometryToolVectorReflection", "VectorGeometryToolVectorRotationVector", "VectorGeometryToolVectorScalarLinearCombination", 
+"VectorGeometryToolVectorScalarScaled", "VectorGeometryToolVectorScaled", "VectorGeometryToolVectorSurfaceDisplacement", 
+"VectorGeometryToolVectorTwoPlanesIntersection", "VectorGeometryToolVectorVelocityAcceleration", "VectorGeometryToolWellKnownAxes", 
+"VectorGeometryToolWellKnownEarthAxes", "VectorGeometryToolWellKnownEarthSystems", "VectorGeometryToolWellKnownSunAxes", 
+"VectorGeometryToolWellKnownSunSystems", "VectorGeometryToolWellKnownSystems", "VectorType", "VolumeCombinedOperationType", 
+"VolumeFromGridEdgeType", "VolumeGridType", "VolumeSatisfactionAccumulationType", "VolumeSatisfactionDurationType", "VolumeSatisfactionFilterType", 
+"VolumeSatisfactionMetricType", "VolumeType"]
 
+from ctypes import POINTER
+from enum import IntEnum, IntFlag
 import typing
 
-from ctypes   import POINTER
-from enum     import IntEnum, IntFlag
-
-from .internal  import comutil          as agcom
-from .internal  import coclassutil      as agcls
-from .internal  import marshall         as agmarshall
-from .internal.comutil     import IUnknown, IDispatch
-from .internal.apiutil     import (InterfaceProxy, EnumeratorProxy, OutArg, 
-    initialize_from_source_object, get_interface_property, set_interface_attribute, 
-    set_class_attribute, SupportsDeleteCallback)
+from .internal import coclassutil as agcls, comutil as agcom, marshall as agmarshall
+from .internal.apiutil import (
+    EnumeratorProxy,
+    InterfaceProxy,
+    OutArg,
+    SupportsDeleteCallback,
+    get_interface_property,
+    initialize_from_source_object,
+    set_class_attribute,
+    set_interface_attribute,
+)
+from .internal.comutil import IDispatch, IUnknown
+from .stkutil import EulerOrientationSequenceType, ICartesian3Vector, IDirection, IOrientation, IPosition, Quantity
 from .utilities.exceptions import STKRuntimeError
-
-from .stkutil import (EULER_ORIENTATION_SEQUENCE_TYPE, ICartesian3Vector, IDirection, IOrientation,
-                      IPosition, Quantity)
 
 
 def _raise_uninitialized_error(*args):
     raise STKRuntimeError("Valid STK object model classes are returned from STK methods and should not be created independently.")
 
-class CALCULATION_SCALAR_TYPE(IntEnum):
+class CalculationScalarType(IntEnum):
     """Define available calculation scalar types."""
    
     UNKNOWN = -1
@@ -185,31 +204,31 @@ class CALCULATION_SCALAR_TYPE(IntEnum):
     CUSTOM_INLINE_SCRIPT = 19
     """Custom inline script scalar."""
 
-CALCULATION_SCALAR_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported calculation scalar types."
-CALCULATION_SCALAR_TYPE.ANGLE.__doc__ = "Scalar equal to angular displacement obtained from any angle in VGT."
-CALCULATION_SCALAR_TYPE.FIXED_AT_TIME_INSTANT.__doc__ = "Constant scalar created by evaluating input scalar calculation at specified reference time instant."
-CALCULATION_SCALAR_TYPE.CONSTANT.__doc__ = "Constant scalar value of specified dimension."
-CALCULATION_SCALAR_TYPE.DATA_ELEMENT.__doc__ = "Any time-dependent data element from STK data providers available for parent STK object."
-CALCULATION_SCALAR_TYPE.DERIVATIVE.__doc__ = "Derivative of input scalar calculation."
-CALCULATION_SCALAR_TYPE.ELAPSED_TIME.__doc__ = "Time elapsed since reference time instant."
-CALCULATION_SCALAR_TYPE.FILE.__doc__ = "Tabulated scalar calculation data loaded from specified file."
-CALCULATION_SCALAR_TYPE.FUNCTION.__doc__ = "Defined by performing one of specified functions on input scalar."
-CALCULATION_SCALAR_TYPE.INTEGRAL.__doc__ = "Integral of input scalar computed with respect to time using one of specified numerical methods and using one of specified accumulation types."
-CALCULATION_SCALAR_TYPE.FUNCTION_OF_2_VARIABLES.__doc__ = "Defined by performing one of specified binary operations on two scalar arguments."
-CALCULATION_SCALAR_TYPE.VECTOR_MAGNITUDE.__doc__ = "Scalar equal to magnitude of specified vector."
-CALCULATION_SCALAR_TYPE.PLUGIN.__doc__ = "A calc scalar plugin based on a COM object."
-CALCULATION_SCALAR_TYPE.CUSTOM_SCRIPT.__doc__ = "A calc scalar uses scripted algorithm in MATLAB (.m or .dll), Perl or VBScript to define its value and rate."
-CALCULATION_SCALAR_TYPE.SURFACE_DISTANCE_BETWEEN_POINTS.__doc__ = "Surface distance along the specified central body ellipsoid between two points (or their respective projections if specified at altitude)."
-CALCULATION_SCALAR_TYPE.DOT_PRODUCT.__doc__ = "Scalar equal to the dot product between two vectors."
-CALCULATION_SCALAR_TYPE.VECTOR_COMPONENT.__doc__ = "Scalar equal to the specified component of a vector when resolved in the specified axes."
-CALCULATION_SCALAR_TYPE.AVERAGE.__doc__ = "Average of input scalar computed with respect to time using one of specified numerical methods and using one of specified accumulation types."
-CALCULATION_SCALAR_TYPE.STANDARD_DEVIATION.__doc__ = "Standard deviation of input scalar computed with respect to time using one of specified numerical methods and using one of specified accumulation types."
-CALCULATION_SCALAR_TYPE.CALCULATION_ALONG_TRAJECTORY.__doc__ = "Calculations Along Trajectory. Use CalculationToolScalarAlongTrajectory to access it."
-CALCULATION_SCALAR_TYPE.CUSTOM_INLINE_SCRIPT.__doc__ = "Custom inline script scalar."
+CalculationScalarType.UNKNOWN.__doc__ = "Unknown or unsupported calculation scalar types."
+CalculationScalarType.ANGLE.__doc__ = "Scalar equal to angular displacement obtained from any angle in VGT."
+CalculationScalarType.FIXED_AT_TIME_INSTANT.__doc__ = "Constant scalar created by evaluating input scalar calculation at specified reference time instant."
+CalculationScalarType.CONSTANT.__doc__ = "Constant scalar value of specified dimension."
+CalculationScalarType.DATA_ELEMENT.__doc__ = "Any time-dependent data element from STK data providers available for parent STK object."
+CalculationScalarType.DERIVATIVE.__doc__ = "Derivative of input scalar calculation."
+CalculationScalarType.ELAPSED_TIME.__doc__ = "Time elapsed since reference time instant."
+CalculationScalarType.FILE.__doc__ = "Tabulated scalar calculation data loaded from specified file."
+CalculationScalarType.FUNCTION.__doc__ = "Defined by performing one of specified functions on input scalar."
+CalculationScalarType.INTEGRAL.__doc__ = "Integral of input scalar computed with respect to time using one of specified numerical methods and using one of specified accumulation types."
+CalculationScalarType.FUNCTION_OF_2_VARIABLES.__doc__ = "Defined by performing one of specified binary operations on two scalar arguments."
+CalculationScalarType.VECTOR_MAGNITUDE.__doc__ = "Scalar equal to magnitude of specified vector."
+CalculationScalarType.PLUGIN.__doc__ = "A calc scalar plugin based on a COM object."
+CalculationScalarType.CUSTOM_SCRIPT.__doc__ = "A calc scalar uses scripted algorithm in MATLAB (.m or .dll), Perl or VBScript to define its value and rate."
+CalculationScalarType.SURFACE_DISTANCE_BETWEEN_POINTS.__doc__ = "Surface distance along the specified central body ellipsoid between two points (or their respective projections if specified at altitude)."
+CalculationScalarType.DOT_PRODUCT.__doc__ = "Scalar equal to the dot product between two vectors."
+CalculationScalarType.VECTOR_COMPONENT.__doc__ = "Scalar equal to the specified component of a vector when resolved in the specified axes."
+CalculationScalarType.AVERAGE.__doc__ = "Average of input scalar computed with respect to time using one of specified numerical methods and using one of specified accumulation types."
+CalculationScalarType.STANDARD_DEVIATION.__doc__ = "Standard deviation of input scalar computed with respect to time using one of specified numerical methods and using one of specified accumulation types."
+CalculationScalarType.CALCULATION_ALONG_TRAJECTORY.__doc__ = "Calculations Along Trajectory. Use CalculationToolScalarAlongTrajectory to access it."
+CalculationScalarType.CUSTOM_INLINE_SCRIPT.__doc__ = "Custom inline script scalar."
 
-agcls.AgTypeNameMap["CALCULATION_SCALAR_TYPE"] = CALCULATION_SCALAR_TYPE
+agcls.AgTypeNameMap["CalculationScalarType"] = CalculationScalarType
 
-class CONDITION_COMBINED_OPERATION_TYPE(IntEnum):
+class ConditionCombinedOperationType(IntEnum):
     """Define scalar condition combined operation types."""
    
     AND = 1
@@ -221,14 +240,14 @@ class CONDITION_COMBINED_OPERATION_TYPE(IntEnum):
     MINUS = 4
     """Scalar condition combined MINUS operation."""
 
-CONDITION_COMBINED_OPERATION_TYPE.AND.__doc__ = "Scalar condition combined AND operation."
-CONDITION_COMBINED_OPERATION_TYPE.OR.__doc__ = "Scalar condition combined OR operation."
-CONDITION_COMBINED_OPERATION_TYPE.XOR.__doc__ = "Scalar condition combined XOR operation."
-CONDITION_COMBINED_OPERATION_TYPE.MINUS.__doc__ = "Scalar condition combined MINUS operation."
+ConditionCombinedOperationType.AND.__doc__ = "Scalar condition combined AND operation."
+ConditionCombinedOperationType.OR.__doc__ = "Scalar condition combined OR operation."
+ConditionCombinedOperationType.XOR.__doc__ = "Scalar condition combined XOR operation."
+ConditionCombinedOperationType.MINUS.__doc__ = "Scalar condition combined MINUS operation."
 
-agcls.AgTypeNameMap["CONDITION_COMBINED_OPERATION_TYPE"] = CONDITION_COMBINED_OPERATION_TYPE
+agcls.AgTypeNameMap["ConditionCombinedOperationType"] = ConditionCombinedOperationType
 
-class CONDITION_SET_TYPE(IntEnum):
+class ConditionSetType(IntEnum):
     """Define available condition set types."""
    
     UNKNOWN = -1
@@ -236,12 +255,12 @@ class CONDITION_SET_TYPE(IntEnum):
     SCALAR_THRESHOLDS = 0
     """Condition set placing multiple thresholds on specified scalar."""
 
-CONDITION_SET_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported condition set types."
-CONDITION_SET_TYPE.SCALAR_THRESHOLDS.__doc__ = "Condition set placing multiple thresholds on specified scalar."
+ConditionSetType.UNKNOWN.__doc__ = "Unknown or unsupported condition set types."
+ConditionSetType.SCALAR_THRESHOLDS.__doc__ = "Condition set placing multiple thresholds on specified scalar."
 
-agcls.AgTypeNameMap["CONDITION_SET_TYPE"] = CONDITION_SET_TYPE
+agcls.AgTypeNameMap["ConditionSetType"] = ConditionSetType
 
-class CONDITION_THRESHOLD_TYPE(IntEnum):
+class ConditionThresholdType(IntEnum):
     """Operations for Scalar Bounds Condition."""
    
     ABOVE_MINIMUM = 1
@@ -253,14 +272,14 @@ class CONDITION_THRESHOLD_TYPE(IntEnum):
     NOT_BETWEEN_MINIMUM_AND_MAXIMUM = 4
     """Bound is outside a minimum and maximum value."""
 
-CONDITION_THRESHOLD_TYPE.ABOVE_MINIMUM.__doc__ = "Bound is above a minimum value."
-CONDITION_THRESHOLD_TYPE.BELOW_MAXIMUM.__doc__ = "Bound is below a maximum value."
-CONDITION_THRESHOLD_TYPE.BETWEEN_MINIMUM_AND_MAXIMUM.__doc__ = "Bound is between a minimum and maximum value."
-CONDITION_THRESHOLD_TYPE.NOT_BETWEEN_MINIMUM_AND_MAXIMUM.__doc__ = "Bound is outside a minimum and maximum value."
+ConditionThresholdType.ABOVE_MINIMUM.__doc__ = "Bound is above a minimum value."
+ConditionThresholdType.BELOW_MAXIMUM.__doc__ = "Bound is below a maximum value."
+ConditionThresholdType.BETWEEN_MINIMUM_AND_MAXIMUM.__doc__ = "Bound is between a minimum and maximum value."
+ConditionThresholdType.NOT_BETWEEN_MINIMUM_AND_MAXIMUM.__doc__ = "Bound is outside a minimum and maximum value."
 
-agcls.AgTypeNameMap["CONDITION_THRESHOLD_TYPE"] = CONDITION_THRESHOLD_TYPE
+agcls.AgTypeNameMap["ConditionThresholdType"] = ConditionThresholdType
 
-class CONDITION_TYPE(IntEnum):
+class ConditionType(IntEnum):
     """Define available condition types."""
    
     UNKNOWN = -1
@@ -272,14 +291,14 @@ class CONDITION_TYPE(IntEnum):
     TRAJECTORY_WITHIN_VOLUME = 2
     """Condition placing point in volume."""
 
-CONDITION_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported condition type."
-CONDITION_TYPE.SCALAR_BOUNDS.__doc__ = "Condition placing bounds on specified scalar."
-CONDITION_TYPE.COMBINED.__doc__ = "Multiple conditiones on specified scalar."
-CONDITION_TYPE.TRAJECTORY_WITHIN_VOLUME.__doc__ = "Condition placing point in volume."
+ConditionType.UNKNOWN.__doc__ = "Unknown or unsupported condition type."
+ConditionType.SCALAR_BOUNDS.__doc__ = "Condition placing bounds on specified scalar."
+ConditionType.COMBINED.__doc__ = "Multiple conditiones on specified scalar."
+ConditionType.TRAJECTORY_WITHIN_VOLUME.__doc__ = "Condition placing point in volume."
 
-agcls.AgTypeNameMap["CONDITION_TYPE"] = CONDITION_TYPE
+agcls.AgTypeNameMap["ConditionType"] = ConditionType
 
-class INHERIT_DIMENSION_TYPE(IntEnum):
+class InheritDimensionType(IntEnum):
     """Define how dimension is inherited."""
    
     NONE = 0
@@ -289,13 +308,13 @@ class INHERIT_DIMENSION_TYPE(IntEnum):
     FROM_Y = 2
     """Inherit dimension from Y scalar."""
 
-INHERIT_DIMENSION_TYPE.NONE.__doc__ = "Do not inherit dimension."
-INHERIT_DIMENSION_TYPE.FROM_X.__doc__ = "Inherit dimension from X scalar."
-INHERIT_DIMENSION_TYPE.FROM_Y.__doc__ = "Inherit dimension from Y scalar."
+InheritDimensionType.NONE.__doc__ = "Do not inherit dimension."
+InheritDimensionType.FROM_X.__doc__ = "Inherit dimension from X scalar."
+InheritDimensionType.FROM_Y.__doc__ = "Inherit dimension from Y scalar."
 
-agcls.AgTypeNameMap["INHERIT_DIMENSION_TYPE"] = INHERIT_DIMENSION_TYPE
+agcls.AgTypeNameMap["InheritDimensionType"] = InheritDimensionType
 
-class EVENT_ARRAY_FILTER_TYPE(IntEnum):
+class EventArrayFilterType(IntEnum):
     """Event array filter types."""
    
     SKIP_TIME_STEP = 0
@@ -305,13 +324,13 @@ class EVENT_ARRAY_FILTER_TYPE(IntEnum):
     INTERVALS = 2
     """Intervals."""
 
-EVENT_ARRAY_FILTER_TYPE.SKIP_TIME_STEP.__doc__ = "Skip time step."
-EVENT_ARRAY_FILTER_TYPE.SKIP_COUNT.__doc__ = "Skip count."
-EVENT_ARRAY_FILTER_TYPE.INTERVALS.__doc__ = "Intervals."
+EventArrayFilterType.SKIP_TIME_STEP.__doc__ = "Skip time step."
+EventArrayFilterType.SKIP_COUNT.__doc__ = "Skip count."
+EventArrayFilterType.INTERVALS.__doc__ = "Intervals."
 
-agcls.AgTypeNameMap["EVENT_ARRAY_FILTER_TYPE"] = EVENT_ARRAY_FILTER_TYPE
+agcls.AgTypeNameMap["EventArrayFilterType"] = EventArrayFilterType
 
-class EVENT_ARRAY_TYPE(IntEnum):
+class EventArrayType(IntEnum):
     """Define available time array types."""
    
     UNKNOWN = -1
@@ -333,19 +352,19 @@ class EVENT_ARRAY_TYPE(IntEnum):
     FIXED_TIMES = 7
     """Time array containing specific times."""
 
-EVENT_ARRAY_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported time array types."
-EVENT_ARRAY_TYPE.EXTREMA.__doc__ = "Determine time of local minimum and/or maximum of specified scalar calculation."
-EVENT_ARRAY_TYPE.START_STOP_TIMES.__doc__ = "Defined by taking start and/or stop times of every interval in specified reference interval list and adding them to array."
-EVENT_ARRAY_TYPE.MERGED.__doc__ = "Defined by merging times from two other arrays by creating union of bounding intervals from two constituent arrays."
-EVENT_ARRAY_TYPE.FILTERED.__doc__ = "Defined by filtering times from original time array according to specified filtering method."
-EVENT_ARRAY_TYPE.FIXED_STEP.__doc__ = "Defined by taking fixed time steps from specified time reference and adding sampled times to array if they fall within specified bounding interval list."
-EVENT_ARRAY_TYPE.CONDITION_CROSSINGS.__doc__ = "Time array containing times at which specified condition changes its satisfaction status."
-EVENT_ARRAY_TYPE.SIGNALED.__doc__ = "Determine what time array is recorded at target clock location by performing signal transmission of original time array between base and target clock locations."
-EVENT_ARRAY_TYPE.FIXED_TIMES.__doc__ = "Time array containing specific times."
+EventArrayType.UNKNOWN.__doc__ = "Unknown or unsupported time array types."
+EventArrayType.EXTREMA.__doc__ = "Determine time of local minimum and/or maximum of specified scalar calculation."
+EventArrayType.START_STOP_TIMES.__doc__ = "Defined by taking start and/or stop times of every interval in specified reference interval list and adding them to array."
+EventArrayType.MERGED.__doc__ = "Defined by merging times from two other arrays by creating union of bounding intervals from two constituent arrays."
+EventArrayType.FILTERED.__doc__ = "Defined by filtering times from original time array according to specified filtering method."
+EventArrayType.FIXED_STEP.__doc__ = "Defined by taking fixed time steps from specified time reference and adding sampled times to array if they fall within specified bounding interval list."
+EventArrayType.CONDITION_CROSSINGS.__doc__ = "Time array containing times at which specified condition changes its satisfaction status."
+EventArrayType.SIGNALED.__doc__ = "Determine what time array is recorded at target clock location by performing signal transmission of original time array between base and target clock locations."
+EventArrayType.FIXED_TIMES.__doc__ = "Time array containing specific times."
 
-agcls.AgTypeNameMap["EVENT_ARRAY_TYPE"] = EVENT_ARRAY_TYPE
+agcls.AgTypeNameMap["EventArrayType"] = EventArrayType
 
-class EVENT_INTERVAL_COLLECTION_TYPE(IntEnum):
+class EventIntervalCollectionType(IntEnum):
     """Define available interval collection types."""
    
     UNKNOWN = -1
@@ -357,14 +376,14 @@ class EVENT_INTERVAL_COLLECTION_TYPE(IntEnum):
     CONDITION = 2
     """Interval collection containing intervals during which condition set is satisfied."""
 
-EVENT_INTERVAL_COLLECTION_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported interval collection types."
-EVENT_INTERVAL_COLLECTION_TYPE.LIGHTING.__doc__ = "Defined by computing sunlight, penumbra and umbra intervals as seen at specified location using specified selection of eclipsing bodies."
-EVENT_INTERVAL_COLLECTION_TYPE.SIGNALED.__doc__ = "Determine what interval list collection is recorded at target clock location by performing signal transmission of original interval list collection between base and target clock locations."
-EVENT_INTERVAL_COLLECTION_TYPE.CONDITION.__doc__ = "Interval collection containing intervals during which condition set is satisfied."
+EventIntervalCollectionType.UNKNOWN.__doc__ = "Unknown or unsupported interval collection types."
+EventIntervalCollectionType.LIGHTING.__doc__ = "Defined by computing sunlight, penumbra and umbra intervals as seen at specified location using specified selection of eclipsing bodies."
+EventIntervalCollectionType.SIGNALED.__doc__ = "Determine what interval list collection is recorded at target clock location by performing signal transmission of original interval list collection between base and target clock locations."
+EventIntervalCollectionType.CONDITION.__doc__ = "Interval collection containing intervals during which condition set is satisfied."
 
-agcls.AgTypeNameMap["EVENT_INTERVAL_COLLECTION_TYPE"] = EVENT_INTERVAL_COLLECTION_TYPE
+agcls.AgTypeNameMap["EventIntervalCollectionType"] = EventIntervalCollectionType
 
-class EVENT_INTERVAL_LIST_TYPE(IntEnum):
+class EventIntervalListType(IntEnum):
     """Define available interval list types."""
    
     UNKNOWN = -1
@@ -386,19 +405,19 @@ class EVENT_INTERVAL_LIST_TYPE(IntEnum):
     FIXED = 7
     """Interval list with individual intervals defined between explicitly specified start and stop times."""
 
-EVENT_INTERVAL_LIST_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported interval list types."
-EVENT_INTERVAL_LIST_TYPE.MERGED.__doc__ = "Interval list created by merging two constituent interval lists using specified logical operation."
-EVENT_INTERVAL_LIST_TYPE.FILTERED.__doc__ = "Defined by filtering intervals from original interval list using specified filtering method."
-EVENT_INTERVAL_LIST_TYPE.CONDITION.__doc__ = "Interval list containing intervals during which specified condition is satisfied (UI type name is Satisfaction)."
-EVENT_INTERVAL_LIST_TYPE.SCALED.__doc__ = "Interval List defined by scaling every interval in original interval list using either absolute or relative scale."
-EVENT_INTERVAL_LIST_TYPE.SIGNALED.__doc__ = "Determine what interval list is recorded at target clock location by performing signal transmission of original interval list between base and target clock locations."
-EVENT_INTERVAL_LIST_TYPE.TIME_OFFSET.__doc__ = "Interval List defined by shifting specified reference interval list by fixed time offset."
-EVENT_INTERVAL_LIST_TYPE.FILE.__doc__ = "Interval list loaded from specified interval file."
-EVENT_INTERVAL_LIST_TYPE.FIXED.__doc__ = "Interval list with individual intervals defined between explicitly specified start and stop times."
+EventIntervalListType.UNKNOWN.__doc__ = "Unknown or unsupported interval list types."
+EventIntervalListType.MERGED.__doc__ = "Interval list created by merging two constituent interval lists using specified logical operation."
+EventIntervalListType.FILTERED.__doc__ = "Defined by filtering intervals from original interval list using specified filtering method."
+EventIntervalListType.CONDITION.__doc__ = "Interval list containing intervals during which specified condition is satisfied (UI type name is Satisfaction)."
+EventIntervalListType.SCALED.__doc__ = "Interval List defined by scaling every interval in original interval list using either absolute or relative scale."
+EventIntervalListType.SIGNALED.__doc__ = "Determine what interval list is recorded at target clock location by performing signal transmission of original interval list between base and target clock locations."
+EventIntervalListType.TIME_OFFSET.__doc__ = "Interval List defined by shifting specified reference interval list by fixed time offset."
+EventIntervalListType.FILE.__doc__ = "Interval list loaded from specified interval file."
+EventIntervalListType.FIXED.__doc__ = "Interval list with individual intervals defined between explicitly specified start and stop times."
 
-agcls.AgTypeNameMap["EVENT_INTERVAL_LIST_TYPE"] = EVENT_INTERVAL_LIST_TYPE
+agcls.AgTypeNameMap["EventIntervalListType"] = EventIntervalListType
 
-class EVENT_INTERVAL_TYPE(IntEnum):
+class EventIntervalType(IntEnum):
     """Define available interval types."""
    
     UNKNOWN = -1
@@ -420,19 +439,19 @@ class EVENT_INTERVAL_TYPE(IntEnum):
     SMART_INTERVAL = 7
     """A smart interval."""
 
-EVENT_INTERVAL_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported interval types."
-EVENT_INTERVAL_TYPE.FIXED.__doc__ = "Interval defined between two explicitly specified start and stop times."
-EVENT_INTERVAL_TYPE.FIXED_DURATION.__doc__ = "Interval of fixed duration specified using start and stop offsets relative to specified reference time instant."
-EVENT_INTERVAL_TYPE.BETWEEN_TIME_INSTANTS.__doc__ = "Interval between specified start and stop time instants."
-EVENT_INTERVAL_TYPE.FROM_INTERVAL_LIST.__doc__ = "Interval created from specified interval list by using one of several selection methods."
-EVENT_INTERVAL_TYPE.SCALED.__doc__ = "Interval defined by scaling original interval using either absolute or relative scale."
-EVENT_INTERVAL_TYPE.SIGNALED.__doc__ = "Determine an interval recorded at a target clock location by performing signal transmission."
-EVENT_INTERVAL_TYPE.TIME_OFFSET.__doc__ = "Interval defined by shifting specified reference interval by fixed time offset."
-EVENT_INTERVAL_TYPE.SMART_INTERVAL.__doc__ = "A smart interval."
+EventIntervalType.UNKNOWN.__doc__ = "Unknown or unsupported interval types."
+EventIntervalType.FIXED.__doc__ = "Interval defined between two explicitly specified start and stop times."
+EventIntervalType.FIXED_DURATION.__doc__ = "Interval of fixed duration specified using start and stop offsets relative to specified reference time instant."
+EventIntervalType.BETWEEN_TIME_INSTANTS.__doc__ = "Interval between specified start and stop time instants."
+EventIntervalType.FROM_INTERVAL_LIST.__doc__ = "Interval created from specified interval list by using one of several selection methods."
+EventIntervalType.SCALED.__doc__ = "Interval defined by scaling original interval using either absolute or relative scale."
+EventIntervalType.SIGNALED.__doc__ = "Determine an interval recorded at a target clock location by performing signal transmission."
+EventIntervalType.TIME_OFFSET.__doc__ = "Interval defined by shifting specified reference interval by fixed time offset."
+EventIntervalType.SMART_INTERVAL.__doc__ = "A smart interval."
 
-agcls.AgTypeNameMap["EVENT_INTERVAL_TYPE"] = EVENT_INTERVAL_TYPE
+agcls.AgTypeNameMap["EventIntervalType"] = EventIntervalType
 
-class EVENT_LIST_MERGE_OPERATION(IntEnum):
+class EventListMergeOperation(IntEnum):
     """Define merge operations for interval lists."""
    
     AND = 0
@@ -444,14 +463,14 @@ class EVENT_LIST_MERGE_OPERATION(IntEnum):
     MINUS = 3
     """Intervals in A and not in B."""
 
-EVENT_LIST_MERGE_OPERATION.AND.__doc__ = "Intervals both in A and B."
-EVENT_LIST_MERGE_OPERATION.OR.__doc__ = "Intervals in A or B."
-EVENT_LIST_MERGE_OPERATION.XOR.__doc__ = "Intervals in A or B but not in both."
-EVENT_LIST_MERGE_OPERATION.MINUS.__doc__ = "Intervals in A and not in B."
+EventListMergeOperation.AND.__doc__ = "Intervals both in A and B."
+EventListMergeOperation.OR.__doc__ = "Intervals in A or B."
+EventListMergeOperation.XOR.__doc__ = "Intervals in A or B but not in both."
+EventListMergeOperation.MINUS.__doc__ = "Intervals in A and not in B."
 
-agcls.AgTypeNameMap["EVENT_LIST_MERGE_OPERATION"] = EVENT_LIST_MERGE_OPERATION
+agcls.AgTypeNameMap["EventListMergeOperation"] = EventListMergeOperation
 
-class TIME_EVENT_TYPE(IntEnum):
+class TimeEventType(IntEnum):
     """Define available time instant types."""
    
     UNKNOWN = -1
@@ -469,17 +488,17 @@ class TIME_EVENT_TYPE(IntEnum):
     SMART_EPOCH = 5
     """A smart epoch."""
 
-TIME_EVENT_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported time instant types."
-TIME_EVENT_TYPE.EPOCH.__doc__ = "Time instant set at specified date/time."
-TIME_EVENT_TYPE.EXTREMUM.__doc__ = "Determine time of global minimum or maximum of specified scalar calculation."
-TIME_EVENT_TYPE.FROM_INTERVAL.__doc__ = "Start or stop time of selected reference interval."
-TIME_EVENT_TYPE.SIGNALED.__doc__ = "Determine what time is recorded at target clock location by performing signal transmission of original time instant between base and target clock locations."
-TIME_EVENT_TYPE.TIME_OFFSET.__doc__ = "Time instant at fixed offset from specified reference time instant."
-TIME_EVENT_TYPE.SMART_EPOCH.__doc__ = "A smart epoch."
+TimeEventType.UNKNOWN.__doc__ = "Unknown or unsupported time instant types."
+TimeEventType.EPOCH.__doc__ = "Time instant set at specified date/time."
+TimeEventType.EXTREMUM.__doc__ = "Determine time of global minimum or maximum of specified scalar calculation."
+TimeEventType.FROM_INTERVAL.__doc__ = "Start or stop time of selected reference interval."
+TimeEventType.SIGNALED.__doc__ = "Determine what time is recorded at target clock location by performing signal transmission of original time instant between base and target clock locations."
+TimeEventType.TIME_OFFSET.__doc__ = "Time instant at fixed offset from specified reference time instant."
+TimeEventType.SMART_EPOCH.__doc__ = "A smart epoch."
 
-agcls.AgTypeNameMap["TIME_EVENT_TYPE"] = TIME_EVENT_TYPE
+agcls.AgTypeNameMap["TimeEventType"] = TimeEventType
 
-class EXTREMUM_TYPE(IntFlag):
+class ExtremumType(IntFlag):
     """These constants are utilized when finding a local or global minimum or maximum, or the threshold crossing."""
    
     MINIMUM = 1
@@ -487,12 +506,12 @@ class EXTREMUM_TYPE(IntFlag):
     MAXIMUM = 2
     """Find the maximum value."""
 
-EXTREMUM_TYPE.MINIMUM.__doc__ = "Find the minimum value."
-EXTREMUM_TYPE.MAXIMUM.__doc__ = "Find the maximum value."
+ExtremumType.MINIMUM.__doc__ = "Find the minimum value."
+ExtremumType.MAXIMUM.__doc__ = "Find the maximum value."
 
-agcls.AgTypeNameMap["EXTREMUM_TYPE"] = EXTREMUM_TYPE
+agcls.AgTypeNameMap["ExtremumType"] = ExtremumType
 
-class FILE_INTERPOLATOR_TYPE(IntEnum):
+class FileInterpolatorType(IntEnum):
     """Interpolator types."""
    
     INVALID = -1
@@ -508,16 +527,16 @@ class FILE_INTERPOLATOR_TYPE(IntEnum):
     HOLD_NEAREST = 5
     """Holds the value at the closest sample time (either the previous sample or the next sample) to any requested time."""
 
-FILE_INTERPOLATOR_TYPE.INVALID.__doc__ = "Unknown or invalid interpolator."
-FILE_INTERPOLATOR_TYPE.LAGRANGE.__doc__ = "Lagrange interpolation."
-FILE_INTERPOLATOR_TYPE.HERMITE.__doc__ = "Hermite interpolation."
-FILE_INTERPOLATOR_TYPE.HOLD_PREVIOUS.__doc__ = "Holds the value at the closest previous sample time to any requested time."
-FILE_INTERPOLATOR_TYPE.HOLD_NEXT.__doc__ = "Holds the value at the closest next sample time to any requested time."
-FILE_INTERPOLATOR_TYPE.HOLD_NEAREST.__doc__ = "Holds the value at the closest sample time (either the previous sample or the next sample) to any requested time."
+FileInterpolatorType.INVALID.__doc__ = "Unknown or invalid interpolator."
+FileInterpolatorType.LAGRANGE.__doc__ = "Lagrange interpolation."
+FileInterpolatorType.HERMITE.__doc__ = "Hermite interpolation."
+FileInterpolatorType.HOLD_PREVIOUS.__doc__ = "Holds the value at the closest previous sample time to any requested time."
+FileInterpolatorType.HOLD_NEXT.__doc__ = "Holds the value at the closest next sample time to any requested time."
+FileInterpolatorType.HOLD_NEAREST.__doc__ = "Holds the value at the closest sample time (either the previous sample or the next sample) to any requested time."
 
-agcls.AgTypeNameMap["FILE_INTERPOLATOR_TYPE"] = FILE_INTERPOLATOR_TYPE
+agcls.AgTypeNameMap["FileInterpolatorType"] = FileInterpolatorType
 
-class QUADRATURE_TYPE(IntEnum):
+class QuadratureType(IntEnum):
     """Integral types."""
    
     FIXED_STEP_SIMPSON = 2
@@ -527,13 +546,13 @@ class QUADRATURE_TYPE(IntEnum):
     ADAPTIVE_STEP = 3
     """Adaptive Lobatto integral method."""
 
-QUADRATURE_TYPE.FIXED_STEP_SIMPSON.__doc__ = "Simpson integral method."
-QUADRATURE_TYPE.FIXED_STEP_TRAPEZOID.__doc__ = "Trapezoidal integral method."
-QUADRATURE_TYPE.ADAPTIVE_STEP.__doc__ = "Adaptive Lobatto integral method."
+QuadratureType.FIXED_STEP_SIMPSON.__doc__ = "Simpson integral method."
+QuadratureType.FIXED_STEP_TRAPEZOID.__doc__ = "Trapezoidal integral method."
+QuadratureType.ADAPTIVE_STEP.__doc__ = "Adaptive Lobatto integral method."
 
-agcls.AgTypeNameMap["QUADRATURE_TYPE"] = QUADRATURE_TYPE
+agcls.AgTypeNameMap["QuadratureType"] = QuadratureType
 
-class INTEGRATION_WINDOW_TYPE(IntEnum):
+class IntegrationWindowType(IntEnum):
     """Define the interval of times during which an integral is evaluated."""
    
     TOTAL = 0
@@ -545,14 +564,14 @@ class INTEGRATION_WINDOW_TYPE(IntEnum):
     SLIDING_WINDOW = 3
     """Define the integral's window as the interval of times centered around the current time with the specified front and back durations."""
 
-INTEGRATION_WINDOW_TYPE.TOTAL.__doc__ = "Define the integral's window as the entire available interval list which effectively makes the value of the integral constant."
-INTEGRATION_WINDOW_TYPE.CUMULATIVE_TO_CURRENT.__doc__ = "Define the integral's window as the window of time from the beginning of the available interval until the current time, i.e. window duration grows over time."
-INTEGRATION_WINDOW_TYPE.CUMULATIVE_FROM_CURRENT.__doc__ = "Define the integral's window as window of time from the current time until the end of the available interval, i.e. window duration decreases over time."
-INTEGRATION_WINDOW_TYPE.SLIDING_WINDOW.__doc__ = "Define the integral's window as the interval of times centered around the current time with the specified front and back durations."
+IntegrationWindowType.TOTAL.__doc__ = "Define the integral's window as the entire available interval list which effectively makes the value of the integral constant."
+IntegrationWindowType.CUMULATIVE_TO_CURRENT.__doc__ = "Define the integral's window as the window of time from the beginning of the available interval until the current time, i.e. window duration grows over time."
+IntegrationWindowType.CUMULATIVE_FROM_CURRENT.__doc__ = "Define the integral's window as window of time from the current time until the end of the available interval, i.e. window duration decreases over time."
+IntegrationWindowType.SLIDING_WINDOW.__doc__ = "Define the integral's window as the interval of times centered around the current time with the specified front and back durations."
 
-agcls.AgTypeNameMap["INTEGRATION_WINDOW_TYPE"] = INTEGRATION_WINDOW_TYPE
+agcls.AgTypeNameMap["IntegrationWindowType"] = IntegrationWindowType
 
-class INTERPOLATON_METHOD_TYPE(IntEnum):
+class InterpolationMethodType(IntEnum):
     """Interpolator types."""
    
     INVALID = -1
@@ -562,13 +581,13 @@ class INTERPOLATON_METHOD_TYPE(IntEnum):
     HERMITE = 2
     """Hermite interpolation."""
 
-INTERPOLATON_METHOD_TYPE.INVALID.__doc__ = "Unknown or invalid interpolator."
-INTERPOLATON_METHOD_TYPE.LAGRANGE.__doc__ = "Lagrange interpolation."
-INTERPOLATON_METHOD_TYPE.HERMITE.__doc__ = "Hermite interpolation."
+InterpolationMethodType.INVALID.__doc__ = "Unknown or invalid interpolator."
+InterpolationMethodType.LAGRANGE.__doc__ = "Lagrange interpolation."
+InterpolationMethodType.HERMITE.__doc__ = "Hermite interpolation."
 
-agcls.AgTypeNameMap["INTERPOLATON_METHOD_TYPE"] = INTERPOLATON_METHOD_TYPE
+agcls.AgTypeNameMap["InterpolationMethodType"] = InterpolationMethodType
 
-class INTERVAL_DURATION_TYPE(IntEnum):
+class IntervalDurationType(IntEnum):
     """Duration for filtering intervals or gaps from interval lists or time arrays."""
    
     AT_LEAST = 0
@@ -576,12 +595,12 @@ class INTERVAL_DURATION_TYPE(IntEnum):
     AT_MOST = 1
     """Filter by at most a specified number of seconds."""
 
-INTERVAL_DURATION_TYPE.AT_LEAST.__doc__ = "Filter by at least a specified number of seconds."
-INTERVAL_DURATION_TYPE.AT_MOST.__doc__ = "Filter by at most a specified number of seconds."
+IntervalDurationType.AT_LEAST.__doc__ = "Filter by at least a specified number of seconds."
+IntervalDurationType.AT_MOST.__doc__ = "Filter by at most a specified number of seconds."
 
-agcls.AgTypeNameMap["INTERVAL_DURATION_TYPE"] = INTERVAL_DURATION_TYPE
+agcls.AgTypeNameMap["IntervalDurationType"] = IntervalDurationType
 
-class INTERVAL_FROM_INTERVAL_LIST_SELECTION_TYPE(IntEnum):
+class IntervalFromIntervalListSelectionType(IntEnum):
     """Select the method to choose an interval from an interval list."""
    
     FROM_START = 1
@@ -599,17 +618,17 @@ class INTERVAL_FROM_INTERVAL_LIST_SELECTION_TYPE(IntEnum):
     SPAN = 100
     """Select the interval that is the span of the interval list."""
 
-INTERVAL_FROM_INTERVAL_LIST_SELECTION_TYPE.FROM_START.__doc__ = "Select an interval by counting a specified number from the first interval."
-INTERVAL_FROM_INTERVAL_LIST_SELECTION_TYPE.FROM_END.__doc__ = "Select an interval by counting a specified number back from the last interval."
-INTERVAL_FROM_INTERVAL_LIST_SELECTION_TYPE.MAXIMUM_DURATION.__doc__ = "Select the interval with the largest duration."
-INTERVAL_FROM_INTERVAL_LIST_SELECTION_TYPE.MINIMUM_DURATION.__doc__ = "Select the interval with the smallest duration."
-INTERVAL_FROM_INTERVAL_LIST_SELECTION_TYPE.MAXIMUM_GAP.__doc__ = "Select the largest gap between intervals."
-INTERVAL_FROM_INTERVAL_LIST_SELECTION_TYPE.MIN_GAP.__doc__ = "Select the largest gap between intervals."
-INTERVAL_FROM_INTERVAL_LIST_SELECTION_TYPE.SPAN.__doc__ = "Select the interval that is the span of the interval list."
+IntervalFromIntervalListSelectionType.FROM_START.__doc__ = "Select an interval by counting a specified number from the first interval."
+IntervalFromIntervalListSelectionType.FROM_END.__doc__ = "Select an interval by counting a specified number back from the last interval."
+IntervalFromIntervalListSelectionType.MAXIMUM_DURATION.__doc__ = "Select the interval with the largest duration."
+IntervalFromIntervalListSelectionType.MINIMUM_DURATION.__doc__ = "Select the interval with the smallest duration."
+IntervalFromIntervalListSelectionType.MAXIMUM_GAP.__doc__ = "Select the largest gap between intervals."
+IntervalFromIntervalListSelectionType.MIN_GAP.__doc__ = "Select the largest gap between intervals."
+IntervalFromIntervalListSelectionType.SPAN.__doc__ = "Select the interval that is the span of the interval list."
 
-agcls.AgTypeNameMap["INTERVAL_FROM_INTERVAL_LIST_SELECTION_TYPE"] = INTERVAL_FROM_INTERVAL_LIST_SELECTION_TYPE
+agcls.AgTypeNameMap["IntervalFromIntervalListSelectionType"] = IntervalFromIntervalListSelectionType
 
-class PARAMETER_SET_TYPE(IntEnum):
+class ParameterSetType(IntEnum):
     """Define parameter set types."""
    
     UNKNOWN = -1
@@ -625,16 +644,16 @@ class PARAMETER_SET_TYPE(IntEnum):
     VECTOR = 4
     """A parameter set type is defined by identifying vector in reference axes."""
 
-PARAMETER_SET_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported parameter set."
-PARAMETER_SET_TYPE.ATTITUDE.__doc__ = "A parameter set type is defined by identifying one set of axes in reference to another."
-PARAMETER_SET_TYPE.GROUND_TRAJECTORY.__doc__ = "A parameter set type is defined by identifying location in reference central body."
-PARAMETER_SET_TYPE.TRAJECTORY.__doc__ = "A parameter set type is defined by identifying location in reference coordinate system."
-PARAMETER_SET_TYPE.ORBIT.__doc__ = "A parameter set type is defined by identifying orbiting point and its central body."
-PARAMETER_SET_TYPE.VECTOR.__doc__ = "A parameter set type is defined by identifying vector in reference axes."
+ParameterSetType.UNKNOWN.__doc__ = "Unknown or unsupported parameter set."
+ParameterSetType.ATTITUDE.__doc__ = "A parameter set type is defined by identifying one set of axes in reference to another."
+ParameterSetType.GROUND_TRAJECTORY.__doc__ = "A parameter set type is defined by identifying location in reference central body."
+ParameterSetType.TRAJECTORY.__doc__ = "A parameter set type is defined by identifying location in reference coordinate system."
+ParameterSetType.ORBIT.__doc__ = "A parameter set type is defined by identifying orbiting point and its central body."
+ParameterSetType.VECTOR.__doc__ = "A parameter set type is defined by identifying vector in reference axes."
 
-agcls.AgTypeNameMap["PARAMETER_SET_TYPE"] = PARAMETER_SET_TYPE
+agcls.AgTypeNameMap["ParameterSetType"] = ParameterSetType
 
-class INTERVAL_PRUNE_FILTER_TYPE(IntEnum):
+class IntervalPruneFilterType(IntEnum):
     """Specify the filter for filtering interval lists or time arrays."""
    
     UNKNOWN = 0
@@ -652,17 +671,17 @@ class INTERVAL_PRUNE_FILTER_TYPE(IntEnum):
     RELATIVE_SATISFACTION_INTERVALS = 6
     """Relative Satisfaction Intervals selects intervals which satisfy additional condition and duration."""
 
-INTERVAL_PRUNE_FILTER_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported prune filter."
-INTERVAL_PRUNE_FILTER_TYPE.FIRST_INTERVALS.__doc__ = "Select specified number of first intervals from original list."
-INTERVAL_PRUNE_FILTER_TYPE.LAST_INTERVALS.__doc__ = "Select specified number of last intervals from original list."
-INTERVAL_PRUNE_FILTER_TYPE.INTERVALS.__doc__ = "Select intervals which satisfy additional duration condition."
-INTERVAL_PRUNE_FILTER_TYPE.GAPS.__doc__ = "Select gaps between intervals which satisfy additional duration condition."
-INTERVAL_PRUNE_FILTER_TYPE.SATISFACTION_INTERVALS.__doc__ = "Satisfaction Intervals selects intervals which satisfy additional condition and duration."
-INTERVAL_PRUNE_FILTER_TYPE.RELATIVE_SATISFACTION_INTERVALS.__doc__ = "Relative Satisfaction Intervals selects intervals which satisfy additional condition and duration."
+IntervalPruneFilterType.UNKNOWN.__doc__ = "Unknown or unsupported prune filter."
+IntervalPruneFilterType.FIRST_INTERVALS.__doc__ = "Select specified number of first intervals from original list."
+IntervalPruneFilterType.LAST_INTERVALS.__doc__ = "Select specified number of last intervals from original list."
+IntervalPruneFilterType.INTERVALS.__doc__ = "Select intervals which satisfy additional duration condition."
+IntervalPruneFilterType.GAPS.__doc__ = "Select gaps between intervals which satisfy additional duration condition."
+IntervalPruneFilterType.SATISFACTION_INTERVALS.__doc__ = "Satisfaction Intervals selects intervals which satisfy additional condition and duration."
+IntervalPruneFilterType.RELATIVE_SATISFACTION_INTERVALS.__doc__ = "Relative Satisfaction Intervals selects intervals which satisfy additional condition and duration."
 
-agcls.AgTypeNameMap["INTERVAL_PRUNE_FILTER_TYPE"] = INTERVAL_PRUNE_FILTER_TYPE
+agcls.AgTypeNameMap["IntervalPruneFilterType"] = IntervalPruneFilterType
 
-class SAMPLE_REFERENCE_TIME_TYPE(IntEnum):
+class SampleReferenceTimeType(IntEnum):
     """Event array reference type."""
    
     TIME_INSTANT = 0
@@ -676,15 +695,15 @@ class SAMPLE_REFERENCE_TIME_TYPE(IntEnum):
     STOP_OF_INTERVAL_LIST = 4
     """Use the stop of each interval list as the reference time."""
 
-SAMPLE_REFERENCE_TIME_TYPE.TIME_INSTANT.__doc__ = "Use a Time Instant as the reference time."
-SAMPLE_REFERENCE_TIME_TYPE.START_OF_EACH_INTERVAL.__doc__ = "Use the start of each interval as the reference time."
-SAMPLE_REFERENCE_TIME_TYPE.STOP_OF_EACH_INTERVAL.__doc__ = "Use the stop of each interval as the reference time."
-SAMPLE_REFERENCE_TIME_TYPE.START_OF_INTERVAL_LIST.__doc__ = "Use the start of each interval list as the reference time."
-SAMPLE_REFERENCE_TIME_TYPE.STOP_OF_INTERVAL_LIST.__doc__ = "Use the stop of each interval list as the reference time."
+SampleReferenceTimeType.TIME_INSTANT.__doc__ = "Use a Time Instant as the reference time."
+SampleReferenceTimeType.START_OF_EACH_INTERVAL.__doc__ = "Use the start of each interval as the reference time."
+SampleReferenceTimeType.STOP_OF_EACH_INTERVAL.__doc__ = "Use the stop of each interval as the reference time."
+SampleReferenceTimeType.START_OF_INTERVAL_LIST.__doc__ = "Use the start of each interval list as the reference time."
+SampleReferenceTimeType.STOP_OF_INTERVAL_LIST.__doc__ = "Use the stop of each interval list as the reference time."
 
-agcls.AgTypeNameMap["SAMPLE_REFERENCE_TIME_TYPE"] = SAMPLE_REFERENCE_TIME_TYPE
+agcls.AgTypeNameMap["SampleReferenceTimeType"] = SampleReferenceTimeType
 
-class VECTOR_GEOMETRY_TOOL_SAMPLING_METHOD(IntEnum):
+class VectorGeometryToolSamplingMethod(IntEnum):
     """Define the Sampling Method."""
    
     UNKNOWN = 0
@@ -696,14 +715,14 @@ class VECTOR_GEOMETRY_TOOL_SAMPLING_METHOD(IntEnum):
     CURVATURE_TOLERANCE = 3
     """Curvature tolerance also uses changes in slope between samples."""
 
-VECTOR_GEOMETRY_TOOL_SAMPLING_METHOD.UNKNOWN.__doc__ = "Unknown or unsupported sampling method."
-VECTOR_GEOMETRY_TOOL_SAMPLING_METHOD.FIXED_STEP.__doc__ = "Fixed step sampling method."
-VECTOR_GEOMETRY_TOOL_SAMPLING_METHOD.RELATIVE_TOLERANCE.__doc__ = "Relative tolerance method uses a combination of relative and absolute tolerance changes in scalar values between samples."
-VECTOR_GEOMETRY_TOOL_SAMPLING_METHOD.CURVATURE_TOLERANCE.__doc__ = "Curvature tolerance also uses changes in slope between samples."
+VectorGeometryToolSamplingMethod.UNKNOWN.__doc__ = "Unknown or unsupported sampling method."
+VectorGeometryToolSamplingMethod.FIXED_STEP.__doc__ = "Fixed step sampling method."
+VectorGeometryToolSamplingMethod.RELATIVE_TOLERANCE.__doc__ = "Relative tolerance method uses a combination of relative and absolute tolerance changes in scalar values between samples."
+VectorGeometryToolSamplingMethod.CURVATURE_TOLERANCE.__doc__ = "Curvature tolerance also uses changes in slope between samples."
 
-agcls.AgTypeNameMap["VECTOR_GEOMETRY_TOOL_SAMPLING_METHOD"] = VECTOR_GEOMETRY_TOOL_SAMPLING_METHOD
+agcls.AgTypeNameMap["VectorGeometryToolSamplingMethod"] = VectorGeometryToolSamplingMethod
 
-class SATISFACTION_CROSSING(IntEnum):
+class SatisfactionCrossing(IntEnum):
     """Direction crossing flags."""
    
     NONE = 0
@@ -713,13 +732,13 @@ class SATISFACTION_CROSSING(IntEnum):
     OUT = 2
     """Satisfaction occurs when crossing from on to off condition."""
 
-SATISFACTION_CROSSING.NONE.__doc__ = "Use either off-to-on or on-to-off condition to determine satisfaction."
-SATISFACTION_CROSSING.IN.__doc__ = "Satisfaction occurs when crossing from off to on condition."
-SATISFACTION_CROSSING.OUT.__doc__ = "Satisfaction occurs when crossing from on to off condition."
+SatisfactionCrossing.NONE.__doc__ = "Use either off-to-on or on-to-off condition to determine satisfaction."
+SatisfactionCrossing.IN.__doc__ = "Satisfaction occurs when crossing from off to on condition."
+SatisfactionCrossing.OUT.__doc__ = "Satisfaction occurs when crossing from on to off condition."
 
-agcls.AgTypeNameMap["SATISFACTION_CROSSING"] = SATISFACTION_CROSSING
+agcls.AgTypeNameMap["SatisfactionCrossing"] = SatisfactionCrossing
 
-class SAVE_DATA_TYPE(IntEnum):
+class SaveDataType(IntEnum):
     """Method for saving computed data."""
    
     APPLICATION_SETTINGS = -1
@@ -729,13 +748,13 @@ class SAVE_DATA_TYPE(IntEnum):
     NO = 10
     """Don't save computed data, recompute data on load."""
 
-SAVE_DATA_TYPE.APPLICATION_SETTINGS.__doc__ = "Use the application setting to determine whether computed data should be saved/loaded."
-SAVE_DATA_TYPE.YES.__doc__ = "Save/load computed data."
-SAVE_DATA_TYPE.NO.__doc__ = "Don't save computed data, recompute data on load."
+SaveDataType.APPLICATION_SETTINGS.__doc__ = "Use the application setting to determine whether computed data should be saved/loaded."
+SaveDataType.YES.__doc__ = "Save/load computed data."
+SaveDataType.NO.__doc__ = "Don't save computed data, recompute data on load."
 
-agcls.AgTypeNameMap["SAVE_DATA_TYPE"] = SAVE_DATA_TYPE
+agcls.AgTypeNameMap["SaveDataType"] = SaveDataType
 
-class SIGNAL_PATH_REFERENCE_SYSTEM(IntEnum):
+class SignalPathReferenceSystem(IntEnum):
     """Signal path reference system types."""
    
     USE_ACCESS_DEFAULT = -1
@@ -747,14 +766,14 @@ class SIGNAL_PATH_REFERENCE_SYSTEM(IntEnum):
     CUSTOM = 2
     """User will specify a system."""
 
-SIGNAL_PATH_REFERENCE_SYSTEM.USE_ACCESS_DEFAULT.__doc__ = "Use Access default system."
-SIGNAL_PATH_REFERENCE_SYSTEM.CENTRAL_BODY_INERTIAL.__doc__ = "Use central body inertial system."
-SIGNAL_PATH_REFERENCE_SYSTEM.SOLAR_SYSTEM_BARYCENTER.__doc__ = "Use solar system barycenter system."
-SIGNAL_PATH_REFERENCE_SYSTEM.CUSTOM.__doc__ = "User will specify a system."
+SignalPathReferenceSystem.USE_ACCESS_DEFAULT.__doc__ = "Use Access default system."
+SignalPathReferenceSystem.CENTRAL_BODY_INERTIAL.__doc__ = "Use central body inertial system."
+SignalPathReferenceSystem.SOLAR_SYSTEM_BARYCENTER.__doc__ = "Use solar system barycenter system."
+SignalPathReferenceSystem.CUSTOM.__doc__ = "User will specify a system."
 
-agcls.AgTypeNameMap["SIGNAL_PATH_REFERENCE_SYSTEM"] = SIGNAL_PATH_REFERENCE_SYSTEM
+agcls.AgTypeNameMap["SignalPathReferenceSystem"] = SignalPathReferenceSystem
 
-class SMART_EPOCH_STATE(IntEnum):
+class SmartEpochState(IntEnum):
     """Smart epoch states."""
    
     EXPLICIT = 0
@@ -762,12 +781,12 @@ class SMART_EPOCH_STATE(IntEnum):
     IMPLICIT = 3
     """Smart epoch is specified implicitly."""
 
-SMART_EPOCH_STATE.EXPLICIT.__doc__ = "Smart epoch is specified explicitly using a time."
-SMART_EPOCH_STATE.IMPLICIT.__doc__ = "Smart epoch is specified implicitly."
+SmartEpochState.EXPLICIT.__doc__ = "Smart epoch is specified explicitly using a time."
+SmartEpochState.IMPLICIT.__doc__ = "Smart epoch is specified implicitly."
 
-agcls.AgTypeNameMap["SMART_EPOCH_STATE"] = SMART_EPOCH_STATE
+agcls.AgTypeNameMap["SmartEpochState"] = SmartEpochState
 
-class SMART_INTERVAL_STATE(IntEnum):
+class SmartIntervalState(IntEnum):
     """Smart interval states."""
    
     EXPLICIT = 0
@@ -781,15 +800,15 @@ class SMART_INTERVAL_STATE(IntEnum):
     EXPLICIT_DURATION = 3
     """Smart interval is specified using a start time and explicit duration."""
 
-SMART_INTERVAL_STATE.EXPLICIT.__doc__ = "Smart interval is specified explicitly using start/stop times."
-SMART_INTERVAL_STATE.IMPLICIT.__doc__ = "Smart interval is specified implicitly using start/stop times."
-SMART_INTERVAL_STATE.START_STOP.__doc__ = "Smart interval is specified using smart epochs."
-SMART_INTERVAL_STATE.START_DURATION.__doc__ = "Smart interval is specified using a start epoch and duration."
-SMART_INTERVAL_STATE.EXPLICIT_DURATION.__doc__ = "Smart interval is specified using a start time and explicit duration."
+SmartIntervalState.EXPLICIT.__doc__ = "Smart interval is specified explicitly using start/stop times."
+SmartIntervalState.IMPLICIT.__doc__ = "Smart interval is specified implicitly using start/stop times."
+SmartIntervalState.START_STOP.__doc__ = "Smart interval is specified using smart epochs."
+SmartIntervalState.START_DURATION.__doc__ = "Smart interval is specified using a start epoch and duration."
+SmartIntervalState.EXPLICIT_DURATION.__doc__ = "Smart interval is specified using a start time and explicit duration."
 
-agcls.AgTypeNameMap["SMART_INTERVAL_STATE"] = SMART_INTERVAL_STATE
+agcls.AgTypeNameMap["SmartIntervalState"] = SmartIntervalState
 
-class SPEED_TYPE(IntEnum):
+class SpeedType(IntEnum):
     """Define various speed options."""
    
     LIGHT_TRANSMISSION_SPEED = 1
@@ -797,12 +816,12 @@ class SPEED_TYPE(IntEnum):
     CUSTOM_TRANSMISSION_SPEED = 2
     """Custom transmission speed."""
 
-SPEED_TYPE.LIGHT_TRANSMISSION_SPEED.__doc__ = "Light transmission speed."
-SPEED_TYPE.CUSTOM_TRANSMISSION_SPEED.__doc__ = "Custom transmission speed."
+SpeedType.LIGHT_TRANSMISSION_SPEED.__doc__ = "Light transmission speed."
+SpeedType.CUSTOM_TRANSMISSION_SPEED.__doc__ = "Custom transmission speed."
 
-agcls.AgTypeNameMap["SPEED_TYPE"] = SPEED_TYPE
+agcls.AgTypeNameMap["SpeedType"] = SpeedType
 
-class START_STOP_TYPE(IntEnum):
+class StartStopType(IntEnum):
     """Start/stop options."""
    
     COUNT_START_ONLY = 1
@@ -812,13 +831,13 @@ class START_STOP_TYPE(IntEnum):
     COUNT_START_STOP = 3
     """Use the start time and stop time of the interval."""
 
-START_STOP_TYPE.COUNT_START_ONLY.__doc__ = "Use the start time of the interval."
-START_STOP_TYPE.COUNT_STOP_ONLY.__doc__ = "Use the stop time of the interval."
-START_STOP_TYPE.COUNT_START_STOP.__doc__ = "Use the start time and stop time of the interval."
+StartStopType.COUNT_START_ONLY.__doc__ = "Use the start time of the interval."
+StartStopType.COUNT_STOP_ONLY.__doc__ = "Use the stop time of the interval."
+StartStopType.COUNT_START_STOP.__doc__ = "Use the start time and stop time of the interval."
 
-agcls.AgTypeNameMap["START_STOP_TYPE"] = START_STOP_TYPE
+agcls.AgTypeNameMap["StartStopType"] = StartStopType
 
-class THRESHOLD_CONVERGENCE_SENSE_TYPE(IntEnum):
+class ThresholdConvergenceSenseType(IntEnum):
     """Specify the desired sense of the results from threshold crossing computations."""
    
     SIMPLE = 0
@@ -828,13 +847,13 @@ class THRESHOLD_CONVERGENCE_SENSE_TYPE(IntEnum):
     BELOW = 2
     """Result below or at threshold."""
 
-THRESHOLD_CONVERGENCE_SENSE_TYPE.SIMPLE.__doc__ = "Just converge within tolerance."
-THRESHOLD_CONVERGENCE_SENSE_TYPE.ABOVE.__doc__ = "Result above or at threshold."
-THRESHOLD_CONVERGENCE_SENSE_TYPE.BELOW.__doc__ = "Result below or at threshold."
+ThresholdConvergenceSenseType.SIMPLE.__doc__ = "Just converge within tolerance."
+ThresholdConvergenceSenseType.ABOVE.__doc__ = "Result above or at threshold."
+ThresholdConvergenceSenseType.BELOW.__doc__ = "Result below or at threshold."
 
-agcls.AgTypeNameMap["THRESHOLD_CONVERGENCE_SENSE_TYPE"] = THRESHOLD_CONVERGENCE_SENSE_TYPE
+agcls.AgTypeNameMap["ThresholdConvergenceSenseType"] = ThresholdConvergenceSenseType
 
-class VECTOR_COMPONENT_TYPE(IntEnum):
+class VectorComponentType(IntEnum):
     """Define component directions for a vector."""
    
     X = 0
@@ -850,16 +869,16 @@ class VECTOR_COMPONENT_TYPE(IntEnum):
     NEGATIVE_Z = 5
     """-Z component."""
 
-VECTOR_COMPONENT_TYPE.X.__doc__ = "X component."
-VECTOR_COMPONENT_TYPE.Y.__doc__ = "Y component."
-VECTOR_COMPONENT_TYPE.Z.__doc__ = "Z component."
-VECTOR_COMPONENT_TYPE.NEGATIVE_X.__doc__ = "-X component."
-VECTOR_COMPONENT_TYPE.NEGATIVE_Y.__doc__ = "-Y component."
-VECTOR_COMPONENT_TYPE.NEGATIVE_Z.__doc__ = "-Z component."
+VectorComponentType.X.__doc__ = "X component."
+VectorComponentType.Y.__doc__ = "Y component."
+VectorComponentType.Z.__doc__ = "Z component."
+VectorComponentType.NEGATIVE_X.__doc__ = "-X component."
+VectorComponentType.NEGATIVE_Y.__doc__ = "-Y component."
+VectorComponentType.NEGATIVE_Z.__doc__ = "-Z component."
 
-agcls.AgTypeNameMap["VECTOR_COMPONENT_TYPE"] = VECTOR_COMPONENT_TYPE
+agcls.AgTypeNameMap["VectorComponentType"] = VectorComponentType
 
-class SPATIAL_CALCULATION_ALTITUDE_REFERENCE_TYPE(IntEnum):
+class SpatialCalculationAltitudeReferenceType(IntEnum):
     """Define volume calc altitude reference types."""
    
     ELLIPSOID = 0
@@ -869,13 +888,13 @@ class SPATIAL_CALCULATION_ALTITUDE_REFERENCE_TYPE(IntEnum):
     MSL = 2
     """Volume calc altitude reference above mean sea level."""
 
-SPATIAL_CALCULATION_ALTITUDE_REFERENCE_TYPE.ELLIPSOID.__doc__ = "Volume calc altitude above reference ellipsoid."
-SPATIAL_CALCULATION_ALTITUDE_REFERENCE_TYPE.TERRAIN.__doc__ = "Volume calc altitude reference above terrain."
-SPATIAL_CALCULATION_ALTITUDE_REFERENCE_TYPE.MSL.__doc__ = "Volume calc altitude reference above mean sea level."
+SpatialCalculationAltitudeReferenceType.ELLIPSOID.__doc__ = "Volume calc altitude above reference ellipsoid."
+SpatialCalculationAltitudeReferenceType.TERRAIN.__doc__ = "Volume calc altitude reference above terrain."
+SpatialCalculationAltitudeReferenceType.MSL.__doc__ = "Volume calc altitude reference above mean sea level."
 
-agcls.AgTypeNameMap["SPATIAL_CALCULATION_ALTITUDE_REFERENCE_TYPE"] = SPATIAL_CALCULATION_ALTITUDE_REFERENCE_TYPE
+agcls.AgTypeNameMap["SpatialCalculationAltitudeReferenceType"] = SpatialCalculationAltitudeReferenceType
 
-class ANGLE_TO_LOCATION_TYPE(IntEnum):
+class AngleToLocationType(IntEnum):
     """Define volume calc angle off vector reference types."""
    
     FROM_PLANE_SIGNED = 1
@@ -889,15 +908,15 @@ class ANGLE_TO_LOCATION_TYPE(IntEnum):
     FROM_REFERENCE_VECTOR = 16
     """Volume calc angle off vector."""
 
-ANGLE_TO_LOCATION_TYPE.FROM_PLANE_SIGNED.__doc__ = "Volume calc angle off plane signed."
-ANGLE_TO_LOCATION_TYPE.FROM_PLANE_UNSIGNED.__doc__ = "Volume calc angle off plane unsigned."
-ANGLE_TO_LOCATION_TYPE.ABOUT_VECTOR_SIGNED.__doc__ = "Volume calc angle about vector signed."
-ANGLE_TO_LOCATION_TYPE.ABOUT_VECTOR_UNSIGNED.__doc__ = "Volume calc angle about vector unsigned."
-ANGLE_TO_LOCATION_TYPE.FROM_REFERENCE_VECTOR.__doc__ = "Volume calc angle off vector."
+AngleToLocationType.FROM_PLANE_SIGNED.__doc__ = "Volume calc angle off plane signed."
+AngleToLocationType.FROM_PLANE_UNSIGNED.__doc__ = "Volume calc angle off plane unsigned."
+AngleToLocationType.ABOUT_VECTOR_SIGNED.__doc__ = "Volume calc angle about vector signed."
+AngleToLocationType.ABOUT_VECTOR_UNSIGNED.__doc__ = "Volume calc angle about vector unsigned."
+AngleToLocationType.FROM_REFERENCE_VECTOR.__doc__ = "Volume calc angle off vector."
 
-agcls.AgTypeNameMap["ANGLE_TO_LOCATION_TYPE"] = ANGLE_TO_LOCATION_TYPE
+agcls.AgTypeNameMap["AngleToLocationType"] = AngleToLocationType
 
-class DISTANCE_TO_LOCATION_TYPE(IntEnum):
+class DistanceToLocationType(IntEnum):
     """Define volume calc range distance types."""
    
     FROM_POINT = 0
@@ -911,15 +930,15 @@ class DISTANCE_TO_LOCATION_TYPE(IntEnum):
     FROM_PLANE_UNSIGNED = 8
     """Volume calc range distance type plane signed."""
 
-DISTANCE_TO_LOCATION_TYPE.FROM_POINT.__doc__ = "Volume calc range distance type from point."
-DISTANCE_TO_LOCATION_TYPE.ALONG_VECTOR_SIGNED.__doc__ = "Volume calc range distance type from point."
-DISTANCE_TO_LOCATION_TYPE.ALONG_VECTOR_UNSIGNED.__doc__ = "Volume calc range distance type along vector unsigned."
-DISTANCE_TO_LOCATION_TYPE.FROM_PLANE_SIGNED.__doc__ = "Volume calc range distance type plane signed."
-DISTANCE_TO_LOCATION_TYPE.FROM_PLANE_UNSIGNED.__doc__ = "Volume calc range distance type plane signed."
+DistanceToLocationType.FROM_POINT.__doc__ = "Volume calc range distance type from point."
+DistanceToLocationType.ALONG_VECTOR_SIGNED.__doc__ = "Volume calc range distance type from point."
+DistanceToLocationType.ALONG_VECTOR_UNSIGNED.__doc__ = "Volume calc range distance type along vector unsigned."
+DistanceToLocationType.FROM_PLANE_SIGNED.__doc__ = "Volume calc range distance type plane signed."
+DistanceToLocationType.FROM_PLANE_UNSIGNED.__doc__ = "Volume calc range distance type plane signed."
 
-agcls.AgTypeNameMap["DISTANCE_TO_LOCATION_TYPE"] = DISTANCE_TO_LOCATION_TYPE
+agcls.AgTypeNameMap["DistanceToLocationType"] = DistanceToLocationType
 
-class RANGE_SPEED_TYPE(IntEnum):
+class RangeSpeedType(IntEnum):
     """Define volume calc range distance types."""
    
     LIGHT_SPEED = 1
@@ -927,12 +946,12 @@ class RANGE_SPEED_TYPE(IntEnum):
     CUSTOM = 2
     """Volume calc range distance type from point."""
 
-RANGE_SPEED_TYPE.LIGHT_SPEED.__doc__ = "Volume calc range distance type from point."
-RANGE_SPEED_TYPE.CUSTOM.__doc__ = "Volume calc range distance type from point."
+RangeSpeedType.LIGHT_SPEED.__doc__ = "Volume calc range distance type from point."
+RangeSpeedType.CUSTOM.__doc__ = "Volume calc range distance type from point."
 
-agcls.AgTypeNameMap["RANGE_SPEED_TYPE"] = RANGE_SPEED_TYPE
+agcls.AgTypeNameMap["RangeSpeedType"] = RangeSpeedType
 
-class SPATIAL_CALCULATION_TYPE(IntEnum):
+class SpatialCalculationType(IntEnum):
     """Define volume calc types."""
    
     UNKNOWN = -1
@@ -954,19 +973,19 @@ class SPATIAL_CALCULATION_TYPE(IntEnum):
     PROPAGATION_DELAY_TO_LOCATION = 7
     """volume calc type Propagation Delay to Location."""
 
-SPATIAL_CALCULATION_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported volume calc."
-SPATIAL_CALCULATION_TYPE.ALTITUDE_AT_LOCATION.__doc__ = "volume calc type altitude to location."
-SPATIAL_CALCULATION_TYPE.ANGLE_TO_LOCATION.__doc__ = "volume calc type angle to location."
-SPATIAL_CALCULATION_TYPE.FILE.__doc__ = "volume calc type File."
-SPATIAL_CALCULATION_TYPE.FROM_CALCULATION_SCALAR.__doc__ = "volume calc type scalar at location."
-SPATIAL_CALCULATION_TYPE.SOLAR_INTENSITY.__doc__ = "volume calc type Solar Intensity."
-SPATIAL_CALCULATION_TYPE.SPATIAL_CONDITION_METRIC.__doc__ = "volume calc type Spatial Condition Satisfaction Metric."
-SPATIAL_CALCULATION_TYPE.RANGE.__doc__ = "volume calc type Distance to Location."
-SPATIAL_CALCULATION_TYPE.PROPAGATION_DELAY_TO_LOCATION.__doc__ = "volume calc type Propagation Delay to Location."
+SpatialCalculationType.UNKNOWN.__doc__ = "Unknown or unsupported volume calc."
+SpatialCalculationType.ALTITUDE_AT_LOCATION.__doc__ = "volume calc type altitude to location."
+SpatialCalculationType.ANGLE_TO_LOCATION.__doc__ = "volume calc type angle to location."
+SpatialCalculationType.FILE.__doc__ = "volume calc type File."
+SpatialCalculationType.FROM_CALCULATION_SCALAR.__doc__ = "volume calc type scalar at location."
+SpatialCalculationType.SOLAR_INTENSITY.__doc__ = "volume calc type Solar Intensity."
+SpatialCalculationType.SPATIAL_CONDITION_METRIC.__doc__ = "volume calc type Spatial Condition Satisfaction Metric."
+SpatialCalculationType.RANGE.__doc__ = "volume calc type Distance to Location."
+SpatialCalculationType.PROPAGATION_DELAY_TO_LOCATION.__doc__ = "volume calc type Propagation Delay to Location."
 
-agcls.AgTypeNameMap["SPATIAL_CALCULATION_TYPE"] = SPATIAL_CALCULATION_TYPE
+agcls.AgTypeNameMap["SpatialCalculationType"] = SpatialCalculationType
 
-class VOLUME_SATISFACTION_ACCUMULATION_TYPE(IntEnum):
+class VolumeSatisfactionAccumulationType(IntEnum):
     """Define volume calc spatial condition accumulation types."""
    
     UP_TO_CURRENT_TIME = -1
@@ -978,14 +997,14 @@ class VOLUME_SATISFACTION_ACCUMULATION_TYPE(IntEnum):
     TOTAL = 10
     """Volume calc spatial condition satisfaction accumulation type total."""
 
-VOLUME_SATISFACTION_ACCUMULATION_TYPE.UP_TO_CURRENT_TIME.__doc__ = "Volume calc spatial condition satisfaction accumulation type up to current time."
-VOLUME_SATISFACTION_ACCUMULATION_TYPE.CURRENT_TIME.__doc__ = "Volume calc spatial condition satisfaction accumulation type current time."
-VOLUME_SATISFACTION_ACCUMULATION_TYPE.FROM_CURRENT_TIME.__doc__ = "Volume calc spatial condition satisfaction accumulation type from current time."
-VOLUME_SATISFACTION_ACCUMULATION_TYPE.TOTAL.__doc__ = "Volume calc spatial condition satisfaction accumulation type total."
+VolumeSatisfactionAccumulationType.UP_TO_CURRENT_TIME.__doc__ = "Volume calc spatial condition satisfaction accumulation type up to current time."
+VolumeSatisfactionAccumulationType.CURRENT_TIME.__doc__ = "Volume calc spatial condition satisfaction accumulation type current time."
+VolumeSatisfactionAccumulationType.FROM_CURRENT_TIME.__doc__ = "Volume calc spatial condition satisfaction accumulation type from current time."
+VolumeSatisfactionAccumulationType.TOTAL.__doc__ = "Volume calc spatial condition satisfaction accumulation type total."
 
-agcls.AgTypeNameMap["VOLUME_SATISFACTION_ACCUMULATION_TYPE"] = VOLUME_SATISFACTION_ACCUMULATION_TYPE
+agcls.AgTypeNameMap["VolumeSatisfactionAccumulationType"] = VolumeSatisfactionAccumulationType
 
-class VOLUME_SATISFACTION_DURATION_TYPE(IntEnum):
+class VolumeSatisfactionDurationType(IntEnum):
     """Define volume calc spatial condition duration types."""
    
     MINIMUM = -1
@@ -995,13 +1014,13 @@ class VOLUME_SATISFACTION_DURATION_TYPE(IntEnum):
     MAXIMUM = 1
     """Volume calc spatial condition satisfaction duration type maximum."""
 
-VOLUME_SATISFACTION_DURATION_TYPE.MINIMUM.__doc__ = "Volume calc spatial condition satisfaction duration type minimum."
-VOLUME_SATISFACTION_DURATION_TYPE.SUM.__doc__ = "Volume calc spatial condition satisfaction duration type sum."
-VOLUME_SATISFACTION_DURATION_TYPE.MAXIMUM.__doc__ = "Volume calc spatial condition satisfaction duration type maximum."
+VolumeSatisfactionDurationType.MINIMUM.__doc__ = "Volume calc spatial condition satisfaction duration type minimum."
+VolumeSatisfactionDurationType.SUM.__doc__ = "Volume calc spatial condition satisfaction duration type sum."
+VolumeSatisfactionDurationType.MAXIMUM.__doc__ = "Volume calc spatial condition satisfaction duration type maximum."
 
-agcls.AgTypeNameMap["VOLUME_SATISFACTION_DURATION_TYPE"] = VOLUME_SATISFACTION_DURATION_TYPE
+agcls.AgTypeNameMap["VolumeSatisfactionDurationType"] = VolumeSatisfactionDurationType
 
-class VOLUME_SATISFACTION_FILTER_TYPE(IntEnum):
+class VolumeSatisfactionFilterType(IntEnum):
     """Define volume calc spatial condition filter types."""
    
     FIRST_INTERVALS = -10
@@ -1015,15 +1034,15 @@ class VOLUME_SATISFACTION_FILTER_TYPE(IntEnum):
     INTERVAL_DURATION = 2
     """Volume calc spatial condition satisfaction filter type interval duration."""
 
-VOLUME_SATISFACTION_FILTER_TYPE.FIRST_INTERVALS.__doc__ = "Volume calc spatial condition satisfaction filter type first intervals."
-VOLUME_SATISFACTION_FILTER_TYPE.LAST_INTERVALS.__doc__ = "Volume calc spatial condition satisfaction filter type last intervals."
-VOLUME_SATISFACTION_FILTER_TYPE.NONE.__doc__ = "Volume calc spatial condition satisfaction filter type none."
-VOLUME_SATISFACTION_FILTER_TYPE.GAP_DURATION.__doc__ = "Volume calc spatial condition satisfaction filter type gap duration."
-VOLUME_SATISFACTION_FILTER_TYPE.INTERVAL_DURATION.__doc__ = "Volume calc spatial condition satisfaction filter type interval duration."
+VolumeSatisfactionFilterType.FIRST_INTERVALS.__doc__ = "Volume calc spatial condition satisfaction filter type first intervals."
+VolumeSatisfactionFilterType.LAST_INTERVALS.__doc__ = "Volume calc spatial condition satisfaction filter type last intervals."
+VolumeSatisfactionFilterType.NONE.__doc__ = "Volume calc spatial condition satisfaction filter type none."
+VolumeSatisfactionFilterType.GAP_DURATION.__doc__ = "Volume calc spatial condition satisfaction filter type gap duration."
+VolumeSatisfactionFilterType.INTERVAL_DURATION.__doc__ = "Volume calc spatial condition satisfaction filter type interval duration."
 
-agcls.AgTypeNameMap["VOLUME_SATISFACTION_FILTER_TYPE"] = VOLUME_SATISFACTION_FILTER_TYPE
+agcls.AgTypeNameMap["VolumeSatisfactionFilterType"] = VolumeSatisfactionFilterType
 
-class VOLUME_SATISFACTION_METRIC_TYPE(IntEnum):
+class VolumeSatisfactionMetricType(IntEnum):
     """Define volume calc spatial condition satisfaction metric types."""
    
     NUMBER_OF_GAPS = -2
@@ -1039,16 +1058,16 @@ class VOLUME_SATISFACTION_METRIC_TYPE(IntEnum):
     GAP_DURATION = 20
     """Volume calc spatial condition satisfaction metric type gap duration."""
 
-VOLUME_SATISFACTION_METRIC_TYPE.NUMBER_OF_GAPS.__doc__ = "Volume calc spatial condition satisfaction metric type number of gaps."
-VOLUME_SATISFACTION_METRIC_TYPE.NUMBER_OF_INTERVALS.__doc__ = "Volume calc spatial condition satisfaction metric type number of intervals."
-VOLUME_SATISFACTION_METRIC_TYPE.TIME_SINCE_LAST_SATISFACTION.__doc__ = "Volume calc spatial condition satisfaction metric type time since last satisfaction."
-VOLUME_SATISFACTION_METRIC_TYPE.TIME_UNTIL_NEXT_SATISFACTION.__doc__ = "Volume calc spatial condition satisfaction metric type time until next satisfaction."
-VOLUME_SATISFACTION_METRIC_TYPE.INTERVAL_DURATION.__doc__ = "Volume calc spatial condition satisfaction metric type interbnal duration."
-VOLUME_SATISFACTION_METRIC_TYPE.GAP_DURATION.__doc__ = "Volume calc spatial condition satisfaction metric type gap duration."
+VolumeSatisfactionMetricType.NUMBER_OF_GAPS.__doc__ = "Volume calc spatial condition satisfaction metric type number of gaps."
+VolumeSatisfactionMetricType.NUMBER_OF_INTERVALS.__doc__ = "Volume calc spatial condition satisfaction metric type number of intervals."
+VolumeSatisfactionMetricType.TIME_SINCE_LAST_SATISFACTION.__doc__ = "Volume calc spatial condition satisfaction metric type time since last satisfaction."
+VolumeSatisfactionMetricType.TIME_UNTIL_NEXT_SATISFACTION.__doc__ = "Volume calc spatial condition satisfaction metric type time until next satisfaction."
+VolumeSatisfactionMetricType.INTERVAL_DURATION.__doc__ = "Volume calc spatial condition satisfaction metric type interbnal duration."
+VolumeSatisfactionMetricType.GAP_DURATION.__doc__ = "Volume calc spatial condition satisfaction metric type gap duration."
 
-agcls.AgTypeNameMap["VOLUME_SATISFACTION_METRIC_TYPE"] = VOLUME_SATISFACTION_METRIC_TYPE
+agcls.AgTypeNameMap["VolumeSatisfactionMetricType"] = VolumeSatisfactionMetricType
 
-class VOLUME_GRID_TYPE(IntEnum):
+class VolumeGridType(IntEnum):
     """Define volume grid types."""
    
     UNKNOWN = -1
@@ -1066,17 +1085,17 @@ class VOLUME_GRID_TYPE(IntEnum):
     BEARING_ALTITUDE = 5
     """volume grid type BearingAlt (Surface Bearing)."""
 
-VOLUME_GRID_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported volume grid."
-VOLUME_GRID_TYPE.CARTESIAN.__doc__ = "volume grid type cartesian."
-VOLUME_GRID_TYPE.CYLINDRICAL.__doc__ = "volume grid type Cylindrical."
-VOLUME_GRID_TYPE.SPHERICAL.__doc__ = "volume grid type Spherical."
-VOLUME_GRID_TYPE.CONSTRAINED.__doc__ = "volume grid type Constrained."
-VOLUME_GRID_TYPE.LATITUDE_LONGITUDE_ALTITUDE.__doc__ = "volume grid type LatLonAlt (Cartographic)."
-VOLUME_GRID_TYPE.BEARING_ALTITUDE.__doc__ = "volume grid type BearingAlt (Surface Bearing)."
+VolumeGridType.UNKNOWN.__doc__ = "Unknown or unsupported volume grid."
+VolumeGridType.CARTESIAN.__doc__ = "volume grid type cartesian."
+VolumeGridType.CYLINDRICAL.__doc__ = "volume grid type Cylindrical."
+VolumeGridType.SPHERICAL.__doc__ = "volume grid type Spherical."
+VolumeGridType.CONSTRAINED.__doc__ = "volume grid type Constrained."
+VolumeGridType.LATITUDE_LONGITUDE_ALTITUDE.__doc__ = "volume grid type LatLonAlt (Cartographic)."
+VolumeGridType.BEARING_ALTITUDE.__doc__ = "volume grid type BearingAlt (Surface Bearing)."
 
-agcls.AgTypeNameMap["VOLUME_GRID_TYPE"] = VOLUME_GRID_TYPE
+agcls.AgTypeNameMap["VolumeGridType"] = VolumeGridType
 
-class RESULT_VECTOR_REQUEST_TYPE(IntEnum):
+class ResultVectorRequestType(IntEnum):
     """Define volume result vector request types."""
    
     POSITION = 1
@@ -1090,15 +1109,15 @@ class RESULT_VECTOR_REQUEST_TYPE(IntEnum):
     GRADIENT = 256
     """volume result vector request gradient type."""
 
-RESULT_VECTOR_REQUEST_TYPE.POSITION.__doc__ = "volume result vector request pos type."
-RESULT_VECTOR_REQUEST_TYPE.NATIVE_POSITION.__doc__ = "volume result vector request native pos type."
-RESULT_VECTOR_REQUEST_TYPE.METRIC.__doc__ = "volume result vector request metric type."
-RESULT_VECTOR_REQUEST_TYPE.SATISFACTION.__doc__ = "volume result vector request satisfaction type."
-RESULT_VECTOR_REQUEST_TYPE.GRADIENT.__doc__ = "volume result vector request gradient type."
+ResultVectorRequestType.POSITION.__doc__ = "volume result vector request pos type."
+ResultVectorRequestType.NATIVE_POSITION.__doc__ = "volume result vector request native pos type."
+ResultVectorRequestType.METRIC.__doc__ = "volume result vector request metric type."
+ResultVectorRequestType.SATISFACTION.__doc__ = "volume result vector request satisfaction type."
+ResultVectorRequestType.GRADIENT.__doc__ = "volume result vector request gradient type."
 
-agcls.AgTypeNameMap["RESULT_VECTOR_REQUEST_TYPE"] = RESULT_VECTOR_REQUEST_TYPE
+agcls.AgTypeNameMap["ResultVectorRequestType"] = ResultVectorRequestType
 
-class VOLUME_TYPE(IntEnum):
+class VolumeType(IntEnum):
     """Define volume grid types."""
    
     UNKNOWN = -1
@@ -1120,19 +1139,19 @@ class VOLUME_TYPE(IntEnum):
     ACCESS_TO_LOCATION = 7
     """volume type Inview (Access To Location)."""
 
-VOLUME_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported volume."
-VOLUME_TYPE.COMBINED.__doc__ = "volume type combined."
-VOLUME_TYPE.LIGHTING.__doc__ = "volume type lighting."
-VOLUME_TYPE.OVER_TIME.__doc__ = "volume type over time."
-VOLUME_TYPE.GRID_BOUNDING_VOLUME.__doc__ = "volume type from grid (Grid Bounding Volume)."
-VOLUME_TYPE.SPATIAL_CALCULATION_BOUNDS.__doc__ = "volume type from calc (Spatial Calculation Bounds)."
-VOLUME_TYPE.VALID_TIME_AT_LOCATION.__doc__ = "volume type from time satisfaction (Valid Time At Location)."
-VOLUME_TYPE.CONDITION_AT_LOCATION.__doc__ = "volume type from condition (Condition At Location)."
-VOLUME_TYPE.ACCESS_TO_LOCATION.__doc__ = "volume type Inview (Access To Location)."
+VolumeType.UNKNOWN.__doc__ = "Unknown or unsupported volume."
+VolumeType.COMBINED.__doc__ = "volume type combined."
+VolumeType.LIGHTING.__doc__ = "volume type lighting."
+VolumeType.OVER_TIME.__doc__ = "volume type over time."
+VolumeType.GRID_BOUNDING_VOLUME.__doc__ = "volume type from grid (Grid Bounding Volume)."
+VolumeType.SPATIAL_CALCULATION_BOUNDS.__doc__ = "volume type from calc (Spatial Calculation Bounds)."
+VolumeType.VALID_TIME_AT_LOCATION.__doc__ = "volume type from time satisfaction (Valid Time At Location)."
+VolumeType.CONDITION_AT_LOCATION.__doc__ = "volume type from condition (Condition At Location)."
+VolumeType.ACCESS_TO_LOCATION.__doc__ = "volume type Inview (Access To Location)."
 
-agcls.AgTypeNameMap["VOLUME_TYPE"] = VOLUME_TYPE
+agcls.AgTypeNameMap["VolumeType"] = VolumeType
 
-class ABERRATION_TYPE(IntEnum):
+class AberrationModelType(IntEnum):
     """Define the model of aberration to use."""
    
     UNKNOWN = -1
@@ -1144,14 +1163,14 @@ class ABERRATION_TYPE(IntEnum):
     NONE = 2
     """Aberration type none."""
 
-ABERRATION_TYPE.UNKNOWN.__doc__ = "Aberration type unknown."
-ABERRATION_TYPE.TOTAL.__doc__ = "Aberration type total."
-ABERRATION_TYPE.ANNUAL.__doc__ = "SAberration type annual."
-ABERRATION_TYPE.NONE.__doc__ = "Aberration type none."
+AberrationModelType.UNKNOWN.__doc__ = "Aberration type unknown."
+AberrationModelType.TOTAL.__doc__ = "Aberration type total."
+AberrationModelType.ANNUAL.__doc__ = "SAberration type annual."
+AberrationModelType.NONE.__doc__ = "Aberration type none."
 
-agcls.AgTypeNameMap["ABERRATION_TYPE"] = ABERRATION_TYPE
+agcls.AgTypeNameMap["AberrationModelType"] = AberrationModelType
 
-class CLOCK_HOST_TYPE(IntEnum):
+class ClockHostType(IntEnum):
     """Define whether base or target of an Access instance holds the clock for Access times."""
    
     UNKNOWN = -1
@@ -1161,13 +1180,13 @@ class CLOCK_HOST_TYPE(IntEnum):
     TARGET = 1
     """Target object holds time instance."""
 
-CLOCK_HOST_TYPE.UNKNOWN.__doc__ = "Unknown."
-CLOCK_HOST_TYPE.BASE.__doc__ = "Base object holds time instance."
-CLOCK_HOST_TYPE.TARGET.__doc__ = "Target object holds time instance."
+ClockHostType.UNKNOWN.__doc__ = "Unknown."
+ClockHostType.BASE.__doc__ = "Base object holds time instance."
+ClockHostType.TARGET.__doc__ = "Target object holds time instance."
 
-agcls.AgTypeNameMap["CLOCK_HOST_TYPE"] = CLOCK_HOST_TYPE
+agcls.AgTypeNameMap["ClockHostType"] = ClockHostType
 
-class VOLUME_COMBINED_OPERATION_TYPE(IntEnum):
+class VolumeCombinedOperationType(IntEnum):
     """Define spatial condition combined operation types."""
    
     AND = 1
@@ -1179,14 +1198,14 @@ class VOLUME_COMBINED_OPERATION_TYPE(IntEnum):
     MINUS = 4
     """Spatial condition combined MINUS operation."""
 
-VOLUME_COMBINED_OPERATION_TYPE.AND.__doc__ = "Spatial condition combined AND operation."
-VOLUME_COMBINED_OPERATION_TYPE.OR.__doc__ = "Spatial condition combined OR operation."
-VOLUME_COMBINED_OPERATION_TYPE.XOR.__doc__ = "Spatial condition combined XOR operation."
-VOLUME_COMBINED_OPERATION_TYPE.MINUS.__doc__ = "Spatial condition combined MINUS operation."
+VolumeCombinedOperationType.AND.__doc__ = "Spatial condition combined AND operation."
+VolumeCombinedOperationType.OR.__doc__ = "Spatial condition combined OR operation."
+VolumeCombinedOperationType.XOR.__doc__ = "Spatial condition combined XOR operation."
+VolumeCombinedOperationType.MINUS.__doc__ = "Spatial condition combined MINUS operation."
 
-agcls.AgTypeNameMap["VOLUME_COMBINED_OPERATION_TYPE"] = VOLUME_COMBINED_OPERATION_TYPE
+agcls.AgTypeNameMap["VolumeCombinedOperationType"] = VolumeCombinedOperationType
 
-class VOLUME_FROM_GRID_EDGE_TYPE(IntEnum):
+class VolumeFromGridEdgeType(IntEnum):
     """Define spatial condition from grid edge type."""
    
     MASK_POINTS = 16
@@ -1194,12 +1213,12 @@ class VOLUME_FROM_GRID_EDGE_TYPE(IntEnum):
     MASK_VOXELS = 32
     """Spatial condition over time from grid edge type mask voxels."""
 
-VOLUME_FROM_GRID_EDGE_TYPE.MASK_POINTS.__doc__ = "Spatial condition over time from grid edge type mask points."
-VOLUME_FROM_GRID_EDGE_TYPE.MASK_VOXELS.__doc__ = "Spatial condition over time from grid edge type mask voxels."
+VolumeFromGridEdgeType.MASK_POINTS.__doc__ = "Spatial condition over time from grid edge type mask points."
+VolumeFromGridEdgeType.MASK_VOXELS.__doc__ = "Spatial condition over time from grid edge type mask voxels."
 
-agcls.AgTypeNameMap["VOLUME_FROM_GRID_EDGE_TYPE"] = VOLUME_FROM_GRID_EDGE_TYPE
+agcls.AgTypeNameMap["VolumeFromGridEdgeType"] = VolumeFromGridEdgeType
 
-class LIGHTING_CONDITIONS_TYPE(IntFlag):
+class LightingConditionsType(IntFlag):
     """Define spatial condition lighting conditions types."""
    
     UNDEFINED = 0
@@ -1211,14 +1230,14 @@ class LIGHTING_CONDITIONS_TYPE(IntFlag):
     TYPE_UMBRA = 4
     """Spatial condition lighting umbra."""
 
-LIGHTING_CONDITIONS_TYPE.UNDEFINED.__doc__ = "Spatial condition lighting undefined."
-LIGHTING_CONDITIONS_TYPE.SUNLIGHT.__doc__ = "Spatial condition lighting sun light."
-LIGHTING_CONDITIONS_TYPE.PENUMBRA.__doc__ = "Spatial condition lighting penumbra."
-LIGHTING_CONDITIONS_TYPE.TYPE_UMBRA.__doc__ = "Spatial condition lighting umbra."
+LightingConditionsType.UNDEFINED.__doc__ = "Spatial condition lighting undefined."
+LightingConditionsType.SUNLIGHT.__doc__ = "Spatial condition lighting sun light."
+LightingConditionsType.PENUMBRA.__doc__ = "Spatial condition lighting penumbra."
+LightingConditionsType.TYPE_UMBRA.__doc__ = "Spatial condition lighting umbra."
 
-agcls.AgTypeNameMap["LIGHTING_CONDITIONS_TYPE"] = LIGHTING_CONDITIONS_TYPE
+agcls.AgTypeNameMap["LightingConditionsType"] = LightingConditionsType
 
-class SPATIAL_CONDITION_OVER_TYPE_DURATION_TYPE(IntEnum):
+class SpatialConditionOverTypeDurationType(IntEnum):
     """Define spatial condition over time duration type."""
    
     STATIC = 0
@@ -1230,14 +1249,14 @@ class SPATIAL_CONDITION_OVER_TYPE_DURATION_TYPE(IntEnum):
     SLIDING_WINDOW = 3
     """Spatial condition over time duration type SlidingWindow."""
 
-SPATIAL_CONDITION_OVER_TYPE_DURATION_TYPE.STATIC.__doc__ = "Spatial condition over time duration type Static."
-SPATIAL_CONDITION_OVER_TYPE_DURATION_TYPE.CUMULATIVE_TO_CURRENT_TIME.__doc__ = "Spatial condition over time duration type CumulativeToCurrent."
-SPATIAL_CONDITION_OVER_TYPE_DURATION_TYPE.CUMULATIVE_FROM_CURRENT_TIME.__doc__ = "Spatial condition over time duration type CumulativeFromCurrent."
-SPATIAL_CONDITION_OVER_TYPE_DURATION_TYPE.SLIDING_WINDOW.__doc__ = "Spatial condition over time duration type SlidingWindow."
+SpatialConditionOverTypeDurationType.STATIC.__doc__ = "Spatial condition over time duration type Static."
+SpatialConditionOverTypeDurationType.CUMULATIVE_TO_CURRENT_TIME.__doc__ = "Spatial condition over time duration type CumulativeToCurrent."
+SpatialConditionOverTypeDurationType.CUMULATIVE_FROM_CURRENT_TIME.__doc__ = "Spatial condition over time duration type CumulativeFromCurrent."
+SpatialConditionOverTypeDurationType.SLIDING_WINDOW.__doc__ = "Spatial condition over time duration type SlidingWindow."
 
-agcls.AgTypeNameMap["SPATIAL_CONDITION_OVER_TYPE_DURATION_TYPE"] = SPATIAL_CONDITION_OVER_TYPE_DURATION_TYPE
+agcls.AgTypeNameMap["SpatialConditionOverTypeDurationType"] = SpatialConditionOverTypeDurationType
 
-class TIME_SENSE_TYPE(IntEnum):
+class TimeSenseType(IntEnum):
     """Define whether object1 or object2 of an Access instance holds the clock for Access times."""
    
     UNKNOWN = -1
@@ -1247,13 +1266,13 @@ class TIME_SENSE_TYPE(IntEnum):
     RECEIVE = 1
     """Position is computed in Receive Sense."""
 
-TIME_SENSE_TYPE.UNKNOWN.__doc__ = "Unklnown."
-TIME_SENSE_TYPE.TRANSMIT.__doc__ = "Position is computed in Time Sense."
-TIME_SENSE_TYPE.RECEIVE.__doc__ = "Position is computed in Receive Sense."
+TimeSenseType.UNKNOWN.__doc__ = "Unklnown."
+TimeSenseType.TRANSMIT.__doc__ = "Position is computed in Time Sense."
+TimeSenseType.RECEIVE.__doc__ = "Position is computed in Receive Sense."
 
-agcls.AgTypeNameMap["TIME_SENSE_TYPE"] = TIME_SENSE_TYPE
+agcls.AgTypeNameMap["TimeSenseType"] = TimeSenseType
 
-class GRID_VALUES_METHOD_TYPE(IntEnum):
+class GridValuesMethodType(IntEnum):
     """Define volumetric grid values method types."""
    
     UNKNOWN = -1
@@ -1265,14 +1284,14 @@ class GRID_VALUES_METHOD_TYPE(IntEnum):
     CUSTOM_VALUES = 2
     """Custom grid values method for volumetric grid."""
 
-GRID_VALUES_METHOD_TYPE.UNKNOWN.__doc__ = "Unknown or unsupportedgrid values method."
-GRID_VALUES_METHOD_TYPE.FIXED_NUMBER_OF_STEPS.__doc__ = "Fixed number steps grid values method for volumetric grid."
-GRID_VALUES_METHOD_TYPE.FIXED_STEP_SIZE.__doc__ = "Fixed step size grid values method for volumetric grid."
-GRID_VALUES_METHOD_TYPE.CUSTOM_VALUES.__doc__ = "Custom grid values method for volumetric grid."
+GridValuesMethodType.UNKNOWN.__doc__ = "Unknown or unsupportedgrid values method."
+GridValuesMethodType.FIXED_NUMBER_OF_STEPS.__doc__ = "Fixed number steps grid values method for volumetric grid."
+GridValuesMethodType.FIXED_STEP_SIZE.__doc__ = "Fixed step size grid values method for volumetric grid."
+GridValuesMethodType.CUSTOM_VALUES.__doc__ = "Custom grid values method for volumetric grid."
 
-agcls.AgTypeNameMap["GRID_VALUES_METHOD_TYPE"] = GRID_VALUES_METHOD_TYPE
+agcls.AgTypeNameMap["GridValuesMethodType"] = GridValuesMethodType
 
-class VECTOR_GEOMETRY_TOOL_COMPONENT_TYPE(IntEnum):
+class VectorGeometryToolComponentType(IntEnum):
     """Represents kinds of vectory geometry components."""
    
     UNKNOWN = -1
@@ -1316,30 +1335,30 @@ class VECTOR_GEOMETRY_TOOL_COMPONENT_TYPE(IntEnum):
     SPATIAL_CALCULATION = 18
     """A volume calc."""
 
-VECTOR_GEOMETRY_TOOL_COMPONENT_TYPE.UNKNOWN.__doc__ = "Unsupported component kind."
-VECTOR_GEOMETRY_TOOL_COMPONENT_TYPE.INVALID.__doc__ = "Invalid component."
-VECTOR_GEOMETRY_TOOL_COMPONENT_TYPE.AXES.__doc__ = "Axes component."
-VECTOR_GEOMETRY_TOOL_COMPONENT_TYPE.ANGLE.__doc__ = "Angle component."
-VECTOR_GEOMETRY_TOOL_COMPONENT_TYPE.VECTOR.__doc__ = "Vector component."
-VECTOR_GEOMETRY_TOOL_COMPONENT_TYPE.POINT.__doc__ = "Point component."
-VECTOR_GEOMETRY_TOOL_COMPONENT_TYPE.PLANE.__doc__ = "Plane component."
-VECTOR_GEOMETRY_TOOL_COMPONENT_TYPE.SYSTEM.__doc__ = "System component."
-VECTOR_GEOMETRY_TOOL_COMPONENT_TYPE.TIME_INSTANT.__doc__ = "An event."
-VECTOR_GEOMETRY_TOOL_COMPONENT_TYPE.TIME_ARRAY.__doc__ = "An event array."
-VECTOR_GEOMETRY_TOOL_COMPONENT_TYPE.TIME_INTERVAL.__doc__ = "An event interval."
-VECTOR_GEOMETRY_TOOL_COMPONENT_TYPE.TIME_INTERVAL_COLLECTION.__doc__ = "An event interval collection."
-VECTOR_GEOMETRY_TOOL_COMPONENT_TYPE.TIME_INTERVAL_LIST.__doc__ = "A list of event intervals."
-VECTOR_GEOMETRY_TOOL_COMPONENT_TYPE.PARAMETER_SET.__doc__ = "A parameter set."
-VECTOR_GEOMETRY_TOOL_COMPONENT_TYPE.CALCULATION_SCALAR.__doc__ = "A scalar."
-VECTOR_GEOMETRY_TOOL_COMPONENT_TYPE.CONDITION.__doc__ = "A condition."
-VECTOR_GEOMETRY_TOOL_COMPONENT_TYPE.CONDITION_SET.__doc__ = "A condition set."
-VECTOR_GEOMETRY_TOOL_COMPONENT_TYPE.SPATIAL_VOLUME_GRID.__doc__ = "A volume grid."
-VECTOR_GEOMETRY_TOOL_COMPONENT_TYPE.VOLUME.__doc__ = "A volume."
-VECTOR_GEOMETRY_TOOL_COMPONENT_TYPE.SPATIAL_CALCULATION.__doc__ = "A volume calc."
+VectorGeometryToolComponentType.UNKNOWN.__doc__ = "Unsupported component kind."
+VectorGeometryToolComponentType.INVALID.__doc__ = "Invalid component."
+VectorGeometryToolComponentType.AXES.__doc__ = "Axes component."
+VectorGeometryToolComponentType.ANGLE.__doc__ = "Angle component."
+VectorGeometryToolComponentType.VECTOR.__doc__ = "Vector component."
+VectorGeometryToolComponentType.POINT.__doc__ = "Point component."
+VectorGeometryToolComponentType.PLANE.__doc__ = "Plane component."
+VectorGeometryToolComponentType.SYSTEM.__doc__ = "System component."
+VectorGeometryToolComponentType.TIME_INSTANT.__doc__ = "An event."
+VectorGeometryToolComponentType.TIME_ARRAY.__doc__ = "An event array."
+VectorGeometryToolComponentType.TIME_INTERVAL.__doc__ = "An event interval."
+VectorGeometryToolComponentType.TIME_INTERVAL_COLLECTION.__doc__ = "An event interval collection."
+VectorGeometryToolComponentType.TIME_INTERVAL_LIST.__doc__ = "A list of event intervals."
+VectorGeometryToolComponentType.PARAMETER_SET.__doc__ = "A parameter set."
+VectorGeometryToolComponentType.CALCULATION_SCALAR.__doc__ = "A scalar."
+VectorGeometryToolComponentType.CONDITION.__doc__ = "A condition."
+VectorGeometryToolComponentType.CONDITION_SET.__doc__ = "A condition set."
+VectorGeometryToolComponentType.SPATIAL_VOLUME_GRID.__doc__ = "A volume grid."
+VectorGeometryToolComponentType.VOLUME.__doc__ = "A volume."
+VectorGeometryToolComponentType.SPATIAL_CALCULATION.__doc__ = "A volume calc."
 
-agcls.AgTypeNameMap["VECTOR_GEOMETRY_TOOL_COMPONENT_TYPE"] = VECTOR_GEOMETRY_TOOL_COMPONENT_TYPE
+agcls.AgTypeNameMap["VectorGeometryToolComponentType"] = VectorGeometryToolComponentType
 
-class ANGLE_TYPE(IntEnum):
+class AngleType(IntEnum):
     """Represents angle types."""
    
     UNKNOWN = -1
@@ -1357,17 +1376,17 @@ class ANGLE_TYPE(IntEnum):
     TEMPLATE = 5
     """Represents a VGT angle created from a template. This type of angle is not creatable."""
 
-ANGLE_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported type."
-ANGLE_TYPE.BETWEEN_VECTORS.__doc__ = "An angle between two vectors."
-ANGLE_TYPE.BETWEEN_PLANES.__doc__ = "An angle between two planes."
-ANGLE_TYPE.DIHEDRAL_ANGLE.__doc__ = "An angle between two vectors about an axis."
-ANGLE_TYPE.ROTATION_ANGLE.__doc__ = "Angle of the shortest rotation between the two specified axes."
-ANGLE_TYPE.TO_PLANE.__doc__ = "An angle between a vector and a plane."
-ANGLE_TYPE.TEMPLATE.__doc__ = "Represents a VGT angle created from a template. This type of angle is not creatable."
+AngleType.UNKNOWN.__doc__ = "Unknown or unsupported type."
+AngleType.BETWEEN_VECTORS.__doc__ = "An angle between two vectors."
+AngleType.BETWEEN_PLANES.__doc__ = "An angle between two planes."
+AngleType.DIHEDRAL_ANGLE.__doc__ = "An angle between two vectors about an axis."
+AngleType.ROTATION_ANGLE.__doc__ = "Angle of the shortest rotation between the two specified axes."
+AngleType.TO_PLANE.__doc__ = "An angle between a vector and a plane."
+AngleType.TEMPLATE.__doc__ = "Represents a VGT angle created from a template. This type of angle is not creatable."
 
-agcls.AgTypeNameMap["ANGLE_TYPE"] = ANGLE_TYPE
+agcls.AgTypeNameMap["AngleType"] = AngleType
 
-class AXES_TYPE(IntEnum):
+class AxesType(IntEnum):
     """Represents vector types."""
    
     UNKNOWN = -1
@@ -1403,26 +1422,26 @@ class AXES_TYPE(IntEnum):
     FILE = 5
     """Axes specified by data from a file."""
 
-AXES_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported type."
-AXES_TYPE.LAGRANGE_LIBRATION.__doc__ = "Libration point axes using one primary and multiple secondary central bodies. Set primary and secondary bodies, and point type."
-AXES_TYPE.ANGULAR_OFFSET.__doc__ = "Axes created by rotating the Reference axes about the Spin vector through the specified rotation angle plus the additional rotational offset."
-AXES_TYPE.FIXED_AT_EPOCH.__doc__ = "Axes based on another set fixed at a specified epoch."
-AXES_TYPE.B_PLANE.__doc__ = "B-Plane axes using the selected target body and reference vector."
-AXES_TYPE.CUSTOM_SCRIPT.__doc__ = "Customized axes offset with respect to a set of reference Axes."
-AXES_TYPE.FIXED.__doc__ = "Axes fixed in reference axes."
-AXES_TYPE.ALIGNED_AND_CONSTRAINED.__doc__ = "Axes aligned using two pairs of vectors. One vector in each pair is fixed in these axes and the other vector serves as an independent reference."
-AXES_TYPE.MODEL_ATTACHMENT.__doc__ = "Axes aligned with the specified pointable element of the object's 3D model. The axes follow the model as well as any articulations that affect the specified pointable element."
-AXES_TYPE.SPINNING.__doc__ = "Axes created by spinning the Reference axes about the Spin vector with the specified rate. The axes are aligned with the Reference axes at the specified epoch plus the additional rotational offset."
-AXES_TYPE.ON_SURFACE.__doc__ = "Projection of the reference point onto the central body."
-AXES_TYPE.TRAJECTORY.__doc__ = "Axes based on trajectory of the point relative to the reference coordinate system."
-AXES_TYPE.TEMPLATE.__doc__ = "Represents a VGT axes created from a template. This type of axes is not creatable."
-AXES_TYPE.AT_TIME_INSTANT.__doc__ = "Axes orientation fixed relative to reference axes based on orientation of another set of axes evaluated at specified time instant."
-AXES_TYPE.PLUGIN.__doc__ = "An axes plugin point."
-AXES_TYPE.FILE.__doc__ = "Axes specified by data from a file."
+AxesType.UNKNOWN.__doc__ = "Unknown or unsupported type."
+AxesType.LAGRANGE_LIBRATION.__doc__ = "Libration point axes using one primary and multiple secondary central bodies. Set primary and secondary bodies, and point type."
+AxesType.ANGULAR_OFFSET.__doc__ = "Axes created by rotating the Reference axes about the Spin vector through the specified rotation angle plus the additional rotational offset."
+AxesType.FIXED_AT_EPOCH.__doc__ = "Axes based on another set fixed at a specified epoch."
+AxesType.B_PLANE.__doc__ = "B-Plane axes using the selected target body and reference vector."
+AxesType.CUSTOM_SCRIPT.__doc__ = "Customized axes offset with respect to a set of reference Axes."
+AxesType.FIXED.__doc__ = "Axes fixed in reference axes."
+AxesType.ALIGNED_AND_CONSTRAINED.__doc__ = "Axes aligned using two pairs of vectors. One vector in each pair is fixed in these axes and the other vector serves as an independent reference."
+AxesType.MODEL_ATTACHMENT.__doc__ = "Axes aligned with the specified pointable element of the object's 3D model. The axes follow the model as well as any articulations that affect the specified pointable element."
+AxesType.SPINNING.__doc__ = "Axes created by spinning the Reference axes about the Spin vector with the specified rate. The axes are aligned with the Reference axes at the specified epoch plus the additional rotational offset."
+AxesType.ON_SURFACE.__doc__ = "Projection of the reference point onto the central body."
+AxesType.TRAJECTORY.__doc__ = "Axes based on trajectory of the point relative to the reference coordinate system."
+AxesType.TEMPLATE.__doc__ = "Represents a VGT axes created from a template. This type of axes is not creatable."
+AxesType.AT_TIME_INSTANT.__doc__ = "Axes orientation fixed relative to reference axes based on orientation of another set of axes evaluated at specified time instant."
+AxesType.PLUGIN.__doc__ = "An axes plugin point."
+AxesType.FILE.__doc__ = "Axes specified by data from a file."
 
-agcls.AgTypeNameMap["AXES_TYPE"] = AXES_TYPE
+agcls.AgTypeNameMap["AxesType"] = AxesType
 
-class PLANE_TYPE(IntEnum):
+class PlaneType(IntEnum):
     """Represents plane types."""
    
     UNKNOWN = -1
@@ -1440,17 +1459,17 @@ class PLANE_TYPE(IntEnum):
     TWO_VECTOR = 5
     """A plane passing through point and containing two given vectors."""
 
-PLANE_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported type."
-PLANE_TYPE.NORMAL.__doc__ = "A plane normal to a vector at a given point."
-PLANE_TYPE.QUADRANT.__doc__ = "A plane is defined by the quadrant from a Reference System (e.g., XY, XZ, YZ, YX, ZX, ZY). The reference point in all cases is the origin of the coordinate system."
-PLANE_TYPE.TRAJECTORY.__doc__ = "A plane is defined on the basis of a trajectory of a selected point with respect to a reference point."
-PLANE_TYPE.TRIAD.__doc__ = "A plane is defined by the three points."
-PLANE_TYPE.TEMPLATE.__doc__ = "Represents a VGT plane created from a template. This type of plane is not creatable."
-PLANE_TYPE.TWO_VECTOR.__doc__ = "A plane passing through point and containing two given vectors."
+PlaneType.UNKNOWN.__doc__ = "Unknown or unsupported type."
+PlaneType.NORMAL.__doc__ = "A plane normal to a vector at a given point."
+PlaneType.QUADRANT.__doc__ = "A plane is defined by the quadrant from a Reference System (e.g., XY, XZ, YZ, YX, ZX, ZY). The reference point in all cases is the origin of the coordinate system."
+PlaneType.TRAJECTORY.__doc__ = "A plane is defined on the basis of a trajectory of a selected point with respect to a reference point."
+PlaneType.TRIAD.__doc__ = "A plane is defined by the three points."
+PlaneType.TEMPLATE.__doc__ = "Represents a VGT plane created from a template. This type of plane is not creatable."
+PlaneType.TWO_VECTOR.__doc__ = "A plane passing through point and containing two given vectors."
 
-agcls.AgTypeNameMap["PLANE_TYPE"] = PLANE_TYPE
+agcls.AgTypeNameMap["PlaneType"] = PlaneType
 
-class POINT_TYPE(IntEnum):
+class PointType(IntEnum):
     """Represents point types."""
    
     UNKNOWN = -1
@@ -1490,28 +1509,28 @@ class POINT_TYPE(IntEnum):
     SATELLITE_COLLECTION_ENTRY = 16
     """A point placed at the center of mass of a specified satellite of the satellite collection."""
 
-POINT_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported type."
-POINT_TYPE.B_PLANE.__doc__ = "B-Plane point using the selected target body."
-POINT_TYPE.GRAZING.__doc__ = "The grazing point is the point of closest approach to the surface of the selected central body along a defined direction."
-POINT_TYPE.COVARIANCE_GRAZING.__doc__ = "The point of closest approach to the surface of the specified position covariance ellipsoid surface along a defined direction. Position covariance must be available for a vehicle object to be considered a possible target for this option."
-POINT_TYPE.FIXED_IN_SYSTEM.__doc__ = "Point fixed in a reference coordinate system."
-POINT_TYPE.GLINT.__doc__ = "Point on central body surface that reflects from source to observer."
-POINT_TYPE.PLANE_INTERSECTION.__doc__ = "Point on a plane located along a given direction looking from a given origin."
-POINT_TYPE.MODEL_ATTACHMENT.__doc__ = "Point placed at the specified attachment point of the object's 3D model. The point follows the model as well as any articulations that affect the specified attachment point."
-POINT_TYPE.PLANE_PROJECTION.__doc__ = "The projection of a point onto a reference plane."
-POINT_TYPE.ON_SURFACE.__doc__ = "The detic subpoint of the reference point as projected onto the central body."
-POINT_TYPE.LAGRANGE_LIBRATION.__doc__ = "Libration point using one primary and multiple secondary central bodies."
-POINT_TYPE.TEMPLATE.__doc__ = "Represents a VGT point created from a template. This type of point is not creatable."
-POINT_TYPE.CENTRAL_BODY_INTERSECTION.__doc__ = "Point on central body surface along direction vector originating at source point."
-POINT_TYPE.AT_TIME_INSTANT.__doc__ = "Point fixed relative to reference system based on another point evaluated at specified time instant."
-POINT_TYPE.PLUGIN.__doc__ = "A point plugin point."
-POINT_TYPE.FILE.__doc__ = "Point specified by data from a file."
-POINT_TYPE.FIXED_ON_CENTRAL_BODY.__doc__ = "Point fixed on a central body."
-POINT_TYPE.SATELLITE_COLLECTION_ENTRY.__doc__ = "A point placed at the center of mass of a specified satellite of the satellite collection."
+PointType.UNKNOWN.__doc__ = "Unknown or unsupported type."
+PointType.B_PLANE.__doc__ = "B-Plane point using the selected target body."
+PointType.GRAZING.__doc__ = "The grazing point is the point of closest approach to the surface of the selected central body along a defined direction."
+PointType.COVARIANCE_GRAZING.__doc__ = "The point of closest approach to the surface of the specified position covariance ellipsoid surface along a defined direction. Position covariance must be available for a vehicle object to be considered a possible target for this option."
+PointType.FIXED_IN_SYSTEM.__doc__ = "Point fixed in a reference coordinate system."
+PointType.GLINT.__doc__ = "Point on central body surface that reflects from source to observer."
+PointType.PLANE_INTERSECTION.__doc__ = "Point on a plane located along a given direction looking from a given origin."
+PointType.MODEL_ATTACHMENT.__doc__ = "Point placed at the specified attachment point of the object's 3D model. The point follows the model as well as any articulations that affect the specified attachment point."
+PointType.PLANE_PROJECTION.__doc__ = "The projection of a point onto a reference plane."
+PointType.ON_SURFACE.__doc__ = "The detic subpoint of the reference point as projected onto the central body."
+PointType.LAGRANGE_LIBRATION.__doc__ = "Libration point using one primary and multiple secondary central bodies."
+PointType.TEMPLATE.__doc__ = "Represents a VGT point created from a template. This type of point is not creatable."
+PointType.CENTRAL_BODY_INTERSECTION.__doc__ = "Point on central body surface along direction vector originating at source point."
+PointType.AT_TIME_INSTANT.__doc__ = "Point fixed relative to reference system based on another point evaluated at specified time instant."
+PointType.PLUGIN.__doc__ = "A point plugin point."
+PointType.FILE.__doc__ = "Point specified by data from a file."
+PointType.FIXED_ON_CENTRAL_BODY.__doc__ = "Point fixed on a central body."
+PointType.SATELLITE_COLLECTION_ENTRY.__doc__ = "A point placed at the center of mass of a specified satellite of the satellite collection."
 
-agcls.AgTypeNameMap["POINT_TYPE"] = POINT_TYPE
+agcls.AgTypeNameMap["PointType"] = PointType
 
-class SYSTEM_TYPE(IntEnum):
+class SystemType(IntEnum):
     """Represents system types."""
    
     UNKNOWN = -1
@@ -1523,14 +1542,14 @@ class SYSTEM_TYPE(IntEnum):
     TEMPLATE = 2
     """Represents a VGT system created from a template. This type of system is not creatable."""
 
-SYSTEM_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported system type."
-SYSTEM_TYPE.ASSEMBLED.__doc__ = "A system assembled from an origin point and a set of reference axes."
-SYSTEM_TYPE.ON_SURFACE.__doc__ = "A system with an origin on the surface of the central body with topocentric axes rotated on a clock angle."
-SYSTEM_TYPE.TEMPLATE.__doc__ = "Represents a VGT system created from a template. This type of system is not creatable."
+SystemType.UNKNOWN.__doc__ = "Unknown or unsupported system type."
+SystemType.ASSEMBLED.__doc__ = "A system assembled from an origin point and a set of reference axes."
+SystemType.ON_SURFACE.__doc__ = "A system with an origin on the surface of the central body with topocentric axes rotated on a clock angle."
+SystemType.TEMPLATE.__doc__ = "Represents a VGT system created from a template. This type of system is not creatable."
 
-agcls.AgTypeNameMap["SYSTEM_TYPE"] = SYSTEM_TYPE
+agcls.AgTypeNameMap["SystemType"] = SystemType
 
-class VECTOR_TYPE(IntEnum):
+class VectorType(IntEnum):
     """Represents vector types."""
    
     UNKNOWN = -1
@@ -1597,43 +1616,46 @@ class VECTOR_TYPE(IntEnum):
     """Rotation vector representing the rotation of one axes relative to reference axes, expressed as angle*rotationAxis."""
     DISPLACEMENT_ON_SURFACE = 31
     """Displacement between origin and destination points using surface distance and altitude difference."""
+    FILE = 32
+    """Vector interpolated from tabulated data from file."""
 
-VECTOR_TYPE.UNKNOWN.__doc__ = "Unknown or unsupported vector type."
-VECTOR_TYPE.DISPLACEMENT.__doc__ = "Vector defined by its start and end points."
-VECTOR_TYPE.APOAPSIS.__doc__ = "Vector from the center of the specified central body to the farthest point of an elliptical orbit created from the motion of the specified point."
-VECTOR_TYPE.FIXED_AT_EPOCH.__doc__ = "Based on another vector fixed at a specified epoch."
-VECTOR_TYPE.ANGULAR_VELOCITY.__doc__ = "Angular velocity vector of one set of axes computed with respect to the reference set."
-VECTOR_TYPE.CONING.__doc__ = "Vector created by revolving the Reference vector around the About vector with the specified rate. The vector is aligned with Reference vector at specified epoch. After that it revolves between start/stop angles using either uni- or bi-directional mode."
-VECTOR_TYPE.CROSS_PRODUCT.__doc__ = "The vector cross product of two vectors."
-VECTOR_TYPE.CUSTOM_SCRIPT.__doc__ = "Customized vector components defined with respect to reference axes."
-VECTOR_TYPE.DERIVATIVE.__doc__ = "Derivative of a vector computed with respect to specified axes."
-VECTOR_TYPE.ANGLE_RATE.__doc__ = "Angle rate vector perpendicular to the plane in which the angle is defined."
-VECTOR_TYPE.ECCENTRICITY.__doc__ = "Vector directed from the center of the specified central body toward the nearest point of an elliptical orbit created from the motion of the specified point."
-VECTOR_TYPE.FIXED_IN_AXES.__doc__ = "Vector fixed in reference axes."
-VECTOR_TYPE.TWO_PLANES_INTERSECTION.__doc__ = "Defined along the intersection of two planes."
-VECTOR_TYPE.LINE_OF_NODES.__doc__ = "Unit vector along the line of nodes - the line of intersection of the osculating orbit plane and the inertial equator of the specified central body."
-VECTOR_TYPE.MODEL_ATTACHMENT.__doc__ = "Unit vector along the specified pointable element of the object's 3D model. The vector's direction follows the model as well as any articulations that affect the specified pointable element."
-VECTOR_TYPE.ORBIT_ANGULAR_MOMENTUM.__doc__ = "Vector perpendicular to the plane of an elliptical orbit created from the motion of the specified point with respect to the center of the specified central body."
-VECTOR_TYPE.ORBIT_NORMAL.__doc__ = "Unit vector perpendicular to the plane of an elliptical orbit created from the motion of the specified point with respect to the center of the specified central body."
-VECTOR_TYPE.PERIAPSIS.__doc__ = "Vector from the center of the specified central body to the nearest point of an elliptical orbit created from the motion of the specified point."
-VECTOR_TYPE.PROJECTION.__doc__ = "A projection of a vector computed with respect to a reference plane."
-VECTOR_TYPE.REFLECTION.__doc__ = "Incident vector reflected using a plane whose normal is the normal vector, scaled by a factor. The selected vector or its opposite can be reflected on just one or on both sides of the plane."
-VECTOR_TYPE.SCALED.__doc__ = "Scaled version of the input vector."
-VECTOR_TYPE.DIRECTION_TO_STAR.__doc__ = "Defined with respect to a star object."
-VECTOR_TYPE.TEMPLATE.__doc__ = "Represents a VGT vector created from a template. This type of vector is not creatable."
-VECTOR_TYPE.AT_TIME_INSTANT.__doc__ = "Vector fixed relative to reference axes based on another vector evaluated at specified time instant."
-VECTOR_TYPE.LINEAR_COMBINATION.__doc__ = "Linear combination of two input vectors."
-VECTOR_TYPE.PROJECT_ALONG.__doc__ = "A projection of a source vector in the direction of another vector."
-VECTOR_TYPE.SCALAR_LINEAR_COMBINATION.__doc__ = "Linear combination of two input vectors using scalars."
-VECTOR_TYPE.SCALAR_SCALED.__doc__ = "Scaled version of the input vector using scalar."
-VECTOR_TYPE.VELOCITY.__doc__ = "Velocity vector of a point in a coordinate system."
-VECTOR_TYPE.PLUGIN.__doc__ = "A vector plugin point."
-VECTOR_TYPE.ROTATION_VECTOR.__doc__ = "Rotation vector representing the rotation of one axes relative to reference axes, expressed as angle*rotationAxis."
-VECTOR_TYPE.DISPLACEMENT_ON_SURFACE.__doc__ = "Displacement between origin and destination points using surface distance and altitude difference."
+VectorType.UNKNOWN.__doc__ = "Unknown or unsupported vector type."
+VectorType.DISPLACEMENT.__doc__ = "Vector defined by its start and end points."
+VectorType.APOAPSIS.__doc__ = "Vector from the center of the specified central body to the farthest point of an elliptical orbit created from the motion of the specified point."
+VectorType.FIXED_AT_EPOCH.__doc__ = "Based on another vector fixed at a specified epoch."
+VectorType.ANGULAR_VELOCITY.__doc__ = "Angular velocity vector of one set of axes computed with respect to the reference set."
+VectorType.CONING.__doc__ = "Vector created by revolving the Reference vector around the About vector with the specified rate. The vector is aligned with Reference vector at specified epoch. After that it revolves between start/stop angles using either uni- or bi-directional mode."
+VectorType.CROSS_PRODUCT.__doc__ = "The vector cross product of two vectors."
+VectorType.CUSTOM_SCRIPT.__doc__ = "Customized vector components defined with respect to reference axes."
+VectorType.DERIVATIVE.__doc__ = "Derivative of a vector computed with respect to specified axes."
+VectorType.ANGLE_RATE.__doc__ = "Angle rate vector perpendicular to the plane in which the angle is defined."
+VectorType.ECCENTRICITY.__doc__ = "Vector directed from the center of the specified central body toward the nearest point of an elliptical orbit created from the motion of the specified point."
+VectorType.FIXED_IN_AXES.__doc__ = "Vector fixed in reference axes."
+VectorType.TWO_PLANES_INTERSECTION.__doc__ = "Defined along the intersection of two planes."
+VectorType.LINE_OF_NODES.__doc__ = "Unit vector along the line of nodes - the line of intersection of the osculating orbit plane and the inertial equator of the specified central body."
+VectorType.MODEL_ATTACHMENT.__doc__ = "Unit vector along the specified pointable element of the object's 3D model. The vector's direction follows the model as well as any articulations that affect the specified pointable element."
+VectorType.ORBIT_ANGULAR_MOMENTUM.__doc__ = "Vector perpendicular to the plane of an elliptical orbit created from the motion of the specified point with respect to the center of the specified central body."
+VectorType.ORBIT_NORMAL.__doc__ = "Unit vector perpendicular to the plane of an elliptical orbit created from the motion of the specified point with respect to the center of the specified central body."
+VectorType.PERIAPSIS.__doc__ = "Vector from the center of the specified central body to the nearest point of an elliptical orbit created from the motion of the specified point."
+VectorType.PROJECTION.__doc__ = "A projection of a vector computed with respect to a reference plane."
+VectorType.REFLECTION.__doc__ = "Incident vector reflected using a plane whose normal is the normal vector, scaled by a factor. The selected vector or its opposite can be reflected on just one or on both sides of the plane."
+VectorType.SCALED.__doc__ = "Scaled version of the input vector."
+VectorType.DIRECTION_TO_STAR.__doc__ = "Defined with respect to a star object."
+VectorType.TEMPLATE.__doc__ = "Represents a VGT vector created from a template. This type of vector is not creatable."
+VectorType.AT_TIME_INSTANT.__doc__ = "Vector fixed relative to reference axes based on another vector evaluated at specified time instant."
+VectorType.LINEAR_COMBINATION.__doc__ = "Linear combination of two input vectors."
+VectorType.PROJECT_ALONG.__doc__ = "A projection of a source vector in the direction of another vector."
+VectorType.SCALAR_LINEAR_COMBINATION.__doc__ = "Linear combination of two input vectors using scalars."
+VectorType.SCALAR_SCALED.__doc__ = "Scaled version of the input vector using scalar."
+VectorType.VELOCITY.__doc__ = "Velocity vector of a point in a coordinate system."
+VectorType.PLUGIN.__doc__ = "A vector plugin point."
+VectorType.ROTATION_VECTOR.__doc__ = "Rotation vector representing the rotation of one axes relative to reference axes, expressed as angle*rotationAxis."
+VectorType.DISPLACEMENT_ON_SURFACE.__doc__ = "Displacement between origin and destination points using surface distance and altitude difference."
+VectorType.FILE.__doc__ = "Vector interpolated from tabulated data from file."
 
-agcls.AgTypeNameMap["VECTOR_TYPE"] = VECTOR_TYPE
+agcls.AgTypeNameMap["VectorType"] = VectorType
 
-class MEAN_ELEMENT_THEORY(IntEnum):
+class MeanElementTheory(IntEnum):
     """Mean element theory types for approximating motion."""
    
     OSCULATING_ELEMENTS = 1
@@ -1645,14 +1667,14 @@ class MEAN_ELEMENT_THEORY(IntEnum):
     BROUWER_LYDDANE_SHORT_PERIODIC_TERMS_ONLY = 4
     """Refers to the BL mean elements considering only the short period terms (i.e. those involving averaging over the period of the orbit) where the only perturbation force is the oblateness arising from the J2 gravity term."""
 
-MEAN_ELEMENT_THEORY.OSCULATING_ELEMENTS.__doc__ = "Osculating elements (six standard Keplerian orbital elements)."
-MEAN_ELEMENT_THEORY.KOZAI.__doc__ = "The Kozai-Iszak (KI) mean elements are based upon the paper ``The Motion of a Close earth satellite,`` Y. Kozai, The Astronomical Journal, Nov 1959, pp.367-377."
-MEAN_ELEMENT_THEORY.BROUWER_LYDDANE.__doc__ = "Refers to the BL mean elements considering both the short and long period terms (resulting from averaging over the rotation of periapse). The perturbation terms are the J2, J3, J4 and J5 oblateness terms and it considers the term involving J2^2."
-MEAN_ELEMENT_THEORY.BROUWER_LYDDANE_SHORT_PERIODIC_TERMS_ONLY.__doc__ = "Refers to the BL mean elements considering only the short period terms (i.e. those involving averaging over the period of the orbit) where the only perturbation force is the oblateness arising from the J2 gravity term."
+MeanElementTheory.OSCULATING_ELEMENTS.__doc__ = "Osculating elements (six standard Keplerian orbital elements)."
+MeanElementTheory.KOZAI.__doc__ = "The Kozai-Iszak (KI) mean elements are based upon the paper ``The Motion of a Close earth satellite,`` Y. Kozai, The Astronomical Journal, Nov 1959, pp.367-377."
+MeanElementTheory.BROUWER_LYDDANE.__doc__ = "Refers to the BL mean elements considering both the short and long period terms (resulting from averaging over the rotation of periapse). The perturbation terms are the J2, J3, J4 and J5 oblateness terms and it considers the term involving J2^2."
+MeanElementTheory.BROUWER_LYDDANE_SHORT_PERIODIC_TERMS_ONLY.__doc__ = "Refers to the BL mean elements considering only the short period terms (i.e. those involving averaging over the period of the orbit) where the only perturbation force is the oblateness arising from the J2 gravity term."
 
-agcls.AgTypeNameMap["MEAN_ELEMENT_THEORY"] = MEAN_ELEMENT_THEORY
+agcls.AgTypeNameMap["MeanElementTheory"] = MeanElementTheory
 
-class ASYMPTOTE_DIRECTION_TYPE(IntEnum):
+class AsymptoteDirectionType(IntEnum):
     """Direction options."""
    
     INCOMING = 1
@@ -1660,12 +1682,12 @@ class ASYMPTOTE_DIRECTION_TYPE(IntEnum):
     OUTGOING = 2
     """Outgoing direction."""
 
-ASYMPTOTE_DIRECTION_TYPE.INCOMING.__doc__ = "Incoming direction."
-ASYMPTOTE_DIRECTION_TYPE.OUTGOING.__doc__ = "Outgoing direction."
+AsymptoteDirectionType.INCOMING.__doc__ = "Incoming direction."
+AsymptoteDirectionType.OUTGOING.__doc__ = "Outgoing direction."
 
-agcls.AgTypeNameMap["ASYMPTOTE_DIRECTION_TYPE"] = ASYMPTOTE_DIRECTION_TYPE
+agcls.AgTypeNameMap["AsymptoteDirectionType"] = AsymptoteDirectionType
 
-class LAGRANGE_LIBRATION_POINT_TYPE(IntEnum):
+class LagrangeLibrationPointType(IntEnum):
     """Types of the Lagrange points, also known as libration points. Lagrange points are points in space where gravitational forces and the orbital motion of a body balance each other."""
    
     L1 = 1
@@ -1679,15 +1701,15 @@ class LAGRANGE_LIBRATION_POINT_TYPE(IntEnum):
     L5 = 5
     """The L4 and L5 points lie at 60 degrees ahead of and behind Earth in its orbit as seen from the Sun. L4 and L5 are \"stable\" points."""
 
-LAGRANGE_LIBRATION_POINT_TYPE.L1.__doc__ = "A point between the Sun and Earth."
-LAGRANGE_LIBRATION_POINT_TYPE.L2.__doc__ = "Similar to L2, but on the night side of Earth, further away from the Sun, but about the same distane from Earth."
-LAGRANGE_LIBRATION_POINT_TYPE.L3.__doc__ = "L3 lies on a line defined by the Sun and Earth, on the opposite side of the Sun, just outside the orbit of Earth. L3 remains hidden behind the Sun at all times."
-LAGRANGE_LIBRATION_POINT_TYPE.L4.__doc__ = "The L4 and L5 points lie at 60 degrees ahead of and behind Earth in its orbit as seen from the Sun. L4 and L5 are ``stable`` points."
-LAGRANGE_LIBRATION_POINT_TYPE.L5.__doc__ = "The L4 and L5 points lie at 60 degrees ahead of and behind Earth in its orbit as seen from the Sun. L4 and L5 are ``stable`` points."
+LagrangeLibrationPointType.L1.__doc__ = "A point between the Sun and Earth."
+LagrangeLibrationPointType.L2.__doc__ = "Similar to L2, but on the night side of Earth, further away from the Sun, but about the same distane from Earth."
+LagrangeLibrationPointType.L3.__doc__ = "L3 lies on a line defined by the Sun and Earth, on the opposite side of the Sun, just outside the orbit of Earth. L3 remains hidden behind the Sun at all times."
+LagrangeLibrationPointType.L4.__doc__ = "The L4 and L5 points lie at 60 degrees ahead of and behind Earth in its orbit as seen from the Sun. L4 and L5 are ``stable`` points."
+LagrangeLibrationPointType.L5.__doc__ = "The L4 and L5 points lie at 60 degrees ahead of and behind Earth in its orbit as seen from the Sun. L4 and L5 are ``stable`` points."
 
-agcls.AgTypeNameMap["LAGRANGE_LIBRATION_POINT_TYPE"] = LAGRANGE_LIBRATION_POINT_TYPE
+agcls.AgTypeNameMap["LagrangeLibrationPointType"] = LagrangeLibrationPointType
 
-class PLANE_QUADRANT_TYPE(IntEnum):
+class PlaneQuadrantType(IntEnum):
     """Quadrants from a reference system (e.g., XY, XZ, YZ, YX, ZX, ZY)."""
    
     XY = 1
@@ -1703,16 +1725,16 @@ class PLANE_QUADRANT_TYPE(IntEnum):
     ZY = 6
     """ZY quadrant."""
 
-PLANE_QUADRANT_TYPE.XY.__doc__ = "XY quadrant."
-PLANE_QUADRANT_TYPE.YX.__doc__ = "YX quadrant."
-PLANE_QUADRANT_TYPE.XZ.__doc__ = "XZ quadrant."
-PLANE_QUADRANT_TYPE.ZX.__doc__ = "ZX quadrant."
-PLANE_QUADRANT_TYPE.YZ.__doc__ = "YZ quadrant."
-PLANE_QUADRANT_TYPE.ZY.__doc__ = "ZY quadrant."
+PlaneQuadrantType.XY.__doc__ = "XY quadrant."
+PlaneQuadrantType.YX.__doc__ = "YX quadrant."
+PlaneQuadrantType.XZ.__doc__ = "XZ quadrant."
+PlaneQuadrantType.ZX.__doc__ = "ZX quadrant."
+PlaneQuadrantType.YZ.__doc__ = "YZ quadrant."
+PlaneQuadrantType.ZY.__doc__ = "ZY quadrant."
 
-agcls.AgTypeNameMap["PLANE_QUADRANT_TYPE"] = PLANE_QUADRANT_TYPE
+agcls.AgTypeNameMap["PlaneQuadrantType"] = PlaneQuadrantType
 
-class TRAJECTORY_AXES_COORDINATES_TYPE(IntEnum):
+class TrajectoryAxesCoordinatesType(IntEnum):
     """Trajectory axes coordinate types."""
    
     ICR = 0
@@ -1732,18 +1754,18 @@ class TRAJECTORY_AXES_COORDINATES_TYPE(IntEnum):
     NTC = 7
     """Normal - Tangential - Crosstrack Axes. The Y axis is along the velocity vector (tangential); the Z axis is along the cross product of the position and velocity (crosstrack); the X axis is constructed as Y x Z (normal)."""
 
-TRAJECTORY_AXES_COORDINATES_TYPE.ICR.__doc__ = "Intrack Crosstrack Radial Axes. The Z axis is outward along the position vector (radial); the Y axis is along the cross product of the position and velocity (crosstrack); the X axis is in the direction of motion and constructed as Y x Z (intrack)."
-TRAJECTORY_AXES_COORDINATES_TYPE.VNC.__doc__ = "Velocity - Normal - Co-normal Axes. The X axis is along the velocity vector; the Y axis is along the cross product of the position and velocity (normal); the Z axis is constructed as X x Y (co-normal)."
-TRAJECTORY_AXES_COORDINATES_TYPE.RIC.__doc__ = "Radial Intrack Crosstrack Axes. The X axis is outward along the position vector (radial); the Z axis is along the cross product of the position and velocity (crosstrack); the Y axis is in the direction of motion and is constructed as Z x X (intrack)."
-TRAJECTORY_AXES_COORDINATES_TYPE.LVLH.__doc__ = "Local Vertical, Local Horizontal Axes. The X axis is along the position vector (local vertical); the Z axis is along the cross product of the position and velocity; the Y axis is in the direction of motion and constructed as Z x X (local horizontal)."
-TRAJECTORY_AXES_COORDINATES_TYPE.VVLH.__doc__ = "Vehicle Velocity, Local Horizontal Axes. The Z axis is along the negative position vector; the Y axis is along the negative cross product of the position and velocity (local horizontal); the X axis is constructed as Z x Y (toward velocity)."
-TRAJECTORY_AXES_COORDINATES_TYPE.BODY_BODY_ROTATING.__doc__ = "Body-to-body Rotating Axes. The X axis is along the negative position vector; the Z axis is along the cross product of the position and velocity; the Y axis is constructed as Z x X."
-TRAJECTORY_AXES_COORDINATES_TYPE.EQUINOCTIAL.__doc__ = "Equinoctial Axes. The Z axis is along the orbit normal; the X axis is along the fiducial direction located by rotating about Z-axis by negative of RAAN value; the Y axis is constructed as Z x X."
-TRAJECTORY_AXES_COORDINATES_TYPE.NTC.__doc__ = "Normal - Tangential - Crosstrack Axes. The Y axis is along the velocity vector (tangential); the Z axis is along the cross product of the position and velocity (crosstrack); the X axis is constructed as Y x Z (normal)."
+TrajectoryAxesCoordinatesType.ICR.__doc__ = "Intrack Crosstrack Radial Axes. The Z axis is outward along the position vector (radial); the Y axis is along the cross product of the position and velocity (crosstrack); the X axis is in the direction of motion and constructed as Y x Z (intrack)."
+TrajectoryAxesCoordinatesType.VNC.__doc__ = "Velocity - Normal - Co-normal Axes. The X axis is along the velocity vector; the Y axis is along the cross product of the position and velocity (normal); the Z axis is constructed as X x Y (co-normal)."
+TrajectoryAxesCoordinatesType.RIC.__doc__ = "Radial Intrack Crosstrack Axes. The X axis is outward along the position vector (radial); the Z axis is along the cross product of the position and velocity (crosstrack); the Y axis is in the direction of motion and is constructed as Z x X (intrack)."
+TrajectoryAxesCoordinatesType.LVLH.__doc__ = "Local Vertical, Local Horizontal Axes. The X axis is along the position vector (local vertical); the Z axis is along the cross product of the position and velocity; the Y axis is in the direction of motion and constructed as Z x X (local horizontal)."
+TrajectoryAxesCoordinatesType.VVLH.__doc__ = "Vehicle Velocity, Local Horizontal Axes. The Z axis is along the negative position vector; the Y axis is along the negative cross product of the position and velocity (local horizontal); the X axis is constructed as Z x Y (toward velocity)."
+TrajectoryAxesCoordinatesType.BODY_BODY_ROTATING.__doc__ = "Body-to-body Rotating Axes. The X axis is along the negative position vector; the Z axis is along the cross product of the position and velocity; the Y axis is constructed as Z x X."
+TrajectoryAxesCoordinatesType.EQUINOCTIAL.__doc__ = "Equinoctial Axes. The Z axis is along the orbit normal; the X axis is along the fiducial direction located by rotating about Z-axis by negative of RAAN value; the Y axis is constructed as Z x X."
+TrajectoryAxesCoordinatesType.NTC.__doc__ = "Normal - Tangential - Crosstrack Axes. The Y axis is along the velocity vector (tangential); the Z axis is along the cross product of the position and velocity (crosstrack); the X axis is constructed as Y x Z (normal)."
 
-agcls.AgTypeNameMap["TRAJECTORY_AXES_COORDINATES_TYPE"] = TRAJECTORY_AXES_COORDINATES_TYPE
+agcls.AgTypeNameMap["TrajectoryAxesCoordinatesType"] = TrajectoryAxesCoordinatesType
 
-class PRINCIPAL_AXIS_OF_ROTATION_TYPE(IntEnum):
+class PrincipalAxisOfRotationType(IntEnum):
     """Rotation directions."""
    
     X = 0
@@ -1753,13 +1775,13 @@ class PRINCIPAL_AXIS_OF_ROTATION_TYPE(IntEnum):
     Z = 2
     """Rotate about Axis Z."""
 
-PRINCIPAL_AXIS_OF_ROTATION_TYPE.X.__doc__ = "Rotate about Axis X."
-PRINCIPAL_AXIS_OF_ROTATION_TYPE.Y.__doc__ = "Rotate about Axis Y."
-PRINCIPAL_AXIS_OF_ROTATION_TYPE.Z.__doc__ = "Rotate about Axis Z."
+PrincipalAxisOfRotationType.X.__doc__ = "Rotate about Axis X."
+PrincipalAxisOfRotationType.Y.__doc__ = "Rotate about Axis Y."
+PrincipalAxisOfRotationType.Z.__doc__ = "Rotate about Axis Z."
 
-agcls.AgTypeNameMap["PRINCIPAL_AXIS_OF_ROTATION_TYPE"] = PRINCIPAL_AXIS_OF_ROTATION_TYPE
+agcls.AgTypeNameMap["PrincipalAxisOfRotationType"] = PrincipalAxisOfRotationType
 
-class SIGNED_ANGLE_TYPE(IntEnum):
+class SignedAngleType(IntEnum):
     """Define options for computing an angle."""
    
     NONE = 0
@@ -1769,13 +1791,13 @@ class SIGNED_ANGLE_TYPE(IntEnum):
     NEGATIVE = 2
     """Choose the option to measure angles as negative when the reference Vector is directed toward the plane's normal."""
 
-SIGNED_ANGLE_TYPE.NONE.__doc__ = "Choose the option to use unsigned angle."
-SIGNED_ANGLE_TYPE.POSITIVE.__doc__ = "Choose the option to measure angles as positive when the reference Vector is directed toward the plane's normal."
-SIGNED_ANGLE_TYPE.NEGATIVE.__doc__ = "Choose the option to measure angles as negative when the reference Vector is directed toward the plane's normal."
+SignedAngleType.NONE.__doc__ = "Choose the option to use unsigned angle."
+SignedAngleType.POSITIVE.__doc__ = "Choose the option to measure angles as positive when the reference Vector is directed toward the plane's normal."
+SignedAngleType.NEGATIVE.__doc__ = "Choose the option to measure angles as negative when the reference Vector is directed toward the plane's normal."
 
-agcls.AgTypeNameMap["SIGNED_ANGLE_TYPE"] = SIGNED_ANGLE_TYPE
+agcls.AgTypeNameMap["SignedAngleType"] = SignedAngleType
 
-class POINT_B_PLANE_TYPE(IntEnum):
+class PointBPlaneType(IntEnum):
     """B-Plane point types."""
    
     ASYMPTOTE = 1
@@ -1783,12 +1805,12 @@ class POINT_B_PLANE_TYPE(IntEnum):
     TWO_BODY = 2
     """Two body."""
 
-POINT_B_PLANE_TYPE.ASYMPTOTE.__doc__ = "Asymptote."
-POINT_B_PLANE_TYPE.TWO_BODY.__doc__ = "Two body."
+PointBPlaneType.ASYMPTOTE.__doc__ = "Asymptote."
+PointBPlaneType.TWO_BODY.__doc__ = "Two body."
 
-agcls.AgTypeNameMap["POINT_B_PLANE_TYPE"] = POINT_B_PLANE_TYPE
+agcls.AgTypeNameMap["PointBPlaneType"] = PointBPlaneType
 
-class SURFACE_REFERENCE_SHAPE_TYPE(IntEnum):
+class SurfaceReferenceShapeType(IntEnum):
     """Surface shape types."""
    
     ELLIPSOID = 1
@@ -1798,13 +1820,13 @@ class SURFACE_REFERENCE_SHAPE_TYPE(IntEnum):
     MSL = 3
     """Mean Sea Level as the terrain reference."""
 
-SURFACE_REFERENCE_SHAPE_TYPE.ELLIPSOID.__doc__ = "An ellipsoid reference shape as defined by the central body (by default, it is WSG84)."
-SURFACE_REFERENCE_SHAPE_TYPE.TERRAIN.__doc__ = "Terrain as the terrain reference."
-SURFACE_REFERENCE_SHAPE_TYPE.MSL.__doc__ = "Mean Sea Level as the terrain reference."
+SurfaceReferenceShapeType.ELLIPSOID.__doc__ = "An ellipsoid reference shape as defined by the central body (by default, it is WSG84)."
+SurfaceReferenceShapeType.TERRAIN.__doc__ = "Terrain as the terrain reference."
+SurfaceReferenceShapeType.MSL.__doc__ = "Mean Sea Level as the terrain reference."
 
-agcls.AgTypeNameMap["SURFACE_REFERENCE_SHAPE_TYPE"] = SURFACE_REFERENCE_SHAPE_TYPE
+agcls.AgTypeNameMap["SurfaceReferenceShapeType"] = SurfaceReferenceShapeType
 
-class SURFACE_SHAPE_TYPE(IntEnum):
+class SurfaceShapeType(IntEnum):
     """Surface types."""
    
     DETIC = 1
@@ -1812,12 +1834,12 @@ class SURFACE_SHAPE_TYPE(IntEnum):
     CENTRIC = 2
     """Centric surface model."""
 
-SURFACE_SHAPE_TYPE.DETIC.__doc__ = "Detic surface model."
-SURFACE_SHAPE_TYPE.CENTRIC.__doc__ = "Centric surface model."
+SurfaceShapeType.DETIC.__doc__ = "Detic surface model."
+SurfaceShapeType.CENTRIC.__doc__ = "Centric surface model."
 
-agcls.AgTypeNameMap["SURFACE_SHAPE_TYPE"] = SURFACE_SHAPE_TYPE
+agcls.AgTypeNameMap["SurfaceShapeType"] = SurfaceShapeType
 
-class ROTATION_SWEEP_MODE_TYPE(IntEnum):
+class RotationSweepModeType(IntEnum):
     """The rotation sweeping modes."""
    
     BIDIRECTIONAL = 1
@@ -1825,12 +1847,12 @@ class ROTATION_SWEEP_MODE_TYPE(IntEnum):
     UNIDIRECTIONAL = 2
     """Unidirectional sweeping mode."""
 
-ROTATION_SWEEP_MODE_TYPE.BIDIRECTIONAL.__doc__ = "Bidirectional sweeping mode."
-ROTATION_SWEEP_MODE_TYPE.UNIDIRECTIONAL.__doc__ = "Unidirectional sweeping mode."
+RotationSweepModeType.BIDIRECTIONAL.__doc__ = "Bidirectional sweeping mode."
+RotationSweepModeType.UNIDIRECTIONAL.__doc__ = "Unidirectional sweeping mode."
 
-agcls.AgTypeNameMap["ROTATION_SWEEP_MODE_TYPE"] = ROTATION_SWEEP_MODE_TYPE
+agcls.AgTypeNameMap["RotationSweepModeType"] = RotationSweepModeType
 
-class SIGNAL_DIRECTION_TYPE(IntEnum):
+class SignalDirectionType(IntEnum):
     """Signal sense transmission options."""
    
     RECEIVE = 1
@@ -1838,12 +1860,12 @@ class SIGNAL_DIRECTION_TYPE(IntEnum):
     TRANSMIT = 2
     """Signal transmit."""
 
-SIGNAL_DIRECTION_TYPE.RECEIVE.__doc__ = "Signal receive."
-SIGNAL_DIRECTION_TYPE.TRANSMIT.__doc__ = "Signal transmit."
+SignalDirectionType.RECEIVE.__doc__ = "Signal receive."
+SignalDirectionType.TRANSMIT.__doc__ = "Signal transmit."
 
-agcls.AgTypeNameMap["SIGNAL_DIRECTION_TYPE"] = SIGNAL_DIRECTION_TYPE
+agcls.AgTypeNameMap["SignalDirectionType"] = SignalDirectionType
 
-class INTERSECTION_SURFACE_TYPE(IntEnum):
+class IntersectionSurfaceType(IntEnum):
     """Intersection surface flags."""
    
     ON_CENTRAL_BODY_ELLIPSOID = 0
@@ -1853,13 +1875,13 @@ class INTERSECTION_SURFACE_TYPE(IntEnum):
     AT_TERRAIN = 2
     """Use terrain as intersection surface."""
 
-INTERSECTION_SURFACE_TYPE.ON_CENTRAL_BODY_ELLIPSOID.__doc__ = "Intersection with central body ellipsoid."
-INTERSECTION_SURFACE_TYPE.AT_ALTITUDE_ABOVE_ELLIPSOID.__doc__ = "Intersection at altitude."
-INTERSECTION_SURFACE_TYPE.AT_TERRAIN.__doc__ = "Use terrain as intersection surface."
+IntersectionSurfaceType.ON_CENTRAL_BODY_ELLIPSOID.__doc__ = "Intersection with central body ellipsoid."
+IntersectionSurfaceType.AT_ALTITUDE_ABOVE_ELLIPSOID.__doc__ = "Intersection at altitude."
+IntersectionSurfaceType.AT_TERRAIN.__doc__ = "Use terrain as intersection surface."
 
-agcls.AgTypeNameMap["INTERSECTION_SURFACE_TYPE"] = INTERSECTION_SURFACE_TYPE
+agcls.AgTypeNameMap["IntersectionSurfaceType"] = IntersectionSurfaceType
 
-class VECTOR_GEOMETRY_TOOL_SCALED_VECTOR_DIMENSION_INHERITANCE_OPTION_TYPE(IntEnum):
+class VectorGeometryToolScaledVectorDimensionInheritanceOptionType(IntEnum):
     """Dimension inheritance constants used to configure the dimension inheritance of a vector scaled by a scalar."""
    
     NONE = 0
@@ -1869,11 +1891,11 @@ class VECTOR_GEOMETRY_TOOL_SCALED_VECTOR_DIMENSION_INHERITANCE_OPTION_TYPE(IntEn
     FROM_VECTOR = 2
     """Inherit dimension from vector."""
 
-VECTOR_GEOMETRY_TOOL_SCALED_VECTOR_DIMENSION_INHERITANCE_OPTION_TYPE.NONE.__doc__ = "Do not inherit dimension."
-VECTOR_GEOMETRY_TOOL_SCALED_VECTOR_DIMENSION_INHERITANCE_OPTION_TYPE.FROM_CALCULATION_SCALAR.__doc__ = "Inherit dimension from scalar."
-VECTOR_GEOMETRY_TOOL_SCALED_VECTOR_DIMENSION_INHERITANCE_OPTION_TYPE.FROM_VECTOR.__doc__ = "Inherit dimension from vector."
+VectorGeometryToolScaledVectorDimensionInheritanceOptionType.NONE.__doc__ = "Do not inherit dimension."
+VectorGeometryToolScaledVectorDimensionInheritanceOptionType.FROM_CALCULATION_SCALAR.__doc__ = "Inherit dimension from scalar."
+VectorGeometryToolScaledVectorDimensionInheritanceOptionType.FROM_VECTOR.__doc__ = "Inherit dimension from vector."
 
-agcls.AgTypeNameMap["VECTOR_GEOMETRY_TOOL_SCALED_VECTOR_DIMENSION_INHERITANCE_OPTION_TYPE"] = VECTOR_GEOMETRY_TOOL_SCALED_VECTOR_DIMENSION_INHERITANCE_OPTION_TYPE
+agcls.AgTypeNameMap["VectorGeometryToolScaledVectorDimensionInheritanceOptionType"] = VectorGeometryToolScaledVectorDimensionInheritanceOptionType
 
 
 class IVectorGeometryToolPoint(object):
@@ -1905,9 +1927,9 @@ class IVectorGeometryToolPoint(object):
     
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(POINT_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(PointType),) }
     @property
-    def type(self) -> "POINT_TYPE":
+    def type(self) -> "PointType":
         """Return a type of the point object."""
         return self._intf.get_property(IVectorGeometryToolPoint._metadata, IVectorGeometryToolPoint._get_type_metadata)
 
@@ -1960,9 +1982,9 @@ class IVectorGeometryToolVector(object):
     
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(VECTOR_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(VectorType),) }
     @property
-    def type(self) -> "VECTOR_TYPE":
+    def type(self) -> "VectorType":
         """Return a type of the vector object."""
         return self._intf.get_property(IVectorGeometryToolVector._metadata, IVectorGeometryToolVector._get_type_metadata)
 
@@ -2016,9 +2038,9 @@ class IVectorGeometryToolSystem(object):
     
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(SYSTEM_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(SystemType),) }
     @property
-    def type(self) -> "SYSTEM_TYPE":
+    def type(self) -> "SystemType":
         """Return a type of the system object."""
         return self._intf.get_property(IVectorGeometryToolSystem._metadata, IVectorGeometryToolSystem._get_type_metadata)
 
@@ -2084,9 +2106,9 @@ class IVectorGeometryToolAxes(object):
     
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(AXES_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(AxesType),) }
     @property
-    def type(self) -> "AXES_TYPE":
+    def type(self) -> "AxesType":
         """Return a type of the axes object."""
         return self._intf.get_property(IVectorGeometryToolAxes._metadata, IVectorGeometryToolAxes._get_type_metadata)
 
@@ -2191,9 +2213,9 @@ class IVectorGeometryToolAngle(object):
     
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(ANGLE_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(AngleType),) }
     @property
-    def type(self) -> "ANGLE_TYPE":
+    def type(self) -> "AngleType":
         """Return a type of the angle object."""
         return self._intf.get_property(IVectorGeometryToolAngle._metadata, IVectorGeometryToolAngle._get_type_metadata)
 
@@ -2263,9 +2285,9 @@ class IVectorGeometryToolPlane(object):
     
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(PLANE_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(PlaneType),) }
     @property
-    def type(self) -> "PLANE_TYPE":
+    def type(self) -> "PlaneType":
         """Return a type of the plane object."""
         return self._intf.get_property(IVectorGeometryToolPlane._metadata, IVectorGeometryToolPlane._get_type_metadata)
 
@@ -2396,9 +2418,9 @@ class IAnalysisWorkbenchComponent(object):
     
     _get_component_type_metadata = { "offset" : _get_component_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(VECTOR_GEOMETRY_TOOL_COMPONENT_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(VectorGeometryToolComponentType),) }
     @property
-    def component_type(self) -> "VECTOR_GEOMETRY_TOOL_COMPONENT_TYPE":
+    def component_type(self) -> "VectorGeometryToolComponentType":
         """Return the component kind."""
         return self._intf.get_property(IAnalysisWorkbenchComponent._metadata, IAnalysisWorkbenchComponent._get_component_type_metadata)
 
@@ -2595,9 +2617,9 @@ class ICalculationToolScalar(object):
     
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CALCULATION_SCALAR_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(CalculationScalarType),) }
     @property
-    def type(self) -> "CALCULATION_SCALAR_TYPE":
+    def type(self) -> "CalculationScalarType":
         """Return the scalar calculation type."""
         return self._intf.get_property(ICalculationToolScalar._metadata, ICalculationToolScalar._get_type_metadata)
 
@@ -2708,9 +2730,9 @@ class ICalculationToolCondition(object):
     
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CONDITION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(ConditionType),) }
     @property
-    def type(self) -> "CONDITION_TYPE":
+    def type(self) -> "ConditionType":
         """Return the type of condition."""
         return self._intf.get_property(ICalculationToolCondition._metadata, ICalculationToolCondition._get_type_metadata)
 
@@ -2763,9 +2785,9 @@ class ICalculationToolConditionSet(object):
     
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CONDITION_SET_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(ConditionSetType),) }
     @property
-    def type(self) -> "CONDITION_SET_TYPE":
+    def type(self) -> "ConditionSetType":
         """Return the type of condition set."""
         return self._intf.get_property(ICalculationToolConditionSet._metadata, ICalculationToolConditionSet._get_type_metadata)
 
@@ -2880,9 +2902,9 @@ class ITimeToolInstant(object):
     
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(TIME_EVENT_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(TimeEventType),) }
     @property
-    def type(self) -> "TIME_EVENT_TYPE":
+    def type(self) -> "TimeEventType":
         """Return the type of time instant."""
         return self._intf.get_property(ITimeToolInstant._metadata, ITimeToolInstant._get_type_metadata)
 
@@ -2970,9 +2992,9 @@ class ITimeToolTimeArray(object):
     
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(EVENT_ARRAY_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(EventArrayType),) }
     @property
-    def type(self) -> "EVENT_ARRAY_TYPE":
+    def type(self) -> "EventArrayType":
         """Return the type of time array."""
         return self._intf.get_property(ITimeToolTimeArray._metadata, ITimeToolTimeArray._get_type_metadata)
 
@@ -3022,9 +3044,9 @@ class ITimeToolTimeInterval(object):
     
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(EVENT_INTERVAL_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(EventIntervalType),) }
     @property
-    def type(self) -> "EVENT_INTERVAL_TYPE":
+    def type(self) -> "EventIntervalType":
         """Return the type of interval."""
         return self._intf.get_property(ITimeToolTimeInterval._metadata, ITimeToolTimeInterval._get_type_metadata)
 
@@ -3114,9 +3136,9 @@ class ITimeToolTimeIntervalCollection(object):
     
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(EVENT_INTERVAL_COLLECTION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(EventIntervalCollectionType),) }
     @property
-    def type(self) -> "EVENT_INTERVAL_COLLECTION_TYPE":
+    def type(self) -> "EventIntervalCollectionType":
         """Return the type of collection of interval lists."""
         return self._intf.get_property(ITimeToolTimeIntervalCollection._metadata, ITimeToolTimeIntervalCollection._get_type_metadata)
 
@@ -3180,9 +3202,9 @@ class ITimeToolTimeIntervalList(object):
     
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(EVENT_INTERVAL_LIST_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(EventIntervalListType),) }
     @property
-    def type(self) -> "EVENT_INTERVAL_LIST_TYPE":
+    def type(self) -> "EventIntervalListType":
         """Return the type of interval list."""
         return self._intf.get_property(ITimeToolTimeIntervalList._metadata, ITimeToolTimeIntervalList._get_type_metadata)
 
@@ -3314,9 +3336,9 @@ class ICalculationToolParameterSet(object):
     
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(PARAMETER_SET_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(ParameterSetType),) }
     @property
-    def type(self) -> "PARAMETER_SET_TYPE":
+    def type(self) -> "ParameterSetType":
         """Get the type of parameter set."""
         return self._intf.get_property(ICalculationToolParameterSet._metadata, ICalculationToolParameterSet._get_type_metadata)
 
@@ -3394,9 +3416,9 @@ class ITimeToolPruneFilter(object):
     
     _get_filter_type_metadata = { "offset" : _get_filter_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(INTERVAL_PRUNE_FILTER_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(IntervalPruneFilterType),) }
     @property
-    def filter_type(self) -> "INTERVAL_PRUNE_FILTER_TYPE":
+    def filter_type(self) -> "IntervalPruneFilterType":
         """Return a type of the filter."""
         return self._intf.get_property(ITimeToolPruneFilter._metadata, ITimeToolPruneFilter._get_filter_type_metadata)
 
@@ -3462,9 +3484,9 @@ class ICalculationToolSamplingMethod(object):
     
     _get_method_type_metadata = { "offset" : _get_method_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(VECTOR_GEOMETRY_TOOL_SAMPLING_METHOD),) }
+            "marshallers" : (agmarshall.EnumArg(VectorGeometryToolSamplingMethod),) }
     @property
-    def method_type(self) -> "VECTOR_GEOMETRY_TOOL_SAMPLING_METHOD":
+    def method_type(self) -> "VectorGeometryToolSamplingMethod":
         """A sampling method type."""
         return self._intf.get_property(ICalculationToolSamplingMethod._metadata, ICalculationToolSamplingMethod._get_method_type_metadata)
 
@@ -3530,9 +3552,9 @@ class ISpatialAnalysisToolGridValuesMethod(object):
     
     _get_method_type_metadata = { "offset" : _get_method_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(GRID_VALUES_METHOD_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(GridValuesMethodType),) }
     @property
-    def method_type(self) -> "GRID_VALUES_METHOD_TYPE":
+    def method_type(self) -> "GridValuesMethodType":
         """Grid values method type."""
         return self._intf.get_property(ISpatialAnalysisToolGridValuesMethod._metadata, ISpatialAnalysisToolGridValuesMethod._get_method_type_metadata)
 
@@ -6025,17 +6047,17 @@ class CalculationToolScalarAverage(ICalculationToolScalar, IAnalysisWorkbenchCom
 
     _get_integration_window_type_metadata = { "offset" : _get_integration_window_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(INTEGRATION_WINDOW_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(IntegrationWindowType),) }
     @property
-    def integration_window_type(self) -> "INTEGRATION_WINDOW_TYPE":
+    def integration_window_type(self) -> "IntegrationWindowType":
         """The integration window, or accumulation, type."""
         return self._intf.get_property(CalculationToolScalarAverage._metadata, CalculationToolScalarAverage._get_integration_window_type_metadata)
 
     _set_integration_window_type_metadata = { "offset" : _set_integration_window_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(INTEGRATION_WINDOW_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(IntegrationWindowType),) }
     @integration_window_type.setter
-    def integration_window_type(self, integration_window_type:"INTEGRATION_WINDOW_TYPE") -> None:
+    def integration_window_type(self, integration_window_type:"IntegrationWindowType") -> None:
         return self._intf.set_property(CalculationToolScalarAverage._metadata, CalculationToolScalarAverage._set_integration_window_type_metadata, integration_window_type)
 
     _get_start_offset_metadata = { "offset" : _get_start_offset_method_offset,
@@ -6100,17 +6122,17 @@ class CalculationToolScalarAverage(ICalculationToolScalar, IAnalysisWorkbenchCom
 
     _get_save_data_option_metadata = { "offset" : _get_save_data_option_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(SAVE_DATA_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(SaveDataType),) }
     @property
-    def save_data_option(self) -> "SAVE_DATA_TYPE":
+    def save_data_option(self) -> "SaveDataType":
         """Set the value to determine if computed time of extremum is saved/loaded, or recomputed on load if necessary."""
         return self._intf.get_property(CalculationToolScalarAverage._metadata, CalculationToolScalarAverage._get_save_data_option_metadata)
 
     _set_save_data_option_metadata = { "offset" : _set_save_data_option_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(SAVE_DATA_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(SaveDataType),) }
     @save_data_option.setter
-    def save_data_option(self, save_data_option:"SAVE_DATA_TYPE") -> None:
+    def save_data_option(self, save_data_option:"SaveDataType") -> None:
         return self._intf.set_property(CalculationToolScalarAverage._metadata, CalculationToolScalarAverage._set_save_data_option_metadata, save_data_option)
 
     _get_interpolation_metadata = { "offset" : _get_interpolation_method_offset,
@@ -6582,17 +6604,17 @@ class CalculationToolScalarDataElement(ICalculationToolScalar, IAnalysisWorkbenc
 
     _get_save_data_option_metadata = { "offset" : _get_save_data_option_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(SAVE_DATA_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(SaveDataType),) }
     @property
-    def save_data_option(self) -> "SAVE_DATA_TYPE":
+    def save_data_option(self) -> "SaveDataType":
         """Determine if computed samples are saved/loaded, otherwise if using samples they are recomputed on load."""
         return self._intf.get_property(CalculationToolScalarDataElement._metadata, CalculationToolScalarDataElement._get_save_data_option_metadata)
 
     _set_save_data_option_metadata = { "offset" : _set_save_data_option_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(SAVE_DATA_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(SaveDataType),) }
     @save_data_option.setter
-    def save_data_option(self, save_data_option:"SAVE_DATA_TYPE") -> None:
+    def save_data_option(self, save_data_option:"SaveDataType") -> None:
         return self._intf.set_property(CalculationToolScalarDataElement._metadata, CalculationToolScalarDataElement._set_save_data_option_metadata, save_data_option)
 
     _set_metadata = { "offset" : _set_method_offset,
@@ -6964,8 +6986,8 @@ class CalculationToolScalarFactory(SupportsDeleteCallback):
 
     _create_metadata = { "offset" : _create_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(CALCULATION_SCALAR_TYPE), agmarshall.InterfaceOutArg,) }
-    def create(self, name:str, description:str, type:"CALCULATION_SCALAR_TYPE") -> "ICalculationToolScalar":
+            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(CalculationScalarType), agmarshall.InterfaceOutArg,) }
+    def create(self, name:str, description:str, type:"CalculationScalarType") -> "ICalculationToolScalar":
         """Create and registers a scalar calculation using specified name, description, and type."""
         return self._intf.invoke(CalculationToolScalarFactory._metadata, CalculationToolScalarFactory._create_metadata, name, description, type, OutArg())
 
@@ -7062,8 +7084,8 @@ class CalculationToolScalarFactory(SupportsDeleteCallback):
 
     _is_type_supported_metadata = { "offset" : _is_type_supported_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.EnumArg(CALCULATION_SCALAR_TYPE), agmarshall.VariantBoolArg,) }
-    def is_type_supported(self, type:"CALCULATION_SCALAR_TYPE") -> bool:
+            "marshallers" : (agmarshall.EnumArg(CalculationScalarType), agmarshall.VariantBoolArg,) }
+    def is_type_supported(self, type:"CalculationScalarType") -> bool:
         """Return whether the specified type is supported."""
         return self._intf.invoke(CalculationToolScalarFactory._metadata, CalculationToolScalarFactory._is_type_supported_metadata, type, OutArg())
 
@@ -7195,17 +7217,17 @@ class CalculationToolScalarFile(ICalculationToolScalar, IAnalysisWorkbenchCompon
 
     _get_file_interpolation_type_metadata = { "offset" : _get_file_interpolation_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(FILE_INTERPOLATOR_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(FileInterpolatorType),) }
     @property
-    def file_interpolation_type(self) -> "FILE_INTERPOLATOR_TYPE":
+    def file_interpolation_type(self) -> "FileInterpolatorType":
         """The interpolation method used with the data."""
         return self._intf.get_property(CalculationToolScalarFile._metadata, CalculationToolScalarFile._get_file_interpolation_type_metadata)
 
     _set_file_interpolation_type_metadata = { "offset" : _set_file_interpolation_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(FILE_INTERPOLATOR_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(FileInterpolatorType),) }
     @file_interpolation_type.setter
-    def file_interpolation_type(self, file_interpolation_type:"FILE_INTERPOLATOR_TYPE") -> None:
+    def file_interpolation_type(self, file_interpolation_type:"FileInterpolatorType") -> None:
         return self._intf.set_property(CalculationToolScalarFile._metadata, CalculationToolScalarFile._set_file_interpolation_type_metadata, file_interpolation_type)
 
     _get_file_interpolation_order_metadata = { "offset" : _get_file_interpolation_order_method_offset,
@@ -7790,17 +7812,17 @@ class CalculationToolScalarFunctionOf2Variables(ICalculationToolScalar, IAnalysi
 
     _get_output_dimension_inheritance_metadata = { "offset" : _get_output_dimension_inheritance_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(INHERIT_DIMENSION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(InheritDimensionType),) }
     @property
-    def output_dimension_inheritance(self) -> "INHERIT_DIMENSION_TYPE":
+    def output_dimension_inheritance(self) -> "InheritDimensionType":
         """Specify whether the output dimension is inherited or explicitly specified using OutputDimension."""
         return self._intf.get_property(CalculationToolScalarFunctionOf2Variables._metadata, CalculationToolScalarFunctionOf2Variables._get_output_dimension_inheritance_metadata)
 
     _set_output_dimension_inheritance_metadata = { "offset" : _set_output_dimension_inheritance_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(INHERIT_DIMENSION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(InheritDimensionType),) }
     @output_dimension_inheritance.setter
-    def output_dimension_inheritance(self, output_dimension_inheritance:"INHERIT_DIMENSION_TYPE") -> None:
+    def output_dimension_inheritance(self, output_dimension_inheritance:"InheritDimensionType") -> None:
         return self._intf.set_property(CalculationToolScalarFunctionOf2Variables._metadata, CalculationToolScalarFunctionOf2Variables._set_output_dimension_inheritance_metadata, output_dimension_inheritance)
 
     _get_output_dimension_metadata = { "offset" : _get_output_dimension_method_offset,
@@ -7959,17 +7981,17 @@ class CalculationToolScalarIntegral(ICalculationToolScalar, IAnalysisWorkbenchCo
 
     _get_integration_window_type_metadata = { "offset" : _get_integration_window_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(INTEGRATION_WINDOW_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(IntegrationWindowType),) }
     @property
-    def integration_window_type(self) -> "INTEGRATION_WINDOW_TYPE":
+    def integration_window_type(self) -> "IntegrationWindowType":
         """The integration window, or accumulation, type."""
         return self._intf.get_property(CalculationToolScalarIntegral._metadata, CalculationToolScalarIntegral._get_integration_window_type_metadata)
 
     _set_integration_window_type_metadata = { "offset" : _set_integration_window_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(INTEGRATION_WINDOW_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(IntegrationWindowType),) }
     @integration_window_type.setter
-    def integration_window_type(self, integration_window_type:"INTEGRATION_WINDOW_TYPE") -> None:
+    def integration_window_type(self, integration_window_type:"IntegrationWindowType") -> None:
         return self._intf.set_property(CalculationToolScalarIntegral._metadata, CalculationToolScalarIntegral._set_integration_window_type_metadata, integration_window_type)
 
     _get_start_offset_metadata = { "offset" : _get_start_offset_method_offset,
@@ -8034,17 +8056,17 @@ class CalculationToolScalarIntegral(ICalculationToolScalar, IAnalysisWorkbenchCo
 
     _get_save_data_option_metadata = { "offset" : _get_save_data_option_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(SAVE_DATA_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(SaveDataType),) }
     @property
-    def save_data_option(self) -> "SAVE_DATA_TYPE":
+    def save_data_option(self) -> "SaveDataType":
         """Set the value to determine if computed time of extremum is saved/loaded, or recomputed on load if necessary."""
         return self._intf.get_property(CalculationToolScalarIntegral._metadata, CalculationToolScalarIntegral._get_save_data_option_metadata)
 
     _set_save_data_option_metadata = { "offset" : _set_save_data_option_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(SAVE_DATA_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(SaveDataType),) }
     @save_data_option.setter
-    def save_data_option(self, save_data_option:"SAVE_DATA_TYPE") -> None:
+    def save_data_option(self, save_data_option:"SaveDataType") -> None:
         return self._intf.set_property(CalculationToolScalarIntegral._metadata, CalculationToolScalarIntegral._set_save_data_option_metadata, save_data_option)
 
     _get_interpolation_metadata = { "offset" : _get_interpolation_method_offset,
@@ -8152,7 +8174,7 @@ class CalculationToolScalarPlugin(ICalculationToolScalar, IAnalysisWorkbenchComp
 
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_ProgID_method_offset = 1
+    _get_prog_id_method_offset = 1
     _get_display_name_method_offset = 2
     _get_available_properties_method_offset = 3
     _reset_method_offset = 4
@@ -8166,13 +8188,13 @@ class CalculationToolScalarPlugin(ICalculationToolScalar, IAnalysisWorkbenchComp
     def _get_property(self, attrname):
         return get_interface_property(attrname, CalculationToolScalarPlugin)
     
-    _get_ProgID_metadata = { "offset" : _get_ProgID_method_offset,
+    _get_prog_id_metadata = { "offset" : _get_prog_id_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
-    def ProgID(self) -> str:
+    def prog_id(self) -> str:
         """A programmatic ID associated with the component."""
-        return self._intf.get_property(CalculationToolScalarPlugin._metadata, CalculationToolScalarPlugin._get_ProgID_metadata)
+        return self._intf.get_property(CalculationToolScalarPlugin._metadata, CalculationToolScalarPlugin._get_prog_id_metadata)
 
     _get_display_name_metadata = { "offset" : _get_display_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -8211,7 +8233,7 @@ class CalculationToolScalarPlugin(ICalculationToolScalar, IAnalysisWorkbenchComp
         """Read a value of the specified plugin property. This method throws an exception if the property does not exist."""
         return self._intf.invoke(CalculationToolScalarPlugin._metadata, CalculationToolScalarPlugin._get_property_metadata, name, OutArg())
 
-    _property_names[ProgID] = "ProgID"
+    _property_names[prog_id] = "prog_id"
     _property_names[display_name] = "display_name"
     _property_names[available_properties] = "available_properties"
 
@@ -8375,17 +8397,17 @@ class CalculationToolScalarStandardDeviation(ICalculationToolScalar, IAnalysisWo
 
     _get_integration_window_type_metadata = { "offset" : _get_integration_window_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(INTEGRATION_WINDOW_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(IntegrationWindowType),) }
     @property
-    def integration_window_type(self) -> "INTEGRATION_WINDOW_TYPE":
+    def integration_window_type(self) -> "IntegrationWindowType":
         """The integration window, or accumulation, type."""
         return self._intf.get_property(CalculationToolScalarStandardDeviation._metadata, CalculationToolScalarStandardDeviation._get_integration_window_type_metadata)
 
     _set_integration_window_type_metadata = { "offset" : _set_integration_window_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(INTEGRATION_WINDOW_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(IntegrationWindowType),) }
     @integration_window_type.setter
-    def integration_window_type(self, integration_window_type:"INTEGRATION_WINDOW_TYPE") -> None:
+    def integration_window_type(self, integration_window_type:"IntegrationWindowType") -> None:
         return self._intf.set_property(CalculationToolScalarStandardDeviation._metadata, CalculationToolScalarStandardDeviation._set_integration_window_type_metadata, integration_window_type)
 
     _get_start_offset_metadata = { "offset" : _get_start_offset_method_offset,
@@ -8450,17 +8472,17 @@ class CalculationToolScalarStandardDeviation(ICalculationToolScalar, IAnalysisWo
 
     _get_save_data_option_metadata = { "offset" : _get_save_data_option_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(SAVE_DATA_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(SaveDataType),) }
     @property
-    def save_data_option(self) -> "SAVE_DATA_TYPE":
+    def save_data_option(self) -> "SaveDataType":
         """Set the value to determine if computed time of extremum is saved/loaded, or recomputed on load if necessary."""
         return self._intf.get_property(CalculationToolScalarStandardDeviation._metadata, CalculationToolScalarStandardDeviation._get_save_data_option_metadata)
 
     _set_save_data_option_metadata = { "offset" : _set_save_data_option_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(SAVE_DATA_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(SaveDataType),) }
     @save_data_option.setter
-    def save_data_option(self, save_data_option:"SAVE_DATA_TYPE") -> None:
+    def save_data_option(self, save_data_option:"SaveDataType") -> None:
         return self._intf.set_property(CalculationToolScalarStandardDeviation._metadata, CalculationToolScalarStandardDeviation._set_save_data_option_metadata, save_data_option)
 
     _get_interpolation_metadata = { "offset" : _get_interpolation_method_offset,
@@ -8720,17 +8742,17 @@ class CalculationToolScalarVectorComponent(ICalculationToolScalar, IAnalysisWork
 
     _get_component_metadata = { "offset" : _get_component_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(VECTOR_COMPONENT_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(VectorComponentType),) }
     @property
-    def component(self) -> "VECTOR_COMPONENT_TYPE":
+    def component(self) -> "VectorComponentType":
         """The component of the vector to return as the value of the scalar."""
         return self._intf.get_property(CalculationToolScalarVectorComponent._metadata, CalculationToolScalarVectorComponent._get_component_metadata)
 
     _set_component_metadata = { "offset" : _set_component_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(VECTOR_COMPONENT_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(VectorComponentType),) }
     @component.setter
-    def component(self, component:"VECTOR_COMPONENT_TYPE") -> None:
+    def component(self, component:"VectorComponentType") -> None:
         return self._intf.set_property(CalculationToolScalarVectorComponent._metadata, CalculationToolScalarVectorComponent._set_component_metadata, component)
 
     _property_names[input_vector] = "input_vector"
@@ -8854,17 +8876,17 @@ class CalculationToolConditionCombined(ICalculationToolCondition, IAnalysisWorkb
     
     _get_boolean_operation_metadata = { "offset" : _get_boolean_operation_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CONDITION_COMBINED_OPERATION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(ConditionCombinedOperationType),) }
     @property
-    def boolean_operation(self) -> "CONDITION_COMBINED_OPERATION_TYPE":
+    def boolean_operation(self) -> "ConditionCombinedOperationType":
         """Get the operation from the condition that determines how the conditions are combined. The operation can be set to AND, OR, XOR, MINUS."""
         return self._intf.get_property(CalculationToolConditionCombined._metadata, CalculationToolConditionCombined._get_boolean_operation_metadata)
 
     _set_boolean_operation_metadata = { "offset" : _set_boolean_operation_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CONDITION_COMBINED_OPERATION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(ConditionCombinedOperationType),) }
     @boolean_operation.setter
-    def boolean_operation(self, combine_operation:"CONDITION_COMBINED_OPERATION_TYPE") -> None:
+    def boolean_operation(self, combine_operation:"ConditionCombinedOperationType") -> None:
         return self._intf.set_property(CalculationToolConditionCombined._metadata, CalculationToolConditionCombined._set_boolean_operation_metadata, combine_operation)
 
     _get_count_metadata = { "offset" : _get_count_method_offset,
@@ -8960,8 +8982,8 @@ class CalculationToolConditionFactory(SupportsDeleteCallback):
     
     _create_metadata = { "offset" : _create_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(CONDITION_TYPE), agmarshall.InterfaceOutArg,) }
-    def create(self, name:str, description:str, type:"CONDITION_TYPE") -> "ICalculationToolCondition":
+            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(ConditionType), agmarshall.InterfaceOutArg,) }
+    def create(self, name:str, description:str, type:"ConditionType") -> "ICalculationToolCondition":
         """Create and registers a condition using specified name, description and type."""
         return self._intf.invoke(CalculationToolConditionFactory._metadata, CalculationToolConditionFactory._create_metadata, name, description, type, OutArg())
 
@@ -8974,8 +8996,8 @@ class CalculationToolConditionFactory(SupportsDeleteCallback):
 
     _is_type_supported_metadata = { "offset" : _is_type_supported_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.EnumArg(CONDITION_TYPE), agmarshall.VariantBoolArg,) }
-    def is_type_supported(self, type:"CONDITION_TYPE") -> bool:
+            "marshallers" : (agmarshall.EnumArg(ConditionType), agmarshall.VariantBoolArg,) }
+    def is_type_supported(self, type:"ConditionType") -> bool:
         """Return whether the specified type is supported."""
         return self._intf.invoke(CalculationToolConditionFactory._metadata, CalculationToolConditionFactory._is_type_supported_metadata, type, OutArg())
 
@@ -9124,17 +9146,17 @@ class CalculationToolConditionScalarBounds(ICalculationToolCondition, IAnalysisW
 
     _get_operation_metadata = { "offset" : _get_operation_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CONDITION_THRESHOLD_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(ConditionThresholdType),) }
     @property
-    def operation(self) -> "CONDITION_THRESHOLD_TYPE":
+    def operation(self) -> "ConditionThresholdType":
         """Get the operation from the condition that determines how the bounds are considered. The operation can be set to define satisfaction when the scalar is above minimum, below maximum, between minimum and maximum or outside minimum and maximum."""
         return self._intf.get_property(CalculationToolConditionScalarBounds._metadata, CalculationToolConditionScalarBounds._get_operation_metadata)
 
     _set_operation_metadata = { "offset" : _set_operation_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CONDITION_THRESHOLD_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(ConditionThresholdType),) }
     @operation.setter
-    def operation(self, operation:"CONDITION_THRESHOLD_TYPE") -> None:
+    def operation(self, operation:"ConditionThresholdType") -> None:
         return self._intf.set_property(CalculationToolConditionScalarBounds._metadata, CalculationToolConditionScalarBounds._set_operation_metadata, operation)
 
     _get_minimum_metadata = { "offset" : _get_minimum_method_offset,
@@ -9269,8 +9291,8 @@ class CalculationToolConditionSetFactory(SupportsDeleteCallback):
     
     _create_metadata = { "offset" : _create_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(CONDITION_SET_TYPE), agmarshall.InterfaceOutArg,) }
-    def create(self, name:str, description:str, type:"CONDITION_SET_TYPE") -> "ICalculationToolConditionSet":
+            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(ConditionSetType), agmarshall.InterfaceOutArg,) }
+    def create(self, name:str, description:str, type:"ConditionSetType") -> "ICalculationToolConditionSet":
         """Create and registers a condition set using specified name, description, and type."""
         return self._intf.invoke(CalculationToolConditionSetFactory._metadata, CalculationToolConditionSetFactory._create_metadata, name, description, type, OutArg())
 
@@ -9283,8 +9305,8 @@ class CalculationToolConditionSetFactory(SupportsDeleteCallback):
 
     _is_type_supported_metadata = { "offset" : _is_type_supported_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.EnumArg(CONDITION_SET_TYPE), agmarshall.VariantBoolArg,) }
-    def is_type_supported(self, type:"CONDITION_SET_TYPE") -> bool:
+            "marshallers" : (agmarshall.EnumArg(ConditionSetType), agmarshall.VariantBoolArg,) }
+    def is_type_supported(self, type:"ConditionSetType") -> bool:
         """Return whether the specified type is supported."""
         return self._intf.invoke(CalculationToolConditionSetFactory._metadata, CalculationToolConditionSetFactory._is_type_supported_metadata, type, OutArg())
 
@@ -9465,17 +9487,17 @@ class CalculationToolConvergeBasic(IAnalysisWorkbenchConvergence, IAnalysisWorkb
     
     _get_sense_metadata = { "offset" : _get_sense_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(THRESHOLD_CONVERGENCE_SENSE_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(ThresholdConvergenceSenseType),) }
     @property
-    def sense(self) -> "THRESHOLD_CONVERGENCE_SENSE_TYPE":
+    def sense(self) -> "ThresholdConvergenceSenseType":
         """Get the convergence sense which determines whether the converged value should be limited to just within or just outside of condition boundaries."""
         return self._intf.get_property(CalculationToolConvergeBasic._metadata, CalculationToolConvergeBasic._get_sense_metadata)
 
     _set_sense_metadata = { "offset" : _set_sense_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(THRESHOLD_CONVERGENCE_SENSE_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(ThresholdConvergenceSenseType),) }
     @sense.setter
-    def sense(self, sense:"THRESHOLD_CONVERGENCE_SENSE_TYPE") -> None:
+    def sense(self, sense:"ThresholdConvergenceSenseType") -> None:
         return self._intf.set_property(CalculationToolConvergeBasic._metadata, CalculationToolConvergeBasic._set_sense_metadata, sense)
 
     _get_time_tolerance_metadata = { "offset" : _get_time_tolerance_method_offset,
@@ -9692,17 +9714,17 @@ class TimeToolTimeArrayConditionCrossings(ITimeToolTimeArray, IAnalysisWorkbench
     
     _get_satisfaction_crossing_metadata = { "offset" : _get_satisfaction_crossing_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(SATISFACTION_CROSSING),) }
+            "marshallers" : (agmarshall.EnumArg(SatisfactionCrossing),) }
     @property
-    def satisfaction_crossing(self) -> "SATISFACTION_CROSSING":
+    def satisfaction_crossing(self) -> "SatisfactionCrossing":
         """The direction of interest for satisfaction crossing."""
         return self._intf.get_property(TimeToolTimeArrayConditionCrossings._metadata, TimeToolTimeArrayConditionCrossings._get_satisfaction_crossing_metadata)
 
     _set_satisfaction_crossing_metadata = { "offset" : _set_satisfaction_crossing_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(SATISFACTION_CROSSING),) }
+            "marshallers" : (agmarshall.EnumArg(SatisfactionCrossing),) }
     @satisfaction_crossing.setter
-    def satisfaction_crossing(self, satisfaction_crossing:"SATISFACTION_CROSSING") -> None:
+    def satisfaction_crossing(self, satisfaction_crossing:"SatisfactionCrossing") -> None:
         return self._intf.set_property(TimeToolTimeArrayConditionCrossings._metadata, TimeToolTimeArrayConditionCrossings._set_satisfaction_crossing_metadata, satisfaction_crossing)
 
     _get_condition_metadata = { "offset" : _get_condition_method_offset,
@@ -9752,17 +9774,17 @@ class TimeToolTimeArrayConditionCrossings(ITimeToolTimeArray, IAnalysisWorkbench
 
     _get_save_data_option_metadata = { "offset" : _get_save_data_option_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(SAVE_DATA_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(SaveDataType),) }
     @property
-    def save_data_option(self) -> "SAVE_DATA_TYPE":
+    def save_data_option(self) -> "SaveDataType":
         """Determine if computed satisfaction crossing times are saved/loaded, or recomputed on load if necessary."""
         return self._intf.get_property(TimeToolTimeArrayConditionCrossings._metadata, TimeToolTimeArrayConditionCrossings._get_save_data_option_metadata)
 
     _set_save_data_option_metadata = { "offset" : _set_save_data_option_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(SAVE_DATA_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(SaveDataType),) }
     @save_data_option.setter
-    def save_data_option(self, save_data_option:"SAVE_DATA_TYPE") -> None:
+    def save_data_option(self, save_data_option:"SaveDataType") -> None:
         return self._intf.set_property(TimeToolTimeArrayConditionCrossings._metadata, TimeToolTimeArrayConditionCrossings._set_save_data_option_metadata, save_data_option)
 
     _get_sampling_metadata = { "offset" : _get_sampling_method_offset,
@@ -9854,17 +9876,17 @@ class TimeToolTimeArrayExtrema(ITimeToolTimeArray, IAnalysisWorkbenchComponent, 
     
     _get_extremum_type_metadata = { "offset" : _get_extremum_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(EXTREMUM_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(ExtremumType),) }
     @property
-    def extremum_type(self) -> "EXTREMUM_TYPE":
+    def extremum_type(self) -> "ExtremumType":
         """The extremum type of interest (either minimum or maximum) for scalar calculation."""
         return self._intf.get_property(TimeToolTimeArrayExtrema._metadata, TimeToolTimeArrayExtrema._get_extremum_type_metadata)
 
     _set_extremum_type_metadata = { "offset" : _set_extremum_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(EXTREMUM_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(ExtremumType),) }
     @extremum_type.setter
-    def extremum_type(self, extremum_type:"EXTREMUM_TYPE") -> None:
+    def extremum_type(self, extremum_type:"ExtremumType") -> None:
         return self._intf.set_property(TimeToolTimeArrayExtrema._metadata, TimeToolTimeArrayExtrema._set_extremum_type_metadata, extremum_type)
 
     _get_is_global_metadata = { "offset" : _get_is_global_method_offset,
@@ -9929,17 +9951,17 @@ class TimeToolTimeArrayExtrema(ITimeToolTimeArray, IAnalysisWorkbenchComponent, 
 
     _get_save_data_option_metadata = { "offset" : _get_save_data_option_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(SAVE_DATA_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(SaveDataType),) }
     @property
-    def save_data_option(self) -> "SAVE_DATA_TYPE":
+    def save_data_option(self) -> "SaveDataType":
         """Specify whether computed times of extrema are saved/loaded, otherwise it is recomputed on load if necessary."""
         return self._intf.get_property(TimeToolTimeArrayExtrema._metadata, TimeToolTimeArrayExtrema._get_save_data_option_metadata)
 
     _set_save_data_option_metadata = { "offset" : _set_save_data_option_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(SAVE_DATA_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(SaveDataType),) }
     @save_data_option.setter
-    def save_data_option(self, save_data_option:"SAVE_DATA_TYPE") -> None:
+    def save_data_option(self, save_data_option:"SaveDataType") -> None:
         return self._intf.set_property(TimeToolTimeArrayExtrema._metadata, TimeToolTimeArrayExtrema._set_save_data_option_metadata, save_data_option)
 
     _get_sampling_metadata = { "offset" : _get_sampling_method_offset,
@@ -10026,8 +10048,8 @@ class TimeToolTimeArrayFactory(SupportsDeleteCallback):
     
     _create_metadata = { "offset" : _create_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(EVENT_ARRAY_TYPE), agmarshall.InterfaceOutArg,) }
-    def create(self, name:str, description:str, type:"EVENT_ARRAY_TYPE") -> "ITimeToolTimeArray":
+            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(EventArrayType), agmarshall.InterfaceOutArg,) }
+    def create(self, name:str, description:str, type:"EventArrayType") -> "ITimeToolTimeArray":
         """Create and register an event array using specified name, description, and type."""
         return self._intf.invoke(TimeToolTimeArrayFactory._metadata, TimeToolTimeArrayFactory._create_metadata, name, description, type, OutArg())
 
@@ -10082,8 +10104,8 @@ class TimeToolTimeArrayFactory(SupportsDeleteCallback):
 
     _is_type_supported_metadata = { "offset" : _is_type_supported_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.EnumArg(EVENT_ARRAY_TYPE), agmarshall.VariantBoolArg,) }
-    def is_type_supported(self, type:"EVENT_ARRAY_TYPE") -> bool:
+            "marshallers" : (agmarshall.EnumArg(EventArrayType), agmarshall.VariantBoolArg,) }
+    def is_type_supported(self, type:"EventArrayType") -> bool:
         """Return whether the specified type is supported."""
         return self._intf.invoke(TimeToolTimeArrayFactory._metadata, TimeToolTimeArrayFactory._is_type_supported_metadata, type, OutArg())
 
@@ -10153,17 +10175,17 @@ class TimeToolTimeArrayFiltered(ITimeToolTimeArray, IAnalysisWorkbenchComponent,
 
     _get_filter_type_metadata = { "offset" : _get_filter_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(EVENT_ARRAY_FILTER_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(EventArrayFilterType),) }
     @property
-    def filter_type(self) -> "EVENT_ARRAY_FILTER_TYPE":
+    def filter_type(self) -> "EventArrayFilterType":
         """Skip Time Steps filter type omits from filtered time array any times that fall within specified time step of last accepted time sample. Skip Count filter type omits specified number of time samples since last accepted time sample..."""
         return self._intf.get_property(TimeToolTimeArrayFiltered._metadata, TimeToolTimeArrayFiltered._get_filter_type_metadata)
 
     _set_filter_type_metadata = { "offset" : _set_filter_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(EVENT_ARRAY_FILTER_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(EventArrayFilterType),) }
     @filter_type.setter
-    def filter_type(self, filter_type:"EVENT_ARRAY_FILTER_TYPE") -> None:
+    def filter_type(self, filter_type:"EventArrayFilterType") -> None:
         return self._intf.set_property(TimeToolTimeArrayFiltered._metadata, TimeToolTimeArrayFiltered._set_filter_type_metadata, filter_type)
 
     _get_count_metadata = { "offset" : _get_count_method_offset,
@@ -10323,17 +10345,17 @@ class TimeToolTimeArrayFixedStep(ITimeToolTimeArray, IAnalysisWorkbenchComponent
 
     _get_reference_type_metadata = { "offset" : _get_reference_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(SAMPLE_REFERENCE_TIME_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(SampleReferenceTimeType),) }
     @property
-    def reference_type(self) -> "SAMPLE_REFERENCE_TIME_TYPE":
+    def reference_type(self) -> "SampleReferenceTimeType":
         """Specify the time reference from which fixed sampling time steps are taken. Note: selecting Start/Stop of each Interval resets the time reference for each interval, whereas other types maintain single reference for entire array."""
         return self._intf.get_property(TimeToolTimeArrayFixedStep._metadata, TimeToolTimeArrayFixedStep._get_reference_type_metadata)
 
     _set_reference_type_metadata = { "offset" : _set_reference_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(SAMPLE_REFERENCE_TIME_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(SampleReferenceTimeType),) }
     @reference_type.setter
-    def reference_type(self, reference_type:"SAMPLE_REFERENCE_TIME_TYPE") -> None:
+    def reference_type(self, reference_type:"SampleReferenceTimeType") -> None:
         return self._intf.set_property(TimeToolTimeArrayFixedStep._metadata, TimeToolTimeArrayFixedStep._set_reference_type_metadata, reference_type)
 
     _get_reference_time_instant_metadata = { "offset" : _get_reference_time_instant_method_offset,
@@ -10539,17 +10561,17 @@ class TimeToolTimeArraySignaled(ITimeToolTimeArray, IAnalysisWorkbenchComponent,
 
     _get_signal_sense_metadata = { "offset" : _get_signal_sense_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(SIGNAL_DIRECTION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(SignalDirectionType),) }
     @property
-    def signal_sense(self) -> "SIGNAL_DIRECTION_TYPE":
+    def signal_sense(self) -> "SignalDirectionType":
         """The direction of the signal, whether you are Transmitting or Receiving from the Base Clock Location."""
         return self._intf.get_property(TimeToolTimeArraySignaled._metadata, TimeToolTimeArraySignaled._get_signal_sense_metadata)
 
     _set_signal_sense_metadata = { "offset" : _set_signal_sense_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(SIGNAL_DIRECTION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(SignalDirectionType),) }
     @signal_sense.setter
-    def signal_sense(self, signal_sense:"SIGNAL_DIRECTION_TYPE") -> None:
+    def signal_sense(self, signal_sense:"SignalDirectionType") -> None:
         return self._intf.set_property(TimeToolTimeArraySignaled._metadata, TimeToolTimeArraySignaled._set_signal_sense_metadata, signal_sense)
 
     _get_base_clock_location_metadata = { "offset" : _get_base_clock_location_method_offset,
@@ -10642,17 +10664,17 @@ class TimeToolTimeArrayStartStopTimes(ITimeToolTimeArray, IAnalysisWorkbenchComp
     
     _get_start_stop_option_metadata = { "offset" : _get_start_stop_option_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(START_STOP_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(StartStopType),) }
     @property
-    def start_stop_option(self) -> "START_STOP_TYPE":
+    def start_stop_option(self) -> "StartStopType":
         """The edge type. At least one of the two edge types must be selected."""
         return self._intf.get_property(TimeToolTimeArrayStartStopTimes._metadata, TimeToolTimeArrayStartStopTimes._get_start_stop_option_metadata)
 
     _set_start_stop_option_metadata = { "offset" : _set_start_stop_option_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(START_STOP_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(StartStopType),) }
     @start_stop_option.setter
-    def start_stop_option(self, start_stop_option:"START_STOP_TYPE") -> None:
+    def start_stop_option(self, start_stop_option:"StartStopType") -> None:
         return self._intf.set_property(TimeToolTimeArrayStartStopTimes._metadata, TimeToolTimeArrayStartStopTimes._set_start_stop_option_metadata, start_stop_option)
 
     _get_reference_intervals_metadata = { "offset" : _get_reference_intervals_method_offset,
@@ -10774,17 +10796,17 @@ class TimeToolInstantExtremum(ITimeToolInstant, IAnalysisWorkbenchComponent, Sup
     
     _get_extremum_type_metadata = { "offset" : _get_extremum_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(EXTREMUM_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(ExtremumType),) }
     @property
-    def extremum_type(self) -> "EXTREMUM_TYPE":
+    def extremum_type(self) -> "ExtremumType":
         """The extremum type of interest (either minimum or maximum) for scalar calculation."""
         return self._intf.get_property(TimeToolInstantExtremum._metadata, TimeToolInstantExtremum._get_extremum_type_metadata)
 
     _set_extremum_type_metadata = { "offset" : _set_extremum_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(EXTREMUM_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(ExtremumType),) }
     @extremum_type.setter
-    def extremum_type(self, extremum_type:"EXTREMUM_TYPE") -> None:
+    def extremum_type(self, extremum_type:"ExtremumType") -> None:
         return self._intf.set_property(TimeToolInstantExtremum._metadata, TimeToolInstantExtremum._set_extremum_type_metadata, extremum_type)
 
     _get_calculation_scalar_metadata = { "offset" : _get_calculation_scalar_method_offset,
@@ -10834,17 +10856,17 @@ class TimeToolInstantExtremum(ITimeToolInstant, IAnalysisWorkbenchComponent, Sup
 
     _get_save_data_option_metadata = { "offset" : _get_save_data_option_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(SAVE_DATA_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(SaveDataType),) }
     @property
-    def save_data_option(self) -> "SAVE_DATA_TYPE":
+    def save_data_option(self) -> "SaveDataType":
         """Determine if computed time of extremum is saved/loaded, otherwise it is recomputed on load if necessary."""
         return self._intf.get_property(TimeToolInstantExtremum._metadata, TimeToolInstantExtremum._get_save_data_option_metadata)
 
     _set_save_data_option_metadata = { "offset" : _set_save_data_option_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(SAVE_DATA_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(SaveDataType),) }
     @save_data_option.setter
-    def save_data_option(self, save_data_option:"SAVE_DATA_TYPE") -> None:
+    def save_data_option(self, save_data_option:"SaveDataType") -> None:
         return self._intf.set_property(TimeToolInstantExtremum._metadata, TimeToolInstantExtremum._set_save_data_option_metadata, save_data_option)
 
     _get_sampling_metadata = { "offset" : _get_sampling_method_offset,
@@ -10947,8 +10969,8 @@ class TimeToolInstantFactory(SupportsDeleteCallback):
 
     _create_metadata = { "offset" : _create_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(TIME_EVENT_TYPE), agmarshall.InterfaceOutArg,) }
-    def create(self, name:str, description:str, type:"TIME_EVENT_TYPE") -> "ITimeToolInstant":
+            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(TimeEventType), agmarshall.InterfaceOutArg,) }
+    def create(self, name:str, description:str, type:"TimeEventType") -> "ITimeToolInstant":
         """Create and registers an event using specified name, description, and type."""
         return self._intf.invoke(TimeToolInstantFactory._metadata, TimeToolInstantFactory._create_metadata, name, description, type, OutArg())
 
@@ -11003,8 +11025,8 @@ class TimeToolInstantFactory(SupportsDeleteCallback):
 
     _is_type_supported_metadata = { "offset" : _is_type_supported_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.EnumArg(TIME_EVENT_TYPE), agmarshall.VariantBoolArg,) }
-    def is_type_supported(self, type:"TIME_EVENT_TYPE") -> bool:
+            "marshallers" : (agmarshall.EnumArg(TimeEventType), agmarshall.VariantBoolArg,) }
+    def is_type_supported(self, type:"TimeEventType") -> bool:
         """Return whether the specified type is supported."""
         return self._intf.invoke(TimeToolInstantFactory._metadata, TimeToolInstantFactory._is_type_supported_metadata, type, OutArg())
 
@@ -11211,17 +11233,17 @@ class TimeToolTimeIntervalCollectionCondition(ITimeToolTimeIntervalCollection, I
 
     _get_save_data_option_metadata = { "offset" : _get_save_data_option_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(SAVE_DATA_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(SaveDataType),) }
     @property
-    def save_data_option(self) -> "SAVE_DATA_TYPE":
+    def save_data_option(self) -> "SaveDataType":
         """Determine if computed time of extremum is saved/loaded, otherwise it is recomputed on load if necessary."""
         return self._intf.get_property(TimeToolTimeIntervalCollectionCondition._metadata, TimeToolTimeIntervalCollectionCondition._get_save_data_option_metadata)
 
     _set_save_data_option_metadata = { "offset" : _set_save_data_option_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(SAVE_DATA_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(SaveDataType),) }
     @save_data_option.setter
-    def save_data_option(self, save_data_option:"SAVE_DATA_TYPE") -> None:
+    def save_data_option(self, save_data_option:"SaveDataType") -> None:
         return self._intf.set_property(TimeToolTimeIntervalCollectionCondition._metadata, TimeToolTimeIntervalCollectionCondition._set_save_data_option_metadata, save_data_option)
 
     _get_sampling_metadata = { "offset" : _get_sampling_method_offset,
@@ -11301,8 +11323,8 @@ class TimeToolTimeIntervalCollectionFactory(SupportsDeleteCallback):
     
     _create_metadata = { "offset" : _create_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(EVENT_INTERVAL_COLLECTION_TYPE), agmarshall.InterfaceOutArg,) }
-    def create(self, name:str, description:str, type:"EVENT_INTERVAL_COLLECTION_TYPE") -> "ITimeToolTimeIntervalCollection":
+            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(EventIntervalCollectionType), agmarshall.InterfaceOutArg,) }
+    def create(self, name:str, description:str, type:"EventIntervalCollectionType") -> "ITimeToolTimeIntervalCollection":
         """Create and register an event interval collection using specified name, description, and type."""
         return self._intf.invoke(TimeToolTimeIntervalCollectionFactory._metadata, TimeToolTimeIntervalCollectionFactory._create_metadata, name, description, type, OutArg())
 
@@ -11322,8 +11344,8 @@ class TimeToolTimeIntervalCollectionFactory(SupportsDeleteCallback):
 
     _is_type_supported_metadata = { "offset" : _is_type_supported_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.EnumArg(EVENT_INTERVAL_COLLECTION_TYPE), agmarshall.VariantBoolArg,) }
-    def is_type_supported(self, type:"EVENT_INTERVAL_COLLECTION_TYPE") -> bool:
+            "marshallers" : (agmarshall.EnumArg(EventIntervalCollectionType), agmarshall.VariantBoolArg,) }
+    def is_type_supported(self, type:"EventIntervalCollectionType") -> bool:
         """Return whether the specified type is supported."""
         return self._intf.invoke(TimeToolTimeIntervalCollectionFactory._metadata, TimeToolTimeIntervalCollectionFactory._is_type_supported_metadata, type, OutArg())
 
@@ -11479,17 +11501,17 @@ class TimeToolTimeIntervalCollectionSignaled(ITimeToolTimeIntervalCollection, IA
 
     _get_signal_sense_metadata = { "offset" : _get_signal_sense_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(SIGNAL_DIRECTION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(SignalDirectionType),) }
     @property
-    def signal_sense(self) -> "SIGNAL_DIRECTION_TYPE":
+    def signal_sense(self) -> "SignalDirectionType":
         """The direction of the signal, whether you are Transmitting or Receiving from the Base Clock Location."""
         return self._intf.get_property(TimeToolTimeIntervalCollectionSignaled._metadata, TimeToolTimeIntervalCollectionSignaled._get_signal_sense_metadata)
 
     _set_signal_sense_metadata = { "offset" : _set_signal_sense_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(SIGNAL_DIRECTION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(SignalDirectionType),) }
     @signal_sense.setter
-    def signal_sense(self, signal_sense:"SIGNAL_DIRECTION_TYPE") -> None:
+    def signal_sense(self, signal_sense:"SignalDirectionType") -> None:
         return self._intf.set_property(TimeToolTimeIntervalCollectionSignaled._metadata, TimeToolTimeIntervalCollectionSignaled._set_signal_sense_metadata, signal_sense)
 
     _get_base_clock_location_metadata = { "offset" : _get_base_clock_location_method_offset,
@@ -11587,8 +11609,8 @@ class TimeToolTimeIntervalFactory(SupportsDeleteCallback):
     
     _create_metadata = { "offset" : _create_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(EVENT_INTERVAL_TYPE), agmarshall.InterfaceOutArg,) }
-    def create(self, name:str, description:str, type:"EVENT_INTERVAL_TYPE") -> "ITimeToolTimeInterval":
+            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(EventIntervalType), agmarshall.InterfaceOutArg,) }
+    def create(self, name:str, description:str, type:"EventIntervalType") -> "ITimeToolTimeInterval":
         """Create and register an interval using specified name, description, and type."""
         return self._intf.invoke(TimeToolTimeIntervalFactory._metadata, TimeToolTimeIntervalFactory._create_metadata, name, description, type, OutArg())
 
@@ -11643,8 +11665,8 @@ class TimeToolTimeIntervalFactory(SupportsDeleteCallback):
 
     _is_type_supported_metadata = { "offset" : _is_type_supported_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.EnumArg(EVENT_INTERVAL_TYPE), agmarshall.VariantBoolArg,) }
-    def is_type_supported(self, type:"EVENT_INTERVAL_TYPE") -> bool:
+            "marshallers" : (agmarshall.EnumArg(EventIntervalType), agmarshall.VariantBoolArg,) }
+    def is_type_supported(self, type:"EventIntervalType") -> bool:
         """Return whether the specified type is supported."""
         return self._intf.invoke(TimeToolTimeIntervalFactory._metadata, TimeToolTimeIntervalFactory._is_type_supported_metadata, type, OutArg())
 
@@ -11851,17 +11873,17 @@ class TimeToolTimeIntervalFromIntervalList(ITimeToolTimeInterval, IAnalysisWorkb
 
     _get_interval_selection_metadata = { "offset" : _get_interval_selection_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(INTERVAL_FROM_INTERVAL_LIST_SELECTION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(IntervalFromIntervalListSelectionType),) }
     @property
-    def interval_selection(self) -> "INTERVAL_FROM_INTERVAL_LIST_SELECTION_TYPE":
+    def interval_selection(self) -> "IntervalFromIntervalListSelectionType":
         """The method used to select an interval from the reference interval list."""
         return self._intf.get_property(TimeToolTimeIntervalFromIntervalList._metadata, TimeToolTimeIntervalFromIntervalList._get_interval_selection_metadata)
 
     _set_interval_selection_metadata = { "offset" : _set_interval_selection_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(INTERVAL_FROM_INTERVAL_LIST_SELECTION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(IntervalFromIntervalListSelectionType),) }
     @interval_selection.setter
-    def interval_selection(self, interval_selection:"INTERVAL_FROM_INTERVAL_LIST_SELECTION_TYPE") -> None:
+    def interval_selection(self, interval_selection:"IntervalFromIntervalListSelectionType") -> None:
         return self._intf.set_property(TimeToolTimeIntervalFromIntervalList._metadata, TimeToolTimeIntervalFromIntervalList._set_interval_selection_metadata, interval_selection)
 
     _get_interval_number_metadata = { "offset" : _get_interval_number_method_offset,
@@ -11996,17 +12018,17 @@ class TimeToolTimeIntervalListCondition(ITimeToolTimeIntervalList, IAnalysisWork
 
     _get_save_data_option_metadata = { "offset" : _get_save_data_option_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(SAVE_DATA_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(SaveDataType),) }
     @property
-    def save_data_option(self) -> "SAVE_DATA_TYPE":
+    def save_data_option(self) -> "SaveDataType":
         """Determine if computed intervals of satisfaction are saved/loaded, or recomputed on load if necessary."""
         return self._intf.get_property(TimeToolTimeIntervalListCondition._metadata, TimeToolTimeIntervalListCondition._get_save_data_option_metadata)
 
     _set_save_data_option_metadata = { "offset" : _set_save_data_option_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(SAVE_DATA_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(SaveDataType),) }
     @save_data_option.setter
-    def save_data_option(self, save_data_option:"SAVE_DATA_TYPE") -> None:
+    def save_data_option(self, save_data_option:"SaveDataType") -> None:
         return self._intf.set_property(TimeToolTimeIntervalListCondition._metadata, TimeToolTimeIntervalListCondition._set_save_data_option_metadata, save_data_option)
 
     _get_sampling_metadata = { "offset" : _get_sampling_method_offset,
@@ -12091,8 +12113,8 @@ class TimeToolTimeIntervalListFactory(SupportsDeleteCallback):
     
     _create_metadata = { "offset" : _create_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(EVENT_INTERVAL_LIST_TYPE), agmarshall.InterfaceOutArg,) }
-    def create(self, name:str, description:str, type:"EVENT_INTERVAL_LIST_TYPE") -> "ITimeToolTimeIntervalList":
+            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(EventIntervalListType), agmarshall.InterfaceOutArg,) }
+    def create(self, name:str, description:str, type:"EventIntervalListType") -> "ITimeToolTimeIntervalList":
         """Create and register an interval list using specified name, description, and type."""
         return self._intf.invoke(TimeToolTimeIntervalListFactory._metadata, TimeToolTimeIntervalListFactory._create_metadata, name, description, type, OutArg())
 
@@ -12140,8 +12162,8 @@ class TimeToolTimeIntervalListFactory(SupportsDeleteCallback):
 
     _is_type_supported_metadata = { "offset" : _is_type_supported_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.EnumArg(EVENT_INTERVAL_LIST_TYPE), agmarshall.VariantBoolArg,) }
-    def is_type_supported(self, type:"EVENT_INTERVAL_LIST_TYPE") -> bool:
+            "marshallers" : (agmarshall.EnumArg(EventIntervalListType), agmarshall.VariantBoolArg,) }
+    def is_type_supported(self, type:"EventIntervalListType") -> bool:
         """Return whether the specified type is supported."""
         return self._intf.invoke(TimeToolTimeIntervalListFactory._metadata, TimeToolTimeIntervalListFactory._is_type_supported_metadata, type, OutArg())
 
@@ -12420,17 +12442,17 @@ class TimeToolTimeIntervalListMerged(ITimeToolTimeIntervalList, IAnalysisWorkben
 
     _get_merge_operation_metadata = { "offset" : _get_merge_operation_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(EVENT_LIST_MERGE_OPERATION),) }
+            "marshallers" : (agmarshall.EnumArg(EventListMergeOperation),) }
     @property
-    def merge_operation(self) -> "EVENT_LIST_MERGE_OPERATION":
+    def merge_operation(self) -> "EventListMergeOperation":
         """The merge operation."""
         return self._intf.get_property(TimeToolTimeIntervalListMerged._metadata, TimeToolTimeIntervalListMerged._get_merge_operation_metadata)
 
     _set_merge_operation_metadata = { "offset" : _set_merge_operation_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(EVENT_LIST_MERGE_OPERATION),) }
+            "marshallers" : (agmarshall.EnumArg(EventListMergeOperation),) }
     @merge_operation.setter
-    def merge_operation(self, merge_operation:"EVENT_LIST_MERGE_OPERATION") -> None:
+    def merge_operation(self, merge_operation:"EventListMergeOperation") -> None:
         return self._intf.set_property(TimeToolTimeIntervalListMerged._metadata, TimeToolTimeIntervalListMerged._set_merge_operation_metadata, merge_operation)
 
     _set_interval_list_a_metadata = { "offset" : _set_interval_list_a_method_offset,
@@ -12680,17 +12702,17 @@ class TimeToolTimeIntervalListSignaled(ITimeToolTimeIntervalList, IAnalysisWorkb
 
     _get_signal_sense_metadata = { "offset" : _get_signal_sense_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(SIGNAL_DIRECTION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(SignalDirectionType),) }
     @property
-    def signal_sense(self) -> "SIGNAL_DIRECTION_TYPE":
+    def signal_sense(self) -> "SignalDirectionType":
         """The direction of the signal, whether you are Transmitting or Receiving from the Base Clock Location."""
         return self._intf.get_property(TimeToolTimeIntervalListSignaled._metadata, TimeToolTimeIntervalListSignaled._get_signal_sense_metadata)
 
     _set_signal_sense_metadata = { "offset" : _set_signal_sense_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(SIGNAL_DIRECTION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(SignalDirectionType),) }
     @signal_sense.setter
-    def signal_sense(self, signal_sense:"SIGNAL_DIRECTION_TYPE") -> None:
+    def signal_sense(self, signal_sense:"SignalDirectionType") -> None:
         return self._intf.set_property(TimeToolTimeIntervalListSignaled._metadata, TimeToolTimeIntervalListSignaled._set_signal_sense_metadata, signal_sense)
 
     _get_base_clock_location_metadata = { "offset" : _get_base_clock_location_method_offset,
@@ -12980,17 +13002,17 @@ class TimeToolTimeIntervalSignaled(ITimeToolTimeInterval, IAnalysisWorkbenchComp
 
     _get_signal_sense_metadata = { "offset" : _get_signal_sense_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(SIGNAL_DIRECTION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(SignalDirectionType),) }
     @property
-    def signal_sense(self) -> "SIGNAL_DIRECTION_TYPE":
+    def signal_sense(self) -> "SignalDirectionType":
         """The direction of the signal, whether you are Transmitting or Receiving from the BaseClockLocation."""
         return self._intf.get_property(TimeToolTimeIntervalSignaled._metadata, TimeToolTimeIntervalSignaled._get_signal_sense_metadata)
 
     _set_signal_sense_metadata = { "offset" : _set_signal_sense_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(SIGNAL_DIRECTION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(SignalDirectionType),) }
     @signal_sense.setter
-    def signal_sense(self, signal_sense:"SIGNAL_DIRECTION_TYPE") -> None:
+    def signal_sense(self, signal_sense:"SignalDirectionType") -> None:
         return self._intf.set_property(TimeToolTimeIntervalSignaled._metadata, TimeToolTimeIntervalSignaled._set_signal_sense_metadata, signal_sense)
 
     _get_base_clock_location_metadata = { "offset" : _get_base_clock_location_method_offset,
@@ -13119,17 +13141,17 @@ class TimeToolTimeIntervalSmartInterval(ITimeToolTimeInterval, IAnalysisWorkbenc
 
     _get_state_metadata = { "offset" : _get_state_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(SMART_INTERVAL_STATE),) }
+            "marshallers" : (agmarshall.EnumArg(SmartIntervalState),) }
     @property
-    def state(self) -> "SMART_INTERVAL_STATE":
+    def state(self) -> "SmartIntervalState":
         """A state of the smart interval."""
         return self._intf.get_property(TimeToolTimeIntervalSmartInterval._metadata, TimeToolTimeIntervalSmartInterval._get_state_metadata)
 
     _set_state_metadata = { "offset" : _set_state_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(SMART_INTERVAL_STATE),) }
+            "marshallers" : (agmarshall.EnumArg(SmartIntervalState),) }
     @state.setter
-    def state(self, state:"SMART_INTERVAL_STATE") -> None:
+    def state(self, state:"SmartIntervalState") -> None:
         return self._intf.set_property(TimeToolTimeIntervalSmartInterval._metadata, TimeToolTimeIntervalSmartInterval._set_state_metadata, state)
 
     _set_implicit_interval_metadata = { "offset" : _set_implicit_interval_method_offset,
@@ -13350,17 +13372,17 @@ class TimeToolInstantSignaled(ITimeToolInstant, IAnalysisWorkbenchComponent, Sup
 
     _get_signal_sense_metadata = { "offset" : _get_signal_sense_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(SIGNAL_DIRECTION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(SignalDirectionType),) }
     @property
-    def signal_sense(self) -> "SIGNAL_DIRECTION_TYPE":
+    def signal_sense(self) -> "SignalDirectionType":
         """The direction of the signal, whether you are Transmitting or Receiving from the BaseClockLocation."""
         return self._intf.get_property(TimeToolInstantSignaled._metadata, TimeToolInstantSignaled._get_signal_sense_metadata)
 
     _set_signal_sense_metadata = { "offset" : _set_signal_sense_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(SIGNAL_DIRECTION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(SignalDirectionType),) }
     @signal_sense.setter
-    def signal_sense(self, signal_sense:"SIGNAL_DIRECTION_TYPE") -> None:
+    def signal_sense(self, signal_sense:"SignalDirectionType") -> None:
         return self._intf.set_property(TimeToolInstantSignaled._metadata, TimeToolInstantSignaled._set_signal_sense_metadata, signal_sense)
 
     _get_base_clock_location_metadata = { "offset" : _get_base_clock_location_method_offset,
@@ -13471,17 +13493,17 @@ class TimeToolInstantSmartEpoch(ITimeToolInstant, IAnalysisWorkbenchComponent, S
 
     _get_state_metadata = { "offset" : _get_state_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(SMART_EPOCH_STATE),) }
+            "marshallers" : (agmarshall.EnumArg(SmartEpochState),) }
     @property
-    def state(self) -> "SMART_EPOCH_STATE":
+    def state(self) -> "SmartEpochState":
         """State of the event."""
         return self._intf.get_property(TimeToolInstantSmartEpoch._metadata, TimeToolInstantSmartEpoch._get_state_metadata)
 
     _set_state_metadata = { "offset" : _set_state_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(SMART_EPOCH_STATE),) }
+            "marshallers" : (agmarshall.EnumArg(SmartEpochState),) }
     @state.setter
-    def state(self, state:"SMART_EPOCH_STATE") -> None:
+    def state(self, state:"SmartEpochState") -> None:
         return self._intf.set_property(TimeToolInstantSmartEpoch._metadata, TimeToolInstantSmartEpoch._set_state_metadata, state)
 
     _set_explicit_time_metadata = { "offset" : _set_explicit_time_method_offset,
@@ -13731,17 +13753,17 @@ class TimeToolTimeIntervalGapsFilter(ITimeToolPruneFilter, SupportsDeleteCallbac
     
     _get_duration_type_metadata = { "offset" : _get_duration_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(INTERVAL_DURATION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(IntervalDurationType),) }
     @property
-    def duration_type(self) -> "INTERVAL_DURATION_TYPE":
+    def duration_type(self) -> "IntervalDurationType":
         """Choose a duration type (at least/at most)."""
         return self._intf.get_property(TimeToolTimeIntervalGapsFilter._metadata, TimeToolTimeIntervalGapsFilter._get_duration_type_metadata)
 
     _set_duration_type_metadata = { "offset" : _set_duration_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(INTERVAL_DURATION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(IntervalDurationType),) }
     @duration_type.setter
-    def duration_type(self, duration_kind:"INTERVAL_DURATION_TYPE") -> None:
+    def duration_type(self, duration_kind:"IntervalDurationType") -> None:
         return self._intf.set_property(TimeToolTimeIntervalGapsFilter._metadata, TimeToolTimeIntervalGapsFilter._set_duration_type_metadata, duration_kind)
 
     _get_gap_duration_metadata = { "offset" : _get_gap_duration_method_offset,
@@ -13822,17 +13844,17 @@ class CalculationToolIntegralBasic(IAnalysisWorkbenchIntegral, IAnalysisWorkbenc
     
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(QUADRATURE_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(QuadratureType),) }
     @property
-    def type(self) -> "QUADRATURE_TYPE":
+    def type(self) -> "QuadratureType":
         """Get the integral type which determines the method of integration and can be set to trapezoidal, Simplson or adaptive Lobatto."""
         return self._intf.get_property(CalculationToolIntegralBasic._metadata, CalculationToolIntegralBasic._get_type_metadata)
 
     _set_type_metadata = { "offset" : _set_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(QUADRATURE_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(QuadratureType),) }
     @type.setter
-    def type(self, type:"QUADRATURE_TYPE") -> None:
+    def type(self, type:"QuadratureType") -> None:
         return self._intf.set_property(CalculationToolIntegralBasic._metadata, CalculationToolIntegralBasic._set_type_metadata, type)
 
     _get_tolerance_metadata = { "offset" : _get_tolerance_method_offset,
@@ -13929,17 +13951,17 @@ class CalculationToolInterpolatorBasic(IAnalysisWorkbenchInterpolator, IAnalysis
     
     _get_type_metadata = { "offset" : _get_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(INTERPOLATON_METHOD_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(InterpolationMethodType),) }
     @property
-    def type(self) -> "INTERPOLATON_METHOD_TYPE":
+    def type(self) -> "InterpolationMethodType":
         """Get the interpolation type, which can be Lagrange or Hermite interpolation. See STK help on interpolation for further details."""
         return self._intf.get_property(CalculationToolInterpolatorBasic._metadata, CalculationToolInterpolatorBasic._get_type_metadata)
 
     _set_type_metadata = { "offset" : _set_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(INTERPOLATON_METHOD_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(InterpolationMethodType),) }
     @type.setter
-    def type(self, type:"INTERPOLATON_METHOD_TYPE") -> None:
+    def type(self, type:"InterpolationMethodType") -> None:
         return self._intf.set_property(CalculationToolInterpolatorBasic._metadata, CalculationToolInterpolatorBasic._set_type_metadata, type)
 
     _get_order_metadata = { "offset" : _get_order_method_offset,
@@ -13999,17 +14021,17 @@ class TimeToolIntervalsFilter(ITimeToolPruneFilter, SupportsDeleteCallback):
     
     _get_duration_type_metadata = { "offset" : _get_duration_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(INTERVAL_DURATION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(IntervalDurationType),) }
     @property
-    def duration_type(self) -> "INTERVAL_DURATION_TYPE":
+    def duration_type(self) -> "IntervalDurationType":
         """Choose a duration type (at least/at most)."""
         return self._intf.get_property(TimeToolIntervalsFilter._metadata, TimeToolIntervalsFilter._get_duration_type_metadata)
 
     _set_duration_type_metadata = { "offset" : _set_duration_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(INTERVAL_DURATION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(IntervalDurationType),) }
     @duration_type.setter
-    def duration_type(self, duration_kind:"INTERVAL_DURATION_TYPE") -> None:
+    def duration_type(self, duration_kind:"IntervalDurationType") -> None:
         return self._intf.set_property(TimeToolIntervalsFilter._metadata, TimeToolIntervalsFilter._set_duration_type_metadata, duration_kind)
 
     _get_interval_duration_metadata = { "offset" : _get_interval_duration_method_offset,
@@ -14211,8 +14233,8 @@ class CalculationToolParameterSetFactory(SupportsDeleteCallback):
     
     _create_metadata = { "offset" : _create_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(PARAMETER_SET_TYPE), agmarshall.InterfaceOutArg,) }
-    def create(self, name:str, description:str, type:"PARAMETER_SET_TYPE") -> "ICalculationToolParameterSet":
+            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(ParameterSetType), agmarshall.InterfaceOutArg,) }
+    def create(self, name:str, description:str, type:"ParameterSetType") -> "ICalculationToolParameterSet":
         """Create and registers a parameter set using specified name and description."""
         return self._intf.invoke(CalculationToolParameterSetFactory._metadata, CalculationToolParameterSetFactory._create_metadata, name, description, type, OutArg())
 
@@ -14253,8 +14275,8 @@ class CalculationToolParameterSetFactory(SupportsDeleteCallback):
 
     _is_type_supported_metadata = { "offset" : _is_type_supported_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.EnumArg(PARAMETER_SET_TYPE), agmarshall.VariantBoolArg,) }
-    def is_type_supported(self, type:"PARAMETER_SET_TYPE") -> bool:
+            "marshallers" : (agmarshall.EnumArg(ParameterSetType), agmarshall.VariantBoolArg,) }
+    def is_type_supported(self, type:"ParameterSetType") -> bool:
         """Return whether the specified type is supported."""
         return self._intf.invoke(CalculationToolParameterSetFactory._metadata, CalculationToolParameterSetFactory._is_type_supported_metadata, type, OutArg())
 
@@ -14662,8 +14684,8 @@ class TimeToolPruneFilterFactory(SupportsDeleteCallback):
     
     _create_metadata = { "offset" : _create_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.EnumArg(INTERVAL_PRUNE_FILTER_TYPE), agmarshall.InterfaceOutArg,) }
-    def create(self, filter:"INTERVAL_PRUNE_FILTER_TYPE") -> "ITimeToolPruneFilter":
+            "marshallers" : (agmarshall.EnumArg(IntervalPruneFilterType), agmarshall.InterfaceOutArg,) }
+    def create(self, filter:"IntervalPruneFilterType") -> "ITimeToolPruneFilter":
         """Create and initializes a new prune filter using default configuration."""
         return self._intf.invoke(TimeToolPruneFilterFactory._metadata, TimeToolPruneFilterFactory._create_metadata, filter, OutArg())
 
@@ -14720,17 +14742,17 @@ class TimeToolTimeIntervalRelativeSatisfactionConditionFilter(ITimeToolPruneFilt
 
     _get_duration_type_metadata = { "offset" : _get_duration_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(INTERVAL_DURATION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(IntervalDurationType),) }
     @property
-    def duration_type(self) -> "INTERVAL_DURATION_TYPE":
+    def duration_type(self) -> "IntervalDurationType":
         """Choose a duration type (at least/at most)."""
         return self._intf.get_property(TimeToolTimeIntervalRelativeSatisfactionConditionFilter._metadata, TimeToolTimeIntervalRelativeSatisfactionConditionFilter._get_duration_type_metadata)
 
     _set_duration_type_metadata = { "offset" : _set_duration_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(INTERVAL_DURATION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(IntervalDurationType),) }
     @duration_type.setter
-    def duration_type(self, duration_kind:"INTERVAL_DURATION_TYPE") -> None:
+    def duration_type(self, duration_kind:"IntervalDurationType") -> None:
         return self._intf.set_property(TimeToolTimeIntervalRelativeSatisfactionConditionFilter._metadata, TimeToolTimeIntervalRelativeSatisfactionConditionFilter._set_duration_type_metadata, duration_kind)
 
     _get_relative_interval_duration_metadata = { "offset" : _get_relative_interval_duration_method_offset,
@@ -15274,17 +15296,17 @@ class TimeToolTimeIntervalSatisfactionConditionFilter(ITimeToolPruneFilter, Supp
 
     _get_duration_type_metadata = { "offset" : _get_duration_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(INTERVAL_DURATION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(IntervalDurationType),) }
     @property
-    def duration_type(self) -> "INTERVAL_DURATION_TYPE":
+    def duration_type(self) -> "IntervalDurationType":
         """Choose a duration type (at least/at most)."""
         return self._intf.get_property(TimeToolTimeIntervalSatisfactionConditionFilter._metadata, TimeToolTimeIntervalSatisfactionConditionFilter._get_duration_type_metadata)
 
     _set_duration_type_metadata = { "offset" : _set_duration_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(INTERVAL_DURATION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(IntervalDurationType),) }
     @duration_type.setter
-    def duration_type(self, duration_kind:"INTERVAL_DURATION_TYPE") -> None:
+    def duration_type(self, duration_kind:"IntervalDurationType") -> None:
         return self._intf.set_property(TimeToolTimeIntervalSatisfactionConditionFilter._metadata, TimeToolTimeIntervalSatisfactionConditionFilter._set_duration_type_metadata, duration_kind)
 
     _get_interval_duration_metadata = { "offset" : _get_interval_duration_method_offset,
@@ -15370,17 +15392,17 @@ class TimeToolSignalDelayBasic(IAnalysisWorkbenchSignalDelay, IAnalysisWorkbench
     
     _get_signal_path_reference_system_metadata = { "offset" : _get_signal_path_reference_system_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(SIGNAL_PATH_REFERENCE_SYSTEM),) }
+            "marshallers" : (agmarshall.EnumArg(SignalPathReferenceSystem),) }
     @property
-    def signal_path_reference_system(self) -> "SIGNAL_PATH_REFERENCE_SYSTEM":
+    def signal_path_reference_system(self) -> "SignalPathReferenceSystem":
         """Get the type of signal path reference system which can be set to use STK Access default (see STK Help for further details), Solar system barycenter inertial reference, central body inertial reference or custom reference system..."""
         return self._intf.get_property(TimeToolSignalDelayBasic._metadata, TimeToolSignalDelayBasic._get_signal_path_reference_system_metadata)
 
     _set_signal_path_reference_system_metadata = { "offset" : _set_signal_path_reference_system_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(SIGNAL_PATH_REFERENCE_SYSTEM),) }
+            "marshallers" : (agmarshall.EnumArg(SignalPathReferenceSystem),) }
     @signal_path_reference_system.setter
-    def signal_path_reference_system(self, signal_path_reference_system:"SIGNAL_PATH_REFERENCE_SYSTEM") -> None:
+    def signal_path_reference_system(self, signal_path_reference_system:"SignalPathReferenceSystem") -> None:
         return self._intf.set_property(TimeToolSignalDelayBasic._metadata, TimeToolSignalDelayBasic._set_signal_path_reference_system_metadata, signal_path_reference_system)
 
     _get_reference_system_metadata = { "offset" : _get_reference_system_method_offset,
@@ -15400,17 +15422,17 @@ class TimeToolSignalDelayBasic(IAnalysisWorkbenchSignalDelay, IAnalysisWorkbench
 
     _get_speed_option_metadata = { "offset" : _get_speed_option_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(SPEED_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(SpeedType),) }
     @property
-    def speed_option(self) -> "SPEED_TYPE":
+    def speed_option(self) -> "SpeedType":
         """Get the speed option which determines whether to use the speed of light or a custom speed value."""
         return self._intf.get_property(TimeToolSignalDelayBasic._metadata, TimeToolSignalDelayBasic._get_speed_option_metadata)
 
     _set_speed_option_metadata = { "offset" : _set_speed_option_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(SPEED_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(SpeedType),) }
     @speed_option.setter
-    def speed_option(self, speed_option:"SPEED_TYPE") -> None:
+    def speed_option(self, speed_option:"SpeedType") -> None:
         return self._intf.set_property(TimeToolSignalDelayBasic._metadata, TimeToolSignalDelayBasic._set_speed_option_metadata, speed_option)
 
     _get_transfer_speed_metadata = { "offset" : _get_transfer_speed_method_offset,
@@ -15494,15 +15516,15 @@ class SpatialAnalysisToolCalculationFactory(SupportsDeleteCallback):
     
     _is_type_supported_metadata = { "offset" : _is_type_supported_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.EnumArg(SPATIAL_CALCULATION_TYPE), agmarshall.VariantBoolArg,) }
-    def is_type_supported(self, type:"SPATIAL_CALCULATION_TYPE") -> bool:
+            "marshallers" : (agmarshall.EnumArg(SpatialCalculationType), agmarshall.VariantBoolArg,) }
+    def is_type_supported(self, type:"SpatialCalculationType") -> bool:
         """Return whether the specified type is supported."""
         return self._intf.invoke(SpatialAnalysisToolCalculationFactory._metadata, SpatialAnalysisToolCalculationFactory._is_type_supported_metadata, type, OutArg())
 
     _create_metadata = { "offset" : _create_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(SPATIAL_CALCULATION_TYPE), agmarshall.InterfaceOutArg,) }
-    def create(self, name:str, description:str, type:"SPATIAL_CALCULATION_TYPE") -> "ISpatialAnalysisToolSpatialCalculation":
+            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(SpatialCalculationType), agmarshall.InterfaceOutArg,) }
+    def create(self, name:str, description:str, type:"SpatialCalculationType") -> "ISpatialAnalysisToolSpatialCalculation":
         """Create and registers a volume calc using specified name and description."""
         return self._intf.invoke(SpatialAnalysisToolCalculationFactory._metadata, SpatialAnalysisToolCalculationFactory._create_metadata, name, description, type, OutArg())
 
@@ -15604,15 +15626,15 @@ class SpatialAnalysisToolConditionFactory(SupportsDeleteCallback):
     
     _create_metadata = { "offset" : _create_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(VOLUME_TYPE), agmarshall.InterfaceOutArg,) }
-    def create(self, name:str, description:str, type:"VOLUME_TYPE") -> "ISpatialAnalysisToolVolume":
+            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(VolumeType), agmarshall.InterfaceOutArg,) }
+    def create(self, name:str, description:str, type:"VolumeType") -> "ISpatialAnalysisToolVolume":
         """Create and registers a volume using specified name and description."""
         return self._intf.invoke(SpatialAnalysisToolConditionFactory._metadata, SpatialAnalysisToolConditionFactory._create_metadata, name, description, type, OutArg())
 
     _is_type_supported_metadata = { "offset" : _is_type_supported_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.EnumArg(VOLUME_TYPE), agmarshall.VariantBoolArg,) }
-    def is_type_supported(self, type:"VOLUME_TYPE") -> bool:
+            "marshallers" : (agmarshall.EnumArg(VolumeType), agmarshall.VariantBoolArg,) }
+    def is_type_supported(self, type:"VolumeType") -> bool:
         """Return whether the specified type is supported."""
         return self._intf.invoke(SpatialAnalysisToolConditionFactory._metadata, SpatialAnalysisToolConditionFactory._is_type_supported_metadata, type, OutArg())
 
@@ -15712,8 +15734,8 @@ class SpatialAnalysisToolVolumeGridFactory(SupportsDeleteCallback):
     
     _create_metadata = { "offset" : _create_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(VOLUME_GRID_TYPE), agmarshall.InterfaceOutArg,) }
-    def create(self, name:str, description:str, type:"VOLUME_GRID_TYPE") -> "ISpatialAnalysisToolVolumeGrid":
+            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(VolumeGridType), agmarshall.InterfaceOutArg,) }
+    def create(self, name:str, description:str, type:"VolumeGridType") -> "ISpatialAnalysisToolVolumeGrid":
         """Create and registers a volume grid using specified name and description."""
         return self._intf.invoke(SpatialAnalysisToolVolumeGridFactory._metadata, SpatialAnalysisToolVolumeGridFactory._create_metadata, name, description, type, OutArg())
 
@@ -15726,8 +15748,8 @@ class SpatialAnalysisToolVolumeGridFactory(SupportsDeleteCallback):
 
     _is_type_supported_metadata = { "offset" : _is_type_supported_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.EnumArg(VOLUME_GRID_TYPE), agmarshall.VariantBoolArg,) }
-    def is_type_supported(self, type:"VOLUME_GRID_TYPE") -> bool:
+            "marshallers" : (agmarshall.EnumArg(VolumeGridType), agmarshall.VariantBoolArg,) }
+    def is_type_supported(self, type:"VolumeGridType") -> bool:
         """Return whether the specified type is supported."""
         return self._intf.invoke(SpatialAnalysisToolVolumeGridFactory._metadata, SpatialAnalysisToolVolumeGridFactory._is_type_supported_metadata, type, OutArg())
 
@@ -15804,9 +15826,9 @@ class SpatialAnalysisToolGridCoordinateDefinition(SupportsDeleteCallback):
     
     _get_method_type_metadata = { "offset" : _get_method_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(GRID_VALUES_METHOD_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(GridValuesMethodType),) }
     @property
-    def method_type(self) -> "GRID_VALUES_METHOD_TYPE":
+    def method_type(self) -> "GridValuesMethodType":
         """Grid values method type."""
         return self._intf.get_property(SpatialAnalysisToolGridCoordinateDefinition._metadata, SpatialAnalysisToolGridCoordinateDefinition._get_method_type_metadata)
 
@@ -16233,47 +16255,47 @@ class TimeToolLightTimeDelay(SupportsDeleteCallback):
 
     _get_aberration_type_metadata = { "offset" : _get_aberration_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(ABERRATION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(AberrationModelType),) }
     @property
-    def aberration_type(self) -> "ABERRATION_TYPE":
+    def aberration_type(self) -> "AberrationModelType":
         """Method used to Aberration Type."""
         return self._intf.get_property(TimeToolLightTimeDelay._metadata, TimeToolLightTimeDelay._get_aberration_type_metadata)
 
     _set_aberration_type_metadata = { "offset" : _set_aberration_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(ABERRATION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(AberrationModelType),) }
     @aberration_type.setter
-    def aberration_type(self, aberration_type:"ABERRATION_TYPE") -> None:
+    def aberration_type(self, aberration_type:"AberrationModelType") -> None:
         return self._intf.set_property(TimeToolLightTimeDelay._metadata, TimeToolLightTimeDelay._set_aberration_type_metadata, aberration_type)
 
     _get_clock_host_metadata = { "offset" : _get_clock_host_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CLOCK_HOST_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(ClockHostType),) }
     @property
-    def clock_host(self) -> "CLOCK_HOST_TYPE":
+    def clock_host(self) -> "ClockHostType":
         """Indicate whether object1 or object2 of an Access instance holds the clock for Access times."""
         return self._intf.get_property(TimeToolLightTimeDelay._metadata, TimeToolLightTimeDelay._get_clock_host_metadata)
 
     _set_clock_host_metadata = { "offset" : _set_clock_host_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CLOCK_HOST_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(ClockHostType),) }
     @clock_host.setter
-    def clock_host(self, clock_host:"CLOCK_HOST_TYPE") -> None:
+    def clock_host(self, clock_host:"ClockHostType") -> None:
         return self._intf.set_property(TimeToolLightTimeDelay._metadata, TimeToolLightTimeDelay._set_clock_host_metadata, clock_host)
 
     _get_time_sense_metadata = { "offset" : _get_time_sense_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(TIME_SENSE_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(TimeSenseType),) }
     @property
-    def time_sense(self) -> "TIME_SENSE_TYPE":
+    def time_sense(self) -> "TimeSenseType":
         """Indicate whether apparent position is computed in a transmit or receive sense."""
         return self._intf.get_property(TimeToolLightTimeDelay._metadata, TimeToolLightTimeDelay._get_time_sense_metadata)
 
     _set_time_sense_metadata = { "offset" : _set_time_sense_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(TIME_SENSE_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(TimeSenseType),) }
     @time_sense.setter
-    def time_sense(self, time_sense:"TIME_SENSE_TYPE") -> None:
+    def time_sense(self, time_sense:"TimeSenseType") -> None:
         return self._intf.set_property(TimeToolLightTimeDelay._metadata, TimeToolLightTimeDelay._set_time_sense_metadata, time_sense)
 
     _property_names[use_light_time_delay] = "use_light_time_delay"
@@ -16378,17 +16400,17 @@ class SpatialAnalysisToolCalculationAltitude(ISpatialAnalysisToolSpatialCalculat
 
     _get_shape_model_metadata = { "offset" : _get_shape_model_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(SPATIAL_CALCULATION_ALTITUDE_REFERENCE_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(SpatialCalculationAltitudeReferenceType),) }
     @property
-    def shape_model(self) -> "SPATIAL_CALCULATION_ALTITUDE_REFERENCE_TYPE":
+    def shape_model(self) -> "SpatialCalculationAltitudeReferenceType":
         """The Volume Calc Altitude Reference Type."""
         return self._intf.get_property(SpatialAnalysisToolCalculationAltitude._metadata, SpatialAnalysisToolCalculationAltitude._get_shape_model_metadata)
 
     _set_shape_model_metadata = { "offset" : _set_shape_model_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(SPATIAL_CALCULATION_ALTITUDE_REFERENCE_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(SpatialCalculationAltitudeReferenceType),) }
     @shape_model.setter
-    def shape_model(self, shape_model:"SPATIAL_CALCULATION_ALTITUDE_REFERENCE_TYPE") -> None:
+    def shape_model(self, shape_model:"SpatialCalculationAltitudeReferenceType") -> None:
         return self._intf.set_property(SpatialAnalysisToolCalculationAltitude._metadata, SpatialAnalysisToolCalculationAltitude._set_shape_model_metadata, shape_model)
 
     _get_use_custom_reference_metadata = { "offset" : _get_use_custom_reference_method_offset,
@@ -16471,17 +16493,17 @@ class SpatialAnalysisToolCalculationAngleToLocation(ISpatialAnalysisToolSpatialC
     
     _get_angle_metadata = { "offset" : _get_angle_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(ANGLE_TO_LOCATION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(AngleToLocationType),) }
     @property
-    def angle(self) -> "ANGLE_TO_LOCATION_TYPE":
+    def angle(self) -> "AngleToLocationType":
         """The Volume Calc Angle Off Vector Type."""
         return self._intf.get_property(SpatialAnalysisToolCalculationAngleToLocation._metadata, SpatialAnalysisToolCalculationAngleToLocation._get_angle_metadata)
 
     _set_angle_metadata = { "offset" : _set_angle_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(ANGLE_TO_LOCATION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(AngleToLocationType),) }
     @angle.setter
-    def angle(self, angle:"ANGLE_TO_LOCATION_TYPE") -> None:
+    def angle(self, angle:"AngleToLocationType") -> None:
         return self._intf.set_property(SpatialAnalysisToolCalculationAngleToLocation._metadata, SpatialAnalysisToolCalculationAngleToLocation._set_angle_metadata, angle)
 
     _get_reference_plane_metadata = { "offset" : _get_reference_plane_method_offset,
@@ -16620,62 +16642,62 @@ class SpatialAnalysisToolCalculationConditionSatisfactionMetric(ISpatialAnalysis
 
     _get_satisfaction_metric_metadata = { "offset" : _get_satisfaction_metric_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(VOLUME_SATISFACTION_METRIC_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(VolumeSatisfactionMetricType),) }
     @property
-    def satisfaction_metric(self) -> "VOLUME_SATISFACTION_METRIC_TYPE":
+    def satisfaction_metric(self) -> "VolumeSatisfactionMetricType":
         """Spatial condition satisfaction metric types."""
         return self._intf.get_property(SpatialAnalysisToolCalculationConditionSatisfactionMetric._metadata, SpatialAnalysisToolCalculationConditionSatisfactionMetric._get_satisfaction_metric_metadata)
 
     _set_satisfaction_metric_metadata = { "offset" : _set_satisfaction_metric_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(VOLUME_SATISFACTION_METRIC_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(VolumeSatisfactionMetricType),) }
     @satisfaction_metric.setter
-    def satisfaction_metric(self, satisfaction_metric:"VOLUME_SATISFACTION_METRIC_TYPE") -> None:
+    def satisfaction_metric(self, satisfaction_metric:"VolumeSatisfactionMetricType") -> None:
         return self._intf.set_property(SpatialAnalysisToolCalculationConditionSatisfactionMetric._metadata, SpatialAnalysisToolCalculationConditionSatisfactionMetric._set_satisfaction_metric_metadata, satisfaction_metric)
 
     _get_accumulation_type_metadata = { "offset" : _get_accumulation_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(VOLUME_SATISFACTION_ACCUMULATION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(VolumeSatisfactionAccumulationType),) }
     @property
-    def accumulation_type(self) -> "VOLUME_SATISFACTION_ACCUMULATION_TYPE":
+    def accumulation_type(self) -> "VolumeSatisfactionAccumulationType":
         """Spatial condition satisfaction accumulation types."""
         return self._intf.get_property(SpatialAnalysisToolCalculationConditionSatisfactionMetric._metadata, SpatialAnalysisToolCalculationConditionSatisfactionMetric._get_accumulation_type_metadata)
 
     _set_accumulation_type_metadata = { "offset" : _set_accumulation_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(VOLUME_SATISFACTION_ACCUMULATION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(VolumeSatisfactionAccumulationType),) }
     @accumulation_type.setter
-    def accumulation_type(self, accumulation_type:"VOLUME_SATISFACTION_ACCUMULATION_TYPE") -> None:
+    def accumulation_type(self, accumulation_type:"VolumeSatisfactionAccumulationType") -> None:
         return self._intf.set_property(SpatialAnalysisToolCalculationConditionSatisfactionMetric._metadata, SpatialAnalysisToolCalculationConditionSatisfactionMetric._set_accumulation_type_metadata, accumulation_type)
 
     _get_duration_type_metadata = { "offset" : _get_duration_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(VOLUME_SATISFACTION_DURATION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(VolumeSatisfactionDurationType),) }
     @property
-    def duration_type(self) -> "VOLUME_SATISFACTION_DURATION_TYPE":
+    def duration_type(self) -> "VolumeSatisfactionDurationType":
         """Spatial condition satisfaction duration types."""
         return self._intf.get_property(SpatialAnalysisToolCalculationConditionSatisfactionMetric._metadata, SpatialAnalysisToolCalculationConditionSatisfactionMetric._get_duration_type_metadata)
 
     _set_duration_type_metadata = { "offset" : _set_duration_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(VOLUME_SATISFACTION_DURATION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(VolumeSatisfactionDurationType),) }
     @duration_type.setter
-    def duration_type(self, duration_type:"VOLUME_SATISFACTION_DURATION_TYPE") -> None:
+    def duration_type(self, duration_type:"VolumeSatisfactionDurationType") -> None:
         return self._intf.set_property(SpatialAnalysisToolCalculationConditionSatisfactionMetric._metadata, SpatialAnalysisToolCalculationConditionSatisfactionMetric._set_duration_type_metadata, duration_type)
 
     _get_filter_metadata = { "offset" : _get_filter_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(VOLUME_SATISFACTION_FILTER_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(VolumeSatisfactionFilterType),) }
     @property
-    def filter(self) -> "VOLUME_SATISFACTION_FILTER_TYPE":
+    def filter(self) -> "VolumeSatisfactionFilterType":
         """Spatial condition satisfaction duration types."""
         return self._intf.get_property(SpatialAnalysisToolCalculationConditionSatisfactionMetric._metadata, SpatialAnalysisToolCalculationConditionSatisfactionMetric._get_filter_metadata)
 
     _set_filter_metadata = { "offset" : _set_filter_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(VOLUME_SATISFACTION_FILTER_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(VolumeSatisfactionFilterType),) }
     @filter.setter
-    def filter(self, filter:"VOLUME_SATISFACTION_FILTER_TYPE") -> None:
+    def filter(self, filter:"VolumeSatisfactionFilterType") -> None:
         return self._intf.set_property(SpatialAnalysisToolCalculationConditionSatisfactionMetric._metadata, SpatialAnalysisToolCalculationConditionSatisfactionMetric._set_filter_metadata, filter)
 
     _get_maximum_number_of_intervals_metadata = { "offset" : _get_maximum_number_of_intervals_method_offset,
@@ -16811,17 +16833,17 @@ class SpatialAnalysisToolCalculationPropagationDelayToLocation(ISpatialAnalysisT
     
     _get_distance_metadata = { "offset" : _get_distance_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(DISTANCE_TO_LOCATION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(DistanceToLocationType),) }
     @property
-    def distance(self) -> "DISTANCE_TO_LOCATION_TYPE":
+    def distance(self) -> "DistanceToLocationType":
         """The Volume Calc range distance types."""
         return self._intf.get_property(SpatialAnalysisToolCalculationPropagationDelayToLocation._metadata, SpatialAnalysisToolCalculationPropagationDelayToLocation._get_distance_metadata)
 
     _set_distance_metadata = { "offset" : _set_distance_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(DISTANCE_TO_LOCATION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(DistanceToLocationType),) }
     @distance.setter
-    def distance(self, distance:"DISTANCE_TO_LOCATION_TYPE") -> None:
+    def distance(self, distance:"DistanceToLocationType") -> None:
         return self._intf.set_property(SpatialAnalysisToolCalculationPropagationDelayToLocation._metadata, SpatialAnalysisToolCalculationPropagationDelayToLocation._set_distance_metadata, distance)
 
     _get_reference_point_metadata = { "offset" : _get_reference_point_method_offset,
@@ -16871,17 +16893,17 @@ class SpatialAnalysisToolCalculationPropagationDelayToLocation(ISpatialAnalysisT
 
     _get_speed_type_metadata = { "offset" : _get_speed_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(RANGE_SPEED_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(RangeSpeedType),) }
     @property
-    def speed_type(self) -> "RANGE_SPEED_TYPE":
+    def speed_type(self) -> "RangeSpeedType":
         """The Volume Calc range speed types."""
         return self._intf.get_property(SpatialAnalysisToolCalculationPropagationDelayToLocation._metadata, SpatialAnalysisToolCalculationPropagationDelayToLocation._get_speed_type_metadata)
 
     _set_speed_type_metadata = { "offset" : _set_speed_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(RANGE_SPEED_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(RangeSpeedType),) }
     @speed_type.setter
-    def speed_type(self, speed_type:"RANGE_SPEED_TYPE") -> None:
+    def speed_type(self, speed_type:"RangeSpeedType") -> None:
         return self._intf.set_property(SpatialAnalysisToolCalculationPropagationDelayToLocation._metadata, SpatialAnalysisToolCalculationPropagationDelayToLocation._set_speed_type_metadata, speed_type)
 
     _get_speed_metadata = { "offset" : _get_speed_method_offset,
@@ -17061,17 +17083,17 @@ class SpatialAnalysisToolCalculationDistanceToLocation(ISpatialAnalysisToolSpati
     
     _get_distance_metadata = { "offset" : _get_distance_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(DISTANCE_TO_LOCATION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(DistanceToLocationType),) }
     @property
-    def distance(self) -> "DISTANCE_TO_LOCATION_TYPE":
+    def distance(self) -> "DistanceToLocationType":
         """The Volume Calc range distance types."""
         return self._intf.get_property(SpatialAnalysisToolCalculationDistanceToLocation._metadata, SpatialAnalysisToolCalculationDistanceToLocation._get_distance_metadata)
 
     _set_distance_metadata = { "offset" : _set_distance_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(DISTANCE_TO_LOCATION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(DistanceToLocationType),) }
     @distance.setter
-    def distance(self, distance:"DISTANCE_TO_LOCATION_TYPE") -> None:
+    def distance(self, distance:"DistanceToLocationType") -> None:
         return self._intf.set_property(SpatialAnalysisToolCalculationDistanceToLocation._metadata, SpatialAnalysisToolCalculationDistanceToLocation._set_distance_metadata, distance)
 
     _get_reference_point_metadata = { "offset" : _get_reference_point_method_offset,
@@ -17237,17 +17259,17 @@ class SpatialAnalysisToolConditionCombined(ISpatialAnalysisToolVolume, IAnalysis
     
     _get_boolean_operation_metadata = { "offset" : _get_boolean_operation_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(VOLUME_COMBINED_OPERATION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(VolumeCombinedOperationType),) }
     @property
-    def boolean_operation(self) -> "VOLUME_COMBINED_OPERATION_TYPE":
+    def boolean_operation(self) -> "VolumeCombinedOperationType":
         """Get or set volume combined operation."""
         return self._intf.get_property(SpatialAnalysisToolConditionCombined._metadata, SpatialAnalysisToolConditionCombined._get_boolean_operation_metadata)
 
     _set_boolean_operation_metadata = { "offset" : _set_boolean_operation_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(VOLUME_COMBINED_OPERATION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(VolumeCombinedOperationType),) }
     @boolean_operation.setter
-    def boolean_operation(self, combine_operation:"VOLUME_COMBINED_OPERATION_TYPE") -> None:
+    def boolean_operation(self, combine_operation:"VolumeCombinedOperationType") -> None:
         return self._intf.set_property(SpatialAnalysisToolConditionCombined._metadata, SpatialAnalysisToolConditionCombined._set_boolean_operation_metadata, combine_operation)
 
     _get_count_metadata = { "offset" : _get_count_method_offset,
@@ -17340,17 +17362,17 @@ class SpatialAnalysisToolConditionSpatialCalculationBounds(ISpatialAnalysisToolV
     
     _get_operation_metadata = { "offset" : _get_operation_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(CONDITION_THRESHOLD_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(ConditionThresholdType),) }
     @property
-    def operation(self) -> "CONDITION_THRESHOLD_TYPE":
+    def operation(self) -> "ConditionThresholdType":
         """Get the operation from the condition that determines how the bounds are considered. The operation can be set to define satisfaction when the scalar is above minimum, below maximum, between minimum and maximum or outside minimum and maximum."""
         return self._intf.get_property(SpatialAnalysisToolConditionSpatialCalculationBounds._metadata, SpatialAnalysisToolConditionSpatialCalculationBounds._get_operation_metadata)
 
     _set_operation_metadata = { "offset" : _set_operation_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(CONDITION_THRESHOLD_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(ConditionThresholdType),) }
     @operation.setter
-    def operation(self, operation:"CONDITION_THRESHOLD_TYPE") -> None:
+    def operation(self, operation:"ConditionThresholdType") -> None:
         return self._intf.set_property(SpatialAnalysisToolConditionSpatialCalculationBounds._metadata, SpatialAnalysisToolConditionSpatialCalculationBounds._set_operation_metadata, operation)
 
     _get_spatial_calculation_metadata = { "offset" : _get_spatial_calculation_method_offset,
@@ -17569,17 +17591,17 @@ class SpatialAnalysisToolConditionGridBoundingVolume(ISpatialAnalysisToolVolume,
     
     _get_edge_type_metadata = { "offset" : _get_edge_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(VOLUME_FROM_GRID_EDGE_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(VolumeFromGridEdgeType),) }
     @property
-    def edge_type(self) -> "VOLUME_FROM_GRID_EDGE_TYPE":
+    def edge_type(self) -> "VolumeFromGridEdgeType":
         """Get or set the edge type."""
         return self._intf.get_property(SpatialAnalysisToolConditionGridBoundingVolume._metadata, SpatialAnalysisToolConditionGridBoundingVolume._get_edge_type_metadata)
 
     _set_edge_type_metadata = { "offset" : _set_edge_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(VOLUME_FROM_GRID_EDGE_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(VolumeFromGridEdgeType),) }
     @edge_type.setter
-    def edge_type(self, edge_type:"VOLUME_FROM_GRID_EDGE_TYPE") -> None:
+    def edge_type(self, edge_type:"VolumeFromGridEdgeType") -> None:
         return self._intf.set_property(SpatialAnalysisToolConditionGridBoundingVolume._metadata, SpatialAnalysisToolConditionGridBoundingVolume._set_edge_type_metadata, edge_type)
 
     _get_volume_grid_metadata = { "offset" : _get_volume_grid_method_offset,
@@ -18468,17 +18490,17 @@ class SpatialAnalysisToolConditionLighting(ISpatialAnalysisToolVolume, IAnalysis
 
     _get_lighting_conditions_metadata = { "offset" : _get_lighting_conditions_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(LIGHTING_CONDITIONS_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(LightingConditionsType),) }
     @property
-    def lighting_conditions(self) -> "LIGHTING_CONDITIONS_TYPE":
+    def lighting_conditions(self) -> "LightingConditionsType":
         """Get or set the lighting conditions."""
         return self._intf.get_property(SpatialAnalysisToolConditionLighting._metadata, SpatialAnalysisToolConditionLighting._get_lighting_conditions_metadata)
 
     _set_lighting_conditions_metadata = { "offset" : _set_lighting_conditions_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(LIGHTING_CONDITIONS_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(LightingConditionsType),) }
     @lighting_conditions.setter
-    def lighting_conditions(self, lighting_conditions:"LIGHTING_CONDITIONS_TYPE") -> None:
+    def lighting_conditions(self, lighting_conditions:"LightingConditionsType") -> None:
         return self._intf.set_property(SpatialAnalysisToolConditionLighting._metadata, SpatialAnalysisToolConditionLighting._set_lighting_conditions_metadata, lighting_conditions)
 
     _property_names[eclipsing_bodies] = "eclipsing_bodies"
@@ -18530,17 +18552,17 @@ class SpatialAnalysisToolConditionOverTime(ISpatialAnalysisToolVolume, IAnalysis
     
     _get_duration_type_metadata = { "offset" : _get_duration_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(SPATIAL_CONDITION_OVER_TYPE_DURATION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(SpatialConditionOverTypeDurationType),) }
     @property
-    def duration_type(self) -> "SPATIAL_CONDITION_OVER_TYPE_DURATION_TYPE":
+    def duration_type(self) -> "SpatialConditionOverTypeDurationType":
         """Get or set the lighting conditions."""
         return self._intf.get_property(SpatialAnalysisToolConditionOverTime._metadata, SpatialAnalysisToolConditionOverTime._get_duration_type_metadata)
 
     _set_duration_type_metadata = { "offset" : _set_duration_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(SPATIAL_CONDITION_OVER_TYPE_DURATION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(SpatialConditionOverTypeDurationType),) }
     @duration_type.setter
-    def duration_type(self, duration_type:"SPATIAL_CONDITION_OVER_TYPE_DURATION_TYPE") -> None:
+    def duration_type(self, duration_type:"SpatialConditionOverTypeDurationType") -> None:
         return self._intf.set_property(SpatialAnalysisToolConditionOverTime._metadata, SpatialAnalysisToolConditionOverTime._set_duration_type_metadata, duration_type)
 
     _get_reference_volume_metadata = { "offset" : _get_reference_volume_method_offset,
@@ -19752,17 +19774,17 @@ class VectorGeometryToolAxesBPlane(IVectorGeometryToolAxes, IAnalysisWorkbenchCo
 
     _get_direction_metadata = { "offset" : _get_direction_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(ASYMPTOTE_DIRECTION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(AsymptoteDirectionType),) }
     @property
-    def direction(self) -> "ASYMPTOTE_DIRECTION_TYPE":
+    def direction(self) -> "AsymptoteDirectionType":
         """Specify a direction (incoming or outgoing)."""
         return self._intf.get_property(VectorGeometryToolAxesBPlane._metadata, VectorGeometryToolAxesBPlane._get_direction_metadata)
 
     _set_direction_metadata = { "offset" : _set_direction_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(ASYMPTOTE_DIRECTION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(AsymptoteDirectionType),) }
     @direction.setter
-    def direction(self, direction:"ASYMPTOTE_DIRECTION_TYPE") -> None:
+    def direction(self, direction:"AsymptoteDirectionType") -> None:
         return self._intf.set_property(VectorGeometryToolAxesBPlane._metadata, VectorGeometryToolAxesBPlane._set_direction_metadata, direction)
 
     _property_names[trajectory] = "trajectory"
@@ -20239,17 +20261,17 @@ class VectorGeometryToolAxesTrajectory(IVectorGeometryToolAxes, IAnalysisWorkben
 
     _get_trajectory_axes_type_metadata = { "offset" : _get_trajectory_axes_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(TRAJECTORY_AXES_COORDINATES_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(TrajectoryAxesCoordinatesType),) }
     @property
-    def trajectory_axes_type(self) -> "TRAJECTORY_AXES_COORDINATES_TYPE":
+    def trajectory_axes_type(self) -> "TrajectoryAxesCoordinatesType":
         """Specify a type of the trajectory's coordinate frame."""
         return self._intf.get_property(VectorGeometryToolAxesTrajectory._metadata, VectorGeometryToolAxesTrajectory._get_trajectory_axes_type_metadata)
 
     _set_trajectory_axes_type_metadata = { "offset" : _set_trajectory_axes_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(TRAJECTORY_AXES_COORDINATES_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(TrajectoryAxesCoordinatesType),) }
     @trajectory_axes_type.setter
-    def trajectory_axes_type(self, trajectory_axes_type:"TRAJECTORY_AXES_COORDINATES_TYPE") -> None:
+    def trajectory_axes_type(self, trajectory_axes_type:"TrajectoryAxesCoordinatesType") -> None:
         return self._intf.set_property(VectorGeometryToolAxesTrajectory._metadata, VectorGeometryToolAxesTrajectory._set_trajectory_axes_type_metadata, trajectory_axes_type)
 
     _property_names[trajectory_point] = "trajectory_point"
@@ -20305,17 +20327,17 @@ class VectorGeometryToolAxesLagrangeLibration(IVectorGeometryToolAxes, IAnalysis
 
     _get_point_type_metadata = { "offset" : _get_point_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(LAGRANGE_LIBRATION_POINT_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(LagrangeLibrationPointType),) }
     @property
-    def point_type(self) -> "LAGRANGE_LIBRATION_POINT_TYPE":
+    def point_type(self) -> "LagrangeLibrationPointType":
         """Specify a lagrange point (L1, L2, etc.)."""
         return self._intf.get_property(VectorGeometryToolAxesLagrangeLibration._metadata, VectorGeometryToolAxesLagrangeLibration._get_point_type_metadata)
 
     _set_point_type_metadata = { "offset" : _set_point_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(LAGRANGE_LIBRATION_POINT_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(LagrangeLibrationPointType),) }
     @point_type.setter
-    def point_type(self, point_type:"LAGRANGE_LIBRATION_POINT_TYPE") -> None:
+    def point_type(self, point_type:"LagrangeLibrationPointType") -> None:
         return self._intf.set_property(VectorGeometryToolAxesLagrangeLibration._metadata, VectorGeometryToolAxesLagrangeLibration._set_point_type_metadata, point_type)
 
     _get_secondary_central_bodies_metadata = { "offset" : _get_secondary_central_bodies_method_offset,
@@ -20378,8 +20400,8 @@ class VectorGeometryToolAxesCommonTasks(SupportsDeleteCallback):
 
     _create_topocentric_axes_euler_angles_metadata = { "offset" : _create_topocentric_axes_euler_angles_method_offset,
             "arg_types" : (agcom.PVOID, agcom.LONG, agcom.Variant, agcom.Variant, agcom.Variant, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolPoint"), agmarshall.EnumArg(EULER_ORIENTATION_SEQUENCE_TYPE), agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
-    def create_topocentric_axes_euler_angles(self, origin_point:"IVectorGeometryToolPoint", sequence:"EULER_ORIENTATION_SEQUENCE_TYPE", a:typing.Any, b:typing.Any, c:typing.Any) -> "VectorGeometryToolAxesFixed":
+            "marshallers" : (agmarshall.InterfaceInArg("IVectorGeometryToolPoint"), agmarshall.EnumArg(EulerOrientationSequenceType), agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.InterfaceOutArg,) }
+    def create_topocentric_axes_euler_angles(self, origin_point:"IVectorGeometryToolPoint", sequence:"EulerOrientationSequenceType", a:typing.Any, b:typing.Any, c:typing.Any) -> "VectorGeometryToolAxesFixed":
         """Create non-persistent axes fixed in axes on the surface of a central body with the location specified by the origin point. The euler angles define the axes's orientation."""
         return self._intf.invoke(VectorGeometryToolAxesCommonTasks._metadata, VectorGeometryToolAxesCommonTasks._create_topocentric_axes_euler_angles_metadata, origin_point, sequence, a, b, c, OutArg())
 
@@ -20509,7 +20531,7 @@ class VectorGeometryToolAxesPlugin(IAnalysisWorkbenchComponent, IAnalysisWorkben
 
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_ProgID_method_offset = 1
+    _get_prog_id_method_offset = 1
     _get_display_name_method_offset = 2
     _get_available_properties_method_offset = 3
     _reset_method_offset = 4
@@ -20523,13 +20545,13 @@ class VectorGeometryToolAxesPlugin(IAnalysisWorkbenchComponent, IAnalysisWorkben
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolAxesPlugin)
     
-    _get_ProgID_metadata = { "offset" : _get_ProgID_method_offset,
+    _get_prog_id_metadata = { "offset" : _get_prog_id_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
-    def ProgID(self) -> str:
+    def prog_id(self) -> str:
         """A programmatic ID associated with the component."""
-        return self._intf.get_property(VectorGeometryToolAxesPlugin._metadata, VectorGeometryToolAxesPlugin._get_ProgID_metadata)
+        return self._intf.get_property(VectorGeometryToolAxesPlugin._metadata, VectorGeometryToolAxesPlugin._get_prog_id_metadata)
 
     _get_display_name_metadata = { "offset" : _get_display_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -20568,7 +20590,7 @@ class VectorGeometryToolAxesPlugin(IAnalysisWorkbenchComponent, IAnalysisWorkben
         """Read a value of the specified plugin property. This method throws an exception if the property does not exist."""
         return self._intf.invoke(VectorGeometryToolAxesPlugin._metadata, VectorGeometryToolAxesPlugin._get_property_metadata, name, OutArg())
 
-    _property_names[ProgID] = "ProgID"
+    _property_names[prog_id] = "prog_id"
     _property_names[display_name] = "display_name"
     _property_names[available_properties] = "available_properties"
 
@@ -20843,17 +20865,17 @@ class VectorGeometryToolAngleRotation(IVectorGeometryToolAngle, IAnalysisWorkben
 
     _get_reference_direction_metadata = { "offset" : _get_reference_direction_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(PRINCIPAL_AXIS_OF_ROTATION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(PrincipalAxisOfRotationType),) }
     @property
-    def reference_direction(self) -> "PRINCIPAL_AXIS_OF_ROTATION_TYPE":
+    def reference_direction(self) -> "PrincipalAxisOfRotationType":
         """Specify a rotation direction."""
         return self._intf.get_property(VectorGeometryToolAngleRotation._metadata, VectorGeometryToolAngleRotation._get_reference_direction_metadata)
 
     _set_reference_direction_metadata = { "offset" : _set_reference_direction_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(PRINCIPAL_AXIS_OF_ROTATION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(PrincipalAxisOfRotationType),) }
     @reference_direction.setter
-    def reference_direction(self, reference_direction:"PRINCIPAL_AXIS_OF_ROTATION_TYPE") -> None:
+    def reference_direction(self, reference_direction:"PrincipalAxisOfRotationType") -> None:
         return self._intf.set_property(VectorGeometryToolAngleRotation._metadata, VectorGeometryToolAngleRotation._set_reference_direction_metadata, reference_direction)
 
     _property_names[from_axes] = "from_axes"
@@ -20917,17 +20939,17 @@ class VectorGeometryToolAngleToPlane(IVectorGeometryToolAngle, IAnalysisWorkbenc
 
     _get_signed_metadata = { "offset" : _get_signed_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(SIGNED_ANGLE_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(SignedAngleType),) }
     @property
-    def signed(self) -> "SIGNED_ANGLE_TYPE":
+    def signed(self) -> "SignedAngleType":
         """Control whether the angle is measured as either Positive or Negative when the reference Vector is directed toward the plane's normal, or always positive."""
         return self._intf.get_property(VectorGeometryToolAngleToPlane._metadata, VectorGeometryToolAngleToPlane._get_signed_metadata)
 
     _set_signed_metadata = { "offset" : _set_signed_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(SIGNED_ANGLE_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(SignedAngleType),) }
     @signed.setter
-    def signed(self, signed:"SIGNED_ANGLE_TYPE") -> None:
+    def signed(self, signed:"SignedAngleType") -> None:
         return self._intf.set_property(VectorGeometryToolAngleToPlane._metadata, VectorGeometryToolAngleToPlane._set_signed_metadata, signed)
 
     _property_names[reference_vector] = "reference_vector"
@@ -21048,17 +21070,17 @@ class VectorGeometryToolPlaneQuadrant(IVectorGeometryToolPlane, IAnalysisWorkben
 
     _get_quadrant_metadata = { "offset" : _get_quadrant_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(PLANE_QUADRANT_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(PlaneQuadrantType),) }
     @property
-    def quadrant(self) -> "PLANE_QUADRANT_TYPE":
+    def quadrant(self) -> "PlaneQuadrantType":
         """Specify a quadrant."""
         return self._intf.get_property(VectorGeometryToolPlaneQuadrant._metadata, VectorGeometryToolPlaneQuadrant._get_quadrant_metadata)
 
     _set_quadrant_metadata = { "offset" : _set_quadrant_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(PLANE_QUADRANT_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(PlaneQuadrantType),) }
     @quadrant.setter
-    def quadrant(self, quadrant:"PLANE_QUADRANT_TYPE") -> None:
+    def quadrant(self, quadrant:"PlaneQuadrantType") -> None:
         return self._intf.set_property(VectorGeometryToolPlaneQuadrant._metadata, VectorGeometryToolPlaneQuadrant._set_quadrant_metadata, quadrant)
 
     _property_names[reference_system] = "reference_system"
@@ -21347,32 +21369,32 @@ class VectorGeometryToolPointBPlane(IVectorGeometryToolPoint, IAnalysisWorkbench
 
     _get_point_type_metadata = { "offset" : _get_point_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(POINT_B_PLANE_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(PointBPlaneType),) }
     @property
-    def point_type(self) -> "POINT_B_PLANE_TYPE":
+    def point_type(self) -> "PointBPlaneType":
         """Specify a point type."""
         return self._intf.get_property(VectorGeometryToolPointBPlane._metadata, VectorGeometryToolPointBPlane._get_point_type_metadata)
 
     _set_point_type_metadata = { "offset" : _set_point_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(POINT_B_PLANE_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(PointBPlaneType),) }
     @point_type.setter
-    def point_type(self, point_type:"POINT_B_PLANE_TYPE") -> None:
+    def point_type(self, point_type:"PointBPlaneType") -> None:
         return self._intf.set_property(VectorGeometryToolPointBPlane._metadata, VectorGeometryToolPointBPlane._set_point_type_metadata, point_type)
 
     _get_direction_metadata = { "offset" : _get_direction_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(ASYMPTOTE_DIRECTION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(AsymptoteDirectionType),) }
     @property
-    def direction(self) -> "ASYMPTOTE_DIRECTION_TYPE":
+    def direction(self) -> "AsymptoteDirectionType":
         """Specify a direction (incoming or outgoing)."""
         return self._intf.get_property(VectorGeometryToolPointBPlane._metadata, VectorGeometryToolPointBPlane._get_direction_metadata)
 
     _set_direction_metadata = { "offset" : _set_direction_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(ASYMPTOTE_DIRECTION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(AsymptoteDirectionType),) }
     @direction.setter
-    def direction(self, direction:"ASYMPTOTE_DIRECTION_TYPE") -> None:
+    def direction(self, direction:"AsymptoteDirectionType") -> None:
         return self._intf.set_property(VectorGeometryToolPointBPlane._metadata, VectorGeometryToolPointBPlane._set_direction_metadata, direction)
 
     _property_names[target_body] = "target_body"
@@ -21911,32 +21933,32 @@ class VectorGeometryToolPointOnSurface(IVectorGeometryToolPoint, IAnalysisWorkbe
 
     _get_reference_shape_metadata = { "offset" : _get_reference_shape_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(SURFACE_REFERENCE_SHAPE_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(SurfaceReferenceShapeType),) }
     @property
-    def reference_shape(self) -> "SURFACE_REFERENCE_SHAPE_TYPE":
+    def reference_shape(self) -> "SurfaceReferenceShapeType":
         """Specify a reference shape."""
         return self._intf.get_property(VectorGeometryToolPointOnSurface._metadata, VectorGeometryToolPointOnSurface._get_reference_shape_metadata)
 
     _set_reference_shape_metadata = { "offset" : _set_reference_shape_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(SURFACE_REFERENCE_SHAPE_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(SurfaceReferenceShapeType),) }
     @reference_shape.setter
-    def reference_shape(self, reference_shape:"SURFACE_REFERENCE_SHAPE_TYPE") -> None:
+    def reference_shape(self, reference_shape:"SurfaceReferenceShapeType") -> None:
         return self._intf.set_property(VectorGeometryToolPointOnSurface._metadata, VectorGeometryToolPointOnSurface._set_reference_shape_metadata, reference_shape)
 
     _get_surface_type_metadata = { "offset" : _get_surface_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(SURFACE_SHAPE_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(SurfaceShapeType),) }
     @property
-    def surface_type(self) -> "SURFACE_SHAPE_TYPE":
+    def surface_type(self) -> "SurfaceShapeType":
         """Specify a surface type."""
         return self._intf.get_property(VectorGeometryToolPointOnSurface._metadata, VectorGeometryToolPointOnSurface._get_surface_type_metadata)
 
     _set_surface_type_metadata = { "offset" : _set_surface_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(SURFACE_SHAPE_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(SurfaceShapeType),) }
     @surface_type.setter
-    def surface_type(self, surface_type:"SURFACE_SHAPE_TYPE") -> None:
+    def surface_type(self, surface_type:"SurfaceShapeType") -> None:
         return self._intf.set_property(VectorGeometryToolPointOnSurface._metadata, VectorGeometryToolPointOnSurface._set_surface_type_metadata, surface_type)
 
     _property_names[central_body] = "central_body"
@@ -22175,17 +22197,17 @@ class VectorGeometryToolPointLagrangeLibration(IVectorGeometryToolPoint, IAnalys
 
     _get_point_type_metadata = { "offset" : _get_point_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(LAGRANGE_LIBRATION_POINT_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(LagrangeLibrationPointType),) }
     @property
-    def point_type(self) -> "LAGRANGE_LIBRATION_POINT_TYPE":
+    def point_type(self) -> "LagrangeLibrationPointType":
         """Specify a lagrange point (L1, L2, etc.)."""
         return self._intf.get_property(VectorGeometryToolPointLagrangeLibration._metadata, VectorGeometryToolPointLagrangeLibration._get_point_type_metadata)
 
     _set_point_type_metadata = { "offset" : _set_point_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(LAGRANGE_LIBRATION_POINT_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(LagrangeLibrationPointType),) }
     @point_type.setter
-    def point_type(self, point_type:"LAGRANGE_LIBRATION_POINT_TYPE") -> None:
+    def point_type(self, point_type:"LagrangeLibrationPointType") -> None:
         return self._intf.set_property(VectorGeometryToolPointLagrangeLibration._metadata, VectorGeometryToolPointLagrangeLibration._set_point_type_metadata, point_type)
 
     _get_secondary_central_bodies_metadata = { "offset" : _get_secondary_central_bodies_method_offset,
@@ -22359,17 +22381,17 @@ class VectorGeometryToolPointCentralBodyIntersect(IAnalysisWorkbenchComponent, I
 
     _get_intersection_surface_metadata = { "offset" : _get_intersection_surface_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(INTERSECTION_SURFACE_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(IntersectionSurfaceType),) }
     @property
-    def intersection_surface(self) -> "INTERSECTION_SURFACE_TYPE":
+    def intersection_surface(self) -> "IntersectionSurfaceType":
         """An intersection surface."""
         return self._intf.get_property(VectorGeometryToolPointCentralBodyIntersect._metadata, VectorGeometryToolPointCentralBodyIntersect._get_intersection_surface_metadata)
 
     _set_intersection_surface_metadata = { "offset" : _set_intersection_surface_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(INTERSECTION_SURFACE_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(IntersectionSurfaceType),) }
     @intersection_surface.setter
-    def intersection_surface(self, intersection_surface:"INTERSECTION_SURFACE_TYPE") -> None:
+    def intersection_surface(self, intersection_surface:"IntersectionSurfaceType") -> None:
         return self._intf.set_property(VectorGeometryToolPointCentralBodyIntersect._metadata, VectorGeometryToolPointCentralBodyIntersect._set_intersection_surface_metadata, intersection_surface)
 
     _get_altitude_metadata = { "offset" : _get_altitude_method_offset,
@@ -22613,7 +22635,7 @@ class VectorGeometryToolPointPlugin(IAnalysisWorkbenchComponent, IAnalysisWorkbe
 
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_ProgID_method_offset = 1
+    _get_prog_id_method_offset = 1
     _get_display_name_method_offset = 2
     _get_available_properties_method_offset = 3
     _reset_method_offset = 4
@@ -22627,13 +22649,13 @@ class VectorGeometryToolPointPlugin(IAnalysisWorkbenchComponent, IAnalysisWorkbe
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolPointPlugin)
     
-    _get_ProgID_metadata = { "offset" : _get_ProgID_method_offset,
+    _get_prog_id_metadata = { "offset" : _get_prog_id_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
-    def ProgID(self) -> str:
+    def prog_id(self) -> str:
         """A programmatic ID associated with the component."""
-        return self._intf.get_property(VectorGeometryToolPointPlugin._metadata, VectorGeometryToolPointPlugin._get_ProgID_metadata)
+        return self._intf.get_property(VectorGeometryToolPointPlugin._metadata, VectorGeometryToolPointPlugin._get_prog_id_metadata)
 
     _get_display_name_metadata = { "offset" : _get_display_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -22672,7 +22694,7 @@ class VectorGeometryToolPointPlugin(IAnalysisWorkbenchComponent, IAnalysisWorkbe
         """Read a value of the specified plugin property. This method throws an exception if the property does not exist."""
         return self._intf.invoke(VectorGeometryToolPointPlugin._metadata, VectorGeometryToolPointPlugin._get_property_metadata, name, OutArg())
 
-    _property_names[ProgID] = "ProgID"
+    _property_names[prog_id] = "prog_id"
     _property_names[display_name] = "display_name"
     _property_names[available_properties] = "available_properties"
 
@@ -22733,17 +22755,17 @@ class VectorGeometryToolPointCentralBodyFixedOffset(IAnalysisWorkbenchComponent,
 
     _get_reference_shape_metadata = { "offset" : _get_reference_shape_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(SURFACE_REFERENCE_SHAPE_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(SurfaceReferenceShapeType),) }
     @property
-    def reference_shape(self) -> "SURFACE_REFERENCE_SHAPE_TYPE":
+    def reference_shape(self) -> "SurfaceReferenceShapeType":
         """Choose the point height's reference. Available options are central body ellipsoid (WSG84), terrain or Mean Sea Level."""
         return self._intf.get_property(VectorGeometryToolPointCentralBodyFixedOffset._metadata, VectorGeometryToolPointCentralBodyFixedOffset._get_reference_shape_metadata)
 
     _set_reference_shape_metadata = { "offset" : _set_reference_shape_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(SURFACE_REFERENCE_SHAPE_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(SurfaceReferenceShapeType),) }
     @reference_shape.setter
-    def reference_shape(self, reference_shape:"SURFACE_REFERENCE_SHAPE_TYPE") -> None:
+    def reference_shape(self, reference_shape:"SurfaceReferenceShapeType") -> None:
         return self._intf.set_property(VectorGeometryToolPointCentralBodyFixedOffset._metadata, VectorGeometryToolPointCentralBodyFixedOffset._set_reference_shape_metadata, reference_shape)
 
     _get_position_metadata = { "offset" : _get_position_method_offset,
@@ -23157,17 +23179,17 @@ class VectorGeometryToolVectorApoapsis(IVectorGeometryToolVector, IAnalysisWorkb
 
     _get_mean_element_type_metadata = { "offset" : _get_mean_element_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(MEAN_ELEMENT_THEORY),) }
+            "marshallers" : (agmarshall.EnumArg(MeanElementTheory),) }
     @property
-    def mean_element_type(self) -> "MEAN_ELEMENT_THEORY":
+    def mean_element_type(self) -> "MeanElementTheory":
         """Specify the mean element theory type for approximating motion."""
         return self._intf.get_property(VectorGeometryToolVectorApoapsis._metadata, VectorGeometryToolVectorApoapsis._get_mean_element_type_metadata)
 
     _set_mean_element_type_metadata = { "offset" : _set_mean_element_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(MEAN_ELEMENT_THEORY),) }
+            "marshallers" : (agmarshall.EnumArg(MeanElementTheory),) }
     @mean_element_type.setter
-    def mean_element_type(self, mean_element_type:"MEAN_ELEMENT_THEORY") -> None:
+    def mean_element_type(self, mean_element_type:"MeanElementTheory") -> None:
         return self._intf.set_property(VectorGeometryToolVectorApoapsis._metadata, VectorGeometryToolVectorApoapsis._set_mean_element_type_metadata, mean_element_type)
 
     _property_names[reference_point] = "reference_point"
@@ -23447,17 +23469,17 @@ class VectorGeometryToolVectorConing(IVectorGeometryToolVector, IAnalysisWorkben
 
     _get_mode_metadata = { "offset" : _get_mode_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(ROTATION_SWEEP_MODE_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(RotationSweepModeType),) }
     @property
-    def mode(self) -> "ROTATION_SWEEP_MODE_TYPE":
+    def mode(self) -> "RotationSweepModeType":
         """Specify either unidirectional or bidirectional mode."""
         return self._intf.get_property(VectorGeometryToolVectorConing._metadata, VectorGeometryToolVectorConing._get_mode_metadata)
 
     _set_mode_metadata = { "offset" : _set_mode_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(ROTATION_SWEEP_MODE_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(RotationSweepModeType),) }
     @mode.setter
-    def mode(self, mode:"ROTATION_SWEEP_MODE_TYPE") -> None:
+    def mode(self, mode:"RotationSweepModeType") -> None:
         return self._intf.set_property(VectorGeometryToolVectorConing._metadata, VectorGeometryToolVectorConing._set_mode_metadata, mode)
 
     _property_names[about_vector] = "about_vector"
@@ -23826,17 +23848,17 @@ class VectorGeometryToolVectorDisplacement(IVectorGeometryToolVector, IAnalysisW
 
     _get_signal_sense_metadata = { "offset" : _get_signal_sense_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(SIGNAL_DIRECTION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(SignalDirectionType),) }
     @property
-    def signal_sense(self) -> "SIGNAL_DIRECTION_TYPE":
+    def signal_sense(self) -> "SignalDirectionType":
         """Specify a sense of signal transmission. This property is read-only if Apparent is set to false."""
         return self._intf.get_property(VectorGeometryToolVectorDisplacement._metadata, VectorGeometryToolVectorDisplacement._get_signal_sense_metadata)
 
     _set_signal_sense_metadata = { "offset" : _set_signal_sense_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(SIGNAL_DIRECTION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(SignalDirectionType),) }
     @signal_sense.setter
-    def signal_sense(self, signal_sense:"SIGNAL_DIRECTION_TYPE") -> None:
+    def signal_sense(self, signal_sense:"SignalDirectionType") -> None:
         return self._intf.set_property(VectorGeometryToolVectorDisplacement._metadata, VectorGeometryToolVectorDisplacement._set_signal_sense_metadata, signal_sense)
 
     _get_reference_system_metadata = { "offset" : _get_reference_system_method_offset,
@@ -24159,17 +24181,17 @@ class VectorGeometryToolVectorEccentricity(IVectorGeometryToolVector, IAnalysisW
 
     _get_mean_element_type_metadata = { "offset" : _get_mean_element_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(MEAN_ELEMENT_THEORY),) }
+            "marshallers" : (agmarshall.EnumArg(MeanElementTheory),) }
     @property
-    def mean_element_type(self) -> "MEAN_ELEMENT_THEORY":
+    def mean_element_type(self) -> "MeanElementTheory":
         """Specify the mean element theory type for approximating motion."""
         return self._intf.get_property(VectorGeometryToolVectorEccentricity._metadata, VectorGeometryToolVectorEccentricity._get_mean_element_type_metadata)
 
     _set_mean_element_type_metadata = { "offset" : _set_mean_element_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(MEAN_ELEMENT_THEORY),) }
+            "marshallers" : (agmarshall.EnumArg(MeanElementTheory),) }
     @mean_element_type.setter
-    def mean_element_type(self, mean_element_type:"MEAN_ELEMENT_THEORY") -> None:
+    def mean_element_type(self, mean_element_type:"MeanElementTheory") -> None:
         return self._intf.set_property(VectorGeometryToolVectorEccentricity._metadata, VectorGeometryToolVectorEccentricity._set_mean_element_type_metadata, mean_element_type)
 
     _property_names[central_body] = "central_body"
@@ -24345,17 +24367,17 @@ class VectorGeometryToolVectorOrbitAngularMomentum(IVectorGeometryToolVector, IA
 
     _get_mean_element_type_metadata = { "offset" : _get_mean_element_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(MEAN_ELEMENT_THEORY),) }
+            "marshallers" : (agmarshall.EnumArg(MeanElementTheory),) }
     @property
-    def mean_element_type(self) -> "MEAN_ELEMENT_THEORY":
+    def mean_element_type(self) -> "MeanElementTheory":
         """Specify the mean element theory type for approximating motion."""
         return self._intf.get_property(VectorGeometryToolVectorOrbitAngularMomentum._metadata, VectorGeometryToolVectorOrbitAngularMomentum._get_mean_element_type_metadata)
 
     _set_mean_element_type_metadata = { "offset" : _set_mean_element_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(MEAN_ELEMENT_THEORY),) }
+            "marshallers" : (agmarshall.EnumArg(MeanElementTheory),) }
     @mean_element_type.setter
-    def mean_element_type(self, mean_element_type:"MEAN_ELEMENT_THEORY") -> None:
+    def mean_element_type(self, mean_element_type:"MeanElementTheory") -> None:
         return self._intf.set_property(VectorGeometryToolVectorOrbitAngularMomentum._metadata, VectorGeometryToolVectorOrbitAngularMomentum._set_mean_element_type_metadata, mean_element_type)
 
     _property_names[central_body] = "central_body"
@@ -24419,17 +24441,17 @@ class VectorGeometryToolVectorOrbitNormal(IVectorGeometryToolVector, IAnalysisWo
 
     _get_mean_element_type_metadata = { "offset" : _get_mean_element_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(MEAN_ELEMENT_THEORY),) }
+            "marshallers" : (agmarshall.EnumArg(MeanElementTheory),) }
     @property
-    def mean_element_type(self) -> "MEAN_ELEMENT_THEORY":
+    def mean_element_type(self) -> "MeanElementTheory":
         """Specify the mean element theory type for approximating motion."""
         return self._intf.get_property(VectorGeometryToolVectorOrbitNormal._metadata, VectorGeometryToolVectorOrbitNormal._get_mean_element_type_metadata)
 
     _set_mean_element_type_metadata = { "offset" : _set_mean_element_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(MEAN_ELEMENT_THEORY),) }
+            "marshallers" : (agmarshall.EnumArg(MeanElementTheory),) }
     @mean_element_type.setter
-    def mean_element_type(self, mean_element_type:"MEAN_ELEMENT_THEORY") -> None:
+    def mean_element_type(self, mean_element_type:"MeanElementTheory") -> None:
         return self._intf.set_property(VectorGeometryToolVectorOrbitNormal._metadata, VectorGeometryToolVectorOrbitNormal._set_mean_element_type_metadata, mean_element_type)
 
     _property_names[central_body] = "central_body"
@@ -24493,17 +24515,17 @@ class VectorGeometryToolVectorPeriapsis(IVectorGeometryToolVector, IAnalysisWork
 
     _get_mean_element_type_metadata = { "offset" : _get_mean_element_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(MEAN_ELEMENT_THEORY),) }
+            "marshallers" : (agmarshall.EnumArg(MeanElementTheory),) }
     @property
-    def mean_element_type(self) -> "MEAN_ELEMENT_THEORY":
+    def mean_element_type(self) -> "MeanElementTheory":
         """Specify the mean element theory type for approximating motion."""
         return self._intf.get_property(VectorGeometryToolVectorPeriapsis._metadata, VectorGeometryToolVectorPeriapsis._get_mean_element_type_metadata)
 
     _set_mean_element_type_metadata = { "offset" : _set_mean_element_type_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(MEAN_ELEMENT_THEORY),) }
+            "marshallers" : (agmarshall.EnumArg(MeanElementTheory),) }
     @mean_element_type.setter
-    def mean_element_type(self, mean_element_type:"MEAN_ELEMENT_THEORY") -> None:
+    def mean_element_type(self, mean_element_type:"MeanElementTheory") -> None:
         return self._intf.set_property(VectorGeometryToolVectorPeriapsis._metadata, VectorGeometryToolVectorPeriapsis._set_mean_element_type_metadata, mean_element_type)
 
     _property_names[central_body] = "central_body"
@@ -24981,17 +25003,17 @@ class VectorGeometryToolVectorLinearCombination(IAnalysisWorkbenchComponent, IAn
 
     _get_output_dimension_inheritance_metadata = { "offset" : _get_output_dimension_inheritance_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(INHERIT_DIMENSION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(InheritDimensionType),) }
     @property
-    def output_dimension_inheritance(self) -> "INHERIT_DIMENSION_TYPE":
+    def output_dimension_inheritance(self) -> "InheritDimensionType":
         """Determine whether the output dimension is inherited or explicitly specified using OutputDimension."""
         return self._intf.get_property(VectorGeometryToolVectorLinearCombination._metadata, VectorGeometryToolVectorLinearCombination._get_output_dimension_inheritance_metadata)
 
     _set_output_dimension_inheritance_metadata = { "offset" : _set_output_dimension_inheritance_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(INHERIT_DIMENSION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(InheritDimensionType),) }
     @output_dimension_inheritance.setter
-    def output_dimension_inheritance(self, output_dimension_inheritance:"INHERIT_DIMENSION_TYPE") -> None:
+    def output_dimension_inheritance(self, output_dimension_inheritance:"InheritDimensionType") -> None:
         return self._intf.set_property(VectorGeometryToolVectorLinearCombination._metadata, VectorGeometryToolVectorLinearCombination._set_output_dimension_inheritance_metadata, output_dimension_inheritance)
 
     _get_output_dimension_metadata = { "offset" : _get_output_dimension_method_offset,
@@ -25301,17 +25323,17 @@ class VectorGeometryToolVectorScalarLinearCombination(IAnalysisWorkbenchComponen
 
     _get_output_dimension_inheritance_metadata = { "offset" : _get_output_dimension_inheritance_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(INHERIT_DIMENSION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(InheritDimensionType),) }
     @property
-    def output_dimension_inheritance(self) -> "INHERIT_DIMENSION_TYPE":
+    def output_dimension_inheritance(self) -> "InheritDimensionType":
         """Determine whether the output dimension is inherited or explicitly specified using OutputDimension."""
         return self._intf.get_property(VectorGeometryToolVectorScalarLinearCombination._metadata, VectorGeometryToolVectorScalarLinearCombination._get_output_dimension_inheritance_metadata)
 
     _set_output_dimension_inheritance_metadata = { "offset" : _set_output_dimension_inheritance_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(INHERIT_DIMENSION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(InheritDimensionType),) }
     @output_dimension_inheritance.setter
-    def output_dimension_inheritance(self, output_dimension_inheritance:"INHERIT_DIMENSION_TYPE") -> None:
+    def output_dimension_inheritance(self, output_dimension_inheritance:"InheritDimensionType") -> None:
         return self._intf.set_property(VectorGeometryToolVectorScalarLinearCombination._metadata, VectorGeometryToolVectorScalarLinearCombination._set_output_dimension_inheritance_metadata, output_dimension_inheritance)
 
     _get_output_dimension_metadata = { "offset" : _get_output_dimension_method_offset,
@@ -25451,17 +25473,17 @@ class VectorGeometryToolVectorScalarScaled(IAnalysisWorkbenchComponent, IAnalysi
 
     _get_dimension_inheritance_metadata = { "offset" : _get_dimension_inheritance_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(VECTOR_GEOMETRY_TOOL_SCALED_VECTOR_DIMENSION_INHERITANCE_OPTION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(VectorGeometryToolScaledVectorDimensionInheritanceOptionType),) }
     @property
-    def dimension_inheritance(self) -> "VECTOR_GEOMETRY_TOOL_SCALED_VECTOR_DIMENSION_INHERITANCE_OPTION_TYPE":
+    def dimension_inheritance(self) -> "VectorGeometryToolScaledVectorDimensionInheritanceOptionType":
         """Whether or not to inherit dimension from the input vector or the scalar."""
         return self._intf.get_property(VectorGeometryToolVectorScalarScaled._metadata, VectorGeometryToolVectorScalarScaled._get_dimension_inheritance_metadata)
 
     _set_dimension_inheritance_metadata = { "offset" : _set_dimension_inheritance_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(VECTOR_GEOMETRY_TOOL_SCALED_VECTOR_DIMENSION_INHERITANCE_OPTION_TYPE),) }
+            "marshallers" : (agmarshall.EnumArg(VectorGeometryToolScaledVectorDimensionInheritanceOptionType),) }
     @dimension_inheritance.setter
-    def dimension_inheritance(self, dimension_inheritance:"VECTOR_GEOMETRY_TOOL_SCALED_VECTOR_DIMENSION_INHERITANCE_OPTION_TYPE") -> None:
+    def dimension_inheritance(self, dimension_inheritance:"VectorGeometryToolScaledVectorDimensionInheritanceOptionType") -> None:
         return self._intf.set_property(VectorGeometryToolVectorScalarScaled._metadata, VectorGeometryToolVectorScalarScaled._set_dimension_inheritance_metadata, dimension_inheritance)
 
     _get_dimension_metadata = { "offset" : _get_dimension_method_offset,
@@ -25603,7 +25625,7 @@ class VectorGeometryToolVectorPlugin(IAnalysisWorkbenchComponent, IAnalysisWorkb
 
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_ProgID_method_offset = 1
+    _get_prog_id_method_offset = 1
     _get_display_name_method_offset = 2
     _get_available_properties_method_offset = 3
     _reset_method_offset = 4
@@ -25617,13 +25639,13 @@ class VectorGeometryToolVectorPlugin(IAnalysisWorkbenchComponent, IAnalysisWorkb
     def _get_property(self, attrname):
         return get_interface_property(attrname, VectorGeometryToolVectorPlugin)
     
-    _get_ProgID_metadata = { "offset" : _get_ProgID_method_offset,
+    _get_prog_id_metadata = { "offset" : _get_prog_id_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
-    def ProgID(self) -> str:
+    def prog_id(self) -> str:
         """A programmatic ID associated with the component."""
-        return self._intf.get_property(VectorGeometryToolVectorPlugin._metadata, VectorGeometryToolVectorPlugin._get_ProgID_metadata)
+        return self._intf.get_property(VectorGeometryToolVectorPlugin._metadata, VectorGeometryToolVectorPlugin._get_prog_id_metadata)
 
     _get_display_name_metadata = { "offset" : _get_display_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -25662,7 +25684,7 @@ class VectorGeometryToolVectorPlugin(IAnalysisWorkbenchComponent, IAnalysisWorkb
         """Read a value of the specified plugin property. This method throws an exception if the property does not exist."""
         return self._intf.invoke(VectorGeometryToolVectorPlugin._metadata, VectorGeometryToolVectorPlugin._get_property_metadata, name, OutArg())
 
-    _property_names[ProgID] = "ProgID"
+    _property_names[prog_id] = "prog_id"
     _property_names[display_name] = "display_name"
     _property_names[available_properties] = "available_properties"
 
@@ -25793,13 +25815,75 @@ class VectorGeometryToolVectorSurfaceDisplacement(IAnalysisWorkbenchComponent, I
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorSurfaceDisplacement, [VectorGeometryToolVectorSurfaceDisplacement, IAnalysisWorkbenchComponent, IAnalysisWorkbenchComponentTimeProperties, IVectorGeometryToolVector])
 
-agcls.AgClassCatalog.add_catalog_entry((5165198519091638019, 11878832301117811344), VectorGeometryToolVectorSurfaceDisplacement)
+agcls.AgClassCatalog.add_catalog_entry((4763064220756248717, 8260778239053244854), VectorGeometryToolVectorSurfaceDisplacement)
 agcls.AgTypeNameMap["VectorGeometryToolVectorSurfaceDisplacement"] = VectorGeometryToolVectorSurfaceDisplacement
+
+class VectorGeometryToolVectorFile(IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
+    """Vector interpolated from tabulated data from file."""
+
+    _num_methods = 3
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_filename_method_offset = 1
+    _set_filename_method_offset = 2
+    _reload_method_offset = 3
+    _metadata = {
+        "iid_data" : (5543542084215610396, 17802732676296453806),
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+    }
+    _property_names = {}
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, VectorGeometryToolVectorFile)
+    
+    _get_filename_metadata = { "offset" : _get_filename_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @property
+    def filename(self) -> str:
+        """>A path to vector data file."""
+        return self._intf.get_property(VectorGeometryToolVectorFile._metadata, VectorGeometryToolVectorFile._get_filename_metadata)
+
+    _set_filename_metadata = { "offset" : _set_filename_method_offset,
+            "arg_types" : (agcom.BSTR,),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @filename.setter
+    def filename(self, filename:str) -> None:
+        return self._intf.set_property(VectorGeometryToolVectorFile._metadata, VectorGeometryToolVectorFile._set_filename_metadata, filename)
+
+    _reload_metadata = { "offset" : _reload_method_offset,
+            "arg_types" : (),
+            "marshallers" : () }
+    def reload(self) -> None:
+        """Reload the file specified with Filename property."""
+        return self._intf.invoke(VectorGeometryToolVectorFile._metadata, VectorGeometryToolVectorFile._reload_metadata, )
+
+    _property_names[filename] = "filename"
+
+    def __init__(self, source_object=None):
+        """Construct an object of type VectorGeometryToolVectorFile."""
+        SupportsDeleteCallback.__init__(self)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorFile)
+        IVectorGeometryToolVector.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
+    def _private_init(self, intf:InterfaceProxy):
+        self.__dict__["_intf"] = intf
+        IVectorGeometryToolVector._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
+    def __eq__(self, other):
+        """Check equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorFile, [VectorGeometryToolVectorFile, IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
+
+agcls.AgClassCatalog.add_catalog_entry((5754310198593178934, 4508541946230252443), VectorGeometryToolVectorFile)
+agcls.AgTypeNameMap["VectorGeometryToolVectorFile"] = VectorGeometryToolVectorFile
 
 class VectorGeometryToolVectorFactory(SupportsDeleteCallback):
     """A Factory object to create vectors."""
 
-    _num_methods = 6
+    _num_methods = 7
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _create_method_offset = 1
     _is_type_supported_method_offset = 2
@@ -25807,6 +25891,7 @@ class VectorGeometryToolVectorFactory(SupportsDeleteCallback):
     _get_available_plugin_display_names_method_offset = 4
     _create_plugin_from_display_name_method_offset = 5
     _create_cross_product_method_offset = 6
+    _create_file_vector_method_offset = 7
     _metadata = {
         "iid_data" : (4961059317243966035, 3728998091371643287),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -25817,15 +25902,15 @@ class VectorGeometryToolVectorFactory(SupportsDeleteCallback):
     
     _create_metadata = { "offset" : _create_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(VECTOR_TYPE), agmarshall.InterfaceOutArg,) }
-    def create(self, vector_name:str, description:str, vector_type:"VECTOR_TYPE") -> "IVectorGeometryToolVector":
+            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(VectorType), agmarshall.InterfaceOutArg,) }
+    def create(self, vector_name:str, description:str, vector_type:"VectorType") -> "IVectorGeometryToolVector":
         """Create a VGT vector using specified name, description and type."""
         return self._intf.invoke(VectorGeometryToolVectorFactory._metadata, VectorGeometryToolVectorFactory._create_metadata, vector_name, description, vector_type, OutArg())
 
     _is_type_supported_metadata = { "offset" : _is_type_supported_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.EnumArg(VECTOR_TYPE), agmarshall.VariantBoolArg,) }
-    def is_type_supported(self, type:"VECTOR_TYPE") -> bool:
+            "marshallers" : (agmarshall.EnumArg(VectorType), agmarshall.VariantBoolArg,) }
+    def is_type_supported(self, type:"VectorType") -> bool:
         """Return true if the type is supported."""
         return self._intf.invoke(VectorGeometryToolVectorFactory._metadata, VectorGeometryToolVectorFactory._is_type_supported_metadata, type, OutArg())
 
@@ -25857,6 +25942,13 @@ class VectorGeometryToolVectorFactory(SupportsDeleteCallback):
     def create_cross_product(self, vector_name:str, vector_a:"IVectorGeometryToolVector", vector_b:"IVectorGeometryToolVector") -> "VectorGeometryToolVectorCross":
         """Create a cross product C = A x B."""
         return self._intf.invoke(VectorGeometryToolVectorFactory._metadata, VectorGeometryToolVectorFactory._create_cross_product_metadata, vector_name, vector_a, vector_b, OutArg())
+
+    _create_file_vector_metadata = { "offset" : _create_file_vector_method_offset,
+            "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
+    def create_file_vector(self, vector_name:str, description:str, file_name:str) -> "VectorGeometryToolVectorFile":
+        """Create a vector interpolated from tabulated data from file."""
+        return self._intf.invoke(VectorGeometryToolVectorFactory._metadata, VectorGeometryToolVectorFactory._create_file_vector_metadata, vector_name, description, file_name, OutArg())
 
     _property_names[available_plugin_display_names] = "available_plugin_display_names"
 
@@ -25895,15 +25987,15 @@ class VectorGeometryToolAxesFactory(SupportsDeleteCallback):
     
     _create_metadata = { "offset" : _create_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(AXES_TYPE), agmarshall.InterfaceOutArg,) }
-    def create(self, axes_name:str, description:str, axes_type:"AXES_TYPE") -> "IVectorGeometryToolAxes":
+            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(AxesType), agmarshall.InterfaceOutArg,) }
+    def create(self, axes_name:str, description:str, axes_type:"AxesType") -> "IVectorGeometryToolAxes":
         """Create a VGT axes using specified name, description and type."""
         return self._intf.invoke(VectorGeometryToolAxesFactory._metadata, VectorGeometryToolAxesFactory._create_metadata, axes_name, description, axes_type, OutArg())
 
     _is_type_supported_metadata = { "offset" : _is_type_supported_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.EnumArg(AXES_TYPE), agmarshall.VariantBoolArg,) }
-    def is_type_supported(self, type:"AXES_TYPE") -> bool:
+            "marshallers" : (agmarshall.EnumArg(AxesType), agmarshall.VariantBoolArg,) }
+    def is_type_supported(self, type:"AxesType") -> bool:
         """Return true if the type is supported."""
         return self._intf.invoke(VectorGeometryToolAxesFactory._metadata, VectorGeometryToolAxesFactory._is_type_supported_metadata, type, OutArg())
 
@@ -25957,15 +26049,15 @@ class VectorGeometryToolSystemFactory(SupportsDeleteCallback):
     
     _create_metadata = { "offset" : _create_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(SYSTEM_TYPE), agmarshall.InterfaceOutArg,) }
-    def create(self, system_name:str, description:str, system_type:"SYSTEM_TYPE") -> "IVectorGeometryToolSystem":
+            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(SystemType), agmarshall.InterfaceOutArg,) }
+    def create(self, system_name:str, description:str, system_type:"SystemType") -> "IVectorGeometryToolSystem":
         """Create a VGT system using the specified name, description and type."""
         return self._intf.invoke(VectorGeometryToolSystemFactory._metadata, VectorGeometryToolSystemFactory._create_metadata, system_name, description, system_type, OutArg())
 
     _is_type_supported_metadata = { "offset" : _is_type_supported_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.EnumArg(SYSTEM_TYPE), agmarshall.VariantBoolArg,) }
-    def is_type_supported(self, type:"SYSTEM_TYPE") -> bool:
+            "marshallers" : (agmarshall.EnumArg(SystemType), agmarshall.VariantBoolArg,) }
+    def is_type_supported(self, type:"SystemType") -> bool:
         """Return true if the specified system type is supported."""
         return self._intf.invoke(VectorGeometryToolSystemFactory._metadata, VectorGeometryToolSystemFactory._is_type_supported_metadata, type, OutArg())
 
@@ -26006,15 +26098,15 @@ class VectorGeometryToolPointFactory(SupportsDeleteCallback):
     
     _create_metadata = { "offset" : _create_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(POINT_TYPE), agmarshall.InterfaceOutArg,) }
-    def create(self, point_name:str, description:str, point_type:"POINT_TYPE") -> "IVectorGeometryToolPoint":
+            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(PointType), agmarshall.InterfaceOutArg,) }
+    def create(self, point_name:str, description:str, point_type:"PointType") -> "IVectorGeometryToolPoint":
         """Create a VGT point using the specified name, description and type."""
         return self._intf.invoke(VectorGeometryToolPointFactory._metadata, VectorGeometryToolPointFactory._create_metadata, point_name, description, point_type, OutArg())
 
     _is_type_supported_metadata = { "offset" : _is_type_supported_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.EnumArg(POINT_TYPE), agmarshall.VariantBoolArg,) }
-    def is_type_supported(self, type:"POINT_TYPE") -> bool:
+            "marshallers" : (agmarshall.EnumArg(PointType), agmarshall.VariantBoolArg,) }
+    def is_type_supported(self, type:"PointType") -> bool:
         """Return true if the type is supported."""
         return self._intf.invoke(VectorGeometryToolPointFactory._metadata, VectorGeometryToolPointFactory._is_type_supported_metadata, type, OutArg())
 
@@ -26035,8 +26127,8 @@ class VectorGeometryToolPointFactory(SupportsDeleteCallback):
 
     _create_fixed_on_central_body_metadata = { "offset" : _create_fixed_on_central_body_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.Variant, agcom.Variant, agcom.DOUBLE, agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.DoubleArg, agmarshall.EnumArg(SURFACE_REFERENCE_SHAPE_TYPE), agmarshall.InterfaceOutArg,) }
-    def create_fixed_on_central_body(self, point_name:str, description:str, longitude:typing.Any, latitude:typing.Any, altitude:float, reference_shape:"SURFACE_REFERENCE_SHAPE_TYPE") -> "IVectorGeometryToolPoint":
+            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.VariantArg, agmarshall.VariantArg, agmarshall.DoubleArg, agmarshall.EnumArg(SurfaceReferenceShapeType), agmarshall.InterfaceOutArg,) }
+    def create_fixed_on_central_body(self, point_name:str, description:str, longitude:typing.Any, latitude:typing.Any, altitude:float, reference_shape:"SurfaceReferenceShapeType") -> "IVectorGeometryToolPoint":
         """Create a point fixed on a central body."""
         return self._intf.invoke(VectorGeometryToolPointFactory._metadata, VectorGeometryToolPointFactory._create_fixed_on_central_body_metadata, point_name, description, longitude, latitude, altitude, reference_shape, OutArg())
 
@@ -26075,15 +26167,15 @@ class VectorGeometryToolPlaneFactory(SupportsDeleteCallback):
     
     _create_metadata = { "offset" : _create_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(PLANE_TYPE), agmarshall.InterfaceOutArg,) }
-    def create(self, plane_name:str, description:str, plane_type:"PLANE_TYPE") -> "IVectorGeometryToolPlane":
+            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(PlaneType), agmarshall.InterfaceOutArg,) }
+    def create(self, plane_name:str, description:str, plane_type:"PlaneType") -> "IVectorGeometryToolPlane":
         """Create a VGT plane using the specified name, description and type."""
         return self._intf.invoke(VectorGeometryToolPlaneFactory._metadata, VectorGeometryToolPlaneFactory._create_metadata, plane_name, description, plane_type, OutArg())
 
     _is_type_supported_metadata = { "offset" : _is_type_supported_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.EnumArg(PLANE_TYPE), agmarshall.VariantBoolArg,) }
-    def is_type_supported(self, type:"PLANE_TYPE") -> bool:
+            "marshallers" : (agmarshall.EnumArg(PlaneType), agmarshall.VariantBoolArg,) }
+    def is_type_supported(self, type:"PlaneType") -> bool:
         """Return true if the type is supported."""
         return self._intf.invoke(VectorGeometryToolPlaneFactory._metadata, VectorGeometryToolPlaneFactory._is_type_supported_metadata, type, OutArg())
 
@@ -26121,15 +26213,15 @@ class VectorGeometryToolAngleFactory(SupportsDeleteCallback):
     
     _create_metadata = { "offset" : _create_method_offset,
             "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(ANGLE_TYPE), agmarshall.InterfaceOutArg,) }
-    def create(self, angle_name:str, description:str, angle_type:"ANGLE_TYPE") -> "IVectorGeometryToolAngle":
+            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.EnumArg(AngleType), agmarshall.InterfaceOutArg,) }
+    def create(self, angle_name:str, description:str, angle_type:"AngleType") -> "IVectorGeometryToolAngle":
         """Create a VGT angle using specified name, description and type."""
         return self._intf.invoke(VectorGeometryToolAngleFactory._metadata, VectorGeometryToolAngleFactory._create_metadata, angle_name, description, angle_type, OutArg())
 
     _is_type_supported_metadata = { "offset" : _is_type_supported_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.EnumArg(ANGLE_TYPE), agmarshall.VariantBoolArg,) }
-    def is_type_supported(self, type:"ANGLE_TYPE") -> bool:
+            "marshallers" : (agmarshall.EnumArg(AngleType), agmarshall.VariantBoolArg,) }
+    def is_type_supported(self, type:"AngleType") -> bool:
         """Return true if the type is supported."""
         return self._intf.invoke(VectorGeometryToolAngleFactory._metadata, VectorGeometryToolAngleFactory._is_type_supported_metadata, type, OutArg())
 
@@ -27101,8 +27193,8 @@ class AnalysisWorkbenchComponentProvider(SupportsDeleteCallback):
 
     _supports_metadata = { "offset" : _supports_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.EnumArg(VECTOR_GEOMETRY_TOOL_COMPONENT_TYPE), agmarshall.VariantBoolArg,) }
-    def supports(self, feature:"VECTOR_GEOMETRY_TOOL_COMPONENT_TYPE") -> bool:
+            "marshallers" : (agmarshall.EnumArg(VectorGeometryToolComponentType), agmarshall.VariantBoolArg,) }
+    def supports(self, feature:"VectorGeometryToolComponentType") -> bool:
         """Test whether the specified VGT feature is supported."""
         return self._intf.invoke(AnalysisWorkbenchComponentProvider._metadata, AnalysisWorkbenchComponentProvider._supports_metadata, feature, OutArg())
 
@@ -29701,8 +29793,3 @@ class TimeToolAxesSamplingIntervalCollection(SupportsDeleteCallback):
 
 agcls.AgClassCatalog.add_catalog_entry((5527858769336517270, 17257249824002230947), TimeToolAxesSamplingIntervalCollection)
 agcls.AgTypeNameMap["TimeToolAxesSamplingIntervalCollection"] = TimeToolAxesSamplingIntervalCollection
-
-
-################################################################################
-#          Copyright 2020-2023, Ansys Government Initiatives
-################################################################################

@@ -44,7 +44,7 @@ Property detail
 
 .. py:property:: direction
     :canonical: ansys.stk.core.stkobjects.FigureOfMeritGraphics2DRangeColorOptions.direction
-    :type: FIGURE_OF_MERIT_GRAPHICS_2D_DIRECTION
+    :type: FigureOfMeritGraphics2DDirection
 
     Direction and level order for layout of color squares.
 

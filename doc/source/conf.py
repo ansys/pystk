@@ -7,12 +7,12 @@ import os
 import pathlib
 import shutil
 import subprocess
+import xml.etree.ElementTree as ET
 import zipfile
 
 import sphinx
 from sphinx.util import logging
 from sphinx.util.display import status_iterator
-from sphinx.errors import NoUri
 
 from ansys_sphinx_theme import (
     ansys_favicon,
@@ -41,6 +41,11 @@ html_context = {
     "base_url": f"https://github.com/ansys-internal/pystk/blob/main",
     "edit_page_provider_name": "GitHub",
     "edit_page_url_template": "{{ base_url }}/{{ 'doc/source/' if 'examples/' not in file_name else '' }}{{ file_name }}",
+    "page_assets": {
+        "user-guide/migration": {
+            "needs_datatables": True,
+        },
+    },
 }
 html_theme_options = {
     "header_links_before_dropdown": 6,
@@ -64,7 +69,10 @@ html_theme_options = {
     },
 }
 html_static_path = ["_static"]
-html_css_files = ["css/highlight.css"]
+html_css_files = [
+    "css/highlight.css",
+]
+html_js_files = []
 
 # Sphinx extensions
 extensions = [
@@ -78,6 +86,8 @@ extensions = [
     "numpydoc",
     "nbsphinx",
     "myst_parser",
+    "sphinxcontrib.jquery",
+    "sphinxcontrib.mermaid"
 ]
 
 # Intersphinx mapping
@@ -113,7 +123,7 @@ numpydoc_validation_checks = set()  # numpydoc validation is turned off due to p
 templates_path = ["_templates"]
 
 # Directories excluded when looking for source files
-exclude_examples = ["solar_panel_tool.py", "stk_tutorial.py", "stk_vgt_tutorial.py"]
+exclude_examples = []
 exclude_patterns = exclude_examples + ["conf.py", "_static/README.md", "api/generated", "links.rst"]
 
 # Ignore warnings
@@ -147,8 +157,7 @@ master_doc = "index"
 # Common content for every RST file such us links
 rst_epilog = ""
 links_filepath = pathlib.Path(__file__).parent.absolute() / "links.rst"
-with open(links_filepath) as links_file:
-    rst_epilog += links_file.read()
+rst_epilog += links_filepath.read_text(encoding="utf-8")
 
 # -- Autosectionlabel configuration ------------------------------------------
 autosectionlabel_maxdepth = 6
@@ -162,6 +171,7 @@ linkcheck_ignore = [
     f"https://github.com/{user_repo}/*",
     "https://support.agi.com/3d-models",
     "https://support.agi.com/downloads",
+    "https://www.khronos.org/collada/",
 ]
 
 # -- Declare the Jinja context -----------------------------------------------
@@ -269,9 +279,11 @@ def get_sha256_from_file(filepath: pathlib.Path):
 
     """
     sha256_hash = hashlib.sha256()
-    with open(filepath, "rb") as file:
-        while chunk := file.read(8192):
-            sha256_hash.update(chunk)
+
+    file_bytes = filepath.read_bytes()
+    for i in range(0, len(file_bytes), 8192):
+        sha256_hash.update(file_bytes[i : i + 8192])
+
     return sha256_hash.hexdigest()
 
 
@@ -306,7 +318,8 @@ def get_file_size_in_mb(file_path):
     return file_size_bytes / (1024 * 1024)
 
 
-ARTIFACTS_PATH = pathlib.Path().parent / "_static" / "artifacts"
+STATIC_PATH = pathlib.Path(__file__).parent / "_static"
+ARTIFACTS_PATH = STATIC_PATH / "artifacts"
 ARTIFACTS_WHEEL = ARTIFACTS_PATH / f"{project.replace('-', '_')}-{version}-py3-none-any.whl"
 ARTIFACTS_SDIST = ARTIFACTS_PATH / f"{project.replace('-', '_')}-{version}.tar.gz"
 
@@ -314,11 +327,12 @@ WHEELHOUSE_PATH = pathlib.Path().parent / "_static" / "wheelhouse"
 if not WHEELHOUSE_PATH.exists():
     linkcheck_ignore.append(r".*/wheelhouse/.*")
 
+
 jinja_globals = {
     "SUPPORTED_PYTHON_VERSIONS": ["3.11", "3.12", "3.13"],
     "SUPPORTED_PLATFORMS": ["windows", "ubuntu"],
     "PYSTK_VERSION": version,
-    "STK_VERSION": "12.9.0",
+    "STK_VERSION": "12.10.0",
 }
 
 jinja_contexts = {
@@ -351,8 +365,6 @@ jinja_contexts = {
         }
     },
 }
-
-print(jinja_contexts["wheelhouse"]["wheelhouse"])
 
 # -- autodoc configuration ---------------------------------------------------
 autodoc_default_options = {
@@ -587,6 +599,72 @@ def render_examples_as_pdf(app: sphinx.application.Sphinx, exception: Exception)
         )
 
 
+def read_migration_tables(app: sphinx.application.Sphinx):
+    """Convert an XML migration table to a JSON format.
+
+    The final JSON format is as follows:
+
+    .. code-block:: json
+
+        { <old_type_name>:
+              {
+                  'new_name': <new_type_name>,
+                  'members':
+                  {
+                      <old__name>: <new__name>
+                  }
+              }
+        }
+
+    Parameters
+    ----------
+    app : sphinx.application.Sphinx
+        Sphinx application instance containing the all the doc build configuration.
+
+    """
+    ROOT_DIR = pathlib.Path(app.srcdir).parent.parent
+    TOOLS_DIR = ROOT_DIR / "src" / "ansys" / "stk" / "core" / "tools"
+    API_MAPPINGS = TOOLS_DIR / "api_migration_assistant" / "api-mappings"
+    if not API_MAPPINGS.exists():
+        raise FileNotFoundError(f"API mappings directory not found at {API_MAPPINGS}")
+    TABLE_FILES = [file for file in API_MAPPINGS.glob("*.xml") if "internal" not in file.name]
+
+    mappings = {}
+    for xml_file in status_iterator(
+        TABLE_FILES,
+        "Rendering migration table",
+        "green",
+        len(TABLE_FILES),
+        verbosity=1,
+        stringify_func=(lambda x: x.name),
+    ):
+        tree = ET.parse(xml_file)
+        root = tree.getroot()
+
+        type_categories = ["enum_type", "class", "interface"]
+        for type_category in type_categories:
+            type_mappings = root.findall(f'./Mapping[@Category="{type_category}"]')
+            for type_mapping in type_mappings:
+                type_old_name = type_mapping.get("OldName")
+                type_new_name = type_mapping.get("NewName")
+                mappings[type_old_name] = {"new_name": type_new_name, "members": {}}
+
+        member_categories = ["enum_value", "method"]
+        for member_category in member_categories:
+            method_mappings = root.findall(f'./Mapping[@Category="{member_category}"]')
+            for method_mapping in method_mappings:
+                member_old_name = method_mapping.get("OldName")
+                if member_old_name[0] != "_": # Filter out private methods
+                    type_old_name = method_mapping.get("ParentScope")
+                    member_new_name = method_mapping.get("NewName")
+                    if not type_old_name in mappings:
+                        mappings[type_old_name] = {"new_name": type_old_name, "members": {}}
+                    mappings[type_old_name]["members"][member_old_name] = member_new_name
+
+        jinja_contexts["migration_table"] = {
+            "mappings": mappings,
+        }
+
 def setup(app: sphinx.application.Sphinx):
     """
     Run different hook functions during the documentation build.
@@ -603,6 +681,8 @@ def setup(app: sphinx.application.Sphinx):
     # build has completed, no matter its success, the examples are removed from
     # the source directory.
     app.connect("builder-inited", copy_docker_files_to_static_dir)
+    app.connect("builder-inited", read_migration_tables)
+
     if BUILD_EXAMPLES:
         app.connect("builder-inited", copy_examples_files_to_source_dir)
         app.connect("build-finished", remove_examples_from_source_dir)

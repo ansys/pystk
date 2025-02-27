@@ -28,7 +28,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGPSAutoUpdateFileSource.filename`
-              - Gets or sets the name of the source file.
+              - Get or set the name of the source file.
 
 
 
@@ -47,7 +47,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleGPSAutoUpdateFileSource.filename
     :type: str
 
-    Gets or sets the name of the source file.
+    Get or set the name of the source file.
 
 
 Method detail

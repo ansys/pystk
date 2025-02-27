@@ -34,7 +34,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.uicore.Window.caption`
-              - Gets or sets the window caption. Can only be set within UI plugins for the non unique windows they own.
+              - Get or set the window caption. Can only be set within UI plugins for the non unique windows they own.
             * - :py:attr:`~ansys.stk.core.uicore.Window.window_state`
               - The window state.
             * - :py:attr:`~ansys.stk.core.uicore.Window.height`
@@ -52,9 +52,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.uicore.Window.unpinned`
               - The window's pinned state.
             * - :py:attr:`~ansys.stk.core.uicore.Window.can_pin`
-              - Returns whether the window supports pinning.
+              - Return whether the window supports pinning.
             * - :py:attr:`~ansys.stk.core.uicore.Window.toolbars`
-              - Returns the window's toolbar collection.
+              - Return the window's toolbar collection.
 
 
 
@@ -73,11 +73,11 @@ Property detail
     :canonical: ansys.stk.core.uicore.Window.caption
     :type: str
 
-    Gets or sets the window caption. Can only be set within UI plugins for the non unique windows they own.
+    Get or set the window caption. Can only be set within UI plugins for the non unique windows they own.
 
 .. py:property:: window_state
     :canonical: ansys.stk.core.uicore.Window.window_state
-    :type: APPLICATION_WINDOW_STATE
+    :type: ApplicationWindowState
 
     The window state.
 
@@ -107,7 +107,7 @@ Property detail
 
 .. py:property:: dock_style
     :canonical: ansys.stk.core.uicore.Window.dock_style
-    :type: WINDOW_DOCK_STYLE
+    :type: WindowDockStyle
 
     The window docking style.
 
@@ -127,13 +127,13 @@ Property detail
     :canonical: ansys.stk.core.uicore.Window.can_pin
     :type: bool
 
-    Returns whether the window supports pinning.
+    Return whether the window supports pinning.
 
 .. py:property:: toolbars
     :canonical: ansys.stk.core.uicore.Window.toolbars
     :type: ToolbarCollection
 
-    Returns the window's toolbar collection.
+    Return the window's toolbar collection.
 
 
 Method detail
@@ -190,14 +190,14 @@ Method detail
 
         :obj:`~typing.Any`
 
-.. py:method:: get_service_by_type(self, service_type: WINDOW_SERVICE_TYPE) -> typing.Any
+.. py:method:: get_service_by_type(self, service_type: WindowServiceType) -> typing.Any
     :canonical: ansys.stk.core.uicore.Window.get_service_by_type
 
     Return a service object that can be accessed at runtime. The method returns null if no service object is associated with the specified service type.
 
     :Parameters:
 
-    **service_type** : :obj:`~WINDOW_SERVICE_TYPE`
+    **service_type** : :obj:`~WindowServiceType`
 
     :Returns:
 

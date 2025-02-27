@@ -32,7 +32,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionDataBestN.best_n`
               - Navigation accuracy based on the specified number of satellites that yields the minimum GDOP.
             * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionDataBestN.best_n_metric`
-              - Gets or sets the minimization metric for the best N computation.
+              - Get or set the minimization metric for the best N computation.
             * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionDataBestN.best_n_metric_supported_types`
               - Best N supported types.
 
@@ -57,9 +57,9 @@ Property detail
 
 .. py:property:: best_n_metric
     :canonical: ansys.stk.core.stkobjects.FigureOfMeritDefinitionDataBestN.best_n_metric
-    :type: FIGURE_OF_MERIT_METHOD
+    :type: FigureOfMeritMethod
 
-    Gets or sets the minimization metric for the best N computation.
+    Get or set the minimization metric for the best N computation.
 
 .. py:property:: best_n_metric_supported_types
     :canonical: ansys.stk.core.stkobjects.FigureOfMeritDefinitionDataBestN.best_n_metric_supported_types
@@ -75,14 +75,14 @@ Method detail
 
 
 
-.. py:method:: is_best_n_metric_supported(self, best_n_metric: FIGURE_OF_MERIT_METHOD) -> bool
+.. py:method:: is_best_n_metric_supported(self, best_n_metric: FigureOfMeritMethod) -> bool
     :canonical: ansys.stk.core.stkobjects.FigureOfMeritDefinitionDataBestN.is_best_n_metric_supported
 
     Is the type of Best N metric supported?
 
     :Parameters:
 
-    **best_n_metric** : :obj:`~FIGURE_OF_MERIT_METHOD`
+    **best_n_metric** : :obj:`~FigureOfMeritMethod`
 
     :Returns:
 

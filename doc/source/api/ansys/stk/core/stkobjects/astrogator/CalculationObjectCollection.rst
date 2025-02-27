@@ -42,9 +42,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CalculationObjectCollection._new_enum`
-              - Allows you to enumerate through the collection.
+              - Allow you to enumerate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CalculationObjectCollection.count`
-              - Returns the size of the collection.
+              - Return the size of the collection.
 
 
 
@@ -63,13 +63,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.CalculationObjectCollection._new_enum
     :type: EnumeratorProxy
 
-    Allows you to enumerate through the collection.
+    Allow you to enumerate through the collection.
 
 .. py:property:: count
     :canonical: ansys.stk.core.stkobjects.astrogator.CalculationObjectCollection.count
     :type: int
 
-    Returns the size of the collection.
+    Return the size of the collection.
 
 
 Method detail

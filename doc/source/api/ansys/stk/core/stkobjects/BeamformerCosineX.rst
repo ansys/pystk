@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.BeamformerCosineX.x`
-              - Gets or sets the cosine exponent.
+              - Get or set the cosine exponent.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.BeamformerCosineX.x
     :type: float
 
-    Gets or sets the cosine exponent.
+    Get or set the cosine exponent.
 
 

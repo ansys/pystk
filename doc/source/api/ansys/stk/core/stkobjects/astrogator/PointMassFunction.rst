@@ -21,9 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.PointMassFunction.gravitational_parameter_source`
-              - Gets or sets the source for the third body's gravitational parameter.
+              - Get or set the source for the third body's gravitational parameter.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.PointMassFunction.mu`
-              - Gets or sets the gravitational parameter. Uses Gravity Param Dimension.
+              - Get or set the gravitational parameter. Uses Gravity Param Dimension.
 
 
 
@@ -40,14 +40,14 @@ Property detail
 
 .. py:property:: gravitational_parameter_source
     :canonical: ansys.stk.core.stkobjects.astrogator.PointMassFunction.gravitational_parameter_source
-    :type: GRAV_PARAM_SOURCE
+    :type: GravParamSource
 
-    Gets or sets the source for the third body's gravitational parameter.
+    Get or set the source for the third body's gravitational parameter.
 
 .. py:property:: mu
     :canonical: ansys.stk.core.stkobjects.astrogator.PointMassFunction.mu
     :type: float
 
-    Gets or sets the gravitational parameter. Uses Gravity Param Dimension.
+    Get or set the gravitational parameter. Uses Gravity Param Dimension.
 
 

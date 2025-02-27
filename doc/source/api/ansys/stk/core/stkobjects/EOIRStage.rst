@@ -38,7 +38,7 @@ Property detail
 
 .. py:property:: flight_type
     :canonical: ansys.stk.core.stkobjects.EOIRStage.flight_type
-    :type: EOIR_FLIGHT_TYPE
+    :type: EOIRFlightType
 
     Property used to access the flight type.
 

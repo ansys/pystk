@@ -1,3 +1,25 @@
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
 import pytest
 from test_util import *
 from assertion_harness import *
@@ -20,13 +42,11 @@ class EarlyBoundTests(TestBase):
             TestBase.LoadTestScenario(Path.Combine("FigureOfMeritTests", "FigureOfMeritTests.sc"))
             EarlyBoundTests.AG_COV = CoverageDefinition(
                 TestBase.Application.current_scenario.children.new(
-                    STK_OBJECT_TYPE.COVERAGE_DEFINITION, "CoverageDefinition1"
+                    STKObjectType.COVERAGE_DEFINITION, "CoverageDefinition1"
                 )
             )
             covObj: "IStkObject" = clr.CastAs(EarlyBoundTests.AG_COV, IStkObject)
-            EarlyBoundTests.AG_FOM = FigureOfMerit(
-                covObj.children.new(STK_OBJECT_TYPE.FIGURE_OF_MERIT, "FigureOfMerit1")
-            )
+            EarlyBoundTests.AG_FOM = FigureOfMerit(covObj.children.new(STKObjectType.FIGURE_OF_MERIT, "FigureOfMerit1"))
 
         except Exception as e:
             raise e
@@ -61,24 +81,22 @@ class EarlyBoundTests(TestBase):
 
         iIndex: int = 0
         while iIndex < len(arTypes):
-            eType: "FIGURE_OF_MERIT_DEFINITION_TYPE" = FIGURE_OF_MERIT_DEFINITION_TYPE(int(arTypes[iIndex][0]))
+            eType: "FigureOfMeritDefinitionType" = FigureOfMeritDefinitionType(int(arTypes[iIndex][0]))
             if not EarlyBoundTests.AG_FOM.is_definition_type_supported(eType):
                 Assert.fail("The {0} type should be supported!", eType)
 
-            if eType == FIGURE_OF_MERIT_DEFINITION_TYPE.ACCESS_CONSTRAINT:
+            if eType == FigureOfMeritDefinitionType.ACCESS_CONSTRAINT:
                 fdac: "FigureOfMeritDefinitionAccessConstraint" = None
 
                 # SetAccessConstraintDefinition
-                fdac = EarlyBoundTests.AG_FOM.set_access_constraint_definition(
-                    FIGURE_OF_MERIT_CONSTRAINT_NAME.AZIMUTH_RATE
-                )
+                fdac = EarlyBoundTests.AG_FOM.set_access_constraint_definition(FigureOfMeritConstraintName.AZIMUTH_RATE)
                 Assert.assertIsNotNone(fdac)
 
                 # SetAccessConstraintDefinitionName
                 fdac = EarlyBoundTests.AG_FOM.set_access_constraint_definition_name("AzimuthRate")
                 Assert.assertIsNotNone(fdac)
 
-            elif eType == FIGURE_OF_MERIT_DEFINITION_TYPE.SCALAR_CALCULATION:
+            elif eType == FigureOfMeritDefinitionType.SCALAR_CALCULATION:
                 defScalarCalc: "FigureOfMeritDefinitionScalarCalculation" = None
 
                 # SetScalarCalculationDefinition
@@ -92,7 +110,7 @@ class EarlyBoundTests(TestBase):
                 EarlyBoundTests.AG_FOM.set_definition_type(eType)
 
             TestBase.logger.WriteLine6("\t\tThe new DefinitionType is: {0}", EarlyBoundTests.AG_FOM.definition_type)
-            eType2: "FIGURE_OF_MERIT_DEFINITION_TYPE" = EarlyBoundTests.AG_FOM.definition_type
+            eType2: "FigureOfMeritDefinitionType" = EarlyBoundTests.AG_FOM.definition_type
             Assert.assertEqual(eType, eType2)
             # Definition
             helper.Definition(EarlyBoundTests.AG_FOM.definition, eType, EarlyBoundTests.AG_COV.asset_list)
@@ -165,19 +183,19 @@ class EarlyBoundTests(TestBase):
 
     # region DefinitionTypes
     def test_DefinitionTypes(self):
-        defType: "FIGURE_OF_MERIT_DEFINITION_TYPE"
-        for defType in Enum.GetValues(clr.TypeOf(FIGURE_OF_MERIT_DEFINITION_TYPE)):
+        defType: "FigureOfMeritDefinitionType"
+        for defType in Enum.GetValues(clr.TypeOf(FigureOfMeritDefinitionType)):
             if EarlyBoundTests.AG_FOM.is_definition_type_supported(defType):
-                if defType == FIGURE_OF_MERIT_DEFINITION_TYPE.ACCESS_CONSTRAINT:
-                    EarlyBoundTests.AG_FOM.set_access_constraint_definition(FIGURE_OF_MERIT_CONSTRAINT_NAME.ALTITUDE)
+                if defType == FigureOfMeritDefinitionType.ACCESS_CONSTRAINT:
+                    EarlyBoundTests.AG_FOM.set_access_constraint_definition(FigureOfMeritConstraintName.ALTITUDE)
                     Assert.assertEqual(
-                        FIGURE_OF_MERIT_DEFINITION_TYPE.ACCESS_CONSTRAINT, EarlyBoundTests.AG_FOM.definition_type
+                        FigureOfMeritDefinitionType.ACCESS_CONSTRAINT, EarlyBoundTests.AG_FOM.definition_type
                     )
 
-                elif defType == FIGURE_OF_MERIT_DEFINITION_TYPE.SCALAR_CALCULATION:
+                elif defType == FigureOfMeritDefinitionType.SCALAR_CALCULATION:
                     EarlyBoundTests.AG_FOM.set_scalar_calculation_definition("CentralBody/Earth ElapsedTimeFromStart")
                     Assert.assertEqual(
-                        FIGURE_OF_MERIT_DEFINITION_TYPE.SCALAR_CALCULATION, EarlyBoundTests.AG_FOM.definition_type
+                        FigureOfMeritDefinitionType.SCALAR_CALCULATION, EarlyBoundTests.AG_FOM.definition_type
                     )
 
                 else:
@@ -204,7 +222,7 @@ class EarlyBoundTests(TestBase):
     def test_GridInspector(self):
         TestBase.logger.WriteLine("----- GRID INSPECTOR TEST ----- BEGIN -----")
         oSatellite: "Satellite" = Satellite(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "sat2")
+            TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "sat2")
         )
         Assert.assertIsNotNone(oSatellite)
         oPropagator: "PropagatorTwoBody" = PropagatorTwoBody(oSatellite.propagator)
@@ -213,9 +231,9 @@ class EarlyBoundTests(TestBase):
 
         # BoundsType (LATITUDE)
         TestBase.logger.WriteLine6("\tThe current BoundsType is: {0}", EarlyBoundTests.AG_COV.grid.bounds_type)
-        EarlyBoundTests.AG_COV.grid.bounds_type = COVERAGE_BOUNDS.LATITUDE
+        EarlyBoundTests.AG_COV.grid.bounds_type = CoverageBounds.LATITUDE
         TestBase.logger.WriteLine6("\tThe new BoundsType is: {0}", EarlyBoundTests.AG_COV.grid.bounds_type)
-        Assert.assertEqual(COVERAGE_BOUNDS.LATITUDE, EarlyBoundTests.AG_COV.grid.bounds_type)
+        Assert.assertEqual(CoverageBounds.LATITUDE, EarlyBoundTests.AG_COV.grid.bounds_type)
         # Bounds
         lat: "CoverageBoundsLatitude" = CoverageBoundsLatitude(EarlyBoundTests.AG_COV.grid.bounds)
         Assert.assertIsNotNone(lat)
@@ -238,13 +256,13 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(assetListElement)
         # AssetStatus (ACTIVE)
         TestBase.logger.WriteLine6("\tThe current AssetStatus is: {0}", assetListElement.asset_status)
-        assetListElement.asset_status = COVERAGE_ASSET_STATUS.ACTIVE
+        assetListElement.asset_status = CoverageAssetStatus.ACTIVE
         TestBase.logger.WriteLine6("\tThe new AssetStatus is: {0}", assetListElement.asset_status)
-        Assert.assertEqual(COVERAGE_ASSET_STATUS.ACTIVE, assetListElement.asset_status)
+        Assert.assertEqual(CoverageAssetStatus.ACTIVE, assetListElement.asset_status)
 
         # SetDefinitionType (N_ASSET_COVERAGE)
         TestBase.logger.WriteLine6("\tThe current DefinitionType is: {0}", EarlyBoundTests.AG_FOM.definition_type)
-        EarlyBoundTests.AG_FOM.set_definition_type(FIGURE_OF_MERIT_DEFINITION_TYPE.N_ASSET_COVERAGE)
+        EarlyBoundTests.AG_FOM.set_definition_type(FigureOfMeritDefinitionType.N_ASSET_COVERAGE)
         TestBase.logger.WriteLine6("\tThe new DefinitionType is: {0}", EarlyBoundTests.AG_FOM.definition_type)
         # Definition
         oDefinition: "IFigureOfMeritDefinition" = EarlyBoundTests.AG_FOM.definition
@@ -303,9 +321,9 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("", oInspector.message)
 
         # BoundsType (CUSTOM_REGIONS)
-        EarlyBoundTests.AG_COV.grid.bounds_type = COVERAGE_BOUNDS.CUSTOM_REGIONS
+        EarlyBoundTests.AG_COV.grid.bounds_type = CoverageBounds.CUSTOM_REGIONS
         TestBase.logger.WriteLine6("\tThe new BoundsType is: {0}", EarlyBoundTests.AG_COV.grid.bounds_type)
-        Assert.assertEqual(COVERAGE_BOUNDS.CUSTOM_REGIONS, EarlyBoundTests.AG_COV.grid.bounds_type)
+        Assert.assertEqual(CoverageBounds.CUSTOM_REGIONS, EarlyBoundTests.AG_COV.grid.bounds_type)
         # Bounds
         oCustom: "CoverageBoundsCustomRegions" = CoverageBoundsCustomRegions(EarlyBoundTests.AG_COV.grid.bounds)
         Assert.assertIsNotNone(oCustom)
@@ -348,7 +366,7 @@ class EarlyBoundTests(TestBase):
         # ClearAccesses
         EarlyBoundTests.AG_COV.clear_accesses()
         # Unload (eSatellite)
-        TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "sat2")
+        TestBase.Application.current_scenario.children.unload(STKObjectType.SATELLITE, "sat2")
         TestBase.logger.WriteLine("----- GRID INSPECTOR TEST ----- END -----")
 
     # endregion
@@ -371,13 +389,13 @@ class EarlyBoundTests(TestBase):
         # Static
         helper.GfxAttributes(oGraphics.static, False)
         # Contours (readonly)
-        EarlyBoundTests.AG_FOM.set_definition_type(FIGURE_OF_MERIT_DEFINITION_TYPE.ACCESS_SEPARATION)
-        Assert.assertEqual(FIGURE_OF_MERIT_DEFINITION_TYPE.ACCESS_SEPARATION, EarlyBoundTests.AG_FOM.definition_type)
+        EarlyBoundTests.AG_FOM.set_definition_type(FigureOfMeritDefinitionType.ACCESS_SEPARATION)
+        Assert.assertEqual(FigureOfMeritDefinitionType.ACCESS_SEPARATION, EarlyBoundTests.AG_FOM.definition_type)
         helper.GfxContours(oGraphics.static.contours, True, True)
         helper.GfxContourLines(oGraphics.static.contours, True)
         # Contours
-        EarlyBoundTests.AG_FOM.set_definition_type(FIGURE_OF_MERIT_DEFINITION_TYPE.TIME_AVERAGE_GAP)
-        Assert.assertEqual(FIGURE_OF_MERIT_DEFINITION_TYPE.TIME_AVERAGE_GAP, EarlyBoundTests.AG_FOM.definition_type)
+        EarlyBoundTests.AG_FOM.set_definition_type(FigureOfMeritDefinitionType.TIME_AVERAGE_GAP)
+        Assert.assertEqual(FigureOfMeritDefinitionType.TIME_AVERAGE_GAP, EarlyBoundTests.AG_FOM.definition_type)
         helper.GfxContours(oGraphics.static.contours, False, False)
         oldFillPoints: bool = oGraphics.static.fill_points
         oGraphics.static.fill_points = True
@@ -387,15 +405,15 @@ class EarlyBoundTests(TestBase):
         # Animation (readonly)
         helper.GfxAnimationAttributes(oGraphics.animation_settings, True)
         # Animation
-        EarlyBoundTests.AG_FOM.set_definition_type(FIGURE_OF_MERIT_DEFINITION_TYPE.SIMPLE_COVERAGE)
-        Assert.assertEqual(FIGURE_OF_MERIT_DEFINITION_TYPE.SIMPLE_COVERAGE, EarlyBoundTests.AG_FOM.definition_type)
+        EarlyBoundTests.AG_FOM.set_definition_type(FigureOfMeritDefinitionType.SIMPLE_COVERAGE)
+        Assert.assertEqual(FigureOfMeritDefinitionType.SIMPLE_COVERAGE, EarlyBoundTests.AG_FOM.definition_type)
         helper.GfxAnimationAttributes(oGraphics.animation_settings, False)
         # Contours (readonly)
         helper.GfxAnimationContours(oGraphics.animation_settings.contours, True, True)
         helper.GfxContourLines(oGraphics.animation_settings.contours, True)
         # Contours
-        EarlyBoundTests.AG_FOM.set_definition_type(FIGURE_OF_MERIT_DEFINITION_TYPE.REVISIT_TIME)
-        Assert.assertEqual(FIGURE_OF_MERIT_DEFINITION_TYPE.REVISIT_TIME, EarlyBoundTests.AG_FOM.definition_type)
+        EarlyBoundTests.AG_FOM.set_definition_type(FigureOfMeritDefinitionType.REVISIT_TIME)
+        Assert.assertEqual(FigureOfMeritDefinitionType.REVISIT_TIME, EarlyBoundTests.AG_FOM.definition_type)
         EarlyBoundTests.AG_FOM.graphics.animation_settings.contours.show_graphics = True
         helper.GfxAnimationContours(oGraphics.animation_settings.contours, False, False)
         helper.GfxContourLines(oGraphics.animation_settings.contours, False)
@@ -429,12 +447,12 @@ class EarlyBoundTests(TestBase):
         # Static
         self.VOAttributes(oVO.static, False)
         # Animation (readonly)
-        EarlyBoundTests.AG_FOM.set_definition_type(FIGURE_OF_MERIT_DEFINITION_TYPE.TIME_AVERAGE_GAP)
-        Assert.assertEqual(FIGURE_OF_MERIT_DEFINITION_TYPE.TIME_AVERAGE_GAP, EarlyBoundTests.AG_FOM.definition_type)
+        EarlyBoundTests.AG_FOM.set_definition_type(FigureOfMeritDefinitionType.TIME_AVERAGE_GAP)
+        Assert.assertEqual(FigureOfMeritDefinitionType.TIME_AVERAGE_GAP, EarlyBoundTests.AG_FOM.definition_type)
         self.VOAttributes(oVO.animation_graphics_3d_settings, True)
         # Animation
-        EarlyBoundTests.AG_FOM.set_definition_type(FIGURE_OF_MERIT_DEFINITION_TYPE.SIMPLE_COVERAGE)
-        Assert.assertEqual(FIGURE_OF_MERIT_DEFINITION_TYPE.SIMPLE_COVERAGE, EarlyBoundTests.AG_FOM.definition_type)
+        EarlyBoundTests.AG_FOM.set_definition_type(FigureOfMeritDefinitionType.SIMPLE_COVERAGE)
+        Assert.assertEqual(FigureOfMeritDefinitionType.SIMPLE_COVERAGE, EarlyBoundTests.AG_FOM.definition_type)
         self.VOAttributes(oVO.animation_graphics_3d_settings, False)
         TestBase.logger.WriteLine("----- VO TEST ----- END -----")
 
@@ -495,39 +513,39 @@ class EarlyBoundTests(TestBase):
     def test_GfxSmoothContours(self):
         TestBase.logger.WriteLine("----- GRAPHICS SMOOTH CONTOURS ----- BEGIN -----")
         oCovDef: "CoverageDefinition" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.COVERAGE_DEFINITION, "CovDef_012341212"),
+            TestBase.Application.current_scenario.children.new(STKObjectType.COVERAGE_DEFINITION, "CovDef_012341212"),
             CoverageDefinition,
         )
         Assert.assertIsNotNone(oCovDef)
 
         oFOMerit: "FigureOfMerit" = clr.CastAs(
-            (IStkObject(oCovDef)).children.new(STK_OBJECT_TYPE.FIGURE_OF_MERIT, "FOM_2352353"), FigureOfMerit
+            (IStkObject(oCovDef)).children.new(STKObjectType.FIGURE_OF_MERIT, "FOM_2352353"), FigureOfMerit
         )
         Assert.assertIsNotNone(oFOMerit)
 
         try:
             TestBase.logger.WriteLine6("\tThe current BoundsType is: {0}", oCovDef.grid.bounds_type)
-            noSmoothFillBounds: "List[COVERAGE_BOUNDS]" = [COVERAGE_BOUNDS.CUSTOM_BOUNDARY]
-            eBound: "COVERAGE_BOUNDS"
+            noSmoothFillBounds: "List[CoverageBounds]" = [CoverageBounds.CUSTOM_BOUNDARY]
+            eBound: "CoverageBounds"
             for eBound in noSmoothFillBounds:
                 oCovDef.grid.bounds_type = eBound
                 TestBase.logger.WriteLine6("\tThe new BoundsType is: {0}", oCovDef.grid.bounds_type)
-                eBound2: "COVERAGE_BOUNDS" = oCovDef.grid.bounds_type
+                eBound2: "CoverageBounds" = oCovDef.grid.bounds_type
                 Assert.assertEqual(eBound, eBound2)
                 self.TestFOMGfxContours(oFOMerit, False)
 
-            SmoothFillBounds: "List[COVERAGE_BOUNDS]" = [
-                COVERAGE_BOUNDS.LATITUDE_LINE,
-                COVERAGE_BOUNDS.LONGITUDE_LINE,
-                COVERAGE_BOUNDS.CUSTOM_REGIONS,
-                COVERAGE_BOUNDS.GLOBAL,
-                COVERAGE_BOUNDS.LATITUDE,
+            SmoothFillBounds: "List[CoverageBounds]" = [
+                CoverageBounds.LATITUDE_LINE,
+                CoverageBounds.LONGITUDE_LINE,
+                CoverageBounds.CUSTOM_REGIONS,
+                CoverageBounds.GLOBAL,
+                CoverageBounds.LATITUDE,
             ]
-            eBound: "COVERAGE_BOUNDS"
+            eBound: "CoverageBounds"
             for eBound in SmoothFillBounds:
                 oCovDef.grid.bounds_type = eBound
                 TestBase.logger.WriteLine6("\tThe new BoundsType is: {0}", oCovDef.grid.bounds_type)
-                eBound2: "COVERAGE_BOUNDS" = oCovDef.grid.bounds_type
+                eBound2: "CoverageBounds" = oCovDef.grid.bounds_type
                 Assert.assertEqual(eBound, eBound2)
                 self.TestFOMGfxContours(oFOMerit, True)
 
@@ -547,9 +565,9 @@ class EarlyBoundTests(TestBase):
     def TestFOMGfxContours(self, fom: "FigureOfMerit", bIsSmoothFillSupported: bool):
         # SetDefinitionType (ACCESS_DURATION)
         TestBase.logger.WriteLine6("\t\tThe current DefinitionType is: {0}", fom.definition_type)
-        fom.set_definition_type(FIGURE_OF_MERIT_DEFINITION_TYPE.ACCESS_DURATION)
+        fom.set_definition_type(FigureOfMeritDefinitionType.ACCESS_DURATION)
         TestBase.logger.WriteLine6("\t\tThe new DefinitionType is: {0}", fom.definition_type)
-        Assert.assertEqual(FIGURE_OF_MERIT_DEFINITION_TYPE.ACCESS_DURATION, fom.definition_type)
+        Assert.assertEqual(FigureOfMeritDefinitionType.ACCESS_DURATION, fom.definition_type)
         # Graphics.Static.IsVisible
         TestBase.logger.WriteLine4(
             "\t\tThe current Graphics.Static.IsVisible is: {0}", fom.graphics.static.show_graphics
@@ -572,15 +590,15 @@ class EarlyBoundTests(TestBase):
         )
         if not bIsSmoothFillSupported:
             with pytest.raises(Exception):
-                fom.graphics.static.contours.contour_type = FIGURE_OF_MERIT_GRAPHICS_2D_CONTOUR_TYPE.SMOOTH_FILL
+                fom.graphics.static.contours.contour_type = FigureOfMeritGraphics2DContourType.SMOOTH_FILL
 
         else:
-            fom.graphics.static.contours.contour_type = FIGURE_OF_MERIT_GRAPHICS_2D_CONTOUR_TYPE.SMOOTH_FILL
+            fom.graphics.static.contours.contour_type = FigureOfMeritGraphics2DContourType.SMOOTH_FILL
             TestBase.logger.WriteLine6(
                 "\t\tThe new Graphics.Static.Contours.ContourType is: {0}", fom.graphics.static.contours.contour_type
             )
             Assert.assertEqual(
-                FIGURE_OF_MERIT_GRAPHICS_2D_CONTOUR_TYPE.SMOOTH_FILL, fom.graphics.static.contours.contour_type
+                FigureOfMeritGraphics2DContourType.SMOOTH_FILL, fom.graphics.static.contours.contour_type
             )
 
     # endregion
@@ -597,22 +615,22 @@ class EarlyBoundTests(TestBase):
 
         # create facility
         facobj: "IStkObject" = TestBase.Application.current_scenario.children.new(
-            STK_OBJECT_TYPE.FACILITY, "Fac1Bug44875"
+            STKObjectType.FACILITY, "Fac1Bug44875"
         )
-        recobj: "IStkObject" = facobj.children.new(STK_OBJECT_TYPE.RECEIVER, "Rcv1Bug44875")
+        recobj: "IStkObject" = facobj.children.new(STKObjectType.RECEIVER, "Rcv1Bug44875")
 
         # Create cov def
         covdefobj: "IStkObject" = TestBase.Application.current_scenario.children.new(
-            STK_OBJECT_TYPE.COVERAGE_DEFINITION, "CD1Bug44875"
+            STKObjectType.COVERAGE_DEFINITION, "CD1Bug44875"
         )
         covdef: "CoverageDefinition" = clr.CastAs(covdefobj, CoverageDefinition)
         covdef.point_definition.use_grid_seed = True
         covdef.point_definition.use_object_as_seed = True
-        covdef.point_definition.grid_class = COVERAGE_GRID_CLASS.RECEIVER
+        covdef.point_definition.grid_class = CoverageGridClass.RECEIVER
         covdef.point_definition.seed_instance = "Facility/Fac1Bug44875/Receiver/Rcv1Bug44875"
         covchilds: "IStkObjectCollection" = covdefobj.children
 
-        fomobj1: "IStkObject" = covchilds.new(STK_OBJECT_TYPE.FIGURE_OF_MERIT, "FM1Bug44875")
+        fomobj1: "IStkObject" = covchilds.new(STKObjectType.FIGURE_OF_MERIT, "FM1Bug44875")
         fom1: "FigureOfMerit" = clr.CastAs(fomobj1, FigureOfMerit)
         fomcs1: "FigureOfMeritDefinitionAccessConstraint" = None
         fomcs1 = fom1.set_access_constraint_definition_name("C/No")
@@ -635,7 +653,7 @@ class EarlyBoundTests(TestBase):
             with pytest.raises(Exception, match=RegexSubstringMatch("NoGraphics property is set to true")):
                 fomc1: "IFigureOfMeritGraphics2DContours" = fom1.graphics.static.contours
 
-        fomobj2: "IStkObject" = covchilds.new(STK_OBJECT_TYPE.FIGURE_OF_MERIT, "FM2Bug44875")
+        fomobj2: "IStkObject" = covchilds.new(STKObjectType.FIGURE_OF_MERIT, "FM2Bug44875")
         fom2: "FigureOfMerit" = clr.CastAs(fomobj2, FigureOfMerit)
         fomcs2: "FigureOfMeritDefinitionAccessConstraint" = None
         fomcs2 = fom2.set_access_constraint_definition_name("PowerFluxDensity")
@@ -661,12 +679,10 @@ class EarlyBoundTests(TestBase):
         TestBase.Application.close_scenario()
         TestBase.LoadTestScenario(Path.Combine("FigureOfMeritTests", "FigureOfMeritTests.sc"))
         EarlyBoundTests.AG_COV = CoverageDefinition(
-            TestBase.Application.current_scenario.children.new(
-                STK_OBJECT_TYPE.COVERAGE_DEFINITION, "CoverageDefinition1"
-            )
+            TestBase.Application.current_scenario.children.new(STKObjectType.COVERAGE_DEFINITION, "CoverageDefinition1")
         )
         covObj: "IStkObject" = clr.CastAs(EarlyBoundTests.AG_COV, IStkObject)
-        EarlyBoundTests.AG_FOM = FigureOfMerit(covObj.children.new(STK_OBJECT_TYPE.FIGURE_OF_MERIT, "FigureOfMerit1"))
+        EarlyBoundTests.AG_FOM = FigureOfMerit(covObj.children.new(STKObjectType.FIGURE_OF_MERIT, "FigureOfMerit1"))
         TestBase.logger.WriteLine("-----  NON LINEAR CONTOUR LEVELS ----- END -----")
 
     # endregion
@@ -681,23 +697,21 @@ class EarlyBoundTests(TestBase):
         TestBase.Application.new_scenario(bugNum)
 
         # create facility
-        facobj: "IStkObject" = TestBase.Application.current_scenario.children.new(
-            STK_OBJECT_TYPE.FACILITY, "Fac1X45332"
-        )
-        recobj: "IStkObject" = facobj.children.new(STK_OBJECT_TYPE.RECEIVER, ("Rcv1" + bugNum))
+        facobj: "IStkObject" = TestBase.Application.current_scenario.children.new(STKObjectType.FACILITY, "Fac1X45332")
+        recobj: "IStkObject" = facobj.children.new(STKObjectType.RECEIVER, ("Rcv1" + bugNum))
 
         # Create cov def
         covdefobj: "IStkObject" = TestBase.Application.current_scenario.children.new(
-            STK_OBJECT_TYPE.COVERAGE_DEFINITION, ("CD1" + bugNum)
+            STKObjectType.COVERAGE_DEFINITION, ("CD1" + bugNum)
         )
         covdef: "CoverageDefinition" = clr.CastAs(covdefobj, CoverageDefinition)
         covdef.point_definition.use_grid_seed = True
         covdef.point_definition.use_object_as_seed = True
-        covdef.point_definition.grid_class = COVERAGE_GRID_CLASS.RECEIVER
+        covdef.point_definition.grid_class = CoverageGridClass.RECEIVER
         covdef.point_definition.seed_instance = (("Facility/Fac1" + bugNum) + "/Receiver/Rcv1") + bugNum
         covchilds: "IStkObjectCollection" = covdefobj.children
 
-        fomobj: "IStkObject" = covchilds.new(STK_OBJECT_TYPE.FIGURE_OF_MERIT, ("FM1" + bugNum))
+        fomobj: "IStkObject" = covchilds.new(STKObjectType.FIGURE_OF_MERIT, ("FM1" + bugNum))
         fom: "FigureOfMerit" = clr.CastAs(fomobj, FigureOfMerit)
         fomcs: "FigureOfMeritDefinitionAccessConstraint" = None
 
@@ -720,7 +734,7 @@ class EarlyBoundTests(TestBase):
             TestBase.logger.WriteLine(("Expected exception: " + msg))
 
         try:
-            fomcs = fom.set_access_constraint_definition(FIGURE_OF_MERIT_CONSTRAINT_NAME.LINE_OF_SIGHT)
+            fomcs = fom.set_access_constraint_definition(FigureOfMeritConstraintName.LINE_OF_SIGHT)
             Assert.fail("Line of Sight access constraint not applicable for scenario setup")
 
         except Exception as e:
@@ -729,7 +743,7 @@ class EarlyBoundTests(TestBase):
             TestBase.logger.WriteLine(("Expected exception: " + msg))
 
         try:
-            fomcs = fom.set_access_constraint_definition(FIGURE_OF_MERIT_CONSTRAINT_NAME.ACCESS_CONSTRAINT_PLUGIN)
+            fomcs = fom.set_access_constraint_definition(FigureOfMeritConstraintName.ACCESS_CONSTRAINT_PLUGIN)
             Assert.fail("Access Constraint Plugin access constraint not applicable for scenario setup")
 
         except Exception as e:
@@ -741,95 +755,93 @@ class EarlyBoundTests(TestBase):
         # Altitude
         # ===================================================================
         # Set to other than the access constraint we are going to test.
-        fomcs = fom.set_access_constraint_definition(FIGURE_OF_MERIT_CONSTRAINT_NAME.FREQUENCY)
-        fomcs = fom.set_access_constraint_definition(FIGURE_OF_MERIT_CONSTRAINT_NAME.ALTITUDE)
-        Assert.assertEqual(FIGURE_OF_MERIT_CONSTRAINT_NAME.ALTITUDE, fomcs.constraint_name)
+        fomcs = fom.set_access_constraint_definition(FigureOfMeritConstraintName.FREQUENCY)
+        fomcs = fom.set_access_constraint_definition(FigureOfMeritConstraintName.ALTITUDE)
+        Assert.assertEqual(FigureOfMeritConstraintName.ALTITUDE, fomcs.constraint_name)
         Assert.assertEqual("Altitude", fomcs.constraint)
         # Set to other than the access constraint we are going to test.
-        fomcs = fom.set_access_constraint_definition(FIGURE_OF_MERIT_CONSTRAINT_NAME.FREQUENCY)
+        fomcs = fom.set_access_constraint_definition(FigureOfMeritConstraintName.FREQUENCY)
         fomcs = fom.set_access_constraint_definition_name("Altitude")
         Assert.assertEqual("Altitude", fomcs.constraint)
-        Assert.assertEqual(FIGURE_OF_MERIT_CONSTRAINT_NAME.ALTITUDE, fomcs.constraint_name)
+        Assert.assertEqual(FigureOfMeritConstraintName.ALTITUDE, fomcs.constraint_name)
 
         # ===================================================================
         # BER+I
         # ===================================================================
         # Set to other than the access constraint we are going to test.
-        fomcs = fom.set_access_constraint_definition(FIGURE_OF_MERIT_CONSTRAINT_NAME.FREQUENCY)
-        fomcs = fom.set_access_constraint_definition(FIGURE_OF_MERIT_CONSTRAINT_NAME.BER_PLUS_I)
-        Assert.assertEqual(FIGURE_OF_MERIT_CONSTRAINT_NAME.BER_PLUS_I, fomcs.constraint_name)
+        fomcs = fom.set_access_constraint_definition(FigureOfMeritConstraintName.FREQUENCY)
+        fomcs = fom.set_access_constraint_definition(FigureOfMeritConstraintName.BER_PLUS_I)
+        Assert.assertEqual(FigureOfMeritConstraintName.BER_PLUS_I, fomcs.constraint_name)
         Assert.assertEqual("BER+I", fomcs.constraint)
         # Set to other than the access constraint we are going to test.
-        fomcs = fom.set_access_constraint_definition(FIGURE_OF_MERIT_CONSTRAINT_NAME.FREQUENCY)
+        fomcs = fom.set_access_constraint_definition(FigureOfMeritConstraintName.FREQUENCY)
         fomcs = fom.set_access_constraint_definition_name("BER+I")
         Assert.assertEqual("BER+I", fomcs.constraint)
-        Assert.assertEqual(FIGURE_OF_MERIT_CONSTRAINT_NAME.BER_PLUS_I, fomcs.constraint_name)
+        Assert.assertEqual(FigureOfMeritConstraintName.BER_PLUS_I, fomcs.constraint_name)
 
         # ===================================================================
         # C/No
         # ===================================================================
         # Set to other than the access constraint we are going to test.
-        fomcs = fom.set_access_constraint_definition(FIGURE_OF_MERIT_CONSTRAINT_NAME.FREQUENCY)
-        fomcs = fom.set_access_constraint_definition(FIGURE_OF_MERIT_CONSTRAINT_NAME.C_OVER_N0)
-        Assert.assertEqual(FIGURE_OF_MERIT_CONSTRAINT_NAME.C_OVER_N0, fomcs.constraint_name)
+        fomcs = fom.set_access_constraint_definition(FigureOfMeritConstraintName.FREQUENCY)
+        fomcs = fom.set_access_constraint_definition(FigureOfMeritConstraintName.C_OVER_N0)
+        Assert.assertEqual(FigureOfMeritConstraintName.C_OVER_N0, fomcs.constraint_name)
         Assert.assertEqual("C/No", fomcs.constraint)
         # Set to other than the access constraint we are going to test.
-        fomcs = fom.set_access_constraint_definition(FIGURE_OF_MERIT_CONSTRAINT_NAME.FREQUENCY)
+        fomcs = fom.set_access_constraint_definition(FigureOfMeritConstraintName.FREQUENCY)
         fomcs = fom.set_access_constraint_definition_name("C/No")
         Assert.assertEqual("C/No", fomcs.constraint)
-        Assert.assertEqual(FIGURE_OF_MERIT_CONSTRAINT_NAME.C_OVER_N0, fomcs.constraint_name)
+        Assert.assertEqual(FigureOfMeritConstraintName.C_OVER_N0, fomcs.constraint_name)
 
         # ===================================================================
         # J/S
         # ===================================================================
         # Set to other than the access constraint we are going to test.
-        fomcs = fom.set_access_constraint_definition(FIGURE_OF_MERIT_CONSTRAINT_NAME.FREQUENCY)
-        fomcs = fom.set_access_constraint_definition(FIGURE_OF_MERIT_CONSTRAINT_NAME.J_OVER_S)
-        Assert.assertEqual(FIGURE_OF_MERIT_CONSTRAINT_NAME.J_OVER_S, fomcs.constraint_name)
+        fomcs = fom.set_access_constraint_definition(FigureOfMeritConstraintName.FREQUENCY)
+        fomcs = fom.set_access_constraint_definition(FigureOfMeritConstraintName.J_OVER_S)
+        Assert.assertEqual(FigureOfMeritConstraintName.J_OVER_S, fomcs.constraint_name)
         Assert.assertEqual("J/S", fomcs.constraint)
         # Set to other than the access constraint we are going to test.
-        fomcs = fom.set_access_constraint_definition(FIGURE_OF_MERIT_CONSTRAINT_NAME.FREQUENCY)
+        fomcs = fom.set_access_constraint_definition(FigureOfMeritConstraintName.FREQUENCY)
         fomcs = fom.set_access_constraint_definition_name("J/S")
         Assert.assertEqual("J/S", fomcs.constraint)
-        Assert.assertEqual(FIGURE_OF_MERIT_CONSTRAINT_NAME.J_OVER_S, fomcs.constraint_name)
+        Assert.assertEqual(FigureOfMeritConstraintName.J_OVER_S, fomcs.constraint_name)
 
         # ===================================================================
         # SrchTrkSinglePulseJOverS
         # ===================================================================
         # Set to other than the access constraint we are going to test.
-        fomcs = fom.set_access_constraint_definition(FIGURE_OF_MERIT_CONSTRAINT_NAME.FREQUENCY)
-        fomcs = fom.set_access_constraint_definition(FIGURE_OF_MERIT_CONSTRAINT_NAME.SEARCH_TRACK_SINGLE_PULSE_J_OVER_S)
-        Assert.assertEqual(FIGURE_OF_MERIT_CONSTRAINT_NAME.SEARCH_TRACK_SINGLE_PULSE_J_OVER_S, fomcs.constraint_name)
+        fomcs = fom.set_access_constraint_definition(FigureOfMeritConstraintName.FREQUENCY)
+        fomcs = fom.set_access_constraint_definition(FigureOfMeritConstraintName.SEARCH_TRACK_SINGLE_PULSE_J_OVER_S)
+        Assert.assertEqual(FigureOfMeritConstraintName.SEARCH_TRACK_SINGLE_PULSE_J_OVER_S, fomcs.constraint_name)
         Assert.assertEqual("SrchTrkSinglePulseJOverS", fomcs.constraint)
         # Set to other than the access constraint we are going to test.
-        fomcs = fom.set_access_constraint_definition(FIGURE_OF_MERIT_CONSTRAINT_NAME.FREQUENCY)
+        fomcs = fom.set_access_constraint_definition(FigureOfMeritConstraintName.FREQUENCY)
         fomcs = fom.set_access_constraint_definition_name("SrchTrkSinglePulseJOverS")
         Assert.assertEqual("SrchTrkSinglePulseJOverS", fomcs.constraint)
-        Assert.assertEqual(FIGURE_OF_MERIT_CONSTRAINT_NAME.SEARCH_TRACK_SINGLE_PULSE_J_OVER_S, fomcs.constraint_name)
+        Assert.assertEqual(FigureOfMeritConstraintName.SEARCH_TRACK_SINGLE_PULSE_J_OVER_S, fomcs.constraint_name)
 
         # ===================================================================
         # CrdnCondition
         # ===================================================================
         # Set to other than the access constraint we are going to test.
-        fomcs = fom.set_access_constraint_definition(FIGURE_OF_MERIT_CONSTRAINT_NAME.FREQUENCY)
-        fomcs = fom.set_access_constraint_definition(FIGURE_OF_MERIT_CONSTRAINT_NAME.CONDITION)
-        Assert.assertEqual(FIGURE_OF_MERIT_CONSTRAINT_NAME.CONDITION, fomcs.constraint_name)
+        fomcs = fom.set_access_constraint_definition(FigureOfMeritConstraintName.FREQUENCY)
+        fomcs = fom.set_access_constraint_definition(FigureOfMeritConstraintName.CONDITION)
+        Assert.assertEqual(FigureOfMeritConstraintName.CONDITION, fomcs.constraint_name)
         Assert.assertEqual("CrdnCondition", fomcs.constraint)
         # Set to other than the access constraint we are going to test.
-        fomcs = fom.set_access_constraint_definition(FIGURE_OF_MERIT_CONSTRAINT_NAME.FREQUENCY)
+        fomcs = fom.set_access_constraint_definition(FigureOfMeritConstraintName.FREQUENCY)
         fomcs = fom.set_access_constraint_definition_name("CrdnCondition")
         Assert.assertEqual("CrdnCondition", fomcs.constraint)
-        Assert.assertEqual(FIGURE_OF_MERIT_CONSTRAINT_NAME.CONDITION, fomcs.constraint_name)
+        Assert.assertEqual(FigureOfMeritConstraintName.CONDITION, fomcs.constraint_name)
 
         TestBase.Application.close_scenario()
         TestBase.LoadTestScenario(Path.Combine("FigureOfMeritTests", "FigureOfMeritTests.sc"))
         EarlyBoundTests.AG_COV = CoverageDefinition(
-            TestBase.Application.current_scenario.children.new(
-                STK_OBJECT_TYPE.COVERAGE_DEFINITION, "CoverageDefinition1"
-            )
+            TestBase.Application.current_scenario.children.new(STKObjectType.COVERAGE_DEFINITION, "CoverageDefinition1")
         )
         covObj: "IStkObject" = clr.CastAs(EarlyBoundTests.AG_COV, IStkObject)
-        EarlyBoundTests.AG_FOM = FigureOfMerit(covObj.children.new(STK_OBJECT_TYPE.FIGURE_OF_MERIT, "FigureOfMerit1"))
+        EarlyBoundTests.AG_FOM = FigureOfMerit(covObj.children.new(STKObjectType.FIGURE_OF_MERIT, "FigureOfMerit1"))
         TestBase.logger.WriteLine("-----  ACCESS CONSTRAINT DEFINITION ----- END -----")
 
     # endregion
@@ -845,14 +857,14 @@ class EarlyBoundTests(TestBase):
 
             coverageDefinitionObj: "IStkObject" = clr.CastAs(
                 TestBase.Application.current_scenario.children.new(
-                    STK_OBJECT_TYPE.COVERAGE_DEFINITION, "CoverageDefinitionPreDataTest"
+                    STKObjectType.COVERAGE_DEFINITION, "CoverageDefinitionPreDataTest"
                 ),
                 IStkObject,
             )
             coverageDefinition: "CoverageDefinition" = clr.CastAs(coverageDefinitionObj, CoverageDefinition)
             coverageDefinition.compute_accesses()
             figureOfMerit: "FigureOfMerit" = clr.CastAs(
-                coverageDefinitionObj.children.new(STK_OBJECT_TYPE.FIGURE_OF_MERIT, "FigureOfMeritPreDataTest"),
+                coverageDefinitionObj.children.new(STKObjectType.FIGURE_OF_MERIT, "FigureOfMeritPreDataTest"),
                 FigureOfMerit,
             )
 
@@ -869,19 +881,19 @@ class EarlyBoundTests(TestBase):
             Assert.assertEqual("Data Unavailable", str(result.message.messages[0]))
 
             satelliteObj: "IStkObject" = clr.CastAs(
-                TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "SatellitePreDataTest"),
+                TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "SatellitePreDataTest"),
                 IStkObject,
             )
             satellite: "Satellite" = clr.CastAs(satelliteObj, Satellite)
-            satellite.set_propagator_type(PROPAGATOR_TYPE.TWO_BODY)
+            satellite.set_propagator_type(PropagatorType.TWO_BODY)
             satelliteProp: "PropagatorTwoBody" = clr.CastAs(satellite.propagator, PropagatorTwoBody)
             satelliteProp.propagate()
             attitudeCoverageObj: "IStkObject" = clr.CastAs(
-                satelliteObj.children.new(STK_OBJECT_TYPE.ATTITUDE_COVERAGE, "AttitudeCoveragePreDataTest"), IStkObject
+                satelliteObj.children.new(STKObjectType.ATTITUDE_COVERAGE, "AttitudeCoveragePreDataTest"), IStkObject
             )
             attitudeFigureOfMeritObj: "IStkObject" = clr.CastAs(
                 attitudeCoverageObj.children.new(
-                    STK_OBJECT_TYPE.ATTITUDE_FIGURE_OF_MERIT, "AttitudeFigureOfMeritPreDataTest"
+                    STKObjectType.ATTITUDE_FIGURE_OF_MERIT, "AttitudeFigureOfMeritPreDataTest"
                 ),
                 IStkObject,
             )
@@ -903,9 +915,9 @@ class EarlyBoundTests(TestBase):
 
         finally:
             TestBase.Application.current_scenario.children.unload(
-                STK_OBJECT_TYPE.COVERAGE_DEFINITION, "CoverageDefinitionPreDataTest"
+                STKObjectType.COVERAGE_DEFINITION, "CoverageDefinitionPreDataTest"
             )
-            TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "SatellitePreDataTest")
+            TestBase.Application.current_scenario.children.unload(STKObjectType.SATELLITE, "SatellitePreDataTest")
             TestBase.Application.units_preferences.set_current_unit("DateFormat", holdDateFormat)
 
     # endregion

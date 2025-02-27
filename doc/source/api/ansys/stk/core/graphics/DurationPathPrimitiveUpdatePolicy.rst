@@ -21,9 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.DurationPathPrimitiveUpdatePolicy.duration`
-              - Gets or sets the maximum duration that a point will lie on the line.
+              - Get or set the maximum duration that a point will lie on the line.
             * - :py:attr:`~ansys.stk.core.graphics.DurationPathPrimitiveUpdatePolicy.remove_location`
-              - Gets or sets where the positions on the path are removed from.
+              - Get or set where the positions on the path are removed from.
 
 
 
@@ -42,12 +42,12 @@ Property detail
     :canonical: ansys.stk.core.graphics.DurationPathPrimitiveUpdatePolicy.duration
     :type: float
 
-    Gets or sets the maximum duration that a point will lie on the line.
+    Get or set the maximum duration that a point will lie on the line.
 
 .. py:property:: remove_location
     :canonical: ansys.stk.core.graphics.DurationPathPrimitiveUpdatePolicy.remove_location
-    :type: PATH_PRIMITIVE_REMOVE_LOCATION
+    :type: PathPrimitiveRemoveLocation
 
-    Gets or sets where the positions on the path are removed from.
+    Get or set where the positions on the path are removed from.
 
 

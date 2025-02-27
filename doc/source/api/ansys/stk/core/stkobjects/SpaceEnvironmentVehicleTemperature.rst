@@ -28,13 +28,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentVehicleTemperature.earth_albedo`
-              - Gets or sets the Earth's albedo. Dimensionless.
+              - Get or set the Earth's albedo. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentVehicleTemperature.material_emissivity`
-              - Gets or sets the material emissivity. Dimensionless.
+              - Get or set the material emissivity. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentVehicleTemperature.material_absorptivity`
-              - Gets or sets the material absorptivity. Dimensionless.
+              - Get or set the material absorptivity. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentVehicleTemperature.dissipation`
-              - Gets or sets the internal dissipation. Uses Power Dimension.
+              - Get or set the internal dissipation. Uses Power Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentVehicleTemperature.cross_sectional_area`
               - Area used in thermal model. For plate, equals its surface area; for spehere, equals pi*radius^2. Uses SmallArea Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentVehicleTemperature.shape_model`
@@ -59,25 +59,25 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentVehicleTemperature.earth_albedo
     :type: float
 
-    Gets or sets the Earth's albedo. Dimensionless.
+    Get or set the Earth's albedo. Dimensionless.
 
 .. py:property:: material_emissivity
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentVehicleTemperature.material_emissivity
     :type: float
 
-    Gets or sets the material emissivity. Dimensionless.
+    Get or set the material emissivity. Dimensionless.
 
 .. py:property:: material_absorptivity
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentVehicleTemperature.material_absorptivity
     :type: float
 
-    Gets or sets the material absorptivity. Dimensionless.
+    Get or set the material absorptivity. Dimensionless.
 
 .. py:property:: dissipation
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentVehicleTemperature.dissipation
     :type: float
 
-    Gets or sets the internal dissipation. Uses Power Dimension.
+    Get or set the internal dissipation. Uses Power Dimension.
 
 .. py:property:: cross_sectional_area
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentVehicleTemperature.cross_sectional_area
@@ -87,7 +87,7 @@ Property detail
 
 .. py:property:: shape_model
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentVehicleTemperature.shape_model
-    :type: VEHICLE_SPACE_ENVIRONMENT_SHAPE_MODEL
+    :type: VehicleSpaceEnvironmentShapeModel
 
     Thermal shape model.
 

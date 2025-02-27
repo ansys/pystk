@@ -25,7 +25,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolVectorDisplacement.destination`
               - Specify the vector's destination point.
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolVectorDisplacement.apparent`
-              - Controls whether to take a light speed delay into account.
+              - Control whether to take a light speed delay into account.
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolVectorDisplacement.ignore_aberration`
               - Set to true if you do not want to calculate the aberration correction. This property is read-only if Apparent is set to false.
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolVectorDisplacement.signal_sense`
@@ -62,7 +62,7 @@ Property detail
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorDisplacement.apparent
     :type: bool
 
-    Controls whether to take a light speed delay into account.
+    Control whether to take a light speed delay into account.
 
 .. py:property:: ignore_aberration
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorDisplacement.ignore_aberration
@@ -72,7 +72,7 @@ Property detail
 
 .. py:property:: signal_sense
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorDisplacement.signal_sense
-    :type: SIGNAL_DIRECTION_TYPE
+    :type: SignalDirectionType
 
     Specify a sense of signal transmission. This property is read-only if Apparent is set to false.
 

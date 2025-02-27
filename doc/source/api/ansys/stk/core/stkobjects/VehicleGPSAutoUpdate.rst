@@ -19,7 +19,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGPSAutoUpdate.selected_source`
-              - Gets or sets the source type for element updates.
+              - Get or set the source type for element updates.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGPSAutoUpdate.properties`
               - Get the Automatic Update selection and method.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGPSAutoUpdate.file_source`
@@ -42,9 +42,9 @@ Property detail
 
 .. py:property:: selected_source
     :canonical: ansys.stk.core.stkobjects.VehicleGPSAutoUpdate.selected_source
-    :type: VEHICLE_GPS_AUTOMATIC_UPDATE_SOURCE_TYPE
+    :type: VehicleGPSAutomaticUpdateSourceType
 
-    Gets or sets the source type for element updates.
+    Get or set the source type for element updates.
 
 .. py:property:: properties
     :canonical: ansys.stk.core.stkobjects.VehicleGPSAutoUpdate.properties

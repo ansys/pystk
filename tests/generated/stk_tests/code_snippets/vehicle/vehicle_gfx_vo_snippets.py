@@ -1,3 +1,25 @@
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
 from test_util import *
 from code_snippets.code_snippets_test_base import *
 from ansys.stk.core.utilities.colors import *
@@ -39,16 +61,16 @@ class VehicleGfxVOSnippets(CodeSnippetsTestBase):
     # region SetVehicleGfxToCustomIntervals
     def test_SetVehicleGfxToCustomIntervals(self):
         gv: "GroundVehicle" = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.GROUND_VEHICLE, "gv1"),
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STKObjectType.GROUND_VEHICLE, "gv1"),
             GroundVehicle,
         )
         self.SetVehicleGfxToCustomIntervals(gv.graphics)
         (IStkObject(gv)).unload()
 
     def SetVehicleGfxToCustomIntervals(self, graphics: "IGreatArcGraphics"):
-        if graphics.is_attributes_type_supported(VEHICLE_GRAPHICS_2D_ATTRIBUTE_TYPE.CUSTOM):
+        if graphics.is_attributes_type_supported(VehicleGraphics2DAttributeType.CUSTOM):
             # Set graphics to custom
-            graphics.set_attributes_type(VEHICLE_GRAPHICS_2D_ATTRIBUTE_TYPE.CUSTOM)
+            graphics.set_attributes_type(VehicleGraphics2DAttributeType.CUSTOM)
 
             # Get VehicleGraphics2DAttributesCustom interface
             customAttributes: "VehicleGraphics2DAttributesCustom" = clr.CastAs(
@@ -60,10 +82,10 @@ class VehicleGfxVOSnippets(CodeSnippetsTestBase):
     # region ConfigureVehicleGfxCustomIntervals
     def test_ConfigureVehicleGfxCustomIntervals(self):
         gv: "GroundVehicle" = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.GROUND_VEHICLE, "gv1"),
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STKObjectType.GROUND_VEHICLE, "gv1"),
             GroundVehicle,
         )
-        gv.graphics.set_attributes_type(VEHICLE_GRAPHICS_2D_ATTRIBUTE_TYPE.CUSTOM)
+        gv.graphics.set_attributes_type(VehicleGraphics2DAttributeType.CUSTOM)
         customAttributes: "VehicleGraphics2DAttributesCustom" = clr.CastAs(
             gv.graphics.attributes, VehicleGraphics2DAttributesCustom
         )
@@ -85,16 +107,16 @@ class VehicleGfxVOSnippets(CodeSnippetsTestBase):
     # region SetVehicleGfxToBasic
     def test_SetVehicleGfxToBasic(self):
         gv: "GroundVehicle" = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.GROUND_VEHICLE, "gv1"),
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STKObjectType.GROUND_VEHICLE, "gv1"),
             GroundVehicle,
         )
         self.SetVehicleGfxToBasic(gv.graphics)
         (IStkObject(gv)).unload()
 
     def SetVehicleGfxToBasic(self, graphics: "IGreatArcGraphics"):
-        if graphics.is_attributes_type_supported(VEHICLE_GRAPHICS_2D_ATTRIBUTE_TYPE.BASIC):
+        if graphics.is_attributes_type_supported(VehicleGraphics2DAttributeType.BASIC):
             # Set graphics to basic
-            graphics.set_attributes_type(VEHICLE_GRAPHICS_2D_ATTRIBUTE_TYPE.BASIC)
+            graphics.set_attributes_type(VehicleGraphics2DAttributeType.BASIC)
 
             # Get IVehicleGraphics2DAttributesBasic interface
             basicAttributes: "IVehicleGraphics2DAttributesBasic" = clr.CastAs(
@@ -106,10 +128,10 @@ class VehicleGfxVOSnippets(CodeSnippetsTestBase):
     # region ConfigureVehicleGfxBasic
     def test_ConfigureVehicleGfxBasic(self):
         gv: "GroundVehicle" = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.GROUND_VEHICLE, "gv1"),
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STKObjectType.GROUND_VEHICLE, "gv1"),
             GroundVehicle,
         )
-        gv.graphics.set_attributes_type(VEHICLE_GRAPHICS_2D_ATTRIBUTE_TYPE.BASIC)
+        gv.graphics.set_attributes_type(VehicleGraphics2DAttributeType.BASIC)
         basicAttributes: "IVehicleGraphics2DAttributesBasic" = clr.CastAs(
             gv.graphics.attributes, IVehicleGraphics2DAttributesBasic
         )
@@ -120,8 +142,8 @@ class VehicleGfxVOSnippets(CodeSnippetsTestBase):
         # Change display
         basicAttributes.show_graphics = True
         basicAttributes.color = Colors.Red
-        basicAttributes.line.style = LINE_STYLE.DOTTED
-        basicAttributes.line.width = LINE_WIDTH.WIDTH3
+        basicAttributes.line.style = LineStyle.DOTTED
+        basicAttributes.line.width = LineWidth.WIDTH3
         basicAttributes.marker_style = "Square"
 
     # endregion
@@ -129,20 +151,20 @@ class VehicleGfxVOSnippets(CodeSnippetsTestBase):
     # region SetVehicleGfxToAccessIntervals
     def test_SetVehicleGfxToAccessIntervals(self):
         gv: "GroundVehicle" = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.GROUND_VEHICLE, "gv1"),
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STKObjectType.GROUND_VEHICLE, "gv1"),
             GroundVehicle,
         )
         sat: "Satellite" = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "sat1"), Satellite
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STKObjectType.SATELLITE, "sat1"), Satellite
         )
         self.SetVehicleGfxToAccessIntervals(gv.graphics)
         (IStkObject(sat)).unload()
         (IStkObject(gv)).unload()
 
     def SetVehicleGfxToAccessIntervals(self, graphics: "IGreatArcGraphics"):
-        if graphics.is_attributes_type_supported(VEHICLE_GRAPHICS_2D_ATTRIBUTE_TYPE.ACCESS):
+        if graphics.is_attributes_type_supported(VehicleGraphics2DAttributeType.ACCESS):
             # Set graphics to access intervals
-            graphics.set_attributes_type(VEHICLE_GRAPHICS_2D_ATTRIBUTE_TYPE.ACCESS)
+            graphics.set_attributes_type(VehicleGraphics2DAttributeType.ACCESS)
 
             # Get VehicleGraphics2DAttributesAccess interface
             accessAttributes: "VehicleGraphics2DAttributesAccess" = clr.CastAs(
@@ -154,13 +176,13 @@ class VehicleGfxVOSnippets(CodeSnippetsTestBase):
     # region ConfigureVehicleGfxAccessIntervals
     def test_ConfigureVehicleGfxAccessIntervals(self):
         gv: "GroundVehicle" = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.GROUND_VEHICLE, "gv1"),
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STKObjectType.GROUND_VEHICLE, "gv1"),
             GroundVehicle,
         )
         sat: "Satellite" = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "sat1"), Satellite
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STKObjectType.SATELLITE, "sat1"), Satellite
         )
-        gv.graphics.set_attributes_type(VEHICLE_GRAPHICS_2D_ATTRIBUTE_TYPE.ACCESS)
+        gv.graphics.set_attributes_type(VehicleGraphics2DAttributeType.ACCESS)
         accessAttributes: "VehicleGraphics2DAttributesAccess" = clr.CastAs(
             gv.graphics.attributes, VehicleGraphics2DAttributesAccess
         )
@@ -181,19 +203,19 @@ class VehicleGfxVOSnippets(CodeSnippetsTestBase):
     # region ConfigureVehicleGfxVOElevationContours
     def test_ConfigureVehicleGfxVOElevationContours(self):
         sat: "Satellite" = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "sat1"), Satellite
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STKObjectType.SATELLITE, "sat1"), Satellite
         )
 
         self.ConfigureVehicleGfxVOElevationContours(sat.graphics.elevation_contours, sat.graphics_3d.elevation_contours)
 
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "sat1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STKObjectType.SATELLITE, "sat1")
 
     def ConfigureVehicleGfxVOElevationContours(
         self, gfxContours: "VehicleGraphics2DElevationContours", voContours: "VehicleGraphics3DElevationContours"
     ):
         gfxContours.show_graphics = True
         gfxContours.show_filled_contours = True
-        gfxContours.fill_style = FILL_STYLE.HORIZONTAL_STRIPE
+        gfxContours.fill_style = FillStyle.HORIZONTAL_STRIPE
         gfxContours.number_of_decimal_digits = 5
 
         # Add contour elevation level
@@ -202,8 +224,8 @@ class VehicleGfxVOSnippets(CodeSnippetsTestBase):
         # Configure contour elevation element
         elevation.color = Colors.Red
         elevation.show_distance_label = True
-        elevation.line_style = LINE_STYLE.DOTTED
-        elevation.line_width = LINE_WIDTH.WIDTH3
+        elevation.line_style = LineStyle.DOTTED
+        elevation.line_width = LineWidth.WIDTH3
         elevation.show_user_text_visible = True
         elevation.user_text = "My new elevation"
 
@@ -217,7 +239,7 @@ class VehicleGfxVOSnippets(CodeSnippetsTestBase):
     # region ConfigureVehicleGfxVOSunLighting
     def test_ConfigureVehicleGfxVOSunLighting(self):
         sat: "Satellite" = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "sat1"), Satellite
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STKObjectType.SATELLITE, "sat1"), Satellite
         )
         self.ConfigureVehicleGfxVOSunLighting(sat.graphics.lighting)
         (IStkObject(sat)).unload()
@@ -227,8 +249,8 @@ class VehicleGfxVOSnippets(CodeSnippetsTestBase):
 
         sunlight.visible = True
         sunlight.color = Colors.Red
-        sunlight.line_style = LINE_STYLE.DOTTED
-        sunlight.line_width = LINE_WIDTH.WIDTH3
+        sunlight.line_style = LineStyle.DOTTED
+        sunlight.line_width = LineWidth.WIDTH3
         sunlight.marker_style = "Circle"
 
     # endregion

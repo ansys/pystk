@@ -44,39 +44,39 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.parent`
-              - Returns the parent object or null if the object has become orphaned. The exception is AgStkObjectRoot object which is a topmost element and does not have a parent.
+              - Return the parent object or null if the object has become orphaned. The exception is AgStkObjectRoot object which is a topmost element and does not have a parent.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.path`
-              - Returns the object path.
+              - Return the object path.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.instance_name`
               - A name of the object.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.class_type`
-              - Returns a class type of the object (i.e. eAircraft, eFacility etc.).
+              - Return a class type of the object (i.e. eAircraft, eFacility etc.).
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.class_name`
-              - Returns a class name of the object (i.e. Aircraft, Facility.).
+              - Return a class name of the object (i.e. Aircraft, Facility.).
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.children`
-              - Returns a collection of direct descendants of the current object.
+              - Return a collection of direct descendants of the current object.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.root`
-              - Returns the Root object or null.
+              - Return the Root object or null.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.data_providers`
-              - Returns the object representing a list of available data providers for the object.
+              - Return the object representing a list of available data providers for the object.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.short_description`
               - The short description of the object.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.long_description`
               - A long description of the object.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.has_children`
-              - Returns true if the object has direct descendants.
+              - Return true if the object has direct descendants.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.object_coverage`
-              - Returns an IAgStkObjectCoverage object.
+              - Return an IAgStkObjectCoverage object.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.access_constraints`
               - Get the constraints imposed on the object.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.object_files`
-              - Returns the list of files that constitute an object.
+              - Return the list of files that constitute an object.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.analysis_workbench_components`
-              - Returns an instance of Vector Geometry Tool provider.
+              - Return an instance of Vector Geometry Tool provider.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.central_body_name`
               - The object's central body.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObject.metadata`
-              - Gets the object's metadata. Metadata is a collection of keys and their associated values.
+              - Get the object's metadata. Metadata is a collection of keys and their associated values.
 
 
 Import detail
@@ -94,13 +94,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.IStkObject.parent
     :type: IStkObject
 
-    Returns the parent object or null if the object has become orphaned. The exception is AgStkObjectRoot object which is a topmost element and does not have a parent.
+    Return the parent object or null if the object has become orphaned. The exception is AgStkObjectRoot object which is a topmost element and does not have a parent.
 
 .. py:property:: path
     :canonical: ansys.stk.core.stkobjects.IStkObject.path
     :type: str
 
-    Returns the object path.
+    Return the object path.
 
 .. py:property:: instance_name
     :canonical: ansys.stk.core.stkobjects.IStkObject.instance_name
@@ -110,33 +110,33 @@ Property detail
 
 .. py:property:: class_type
     :canonical: ansys.stk.core.stkobjects.IStkObject.class_type
-    :type: STK_OBJECT_TYPE
+    :type: STKObjectType
 
-    Returns a class type of the object (i.e. eAircraft, eFacility etc.).
+    Return a class type of the object (i.e. eAircraft, eFacility etc.).
 
 .. py:property:: class_name
     :canonical: ansys.stk.core.stkobjects.IStkObject.class_name
     :type: str
 
-    Returns a class name of the object (i.e. Aircraft, Facility.).
+    Return a class name of the object (i.e. Aircraft, Facility.).
 
 .. py:property:: children
     :canonical: ansys.stk.core.stkobjects.IStkObject.children
     :type: IStkObjectCollection
 
-    Returns a collection of direct descendants of the current object.
+    Return a collection of direct descendants of the current object.
 
 .. py:property:: root
     :canonical: ansys.stk.core.stkobjects.IStkObject.root
     :type: StkObjectRoot
 
-    Returns the Root object or null.
+    Return the Root object or null.
 
 .. py:property:: data_providers
     :canonical: ansys.stk.core.stkobjects.IStkObject.data_providers
     :type: DataProviderCollection
 
-    Returns the object representing a list of available data providers for the object.
+    Return the object representing a list of available data providers for the object.
 
 .. py:property:: short_description
     :canonical: ansys.stk.core.stkobjects.IStkObject.short_description
@@ -154,13 +154,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.IStkObject.has_children
     :type: bool
 
-    Returns true if the object has direct descendants.
+    Return true if the object has direct descendants.
 
 .. py:property:: object_coverage
     :canonical: ansys.stk.core.stkobjects.IStkObject.object_coverage
     :type: ObjectCoverage
 
-    Returns an IAgStkObjectCoverage object.
+    Return an IAgStkObjectCoverage object.
 
 .. py:property:: access_constraints
     :canonical: ansys.stk.core.stkobjects.IStkObject.access_constraints
@@ -172,13 +172,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.IStkObject.object_files
     :type: list
 
-    Returns the list of files that constitute an object.
+    Return the list of files that constitute an object.
 
 .. py:property:: analysis_workbench_components
     :canonical: ansys.stk.core.stkobjects.IStkObject.analysis_workbench_components
     :type: IAnalysisWorkbenchComponentProvider
 
-    Returns an instance of Vector Geometry Tool provider.
+    Return an instance of Vector Geometry Tool provider.
 
 .. py:property:: central_body_name
     :canonical: ansys.stk.core.stkobjects.IStkObject.central_body_name
@@ -190,7 +190,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.IStkObject.metadata
     :type: KeyValueCollection
 
-    Gets the object's metadata. Metadata is a collection of keys and their associated values.
+    Get the object's metadata. Metadata is a collection of keys and their associated values.
 
 
 Method detail

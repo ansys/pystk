@@ -40,9 +40,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkx.IDrawElementRect.color`
               - Color of the rectangle.
             * - :py:attr:`~ansys.stk.core.stkx.IDrawElementRect.line_width`
-              - Specifies the width of the line.
+              - Specify the width of the line.
             * - :py:attr:`~ansys.stk.core.stkx.IDrawElementRect.line_style`
-              - Specifies the style of the line.
+              - Specify the style of the line.
 
 
 Import detail
@@ -90,13 +90,13 @@ Property detail
     :canonical: ansys.stk.core.stkx.IDrawElementRect.line_width
     :type: float
 
-    Specifies the width of the line.
+    Specify the width of the line.
 
 .. py:property:: line_style
     :canonical: ansys.stk.core.stkx.IDrawElementRect.line_style
-    :type: LINE_STYLE
+    :type: LineStyle
 
-    Specifies the style of the line.
+    Specify the style of the line.
 
 
 Method detail

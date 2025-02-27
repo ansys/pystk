@@ -30,11 +30,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultInterval.start_time`
-              - Returns the start time of the interval. Uses DateFormat Dimension.
+              - Return the start time of the interval. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultInterval.stop_time`
-              - Returns the stop time of the interval. Uses DateFormat Dimension.
+              - Return the stop time of the interval. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderResultInterval.data_sets`
-              - Returns a collection of data sets within the interval.
+              - Return a collection of data sets within the interval.
 
 
 
@@ -53,19 +53,19 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.DataProviderResultInterval.start_time
     :type: typing.Any
 
-    Returns the start time of the interval. Uses DateFormat Dimension.
+    Return the start time of the interval. Uses DateFormat Dimension.
 
 .. py:property:: stop_time
     :canonical: ansys.stk.core.stkobjects.DataProviderResultInterval.stop_time
     :type: typing.Any
 
-    Returns the stop time of the interval. Uses DateFormat Dimension.
+    Return the stop time of the interval. Uses DateFormat Dimension.
 
 .. py:property:: data_sets
     :canonical: ansys.stk.core.stkobjects.DataProviderResultInterval.data_sets
     :type: DataProviderResultDataSetCollection
 
-    Returns a collection of data sets within the interval.
+    Return a collection of data sets within the interval.
 
 
 Method detail

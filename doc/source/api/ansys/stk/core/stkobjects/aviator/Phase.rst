@@ -34,9 +34,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.Phase.procedures`
-              - Returns the procedure collection.
+              - Return the procedure collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.Phase.name`
-              - Gets or sets the name of the phase.
+              - Get or set the name of the phase.
 
 
 
@@ -55,13 +55,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.Phase.procedures
     :type: ProcedureCollection
 
-    Returns the procedure collection.
+    Return the procedure collection.
 
 .. py:property:: name
     :canonical: ansys.stk.core.stkobjects.aviator.Phase.name
     :type: str
 
-    Gets or sets the name of the phase.
+    Get or set the name of the phase.
 
 
 Method detail

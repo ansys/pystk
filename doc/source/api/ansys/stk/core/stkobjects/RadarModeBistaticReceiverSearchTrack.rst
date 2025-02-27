@@ -30,9 +30,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarModeBistaticReceiverSearchTrack.waveform`
-              - Gets the interface for configuring the search/track waveform.
+              - Get the interface for configuring the search/track waveform.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarModeBistaticReceiverSearchTrack.doppler_clutter_filters`
-              - Gets the IAgRadarDopplerClutterFilters interface for configuring the doppler clutter filters.
+              - Get the IAgRadarDopplerClutterFilters interface for configuring the doppler clutter filters.
 
 
 
@@ -51,26 +51,26 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.RadarModeBistaticReceiverSearchTrack.waveform
     :type: IRadarWaveformSearchTrack
 
-    Gets the interface for configuring the search/track waveform.
+    Get the interface for configuring the search/track waveform.
 
 .. py:property:: doppler_clutter_filters
     :canonical: ansys.stk.core.stkobjects.RadarModeBistaticReceiverSearchTrack.doppler_clutter_filters
     :type: RadarDopplerClutterFilters
 
-    Gets the IAgRadarDopplerClutterFilters interface for configuring the doppler clutter filters.
+    Get the IAgRadarDopplerClutterFilters interface for configuring the doppler clutter filters.
 
 
 Method detail
 -------------
 
-.. py:method:: set_waveform_type(self, value: RADAR_WAVEFORM_SEARCH_TRACK_TYPE) -> None
+.. py:method:: set_waveform_type(self, value: RadarWaveformSearchTrackType) -> None
     :canonical: ansys.stk.core.stkobjects.RadarModeBistaticReceiverSearchTrack.set_waveform_type
 
     Set the waveform type.
 
     :Parameters:
 
-    **value** : :obj:`~RADAR_WAVEFORM_SEARCH_TRACK_TYPE`
+    **value** : :obj:`~RadarWaveformSearchTrackType`
 
     :Returns:
 

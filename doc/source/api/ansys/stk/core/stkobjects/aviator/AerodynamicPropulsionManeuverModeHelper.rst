@@ -28,25 +28,25 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AerodynamicPropulsionManeuverModeHelper.mode`
-              - Gets or sets the calculation mode for the Aero/Prop maneuver mode helper.
+              - Get or set the calculation mode for the Aero/Prop maneuver mode helper.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AerodynamicPropulsionManeuverModeHelper.flight_mode`
-              - Gets or sets the performance flight mode.
+              - Get or set the performance flight mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AerodynamicPropulsionManeuverModeHelper.use_afterburner`
               - Opt whether to use the afterburner if it is possible.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AerodynamicPropulsionManeuverModeHelper.reference_weight`
-              - Gets or sets the reference weight.
+              - Get or set the reference weight.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AerodynamicPropulsionManeuverModeHelper.reference_altitude`
-              - Gets or sets the reference altitude.
+              - Get or set the reference altitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AerodynamicPropulsionManeuverModeHelper.reference_airspeed`
               - Get the reference airspeed.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AerodynamicPropulsionManeuverModeHelper.reference_airspeed_type`
               - Get the reference airspeed type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AerodynamicPropulsionManeuverModeHelper.reference_load_factor`
-              - Gets or sets the reference load factor.
+              - Get or set the reference load factor.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AerodynamicPropulsionManeuverModeHelper.estimated_ps`
               - Get the estimated specific excess power.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AerodynamicPropulsionManeuverModeHelper.control_authority`
-              - Gets or sets the control authority of how much to factor a turn over push/pull.
+              - Get or set the control authority of how much to factor a turn over push/pull.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AerodynamicPropulsionManeuverModeHelper.status_message`
               - Get the status message in the message window.
 
@@ -65,15 +65,15 @@ Property detail
 
 .. py:property:: mode
     :canonical: ansys.stk.core.stkobjects.aviator.AerodynamicPropulsionManeuverModeHelper.mode
-    :type: ACCELERATION_MANEUVER_AERODYNAMIC_PROPULSION_MODE
+    :type: AccelerationManeuverAerodynamicPropulsionMode
 
-    Gets or sets the calculation mode for the Aero/Prop maneuver mode helper.
+    Get or set the calculation mode for the Aero/Prop maneuver mode helper.
 
 .. py:property:: flight_mode
     :canonical: ansys.stk.core.stkobjects.aviator.AerodynamicPropulsionManeuverModeHelper.flight_mode
-    :type: AERODYNAMIC_PROPULSION_FLIGHT_MODE
+    :type: AerodynamicPropulsionFlightMode
 
-    Gets or sets the performance flight mode.
+    Get or set the performance flight mode.
 
 .. py:property:: use_afterburner
     :canonical: ansys.stk.core.stkobjects.aviator.AerodynamicPropulsionManeuverModeHelper.use_afterburner
@@ -85,13 +85,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.AerodynamicPropulsionManeuverModeHelper.reference_weight
     :type: float
 
-    Gets or sets the reference weight.
+    Get or set the reference weight.
 
 .. py:property:: reference_altitude
     :canonical: ansys.stk.core.stkobjects.aviator.AerodynamicPropulsionManeuverModeHelper.reference_altitude
     :type: float
 
-    Gets or sets the reference altitude.
+    Get or set the reference altitude.
 
 .. py:property:: reference_airspeed
     :canonical: ansys.stk.core.stkobjects.aviator.AerodynamicPropulsionManeuverModeHelper.reference_airspeed
@@ -101,7 +101,7 @@ Property detail
 
 .. py:property:: reference_airspeed_type
     :canonical: ansys.stk.core.stkobjects.aviator.AerodynamicPropulsionManeuverModeHelper.reference_airspeed_type
-    :type: AIRSPEED_TYPE
+    :type: AirspeedType
 
     Get the reference airspeed type.
 
@@ -109,7 +109,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.AerodynamicPropulsionManeuverModeHelper.reference_load_factor
     :type: float
 
-    Gets or sets the reference load factor.
+    Get or set the reference load factor.
 
 .. py:property:: estimated_ps
     :canonical: ansys.stk.core.stkobjects.aviator.AerodynamicPropulsionManeuverModeHelper.estimated_ps
@@ -121,7 +121,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.AerodynamicPropulsionManeuverModeHelper.control_authority
     :type: float
 
-    Gets or sets the control authority of how much to factor a turn over push/pull.
+    Get or set the control authority of how much to factor a turn over push/pull.
 
 .. py:property:: status_message
     :canonical: ansys.stk.core.stkobjects.aviator.AerodynamicPropulsionManeuverModeHelper.status_message
@@ -145,14 +145,14 @@ Method detail
 
 
 
-.. py:method:: set_reference_airspeed(self, airspeed_type: AIRSPEED_TYPE, airspeed: float) -> None
+.. py:method:: set_reference_airspeed(self, airspeed_type: AirspeedType, airspeed: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.AerodynamicPropulsionManeuverModeHelper.set_reference_airspeed
 
     Set the reference airspeed and reference airspeed type.
 
     :Parameters:
 
-    **airspeed_type** : :obj:`~AIRSPEED_TYPE`
+    **airspeed_type** : :obj:`~AirspeedType`
     **airspeed** : :obj:`~float`
 
     :Returns:

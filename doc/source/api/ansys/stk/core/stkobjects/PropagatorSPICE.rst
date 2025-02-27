@@ -38,7 +38,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSPICE.segments`
               - Get the segment list.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSPICE.available_body_names`
-              - Gets a list of available body names.
+              - Get a list of available body names.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorSPICE.ephemeris_interval`
               - Get the propagator's ephemeris interval.
 
@@ -83,7 +83,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.PropagatorSPICE.available_body_names
     :type: list
 
-    Gets a list of available body names.
+    Get a list of available body names.
 
 .. py:property:: ephemeris_interval
     :canonical: ansys.stk.core.stkobjects.PropagatorSPICE.ephemeris_interval

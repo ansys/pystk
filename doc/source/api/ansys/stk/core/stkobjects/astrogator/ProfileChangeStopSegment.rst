@@ -30,9 +30,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileChangeStopSegment.segment_name`
-              - Gets or sets the targeted stop segment.
+              - Get or set the targeted stop segment.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileChangeStopSegment.state`
-              - Gets or sets the new state of the targeted stop segment.
+              - Get or set the new state of the targeted stop segment.
 
 
 
@@ -51,13 +51,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileChangeStopSegment.segment_name
     :type: str
 
-    Gets or sets the targeted stop segment.
+    Get or set the targeted stop segment.
 
 .. py:property:: state
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileChangeStopSegment.state
-    :type: STATE
+    :type: StateType
 
-    Gets or sets the new state of the targeted stop segment.
+    Get or set the new state of the targeted stop segment.
 
 
 Method detail

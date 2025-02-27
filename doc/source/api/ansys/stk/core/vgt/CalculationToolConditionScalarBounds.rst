@@ -73,7 +73,7 @@ Property detail
 
 .. py:property:: operation
     :canonical: ansys.stk.core.vgt.CalculationToolConditionScalarBounds.operation
-    :type: CONDITION_THRESHOLD_TYPE
+    :type: ConditionThresholdType
 
     Get the operation from the condition that determines how the bounds are considered. The operation can be set to define satisfaction when the scalar is above minimum, below maximum, between minimum and maximum or outside minimum and maximum.
 

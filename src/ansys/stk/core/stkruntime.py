@@ -1,6 +1,24 @@
-################################################################################
-#          Copyright 2023-2024, Analytical Graphics, Inc.
-################################################################################
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
 
 """Starts STK Runtime or attaches to an already running STK Runtime, and provides access to the Object Model root."""
 
@@ -8,18 +26,20 @@ __all__ = ["STKRuntime", "STKRuntimeApplication"]
 
 import atexit
 import os
+import pathlib
 import socket
 
 # The subprocess module is needed to start the backend. 
 # Excluding low severity bandit warning as the validity of the inputs is enforced.
-import subprocess # nosec B404
+import subprocess  # nosec B404
 
+from .internal.apiutil import InterfaceProxy, read_registry_key, winreg_stk_binary_dir
+from .internal.grpcutil import GrpcClient
+from .stkobjects import StkObjectModelContext, StkObjectRoot
 from .stkx import STKXApplication
-from .stkobjects import StkObjectRoot, StkObjectModelContext
 from .utilities.exceptions import STKInitializationError
 from .utilities.grpcutilities import GrpcCallBatcher
-from .internal.grpcutil import GrpcClient
-from .internal.apiutil import InterfaceProxy, read_registry_key, winreg_stk_binary_dir
+
 
 class STKRuntimeApplication(STKXApplication):
     """
@@ -52,7 +72,7 @@ class STKRuntimeApplication(STKXApplication):
             root = StkObjectRoot()
             root._private_init(root_unk)
             return root
-        raise STKInitializationError(f"Not connected to the gRPC server.")
+        raise STKInitializationError("Not connected to the gRPC server.")
             
     def new_object_model_context(self) -> StkObjectModelContext:
         """May be used to obtain an Object Model Context from a running STK Engine application."""
@@ -62,9 +82,9 @@ class STKRuntimeApplication(STKXApplication):
             context = StkObjectModelContext()
             context._private_init(context_unk)
             return context
-        raise STKInitializationError(f"Not connected to the gRPC server.")
+        raise STKInitializationError("Not connected to the gRPC server.")
 
-    def SetGrpcOptions(self, options:dict) -> None:
+    def set_grpc_options(self, options:dict) -> None:
         """
         Set advanced-usage options for the gRPC client.
 
@@ -79,7 +99,7 @@ class STKRuntimeApplication(STKXApplication):
             client: GrpcClient = self._intf.client
             client.set_grpc_options(options)
             
-    def NewGrpcCallBatcher(self, max_batch:int=None, disable_batching:bool=False) -> GrpcCallBatcher:
+    def new_grpc_call_batcher(self, max_batch:int=None, disable_batching:bool=False) -> GrpcCallBatcher:
         """
         Construct a GrpcCallBatcher linked to this gRPC client that may be used to improve API performance.
         
@@ -112,6 +132,7 @@ class STKRuntime(object):
     def start_application(grpc_host:str="localhost", \
                          grpc_port:int=40704, \
                          grpc_timeout_sec:int=60, \
+                         grpc_max_message_size:int=0, \
                          user_control:bool=False, \
                          no_graphics:bool=True) -> STKRuntimeApplication:
         """
@@ -120,6 +141,7 @@ class STKRuntime(object):
         grpc_host is the IP address or DNS name of the gRPC server.
         grpc_port is the integral port number that the gRPC server is using (valid values are integers from 0 to 65535).
         grpc_timeout_sec specifies the time allocated to wait for a grpc connection (seconds).
+        grpc_max_message_size is the maximum size in bytes that the gRPC client can receive. Set to zero to use the gRPC default.
         Specify user_control = True to return the application to the user's control 
         (the application remains open) after terminating the Python API connection.
         """
@@ -128,7 +150,7 @@ class STKRuntime(object):
         if grpc_host != "localhost":
             try:
                 socket.inet_pton(socket.AF_INET, grpc_host)
-            except:
+            except OSError:
                 try:
                     socket.inet_pton(socket.AF_INET6, grpc_host)
                 except OSError:
@@ -139,8 +161,9 @@ class STKRuntime(object):
             ld_env = os.getenv('LD_LIBRARY_PATH')
             if ld_env:
                 for path in ld_env.split(':'):
-                    if os.path.exists(os.path.join(path, "stkruntime")):
-                        cmd_line = [os.path.join(path, "stkruntime"), "--grpcHost", grpc_host, "--grpcPort", str(grpc_port)]
+                    stkruntime_path = (pathlib.Path(path) / "stkruntime").resolve()
+                    if stkruntime_path.exists():
+                        cmd_line = [stkruntime_path, "--grpcHost", grpc_host, "--grpcPort", str(grpc_port)]
                         if no_graphics:
                             cmd_line.append("--noGraphics")
                         break
@@ -148,13 +171,13 @@ class STKRuntime(object):
                 raise STKInitializationError("LD_LIBRARY_PATH not defined. Add STK bin directory to LD_LIBRARY_PATH before running.")
         else:
             clsid_stkxapplication = "{062AB565-B121-45B5-A9A9-B412CEFAB6A9}"
-            stkx_dll_path = read_registry_key(f"CLSID\\{clsid_stkxapplication}\\InprocServer32", silent_exception=True)
-            bin_dir, dll_name = (None, None) if stkx_dll_path is None else os.path.split(stkx_dll_path)
-            if bin_dir is None or not os.path.exists(os.path.join(bin_dir, "STKRuntime.exe")):
-                bin_dir = winreg_stk_binary_dir()
-                if bin_dir is None:
-                    raise STKInitializationError(f"Could not find STKRuntime.exe. Verify STK installation.")
-            cmd_line = [os.path.join(bin_dir, "STKRuntime.exe"), "/grpcHost", grpc_host, "/grpcPort", str(grpc_port)]
+            stkx_dll_registry_value = read_registry_key(f"CLSID\\{clsid_stkxapplication}\\InprocServer32", silent_exception=True)
+            stkruntime_path = None if stkx_dll_registry_value is None else pathlib.Path(stkx_dll_registry_value).parent / "STKRuntime.exe"
+            if stkruntime_path is None or not stkruntime_path.exists():
+                stkruntime_path = pathlib.Path(winreg_stk_binary_dir()) / "STKRuntime.exe"
+                if not stkruntime_path.exists():
+                    raise STKInitializationError("Could not find STKRuntime.exe. Verify STK installation.")
+            cmd_line = [str(stkruntime_path.resolve()), "/grpcHost", grpc_host, "/grpcPort", str(grpc_port)]
             if no_graphics:
                 cmd_line.append("/noGraphics")
 
@@ -162,11 +185,11 @@ class STKRuntime(object):
         # Excluding low severity bandit check as the validity of the inputs has been ensured.
         subprocess.Popen(cmd_line) # nosec B603
         host = grpc_host
-        # Ignoring B104 warning as it is a false positive. The hardcoded string "0.0.0.0" is being filtered
+        # Ignoring B104 warning as it is a false positive. The hard-coded string "0.0.0.0" is being filtered
         # to ensure that it is not used.
-        if host=="0.0.0.0": # nosec B104
+        if grpc_host=="0.0.0.0": # nosec B104
             host = "localhost"
-        app = STKRuntime.attach_to_application(host, grpc_port, grpc_timeout_sec)
+        app = STKRuntime.attach_to_application(host, grpc_port, grpc_timeout_sec, grpc_max_message_size)
         app._intf.client.set_shutdown_stkruntime(not user_control)
         return app
 
@@ -174,15 +197,17 @@ class STKRuntime(object):
     @staticmethod
     def attach_to_application(grpc_host:str="localhost", \
                             grpc_port:int=40704, \
-                            grpc_timeout_sec:int=60) -> STKRuntimeApplication:
+                            grpc_timeout_sec:int=60,
+                            grpc_max_message_size:int=0) -> STKRuntimeApplication:
         """
         Attach to STKRuntime.
 
         grpc_host is the IP address or DNS name of the gRPC server.
         grpc_port is the integral port number that the gRPC server is using.
         grpc_timeout_sec specifies the time allocated to wait for a grpc connection (seconds).
+        grpc_max_message_size is the maximum size in bytes that the gRPC client can receive. Set to zero to use the gRPC default.
         """
-        client = GrpcClient.new_client(grpc_host, grpc_port, grpc_timeout_sec)
+        client = GrpcClient.new_client(grpc_host, grpc_port, grpc_timeout_sec, grpc_max_message_size)
         if client is not None:
             app_intf = client.get_stk_application_interface()
             app = STKRuntimeApplication()
@@ -192,6 +217,3 @@ class STKRuntime(object):
         raise STKInitializationError(f"Cannot connect to the gRPC server on {grpc_host}:{grpc_port}.")
         
        
-################################################################################
-#          Copyright 2023-2024, Analytical Graphics, Inc.
-################################################################################

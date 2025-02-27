@@ -32,9 +32,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderElements.count`
-              - Returns number of elements for this data provider.
+              - Return number of elements for this data provider.
             * - :py:attr:`~ansys.stk.core.stkobjects.DataProviderElements._new_enum`
-              - Returns enum of AgDataPrvElement object.
+              - Return enum of AgDataPrvElement object.
 
 
 
@@ -53,13 +53,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.DataProviderElements.count
     :type: int
 
-    Returns number of elements for this data provider.
+    Return number of elements for this data provider.
 
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkobjects.DataProviderElements._new_enum
     :type: EnumeratorProxy
 
-    Returns enum of AgDataPrvElement object.
+    Return enum of AgDataPrvElement object.
 
 
 Method detail

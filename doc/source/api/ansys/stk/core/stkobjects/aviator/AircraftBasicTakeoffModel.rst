@@ -38,19 +38,19 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicTakeoffModel.takeoff_speed_type`
               - Get the takeoff speed type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicTakeoffModel.sea_level_ground_roll`
-              - Gets or sets the distance the aircraft travels along the ground while accelerationg to takeoff at sea level.
+              - Get or set the distance the aircraft travels along the ground while accelerationg to takeoff at sea level.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicTakeoffModel.departure_speed`
               - Get the aircraft's speed upon leaving the ground.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicTakeoffModel.departure_speed_type`
               - Get the departure speed type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicTakeoffModel.use_aerodynamic_propulsion_fuel`
-              - Gets or sets whether to use Aero/Propulsion fuel flow.
+              - Get or set whether to use Aero/Propulsion fuel flow.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicTakeoffModel.scale_fuel_flow_by_non_std_density`
-              - Gets or sets whether to scale fuel flow by non std density.
+              - Get or set whether to scale fuel flow by non std density.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicTakeoffModel.acceleration_fuel_flow`
-              - Gets or sets the aircraft's fuel flow rate while accelerating during takeoff.
+              - Get or set the aircraft's fuel flow rate while accelerating during takeoff.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftBasicTakeoffModel.departure_fuel_flow`
-              - Gets or sets the aircraft's fuel flow rate at departure speed.
+              - Get or set the aircraft's fuel flow rate at departure speed.
 
 
 
@@ -73,7 +73,7 @@ Property detail
 
 .. py:property:: takeoff_speed_type
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicTakeoffModel.takeoff_speed_type
-    :type: AIRSPEED_TYPE
+    :type: AirspeedType
 
     Get the takeoff speed type.
 
@@ -81,7 +81,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicTakeoffModel.sea_level_ground_roll
     :type: float
 
-    Gets or sets the distance the aircraft travels along the ground while accelerationg to takeoff at sea level.
+    Get or set the distance the aircraft travels along the ground while accelerationg to takeoff at sea level.
 
 .. py:property:: departure_speed
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicTakeoffModel.departure_speed
@@ -91,7 +91,7 @@ Property detail
 
 .. py:property:: departure_speed_type
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicTakeoffModel.departure_speed_type
-    :type: AIRSPEED_TYPE
+    :type: AirspeedType
 
     Get the departure speed type.
 
@@ -99,25 +99,25 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicTakeoffModel.use_aerodynamic_propulsion_fuel
     :type: bool
 
-    Gets or sets whether to use Aero/Propulsion fuel flow.
+    Get or set whether to use Aero/Propulsion fuel flow.
 
 .. py:property:: scale_fuel_flow_by_non_std_density
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicTakeoffModel.scale_fuel_flow_by_non_std_density
     :type: bool
 
-    Gets or sets whether to scale fuel flow by non std density.
+    Get or set whether to scale fuel flow by non std density.
 
 .. py:property:: acceleration_fuel_flow
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicTakeoffModel.acceleration_fuel_flow
     :type: float
 
-    Gets or sets the aircraft's fuel flow rate while accelerating during takeoff.
+    Get or set the aircraft's fuel flow rate while accelerating during takeoff.
 
 .. py:property:: departure_fuel_flow
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicTakeoffModel.departure_fuel_flow
     :type: float
 
-    Gets or sets the aircraft's fuel flow rate at departure speed.
+    Get or set the aircraft's fuel flow rate at departure speed.
 
 
 Method detail
@@ -125,14 +125,14 @@ Method detail
 
 
 
-.. py:method:: set_takeoff_speed(self, airspeed_type: AIRSPEED_TYPE, airspeed: float) -> None
+.. py:method:: set_takeoff_speed(self, airspeed_type: AirspeedType, airspeed: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicTakeoffModel.set_takeoff_speed
 
     Set the takeoff speed of the aircraft.
 
     :Parameters:
 
-    **airspeed_type** : :obj:`~AIRSPEED_TYPE`
+    **airspeed_type** : :obj:`~AirspeedType`
     **airspeed** : :obj:`~float`
 
     :Returns:
@@ -143,14 +143,14 @@ Method detail
 
 
 
-.. py:method:: set_departure_speed(self, airspeed_type: AIRSPEED_TYPE, airspeed: float) -> None
+.. py:method:: set_departure_speed(self, airspeed_type: AirspeedType, airspeed: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftBasicTakeoffModel.set_departure_speed
 
     Set the departure speed of the aircraft.
 
     :Parameters:
 
-    **airspeed_type** : :obj:`~AIRSPEED_TYPE`
+    **airspeed_type** : :obj:`~AirspeedType`
     **airspeed** : :obj:`~float`
 
     :Returns:

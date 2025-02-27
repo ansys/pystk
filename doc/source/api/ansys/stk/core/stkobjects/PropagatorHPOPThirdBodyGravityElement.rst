@@ -40,7 +40,7 @@ Property detail
 
 .. py:property:: source
     :canonical: ansys.stk.core.stkobjects.PropagatorHPOPThirdBodyGravityElement.source
-    :type: THIRD_BODY_GRAVITY_SOURCE_TYPE
+    :type: ThirdBodyGravitySourceType
 
     Source of 3rd-body gravity data.
 

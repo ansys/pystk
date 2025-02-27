@@ -54,7 +54,7 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.vgt.ITimeToolTimeInterval.type
-    :type: EVENT_INTERVAL_TYPE
+    :type: EventIntervalType
 
     Return the type of interval.
 

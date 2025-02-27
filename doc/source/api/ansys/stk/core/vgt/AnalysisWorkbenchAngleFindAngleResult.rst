@@ -21,9 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.AnalysisWorkbenchAngleFindAngleResult.is_valid`
-              - Indicates whether the result object is valid.
+              - Indicate whether the result object is valid.
             * - :py:attr:`~ansys.stk.core.vgt.AnalysisWorkbenchAngleFindAngleResult.angle`
-              - The computed angle. The value of the angle is in \"AngleUnit\" dimension.
+              - The computed angle. The value of the angle is in ``AngleUnit`` dimension.
 
 
 
@@ -42,12 +42,12 @@ Property detail
     :canonical: ansys.stk.core.vgt.AnalysisWorkbenchAngleFindAngleResult.is_valid
     :type: bool
 
-    Indicates whether the result object is valid.
+    Indicate whether the result object is valid.
 
 .. py:property:: angle
     :canonical: ansys.stk.core.vgt.AnalysisWorkbenchAngleFindAngleResult.angle
     :type: typing.Any
 
-    The computed angle. The value of the angle is in \"AngleUnit\" dimension.
+    The computed angle. The value of the angle is in ``AngleUnit`` dimension.
 
 

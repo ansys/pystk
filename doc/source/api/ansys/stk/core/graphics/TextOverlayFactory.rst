@@ -85,7 +85,7 @@ Method detail
 
         :obj:`~TextOverlay`
 
-.. py:method:: initialize_with_width_height_units(self, font: GraphicsFont, width: float, width_unit: SCREEN_OVERLAY_UNIT, height: float, height_unit: SCREEN_OVERLAY_UNIT) -> TextOverlay
+.. py:method:: initialize_with_width_height_units(self, font: GraphicsFont, width: float, width_unit: ScreenOverlayUnit, height: float, height_unit: ScreenOverlayUnit) -> TextOverlay
     :canonical: ansys.stk.core.graphics.TextOverlayFactory.initialize_with_width_height_units
 
     Initialize the overlay with the specified position and size.
@@ -94,9 +94,9 @@ Method detail
 
     **font** : :obj:`~GraphicsFont`
     **width** : :obj:`~float`
-    **width_unit** : :obj:`~SCREEN_OVERLAY_UNIT`
+    **width_unit** : :obj:`~ScreenOverlayUnit`
     **height** : :obj:`~float`
-    **height_unit** : :obj:`~SCREEN_OVERLAY_UNIT`
+    **height_unit** : :obj:`~ScreenOverlayUnit`
 
     :Returns:
 

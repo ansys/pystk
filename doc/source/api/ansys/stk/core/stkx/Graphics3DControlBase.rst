@@ -62,21 +62,21 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkx.Graphics3DControlBase.ole_drop_mode`
               - How the control handles drop operations.
             * - :py:attr:`~ansys.stk.core.stkx.Graphics3DControlBase.vendor_id`
-              - This property is deprecated. The identifier of the vendor.
+              - Do not use this property, as it is deprecated. The identifier of the vendor.
             * - :py:attr:`~ansys.stk.core.stkx.Graphics3DControlBase.mouse_mode`
               - Whether this control responds to mouse events.
             * - :py:attr:`~ansys.stk.core.stkx.Graphics3DControlBase.draw_elements`
               - Elements to draw on the control.
             * - :py:attr:`~ansys.stk.core.stkx.Graphics3DControlBase.ready_state`
-              - Returns/sets the background color of the control.
+              - Return/sets the background color of the control.
             * - :py:attr:`~ansys.stk.core.stkx.Graphics3DControlBase.ppt_preload_mode`
               - Special mode for PowerPoint : if true the VO control window is kept around when switching between slides.
             * - :py:attr:`~ansys.stk.core.stkx.Graphics3DControlBase.advanced_pick_mode`
               - If true, sets the advance pick mode.
             * - :py:attr:`~ansys.stk.core.stkx.Graphics3DControlBase.is_object_editing`
-              - Returns true if in 3D object editing mode.
+              - Return true if in 3D object editing mode.
             * - :py:attr:`~ansys.stk.core.stkx.Graphics3DControlBase.in_zoom_mode`
-              - Returns true if in zoom in mode.
+              - Return true if in zoom in mode.
             * - :py:attr:`~ansys.stk.core.stkx.Graphics3DControlBase.show_progress_image`
               - The animated progress image type.
             * - :py:attr:`~ansys.stk.core.stkx.Graphics3DControlBase.progress_image_x_offset`
@@ -90,7 +90,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkx.Graphics3DControlBase.progress_image_y_origin`
               - The Y origin alignment for animated progress image.
             * - :py:attr:`~ansys.stk.core.stkx.Graphics3DControlBase.picture_from_file`
-              - Gets or sets the splash logo graphic file to be displayed in the control.
+              - Get or set the splash logo graphic file to be displayed in the control.
 
 
 
@@ -137,7 +137,7 @@ Property detail
 
 .. py:property:: ole_drop_mode
     :canonical: ansys.stk.core.stkx.Graphics3DControlBase.ole_drop_mode
-    :type: OLE_DROP_MODE
+    :type: OLEDropMode
 
     How the control handles drop operations.
 
@@ -145,11 +145,11 @@ Property detail
     :canonical: ansys.stk.core.stkx.Graphics3DControlBase.vendor_id
     :type: str
 
-    This property is deprecated. The identifier of the vendor.
+    Do not use this property, as it is deprecated. The identifier of the vendor.
 
 .. py:property:: mouse_mode
     :canonical: ansys.stk.core.stkx.Graphics3DControlBase.mouse_mode
-    :type: MOUSE_MODE
+    :type: MouseMode
 
     Whether this control responds to mouse events.
 
@@ -163,7 +163,7 @@ Property detail
     :canonical: ansys.stk.core.stkx.Graphics3DControlBase.ready_state
     :type: int
 
-    Returns/sets the background color of the control.
+    Return/sets the background color of the control.
 
 .. py:property:: ppt_preload_mode
     :canonical: ansys.stk.core.stkx.Graphics3DControlBase.ppt_preload_mode
@@ -181,17 +181,17 @@ Property detail
     :canonical: ansys.stk.core.stkx.Graphics3DControlBase.is_object_editing
     :type: bool
 
-    Returns true if in 3D object editing mode.
+    Return true if in 3D object editing mode.
 
 .. py:property:: in_zoom_mode
     :canonical: ansys.stk.core.stkx.Graphics3DControlBase.in_zoom_mode
     :type: bool
 
-    Returns true if in zoom in mode.
+    Return true if in zoom in mode.
 
 .. py:property:: show_progress_image
     :canonical: ansys.stk.core.stkx.Graphics3DControlBase.show_progress_image
-    :type: SHOW_PROGRESS_IMAGE
+    :type: ShowProgressImage
 
     The animated progress image type.
 
@@ -215,13 +215,13 @@ Property detail
 
 .. py:property:: progress_image_x_origin
     :canonical: ansys.stk.core.stkx.Graphics3DControlBase.progress_image_x_origin
-    :type: PROGRESS_IMAGE_X_ORIGIN
+    :type: ProgressImageXOrigin
 
     The X origin alignment for animated progress image.
 
 .. py:property:: progress_image_y_origin
     :canonical: ansys.stk.core.stkx.Graphics3DControlBase.progress_image_y_origin
-    :type: PROGRESS_IMAGE_Y_ORIGIN
+    :type: ProgressImageYOrigin
 
     The Y origin alignment for animated progress image.
 
@@ -229,7 +229,7 @@ Property detail
     :canonical: ansys.stk.core.stkx.Graphics3DControlBase.picture_from_file
     :type: str
 
-    Gets or sets the splash logo graphic file to be displayed in the control.
+    Get or set the splash logo graphic file to be displayed in the control.
 
 
 Method detail

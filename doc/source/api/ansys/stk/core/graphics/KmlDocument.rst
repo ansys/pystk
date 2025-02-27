@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.KmlDocument.uri`
-              - Gets the uri of the document.
+              - Get the uri of the document.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.graphics.KmlDocument.uri
     :type: str
 
-    Gets the uri of the document.
+    Get the uri of the document.
 
 

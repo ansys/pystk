@@ -1,6 +1,24 @@
-################################################################################
-#          Copyright 2022-2022, Ansys Government Initiatives
-################################################################################
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
 
 """Map and globe widgets for Jupyter Notebooks using Remote Frame Buffer."""
 
@@ -9,23 +27,33 @@
 __all__ = ['GlobeWidget', 'MapWidget', 'GfxAnalysisWidget']
 
 import asyncio
-import numpy as np
+from ctypes import CFUNCTYPE, Structure, addressof, byref, c_int, c_size_t, c_void_p, cast, cdll, pointer
 import os
 import time
 
 from IPython.display import display
 from jupyter_rfb import RemoteFrameBuffer
 from jupyter_rfb._png import array2png
-from ctypes import byref, CFUNCTYPE, cdll, c_size_t, c_int, c_void_p, \
-    addressof, Structure, cast, pointer
+import numpy as np
 
-from ...stkx import Graphics3DControlBase, Graphics2DControlBase, \
-    GraphicsAnalysisControlBase, BUTTON_VALUES, SHIFT_VALUES
+from ...internal.comutil import (
+    CLSCTX_INPROC_SERVER,
+    E_NOINTERFACE,
+    GUID,
+    HRESULT,
+    LPVOID,
+    POINTER,
+    PVOID,
+    REFIID,
+    S_OK,
+    ULONG,
+    IUnknown,
+    OLE32Lib,
+    Succeeded,
+)
 from ...internal.stkxrfb import IRemoteFrameBuffer, IRemoteFrameBufferHost
-from ...internal.comutil import OLE32Lib, \
-    IUnknown, Succeeded, LPVOID, CLSCTX_INPROC_SERVER, \
-    GUID, PVOID, REFIID, POINTER, HRESULT, ULONG, S_OK, E_NOINTERFACE
 from ...stkobjects import StkObjectRoot
+from ...stkx import ButtonValues, Graphics2DControlBase, Graphics3DControlBase, GraphicsAnalysisControlBase, ShiftValues
 from ...utilities.exceptions import STKAttributeError
 
 TIMERPROC = CFUNCTYPE(None, c_size_t)
@@ -60,7 +88,7 @@ class AsyncioTimerManager(object):
             agutillib = cdll.LoadLibrary("AgUtil.dll")
 
         functype = CFUNCTYPE(None, INSTALLTIMER, DELETETIMER, c_void_p)
-        AgUtSetTimerCallbacks = functype(
+        set_timer_callbacks = functype(
                 ("AgUtSetTimerCallbacks", agutillib),
                 (
                     (1, "pInstallTimer"),
@@ -73,7 +101,7 @@ class AsyncioTimerManager(object):
         self._timers = dict()
         self._install_timer_cfunc = INSTALLTIMER(self.__install_timer)
         self._delete_timer_cfunc = DELETETIMER(self.__delete_timer)
-        AgUtSetTimerCallbacks(
+        set_timer_callbacks(
             self._install_timer_cfunc,
             self._delete_timer_cfunc, c_void_p())
 
@@ -105,13 +133,13 @@ class AsyncioTimerManager(object):
 
     def _next_timer_proc(self):
         """Return time in sec until next timer proc."""
-        tempTimers = self._timers.copy()
-        if len(tempTimers) == 0:
+        temp_timers = self._timers.copy()
+        if len(temp_timers) == 0:
             return 0.050
         else:
             proc_times = list()
-            for timerid in tempTimers:
-                proc_times.append(tempTimers[timerid].next_proc)
+            for timerid in temp_timers:
+                proc_times.append(temp_timers[timerid].next_proc)
             delta_s = min(proc_times) - time.perf_counter()
             if delta_s > 0:
                 return delta_s
@@ -126,7 +154,7 @@ class AsyncioTimerManager(object):
             self._fire_timers()
 
 
-asyncioTimerManager = None
+asyncio_timer_manager = None
 
 
 class RemoteFrameBufferHostVTable(Structure):
@@ -143,8 +171,8 @@ class RemoteFrameBufferHost(object):
     
     Assemble a vtable following the layout of that interface
     """
-    _IID_IUnknown = GUID(IUnknown._guid)
-    _IID_IAgRemoteFrameBufferHost = GUID('{D229A605-D3A8-4476-B628-AC549C674B58}')
+    _iid_unknown = GUID(IUnknown._guid)
+    _iid_iagremoteframebufferhost = GUID('{D229A605-D3A8-4476-B628-AC549C674B58}')
 
     def __init__(self, owner):
         """Construct an object of type RemoteFrameBufferHost."""
@@ -174,7 +202,7 @@ class RemoteFrameBufferHost(object):
               cast(self._cfunc_IUnknown3, c_void_p),
               cast(self._cfunc_Refresh, c_void_p)]
         )
-        self.__dict__['_pUnk'] = pointer(self._vtable)
+        self.__dict__['_unknown'] = pointer(self._vtable)
 
     def _add_ref(self, this: PVOID) -> int:
         return 1
@@ -185,16 +213,16 @@ class RemoteFrameBufferHost(object):
     def _query_interface(self,
                         this: PVOID,
                         riid: REFIID,
-                        ppvObject: POINTER(PVOID)) -> int:
+                        object: POINTER(PVOID)) -> int:
         iid = riid.contents
-        if iid == RemoteFrameBufferHost._IID_IUnknown:
-            ppvObject[0] = addressof(self._pUnk)
+        if iid == RemoteFrameBufferHost._iid_unknown:
+            object[0] = addressof(self._unknown)
             return S_OK
-        elif iid == RemoteFrameBufferHost._IID_IAgRemoteFrameBufferHost:
-            ppvObject[0] = addressof(self._pUnk)
+        elif iid == RemoteFrameBufferHost._iid_iagremoteframebufferhost:
+            object[0] = addressof(self._unknown)
             return S_OK
         else:
-            ppvObject[0] = 0
+            object[0] = 0
             return E_NOINTERFACE
 
     def _refresh(self, this: PVOID) -> None:
@@ -205,8 +233,8 @@ class WidgetBase(RemoteFrameBuffer):
     """Base class for Jupyter controls."""
     _shift = 0x0001
     _control = 0x0004
-    _lAlt = 0x0008
-    _rAlt = 0x0080
+    _lalt = 0x0008
+    _ralt = 0x0080
     _mouse1 = 0x0100
     _mouse2 = 0x0200
     _mouse3 = 0x0400
@@ -240,7 +268,7 @@ class WidgetBase(RemoteFrameBuffer):
         self._rfbHostImpl = RemoteFrameBufferHost(self)
 
         self._rfbHostImplUnk = IUnknown()
-        self._rfbHostImplUnk.p = addressof(self._rfbHostImpl._pUnk)
+        self._rfbHostImplUnk.p = addressof(self._rfbHostImpl._unknown)
 
         self._rfbHost = IRemoteFrameBufferHost()
         self._rfbHost._private_init(self._rfbHostImplUnk)
@@ -260,9 +288,9 @@ class WidgetBase(RemoteFrameBuffer):
             ]
         ]
 
-        global asyncioTimerManager
-        if asyncioTimerManager is None:
-            asyncioTimerManager = AsyncioTimerManager()
+        global asyncio_timer_manager
+        if asyncio_timer_manager is None:
+            asyncio_timer_manager = AsyncioTimerManager()
 
         self.root = root
         self.title = title or self.root.current_scenario.instance_name
@@ -284,11 +312,11 @@ class WidgetBase(RemoteFrameBuffer):
     def __create_instance(self, clsid: str) -> LPVOID:
         guid = GUID()
         if Succeeded(OLE32Lib.CLSIDFromString(clsid, guid)):
-            IID_IUnknown = GUID(IUnknown._guid)
+            iid_iunknown = GUID(IUnknown._guid)
             unk = IUnknown()
             if Succeeded(OLE32Lib.CoCreateInstance(byref(guid), None,
                                           CLSCTX_INPROC_SERVER,
-                                          byref(IID_IUnknown), byref(unk.p))):
+                                          byref(iid_iunknown), byref(unk.p))):
                 unk.take_ownership()
                 return unk
         return None
@@ -303,11 +331,11 @@ class WidgetBase(RemoteFrameBuffer):
         modifiers = event['modifiers']
         result = 0
         if "Shift" in modifiers:
-            result = result | SHIFT_VALUES.PRESSED
+            result = result | ShiftValues.PRESSED
         if "Ctrl" in modifiers:
-            result = result | SHIFT_VALUES.CTRL_PRESSED
+            result = result | ShiftValues.CTRL_PRESSED
         if "Alt" in modifiers:
-            result = result | SHIFT_VALUES.ALT_PRESSED
+            result = result | ShiftValues.ALT_PRESSED
         return result
 
     def __get_position(self, event):
@@ -337,13 +365,13 @@ class WidgetBase(RemoteFrameBuffer):
             (x, y) = self.__get_position(event)
             buttons = event["buttons"]
             if len(buttons) > 0 and buttons[0] == 1:
-                self._rfb.notify_mouse_move(x, y, BUTTON_VALUES.LEFT_PRESSED,
+                self._rfb.notify_mouse_move(x, y, ButtonValues.LEFT_PRESSED,
                                           self.__get_modifiers(event))
             elif len(buttons) > 0 and buttons[0] == 2:
-                self._rfb.notify_mouse_move(x, y, BUTTON_VALUES.RIGHT_PRESSED,
+                self._rfb.notify_mouse_move(x, y, ButtonValues.RIGHT_PRESSED,
                                           self.__get_modifiers(event))
             elif len(buttons) > 0 and buttons[0] == 3:
-                self._rfb.notify_mouse_move(x, y, BUTTON_VALUES.MIDDLE_PRESSED,
+                self._rfb.notify_mouse_move(x, y, ButtonValues.MIDDLE_PRESSED,
                                           self.__get_modifiers(event))
             else:
                 self._rfb.notify_mouse_move(x, y, 0, 0)

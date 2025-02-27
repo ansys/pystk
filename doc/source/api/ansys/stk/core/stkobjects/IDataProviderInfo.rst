@@ -28,9 +28,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderInfo.name`
-              - Returns a name of the data provider.
+              - Return a name of the data provider.
             * - :py:attr:`~ansys.stk.core.stkobjects.IDataProviderInfo.type`
-              - Returns a type of the data provider.
+              - Return a type of the data provider.
 
 
 Import detail
@@ -48,13 +48,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.IDataProviderInfo.name
     :type: str
 
-    Returns a name of the data provider.
+    Return a name of the data provider.
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.IDataProviderInfo.type
-    :type: DATA_PROVIDER_TYPE
+    :type: DataProviderType
 
-    Returns a type of the data provider.
+    Return a type of the data provider.
 
 
 Method detail

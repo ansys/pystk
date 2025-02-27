@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcVectorGeometryToolAngle.angle_name`
-              - Gets or sets the angle.
+              - Get or set the angle.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcVectorGeometryToolAngle.angle_name
     :type: str
 
-    Gets or sets the angle.
+    Get or set the angle.
 
 

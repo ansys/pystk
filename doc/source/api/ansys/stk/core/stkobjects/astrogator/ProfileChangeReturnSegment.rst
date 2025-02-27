@@ -30,9 +30,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileChangeReturnSegment.segment_name`
-              - Gets or sets the targeted return segment.
+              - Get or set the targeted return segment.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileChangeReturnSegment.state`
-              - Gets or sets the new state for the targeted return segment.
+              - Get or set the new state for the targeted return segment.
 
 
 
@@ -51,13 +51,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileChangeReturnSegment.segment_name
     :type: str
 
-    Gets or sets the targeted return segment.
+    Get or set the targeted return segment.
 
 .. py:property:: state
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileChangeReturnSegment.state
-    :type: RETURN_CONTROL
+    :type: ReturnControl
 
-    Gets or sets the new state for the targeted return segment.
+    Get or set the new state for the targeted return segment.
 
 
 Method detail

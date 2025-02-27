@@ -44,11 +44,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.TargeterGraphCollection._new_enum`
-              - Allows you to enumerate through the collection.
+              - Allow you to enumerate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.TargeterGraphCollection.count`
-              - Returns the size of the collection.
+              - Return the size of the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.TargeterGraphCollection.provide_runtime_type_info`
-              - Returns the IAgRuntimeTypeInfo interface to access properties at runtime.
+              - Return the IAgRuntimeTypeInfo interface to access properties at runtime.
 
 
 
@@ -67,19 +67,19 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.TargeterGraphCollection._new_enum
     :type: EnumeratorProxy
 
-    Allows you to enumerate through the collection.
+    Allow you to enumerate through the collection.
 
 .. py:property:: count
     :canonical: ansys.stk.core.stkobjects.astrogator.TargeterGraphCollection.count
     :type: int
 
-    Returns the size of the collection.
+    Return the size of the collection.
 
 .. py:property:: provide_runtime_type_info
     :canonical: ansys.stk.core.stkobjects.astrogator.TargeterGraphCollection.provide_runtime_type_info
-    :type: IRuntimeTypeInfo
+    :type: RuntimeTypeInfo
 
-    Returns the IAgRuntimeTypeInfo interface to access properties at runtime.
+    Return the IAgRuntimeTypeInfo interface to access properties at runtime.
 
 
 Method detail

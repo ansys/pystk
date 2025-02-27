@@ -42,9 +42,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CalculationObjectLinkEmbedControlCollection._new_enum`
-              - Allows you to enumerate through the collection.
+              - Allow you to enumerate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CalculationObjectLinkEmbedControlCollection.count`
-              - Returns the size of the collection.
+              - Return the size of the collection.
 
 
 
@@ -63,19 +63,19 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.CalculationObjectLinkEmbedControlCollection._new_enum
     :type: EnumeratorProxy
 
-    Allows you to enumerate through the collection.
+    Allow you to enumerate through the collection.
 
 .. py:property:: count
     :canonical: ansys.stk.core.stkobjects.astrogator.CalculationObjectLinkEmbedControlCollection.count
     :type: int
 
-    Returns the size of the collection.
+    Return the size of the collection.
 
 
 Method detail
 -------------
 
-.. py:method:: add(self, name: str, ref_type: COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE) -> IComponentLinkEmbedControl
+.. py:method:: add(self, name: str, ref_type: ComponentLinkEmbedControlReferenceType) -> IComponentLinkEmbedControl
     :canonical: ansys.stk.core.stkobjects.astrogator.CalculationObjectLinkEmbedControlCollection.add
 
     Add a link/embed calc object to the collection.
@@ -83,7 +83,7 @@ Method detail
     :Parameters:
 
     **name** : :obj:`~str`
-    **ref_type** : :obj:`~COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE`
+    **ref_type** : :obj:`~ComponentLinkEmbedControlReferenceType`
 
     :Returns:
 

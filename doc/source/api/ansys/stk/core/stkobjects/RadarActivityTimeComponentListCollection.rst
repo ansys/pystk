@@ -23,9 +23,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarActivityTimeComponentListCollection.remove_at`
               - Remove the time component element with the specified index.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarActivityTimeComponentListCollection.insert_at`
-              - Insert a new time component element at the supplied index, configured with a component with the supplied identifier.  An example of a valid component identifier would be \"Facility/MFR_Facility/Radar/MFR LightingIntervals.Umbra EventIntervalList\".
+              - Insert a new time component element at the supplied index, configured with a component with the supplied identifier.  An example of a valid component identifier would be ``Facility/MFR_Facility/Radar/MFR LightingIntervals.Umbra EventIntervalList``.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarActivityTimeComponentListCollection.add`
-              - Add a new time component element to the collection, configured with a component with the supplied identifier.  An example of a valid component identifier would be \"Facility/MFR_Facility/Radar/MFR LightingIntervals.Umbra EventIntervalList\".
+              - Add a new time component element to the collection, configured with a component with the supplied identifier.  An example of a valid component identifier would be ``Facility/MFR_Facility/Radar/MFR LightingIntervals.Umbra EventIntervalList``.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarActivityTimeComponentListCollection.clear`
               - Clear all time component elements from the collection.
 
@@ -36,9 +36,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarActivityTimeComponentListCollection.count`
-              - Returns the number of time component elements in the collection.
+              - Return the number of time component elements in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarActivityTimeComponentListCollection._new_enum`
-              - Returns an enumerator for the collection.
+              - Return an enumerator for the collection.
 
 
 
@@ -57,13 +57,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.RadarActivityTimeComponentListCollection.count
     :type: int
 
-    Returns the number of time component elements in the collection.
+    Return the number of time component elements in the collection.
 
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkobjects.RadarActivityTimeComponentListCollection._new_enum
     :type: EnumeratorProxy
 
-    Returns an enumerator for the collection.
+    Return an enumerator for the collection.
 
 
 Method detail
@@ -100,7 +100,7 @@ Method detail
 .. py:method:: insert_at(self, index: int, component_identifier: str) -> RadarActivityTimeComponentListElement
     :canonical: ansys.stk.core.stkobjects.RadarActivityTimeComponentListCollection.insert_at
 
-    Insert a new time component element at the supplied index, configured with a component with the supplied identifier.  An example of a valid component identifier would be \"Facility/MFR_Facility/Radar/MFR LightingIntervals.Umbra EventIntervalList\".
+    Insert a new time component element at the supplied index, configured with a component with the supplied identifier.  An example of a valid component identifier would be ``Facility/MFR_Facility/Radar/MFR LightingIntervals.Umbra EventIntervalList``.
 
     :Parameters:
 
@@ -114,7 +114,7 @@ Method detail
 .. py:method:: add(self, component_identifier: str) -> RadarActivityTimeComponentListElement
     :canonical: ansys.stk.core.stkobjects.RadarActivityTimeComponentListCollection.add
 
-    Add a new time component element to the collection, configured with a component with the supplied identifier.  An example of a valid component identifier would be \"Facility/MFR_Facility/Radar/MFR LightingIntervals.Umbra EventIntervalList\".
+    Add a new time component element to the collection, configured with a component with the supplied identifier.  An example of a valid component identifier would be ``Facility/MFR_Facility/Radar/MFR LightingIntervals.Umbra EventIntervalList``.
 
     :Parameters:
 

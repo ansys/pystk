@@ -36,7 +36,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.LineTargetPointCollection._new_enum`
               - Enumerates through the collection of points.
             * - :py:attr:`~ansys.stk.core.stkobjects.LineTargetPointCollection.count`
-              - Returns the number of latitude-longitude pairs.
+              - Return the number of latitude-longitude pairs.
             * - :py:attr:`~ansys.stk.core.stkobjects.LineTargetPointCollection.anchor_point`
               - Specify the anchor point. Dimensionless.
 
@@ -63,7 +63,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.LineTargetPointCollection.count
     :type: int
 
-    Returns the number of latitude-longitude pairs.
+    Return the number of latitude-longitude pairs.
 
 .. py:property:: anchor_point
     :canonical: ansys.stk.core.stkobjects.LineTargetPointCollection.anchor_point

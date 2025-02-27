@@ -19,7 +19,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemLinkSelectionCriteria.type`
-              - Gets the link selection criteria type.
+              - Get the link selection criteria type.
 
 
 Import detail
@@ -35,8 +35,8 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.ICommSystemLinkSelectionCriteria.type
-    :type: COMM_SYSTEM_LINK_SELECTION_CRITERIA_TYPE
+    :type: CommSystemLinkSelectionCriteriaType
 
-    Gets the link selection criteria type.
+    Get the link selection criteria type.
 
 

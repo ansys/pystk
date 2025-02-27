@@ -1,3 +1,25 @@
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
 from test_util import *
 from code_snippets.code_snippets_test_base import *
 from ansys.stk.core.stkobjects import *
@@ -28,7 +50,7 @@ class RealTimeSnippets(CodeSnippetsTestBase):
     def setUp(self):
         RealTimeSnippets.m_Object = clr.CastAs(
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-                STK_OBJECT_TYPE.LAUNCH_VEHICLE, RealTimeSnippets.m_DefaultName
+                STKObjectType.LAUNCH_VEHICLE, RealTimeSnippets.m_DefaultName
             ),
             LaunchVehicle,
         )
@@ -38,7 +60,7 @@ class RealTimeSnippets(CodeSnippetsTestBase):
     # region TestTearDown
     def tearDown(self):
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(
-            STK_OBJECT_TYPE.LAUNCH_VEHICLE, RealTimeSnippets.m_DefaultName
+            STKObjectType.LAUNCH_VEHICLE, RealTimeSnippets.m_DefaultName
         )
         RealTimeSnippets.m_Object = None
 
@@ -51,15 +73,15 @@ class RealTimeSnippets(CodeSnippetsTestBase):
 
         scenAnim: "ScenarioAnimation" = None
         anim: "IAnimation" = None
-        holdTimeStepType: "SCENARIO_TIME_STEP_TYPE" = SCENARIO_TIME_STEP_TYPE.REAL_TIME
+        holdTimeStepType: "ScenarioTimeStepType" = ScenarioTimeStepType.REAL_TIME
         if not TestBase.NoGraphicsMode:
             scenAnim = scenario.animation_settings
             holdTimeStepType = scenAnim.animation_step_type
-            scenAnim.animation_step_type = SCENARIO_TIME_STEP_TYPE.REAL_TIME
+            scenAnim.animation_step_type = ScenarioTimeStepType.REAL_TIME
             anim = clr.CastAs(CodeSnippetsTestBase.m_Root, IAnimation)
             anim.play_forward()
 
-        RealTimeSnippets.m_Object.set_trajectory_type(PROPAGATOR_TYPE.REAL_TIME)
+        RealTimeSnippets.m_Object.set_trajectory_type(PropagatorType.REAL_TIME)
         prop: "IPropagator" = RealTimeSnippets.m_Object.trajectory
         propRealtime: "PropagatorRealtime" = clr.CastAs(prop, PropagatorRealtime)
 
@@ -76,9 +98,9 @@ class RealTimeSnippets(CodeSnippetsTestBase):
         propagator.interpolation_order = 1
         propagator.timeout_gap = 30.0
         propagator.time_step = 60.0
-        if propagator.is_look_ahead_propagator_supported(LOOK_AHEAD_PROPAGATOR.TWO_BODY):
+        if propagator.is_look_ahead_propagator_supported(LookAheadPropagator.TWO_BODY):
             # Set the look ahead type
-            propagator.look_ahead_propagator = LOOK_AHEAD_PROPAGATOR.TWO_BODY
+            propagator.look_ahead_propagator = LookAheadPropagator.TWO_BODY
 
             # Set the duration time to look ahead and look behind
             duration: "VehicleDuration" = propagator.duration
@@ -93,14 +115,14 @@ class RealTimeSnippets(CodeSnippetsTestBase):
     # region AddRealtimeLLAPositions
     def test_AddRealtimeLLAPositions(self):
         gv: "GroundVehicle" = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.GROUND_VEHICLE, "gv1"),
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STKObjectType.GROUND_VEHICLE, "gv1"),
             GroundVehicle,
         )
-        gv.set_route_type(PROPAGATOR_TYPE.REAL_TIME)
+        gv.set_route_type(PropagatorType.REAL_TIME)
         (PropagatorRealtime(gv.route)).propagate()
         realtime: "PropagatorRealtime" = clr.CastAs(gv.route, PropagatorRealtime)
         self.AddRealtimeLLAPositions(realtime)
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.GROUND_VEHICLE, "gv1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STKObjectType.GROUND_VEHICLE, "gv1")
 
     def AddRealtimeLLAPositions(self, propagator: "PropagatorRealtime"):
         points: "PropagatorRealtimeDeticPoints" = propagator.point_builder.ephemeris_in_latitude_longituide_altitude
@@ -111,14 +133,14 @@ class RealTimeSnippets(CodeSnippetsTestBase):
     # region AddRealtimeLLAPositionsInBatches
     def test_AddRealtimeLLAPositionsInBatches(self):
         gv: "GroundVehicle" = clr.CastAs(
-            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.GROUND_VEHICLE, "gv1"),
+            CodeSnippetsTestBase.m_Root.current_scenario.children.new(STKObjectType.GROUND_VEHICLE, "gv1"),
             GroundVehicle,
         )
-        gv.set_route_type(PROPAGATOR_TYPE.REAL_TIME)
+        gv.set_route_type(PropagatorType.REAL_TIME)
         (PropagatorRealtime(gv.route)).propagate()
         realtime: "PropagatorRealtime" = clr.CastAs(gv.route, PropagatorRealtime)
         self.AddRealtimeLLAPositionsInBatches(realtime)
-        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STK_OBJECT_TYPE.GROUND_VEHICLE, "gv1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.unload(STKObjectType.GROUND_VEHICLE, "gv1")
 
     def AddRealtimeLLAPositionsInBatches(self, propagator: "PropagatorRealtime"):
         # Add realtime LLA points in batches

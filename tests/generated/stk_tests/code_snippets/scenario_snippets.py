@@ -1,3 +1,25 @@
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
 from test_util import *
 from app_provider import *
 from code_snippets.code_snippets_test_base import *
@@ -96,20 +118,20 @@ class ScenarioSnippets(CodeSnippetsTestBase):
         self.AddStkObjectToScenario(CodeSnippetsTestBase.m_Root)
 
     def AddStkObjectToScenario(self, root: "StkObjectRoot"):
-        root.current_scenario.children.new(STK_OBJECT_TYPE.SHIP, "Ship1")
+        root.current_scenario.children.new(STKObjectType.SHIP, "Ship1")
 
     # endregion
 
     # region ListAllObjectsOfTypeInScenario
     def test_ListAllChildrenOfAGivenType(self):
-        CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.STAR, "star1")
-        CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SHIP, "ship1")
-        CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "sat1")
-        CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.PLANET, "planet1")
-        CodeSnippetsTestBase.m_Root.current_scenario.children.new(STK_OBJECT_TYPE.TARGET, "target1")
-        self.ListAllChildrenOfAGivenType(CodeSnippetsTestBase.m_Root, STK_OBJECT_TYPE.SHIP)
+        CodeSnippetsTestBase.m_Root.current_scenario.children.new(STKObjectType.STAR, "star1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.new(STKObjectType.SHIP, "ship1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.new(STKObjectType.SATELLITE, "sat1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.new(STKObjectType.PLANET, "planet1")
+        CodeSnippetsTestBase.m_Root.current_scenario.children.new(STKObjectType.TARGET, "target1")
+        self.ListAllChildrenOfAGivenType(CodeSnippetsTestBase.m_Root, STKObjectType.SHIP)
 
-    def ListAllChildrenOfAGivenType(self, root: "StkObjectRoot", type: "STK_OBJECT_TYPE"):
+    def ListAllChildrenOfAGivenType(self, root: "StkObjectRoot", type: "STKObjectType"):
         allChildrenOfType: "IStkObjectElementCollection" = root.current_scenario.children.get_elements(type)
 
         o: "IStkObject"
@@ -134,7 +156,7 @@ class ScenarioSnippets(CodeSnippetsTestBase):
 
         # Add terrain data file to current scenario's terrain collection
         # Terrain data files traditionally have .dte extensions
-        terrain: "Terrain" = elementCollection.add(terrainFile, TERRAIN_FILE_TYPE.MUSE_RASTER_FILE)
+        terrain: "Terrain" = elementCollection.add(terrainFile, TerrainFileType.MUSE_RASTER_FILE)
 
         # Set Scenario to use terrain data file
         terrain.use_terrain = True
@@ -151,10 +173,10 @@ class ScenarioSnippets(CodeSnippetsTestBase):
 
         animation.start_time = "1 Jun 2004 12:00:00.00"
         animation.enable_anim_cycle_time = True
-        animation.animation_end_loop_type = SCENARIO_END_LOOP_TYPE.END_TIME
+        animation.animation_end_loop_type = ScenarioEndLoopType.END_TIME
         animation.animation_cycle_time = "2 Jun 2004 12:00:00.00"
         animation.animation_step_value = 1000
-        animation.refresh_delta_type = SCENARIO_REFRESH_DELTA_TYPE.REFRESH_DELTA
+        animation.refresh_delta_type = ScenarioRefreshDeltaType.REFRESH_DELTA
         animation.refresh_delta = 0.02
 
     # endregion
@@ -169,7 +191,7 @@ class ScenarioSnippets(CodeSnippetsTestBase):
 
         fonts.bold = True
         fonts.italic = True
-        fonts.point_size = SCENARIO_3D_POINT_SIZE.FONT_SIZE_36
+        fonts.point_size = Scenario3dPointSize.FONT_SIZE_36
         if fonts.is_font_available("Impact"):
             fonts.name = "Impact"
 
@@ -199,8 +221,8 @@ class ScenarioSnippets(CodeSnippetsTestBase):
     def test_SetScenarioAnalysisTimeToSatelliteEphmerisIntervalTimes(self):
         scenario: "IStkObject" = TestBase.Application.current_scenario
 
-        satellite: "Satellite" = Satellite(scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "GeoEye"))
-        satellite.set_propagator_type(PROPAGATOR_TYPE.TWO_BODY)
+        satellite: "Satellite" = Satellite(scenario.children.new(STKObjectType.SATELLITE, "GeoEye"))
+        satellite.set_propagator_type(PropagatorType.TWO_BODY)
         (PropagatorTwoBody(satellite.propagator)).propagate()
 
         try:

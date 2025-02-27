@@ -36,13 +36,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.TimeToolTimeIntervalListGroup.context`
-              - Returns a context object. The context can be used to find out which central body or STK object this instance is associated with.
+              - Return a context object. The context can be used to find out which central body or STK object this instance is associated with.
             * - :py:attr:`~ansys.stk.core.vgt.TimeToolTimeIntervalListGroup.count`
-              - Returns a number of elements in the group.
+              - Return a number of elements in the group.
             * - :py:attr:`~ansys.stk.core.vgt.TimeToolTimeIntervalListGroup.factory`
-              - Returns a factory object used to create custom event interval lists.
+              - Return a factory object used to create custom event interval lists.
             * - :py:attr:`~ansys.stk.core.vgt.TimeToolTimeIntervalListGroup._new_enum`
-              - Returns a COM enumerator.
+              - Return a COM enumerator.
 
 
 
@@ -61,25 +61,25 @@ Property detail
     :canonical: ansys.stk.core.vgt.TimeToolTimeIntervalListGroup.context
     :type: IAnalysisWorkbenchComponentContext
 
-    Returns a context object. The context can be used to find out which central body or STK object this instance is associated with.
+    Return a context object. The context can be used to find out which central body or STK object this instance is associated with.
 
 .. py:property:: count
     :canonical: ansys.stk.core.vgt.TimeToolTimeIntervalListGroup.count
     :type: int
 
-    Returns a number of elements in the group.
+    Return a number of elements in the group.
 
 .. py:property:: factory
     :canonical: ansys.stk.core.vgt.TimeToolTimeIntervalListGroup.factory
     :type: TimeToolTimeIntervalListFactory
 
-    Returns a factory object used to create custom event interval lists.
+    Return a factory object used to create custom event interval lists.
 
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.vgt.TimeToolTimeIntervalListGroup._new_enum
     :type: EnumeratorProxy
 
-    Returns a COM enumerator.
+    Return a COM enumerator.
 
 
 Method detail

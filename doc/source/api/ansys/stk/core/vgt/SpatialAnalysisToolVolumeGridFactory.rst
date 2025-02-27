@@ -48,7 +48,7 @@ Import detail
 Method detail
 -------------
 
-.. py:method:: create(self, name: str, description: str, type: VOLUME_GRID_TYPE) -> ISpatialAnalysisToolVolumeGrid
+.. py:method:: create(self, name: str, description: str, type: VolumeGridType) -> ISpatialAnalysisToolVolumeGrid
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridFactory.create
 
     Create and registers a volume grid using specified name and description.
@@ -57,7 +57,7 @@ Method detail
 
     **name** : :obj:`~str`
     **description** : :obj:`~str`
-    **type** : :obj:`~VOLUME_GRID_TYPE`
+    **type** : :obj:`~VolumeGridType`
 
     :Returns:
 
@@ -77,14 +77,14 @@ Method detail
 
         :obj:`~ISpatialAnalysisToolVolumeGrid`
 
-.. py:method:: is_type_supported(self, type: VOLUME_GRID_TYPE) -> bool
+.. py:method:: is_type_supported(self, type: VolumeGridType) -> bool
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridFactory.is_type_supported
 
     Return whether the specified type is supported.
 
     :Parameters:
 
-    **type** : :obj:`~VOLUME_GRID_TYPE`
+    **type** : :obj:`~VolumeGridType`
 
     :Returns:
 

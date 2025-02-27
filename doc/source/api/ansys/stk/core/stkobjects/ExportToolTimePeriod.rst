@@ -19,11 +19,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ExportToolTimePeriod.start`
-              - Gets or sets the start time of export interval. Uses DateFormate Dimension.
+              - Get or set the start time of export interval. Uses DateFormate Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ExportToolTimePeriod.stop`
-              - Gets or sets the stop time of export interval. Uses DateFormat Dimension.
+              - Get or set the stop time of export interval. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ExportToolTimePeriod.time_period_type`
-              - Specifies the time period type to use.
+              - Specify the time period type to use.
 
 
 
@@ -42,18 +42,18 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.ExportToolTimePeriod.start
     :type: typing.Any
 
-    Gets or sets the start time of export interval. Uses DateFormate Dimension.
+    Get or set the start time of export interval. Uses DateFormate Dimension.
 
 .. py:property:: stop
     :canonical: ansys.stk.core.stkobjects.ExportToolTimePeriod.stop
     :type: typing.Any
 
-    Gets or sets the stop time of export interval. Uses DateFormat Dimension.
+    Get or set the stop time of export interval. Uses DateFormat Dimension.
 
 .. py:property:: time_period_type
     :canonical: ansys.stk.core.stkobjects.ExportToolTimePeriod.time_period_type
-    :type: EXPORT_TOOL_TIME_PERIOD
+    :type: ExportToolTimePeriodType
 
-    Specifies the time period type to use.
+    Specify the time period type to use.
 
 

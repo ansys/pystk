@@ -46,11 +46,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectCollection.count`
-              - Returns the number of elements in the collection.
+              - Return the number of elements in the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectCollection._new_enum`
-              - Returns an enumerator for the collection.
+              - Return an enumerator for the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.IStkObjectCollection.supported_child_types`
-              - Returns the available objects that can be added to this object.
+              - Return the available objects that can be added to this object.
 
 
 Import detail
@@ -68,19 +68,19 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.IStkObjectCollection.count
     :type: int
 
-    Returns the number of elements in the collection.
+    Return the number of elements in the collection.
 
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkobjects.IStkObjectCollection._new_enum
     :type: EnumeratorProxy
 
-    Returns an enumerator for the collection.
+    Return an enumerator for the collection.
 
 .. py:property:: supported_child_types
     :canonical: ansys.stk.core.stkobjects.IStkObjectCollection.supported_child_types
     :type: list
 
-    Returns the available objects that can be added to this object.
+    Return the available objects that can be added to this object.
 
 
 Method detail
@@ -101,55 +101,55 @@ Method detail
         :obj:`~IStkObject`
 
 
-.. py:method:: new(self, class_type: STK_OBJECT_TYPE, inst_name: str) -> IStkObject
+.. py:method:: new(self, class_type: STKObjectType, inst_name: str) -> IStkObject
     :canonical: ansys.stk.core.stkobjects.IStkObjectCollection.new
 
     Create an STK object using specified class and instance name.
 
     :Parameters:
 
-    **class_type** : :obj:`~STK_OBJECT_TYPE`
+    **class_type** : :obj:`~STKObjectType`
     **inst_name** : :obj:`~str`
 
     :Returns:
 
         :obj:`~IStkObject`
 
-.. py:method:: unload(self, class_type: STK_OBJECT_TYPE, inst_name: str) -> None
+.. py:method:: unload(self, class_type: STKObjectType, inst_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.IStkObjectCollection.unload
 
     Remove an STK object using specified object's type and name.
 
     :Parameters:
 
-    **class_type** : :obj:`~STK_OBJECT_TYPE`
+    **class_type** : :obj:`~STKObjectType`
     **inst_name** : :obj:`~str`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: get_elements(self, class_type: STK_OBJECT_TYPE) -> IStkObjectElementCollection
+.. py:method:: get_elements(self, class_type: STKObjectType) -> IStkObjectElementCollection
     :canonical: ansys.stk.core.stkobjects.IStkObjectCollection.get_elements
 
     Return a collection of objects of specified type.
 
     :Parameters:
 
-    **class_type** : :obj:`~STK_OBJECT_TYPE`
+    **class_type** : :obj:`~STKObjectType`
 
     :Returns:
 
         :obj:`~IStkObjectElementCollection`
 
-.. py:method:: new_on_central_body(self, class_type: STK_OBJECT_TYPE, inst_name: str, central_body_name: str) -> IStkObject
+.. py:method:: new_on_central_body(self, class_type: STKObjectType, inst_name: str, central_body_name: str) -> IStkObject
     :canonical: ansys.stk.core.stkobjects.IStkObjectCollection.new_on_central_body
 
     Create an STK object using specified class, instance name and the central body.
 
     :Parameters:
 
-    **class_type** : :obj:`~STK_OBJECT_TYPE`
+    **class_type** : :obj:`~STKObjectType`
     **inst_name** : :obj:`~str`
     **central_body_name** : :obj:`~str`
 
@@ -158,14 +158,14 @@ Method detail
         :obj:`~IStkObject`
 
 
-.. py:method:: contains(self, class_type: STK_OBJECT_TYPE, inst_name: str) -> bool
+.. py:method:: contains(self, class_type: STKObjectType, inst_name: str) -> bool
     :canonical: ansys.stk.core.stkobjects.IStkObjectCollection.contains
 
     Check whether the collection contains an object with the given type and name.
 
     :Parameters:
 
-    **class_type** : :obj:`~STK_OBJECT_TYPE`
+    **class_type** : :obj:`~STKObjectType`
     **inst_name** : :obj:`~str`
 
     :Returns:

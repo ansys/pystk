@@ -1,3 +1,25 @@
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
 import pytest
 from test_util import *
 from assert_extension import *
@@ -94,7 +116,7 @@ class STKObjectHelper(object):
         self.m_logger.WriteLine5("\tThe ClassName is: {0}", oObject.class_name)
         # Path
         self.m_logger.WriteLine5("\tThe Path is: {0}", oObject.path)
-        if oObject.class_type != STK_OBJECT_TYPE.MTO:
+        if oObject.class_type != STKObjectType.MTO:
             # ShortDescription
             self.m_logger.WriteLine5("\tThe current ShortDescription is: {0}", oObject.short_description)
             oObject.short_description = "This is a new short description."
@@ -141,12 +163,10 @@ class STKObjectHelper(object):
                 oCoverage: "ObjectCoverage" = oObject.object_coverage
 
         # create an additional Satellite
-        oSatellite: "Satellite" = Satellite(
-            oObject.root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "MIR")
-        )
+        oSatellite: "Satellite" = Satellite(oObject.root.current_scenario.children.new(STKObjectType.SATELLITE, "MIR"))
         Assert.assertIsNotNone(oSatellite)
-        oSatellite.set_propagator_type(PROPAGATOR_TYPE.TWO_BODY)
-        Assert.assertEqual(PROPAGATOR_TYPE.TWO_BODY, oSatellite.propagator_type)
+        oSatellite.set_propagator_type(PropagatorType.TWO_BODY)
+        Assert.assertEqual(PropagatorType.TWO_BODY, oSatellite.propagator_type)
         oPropagator: "PropagatorTwoBody" = PropagatorTwoBody(oSatellite.propagator)
         Assert.assertIsNotNone(oPropagator)
         oPropagator.propagate()
@@ -179,7 +199,7 @@ class STKObjectHelper(object):
             with pytest.raises(Exception):
                 opa: "OnePointAccess" = oObject.create_one_point_access("Satellite/MIR")
 
-        oObject.root.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "MIR")
+        oObject.root.current_scenario.children.unload(STKObjectType.SATELLITE, "MIR")
         # Root
         oRoot: "StkObjectRoot" = oObject.root
         Assert.assertIsNotNone(oRoot)
@@ -234,8 +254,8 @@ class STKObjectHelper(object):
         Assert.assertEqual("1 Jul 2007 01:00:00.000", onePtAccess.stop_time)
         onePtAccess.step_size = 120
         Assert.assertEqual(120, onePtAccess.step_size)
-        onePtAccess.summary_option = ONE_POINT_ACCESS_SUMMARY.DETAILED
-        Assert.assertEqual(ONE_POINT_ACCESS_SUMMARY.DETAILED, onePtAccess.summary_option)
+        onePtAccess.summary_option = OnePointAccessSummary.DETAILED
+        Assert.assertEqual(OnePointAccessSummary.DETAILED, onePtAccess.summary_option)
         result: "OnePointAccessResult" = None
         results: "OnePointAccessResultCollection" = onePtAccess.compute()
 
@@ -263,8 +283,8 @@ class STKObjectHelper(object):
             for c in r.constraints:
                 self.dumpOnePtAccessConstraint(c)
 
-        onePtAccess.summary_option = ONE_POINT_ACCESS_SUMMARY.FAST
-        Assert.assertEqual(ONE_POINT_ACCESS_SUMMARY.FAST, onePtAccess.summary_option)
+        onePtAccess.summary_option = OnePointAccessSummary.FAST
+        Assert.assertEqual(OnePointAccessSummary.FAST, onePtAccess.summary_option)
         results = onePtAccess.compute()
         Assert.assertGreater(results.count, 1)
         result = results[0]
@@ -272,8 +292,8 @@ class STKObjectHelper(object):
             Assert.assertEqual(1, result.constraints.count)
             self.dumpOnePtAccessConstraint(result.constraints[0])
 
-        onePtAccess.summary_option = ONE_POINT_ACCESS_SUMMARY.RESULT_ONLY
-        Assert.assertEqual(ONE_POINT_ACCESS_SUMMARY.RESULT_ONLY, onePtAccess.summary_option)
+        onePtAccess.summary_option = OnePointAccessSummary.RESULT_ONLY
+        Assert.assertEqual(OnePointAccessSummary.RESULT_ONLY, onePtAccess.summary_option)
         results = onePtAccess.compute()
         Assert.assertGreater(results.count, 1)
         result = results[0]
@@ -337,27 +357,27 @@ class STKObjectHelper(object):
                         (
                             (
                                 (
-                                    (oObject.class_type == STK_OBJECT_TYPE.AIRCRAFT)
-                                    or (oObject.class_type == STK_OBJECT_TYPE.FACILITY)
+                                    (oObject.class_type == STKObjectType.AIRCRAFT)
+                                    or (oObject.class_type == STKObjectType.FACILITY)
                                 )
-                                or (oObject.class_type == STK_OBJECT_TYPE.GROUND_VEHICLE)
+                                or (oObject.class_type == STKObjectType.GROUND_VEHICLE)
                             )
-                            or (oObject.class_type == STK_OBJECT_TYPE.LAUNCH_VEHICLE)
+                            or (oObject.class_type == STKObjectType.LAUNCH_VEHICLE)
                         )
-                        or (oObject.class_type == STK_OBJECT_TYPE.MISSILE)
+                        or (oObject.class_type == STKObjectType.MISSILE)
                     )
-                    or (oObject.class_type == STK_OBJECT_TYPE.SATELLITE)
+                    or (oObject.class_type == STKObjectType.SATELLITE)
                 )
-                or (oObject.class_type == STK_OBJECT_TYPE.SHIP)
+                or (oObject.class_type == STKObjectType.SHIP)
             )
-            or (oObject.class_type == STK_OBJECT_TYPE.TARGET)
-        ) or (oObject.class_type == STK_OBJECT_TYPE.SUBMARINE):
+            or (oObject.class_type == STKObjectType.TARGET)
+        ) or (oObject.class_type == STKObjectType.SUBMARINE):
             found: bool = False
 
             j: int = 0
             while j < Array.Length(SupportedChildTypes):
-                objType: "STK_OBJECT_TYPE" = STK_OBJECT_TYPE(int(SupportedChildTypes[j]))
-                if objType == STK_OBJECT_TYPE.SENSOR:
+                objType: "STKObjectType" = STKObjectType(int(SupportedChildTypes[j]))
+                if objType == STKObjectType.SENSOR:
                     found = True
 
                 j += 1
@@ -366,12 +386,12 @@ class STKObjectHelper(object):
                 Assert.fail("Sensor should be an available child object of the {0} object", oObject.class_type)
 
             # New
-            oSensor: "IStkObject" = oCollection.new(STK_OBJECT_TYPE.SENSOR, "Radar")
+            oSensor: "IStkObject" = oCollection.new(STKObjectType.SENSOR, "Radar")
             Assert.assertIsNotNone(oSensor)
             # Unload
-            oCollection.unload(STK_OBJECT_TYPE.SENSOR, "Radar")
+            oCollection.unload(STKObjectType.SENSOR, "Radar")
 
-        if oObject.class_type == STK_OBJECT_TYPE.SCENARIO:
+        if oObject.class_type == STKObjectType.SCENARIO:
             oCollection.import_object(TestBase.PathCombine(TestBase.GetScenarioRootDir(), "AreaTargetTests", "at2.at"))
 
         else:
@@ -392,7 +412,7 @@ class STKObjectHelper(object):
             Assert.assertIsNotNone(oEObject)
 
         # GetElements
-        oOECollection: "IStkObjectElementCollection" = oCollection.get_elements(STK_OBJECT_TYPE.SENSOR)
+        oOECollection: "IStkObjectElementCollection" = oCollection.get_elements(STKObjectType.SENSOR)
         Assert.assertIsNotNone(oOECollection)
         # Count
         self.m_logger.WriteLine3("\tThe ObjectElement collection contains: {0}", oOECollection.count)
@@ -526,16 +546,16 @@ class DataProviderCollectionHelper(object):
                     # IDataProvider
                     # Console.WriteLine(oCollection[iIndex].Name);
                     self.DataProvider(clr.CastAs(oCollection[iIndex], IDataProvider), oCollection[iIndex].name)
-                    if oCollection[iIndex].type == DATA_PROVIDER_TYPE.FIXED:
+                    if oCollection[iIndex].type == DataProviderType.FIXED:
                         self.DataProviderFixed(
                             clr.CastAs(oCollection[iIndex], DataProviderFixed), oCollection[iIndex].name
                         )
-                    elif oCollection[iIndex].type == DATA_PROVIDER_TYPE.INTERVAL:
+                    elif oCollection[iIndex].type == DataProviderType.INTERVAL:
                         self.DataProviderInterval(
                             clr.CastAs(oCollection[iIndex], DataProviderInterval), oCollection[iIndex].name
                         )
-                    elif ((oCollection[iIndex].type == DATA_PROVIDER_TYPE.TIME_VARYING)) or (
-                        (oCollection[iIndex].type == DATA_PROVIDER_TYPE.RESULTS_DEPEND_ON_INPUT_INTERVALS)
+                    elif ((oCollection[iIndex].type == DataProviderType.TIME_VARYING)) or (
+                        (oCollection[iIndex].type == DataProviderType.RESULTS_DEPEND_ON_INPUT_INTERVALS)
                     ):
                         self.DataProviderTimeVar(
                             clr.CastAs(oCollection[iIndex], DataProviderTimeVarying), oCollection[iIndex].name
@@ -622,7 +642,7 @@ class DataProviderCollectionHelper(object):
         iIndex: int = 0
         while iIndex < oElements.count:
             strElementName: str = oElements[iIndex].name
-            eType: "DATA_PROVIDER_ELEMENT_TYPE" = oElements[iIndex].type
+            eType: "DataProviderElementType" = oElements[iIndex].type
             Assert.assertFalse(String.IsNullOrEmpty(oElements[iIndex].dimension_name))
 
             iIndex += 1
@@ -678,13 +698,13 @@ class DataProviderCollectionHelper(object):
         self.DrResultDataSets(oResult.data_sets)
         # Message
         self.DrResultMessage(oResult.message)
-        if oResult.category == DATA_PROVIDER_RESULT_CATEGORY.DATA_SET_LIST:
+        if oResult.category == DataProviderResultCategory.DATA_SET_LIST:
             self.DrResultDataSets(clr.CastAs(oResult.value, DataProviderResultDataSetCollection))
-        elif oResult.category == DATA_PROVIDER_RESULT_CATEGORY.INTERVAL_LIST:
+        elif oResult.category == DataProviderResultCategory.INTERVAL_LIST:
             self.DrResultIntervals(clr.CastAs(oResult.value, DataProviderResultIntervalCollection))
-        elif oResult.category == DATA_PROVIDER_RESULT_CATEGORY.MESSAGE:
+        elif oResult.category == DataProviderResultCategory.MESSAGE:
             self.DrResultMessage(clr.CastAs(oResult.value, DataProviderResultTextMessage))
-        elif oResult.category == DATA_PROVIDER_RESULT_CATEGORY.SUB_SECTION_LIST:
+        elif oResult.category == DataProviderResultCategory.SUB_SECTION_LIST:
             self.DrResultSections(clr.CastAs(oResult.value, DataProviderResultSubSectionCollection))
         else:
             Assert.fail("Invalid type!")
@@ -886,18 +906,18 @@ class StkAccessHelper(object):
         Assert.assertIsNotNone(oRoot)
         # AccessTimePeriod
         self.m_logger.WriteLine6("\tThe current AccessTimePeriod is: {0}", oAccess.access_time_period)
-        oAccess.access_time_period = ACCESS_TIME_TYPE.OBJECT_ACCESS_TIME
+        oAccess.access_time_period = AccessTimeType.OBJECT_ACCESS_TIME
         self.m_logger.WriteLine6("\tThe new AccessTimePeriod is: {0}", oAccess.access_time_period)
-        Assert.assertEqual(ACCESS_TIME_TYPE.OBJECT_ACCESS_TIME, oAccess.access_time_period)
+        Assert.assertEqual(AccessTimeType.OBJECT_ACCESS_TIME, oAccess.access_time_period)
         # ComputeAccess
         oAccess.compute_access()
-        oAccess.access_time_period = ACCESS_TIME_TYPE.SCENARIO_INTERVAL
+        oAccess.access_time_period = AccessTimeType.SCENARIO_INTERVAL
         self.m_logger.WriteLine6("\tThe new AccessTimePeriod is: {0}", oAccess.access_time_period)
-        Assert.assertEqual(ACCESS_TIME_TYPE.SCENARIO_INTERVAL, oAccess.access_time_period)
+        Assert.assertEqual(AccessTimeType.SCENARIO_INTERVAL, oAccess.access_time_period)
         oAccess.compute_access()
-        oAccess.access_time_period = ACCESS_TIME_TYPE.SPECIFIED_TIME_PERIOD
+        oAccess.access_time_period = AccessTimeType.SPECIFIED_TIME_PERIOD
         self.m_logger.WriteLine6("\tThe new AccessTimePeriod is: {0}", oAccess.access_time_period)
-        Assert.assertEqual(ACCESS_TIME_TYPE.SPECIFIED_TIME_PERIOD, oAccess.access_time_period)
+        Assert.assertEqual(AccessTimeType.SPECIFIED_TIME_PERIOD, oAccess.access_time_period)
         oAccess.compute_access()
         # SpecifyAccessTimePeriod
         dtStart: typing.Any = "1 Jul 1999 00:00:00.00"
@@ -1049,13 +1069,13 @@ class StkAccessHelper(object):
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             oAdvanced.time_light_delay_convergence = 0.01234
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            oAdvanced.aberration_type = ABERRATION_TYPE.ANNUAL
+            oAdvanced.aberration_type = AberrationType.ANNUAL
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             oAdvanced.use_default_clock_host_and_signal_sense = False
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            oAdvanced.clock_host = IV_CLOCK_HOST.BASE
+            oAdvanced.clock_host = IvClockHost.BASE
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            oAdvanced.signal_sense_of_clock_host = IV_TIME_SENSE.TRANSMIT
+            oAdvanced.signal_sense_of_clock_host = IvTimeSense.TRANSMIT
 
         oAdvanced.enable_light_time_delay = True
         Assert.assertTrue(oAdvanced.enable_light_time_delay)
@@ -1065,38 +1085,38 @@ class StkAccessHelper(object):
         with pytest.raises(Exception):
             oAdvanced.time_light_delay_convergence = 12.34
 
-        oAdvanced.aberration_type = ABERRATION_TYPE.ANNUAL
-        Assert.assertEqual(ABERRATION_TYPE.ANNUAL, oAdvanced.aberration_type)
-        oAdvanced.aberration_type = ABERRATION_TYPE.NONE
-        Assert.assertEqual(ABERRATION_TYPE.NONE, oAdvanced.aberration_type)
-        oAdvanced.aberration_type = ABERRATION_TYPE.TOTAL
-        Assert.assertEqual(ABERRATION_TYPE.TOTAL, oAdvanced.aberration_type)
+        oAdvanced.aberration_type = AberrationType.ANNUAL
+        Assert.assertEqual(AberrationType.ANNUAL, oAdvanced.aberration_type)
+        oAdvanced.aberration_type = AberrationType.NONE
+        Assert.assertEqual(AberrationType.NONE, oAdvanced.aberration_type)
+        oAdvanced.aberration_type = AberrationType.TOTAL
+        Assert.assertEqual(AberrationType.TOTAL, oAdvanced.aberration_type)
         with pytest.raises(Exception):
-            oAdvanced.aberration_type = ABERRATION_TYPE.UNKNOWN
+            oAdvanced.aberration_type = AberrationType.UNKNOWN
 
         # Signal Path
         oAdvanced.use_default_clock_host_and_signal_sense = True
         Assert.assertTrue(oAdvanced.use_default_clock_host_and_signal_sense)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            oAdvanced.clock_host = IV_CLOCK_HOST.BASE
+            oAdvanced.clock_host = IvClockHost.BASE
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-            oAdvanced.signal_sense_of_clock_host = IV_TIME_SENSE.TRANSMIT
+            oAdvanced.signal_sense_of_clock_host = IvTimeSense.TRANSMIT
 
         oAdvanced.use_default_clock_host_and_signal_sense = False
         Assert.assertFalse(oAdvanced.use_default_clock_host_and_signal_sense)
 
-        oAdvanced.clock_host = IV_CLOCK_HOST.BASE
-        Assert.assertEqual(IV_CLOCK_HOST.BASE, oAdvanced.clock_host)
-        oAdvanced.clock_host = IV_CLOCK_HOST.TARGET
-        Assert.assertEqual(IV_CLOCK_HOST.TARGET, oAdvanced.clock_host)
+        oAdvanced.clock_host = IvClockHost.BASE
+        Assert.assertEqual(IvClockHost.BASE, oAdvanced.clock_host)
+        oAdvanced.clock_host = IvClockHost.TARGET
+        Assert.assertEqual(IvClockHost.TARGET, oAdvanced.clock_host)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
-            oAdvanced.signal_sense_of_clock_host = IV_TIME_SENSE.UNKNOWN
-        oAdvanced.signal_sense_of_clock_host = IV_TIME_SENSE.TRANSMIT
-        Assert.assertEqual(IV_TIME_SENSE.TRANSMIT, oAdvanced.signal_sense_of_clock_host)
-        oAdvanced.signal_sense_of_clock_host = IV_TIME_SENSE.RECEIVE
-        Assert.assertEqual(IV_TIME_SENSE.RECEIVE, oAdvanced.signal_sense_of_clock_host)
+            oAdvanced.signal_sense_of_clock_host = IvTimeSense.UNKNOWN
+        oAdvanced.signal_sense_of_clock_host = IvTimeSense.TRANSMIT
+        Assert.assertEqual(IvTimeSense.TRANSMIT, oAdvanced.signal_sense_of_clock_host)
+        oAdvanced.signal_sense_of_clock_host = IvTimeSense.RECEIVE
+        Assert.assertEqual(IvTimeSense.RECEIVE, oAdvanced.signal_sense_of_clock_host)
 
         # Step Size Control
         oAdvanced.use_fixed_time_step = False  # Adaptive
@@ -1362,16 +1382,16 @@ class VODataDisplayHelper(object):
         Assert.assertIsNotNone(oVODataDisplayElement)
         # Location
         with pytest.raises(Exception):
-            oVODataDisplayElement.location = GRAPHICS_3D_LOCATION.WINDOW_3D
+            oVODataDisplayElement.location = Graphics3DLocation.WINDOW_3D
         # FontColor
         with pytest.raises(Exception):
             oVODataDisplayElement.font_color = Colors.from_argb(11254443)
         # XOrigin
         with pytest.raises(Exception):
-            oVODataDisplayElement.x_origin = GRAPHICS_3D_X_ORIGIN.X_ORIGIN_LEFT
+            oVODataDisplayElement.x_origin = Graphics3DXOrigin.X_ORIGIN_LEFT
         # YOrigin
         with pytest.raises(Exception):
-            oVODataDisplayElement.y_origin = GRAPHICS_3D_Y_ORIGIN.Y_ORIGIN_BOTTOM
+            oVODataDisplayElement.y_origin = Graphics3DYOrigin.Y_ORIGIN_BOTTOM
         # X
         with pytest.raises(Exception):
             oVODataDisplayElement.x = 12
@@ -1383,10 +1403,10 @@ class VODataDisplayHelper(object):
             oVODataDisplayElement.title = True
         # FontSize
         with pytest.raises(Exception):
-            oVODataDisplayElement.font_size = GRAPHICS_3D_FONT_SIZE.SMALL
+            oVODataDisplayElement.font_size = Graphics3DFontSize.SMALL
         # Format
         with pytest.raises(Exception):
-            oVODataDisplayElement.format = GRAPHICS_3D_FORMAT.HORIZONTAL
+            oVODataDisplayElement.format = Graphics3DFormat.HORIZONTAL
         # UseBackground
         with pytest.raises(Exception):
             oVODataDisplayElement.use_background = True
@@ -1411,29 +1431,29 @@ class VODataDisplayHelper(object):
         # Location
         self.m_logger.WriteLine6("\t\t\tThe current Location is: {0}", oVODataDisplayElement.location)
         if self.m_bIsAccessRequired:
-            oVODataDisplayElement.location = GRAPHICS_3D_LOCATION.OFFSET_FROM_ACCESS_OBJECT
+            oVODataDisplayElement.location = Graphics3DLocation.OFFSET_FROM_ACCESS_OBJECT
             self.m_logger.WriteLine6("\t\t\tThe new Location is: {0}", oVODataDisplayElement.location)
-            Assert.assertEqual(GRAPHICS_3D_LOCATION.OFFSET_FROM_ACCESS_OBJECT, oVODataDisplayElement.location)
+            Assert.assertEqual(Graphics3DLocation.OFFSET_FROM_ACCESS_OBJECT, oVODataDisplayElement.location)
 
         else:
             with pytest.raises(Exception):
-                oVODataDisplayElement.location = GRAPHICS_3D_LOCATION.OFFSET_FROM_ACCESS_OBJECT
+                oVODataDisplayElement.location = Graphics3DLocation.OFFSET_FROM_ACCESS_OBJECT
 
         if self.m_bIsChain:
             with pytest.raises(Exception):
-                oVODataDisplayElement.location = GRAPHICS_3D_LOCATION.OFFSET_FROM_OBJECT
+                oVODataDisplayElement.location = Graphics3DLocation.OFFSET_FROM_OBJECT
 
         else:
-            oVODataDisplayElement.location = GRAPHICS_3D_LOCATION.OFFSET_FROM_OBJECT
+            oVODataDisplayElement.location = Graphics3DLocation.OFFSET_FROM_OBJECT
             self.m_logger.WriteLine6("\t\t\tThe new Location is: {0}", oVODataDisplayElement.location)
-            Assert.assertEqual(GRAPHICS_3D_LOCATION.OFFSET_FROM_OBJECT, oVODataDisplayElement.location)
+            Assert.assertEqual(Graphics3DLocation.OFFSET_FROM_OBJECT, oVODataDisplayElement.location)
 
-        oVODataDisplayElement.location = GRAPHICS_3D_LOCATION.DISPLAY_AREA
+        oVODataDisplayElement.location = Graphics3DLocation.DISPLAY_AREA
         self.m_logger.WriteLine6("\t\t\tThe new Location is: {0}", oVODataDisplayElement.location)
-        Assert.assertEqual(GRAPHICS_3D_LOCATION.DISPLAY_AREA, oVODataDisplayElement.location)
-        oVODataDisplayElement.location = GRAPHICS_3D_LOCATION.WINDOW_3D
+        Assert.assertEqual(Graphics3DLocation.DISPLAY_AREA, oVODataDisplayElement.location)
+        oVODataDisplayElement.location = Graphics3DLocation.WINDOW_3D
         self.m_logger.WriteLine6("\t\t\tThe new Location is: {0}", oVODataDisplayElement.location)
-        Assert.assertEqual(GRAPHICS_3D_LOCATION.WINDOW_3D, oVODataDisplayElement.location)
+        Assert.assertEqual(Graphics3DLocation.WINDOW_3D, oVODataDisplayElement.location)
         # Font Color
         self.m_logger.WriteLine6("\t\t\tThe current Font Color is: {0}", oVODataDisplayElement.font_color)
         oVODataDisplayElement.font_color = Colors.from_argb(65280)
@@ -1441,20 +1461,20 @@ class VODataDisplayHelper(object):
         AssertEx.AreEqual(Colors.from_argb(65280), oVODataDisplayElement.font_color)
         # XOrigin
         self.m_logger.WriteLine6("\t\t\tThe current X Origin is: {0}", oVODataDisplayElement.x_origin)
-        oVODataDisplayElement.x_origin = GRAPHICS_3D_X_ORIGIN.X_ORIGIN_LEFT
+        oVODataDisplayElement.x_origin = Graphics3DXOrigin.X_ORIGIN_LEFT
         self.m_logger.WriteLine6("\t\t\tThe new X Origin is: {0}", oVODataDisplayElement.x_origin)
-        Assert.assertEqual(GRAPHICS_3D_X_ORIGIN.X_ORIGIN_LEFT, oVODataDisplayElement.x_origin)
-        oVODataDisplayElement.x_origin = GRAPHICS_3D_X_ORIGIN.X_ORIGIN_RIGHT
+        Assert.assertEqual(Graphics3DXOrigin.X_ORIGIN_LEFT, oVODataDisplayElement.x_origin)
+        oVODataDisplayElement.x_origin = Graphics3DXOrigin.X_ORIGIN_RIGHT
         self.m_logger.WriteLine6("\t\t\tThe new X Origin is: {0}", oVODataDisplayElement.x_origin)
-        Assert.assertEqual(GRAPHICS_3D_X_ORIGIN.X_ORIGIN_RIGHT, oVODataDisplayElement.x_origin)
+        Assert.assertEqual(Graphics3DXOrigin.X_ORIGIN_RIGHT, oVODataDisplayElement.x_origin)
         # YOrigin
         self.m_logger.WriteLine6("\t\t\tThe current Y Origin is: {0}", oVODataDisplayElement.y_origin)
-        oVODataDisplayElement.y_origin = GRAPHICS_3D_Y_ORIGIN.Y_ORIGIN_TOP
+        oVODataDisplayElement.y_origin = Graphics3DYOrigin.Y_ORIGIN_TOP
         self.m_logger.WriteLine6("\t\t\tThe new Y Origin is: {0}", oVODataDisplayElement.y_origin)
-        Assert.assertEqual(GRAPHICS_3D_Y_ORIGIN.Y_ORIGIN_TOP, oVODataDisplayElement.y_origin)
-        oVODataDisplayElement.y_origin = GRAPHICS_3D_Y_ORIGIN.Y_ORIGIN_BOTTOM
+        Assert.assertEqual(Graphics3DYOrigin.Y_ORIGIN_TOP, oVODataDisplayElement.y_origin)
+        oVODataDisplayElement.y_origin = Graphics3DYOrigin.Y_ORIGIN_BOTTOM
         self.m_logger.WriteLine6("\t\t\tThe new Y Origin is: {0}", oVODataDisplayElement.y_origin)
-        Assert.assertEqual(GRAPHICS_3D_Y_ORIGIN.Y_ORIGIN_BOTTOM, oVODataDisplayElement.y_origin)
+        Assert.assertEqual(Graphics3DYOrigin.Y_ORIGIN_BOTTOM, oVODataDisplayElement.y_origin)
         # X
         self.m_logger.WriteLine3("\t\t\tThe current X is: {0}", oVODataDisplayElement.x)
         oVODataDisplayElement.x = 12
@@ -1475,26 +1495,26 @@ class VODataDisplayHelper(object):
         Assert.assertEqual(True, oVODataDisplayElement.title)
         # FontSize
         self.m_logger.WriteLine6("\t\t\tThe current Font Size is: {0}", oVODataDisplayElement.font_size)
-        oVODataDisplayElement.font_size = GRAPHICS_3D_FONT_SIZE.LARGE
+        oVODataDisplayElement.font_size = Graphics3DFontSize.LARGE
         self.m_logger.WriteLine6("\t\t\tThe new Font Size is: {0}", oVODataDisplayElement.font_size)
-        Assert.assertEqual(GRAPHICS_3D_FONT_SIZE.LARGE, oVODataDisplayElement.font_size)
-        oVODataDisplayElement.font_size = GRAPHICS_3D_FONT_SIZE.SMALL
+        Assert.assertEqual(Graphics3DFontSize.LARGE, oVODataDisplayElement.font_size)
+        oVODataDisplayElement.font_size = Graphics3DFontSize.SMALL
         self.m_logger.WriteLine6("\t\t\tThe new Font Size is: {0}", oVODataDisplayElement.font_size)
-        Assert.assertEqual(GRAPHICS_3D_FONT_SIZE.SMALL, oVODataDisplayElement.font_size)
-        oVODataDisplayElement.font_size = GRAPHICS_3D_FONT_SIZE.MEDIUM
+        Assert.assertEqual(Graphics3DFontSize.SMALL, oVODataDisplayElement.font_size)
+        oVODataDisplayElement.font_size = Graphics3DFontSize.MEDIUM
         self.m_logger.WriteLine6("\t\t\tThe new Font Size is: {0}", oVODataDisplayElement.font_size)
-        Assert.assertEqual(GRAPHICS_3D_FONT_SIZE.MEDIUM, oVODataDisplayElement.font_size)
+        Assert.assertEqual(Graphics3DFontSize.MEDIUM, oVODataDisplayElement.font_size)
         # Format
         self.m_logger.WriteLine6("\t\t\tThe current Font Format is: {0}", oVODataDisplayElement.format)
-        oVODataDisplayElement.format = GRAPHICS_3D_FORMAT.HORIZONTAL
+        oVODataDisplayElement.format = Graphics3DFormat.HORIZONTAL
         self.m_logger.WriteLine6("\t\t\tThe new Font Format is: {0}", oVODataDisplayElement.format)
-        Assert.assertEqual(GRAPHICS_3D_FORMAT.HORIZONTAL, oVODataDisplayElement.format)
-        oVODataDisplayElement.format = GRAPHICS_3D_FORMAT.NO_LABELS
+        Assert.assertEqual(Graphics3DFormat.HORIZONTAL, oVODataDisplayElement.format)
+        oVODataDisplayElement.format = Graphics3DFormat.NO_LABELS
         self.m_logger.WriteLine6("\t\t\tThe new Font Format is: {0}", oVODataDisplayElement.format)
-        Assert.assertEqual(GRAPHICS_3D_FORMAT.NO_LABELS, oVODataDisplayElement.format)
-        oVODataDisplayElement.format = GRAPHICS_3D_FORMAT.VERTICAL
+        Assert.assertEqual(Graphics3DFormat.NO_LABELS, oVODataDisplayElement.format)
+        oVODataDisplayElement.format = Graphics3DFormat.VERTICAL
         self.m_logger.WriteLine6("\t\t\tThe new Font Format is: {0}", oVODataDisplayElement.format)
-        Assert.assertEqual(GRAPHICS_3D_FORMAT.VERTICAL, oVODataDisplayElement.format)
+        Assert.assertEqual(Graphics3DFormat.VERTICAL, oVODataDisplayElement.format)
 
     # endregion
 

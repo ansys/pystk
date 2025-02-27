@@ -19,7 +19,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IElementConfiguration.type`
-              - Gets the element configuration type enumeration.
+              - Get the element configuration type enumeration.
 
 
 Import detail
@@ -35,8 +35,8 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.IElementConfiguration.type
-    :type: ELEMENT_CONFIGURATION_TYPE
+    :type: ElementConfigurationType
 
-    Gets the element configuration type enumeration.
+    Get the element configuration type enumeration.
 
 

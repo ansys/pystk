@@ -230,6 +230,9 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.IBeamformer`
               - Provide access to the properties and methods defining a beamformer.
 
+            * - :py:class:`~ansys.stk.core.stkobjects.ITargetSelectionMethod`
+              - Provide access to the properties and methods defining a target selection method.
+
             * - :py:class:`~ansys.stk.core.stkobjects.IDirectionProvider`
               - Provide access to the properties and methods defining an direction provider.
 
@@ -1894,6 +1897,18 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.CoverageAreaTargetsCollection`
               - Collection of Area Targets.
 
+            * - :py:class:`~ansys.stk.core.stkobjects.CoverageEllipseCollection`
+              - Collection of elliptical areas of interest.
+
+            * - :py:class:`~ansys.stk.core.stkobjects.CoverageEllipse`
+              - Elliptical area of interest.
+
+            * - :py:class:`~ansys.stk.core.stkobjects.CoverageLatLonBoxCollection`
+              - Collection of latitude/longitude boxes of interest.
+
+            * - :py:class:`~ansys.stk.core.stkobjects.CoverageLatLonBox`
+              - Latitude/longitude box area of interest.
+
             * - :py:class:`~ansys.stk.core.stkobjects.CoveragePointDefinition`
               - Point Definition: methods and parameters for specifying the location of points on the coverage grid.
 
@@ -3304,7 +3319,10 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.AtmosphericAbsorptionModel`
               - Class defining an atmospheric absorption model.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.AtmosphericAbsorptionModelITURP676_9`
+            * - :py:class:`~ansys.stk.core.stkobjects.AtmosphericAbsorptionModelITURP676Version9`
+              - Class defining an atmospheric absorption model.
+
+            * - :py:class:`~ansys.stk.core.stkobjects.AtmosphericAbsorptionModelITURP676Version13`
               - Class defining an atmospheric absorption model.
 
             * - :py:class:`~ansys.stk.core.stkobjects.AtmosphericAbsorptionModelGraphics3DACAP`
@@ -3397,13 +3415,13 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.RainLossModel`
               - Class defining a rain loss model.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.RainLossModelITURP618_12`
+            * - :py:class:`~ansys.stk.core.stkobjects.RainLossModelITURP618Version12`
               - Class defining a rain loss model.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.RainLossModelITURP618_13`
+            * - :py:class:`~ansys.stk.core.stkobjects.RainLossModelITURP618Version13`
               - Class defining a rain loss model.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.RainLossModelITURP618_10`
+            * - :py:class:`~ansys.stk.core.stkobjects.RainLossModelITURP618Version10`
               - Class defining a rain loss model.
 
             * - :py:class:`~ansys.stk.core.stkobjects.RainLossModelCrane1985`
@@ -3421,25 +3439,25 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.CloudsAndFogFadingLossModel`
               - Class defining a clouds and fog fading loss model.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.CloudsAndFogFadingLossModelP840_6`
+            * - :py:class:`~ansys.stk.core.stkobjects.CloudsAndFogFadingLossModelP840Version6`
               - Class defining a clouds and fog Loss ITU-R P.840-6 model.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.CloudsAndFogFadingLossModelP840_7`
+            * - :py:class:`~ansys.stk.core.stkobjects.CloudsAndFogFadingLossModelP840Version7`
               - Class defining a clouds and fog Loss ITU-R P.840-7 model.
 
             * - :py:class:`~ansys.stk.core.stkobjects.TroposphericScintillationFadingLossModel`
               - Class defining a tropospheric scintillation fading loss model.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.TroposphericScintillationFadingLossModelP618_8`
+            * - :py:class:`~ansys.stk.core.stkobjects.TroposphericScintillationFadingLossModelP618Version8`
               - Class defining a tropospheric scintillation fading loss P.618-8 model.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.TroposphericScintillationFadingLossModelP618_12`
+            * - :py:class:`~ansys.stk.core.stkobjects.TroposphericScintillationFadingLossModelP618Version12`
               - Class defining a tropospheric scintillation fading loss P.618-12 model.
 
             * - :py:class:`~ansys.stk.core.stkobjects.IonosphericFadingLossModel`
               - Class defining a Ionospheric fading loss model.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.IonosphericFadingLossModelP531_13`
+            * - :py:class:`~ansys.stk.core.stkobjects.IonosphericFadingLossModelP531Version13`
               - Class defining a Ionospheric fading loss P.531-13 model.
 
             * - :py:class:`~ansys.stk.core.stkobjects.UrbanTerrestrialLossModel`
@@ -3874,6 +3892,9 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.BeamformerDolphChebyshev`
               - Class defining a Dolph-Chebyshev tapered beamformer.
 
+            * - :py:class:`~ansys.stk.core.stkobjects.BeamformerTaylor`
+              - Class defining a Taylor tapered beamformer.
+
             * - :py:class:`~ansys.stk.core.stkobjects.BeamformerHamming`
               - Class defining a Hamming tapered beamformer.
 
@@ -3888,6 +3909,24 @@ Summary
 
             * - :py:class:`~ansys.stk.core.stkobjects.BeamformerScript`
               - Class defining a beamformer script plugin.
+
+            * - :py:class:`~ansys.stk.core.stkobjects.Priority`
+              - Class defining a target priority.
+
+            * - :py:class:`~ansys.stk.core.stkobjects.PriorityCollection`
+              - Class defining a priority data collection.
+
+            * - :py:class:`~ansys.stk.core.stkobjects.TargetSelectionMethod`
+              - Class defining a target selection method.
+
+            * - :py:class:`~ansys.stk.core.stkobjects.TargetSelectionMethodPriority`
+              - Class defining a priority-based target selection method.
+
+            * - :py:class:`~ansys.stk.core.stkobjects.TargetSelectionMethodRange`
+              - Class defining a range-based target selection method.
+
+            * - :py:class:`~ansys.stk.core.stkobjects.TargetSelectionMethodClosingVelocity`
+              - Class defining a closing velocity-based target selection method.
 
             * - :py:class:`~ansys.stk.core.stkobjects.DirectionProvider`
               - Class defining a direction provider.
@@ -4068,1081 +4107,1087 @@ Summary
             :widths: auto
         
 
-            * - :py:class:`~ansys.stk.core.stkobjects.CONSTANTS`
+            * - :py:class:`~ansys.stk.core.stkobjects.Constants`
               - AgEConstants contains base IDs for various structures.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.HELP_CONTEXT_IDENTIFIER_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.HelpContextIdentifierType`
               - Help context IDs.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.ERROR_CODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.ErrorCode`
               - Error codes.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.ABERRATION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.AberrationType`
               - The model of aberration to be used in access computations.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.ANIMATION_END_TIME_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.AnimationEndTimeMode`
               - Animation modes.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.ANIMATION_OPTION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.AnimationOptionType`
               - Animation Options.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.ANIMATION_ACTION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.AnimationActionType`
               - Animation action options.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.ANIMATION_DIRECTION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.AnimationDirectionType`
               - Animation direction options.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.AZ_EL_MASK_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.AzElMaskType`
               - Obscura types of the facility, place or target for AzElMask definition.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.ACTION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.ActionType`
               - Specify the action type for the Interval Access Constraint.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.AXIS_OFFSET`
+            * - :py:class:`~ansys.stk.core.stkobjects.AxisOffset`
               - Specify the axis offset for the sensor 3D Vertex Offset.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.DATA_PROVIDER_RESULT_CATEGORY`
+            * - :py:class:`~ansys.stk.core.stkobjects.DataProviderResultCategory`
               - Specify the category of results returned by the data providers.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.DATA_PROVIDER_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.DataProviderType`
               - Specify the type of the result returned by data providers.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.DATA_PROVIDER_ELEMENT_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.DataProviderElementType`
               - Specify the type of data returned by data providers.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.ACCESS_TIME_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.AccessTimeType`
               - The time period to use for the access computation.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.ALTITUDE_REFERENCE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.AltitudeReferenceType`
               - Altitude reference options.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.TERRAIN_NORMAL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.TerrainNormalType`
               - Methods of defining the slope of the local terrain for the facility, place or target.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.LIGHTING_OBSTRUCTION_MODEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.LightingObstructionModelType`
               - Obstruction model used in lighting computations.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.DISPLAY_TIMES_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.DisplayTimesType`
               - Display times options for the object.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.AREA_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.AreaType`
               - Methods of defining the area target's boundaries.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.TRAJECTORY_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.TrajectoryType`
               - Trajectory type for a point.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.OFFSET_FRAME_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.OffsetFrameType`
               - Frame options for label offset.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.SCENARIO_3D_POINT_SIZE`
+            * - :py:class:`~ansys.stk.core.stkobjects.Scenario3dPointSize`
               - Font size in points.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.TERRAIN_FILE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.TerrainFileType`
               - Terrain file type options.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.TILESET_3D_SOURCE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.Tileset3DSourceType`
               - 3DTileset source type options.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.MARKER_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.MarkerType`
               - Marker style options for a waypoint.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VECTOR_AXES_CONNECT_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VectorAxesConnectType`
               - Methods for connecting geometric elements.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.GRAPHICS_3D_MARKER_ORIGIN_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.Graphics3DMarkerOriginType`
               - Options for the AgVOMarker X or Y Origin property.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.GRAPHICS_3D_LABEL_SWAP_DISTANCE`
+            * - :py:class:`~ansys.stk.core.stkobjects.Graphics3DLabelSwapDistanceType`
               - Label swap distance options.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.PLANET_POSITION_SOURCE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.PlanetPositionSourceType`
               - Options for defining a planet.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.EPHEM_SOURCE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.EphemSourceType`
               - Central body ephemeris sources.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.PLANET_ORBIT_DISPLAY_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.PlanetOrbitDisplayType`
               - Orbit display options for a planet.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.SCENARIO_END_LOOP_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.ScenarioEndLoopType`
               - Scenario animation cycle options.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.SCENARIO_REFRESH_DELTA_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.ScenarioRefreshDeltaType`
               - Scenario animation refresh update options.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_PATTERN`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorPattern`
               - Sensor patterns.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_POINTING`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorPointing`
               - Sensor pointing options.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_POINTING_TARGETED_BORESIGHT_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorPointingTargetedBoresightType`
               - Boresight types for sensors of targeted pointing type.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.BORESIGHT_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.BoresightType`
               - About boresight options for sensors of targeted pointing type.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.TRACK_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.TrackMode`
               - Track mode options for tracking boresights.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_AZ_EL_BORESIGHT_AXIS_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorAzElBoresightAxisType`
               - Primary boresight axis for Sensor Az-El mask.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_REFRACTION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorRefractionType`
               - Sensor refraction models.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_PROJECTION_DISTANCE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorProjectionDistanceType`
               - Sensor 2D Graphics Projection 'Project To' options.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_LOCATION`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorLocation`
               - Sensor Location Type options.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.SCENARIO_TIME_STEP_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.ScenarioTimeStepType`
               - Scenario animation time step options.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.NOTE_SHOW_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.NoteShowType`
               - Options for specifying when a label note displays.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.GEOMETRIC_ELEMENT_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.GeometricElementType`
               - Options for the VORefCrdn Type.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_SCAN_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorScanMode`
               - Options for the Sensor Spinning Scan Mode.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.CONSTRAINT_BACKGROUND`
+            * - :py:class:`~ansys.stk.core.stkobjects.ConstraintBackground`
               - Options for the Background constraint, and Advanced vehicle constraint.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.CONSTRAINT_GROUND_TRACK`
+            * - :py:class:`~ansys.stk.core.stkobjects.ConstraintGroundTrack`
               - Options for the Ground Track constraint, an Advanced vehicle constraint.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.INTERSECTION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.IntersectionType`
               - Intersection display options for sensor projection.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.CONSTRAINT_LIGHTING`
+            * - :py:class:`~ansys.stk.core.stkobjects.ConstraintLighting`
               - Options for the Lighting access constraint.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_GRAPHICS_3D_PROJECTION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorGraphics3DProjectionType`
               - Options for a sensor's 3D Graphics Projection Type.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_GRAPHICS_3D_PULSE_STYLE`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorGraphics3DPulseStyle`
               - Options for a sensor's 3D Graphics Pulse Style.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_GRAPHICS_3D_PULSE_FREQUENCY_PRESET`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorGraphics3DPulseFrequencyPreset`
               - Options for a sensor's 3D Graphics Pulse Frequency presets.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.LINE_WIDTH`
+            * - :py:class:`~ansys.stk.core.stkobjects.LineWidth`
               - Line widths.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.STK_OBJECT_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.STKObjectType`
               - STK objects.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.ACCESS_CONSTRAINT_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.AccessConstraintType`
               - Available Access Constraint.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.BORDER_WALL_UPPER_LOWER_EDGE_ALTITUDE_REFERENCE`
+            * - :py:class:`~ansys.stk.core.stkobjects.BorderWallUpperLowerEdgeAltitudeReference`
               - Border Wall upper and lower edge altitude references.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.SHADOW_MODEL`
+            * - :py:class:`~ansys.stk.core.stkobjects.SolarRadiationPressureShadowModelType`
               - Shadow model options for solar radiation pressure.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.METHOD_TO_COMPUTE_SUN_POSITION`
+            * - :py:class:`~ansys.stk.core.stkobjects.MethodToComputeSunPosition`
               - Methods to compute sun position.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.ATMOSPHERIC_DENSITY_MODEL`
+            * - :py:class:`~ansys.stk.core.stkobjects.AtmosphericDensityModel`
               - Atmospheric density models.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.MARKER_SHAPE_3D`
+            * - :py:class:`~ansys.stk.core.stkobjects.MarkerShape3d`
               - 3D marker shapes.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.LEAD_TRAIL_DATA`
+            * - :py:class:`~ansys.stk.core.stkobjects.LeadTrailData`
               - Lead and trail types for track display.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.TICK_DATA`
+            * - :py:class:`~ansys.stk.core.stkobjects.TickData`
               - Tick mark options. Tick marks represent milestones at specified intervals along a vehicle's track in the 3D Graphics window.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.LOAD_METHOD`
+            * - :py:class:`~ansys.stk.core.stkobjects.LoadMethod`
               - TLE load options.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.DETIC_POSITION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.DeticPositionType`
               - LLA Position Types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_GRAPHICS_2D_PASS`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics2DPass`
               - Pass display options.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_GRAPHICS_2D_VISIBLE_SIDE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics2DVisibleSideType`
               - Pass display direction options.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_GRAPHICS_2D_OFFSET`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics2DOffset`
               - Options for offset direction for 2D time events graphics.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics2DTimeEventType`
               - 2D Graphics time event graphics options.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_GRAPHICS_2D_ATTRIBUTE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics2DAttributeType`
               - Criteria for displaying a vehicle's 2D Graphics attributes.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_GRAPHICS_2D_ELEVATION`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics2DElevation`
               - Options for vehicle swath.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_GRAPHICS_2D_OPTION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics2DOptionType`
               - Display options for vehicle swath.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.MODEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.ModelType`
               - Display options 3D model.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_GRAPHICS_3D_DROP_LINE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DDropLineType`
               - Options for where to end drop lines.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_GRAPHICS_3D_SIGMA_SCALE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DSigmaScale`
               - Sigma scale options for sizing covariance pointing contours.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_GRAPHICS_3D_ATTRIBUTE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DAttributeType`
               - Options for 3D graphics for covariance pointing contours.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.ROUTE_GRAPHICS_3D_MARKER_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.RouteGraphics3DMarkerType`
               - Waypoint marker options.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_ELLIPSE_OPTION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleEllipseOptionType`
               - Elliptical motion modeling options.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.PROPAGATOR_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.PropagatorType`
               - Vehicle propagators (available for vehicle types listed in parentheses).
 
-            * - :py:class:`~ansys.stk.core.stkobjects.PROPAGATOR_SGP4_SWITCH_METHOD`
+            * - :py:class:`~ansys.stk.core.stkobjects.PropagatorSGP4SwitchMethod`
               - TLE Switch method for the SGP4 propagator.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_SGP4_TLE_SELECTION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleSGP4TLESelectionType`
               - TLE Selection method for the SGP4 propagator.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_SGP4_AUTOMATIC_UPDATE_SOURCE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleSGP4AutomaticUpdateSourceType`
               - The TLE sources where the SGP4 propagator retrieves TLEs from automatically upon propagation.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.THIRD_BODY_GRAVITY_SOURCE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.ThirdBodyGravitySourceType`
               - Sources for 3rd body gravitation data.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_GEOMAGNETIC_FLUX_SOURCE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGeomagneticFluxSourceType`
               - GeomagFluxSrc.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_GEOMAGNETIC_FLUX_UPDATE_RATE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGeomagneticFluxUpdateRateType`
               - Geomagnetic flux update rate options.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_SOLAR_FLUX_GEOMAGNETIC_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleSolarFluxGeomagneticType`
               - Options for specifying solar and geomagnetic flux.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_INTEGRATION_MODEL`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleIntegrationModel`
               - Integration methods.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_PREDICTOR_CORRECTOR_SCHEME`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehiclePredictorCorrectorScheme`
               - Predictor Corrector schemes.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_METHOD`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleMethod`
               - Step size control options.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_INTERPOLATION_METHOD`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleInterpolationMethod`
               - Interpolation methods.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_FRAME`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleFrame`
               - Frame options for covariance matrix.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_CORRELATION_LIST_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleCorrelationListType`
               - Correlation List row and column values.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_CONSIDER_ANALYSIS_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleConsiderAnalysisType`
               - Consider parameters for HPOP covariance.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_WAYPOINT_COMPUTATION_METHOD`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleWaypointComputationMethod`
               - Methods for computing waypoints.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_ALTITUDE_REFERENCE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleAltitudeReference`
               - Reference altitude options for waypoints.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_WAYPOINT_INTERPOLATION_METHOD`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleWaypointInterpolationMethod`
               - Interpolation methods.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_LAUNCH`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleLaunch`
               - Options for launch coordinates.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_IMPACT`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleImpact`
               - Impact location options.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_LAUNCH_CONTROL`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleLaunchControl`
               - Flight parameters for a missile.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_IMPACT_LOCATION`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleImpactLocation`
               - Options for specifying missile impact point.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_PASS_NUMBERING`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehiclePassNumbering`
               - Pass numbering options.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_PARTIAL_PASS_MEASUREMENT`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehiclePartialPassMeasurement`
               - Partial Pass Measurement methods (typically used for reporting data).
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_COORDINATE_SYSTEM`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleCoordinateSystem`
               - Coordinate system used for measurement of latitude and longitude.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_BREAK_ANGLE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleBreakAngleType`
               - Definition options for setting pass breaks:.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_DIRECTION`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleDirection`
               - Direction of latitude crossing at the beginning of a pass.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.GRAPHICS_3D_LOCATION`
+            * - :py:class:`~ansys.stk.core.stkobjects.Graphics3DLocation`
               - Location options for the display of textual data in the 3D Graphics window.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.GRAPHICS_3D_X_ORIGIN`
+            * - :py:class:`~ansys.stk.core.stkobjects.Graphics3DXOrigin`
               - X origin options for positioning data display.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.GRAPHICS_3D_Y_ORIGIN`
+            * - :py:class:`~ansys.stk.core.stkobjects.Graphics3DYOrigin`
               - Y origin options for positioning data display.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.GRAPHICS_3D_FONT_SIZE`
+            * - :py:class:`~ansys.stk.core.stkobjects.Graphics3DFontSize`
               - Font size for data display.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.AIRCRAFT_WGS84_WARNING_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.AircraftWGS84WarningType`
               - Display mode options for aircraft mission modeler WGS84 warning.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.SURFACE_REFERENCE`
+            * - :py:class:`~ansys.stk.core.stkobjects.SurfaceReference`
               - Options for surface reference of earth globes.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.GRAPHICS_3D_FORMAT`
+            * - :py:class:`~ansys.stk.core.stkobjects.Graphics3DFormat`
               - Font format for data display.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.ATTITUDE_STANDARD_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.AttitudeStandardType`
               - AgEAttitudeStandardType tells the user which interface to cast to. eRouteAttitudeStandard -> IAgVeRouteAttitudeStandard, eTrajectoryAttitudeStandard -> IAgVeTrajectoryAttitudeStandard, eOrbitAttitudeStanard -> IAgVeOrbitAttitudeStandard.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_ATTITUDE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleAttitude`
               - Available attitude types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.ATTITUDE_PROFILE`
+            * - :py:class:`~ansys.stk.core.stkobjects.AttitudeProfile`
               - Predefined attitude profiles.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_LOOK_AHEAD_METHOD`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleLookAheadMethod`
               - Look ahead duration methods.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_GRAPHICS_3D_B_PLANE_TARGET_POINT_POSITION`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DBPlaneTargetPointPosition`
               - Values of the enumeration represent polymorphic object types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_ALTITUDE_CROSSING_SIDE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorAltitudeCrossingSideType`
               - Options for specifying which crossings are computed and displayed in the 2D Graphics window.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_ALTITUDE_CROSSING_DIRECTION`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorAltitudeCrossingDirection`
               - Options for specifying the direction in which the sensor's field of view crosses the specified altitude.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_GRAPHICS_3D_INHERIT_FROM_2D`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorGraphics3DInheritFrom2D`
               - Options for how projection distances that are computed based on 2D Graphics projection settings are displayed in the 3D Graphics window.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_GRAPHICS_3D_VISUAL_APPEARANCE`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorGraphics3DVisualAppearance`
               - Options optimizing the visual appearance of projections.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.CHAIN_TIME_PERIOD_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.ChainTimePeriodType`
               - Compute Time Period Type.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.CHAIN_CONSTELLATION_CONSTRAINTS_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.ChainConstellationConstraintsMode`
               - Constellation Constraints Mode.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.CHAIN_COVERAGE_ASSET_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.ChainCoverageAssetMode`
               - Chain Cov Asset Mode.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.CHAIN_PARENT_PLATFORM_RESTRICTION`
+            * - :py:class:`~ansys.stk.core.stkobjects.ChainParentPlatformRestriction`
               - Options for a chain's From and To Parent Platform Restriction.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.CHAIN_OPTIMAL_STRAND_METRIC_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.ChainOptimalStrandMetricType`
               - Chain optimal strand metric type.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.CHAIN_OPTIMAL_STRAND_CALCULATION_SCALAR_METRIC_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.ChainOptimalStrandCalculationScalarMetricType`
               - Chain optimal strand calculation scalar type.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.CHAIN_OPTIMAL_STRAND_LINK_COMPARE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.ChainOptimalStrandLinkCompareType`
               - Chain optimal strand link comparison type.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.CHAIN_OPTIMAL_STRAND_COMPARE_STRANDS_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.ChainOptimalStrandCompareStrandsType`
               - Chain optimal strand link comparison type.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.DATA_SAVE_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.DataSaveMode`
               - Access Save Mode.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.COVERAGE_BOUNDS`
+            * - :py:class:`~ansys.stk.core.stkobjects.CoverageBounds`
               - Coverage bounds options: values of the enumeration represent polymorphic object types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.COVERAGE_POINT_LOCATION_METHOD`
+            * - :py:class:`~ansys.stk.core.stkobjects.CoveragePointLocationMethod`
               - Point location method.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.COVERAGE_POINT_ALTITUDE_METHOD`
+            * - :py:class:`~ansys.stk.core.stkobjects.CoveragePointAltitudeMethod`
               - Custom point altitude method.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.COVERAGE_GRID_CLASS`
+            * - :py:class:`~ansys.stk.core.stkobjects.CoverageGridClass`
               - Classes of objects that can be used as templates to associate access constraints, basic object properties and, in some cases, altitude with points in the grid.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.COVERAGE_ALTITUDE_METHOD`
+            * - :py:class:`~ansys.stk.core.stkobjects.CoverageAltitudeMethod`
               - Method for specifying the altitude of a grid point.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.COVERAGE_GROUND_ALTITUDE_METHOD`
+            * - :py:class:`~ansys.stk.core.stkobjects.CoverageGroundAltitudeMethod`
               - Method for specifying the ground altitude of a grid point.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.COVERAGE_DATA_RETENTION`
+            * - :py:class:`~ansys.stk.core.stkobjects.CoverageDataRetention`
               - Data retention options.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.COVERAGE_REGION_ACCESS_ACCELERATION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.CoverageRegionAccessAccelerationType`
               - Regional acceleration options.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.COVERAGE_RESOLUTION`
+            * - :py:class:`~ansys.stk.core.stkobjects.CoverageResolution`
               - Coverage grid resolution options: values of the enumeration represent polymorphic object types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.COVERAGE_ASSET_STATUS`
+            * - :py:class:`~ansys.stk.core.stkobjects.CoverageAssetStatus`
               - Coverage asset status.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.COVERAGE_ASSET_GROUPING`
+            * - :py:class:`~ansys.stk.core.stkobjects.CoverageAssetGrouping`
               - Coverage asset grouping options.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.FIGURE_OF_MERIT_DEFINITION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionType`
               - Figure of Merit types: values of the enumeration represent polymorphic object types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.FIGURE_OF_MERIT_SATISFACTION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMeritSatisfactionType`
               - Satisfaction options: determine whether satisfaction is achieved based on the value of the figure of merit.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.FIGURE_OF_MERIT_CONSTRAINT_NAME`
+            * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMeritConstraintName`
               - Available constraints to use for the Access Constraint Figure of Merit.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.FIGURE_OF_MERIT_COMPUTE`
+            * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMeritCompute`
               - Figure of Merit compute options.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.FIGURE_OF_MERIT_ACROSS_ASSETS`
+            * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMeritAcrossAssets`
               - Across Assets options: specify which value of the constraint is to be selected based on all currently available assets.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.FIGURE_OF_MERIT_NAVIGATION_COMPUTE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMeritNavigationComputeType`
               - Allowed number of assets for the navigation solution.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.FIGURE_OF_MERIT_METHOD`
+            * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMeritMethod`
               - Dilution of Precision method.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.FIGURE_OF_MERIT_END_GAP_OPTION`
+            * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMeritEndGapOption`
               - End gap options: control consideration of gaps at ends of analysis intervals.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.FIGURE_OF_MERIT_GRAPHICS_2D_CONTOUR_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics2DContourType`
               - Contour fill options.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD`
+            * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics2DColorMethod`
               - Methods for assigning colors to contour levels.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.FIGURE_OF_MERIT_GRAPHICS_2D_FLOATING_POINT_FORMAT`
+            * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics2DFloatingPointFormat`
               - Format options for floating point numbers.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.FIGURE_OF_MERIT_GRAPHICS_2D_DIRECTION`
+            * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics2DDirection`
               - Level order display options for the contour legend.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.FIGURE_OF_MERIT_GRAPHICS_2D_ACCUMULATION`
+            * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMeritGraphics2DAccumulation`
               - Accumulation options: control the sense and persistence of animation graphics for a Figure of Merit.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.FIGURE_OF_MERIT_NAVIGATION_ACCURACY_METHOD`
+            * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMeritNavigationAccuracyMethod`
               - Options for uncertainty in one-way range measurements for the Navigation Accuracy Figure of Merit.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.IV_CLOCK_HOST`
+            * - :py:class:`~ansys.stk.core.stkobjects.IvClockHost`
               - Clock host options for access. Time values are reported with a clock colocated with the clock host object.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.IV_TIME_SENSE`
+            * - :py:class:`~ansys.stk.core.stkobjects.IvTimeSense`
               - Mode of signal transmission of the designated clock host.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.GPS_ATTITUDE_MODEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.GPSAttitudeModelType`
               - GPS attitude profile model types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.CONSTELLATION_CONSTRAINT_RESTRICTION`
+            * - :py:class:`~ansys.stk.core.stkobjects.ConstellationConstraintRestrictionType`
               - The values of the enumeration are used to define constellation constraints that allow you to specify the criteria to be used when constellations are combined with other objects in a chain.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.EVENT_DETECTION`
+            * - :py:class:`~ansys.stk.core.stkobjects.EventDetection`
               - Available event detection strategies.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.SAMPLING_METHOD`
+            * - :py:class:`~ansys.stk.core.stkobjects.SamplingMethod`
               - Available sampling methods.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.COVERAGE_SATISFACTION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.CoverageSatisfactionType`
               - The condition on the number of assets covering a grid point that must be satisfied for a valid access.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.CCSDS_REFERENCE_FRAME`
+            * - :py:class:`~ansys.stk.core.stkobjects.CCSDSReferenceFrame`
               - Reference Frame.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.CCSDS_DATE_FORMAT`
+            * - :py:class:`~ansys.stk.core.stkobjects.CCSDSDateFormat`
               - The date format of the file.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.CCSDS_EPHEMERIS_FORMAT_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.CCSDSEphemerisFormatType`
               - The ephemeris format of the file.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.CCSDS_TIME_SYSTEM`
+            * - :py:class:`~ansys.stk.core.stkobjects.CCSDSTimeSystem`
               - Time System.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.EPHEMERIS_COORDINATE_SYSTEM_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.EphemerisCoordinateSystemType`
               - The Coordinate System of the file.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.EPHEMERIS_COVARIANCE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.EphemerisCovarianceType`
               - The covariance data export type.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.EXPORT_TOOL_VERSION_FORMAT`
+            * - :py:class:`~ansys.stk.core.stkobjects.ExportToolVersionFormat`
               - The version format of the file.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.EXPORT_TOOL_TIME_PERIOD`
+            * - :py:class:`~ansys.stk.core.stkobjects.ExportToolTimePeriodType`
               - Values of the enumeration represent polymorphic object types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.SPICE_INTERPOLATION`
+            * - :py:class:`~ansys.stk.core.stkobjects.SpiceInterpolation`
               - The SPICE interpolation type.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.ATTITUDE_COORDINATE_AXES`
+            * - :py:class:`~ansys.stk.core.stkobjects.AttitudeCoordinateAxes`
               - Attitude export options.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.ATTITUDE_INCLUDE`
+            * - :py:class:`~ansys.stk.core.stkobjects.AttitudeInclude`
               - Details to include in an exported Attitude file.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.EXPORT_TOOL_STEP_SIZE`
+            * - :py:class:`~ansys.stk.core.stkobjects.ExportToolStepSizeType`
               - The Step Size type for an attitude file.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.TEXT_OUTLINE_STYLE`
+            * - :py:class:`~ansys.stk.core.stkobjects.TextOutlineStyle`
               - The text outline style for 2D graphics display.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.MTO_RANGE_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.MTORangeMode`
               - MTO Range Mode.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.MTO_TRACK_EVALUATION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.MTOTrackEvaluationType`
               - MTO Track Eval Mode.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.MTO_ENTIRETY`
+            * - :py:class:`~ansys.stk.core.stkobjects.MTOEntirety`
               - MTO Entirety Mode.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.MTO_VISIBILITY_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.MTOVisibilityMode`
               - MTO Visibility Mode.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.MTO_OBJECT_INTERVAL`
+            * - :py:class:`~ansys.stk.core.stkobjects.MTOObjectInterval`
               - MTO object interval type.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.MTO_INPUT_DATA_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.MTOInputDataType`
               - MTO Input Data Type.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.SOLID_TIDE`
+            * - :py:class:`~ansys.stk.core.stkobjects.SolidTide`
               - The Solid Tide Type for force modeling.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.TIME_PERIOD_VALUE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.TimePeriodValueType`
               - Time value types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.ONE_POINT_ACCESS_STATUS`
+            * - :py:class:`~ansys.stk.core.stkobjects.OnePointAccessStatus`
               - One point access status.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.ONE_POINT_ACCESS_SUMMARY`
+            * - :py:class:`~ansys.stk.core.stkobjects.OnePointAccessSummary`
               - One point access summary type.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.LOOK_AHEAD_PROPAGATOR`
+            * - :py:class:`~ansys.stk.core.stkobjects.LookAheadPropagator`
               - Propagators used for calculating ephemeris for look ahead purposes. The enumeration is used with realtime propagators.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.GRAPHICS_3D_MARKER_ORIENTATION`
+            * - :py:class:`~ansys.stk.core.stkobjects.Graphics3DMarkerOrientation`
               - 3D graphics marker orientations.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.SOLAR_RADIATION_PRESSURE_MODEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.SolarRadiationPressureModelType`
               - Solar radiation pressure model types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.DRAG_MODEL`
+            * - :py:class:`~ansys.stk.core.stkobjects.DragModel`
               - Drag model types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_PROPAGATION_FRAME`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehiclePropagationFrame`
               - Propagation frames used by J2/J4/TwoBody propagators.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.STAR_REFERENCE_FRAME`
+            * - :py:class:`~ansys.stk.core.stkobjects.StarReferenceFrame`
               - Star reference frame types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.GPS_REFERENCE_WEEK`
+            * - :py:class:`~ansys.stk.core.stkobjects.GPSReferenceWeek`
               - GPS almanac reference week.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.COVERAGE_CUSTOM_REGION_ALGORITHM`
+            * - :py:class:`~ansys.stk.core.stkobjects.CoverageCustomRegionAlgorithm`
               - The enumerations are used to enable/disable the special gridding algorithms triggered when Custom Region grid includes a single small region (longitude span less than 1 deg).
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_GPS_SWITCH_METHOD`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGPSSwitchMethod`
               - GPS Switch method for the GPS propagator.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_GPS_ELEMENT_SELECTION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGPSElementSelectionType`
               - GPS Selection method for the GPS propagator.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_GPS_AUTOMATIC_UPDATE_SOURCE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGPSAutomaticUpdateSourceType`
               - The sources to retrieve GPS elements from upon propagation.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_GPS_ALMANAC_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGPSAlmanacType`
               - GPS Almanac types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.EXTERNAL_EPHEMERIS_FORMAT_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.ExternalEphemerisFormatType`
               - Ephemeris file formats supported by the Stk external propagator.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.EXTERNAL_FILE_MESSAGE_LEVEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.ExternalFileMessageLevelType`
               - Ephemeris file message level used by the Stk external propagator.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.COVERAGE_3D_DRAW_AT_ALTITUDE_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.Coverage3dDrawAtAltitudeMode`
               - Coverage definition drawing modes for filled graphics when showing at altitude in 3D Graphics window.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.DISTANCE_ON_SPHERE`
+            * - :py:class:`~ansys.stk.core.stkobjects.DistanceOnSphere`
               - Type of line which connects the two points.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.FIGURE_OF_MERIT_INVALID_VALUE_ACTION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.FigureOfMeritInvalidValueActionType`
               - Invalid Value Action: Controls consideration of time samples usage for computing navigation solution when insufficient number of assets are available at one or more of the time samples used.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_SLEW_TIMING_BETWEEN_TARGET_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleSlewTimingBetweenTargetType`
               - Choose an event within the window of opportunity to trigger each slew, or select Optimal to change attitude whenever the slew can be performed most efficiently.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_SLEW_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleSlewMode`
               - Target slew modes.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.COMPONENT`
+            * - :py:class:`~ansys.stk.core.stkobjects.Component`
               - The different types of components in the component browser.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VOLUMETRIC_DEFINITION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VolumetricDefinitionType`
               - Volume grid definition types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VOLUMETRIC_SPATIAL_CALCULATION_EVALUATION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VolumetricSpatialCalculationEvaluationType`
               - Evaluation of Spatial Calculation types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VOLUMETRIC_SAVE_COMPUTED_DATA_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VolumetricSaveComputedDataType`
               - Save Computed Data types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VOLUMETRIC_DISPLAY_VOLUME_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VolumetricDisplayVolumeType`
               - Graphics volume display type.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VOLUMETRIC_DISPLAY_QUALITY_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VolumetricDisplayQualityType`
               - Quality of the graphics display types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VOLUMETRIC_LEGEND_NUMERIC_NOTATION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VolumetricLegendNumericNotationType`
               - Legend numeric notation types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VOLUMETRIC_LEVEL_ORDER`
+            * - :py:class:`~ansys.stk.core.stkobjects.VolumetricLevelOrder`
               - Legend level display order.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_EOIR_PROCESSING_LEVEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorEOIRProcessingLevelType`
               - EOIR processing levels.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_EOIR_JITTER_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorEOIRJitterType`
               - EOIR jitter type.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_EOIR_SCAN_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorEOIRScanMode`
               - EOIR sensor scan mode.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_EOIR_BAND_IMAGE_QUALITY`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorEOIRBandImageQuality`
               - EOIR band image quality levels.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_EOIR_BAND_SPECTRAL_SHAPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorEOIRBandSpectralShape`
               - EOIR overall system spectral shape determination.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_EOIR_BAND_SPATIAL_INPUT_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorEOIRBandSpatialInputMode`
               - EOIR spatial input parameter specification.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_EOIR_BAND_SPECTRAL_RELATIVE_SYSTEM_RESPONSE_UNITS_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorEOIRBandSpectralRelativeSystemResponseUnitsType`
               - EOIR spectral relative system response units specification.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_EOIR_BAND_OPTICAL_INPUT_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorEOIRBandOpticalInputMode`
               - EOIR optical input parameter specification.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_EOIR_BAND_OPTICAL_TRANSMISSION_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorEOIRBandOpticalTransmissionMode`
               - EOIR optical transmission parameter specification mode.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_EOIR_BAND_RADIOMETRIC_PARAMETER_LEVEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorEOIRBandRadiometricParameterLevelType`
               - EOIR radiometric detector parameter level of specification.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_EOIR_BAND_QUANTUM_EFFICIENCY_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorEOIRBandQuantumEfficiencyMode`
               - EOIR quantum efficiency specification mode.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_EOIR_BAND_QUANTIZATION_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorEOIRBandQuantizationMode`
               - EOIR mode of determining quantization step size.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_EOIR_BAND_WAVELENGTH_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorEOIRBandWavelengthType`
               - EOIR band diffraction wavelength reference type.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_EOIR_BAND_SATURATION_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorEOIRBandSaturationMode`
               - EOIR band irradiance or radiance reference mode.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VOLUMETRIC_VOLUME_GRID_EXPORT_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VolumetricVolumeGridExportType`
               - Volumetric data export types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VOLUMETRIC_DATA_EXPORT_FORMAT_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VolumetricDataExportFormatType`
               - Volumetric data export format types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.CONSTELLATION_FROM_TO_PARENT_CONSTRAINT`
+            * - :py:class:`~ansys.stk.core.stkobjects.ConstellationFromToParentConstraint`
               - Options for a chain's From and To Parent Constraints.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.ANALYSIS_WORKBENCH_ACCESS_CONSTRAINT_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.AnalysisWorkbenchAccessConstraintType`
               - Available Analysis Workbench Access Constraints.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.STATISTIC_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.StatisticType`
               - The different statistics that might be available for a data set.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.TIME_VARYING_EXTREMUM`
+            * - :py:class:`~ansys.stk.core.stkobjects.TimeVaryingExtremum`
               - The different time varying extremum that might be available for a data set.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.MODEL_GLTF_REFLECTION_MAP_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.ModelGltfReflectionMapType`
               - Settings for glTF Reflection.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.SENSOR_GRAPHICS_3D_PROJECTION_TIME_DEPENDENCY_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.SensorGraphics3DProjectionTimeDependencyType`
               - The different ways to determine the sensor's space projection distance in the 3D window.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.LOP_ATMOSPHERIC_DENSITY_MODEL`
+            * - :py:class:`~ansys.stk.core.stkobjects.LOPAtmosphericDensityModel`
               - LOP Atmospheric density models.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.LOW_ALTITUDE_ATMOSPHERIC_DENSITY_MODEL`
+            * - :py:class:`~ansys.stk.core.stkobjects.LowAltitudeAtmosphericDensityModel`
               - Low Altitude Atmospheric density models.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.EPHEM_EXPORT_TOOL_FILE_FORMAT`
+            * - :py:class:`~ansys.stk.core.stkobjects.EphemExportToolFileFormat`
               - Ephemeris Export Tool file formats.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.ADVCAT_ELLIPSOID_CLASS_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.AdvCATEllipsoidClassType`
               - Method for determining Ellipsoid Sizing method (class).
 
-            * - :py:class:`~ansys.stk.core.stkobjects.ADVCAT_CONJUNCTION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.AdvCATConjunctionType`
               - Mode for computing events involving conjunction TCA.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.ADVCAT_SECONDARY_ELLIPSOIDS_VISIBILITY_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.AdvCATSecondaryEllipsoidsVisibilityType`
               - Type of visible Secondary Ellipsoids.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.EOIR_SHAPE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.EOIRShapeType`
               - The object geometry which will be rendered in the synthetic scene window.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.EOIR_SHAPE_MATERIAL_SPECIFICATION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.EOIRShapeMaterialSpecificationType`
               - Designation of how material properties are specified.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.EOIR_THERMAL_MODEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.EOIRThermalModelType`
               - EOIR thermal models.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.EOIR_FLIGHT_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.EOIRFlightType`
               - EOIR Flight Types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.PropagatorDisplayCoordinateType`
+              - Propagator Display Coordinate Types.
+
+            * - :py:class:`~ansys.stk.core.stkobjects.ComponentLinkEmbedControlReferenceType`
               - Component link/embed control reference type.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.SWATH_COMPUTATIONAL_METHOD`
+            * - :py:class:`~ansys.stk.core.stkobjects.SwathComputationalMethod`
               - Computationals methods for generating swaths.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.CLASSICAL_LOCATION`
+            * - :py:class:`~ansys.stk.core.stkobjects.ClassicalLocation`
               - Classical (Keplerian) element used to specify the spacecraft's location within its orbit at epoch.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.ORIENTATION_ASC_NODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.OrientationAscNode`
               - Ascending node-related options for use in specifying orbit orientation.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.GEODETIC_SIZE`
+            * - :py:class:`~ansys.stk.core.stkobjects.GeodeticSize`
               - Size options for the Geodetic coordinate type.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.DELAUNAY_L_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.DelaunayLType`
               - Select whether to use the default representation of Delaunay L or L/SQRT(mu).
 
-            * - :py:class:`~ansys.stk.core.stkobjects.DELAUNAY_H_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.DelaunayHType`
               - Select whether to use the default representation of Delaunay H or H/SQRT(mu).
 
-            * - :py:class:`~ansys.stk.core.stkobjects.DELAUNAY_G_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.DelaunayGType`
               - Select whether to use the default representation of Delaunay G or G/SQRT(mu).
 
-            * - :py:class:`~ansys.stk.core.stkobjects.EQUINOCTIAL_SIZE_SHAPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.EquinoctialSizeShape`
               - Opt whether to use Mean Motion or Semimajor Axis to specify the orbit size (Equinoctial coordinate type).
 
-            * - :py:class:`~ansys.stk.core.stkobjects.MIXED_SPHERICAL_FLIGHT_PATH_ANGLE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.MixedSphericalFlightPathAngleType`
               - Opt whether to use Horizontal or Vertical Flight Path Angle.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.SPHERICAL_FLIGHT_PATH_AZIMUTH_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.SphericalFlightPathAzimuthType`
               - Opt whether to use Horizontal or Vertical Flight Path Angle.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.CLASSICAL_SIZE_SHAPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.ClassicalSizeShape`
               - Pairs of Classical (Keplerian) elements used to specify orbit size and shape.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.EQUINOCTIAL_FORMULATION`
+            * - :py:class:`~ansys.stk.core.stkobjects.EquinoctialFormulation`
               - Formulation: retrograde or posigrade.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.SCATTERING_POINT_PROVIDER_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.ScatteringPointProviderType`
               - Scattering point provider type.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.SCATTERING_POINT_MODEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.ScatteringPointModelType`
               - Scattering point model type.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.SCATTERING_POINT_PROVIDER_LIST_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.ScatteringPointProviderListType`
               - Scattering Point Provider List Type.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.POLARIZATION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.PolarizationType`
               - Polarization Type.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.POLARIZATION_REFERENCE_AXIS`
+            * - :py:class:`~ansys.stk.core.stkobjects.PolarizationReferenceAxis`
               - Polarization reference axis.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.NOISE_TEMPERATURE_COMPUTE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.NoiseTemperatureComputeType`
               - System noise temperature compute type.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.POINTING_STRATEGY_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.PointingStrategyType`
               - Pointing strategy type.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.WAVEFORM_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.WaveformType`
               - Waveform types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.FREQUENCY_SPECIFICATION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.FrequencySpecificationType`
               - Frequency Specification Type.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.PRF_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.PRFMode`
               - Radar search/track prf modes.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.PULSE_WIDTH_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.PulseWidthMode`
               - Radar search/track pulse width modes.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.WAVEFORM_SELECTION_STRATEGY_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.WaveformSelectionStrategyType`
               - Waveform selection strategy type.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.ANTENNA_CONTROL_REFERENCE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaControlReferenceType`
               - Antenna control reference type.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.ANTENNA_MODEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaModelType`
               - Antenna model types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.ANTENNA_CONTOUR_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaContourType`
               - Antenna contour types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.CIRCULAR_APERTURE_INPUT_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.CircularApertureInputType`
               - Circular aperture antenna input type.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.RECTANGULAR_APERTURE_INPUT_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.RectangularApertureInputType`
               - Rectangular aperture antenna input type.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.DIRECTION_PROVIDER_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.DirectionProviderType`
               - Direction Provider types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.BEAMFORMER_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.BeamformerType`
               - Beamformer types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.ELEMENT_CONFIGURATION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.ElementConfigurationType`
               - Element configuration types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.LATTICE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.LatticeType`
               - Lattice types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.SPACING_UNIT`
+            * - :py:class:`~ansys.stk.core.stkobjects.SpacingUnit`
               - Spacing Units.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.LIMITS_EXCEEDED_BEHAVIOR_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.LimitsExceededBehaviorType`
               - Limits Exceeded Behavior types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.ANTENNA_GRAPHICS_COORDINATE_SYSTEM`
+            * - :py:class:`~ansys.stk.core.stkobjects.TargetSelectionMethod`
+              - Target Selection Method types.
+
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaGraphicsCoordinateSystem`
               - Coordinate system for defining antenna graphics resolution.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.ANTENNA_MODEL_INPUT_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaModelInputType`
               - Diameter computation input type.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.HFSS_FAR_FIELD_DATA_GAIN_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.HFSSFarFieldDataGainType`
               - Gain type.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.ANTENNA_MODEL_COSECANT_SQUARED_SIDELOBE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.AntennaModelCosecantSquaredSidelobeType`
               - Cosecant Squared antenna sidelobe selection types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.BEAM_SELECTION_STRATEGY_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.BeamSelectionStrategyType`
               - Beam selection strategy types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.TRANSMITTER_MODEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.TransmitterModelType`
               - Transmitter model types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.TRANSFER_FUNCTION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.TransferFunctionType`
               - Transmitter model types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.RE_TRANSMITTER_OP_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.ReTransmitterOpMode`
               - Re-Transmitter operational mode.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.RECEIVER_MODEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.ReceiverModelType`
               - Receiver model types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.LINK_MARGIN_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.LinkMarginType`
               - Link margin types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.RADAR_STC_ATTENUATION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarSTCAttenuationType`
               - Stc Attenuation Type.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.RADAR_FREQUENCY_SPECIFICATION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarFrequencySpecificationType`
               - SNR Contour Type.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.RADAR_SNR_CONTOUR_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarSNRContourType`
               - SNR Contour Type.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.RADAR_MODEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarModelType`
               - Radar system types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.RADAR_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarMode`
               - Radar mode types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.RADAR_WAVEFORM_SEARCH_TRACK_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarWaveformSearchTrackType`
               - Radar search/track waveform types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.RADAR_SEARCH_TRACK_PRF_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarSearchTrackPRFMode`
               - Radar search/track prf modes.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.RADAR_SEARCH_TRACK_PULSE_WIDTH_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarSearchTrackPulseWidthMode`
               - Radar search/track pulse width modes.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.RADAR_SAR_PRF_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarSarPRFMode`
               - Radar SAR prf modes.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.RADAR_SAR_RANGE_RESOLUTION_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarSarRangeResolutionMode`
               - Radar SAR range resolution modes.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.RADAR_SAR_PCR_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarSarPcrMode`
               - Radar SAR pulse compression ratio modes.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.RADAR_SAR_PULSE_INTEGRATION_ANALYSIS_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarSARPulseIntegrationAnalysisMode`
               - Radar sar pulse integration mode.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.RADAR_PROBABILITY_OF_DETECTION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarProbabilityOfDetectionType`
               - Radar probability of detection type.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.RADAR_PULSE_INTEGRATION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarPulseIntegrationType`
               - Radar pulse integration type.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.RADAR_PULSE_INTEGRATOR_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarPulseIntegratorType`
               - Radar pulse integrator type.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.RADAR_CONTINUOUS_WAVE_ANALYSIS_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarContinuousWaveAnalysisMode`
               - Radar continuous wave analysis mode.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.RADAR_CLUTTER_GEOMETRY_MODEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarClutterGeometryModelType`
               - Radar clutter geometry model type.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.RADAR_CLUTTER_MAP_MODEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarClutterMapModelType`
               - Radar clutter map model type.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.RADAR_SWERLING_CASE`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarSwerlingCase`
               - Radar swerling case.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.RCS_COMPUTE_STRATEGY`
+            * - :py:class:`~ansys.stk.core.stkobjects.RCSComputeStrategy`
               - Radar cross section compute strategy.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.RADAR_ACTIVITY_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarActivityType`
               - Radar activity times strategy.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.RADAR_CROSS_SECTION_CONTOUR_GRAPHICS_POLARIZATION`
+            * - :py:class:`~ansys.stk.core.stkobjects.RadarCrossSectionContourGraphicsPolarization`
               - Radar cross section contour graphics polarization.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.RF_FILTER_MODEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.RFFilterModelType`
               - RF filter model types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.MODULATOR_MODEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.ModulatorModelType`
               - Modulator model types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.DEMODULATOR_MODEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.DemodulatorModelType`
               - Demodulator model types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.RAIN_LOSS_MODEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.RainLossModelType`
               - Rain loss model types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.ATMOSPHERIC_ABSORPTION_MODEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.AtmosphericAbsorptionModelType`
               - Atmospheric absorption model types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.URBAN_TERRESTRIAL_LOSS_MODEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.UrbanTerrestrialLossModelType`
               - urban/terrestrial loss model types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.CLOUDS_AND_FOG_FADING_LOSS_MODEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.CloudsAndFogFadingLossModelType`
               - Clouds and Fog loss model types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.CLOUDS_AND_FOG_LIQUID_WATER_CHOICE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.CloudsAndFogLiquidWaterChoiceType`
               - Clouds and Fog loss model liquid water content choices.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.IONOSPHERIC_FADING_LOSS_MODEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.IonosphericFadingLossModelType`
               - Ionospheric loss model types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.TROPOSPHERIC_SCINTILLATION_FADING_LOSS_MODEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.TroposphericScintillationFadingLossModelType`
               - TropoScintillation loss model types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.TROPOSPHERIC_SCINTILLATION_AVERAGE_TIME_CHOICE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.TroposphericScintillationAverageTimeChoiceType`
               - TroposphericScintillation loss model average time choices.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.PROJECTION_HORIZONTAL_DATUM_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.ProjectionHorizontalDatumType`
               - REMCOM Wireless InSite RT project/horizontal datum type.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.BUILD_HEIGHT_REFERENCE_METHOD`
+            * - :py:class:`~ansys.stk.core.stkobjects.BuildHeightReferenceMethod`
               - REMCOM Wireless InSite RT building height reference method.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.BUILDING_HEIGHT_UNIT`
+            * - :py:class:`~ansys.stk.core.stkobjects.BuildingHeightUnit`
               - REMCOM Wireless InSite RT building height unit.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.TIREM_POLARIZATION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.TIREMPolarizationType`
               - TIREM polarization type.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.GRAPHICS_3D_ACAP_SOLAR_ACTIVITY_CONFIGURATION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.Graphics3DACAPSolarActivityConfigurationType`
               - VOACAP solar activity configuration type.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.GRAPHICS_3D_ACAP_COEFFICIENT_DATA_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.Graphics3DACAPCoefficientDataType`
               - VOACAP coefficient data type.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.LASER_PROPAGATION_LOSS_MODEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.LaserPropagationLossModelType`
               - Laser propagation loss model types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.LASER_TROPOSPHERIC_SCINTILLATION_LOSS_MODEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.LaserTroposphericScintillationLossModelType`
               - Laser tropospheric scintillation loss model types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.ATMOSPHERIC_TURBULENCE_MODEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.AtmosphericTurbulenceModelType`
               - Refractive index structure parameter model types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.MODTRAN_AEROSOL_MODEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.ModtranAerosolModelType`
               - MODTRAN-derived lookup table aerosol model extinction types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.MODTRAN_CLOUD_MODEL_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.ModtranCloudModelType`
               - MODTRAN Cloud model types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.COMM_SYSTEM_REFERENCE_BANDWIDTH`
+            * - :py:class:`~ansys.stk.core.stkobjects.CommSystemReferenceBandwidth`
               - CommSystem reference bandwidth.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.COMM_SYSTEM_CONSTRAINING_ROLE`
+            * - :py:class:`~ansys.stk.core.stkobjects.CommSystemConstrainingRole`
               - CommSystem constraining role.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.COMM_SYSTEM_SAVE_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.CommSystemSaveMode`
               - CommSystem save mode.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.COMM_SYSTEM_ACCESS_EVENT_DETECTION_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.CommSystemAccessEventDetectionType`
               - CommSystem access options event detection type.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.COMM_SYSTEM_ACCESS_SAMPLING_METHOD_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.CommSystemAccessSamplingMethodType`
               - CommSystem access options sampling method type.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.COMM_SYSTEM_LINK_SELECTION_CRITERIA_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.CommSystemLinkSelectionCriteriaType`
               - Link selection strategy types.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.SPACE_ENVIRONMENT_NASA_MODELS_ACTIVITY`
+            * - :py:class:`~ansys.stk.core.stkobjects.SpaceEnvironmentNasaModelsActivity`
               - Activity level for the NASA models NASAELE and NASAPRO.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.SPACE_ENVIRONMENT_CRRES_PROTON_ACTIVITY`
+            * - :py:class:`~ansys.stk.core.stkobjects.SpaceEnvironmentCrresProtonActivity`
               - Activity level for CRRESPRO model.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.SPACE_ENVIRONMENT_CRRES_RADIATION_ACTIVITY`
+            * - :py:class:`~ansys.stk.core.stkobjects.SpaceEnvironmentCrresRadiationActivity`
               - Activity level for CRRESRAD model.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.SPACE_ENVIRONMENT_MAGNETIC_FIELD_COLOR_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagneticFieldColorMode`
               - Mode by which color is assigned.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.SPACE_ENVIRONMENT_MAGNETIC_FIELD_COLOR_SCALE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagneticFieldColorScaleType`
               - Scaling of magnetic field to use when assigning color/translucency.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.SPACE_ENVIRONMENT_MAGNETIC_MAIN_FIELD`
+            * - :py:class:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagneticMainField`
               - Main magnetic field.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.SPACE_ENVIRONMENT_MAGNETIC_EXTERNAL_FIELD`
+            * - :py:class:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagneticExternalField`
               - External magnetic field.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.SPACE_ENVIRONMENT_SAA_CHANNEL`
+            * - :py:class:`~ansys.stk.core.stkobjects.SpaceEnvironmentSAAChannel`
               - Energy level for SAA protons.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.SPACE_ENVIRONMENT_SAA_FLUX_LEVEL`
+            * - :py:class:`~ansys.stk.core.stkobjects.SpaceEnvironmentSAAFluxLevel`
               - Flux level for SAA contour.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_SPACE_ENVIRONMENT_SHAPE_MODEL`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleSpaceEnvironmentShapeModel`
               - Thermal shape model.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_SPACE_ENVIRONMENT_F10P7_SOURCE_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleSpaceEnvironmentF10P7SourceType`
               - Mode for computing 13-month average F10.7.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_SPACE_ENVIRONMENT_MATERIAL`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleSpaceEnvironmentMaterial`
               - Material.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_SPACE_ENVIRONMENT_COMPUTATION_MODE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleSpaceEnvironmentComputationMode`
               - Models that are to be included when modeling radiation.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_SPACE_ENVIRONMENT_DOSE_CHANNEL`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleSpaceEnvironmentDoseChannel`
               - Dose channel.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_SPACE_ENVIRONMENT_DETECTOR_GEOMETRY`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleSpaceEnvironmentDetectorGeometry`
               - Detector geometry.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_SPACE_ENVIRONMENT_DETECTOR_TYPE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleSpaceEnvironmentDetectorType`
               - Detector material.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VEHICLE_SPACE_ENVIRONMENT_AP_SOURCE`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleSpaceEnvironmentApSource`
               - Mode for computing 15 day average Ap.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.NOTIFICATION_FILTER_MASK`
+            * - :py:class:`~ansys.stk.core.stkobjects.NotificationFilterMask`
               - The notification flags are used to enable/disable STK Object Model event notifications.
 
 
@@ -5242,6 +5287,7 @@ The following is an overview of the classes, interfaces and enumerations of the 
      IElementConfiguration<stkobjects/IElementConfiguration>
      IElementConfigurationPolygon<stkobjects/IElementConfigurationPolygon>
      IBeamformer<stkobjects/IBeamformer>
+     ITargetSelectionMethod<stkobjects/ITargetSelectionMethod>
      IDirectionProvider<stkobjects/IDirectionProvider>
      IAntennaModelOpticalSimple<stkobjects/IAntennaModelOpticalSimple>
      IAntennaContour<stkobjects/IAntennaContour>
@@ -5800,6 +5846,10 @@ The following is an overview of the classes, interfaces and enumerations of the 
      CoverageAssetListCollection<stkobjects/CoverageAssetListCollection>
      CoverageRegionFilesCollection<stkobjects/CoverageRegionFilesCollection>
      CoverageAreaTargetsCollection<stkobjects/CoverageAreaTargetsCollection>
+     CoverageEllipseCollection<stkobjects/CoverageEllipseCollection>
+     CoverageEllipse<stkobjects/CoverageEllipse>
+     CoverageLatLonBoxCollection<stkobjects/CoverageLatLonBoxCollection>
+     CoverageLatLonBox<stkobjects/CoverageLatLonBox>
      CoveragePointDefinition<stkobjects/CoveragePointDefinition>
      CoveragePointFileListCollection<stkobjects/CoveragePointFileListCollection>
      CoverageAdvancedSettings<stkobjects/CoverageAdvancedSettings>
@@ -6270,7 +6320,8 @@ The following is an overview of the classes, interfaces and enumerations of the 
      AtmosphericTurbulenceModelHufnagelValley<stkobjects/AtmosphericTurbulenceModelHufnagelValley>
      LaserTroposphericScintillationLossModelITURP1814<stkobjects/LaserTroposphericScintillationLossModelITURP1814>
      AtmosphericAbsorptionModel<stkobjects/AtmosphericAbsorptionModel>
-     AtmosphericAbsorptionModelITURP676_9<stkobjects/AtmosphericAbsorptionModelITURP676_9>
+     AtmosphericAbsorptionModelITURP676Version9<stkobjects/AtmosphericAbsorptionModelITURP676Version9>
+     AtmosphericAbsorptionModelITURP676Version13<stkobjects/AtmosphericAbsorptionModelITURP676Version13>
      AtmosphericAbsorptionModelGraphics3DACAP<stkobjects/AtmosphericAbsorptionModelGraphics3DACAP>
      AtmosphericAbsorptionModelTIREM320<stkobjects/AtmosphericAbsorptionModelTIREM320>
      AtmosphericAbsorptionModelTIREM331<stkobjects/AtmosphericAbsorptionModelTIREM331>
@@ -6301,21 +6352,21 @@ The following is an overview of the classes, interfaces and enumerations of the 
      ObjectLaserEnvironment<stkobjects/ObjectLaserEnvironment>
      PlatformLaserEnvironment<stkobjects/PlatformLaserEnvironment>
      RainLossModel<stkobjects/RainLossModel>
-     RainLossModelITURP618_12<stkobjects/RainLossModelITURP618_12>
-     RainLossModelITURP618_13<stkobjects/RainLossModelITURP618_13>
-     RainLossModelITURP618_10<stkobjects/RainLossModelITURP618_10>
+     RainLossModelITURP618Version12<stkobjects/RainLossModelITURP618Version12>
+     RainLossModelITURP618Version13<stkobjects/RainLossModelITURP618Version13>
+     RainLossModelITURP618Version10<stkobjects/RainLossModelITURP618Version10>
      RainLossModelCrane1985<stkobjects/RainLossModelCrane1985>
      RainLossModelCrane1982<stkobjects/RainLossModelCrane1982>
      RainLossModelCCIR1983<stkobjects/RainLossModelCCIR1983>
      RainLossModelScriptPlugin<stkobjects/RainLossModelScriptPlugin>
      CloudsAndFogFadingLossModel<stkobjects/CloudsAndFogFadingLossModel>
-     CloudsAndFogFadingLossModelP840_6<stkobjects/CloudsAndFogFadingLossModelP840_6>
-     CloudsAndFogFadingLossModelP840_7<stkobjects/CloudsAndFogFadingLossModelP840_7>
+     CloudsAndFogFadingLossModelP840Version6<stkobjects/CloudsAndFogFadingLossModelP840Version6>
+     CloudsAndFogFadingLossModelP840Version7<stkobjects/CloudsAndFogFadingLossModelP840Version7>
      TroposphericScintillationFadingLossModel<stkobjects/TroposphericScintillationFadingLossModel>
-     TroposphericScintillationFadingLossModelP618_8<stkobjects/TroposphericScintillationFadingLossModelP618_8>
-     TroposphericScintillationFadingLossModelP618_12<stkobjects/TroposphericScintillationFadingLossModelP618_12>
+     TroposphericScintillationFadingLossModelP618Version8<stkobjects/TroposphericScintillationFadingLossModelP618Version8>
+     TroposphericScintillationFadingLossModelP618Version12<stkobjects/TroposphericScintillationFadingLossModelP618Version12>
      IonosphericFadingLossModel<stkobjects/IonosphericFadingLossModel>
-     IonosphericFadingLossModelP531_13<stkobjects/IonosphericFadingLossModelP531_13>
+     IonosphericFadingLossModelP531Version13<stkobjects/IonosphericFadingLossModelP531Version13>
      UrbanTerrestrialLossModel<stkobjects/UrbanTerrestrialLossModel>
      UrbanTerrestrialLossModelTwoRay<stkobjects/UrbanTerrestrialLossModelTwoRay>
      UrbanTerrestrialLossModelWirelessInSite64<stkobjects/UrbanTerrestrialLossModelWirelessInSite64>
@@ -6460,11 +6511,18 @@ The following is an overview of the classes, interfaces and enumerations of the 
      BeamformerCosineX<stkobjects/BeamformerCosineX>
      BeamformerCustomTaperFile<stkobjects/BeamformerCustomTaperFile>
      BeamformerDolphChebyshev<stkobjects/BeamformerDolphChebyshev>
+     BeamformerTaylor<stkobjects/BeamformerTaylor>
      BeamformerHamming<stkobjects/BeamformerHamming>
      BeamformerHann<stkobjects/BeamformerHann>
      BeamformerRaisedCosine<stkobjects/BeamformerRaisedCosine>
      BeamformerRaisedCosineSquared<stkobjects/BeamformerRaisedCosineSquared>
      BeamformerScript<stkobjects/BeamformerScript>
+     Priority<stkobjects/Priority>
+     PriorityCollection<stkobjects/PriorityCollection>
+     TargetSelectionMethod<stkobjects/TargetSelectionMethod>
+     TargetSelectionMethodPriority<stkobjects/TargetSelectionMethodPriority>
+     TargetSelectionMethodRange<stkobjects/TargetSelectionMethodRange>
+     TargetSelectionMethodClosingVelocity<stkobjects/TargetSelectionMethodClosingVelocity>
      DirectionProvider<stkobjects/DirectionProvider>
      DirectionProviderASCIIFile<stkobjects/DirectionProviderASCIIFile>
      DirectionProviderObject<stkobjects/DirectionProviderObject>
@@ -6528,363 +6586,365 @@ The following is an overview of the classes, interfaces and enumerations of the 
     :maxdepth: 1
     :hidden:
 
-    ≔ CONSTANTS<stkobjects/CONSTANTS_enum>
-    ≔ HELP_CONTEXT_IDENTIFIER_TYPE<stkobjects/HELP_CONTEXT_IDENTIFIER_TYPE_enum>
-    ≔ ERROR_CODE<stkobjects/ERROR_CODE_enum>
-    ≔ ABERRATION_TYPE<stkobjects/ABERRATION_TYPE_enum>
-    ≔ ANIMATION_END_TIME_MODE<stkobjects/ANIMATION_END_TIME_MODE_enum>
-    ≔ ANIMATION_OPTION_TYPE<stkobjects/ANIMATION_OPTION_TYPE_enum>
-    ≔ ANIMATION_ACTION_TYPE<stkobjects/ANIMATION_ACTION_TYPE_enum>
-    ≔ ANIMATION_DIRECTION_TYPE<stkobjects/ANIMATION_DIRECTION_TYPE_enum>
-    ≔ AZ_EL_MASK_TYPE<stkobjects/AZ_EL_MASK_TYPE_enum>
-    ≔ ACTION_TYPE<stkobjects/ACTION_TYPE_enum>
-    ≔ AXIS_OFFSET<stkobjects/AXIS_OFFSET_enum>
-    ≔ DATA_PROVIDER_RESULT_CATEGORY<stkobjects/DATA_PROVIDER_RESULT_CATEGORY_enum>
-    ≔ DATA_PROVIDER_TYPE<stkobjects/DATA_PROVIDER_TYPE_enum>
-    ≔ DATA_PROVIDER_ELEMENT_TYPE<stkobjects/DATA_PROVIDER_ELEMENT_TYPE_enum>
-    ≔ ACCESS_TIME_TYPE<stkobjects/ACCESS_TIME_TYPE_enum>
-    ≔ ALTITUDE_REFERENCE_TYPE<stkobjects/ALTITUDE_REFERENCE_TYPE_enum>
-    ≔ TERRAIN_NORMAL_TYPE<stkobjects/TERRAIN_NORMAL_TYPE_enum>
-    ≔ LIGHTING_OBSTRUCTION_MODEL_TYPE<stkobjects/LIGHTING_OBSTRUCTION_MODEL_TYPE_enum>
-    ≔ DISPLAY_TIMES_TYPE<stkobjects/DISPLAY_TIMES_TYPE_enum>
-    ≔ AREA_TYPE<stkobjects/AREA_TYPE_enum>
-    ≔ TRAJECTORY_TYPE<stkobjects/TRAJECTORY_TYPE_enum>
-    ≔ OFFSET_FRAME_TYPE<stkobjects/OFFSET_FRAME_TYPE_enum>
-    ≔ SCENARIO_3D_POINT_SIZE<stkobjects/SCENARIO_3D_POINT_SIZE_enum>
-    ≔ TERRAIN_FILE_TYPE<stkobjects/TERRAIN_FILE_TYPE_enum>
-    ≔ TILESET_3D_SOURCE_TYPE<stkobjects/TILESET_3D_SOURCE_TYPE_enum>
-    ≔ MARKER_TYPE<stkobjects/MARKER_TYPE_enum>
-    ≔ VECTOR_AXES_CONNECT_TYPE<stkobjects/VECTOR_AXES_CONNECT_TYPE_enum>
-    ≔ GRAPHICS_3D_MARKER_ORIGIN_TYPE<stkobjects/GRAPHICS_3D_MARKER_ORIGIN_TYPE_enum>
-    ≔ GRAPHICS_3D_LABEL_SWAP_DISTANCE<stkobjects/GRAPHICS_3D_LABEL_SWAP_DISTANCE_enum>
-    ≔ PLANET_POSITION_SOURCE_TYPE<stkobjects/PLANET_POSITION_SOURCE_TYPE_enum>
-    ≔ EPHEM_SOURCE_TYPE<stkobjects/EPHEM_SOURCE_TYPE_enum>
-    ≔ PLANET_ORBIT_DISPLAY_TYPE<stkobjects/PLANET_ORBIT_DISPLAY_TYPE_enum>
-    ≔ SCENARIO_END_LOOP_TYPE<stkobjects/SCENARIO_END_LOOP_TYPE_enum>
-    ≔ SCENARIO_REFRESH_DELTA_TYPE<stkobjects/SCENARIO_REFRESH_DELTA_TYPE_enum>
-    ≔ SENSOR_PATTERN<stkobjects/SENSOR_PATTERN_enum>
-    ≔ SENSOR_POINTING<stkobjects/SENSOR_POINTING_enum>
-    ≔ SENSOR_POINTING_TARGETED_BORESIGHT_TYPE<stkobjects/SENSOR_POINTING_TARGETED_BORESIGHT_TYPE_enum>
-    ≔ BORESIGHT_TYPE<stkobjects/BORESIGHT_TYPE_enum>
-    ≔ TRACK_MODE<stkobjects/TRACK_MODE_enum>
-    ≔ SENSOR_AZ_EL_BORESIGHT_AXIS_TYPE<stkobjects/SENSOR_AZ_EL_BORESIGHT_AXIS_TYPE_enum>
-    ≔ SENSOR_REFRACTION_TYPE<stkobjects/SENSOR_REFRACTION_TYPE_enum>
-    ≔ SENSOR_PROJECTION_DISTANCE_TYPE<stkobjects/SENSOR_PROJECTION_DISTANCE_TYPE_enum>
-    ≔ SENSOR_LOCATION<stkobjects/SENSOR_LOCATION_enum>
-    ≔ SCENARIO_TIME_STEP_TYPE<stkobjects/SCENARIO_TIME_STEP_TYPE_enum>
-    ≔ NOTE_SHOW_TYPE<stkobjects/NOTE_SHOW_TYPE_enum>
-    ≔ GEOMETRIC_ELEMENT_TYPE<stkobjects/GEOMETRIC_ELEMENT_TYPE_enum>
-    ≔ SENSOR_SCAN_MODE<stkobjects/SENSOR_SCAN_MODE_enum>
-    ≔ CONSTRAINT_BACKGROUND<stkobjects/CONSTRAINT_BACKGROUND_enum>
-    ≔ CONSTRAINT_GROUND_TRACK<stkobjects/CONSTRAINT_GROUND_TRACK_enum>
-    ≔ INTERSECTION_TYPE<stkobjects/INTERSECTION_TYPE_enum>
-    ≔ CONSTRAINT_LIGHTING<stkobjects/CONSTRAINT_LIGHTING_enum>
-    ≔ SENSOR_GRAPHICS_3D_PROJECTION_TYPE<stkobjects/SENSOR_GRAPHICS_3D_PROJECTION_TYPE_enum>
-    ≔ SENSOR_GRAPHICS_3D_PULSE_STYLE<stkobjects/SENSOR_GRAPHICS_3D_PULSE_STYLE_enum>
-    ≔ SENSOR_GRAPHICS_3D_PULSE_FREQUENCY_PRESET<stkobjects/SENSOR_GRAPHICS_3D_PULSE_FREQUENCY_PRESET_enum>
-    ≔ LINE_WIDTH<stkobjects/LINE_WIDTH_enum>
-    ≔ STK_OBJECT_TYPE<stkobjects/STK_OBJECT_TYPE_enum>
-    ≔ ACCESS_CONSTRAINT_TYPE<stkobjects/ACCESS_CONSTRAINT_TYPE_enum>
-    ≔ BORDER_WALL_UPPER_LOWER_EDGE_ALTITUDE_REFERENCE<stkobjects/BORDER_WALL_UPPER_LOWER_EDGE_ALTITUDE_REFERENCE_enum>
-    ≔ SHADOW_MODEL<stkobjects/SHADOW_MODEL_enum>
-    ≔ METHOD_TO_COMPUTE_SUN_POSITION<stkobjects/METHOD_TO_COMPUTE_SUN_POSITION_enum>
-    ≔ ATMOSPHERIC_DENSITY_MODEL<stkobjects/ATMOSPHERIC_DENSITY_MODEL_enum>
-    ≔ MARKER_SHAPE_3D<stkobjects/MARKER_SHAPE_3D_enum>
-    ≔ LEAD_TRAIL_DATA<stkobjects/LEAD_TRAIL_DATA_enum>
-    ≔ TICK_DATA<stkobjects/TICK_DATA_enum>
-    ≔ LOAD_METHOD<stkobjects/LOAD_METHOD_enum>
-    ≔ DETIC_POSITION_TYPE<stkobjects/DETIC_POSITION_TYPE_enum>
-    ≔ VEHICLE_GRAPHICS_2D_PASS<stkobjects/VEHICLE_GRAPHICS_2D_PASS_enum>
-    ≔ VEHICLE_GRAPHICS_2D_VISIBLE_SIDE_TYPE<stkobjects/VEHICLE_GRAPHICS_2D_VISIBLE_SIDE_TYPE_enum>
-    ≔ VEHICLE_GRAPHICS_2D_OFFSET<stkobjects/VEHICLE_GRAPHICS_2D_OFFSET_enum>
-    ≔ VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE<stkobjects/VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE_enum>
-    ≔ VEHICLE_GRAPHICS_2D_ATTRIBUTE_TYPE<stkobjects/VEHICLE_GRAPHICS_2D_ATTRIBUTE_TYPE_enum>
-    ≔ VEHICLE_GRAPHICS_2D_ELEVATION<stkobjects/VEHICLE_GRAPHICS_2D_ELEVATION_enum>
-    ≔ VEHICLE_GRAPHICS_2D_OPTION_TYPE<stkobjects/VEHICLE_GRAPHICS_2D_OPTION_TYPE_enum>
-    ≔ MODEL_TYPE<stkobjects/MODEL_TYPE_enum>
-    ≔ VEHICLE_GRAPHICS_3D_DROP_LINE_TYPE<stkobjects/VEHICLE_GRAPHICS_3D_DROP_LINE_TYPE_enum>
-    ≔ VEHICLE_GRAPHICS_3D_SIGMA_SCALE<stkobjects/VEHICLE_GRAPHICS_3D_SIGMA_SCALE_enum>
-    ≔ VEHICLE_GRAPHICS_3D_ATTRIBUTE_TYPE<stkobjects/VEHICLE_GRAPHICS_3D_ATTRIBUTE_TYPE_enum>
-    ≔ ROUTE_GRAPHICS_3D_MARKER_TYPE<stkobjects/ROUTE_GRAPHICS_3D_MARKER_TYPE_enum>
-    ≔ VEHICLE_ELLIPSE_OPTION_TYPE<stkobjects/VEHICLE_ELLIPSE_OPTION_TYPE_enum>
-    ≔ PROPAGATOR_TYPE<stkobjects/PROPAGATOR_TYPE_enum>
-    ≔ PROPAGATOR_SGP4_SWITCH_METHOD<stkobjects/PROPAGATOR_SGP4_SWITCH_METHOD_enum>
-    ≔ VEHICLE_SGP4_TLE_SELECTION_TYPE<stkobjects/VEHICLE_SGP4_TLE_SELECTION_TYPE_enum>
-    ≔ VEHICLE_SGP4_AUTOMATIC_UPDATE_SOURCE_TYPE<stkobjects/VEHICLE_SGP4_AUTOMATIC_UPDATE_SOURCE_TYPE_enum>
-    ≔ THIRD_BODY_GRAVITY_SOURCE_TYPE<stkobjects/THIRD_BODY_GRAVITY_SOURCE_TYPE_enum>
-    ≔ VEHICLE_GEOMAGNETIC_FLUX_SOURCE_TYPE<stkobjects/VEHICLE_GEOMAGNETIC_FLUX_SOURCE_TYPE_enum>
-    ≔ VEHICLE_GEOMAGNETIC_FLUX_UPDATE_RATE_TYPE<stkobjects/VEHICLE_GEOMAGNETIC_FLUX_UPDATE_RATE_TYPE_enum>
-    ≔ VEHICLE_SOLAR_FLUX_GEOMAGNETIC_TYPE<stkobjects/VEHICLE_SOLAR_FLUX_GEOMAGNETIC_TYPE_enum>
-    ≔ VEHICLE_INTEGRATION_MODEL<stkobjects/VEHICLE_INTEGRATION_MODEL_enum>
-    ≔ VEHICLE_PREDICTOR_CORRECTOR_SCHEME<stkobjects/VEHICLE_PREDICTOR_CORRECTOR_SCHEME_enum>
-    ≔ VEHICLE_METHOD<stkobjects/VEHICLE_METHOD_enum>
-    ≔ VEHICLE_INTERPOLATION_METHOD<stkobjects/VEHICLE_INTERPOLATION_METHOD_enum>
-    ≔ VEHICLE_FRAME<stkobjects/VEHICLE_FRAME_enum>
-    ≔ VEHICLE_CORRELATION_LIST_TYPE<stkobjects/VEHICLE_CORRELATION_LIST_TYPE_enum>
-    ≔ VEHICLE_CONSIDER_ANALYSIS_TYPE<stkobjects/VEHICLE_CONSIDER_ANALYSIS_TYPE_enum>
-    ≔ VEHICLE_WAYPOINT_COMPUTATION_METHOD<stkobjects/VEHICLE_WAYPOINT_COMPUTATION_METHOD_enum>
-    ≔ VEHICLE_ALTITUDE_REFERENCE<stkobjects/VEHICLE_ALTITUDE_REFERENCE_enum>
-    ≔ VEHICLE_WAYPOINT_INTERPOLATION_METHOD<stkobjects/VEHICLE_WAYPOINT_INTERPOLATION_METHOD_enum>
-    ≔ VEHICLE_LAUNCH<stkobjects/VEHICLE_LAUNCH_enum>
-    ≔ VEHICLE_IMPACT<stkobjects/VEHICLE_IMPACT_enum>
-    ≔ VEHICLE_LAUNCH_CONTROL<stkobjects/VEHICLE_LAUNCH_CONTROL_enum>
-    ≔ VEHICLE_IMPACT_LOCATION<stkobjects/VEHICLE_IMPACT_LOCATION_enum>
-    ≔ VEHICLE_PASS_NUMBERING<stkobjects/VEHICLE_PASS_NUMBERING_enum>
-    ≔ VEHICLE_PARTIAL_PASS_MEASUREMENT<stkobjects/VEHICLE_PARTIAL_PASS_MEASUREMENT_enum>
-    ≔ VEHICLE_COORDINATE_SYSTEM<stkobjects/VEHICLE_COORDINATE_SYSTEM_enum>
-    ≔ VEHICLE_BREAK_ANGLE_TYPE<stkobjects/VEHICLE_BREAK_ANGLE_TYPE_enum>
-    ≔ VEHICLE_DIRECTION<stkobjects/VEHICLE_DIRECTION_enum>
-    ≔ GRAPHICS_3D_LOCATION<stkobjects/GRAPHICS_3D_LOCATION_enum>
-    ≔ GRAPHICS_3D_X_ORIGIN<stkobjects/GRAPHICS_3D_X_ORIGIN_enum>
-    ≔ GRAPHICS_3D_Y_ORIGIN<stkobjects/GRAPHICS_3D_Y_ORIGIN_enum>
-    ≔ GRAPHICS_3D_FONT_SIZE<stkobjects/GRAPHICS_3D_FONT_SIZE_enum>
-    ≔ AIRCRAFT_WGS84_WARNING_TYPE<stkobjects/AIRCRAFT_WGS84_WARNING_TYPE_enum>
-    ≔ SURFACE_REFERENCE<stkobjects/SURFACE_REFERENCE_enum>
-    ≔ GRAPHICS_3D_FORMAT<stkobjects/GRAPHICS_3D_FORMAT_enum>
-    ≔ ATTITUDE_STANDARD_TYPE<stkobjects/ATTITUDE_STANDARD_TYPE_enum>
-    ≔ VEHICLE_ATTITUDE<stkobjects/VEHICLE_ATTITUDE_enum>
-    ≔ ATTITUDE_PROFILE<stkobjects/ATTITUDE_PROFILE_enum>
-    ≔ VEHICLE_LOOK_AHEAD_METHOD<stkobjects/VEHICLE_LOOK_AHEAD_METHOD_enum>
-    ≔ VEHICLE_GRAPHICS_3D_B_PLANE_TARGET_POINT_POSITION<stkobjects/VEHICLE_GRAPHICS_3D_B_PLANE_TARGET_POINT_POSITION_enum>
-    ≔ SENSOR_ALTITUDE_CROSSING_SIDE_TYPE<stkobjects/SENSOR_ALTITUDE_CROSSING_SIDE_TYPE_enum>
-    ≔ SENSOR_ALTITUDE_CROSSING_DIRECTION<stkobjects/SENSOR_ALTITUDE_CROSSING_DIRECTION_enum>
-    ≔ SENSOR_GRAPHICS_3D_INHERIT_FROM_2D<stkobjects/SENSOR_GRAPHICS_3D_INHERIT_FROM_2D_enum>
-    ≔ SENSOR_GRAPHICS_3D_VISUAL_APPEARANCE<stkobjects/SENSOR_GRAPHICS_3D_VISUAL_APPEARANCE_enum>
-    ≔ CHAIN_TIME_PERIOD_TYPE<stkobjects/CHAIN_TIME_PERIOD_TYPE_enum>
-    ≔ CHAIN_CONSTELLATION_CONSTRAINTS_MODE<stkobjects/CHAIN_CONSTELLATION_CONSTRAINTS_MODE_enum>
-    ≔ CHAIN_COVERAGE_ASSET_MODE<stkobjects/CHAIN_COVERAGE_ASSET_MODE_enum>
-    ≔ CHAIN_PARENT_PLATFORM_RESTRICTION<stkobjects/CHAIN_PARENT_PLATFORM_RESTRICTION_enum>
-    ≔ CHAIN_OPTIMAL_STRAND_METRIC_TYPE<stkobjects/CHAIN_OPTIMAL_STRAND_METRIC_TYPE_enum>
-    ≔ CHAIN_OPTIMAL_STRAND_CALCULATION_SCALAR_METRIC_TYPE<stkobjects/CHAIN_OPTIMAL_STRAND_CALCULATION_SCALAR_METRIC_TYPE_enum>
-    ≔ CHAIN_OPTIMAL_STRAND_LINK_COMPARE_TYPE<stkobjects/CHAIN_OPTIMAL_STRAND_LINK_COMPARE_TYPE_enum>
-    ≔ CHAIN_OPTIMAL_STRAND_COMPARE_STRANDS_TYPE<stkobjects/CHAIN_OPTIMAL_STRAND_COMPARE_STRANDS_TYPE_enum>
-    ≔ DATA_SAVE_MODE<stkobjects/DATA_SAVE_MODE_enum>
-    ≔ COVERAGE_BOUNDS<stkobjects/COVERAGE_BOUNDS_enum>
-    ≔ COVERAGE_POINT_LOCATION_METHOD<stkobjects/COVERAGE_POINT_LOCATION_METHOD_enum>
-    ≔ COVERAGE_POINT_ALTITUDE_METHOD<stkobjects/COVERAGE_POINT_ALTITUDE_METHOD_enum>
-    ≔ COVERAGE_GRID_CLASS<stkobjects/COVERAGE_GRID_CLASS_enum>
-    ≔ COVERAGE_ALTITUDE_METHOD<stkobjects/COVERAGE_ALTITUDE_METHOD_enum>
-    ≔ COVERAGE_GROUND_ALTITUDE_METHOD<stkobjects/COVERAGE_GROUND_ALTITUDE_METHOD_enum>
-    ≔ COVERAGE_DATA_RETENTION<stkobjects/COVERAGE_DATA_RETENTION_enum>
-    ≔ COVERAGE_REGION_ACCESS_ACCELERATION_TYPE<stkobjects/COVERAGE_REGION_ACCESS_ACCELERATION_TYPE_enum>
-    ≔ COVERAGE_RESOLUTION<stkobjects/COVERAGE_RESOLUTION_enum>
-    ≔ COVERAGE_ASSET_STATUS<stkobjects/COVERAGE_ASSET_STATUS_enum>
-    ≔ COVERAGE_ASSET_GROUPING<stkobjects/COVERAGE_ASSET_GROUPING_enum>
-    ≔ FIGURE_OF_MERIT_DEFINITION_TYPE<stkobjects/FIGURE_OF_MERIT_DEFINITION_TYPE_enum>
-    ≔ FIGURE_OF_MERIT_SATISFACTION_TYPE<stkobjects/FIGURE_OF_MERIT_SATISFACTION_TYPE_enum>
-    ≔ FIGURE_OF_MERIT_CONSTRAINT_NAME<stkobjects/FIGURE_OF_MERIT_CONSTRAINT_NAME_enum>
-    ≔ FIGURE_OF_MERIT_COMPUTE<stkobjects/FIGURE_OF_MERIT_COMPUTE_enum>
-    ≔ FIGURE_OF_MERIT_ACROSS_ASSETS<stkobjects/FIGURE_OF_MERIT_ACROSS_ASSETS_enum>
-    ≔ FIGURE_OF_MERIT_NAVIGATION_COMPUTE_TYPE<stkobjects/FIGURE_OF_MERIT_NAVIGATION_COMPUTE_TYPE_enum>
-    ≔ FIGURE_OF_MERIT_METHOD<stkobjects/FIGURE_OF_MERIT_METHOD_enum>
-    ≔ FIGURE_OF_MERIT_END_GAP_OPTION<stkobjects/FIGURE_OF_MERIT_END_GAP_OPTION_enum>
-    ≔ FIGURE_OF_MERIT_GRAPHICS_2D_CONTOUR_TYPE<stkobjects/FIGURE_OF_MERIT_GRAPHICS_2D_CONTOUR_TYPE_enum>
-    ≔ FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD<stkobjects/FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD_enum>
-    ≔ FIGURE_OF_MERIT_GRAPHICS_2D_FLOATING_POINT_FORMAT<stkobjects/FIGURE_OF_MERIT_GRAPHICS_2D_FLOATING_POINT_FORMAT_enum>
-    ≔ FIGURE_OF_MERIT_GRAPHICS_2D_DIRECTION<stkobjects/FIGURE_OF_MERIT_GRAPHICS_2D_DIRECTION_enum>
-    ≔ FIGURE_OF_MERIT_GRAPHICS_2D_ACCUMULATION<stkobjects/FIGURE_OF_MERIT_GRAPHICS_2D_ACCUMULATION_enum>
-    ≔ FIGURE_OF_MERIT_NAVIGATION_ACCURACY_METHOD<stkobjects/FIGURE_OF_MERIT_NAVIGATION_ACCURACY_METHOD_enum>
-    ≔ IV_CLOCK_HOST<stkobjects/IV_CLOCK_HOST_enum>
-    ≔ IV_TIME_SENSE<stkobjects/IV_TIME_SENSE_enum>
-    ≔ GPS_ATTITUDE_MODEL_TYPE<stkobjects/GPS_ATTITUDE_MODEL_TYPE_enum>
-    ≔ CONSTELLATION_CONSTRAINT_RESTRICTION<stkobjects/CONSTELLATION_CONSTRAINT_RESTRICTION_enum>
-    ≔ EVENT_DETECTION<stkobjects/EVENT_DETECTION_enum>
-    ≔ SAMPLING_METHOD<stkobjects/SAMPLING_METHOD_enum>
-    ≔ COVERAGE_SATISFACTION_TYPE<stkobjects/COVERAGE_SATISFACTION_TYPE_enum>
-    ≔ CCSDS_REFERENCE_FRAME<stkobjects/CCSDS_REFERENCE_FRAME_enum>
-    ≔ CCSDS_DATE_FORMAT<stkobjects/CCSDS_DATE_FORMAT_enum>
-    ≔ CCSDS_EPHEMERIS_FORMAT_TYPE<stkobjects/CCSDS_EPHEMERIS_FORMAT_TYPE_enum>
-    ≔ CCSDS_TIME_SYSTEM<stkobjects/CCSDS_TIME_SYSTEM_enum>
-    ≔ EPHEMERIS_COORDINATE_SYSTEM_TYPE<stkobjects/EPHEMERIS_COORDINATE_SYSTEM_TYPE_enum>
-    ≔ EPHEMERIS_COVARIANCE_TYPE<stkobjects/EPHEMERIS_COVARIANCE_TYPE_enum>
-    ≔ EXPORT_TOOL_VERSION_FORMAT<stkobjects/EXPORT_TOOL_VERSION_FORMAT_enum>
-    ≔ EXPORT_TOOL_TIME_PERIOD<stkobjects/EXPORT_TOOL_TIME_PERIOD_enum>
-    ≔ SPICE_INTERPOLATION<stkobjects/SPICE_INTERPOLATION_enum>
-    ≔ ATTITUDE_COORDINATE_AXES<stkobjects/ATTITUDE_COORDINATE_AXES_enum>
-    ≔ ATTITUDE_INCLUDE<stkobjects/ATTITUDE_INCLUDE_enum>
-    ≔ EXPORT_TOOL_STEP_SIZE<stkobjects/EXPORT_TOOL_STEP_SIZE_enum>
-    ≔ TEXT_OUTLINE_STYLE<stkobjects/TEXT_OUTLINE_STYLE_enum>
-    ≔ MTO_RANGE_MODE<stkobjects/MTO_RANGE_MODE_enum>
-    ≔ MTO_TRACK_EVALUATION_TYPE<stkobjects/MTO_TRACK_EVALUATION_TYPE_enum>
-    ≔ MTO_ENTIRETY<stkobjects/MTO_ENTIRETY_enum>
-    ≔ MTO_VISIBILITY_MODE<stkobjects/MTO_VISIBILITY_MODE_enum>
-    ≔ MTO_OBJECT_INTERVAL<stkobjects/MTO_OBJECT_INTERVAL_enum>
-    ≔ MTO_INPUT_DATA_TYPE<stkobjects/MTO_INPUT_DATA_TYPE_enum>
-    ≔ SOLID_TIDE<stkobjects/SOLID_TIDE_enum>
-    ≔ TIME_PERIOD_VALUE_TYPE<stkobjects/TIME_PERIOD_VALUE_TYPE_enum>
-    ≔ ONE_POINT_ACCESS_STATUS<stkobjects/ONE_POINT_ACCESS_STATUS_enum>
-    ≔ ONE_POINT_ACCESS_SUMMARY<stkobjects/ONE_POINT_ACCESS_SUMMARY_enum>
-    ≔ LOOK_AHEAD_PROPAGATOR<stkobjects/LOOK_AHEAD_PROPAGATOR_enum>
-    ≔ GRAPHICS_3D_MARKER_ORIENTATION<stkobjects/GRAPHICS_3D_MARKER_ORIENTATION_enum>
-    ≔ SOLAR_RADIATION_PRESSURE_MODEL_TYPE<stkobjects/SOLAR_RADIATION_PRESSURE_MODEL_TYPE_enum>
-    ≔ DRAG_MODEL<stkobjects/DRAG_MODEL_enum>
-    ≔ VEHICLE_PROPAGATION_FRAME<stkobjects/VEHICLE_PROPAGATION_FRAME_enum>
-    ≔ STAR_REFERENCE_FRAME<stkobjects/STAR_REFERENCE_FRAME_enum>
-    ≔ GPS_REFERENCE_WEEK<stkobjects/GPS_REFERENCE_WEEK_enum>
-    ≔ COVERAGE_CUSTOM_REGION_ALGORITHM<stkobjects/COVERAGE_CUSTOM_REGION_ALGORITHM_enum>
-    ≔ VEHICLE_GPS_SWITCH_METHOD<stkobjects/VEHICLE_GPS_SWITCH_METHOD_enum>
-    ≔ VEHICLE_GPS_ELEMENT_SELECTION_TYPE<stkobjects/VEHICLE_GPS_ELEMENT_SELECTION_TYPE_enum>
-    ≔ VEHICLE_GPS_AUTOMATIC_UPDATE_SOURCE_TYPE<stkobjects/VEHICLE_GPS_AUTOMATIC_UPDATE_SOURCE_TYPE_enum>
-    ≔ VEHICLE_GPS_ALMANAC_TYPE<stkobjects/VEHICLE_GPS_ALMANAC_TYPE_enum>
-    ≔ EXTERNAL_EPHEMERIS_FORMAT_TYPE<stkobjects/EXTERNAL_EPHEMERIS_FORMAT_TYPE_enum>
-    ≔ EXTERNAL_FILE_MESSAGE_LEVEL_TYPE<stkobjects/EXTERNAL_FILE_MESSAGE_LEVEL_TYPE_enum>
-    ≔ COVERAGE_3D_DRAW_AT_ALTITUDE_MODE<stkobjects/COVERAGE_3D_DRAW_AT_ALTITUDE_MODE_enum>
-    ≔ DISTANCE_ON_SPHERE<stkobjects/DISTANCE_ON_SPHERE_enum>
-    ≔ FIGURE_OF_MERIT_INVALID_VALUE_ACTION_TYPE<stkobjects/FIGURE_OF_MERIT_INVALID_VALUE_ACTION_TYPE_enum>
-    ≔ VEHICLE_SLEW_TIMING_BETWEEN_TARGET_TYPE<stkobjects/VEHICLE_SLEW_TIMING_BETWEEN_TARGET_TYPE_enum>
-    ≔ VEHICLE_SLEW_MODE<stkobjects/VEHICLE_SLEW_MODE_enum>
-    ≔ COMPONENT<stkobjects/COMPONENT_enum>
-    ≔ VOLUMETRIC_DEFINITION_TYPE<stkobjects/VOLUMETRIC_DEFINITION_TYPE_enum>
-    ≔ VOLUMETRIC_SPATIAL_CALCULATION_EVALUATION_TYPE<stkobjects/VOLUMETRIC_SPATIAL_CALCULATION_EVALUATION_TYPE_enum>
-    ≔ VOLUMETRIC_SAVE_COMPUTED_DATA_TYPE<stkobjects/VOLUMETRIC_SAVE_COMPUTED_DATA_TYPE_enum>
-    ≔ VOLUMETRIC_DISPLAY_VOLUME_TYPE<stkobjects/VOLUMETRIC_DISPLAY_VOLUME_TYPE_enum>
-    ≔ VOLUMETRIC_DISPLAY_QUALITY_TYPE<stkobjects/VOLUMETRIC_DISPLAY_QUALITY_TYPE_enum>
-    ≔ VOLUMETRIC_LEGEND_NUMERIC_NOTATION_TYPE<stkobjects/VOLUMETRIC_LEGEND_NUMERIC_NOTATION_TYPE_enum>
-    ≔ VOLUMETRIC_LEVEL_ORDER<stkobjects/VOLUMETRIC_LEVEL_ORDER_enum>
-    ≔ SENSOR_EOIR_PROCESSING_LEVEL_TYPE<stkobjects/SENSOR_EOIR_PROCESSING_LEVEL_TYPE_enum>
-    ≔ SENSOR_EOIR_JITTER_TYPE<stkobjects/SENSOR_EOIR_JITTER_TYPE_enum>
-    ≔ SENSOR_EOIR_SCAN_MODE<stkobjects/SENSOR_EOIR_SCAN_MODE_enum>
-    ≔ SENSOR_EOIR_BAND_IMAGE_QUALITY<stkobjects/SENSOR_EOIR_BAND_IMAGE_QUALITY_enum>
-    ≔ SENSOR_EOIR_BAND_SPECTRAL_SHAPE<stkobjects/SENSOR_EOIR_BAND_SPECTRAL_SHAPE_enum>
-    ≔ SENSOR_EOIR_BAND_SPATIAL_INPUT_MODE<stkobjects/SENSOR_EOIR_BAND_SPATIAL_INPUT_MODE_enum>
-    ≔ SENSOR_EOIR_BAND_SPECTRAL_RELATIVE_SYSTEM_RESPONSE_UNITS_TYPE<stkobjects/SENSOR_EOIR_BAND_SPECTRAL_RELATIVE_SYSTEM_RESPONSE_UNITS_TYPE_enum>
-    ≔ SENSOR_EOIR_BAND_OPTICAL_INPUT_MODE<stkobjects/SENSOR_EOIR_BAND_OPTICAL_INPUT_MODE_enum>
-    ≔ SENSOR_EOIR_BAND_OPTICAL_TRANSMISSION_MODE<stkobjects/SENSOR_EOIR_BAND_OPTICAL_TRANSMISSION_MODE_enum>
-    ≔ SENSOR_EOIR_BAND_RADIOMETRIC_PARAMETER_LEVEL_TYPE<stkobjects/SENSOR_EOIR_BAND_RADIOMETRIC_PARAMETER_LEVEL_TYPE_enum>
-    ≔ SENSOR_EOIR_BAND_QUANTUM_EFFICIENCY_MODE<stkobjects/SENSOR_EOIR_BAND_QUANTUM_EFFICIENCY_MODE_enum>
-    ≔ SENSOR_EOIR_BAND_QUANTIZATION_MODE<stkobjects/SENSOR_EOIR_BAND_QUANTIZATION_MODE_enum>
-    ≔ SENSOR_EOIR_BAND_WAVELENGTH_TYPE<stkobjects/SENSOR_EOIR_BAND_WAVELENGTH_TYPE_enum>
-    ≔ SENSOR_EOIR_BAND_SATURATION_MODE<stkobjects/SENSOR_EOIR_BAND_SATURATION_MODE_enum>
-    ≔ VOLUMETRIC_VOLUME_GRID_EXPORT_TYPE<stkobjects/VOLUMETRIC_VOLUME_GRID_EXPORT_TYPE_enum>
-    ≔ VOLUMETRIC_DATA_EXPORT_FORMAT_TYPE<stkobjects/VOLUMETRIC_DATA_EXPORT_FORMAT_TYPE_enum>
-    ≔ CONSTELLATION_FROM_TO_PARENT_CONSTRAINT<stkobjects/CONSTELLATION_FROM_TO_PARENT_CONSTRAINT_enum>
-    ≔ ANALYSIS_WORKBENCH_ACCESS_CONSTRAINT_TYPE<stkobjects/ANALYSIS_WORKBENCH_ACCESS_CONSTRAINT_TYPE_enum>
-    ≔ STATISTIC_TYPE<stkobjects/STATISTIC_TYPE_enum>
-    ≔ TIME_VARYING_EXTREMUM<stkobjects/TIME_VARYING_EXTREMUM_enum>
-    ≔ MODEL_GLTF_REFLECTION_MAP_TYPE<stkobjects/MODEL_GLTF_REFLECTION_MAP_TYPE_enum>
-    ≔ SENSOR_GRAPHICS_3D_PROJECTION_TIME_DEPENDENCY_TYPE<stkobjects/SENSOR_GRAPHICS_3D_PROJECTION_TIME_DEPENDENCY_TYPE_enum>
-    ≔ LOP_ATMOSPHERIC_DENSITY_MODEL<stkobjects/LOP_ATMOSPHERIC_DENSITY_MODEL_enum>
-    ≔ LOW_ALTITUDE_ATMOSPHERIC_DENSITY_MODEL<stkobjects/LOW_ALTITUDE_ATMOSPHERIC_DENSITY_MODEL_enum>
-    ≔ EPHEM_EXPORT_TOOL_FILE_FORMAT<stkobjects/EPHEM_EXPORT_TOOL_FILE_FORMAT_enum>
-    ≔ ADVCAT_ELLIPSOID_CLASS_TYPE<stkobjects/ADVCAT_ELLIPSOID_CLASS_TYPE_enum>
-    ≔ ADVCAT_CONJUNCTION_TYPE<stkobjects/ADVCAT_CONJUNCTION_TYPE_enum>
-    ≔ ADVCAT_SECONDARY_ELLIPSOIDS_VISIBILITY_TYPE<stkobjects/ADVCAT_SECONDARY_ELLIPSOIDS_VISIBILITY_TYPE_enum>
-    ≔ EOIR_SHAPE_TYPE<stkobjects/EOIR_SHAPE_TYPE_enum>
-    ≔ EOIR_SHAPE_MATERIAL_SPECIFICATION_TYPE<stkobjects/EOIR_SHAPE_MATERIAL_SPECIFICATION_TYPE_enum>
-    ≔ EOIR_THERMAL_MODEL_TYPE<stkobjects/EOIR_THERMAL_MODEL_TYPE_enum>
-    ≔ EOIR_FLIGHT_TYPE<stkobjects/EOIR_FLIGHT_TYPE_enum>
-    ≔ COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE<stkobjects/COMPONENT_LINK_EMBED_CONTROL_REFERENCE_TYPE_enum>
-    ≔ SWATH_COMPUTATIONAL_METHOD<stkobjects/SWATH_COMPUTATIONAL_METHOD_enum>
-    ≔ CLASSICAL_LOCATION<stkobjects/CLASSICAL_LOCATION_enum>
-    ≔ ORIENTATION_ASC_NODE<stkobjects/ORIENTATION_ASC_NODE_enum>
-    ≔ GEODETIC_SIZE<stkobjects/GEODETIC_SIZE_enum>
-    ≔ DELAUNAY_L_TYPE<stkobjects/DELAUNAY_L_TYPE_enum>
-    ≔ DELAUNAY_H_TYPE<stkobjects/DELAUNAY_H_TYPE_enum>
-    ≔ DELAUNAY_G_TYPE<stkobjects/DELAUNAY_G_TYPE_enum>
-    ≔ EQUINOCTIAL_SIZE_SHAPE<stkobjects/EQUINOCTIAL_SIZE_SHAPE_enum>
-    ≔ MIXED_SPHERICAL_FLIGHT_PATH_ANGLE_TYPE<stkobjects/MIXED_SPHERICAL_FLIGHT_PATH_ANGLE_TYPE_enum>
-    ≔ SPHERICAL_FLIGHT_PATH_AZIMUTH_TYPE<stkobjects/SPHERICAL_FLIGHT_PATH_AZIMUTH_TYPE_enum>
-    ≔ CLASSICAL_SIZE_SHAPE<stkobjects/CLASSICAL_SIZE_SHAPE_enum>
-    ≔ EQUINOCTIAL_FORMULATION<stkobjects/EQUINOCTIAL_FORMULATION_enum>
-    ≔ SCATTERING_POINT_PROVIDER_TYPE<stkobjects/SCATTERING_POINT_PROVIDER_TYPE_enum>
-    ≔ SCATTERING_POINT_MODEL_TYPE<stkobjects/SCATTERING_POINT_MODEL_TYPE_enum>
-    ≔ SCATTERING_POINT_PROVIDER_LIST_TYPE<stkobjects/SCATTERING_POINT_PROVIDER_LIST_TYPE_enum>
-    ≔ POLARIZATION_TYPE<stkobjects/POLARIZATION_TYPE_enum>
-    ≔ POLARIZATION_REFERENCE_AXIS<stkobjects/POLARIZATION_REFERENCE_AXIS_enum>
-    ≔ NOISE_TEMPERATURE_COMPUTE_TYPE<stkobjects/NOISE_TEMPERATURE_COMPUTE_TYPE_enum>
-    ≔ POINTING_STRATEGY_TYPE<stkobjects/POINTING_STRATEGY_TYPE_enum>
-    ≔ WAVEFORM_TYPE<stkobjects/WAVEFORM_TYPE_enum>
-    ≔ FREQUENCY_SPECIFICATION_TYPE<stkobjects/FREQUENCY_SPECIFICATION_TYPE_enum>
-    ≔ PRF_MODE<stkobjects/PRF_MODE_enum>
-    ≔ PULSE_WIDTH_MODE<stkobjects/PULSE_WIDTH_MODE_enum>
-    ≔ WAVEFORM_SELECTION_STRATEGY_TYPE<stkobjects/WAVEFORM_SELECTION_STRATEGY_TYPE_enum>
-    ≔ ANTENNA_CONTROL_REFERENCE_TYPE<stkobjects/ANTENNA_CONTROL_REFERENCE_TYPE_enum>
-    ≔ ANTENNA_MODEL_TYPE<stkobjects/ANTENNA_MODEL_TYPE_enum>
-    ≔ ANTENNA_CONTOUR_TYPE<stkobjects/ANTENNA_CONTOUR_TYPE_enum>
-    ≔ CIRCULAR_APERTURE_INPUT_TYPE<stkobjects/CIRCULAR_APERTURE_INPUT_TYPE_enum>
-    ≔ RECTANGULAR_APERTURE_INPUT_TYPE<stkobjects/RECTANGULAR_APERTURE_INPUT_TYPE_enum>
-    ≔ DIRECTION_PROVIDER_TYPE<stkobjects/DIRECTION_PROVIDER_TYPE_enum>
-    ≔ BEAMFORMER_TYPE<stkobjects/BEAMFORMER_TYPE_enum>
-    ≔ ELEMENT_CONFIGURATION_TYPE<stkobjects/ELEMENT_CONFIGURATION_TYPE_enum>
-    ≔ LATTICE_TYPE<stkobjects/LATTICE_TYPE_enum>
-    ≔ SPACING_UNIT<stkobjects/SPACING_UNIT_enum>
-    ≔ LIMITS_EXCEEDED_BEHAVIOR_TYPE<stkobjects/LIMITS_EXCEEDED_BEHAVIOR_TYPE_enum>
-    ≔ ANTENNA_GRAPHICS_COORDINATE_SYSTEM<stkobjects/ANTENNA_GRAPHICS_COORDINATE_SYSTEM_enum>
-    ≔ ANTENNA_MODEL_INPUT_TYPE<stkobjects/ANTENNA_MODEL_INPUT_TYPE_enum>
-    ≔ HFSS_FAR_FIELD_DATA_GAIN_TYPE<stkobjects/HFSS_FAR_FIELD_DATA_GAIN_TYPE_enum>
-    ≔ ANTENNA_MODEL_COSECANT_SQUARED_SIDELOBE_TYPE<stkobjects/ANTENNA_MODEL_COSECANT_SQUARED_SIDELOBE_TYPE_enum>
-    ≔ BEAM_SELECTION_STRATEGY_TYPE<stkobjects/BEAM_SELECTION_STRATEGY_TYPE_enum>
-    ≔ TRANSMITTER_MODEL_TYPE<stkobjects/TRANSMITTER_MODEL_TYPE_enum>
-    ≔ TRANSFER_FUNCTION_TYPE<stkobjects/TRANSFER_FUNCTION_TYPE_enum>
-    ≔ RE_TRANSMITTER_OP_MODE<stkobjects/RE_TRANSMITTER_OP_MODE_enum>
-    ≔ RECEIVER_MODEL_TYPE<stkobjects/RECEIVER_MODEL_TYPE_enum>
-    ≔ LINK_MARGIN_TYPE<stkobjects/LINK_MARGIN_TYPE_enum>
-    ≔ RADAR_STC_ATTENUATION_TYPE<stkobjects/RADAR_STC_ATTENUATION_TYPE_enum>
-    ≔ RADAR_FREQUENCY_SPECIFICATION_TYPE<stkobjects/RADAR_FREQUENCY_SPECIFICATION_TYPE_enum>
-    ≔ RADAR_SNR_CONTOUR_TYPE<stkobjects/RADAR_SNR_CONTOUR_TYPE_enum>
-    ≔ RADAR_MODEL_TYPE<stkobjects/RADAR_MODEL_TYPE_enum>
-    ≔ RADAR_MODE<stkobjects/RADAR_MODE_enum>
-    ≔ RADAR_WAVEFORM_SEARCH_TRACK_TYPE<stkobjects/RADAR_WAVEFORM_SEARCH_TRACK_TYPE_enum>
-    ≔ RADAR_SEARCH_TRACK_PRF_MODE<stkobjects/RADAR_SEARCH_TRACK_PRF_MODE_enum>
-    ≔ RADAR_SEARCH_TRACK_PULSE_WIDTH_MODE<stkobjects/RADAR_SEARCH_TRACK_PULSE_WIDTH_MODE_enum>
-    ≔ RADAR_SAR_PRF_MODE<stkobjects/RADAR_SAR_PRF_MODE_enum>
-    ≔ RADAR_SAR_RANGE_RESOLUTION_MODE<stkobjects/RADAR_SAR_RANGE_RESOLUTION_MODE_enum>
-    ≔ RADAR_SAR_PCR_MODE<stkobjects/RADAR_SAR_PCR_MODE_enum>
-    ≔ RADAR_SAR_PULSE_INTEGRATION_ANALYSIS_MODE<stkobjects/RADAR_SAR_PULSE_INTEGRATION_ANALYSIS_MODE_enum>
-    ≔ RADAR_PROBABILITY_OF_DETECTION_TYPE<stkobjects/RADAR_PROBABILITY_OF_DETECTION_TYPE_enum>
-    ≔ RADAR_PULSE_INTEGRATION_TYPE<stkobjects/RADAR_PULSE_INTEGRATION_TYPE_enum>
-    ≔ RADAR_PULSE_INTEGRATOR_TYPE<stkobjects/RADAR_PULSE_INTEGRATOR_TYPE_enum>
-    ≔ RADAR_CONTINUOUS_WAVE_ANALYSIS_MODE<stkobjects/RADAR_CONTINUOUS_WAVE_ANALYSIS_MODE_enum>
-    ≔ RADAR_CLUTTER_GEOMETRY_MODEL_TYPE<stkobjects/RADAR_CLUTTER_GEOMETRY_MODEL_TYPE_enum>
-    ≔ RADAR_CLUTTER_MAP_MODEL_TYPE<stkobjects/RADAR_CLUTTER_MAP_MODEL_TYPE_enum>
-    ≔ RADAR_SWERLING_CASE<stkobjects/RADAR_SWERLING_CASE_enum>
-    ≔ RCS_COMPUTE_STRATEGY<stkobjects/RCS_COMPUTE_STRATEGY_enum>
-    ≔ RADAR_ACTIVITY_TYPE<stkobjects/RADAR_ACTIVITY_TYPE_enum>
-    ≔ RADAR_CROSS_SECTION_CONTOUR_GRAPHICS_POLARIZATION<stkobjects/RADAR_CROSS_SECTION_CONTOUR_GRAPHICS_POLARIZATION_enum>
-    ≔ RF_FILTER_MODEL_TYPE<stkobjects/RF_FILTER_MODEL_TYPE_enum>
-    ≔ MODULATOR_MODEL_TYPE<stkobjects/MODULATOR_MODEL_TYPE_enum>
-    ≔ DEMODULATOR_MODEL_TYPE<stkobjects/DEMODULATOR_MODEL_TYPE_enum>
-    ≔ RAIN_LOSS_MODEL_TYPE<stkobjects/RAIN_LOSS_MODEL_TYPE_enum>
-    ≔ ATMOSPHERIC_ABSORPTION_MODEL_TYPE<stkobjects/ATMOSPHERIC_ABSORPTION_MODEL_TYPE_enum>
-    ≔ URBAN_TERRESTRIAL_LOSS_MODEL_TYPE<stkobjects/URBAN_TERRESTRIAL_LOSS_MODEL_TYPE_enum>
-    ≔ CLOUDS_AND_FOG_FADING_LOSS_MODEL_TYPE<stkobjects/CLOUDS_AND_FOG_FADING_LOSS_MODEL_TYPE_enum>
-    ≔ CLOUDS_AND_FOG_LIQUID_WATER_CHOICE_TYPE<stkobjects/CLOUDS_AND_FOG_LIQUID_WATER_CHOICE_TYPE_enum>
-    ≔ IONOSPHERIC_FADING_LOSS_MODEL_TYPE<stkobjects/IONOSPHERIC_FADING_LOSS_MODEL_TYPE_enum>
-    ≔ TROPOSPHERIC_SCINTILLATION_FADING_LOSS_MODEL_TYPE<stkobjects/TROPOSPHERIC_SCINTILLATION_FADING_LOSS_MODEL_TYPE_enum>
-    ≔ TROPOSPHERIC_SCINTILLATION_AVERAGE_TIME_CHOICE_TYPE<stkobjects/TROPOSPHERIC_SCINTILLATION_AVERAGE_TIME_CHOICE_TYPE_enum>
-    ≔ PROJECTION_HORIZONTAL_DATUM_TYPE<stkobjects/PROJECTION_HORIZONTAL_DATUM_TYPE_enum>
-    ≔ BUILD_HEIGHT_REFERENCE_METHOD<stkobjects/BUILD_HEIGHT_REFERENCE_METHOD_enum>
-    ≔ BUILDING_HEIGHT_UNIT<stkobjects/BUILDING_HEIGHT_UNIT_enum>
-    ≔ TIREM_POLARIZATION_TYPE<stkobjects/TIREM_POLARIZATION_TYPE_enum>
-    ≔ GRAPHICS_3D_ACAP_SOLAR_ACTIVITY_CONFIGURATION_TYPE<stkobjects/GRAPHICS_3D_ACAP_SOLAR_ACTIVITY_CONFIGURATION_TYPE_enum>
-    ≔ GRAPHICS_3D_ACAP_COEFFICIENT_DATA_TYPE<stkobjects/GRAPHICS_3D_ACAP_COEFFICIENT_DATA_TYPE_enum>
-    ≔ LASER_PROPAGATION_LOSS_MODEL_TYPE<stkobjects/LASER_PROPAGATION_LOSS_MODEL_TYPE_enum>
-    ≔ LASER_TROPOSPHERIC_SCINTILLATION_LOSS_MODEL_TYPE<stkobjects/LASER_TROPOSPHERIC_SCINTILLATION_LOSS_MODEL_TYPE_enum>
-    ≔ ATMOSPHERIC_TURBULENCE_MODEL_TYPE<stkobjects/ATMOSPHERIC_TURBULENCE_MODEL_TYPE_enum>
-    ≔ MODTRAN_AEROSOL_MODEL_TYPE<stkobjects/MODTRAN_AEROSOL_MODEL_TYPE_enum>
-    ≔ MODTRAN_CLOUD_MODEL_TYPE<stkobjects/MODTRAN_CLOUD_MODEL_TYPE_enum>
-    ≔ COMM_SYSTEM_REFERENCE_BANDWIDTH<stkobjects/COMM_SYSTEM_REFERENCE_BANDWIDTH_enum>
-    ≔ COMM_SYSTEM_CONSTRAINING_ROLE<stkobjects/COMM_SYSTEM_CONSTRAINING_ROLE_enum>
-    ≔ COMM_SYSTEM_SAVE_MODE<stkobjects/COMM_SYSTEM_SAVE_MODE_enum>
-    ≔ COMM_SYSTEM_ACCESS_EVENT_DETECTION_TYPE<stkobjects/COMM_SYSTEM_ACCESS_EVENT_DETECTION_TYPE_enum>
-    ≔ COMM_SYSTEM_ACCESS_SAMPLING_METHOD_TYPE<stkobjects/COMM_SYSTEM_ACCESS_SAMPLING_METHOD_TYPE_enum>
-    ≔ COMM_SYSTEM_LINK_SELECTION_CRITERIA_TYPE<stkobjects/COMM_SYSTEM_LINK_SELECTION_CRITERIA_TYPE_enum>
-    ≔ SPACE_ENVIRONMENT_NASA_MODELS_ACTIVITY<stkobjects/SPACE_ENVIRONMENT_NASA_MODELS_ACTIVITY_enum>
-    ≔ SPACE_ENVIRONMENT_CRRES_PROTON_ACTIVITY<stkobjects/SPACE_ENVIRONMENT_CRRES_PROTON_ACTIVITY_enum>
-    ≔ SPACE_ENVIRONMENT_CRRES_RADIATION_ACTIVITY<stkobjects/SPACE_ENVIRONMENT_CRRES_RADIATION_ACTIVITY_enum>
-    ≔ SPACE_ENVIRONMENT_MAGNETIC_FIELD_COLOR_MODE<stkobjects/SPACE_ENVIRONMENT_MAGNETIC_FIELD_COLOR_MODE_enum>
-    ≔ SPACE_ENVIRONMENT_MAGNETIC_FIELD_COLOR_SCALE_TYPE<stkobjects/SPACE_ENVIRONMENT_MAGNETIC_FIELD_COLOR_SCALE_TYPE_enum>
-    ≔ SPACE_ENVIRONMENT_MAGNETIC_MAIN_FIELD<stkobjects/SPACE_ENVIRONMENT_MAGNETIC_MAIN_FIELD_enum>
-    ≔ SPACE_ENVIRONMENT_MAGNETIC_EXTERNAL_FIELD<stkobjects/SPACE_ENVIRONMENT_MAGNETIC_EXTERNAL_FIELD_enum>
-    ≔ SPACE_ENVIRONMENT_SAA_CHANNEL<stkobjects/SPACE_ENVIRONMENT_SAA_CHANNEL_enum>
-    ≔ SPACE_ENVIRONMENT_SAA_FLUX_LEVEL<stkobjects/SPACE_ENVIRONMENT_SAA_FLUX_LEVEL_enum>
-    ≔ VEHICLE_SPACE_ENVIRONMENT_SHAPE_MODEL<stkobjects/VEHICLE_SPACE_ENVIRONMENT_SHAPE_MODEL_enum>
-    ≔ VEHICLE_SPACE_ENVIRONMENT_F10P7_SOURCE_TYPE<stkobjects/VEHICLE_SPACE_ENVIRONMENT_F10P7_SOURCE_TYPE_enum>
-    ≔ VEHICLE_SPACE_ENVIRONMENT_MATERIAL<stkobjects/VEHICLE_SPACE_ENVIRONMENT_MATERIAL_enum>
-    ≔ VEHICLE_SPACE_ENVIRONMENT_COMPUTATION_MODE<stkobjects/VEHICLE_SPACE_ENVIRONMENT_COMPUTATION_MODE_enum>
-    ≔ VEHICLE_SPACE_ENVIRONMENT_DOSE_CHANNEL<stkobjects/VEHICLE_SPACE_ENVIRONMENT_DOSE_CHANNEL_enum>
-    ≔ VEHICLE_SPACE_ENVIRONMENT_DETECTOR_GEOMETRY<stkobjects/VEHICLE_SPACE_ENVIRONMENT_DETECTOR_GEOMETRY_enum>
-    ≔ VEHICLE_SPACE_ENVIRONMENT_DETECTOR_TYPE<stkobjects/VEHICLE_SPACE_ENVIRONMENT_DETECTOR_TYPE_enum>
-    ≔ VEHICLE_SPACE_ENVIRONMENT_AP_SOURCE<stkobjects/VEHICLE_SPACE_ENVIRONMENT_AP_SOURCE_enum>
-    ≔ NOTIFICATION_FILTER_MASK<stkobjects/NOTIFICATION_FILTER_MASK_enum>
+    ≔ Constants<stkobjects/Constants>
+    ≔ HelpContextIdentifierType<stkobjects/HelpContextIdentifierType>
+    ≔ ErrorCode<stkobjects/ErrorCode>
+    ≔ AberrationType<stkobjects/AberrationType>
+    ≔ AnimationEndTimeMode<stkobjects/AnimationEndTimeMode>
+    ≔ AnimationOptionType<stkobjects/AnimationOptionType>
+    ≔ AnimationActionType<stkobjects/AnimationActionType>
+    ≔ AnimationDirectionType<stkobjects/AnimationDirectionType>
+    ≔ AzElMaskType<stkobjects/AzElMaskType>
+    ≔ ActionType<stkobjects/ActionType>
+    ≔ AxisOffset<stkobjects/AxisOffset>
+    ≔ DataProviderResultCategory<stkobjects/DataProviderResultCategory>
+    ≔ DataProviderType<stkobjects/DataProviderType>
+    ≔ DataProviderElementType<stkobjects/DataProviderElementType>
+    ≔ AccessTimeType<stkobjects/AccessTimeType>
+    ≔ AltitudeReferenceType<stkobjects/AltitudeReferenceType>
+    ≔ TerrainNormalType<stkobjects/TerrainNormalType>
+    ≔ LightingObstructionModelType<stkobjects/LightingObstructionModelType>
+    ≔ DisplayTimesType<stkobjects/DisplayTimesType>
+    ≔ AreaType<stkobjects/AreaType>
+    ≔ TrajectoryType<stkobjects/TrajectoryType>
+    ≔ OffsetFrameType<stkobjects/OffsetFrameType>
+    ≔ Scenario3dPointSize<stkobjects/Scenario3dPointSize>
+    ≔ TerrainFileType<stkobjects/TerrainFileType>
+    ≔ Tileset3DSourceType<stkobjects/Tileset3DSourceType>
+    ≔ MarkerType<stkobjects/MarkerType>
+    ≔ VectorAxesConnectType<stkobjects/VectorAxesConnectType>
+    ≔ Graphics3DMarkerOriginType<stkobjects/Graphics3DMarkerOriginType>
+    ≔ Graphics3DLabelSwapDistanceType<stkobjects/Graphics3DLabelSwapDistanceType>
+    ≔ PlanetPositionSourceType<stkobjects/PlanetPositionSourceType>
+    ≔ EphemSourceType<stkobjects/EphemSourceType>
+    ≔ PlanetOrbitDisplayType<stkobjects/PlanetOrbitDisplayType>
+    ≔ ScenarioEndLoopType<stkobjects/ScenarioEndLoopType>
+    ≔ ScenarioRefreshDeltaType<stkobjects/ScenarioRefreshDeltaType>
+    ≔ SensorPattern<stkobjects/SensorPattern>
+    ≔ SensorPointing<stkobjects/SensorPointing>
+    ≔ SensorPointingTargetedBoresightType<stkobjects/SensorPointingTargetedBoresightType>
+    ≔ BoresightType<stkobjects/BoresightType>
+    ≔ TrackMode<stkobjects/TrackMode>
+    ≔ SensorAzElBoresightAxisType<stkobjects/SensorAzElBoresightAxisType>
+    ≔ SensorRefractionType<stkobjects/SensorRefractionType>
+    ≔ SensorProjectionDistanceType<stkobjects/SensorProjectionDistanceType>
+    ≔ SensorLocation<stkobjects/SensorLocation>
+    ≔ ScenarioTimeStepType<stkobjects/ScenarioTimeStepType>
+    ≔ NoteShowType<stkobjects/NoteShowType>
+    ≔ GeometricElementType<stkobjects/GeometricElementType>
+    ≔ SensorScanMode<stkobjects/SensorScanMode>
+    ≔ ConstraintBackground<stkobjects/ConstraintBackground>
+    ≔ ConstraintGroundTrack<stkobjects/ConstraintGroundTrack>
+    ≔ IntersectionType<stkobjects/IntersectionType>
+    ≔ ConstraintLighting<stkobjects/ConstraintLighting>
+    ≔ SensorGraphics3DProjectionType<stkobjects/SensorGraphics3DProjectionType>
+    ≔ SensorGraphics3DPulseStyle<stkobjects/SensorGraphics3DPulseStyle>
+    ≔ SensorGraphics3DPulseFrequencyPreset<stkobjects/SensorGraphics3DPulseFrequencyPreset>
+    ≔ LineWidth<stkobjects/LineWidth>
+    ≔ STKObjectType<stkobjects/STKObjectType>
+    ≔ AccessConstraintType<stkobjects/AccessConstraintType>
+    ≔ BorderWallUpperLowerEdgeAltitudeReference<stkobjects/BorderWallUpperLowerEdgeAltitudeReference>
+    ≔ SolarRadiationPressureShadowModelType<stkobjects/SolarRadiationPressureShadowModelType>
+    ≔ MethodToComputeSunPosition<stkobjects/MethodToComputeSunPosition>
+    ≔ AtmosphericDensityModel<stkobjects/AtmosphericDensityModel>
+    ≔ MarkerShape3d<stkobjects/MarkerShape3d>
+    ≔ LeadTrailData<stkobjects/LeadTrailData>
+    ≔ TickData<stkobjects/TickData>
+    ≔ LoadMethod<stkobjects/LoadMethod>
+    ≔ DeticPositionType<stkobjects/DeticPositionType>
+    ≔ VehicleGraphics2DPass<stkobjects/VehicleGraphics2DPass>
+    ≔ VehicleGraphics2DVisibleSideType<stkobjects/VehicleGraphics2DVisibleSideType>
+    ≔ VehicleGraphics2DOffset<stkobjects/VehicleGraphics2DOffset>
+    ≔ VehicleGraphics2DTimeEventType<stkobjects/VehicleGraphics2DTimeEventType>
+    ≔ VehicleGraphics2DAttributeType<stkobjects/VehicleGraphics2DAttributeType>
+    ≔ VehicleGraphics2DElevation<stkobjects/VehicleGraphics2DElevation>
+    ≔ VehicleGraphics2DOptionType<stkobjects/VehicleGraphics2DOptionType>
+    ≔ ModelType<stkobjects/ModelType>
+    ≔ VehicleGraphics3DDropLineType<stkobjects/VehicleGraphics3DDropLineType>
+    ≔ VehicleGraphics3DSigmaScale<stkobjects/VehicleGraphics3DSigmaScale>
+    ≔ VehicleGraphics3DAttributeType<stkobjects/VehicleGraphics3DAttributeType>
+    ≔ RouteGraphics3DMarkerType<stkobjects/RouteGraphics3DMarkerType>
+    ≔ VehicleEllipseOptionType<stkobjects/VehicleEllipseOptionType>
+    ≔ PropagatorType<stkobjects/PropagatorType>
+    ≔ PropagatorSGP4SwitchMethod<stkobjects/PropagatorSGP4SwitchMethod>
+    ≔ VehicleSGP4TLESelectionType<stkobjects/VehicleSGP4TLESelectionType>
+    ≔ VehicleSGP4AutomaticUpdateSourceType<stkobjects/VehicleSGP4AutomaticUpdateSourceType>
+    ≔ ThirdBodyGravitySourceType<stkobjects/ThirdBodyGravitySourceType>
+    ≔ VehicleGeomagneticFluxSourceType<stkobjects/VehicleGeomagneticFluxSourceType>
+    ≔ VehicleGeomagneticFluxUpdateRateType<stkobjects/VehicleGeomagneticFluxUpdateRateType>
+    ≔ VehicleSolarFluxGeomagneticType<stkobjects/VehicleSolarFluxGeomagneticType>
+    ≔ VehicleIntegrationModel<stkobjects/VehicleIntegrationModel>
+    ≔ VehiclePredictorCorrectorScheme<stkobjects/VehiclePredictorCorrectorScheme>
+    ≔ VehicleMethod<stkobjects/VehicleMethod>
+    ≔ VehicleInterpolationMethod<stkobjects/VehicleInterpolationMethod>
+    ≔ VehicleFrame<stkobjects/VehicleFrame>
+    ≔ VehicleCorrelationListType<stkobjects/VehicleCorrelationListType>
+    ≔ VehicleConsiderAnalysisType<stkobjects/VehicleConsiderAnalysisType>
+    ≔ VehicleWaypointComputationMethod<stkobjects/VehicleWaypointComputationMethod>
+    ≔ VehicleAltitudeReference<stkobjects/VehicleAltitudeReference>
+    ≔ VehicleWaypointInterpolationMethod<stkobjects/VehicleWaypointInterpolationMethod>
+    ≔ VehicleLaunch<stkobjects/VehicleLaunch>
+    ≔ VehicleImpact<stkobjects/VehicleImpact>
+    ≔ VehicleLaunchControl<stkobjects/VehicleLaunchControl>
+    ≔ VehicleImpactLocation<stkobjects/VehicleImpactLocation>
+    ≔ VehiclePassNumbering<stkobjects/VehiclePassNumbering>
+    ≔ VehiclePartialPassMeasurement<stkobjects/VehiclePartialPassMeasurement>
+    ≔ VehicleCoordinateSystem<stkobjects/VehicleCoordinateSystem>
+    ≔ VehicleBreakAngleType<stkobjects/VehicleBreakAngleType>
+    ≔ VehicleDirection<stkobjects/VehicleDirection>
+    ≔ Graphics3DLocation<stkobjects/Graphics3DLocation>
+    ≔ Graphics3DXOrigin<stkobjects/Graphics3DXOrigin>
+    ≔ Graphics3DYOrigin<stkobjects/Graphics3DYOrigin>
+    ≔ Graphics3DFontSize<stkobjects/Graphics3DFontSize>
+    ≔ AircraftWGS84WarningType<stkobjects/AircraftWGS84WarningType>
+    ≔ SurfaceReference<stkobjects/SurfaceReference>
+    ≔ Graphics3DFormat<stkobjects/Graphics3DFormat>
+    ≔ AttitudeStandardType<stkobjects/AttitudeStandardType>
+    ≔ VehicleAttitude<stkobjects/VehicleAttitude>
+    ≔ AttitudeProfile<stkobjects/AttitudeProfile>
+    ≔ VehicleLookAheadMethod<stkobjects/VehicleLookAheadMethod>
+    ≔ VehicleGraphics3DBPlaneTargetPointPosition<stkobjects/VehicleGraphics3DBPlaneTargetPointPosition>
+    ≔ SensorAltitudeCrossingSideType<stkobjects/SensorAltitudeCrossingSideType>
+    ≔ SensorAltitudeCrossingDirection<stkobjects/SensorAltitudeCrossingDirection>
+    ≔ SensorGraphics3DInheritFrom2D<stkobjects/SensorGraphics3DInheritFrom2D>
+    ≔ SensorGraphics3DVisualAppearance<stkobjects/SensorGraphics3DVisualAppearance>
+    ≔ ChainTimePeriodType<stkobjects/ChainTimePeriodType>
+    ≔ ChainConstellationConstraintsMode<stkobjects/ChainConstellationConstraintsMode>
+    ≔ ChainCoverageAssetMode<stkobjects/ChainCoverageAssetMode>
+    ≔ ChainParentPlatformRestriction<stkobjects/ChainParentPlatformRestriction>
+    ≔ ChainOptimalStrandMetricType<stkobjects/ChainOptimalStrandMetricType>
+    ≔ ChainOptimalStrandCalculationScalarMetricType<stkobjects/ChainOptimalStrandCalculationScalarMetricType>
+    ≔ ChainOptimalStrandLinkCompareType<stkobjects/ChainOptimalStrandLinkCompareType>
+    ≔ ChainOptimalStrandCompareStrandsType<stkobjects/ChainOptimalStrandCompareStrandsType>
+    ≔ DataSaveMode<stkobjects/DataSaveMode>
+    ≔ CoverageBounds<stkobjects/CoverageBounds>
+    ≔ CoveragePointLocationMethod<stkobjects/CoveragePointLocationMethod>
+    ≔ CoveragePointAltitudeMethod<stkobjects/CoveragePointAltitudeMethod>
+    ≔ CoverageGridClass<stkobjects/CoverageGridClass>
+    ≔ CoverageAltitudeMethod<stkobjects/CoverageAltitudeMethod>
+    ≔ CoverageGroundAltitudeMethod<stkobjects/CoverageGroundAltitudeMethod>
+    ≔ CoverageDataRetention<stkobjects/CoverageDataRetention>
+    ≔ CoverageRegionAccessAccelerationType<stkobjects/CoverageRegionAccessAccelerationType>
+    ≔ CoverageResolution<stkobjects/CoverageResolution>
+    ≔ CoverageAssetStatus<stkobjects/CoverageAssetStatus>
+    ≔ CoverageAssetGrouping<stkobjects/CoverageAssetGrouping>
+    ≔ FigureOfMeritDefinitionType<stkobjects/FigureOfMeritDefinitionType>
+    ≔ FigureOfMeritSatisfactionType<stkobjects/FigureOfMeritSatisfactionType>
+    ≔ FigureOfMeritConstraintName<stkobjects/FigureOfMeritConstraintName>
+    ≔ FigureOfMeritCompute<stkobjects/FigureOfMeritCompute>
+    ≔ FigureOfMeritAcrossAssets<stkobjects/FigureOfMeritAcrossAssets>
+    ≔ FigureOfMeritNavigationComputeType<stkobjects/FigureOfMeritNavigationComputeType>
+    ≔ FigureOfMeritMethod<stkobjects/FigureOfMeritMethod>
+    ≔ FigureOfMeritEndGapOption<stkobjects/FigureOfMeritEndGapOption>
+    ≔ FigureOfMeritGraphics2DContourType<stkobjects/FigureOfMeritGraphics2DContourType>
+    ≔ FigureOfMeritGraphics2DColorMethod<stkobjects/FigureOfMeritGraphics2DColorMethod>
+    ≔ FigureOfMeritGraphics2DFloatingPointFormat<stkobjects/FigureOfMeritGraphics2DFloatingPointFormat>
+    ≔ FigureOfMeritGraphics2DDirection<stkobjects/FigureOfMeritGraphics2DDirection>
+    ≔ FigureOfMeritGraphics2DAccumulation<stkobjects/FigureOfMeritGraphics2DAccumulation>
+    ≔ FigureOfMeritNavigationAccuracyMethod<stkobjects/FigureOfMeritNavigationAccuracyMethod>
+    ≔ IvClockHost<stkobjects/IvClockHost>
+    ≔ IvTimeSense<stkobjects/IvTimeSense>
+    ≔ GPSAttitudeModelType<stkobjects/GPSAttitudeModelType>
+    ≔ ConstellationConstraintRestrictionType<stkobjects/ConstellationConstraintRestrictionType>
+    ≔ EventDetection<stkobjects/EventDetection>
+    ≔ SamplingMethod<stkobjects/SamplingMethod>
+    ≔ CoverageSatisfactionType<stkobjects/CoverageSatisfactionType>
+    ≔ CCSDSReferenceFrame<stkobjects/CCSDSReferenceFrame>
+    ≔ CCSDSDateFormat<stkobjects/CCSDSDateFormat>
+    ≔ CCSDSEphemerisFormatType<stkobjects/CCSDSEphemerisFormatType>
+    ≔ CCSDSTimeSystem<stkobjects/CCSDSTimeSystem>
+    ≔ EphemerisCoordinateSystemType<stkobjects/EphemerisCoordinateSystemType>
+    ≔ EphemerisCovarianceType<stkobjects/EphemerisCovarianceType>
+    ≔ ExportToolVersionFormat<stkobjects/ExportToolVersionFormat>
+    ≔ ExportToolTimePeriodType<stkobjects/ExportToolTimePeriodType>
+    ≔ SpiceInterpolation<stkobjects/SpiceInterpolation>
+    ≔ AttitudeCoordinateAxes<stkobjects/AttitudeCoordinateAxes>
+    ≔ AttitudeInclude<stkobjects/AttitudeInclude>
+    ≔ ExportToolStepSizeType<stkobjects/ExportToolStepSizeType>
+    ≔ TextOutlineStyle<stkobjects/TextOutlineStyle>
+    ≔ MTORangeMode<stkobjects/MTORangeMode>
+    ≔ MTOTrackEvaluationType<stkobjects/MTOTrackEvaluationType>
+    ≔ MTOEntirety<stkobjects/MTOEntirety>
+    ≔ MTOVisibilityMode<stkobjects/MTOVisibilityMode>
+    ≔ MTOObjectInterval<stkobjects/MTOObjectInterval>
+    ≔ MTOInputDataType<stkobjects/MTOInputDataType>
+    ≔ SolidTide<stkobjects/SolidTide>
+    ≔ TimePeriodValueType<stkobjects/TimePeriodValueType>
+    ≔ OnePointAccessStatus<stkobjects/OnePointAccessStatus>
+    ≔ OnePointAccessSummary<stkobjects/OnePointAccessSummary>
+    ≔ LookAheadPropagator<stkobjects/LookAheadPropagator>
+    ≔ Graphics3DMarkerOrientation<stkobjects/Graphics3DMarkerOrientation>
+    ≔ SolarRadiationPressureModelType<stkobjects/SolarRadiationPressureModelType>
+    ≔ DragModel<stkobjects/DragModel>
+    ≔ VehiclePropagationFrame<stkobjects/VehiclePropagationFrame>
+    ≔ StarReferenceFrame<stkobjects/StarReferenceFrame>
+    ≔ GPSReferenceWeek<stkobjects/GPSReferenceWeek>
+    ≔ CoverageCustomRegionAlgorithm<stkobjects/CoverageCustomRegionAlgorithm>
+    ≔ VehicleGPSSwitchMethod<stkobjects/VehicleGPSSwitchMethod>
+    ≔ VehicleGPSElementSelectionType<stkobjects/VehicleGPSElementSelectionType>
+    ≔ VehicleGPSAutomaticUpdateSourceType<stkobjects/VehicleGPSAutomaticUpdateSourceType>
+    ≔ VehicleGPSAlmanacType<stkobjects/VehicleGPSAlmanacType>
+    ≔ ExternalEphemerisFormatType<stkobjects/ExternalEphemerisFormatType>
+    ≔ ExternalFileMessageLevelType<stkobjects/ExternalFileMessageLevelType>
+    ≔ Coverage3dDrawAtAltitudeMode<stkobjects/Coverage3dDrawAtAltitudeMode>
+    ≔ DistanceOnSphere<stkobjects/DistanceOnSphere>
+    ≔ FigureOfMeritInvalidValueActionType<stkobjects/FigureOfMeritInvalidValueActionType>
+    ≔ VehicleSlewTimingBetweenTargetType<stkobjects/VehicleSlewTimingBetweenTargetType>
+    ≔ VehicleSlewMode<stkobjects/VehicleSlewMode>
+    ≔ Component<stkobjects/Component>
+    ≔ VolumetricDefinitionType<stkobjects/VolumetricDefinitionType>
+    ≔ VolumetricSpatialCalculationEvaluationType<stkobjects/VolumetricSpatialCalculationEvaluationType>
+    ≔ VolumetricSaveComputedDataType<stkobjects/VolumetricSaveComputedDataType>
+    ≔ VolumetricDisplayVolumeType<stkobjects/VolumetricDisplayVolumeType>
+    ≔ VolumetricDisplayQualityType<stkobjects/VolumetricDisplayQualityType>
+    ≔ VolumetricLegendNumericNotationType<stkobjects/VolumetricLegendNumericNotationType>
+    ≔ VolumetricLevelOrder<stkobjects/VolumetricLevelOrder>
+    ≔ SensorEOIRProcessingLevelType<stkobjects/SensorEOIRProcessingLevelType>
+    ≔ SensorEOIRJitterType<stkobjects/SensorEOIRJitterType>
+    ≔ SensorEOIRScanMode<stkobjects/SensorEOIRScanMode>
+    ≔ SensorEOIRBandImageQuality<stkobjects/SensorEOIRBandImageQuality>
+    ≔ SensorEOIRBandSpectralShape<stkobjects/SensorEOIRBandSpectralShape>
+    ≔ SensorEOIRBandSpatialInputMode<stkobjects/SensorEOIRBandSpatialInputMode>
+    ≔ SensorEOIRBandSpectralRelativeSystemResponseUnitsType<stkobjects/SensorEOIRBandSpectralRelativeSystemResponseUnitsType>
+    ≔ SensorEOIRBandOpticalInputMode<stkobjects/SensorEOIRBandOpticalInputMode>
+    ≔ SensorEOIRBandOpticalTransmissionMode<stkobjects/SensorEOIRBandOpticalTransmissionMode>
+    ≔ SensorEOIRBandRadiometricParameterLevelType<stkobjects/SensorEOIRBandRadiometricParameterLevelType>
+    ≔ SensorEOIRBandQuantumEfficiencyMode<stkobjects/SensorEOIRBandQuantumEfficiencyMode>
+    ≔ SensorEOIRBandQuantizationMode<stkobjects/SensorEOIRBandQuantizationMode>
+    ≔ SensorEOIRBandWavelengthType<stkobjects/SensorEOIRBandWavelengthType>
+    ≔ SensorEOIRBandSaturationMode<stkobjects/SensorEOIRBandSaturationMode>
+    ≔ VolumetricVolumeGridExportType<stkobjects/VolumetricVolumeGridExportType>
+    ≔ VolumetricDataExportFormatType<stkobjects/VolumetricDataExportFormatType>
+    ≔ ConstellationFromToParentConstraint<stkobjects/ConstellationFromToParentConstraint>
+    ≔ AnalysisWorkbenchAccessConstraintType<stkobjects/AnalysisWorkbenchAccessConstraintType>
+    ≔ StatisticType<stkobjects/StatisticType>
+    ≔ TimeVaryingExtremum<stkobjects/TimeVaryingExtremum>
+    ≔ ModelGltfReflectionMapType<stkobjects/ModelGltfReflectionMapType>
+    ≔ SensorGraphics3DProjectionTimeDependencyType<stkobjects/SensorGraphics3DProjectionTimeDependencyType>
+    ≔ LOPAtmosphericDensityModel<stkobjects/LOPAtmosphericDensityModel>
+    ≔ LowAltitudeAtmosphericDensityModel<stkobjects/LowAltitudeAtmosphericDensityModel>
+    ≔ EphemExportToolFileFormat<stkobjects/EphemExportToolFileFormat>
+    ≔ AdvCATEllipsoidClassType<stkobjects/AdvCATEllipsoidClassType>
+    ≔ AdvCATConjunctionType<stkobjects/AdvCATConjunctionType>
+    ≔ AdvCATSecondaryEllipsoidsVisibilityType<stkobjects/AdvCATSecondaryEllipsoidsVisibilityType>
+    ≔ EOIRShapeType<stkobjects/EOIRShapeType>
+    ≔ EOIRShapeMaterialSpecificationType<stkobjects/EOIRShapeMaterialSpecificationType>
+    ≔ EOIRThermalModelType<stkobjects/EOIRThermalModelType>
+    ≔ EOIRFlightType<stkobjects/EOIRFlightType>
+    ≔ PropagatorDisplayCoordinateType<stkobjects/PropagatorDisplayCoordinateType>
+    ≔ ComponentLinkEmbedControlReferenceType<stkobjects/ComponentLinkEmbedControlReferenceType>
+    ≔ SwathComputationalMethod<stkobjects/SwathComputationalMethod>
+    ≔ ClassicalLocation<stkobjects/ClassicalLocation>
+    ≔ OrientationAscNode<stkobjects/OrientationAscNode>
+    ≔ GeodeticSize<stkobjects/GeodeticSize>
+    ≔ DelaunayLType<stkobjects/DelaunayLType>
+    ≔ DelaunayHType<stkobjects/DelaunayHType>
+    ≔ DelaunayGType<stkobjects/DelaunayGType>
+    ≔ EquinoctialSizeShape<stkobjects/EquinoctialSizeShape>
+    ≔ MixedSphericalFlightPathAngleType<stkobjects/MixedSphericalFlightPathAngleType>
+    ≔ SphericalFlightPathAzimuthType<stkobjects/SphericalFlightPathAzimuthType>
+    ≔ ClassicalSizeShape<stkobjects/ClassicalSizeShape>
+    ≔ EquinoctialFormulation<stkobjects/EquinoctialFormulation>
+    ≔ ScatteringPointProviderType<stkobjects/ScatteringPointProviderType>
+    ≔ ScatteringPointModelType<stkobjects/ScatteringPointModelType>
+    ≔ ScatteringPointProviderListType<stkobjects/ScatteringPointProviderListType>
+    ≔ PolarizationType<stkobjects/PolarizationType>
+    ≔ PolarizationReferenceAxis<stkobjects/PolarizationReferenceAxis>
+    ≔ NoiseTemperatureComputeType<stkobjects/NoiseTemperatureComputeType>
+    ≔ PointingStrategyType<stkobjects/PointingStrategyType>
+    ≔ WaveformType<stkobjects/WaveformType>
+    ≔ FrequencySpecificationType<stkobjects/FrequencySpecificationType>
+    ≔ PRFMode<stkobjects/PRFMode>
+    ≔ PulseWidthMode<stkobjects/PulseWidthMode>
+    ≔ WaveformSelectionStrategyType<stkobjects/WaveformSelectionStrategyType>
+    ≔ AntennaControlReferenceType<stkobjects/AntennaControlReferenceType>
+    ≔ AntennaModelType<stkobjects/AntennaModelType>
+    ≔ AntennaContourType<stkobjects/AntennaContourType>
+    ≔ CircularApertureInputType<stkobjects/CircularApertureInputType>
+    ≔ RectangularApertureInputType<stkobjects/RectangularApertureInputType>
+    ≔ DirectionProviderType<stkobjects/DirectionProviderType>
+    ≔ BeamformerType<stkobjects/BeamformerType>
+    ≔ ElementConfigurationType<stkobjects/ElementConfigurationType>
+    ≔ LatticeType<stkobjects/LatticeType>
+    ≔ SpacingUnit<stkobjects/SpacingUnit>
+    ≔ LimitsExceededBehaviorType<stkobjects/LimitsExceededBehaviorType>
+    ≔ TargetSelectionMethod<stkobjects/TargetSelectionMethod>
+    ≔ AntennaGraphicsCoordinateSystem<stkobjects/AntennaGraphicsCoordinateSystem>
+    ≔ AntennaModelInputType<stkobjects/AntennaModelInputType>
+    ≔ HFSSFarFieldDataGainType<stkobjects/HFSSFarFieldDataGainType>
+    ≔ AntennaModelCosecantSquaredSidelobeType<stkobjects/AntennaModelCosecantSquaredSidelobeType>
+    ≔ BeamSelectionStrategyType<stkobjects/BeamSelectionStrategyType>
+    ≔ TransmitterModelType<stkobjects/TransmitterModelType>
+    ≔ TransferFunctionType<stkobjects/TransferFunctionType>
+    ≔ ReTransmitterOpMode<stkobjects/ReTransmitterOpMode>
+    ≔ ReceiverModelType<stkobjects/ReceiverModelType>
+    ≔ LinkMarginType<stkobjects/LinkMarginType>
+    ≔ RadarSTCAttenuationType<stkobjects/RadarSTCAttenuationType>
+    ≔ RadarFrequencySpecificationType<stkobjects/RadarFrequencySpecificationType>
+    ≔ RadarSNRContourType<stkobjects/RadarSNRContourType>
+    ≔ RadarModelType<stkobjects/RadarModelType>
+    ≔ RadarMode<stkobjects/RadarMode>
+    ≔ RadarWaveformSearchTrackType<stkobjects/RadarWaveformSearchTrackType>
+    ≔ RadarSearchTrackPRFMode<stkobjects/RadarSearchTrackPRFMode>
+    ≔ RadarSearchTrackPulseWidthMode<stkobjects/RadarSearchTrackPulseWidthMode>
+    ≔ RadarSarPRFMode<stkobjects/RadarSarPRFMode>
+    ≔ RadarSarRangeResolutionMode<stkobjects/RadarSarRangeResolutionMode>
+    ≔ RadarSarPcrMode<stkobjects/RadarSarPcrMode>
+    ≔ RadarSARPulseIntegrationAnalysisMode<stkobjects/RadarSARPulseIntegrationAnalysisMode>
+    ≔ RadarProbabilityOfDetectionType<stkobjects/RadarProbabilityOfDetectionType>
+    ≔ RadarPulseIntegrationType<stkobjects/RadarPulseIntegrationType>
+    ≔ RadarPulseIntegratorType<stkobjects/RadarPulseIntegratorType>
+    ≔ RadarContinuousWaveAnalysisMode<stkobjects/RadarContinuousWaveAnalysisMode>
+    ≔ RadarClutterGeometryModelType<stkobjects/RadarClutterGeometryModelType>
+    ≔ RadarClutterMapModelType<stkobjects/RadarClutterMapModelType>
+    ≔ RadarSwerlingCase<stkobjects/RadarSwerlingCase>
+    ≔ RCSComputeStrategy<stkobjects/RCSComputeStrategy>
+    ≔ RadarActivityType<stkobjects/RadarActivityType>
+    ≔ RadarCrossSectionContourGraphicsPolarization<stkobjects/RadarCrossSectionContourGraphicsPolarization>
+    ≔ RFFilterModelType<stkobjects/RFFilterModelType>
+    ≔ ModulatorModelType<stkobjects/ModulatorModelType>
+    ≔ DemodulatorModelType<stkobjects/DemodulatorModelType>
+    ≔ RainLossModelType<stkobjects/RainLossModelType>
+    ≔ AtmosphericAbsorptionModelType<stkobjects/AtmosphericAbsorptionModelType>
+    ≔ UrbanTerrestrialLossModelType<stkobjects/UrbanTerrestrialLossModelType>
+    ≔ CloudsAndFogFadingLossModelType<stkobjects/CloudsAndFogFadingLossModelType>
+    ≔ CloudsAndFogLiquidWaterChoiceType<stkobjects/CloudsAndFogLiquidWaterChoiceType>
+    ≔ IonosphericFadingLossModelType<stkobjects/IonosphericFadingLossModelType>
+    ≔ TroposphericScintillationFadingLossModelType<stkobjects/TroposphericScintillationFadingLossModelType>
+    ≔ TroposphericScintillationAverageTimeChoiceType<stkobjects/TroposphericScintillationAverageTimeChoiceType>
+    ≔ ProjectionHorizontalDatumType<stkobjects/ProjectionHorizontalDatumType>
+    ≔ BuildHeightReferenceMethod<stkobjects/BuildHeightReferenceMethod>
+    ≔ BuildingHeightUnit<stkobjects/BuildingHeightUnit>
+    ≔ TIREMPolarizationType<stkobjects/TIREMPolarizationType>
+    ≔ Graphics3DACAPSolarActivityConfigurationType<stkobjects/Graphics3DACAPSolarActivityConfigurationType>
+    ≔ Graphics3DACAPCoefficientDataType<stkobjects/Graphics3DACAPCoefficientDataType>
+    ≔ LaserPropagationLossModelType<stkobjects/LaserPropagationLossModelType>
+    ≔ LaserTroposphericScintillationLossModelType<stkobjects/LaserTroposphericScintillationLossModelType>
+    ≔ AtmosphericTurbulenceModelType<stkobjects/AtmosphericTurbulenceModelType>
+    ≔ ModtranAerosolModelType<stkobjects/ModtranAerosolModelType>
+    ≔ ModtranCloudModelType<stkobjects/ModtranCloudModelType>
+    ≔ CommSystemReferenceBandwidth<stkobjects/CommSystemReferenceBandwidth>
+    ≔ CommSystemConstrainingRole<stkobjects/CommSystemConstrainingRole>
+    ≔ CommSystemSaveMode<stkobjects/CommSystemSaveMode>
+    ≔ CommSystemAccessEventDetectionType<stkobjects/CommSystemAccessEventDetectionType>
+    ≔ CommSystemAccessSamplingMethodType<stkobjects/CommSystemAccessSamplingMethodType>
+    ≔ CommSystemLinkSelectionCriteriaType<stkobjects/CommSystemLinkSelectionCriteriaType>
+    ≔ SpaceEnvironmentNasaModelsActivity<stkobjects/SpaceEnvironmentNasaModelsActivity>
+    ≔ SpaceEnvironmentCrresProtonActivity<stkobjects/SpaceEnvironmentCrresProtonActivity>
+    ≔ SpaceEnvironmentCrresRadiationActivity<stkobjects/SpaceEnvironmentCrresRadiationActivity>
+    ≔ SpaceEnvironmentMagneticFieldColorMode<stkobjects/SpaceEnvironmentMagneticFieldColorMode>
+    ≔ SpaceEnvironmentMagneticFieldColorScaleType<stkobjects/SpaceEnvironmentMagneticFieldColorScaleType>
+    ≔ SpaceEnvironmentMagneticMainField<stkobjects/SpaceEnvironmentMagneticMainField>
+    ≔ SpaceEnvironmentMagneticExternalField<stkobjects/SpaceEnvironmentMagneticExternalField>
+    ≔ SpaceEnvironmentSAAChannel<stkobjects/SpaceEnvironmentSAAChannel>
+    ≔ SpaceEnvironmentSAAFluxLevel<stkobjects/SpaceEnvironmentSAAFluxLevel>
+    ≔ VehicleSpaceEnvironmentShapeModel<stkobjects/VehicleSpaceEnvironmentShapeModel>
+    ≔ VehicleSpaceEnvironmentF10P7SourceType<stkobjects/VehicleSpaceEnvironmentF10P7SourceType>
+    ≔ VehicleSpaceEnvironmentMaterial<stkobjects/VehicleSpaceEnvironmentMaterial>
+    ≔ VehicleSpaceEnvironmentComputationMode<stkobjects/VehicleSpaceEnvironmentComputationMode>
+    ≔ VehicleSpaceEnvironmentDoseChannel<stkobjects/VehicleSpaceEnvironmentDoseChannel>
+    ≔ VehicleSpaceEnvironmentDetectorGeometry<stkobjects/VehicleSpaceEnvironmentDetectorGeometry>
+    ≔ VehicleSpaceEnvironmentDetectorType<stkobjects/VehicleSpaceEnvironmentDetectorType>
+    ≔ VehicleSpaceEnvironmentApSource<stkobjects/VehicleSpaceEnvironmentApSource>
+    ≔ NotificationFilterMask<stkobjects/NotificationFilterMask>
 

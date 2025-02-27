@@ -47,15 +47,15 @@ Method detail
 
         :obj:`~TimeIntervalDisplayCondition`
 
-.. py:method:: initialize_with_times(self, minimum_time: IDate, maximum_time: IDate) -> TimeIntervalDisplayCondition
+.. py:method:: initialize_with_times(self, minimum_time: Date, maximum_time: Date) -> TimeIntervalDisplayCondition
     :canonical: ansys.stk.core.graphics.TimeIntervalDisplayConditionFactory.initialize_with_times
 
     Initialize a time display condition with the inclusive time interval [minimumTime, maximumTime]...
 
     :Parameters:
 
-    **minimum_time** : :obj:`~IDate`
-    **maximum_time** : :obj:`~IDate`
+    **minimum_time** : :obj:`~Date`
+    **maximum_time** : :obj:`~Date`
 
     :Returns:
 

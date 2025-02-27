@@ -21,11 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelITUBO1213CoPolar.mainlobe_gain`
-              - Gets or sets the main-lobe gain.
+              - Get or set the main-lobe gain.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelITUBO1213CoPolar.efficiency`
-              - Gets or sets the efficiency.
+              - Get or set the efficiency.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelITUBO1213CoPolar.diameter`
-              - Gets or sets the diameter.
+              - Get or set the diameter.
 
 
 
@@ -44,18 +44,18 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.AntennaModelITUBO1213CoPolar.mainlobe_gain
     :type: float
 
-    Gets or sets the main-lobe gain.
+    Get or set the main-lobe gain.
 
 .. py:property:: efficiency
     :canonical: ansys.stk.core.stkobjects.AntennaModelITUBO1213CoPolar.efficiency
     :type: float
 
-    Gets or sets the efficiency.
+    Get or set the efficiency.
 
 .. py:property:: diameter
     :canonical: ansys.stk.core.stkobjects.AntennaModelITUBO1213CoPolar.diameter
     :type: float
 
-    Gets or sets the diameter.
+    Get or set the diameter.
 
 

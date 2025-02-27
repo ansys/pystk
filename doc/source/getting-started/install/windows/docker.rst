@@ -67,7 +67,7 @@ Download the PySTK wheels for Windows.
         :widths: auto
 
         * - **Artifact**
-          - `{{ wheels }} <_static/artifacts/{{ wheels }}>`_
+          - `{{ wheels }} <../../../_static/artifacts/{{ wheels }}>`_
         * - **Size**
           - {{ wheels_size }}
         * - **SHA-256**

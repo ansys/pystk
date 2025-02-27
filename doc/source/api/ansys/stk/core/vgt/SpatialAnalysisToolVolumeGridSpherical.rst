@@ -23,11 +23,11 @@ Overview
             * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridSpherical.reference_system`
               - Get the reference system in which spherical parameters are computed.
             * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridSpherical.azimuth_grid_parameters`
-              - Returns azimuth coordinates parameters for the spherical volume grid.
+              - Return azimuth coordinates parameters for the spherical volume grid.
             * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridSpherical.elevation_grid_parameters`
-              - Returns elevation coordinates parameters for the spherical volume grid.
+              - Return elevation coordinates parameters for the spherical volume grid.
             * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridSpherical.range_coordinates`
-              - Returns range coordinates parameters for the spherical volume grid.
+              - Return range coordinates parameters for the spherical volume grid.
 
 
 
@@ -52,18 +52,18 @@ Property detail
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridSpherical.azimuth_grid_parameters
     :type: SpatialAnalysisToolGridCoordinateDefinition
 
-    Returns azimuth coordinates parameters for the spherical volume grid.
+    Return azimuth coordinates parameters for the spherical volume grid.
 
 .. py:property:: elevation_grid_parameters
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridSpherical.elevation_grid_parameters
     :type: SpatialAnalysisToolGridCoordinateDefinition
 
-    Returns elevation coordinates parameters for the spherical volume grid.
+    Return elevation coordinates parameters for the spherical volume grid.
 
 .. py:property:: range_coordinates
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolVolumeGridSpherical.range_coordinates
     :type: SpatialAnalysisToolGridCoordinateDefinition
 
-    Returns range coordinates parameters for the spherical volume grid.
+    Return range coordinates parameters for the spherical volume grid.
 
 

@@ -42,13 +42,13 @@ Property detail
 
 .. py:property:: status
     :canonical: ansys.stk.core.stkobjects.OnePointAccessConstraint.status
-    :type: ONE_POINT_ACCESS_STATUS
+    :type: OnePointAccessStatus
 
     An indicator describing the status  of whether the constraint is satisfied or violated at the computed time.
 
 .. py:property:: constraint
     :canonical: ansys.stk.core.stkobjects.OnePointAccessConstraint.constraint
-    :type: ACCESS_CONSTRAINT_TYPE
+    :type: AccessConstraintType
 
     Get the type of the constraint being evaluated.
 

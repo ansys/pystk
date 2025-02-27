@@ -1,6 +1,24 @@
-################################################################################
-#          Copyright 2020-2023, Ansys Government Initiatives
-################################################################################
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
 
 __all__ = [ "COMEventHandlerImpl",
             "IStkObjectRootEventCOMHandler", 
@@ -233,7 +251,7 @@ class IStkObjectRootEventCOMHandler(COMEventHandlerImpl):
 
     def _on_log_message(self, pThis:PVOID, message:str, msgType:int, errorCode:int, fileName:str, lineNo:int, dispID:int) -> None:
         for callback in self._events["OnLogMessage"]._callbacks:
-            callback(message, agcls.AgTypeNameMap["LOG_MESSAGE_TYPE"](msgType), errorCode, fileName, lineNo, agcls.AgTypeNameMap["LOG_MESSAGE_DISPLAY_ID"](dispID))
+            callback(message, agcls.AgTypeNameMap["LogMessageType"](msgType), errorCode, fileName, lineNo, agcls.AgTypeNameMap["LogMessageDisplayID"](dispID))
 
     def _on_anim_update(self, pThis:PVOID, timeEpSec:float) -> None:
         for callback in self._events["OnAnimUpdate"]._callbacks:
@@ -256,7 +274,7 @@ class IStkObjectRootEventCOMHandler(COMEventHandlerImpl):
                 
     def _on_animation_playback(self, pThis:PVOID, CurrentTime:float, eAction:int, eDirection:int) -> None:
         for callback in self._events["OnAnimationPlayback"]._callbacks:
-            callback(CurrentTime, agcls.AgTypeNameMap["ANIMATION_ACTION_TYPE"](eAction), agcls.AgTypeNameMap["ANIMATION_DIRECTION_TYPE"](eDirection.python_val))
+            callback(CurrentTime, agcls.AgTypeNameMap["AnimationActionType"](eAction), agcls.AgTypeNameMap["AnimationDirectionType"](eDirection.python_val))
                 
     def _on_animation_rewind(self, pThis:PVOID) -> None:
         for callback in self._events["OnAnimationRewind"]._callbacks:
@@ -454,7 +472,7 @@ class ISTKXApplicationEventCOMHandler(COMEventHandlerImpl):
 
     def _OnLogMessage(self, pThis:PVOID, message:str, msgType:int, errorCode:int, fileName:str, lineNo:int, dispID:int) -> None:
         for callback in self._events["OnLogMessage"]._callbacks:
-            callback(message, agcls.AgTypeNameMap["LOG_MESSAGE_TYPE"](msgType), errorCode, fileName, lineNo, agcls.AgTypeNameMap["LOG_MESSAGE_DISPLAY_ID"](dispID))
+            callback(message, agcls.AgTypeNameMap["LogMessageType"](msgType), errorCode, fileName, lineNo, agcls.AgTypeNameMap["LogMessageDisplayID"](dispID))
 
     def _OnAnimUpdate(self, pThis:PVOID, timeEpSec:float) -> int:
         for callback in self._events["OnAnimUpdate"]._callbacks:
@@ -483,7 +501,7 @@ class ISTKXApplicationEventCOMHandler(COMEventHandlerImpl):
     
     def _OnNewGfxAnalysisCtrlRequest(self, pThis:PVOID, SceneID:int, GfxAnalysisMode:int) -> None:
         for callback in self._events["OnNewGfxAnalysisCtrlRequest"]._callbacks:
-            callback(SceneID, agcls.AgTypeNameMap["GRAPHICS_2D_ANALYSIS_MODE"](GfxAnalysisMode))
+            callback(SceneID, agcls.AgTypeNameMap["Graphics2DAnalysisMode"](GfxAnalysisMode))
     
     def _OnSSLCertificateServerError(self, pThis:PVOID, pArgs:PVOID) -> None:
         for callback in self._events["OnSSLCertificateServerError"]._callbacks:
@@ -1044,8 +1062,3 @@ class ITerrainOverlayCollectionEventCOMHandler(COMEventHandlerImpl):
             with agmarshall.VariantArg(Sender) as arg_Sender, \
                  agmarshall.InterfaceEventCallbackArg(Args, agcls.AgTypeNameMap["TerrainOverlayAddCompleteEventArgs"]) as arg_Args:
                 callback(arg_Sender.python_val, arg_Args.python_val)
-
-
-################################################################################
-#          Copyright 2020-2023, Ansys Government Initiatives
-################################################################################

@@ -36,13 +36,13 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileScriptingTool.enable`
               - If true, the scripting tool will be used.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileScriptingTool.segment_properties`
-              - Returns the collection of the segment properties.
+              - Return the collection of the segment properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileScriptingTool.calculation_objects`
-              - Returns the collection of the calc objects.
+              - Return the collection of the calc objects.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileScriptingTool.parameters`
-              - Returns the collection of parameters.
+              - Return the collection of parameters.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileScriptingTool.language_type`
-              - Gets or sets the scripting language being used.
+              - Get or set the scripting language being used.
 
 
 
@@ -67,25 +67,25 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileScriptingTool.segment_properties
     :type: ScriptingSegmentCollection
 
-    Returns the collection of the segment properties.
+    Return the collection of the segment properties.
 
 .. py:property:: calculation_objects
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileScriptingTool.calculation_objects
     :type: ScriptingCalculationObjectCollection
 
-    Returns the collection of the calc objects.
+    Return the collection of the calc objects.
 
 .. py:property:: parameters
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileScriptingTool.parameters
     :type: ScriptingParameterCollection
 
-    Returns the collection of parameters.
+    Return the collection of parameters.
 
 .. py:property:: language_type
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileScriptingTool.language_type
-    :type: LANGUAGE
+    :type: Language
 
-    Gets or sets the scripting language being used.
+    Get or set the scripting language being used.
 
 
 Method detail

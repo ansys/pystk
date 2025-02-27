@@ -84,9 +84,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CentralBodyComponent.gravitational_parameter`
-              - Gets or sets the gravitational parameter to be used. Uses Gravity Parameter Dimension.
+              - Get or set the gravitational parameter to be used. Uses Gravity Parameter Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CentralBodyComponent.parent_name`
-              - Gets or sets the parent of this central body.
+              - Get or set the parent of this central body.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CentralBodyComponent.children`
               - Get the children of this central body.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CentralBodyComponent.default_gravity_model_name`
@@ -123,13 +123,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.CentralBodyComponent.gravitational_parameter
     :type: float
 
-    Gets or sets the gravitational parameter to be used. Uses Gravity Parameter Dimension.
+    Get or set the gravitational parameter to be used. Uses Gravity Parameter Dimension.
 
 .. py:property:: parent_name
     :canonical: ansys.stk.core.stkobjects.astrogator.CentralBodyComponent.parent_name
     :type: str
 
-    Gets or sets the parent of this central body.
+    Get or set the parent of this central body.
 
 .. py:property:: children
     :canonical: ansys.stk.core.stkobjects.astrogator.CentralBodyComponent.children
@@ -209,14 +209,14 @@ Method detail
         :obj:`~None`
 
 
-.. py:method:: add_gravity_model(self, gravity_model: CENTRAL_BODY_GRAVITY_MODEL, unique_name: str) -> CentralBodyComponentGravityModel
+.. py:method:: add_gravity_model(self, gravity_model: CentralBodyGravityModel, unique_name: str) -> CentralBodyComponentGravityModel
     :canonical: ansys.stk.core.stkobjects.astrogator.CentralBodyComponent.add_gravity_model
 
     Add a central body gravity model type.
 
     :Parameters:
 
-    **gravity_model** : :obj:`~CENTRAL_BODY_GRAVITY_MODEL`
+    **gravity_model** : :obj:`~CentralBodyGravityModel`
     **unique_name** : :obj:`~str`
 
     :Returns:
@@ -251,14 +251,14 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add_shape(self, shape: CENTRAL_BODY_SHAPE, unique_name: str) -> ICentralBodyComponentShape
+.. py:method:: add_shape(self, shape: CentralBodyShape, unique_name: str) -> ICentralBodyComponentShape
     :canonical: ansys.stk.core.stkobjects.astrogator.CentralBodyComponent.add_shape
 
     Add a central body shape type from the available types.
 
     :Parameters:
 
-    **shape** : :obj:`~CENTRAL_BODY_SHAPE`
+    **shape** : :obj:`~CentralBodyShape`
     **unique_name** : :obj:`~str`
 
     :Returns:
@@ -293,14 +293,14 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: add_attitude(self, attitude: CENTRAL_BODY_ATTITUDE, unique_name: str) -> ICentralBodyComponentAttitude
+.. py:method:: add_attitude(self, attitude: CentralBodyAttitude, unique_name: str) -> ICentralBodyComponentAttitude
     :canonical: ansys.stk.core.stkobjects.astrogator.CentralBodyComponent.add_attitude
 
     Add a central body attitude type from the available types.
 
     :Parameters:
 
-    **attitude** : :obj:`~CENTRAL_BODY_ATTITUDE`
+    **attitude** : :obj:`~CentralBodyAttitude`
     **unique_name** : :obj:`~str`
 
     :Returns:
@@ -335,14 +335,14 @@ Method detail
         :obj:`~None`
 
 
-.. py:method:: add_ephemeris(self, ephemeris: CENTRAL_BODY_EPHEMERIS, unique_name: str) -> ICentralBodyComponentEphemeris
+.. py:method:: add_ephemeris(self, ephemeris: CentralBodyEphemeris, unique_name: str) -> ICentralBodyComponentEphemeris
     :canonical: ansys.stk.core.stkobjects.astrogator.CentralBodyComponent.add_ephemeris
 
     Add an ephemeris type from the available types.
 
     :Parameters:
 
-    **ephemeris** : :obj:`~CENTRAL_BODY_EPHEMERIS`
+    **ephemeris** : :obj:`~CentralBodyEphemeris`
     **unique_name** : :obj:`~str`
 
     :Returns:

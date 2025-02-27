@@ -32,9 +32,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFinite.pressure_mode`
-              - Gets or sets the pressure mode.
+              - Get or set the pressure mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFinite.thrust_efficiency`
-              - Gets or sets the fraction of ideal thrust applied. Any number above zero is valid, with typical values around 0.98 to 1.02. Dimensionless.
+              - Get or set the fraction of ideal thrust applied. Any number above zero is valid, with typical values around 0.98 to 1.02. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFinite.thrust_efficiency_mode`
               - Thrust - the calculations that are effected by the thrust efficiency value.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFinite.number_of_nodes`
@@ -93,19 +93,19 @@ Property detail
 
 .. py:property:: pressure_mode
     :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFinite.pressure_mode
-    :type: PRESSURE_MODE
+    :type: PressureMode
 
-    Gets or sets the pressure mode.
+    Get or set the pressure mode.
 
 .. py:property:: thrust_efficiency
     :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFinite.thrust_efficiency
     :type: float
 
-    Gets or sets the fraction of ideal thrust applied. Any number above zero is valid, with typical values around 0.98 to 1.02. Dimensionless.
+    Get or set the fraction of ideal thrust applied. Any number above zero is valid, with typical values around 0.98 to 1.02. Dimensionless.
 
 .. py:property:: thrust_efficiency_mode
     :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFinite.thrust_efficiency_mode
-    :type: THRUST_TYPE
+    :type: ThrustType
 
     Thrust - the calculations that are effected by the thrust efficiency value.
 
@@ -123,7 +123,7 @@ Property detail
 
 .. py:property:: seed_method
     :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFinite.seed_method
-    :type: OPTIMAL_FINITE_SEED_METHOD
+    :type: OptimalFiniteSeedMethod
 
     Initial seed method.
 
@@ -135,7 +135,7 @@ Property detail
 
 .. py:property:: run_mode
     :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFinite.run_mode
-    :type: OPTIMAL_FINITE_RUN_MODE
+    :type: OptimalFiniteRunMode
 
     Run mode.
 
@@ -147,19 +147,19 @@ Property detail
 
 .. py:property:: discretization_strategy
     :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFinite.discretization_strategy
-    :type: OPTIMAL_FINITE_DISCRETIZATION_STRATEGY
+    :type: OptimalFiniteDiscretizationStrategy
 
     Discretization Strategy.
 
 .. py:property:: working_variables
     :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFinite.working_variables
-    :type: OPTIMAL_FINITE_WORKING_VARIABLES
+    :type: OptimalFiniteWorkingVariables
 
     Working Variables.
 
 .. py:property:: scaling_options
     :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFinite.scaling_options
-    :type: OPTIMAL_FINITE_SCALING_OPTIONS
+    :type: OptimalFiniteScalingOptions
 
     Scaling Options.
 
@@ -207,7 +207,7 @@ Property detail
 
 .. py:property:: export_format
     :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFinite.export_format
-    :type: OPTIMAL_FINITE_EXPORT_NODES_FORMAT
+    :type: OptimalFiniteExportNodesFormat
 
     Format for exporting collocation control variables.
 
@@ -219,7 +219,7 @@ Property detail
 
 .. py:property:: initial_guess_interpolation_method
     :canonical: ansys.stk.core.stkobjects.astrogator.ManeuverOptimalFinite.initial_guess_interpolation_method
-    :type: OPTIMAL_FINITE_GUESS_METHOD
+    :type: OptimalFiniteGuessMethod
 
     Guess interpolation method.
 

@@ -38,11 +38,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.flight_path_angle`
-              - Gets or sets the flight path angle for the maneuver.
+              - Get or set the flight path angle for the maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.anchor_altitude_offset`
-              - Gets or sets the goal height above or below the target.
+              - Get or set the goal height above or below the target.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.maneuver_factor`
-              - Gets or sets the maneuver factor, a dimensionless factor that determines how tightly or gently the aircraft will maneuver.
+              - Get or set the maneuver factor, a dimensionless factor that determines how tightly or gently the aircraft will maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.control_limit_mode`
               - Get the method to define the control limits of the aircraft during the maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.control_limit_pitch_rate`
@@ -66,7 +66,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.use_max_altitude_relative_anchor`
               - Get the option to specify a maximum altitude offset from the target.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.compensate_for_coriolis_acceleration`
-              - Gets or sets the option to compensate for the acceleration due to the Coriolis effect.
+              - Get or set the option to compensate for the acceleration due to the Coriolis effect.
 
 
 
@@ -85,23 +85,23 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.flight_path_angle
     :type: typing.Any
 
-    Gets or sets the flight path angle for the maneuver.
+    Get or set the flight path angle for the maneuver.
 
 .. py:property:: anchor_altitude_offset
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.anchor_altitude_offset
     :type: float
 
-    Gets or sets the goal height above or below the target.
+    Get or set the goal height above or below the target.
 
 .. py:property:: maneuver_factor
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.maneuver_factor
     :type: float
 
-    Gets or sets the maneuver factor, a dimensionless factor that determines how tightly or gently the aircraft will maneuver.
+    Get or set the maneuver factor, a dimensionless factor that determines how tightly or gently the aircraft will maneuver.
 
 .. py:property:: control_limit_mode
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.control_limit_mode
-    :type: PROFILE_CONTROL_LIMIT
+    :type: ProfileControlLimit
 
     Get the method to define the control limits of the aircraft during the maneuver.
 
@@ -169,7 +169,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.compensate_for_coriolis_acceleration
     :type: bool
 
-    Gets or sets the option to compensate for the acceleration due to the Coriolis effect.
+    Get or set the option to compensate for the acceleration due to the Coriolis effect.
 
 
 Method detail
@@ -183,14 +183,14 @@ Method detail
 
 
 
-.. py:method:: set_control_limit(self, control_limit_mode: PROFILE_CONTROL_LIMIT, control_limit_value: typing.Any) -> None
+.. py:method:: set_control_limit(self, control_limit_mode: ProfileControlLimit, control_limit_value: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeFlightPathAngle.set_control_limit
 
     Set the method and corresponding value to define the control limits of the aircraft during the maneuver.
 
     :Parameters:
 
-    **control_limit_mode** : :obj:`~PROFILE_CONTROL_LIMIT`
+    **control_limit_mode** : :obj:`~ProfileControlLimit`
     **control_limit_value** : :obj:`~typing.Any`
 
     :Returns:

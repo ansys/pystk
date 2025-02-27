@@ -66,9 +66,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentRadiation.shift_saa`
               - Flag to shift the SAA based on the model's epoch.
             * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentRadiation.dose_integration_step`
-              - Gets or sets the sampling step used for integrating dose. Uses Time Dimension.
+              - Get or set the sampling step used for integrating dose. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentRadiation.dose_report_step`
-              - Gets or sets the stepsize to use for dose related data providers. Uses Time Dimension.
+              - Get or set the stepsize to use for dose related data providers. Uses Time Dimension.
 
 
 
@@ -85,7 +85,7 @@ Property detail
 
 .. py:property:: computation_mode
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentRadiation.computation_mode
-    :type: VEHICLE_SPACE_ENVIRONMENT_COMPUTATION_MODE
+    :type: VehicleSpaceEnvironmentComputationMode
 
     Models that are to be included when modeling radiation.
 
@@ -97,7 +97,7 @@ Property detail
 
 .. py:property:: dose_channel
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentRadiation.dose_channel
-    :type: VEHICLE_SPACE_ENVIRONMENT_DOSE_CHANNEL
+    :type: VehicleSpaceEnvironmentDoseChannel
 
     Measure of the linear energy transfer to model.
 
@@ -109,19 +109,19 @@ Property detail
 
 .. py:property:: detector_type
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentRadiation.detector_type
-    :type: VEHICLE_SPACE_ENVIRONMENT_DETECTOR_TYPE
+    :type: VehicleSpaceEnvironmentDetectorType
 
     Detector material.
 
 .. py:property:: shielding_thicknesses
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentRadiation.shielding_thicknesses
-    :type: IDoublesCollection
+    :type: DoublesCollection
 
     Get the shielding thicknesses. Dose and dose rate can be computed for each thickness.
 
 .. py:property:: ap_source
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentRadiation.ap_source
-    :type: VEHICLE_SPACE_ENVIRONMENT_AP_SOURCE
+    :type: VehicleSpaceEnvironmentApSource
 
     Mode for computing 15 day average Ap.
 
@@ -145,7 +145,7 @@ Property detail
 
 .. py:property:: detector_geometry
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentRadiation.detector_geometry
-    :type: VEHICLE_SPACE_ENVIRONMENT_DETECTOR_GEOMETRY
+    :type: VehicleSpaceEnvironmentDetectorGeometry
 
     Detector geometry used by CRRES and NASA models.
 
@@ -165,13 +165,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentRadiation.dose_integration_step
     :type: float
 
-    Gets or sets the sampling step used for integrating dose. Uses Time Dimension.
+    Get or set the sampling step used for integrating dose. Uses Time Dimension.
 
 .. py:property:: dose_report_step
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentRadiation.dose_report_step
     :type: float
 
-    Gets or sets the stepsize to use for dose related data providers. Uses Time Dimension.
+    Get or set the stepsize to use for dose related data providers. Uses Time Dimension.
 
 
 Method detail

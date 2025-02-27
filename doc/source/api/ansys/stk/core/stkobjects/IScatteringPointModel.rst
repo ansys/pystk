@@ -19,9 +19,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IScatteringPointModel.name`
-              - Gets the radar clutter map model name.
+              - Get the radar clutter map model name.
             * - :py:attr:`~ansys.stk.core.stkobjects.IScatteringPointModel.type`
-              - Gets the radar clutter map model type enumeration.
+              - Get the radar clutter map model type enumeration.
 
 
 Import detail
@@ -39,12 +39,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.IScatteringPointModel.name
     :type: str
 
-    Gets the radar clutter map model name.
+    Get the radar clutter map model name.
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.IScatteringPointModel.type
-    :type: SCATTERING_POINT_MODEL_TYPE
+    :type: ScatteringPointModelType
 
-    Gets the radar clutter map model type enumeration.
+    Get the radar clutter map model type enumeration.
 
 

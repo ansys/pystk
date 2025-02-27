@@ -1,3 +1,25 @@
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
 from test_util import *
 from code_snippets.code_snippets_test_base import *
 from ansys.stk.core.stkobjects import *
@@ -28,7 +50,7 @@ class BallisticSnippets(CodeSnippetsTestBase):
     def setUp(self):
         self.m_Object = clr.CastAs(
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-                STK_OBJECT_TYPE.MISSILE, BallisticSnippets.m_DefaultName
+                STKObjectType.MISSILE, BallisticSnippets.m_DefaultName
             ),
             Missile,
         )
@@ -38,7 +60,7 @@ class BallisticSnippets(CodeSnippetsTestBase):
     # region TestTearDown
     def tearDown(self):
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(
-            STK_OBJECT_TYPE.MISSILE, BallisticSnippets.m_DefaultName
+            STKObjectType.MISSILE, BallisticSnippets.m_DefaultName
         )
         self.m_Object = None
 
@@ -49,7 +71,7 @@ class BallisticSnippets(CodeSnippetsTestBase):
         CodeSnippetsTestBase.m_Root.units_preferences.set_current_unit("DistanceUnit", "km")
         CodeSnippetsTestBase.m_Root.units_preferences.set_current_unit("TimeUnit", "sec")
 
-        self.m_Object.set_trajectory_type(PROPAGATOR_TYPE.BALLISTIC)
+        self.m_Object.set_trajectory_type(PropagatorType.BALLISTIC)
 
         propBallistic: "PropagatorBallistic" = clr.CastAs(self.m_Object.trajectory, PropagatorBallistic)
         impactLocation: "VehicleImpactLocationPoint" = clr.CastAs(
@@ -64,20 +86,20 @@ class BallisticSnippets(CodeSnippetsTestBase):
 
     def ConfigureBallisticPropagator(self, propagator: "PropagatorBallistic"):
         propagator.step = 30
-        propagator.set_launch_type(VEHICLE_LAUNCH.DETIC)
+        propagator.set_launch_type(VehicleLaunch.DETIC)
 
         launch: "LaunchVehicleLocationDetic" = clr.CastAs(propagator.launch, LaunchVehicleLocationDetic)
         launch.latitude = 40.04
         launch.longitude = -76.304
         launch.altitude = 1.5
 
-        propagator.set_impact_location_type(VEHICLE_IMPACT_LOCATION.POINT)
+        propagator.set_impact_location_type(VehicleImpactLocation.POINT)
 
         impactLocation: "VehicleImpactLocationPoint" = clr.CastAs(
             propagator.impact_location, VehicleImpactLocationPoint
         )
-        impactLocation.set_impact_type(VEHICLE_IMPACT.IMPACT_LOCATION_DETIC)
-        impactLocation.set_launch_control_type(VEHICLE_LAUNCH_CONTROL.FIXED_DELTA_V)
+        impactLocation.set_impact_type(VehicleImpact.IMPACT_LOCATION_DETIC)
+        impactLocation.set_launch_control_type(VehicleLaunchControl.FIXED_DELTA_V)
 
         impact: "VehicleImpactLocationDetic" = clr.CastAs(impactLocation.impact, VehicleImpactLocationDetic)
         impact.latitude = 40.337

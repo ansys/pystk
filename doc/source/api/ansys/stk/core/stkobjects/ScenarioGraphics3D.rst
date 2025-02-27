@@ -40,11 +40,11 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioGraphics3D.is_negative_altitude_allowed`
               - Specify whether to allow negative altitudes for great arc vehicles and for facilities, places and targets.
             * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioGraphics3D.small_font`
-              - Retrieves small font metrics.
+              - Retrieve small font metrics.
             * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioGraphics3D.medium_font`
-              - Retrieves medium font metrics.
+              - Retrieve medium font metrics.
             * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioGraphics3D.large_font`
-              - Retrieves large font metrics.
+              - Retrieve large font metrics.
             * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioGraphics3D.surface_reference`
               - Opt to display the globe's surface at the mean sea level (MSL) or at the central body's reference ellipsoid (WGS84).
             * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioGraphics3D.draw_on_terrain`
@@ -87,23 +87,23 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.ScenarioGraphics3D.small_font
     :type: Scenario3dFont
 
-    Retrieves small font metrics.
+    Retrieve small font metrics.
 
 .. py:property:: medium_font
     :canonical: ansys.stk.core.stkobjects.ScenarioGraphics3D.medium_font
     :type: Scenario3dFont
 
-    Retrieves medium font metrics.
+    Retrieve medium font metrics.
 
 .. py:property:: large_font
     :canonical: ansys.stk.core.stkobjects.ScenarioGraphics3D.large_font
     :type: Scenario3dFont
 
-    Retrieves large font metrics.
+    Retrieve large font metrics.
 
 .. py:property:: surface_reference
     :canonical: ansys.stk.core.stkobjects.ScenarioGraphics3D.surface_reference
-    :type: SURFACE_REFERENCE
+    :type: SurfaceReference
 
     Opt to display the globe's surface at the mean sea level (MSL) or at the central body's reference ellipsoid (WGS84).
 
@@ -121,7 +121,7 @@ Property detail
 
 .. py:property:: text_outline_style
     :canonical: ansys.stk.core.stkobjects.ScenarioGraphics3D.text_outline_style
-    :type: TEXT_OUTLINE_STYLE
+    :type: TextOutlineStyle
 
     Default text outline style.
 

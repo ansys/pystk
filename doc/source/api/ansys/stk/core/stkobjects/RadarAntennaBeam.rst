@@ -32,17 +32,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarAntennaBeam.identifier`
-              - Gets or sets the antenna beam identifier.
+              - Get or set the antenna beam identifier.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarAntennaBeam.pointing_strategy`
-              - Gets the pointing strategy.
+              - Get the pointing strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarAntennaBeam.gain`
-              - Gets or sets the antenna mainlobe gain.
+              - Get or set the antenna mainlobe gain.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarAntennaBeam.beam_width`
-              - Gets or sets the antenna beamwidth.
+              - Get or set the antenna beamwidth.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarAntennaBeam.activity`
-              - Gets the activity.
+              - Get the activity.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarAntennaBeam.waveform_selection_strategy`
-              - Gets the waveform selection strategy.
+              - Get the waveform selection strategy.
 
 
 
@@ -61,37 +61,37 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.RadarAntennaBeam.identifier
     :type: str
 
-    Gets or sets the antenna beam identifier.
+    Get or set the antenna beam identifier.
 
 .. py:property:: pointing_strategy
     :canonical: ansys.stk.core.stkobjects.RadarAntennaBeam.pointing_strategy
     :type: IPointingStrategy
 
-    Gets the pointing strategy.
+    Get the pointing strategy.
 
 .. py:property:: gain
     :canonical: ansys.stk.core.stkobjects.RadarAntennaBeam.gain
     :type: float
 
-    Gets or sets the antenna mainlobe gain.
+    Get or set the antenna mainlobe gain.
 
 .. py:property:: beam_width
     :canonical: ansys.stk.core.stkobjects.RadarAntennaBeam.beam_width
     :type: float
 
-    Gets or sets the antenna beamwidth.
+    Get or set the antenna beamwidth.
 
 .. py:property:: activity
     :canonical: ansys.stk.core.stkobjects.RadarAntennaBeam.activity
     :type: IRadarActivity
 
-    Gets the activity.
+    Get the activity.
 
 .. py:property:: waveform_selection_strategy
     :canonical: ansys.stk.core.stkobjects.RadarAntennaBeam.waveform_selection_strategy
     :type: IWaveformSelectionStrategy
 
-    Gets the waveform selection strategy.
+    Get the waveform selection strategy.
 
 
 Method detail
@@ -99,14 +99,14 @@ Method detail
 
 
 
-.. py:method:: set_pointing_strategy_type(self, value: POINTING_STRATEGY_TYPE) -> None
+.. py:method:: set_pointing_strategy_type(self, value: PointingStrategyType) -> None
     :canonical: ansys.stk.core.stkobjects.RadarAntennaBeam.set_pointing_strategy_type
 
     Set the current pointing strategy type.
 
     :Parameters:
 
-    **value** : :obj:`~POINTING_STRATEGY_TYPE`
+    **value** : :obj:`~PointingStrategyType`
 
     :Returns:
 
@@ -117,28 +117,28 @@ Method detail
 
 
 
-.. py:method:: set_activity_type(self, activity_type: RADAR_ACTIVITY_TYPE) -> None
+.. py:method:: set_activity_type(self, activity_type: RadarActivityType) -> None
     :canonical: ansys.stk.core.stkobjects.RadarAntennaBeam.set_activity_type
 
     Set the activity type.
 
     :Parameters:
 
-    **activity_type** : :obj:`~RADAR_ACTIVITY_TYPE`
+    **activity_type** : :obj:`~RadarActivityType`
 
     :Returns:
 
         :obj:`~None`
 
 
-.. py:method:: set_waveform_selection_strategy(self, value: WAVEFORM_SELECTION_STRATEGY_TYPE) -> None
+.. py:method:: set_waveform_selection_strategy(self, value: WaveformSelectionStrategyType) -> None
     :canonical: ansys.stk.core.stkobjects.RadarAntennaBeam.set_waveform_selection_strategy
 
     Set the current waveform selection strategy.
 
     :Parameters:
 
-    **value** : :obj:`~WAVEFORM_SELECTION_STRATEGY_TYPE`
+    **value** : :obj:`~WaveformSelectionStrategyType`
 
     :Returns:
 

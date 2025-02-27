@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ElementConfigurationASCIIFile.filename`
-              - Gets or sets the file.
+              - Get or set the file.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.ElementConfigurationASCIIFile.filename
     :type: str
 
-    Gets or sets the file.
+    Get or set the file.
 
 

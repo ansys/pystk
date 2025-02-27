@@ -38,9 +38,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolConditionCombined.boolean_operation`
-              - Sets/Returns volume combined operation.
+              - Get or set volume combined operation.
             * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolConditionCombined.count`
-              - Returns the spatial condition vector size.
+              - Return the spatial condition vector size.
 
 
 
@@ -57,15 +57,15 @@ Property detail
 
 .. py:property:: boolean_operation
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolConditionCombined.boolean_operation
-    :type: VOLUME_COMBINED_OPERATION_TYPE
+    :type: VolumeCombinedOperationType
 
-    Sets/Returns volume combined operation.
+    Get or set volume combined operation.
 
 .. py:property:: count
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolConditionCombined.count
     :type: int
 
-    Returns the spatial condition vector size.
+    Return the spatial condition vector size.
 
 
 Method detail

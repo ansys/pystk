@@ -30,7 +30,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.Mission.phases`
               - Get the mission phases.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.Mission.vehicle`
-              - Gets or sets the vehicle used in the mission.
+              - Get or set the vehicle used in the mission.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.Mission.configuration`
               - Get the aircraft's configuration for the mission.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.Mission.wind_model`
@@ -63,7 +63,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.Mission.vehicle
     :type: IAviatorVehicle
 
-    Gets or sets the vehicle used in the mission.
+    Get or set the vehicle used in the mission.
 
 .. py:property:: configuration
     :canonical: ansys.stk.core.stkobjects.aviator.Mission.configuration

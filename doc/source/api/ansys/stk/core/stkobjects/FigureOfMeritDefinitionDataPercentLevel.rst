@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionDataPercentLevel.percent_level`
-              - Gets or sets the specified percent level for the Navigation Accuracy compute option that is stated in terms of the percent of the time that the uncertainty is less than the computed value.
+              - Get or set the specified percent level for the Navigation Accuracy compute option that is stated in terms of the percent of the time that the uncertainty is less than the computed value.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.FigureOfMeritDefinitionDataPercentLevel.percent_level
     :type: float
 
-    Gets or sets the specified percent level for the Navigation Accuracy compute option that is stated in terms of the percent of the time that the uncertainty is less than the computed value.
+    Get or set the specified percent level for the Navigation Accuracy compute option that is stated in terms of the percent of the time that the uncertainty is less than the computed value.
 
 

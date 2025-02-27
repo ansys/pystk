@@ -1,31 +1,52 @@
-################################################################################
-#          Copyright 2020-2023, Ansys Government Initiatives
-################################################################################ 
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
 
 """The STK UI Core library is a COM library containing classes, interfaces and enumerations for the Application Object Model."""
 
-__all__ = ["APPLICATION_WINDOW_STATE", "Toolbar", "ToolbarCollection", "WINDOW_ARRANGE_STATE", "WINDOW_ARRANGE_STYLE", "WINDOW_DOCK_STYLE", 
-"WINDOW_SERVICE_TYPE", "Window", "WindowGlobeObject", "WindowMapObject", "WindowsCollection"]
+__all__ = ["ApplicationWindowState", "Toolbar", "ToolbarCollection", "Window", "WindowArrangeState", "WindowArrangeStyle", 
+"WindowDockStyle", "WindowGlobeObject", "WindowMapObject", "WindowServiceType", "WindowsCollection"]
 
+from ctypes import POINTER
+from enum import IntEnum
 import typing
 
-from ctypes   import POINTER
-from enum     import IntEnum
-
-from .internal  import comutil          as agcom
-from .internal  import coclassutil      as agcls
-from .internal  import marshall         as agmarshall
-from .internal.comutil     import IUnknown, IDispatch
-from .internal.apiutil     import (InterfaceProxy, EnumeratorProxy, OutArg, 
-    initialize_from_source_object, get_interface_property, set_class_attribute, 
-    SupportsDeleteCallback)
+from .internal import coclassutil as agcls, comutil as agcom, marshall as agmarshall
+from .internal.apiutil import (
+    EnumeratorProxy,
+    InterfaceProxy,
+    OutArg,
+    SupportsDeleteCallback,
+    get_interface_property,
+    initialize_from_source_object,
+    set_class_attribute,
+)
+from .internal.comutil import IDispatch, IUnknown
 from .utilities.exceptions import STKRuntimeError
 
 
 def _raise_uninitialized_error(*args):
     raise STKRuntimeError("Valid STK object model classes are returned from STK methods and should not be created independently.")
 
-class WINDOW_SERVICE_TYPE(IntEnum):
+class WindowServiceType(IntEnum):
     """Well-known types of services."""
    
     WINDOW_2D = 1
@@ -33,12 +54,12 @@ class WINDOW_SERVICE_TYPE(IntEnum):
     WINDOW_3D = 2
     """A 3D window."""
 
-WINDOW_SERVICE_TYPE.WINDOW_2D.__doc__ = "A 2D window."
-WINDOW_SERVICE_TYPE.WINDOW_3D.__doc__ = "A 3D window."
+WindowServiceType.WINDOW_2D.__doc__ = "A 2D window."
+WindowServiceType.WINDOW_3D.__doc__ = "A 3D window."
 
-agcls.AgTypeNameMap["WINDOW_SERVICE_TYPE"] = WINDOW_SERVICE_TYPE
+agcls.AgTypeNameMap["WindowServiceType"] = WindowServiceType
 
-class APPLICATION_WINDOW_STATE(IntEnum):
+class ApplicationWindowState(IntEnum):
     """Window states."""
    
     MAXIMIZED = 1
@@ -48,13 +69,13 @@ class APPLICATION_WINDOW_STATE(IntEnum):
     NORMAL = 3
     """Normal window state."""
 
-APPLICATION_WINDOW_STATE.MAXIMIZED.__doc__ = "Window is maximized."
-APPLICATION_WINDOW_STATE.MINIMIZED.__doc__ = "Window is minimized."
-APPLICATION_WINDOW_STATE.NORMAL.__doc__ = "Normal window state."
+ApplicationWindowState.MAXIMIZED.__doc__ = "Window is maximized."
+ApplicationWindowState.MINIMIZED.__doc__ = "Window is minimized."
+ApplicationWindowState.NORMAL.__doc__ = "Normal window state."
 
-agcls.AgTypeNameMap["APPLICATION_WINDOW_STATE"] = APPLICATION_WINDOW_STATE
+agcls.AgTypeNameMap["ApplicationWindowState"] = ApplicationWindowState
 
-class WINDOW_ARRANGE_STYLE(IntEnum):
+class WindowArrangeStyle(IntEnum):
     """Window layout styles."""
    
     CASCADE = 1
@@ -64,13 +85,13 @@ class WINDOW_ARRANGE_STYLE(IntEnum):
     TILED_VERTICAL = 3
     """Child windows are tiled vertically within the main window."""
 
-WINDOW_ARRANGE_STYLE.CASCADE.__doc__ = "Child windows are cascaded within the main window."
-WINDOW_ARRANGE_STYLE.TILED_HORIZONTAL.__doc__ = "Child windows are tiled horizontally within the main window."
-WINDOW_ARRANGE_STYLE.TILED_VERTICAL.__doc__ = "Child windows are tiled vertically within the main window."
+WindowArrangeStyle.CASCADE.__doc__ = "Child windows are cascaded within the main window."
+WindowArrangeStyle.TILED_HORIZONTAL.__doc__ = "Child windows are tiled horizontally within the main window."
+WindowArrangeStyle.TILED_VERTICAL.__doc__ = "Child windows are tiled vertically within the main window."
 
-agcls.AgTypeNameMap["WINDOW_ARRANGE_STYLE"] = WINDOW_ARRANGE_STYLE
+agcls.AgTypeNameMap["WindowArrangeStyle"] = WindowArrangeStyle
 
-class WINDOW_DOCK_STYLE(IntEnum):
+class WindowDockStyle(IntEnum):
     """Window docking styles."""
    
     INTEGRATED = 1
@@ -86,16 +107,16 @@ class WINDOW_DOCK_STYLE(IntEnum):
     FLOATING = 6
     """Child window is not docked or integrated."""
 
-WINDOW_DOCK_STYLE.INTEGRATED.__doc__ = "Child window is integrated into the main window."
-WINDOW_DOCK_STYLE.DOCKED_LEFT.__doc__ = "Child window is docked to the left side of the within the main window."
-WINDOW_DOCK_STYLE.DOCKED_RIGHT.__doc__ = "Child window is docked to the right side of the main window."
-WINDOW_DOCK_STYLE.DOCKED_TOP.__doc__ = "Child window is docked to the top of the main window."
-WINDOW_DOCK_STYLE.DOCKED_BOTTOM.__doc__ = "Child window is docked to the bottom of the main window."
-WINDOW_DOCK_STYLE.FLOATING.__doc__ = "Child window is not docked or integrated."
+WindowDockStyle.INTEGRATED.__doc__ = "Child window is integrated into the main window."
+WindowDockStyle.DOCKED_LEFT.__doc__ = "Child window is docked to the left side of the within the main window."
+WindowDockStyle.DOCKED_RIGHT.__doc__ = "Child window is docked to the right side of the main window."
+WindowDockStyle.DOCKED_TOP.__doc__ = "Child window is docked to the top of the main window."
+WindowDockStyle.DOCKED_BOTTOM.__doc__ = "Child window is docked to the bottom of the main window."
+WindowDockStyle.FLOATING.__doc__ = "Child window is not docked or integrated."
 
-agcls.AgTypeNameMap["WINDOW_DOCK_STYLE"] = WINDOW_DOCK_STYLE
+agcls.AgTypeNameMap["WindowDockStyle"] = WindowDockStyle
 
-class WINDOW_ARRANGE_STATE(IntEnum):
+class WindowArrangeState(IntEnum):
     """Floating state."""
    
     FLOATED = 1
@@ -103,10 +124,10 @@ class WINDOW_ARRANGE_STATE(IntEnum):
     DOCKED = 2
     """The UI element is docked."""
 
-WINDOW_ARRANGE_STATE.FLOATED.__doc__ = "The UI element is floated."
-WINDOW_ARRANGE_STATE.DOCKED.__doc__ = "The UI element is docked."
+WindowArrangeState.FLOATED.__doc__ = "The UI element is floated."
+WindowArrangeState.DOCKED.__doc__ = "The UI element is docked."
 
-agcls.AgTypeNameMap["WINDOW_ARRANGE_STATE"] = WINDOW_ARRANGE_STATE
+agcls.AgTypeNameMap["WindowArrangeState"] = WindowArrangeState
 
 
 
@@ -160,8 +181,8 @@ class WindowsCollection(SupportsDeleteCallback):
 
     _arrange_metadata = { "offset" : _arrange_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(WINDOW_ARRANGE_STYLE),) }
-    def arrange(self, arrange_style:"WINDOW_ARRANGE_STYLE") -> None:
+            "marshallers" : (agmarshall.EnumArg(WindowArrangeStyle),) }
+    def arrange(self, arrange_style:"WindowArrangeStyle") -> None:
         """Arranges the application windows using the specified style."""
         return self._intf.invoke(WindowsCollection._metadata, WindowsCollection._arrange_metadata, arrange_style)
 
@@ -278,17 +299,17 @@ class Window(SupportsDeleteCallback):
 
     _get_window_state_metadata = { "offset" : _get_window_state_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(APPLICATION_WINDOW_STATE),) }
+            "marshallers" : (agmarshall.EnumArg(ApplicationWindowState),) }
     @property
-    def window_state(self) -> "APPLICATION_WINDOW_STATE":
+    def window_state(self) -> "ApplicationWindowState":
         """The window state."""
         return self._intf.get_property(Window._metadata, Window._get_window_state_metadata)
 
     _set_window_state_metadata = { "offset" : _set_window_state_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(APPLICATION_WINDOW_STATE),) }
+            "marshallers" : (agmarshall.EnumArg(ApplicationWindowState),) }
     @window_state.setter
-    def window_state(self, new_value:"APPLICATION_WINDOW_STATE") -> None:
+    def window_state(self, new_value:"ApplicationWindowState") -> None:
         return self._intf.set_property(Window._metadata, Window._set_window_state_metadata, new_value)
 
     _close_metadata = { "offset" : _close_method_offset,
@@ -360,17 +381,17 @@ class Window(SupportsDeleteCallback):
 
     _get_dock_style_metadata = { "offset" : _get_dock_style_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(WINDOW_DOCK_STYLE),) }
+            "marshallers" : (agmarshall.EnumArg(WindowDockStyle),) }
     @property
-    def dock_style(self) -> "WINDOW_DOCK_STYLE":
+    def dock_style(self) -> "WindowDockStyle":
         """The window docking style."""
         return self._intf.get_property(Window._metadata, Window._get_dock_style_metadata)
 
     _set_dock_style_metadata = { "offset" : _set_dock_style_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(WINDOW_DOCK_STYLE),) }
+            "marshallers" : (agmarshall.EnumArg(WindowDockStyle),) }
     @dock_style.setter
-    def dock_style(self, new_value:"WINDOW_DOCK_STYLE") -> None:
+    def dock_style(self, new_value:"WindowDockStyle") -> None:
         return self._intf.set_property(Window._metadata, Window._set_dock_style_metadata, new_value)
 
     _get_no_workbook_close_metadata = { "offset" : _get_no_workbook_close_method_offset,
@@ -428,8 +449,8 @@ class Window(SupportsDeleteCallback):
 
     _get_service_by_type_metadata = { "offset" : _get_service_by_type_method_offset,
             "arg_types" : (agcom.LONG, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.EnumArg(WINDOW_SERVICE_TYPE), agmarshall.InterfaceOutArg,) }
-    def get_service_by_type(self, service_type:"WINDOW_SERVICE_TYPE") -> typing.Any:
+            "marshallers" : (agmarshall.EnumArg(WindowServiceType), agmarshall.InterfaceOutArg,) }
+    def get_service_by_type(self, service_type:"WindowServiceType") -> typing.Any:
         """Return a service object that can be accessed at runtime. The method returns null if no service object is associated with the specified service type."""
         return self._intf.invoke(Window._metadata, Window._get_service_by_type_metadata, service_type, OutArg())
 
@@ -513,17 +534,17 @@ class Toolbar(SupportsDeleteCallback):
 
     _get_float_state_metadata = { "offset" : _get_float_state_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(WINDOW_ARRANGE_STATE),) }
+            "marshallers" : (agmarshall.EnumArg(WindowArrangeState),) }
     @property
-    def float_state(self) -> "WINDOW_ARRANGE_STATE":
+    def float_state(self) -> "WindowArrangeState":
         """The float state."""
         return self._intf.get_property(Toolbar._metadata, Toolbar._get_float_state_metadata)
 
     _set_float_state_metadata = { "offset" : _set_float_state_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(WINDOW_ARRANGE_STATE),) }
+            "marshallers" : (agmarshall.EnumArg(WindowArrangeState),) }
     @float_state.setter
-    def float_state(self, new_value:"WINDOW_ARRANGE_STATE") -> None:
+    def float_state(self, new_value:"WindowArrangeState") -> None:
         return self._intf.set_property(Toolbar._metadata, Toolbar._set_float_state_metadata, new_value)
 
     _property_names[identifier] = "identifier"
@@ -724,8 +745,3 @@ class WindowGlobeObject(SupportsDeleteCallback):
 
 agcls.AgClassCatalog.add_catalog_entry((5334286057966533215, 999415816428096669), WindowGlobeObject)
 agcls.AgTypeNameMap["WindowGlobeObject"] = WindowGlobeObject
-
-
-################################################################################
-#          Copyright 2020-2023, Ansys Government Initiatives
-################################################################################

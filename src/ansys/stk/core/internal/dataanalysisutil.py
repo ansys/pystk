@@ -1,3 +1,25 @@
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
 from typing import Set, Dict
 from functools import wraps
 
@@ -130,7 +152,7 @@ def _map_element_types_to_pandas_dtypes(data_provider_elements: "DataProviderEle
     This function requires ``numpy``.
     """
     import numpy
-    from ..stkobjects import DATA_PROVIDER_ELEMENT_TYPE
+    from ..stkobjects import DataProviderElementType
 
     dtype_element_name_mapping = dict()
 
@@ -142,9 +164,9 @@ def _map_element_types_to_pandas_dtypes(data_provider_elements: "DataProviderEle
         # By default to avoid issues with possible leap seconds or other time precision related issues we map date
         # dimension elements as string dtypes in pandas. Future work plans to implement more robust datetime support
         # for pandas.
-        if element_type == DATA_PROVIDER_ELEMENT_TYPE.REAL and element_dimensions_name not in "date":
+        if element_type == DataProviderElementType.REAL and element_dimensions_name not in "date":
             pd_dtype = numpy.float64
-        elif element_type == DATA_PROVIDER_ELEMENT_TYPE.INTEGER:
+        elif element_type == DataProviderElementType.INTEGER:
             pd_dtype = numpy.int64
         else:
             # by default make everything else a str, strings like datatime strings can be handled/parsed

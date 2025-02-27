@@ -36,11 +36,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.UserVTOLPoint.altitude`
-              - Gets or sets the VTOL Point altitude.
+              - Get or set the VTOL Point altitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.UserVTOLPoint.latitude`
-              - Gets or sets the VTOL Point latitude.
+              - Get or set the VTOL Point latitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.UserVTOLPoint.longitude`
-              - Gets or sets the VTOL Point longitude.
+              - Get or set the VTOL Point longitude.
 
 
 
@@ -59,19 +59,19 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.UserVTOLPoint.altitude
     :type: float
 
-    Gets or sets the VTOL Point altitude.
+    Get or set the VTOL Point altitude.
 
 .. py:property:: latitude
     :canonical: ansys.stk.core.stkobjects.aviator.UserVTOLPoint.latitude
     :type: typing.Any
 
-    Gets or sets the VTOL Point latitude.
+    Get or set the VTOL Point latitude.
 
 .. py:property:: longitude
     :canonical: ansys.stk.core.stkobjects.aviator.UserVTOLPoint.longitude
     :type: typing.Any
 
-    Gets or sets the VTOL Point longitude.
+    Get or set the VTOL Point longitude.
 
 
 Method detail

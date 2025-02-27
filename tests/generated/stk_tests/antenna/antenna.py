@@ -1,3 +1,25 @@
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
 import pytest
 from test_util import *
 from access_constraints.access_constraint_helper import *
@@ -6,6 +28,7 @@ from assertion_harness import *
 from display_times_helper import *
 from interfaces.stk_objects import *
 from orientation_helper import *
+from stk_util_helper import *
 from vehicle.vehicle_vo import *
 from parameterized import *
 from ansys.stk.core.utilities.colors import *
@@ -46,7 +69,7 @@ class EarlyBoundTests(TestBase):
 
             EarlyBoundTests.oSat = TestBase.Application.current_scenario.children["Satellite1"]
             EarlyBoundTests.oAntenna = EarlyBoundTests.oSat.children.new(
-                STK_OBJECT_TYPE.ANTENNA, EarlyBoundTests.ANTENNA_NAME
+                STKObjectType.ANTENNA, EarlyBoundTests.ANTENNA_NAME
             )
             EarlyBoundTests.antenna = clr.CastAs(EarlyBoundTests.oAntenna, Antenna)
             EarlyBoundTests.antennaOrientation = EarlyBoundTests.antenna.orientation
@@ -69,7 +92,7 @@ class EarlyBoundTests(TestBase):
         TestBase.Application.units_preferences.set_current_unit("AngleUnit", "deg")
 
         # Reset model type to default
-        EarlyBoundTests.antenna.set_model("Gaussian")
+        EarlyBoundTests.antenna.model_component_linking.set_component("Gaussian")
 
     # endregion
 
@@ -82,8 +105,8 @@ class EarlyBoundTests(TestBase):
     # region OneTimeTearDown
     @staticmethod
     def tearDownClass():
-        if EarlyBoundTests.oSat.children.contains(STK_OBJECT_TYPE.ANTENNA, EarlyBoundTests.ANTENNA_NAME):
-            EarlyBoundTests.oSat.children.unload(STK_OBJECT_TYPE.ANTENNA, EarlyBoundTests.ANTENNA_NAME)
+        if EarlyBoundTests.oSat.children.contains(STKObjectType.ANTENNA, EarlyBoundTests.ANTENNA_NAME):
+            EarlyBoundTests.oSat.children.unload(STKObjectType.ANTENNA, EarlyBoundTests.ANTENNA_NAME)
 
         EarlyBoundTests.oAntenna = None
         TestBase.Uninitialize()
@@ -107,13 +130,13 @@ class EarlyBoundTests(TestBase):
     def test_STKObject(self):
         oHelper = STKObjectHelper()
         oFac: "IStkObject" = TestBase.Application.current_scenario.children["Facility1"]
-        oAntenna: "IStkObject" = oFac.children.new(STK_OBJECT_TYPE.ANTENNA, "Antenna1")
+        oAntenna: "IStkObject" = oFac.children.new(STKObjectType.ANTENNA, "Antenna1")
         Assert.assertIsNotNone(oAntenna)
-        Assert.assertEqual(STK_OBJECT_TYPE.ANTENNA, oAntenna.class_type)
+        Assert.assertEqual(STKObjectType.ANTENNA, oAntenna.class_type)
 
         oHelper.Run(oAntenna)
         oHelper.TestObjectFilesArray(oAntenna.object_files)
-        oFac.children.unload(STK_OBJECT_TYPE.ANTENNA, oAntenna.instance_name)
+        oFac.children.unload(STKObjectType.ANTENNA, oAntenna.instance_name)
 
     # endregion
 
@@ -173,13 +196,13 @@ class EarlyBoundTests(TestBase):
 
     # endregion
 
-    # ----------------------------------------------------------------
+    @staticmethod
+    def TestSupportedModels(modelArray):
+        Assert.assertEqual(55, len(modelArray))
 
-    # region SupportedModels
-    def test_SupportedModels(self):
-        arModels = EarlyBoundTests.antenna.supported_models
         sModelName: str
-        for sModelName in arModels:
+
+        for sModelName in modelArray:
             if (
                 (
                     (
@@ -529,7 +552,28 @@ class EarlyBoundTests(TestBase):
             else:
                 Assert.fail(("Unknown or untested Antenna Model: " + sModelName))
 
-        Assert.assertEqual(55, len(arModels))
+    # ----------------------------------------------------------------
+    # region DeprecatedModelInterface
+    def test_DeprecatedModelInterface(self):
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid model name")):
+            EarlyBoundTests.antenna.set_model("bogus")
+        TestBase.Application.units_preferences.set_current_unit("FrequencyUnit", "GHz")
+
+        EarlyBoundTests.antenna.set_model("Parabolic")
+        antennaModel: "IAntennaModel" = clr.CastAs(EarlyBoundTests.antenna.model, IAntennaModel)
+        Assert.assertEqual("Parabolic", antennaModel.name)
+
+        antennaHelper = AntennaHelper(TestBase.Application)
+        antennaHelper.Run(antennaModel, "Parabolic", True)
+
+        EarlyBoundTests.TestSupportedModels(EarlyBoundTests.antenna.supported_models)
+
+    # endregion
+
+    # region ModelComponentLinking
+    def test_ModelComponentLinking(self):
+        STKUtilHelper.TestComponentLinking(EarlyBoundTests.antenna.model_component_linking, 55)
+        EarlyBoundTests.TestSupportedModels(EarlyBoundTests.antenna.model_component_linking.supported_components)
 
     # endregion
 
@@ -594,12 +638,14 @@ class EarlyBoundTests(TestBase):
         ]
     )
     def test_Model(self, modelName: str):
-        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid model name")):
-            EarlyBoundTests.antenna.set_model("bogus")
+        with pytest.raises(Exception, match=RegexSubstringMatch("Invalid component name")):
+            EarlyBoundTests.antenna.model_component_linking.set_component("bogus")
         TestBase.Application.units_preferences.set_current_unit("FrequencyUnit", "GHz")
 
-        EarlyBoundTests.antenna.set_model(modelName)
-        antennaModel: "IAntennaModel" = EarlyBoundTests.antenna.model
+        EarlyBoundTests.antenna.model_component_linking.set_component(modelName)
+        antennaModel: "IAntennaModel" = clr.CastAs(
+            EarlyBoundTests.antenna.model_component_linking.component, IAntennaModel
+        )
         Assert.assertEqual(modelName, antennaModel.name)
 
         antennaHelper = AntennaHelper(TestBase.Application)
@@ -669,7 +715,7 @@ class EarlyBoundTests(TestBase):
     def test_IAgAntennaContourGraphics_SupportedContourTypes(self):
         arSupportedContourTypes = EarlyBoundTests.antennaContourGraphics.supported_contour_types
         Assert.assertEqual(1, len(arSupportedContourTypes))
-        Assert.assertEqual(ANTENNA_CONTOUR_TYPE.GAIN, ANTENNA_CONTOUR_TYPE(int(arSupportedContourTypes[0][0])))
+        Assert.assertEqual(AntennaContourType.GAIN, AntennaContourType(int(arSupportedContourTypes[0][0])))
         Assert.assertEqual("Antenna Gain", arSupportedContourTypes[0][1])
 
     # endregion
@@ -677,8 +723,8 @@ class EarlyBoundTests(TestBase):
     # region IAgAntennaContourGraphics_IsContourTypeSupported
     @category("Graphics Tests")
     def test_IAgAntennaContourGraphics_IsContourTypeSupported(self):
-        contourType: "ANTENNA_CONTOUR_TYPE"
-        for contourType in Enum.GetValues(clr.TypeOf(ANTENNA_CONTOUR_TYPE)):
+        contourType: "AntennaContourType"
+        for contourType in Enum.GetValues(clr.TypeOf(AntennaContourType)):
             if EarlyBoundTests.antennaContourGraphics.is_contour_type_supported(contourType):
                 EarlyBoundTests.antennaContourGraphics.set_contour_type(contourType)
                 Assert.assertEqual(contourType, EarlyBoundTests.antennaContourGraphics.contour.type)
@@ -694,7 +740,7 @@ class EarlyBoundTests(TestBase):
     # region IAgAntennaContour_Type
     @category("Graphics Tests")
     def test_IAgAntennaContour_Type(self):
-        Assert.assertEqual(ANTENNA_CONTOUR_TYPE.GAIN, EarlyBoundTests.antennaContour.type)
+        Assert.assertEqual(AntennaContourType.GAIN, EarlyBoundTests.antennaContour.type)
 
     # endregion
 
@@ -774,12 +820,12 @@ class EarlyBoundTests(TestBase):
 
         level4: "AntennaContourLevel" = levelCollection.get_level(4.0)
         Assert.assertEqual(4.0, level4.value)
-        level4.line_style = LINE_STYLE.DASH_DOT_DOTTED
-        Assert.assertEqual(LINE_STYLE.DASH_DOT_DOTTED, level4.line_style)
-        EarlyBoundTests.antennaContour.color_method = FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD.EXPLICIT
+        level4.line_style = LineStyle.DASH_DOT_DOTTED
+        Assert.assertEqual(LineStyle.DASH_DOT_DOTTED, level4.line_style)
+        EarlyBoundTests.antennaContour.color_method = FigureOfMeritGraphics2DColorMethod.EXPLICIT
         level4.color = Colors.Red
         Assert.assertEqual(Colors.Red, level4.color)
-        EarlyBoundTests.antennaContour.color_method = FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD.COLOR_RAMP
+        EarlyBoundTests.antennaContour.color_method = FigureOfMeritGraphics2DColorMethod.COLOR_RAMP
         color: Color = level4.color
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             level4.color = Colors.Red
@@ -833,33 +879,29 @@ class EarlyBoundTests(TestBase):
     # region IAgAntennaContour_LineWidth
     @category("Graphics Tests")
     def test_IAgAntennaContour_LineWidth(self):
-        EarlyBoundTests.antennaContour.line_width = LINE_WIDTH.WIDTH1
-        Assert.assertEqual(LINE_WIDTH.WIDTH1, EarlyBoundTests.antennaContour.line_width)
-        EarlyBoundTests.antennaContour.line_width = LINE_WIDTH.WIDTH5
-        Assert.assertEqual(LINE_WIDTH.WIDTH5, EarlyBoundTests.antennaContour.line_width)
+        EarlyBoundTests.antennaContour.line_width = LineWidth.WIDTH1
+        Assert.assertEqual(LineWidth.WIDTH1, EarlyBoundTests.antennaContour.line_width)
+        EarlyBoundTests.antennaContour.line_width = LineWidth.WIDTH5
+        Assert.assertEqual(LineWidth.WIDTH5, EarlyBoundTests.antennaContour.line_width)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("maximum value")):
-            EarlyBoundTests.antennaContour.line_width = LINE_WIDTH.WIDTH6
+            EarlyBoundTests.antennaContour.line_width = LineWidth.WIDTH6
 
     # endregion
 
     # region IAgAntennaContour_Colors
     @category("Graphics Tests")
     def test_IAgAntennaContour_Colors(self):
-        EarlyBoundTests.antennaContour.color_method = FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD.COLOR_RAMP
-        Assert.assertEqual(
-            FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD.COLOR_RAMP, EarlyBoundTests.antennaContour.color_method
-        )
+        EarlyBoundTests.antennaContour.color_method = FigureOfMeritGraphics2DColorMethod.COLOR_RAMP
+        Assert.assertEqual(FigureOfMeritGraphics2DColorMethod.COLOR_RAMP, EarlyBoundTests.antennaContour.color_method)
 
         EarlyBoundTests.antennaContour.start_color = Colors.Red
         Assert.assertEqual(Colors.Red, EarlyBoundTests.antennaContour.start_color)
         EarlyBoundTests.antennaContour.stop_color = Colors.Blue
         Assert.assertEqual(Colors.Blue, EarlyBoundTests.antennaContour.stop_color)
 
-        EarlyBoundTests.antennaContour.color_method = FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD.EXPLICIT
-        Assert.assertEqual(
-            FIGURE_OF_MERIT_GRAPHICS_2D_COLOR_METHOD.EXPLICIT, EarlyBoundTests.antennaContour.color_method
-        )
+        EarlyBoundTests.antennaContour.color_method = FigureOfMeritGraphics2DColorMethod.EXPLICIT
+        Assert.assertEqual(FigureOfMeritGraphics2DColorMethod.EXPLICIT, EarlyBoundTests.antennaContour.color_method)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
             EarlyBoundTests.antennaContour.start_color = Colors.Red
@@ -1111,6 +1153,8 @@ class EarlyBoundTests(TestBase):
 
         with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify a read only")):
             EarlyBoundTests.antennaVolumeGraphics.gain_offset = 1
+        with pytest.raises(Exception, match=RegexSubstringMatch("Cannot modify a read only")):
+            EarlyBoundTests.antennaVolumeGraphics.minimum_displayed_gain = 1
 
         EarlyBoundTests.antennaVolumeGraphics.show = True
 
@@ -1122,6 +1166,15 @@ class EarlyBoundTests(TestBase):
             EarlyBoundTests.antennaVolumeGraphics.gain_offset = -101
         with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
             EarlyBoundTests.antennaVolumeGraphics.gain_offset = 201
+
+        EarlyBoundTests.antennaVolumeGraphics.minimum_displayed_gain = -100
+        Assert.assertEqual(-100, EarlyBoundTests.antennaVolumeGraphics.minimum_displayed_gain)
+        EarlyBoundTests.antennaVolumeGraphics.minimum_displayed_gain = 200
+        Assert.assertEqual(200, EarlyBoundTests.antennaVolumeGraphics.minimum_displayed_gain)
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
+            EarlyBoundTests.antennaVolumeGraphics.minimum_displayed_gain = -101
+        with pytest.raises(Exception, match=RegexSubstringMatch("is invalid")):
+            EarlyBoundTests.antennaVolumeGraphics.minimum_displayed_gain = 201
 
     # endregion
 
@@ -1308,12 +1361,12 @@ class EarlyBoundTests(TestBase):
             if (
                 (
                     (
-                        SENSOR_REFRACTION_TYPE(int(arRefrSuppTypes[1][0]))
-                        == SENSOR_REFRACTION_TYPE.EARTH_FOUR_THIRDS_RADIUS_METHOD
+                        SensorRefractionType(int(arRefrSuppTypes[1][0]))
+                        == SensorRefractionType.EARTH_FOUR_THIRDS_RADIUS_METHOD
                     )
                 )
-                or ((SENSOR_REFRACTION_TYPE(int(arRefrSuppTypes[1][0])) == SENSOR_REFRACTION_TYPE.ITU_R_P834_4))
-            ) or ((SENSOR_REFRACTION_TYPE(int(arRefrSuppTypes[1][0])) == SENSOR_REFRACTION_TYPE.SCF_METHOD)):
+                or ((SensorRefractionType(int(arRefrSuppTypes[1][0])) == SensorRefractionType.ITU_R_P834_4))
+            ) or ((SensorRefractionType(int(arRefrSuppTypes[1][0])) == SensorRefractionType.SCF_METHOD)):
                 pass
             else:
                 Assert.fail("Unknown or untested Refraction Type")
@@ -1481,24 +1534,24 @@ class EarlyBoundTests(TestBase):
     # region IAgAntenna_Refraction
     @parameterized.expand(
         [
-            (SENSOR_REFRACTION_TYPE.EARTH_FOUR_THIRDS_RADIUS_METHOD,),
-            (SENSOR_REFRACTION_TYPE.ITU_R_P834_4,),
-            (SENSOR_REFRACTION_TYPE.SCF_METHOD,),
+            (SensorRefractionType.EARTH_FOUR_THIRDS_RADIUS_METHOD,),
+            (SensorRefractionType.ITU_R_P834_4,),
+            (SensorRefractionType.SCF_METHOD,),
         ]
     )
-    def test_IAgAntenna_Refraction(self, eSnRefractionType: "SENSOR_REFRACTION_TYPE"):
+    def test_IAgAntenna_Refraction(self, eSnRefractionType: "SensorRefractionType"):
         if EarlyBoundTests.antenna.is_refraction_type_supported(eSnRefractionType):
             EarlyBoundTests.antenna.refraction = eSnRefractionType
             Assert.assertEqual(eSnRefractionType, EarlyBoundTests.antenna.refraction)
-            if eSnRefractionType == SENSOR_REFRACTION_TYPE.EARTH_FOUR_THIRDS_RADIUS_METHOD:
+            if eSnRefractionType == SensorRefractionType.EARTH_FOUR_THIRDS_RADIUS_METHOD:
                 self.Test_IAgRfModelEffectiveRadiusMethod(
                     clr.CastAs(EarlyBoundTests.antenna.refraction_model, RefractionModelEffectiveRadiusMethod)
                 )
-            elif eSnRefractionType == SENSOR_REFRACTION_TYPE.ITU_R_P834_4:
+            elif eSnRefractionType == SensorRefractionType.ITU_R_P834_4:
                 self.Test_IAgRfModelITURP8344(
                     clr.CastAs(EarlyBoundTests.antenna.refraction_model, RefractionModelITURP8344)
                 )
-            elif eSnRefractionType == SENSOR_REFRACTION_TYPE.SCF_METHOD:
+            elif eSnRefractionType == SensorRefractionType.SCF_METHOD:
                 self.Test_IAgRfModelSCFMethod(
                     clr.CastAs(EarlyBoundTests.antenna.refraction_model, RefractionModelSCFMethod)
                 )
@@ -1515,6 +1568,7 @@ class EarlyBoundTests(TestBase):
     def test_Laser_Environment_AtmosphericLoss_BBLL(self):
         helper = LaserEnvAtmosLossBBLLHelper()
         helper.Run(EarlyBoundTests.antenna.laser_environment)
+        helper.RunDeprecatedModelInterface(EarlyBoundTests.antenna.laser_environment)
 
     # endregion
 
@@ -1522,6 +1576,7 @@ class EarlyBoundTests(TestBase):
     def test_Laser_Environment_AtmosphericLoss_Modtran(self):
         helper = LaserEnvAtmosLossModtranHelper()
         helper.Run(EarlyBoundTests.antenna.laser_environment)
+        helper.RunDeprecatedModelInterface(EarlyBoundTests.antenna.laser_environment)
 
     # endregion
 
@@ -1529,6 +1584,7 @@ class EarlyBoundTests(TestBase):
     def test_Laser_Environment_TroposphericScintillationLoss(self):
         helper = LaserEnvTropoScintLossHelper()
         helper.Run(EarlyBoundTests.antenna.laser_environment)
+        helper.RunDeprecatedModelInterface(EarlyBoundTests.antenna.laser_environment)
 
     # endregion
 
@@ -1545,6 +1601,7 @@ class EarlyBoundTests(TestBase):
     def test_RF_Environment_RainCloudFog_RainModel(self):
         helper = RF_Environment_RainCloudFog_RainModelHelper()
         helper.Run(EarlyBoundTests.antenna.rf_environment, TestBase.Application)
+        helper.RunDeprecatedModelInterface(EarlyBoundTests.antenna.rf_environment, TestBase.Application)
 
     # endregion
 
@@ -1552,6 +1609,7 @@ class EarlyBoundTests(TestBase):
     def test_RF_Environment_RainCloudFog_CloudsAndFogModel(self):
         helper = RF_Environment_RainCloudFog_CloudsAndFogModelHelper()
         helper.Run(EarlyBoundTests.antenna.rf_environment, TestBase.Application)
+        helper.RunDeprecatedModelInterface(EarlyBoundTests.antenna.rf_environment, TestBase.Application)
 
     # endregion
 
@@ -1559,6 +1617,7 @@ class EarlyBoundTests(TestBase):
     def test_RF_Environment_AtmosphericAbsorption(self):
         helper = RF_Environment_AtmosphericAbsorptionHelper(TestBase.Application)
         helper.Run(EarlyBoundTests.antenna.rf_environment)
+        helper.RunDeprecatedModelInterface(EarlyBoundTests.antenna.rf_environment)
 
     # endregion
 
@@ -1566,6 +1625,7 @@ class EarlyBoundTests(TestBase):
     def test_RF_Environment_UrbanAndTerrestrial(self):
         helper = RF_Environment_UrbanAndTerrestrialHelper(TestBase.Application)
         helper.Run(EarlyBoundTests.antenna.rf_environment)
+        helper.RunDeprecatedModelInterface(EarlyBoundTests.antenna.rf_environment)
 
     # endregion
 
@@ -1573,6 +1633,7 @@ class EarlyBoundTests(TestBase):
     def test_RF_Environment_TropoScintillation(self):
         helper = RF_Environment_TropoScintillationHelper(TestBase.Application)
         helper.Run(EarlyBoundTests.antenna.rf_environment)
+        helper.RunDeprecatedModelInterface(EarlyBoundTests.antenna.rf_environment)
 
     # endregion
 
@@ -1593,11 +1654,11 @@ class EarlyBoundTests(TestBase):
             TestBase.Application.units_preferences.set_current_unit("Angle", "DMS")
 
             satelliteObj: "IStkObject" = clr.CastAs(
-                TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "SatellitePreDataTest"),
+                TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "SatellitePreDataTest"),
                 IStkObject,
             )
             satellite: "Satellite" = clr.CastAs(satelliteObj, Satellite)
-            satellite.set_propagator_type(PROPAGATOR_TYPE.TWO_BODY)
+            satellite.set_propagator_type(PropagatorType.TWO_BODY)
             satelliteProp: "PropagatorTwoBody" = clr.CastAs(satellite.propagator, PropagatorTwoBody)
             ephemInterval: "TimeToolTimeIntervalSmartInterval" = clr.CastAs(
                 satelliteProp.ephemeris_interval, TimeToolTimeIntervalSmartInterval
@@ -1605,7 +1666,7 @@ class EarlyBoundTests(TestBase):
             ephemInterval.set_explicit_interval("1 Jan 2022 10:00:00.000", "2 Jan 2022 10:00:00.000")
             satelliteProp.propagate()
             antenna: "Antenna" = clr.CastAs(
-                satelliteObj.children.new(STK_OBJECT_TYPE.ANTENNA, "AntennaPreDataTest"), Antenna
+                satelliteObj.children.new(STKObjectType.ANTENNA, "AntennaPreDataTest"), Antenna
             )
 
             dp: "IDataProvider" = clr.CastAs(
@@ -1627,7 +1688,7 @@ class EarlyBoundTests(TestBase):
             Assert.assertEqual("No Data", str(result.message.messages[0]))
 
         finally:
-            TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "SatellitePreDataTest")
+            TestBase.Application.current_scenario.children.unload(STKObjectType.SATELLITE, "SatellitePreDataTest")
             TestBase.Application.units_preferences.set_current_unit("Angle", holdAngle)
 
     # endregion

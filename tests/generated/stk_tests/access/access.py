@@ -1,3 +1,25 @@
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
 import pytest
 from test_util import *
 from assertion_harness import *
@@ -20,7 +42,7 @@ class EarlyBoundTests(TestBase):
         TestBase.Initialize()
         TestBase.LoadTestScenario(Path.Combine("AccessTests", "AccessTests.sc"))
         EarlyBoundTests._satellite = Satellite(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "Spy")
+            TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "Spy")
         )
         Assert.assertIsNotNone(EarlyBoundTests._satellite)
         # propagate satellite
@@ -33,8 +55,8 @@ class EarlyBoundTests(TestBase):
     # region OneTimeTearDown
     @staticmethod
     def tearDownClass():
-        if TestBase.Application.current_scenario.children.contains(STK_OBJECT_TYPE.SATELLITE, "Spy"):
-            TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "Spy")
+        if TestBase.Application.current_scenario.children.contains(STKObjectType.SATELLITE, "Spy"):
+            TestBase.Application.current_scenario.children.unload(STKObjectType.SATELLITE, "Spy")
 
         EarlyBoundTests._satellite = None
         TestBase.Uninitialize()
@@ -64,23 +86,23 @@ class EarlyBoundTests(TestBase):
 
         advanced.time_light_delay_convergence = 0.005
         Assert.assertEqual(0.005, advanced.time_light_delay_convergence)
-        advanced.aberration_type = ABERRATION_TYPE.ANNUAL
-        Assert.assertEqual(ABERRATION_TYPE.ANNUAL, advanced.aberration_type)
-        advanced.aberration_type = ABERRATION_TYPE.NONE
-        Assert.assertEqual(ABERRATION_TYPE.NONE, advanced.aberration_type)
-        advanced.aberration_type = ABERRATION_TYPE.TOTAL
-        Assert.assertEqual(ABERRATION_TYPE.TOTAL, advanced.aberration_type)
+        advanced.aberration_type = AberrationType.ANNUAL
+        Assert.assertEqual(AberrationType.ANNUAL, advanced.aberration_type)
+        advanced.aberration_type = AberrationType.NONE
+        Assert.assertEqual(AberrationType.NONE, advanced.aberration_type)
+        advanced.aberration_type = AberrationType.TOTAL
+        Assert.assertEqual(AberrationType.TOTAL, advanced.aberration_type)
 
         advanced.use_default_clock_host_and_signal_sense = False
         Assert.assertFalse(advanced.use_default_clock_host_and_signal_sense)
-        advanced.clock_host = IV_CLOCK_HOST.BASE
-        Assert.assertEqual(IV_CLOCK_HOST.BASE, advanced.clock_host)
-        advanced.clock_host = IV_CLOCK_HOST.TARGET
-        Assert.assertEqual(IV_CLOCK_HOST.TARGET, advanced.clock_host)
+        advanced.clock_host = IvClockHost.BASE
+        Assert.assertEqual(IvClockHost.BASE, advanced.clock_host)
+        advanced.clock_host = IvClockHost.TARGET
+        Assert.assertEqual(IvClockHost.TARGET, advanced.clock_host)
 
         advanced.use_default_clock_host_and_signal_sense = True
         with pytest.raises(Exception):
-            advanced.clock_host = IV_CLOCK_HOST.BASE
+            advanced.clock_host = IvClockHost.BASE
         Assert.assertTrue(advanced.use_default_clock_host_and_signal_sense)
 
         advanced.use_precise_event_times = True
@@ -125,116 +147,125 @@ class EarlyBoundTests(TestBase):
         provider: "AnalysisWorkbenchComponentProvider" = access.analysis_workbench_components
         Assert.assertIsNotNone(provider)
 
-        Assert.assertTrue(provider.supports(VECTOR_GEOMETRY_TOOL_COMPONENT_TYPE.ANGLE))
-        type: "ANGLE_TYPE"
-        for type in Enum.GetValues(clr.TypeOf(ANGLE_TYPE)):
+        Assert.assertTrue(provider.supports(VectorGeometryToolComponentType.ANGLE))
+        type: "AngleType"
+        for type in Enum.GetValues(clr.TypeOf(AngleType)):
             if provider.angles.factory.is_type_supported(type):
                 obj: "IVectorGeometryToolAngle" = provider.angles.factory.create("NameHere", "", type)
                 Assert.assertIsNotNone(obj)
                 provider.angles.remove("NameHere")
 
-        Assert.assertTrue(provider.supports(VECTOR_GEOMETRY_TOOL_COMPONENT_TYPE.AXES))
-        type: "AXES_TYPE"
-        for type in Enum.GetValues(clr.TypeOf(AXES_TYPE)):
-            if provider.axes.factory.is_type_supported(type) and (type != AXES_TYPE.PLUGIN):
+        Assert.assertTrue(provider.supports(VectorGeometryToolComponentType.AXES))
+        type: "AxesType"
+        for type in Enum.GetValues(clr.TypeOf(AxesType)):
+            if provider.axes.factory.is_type_supported(type) and (type != AxesType.PLUGIN):
                 obj: "IVectorGeometryToolAxes" = provider.axes.factory.create("NameHere", "", type)
                 Assert.assertIsNotNone(obj)
                 provider.axes.remove("NameHere")
 
-        Assert.assertTrue(provider.supports(VECTOR_GEOMETRY_TOOL_COMPONENT_TYPE.PLANE))
-        type: "PLANE_TYPE"
-        for type in Enum.GetValues(clr.TypeOf(PLANE_TYPE)):
+        Assert.assertTrue(provider.supports(VectorGeometryToolComponentType.PLANE))
+        type: "PlaneType"
+        for type in Enum.GetValues(clr.TypeOf(PlaneType)):
             if provider.planes.factory.is_type_supported(type):
                 obj: "IVectorGeometryToolPlane" = provider.planes.factory.create("NameHere", "", type)
                 Assert.assertIsNotNone(obj)
                 provider.planes.remove("NameHere")
 
-        Assert.assertTrue(provider.supports(VECTOR_GEOMETRY_TOOL_COMPONENT_TYPE.POINT))
-        type: "POINT_TYPE"
-        for type in Enum.GetValues(clr.TypeOf(POINT_TYPE)):
-            if provider.points.factory.is_type_supported(type) and (type != POINT_TYPE.PLUGIN):
+        Assert.assertTrue(provider.supports(VectorGeometryToolComponentType.POINT))
+        type: "PointType"
+        for type in Enum.GetValues(clr.TypeOf(PointType)):
+            if provider.points.factory.is_type_supported(type) and (type != PointType.PLUGIN):
                 obj: "IVectorGeometryToolPoint" = provider.points.factory.create("NameHere", "", type)
                 Assert.assertIsNotNone(obj)
                 provider.points.remove("NameHere")
 
-        Assert.assertTrue(provider.supports(VECTOR_GEOMETRY_TOOL_COMPONENT_TYPE.SYSTEM))
-        type: "SYSTEM_TYPE"
-        for type in Enum.GetValues(clr.TypeOf(SYSTEM_TYPE)):
+        Assert.assertTrue(provider.supports(VectorGeometryToolComponentType.SYSTEM))
+        type: "SystemType"
+        for type in Enum.GetValues(clr.TypeOf(SystemType)):
             if provider.systems.factory.is_type_supported(type):
                 obj: "IVectorGeometryToolSystem" = provider.systems.factory.create("NameHere", "", type)
                 Assert.assertIsNotNone(obj)
                 provider.systems.remove("NameHere")
 
-        Assert.assertTrue(provider.supports(VECTOR_GEOMETRY_TOOL_COMPONENT_TYPE.VECTOR))
-        type: "VECTOR_TYPE"
-        for type in Enum.GetValues(clr.TypeOf(VECTOR_TYPE)):
-            if provider.vectors.factory.is_type_supported(type) and (type != VECTOR_TYPE.PLUGIN):
-                obj: "IVectorGeometryToolVector" = provider.vectors.factory.create("NameHere", "", type)
+        Assert.assertTrue(provider.supports(VectorGeometryToolComponentType.VECTOR))
+        type: "VectorType"
+        for type in Enum.GetValues(clr.TypeOf(VectorType)):
+            if provider.vectors.factory.is_type_supported(type) and (type != VectorType.PLUGIN):
+                obj: "IVectorGeometryToolVector" = None
+                if VectorType.FILE == type:
+                    obj = clr.CastAs(
+                        provider.vectors.factory.create_file_vector(
+                            "NameHere", "", TestBase.GetScenarioFile("VectorFile1.vd")
+                        ),
+                        IVectorGeometryToolVector,
+                    )
+
+                else:
+                    obj = provider.vectors.factory.create("NameHere", "", type)
+
                 Assert.assertIsNotNone(obj)
                 provider.vectors.remove("NameHere")
 
-        type: "EVENT_ARRAY_TYPE"
+        type: "EventArrayType"
 
-        for type in Enum.GetValues(clr.TypeOf(EVENT_ARRAY_TYPE)):
+        for type in Enum.GetValues(clr.TypeOf(EventArrayType)):
             if provider.time_arrays.factory.is_type_supported(type):
                 obj: "ITimeToolTimeArray" = provider.time_arrays.factory.create("NameHere", "", type)
                 Assert.assertIsNotNone(obj)
                 provider.time_arrays.remove("NameHere")
 
-        type: "EVENT_INTERVAL_TYPE"
-        for type in Enum.GetValues(clr.TypeOf(EVENT_INTERVAL_TYPE)):
+        type: "EventIntervalType"
+        for type in Enum.GetValues(clr.TypeOf(EventIntervalType)):
             if provider.time_intervals.factory.is_type_supported(type):
                 obj: "ITimeToolTimeInterval" = provider.time_intervals.factory.create("NameHere", "", type)
                 Assert.assertIsNotNone(obj)
                 provider.time_intervals.remove("NameHere")
 
-        type: "EVENT_INTERVAL_LIST_TYPE"
-        for type in Enum.GetValues(clr.TypeOf(EVENT_INTERVAL_LIST_TYPE)):
+        type: "EventIntervalListType"
+        for type in Enum.GetValues(clr.TypeOf(EventIntervalListType)):
             if provider.time_interval_lists.factory.is_type_supported(type):
                 obj: "ITimeToolTimeIntervalList" = provider.time_interval_lists.factory.create("NameHere", "", type)
                 Assert.assertIsNotNone(obj)
                 provider.time_interval_lists.remove("NameHere")
 
-        type: "EVENT_INTERVAL_TYPE"
-        for type in Enum.GetValues(clr.TypeOf(EVENT_INTERVAL_TYPE)):
+        type: "EventIntervalType"
+        for type in Enum.GetValues(clr.TypeOf(EventIntervalType)):
             if provider.time_intervals.factory.is_type_supported(type):
                 obj: "ITimeToolTimeInterval" = provider.time_intervals.factory.create("NameHere", "", type)
                 Assert.assertIsNotNone(obj)
                 provider.time_intervals.remove("NameHere")
 
-        type: "TIME_EVENT_TYPE"
-        for type in Enum.GetValues(clr.TypeOf(TIME_EVENT_TYPE)):
+        type: "TimeEventType"
+        for type in Enum.GetValues(clr.TypeOf(TimeEventType)):
             if provider.time_instants.factory.is_type_supported(type):
                 obj: "ITimeToolInstant" = provider.time_instants.factory.create("NameHere", "", type)
                 Assert.assertIsNotNone(obj)
                 provider.time_instants.remove("NameHere")
 
-        type: "CALCULATION_SCALAR_TYPE"
+        type: "CalculationScalarType"
 
-        for type in Enum.GetValues(clr.TypeOf(CALCULATION_SCALAR_TYPE)):
-            if provider.calculation_scalars.factory.is_type_supported(type) and (
-                type != CALCULATION_SCALAR_TYPE.PLUGIN
-            ):
+        for type in Enum.GetValues(clr.TypeOf(CalculationScalarType)):
+            if provider.calculation_scalars.factory.is_type_supported(type) and (type != CalculationScalarType.PLUGIN):
                 obj: "ICalculationToolScalar" = provider.calculation_scalars.factory.create("NameHere", "", type)
                 Assert.assertIsNotNone(obj)
                 provider.calculation_scalars.remove("NameHere")
 
-        type: "CONDITION_TYPE"
-        for type in Enum.GetValues(clr.TypeOf(CONDITION_TYPE)):
+        type: "ConditionType"
+        for type in Enum.GetValues(clr.TypeOf(ConditionType)):
             if provider.conditions.factory.is_type_supported(type):
                 obj: "ICalculationToolCondition" = provider.conditions.factory.create("NameHere", "", type)
                 Assert.assertIsNotNone(obj)
                 provider.conditions.remove("NameHere")
 
-        type: "PARAMETER_SET_TYPE"
-        for type in Enum.GetValues(clr.TypeOf(PARAMETER_SET_TYPE)):
+        type: "ParameterSetType"
+        for type in Enum.GetValues(clr.TypeOf(ParameterSetType)):
             if provider.parameter_sets.factory.is_type_supported(type):
                 obj: "ICalculationToolParameterSet" = provider.parameter_sets.factory.create("NameHere", "", type)
                 Assert.assertIsNotNone(obj)
                 provider.parameter_sets.remove("NameHere")
 
-        type: "VOLUME_GRID_TYPE"
-        for type in Enum.GetValues(clr.TypeOf(VOLUME_GRID_TYPE)):
+        type: "VolumeGridType"
+        for type in Enum.GetValues(clr.TypeOf(VolumeGridType)):
             pass
 
         access.save_computed_data = True
@@ -355,7 +386,7 @@ class EarlyBoundTests(TestBase):
             "\tName: {0}, Type = {1}, IsGroup = {2}", oDPInfo.name, oDPInfo.type, oDPInfo.is_group()
         )
         Assert.assertEqual("Access Data", oDPInfo.name)
-        Assert.assertEqual(DATA_PROVIDER_TYPE.INTERVAL, oDPInfo.type)
+        Assert.assertEqual(DataProviderType.INTERVAL, oDPInfo.type)
         Assert.assertFalse(oDPInfo.is_group())
         #
         oProvider: "IDataProvider" = clr.CastAs(oDPInfo, IDataProvider)
@@ -375,7 +406,7 @@ class EarlyBoundTests(TestBase):
         oNewAccess.advanced.enable_light_time_delay = False
         dtStart = "1 Jul 1999 15:20:00.000"
         dtStop = "1 Jul 1999 17:29:00.000"
-        oNewAccess.access_time_period = ACCESS_TIME_TYPE.SPECIFIED_TIME_PERIOD
+        oNewAccess.access_time_period = AccessTimeType.SPECIFIED_TIME_PERIOD
         oNewAccess.specify_access_time_period(dtStart, dtStop)
         oNewAccess.compute_access()
         # get result report
@@ -389,7 +420,7 @@ class EarlyBoundTests(TestBase):
             "\tName: {0}, Type = {1}, IsGroup = {2}", oDPInfo.name, oDPInfo.type, oDPInfo.is_group()
         )
         Assert.assertEqual("Access Data", oDPInfo.name)
-        Assert.assertEqual(DATA_PROVIDER_TYPE.INTERVAL, oDPInfo.type)
+        Assert.assertEqual(DataProviderType.INTERVAL, oDPInfo.type)
         Assert.assertFalse(oDPInfo.is_group())
         #
         oProvider = clr.CastAs(oDPInfo, IDataProvider)
@@ -461,10 +492,10 @@ class EarlyBoundTests(TestBase):
         scene.set_time_period(date.format("UTCG"), "+1 day")
 
         oSatellite: "Satellite" = Satellite(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "Spy")
+            TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "Spy")
         )
         oFacility: "Facility" = Facility(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "Facility1")
+            TestBase.Application.current_scenario.children.new(STKObjectType.FACILITY, "Facility1")
         )
         Assert.assertIsNotNone(oSatellite)
 
@@ -473,59 +504,59 @@ class EarlyBoundTests(TestBase):
         oPropagator.propagate()
 
         access: "Access" = (IStkObject(oSatellite)).get_access("Facility/Facility1")
-        access.access_time_period = ACCESS_TIME_TYPE.SPECIFIED_TIME_PERIOD
+        access.access_time_period = AccessTimeType.SPECIFIED_TIME_PERIOD
         accessTimePeriod: "AccessTimePeriod" = clr.CastAs(access.access_time_period_data, AccessTimePeriod)
         tp: "ITimePeriod" = clr.CastAs(access.access_time_period_data, ITimePeriod)
         Assert.assertIsNotNone(tp)
 
         Assert.assertEqual(scene.start_time, tp.start_time.value)
-        Assert.assertEqual(TIME_PERIOD_VALUE_TYPE.SPECIFY, tp.start_time.type)
+        Assert.assertEqual(TimePeriodValueType.SPECIFY, tp.start_time.type)
 
         Assert.assertEqual(scene.stop_time, tp.stop_time.value)
-        Assert.assertEqual(TIME_PERIOD_VALUE_TYPE.SPECIFY, tp.stop_time.type)
+        Assert.assertEqual(TimePeriodValueType.SPECIFY, tp.stop_time.type)
 
-        accessTimePeriod.start_time.type = TIME_PERIOD_VALUE_TYPE.SPECIFY
-        Assert.assertEqual(TIME_PERIOD_VALUE_TYPE.SPECIFY, accessTimePeriod.start_time.type)
-        accessTimePeriod.start_time.type = TIME_PERIOD_VALUE_TYPE.TODAY
-        Assert.assertEqual(TIME_PERIOD_VALUE_TYPE.TODAY, accessTimePeriod.start_time.type)
-        accessTimePeriod.start_time.type = TIME_PERIOD_VALUE_TYPE.TOMORROW
-        Assert.assertEqual(TIME_PERIOD_VALUE_TYPE.TOMORROW, accessTimePeriod.start_time.type)
+        accessTimePeriod.start_time.type = TimePeriodValueType.SPECIFY
+        Assert.assertEqual(TimePeriodValueType.SPECIFY, accessTimePeriod.start_time.type)
+        accessTimePeriod.start_time.type = TimePeriodValueType.TODAY
+        Assert.assertEqual(TimePeriodValueType.TODAY, accessTimePeriod.start_time.type)
+        accessTimePeriod.start_time.type = TimePeriodValueType.TOMORROW
+        Assert.assertEqual(TimePeriodValueType.TOMORROW, accessTimePeriod.start_time.type)
         with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
-            accessTimePeriod.start_time.type = TIME_PERIOD_VALUE_TYPE.DURATION
+            accessTimePeriod.start_time.type = TimePeriodValueType.DURATION
 
-        accessTimePeriod.stop_time.type = TIME_PERIOD_VALUE_TYPE.SPECIFY
-        Assert.assertEqual(TIME_PERIOD_VALUE_TYPE.SPECIFY, accessTimePeriod.stop_time.type)
-        accessTimePeriod.stop_time.type = TIME_PERIOD_VALUE_TYPE.TODAY  # result: Specify
-        Assert.assertEqual(TIME_PERIOD_VALUE_TYPE.TODAY, accessTimePeriod.stop_time.type)
-        accessTimePeriod.stop_time.type = TIME_PERIOD_VALUE_TYPE.TOMORROW  # result: Specify
-        Assert.assertEqual(TIME_PERIOD_VALUE_TYPE.TOMORROW, accessTimePeriod.stop_time.type)
+        accessTimePeriod.stop_time.type = TimePeriodValueType.SPECIFY
+        Assert.assertEqual(TimePeriodValueType.SPECIFY, accessTimePeriod.stop_time.type)
+        accessTimePeriod.stop_time.type = TimePeriodValueType.TODAY  # result: Specify
+        Assert.assertEqual(TimePeriodValueType.TODAY, accessTimePeriod.stop_time.type)
+        accessTimePeriod.stop_time.type = TimePeriodValueType.TOMORROW  # result: Specify
+        Assert.assertEqual(TimePeriodValueType.TOMORROW, accessTimePeriod.stop_time.type)
         with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
-            accessTimePeriod.stop_time.type = TIME_PERIOD_VALUE_TYPE.DURATION
+            accessTimePeriod.stop_time.type = TimePeriodValueType.DURATION
 
         # testing the access's start time
 
         scene.set_time_period("Today", "+2 day")
-        tp.start_time.type = TIME_PERIOD_VALUE_TYPE.TODAY
-        Assert.assertEqual(TIME_PERIOD_VALUE_TYPE.TODAY, tp.start_time.type)
+        tp.start_time.type = TimePeriodValueType.TODAY
+        Assert.assertEqual(TimePeriodValueType.TODAY, tp.start_time.type)
         Assert.assertNotEqual("Today", tp.start_time.value)
         TestBase.logger.WriteLine2(tp.start_time.value)
 
-        tp.start_time.type = TIME_PERIOD_VALUE_TYPE.TOMORROW
-        Assert.assertEqual(TIME_PERIOD_VALUE_TYPE.TOMORROW, tp.start_time.type)
+        tp.start_time.type = TimePeriodValueType.TOMORROW
+        Assert.assertEqual(TimePeriodValueType.TOMORROW, tp.start_time.type)
         Assert.assertNotEqual("Tomorrow", tp.start_time.value)
         TestBase.logger.WriteLine2(tp.start_time.value)
 
-        tp.start_time.type = TIME_PERIOD_VALUE_TYPE.SPECIFY
-        Assert.assertEqual(TIME_PERIOD_VALUE_TYPE.SPECIFY, tp.start_time.type)
+        tp.start_time.type = TimePeriodValueType.SPECIFY
+        Assert.assertEqual(TimePeriodValueType.SPECIFY, tp.start_time.type)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
-            tp.start_time.type = TIME_PERIOD_VALUE_TYPE.DURATION
+            tp.start_time.type = TimePeriodValueType.DURATION
 
         # reset the start time
         scene.set_time_period(date.format("UTCG"), "+1 day")
-        access.access_time_period = ACCESS_TIME_TYPE.SPECIFIED_TIME_PERIOD
+        access.access_time_period = AccessTimeType.SPECIFIED_TIME_PERIOD
         tp.start_time.value = scene.start_time
-        Assert.assertEqual(TIME_PERIOD_VALUE_TYPE.SPECIFY, tp.start_time.type)
+        Assert.assertEqual(TimePeriodValueType.SPECIFY, tp.start_time.type)
 
         # cannot cast to -1 in Java
         with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
@@ -535,19 +566,19 @@ class EarlyBoundTests(TestBase):
 
         # ** Test the access's stop time
         scene.set_time_period("Today", "+1 day")
-        tp.stop_time.type = TIME_PERIOD_VALUE_TYPE.TODAY
-        Assert.assertEqual(TIME_PERIOD_VALUE_TYPE.TODAY, tp.stop_time.type)
+        tp.stop_time.type = TimePeriodValueType.TODAY
+        Assert.assertEqual(TimePeriodValueType.TODAY, tp.stop_time.type)
         Assert.assertNotEqual("Today", tp.stop_time.value)
 
         date.set_date("UTCG", "Tomorrow")
         date = date.add("day", 1)
         scene.stop_time = date.format("UTCG")
-        tp.stop_time.type = TIME_PERIOD_VALUE_TYPE.TOMORROW
-        Assert.assertEqual(TIME_PERIOD_VALUE_TYPE.TOMORROW, tp.stop_time.type)
+        tp.stop_time.type = TimePeriodValueType.TOMORROW
+        Assert.assertEqual(TimePeriodValueType.TOMORROW, tp.stop_time.type)
         Assert.assertNotEqual("Tomorrow", tp.stop_time.value)
 
-        tp.stop_time.type = TIME_PERIOD_VALUE_TYPE.SPECIFY
-        Assert.assertEqual(TIME_PERIOD_VALUE_TYPE.SPECIFY, tp.stop_time.type)
+        tp.stop_time.type = TimePeriodValueType.SPECIFY
+        Assert.assertEqual(TimePeriodValueType.SPECIFY, tp.stop_time.type)
         hold: typing.Any = tp.stop_time.value
         tp.stop_time.value = tp.start_time.value
         Assert.assertEqual(tp.start_time.value, tp.stop_time.value)
@@ -559,12 +590,12 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("Invalid value")):
             tp.stop_time.value = ""
         with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
-            tp.stop_time.type = TIME_PERIOD_VALUE_TYPE.DURATION
+            tp.stop_time.type = TimePeriodValueType.DURATION
 
         # ** Testing scenario's duration
         tp.duration = "+1 sec"
         Assert.assertEqual("+1 sec", tp.duration)
-        Assert.assertEqual(TIME_PERIOD_VALUE_TYPE.DURATION, tp.stop_time.type)
+        Assert.assertEqual(TimePeriodValueType.DURATION, tp.stop_time.type)
 
         oStartDate: "Date" = TestBase.Application.conversion_utility.new_date("UTCG", str(tp.start_time.value))
         oStopDate: "Date" = TestBase.Application.conversion_utility.new_date("UTCG", str(tp.stop_time.value))
@@ -573,7 +604,7 @@ class EarlyBoundTests(TestBase):
 
         tp.duration = "+1 day"
         Assert.assertEqual("+1 day", tp.duration)
-        Assert.assertEqual(TIME_PERIOD_VALUE_TYPE.DURATION, tp.stop_time.type)
+        Assert.assertEqual(TimePeriodValueType.DURATION, tp.stop_time.type)
 
         oStartDate = TestBase.Application.conversion_utility.new_date("UTCG", str(tp.start_time.value))
         oStopDate = TestBase.Application.conversion_utility.new_date("UTCG", str(tp.stop_time.value))
@@ -658,32 +689,32 @@ class EarlyBoundTests(TestBase):
         scene.epoch = "1 Jul 1999 00:00:00.000"
 
         oFacility: "Facility" = Facility(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "GB2Y")
+            TestBase.Application.current_scenario.children.new(STKObjectType.FACILITY, "GB2Y")
         )
         oFacility.position.assign_geodetic(26.6255, -78.2985, -0.010997)
 
         oSatellite: "Satellite" = Satellite(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "Satellite1")
+            TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "Satellite1")
         )
-        oSatellite.set_propagator_type(PROPAGATOR_TYPE.J4_PERTURBATION)
+        oSatellite.set_propagator_type(PropagatorType.J4_PERTURBATION)
         j4: "PropagatorJ4Perturbation" = clr.CastAs(oSatellite.propagator, PropagatorJ4Perturbation)
 
         classical: "OrbitStateClassical" = OrbitStateClassical(
-            j4.initial_state.representation.convert_to(ORBIT_STATE_TYPE.CLASSICAL)
+            j4.initial_state.representation.convert_to(OrbitStateType.CLASSICAL)
         )
-        classical.size_shape_type = CLASSICAL_SIZE_SHAPE.SEMIMAJOR_AXIS
+        classical.size_shape_type = ClassicalSizeShape.SEMIMAJOR_AXIS
         sma: "ClassicalSizeShapeSemimajorAxis" = ClassicalSizeShapeSemimajorAxis(classical.size_shape)
         sma.semi_major_axis = 6878.14
         sma.eccentricity = 3.70942e-16
         classical.orientation.inclination = 45
-        classical.orientation.ascending_node_type = ORIENTATION_ASC_NODE.LONGITUDE_ASCENDING_NODE
+        classical.orientation.ascending_node_type = OrientationAscNode.LONGITUDE_ASCENDING_NODE
         (clr.CastAs(classical.orientation.ascending_node, OrientationLongitudeOfAscending)).value = 0
 
         j4.initial_state.representation.assign(classical)
         j4.propagate()
 
         myAccess: "Access" = (IStkObject(oFacility)).get_access_to_object(IStkObject(oSatellite))
-        myAccess.access_time_period = ACCESS_TIME_TYPE.SPECIFIED_TIME_PERIOD  # 2
+        myAccess.access_time_period = AccessTimeType.SPECIFIED_TIME_PERIOD  # 2
         myAccess.specify_access_time_period("17 Feb 2010 05:34:09.161", "17 Feb 2010 05:41:01.680")
         myAccess.compute_access()
 
@@ -710,7 +741,7 @@ class EarlyBoundTests(TestBase):
             advanced.use_default_clock_host_and_signal_sense = True
             Assert.assertTrue(advanced.use_default_clock_host_and_signal_sense)
 
-            advanced.signal_sense_of_clock_host = IV_TIME_SENSE.RECEIVE
+            advanced.signal_sense_of_clock_host = IvTimeSense.RECEIVE
 
         ExceptionAssert.Throws(code1)
 
@@ -720,10 +751,10 @@ class EarlyBoundTests(TestBase):
         try:
             # Create a place and a satellite
             place: "Place" = clr.CastAs(
-                root.current_scenario.children.new(STK_OBJECT_TYPE.PLACE, "PlaceBug107492"), Place
+                root.current_scenario.children.new(STKObjectType.PLACE, "PlaceBug107492"), Place
             )
             satellite: "Satellite" = clr.CastAs(
-                root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "SatelliteBug107492"), Satellite
+                root.current_scenario.children.new(STKObjectType.SATELLITE, "SatelliteBug107492"), Satellite
             )
             (PropagatorTwoBody(satellite.propagator)).propagate()
 
@@ -745,8 +776,8 @@ class EarlyBoundTests(TestBase):
 
         finally:
             # Clean-up the objects created for this test
-            root.current_scenario.children.unload(STK_OBJECT_TYPE.PLACE, "PlaceBug107492")
-            root.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "SatelliteBug107492")
+            root.current_scenario.children.unload(STKObjectType.PLACE, "PlaceBug107492")
+            root.current_scenario.children.unload(STKObjectType.SATELLITE, "SatelliteBug107492")
 
     # endregion
 
@@ -799,10 +830,10 @@ class EarlyBoundTests(TestBase):
     def test_DP_PreData_Unit(self):
         holdDateFormat: str = TestBase.Application.units_preferences.get_current_unit_abbrv("DateFormat")
         placeObj: "IStkObject" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.PLACE, "PlacePreDataTest"), IStkObject
+            TestBase.Application.current_scenario.children.new(STKObjectType.PLACE, "PlacePreDataTest"), IStkObject
         )
         satelliteObj: "IStkObject" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "SatellitePreDataTest"),
+            TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "SatellitePreDataTest"),
             IStkObject,
         )
 
@@ -815,12 +846,12 @@ class EarlyBoundTests(TestBase):
             propagationChannel.enable_atmospheric_absorption = True
             propagationChannel.set_atmospheric_absorption_model("VOACAP")
             satellite: "Satellite" = clr.CastAs(satelliteObj, Satellite)
-            satellite.set_propagator_type(PROPAGATOR_TYPE.TWO_BODY)
+            satellite.set_propagator_type(PropagatorType.TWO_BODY)
             satelliteProp: "PropagatorTwoBody" = clr.CastAs(satellite.propagator, PropagatorTwoBody)
             satelliteProp.propagate()
 
             radarObj: "IStkObject" = clr.CastAs(
-                satelliteObj.children.new(STK_OBJECT_TYPE.RADAR, "RadarPreDataTest"), IStkObject
+                satelliteObj.children.new(STKObjectType.RADAR, "RadarPreDataTest"), IStkObject
             )
             accessObj: "Access" = clr.CastAs(radarObj.get_access(placeObj.path), Access)
 
@@ -835,10 +866,10 @@ class EarlyBoundTests(TestBase):
             Assert.assertEqual("Data Unavailable", str(result.message.messages[0]))
 
             transmitterObj: "IStkObject" = clr.CastAs(
-                satelliteObj.children.new(STK_OBJECT_TYPE.TRANSMITTER, "TransmitterPreDataTest"), IStkObject
+                satelliteObj.children.new(STKObjectType.TRANSMITTER, "TransmitterPreDataTest"), IStkObject
             )
             receiverObj: "IStkObject" = clr.CastAs(
-                placeObj.children.new(STK_OBJECT_TYPE.RECEIVER, "ReceiverPreDataTest"), IStkObject
+                placeObj.children.new(STKObjectType.RECEIVER, "ReceiverPreDataTest"), IStkObject
             )
             accessObj: "Access" = clr.CastAs(transmitterObj.get_access(receiverObj.path), Access)
 
@@ -854,7 +885,7 @@ class EarlyBoundTests(TestBase):
 
         finally:
             TestBase.Application.units_preferences.set_current_unit("DateFormat", holdDateFormat)
-            TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "SatellitePreDataTest")
-            TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.PLACE, "PlacePreDataTest")
+            TestBase.Application.current_scenario.children.unload(STKObjectType.SATELLITE, "SatellitePreDataTest")
+            TestBase.Application.current_scenario.children.unload(STKObjectType.PLACE, "PlacePreDataTest")
 
     # endregion

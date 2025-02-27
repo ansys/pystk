@@ -44,17 +44,17 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAirwayRouter.enroute_cruise_airspeed_options`
               - Get the enroute cruise airspeed options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAirwayRouter.router`
-              - Gets or sets the router used to provide available airways.
+              - Get or set the router used to provide available airways.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAirwayRouter.optimize_for_wind`
               - Opt to account for the wind when calculating the most efficient route.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAirwayRouter.bounding_box_pad`
-              - Gets or sets the maximum distance beyond the bounding box that a waypoint will be considered for the final route.
+              - Get or set the maximum distance beyond the bounding box that a waypoint will be considered for the final route.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAirwayRouter.max_waypoint_range`
-              - Gets or sets the maximum distance from the end of the previous procedure that an airway waypoint will be considered.
+              - Get or set the maximum distance from the end of the previous procedure that an airway waypoint will be considered.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAirwayRouter.entry_exit_and_or`
               - Define how the two Entry/Exit Waypoint constraints will be considered.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureAirwayRouter.max_waypoint_count`
-              - Gets or sets the maximum number of airway waypoints that the procedure will consider for each segment.
+              - Get or set the maximum number of airway waypoints that the procedure will consider for each segment.
 
 
 
@@ -91,7 +91,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureAirwayRouter.router
     :type: str
 
-    Gets or sets the router used to provide available airways.
+    Get or set the router used to provide available airways.
 
 .. py:property:: optimize_for_wind
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureAirwayRouter.optimize_for_wind
@@ -103,17 +103,17 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureAirwayRouter.bounding_box_pad
     :type: float
 
-    Gets or sets the maximum distance beyond the bounding box that a waypoint will be considered for the final route.
+    Get or set the maximum distance beyond the bounding box that a waypoint will be considered for the final route.
 
 .. py:property:: max_waypoint_range
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureAirwayRouter.max_waypoint_range
     :type: float
 
-    Gets or sets the maximum distance from the end of the previous procedure that an airway waypoint will be considered.
+    Get or set the maximum distance from the end of the previous procedure that an airway waypoint will be considered.
 
 .. py:property:: entry_exit_and_or
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureAirwayRouter.entry_exit_and_or
-    :type: AND_OR
+    :type: AndOr
 
     Define how the two Entry/Exit Waypoint constraints will be considered.
 
@@ -121,7 +121,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureAirwayRouter.max_waypoint_count
     :type: int
 
-    Gets or sets the maximum number of airway waypoints that the procedure will consider for each segment.
+    Get or set the maximum number of airway waypoints that the procedure will consider for each segment.
 
 
 Method detail

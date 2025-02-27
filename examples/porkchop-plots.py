@@ -43,12 +43,12 @@ print(f"Using {stk.version}")
 # Next, create a new scenario. The central body for this scenario must be the Sun.
 
 # +
-from ansys.stk.core.stkobjects import STK_OBJECT_TYPE
+from ansys.stk.core.stkobjects import STKObjectType
 
 
 root = stk.new_object_root()
 scenario = root.children.new_on_central_body(
-    STK_OBJECT_TYPE.SCENARIO, "PorkchopPlot", "Sun"
+    STKObjectType.SCENARIO, "PorkchopPlot", "Sun"
 )
 
 
@@ -176,14 +176,12 @@ def get_object_pos_vel_at_epoch(
 # Now, add the planets to the scene:
 
 # +
-from ansys.stk.core.stkobjects import EPHEM_SOURCE_TYPE, PLANET_POSITION_SOURCE_TYPE
+from ansys.stk.core.stkobjects import EphemSourceType, PlanetPositionSourceType
 
 
 for name in ["Earth", "Mars"]:
-    planet = scenario.children.new_on_central_body(STK_OBJECT_TYPE.PLANET, name, "Sun")
-    planet.common_tasks.set_position_source_central_body(
-        name, EPHEM_SOURCE_TYPE.DEFAULT
-    )
+    planet = scenario.children.new_on_central_body(STKObjectType.PLANET, name, "Sun")
+    planet.common_tasks.set_position_source_central_body(name, EphemSourceType.DEFAULT)
 
 earth, mars = [scenario.children[object_name] for object_name in ["Earth", "Mars"]]
 # -
@@ -209,13 +207,13 @@ print("...")
 # A satellite object is used to solve for the Lambert transfer between Earth and Mars. Astrogator is used for its propagation. Make sure to clean the main sequence.
 
 # +
-from ansys.stk.core.stkobjects import PROPAGATOR_TYPE
+from ansys.stk.core.stkobjects import PropagatorType
 
 
 satellite = scenario.children.new_on_central_body(
-    STK_OBJECT_TYPE.SATELLITE, "Satellite", "Sun"
+    STKObjectType.SATELLITE, "Satellite", "Sun"
 )
-satellite.set_propagator_type(PROPAGATOR_TYPE.ASTROGATOR)
+satellite.set_propagator_type(PropagatorType.ASTROGATOR)
 satellite.propagator.main_sequence.remove_all()
 # -
 
@@ -224,14 +222,14 @@ satellite.propagator.main_sequence.remove_all()
 # The initial state of the satellite must be changed for every launch date. However, the initial state segment instance remains in the main sequence. Therefore, it is possible to configure here only the constant parameters of the initial state of the satellite:
 
 # +
-from ansys.stk.core.stkobjects.astrogator import ELEMENT_TYPE, SEGMENT_TYPE
+from ansys.stk.core.stkobjects.astrogator import ElementSetType, SegmentType
 
 
 initial_state = satellite.propagator.main_sequence.insert(
-    SEGMENT_TYPE.INITIAL_STATE, "Initial State", "-"
+    SegmentType.INITIAL_STATE, "Initial State", "-"
 )
 initial_state.coord_system_name = "CentralBody/Sun Inertial"
-initial_state.set_element_type(ELEMENT_TYPE.CARTESIAN)
+initial_state.set_element_type(ElementSetType.CARTESIAN)
 # -
 
 # ### Interplanetary transfer
@@ -241,21 +239,21 @@ initial_state.set_element_type(ELEMENT_TYPE.CARTESIAN)
 # Start by declaring the different segments of the Lambert transfer:
 
 transfer = satellite.propagator.main_sequence.insert(
-    SEGMENT_TYPE.TARGET_SEQUENCE, "Lambert Transfer", "-"
+    SegmentType.TARGET_SEQUENCE, "Lambert Transfer", "-"
 )
-first_impulse = transfer.segments.insert(SEGMENT_TYPE.MANEUVER, "First Impulse", "-")
-propagate = transfer.segments.insert(SEGMENT_TYPE.PROPAGATE, "Propagate", "-")
-last_impulse = transfer.segments.insert(SEGMENT_TYPE.MANEUVER, "Last Impulse", "-")
+first_impulse = transfer.segments.insert(SegmentType.MANEUVER, "First Impulse", "-")
+propagate = transfer.segments.insert(SegmentType.PROPAGATE, "Propagate", "-")
+last_impulse = transfer.segments.insert(SegmentType.MANEUVER, "Last Impulse", "-")
 
 # Configure the type of segments:
 
 # +
-from ansys.stk.core.stkobjects.astrogator import MANEUVER_TYPE
+from ansys.stk.core.stkobjects.astrogator import ManeuverType
 
 
-first_impulse.set_maneuver_type(MANEUVER_TYPE.IMPULSIVE)
+first_impulse.set_maneuver_type(ManeuverType.IMPULSIVE)
 propagate.propagator_name = "Sun Point Mass"
-last_impulse.set_maneuver_type(MANEUVER_TYPE.IMPULSIVE)
+last_impulse.set_maneuver_type(ManeuverType.IMPULSIVE)
 # -
 
 # Add a Lambert profile to the interplanetary transfer:
@@ -267,16 +265,16 @@ lambert = transfer.profiles.add("Lambert Profile")
 
 # +
 from ansys.stk.core.stkobjects.astrogator import (
-    LAMBERT_SOLUTION_OPTION_TYPE,
-    LAMBERT_TARGET_COORDINATE_TYPE,
+    LambertSolutionOptionType,
+    LambertTargetCoordinateType,
 )
 
 
 lambert.coord_system_name = "CentralBody/Sun Inertial"
-lambert.set_target_coord_type(LAMBERT_TARGET_COORDINATE_TYPE.CARTESIAN)
+lambert.set_target_coord_type(LambertTargetCoordinateType.CARTESIAN)
 lambert.enable_second_maneuver = True
 
-lambert.solution_option = LAMBERT_SOLUTION_OPTION_TYPE.FIXED_TIME
+lambert.solution_option = LambertSolutionOptionType.FIXED_TIME
 lambert.revolutions = 0
 lambert.central_body_collision_altitude_padding = 0
 # -
@@ -299,15 +297,15 @@ lambert.second_maneuver_segment = last_impulse.name
 
 # +
 from ansys.stk.core.stkobjects.astrogator import (
-    PROFILE_MODE,
-    PROFILES_FINISH,
-    TARGET_SEQUENCE_ACTION,
+    ProfileMode,
+    ProfilesFinish,
+    TargetSequenceAction,
 )
 
 
-lambert.mode = PROFILE_MODE.ACTIVE
-transfer.action = TARGET_SEQUENCE_ACTION.RUN_ACTIVE_PROFILES
-transfer.when_profiles_finish = PROFILES_FINISH.RUN_TO_RETURN_AND_CONTINUE
+lambert.mode = ProfileMode.ACTIVE
+transfer.action = TargetSequenceAction.RUN_ACTIVE_PROFILES
+transfer.when_profiles_finish = ProfilesFinish.RUN_TO_RETURN_AND_CONTINUE
 transfer.continue_on_failure = False
 transfer.reset_inner_targeters = False
 # -
@@ -322,7 +320,7 @@ transfer.reset_inner_targeters = False
 # +
 import numpy as np
 
-from ansys.stk.core.stkobjects.astrogator import LAMBERT_DIRECTION_OF_MOTION_TYPE
+from ansys.stk.core.stkobjects.astrogator import LambertDirectionOfMotionType
 
 
 def lambert_solver(
@@ -356,15 +354,15 @@ def lambert_solver(
 
     if is_prograde:
         path = (
-            LAMBERT_DIRECTION_OF_MOTION_TYPE.LONG
+            LambertDirectionOfMotionType.LONG
             if h0_z < 0
-            else LAMBERT_DIRECTION_OF_MOTION_TYPE.SHORT
+            else LambertDirectionOfMotionType.SHORT
         )
     else:
         path = (
-            LAMBERT_DIRECTION_OF_MOTION_TYPE.SHORT
+            LambertDirectionOfMotionType.SHORT
             if h0_z < 0
-            else LAMBERT_DIRECTION_OF_MOTION_TYPE.LONG
+            else LambertDirectionOfMotionType.LONG
         )
     lambert.direction_of_motion = path
 
@@ -437,15 +435,15 @@ def as_datetime(date):
     date types in future computations.
 
     """
-    UTCG_FORMAT = "%d %b %Y %H:%M:%S.%f"
+    utcg_format_str = "%d %b %Y %H:%M:%S.%f"
     try:
-        return datetime.strptime(date.format("UTCG"), UTCG_FORMAT)
+        return datetime.strptime(date.format("UTCG"), utcg_format_str)
     except ValueError as LeapSecondsError:
         import warnings
 
         warnings.warn(f"Date {date.format('UTCG')} is a leap second.")
         adjusted_date = date.subtract("sec", 1)
-        return datetime.strptime(adjusted_date.format("UTCG"), UTCG_FORMAT)
+        return datetime.strptime(adjusted_date.format("UTCG"), utcg_format_str)
 
 
 # -

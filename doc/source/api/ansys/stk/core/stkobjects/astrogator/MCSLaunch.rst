@@ -38,17 +38,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSLaunch.central_body_name`
-              - Gets or sets the central body.
+              - Get or set the central body.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSLaunch.step_size`
-              - Gets or sets the time interval between calculated ephemeris output points. Uses Time Dimension.
+              - Get or set the time interval between calculated ephemeris output points. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSLaunch.pre_launch_time`
-              - Gets or sets the amount of time before the spacecraft's launch that it will be created in the scenario. The vehicle will remain at the launch position until beginning of the launch epoch. Uses Time Dimension.
+              - Get or set the amount of time before the spacecraft's launch that it will be created in the scenario. The vehicle will remain at the launch position until beginning of the launch epoch. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSLaunch.epoch`
-              - Gets or sets the date and time of the launch. Uses DateFormat Dimension.
+              - Get or set the date and time of the launch. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSLaunch.control_parameters_available`
-              - Returns whether or not the control parameters can be set.
+              - Return whether or not the control parameters can be set.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSLaunch.initial_acceleration`
-              - Gets or sets the initial acceleration, for the Quartic Motion Ascent Type. Uses Acceleration Dimension.
+              - Get or set the initial acceleration, for the Quartic Motion Ascent Type. Uses Acceleration Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSLaunch.spacecraft_parameters`
               - Satellite Properties - the spacecraft's physical properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSLaunch.fuel_tank`
@@ -56,11 +56,11 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSLaunch.display_system_type`
               - Get the launch coordinate type.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSLaunch.display_system`
-              - Gets the current Display System.
+              - Get the current Display System.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSLaunch.ascent_type`
-              - Gets or sets the order of the spline used to generate the motion along the ellipse.
+              - Get or set the order of the spline used to generate the motion along the ellipse.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSLaunch.time_of_flight`
-              - Gets or sets the time of flight (the time from launch to burnout). Uses Time Dimension.
+              - Get or set the time of flight (the time from launch to burnout). Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSLaunch.burnout_type`
               - Get the burnout type.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSLaunch.burnout`
@@ -91,37 +91,37 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSLaunch.central_body_name
     :type: str
 
-    Gets or sets the central body.
+    Get or set the central body.
 
 .. py:property:: step_size
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSLaunch.step_size
     :type: float
 
-    Gets or sets the time interval between calculated ephemeris output points. Uses Time Dimension.
+    Get or set the time interval between calculated ephemeris output points. Uses Time Dimension.
 
 .. py:property:: pre_launch_time
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSLaunch.pre_launch_time
     :type: float
 
-    Gets or sets the amount of time before the spacecraft's launch that it will be created in the scenario. The vehicle will remain at the launch position until beginning of the launch epoch. Uses Time Dimension.
+    Get or set the amount of time before the spacecraft's launch that it will be created in the scenario. The vehicle will remain at the launch position until beginning of the launch epoch. Uses Time Dimension.
 
 .. py:property:: epoch
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSLaunch.epoch
     :type: typing.Any
 
-    Gets or sets the date and time of the launch. Uses DateFormat Dimension.
+    Get or set the date and time of the launch. Uses DateFormat Dimension.
 
 .. py:property:: control_parameters_available
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSLaunch.control_parameters_available
     :type: bool
 
-    Returns whether or not the control parameters can be set.
+    Return whether or not the control parameters can be set.
 
 .. py:property:: initial_acceleration
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSLaunch.initial_acceleration
     :type: float
 
-    Gets or sets the initial acceleration, for the Quartic Motion Ascent Type. Uses Acceleration Dimension.
+    Get or set the initial acceleration, for the Quartic Motion Ascent Type. Uses Acceleration Dimension.
 
 .. py:property:: spacecraft_parameters
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSLaunch.spacecraft_parameters
@@ -137,7 +137,7 @@ Property detail
 
 .. py:property:: display_system_type
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSLaunch.display_system_type
-    :type: LAUNCH_DISPLAY_SYSTEM
+    :type: LaunchDisplaySystem
 
     Get the launch coordinate type.
 
@@ -145,23 +145,23 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSLaunch.display_system
     :type: IDisplaySystem
 
-    Gets the current Display System.
+    Get the current Display System.
 
 .. py:property:: ascent_type
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSLaunch.ascent_type
-    :type: ASCENT_TYPE
+    :type: AscentType
 
-    Gets or sets the order of the spline used to generate the motion along the ellipse.
+    Get or set the order of the spline used to generate the motion along the ellipse.
 
 .. py:property:: time_of_flight
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSLaunch.time_of_flight
     :type: float
 
-    Gets or sets the time of flight (the time from launch to burnout). Uses Time Dimension.
+    Get or set the time of flight (the time from launch to burnout). Uses Time Dimension.
 
 .. py:property:: burnout_type
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSLaunch.burnout_type
-    :type: BURNOUT_TYPE
+    :type: BurnoutType
 
     Get the burnout type.
 
@@ -207,40 +207,40 @@ Method detail
 
 
 
-.. py:method:: enable_control_parameter(self, param: CONTROL_LAUNCH) -> None
+.. py:method:: enable_control_parameter(self, param: ControlLaunch) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSLaunch.enable_control_parameter
 
     Enable the specified control parameter.
 
     :Parameters:
 
-    **param** : :obj:`~CONTROL_LAUNCH`
+    **param** : :obj:`~ControlLaunch`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: disable_control_parameter(self, param: CONTROL_LAUNCH) -> None
+.. py:method:: disable_control_parameter(self, param: ControlLaunch) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSLaunch.disable_control_parameter
 
     Disables the specified control parameter.
 
     :Parameters:
 
-    **param** : :obj:`~CONTROL_LAUNCH`
+    **param** : :obj:`~ControlLaunch`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_control_parameter_enabled(self, param: CONTROL_LAUNCH) -> bool
+.. py:method:: is_control_parameter_enabled(self, param: ControlLaunch) -> bool
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSLaunch.is_control_parameter_enabled
 
     Sees if the specified control is enabled.
 
     :Parameters:
 
-    **param** : :obj:`~CONTROL_LAUNCH`
+    **param** : :obj:`~ControlLaunch`
 
     :Returns:
 
@@ -252,14 +252,14 @@ Method detail
 
 
 
-.. py:method:: set_display_system_type(self, display_system_type: LAUNCH_DISPLAY_SYSTEM) -> None
+.. py:method:: set_display_system_type(self, display_system_type: LaunchDisplaySystem) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSLaunch.set_display_system_type
 
     Set the display system type.
 
     :Parameters:
 
-    **display_system_type** : :obj:`~LAUNCH_DISPLAY_SYSTEM`
+    **display_system_type** : :obj:`~LaunchDisplaySystem`
 
     :Returns:
 
@@ -271,14 +271,14 @@ Method detail
 
 
 
-.. py:method:: set_burnout_type(self, burnout_type: BURNOUT_TYPE) -> None
+.. py:method:: set_burnout_type(self, burnout_type: BurnoutType) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSLaunch.set_burnout_type
 
     Set the burnout type.
 
     :Parameters:
 
-    **burnout_type** : :obj:`~BURNOUT_TYPE`
+    **burnout_type** : :obj:`~BurnoutType`
 
     :Returns:
 

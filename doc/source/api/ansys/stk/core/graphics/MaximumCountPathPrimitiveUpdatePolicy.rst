@@ -21,9 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.MaximumCountPathPrimitiveUpdatePolicy.maximum_count`
-              - Gets or sets the maximum number of points in the path.
+              - Get or set the maximum number of points in the path.
             * - :py:attr:`~ansys.stk.core.graphics.MaximumCountPathPrimitiveUpdatePolicy.remove_location`
-              - Gets or sets where the positions on the path are removed from.
+              - Get or set where the positions on the path are removed from.
 
 
 
@@ -42,12 +42,12 @@ Property detail
     :canonical: ansys.stk.core.graphics.MaximumCountPathPrimitiveUpdatePolicy.maximum_count
     :type: int
 
-    Gets or sets the maximum number of points in the path.
+    Get or set the maximum number of points in the path.
 
 .. py:property:: remove_location
     :canonical: ansys.stk.core.graphics.MaximumCountPathPrimitiveUpdatePolicy.remove_location
-    :type: PATH_PRIMITIVE_REMOVE_LOCATION
+    :type: PathPrimitiveRemoveLocation
 
-    Gets or sets where the positions on the path are removed from.
+    Get or set where the positions on the path are removed from.
 
 

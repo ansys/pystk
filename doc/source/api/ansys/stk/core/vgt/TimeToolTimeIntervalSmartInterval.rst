@@ -85,7 +85,7 @@ Property detail
 
 .. py:property:: state
     :canonical: ansys.stk.core.vgt.TimeToolTimeIntervalSmartInterval.state
-    :type: SMART_INTERVAL_STATE
+    :type: SmartIntervalState
 
     A state of the smart interval.
 

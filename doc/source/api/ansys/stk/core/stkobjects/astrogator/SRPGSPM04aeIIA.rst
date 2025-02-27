@@ -21,11 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.SRPGSPM04aeIIA.atmos_altitude`
-              - Gets or sets the atmospheric altitude for eclipse. A simple model to account for some measure of attenuation that simply increases the shape of the Earth by the defined altitude height, often taken to be 23 km. Uses Distance Dimension.
+              - Get or set the atmospheric altitude for eclipse. A simple model to account for some measure of attenuation that simply increases the shape of the Earth by the defined altitude height, often taken to be 23 km. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.SRPGSPM04aeIIA.shadow_model`
-              - Gets or sets the shadow model type.
+              - Get or set the shadow model type.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.SRPGSPM04aeIIA.sun_position`
-              - Gets or sets the sun position computation.
+              - Get or set the sun position computation.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.SRPGSPM04aeIIA.eclipsing_bodies`
               - Other eclipsing bodies.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.SRPGSPM04aeIIA.include_boundary_mitigation`
@@ -33,7 +33,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.SRPGSPM04aeIIA.use_sun_central_body_file_values`
               - True if solar radius should come from the Sun.cb file.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.SRPGSPM04aeIIA.solar_radius`
-              - Gets or sets the solar radius value to use in eclipse calculations.  Uses Distance Dimension.
+              - Get or set the solar radius value to use in eclipse calculations.  Uses Distance Dimension.
 
 
 
@@ -52,19 +52,19 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.SRPGSPM04aeIIA.atmos_altitude
     :type: float
 
-    Gets or sets the atmospheric altitude for eclipse. A simple model to account for some measure of attenuation that simply increases the shape of the Earth by the defined altitude height, often taken to be 23 km. Uses Distance Dimension.
+    Get or set the atmospheric altitude for eclipse. A simple model to account for some measure of attenuation that simply increases the shape of the Earth by the defined altitude height, often taken to be 23 km. Uses Distance Dimension.
 
 .. py:property:: shadow_model
     :canonical: ansys.stk.core.stkobjects.astrogator.SRPGSPM04aeIIA.shadow_model
-    :type: SHADOW_MODEL
+    :type: ShadowModel
 
-    Gets or sets the shadow model type.
+    Get or set the shadow model type.
 
 .. py:property:: sun_position
     :canonical: ansys.stk.core.stkobjects.astrogator.SRPGSPM04aeIIA.sun_position
-    :type: SUN_POSITION
+    :type: SunPosition
 
-    Gets or sets the sun position computation.
+    Get or set the sun position computation.
 
 .. py:property:: eclipsing_bodies
     :canonical: ansys.stk.core.stkobjects.astrogator.SRPGSPM04aeIIA.eclipsing_bodies
@@ -88,6 +88,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.SRPGSPM04aeIIA.solar_radius
     :type: float
 
-    Gets or sets the solar radius value to use in eclipse calculations.  Uses Distance Dimension.
+    Get or set the solar radius value to use in eclipse calculations.  Uses Distance Dimension.
 
 

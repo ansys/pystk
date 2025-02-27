@@ -1,3 +1,25 @@
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
 from test_util import *
 from code_snippets.code_snippets_test_base import *
 
@@ -30,7 +52,7 @@ class SatelliteSnippets(CodeSnippetsTestBase):
     def setUp(self):
         SatelliteSnippets.m_Object = clr.CastAs(
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-                STK_OBJECT_TYPE.SATELLITE, SatelliteSnippets.m_DefaultName
+                STKObjectType.SATELLITE, SatelliteSnippets.m_DefaultName
             ),
             Satellite,
         )
@@ -41,7 +63,7 @@ class SatelliteSnippets(CodeSnippetsTestBase):
     # region TestTearDown
     def tearDown(self):
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(
-            STK_OBJECT_TYPE.SATELLITE, SatelliteSnippets.m_DefaultName
+            STKObjectType.SATELLITE, SatelliteSnippets.m_DefaultName
         )
         SatelliteSnippets.m_Object = None
 
@@ -50,14 +72,14 @@ class SatelliteSnippets(CodeSnippetsTestBase):
     # region CreateSatelliteOnCurrentScenarioCentralBody
     def test_CreateSatelliteOnCurrentScenarioCentralBody(self):
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(
-            STK_OBJECT_TYPE.SATELLITE, SatelliteSnippets.m_DefaultName
+            STKObjectType.SATELLITE, SatelliteSnippets.m_DefaultName
         )
         self.CreateSatelliteOnCurrentScenarioCentralBody(CodeSnippetsTestBase.m_Root)
 
     def CreateSatelliteOnCurrentScenarioCentralBody(self, root: "StkObjectRoot"):
         # Create the Satellite
         satellite: "Satellite" = clr.CastAs(
-            root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "MySatellite"), Satellite
+            root.current_scenario.children.new(STKObjectType.SATELLITE, "MySatellite"), Satellite
         )
 
     # endregion
@@ -89,7 +111,7 @@ class SatelliteSnippets(CodeSnippetsTestBase):
 
     def ConfigureSatelliteWithJ2PerturbationPropagator(self, satellite: "Satellite"):
         # Set propagator to J2 Perturbation
-        satellite.set_propagator_type(PROPAGATOR_TYPE.J2_PERTURBATION)
+        satellite.set_propagator_type(PropagatorType.J2_PERTURBATION)
 
         # Get the J2 Perturbation propagator
         propagator: "PropagatorJ2Perturbation" = clr.CastAs(satellite.propagator, PropagatorJ2Perturbation)
@@ -102,7 +124,7 @@ class SatelliteSnippets(CodeSnippetsTestBase):
 
     def ConfigureSatelliteWithGPSPropagator(self, satellite: "Satellite"):
         # Set propagator to GPS
-        satellite.set_propagator_type(PROPAGATOR_TYPE.GPS)
+        satellite.set_propagator_type(PropagatorType.GPS)
 
         # Get the GPS propagator
         propagator: "PropagatorGPS" = clr.CastAs(satellite.propagator, PropagatorGPS)
@@ -115,7 +137,7 @@ class SatelliteSnippets(CodeSnippetsTestBase):
 
     def ConfigureSatelliteWithStkExternalPropagator(self, satellite: "Satellite"):
         # Set propagator to STK External
-        satellite.set_propagator_type(PROPAGATOR_TYPE.STK_EXTERNAL)
+        satellite.set_propagator_type(PropagatorType.STK_EXTERNAL)
 
         # Get the STK External propagator
         propagator: "PropagatorStkExternal" = clr.CastAs(satellite.propagator, PropagatorStkExternal)
@@ -128,7 +150,7 @@ class SatelliteSnippets(CodeSnippetsTestBase):
 
     def ConfigureSatelliteWithSGP4Propagator(self, satellite: "Satellite"):
         # Set propagator to SGP4
-        satellite.set_propagator_type(PROPAGATOR_TYPE.SGP4)
+        satellite.set_propagator_type(PropagatorType.SGP4)
 
         # Get the SGP4 propagator
         propagator: "PropagatorSGP4" = clr.CastAs(satellite.propagator, PropagatorSGP4)
@@ -141,7 +163,7 @@ class SatelliteSnippets(CodeSnippetsTestBase):
 
     def ConfigureSatelliteWithSPICEPropagator(self, satellite: "Satellite"):
         # Set propagator to SPICE
-        satellite.set_propagator_type(PROPAGATOR_TYPE.SPICE)
+        satellite.set_propagator_type(PropagatorType.SPICE)
 
         # Get the SPICE propagator
         propagator: "PropagatorSPICE" = clr.CastAs(satellite.propagator, PropagatorSPICE)
@@ -154,7 +176,7 @@ class SatelliteSnippets(CodeSnippetsTestBase):
 
     def ConfigureSatelliteWithLOPPropagator(self, satellite: "Satellite"):
         # Set satellite propagator to LOP
-        satellite.set_propagator_type(PROPAGATOR_TYPE.LOP)
+        satellite.set_propagator_type(PropagatorType.LOP)
 
         # Get the LOP propagator
         propagator: "PropagatorLOP" = clr.CastAs(satellite.propagator, PropagatorLOP)
@@ -167,7 +189,7 @@ class SatelliteSnippets(CodeSnippetsTestBase):
 
     def ConfigureSatelliteWithHPOPPropagator(self, satellite: "Satellite"):
         # Set satellite propagator to HPOP
-        satellite.set_propagator_type(PROPAGATOR_TYPE.HPOP)
+        satellite.set_propagator_type(PropagatorType.HPOP)
 
         # Get the HPOP propagator
         propagator: "PropagatorHPOP" = clr.CastAs(satellite.propagator, PropagatorHPOP)
@@ -176,9 +198,9 @@ class SatelliteSnippets(CodeSnippetsTestBase):
 
     # region ConfigureTargetSlew
     def test_ConfigureTargetSlew(self):
-        SatelliteSnippets.m_Object.set_attitude_type(VEHICLE_ATTITUDE.STANDARD)
+        SatelliteSnippets.m_Object.set_attitude_type(VehicleAttitude.STANDARD)
         fac: "Facility" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "FacSlew"), Facility
+            TestBase.Application.current_scenario.children.new(STKObjectType.FACILITY, "FacSlew"), Facility
         )
         fac.position.assign_geodetic(0.0, 0.0, 0.0)
         self.ConfigureTargetSlew(SatelliteSnippets.m_Object)
@@ -187,13 +209,13 @@ class SatelliteSnippets(CodeSnippetsTestBase):
         orbitAttStandard: "AttitudeStandardOrbit" = clr.CastAs(satellite.attitude, AttitudeStandardOrbit)
         orbitAttStandard.pointing.use_target_pointing = True
         orbitAttStandard.pointing.targets.add("Facility/FacSlew")
-        orbitAttStandard.pointing.target_slew.set_slew_mode_type(VEHICLE_SLEW_MODE.CONSTRAINED_2ND_ORDER_SPLINE)
+        orbitAttStandard.pointing.target_slew.set_slew_mode_type(VehicleSlewMode.CONSTRAINED_2ND_ORDER_SPLINE)
 
         constrainedSlew: "VehicleAttitudeSlewConstrained" = clr.CastAs(
             orbitAttStandard.pointing.target_slew.slew_mode, VehicleAttitudeSlewConstrained
         )
         constrainedSlew.maximum_slew_time = 20.0  # sec
-        constrainedSlew.slew_timing_between_targets = VEHICLE_SLEW_TIMING_BETWEEN_TARGET_TYPE.OPTIMAL
+        constrainedSlew.slew_timing_between_targets = VehicleSlewTimingBetweenTargetType.OPTIMAL
 
         maxRate: "VehicleAttitudeMaximumSlewRate" = constrainedSlew.maximum_slew_rate
         maxRate.magnitude = 10.0  # deg/sec^2

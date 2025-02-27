@@ -1,3 +1,25 @@
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
 import pytest
 from test_util import *
 from app_provider import *
@@ -34,7 +56,7 @@ class EarlyBoundTests(TestBase):
     # region CompoundUnits
     def test_CompoundUnits(self):
         obj: "IStkObject" = TestBase.Application.current_scenario.children["Facility1"]
-        transmitter: "IStkObject" = obj.children.new(STK_OBJECT_TYPE.TRANSMITTER, "Transmitter1")
+        transmitter: "IStkObject" = obj.children.new(STKObjectType.TRANSMITTER, "Transmitter1")
 
         # Run the specific data provider that is known to return data using compound units.
         # The columns containing the compound units are "Data Rate" and "Saturated Flux Density".
@@ -198,7 +220,7 @@ class EarlyBoundTests(TestBase):
         dpPath: str = "Lighting Times//" + dpName
         info: "IDataProviderInfo" = obj.data_providers.get_data_provider_information_from_path(dpPath)
         Assert.assertEqual(dpName, info.name)
-        Assert.assertEqual(DATA_PROVIDER_TYPE.INTERVAL, info.type)
+        Assert.assertEqual(DataProviderType.INTERVAL, info.type)
         intvl: "DataProviderInterval" = obj.data_providers.get_data_provider_interval_from_path(dpPath)
         result: "DataProviderResult" = intvl.execute("1 Jun 2004 12:00:00.000", "1 Jun 2004 12:00:20.000")
         ElementNames = result.data_sets.element_names
@@ -254,7 +276,7 @@ class EarlyBoundTests(TestBase):
         dpPath: str = dpName
         info: "IDataProviderInfo" = obj.data_providers.get_data_provider_information_from_path(dpPath)
         Assert.assertEqual(dpName, info.name)
-        Assert.assertEqual(DATA_PROVIDER_TYPE.TIME_VARYING, info.type)
+        Assert.assertEqual(DataProviderType.TIME_VARYING, info.type)
         timevar: "DataProviderTimeVarying" = obj.data_providers.get_data_provider_time_varying_from_path(dpPath)
         timearray: "DataProviderResultTimeArrayElements" = timevar.execute_single_elements_array(times, elems)
         Assert.assertEqual(timearray.count, Array.Length(elems))  # elements
@@ -303,7 +325,7 @@ class EarlyBoundTests(TestBase):
         dpPath = "Terrain Info//" + dpName
         info = obj.data_providers.get_data_provider_information_from_path(dpPath)
         Assert.assertEqual(dpName, info.name)
-        Assert.assertEqual(DATA_PROVIDER_TYPE.FIXED, info.type)
+        Assert.assertEqual(DataProviderType.FIXED, info.type)
         dpfixed: "DataProviderFixed" = obj.data_providers.get_data_provider_fixed_from_path(dpPath)
         result = dpfixed.execute_elements(elems)
         group: "DataProviderGroup" = clr.CastAs(obj.data_providers["Terrain Info"], DataProviderGroup)
@@ -316,7 +338,7 @@ class EarlyBoundTests(TestBase):
         dpPath = "Lighting Times//" + dpName
         info = obj.data_providers.get_data_provider_information_from_path(dpPath)
         Assert.assertEqual(dpName, info.name)
-        Assert.assertEqual(DATA_PROVIDER_TYPE.INTERVAL, info.type)
+        Assert.assertEqual(DataProviderType.INTERVAL, info.type)
         intvl: "DataProviderInterval" = obj.data_providers.get_data_provider_interval_from_path(dpPath)
         result = intvl.execute("1 Jun 2004 12:00:00.000", "1 Jun 2004 12:00:20.000")
 
@@ -334,7 +356,7 @@ class EarlyBoundTests(TestBase):
         dpPath = "Lighting Times//" + dpName
         info = obj.data_providers.get_data_provider_information_from_path(dpPath)
         Assert.assertEqual(dpName, info.name)
-        Assert.assertEqual(DATA_PROVIDER_TYPE.INTERVAL, info.type)
+        Assert.assertEqual(DataProviderType.INTERVAL, info.type)
         intvl = obj.data_providers.get_data_provider_interval_from_path(dpPath)
         result = intvl.execute_elements("1 Jun 2004 12:00:00.000", "1 Jun 2004 12:00:20.000", elems)
 
@@ -1053,8 +1075,8 @@ class EarlyBoundTests(TestBase):
     def test_DPSchemaAntenna(self):
         scenObj: "IStkObject" = TestBase.Application.current_scenario
         scenChildren: "IStkObjectCollection" = scenObj.children
-        satObj: "IStkObject" = scenChildren.new(STK_OBJECT_TYPE.SATELLITE, "tempSat1")
-        antObj: "IStkObject" = satObj.children.new(STK_OBJECT_TYPE.ANTENNA, "tempAnt1")
+        satObj: "IStkObject" = scenChildren.new(STKObjectType.SATELLITE, "tempSat1")
+        antObj: "IStkObject" = satObj.children.new(STKObjectType.ANTENNA, "tempAnt1")
 
         schema: str = None
         schema = antObj.data_providers.get_schema()
@@ -1114,7 +1136,7 @@ class EarlyBoundTests(TestBase):
     def test_DPSchemaAreaTarget(self):
         scenObj: "IStkObject" = TestBase.Application.current_scenario
         scenChildren: "IStkObjectCollection" = scenObj.children
-        atObj: "IStkObject" = scenChildren.new(STK_OBJECT_TYPE.AREA_TARGET, "WardsAreaTarget1")
+        atObj: "IStkObject" = scenChildren.new(STKObjectType.AREA_TARGET, "WardsAreaTarget1")
 
         schema: str = None
         schema = atObj.data_providers.get_schema()
@@ -1189,7 +1211,7 @@ class EarlyBoundTests(TestBase):
     def test_DPSchemaChain(self):
         scenObj: "IStkObject" = TestBase.Application.current_scenario
         scenChildren: "IStkObjectCollection" = scenObj.children
-        obj: "IStkObject" = scenChildren.new(STK_OBJECT_TYPE.CHAIN, "chain1")
+        obj: "IStkObject" = scenChildren.new(STKObjectType.CHAIN, "chain1")
 
         schema: str = None
         schema = obj.data_providers.get_schema()
@@ -1232,7 +1254,7 @@ class EarlyBoundTests(TestBase):
     def test_DPSchemaCommSystem(self):
         scenObj: "IStkObject" = TestBase.Application.current_scenario
         scenChildren: "IStkObjectCollection" = scenObj.children
-        obj: "IStkObject" = scenChildren.new(STK_OBJECT_TYPE.COMM_SYSTEM, "CommSystem1")
+        obj: "IStkObject" = scenChildren.new(STKObjectType.COMM_SYSTEM, "CommSystem1")
 
         schema: str = None
         schema = obj.data_providers.get_schema()
@@ -1272,7 +1294,7 @@ class EarlyBoundTests(TestBase):
             '<Element Name="Pol. Rel. Angle" Type="0" Dim="AngleUnit"/>',
             '<Element Name="Atmos Loss" Type="0" Dim="RatioUnit"/>',
             '<DataPrv Name="Interferers" Desc="Interferer Information" PropBitMask="17">',
-            '<DataPrv Name="LinkInfo" Desc="Link Information" PropBitMask="770">',
+            '<DataPrv Name="LinkInfo" Desc="Link Information" PropBitMask="514">',
             '<Element Name="EIRP" Type="0" Dim="PowerUnit"/>',
             '<Element Name="Rcvd. Frequency" Type="0" Dim="FrequencyUnit"/>',
             '<Element Name="Tantenna" Type="0" Dim="Temperature"/>',
@@ -1331,7 +1353,7 @@ class EarlyBoundTests(TestBase):
     def test_DPSchemaCoverageDef(self):
         scenObj: "IStkObject" = TestBase.Application.current_scenario
         scenChildren: "IStkObjectCollection" = scenObj.children
-        obj: "IStkObject" = scenChildren.new(STK_OBJECT_TYPE.COVERAGE_DEFINITION, "covdef1")
+        obj: "IStkObject" = scenChildren.new(STKObjectType.COVERAGE_DEFINITION, "covdef1")
 
         schema: str = None
         schema = obj.data_providers.get_schema()
@@ -1441,8 +1463,8 @@ class EarlyBoundTests(TestBase):
     def test_DPSchemaFigureOfMerit(self):
         scenObj: "IStkObject" = TestBase.Application.current_scenario
         scenChildren: "IStkObjectCollection" = scenObj.children
-        cd: "IStkObject" = scenChildren.new(STK_OBJECT_TYPE.COVERAGE_DEFINITION, "cv1")
-        fom: "IStkObject" = cd.children.new(STK_OBJECT_TYPE.FIGURE_OF_MERIT, "fom1")
+        cd: "IStkObject" = scenChildren.new(STKObjectType.COVERAGE_DEFINITION, "cv1")
+        fom: "IStkObject" = cd.children.new(STKObjectType.FIGURE_OF_MERIT, "fom1")
 
         schema: str = None
         schema = fom.data_providers.get_schema()
@@ -1501,7 +1523,7 @@ class EarlyBoundTests(TestBase):
     def test_DPSchemaGrndVeh(self):
         scenObj: "IStkObject" = TestBase.Application.current_scenario
         scenChildren: "IStkObjectCollection" = scenObj.children
-        obj: "IStkObject" = scenChildren.new(STK_OBJECT_TYPE.GROUND_VEHICLE, "grndveh")
+        obj: "IStkObject" = scenChildren.new(STKObjectType.GROUND_VEHICLE, "grndveh")
 
         schema: str = None
         schema = obj.data_providers.get_schema()
@@ -1574,7 +1596,7 @@ class EarlyBoundTests(TestBase):
     def test_DPSchemaLnchVeh(self):
         scenObj: "IStkObject" = TestBase.Application.current_scenario
         scenChildren: "IStkObjectCollection" = scenObj.children
-        obj: "IStkObject" = scenChildren.new(STK_OBJECT_TYPE.LAUNCH_VEHICLE, "lnchveh")
+        obj: "IStkObject" = scenChildren.new(STKObjectType.LAUNCH_VEHICLE, "lnchveh")
 
         schema: str = None
         schema = obj.data_providers.get_schema()
@@ -1646,7 +1668,7 @@ class EarlyBoundTests(TestBase):
     def test_DPSchemaMissile(self):
         scenObj: "IStkObject" = TestBase.Application.current_scenario
         scenChildren: "IStkObjectCollection" = scenObj.children
-        obj: "IStkObject" = scenChildren.new(STK_OBJECT_TYPE.MISSILE, "mis")
+        obj: "IStkObject" = scenChildren.new(STKObjectType.MISSILE, "mis")
 
         schema: str = None
         schema = obj.data_providers.get_schema()
@@ -1718,7 +1740,7 @@ class EarlyBoundTests(TestBase):
     def test_DPSchemaPlanet(self):
         scenObj: "IStkObject" = TestBase.Application.current_scenario
         scenChildren: "IStkObjectCollection" = scenObj.children
-        obj: "IStkObject" = scenChildren.new(STK_OBJECT_TYPE.PLANET, "plnt")
+        obj: "IStkObject" = scenChildren.new(STKObjectType.PLANET, "plnt")
 
         schema: str = None
         schema = obj.data_providers.get_schema()
@@ -1774,8 +1796,8 @@ class EarlyBoundTests(TestBase):
     def test_DPSchemaRadar(self):
         scenObj: "IStkObject" = TestBase.Application.current_scenario
         scenChildren: "IStkObjectCollection" = scenObj.children
-        satObj: "IStkObject" = scenChildren.new(STK_OBJECT_TYPE.SATELLITE, "tempSat1")
-        radarObj: "IStkObject" = satObj.children.new(STK_OBJECT_TYPE.RADAR, "tempRadar1")
+        satObj: "IStkObject" = scenChildren.new(STKObjectType.SATELLITE, "tempSat1")
+        radarObj: "IStkObject" = satObj.children.new(STKObjectType.RADAR, "tempRadar1")
 
         schema: str = None
         schema = radarObj.data_providers.get_schema()
@@ -2081,7 +2103,7 @@ class EarlyBoundTests(TestBase):
     def test_DPSchemaStar(self):
         scenObj: "IStkObject" = TestBase.Application.current_scenario
         scenChildren: "IStkObjectCollection" = scenObj.children
-        obj: "IStkObject" = scenChildren.new(STK_OBJECT_TYPE.STAR, "star1")
+        obj: "IStkObject" = scenChildren.new(STKObjectType.STAR, "star1")
 
         schema: str = None
         schema = obj.data_providers.get_schema()
@@ -2129,7 +2151,7 @@ class EarlyBoundTests(TestBase):
         satObj: "IStkObject" = scenChildren["Satellite1"]
         tranObj: "IStkObject" = None
         try:
-            tranObj = satObj.children.new(STK_OBJECT_TYPE.TRANSMITTER, "Transmitter1")
+            tranObj = satObj.children.new(STKObjectType.TRANSMITTER, "Transmitter1")
 
             schema: str = None
             schema = tranObj.data_providers.get_schema()
@@ -2209,7 +2231,7 @@ class EarlyBoundTests(TestBase):
         while i < count:
             dp: "IDataProviderInfo" = o.data_providers[i]
             sName: str = dp.name
-            type: "DATA_PROVIDER_TYPE" = dp.type
+            type: "DataProviderType" = dp.type
 
             i += 1
 
@@ -3147,11 +3169,11 @@ class EarlyBoundTests(TestBase):
         oScenario: "IStkObject" = (IStkObject(TestBase.Application)).children["DataProvidersTests"]
         Assert.assertEqual((IStkObject(TestBase.Application)).children["DataProvidersTests"], oScenario)
 
-        oAreaTarget: "IStkObject" = oScenario.children.new(STK_OBJECT_TYPE.AREA_TARGET, "AreaTarget1")
+        oAreaTarget: "IStkObject" = oScenario.children.new(STKObjectType.AREA_TARGET, "AreaTarget1")
         Assert.assertEqual(oScenario.children["AreaTarget1"], oAreaTarget)
 
         oAT: "AreaTarget" = AreaTarget(oScenario.children["AreaTarget1"])
-        oAT.area_type = AREA_TYPE.ELLIPSE
+        oAT.area_type = AreaType.ELLIPSE
         ellipseData: "AreaTypeEllipse" = AreaTypeEllipse(oAT.area_type_data)
         ellipseData.semi_minor_axis = 150
         ellipseData.semi_major_axis = 300
@@ -3416,7 +3438,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("Date", dateDataPrv.elements[0].dimension_name)
 
         realDataPrv: "IDataProvider" = IDataProvider(oGroup.group[3])
-        Assert.assertEqual(DATA_PROVIDER_ELEMENT_TYPE.REAL, realDataPrv.elements[2].type)
+        Assert.assertEqual(DataProviderElementType.REAL, realDataPrv.elements[2].type)
         TestBase.logger.WriteLine("----- ELEMENTS TEST ----- END -----")
 
     # endregion
@@ -3497,13 +3519,13 @@ class EarlyBoundTests(TestBase):
         Assert.assertIsNotNone(oObjectCoverage)
         oObjectCoverage.assets.add("Constellation/gps_const")
 
-        oObjectCoverage.figure_of_merit.set_definition_type(FIGURE_OF_MERIT_DEFINITION_TYPE.DILUTION_OF_PRECISION)
+        oObjectCoverage.figure_of_merit.set_definition_type(FigureOfMeritDefinitionType.DILUTION_OF_PRECISION)
         dop: "IFigureOfMeritDefinitionDilutionOfPrecision" = clr.CastAs(
             oObjectCoverage.figure_of_merit.definition, IFigureOfMeritDefinitionDilutionOfPrecision
         )
-        dop.set_type(FIGURE_OF_MERIT_NAVIGATION_COMPUTE_TYPE.OVER_DETERMINED)
-        dop.set_compute_type(FIGURE_OF_MERIT_COMPUTE.MAXIMUM)
-        dop.set_method(FIGURE_OF_MERIT_METHOD.GDOP)
+        dop.set_type(FigureOfMeritNavigationComputeType.OVER_DETERMINED)
+        dop.set_compute_type(FigureOfMeritCompute.MAXIMUM)
+        dop.set_method(FigureOfMeritMethod.GDOP)
         dop.time_step = 600
         oObjectCoverage.compute()
 
@@ -3643,79 +3665,79 @@ class EarlyBoundTests(TestBase):
         scene: "Scenario" = Scenario(TestBase.Application.current_scenario)
         scene.set_time_period("1 Jul 2008 12:00:00.000", "2 Jul 2008 12:00:00.000")
         fac: "IStkObject" = None
-        fac = TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "Facility1")
+        fac = TestBase.Application.current_scenario.children.new(STKObjectType.FACILITY, "Facility1")
         self.RunAllDataProviders(fac)
         sat: "Satellite" = Satellite(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "Satellite1")
+            TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "Satellite1")
         )
         twoBody: "PropagatorTwoBody" = PropagatorTwoBody(sat.propagator)
         twoBody.ephemeris_interval.set_explicit_interval("1 Jul 2008 12:00:00.000", "2 Jul 2008 12:00:00.000")
         twoBody.propagate()
         self.RunAllDataProviders(IStkObject(sat))
-        self.RunAllDataProviders(TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.ADVCAT, "AdvCat1"))
+        self.RunAllDataProviders(TestBase.Application.current_scenario.children.new(STKObjectType.ADVCAT, "AdvCat1"))
         ac: "Aircraft" = Aircraft(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.AIRCRAFT, "Aircraft1")
+            TestBase.Application.current_scenario.children.new(STKObjectType.AIRCRAFT, "Aircraft1")
         )
         self.GenerateGreatArcVeh(PropagatorGreatArc(ac.route))
         self.RunAllDataProviders(IStkObject(ac))
-        self.RunAllDataProviders((IStkObject(sat)).children.new(STK_OBJECT_TYPE.ANTENNA, "Antenna1"))
+        self.RunAllDataProviders((IStkObject(sat)).children.new(STKObjectType.ANTENNA, "Antenna1"))
         at: "AreaTarget" = AreaTarget(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.AREA_TARGET, "AreaTarget1")
+            TestBase.Application.current_scenario.children.new(STKObjectType.AREA_TARGET, "AreaTarget1")
         )
-        at.area_type = AREA_TYPE.ELLIPSE
+        at.area_type = AreaType.ELLIPSE
         self.RunAllDataProviders(IStkObject(at))
-        attCov: "IStkObject" = (IStkObject(sat)).children.new(STK_OBJECT_TYPE.ATTITUDE_COVERAGE, "AttitudeCoverage1")
+        attCov: "IStkObject" = (IStkObject(sat)).children.new(STKObjectType.ATTITUDE_COVERAGE, "AttitudeCoverage1")
         self.RunAllDataProviders(attCov)
-        self.RunAllDataProviders(attCov.children.new(STK_OBJECT_TYPE.ATTITUDE_FIGURE_OF_MERIT, "AttitudeFOM1"))
-        chain: "Chain" = Chain(TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.CHAIN, "Chain1"))
+        self.RunAllDataProviders(attCov.children.new(STKObjectType.ATTITUDE_FIGURE_OF_MERIT, "AttitudeFOM1"))
+        chain: "Chain" = Chain(TestBase.Application.current_scenario.children.new(STKObjectType.CHAIN, "Chain1"))
         chain.objects.add_object(IStkObject(sat))
         chain.objects.add_object(IStkObject(ac))
         self.RunAllDataProviders(IStkObject(chain))
         constellation: "Constellation" = Constellation(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.CONSTELLATION, "Constellation1")
+            TestBase.Application.current_scenario.children.new(STKObjectType.CONSTELLATION, "Constellation1")
         )
         constellation.objects.add_object(IStkObject(sat))
         self.RunAllDataProviders(IStkObject(constellation))
         covDef: "IStkObject" = TestBase.Application.current_scenario.children.new(
-            STK_OBJECT_TYPE.COVERAGE_DEFINITION, "CovDef1"
+            STKObjectType.COVERAGE_DEFINITION, "CovDef1"
         )
         self.RunAllDataProviders(covDef)
-        self.RunAllDataProviders(covDef.children.new(STK_OBJECT_TYPE.FIGURE_OF_MERIT, "FOM1"))
+        self.RunAllDataProviders(covDef.children.new(STKObjectType.FIGURE_OF_MERIT, "FOM1"))
         gv: "GroundVehicle" = GroundVehicle(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.GROUND_VEHICLE, "GroundVehicle1")
+            TestBase.Application.current_scenario.children.new(STKObjectType.GROUND_VEHICLE, "GroundVehicle1")
         )
         self.GenerateGreatArcVeh(PropagatorGreatArc(gv.route))
         self.RunAllDataProviders(IStkObject(gv))
         lv: "LaunchVehicle" = LaunchVehicle(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.LAUNCH_VEHICLE, "LaunchVehicle1")
+            TestBase.Application.current_scenario.children.new(STKObjectType.LAUNCH_VEHICLE, "LaunchVehicle1")
         )
         ascent: "PropagatorSimpleAscent" = PropagatorSimpleAscent(lv.trajectory)
         ascent.propagate()
         self.RunAllDataProviders(IStkObject(lv))
         lt: "LineTarget" = LineTarget(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.LINE_TARGET, "LineTarget1")
+            TestBase.Application.current_scenario.children.new(STKObjectType.LINE_TARGET, "LineTarget1")
         )
         lt.points.add(0, 0)
         lt.points.add(10, 10)
         lt.points.anchor_point = 0
         self.RunAllDataProviders(IStkObject(lt))
         missile: "Missile" = Missile(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.MISSILE, "Missile1")
+            TestBase.Application.current_scenario.children.new(STKObjectType.MISSILE, "Missile1")
         )
         ballistic: "PropagatorBallistic" = PropagatorBallistic(missile.trajectory)
         ballistic.propagate()
         self.RunAllDataProviders(IStkObject(missile))
-        self.RunAllDataProviders(TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.PLANET, "Planet1"))
-        self.RunAllDataProviders((IStkObject(sat)).children.new(STK_OBJECT_TYPE.RADAR, "Radar1"))
-        self.RunAllDataProviders((IStkObject(sat)).children.new(STK_OBJECT_TYPE.RECEIVER, "Receiver1"))
-        self.RunAllDataProviders((IStkObject(sat)).children.new(STK_OBJECT_TYPE.SENSOR, "Sensor1"))
-        ship: "Ship" = Ship(TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SHIP, "Ship1"))
+        self.RunAllDataProviders(TestBase.Application.current_scenario.children.new(STKObjectType.PLANET, "Planet1"))
+        self.RunAllDataProviders((IStkObject(sat)).children.new(STKObjectType.RADAR, "Radar1"))
+        self.RunAllDataProviders((IStkObject(sat)).children.new(STKObjectType.RECEIVER, "Receiver1"))
+        self.RunAllDataProviders((IStkObject(sat)).children.new(STKObjectType.SENSOR, "Sensor1"))
+        ship: "Ship" = Ship(TestBase.Application.current_scenario.children.new(STKObjectType.SHIP, "Ship1"))
         self.GenerateGreatArcVeh(PropagatorGreatArc(ship.route))
         self.RunAllDataProviders(IStkObject(ship))
-        self.RunAllDataProviders(TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.STAR, "Star1"))
-        self.RunAllDataProviders(TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.TARGET, "Target1"))
-        self.RunAllDataProviders((IStkObject(sat)).children.new(STK_OBJECT_TYPE.TRANSMITTER, "Transmitter1"))
-        self.RunAllDataProviders(fac.children.new(STK_OBJECT_TYPE.TRANSMITTER, "Transmitter1"))
+        self.RunAllDataProviders(TestBase.Application.current_scenario.children.new(STKObjectType.STAR, "Star1"))
+        self.RunAllDataProviders(TestBase.Application.current_scenario.children.new(STKObjectType.TARGET, "Target1"))
+        self.RunAllDataProviders((IStkObject(sat)).children.new(STKObjectType.TRANSMITTER, "Transmitter1"))
+        self.RunAllDataProviders(fac.children.new(STKObjectType.TRANSMITTER, "Transmitter1"))
         access: "Access" = (IStkObject(sat)).get_access("Facility/Facility1")
         access.compute_access()
         self.ExecDataProviders(access.data_providers, "")
@@ -3727,7 +3749,7 @@ class EarlyBoundTests(TestBase):
         TestBase.LoadTestScenario(Path.Combine("DataProvidersTests", "DataProvidersTests.sc"))
 
     def GenerateGreatArcVeh(self, ga: "PropagatorGreatArc"):
-        ga.method = VEHICLE_WAYPOINT_COMPUTATION_METHOD.DETERMINE_VELOCITY_FROM_TIME
+        ga.method = VehicleWaypointComputationMethod.DETERMINE_VELOCITY_FROM_TIME
         elem: "VehicleWaypointsElement" = ga.waypoints.add()
         elem.latitude = 0
         elem.longitude = 0
@@ -4000,7 +4022,7 @@ class EarlyBoundTests(TestBase):
     def ExecDataPrv(self, dp: "IDataProviderInfo", path: str):
         drResult: "DataProviderResult" = None
         dProvider: "IDataProvider" = IDataProvider(dp)
-        if dp.type == DATA_PROVIDER_TYPE.FIXED:
+        if dp.type == DataProviderType.FIXED:
             dpFixed: "DataProviderFixed" = DataProviderFixed(dp)
             if dProvider.is_valid:
                 drResult = dpFixed.execute()
@@ -4009,7 +4031,7 @@ class EarlyBoundTests(TestBase):
                 with pytest.raises(Exception):
                     dpFixed.execute()
 
-        elif dp.type == DATA_PROVIDER_TYPE.INTERVAL:
+        elif dp.type == DataProviderType.INTERVAL:
             dpIntvl: "DataProviderInterval" = DataProviderInterval(dp)
             if dProvider.is_valid:
                 drResult = dpIntvl.execute("1 Jul 2008 12:00:00.000", "1 Jul 2008 14:00:00.000")
@@ -4018,7 +4040,7 @@ class EarlyBoundTests(TestBase):
                 with pytest.raises(Exception):
                     dpIntvl.execute("1 Jul 2008 12:00:00.000", "1 Jul 2008 14:00:00.000")
 
-        elif dp.type == DATA_PROVIDER_TYPE.TIME_VARYING:
+        elif dp.type == DataProviderType.TIME_VARYING:
             dpTimeVar: "DataProviderTimeVarying" = DataProviderTimeVarying(dp)
             if dProvider.is_valid:
                 drResult = dpTimeVar.execute("1 Jul 2008 12:00:00.000", "1 Jul 2008 14:00:00.000", 60)
@@ -4088,15 +4110,15 @@ class EarlyBoundTests(TestBase):
 
         startTime: typing.Any = (Scenario(TestBase.Application.current_scenario)).start_time
         stopTime: typing.Any = (Scenario(TestBase.Application.current_scenario)).stop_time
-        if dpi.type == DATA_PROVIDER_TYPE.TIME_VARYING:
+        if dpi.type == DataProviderType.TIME_VARYING:
             tv: "DataProviderTimeVarying" = DataProviderTimeVarying(dp)
             result: "DataProviderResult" = tv.execute(startTime, stopTime, 60)
             del result
-        elif dpi.type == DATA_PROVIDER_TYPE.FIXED:
+        elif dpi.type == DataProviderType.FIXED:
             fixed: "DataProviderFixed" = DataProviderFixed(dp)
             result: "DataProviderResult" = fixed.execute()
             del result
-        elif dpi.type == DATA_PROVIDER_TYPE.INTERVAL:
+        elif dpi.type == DataProviderType.INTERVAL:
             interval: "DataProviderInterval" = DataProviderInterval(dp)
             result: "DataProviderResult" = interval.execute(startTime, stopTime)
             del result
@@ -4154,14 +4176,14 @@ class EarlyBoundTests(TestBase):
 
     @parameterized.expand(
         [
-            ("Lighting Times/Umbra", "Duration", STATISTIC_TYPE.MEAN, 1736.502),
-            ("Lighting Times/Umbra", "Duration", STATISTIC_TYPE.STANDARD_DEVIATION, 777.829),
-            ("Lighting Times/Umbra", "Duration", STATISTIC_TYPE.TOTAL, 5209.5),
-            ("Lighting Times/Umbra", "Duration", STATISTIC_TYPE.PERCENT_INTERVAL, 36.177),
-            ("Lighting Times/Umbra", "Duration", STATISTIC_TYPE.PERCENT_NOT_INTERVAL, 63.823),
+            ("Lighting Times/Umbra", "Duration", StatisticType.MEAN, 1736.502),
+            ("Lighting Times/Umbra", "Duration", StatisticType.STANDARD_DEVIATION, 777.829),
+            ("Lighting Times/Umbra", "Duration", StatisticType.TOTAL, 5209.5),
+            ("Lighting Times/Umbra", "Duration", StatisticType.PERCENT_INTERVAL, 36.177),
+            ("Lighting Times/Umbra", "Duration", StatisticType.PERCENT_NOT_INTERVAL, 63.823),
         ]
     )
-    def test_TestComputeStatistic(self, dataPrv: str, elemName: str, stat: "STATISTIC_TYPE", val: float):
+    def test_TestComputeStatistic(self, dataPrv: str, elemName: str, stat: "StatisticType", val: float):
         oSa: "IStkObject" = TestBase.Application.current_scenario.children["Satellite1"]
         res: "DataProviderResult" = oSa.data_providers.get_data_provider_interval_from_path(dataPrv).execute(
             "1 Jun 2004 12:00:00.00", "1 Jun 2004 16:00:00.00"
@@ -4174,14 +4196,14 @@ class EarlyBoundTests(TestBase):
 
     @parameterized.expand(
         [
-            ("LLR State/Fixed", "Lat", TIME_VARYING_EXTREMUM.MAXIMUM, 28.502, "1 Jun 2004 12:22:37.061"),
-            ("LLR State/Fixed", "Lat", TIME_VARYING_EXTREMUM.MAXIMUM_OF_SAMPLES, 28.359, "1 Jun 2004 12:24:00.000"),
-            ("LLR State/Fixed", "Lat", TIME_VARYING_EXTREMUM.MINIMUM, -24.055, "1 Jun 2004 13:00:00.000"),
-            ("LLR State/Fixed", "Lat", TIME_VARYING_EXTREMUM.MINIMUM_OF_SAMPLES, -24.055, "1 Jun 2004 13:00:00.000"),
+            ("LLR State/Fixed", "Lat", TimeVaryingExtremum.MAXIMUM, 28.502, "1 Jun 2004 12:22:37.061"),
+            ("LLR State/Fixed", "Lat", TimeVaryingExtremum.MAXIMUM_OF_SAMPLES, 28.359, "1 Jun 2004 12:24:00.000"),
+            ("LLR State/Fixed", "Lat", TimeVaryingExtremum.MINIMUM, -24.055, "1 Jun 2004 13:00:00.000"),
+            ("LLR State/Fixed", "Lat", TimeVaryingExtremum.MINIMUM_OF_SAMPLES, -24.055, "1 Jun 2004 13:00:00.000"),
         ]
     )
     def test_TestComputeTimeVarExtremum(
-        self, dataPrv: str, elemName: str, stat: "TIME_VARYING_EXTREMUM", val: float, time: str
+        self, dataPrv: str, elemName: str, stat: "TimeVaryingExtremum", val: float, time: str
     ):
         oSa: "IStkObject" = TestBase.Application.current_scenario.children["Satellite1"]
         res: "DataProviderResult" = oSa.data_providers.get_data_provider_time_varying_from_path(dataPrv).execute(
@@ -4198,14 +4220,14 @@ class EarlyBoundTests(TestBase):
 
     @parameterized.expand(
         [
-            ("Shadow LLA/Fixed", "Lat", STATISTIC_TYPE.MEAN),
-            ("Shadow LLA/Fixed", "Lat", STATISTIC_TYPE.STANDARD_DEVIATION),
-            ("Shadow LLA/Fixed", "Lat", STATISTIC_TYPE.TOTAL),
-            ("Shadow LLA/Fixed", "Lat", STATISTIC_TYPE.PERCENT_INTERVAL),
-            ("Shadow LLA/Fixed", "Lat", STATISTIC_TYPE.PERCENT_NOT_INTERVAL),
+            ("Shadow LLA/Fixed", "Lat", StatisticType.MEAN),
+            ("Shadow LLA/Fixed", "Lat", StatisticType.STANDARD_DEVIATION),
+            ("Shadow LLA/Fixed", "Lat", StatisticType.TOTAL),
+            ("Shadow LLA/Fixed", "Lat", StatisticType.PERCENT_INTERVAL),
+            ("Shadow LLA/Fixed", "Lat", StatisticType.PERCENT_NOT_INTERVAL),
         ]
     )
-    def test_TestIsStatisticAvailableFalse(self, dataPrv: str, elemName: str, stat: "STATISTIC_TYPE"):
+    def test_TestIsStatisticAvailableFalse(self, dataPrv: str, elemName: str, stat: "StatisticType"):
         oSa: "IStkObject" = TestBase.Application.current_scenario.children["Satellite1"]
         res: "DataProviderResult" = oSa.data_providers.get_data_provider_time_varying_from_path(dataPrv).execute(
             "1 Jun 2004 12:00:00.00", "1 Jun 2004 13:00:00.00", 240.0
@@ -4214,13 +4236,13 @@ class EarlyBoundTests(TestBase):
 
     @parameterized.expand(
         [
-            ("Shadow LLA/Fixed", "Lat", TIME_VARYING_EXTREMUM.MAXIMUM),
-            ("Shadow LLA/Fixed", "Lat", TIME_VARYING_EXTREMUM.MAXIMUM_OF_SAMPLES),
-            ("Shadow LLA/Fixed", "Lat", TIME_VARYING_EXTREMUM.MINIMUM),
-            ("Shadow LLA/Fixed", "Lat", TIME_VARYING_EXTREMUM.MINIMUM_OF_SAMPLES),
+            ("Shadow LLA/Fixed", "Lat", TimeVaryingExtremum.MAXIMUM),
+            ("Shadow LLA/Fixed", "Lat", TimeVaryingExtremum.MAXIMUM_OF_SAMPLES),
+            ("Shadow LLA/Fixed", "Lat", TimeVaryingExtremum.MINIMUM),
+            ("Shadow LLA/Fixed", "Lat", TimeVaryingExtremum.MINIMUM_OF_SAMPLES),
         ]
     )
-    def test_TestIsTimeVarExtremumAvailableFalse(self, dataPrv: str, elemName: str, stat: "TIME_VARYING_EXTREMUM"):
+    def test_TestIsTimeVarExtremumAvailableFalse(self, dataPrv: str, elemName: str, stat: "TimeVaryingExtremum"):
         oSa: "IStkObject" = TestBase.Application.current_scenario.children["Satellite1"]
         res: "DataProviderResult" = oSa.data_providers.get_data_provider_time_varying_from_path(dataPrv).execute(
             "1 Jun 2004 12:00:00.00", "1 Jun 2004 13:00:00.00", 240.0
@@ -4261,7 +4283,7 @@ class EarlyBoundTests(TestBase):
         expectedTimes = ["1 Jun 2004 16:49:45.864", "1 Jun 2004 18:24:55.776", "1 Jun 2004 20:00:05.225"]
 
         oSa: "IStkObject" = TestBase.Application.current_scenario.children["Satellite1"]
-        oFac: "IStkObject" = TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.FACILITY, "Facility2")
+        oFac: "IStkObject" = TestBase.Application.current_scenario.children.new(STKObjectType.FACILITY, "Facility2")
         acc: "Access" = oSa.get_access_to_object(oFac)
         acc.compute_access()
         res: "DataProviderResult" = acc.data_providers.get_data_provider_time_varying_from_path(
@@ -4273,7 +4295,7 @@ class EarlyBoundTests(TestBase):
             statRes: "DataProviderResultTimeVaryingExtremumResult" = (
                 res.intervals[i]
                 .data_sets.get_data_set_by_name("Elevation")
-                .statistics.compute_time_varying_extremum(TIME_VARYING_EXTREMUM.MINIMUM)
+                .statistics.compute_time_varying_extremum(TimeVaryingExtremum.MINIMUM)
             )
             Assert.assertAlmostEqual(float(expectedValues[i]), statRes.value, delta=0.001)
             Assert.assertEqual(expectedTimes[i], str(statRes.time)[0 : (0 + len(str(expectedTimes[i])))])
@@ -4291,7 +4313,7 @@ class EarlyBoundTests(TestBase):
 
         with pytest.raises(Exception, match=RegexSubstringMatch("Time Varying Extremum not available for element")):
             res.data_sets.get_data_set_by_name("UTM Easting").statistics.compute_time_varying_extremum(
-                TIME_VARYING_EXTREMUM.MINIMUM
+                TimeVaryingExtremum.MINIMUM
             )
 
     def test_TestFailComputeStatistic(self):
@@ -4300,18 +4322,18 @@ class EarlyBoundTests(TestBase):
             "Shadow LLA/Fixed"
         ).execute("1 Jun 2004 12:00:00.00", "1 Jun 2004 13:00:00.00", 240.0)
         with pytest.raises(Exception, match=RegexSubstringMatch("Statistic not available for element")):
-            res.data_sets.get_data_set_by_name("Lat").statistics.compute_statistic(STATISTIC_TYPE.PERCENT_INTERVAL)
+            res.data_sets.get_data_set_by_name("Lat").statistics.compute_statistic(StatisticType.PERCENT_INTERVAL)
 
     @parameterized.expand(
         [
-            ("Shadow LLA/Fixed", "Lat", STATISTIC_TYPE.MEAN),
-            ("Shadow LLA/Fixed", "Lat", STATISTIC_TYPE.STANDARD_DEVIATION),
-            ("Shadow LLA/Fixed", "Lat", STATISTIC_TYPE.TOTAL),
-            ("Shadow LLA/Fixed", "Lat", STATISTIC_TYPE.PERCENT_INTERVAL),
-            ("Shadow LLA/Fixed", "Lat", STATISTIC_TYPE.PERCENT_NOT_INTERVAL),
+            ("Shadow LLA/Fixed", "Lat", StatisticType.MEAN),
+            ("Shadow LLA/Fixed", "Lat", StatisticType.STANDARD_DEVIATION),
+            ("Shadow LLA/Fixed", "Lat", StatisticType.TOTAL),
+            ("Shadow LLA/Fixed", "Lat", StatisticType.PERCENT_INTERVAL),
+            ("Shadow LLA/Fixed", "Lat", StatisticType.PERCENT_NOT_INTERVAL),
         ]
     )
-    def test_TestDPIsStatisticAvailableFalse(self, dataPrv: str, elemName: str, stat: "STATISTIC_TYPE"):
+    def test_TestDPIsStatisticAvailableFalse(self, dataPrv: str, elemName: str, stat: "StatisticType"):
         oSa: "IStkObject" = TestBase.Application.current_scenario.children["Satellite1"]
         dp: "IDataProvider" = clr.CastAs(
             oSa.data_providers.get_data_provider_information_from_path(dataPrv), IDataProvider
@@ -4320,13 +4342,13 @@ class EarlyBoundTests(TestBase):
 
     @parameterized.expand(
         [
-            ("Shadow LLA/Fixed", "Lat", TIME_VARYING_EXTREMUM.MAXIMUM),
-            ("Shadow LLA/Fixed", "Lat", TIME_VARYING_EXTREMUM.MAXIMUM_OF_SAMPLES),
-            ("Shadow LLA/Fixed", "Lat", TIME_VARYING_EXTREMUM.MINIMUM),
-            ("Shadow LLA/Fixed", "Lat", TIME_VARYING_EXTREMUM.MINIMUM_OF_SAMPLES),
+            ("Shadow LLA/Fixed", "Lat", TimeVaryingExtremum.MAXIMUM),
+            ("Shadow LLA/Fixed", "Lat", TimeVaryingExtremum.MAXIMUM_OF_SAMPLES),
+            ("Shadow LLA/Fixed", "Lat", TimeVaryingExtremum.MINIMUM),
+            ("Shadow LLA/Fixed", "Lat", TimeVaryingExtremum.MINIMUM_OF_SAMPLES),
         ]
     )
-    def test_TestDPIsTimeVarExtremumAvailableFalse(self, dataPrv: str, elemName: str, stat: "TIME_VARYING_EXTREMUM"):
+    def test_TestDPIsTimeVarExtremumAvailableFalse(self, dataPrv: str, elemName: str, stat: "TimeVaryingExtremum"):
         oSa: "IStkObject" = TestBase.Application.current_scenario.children["Satellite1"]
         dp: "IDataProvider" = clr.CastAs(
             oSa.data_providers.get_data_provider_information_from_path(dataPrv), IDataProvider
@@ -4335,14 +4357,14 @@ class EarlyBoundTests(TestBase):
 
     @parameterized.expand(
         [
-            ("Lighting Times/Umbra", "Duration", STATISTIC_TYPE.MEAN),
-            ("Lighting Times/Umbra", "Duration", STATISTIC_TYPE.STANDARD_DEVIATION),
-            ("Lighting Times/Umbra", "Duration", STATISTIC_TYPE.TOTAL),
-            ("Lighting Times/Umbra", "Duration", STATISTIC_TYPE.PERCENT_INTERVAL),
-            ("Lighting Times/Umbra", "Duration", STATISTIC_TYPE.PERCENT_NOT_INTERVAL),
+            ("Lighting Times/Umbra", "Duration", StatisticType.MEAN),
+            ("Lighting Times/Umbra", "Duration", StatisticType.STANDARD_DEVIATION),
+            ("Lighting Times/Umbra", "Duration", StatisticType.TOTAL),
+            ("Lighting Times/Umbra", "Duration", StatisticType.PERCENT_INTERVAL),
+            ("Lighting Times/Umbra", "Duration", StatisticType.PERCENT_NOT_INTERVAL),
         ]
     )
-    def test_TestDPIsStatisticAvailableTrue(self, dataPrv: str, elemName: str, stat: "STATISTIC_TYPE"):
+    def test_TestDPIsStatisticAvailableTrue(self, dataPrv: str, elemName: str, stat: "StatisticType"):
         oSa: "IStkObject" = TestBase.Application.current_scenario.children["Satellite1"]
         dp: "IDataProvider" = clr.CastAs(
             oSa.data_providers.get_data_provider_information_from_path(dataPrv), IDataProvider
@@ -4351,13 +4373,13 @@ class EarlyBoundTests(TestBase):
 
     @parameterized.expand(
         [
-            ("LLR State/Fixed", "Lat", TIME_VARYING_EXTREMUM.MAXIMUM),
-            ("LLR State/Fixed", "Lat", TIME_VARYING_EXTREMUM.MAXIMUM_OF_SAMPLES),
-            ("LLR State/Fixed", "Lat", TIME_VARYING_EXTREMUM.MINIMUM),
-            ("LLR State/Fixed", "Lat", TIME_VARYING_EXTREMUM.MINIMUM_OF_SAMPLES),
+            ("LLR State/Fixed", "Lat", TimeVaryingExtremum.MAXIMUM),
+            ("LLR State/Fixed", "Lat", TimeVaryingExtremum.MAXIMUM_OF_SAMPLES),
+            ("LLR State/Fixed", "Lat", TimeVaryingExtremum.MINIMUM),
+            ("LLR State/Fixed", "Lat", TimeVaryingExtremum.MINIMUM_OF_SAMPLES),
         ]
     )
-    def test_TestDPIsTimeVarExtremumAvailableTrue(self, dataPrv: str, elemName: str, stat: "TIME_VARYING_EXTREMUM"):
+    def test_TestDPIsTimeVarExtremumAvailableTrue(self, dataPrv: str, elemName: str, stat: "TimeVaryingExtremum"):
         oSa: "IStkObject" = TestBase.Application.current_scenario.children["Satellite1"]
         dp: "IDataProvider" = clr.CastAs(
             oSa.data_providers.get_data_provider_information_from_path(dataPrv), IDataProvider

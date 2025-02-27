@@ -21,9 +21,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleInitialState.representation`
               - Representation.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleInitialState.propagation_frame`
-              - This property is deprecated. Use Two-body, J2 and J4 propagators to configure propagation frame. The propagation frame.
+              - Do not use this property, as it is deprecated. Use Two-body, J2 and J4 propagators to configure propagation frame. The propagation frame.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleInitialState.supported_propagation_frames`
-              - This property is deprecated. Use Two-body, J2 and J4 propagators to get a list of supported propagation frames. Returns supported propagation frames.
+              - Do not use this property, as it is deprecated. Use Two-body, J2 and J4 propagators to get a list of supported propagation frames. Returns supported propagation frames.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleInitialState.orbit_epoch`
               - Get the smart epoch component to configure the orbit state epoch.
 
@@ -48,15 +48,15 @@ Property detail
 
 .. py:property:: propagation_frame
     :canonical: ansys.stk.core.stkobjects.VehicleInitialState.propagation_frame
-    :type: VEHICLE_PROPAGATION_FRAME
+    :type: VehiclePropagationFrame
 
-    This property is deprecated. Use Two-body, J2 and J4 propagators to configure propagation frame. The propagation frame.
+    Do not use this property, as it is deprecated. Use Two-body, J2 and J4 propagators to configure propagation frame. The propagation frame.
 
 .. py:property:: supported_propagation_frames
     :canonical: ansys.stk.core.stkobjects.VehicleInitialState.supported_propagation_frames
     :type: list
 
-    This property is deprecated. Use Two-body, J2 and J4 propagators to get a list of supported propagation frames. Returns supported propagation frames.
+    Do not use this property, as it is deprecated. Use Two-body, J2 and J4 propagators to get a list of supported propagation frames. Returns supported propagation frames.
 
 .. py:property:: orbit_epoch
     :canonical: ansys.stk.core.stkobjects.VehicleInitialState.orbit_epoch

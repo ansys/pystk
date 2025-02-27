@@ -36,9 +36,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.SequenceFilter.continue_on_failure`
-              - Gets or sets whether to continue applying filters in the sequence regardless of individual filter failures. When set to true, subsequent filters will still be applied to the source raster even if one or more filters in the sequence cannot be applied.
+              - Get or set whether to continue applying filters in the sequence regardless of individual filter failures. When set to true, subsequent filters will still be applied to the source raster even if one or more filters in the sequence cannot be applied.
             * - :py:attr:`~ansys.stk.core.graphics.SequenceFilter.count`
-              - Gets the number of filters in the collection.
+              - Get the number of filters in the collection.
 
 
 
@@ -57,13 +57,13 @@ Property detail
     :canonical: ansys.stk.core.graphics.SequenceFilter.continue_on_failure
     :type: bool
 
-    Gets or sets whether to continue applying filters in the sequence regardless of individual filter failures. When set to true, subsequent filters will still be applied to the source raster even if one or more filters in the sequence cannot be applied.
+    Get or set whether to continue applying filters in the sequence regardless of individual filter failures. When set to true, subsequent filters will still be applied to the source raster even if one or more filters in the sequence cannot be applied.
 
 .. py:property:: count
     :canonical: ansys.stk.core.graphics.SequenceFilter.count
     :type: int
 
-    Gets the number of filters in the collection.
+    Get the number of filters in the collection.
 
 
 Method detail

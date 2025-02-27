@@ -64,13 +64,13 @@ Property detail
 
 .. py:property:: line_style
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldLine.line_style
-    :type: LINE_STYLE
+    :type: LineStyle
 
     Magnetic field line style.
 
 .. py:property:: line_width
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldLine.line_width
-    :type: LINE_WIDTH
+    :type: LineWidth
 
     Magnetic field line width.
 

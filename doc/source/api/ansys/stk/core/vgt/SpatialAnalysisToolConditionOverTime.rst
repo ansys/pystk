@@ -21,9 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolConditionOverTime.duration_type`
-              - Sets/Returns the lighting conditions.
+              - Get or set the lighting conditions.
             * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolConditionOverTime.reference_volume`
-              - Sets/Returns the reference volume.
+              - Get or set the reference volume.
             * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolConditionOverTime.reference_intervals`
               - The reference interval list for the over time volume.
             * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolConditionOverTime.start_offset`
@@ -46,15 +46,15 @@ Property detail
 
 .. py:property:: duration_type
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolConditionOverTime.duration_type
-    :type: SPATIAL_CONDITION_OVER_TYPE_DURATION_TYPE
+    :type: SpatialConditionOverTypeDurationType
 
-    Sets/Returns the lighting conditions.
+    Get or set the lighting conditions.
 
 .. py:property:: reference_volume
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolConditionOverTime.reference_volume
     :type: ISpatialAnalysisToolVolume
 
-    Sets/Returns the reference volume.
+    Get or set the reference volume.
 
 .. py:property:: reference_intervals
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolConditionOverTime.reference_intervals

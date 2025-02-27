@@ -103,7 +103,7 @@ Property detail
 
 .. py:property:: primary_default_class
     :canonical: ansys.stk.core.stkobjects.AdvCAT.primary_default_class
-    :type: ADVCAT_ELLIPSOID_CLASS_TYPE
+    :type: AdvCATEllipsoidClassType
 
     Determine Ellipsoid Sizing method class.
 
@@ -139,7 +139,7 @@ Property detail
 
 .. py:property:: secondary_default_class
     :canonical: ansys.stk.core.stkobjects.AdvCAT.secondary_default_class
-    :type: ADVCAT_ELLIPSOID_CLASS_TYPE
+    :type: AdvCATEllipsoidClassType
 
     Determine Ellipsoid Sizing method class.
 

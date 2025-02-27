@@ -1,3 +1,25 @@
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
 import pytest
 from test_util import *
 from access_constraints.access_constraint_helper import *
@@ -45,10 +67,10 @@ class EarlyBoundTests(TestBase):
     @category("Basic Tests")
     def test_AzElMask(self):
         EarlyBoundTests.AG_TG.reset_az_el_mask()
-        Assert.assertEqual(AZ_EL_MASK_TYPE.NONE, EarlyBoundTests.AG_TG.get_az_el_mask())
+        Assert.assertEqual(AzElMaskType.NONE, EarlyBoundTests.AG_TG.get_az_el_mask())
 
-        EarlyBoundTests.AG_TG.set_az_el_mask(AZ_EL_MASK_TYPE.NONE, "dummy data")
-        Assert.assertEqual(AZ_EL_MASK_TYPE.NONE, EarlyBoundTests.AG_TG.get_az_el_mask())
+        EarlyBoundTests.AG_TG.set_az_el_mask(AzElMaskType.NONE, "dummy data")
+        Assert.assertEqual(AzElMaskType.NONE, EarlyBoundTests.AG_TG.get_az_el_mask())
         Assert.assertEqual(None, EarlyBoundTests.AG_TG.get_az_el_mask_data())
 
         with pytest.raises(Exception, match=RegexSubstringMatch("not available")):
@@ -58,8 +80,8 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             EarlyBoundTests.AG_TG.maximum_range_when_computing_az_el_mask = 11.0
 
-        EarlyBoundTests.AG_TG.set_az_el_mask(AZ_EL_MASK_TYPE.MASK_FILE, TestBase.GetScenarioFile(r"maskfile.aem"))
-        Assert.assertEqual(AZ_EL_MASK_TYPE.MASK_FILE, EarlyBoundTests.AG_TG.get_az_el_mask())
+        EarlyBoundTests.AG_TG.set_az_el_mask(AzElMaskType.MASK_FILE, TestBase.GetScenarioFile(r"maskfile.aem"))
+        Assert.assertEqual(AzElMaskType.MASK_FILE, EarlyBoundTests.AG_TG.get_az_el_mask())
         Assert.assertEqual("maskfile.aem", EarlyBoundTests.AG_TG.get_az_el_mask_data())
 
         with pytest.raises(Exception, match=RegexSubstringMatch("not available")):
@@ -69,10 +91,10 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
             EarlyBoundTests.AG_TG.maximum_range_when_computing_az_el_mask = 11.0
         with pytest.raises(Exception, match=RegexSubstringMatch("does not exist")):
-            EarlyBoundTests.AG_TG.set_az_el_mask(AZ_EL_MASK_TYPE.MASK_FILE, TestBase.GetScenarioFile("bogus.aem"))
+            EarlyBoundTests.AG_TG.set_az_el_mask(AzElMaskType.MASK_FILE, TestBase.GetScenarioFile("bogus.aem"))
 
-        EarlyBoundTests.AG_TG.set_az_el_mask(AZ_EL_MASK_TYPE.TERRAIN_DATA, 22)
-        Assert.assertEqual(AZ_EL_MASK_TYPE.TERRAIN_DATA, EarlyBoundTests.AG_TG.get_az_el_mask())
+        EarlyBoundTests.AG_TG.set_az_el_mask(AzElMaskType.TERRAIN_DATA, 22)
+        Assert.assertEqual(AzElMaskType.TERRAIN_DATA, EarlyBoundTests.AG_TG.get_az_el_mask())
         Assert.assertEqual(22, EarlyBoundTests.AG_TG.get_az_el_mask_data())
 
         EarlyBoundTests.AG_TG.save_terrain_mask_data_in_binary = True
@@ -90,7 +112,7 @@ class EarlyBoundTests(TestBase):
             EarlyBoundTests.AG_TG.maximum_range_when_computing_az_el_mask = 1001.0
 
         EarlyBoundTests.AG_TG.reset_az_el_mask()
-        Assert.assertEqual(AZ_EL_MASK_TYPE.NONE, EarlyBoundTests.AG_TG.get_az_el_mask())
+        Assert.assertEqual(AzElMaskType.NONE, EarlyBoundTests.AG_TG.get_az_el_mask())
 
     # endregion
 
@@ -269,9 +291,9 @@ class EarlyBoundTests(TestBase):
     def test_VOModelPointing(self):
         oModel: "IGraphics3DModel" = EarlyBoundTests.AG_TG.graphics_3d.model
         TestBase.logger.WriteLine6("\tThe current ModelType is: {0}", oModel.model_type)
-        oModel.model_type = MODEL_TYPE.FILE
+        oModel.model_type = ModelType.FILE
         TestBase.logger.WriteLine6("\tThe new ModelType is: {0}", oModel.model_type)
-        Assert.assertEqual(MODEL_TYPE.FILE, oModel.model_type)
+        Assert.assertEqual(ModelType.FILE, oModel.model_type)
         oModelFile: "Graphics3DModelFile" = Graphics3DModelFile(oModel.model_data)
         Assert.assertIsNotNone(oModelFile)
         TestBase.logger.WriteLine5("\t\tThe current Filename is: {0}", oModelFile.filename)
@@ -340,6 +362,7 @@ class EarlyBoundTests(TestBase):
     def test_RF_RadarCrossSection(self):
         helper = RadarCrossSectionInheritableHelper()
         helper.Run(EarlyBoundTests.AG_TG.radar_cross_section)
+        helper.Run_DeprecatedModelInterface(EarlyBoundTests.AG_TG.radar_cross_section)
 
     # endregion
 

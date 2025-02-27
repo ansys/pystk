@@ -67,7 +67,7 @@ Property detail
 
 .. py:property:: frame
     :canonical: ansys.stk.core.stkobjects.VehicleCovariance.frame
-    :type: VEHICLE_FRAME
+    :type: VehicleFrame
 
     Frame in which covariance is input.
 

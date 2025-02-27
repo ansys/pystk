@@ -34,15 +34,15 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkx.GraphicsAnalysisControlBase.no_logo`
               - If true, the splash logo is not shown.
             * - :py:attr:`~ansys.stk.core.stkx.GraphicsAnalysisControlBase.vendor_id`
-              - This property is deprecated. The identifier of the vendor.
+              - Do not use this property, as it is deprecated. The identifier of the vendor.
             * - :py:attr:`~ansys.stk.core.stkx.GraphicsAnalysisControlBase.ready_state`
-              - Returns the ready state of the control.
+              - Return the ready state of the control.
             * - :py:attr:`~ansys.stk.core.stkx.GraphicsAnalysisControlBase.application`
               - Reference to the STK X application object.
             * - :py:attr:`~ansys.stk.core.stkx.GraphicsAnalysisControlBase.control_mode`
               - The Graphics control mode.
             * - :py:attr:`~ansys.stk.core.stkx.GraphicsAnalysisControlBase.picture_from_file`
-              - Gets or sets the splash logo graphic file to be displayed in the control.
+              - Get or set the splash logo graphic file to be displayed in the control.
             * - :py:attr:`~ansys.stk.core.stkx.GraphicsAnalysisControlBase.window_id`
               - Window identifier (for Connect commands).
 
@@ -81,13 +81,13 @@ Property detail
     :canonical: ansys.stk.core.stkx.GraphicsAnalysisControlBase.vendor_id
     :type: str
 
-    This property is deprecated. The identifier of the vendor.
+    Do not use this property, as it is deprecated. The identifier of the vendor.
 
 .. py:property:: ready_state
     :canonical: ansys.stk.core.stkx.GraphicsAnalysisControlBase.ready_state
     :type: int
 
-    Returns the ready state of the control.
+    Return the ready state of the control.
 
 .. py:property:: application
     :canonical: ansys.stk.core.stkx.GraphicsAnalysisControlBase.application
@@ -97,7 +97,7 @@ Property detail
 
 .. py:property:: control_mode
     :canonical: ansys.stk.core.stkx.GraphicsAnalysisControlBase.control_mode
-    :type: GRAPHICS_2D_ANALYSIS_MODE
+    :type: Graphics2DAnalysisMode
 
     The Graphics control mode.
 
@@ -105,7 +105,7 @@ Property detail
     :canonical: ansys.stk.core.stkx.GraphicsAnalysisControlBase.picture_from_file
     :type: str
 
-    Gets or sets the splash logo graphic file to be displayed in the control.
+    Get or set the splash logo graphic file to be displayed in the control.
 
 .. py:property:: window_id
     :canonical: ansys.stk.core.stkx.GraphicsAnalysisControlBase.window_id

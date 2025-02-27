@@ -40,25 +40,25 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.Swath.enable`
-              - Enables swath.
+              - Enable swath.
             * - :py:attr:`~ansys.stk.core.stkobjects.Swath.color`
-              - Gets or sets the color in which swath graphics are displayed in the 2D Graphics window.
+              - Get or set the color in which swath graphics are displayed in the 2D Graphics window.
             * - :py:attr:`~ansys.stk.core.stkobjects.Swath.line_style`
-              - Gets or sets the style of the line defining the boundaries of the swath display in the 2D Graphics window. A member of the AgELineStyle enumeration.
+              - Get or set the style of the line defining the boundaries of the swath display in the 2D Graphics window. A member of the AgELineStyle enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.Swath.line_width`
-              - Gets or sets the width of the line defining the boundaries of the swath display in the 2D Graphics window. A member of the AgELineWidth enumeration.
+              - Get or set the width of the line defining the boundaries of the swath display in the 2D Graphics window. A member of the AgELineWidth enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.Swath.time_interval_count`
               - Number of Time Intervals.
             * - :py:attr:`~ansys.stk.core.stkobjects.Swath.minimum_step`
-              - Gets or sets the minimum step size for the adaptive step size of swath computation.
+              - Get or set the minimum step size for the adaptive step size of swath computation.
             * - :py:attr:`~ansys.stk.core.stkobjects.Swath.maximum_step`
-              - Gets or sets the maximum step size for the adaptive step size of swath computation.
+              - Get or set the maximum step size for the adaptive step size of swath computation.
             * - :py:attr:`~ansys.stk.core.stkobjects.Swath.use_maximum_cone`
               - Whether to perform swath computations based on the maximum cone that encompasses the sensor pattern instead of actual pattern. Setting this option may result in a more informative swath with a superior appearance.
             * - :py:attr:`~ansys.stk.core.stkobjects.Swath.scattering_tolerance`
-              - Determines the angle with respect to the swath line within which candidate points are considered for possible connection to it.
+              - Determine the angle with respect to the swath line within which candidate points are considered for possible connection to it.
             * - :py:attr:`~ansys.stk.core.stkobjects.Swath.curvature_tolerance`
-              - Controls the adaptive step size of swath computation and ensures that neighboring samples adequately capture the curvature of the swath line.
+              - Control the adaptive step size of swath computation and ensures that neighboring samples adequately capture the curvature of the swath line.
             * - :py:attr:`~ansys.stk.core.stkobjects.Swath.computational_method`
               - Select the Analytical or Numerical Computaional Method for generating swaths.
 
@@ -79,25 +79,25 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Swath.enable
     :type: bool
 
-    Enables swath.
+    Enable swath.
 
 .. py:property:: color
     :canonical: ansys.stk.core.stkobjects.Swath.color
     :type: agcolor.Color
 
-    Gets or sets the color in which swath graphics are displayed in the 2D Graphics window.
+    Get or set the color in which swath graphics are displayed in the 2D Graphics window.
 
 .. py:property:: line_style
     :canonical: ansys.stk.core.stkobjects.Swath.line_style
-    :type: LINE_STYLE
+    :type: LineStyle
 
-    Gets or sets the style of the line defining the boundaries of the swath display in the 2D Graphics window. A member of the AgELineStyle enumeration.
+    Get or set the style of the line defining the boundaries of the swath display in the 2D Graphics window. A member of the AgELineStyle enumeration.
 
 .. py:property:: line_width
     :canonical: ansys.stk.core.stkobjects.Swath.line_width
-    :type: LINE_WIDTH
+    :type: LineWidth
 
-    Gets or sets the width of the line defining the boundaries of the swath display in the 2D Graphics window. A member of the AgELineWidth enumeration.
+    Get or set the width of the line defining the boundaries of the swath display in the 2D Graphics window. A member of the AgELineWidth enumeration.
 
 .. py:property:: time_interval_count
     :canonical: ansys.stk.core.stkobjects.Swath.time_interval_count
@@ -109,13 +109,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Swath.minimum_step
     :type: float
 
-    Gets or sets the minimum step size for the adaptive step size of swath computation.
+    Get or set the minimum step size for the adaptive step size of swath computation.
 
 .. py:property:: maximum_step
     :canonical: ansys.stk.core.stkobjects.Swath.maximum_step
     :type: float
 
-    Gets or sets the maximum step size for the adaptive step size of swath computation.
+    Get or set the maximum step size for the adaptive step size of swath computation.
 
 .. py:property:: use_maximum_cone
     :canonical: ansys.stk.core.stkobjects.Swath.use_maximum_cone
@@ -127,17 +127,17 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Swath.scattering_tolerance
     :type: float
 
-    Determines the angle with respect to the swath line within which candidate points are considered for possible connection to it.
+    Determine the angle with respect to the swath line within which candidate points are considered for possible connection to it.
 
 .. py:property:: curvature_tolerance
     :canonical: ansys.stk.core.stkobjects.Swath.curvature_tolerance
     :type: float
 
-    Controls the adaptive step size of swath computation and ensures that neighboring samples adequately capture the curvature of the swath line.
+    Control the adaptive step size of swath computation and ensures that neighboring samples adequately capture the curvature of the swath line.
 
 .. py:property:: computational_method
     :canonical: ansys.stk.core.stkobjects.Swath.computational_method
-    :type: SWATH_COMPUTATIONAL_METHOD
+    :type: SwathComputationalMethod
 
     Select the Analytical or Numerical Computaional Method for generating swaths.
 

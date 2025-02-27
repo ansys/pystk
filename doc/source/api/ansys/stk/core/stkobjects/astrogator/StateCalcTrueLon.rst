@@ -21,9 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcTrueLon.coord_system_name`
-              - Gets or sets the coordinate system within which the element is defined.
+              - Get or set the coordinate system within which the element is defined.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcTrueLon.element_type`
-              - Gets or sets the element type.
+              - Get or set the element type.
 
 
 
@@ -42,12 +42,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcTrueLon.coord_system_name
     :type: str
 
-    Gets or sets the coordinate system within which the element is defined.
+    Get or set the coordinate system within which the element is defined.
 
 .. py:property:: element_type
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcTrueLon.element_type
-    :type: CALCULATION_OBJECT_ELEMENT
+    :type: CalculationObjectElement
 
-    Gets or sets the element type.
+    Get or set the element type.
 
 

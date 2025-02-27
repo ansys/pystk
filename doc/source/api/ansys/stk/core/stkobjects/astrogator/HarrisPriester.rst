@@ -27,9 +27,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.HarrisPriester.computes_pressure`
               - Flag indicates whether this model computes pressure.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.HarrisPriester.sun_position`
-              - Gets or sets the sun position computation.
+              - Get or set the sun position computation.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.HarrisPriester.atmos_data_source`
-              - Gets or sets the atmospheric model data source - data file or constant values.
+              - Get or set the atmospheric model data source - data file or constant values.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.HarrisPriester.f_10_p7_avg`
               - Average solar Flux (F10.7); the 81-day averaged Ottawa 10.7 cm solar flux value. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.HarrisPriester.atmos_data_filename`
@@ -37,7 +37,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.HarrisPriester.drag_model_type`
               - Drag model type.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.HarrisPriester.drag_model_plugin_name`
-              - Gets or sets the name of the drag model plugin.
+              - Get or set the name of the drag model plugin.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.HarrisPriester.drag_model_plugin`
               - Drag model plugin properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.HarrisPriester.variable_area_history_file`
@@ -78,15 +78,15 @@ Property detail
 
 .. py:property:: sun_position
     :canonical: ansys.stk.core.stkobjects.astrogator.HarrisPriester.sun_position
-    :type: SUN_POSITION
+    :type: SunPosition
 
-    Gets or sets the sun position computation.
+    Get or set the sun position computation.
 
 .. py:property:: atmos_data_source
     :canonical: ansys.stk.core.stkobjects.astrogator.HarrisPriester.atmos_data_source
-    :type: ATMOS_DATA_SOURCE
+    :type: AtmosDataSource
 
-    Gets or sets the atmospheric model data source - data file or constant values.
+    Get or set the atmospheric model data source - data file or constant values.
 
 .. py:property:: f_10_p7_avg
     :canonical: ansys.stk.core.stkobjects.astrogator.HarrisPriester.f_10_p7_avg
@@ -102,7 +102,7 @@ Property detail
 
 .. py:property:: drag_model_type
     :canonical: ansys.stk.core.stkobjects.astrogator.HarrisPriester.drag_model_type
-    :type: DRAG_MODEL_TYPE
+    :type: DragModelType
 
     Drag model type.
 
@@ -110,7 +110,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.HarrisPriester.drag_model_plugin_name
     :type: str
 
-    Gets or sets the name of the drag model plugin.
+    Get or set the name of the drag model plugin.
 
 .. py:property:: drag_model_plugin
     :canonical: ansys.stk.core.stkobjects.astrogator.HarrisPriester.drag_model_plugin

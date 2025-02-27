@@ -21,11 +21,11 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGraphics3D.visible`
               - Display volumetric object including Grid, Volume, and Cross Sections in 3D Graphics window.
             * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGraphics3D.smoothing`
-              - Enables to smooth out the volume and surface boundaries using interpolation between grid points.
+              - Enable to smooth out the volume and surface boundaries using interpolation between grid points.
             * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGraphics3D.shading`
-              - Enables to add shading to the boundary surface. Shading slows down animation but generates helpful lighting effects based on surfaces.
+              - Enable to add shading to the boundary surface. Shading slows down animation but generates helpful lighting effects based on surfaces.
             * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGraphics3D.quality`
-              - Sets/gets the quality of the graphics display.
+              - Get or set the quality of the graphics display.
             * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGraphics3D.grid`
               - Get the Grid properties of 3D Graphics window for the volumetric object.
             * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGraphics3D.cross_section`
@@ -33,15 +33,15 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGraphics3D.volume`
               - Get the 3D Graphics properties for Volume.
             * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGraphics3D.show_boundary_legend`
-              - Enables/disables boundary legends in 3D Graphics window for Volumetric object.
+              - Enable/disable boundary legends in 3D Graphics window for Volumetric object.
             * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGraphics3D.show_fill_legend`
-              - Enables/disables fill legends in 3D Graphics window for Volumetric object.
+              - Enable/disable fill legends in 3D Graphics window for Volumetric object.
             * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGraphics3D.boundary_legend`
               - Get the 3D Graphics properties for Volumetric Boundary Legend.
             * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGraphics3D.fill_legend`
               - Get the 3D Graphics properties for Volumetric Fill Legend.
             * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricGraphics3D.volume_type`
-              - Sets/gets the graphics volume display type.
+              - Get or set the graphics volume display type.
 
 
 
@@ -66,19 +66,19 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VolumetricGraphics3D.smoothing
     :type: bool
 
-    Enables to smooth out the volume and surface boundaries using interpolation between grid points.
+    Enable to smooth out the volume and surface boundaries using interpolation between grid points.
 
 .. py:property:: shading
     :canonical: ansys.stk.core.stkobjects.VolumetricGraphics3D.shading
     :type: bool
 
-    Enables to add shading to the boundary surface. Shading slows down animation but generates helpful lighting effects based on surfaces.
+    Enable to add shading to the boundary surface. Shading slows down animation but generates helpful lighting effects based on surfaces.
 
 .. py:property:: quality
     :canonical: ansys.stk.core.stkobjects.VolumetricGraphics3D.quality
-    :type: VOLUMETRIC_DISPLAY_QUALITY_TYPE
+    :type: VolumetricDisplayQualityType
 
-    Sets/gets the quality of the graphics display.
+    Get or set the quality of the graphics display.
 
 .. py:property:: grid
     :canonical: ansys.stk.core.stkobjects.VolumetricGraphics3D.grid
@@ -102,13 +102,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VolumetricGraphics3D.show_boundary_legend
     :type: bool
 
-    Enables/disables boundary legends in 3D Graphics window for Volumetric object.
+    Enable/disable boundary legends in 3D Graphics window for Volumetric object.
 
 .. py:property:: show_fill_legend
     :canonical: ansys.stk.core.stkobjects.VolumetricGraphics3D.show_fill_legend
     :type: bool
 
-    Enables/disables fill legends in 3D Graphics window for Volumetric object.
+    Enable/disable fill legends in 3D Graphics window for Volumetric object.
 
 .. py:property:: boundary_legend
     :canonical: ansys.stk.core.stkobjects.VolumetricGraphics3D.boundary_legend
@@ -124,8 +124,8 @@ Property detail
 
 .. py:property:: volume_type
     :canonical: ansys.stk.core.stkobjects.VolumetricGraphics3D.volume_type
-    :type: VOLUMETRIC_DISPLAY_VOLUME_TYPE
+    :type: VolumetricDisplayVolumeType
 
-    Sets/gets the graphics volume display type.
+    Get or set the graphics volume display type.
 
 

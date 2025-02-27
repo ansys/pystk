@@ -1,3 +1,25 @@
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
 from test_util import *
 from code_snippets.timeline.timeline_code_snippets_test_base import *
 from ansys.stk.core.stkobjects import *
@@ -162,10 +184,10 @@ class EventInterval(TimelineCodeSnippetsTestBase):
         )
 
         asIntervalList.reference_intervals = provider.time_interval_lists["AttitudeIntervals"]
-        asIntervalList.interval_selection = INTERVAL_FROM_INTERVAL_LIST_SELECTION_TYPE.MAXIMUM_GAP
+        asIntervalList.interval_selection = IntervalFromIntervalListSelectionType.MAXIMUM_GAP
 
         # Or from start
-        asIntervalList.interval_selection = INTERVAL_FROM_INTERVAL_LIST_SELECTION_TYPE.FROM_START
+        asIntervalList.interval_selection = IntervalFromIntervalListSelectionType.FROM_START
         asIntervalList.interval_number = 1
 
         intervalResult: "TimeToolTimeIntervalResult" = eventInterval.find_interval()
@@ -223,9 +245,9 @@ class EventInterval(TimelineCodeSnippetsTestBase):
         asSignaled.base_clock_location = satelliteVgtProvider.points["Center"]
         asSignaled.target_clock_location = aircraftVgtProvider.points["Center"]
 
-        asSignaled.signal_sense = SIGNAL_DIRECTION_TYPE.RECEIVE
+        asSignaled.signal_sense = SignalDirectionType.RECEIVE
         basicSignalDelay: "TimeToolSignalDelayBasic" = clr.CastAs(asSignaled.signal_delay, TimeToolSignalDelayBasic)
-        basicSignalDelay.speed_option = SPEED_TYPE.LIGHT_TRANSMISSION_SPEED
+        basicSignalDelay.speed_option = SpeedType.LIGHT_TRANSMISSION_SPEED
 
         # Uses current Time unit preference, this code snippet assumes seconds.
         basicSignalDelay.time_delay_convergence = 0.002
@@ -267,7 +289,7 @@ class EventInterval(TimelineCodeSnippetsTestBase):
         startEventEpoch: "ITimeToolInstant",
         stopEventEpoch: "ITimeToolInstant",
     ):
-        smartInterval.state = SMART_INTERVAL_STATE.START_STOP
+        smartInterval.state = SmartIntervalState.START_STOP
 
         accessStartEpoch: "TimeToolInstantSmartEpoch" = smartInterval.get_start_epoch()
         accessStartEpoch.set_implicit_time(startEventEpoch)

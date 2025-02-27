@@ -30,9 +30,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.PointBatchPrimitiveFactory.minimum_pixel_size_supported`
-              - Gets the minimum pixel size supported by the video card.
+              - Get the minimum pixel size supported by the video card.
             * - :py:attr:`~ansys.stk.core.graphics.PointBatchPrimitiveFactory.maximum_pixel_size_supported`
-              - Gets the maximum pixel size supported by the video card.
+              - Get the maximum pixel size supported by the video card.
 
 
 
@@ -51,13 +51,13 @@ Property detail
     :canonical: ansys.stk.core.graphics.PointBatchPrimitiveFactory.minimum_pixel_size_supported
     :type: float
 
-    Gets the minimum pixel size supported by the video card.
+    Get the minimum pixel size supported by the video card.
 
 .. py:property:: maximum_pixel_size_supported
     :canonical: ansys.stk.core.graphics.PointBatchPrimitiveFactory.maximum_pixel_size_supported
     :type: float
 
-    Gets the maximum pixel size supported by the video card.
+    Get the maximum pixel size supported by the video card.
 
 
 Method detail
@@ -72,14 +72,14 @@ Method detail
 
         :obj:`~PointBatchPrimitive`
 
-.. py:method:: initialize_with_set_hint(self, set_hint: SET_HINT) -> PointBatchPrimitive
+.. py:method:: initialize_with_set_hint(self, set_hint: SetHint) -> PointBatchPrimitive
     :canonical: ansys.stk.core.graphics.PointBatchPrimitiveFactory.initialize_with_set_hint
 
     Initialize a new instance of a point batch primitive with the specified set hint.
 
     :Parameters:
 
-    **set_hint** : :obj:`~SET_HINT`
+    **set_hint** : :obj:`~SetHint`
 
     :Returns:
 

@@ -1,3 +1,25 @@
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
 from test_util import *
 from code_snippets.timeline.timeline_code_snippets_test_base import *
 from ansys.stk.core.stkobjects import *
@@ -62,18 +84,18 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
         listFiltered.original_intervals = provider.time_interval_lists["AttitudeIntervals"]
 
         firstIntervals: "TimeToolTimeIntervalFirstIntervalsFilter" = clr.CastAs(
-            listFiltered.filter_factory.create(INTERVAL_PRUNE_FILTER_TYPE.FIRST_INTERVALS),
+            listFiltered.filter_factory.create(IntervalPruneFilterType.FIRST_INTERVALS),
             TimeToolTimeIntervalFirstIntervalsFilter,
         )
         firstIntervals.maximum_number_of_intervals = 3
 
         # Or for example satisfaction intervals
         asSatisfactionCondition: "TimeToolTimeIntervalSatisfactionConditionFilter" = clr.CastAs(
-            listFiltered.filter_factory.create(INTERVAL_PRUNE_FILTER_TYPE.SATISFACTION_INTERVALS),
+            listFiltered.filter_factory.create(IntervalPruneFilterType.SATISFACTION_INTERVALS),
             TimeToolTimeIntervalSatisfactionConditionFilter,
         )
         asSatisfactionCondition.condition = provider.conditions["BeforeStop"]
-        asSatisfactionCondition.duration_type = INTERVAL_DURATION_TYPE.AT_LEAST
+        asSatisfactionCondition.duration_type = IntervalDurationType.AT_LEAST
 
         # Uses current Time unit preference, this code snippet assumes seconds.
         asSatisfactionCondition.interval_duration = 30
@@ -173,7 +195,7 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
 
         asListMerged.set_interval_list_a(satelliteVgtProvider.time_interval_lists["AvailabilityIntervals"])
         asListMerged.set_interval_list_b(aircraftVgtProvider.time_interval_lists["AvailabilityIntervals"])
-        asListMerged.merge_operation = EVENT_LIST_MERGE_OPERATION.MINUS
+        asListMerged.merge_operation = EventListMergeOperation.MINUS
 
         intervals: "TimeToolIntervalListResult" = intervalList.find_intervals()
         if intervals.is_valid:
@@ -257,9 +279,9 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
         asListSingled.base_clock_location = satelliteVgtProvider.points["Center"]
         asListSingled.target_clock_location = aircraftVgtProvider.points["Center"]
 
-        asListSingled.signal_sense = SIGNAL_DIRECTION_TYPE.TRANSMIT
+        asListSingled.signal_sense = SignalDirectionType.TRANSMIT
         basicSignalDelay: "TimeToolSignalDelayBasic" = clr.CastAs(asListSingled.signal_delay, TimeToolSignalDelayBasic)
-        basicSignalDelay.speed_option = SPEED_TYPE.CUSTOM_TRANSMISSION_SPEED
+        basicSignalDelay.speed_option = SpeedType.CUSTOM_TRANSMISSION_SPEED
 
         # Uses current Time unit preference, this code snippet assumes seconds.
         basicSignalDelay.time_delay_convergence = 0.002
@@ -297,7 +319,7 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
         asScalarBounds: "CalculationToolConditionScalarBounds" = clr.CastAs(
             aboveBoundCondition, CalculationToolConditionScalarBounds
         )
-        asScalarBounds.operation = CONDITION_THRESHOLD_TYPE.ABOVE_MINIMUM
+        asScalarBounds.operation = ConditionThresholdType.ABOVE_MINIMUM
         asScalarBounds.scalar = aircraftVgtProvider.calculation_scalars["Trajectory(CBI).Cartesian.Z"]
         # asScalarBounds.Minimum = 4082;
 
@@ -336,7 +358,7 @@ class EventIntervalList(TimelineCodeSnippetsTestBase):
         asListMerged.set_interval_list_b(
             satelliteAccess.analysis_workbench_components.time_interval_lists["AccessIntervals"]
         )
-        asListMerged.merge_operation = EVENT_LIST_MERGE_OPERATION.MINUS
+        asListMerged.merge_operation = EventListMergeOperation.MINUS
 
         # Print times without access.
         intervals: "TimeToolIntervalListResult" = intervalList.find_intervals()

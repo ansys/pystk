@@ -1,3 +1,25 @@
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
 import pytest
 from test_util import *
 from assert_extension import *
@@ -22,7 +44,7 @@ class EarlyBoundTests(TestBase):
     def setUpClass():
         TestBase.Initialize()
         TestBase.LoadTestScenario(Path.Combine("MtoTests", "MtoTests.sc"))
-        EarlyBoundTests.AG_MTO = MTO(TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.MTO, "Mto1"))
+        EarlyBoundTests.AG_MTO = MTO(TestBase.Application.current_scenario.children.new(STKObjectType.MTO, "Mto1"))
 
     # endregion
 
@@ -41,20 +63,20 @@ class EarlyBoundTests(TestBase):
     # region Visibility
     def test_Visibility(self):
         visibility: "MTOAnalysisVisibility" = EarlyBoundTests.AG_MTO.analysis.visibility
-        visibility.entirety = MTO_ENTIRETY.ALL
-        Assert.assertEqual(MTO_ENTIRETY.ALL, visibility.entirety)
-        visibility.entirety = MTO_ENTIRETY.PARTIAL
-        Assert.assertEqual(MTO_ENTIRETY.PARTIAL, visibility.entirety)
+        visibility.entirety = MTOEntirety.ALL
+        Assert.assertEqual(MTOEntirety.ALL, visibility.entirety)
+        visibility.entirety = MTOEntirety.PARTIAL
+        Assert.assertEqual(MTOEntirety.PARTIAL, visibility.entirety)
 
         visibility.object_path = "Satellite/Satellite1"
         Assert.assertEqual("Satellite/Satellite1", visibility.object_path)
 
         visibility.object_data = 1
         Assert.assertEqual(1, visibility.object_data)
-        visibility.object_interval = MTO_OBJECT_INTERVAL.EXTENDED
-        Assert.assertEqual(MTO_OBJECT_INTERVAL.EXTENDED, visibility.object_interval)
-        visibility.object_interval = MTO_OBJECT_INTERVAL.NORMAL
-        Assert.assertEqual(MTO_OBJECT_INTERVAL.NORMAL, visibility.object_interval)
+        visibility.object_interval = MTOObjectInterval.EXTENDED
+        Assert.assertEqual(MTOObjectInterval.EXTENDED, visibility.object_interval)
+        visibility.object_interval = MTOObjectInterval.NORMAL
+        Assert.assertEqual(MTOObjectInterval.NORMAL, visibility.object_interval)
         visibility.use_terrain = False
         Assert.assertFalse(visibility.use_terrain)
         visibility.use_terrain = True
@@ -86,13 +108,13 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid")):
             visibility.are_all_tracks_visible("UseTrackTimesX")
 
-        Assert.assertTrue(visibility.are_tracks_visible(MTO_TRACK_EVALUATION_TYPE.ALL, [1, 2, 3], "UseTrackTimes"))
+        Assert.assertTrue(visibility.are_tracks_visible(MTOTrackEvaluationType.ALL, [1, 2, 3], "UseTrackTimes"))
         with pytest.raises(Exception, match=RegexSubstringMatch("4 is an invalid track id")):
-            visibility.are_tracks_visible(MTO_TRACK_EVALUATION_TYPE.ALL, [1, 2, 3, 4], "UseTrackTimes")
+            visibility.are_tracks_visible(MTOTrackEvaluationType.ALL, [1, 2, 3, 4], "UseTrackTimes")
         with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid")):
-            visibility.are_tracks_visible(MTO_TRACK_EVALUATION_TYPE.ALL, [1, 2, 3], "UseTrackTimesX")
+            visibility.are_tracks_visible(MTOTrackEvaluationType.ALL, [1, 2, 3], "UseTrackTimesX")
 
-        arTracks = visibility.compute_all_tracks(MTO_VISIBILITY_MODE.EACH, "UseTrackTimes")
+        arTracks = visibility.compute_all_tracks(MTOVisibilityMode.EACH, "UseTrackTimes")
         Assert.assertEqual(3, len(arTracks))
         Assert.assertEqual(1, arTracks[0][0])
         Assert.assertTrue(bool(arTracks[0][1]))
@@ -101,9 +123,9 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(3, arTracks[2][0])
         Assert.assertTrue(bool(arTracks[2][1]))
         with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid")):
-            visibility.compute_all_tracks(MTO_VISIBILITY_MODE.EACH, "UseTrackTimesX")
+            visibility.compute_all_tracks(MTOVisibilityMode.EACH, "UseTrackTimesX")
 
-        arTracks = visibility.compute_tracks(MTO_VISIBILITY_MODE.EACH, [1, 2, 3], "UseTrackTimes")
+        arTracks = visibility.compute_tracks(MTOVisibilityMode.EACH, [1, 2, 3], "UseTrackTimes")
         Assert.assertEqual(3, len(arTracks))
         Assert.assertEqual(1, arTracks[0][0])
         Assert.assertTrue(bool(arTracks[0][1]))
@@ -112,19 +134,19 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(3, arTracks[2][0])
         Assert.assertTrue(bool(arTracks[2][1]))
         with pytest.raises(Exception, match=RegexSubstringMatch("4 is an invalid track id")):
-            visibility.compute_tracks(MTO_VISIBILITY_MODE.EACH, [1, 2, 3, 4], "UseTrackTimes")
+            visibility.compute_tracks(MTOVisibilityMode.EACH, [1, 2, 3, 4], "UseTrackTimes")
         with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid")):
-            arTracks = visibility.compute_tracks(MTO_VISIBILITY_MODE.EACH, [1, 2, 3], "UseTrackTimesX")
+            arTracks = visibility.compute_tracks(MTOVisibilityMode.EACH, [1, 2, 3], "UseTrackTimesX")
 
     # endregion
 
     # region Range
     def test_Range(self):
         range: "MTOAnalysisRange" = EarlyBoundTests.AG_MTO.analysis.range
-        range.entirety = MTO_ENTIRETY.ALL
-        Assert.assertEqual(MTO_ENTIRETY.ALL, range.entirety)
-        range.entirety = MTO_ENTIRETY.PARTIAL
-        Assert.assertEqual(MTO_ENTIRETY.PARTIAL, range.entirety)
+        range.entirety = MTOEntirety.ALL
+        Assert.assertEqual(MTOEntirety.ALL, range.entirety)
+        range.entirety = MTOEntirety.PARTIAL
+        Assert.assertEqual(MTOEntirety.PARTIAL, range.entirety)
 
         range.lower_limit = 1
         Assert.assertEqual(1, range.lower_limit)
@@ -137,10 +159,10 @@ class EarlyBoundTests(TestBase):
         range.object_data = 1
         Assert.assertEqual(1, range.object_data)
 
-        range.object_interval = MTO_OBJECT_INTERVAL.EXTENDED
-        Assert.assertEqual(MTO_OBJECT_INTERVAL.EXTENDED, range.object_interval)
-        range.object_interval = MTO_OBJECT_INTERVAL.NORMAL
-        Assert.assertEqual(MTO_OBJECT_INTERVAL.NORMAL, range.object_interval)
+        range.object_interval = MTOObjectInterval.EXTENDED
+        Assert.assertEqual(MTOObjectInterval.EXTENDED, range.object_interval)
+        range.object_interval = MTOObjectInterval.NORMAL
+        Assert.assertEqual(MTOObjectInterval.NORMAL, range.object_interval)
 
     # endregion
 
@@ -168,14 +190,14 @@ class EarlyBoundTests(TestBase):
         with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid")):
             range.are_all_tracks_in_range("UseTrackTimesX")
 
-        Assert.assertTrue(range.are_tracks_in_range(MTO_TRACK_EVALUATION_TYPE.ALL, [1], "UseTrackTimes"))
-        Assert.assertFalse(range.are_tracks_in_range(MTO_TRACK_EVALUATION_TYPE.ALL, [1, 2, 3], "UseTrackTimes"))
+        Assert.assertTrue(range.are_tracks_in_range(MTOTrackEvaluationType.ALL, [1], "UseTrackTimes"))
+        Assert.assertFalse(range.are_tracks_in_range(MTOTrackEvaluationType.ALL, [1, 2, 3], "UseTrackTimes"))
         with pytest.raises(Exception, match=RegexSubstringMatch("4 is an invalid track id")):
-            range.are_tracks_in_range(MTO_TRACK_EVALUATION_TYPE.ALL, [4], "UseTrackTimes")
+            range.are_tracks_in_range(MTOTrackEvaluationType.ALL, [4], "UseTrackTimes")
         with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid")):
-            range.are_tracks_in_range(MTO_TRACK_EVALUATION_TYPE.ALL, [1, 2, 3], "UseTrackTimesX")
+            range.are_tracks_in_range(MTOTrackEvaluationType.ALL, [1, 2, 3], "UseTrackTimesX")
 
-        arTracks = range.compute_all_ranges(MTO_RANGE_MODE.EACH, "UseTrackTimes")
+        arTracks = range.compute_all_ranges(MTORangeMode.EACH, "UseTrackTimes")
         Assert.assertEqual(3, len(arTracks))
         Assert.assertEqual(1, arTracks[0][0])
         Assert.assertTrue(bool(arTracks[0][1]))
@@ -184,10 +206,10 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(3, arTracks[2][0])
         Assert.assertFalse(bool(arTracks[2][1]))
         with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid")):
-            range.compute_all_ranges(MTO_RANGE_MODE.EACH, "UseTrackTimesX")
+            range.compute_all_ranges(MTORangeMode.EACH, "UseTrackTimesX")
 
         arTracks = range.compute_ranges(
-            MTO_RANGE_MODE.EACH, [1, 2, 3], "UseTrackTimes"
+            MTORangeMode.EACH, [1, 2, 3], "UseTrackTimes"
         )  # 4 an invalid track id - BUG100185
         Assert.assertEqual(3, len(arTracks))
         Assert.assertEqual(1, arTracks[0][0])
@@ -197,19 +219,19 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(3, arTracks[2][0])
         Assert.assertFalse(bool(arTracks[2][1]))
         with pytest.raises(Exception, match=RegexSubstringMatch("4 is an invalid track id")):
-            arTracks = range.compute_ranges(MTO_RANGE_MODE.EACH, [1, 2, 3, 4], "UseTrackTimes")
+            arTracks = range.compute_ranges(MTORangeMode.EACH, [1, 2, 3, 4], "UseTrackTimes")
         with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid")):
-            arTracks = range.compute_ranges(MTO_RANGE_MODE.EACH, [1, 2, 3], "UseTrackTimesX")
+            arTracks = range.compute_ranges(MTORangeMode.EACH, [1, 2, 3], "UseTrackTimesX")
 
     # endregion
 
     # region FieldOfView
     def test_FieldOfView(self):
         fov: "MTOAnalysisFieldOfView" = EarlyBoundTests.AG_MTO.analysis.field_of_view
-        fov.entirety = MTO_ENTIRETY.ALL
-        Assert.assertEqual(MTO_ENTIRETY.ALL, fov.entirety)
-        fov.entirety = MTO_ENTIRETY.PARTIAL
-        Assert.assertEqual(MTO_ENTIRETY.PARTIAL, fov.entirety)
+        fov.entirety = MTOEntirety.ALL
+        Assert.assertEqual(MTOEntirety.ALL, fov.entirety)
+        fov.entirety = MTOEntirety.PARTIAL
+        Assert.assertEqual(MTOEntirety.PARTIAL, fov.entirety)
 
         with pytest.raises(Exception):
             fov.sensor = "Satellite/Satellite1"
@@ -241,12 +263,12 @@ class EarlyBoundTests(TestBase):
         Assert.assertTrue(fov.are_all_tracks_in_field_of_view("UseTrackTimes"))
         # PLTFA-1954 TryCatchAssertBlock.ExpectedException("within the expected range", delegate () { fov.AreAllTracksInFOV("UseTrackTimesX"); });
 
-        Assert.assertTrue(fov.are_tracks_in_field_of_view(MTO_TRACK_EVALUATION_TYPE.ALL, [1, 2, 3], "UseTrackTimes"))
+        Assert.assertTrue(fov.are_tracks_in_field_of_view(MTOTrackEvaluationType.ALL, [1, 2, 3], "UseTrackTimes"))
         with pytest.raises(Exception, match=RegexSubstringMatch("4 is an invalid track id")):
-            fov.are_tracks_in_field_of_view(MTO_TRACK_EVALUATION_TYPE.ALL, [1, 2, 3, 4], "UseTrackTimes")
-        # PLTFA-1954 TryCatchAssertBlock.ExpectedException("within the expected range", delegate () { fov.AreTracksInFOV(MTO_TRACK_EVALUATION_TYPE.ALL, new object[] { 1, 2, 3 }, "UseTrackTimesX"); });
+            fov.are_tracks_in_field_of_view(MTOTrackEvaluationType.ALL, [1, 2, 3, 4], "UseTrackTimes")
+        # PLTFA-1954 TryCatchAssertBlock.ExpectedException("within the expected range", delegate () { fov.AreTracksInFOV(MTOTrackEvaluationType.ALL, new object[] { 1, 2, 3 }, "UseTrackTimesX"); });
 
-        arTracks = fov.compute_all_tracks(MTO_VISIBILITY_MODE.EACH, "UseTrackTimes")
+        arTracks = fov.compute_all_tracks(MTOVisibilityMode.EACH, "UseTrackTimes")
         Assert.assertEqual(3, len(arTracks))
         Assert.assertEqual(1, arTracks[0][0])
         Assert.assertTrue(bool(arTracks[0][1]))
@@ -255,10 +277,10 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(3, arTracks[2][0])
         Assert.assertTrue(bool(arTracks[2][1]))
         with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid")):
-            fov.compute_all_tracks(MTO_VISIBILITY_MODE.EACH, "UseTrackTimesX")
+            fov.compute_all_tracks(MTOVisibilityMode.EACH, "UseTrackTimesX")
 
         arTracks = fov.compute_tracks(
-            MTO_VISIBILITY_MODE.EACH, [1, 2, 3], "UseTrackTimes"
+            MTOVisibilityMode.EACH, [1, 2, 3], "UseTrackTimes"
         )  # 4 an invalid track id - BUG100185
         Assert.assertEqual(3, len(arTracks))
         Assert.assertEqual(1, arTracks[0][0])
@@ -268,17 +290,15 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(3, arTracks[2][0])
         Assert.assertTrue(bool(arTracks[2][1]))
         with pytest.raises(Exception, match=RegexSubstringMatch("4 is an invalid track id")):
-            arTracks = fov.compute_tracks(MTO_VISIBILITY_MODE.EACH, [1, 2, 3, 4], "UseTrackTimes")
+            arTracks = fov.compute_tracks(MTOVisibilityMode.EACH, [1, 2, 3, 4], "UseTrackTimes")
         with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid")):
-            arTracks = fov.compute_tracks(MTO_VISIBILITY_MODE.EACH, [1, 2, 3], "UseTrackTimesX")
+            arTracks = fov.compute_tracks(MTOVisibilityMode.EACH, [1, 2, 3], "UseTrackTimesX")
 
     # endregion
 
     # region InsertMTOPoint
     def test_InsertMtoPoint(self):
-        mto: "MTO" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.MTO, "InsertMto"), MTO
-        )
+        mto: "MTO" = clr.CastAs(TestBase.Application.current_scenario.children.new(STKObjectType.MTO, "InsertMto"), MTO)
         track: "MTOTrack" = mto.tracks.add(1)
         track.points.add("1 Jul 2007 12:00:00.000")
         track.points.add("1 Jul 2007 13:00:00.000")
@@ -328,19 +348,19 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(5, track.points[0].latitude)
         Assert.assertEqual(1, track.points[0].longitude)
         Assert.assertEqual(9, track.points[0].altitude)
-        TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.MTO, "InsertMto")
+        TestBase.Application.current_scenario.children.unload(STKObjectType.MTO, "InsertMto")
 
     # endregion
 
     # region Position
     def test_Position(self):
         position: "MTOAnalysisPosition" = EarlyBoundTests.AG_MTO.analysis.position
-        position.altitude_reference = ALTITUDE_REFERENCE_TYPE.MEAN_SEA_LEVEL
-        Assert.assertEqual(ALTITUDE_REFERENCE_TYPE.MEAN_SEA_LEVEL, position.altitude_reference)
-        position.altitude_reference = ALTITUDE_REFERENCE_TYPE.TERRAIN
-        Assert.assertEqual(ALTITUDE_REFERENCE_TYPE.TERRAIN, position.altitude_reference)
-        position.altitude_reference = ALTITUDE_REFERENCE_TYPE.WGS84
-        Assert.assertEqual(ALTITUDE_REFERENCE_TYPE.WGS84, position.altitude_reference)
+        position.altitude_reference = AltitudeReferenceType.MEAN_SEA_LEVEL
+        Assert.assertEqual(AltitudeReferenceType.MEAN_SEA_LEVEL, position.altitude_reference)
+        position.altitude_reference = AltitudeReferenceType.TERRAIN
+        Assert.assertEqual(AltitudeReferenceType.TERRAIN, position.altitude_reference)
+        position.altitude_reference = AltitudeReferenceType.WGS84
+        Assert.assertEqual(AltitudeReferenceType.WGS84, position.altitude_reference)
 
     # endregion
 
@@ -1045,21 +1065,21 @@ class EarlyBoundTests(TestBase):
         # AltitudeRef (MEAN_SEA_LEVEL)
         TestBase.logger.WriteLine6("\tThe current AltitudeRef is: {0}", oOptions.altitude_reference)
         oTrack: "MTOTrack" = EarlyBoundTests.AG_MTO.tracks.add(0)
-        oOptions.altitude_reference = ALTITUDE_REFERENCE_TYPE.MEAN_SEA_LEVEL
+        oOptions.altitude_reference = AltitudeReferenceType.MEAN_SEA_LEVEL
         TestBase.logger.WriteLine6("\tThe new AltitudeRef is: {0}", oOptions.altitude_reference)
-        Assert.assertEqual(ALTITUDE_REFERENCE_TYPE.MEAN_SEA_LEVEL, oOptions.altitude_reference)
+        Assert.assertEqual(AltitudeReferenceType.MEAN_SEA_LEVEL, oOptions.altitude_reference)
         oPoint: "MTOTrackPoint" = oTrack.points.add_point("1 Jul 2005 12:30:00.000", 10, 10, 200)
         TestBase.logger.WriteLine6("\t\tThe new Altitude is: {0}", oPoint.altitude)
         # AltitudeRef (TERRAIN)
-        oOptions.altitude_reference = ALTITUDE_REFERENCE_TYPE.TERRAIN
+        oOptions.altitude_reference = AltitudeReferenceType.TERRAIN
         TestBase.logger.WriteLine6("\tThe new AltitudeRef is: {0}", oOptions.altitude_reference)
-        Assert.assertEqual(ALTITUDE_REFERENCE_TYPE.TERRAIN, oOptions.altitude_reference)
+        Assert.assertEqual(AltitudeReferenceType.TERRAIN, oOptions.altitude_reference)
         oPoint = oTrack.points.add_point("1 Jul 2005 12:40:00.000", 10, 10, 200)
         TestBase.logger.WriteLine6("\t\tThe new Altitude is: {0}", oPoint.altitude)
         # AltitudeRef (WGS84)
-        oOptions.altitude_reference = ALTITUDE_REFERENCE_TYPE.WGS84
+        oOptions.altitude_reference = AltitudeReferenceType.WGS84
         TestBase.logger.WriteLine6("\tThe new AltitudeRef is: {0}", oOptions.altitude_reference)
-        Assert.assertEqual(ALTITUDE_REFERENCE_TYPE.WGS84, oOptions.altitude_reference)
+        Assert.assertEqual(AltitudeReferenceType.WGS84, oOptions.altitude_reference)
         oPoint = oTrack.points.add_point("1 Jul 2005 12:50:00.000", 10, 10, 200)
         TestBase.logger.WriteLine6("\t\tThe new Altitude is: {0}", oPoint.altitude)
         # IsStatic (true)
@@ -1128,7 +1148,7 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine("----- BASIC TRACKS WITH LLA ARRAYS ----- BEGIN -----")
 
         # Create a new MTO object
-        mto2: "MTO" = MTO(TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.MTO, "Mto2"))
+        mto2: "MTO" = MTO(TestBase.Application.current_scenario.children.new(STKObjectType.MTO, "Mto2"))
 
         # Tracks
         oTrackCollection: "MTOTrackCollection" = mto2.tracks
@@ -1156,7 +1176,7 @@ class EarlyBoundTests(TestBase):
         oTrackCollection.add_tracks_with_position_data(
             arTrackIdsAdd,
             arNumPtsPerTrackAdd,
-            MTO_INPUT_DATA_TYPE.DETIC,
+            MTOInputDataType.DETIC,
             arTimeAdd,
             arLatitudeAdd,
             arLongitudeAdd,
@@ -1187,7 +1207,7 @@ class EarlyBoundTests(TestBase):
         oTrackCollection.extend_tracks_with_position_data(
             arTrackIdsExtend,
             arNumPtsPerTrackExtend,
-            MTO_INPUT_DATA_TYPE.DETIC,
+            MTOInputDataType.DETIC,
             arTimeExtend,
             arLatitudeExtend,
             arLongitudeExtend,
@@ -1209,6 +1229,30 @@ class EarlyBoundTests(TestBase):
         oTrackCollection.remove_all()
         Assert.assertEqual(0, oTrackCollection.count)
 
+        # AddTracksWithPosData invalid time input
+
+        arTrackIdsAddInvalid = [10, 11]
+        arNumPtsPerTrackAddInvalid = [2, 1]
+        arTimeAddInvalid = ["1 Jul 2005 12:00:00.000", "1 Jul 2005 12:10:00.000", "1"]
+        arLatitudeAddInvalid = [0.0, 10.0, 10.0]
+        arLongitudeAddInvalid = [0.0, 10.0, 0.0]
+        arAltitudeAddInvalid = [0.0, 1000.0, 500.0]
+        ex = ExceptionAssert.Throws(
+            lambda: oTrackCollection.add_tracks_with_position_data(
+                arTrackIdsAddInvalid,
+                arNumPtsPerTrackAddInvalid,
+                MTOInputDataType.DETIC,
+                arTimeAddInvalid,
+                arLatitudeAddInvalid,
+                arLongitudeAddInvalid,
+                arAltitudeAddInvalid,
+            )
+        )
+
+        StringAssert.Contains("Invalid time or position value", str(ex), "Exception message mismatch")
+
+        oTrackCollection.remove_all()
+
         # AddTracksWithPosData using different units
         TestBase.Application.units_preferences.set_current_unit("DateFormat", "EpSec")
         TestBase.Application.units_preferences.set_current_unit("DistanceUnit", "ft")
@@ -1227,7 +1271,7 @@ class EarlyBoundTests(TestBase):
         oTrackCollection.add_tracks_with_position_data(
             arTrackIdsAdd,
             arNumPtsPerTrackAdd,
-            MTO_INPUT_DATA_TYPE.DETIC,
+            MTOInputDataType.DETIC,
             arTimeAdd2,
             arLatitudeAdd2,
             arLongitudeAdd2,
@@ -1274,7 +1318,7 @@ class EarlyBoundTests(TestBase):
         oTrackCollection.extend_tracks_with_position_data(
             arTrackIdsExtend,
             arNumPtsPerTrackExtend,
-            MTO_INPUT_DATA_TYPE.DETIC,
+            MTOInputDataType.DETIC,
             arTimeExtend2,
             arLatitudeExtend2,
             arLongitudeExtend2,
@@ -1315,7 +1359,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(0, oTrackCollection.count)
 
         # Remove Mto2
-        TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.MTO, "Mto2")
+        TestBase.Application.current_scenario.children.unload(STKObjectType.MTO, "Mto2")
 
         TestBase.logger.WriteLine("----- BASIC TRACKS WITH LLA ARRAYS ----- END -----")
 
@@ -1327,7 +1371,7 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine("----- BASIC TRACKS WITH CBF ARRAYS ----- BEGIN -----")
 
         # Create a new MTO object
-        mto2: "MTO" = MTO(TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.MTO, "Mto2"))
+        mto2: "MTO" = MTO(TestBase.Application.current_scenario.children.new(STKObjectType.MTO, "Mto2"))
 
         # Tracks
         oTrackCollection: "MTOTrackCollection" = mto2.tracks
@@ -1355,7 +1399,7 @@ class EarlyBoundTests(TestBase):
         oTrackCollection.add_tracks_with_position_data(
             arTrackIdsAdd,
             arNumPtsPerTrackAdd,
-            MTO_INPUT_DATA_TYPE.CARTESIAN_IN_CENTRAL_BODY_FIXED,
+            MTOInputDataType.CARTESIAN_IN_CENTRAL_BODY_FIXED,
             arTimeAdd,
             arXAdd,
             arYAdd,
@@ -1392,7 +1436,7 @@ class EarlyBoundTests(TestBase):
         oTrackCollection.extend_tracks_with_position_data(
             arTrackIdsExtend,
             arNumPtsPerTrackExtend,
-            MTO_INPUT_DATA_TYPE.CARTESIAN_IN_CENTRAL_BODY_FIXED,
+            MTOInputDataType.CARTESIAN_IN_CENTRAL_BODY_FIXED,
             arTimeExtend,
             arXExtend,
             arYExtend,
@@ -1426,7 +1470,7 @@ class EarlyBoundTests(TestBase):
         oTrackCollection.add_tracks_with_position_data(
             arTrackIdsAdd,
             arNumPtsPerTrackAdd,
-            MTO_INPUT_DATA_TYPE.CARTESIAN_IN_CENTRAL_BODY_FIXED,
+            MTOInputDataType.CARTESIAN_IN_CENTRAL_BODY_FIXED,
             arTimeAdd2,
             arXAdd2,
             arYAdd2,
@@ -1468,7 +1512,7 @@ class EarlyBoundTests(TestBase):
         oTrackCollection.extend_tracks_with_position_data(
             arTrackIdsExtend,
             arNumPtsPerTrackExtend,
-            MTO_INPUT_DATA_TYPE.CARTESIAN_IN_CENTRAL_BODY_FIXED,
+            MTOInputDataType.CARTESIAN_IN_CENTRAL_BODY_FIXED,
             arTimeExtend2,
             arXExtend2,
             arYExtend2,
@@ -1504,7 +1548,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(0, oTrackCollection.count)
 
         # Remove Mto2
-        TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.MTO, "Mto2")
+        TestBase.Application.current_scenario.children.unload(STKObjectType.MTO, "Mto2")
 
         TestBase.logger.WriteLine("----- BASIC TRACKS WITH CBF ARRAYS ----- END -----")
 
@@ -1516,7 +1560,7 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine("----- BASIC TRACKS WITH VGT ARRAYS ----- BEGIN -----")
 
         # Create a new MTO object
-        mto2: "MTO" = MTO(TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.MTO, "Mto2"))
+        mto2: "MTO" = MTO(TestBase.Application.current_scenario.children.new(STKObjectType.MTO, "Mto2"))
 
         # Tracks
         oTrackCollection: "MTOTrackCollection" = mto2.tracks
@@ -1546,7 +1590,7 @@ class EarlyBoundTests(TestBase):
         oTrackCollection.add_tracks_with_position_data(
             arTrackIdsAdd,
             arNumPtsPerTrackAdd,
-            MTO_INPUT_DATA_TYPE.CARTESIAN_IN_VECTOR_GEOMETRY_TOOL_SYSTEM,
+            MTOInputDataType.CARTESIAN_IN_VECTOR_GEOMETRY_TOOL_SYSTEM,
             arTimeAdd,
             arXAdd,
             arYAdd,
@@ -1583,7 +1627,7 @@ class EarlyBoundTests(TestBase):
         oTrackCollection.extend_tracks_with_position_data(
             arTrackIdsExtend,
             arNumPtsPerTrackExtend,
-            MTO_INPUT_DATA_TYPE.CARTESIAN_IN_VECTOR_GEOMETRY_TOOL_SYSTEM,
+            MTOInputDataType.CARTESIAN_IN_VECTOR_GEOMETRY_TOOL_SYSTEM,
             arTimeExtend,
             arXExtend,
             arYExtend,
@@ -1617,7 +1661,7 @@ class EarlyBoundTests(TestBase):
         oTrackCollection.add_tracks_with_position_data(
             arTrackIdsAdd,
             arNumPtsPerTrackAdd,
-            MTO_INPUT_DATA_TYPE.CARTESIAN_IN_VECTOR_GEOMETRY_TOOL_SYSTEM,
+            MTOInputDataType.CARTESIAN_IN_VECTOR_GEOMETRY_TOOL_SYSTEM,
             arTimeAdd2,
             arXAdd2,
             arYAdd2,
@@ -1659,7 +1703,7 @@ class EarlyBoundTests(TestBase):
         oTrackCollection.extend_tracks_with_position_data(
             arTrackIdsExtend,
             arNumPtsPerTrackExtend,
-            MTO_INPUT_DATA_TYPE.CARTESIAN_IN_VECTOR_GEOMETRY_TOOL_SYSTEM,
+            MTOInputDataType.CARTESIAN_IN_VECTOR_GEOMETRY_TOOL_SYSTEM,
             arTimeExtend2,
             arXExtend2,
             arYExtend2,
@@ -1695,7 +1739,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(0, oTrackCollection.count)
 
         # Remove Mto2
-        TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.MTO, "Mto2")
+        TestBase.Application.current_scenario.children.unload(STKObjectType.MTO, "Mto2")
 
         TestBase.logger.WriteLine("----- BASIC TRACKS WITH VGT ARRAYS ----- END -----")
 
@@ -1707,7 +1751,7 @@ class EarlyBoundTests(TestBase):
         TestBase.logger.WriteLine("----- BASIC TRACKS WITH VGT ARRAYS ----- BEGIN -----")
 
         # Create a new MTO object
-        mto2: "MTO" = MTO(TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.MTO, "Mto2"))
+        mto2: "MTO" = MTO(TestBase.Application.current_scenario.children.new(STKObjectType.MTO, "Mto2"))
 
         # Tracks
         oTrackCollection: "MTOTrackCollection" = mto2.tracks
@@ -1739,7 +1783,7 @@ class EarlyBoundTests(TestBase):
         oTrackCollection.add_tracks_with_position_data(
             arTrackIdsAdd,
             arNumPtsPerTrackAdd,
-            MTO_INPUT_DATA_TYPE.CARTESIAN_IN_VECTOR_GEOMETRY_TOOL_SYSTEM,
+            MTOInputDataType.CARTESIAN_IN_VECTOR_GEOMETRY_TOOL_SYSTEM,
             arTimeAdd,
             arXAdd,
             arYAdd,
@@ -1784,7 +1828,7 @@ class EarlyBoundTests(TestBase):
         oTrackCollection.extend_tracks_with_position_data(
             arTrackIdsExtend,
             arNumPtsPerTrackExtend,
-            MTO_INPUT_DATA_TYPE.CARTESIAN_IN_VECTOR_GEOMETRY_TOOL_SYSTEM,
+            MTOInputDataType.CARTESIAN_IN_VECTOR_GEOMETRY_TOOL_SYSTEM,
             arTimeExtend,
             arXExtend,
             arYExtend,
@@ -1818,7 +1862,7 @@ class EarlyBoundTests(TestBase):
         oTrackCollection.add_tracks_with_position_data(
             arTrackIdsAdd,
             arNumPtsPerTrackAdd,
-            MTO_INPUT_DATA_TYPE.CARTESIAN_IN_VECTOR_GEOMETRY_TOOL_SYSTEM,
+            MTOInputDataType.CARTESIAN_IN_VECTOR_GEOMETRY_TOOL_SYSTEM,
             arTimeAdd2,
             arXAdd2,
             arYAdd2,
@@ -1858,7 +1902,7 @@ class EarlyBoundTests(TestBase):
         oTrackCollection.extend_tracks_with_position_data(
             arTrackIdsExtend,
             arNumPtsPerTrackExtend,
-            MTO_INPUT_DATA_TYPE.CARTESIAN_IN_VECTOR_GEOMETRY_TOOL_SYSTEM,
+            MTOInputDataType.CARTESIAN_IN_VECTOR_GEOMETRY_TOOL_SYSTEM,
             arTimeExtend2,
             arXExtend2,
             arYExtend2,
@@ -1892,7 +1936,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(0, oTrackCollection.count)
 
         # Remove Mto2
-        TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.MTO, "Mto2")
+        TestBase.Application.current_scenario.children.unload(STKObjectType.MTO, "Mto2")
 
         TestBase.logger.WriteLine("----- BASIC TRACKS WITH VGT ARRAYS ----- END -----")
 
@@ -1931,10 +1975,10 @@ class EarlyBoundTests(TestBase):
 
         oGfxTrack.line.show_graphics = True
         Assert.assertEqual(True, oGfxTrack.line.show_graphics)
-        oGfxTrack.line.style = LINE_STYLE.L_DASH
-        Assert.assertEqual(LINE_STYLE.L_DASH, oGfxTrack.line.style)
-        oGfxTrack.line.width = LINE_WIDTH.WIDTH5
-        Assert.assertEqual(LINE_WIDTH.WIDTH5, oGfxTrack.line.width)
+        oGfxTrack.line.style = LineStyle.L_DASH
+        Assert.assertEqual(LineStyle.L_DASH, oGfxTrack.line.style)
+        oGfxTrack.line.width = LineWidth.WIDTH5
+        Assert.assertEqual(LineWidth.WIDTH5, oGfxTrack.line.width)
         oGfxTrack.line.color = Colors.from_argb(16384252)
         AssertEx.AreEqual(Colors.from_argb(16384252), oGfxTrack.line.color)
         oGfxTrack.line.translucency = 75
@@ -1986,10 +2030,10 @@ class EarlyBoundTests(TestBase):
 
         oGfxTrack.line.show_graphics = True
         Assert.assertEqual(True, oGfxTrack.line.show_graphics)
-        oGfxTrack.line.style = LINE_STYLE.L_DASH
-        Assert.assertEqual(LINE_STYLE.L_DASH, oGfxTrack.line.style)
-        oGfxTrack.line.width = LINE_WIDTH.WIDTH5
-        Assert.assertEqual(LINE_WIDTH.WIDTH5, oGfxTrack.line.width)
+        oGfxTrack.line.style = LineStyle.L_DASH
+        Assert.assertEqual(LineStyle.L_DASH, oGfxTrack.line.style)
+        oGfxTrack.line.width = LineWidth.WIDTH5
+        Assert.assertEqual(LineWidth.WIDTH5, oGfxTrack.line.width)
         oGfxTrack.line.color = Colors.from_argb(16384252)
         AssertEx.AreEqual(Colors.from_argb(16384252), oGfxTrack.line.color)
         oGfxTrack.line.translucency = 75
@@ -2085,8 +2129,8 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(200, oNewGfxTrack.lead_trail_times.trail_time)
 
         Assert.assertEqual(True, oNewGfxTrack.line.show_graphics)
-        Assert.assertEqual(LINE_STYLE.L_DASH, oNewGfxTrack.line.style)
-        Assert.assertEqual(LINE_WIDTH.WIDTH5, oNewGfxTrack.line.width)
+        Assert.assertEqual(LineStyle.L_DASH, oNewGfxTrack.line.style)
+        Assert.assertEqual(LineWidth.WIDTH5, oNewGfxTrack.line.width)
         Assert.assertEqual(75, oNewGfxTrack.line.translucency)
 
         Assert.assertEqual(True, oNewGfxTrack.marker.show_graphics)
@@ -2308,7 +2352,7 @@ class EarlyBoundTests(TestBase):
         self.Units.set_current_unit("AngleUnit", "rad")
         if bReadOnly:
             with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
-                oMarker.marker_type = MARKER_TYPE.SHAPE
+                oMarker.marker_type = MarkerType.SHAPE
             with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                 oMarker.pixel_size = 12
             with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
@@ -2316,29 +2360,29 @@ class EarlyBoundTests(TestBase):
             with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
                 oMarker.rotate_from_north = True
             with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-                oMarker.x_origin = GRAPHICS_3D_MARKER_ORIGIN_TYPE.RIGHT
+                oMarker.x_origin = Graphics3DMarkerOriginType.RIGHT
             with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-                oMarker.y_origin = GRAPHICS_3D_MARKER_ORIGIN_TYPE.BOTTOM
+                oMarker.y_origin = Graphics3DMarkerOriginType.BOTTOM
             with pytest.raises(Exception, match=RegexSubstringMatch("read")):
                 oMarker.set_marker_image_filename(Path.Combine(TestBase.GetSTKHomeDir(), r"VO\Markers\Fire.ppm"))
             with pytest.raises(Exception, match=RegexSubstringMatch("read-only")):
-                oMarker.orientation_mode = GRAPHICS_3D_MARKER_ORIENTATION.FOLLOW_DIRECTION
+                oMarker.orientation_mode = Graphics3DMarkerOrientation.FOLLOW_DIRECTION
 
         else:
-            oMarker.marker_type = MARKER_TYPE.SHAPE
-            Assert.assertEqual(MARKER_TYPE.SHAPE, oMarker.marker_type)
+            oMarker.marker_type = MarkerType.SHAPE
+            Assert.assertEqual(MarkerType.SHAPE, oMarker.marker_type)
 
             oShape: "Graphics3DMarkerShape" = clr.CastAs(oMarker.marker_data, Graphics3DMarkerShape)
             Assert.assertIsNotNone(oShape)
-            oShape.style = MARKER_SHAPE_3D.SHAPE_CIRCLE
-            Assert.assertEqual(MARKER_SHAPE_3D.SHAPE_CIRCLE, oShape.style)
-            oShape.style = MARKER_SHAPE_3D.SHAPE_POINT
-            Assert.assertEqual(MARKER_SHAPE_3D.SHAPE_POINT, oShape.style)
+            oShape.style = MarkerShape3d.SHAPE_CIRCLE
+            Assert.assertEqual(MarkerShape3d.SHAPE_CIRCLE, oShape.style)
+            oShape.style = MarkerShape3d.SHAPE_POINT
+            Assert.assertEqual(MarkerShape3d.SHAPE_POINT, oShape.style)
             with pytest.raises(STKInvalidCastError):
                 oF: "Graphics3DMarkerFile" = Graphics3DMarkerFile(oMarker.marker_data)
 
-            oMarker.marker_type = MARKER_TYPE.IMAGE_FILE
-            Assert.assertEqual(MARKER_TYPE.IMAGE_FILE, oMarker.marker_type)
+            oMarker.marker_type = MarkerType.IMAGE_FILE
+            Assert.assertEqual(MarkerType.IMAGE_FILE, oMarker.marker_type)
 
             oFile: "Graphics3DMarkerFile" = clr.CastAs(oMarker.marker_data, Graphics3DMarkerFile)
             Assert.assertIsNotNone(oFile)
@@ -2351,32 +2395,32 @@ class EarlyBoundTests(TestBase):
             with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
                 oMarker.pixel_size = 1234
 
-            oMarker.x_origin = GRAPHICS_3D_MARKER_ORIGIN_TYPE.RIGHT
-            Assert.assertEqual(GRAPHICS_3D_MARKER_ORIGIN_TYPE.RIGHT, oMarker.x_origin)
+            oMarker.x_origin = Graphics3DMarkerOriginType.RIGHT
+            Assert.assertEqual(Graphics3DMarkerOriginType.RIGHT, oMarker.x_origin)
             with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid")):
-                oMarker.x_origin = GRAPHICS_3D_MARKER_ORIGIN_TYPE.TOP
+                oMarker.x_origin = Graphics3DMarkerOriginType.TOP
 
-            oMarker.y_origin = GRAPHICS_3D_MARKER_ORIGIN_TYPE.BOTTOM
-            Assert.assertEqual(GRAPHICS_3D_MARKER_ORIGIN_TYPE.BOTTOM, oMarker.y_origin)
+            oMarker.y_origin = Graphics3DMarkerOriginType.BOTTOM
+            Assert.assertEqual(Graphics3DMarkerOriginType.BOTTOM, oMarker.y_origin)
             with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid")):
-                oMarker.y_origin = GRAPHICS_3D_MARKER_ORIGIN_TYPE.LEFT
+                oMarker.y_origin = Graphics3DMarkerOriginType.LEFT
 
-            oMarker.orientation_mode = GRAPHICS_3D_MARKER_ORIENTATION.NONE
-            Assert.assertEqual(GRAPHICS_3D_MARKER_ORIENTATION.NONE, oMarker.orientation_mode)
+            oMarker.orientation_mode = Graphics3DMarkerOrientation.NONE
+            Assert.assertEqual(Graphics3DMarkerOrientation.NONE, oMarker.orientation_mode)
 
             with pytest.raises(Exception, match=RegexSubstringMatch("read only")):
                 oMarker.angle = 1.23
 
-            oMarker.orientation_mode = GRAPHICS_3D_MARKER_ORIENTATION.FOLLOW_DIRECTION
-            Assert.assertEqual(GRAPHICS_3D_MARKER_ORIENTATION.FOLLOW_DIRECTION, oMarker.orientation_mode)
+            oMarker.orientation_mode = Graphics3DMarkerOrientation.FOLLOW_DIRECTION
+            Assert.assertEqual(Graphics3DMarkerOrientation.FOLLOW_DIRECTION, oMarker.orientation_mode)
 
             oMarker.angle = 1.23456
             Assert.assertEqual(1.23456, oMarker.angle)
             with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
                 oMarker.angle = 12.3
 
-            oMarker.orientation_mode = GRAPHICS_3D_MARKER_ORIENTATION.ANGLE
-            Assert.assertEqual(GRAPHICS_3D_MARKER_ORIENTATION.ANGLE, oMarker.orientation_mode)
+            oMarker.orientation_mode = Graphics3DMarkerOrientation.ANGLE
+            Assert.assertEqual(Graphics3DMarkerOrientation.ANGLE, oMarker.orientation_mode)
 
             oMarker.angle = 1.23456
             Assert.assertEqual(1.23456, oMarker.angle)
@@ -2641,7 +2685,7 @@ class EarlyBoundTests(TestBase):
             iIndex += 1
 
         TestBase.LoadTestScenario(Path.Combine("MtoTests", "MtoTests.sc"))
-        EarlyBoundTests.AG_MTO = MTO(TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.MTO, "Mto1"))
+        EarlyBoundTests.AG_MTO = MTO(TestBase.Application.current_scenario.children.new(STKObjectType.MTO, "Mto1"))
 
     # endregion
 
@@ -3028,7 +3072,7 @@ class EarlyBoundTests(TestBase):
 
         # Create a new MTO for the test
         mto: "MTO" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.MTO, "MTO_BUG48761"), MTO
+            TestBase.Application.current_scenario.children.new(STKObjectType.MTO, "MTO_BUG48761"), MTO
         )
 
         # Switch date unit to JDate

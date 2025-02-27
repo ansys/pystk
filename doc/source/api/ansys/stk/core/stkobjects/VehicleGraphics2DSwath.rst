@@ -32,7 +32,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DSwath.elevation_type`
               - Ground elevation, swath half width or vehicle half angle.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DSwath.elevation_supported_types`
-              - Returns an array of valid choices.
+              - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DSwath.elevation`
               - Get the elevation value.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DSwath.options`
@@ -53,7 +53,7 @@ Property detail
 
 .. py:property:: elevation_type
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DSwath.elevation_type
-    :type: VEHICLE_GRAPHICS_2D_ELEVATION
+    :type: VehicleGraphics2DElevation
 
     Ground elevation, swath half width or vehicle half angle.
 
@@ -61,7 +61,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DSwath.elevation_supported_types
     :type: list
 
-    Returns an array of valid choices.
+    Return an array of valid choices.
 
 .. py:property:: elevation
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DSwath.elevation
@@ -71,7 +71,7 @@ Property detail
 
 .. py:property:: options
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DSwath.options
-    :type: VEHICLE_GRAPHICS_2D_OPTION_TYPE
+    :type: VehicleGraphics2DOptionType
 
     Options for swath display.
 
@@ -80,27 +80,27 @@ Method detail
 -------------
 
 
-.. py:method:: set_elevation_type(self, elevation: VEHICLE_GRAPHICS_2D_ELEVATION) -> None
+.. py:method:: set_elevation_type(self, elevation: VehicleGraphics2DElevation) -> None
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DSwath.set_elevation_type
 
     Set the elevation type.
 
     :Parameters:
 
-    **elevation** : :obj:`~VEHICLE_GRAPHICS_2D_ELEVATION`
+    **elevation** : :obj:`~VehicleGraphics2DElevation`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_elevation_type_supported(self, elevation: VEHICLE_GRAPHICS_2D_ELEVATION) -> bool
+.. py:method:: is_elevation_type_supported(self, elevation: VehicleGraphics2DElevation) -> bool
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DSwath.is_elevation_type_supported
 
     Get a value indicating whether the specified type can be used.
 
     :Parameters:
 
-    **elevation** : :obj:`~VEHICLE_GRAPHICS_2D_ELEVATION`
+    **elevation** : :obj:`~VehicleGraphics2DElevation`
 
     :Returns:
 

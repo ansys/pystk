@@ -1,3 +1,25 @@
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
 import pytest
 from test_util import *
 from access_constraints.access_constraint_helper import *
@@ -87,7 +109,7 @@ class EarlyBoundTests(TestBase):
         EarlyBoundTests.InitHelper()
 
         ac1: "Aircraft" = clr.CastAs(TestBase.Application.current_scenario.children["Boing737"], Aircraft)
-        ac1.set_route_type(PROPAGATOR_TYPE.GREAT_ARC)
+        ac1.set_route_type(PropagatorType.GREAT_ARC)
         TestBase.PropagateGreatArc(clr.CastAs(ac1.route, PropagatorGreatArc))
 
         oHelper = STKObjectHelper()
@@ -101,9 +123,9 @@ class EarlyBoundTests(TestBase):
     def test_LoadWaypointsFromFile(self):
         TestBase.Application.units_preferences.set_current_unit("DateFormat", "EpSec")
         ac: "Aircraft" = Aircraft(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.AIRCRAFT, "LoadWaypoints")
+            TestBase.Application.current_scenario.children.new(STKObjectType.AIRCRAFT, "LoadWaypoints")
         )
-        ac.set_route_type(PROPAGATOR_TYPE.GREAT_ARC)
+        ac.set_route_type(PropagatorType.GREAT_ARC)
         ga: "PropagatorGreatArc" = clr.CastAs(ac.route, PropagatorGreatArc)
         ga.import_waypoints_from_file(TestBase.GetScenarioFile("GrArc_DetTimeAccFromVel.ga"))
         dpFixed: "DataProviderFixed" = clr.CastAs((IStkObject(ac)).data_providers["Waypoints"], DataProviderFixed)
@@ -126,7 +148,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertAlmostEqual(46.21621622272, float(values[2]), delta=1e-08)
         Assert.assertAlmostEqual(42.97297297017, float(values[3]), delta=1e-08)
         Assert.assertAlmostEqual(35.40540539809, float(values[4]), delta=1e-08)
-        TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.AIRCRAFT, "LoadWaypoints")
+        TestBase.Application.current_scenario.children.unload(STKObjectType.AIRCRAFT, "LoadWaypoints")
         TestBase.Application.units_preferences.reset_units()
 
     # endregion
@@ -137,13 +159,13 @@ class EarlyBoundTests(TestBase):
         def action1():
             tempAircraft: "Aircraft" = Aircraft(
                 TestBase.Application.current_scenario.children.new(
-                    STK_OBJECT_TYPE.AIRCRAFT, "Aircraft_eDetermineTimeAccFromVel"
+                    STKObjectType.AIRCRAFT, "Aircraft_eDetermineTimeAccFromVel"
                 )
             )
-            tempAircraft.set_route_type(PROPAGATOR_TYPE.GREAT_ARC)
+            tempAircraft.set_route_type(PropagatorType.GREAT_ARC)
             propagator: "PropagatorGreatArc" = PropagatorGreatArc(tempAircraft.route)
             propagator.method = (
-                VEHICLE_WAYPOINT_COMPUTATION_METHOD.DETERMINE_TIME_ACCELERATION_FROM_VELOCITY
+                VehicleWaypointComputationMethod.DETERMINE_TIME_ACCELERATION_FROM_VELOCITY
             )  # "Specify Rate/Acc"
 
             waypoints = Array.CreateInstance(clr.TypeOf(object), 4, 6)
@@ -215,13 +237,13 @@ class EarlyBoundTests(TestBase):
         def action2():
             tempAircraft: "Aircraft" = Aircraft(
                 TestBase.Application.current_scenario.children.new(
-                    STK_OBJECT_TYPE.AIRCRAFT, "Aircraft_eDetermineTimeFromVelAcc"
+                    STKObjectType.AIRCRAFT, "Aircraft_eDetermineTimeFromVelAcc"
                 )
             )
-            tempAircraft.set_route_type(PROPAGATOR_TYPE.GREAT_ARC)
+            tempAircraft.set_route_type(PropagatorType.GREAT_ARC)
             propagator: "PropagatorGreatArc" = PropagatorGreatArc(tempAircraft.route)
             propagator.method = (
-                VEHICLE_WAYPOINT_COMPUTATION_METHOD.DETERMINE_TIME_FROM_VELOCITY_AND_ACCELERATION
+                VehicleWaypointComputationMethod.DETERMINE_TIME_FROM_VELOCITY_AND_ACCELERATION
             )  # Smooth Rate
 
             waypoints = Array.CreateInstance(clr.TypeOf(object), 4, 5)
@@ -287,12 +309,12 @@ class EarlyBoundTests(TestBase):
         def action3():
             tempAircraft: "Aircraft" = Aircraft(
                 TestBase.Application.current_scenario.children.new(
-                    STK_OBJECT_TYPE.AIRCRAFT, "Aircraft_eDetermineVelFromTime"
+                    STKObjectType.AIRCRAFT, "Aircraft_eDetermineVelFromTime"
                 )
             )
-            tempAircraft.set_route_type(PROPAGATOR_TYPE.GREAT_ARC)
+            tempAircraft.set_route_type(PropagatorType.GREAT_ARC)
             propagator: "PropagatorGreatArc" = PropagatorGreatArc(tempAircraft.route)
-            propagator.method = VEHICLE_WAYPOINT_COMPUTATION_METHOD.DETERMINE_VELOCITY_FROM_TIME  # Specify Time
+            propagator.method = VehicleWaypointComputationMethod.DETERMINE_VELOCITY_FROM_TIME  # Specify Time
 
             waypoints = Array.CreateInstance(clr.TypeOf(object), 4, 5)
             # Point #1
@@ -363,11 +385,11 @@ class EarlyBoundTests(TestBase):
 
         def action4():
             tempAircraft: "Aircraft" = Aircraft(
-                TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.AIRCRAFT, aircraftName)
+                TestBase.Application.current_scenario.children.new(STKObjectType.AIRCRAFT, aircraftName)
             )
-            tempAircraft.set_route_type(PROPAGATOR_TYPE.GREAT_ARC)
+            tempAircraft.set_route_type(PropagatorType.GREAT_ARC)
             propagator: "PropagatorGreatArc" = PropagatorGreatArc(tempAircraft.route)
-            propagator.method = VEHICLE_WAYPOINT_COMPUTATION_METHOD.DETERMINE_TIME_ACCELERATION_FROM_VELOCITY
+            propagator.method = VehicleWaypointComputationMethod.DETERMINE_TIME_ACCELERATION_FROM_VELOCITY
             waypoints: "VehicleWaypointsCollection" = propagator.waypoints
 
             # Add first point
@@ -407,7 +429,7 @@ class EarlyBoundTests(TestBase):
             Assert.assertAlmostEqual(13.0, float(waypointArr[2][4]), delta=Math2.Epsilon2)  # Speed
 
         def finalizer4():
-            TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.AIRCRAFT, aircraftName)
+            TestBase.Application.current_scenario.children.unload(STKObjectType.AIRCRAFT, aircraftName)
 
         TryCatchAssertBlock.DoActionRunFinalize2(
             TestBase.Application,
@@ -429,11 +451,11 @@ class EarlyBoundTests(TestBase):
 
         def action5():
             tempAircraft: "Aircraft" = Aircraft(
-                TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.AIRCRAFT, aircraftName)
+                TestBase.Application.current_scenario.children.new(STKObjectType.AIRCRAFT, aircraftName)
             )
-            tempAircraft.set_route_type(PROPAGATOR_TYPE.GREAT_ARC)
+            tempAircraft.set_route_type(PropagatorType.GREAT_ARC)
             propagator: "PropagatorGreatArc" = PropagatorGreatArc(tempAircraft.route)
-            propagator.method = VEHICLE_WAYPOINT_COMPUTATION_METHOD.DETERMINE_VELOCITY_FROM_TIME
+            propagator.method = VehicleWaypointComputationMethod.DETERMINE_VELOCITY_FROM_TIME
             waypoints: "VehicleWaypointsCollection" = propagator.waypoints
 
             Assert.assertEqual(0, waypoints.count)
@@ -525,7 +547,7 @@ class EarlyBoundTests(TestBase):
             Assert.assertEqual(2, waypoints.index_of(84600))
 
         def finalizer5():
-            TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.AIRCRAFT, aircraftName)
+            TestBase.Application.current_scenario.children.unload(STKObjectType.AIRCRAFT, aircraftName)
 
         TryCatchAssertBlock.DoActionRunFinalize2(
             TestBase.Application,
@@ -558,7 +580,7 @@ class EarlyBoundTests(TestBase):
 
         iIndex: int = 0
         while iIndex < len(arTypes):
-            eType: "PROPAGATOR_TYPE" = PROPAGATOR_TYPE(int(arTypes[iIndex][0]))
+            eType: "PropagatorType" = PropagatorType(int(arTypes[iIndex][0]))
             TestBase.logger.WriteLine8("\tType {0} is: {1} ({2})", iIndex, arTypes[iIndex][1], eType)
             if not EarlyBoundTests.AG_AC.is_route_type_supported(eType):
                 Assert.fail("The {0} type should be supported!", eType)
@@ -595,19 +617,19 @@ class EarlyBoundTests(TestBase):
             Assert.assertIsNotNone(oAircraft)
             # RouteType
             TestBase.logger.WriteLine6("\tThe current Route propagator type is: {0}", oAircraft.route_type)
-            if oAircraft.route_type != PROPAGATOR_TYPE.GREAT_ARC:
-                if not oAircraft.is_route_type_supported(PROPAGATOR_TYPE.GREAT_ARC):
-                    Assert.fail("The {0} type should be supported!", PROPAGATOR_TYPE.GREAT_ARC)
+            if oAircraft.route_type != PropagatorType.GREAT_ARC:
+                if not oAircraft.is_route_type_supported(PropagatorType.GREAT_ARC):
+                    Assert.fail("The {0} type should be supported!", PropagatorType.GREAT_ARC)
 
                 # SetRouteType
-                oAircraft.set_route_type(PROPAGATOR_TYPE.GREAT_ARC)
+                oAircraft.set_route_type(PropagatorType.GREAT_ARC)
                 TestBase.logger.WriteLine6("\tThe new Route propagator type is: {0}", oAircraft.route_type)
-                Assert.assertEqual(PROPAGATOR_TYPE.GREAT_ARC, oAircraft.route_type)
+                Assert.assertEqual(PropagatorType.GREAT_ARC, oAircraft.route_type)
 
             # Route
             oHelper = BasicPropagatorHelper(TestBase.Application)
             oHelper.Run(
-                clr.CastAs(oAircraft, IStkObject), oAircraft.route, PROPAGATOR_TYPE.GREAT_ARC, self.EarthGravModel
+                clr.CastAs(oAircraft, IStkObject), oAircraft.route, PropagatorType.GREAT_ARC, self.EarthGravModel
             )
 
         except Exception as e:
@@ -642,7 +664,7 @@ class EarlyBoundTests(TestBase):
 
         iIndex: int = 0
         while iIndex < len(arTypes):
-            eType: "VEHICLE_ATTITUDE" = VEHICLE_ATTITUDE(int(arTypes[iIndex][0]))
+            eType: "VehicleAttitude" = VehicleAttitude(int(arTypes[iIndex][0]))
             TestBase.logger.WriteLine8("\tType {0} is: {1} ({2})", iIndex, arTypes[iIndex][1], eType)
             if not EarlyBoundTests.AG_AC.is_attitude_type_supported(eType):
                 Assert.fail("The {0} type should be supported!", eType)
@@ -651,11 +673,11 @@ class EarlyBoundTests(TestBase):
             EarlyBoundTests.AG_AC.set_attitude_type(eType)
             TestBase.logger.WriteLine6("\t\tThe new Attitude type is: {0}", EarlyBoundTests.AG_AC.attitude_type)
             Assert.assertEqual(eType, EarlyBoundTests.AG_AC.attitude_type)
-            if eType == VEHICLE_ATTITUDE.STANDARD:
+            if eType == VehicleAttitude.STANDARD:
                 # Attitude
                 oHelper = BasicAttitudeStandardHelper(TestBase.Application)
                 oHelper.Run(IVehicleAttitudeStandard(EarlyBoundTests.AG_AC.attitude))
-            elif eType == VEHICLE_ATTITUDE.REAL_TIME:
+            elif eType == VehicleAttitude.REAL_TIME:
                 oHelper = BasicAttitudeRealTimeHelper(
                     TestBase.Application, clr.CastAs(EarlyBoundTests.AG_AC, IStkObject)
                 )
@@ -673,20 +695,20 @@ class EarlyBoundTests(TestBase):
     def test_BUG73829_TerrainGranularity(self):
         try:
             aircraft: "Aircraft" = clr.CastAs(
-                TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.AIRCRAFT, "Test"), Aircraft
+                TestBase.Application.current_scenario.children.new(STKObjectType.AIRCRAFT, "Test"), Aircraft
             )
-            aircraft.set_route_type(PROPAGATOR_TYPE.GREAT_ARC)
+            aircraft.set_route_type(PropagatorType.GREAT_ARC)
             propagator: "PropagatorGreatArc" = clr.CastAs(aircraft.route, PropagatorGreatArc)
 
             propagator.arc_granularity = 51.333
 
-            propagator.set_altitude_reference_type(VEHICLE_ALTITUDE_REFERENCE.TERRAIN)
+            propagator.set_altitude_reference_type(VehicleAltitudeReference.TERRAIN)
             altRef: "VehicleWaypointAltitudeReferenceTerrain" = clr.CastAs(
                 propagator.altitude_reference, VehicleWaypointAltitudeReferenceTerrain
             )
             altRef.granularity = 51.33
-            altRef.interpolation_method = VEHICLE_WAYPOINT_INTERPOLATION_METHOD.ELLIPSOID_HEIGHT
-            propagator.method = VEHICLE_WAYPOINT_COMPUTATION_METHOD.DETERMINE_TIME_ACCELERATION_FROM_VELOCITY
+            altRef.interpolation_method = VehicleWaypointInterpolationMethod.ELLIPSOID_HEIGHT
+            propagator.method = VehicleWaypointComputationMethod.DETERMINE_TIME_ACCELERATION_FROM_VELOCITY
 
             point1: "VehicleWaypointsElement" = propagator.waypoints.add()
             point1.latitude = 39.7674
@@ -724,7 +746,7 @@ class EarlyBoundTests(TestBase):
             Assert.assertAlmostEqual(51.33, altRef.granularity, delta=0.01)
 
         finally:
-            TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.AIRCRAFT, "Test")
+            TestBase.Application.current_scenario.children.unload(STKObjectType.AIRCRAFT, "Test")
 
     # endregion
 
@@ -738,14 +760,14 @@ class EarlyBoundTests(TestBase):
             TestBase.Application.units_preferences.set_current_unit("AviatorDistance", "m")
 
             aircraft: "Aircraft" = clr.CastAs(
-                TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.AIRCRAFT, "AircraftPreDataTest"),
+                TestBase.Application.current_scenario.children.new(STKObjectType.AIRCRAFT, "AircraftPreDataTest"),
                 Aircraft,
             )
-            aircraft.set_route_type(PROPAGATOR_TYPE.AVIATOR)
+            aircraft.set_route_type(PropagatorType.AVIATOR)
             aviator: "PropagatorAviator" = clr.CastAs(aircraft.route, PropagatorAviator)
             avtr: "AviatorPropagator" = clr.CastAs(aviator.aviator_propagator, AviatorPropagator)
             mission: "Mission" = avtr.aviator_mission
-            mission.phases[0].procedures.add(SITE_TYPE.SITE_RUNWAY, PROCEDURE_TYPE.PROCEDURE_TAKEOFF)
+            mission.phases[0].procedures.add(SiteType.SITE_RUNWAY, ProcedureType.PROCEDURE_TAKEOFF)
             avtr.propagate()
 
             dp: "IDataProvider" = clr.CastAs(
@@ -776,7 +798,7 @@ class EarlyBoundTests(TestBase):
             Assert.assertEqual("OK", str(result.message.messages[0]))
 
         finally:
-            TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.AIRCRAFT, "AircraftPreDataTest")
+            TestBase.Application.current_scenario.children.unload(STKObjectType.AIRCRAFT, "AircraftPreDataTest")
             TestBase.Application.units_preferences.set_current_unit("DateFormat", holdDateFormat)
             TestBase.Application.units_preferences.set_current_unit("AviatorDistance", holdAviatorDistance)
 
@@ -833,7 +855,7 @@ class EarlyBoundTests(TestBase):
     # endregion
 
     # region SetAttributesType
-    def SetAttributesType(self, eType: "VEHICLE_GRAPHICS_2D_ATTRIBUTE_TYPE"):
+    def SetAttributesType(self, eType: "VehicleGraphics2DAttributeType"):
         oGfx: "AircraftGraphics" = EarlyBoundTests.AG_AC.graphics
         Assert.assertIsNotNone(oGfx)
 
@@ -846,7 +868,7 @@ class EarlyBoundTests(TestBase):
                 "The {0} supported element is: {1} ({2})",
                 iIndex,
                 arSupportedTypes[iIndex][1],
-                VEHICLE_GRAPHICS_2D_ATTRIBUTE_TYPE(int(arSupportedTypes[iIndex][0])),
+                VehicleGraphics2DAttributeType(int(arSupportedTypes[iIndex][0])),
             )
 
             iIndex += 1
@@ -867,7 +889,7 @@ class EarlyBoundTests(TestBase):
     def test_GfxAttributesBasic(self):
         TestBase.logger.WriteLine("----- THE GRAPHICS ATTRIBUTES BASIC TEST ----- BEGIN -----")
 
-        self.SetAttributesType(VEHICLE_GRAPHICS_2D_ATTRIBUTE_TYPE.BASIC)
+        self.SetAttributesType(VehicleGraphics2DAttributeType.BASIC)
 
         oHelper = GfxAttributesRouteHelper()
         oHelper.Run(VehicleGraphics2DAttributesRoute(EarlyBoundTests.AG_AC.graphics.attributes))
@@ -896,10 +918,10 @@ class EarlyBoundTests(TestBase):
         EarlyBoundTests.InitHelper()
 
         ac1: "Aircraft" = clr.CastAs(TestBase.Application.current_scenario.children["Boing737"], Aircraft)
-        ac1.set_route_type(PROPAGATOR_TYPE.GREAT_ARC)
+        ac1.set_route_type(PropagatorType.GREAT_ARC)
         TestBase.PropagateGreatArc(clr.CastAs(ac1.route, PropagatorGreatArc))
 
-        self.SetAttributesType(VEHICLE_GRAPHICS_2D_ATTRIBUTE_TYPE.ACCESS)
+        self.SetAttributesType(VehicleGraphics2DAttributeType.ACCESS)
 
         oHelper = GfxAttributesAccessHelper()
         oHelper.Run(
@@ -926,7 +948,7 @@ class EarlyBoundTests(TestBase):
     def test_GfxAttributesCustom(self):
         TestBase.logger.WriteLine("----- THE GRAPHICS ATTRIBUTES CUSTOM TEST ----- BEGIN -----")
 
-        self.SetAttributesType(VEHICLE_GRAPHICS_2D_ATTRIBUTE_TYPE.CUSTOM)
+        self.SetAttributesType(VehicleGraphics2DAttributeType.CUSTOM)
 
         oHelper = GfxAttributesCustomHelper()
         oHelper.Run(
@@ -955,11 +977,11 @@ class EarlyBoundTests(TestBase):
     @category("GraphicsTests.Attributes")
     def test_GfxAttributesRealTime(self):
         TestBase.logger.WriteLine("----- THE GRAPHICS ATTRIBUTES REAL TIME TEST ----- BEGIN -----")
-        if EarlyBoundTests.AG_AC.route_type != PROPAGATOR_TYPE.REAL_TIME:
+        if EarlyBoundTests.AG_AC.route_type != PropagatorType.REAL_TIME:
             bCaught: bool = False
             try:
                 bCaught = False
-                self.SetAttributesType(VEHICLE_GRAPHICS_2D_ATTRIBUTE_TYPE.REAL_TIME)
+                self.SetAttributesType(VehicleGraphics2DAttributeType.REAL_TIME)
 
             except Exception as e:
                 bCaught = True
@@ -968,9 +990,9 @@ class EarlyBoundTests(TestBase):
             if not bCaught:
                 Assert.fail("The SetAttributesType should not allow to set REAL_TIME value!")
 
-        EarlyBoundTests.AG_AC.set_route_type(PROPAGATOR_TYPE.REAL_TIME)
+        EarlyBoundTests.AG_AC.set_route_type(PropagatorType.REAL_TIME)
         (clr.CastAs(EarlyBoundTests.AG_AC.route, PropagatorRealtime)).propagate()
-        self.SetAttributesType(VEHICLE_GRAPHICS_2D_ATTRIBUTE_TYPE.REAL_TIME)
+        self.SetAttributesType(VehicleGraphics2DAttributeType.REAL_TIME)
         # real-time attributes should be tested with RealTime Propagator
         oHelper = GfxAttributesRealTimeHelper()
         oHelper.Run(
@@ -987,7 +1009,7 @@ class EarlyBoundTests(TestBase):
     def test_GfxAttributesTimeComponents(self):
         TestBase.logger.WriteLine("----- THE GRAPHICS ATTRIBUTES ACCESS TEST ----- BEGIN -----")
 
-        self.SetAttributesType(VEHICLE_GRAPHICS_2D_ATTRIBUTE_TYPE.TIME_COMPONENTS)
+        self.SetAttributesType(VehicleGraphics2DAttributeType.TIME_COMPONENTS)
 
         oHelper = GfxAttributesTimeComponentsHelper()
         oHelper.Run(
@@ -1016,8 +1038,8 @@ class EarlyBoundTests(TestBase):
     # region GfxGroundEllipses
     @category("Graphics Tests")
     def test_GfxGroundEllipses(self):
-        EarlyBoundTests.AG_AC.set_route_type(PROPAGATOR_TYPE.GREAT_ARC)
-        Assert.assertEqual(PROPAGATOR_TYPE.GREAT_ARC, EarlyBoundTests.AG_AC.route_type)
+        EarlyBoundTests.AG_AC.set_route_type(PropagatorType.GREAT_ARC)
+        Assert.assertEqual(PropagatorType.GREAT_ARC, EarlyBoundTests.AG_AC.route_type)
         ga: "PropagatorGreatArc" = PropagatorGreatArc(EarlyBoundTests.AG_AC.route)
         ga.waypoints.remove_all()
         ga.waypoints.add()
@@ -1098,12 +1120,12 @@ class EarlyBoundTests(TestBase):
     # region GfxWaypointMarkers
     @category("Graphics Tests")
     def test_GfxWaypointMarkers(self):
-        EarlyBoundTests.AG_AC.set_route_type(PROPAGATOR_TYPE.GREAT_ARC)
-        Assert.assertEqual(PROPAGATOR_TYPE.GREAT_ARC, EarlyBoundTests.AG_AC.route_type)
+        EarlyBoundTests.AG_AC.set_route_type(PropagatorType.GREAT_ARC)
+        Assert.assertEqual(PropagatorType.GREAT_ARC, EarlyBoundTests.AG_AC.route_type)
         oPropagator: "PropagatorGreatArc" = PropagatorGreatArc(EarlyBoundTests.AG_AC.route)
         Assert.assertIsNotNone(oPropagator)
         oPropagator.waypoints.remove_all()
-        oPropagator.method = VEHICLE_WAYPOINT_COMPUTATION_METHOD.DETERMINE_VELOCITY_FROM_TIME
+        oPropagator.method = VehicleWaypointComputationMethod.DETERMINE_VELOCITY_FROM_TIME
         oPoint: "VehicleWaypointsElement" = oPropagator.waypoints.add()
         Assert.assertIsNotNone(oPoint)
         oPoint = oPropagator.waypoints.add()
@@ -1176,9 +1198,9 @@ class EarlyBoundTests(TestBase):
         # set VO.Model type to FILE
         oModel: "IGraphics3DModel" = EarlyBoundTests.AG_AC.graphics_3d.model
         TestBase.logger.WriteLine6("The current ModelType is: {0}", oModel.model_type)
-        oModel.model_type = MODEL_TYPE.FILE
+        oModel.model_type = ModelType.FILE
         TestBase.logger.WriteLine6("The new ModelType is: {0}", oModel.model_type)
-        Assert.assertEqual(MODEL_TYPE.FILE, oModel.model_type)
+        Assert.assertEqual(ModelType.FILE, oModel.model_type)
         # set new ModelFile.Filename
         oModelFile: "Graphics3DModelFile" = Graphics3DModelFile(oModel.model_data)
         Assert.assertIsNotNone(oModelFile)
@@ -1222,10 +1244,10 @@ class EarlyBoundTests(TestBase):
     def test_VODataDisplay(self):
         # test VO DataDisplay
         wpe: "VehicleWaypointsElement" = None
-        EarlyBoundTests.AG_AC.set_route_type(PROPAGATOR_TYPE.GREAT_ARC)
-        Assert.assertEqual(PROPAGATOR_TYPE.GREAT_ARC, EarlyBoundTests.AG_AC.route_type)
+        EarlyBoundTests.AG_AC.set_route_type(PropagatorType.GREAT_ARC)
+        Assert.assertEqual(PropagatorType.GREAT_ARC, EarlyBoundTests.AG_AC.route_type)
         wpp: "PropagatorGreatArc" = PropagatorGreatArc(EarlyBoundTests.AG_AC.route)
-        wpp.method = VEHICLE_WAYPOINT_COMPUTATION_METHOD.DETERMINE_VELOCITY_FROM_TIME
+        wpp.method = VehicleWaypointComputationMethod.DETERMINE_VELOCITY_FROM_TIME
         wpp.waypoints.remove_all()
         wpe = wpp.waypoints.add()
         wpe = wpp.waypoints.add()
@@ -1250,9 +1272,9 @@ class EarlyBoundTests(TestBase):
         # set VO.Model type to FILE
         oModel: "IGraphics3DModel" = EarlyBoundTests.AG_AC.graphics_3d.model
         TestBase.logger.WriteLine6("The current ModelType is: {0}", oModel.model_type)
-        oModel.model_type = MODEL_TYPE.FILE
+        oModel.model_type = ModelType.FILE
         TestBase.logger.WriteLine6("The new ModelType is: {0}", oModel.model_type)
-        Assert.assertEqual(MODEL_TYPE.FILE, oModel.model_type)
+        Assert.assertEqual(ModelType.FILE, oModel.model_type)
         # set new ModelFile.Filename
         oModelFile: "Graphics3DModelFile" = Graphics3DModelFile(oModel.model_data)
         Assert.assertIsNotNone(oModelFile)
@@ -1298,20 +1320,20 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("UTCG", self.Units.get_current_unit_abbrv("DateFormat"))
         # set GreatArc propagator
         TestBase.logger.WriteLine6("Current PropagatorType is: {0}", EarlyBoundTests.AG_AC.route_type)
-        if EarlyBoundTests.AG_AC.route_type != PROPAGATOR_TYPE.GREAT_ARC:
-            EarlyBoundTests.AG_AC.set_route_type(PROPAGATOR_TYPE.GREAT_ARC)
+        if EarlyBoundTests.AG_AC.route_type != PropagatorType.GREAT_ARC:
+            EarlyBoundTests.AG_AC.set_route_type(PropagatorType.GREAT_ARC)
             TestBase.logger.WriteLine6("New PropagatorType is: {0}", EarlyBoundTests.AG_AC.route_type)
-            Assert.assertEqual(PROPAGATOR_TYPE.GREAT_ARC, EarlyBoundTests.AG_AC.route_type)
+            Assert.assertEqual(PropagatorType.GREAT_ARC, EarlyBoundTests.AG_AC.route_type)
 
         # prepare GreatArc propagator for test
         oPropagator: "PropagatorGreatArc" = PropagatorGreatArc(EarlyBoundTests.AG_AC.route)
         Assert.assertIsNotNone(oPropagator)
         TestBase.logger.WriteLine6("Current Waypoints Comparison Method is: {0}", oPropagator.method)
-        if oPropagator.method != VEHICLE_WAYPOINT_COMPUTATION_METHOD.DETERMINE_TIME_ACCELERATION_FROM_VELOCITY:
-            oPropagator.method = VEHICLE_WAYPOINT_COMPUTATION_METHOD.DETERMINE_TIME_ACCELERATION_FROM_VELOCITY
+        if oPropagator.method != VehicleWaypointComputationMethod.DETERMINE_TIME_ACCELERATION_FROM_VELOCITY:
+            oPropagator.method = VehicleWaypointComputationMethod.DETERMINE_TIME_ACCELERATION_FROM_VELOCITY
             TestBase.logger.WriteLine6("New Waypoints Comparison Method is: {0}", oPropagator.method)
             Assert.assertEqual(
-                VEHICLE_WAYPOINT_COMPUTATION_METHOD.DETERMINE_TIME_ACCELERATION_FROM_VELOCITY, oPropagator.method
+                VehicleWaypointComputationMethod.DETERMINE_TIME_ACCELERATION_FROM_VELOCITY, oPropagator.method
             )
 
         # clear Waypoints
@@ -1377,7 +1399,7 @@ class EarlyBoundTests(TestBase):
     # region ExportToDataFile
     def test_ExportToDataFile(self):
         ac: "Aircraft" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.AIRCRAFT, "ExportAc"), Aircraft
+            TestBase.Application.current_scenario.children.new(STKObjectType.AIRCRAFT, "ExportAc"), Aircraft
         )
         ga: "PropagatorGreatArc" = clr.CastAs(ac.route, PropagatorGreatArc)
         ga.waypoints.add()
@@ -1390,7 +1412,7 @@ class EarlyBoundTests(TestBase):
         exportHelper.PropDefExportTool(ac.export_tools.get_propagator_definition_export_tool())
         exportHelper.EphemerisStkBinaryExportTool(ac.export_tools.get_ephemeris_stk_binary_export_tool(), False)
 
-        TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.AIRCRAFT, "ExportAc")
+        TestBase.Application.current_scenario.children.unload(STKObjectType.AIRCRAFT, "ExportAc")
 
     # endregion
 
@@ -1407,11 +1429,11 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("YYYY:MM:DD", TestBase.Application.units_preferences.get_current_unit_abbrv("DateFormat"))
 
         aircraft: "Aircraft" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.AIRCRAFT, "YYYYMMDDAircraft"), Aircraft
+            TestBase.Application.current_scenario.children.new(STKObjectType.AIRCRAFT, "YYYYMMDDAircraft"), Aircraft
         )
         propagator: "PropagatorGreatArc" = clr.CastAs(aircraft.route, PropagatorGreatArc)
 
-        propagator.method = VEHICLE_WAYPOINT_COMPUTATION_METHOD.DETERMINE_VELOCITY_FROM_TIME
+        propagator.method = VehicleWaypointComputationMethod.DETERMINE_VELOCITY_FROM_TIME
 
         w1: "VehicleWaypointsElement" = propagator.waypoints.add()
 
@@ -1439,7 +1461,7 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual("2009:07:01:15:00:00.000", propagator.waypoints[0].time)
         Assert.assertEqual("2009:07:02:09:03:17.554", propagator.waypoints[1].time)
 
-        TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.AIRCRAFT, "YYYYMMDDAircraft")
+        TestBase.Application.current_scenario.children.unload(STKObjectType.AIRCRAFT, "YYYYMMDDAircraft")
 
         TestBase.Application.units_preferences.set_current_unit("DateFormat", curDateUnit)
         TestBase.Application.units_preferences.set_current_unit("Latitude", curLatUnit)
@@ -1473,6 +1495,7 @@ class EarlyBoundTests(TestBase):
     def test_RF_RadarCrossSection(self):
         helper = RadarCrossSectionInheritableHelper()
         helper.Run(EarlyBoundTests.AG_AC.radar_cross_section)
+        helper.Run_DeprecatedModelInterface(EarlyBoundTests.AG_AC.radar_cross_section)
 
     # endregion
 

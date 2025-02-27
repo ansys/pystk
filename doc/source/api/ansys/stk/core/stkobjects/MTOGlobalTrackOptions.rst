@@ -21,7 +21,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOGlobalTrackOptions.save_track_data`
               - Opt whether to save the tracks you define with the scenario. Otherwise, the MTO will be saved with the scenario, but all track data will be discarded.
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOGlobalTrackOptions.computation_track_identifier`
-              - Gets or sets the ID of the track to be referenced for working with other tools.
+              - Get or set the ID of the track to be referenced for working with other tools.
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOGlobalTrackOptions.block_size`
               - Block size used when allocating new tracks. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOGlobalTrackOptions.altitude_reference`
@@ -54,7 +54,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.MTOGlobalTrackOptions.computation_track_identifier
     :type: int
 
-    Gets or sets the ID of the track to be referenced for working with other tools.
+    Get or set the ID of the track to be referenced for working with other tools.
 
 .. py:property:: block_size
     :canonical: ansys.stk.core.stkobjects.MTOGlobalTrackOptions.block_size
@@ -64,7 +64,7 @@ Property detail
 
 .. py:property:: altitude_reference
     :canonical: ansys.stk.core.stkobjects.MTOGlobalTrackOptions.altitude_reference
-    :type: ALTITUDE_REFERENCE_TYPE
+    :type: AltitudeReferenceType
 
     Criterion used to reference the altitude. A member of the AgEAltRefType enumeration.
 

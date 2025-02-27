@@ -1,3 +1,25 @@
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
 import pytest
 from test_util import *
 from assertion_harness import *
@@ -27,52 +49,52 @@ class DisplayTimesHelper(object):
         iIndex: int = 0
         while iIndex < len(arTypes):
             self.m_logger.WriteLine8(
-                "\t\tType {0}: {1} ({2})", iIndex, arTypes[iIndex][1], DISPLAY_TIMES_TYPE(int(arTypes[iIndex][0]))
+                "\t\tType {0}: {1} ({2})", iIndex, arTypes[iIndex][1], DisplayTimesType(int(arTypes[iIndex][0]))
             )
 
             iIndex += 1
 
-        if not oDisplay.is_display_status_type_supported(DISPLAY_TIMES_TYPE.DURING_CHAIN_ACCESS):
+        if not oDisplay.is_display_status_type_supported(DisplayTimesType.DURING_CHAIN_ACCESS):
             with pytest.raises(Exception):
-                oDisplay.set_display_status_type(DISPLAY_TIMES_TYPE.DURING_CHAIN_ACCESS)
+                oDisplay.set_display_status_type(DisplayTimesType.DURING_CHAIN_ACCESS)
 
         # UNKNOWN
         with pytest.raises(Exception):
-            oDisplay.set_display_status_type(DISPLAY_TIMES_TYPE.UNKNOWN)
+            oDisplay.set_display_status_type(DisplayTimesType.UNKNOWN)
         # DisplayStatusType
         self.m_logger.WriteLine6("\tThe current DisplayStatusType is: {0}", oDisplay.display_status_type)
 
         iIndex: int = 0
         while iIndex < len(arTypes):
-            eType: "DISPLAY_TIMES_TYPE" = DISPLAY_TIMES_TYPE(int(arTypes[iIndex][0]))
+            eType: "DisplayTimesType" = DisplayTimesType(int(arTypes[iIndex][0]))
             if not oDisplay.is_display_status_type_supported(eType):
                 Assert.fail("The {0} type should be supported!", eType)
 
             # SetDisplayStatusType
             oDisplay.set_display_status_type(eType)
             self.m_logger.WriteLine6("\tThe new DisplayStatusType is: {0}", oDisplay.display_status_type)
-            eType1: "DISPLAY_TIMES_TYPE" = oDisplay.display_status_type
+            eType1: "DisplayTimesType" = oDisplay.display_status_type
             Assert.assertEqual(eType, eType1)
-            if eType == DISPLAY_TIMES_TYPE.UNKNOWN:
+            if eType == DisplayTimesType.UNKNOWN:
                 Assert.fail("UNKNOWN should not be supported!")
-            elif (((eType == DISPLAY_TIMES_TYPE.ALWAYS_OFF)) or ((eType == DISPLAY_TIMES_TYPE.ALWAYS_ON))) or (
-                (eType == DISPLAY_TIMES_TYPE.DURING_CHAIN_ACCESS)
+            elif (((eType == DisplayTimesType.ALWAYS_OFF)) or ((eType == DisplayTimesType.ALWAYS_ON))) or (
+                (eType == DisplayTimesType.DURING_CHAIN_ACCESS)
             ):
                 displayTimesData: "IDisplayTimesData" = oDisplay.display_times_data
                 Assert.assertIsNone(displayTimesData)
                 self.m_logger.WriteLine("\t\tNo DisplayTimesData available.")
-            elif eType == DISPLAY_TIMES_TYPE.DURING_ACCESS:
+            elif eType == DisplayTimesType.DURING_ACCESS:
                 self.DuringAccess(clr.CastAs(oDisplay.display_times_data, DisplayTimesDuringAccess))
-            elif eType == DISPLAY_TIMES_TYPE.INTERVALS:
+            elif eType == DisplayTimesType.INTERVALS:
                 oHelper = IntervalCollectionHelper(self.m_oRoot.units_preferences)
                 oHelper.Run(
                     TimeIntervalCollection(oDisplay.display_times_data),
                     IntervalCollectionHelper.IntervalCollectionType.Intervals,
                 )
-            elif eType == DISPLAY_TIMES_TYPE.TIME_COMPONENT:
+            elif eType == DisplayTimesType.TIME_COMPONENT:
                 self.DisplayTimesTimeComponent(clr.CastAs(oDisplay.display_times_data, DisplayTimesTimeComponent))
             else:
-                Assert.fail("Unknown DISPLAY_TIMES_TYPE")
+                Assert.fail("Unknown DisplayTimesType")
 
             iIndex += 1
 

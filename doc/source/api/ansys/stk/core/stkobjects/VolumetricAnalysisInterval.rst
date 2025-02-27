@@ -34,7 +34,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricAnalysisInterval.time_array`
               - The time array when Evaluation of spatial calculation at times from time array is used.
             * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricAnalysisInterval.step_size`
-              - Gets or sets the step size.
+              - Get or set the step size.
             * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricAnalysisInterval.available_analysis_intervals`
               - Get the available analysis intervals.
             * - :py:attr:`~ansys.stk.core.stkobjects.VolumetricAnalysisInterval.available_times_from_time_array`
@@ -61,7 +61,7 @@ Property detail
 
 .. py:property:: evaluation_of_spatial_calculation_type
     :canonical: ansys.stk.core.stkobjects.VolumetricAnalysisInterval.evaluation_of_spatial_calculation_type
-    :type: VOLUMETRIC_SPATIAL_CALCULATION_EVALUATION_TYPE
+    :type: VolumetricSpatialCalculationEvaluationType
 
     Get evaluation of spatial calculation type. A member of the AgEVmSpatialCalcEvalType enumeration.
 
@@ -75,7 +75,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VolumetricAnalysisInterval.step_size
     :type: float
 
-    Gets or sets the step size.
+    Get or set the step size.
 
 .. py:property:: available_analysis_intervals
     :canonical: ansys.stk.core.stkobjects.VolumetricAnalysisInterval.available_analysis_intervals
@@ -96,14 +96,14 @@ Method detail
 
 
 
-.. py:method:: set_spatial_calcuation_evaluation_type(self, spatial_calc_eval_type: VOLUMETRIC_SPATIAL_CALCULATION_EVALUATION_TYPE) -> None
+.. py:method:: set_spatial_calcuation_evaluation_type(self, spatial_calc_eval_type: VolumetricSpatialCalculationEvaluationType) -> None
     :canonical: ansys.stk.core.stkobjects.VolumetricAnalysisInterval.set_spatial_calcuation_evaluation_type
 
     Evaluate spatial calculation type, using the AgEVmSpatialCalcEvalType enumeration.
 
     :Parameters:
 
-    **spatial_calc_eval_type** : :obj:`~VOLUMETRIC_SPATIAL_CALCULATION_EVALUATION_TYPE`
+    **spatial_calc_eval_type** : :obj:`~VolumetricSpatialCalculationEvaluationType`
 
     :Returns:
 

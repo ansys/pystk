@@ -21,11 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CentralBodyComponentShapeTriaxialEllipsoid.semimajor_axis`
-              - Gets or sets the semi-major axis. Uses Distance Dimension.
+              - Get or set the semi-major axis. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CentralBodyComponentShapeTriaxialEllipsoid.semimid_axis`
-              - Gets or sets the semi-mid axis. Uses Distance Dimension.
+              - Get or set the semi-mid axis. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CentralBodyComponentShapeTriaxialEllipsoid.semiminor_axis`
-              - Gets or sets the semi-minor axis. Uses Distance Dimension.
+              - Get or set the semi-minor axis. Uses Distance Dimension.
 
 
 
@@ -44,18 +44,18 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.CentralBodyComponentShapeTriaxialEllipsoid.semimajor_axis
     :type: float
 
-    Gets or sets the semi-major axis. Uses Distance Dimension.
+    Get or set the semi-major axis. Uses Distance Dimension.
 
 .. py:property:: semimid_axis
     :canonical: ansys.stk.core.stkobjects.astrogator.CentralBodyComponentShapeTriaxialEllipsoid.semimid_axis
     :type: float
 
-    Gets or sets the semi-mid axis. Uses Distance Dimension.
+    Get or set the semi-mid axis. Uses Distance Dimension.
 
 .. py:property:: semiminor_axis
     :canonical: ansys.stk.core.stkobjects.astrogator.CentralBodyComponentShapeTriaxialEllipsoid.semiminor_axis
     :type: float
 
-    Gets or sets the semi-minor axis. Uses Distance Dimension.
+    Get or set the semi-minor axis. Uses Distance Dimension.
 
 

@@ -34,15 +34,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureTransitionToHover.altitude_reference`
-              - Gets or sets the altitude reference.
+              - Get or set the altitude reference.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureTransitionToHover.altitude`
-              - Gets or sets the altitude for the procedure.
+              - Get or set the altitude for the procedure.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureTransitionToHover.use_magnetic_heading`
-              - Gets or sets the option to use a magnetic heading for the course.
+              - Get or set the option to use a magnetic heading for the course.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureTransitionToHover.course`
-              - Gets or sets the course for the procedure.
+              - Get or set the course for the procedure.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureTransitionToHover.transition_into_wind`
-              - Gets or sets the option to transition into the wind.
+              - Get or set the option to transition into the wind.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureTransitionToHover.enroute_options`
               - Get the enroute options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureTransitionToHover.enroute_turn_direction_options`
@@ -50,7 +50,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureTransitionToHover.vertical_plane_options`
               - Get the vertical plane options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureTransitionToHover.smooth_transition_mode`
-              - Gets or sets the transition mode of the aircraft at the end of the procedure.
+              - Get or set the transition mode of the aircraft at the end of the procedure.
 
 
 
@@ -67,33 +67,33 @@ Property detail
 
 .. py:property:: altitude_reference
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureTransitionToHover.altitude_reference
-    :type: AGL_MSL
+    :type: AGLMSL
 
-    Gets or sets the altitude reference.
+    Get or set the altitude reference.
 
 .. py:property:: altitude
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureTransitionToHover.altitude
     :type: float
 
-    Gets or sets the altitude for the procedure.
+    Get or set the altitude for the procedure.
 
 .. py:property:: use_magnetic_heading
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureTransitionToHover.use_magnetic_heading
     :type: bool
 
-    Gets or sets the option to use a magnetic heading for the course.
+    Get or set the option to use a magnetic heading for the course.
 
 .. py:property:: course
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureTransitionToHover.course
     :type: typing.Any
 
-    Gets or sets the course for the procedure.
+    Get or set the course for the procedure.
 
 .. py:property:: transition_into_wind
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureTransitionToHover.transition_into_wind
     :type: bool
 
-    Gets or sets the option to transition into the wind.
+    Get or set the option to transition into the wind.
 
 .. py:property:: enroute_options
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureTransitionToHover.enroute_options
@@ -115,9 +115,9 @@ Property detail
 
 .. py:property:: smooth_transition_mode
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureTransitionToHover.smooth_transition_mode
-    :type: TRANSITION_TO_HOVER_MODE
+    :type: TransitionToHoverMode
 
-    Gets or sets the transition mode of the aircraft at the end of the procedure.
+    Get or set the transition mode of the aircraft at the end of the procedure.
 
 
 Method detail

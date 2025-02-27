@@ -34,9 +34,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlane.type`
-              - Returns a type of the plane object.
+              - Return a type of the plane object.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolPlane.labels`
-              - Allows configuring the plane's X and Y axes labels.
+              - Allow configuring the plane's X and Y axes labels.
 
 
 Import detail
@@ -52,15 +52,15 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlane.type
-    :type: PLANE_TYPE
+    :type: PlaneType
 
-    Returns a type of the plane object.
+    Return a type of the plane object.
 
 .. py:property:: labels
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolPlane.labels
     :type: VectorGeometryToolPlaneLabels
 
-    Allows configuring the plane's X and Y axes labels.
+    Allow configuring the plane's X and Y axes labels.
 
 
 Method detail

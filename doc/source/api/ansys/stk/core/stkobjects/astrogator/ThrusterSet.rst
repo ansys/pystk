@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ThrusterSet.direction_definition`
-              - Gets or sets the thruster set direction definition.
+              - Get or set the thruster set direction definition.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ThrusterSet.thrusters`
               - Get the list of thrusters.
 
@@ -40,9 +40,9 @@ Property detail
 
 .. py:property:: direction_definition
     :canonical: ansys.stk.core.stkobjects.astrogator.ThrusterSet.direction_definition
-    :type: THRUSTER_DIRECTION
+    :type: ThrusterDirection
 
-    Gets or sets the thruster set direction definition.
+    Get or set the thruster set direction definition.
 
 .. py:property:: thrusters
     :canonical: ansys.stk.core.stkobjects.astrogator.ThrusterSet.thrusters

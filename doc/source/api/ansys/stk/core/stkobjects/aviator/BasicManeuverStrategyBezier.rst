@@ -36,13 +36,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyBezier.reference_frame`
-              - Gets or sets the reference frame the aircraft will use.
+              - Get or set the reference frame the aircraft will use.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyBezier.altitude`
-              - Gets or sets the aircraft's altitude.
+              - Get or set the aircraft's altitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyBezier.downrange`
-              - Gets or sets the ground distance from the beginning of the maneuver.
+              - Get or set the ground distance from the beginning of the maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyBezier.airspeed`
-              - Gets or sets the aircraft's airspeed.
+              - Get or set the aircraft's airspeed.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyBezier.airspeed_type`
               - Get the airspeed type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyBezier.vertical_velocity_mode`
@@ -62,7 +62,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyBezier.stop_airspeed_type`
               - Get the airspeed type for the airspeed stopping condition.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyBezier.compensate_for_coriolis_acceleration`
-              - Gets or sets the option to compensate for the acceleration due to the Coriolis effect.
+              - Get or set the option to compensate for the acceleration due to the Coriolis effect.
 
 
 
@@ -79,37 +79,37 @@ Property detail
 
 .. py:property:: reference_frame
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyBezier.reference_frame
-    :type: BASIC_MANEUVER_REFERENCE_FRAME
+    :type: BasicManeuverReferenceFrame
 
-    Gets or sets the reference frame the aircraft will use.
+    Get or set the reference frame the aircraft will use.
 
 .. py:property:: altitude
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyBezier.altitude
     :type: float
 
-    Gets or sets the aircraft's altitude.
+    Get or set the aircraft's altitude.
 
 .. py:property:: downrange
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyBezier.downrange
     :type: float
 
-    Gets or sets the ground distance from the beginning of the maneuver.
+    Get or set the ground distance from the beginning of the maneuver.
 
 .. py:property:: airspeed
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyBezier.airspeed
     :type: float
 
-    Gets or sets the aircraft's airspeed.
+    Get or set the aircraft's airspeed.
 
 .. py:property:: airspeed_type
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyBezier.airspeed_type
-    :type: AIRSPEED_TYPE
+    :type: AirspeedType
 
     Get the airspeed type.
 
 .. py:property:: vertical_velocity_mode
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyBezier.vertical_velocity_mode
-    :type: FLY_TO_FLIGHT_PATH_ANGLE_MODE
+    :type: FlyToFlightPathAngleMode
 
     Get the option to specify the flight path angle or the altitude rate.
 
@@ -151,7 +151,7 @@ Property detail
 
 .. py:property:: stop_airspeed_type
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyBezier.stop_airspeed_type
-    :type: AIRSPEED_TYPE
+    :type: AirspeedType
 
     Get the airspeed type for the airspeed stopping condition.
 
@@ -159,7 +159,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyBezier.compensate_for_coriolis_acceleration
     :type: bool
 
-    Gets or sets the option to compensate for the acceleration due to the Coriolis effect.
+    Get or set the option to compensate for the acceleration due to the Coriolis effect.
 
 
 Method detail
@@ -173,14 +173,14 @@ Method detail
 
 
 
-.. py:method:: set_airspeed(self, airspeed_type: AIRSPEED_TYPE, airspeed: float) -> None
+.. py:method:: set_airspeed(self, airspeed_type: AirspeedType, airspeed: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyBezier.set_airspeed
 
     Set the fly to airspeed value and type.
 
     :Parameters:
 
-    **airspeed_type** : :obj:`~AIRSPEED_TYPE`
+    **airspeed_type** : :obj:`~AirspeedType`
     **airspeed** : :obj:`~float`
 
     :Returns:
@@ -190,14 +190,14 @@ Method detail
 
 
 
-.. py:method:: set_vertical_velocity(self, mode: FLY_TO_FLIGHT_PATH_ANGLE_MODE, value: typing.Any) -> None
+.. py:method:: set_vertical_velocity(self, mode: FlyToFlightPathAngleMode, value: typing.Any) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyBezier.set_vertical_velocity
 
     Set the flight path angle or altitude rate.
 
     :Parameters:
 
-    **mode** : :obj:`~FLY_TO_FLIGHT_PATH_ANGLE_MODE`
+    **mode** : :obj:`~FlyToFlightPathAngleMode`
     **value** : :obj:`~typing.Any`
 
     :Returns:
@@ -223,7 +223,7 @@ Method detail
 
 
 
-.. py:method:: set_stop_airspeed(self, enable: bool, airspeed_type: AIRSPEED_TYPE, airspeed: float) -> None
+.. py:method:: set_stop_airspeed(self, enable: bool, airspeed_type: AirspeedType, airspeed: float) -> None
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyBezier.set_stop_airspeed
 
     Set whether to enable the airspeed stopping condition and the corresponding value.
@@ -231,7 +231,7 @@ Method detail
     :Parameters:
 
     **enable** : :obj:`~bool`
-    **airspeed_type** : :obj:`~AIRSPEED_TYPE`
+    **airspeed_type** : :obj:`~AirspeedType`
     **airspeed** : :obj:`~float`
 
     :Returns:

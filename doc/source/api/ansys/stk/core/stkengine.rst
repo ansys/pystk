@@ -45,7 +45,7 @@ Summary
             :header-rows: 0
             :widths: auto
 
-            * - :py:class:`~ansys.stk.core.stkengine.STK_ENGINE_TIMER_TYPE`
+            * - :py:class:`~ansys.stk.core.stkengine.STKEngineTimerType`
               - Specify the timer implementation to use.
 
 
@@ -88,6 +88,6 @@ Starts STK Engine and provides access to the Object Model root.
     :maxdepth: 1
     :hidden:
 
-     ≔ STK_ENGINE_TIMER_TYPE<stkengine/STK_ENGINE_TIMER_TYPE>
+     ≔ STKEngineTimerType<stkengine/STKEngineTimerType>
 
 

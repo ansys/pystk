@@ -42,25 +42,25 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.field_line_refresh`
               - Time between refresh of magnetic field lines. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.color_ramp_start`
-              - This property is deprecated. Magnetic field start color.
+              - Do not use this property, as it is deprecated. Magnetic field start color.
             * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.color_ramp_stop`
-              - This property is deprecated. Magnetic field stop color.
+              - Do not use this property, as it is deprecated. Magnetic field stop color.
             * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.line_style`
               - Magnetic field line style.
             * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.line_width`
               - Magnetic field line width.
             * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.reference_longitude`
-              - Sets initial longitude sample. Longitude is measured about the Z-axis of the Solar Magnetic axes from the -X-axis. Uses Longtitude Dimension.
+              - Set initial longitude sample. Longitude is measured about the Z-axis of the Solar Magnetic axes from the -X-axis. Uses Longtitude Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.start_latitude`
-              - Gets or sets the starting magnetic latitude field line to show. Uses Latitude Dimension.
+              - Get or set the starting magnetic latitude field line to show. Uses Latitude Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.stop_latitude`
-              - Gets or sets the ending magnetic latitude field line to show. Uses Latitude Dimension.
+              - Get or set the ending magnetic latitude field line to show. Uses Latitude Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.number_of_field_lines`
-              - Gets or sets the number of field lines to show per longitude.
+              - Get or set the number of field lines to show per longitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.number_of_longitudes`
-              - Gets or sets the number of longitudes to show.
+              - Get or set the number of longitudes to show.
             * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.main_field`
-              - Gets or sets the main magnetic field.
+              - Get or set the main magnetic field.
             * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.external_field`
               - External magnetic field.
             * - :py:attr:`~ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.igrf_update_rate`
@@ -93,13 +93,13 @@ Property detail
 
 .. py:property:: color_mode
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.color_mode
-    :type: SPACE_ENVIRONMENT_MAGNETIC_FIELD_COLOR_MODE
+    :type: SpaceEnvironmentMagneticFieldColorMode
 
     Mode by which color is assigned.
 
 .. py:property:: color_scale
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.color_scale
-    :type: SPACE_ENVIRONMENT_MAGNETIC_FIELD_COLOR_SCALE_TYPE
+    :type: SpaceEnvironmentMagneticFieldColorScaleType
 
     Scaling of magnetic field to use when assigning color/translucency.
 
@@ -113,23 +113,23 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.color_ramp_start
     :type: agcolor.Color
 
-    This property is deprecated. Magnetic field start color.
+    Do not use this property, as it is deprecated. Magnetic field start color.
 
 .. py:property:: color_ramp_stop
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.color_ramp_stop
     :type: agcolor.Color
 
-    This property is deprecated. Magnetic field stop color.
+    Do not use this property, as it is deprecated. Magnetic field stop color.
 
 .. py:property:: line_style
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.line_style
-    :type: LINE_STYLE
+    :type: LineStyle
 
     Magnetic field line style.
 
 .. py:property:: line_width
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.line_width
-    :type: LINE_WIDTH
+    :type: LineWidth
 
     Magnetic field line width.
 
@@ -137,41 +137,41 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.reference_longitude
     :type: float
 
-    Sets initial longitude sample. Longitude is measured about the Z-axis of the Solar Magnetic axes from the -X-axis. Uses Longtitude Dimension.
+    Set initial longitude sample. Longitude is measured about the Z-axis of the Solar Magnetic axes from the -X-axis. Uses Longtitude Dimension.
 
 .. py:property:: start_latitude
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.start_latitude
     :type: float
 
-    Gets or sets the starting magnetic latitude field line to show. Uses Latitude Dimension.
+    Get or set the starting magnetic latitude field line to show. Uses Latitude Dimension.
 
 .. py:property:: stop_latitude
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.stop_latitude
     :type: float
 
-    Gets or sets the ending magnetic latitude field line to show. Uses Latitude Dimension.
+    Get or set the ending magnetic latitude field line to show. Uses Latitude Dimension.
 
 .. py:property:: number_of_field_lines
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.number_of_field_lines
     :type: int
 
-    Gets or sets the number of field lines to show per longitude.
+    Get or set the number of field lines to show per longitude.
 
 .. py:property:: number_of_longitudes
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.number_of_longitudes
     :type: int
 
-    Gets or sets the number of longitudes to show.
+    Get or set the number of longitudes to show.
 
 .. py:property:: main_field
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.main_field
-    :type: SPACE_ENVIRONMENT_MAGNETIC_MAIN_FIELD
+    :type: SpaceEnvironmentMagneticMainField
 
-    Gets or sets the main magnetic field.
+    Get or set the main magnetic field.
 
 .. py:property:: external_field
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentMagnitudeFieldGraphics2D.external_field
-    :type: SPACE_ENVIRONMENT_MAGNETIC_EXTERNAL_FIELD
+    :type: SpaceEnvironmentMagneticExternalField
 
     External magnetic field.
 

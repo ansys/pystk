@@ -36,15 +36,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolPointGroup.context`
-              - Returns a context object. The context can be used to find out which central body or STK object this instance is associated with.
+              - Return a context object. The context can be used to find out which central body or STK object this instance is associated with.
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolPointGroup.count`
-              - Returns a number of elements in the group.
+              - Return a number of elements in the group.
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolPointGroup.factory`
-              - Returns a Factory object used to create custom points.
+              - Return a Factory object used to create custom points.
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolPointGroup._new_enum`
-              - Returns a COM enumerator.
+              - Return a COM enumerator.
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolPointGroup.common_tasks`
-              - Provides access to common tasks that allow users quickly carry out tasks such as creating known point types, etc.
+              - Provide access to common tasks that allow users quickly carry out tasks such as creating known point types, etc.
 
 
 
@@ -63,31 +63,31 @@ Property detail
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPointGroup.context
     :type: IAnalysisWorkbenchComponentContext
 
-    Returns a context object. The context can be used to find out which central body or STK object this instance is associated with.
+    Return a context object. The context can be used to find out which central body or STK object this instance is associated with.
 
 .. py:property:: count
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPointGroup.count
     :type: int
 
-    Returns a number of elements in the group.
+    Return a number of elements in the group.
 
 .. py:property:: factory
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPointGroup.factory
     :type: VectorGeometryToolPointFactory
 
-    Returns a Factory object used to create custom points.
+    Return a Factory object used to create custom points.
 
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPointGroup._new_enum
     :type: EnumeratorProxy
 
-    Returns a COM enumerator.
+    Return a COM enumerator.
 
 .. py:property:: common_tasks
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPointGroup.common_tasks
     :type: VectorGeometryToolPointCommonTasks
 
-    Provides access to common tasks that allow users quickly carry out tasks such as creating known point types, etc.
+    Provide access to common tasks that allow users quickly carry out tasks such as creating known point types, etc.
 
 
 Method detail

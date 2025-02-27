@@ -32,23 +32,23 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaContourEIRP.azimuth_start`
-              - Gets the azimuth start value.
+              - Get the azimuth start value.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaContourEIRP.azimuth_stop`
-              - Gets the azimuth stop value.
+              - Get the azimuth stop value.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaContourEIRP.azimuth_resolution`
-              - Gets the azimuth resolution.
+              - Get the azimuth resolution.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaContourEIRP.azimuth_number_of_points`
-              - Gets the number of azimuth points.
+              - Get the number of azimuth points.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaContourEIRP.elevation_start`
-              - Gets the elevation start value.
+              - Get the elevation start value.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaContourEIRP.elevation_stop`
-              - Gets the elevation stop value.
+              - Get the elevation stop value.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaContourEIRP.elevation_resolution`
-              - Gets the elevation resolution.
+              - Get the elevation resolution.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaContourEIRP.elevation_number_of_points`
-              - Gets the number of elevation points.
+              - Get the number of elevation points.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaContourEIRP.coordinate_system`
-              - Gets or sets the coordinate system for defining the resolution of the antenna graphics.
+              - Get or set the coordinate system for defining the resolution of the antenna graphics.
 
 
 
@@ -67,55 +67,55 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.AntennaContourEIRP.azimuth_start
     :type: float
 
-    Gets the azimuth start value.
+    Get the azimuth start value.
 
 .. py:property:: azimuth_stop
     :canonical: ansys.stk.core.stkobjects.AntennaContourEIRP.azimuth_stop
     :type: float
 
-    Gets the azimuth stop value.
+    Get the azimuth stop value.
 
 .. py:property:: azimuth_resolution
     :canonical: ansys.stk.core.stkobjects.AntennaContourEIRP.azimuth_resolution
     :type: float
 
-    Gets the azimuth resolution.
+    Get the azimuth resolution.
 
 .. py:property:: azimuth_number_of_points
     :canonical: ansys.stk.core.stkobjects.AntennaContourEIRP.azimuth_number_of_points
     :type: int
 
-    Gets the number of azimuth points.
+    Get the number of azimuth points.
 
 .. py:property:: elevation_start
     :canonical: ansys.stk.core.stkobjects.AntennaContourEIRP.elevation_start
     :type: float
 
-    Gets the elevation start value.
+    Get the elevation start value.
 
 .. py:property:: elevation_stop
     :canonical: ansys.stk.core.stkobjects.AntennaContourEIRP.elevation_stop
     :type: float
 
-    Gets the elevation stop value.
+    Get the elevation stop value.
 
 .. py:property:: elevation_resolution
     :canonical: ansys.stk.core.stkobjects.AntennaContourEIRP.elevation_resolution
     :type: float
 
-    Gets the elevation resolution.
+    Get the elevation resolution.
 
 .. py:property:: elevation_number_of_points
     :canonical: ansys.stk.core.stkobjects.AntennaContourEIRP.elevation_number_of_points
     :type: int
 
-    Gets the number of elevation points.
+    Get the number of elevation points.
 
 .. py:property:: coordinate_system
     :canonical: ansys.stk.core.stkobjects.AntennaContourEIRP.coordinate_system
-    :type: ANTENNA_GRAPHICS_COORDINATE_SYSTEM
+    :type: AntennaGraphicsCoordinateSystem
 
-    Gets or sets the coordinate system for defining the resolution of the antenna graphics.
+    Get or set the coordinate system for defining the resolution of the antenna graphics.
 
 
 Method detail

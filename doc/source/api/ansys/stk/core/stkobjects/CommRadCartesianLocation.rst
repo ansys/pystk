@@ -19,11 +19,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.CommRadCartesianLocation.x`
-              - Gets or sets the X value.
+              - Get or set the X value.
             * - :py:attr:`~ansys.stk.core.stkobjects.CommRadCartesianLocation.y`
-              - Gets or sets the Y value.
+              - Get or set the Y value.
             * - :py:attr:`~ansys.stk.core.stkobjects.CommRadCartesianLocation.z`
-              - Gets or sets the Z value.
+              - Get or set the Z value.
 
 
 
@@ -42,18 +42,18 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.CommRadCartesianLocation.x
     :type: None
 
-    Gets or sets the X value.
+    Get or set the X value.
 
 .. py:property:: y
     :canonical: ansys.stk.core.stkobjects.CommRadCartesianLocation.y
     :type: None
 
-    Gets or sets the Y value.
+    Get or set the Y value.
 
 .. py:property:: z
     :canonical: ansys.stk.core.stkobjects.CommRadCartesianLocation.z
     :type: None
 
-    Gets or sets the Z value.
+    Get or set the Z value.
 
 

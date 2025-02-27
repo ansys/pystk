@@ -21,13 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcRelativeGroundTrackError.central_body_name`
-              - Gets or sets the central body of the component.
+              - Get or set the central body of the component.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcRelativeGroundTrackError.direction`
-              - Gets or sets the direction to search for the desired value.
+              - Get or set the direction to search for the desired value.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcRelativeGroundTrackError.signed`
               - True if signed based on RxV.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcRelativeGroundTrackError.reference_selection`
-              - Gets or sets the reference object selection.
+              - Get or set the reference object selection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcRelativeGroundTrackError.reference`
               - Get the reference object.
 
@@ -48,13 +48,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcRelativeGroundTrackError.central_body_name
     :type: str
 
-    Gets or sets the central body of the component.
+    Get or set the central body of the component.
 
 .. py:property:: direction
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcRelativeGroundTrackError.direction
-    :type: CALCULATION_OBJECT_DIRECTION
+    :type: CalculationObjectDirection
 
-    Gets or sets the direction to search for the desired value.
+    Get or set the direction to search for the desired value.
 
 .. py:property:: signed
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcRelativeGroundTrackError.signed
@@ -64,9 +64,9 @@ Property detail
 
 .. py:property:: reference_selection
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcRelativeGroundTrackError.reference_selection
-    :type: CALCULATION_OBJECT_REFERENCE
+    :type: CalculationObjectReference
 
-    Gets or sets the reference object selection.
+    Get or set the reference object selection.
 
 .. py:property:: reference
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcRelativeGroundTrackError.reference

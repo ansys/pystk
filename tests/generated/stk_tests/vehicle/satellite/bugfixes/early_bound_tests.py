@@ -1,3 +1,25 @@
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
 import pytest
 from test_util import *
 from assertion_harness import *
@@ -19,9 +41,9 @@ class EarlyBoundTests(TestBase):
         TestBase.Initialize()
         TestBase.LoadTestScenario(Path.Combine("SatelliteTests", "SatelliteTests.sc"))
         EarlyBoundTests.AG_SAT = Satellite(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "Satellite2")
+            TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "Satellite2")
         )
-        EarlyBoundTests.AG_SAT.set_propagator_type(PROPAGATOR_TYPE.TWO_BODY)
+        EarlyBoundTests.AG_SAT.set_propagator_type(PropagatorType.TWO_BODY)
         (PropagatorTwoBody(EarlyBoundTests.AG_SAT.propagator)).propagate()
 
     @staticmethod
@@ -42,18 +64,70 @@ class EarlyBoundTests(TestBase):
 
     def test_BUG63355_ExceptionOnBreakAngleTypeUnknown(self):
         def code1():
-            EarlyBoundTests.AG_SAT.pass_break.definition.set_break_angle_type(VEHICLE_BREAK_ANGLE_TYPE.UNKNOWN)
+            EarlyBoundTests.AG_SAT.pass_break.definition.set_break_angle_type(VehicleBreakAngleType.UNKNOWN)
 
         ex = ExceptionAssert.Throws(code1)
         StringAssert.Contains("Invalid", str(ex), "Exception message mismatch")
 
+    @category("VO Tests")
+    def test_PLAT_40277_IAgVORefCrdnCollection_input_formats(self):
+        refColl: "Graphics3DReferenceVectorGeometryToolComponentCollection" = (
+            EarlyBoundTests.AG_SAT.graphics_3d.vector.vector_geometry_tool_components
+        )
+
+        # Axes
+
+        refColl.add(GeometricElementType.AXES_ELEMENT, "Satellite/Satellite2 Equinoctial Axes")  # full name
+        refColl.add(GeometricElementType.AXES_ELEMENT, "ICR Axes")  # short name
+
+        refCrdn: "IGraphics3DReferenceAnalysisWorkbenchComponent" = refColl.get_component_by_name(
+            GeometricElementType.AXES_ELEMENT, "Satellite/Satellite2 Equinoctial Axes"
+        )
+        Assert.assertEqual("Satellite/Satellite2 Equinoctial Axes", refCrdn.name)
+
+        refCrdn = refColl.get_component_by_name(GeometricElementType.AXES_ELEMENT, "Equinoctial Axes")
+        Assert.assertEqual("Satellite/Satellite2 Equinoctial Axes", refCrdn.name)
+
+        refCrdn = refColl.get_component_by_name(GeometricElementType.AXES_ELEMENT, "Satellite/Satellite2 ICR Axes")
+        Assert.assertEqual("Satellite/Satellite2 ICR Axes", refCrdn.name)
+
+        refCrdn = refColl.get_component_by_name(GeometricElementType.AXES_ELEMENT, "ICR Axes")
+        Assert.assertEqual("Satellite/Satellite2 ICR Axes", refCrdn.name)
+
+        refColl.remove_by_name(GeometricElementType.AXES_ELEMENT, "Satellite/Satellite2 Equinoctial Axes")
+        refColl.remove_by_name(GeometricElementType.AXES_ELEMENT, "Satellite/Satellite2 ICR Axes")
+
+        # Vectors
+
+        refColl.add(GeometricElementType.VECTOR_ELEMENT, "Satellite/Satellite2 AngMomentum Vector")  # full name
+        refColl.add(GeometricElementType.VECTOR_ELEMENT, "AngVelocity Vector")  # short name
+
+        refCrdn = refColl.get_component_by_name(
+            GeometricElementType.VECTOR_ELEMENT, "Satellite/Satellite2 AngMomentum Vector"
+        )
+        Assert.assertEqual("Satellite/Satellite2 AngMomentum Vector", refCrdn.name)
+
+        refCrdn = refColl.get_component_by_name(GeometricElementType.VECTOR_ELEMENT, "AngMomentum Vector")
+        Assert.assertEqual("Satellite/Satellite2 AngMomentum Vector", refCrdn.name)
+
+        refCrdn = refColl.get_component_by_name(
+            GeometricElementType.VECTOR_ELEMENT, "Satellite/Satellite2 AngVelocity Vector"
+        )
+        Assert.assertEqual("Satellite/Satellite2 AngVelocity Vector", refCrdn.name)
+
+        refCrdn = refColl.get_component_by_name(GeometricElementType.VECTOR_ELEMENT, "AngVelocity Vector")
+        Assert.assertEqual("Satellite/Satellite2 AngVelocity Vector", refCrdn.name)
+
+        refColl.remove_by_name(GeometricElementType.VECTOR_ELEMENT, "Satellite/Satellite2 AngMomentum Vector")
+        refColl.remove_by_name(GeometricElementType.VECTOR_ELEMENT, "Satellite/Satellite2 AngVelocity Vector")
+
     def test_BUG62983_BUG67662_StkExternalOverride(self):
         # Improper default value of false for PropagatorStkExternal.Override
         satellite: "Satellite" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "StkExternalSatellite1"),
+            TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "StkExternalSatellite1"),
             Satellite,
         )
-        satellite.set_propagator_type(PROPAGATOR_TYPE.STK_EXTERNAL)
+        satellite.set_propagator_type(PropagatorType.STK_EXTERNAL)
         prop: "PropagatorStkExternal" = clr.CastAs(satellite.propagator, PropagatorStkExternal)
         prop.filename = TestBase.GetScenarioFile("External", "Satellite1.e")
         prop.propagate()
@@ -64,44 +138,44 @@ class EarlyBoundTests(TestBase):
 
     def test_BUG67722_SGP4SatelliteDuration(self):
         sat2: "Satellite" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "sat2"), Satellite
+            TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "sat2"), Satellite
         )
-        sat2.set_propagator_type(PROPAGATOR_TYPE.SGP4)
+        sat2.set_propagator_type(PropagatorType.SGP4)
         prop2: "PropagatorSGP4" = clr.CastAs(sat2.propagator, PropagatorSGP4)
         prop2.propagate()
         scenario: "Scenario" = clr.CastAs(TestBase.Application.current_scenario, Scenario)
         Assert.assertEqual(scenario.start_time, prop2.ephemeris_interval.find_start_time())
         Assert.assertEqual(scenario.stop_time, prop2.ephemeris_interval.find_stop_time())
-        TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "sat2")
+        TestBase.Application.current_scenario.children.unload(STKObjectType.SATELLITE, "sat2")
 
     def test_BUG65831_VectorConstraints(self):
         sat: "Satellite" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "BUG65831"), Satellite
+            TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "BUG65831"), Satellite
         )
-        sat.set_propagator_type(PROPAGATOR_TYPE.SGP4)
+        sat.set_propagator_type(PropagatorType.SGP4)
         sgp4: "PropagatorSGP4" = clr.CastAs(sat.propagator, PropagatorSGP4)
         sgp4.propagate()
         scenario: "Scenario" = clr.CastAs(TestBase.Application.current_scenario, Scenario)
 
         cnstrAngle: "AccessConstraintAnalysisWorkbenchComponent" = clr.CastAs(
-            sat.access_constraints.add_constraint(ACCESS_CONSTRAINT_TYPE.VECTOR_GEOMETRY_TOOL_ANGLE),
+            sat.access_constraints.add_constraint(AccessConstraintType.VECTOR_GEOMETRY_TOOL_ANGLE),
             AccessConstraintAnalysisWorkbenchComponent,
         )
         Assert.assertEqual("Satellite/BUG65831 VelocityAzimuth Angle", cnstrAngle.reference)
 
         cnstrCondition: "AccessConstraintAnalysisWorkbenchComponent" = clr.CastAs(
-            sat.access_constraints.add_constraint(ACCESS_CONSTRAINT_TYPE.CONDITION),
+            sat.access_constraints.add_constraint(AccessConstraintType.CONDITION),
             AccessConstraintAnalysisWorkbenchComponent,
         )
         Assert.assertEqual("Satellite/BUG65831 AfterStart Condition", cnstrCondition.reference)
 
         cnstrVectorMag: "AccessConstraintAnalysisWorkbenchComponent" = clr.CastAs(
-            sat.access_constraints.add_constraint(ACCESS_CONSTRAINT_TYPE.VECTOR_MAGNITUDE),
+            sat.access_constraints.add_constraint(AccessConstraintType.VECTOR_MAGNITUDE),
             AccessConstraintAnalysisWorkbenchComponent,
         )
         Assert.assertEqual("Satellite/BUG65831 Velocity Vector", cnstrVectorMag.reference)
 
-        TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "BUG65831")
+        TestBase.Application.current_scenario.children.unload(STKObjectType.SATELLITE, "BUG65831")
 
     # [Test]
     # public void BUG68243_CoordinateEpoch()
@@ -128,7 +202,7 @@ class EarlyBoundTests(TestBase):
     def test_BUG86580_AddSingleGfxTimeEvent(self):
         timeEvent: "VehicleGraphics2DTimeEventsElement" = EarlyBoundTests.AG_SAT.graphics.time_events.add()
 
-        Assert.assertEqual(timeEvent.time_event_type, VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE.MARKER)
+        Assert.assertEqual(timeEvent.time_event_type, VehicleGraphics2DTimeEventType.MARKER)
 
         data: "VehicleGraphics2DTimeEventTypeMarker" = VehicleGraphics2DTimeEventTypeMarker(
             timeEvent.time_event_type_data
@@ -142,7 +216,7 @@ class EarlyBoundTests(TestBase):
 
         Assert.assertEqual(2, EarlyBoundTests.AG_SAT.graphics.time_events.count)
 
-        Assert.assertEqual(timeEvent.time_event_type, VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE.MARKER)
+        Assert.assertEqual(timeEvent.time_event_type, VehicleGraphics2DTimeEventType.MARKER)
 
         data: "VehicleGraphics2DTimeEventTypeMarker" = VehicleGraphics2DTimeEventTypeMarker(
             timeEvent.time_event_type_data
@@ -160,7 +234,7 @@ class EarlyBoundTests(TestBase):
 
         Assert.assertEqual(3, EarlyBoundTests.AG_SAT.graphics.time_events.count)
 
-        Assert.assertEqual(timeEvent.time_event_type, VEHICLE_GRAPHICS_2D_TIME_EVENT_TYPE.MARKER)
+        Assert.assertEqual(timeEvent.time_event_type, VehicleGraphics2DTimeEventType.MARKER)
 
         data: "VehicleGraphics2DTimeEventTypeMarker" = VehicleGraphics2DTimeEventTypeMarker(
             timeEvent.time_event_type_data
@@ -171,10 +245,10 @@ class EarlyBoundTests(TestBase):
     def test_BUG112927_IAgVORefCrdnAngle_ShowDihedralAngleSupportingArcs(self):
         TestBase.Application.analysis_workbench_components_root.get_provider(
             "Satellite/Satellite1"
-        ).angles.factory.create("BUG112927_Dihedral", "", ANGLE_TYPE.DIHEDRAL_ANGLE)
+        ).angles.factory.create("BUG112927_Dihedral", "", AngleType.DIHEDRAL_ANGLE)
         dihedral: "Graphics3DReferenceAngle" = clr.CastAs(
             EarlyBoundTests.AG_SAT.graphics_3d.vector.vector_geometry_tool_components.add(
-                GEOMETRIC_ELEMENT_TYPE.ANGLE_ELEMENT, "Satellite/Satellite1 BUG112927_Dihedral Angle"
+                GeometricElementType.ANGLE_ELEMENT, "Satellite/Satellite1 BUG112927_Dihedral Angle"
             ),
             Graphics3DReferenceAngle,
         )
@@ -201,9 +275,9 @@ class EarlyBoundTests(TestBase):
 
     def test_BUG119916_StoppingConditions_MaxTripTimes(self):
         sat: "Satellite" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "BUG119916"), Satellite
+            TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "BUG119916"), Satellite
         )
-        sat.set_propagator_type(PROPAGATOR_TYPE.ASTROGATOR)
+        sat.set_propagator_type(PropagatorType.ASTROGATOR)
 
         mcs: "MCSDriver" = clr.CastAs(sat.propagator, MCSDriver)
         propagate: "MCSPropagate" = clr.CastAs(mcs.main_sequence.get_item_by_name("Propagate"), MCSPropagate)
@@ -219,13 +293,13 @@ class EarlyBoundTests(TestBase):
         stopCond.max_trip_times = 10001
         Assert.assertEqual(10001, stopCond.max_trip_times)  # settable when a Sequence is set
 
-        TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "BUG119916")
+        TestBase.Application.current_scenario.children.unload(STKObjectType.SATELLITE, "BUG119916")
 
     def test_FEA119646_CCSDS_CB_and_RefFrames(self):
         sat: "Satellite" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "FEA119646"), Satellite
+            TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "FEA119646"), Satellite
         )
-        sat.set_propagator_type(PROPAGATOR_TYPE.TWO_BODY)
+        sat.set_propagator_type(PropagatorType.TWO_BODY)
         twoBody: "PropagatorTwoBody" = clr.CastAs(sat.propagator, PropagatorTwoBody)
         twoBody.propagate()
 
@@ -236,82 +310,82 @@ class EarlyBoundTests(TestBase):
 
         exportTool.central_body_name = "Earth"
 
-        refFrame: "CCSDS_REFERENCE_FRAME"
+        refFrame: "CCSDSReferenceFrame"
 
         for refFrame in [
-            CCSDS_REFERENCE_FRAME.EME2000,
-            CCSDS_REFERENCE_FRAME.FIXED,
-            CCSDS_REFERENCE_FRAME.ICRF,
-            CCSDS_REFERENCE_FRAME.ITRF,
-            CCSDS_REFERENCE_FRAME.ITRF2000,
-            CCSDS_REFERENCE_FRAME.ITRF2005,
-            CCSDS_REFERENCE_FRAME.ITRF2008,
-            CCSDS_REFERENCE_FRAME.ITRF2014,
-            CCSDS_REFERENCE_FRAME.ITRF2020,
-            CCSDS_REFERENCE_FRAME.TEME_OF_DATE,
-            CCSDS_REFERENCE_FRAME.TOD,
-            CCSDS_REFERENCE_FRAME.GCRF,
+            CCSDSReferenceFrame.EME2000,
+            CCSDSReferenceFrame.FIXED,
+            CCSDSReferenceFrame.ICRF,
+            CCSDSReferenceFrame.ITRF,
+            CCSDSReferenceFrame.ITRF2000,
+            CCSDSReferenceFrame.ITRF2005,
+            CCSDSReferenceFrame.ITRF2008,
+            CCSDSReferenceFrame.ITRF2014,
+            CCSDSReferenceFrame.ITRF2020,
+            CCSDSReferenceFrame.TEME_OF_DATE,
+            CCSDSReferenceFrame.TOD,
+            CCSDSReferenceFrame.GCRF,
         ]:
             exportTool.reference_frame = refFrame
             exportTool.export(outputFile)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
-            exportTool.reference_frame = CCSDS_REFERENCE_FRAME.MEAN_EARTH
+            exportTool.reference_frame = CCSDSReferenceFrame.MEAN_EARTH
 
         exportTool.central_body_name = "Moon"
 
-        refFrame: "CCSDS_REFERENCE_FRAME"
+        refFrame: "CCSDSReferenceFrame"
 
         for refFrame in [
-            CCSDS_REFERENCE_FRAME.EME2000,
-            CCSDS_REFERENCE_FRAME.FIXED,
-            CCSDS_REFERENCE_FRAME.ICRF,
-            CCSDS_REFERENCE_FRAME.MEAN_EARTH,
-            CCSDS_REFERENCE_FRAME.TOD,
+            CCSDSReferenceFrame.EME2000,
+            CCSDSReferenceFrame.FIXED,
+            CCSDSReferenceFrame.ICRF,
+            CCSDSReferenceFrame.MEAN_EARTH,
+            CCSDSReferenceFrame.TOD,
         ]:
             exportTool.reference_frame = refFrame
             exportTool.export(outputFile)
 
-        refFrame: "CCSDS_REFERENCE_FRAME"
+        refFrame: "CCSDSReferenceFrame"
 
         for refFrame in [
-            CCSDS_REFERENCE_FRAME.ITRF,
-            CCSDS_REFERENCE_FRAME.ITRF2000,
-            CCSDS_REFERENCE_FRAME.ITRF2005,
-            CCSDS_REFERENCE_FRAME.ITRF2008,
-            CCSDS_REFERENCE_FRAME.ITRF2014,
-            CCSDS_REFERENCE_FRAME.ITRF2020,
-            CCSDS_REFERENCE_FRAME.TEME_OF_DATE,
-            CCSDS_REFERENCE_FRAME.GCRF,
+            CCSDSReferenceFrame.ITRF,
+            CCSDSReferenceFrame.ITRF2000,
+            CCSDSReferenceFrame.ITRF2005,
+            CCSDSReferenceFrame.ITRF2008,
+            CCSDSReferenceFrame.ITRF2014,
+            CCSDSReferenceFrame.ITRF2020,
+            CCSDSReferenceFrame.TEME_OF_DATE,
+            CCSDSReferenceFrame.GCRF,
         ]:
             with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
                 exportTool.reference_frame = refFrame
 
         exportTool.central_body_name = "Mars"
 
-        refFrame: "CCSDS_REFERENCE_FRAME"
+        refFrame: "CCSDSReferenceFrame"
 
         for refFrame in [
-            CCSDS_REFERENCE_FRAME.EME2000,
-            CCSDS_REFERENCE_FRAME.FIXED,
-            CCSDS_REFERENCE_FRAME.ICRF,
-            CCSDS_REFERENCE_FRAME.TOD,
+            CCSDSReferenceFrame.EME2000,
+            CCSDSReferenceFrame.FIXED,
+            CCSDSReferenceFrame.ICRF,
+            CCSDSReferenceFrame.TOD,
         ]:
             exportTool.reference_frame = refFrame
             exportTool.export(outputFile)
 
-        refFrame: "CCSDS_REFERENCE_FRAME"
+        refFrame: "CCSDSReferenceFrame"
 
         for refFrame in [
-            CCSDS_REFERENCE_FRAME.MEAN_EARTH,
-            CCSDS_REFERENCE_FRAME.ITRF,
-            CCSDS_REFERENCE_FRAME.ITRF2000,
-            CCSDS_REFERENCE_FRAME.ITRF2005,
-            CCSDS_REFERENCE_FRAME.ITRF2008,
-            CCSDS_REFERENCE_FRAME.ITRF2014,
-            CCSDS_REFERENCE_FRAME.ITRF2020,
-            CCSDS_REFERENCE_FRAME.TEME_OF_DATE,
-            CCSDS_REFERENCE_FRAME.GCRF,
+            CCSDSReferenceFrame.MEAN_EARTH,
+            CCSDSReferenceFrame.ITRF,
+            CCSDSReferenceFrame.ITRF2000,
+            CCSDSReferenceFrame.ITRF2005,
+            CCSDSReferenceFrame.ITRF2008,
+            CCSDSReferenceFrame.ITRF2014,
+            CCSDSReferenceFrame.ITRF2020,
+            CCSDSReferenceFrame.TEME_OF_DATE,
+            CCSDSReferenceFrame.GCRF,
         ]:
             with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
                 exportTool.reference_frame = refFrame
@@ -327,93 +401,93 @@ class EarlyBoundTests(TestBase):
 
         exportToolv2.central_body_name = "Earth"
 
-        refFrame: "CCSDS_REFERENCE_FRAME"
+        refFrame: "CCSDSReferenceFrame"
 
         for refFrame in [
-            CCSDS_REFERENCE_FRAME.EME2000,
-            CCSDS_REFERENCE_FRAME.FIXED,
-            CCSDS_REFERENCE_FRAME.ICRF,
-            CCSDS_REFERENCE_FRAME.ITRF,
-            CCSDS_REFERENCE_FRAME.ITRF2000,
-            CCSDS_REFERENCE_FRAME.ITRF2005,
-            CCSDS_REFERENCE_FRAME.ITRF2008,
-            CCSDS_REFERENCE_FRAME.ITRF2014,
-            CCSDS_REFERENCE_FRAME.ITRF2020,
-            CCSDS_REFERENCE_FRAME.TEME_OF_DATE,
-            CCSDS_REFERENCE_FRAME.TOD,
-            CCSDS_REFERENCE_FRAME.GCRF,
+            CCSDSReferenceFrame.EME2000,
+            CCSDSReferenceFrame.FIXED,
+            CCSDSReferenceFrame.ICRF,
+            CCSDSReferenceFrame.ITRF,
+            CCSDSReferenceFrame.ITRF2000,
+            CCSDSReferenceFrame.ITRF2005,
+            CCSDSReferenceFrame.ITRF2008,
+            CCSDSReferenceFrame.ITRF2014,
+            CCSDSReferenceFrame.ITRF2020,
+            CCSDSReferenceFrame.TEME_OF_DATE,
+            CCSDSReferenceFrame.TOD,
+            CCSDSReferenceFrame.GCRF,
         ]:
             exportToolv2.reference_frame = refFrame
             exportToolv2.export(outputFile)
 
         with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
-            exportToolv2.reference_frame = CCSDS_REFERENCE_FRAME.MEAN_EARTH
+            exportToolv2.reference_frame = CCSDSReferenceFrame.MEAN_EARTH
 
         exportToolv2.central_body_name = "Moon"
 
-        refFrame: "CCSDS_REFERENCE_FRAME"
+        refFrame: "CCSDSReferenceFrame"
 
         for refFrame in [
-            CCSDS_REFERENCE_FRAME.EME2000,
-            CCSDS_REFERENCE_FRAME.FIXED,
-            CCSDS_REFERENCE_FRAME.ICRF,
-            CCSDS_REFERENCE_FRAME.MEAN_EARTH,
-            CCSDS_REFERENCE_FRAME.TOD,
+            CCSDSReferenceFrame.EME2000,
+            CCSDSReferenceFrame.FIXED,
+            CCSDSReferenceFrame.ICRF,
+            CCSDSReferenceFrame.MEAN_EARTH,
+            CCSDSReferenceFrame.TOD,
         ]:
             exportToolv2.reference_frame = refFrame
             exportToolv2.export(outputFile)
 
-        refFrame: "CCSDS_REFERENCE_FRAME"
+        refFrame: "CCSDSReferenceFrame"
 
         for refFrame in [
-            CCSDS_REFERENCE_FRAME.ITRF,
-            CCSDS_REFERENCE_FRAME.ITRF2000,
-            CCSDS_REFERENCE_FRAME.ITRF2005,
-            CCSDS_REFERENCE_FRAME.ITRF2008,
-            CCSDS_REFERENCE_FRAME.ITRF2014,
-            CCSDS_REFERENCE_FRAME.ITRF2020,
-            CCSDS_REFERENCE_FRAME.TEME_OF_DATE,
-            CCSDS_REFERENCE_FRAME.GCRF,
+            CCSDSReferenceFrame.ITRF,
+            CCSDSReferenceFrame.ITRF2000,
+            CCSDSReferenceFrame.ITRF2005,
+            CCSDSReferenceFrame.ITRF2008,
+            CCSDSReferenceFrame.ITRF2014,
+            CCSDSReferenceFrame.ITRF2020,
+            CCSDSReferenceFrame.TEME_OF_DATE,
+            CCSDSReferenceFrame.GCRF,
         ]:
             with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
                 exportToolv2.reference_frame = refFrame
 
         exportToolv2.central_body_name = "Mars"
 
-        refFrame: "CCSDS_REFERENCE_FRAME"
+        refFrame: "CCSDSReferenceFrame"
 
         for refFrame in [
-            CCSDS_REFERENCE_FRAME.EME2000,
-            CCSDS_REFERENCE_FRAME.FIXED,
-            CCSDS_REFERENCE_FRAME.ICRF,
-            CCSDS_REFERENCE_FRAME.TOD,
+            CCSDSReferenceFrame.EME2000,
+            CCSDSReferenceFrame.FIXED,
+            CCSDSReferenceFrame.ICRF,
+            CCSDSReferenceFrame.TOD,
         ]:
             exportToolv2.reference_frame = refFrame
             exportToolv2.export(outputFile)
 
-        refFrame: "CCSDS_REFERENCE_FRAME"
+        refFrame: "CCSDSReferenceFrame"
 
         for refFrame in [
-            CCSDS_REFERENCE_FRAME.MEAN_EARTH,
-            CCSDS_REFERENCE_FRAME.ITRF,
-            CCSDS_REFERENCE_FRAME.ITRF2000,
-            CCSDS_REFERENCE_FRAME.ITRF2005,
-            CCSDS_REFERENCE_FRAME.ITRF2008,
-            CCSDS_REFERENCE_FRAME.ITRF2014,
-            CCSDS_REFERENCE_FRAME.ITRF2020,
-            CCSDS_REFERENCE_FRAME.TEME_OF_DATE,
-            CCSDS_REFERENCE_FRAME.GCRF,
+            CCSDSReferenceFrame.MEAN_EARTH,
+            CCSDSReferenceFrame.ITRF,
+            CCSDSReferenceFrame.ITRF2000,
+            CCSDSReferenceFrame.ITRF2005,
+            CCSDSReferenceFrame.ITRF2008,
+            CCSDSReferenceFrame.ITRF2014,
+            CCSDSReferenceFrame.ITRF2020,
+            CCSDSReferenceFrame.TEME_OF_DATE,
+            CCSDSReferenceFrame.GCRF,
         ]:
             with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
                 exportToolv2.reference_frame = refFrame
 
-        TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "FEA119646")
+        TestBase.Application.current_scenario.children.unload(STKObjectType.SATELLITE, "FEA119646")
 
     def test_FEA119465_STKEphem_CB_and_RefFrames(self):
         sat: "Satellite" = clr.CastAs(
-            TestBase.Application.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "FEA119465"), Satellite
+            TestBase.Application.current_scenario.children.new(STKObjectType.SATELLITE, "FEA119465"), Satellite
         )
-        sat.set_propagator_type(PROPAGATOR_TYPE.TWO_BODY)
+        sat.set_propagator_type(PropagatorType.TWO_BODY)
         twoBody: "PropagatorTwoBody" = clr.CastAs(sat.propagator, PropagatorTwoBody)
         twoBody.propagate()
 
@@ -426,82 +500,82 @@ class EarlyBoundTests(TestBase):
 
         exportTool.central_body_name = "Earth"
 
-        coordSys: "EPHEMERIS_COORDINATE_SYSTEM_TYPE"
+        coordSys: "EphemerisCoordinateSystemType"
 
         for coordSys in [
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.INERTIAL,
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.FIXED,
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.J2000,
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.ICRF,
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.TRUE_OF_DATE,
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.TEME_OF_DATE,
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.ITRF2000,
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.ITRF2005,
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.ITRF2008,
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.ITRF2014,
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.ITRF2020,
+            EphemerisCoordinateSystemType.INERTIAL,
+            EphemerisCoordinateSystemType.FIXED,
+            EphemerisCoordinateSystemType.J2000,
+            EphemerisCoordinateSystemType.ICRF,
+            EphemerisCoordinateSystemType.TRUE_OF_DATE,
+            EphemerisCoordinateSystemType.TEME_OF_DATE,
+            EphemerisCoordinateSystemType.ITRF2000,
+            EphemerisCoordinateSystemType.ITRF2005,
+            EphemerisCoordinateSystemType.ITRF2008,
+            EphemerisCoordinateSystemType.ITRF2014,
+            EphemerisCoordinateSystemType.ITRF2020,
         ]:
             exportTool.coordinate_system = coordSys
             exportTool.export(outputFile)
 
-        coordSys: "EPHEMERIS_COORDINATE_SYSTEM_TYPE"
+        coordSys: "EphemerisCoordinateSystemType"
 
-        for coordSys in [EPHEMERIS_COORDINATE_SYSTEM_TYPE.MEAN_EARTH]:
+        for coordSys in [EphemerisCoordinateSystemType.MEAN_EARTH]:
             with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
                 exportTool.coordinate_system = coordSys
 
         exportTool.central_body_name = "Moon"
 
-        coordSys: "EPHEMERIS_COORDINATE_SYSTEM_TYPE"
+        coordSys: "EphemerisCoordinateSystemType"
 
         for coordSys in [
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.FIXED,
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.INERTIAL,
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.J2000,
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.ICRF,
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.TRUE_OF_DATE,
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.MEAN_EARTH,
+            EphemerisCoordinateSystemType.FIXED,
+            EphemerisCoordinateSystemType.INERTIAL,
+            EphemerisCoordinateSystemType.J2000,
+            EphemerisCoordinateSystemType.ICRF,
+            EphemerisCoordinateSystemType.TRUE_OF_DATE,
+            EphemerisCoordinateSystemType.MEAN_EARTH,
         ]:
             exportTool.coordinate_system = coordSys
             exportTool.export(outputFile)
 
-        coordSys: "EPHEMERIS_COORDINATE_SYSTEM_TYPE"
+        coordSys: "EphemerisCoordinateSystemType"
 
         for coordSys in [
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.TEME_OF_DATE,
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.ITRF2000,
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.ITRF2005,
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.ITRF2008,
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.ITRF2014,
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.ITRF2020,
+            EphemerisCoordinateSystemType.TEME_OF_DATE,
+            EphemerisCoordinateSystemType.ITRF2000,
+            EphemerisCoordinateSystemType.ITRF2005,
+            EphemerisCoordinateSystemType.ITRF2008,
+            EphemerisCoordinateSystemType.ITRF2014,
+            EphemerisCoordinateSystemType.ITRF2020,
         ]:
             with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
                 exportTool.coordinate_system = coordSys
 
         exportTool.central_body_name = "Mars"
 
-        coordSys: "EPHEMERIS_COORDINATE_SYSTEM_TYPE"
+        coordSys: "EphemerisCoordinateSystemType"
 
         for coordSys in [
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.FIXED,
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.INERTIAL,
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.J2000,
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.ICRF,
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.TRUE_OF_DATE,
+            EphemerisCoordinateSystemType.FIXED,
+            EphemerisCoordinateSystemType.INERTIAL,
+            EphemerisCoordinateSystemType.J2000,
+            EphemerisCoordinateSystemType.ICRF,
+            EphemerisCoordinateSystemType.TRUE_OF_DATE,
         ]:
             exportTool.coordinate_system = coordSys
             exportTool.export(outputFile)
 
-        coordSys: "EPHEMERIS_COORDINATE_SYSTEM_TYPE"
+        coordSys: "EphemerisCoordinateSystemType"
 
         for coordSys in [
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.MEAN_EARTH,
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.TEME_OF_DATE,
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.ITRF2000,
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.ITRF2005,
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.ITRF2008,
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.ITRF2014,
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.ITRF2020,
+            EphemerisCoordinateSystemType.MEAN_EARTH,
+            EphemerisCoordinateSystemType.TEME_OF_DATE,
+            EphemerisCoordinateSystemType.ITRF2000,
+            EphemerisCoordinateSystemType.ITRF2005,
+            EphemerisCoordinateSystemType.ITRF2008,
+            EphemerisCoordinateSystemType.ITRF2014,
+            EphemerisCoordinateSystemType.ITRF2020,
         ]:
             with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
                 exportTool.coordinate_system = coordSys
@@ -515,84 +589,84 @@ class EarlyBoundTests(TestBase):
 
         exportTool2.central_body_name = "Earth"
 
-        coordSys: "EPHEMERIS_COORDINATE_SYSTEM_TYPE"
+        coordSys: "EphemerisCoordinateSystemType"
 
         for coordSys in [
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.INERTIAL,
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.FIXED,
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.J2000,
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.ICRF,
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.TRUE_OF_DATE,
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.TEME_OF_DATE,
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.ITRF2000,
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.ITRF2005,
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.ITRF2008,
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.ITRF2014,
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.ITRF2020,
+            EphemerisCoordinateSystemType.INERTIAL,
+            EphemerisCoordinateSystemType.FIXED,
+            EphemerisCoordinateSystemType.J2000,
+            EphemerisCoordinateSystemType.ICRF,
+            EphemerisCoordinateSystemType.TRUE_OF_DATE,
+            EphemerisCoordinateSystemType.TEME_OF_DATE,
+            EphemerisCoordinateSystemType.ITRF2000,
+            EphemerisCoordinateSystemType.ITRF2005,
+            EphemerisCoordinateSystemType.ITRF2008,
+            EphemerisCoordinateSystemType.ITRF2014,
+            EphemerisCoordinateSystemType.ITRF2020,
         ]:
             exportTool2.coordinate_system = coordSys
             exportTool2.export(outputFile)
 
-        coordSys: "EPHEMERIS_COORDINATE_SYSTEM_TYPE"
+        coordSys: "EphemerisCoordinateSystemType"
 
-        for coordSys in [EPHEMERIS_COORDINATE_SYSTEM_TYPE.MEAN_EARTH]:
+        for coordSys in [EphemerisCoordinateSystemType.MEAN_EARTH]:
             with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
                 exportTool2.coordinate_system = coordSys
 
         exportTool.central_body_name = "Moon"
 
-        coordSys: "EPHEMERIS_COORDINATE_SYSTEM_TYPE"
+        coordSys: "EphemerisCoordinateSystemType"
 
         for coordSys in [
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.FIXED,
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.INERTIAL,
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.J2000,
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.ICRF,
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.TRUE_OF_DATE,
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.MEAN_EARTH,
+            EphemerisCoordinateSystemType.FIXED,
+            EphemerisCoordinateSystemType.INERTIAL,
+            EphemerisCoordinateSystemType.J2000,
+            EphemerisCoordinateSystemType.ICRF,
+            EphemerisCoordinateSystemType.TRUE_OF_DATE,
+            EphemerisCoordinateSystemType.MEAN_EARTH,
         ]:
             exportTool.coordinate_system = coordSys
             exportTool.export(outputFile)
 
-        coordSys: "EPHEMERIS_COORDINATE_SYSTEM_TYPE"
+        coordSys: "EphemerisCoordinateSystemType"
 
         for coordSys in [
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.TEME_OF_DATE,
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.ITRF2000,
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.ITRF2005,
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.ITRF2008,
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.ITRF2014,
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.ITRF2020,
+            EphemerisCoordinateSystemType.TEME_OF_DATE,
+            EphemerisCoordinateSystemType.ITRF2000,
+            EphemerisCoordinateSystemType.ITRF2005,
+            EphemerisCoordinateSystemType.ITRF2008,
+            EphemerisCoordinateSystemType.ITRF2014,
+            EphemerisCoordinateSystemType.ITRF2020,
         ]:
             with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
                 exportTool.coordinate_system = coordSys
 
         exportTool.central_body_name = "Mars"
 
-        coordSys: "EPHEMERIS_COORDINATE_SYSTEM_TYPE"
+        coordSys: "EphemerisCoordinateSystemType"
 
         for coordSys in [
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.FIXED,
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.INERTIAL,
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.J2000,
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.ICRF,
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.TRUE_OF_DATE,
+            EphemerisCoordinateSystemType.FIXED,
+            EphemerisCoordinateSystemType.INERTIAL,
+            EphemerisCoordinateSystemType.J2000,
+            EphemerisCoordinateSystemType.ICRF,
+            EphemerisCoordinateSystemType.TRUE_OF_DATE,
         ]:
             exportTool.coordinate_system = coordSys
             exportTool.export(outputFile)
 
-        coordSys: "EPHEMERIS_COORDINATE_SYSTEM_TYPE"
+        coordSys: "EphemerisCoordinateSystemType"
 
         for coordSys in [
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.MEAN_EARTH,
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.TEME_OF_DATE,
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.ITRF2000,
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.ITRF2005,
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.ITRF2008,
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.ITRF2014,
-            EPHEMERIS_COORDINATE_SYSTEM_TYPE.ITRF2020,
+            EphemerisCoordinateSystemType.MEAN_EARTH,
+            EphemerisCoordinateSystemType.TEME_OF_DATE,
+            EphemerisCoordinateSystemType.ITRF2000,
+            EphemerisCoordinateSystemType.ITRF2005,
+            EphemerisCoordinateSystemType.ITRF2008,
+            EphemerisCoordinateSystemType.ITRF2014,
+            EphemerisCoordinateSystemType.ITRF2020,
         ]:
             with pytest.raises(Exception, match=RegexSubstringMatch("must be in")):
                 exportTool.coordinate_system = coordSys
 
-        TestBase.Application.current_scenario.children.unload(STK_OBJECT_TYPE.SATELLITE, "FEA119465")
+        TestBase.Application.current_scenario.children.unload(STKObjectType.SATELLITE, "FEA119465")

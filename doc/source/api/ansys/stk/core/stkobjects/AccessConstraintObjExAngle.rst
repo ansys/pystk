@@ -36,9 +36,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintObjExAngle.exclusion_angle`
               - Exclusion Angle value. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintObjExAngle.assigned_objects`
-              - Returns a safearray of assigned objects.
+              - Return a safearray of assigned objects.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintObjExAngle.available_objects`
-              - Returns a safearray of available objects.
+              - Return a safearray of available objects.
 
 
 
@@ -63,13 +63,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.AccessConstraintObjExAngle.assigned_objects
     :type: list
 
-    Returns a safearray of assigned objects.
+    Return a safearray of assigned objects.
 
 .. py:property:: available_objects
     :canonical: ansys.stk.core.stkobjects.AccessConstraintObjExAngle.available_objects
     :type: list
 
-    Returns a safearray of available objects.
+    Return a safearray of available objects.
 
 
 Method detail

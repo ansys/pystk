@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaBeamTransmit.power`
-              - Gets or sets the beam power.
+              - Get or set the beam power.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.AntennaBeamTransmit.power
     :type: float
 
-    Gets or sets the beam power.
+    Get or set the beam power.
 
 

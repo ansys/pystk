@@ -27,11 +27,11 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GoldenSectionResult.current_value`
               - Get the value of the independent variable after the last targeter run.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GoldenSectionResult.desired_operation`
-              - Gets or sets the Desired Operation/Objective of golden section.
+              - Get or set the Desired Operation/Objective of golden section.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GoldenSectionResult.use_custom_display_unit`
               - If true, allows display of values in another unit.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.GoldenSectionResult.custom_display_unit`
-              - Gets or sets the unit in which the value will be displayed in the GUI.
+              - Get or set the unit in which the value will be displayed in the GUI.
 
 
 
@@ -72,9 +72,9 @@ Property detail
 
 .. py:property:: desired_operation
     :canonical: ansys.stk.core.stkobjects.astrogator.GoldenSectionResult.desired_operation
-    :type: GOLDEN_SECTION_DESIRED_OPERATION
+    :type: GoldenSectionDesiredOperation
 
-    Gets or sets the Desired Operation/Objective of golden section.
+    Get or set the Desired Operation/Objective of golden section.
 
 .. py:property:: use_custom_display_unit
     :canonical: ansys.stk.core.stkobjects.astrogator.GoldenSectionResult.use_custom_display_unit
@@ -86,6 +86,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.GoldenSectionResult.custom_display_unit
     :type: str
 
-    Gets or sets the unit in which the value will be displayed in the GUI.
+    Get or set the unit in which the value will be displayed in the GUI.
 
 

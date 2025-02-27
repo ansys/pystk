@@ -1,3 +1,25 @@
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
 from test_util import *
 
 import unittest
@@ -141,7 +163,7 @@ class DataAnalysisUtilTests(unittest.TestCase):
 
         index_element_name = "Region Name"
 
-        expected_results_df = region_stats_data_sets.to_pandas_dataframe(indexElementName=index_element_name)
+        expected_results_df = region_stats_data_sets.to_pandas_dataframe(index_element_name=index_element_name)
 
         self.assertIsInstance(expected_results_df, pd.DataFrame)
         self.assertEqual(len(expected_results_df.index), 288)
@@ -160,7 +182,7 @@ class DataAnalysisUtilTests(unittest.TestCase):
         index_element_name = "Faux Invalid Element Name"
 
         with self.assertRaises(ValueError):
-            expected_results_df = region_stats_data_sets.to_pandas_dataframe(indexElementName=index_element_name)
+            expected_results_df = region_stats_data_sets.to_pandas_dataframe(index_element_name=index_element_name)
 
     @unittest.skipIf(skip_test, test_skipped_msg)
     def test_to_dataframe_map_types_to_dtypes(self):
@@ -175,7 +197,9 @@ class DataAnalysisUtilTests(unittest.TestCase):
 
         all_regions_dprv_as_dprv: IDataProvider = IDataProvider(all_regions_dprv_as_dprv_fixed)
         all_regions_dprv_elements = all_regions_dprv_as_dprv.elements
-        expected_results_df = all_regions_data_sets.to_pandas_dataframe(dataProviderElements=all_regions_dprv_elements)
+        expected_results_df = all_regions_data_sets.to_pandas_dataframe(
+            data_provider_elements=all_regions_dprv_elements
+        )
 
         self.assertIsInstance(expected_results_df, pd.DataFrame)
         self.assertEqual(len(expected_results_df.index), 11352)

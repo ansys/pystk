@@ -21,7 +21,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionVolumeLevel.value`
               - Get the volume level value.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarCrossSectionVolumeLevel.color`
-              - Gets or sets the volume level color.
+              - Get or set the volume level color.
 
 
 
@@ -46,6 +46,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.RadarCrossSectionVolumeLevel.color
     :type: agcolor.Color
 
-    Gets or sets the volume level color.
+    Get or set the volume level color.
 
 

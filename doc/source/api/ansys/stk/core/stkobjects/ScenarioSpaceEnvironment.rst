@@ -28,9 +28,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioSpaceEnvironment.radiation_environment`
-              - Gets the radiation environment settings.
+              - Get the radiation environment settings.
             * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioSpaceEnvironment.graphics_3d`
-              - Gets the 3D Graphics settings.
+              - Get the 3D Graphics settings.
 
 
 
@@ -49,13 +49,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.ScenarioSpaceEnvironment.radiation_environment
     :type: SpaceEnvironmentRadiationEnvironment
 
-    Gets the radiation environment settings.
+    Get the radiation environment settings.
 
 .. py:property:: graphics_3d
     :canonical: ansys.stk.core.stkobjects.ScenarioSpaceEnvironment.graphics_3d
     :type: SpaceEnvironmentScenarioGraphics3D
 
-    Gets the 3D Graphics settings.
+    Get the 3D Graphics settings.
 
 
 Method detail
@@ -63,14 +63,14 @@ Method detail
 
 
 
-.. py:method:: compute_saa_flux_intensity(self, channel: SPACE_ENVIRONMENT_SAA_CHANNEL, lat: float, lon: float, alt: float) -> float
+.. py:method:: compute_saa_flux_intensity(self, channel: SpaceEnvironmentSAAChannel, lat: float, lon: float, alt: float) -> float
     :canonical: ansys.stk.core.stkobjects.ScenarioSpaceEnvironment.compute_saa_flux_intensity
 
     Compute SAA flux intensity at the specified Earth location. Uses Angle, Longitude, Distance, and FluxIntensity Dimensions.
 
     :Parameters:
 
-    **channel** : :obj:`~SPACE_ENVIRONMENT_SAA_CHANNEL`
+    **channel** : :obj:`~SpaceEnvironmentSAAChannel`
     **lat** : :obj:`~float`
     **lon** : :obj:`~float`
     **alt** : :obj:`~float`

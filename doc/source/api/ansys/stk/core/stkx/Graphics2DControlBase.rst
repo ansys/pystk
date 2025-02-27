@@ -60,15 +60,15 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkx.Graphics2DControlBase.ole_drop_mode`
               - How the control handles drop operations.
             * - :py:attr:`~ansys.stk.core.stkx.Graphics2DControlBase.vendor_id`
-              - This property is deprecated. The identifier of the vendor.
+              - Do not use this property, as it is deprecated. The identifier of the vendor.
             * - :py:attr:`~ansys.stk.core.stkx.Graphics2DControlBase.mouse_mode`
               - Whether this control responds to mouse events.
             * - :py:attr:`~ansys.stk.core.stkx.Graphics2DControlBase.ready_state`
-              - Returns/sets the background color of the control.
+              - Return/sets the background color of the control.
             * - :py:attr:`~ansys.stk.core.stkx.Graphics2DControlBase.advanced_pick_mode`
               - If true, sets the advance pick mode.
             * - :py:attr:`~ansys.stk.core.stkx.Graphics2DControlBase.in_zoom_mode`
-              - Returns true if in zoom in mode.
+              - Return true if in zoom in mode.
             * - :py:attr:`~ansys.stk.core.stkx.Graphics2DControlBase.show_progress_image`
               - The animated progress image type.
             * - :py:attr:`~ansys.stk.core.stkx.Graphics2DControlBase.progress_image_x_offset`
@@ -82,9 +82,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkx.Graphics2DControlBase.progress_image_y_origin`
               - The Y origin alignment for animated progress image.
             * - :py:attr:`~ansys.stk.core.stkx.Graphics2DControlBase.picture_from_file`
-              - Gets or sets the splash logo graphic file to be displayed in the control.
+              - Get or set the splash logo graphic file to be displayed in the control.
             * - :py:attr:`~ansys.stk.core.stkx.Graphics2DControlBase.pan_mode_enabled`
-              - Enables/disables pan mode for map control.
+              - Enable/disable pan mode for map control.
 
 
 
@@ -131,7 +131,7 @@ Property detail
 
 .. py:property:: ole_drop_mode
     :canonical: ansys.stk.core.stkx.Graphics2DControlBase.ole_drop_mode
-    :type: OLE_DROP_MODE
+    :type: OLEDropMode
 
     How the control handles drop operations.
 
@@ -139,11 +139,11 @@ Property detail
     :canonical: ansys.stk.core.stkx.Graphics2DControlBase.vendor_id
     :type: str
 
-    This property is deprecated. The identifier of the vendor.
+    Do not use this property, as it is deprecated. The identifier of the vendor.
 
 .. py:property:: mouse_mode
     :canonical: ansys.stk.core.stkx.Graphics2DControlBase.mouse_mode
-    :type: MOUSE_MODE
+    :type: MouseMode
 
     Whether this control responds to mouse events.
 
@@ -151,7 +151,7 @@ Property detail
     :canonical: ansys.stk.core.stkx.Graphics2DControlBase.ready_state
     :type: int
 
-    Returns/sets the background color of the control.
+    Return/sets the background color of the control.
 
 .. py:property:: advanced_pick_mode
     :canonical: ansys.stk.core.stkx.Graphics2DControlBase.advanced_pick_mode
@@ -163,11 +163,11 @@ Property detail
     :canonical: ansys.stk.core.stkx.Graphics2DControlBase.in_zoom_mode
     :type: bool
 
-    Returns true if in zoom in mode.
+    Return true if in zoom in mode.
 
 .. py:property:: show_progress_image
     :canonical: ansys.stk.core.stkx.Graphics2DControlBase.show_progress_image
-    :type: SHOW_PROGRESS_IMAGE
+    :type: ShowProgressImage
 
     The animated progress image type.
 
@@ -191,13 +191,13 @@ Property detail
 
 .. py:property:: progress_image_x_origin
     :canonical: ansys.stk.core.stkx.Graphics2DControlBase.progress_image_x_origin
-    :type: PROGRESS_IMAGE_X_ORIGIN
+    :type: ProgressImageXOrigin
 
     The X origin alignment for animated progress image.
 
 .. py:property:: progress_image_y_origin
     :canonical: ansys.stk.core.stkx.Graphics2DControlBase.progress_image_y_origin
-    :type: PROGRESS_IMAGE_Y_ORIGIN
+    :type: ProgressImageYOrigin
 
     The Y origin alignment for animated progress image.
 
@@ -205,13 +205,13 @@ Property detail
     :canonical: ansys.stk.core.stkx.Graphics2DControlBase.picture_from_file
     :type: str
 
-    Gets or sets the splash logo graphic file to be displayed in the control.
+    Get or set the splash logo graphic file to be displayed in the control.
 
 .. py:property:: pan_mode_enabled
     :canonical: ansys.stk.core.stkx.Graphics2DControlBase.pan_mode_enabled
     :type: bool
 
-    Enables/disables pan mode for map control.
+    Enable/disable pan mode for map control.
 
 
 Method detail
@@ -309,7 +309,7 @@ Method detail
 
 
 
-.. py:method:: get_window_projected_position(self, lat: float, lon: float, alt: float, draw_coords: GRAPHICS_2D_DRAW_COORDINATES) -> WindowProjectionPosition
+.. py:method:: get_window_projected_position(self, lat: float, lon: float, alt: float, draw_coords: Graphics2DDrawCoordinates) -> WindowProjectionPosition
     :canonical: ansys.stk.core.stkx.Graphics2DControlBase.get_window_projected_position
 
     Get the window projected position for given values.
@@ -319,7 +319,7 @@ Method detail
     **lat** : :obj:`~float`
     **lon** : :obj:`~float`
     **alt** : :obj:`~float`
-    **draw_coords** : :obj:`~GRAPHICS_2D_DRAW_COORDINATES`
+    **draw_coords** : :obj:`~Graphics2DDrawCoordinates`
 
     :Returns:
 

@@ -1,3 +1,25 @@
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
 import enum
 import math
 import inspect
@@ -17,6 +39,7 @@ from ansys.stk.core.stkengine import *
 if os.name == "nt":
     from ansys.stk.core.stkdesktop import *
 from ansys.stk.core.stkobjects import *
+from ansys.stk.core.stkrfchannelmodeler import *
 from ansys.stk.core.stkobjects.astrogator import *
 from ansys.stk.core.stkobjects.aviator import *
 from ansys.stk.core.stkutil import *
@@ -1026,7 +1049,7 @@ class TestBase(unittest.TestCase):
             TestBase.root.close_scenario()
 
         TestBase.root.new_scenario("Snippet")
-        parent: Satellite = TestBase.root.current_scenario.children.new(STK_OBJECT_TYPE.SATELLITE, "parent")
+        parent: Satellite = TestBase.root.current_scenario.children.new(STKObjectType.SATELLITE, "parent")
         clr.CastAs(parent.propagator, PropagatorTwoBody).propagate()
         accessConstraints = parent.access_constraints
 
@@ -1107,9 +1130,9 @@ class TestBase(unittest.TestCase):
         TestBase.LoadTestScenario("Scenario1.sc")
 
         ac1: Aircraft = clr.CastAs(TestBase.Application.current_scenario.children["Boing737"], Aircraft)
-        ac1.set_route_type(PROPAGATOR_TYPE.GREAT_ARC)
+        ac1.set_route_type(PropagatorType.GREAT_ARC)
         ga: PropagatorGreatArc = clr.CastAs(ac1.route, PropagatorGreatArc)
-        ga.method = VEHICLE_WAYPOINT_COMPUTATION_METHOD.DETERMINE_VELOCITY_FROM_TIME
+        ga.method = VehicleWaypointComputationMethod.DETERMINE_VELOCITY_FROM_TIME
         wpe = ga.waypoints.add()
         wpe.latitude = 0
         wpe.longitude = 0
@@ -1120,9 +1143,9 @@ class TestBase(unittest.TestCase):
         wpe.time = "1 Jul 1999 00:55:00.000"
         ga.propagate()
         gv1: GroundVehicle = clr.CastAs(TestBase.Application.current_scenario.children["GroundVehicle1"], GroundVehicle)
-        gv1.set_route_type(PROPAGATOR_TYPE.GREAT_ARC)
+        gv1.set_route_type(PropagatorType.GREAT_ARC)
         ga: PropagatorGreatArc = clr.CastAs(gv1.route, PropagatorGreatArc)
-        ga.method = VEHICLE_WAYPOINT_COMPUTATION_METHOD.DETERMINE_VELOCITY_FROM_TIME
+        ga.method = VehicleWaypointComputationMethod.DETERMINE_VELOCITY_FROM_TIME
         wpe = ga.waypoints.add()
         wpe.latitude = 0
         wpe.longitude = 0
@@ -1133,9 +1156,9 @@ class TestBase(unittest.TestCase):
         wpe.time = "1 Jul 1999 00:55:00.000"
         ga.propagate()
         sh1: Ship = clr.CastAs(TestBase.Application.current_scenario.children["Ship1"], Ship)
-        sh1.set_route_type(PROPAGATOR_TYPE.GREAT_ARC)
+        sh1.set_route_type(PropagatorType.GREAT_ARC)
         ga: PropagatorGreatArc = clr.CastAs(sh1.route, PropagatorGreatArc)
-        ga.method = VEHICLE_WAYPOINT_COMPUTATION_METHOD.DETERMINE_VELOCITY_FROM_TIME
+        ga.method = VehicleWaypointComputationMethod.DETERMINE_VELOCITY_FROM_TIME
         wpe = ga.waypoints.add()
         wpe.latitude = 0
         wpe.longitude = 0
@@ -1146,7 +1169,7 @@ class TestBase(unittest.TestCase):
         wpe.time = "1 Jul 1999 00:55:00.000"
         ga.propagate()
         ms1: Missile = clr.CastAs(TestBase.Application.current_scenario.children["Missile1"], Missile)
-        ms1.set_trajectory_type(PROPAGATOR_TYPE.BALLISTIC)
+        ms1.set_trajectory_type(PropagatorType.BALLISTIC)
         ballistic: PropagatorBallistic = clr.CastAs(ms1.trajectory, PropagatorBallistic)
         ballistic.step = 59
         ballistic.propagate()
@@ -1232,7 +1255,7 @@ class TestBase(unittest.TestCase):
     def EarthGravModel(self):
         sc = Scenario(TestBase.Application.current_scenario)
         cbEarth: CentralBodyComponent = clr.CastAs(
-            sc.component_directory.get_components(COMPONENT.ASTROGATOR).get_folder("Central Bodies")["Earth"],
+            sc.component_directory.get_components(Component.ASTROGATOR).get_folder("Central Bodies")["Earth"],
             CentralBodyComponent,
         )
         if cbEarth.default_gravity_model_name == "EGM2008":
@@ -1267,7 +1290,7 @@ class TestBase(unittest.TestCase):
 
     @staticmethod
     def PropagateGreatArc(ga: "PropagatorGreatArc"):
-        ga.method = VEHICLE_WAYPOINT_COMPUTATION_METHOD.DETERMINE_VELOCITY_FROM_TIME
+        ga.method = VehicleWaypointComputationMethod.DETERMINE_VELOCITY_FROM_TIME
         wpe: "VehicleWaypointsElement" = ga.waypoints.add()
         wpe.latitude = 0
         wpe.longitude = 0
@@ -1622,11 +1645,11 @@ class DataProviderResultWriter(object):
         self.WriteLine(0, "Result Info")
         self.WriteLine(0, "-----------")
         self.WriteLine(0, ("Category:" + str(self._result.category)))
-        if self._result.category == DATA_PROVIDER_RESULT_CATEGORY.INTERVAL_LIST:
+        if self._result.category == DataProviderResultCategory.INTERVAL_LIST:
             self.DumpDPIntervalList(DataProviderResultIntervalCollection(self._result.value), 1)
-        elif self._result.category == DATA_PROVIDER_RESULT_CATEGORY.SUB_SECTION_LIST:
+        elif self._result.category == DataProviderResultCategory.SUB_SECTION_LIST:
             self.DumpDPSubSectionList(DataProviderResultSubSectionCollection(self._result.value), 1)
-        elif self._result.category == DATA_PROVIDER_RESULT_CATEGORY.MESSAGE:
+        elif self._result.category == DataProviderResultCategory.MESSAGE:
             self.DumpDPMessage(DataProviderResultTextMessage(self._result.value), 1)
         return Regex.Replace(self.outStr, "\n", "")
 

@@ -40,7 +40,7 @@ Property detail
 
 .. py:property:: start_stop_option
     :canonical: ansys.stk.core.vgt.TimeToolTimeArrayStartStopTimes.start_stop_option
-    :type: START_STOP_TYPE
+    :type: StartStopType
 
     The edge type. At least one of the two edge types must be selected.
 

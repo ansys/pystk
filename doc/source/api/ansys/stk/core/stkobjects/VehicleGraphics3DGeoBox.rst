@@ -36,7 +36,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DGeoBox.east_west`
               - Angular length of the plane from East to West. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DGeoBox.radius`
-              - Gets or sets the radius from the center of the Earth to the center of the plane. Uses Distance Dimension.
+              - Get or set the radius from the center of the Earth to the center of the plane. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DGeoBox.color`
               - Color of the lines defining the plane.
 
@@ -81,7 +81,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DGeoBox.radius
     :type: float
 
-    Gets or sets the radius from the center of the Earth to the center of the plane. Uses Distance Dimension.
+    Get or set the radius from the center of the Earth to the center of the plane. Uses Distance Dimension.
 
 .. py:property:: color
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DGeoBox.color

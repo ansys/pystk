@@ -1,6 +1,24 @@
-################################################################################
-#          Copyright 2020-2023, Ansys Government Initiatives
-################################################################################
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
 
 from __future__ import annotations
 
@@ -223,7 +241,7 @@ class IStkObjectRootEventHandler(STKEventSubscriber):
         
     @property
     def on_log_message(self):
-        """Use operator += to register or operator -= to unregister callbacks with the signature [OnLogMessage(message:str, msgType:"LOG_MESSAGE_TYPE", errorCode:int, fileName:str, lineNo:int, dispID:"LOG_MESSAGE_DISPLAY_ID") -> None]"""
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnLogMessage(message:str, msgType:"LogMessageType", errorCode:int, fileName:str, lineNo:int, dispID:"LogMessageDisplayID") -> None]"""
         return self._events["OnLogMessage"]
         
     @on_log_message.setter
@@ -268,7 +286,7 @@ class IStkObjectRootEventHandler(STKEventSubscriber):
         
     @property
     def on_animation_playback(self):
-        """Use operator += to register or operator -= to unregister callbacks with the signature [OnAnimationPlayback(CurrentTime:float, eAction:"ANIMATION_ACTION_TYPE", eDirection:"ANIMATION_DIRECTION_TYPE") -> None]"""
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnAnimationPlayback(CurrentTime:float, eAction:"AnimationActionType", eDirection:"AnimationDirectionType") -> None]"""
         return self._events["OnAnimationPlayback"]
         
     @on_animation_playback.setter
@@ -532,7 +550,7 @@ class ISTKXApplicationEventHandler(STKEventSubscriber):
         
     @property
     def on_log_message(self):
-        """Use operator += to register or operator -= to unregister callbacks with the signature [OnLogMessage(message:str, msgType:"LOG_MESSAGE_TYPE", errorCode:int, fileName:str, lineNo:int, dispID:"LOG_MESSAGE_DISPLAY_ID") -> None]"""
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnLogMessage(message:str, msgType:"LogMessageType", errorCode:int, fileName:str, lineNo:int, dispID:"LogMessageDisplayID") -> None]"""
         return self._events["OnLogMessage"]
         
     @on_log_message.setter
@@ -595,7 +613,7 @@ class ISTKXApplicationEventHandler(STKEventSubscriber):
     
     @property
     def on_new_gfx_analysis_ctrl_request(self):
-        """Use operator += to register or operator -= to unregister callbacks with the signature [OnNewGfxAnalysisCtrlRequest(SceneID:int, GfxAnalysisMode:"GRAPHICS_2D_ANALYSIS_MODE") -> None]"""
+        """Use operator += to register or operator -= to unregister callbacks with the signature [OnNewGfxAnalysisCtrlRequest(SceneID:int, GfxAnalysisMode:"Graphics2DAnalysisMode") -> None]"""
         return self._events["OnNewGfxAnalysisCtrlRequest"]
         
     @on_new_gfx_analysis_ctrl_request.setter
@@ -964,6 +982,3 @@ class ITerrainOverlayCollectionEventHandler(STKEventSubscriber):
         self._events["AddComplete"]._safe_assign(callback)
         
     
-################################################################################
-#          Copyright 2020-2023, Ansys Government Initiatives
-################################################################################

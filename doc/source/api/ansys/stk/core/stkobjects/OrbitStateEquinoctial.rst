@@ -21,11 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateEquinoctial.coordinate_system_type`
-              - Gets or sets the coordinate system being used.
+              - Get or set the coordinate system being used.
             * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateEquinoctial.coordinate_system`
               - Get the coordinate system and coordinate epoch.
             * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateEquinoctial.size_shape_type`
-              - Gets or sets the orbit size option can be Mean Motion or Semimajor Axis.
+              - Get or set the orbit size option can be Mean Motion or Semimajor Axis.
             * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateEquinoctial.size_shape`
               - Get the value of Mean Motion or Semimajor Axis.
             * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateEquinoctial.h`
@@ -37,11 +37,11 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateEquinoctial.q`
               - P/Q collectively describe the orientation of the satellite's orbit plane. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateEquinoctial.mean_longitude`
-              - Specifies a satellite's position within its orbit at epoch and equals the sum of the classical RAAN, Argument of Perigee, and Mean Anomaly. Uses Angle dimension.
+              - Specify a satellite's position within its orbit at epoch and equals the sum of the classical RAAN, Argument of Perigee, and Mean Anomaly. Uses Angle dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateEquinoctial.formulation`
-              - Gets or sets the Formulation can be Retrograde or Posigrade.
+              - Get or set the Formulation can be Retrograde or Posigrade.
             * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateEquinoctial.supported_coordinate_system_types`
-              - Returns an array of supported coordinate system types.
+              - Return an array of supported coordinate system types.
             * - :py:attr:`~ansys.stk.core.stkobjects.OrbitStateEquinoctial.state_epoch`
               - Smart epoch component allows the user to configure the state epoch explicitly or implicitly (using a pre-defined or custom time instant component).
 
@@ -60,9 +60,9 @@ Property detail
 
 .. py:property:: coordinate_system_type
     :canonical: ansys.stk.core.stkobjects.OrbitStateEquinoctial.coordinate_system_type
-    :type: COORDINATE_SYSTEM
+    :type: CoordinateSystem
 
-    Gets or sets the coordinate system being used.
+    Get or set the coordinate system being used.
 
 .. py:property:: coordinate_system
     :canonical: ansys.stk.core.stkobjects.OrbitStateEquinoctial.coordinate_system
@@ -72,9 +72,9 @@ Property detail
 
 .. py:property:: size_shape_type
     :canonical: ansys.stk.core.stkobjects.OrbitStateEquinoctial.size_shape_type
-    :type: EQUINOCTIAL_SIZE_SHAPE
+    :type: EquinoctialSizeShape
 
-    Gets or sets the orbit size option can be Mean Motion or Semimajor Axis.
+    Get or set the orbit size option can be Mean Motion or Semimajor Axis.
 
 .. py:property:: size_shape
     :canonical: ansys.stk.core.stkobjects.OrbitStateEquinoctial.size_shape
@@ -110,19 +110,19 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.OrbitStateEquinoctial.mean_longitude
     :type: float
 
-    Specifies a satellite's position within its orbit at epoch and equals the sum of the classical RAAN, Argument of Perigee, and Mean Anomaly. Uses Angle dimension.
+    Specify a satellite's position within its orbit at epoch and equals the sum of the classical RAAN, Argument of Perigee, and Mean Anomaly. Uses Angle dimension.
 
 .. py:property:: formulation
     :canonical: ansys.stk.core.stkobjects.OrbitStateEquinoctial.formulation
-    :type: EQUINOCTIAL_FORMULATION
+    :type: EquinoctialFormulation
 
-    Gets or sets the Formulation can be Retrograde or Posigrade.
+    Get or set the Formulation can be Retrograde or Posigrade.
 
 .. py:property:: supported_coordinate_system_types
     :canonical: ansys.stk.core.stkobjects.OrbitStateEquinoctial.supported_coordinate_system_types
     :type: list
 
-    Returns an array of supported coordinate system types.
+    Return an array of supported coordinate system types.
 
 .. py:property:: state_epoch
     :canonical: ansys.stk.core.stkobjects.OrbitStateEquinoctial.state_epoch

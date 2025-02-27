@@ -74,29 +74,29 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.PolylinePrimitive.width`
-              - Gets or sets the line width, in pixels.
+              - Get or set the line width, in pixels.
             * - :py:attr:`~ansys.stk.core.graphics.PolylinePrimitive.minimum_width_supported`
-              - Gets the minimum width, in pixels, supported by the video card.
+              - Get the minimum width, in pixels, supported by the video card.
             * - :py:attr:`~ansys.stk.core.graphics.PolylinePrimitive.maximum_width_supported`
-              - Gets the maximum width, in pixels, supported by the video card.
+              - Get the maximum width, in pixels, supported by the video card.
             * - :py:attr:`~ansys.stk.core.graphics.PolylinePrimitive.position_interpolator`
-              - Gets the position interpolator applied to positions passed to Set, SetCartographic, SetSubset, and SetSubsetCartographic methods. When this property is null, linear interpolation is used.
+              - Get the position interpolator applied to positions passed to Set, SetCartographic, SetSubset, and SetSubsetCartographic methods. When this property is null, linear interpolation is used.
             * - :py:attr:`~ansys.stk.core.graphics.PolylinePrimitive.polyline_type`
-              - Gets how the polyline interprets the positions passed to Set methods.
+              - Get how the polyline interprets the positions passed to Set methods.
             * - :py:attr:`~ansys.stk.core.graphics.PolylinePrimitive.set_hint`
-              - Gets the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with.
+              - Get the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with.
             * - :py:attr:`~ansys.stk.core.graphics.PolylinePrimitive.display_outline`
-              - Gets or sets whether an outline is rendered around the polyline.
+              - Get or set whether an outline is rendered around the polyline.
             * - :py:attr:`~ansys.stk.core.graphics.PolylinePrimitive.outline_color`
-              - Gets or sets the outline's color.
+              - Get or set the outline's color.
             * - :py:attr:`~ansys.stk.core.graphics.PolylinePrimitive.outline_translucency`
-              - Gets or sets the translucency of the outline. Translucency is between 0 and 1, where 0 is opaque and 1 is transparent.
+              - Get or set the translucency of the outline. Translucency is between 0 and 1, where 0 is opaque and 1 is transparent.
             * - :py:attr:`~ansys.stk.core.graphics.PolylinePrimitive.outline_width`
-              - Gets or sets the width, in pixels, of the outline around the polyline.
+              - Get or set the width, in pixels, of the outline around the polyline.
             * - :py:attr:`~ansys.stk.core.graphics.PolylinePrimitive.per_item_picking_enabled`
-              - Gets or sets whether individual line indices will be included in the pick results returned from the scene's Pick method. Each line index that is picked will be returned as a batch primitive index.
+              - Get or set whether individual line indices will be included in the pick results returned from the scene's Pick method. Each line index that is picked will be returned as a batch primitive index.
             * - :py:attr:`~ansys.stk.core.graphics.PolylinePrimitive.central_body_clipped`
-              - Gets or sets whether the polyline will be clipped by the central body.
+              - Get or set whether the polyline will be clipped by the central body.
 
 
 
@@ -115,73 +115,73 @@ Property detail
     :canonical: ansys.stk.core.graphics.PolylinePrimitive.width
     :type: float
 
-    Gets or sets the line width, in pixels.
+    Get or set the line width, in pixels.
 
 .. py:property:: minimum_width_supported
     :canonical: ansys.stk.core.graphics.PolylinePrimitive.minimum_width_supported
     :type: float
 
-    Gets the minimum width, in pixels, supported by the video card.
+    Get the minimum width, in pixels, supported by the video card.
 
 .. py:property:: maximum_width_supported
     :canonical: ansys.stk.core.graphics.PolylinePrimitive.maximum_width_supported
     :type: float
 
-    Gets the maximum width, in pixels, supported by the video card.
+    Get the maximum width, in pixels, supported by the video card.
 
 .. py:property:: position_interpolator
     :canonical: ansys.stk.core.graphics.PolylinePrimitive.position_interpolator
     :type: IPositionInterpolator
 
-    Gets the position interpolator applied to positions passed to Set, SetCartographic, SetSubset, and SetSubsetCartographic methods. When this property is null, linear interpolation is used.
+    Get the position interpolator applied to positions passed to Set, SetCartographic, SetSubset, and SetSubsetCartographic methods. When this property is null, linear interpolation is used.
 
 .. py:property:: polyline_type
     :canonical: ansys.stk.core.graphics.PolylinePrimitive.polyline_type
-    :type: POLYLINE_TYPE
+    :type: PolylineType
 
-    Gets how the polyline interprets the positions passed to Set methods.
+    Get how the polyline interprets the positions passed to Set methods.
 
 .. py:property:: set_hint
     :canonical: ansys.stk.core.graphics.PolylinePrimitive.set_hint
-    :type: SET_HINT
+    :type: SetHint
 
-    Gets the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with.
+    Get the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with.
 
 .. py:property:: display_outline
     :canonical: ansys.stk.core.graphics.PolylinePrimitive.display_outline
     :type: bool
 
-    Gets or sets whether an outline is rendered around the polyline.
+    Get or set whether an outline is rendered around the polyline.
 
 .. py:property:: outline_color
     :canonical: ansys.stk.core.graphics.PolylinePrimitive.outline_color
     :type: agcolor.Color
 
-    Gets or sets the outline's color.
+    Get or set the outline's color.
 
 .. py:property:: outline_translucency
     :canonical: ansys.stk.core.graphics.PolylinePrimitive.outline_translucency
     :type: float
 
-    Gets or sets the translucency of the outline. Translucency is between 0 and 1, where 0 is opaque and 1 is transparent.
+    Get or set the translucency of the outline. Translucency is between 0 and 1, where 0 is opaque and 1 is transparent.
 
 .. py:property:: outline_width
     :canonical: ansys.stk.core.graphics.PolylinePrimitive.outline_width
     :type: float
 
-    Gets or sets the width, in pixels, of the outline around the polyline.
+    Get or set the width, in pixels, of the outline around the polyline.
 
 .. py:property:: per_item_picking_enabled
     :canonical: ansys.stk.core.graphics.PolylinePrimitive.per_item_picking_enabled
     :type: bool
 
-    Gets or sets whether individual line indices will be included in the pick results returned from the scene's Pick method. Each line index that is picked will be returned as a batch primitive index.
+    Get or set whether individual line indices will be included in the pick results returned from the scene's Pick method. Each line index that is picked will be returned as a batch primitive index.
 
 .. py:property:: central_body_clipped
     :canonical: ansys.stk.core.graphics.PolylinePrimitive.central_body_clipped
     :type: bool
 
-    Gets or sets whether the polyline will be clipped by the central body.
+    Get or set whether the polyline will be clipped by the central body.
 
 
 Method detail
@@ -231,7 +231,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_with_colors_and_hint(self, positions: list, colors: list, render_pass_hint: RENDER_PASS_HINT) -> None
+.. py:method:: set_with_colors_and_hint(self, positions: list, colors: list, render_pass_hint: RenderPassHint) -> None
     :canonical: ansys.stk.core.graphics.PolylinePrimitive.set_with_colors_and_hint
 
     Define the positions and colors of a polyline. The polyline is rendered in its reference frame. renderPassHint is provided for efficiency.
@@ -240,7 +240,7 @@ Method detail
 
     **positions** : :obj:`~list`
     **colors** : :obj:`~list`
-    **render_pass_hint** : :obj:`~RENDER_PASS_HINT`
+    **render_pass_hint** : :obj:`~RenderPassHint`
 
     :Returns:
 
@@ -314,7 +314,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_cartographic_with_colors_and_hint(self, central_body: str, positions: list, colors: list, render_pass_hint: RENDER_PASS_HINT) -> None
+.. py:method:: set_cartographic_with_colors_and_hint(self, central_body: str, positions: list, colors: list, render_pass_hint: RenderPassHint) -> None
     :canonical: ansys.stk.core.graphics.PolylinePrimitive.set_cartographic_with_colors_and_hint
 
     For convenience. Defines the positions and colors of a polyline using cartographic positions. renderPassHint is provided for efficiency. This is equivalent to converting each position in positions to cartesian and calling Set.
@@ -324,7 +324,7 @@ Method detail
     **central_body** : :obj:`~str`
     **positions** : :obj:`~list`
     **colors** : :obj:`~list`
-    **render_pass_hint** : :obj:`~RENDER_PASS_HINT`
+    **render_pass_hint** : :obj:`~RenderPassHint`
 
     :Returns:
 
@@ -375,7 +375,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_partial_with_indices_order(self, positions: list, indices: list, indices_order_hint: PRIMITIVE_INDICES_ORDER_HINT) -> None
+.. py:method:: set_partial_with_indices_order(self, positions: list, indices: list, indices_order_hint: PrimitiveIndicesOrderHint) -> None
     :canonical: ansys.stk.core.graphics.PolylinePrimitive.set_partial_with_indices_order
 
     Update a subset of positions in a polyline.
@@ -384,7 +384,7 @@ Method detail
 
     **positions** : :obj:`~list`
     **indices** : :obj:`~list`
-    **indices_order_hint** : :obj:`~PRIMITIVE_INDICES_ORDER_HINT`
+    **indices_order_hint** : :obj:`~PrimitiveIndicesOrderHint`
 
     :Returns:
 
@@ -405,7 +405,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_partial_with_colors_indices_order_and_render_pass_hint(self, positions: list, colors: list, indices: list, indices_order_hint: PRIMITIVE_INDICES_ORDER_HINT, render_pass_hint: RENDER_PASS_HINT) -> None
+.. py:method:: set_partial_with_colors_indices_order_and_render_pass_hint(self, positions: list, colors: list, indices: list, indices_order_hint: PrimitiveIndicesOrderHint, render_pass_hint: RenderPassHint) -> None
     :canonical: ansys.stk.core.graphics.PolylinePrimitive.set_partial_with_colors_indices_order_and_render_pass_hint
 
     Update a subset of positions and/or colors in a polyline.
@@ -415,8 +415,8 @@ Method detail
     **positions** : :obj:`~list`
     **colors** : :obj:`~list`
     **indices** : :obj:`~list`
-    **indices_order_hint** : :obj:`~PRIMITIVE_INDICES_ORDER_HINT`
-    **render_pass_hint** : :obj:`~RENDER_PASS_HINT`
+    **indices_order_hint** : :obj:`~PrimitiveIndicesOrderHint`
+    **render_pass_hint** : :obj:`~RenderPassHint`
 
     :Returns:
 
@@ -437,7 +437,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_partial_cartographic_with_indices_order(self, central_body: str, positions: list, indices: list, indices_order_hint: PRIMITIVE_INDICES_ORDER_HINT) -> None
+.. py:method:: set_partial_cartographic_with_indices_order(self, central_body: str, positions: list, indices: list, indices_order_hint: PrimitiveIndicesOrderHint) -> None
     :canonical: ansys.stk.core.graphics.PolylinePrimitive.set_partial_cartographic_with_indices_order
 
     For convenience. Updates a subset of positions in a polyline using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial.
@@ -447,7 +447,7 @@ Method detail
     **central_body** : :obj:`~str`
     **positions** : :obj:`~list`
     **indices** : :obj:`~list`
-    **indices_order_hint** : :obj:`~PRIMITIVE_INDICES_ORDER_HINT`
+    **indices_order_hint** : :obj:`~PrimitiveIndicesOrderHint`
 
     :Returns:
 
@@ -469,7 +469,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: set_partial_cartographic_with_colors_indices_order_and_render_pass(self, central_body: str, positions: list, colors: list, indices: list, indices_order_hint: PRIMITIVE_INDICES_ORDER_HINT, render_pass_hint: RENDER_PASS_HINT) -> None
+.. py:method:: set_partial_cartographic_with_colors_indices_order_and_render_pass(self, central_body: str, positions: list, colors: list, indices: list, indices_order_hint: PrimitiveIndicesOrderHint, render_pass_hint: RenderPassHint) -> None
     :canonical: ansys.stk.core.graphics.PolylinePrimitive.set_partial_cartographic_with_colors_indices_order_and_render_pass
 
     For convenience. Updates a subset of positions and/or colors in a polyline using cartographic positions. This is equivalent to converting each position in positions to cartesian and calling SetPartial.
@@ -480,8 +480,8 @@ Method detail
     **positions** : :obj:`~list`
     **colors** : :obj:`~list`
     **indices** : :obj:`~list`
-    **indices_order_hint** : :obj:`~PRIMITIVE_INDICES_ORDER_HINT`
-    **render_pass_hint** : :obj:`~RENDER_PASS_HINT`
+    **indices_order_hint** : :obj:`~PrimitiveIndicesOrderHint`
+    **render_pass_hint** : :obj:`~RenderPassHint`
 
     :Returns:
 

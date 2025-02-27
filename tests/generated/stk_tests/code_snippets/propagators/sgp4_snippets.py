@@ -1,3 +1,25 @@
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
 from test_util import *
 from code_snippets.code_snippets_test_base import *
 from ansys.stk.core.stkobjects import *
@@ -28,7 +50,7 @@ class SGP4Snippets(CodeSnippetsTestBase):
     def setUp(self):
         SGP4Snippets.m_Object = clr.CastAs(
             CodeSnippetsTestBase.m_Root.current_scenario.children.new(
-                STK_OBJECT_TYPE.SATELLITE, SGP4Snippets.m_DefaultName
+                STKObjectType.SATELLITE, SGP4Snippets.m_DefaultName
             ),
             Satellite,
         )
@@ -39,7 +61,7 @@ class SGP4Snippets(CodeSnippetsTestBase):
     # region TestTearDown
     def tearDown(self):
         CodeSnippetsTestBase.m_Root.current_scenario.children.unload(
-            STK_OBJECT_TYPE.SATELLITE, SGP4Snippets.m_DefaultName
+            STKObjectType.SATELLITE, SGP4Snippets.m_DefaultName
         )
         SGP4Snippets.m_Object = None
 
@@ -47,7 +69,7 @@ class SGP4Snippets(CodeSnippetsTestBase):
 
     # region ConfigureSGP4WithFileSource
     def test_ConfigureSGP4WithFileSource(self):
-        SGP4Snippets.m_Object.set_propagator_type(PROPAGATOR_TYPE.SGP4)
+        SGP4Snippets.m_Object.set_propagator_type(PropagatorType.SGP4)
 
         sgp4: "PropagatorSGP4" = clr.CastAs(SGP4Snippets.m_Object.propagator, PropagatorSGP4)
         self.ConfigureSGP4WithFileSource(
@@ -77,7 +99,7 @@ class SGP4Snippets(CodeSnippetsTestBase):
     # region SetSGP4ToAutoUpdateFromFileSource
     def test_SetSGP4ToAutoUpdateFromFileSource(self):
         # Set propagator
-        SGP4Snippets.m_Object.set_propagator_type(PROPAGATOR_TYPE.SGP4)
+        SGP4Snippets.m_Object.set_propagator_type(PropagatorType.SGP4)
         sgp4: "PropagatorSGP4" = clr.CastAs(SGP4Snippets.m_Object.propagator, PropagatorSGP4)
 
         sgp4.common_tasks.add_segments_from_file(
@@ -88,7 +110,7 @@ class SGP4Snippets(CodeSnippetsTestBase):
 
     def SetSGP4ToAutoUpdateFromFileSource(self, propagator: "PropagatorSGP4", fileUpdateSource: str):
         propagator.automatic_update_enabled = True
-        propagator.automatic_update_settings.selected_source = VEHICLE_SGP4_AUTOMATIC_UPDATE_SOURCE_TYPE.FILE
+        propagator.automatic_update_settings.selected_source = VehicleSGP4AutomaticUpdateSourceType.FILE
         propagator.automatic_update_settings.file_source.filename = fileUpdateSource
 
         # Preview TLEs (optional)
@@ -114,7 +136,7 @@ class SGP4Snippets(CodeSnippetsTestBase):
     # region SetSGP4ToAutoUpdateFromOnlineSource
     def test_SetSGP4ToAutoUpdateFromOnlineSource(self):
         # Set propagator
-        SGP4Snippets.m_Object.set_propagator_type(PROPAGATOR_TYPE.SGP4)
+        SGP4Snippets.m_Object.set_propagator_type(PropagatorType.SGP4)
         sgp4: "PropagatorSGP4" = clr.CastAs(SGP4Snippets.m_Object.propagator, PropagatorSGP4)
 
         sgp4.common_tasks.add_segments_from_file(
@@ -125,7 +147,7 @@ class SGP4Snippets(CodeSnippetsTestBase):
 
     def SetSGP4ToAutoUpdateFromOnlineSource(self, propagator: "PropagatorSGP4"):
         propagator.automatic_update_enabled = True
-        propagator.automatic_update_settings.selected_source = VEHICLE_SGP4_AUTOMATIC_UPDATE_SOURCE_TYPE.ONLINE
+        propagator.automatic_update_settings.selected_source = VehicleSGP4AutomaticUpdateSourceType.ONLINE
 
         # Preview TLEs (optional)
         # Preview() returns a one dimension string of tles

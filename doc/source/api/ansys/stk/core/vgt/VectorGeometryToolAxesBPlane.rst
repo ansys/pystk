@@ -62,7 +62,7 @@ Property detail
 
 .. py:property:: direction
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAxesBPlane.direction
-    :type: ASYMPTOTE_DIRECTION_TYPE
+    :type: AsymptoteDirectionType
 
     Specify a direction (incoming or outgoing).
 

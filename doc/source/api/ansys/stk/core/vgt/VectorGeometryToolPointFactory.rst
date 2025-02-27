@@ -59,7 +59,7 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: create(self, point_name: str, description: str, point_type: POINT_TYPE) -> IVectorGeometryToolPoint
+.. py:method:: create(self, point_name: str, description: str, point_type: PointType) -> IVectorGeometryToolPoint
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPointFactory.create
 
     Create a VGT point using the specified name, description and type.
@@ -68,20 +68,20 @@ Method detail
 
     **point_name** : :obj:`~str`
     **description** : :obj:`~str`
-    **point_type** : :obj:`~POINT_TYPE`
+    **point_type** : :obj:`~PointType`
 
     :Returns:
 
         :obj:`~IVectorGeometryToolPoint`
 
-.. py:method:: is_type_supported(self, type: POINT_TYPE) -> bool
+.. py:method:: is_type_supported(self, type: PointType) -> bool
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPointFactory.is_type_supported
 
     Return true if the type is supported.
 
     :Parameters:
 
-    **type** : :obj:`~POINT_TYPE`
+    **type** : :obj:`~PointType`
 
     :Returns:
 
@@ -103,7 +103,7 @@ Method detail
 
         :obj:`~IVectorGeometryToolPoint`
 
-.. py:method:: create_fixed_on_central_body(self, point_name: str, description: str, longitude: typing.Any, latitude: typing.Any, altitude: float, reference_shape: SURFACE_REFERENCE_SHAPE_TYPE) -> IVectorGeometryToolPoint
+.. py:method:: create_fixed_on_central_body(self, point_name: str, description: str, longitude: typing.Any, latitude: typing.Any, altitude: float, reference_shape: SurfaceReferenceShapeType) -> IVectorGeometryToolPoint
     :canonical: ansys.stk.core.vgt.VectorGeometryToolPointFactory.create_fixed_on_central_body
 
     Create a point fixed on a central body.
@@ -115,7 +115,7 @@ Method detail
     **longitude** : :obj:`~typing.Any`
     **latitude** : :obj:`~typing.Any`
     **altitude** : :obj:`~float`
-    **reference_shape** : :obj:`~SURFACE_REFERENCE_SHAPE_TYPE`
+    **reference_shape** : :obj:`~SurfaceReferenceShapeType`
 
     :Returns:
 

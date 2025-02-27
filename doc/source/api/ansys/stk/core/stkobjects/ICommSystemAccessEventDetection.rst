@@ -19,7 +19,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ICommSystemAccessEventDetection.type`
-              - Gets the access event detection type.
+              - Get the access event detection type.
 
 
 Import detail
@@ -35,8 +35,8 @@ Property detail
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.ICommSystemAccessEventDetection.type
-    :type: COMM_SYSTEM_ACCESS_EVENT_DETECTION_TYPE
+    :type: CommSystemAccessEventDetectionType
 
-    Gets the access event detection type.
+    Get the access event detection type.
 
 

@@ -34,15 +34,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.ModelPrimitive.uri_as_string`
-              - Gets the URI of the file used to load the file.
+              - Get the URI of the file used to load the file.
             * - :py:attr:`~ansys.stk.core.graphics.ModelPrimitive.scale`
-              - Gets or sets the linear scale used to increase or decrease the size of the rendered model.
+              - Get or set the linear scale used to increase or decrease the size of the rendered model.
             * - :py:attr:`~ansys.stk.core.graphics.ModelPrimitive.position`
-              - Gets or sets the position of the model. The position is defined in the model's reference frame. The array contains the components of the position in the order x, y, z.
+              - Get or set the position of the model. The position is defined in the model's reference frame. The array contains the components of the position in the order x, y, z.
             * - :py:attr:`~ansys.stk.core.graphics.ModelPrimitive.orientation`
-              - Gets or sets the model's orientation. The quaternion is a rotation from the model's local axes to the axes of the model's reference frame.
+              - Get or set the model's orientation. The quaternion is a rotation from the model's local axes to the axes of the model's reference frame.
             * - :py:attr:`~ansys.stk.core.graphics.ModelPrimitive.articulations`
-              - Gets the model's articulations. Articulations identify geometry and contain transformations for manipulating that geometry.
+              - Get the model's articulations. Articulations identify geometry and contain transformations for manipulating that geometry.
 
 
 
@@ -61,31 +61,31 @@ Property detail
     :canonical: ansys.stk.core.graphics.ModelPrimitive.uri_as_string
     :type: str
 
-    Gets the URI of the file used to load the file.
+    Get the URI of the file used to load the file.
 
 .. py:property:: scale
     :canonical: ansys.stk.core.graphics.ModelPrimitive.scale
     :type: float
 
-    Gets or sets the linear scale used to increase or decrease the size of the rendered model.
+    Get or set the linear scale used to increase or decrease the size of the rendered model.
 
 .. py:property:: position
     :canonical: ansys.stk.core.graphics.ModelPrimitive.position
     :type: list
 
-    Gets or sets the position of the model. The position is defined in the model's reference frame. The array contains the components of the position in the order x, y, z.
+    Get or set the position of the model. The position is defined in the model's reference frame. The array contains the components of the position in the order x, y, z.
 
 .. py:property:: orientation
     :canonical: ansys.stk.core.graphics.ModelPrimitive.orientation
     :type: IOrientation
 
-    Gets or sets the model's orientation. The quaternion is a rotation from the model's local axes to the axes of the model's reference frame.
+    Get or set the model's orientation. The quaternion is a rotation from the model's local axes to the axes of the model's reference frame.
 
 .. py:property:: articulations
     :canonical: ansys.stk.core.graphics.ModelPrimitive.articulations
     :type: ModelArticulationCollection
 
-    Gets the model's articulations. Articulations identify geometry and contain transformations for manipulating that geometry.
+    Get the model's articulations. Articulations identify geometry and contain transformations for manipulating that geometry.
 
 
 Method detail
@@ -112,7 +112,7 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: load_with_string_uri_and_up_axis(self, uri: str, up_axis: MODEL_UP_AXIS) -> None
+.. py:method:: load_with_string_uri_and_up_axis(self, uri: str, up_axis: ModelUpAxis) -> None
     :canonical: ansys.stk.core.graphics.ModelPrimitive.load_with_string_uri_and_up_axis
 
     For convenience. Loads a `COLLADA <https://www.khronos.org/collada/>`_ (DAE) or AGI `MDL <https://support.agi.com/3d-models>`_ (MDL) model using a file path.
@@ -120,7 +120,7 @@ Method detail
     :Parameters:
 
     **uri** : :obj:`~str`
-    **up_axis** : :obj:`~MODEL_UP_AXIS`
+    **up_axis** : :obj:`~ModelUpAxis`
 
     :Returns:
 

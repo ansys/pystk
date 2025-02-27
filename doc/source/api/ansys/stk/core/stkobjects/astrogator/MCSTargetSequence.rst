@@ -46,9 +46,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSTargetSequence.continue_on_failure`
               - Continue if profiles don't converge - if true, the target sequence continues if a profile fails to converge; otherwise, the MCS will stop upon the failure of a search profile.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSTargetSequence.segments`
-              - Returns the segments contained within the target sequence.
+              - Return the segments contained within the target sequence.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSTargetSequence.profiles`
-              - Returns the profiles used within the target sequence.
+              - Return the profiles used within the target sequence.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSTargetSequence.reset_inner_targeters`
               - If true, inner target sequences will have their profiles reset before each run.
 
@@ -67,13 +67,13 @@ Property detail
 
 .. py:property:: action
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSTargetSequence.action
-    :type: TARGET_SEQUENCE_ACTION
+    :type: TargetSequenceAction
 
     Whether to run the sequence nominally or using profiles.
 
 .. py:property:: when_profiles_finish
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSTargetSequence.when_profiles_finish
-    :type: PROFILES_FINISH
+    :type: ProfilesFinish
 
     When Profiles Converge - the action to be carried out if targeting has converged.
 
@@ -87,13 +87,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSTargetSequence.segments
     :type: MCSSegmentCollection
 
-    Returns the segments contained within the target sequence.
+    Return the segments contained within the target sequence.
 
 .. py:property:: profiles
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSTargetSequence.profiles
     :type: ProfileCollection
 
-    Returns the profiles used within the target sequence.
+    Return the profiles used within the target sequence.
 
 .. py:property:: reset_inner_targeters
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSTargetSequence.reset_inner_targeters

@@ -28,6 +28,8 @@ Overview
               - Create a vector component based on a COM vector plugin. For information how to implement and register VGT plugins, see.
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolVectorFactory.create_cross_product`
               - Create a cross product C = A x B.
+            * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolVectorFactory.create_file_vector`
+              - Create a vector interpolated from tabulated data from file.
 
     .. tab-item:: Properties
         
@@ -61,7 +63,7 @@ Property detail
 Method detail
 -------------
 
-.. py:method:: create(self, vector_name: str, description: str, vector_type: VECTOR_TYPE) -> IVectorGeometryToolVector
+.. py:method:: create(self, vector_name: str, description: str, vector_type: VectorType) -> IVectorGeometryToolVector
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorFactory.create
 
     Create a VGT vector using specified name, description and type.
@@ -70,20 +72,20 @@ Method detail
 
     **vector_name** : :obj:`~str`
     **description** : :obj:`~str`
-    **vector_type** : :obj:`~VECTOR_TYPE`
+    **vector_type** : :obj:`~VectorType`
 
     :Returns:
 
         :obj:`~IVectorGeometryToolVector`
 
-.. py:method:: is_type_supported(self, type: VECTOR_TYPE) -> bool
+.. py:method:: is_type_supported(self, type: VectorType) -> bool
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorFactory.is_type_supported
 
     Return true if the type is supported.
 
     :Parameters:
 
-    **type** : :obj:`~VECTOR_TYPE`
+    **type** : :obj:`~VectorType`
 
     :Returns:
 
@@ -134,4 +136,19 @@ Method detail
     :Returns:
 
         :obj:`~VectorGeometryToolVectorCross`
+
+.. py:method:: create_file_vector(self, vector_name: str, description: str, file_name: str) -> VectorGeometryToolVectorFile
+    :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorFactory.create_file_vector
+
+    Create a vector interpolated from tabulated data from file.
+
+    :Parameters:
+
+    **vector_name** : :obj:`~str`
+    **description** : :obj:`~str`
+    **file_name** : :obj:`~str`
+
+    :Returns:
+
+        :obj:`~VectorGeometryToolVectorFile`
 

@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarContinuousWaveAnalysisModeGoalSNR.snr`
-              - Gets or sets the goal SNR.
+              - Get or set the goal SNR.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.RadarContinuousWaveAnalysisModeGoalSNR.snr
     :type: float
 
-    Gets or sets the goal SNR.
+    Get or set the goal SNR.
 
 

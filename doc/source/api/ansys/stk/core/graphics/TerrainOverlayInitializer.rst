@@ -19,7 +19,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.TerrainOverlayInitializer.supported`
-              - Gets whether the video card supports adding terrain overlay objects. Video cards that support OpenGL 1.2 or higher support terrain overlay objects.
+              - Get whether the video card supports adding terrain overlay objects. Video cards that support OpenGL 1.2 or higher support terrain overlay objects.
 
 
 
@@ -38,6 +38,6 @@ Property detail
     :canonical: ansys.stk.core.graphics.TerrainOverlayInitializer.supported
     :type: bool
 
-    Gets whether the video card supports adding terrain overlay objects. Video cards that support OpenGL 1.2 or higher support terrain overlay objects.
+    Get whether the video card supports adding terrain overlay objects. Video cards that support OpenGL 1.2 or higher support terrain overlay objects.
 
 

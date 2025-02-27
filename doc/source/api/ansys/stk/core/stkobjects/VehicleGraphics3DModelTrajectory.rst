@@ -29,9 +29,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DModelTrajectory.point_size`
               - A size of the point (in pixels). Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DModelTrajectory.gltf_reflection_map_type`
-              - Gets or sets the glTF reflection map type property. A member of the AgEModelGltfReflectionMapType enumeration.
+              - Get or set the glTF reflection map type property. A member of the AgEModelGltfReflectionMapType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DModelTrajectory.gltf_image_based`
-              - Gets the glTF Image Based properties.
+              - Get the glTF Image Based properties.
 
 
 
@@ -72,14 +72,14 @@ Property detail
 
 .. py:property:: gltf_reflection_map_type
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DModelTrajectory.gltf_reflection_map_type
-    :type: MODEL_GLTF_REFLECTION_MAP_TYPE
+    :type: ModelGltfReflectionMapType
 
-    Gets or sets the glTF reflection map type property. A member of the AgEModelGltfReflectionMapType enumeration.
+    Get or set the glTF reflection map type property. A member of the AgEModelGltfReflectionMapType enumeration.
 
 .. py:property:: gltf_image_based
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DModelTrajectory.gltf_image_based
     :type: Graphics3DModelglTFImageBased
 
-    Gets the glTF Image Based properties.
+    Get the glTF Image Based properties.
 
 

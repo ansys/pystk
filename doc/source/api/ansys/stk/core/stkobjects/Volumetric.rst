@@ -63,7 +63,7 @@ Property detail
 
 .. py:property:: volume_grid_definition_type
     :canonical: ansys.stk.core.stkobjects.Volumetric.volume_grid_definition_type
-    :type: VOLUMETRIC_DEFINITION_TYPE
+    :type: VolumetricDefinitionType
 
     Get Volume Grid definition type. A member of the AgEVmDefinitionType enumeration.
 
@@ -96,14 +96,14 @@ Method detail
 -------------
 
 
-.. py:method:: set_volume_grid_definition_type(self, vm_grid_calc_type: VOLUMETRIC_DEFINITION_TYPE) -> None
+.. py:method:: set_volume_grid_definition_type(self, vm_grid_calc_type: VolumetricDefinitionType) -> None
     :canonical: ansys.stk.core.stkobjects.Volumetric.set_volume_grid_definition_type
 
     Set volume grid definition type, using the AgEVmDefinitionType enumeration.
 
     :Parameters:
 
-    **vm_grid_calc_type** : :obj:`~VOLUMETRIC_DEFINITION_TYPE`
+    **vm_grid_calc_type** : :obj:`~VolumetricDefinitionType`
 
     :Returns:
 

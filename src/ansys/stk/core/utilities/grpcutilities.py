@@ -1,4 +1,25 @@
-# Copyright 2024-2024, Ansys Government Initiatives 
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
 """
 Optimize performance of gRPC communications.
 
@@ -8,13 +29,14 @@ by batching together API commands that do not require return values.
 
 import typing
 
-from .exceptions import GrpcUtilitiesException
 from ..internal.apiutil import SupportsDeleteCallback
+from .exceptions import GrpcUtilitiesError
+
 try:
+    from ..internal.AgGrpcServices_pb2 import BatchedInvokeRequest, InvokeRequest
     from ..internal.grpcutil import GrpcClient, GrpcInterfaceFuture, GrpcInterfacePimpl
-    from ..internal.AgGrpcServices_pb2 import InvokeRequest, BatchedInvokeRequest
     _DEFAULT_BATCH_DISABLE = False
-except:
+except ImportError:
     _DEFAULT_BATCH_DISABLE = True
 
 class GrpcCallBatcher(object):
@@ -81,7 +103,7 @@ class GrpcCallBatcher(object):
         self._batching = False
         if max_batch is not None:
             if max_batch > GrpcCallBatcher._default_max_batch_size:
-                raise GrpcUtilitiesException(f"Batch size cannot exceed {GrpcCallBatcher._default_max_batch_size} due to gRPC message size restrictions.")
+                raise GrpcUtilitiesError(f"Batch size cannot exceed {GrpcCallBatcher._default_max_batch_size} due to gRPC message size restrictions.")
             self._max_batch = max_batch
         
     def __enter__(self):
@@ -148,7 +170,7 @@ class GrpcCallBatcher(object):
         if callable(future_provider):
             if hasattr(source_obj, future_provider.__name__):
                 return future_provider(source_obj, *args)
-        elif type(future_provider)==property:
+        elif type(future_provider) is property:
             attr_name = None
             for superclass in reversed(source_obj.__class__.mro()):
                 if hasattr(superclass, "_property_names"):
@@ -156,7 +178,7 @@ class GrpcCallBatcher(object):
                         attr_name = superclass._property_names[future_provider]
                         break
             if attr_name is None:
-                raise GrpcUtilitiesException("Cannot create gRPC future; incorrect type.")
+                raise GrpcUtilitiesError("Cannot create gRPC future; incorrect type.")
             return getattr(source_obj, attr_name)
 
     def create_future(self, source_obj:typing.Any, future_provider:typing.Union[typing.Callable, property], future_type:typing.Any, *args) -> typing.Any:
@@ -171,12 +193,12 @@ class GrpcCallBatcher(object):
         if self._disable_batching:
             return GrpcCallBatcher._bypass_future_creation(source_obj, future_provider, *args)
         if not self._batching:
-            raise GrpcUtilitiesException("Batcher must be active to create futures.")
+            raise GrpcUtilitiesError("Batcher must be active to create futures.")
         if not callable(future_type):
-            raise GrpcUtilitiesException("Future class type must be a full STK Object type (e.g. Scenario, not Scenario).")
+            raise GrpcUtilitiesError("Future class type must be a full STK Object type (e.g. Scenario, not Scenario).")
         future = future_type()
         if not isinstance(future, SupportsDeleteCallback):
-            raise GrpcUtilitiesException("Future class type must be a full STK Object type (e.g. Scenario, not Scenario).")
+            raise GrpcUtilitiesError("Future class type must be a full STK Object type (e.g. Scenario, not Scenario).")
         intf_proxy = GrpcInterfaceFuture(self, self._next_future_id, source_obj, future_provider, *args)
         intf_pimpl = GrpcInterfacePimpl(intf_proxy)
         future._private_init(intf_pimpl)

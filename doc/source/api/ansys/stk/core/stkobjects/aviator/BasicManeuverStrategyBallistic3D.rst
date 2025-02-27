@@ -21,15 +21,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyBallistic3D.control_mode`
-              - Gets or sets the control mode for the ballistic 3D strategy.
+              - Get or set the control mode for the ballistic 3D strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyBallistic3D.airspeed_options`
               - Get the airspeed options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyBallistic3D.parachute_area`
-              - Gets or sets the parachute area used as part of the Parachute control mode for the ballistic 3D strategy.
+              - Get or set the parachute area used as part of the Parachute control mode for the ballistic 3D strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyBallistic3D.parachute_cd`
-              - Gets or sets the parachute coefficient of drag used as part of the Parachute control mode for the ballistic 3D strategy.
+              - Get or set the parachute coefficient of drag used as part of the Parachute control mode for the ballistic 3D strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyBallistic3D.wind_force_effective_area`
-              - Gets or sets the vehicle's wind force effective area.
+              - Get or set the vehicle's wind force effective area.
 
 
 
@@ -46,9 +46,9 @@ Property detail
 
 .. py:property:: control_mode
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyBallistic3D.control_mode
-    :type: BALLISTIC_3D_CONTROL_MODE
+    :type: Ballistic3DControlMode
 
-    Gets or sets the control mode for the ballistic 3D strategy.
+    Get or set the control mode for the ballistic 3D strategy.
 
 .. py:property:: airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyBallistic3D.airspeed_options
@@ -60,18 +60,18 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyBallistic3D.parachute_area
     :type: float
 
-    Gets or sets the parachute area used as part of the Parachute control mode for the ballistic 3D strategy.
+    Get or set the parachute area used as part of the Parachute control mode for the ballistic 3D strategy.
 
 .. py:property:: parachute_cd
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyBallistic3D.parachute_cd
     :type: float
 
-    Gets or sets the parachute coefficient of drag used as part of the Parachute control mode for the ballistic 3D strategy.
+    Get or set the parachute coefficient of drag used as part of the Parachute control mode for the ballistic 3D strategy.
 
 .. py:property:: wind_force_effective_area
     :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyBallistic3D.wind_force_effective_area
     :type: float
 
-    Gets or sets the vehicle's wind force effective area.
+    Get or set the vehicle's wind force effective area.
 
 

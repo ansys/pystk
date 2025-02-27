@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.AtmosphericTurbulenceModelConstant.constant_refractive_index_structure_parameter`
-              - Gets or sets the constant refractive index structure parameter value.
+              - Get or set the constant refractive index structure parameter value.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.AtmosphericTurbulenceModelConstant.constant_refractive_index_structure_parameter
     :type: float
 
-    Gets or sets the constant refractive index structure parameter value.
+    Get or set the constant refractive index structure parameter value.
 
 

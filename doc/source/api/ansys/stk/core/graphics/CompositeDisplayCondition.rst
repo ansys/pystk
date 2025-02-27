@@ -54,13 +54,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.CompositeDisplayCondition.count`
-              - Gets the number of display conditions in the composite.
+              - Get the number of display conditions in the composite.
             * - :py:attr:`~ansys.stk.core.graphics.CompositeDisplayCondition.capacity`
-              - Gets the number of display conditions for which memory has been allocated. This will always be greater or equal to count.
+              - Get the number of display conditions for which memory has been allocated. This will always be greater or equal to count.
             * - :py:attr:`~ansys.stk.core.graphics.CompositeDisplayCondition.logic_operation`
-              - Gets or sets the binary logic operation applied to all display conditions in the composite when the composite is evaluated. To combine logical and and or operations in the same expression, create composites containing composites.
+              - Get or set the binary logic operation applied to all display conditions in the composite when the composite is evaluated. To combine logical and and or operations in the same expression, create composites containing composites.
             * - :py:attr:`~ansys.stk.core.graphics.CompositeDisplayCondition._new_enum`
-              - Returns an enumerator that iterates through the collection.
+              - Return an enumerator that iterates through the collection.
 
 
 
@@ -79,25 +79,25 @@ Property detail
     :canonical: ansys.stk.core.graphics.CompositeDisplayCondition.count
     :type: int
 
-    Gets the number of display conditions in the composite.
+    Get the number of display conditions in the composite.
 
 .. py:property:: capacity
     :canonical: ansys.stk.core.graphics.CompositeDisplayCondition.capacity
     :type: int
 
-    Gets the number of display conditions for which memory has been allocated. This will always be greater or equal to count.
+    Get the number of display conditions for which memory has been allocated. This will always be greater or equal to count.
 
 .. py:property:: logic_operation
     :canonical: ansys.stk.core.graphics.CompositeDisplayCondition.logic_operation
-    :type: BINARY_LOGIC_OPERATION
+    :type: BinaryLogicOperation
 
-    Gets or sets the binary logic operation applied to all display conditions in the composite when the composite is evaluated. To combine logical and and or operations in the same expression, create composites containing composites.
+    Get or set the binary logic operation applied to all display conditions in the composite when the composite is evaluated. To combine logical and and or operations in the same expression, create composites containing composites.
 
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.graphics.CompositeDisplayCondition._new_enum
     :type: EnumeratorProxy
 
-    Returns an enumerator that iterates through the collection.
+    Return an enumerator that iterates through the collection.
 
 
 Method detail

@@ -44,7 +44,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureTransitionToForwardFlight.relative_course`
               - Get the relative course for the procedure.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureTransitionToForwardFlight.flight_path_angle`
-              - Gets or sets the pitch angle of the flight path at the end of the procedure.
+              - Get or set the pitch angle of the flight path at the end of the procedure.
 
 
 
@@ -61,7 +61,7 @@ Property detail
 
 .. py:property:: transition_course_mode
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureTransitionToForwardFlight.transition_course_mode
-    :type: VTOL_TRANSITION_MODE
+    :type: VTOLTransitionMode
 
     Get the mode to specify the course of the transition maneuver.
 
@@ -87,7 +87,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureTransitionToForwardFlight.flight_path_angle
     :type: typing.Any
 
-    Gets or sets the pitch angle of the flight path at the end of the procedure.
+    Get or set the pitch angle of the flight path at the end of the procedure.
 
 
 Method detail

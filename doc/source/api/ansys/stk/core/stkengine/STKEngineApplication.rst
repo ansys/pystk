@@ -27,13 +27,13 @@ Overview
               - Create a new object model root for the STK Engine application.
             * - :py:attr:`~ansys.stk.core.stkengine.STKEngineApplication.new_object_model_context`
               - Create a new object model context for the STK Engine application.
-            * - :py:attr:`~ansys.stk.core.stkengine.STKEngineApplication.SetGrpcOptions`
+            * - :py:attr:`~ansys.stk.core.stkengine.STKEngineApplication.set_grpc_options`
               - Grpc is not available with STK Engine. Provided for parity with STK Runtime and Desktop.
                 
                 Available options include:
                 { "raise exceptions with STK Engine" : bool }. Set to false to suppress exceptions when
                 using SetGrpcOptions and NewGrpcCallBatcher with STK Engine.
-            * - :py:attr:`~ansys.stk.core.stkengine.STKEngineApplication.NewGrpcCallBatcher`
+            * - :py:attr:`~ansys.stk.core.stkengine.STKEngineApplication.new_grpc_call_batcher`
               - Grpc is not available with STK Engine. Provided for parity with STK Runtime and Desktop.
             * - :py:attr:`~ansys.stk.core.stkengine.STKEngineApplication.shutdown`
               - Shut down the STK Engine application.
@@ -67,8 +67,8 @@ Method detail
 
         :obj:`~StkObjectModelContext`
 
-.. py:method:: SetGrpcOptions(self, options: dict) -> None
-    :canonical: ansys.stk.core.stkengine.STKEngineApplication.SetGrpcOptions
+.. py:method:: set_grpc_options(self, options: dict) -> None
+    :canonical: ansys.stk.core.stkengine.STKEngineApplication.set_grpc_options
 
     Grpc is not available with STK Engine. Provided for parity with STK Runtime and Desktop.
     
@@ -84,8 +84,8 @@ Method detail
 
         :obj:`~None`
 
-.. py:method:: NewGrpcCallBatcher(self, max_batch: int = None, disable_batching: bool = True) -> GrpcCallBatcher
-    :canonical: ansys.stk.core.stkengine.STKEngineApplication.NewGrpcCallBatcher
+.. py:method:: new_grpc_call_batcher(self, max_batch: int = None, disable_batching: bool = True) -> GrpcCallBatcher
+    :canonical: ansys.stk.core.stkengine.STKEngineApplication.new_grpc_call_batcher
 
     Grpc is not available with STK Engine. Provided for parity with STK Runtime and Desktop.
 

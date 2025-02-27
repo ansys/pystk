@@ -21,11 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.TransmitterModelCable.data_rate`
-              - Gets or sets the data rate.
+              - Get or set the data rate.
             * - :py:attr:`~ansys.stk.core.stkobjects.TransmitterModelCable.chips_per_bit`
-              - Gets or sets the chips/bit.
+              - Get or set the chips/bit.
             * - :py:attr:`~ansys.stk.core.stkobjects.TransmitterModelCable.spreading_gain`
-              - Gets the spreading gain.
+              - Get the spreading gain.
 
 
 
@@ -44,18 +44,18 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.TransmitterModelCable.data_rate
     :type: float
 
-    Gets or sets the data rate.
+    Get or set the data rate.
 
 .. py:property:: chips_per_bit
     :canonical: ansys.stk.core.stkobjects.TransmitterModelCable.chips_per_bit
     :type: int
 
-    Gets or sets the chips/bit.
+    Get or set the chips/bit.
 
 .. py:property:: spreading_gain
     :canonical: ansys.stk.core.stkobjects.TransmitterModelCable.spreading_gain
     :type: float
 
-    Gets the spreading gain.
+    Get the spreading gain.
 
 

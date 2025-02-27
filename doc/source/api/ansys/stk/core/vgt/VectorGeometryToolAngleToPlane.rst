@@ -25,7 +25,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolAngleToPlane.reference_plane`
               - Specify a reference plane.
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolAngleToPlane.signed`
-              - Controls whether the angle is measured as either Positive or Negative when the reference Vector is directed toward the plane's normal, or always positive.
+              - Control whether the angle is measured as either Positive or Negative when the reference Vector is directed toward the plane's normal, or always positive.
 
 
 
@@ -54,8 +54,8 @@ Property detail
 
 .. py:property:: signed
     :canonical: ansys.stk.core.vgt.VectorGeometryToolAngleToPlane.signed
-    :type: SIGNED_ANGLE_TYPE
+    :type: SignedAngleType
 
-    Controls whether the angle is measured as either Positive or Negative when the reference Vector is directed toward the plane's normal, or always positive.
+    Control whether the angle is measured as either Positive or Negative when the reference Vector is directed toward the plane's normal, or always positive.
 
 

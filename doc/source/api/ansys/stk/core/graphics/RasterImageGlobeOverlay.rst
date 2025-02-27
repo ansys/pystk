@@ -21,9 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.RasterImageGlobeOverlay.use_transparent_color`
-              - Gets or sets whether transparent color should be used.
+              - Get or set whether transparent color should be used.
             * - :py:attr:`~ansys.stk.core.graphics.RasterImageGlobeOverlay.transparent_color`
-              - Gets or sets the color that will become transparent.
+              - Get or set the color that will become transparent.
 
 
 
@@ -42,12 +42,12 @@ Property detail
     :canonical: ansys.stk.core.graphics.RasterImageGlobeOverlay.use_transparent_color
     :type: bool
 
-    Gets or sets whether transparent color should be used.
+    Get or set whether transparent color should be used.
 
 .. py:property:: transparent_color
     :canonical: ansys.stk.core.graphics.RasterImageGlobeOverlay.transparent_color
     :type: agcolor.Color
 
-    Gets or sets the color that will become transparent.
+    Get or set the color that will become transparent.
 
 

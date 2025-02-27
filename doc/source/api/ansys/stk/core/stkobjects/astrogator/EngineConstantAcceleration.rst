@@ -34,13 +34,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineConstantAcceleration.g`
-              - Gets or sets the gravitational acceleration constant at sea level on the Earth. Uses Acceleration Dimension.
+              - Get or set the gravitational acceleration constant at sea level on the Earth. Uses Acceleration Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineConstantAcceleration.acceleration`
-              - Gets or sets the acceleration for this engine. Uses Acceleration Dimension.
+              - Get or set the acceleration for this engine. Uses Acceleration Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineConstantAcceleration.isp`
-              - Gets or sets the specific impulse for this engine. Uses SpecificImpulse Dimension.
+              - Get or set the specific impulse for this engine. Uses SpecificImpulse Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineConstantAcceleration.control_parameters_available`
-              - Returns whether or not the control parameters can be set.
+              - Return whether or not the control parameters can be set.
 
 
 
@@ -59,25 +59,25 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.EngineConstantAcceleration.g
     :type: float
 
-    Gets or sets the gravitational acceleration constant at sea level on the Earth. Uses Acceleration Dimension.
+    Get or set the gravitational acceleration constant at sea level on the Earth. Uses Acceleration Dimension.
 
 .. py:property:: acceleration
     :canonical: ansys.stk.core.stkobjects.astrogator.EngineConstantAcceleration.acceleration
     :type: float
 
-    Gets or sets the acceleration for this engine. Uses Acceleration Dimension.
+    Get or set the acceleration for this engine. Uses Acceleration Dimension.
 
 .. py:property:: isp
     :canonical: ansys.stk.core.stkobjects.astrogator.EngineConstantAcceleration.isp
     :type: float
 
-    Gets or sets the specific impulse for this engine. Uses SpecificImpulse Dimension.
+    Get or set the specific impulse for this engine. Uses SpecificImpulse Dimension.
 
 .. py:property:: control_parameters_available
     :canonical: ansys.stk.core.stkobjects.astrogator.EngineConstantAcceleration.control_parameters_available
     :type: bool
 
-    Returns whether or not the control parameters can be set.
+    Return whether or not the control parameters can be set.
 
 
 Method detail
@@ -89,40 +89,40 @@ Method detail
 
 
 
-.. py:method:: enable_control_parameter(self, param: CONTROL_ENGINE_CONSTANT_ACCELERATION) -> None
+.. py:method:: enable_control_parameter(self, param: ControlEngineConstantAcceleration) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.EngineConstantAcceleration.enable_control_parameter
 
     Enable the specified control parameter.
 
     :Parameters:
 
-    **param** : :obj:`~CONTROL_ENGINE_CONSTANT_ACCELERATION`
+    **param** : :obj:`~ControlEngineConstantAcceleration`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: disable_control_parameter(self, param: CONTROL_ENGINE_CONSTANT_ACCELERATION) -> None
+.. py:method:: disable_control_parameter(self, param: ControlEngineConstantAcceleration) -> None
     :canonical: ansys.stk.core.stkobjects.astrogator.EngineConstantAcceleration.disable_control_parameter
 
     Disables the specified control parameter.
 
     :Parameters:
 
-    **param** : :obj:`~CONTROL_ENGINE_CONSTANT_ACCELERATION`
+    **param** : :obj:`~ControlEngineConstantAcceleration`
 
     :Returns:
 
         :obj:`~None`
 
-.. py:method:: is_control_parameter_enabled(self, param: CONTROL_ENGINE_CONSTANT_ACCELERATION) -> bool
+.. py:method:: is_control_parameter_enabled(self, param: ControlEngineConstantAcceleration) -> bool
     :canonical: ansys.stk.core.stkobjects.astrogator.EngineConstantAcceleration.is_control_parameter_enabled
 
     Sees if the specified control is enabled.
 
     :Parameters:
 
-    **param** : :obj:`~CONTROL_ENGINE_CONSTANT_ACCELERATION`
+    **param** : :obj:`~ControlEngineConstantAcceleration`
 
     :Returns:
 

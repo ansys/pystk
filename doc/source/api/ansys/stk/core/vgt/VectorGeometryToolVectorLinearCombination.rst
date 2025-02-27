@@ -33,7 +33,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolVectorLinearCombination.normalize_vector_b`
               - Whether to normalize vector B.
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolVectorLinearCombination.output_dimension_inheritance`
-              - Determines whether the output dimension is inherited or explicitly specified using OutputDimension.
+              - Determine whether the output dimension is inherited or explicitly specified using OutputDimension.
             * - :py:attr:`~ansys.stk.core.vgt.VectorGeometryToolVectorLinearCombination.output_dimension`
               - A dimension to interpret the output vector.
 
@@ -88,9 +88,9 @@ Property detail
 
 .. py:property:: output_dimension_inheritance
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorLinearCombination.output_dimension_inheritance
-    :type: INHERIT_DIMENSION_TYPE
+    :type: InheritDimensionType
 
-    Determines whether the output dimension is inherited or explicitly specified using OutputDimension.
+    Determine whether the output dimension is inherited or explicitly specified using OutputDimension.
 
 .. py:property:: output_dimension
     :canonical: ansys.stk.core.vgt.VectorGeometryToolVectorLinearCombination.output_dimension

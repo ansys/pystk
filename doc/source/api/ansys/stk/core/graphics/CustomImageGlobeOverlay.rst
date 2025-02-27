@@ -38,11 +38,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.CustomImageGlobeOverlay.is_translucent`
-              - Gets whether the overlay contains translucent imagery.
+              - Get whether the overlay contains translucent imagery.
             * - :py:attr:`~ansys.stk.core.graphics.CustomImageGlobeOverlay.maximum_meters_per_pixel`
-              - Gets the maximum resolution of the inlay in meters per pixel.
+              - Get the maximum resolution of the inlay in meters per pixel.
             * - :py:attr:`~ansys.stk.core.graphics.CustomImageGlobeOverlay.projection`
-              - Gets the map projection. Valid values are mercator and equidistant cylindrical.
+              - Get the map projection. Valid values are mercator and equidistant cylindrical.
 
 
 
@@ -61,19 +61,19 @@ Property detail
     :canonical: ansys.stk.core.graphics.CustomImageGlobeOverlay.is_translucent
     :type: bool
 
-    Gets whether the overlay contains translucent imagery.
+    Get whether the overlay contains translucent imagery.
 
 .. py:property:: maximum_meters_per_pixel
     :canonical: ansys.stk.core.graphics.CustomImageGlobeOverlay.maximum_meters_per_pixel
     :type: float
 
-    Gets the maximum resolution of the inlay in meters per pixel.
+    Get the maximum resolution of the inlay in meters per pixel.
 
 .. py:property:: projection
     :canonical: ansys.stk.core.graphics.CustomImageGlobeOverlay.projection
-    :type: MAP_PROJECTION
+    :type: MapProjection
 
-    Gets the map projection. Valid values are mercator and equidistant cylindrical.
+    Get the map projection. Valid values are mercator and equidistant cylindrical.
 
 
 Method detail

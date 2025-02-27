@@ -102,7 +102,7 @@ Property detail
 
 .. py:property:: area_type
     :canonical: ansys.stk.core.stkobjects.AreaTarget.area_type
-    :type: AREA_TYPE
+    :type: AreaType
 
     The method for defining the area target boundary. A member of the AgEAreaType enumeration.
 
