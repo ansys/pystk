@@ -8,7 +8,8 @@ Create a new STK scenario
 
 To create new scenario, you first need to connect to STK. 
 
-.. code-block::
+.. code-block:: python
+
     # Connect to the STK Application object
     stk_app = win32com.client.Dispatch("STK12.Application")
     stk_app.Visible = True  # This will make the STK UI visible
@@ -17,7 +18,8 @@ This creates an instance of the STK application, and setting Visible to True ope
 
 Next, it's time to create a scenario.
 
-.. code-block::
+.. code-block:: python
+
     # Create a new scenario
     stk_scenario = stk_app.NewScenario("MyScenario")
 
@@ -29,7 +31,8 @@ Load an existing scenario
 
 You can load an existing scenario by opening the .sc (scenario) file:
 
-.. code-block::
+.. code-block:: python
+
     # Open an existing scenario
     existing_scenario_path = "C:\\Path\\To\\Your\\Scenario.sc"
     stk_scenario = stk_app.LoadScenario(existing_scenario_path)
@@ -39,13 +42,15 @@ Create objects in a scenario
 
 After creating or loading the scenario, you can create and manipulate objects like satellites, aircraft, or ground stations. For example, to add a satellite:
 
-.. code-block::
+.. code-block:: python
+
     # Create a satellite in the scenario
     satellite = stk_scenario.Children.New("Satellite", "MySatellite")
 
 To set the satellite's orbit and to set a propagator type:
 
-.. code-block::
+.. code-block:: python
+
     # Set the satellite's orbit (assuming you want a basic orbit definition)
     satellite.SetPropagatorType("ePropagatorSGP4")  # Using SGP4 propagator
     propagator = satellite.Propagator
@@ -57,7 +62,8 @@ Save a scenario
 
 Once you've created your scenario and added the necessary objects, save the scenario using PySTK:
 
-.. code-block::
+.. code-block:: python
+
     # Save the scenario
     stk_scenario.SaveAs("C:\\Path\\To\\Save\\NewScenario.sc")
 
@@ -66,6 +72,7 @@ Close the STK application
 
 After you're done, you can close the STK application:
 
-.. code-block::
+.. code-block:: python
+
     # Close the STK application
     stk_app.Quit()

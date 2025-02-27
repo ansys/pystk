@@ -14,7 +14,8 @@ To use this functionality, you must have `Numpy <https://numpy.org/>`_ installed
 
 The following example uses NumPy arrays for flight profile data.
 
-.. code-block::
+.. code-block:: python
+
     from scipy.spatial import ConvexHull
     import matplotlib.pyplot as plt
     
@@ -72,7 +73,8 @@ Example 1
 
 This example provides the Python implementation for converting All Regions By Pass data provider results to a Pandas DataFrame with a default numeric row index.
 
-.. code-block::
+.. code-block:: python
+
     # compute data provider results for All Regions by Pass coverage
     coverage_data_provider = coverage.DataProviders.Item('All Regions By Pass')
     coverage_data = coverage_data_provider.Exec()
@@ -82,7 +84,8 @@ This example provides the Python implementation for converting All Regions By Pa
 
 The ToPandasDataFrame() method supports setting a single column as the index. To create a hierarchical index or a composite index comprised of more than a single column, get your data provider’s results dataset collection as a Pandas DataFrame with the default numeric index, then update the index accordingly.
 
-.. code-block::
+.. code-block:: python
+
     # compute data provider results for basic Access
     field_names = ['Access Number', 'Start Time', 'Stop Time', 'Duration']
     time_step_sec = 1.0
@@ -99,7 +102,8 @@ Example 2
 
 This example provides the Python implementation for computing descriptive statistics access measurements.
 
-.. code-block::
+.. code-block:: python
+
     # compute data provider results for All Regions by Pass coverage
     coverage_data_provider = coverage.DataProviders.Item('All Regions By Pass')
     coverage_data = coverage_data_provider.Exec()
@@ -119,7 +123,8 @@ Example 3
 
 This example provides the Python implementation for computing descriptive statistics access measurements grouped by Asset Name (Satellite Names).
 
-.. code-block::
+.. code-block:: python
+
     def q1(x):
     return x.quantile(0.25)
 
@@ -141,6 +146,7 @@ This example provides the Python implementation for computing descriptive statis
     'percent coverage': ['mean', 'min', q1, q2, q3, 'max'],
     'area coverage': ['mean', 'min', q1, q2, q3, 'max']
     }).T
+    
 This produces the following data table:
 
 (./img/pandas-stats2.png)
@@ -150,7 +156,8 @@ Example 4
 
 This example provides the Python implementation for plotting a heat map of Duration By Asset (Satellite) for each access region.
 
-.. code-block::
+.. code-block:: python
+
     import seaborn as sns; sns.set_style('ticks')
     from matplotlib import pyplot as plt
 

@@ -15,7 +15,8 @@ Event Interface | Parent Object
 
 Events are accessed through the Subscribe() method on the parent object, which returns an event handler subscribed to events on the queried object. You can add or remove Event callbacks in the event handler using the "+=" and "-=" operators; these operators will change the callbacks that will get executed by the event but will not affect whether the handler remains subscribed. The event handler should be unsubscribed using the Unsubscribe() method when event handling is no longer needed. Refer to the following example for using IAgStkObjectRootEvents.
 
-.. code-block::
+.. code-block:: python
+
     from agi.stk12.stkengine import STKEngine
 
     def onScenarioNewCallback(Path:str):
@@ -36,7 +37,8 @@ Events are accessed through the Subscribe() method on the parent object, which r
 
 The STK Desktop application user interface might become unresponsive to user input when Python has event subscribers, and the STK application tries to call back into the Python interpreter to notify of an event. That callback relies on the Windows message loop to be dispatched. To work around this issue, Windows messages need to be dispatched through the Windows message queue. This can be accomplished in different ways depending on the type of Python script that is executing (console or user interface), and on the type of user interface library being used. For instance, if you use the tkinter user interface library, a simple way of accomplishing this with this library is to create a tkinter window while using the desktop application user interface. No action is needed if Python is used only for automation. The following script is an example showing this issue.
 
-.. code-block::
+.. code-block:: python
+    
     from agi.stk12.stkdesktop import STKDesktop
     from agi.stk12.stkobjects import AgESTKObjectType
 
