@@ -34,7 +34,7 @@ Overview
 Examples
 --------
 
-Add and configure an enroute procedure
+Add and configure an en-route procedure
 
 .. code-block:: python
 

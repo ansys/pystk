@@ -664,7 +664,7 @@ class SatelliteSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="GraphicsDropline",
-        description=" Display droplines in 3D Window",
+        description=" Display drop lines in 3D Window",
         category="STK Objects | Satellite | Graphics",
         eid="STKObjects~IAgVeVODropLinePathItemCollection",
     )

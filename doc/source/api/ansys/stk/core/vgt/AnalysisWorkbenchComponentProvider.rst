@@ -352,7 +352,7 @@ Get default VGT component on vehicle
     icrfAxes = vgtSat.axes.item("ICRF")
 
 
-Get Center point and Inertial System of Earth CB
+Get Center point and Inertial System of Earth central body
 
 .. code-block:: python
 

@@ -55,7 +55,7 @@ class InitializationSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="StartSTKEngine",
-        description="Start STK Engine and get a reference to StkObjectRoot",
+        description="Start STK Engine and get a reference to STK Object Root",
         category="Initialization",
         eid="STKObjects~IAgStkObjectRoot",
     )

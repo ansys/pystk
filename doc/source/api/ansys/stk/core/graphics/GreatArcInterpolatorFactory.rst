@@ -29,7 +29,7 @@ Overview
 Examples
 --------
 
-GreatArcInterpolator Primitives
+Great Arc Interpolator Primitives
 
 .. code-block:: python
 

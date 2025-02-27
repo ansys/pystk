@@ -48,7 +48,7 @@ Overview
 Examples
 --------
 
-Display the AzElMask in 2D/3D
+Display the AzEl Mask in 2D/3D
 
 .. code-block:: python
 

@@ -129,7 +129,7 @@ Execute Connect command
     root.execute_command("New / */Target MyTarget")
 
 
-Start STK and get a reference to StkObjectRoot
+Start STK and get a reference to STK Object Root
 
 .. code-block:: python
 
@@ -147,7 +147,7 @@ Start STK and get a reference to StkObjectRoot
     stk.shutdown()
 
 
-Get a reference to StkObjectRoot using a running STK instance
+Get a reference to STK Object Root using a running STK instance
 
 .. code-block:: python
 
@@ -160,7 +160,7 @@ Get a reference to StkObjectRoot using a running STK instance
     root = stk.root
 
 
-Start STK Engine and get a reference to StkObjectRoot
+Start STK Engine and get a reference to STK Object Root
 
 .. code-block:: python
 
@@ -198,7 +198,7 @@ Close an open Scenario
     root.close_scenario()
 
 
-Open a VDF
+Open a Viewer Data File
 
 .. code-block:: python
 
@@ -243,7 +243,7 @@ Property detail
     Examples
     --------
 
-    Open a VDF
+    Open a Viewer Data File
 
     .. code-block:: python
 

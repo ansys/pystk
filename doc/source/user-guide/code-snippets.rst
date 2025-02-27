@@ -28,7 +28,7 @@ Analysis Workbench
     - :ref:`Create a new fixed in axes vector <CreateFixedAxesVector>`
     - :ref:`Create a new displacement vector <CreateDisplacementVector>`
     - :ref:`Get default vgt component on vehicle <GetVGTCompVehicle>`
-    - :ref:`Get center point and inertial system of earth cb <GetVGTPoint>`
+    - :ref:`Get center point and inertial system of earth central body <GetVGTPoint>`
 Camera
     - :ref:`Change camera reference frame <CameraReferenceFrame>`
     - :ref:`Change camera view to imagery extents <CameraExtents>`
@@ -51,11 +51,11 @@ Graphics
     - :ref:`Draw a new text primitive <TextPrimitive>`
     - :ref:`Draw a new surface extent triangulator <SurfaceExtentTriangulator>`
     - :ref:`Draw a new surface mesh <SurfaceMeshPrimitive>`
-    - :ref:`Greatarcinterpolator primitives <GreatArcInterpolator>`
+    - :ref:`Great arc interpolator primitives <GreatArcInterpolator>`
 Initialization
     - :ref:`Start stk and get a reference to stkobjectroot <CreateSTKNew>`
     - :ref:`Get a reference to stkobjectroot using a running stk instance <AttachSTK>`
-    - :ref:`Start stk engine and get a reference to stkobjectroot <StartSTKEngine>`
+    - :ref:`Start stk engine and get a reference to stk object root <StartSTKEngine>`
 Scenario
   Scenario Management
       - :ref:`Change scenario font <ScenarioFont>`
@@ -65,25 +65,25 @@ Scenario
       - :ref:`Create a new scenario <CreateScenario>`
       - :ref:`Close stk <CloseSTK>`
       - :ref:`Close an open scenario <CloseScenario>`
-      - :ref:`Open a vdf <OpenVdfSTK>`
+      - :ref:`Open a viewer data file <OpenVdfSTK>`
 STK Objects
   Access
-      - :ref:`Getaccessbetweenobjectsbypath using the output of getexistingaccesses <GetAccesses>`
-      - :ref:`Configure the access interval to the availability time span of the object where access is being computed to. <ConfigureAccessIntervalAvailability>`
-      - :ref:`Configure the access analysis time period to specified time instants. <ConfigureAccessInterval>`
+      - :ref:`Get access between objects by path using the existing accesses <GetAccesses>`
+      - :ref:`Configure the access interval to the availability time span of the object where access is being computed to <ConfigureAccessIntervalAvailability>`
+      - :ref:`Configure the access analysis time period to specified time instants <ConfigureAccessInterval>`
       - :ref:`Compute and extract access interval times <ExtractAccessIntervals>`
       - :ref:`Compute an access for one point <ComputeAccessPoint>`
       - :ref:`Compute access with advanced settings <ComputeAccessAdvancedSettings>`
       - :ref:`Compute an access between two stk objects (using object path) <ComputeAccessPaths>`
       - :ref:`Compute an access between two stk objects (using istkobject interface) <ComputeAccess>`
-      - :ref:`Remove all access constraints except for los <RemoveAllConstraints>`
+      - :ref:`Remove all access constraints except for line of sight <RemoveAllConstraints>`
       - :ref:`Add an exclusion zone access constraint <AddExclusionZoneConstraint>`
       - :ref:`Add multiple access constraints of the same type to an stk object <AddMultipleConstraint>`
       - :ref:`Add and configure an altitude access constraint <AddAltitudeConstraint>`
       - :ref:`Add and configure a central body obstruction access constraint <AddCbObstructionConstraint>`
       - :ref:`Add and configure a sun elevation angle access constraint <AddSunElevationAngleConstraint>`
       - :ref:`Add and configure a lunar elevation angle access constraint <AddLunarElevationAngleConstraint>`
-      - :ref:`Add and configure a los sun exclusion access constraint <AddSunExclusionConstraint>`
+      - :ref:`Add and configure a line of sight sun exclusion access constraint <AddSunExclusionConstraint>`
       - :ref:`Add and configure a lighting condition access constraint <AddLightingConstraint>`
       - :ref:`Return a list of available constraints <AvailableAccessConstraints>`
       - :ref:`Get handle to the object access constraints <AccessConstraints>`
@@ -112,17 +112,17 @@ STK Objects
       - :ref:`Compute coverage <CoverageCompute>`
       - :ref:`Set advanced settings for coverage <CoverageAdvanced>`
       - :ref:`Set the coverage interval to an object's availability analysis interval <CoverageInterval>`
-      - :ref:`Create a new coveragedefinition (on the current scenario central body) <CreateCoverage>`
+      - :ref:`Create a new coverage definition (on the current scenario central body) <CreateCoverage>`
   Data Providers
       - :ref:`Getting data for specific points and elements <SingleTimesDataProvider>`
       - :ref:`Getting data for a single point in time <SingleTimeDataProvider>`
-      - :ref:`Extracting elements from data providers with predata <DataProviderPreData>`
+      - :ref:`Extracting elements from data providers with pre-data <DataProviderPreData>`
       - :ref:`Extracting elements from data providers with groups <GroupsDataProvider>`
       - :ref:`Using a time dependent data provider and requesting only specified elements <TimeDependentDataProviderElements>`
       - :ref:`Using an interval data provider <IntervalDataProvider>`
   Facility
     Graphics
-        - :ref:`Display the azelmask in 2d/3d <FacilityAzElMaskDisplay>`
+        - :ref:`Display the azel mask in 2d/3d <FacilityAzElMaskDisplay>`
       - :ref:`Add an azel mask to a facility <AzElMaskFacility>`
       - :ref:`Set the geodetic position of the facility <SetPositionFacility>`
       - :ref:`Create a facility (on the current scenario central body) <CreateFacility>`
@@ -134,7 +134,7 @@ STK Objects
       - :ref:`Set great arc propagator and add individual waypoints to ground vehicle <AddGroundVehiclePoints>`
       - :ref:`Create a new ground vehicle (on the current scenario central body) <CreateVehicle>`
   Line Target
-      - :ref:`Create a new linetarget (on the current scenario central body) <CreateLineTarget>`
+      - :ref:`Create a new line target (on the current scenario central body) <CreateLineTarget>`
   Missile
       - :ref:`Create a new missile (on the current scenario central body) <CreateMissile>`
   MTO
@@ -152,7 +152,7 @@ STK Objects
         - :ref:`Add fixed system orbit system in 3d display <GraphicsOrbitSystem>`
         - :ref:`Modify the detail thresholds levels <GraphicsDetails>`
         - :ref:`Change the 3d model and marker properties <GraphicsModel>`
-        - :ref:` display droplines in 3d window <GraphicsDropline>`
+        - :ref:` display drop lines in 3d window <GraphicsDropline>`
         - :ref:`Add a data display to the 3d window <GraphicsDataDisplay>`
         - :ref:`Change the display label of the vehicle <GraphicsLabel>`
         - :ref:`Set 2d/3d pass display properties <GraphicsPass>`
@@ -237,7 +237,7 @@ STK Objects
             - :ref:`Add a takeoff procedure from a runway <AddTakeoffProcedure>`
             - :ref:`Add a new phase and use the same performance models as the first phase <AddPhase>`
             - :ref:`Add and configure a landing procedure <AddLandingProcedure>`
-            - :ref:`Add and configure an enroute procedure <AddEnrouteProcedure>`
+            - :ref:`Add and configure an en-route procedure <AddEnrouteProcedure>`
             - :ref:`Add and configure a basic maneuver procedure <AddBasicManeuverProcedure>`
             - :ref:`Add and remove procedures <AddAndRemoveProcedures>`
 
@@ -546,7 +546,7 @@ Create a new displacement vector
 
 .. _GetVGTCompVehicle:
 
-Get default vgt component on vehicle
+Get default VGT component on vehicle
 ====================================
 
 .. code-block:: python
@@ -563,8 +563,8 @@ Get default vgt component on vehicle
 
 .. _GetVGTPoint:
 
-Get center point and inertial system of earth cb
-================================================
+Get center point and inertial system of Earth central body
+==========================================================
 
 .. code-block:: python
 
@@ -875,8 +875,8 @@ Draw a new surface mesh
 
 .. _GreatArcInterpolator:
 
-Greatarcinterpolator primitives
-===============================
+Great arc interpolator primitives
+=================================
 
 .. code-block:: python
 
@@ -892,8 +892,8 @@ Greatarcinterpolator primitives
 
 .. _CreateSTKNew:
 
-Start stk and get a reference to stkobjectroot
-==============================================
+Start STK and get a reference to STK Object Root
+================================================
 
 .. code-block:: python
 
@@ -912,8 +912,8 @@ Start stk and get a reference to stkobjectroot
 
 .. _AttachSTK:
 
-Get a reference to stkobjectroot using a running stk instance
-=============================================================
+Get a reference to STK Object Root using a running STK instance
+===============================================================
 
 .. code-block:: python
 
@@ -927,8 +927,8 @@ Get a reference to stkobjectroot using a running stk instance
 
 .. _StartSTKEngine:
 
-Start stk engine and get a reference to stkobjectroot
-=====================================================
+Start STK Engine and get a reference to STK object root
+=======================================================
 
 .. code-block:: python
 
@@ -942,7 +942,7 @@ Start stk engine and get a reference to stkobjectroot
 
 .. _SceneLighting:
 
-Control the lighting of the 3d scene
+Control the lighting of the 3D scene
 ====================================
 
 .. code-block:: python
@@ -1059,7 +1059,7 @@ Create a new scenario
 
 .. _CloseSTK:
 
-Close stk
+Close STK
 =========
 
 .. code-block:: python
@@ -1079,8 +1079,8 @@ Close an open scenario
 
 .. _OpenVdfSTK:
 
-Open a vdf
-==========
+Open a viewer data file
+=======================
 
 .. code-block:: python
 
@@ -1090,8 +1090,8 @@ Open a vdf
 
 .. _GetAccesses:
 
-Getaccessbetweenobjectsbypath using the output of getexistingaccesses
-=====================================================================
+Get access between objects by path using the existing accesses
+==============================================================
 
 .. code-block:: python
 
@@ -1109,8 +1109,8 @@ Getaccessbetweenobjectsbypath using the output of getexistingaccesses
 
 .. _ConfigureAccessIntervalAvailability:
 
-Configure the access interval to the availability time span of the object where access is being computed to.
-============================================================================================================
+Configure the access interval to the availability time span of the object where access is being computed to
+===========================================================================================================
 
 .. code-block:: python
 
@@ -1129,8 +1129,8 @@ Configure the access interval to the availability time span of the object where 
 
 .. _ConfigureAccessInterval:
 
-Configure the access analysis time period to specified time instants.
-=====================================================================
+Configure the access analysis time period to specified time instants
+====================================================================
 
 .. code-block:: python
 
@@ -1228,7 +1228,7 @@ Compute access with advanced settings
 
 .. _ComputeAccessPaths:
 
-Compute an access between two stk objects (using object path)
+Compute an access between two STK objects (using object path)
 =============================================================
 
 .. code-block:: python
@@ -1243,7 +1243,7 @@ Compute an access between two stk objects (using object path)
 
 .. _ComputeAccess:
 
-Compute an access between two stk objects (using istkobject interface)
+Compute an access between two STK objects (using istkobject interface)
 ======================================================================
 
 .. code-block:: python
@@ -1259,8 +1259,8 @@ Compute an access between two stk objects (using istkobject interface)
 
 .. _RemoveAllConstraints:
 
-Remove all access constraints except for los
-============================================
+Remove all access constraints except for line of sight
+======================================================
 
 .. code-block:: python
 
@@ -1298,7 +1298,7 @@ Add an exclusion zone access constraint
 
 .. _AddMultipleConstraint:
 
-Add multiple access constraints of the same type to an stk object
+Add multiple access constraints of the same type to an STK object
 =================================================================
 
 .. code-block:: python
@@ -1389,8 +1389,8 @@ Add and configure a lunar elevation angle access constraint
 
 .. _AddSunExclusionConstraint:
 
-Add and configure a los sun exclusion access constraint
-=======================================================
+Add and configure a line of sight sun exclusion access constraint
+=================================================================
 
 .. code-block:: python
 
@@ -1439,7 +1439,7 @@ Get handle to the object access constraints
 
 .. _CreateCAT:
 
-Create a new advcat object
+Create a new AdvCat object
 ==========================
 
 .. code-block:: python
@@ -1764,8 +1764,8 @@ Set the coverage interval to an object's availability analysis interval
 
 .. _CreateCoverage:
 
-Create a new coveragedefinition (on the current scenario central body)
-======================================================================
+Create a new coverage definition (on the current scenario central body)
+=======================================================================
 
 .. code-block:: python
 
@@ -1819,8 +1819,8 @@ Getting data for a single point in time
 
 .. _DataProviderPreData:
 
-Extracting elements from data providers with predata
-====================================================
+Extracting elements from data providers with pre-data
+=====================================================
 
 .. code-block:: python
 
@@ -1928,8 +1928,8 @@ Using an interval data provider
 
 .. _FacilityAzElMaskDisplay:
 
-Display the azelmask in 2d/3d
-=============================
+Display the AzEl mask in 2D/3D
+==============================
 
 .. code-block:: python
 
@@ -1944,7 +1944,7 @@ Display the azelmask in 2d/3d
 
 .. _AzElMaskFacility:
 
-Add an azel mask to a facility
+Add an AzEl mask to a facility
 ==============================
 
 .. code-block:: python
@@ -2077,8 +2077,8 @@ Create a new ground vehicle (on the current scenario central body)
 
 .. _CreateLineTarget:
 
-Create a new linetarget (on the current scenario central body)
-==============================================================
+Create a new line target (on the current scenario central body)
+===============================================================
 
 .. code-block:: python
 
@@ -2110,7 +2110,7 @@ Create a new missile (on the current scenario central body)
 
 .. _MTOLoadTrack:
 
-Load mto track points from file
+Load MTO track points from file
 ===============================
 
 .. code-block:: python
@@ -2126,7 +2126,7 @@ Load mto track points from file
 
 .. _CreateMTO:
 
-Create a new mto (on the current scenario central body)
+Create a new MTO (on the current scenario central body)
 =======================================================
 
 .. code-block:: python
@@ -2166,7 +2166,7 @@ Compute object coverage
 
 .. _PlanetGraphics:
 
-Modify planet 2d properties
+Modify planet 2D properties
 ===========================
 
 .. code-block:: python
@@ -2192,7 +2192,7 @@ Create a new planet
 
 .. _AddGraphicsVector:
 
-Add a vector to display in 3d
+Add a vector to display in 3D
 =============================
 
 .. code-block:: python
@@ -2204,7 +2204,7 @@ Add a vector to display in 3d
 
 .. _GraphicsOrbitSystem:
 
-Add fixed system orbit system in 3d display
+Add fixed system orbit system in 3D display
 ===========================================
 
 .. code-block:: python
@@ -2233,7 +2233,7 @@ Modify the detail thresholds levels
 
 .. _GraphicsModel:
 
-Change the 3d model and marker properties
+Change the 3D model and marker properties
 =========================================
 
 .. code-block:: python
@@ -2250,8 +2250,8 @@ Change the 3d model and marker properties
 
 .. _GraphicsDropline:
 
- display droplines in 3d window
-===============================
+ display drop lines in 3D window
+================================
 
 .. code-block:: python
 
@@ -2265,7 +2265,7 @@ Change the 3d model and marker properties
 
 .. _GraphicsDataDisplay:
 
-Add a data display to the 3d window
+Add a data display to the 3D window
 ===================================
 
 .. code-block:: python
@@ -2294,7 +2294,7 @@ Change the display label of the vehicle
 
 .. _GraphicsPass:
 
-Set 2d/3d pass display properties
+Set 2D/3D pass display properties
 =================================
 
 .. code-block:: python
@@ -2344,7 +2344,7 @@ Set vehicle lighting properties
 
 .. _GraphicsSwath:
 
-Set 2d swath
+Set 2D swath
 ============
 
 .. code-block:: python
@@ -2358,7 +2358,7 @@ Set 2d swath
 
 .. _GraphicsRangeContours:
 
-Set 2d/3d range contours
+Set 2D/3D range contours
 ========================
 
 .. code-block:: python
@@ -2378,7 +2378,7 @@ Set 2d/3d range contours
 
 .. _GraphicsElevationContours:
 
-Set 2d/3d elevation contours
+Set 2D/3D elevation contours
 ============================
 
 .. code-block:: python
@@ -2394,7 +2394,7 @@ Set 2d/3d elevation contours
 
 .. _CustomGraphics2D:
 
-Set 2d display times to custom and add intervals
+Set 2D display times to custom and add intervals
 ================================================
 
 .. code-block:: python
@@ -2424,7 +2424,7 @@ Set 2d display times to custom and add intervals
 
 .. _BasicGraphics2D:
 
-Set 2d graphics display properties
+Set 2D graphics display properties
 ==================================
 
 .. code-block:: python
@@ -2551,7 +2551,7 @@ Set satellite propagator to spice and propagate
 
 .. _AstrogatorSatellite:
 
-Set satellite propagator to astrogator and clear segments
+Set satellite propagator to Astrogator and clear segments
 =========================================================
 
 .. code-block:: python
@@ -2564,7 +2564,7 @@ Set satellite propagator to astrogator and clear segments
 
 .. _HPOPSatellite:
 
-Set satellite propagator to hpop and set force model properties
+Set satellite propagator to HPOP and set force model properties
 ===============================================================
 
 .. code-block:: python
@@ -2602,7 +2602,7 @@ Set satellite propagator to hpop and set force model properties
 
 .. _J4Satellite:
 
-Set satellite propagator to j4 and assign cartesian position
+Set satellite propagator to j4 and assign Cartesian position
 ============================================================
 
 .. code-block:: python
@@ -2682,7 +2682,7 @@ Sensor body mask
 
 .. _DefineSensorPointingFixedAxesYPR:
 
-Define sensor pointing fixed axes ypr
+Define sensor pointing fixed axes YPR
 =====================================
 
 .. code-block:: python
@@ -2693,7 +2693,7 @@ Define sensor pointing fixed axes ypr
 
 .. _DefineSensorPointingFixedYPR:
 
-Define sensor pointing fixed ypr
+Define sensor pointing fixed YPR
 ================================
 
 .. code-block:: python
@@ -2726,7 +2726,7 @@ Define sensor pointing fixed quaternion
 
 .. _DefineSensorPointingFixedAxesEuler:
 
-Define sensor pointing fixed axes euler
+Define sensor pointing fixed axes Euler
 =======================================
 
 .. code-block:: python
@@ -2739,7 +2739,7 @@ Define sensor pointing fixed axes euler
 
 .. _DefineSensorPointingFixedEuler:
 
-Define sensor pointing fixed euler
+Define sensor pointing fixed Euler
 ==================================
 
 .. code-block:: python
@@ -2750,7 +2750,7 @@ Define sensor pointing fixed euler
 
 .. _DefineSensorPointingFixedAxesAzEl:
 
-Define sensor pointing fixed axes azel
+Define sensor pointing fixed axes AzEl
 ======================================
 
 .. code-block:: python
@@ -2761,7 +2761,7 @@ Define sensor pointing fixed axes azel
 
 .. _DefineSensorPointingFixedAzEl:
 
-Define sensor pointing fixed azel
+Define sensor pointing fixed AzEl
 =================================
 
 .. code-block:: python
@@ -3101,7 +3101,7 @@ Create a new transmitter object
 
 .. _AstrogatorRunMCS:
 
-Run the astrogator mcs
+Run the Astrogator MCS
 ======================
 
 .. code-block:: python
@@ -3583,8 +3583,8 @@ Add and configure a landing procedure
 
 .. _AddEnrouteProcedure:
 
-Add and configure an enroute procedure
-======================================
+Add and configure an en-route procedure
+=======================================
 
 .. code-block:: python
 

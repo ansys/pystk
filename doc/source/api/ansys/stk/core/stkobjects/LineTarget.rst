@@ -36,7 +36,7 @@ Overview
 Examples
 --------
 
-Create a New LineTarget (on the current scenario central body)
+Create a New Line Target (on the current scenario central body)
 
 .. code-block:: python
 

@@ -35,7 +35,7 @@ Overview
 Examples
 --------
 
-GetAccessBetweenObjectsByPath using the output of GetExistingAccesses
+Get access between objects by path using the existing accesses
 
 .. code-block:: python
 
@@ -52,7 +52,7 @@ GetAccessBetweenObjectsByPath using the output of GetExistingAccesses
     access = scenario.get_access_between_objects_by_path(object1, object2)
 
 
-Configure the access interval to the availability time span of the object where access is being computed to.
+Configure the access interval to the availability time span of the object where access is being computed to
 
 .. code-block:: python
 
@@ -70,7 +70,7 @@ Configure the access interval to the availability time span of the object where 
         accessTimePeriod.access_interval.set_implicit_interval(availabilityTimeSpan)
 
 
-Remove all access constraints except for LOS
+Remove all access constraints except for Line Of Sight
 
 .. code-block:: python
 
@@ -186,7 +186,7 @@ Add and configure a lunar elevation angle access constraint
     minmax.maximum = 88.8
 
 
-Add and configure a LOS sun exclusion access constraint
+Add and configure a Line Of Sight sun exclusion access constraint
 
 .. code-block:: python
 

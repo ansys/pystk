@@ -103,7 +103,7 @@ Add and configure a landing procedure
     sia.use_runway_terrain = True
 
 
-Add and configure an enroute procedure
+Add and configure an en-route procedure
 
 .. code-block:: python
 

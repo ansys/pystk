@@ -64,7 +64,7 @@ class CoverageDefinitionSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="CreateCoverage",
-        description="Create a New CoverageDefinition (on the current scenario central body)",
+        description="Create a New Coverage Definition (on the current scenario central body)",
         category="STK Objects | Coverage Definition",
         eid="STKObjects~IAgCoverageDefinition",
     )

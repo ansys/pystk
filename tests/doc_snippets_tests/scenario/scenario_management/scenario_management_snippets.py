@@ -68,7 +68,7 @@ class ScenarioManagementSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="OpenVdfSTK",
-        description="Open a VDF",
+        description="Open a Viewer Data File",
         category="Scenario | Scenario Management",
         eid="STKObjects~IAgStkObjectRoot | STKObjects~IAgStkObjectRoot~LoadVDF",
     )

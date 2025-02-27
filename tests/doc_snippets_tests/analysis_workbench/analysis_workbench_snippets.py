@@ -63,7 +63,7 @@ class AnalysisWorkbenchSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="GetVGTPoint",
-        description="Get Center point and Inertial System of Earth CB",
+        description="Get Center point and Inertial System of Earth central body",
         category="Analysis Workbench",
         eid="AgSTKVgtLib~IAgCrdnProvider",
     )

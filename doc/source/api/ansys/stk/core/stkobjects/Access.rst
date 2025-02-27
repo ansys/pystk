@@ -69,7 +69,7 @@ Overview
 Examples
 --------
 
-Configure the access analysis time period to specified time instants.
+Configure the access analysis time period to specified time instants
 
 .. code-block:: python
 

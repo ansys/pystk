@@ -137,7 +137,7 @@ class AccessSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="AddSunExclusionConstraint",
-        description="Add and configure a LOS sun exclusion access constraint",
+        description="Add and configure a Line Of Sight sun exclusion access constraint",
         category="STK Objects | Access",
         eid="STKObjects~IAgAccessConstraint",
     )
@@ -325,7 +325,7 @@ class AccessSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="RemoveAllConstraints",
-        description="Remove all access constraints except for LOS",
+        description="Remove all access constraints except for Line Of Sight",
         category="STK Objects | Access",
         eid="STKObjects~IAgAccessConstraint",
     )
@@ -516,7 +516,7 @@ class AccessSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="ConfigureAccessInterval",
-        description="Configure the access analysis time period to specified time instants.",
+        description="Configure the access analysis time period to specified time instants",
         category="STK Objects | Access",
         eid="STKObjects~IAgStkAccess",
     )
@@ -563,7 +563,7 @@ class AccessSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="ConfigureAccessIntervalAvailability",
-        description="Configure the access interval to the availability time span of the object where access is being computed to.",
+        description="Configure the access interval to the availability time span of the object where access is being computed to",
         category="STK Objects | Access",
         eid="STKObjects~IAgAccessConstraint",
     )
@@ -597,7 +597,7 @@ class AccessSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="GetAccesses",
-        description="GetAccessBetweenObjectsByPath using the output of GetExistingAccesses",
+        description="Get access between objects by path using the existing accesses",
         category="STK Objects | Access",
         eid="STKObjects~IAgAccessConstraint",
     )

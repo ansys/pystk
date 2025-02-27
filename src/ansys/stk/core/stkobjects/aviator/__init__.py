@@ -5473,7 +5473,7 @@ class ProcedureEnroute(IProcedure, SupportsDeleteCallback):
 
     Examples
     --------
-    Add and configure an enroute procedure:
+    Add and configure an en-route procedure:
     >>> # IProcedureCollection procedures: Procedure Collection object
     >>> # Add an enroute procedure with a site type of End of Previous Procedure
     >>> enroute = procedures.add_at_index(1, SiteType.SITE_END_OF_PREV_PROCEDURE, ProcedureType.PROCEDURE_ENROUTE)
@@ -6934,7 +6934,7 @@ class ProcedureCollection(SupportsDeleteCallback):
     >>> # Use the terrain as an altitude reference for the runway
     >>> sia.use_runway_terrain = True
 
-    Add and configure an enroute procedure:
+    Add and configure an en-route procedure:
     >>> # IProcedureCollection procedures: Procedure Collection object
     >>> # Add an enroute procedure with a site type of End of Previous Procedure
     >>> enroute = procedures.add_at_index(1, SiteType.SITE_END_OF_PREV_PROCEDURE, ProcedureType.PROCEDURE_ENROUTE)
@@ -14079,7 +14079,7 @@ class AltitudeMSLAndLevelOffOptions(SupportsDeleteCallback):
 
     Examples
     --------
-    Add and configure an enroute procedure:
+    Add and configure an en-route procedure:
     >>> # IProcedureCollection procedures: Procedure Collection object
     >>> # Add an enroute procedure with a site type of End of Previous Procedure
     >>> enroute = procedures.add_at_index(1, SiteType.SITE_END_OF_PREV_PROCEDURE, ProcedureType.PROCEDURE_ENROUTE)
@@ -14218,7 +14218,7 @@ class CruiseAirspeedOptions(SupportsDeleteCallback):
 
     Examples
     --------
-    Add and configure an enroute procedure:
+    Add and configure an en-route procedure:
     >>> # IProcedureCollection procedures: Procedure Collection object
     >>> # Add an enroute procedure with a site type of End of Previous Procedure
     >>> enroute = procedures.add_at_index(1, SiteType.SITE_END_OF_PREV_PROCEDURE, ProcedureType.PROCEDURE_ENROUTE)
@@ -14589,7 +14589,7 @@ class NavigationOptions(SupportsDeleteCallback):
 
     Examples
     --------
-    Add and configure an enroute procedure:
+    Add and configure an en-route procedure:
     >>> # IProcedureCollection procedures: Procedure Collection object
     >>> # Add an enroute procedure with a site type of End of Previous Procedure
     >>> enroute = procedures.add_at_index(1, SiteType.SITE_END_OF_PREV_PROCEDURE, ProcedureType.PROCEDURE_ENROUTE)

@@ -175,7 +175,7 @@ class DataProvidersSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="DataProviderPreData",
-        description="Extracting Elements from Data Providers with PreData",
+        description="Extracting Elements from Data Providers with pre-data",
         category="STK Objects | Data Providers",
         eid="STKObjects~IAgDataProviderCollection",
     )

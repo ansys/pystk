@@ -79,7 +79,7 @@ Getting Data for a Single Point in Time
     passes = satPassDP.data_sets.get_data_set_by_name("Precision Pass Number").get_values()
 
 
-Extracting Elements from Data Providers with PreData
+Extracting Elements from Data Providers with pre-data
 
 .. code-block:: python
 

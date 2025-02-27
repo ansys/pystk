@@ -116,7 +116,7 @@ class FacilitySnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="FacilityAzElMaskDisplay",
-        description="Display the AzElMask in 2D/3D",
+        description="Display the AzEl Mask in 2D/3D",
         category="STK Objects | Facility | Graphics",
         eid="STKObjects~IAgBasicAzElMask",
     )

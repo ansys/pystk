@@ -88,7 +88,7 @@ Set the Coverage Interval to an object's availability Analysis interval
     coverage.interval.analysis_interval.set_start_and_stop_times(IntResult.interval.start, IntResult.interval.stop)
 
 
-Create a New CoverageDefinition (on the current scenario central body)
+Create a New Coverage Definition (on the current scenario central body)
 
 .. code-block:: python
 

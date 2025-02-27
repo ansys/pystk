@@ -163,7 +163,7 @@ class AreaTargetSnippets(CodeSnippetsTestBase):
         areaTarget.area_type_data.remove_all()
 
         # By using the CommonTasks interface,
-        # make an array of lattitude and longitude boundary points
+        # make an array of latitude and longitude boundary points
         boundary = [[29, -12], [29, 34], [6, 34], [6, -12]]
 
         # SetAreaTypePattern expects a two dimensional array of latitude and longitude values

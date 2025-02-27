@@ -186,7 +186,7 @@ class AviatorSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="AddEnrouteProcedure",
-        description="Add and configure an enroute procedure",
+        description="Add and configure an en-route procedure",
         category="STK Objects | Vehicles | Common | Propagators | Aviator",
         eid="AgStkAvtrLib~IAgAvtrProcedureCollection | AgStkAvtrLib~IAgAvtrProcedureEnroute | AgStkAvtrLib~IAgAvtrAltitudeMSLAndLevelOffOptions | AgStkAvtrLib~IAgAvtrNavigationOptions | AgStkAvtrLib~IAgAvtrCruiseAirspeedOptions",
     )

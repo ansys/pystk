@@ -54,7 +54,7 @@ class LineTargetSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="CreateLineTarget",
-        description="Create a New LineTarget (on the current scenario central body)",
+        description="Create a New Line Target (on the current scenario central body)",
         category="STK Objects | Line Target",
         eid="STKObjects~IAgLineTarget",
     )

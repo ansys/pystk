@@ -19525,7 +19525,7 @@ class GreatArcInterpolatorFactory(SupportsDeleteCallback):
 
     Examples
     --------
-    GreatArcInterpolator Primitives:
+    Great Arc Interpolator Primitives:
     >>> # Scenario scenario: Scenario object
     >>> # Create a array of LLA values and interoplate them over the specified
     >>> # central body
