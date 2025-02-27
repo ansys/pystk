@@ -6,20 +6,17 @@ This topic explores the foundational structure of PySTK, providing you with an u
 
 Packages and namespaces
 =======================
+
 Packages and namespaces are fundamental to the organization and structure of PySTK. Packages contain groups of modules, while namespaces manage and avoid name conflicts by defining the scope of variables, functions, and classes.
-
-
 
 Data types
 ==========
 Data types form the building blocks for handling and processing information with PySTK. This section describes the more complex data types used with PySTK beyond the basic Python data types such as float, int, str, and bool. 
 
-
 Type hints
 ----------
 
 Most argument and return types are specified using type hints with Python's typing library. In the case that more than one type is possible (such as an argument that may be a string or a float), typing.Any is used as the type hint. In those situations, consulting the documentation for that method is advised. Type hints that are STK interfaces may represent objects that are subclasses of that interface.
-
 
 Enumerations
 ------------
@@ -103,17 +100,77 @@ Therefore, to reduce the number of remote API requests and improve performance, 
 Exceptions
 ==========
 
-Exceptions provide a way to detect, report, and recover from runtime issues. The table below describes the exceptions that are provided by the agi.stk12.utilities.exceptions module within PySTK.
+Exceptions are used to signal errors or unexpected conditions that arise during the execution of a script. When working with the API, you may encounter situations where something goes wrong, such as trying to access a non-existent object, providing invalid input, or encountering a runtime error while manipulating your scenario. Exceptions provide a mechanism for handling these errors in a controlled and predictable way.
 
-<INSERT TABLE>
+The table below describes the exceptions that are provided by the agi.stk12.utilities.exceptions module with PySTK.
+
+[INSERT TABLE]
+
 Exception | Description
 
 
 Events
 ======
 
-Events enable different parts of an application to communicate and respond to changes in an efficient manner. Events can be accessed directly in applicable parent objects, as seen in the table below.
+Events are mechanisms that enable you to respond to specific changes or actions occurring within an STK scenario or the application itself. Events enable you to automate responses to particular triggers, such as when a scenario reaches a certain time, when an object's state changes, or when specific conditions are met during a simulation.
 
-<INSERT TABLE>
+Using events, you can build more dynamic and interactive simulations by attaching custom Python functions or scripts that are executed automatically when predefined conditions are satisfied. For instance, you might want to log specific data whenever a satellite enters a certain region or when a communication link is established between two objects. Events enable you to hook into the STK application's processes and respond in real-time, streamlining workflows and enhancing your scenario's capabilities.
+
+You can access events directly in applicable parent objects, as displayed in the table below.
+
+[INSERT TABLE]
+
 Event interface | Parent object
+
+Events are accessed through the Subscribe() method on the parent object, which returns an event handler subscribed to events on the queried object. You can add or remove Event callbacks in the event handler using the "+=" and "-=" operators; these operators will change the callbacks that will get executed by the event but will not affect whether the handler remains subscribed. The event handler should be unsubscribed using the Unsubscribe() method when event handling is no longer needed. Refer to the following example for using IAgStkObjectRootEvents.
+
+.. code-block:: python
+
+    from agi.stk12.stkengine import STKEngine
+
+    def onScenarioNewCallback(Path:str):
+    print(f'Scenario {Path} has been created.')
+
+    stk = STKEngine.StartApplication()
+    root = stk.NewObjectRoot()
+    stkObjectRootEvents = root.Subscribe()
+    stkObjectRootEvents.OnScenarioNew += onScenarioNewCallback
+    root.NewScenario('ExampleScenario')
+    # callback should be executed now
+
+    # remove the callback from the handler
+    stkObjectRootEvents.OnScenarioNew -= onScenarioNewCallback
+
+    # all finished with events, unsubscribe
+    stkObjectRootEvents.Unsubscribe()
+
+The STK Desktop application user interface might become unresponsive to user input when Python has event subscribers, and the STK application tries to call back into the Python interpreter to notify of an event. That callback relies on the Windows message loop to be dispatched. To work around this issue, Windows messages need to be dispatched through the Windows message queue. This can be accomplished in different ways depending on the type of Python script that is executing (console or user interface), and on the type of user interface library being used. For instance, if you use the tkinter user interface library, a simple way of accomplishing this with this library is to create a tkinter window while using the desktop application user interface. No action is needed if Python is used only for automation. The following script is an example showing this issue.
+
+.. code-block:: python
+    
+    from agi.stk12.stkdesktop import STKDesktop
+    from agi.stk12.stkobjects import AgESTKObjectType
+
+    def onStkObjectAddedCallback(Path:str):
+    print(f'{Path} has been added.')
+    stk = STKDesktop.StartApplication(visible=True)
+    root = stk.Root
+    root.NewScenario('ExampleScenario')
+    stkObjectRootEvents = root.Subscribe()
+    stkObjectRootEvents.OnStkObjectAdded += onStkObjectAddedCallback
+    sc = root.CurrentScenario
+
+    #onStkObjectAddedCallback will be successfully called when the next line is executed
+    fac = sc.Children.New(AgESTKObjectType.eFacility, 'AGIHQ')
+
+    #Now switch control to the desktop application and create another facility.
+    #The user interface will become unresponsive.
+
+    #Now open a tkinter window that processing COM messages.
+    from tkinter import Tk
+    window = Tk()
+    window.mainloop()
+    #Switch control to the desktop application and create another facility.
+    #The user interface will be responsive and the event callback will be successful.
+
 
