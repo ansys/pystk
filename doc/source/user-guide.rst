@@ -25,3 +25,12 @@ User guide
  
    Migration <user-guide/migration>
    Code snippets <user-guide/code-snippets>
+
+   API structure <user-guide/api-structure>
+   Create and load scenarios <user-guide/create-loading-scenarios>
+   Data types <user-guide/data-types>
+   Events <user-guide/events>
+   Exceptions <user-guide/exceptions>
+   Help with STK <user-guide/help-with-pystk>
+   Initialization <user-guide/initialization>
+   Results and graphs <user-guide/results-graphs>

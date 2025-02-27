@@ -15,7 +15,7 @@ Reference the following topics to learn more about PySTK:
 PySTK tutorials and examples
 ============================
 
-Reference the :ref:`Examples <PySTK tutorials>`, which provide basic examples involving STK objects using Python and PySTK.
+Reference the :ref:`PySTK tutorials <Examples>`, which provide basic examples involving STK objects using Python and PySTK.
 
 
 PySTK troubleshooting
