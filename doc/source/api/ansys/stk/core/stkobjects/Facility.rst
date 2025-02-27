@@ -78,6 +78,39 @@ Overview
 
 
 
+Examples
+--------
+
+Add an AzEl Mask to a Facility
+
+.. code-block:: python
+
+    # Facility facility: Facility Object
+    facility.set_az_el_mask(AzElMaskType.TERRAIN_DATA, 0)
+
+
+Set the geodetic position of the facility
+
+.. code-block:: python
+
+    # Facility facility: Facility Object
+    facility.position.assign_geodetic(41.9849, 21.4039, 0)  # Latitude, Longitude, Altitude
+
+    # Set altitude to height of terrain
+    facility.use_terrain = True
+
+    # Set altitude to a distance above the ground
+    facility.height_above_ground = 0.05  # km
+
+
+Create a facility (on the current scenario central body)
+
+.. code-block:: python
+
+    # StkObjectRoot root: STK Object Model Root
+    facility = root.current_scenario.children.new(STKObjectType.FACILITY, "MyFacility")
+
+
 Import detail
 -------------
 

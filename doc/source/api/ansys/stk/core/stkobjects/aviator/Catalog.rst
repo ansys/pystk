@@ -33,6 +33,44 @@ Overview
 
 
 
+Examples
+--------
+
+Set the aircraft used for the mission to an aircraft found in the Aviator catalog
+
+.. code-block:: python
+
+    # AviatorPropagator propagator: Aviator Propagator object
+    # Get the Aviator catalog
+    catalog = propagator.aviator_catalog
+    # Get the aircraft category
+    category = catalog.aircraft_category
+    # Get the user aircraft models
+    aircraftModels = category.aircraft_models
+    # Get the basic fighter
+    fighter = aircraftModels.get_aircraft("Basic Fighter")
+    # Get the mission
+    mission = propagator.aviator_mission
+    # Set the vehicle used for the mission
+    mission.vehicle = fighter
+
+
+Configure a runway site from a runway in the Aviator catalog
+
+.. code-block:: python
+
+    # SiteRunway runway: Runway object
+    # Catalog catalog: Aviator catalog object
+    # Get the source of user runways
+    userRunways = catalog.runway_category.user_runways
+    # Check that the runway exists in the catalog
+    if userRunways.contains("New User Runway") is True:
+        # If so, get the user runway with the given name
+        runwayFromCatalog = userRunways.get_user_runway("New User Runway")
+        # Copy the parameters of that runway
+        runway.copy_from_catalog(runwayFromCatalog)
+
+
 Import detail
 -------------
 

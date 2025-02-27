@@ -46,6 +46,28 @@ Overview
 
 
 
+Examples
+--------
+
+Define area target boundary and position from list of lat/lon/alt
+
+.. code-block:: python
+
+    # StkObjectRoot root: STK Object Model Root
+    # AreaTarget areaTarget: AreaTarget object
+
+    # By using the fine grained interfaces,
+    # BeginUpdate/EndUpdate prevent intermediate redraws
+    root.begin_update()
+    areaTarget.area_type = AreaType.PATTERN
+    patterns = areaTarget.area_type_data
+    patterns.add(48.897, 18.637)
+    patterns.add(46.534, 13.919)
+    patterns.add(44.173, 21.476)
+    root.end_update()
+    areaTarget.automatic_computation_of_centroid = True
+
+
 Import detail
 -------------
 

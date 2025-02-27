@@ -26,6 +26,24 @@ Overview
               - Initialize a great arc interpolator with the specified centralBody and granularity.
 
 
+Examples
+--------
+
+GreatArcInterpolator Primitives
+
+.. code-block:: python
+
+    # Scenario scenario: Scenario object
+    # Create a array of LLA values and interoplate them over the specified
+    # central body
+    positionArray = [[35.017], [-118.540], [0], [44.570], [-96.474], [0], [31.101], [-82.619], [0]]
+    manager = scenario.scene_manager
+    # Interpolate points over great arc
+    interpolator = manager.initializers.great_arc_interpolator.initialize_with_central_body("Earth")
+    interpolator.granularity = 0.1
+    result = interpolator.interpolate(positionArray)
+
+
 Import detail
 -------------
 

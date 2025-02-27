@@ -64,6 +64,17 @@ Overview
 
 
 
+Examples
+--------
+
+Get handle to the object access constraints
+
+.. code-block:: python
+
+    # Satellitesatellite: Satellite object
+    accessConstraints = satellite.access_constraints
+
+
 Import detail
 -------------
 

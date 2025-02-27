@@ -88,6 +88,100 @@ Overview
 
 
 
+Examples
+--------
+
+Prints the strand intervals of chain object
+
+.. code-block:: python
+
+    # Chain chain: Chain Object
+    # Compute the chain access if not done already.
+    chain.compute_access()
+
+    # Considered Start and Stop time
+    print(
+        "Chain considered start time: %s"
+        % chain.analysis_workbench_components.time_instants.item("ConsideredStartTime").find_occurrence().epoch
+    )
+    print(
+        "Chain considered stop time: %s"
+        % chain.analysis_workbench_components.time_instants.item("ConsideredStopTime").find_occurrence().epoch
+    )
+
+    objectParticipationIntervals = chain.analysis_workbench_components.time_interval_collections.item(
+        "StrandAccessIntervals"
+    )
+    intervalListResult = objectParticipationIntervals.find_interval_collection()
+
+    for i in range(0, intervalListResult.interval_collections.count):
+        if intervalListResult.IsValid:
+            print("Link Name: %s" % objectParticipationIntervals.Labels(i + 1))
+            print("--------------")
+            for j in range(0, intervalListResult.IntervalCollections.Item(i).Count):
+                startTime = intervalListResult.IntervalCollections.Item(i).Item(j).Start
+                stopTime = intervalListResult.IntervalCollections.Item(i).Item(j).Stop
+                print("Start: %s Stop: %s" % (startTime, stopTime))
+
+
+Define and compute a chain (advanced)
+
+.. code-block:: python
+
+    # Chain chain: Chain object
+    # Satellitesatellite: Satellite object
+
+    # Remove all previous accesses
+    chain.clear_access()
+
+    # Add some objects to chain
+    chain.objects.add("Facility/MyFacility")
+    chain.objects.add_object(satellite)
+
+    # Configure chain parameters
+    chain.recompute_automatically = False
+    chain.enable_light_time_delay = False
+    chain.time_convergence = 0.001
+    chain.data_save_mode = DataSaveMode.SAVE_ACCESSES
+
+    # Specify our own time period
+    chain.set_time_period_type(ChainTimePeriodType.SPECIFIED_TIME_PERIOD)
+
+    # Get chain time period interface
+    chainUserTimePeriod = chain.time_period
+    chainUserTimePeriod.time_interval.set_explicit_interval(
+        root.current_scenario.analysis_interval.find_start_time(),
+        root.current_scenario.analysis_interval.find_stop_time(),
+    )  # Set to scenario period
+
+    # Compute the chain
+    chain.compute_access()
+
+
+Define and compute a chain (basic)
+
+.. code-block:: python
+
+    # Chain chain: Chain object
+
+    # Add some objects to chain (using STK path)
+    chain.objects.add("Facility/MyFacility")
+    chain.objects.add("Satellite/MySatellite")
+
+    # Compute the chain
+    chain.compute_access()
+
+
+Create a chain (on the current scenario central body)
+
+.. code-block:: python
+
+    # StkObjectRoot root: STK Object Model Root
+    # Create the Chain on the current scenario central body (use
+    # NewOnCentralBody to specify explicitly the central body)
+    chain = root.current_scenario.children.new(STKObjectType.CHAIN, "MyChain")
+
+
 Import detail
 -------------
 

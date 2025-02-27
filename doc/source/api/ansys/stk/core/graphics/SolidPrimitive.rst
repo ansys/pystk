@@ -74,6 +74,89 @@ Overview
 
 
 
+Examples
+--------
+
+Draw a Solid Cylinder Primitive and set properties
+
+.. code-block:: python
+
+    # Scenario scenario: Scenario object
+    manager = scenario.scene_manager
+    originCylinder = root.conversion_utility.new_position_on_earth()
+    originCylinder.assign_geodetic(0, 7, 100)
+
+    orientCylinder = root.conversion_utility.new_orientation()
+    orientCylinder.assign_az_el(0, 0, AzElAboutBoresight.ROTATE)
+
+    cylinder = manager.initializers.cylinder_triangulator.create_simple(200, 100)
+    solidCylinder = manager.initializers.solid_primitive.initialize()
+    solidCylinder.reference_frame = root.central_bodies.earth.analysis_workbench_components.systems.item("Fixed")
+    solidCylinder.position = originCylinder.query_cartesian_array()
+    solidCylinder.set_with_result(cylinder)
+    solidCylinder.color = Colors.Lime
+    solidCylinder.outline_color = Colors.Blue
+    solidCylinder.outline_width = 3
+    solidCylinder.translucency = 0.75
+    solidCylinder.rotation = orientCylinder
+    manager.primitives.add(solidCylinder)
+    manager.render()
+
+
+Draw a Solid Ellipsoid Primitive and set properties
+
+.. code-block:: python
+
+    # Scenario scenario: Scenario object
+    manager = scenario.scene_manager
+    originEllipsoid = root.conversion_utility.new_position_on_earth()
+    originEllipsoid.assign_geodetic(0, 5, 100)
+
+    orientEllipsoid = root.conversion_utility.new_orientation()
+    orientEllipsoid.assign_az_el(0, 0, AzElAboutBoresight.ROTATE)
+
+    radii = [[200], [100], [100]]
+    ellipsoid = manager.initializers.ellipsoid_triangulator.compute_simple(radii)
+    solidEllipsoid = manager.initializers.solid_primitive.initialize()
+    solidEllipsoid.reference_frame = root.central_bodies.earth.analysis_workbench_components.systems.item(
+        "Fixed"
+    )  # vgtSat.Systems.item('Body')
+    solidEllipsoid.position = originEllipsoid.query_cartesian_array()
+    solidEllipsoid.set_with_result(ellipsoid)
+    solidEllipsoid.color = Colors.White
+    solidEllipsoid.outline_color = Colors.DeepPink
+    solidEllipsoid.translucency = 0.75
+    solidEllipsoid.rotation = orientEllipsoid
+    manager.primitives.add(solidEllipsoid)
+    manager.render()
+
+
+Draw a Solid Box Primitive and set properties
+
+.. code-block:: python
+
+    # Scenario scenario: Scenario object
+    manager = scenario.scene_manager
+    originBox = root.conversion_utility.new_position_on_earth()
+    originBox.assign_geodetic(0, 3, 100)
+
+    orientBox = root.conversion_utility.new_orientation()
+    orientBox.assign_az_el(0, 0, AzElAboutBoresight.ROTATE)
+
+    size = [[100], [100], [200]]
+    result = manager.initializers.box_triangulator.compute(size)
+    solidBox = manager.initializers.solid_primitive.initialize()
+    solidBox.reference_frame = root.central_bodies.earth.analysis_workbench_components.systems.item("Fixed")
+    solidBox.position = originBox.query_cartesian_array()
+    solidBox.set_with_result(result)
+    solidBox.color = Colors.Red
+    solidBox.outline_color = Colors.Cyan
+    solidBox.translucency = 0.75
+    solidBox.rotation = orientBox
+    manager.primitives.add(solidBox)
+    manager.render()
+
+
 Import detail
 -------------
 

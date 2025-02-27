@@ -84,6 +84,52 @@ Overview
 
 
 
+Examples
+--------
+
+Set satellite attitude external
+
+.. code-block:: python
+
+    # Satellitesatellite: Satellite object
+    installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+    satellite.attitude.external.load(
+        os.path.join(installPath, "Data", "Resources", "stktraining", "text", "AttitudeTimeEulerAngles_Example.a")
+    )
+
+
+Set satellite attitude targeting
+
+.. code-block:: python
+
+    # Satellitesatellite: Satellite object
+    attitudePointing = satellite.attitude.pointing
+    attitudePointing.use_target_pointing = True
+    attitudePointing.targets.remove_all()
+    attitudePointing.targets.add("AreaTarget/MyAreaTarget")
+    attitudePointing.target_times.use_access_times = True
+
+
+Set satellite attitude basic spinning
+
+.. code-block:: python
+
+    # Satellitesatellite: Satellite object
+    basic = satellite.attitude.basic
+    basic.set_profile_type(AttitudeProfile.SPINNING)
+    basic.profile.body.assign_xyz(0, 0, 1)
+    basic.profile.inertial.assign_xyz(0, 1, 0)
+    basic.profile.rate = 6  # rev/sec
+
+
+Create a satellite (on the current scenario central body)
+
+.. code-block:: python
+
+    # StkObjectRoot root: STK Object Model Root
+    satellite = root.current_scenario.children.new(STKObjectType.SATELLITE, "MySatellite")
+
+
 Import detail
 -------------
 

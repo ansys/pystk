@@ -66,6 +66,98 @@ Overview
 
 
 
+Examples
+--------
+
+Configure the access analysis time period to specified time instants.
+
+.. code-block:: python
+
+    # StkObjectRoot root: STK Object Model root
+
+    satellite = root.get_object_from_path("Satellite/MySatellite")
+    facility = root.get_object_from_path("Facility/MyFacility")
+
+    # For this code snippet, let's use the time interval when the satellite reached min and max altitude values.
+    # Note, this assumes time at min happens before time at max.
+    timeOfAltMin = satellite.analysis_workbench_components.time_instants.item(
+        "GroundTrajectory.Detic.LLA.Altitude.TimeOfMin"
+    )
+    timeOfAltMax = satellite.analysis_workbench_components.time_instants.item(
+        "GroundTrajectory.Detic.LLA.Altitude.TimeOfMax"
+    )
+
+    # Set the access time period with the times we figured out above.
+    access = satellite.get_access_to_object(facility)
+    access.access_time_period = AccessTimeType.SPECIFIED_TIME_PERIOD
+    accessTimePeriod = access.access_time_period_data
+
+    accessTimePeriod.access_interval.state = SmartIntervalState.START_STOP
+
+    accessStartEpoch = accessTimePeriod.access_interval.get_start_epoch()
+    accessStartEpoch.set_implicit_time(timeOfAltMin)
+    accessTimePeriod.access_interval.set_start_epoch(accessStartEpoch)
+
+    accessStopEpoch = accessTimePeriod.access_interval.get_stop_epoch()
+    accessStopEpoch.set_implicit_time(timeOfAltMax)
+    accessTimePeriod.access_interval.set_stop_epoch(accessStopEpoch)
+
+
+Compute and extract access interval times
+
+.. code-block:: python
+
+    # Access access: Access calculation
+    # Get and display the Computed Access Intervals
+    intervalCollection = access.computed_access_interval_times
+
+    # Set the intervals to use to the Computed Access Intervals
+    computedIntervals = intervalCollection.to_array(0, -1)
+    access.specify_access_intervals(computedIntervals)
+
+
+Compute Access with Advanced Settings
+
+.. code-block:: python
+
+    # Access access: Access object
+
+    access.advanced.enable_light_time_delay = True
+    access.advanced.time_light_delay_convergence = 0.00005
+    access.advanced.aberration_type = AberrationType.ANNUAL
+    access.advanced.use_default_clock_host_and_signal_sense = False
+    access.advanced.clock_host = IvClockHost.BASE
+    access.advanced.signal_sense_of_clock_host = IvTimeSense.TRANSMIT
+    access.compute_access()
+
+
+Compute an access between two STK Objects (using object path)
+
+.. code-block:: python
+
+    # Satellitesatellite: Satellite object
+
+    # Get access by object path
+    access = satellite.get_access("Facility/MyFacility")
+
+    # Compute access
+    access.compute_access()
+
+
+Compute an access between two STK Objects (using IStkObject interface)
+
+.. code-block:: python
+
+    # Satellitesatellite: Satellite object
+    # Facility facility: Facility object
+
+    # Get access by STK Object
+    access = satellite.get_access_to_object(facility)
+
+    # Compute access
+    access.compute_access()
+
+
 Import detail
 -------------
 

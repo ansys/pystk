@@ -47,6 +47,101 @@ Overview
 
 
 
+Examples
+--------
+
+List all points in an area target
+
+.. code-block:: python
+
+    # AreaTarget areaTarget: AreaTarget object
+    if areaTarget.area_type == AreaType.PATTERN:
+        # Get IAgAreaTypePatternCollection interface from AreaTypeData
+        patternPoints = areaTarget.area_type_data
+
+        # ToArray returns a two dimensional array of latitude and longitude points
+        areaTargetPoints = patternPoints.to_array()
+
+        print("All points in Area Target")
+        for i in range(0, len(areaTargetPoints)):
+            print("Latitude: %s Longitude: %s" % (str(areaTargetPoints[i][0]), str(areaTargetPoints[i][1])))
+
+
+Define area target boundary and position from list of lat/lon/alt (using common tasks)
+
+.. code-block:: python
+
+    # AreaTarget areaTarget: AreaTarget object
+    # Remove all points in the area target
+    areaTarget.area_type_data.remove_all()
+
+    # By using the CommonTasks interface,
+    # make an array of lattitude and longitude boundary points
+    boundary = [[29, -12], [29, 34], [6, 34], [6, -12]]
+
+    # SetAreaTypePattern expects a two dimensional array of latitude and longitude values
+    areaTarget.common_tasks.set_area_type_pattern(boundary)
+
+
+Define area target boundary and position from list of lat/lon/alt
+
+.. code-block:: python
+
+    # StkObjectRoot root: STK Object Model Root
+    # AreaTarget areaTarget: AreaTarget object
+
+    # By using the fine grained interfaces,
+    # BeginUpdate/EndUpdate prevent intermediate redraws
+    root.begin_update()
+    areaTarget.area_type = AreaType.PATTERN
+    patterns = areaTarget.area_type_data
+    patterns.add(48.897, 18.637)
+    patterns.add(46.534, 13.919)
+    patterns.add(44.173, 21.476)
+    root.end_update()
+    areaTarget.automatic_computation_of_centroid = True
+
+
+Set an elliptical area target (using common tasks)
+
+.. code-block:: python
+
+    # StkObjectRoot root: STK Object Model Root
+    # AreaTarget areaTarget: AreaTarget object
+
+    # By using the CommonTasks interface
+    areaTarget.common_tasks.set_area_type_ellipse(85.25, 80.75, 44)
+
+
+Set an elliptical area target
+
+.. code-block:: python
+
+    # StkObjectRoot root: STK Object Model Root
+    # AreaTarget areaTarget: AreaTarget object
+
+    # By using the fine grained interfaces,
+    # BeginUpdate/EndUpdate prevent intermediate redraws
+    root.begin_update()
+    areaTarget.area_type = AreaType.ELLIPSE
+    ellipse = areaTarget.area_type_data
+    ellipse.semi_major_axis = 85.25  # in km (distance dimension)
+    ellipse.semi_minor_axis = 80.75  # in km (distance dimension)
+    ellipse.bearing = 44  # in deg (angle dimension)
+    root.end_update()
+
+
+Create an area target (on the current scenario central body)
+
+.. code-block:: python
+
+    # StkObjectRoot root: STK Object Model Root
+
+    # Create the AreaTarget on the current scenario central body (use
+    # NewOnCentralBody to specify explicitly the central body)
+    areaTarget = root.current_scenario.children.new(STKObjectType.AREA_TARGET, "MyAreaTarget")
+
+
 Import detail
 -------------
 
