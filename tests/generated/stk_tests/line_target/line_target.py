@@ -77,7 +77,7 @@ class EarlyBoundTests(TestBase):
         iIndex: int = 0
         while iIndex < oPoints.count:
             TestBase.logger.WriteLine8(
-                "\t\tElement {0}: Latitude = {1}, Longitude = {2}",
+                "\t\tElement {0}: Lattitude = {1}, Longitude = {2}",
                 iIndex,
                 oPoints[iIndex].latitude,
                 oPoints[iIndex].longitude,
@@ -97,7 +97,7 @@ class EarlyBoundTests(TestBase):
         iIndex: int = 0
         while iIndex < oPoints.count:
             TestBase.logger.WriteLine8(
-                "\t\tElement {0}: Latitude = {1}, Longitude = {2}",
+                "\t\tElement {0}: Lattitude = {1}, Longitude = {2}",
                 iIndex,
                 oPoints[iIndex].latitude,
                 oPoints[iIndex].longitude,
@@ -123,7 +123,7 @@ class EarlyBoundTests(TestBase):
         iIndex: int = 0
         while iIndex < oPoints.count:
             TestBase.logger.WriteLine8(
-                "\t\tElement {0}: Latitude = {1}, Longitude = {2}",
+                "\t\tElement {0}: Lattitude = {1}, Longitude = {2}",
                 iIndex,
                 oPoints[iIndex].latitude,
                 oPoints[iIndex].longitude,

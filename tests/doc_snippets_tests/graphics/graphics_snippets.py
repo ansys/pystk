@@ -57,7 +57,7 @@ class GraphicsSnippets(CodeSnippetsTestBase):
         self.GreatArcInterpolatorSnippet(self.get_scenario())
 
     @code_snippet(
-        name="GreatArcInterpolator",
+        name="GreatArcInterpolatorPrimitives",
         description="Great Arc Interpolator Primitives",
         category="Graphics",
         eid="AgSTKGraphicsLib~IAgStkGraphicsGreatArcInterpolatorFactory",
@@ -78,7 +78,7 @@ class GraphicsSnippets(CodeSnippetsTestBase):
         self.SurfaceMeshPrimitiveSnippet(self.get_scenario())
 
     @code_snippet(
-        name="SurfaceMeshPrimitive",
+        name="DrawNewSurfaceMeshPrimitive",
         description="Draw a new Surface Mesh",
         category="Graphics",
         eid="AgSTKGraphicsLib~IAgStkGraphicsSurfaceMeshPrimitive",
@@ -164,7 +164,7 @@ class GraphicsSnippets(CodeSnippetsTestBase):
         self.TextureScreenOverlaySnippet(self.get_scenario())
 
     @code_snippet(
-        name="TextureScreenOverlay",
+        name="DrawNewTextureScreenOverlay",
         description="Draw a new Texture Screen Overlay",
         category="Graphics",
         eid="AgSTKGraphicsLib~IAgStkGraphicsTextureScreenOverlay",

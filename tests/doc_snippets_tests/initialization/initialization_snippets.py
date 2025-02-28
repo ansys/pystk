@@ -75,7 +75,7 @@ class InitializationSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="AttachSTK",
-        description="Get a reference to StkObjectRoot using a running STK instance",
+        description="Get a reference to STK Object Root using a running STK instance",
         category="Initialization",
         eid="STKObjects~IAgStkObjectRoot",
     )
@@ -94,7 +94,7 @@ class InitializationSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="CreateSTKNew",
-        description="Start STK and get a reference to StkObjectRoot",
+        description="Start STK and get a reference to STK Object Root",
         category="Initialization",
         eid="STKObjects~IAgStkObjectRoot",
     )

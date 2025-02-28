@@ -218,40 +218,6 @@ Import detail
 Property detail
 ---------------
 
-    Examples
-    --------
-
-    Create a new Scenario
-
-    .. code-block:: python
-
-        # StkObjectRoot root: STK Object Model Root
-        root.new_scenario("Example_Scenario")
-
-
-    Examples
-    --------
-
-    Close an open Scenario
-
-    .. code-block:: python
-
-        # StkObjectRoot root: STK Object Model Root
-        root.close_scenario()
-
-
-    Examples
-    --------
-
-    Open a Viewer Data File
-
-    .. code-block:: python
-
-        # StkObjectRoot root: STK Object Model Root
-        installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
-        root.load_vdf(os.path.join(installPath, "Data", "ExampleScenarios", "Intro_STK_Space_Systems.vdf"), "")
-
-
 .. py:property:: units_preferences
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.units_preferences
     :type: IUnitPreferencesDimensionCollection
@@ -369,6 +335,17 @@ Method detail
 
         :obj:`~None`
 
+    Examples
+    --------
+
+    Close an open Scenario
+
+    .. code-block:: python
+
+        # StkObjectRoot root: STK Object Model Root
+        root.close_scenario()
+
+
 .. py:method:: new_scenario(self, scenario_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.new_scenario
 
@@ -381,6 +358,17 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
+    Examples
+    --------
+
+    Create a new Scenario
+
+    .. code-block:: python
+
+        # StkObjectRoot root: STK Object Model Root
+        root.new_scenario("Example_Scenario")
+
 
 .. py:method:: save_scenario(self) -> None
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.save_scenario
@@ -498,6 +486,18 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
+
+    Examples
+    --------
+
+    Open a Viewer Data File
+
+    .. code-block:: python
+
+        # StkObjectRoot root: STK Object Model Root
+        installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+        root.load_vdf(os.path.join(installPath, "Data", "ExampleScenarios", "Intro_STK_Space_Systems.vdf"), "")
 
 
 .. py:method:: object_exists(self, object_path: str) -> bool

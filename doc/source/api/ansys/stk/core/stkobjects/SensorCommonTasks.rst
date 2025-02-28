@@ -149,104 +149,6 @@ Import detail
 Method detail
 -------------
 
-    Examples
-    --------
-
-    Define sensor pointing fixed axes YPR
-
-    .. code-block:: python
-
-        # Sensor sensor: Sensor object
-        # Change pointing and set
-        sensor.common_tasks.set_pointing_fixed_axes_ypr("CentralBody/Sun J2000 Axes", YPRAnglesSequence.RYP, 11, 22, 33)
-
-
-    Examples
-    --------
-
-    Define sensor pointing fixed YPR
-
-    .. code-block:: python
-
-        # Sensor sensor: Sensor object
-        # Change pointing and set
-        sensor.common_tasks.set_pointing_fixed_ypr(YPRAnglesSequence.RPY, 12, 24, 36)
-
-
-    Examples
-    --------
-
-    Define sensor pointing fixed axes Quaternion
-
-    .. code-block:: python
-
-        # Sensor sensor: Sensor object
-        # Change pointing and set
-        sensor.common_tasks.set_pointing_fixed_axes_quaternion("CentralBody/Sun J2000 Axes", 0.1, 0.2, 0.3, 0.4)
-
-
-    Examples
-    --------
-
-    Define sensor pointing fixed Quaternion
-
-    .. code-block:: python
-
-        # Sensor sensor: Sensor object
-        # Change pointing and set
-        sensor.common_tasks.set_pointing_fixed_quaternion(0.1, 0.2, 0.3, 0.4)
-
-
-    Examples
-    --------
-
-    Define sensor pointing fixed axes Euler
-
-    .. code-block:: python
-
-        # Sensor sensor: Sensor object
-        # Change pointing and set
-        sensor.common_tasks.set_pointing_fixed_axes_euler(
-            "CentralBody/Sun J2000 Axes", EulerOrientationSequenceType.SEQUENCE_132, 30, 40, 50
-        )
-
-
-    Examples
-    --------
-
-    Define sensor pointing fixed Euler
-
-    .. code-block:: python
-
-        # Sensor sensor: Sensor object
-        # Change pointing and set
-        sensor.common_tasks.set_pointing_fixed_euler(EulerOrientationSequenceType.SEQUENCE_132, 30, 40, 50)
-
-
-    Examples
-    --------
-
-    Define sensor pointing fixed axes AzEl
-
-    .. code-block:: python
-
-        # Sensor sensor: Sensor object
-        # Change pointing and set
-        sensor.common_tasks.set_pointing_fixed_axes_az_el("CentralBody/Sun J2000 Axes", 11, 22, AzElAboutBoresight.HOLD)
-
-
-    Examples
-    --------
-
-    Define sensor pointing fixed AzEl
-
-    .. code-block:: python
-
-        # Sensor sensor: Sensor object
-        # Change pointing and set
-        sensor.common_tasks.set_pointing_fixed_az_el(4.5, -45.0, AzElAboutBoresight.ROTATE)
-
-
 .. py:method:: set_pattern_simple_conic(self, cone_angle: typing.Any, angular_resolution: typing.Any) -> SensorSimpleConicPattern
     :canonical: ansys.stk.core.stkobjects.SensorCommonTasks.set_pattern_simple_conic
 
@@ -365,6 +267,18 @@ Method detail
 
         :obj:`~SensorPointingFixed`
 
+    Examples
+    --------
+
+    Define sensor pointing fixed AzEl
+
+    .. code-block:: python
+
+        # Sensor sensor: Sensor object
+        # Change pointing and set
+        sensor.common_tasks.set_pointing_fixed_az_el(4.5, -45.0, AzElAboutBoresight.ROTATE)
+
+
 .. py:method:: set_pointing_fixed_euler(self, sequence: EulerOrientationSequenceType, a: typing.Any, b: typing.Any, c: typing.Any) -> SensorPointingFixed
     :canonical: ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_fixed_euler
 
@@ -380,6 +294,18 @@ Method detail
     :Returns:
 
         :obj:`~SensorPointingFixed`
+
+    Examples
+    --------
+
+    Define sensor pointing fixed Euler
+
+    .. code-block:: python
+
+        # Sensor sensor: Sensor object
+        # Change pointing and set
+        sensor.common_tasks.set_pointing_fixed_euler(EulerOrientationSequenceType.SEQUENCE_132, 30, 40, 50)
+
 
 .. py:method:: set_pointing_fixed_quaternion(self, qx: float, qy: float, qz: float, qs: float) -> SensorPointingFixed
     :canonical: ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_fixed_quaternion
@@ -397,6 +323,18 @@ Method detail
 
         :obj:`~SensorPointingFixed`
 
+    Examples
+    --------
+
+    Define sensor pointing fixed Quaternion
+
+    .. code-block:: python
+
+        # Sensor sensor: Sensor object
+        # Change pointing and set
+        sensor.common_tasks.set_pointing_fixed_quaternion(0.1, 0.2, 0.3, 0.4)
+
+
 .. py:method:: set_pointing_fixed_ypr(self, sequence: YPRAnglesSequence, yaw: typing.Any, pitch: typing.Any, roll: typing.Any) -> SensorPointingFixed
     :canonical: ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_fixed_ypr
 
@@ -413,6 +351,18 @@ Method detail
 
         :obj:`~SensorPointingFixed`
 
+    Examples
+    --------
+
+    Define sensor pointing fixed YPR
+
+    .. code-block:: python
+
+        # Sensor sensor: Sensor object
+        # Change pointing and set
+        sensor.common_tasks.set_pointing_fixed_ypr(YPRAnglesSequence.RPY, 12, 24, 36)
+
+
 .. py:method:: set_pointing_fixed_axes_az_el(self, reference_axes: str, azimuth: typing.Any, elevation: typing.Any, about_boresight: AzElAboutBoresight) -> SensorPointingFixedInAxes
     :canonical: ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_fixed_axes_az_el
 
@@ -428,6 +378,18 @@ Method detail
     :Returns:
 
         :obj:`~SensorPointingFixedInAxes`
+
+    Examples
+    --------
+
+    Define sensor pointing fixed axes AzEl
+
+    .. code-block:: python
+
+        # Sensor sensor: Sensor object
+        # Change pointing and set
+        sensor.common_tasks.set_pointing_fixed_axes_az_el("CentralBody/Sun J2000 Axes", 11, 22, AzElAboutBoresight.HOLD)
+
 
 .. py:method:: set_pointing_fixed_axes_euler(self, reference_axes: str, sequence: EulerOrientationSequenceType, a: typing.Any, b: typing.Any, c: typing.Any) -> SensorPointingFixedInAxes
     :canonical: ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_fixed_axes_euler
@@ -446,6 +408,20 @@ Method detail
 
         :obj:`~SensorPointingFixedInAxes`
 
+    Examples
+    --------
+
+    Define sensor pointing fixed axes Euler
+
+    .. code-block:: python
+
+        # Sensor sensor: Sensor object
+        # Change pointing and set
+        sensor.common_tasks.set_pointing_fixed_axes_euler(
+            "CentralBody/Sun J2000 Axes", EulerOrientationSequenceType.SEQUENCE_132, 30, 40, 50
+        )
+
+
 .. py:method:: set_pointing_fixed_axes_quaternion(self, reference_axes: str, qx: float, qy: float, qz: float, qs: float) -> SensorPointingFixedInAxes
     :canonical: ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_fixed_axes_quaternion
 
@@ -463,6 +439,18 @@ Method detail
 
         :obj:`~SensorPointingFixedInAxes`
 
+    Examples
+    --------
+
+    Define sensor pointing fixed axes Quaternion
+
+    .. code-block:: python
+
+        # Sensor sensor: Sensor object
+        # Change pointing and set
+        sensor.common_tasks.set_pointing_fixed_axes_quaternion("CentralBody/Sun J2000 Axes", 0.1, 0.2, 0.3, 0.4)
+
+
 .. py:method:: set_pointing_fixed_axes_ypr(self, reference_axes: str, sequence: YPRAnglesSequence, yaw: typing.Any, pitch: typing.Any, roll: typing.Any) -> SensorPointingFixedInAxes
     :canonical: ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_fixed_axes_ypr
 
@@ -479,6 +467,18 @@ Method detail
     :Returns:
 
         :obj:`~SensorPointingFixedInAxes`
+
+    Examples
+    --------
+
+    Define sensor pointing fixed axes YPR
+
+    .. code-block:: python
+
+        # Sensor sensor: Sensor object
+        # Change pointing and set
+        sensor.common_tasks.set_pointing_fixed_axes_ypr("CentralBody/Sun J2000 Axes", YPRAnglesSequence.RYP, 11, 22, 33)
+
 
 .. py:method:: set_pointing_3d_model(self, attach_name: str) -> SensorPointing3DModel
     :canonical: ansys.stk.core.stkobjects.SensorCommonTasks.set_pointing_3d_model

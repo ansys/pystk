@@ -37,7 +37,7 @@ Overview
 Examples
 --------
 
- Display drop lines in 3D Window
+Display drop lines in 3D Window
 
 .. code-block:: python
 

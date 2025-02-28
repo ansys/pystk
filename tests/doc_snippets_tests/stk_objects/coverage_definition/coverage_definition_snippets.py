@@ -97,7 +97,7 @@ class CoverageDefinitionSnippets(CodeSnippetsTestBase):
             coverage.unload()
 
     @code_snippet(
-        name="CoverageInterval",
+        name="SetCoverageIntervalToAvailability",
         description="Set the Coverage Interval to an object's availability Analysis interval",
         category="STK Objects | Coverage Definition",
         eid="STKObjects~IAgCoverageDefinition",

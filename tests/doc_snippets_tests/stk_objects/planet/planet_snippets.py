@@ -74,7 +74,7 @@ class PlanetSnippets(CodeSnippetsTestBase):
             planet.unload()
 
     @code_snippet(
-        name="PlanetGraphics",
+        name="ModifyPlanet2DGraphics",
         description="Modify Planet 2D Properties",
         category="STK Objects | Planet | Graphics",
         eid="STKObjects~IAgPlanet",

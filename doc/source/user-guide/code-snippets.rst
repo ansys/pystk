@@ -41,20 +41,21 @@ Graphics
       - :ref:`Control the lighting of the 3d scene <SceneLighting>`
       - :ref:`Control display of stars and water texture <DisplayStarsWater>`
       - :ref:`Add imagery and terrain to the scene <AddTerrainImagery>`
+
     - :ref:`Display a primitive during an interval <DisplayPrimitiveInterval>`
     - :ref:`Draw a solid cylinder primitive and set properties <SolidCylinderPrimitive>`
     - :ref:`Draw a solid ellipsoid primitive and set properties <SolidEllipsoidPrimitive>`
     - :ref:`Draw a solid box primitive and set properties <SolidBoxPrimitive>`
     - :ref:`Draw a point primitive and set properties <PointPrimitive>`
     - :ref:`Create a bounding sphere <BoundingSpherePrimitive>`
-    - :ref:`Draw a new texture screen overlay <TextureScreenOverlay>`
+    - :ref:`Draw a new texture screen overlay <DrawNewTextureScreenOverlay>`
     - :ref:`Draw a new text primitive <TextPrimitive>`
     - :ref:`Draw a new surface extent triangulator <SurfaceExtentTriangulator>`
-    - :ref:`Draw a new surface mesh <SurfaceMeshPrimitive>`
-    - :ref:`Great arc interpolator primitives <GreatArcInterpolator>`
+    - :ref:`Draw a new surface mesh <DrawNewSurfaceMeshPrimitive>`
+    - :ref:`Great arc interpolator primitives <GreatArcInterpolatorPrimitives>`
 Initialization
-    - :ref:`Start stk and get a reference to stkobjectroot <CreateSTKNew>`
-    - :ref:`Get a reference to stkobjectroot using a running stk instance <AttachSTK>`
+    - :ref:`Start stk and get a reference to stk object root <CreateSTKNew>`
+    - :ref:`Get a reference to stk object root using a running stk instance <AttachSTK>`
     - :ref:`Start stk engine and get a reference to stk object root <StartSTKEngine>`
 Scenario
   Scenario Management
@@ -111,7 +112,7 @@ STK Objects
   Coverage Definition
       - :ref:`Compute coverage <CoverageCompute>`
       - :ref:`Set advanced settings for coverage <CoverageAdvanced>`
-      - :ref:`Set the coverage interval to an object's availability analysis interval <CoverageInterval>`
+      - :ref:`Set the coverage interval to an object's availability analysis interval <SetCoverageIntervalToAvailability>`
       - :ref:`Create a new coverage definition (on the current scenario central body) <CreateCoverage>`
   Data Providers
       - :ref:`Getting data for specific points and elements <SingleTimesDataProvider>`
@@ -123,6 +124,7 @@ STK Objects
   Facility
     Graphics
         - :ref:`Display the azel mask in 2d/3d <FacilityAzElMaskDisplay>`
+
       - :ref:`Add an azel mask to a facility <AzElMaskFacility>`
       - :ref:`Set the geodetic position of the facility <SetPositionFacility>`
       - :ref:`Create a facility (on the current scenario central body) <CreateFacility>`
@@ -144,7 +146,8 @@ STK Objects
       - :ref:`Compute object coverage <ComputeObjectCoverage>`
   Planet
     Graphics
-        - :ref:`Modify planet 2d properties <PlanetGraphics>`
+        - :ref:`Modify planet 2d properties <ModifyPlanet2DGraphics>`
+
       - :ref:`Create a new planet <CreatePlanet>`
   Satellite
     Graphics
@@ -152,7 +155,7 @@ STK Objects
         - :ref:`Add fixed system orbit system in 3d display <GraphicsOrbitSystem>`
         - :ref:`Modify the detail thresholds levels <GraphicsDetails>`
         - :ref:`Change the 3d model and marker properties <GraphicsModel>`
-        - :ref:` display drop lines in 3d window <GraphicsDropline>`
+        - :ref:`Display drop lines in 3d window <GraphicsDropline>`
         - :ref:`Add a data display to the 3d window <GraphicsDataDisplay>`
         - :ref:`Change the display label of the vehicle <GraphicsLabel>`
         - :ref:`Set 2d/3d pass display properties <GraphicsPass>`
@@ -165,6 +168,7 @@ STK Objects
         - :ref:`Change the graphics resolution of the orbit for a smooth path <SatelliteGraphicsResolution>`
     Astrogator
         - :ref:`Run the astrogator mcs <AstrogatorRunMCS>`
+
       - :ref:`Set satellite attitude external <SatelliteAttitudeExternal>`
       - :ref:`Set satellite attitude targeting <SatelliteAttitudeTarget>`
       - :ref:`Set satellite attitude basic spinning <SatelliteAttitudeSpinning>`
@@ -179,6 +183,7 @@ STK Objects
   Sensor
     Graphics
         - :ref:`Sensor persistence <SensorPersistence>`
+
       - :ref:`Sensor body mask <SensorBodyMask>`
       - :ref:`Define sensor pointing fixed axes ypr <DefineSensorPointingFixedAxesYPR>`
       - :ref:`Define sensor pointing fixed ypr <DefineSensorPointingFixedYPR>`
@@ -772,7 +777,7 @@ Create a bounding sphere
     manager = scenario.scene_manager
     sphere = manager.initializers.bounding_sphere.initialize([[-1061.22], [-5773.98], [4456.04]], 100)
 
-.. _TextureScreenOverlay:
+.. _DrawNewTextureScreenOverlay:
 
 Draw a new texture screen overlay
 =================================
@@ -845,7 +850,7 @@ Draw a new surface extent triangulator
     manager.primitives.add(mesh)
     manager.render()
 
-.. _SurfaceMeshPrimitive:
+.. _DrawNewSurfaceMeshPrimitive:
 
 Draw a new surface mesh
 =======================
@@ -873,7 +878,7 @@ Draw a new surface mesh
     manager.primitives.add(surfaceMesh)
     manager.render()
 
-.. _GreatArcInterpolator:
+.. _GreatArcInterpolatorPrimitives:
 
 Great arc interpolator primitives
 =================================
@@ -892,7 +897,7 @@ Great arc interpolator primitives
 
 .. _CreateSTKNew:
 
-Start STK and get a reference to STK Object Root
+Start STK and get a reference to STK object root
 ================================================
 
 .. code-block:: python
@@ -912,7 +917,7 @@ Start STK and get a reference to STK Object Root
 
 .. _AttachSTK:
 
-Get a reference to STK Object Root using a running STK instance
+Get a reference to STK object root using a running STK instance
 ===============================================================
 
 .. code-block:: python
@@ -1748,7 +1753,7 @@ Set advanced settings for coverage
     advanced.data_retention = CoverageDataRetention.ALL_DATA
     advanced.save_mode = DataSaveMode.SAVE_ACCESSES
 
-.. _CoverageInterval:
+.. _SetCoverageIntervalToAvailability:
 
 Set the coverage interval to an object's availability analysis interval
 =======================================================================
@@ -2164,7 +2169,7 @@ Compute object coverage
     objCoverageFOM.set_definition_type(FigureOfMeritDefinitionType.COVERAGE_TIME)
     objCoverageFOM.definition.set_compute_type(FigureOfMeritCompute.TOTAL)
 
-.. _PlanetGraphics:
+.. _ModifyPlanet2DGraphics:
 
 Modify planet 2D properties
 ===========================
@@ -2250,8 +2255,8 @@ Change the 3D model and marker properties
 
 .. _GraphicsDropline:
 
- display drop lines in 3D window
-================================
+Display drop lines in 3D window
+===============================
 
 .. code-block:: python
 
