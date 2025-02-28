@@ -1,6 +1,24 @@
-################################################################################
-#          Copyright 2020-2023, Ansys Government Initiatives
-################################################################################ 
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
 
 """
 Access and manipulate visual elements in STK.
@@ -91,7 +109,7 @@ from .internal.eventutil import (
     ISceneEventHandler,
     ITerrainOverlayCollectionEventHandler,
 )
-from .stkutil import IOrientation
+from .stkutil import Date, IOrientation
 from .utilities import colors as agcolor
 from .utilities.exceptions import STKRuntimeError
 from .vgt import IVectorGeometryToolAxes, IVectorGeometryToolPoint, IVectorGeometryToolSystem, IVectorGeometryToolVector
@@ -1576,8 +1594,8 @@ class IPathPrimitiveUpdatePolicy(object):
     
     _update_metadata = { "offset" : _update_method_offset,
             "arg_types" : (agcom.PVOID, agcom.PVOID,),
-            "marshallers" : (agmarshall.InterfaceInArg("PathPrimitive"), agmarshall.InterfaceInArg("IDate"),) }
-    def update(self, path_primitive:"PathPrimitive", date:"IDate") -> None:
+            "marshallers" : (agmarshall.InterfaceInArg("PathPrimitive"), agmarshall.InterfaceInArg("Date"),) }
+    def update(self, path_primitive:"PathPrimitive", date:"Date") -> None:
         """Update the pathPrimitive at the specified date."""
         return self._intf.invoke(IPathPrimitiveUpdatePolicy._metadata, IPathPrimitiveUpdatePolicy._update_metadata, path_primitive, date)
 
@@ -2286,8 +2304,8 @@ class IRasterStream(object):
 
     _update_metadata = { "offset" : _update_method_offset,
             "arg_types" : (agcom.PVOID, agcom.PVOID, POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.InterfaceInArg("IDate"), agmarshall.InterfaceInArg("IDate"), agmarshall.VariantBoolArg,) }
-    def update(self, time:"IDate", next_time:"IDate") -> bool:
+            "marshallers" : (agmarshall.InterfaceInArg("Date"), agmarshall.InterfaceInArg("Date"), agmarshall.VariantBoolArg,) }
+    def update(self, time:"Date", next_time:"Date") -> bool:
         """When overridden in a derived class, updates the raster data associated with the raster stream at the specified time..."""
         return self._intf.invoke(IRasterStream._metadata, IRasterStream._update_metadata, time, next_time, OutArg())
 
@@ -3536,7 +3554,7 @@ class PathPoint(SupportsDeleteCallback):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def date(self) -> "IDate":
+    def date(self) -> "Date":
         """A date/time of the path point."""
         return self._intf.get_property(PathPoint._metadata, PathPoint._get_date_metadata)
 
@@ -3659,29 +3677,29 @@ class PathPointFactory(SupportsDeleteCallback):
 
     _initialize_with_date_metadata = { "offset" : _initialize_with_date_method_offset,
             "arg_types" : (agcom.PVOID, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceInArg("IDate"), agmarshall.InterfaceOutArg,) }
-    def initialize_with_date(self, path_point_date:"IDate") -> "PathPoint":
+            "marshallers" : (agmarshall.InterfaceInArg("Date"), agmarshall.InterfaceOutArg,) }
+    def initialize_with_date(self, path_point_date:"Date") -> "PathPoint":
         """Initialize a new path point with the given date."""
         return self._intf.invoke(PathPointFactory._metadata, PathPointFactory._initialize_with_date_metadata, path_point_date, OutArg())
 
     _initialize_with_date_and_position_metadata = { "offset" : _initialize_with_date_and_position_method_offset,
             "arg_types" : (agcom.PVOID, POINTER(agcom.LPSAFEARRAY), POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceInArg("IDate"), agmarshall.LPSafearrayArg, agmarshall.InterfaceOutArg,) }
-    def initialize_with_date_and_position(self, path_point_date:"IDate", position:list) -> "PathPoint":
+            "marshallers" : (agmarshall.InterfaceInArg("Date"), agmarshall.LPSafearrayArg, agmarshall.InterfaceOutArg,) }
+    def initialize_with_date_and_position(self, path_point_date:"Date", position:list) -> "PathPoint":
         """Initialize a new path point with the given date and position."""
         return self._intf.invoke(PathPointFactory._metadata, PathPointFactory._initialize_with_date_and_position_metadata, path_point_date, position, OutArg())
 
     _initialize_with_date_position_and_color_metadata = { "offset" : _initialize_with_date_position_and_color_method_offset,
             "arg_types" : (agcom.PVOID, POINTER(agcom.LPSAFEARRAY), agcom.OLE_COLOR, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceInArg("IDate"), agmarshall.LPSafearrayArg, agmarshall.OLEColorArg, agmarshall.InterfaceOutArg,) }
-    def initialize_with_date_position_and_color(self, path_point_date:"IDate", position:list, color:agcolor.Color) -> "PathPoint":
+            "marshallers" : (agmarshall.InterfaceInArg("Date"), agmarshall.LPSafearrayArg, agmarshall.OLEColorArg, agmarshall.InterfaceOutArg,) }
+    def initialize_with_date_position_and_color(self, path_point_date:"Date", position:list, color:agcolor.Color) -> "PathPoint":
         """Initialize a new path point with the given date, position and color."""
         return self._intf.invoke(PathPointFactory._metadata, PathPointFactory._initialize_with_date_position_and_color_metadata, path_point_date, position, color, OutArg())
 
     _initialize_with_date_position_color_and_translucency_metadata = { "offset" : _initialize_with_date_position_color_and_translucency_method_offset,
             "arg_types" : (agcom.PVOID, POINTER(agcom.LPSAFEARRAY), agcom.OLE_COLOR, agcom.DOUBLE, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceInArg("IDate"), agmarshall.LPSafearrayArg, agmarshall.OLEColorArg, agmarshall.DoubleArg, agmarshall.InterfaceOutArg,) }
-    def initialize_with_date_position_color_and_translucency(self, path_point_date:"IDate", position:list, color:agcolor.Color, translucency:float) -> "PathPoint":
+            "marshallers" : (agmarshall.InterfaceInArg("Date"), agmarshall.LPSafearrayArg, agmarshall.OLEColorArg, agmarshall.DoubleArg, agmarshall.InterfaceOutArg,) }
+    def initialize_with_date_position_color_and_translucency(self, path_point_date:"Date", position:list, color:agcolor.Color, translucency:float) -> "PathPoint":
         """Initialize a new path point with the given date, position, color and translucency."""
         return self._intf.invoke(PathPointFactory._metadata, PathPointFactory._initialize_with_date_position_color_and_translucency_metadata, path_point_date, position, color, translucency, OutArg())
 
@@ -4573,7 +4591,7 @@ class RenderingEventArgs(SupportsDeleteCallback):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def time(self) -> "IDate":
+    def time(self) -> "Date":
         """The time of the rendering event."""
         return self._intf.get_property(RenderingEventArgs._metadata, RenderingEventArgs._get_time_metadata)
 
@@ -7280,8 +7298,8 @@ class ProjectionStream(IProjection, SupportsDeleteCallback):
 
     _update_metadata = { "offset" : _update_method_offset,
             "arg_types" : (agcom.PVOID, agcom.PVOID, POINTER(agcom.VARIANT_BOOL),),
-            "marshallers" : (agmarshall.InterfaceInArg("IDate"), agmarshall.InterfaceInArg("IDate"), agmarshall.VariantBoolArg,) }
-    def update(self, time:"IDate", next_time:"IDate") -> bool:
+            "marshallers" : (agmarshall.InterfaceInArg("Date"), agmarshall.InterfaceInArg("Date"), agmarshall.VariantBoolArg,) }
+    def update(self, time:"Date", next_time:"Date") -> bool:
         """When overridden in a derived class, updates the projection data associated with the projection stream at the specified time. When the Update method is called, the projection stream contains the current projection data..."""
         return self._intf.invoke(ProjectionStream._metadata, ProjectionStream._update_metadata, time, next_time, OutArg())
 
@@ -11446,30 +11464,30 @@ class VideoStream(IRasterStream, IRaster, SupportsDeleteCallback):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def interval_start_time(self) -> "IDate":
+    def interval_start_time(self) -> "Date":
         """Get or set the scene manager time at which the video will begin playing when the playback property is set to time interval."""
         return self._intf.get_property(VideoStream._metadata, VideoStream._get_interval_start_time_metadata)
 
     _set_interval_start_time_metadata = { "offset" : _set_interval_start_time_method_offset,
             "arg_types" : (agcom.PVOID,),
-            "marshallers" : (agmarshall.InterfaceInArg("IDate"),) }
+            "marshallers" : (agmarshall.InterfaceInArg("Date"),) }
     @interval_start_time.setter
-    def interval_start_time(self, interval_start_time:"IDate") -> None:
+    def interval_start_time(self, interval_start_time:"Date") -> None:
         return self._intf.set_property(VideoStream._metadata, VideoStream._set_interval_start_time_metadata, interval_start_time)
 
     _get_interval_end_time_metadata = { "offset" : _get_interval_end_time_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def interval_end_time(self) -> "IDate":
+    def interval_end_time(self) -> "Date":
         """Get or set the scene manager time at which the video will stop playing when the playback property is set to time interval."""
         return self._intf.get_property(VideoStream._metadata, VideoStream._get_interval_end_time_metadata)
 
     _set_interval_end_time_metadata = { "offset" : _set_interval_end_time_method_offset,
             "arg_types" : (agcom.PVOID,),
-            "marshallers" : (agmarshall.InterfaceInArg("IDate"),) }
+            "marshallers" : (agmarshall.InterfaceInArg("Date"),) }
     @interval_end_time.setter
-    def interval_end_time(self, interval_end_time:"IDate") -> None:
+    def interval_end_time(self, interval_end_time:"Date") -> None:
         return self._intf.set_property(VideoStream._metadata, VideoStream._set_interval_end_time_metadata, interval_end_time)
 
     _get_start_time_metadata = { "offset" : _get_start_time_method_offset,
@@ -17200,30 +17218,30 @@ class TimeIntervalDisplayCondition(IDisplayCondition, SupportsDeleteCallback):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def minimum_time(self) -> "IDate":
+    def minimum_time(self) -> "Date":
         """Get or set the minimum time of the inclusive time interval."""
         return self._intf.get_property(TimeIntervalDisplayCondition._metadata, TimeIntervalDisplayCondition._get_minimum_time_metadata)
 
     _set_minimum_time_metadata = { "offset" : _set_minimum_time_method_offset,
             "arg_types" : (agcom.PVOID,),
-            "marshallers" : (agmarshall.InterfaceInArg("IDate"),) }
+            "marshallers" : (agmarshall.InterfaceInArg("Date"),) }
     @minimum_time.setter
-    def minimum_time(self, minimum_time:"IDate") -> None:
+    def minimum_time(self, minimum_time:"Date") -> None:
         return self._intf.set_property(TimeIntervalDisplayCondition._metadata, TimeIntervalDisplayCondition._set_minimum_time_metadata, minimum_time)
 
     _get_maximum_time_metadata = { "offset" : _get_maximum_time_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def maximum_time(self) -> "IDate":
+    def maximum_time(self) -> "Date":
         """Get or set the maximum time of the inclusive time interval."""
         return self._intf.get_property(TimeIntervalDisplayCondition._metadata, TimeIntervalDisplayCondition._get_maximum_time_metadata)
 
     _set_maximum_time_metadata = { "offset" : _set_maximum_time_method_offset,
             "arg_types" : (agcom.PVOID,),
-            "marshallers" : (agmarshall.InterfaceInArg("IDate"),) }
+            "marshallers" : (agmarshall.InterfaceInArg("Date"),) }
     @maximum_time.setter
-    def maximum_time(self, maximum_time:"IDate") -> None:
+    def maximum_time(self, maximum_time:"Date") -> None:
         return self._intf.set_property(TimeIntervalDisplayCondition._metadata, TimeIntervalDisplayCondition._set_maximum_time_metadata, maximum_time)
 
     _property_names[minimum_time] = "minimum_time"
@@ -21794,8 +21812,8 @@ class TimeIntervalDisplayConditionFactory(SupportsDeleteCallback):
 
     _initialize_with_times_metadata = { "offset" : _initialize_with_times_method_offset,
             "arg_types" : (agcom.PVOID, agcom.PVOID, POINTER(agcom.PVOID),),
-            "marshallers" : (agmarshall.InterfaceInArg("IDate"), agmarshall.InterfaceInArg("IDate"), agmarshall.InterfaceOutArg,) }
-    def initialize_with_times(self, minimum_time:"IDate", maximum_time:"IDate") -> "TimeIntervalDisplayCondition":
+            "marshallers" : (agmarshall.InterfaceInArg("Date"), agmarshall.InterfaceInArg("Date"), agmarshall.InterfaceOutArg,) }
+    def initialize_with_times(self, minimum_time:"Date", maximum_time:"Date") -> "TimeIntervalDisplayCondition":
         """Initialize a time display condition with the inclusive time interval [minimumTime, maximumTime]..."""
         return self._intf.invoke(TimeIntervalDisplayConditionFactory._metadata, TimeIntervalDisplayConditionFactory._initialize_with_times_metadata, minimum_time, maximum_time, OutArg())
 
@@ -21944,8 +21962,3 @@ class VectorPrimitiveFactory(SupportsDeleteCallback):
 
 agcls.AgClassCatalog.add_catalog_entry((5718196077309239950, 14892362432078823827), VectorPrimitiveFactory)
 agcls.AgTypeNameMap["VectorPrimitiveFactory"] = VectorPrimitiveFactory
-
-
-################################################################################
-#          Copyright 2020-2023, Ansys Government Initiatives
-################################################################################

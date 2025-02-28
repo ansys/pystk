@@ -54,15 +54,15 @@ Method detail
 
 
 
-.. py:method:: update(self, time: IDate, next_time: IDate) -> bool
+.. py:method:: update(self, time: Date, next_time: Date) -> bool
     :canonical: ansys.stk.core.graphics.IRasterStream.update
 
     When overridden in a derived class, updates the raster data associated with the raster stream at the specified time...
 
     :Parameters:
 
-    **time** : :obj:`~IDate`
-    **next_time** : :obj:`~IDate`
+    **time** : :obj:`~Date`
+    **next_time** : :obj:`~Date`
 
     :Returns:
 

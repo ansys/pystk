@@ -115,7 +115,7 @@ Property detail
 
 .. py:property:: shielding_thicknesses
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentRadiation.shielding_thicknesses
-    :type: IDoublesCollection
+    :type: DoublesCollection
 
     Get the shielding thicknesses. Dose and dose rate can be computed for each thickness.
 

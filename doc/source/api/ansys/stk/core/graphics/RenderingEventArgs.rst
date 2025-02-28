@@ -38,7 +38,7 @@ Property detail
 
 .. py:property:: time
     :canonical: ansys.stk.core.graphics.RenderingEventArgs.time
-    :type: IDate
+    :type: Date
 
     The time of the rendering event.
 
