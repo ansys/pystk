@@ -56,7 +56,7 @@ Getting Data for Specific Points and Elements
 .. code-block:: python
 
     # StkObjectRoot root: STK Object Model root
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     # Change DateFormat dimension to epoch seconds to make the data easier to handle in
     # Python
     root.units_preferences.item("DateFormat").set_current_unit("EpSec")
@@ -71,7 +71,7 @@ Getting Data for a Single Point in Time
 .. code-block:: python
 
     # StkObjectRoot root: STK Object Model root
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     # Change DateFormat dimension to epoch seconds to make the data easier to handle in
     # Python
     root.units_preferences.item("DateFormat").set_current_unit("EpSec")
@@ -107,7 +107,7 @@ Extracting Elements from Data Providers with Groups
 .. code-block:: python
 
     # StkObjectRoot root: STK Object Model root
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     # Scenario scenario: Scenario object
     # Change DateFormat dimension to epoch seconds to make the data easier to handle in
     # Python
@@ -139,7 +139,7 @@ Using a Time Dependent Data Provider and requesting only specified elements
 .. code-block:: python
 
     # StkObjectRoot root: STK Object Model root
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     # Scenario scenario: Scenario object
     # Change DateFormat dimension to epoch seconds to make the data easier to handle in
     # Python
@@ -162,7 +162,7 @@ Using an interval Data Provider
 .. code-block:: python
 
     # StkObjectRoot root: STK Object Model root
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     # Facility facility: Facility object
 
     # Change DateFormat dimension to epoch seconds to make the data easier to handle in

@@ -40,7 +40,7 @@ Modify the Detail Thresholds Levels
 
 .. code-block:: python
 
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     details = satellite.graphics_3d.model.detail_threshold
     details.enable_detail_threshold = True
     details.all = 1  # km

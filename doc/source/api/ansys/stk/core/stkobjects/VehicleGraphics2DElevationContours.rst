@@ -40,7 +40,7 @@ Set 2D/3D Elevation Contours
 
 .. code-block:: python
 
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     # Set the contours in the 2D properties
     contours = satellite.graphics.elevation_contours
     contours.show_graphics = True

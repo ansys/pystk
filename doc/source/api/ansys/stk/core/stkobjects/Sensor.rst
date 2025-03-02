@@ -118,7 +118,7 @@ Attach a Sensor Object to a Vehicle
 
 .. code-block:: python
 
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     sensor = satellite.children.new(STKObjectType.SENSOR, "MySensor")
 
 

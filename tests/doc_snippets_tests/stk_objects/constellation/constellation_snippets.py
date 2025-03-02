@@ -69,7 +69,7 @@ class ConstellationSnippets(CodeSnippetsTestBase):
     )
     def CreateConstellationSnippet(self, root, satellite):
         # StkObjectRoot root: STK Object Model Root
-        # Satellitesatellite: Satellite object
+        # Satellite satellite: Satellite object
         constellation = root.current_scenario.children.new(STKObjectType.CONSTELLATION, "MyConstellation")
         constellation.objects.add_object(satellite)
         constellation.objects.add("*/Facility/MyFacility")

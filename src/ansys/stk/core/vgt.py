@@ -27217,7 +27217,7 @@ class AnalysisWorkbenchComponentProvider(SupportsDeleteCallback):
     >>> Sat2EarthCenter = VectFactory.create_displacement_vector("Sat2EarthCenter", centerPtSat, centerPtEarth)
 
     Get default VGT component on vehicle:
-    >>> # Satellitesatellite: Satellite object
+    >>> # Satellite satellite: Satellite object
     >>> vgtSat = satellite.analysis_workbench_components
     >>> # Get handle to the Center point on the satellite
     >>> centerPtSat = vgtSat.points.item("Center")

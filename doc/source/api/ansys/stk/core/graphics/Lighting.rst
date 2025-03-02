@@ -49,7 +49,7 @@ Set Vehicle Lighting Properties
 
 .. code-block:: python
 
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     lighting = satellite.graphics.lighting
     # Settings for vehicle in sunlight
     sunlight = lighting.sunlight

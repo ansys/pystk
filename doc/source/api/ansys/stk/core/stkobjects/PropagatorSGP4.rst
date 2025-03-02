@@ -55,7 +55,7 @@ Set satellite propagator to SGP4 and propagate
 
 .. code-block:: python
 
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     satellite.set_propagator_type(PropagatorType.SGP4)
     propagator = satellite.propagator
     propagator.ephemeris_interval.set_implicit_interval(

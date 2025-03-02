@@ -71,7 +71,7 @@ Get handle to the object access constraints
 
 .. code-block:: python
 
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     accessConstraints = satellite.access_constraints
 
 

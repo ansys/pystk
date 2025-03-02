@@ -6790,7 +6790,7 @@ class Lighting(SupportsDeleteCallback):
     >>> lighting.night_lights_intensity = 5  # Percent
 
     Set Vehicle Lighting Properties:
-    >>> # Satellitesatellite: Satellite object
+    >>> # Satellite satellite: Satellite object
     >>> lighting = satellite.graphics.lighting
     >>> # Settings for vehicle in sunlight
     >>> sunlight = lighting.sunlight

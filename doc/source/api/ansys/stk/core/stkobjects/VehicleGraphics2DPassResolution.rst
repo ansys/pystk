@@ -36,7 +36,7 @@ Change the graphics resolution of the orbit for a smooth path
 
 .. code-block:: python
 
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     resolution = satellite.graphics.resolution
     resolution.orbit = 60
 

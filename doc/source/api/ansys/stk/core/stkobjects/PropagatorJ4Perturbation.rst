@@ -51,7 +51,7 @@ Set satellite propagator to J4 and assign cartesian position
 
 .. code-block:: python
 
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     satellite.set_propagator_type(PropagatorType.J4_PERTURBATION)
     propagator = satellite.propagator
     propagator.initial_state.representation.assign_cartesian(

@@ -48,7 +48,7 @@ Set initial state of satellite and propagate
 
 .. code-block:: python
 
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     keplerian = satellite.propagator.initial_state.representation.convert_to(OrbitStateType.CLASSICAL)
     keplerian.size_shape_type = ClassicalSizeShape.ALTITUDE
     keplerian.location_type = ClassicalLocation.TRUE_ANOMALY

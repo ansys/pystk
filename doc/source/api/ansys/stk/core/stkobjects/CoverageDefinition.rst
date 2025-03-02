@@ -80,7 +80,7 @@ Set the Coverage Interval to an object's availability Analysis interval
 
 .. code-block:: python
 
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     # CoverageDefinition coverage: Coverage object
     satVGT = satellite.analysis_workbench_components
     AvailTimeSpan = satVGT.time_intervals.item("AvailabilityTimeSpan")

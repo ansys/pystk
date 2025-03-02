@@ -44,7 +44,7 @@ Change the 3D Model and marker properties
 
 .. code-block:: python
 
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     model = satellite.graphics_3d.model
     model.model_data.filename = r"STKData\VO\Models\Space\dsp.glb"
     orbitmarker = model.orbit_marker

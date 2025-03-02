@@ -75,7 +75,7 @@ class AccessSnippets(CodeSnippetsTestBase):
         eid="STKObjects~IAgAccessConstraintCollection",
     )
     def AccessConstraintsSnippet(self, satellite):
-        # Satellitesatellite: Satellite object
+        # Satellite satellite: Satellite object
         accessConstraints = satellite.access_constraints
 
     def test_AvailableAccessConstraintsSnippet(self):
@@ -366,7 +366,7 @@ class AccessSnippets(CodeSnippetsTestBase):
         eid="STKObjects~IAgStkAccess",
     )
     def ComputeAccessSnippet(self, satellite, facility):
-        # Satellitesatellite: Satellite object
+        # Satellite satellite: Satellite object
         # Facility facility: Facility object
 
         # Get access by STK Object
@@ -393,7 +393,7 @@ class AccessSnippets(CodeSnippetsTestBase):
         eid="STKObjects~IAgStkAccess",
     )
     def ComputeAccessPathsSnippet(self, satellite):
-        # Satellitesatellite: Satellite object
+        # Satellite satellite: Satellite object
 
         # Get access by object path
         access = satellite.get_access("Facility/MyFacility")

@@ -135,7 +135,7 @@ Compute an access between two STK Objects (using object path)
 
 .. code-block:: python
 
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
 
     # Get access by object path
     access = satellite.get_access("Facility/MyFacility")
@@ -148,7 +148,7 @@ Compute an access between two STK Objects (using IStkObject interface)
 
 .. code-block:: python
 
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     # Facility facility: Facility object
 
     # Get access by STK Object

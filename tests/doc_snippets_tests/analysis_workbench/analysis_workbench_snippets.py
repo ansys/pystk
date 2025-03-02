@@ -88,7 +88,7 @@ class AnalysisWorkbenchSnippets(CodeSnippetsTestBase):
         eid="AgSTKVgtLib~IAgCrdnProvider",
     )
     def GetVGTCompVehicleSnippet(self, satellite):
-        # Satellitesatellite: Satellite object
+        # Satellite satellite: Satellite object
         vgtSat = satellite.analysis_workbench_components
         # Get handle to the Center point on the satellite
         centerPtSat = vgtSat.points.item("Center")

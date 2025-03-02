@@ -68,7 +68,7 @@ class DataProvidersSnippets(CodeSnippetsTestBase):
     )
     def IntervalDataProviderSnippet(self, root, satellite, facility):
         # StkObjectRoot root: STK Object Model root
-        # Satellitesatellite: Satellite object
+        # Satellite satellite: Satellite object
         # Facility facility: Facility object
 
         # Change DateFormat dimension to epoch seconds to make the data easier to handle in
@@ -103,7 +103,7 @@ class DataProvidersSnippets(CodeSnippetsTestBase):
     )
     def TimeDependentDataProviderElementsSnippet(self, root, scenario, satellite):
         # StkObjectRoot root: STK Object Model root
-        # Satellitesatellite: Satellite object
+        # Satellite satellite: Satellite object
         # Scenario scenario: Scenario object
         # Change DateFormat dimension to epoch seconds to make the data easier to handle in
         # Python
@@ -138,7 +138,7 @@ class DataProvidersSnippets(CodeSnippetsTestBase):
     )
     def GroupsDataProviderSnippet(self, root, scenario, satellite):
         # StkObjectRoot root: STK Object Model root
-        # Satellitesatellite: Satellite object
+        # Satellite satellite: Satellite object
         # Scenario scenario: Scenario object
         # Change DateFormat dimension to epoch seconds to make the data easier to handle in
         # Python
@@ -215,7 +215,7 @@ class DataProvidersSnippets(CodeSnippetsTestBase):
     )
     def SingleTimeDataProviderSnippet(self, root, satellite):
         # StkObjectRoot root: STK Object Model root
-        # Satellitesatellite: Satellite object
+        # Satellite satellite: Satellite object
         # Change DateFormat dimension to epoch seconds to make the data easier to handle in
         # Python
         root.units_preferences.item("DateFormat").set_current_unit("EpSec")
@@ -239,7 +239,7 @@ class DataProvidersSnippets(CodeSnippetsTestBase):
     )
     def SingleTimesDataProviderSnippet(self, root, satellite):
         # StkObjectRoot root: STK Object Model root
-        # Satellitesatellite: Satellite object
+        # Satellite satellite: Satellite object
         # Change DateFormat dimension to epoch seconds to make the data easier to handle in
         # Python
         root.units_preferences.item("DateFormat").set_current_unit("EpSec")

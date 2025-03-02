@@ -46,7 +46,7 @@ Set 2D Display times to Custom and add intervals
 .. code-block:: python
 
     # StkObjectRoot root: STK Object Model root
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     root.units_preferences.item("DateFormat").set_current_unit("EpSec")
     graphics = satellite.graphics
     graphics.set_attributes_type(VehicleGraphics2DAttributeType.CUSTOM)

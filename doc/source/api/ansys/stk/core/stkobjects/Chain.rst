@@ -129,7 +129,7 @@ Define and compute a chain (advanced)
 .. code-block:: python
 
     # Chain chain: Chain object
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
 
     # Remove all previous accesses
     chain.clear_access()

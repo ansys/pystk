@@ -44,7 +44,7 @@ Export an ephemeris file to scenario folder
 .. code-block:: python
 
     # StkObjectRoot root: STK Object Model Root
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     scenPath = root.execute_command("GetDirectory / Scenario").item(0)
     satelliteFilePath = "%s\\%s.e" % (scenPath, satellite.instance_name)
     satelliteFilePath = satelliteFilePath.replace("\\", "\\\\")

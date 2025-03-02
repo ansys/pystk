@@ -38,7 +38,7 @@ Set satellite attitude external
 
 .. code-block:: python
 
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
     satellite.attitude.external.load(
         os.path.join(installPath, "Data", "Resources", "stktraining", "text", "AttitudeTimeEulerAngles_Example.a")
@@ -49,7 +49,7 @@ Set satellite attitude targeting
 
 .. code-block:: python
 
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     attitudePointing = satellite.attitude.pointing
     attitudePointing.use_target_pointing = True
     attitudePointing.targets.remove_all()
@@ -61,7 +61,7 @@ Set satellite attitude basic spinning
 
 .. code-block:: python
 
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     basic = satellite.attitude.basic
     basic.set_profile_type(AttitudeProfile.SPINNING)
     basic.profile.body.assign_xyz(0, 0, 1)

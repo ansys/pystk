@@ -41,7 +41,7 @@ Display drop lines in 3D Window
 
 .. code-block:: python
 
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     orbitDroplines = satellite.graphics_3d.drop_lines.orbit
     wgs84 = orbitDroplines.item(0)  # Droplines to WGS84 surface
     wgs84.show_graphics = True

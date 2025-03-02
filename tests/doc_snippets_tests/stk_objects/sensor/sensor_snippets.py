@@ -66,7 +66,7 @@ class SensorSnippets(CodeSnippetsTestBase):
         eid="STKObjects~IAgSensor",
     )
     def CreateSensorSnippet(self, satellite):
-        # Satellitesatellite: Satellite object
+        # Satellite satellite: Satellite object
         sensor = satellite.children.new(STKObjectType.SENSOR, "MySensor")
 
     def test_SensorPropertiesSnippet(self):

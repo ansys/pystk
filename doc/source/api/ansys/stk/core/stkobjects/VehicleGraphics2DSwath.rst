@@ -47,7 +47,7 @@ Set 2D Swath
 
 .. code-block:: python
 
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     # Set swath in the 2D properties
     swath = satellite.graphics.swath
     swath.set_elevation_type(VehicleGraphics2DElevation.ELEVATION_GROUND_ELEVATION)

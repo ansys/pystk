@@ -32,7 +32,7 @@ Set 2D/3D Pass Display Properties
 
 .. code-block:: python
 
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     # Display one pass for ground track and orbit on 2D
     passdata = satellite.graphics.pass_data
     groundTrack = passdata.ground_track

@@ -53,7 +53,7 @@ Set satellite propagator to HPOP and set force model properties
 
 .. code-block:: python
 
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     satellite.set_propagator_type(PropagatorType.HPOP)
     satellite.propagator.step = 60
     satellite.propagator.initial_state.representation.assign_cartesian(

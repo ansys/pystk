@@ -44,7 +44,7 @@ Set 2D/3D Range Contours
 
 .. code-block:: python
 
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     # Set a contour level in the 2D properties
     rangeContours = satellite.graphics.range_contours
     rangeContours.show_graphics = True

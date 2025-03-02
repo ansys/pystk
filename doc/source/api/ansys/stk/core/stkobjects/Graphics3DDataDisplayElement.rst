@@ -95,7 +95,7 @@ Add a Data Display to the 3D Window
 
 .. code-block:: python
 
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     # Remove all data displays so you can easily pick one that may already be in
     # the list
     satellite.graphics_3d.data_display.remove_all()

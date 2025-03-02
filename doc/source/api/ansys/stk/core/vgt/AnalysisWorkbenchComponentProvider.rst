@@ -341,7 +341,7 @@ Get default VGT component on vehicle
 
 .. code-block:: python
 
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     vgtSat = satellite.analysis_workbench_components
     # Get handle to the Center point on the satellite
     centerPtSat = vgtSat.points.item("Center")

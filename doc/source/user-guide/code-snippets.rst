@@ -556,7 +556,7 @@ Get default VGT component on vehicle
 
 .. code-block:: python
 
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     vgtSat = satellite.analysis_workbench_components
     # Get handle to the Center point on the satellite
     centerPtSat = vgtSat.points.item("Center")
@@ -1238,7 +1238,7 @@ Compute an access between two STK objects (using object path)
 
 .. code-block:: python
 
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
 
     # Get access by object path
     access = satellite.get_access("Facility/MyFacility")
@@ -1253,7 +1253,7 @@ Compute an access between two STK objects (using istkobject interface)
 
 .. code-block:: python
 
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     # Facility facility: Facility object
 
     # Get access by STK Object
@@ -1439,7 +1439,7 @@ Get handle to the object access constraints
 
 .. code-block:: python
 
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     accessConstraints = satellite.access_constraints
 
 .. _CreateCAT:
@@ -1661,7 +1661,7 @@ Define and compute a chain (advanced)
 .. code-block:: python
 
     # Chain chain: Chain object
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
 
     # Remove all previous accesses
     chain.clear_access()
@@ -1725,7 +1725,7 @@ Define a constellation
 .. code-block:: python
 
     # StkObjectRoot root: STK Object Model Root
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     constellation = root.current_scenario.children.new(STKObjectType.CONSTELLATION, "MyConstellation")
     constellation.objects.add_object(satellite)
     constellation.objects.add("*/Facility/MyFacility")
@@ -1760,7 +1760,7 @@ Set the coverage interval to an object's availability analysis interval
 
 .. code-block:: python
 
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     # CoverageDefinition coverage: Coverage object
     satVGT = satellite.analysis_workbench_components
     AvailTimeSpan = satVGT.time_intervals.item("AvailabilityTimeSpan")
@@ -1798,7 +1798,7 @@ Getting data for specific points and elements
 .. code-block:: python
 
     # StkObjectRoot root: STK Object Model root
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     # Change DateFormat dimension to epoch seconds to make the data easier to handle in
     # Python
     root.units_preferences.item("DateFormat").set_current_unit("EpSec")
@@ -1815,7 +1815,7 @@ Getting data for a single point in time
 .. code-block:: python
 
     # StkObjectRoot root: STK Object Model root
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     # Change DateFormat dimension to epoch seconds to make the data easier to handle in
     # Python
     root.units_preferences.item("DateFormat").set_current_unit("EpSec")
@@ -1855,7 +1855,7 @@ Extracting elements from data providers with groups
 .. code-block:: python
 
     # StkObjectRoot root: STK Object Model root
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     # Scenario scenario: Scenario object
     # Change DateFormat dimension to epoch seconds to make the data easier to handle in
     # Python
@@ -1889,7 +1889,7 @@ Using a time dependent data provider and requesting only specified elements
 .. code-block:: python
 
     # StkObjectRoot root: STK Object Model root
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     # Scenario scenario: Scenario object
     # Change DateFormat dimension to epoch seconds to make the data easier to handle in
     # Python
@@ -1914,7 +1914,7 @@ Using an interval data provider
 .. code-block:: python
 
     # StkObjectRoot root: STK Object Model root
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     # Facility facility: Facility object
 
     # Change DateFormat dimension to epoch seconds to make the data easier to handle in
@@ -2202,7 +2202,7 @@ Add a vector to display in 3D
 
 .. code-block:: python
 
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     vector = satellite.graphics_3d.vector
     angVel = vector.vector_geometry_tool_components.add(0, "Satellite/MySatellite AngVelocity")
     angVel.show_label = True
@@ -2214,7 +2214,7 @@ Add fixed system orbit system in 3D display
 
 .. code-block:: python
 
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     orbitsystems = satellite.graphics_3d.orbit_systems
     orbitsystems.fixed_by_window.show_graphics = True
     orbitsystems.fixed_by_window.inherit = False
@@ -2227,7 +2227,7 @@ Modify the detail thresholds levels
 
 .. code-block:: python
 
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     details = satellite.graphics_3d.model.detail_threshold
     details.enable_detail_threshold = True
     details.all = 1  # km
@@ -2243,7 +2243,7 @@ Change the 3D model and marker properties
 
 .. code-block:: python
 
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     model = satellite.graphics_3d.model
     model.model_data.filename = r"STKData\VO\Models\Space\dsp.glb"
     orbitmarker = model.orbit_marker
@@ -2260,7 +2260,7 @@ Display drop lines in 3D window
 
 .. code-block:: python
 
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     orbitDroplines = satellite.graphics_3d.drop_lines.orbit
     wgs84 = orbitDroplines.item(0)  # Droplines to WGS84 surface
     wgs84.show_graphics = True
@@ -2275,7 +2275,7 @@ Add a data display to the 3D window
 
 .. code-block:: python
 
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     # Remove all data displays so you can easily pick one that may already be in
     # the list
     satellite.graphics_3d.data_display.remove_all()
@@ -2293,7 +2293,7 @@ Change the display label of the vehicle
 
 .. code-block:: python
 
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     satellite.graphics.use_instance_name_label = False
     satellite.graphics.label_name = "Python Satellite"
 
@@ -2304,7 +2304,7 @@ Set 2D/3D pass display properties
 
 .. code-block:: python
 
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     # Display one pass for ground track and orbit on 2D
     passdata = satellite.graphics.pass_data
     groundTrack = passdata.ground_track
@@ -2329,7 +2329,7 @@ Set vehicle lighting properties
 
 .. code-block:: python
 
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     lighting = satellite.graphics.lighting
     # Settings for vehicle in sunlight
     sunlight = lighting.sunlight
@@ -2354,7 +2354,7 @@ Set 2D swath
 
 .. code-block:: python
 
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     # Set swath in the 2D properties
     swath = satellite.graphics.swath
     swath.set_elevation_type(VehicleGraphics2DElevation.ELEVATION_GROUND_ELEVATION)
@@ -2368,7 +2368,7 @@ Set 2D/3D range contours
 
 .. code-block:: python
 
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     # Set a contour level in the 2D properties
     rangeContours = satellite.graphics.range_contours
     rangeContours.show_graphics = True
@@ -2388,7 +2388,7 @@ Set 2D/3D elevation contours
 
 .. code-block:: python
 
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     # Set the contours in the 2D properties
     contours = satellite.graphics.elevation_contours
     contours.show_graphics = True
@@ -2405,7 +2405,7 @@ Set 2D display times to custom and add intervals
 .. code-block:: python
 
     # StkObjectRoot root: STK Object Model root
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     root.units_preferences.item("DateFormat").set_current_unit("EpSec")
     graphics = satellite.graphics
     graphics.set_attributes_type(VehicleGraphics2DAttributeType.CUSTOM)
@@ -2435,7 +2435,7 @@ Set 2D graphics display properties
 .. code-block:: python
 
     # StkObjectRoot root: STK Object Model root
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     # Change the line width, style, color and marker
 
     graphics = satellite.graphics
@@ -2455,7 +2455,7 @@ Change the graphics resolution of the orbit for a smooth path
 
 .. code-block:: python
 
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     resolution = satellite.graphics.resolution
     resolution.orbit = 60
 
@@ -2466,7 +2466,7 @@ Set satellite attitude external
 
 .. code-block:: python
 
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
     satellite.attitude.external.load(
         os.path.join(installPath, "Data", "Resources", "stktraining", "text", "AttitudeTimeEulerAngles_Example.a")
@@ -2479,7 +2479,7 @@ Set satellite attitude targeting
 
 .. code-block:: python
 
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     attitudePointing = satellite.attitude.pointing
     attitudePointing.use_target_pointing = True
     attitudePointing.targets.remove_all()
@@ -2493,7 +2493,7 @@ Set satellite attitude basic spinning
 
 .. code-block:: python
 
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     basic = satellite.attitude.basic
     basic.set_profile_type(AttitudeProfile.SPINNING)
     basic.profile.body.assign_xyz(0, 0, 1)
@@ -2508,7 +2508,7 @@ Export an ephemeris file to scenario folder
 .. code-block:: python
 
     # StkObjectRoot root: STK Object Model Root
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     scenPath = root.execute_command("GetDirectory / Scenario").item(0)
     satelliteFilePath = "%s\\%s.e" % (scenPath, satellite.instance_name)
     satelliteFilePath = satelliteFilePath.replace("\\", "\\\\")
@@ -2521,7 +2521,7 @@ Set satellite propagator to sgp4 and propagate
 
 .. code-block:: python
 
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     satellite.set_propagator_type(PropagatorType.SGP4)
     propagator = satellite.propagator
     propagator.ephemeris_interval.set_implicit_interval(
@@ -2538,7 +2538,7 @@ Set satellite propagator to spice and propagate
 
 .. code-block:: python
 
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     # StkObjectRoot root: STK Object Model Root
     satellite.set_propagator_type(PropagatorType.SPICE)
     propagator = satellite.propagator
@@ -2561,7 +2561,7 @@ Set satellite propagator to Astrogator and clear segments
 
 .. code-block:: python
 
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     satellite.set_propagator_type(PropagatorType.ASTROGATOR)
     driver = satellite.propagator
     # Clear all segments from the MCS
@@ -2574,7 +2574,7 @@ Set satellite propagator to HPOP and set force model properties
 
 .. code-block:: python
 
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     satellite.set_propagator_type(PropagatorType.HPOP)
     satellite.propagator.step = 60
     satellite.propagator.initial_state.representation.assign_cartesian(
@@ -2612,7 +2612,7 @@ Set satellite propagator to j4 and assign Cartesian position
 
 .. code-block:: python
 
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     satellite.set_propagator_type(PropagatorType.J4_PERTURBATION)
     propagator = satellite.propagator
     propagator.initial_state.representation.assign_cartesian(
@@ -2627,7 +2627,7 @@ Set initial state of satellite and propagate
 
 .. code-block:: python
 
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     keplerian = satellite.propagator.initial_state.representation.convert_to(OrbitStateType.CLASSICAL)
     keplerian.size_shape_type = ClassicalSizeShape.ALTITUDE
     keplerian.location_type = ClassicalLocation.TRUE_ANOMALY
@@ -2798,7 +2798,7 @@ Attach a sensor object to a vehicle
 
 .. code-block:: python
 
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     sensor = satellite.children.new(STKObjectType.SENSOR, "MySensor")
 
 .. _ModifyAntennaGraphics:

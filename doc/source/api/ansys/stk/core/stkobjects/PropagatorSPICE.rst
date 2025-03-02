@@ -51,7 +51,7 @@ Set satellite propagator to SPICE and propagate
 
 .. code-block:: python
 
-    # Satellitesatellite: Satellite object
+    # Satellite satellite: Satellite object
     # StkObjectRoot root: STK Object Model Root
     satellite.set_propagator_type(PropagatorType.SPICE)
     propagator = satellite.propagator

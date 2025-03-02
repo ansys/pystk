@@ -114,7 +114,7 @@ class ChainSnippets(CodeSnippetsTestBase):
     )
     def CreateChainAdvancedSnippet(self, root, chain, satellite):
         # Chain chain: Chain object
-        # Satellitesatellite: Satellite object
+        # Satellite satellite: Satellite object
 
         # Remove all previous accesses
         chain.clear_access()
