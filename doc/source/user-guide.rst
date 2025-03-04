@@ -18,7 +18,7 @@ User guide
         Navigate PySTK effectively by exploring the foundational structure of the API.
 
     .. grid-item-card:: :fa:`long-arrow-right` Create and load scenarios
-        :link: user-guide/create-loading-scenarios
+        :link: user-guide/create-load-scenarios
         :link-type: doc
         :padding: 2 2 2 2
 
@@ -65,7 +65,7 @@ User guide
 
    Initialization <user-guide/initialization>
    API structure <user-guide/api-structure>
-   Create and load scenarios <user-guide/create-loading-scenarios>
+   Create and load scenarios <user-guide/create-load-scenarios>
    Data types <user-guide/data-types>
    Results and graphs <user-guide/results-graphs>
    Help with STK <user-guide/help-with-pystk>
