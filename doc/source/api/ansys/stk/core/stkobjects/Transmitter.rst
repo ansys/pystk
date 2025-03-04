@@ -56,6 +56,104 @@ Overview
 
 
 
+Examples
+--------
+
+Transmitter additional Gain
+
+.. code-block:: python
+
+    # Transmitter transmitter: Transmitter object
+    txModel = transmitter.model
+    gain = txModel.post_transmit_gains_losses.add(-5)  # dB
+    gain.identifier = "Example Loss"
+
+
+Modify Transmitter Filter
+
+.. code-block:: python
+
+    # Transmitter transmitter: Transmitter object
+    txModel = transmitter.model
+    txModel.enable_filter = True
+    txModel.set_filter("Butterworth")
+    recFilter = txModel.filter
+    recFilter.lower_bandwidth_limit = -20
+    recFilter.upper_bandwidth_limit = 20
+    recFilter.cut_off_frequency = 10
+
+
+Modify Transmitter Modulator Properties
+
+.. code-block:: python
+
+    # Transmitter transmitter: Transmitter object
+    txModel = transmitter.model
+    txModel.set_modulator("BPSK")
+    txModel.modulator.scale_bandwidth_automatically = True
+
+
+Modify Transmitter Orientation and Position
+
+.. code-block:: python
+
+    # Transmitter transmitter: Transmitter object
+    transmitter.set_model("Complex Transmitter Model")
+    txModel = transmitter.model
+    antennaControl = txModel.antenna_control
+    antOrientation = antennaControl.embedded_model_orientation
+    antOrientation.assign_az_el(0, 90, 1)  # 1 represents Rotate About Boresight
+    antOrientation.position_offset.x = 0.0  # m
+    antOrientation.position_offset.y = 1  # m
+    antOrientation.position_offset.z = 0.25  # m
+
+
+Modify Transmitter Polarization Properties
+
+.. code-block:: python
+
+    # Transmitter transmitter: Transmitter object
+    transmitter.set_model("Complex Transmitter Model")
+    txModel = transmitter.model
+    txModel.enable_polarization = True
+    txModel.set_polarization_type(PolarizationType.LINEAR)
+    polarization = txModel.polarization
+    polarization.reference_axis = PolarizationReferenceAxis.Y
+    polarization.tilt_angle = 15  # deg
+
+
+Modify Transmitter Embedded Antenna
+
+.. code-block:: python
+
+    # Transmitter transmitter: Transmitter object
+    transmitter.set_model("Complex Transmitter Model")
+    txModel = transmitter.model
+    antennaControl = txModel.antenna_control
+    antennaControl.set_embedded_model("Isotropic")
+    antennaControl.embedded_model.efficiency = 85  # Percent
+
+
+Modify Transmitter Model Type
+
+.. code-block:: python
+
+    # Transmitter transmitter: Transmitter object
+    transmitter.set_model("Complex Transmitter Model")
+    txModel = transmitter.model
+    txModel.frequency = 14  # GHz
+    txModel.power = 25  # dBW
+    txModel.data_rate = 15  # Mb/sec
+
+
+Create a New Transmitter Object
+
+.. code-block:: python
+
+    # IStkObject satellite: STK object
+    transmitter = satellite.children.new(STKObjectType.TRANSMITTER, "MyTransmitter")
+
+
 Import detail
 -------------
 

@@ -56,6 +56,113 @@ Overview
 
 
 
+Examples
+--------
+
+Receiver additional Gain
+
+.. code-block:: python
+
+    # Receiver receiver: Receiver object
+    recModel = receiver.model
+    gain = recModel.pre_receive_gains_losses.add(5)  # dB
+    gain.identifier = "Example Gain"
+
+
+Modify Receiver Filter Properties
+
+.. code-block:: python
+
+    # Receiver receiver: Receiver object
+    recModel = receiver.model
+    recModel.enable_filter = True
+    recModel.set_filter("Bessel")
+    recFilter = recModel.filter
+    recFilter.lower_bandwidth_limit = -20
+    recFilter.upper_bandwidth_limit = 20
+    recFilter.cut_off_frequency = 10
+
+
+Modify Receiver Demodulator Properties
+
+.. code-block:: python
+
+    # Receiver receiver: Receiver object
+    recModel = receiver.model
+    recModel.select_demodulator_automatically = False
+    recModel.set_demodulator("16PSK")
+
+
+Modify Receiver System Noise Temperature
+
+.. code-block:: python
+
+    # Receiver receiver: Receiver object
+    receiver.set_model("Complex Receiver Model")
+    recModel = receiver.model
+    recModel.system_noise_temperature.constant_noise_temperature = 280  # K
+
+
+Modify Orientation of the Receiver Antenna
+
+.. code-block:: python
+
+    # Complex receivers Only
+    # Receiver receiver: Receiver object
+    receiver.set_model("Complex Receiver Model")
+    recModel = receiver.model
+    antennaControl = recModel.antenna_control
+    antOrientation = antennaControl.embedded_model_orientation
+    antOrientation.assign_az_el(45, 85, AzElAboutBoresight.ROTATE)
+    antOrientation.position_offset.x = 0.5  # m
+    antOrientation.position_offset.y = 0.75  # m
+    antOrientation.position_offset.z = 1  # m
+
+
+Modify Receiver Polarization Properties
+
+.. code-block:: python
+
+    # Receiver receiver: Receiver object
+    recModel = receiver.model
+    recModel.enable_polarization = True
+    recModel.set_polarization_type(PolarizationType.LINEAR)
+    polarization = recModel.polarization
+    polarization.reference_axis = PolarizationReferenceAxis.Z
+    polarization.cross_polarization_leakage = -60  # dB
+
+
+Modify Receiver Embedded Antenna
+
+.. code-block:: python
+
+    # Receiver receiver: Receiver object
+    receiver.set_model("Complex Receiver Model")
+    recModel = receiver.model
+    antennaControl = recModel.antenna_control
+    antennaControl.set_embedded_model("Hemispherical")
+    antennaControl.embedded_model.efficiency = 85  # Percent
+
+
+Modify Receiver Model Type
+
+.. code-block:: python
+
+    # Receiver receiver: Receiver object
+    receiver.set_model("Complex Receiver Model")
+    recModel = receiver.model
+    recModel.track_frequency_automatically = False
+    recModel.frequency = 11.81
+
+
+Create a New Receiver Object
+
+.. code-block:: python
+
+    # IStkObject satellite: STK object
+    receiver = satellite.children.new(STKObjectType.RECEIVER, "MyReceiver")
+
+
 Import detail
 -------------
 

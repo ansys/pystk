@@ -2683,7 +2683,20 @@ agcls.AgTypeNameMap["EphemShiftRotateCourseMode"] = EphemShiftRotateCourseMode
 
 
 class ISite(object):
-    """Interface to access Site options."""
+    """
+    Interface to access Site options.
+
+    Examples
+    --------
+    Rename a procedure and its site:
+    >>> # IProcedure procedure: Procedure object
+    >>> # Rename the procedure
+    >>> procedure.name = "New Procedure"
+    >>> # Get the site corresponding to the procedure
+    >>> site = procedure.site
+    >>> # Rename the site
+    >>> site.name = "New Site"
+    """
 
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -2731,7 +2744,26 @@ agcls.AgClassCatalog.add_catalog_entry((5465348812426829484, 1980086686715111829
 agcls.AgTypeNameMap["ISite"] = ISite
 
 class ICatalogItem(object):
-    """Interface used to access the options for a Catalog Item in the Aviator Catalog. Use this interface to Create, Remove, Duplicate, or Rename items in the catalog."""
+    """
+    Interface used to access the options for a Catalog Item in the Aviator Catalog. Use this interface to Create, Remove, Duplicate, or Rename items in the catalog.
+
+    Examples
+    --------
+    Create a new performance model for an aircraft:
+    >>> # AircraftModel aviatorAircraft: Aviator Aircraft object
+    >>> # Get the acceleration type
+    >>> acceleration = aviatorAircraft.acceleration
+    >>> # Get the names of the current acceleration models
+    >>> modelNames = acceleration.child_names
+    >>> # Check how many models there are
+    >>> modelCount = len(modelNames)
+    >>> # Get the child types (for example AGI Basic Acceleration Model, Advanced Acceleration Model)
+    >>> modelTypes = acceleration.child_types
+    >>> # Create a new performance model of type "Advanced Acceleration Model"
+    >>> newPerformanceModel = acceleration.add_child_of_type("Advanced Acceleration Model", "Model Name")
+    >>> # Save the changes to the catalog
+    >>> aviatorAircraft.save()
+    """
 
     _num_methods = 13
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -3723,7 +3755,55 @@ agcls.AgClassCatalog.add_catalog_entry((5321476311283717631, 1708811931323170579
 agcls.AgTypeNameMap["IConnect"] = IConnect
 
 class IProcedure(object):
-    """Interface used to access the options for a procedure. Use this interface to get the Site and Get the time options for the current procedure."""
+    """
+    Interface used to access the options for a procedure. Use this interface to get the Site and Get the time options for the current procedure.
+
+    Examples
+    --------
+    Configure the wind and atmosphere for a procedure:
+    >>> # IProcedure procedure: Procedure object
+    >>> # Get the wind model for the procedure
+    >>> windModel = procedure.wind_model
+    >>> # Use the procedure model
+    >>> windModel.wind_model_source = WindAtmosModelSource.PROCEDURE_MODEL
+    >>> # Let's use constant wind
+    >>> windModel.wind_model_type = WindModelType.CONSTANT_WIND
+    >>> # Get the constant wind model options
+    >>> constantWind = windModel.mode_as_constant
+    >>> # Set the wind bearing
+    >>> constantWind.wind_bearing = 30
+    >>> # Set the wind speed
+    >>> constantWind.wind_speed = 5
+    >>> 
+    >>> # Get the atmosphere model used for the procedure
+    >>> atmosphere = procedure.atmosphere_model
+    >>> # Let's use the procedure model
+    >>> atmosphere.atmosphere_model_source = WindAtmosModelSource.PROCEDURE_MODEL
+    >>> # Get the basic atmosphere options
+    >>> basicAtmosphere = atmosphere.mode_as_basic
+    >>> # Use standard 1976 atmosphere
+    >>> basicAtmosphere.basic_model_type = AtmosphereModelType.STANDARD1976
+
+    Configure a procedure time options:
+    >>> # IProcedure procedure: Procedure object
+    >>> # Get the time in epoch seconds
+    >>> root.units_preferences.set_current_unit("DateFormat", "EpSec")
+    >>> # Get the time options
+    >>> timeOptions = procedure.time_options
+    >>> # Get the start time
+    >>> startTime = timeOptions.start_time
+    >>> # Set the procedure to interrupt after 15 seconds
+    >>> timeOptions.set_interrupt_time(15)
+
+    Rename a procedure and its site:
+    >>> # IProcedure procedure: Procedure object
+    >>> # Rename the procedure
+    >>> procedure.name = "New Procedure"
+    >>> # Get the site corresponding to the procedure
+    >>> site = procedure.site
+    >>> # Rename the site
+    >>> site.name = "New Site"
+    """
 
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -3851,7 +3931,26 @@ agcls.AgClassCatalog.add_catalog_entry((5354902126736355035, 1584009913805306972
 agcls.AgTypeNameMap["IProcedure"] = IProcedure
 
 class IPerformanceModel(object):
-    """Interface for a performance model of an Aviator vehicle."""
+    """
+    Interface for a performance model of an Aviator vehicle.
+
+    Examples
+    --------
+    Create a new performance model for an aircraft:
+    >>> # AircraftModel aviatorAircraft: Aviator Aircraft object
+    >>> # Get the acceleration type
+    >>> acceleration = aviatorAircraft.acceleration
+    >>> # Get the names of the current acceleration models
+    >>> modelNames = acceleration.child_names
+    >>> # Check how many models there are
+    >>> modelCount = len(modelNames)
+    >>> # Get the child types (for example AGI Basic Acceleration Model, Advanced Acceleration Model)
+    >>> modelTypes = acceleration.child_types
+    >>> # Create a new performance model of type "Advanced Acceleration Model"
+    >>> newPerformanceModel = acceleration.add_child_of_type("Advanced Acceleration Model", "Model Name")
+    >>> # Save the changes to the catalog
+    >>> aviatorAircraft.save()
+    """
 
     _num_methods = 0
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -4935,7 +5034,46 @@ agcls.AgClassCatalog.add_catalog_entry((4643775838845076022, 1737569815100143633
 agcls.AgTypeNameMap["SiteSTKAreaTarget"] = SiteSTKAreaTarget
 
 class SiteRunway(ISite, SupportsDeleteCallback):
-    """Interface used to access the options for a Runway site type."""
+    """
+    Interface used to access the options for a Runway site type.
+
+    Examples
+    --------
+    Configure a runway site:
+    >>> # SiteRunway runway: Runway object
+    >>> # Set the latitude, longitude, and altitude
+    >>> runway.latitude = 41
+    >>> runway.longitude = 77
+    >>> runway.altitude = 5
+    >>> 
+    >>> # Set the altitude reference
+    >>> runway.altitude_reference = AGLMSL.ALTITUDE_MSL
+    >>> 
+    >>> # Set the heading
+    >>> runway.high_end_heading = 195
+    >>> # Opt to use true heading
+    >>> runway.is_magnetic = False
+    >>> 
+    >>> # Set the length of the runway
+    >>> runway.length = 5
+    >>> 
+    >>> # Rename the runway
+    >>> runway.name = "New User Runway"
+    >>> # Add the runway to the catalog to use it for next time
+    >>> runway.add_to_catalog(1)
+
+    Configure a runway site from a runway in the Aviator catalog:
+    >>> # SiteRunway runway: Runway object
+    >>> # Catalog catalog: Aviator catalog object
+    >>> # Get the source of user runways
+    >>> userRunways = catalog.runway_category.user_runways
+    >>> # Check that the runway exists in the catalog
+    >>> if userRunways.contains("New User Runway") is True:
+    >>>     # If so, get the user runway with the given name
+    >>>     runwayFromCatalog = userRunways.get_user_runway("New User Runway")
+    >>>     # Copy the parameters of that runway
+    >>>     runway.copy_from_catalog(runwayFromCatalog)
+    """
 
     _num_methods = 19
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -5164,7 +5302,34 @@ agcls.AgClassCatalog.add_catalog_entry((4930703979729104237, 439084692498343612)
 agcls.AgTypeNameMap["Site"] = Site
 
 class ProcedureLanding(IProcedure, SupportsDeleteCallback):
-    """Interface used to access the options for a landing procedure."""
+    """
+    Interface used to access the options for a landing procedure.
+
+    Examples
+    --------
+    Add and configure a landing procedure:
+    >>> # IProcedureCollection procedures: Procedure Collection object
+    >>> # Add a landing procedure
+    >>> landing = procedures.add(SiteType.SITE_RUNWAY, ProcedureType.PROCEDURE_LANDING)
+    >>> 
+    >>> # Get the runway heading options
+    >>> headingOptions = landing.runway_heading_options
+    >>> # Land from the low end
+    >>> headingOptions.runway_mode = RunwayHighLowEnd.LOW_END
+    >>> 
+    >>> # Use a standard instrument approach
+    >>> landing.approach_mode = ApproachMode.STANDARD_INSTRUMENT_APPROACH
+    >>> # Get the options for a standard instrument approach
+    >>> sia = landing.mode_as_standard_instrument_approach
+    >>> # Change the approach altitude
+    >>> sia.approach_altitude = 1000
+    >>> # Change the glideslope
+    >>> sia.glideslope = 4
+    >>> # Offset the runway altitude
+    >>> sia.runway_altitude_offset = 10
+    >>> # Use the terrain as an altitude reference for the runway
+    >>> sia.use_runway_terrain = True
+    """
 
     _num_methods = 11
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -5303,7 +5468,40 @@ agcls.AgClassCatalog.add_catalog_entry((5217645111817093152, 1695455621072833374
 agcls.AgTypeNameMap["ProcedureLanding"] = ProcedureLanding
 
 class ProcedureEnroute(IProcedure, SupportsDeleteCallback):
-    """Interface used to access the options for an enroute procedure."""
+    """
+    Interface used to access the options for an enroute procedure.
+
+    Examples
+    --------
+    Add and configure an en-route procedure:
+    >>> # IProcedureCollection procedures: Procedure Collection object
+    >>> # Add an enroute procedure with a site type of End of Previous Procedure
+    >>> enroute = procedures.add_at_index(1, SiteType.SITE_END_OF_PREV_PROCEDURE, ProcedureType.PROCEDURE_ENROUTE)
+    >>> # Get the altitude options
+    >>> altitudeOptions = enroute.altitude_msl_options
+    >>> # To specify an altitude, turn off the option to use the default cruise altitude
+    >>> altitudeOptions.use_default_cruise_altitude = False
+    >>> # Set the altitude
+    >>> altitudeOptions.msl_altitude = 10000
+    >>> 
+    >>> # Get the navigation options
+    >>> navigationOptions = enroute.navigation_options
+    >>> # Set the route to arrive on a specified course
+    >>> navigationOptions.navigation_mode = PointToPointMode.ARRIVE_ON_COURSE
+    >>> # Set the course
+    >>> navigationOptions.arrive_on_course = 30
+    >>> # Use a magnetic heading
+    >>> navigationOptions.use_magnetic_heading = True
+    >>> 
+    >>> # Get the navigation options
+    >>> airspeedOptions = enroute.enroute_cruise_airspeed_options
+    >>> # Fly at max speed
+    >>> airspeedOptions.cruise_speed_type = CruiseSpeed.MAX_AIRSPEED
+    >>> # To specify an airspeed to fly at, set the speed type to other airspeed
+    >>> airspeedOptions.cruise_speed_type = CruiseSpeed.OTHER_AIRSPEED
+    >>> # Then set the airspeed and airspeed type
+    >>> airspeedOptions.set_other_airspeed(AirspeedType.TAS, 200)
+    """
 
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -6559,7 +6757,34 @@ agcls.AgClassCatalog.add_catalog_entry((5704318683765486662, 710367158900072076)
 agcls.AgTypeNameMap["ProcedureDelay"] = ProcedureDelay
 
 class ProcedureTakeoff(IProcedure, SupportsDeleteCallback):
-    """Interface used to access the options for a takeoff procedure."""
+    """
+    Interface used to access the options for a takeoff procedure.
+
+    Examples
+    --------
+    Add a takeoff procedure from a runway:
+    >>> # IProcedureCollection procedures: Procedure Collection object
+    >>> # Add a takeoff procedure with a runway as a site
+    >>> takeoff = procedures.add(SiteType.SITE_RUNWAY, ProcedureType.PROCEDURE_TAKEOFF)
+    >>> 
+    >>> # Get the runway heading options
+    >>> headingOptions = takeoff.runway_heading_options
+    >>> # Opt to use the headwind runway
+    >>> headingOptions.runway_mode = RunwayHighLowEnd.HEADWIND
+    >>> 
+    >>> # Set the takeoff mode and get that interface
+    >>> takeoff.takeoff_mode = TakeoffMode.TAKEOFF_NORMAL
+    >>> takeoffNormal = takeoff.mode_as_normal
+    >>> 
+    >>> # Set the takeoff climb angle
+    >>> takeoffNormal.takeoff_climb_angle = 5
+    >>> # Set the departure altitude above the runway
+    >>> takeoffNormal.departure_altitude = 600
+    >>> # Set the altitude offset for the runway
+    >>> takeoffNormal.runway_altitude_offset = 10
+    >>> # Use terrain for the runway's altitude
+    >>> takeoffNormal.use_runway_terrain = True
+    """
 
     _num_methods = 7
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -6658,7 +6883,147 @@ agcls.AgClassCatalog.add_catalog_entry((4622436812587213547, 1716322785336321985
 agcls.AgTypeNameMap["ProcedureTakeoff"] = ProcedureTakeoff
 
 class ProcedureCollection(SupportsDeleteCallback):
-    """Interface used to access the collection of procedures for a given phase in a mission. Use this interface to Get, Add, or Remove a procedure."""
+    """
+    Interface used to access the collection of procedures for a given phase in a mission. Use this interface to Get, Add, or Remove a procedure.
+
+    Examples
+    --------
+    Add a takeoff procedure from a runway:
+    >>> # IProcedureCollection procedures: Procedure Collection object
+    >>> # Add a takeoff procedure with a runway as a site
+    >>> takeoff = procedures.add(SiteType.SITE_RUNWAY, ProcedureType.PROCEDURE_TAKEOFF)
+    >>> 
+    >>> # Get the runway heading options
+    >>> headingOptions = takeoff.runway_heading_options
+    >>> # Opt to use the headwind runway
+    >>> headingOptions.runway_mode = RunwayHighLowEnd.HEADWIND
+    >>> 
+    >>> # Set the takeoff mode and get that interface
+    >>> takeoff.takeoff_mode = TakeoffMode.TAKEOFF_NORMAL
+    >>> takeoffNormal = takeoff.mode_as_normal
+    >>> 
+    >>> # Set the takeoff climb angle
+    >>> takeoffNormal.takeoff_climb_angle = 5
+    >>> # Set the departure altitude above the runway
+    >>> takeoffNormal.departure_altitude = 600
+    >>> # Set the altitude offset for the runway
+    >>> takeoffNormal.runway_altitude_offset = 10
+    >>> # Use terrain for the runway's altitude
+    >>> takeoffNormal.use_runway_terrain = True
+
+    Add and configure a landing procedure:
+    >>> # IProcedureCollection procedures: Procedure Collection object
+    >>> # Add a landing procedure
+    >>> landing = procedures.add(SiteType.SITE_RUNWAY, ProcedureType.PROCEDURE_LANDING)
+    >>> 
+    >>> # Get the runway heading options
+    >>> headingOptions = landing.runway_heading_options
+    >>> # Land from the low end
+    >>> headingOptions.runway_mode = RunwayHighLowEnd.LOW_END
+    >>> 
+    >>> # Use a standard instrument approach
+    >>> landing.approach_mode = ApproachMode.STANDARD_INSTRUMENT_APPROACH
+    >>> # Get the options for a standard instrument approach
+    >>> sia = landing.mode_as_standard_instrument_approach
+    >>> # Change the approach altitude
+    >>> sia.approach_altitude = 1000
+    >>> # Change the glideslope
+    >>> sia.glideslope = 4
+    >>> # Offset the runway altitude
+    >>> sia.runway_altitude_offset = 10
+    >>> # Use the terrain as an altitude reference for the runway
+    >>> sia.use_runway_terrain = True
+
+    Add and configure an en-route procedure:
+    >>> # IProcedureCollection procedures: Procedure Collection object
+    >>> # Add an enroute procedure with a site type of End of Previous Procedure
+    >>> enroute = procedures.add_at_index(1, SiteType.SITE_END_OF_PREV_PROCEDURE, ProcedureType.PROCEDURE_ENROUTE)
+    >>> # Get the altitude options
+    >>> altitudeOptions = enroute.altitude_msl_options
+    >>> # To specify an altitude, turn off the option to use the default cruise altitude
+    >>> altitudeOptions.use_default_cruise_altitude = False
+    >>> # Set the altitude
+    >>> altitudeOptions.msl_altitude = 10000
+    >>> 
+    >>> # Get the navigation options
+    >>> navigationOptions = enroute.navigation_options
+    >>> # Set the route to arrive on a specified course
+    >>> navigationOptions.navigation_mode = PointToPointMode.ARRIVE_ON_COURSE
+    >>> # Set the course
+    >>> navigationOptions.arrive_on_course = 30
+    >>> # Use a magnetic heading
+    >>> navigationOptions.use_magnetic_heading = True
+    >>> 
+    >>> # Get the navigation options
+    >>> airspeedOptions = enroute.enroute_cruise_airspeed_options
+    >>> # Fly at max speed
+    >>> airspeedOptions.cruise_speed_type = CruiseSpeed.MAX_AIRSPEED
+    >>> # To specify an airspeed to fly at, set the speed type to other airspeed
+    >>> airspeedOptions.cruise_speed_type = CruiseSpeed.OTHER_AIRSPEED
+    >>> # Then set the airspeed and airspeed type
+    >>> airspeedOptions.set_other_airspeed(AirspeedType.TAS, 200)
+
+    Add and configure a basic maneuver procedure:
+    >>> # IProcedureCollection procedures: Procedure Collection object
+    >>> # Add a basic maneuver procedure
+    >>> basicManeuver = procedures.add(SiteType.SITE_END_OF_PREV_PROCEDURE, ProcedureType.PROCEDURE_BASIC_MANEUVER)
+    >>> 
+    >>> # Set the navigation to use a Straight Ahead strategy
+    >>> basicManeuver.navigation_strategy_type = "Straight Ahead"
+    >>> # Get the options for the straight ahead strategy
+    >>> straightAhead = basicManeuver.navigation
+    >>> # Opt to maintain course (as opposed to maintain heading)
+    >>> straightAhead.reference_frame = StraightAheadReferenceFrame.MAINTAIN_COURSE
+    >>> 
+    >>> # Set the profile to use a Autopilot - Vertical Plane strategy
+    >>> basicManeuver.profile_strategy_type = "Autopilot - Vertical Plane"
+    >>> # Get the options for the profile strategy
+    >>> autopilot = basicManeuver.profile
+    >>> # Opt to maintain the initial altitude
+    >>> autopilot.altitude_mode = AutopilotAltitudeMode.AUTOPILOT_HOLD_INIT_ALTITUDE
+    >>> airspeedOptions = autopilot.airspeed_options
+    >>> # Opt to maintain a specified airspeed
+    >>> airspeedOptions.airspeed_mode = BasicManeuverAirspeedMode.MAINTAIN_SPECIFIED_AIRSPEED
+    >>> # Specify the airspeed
+    >>> airspeedOptions.specified_airspeed = 250
+    >>> 
+    >>> # Configure the options on the Attitude / Performance / Fuel page
+    >>> basicManeuver.flight_mode = PhaseOfFlight.FLIGHT_PHASE_CRUISE
+    >>> # Override the fuel flow
+    >>> basicManeuver.fuel_flow_type = BasicManeuverFuelFlowType.BASIC_MANEUVER_FUEL_FLOW_OVERRIDE
+    >>> basicManeuver.override_fuel_flow_value = 1000
+    >>> 
+    >>> # Set the basic stopping conditions
+    >>> basicManeuver.use_max_downrange = True
+    >>> basicManeuver.max_downrange = 10
+    >>> basicManeuver.use_stop_fuel_state = False
+    >>> basicManeuver.use_max_time_of_flight = False
+
+    Add and remove procedures:
+    >>> # IProcedureCollection procedures: Procedure Collection object
+    >>> # AviatorPropagator propagator: Aviator Propagator object
+    >>> # Add a takeoff procedure with a runway as a site. This will add the procedure
+    >>> takeoff = procedures.add(SiteType.SITE_RUNWAY, ProcedureType.PROCEDURE_TAKEOFF)
+    >>> # Add a procedure at a given index (starting from 0)
+    >>> enroute = procedures.add_at_index(1, SiteType.SITE_END_OF_PREV_PROCEDURE, ProcedureType.PROCEDURE_ENROUTE)
+    >>> 
+    >>> # Make sure to propagate the mission to calculate the route
+    >>> propagator.propagate()
+    >>> # Get the mission
+    >>> mission = propagator.aviator_mission
+    >>> # Check to see if the mission is valid (must first be propagated)
+    >>> isValid = mission.is_valid
+    >>> 
+    >>> # Get the number of procedures
+    >>> procedureCount = procedures.count
+    >>> # Remove the procedure at the given index
+    >>> procedures.remove_at_index(1)
+    >>> # Remove the given procedure
+    >>> procedures.remove(takeoff)
+    >>> 
+    >>> # Propagate the mission
+    >>> propagator.propagate()
+    """
 
     _num_methods = 9
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -6780,7 +7145,37 @@ agcls.AgClassCatalog.add_catalog_entry((5616253919542791990, 1683874778561904346
 agcls.AgTypeNameMap["ProcedureCollection"] = ProcedureCollection
 
 class Phase(SupportsDeleteCallback):
-    """Interface used to access the phase options for a mission."""
+    """
+    Interface used to access the phase options for a mission.
+
+    Examples
+    --------
+    Configure the performance models to be used in the phase:
+    >>> # Phase phase: Phase object
+    >>> # Get the acceleration performance model used for the current phase
+    >>> acceleration = phase.get_performance_model_by_type("Acceleration")
+    >>> # Check if it is linked to the catalog
+    >>> isLinkedToCatalog = acceleration.is_linked_to_catalog
+    >>> # Use the performance model in the catalog named "Built-In Model"
+    >>> acceleration.link_to_catalog("Built-In Model")
+    >>> 
+    >>> # Get the VTOL performance model
+    >>> vtol = phase.get_performance_model_by_type("VTOL")
+    >>> # Create a new vtol model of type AGI VTOL Model. Note that this new model does not exist in the catalog and only exists in the phase.
+    >>> vtol.create_new("AGI VTOL Model")
+    >>> # Rename the performance model
+    >>> vtol.rename("Temporary VTOL Model")
+
+    Add a new phase and use the same performance models as the first phase:
+    >>> # PhaseCollection phases: Phase Collection object
+    >>> # Add a new phase at the end of the mission
+    >>> newPhase = phases.add()
+    >>> # Rename the phase
+    >>> newPhase.name = "New Phase"
+    >>> # Copy the performance models from the first phase and paste it to the new phase
+    >>> phases[0].copy_performance_models()
+    >>> newPhase.paste_performance_models()
+    """
 
     _num_methods = 7
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -6871,7 +7266,21 @@ agcls.AgClassCatalog.add_catalog_entry((5327259017682921546, 1378076007472812277
 agcls.AgTypeNameMap["Phase"] = Phase
 
 class PhaseCollection(SupportsDeleteCallback):
-    """Interface used to access the collection of phases for a mission."""
+    """
+    Interface used to access the collection of phases for a mission.
+
+    Examples
+    --------
+    Add a new phase and use the same performance models as the first phase:
+    >>> # PhaseCollection phases: Phase Collection object
+    >>> # Add a new phase at the end of the mission
+    >>> newPhase = phases.add()
+    >>> # Rename the phase
+    >>> newPhase.name = "New Phase"
+    >>> # Copy the performance models from the first phase and paste it to the new phase
+    >>> phases[0].copy_performance_models()
+    >>> newPhase.paste_performance_models()
+    """
 
     _num_methods = 7
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -6977,7 +7386,110 @@ agcls.AgClassCatalog.add_catalog_entry((5426301579413729339, 2385420409047666822
 agcls.AgTypeNameMap["PhaseCollection"] = PhaseCollection
 
 class Mission(SupportsDeleteCallback):
-    """Interface for the mission of an aircraft using the Aviator propagator."""
+    """
+    Interface for the mission of an aircraft using the Aviator propagator.
+
+    Examples
+    --------
+    Set the Configuration used for the Mission:
+    >>> # Mission mission: Aviator Mission object
+    >>> # Get the configuration used for the mission
+    >>> configuration = mission.configuration
+    >>> # Set the max landing weight
+    >>> configuration.max_landing_weight = 300000
+    >>> # Set the empty weight
+    >>> configuration.empty_weight = 210000
+    >>> # Update the center of gravity of the aircraft when empty
+    >>> configuration.set_empty_cg(2, 0, 1)
+    >>> 
+    >>> # Get the stations
+    >>> stations = configuration.get_stations()
+    >>> # Check if there is an internal fuel station
+    >>> if stations.contains_station("Internal Fuel") is True:
+    >>>     # Get the fuel tank
+    >>>     fuelTank = stations.get_internal_fuel_tank_by_name("Internal Fuel")
+    >>>     # Set the capacity of the fuel tank
+    >>>     fuelTank.capacity = 175000
+    >>>     # Set the initial state of the fuel tank
+    >>>     fuelTank.initial_fuel_state = 125000
+    >>> 
+    >>> # Add a new payload station
+    >>> newPayload = stations.add_payload_station()
+    >>> # Set the position of the payload station
+    >>> newPayload.set_position(0, 2, 0)
+    >>> # Add an external fuel tank
+    >>> externalTank = newPayload.add_external_fuel_tank()
+    >>> # Set the empty weight of the tank
+    >>> externalTank.empty_weight = 2000
+
+    Set the aircraft used for the mission to an aircraft found in the Aviator catalog:
+    >>> # AviatorPropagator propagator: Aviator Propagator object
+    >>> # Get the Aviator catalog
+    >>> catalog = propagator.aviator_catalog
+    >>> # Get the aircraft category
+    >>> category = catalog.aircraft_category
+    >>> # Get the user aircraft models
+    >>> aircraftModels = category.aircraft_models
+    >>> # Get the basic fighter
+    >>> fighter = aircraftModels.get_aircraft("Basic Fighter")
+    >>> # Get the mission
+    >>> mission = propagator.aviator_mission
+    >>> # Set the vehicle used for the mission
+    >>> mission.vehicle = fighter
+
+    Configure the weather and atmosphere of the Mission:
+    >>> # Mission mission: Aviator Mission object
+    >>> # Get the wind model used for the mission
+    >>> windModel = mission.wind_model
+    >>> # Let's use the mission model
+    >>> windModel.wind_model_source = WindAtmosModelSource.MISSION_MODEL
+    >>> # Let's use constant wind
+    >>> windModel.wind_model_type = WindModelType.CONSTANT_WIND
+    >>> # Get the constant wind model options
+    >>> constantWind = windModel.mode_as_constant
+    >>> # Set the wind bearing
+    >>> constantWind.wind_bearing = 30
+    >>> # Set the wind speed
+    >>> constantWind.wind_speed = 5
+    >>> 
+    >>> # Get the atmosphere model used for the mission
+    >>> atmosphere = mission.atmosphere_model
+    >>> # Let's use the mission model
+    >>> atmosphere.atmosphere_model_source = WindAtmosModelSource.MISSION_MODEL
+    >>> # Get the basic atmosphere options
+    >>> basicAtmosphere = atmosphere.mode_as_basic
+    >>> # Use standard 1976 atmosphere
+    >>> basicAtmosphere.basic_model_type = AtmosphereModelType.STANDARD1976
+    >>> # Opt to override the values
+    >>> basicAtmosphere.use_non_standard_atmosphere = True
+    >>> # Override the temperature
+    >>> basicAtmosphere.temperature = 290
+
+    Add and remove procedures:
+    >>> # IProcedureCollection procedures: Procedure Collection object
+    >>> # AviatorPropagator propagator: Aviator Propagator object
+    >>> # Add a takeoff procedure with a runway as a site. This will add the procedure
+    >>> takeoff = procedures.add(SiteType.SITE_RUNWAY, ProcedureType.PROCEDURE_TAKEOFF)
+    >>> # Add a procedure at a given index (starting from 0)
+    >>> enroute = procedures.add_at_index(1, SiteType.SITE_END_OF_PREV_PROCEDURE, ProcedureType.PROCEDURE_ENROUTE)
+    >>> 
+    >>> # Make sure to propagate the mission to calculate the route
+    >>> propagator.propagate()
+    >>> # Get the mission
+    >>> mission = propagator.aviator_mission
+    >>> # Check to see if the mission is valid (must first be propagated)
+    >>> isValid = mission.is_valid
+    >>> 
+    >>> # Get the number of procedures
+    >>> procedureCount = procedures.count
+    >>> # Remove the procedure at the given index
+    >>> procedures.remove_at_index(1)
+    >>> # Remove the given procedure
+    >>> procedures.remove(takeoff)
+    >>> 
+    >>> # Propagate the mission
+    >>> propagator.propagate()
+    """
 
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -7084,7 +7596,28 @@ agcls.AgClassCatalog.add_catalog_entry((5084660225869613847, 3815698403988913814
 agcls.AgTypeNameMap["Mission"] = Mission
 
 class AviatorPropagator(SupportsDeleteCallback):
-    """Interface used to access the Aviator interface for an aircraft. Use this interface to get the mission or Aviator catalog."""
+    """
+    Interface used to access the Aviator interface for an aircraft. Use this interface to get the mission or Aviator catalog.
+
+    Examples
+    --------
+    Configure the Aviator propagator:
+    >>> # Aircraft aircraft: Aircraft object
+    >>> # Set to Propagator to Aviator
+    >>> aircraft.set_route_type(PropagatorType.AVIATOR)
+    >>> # Get the aircraft's route
+    >>> aircraftRoute = aircraft.route
+    >>> # Get the Aviator propagator
+    >>> propagator = aircraftRoute.aviator_propagator
+    >>> # Get the Aviator mission
+    >>> mission = propagator.aviator_mission
+    >>> # Get the list of phases from the mission
+    >>> phases = mission.phases
+    >>> # Get the list of procedures from the first phase
+    >>> procedures = phases[0].procedures
+    >>> # Propagate the route
+    >>> propagator.propagate()
+    """
 
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -7161,7 +7694,47 @@ agcls.AgClassCatalog.add_catalog_entry((4966342315327056185, 8021477894575781281
 agcls.AgTypeNameMap["AviatorPropagator"] = AviatorPropagator
 
 class ProcedureBasicManeuver(IProcedure, SupportsDeleteCallback):
-    """Interface used to access the options for a Basic Maneuver procedure."""
+    """
+    Interface used to access the options for a Basic Maneuver procedure.
+
+    Examples
+    --------
+    Add and configure a basic maneuver procedure:
+    >>> # IProcedureCollection procedures: Procedure Collection object
+    >>> # Add a basic maneuver procedure
+    >>> basicManeuver = procedures.add(SiteType.SITE_END_OF_PREV_PROCEDURE, ProcedureType.PROCEDURE_BASIC_MANEUVER)
+    >>> 
+    >>> # Set the navigation to use a Straight Ahead strategy
+    >>> basicManeuver.navigation_strategy_type = "Straight Ahead"
+    >>> # Get the options for the straight ahead strategy
+    >>> straightAhead = basicManeuver.navigation
+    >>> # Opt to maintain course (as opposed to maintain heading)
+    >>> straightAhead.reference_frame = StraightAheadReferenceFrame.MAINTAIN_COURSE
+    >>> 
+    >>> # Set the profile to use a Autopilot - Vertical Plane strategy
+    >>> basicManeuver.profile_strategy_type = "Autopilot - Vertical Plane"
+    >>> # Get the options for the profile strategy
+    >>> autopilot = basicManeuver.profile
+    >>> # Opt to maintain the initial altitude
+    >>> autopilot.altitude_mode = AutopilotAltitudeMode.AUTOPILOT_HOLD_INIT_ALTITUDE
+    >>> airspeedOptions = autopilot.airspeed_options
+    >>> # Opt to maintain a specified airspeed
+    >>> airspeedOptions.airspeed_mode = BasicManeuverAirspeedMode.MAINTAIN_SPECIFIED_AIRSPEED
+    >>> # Specify the airspeed
+    >>> airspeedOptions.specified_airspeed = 250
+    >>> 
+    >>> # Configure the options on the Attitude / Performance / Fuel page
+    >>> basicManeuver.flight_mode = PhaseOfFlight.FLIGHT_PHASE_CRUISE
+    >>> # Override the fuel flow
+    >>> basicManeuver.fuel_flow_type = BasicManeuverFuelFlowType.BASIC_MANEUVER_FUEL_FLOW_OVERRIDE
+    >>> basicManeuver.override_fuel_flow_value = 1000
+    >>> 
+    >>> # Set the basic stopping conditions
+    >>> basicManeuver.use_max_downrange = True
+    >>> basicManeuver.max_downrange = 10
+    >>> basicManeuver.use_stop_fuel_state = False
+    >>> basicManeuver.use_max_time_of_flight = False
+    """
 
     _num_methods = 37
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -7690,7 +8263,22 @@ agcls.AgClassCatalog.add_catalog_entry((4741432811209582740, 1787643035766406801
 agcls.AgTypeNameMap["BasicManeuverStrategyWeave"] = BasicManeuverStrategyWeave
 
 class ProcedureTimeOptions(SupportsDeleteCallback):
-    """Interface used to access the time options for the current procedure. Use this interface to set an Interrupt Time or Fixed Duration for a procedure."""
+    """
+    Interface used to access the time options for the current procedure. Use this interface to set an Interrupt Time or Fixed Duration for a procedure.
+
+    Examples
+    --------
+    Configure a procedure time options:
+    >>> # IProcedure procedure: Procedure object
+    >>> # Get the time in epoch seconds
+    >>> root.units_preferences.set_current_unit("DateFormat", "EpSec")
+    >>> # Get the time options
+    >>> timeOptions = procedure.time_options
+    >>> # Get the start time
+    >>> startTime = timeOptions.start_time
+    >>> # Set the procedure to interrupt after 15 seconds
+    >>> timeOptions.set_interrupt_time(15)
+    """
 
     _num_methods = 15
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -8024,7 +8612,26 @@ agcls.AgClassCatalog.add_catalog_entry((5747373335486459111, 3684632747864185757
 agcls.AgTypeNameMap["CalculationOptions"] = CalculationOptions
 
 class AircraftCategory(SupportsDeleteCallback):
-    """Interface used to access the Aircraft Category in the Aviator Catalog."""
+    """
+    Interface used to access the Aircraft Category in the Aviator Catalog.
+
+    Examples
+    --------
+    Set the aircraft used for the mission to an aircraft found in the Aviator catalog:
+    >>> # AviatorPropagator propagator: Aviator Propagator object
+    >>> # Get the Aviator catalog
+    >>> catalog = propagator.aviator_catalog
+    >>> # Get the aircraft category
+    >>> category = catalog.aircraft_category
+    >>> # Get the user aircraft models
+    >>> aircraftModels = category.aircraft_models
+    >>> # Get the basic fighter
+    >>> fighter = aircraftModels.get_aircraft("Basic Fighter")
+    >>> # Get the mission
+    >>> mission = propagator.aviator_mission
+    >>> # Set the vehicle used for the mission
+    >>> mission.vehicle = fighter
+    """
 
     _num_methods = 3
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -8084,7 +8691,38 @@ agcls.AgClassCatalog.add_catalog_entry((5038526480345777203, 1756589655718436803
 agcls.AgTypeNameMap["AircraftCategory"] = AircraftCategory
 
 class Catalog(SupportsDeleteCallback):
-    """Interface used to access the Aviator catalog."""
+    """
+    Interface used to access the Aviator catalog.
+
+    Examples
+    --------
+    Set the aircraft used for the mission to an aircraft found in the Aviator catalog:
+    >>> # AviatorPropagator propagator: Aviator Propagator object
+    >>> # Get the Aviator catalog
+    >>> catalog = propagator.aviator_catalog
+    >>> # Get the aircraft category
+    >>> category = catalog.aircraft_category
+    >>> # Get the user aircraft models
+    >>> aircraftModels = category.aircraft_models
+    >>> # Get the basic fighter
+    >>> fighter = aircraftModels.get_aircraft("Basic Fighter")
+    >>> # Get the mission
+    >>> mission = propagator.aviator_mission
+    >>> # Set the vehicle used for the mission
+    >>> mission.vehicle = fighter
+
+    Configure a runway site from a runway in the Aviator catalog:
+    >>> # SiteRunway runway: Runway object
+    >>> # Catalog catalog: Aviator catalog object
+    >>> # Get the source of user runways
+    >>> userRunways = catalog.runway_category.user_runways
+    >>> # Check that the runway exists in the catalog
+    >>> if userRunways.contains("New User Runway") is True:
+    >>>     # If so, get the user runway with the given name
+    >>>     runwayFromCatalog = userRunways.get_user_runway("New User Runway")
+    >>>     # Copy the parameters of that runway
+    >>>     runway.copy_from_catalog(runwayFromCatalog)
+    """
 
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -8174,7 +8812,154 @@ agcls.AgClassCatalog.add_catalog_entry((4907045706268839733, 1198668682488985004
 agcls.AgTypeNameMap["Catalog"] = Catalog
 
 class AircraftModel(IAviatorVehicle, ICatalogItem, SupportsDeleteCallback):
-    """Interface used to access the aircraft options in the Aviator catalog."""
+    """
+    Interface used to access the aircraft options in the Aviator catalog.
+
+    Examples
+    --------
+    Configure the Advanced Fixed Wing Tool and set the aircraft to use the resulting performance models:
+    >>> # AircraftModel aviatorAircraft: Aviator Aircraft object
+    >>> # Get the advanced fixed wing tool
+    >>> advFixedWingTool = aviatorAircraft.advanced_fixed_wing_tool
+    >>> # Set the basic geometry
+    >>> advFixedWingTool.wing_area = 300
+    >>> advFixedWingTool.flaps_area = 50
+    >>> advFixedWingTool.speedbrakes_area = 10
+    >>> # Set the structural and human factor limits
+    >>> advFixedWingTool.max_altitude = 65000
+    >>> advFixedWingTool.max_mach = 0.98
+    >>> advFixedWingTool.max_eas = 460
+    >>> advFixedWingTool.min_load_factor = -2.5
+    >>> advFixedWingTool.max_load_factor = 4.5
+    >>> 
+    >>> # Opt to enforce the max temperature limit
+    >>> advFixedWingTool.use_max_temperature_limit = True
+    >>> advFixedWingTool.max_temperature = 900
+    >>> 
+    >>> # Use a subsonic aerodynamic strategy
+    >>> advFixedWingTool.aerodynamic_strategy = AdvancedFixedWingAerodynamicStrategy.SUBSONIC_AERODYNAMIC
+    >>> # Cache the aerodynamic data to improve calculation speed
+    >>> advFixedWingTool.cache_aerodynamic_data = True
+    >>> # Use a high bypass turbofan
+    >>> advFixedWingTool.powerplant_strategy = AdvancedFixedWingPowerplantStrategy.TURBOFAN_HIGH_BYPASS
+    >>> # Cache the fuel flow data to improve calculation speed
+    >>> advFixedWingTool.cache_fuel_flow = True
+    >>> 
+    >>> # Create the corresponding performance models that reference the advanced fixed wing tool
+    >>> # Specify the name, whether to override any existing models with the same name, and whether to set the new models as the default performance models
+    >>> advFixedWingTool.create_all_performance_models("AdvancedModels", True, True)
+    >>> 
+    >>> # Save the changes in the catalog
+    >>> aviatorAircraft.save()
+
+    Set the aircraft used for the mission to an aircraft found in the Aviator catalog:
+    >>> # AviatorPropagator propagator: Aviator Propagator object
+    >>> # Get the Aviator catalog
+    >>> catalog = propagator.aviator_catalog
+    >>> # Get the aircraft category
+    >>> category = catalog.aircraft_category
+    >>> # Get the user aircraft models
+    >>> aircraftModels = category.aircraft_models
+    >>> # Get the basic fighter
+    >>> fighter = aircraftModels.get_aircraft("Basic Fighter")
+    >>> # Get the mission
+    >>> mission = propagator.aviator_mission
+    >>> # Set the vehicle used for the mission
+    >>> mission.vehicle = fighter
+
+    Create a new performance model for an aircraft:
+    >>> # AircraftModel aviatorAircraft: Aviator Aircraft object
+    >>> # Get the acceleration type
+    >>> acceleration = aviatorAircraft.acceleration
+    >>> # Get the names of the current acceleration models
+    >>> modelNames = acceleration.child_names
+    >>> # Check how many models there are
+    >>> modelCount = len(modelNames)
+    >>> # Get the child types (for example AGI Basic Acceleration Model, Advanced Acceleration Model)
+    >>> modelTypes = acceleration.child_types
+    >>> # Create a new performance model of type "Advanced Acceleration Model"
+    >>> newPerformanceModel = acceleration.add_child_of_type("Advanced Acceleration Model", "Model Name")
+    >>> # Save the changes to the catalog
+    >>> aviatorAircraft.save()
+
+    Configure the basic cruise performance model of an aircraft:
+    >>> # AircraftModel aviatorAircraft: Aviator Aircraft object
+    >>> # Get the cruise type
+    >>> cruise = aviatorAircraft.cruise
+    >>> # Get the build in performance model
+    >>> basicCruiseModel = cruise.get_built_in_model()
+    >>> 
+    >>> # Set the ceiling altitude
+    >>> basicCruiseModel.ceiling_altitude = 50000
+    >>> # Set the default cruise altitude
+    >>> basicCruiseModel.default_cruise_altitude = 10000
+    >>> # Set the airspeed type
+    >>> basicCruiseModel.airspeed_type = AirspeedType.TAS
+    >>> # Opt to not use the fuel flow calculated by the aero/prop model and instead specify the values
+    >>> basicCruiseModel.use_aerodynamic_propulsion_fuel = False
+    >>> 
+    >>> # Set the various airspeeds and fuel flows
+    >>> basicCruiseModel.min_airspeed = 110
+    >>> basicCruiseModel.min_airspeed_fuel_flow = 10000
+    >>> 
+    >>> basicCruiseModel.max_endurance_airspeed = 135
+    >>> basicCruiseModel.max_endurance_fuel_flow = 8000
+    >>> 
+    >>> basicCruiseModel.max_airspeed = 570
+    >>> basicCruiseModel.max_airspeed_fuel_flow = 30000
+    >>> 
+    >>> basicCruiseModel.max_range_airspeed = 140
+    >>> basicCruiseModel.max_range_fuel_flow = 9000
+    >>> 
+    >>> basicCruiseModel.max_performance_airspeed = 150
+    >>> basicCruiseModel.max_performance_airspeed_fuel_flow = 12000
+    >>> 
+    >>> # Save the changes to the catalog
+    >>> aviatorAircraft.save()
+
+    Configure the basic acceleration performance model of an aircraft:
+    >>> # AircraftModel aviatorAircraft: Aviator Aircraft object
+    >>> # Get the acceleration type
+    >>> acceleration = aviatorAircraft.acceleration
+    >>> # Get the build in performance model
+    >>> basicAccModel = acceleration.get_built_in_model()
+    >>> 
+    >>> # Get the level turns options
+    >>> levelTurns = basicAccModel.level_turns
+    >>> # Set a max bank angle of 25
+    >>> levelTurns.set_level_turn(TurnMode.TURN_MODE_BANK_ANGLE, 25)
+    >>> # Get the climb and descent transition options
+    >>> climbAndDescent = basicAccModel.climb_and_descent_transitions
+    >>> # Set the max pull up G to 1
+    >>> climbAndDescent.max_pull_up_g = 1.2
+    >>> # Get the attitude transition options
+    >>> attitudeTransitions = basicAccModel.attitude_transitions
+    >>> # Set the max roll rate to 25
+    >>> attitudeTransitions.roll_rate = 25
+    >>> 
+    >>> # Get the aerodynamics
+    >>> aero = basicAccModel.aerodynamics
+    >>> # Use simple aerodynamics
+    >>> aero.aerodynamic_strategy = AircraftAerodynamicStrategy.AIRCRAFT_AERODYNAMIC_SIMPLE
+    >>> # Get the options for the simple aerodynamics and set some parameters
+    >>> simpleAero = aero.mode_as_simple
+    >>> simpleAero.s_reference = 5
+    >>> simpleAero.cl_max = 3.1
+    >>> simpleAero.cd = 0.05
+    >>> 
+    >>> # Get the propulsion
+    >>> prop = basicAccModel.propulsion
+    >>> # Use simple propulsion
+    >>> prop.propulsion_strategy = AircraftPropulsionStrategy.AIRCRAFT_PROPULSION_SIMPLE
+    >>> # Get the simple propulsion options and set some parameters
+    >>> simpleProp = prop.mode_as_simple
+    >>> simpleProp.max_thrust_acceleration = 0.6
+    >>> simpleProp.min_thrust_deceleration = 0.4
+    >>> simpleProp.set_density_scaling(True, 0.02)
+    >>> 
+    >>> # Save the changes to the catalog
+    >>> aviatorAircraft.save()
+    """
 
     _num_methods = 12
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -9583,7 +10368,69 @@ agcls.AgClassCatalog.add_catalog_entry((5760757719442343448, 132377700848243866)
 agcls.AgTypeNameMap["RotorcraftPropulsion"] = RotorcraftPropulsion
 
 class AircraftAcceleration(ICatalogItem, SupportsDeleteCallback):
-    """Interface used to access the acceleration options for an aircraft in the Aviator catalog."""
+    """
+    Interface used to access the acceleration options for an aircraft in the Aviator catalog.
+
+    Examples
+    --------
+    Create a new performance model for an aircraft:
+    >>> # AircraftModel aviatorAircraft: Aviator Aircraft object
+    >>> # Get the acceleration type
+    >>> acceleration = aviatorAircraft.acceleration
+    >>> # Get the names of the current acceleration models
+    >>> modelNames = acceleration.child_names
+    >>> # Check how many models there are
+    >>> modelCount = len(modelNames)
+    >>> # Get the child types (for example AGI Basic Acceleration Model, Advanced Acceleration Model)
+    >>> modelTypes = acceleration.child_types
+    >>> # Create a new performance model of type "Advanced Acceleration Model"
+    >>> newPerformanceModel = acceleration.add_child_of_type("Advanced Acceleration Model", "Model Name")
+    >>> # Save the changes to the catalog
+    >>> aviatorAircraft.save()
+
+    Configure the basic acceleration performance model of an aircraft:
+    >>> # AircraftModel aviatorAircraft: Aviator Aircraft object
+    >>> # Get the acceleration type
+    >>> acceleration = aviatorAircraft.acceleration
+    >>> # Get the build in performance model
+    >>> basicAccModel = acceleration.get_built_in_model()
+    >>> 
+    >>> # Get the level turns options
+    >>> levelTurns = basicAccModel.level_turns
+    >>> # Set a max bank angle of 25
+    >>> levelTurns.set_level_turn(TurnMode.TURN_MODE_BANK_ANGLE, 25)
+    >>> # Get the climb and descent transition options
+    >>> climbAndDescent = basicAccModel.climb_and_descent_transitions
+    >>> # Set the max pull up G to 1
+    >>> climbAndDescent.max_pull_up_g = 1.2
+    >>> # Get the attitude transition options
+    >>> attitudeTransitions = basicAccModel.attitude_transitions
+    >>> # Set the max roll rate to 25
+    >>> attitudeTransitions.roll_rate = 25
+    >>> 
+    >>> # Get the aerodynamics
+    >>> aero = basicAccModel.aerodynamics
+    >>> # Use simple aerodynamics
+    >>> aero.aerodynamic_strategy = AircraftAerodynamicStrategy.AIRCRAFT_AERODYNAMIC_SIMPLE
+    >>> # Get the options for the simple aerodynamics and set some parameters
+    >>> simpleAero = aero.mode_as_simple
+    >>> simpleAero.s_reference = 5
+    >>> simpleAero.cl_max = 3.1
+    >>> simpleAero.cd = 0.05
+    >>> 
+    >>> # Get the propulsion
+    >>> prop = basicAccModel.propulsion
+    >>> # Use simple propulsion
+    >>> prop.propulsion_strategy = AircraftPropulsionStrategy.AIRCRAFT_PROPULSION_SIMPLE
+    >>> # Get the simple propulsion options and set some parameters
+    >>> simpleProp = prop.mode_as_simple
+    >>> simpleProp.max_thrust_acceleration = 0.6
+    >>> simpleProp.min_thrust_deceleration = 0.4
+    >>> simpleProp.set_density_scaling(True, 0.02)
+    >>> 
+    >>> # Save the changes to the catalog
+    >>> aviatorAircraft.save()
+    """
 
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -9647,7 +10494,54 @@ agcls.AgClassCatalog.add_catalog_entry((5513893073497569268, 1806289126873602194
 agcls.AgTypeNameMap["AircraftAcceleration"] = AircraftAcceleration
 
 class AircraftBasicAccelerationModel(IPerformanceModel, ICatalogItem, SupportsDeleteCallback):
-    """Interface used to access the basic acceleration model options for an acceleration model of an aircraft in the Aviator catalog."""
+    """
+    Interface used to access the basic acceleration model options for an acceleration model of an aircraft in the Aviator catalog.
+
+    Examples
+    --------
+    Configure the basic acceleration performance model of an aircraft:
+    >>> # AircraftModel aviatorAircraft: Aviator Aircraft object
+    >>> # Get the acceleration type
+    >>> acceleration = aviatorAircraft.acceleration
+    >>> # Get the build in performance model
+    >>> basicAccModel = acceleration.get_built_in_model()
+    >>> 
+    >>> # Get the level turns options
+    >>> levelTurns = basicAccModel.level_turns
+    >>> # Set a max bank angle of 25
+    >>> levelTurns.set_level_turn(TurnMode.TURN_MODE_BANK_ANGLE, 25)
+    >>> # Get the climb and descent transition options
+    >>> climbAndDescent = basicAccModel.climb_and_descent_transitions
+    >>> # Set the max pull up G to 1
+    >>> climbAndDescent.max_pull_up_g = 1.2
+    >>> # Get the attitude transition options
+    >>> attitudeTransitions = basicAccModel.attitude_transitions
+    >>> # Set the max roll rate to 25
+    >>> attitudeTransitions.roll_rate = 25
+    >>> 
+    >>> # Get the aerodynamics
+    >>> aero = basicAccModel.aerodynamics
+    >>> # Use simple aerodynamics
+    >>> aero.aerodynamic_strategy = AircraftAerodynamicStrategy.AIRCRAFT_AERODYNAMIC_SIMPLE
+    >>> # Get the options for the simple aerodynamics and set some parameters
+    >>> simpleAero = aero.mode_as_simple
+    >>> simpleAero.s_reference = 5
+    >>> simpleAero.cl_max = 3.1
+    >>> simpleAero.cd = 0.05
+    >>> 
+    >>> # Get the propulsion
+    >>> prop = basicAccModel.propulsion
+    >>> # Use simple propulsion
+    >>> prop.propulsion_strategy = AircraftPropulsionStrategy.AIRCRAFT_PROPULSION_SIMPLE
+    >>> # Get the simple propulsion options and set some parameters
+    >>> simpleProp = prop.mode_as_simple
+    >>> simpleProp.max_thrust_acceleration = 0.6
+    >>> simpleProp.min_thrust_deceleration = 0.4
+    >>> simpleProp.set_density_scaling(True, 0.02)
+    >>> 
+    >>> # Save the changes to the catalog
+    >>> aviatorAircraft.save()
+    """
 
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -9803,7 +10697,46 @@ agcls.AgClassCatalog.add_catalog_entry((5617790646698935986, 1499662847360827842
 agcls.AgTypeNameMap["AircraftClimb"] = AircraftClimb
 
 class AircraftCruise(ICatalogItem, SupportsDeleteCallback):
-    """Interface used to access the cruise options for an aircraft in the Aviator catalog."""
+    """
+    Interface used to access the cruise options for an aircraft in the Aviator catalog.
+
+    Examples
+    --------
+    Configure the basic cruise performance model of an aircraft:
+    >>> # AircraftModel aviatorAircraft: Aviator Aircraft object
+    >>> # Get the cruise type
+    >>> cruise = aviatorAircraft.cruise
+    >>> # Get the build in performance model
+    >>> basicCruiseModel = cruise.get_built_in_model()
+    >>> 
+    >>> # Set the ceiling altitude
+    >>> basicCruiseModel.ceiling_altitude = 50000
+    >>> # Set the default cruise altitude
+    >>> basicCruiseModel.default_cruise_altitude = 10000
+    >>> # Set the airspeed type
+    >>> basicCruiseModel.airspeed_type = AirspeedType.TAS
+    >>> # Opt to not use the fuel flow calculated by the aero/prop model and instead specify the values
+    >>> basicCruiseModel.use_aerodynamic_propulsion_fuel = False
+    >>> 
+    >>> # Set the various airspeeds and fuel flows
+    >>> basicCruiseModel.min_airspeed = 110
+    >>> basicCruiseModel.min_airspeed_fuel_flow = 10000
+    >>> 
+    >>> basicCruiseModel.max_endurance_airspeed = 135
+    >>> basicCruiseModel.max_endurance_fuel_flow = 8000
+    >>> 
+    >>> basicCruiseModel.max_airspeed = 570
+    >>> basicCruiseModel.max_airspeed_fuel_flow = 30000
+    >>> 
+    >>> basicCruiseModel.max_range_airspeed = 140
+    >>> basicCruiseModel.max_range_fuel_flow = 9000
+    >>> 
+    >>> basicCruiseModel.max_performance_airspeed = 150
+    >>> basicCruiseModel.max_performance_airspeed_fuel_flow = 12000
+    >>> 
+    >>> # Save the changes to the catalog
+    >>> aviatorAircraft.save()
+    """
 
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -10492,7 +11425,46 @@ agcls.AgClassCatalog.add_catalog_entry((4736708800223409411, 1397977005790400756
 agcls.AgTypeNameMap["AircraftAdvancedClimbModel"] = AircraftAdvancedClimbModel
 
 class AircraftBasicCruiseModel(IPerformanceModel, ICatalogItem, SupportsDeleteCallback):
-    """Interface used to access the basic cruise model options for a cruise model of an aircraft in the Aviator catalog."""
+    """
+    Interface used to access the basic cruise model options for a cruise model of an aircraft in the Aviator catalog.
+
+    Examples
+    --------
+    Configure the basic cruise performance model of an aircraft:
+    >>> # AircraftModel aviatorAircraft: Aviator Aircraft object
+    >>> # Get the cruise type
+    >>> cruise = aviatorAircraft.cruise
+    >>> # Get the build in performance model
+    >>> basicCruiseModel = cruise.get_built_in_model()
+    >>> 
+    >>> # Set the ceiling altitude
+    >>> basicCruiseModel.ceiling_altitude = 50000
+    >>> # Set the default cruise altitude
+    >>> basicCruiseModel.default_cruise_altitude = 10000
+    >>> # Set the airspeed type
+    >>> basicCruiseModel.airspeed_type = AirspeedType.TAS
+    >>> # Opt to not use the fuel flow calculated by the aero/prop model and instead specify the values
+    >>> basicCruiseModel.use_aerodynamic_propulsion_fuel = False
+    >>> 
+    >>> # Set the various airspeeds and fuel flows
+    >>> basicCruiseModel.min_airspeed = 110
+    >>> basicCruiseModel.min_airspeed_fuel_flow = 10000
+    >>> 
+    >>> basicCruiseModel.max_endurance_airspeed = 135
+    >>> basicCruiseModel.max_endurance_fuel_flow = 8000
+    >>> 
+    >>> basicCruiseModel.max_airspeed = 570
+    >>> basicCruiseModel.max_airspeed_fuel_flow = 30000
+    >>> 
+    >>> basicCruiseModel.max_range_airspeed = 140
+    >>> basicCruiseModel.max_range_fuel_flow = 9000
+    >>> 
+    >>> basicCruiseModel.max_performance_airspeed = 150
+    >>> basicCruiseModel.max_performance_airspeed_fuel_flow = 12000
+    >>> 
+    >>> # Save the changes to the catalog
+    >>> aviatorAircraft.save()
+    """
 
     _num_methods = 31
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -12318,7 +13290,23 @@ agcls.AgClassCatalog.add_catalog_entry((5469050913701344868, 8227015865766767039
 agcls.AgTypeNameMap["RunwayCategory"] = RunwayCategory
 
 class UserRunwaySource(ICatalogSource, SupportsDeleteCallback):
-    """Interface used to access the user runways in the Aviator catalog."""
+    """
+    Interface used to access the user runways in the Aviator catalog.
+
+    Examples
+    --------
+    Configure a runway site from a runway in the Aviator catalog:
+    >>> # SiteRunway runway: Runway object
+    >>> # Catalog catalog: Aviator catalog object
+    >>> # Get the source of user runways
+    >>> userRunways = catalog.runway_category.user_runways
+    >>> # Check that the runway exists in the catalog
+    >>> if userRunways.contains("New User Runway") is True:
+    >>>     # If so, get the user runway with the given name
+    >>>     runwayFromCatalog = userRunways.get_user_runway("New User Runway")
+    >>>     # Copy the parameters of that runway
+    >>>     runway.copy_from_catalog(runwayFromCatalog)
+    """
 
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -13086,7 +14074,40 @@ agcls.AgClassCatalog.add_catalog_entry((4985001686384732151, 3276579562627893893
 agcls.AgTypeNameMap["ArcOptions"] = ArcOptions
 
 class AltitudeMSLAndLevelOffOptions(SupportsDeleteCallback):
-    """Interface used to access the altitude MSL and Level off options for an Aviator procedure."""
+    """
+    Interface used to access the altitude MSL and Level off options for an Aviator procedure.
+
+    Examples
+    --------
+    Add and configure an en-route procedure:
+    >>> # IProcedureCollection procedures: Procedure Collection object
+    >>> # Add an enroute procedure with a site type of End of Previous Procedure
+    >>> enroute = procedures.add_at_index(1, SiteType.SITE_END_OF_PREV_PROCEDURE, ProcedureType.PROCEDURE_ENROUTE)
+    >>> # Get the altitude options
+    >>> altitudeOptions = enroute.altitude_msl_options
+    >>> # To specify an altitude, turn off the option to use the default cruise altitude
+    >>> altitudeOptions.use_default_cruise_altitude = False
+    >>> # Set the altitude
+    >>> altitudeOptions.msl_altitude = 10000
+    >>> 
+    >>> # Get the navigation options
+    >>> navigationOptions = enroute.navigation_options
+    >>> # Set the route to arrive on a specified course
+    >>> navigationOptions.navigation_mode = PointToPointMode.ARRIVE_ON_COURSE
+    >>> # Set the course
+    >>> navigationOptions.arrive_on_course = 30
+    >>> # Use a magnetic heading
+    >>> navigationOptions.use_magnetic_heading = True
+    >>> 
+    >>> # Get the navigation options
+    >>> airspeedOptions = enroute.enroute_cruise_airspeed_options
+    >>> # Fly at max speed
+    >>> airspeedOptions.cruise_speed_type = CruiseSpeed.MAX_AIRSPEED
+    >>> # To specify an airspeed to fly at, set the speed type to other airspeed
+    >>> airspeedOptions.cruise_speed_type = CruiseSpeed.OTHER_AIRSPEED
+    >>> # Then set the airspeed and airspeed type
+    >>> airspeedOptions.set_other_airspeed(AirspeedType.TAS, 200)
+    """
 
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -13192,7 +14213,40 @@ agcls.AgClassCatalog.add_catalog_entry((4623922148496958771, 1491490413993891191
 agcls.AgTypeNameMap["AltitudeMSLAndLevelOffOptions"] = AltitudeMSLAndLevelOffOptions
 
 class CruiseAirspeedOptions(SupportsDeleteCallback):
-    """Interface used to access the Cruise Airspeed options for an Aviator procedure."""
+    """
+    Interface used to access the Cruise Airspeed options for an Aviator procedure.
+
+    Examples
+    --------
+    Add and configure an en-route procedure:
+    >>> # IProcedureCollection procedures: Procedure Collection object
+    >>> # Add an enroute procedure with a site type of End of Previous Procedure
+    >>> enroute = procedures.add_at_index(1, SiteType.SITE_END_OF_PREV_PROCEDURE, ProcedureType.PROCEDURE_ENROUTE)
+    >>> # Get the altitude options
+    >>> altitudeOptions = enroute.altitude_msl_options
+    >>> # To specify an altitude, turn off the option to use the default cruise altitude
+    >>> altitudeOptions.use_default_cruise_altitude = False
+    >>> # Set the altitude
+    >>> altitudeOptions.msl_altitude = 10000
+    >>> 
+    >>> # Get the navigation options
+    >>> navigationOptions = enroute.navigation_options
+    >>> # Set the route to arrive on a specified course
+    >>> navigationOptions.navigation_mode = PointToPointMode.ARRIVE_ON_COURSE
+    >>> # Set the course
+    >>> navigationOptions.arrive_on_course = 30
+    >>> # Use a magnetic heading
+    >>> navigationOptions.use_magnetic_heading = True
+    >>> 
+    >>> # Get the navigation options
+    >>> airspeedOptions = enroute.enroute_cruise_airspeed_options
+    >>> # Fly at max speed
+    >>> airspeedOptions.cruise_speed_type = CruiseSpeed.MAX_AIRSPEED
+    >>> # To specify an airspeed to fly at, set the speed type to other airspeed
+    >>> airspeedOptions.cruise_speed_type = CruiseSpeed.OTHER_AIRSPEED
+    >>> # Then set the airspeed and airspeed type
+    >>> airspeedOptions.set_other_airspeed(AirspeedType.TAS, 200)
+    """
 
     _num_methods = 5
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -13530,7 +14584,40 @@ agcls.AgClassCatalog.add_catalog_entry((5525734658029426163, 7829029184116166294
 agcls.AgTypeNameMap["EnrouteTurnDirectionOptions"] = EnrouteTurnDirectionOptions
 
 class NavigationOptions(SupportsDeleteCallback):
-    """Interface used to access the navigation options for an Aviator procedure."""
+    """
+    Interface used to access the navigation options for an Aviator procedure.
+
+    Examples
+    --------
+    Add and configure an en-route procedure:
+    >>> # IProcedureCollection procedures: Procedure Collection object
+    >>> # Add an enroute procedure with a site type of End of Previous Procedure
+    >>> enroute = procedures.add_at_index(1, SiteType.SITE_END_OF_PREV_PROCEDURE, ProcedureType.PROCEDURE_ENROUTE)
+    >>> # Get the altitude options
+    >>> altitudeOptions = enroute.altitude_msl_options
+    >>> # To specify an altitude, turn off the option to use the default cruise altitude
+    >>> altitudeOptions.use_default_cruise_altitude = False
+    >>> # Set the altitude
+    >>> altitudeOptions.msl_altitude = 10000
+    >>> 
+    >>> # Get the navigation options
+    >>> navigationOptions = enroute.navigation_options
+    >>> # Set the route to arrive on a specified course
+    >>> navigationOptions.navigation_mode = PointToPointMode.ARRIVE_ON_COURSE
+    >>> # Set the course
+    >>> navigationOptions.arrive_on_course = 30
+    >>> # Use a magnetic heading
+    >>> navigationOptions.use_magnetic_heading = True
+    >>> 
+    >>> # Get the navigation options
+    >>> airspeedOptions = enroute.enroute_cruise_airspeed_options
+    >>> # Fly at max speed
+    >>> airspeedOptions.cruise_speed_type = CruiseSpeed.MAX_AIRSPEED
+    >>> # To specify an airspeed to fly at, set the speed type to other airspeed
+    >>> airspeedOptions.cruise_speed_type = CruiseSpeed.OTHER_AIRSPEED
+    >>> # Then set the airspeed and airspeed type
+    >>> airspeedOptions.set_other_airspeed(AirspeedType.TAS, 200)
+    """
 
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -13924,7 +15011,57 @@ agcls.AgClassCatalog.add_catalog_entry((4626924203837884328, 7628565386577197988
 agcls.AgTypeNameMap["LandingVerticalPlaneOptions"] = LandingVerticalPlaneOptions
 
 class RunwayHeadingOptions(SupportsDeleteCallback):
-    """Interface for the Runway Heading Options found in a Takeoff or Landing procedure."""
+    """
+    Interface for the Runway Heading Options found in a Takeoff or Landing procedure.
+
+    Examples
+    --------
+    Add a takeoff procedure from a runway:
+    >>> # IProcedureCollection procedures: Procedure Collection object
+    >>> # Add a takeoff procedure with a runway as a site
+    >>> takeoff = procedures.add(SiteType.SITE_RUNWAY, ProcedureType.PROCEDURE_TAKEOFF)
+    >>> 
+    >>> # Get the runway heading options
+    >>> headingOptions = takeoff.runway_heading_options
+    >>> # Opt to use the headwind runway
+    >>> headingOptions.runway_mode = RunwayHighLowEnd.HEADWIND
+    >>> 
+    >>> # Set the takeoff mode and get that interface
+    >>> takeoff.takeoff_mode = TakeoffMode.TAKEOFF_NORMAL
+    >>> takeoffNormal = takeoff.mode_as_normal
+    >>> 
+    >>> # Set the takeoff climb angle
+    >>> takeoffNormal.takeoff_climb_angle = 5
+    >>> # Set the departure altitude above the runway
+    >>> takeoffNormal.departure_altitude = 600
+    >>> # Set the altitude offset for the runway
+    >>> takeoffNormal.runway_altitude_offset = 10
+    >>> # Use terrain for the runway's altitude
+    >>> takeoffNormal.use_runway_terrain = True
+
+    Add and configure a landing procedure:
+    >>> # IProcedureCollection procedures: Procedure Collection object
+    >>> # Add a landing procedure
+    >>> landing = procedures.add(SiteType.SITE_RUNWAY, ProcedureType.PROCEDURE_LANDING)
+    >>> 
+    >>> # Get the runway heading options
+    >>> headingOptions = landing.runway_heading_options
+    >>> # Land from the low end
+    >>> headingOptions.runway_mode = RunwayHighLowEnd.LOW_END
+    >>> 
+    >>> # Use a standard instrument approach
+    >>> landing.approach_mode = ApproachMode.STANDARD_INSTRUMENT_APPROACH
+    >>> # Get the options for a standard instrument approach
+    >>> sia = landing.mode_as_standard_instrument_approach
+    >>> # Change the approach altitude
+    >>> sia.approach_altitude = 1000
+    >>> # Change the glideslope
+    >>> sia.glideslope = 4
+    >>> # Offset the runway altitude
+    >>> sia.runway_altitude_offset = 10
+    >>> # Use the terrain as an altitude reference for the runway
+    >>> sia.use_runway_terrain = True
+    """
 
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -14318,7 +15455,34 @@ agcls.AgClassCatalog.add_catalog_entry((5366344207817725495, 1240953304299215989
 agcls.AgTypeNameMap["LandingInterceptGlideslope"] = LandingInterceptGlideslope
 
 class LandingStandardInstrumentApproach(SupportsDeleteCallback):
-    """The interface used to access the options for a Standard Instrument Approach mode for a landing procedure. The approach mode must be set to Standard Instrument Approach to access this interface."""
+    """
+    The interface used to access the options for a Standard Instrument Approach mode for a landing procedure. The approach mode must be set to Standard Instrument Approach to access this interface.
+
+    Examples
+    --------
+    Add and configure a landing procedure:
+    >>> # IProcedureCollection procedures: Procedure Collection object
+    >>> # Add a landing procedure
+    >>> landing = procedures.add(SiteType.SITE_RUNWAY, ProcedureType.PROCEDURE_LANDING)
+    >>> 
+    >>> # Get the runway heading options
+    >>> headingOptions = landing.runway_heading_options
+    >>> # Land from the low end
+    >>> headingOptions.runway_mode = RunwayHighLowEnd.LOW_END
+    >>> 
+    >>> # Use a standard instrument approach
+    >>> landing.approach_mode = ApproachMode.STANDARD_INSTRUMENT_APPROACH
+    >>> # Get the options for a standard instrument approach
+    >>> sia = landing.mode_as_standard_instrument_approach
+    >>> # Change the approach altitude
+    >>> sia.approach_altitude = 1000
+    >>> # Change the glideslope
+    >>> sia.glideslope = 4
+    >>> # Offset the runway altitude
+    >>> sia.runway_altitude_offset = 10
+    >>> # Use the terrain as an altitude reference for the runway
+    >>> sia.use_runway_terrain = True
+    """
 
     _num_methods = 16
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -14731,7 +15895,34 @@ agcls.AgClassCatalog.add_catalog_entry((5668791560561038875, 1692302977614393592
 agcls.AgTypeNameMap["TakeoffLowTransition"] = TakeoffLowTransition
 
 class TakeoffNormal(SupportsDeleteCallback):
-    """The interface used to access the options for a Normal takeoff mode. The mode must be set to Normal to access this interface."""
+    """
+    The interface used to access the options for a Normal takeoff mode. The mode must be set to Normal to access this interface.
+
+    Examples
+    --------
+    Add a takeoff procedure from a runway:
+    >>> # IProcedureCollection procedures: Procedure Collection object
+    >>> # Add a takeoff procedure with a runway as a site
+    >>> takeoff = procedures.add(SiteType.SITE_RUNWAY, ProcedureType.PROCEDURE_TAKEOFF)
+    >>> 
+    >>> # Get the runway heading options
+    >>> headingOptions = takeoff.runway_heading_options
+    >>> # Opt to use the headwind runway
+    >>> headingOptions.runway_mode = RunwayHighLowEnd.HEADWIND
+    >>> 
+    >>> # Set the takeoff mode and get that interface
+    >>> takeoff.takeoff_mode = TakeoffMode.TAKEOFF_NORMAL
+    >>> takeoffNormal = takeoff.mode_as_normal
+    >>> 
+    >>> # Set the takeoff climb angle
+    >>> takeoffNormal.takeoff_climb_angle = 5
+    >>> # Set the departure altitude above the runway
+    >>> takeoffNormal.departure_altitude = 600
+    >>> # Set the altitude offset for the runway
+    >>> takeoffNormal.runway_altitude_offset = 10
+    >>> # Use terrain for the runway's altitude
+    >>> takeoffNormal.use_runway_terrain = True
+    """
 
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -14856,7 +16047,54 @@ agcls.AgClassCatalog.add_catalog_entry((4982205817421927695, 3283745831502333602
 agcls.AgTypeNameMap["TakeoffNormal"] = TakeoffNormal
 
 class LevelTurns(SupportsDeleteCallback):
-    """Interface used to access the Level Turns Transitions options found in the Basic Acceleration Model of an aircraft."""
+    """
+    Interface used to access the Level Turns Transitions options found in the Basic Acceleration Model of an aircraft.
+
+    Examples
+    --------
+    Configure the basic acceleration performance model of an aircraft:
+    >>> # AircraftModel aviatorAircraft: Aviator Aircraft object
+    >>> # Get the acceleration type
+    >>> acceleration = aviatorAircraft.acceleration
+    >>> # Get the build in performance model
+    >>> basicAccModel = acceleration.get_built_in_model()
+    >>> 
+    >>> # Get the level turns options
+    >>> levelTurns = basicAccModel.level_turns
+    >>> # Set a max bank angle of 25
+    >>> levelTurns.set_level_turn(TurnMode.TURN_MODE_BANK_ANGLE, 25)
+    >>> # Get the climb and descent transition options
+    >>> climbAndDescent = basicAccModel.climb_and_descent_transitions
+    >>> # Set the max pull up G to 1
+    >>> climbAndDescent.max_pull_up_g = 1.2
+    >>> # Get the attitude transition options
+    >>> attitudeTransitions = basicAccModel.attitude_transitions
+    >>> # Set the max roll rate to 25
+    >>> attitudeTransitions.roll_rate = 25
+    >>> 
+    >>> # Get the aerodynamics
+    >>> aero = basicAccModel.aerodynamics
+    >>> # Use simple aerodynamics
+    >>> aero.aerodynamic_strategy = AircraftAerodynamicStrategy.AIRCRAFT_AERODYNAMIC_SIMPLE
+    >>> # Get the options for the simple aerodynamics and set some parameters
+    >>> simpleAero = aero.mode_as_simple
+    >>> simpleAero.s_reference = 5
+    >>> simpleAero.cl_max = 3.1
+    >>> simpleAero.cd = 0.05
+    >>> 
+    >>> # Get the propulsion
+    >>> prop = basicAccModel.propulsion
+    >>> # Use simple propulsion
+    >>> prop.propulsion_strategy = AircraftPropulsionStrategy.AIRCRAFT_PROPULSION_SIMPLE
+    >>> # Get the simple propulsion options and set some parameters
+    >>> simpleProp = prop.mode_as_simple
+    >>> simpleProp.max_thrust_acceleration = 0.6
+    >>> simpleProp.min_thrust_deceleration = 0.4
+    >>> simpleProp.set_density_scaling(True, 0.02)
+    >>> 
+    >>> # Save the changes to the catalog
+    >>> aviatorAircraft.save()
+    """
 
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -14983,7 +16221,54 @@ agcls.AgClassCatalog.add_catalog_entry((4842031065400171495, 1533514908641221036
 agcls.AgTypeNameMap["LevelTurns"] = LevelTurns
 
 class AttitudeTransitions(SupportsDeleteCallback):
-    """Interface used to access the Attitude Transitions options found in the Basic Acceleration Model of an aircraft."""
+    """
+    Interface used to access the Attitude Transitions options found in the Basic Acceleration Model of an aircraft.
+
+    Examples
+    --------
+    Configure the basic acceleration performance model of an aircraft:
+    >>> # AircraftModel aviatorAircraft: Aviator Aircraft object
+    >>> # Get the acceleration type
+    >>> acceleration = aviatorAircraft.acceleration
+    >>> # Get the build in performance model
+    >>> basicAccModel = acceleration.get_built_in_model()
+    >>> 
+    >>> # Get the level turns options
+    >>> levelTurns = basicAccModel.level_turns
+    >>> # Set a max bank angle of 25
+    >>> levelTurns.set_level_turn(TurnMode.TURN_MODE_BANK_ANGLE, 25)
+    >>> # Get the climb and descent transition options
+    >>> climbAndDescent = basicAccModel.climb_and_descent_transitions
+    >>> # Set the max pull up G to 1
+    >>> climbAndDescent.max_pull_up_g = 1.2
+    >>> # Get the attitude transition options
+    >>> attitudeTransitions = basicAccModel.attitude_transitions
+    >>> # Set the max roll rate to 25
+    >>> attitudeTransitions.roll_rate = 25
+    >>> 
+    >>> # Get the aerodynamics
+    >>> aero = basicAccModel.aerodynamics
+    >>> # Use simple aerodynamics
+    >>> aero.aerodynamic_strategy = AircraftAerodynamicStrategy.AIRCRAFT_AERODYNAMIC_SIMPLE
+    >>> # Get the options for the simple aerodynamics and set some parameters
+    >>> simpleAero = aero.mode_as_simple
+    >>> simpleAero.s_reference = 5
+    >>> simpleAero.cl_max = 3.1
+    >>> simpleAero.cd = 0.05
+    >>> 
+    >>> # Get the propulsion
+    >>> prop = basicAccModel.propulsion
+    >>> # Use simple propulsion
+    >>> prop.propulsion_strategy = AircraftPropulsionStrategy.AIRCRAFT_PROPULSION_SIMPLE
+    >>> # Get the simple propulsion options and set some parameters
+    >>> simpleProp = prop.mode_as_simple
+    >>> simpleProp.max_thrust_acceleration = 0.6
+    >>> simpleProp.min_thrust_deceleration = 0.4
+    >>> simpleProp.set_density_scaling(True, 0.02)
+    >>> 
+    >>> # Save the changes to the catalog
+    >>> aviatorAircraft.save()
+    """
 
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -15070,7 +16355,54 @@ agcls.AgClassCatalog.add_catalog_entry((5584586404333393428, 1238710703788659061
 agcls.AgTypeNameMap["AttitudeTransitions"] = AttitudeTransitions
 
 class ClimbAndDescentTransitions(SupportsDeleteCallback):
-    """Interface used to access the Climb and Descent Transitions options found in the Basic Acceleration Model of an aircraft."""
+    """
+    Interface used to access the Climb and Descent Transitions options found in the Basic Acceleration Model of an aircraft.
+
+    Examples
+    --------
+    Configure the basic acceleration performance model of an aircraft:
+    >>> # AircraftModel aviatorAircraft: Aviator Aircraft object
+    >>> # Get the acceleration type
+    >>> acceleration = aviatorAircraft.acceleration
+    >>> # Get the build in performance model
+    >>> basicAccModel = acceleration.get_built_in_model()
+    >>> 
+    >>> # Get the level turns options
+    >>> levelTurns = basicAccModel.level_turns
+    >>> # Set a max bank angle of 25
+    >>> levelTurns.set_level_turn(TurnMode.TURN_MODE_BANK_ANGLE, 25)
+    >>> # Get the climb and descent transition options
+    >>> climbAndDescent = basicAccModel.climb_and_descent_transitions
+    >>> # Set the max pull up G to 1
+    >>> climbAndDescent.max_pull_up_g = 1.2
+    >>> # Get the attitude transition options
+    >>> attitudeTransitions = basicAccModel.attitude_transitions
+    >>> # Set the max roll rate to 25
+    >>> attitudeTransitions.roll_rate = 25
+    >>> 
+    >>> # Get the aerodynamics
+    >>> aero = basicAccModel.aerodynamics
+    >>> # Use simple aerodynamics
+    >>> aero.aerodynamic_strategy = AircraftAerodynamicStrategy.AIRCRAFT_AERODYNAMIC_SIMPLE
+    >>> # Get the options for the simple aerodynamics and set some parameters
+    >>> simpleAero = aero.mode_as_simple
+    >>> simpleAero.s_reference = 5
+    >>> simpleAero.cl_max = 3.1
+    >>> simpleAero.cd = 0.05
+    >>> 
+    >>> # Get the propulsion
+    >>> prop = basicAccModel.propulsion
+    >>> # Use simple propulsion
+    >>> prop.propulsion_strategy = AircraftPropulsionStrategy.AIRCRAFT_PROPULSION_SIMPLE
+    >>> # Get the simple propulsion options and set some parameters
+    >>> simpleProp = prop.mode_as_simple
+    >>> simpleProp.max_thrust_acceleration = 0.6
+    >>> simpleProp.min_thrust_deceleration = 0.4
+    >>> simpleProp.set_density_scaling(True, 0.02)
+    >>> 
+    >>> # Save the changes to the catalog
+    >>> aviatorAircraft.save()
+    """
 
     _num_methods = 9
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -15547,7 +16879,54 @@ agcls.AgClassCatalog.add_catalog_entry((5216102563964361198, 1718702979293592080
 agcls.AgTypeNameMap["AircraftAccelerationMode"] = AircraftAccelerationMode
 
 class AircraftSimpleAerodynamic(SupportsDeleteCallback):
-    """Interface used to access the Simple Aerodynamics options for the Basic Acceleration Model of an aircraft."""
+    """
+    Interface used to access the Simple Aerodynamics options for the Basic Acceleration Model of an aircraft.
+
+    Examples
+    --------
+    Configure the basic acceleration performance model of an aircraft:
+    >>> # AircraftModel aviatorAircraft: Aviator Aircraft object
+    >>> # Get the acceleration type
+    >>> acceleration = aviatorAircraft.acceleration
+    >>> # Get the build in performance model
+    >>> basicAccModel = acceleration.get_built_in_model()
+    >>> 
+    >>> # Get the level turns options
+    >>> levelTurns = basicAccModel.level_turns
+    >>> # Set a max bank angle of 25
+    >>> levelTurns.set_level_turn(TurnMode.TURN_MODE_BANK_ANGLE, 25)
+    >>> # Get the climb and descent transition options
+    >>> climbAndDescent = basicAccModel.climb_and_descent_transitions
+    >>> # Set the max pull up G to 1
+    >>> climbAndDescent.max_pull_up_g = 1.2
+    >>> # Get the attitude transition options
+    >>> attitudeTransitions = basicAccModel.attitude_transitions
+    >>> # Set the max roll rate to 25
+    >>> attitudeTransitions.roll_rate = 25
+    >>> 
+    >>> # Get the aerodynamics
+    >>> aero = basicAccModel.aerodynamics
+    >>> # Use simple aerodynamics
+    >>> aero.aerodynamic_strategy = AircraftAerodynamicStrategy.AIRCRAFT_AERODYNAMIC_SIMPLE
+    >>> # Get the options for the simple aerodynamics and set some parameters
+    >>> simpleAero = aero.mode_as_simple
+    >>> simpleAero.s_reference = 5
+    >>> simpleAero.cl_max = 3.1
+    >>> simpleAero.cd = 0.05
+    >>> 
+    >>> # Get the propulsion
+    >>> prop = basicAccModel.propulsion
+    >>> # Use simple propulsion
+    >>> prop.propulsion_strategy = AircraftPropulsionStrategy.AIRCRAFT_PROPULSION_SIMPLE
+    >>> # Get the simple propulsion options and set some parameters
+    >>> simpleProp = prop.mode_as_simple
+    >>> simpleProp.max_thrust_acceleration = 0.6
+    >>> simpleProp.min_thrust_deceleration = 0.4
+    >>> simpleProp.set_density_scaling(True, 0.02)
+    >>> 
+    >>> # Save the changes to the catalog
+    >>> aviatorAircraft.save()
+    """
 
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -15813,7 +17192,54 @@ agcls.AgClassCatalog.add_catalog_entry((5605284744680812914, 1357110623589943078
 agcls.AgTypeNameMap["AircraftExternalAerodynamic"] = AircraftExternalAerodynamic
 
 class AircraftAerodynamic(SupportsDeleteCallback):
-    """Interface used to access the Aerodynamics options for the Basic Acceleration Model of an aircraft."""
+    """
+    Interface used to access the Aerodynamics options for the Basic Acceleration Model of an aircraft.
+
+    Examples
+    --------
+    Configure the basic acceleration performance model of an aircraft:
+    >>> # AircraftModel aviatorAircraft: Aviator Aircraft object
+    >>> # Get the acceleration type
+    >>> acceleration = aviatorAircraft.acceleration
+    >>> # Get the build in performance model
+    >>> basicAccModel = acceleration.get_built_in_model()
+    >>> 
+    >>> # Get the level turns options
+    >>> levelTurns = basicAccModel.level_turns
+    >>> # Set a max bank angle of 25
+    >>> levelTurns.set_level_turn(TurnMode.TURN_MODE_BANK_ANGLE, 25)
+    >>> # Get the climb and descent transition options
+    >>> climbAndDescent = basicAccModel.climb_and_descent_transitions
+    >>> # Set the max pull up G to 1
+    >>> climbAndDescent.max_pull_up_g = 1.2
+    >>> # Get the attitude transition options
+    >>> attitudeTransitions = basicAccModel.attitude_transitions
+    >>> # Set the max roll rate to 25
+    >>> attitudeTransitions.roll_rate = 25
+    >>> 
+    >>> # Get the aerodynamics
+    >>> aero = basicAccModel.aerodynamics
+    >>> # Use simple aerodynamics
+    >>> aero.aerodynamic_strategy = AircraftAerodynamicStrategy.AIRCRAFT_AERODYNAMIC_SIMPLE
+    >>> # Get the options for the simple aerodynamics and set some parameters
+    >>> simpleAero = aero.mode_as_simple
+    >>> simpleAero.s_reference = 5
+    >>> simpleAero.cl_max = 3.1
+    >>> simpleAero.cd = 0.05
+    >>> 
+    >>> # Get the propulsion
+    >>> prop = basicAccModel.propulsion
+    >>> # Use simple propulsion
+    >>> prop.propulsion_strategy = AircraftPropulsionStrategy.AIRCRAFT_PROPULSION_SIMPLE
+    >>> # Get the simple propulsion options and set some parameters
+    >>> simpleProp = prop.mode_as_simple
+    >>> simpleProp.max_thrust_acceleration = 0.6
+    >>> simpleProp.min_thrust_deceleration = 0.4
+    >>> simpleProp.set_density_scaling(True, 0.02)
+    >>> 
+    >>> # Save the changes to the catalog
+    >>> aviatorAircraft.save()
+    """
 
     _num_methods = 11
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -16284,7 +17710,54 @@ agcls.AgClassCatalog.add_catalog_entry((4615386614829789996, 1350578350872494814
 agcls.AgTypeNameMap["AircraftBasicFixedWingAerodynamic"] = AircraftBasicFixedWingAerodynamic
 
 class AircraftPropulsion(SupportsDeleteCallback):
-    """Interface used to access the propulsion options for the Basic Acceleration Model of an aircraft."""
+    """
+    Interface used to access the propulsion options for the Basic Acceleration Model of an aircraft.
+
+    Examples
+    --------
+    Configure the basic acceleration performance model of an aircraft:
+    >>> # AircraftModel aviatorAircraft: Aviator Aircraft object
+    >>> # Get the acceleration type
+    >>> acceleration = aviatorAircraft.acceleration
+    >>> # Get the build in performance model
+    >>> basicAccModel = acceleration.get_built_in_model()
+    >>> 
+    >>> # Get the level turns options
+    >>> levelTurns = basicAccModel.level_turns
+    >>> # Set a max bank angle of 25
+    >>> levelTurns.set_level_turn(TurnMode.TURN_MODE_BANK_ANGLE, 25)
+    >>> # Get the climb and descent transition options
+    >>> climbAndDescent = basicAccModel.climb_and_descent_transitions
+    >>> # Set the max pull up G to 1
+    >>> climbAndDescent.max_pull_up_g = 1.2
+    >>> # Get the attitude transition options
+    >>> attitudeTransitions = basicAccModel.attitude_transitions
+    >>> # Set the max roll rate to 25
+    >>> attitudeTransitions.roll_rate = 25
+    >>> 
+    >>> # Get the aerodynamics
+    >>> aero = basicAccModel.aerodynamics
+    >>> # Use simple aerodynamics
+    >>> aero.aerodynamic_strategy = AircraftAerodynamicStrategy.AIRCRAFT_AERODYNAMIC_SIMPLE
+    >>> # Get the options for the simple aerodynamics and set some parameters
+    >>> simpleAero = aero.mode_as_simple
+    >>> simpleAero.s_reference = 5
+    >>> simpleAero.cl_max = 3.1
+    >>> simpleAero.cd = 0.05
+    >>> 
+    >>> # Get the propulsion
+    >>> prop = basicAccModel.propulsion
+    >>> # Use simple propulsion
+    >>> prop.propulsion_strategy = AircraftPropulsionStrategy.AIRCRAFT_PROPULSION_SIMPLE
+    >>> # Get the simple propulsion options and set some parameters
+    >>> simpleProp = prop.mode_as_simple
+    >>> simpleProp.max_thrust_acceleration = 0.6
+    >>> simpleProp.min_thrust_deceleration = 0.4
+    >>> simpleProp.set_density_scaling(True, 0.02)
+    >>> 
+    >>> # Save the changes to the catalog
+    >>> aviatorAircraft.save()
+    """
 
     _num_methods = 12
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -16431,7 +17904,54 @@ agcls.AgClassCatalog.add_catalog_entry((5577330394102227800, 1579298309679387103
 agcls.AgTypeNameMap["AircraftPropulsion"] = AircraftPropulsion
 
 class AircraftSimplePropulsion(SupportsDeleteCallback):
-    """Interface used to access the Simple Propulsion options for the Basic Acceleration Model of an aircraft."""
+    """
+    Interface used to access the Simple Propulsion options for the Basic Acceleration Model of an aircraft.
+
+    Examples
+    --------
+    Configure the basic acceleration performance model of an aircraft:
+    >>> # AircraftModel aviatorAircraft: Aviator Aircraft object
+    >>> # Get the acceleration type
+    >>> acceleration = aviatorAircraft.acceleration
+    >>> # Get the build in performance model
+    >>> basicAccModel = acceleration.get_built_in_model()
+    >>> 
+    >>> # Get the level turns options
+    >>> levelTurns = basicAccModel.level_turns
+    >>> # Set a max bank angle of 25
+    >>> levelTurns.set_level_turn(TurnMode.TURN_MODE_BANK_ANGLE, 25)
+    >>> # Get the climb and descent transition options
+    >>> climbAndDescent = basicAccModel.climb_and_descent_transitions
+    >>> # Set the max pull up G to 1
+    >>> climbAndDescent.max_pull_up_g = 1.2
+    >>> # Get the attitude transition options
+    >>> attitudeTransitions = basicAccModel.attitude_transitions
+    >>> # Set the max roll rate to 25
+    >>> attitudeTransitions.roll_rate = 25
+    >>> 
+    >>> # Get the aerodynamics
+    >>> aero = basicAccModel.aerodynamics
+    >>> # Use simple aerodynamics
+    >>> aero.aerodynamic_strategy = AircraftAerodynamicStrategy.AIRCRAFT_AERODYNAMIC_SIMPLE
+    >>> # Get the options for the simple aerodynamics and set some parameters
+    >>> simpleAero = aero.mode_as_simple
+    >>> simpleAero.s_reference = 5
+    >>> simpleAero.cl_max = 3.1
+    >>> simpleAero.cd = 0.05
+    >>> 
+    >>> # Get the propulsion
+    >>> prop = basicAccModel.propulsion
+    >>> # Use simple propulsion
+    >>> prop.propulsion_strategy = AircraftPropulsionStrategy.AIRCRAFT_PROPULSION_SIMPLE
+    >>> # Get the simple propulsion options and set some parameters
+    >>> simpleProp = prop.mode_as_simple
+    >>> simpleProp.max_thrust_acceleration = 0.6
+    >>> simpleProp.min_thrust_deceleration = 0.4
+    >>> simpleProp.set_density_scaling(True, 0.02)
+    >>> 
+    >>> # Save the changes to the catalog
+    >>> aviatorAircraft.save()
+    """
 
     _num_methods = 7
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -17138,7 +18658,47 @@ agcls.AgClassCatalog.add_catalog_entry((4835967416678721147, 2787928793404869025
 agcls.AgTypeNameMap["BasicFixedWingForwardFlightLiftHelper"] = BasicFixedWingForwardFlightLiftHelper
 
 class BasicManeuverStrategyStraightAhead(IBasicManeuverStrategy, SupportsDeleteCallback):
-    """Interface used to access options for a Straight Ahead Strategy of a Basic Maneuver Procedure."""
+    """
+    Interface used to access options for a Straight Ahead Strategy of a Basic Maneuver Procedure.
+
+    Examples
+    --------
+    Add and configure a basic maneuver procedure:
+    >>> # IProcedureCollection procedures: Procedure Collection object
+    >>> # Add a basic maneuver procedure
+    >>> basicManeuver = procedures.add(SiteType.SITE_END_OF_PREV_PROCEDURE, ProcedureType.PROCEDURE_BASIC_MANEUVER)
+    >>> 
+    >>> # Set the navigation to use a Straight Ahead strategy
+    >>> basicManeuver.navigation_strategy_type = "Straight Ahead"
+    >>> # Get the options for the straight ahead strategy
+    >>> straightAhead = basicManeuver.navigation
+    >>> # Opt to maintain course (as opposed to maintain heading)
+    >>> straightAhead.reference_frame = StraightAheadReferenceFrame.MAINTAIN_COURSE
+    >>> 
+    >>> # Set the profile to use a Autopilot - Vertical Plane strategy
+    >>> basicManeuver.profile_strategy_type = "Autopilot - Vertical Plane"
+    >>> # Get the options for the profile strategy
+    >>> autopilot = basicManeuver.profile
+    >>> # Opt to maintain the initial altitude
+    >>> autopilot.altitude_mode = AutopilotAltitudeMode.AUTOPILOT_HOLD_INIT_ALTITUDE
+    >>> airspeedOptions = autopilot.airspeed_options
+    >>> # Opt to maintain a specified airspeed
+    >>> airspeedOptions.airspeed_mode = BasicManeuverAirspeedMode.MAINTAIN_SPECIFIED_AIRSPEED
+    >>> # Specify the airspeed
+    >>> airspeedOptions.specified_airspeed = 250
+    >>> 
+    >>> # Configure the options on the Attitude / Performance / Fuel page
+    >>> basicManeuver.flight_mode = PhaseOfFlight.FLIGHT_PHASE_CRUISE
+    >>> # Override the fuel flow
+    >>> basicManeuver.fuel_flow_type = BasicManeuverFuelFlowType.BASIC_MANEUVER_FUEL_FLOW_OVERRIDE
+    >>> basicManeuver.override_fuel_flow_value = 1000
+    >>> 
+    >>> # Set the basic stopping conditions
+    >>> basicManeuver.use_max_downrange = True
+    >>> basicManeuver.max_downrange = 10
+    >>> basicManeuver.use_stop_fuel_state = False
+    >>> basicManeuver.use_max_time_of_flight = False
+    """
 
     _num_methods = 4
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -17580,7 +19140,26 @@ agcls.AgClassCatalog.add_catalog_entry((4657086743565098834, 777569838434134160)
 agcls.AgTypeNameMap["BasicManeuverStrategyGlideProfile"] = BasicManeuverStrategyGlideProfile
 
 class AircraftModels(ICatalogSource, SupportsDeleteCallback):
-    """Interface for the User Aircraft Models in the Aviator Catalog."""
+    """
+    Interface for the User Aircraft Models in the Aviator Catalog.
+
+    Examples
+    --------
+    Set the aircraft used for the mission to an aircraft found in the Aviator catalog:
+    >>> # AviatorPropagator propagator: Aviator Propagator object
+    >>> # Get the Aviator catalog
+    >>> catalog = propagator.aviator_catalog
+    >>> # Get the aircraft category
+    >>> category = catalog.aircraft_category
+    >>> # Get the user aircraft models
+    >>> aircraftModels = category.aircraft_models
+    >>> # Get the basic fighter
+    >>> fighter = aircraftModels.get_aircraft("Basic Fighter")
+    >>> # Get the mission
+    >>> mission = propagator.aviator_mission
+    >>> # Set the vehicle used for the mission
+    >>> mission.vehicle = fighter
+    """
 
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -17748,7 +19327,42 @@ agcls.AgClassCatalog.add_catalog_entry((4915131170068152456, 1303336976567980409
 agcls.AgTypeNameMap["RotorcraftModels"] = RotorcraftModels
 
 class Configuration(SupportsDeleteCallback):
-    """Interface used to change an aircraft's configuration for an Aviator mission."""
+    """
+    Interface used to change an aircraft's configuration for an Aviator mission.
+
+    Examples
+    --------
+    Set the Configuration used for the Mission:
+    >>> # Mission mission: Aviator Mission object
+    >>> # Get the configuration used for the mission
+    >>> configuration = mission.configuration
+    >>> # Set the max landing weight
+    >>> configuration.max_landing_weight = 300000
+    >>> # Set the empty weight
+    >>> configuration.empty_weight = 210000
+    >>> # Update the center of gravity of the aircraft when empty
+    >>> configuration.set_empty_cg(2, 0, 1)
+    >>> 
+    >>> # Get the stations
+    >>> stations = configuration.get_stations()
+    >>> # Check if there is an internal fuel station
+    >>> if stations.contains_station("Internal Fuel") is True:
+    >>>     # Get the fuel tank
+    >>>     fuelTank = stations.get_internal_fuel_tank_by_name("Internal Fuel")
+    >>>     # Set the capacity of the fuel tank
+    >>>     fuelTank.capacity = 175000
+    >>>     # Set the initial state of the fuel tank
+    >>>     fuelTank.initial_fuel_state = 125000
+    >>> 
+    >>> # Add a new payload station
+    >>> newPayload = stations.add_payload_station()
+    >>> # Set the position of the payload station
+    >>> newPayload.set_position(0, 2, 0)
+    >>> # Add an external fuel tank
+    >>> externalTank = newPayload.add_external_fuel_tank()
+    >>> # Set the empty weight of the tank
+    >>> externalTank.empty_weight = 2000
+    """
 
     _num_methods = 21
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -18123,7 +19737,42 @@ agcls.AgClassCatalog.add_catalog_entry((5698710575945433930, 4905622930256443042
 agcls.AgTypeNameMap["FuelTankInternal"] = FuelTankInternal
 
 class FuelTankExternal(SupportsDeleteCallback):
-    """Interface used to set an aircraft's external fuel tank."""
+    """
+    Interface used to set an aircraft's external fuel tank.
+
+    Examples
+    --------
+    Set the Configuration used for the Mission:
+    >>> # Mission mission: Aviator Mission object
+    >>> # Get the configuration used for the mission
+    >>> configuration = mission.configuration
+    >>> # Set the max landing weight
+    >>> configuration.max_landing_weight = 300000
+    >>> # Set the empty weight
+    >>> configuration.empty_weight = 210000
+    >>> # Update the center of gravity of the aircraft when empty
+    >>> configuration.set_empty_cg(2, 0, 1)
+    >>> 
+    >>> # Get the stations
+    >>> stations = configuration.get_stations()
+    >>> # Check if there is an internal fuel station
+    >>> if stations.contains_station("Internal Fuel") is True:
+    >>>     # Get the fuel tank
+    >>>     fuelTank = stations.get_internal_fuel_tank_by_name("Internal Fuel")
+    >>>     # Set the capacity of the fuel tank
+    >>>     fuelTank.capacity = 175000
+    >>>     # Set the initial state of the fuel tank
+    >>>     fuelTank.initial_fuel_state = 125000
+    >>> 
+    >>> # Add a new payload station
+    >>> newPayload = stations.add_payload_station()
+    >>> # Set the position of the payload station
+    >>> newPayload.set_position(0, 2, 0)
+    >>> # Add an external fuel tank
+    >>> externalTank = newPayload.add_external_fuel_tank()
+    >>> # Set the empty weight of the tank
+    >>> externalTank.empty_weight = 2000
+    """
 
     _num_methods = 12
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -18267,7 +19916,42 @@ agcls.AgClassCatalog.add_catalog_entry((5088636907529171975, 9695710133478895033
 agcls.AgTypeNameMap["FuelTankExternal"] = FuelTankExternal
 
 class PayloadStation(IStation, SupportsDeleteCallback):
-    """Interface used to set an aircraft's payload station."""
+    """
+    Interface used to set an aircraft's payload station.
+
+    Examples
+    --------
+    Set the Configuration used for the Mission:
+    >>> # Mission mission: Aviator Mission object
+    >>> # Get the configuration used for the mission
+    >>> configuration = mission.configuration
+    >>> # Set the max landing weight
+    >>> configuration.max_landing_weight = 300000
+    >>> # Set the empty weight
+    >>> configuration.empty_weight = 210000
+    >>> # Update the center of gravity of the aircraft when empty
+    >>> configuration.set_empty_cg(2, 0, 1)
+    >>> 
+    >>> # Get the stations
+    >>> stations = configuration.get_stations()
+    >>> # Check if there is an internal fuel station
+    >>> if stations.contains_station("Internal Fuel") is True:
+    >>>     # Get the fuel tank
+    >>>     fuelTank = stations.get_internal_fuel_tank_by_name("Internal Fuel")
+    >>>     # Set the capacity of the fuel tank
+    >>>     fuelTank.capacity = 175000
+    >>>     # Set the initial state of the fuel tank
+    >>>     fuelTank.initial_fuel_state = 125000
+    >>> 
+    >>> # Add a new payload station
+    >>> newPayload = stations.add_payload_station()
+    >>> # Set the position of the payload station
+    >>> newPayload.set_position(0, 2, 0)
+    >>> # Add an external fuel tank
+    >>> externalTank = newPayload.add_external_fuel_tank()
+    >>> # Set the empty weight of the tank
+    >>> externalTank.empty_weight = 2000
+    """
 
     _num_methods = 9
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -18380,7 +20064,42 @@ agcls.AgClassCatalog.add_catalog_entry((4867009326142863941, 2812515302507571881
 agcls.AgTypeNameMap["PayloadStation"] = PayloadStation
 
 class StationCollection(SupportsDeleteCallback):
-    """Interface used to access the list of stations for an Aviator aircraft."""
+    """
+    Interface used to access the list of stations for an Aviator aircraft.
+
+    Examples
+    --------
+    Set the Configuration used for the Mission:
+    >>> # Mission mission: Aviator Mission object
+    >>> # Get the configuration used for the mission
+    >>> configuration = mission.configuration
+    >>> # Set the max landing weight
+    >>> configuration.max_landing_weight = 300000
+    >>> # Set the empty weight
+    >>> configuration.empty_weight = 210000
+    >>> # Update the center of gravity of the aircraft when empty
+    >>> configuration.set_empty_cg(2, 0, 1)
+    >>> 
+    >>> # Get the stations
+    >>> stations = configuration.get_stations()
+    >>> # Check if there is an internal fuel station
+    >>> if stations.contains_station("Internal Fuel") is True:
+    >>>     # Get the fuel tank
+    >>>     fuelTank = stations.get_internal_fuel_tank_by_name("Internal Fuel")
+    >>>     # Set the capacity of the fuel tank
+    >>>     fuelTank.capacity = 175000
+    >>>     # Set the initial state of the fuel tank
+    >>>     fuelTank.initial_fuel_state = 125000
+    >>> 
+    >>> # Add a new payload station
+    >>> newPayload = stations.add_payload_station()
+    >>> # Set the position of the payload station
+    >>> newPayload.set_position(0, 2, 0)
+    >>> # Add an external fuel tank
+    >>> externalTank = newPayload.add_external_fuel_tank()
+    >>> # Set the empty weight of the tank
+    >>> externalTank.empty_weight = 2000
+    """
 
     _num_methods = 11
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -18520,7 +20239,63 @@ agcls.AgClassCatalog.add_catalog_entry((5099395785168966975, 1882908027836215685
 agcls.AgTypeNameMap["StationCollection"] = StationCollection
 
 class WindModel(SupportsDeleteCallback):
-    """Interface used to access the wind model for a mission, scenario, or procedure."""
+    """
+    Interface used to access the wind model for a mission, scenario, or procedure.
+
+    Examples
+    --------
+    Configure the weather and atmosphere of the Mission:
+    >>> # Mission mission: Aviator Mission object
+    >>> # Get the wind model used for the mission
+    >>> windModel = mission.wind_model
+    >>> # Let's use the mission model
+    >>> windModel.wind_model_source = WindAtmosModelSource.MISSION_MODEL
+    >>> # Let's use constant wind
+    >>> windModel.wind_model_type = WindModelType.CONSTANT_WIND
+    >>> # Get the constant wind model options
+    >>> constantWind = windModel.mode_as_constant
+    >>> # Set the wind bearing
+    >>> constantWind.wind_bearing = 30
+    >>> # Set the wind speed
+    >>> constantWind.wind_speed = 5
+    >>> 
+    >>> # Get the atmosphere model used for the mission
+    >>> atmosphere = mission.atmosphere_model
+    >>> # Let's use the mission model
+    >>> atmosphere.atmosphere_model_source = WindAtmosModelSource.MISSION_MODEL
+    >>> # Get the basic atmosphere options
+    >>> basicAtmosphere = atmosphere.mode_as_basic
+    >>> # Use standard 1976 atmosphere
+    >>> basicAtmosphere.basic_model_type = AtmosphereModelType.STANDARD1976
+    >>> # Opt to override the values
+    >>> basicAtmosphere.use_non_standard_atmosphere = True
+    >>> # Override the temperature
+    >>> basicAtmosphere.temperature = 290
+
+    Configure the wind and atmosphere for a procedure:
+    >>> # IProcedure procedure: Procedure object
+    >>> # Get the wind model for the procedure
+    >>> windModel = procedure.wind_model
+    >>> # Use the procedure model
+    >>> windModel.wind_model_source = WindAtmosModelSource.PROCEDURE_MODEL
+    >>> # Let's use constant wind
+    >>> windModel.wind_model_type = WindModelType.CONSTANT_WIND
+    >>> # Get the constant wind model options
+    >>> constantWind = windModel.mode_as_constant
+    >>> # Set the wind bearing
+    >>> constantWind.wind_bearing = 30
+    >>> # Set the wind speed
+    >>> constantWind.wind_speed = 5
+    >>> 
+    >>> # Get the atmosphere model used for the procedure
+    >>> atmosphere = procedure.atmosphere_model
+    >>> # Let's use the procedure model
+    >>> atmosphere.atmosphere_model_source = WindAtmosModelSource.PROCEDURE_MODEL
+    >>> # Get the basic atmosphere options
+    >>> basicAtmosphere = atmosphere.mode_as_basic
+    >>> # Use standard 1976 atmosphere
+    >>> basicAtmosphere.basic_model_type = AtmosphereModelType.STANDARD1976
+    """
 
     _num_methods = 10
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -18643,7 +20418,63 @@ agcls.AgClassCatalog.add_catalog_entry((5465426116498822924, 1215137812649015693
 agcls.AgTypeNameMap["WindModel"] = WindModel
 
 class WindModelConstant(SupportsDeleteCallback):
-    """Interface used to access the options for a Constant Bearing/Speed wind model."""
+    """
+    Interface used to access the options for a Constant Bearing/Speed wind model.
+
+    Examples
+    --------
+    Configure the weather and atmosphere of the Mission:
+    >>> # Mission mission: Aviator Mission object
+    >>> # Get the wind model used for the mission
+    >>> windModel = mission.wind_model
+    >>> # Let's use the mission model
+    >>> windModel.wind_model_source = WindAtmosModelSource.MISSION_MODEL
+    >>> # Let's use constant wind
+    >>> windModel.wind_model_type = WindModelType.CONSTANT_WIND
+    >>> # Get the constant wind model options
+    >>> constantWind = windModel.mode_as_constant
+    >>> # Set the wind bearing
+    >>> constantWind.wind_bearing = 30
+    >>> # Set the wind speed
+    >>> constantWind.wind_speed = 5
+    >>> 
+    >>> # Get the atmosphere model used for the mission
+    >>> atmosphere = mission.atmosphere_model
+    >>> # Let's use the mission model
+    >>> atmosphere.atmosphere_model_source = WindAtmosModelSource.MISSION_MODEL
+    >>> # Get the basic atmosphere options
+    >>> basicAtmosphere = atmosphere.mode_as_basic
+    >>> # Use standard 1976 atmosphere
+    >>> basicAtmosphere.basic_model_type = AtmosphereModelType.STANDARD1976
+    >>> # Opt to override the values
+    >>> basicAtmosphere.use_non_standard_atmosphere = True
+    >>> # Override the temperature
+    >>> basicAtmosphere.temperature = 290
+
+    Configure the wind and atmosphere for a procedure:
+    >>> # IProcedure procedure: Procedure object
+    >>> # Get the wind model for the procedure
+    >>> windModel = procedure.wind_model
+    >>> # Use the procedure model
+    >>> windModel.wind_model_source = WindAtmosModelSource.PROCEDURE_MODEL
+    >>> # Let's use constant wind
+    >>> windModel.wind_model_type = WindModelType.CONSTANT_WIND
+    >>> # Get the constant wind model options
+    >>> constantWind = windModel.mode_as_constant
+    >>> # Set the wind bearing
+    >>> constantWind.wind_bearing = 30
+    >>> # Set the wind speed
+    >>> constantWind.wind_speed = 5
+    >>> 
+    >>> # Get the atmosphere model used for the procedure
+    >>> atmosphere = procedure.atmosphere_model
+    >>> # Let's use the procedure model
+    >>> atmosphere.atmosphere_model_source = WindAtmosModelSource.PROCEDURE_MODEL
+    >>> # Get the basic atmosphere options
+    >>> basicAtmosphere = atmosphere.mode_as_basic
+    >>> # Use standard 1976 atmosphere
+    >>> basicAtmosphere.basic_model_type = AtmosphereModelType.STANDARD1976
+    """
 
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -19102,7 +20933,63 @@ agcls.AgClassCatalog.add_catalog_entry((5442570590760532794, 1077397021822478092
 agcls.AgTypeNameMap["Procedure"] = Procedure
 
 class AtmosphereModel(SupportsDeleteCallback):
-    """Interface used to access the atmosphere model for a mission, scenario, or procedure."""
+    """
+    Interface used to access the atmosphere model for a mission, scenario, or procedure.
+
+    Examples
+    --------
+    Configure the weather and atmosphere of the Mission:
+    >>> # Mission mission: Aviator Mission object
+    >>> # Get the wind model used for the mission
+    >>> windModel = mission.wind_model
+    >>> # Let's use the mission model
+    >>> windModel.wind_model_source = WindAtmosModelSource.MISSION_MODEL
+    >>> # Let's use constant wind
+    >>> windModel.wind_model_type = WindModelType.CONSTANT_WIND
+    >>> # Get the constant wind model options
+    >>> constantWind = windModel.mode_as_constant
+    >>> # Set the wind bearing
+    >>> constantWind.wind_bearing = 30
+    >>> # Set the wind speed
+    >>> constantWind.wind_speed = 5
+    >>> 
+    >>> # Get the atmosphere model used for the mission
+    >>> atmosphere = mission.atmosphere_model
+    >>> # Let's use the mission model
+    >>> atmosphere.atmosphere_model_source = WindAtmosModelSource.MISSION_MODEL
+    >>> # Get the basic atmosphere options
+    >>> basicAtmosphere = atmosphere.mode_as_basic
+    >>> # Use standard 1976 atmosphere
+    >>> basicAtmosphere.basic_model_type = AtmosphereModelType.STANDARD1976
+    >>> # Opt to override the values
+    >>> basicAtmosphere.use_non_standard_atmosphere = True
+    >>> # Override the temperature
+    >>> basicAtmosphere.temperature = 290
+
+    Configure the wind and atmosphere for a procedure:
+    >>> # IProcedure procedure: Procedure object
+    >>> # Get the wind model for the procedure
+    >>> windModel = procedure.wind_model
+    >>> # Use the procedure model
+    >>> windModel.wind_model_source = WindAtmosModelSource.PROCEDURE_MODEL
+    >>> # Let's use constant wind
+    >>> windModel.wind_model_type = WindModelType.CONSTANT_WIND
+    >>> # Get the constant wind model options
+    >>> constantWind = windModel.mode_as_constant
+    >>> # Set the wind bearing
+    >>> constantWind.wind_bearing = 30
+    >>> # Set the wind speed
+    >>> constantWind.wind_speed = 5
+    >>> 
+    >>> # Get the atmosphere model used for the procedure
+    >>> atmosphere = procedure.atmosphere_model
+    >>> # Let's use the procedure model
+    >>> atmosphere.atmosphere_model_source = WindAtmosModelSource.PROCEDURE_MODEL
+    >>> # Get the basic atmosphere options
+    >>> basicAtmosphere = atmosphere.mode_as_basic
+    >>> # Use standard 1976 atmosphere
+    >>> basicAtmosphere.basic_model_type = AtmosphereModelType.STANDARD1976
+    """
 
     _num_methods = 7
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -19196,7 +21083,63 @@ agcls.AgClassCatalog.add_catalog_entry((4816409432479909563, 6760252487080053377
 agcls.AgTypeNameMap["AtmosphereModel"] = AtmosphereModel
 
 class AtmosphereModelBasic(SupportsDeleteCallback):
-    """Interface used to access the basic atmosphere model."""
+    """
+    Interface used to access the basic atmosphere model.
+
+    Examples
+    --------
+    Configure the weather and atmosphere of the Mission:
+    >>> # Mission mission: Aviator Mission object
+    >>> # Get the wind model used for the mission
+    >>> windModel = mission.wind_model
+    >>> # Let's use the mission model
+    >>> windModel.wind_model_source = WindAtmosModelSource.MISSION_MODEL
+    >>> # Let's use constant wind
+    >>> windModel.wind_model_type = WindModelType.CONSTANT_WIND
+    >>> # Get the constant wind model options
+    >>> constantWind = windModel.mode_as_constant
+    >>> # Set the wind bearing
+    >>> constantWind.wind_bearing = 30
+    >>> # Set the wind speed
+    >>> constantWind.wind_speed = 5
+    >>> 
+    >>> # Get the atmosphere model used for the mission
+    >>> atmosphere = mission.atmosphere_model
+    >>> # Let's use the mission model
+    >>> atmosphere.atmosphere_model_source = WindAtmosModelSource.MISSION_MODEL
+    >>> # Get the basic atmosphere options
+    >>> basicAtmosphere = atmosphere.mode_as_basic
+    >>> # Use standard 1976 atmosphere
+    >>> basicAtmosphere.basic_model_type = AtmosphereModelType.STANDARD1976
+    >>> # Opt to override the values
+    >>> basicAtmosphere.use_non_standard_atmosphere = True
+    >>> # Override the temperature
+    >>> basicAtmosphere.temperature = 290
+
+    Configure the wind and atmosphere for a procedure:
+    >>> # IProcedure procedure: Procedure object
+    >>> # Get the wind model for the procedure
+    >>> windModel = procedure.wind_model
+    >>> # Use the procedure model
+    >>> windModel.wind_model_source = WindAtmosModelSource.PROCEDURE_MODEL
+    >>> # Let's use constant wind
+    >>> windModel.wind_model_type = WindModelType.CONSTANT_WIND
+    >>> # Get the constant wind model options
+    >>> constantWind = windModel.mode_as_constant
+    >>> # Set the wind bearing
+    >>> constantWind.wind_bearing = 30
+    >>> # Set the wind speed
+    >>> constantWind.wind_speed = 5
+    >>> 
+    >>> # Get the atmosphere model used for the procedure
+    >>> atmosphere = procedure.atmosphere_model
+    >>> # Let's use the procedure model
+    >>> atmosphere.atmosphere_model_source = WindAtmosModelSource.PROCEDURE_MODEL
+    >>> # Get the basic atmosphere options
+    >>> basicAtmosphere = atmosphere.mode_as_basic
+    >>> # Use standard 1976 atmosphere
+    >>> basicAtmosphere.basic_model_type = AtmosphereModelType.STANDARD1976
+    """
 
     _num_methods = 11
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -20640,7 +22583,47 @@ agcls.AgClassCatalog.add_catalog_entry((4631515585365048851, 223936628880623543)
 agcls.AgTypeNameMap["BasicManeuverStrategySmoothTurn"] = BasicManeuverStrategySmoothTurn
 
 class BasicManeuverAirspeedOptions(SupportsDeleteCallback):
-    """Interface used to access airspeed options for basic maneuver strategies."""
+    """
+    Interface used to access airspeed options for basic maneuver strategies.
+
+    Examples
+    --------
+    Add and configure a basic maneuver procedure:
+    >>> # IProcedureCollection procedures: Procedure Collection object
+    >>> # Add a basic maneuver procedure
+    >>> basicManeuver = procedures.add(SiteType.SITE_END_OF_PREV_PROCEDURE, ProcedureType.PROCEDURE_BASIC_MANEUVER)
+    >>> 
+    >>> # Set the navigation to use a Straight Ahead strategy
+    >>> basicManeuver.navigation_strategy_type = "Straight Ahead"
+    >>> # Get the options for the straight ahead strategy
+    >>> straightAhead = basicManeuver.navigation
+    >>> # Opt to maintain course (as opposed to maintain heading)
+    >>> straightAhead.reference_frame = StraightAheadReferenceFrame.MAINTAIN_COURSE
+    >>> 
+    >>> # Set the profile to use a Autopilot - Vertical Plane strategy
+    >>> basicManeuver.profile_strategy_type = "Autopilot - Vertical Plane"
+    >>> # Get the options for the profile strategy
+    >>> autopilot = basicManeuver.profile
+    >>> # Opt to maintain the initial altitude
+    >>> autopilot.altitude_mode = AutopilotAltitudeMode.AUTOPILOT_HOLD_INIT_ALTITUDE
+    >>> airspeedOptions = autopilot.airspeed_options
+    >>> # Opt to maintain a specified airspeed
+    >>> airspeedOptions.airspeed_mode = BasicManeuverAirspeedMode.MAINTAIN_SPECIFIED_AIRSPEED
+    >>> # Specify the airspeed
+    >>> airspeedOptions.specified_airspeed = 250
+    >>> 
+    >>> # Configure the options on the Attitude / Performance / Fuel page
+    >>> basicManeuver.flight_mode = PhaseOfFlight.FLIGHT_PHASE_CRUISE
+    >>> # Override the fuel flow
+    >>> basicManeuver.fuel_flow_type = BasicManeuverFuelFlowType.BASIC_MANEUVER_FUEL_FLOW_OVERRIDE
+    >>> basicManeuver.override_fuel_flow_value = 1000
+    >>> 
+    >>> # Set the basic stopping conditions
+    >>> basicManeuver.use_max_downrange = True
+    >>> basicManeuver.max_downrange = 10
+    >>> basicManeuver.use_stop_fuel_state = False
+    >>> basicManeuver.use_max_time_of_flight = False
+    """
 
     _num_methods = 35
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -21377,7 +23360,47 @@ agcls.AgClassCatalog.add_catalog_entry((4732726606686848626, 4213261683524251822
 agcls.AgTypeNameMap["BasicManeuverStrategyAutopilotNavigation"] = BasicManeuverStrategyAutopilotNavigation
 
 class BasicManeuverStrategyAutopilotProf(IBasicManeuverStrategy, SupportsDeleteCallback):
-    """Interface used to access options for the Autopilot - Vertical Plane Strategy of a Basic Maneuver Procedure."""
+    """
+    Interface used to access options for the Autopilot - Vertical Plane Strategy of a Basic Maneuver Procedure.
+
+    Examples
+    --------
+    Add and configure a basic maneuver procedure:
+    >>> # IProcedureCollection procedures: Procedure Collection object
+    >>> # Add a basic maneuver procedure
+    >>> basicManeuver = procedures.add(SiteType.SITE_END_OF_PREV_PROCEDURE, ProcedureType.PROCEDURE_BASIC_MANEUVER)
+    >>> 
+    >>> # Set the navigation to use a Straight Ahead strategy
+    >>> basicManeuver.navigation_strategy_type = "Straight Ahead"
+    >>> # Get the options for the straight ahead strategy
+    >>> straightAhead = basicManeuver.navigation
+    >>> # Opt to maintain course (as opposed to maintain heading)
+    >>> straightAhead.reference_frame = StraightAheadReferenceFrame.MAINTAIN_COURSE
+    >>> 
+    >>> # Set the profile to use a Autopilot - Vertical Plane strategy
+    >>> basicManeuver.profile_strategy_type = "Autopilot - Vertical Plane"
+    >>> # Get the options for the profile strategy
+    >>> autopilot = basicManeuver.profile
+    >>> # Opt to maintain the initial altitude
+    >>> autopilot.altitude_mode = AutopilotAltitudeMode.AUTOPILOT_HOLD_INIT_ALTITUDE
+    >>> airspeedOptions = autopilot.airspeed_options
+    >>> # Opt to maintain a specified airspeed
+    >>> airspeedOptions.airspeed_mode = BasicManeuverAirspeedMode.MAINTAIN_SPECIFIED_AIRSPEED
+    >>> # Specify the airspeed
+    >>> airspeedOptions.specified_airspeed = 250
+    >>> 
+    >>> # Configure the options on the Attitude / Performance / Fuel page
+    >>> basicManeuver.flight_mode = PhaseOfFlight.FLIGHT_PHASE_CRUISE
+    >>> # Override the fuel flow
+    >>> basicManeuver.fuel_flow_type = BasicManeuverFuelFlowType.BASIC_MANEUVER_FUEL_FLOW_OVERRIDE
+    >>> basicManeuver.override_fuel_flow_value = 1000
+    >>> 
+    >>> # Set the basic stopping conditions
+    >>> basicManeuver.use_max_downrange = True
+    >>> basicManeuver.max_downrange = 10
+    >>> basicManeuver.use_stop_fuel_state = False
+    >>> basicManeuver.use_max_time_of_flight = False
+    """
 
     _num_methods = 29
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -29615,7 +31638,27 @@ agcls.AgClassCatalog.add_catalog_entry((5185311090544048998, 8831984788416391870
 agcls.AgTypeNameMap["ProcedureVGTPoint"] = ProcedureVGTPoint
 
 class PerformanceModelOptions(SupportsDeleteCallback):
-    """Interface used to change the active performance model in a phase for a given model type."""
+    """
+    Interface used to change the active performance model in a phase for a given model type.
+
+    Examples
+    --------
+    Configure the performance models to be used in the phase:
+    >>> # Phase phase: Phase object
+    >>> # Get the acceleration performance model used for the current phase
+    >>> acceleration = phase.get_performance_model_by_type("Acceleration")
+    >>> # Check if it is linked to the catalog
+    >>> isLinkedToCatalog = acceleration.is_linked_to_catalog
+    >>> # Use the performance model in the catalog named "Built-In Model"
+    >>> acceleration.link_to_catalog("Built-In Model")
+    >>> 
+    >>> # Get the VTOL performance model
+    >>> vtol = phase.get_performance_model_by_type("VTOL")
+    >>> # Create a new vtol model of type AGI VTOL Model. Note that this new model does not exist in the catalog and only exists in the phase.
+    >>> vtol.create_new("AGI VTOL Model")
+    >>> # Rename the performance model
+    >>> vtol.rename("Temporary VTOL Model")
+    """
 
     _num_methods = 8
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods
@@ -29715,7 +31758,46 @@ agcls.AgClassCatalog.add_catalog_entry((5564371800440964119, 7517434752528760714
 agcls.AgTypeNameMap["PerformanceModelOptions"] = PerformanceModelOptions
 
 class AdvancedFixedWingTool(SupportsDeleteCallback):
-    """Interface used to access the options for the Advanced Fixed Wing Tool of an aircraft."""
+    """
+    Interface used to access the options for the Advanced Fixed Wing Tool of an aircraft.
+
+    Examples
+    --------
+    Configure the Advanced Fixed Wing Tool and set the aircraft to use the resulting performance models:
+    >>> # AircraftModel aviatorAircraft: Aviator Aircraft object
+    >>> # Get the advanced fixed wing tool
+    >>> advFixedWingTool = aviatorAircraft.advanced_fixed_wing_tool
+    >>> # Set the basic geometry
+    >>> advFixedWingTool.wing_area = 300
+    >>> advFixedWingTool.flaps_area = 50
+    >>> advFixedWingTool.speedbrakes_area = 10
+    >>> # Set the structural and human factor limits
+    >>> advFixedWingTool.max_altitude = 65000
+    >>> advFixedWingTool.max_mach = 0.98
+    >>> advFixedWingTool.max_eas = 460
+    >>> advFixedWingTool.min_load_factor = -2.5
+    >>> advFixedWingTool.max_load_factor = 4.5
+    >>> 
+    >>> # Opt to enforce the max temperature limit
+    >>> advFixedWingTool.use_max_temperature_limit = True
+    >>> advFixedWingTool.max_temperature = 900
+    >>> 
+    >>> # Use a subsonic aerodynamic strategy
+    >>> advFixedWingTool.aerodynamic_strategy = AdvancedFixedWingAerodynamicStrategy.SUBSONIC_AERODYNAMIC
+    >>> # Cache the aerodynamic data to improve calculation speed
+    >>> advFixedWingTool.cache_aerodynamic_data = True
+    >>> # Use a high bypass turbofan
+    >>> advFixedWingTool.powerplant_strategy = AdvancedFixedWingPowerplantStrategy.TURBOFAN_HIGH_BYPASS
+    >>> # Cache the fuel flow data to improve calculation speed
+    >>> advFixedWingTool.cache_fuel_flow = True
+    >>> 
+    >>> # Create the corresponding performance models that reference the advanced fixed wing tool
+    >>> # Specify the name, whether to override any existing models with the same name, and whether to set the new models as the default performance models
+    >>> advFixedWingTool.create_all_performance_models("AdvancedModels", True, True)
+    >>> 
+    >>> # Save the changes in the catalog
+    >>> aviatorAircraft.save()
+    """
 
     _num_methods = 42
     _vtable_offset = IDispatch._vtable_offset + IDispatch._num_methods

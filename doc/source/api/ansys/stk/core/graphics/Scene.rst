@@ -66,6 +66,20 @@ Overview
 
 
 
+Examples
+--------
+
+Control Display of Stars and Water Texture
+
+.. code-block:: python
+
+    # Scenario scenario: Scenario object
+    # Turn off the stars and water texture
+    manager = scenario.scene_manager
+    manager.scenes.item(0).show_stars = False
+    manager.scenes.item(0).show_water_surface = False
+
+
 Import detail
 -------------
 

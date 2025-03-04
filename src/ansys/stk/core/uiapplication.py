@@ -156,7 +156,15 @@ agcls.AgTypeNameMap["IUiApplicationPartnerAccess"] = IUiApplicationPartnerAccess
 
 
 class UiApplication(IUiApplicationPartnerAccess, SupportsDeleteCallback):
-    """UiApplication represents a root of the Application Model."""
+    """
+    UiApplication represents a root of the Application Model.
+
+    Examples
+    --------
+    Close STK:
+    >>> # AgUiApplication uiApplication: STK Application
+    >>> uiApplication.shutdown()
+    """
 
     _num_methods = 37
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods

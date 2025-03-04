@@ -29,6 +29,34 @@ Overview
 
 
 
+Examples
+--------
+
+Draw a new Texture Screen Overlay
+
+.. code-block:: python
+
+    # Scenario scenario: Scenario object
+    manager = scenario.scene_manager
+    overlays = manager.screen_overlays.overlays
+    textureOverlay = manager.initializers.texture_screen_overlay.initialize_with_xy_width_height(0, 0, 128, 128)
+    installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+    textureOverlay.texture = manager.textures.load_from_string_uri(
+        os.path.join(installPath, "STKData", "VO", "Textures", "agilogo3.ppm")
+    )
+    textureOverlay.maintain_aspect_ratio = True
+    textureOverlay.origin = ScreenOverlayOrigin.TOP_LEFT
+    textureOverlay.position = [
+        [0],
+        [20],
+        [int(ScreenOverlayUnit.PIXEL)],
+        [int(ScreenOverlayUnit.PIXEL)],
+    ]
+    overlays.add(textureOverlay)
+    # Render the Scene
+    manager.render()
+
+
 Import detail
 -------------
 

@@ -100,6 +100,113 @@ Overview
 
 
 
+Examples
+--------
+
+Extract data from Connect result
+
+.. code-block:: python
+
+    result = root.execute_command('Report_RM */Place/MyPlace Style "Cartesian Position"')
+
+    for i in range(0, result.count):
+        cmdRes = result.item(i)
+        print(cmdRes)
+
+
+Execute multiple Connect commands
+
+.. code-block:: python
+
+    commandList = [["New / */Place MyPlace"], ["SetPosition */Place/MyPlace Geodetic 37.9 -75.5 0.0"]]
+    root.execute_multiple_commands(commandList, ExecuteMultipleCommandsMode.EXCEPTION_ON_ERROR)
+
+
+Execute Connect command
+
+.. code-block:: python
+
+    root.execute_command("New / */Target MyTarget")
+
+
+Start STK and get a reference to STK Object Root
+
+.. code-block:: python
+
+    # Start new instance of STK
+    from ansys.stk.core.stkdesktop import STKDesktop
+
+    stk = STKDesktop.start_application(visible=True)  # using optional visible argument
+
+    # Get the IAgStkObjectRoot interface
+    root = stk.root
+
+    # ...
+
+    # Clean-up when done
+    stk.shutdown()
+
+
+Get a reference to STK Object Root using a running STK instance
+
+.. code-block:: python
+
+    # Get reference to running STK instance
+    from ansys.stk.core.stkdesktop import STKDesktop
+
+    stk = STKDesktop.attach_to_application()
+
+    # Get the IAgStkObjectRoot interface
+    root = stk.root
+
+
+Start STK Engine and get a reference to STK Object Root
+
+.. code-block:: python
+
+    # Start new instance of STK Engine
+    from ansys.stk.core.stkengine import STKEngine
+
+    stk = STKEngine.StartApplication(no_graphics=False)  # optionally, no_graphics = True
+
+    # Get the IAgStkObjectRoot interface
+    root = stk.new_object_root()
+
+
+Set unit preferences for Object Model
+
+.. code-block:: python
+
+    # StkObjectRoot root: STK Object Model Root
+    root.units_preferences.item("DateFormat").set_current_unit("UTCG")
+    root.units_preferences.item("Distance").set_current_unit("km")
+
+
+Create a new Scenario
+
+.. code-block:: python
+
+    # StkObjectRoot root: STK Object Model Root
+    root.new_scenario("Example_Scenario")
+
+
+Close an open Scenario
+
+.. code-block:: python
+
+    # StkObjectRoot root: STK Object Model Root
+    root.close_scenario()
+
+
+Open a Viewer Data File
+
+.. code-block:: python
+
+    # StkObjectRoot root: STK Object Model Root
+    installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+    root.load_vdf(os.path.join(installPath, "Data", "ExampleScenarios", "Intro_STK_Space_Systems.vdf"), "")
+
+
 Import detail
 -------------
 
@@ -116,6 +223,18 @@ Property detail
     :type: IUnitPreferencesDimensionCollection
 
     Provide access to the Global Unit table.
+
+    Examples
+    --------
+
+    Set unit preferences for Object Model
+
+    .. code-block:: python
+
+        # StkObjectRoot root: STK Object Model Root
+        root.units_preferences.item("DateFormat").set_current_unit("UTCG")
+        root.units_preferences.item("Distance").set_current_unit("km")
+
 
 .. py:property:: current_scenario
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.current_scenario
@@ -216,6 +335,17 @@ Method detail
 
         :obj:`~None`
 
+    Examples
+    --------
+
+    Close an open Scenario
+
+    .. code-block:: python
+
+        # StkObjectRoot root: STK Object Model Root
+        root.close_scenario()
+
+
 .. py:method:: new_scenario(self, scenario_name: str) -> None
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.new_scenario
 
@@ -228,6 +358,17 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
+    Examples
+    --------
+
+    Create a new Scenario
+
+    .. code-block:: python
+
+        # StkObjectRoot root: STK Object Model Root
+        root.new_scenario("Example_Scenario")
+
 
 .. py:method:: save_scenario(self) -> None
     :canonical: ansys.stk.core.stkobjects.StkObjectRoot.save_scenario
@@ -345,6 +486,18 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
+
+    Examples
+    --------
+
+    Open a Viewer Data File
+
+    .. code-block:: python
+
+        # StkObjectRoot root: STK Object Model Root
+        installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+        root.load_vdf(os.path.join(installPath, "Data", "ExampleScenarios", "Intro_STK_Space_Systems.vdf"), "")
 
 
 .. py:method:: object_exists(self, object_path: str) -> bool

@@ -34,6 +34,22 @@ Overview
 
 
 
+Examples
+--------
+
+Display drop lines in 3D Window
+
+.. code-block:: python
+
+    # Satellite satellite: Satellite object
+    orbitDroplines = satellite.graphics_3d.drop_lines.orbit
+    wgs84 = orbitDroplines.item(0)  # Droplines to WGS84 surface
+    wgs84.show_graphics = True
+    wgs84.line_width = LineWidth.WIDTH2
+    wgs84.use_2d_color = False
+    wgs84.color = Colors.Red
+
+
 Import detail
 -------------
 

@@ -36,6 +36,21 @@ Overview
               - Return an Ephemeris file of the CCSDS v2 ephemeris type for export.
 
 
+Examples
+--------
+
+Export an ephemeris file to scenario folder
+
+.. code-block:: python
+
+    # StkObjectRoot root: STK Object Model Root
+    # Satellite satellite: Satellite object
+    scenPath = root.execute_command("GetDirectory / Scenario").item(0)
+    satelliteFilePath = "%s\\%s.e" % (scenPath, satellite.instance_name)
+    satelliteFilePath = satelliteFilePath.replace("\\", "\\\\")
+    satellite.export_tools.get_ephemeris_stk_export_tool().export(satelliteFilePath)
+
+
 Import detail
 -------------
 

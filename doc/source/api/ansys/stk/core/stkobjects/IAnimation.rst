@@ -53,6 +53,29 @@ Overview
               - Control the animation speed.
 
 
+Examples
+--------
+
+Reset the scenario time
+
+.. code-block:: python
+
+    # StkObjectRoot root: STK Object Model Root
+    root.rewind()
+
+
+Change animation mode
+
+.. code-block:: python
+
+    # StkObjectRoot root: STK Object Model Root
+    scenario = root.current_scenario
+    root.animation_options = AnimationOptionType.STOP
+    root.mode = AnimationEndTimeMode.X_REAL_TIME
+    scenario.animation_settings.animation_step_value = 1  # second
+    scenario.animation_settings.refresh_delta = 0.03  # second
+
+
 Import detail
 -------------
 

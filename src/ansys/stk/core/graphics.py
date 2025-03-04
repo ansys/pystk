@@ -3721,7 +3721,16 @@ agcls.AgClassCatalog.add_catalog_entry((5489537290029782725, 4580717587449338530
 agcls.AgTypeNameMap["PathPointFactory"] = PathPointFactory
 
 class BoundingSphere(SupportsDeleteCallback):
-    """A sphere that encapsulates an object."""
+    """
+    A sphere that encapsulates an object.
+
+    Examples
+    --------
+    Create a Bounding Sphere:
+    >>> # Scenario scenario: Scenario object
+    >>> manager = scenario.scene_manager
+    >>> sphere = manager.initializers.bounding_sphere.initialize([[-1061.22], [-5773.98], [4456.04]], 100)
+    """
 
     _num_methods = 2
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -6766,7 +6775,39 @@ agcls.AgClassCatalog.add_catalog_entry((5096239221085204322, 4767820054995129484
 agcls.AgTypeNameMap["GlobeOverlaySettings"] = GlobeOverlaySettings
 
 class Lighting(SupportsDeleteCallback):
-    """Lighting in the 3D scene."""
+    """
+    Lighting in the 3D scene.
+
+    Examples
+    --------
+    Control the Lighting of the 3D scene:
+    >>> # Scenario scenario: Scenario object
+    >>> # Modify the lighting levels
+    >>> manager = scenario.scene_manager
+    >>> lighting = manager.scenes.item(0).lighting
+    >>> lighting.ambient_intensity = 0.20  # Percent
+    >>> lighting.diffuse_intensity = 4  # Percent
+    >>> lighting.night_lights_intensity = 5  # Percent
+
+    Set Vehicle Lighting Properties:
+    >>> # Satellite satellite: Satellite object
+    >>> lighting = satellite.graphics.lighting
+    >>> # Settings for vehicle in sunlight
+    >>> sunlight = lighting.sunlight
+    >>> sunlight.visible = True
+    >>> sunlight.color = Colors.Yellow
+    >>> sunlight.line_width = LineWidth.WIDTH4
+    >>> # Settings for vehicle in penumbra
+    >>> penumbra = lighting.penumbra
+    >>> penumbra.visible = True
+    >>> penumbra.color = Colors.Orange
+    >>> penumbra.line_width = LineWidth.WIDTH3
+    >>> # Settings for vehicle in umbra
+    >>> umbra = lighting.umbra
+    >>> umbra.visible = True
+    >>> umbra.color = Colors.Red
+    >>> umbra.line_width = LineWidth.WIDTH2
+    """
 
     _num_methods = 8
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -7891,7 +7932,29 @@ agcls.AgClassCatalog.add_catalog_entry((5590121640589148486, 2256538052145833109
 agcls.AgTypeNameMap["AxesPrimitive"] = AxesPrimitive
 
 class Camera(SupportsDeleteCallback):
-    """Implemented by the scene camera. Contains operations to manipulate the camera position, view direction and orientation in the scene."""
+    """
+    Implemented by the scene camera. Contains operations to manipulate the camera position, view direction and orientation in the scene.
+
+    Examples
+    --------
+    Change camera reference frame:
+    >>> # Scenario scenario: Scenario object
+    >>> # StkObjectRoot root: STK Object Model Root
+    >>> manager = scenario.scene_manager
+    >>> manager.scenes.item(0).camera.view_central_body(
+    >>>     "Earth", root.central_bodies.earth.analysis_workbench_components.axes.item("Fixed")
+    >>> )
+    >>> manager.render()
+
+    Change camera view to Imagery Extents:
+    >>> # Scenario scenario: Scenario object
+    >>> # AGIProcessedImageGlobeOverlay imageryTile: Image Overlay object
+    >>> manager = scenario.scene_manager
+    >>> extent = imageryTile.extent
+    >>> # Change extent in the default 3D window
+    >>> manager.scenes.item(0).camera.view_extent("Earth", extent)
+    >>> manager.render()
+    """
 
     _num_methods = 50
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -8363,7 +8426,35 @@ agcls.AgClassCatalog.add_catalog_entry((5108901659268738630, 1267390515419325813
 agcls.AgTypeNameMap["Camera"] = Camera
 
 class CentralBodyGraphics(SupportsDeleteCallback):
-    """The graphical properties associated with a particular central body. Changing the central body graphics will affect how the associated central body is rendered in a scene. For instance, to show or hide the central body, use the show property..."""
+    r"""
+    The graphical properties associated with a particular central body. Changing the central body graphics will affect how the associated central body is rendered in a scene. For instance, to show or hide the central body, use the show property...
+
+    Examples
+    --------
+    Add Imagery and Terrain to the Scene:
+    >>> # Scenario scenario: Scenario object
+    >>> # Retrieve the boundaries of the imported files
+    >>> manager = scenario.scene_manager
+    >>> # Add Terrain
+    >>> installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+    >>> terrainTile = manager.scenes.item(0).central_bodies.earth.terrain.add_uri_string(
+    >>>     os.path.join(installPath, "Data", "Resources", "stktraining", "samples", "SRTM_Skopje.pdtt")
+    >>> )
+    >>> extentTerrain = terrainTile.extent
+    >>> print(
+    >>>     "Terrain boundaries: LatMin: %s LatMax: %s LonMin: %s LonMax: %s"
+    >>>     % (str(extentTerrain[0]), str(extentTerrain[2]), str(extentTerrain[1]), str(extentTerrain[3]))
+    >>> )
+    >>> # Add Imagery
+    >>> imageryTile = manager.scenes.item(0).central_bodies.earth.imagery.add_uri_string(
+    >>>     os.path.join(installPath, "Data", "Resources", "stktraining", "imagery", "NPS_OrganPipeCactus_Map.pdttx")
+    >>> )
+    >>> extentImagery = imageryTile.extent
+    >>> print(
+    >>>     "Imagery boundaries: LatMin: %s LatMax: %s LonMin: %s LonMax: %s"
+    >>>     % (str(extentImagery[0]), str(extentImagery[2]), str(extentImagery[1]), str(extentImagery[3]))
+    >>> )
+    """
 
     _num_methods = 23
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -8715,7 +8806,23 @@ agcls.AgClassCatalog.add_catalog_entry((4674132715452051907, 2514679956769629370
 agcls.AgTypeNameMap["Clouds"] = Clouds
 
 class CompositeDisplayCondition(IDisplayCondition, SupportsDeleteCallback):
-    """A composite of display conditions combined using a binary logic operation. For example, several time interval display condition objects can be added to a composite..."""
+    """
+    A composite of display conditions combined using a binary logic operation. For example, several time interval display condition objects can be added to a composite...
+
+    Examples
+    --------
+    Display a Primitive During an Interval:
+    >>> # Scenario scenario: Scenario object
+    >>> # ModelPrimitive model: Graphics Primitive
+    >>> manager = scenario.scene_manager
+    >>> composite = manager.initializers.composite_display_condition.initialize()
+    >>> root.units_preferences.item("DateFormat").set_current_unit("EpSec")
+    >>> start = root.conversion_utility.new_date("EpSec", str(scenario.start_time))
+    >>> stop = root.conversion_utility.new_date("EpSec", str(scenario.start_time + 600))
+    >>> timeInterval = manager.initializers.time_interval_display_condition.initialize_with_times(start, stop)
+    >>> composite.add(timeInterval)
+    >>> model.display_condition = composite
+    """
 
     _num_methods = 18
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -13731,7 +13838,28 @@ agcls.AgClassCatalog.add_catalog_entry((5639872464997702223, 1326801877029811344
 agcls.AgTypeNameMap["PixelSizeDisplayCondition"] = PixelSizeDisplayCondition
 
 class PointBatchPrimitive(IPrimitive, SupportsDeleteCallback):
-    """Render one or more points in the 3D scene. Each point in the batch has a unique position and an optional color. All points in the batch share the same pixel size. For best performance, avoid creating lots of batches with only a few points each..."""
+    """
+    Render one or more points in the 3D scene. Each point in the batch has a unique position and an optional color. All points in the batch share the same pixel size. For best performance, avoid creating lots of batches with only a few points each...
+
+    Examples
+    --------
+    Draw a Point Primitive and set properties:
+    >>> # Scenario scenario: Scenario object
+    >>> manager = scenario.scene_manager
+    >>> point = manager.initializers.point_batch_primitive.initialize()
+    >>> ptPosition = [[0], [-1], [0]]  # Lat, Lon, Alt
+    >>> 
+    >>> point.set_cartographic("Earth", ptPosition)
+    >>> point.pixel_size = 15
+    >>> point.color = Colors.Lime
+    >>> point.display_outline = True
+    >>> point.outline_width = 5
+    >>> point.outline_color = Colors.Red
+    >>> 
+    >>> manager.primitives.add(point)
+    >>> # Render the Scene
+    >>> manager.render()
+    """
 
     _num_methods = 34
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -14832,7 +14960,18 @@ agcls.AgClassCatalog.add_catalog_entry((4905411456932095490, 5486952346846465436
 agcls.AgTypeNameMap["RhumbLineInterpolator"] = RhumbLineInterpolator
 
 class Scene(SupportsDeleteCallback):
-    """A scene provides properties and functionality that are reflected in the rendering of the globe control that it is associated with. An globe control's scene is available from the scene property..."""
+    """
+    A scene provides properties and functionality that are reflected in the rendering of the globe control that it is associated with. An globe control's scene is available from the scene property...
+
+    Examples
+    --------
+    Control Display of Stars and Water Texture:
+    >>> # Scenario scenario: Scenario object
+    >>> # Turn off the stars and water texture
+    >>> manager = scenario.scene_manager
+    >>> manager.scenes.item(0).show_stars = False
+    >>> manager.scenes.item(0).show_water_surface = False
+    """
 
     _num_methods = 25
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -15462,7 +15601,79 @@ agcls.AgClassCatalog.add_catalog_entry((5411628992035762574, 1801719498383295760
 agcls.AgTypeNameMap["ScreenOverlayPickResult"] = ScreenOverlayPickResult
 
 class SolidPrimitive(IPrimitive, SupportsDeleteCallback):
-    """Render filled solid objects and their outlines. Example solids include boxes and ellipsoids. Various effects are supported, such as displaying the solid's silhouette, and hiding the outline of the backside of the solid..."""
+    """
+    Render filled solid objects and their outlines. Example solids include boxes and ellipsoids. Various effects are supported, such as displaying the solid's silhouette, and hiding the outline of the backside of the solid...
+
+    Examples
+    --------
+    Draw a Solid Cylinder Primitive and set properties:
+    >>> # Scenario scenario: Scenario object
+    >>> manager = scenario.scene_manager
+    >>> originCylinder = root.conversion_utility.new_position_on_earth()
+    >>> originCylinder.assign_geodetic(0, 7, 100)
+    >>> 
+    >>> orientCylinder = root.conversion_utility.new_orientation()
+    >>> orientCylinder.assign_az_el(0, 0, AzElAboutBoresight.ROTATE)
+    >>> 
+    >>> cylinder = manager.initializers.cylinder_triangulator.create_simple(200, 100)
+    >>> solidCylinder = manager.initializers.solid_primitive.initialize()
+    >>> solidCylinder.reference_frame = root.central_bodies.earth.analysis_workbench_components.systems.item("Fixed")
+    >>> solidCylinder.position = originCylinder.query_cartesian_array()
+    >>> solidCylinder.set_with_result(cylinder)
+    >>> solidCylinder.color = Colors.Lime
+    >>> solidCylinder.outline_color = Colors.Blue
+    >>> solidCylinder.outline_width = 3
+    >>> solidCylinder.translucency = 0.75
+    >>> solidCylinder.rotation = orientCylinder
+    >>> manager.primitives.add(solidCylinder)
+    >>> manager.render()
+
+    Draw a Solid Ellipsoid Primitive and set properties:
+    >>> # Scenario scenario: Scenario object
+    >>> manager = scenario.scene_manager
+    >>> originEllipsoid = root.conversion_utility.new_position_on_earth()
+    >>> originEllipsoid.assign_geodetic(0, 5, 100)
+    >>> 
+    >>> orientEllipsoid = root.conversion_utility.new_orientation()
+    >>> orientEllipsoid.assign_az_el(0, 0, AzElAboutBoresight.ROTATE)
+    >>> 
+    >>> radii = [[200], [100], [100]]
+    >>> ellipsoid = manager.initializers.ellipsoid_triangulator.compute_simple(radii)
+    >>> solidEllipsoid = manager.initializers.solid_primitive.initialize()
+    >>> solidEllipsoid.reference_frame = root.central_bodies.earth.analysis_workbench_components.systems.item(
+    >>>     "Fixed"
+    >>> )  # vgtSat.Systems.item('Body')
+    >>> solidEllipsoid.position = originEllipsoid.query_cartesian_array()
+    >>> solidEllipsoid.set_with_result(ellipsoid)
+    >>> solidEllipsoid.color = Colors.White
+    >>> solidEllipsoid.outline_color = Colors.DeepPink
+    >>> solidEllipsoid.translucency = 0.75
+    >>> solidEllipsoid.rotation = orientEllipsoid
+    >>> manager.primitives.add(solidEllipsoid)
+    >>> manager.render()
+
+    Draw a Solid Box Primitive and set properties:
+    >>> # Scenario scenario: Scenario object
+    >>> manager = scenario.scene_manager
+    >>> originBox = root.conversion_utility.new_position_on_earth()
+    >>> originBox.assign_geodetic(0, 3, 100)
+    >>> 
+    >>> orientBox = root.conversion_utility.new_orientation()
+    >>> orientBox.assign_az_el(0, 0, AzElAboutBoresight.ROTATE)
+    >>> 
+    >>> size = [[100], [100], [200]]
+    >>> result = manager.initializers.box_triangulator.compute(size)
+    >>> solidBox = manager.initializers.solid_primitive.initialize()
+    >>> solidBox.reference_frame = root.central_bodies.earth.analysis_workbench_components.systems.item("Fixed")
+    >>> solidBox.position = originBox.query_cartesian_array()
+    >>> solidBox.set_with_result(result)
+    >>> solidBox.color = Colors.Red
+    >>> solidBox.outline_color = Colors.Cyan
+    >>> solidBox.translucency = 0.75
+    >>> solidBox.rotation = orientBox
+    >>> manager.primitives.add(solidBox)
+    >>> manager.render()
+    """
 
     _num_methods = 39
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -15948,7 +16159,33 @@ agcls.AgClassCatalog.add_catalog_entry((5004629829167520124, 7449422875768445375
 agcls.AgTypeNameMap["Stereoscopic"] = Stereoscopic
 
 class SurfaceMeshPrimitive(IPrimitive, SupportsDeleteCallback):
-    """A triangle mesh primitive for meshes on the surface that need to conform to terrain."""
+    """
+    A triangle mesh primitive for meshes on the surface that need to conform to terrain.
+
+    Examples
+    --------
+    Draw a new Surface Mesh:
+    >>> # Scenario scenario: Scenario object
+    >>> manager = scenario.scene_manager
+    >>> cartesianPts = [
+    >>>     [6030.721052],
+    >>>     [1956.627139],
+    >>>     [-692.397578],
+    >>>     [5568.375825],
+    >>>     [2993.600713],
+    >>>     [-841.076362],
+    >>>     [5680.743568],
+    >>>     [2490.379622],
+    >>>     [-1480.882721],
+    >>> ]  # X, Y, Z (km)
+    >>> 
+    >>> triangles = manager.initializers.surface_polygon_triangulator.compute("Earth", cartesianPts)
+    >>> surfaceMesh = manager.initializers.surface_mesh_primitive.initialize()
+    >>> surfaceMesh.color = Colors.Red
+    >>> surfaceMesh.set(triangles)
+    >>> manager.primitives.add(surfaceMesh)
+    >>> manager.render()
+    """
 
     _num_methods = 17
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -16368,7 +16605,21 @@ agcls.AgClassCatalog.add_catalog_entry((5009137188527673329, 1512801370180160660
 agcls.AgTypeNameMap["TerrainOverlay"] = TerrainOverlay
 
 class TextBatchPrimitive(IPrimitive, SupportsDeleteCallback):
-    """Render one or more strings in the 3D scene. For best performance, avoid creating lots of batches with only a few strings each. See the Batching Performance Overview."""
+    """
+    Render one or more strings in the 3D scene. For best performance, avoid creating lots of batches with only a few strings each. See the Batching Performance Overview.
+
+    Examples
+    --------
+    Draw a new Text Primitive:
+    >>> # Scenario scenario: Scenario object
+    >>> manager = scenario.scene_manager
+    >>> font = manager.initializers.graphics_font.initialize_with_name_size_font_style_outline(
+    >>>     "MS Sans Serif", 24, FontStyle.BOLD, True
+    >>> )
+    >>> textBatch = manager.initializers.text_batch_primitive.initialize_with_graphics_font(font)
+    >>> textBatch.set_cartographic("Earth", [[0], [0], [0]], ["Example Text"])  # Lat, Lon, Alt
+    >>> manager.primitives.add(textBatch)
+    """
 
     _num_methods = 32
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -17108,7 +17359,32 @@ agcls.AgClassCatalog.add_catalog_entry((5322719047750336006, 3163360220050271417
 agcls.AgTypeNameMap["TextureMatrix"] = TextureMatrix
 
 class TextureScreenOverlay(IScreenOverlay, IOverlay, IScreenOverlayContainer, SupportsDeleteCallback):
-    """A rectangular overlay that can be assigned a texture."""
+    r"""
+    A rectangular overlay that can be assigned a texture.
+
+    Examples
+    --------
+    Draw a new Texture Screen Overlay:
+    >>> # Scenario scenario: Scenario object
+    >>> manager = scenario.scene_manager
+    >>> overlays = manager.screen_overlays.overlays
+    >>> textureOverlay = manager.initializers.texture_screen_overlay.initialize_with_xy_width_height(0, 0, 128, 128)
+    >>> installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+    >>> textureOverlay.texture = manager.textures.load_from_string_uri(
+    >>>     os.path.join(installPath, "STKData", "VO", "Textures", "agilogo3.ppm")
+    >>> )
+    >>> textureOverlay.maintain_aspect_ratio = True
+    >>> textureOverlay.origin = ScreenOverlayOrigin.TOP_LEFT
+    >>> textureOverlay.position = [
+    >>>     [0],
+    >>>     [20],
+    >>>     [int(ScreenOverlayUnit.PIXEL)],
+    >>>     [int(ScreenOverlayUnit.PIXEL)],
+    >>> ]
+    >>> overlays.add(textureOverlay)
+    >>> # Render the Scene
+    >>> manager.render()
+    """
 
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -18144,7 +18420,35 @@ agcls.AgClassCatalog.add_catalog_entry((5535007049528422239, 1120454650675518121
 agcls.AgTypeNameMap["SurfaceExtentTriangulatorInitializer"] = SurfaceExtentTriangulatorInitializer
 
 class SurfacePolygonTriangulatorInitializer(SupportsDeleteCallback):
-    """Triangulates a polygon, with an optional hole, on a central body, into a triangle mesh and a surrounding boundary. The mesh is commonly visualized with the triangle mesh primitive or surface mesh primitive..."""
+    r"""
+    Triangulates a polygon, with an optional hole, on a central body, into a triangle mesh and a surrounding boundary. The mesh is commonly visualized with the triangle mesh primitive or surface mesh primitive...
+
+    Examples
+    --------
+    Draw a new Surface Extent Triangulator:
+    >>> # Scenario scenario: Scenario object
+    >>> manager = scenario.scene_manager
+    >>> installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+    >>> texture_path = os.path.join(installPath, "STKData", "VO", "Textures", "AGI_logo_small.png")
+    >>> texture = manager.textures.load_from_string_uri(texture_path)
+    >>> mesh = manager.initializers.surface_mesh_primitive.initialize()
+    >>> mesh.texture = texture
+    >>> mesh.translucency = 0
+    >>> cartographicExtent = [[-55], [10], [-24], [30]]
+    >>> 
+    >>> triangles = manager.initializers.surface_extent_triangulator.compute_simple("Earth", cartographicExtent)
+    >>> mesh.set(triangles)
+    >>> mesh.translucency = 0.25
+    >>> c0 = [[10], [-55]]
+    >>> c1 = [[30], [-55]]
+    >>> c2 = [[30], [-24]]
+    >>> c3 = [[10], [-24]]
+    >>> 
+    >>> mesh.texture_matrix = manager.initializers.texture_matrix.initialize_with_rectangles(c0, c1, c2, c3)
+    >>> mesh.transparent_texture_border = True
+    >>> manager.primitives.add(mesh)
+    >>> manager.render()
+    """
 
     _num_methods = 6
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -19216,7 +19520,22 @@ agcls.AgClassCatalog.add_catalog_entry((5711811913643509725, 1735539352452883138
 agcls.AgTypeNameMap["GraphicsFontFactory"] = GraphicsFontFactory
 
 class GreatArcInterpolatorFactory(SupportsDeleteCallback):
-    """The great arc interpolator computes interpolated positions along a great arc. A great arc is the shortest path between two positions on an ellipsoid."""
+    """
+    The great arc interpolator computes interpolated positions along a great arc. A great arc is the shortest path between two positions on an ellipsoid.
+
+    Examples
+    --------
+    Great Arc Interpolator Primitives:
+    >>> # Scenario scenario: Scenario object
+    >>> # Create a array of LLA values and interoplate them over the specified
+    >>> # central body
+    >>> positionArray = [[35.017], [-118.540], [0], [44.570], [-96.474], [0], [31.101], [-82.619], [0]]
+    >>> manager = scenario.scene_manager
+    >>> # Interpolate points over great arc
+    >>> interpolator = manager.initializers.great_arc_interpolator.initialize_with_central_body("Earth")
+    >>> interpolator.granularity = 0.1
+    >>> result = interpolator.interpolate(positionArray)
+    """
 
     _num_methods = 3
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
