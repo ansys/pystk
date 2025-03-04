@@ -38,6 +38,65 @@ Overview
               - Get the fast time options (without validation or constraints) for the current procedure.
 
 
+Examples
+--------
+
+Configure the wind and atmosphere for a procedure
+
+.. code-block:: python
+
+    # IProcedure procedure: Procedure object
+    # Get the wind model for the procedure
+    windModel = procedure.wind_model
+    # Use the procedure model
+    windModel.wind_model_source = WindAtmosModelSource.PROCEDURE_MODEL
+    # Let's use constant wind
+    windModel.wind_model_type = WindModelType.CONSTANT_WIND
+    # Get the constant wind model options
+    constantWind = windModel.mode_as_constant
+    # Set the wind bearing
+    constantWind.wind_bearing = 30
+    # Set the wind speed
+    constantWind.wind_speed = 5
+
+    # Get the atmosphere model used for the procedure
+    atmosphere = procedure.atmosphere_model
+    # Let's use the procedure model
+    atmosphere.atmosphere_model_source = WindAtmosModelSource.PROCEDURE_MODEL
+    # Get the basic atmosphere options
+    basicAtmosphere = atmosphere.mode_as_basic
+    # Use standard 1976 atmosphere
+    basicAtmosphere.basic_model_type = AtmosphereModelType.STANDARD1976
+
+
+Configure a procedure time options
+
+.. code-block:: python
+
+    # IProcedure procedure: Procedure object
+    # Get the time in epoch seconds
+    root.units_preferences.set_current_unit("DateFormat", "EpSec")
+    # Get the time options
+    timeOptions = procedure.time_options
+    # Get the start time
+    startTime = timeOptions.start_time
+    # Set the procedure to interrupt after 15 seconds
+    timeOptions.set_interrupt_time(15)
+
+
+Rename a procedure and its site
+
+.. code-block:: python
+
+    # IProcedure procedure: Procedure object
+    # Rename the procedure
+    procedure.name = "New Procedure"
+    # Get the site corresponding to the procedure
+    site = procedure.site
+    # Rename the site
+    site.name = "New Site"
+
+
 Import detail
 -------------
 

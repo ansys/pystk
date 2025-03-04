@@ -45,6 +45,63 @@ Overview
 
 
 
+Examples
+--------
+
+Add Array of Waypoints to Ground Vehicle and Interpolate over Terrain
+
+.. code-block:: python
+
+    # GroundVehicle grndVehicle: Ground Vehicle object
+    route = grndVehicle.route
+    ptsArray = [
+        [41.97766217, 21.44863761, 0, 0.026, 0.5],
+        [41.97422351, 21.39956154, 0, 0.026, 0.5],
+        [41.99173299, 21.40796942, 0, 0.026, 0.5],
+    ]
+    route.set_points_smooth_rate_and_propagate(ptsArray)
+    route.set_altitude_reference_type(VehicleAltitudeReference.TERRAIN)
+    route.altitude_reference.granularity = 0.001
+    route.altitude_reference.interpolation_method = VehicleWaypointInterpolationMethod.TERRAIN_HEIGHT
+    # Propagate the route
+    route.propagate()
+
+
+Set Great Arc Propagator and Add Individual Waypoints to Ground Vehicle
+
+.. code-block:: python
+
+    # GroundVehicle grndVehicle: Ground Vehicle object
+    # Set route to great arc, method and altitude reference
+    groundVehicle.set_route_type(PropagatorType.GREAT_ARC)
+    route = groundVehicle.route
+    route.method = VehicleWaypointComputationMethod.DETERMINE_TIME_ACCELERATION_FROM_VELOCITY
+    route.set_altitude_reference_type(VehicleAltitudeReference.WGS84)
+    # Add first point
+    waypoint = route.waypoints.add()
+    waypoint.latitude = 56.18
+    waypoint.longitude = 40.91
+    waypoint.altitude = 0  # km
+    waypoint.speed = 0.026  # km/sec
+    # Add second point
+    waypoint2 = route.waypoints.add()
+    waypoint2.latitude = 50.22
+    waypoint2.longitude = 11.05
+    waypoint2.altitude = 0  # km
+    waypoint2.speed = 0.026  # km/sec
+    # Propagate the route
+    route.propagate()
+
+
+Create a New Ground Vehicle (on the current scenario central body)
+
+.. code-block:: python
+
+    # Scenario scenario: Scenario object
+    grndVehicle = scenario.children.new(STKObjectType.GROUND_VEHICLE, "MyVehicle")
+    grndVehicle.set_route_type(PropagatorType.GREAT_ARC)
+
+
 Import detail
 -------------
 

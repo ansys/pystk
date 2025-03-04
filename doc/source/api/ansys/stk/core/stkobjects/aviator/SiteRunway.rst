@@ -52,6 +52,52 @@ Overview
 
 
 
+Examples
+--------
+
+Configure a runway site
+
+.. code-block:: python
+
+    # SiteRunway runway: Runway object
+    # Set the latitude, longitude, and altitude
+    runway.latitude = 41
+    runway.longitude = 77
+    runway.altitude = 5
+
+    # Set the altitude reference
+    runway.altitude_reference = AGLMSL.ALTITUDE_MSL
+
+    # Set the heading
+    runway.high_end_heading = 195
+    # Opt to use true heading
+    runway.is_magnetic = False
+
+    # Set the length of the runway
+    runway.length = 5
+
+    # Rename the runway
+    runway.name = "New User Runway"
+    # Add the runway to the catalog to use it for next time
+    runway.add_to_catalog(1)
+
+
+Configure a runway site from a runway in the Aviator catalog
+
+.. code-block:: python
+
+    # SiteRunway runway: Runway object
+    # Catalog catalog: Aviator catalog object
+    # Get the source of user runways
+    userRunways = catalog.runway_category.user_runways
+    # Check that the runway exists in the catalog
+    if userRunways.contains("New User Runway") is True:
+        # If so, get the user runway with the given name
+        runwayFromCatalog = userRunways.get_user_runway("New User Runway")
+        # Copy the parameters of that runway
+        runway.copy_from_catalog(runwayFromCatalog)
+
+
 Import detail
 -------------
 

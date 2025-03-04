@@ -22,6 +22,22 @@ Overview
               - Get or set the name of the site.
 
 
+Examples
+--------
+
+Rename a procedure and its site
+
+.. code-block:: python
+
+    # IProcedure procedure: Procedure object
+    # Rename the procedure
+    procedure.name = "New Procedure"
+    # Get the site corresponding to the procedure
+    site = procedure.site
+    # Rename the site
+    site.name = "New Site"
+
+
 Import detail
 -------------
 

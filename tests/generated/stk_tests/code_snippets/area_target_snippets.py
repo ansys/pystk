@@ -106,7 +106,7 @@ class AreaTargetSnippets(CodeSnippetsTestBase):
 
     def SetAreaTargetBoundaryAndPositionCommonTask(self, root: "StkObjectRoot", areaTarget: "AreaTarget"):
         # By using the CommonTasks interface,
-        # make an array of lattitude and longitude boundary points
+        # make an array of latitude and longitude boundary points
         boundary = [[40.04, -76.304], [40.337, -75.922], [40.028, -75.628]]
 
         # SetAreaTypePattern expects a two dimensional array of latitude and longitude values

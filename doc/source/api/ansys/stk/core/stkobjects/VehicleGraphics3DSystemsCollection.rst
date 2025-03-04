@@ -50,6 +50,20 @@ Overview
 
 
 
+Examples
+--------
+
+Add Fixed System Orbit System in 3D Display
+
+.. code-block:: python
+
+    # Satellite satellite: Satellite object
+    orbitsystems = satellite.graphics_3d.orbit_systems
+    orbitsystems.fixed_by_window.show_graphics = True
+    orbitsystems.fixed_by_window.inherit = False
+    orbitsystems.fixed_by_window.color = Colors.Yellow
+
+
 Import detail
 -------------
 
