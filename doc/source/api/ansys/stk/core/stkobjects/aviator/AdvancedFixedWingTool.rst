@@ -84,6 +84,48 @@ Overview
 
 
 
+Examples
+--------
+
+Configure the Advanced Fixed Wing Tool and set the aircraft to use the resulting performance models
+
+.. code-block:: python
+
+    # AircraftModel aviatorAircraft: Aviator Aircraft object
+    # Get the advanced fixed wing tool
+    advFixedWingTool = aviatorAircraft.advanced_fixed_wing_tool
+    # Set the basic geometry
+    advFixedWingTool.wing_area = 300
+    advFixedWingTool.flaps_area = 50
+    advFixedWingTool.speedbrakes_area = 10
+    # Set the structural and human factor limits
+    advFixedWingTool.max_altitude = 65000
+    advFixedWingTool.max_mach = 0.98
+    advFixedWingTool.max_eas = 460
+    advFixedWingTool.min_load_factor = -2.5
+    advFixedWingTool.max_load_factor = 4.5
+
+    # Opt to enforce the max temperature limit
+    advFixedWingTool.use_max_temperature_limit = True
+    advFixedWingTool.max_temperature = 900
+
+    # Use a subsonic aerodynamic strategy
+    advFixedWingTool.aerodynamic_strategy = AdvancedFixedWingAerodynamicStrategy.SUBSONIC_AERODYNAMIC
+    # Cache the aerodynamic data to improve calculation speed
+    advFixedWingTool.cache_aerodynamic_data = True
+    # Use a high bypass turbofan
+    advFixedWingTool.powerplant_strategy = AdvancedFixedWingPowerplantStrategy.TURBOFAN_HIGH_BYPASS
+    # Cache the fuel flow data to improve calculation speed
+    advFixedWingTool.cache_fuel_flow = True
+
+    # Create the corresponding performance models that reference the advanced fixed wing tool
+    # Specify the name, whether to override any existing models with the same name, and whether to set the new models as the default performance models
+    advFixedWingTool.create_all_performance_models("AdvancedModels", True, True)
+
+    # Save the changes in the catalog
+    aviatorAircraft.save()
+
+
 Import detail
 -------------
 

@@ -45,6 +45,63 @@ Overview
 
 
 
+Examples
+--------
+
+Set the Attitude of the Aircraft
+
+.. code-block:: python
+
+    # Aircraft aircraft: Aircraft object
+    aircraft.attitude.basic.set_profile_type(AttitudeProfile.COORDINATED_TURN)
+
+
+Add Array of Waypoints to Aircraft
+
+.. code-block:: python
+
+    # Aircraft aircraft: Aircraft object
+    route = aircraft.route
+    ptsArray = [[37.5378, 14.2207, 3.0480, 0.0772, 2], [47.2602, 30.5517, 3.0480, 0.0772, 2]]
+    route.set_points_smooth_rate_and_propagate(ptsArray)
+    # Propagate the route
+    route.propagate()
+
+
+Set Great Arc Propagator and Add Individual Waypoints to Aircraft
+
+.. code-block:: python
+
+    # Aircraft aircraft: Aircraft object
+    # Set route to great arc, method and altitude reference
+    aircraft.set_route_type(PropagatorType.GREAT_ARC)
+    route = aircraft.route
+    route.method = VehicleWaypointComputationMethod.DETERMINE_TIME_ACCELERATION_FROM_VELOCITY
+    route.set_altitude_reference_type(VehicleAltitudeReference.MEAN_SEA_LEVEL)
+    # Add first point
+    waypoint = route.waypoints.add()
+    waypoint.latitude = 37.5378
+    waypoint.longitude = 14.2207
+    waypoint.altitude = 5  # km
+    waypoint.speed = 0.1  # km/sec
+    # Add second point
+    waypoint2 = route.waypoints.add()
+    waypoint2.latitude = 47.2602
+    waypoint2.longitude = 30.5517
+    waypoint2.altitude = 5  # km
+    waypoint2.speed = 0.1  # km/sec
+    # Propagate the route
+    route.propagate()
+
+
+Create a New Aircraft (on the current scenario central body)
+
+.. code-block:: python
+
+    # StkObjectRoot root: STK Object Model root
+    aircraft = root.current_scenario.children.new(STKObjectType.AIRCRAFT, "MyAircraft")
+
+
 Import detail
 -------------
 

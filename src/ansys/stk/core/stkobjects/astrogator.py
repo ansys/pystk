@@ -4185,7 +4185,22 @@ agcls.AgTypeNameMap["INumericalIntegrator"] = INumericalIntegrator
 
 
 class MCSDriver(IPropagator, SupportsDeleteCallback):
-    """Properties for the Mission Control Sequence."""
+    """
+    Properties for the Mission Control Sequence.
+
+    Examples
+    --------
+    Set satellite propagator to Astrogator and clear segments:
+    >>> # Satellite satellite: Satellite object
+    >>> satellite.set_propagator_type(PropagatorType.ASTROGATOR)
+    >>> driver = satellite.propagator
+    >>> # Clear all segments from the MCS
+    >>> driver.main_sequence.remove_all()
+
+    Run the Astrogator MCS:
+    >>> # MCSDriver driver: MCS driver interface
+    >>> driver.run_mcs()
+    """
 
     _num_methods = 14
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods

@@ -54,6 +54,35 @@ Overview
 
 
 
+Examples
+--------
+
+Draw a new Surface Mesh
+
+.. code-block:: python
+
+    # Scenario scenario: Scenario object
+    manager = scenario.scene_manager
+    cartesianPts = [
+        [6030.721052],
+        [1956.627139],
+        [-692.397578],
+        [5568.375825],
+        [2993.600713],
+        [-841.076362],
+        [5680.743568],
+        [2490.379622],
+        [-1480.882721],
+    ]  # X, Y, Z (km)
+
+    triangles = manager.initializers.surface_polygon_triangulator.compute("Earth", cartesianPts)
+    surfaceMesh = manager.initializers.surface_mesh_primitive.initialize()
+    surfaceMesh.color = Colors.Red
+    surfaceMesh.set(triangles)
+    manager.primitives.add(surfaceMesh)
+    manager.render()
+
+
 Import detail
 -------------
 

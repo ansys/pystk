@@ -79,6 +79,17 @@ Overview
               - Get the object's metadata. Metadata is a collection of keys and their associated values.
 
 
+Examples
+--------
+
+Create a New AdvCAT Object
+
+.. code-block:: python
+
+    # Scenario scenario: Scenario object
+    advCAT = scenario.children.new(STKObjectType.ADVCAT, "MyAdvCAT")
+
+
 Import detail
 -------------
 

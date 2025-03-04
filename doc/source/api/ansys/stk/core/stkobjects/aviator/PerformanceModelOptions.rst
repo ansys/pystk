@@ -44,6 +44,29 @@ Overview
 
 
 
+Examples
+--------
+
+Configure the performance models to be used in the phase
+
+.. code-block:: python
+
+    # Phase phase: Phase object
+    # Get the acceleration performance model used for the current phase
+    acceleration = phase.get_performance_model_by_type("Acceleration")
+    # Check if it is linked to the catalog
+    isLinkedToCatalog = acceleration.is_linked_to_catalog
+    # Use the performance model in the catalog named "Built-In Model"
+    acceleration.link_to_catalog("Built-In Model")
+
+    # Get the VTOL performance model
+    vtol = phase.get_performance_model_by_type("VTOL")
+    # Create a new vtol model of type AGI VTOL Model. Note that this new model does not exist in the catalog and only exists in the phase.
+    vtol.create_new("AGI VTOL Model")
+    # Rename the performance model
+    vtol.rename("Temporary VTOL Model")
+
+
 Import detail
 -------------
 

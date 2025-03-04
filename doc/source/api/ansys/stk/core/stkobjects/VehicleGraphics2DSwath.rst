@@ -40,6 +40,21 @@ Overview
 
 
 
+Examples
+--------
+
+Set 2D Swath
+
+.. code-block:: python
+
+    # Satellite satellite: Satellite object
+    # Set swath in the 2D properties
+    swath = satellite.graphics.swath
+    swath.set_elevation_type(VehicleGraphics2DElevation.ELEVATION_GROUND_ELEVATION)
+    swath.elevation.angle = 30  # deg
+    satellite.graphics.swath.options = VehicleGraphics2DOptionType.OPTIONS_EDGE_LIMITS
+
+
 Import detail
 -------------
 

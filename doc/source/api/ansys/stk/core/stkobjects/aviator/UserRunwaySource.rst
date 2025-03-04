@@ -28,6 +28,25 @@ Overview
               - Get the catalog source interface for this object.
 
 
+Examples
+--------
+
+Configure a runway site from a runway in the Aviator catalog
+
+.. code-block:: python
+
+    # SiteRunway runway: Runway object
+    # Catalog catalog: Aviator catalog object
+    # Get the source of user runways
+    userRunways = catalog.runway_category.user_runways
+    # Check that the runway exists in the catalog
+    if userRunways.contains("New User Runway") is True:
+        # If so, get the user runway with the given name
+        runwayFromCatalog = userRunways.get_user_runway("New User Runway")
+        # Copy the parameters of that runway
+        runway.copy_from_catalog(runwayFromCatalog)
+
+
 Import detail
 -------------
 

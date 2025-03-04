@@ -41,6 +41,34 @@ Overview
 
 
 
+Examples
+--------
+
+Set initial state of satellite and propagate
+
+.. code-block:: python
+
+    # Satellite satellite: Satellite object
+    keplerian = satellite.propagator.initial_state.representation.convert_to(OrbitStateType.CLASSICAL)
+    keplerian.size_shape_type = ClassicalSizeShape.ALTITUDE
+    keplerian.location_type = ClassicalLocation.TRUE_ANOMALY
+    keplerian.orientation.ascending_node_type = OrientationAscNode.LONGITUDE_ASCENDING_NODE
+
+    # Assign the perigee and apogee altitude values:
+    keplerian.size_shape.perigee_altitude = 500  # km
+    keplerian.size_shape.apogee_altitude = 600  # km
+
+    # Assign the other desired orbital parameters:
+    keplerian.orientation.inclination = 90  # deg
+    keplerian.orientation.argument_of_periapsis = 12  # deg
+    keplerian.orientation.ascending_node.value = 24  # deg
+    keplerian.location.value = 180  # deg
+
+    # Apply the changes made to the satellite's state and propagate:
+    satellite.propagator.initial_state.representation.assign(keplerian)
+    satellite.propagator.propagate()
+
+
 Import detail
 -------------
 

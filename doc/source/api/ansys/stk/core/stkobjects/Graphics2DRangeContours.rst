@@ -37,6 +37,27 @@ Overview
 
 
 
+Examples
+--------
+
+Set 2D/3D Range Contours
+
+.. code-block:: python
+
+    # Satellite satellite: Satellite object
+    # Set a contour level in the 2D properties
+    rangeContours = satellite.graphics.range_contours
+    rangeContours.show_graphics = True
+    rangeLevel = rangeContours.level_attributes.add_level(2000)  # km
+    rangeLevel.color = Colors.Fuchsia
+    rangeLevel.line_width = LineWidth.WIDTH5
+    rangeLevel.label_angle = 90
+    rangeLevel.show_user_text_visible = True
+    rangeLevel.user_text = "Range"
+    # Turn the contours on in the 3D properties
+    satellite.graphics_3d.range_contours.show_graphics = True
+
+
 Import detail
 -------------
 

@@ -86,6 +86,42 @@ Overview
 
 
 
+Examples
+--------
+
+Sensor Body Mask
+
+.. code-block:: python
+
+    # Sensor sensor: Sensor object
+    installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+    sensor.set_az_el_mask_file(
+        os.path.join(installPath, "Data", "Resources", "stktraining", "text", "BodyMask_hga.bmsk")
+    )
+
+
+Set Sensor Properties
+
+.. code-block:: python
+
+    # Sensor sensor: Sensor object
+    # Change pattern and set
+    sensor.common_tasks.set_pattern_rectangular(20, 25)
+    # Change pointing and set
+    sensor.common_tasks.set_pointing_fixed_az_el(90, 60, AzElAboutBoresight.ROTATE)
+    # Change location and set
+    sensor.set_location_type(SensorLocation.FIXED)
+    sensor.location_data.assign_cartesian(-0.0004, -0.0004, 0.004)
+
+
+Attach a Sensor Object to a Vehicle
+
+.. code-block:: python
+
+    # Satellite satellite: Satellite object
+    sensor = satellite.children.new(STKObjectType.SENSOR, "MySensor")
+
+
 Import detail
 -------------
 

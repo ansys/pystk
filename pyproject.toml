@@ -48,7 +48,7 @@ grpc = [
     "protobuf",
 ]
 tests = [
-    "pytest==8.3.4",
+    "pytest==8.3.5",
     "pytest-cov==6.0.0",
     "pytz==2025.1",
     "parameterized==0.9.0",
@@ -71,7 +71,7 @@ doc = [
     "sphinx-jinja==2.0.2",
     "sphinx-copybutton==0.5.2",
     "pandas==2.2.3",
-    "matplotlib==3.10.0",
+    "matplotlib==3.10.1",
     "sphinxcontrib-jquery==4.1",
     "sphinxcontrib-mermaid==1.0.0",
 ]

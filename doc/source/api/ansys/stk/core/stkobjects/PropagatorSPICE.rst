@@ -44,6 +44,30 @@ Overview
 
 
 
+Examples
+--------
+
+Set satellite propagator to SPICE and propagate
+
+.. code-block:: python
+
+    # Satellite satellite: Satellite object
+    # StkObjectRoot root: STK Object Model Root
+    satellite.set_propagator_type(PropagatorType.SPICE)
+    propagator = satellite.propagator
+    installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+    propagator.spice = os.path.join(
+        installPath, "STKData", "Spice", "planets.bsp"
+    )  # Make sure this is a valid path
+    propagator.body_name = "MARS"
+
+    propagator.ephemeris_interval.set_implicit_interval(
+        root.current_scenario.analysis_workbench_components.time_intervals.item("AnalysisInterval")
+    )  # Link to scenario period
+    propagator.step = 60.0
+    propagator.propagate()
+
+
 Import detail
 -------------
 

@@ -31,6 +31,47 @@ Overview
 
 
 
+Examples
+--------
+
+Define sensor pointing fixed axes YPR
+
+.. code-block:: python
+
+    # Sensor sensor: Sensor object
+    # Change pointing and set
+    sensor.common_tasks.set_pointing_fixed_axes_ypr("CentralBody/Sun J2000 Axes", YPRAnglesSequence.RYP, 11, 22, 33)
+
+
+Define sensor pointing fixed axes Quaternion
+
+.. code-block:: python
+
+    # Sensor sensor: Sensor object
+    # Change pointing and set
+    sensor.common_tasks.set_pointing_fixed_axes_quaternion("CentralBody/Sun J2000 Axes", 0.1, 0.2, 0.3, 0.4)
+
+
+Define sensor pointing fixed axes Euler
+
+.. code-block:: python
+
+    # Sensor sensor: Sensor object
+    # Change pointing and set
+    sensor.common_tasks.set_pointing_fixed_axes_euler(
+        "CentralBody/Sun J2000 Axes", EulerOrientationSequenceType.SEQUENCE_132, 30, 40, 50
+    )
+
+
+Define sensor pointing fixed axes AzEl
+
+.. code-block:: python
+
+    # Sensor sensor: Sensor object
+    # Change pointing and set
+    sensor.common_tasks.set_pointing_fixed_axes_az_el("CentralBody/Sun J2000 Axes", 11, 22, AzElAboutBoresight.HOLD)
+
+
 Import detail
 -------------
 

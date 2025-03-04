@@ -50,6 +50,25 @@ Overview
 
 
 
+Examples
+--------
+
+Compute Object Coverage
+
+.. code-block:: python
+
+    # Aircraft aircraft: Aircraft object
+    objCoverage = aircraft.object_coverage
+    objCoverage.assets.remove_all
+    objCoverage.assets.add("Satellite/MySatellite")
+    objCoverage.use_object_times = True
+    objCoverage.compute()
+
+    objCoverageFOM = objCoverage.figure_of_merit
+    objCoverageFOM.set_definition_type(FigureOfMeritDefinitionType.COVERAGE_TIME)
+    objCoverageFOM.definition.set_compute_type(FigureOfMeritCompute.TOTAL)
+
+
 Import detail
 -------------
 

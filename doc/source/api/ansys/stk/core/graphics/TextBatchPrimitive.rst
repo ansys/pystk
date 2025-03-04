@@ -78,6 +78,23 @@ Overview
 
 
 
+Examples
+--------
+
+Draw a new Text Primitive
+
+.. code-block:: python
+
+    # Scenario scenario: Scenario object
+    manager = scenario.scene_manager
+    font = manager.initializers.graphics_font.initialize_with_name_size_font_style_outline(
+        "MS Sans Serif", 24, FontStyle.BOLD, True
+    )
+    textBatch = manager.initializers.text_batch_primitive.initialize_with_graphics_font(font)
+    textBatch.set_cartographic("Earth", [[0], [0], [0]], ["Example Text"])  # Lat, Lon, Alt
+    manager.primitives.add(textBatch)
+
+
 Import detail
 -------------
 
