@@ -28,6 +28,28 @@ Overview
               - Get the catalog source interface for this object.
 
 
+Examples
+--------
+
+Set the aircraft used for the mission to an aircraft found in the Aviator catalog
+
+.. code-block:: python
+
+    # AviatorPropagator propagator: Aviator Propagator object
+    # Get the Aviator catalog
+    catalog = propagator.aviator_catalog
+    # Get the aircraft category
+    category = catalog.aircraft_category
+    # Get the user aircraft models
+    aircraftModels = category.aircraft_models
+    # Get the basic fighter
+    fighter = aircraftModels.get_aircraft("Basic Fighter")
+    # Get the mission
+    mission = propagator.aviator_mission
+    # Set the vehicle used for the mission
+    mission.vehicle = fighter
+
+
 Import detail
 -------------
 

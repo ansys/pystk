@@ -35,6 +35,43 @@ Overview
 
 
 
+Examples
+--------
+
+Load MTO track points from file
+
+.. code-block:: python
+
+    # load_points expects the path an Ephemeris file path
+    # MTO mto: MTO Object
+    track2 = mto.tracks.add(2)
+    installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+    track2.points.load_points(
+        os.path.join(installPath, "Data", "Resources", "stktraining", "text", "EphemerisLLATimePosVel_Example.e")
+    )
+    track2.interpolate = True
+
+
+Create a New MTO (on the current scenario central body)
+
+.. code-block:: python
+
+    # Scenario scenario: Scenario object
+    mto = scenario.children.new(STKObjectType.MTO, "MyMTO")
+
+    root.units_preferences.set_current_unit("DateFormat", "EpSec")
+
+    mtoTimes = [[0], [7200]]
+    mtoLats = [[36.77], [34.80]]
+    mtoLons = [[-77.25], [-78.37]]
+    mtoAlts = [[5], [5]]
+
+    track1 = mto.tracks.add_track(1, mtoTimes, mtoLats, mtoLons, mtoAlts)
+    track1.interpolate = True
+    # Change the color of the track
+    mto.graphics.tracks.get_track_from_identifier(1).color = Colors.Red
+
+
 Import detail
 -------------
 

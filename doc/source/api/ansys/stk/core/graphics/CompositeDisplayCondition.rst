@@ -64,6 +64,25 @@ Overview
 
 
 
+Examples
+--------
+
+Display a Primitive During an Interval
+
+.. code-block:: python
+
+    # Scenario scenario: Scenario object
+    # ModelPrimitive model: Graphics Primitive
+    manager = scenario.scene_manager
+    composite = manager.initializers.composite_display_condition.initialize()
+    root.units_preferences.item("DateFormat").set_current_unit("EpSec")
+    start = root.conversion_utility.new_date("EpSec", str(scenario.start_time))
+    stop = root.conversion_utility.new_date("EpSec", str(scenario.start_time + 600))
+    timeInterval = manager.initializers.time_interval_display_condition.initialize_with_times(start, stop)
+    composite.add(timeInterval)
+    model.display_condition = composite
+
+
 Import detail
 -------------
 

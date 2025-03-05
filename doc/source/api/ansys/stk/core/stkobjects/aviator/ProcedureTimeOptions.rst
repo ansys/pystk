@@ -52,6 +52,24 @@ Overview
 
 
 
+Examples
+--------
+
+Configure a procedure time options
+
+.. code-block:: python
+
+    # IProcedure procedure: Procedure object
+    # Get the time in epoch seconds
+    root.units_preferences.set_current_unit("DateFormat", "EpSec")
+    # Get the time options
+    timeOptions = procedure.time_options
+    # Get the start time
+    startTime = timeOptions.start_time
+    # Set the procedure to interrupt after 15 seconds
+    timeOptions.set_interrupt_time(15)
+
+
 Import detail
 -------------
 

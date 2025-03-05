@@ -70,6 +70,18 @@ Overview
 
 
 
+Examples
+--------
+
+Change the Display Label of the vehicle
+
+.. code-block:: python
+
+    # Satellite satellite: Satellite object
+    satellite.graphics.use_instance_name_label = False
+    satellite.graphics.label_name = "Python Satellite"
+
+
 Import detail
 -------------
 

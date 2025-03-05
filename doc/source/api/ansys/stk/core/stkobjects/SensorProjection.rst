@@ -60,6 +60,22 @@ Overview
 
 
 
+Examples
+--------
+
+Sensor Persistence
+
+.. code-block:: python
+
+    # Sensor sensor: Sensor object
+    projection = sensor.graphics.projection
+    projection.persistence = 7200  # sec
+    projection.forward_persistence = True
+    projection.fill_persistence = True
+    sensor.graphics.show_fill = True
+    sensor.graphics.percent_translucency = 50
+
+
 Import detail
 -------------
 

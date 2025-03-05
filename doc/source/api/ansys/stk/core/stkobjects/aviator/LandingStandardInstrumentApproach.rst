@@ -37,6 +37,36 @@ Overview
 
 
 
+Examples
+--------
+
+Add and configure a landing procedure
+
+.. code-block:: python
+
+    # IProcedureCollection procedures: Procedure Collection object
+    # Add a landing procedure
+    landing = procedures.add(SiteType.SITE_RUNWAY, ProcedureType.PROCEDURE_LANDING)
+
+    # Get the runway heading options
+    headingOptions = landing.runway_heading_options
+    # Land from the low end
+    headingOptions.runway_mode = RunwayHighLowEnd.LOW_END
+
+    # Use a standard instrument approach
+    landing.approach_mode = ApproachMode.STANDARD_INSTRUMENT_APPROACH
+    # Get the options for a standard instrument approach
+    sia = landing.mode_as_standard_instrument_approach
+    # Change the approach altitude
+    sia.approach_altitude = 1000
+    # Change the glideslope
+    sia.glideslope = 4
+    # Offset the runway altitude
+    sia.runway_altitude_offset = 10
+    # Use the terrain as an altitude reference for the runway
+    sia.use_runway_terrain = True
+
+
 Import detail
 -------------
 

@@ -58,6 +58,69 @@ Overview
 
 
 
+Examples
+--------
+
+Modify Antenna Graphics
+
+.. code-block:: python
+
+    # Antenna antenna: Antenna object
+    contours = antenna.graphics.contour_graphics
+    contours.set_contour_type(AntennaContourType.GAIN)
+    contours.show = True
+    for i in range(-30, 30, 5):
+        contours.contour.levels.add(i)
+    antenna.graphics_3d.show_contours = True
+    antenna.graphics_3d.volume_graphics.show = True
+
+
+Modify Antenna Orientation and Position
+
+.. code-block:: python
+
+    # Antenna antenna: Antenna object
+    antOrientation = antenna.orientation
+    antOrientation.assign_az_el(0, -90, AzElAboutBoresight.ROTATE)
+    antOrientation.position_offset.x = 0.0  # m
+    antOrientation.position_offset.y = 1  # m
+    antOrientation.position_offset.z = 0.25  # m
+
+
+Modify Antenna Refraction
+
+.. code-block:: python
+
+    # Antenna antenna: Antenna object
+    antenna.use_refraction_in_access = True
+    antenna.refraction = SensorRefractionType.ITU_R_P834_4
+    refraction = antenna.refraction_model
+    refraction.ceiling = 5000  # m
+    refraction.atmosphere_altitude = 10000  # m
+    refraction.knee_bend_factor = 0.2
+
+
+Modify Antenna Model Type
+
+.. code-block:: python
+
+    # Antenna antenna: Antenna object
+    antenna.set_model("Dipole")
+    antennaModel = antenna.model
+    antennaModel.design_frequency = 15  # GHz
+    antennaModel.length = 1.5  # m
+    antennaModel.length_to_wavelength_ratio = 45
+    antennaModel.efficiency = 85  # Percent
+
+
+Create a New Antenna Object
+
+.. code-block:: python
+
+    # IStkObject satellite: STK object
+    antenna = satellite.children.new(STKObjectType.ANTENNA, "MyAntenna")
+
+
 Import detail
 -------------
 

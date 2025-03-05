@@ -58,6 +58,28 @@ Overview
 
 
 
+Examples
+--------
+
+Set satellite propagator to Astrogator and clear segments
+
+.. code-block:: python
+
+    # Satellite satellite: Satellite object
+    satellite.set_propagator_type(PropagatorType.ASTROGATOR)
+    driver = satellite.propagator
+    # Clear all segments from the MCS
+    driver.main_sequence.remove_all()
+
+
+Run the Astrogator MCS
+
+.. code-block:: python
+
+    # MCSDriver driver: MCS driver interface
+    driver.run_mcs()
+
+
 Import detail
 -------------
 

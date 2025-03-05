@@ -33,6 +33,19 @@ Overview
 
 
 
+Examples
+--------
+
+Create a New Line Target (on the current scenario central body)
+
+.. code-block:: python
+
+    # Scenario scenario: Scenario object
+    lineTarget = scenario.children.new(STKObjectType.LINE_TARGET, "MyLineTarget")
+    point1 = lineTarget.points.add(34.72, -118.34)
+    point2 = lineTarget.points.add(30.83, -82.67)
+
+
 Import detail
 -------------
 

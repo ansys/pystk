@@ -33,6 +33,23 @@ Overview
 
 
 
+Examples
+--------
+
+Set 2D/3D Elevation Contours
+
+.. code-block:: python
+
+    # Satellite satellite: Satellite object
+    # Set the contours in the 2D properties
+    contours = satellite.graphics.elevation_contours
+    contours.show_graphics = True
+    contours.number_of_decimal_digits = 0
+    contours.elevations.add_level_range(0, 90, 10)  # Min, Max, Step
+    # Turn the contours on in the 3D properties
+    satellite.graphics_3d.elevation_contours.show_graphics = True
+
+
 Import detail
 -------------
 

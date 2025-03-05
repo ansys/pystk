@@ -37,6 +37,24 @@ Overview
 
 
 
+Examples
+--------
+
+Change the 3D Model and marker properties
+
+.. code-block:: python
+
+    # Satellite satellite: Satellite object
+    model = satellite.graphics_3d.model
+    model.model_data.filename = r"STKData\VO\Models\Space\dsp.glb"
+    orbitmarker = model.orbit_marker
+    installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+    orbitmarker.set_marker_image_filename(os.path.join(installPath, "STKData", "VO", "Markers", "Satellite.ppm"))
+    orbitmarker.marker_data.is_transparent = True
+    orbitmarker.pixel_size = 18
+    orbitmarker.orientation_mode = Graphics3DMarkerOrientation.FOLLOW_DIRECTION
+
+
 Import detail
 -------------
 

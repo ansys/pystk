@@ -34,6 +34,13 @@ Use the STKDesktop.StartApplication method to start a new STK application sessio
 *INSERT TABLE*
 Argument | Description
 
+.. literalinclude:: /../../tests/doc_snippets_tests/initialization/initialization_snippets.py
+  :language: py
+  :tab-width: 4
+  :start-after: def CreateSTKNewSnippet
+  :end-at: stk.shutdown()
+  :dedent:
+
 
 Attach to a running STK instance
 --------------------------------
