@@ -1,4 +1,4 @@
-Help with PYSTK
+Help with PySTK
 ###############
 
 Refer to the following resources for help with PySTK. 
@@ -23,6 +23,6 @@ PySTK troubleshooting
 
 To help you resolve any problems that you might have when using PySTK, refer to the following common problems and frequently asked questions:
 
-*DO WE HAVE ANY CONTENT WE CAN ADD HERE? ANY QUESTIONS FROM ACE THAT MAY HAVE COME UP?*
+
 
 

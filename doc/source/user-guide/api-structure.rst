@@ -1,7 +1,7 @@
 API structure
 ##############
 
-This topic explores the foundational structure of PySTK, providing you with an understanding of its organization and key components. It covers topics such as the use of packages and namespaces, the available data types, common coding patterns, how exceptions are handled, and the event-driven mechanisms that enable interactions. Understanding these elements will help you navigate PySTK effectively.
+This topic explores the foundational structure of PySTK, providing you with an understanding of its organization and key components. It covers topics such as the use of packages and namespaces, the available data types, common coding patterns, how exceptions are handled, and the event-driven mechanisms that enable interactions. Understanding these elements can help you navigate PySTK effectively.
 
 
 Packages and namespaces
@@ -11,17 +11,17 @@ Packages and namespaces are fundamental to the organization and structure of PyS
 
 Data types
 ==========
-Data types form the building blocks for handling and processing information with PySTK. This section describes the more complex data types used with PySTK beyond the basic Python data types such as float, int, str, and bool. 
+Data types form the building blocks for handling and processing information with PySTK. This section describes the more complex data types used with PySTK beyond the basic Python data types such as float, int, str, and boolean. 
 
 Type hints
 ----------
 
-Most argument and return types are specified using type hints with Python's typing library. In the case that more than one type is possible (such as an argument that may be a string or a float), typing.Any is used as the type hint. In those situations, consulting the documentation for that method is advised. Type hints that are STK interfaces may represent objects that are subclasses of that interface.
+Most argument and return types are specified using type hints with Python's typing library. In the case that more than one type is possible (such as an argument that may be a string or a float), typing. Any is used as the type hint. In those situations, consulting the documentation for that method is advised. Type hints that are STK interfaces may represent objects that are subclasses of that interface.
 
 Enumerations
 ------------
 
-Enumerations (enums) enable you to define a set of named constant values. Enumeration classes are located in the STK Object Model modules (e.g. agi.stk12.stkobjects). Most inherit from Python's enum.IntEnum class while a few inherit from enum.IntFlag and may be combined using the | operator to select multiple options from within the enumeration.
+Enumerations enable you to define a set of named constant values. Enumeration classes are located in the STK Object Model modules (for example—agi.stk12.stkobjects). Most inherit from Python's enum.IntEnum class while a few inherit from enum.IntFlag and may be combined using the | operator to select multiple options from within the enumeration.
 
 *INSERT PYTHON - PYSTK CODE*
 
@@ -36,7 +36,7 @@ Arrays are used to store and manipulate collections of items in Python. Many met
 STK interfaces and classes
 --------------------------
 
-The STK object model is comprised of programming interfaces that are implemented by Python classes located in the provided modules. With few exceptions, classes returned from API methods begin with "Ag" and will inherit from one or more interfaces (beginning with "IAg"). You may immediately access any method from the inherited interfaces without casting, although in some situations casting may help with your IDE auto-complete feature. These classes have a reference to an STK object; this reference will be removed upon calling del() on the Python class. Because these classes are references to STK objects, creating them directly from Python will not be successful; objects must be returned from STK API methods.
+The STK object model is comprised of programming interfaces that are implemented by Python classes located in the provided modules. With few exceptions, classes returned from API methods begin with "Ag" and inherits from one or more interfaces (beginning with "IAg"). You may immediately access any method from the inherited interfaces without casting, although in some situations casting may help with your IDE auto-complete feature. These classes have a reference to an STK object; this reference is removed upon calling del() on the Python class. Because these classes are references to STK objects, you cannot create them directly from Python; objects must be returned from STK API methods.
 
 *INSERT PYTHON - PYSTK CODE*
 
@@ -60,7 +60,7 @@ Some methods in PYSTK return multiple values rather than returning one list. The
 Colors
 ------
 
-The agi.stk12.utilities.colors module contains the Color, ColorRGBA, and Colors classes used by the STK Python API. The Color class represents an opaque color constructed from RGB values in the range [0, 255]. ColorRGBA represents a variably-translucent, 4-channel color constructed from RGBA values in the range [0, 255]. ColorRGBA may not be used in methods expecting a 3-channel color. Colors contains an assortment of named colors as well as factory methods to create Color or ColorRGBA objects from RGB(A) values.
+The agi.stk12.utilities.colors module contains the Color, ColorRGBA, and Colors classes used by the STK Python API. The Color class represents an opaque color constructed from RGB values in the range [0, 255]. ColorRGBA represents a variably translucent, 4-channel color constructed from RGBA values in the range [0, 255]. ColorRGBA may not be used in methods expecting a 3-channel color. Colors contains an assortment of named colors as well as factory methods to create Color or ColorRGBA objects from RGB(A) values.
 
 *INSERT PYTHON - PYSTK CODE*
 
@@ -86,11 +86,11 @@ This section provides information on the Strategy Pattern as it relates to PySTK
 gRPC call batching
 ------------------
 
-Making multiple network calls can introduce latency and ineffiency, especially when those calls are made sequentially. gRPC call batching is used to optimize the performance of gRPC-based communication by combining multiple requests into a single batch. This reduces the overhead of multiple round trips, improves performance, and enhances scalability.
+Making multiple network calls can introduce latency, especially when those calls are made sequentially. gRPC call batching is used to optimize the performance of gRPC-based communication by combining multiple requests into a single batch. This reduces the overhead of multiple round trips, improves performance, and enhances scalability.
 
 Calling the application method NewGrpcCallBatcher returns an object of type agi.stk12.utilities.grpcutilities.GrpcCallBatcher. This feature is provided as an option to reduce the communication over the gRPC server in performance-critical applications. API calls may be batched together and sent to STK in one remote procedure call if no return value is needed from the calls.
 
-Activating batching causes the normal API exception behavior to be altered. Exceptions from one command may appear asyncronously. Therefore, it is not recommended to use call batching while building and debugging, but rather as a performance optimization.
+Activating batching causes the normal API exception behavior to be altered. Exceptions from one command may appear asynchronously. Therefore, it is not recommended to use call batching while building and debugging, but rather as a performance optimization.
 
 Only calls that do not return a value may be batched together, such as set-property requests and methods without a return value. Any method that has a return value (including get-property requests) automatically execute any previously batched commands before the method with a return value is executed.
 
@@ -122,7 +122,7 @@ You can access events directly in applicable parent objects, as displayed in the
 
 Event interface | Parent object
 
-Events are accessed through the Subscribe() method on the parent object, which returns an event handler subscribed to events on the queried object. You can add or remove Event callbacks in the event handler using the "+=" and "-=" operators; these operators will change the callbacks that will get executed by the event but will not affect whether the handler remains subscribed. The event handler should be unsubscribed using the Unsubscribe() method when event handling is no longer needed. Refer to the following example for using IAgStkObjectRootEvents.
+Events are accessed through the Subscribe() method on the parent object, which returns an event handler subscribed to events on the queried object. You can add or remove Event callbacks in the event handler using the "+=" and "-=" operators; these operators change the callbacks that get executed by the event but do not affect whether the handler remains subscribed. The event handler should be unsubscribed using the Unsubscribe() method when event handling is no longer needed. Refer to the following example for using IAgStkObjectRootEvents.
 
 .. code-block:: python
 
@@ -160,17 +160,17 @@ The STK Desktop application user interface might become unresponsive to user inp
     stkObjectRootEvents.OnStkObjectAdded += onStkObjectAddedCallback
     sc = root.CurrentScenario
 
-    #onStkObjectAddedCallback will be successfully called when the next line is executed
+    #onStkObjectAddedCallback is successfully called when the next line is executed
     fac = sc.Children.New(AgESTKObjectType.eFacility, 'AGIHQ')
 
     #Now switch control to the desktop application and create another facility.
-    #The user interface will become unresponsive.
+    #The user interface becomes unresponsive.
 
     #Now open a tkinter window that processing COM messages.
     from tkinter import Tk
     window = Tk()
     window.mainloop()
     #Switch control to the desktop application and create another facility.
-    #The user interface will be responsive and the event callback will be successful.
+    #The user interface is responsive and the event callback is successful.
 
 

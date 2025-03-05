@@ -3,9 +3,9 @@ Extract results and graphs
 
 The STK Object Model provides direct access to the data provider tools that are exposed by each object in STK, which are the foundation of the report styles in the GUI. 
 
-Reports in STK are typically used to generate results like satellite positions, sensor coverage, or any time-dependent parameters. You can use PySTK to generate reports, extract their data, and export them to formats like CSV or Excel. This topic describes how to translate a report into its corresponding set of Data Providers, and demonstrates how to programatically retrieve the data contained within through the Object Model. 
+Reports in STK are typically used to generate results like satellite positions, sensor coverage, or any time-dependent parameters. You can use PySTK to generate reports, extract their data, and export them to formats like CSV or Excel. This topic describes how to translate a report into its corresponding set of Data Providers, and demonstrates how to retrieve the data contained within through the Object Model. 
 
-About STK Data Providers
+About STK data providers
 ========================
 
 Data Providers in STK are essential for accessing detailed, time-dependent data from objects and systems in your scenario. They are part of STK's object model and are key to extracting and manipulating information related to different aspects of your model, such as satellite positions, sensor coverage, communication links, and more. By using the STK Object Model, you can automate the retrieval of this data for further processing, visualization, or reporting.
@@ -35,28 +35,28 @@ In the Report Contents section of the Report Style window, the various Data Prov
 .. note::
     The Section, Line, and Time elements are used to provide formatting for the report style; they are not actual data providers.
 
-Data Providers
+Data providers
 ==============
 
 In the Data Providers section of the Report Style window, the Data Providers available for a particular object are listed. Expand a particular group to view the nested Data Providers associated with that group. Expanding a particular Data Provider further to display the data Elements that are associated with it. 
 
 (./img/data-providers.png)
 
-Groups, Data Providers, and Elements are the organizing principles of the Data Provider functionality provided by the STK Object Model. 
+Groups, Data Providers, and Elements are the organizing principles of the Data Providers provided by the STK Object Model. 
 
-Object Model
+Object model
 ============
 
-Now that you have explored the concepts of Report Styles and Data Providers, continue to use the example report used above, J2000 Position Velocity, to demonstrate retrieving it's data through the Object Model. First, recall what Data Providers the report was constructed from. In the Report Contents window, the J2000 Position Velocity Report is made up of specific elements of the J2000 Data Provider from two groups — Cartesian Velocity and Cartesian Position. 
+Now that you have explored the concepts of Report Styles and Data Providers, continue to use the preceding example report, J2000 Position Velocity, to demonstrate retrieving it's data through the Object Model. First, recall what Data Providers the report was constructed from. In the Report Contents window, the J2000 Position Velocity Report is made up of specific elements of the J2000 Data Provider from two groups—Cartesian Velocity and Cartesian Position. 
 
 (./img/object-model-report-contents.png)
 
 Get connected
 =============
 
-This example assumes that you have STK running with a scenario that contains a sallite called “Satellite1”. The scenario's start date should be set to “1 Jul 2020, 17:14:00.00”. The scenario's stop date should be set to “1 Jul 2020, 17:29:00.00”. Ensure that the satellite's associated times use the scenario's times as well.
+This example assumes that you have STK running with a scenario that contains a sattelite called “Satellite1”. The scenario's start date should be set to “1 Jul 2020, 17:14:00.00”. The scenario's stop date should be set to “1 Jul 2020, 17:29:00.00”. Ensure that the satellite's associated times use the scenario's times as well.
 
-The following code example connects to STK, and establishs a reference to the satellite.
+The following code example connects to STK, and establishes a reference to the satellite.
 
 .. code-block::
     
@@ -82,14 +82,14 @@ To retrieve the data for the J2000 Position Velocity report, you must setup its 
     CartVelJ2000 = CartVel.Group.Item("J2000")
     CartPosJ2000 = CartPos.Group.Item("J2000")
 
-The basic interfaces are now setup to compute information from the Data Providers that the report is using. Next, you need to cast your interfaces to a certain interface in order to provide the DataProvider with inputs so it can compute the proper data.
+The basic interfaces are now setup to compute information from the Data Providers that the report is using. Next, you need to cast your interfaces to a certain interface to provide the DataProvider with inputs so it can compute the proper data.
 
-Data Provider PreData inputs
+Data provider PreData inputs
 ============================
 
 Some Data Providers require input data before the calculation can provide data results. This data is known as PreData. There are two ways to ascertain if PreData is required for a particular Data Provider:
 
-- Refer to the Data Provider documentation which will provide the format of the PreData if any is required.
+- Refer to the Data Provider documentation which provides the format of the PreData if any is required.
 - Retrieve the Data Provider Schema and parse it for PreData tags.
 
 .. code-block::
@@ -100,7 +100,7 @@ Some Data Providers require input data before the calculation can provide data r
 
 Once the format of the PreData is know, you can set the PreData property on the Data Provider interface. This PreData property must be set before issuing the data provider's calculation method. 
 
-Set the PreData property on the Data Provider interface
+Set the PreData property on the data provider interface
 -------------------------------------------------------
 
 The following example demonstrates setting the Object Path as the PreData for the “RIC Coordinates” Data Provider and then calls the Data Provider’s computation execution method. 
@@ -118,19 +118,19 @@ The following example demonstrates setting the Object Path as the PreData for th
     Dim oResult As STKObjects.IAgDrResult
     oResult = oProvider.Exec(0, 90000, 1000)
 
-Data Provider Time Inputs
+Data provider time inputs
 -------------------------
 
 In the Time Period section of the Report Window in STK, highlight J2000 Position Velocity and click the Specify Time Properties radio button. The J2000 Position Velocity Report uses a time period to provide the underlying Data Providers information about what data to compute. You need to provide the same information to the Object Model Data Providers. 
 
 (./img/specify-time-properties.png)
 
-Retrieve the Data 
+Retrieve the data 
 =================
 
 There are three ways to compute the data, depending on the data provider type. The first method requires a time interval and step size, the second requires only a time interval, and the third is independent of time. 
 
-You must provide input information to the Data Providers by casting our Data Provider interfaces to the proper execution interface. In the case of the Cartesian Velocity and Position Data Providers, you should cast to the IAgDataPrvTimeVar interface: 
+You must provide input information to the Data Providers by casting the Data Provider interfaces to the proper execution interface. In the case of the Cartesian Velocity and Position Data Providers, you should cast to the IAgDataPrvTimeVar interface: 
 
 .. code-block::
 
@@ -139,7 +139,7 @@ You must provide input information to the Data Providers by casting our Data Pro
     VelTimeVariable = CartVelJ2000
     PosTimeVariable = CartPosJ2000
 
-You are now ready to retrieve the information from our Data Providers. The data is always returned as an IAgDrResult interface. Provide the Exec method of the TimeVar interfaces with the Data Provider Inputs (Start Time, Stop Time, and Step Size):
+You are now ready to retrieve the information from the Data Providers. The data is always returned as an IAgDrResult interface. Provide the Exec method of the TimeVar interfaces with the Data Provider Inputs (Start Time, Stop Time, and Step Size):
 
 .. code-block::
 
@@ -151,15 +151,15 @@ You are now ready to retrieve the information from our Data Providers. The data 
 
 VelResult and PosResult now contain the data from the J2000 Cartesian Velocity and Cartesian Position Data Providers. You now have more data than the original Report contained.
 
-Retrieve Specific Elements
+Retrieve specific elements
 ==========================
 
-Recall that your original Cartesian Position Velocity Report contained only four elements of the Cartesian Velocity J2000 Group — x, y, z, and speed. Similarly, the Cartesian Position J2000 Data Provider contained within your Report Style only contains 3 elements — x, y, and z.
+Recall that your original Cartesian Position Velocity Report contained only four elements of the Cartesian Velocity J2000 Group—x, y, z, and speed. Similarly, the Cartesian Position J2000 Data Provider contained within your Report Style only contains 3 elements—x, y, and z.
 
 (./img/object-model-report-contents.png)
 
 When you executed the J2000 Data Provider of Cartesian Velocity, you actually retrieved seven elements instead of the four specifically contained in the
-report, adding the Time, radial, and intrack elements to your DataProvider Result. To be precise as possible, you want IAgDRResult to contain only the elements which were contained in the original report. To do this, use the ExecElements() method. 
+report, adding the Time, radial, and in track elements to your DataProvider Result. To be precise as possible, you want IAgDRResult to contain only the elements which were contained in the original report. To do this, use the ExecElements() method. 
 
 First, specify in an array the elements that you want to retrieve from the Data Provider. Next, pass the array into the ExecElements() method:
 
@@ -174,7 +174,7 @@ First, specify in an array the elements that you want to retrieve from the Data 
     
     PosResult = PosTimeVariable.ExecElements("18 Mar 2009 16:00:00.00", _"19 Mar 2009 16:00:00.00", _60, _PosElems) 
 
-You now have the original data from the J2000 Position Velocity Report stored in our IAgDrResults and are ready to traverse the data. 
+You now have the original data from the J2000 Position Velocity Report stored in IAgDrResults and are ready to traverse the data. 
 
 Traverse the result data
 
@@ -182,7 +182,7 @@ If you review look your original report, the data in the report consisted of tim
 
 (./img/original-report-data.png)
 
-Similarly, you need to cast your result to the appropriate interface to make use of your data. In the case of our J2000 Cartesian Velocity and Position DataProviders, that interface is the IAgDrIntervalCollection. Since each data provider result shares the same result type, you can consolidate the data traversal into one method, which takes an IAgDrResult interface: 
+Similarly, you need to cast your result to the appropriate interface to make use of your data. In the case of the J2000 Cartesian Velocity and Position DataProviders, that interface is the IAgDrIntervalCollection. Since each data provider result shares the same result type, you can consolidate the data traversal into one method, which takes an IAgDrResult interface: 
 
 .. code-block::
 
@@ -216,18 +216,19 @@ Similarly, you need to cast your result to the appropriate interface to make use
  End Sub
 
 .. note::
-    The type of data returned by the DataProvider can be determined using the Category property of the IAgDrResult interface, which returns an enumeration describing the interface. The Value property is then cast to one of three interfaces, depending on the Category enumeration: IAgDrIntervalCollection, IAgDrSubSectionCollection, or IAgDrTextMessage. 
+    The type of data returned by the DataProvider can be determined using the Category property of the IAgDrResult interface, which returns an enumeration describing the interface. The Value property is then cast to one of three interfaces, depending on the Category enumeration—IAgDrIntervalCollection, IAgDrSubSectionCollection, or IAgDrTextMessage. 
 
-Complete the outut
+Complete the output
+===================
 
-Finally, you must call ythe method with IAgDrResults, and the data from the J2000 Position Velocity Report will be traversed and output: 
+Finally, you must call the method with IAgDrResults, and the data from the J2000 Position Velocity Report is traversed and output: 
 
 .. code-block::
 
     WriteIntervalData(PosResult)
     WriteIntervalData(VelResult)
 
-As previously noted, it is up to you to decide in what unit the data is returned. Issuing the following command before calling WriteIntervalData() chnges the data that is output to be displayed in meters per second, rather then kilometers.
+As previously noted, it is up to you to decide in what unit the data is returned. Issuing the following command before calling WriteIntervalData() changes the data that is output to be displayed in meters per second, rather then kilometers.
 
 .. code-block::
     

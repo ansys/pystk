@@ -24,7 +24,7 @@ To get started, determine the configuration that you want to use:
 Initialize PySTK with STK Desktop
 ===================================
 
-This section describes how to use PySTK with STK Desktop. The STKDesktop.StartApplication and STKDesktop.AttachToApplication methods are available to obtain the STKDesktopApplication class and begin interacting with STK through the the AgUiApplication API. From the application interface, the most common way to begin working with STK is to use the IAgStkObjectRoot interface, which is accessible as the Root property of the STKDesktopApplication object.
+This section describes how to use PySTK with STK Desktop. The STKDesktop.StartApplication and STKDesktop.AttachToApplication methods are available to obtain the STKDesktopApplication class and begin interacting with STK through the AgUiApplication API. From the application interface, the most common way to begin working with STK is to use the IAgStkObjectRoot interface, which is accessible as the Root property of the STKDesktopApplication object.
 
 Start a new STK Desktop instance
 --------------------------------
@@ -38,7 +38,7 @@ Argument | Description
 Attach to a running STK instance
 --------------------------------
 
-Use the STKDesktop.AttachToApplication method to attach to a running STK desktop application. The AttachToApplication method has additional arguments to specify the Process ID (pid) if more than one STK application is running:
+Use the STKDesktop.AttachToApplication method to attach to a running STK desktop application. The AttachToApplication method has additional arguments to specify the Process ID (PID) if more than one STK application is running:
 
 *INSERT TABLE*
 Argument | Description
@@ -56,7 +56,7 @@ Initialize with PySTK
 from agi.stk12.stkengine import STKEngine
 stk = STKEngine.StartApplication(noGraphics=True)
 
-The NoGraphics mode also alters the way scenarios are saved and loaded. When an engine application in NoGraphics mode loads a scenario coming from STK Desktop, the 2D and 3D information serialized as part of the scenario is ignored. If that scenario is then saved, all 2D and 3D information will be lost. If the scenario is then loaded into STK Desktop, default graphics options will be used.
+The NoGraphics mode also alters the way scenarios are saved and loaded. When an engine application in NoGraphics mode loads a scenario coming from STK Desktop, the 2D and 3D information serialized as part of the scenario is ignored. If that scenario is then saved, all 2D and 3D information is lost. If the scenario is then loaded into STK Desktop, default graphics options are used.
 
 
 Initialize STK Engine
@@ -70,10 +70,10 @@ Start STK Engine
 
 Finish your work with STK Engine
 --------------------------------
-STKEngineApplication provides a ShutDown method that is the recommended way to terminate the connection to STK and free up resources. After calling ShutDown, it is no longer valid to start a new engine application in the current process.
+STKEngineApplication provides a ShutDown method that is the recommended way to stop the connection to STK and free up resources. After calling ShutDown, it is no longer valid to start a new engine application in the current process.
 
 
-Tkinter GlobeControl, Map, and GFx analysis controls
+Tkinter GlobeControl, MapControl, and GfxAnalysisControl
 ----------------------------------------------------
 This section describes how to use PySTK with the Tkinter GlobeControl, MapControl, and GfxAnalysisControl classes.
 
@@ -82,15 +82,15 @@ Create a Tkinter window with a globe control
 *INSERT PYTHON EXAMPLE*
 
 
-Initialize STK Runtime
+Initialize STKRuntime
 ======================
 
-STKRuntime is an executable that serves STK Engine functionality vai gRPC. Use agi.stk12.stkruntime to start or attach to a running STKRuntime application. Once the STKRuntimeAPplication object is obtained, interact with STK, via IAgStkObjectRoot obtained from calling STKRuntimeApplication.NewObjectRoot(). Shutting down the remote STKRuntime process is possible by calling STKRuntimeApplication.ShutDown(), or using the userControl=False option when starting the application.
+STKRuntime is an executable that serves STK Engine capabilities via gRPC. Use agi.stk12.stkruntime to start or attach to a running STKRuntime application. Once the STKRuntimeApplication object is obtained, interact with STK, via IAgStkObjectRoot obtained from calling STKRuntimeApplication.NewObjectRoot(). Shutting down the remote STKRuntime process is possible by calling STKRuntimeApplication.ShutDown(), or using the userControl=False option when starting the application.
 
 Start a new STKRuntime instance
 -------------------------------
 
-STKRuntime may be started on the local machine using STKRuntime.StartApplication(). While STKRuntime offers STK Engine functionality similar to the STKEngine module, there are a few key differences, including:
+STKRuntime may be started on the local machine using STKRuntime.StartApplication(). While STKRuntime offers STK Engine capabilities similar to the STKEngine module, there are a few key differences, including:
 
 - STK Engine runs STK in-process with Python, whereas STKRuntime is out-of-process using gRPC to communicate.
 - STKRuntime does not offer visualizations at this time.
