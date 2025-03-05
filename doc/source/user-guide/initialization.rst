@@ -52,7 +52,7 @@ Argument | Description
 
 
 
-Initialize STK Engine NoGraphics
+Initialize STKEngine NoGraphics
 ================================
 
 If your use case consists of using STK Engine as a computational tool and does not require 2D/3D visualization (for instance, if your application is running as a service on a compute node without direct user interaction), using the NoGraphics option results in faster load times and a lighter memory footprint. When that option is turned on, all 2D and 3D graphics support is skipped, and the code and libraries related to graphics do not get loaded into memory. This option must be set to true when running on hardware that does not have hardware or software support for OpenGL or X11 on Linux. It needs to be turned on during initialization and cannot be changed afterwards. The 2D, 3D and Graphics Analysis controls are obviously not available. To select this mode, set the NoGraphics property to true after creating the STK X application object and before performing any other operation with STK Engine:

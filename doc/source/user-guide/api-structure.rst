@@ -11,7 +11,7 @@ Packages and namespaces are fundamental to the organization and structure of PyS
 
 Data types
 ==========
-Data types form the building blocks for handling and processing information with PySTK. This section describes the more complex data types used with PySTK beyond the basic Python data types such as float, int, str, and boolean. 
+Data types form the building blocks for handling and processing information with PySTK. This section describes the more complex data types used with PySTK beyond the basic Python data types such as float, int, str, and bool. 
 
 Type hints
 ----------

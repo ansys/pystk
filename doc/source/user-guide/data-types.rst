@@ -59,7 +59,7 @@ Pandas DataFrames
 
 Pandas DataFrames offer a powerful and flexible way to organize and manipulate structured data. Designed for handling tabular data, DataFrames enable you to store, filter, and transform simulation results. With Pandas, you can seamlessly work with time-indexed data, perform group-based analysis, and integrate your results with a wide range of data analysis and visualization tools.
 
-You can convert a dataset collection in row format as a Pandas DataFrame. DataFrames are the key to Pandas' fast and efficient data manipulation and analysis. They are a two-dimensional, tabular data structure with labeled indexing for rows and columns, where the columns can contain data of various data types. DataFrames supports powerful aggregation and transformation functionality, time series capabilities, merging operations of datasets, hierarchical indexing, vectorized operations, flexible reshaping capabilities, and much more.
+You can convert a dataset collection in row format as a Pandas DataFrame. DataFrames are the key to Pandas' fast and efficient data manipulation and analysis. They are a two-dimensional, tabular data structure with labeled indexing for rows and columns, where the columns can contain data of various data types. DataFrames supports powerful aggregation and transformation capabilities, time series capabilities, merging operations of datasets, hierarchical indexing, vectorized operations, flexible reshaping capabilities, and much more.
 
 The ToPandasDataFrame() method called on IAgDrDataSetCollection, returns a data provider's results dataset collection as Pandas DataFrame. The DataFrame row index length, equal to the total number of rows in the dataset collection and each column in the DataFrame, maps to a unique field name in the dataset collection. For example, if the computed Flight Profile by Time data provider results dataset collection contains 6000 rows and 100 fields column fields, the returned DataFrame has a row index length of 6000 and 100 columns.
 
@@ -111,7 +111,7 @@ This example provides the Python implementation for computing descriptive statis
     # convert dataset collection in a row format as a Pandas DataFrame with default numeric row index
     all_regions_coverage_df = coverage_data.DataSets.ToPandasDataFrame()
 
-    # comptue descriptive statistics of Duration, Percent Coverage, Area Coverage
+    # compute descriptive statistics of Duration, Percent Coverage, Area Coverage
     all_regions_coverage_df[['duration', 'percent coverage', 'area coverage']].describe()
 
 This produces the following data table:
@@ -141,7 +141,7 @@ This example provides the Python implementation for computing descriptive statis
     # convert dataset collection in a row format as a Pandas DataFrame with default numeric row index
     all_regions_coverage_df = coverage_data.DataSets.ToPandasDataFrame()
 
-    # comptue descriptive statistics of Duration, Percent Coverage, Area Coverage grouped by Asset Name (Satellite)
+    # compute descriptive statistics of Duration, Percent Coverage, Area Coverage grouped by Asset Name (Satellite)
     all_region_coverage_df.groupby('asset name').agg({'duration': ['mean', 'min', q1, q2, q3, 'max'],
     'percent coverage': ['mean', 'min', q1, q2, q3, 'max'],
     'area coverage': ['mean', 'min', q1, q2, q3, 'max']

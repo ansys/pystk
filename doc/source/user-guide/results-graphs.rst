@@ -54,7 +54,7 @@ Now that you have explored the concepts of Report Styles and Data Providers, con
 Get connected
 =============
 
-This example assumes that you have STK running with a scenario that contains a sattelite called “Satellite1”. The scenario's start date should be set to “1 Jul 2020, 17:14:00.00”. The scenario's stop date should be set to “1 Jul 2020, 17:29:00.00”. Ensure that the satellite's associated times use the scenario's times as well.
+This example assumes that you have STK running with a scenario that contains a satellite called “Satellite1”. The scenario's start date should be set to “1 Jul 2020, 17:14:00.00”. The scenario's stop date should be set to “1 Jul 2020, 17:29:00.00”. Ensure that the satellite's associated times use the scenario's times as well.
 
 The following code example connects to STK, and establishes a reference to the satellite.
 
