@@ -74,6 +74,7 @@ doc = [
     "matplotlib==3.10.1",
     "sphinxcontrib-jquery==4.1",
     "sphinxcontrib-mermaid==1.0.0",
+    "toml==0.10.2",
 ]
 visualization = [
     "jupyter-rfb==0.5.1",
