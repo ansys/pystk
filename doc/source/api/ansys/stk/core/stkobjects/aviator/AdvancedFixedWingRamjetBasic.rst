@@ -19,17 +19,17 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingRamjetBasic.design_altitude`
-              - Gets or sets the altitude design point of the engine.
+              - Get or set the altitude design point of the engine.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingRamjetBasic.design_mach`
-              - Gets or sets the mach number design point of the engine.
+              - Get or set the mach number design point of the engine.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingRamjetBasic.design_thrust`
-              - Gets or sets the thrust design point of the engine.
+              - Get or set the thrust design point of the engine.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingRamjetBasic.max_compression_temp`
-              - Gets or sets the maximum temperature at the compressor stage.
+              - Get or set the maximum temperature at the compressor stage.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingRamjetBasic.max_burner_temp`
-              - Gets or sets the maximum temperature at the combustion stage.
+              - Get or set the maximum temperature at the combustion stage.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingRamjetBasic.fuel_type`
-              - Gets or sets the jet engine's fuel type.
+              - Get or set the jet engine's fuel type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingRamjetBasic.fuel_mode_as_afprop`
               - Get the interface for a Kerosene - AFPROP fuel mode.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingRamjetBasic.fuel_mode_as_cea`
@@ -54,37 +54,37 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingRamjetBasic.design_altitude
     :type: float
 
-    Gets or sets the altitude design point of the engine.
+    Get or set the altitude design point of the engine.
 
 .. py:property:: design_mach
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingRamjetBasic.design_mach
     :type: float
 
-    Gets or sets the mach number design point of the engine.
+    Get or set the mach number design point of the engine.
 
 .. py:property:: design_thrust
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingRamjetBasic.design_thrust
     :type: float
 
-    Gets or sets the thrust design point of the engine.
+    Get or set the thrust design point of the engine.
 
 .. py:property:: max_compression_temp
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingRamjetBasic.max_compression_temp
     :type: float
 
-    Gets or sets the maximum temperature at the compressor stage.
+    Get or set the maximum temperature at the compressor stage.
 
 .. py:property:: max_burner_temp
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingRamjetBasic.max_burner_temp
     :type: float
 
-    Gets or sets the maximum temperature at the combustion stage.
+    Get or set the maximum temperature at the combustion stage.
 
 .. py:property:: fuel_type
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingRamjetBasic.fuel_type
     :type: JetFuelType
 
-    Gets or sets the jet engine's fuel type.
+    Get or set the jet engine's fuel type.
 
 .. py:property:: fuel_mode_as_afprop
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingRamjetBasic.fuel_mode_as_afprop

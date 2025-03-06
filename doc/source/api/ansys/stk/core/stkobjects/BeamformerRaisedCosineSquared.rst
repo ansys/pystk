@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.BeamformerRaisedCosineSquared.p`
-              - Gets or sets the  raised cosine-squared roll-off factor.
+              - Get or set the  raised cosine-squared roll-off factor.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.BeamformerRaisedCosineSquared.p
     :type: float
 
-    Gets or sets the  raised cosine-squared roll-off factor.
+    Get or set the  raised cosine-squared roll-off factor.
 
 

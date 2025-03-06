@@ -1,3 +1,25 @@
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
 import pytest
 from test_util import *
 from access_constraints.access_constraint_helper import *
@@ -2392,10 +2414,17 @@ class SensorHelper(object):
     # region StarsInFOV
     def StarsInFOV(self):
         self.m_logger.WriteLine("----- THE StarsInFOV TEST ----- BEGIN -----")
-        StarColl: "ICelestialBodyInformationCollection" = self.m_oSensor.get_stars_in_field_of_view(0.0)
+        celBodyColl: "ICelestialBodyInformationCollection" = self.m_oSensor.get_stars_in_field_of_view(0.0)
+        Assert.assertTrue((celBodyColl.count > 0))
+
+        celBodyColl.recycle = True
+        Assert.assertTrue(celBodyColl.recycle)
+
+        celBodyInfo: "ICelestialBodyInformation" = celBodyColl[0]
+        Assert.assertEqual("Hip", celBodyInfo.catalog_name)
 
         # BUG58418 - verify that calling this with time before object time does not crash.
-        StarColl = self.m_oSensor.get_stars_in_field_of_view(-100.0)
+        celBodyColl = self.m_oSensor.get_stars_in_field_of_view(-100.0)
 
         self.m_logger.WriteLine("----- THE StarsInFOV TEST ----- END -----")
 

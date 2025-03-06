@@ -32,46 +32,129 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.SolidPrimitive.affected_by_lighting`
-              - Gets or sets whether the primitive is affected by lighting.
+              - Get or set whether the primitive is affected by lighting.
             * - :py:attr:`~ansys.stk.core.graphics.SolidPrimitive.display_fill`
-              - Gets or sets whether the solid's fill is displayed.
+              - Get or set whether the solid's fill is displayed.
             * - :py:attr:`~ansys.stk.core.graphics.SolidPrimitive.display_silhouette`
-              - Gets or sets whether the solid's silhouette is displayed.
+              - Get or set whether the solid's silhouette is displayed.
             * - :py:attr:`~ansys.stk.core.graphics.SolidPrimitive.silhouette_color`
-              - Gets or sets the silhouette's color.
+              - Get or set the silhouette's color.
             * - :py:attr:`~ansys.stk.core.graphics.SolidPrimitive.silhouette_translucency`
-              - Gets or sets the silhouette's translucency. Translucency is between 0 and 1, where 0 is opaque and 1 is transparent.
+              - Get or set the silhouette's translucency. Translucency is between 0 and 1, where 0 is opaque and 1 is transparent.
             * - :py:attr:`~ansys.stk.core.graphics.SolidPrimitive.silhouette_width`
-              - Gets or sets the silhouette' width, in pixels.
+              - Get or set the silhouette' width, in pixels.
             * - :py:attr:`~ansys.stk.core.graphics.SolidPrimitive.minimum_silhouette_width_supported`
-              - Gets the minimum silhouette width, in pixels, supported by the video card.
+              - Get the minimum silhouette width, in pixels, supported by the video card.
             * - :py:attr:`~ansys.stk.core.graphics.SolidPrimitive.maximum_silhouette_width_supported`
-              - Gets the maximum silhouette width, in pixels, supported by the video card.
+              - Get the maximum silhouette width, in pixels, supported by the video card.
             * - :py:attr:`~ansys.stk.core.graphics.SolidPrimitive.display_outline`
-              - Gets or sets whether the solid's outline is displayed.
+              - Get or set whether the solid's outline is displayed.
             * - :py:attr:`~ansys.stk.core.graphics.SolidPrimitive.outline_color`
-              - Gets or sets the outline's color.
+              - Get or set the outline's color.
             * - :py:attr:`~ansys.stk.core.graphics.SolidPrimitive.outline_translucency`
-              - Gets or sets the outline's translucency. Translucency is between 0 and 1, where 0 is opaque and 1 is transparent.
+              - Get or set the outline's translucency. Translucency is between 0 and 1, where 0 is opaque and 1 is transparent.
             * - :py:attr:`~ansys.stk.core.graphics.SolidPrimitive.outline_width`
-              - Gets or sets the outline's width, in pixels.
+              - Get or set the outline's width, in pixels.
             * - :py:attr:`~ansys.stk.core.graphics.SolidPrimitive.outline_appearance`
-              - Gets or sets the outline's appearance.
+              - Get or set the outline's appearance.
             * - :py:attr:`~ansys.stk.core.graphics.SolidPrimitive.back_line_color`
-              - Gets or sets the back line's color.
+              - Get or set the back line's color.
             * - :py:attr:`~ansys.stk.core.graphics.SolidPrimitive.back_line_translucency`
-              - Gets or sets the back line's translucency. Translucency is between 0 and 1, where 0 is opaque and 1 is transparent.
+              - Get or set the back line's translucency. Translucency is between 0 and 1, where 0 is opaque and 1 is transparent.
             * - :py:attr:`~ansys.stk.core.graphics.SolidPrimitive.position`
-              - Gets or sets the solid's position. The position is defined in the solid's reference frame. The array contains the components of the position in the order x, y, z.
+              - Get or set the solid's position. The position is defined in the solid's reference frame. The array contains the components of the position in the order x, y, z.
             * - :py:attr:`~ansys.stk.core.graphics.SolidPrimitive.rotation`
-              - Gets or sets the rotation applied to the solid before rendering.
+              - Get or set the rotation applied to the solid before rendering.
             * - :py:attr:`~ansys.stk.core.graphics.SolidPrimitive.scale`
-              - Gets or sets a non-uniform scale that is applied to the solid to increase or decrease its rendered size. The array contains the scale for each component of the size in the order x scale, y scale, z scale.
+              - Get or set a non-uniform scale that is applied to the solid to increase or decrease its rendered size. The array contains the scale for each component of the size in the order x scale, y scale, z scale.
             * - :py:attr:`~ansys.stk.core.graphics.SolidPrimitive.back_line_width`
-              - Gets or sets the back line's width, in pixels.
+              - Get or set the back line's width, in pixels.
             * - :py:attr:`~ansys.stk.core.graphics.SolidPrimitive.set_hint`
-              - Gets the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with.
+              - Get the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with.
 
+
+
+Examples
+--------
+
+Draw a Solid Cylinder Primitive and set properties
+
+.. code-block:: python
+
+    # Scenario scenario: Scenario object
+    manager = scenario.scene_manager
+    originCylinder = root.conversion_utility.new_position_on_earth()
+    originCylinder.assign_geodetic(0, 7, 100)
+
+    orientCylinder = root.conversion_utility.new_orientation()
+    orientCylinder.assign_az_el(0, 0, AzElAboutBoresight.ROTATE)
+
+    cylinder = manager.initializers.cylinder_triangulator.create_simple(200, 100)
+    solidCylinder = manager.initializers.solid_primitive.initialize()
+    solidCylinder.reference_frame = root.central_bodies.earth.analysis_workbench_components.systems.item("Fixed")
+    solidCylinder.position = originCylinder.query_cartesian_array()
+    solidCylinder.set_with_result(cylinder)
+    solidCylinder.color = Colors.Lime
+    solidCylinder.outline_color = Colors.Blue
+    solidCylinder.outline_width = 3
+    solidCylinder.translucency = 0.75
+    solidCylinder.rotation = orientCylinder
+    manager.primitives.add(solidCylinder)
+    manager.render()
+
+
+Draw a Solid Ellipsoid Primitive and set properties
+
+.. code-block:: python
+
+    # Scenario scenario: Scenario object
+    manager = scenario.scene_manager
+    originEllipsoid = root.conversion_utility.new_position_on_earth()
+    originEllipsoid.assign_geodetic(0, 5, 100)
+
+    orientEllipsoid = root.conversion_utility.new_orientation()
+    orientEllipsoid.assign_az_el(0, 0, AzElAboutBoresight.ROTATE)
+
+    radii = [[200], [100], [100]]
+    ellipsoid = manager.initializers.ellipsoid_triangulator.compute_simple(radii)
+    solidEllipsoid = manager.initializers.solid_primitive.initialize()
+    solidEllipsoid.reference_frame = root.central_bodies.earth.analysis_workbench_components.systems.item(
+        "Fixed"
+    )  # vgtSat.Systems.item('Body')
+    solidEllipsoid.position = originEllipsoid.query_cartesian_array()
+    solidEllipsoid.set_with_result(ellipsoid)
+    solidEllipsoid.color = Colors.White
+    solidEllipsoid.outline_color = Colors.DeepPink
+    solidEllipsoid.translucency = 0.75
+    solidEllipsoid.rotation = orientEllipsoid
+    manager.primitives.add(solidEllipsoid)
+    manager.render()
+
+
+Draw a Solid Box Primitive and set properties
+
+.. code-block:: python
+
+    # Scenario scenario: Scenario object
+    manager = scenario.scene_manager
+    originBox = root.conversion_utility.new_position_on_earth()
+    originBox.assign_geodetic(0, 3, 100)
+
+    orientBox = root.conversion_utility.new_orientation()
+    orientBox.assign_az_el(0, 0, AzElAboutBoresight.ROTATE)
+
+    size = [[100], [100], [200]]
+    result = manager.initializers.box_triangulator.compute(size)
+    solidBox = manager.initializers.solid_primitive.initialize()
+    solidBox.reference_frame = root.central_bodies.earth.analysis_workbench_components.systems.item("Fixed")
+    solidBox.position = originBox.query_cartesian_array()
+    solidBox.set_with_result(result)
+    solidBox.color = Colors.Red
+    solidBox.outline_color = Colors.Cyan
+    solidBox.translucency = 0.75
+    solidBox.rotation = orientBox
+    manager.primitives.add(solidBox)
+    manager.render()
 
 
 Import detail
@@ -89,121 +172,121 @@ Property detail
     :canonical: ansys.stk.core.graphics.SolidPrimitive.affected_by_lighting
     :type: bool
 
-    Gets or sets whether the primitive is affected by lighting.
+    Get or set whether the primitive is affected by lighting.
 
 .. py:property:: display_fill
     :canonical: ansys.stk.core.graphics.SolidPrimitive.display_fill
     :type: bool
 
-    Gets or sets whether the solid's fill is displayed.
+    Get or set whether the solid's fill is displayed.
 
 .. py:property:: display_silhouette
     :canonical: ansys.stk.core.graphics.SolidPrimitive.display_silhouette
     :type: bool
 
-    Gets or sets whether the solid's silhouette is displayed.
+    Get or set whether the solid's silhouette is displayed.
 
 .. py:property:: silhouette_color
     :canonical: ansys.stk.core.graphics.SolidPrimitive.silhouette_color
     :type: agcolor.Color
 
-    Gets or sets the silhouette's color.
+    Get or set the silhouette's color.
 
 .. py:property:: silhouette_translucency
     :canonical: ansys.stk.core.graphics.SolidPrimitive.silhouette_translucency
     :type: float
 
-    Gets or sets the silhouette's translucency. Translucency is between 0 and 1, where 0 is opaque and 1 is transparent.
+    Get or set the silhouette's translucency. Translucency is between 0 and 1, where 0 is opaque and 1 is transparent.
 
 .. py:property:: silhouette_width
     :canonical: ansys.stk.core.graphics.SolidPrimitive.silhouette_width
     :type: float
 
-    Gets or sets the silhouette' width, in pixels.
+    Get or set the silhouette' width, in pixels.
 
 .. py:property:: minimum_silhouette_width_supported
     :canonical: ansys.stk.core.graphics.SolidPrimitive.minimum_silhouette_width_supported
     :type: float
 
-    Gets the minimum silhouette width, in pixels, supported by the video card.
+    Get the minimum silhouette width, in pixels, supported by the video card.
 
 .. py:property:: maximum_silhouette_width_supported
     :canonical: ansys.stk.core.graphics.SolidPrimitive.maximum_silhouette_width_supported
     :type: float
 
-    Gets the maximum silhouette width, in pixels, supported by the video card.
+    Get the maximum silhouette width, in pixels, supported by the video card.
 
 .. py:property:: display_outline
     :canonical: ansys.stk.core.graphics.SolidPrimitive.display_outline
     :type: bool
 
-    Gets or sets whether the solid's outline is displayed.
+    Get or set whether the solid's outline is displayed.
 
 .. py:property:: outline_color
     :canonical: ansys.stk.core.graphics.SolidPrimitive.outline_color
     :type: agcolor.Color
 
-    Gets or sets the outline's color.
+    Get or set the outline's color.
 
 .. py:property:: outline_translucency
     :canonical: ansys.stk.core.graphics.SolidPrimitive.outline_translucency
     :type: float
 
-    Gets or sets the outline's translucency. Translucency is between 0 and 1, where 0 is opaque and 1 is transparent.
+    Get or set the outline's translucency. Translucency is between 0 and 1, where 0 is opaque and 1 is transparent.
 
 .. py:property:: outline_width
     :canonical: ansys.stk.core.graphics.SolidPrimitive.outline_width
     :type: float
 
-    Gets or sets the outline's width, in pixels.
+    Get or set the outline's width, in pixels.
 
 .. py:property:: outline_appearance
     :canonical: ansys.stk.core.graphics.SolidPrimitive.outline_appearance
     :type: OutlineAppearance
 
-    Gets or sets the outline's appearance.
+    Get or set the outline's appearance.
 
 .. py:property:: back_line_color
     :canonical: ansys.stk.core.graphics.SolidPrimitive.back_line_color
     :type: agcolor.Color
 
-    Gets or sets the back line's color.
+    Get or set the back line's color.
 
 .. py:property:: back_line_translucency
     :canonical: ansys.stk.core.graphics.SolidPrimitive.back_line_translucency
     :type: float
 
-    Gets or sets the back line's translucency. Translucency is between 0 and 1, where 0 is opaque and 1 is transparent.
+    Get or set the back line's translucency. Translucency is between 0 and 1, where 0 is opaque and 1 is transparent.
 
 .. py:property:: position
     :canonical: ansys.stk.core.graphics.SolidPrimitive.position
     :type: list
 
-    Gets or sets the solid's position. The position is defined in the solid's reference frame. The array contains the components of the position in the order x, y, z.
+    Get or set the solid's position. The position is defined in the solid's reference frame. The array contains the components of the position in the order x, y, z.
 
 .. py:property:: rotation
     :canonical: ansys.stk.core.graphics.SolidPrimitive.rotation
     :type: IOrientation
 
-    Gets or sets the rotation applied to the solid before rendering.
+    Get or set the rotation applied to the solid before rendering.
 
 .. py:property:: scale
     :canonical: ansys.stk.core.graphics.SolidPrimitive.scale
     :type: list
 
-    Gets or sets a non-uniform scale that is applied to the solid to increase or decrease its rendered size. The array contains the scale for each component of the size in the order x scale, y scale, z scale.
+    Get or set a non-uniform scale that is applied to the solid to increase or decrease its rendered size. The array contains the scale for each component of the size in the order x scale, y scale, z scale.
 
 .. py:property:: back_line_width
     :canonical: ansys.stk.core.graphics.SolidPrimitive.back_line_width
     :type: float
 
-    Gets or sets the back line's width, in pixels.
+    Get or set the back line's width, in pixels.
 
 .. py:property:: set_hint
     :canonical: ansys.stk.core.graphics.SolidPrimitive.set_hint
     :type: SetHint
 
-    Gets the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with.
+    Get the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with.
 
 
 Method detail

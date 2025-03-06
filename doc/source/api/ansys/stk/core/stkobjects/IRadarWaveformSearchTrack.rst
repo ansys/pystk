@@ -19,7 +19,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarWaveformSearchTrack.type`
-              - Gets the waveform type enumeration.
+              - Get the waveform type enumeration.
 
 
 Import detail
@@ -37,6 +37,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.IRadarWaveformSearchTrack.type
     :type: RadarWaveformSearchTrackType
 
-    Gets the waveform type enumeration.
+    Get the waveform type enumeration.
 
 

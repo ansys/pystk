@@ -50,7 +50,30 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.IAnimation.animation_options`
               - Animation options.
             * - :py:attr:`~ansys.stk.core.stkobjects.IAnimation.high_speed`
-              - Controls the animation speed.
+              - Control the animation speed.
+
+
+Examples
+--------
+
+Reset the scenario time
+
+.. code-block:: python
+
+    # StkObjectRoot root: STK Object Model Root
+    root.rewind()
+
+
+Change animation mode
+
+.. code-block:: python
+
+    # StkObjectRoot root: STK Object Model Root
+    scenario = root.current_scenario
+    root.animation_options = AnimationOptionType.STOP
+    root.mode = AnimationEndTimeMode.X_REAL_TIME
+    scenario.animation_settings.animation_step_value = 1  # second
+    scenario.animation_settings.refresh_delta = 0.03  # second
 
 
 Import detail
@@ -92,7 +115,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.IAnimation.high_speed
     :type: bool
 
-    Controls the animation speed.
+    Control the animation speed.
 
 
 Method detail

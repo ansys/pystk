@@ -19,7 +19,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IDirectionProvider.type`
-              - Gets the direction provider type enumeration.
+              - Get the direction provider type enumeration.
 
 
 Import detail
@@ -37,6 +37,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.IDirectionProvider.type
     :type: DirectionProviderType
 
-    Gets the direction provider type enumeration.
+    Get the direction provider type enumeration.
 
 

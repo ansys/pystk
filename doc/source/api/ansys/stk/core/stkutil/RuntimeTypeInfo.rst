@@ -30,7 +30,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkutil.RuntimeTypeInfo.properties`
               - Get the collection of properties.
             * - :py:attr:`~ansys.stk.core.stkutil.RuntimeTypeInfo.is_collection`
-              - Determines if the interface is a collection.
+              - Determine if the interface is a collection.
             * - :py:attr:`~ansys.stk.core.stkutil.RuntimeTypeInfo.count`
               - If the interface is a collection, returns the collection count.
 
@@ -57,7 +57,7 @@ Property detail
     :canonical: ansys.stk.core.stkutil.RuntimeTypeInfo.is_collection
     :type: bool
 
-    Determines if the interface is a collection.
+    Determine if the interface is a collection.
 
 .. py:property:: count
     :canonical: ansys.stk.core.stkutil.RuntimeTypeInfo.count

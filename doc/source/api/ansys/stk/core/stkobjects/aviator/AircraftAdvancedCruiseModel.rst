@@ -32,19 +32,19 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedCruiseModel.default_cruise_altitude`
-              - Gets or sets the aircraft's default cruising altitude.
+              - Get or set the aircraft's default cruising altitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedCruiseModel.max_performance_airspeed`
-              - Gets or sets the method for defining the maximum performance airspeed of the aircraft with respect to its altitude.
+              - Get or set the method for defining the maximum performance airspeed of the aircraft with respect to its altitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedCruiseModel.use_airspeed_limit`
               - Opt to limit the airspeed below a specified altitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedCruiseModel.altitude_limit`
-              - Gets or sets the altitude threshold, below which the airspeed limit will be applied.
+              - Get or set the altitude threshold, below which the airspeed limit will be applied.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedCruiseModel.airspeed_limit_type`
               - Get the airspeed limit type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedCruiseModel.airspeed_limit`
               - Get the airsepeed limit below the altitude threshold.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AircraftAdvancedCruiseModel.compute_delta_downrange`
-              - Gets or sets the maximum change in downrange distance in a computed segment before the data is sampled again.
+              - Get or set the maximum change in downrange distance in a computed segment before the data is sampled again.
 
 
 
@@ -63,13 +63,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedCruiseModel.default_cruise_altitude
     :type: float
 
-    Gets or sets the aircraft's default cruising altitude.
+    Get or set the aircraft's default cruising altitude.
 
 .. py:property:: max_performance_airspeed
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedCruiseModel.max_performance_airspeed
     :type: CruiseMaxPerformanceSpeedType
 
-    Gets or sets the method for defining the maximum performance airspeed of the aircraft with respect to its altitude.
+    Get or set the method for defining the maximum performance airspeed of the aircraft with respect to its altitude.
 
 .. py:property:: use_airspeed_limit
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedCruiseModel.use_airspeed_limit
@@ -81,7 +81,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedCruiseModel.altitude_limit
     :type: float
 
-    Gets or sets the altitude threshold, below which the airspeed limit will be applied.
+    Get or set the altitude threshold, below which the airspeed limit will be applied.
 
 .. py:property:: airspeed_limit_type
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedCruiseModel.airspeed_limit_type
@@ -99,7 +99,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.AircraftAdvancedCruiseModel.compute_delta_downrange
     :type: float
 
-    Gets or sets the maximum change in downrange distance in a computed segment before the data is sampled again.
+    Get or set the maximum change in downrange distance in a computed segment before the data is sampled again.
 
 
 Method detail

@@ -60,28 +60,74 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.Satellite.eclipse_bodies`
               - Get the customized list of Eclipse Bodies, which are central bodies used in lighting computations.
             * - :py:attr:`~ansys.stk.core.stkobjects.Satellite.propagator_supported_types`
-              - Returns an array of valid choices.
+              - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.Satellite.export_tools`
-              - Returns the IAgSaExportTools interface.
+              - Return the IAgSaExportTools interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.Satellite.space_environment`
               - Get the SpaceEnvironment properties of the satellite.
             * - :py:attr:`~ansys.stk.core.stkobjects.Satellite.reference_vehicle`
               - Get the reference vehicle of the satellite.
             * - :py:attr:`~ansys.stk.core.stkobjects.Satellite.radar_clutter_map`
-              - Returns the radar clutter map.
+              - Return the radar clutter map.
             * - :py:attr:`~ansys.stk.core.stkobjects.Satellite.radar_cross_section`
-              - Returns the radar cross sectoin.
+              - Return the radar cross sectoin.
             * - :py:attr:`~ansys.stk.core.stkobjects.Satellite.use_terrain_in_lighting_computations`
               - Opt whether to compute lighting using terrain data.
             * - :py:attr:`~ansys.stk.core.stkobjects.Satellite.lighting_maximum_step`
-              - This property is deprecated. Use LightingMaxStepTerrain or LightingMaxStepCbShape as appropriate. The maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
+              - Do not use this property, as it is deprecated. Use LightingMaxStepTerrain or LightingMaxStepCbShape as appropriate. The maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.Satellite.lighting_maximum_step_terrain`
-              - Gets or sets the maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
+              - Get or set the maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.Satellite.lighting_maximum_step_central_body_shape`
-              - Gets or sets the maximum step size to use when computing lighting when UseTerrainInLightingComputations is false. Uses Time Dimension.
+              - Get or set the maximum step size to use when computing lighting when UseTerrainInLightingComputations is false. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.Satellite.get_eoir_settings`
               - Get the EOIR properties of the satellite.
 
+
+
+Examples
+--------
+
+Set satellite attitude external
+
+.. code-block:: python
+
+    # Satellite satellite: Satellite object
+    installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+    satellite.attitude.external.load(
+        os.path.join(installPath, "Data", "Resources", "stktraining", "text", "AttitudeTimeEulerAngles_Example.a")
+    )
+
+
+Set satellite attitude targeting
+
+.. code-block:: python
+
+    # Satellite satellite: Satellite object
+    attitudePointing = satellite.attitude.pointing
+    attitudePointing.use_target_pointing = True
+    attitudePointing.targets.remove_all()
+    attitudePointing.targets.add("AreaTarget/MyAreaTarget")
+    attitudePointing.target_times.use_access_times = True
+
+
+Set satellite attitude basic spinning
+
+.. code-block:: python
+
+    # Satellite satellite: Satellite object
+    basic = satellite.attitude.basic
+    basic.set_profile_type(AttitudeProfile.SPINNING)
+    basic.profile.body.assign_xyz(0, 0, 1)
+    basic.profile.inertial.assign_xyz(0, 1, 0)
+    basic.profile.rate = 6  # rev/sec
+
+
+Create a satellite (on the current scenario central body)
+
+.. code-block:: python
+
+    # StkObjectRoot root: STK Object Model Root
+    satellite = root.current_scenario.children.new(STKObjectType.SATELLITE, "MySatellite")
 
 
 Import detail
@@ -171,13 +217,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Satellite.propagator_supported_types
     :type: list
 
-    Returns an array of valid choices.
+    Return an array of valid choices.
 
 .. py:property:: export_tools
     :canonical: ansys.stk.core.stkobjects.Satellite.export_tools
     :type: SatelliteExportTools
 
-    Returns the IAgSaExportTools interface.
+    Return the IAgSaExportTools interface.
 
 .. py:property:: space_environment
     :canonical: ansys.stk.core.stkobjects.Satellite.space_environment
@@ -195,13 +241,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Satellite.radar_clutter_map
     :type: IRadarClutterMapInheritable
 
-    Returns the radar clutter map.
+    Return the radar clutter map.
 
 .. py:property:: radar_cross_section
     :canonical: ansys.stk.core.stkobjects.Satellite.radar_cross_section
     :type: RadarCrossSectionInheritable
 
-    Returns the radar cross sectoin.
+    Return the radar cross sectoin.
 
 .. py:property:: use_terrain_in_lighting_computations
     :canonical: ansys.stk.core.stkobjects.Satellite.use_terrain_in_lighting_computations
@@ -213,19 +259,19 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Satellite.lighting_maximum_step
     :type: float
 
-    This property is deprecated. Use LightingMaxStepTerrain or LightingMaxStepCbShape as appropriate. The maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
+    Do not use this property, as it is deprecated. Use LightingMaxStepTerrain or LightingMaxStepCbShape as appropriate. The maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
 
 .. py:property:: lighting_maximum_step_terrain
     :canonical: ansys.stk.core.stkobjects.Satellite.lighting_maximum_step_terrain
     :type: float
 
-    Gets or sets the maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
+    Get or set the maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
 
 .. py:property:: lighting_maximum_step_central_body_shape
     :canonical: ansys.stk.core.stkobjects.Satellite.lighting_maximum_step_central_body_shape
     :type: float
 
-    Gets or sets the maximum step size to use when computing lighting when UseTerrainInLightingComputations is false. Uses Time Dimension.
+    Get or set the maximum step size to use when computing lighting when UseTerrainInLightingComputations is false. Uses Time Dimension.
 
 .. py:property:: get_eoir_settings
     :canonical: ansys.stk.core.stkobjects.Satellite.get_eoir_settings

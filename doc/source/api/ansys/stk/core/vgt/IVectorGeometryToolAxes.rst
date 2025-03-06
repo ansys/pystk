@@ -34,15 +34,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxes.type`
-              - Returns a type of the axes object.
+              - Return a type of the axes object.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxes.labels`
-              - Returns an object that allows modifying the axes labels.
+              - Return an object that allows modifying the axes labels.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxes.x_axis`
-              - Returns the X axis of the component.
+              - Return the X axis of the component.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxes.y_axis`
-              - Returns the Y axis of the component.
+              - Return the Y axis of the component.
             * - :py:attr:`~ansys.stk.core.vgt.IVectorGeometryToolAxes.z_axis`
-              - Returns the Z axis of the component.
+              - Return the Z axis of the component.
 
 
 Import detail
@@ -60,31 +60,31 @@ Property detail
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxes.type
     :type: AxesType
 
-    Returns a type of the axes object.
+    Return a type of the axes object.
 
 .. py:property:: labels
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxes.labels
     :type: VectorGeometryToolAxesLabels
 
-    Returns an object that allows modifying the axes labels.
+    Return an object that allows modifying the axes labels.
 
 .. py:property:: x_axis
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxes.x_axis
     :type: IVectorGeometryToolVector
 
-    Returns the X axis of the component.
+    Return the X axis of the component.
 
 .. py:property:: y_axis
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxes.y_axis
     :type: IVectorGeometryToolVector
 
-    Returns the Y axis of the component.
+    Return the Y axis of the component.
 
 .. py:property:: z_axis
     :canonical: ansys.stk.core.vgt.IVectorGeometryToolAxes.z_axis
     :type: IVectorGeometryToolVector
 
-    Returns the Z axis of the component.
+    Return the Z axis of the component.
 
 
 Method detail

@@ -21,9 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EnginePlugin.g`
-              - Gets or sets the gravitational acceleration constant at sea level on the Earth. Uses Acceleration Dimension.
+              - Get or set the gravitational acceleration constant at sea level on the Earth. Uses Acceleration Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EnginePlugin.plugin_identifier`
-              - Gets or sets the PluginIdentifier - the ProgID of the COM component you are using for this model.
+              - Get or set the PluginIdentifier - the ProgID of the COM component you are using for this model.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EnginePlugin.plugin_config`
               - Get the properties of the plugin.
 
@@ -44,13 +44,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.EnginePlugin.g
     :type: float
 
-    Gets or sets the gravitational acceleration constant at sea level on the Earth. Uses Acceleration Dimension.
+    Get or set the gravitational acceleration constant at sea level on the Earth. Uses Acceleration Dimension.
 
 .. py:property:: plugin_identifier
     :canonical: ansys.stk.core.stkobjects.astrogator.EnginePlugin.plugin_identifier
     :type: str
 
-    Gets or sets the PluginIdentifier - the ProgID of the COM component you are using for this model.
+    Get or set the PluginIdentifier - the ProgID of the COM component you are using for this model.
 
 .. py:property:: plugin_config
     :canonical: ansys.stk.core.stkobjects.astrogator.EnginePlugin.plugin_config

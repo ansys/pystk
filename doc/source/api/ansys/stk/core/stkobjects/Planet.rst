@@ -35,6 +35,31 @@ Overview
 
 
 
+Examples
+--------
+
+Modify Planet 2D Properties
+
+.. code-block:: python
+
+    # Planet planet: Planet object
+    planet2D = planet.graphics
+    planet2D.color = Colors.Red
+    planet2D.inherit = False
+    planet2D.show_orbit = True
+    planet2D.show_sub_planet_point = False
+    planet2D.show_sub_planet_label = False
+
+
+Create a New Planet
+
+.. code-block:: python
+
+    # Scenario scenario: Scenario object
+    planet = scenario.children.new(STKObjectType.PLANET, "Mars")
+    planet.common_tasks.set_position_source_central_body("Mars", EphemSourceType.JPL_DEVELOPMENTAL_EPHEMERIS)
+
+
 Import detail
 -------------
 

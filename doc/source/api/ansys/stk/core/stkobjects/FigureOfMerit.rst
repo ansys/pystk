@@ -40,7 +40,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMerit.definition_type`
               - Definition type for the FOM.
             * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMerit.definition_supported_types`
-              - Returns an array of valid choices.
+              - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMerit.definition`
               - Definition properties of the FOM.
             * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMerit.graphics`
@@ -50,6 +50,42 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMerit.grid_inspector`
               - Get the Grid inspector tool.
 
+
+
+Examples
+--------
+
+Configure the Contours of the FOM and define a color ramp
+
+.. code-block:: python
+
+    # CoverageDefinition coverage: Coverage object
+    # FigureOfMerit fom: Figure Of Merit object
+    satisfaction = coverage.graphics.static
+    satisfaction.show_region = False
+    Animation = fom.graphics_3d.animation_graphics_3d_settings
+    Animation.show_graphics = False
+    VOcontours = fom.graphics_3d.static
+    VOcontours.show_graphics = True
+    contours = fom.graphics.static.contours
+    contours.show_graphics = True
+    contours.contour_type = FigureOfMeritGraphics2DContourType.SMOOTH_FILL
+    contours.color_method = FigureOfMeritGraphics2DColorMethod.COLOR_RAMP
+    contours.level_attributes.remove_all()
+
+    contours.level_attributes.add_level_range(590, 660, 10)  # Start, Start, Step
+    contours.ramp_color.start_color = Colors.Red
+    contours.ramp_color.end_color = Colors.Blue
+
+
+Create a new Figure of Merit of type Access Duration
+
+.. code-block:: python
+
+    # CoverageDefinition coverage: Coverage object
+    fom = coverage.children.new(STKObjectType.FIGURE_OF_MERIT, "AccessDuration")
+    fom.set_definition_type(FigureOfMeritDefinitionType.ACCESS_DURATION)
+    fom.definition.set_compute_type(FigureOfMeritCompute.MAXIMUM)
 
 
 Import detail
@@ -73,7 +109,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.FigureOfMerit.definition_supported_types
     :type: list
 
-    Returns an array of valid choices.
+    Return an array of valid choices.
 
 .. py:property:: definition
     :canonical: ansys.stk.core.stkobjects.FigureOfMerit.definition

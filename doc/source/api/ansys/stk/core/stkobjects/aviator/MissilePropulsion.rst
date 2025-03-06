@@ -19,7 +19,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissilePropulsion.propulsion_strategy`
-              - Gets or sets the propulsion strategy type.
+              - Get or set the propulsion strategy type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissilePropulsion.mode_as_simple`
               - Get the interface for a simple propulsion strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.MissilePropulsion.mode_as_external`
@@ -48,7 +48,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.MissilePropulsion.propulsion_strategy
     :type: MissilePropulsionStrategy
 
-    Gets or sets the propulsion strategy type.
+    Get or set the propulsion strategy type.
 
 .. py:property:: mode_as_simple
     :canonical: ansys.stk.core.stkobjects.aviator.MissilePropulsion.mode_as_simple

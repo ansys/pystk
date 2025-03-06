@@ -30,11 +30,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleHPOPSolarRadiationPressureModel.model_type`
-              - Returns a type of the active solar radiation pressure model.
+              - Return a type of the active solar radiation pressure model.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleHPOPSolarRadiationPressureModel.model_supported_types`
-              - Returns an array of valid choices.
+              - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleHPOPSolarRadiationPressureModel.model`
-              - Returns the active solar radiation pressure model.
+              - Return the active solar radiation pressure model.
 
 
 
@@ -53,19 +53,19 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleHPOPSolarRadiationPressureModel.model_type
     :type: SolarRadiationPressureModelType
 
-    Returns a type of the active solar radiation pressure model.
+    Return a type of the active solar radiation pressure model.
 
 .. py:property:: model_supported_types
     :canonical: ansys.stk.core.stkobjects.VehicleHPOPSolarRadiationPressureModel.model_supported_types
     :type: list
 
-    Returns an array of valid choices.
+    Return an array of valid choices.
 
 .. py:property:: model
     :canonical: ansys.stk.core.stkobjects.VehicleHPOPSolarRadiationPressureModel.model
     :type: ISRPModelBase
 
-    Returns the active solar radiation pressure model.
+    Return the active solar radiation pressure model.
 
 
 Method detail

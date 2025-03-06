@@ -21,11 +21,11 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics3DModel.show_graphics`
               - Opt whether to use a model to represent the track in the 3D Graphics window.
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics3DModel.filename`
-              - Gets or sets the name of the track model file.
+              - Get or set the name of the track model file.
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics3DModel.scale_value`
-              - Gets or sets the exponential scaling value for the track model.
+              - Get or set the exponential scaling value for the track model.
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics3DModel.initial_bearing`
-              - Gets or sets the initial bearing of the model, relative to north. Uses Angle Dimension.
+              - Get or set the initial bearing of the model, relative to north. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics3DModel.z_points_nadir`
               - Opt whether to have the Z axis point to nadir (to orient it as an aircraft) or not (to orient it as a surface vehicle).
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics3DModel.articulation`
@@ -56,19 +56,19 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.MTOGraphics3DModel.filename
     :type: str
 
-    Gets or sets the name of the track model file.
+    Get or set the name of the track model file.
 
 .. py:property:: scale_value
     :canonical: ansys.stk.core.stkobjects.MTOGraphics3DModel.scale_value
     :type: float
 
-    Gets or sets the exponential scaling value for the track model.
+    Get or set the exponential scaling value for the track model.
 
 .. py:property:: initial_bearing
     :canonical: ansys.stk.core.stkobjects.MTOGraphics3DModel.initial_bearing
     :type: float
 
-    Gets or sets the initial bearing of the model, relative to north. Uses Angle Dimension.
+    Get or set the initial bearing of the model, relative to north. Uses Angle Dimension.
 
 .. py:property:: z_points_nadir
     :canonical: ansys.stk.core.stkobjects.MTOGraphics3DModel.z_points_nadir

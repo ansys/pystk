@@ -30,7 +30,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkx.STKXSSLCertificateErrorEventArgs.is_error_ignored`
-              - Returns whether the invalid certificate error is ignored.
+              - Return whether the invalid certificate error is ignored.
             * - :py:attr:`~ansys.stk.core.stkx.STKXSSLCertificateErrorEventArgs.serial_number`
               - Certificate's serial number.
             * - :py:attr:`~ansys.stk.core.stkx.STKXSSLCertificateErrorEventArgs.issuer`
@@ -46,7 +46,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkx.STKXSSLCertificateErrorEventArgs.pem_data`
               - Certificate's PEM data encoded as base-64.
             * - :py:attr:`~ansys.stk.core.stkx.STKXSSLCertificateErrorEventArgs.handled`
-              - Indicates whether the event should continue be routed to the listeners. Setting Handled to true will prevent the event from reaching any remaining listeners.
+              - Indicate whether the event should continue be routed to the listeners. Setting Handled to true will prevent the event from reaching any remaining listeners.
 
 
 
@@ -65,7 +65,7 @@ Property detail
     :canonical: ansys.stk.core.stkx.STKXSSLCertificateErrorEventArgs.is_error_ignored
     :type: bool
 
-    Returns whether the invalid certificate error is ignored.
+    Return whether the invalid certificate error is ignored.
 
 .. py:property:: serial_number
     :canonical: ansys.stk.core.stkx.STKXSSLCertificateErrorEventArgs.serial_number
@@ -113,7 +113,7 @@ Property detail
     :canonical: ansys.stk.core.stkx.STKXSSLCertificateErrorEventArgs.handled
     :type: bool
 
-    Indicates whether the event should continue be routed to the listeners. Setting Handled to true will prevent the event from reaching any remaining listeners.
+    Indicate whether the event should continue be routed to the listeners. Setting Handled to true will prevent the event from reaching any remaining listeners.
 
 
 Method detail

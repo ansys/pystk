@@ -21,7 +21,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaContourLevel.value`
               - Get the contour level value.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaContourLevel.color`
-              - Gets or sets the contour level color.
+              - Get or set the contour level color.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaContourLevel.line_style`
               - Select the line style, displayed for the contour level, from the AgELineStyle enumeration.
 
@@ -48,7 +48,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.AntennaContourLevel.color
     :type: agcolor.Color
 
-    Gets or sets the contour level color.
+    Get or set the contour level color.
 
 .. py:property:: line_style
     :canonical: ansys.stk.core.stkobjects.AntennaContourLevel.line_style

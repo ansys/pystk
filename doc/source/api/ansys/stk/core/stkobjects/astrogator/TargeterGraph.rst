@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.TargeterGraph.name`
-              - Gets or sets the name of the graph.
+              - Get or set the name of the graph.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.TargeterGraph.generate_on_run`
               - Generate the graph while MCS is being run.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.TargeterGraph.user_comment`
@@ -56,7 +56,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.TargeterGraph.name
     :type: str
 
-    Gets or sets the name of the graph.
+    Get or set the name of the graph.
 
 .. py:property:: generate_on_run
     :canonical: ansys.stk.core.stkobjects.astrogator.TargeterGraph.generate_on_run

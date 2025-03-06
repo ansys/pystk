@@ -41,7 +41,48 @@ Overview
               - Get the covariance parameters.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorHPOP.ephemeris_interval`
               - Get the propagator's ephemeris interval.
+            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorHPOP.display_coordinate_type`
+              - The propagator's display coordinate type.
 
+
+
+Examples
+--------
+
+Set satellite propagator to HPOP and set force model properties
+
+.. code-block:: python
+
+    # Satellite satellite: Satellite object
+    satellite.set_propagator_type(PropagatorType.HPOP)
+    satellite.propagator.step = 60
+    satellite.propagator.initial_state.representation.assign_cartesian(
+        CoordinateSystem.FIXED, 6406.92, -1787.59, -506.422, 2.10185, 6.48871, 3.64041
+    )
+
+    forceModel = satellite.propagator.force_model
+    installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+    forceModel.central_body_gravity.file = os.path.join(
+        installPath, "STKData", "CentralBodies", "Earth", "WGS84_EGM96.grv"
+    )
+    forceModel.central_body_gravity.maximum_degree = 21
+    forceModel.central_body_gravity.maximum_order = 21
+    forceModel.drag.use = True
+    forceModel.drag.drag_model.cd = 0.01
+    forceModel.drag.drag_model.area_mass_ratio = 0.01
+    forceModel.solar_radiation_pressure.use = False
+
+    integrator = satellite.propagator.integrator
+    integrator.do_not_propagate_below_altitude = -1e6
+    integrator.integration_model = VehicleIntegrationModel.RUNGE_KUTTA_FEHLBERG_78
+    integrator.step_size_control.method = VehicleMethod.RELATIVE_ERROR
+    integrator.step_size_control.error_tolerance = 1e-13
+    integrator.step_size_control.minimum_step_size = 0.1
+    integrator.step_size_control.maximum_step_size = 30
+    integrator.interpolation.method = VehicleInterpolationMethod.LAGRANGE
+    integrator.interpolation.order = 7
+
+    satellite.propagator.propagate()
 
 
 Import detail
@@ -91,6 +132,12 @@ Property detail
 
     Get the propagator's ephemeris interval.
 
+.. py:property:: display_coordinate_type
+    :canonical: ansys.stk.core.stkobjects.PropagatorHPOP.display_coordinate_type
+    :type: PropagatorDisplayCoordinateType
+
+    The propagator's display coordinate type.
+
 
 Method detail
 -------------
@@ -103,6 +150,8 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
+
 
 
 

@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.AttitudeProfileGPS.model_type`
-              - Gets or sets the GPS attitude model type.
+              - Get or set the GPS attitude model type.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.AttitudeProfileGPS.model_type
     :type: GPSAttitudeModelType
 
-    Gets or sets the GPS attitude model type.
+    Get or set the GPS attitude model type.
 
 

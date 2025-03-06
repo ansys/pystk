@@ -21,9 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.DirectionProviderScript.members`
-              - Gets the members list.
+              - Get the members list.
             * - :py:attr:`~ansys.stk.core.stkobjects.DirectionProviderScript.filename`
-              - Gets or sets the filename.
+              - Get or set the filename.
 
 
 
@@ -42,12 +42,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.DirectionProviderScript.members
     :type: ObjectLinkCollection
 
-    Gets the members list.
+    Get the members list.
 
 .. py:property:: filename
     :canonical: ansys.stk.core.stkobjects.DirectionProviderScript.filename
     :type: str
 
-    Gets or sets the filename.
+    Get or set the filename.
 
 

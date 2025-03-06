@@ -25,6 +25,18 @@ Overview
 
 
 
+Examples
+--------
+
+Create a Bounding Sphere
+
+.. code-block:: python
+
+    # Scenario scenario: Scenario object
+    manager = scenario.scene_manager
+    sphere = manager.initializers.bounding_sphere.initialize([[-1061.22], [-5773.98], [4456.04]], 100)
+
+
 Import detail
 -------------
 

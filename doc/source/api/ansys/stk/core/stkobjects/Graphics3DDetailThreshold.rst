@@ -33,6 +33,23 @@ Overview
 
 
 
+Examples
+--------
+
+Modify the Detail Thresholds Levels
+
+.. code-block:: python
+
+    # Satellite satellite: Satellite object
+    details = satellite.graphics_3d.model.detail_threshold
+    details.enable_detail_threshold = True
+    details.all = 1  # km
+    details.model_label = 2  # km
+    details.marker_label = 40000  # km
+    details.marker = 500000  # km
+    details.point = 500000  # km
+
+
 Import detail
 -------------
 

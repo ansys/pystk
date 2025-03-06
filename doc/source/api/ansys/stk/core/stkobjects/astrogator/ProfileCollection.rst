@@ -48,13 +48,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileCollection._new_enum`
-              - Allows you to enumerate through the collection.
+              - Allow you to enumerate through the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileCollection.count`
-              - Returns the size of the collection.
+              - Return the size of the collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileCollection.available_profiles`
-              - Returns a list of available profiles.
+              - Return a list of available profiles.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.ProfileCollection.provide_runtime_type_info`
-              - Returns the IAgRuntimeTypeInfo interface to access properties at runtime.
+              - Return the IAgRuntimeTypeInfo interface to access properties at runtime.
 
 
 
@@ -73,25 +73,25 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileCollection._new_enum
     :type: EnumeratorProxy
 
-    Allows you to enumerate through the collection.
+    Allow you to enumerate through the collection.
 
 .. py:property:: count
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileCollection.count
     :type: int
 
-    Returns the size of the collection.
+    Return the size of the collection.
 
 .. py:property:: available_profiles
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileCollection.available_profiles
     :type: list
 
-    Returns a list of available profiles.
+    Return a list of available profiles.
 
 .. py:property:: provide_runtime_type_info
     :canonical: ansys.stk.core.stkobjects.astrogator.ProfileCollection.provide_runtime_type_info
-    :type: IRuntimeTypeInfo
+    :type: RuntimeTypeInfo
 
-    Returns the IAgRuntimeTypeInfo interface to access properties at runtime.
+    Return the IAgRuntimeTypeInfo interface to access properties at runtime.
 
 
 Method detail

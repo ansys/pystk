@@ -32,9 +32,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkutil.UnitPreferencesUnitCollection.count`
-              - Returns the number of items in the collection.
+              - Return the number of items in the collection.
             * - :py:attr:`~ansys.stk.core.stkutil.UnitPreferencesUnitCollection._new_enum`
-              - Returns an enumeration of AgUnitPrefsUnit.
+              - Return an enumeration of AgUnitPrefsUnit.
 
 
 
@@ -53,13 +53,13 @@ Property detail
     :canonical: ansys.stk.core.stkutil.UnitPreferencesUnitCollection.count
     :type: int
 
-    Returns the number of items in the collection.
+    Return the number of items in the collection.
 
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkutil.UnitPreferencesUnitCollection._new_enum
     :type: EnumeratorProxy
 
-    Returns an enumeration of AgUnitPrefsUnit.
+    Return an enumeration of AgUnitPrefsUnit.
 
 
 Method detail

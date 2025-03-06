@@ -27,11 +27,11 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.Jacchia1960.computes_pressure`
               - Flag indicates whether this model computes pressure.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.Jacchia1960.sun_position`
-              - Gets or sets the sun position computation.
+              - Get or set the sun position computation.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.Jacchia1960.drag_model_type`
               - Drag model type.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.Jacchia1960.drag_model_plugin_name`
-              - Gets or sets the name of the drag model plugin.
+              - Get or set the name of the drag model plugin.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.Jacchia1960.drag_model_plugin`
               - Drag model plugin properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.Jacchia1960.variable_area_history_file`
@@ -74,7 +74,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.Jacchia1960.sun_position
     :type: SunPosition
 
-    Gets or sets the sun position computation.
+    Get or set the sun position computation.
 
 .. py:property:: drag_model_type
     :canonical: ansys.stk.core.stkobjects.astrogator.Jacchia1960.drag_model_type
@@ -86,7 +86,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.Jacchia1960.drag_model_plugin_name
     :type: str
 
-    Gets or sets the name of the drag model plugin.
+    Get or set the name of the drag model plugin.
 
 .. py:property:: drag_model_plugin
     :canonical: ansys.stk.core.stkobjects.astrogator.Jacchia1960.drag_model_plugin

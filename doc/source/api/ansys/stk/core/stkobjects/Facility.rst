@@ -56,26 +56,59 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.Facility.height_above_ground`
               - Height of facility above its model of the ground. Height is measured along the normal to surface defined by reference ellipsoid of the central body. Facility models the ground as an ellipsoid passing through the ground position. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.Facility.altitude_reference`
-              - Gets or sets the altitude reference of the object.
+              - Get or set the altitude reference of the object.
             * - :py:attr:`~ansys.stk.core.stkobjects.Facility.atmosphere`
-              - This property is deprecated. The new RFEnvironment property can be used to configure atmospheric models.
+              - Do not use this property, as it is deprecated. The new RFEnvironment property can be used to configure atmospheric models.
             * - :py:attr:`~ansys.stk.core.stkobjects.Facility.radar_clutter_map`
-              - Returns the radar clutter map.
+              - Return the radar clutter map.
             * - :py:attr:`~ansys.stk.core.stkobjects.Facility.radar_cross_section`
-              - Returns the radar cross sectoin.
+              - Return the radar cross sectoin.
             * - :py:attr:`~ansys.stk.core.stkobjects.Facility.save_terrain_mask_data_in_binary`
               - Save terrain az-el mask data in binary.
             * - :py:attr:`~ansys.stk.core.stkobjects.Facility.lighting_obstruction_model`
-              - Gets or sets the obstruction model used in lighting computations.
+              - Get or set the obstruction model used in lighting computations.
             * - :py:attr:`~ansys.stk.core.stkobjects.Facility.lighting_maximum_step`
-              - Gets or sets the maximum step size to use when computing lighting. Only applies (and only can be set) when LightingObstructionModel is eLightingObstructionAzElMask or eLightingObstructionTerrain. Uses Time Dimension.
+              - Get or set the maximum step size to use when computing lighting. Only applies (and only can be set) when LightingObstructionModel is eLightingObstructionAzElMask or eLightingObstructionTerrain. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.Facility.laser_environment`
-              - Gets the laser environment.
+              - Get the laser environment.
             * - :py:attr:`~ansys.stk.core.stkobjects.Facility.rf_environment`
-              - Gets the RF environment.
+              - Get the RF environment.
             * - :py:attr:`~ansys.stk.core.stkobjects.Facility.maximum_range_when_computing_az_el_mask`
-              - Gets or sets the maximum range to use when computing the az el mask using terrain data. Zero indicates to use algorithm default. Only applies when GetAzElMask returns eTerrainData (cannot be set if eMaskFile). Uses Distance Dimension.
+              - Get or set the maximum range to use when computing the az el mask using terrain data. Zero indicates to use algorithm default. Only applies when GetAzElMask returns eTerrainData (cannot be set if eMaskFile). Uses Distance Dimension.
 
+
+
+Examples
+--------
+
+Add an AzEl Mask to a Facility
+
+.. code-block:: python
+
+    # Facility facility: Facility Object
+    facility.set_az_el_mask(AzElMaskType.TERRAIN_DATA, 0)
+
+
+Set the geodetic position of the facility
+
+.. code-block:: python
+
+    # Facility facility: Facility Object
+    facility.position.assign_geodetic(41.9849, 21.4039, 0)  # Latitude, Longitude, Altitude
+
+    # Set altitude to height of terrain
+    facility.use_terrain = True
+
+    # Set altitude to a distance above the ground
+    facility.height_above_ground = 0.05  # km
+
+
+Create a facility (on the current scenario central body)
+
+.. code-block:: python
+
+    # StkObjectRoot root: STK Object Model Root
+    facility = root.current_scenario.children.new(STKObjectType.FACILITY, "MyFacility")
 
 
 Import detail
@@ -153,25 +186,25 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Facility.altitude_reference
     :type: None
 
-    Gets or sets the altitude reference of the object.
+    Get or set the altitude reference of the object.
 
 .. py:property:: atmosphere
     :canonical: ansys.stk.core.stkobjects.Facility.atmosphere
     :type: Atmosphere
 
-    This property is deprecated. The new RFEnvironment property can be used to configure atmospheric models.
+    Do not use this property, as it is deprecated. The new RFEnvironment property can be used to configure atmospheric models.
 
 .. py:property:: radar_clutter_map
     :canonical: ansys.stk.core.stkobjects.Facility.radar_clutter_map
     :type: IRadarClutterMapInheritable
 
-    Returns the radar clutter map.
+    Return the radar clutter map.
 
 .. py:property:: radar_cross_section
     :canonical: ansys.stk.core.stkobjects.Facility.radar_cross_section
     :type: RadarCrossSectionInheritable
 
-    Returns the radar cross sectoin.
+    Return the radar cross sectoin.
 
 .. py:property:: save_terrain_mask_data_in_binary
     :canonical: ansys.stk.core.stkobjects.Facility.save_terrain_mask_data_in_binary
@@ -183,31 +216,31 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Facility.lighting_obstruction_model
     :type: LightingObstructionModelType
 
-    Gets or sets the obstruction model used in lighting computations.
+    Get or set the obstruction model used in lighting computations.
 
 .. py:property:: lighting_maximum_step
     :canonical: ansys.stk.core.stkobjects.Facility.lighting_maximum_step
     :type: float
 
-    Gets or sets the maximum step size to use when computing lighting. Only applies (and only can be set) when LightingObstructionModel is eLightingObstructionAzElMask or eLightingObstructionTerrain. Uses Time Dimension.
+    Get or set the maximum step size to use when computing lighting. Only applies (and only can be set) when LightingObstructionModel is eLightingObstructionAzElMask or eLightingObstructionTerrain. Uses Time Dimension.
 
 .. py:property:: laser_environment
     :canonical: ansys.stk.core.stkobjects.Facility.laser_environment
     :type: PlatformLaserEnvironment
 
-    Gets the laser environment.
+    Get the laser environment.
 
 .. py:property:: rf_environment
     :canonical: ansys.stk.core.stkobjects.Facility.rf_environment
     :type: IPlatformRFEnvironment
 
-    Gets the RF environment.
+    Get the RF environment.
 
 .. py:property:: maximum_range_when_computing_az_el_mask
     :canonical: ansys.stk.core.stkobjects.Facility.maximum_range_when_computing_az_el_mask
     :type: float
 
-    Gets or sets the maximum range to use when computing the az el mask using terrain data. Zero indicates to use algorithm default. Only applies when GetAzElMask returns eTerrainData (cannot be set if eMaskFile). Uses Distance Dimension.
+    Get or set the maximum range to use when computing the az el mask using terrain data. Zero indicates to use algorithm default. Only applies when GetAzElMask returns eTerrainData (cannot be set if eMaskFile). Uses Distance Dimension.
 
 
 Method detail

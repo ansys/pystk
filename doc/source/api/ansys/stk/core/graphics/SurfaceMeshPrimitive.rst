@@ -36,22 +36,51 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.SurfaceMeshPrimitive.texture`
-              - Gets or sets the texture applied to this primitive when rendering.
+              - Get or set the texture applied to this primitive when rendering.
             * - :py:attr:`~ansys.stk.core.graphics.SurfaceMeshPrimitive.wireframe`
-              - Gets or sets whether the primitive is rendered in wireframe. This is useful for debugging.
+              - Get or set whether the primitive is rendered in wireframe. This is useful for debugging.
             * - :py:attr:`~ansys.stk.core.graphics.SurfaceMeshPrimitive.triangle_winding_order`
-              - Gets the orientation of front-facing triangles in the mesh.
+              - Get the orientation of front-facing triangles in the mesh.
             * - :py:attr:`~ansys.stk.core.graphics.SurfaceMeshPrimitive.set_hint`
-              - Gets the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with.
+              - Get the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with.
             * - :py:attr:`~ansys.stk.core.graphics.SurfaceMeshPrimitive.rendering_method`
-              - Gets the rendering method used to render the mesh.
+              - Get the rendering method used to render the mesh.
             * - :py:attr:`~ansys.stk.core.graphics.SurfaceMeshPrimitive.texture_filter`
-              - Gets or sets the filter used when a texture is applied to this primitive.
+              - Get or set the filter used when a texture is applied to this primitive.
             * - :py:attr:`~ansys.stk.core.graphics.SurfaceMeshPrimitive.texture_matrix`
-              - Gets or sets the matrix used to transform texture coordinates when a texture is applied to this primitive.
+              - Get or set the matrix used to transform texture coordinates when a texture is applied to this primitive.
             * - :py:attr:`~ansys.stk.core.graphics.SurfaceMeshPrimitive.transparent_texture_border`
-              - Gets or set the boolean that defines if the color obtained from texture coordinates beyond the texture border should be considered transparent or not. This is typically used in conjunction with the a texture matrix.
+              - Get or set the boolean that defines if the color obtained from texture coordinates beyond the texture border should be considered transparent or not. This is typically used in conjunction with the a texture matrix.
 
+
+
+Examples
+--------
+
+Draw a new Surface Mesh
+
+.. code-block:: python
+
+    # Scenario scenario: Scenario object
+    manager = scenario.scene_manager
+    cartesianPts = [
+        [6030.721052],
+        [1956.627139],
+        [-692.397578],
+        [5568.375825],
+        [2993.600713],
+        [-841.076362],
+        [5680.743568],
+        [2490.379622],
+        [-1480.882721],
+    ]  # X, Y, Z (km)
+
+    triangles = manager.initializers.surface_polygon_triangulator.compute("Earth", cartesianPts)
+    surfaceMesh = manager.initializers.surface_mesh_primitive.initialize()
+    surfaceMesh.color = Colors.Red
+    surfaceMesh.set(triangles)
+    manager.primitives.add(surfaceMesh)
+    manager.render()
 
 
 Import detail
@@ -69,49 +98,49 @@ Property detail
     :canonical: ansys.stk.core.graphics.SurfaceMeshPrimitive.texture
     :type: RendererTexture2D
 
-    Gets or sets the texture applied to this primitive when rendering.
+    Get or set the texture applied to this primitive when rendering.
 
 .. py:property:: wireframe
     :canonical: ansys.stk.core.graphics.SurfaceMeshPrimitive.wireframe
     :type: bool
 
-    Gets or sets whether the primitive is rendered in wireframe. This is useful for debugging.
+    Get or set whether the primitive is rendered in wireframe. This is useful for debugging.
 
 .. py:property:: triangle_winding_order
     :canonical: ansys.stk.core.graphics.SurfaceMeshPrimitive.triangle_winding_order
     :type: WindingOrder
 
-    Gets the orientation of front-facing triangles in the mesh.
+    Get the orientation of front-facing triangles in the mesh.
 
 .. py:property:: set_hint
     :canonical: ansys.stk.core.graphics.SurfaceMeshPrimitive.set_hint
     :type: SetHint
 
-    Gets the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with.
+    Get the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with.
 
 .. py:property:: rendering_method
     :canonical: ansys.stk.core.graphics.SurfaceMeshPrimitive.rendering_method
     :type: SurfaceMeshRenderingMethod
 
-    Gets the rendering method used to render the mesh.
+    Get the rendering method used to render the mesh.
 
 .. py:property:: texture_filter
     :canonical: ansys.stk.core.graphics.SurfaceMeshPrimitive.texture_filter
     :type: TextureFilter2D
 
-    Gets or sets the filter used when a texture is applied to this primitive.
+    Get or set the filter used when a texture is applied to this primitive.
 
 .. py:property:: texture_matrix
     :canonical: ansys.stk.core.graphics.SurfaceMeshPrimitive.texture_matrix
     :type: TextureMatrix
 
-    Gets or sets the matrix used to transform texture coordinates when a texture is applied to this primitive.
+    Get or set the matrix used to transform texture coordinates when a texture is applied to this primitive.
 
 .. py:property:: transparent_texture_border
     :canonical: ansys.stk.core.graphics.SurfaceMeshPrimitive.transparent_texture_border
     :type: bool
 
-    Gets or set the boolean that defines if the color obtained from texture coordinates beyond the texture border should be considered transparent or not. This is typically used in conjunction with the a texture matrix.
+    Get or set the boolean that defines if the color obtained from texture coordinates beyond the texture border should be considered transparent or not. This is typically used in conjunction with the a texture matrix.
 
 
 Method detail

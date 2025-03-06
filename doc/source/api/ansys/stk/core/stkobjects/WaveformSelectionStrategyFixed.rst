@@ -21,9 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.WaveformSelectionStrategyFixed.supported_waveforms`
-              - Gets an array of supported waveform names.
+              - Get an array of supported waveform names.
             * - :py:attr:`~ansys.stk.core.stkobjects.WaveformSelectionStrategyFixed.fixed_waveform`
-              - Gets or sets the fixed waveform.
+              - Get or set the fixed waveform.
 
 
 
@@ -42,12 +42,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.WaveformSelectionStrategyFixed.supported_waveforms
     :type: list
 
-    Gets an array of supported waveform names.
+    Get an array of supported waveform names.
 
 .. py:property:: fixed_waveform
     :canonical: ansys.stk.core.stkobjects.WaveformSelectionStrategyFixed.fixed_waveform
     :type: str
 
-    Gets or sets the fixed waveform.
+    Get or set the fixed waveform.
 
 

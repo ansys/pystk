@@ -21,9 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CentralBodyComponentShapeOblateSpheroid.min_radius`
-              - Gets or sets the minimum radius. Uses Distance Dimension.
+              - Get or set the minimum radius. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CentralBodyComponentShapeOblateSpheroid.max_radius`
-              - Gets or sets the maximum radius. Uses Distance Dimension.
+              - Get or set the maximum radius. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.CentralBodyComponentShapeOblateSpheroid.flattening_coefficient`
               - Get the flattening coefficient; automatically derived from the minimum and maximum radii. Dimensionless.
 
@@ -44,13 +44,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.CentralBodyComponentShapeOblateSpheroid.min_radius
     :type: float
 
-    Gets or sets the minimum radius. Uses Distance Dimension.
+    Get or set the minimum radius. Uses Distance Dimension.
 
 .. py:property:: max_radius
     :canonical: ansys.stk.core.stkobjects.astrogator.CentralBodyComponentShapeOblateSpheroid.max_radius
     :type: float
 
-    Gets or sets the maximum radius. Uses Distance Dimension.
+    Get or set the maximum radius. Uses Distance Dimension.
 
 .. py:property:: flattening_coefficient
     :canonical: ansys.stk.core.stkobjects.astrogator.CentralBodyComponentShapeOblateSpheroid.flattening_coefficient

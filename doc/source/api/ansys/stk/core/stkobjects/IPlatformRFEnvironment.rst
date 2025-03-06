@@ -19,15 +19,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IPlatformRFEnvironment.enable_local_rain_data`
-              - Gets or sets the option for enabling local rain data.
+              - Get or set the option for enabling local rain data.
             * - :py:attr:`~ansys.stk.core.stkobjects.IPlatformRFEnvironment.local_rain_height`
-              - Gets or sets the local rain iso height.
+              - Get or set the local rain iso height.
             * - :py:attr:`~ansys.stk.core.stkobjects.IPlatformRFEnvironment.local_rain_rate`
-              - Gets or sets the local rain rate.
+              - Get or set the local rain rate.
             * - :py:attr:`~ansys.stk.core.stkobjects.IPlatformRFEnvironment.local_surface_temperature`
-              - Gets or sets the local surface temperature.
+              - Get or set the local surface temperature.
             * - :py:attr:`~ansys.stk.core.stkobjects.IPlatformRFEnvironment.propagation_channel`
-              - Gets the propagation channel.
+              - Get the propagation channel.
 
 
 Import detail
@@ -45,30 +45,30 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.IPlatformRFEnvironment.enable_local_rain_data
     :type: bool
 
-    Gets or sets the option for enabling local rain data.
+    Get or set the option for enabling local rain data.
 
 .. py:property:: local_rain_height
     :canonical: ansys.stk.core.stkobjects.IPlatformRFEnvironment.local_rain_height
     :type: float
 
-    Gets or sets the local rain iso height.
+    Get or set the local rain iso height.
 
 .. py:property:: local_rain_rate
     :canonical: ansys.stk.core.stkobjects.IPlatformRFEnvironment.local_rain_rate
     :type: float
 
-    Gets or sets the local rain rate.
+    Get or set the local rain rate.
 
 .. py:property:: local_surface_temperature
     :canonical: ansys.stk.core.stkobjects.IPlatformRFEnvironment.local_surface_temperature
     :type: float
 
-    Gets or sets the local surface temperature.
+    Get or set the local surface temperature.
 
 .. py:property:: propagation_channel
     :canonical: ansys.stk.core.stkobjects.IPlatformRFEnvironment.propagation_channel
     :type: PropagationChannel
 
-    Gets the propagation channel.
+    Get the propagation channel.
 
 

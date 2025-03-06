@@ -21,9 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolConditionGridBoundingVolume.edge_type`
-              - Sets/Returns the edge type.
+              - Get or set the edge type.
             * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolConditionGridBoundingVolume.volume_grid`
-              - Sets/Returns the volume grid for bounding.
+              - Get or set the volume grid for bounding.
 
 
 
@@ -42,12 +42,12 @@ Property detail
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolConditionGridBoundingVolume.edge_type
     :type: VolumeFromGridEdgeType
 
-    Sets/Returns the edge type.
+    Get or set the edge type.
 
 .. py:property:: volume_grid
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolConditionGridBoundingVolume.volume_grid
     :type: ISpatialAnalysisToolVolumeGrid
 
-    Sets/Returns the volume grid for bounding.
+    Get or set the volume grid for bounding.
 
 

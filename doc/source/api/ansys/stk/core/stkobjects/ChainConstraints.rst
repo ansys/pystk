@@ -21,11 +21,11 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.ChainConstraints.use_minimum_angle`
               - Opt to constrain a chain so that access to or from the chain is limited by the minimum vector angle among the objects in the chain.
             * - :py:attr:`~ansys.stk.core.stkobjects.ChainConstraints.minimum_angle`
-              - Gets or sets the minimum vector angle among the objects in the chain. Uses Angle Dimension.
+              - Get or set the minimum vector angle among the objects in the chain. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ChainConstraints.use_maximum_angle`
               - Opt to constrain a chain so that access to or from the chain is limited by the maximum vector angle among the objects in the chain.
             * - :py:attr:`~ansys.stk.core.stkobjects.ChainConstraints.maximum_angle`
-              - Gets or sets the maximum vector angle among the objects in the chain. Uses Angle Dimension.
+              - Get or set the maximum vector angle among the objects in the chain. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ChainConstraints.use_minimum_link_time`
               - Opt to constrain a chain so that accesses of shorter duration than the specified minimum value are excluded from chain access results.
             * - :py:attr:`~ansys.stk.core.stkobjects.ChainConstraints.minimum_link_time`
@@ -33,7 +33,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.ChainConstraints.filter_access_intervals_by_file`
               - Opt to use an .int file to filter the computed chain access intervals.
             * - :py:attr:`~ansys.stk.core.stkobjects.ChainConstraints.load_interval_file`
-              - Gets or sets the name of the .int file used to filter the computed chain access intervals.
+              - Get or set the name of the .int file used to filter the computed chain access intervals.
 
 
 
@@ -58,7 +58,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.ChainConstraints.minimum_angle
     :type: float
 
-    Gets or sets the minimum vector angle among the objects in the chain. Uses Angle Dimension.
+    Get or set the minimum vector angle among the objects in the chain. Uses Angle Dimension.
 
 .. py:property:: use_maximum_angle
     :canonical: ansys.stk.core.stkobjects.ChainConstraints.use_maximum_angle
@@ -70,7 +70,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.ChainConstraints.maximum_angle
     :type: float
 
-    Gets or sets the maximum vector angle among the objects in the chain. Uses Angle Dimension.
+    Get or set the maximum vector angle among the objects in the chain. Uses Angle Dimension.
 
 .. py:property:: use_minimum_link_time
     :canonical: ansys.stk.core.stkobjects.ChainConstraints.use_minimum_link_time
@@ -94,6 +94,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.ChainConstraints.load_interval_file
     :type: str
 
-    Gets or sets the name of the .int file used to filter the computed chain access intervals.
+    Get or set the name of the .int file used to filter the computed chain access intervals.
 
 

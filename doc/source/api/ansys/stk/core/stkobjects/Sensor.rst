@@ -76,14 +76,50 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.Sensor.swath`
               - Get the sensor's swath.
             * - :py:attr:`~ansys.stk.core.stkobjects.Sensor.refraction_supported_types`
-              - Returns an array of valid choices.
+              - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.Sensor.refraction_model`
-              - Gets a refraction model.
+              - Get a refraction model.
             * - :py:attr:`~ansys.stk.core.stkobjects.Sensor.use_refraction_in_access`
               - Flag controls whether refraction is applied when computing relative position in Access.
             * - :py:attr:`~ansys.stk.core.stkobjects.Sensor.common_tasks`
-              - Returns an interface that exposes common tasks.
+              - Return an interface that exposes common tasks.
 
+
+
+Examples
+--------
+
+Sensor Body Mask
+
+.. code-block:: python
+
+    # Sensor sensor: Sensor object
+    installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+    sensor.set_az_el_mask_file(
+        os.path.join(installPath, "Data", "Resources", "stktraining", "text", "BodyMask_hga.bmsk")
+    )
+
+
+Set Sensor Properties
+
+.. code-block:: python
+
+    # Sensor sensor: Sensor object
+    # Change pattern and set
+    sensor.common_tasks.set_pattern_rectangular(20, 25)
+    # Change pointing and set
+    sensor.common_tasks.set_pointing_fixed_az_el(90, 60, AzElAboutBoresight.ROTATE)
+    # Change location and set
+    sensor.set_location_type(SensorLocation.FIXED)
+    sensor.location_data.assign_cartesian(-0.0004, -0.0004, 0.004)
+
+
+Attach a Sensor Object to a Vehicle
+
+.. code-block:: python
+
+    # Satellite satellite: Satellite object
+    sensor = satellite.children.new(STKObjectType.SENSOR, "MySensor")
 
 
 Import detail
@@ -191,13 +227,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Sensor.refraction_supported_types
     :type: list
 
-    Returns an array of valid choices.
+    Return an array of valid choices.
 
 .. py:property:: refraction_model
     :canonical: ansys.stk.core.stkobjects.Sensor.refraction_model
     :type: IRefractionModelBase
 
-    Gets a refraction model.
+    Get a refraction model.
 
 .. py:property:: use_refraction_in_access
     :canonical: ansys.stk.core.stkobjects.Sensor.use_refraction_in_access
@@ -209,7 +245,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Sensor.common_tasks
     :type: SensorCommonTasks
 
-    Returns an interface that exposes common tasks.
+    Return an interface that exposes common tasks.
 
 
 Method detail

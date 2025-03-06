@@ -38,13 +38,13 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleImpactLocationPoint.impact_type`
               - Get the impact type.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleImpactLocationPoint.impact_supported_types`
-              - Returns an array of valid choices.
+              - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleImpactLocationPoint.impact`
               - Get the impact point.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleImpactLocationPoint.launch_control_type`
               - Get the flight parameter type.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleImpactLocationPoint.launch_control_supported_types`
-              - Returns an array of valid choices.
+              - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleImpactLocationPoint.launch_control`
               - Get the flight parameters.
 
@@ -71,7 +71,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleImpactLocationPoint.impact_supported_types
     :type: list
 
-    Returns an array of valid choices.
+    Return an array of valid choices.
 
 .. py:property:: impact
     :canonical: ansys.stk.core.stkobjects.VehicleImpactLocationPoint.impact
@@ -89,7 +89,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleImpactLocationPoint.launch_control_supported_types
     :type: list
 
-    Returns an array of valid choices.
+    Return an array of valid choices.
 
 .. py:property:: launch_control
     :canonical: ansys.stk.core.stkobjects.VehicleImpactLocationPoint.launch_control

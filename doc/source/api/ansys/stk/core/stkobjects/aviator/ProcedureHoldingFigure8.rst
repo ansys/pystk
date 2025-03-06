@@ -34,25 +34,25 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureHoldingFigure8.altitude_options`
               - Get the altitude options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureHoldingFigure8.profile_mode`
-              - Gets or sets the mode defines how the aircraft will perform the holding pattern.
+              - Get or set the mode defines how the aircraft will perform the holding pattern.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureHoldingFigure8.level_off_mode`
-              - Gets or sets the mode for the level off maneuver.
+              - Get or set the mode for the level off maneuver.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureHoldingFigure8.bearing`
-              - Gets or sets the bearing of the holding point from the site.
+              - Get or set the bearing of the holding point from the site.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureHoldingFigure8.use_magnetic_heading`
-              - Gets or sets the option to use a magnetic heading.
+              - Get or set the option to use a magnetic heading.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureHoldingFigure8.range`
-              - Gets or sets the distance to the holding point from the site.
+              - Get or set the distance to the holding point from the site.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureHoldingFigure8.length`
-              - Gets or sets the distance between the centers of the pattern's arcs.
+              - Get or set the distance between the centers of the pattern's arcs.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureHoldingFigure8.width`
-              - Gets or sets the width of the holding pattern.
+              - Get or set the width of the holding pattern.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureHoldingFigure8.use_alternate_entry_points`
-              - Gets or sets the option to enter the holding pattern from an alternate point.
+              - Get or set the option to enter the holding pattern from an alternate point.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureHoldingFigure8.turns`
-              - Gets or sets the number of full turns.
+              - Get or set the number of full turns.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureHoldingFigure8.refuel_dump_mode`
-              - Gets or sets the mode that defines when the aircraft will leave the holding pattern for a Refuel/Dump operation.
+              - Get or set the mode that defines when the aircraft will leave the holding pattern for a Refuel/Dump operation.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureHoldingFigure8.hold_cruise_airspeed_options`
               - Get the hold cruise airspeed options.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureHoldingFigure8.enroute_options`
@@ -85,61 +85,61 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHoldingFigure8.profile_mode
     :type: HoldingProfileMode
 
-    Gets or sets the mode defines how the aircraft will perform the holding pattern.
+    Get or set the mode defines how the aircraft will perform the holding pattern.
 
 .. py:property:: level_off_mode
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHoldingFigure8.level_off_mode
     :type: AltitudeConstraintManeuverMode
 
-    Gets or sets the mode for the level off maneuver.
+    Get or set the mode for the level off maneuver.
 
 .. py:property:: bearing
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHoldingFigure8.bearing
     :type: typing.Any
 
-    Gets or sets the bearing of the holding point from the site.
+    Get or set the bearing of the holding point from the site.
 
 .. py:property:: use_magnetic_heading
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHoldingFigure8.use_magnetic_heading
     :type: bool
 
-    Gets or sets the option to use a magnetic heading.
+    Get or set the option to use a magnetic heading.
 
 .. py:property:: range
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHoldingFigure8.range
     :type: float
 
-    Gets or sets the distance to the holding point from the site.
+    Get or set the distance to the holding point from the site.
 
 .. py:property:: length
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHoldingFigure8.length
     :type: float
 
-    Gets or sets the distance between the centers of the pattern's arcs.
+    Get or set the distance between the centers of the pattern's arcs.
 
 .. py:property:: width
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHoldingFigure8.width
     :type: float
 
-    Gets or sets the width of the holding pattern.
+    Get or set the width of the holding pattern.
 
 .. py:property:: use_alternate_entry_points
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHoldingFigure8.use_alternate_entry_points
     :type: bool
 
-    Gets or sets the option to enter the holding pattern from an alternate point.
+    Get or set the option to enter the holding pattern from an alternate point.
 
 .. py:property:: turns
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHoldingFigure8.turns
     :type: int
 
-    Gets or sets the number of full turns.
+    Get or set the number of full turns.
 
 .. py:property:: refuel_dump_mode
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHoldingFigure8.refuel_dump_mode
     :type: HoldRefuelDumpMode
 
-    Gets or sets the mode that defines when the aircraft will leave the holding pattern for a Refuel/Dump operation.
+    Get or set the mode that defines when the aircraft will leave the holding pattern for a Refuel/Dump operation.
 
 .. py:property:: hold_cruise_airspeed_options
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureHoldingFigure8.hold_cruise_airspeed_options

@@ -48,7 +48,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineThrottleTable.reference_epoch`
               - The date and Time used as reference epoch for degradation. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.EngineThrottleTable.control_parameters_available`
-              - Returns whether or not the control parameters can be set.
+              - Return whether or not the control parameters can be set.
 
 
 
@@ -109,7 +109,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.EngineThrottleTable.control_parameters_available
     :type: bool
 
-    Returns whether or not the control parameters can be set.
+    Return whether or not the control parameters can be set.
 
 
 Method detail

@@ -1,3 +1,25 @@
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
 import pytest
 from test_util import *
 from assertion_harness import *
@@ -94,6 +116,29 @@ class EarlyBoundTests(TestBase):
 
     # ----------------------------------------------------------------
 
+    # region ZZZ_Compute_and_Clear
+    def test_ZZZ_Compute_and_Clear(self):
+        # Configure CommSystem so that Compute will succeed
+        EarlyBoundTests.commSystem.transmitters.add(r"Constellation/Constellation1")
+        EarlyBoundTests.commSystem.receivers.add(r"Constellation/Constellation2")
+        EarlyBoundTests.commSystem.interference_sources.add(r"Constellation/Constellation1")
+
+        EarlyBoundTests.commSystem.compute()
+        TestBase.Application.save_as(
+            Path.Combine(TestBase.TemporaryDirectory, "CommSystem_Compute.sc")
+        )  # so that dat files are saved
+        Assert.assertTrue(File.Exists(Path.Combine(TestBase.TemporaryDirectory, "CommSystem1.cs.dat1")))
+        Assert.assertTrue(File.Exists(Path.Combine(TestBase.TemporaryDirectory, "CommSystem1.cs.dat2")))
+
+        EarlyBoundTests.commSystem.clear()
+        TestBase.Application.save_as(
+            Path.Combine(TestBase.TemporaryDirectory, "CommSystem_Compute.sc")
+        )  # so that dat files are removed
+        Assert.assertFalse(File.Exists(Path.Combine(TestBase.TemporaryDirectory, "CommSystem1.cs.dat1")))
+        Assert.assertFalse(File.Exists(Path.Combine(TestBase.TemporaryDirectory, "CommSystem1.cs.dat2")))
+
+    # endregion
+
     # region Transmitters
     def test_Transmitters(self):
         oHelper = ObjectLinkCollectionHelper(False)
@@ -137,6 +182,8 @@ class EarlyBoundTests(TestBase):
         EarlyBoundTests.commSystem.constraining_role = CommSystemConstrainingRole.TRANSMIT
         Assert.assertEqual(CommSystemConstrainingRole.TRANSMIT, EarlyBoundTests.commSystem.constraining_role)
 
+        backupCriteria: "CommSystemLinkSelectionCriteriaType" = EarlyBoundTests.commSystem.link_selection_criteria.type
+
         EarlyBoundTests.commSystem.set_link_selection_criteria_type(
             CommSystemLinkSelectionCriteriaType.MAXIMUM_ELEVATION
         )
@@ -164,6 +211,8 @@ class EarlyBoundTests(TestBase):
 
         with pytest.raises(Exception, match=RegexSubstringMatch("Invalid")):
             EarlyBoundTests.commSystem.set_link_selection_criteria_type(CommSystemLinkSelectionCriteriaType.UNKNOWN)
+
+        EarlyBoundTests.commSystem.set_link_selection_criteria_type(backupCriteria)
 
     # endregion
 

@@ -1,6 +1,24 @@
-################################################################################
-#          Copyright 2020-2023, Ansys Government Initiatives
-################################################################################ 
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
 
 """Object Model components specifically designed to support STK Astrogator."""
 
@@ -112,25 +130,36 @@ __all__ = ["AccessCriterion", "AccessStoppingCondition", "AsTriggerCondition", "
 "UserVariableDefinitionCollection", "UserVariableUpdate", "UserVariableUpdateCollection", "VenusGRAM2005", "VenusGRAMDensityType", 
 "YarkovskyFunc"]
 
+from ctypes import POINTER
+from enum import IntEnum
 import typing
 
-from ctypes   import POINTER
-from enum     import IntEnum
-
-from ..internal  import comutil          as agcom
-from ..internal  import coclassutil      as agcls
-from ..internal  import marshall         as agmarshall
-from ..utilities import colors           as agcolor
-from ..internal.comutil     import IUnknown, IDispatch
-from ..internal.apiutil     import (InterfaceProxy, EnumeratorProxy, OutArg, 
-    initialize_from_source_object, get_interface_property, set_interface_attribute, 
-    set_class_attribute, SupportsDeleteCallback)
+from ..internal import coclassutil as agcls, comutil as agcom, marshall as agmarshall
+from ..internal.apiutil import (
+    EnumeratorProxy,
+    InterfaceProxy,
+    OutArg,
+    SupportsDeleteCallback,
+    get_interface_property,
+    initialize_from_source_object,
+    set_class_attribute,
+    set_interface_attribute,
+)
+from ..internal.comutil import IDispatch, IUnknown
+from ..stkobjects import (
+    AberrationType,
+    ComponentLinkEmbedControlReferenceType,
+    ICloneable,
+    IComponentInfo,
+    IComponentLinkEmbedControl,
+    IPropagator,
+    IvClockHost,
+    IvTimeSense,
+    SolidTide,
+)
+from ..stkutil import IDirection, IOrientation, IRuntimeTypeInfoProvider, RuntimeTypeInfo
+from ..utilities import colors as agcolor
 from ..utilities.exceptions import STKRuntimeError
-
-from ..stkutil import IDirection, IOrientation, IRuntimeTypeInfoProvider
-from ..stkobjects import (AberrationType, ComponentLinkEmbedControlReferenceType, ICloneable,
-                          IComponentInfo, IComponentLinkEmbedControl, IPropagator, IvClockHost,
-                          IvTimeSense, SolidTide)
 
 
 def _raise_uninitialized_error(*args):
@@ -4156,7 +4185,22 @@ agcls.AgTypeNameMap["INumericalIntegrator"] = INumericalIntegrator
 
 
 class MCSDriver(IPropagator, SupportsDeleteCallback):
-    """Properties for the Mission Control Sequence."""
+    """
+    Properties for the Mission Control Sequence.
+
+    Examples
+    --------
+    Set satellite propagator to Astrogator and clear segments:
+    >>> # Satellite satellite: Satellite object
+    >>> satellite.set_propagator_type(PropagatorType.ASTROGATOR)
+    >>> driver = satellite.propagator
+    >>> # Clear all segments from the MCS
+    >>> driver.main_sequence.remove_all()
+
+    Run the Astrogator MCS:
+    >>> # MCSDriver driver: MCS driver interface
+    >>> driver.run_mcs()
+    """
 
     _num_methods = 14
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -4422,7 +4466,7 @@ class MCSSegmentCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def provide_runtime_type_info(self) -> "IRuntimeTypeInfo":
+    def provide_runtime_type_info(self) -> "RuntimeTypeInfo":
         """Return the RuntimeTypeInfo interface to access properties at runtime."""
         return self._intf.get_property(MCSSegmentCollection._metadata, MCSSegmentCollection._get_provide_runtime_type_info_metadata)
 
@@ -12761,7 +12805,7 @@ class ProfileCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def provide_runtime_type_info(self) -> "IRuntimeTypeInfo":
+    def provide_runtime_type_info(self) -> "RuntimeTypeInfo":
         """Return the RuntimeTypeInfo interface to access properties at runtime."""
         return self._intf.get_property(ProfileCollection._metadata, ProfileCollection._get_provide_runtime_type_info_metadata)
 
@@ -13899,7 +13943,7 @@ class TargeterGraphCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallback):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def provide_runtime_type_info(self) -> "IRuntimeTypeInfo":
+    def provide_runtime_type_info(self) -> "RuntimeTypeInfo":
         """Return the RuntimeTypeInfo interface to access properties at runtime."""
         return self._intf.get_property(TargeterGraphCollection._metadata, TargeterGraphCollection._get_provide_runtime_type_info_metadata)
 
@@ -14020,7 +14064,7 @@ class TargeterGraphResultCollection(IRuntimeTypeInfoProvider, SupportsDeleteCall
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def provide_runtime_type_info(self) -> "IRuntimeTypeInfo":
+    def provide_runtime_type_info(self) -> "RuntimeTypeInfo":
         """Return the RuntimeTypeInfo interface to access properties at runtime."""
         return self._intf.get_property(TargeterGraphResultCollection._metadata, TargeterGraphResultCollection._get_provide_runtime_type_info_metadata)
 
@@ -14106,7 +14150,7 @@ class TargeterGraphActiveControlCollection(IRuntimeTypeInfoProvider, SupportsDel
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def provide_runtime_type_info(self) -> "IRuntimeTypeInfo":
+    def provide_runtime_type_info(self) -> "RuntimeTypeInfo":
         """Return the RuntimeTypeInfo interface to access properties at runtime."""
         return self._intf.get_property(TargeterGraphActiveControlCollection._metadata, TargeterGraphActiveControlCollection._get_provide_runtime_type_info_metadata)
 
@@ -15508,7 +15552,7 @@ class DifferentialCorrectorControlCollection(IRuntimeTypeInfoProvider, SupportsD
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def provide_runtime_type_info(self) -> "IRuntimeTypeInfo":
+    def provide_runtime_type_info(self) -> "RuntimeTypeInfo":
         """Return the RuntimeTypeInfo interface to access properties at runtime."""
         return self._intf.get_property(DifferentialCorrectorControlCollection._metadata, DifferentialCorrectorControlCollection._get_provide_runtime_type_info_metadata)
 
@@ -15602,7 +15646,7 @@ class DifferentialCorrectorResultCollection(IRuntimeTypeInfoProvider, SupportsDe
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def provide_runtime_type_info(self) -> "IRuntimeTypeInfo":
+    def provide_runtime_type_info(self) -> "RuntimeTypeInfo":
         """Return the RuntimeTypeInfo interface to access properties at runtime."""
         return self._intf.get_property(DifferentialCorrectorResultCollection._metadata, DifferentialCorrectorResultCollection._get_provide_runtime_type_info_metadata)
 
@@ -30547,7 +30591,7 @@ class RadiationPressureFunction(IComponentInfo, ICloneable, SupportsDeleteCallba
             "marshallers" : (agmarshall.VariantBoolArg,) }
     @property
     def override_segment_settings(self) -> bool:
-        """True to use Ck and area values defined on this component for radiation pressure computations, rather than those defined in the MCS segments."""
+        """Do not use this property, as it is deprecated. True to use Ck and area values defined on this component for radiation pressure computations, rather than those defined in the MCS segments."""
         return self._intf.get_property(RadiationPressureFunction._metadata, RadiationPressureFunction._get_override_segment_settings_metadata)
 
     _set_override_segment_settings_metadata = { "offset" : _set_override_segment_settings_method_offset,
@@ -30562,7 +30606,7 @@ class RadiationPressureFunction(IComponentInfo, ICloneable, SupportsDeleteCallba
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def radiation_pressure_coefficient(self) -> float:
-        """Coefficient, Ck, for use with radiation pressure computation."""
+        """Do not use this property, as it is deprecated. Coefficient, Ck, for use with radiation pressure computation."""
         return self._intf.get_property(RadiationPressureFunction._metadata, RadiationPressureFunction._get_radiation_pressure_coefficient_metadata)
 
     _set_radiation_pressure_coefficient_metadata = { "offset" : _set_radiation_pressure_coefficient_method_offset,
@@ -30577,7 +30621,7 @@ class RadiationPressureFunction(IComponentInfo, ICloneable, SupportsDeleteCallba
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
     def radiation_pressure_area(self) -> float:
-        """Area to be used for radiation pressure computations. Small area dimension."""
+        """Do not use this property, as it is deprecated. Area to be used for radiation pressure computations. Small area dimension."""
         return self._intf.get_property(RadiationPressureFunction._metadata, RadiationPressureFunction._get_radiation_pressure_area_metadata)
 
     _set_radiation_pressure_area_metadata = { "offset" : _set_radiation_pressure_area_method_offset,
@@ -45450,7 +45494,7 @@ class ScriptingSegmentCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallbac
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def provide_runtime_type_info(self) -> "IRuntimeTypeInfo":
+    def provide_runtime_type_info(self) -> "RuntimeTypeInfo":
         """Return the RuntimeTypeInfo interface to access properties at runtime."""
         return self._intf.get_property(ScriptingSegmentCollection._metadata, ScriptingSegmentCollection._get_provide_runtime_type_info_metadata)
 
@@ -45742,7 +45786,7 @@ class ScriptingParameterCollection(IRuntimeTypeInfoProvider, SupportsDeleteCallb
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def provide_runtime_type_info(self) -> "IRuntimeTypeInfo":
+    def provide_runtime_type_info(self) -> "RuntimeTypeInfo":
         """Return the RuntimeTypeInfo interface to access properties at runtime."""
         return self._intf.get_property(ScriptingParameterCollection._metadata, ScriptingParameterCollection._get_provide_runtime_type_info_metadata)
 
@@ -47152,7 +47196,7 @@ class ScriptingParameterEnumerationChoiceCollection(IRuntimeTypeInfoProvider, Su
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def provide_runtime_type_info(self) -> "IRuntimeTypeInfo":
+    def provide_runtime_type_info(self) -> "RuntimeTypeInfo":
         """Return the RuntimeTypeInfo interface to access properties at runtime."""
         return self._intf.get_property(ScriptingParameterEnumerationChoiceCollection._metadata, ScriptingParameterEnumerationChoiceCollection._get_provide_runtime_type_info_metadata)
 
@@ -49283,7 +49327,7 @@ class ManeuverOptimalFiniteSNOPTOptimizer(SupportsDeleteCallback):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def provide_runtime_type_info(self) -> "IRuntimeTypeInfo":
+    def provide_runtime_type_info(self) -> "RuntimeTypeInfo":
         """Return the RuntimeTypeInfo interface to access properties at runtime."""
         return self._intf.get_property(ManeuverOptimalFiniteSNOPTOptimizer._metadata, ManeuverOptimalFiniteSNOPTOptimizer._get_provide_runtime_type_info_metadata)
 
@@ -49450,7 +49494,7 @@ class ManeuverOptimalFiniteInitialBoundaryConditions(SupportsDeleteCallback):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def provide_runtime_type_info(self) -> "IRuntimeTypeInfo":
+    def provide_runtime_type_info(self) -> "RuntimeTypeInfo":
         """Return the RuntimeTypeInfo interface to access properties at runtime."""
         return self._intf.get_property(ManeuverOptimalFiniteInitialBoundaryConditions._metadata, ManeuverOptimalFiniteInitialBoundaryConditions._get_provide_runtime_type_info_metadata)
 
@@ -49602,7 +49646,7 @@ class ManeuverOptimalFiniteFinalBoundaryConditions(SupportsDeleteCallback):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def provide_runtime_type_info(self) -> "IRuntimeTypeInfo":
+    def provide_runtime_type_info(self) -> "RuntimeTypeInfo":
         """Return the RuntimeTypeInfo interface to access properties at runtime."""
         return self._intf.get_property(ManeuverOptimalFiniteFinalBoundaryConditions._metadata, ManeuverOptimalFiniteFinalBoundaryConditions._get_provide_runtime_type_info_metadata)
 
@@ -49790,7 +49834,7 @@ class ManeuverOptimalFinitePathBoundaryConditions(SupportsDeleteCallback):
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def provide_runtime_type_info(self) -> "IRuntimeTypeInfo":
+    def provide_runtime_type_info(self) -> "RuntimeTypeInfo":
         """Return the RuntimeTypeInfo interface to access properties at runtime."""
         return self._intf.get_property(ManeuverOptimalFinitePathBoundaryConditions._metadata, ManeuverOptimalFinitePathBoundaryConditions._get_provide_runtime_type_info_metadata)
 
@@ -53152,8 +53196,3 @@ class BisectionResultCollection(SupportsDeleteCallback):
 
 agcls.AgClassCatalog.add_catalog_entry((5219088716918017814, 2293503427773161615), BisectionResultCollection)
 agcls.AgTypeNameMap["BisectionResultCollection"] = BisectionResultCollection
-
-
-################################################################################
-#          Copyright 2020-2023, Ansys Government Initiatives
-################################################################################

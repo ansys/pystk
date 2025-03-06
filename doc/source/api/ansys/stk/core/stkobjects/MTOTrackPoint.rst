@@ -21,11 +21,11 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOTrackPoint.time`
               - Get the time at which the point occurs. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOTrackPoint.latitude`
-              - Gets or sets the latitude of the point. Uses Angle Dimension.
+              - Get or set the latitude of the point. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOTrackPoint.longitude`
-              - Gets or sets the longitude of the point. Uses Angle Dimension.
+              - Get or set the longitude of the point. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOTrackPoint.altitude`
-              - Gets or sets the altitude of the point. Uses Distance Dimension.
+              - Get or set the altitude of the point. Uses Distance Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOTrackPoint.position`
               - Whether to interpolate the track's position between each defined point. The track's marker and label position will be linearly interpolated between the track points for the current animation time.
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOTrackPoint.identifier`
@@ -54,19 +54,19 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.MTOTrackPoint.latitude
     :type: float
 
-    Gets or sets the latitude of the point. Uses Angle Dimension.
+    Get or set the latitude of the point. Uses Angle Dimension.
 
 .. py:property:: longitude
     :canonical: ansys.stk.core.stkobjects.MTOTrackPoint.longitude
     :type: float
 
-    Gets or sets the longitude of the point. Uses Angle Dimension.
+    Get or set the longitude of the point. Uses Angle Dimension.
 
 .. py:property:: altitude
     :canonical: ansys.stk.core.stkobjects.MTOTrackPoint.altitude
     :type: float
 
-    Gets or sets the altitude of the point. Uses Distance Dimension.
+    Get or set the altitude of the point. Uses Distance Dimension.
 
 .. py:property:: position
     :canonical: ansys.stk.core.stkobjects.MTOTrackPoint.position

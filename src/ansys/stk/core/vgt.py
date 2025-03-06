@@ -1,6 +1,24 @@
-################################################################################
-#          Copyright 2020-2023, Ansys Government Initiatives
-################################################################################ 
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
 
 """
 The Vector Geometry (VGT) API enables users define new or utilize existing geometric constructs such as coordinate systems, vectors, points, angles, axes and planes.
@@ -104,35 +122,37 @@ __all__ = ["AberrationModelType", "AnalysisWorkbenchAngleFindAngleResult", "Anal
 "VectorGeometryToolSystemOnSurface", "VectorGeometryToolSystemReference", "VectorGeometryToolVector", "VectorGeometryToolVectorAngleRate", 
 "VectorGeometryToolVectorAngularVelocity", "VectorGeometryToolVectorApoapsis", "VectorGeometryToolVectorConing", "VectorGeometryToolVectorCross", 
 "VectorGeometryToolVectorCustomScript", "VectorGeometryToolVectorDerivative", "VectorGeometryToolVectorDirectionToStar", 
-"VectorGeometryToolVectorDisplacement", "VectorGeometryToolVectorEccentricity", "VectorGeometryToolVectorFactory", "VectorGeometryToolVectorFixedAtEpoch", 
-"VectorGeometryToolVectorFixedAtTimeInstant", "VectorGeometryToolVectorFixedInAxes", "VectorGeometryToolVectorGroup", "VectorGeometryToolVectorLineOfNodes", 
-"VectorGeometryToolVectorLinearCombination", "VectorGeometryToolVectorModelAttachment", "VectorGeometryToolVectorOrbitAngularMomentum", 
-"VectorGeometryToolVectorOrbitNormal", "VectorGeometryToolVectorPeriapsis", "VectorGeometryToolVectorPlugin", "VectorGeometryToolVectorProjection", 
-"VectorGeometryToolVectorProjectionAlongVector", "VectorGeometryToolVectorReference", "VectorGeometryToolVectorReflection", 
-"VectorGeometryToolVectorRotationVector", "VectorGeometryToolVectorScalarLinearCombination", "VectorGeometryToolVectorScalarScaled", 
-"VectorGeometryToolVectorScaled", "VectorGeometryToolVectorSurfaceDisplacement", "VectorGeometryToolVectorTwoPlanesIntersection", 
-"VectorGeometryToolVectorVelocityAcceleration", "VectorGeometryToolWellKnownAxes", "VectorGeometryToolWellKnownEarthAxes", 
-"VectorGeometryToolWellKnownEarthSystems", "VectorGeometryToolWellKnownSunAxes", "VectorGeometryToolWellKnownSunSystems", 
-"VectorGeometryToolWellKnownSystems", "VectorType", "VolumeCombinedOperationType", "VolumeFromGridEdgeType", "VolumeGridType", 
-"VolumeSatisfactionAccumulationType", "VolumeSatisfactionDurationType", "VolumeSatisfactionFilterType", "VolumeSatisfactionMetricType", 
-"VolumeType"]
+"VectorGeometryToolVectorDisplacement", "VectorGeometryToolVectorEccentricity", "VectorGeometryToolVectorFactory", "VectorGeometryToolVectorFile", 
+"VectorGeometryToolVectorFixedAtEpoch", "VectorGeometryToolVectorFixedAtTimeInstant", "VectorGeometryToolVectorFixedInAxes", 
+"VectorGeometryToolVectorGroup", "VectorGeometryToolVectorLineOfNodes", "VectorGeometryToolVectorLinearCombination", "VectorGeometryToolVectorModelAttachment", 
+"VectorGeometryToolVectorOrbitAngularMomentum", "VectorGeometryToolVectorOrbitNormal", "VectorGeometryToolVectorPeriapsis", 
+"VectorGeometryToolVectorPlugin", "VectorGeometryToolVectorProjection", "VectorGeometryToolVectorProjectionAlongVector", 
+"VectorGeometryToolVectorReference", "VectorGeometryToolVectorReflection", "VectorGeometryToolVectorRotationVector", "VectorGeometryToolVectorScalarLinearCombination", 
+"VectorGeometryToolVectorScalarScaled", "VectorGeometryToolVectorScaled", "VectorGeometryToolVectorSurfaceDisplacement", 
+"VectorGeometryToolVectorTwoPlanesIntersection", "VectorGeometryToolVectorVelocityAcceleration", "VectorGeometryToolWellKnownAxes", 
+"VectorGeometryToolWellKnownEarthAxes", "VectorGeometryToolWellKnownEarthSystems", "VectorGeometryToolWellKnownSunAxes", 
+"VectorGeometryToolWellKnownSunSystems", "VectorGeometryToolWellKnownSystems", "VectorType", "VolumeCombinedOperationType", 
+"VolumeFromGridEdgeType", "VolumeGridType", "VolumeSatisfactionAccumulationType", "VolumeSatisfactionDurationType", "VolumeSatisfactionFilterType", 
+"VolumeSatisfactionMetricType", "VolumeType"]
 
+from ctypes import POINTER
+from enum import IntEnum, IntFlag
 import typing
 
-from ctypes   import POINTER
-from enum     import IntEnum, IntFlag
-
-from .internal  import comutil          as agcom
-from .internal  import coclassutil      as agcls
-from .internal  import marshall         as agmarshall
-from .internal.comutil     import IUnknown, IDispatch
-from .internal.apiutil     import (InterfaceProxy, EnumeratorProxy, OutArg, 
-    initialize_from_source_object, get_interface_property, set_interface_attribute, 
-    set_class_attribute, SupportsDeleteCallback)
+from .internal import coclassutil as agcls, comutil as agcom, marshall as agmarshall
+from .internal.apiutil import (
+    EnumeratorProxy,
+    InterfaceProxy,
+    OutArg,
+    SupportsDeleteCallback,
+    get_interface_property,
+    initialize_from_source_object,
+    set_class_attribute,
+    set_interface_attribute,
+)
+from .internal.comutil import IDispatch, IUnknown
+from .stkutil import EulerOrientationSequenceType, ICartesian3Vector, IDirection, IOrientation, IPosition, Quantity
 from .utilities.exceptions import STKRuntimeError
-
-from .stkutil import (EulerOrientationSequenceType, ICartesian3Vector, IDirection, IOrientation,
-                      IPosition, Quantity)
 
 
 def _raise_uninitialized_error(*args):
@@ -1596,6 +1616,8 @@ class VectorType(IntEnum):
     """Rotation vector representing the rotation of one axes relative to reference axes, expressed as angle*rotationAxis."""
     DISPLACEMENT_ON_SURFACE = 31
     """Displacement between origin and destination points using surface distance and altitude difference."""
+    FILE = 32
+    """Vector interpolated from tabulated data from file."""
 
 VectorType.UNKNOWN.__doc__ = "Unknown or unsupported vector type."
 VectorType.DISPLACEMENT.__doc__ = "Vector defined by its start and end points."
@@ -1629,6 +1651,7 @@ VectorType.VELOCITY.__doc__ = "Velocity vector of a point in a coordinate system
 VectorType.PLUGIN.__doc__ = "A vector plugin point."
 VectorType.ROTATION_VECTOR.__doc__ = "Rotation vector representing the rotation of one axes relative to reference axes, expressed as angle*rotationAxis."
 VectorType.DISPLACEMENT_ON_SURFACE.__doc__ = "Displacement between origin and destination points using surface distance and altitude difference."
+VectorType.FILE.__doc__ = "Vector interpolated from tabulated data from file."
 
 agcls.AgTypeNameMap["VectorType"] = VectorType
 
@@ -25792,13 +25815,75 @@ class VectorGeometryToolVectorSurfaceDisplacement(IAnalysisWorkbenchComponent, I
         """Attempt to assign an attribute."""
         set_class_attribute(self, attrname, value, VectorGeometryToolVectorSurfaceDisplacement, [VectorGeometryToolVectorSurfaceDisplacement, IAnalysisWorkbenchComponent, IAnalysisWorkbenchComponentTimeProperties, IVectorGeometryToolVector])
 
-agcls.AgClassCatalog.add_catalog_entry((5165198519091638019, 11878832301117811344), VectorGeometryToolVectorSurfaceDisplacement)
+agcls.AgClassCatalog.add_catalog_entry((4763064220756248717, 8260778239053244854), VectorGeometryToolVectorSurfaceDisplacement)
 agcls.AgTypeNameMap["VectorGeometryToolVectorSurfaceDisplacement"] = VectorGeometryToolVectorSurfaceDisplacement
+
+class VectorGeometryToolVectorFile(IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent, SupportsDeleteCallback):
+    """Vector interpolated from tabulated data from file."""
+
+    _num_methods = 3
+    _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
+    _get_filename_method_offset = 1
+    _set_filename_method_offset = 2
+    _reload_method_offset = 3
+    _metadata = {
+        "iid_data" : (5543542084215610396, 17802732676296453806),
+        "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
+    }
+    _property_names = {}
+    def _get_property(self, attrname):
+        return get_interface_property(attrname, VectorGeometryToolVectorFile)
+    
+    _get_filename_metadata = { "offset" : _get_filename_method_offset,
+            "arg_types" : (POINTER(agcom.BSTR),),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @property
+    def filename(self) -> str:
+        """>A path to vector data file."""
+        return self._intf.get_property(VectorGeometryToolVectorFile._metadata, VectorGeometryToolVectorFile._get_filename_metadata)
+
+    _set_filename_metadata = { "offset" : _set_filename_method_offset,
+            "arg_types" : (agcom.BSTR,),
+            "marshallers" : (agmarshall.BStrArg,) }
+    @filename.setter
+    def filename(self, filename:str) -> None:
+        return self._intf.set_property(VectorGeometryToolVectorFile._metadata, VectorGeometryToolVectorFile._set_filename_metadata, filename)
+
+    _reload_metadata = { "offset" : _reload_method_offset,
+            "arg_types" : (),
+            "marshallers" : () }
+    def reload(self) -> None:
+        """Reload the file specified with Filename property."""
+        return self._intf.invoke(VectorGeometryToolVectorFile._metadata, VectorGeometryToolVectorFile._reload_metadata, )
+
+    _property_names[filename] = "filename"
+
+    def __init__(self, source_object=None):
+        """Construct an object of type VectorGeometryToolVectorFile."""
+        SupportsDeleteCallback.__init__(self)
+        initialize_from_source_object(self, source_object, VectorGeometryToolVectorFile)
+        IVectorGeometryToolVector.__init__(self, source_object)
+        IAnalysisWorkbenchComponentTimeProperties.__init__(self, source_object)
+        IAnalysisWorkbenchComponent.__init__(self, source_object)
+    def _private_init(self, intf:InterfaceProxy):
+        self.__dict__["_intf"] = intf
+        IVectorGeometryToolVector._private_init(self, intf)
+        IAnalysisWorkbenchComponentTimeProperties._private_init(self, intf)
+        IAnalysisWorkbenchComponent._private_init(self, intf)
+    def __eq__(self, other):
+        """Check equality of the underlying STK references."""
+        return agcls.compare_com_objects(self, other)
+    def __setattr__(self, attrname, value):
+        """Attempt to assign an attribute."""
+        set_class_attribute(self, attrname, value, VectorGeometryToolVectorFile, [VectorGeometryToolVectorFile, IVectorGeometryToolVector, IAnalysisWorkbenchComponentTimeProperties, IAnalysisWorkbenchComponent])
+
+agcls.AgClassCatalog.add_catalog_entry((5754310198593178934, 4508541946230252443), VectorGeometryToolVectorFile)
+agcls.AgTypeNameMap["VectorGeometryToolVectorFile"] = VectorGeometryToolVectorFile
 
 class VectorGeometryToolVectorFactory(SupportsDeleteCallback):
     """A Factory object to create vectors."""
 
-    _num_methods = 6
+    _num_methods = 7
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _create_method_offset = 1
     _is_type_supported_method_offset = 2
@@ -25806,6 +25891,7 @@ class VectorGeometryToolVectorFactory(SupportsDeleteCallback):
     _get_available_plugin_display_names_method_offset = 4
     _create_plugin_from_display_name_method_offset = 5
     _create_cross_product_method_offset = 6
+    _create_file_vector_method_offset = 7
     _metadata = {
         "iid_data" : (4961059317243966035, 3728998091371643287),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -25856,6 +25942,13 @@ class VectorGeometryToolVectorFactory(SupportsDeleteCallback):
     def create_cross_product(self, vector_name:str, vector_a:"IVectorGeometryToolVector", vector_b:"IVectorGeometryToolVector") -> "VectorGeometryToolVectorCross":
         """Create a cross product C = A x B."""
         return self._intf.invoke(VectorGeometryToolVectorFactory._metadata, VectorGeometryToolVectorFactory._create_cross_product_metadata, vector_name, vector_a, vector_b, OutArg())
+
+    _create_file_vector_metadata = { "offset" : _create_file_vector_method_offset,
+            "arg_types" : (agcom.BSTR, agcom.BSTR, agcom.BSTR, POINTER(agcom.PVOID),),
+            "marshallers" : (agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.BStrArg, agmarshall.InterfaceOutArg,) }
+    def create_file_vector(self, vector_name:str, description:str, file_name:str) -> "VectorGeometryToolVectorFile":
+        """Create a vector interpolated from tabulated data from file."""
+        return self._intf.invoke(VectorGeometryToolVectorFactory._metadata, VectorGeometryToolVectorFactory._create_file_vector_metadata, vector_name, description, file_name, OutArg())
 
     _property_names[available_plugin_display_names] = "available_plugin_display_names"
 
@@ -26936,7 +27029,209 @@ agcls.AgClassCatalog.add_catalog_entry((5689988669908775372, 1630897330629878799
 agcls.AgTypeNameMap["VectorGeometryToolSystemGroup"] = VectorGeometryToolSystemGroup
 
 class AnalysisWorkbenchComponentProvider(SupportsDeleteCallback):
-    """Allow accessing existing Vector Geometry Tool components."""
+    r"""
+    Allow accessing existing Vector Geometry Tool components.
+
+    Examples
+    --------
+    Create a new Collection of Interval List:
+    >>> # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
+    >>> # IVectorGeometryPoint centerPtSat: point component
+    >>> timeCollListFactory = vgtSat.time_interval_collections.factory
+    >>> timeColl = timeCollListFactory.create_lighting("LightingList", "Collection of lighting intervals")
+    >>> timeColl.use_object_eclipsing_bodies = True
+    >>> timeColl.location = centerPtSat
+
+    Create a new Time Interval:
+    >>> # StkObjectRoot root: STK Object Model Root
+    >>> # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
+    >>> # Change DateFormat dimension to epoch seconds to make the time easier to handle in
+    >>> # Python
+    >>> root.units_preferences.item("DateFormat").set_current_unit("EpSec")
+    >>> timeIntFactory = vgtSat.time_intervals.factory
+    >>> timeInterval = timeIntFactory.create_fixed("TimeInterval", "Fixed time interval")
+    >>> timeInterval.set_interval(60, 120)
+
+    Create a new Time Instant:
+    >>> # StkObjectRoot root: STK Object Model Root
+    >>> # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
+    >>> # Change DateFormat dimension to epoch seconds to make the time easier to handle in
+    >>> # Python
+    >>> root.units_preferences.item("DateFormat").set_current_unit("EpSec")
+    >>> timeInstFactory = vgtSat.time_instants.factory
+    >>> timeEpoch = timeInstFactory.create_epoch("FixedTime", "Fixed Epoch Time")
+    >>> timeEpoch.epoch = 3600
+
+    Get Times From Defined Time Instant and create an cell array:
+    >>> # StkObjectRoot root: STK Object Model Root
+    >>> # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
+    >>> # Change DateFormat dimension to epoch seconds to make the time easier to handle in
+    >>> # Python
+    >>> root.units_preferences.item("DateFormat").set_current_unit("EpSec")
+    >>> satStart = vgtSat.time_instants.item("AvailabilityStartTime")
+    >>> start = satStart.find_occurrence().epoch
+    >>> 
+    >>> satStop = vgtSat.time_instants.item("AvailabilityStopTime")
+    >>> stop = satStop.find_occurrence().epoch
+    >>> interval = [[start], [540], [600], [stop]]  # EpSec
+
+    Create a new Orbit Parameter Set:
+    >>> # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
+    >>> paraFactory = vgtSat.parameter_sets.factory
+    >>> paraSetOribit = paraFactory.create("orbitSun", "Orbit", ParameterSetType.ORBIT)
+    >>> paraSetOribit.orbiting_point = vgtSat.points.item("Center")
+    >>> paraSetOribit.central_body = "Sun"
+    >>> paraSetOribit.use_central_body_gravitational_parameter = False
+    >>> paraSetOribit.gravitational_parameter = 398600  # km^3/sec^2
+
+    Create a new Attitude Parameter Set:
+    >>> # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
+    >>> # IVectorGeometryToolAxes bodyAxes: axes component
+    >>> # IVectorGeometryToolAxes icrfAxes: axes component
+    >>> paraFactory = vgtSat.parameter_sets.factory
+    >>> paraSet = paraFactory.create("attitudeICRF", "Attitude Set", ParameterSetType.ATTITUDE)
+    >>> paraSet.axes = bodyAxes
+    >>> paraSet.reference_axes = icrfAxes
+
+    Get a Scalar component and evaluate at a time:
+    >>> # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
+    >>> # Scenario scenario: Scenario object
+    >>> deticLatitude = vgtSat.calculation_scalars.item("GroundTrajectory.Detic.LLA.Latitude")
+    >>> result = deticLatitude.evaluate(scenario.start_time)
+    >>> print("The value of detic latitude is %s" % result.value)
+
+    Create a Data Element Scalar:
+    >>> # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
+    >>> calcFactory = vgtSat.calculation_scalars.factory
+    >>> trueAnom = calcFactory.create("TrueAnomaly", "", CalculationScalarType.DATA_ELEMENT)
+    >>> trueAnom.set_with_group("Classical Elements", "ICRF", "True Anomaly")
+
+    Create a new Vector Magnitude Scalar:
+    >>> # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
+    >>> # VectorGeometryToolVectorDisplacement Sat2EarthCenter: vector component
+    >>> calcFactory = vgtSat.calculation_scalars.factory
+    >>> displScalar = calcFactory.create_vector_magnitude(
+    >>>     "VectorDisplacement", "Vector Magnitude of Displacement Vector"
+    >>> )
+    >>> displScalar.input_vector = Sat2EarthCenter
+
+    Create a new Assembled System:
+    >>> # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
+    >>> # IVectorGeometryPointFixedInSystem fixedPt: point component
+    >>> # IVectorGeometryToolAxes bodyAxes: axes component
+    >>> SysFactory = vgtSat.systems.factory
+    >>> assemSys = SysFactory.create("FixedPtSystem", "System with origin at the new point", SystemType.ASSEMBLED)
+    >>> assemSys.origin_point.set_point(fixedPt)
+    >>> assemSys.reference_axes.set_axes(bodyAxes)
+
+    Create a new Aligned and Constrained Axes:
+    >>> # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
+    >>> # VectorGeometryToolVectorDisplacement Sat2EarthCenter: vector component
+    >>> # VectorGeometryToolVectorFixedInAxes bodyYSat: vector component
+    >>> AxesFactory = vgtSat.axes.factory
+    >>> AlignConstain = AxesFactory.create(
+    >>>     "AlignConstrain",
+    >>>     "Aligned to displacement vector and constrained to Body Y",
+    >>>     AxesType.ALIGNED_AND_CONSTRAINED,
+    >>> )
+    >>> AlignConstain.alignment_reference_vector.set_vector(Sat2EarthCenter)
+    >>> AlignConstain.alignment_direction.assign_xyz(1, 0, 0)
+    >>> AlignConstain.constraint_reference_vector.set_vector(bodyYSat)
+    >>> AlignConstain.constraint_direction.assign_xyz(0, 0, 1)
+
+    Create a new Between Vectors Angle:
+    >>> # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
+    >>> # VectorGeometryToolVectorDisplacement Sat2EarthCenter: vector component
+    >>> # VectorGeometryToolVectorFixedInAxes bodyYSat: vector component
+    >>> AngFactory = vgtSat.angles.factory
+    >>> betwVect = AngFactory.create("SatEarth2Y", "Displacement Vector to Sat Body Y", AngleType.BETWEEN_VECTORS)
+    >>> betwVect.from_vector.set_vector(Sat2EarthCenter)
+    >>> betwVect.to_vector.set_vector(bodyYSat)
+
+    Create a new Fixed at Time Instant Point:
+    >>> # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
+    >>> # VectorGeometryToolSystemAssembled icrf: system component
+    >>> PtFactory = vgtSat.points.factory
+    >>> timeInstantPt = PtFactory.create("AtTimePt", "Point at time instant", PointType.AT_TIME_INSTANT)
+    >>> timeInstantPt.source_point = vgtSat.points.item("Center")
+    >>> timeInstantPt.reference_system = icrf
+    >>> timeInstantPt.reference_time_instant = vgtSat.time_instants.item("AvailabilityStartTime")
+
+    Create a new Model Attachment Point:
+    >>> # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
+    >>> PtFactory = vgtSat.points.factory
+    >>> modelPt = PtFactory.create("ModelPt", "Attach point defined in model", PointType.MODEL_ATTACHMENT)
+    >>> modelPt.pointable_element_name = "MainSensor-000000"
+
+    Create a new Fixed in System Point:
+    >>> # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
+    >>> PtFactory = vgtSat.points.factory
+    >>> fixedPt = PtFactory.create("FixedPt", "Point offset from Center", PointType.FIXED_IN_SYSTEM)
+    >>> fixedPt.fixed_point.assign_cartesian(0.005, 0, 0.005)
+
+    Create a new Projection Vector:
+    >>> # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
+    >>> # VectorGeometryToolVectorDisplacement Sat2EarthCenter: vector component
+    >>> VectFactory = vgtSat.vectors.factory
+    >>> projectionVector = VectFactory.create("Projection", "", VectorType.PROJECTION)
+    >>> projectionVector.source.set_vector(Sat2EarthCenter)
+    >>> horizontalPlane = vgtSat.planes.item("LocalHorizontal")
+    >>> projectionVector.reference_plane.set_plane(horizontalPlane)
+
+    Create a new Custom Script Vector:
+    >>> # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
+    >>> VectFactory = vgtSat.vectors.factory
+    >>> customScript = VectFactory.create("Script", "Description", VectorType.CUSTOM_SCRIPT)
+    >>> # Initialization script if needed
+    >>> # customScript.InitializationScriptFile = ''
+    >>> customScript.script_file = r"C:\Program Files\AGI\STK 12\Data\Resources\stktraining\samples\Heliograph\Scripting\VectorTool\Vector\vector.vbs"
+    >>> if customScript.is_valid is False:
+    >>>     print("Script component not valid!")
+    >>>     from os import getenv
+    >>> 
+    >>>     print(
+    >>>         r"Copy vbs file from C:\Program Files\AGI\STK 12\Data\Resources\stktraining\samples\Heliograph\Scripting\VectorTool\Vector\vector.vbs to C:\Users\%s\Documents\STK 12\Config\Scripting\VectorTool"
+    >>>         % getenv("USERNAME")
+    >>>     )
+
+    Create a new Cross Product Vector:
+    >>> # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
+    >>> # VectorGeometryToolVectorDisplacement Sat2EarthCenter: vector component
+    >>> # VectorGeometryToolVectorDisplacement fixedAxesVector: vector component
+    >>> VectFactory = vgtSat.vectors.factory
+    >>> lineOfNodesVector = VectFactory.create_cross_product("CrossProduct", Sat2EarthCenter, fixedAxesVector)
+
+    Create a new Fixed in Axes Vector:
+    >>> # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
+    >>> # IVectorGeometryToolAxes bodyAxes: axes component
+    >>> VectFactory = vgtSat.vectors.factory
+    >>> fixedAxesVector = VectFactory.create("FixedInAxes", "", VectorType.FIXED_IN_AXES)
+    >>> fixedAxesVector.reference_axes.set_axes(bodyAxes)
+    >>> fixedAxesVector.direction.assign_xyz(0, 0, 1)
+
+    Create a new Displacement Vector:
+    >>> # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
+    >>> # IVectorGeometryPoint centerPtSat: point component
+    >>> # IVectorGeometryPoint centerPtEarth: point component
+    >>> VectFactory = vgtSat.vectors.factory
+    >>> Sat2EarthCenter = VectFactory.create_displacement_vector("Sat2EarthCenter", centerPtSat, centerPtEarth)
+
+    Get default VGT component on vehicle:
+    >>> # Satellite satellite: Satellite object
+    >>> vgtSat = satellite.analysis_workbench_components
+    >>> # Get handle to the Center point on the satellite
+    >>> centerPtSat = vgtSat.points.item("Center")
+    >>> # Get handle to the Body Y Vector
+    >>> bodyYSat = vgtSat.vectors.item("Body.Y")
+    >>> # Get handle to the Body Axes
+    >>> bodyAxes = vgtSat.axes.item("Body")
+    >>> icrfAxes = vgtSat.axes.item("ICRF")
+
+    Get Center point and Inertial System of Earth central body:
+    >>> # StkObjectRoot root: STK Object Model root
+    >>> centerPtEarth = root.central_bodies.earth.analysis_workbench_components.points.item("Center")
+    >>> icrf = root.central_bodies.earth.analysis_workbench_components.systems.item("ICRF")
+    """
 
     _num_methods = 22
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -29700,8 +29995,3 @@ class TimeToolAxesSamplingIntervalCollection(SupportsDeleteCallback):
 
 agcls.AgClassCatalog.add_catalog_entry((5527858769336517270, 17257249824002230947), TimeToolAxesSamplingIntervalCollection)
 agcls.AgTypeNameMap["TimeToolAxesSamplingIntervalCollection"] = TimeToolAxesSamplingIntervalCollection
-
-
-################################################################################
-#          Copyright 2020-2023, Ansys Government Initiatives
-################################################################################

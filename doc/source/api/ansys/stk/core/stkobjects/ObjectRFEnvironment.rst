@@ -19,7 +19,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ObjectRFEnvironment.propagation_channel`
-              - Gets the propagation channel.
+              - Get the propagation channel.
 
 
 
@@ -38,6 +38,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.ObjectRFEnvironment.propagation_channel
     :type: PropagationChannel
 
-    Gets the propagation channel.
+    Get the propagation channel.
 
 

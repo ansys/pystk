@@ -19,9 +19,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaserTroposphericScintillationLossModel.name`
-              - Gets the model name.
+              - Get the model name.
             * - :py:attr:`~ansys.stk.core.stkobjects.ILaserTroposphericScintillationLossModel.type`
-              - Gets the model type enumeration.
+              - Get the model type enumeration.
 
 
 Import detail
@@ -39,12 +39,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.ILaserTroposphericScintillationLossModel.name
     :type: str
 
-    Gets the model name.
+    Get the model name.
 
 .. py:property:: type
     :canonical: ansys.stk.core.stkobjects.ILaserTroposphericScintillationLossModel.type
     :type: LaserTroposphericScintillationLossModelType
 
-    Gets the model type enumeration.
+    Get the model type enumeration.
 
 

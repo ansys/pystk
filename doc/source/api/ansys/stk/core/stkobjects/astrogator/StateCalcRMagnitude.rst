@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcRMagnitude.reference_point_name`
-              - Gets or sets the reference point used for calculation.
+              - Get or set the reference point used for calculation.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcRMagnitude.reference_point_name
     :type: str
 
-    Gets or sets the reference point used for calculation.
+    Get or set the reference point used for calculation.
 
 

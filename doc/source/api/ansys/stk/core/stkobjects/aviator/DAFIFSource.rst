@@ -32,7 +32,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.DAFIFSource.data_path`
-              - Gets or sets the DAFIF data path.
+              - Get or set the DAFIF data path.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.DAFIFSource.effective_date`
               - Get the effective date of the DAFIF catalog.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.DAFIFSource.expiration_date`
@@ -57,7 +57,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.DAFIFSource.data_path
     :type: str
 
-    Gets or sets the DAFIF data path.
+    Get or set the DAFIF data path.
 
 .. py:property:: effective_date
     :canonical: ansys.stk.core.stkobjects.aviator.DAFIFSource.effective_date

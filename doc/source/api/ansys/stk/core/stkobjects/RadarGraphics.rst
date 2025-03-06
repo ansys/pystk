@@ -27,11 +27,11 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarGraphics.boresight_marker_style`
               - The marker style used to represent the boresight graphically.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarGraphics.contour_graphics`
-              - Gets the radar's antenna contour graphics interface.
+              - Get the radar's antenna contour graphics interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarGraphics.access`
-              - Gets the radar's access graphics interface.
+              - Get the radar's access graphics interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.RadarGraphics.multipath`
-              - Gets the radar's multipath graphics interface.
+              - Get the radar's multipath graphics interface.
 
 
 
@@ -74,18 +74,18 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.RadarGraphics.contour_graphics
     :type: AntennaContourGraphics
 
-    Gets the radar's antenna contour graphics interface.
+    Get the radar's antenna contour graphics interface.
 
 .. py:property:: access
     :canonical: ansys.stk.core.stkobjects.RadarGraphics.access
     :type: RadarAccessGraphics
 
-    Gets the radar's access graphics interface.
+    Get the radar's access graphics interface.
 
 .. py:property:: multipath
     :canonical: ansys.stk.core.stkobjects.RadarGraphics.multipath
     :type: RadarMultipathGraphics
 
-    Gets the radar's multipath graphics interface.
+    Get the radar's multipath graphics interface.
 
 

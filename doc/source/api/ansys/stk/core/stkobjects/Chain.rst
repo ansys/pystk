@@ -38,7 +38,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.Chain.objects`
-              - This property is deprecated. Use the StartObject, EndObject and Connections properties to configure objects in the chain.
+              - Do not use this property, as it is deprecated. Use the StartObject, EndObject and Connections properties to configure objects in the chain.
             * - :py:attr:`~ansys.stk.core.stkobjects.Chain.recompute_automatically`
               - Opt to have STK automatically recompute accesses each time that an object on which the chain depends is updated.
             * - :py:attr:`~ansys.stk.core.stkobjects.Chain.time_period_type`
@@ -52,9 +52,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.Chain.enable_light_time_delay`
               - Specify whether to take light time delay into account in the computation.
             * - :py:attr:`~ansys.stk.core.stkobjects.Chain.maximum_time_step`
-              - Gets or sets the maximum sampling step size used when computing the chain. The maximum step size limits the amount of time that is allowed to elapse between sampling of the constraint functions during access computations. Uses Time Dimension.
+              - Get or set the maximum sampling step size used when computing the chain. The maximum step size limits the amount of time that is allowed to elapse between sampling of the constraint functions during access computations. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.Chain.time_convergence`
-              - Gets or sets the time convergence for determining access intervals when computing the chain. Uses Time Dimension.
+              - Get or set the time convergence for determining access intervals when computing the chain. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.Chain.constraints`
               - Get the constraints applicable to the chain.
             * - :py:attr:`~ansys.stk.core.stkobjects.Chain.graphics`
@@ -88,6 +88,100 @@ Overview
 
 
 
+Examples
+--------
+
+Prints the strand intervals of chain object
+
+.. code-block:: python
+
+    # Chain chain: Chain Object
+    # Compute the chain access if not done already.
+    chain.compute_access()
+
+    # Considered Start and Stop time
+    print(
+        "Chain considered start time: %s"
+        % chain.analysis_workbench_components.time_instants.item("ConsideredStartTime").find_occurrence().epoch
+    )
+    print(
+        "Chain considered stop time: %s"
+        % chain.analysis_workbench_components.time_instants.item("ConsideredStopTime").find_occurrence().epoch
+    )
+
+    objectParticipationIntervals = chain.analysis_workbench_components.time_interval_collections.item(
+        "StrandAccessIntervals"
+    )
+    intervalListResult = objectParticipationIntervals.find_interval_collection()
+
+    for i in range(0, intervalListResult.interval_collections.count):
+        if intervalListResult.IsValid:
+            print("Link Name: %s" % objectParticipationIntervals.Labels(i + 1))
+            print("--------------")
+            for j in range(0, intervalListResult.IntervalCollections.Item(i).Count):
+                startTime = intervalListResult.IntervalCollections.Item(i).Item(j).Start
+                stopTime = intervalListResult.IntervalCollections.Item(i).Item(j).Stop
+                print("Start: %s Stop: %s" % (startTime, stopTime))
+
+
+Define and compute a chain (advanced)
+
+.. code-block:: python
+
+    # Chain chain: Chain object
+    # Satellite satellite: Satellite object
+
+    # Remove all previous accesses
+    chain.clear_access()
+
+    # Add some objects to chain
+    chain.objects.add("Facility/MyFacility")
+    chain.objects.add_object(satellite)
+
+    # Configure chain parameters
+    chain.recompute_automatically = False
+    chain.enable_light_time_delay = False
+    chain.time_convergence = 0.001
+    chain.data_save_mode = DataSaveMode.SAVE_ACCESSES
+
+    # Specify our own time period
+    chain.set_time_period_type(ChainTimePeriodType.SPECIFIED_TIME_PERIOD)
+
+    # Get chain time period interface
+    chainUserTimePeriod = chain.time_period
+    chainUserTimePeriod.time_interval.set_explicit_interval(
+        root.current_scenario.analysis_interval.find_start_time(),
+        root.current_scenario.analysis_interval.find_stop_time(),
+    )  # Set to scenario period
+
+    # Compute the chain
+    chain.compute_access()
+
+
+Define and compute a chain (basic)
+
+.. code-block:: python
+
+    # Chain chain: Chain object
+
+    # Add some objects to chain (using STK path)
+    chain.objects.add("Facility/MyFacility")
+    chain.objects.add("Satellite/MySatellite")
+
+    # Compute the chain
+    chain.compute_access()
+
+
+Create a chain (on the current scenario central body)
+
+.. code-block:: python
+
+    # StkObjectRoot root: STK Object Model Root
+    # Create the Chain on the current scenario central body (use
+    # NewOnCentralBody to specify explicitly the central body)
+    chain = root.current_scenario.children.new(STKObjectType.CHAIN, "MyChain")
+
+
 Import detail
 -------------
 
@@ -103,7 +197,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Chain.objects
     :type: ObjectLinkCollection
 
-    This property is deprecated. Use the StartObject, EndObject and Connections properties to configure objects in the chain.
+    Do not use this property, as it is deprecated. Use the StartObject, EndObject and Connections properties to configure objects in the chain.
 
 .. py:property:: recompute_automatically
     :canonical: ansys.stk.core.stkobjects.Chain.recompute_automatically
@@ -145,13 +239,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Chain.maximum_time_step
     :type: float
 
-    Gets or sets the maximum sampling step size used when computing the chain. The maximum step size limits the amount of time that is allowed to elapse between sampling of the constraint functions during access computations. Uses Time Dimension.
+    Get or set the maximum sampling step size used when computing the chain. The maximum step size limits the amount of time that is allowed to elapse between sampling of the constraint functions during access computations. Uses Time Dimension.
 
 .. py:property:: time_convergence
     :canonical: ansys.stk.core.stkobjects.Chain.time_convergence
     :type: float
 
-    Gets or sets the time convergence for determining access intervals when computing the chain. Uses Time Dimension.
+    Get or set the time convergence for determining access intervals when computing the chain. Uses Time Dimension.
 
 .. py:property:: constraints
     :canonical: ansys.stk.core.stkobjects.Chain.constraints

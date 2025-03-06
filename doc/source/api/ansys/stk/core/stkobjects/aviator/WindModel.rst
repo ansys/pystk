@@ -30,16 +30,79 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.WindModel.wind_model_type`
-              - Gets or sets the wind model type.
+              - Get or set the wind model type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.WindModel.wind_model_type_string`
-              - Gets or sets the wind model type as a string value. Use this for custom models.
+              - Get or set the wind model type as a string value. Use this for custom models.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.WindModel.wind_model_source`
-              - Gets or sets the wind model source.
+              - Get or set the wind model source.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.WindModel.mode_as_constant`
               - Get the options for a Constant Bearing/Speed wind model.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.WindModel.mode_as_adds`
               - Get the options for a NOAA ADDS Service wind model.
 
+
+
+Examples
+--------
+
+Configure the weather and atmosphere of the Mission
+
+.. code-block:: python
+
+    # Mission mission: Aviator Mission object
+    # Get the wind model used for the mission
+    windModel = mission.wind_model
+    # Let's use the mission model
+    windModel.wind_model_source = WindAtmosModelSource.MISSION_MODEL
+    # Let's use constant wind
+    windModel.wind_model_type = WindModelType.CONSTANT_WIND
+    # Get the constant wind model options
+    constantWind = windModel.mode_as_constant
+    # Set the wind bearing
+    constantWind.wind_bearing = 30
+    # Set the wind speed
+    constantWind.wind_speed = 5
+
+    # Get the atmosphere model used for the mission
+    atmosphere = mission.atmosphere_model
+    # Let's use the mission model
+    atmosphere.atmosphere_model_source = WindAtmosModelSource.MISSION_MODEL
+    # Get the basic atmosphere options
+    basicAtmosphere = atmosphere.mode_as_basic
+    # Use standard 1976 atmosphere
+    basicAtmosphere.basic_model_type = AtmosphereModelType.STANDARD1976
+    # Opt to override the values
+    basicAtmosphere.use_non_standard_atmosphere = True
+    # Override the temperature
+    basicAtmosphere.temperature = 290
+
+
+Configure the wind and atmosphere for a procedure
+
+.. code-block:: python
+
+    # IProcedure procedure: Procedure object
+    # Get the wind model for the procedure
+    windModel = procedure.wind_model
+    # Use the procedure model
+    windModel.wind_model_source = WindAtmosModelSource.PROCEDURE_MODEL
+    # Let's use constant wind
+    windModel.wind_model_type = WindModelType.CONSTANT_WIND
+    # Get the constant wind model options
+    constantWind = windModel.mode_as_constant
+    # Set the wind bearing
+    constantWind.wind_bearing = 30
+    # Set the wind speed
+    constantWind.wind_speed = 5
+
+    # Get the atmosphere model used for the procedure
+    atmosphere = procedure.atmosphere_model
+    # Let's use the procedure model
+    atmosphere.atmosphere_model_source = WindAtmosModelSource.PROCEDURE_MODEL
+    # Get the basic atmosphere options
+    basicAtmosphere = atmosphere.mode_as_basic
+    # Use standard 1976 atmosphere
+    basicAtmosphere.basic_model_type = AtmosphereModelType.STANDARD1976
 
 
 Import detail
@@ -57,19 +120,19 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.WindModel.wind_model_type
     :type: WindModelType
 
-    Gets or sets the wind model type.
+    Get or set the wind model type.
 
 .. py:property:: wind_model_type_string
     :canonical: ansys.stk.core.stkobjects.aviator.WindModel.wind_model_type_string
     :type: str
 
-    Gets or sets the wind model type as a string value. Use this for custom models.
+    Get or set the wind model type as a string value. Use this for custom models.
 
 .. py:property:: wind_model_source
     :canonical: ansys.stk.core.stkobjects.aviator.WindModel.wind_model_source
     :type: WindAtmosModelSource
 
-    Gets or sets the wind model source.
+    Get or set the wind model source.
 
 .. py:property:: mode_as_constant
     :canonical: ansys.stk.core.stkobjects.aviator.WindModel.mode_as_constant

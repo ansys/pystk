@@ -19,7 +19,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOTrack.name`
-              - Gets or sets the name assigned to the track.
+              - Get or set the name assigned to the track.
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOTrack.interpolate`
               - Opt whether the track's position will be linearly interpolated between points, or will only be displayed at the defined points at the defined times.
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOTrack.identifier`
@@ -44,7 +44,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.MTOTrack.name
     :type: str
 
-    Gets or sets the name assigned to the track.
+    Get or set the name assigned to the track.
 
 .. py:property:: interpolate
     :canonical: ansys.stk.core.stkobjects.MTOTrack.interpolate

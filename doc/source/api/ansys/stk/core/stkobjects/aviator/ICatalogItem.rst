@@ -40,7 +40,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICatalogItem.name`
-              - Gets or sets the name of the catalog item.
+              - Get or set the name of the catalog item.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICatalogItem.description`
               - Get the description of the catalog item.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICatalogItem.is_read_only`
@@ -49,6 +49,28 @@ Overview
               - Get the child names of the catalog item.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ICatalogItem.child_types`
               - Get the child types.
+
+
+Examples
+--------
+
+Create a new performance model for an aircraft
+
+.. code-block:: python
+
+    # AircraftModel aviatorAircraft: Aviator Aircraft object
+    # Get the acceleration type
+    acceleration = aviatorAircraft.acceleration
+    # Get the names of the current acceleration models
+    modelNames = acceleration.child_names
+    # Check how many models there are
+    modelCount = len(modelNames)
+    # Get the child types (for example AGI Basic Acceleration Model, Advanced Acceleration Model)
+    modelTypes = acceleration.child_types
+    # Create a new performance model of type "Advanced Acceleration Model"
+    newPerformanceModel = acceleration.add_child_of_type("Advanced Acceleration Model", "Model Name")
+    # Save the changes to the catalog
+    aviatorAircraft.save()
 
 
 Import detail
@@ -66,7 +88,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.ICatalogItem.name
     :type: str
 
-    Gets or sets the name of the catalog item.
+    Get or set the name of the catalog item.
 
 .. py:property:: description
     :canonical: ansys.stk.core.stkobjects.aviator.ICatalogItem.description

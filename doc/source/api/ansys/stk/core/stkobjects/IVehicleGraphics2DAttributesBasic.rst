@@ -34,6 +34,28 @@ Overview
               - Get the line display properties for the vehicle.
 
 
+Examples
+--------
+
+Set 2D Graphics display properties
+
+.. code-block:: python
+
+    # StkObjectRoot root: STK Object Model root
+    # Satellite satellite: Satellite object
+    # Change the line width, style, color and marker
+
+    graphics = satellite.graphics
+    graphics.set_attributes_type(VehicleGraphics2DAttributeType.BASIC)
+    attributes = graphics.attributes
+    attributes.inherit = False
+    attributes.line.width = LineWidth.WIDTH4
+    attributes.line.style = LineStyle.LONG_DASH
+    attributes.color = Colors.Lime
+    installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+    attributes.marker_style = os.path.join(installPath, "STKData", "Pixmaps", "MarkersWin", "m010Satellite.bmp")
+
+
 Import detail
 -------------
 

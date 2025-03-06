@@ -28,31 +28,31 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.wing_area`
-              - Gets or sets the total surface area of the wing.
+              - Get or set the total surface area of the wing.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.flaps_area`
-              - Gets or sets the total surface area of the flaps.
+              - Get or set the total surface area of the flaps.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.speedbrakes_area`
-              - Gets or sets the total surface area of the speedbrakes.
+              - Get or set the total surface area of the speedbrakes.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.max_altitude`
-              - Gets or sets the maximum altitude of the aircraft.
+              - Get or set the maximum altitude of the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.max_mach`
-              - Gets or sets the maximum mach number of the aircraft.
+              - Get or set the maximum mach number of the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.max_eas`
-              - Gets or sets the maximum equivalent airspeed of the aircraft.
+              - Get or set the maximum equivalent airspeed of the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.min_load_factor`
-              - Gets or sets the minimum load factor the aircraft can bear.
+              - Get or set the minimum load factor the aircraft can bear.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.max_load_factor`
-              - Gets or sets the maximum load factor the aircraft can bear.
+              - Get or set the maximum load factor the aircraft can bear.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.use_max_temperature_limit`
-              - Gets or sets the option to limit the maximum speed of the aircraft so the specified temperature is not exceeded.
+              - Get or set the option to limit the maximum speed of the aircraft so the specified temperature is not exceeded.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.max_temperature`
-              - Gets or sets the maximum total temperature limit of the aircraft.
+              - Get or set the maximum total temperature limit of the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.cache_aerodynamic_data`
-              - Gets or sets the option to store intermediate results for aerodynamics calculations.
+              - Get or set the option to store intermediate results for aerodynamics calculations.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.cache_fuel_flow`
-              - Gets or sets the option to store intermediate results for fuel flow calculations.
+              - Get or set the option to store intermediate results for fuel flow calculations.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.aerodynamic_strategy`
-              - Gets or sets the aerodynamic strategy type.
+              - Get or set the aerodynamic strategy type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.aerodynamic_mode_as_external`
               - Get the interface for an Extern File Aerodynamics strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.aerodynamic_mode_as_subsonic`
@@ -62,7 +62,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.aerodynamic_mode_as_supersonic`
               - Get the interface for a Supersonic Aerodynamics strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.powerplant_strategy`
-              - Gets or sets the powerplant strategy type.
+              - Get or set the powerplant strategy type.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.powerplant_mode_as_electric`
               - Get the interface for an Electric Powerplant strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.powerplant_mode_as_external`
@@ -79,7 +79,51 @@ Overview
               - Get the interface for a Turbojet - Basic w/ AB Powerplant strategy.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.powerplant_mode_as_sub_super_hypersonic`
               - Get the interface for a Sub/Super/Hypersoinc Powerplant strategy.
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.aerodynamic_mode_as_four_point`
+              - Get the interface for a Four Point Aerodynamics strategy.
 
+
+
+Examples
+--------
+
+Configure the Advanced Fixed Wing Tool and set the aircraft to use the resulting performance models
+
+.. code-block:: python
+
+    # AircraftModel aviatorAircraft: Aviator Aircraft object
+    # Get the advanced fixed wing tool
+    advFixedWingTool = aviatorAircraft.advanced_fixed_wing_tool
+    # Set the basic geometry
+    advFixedWingTool.wing_area = 300
+    advFixedWingTool.flaps_area = 50
+    advFixedWingTool.speedbrakes_area = 10
+    # Set the structural and human factor limits
+    advFixedWingTool.max_altitude = 65000
+    advFixedWingTool.max_mach = 0.98
+    advFixedWingTool.max_eas = 460
+    advFixedWingTool.min_load_factor = -2.5
+    advFixedWingTool.max_load_factor = 4.5
+
+    # Opt to enforce the max temperature limit
+    advFixedWingTool.use_max_temperature_limit = True
+    advFixedWingTool.max_temperature = 900
+
+    # Use a subsonic aerodynamic strategy
+    advFixedWingTool.aerodynamic_strategy = AdvancedFixedWingAerodynamicStrategy.SUBSONIC_AERODYNAMIC
+    # Cache the aerodynamic data to improve calculation speed
+    advFixedWingTool.cache_aerodynamic_data = True
+    # Use a high bypass turbofan
+    advFixedWingTool.powerplant_strategy = AdvancedFixedWingPowerplantStrategy.TURBOFAN_HIGH_BYPASS
+    # Cache the fuel flow data to improve calculation speed
+    advFixedWingTool.cache_fuel_flow = True
+
+    # Create the corresponding performance models that reference the advanced fixed wing tool
+    # Specify the name, whether to override any existing models with the same name, and whether to set the new models as the default performance models
+    advFixedWingTool.create_all_performance_models("AdvancedModels", True, True)
+
+    # Save the changes in the catalog
+    aviatorAircraft.save()
 
 
 Import detail
@@ -97,79 +141,79 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.wing_area
     :type: float
 
-    Gets or sets the total surface area of the wing.
+    Get or set the total surface area of the wing.
 
 .. py:property:: flaps_area
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.flaps_area
     :type: float
 
-    Gets or sets the total surface area of the flaps.
+    Get or set the total surface area of the flaps.
 
 .. py:property:: speedbrakes_area
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.speedbrakes_area
     :type: float
 
-    Gets or sets the total surface area of the speedbrakes.
+    Get or set the total surface area of the speedbrakes.
 
 .. py:property:: max_altitude
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.max_altitude
     :type: float
 
-    Gets or sets the maximum altitude of the aircraft.
+    Get or set the maximum altitude of the aircraft.
 
 .. py:property:: max_mach
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.max_mach
     :type: float
 
-    Gets or sets the maximum mach number of the aircraft.
+    Get or set the maximum mach number of the aircraft.
 
 .. py:property:: max_eas
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.max_eas
     :type: float
 
-    Gets or sets the maximum equivalent airspeed of the aircraft.
+    Get or set the maximum equivalent airspeed of the aircraft.
 
 .. py:property:: min_load_factor
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.min_load_factor
     :type: float
 
-    Gets or sets the minimum load factor the aircraft can bear.
+    Get or set the minimum load factor the aircraft can bear.
 
 .. py:property:: max_load_factor
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.max_load_factor
     :type: float
 
-    Gets or sets the maximum load factor the aircraft can bear.
+    Get or set the maximum load factor the aircraft can bear.
 
 .. py:property:: use_max_temperature_limit
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.use_max_temperature_limit
     :type: bool
 
-    Gets or sets the option to limit the maximum speed of the aircraft so the specified temperature is not exceeded.
+    Get or set the option to limit the maximum speed of the aircraft so the specified temperature is not exceeded.
 
 .. py:property:: max_temperature
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.max_temperature
     :type: float
 
-    Gets or sets the maximum total temperature limit of the aircraft.
+    Get or set the maximum total temperature limit of the aircraft.
 
 .. py:property:: cache_aerodynamic_data
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.cache_aerodynamic_data
     :type: bool
 
-    Gets or sets the option to store intermediate results for aerodynamics calculations.
+    Get or set the option to store intermediate results for aerodynamics calculations.
 
 .. py:property:: cache_fuel_flow
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.cache_fuel_flow
     :type: bool
 
-    Gets or sets the option to store intermediate results for fuel flow calculations.
+    Get or set the option to store intermediate results for fuel flow calculations.
 
 .. py:property:: aerodynamic_strategy
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.aerodynamic_strategy
     :type: AdvancedFixedWingAerodynamicStrategy
 
-    Gets or sets the aerodynamic strategy type.
+    Get or set the aerodynamic strategy type.
 
 .. py:property:: aerodynamic_mode_as_external
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.aerodynamic_mode_as_external
@@ -199,7 +243,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.powerplant_strategy
     :type: AdvancedFixedWingPowerplantStrategy
 
-    Gets or sets the powerplant strategy type.
+    Get or set the powerplant strategy type.
 
 .. py:property:: powerplant_mode_as_electric
     :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.powerplant_mode_as_electric
@@ -248,6 +292,12 @@ Property detail
     :type: AdvancedFixedWingSubSuperHypersonicPropulsion
 
     Get the interface for a Sub/Super/Hypersoinc Powerplant strategy.
+
+.. py:property:: aerodynamic_mode_as_four_point
+    :canonical: ansys.stk.core.stkobjects.aviator.AdvancedFixedWingTool.aerodynamic_mode_as_four_point
+    :type: AdvancedFixedWingFourPointAerodynamic
+
+    Get the interface for a Four Point Aerodynamics strategy.
 
 
 Method detail
@@ -304,6 +354,7 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
 
 
 

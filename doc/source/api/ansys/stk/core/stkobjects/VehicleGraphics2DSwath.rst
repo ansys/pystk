@@ -32,12 +32,27 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DSwath.elevation_type`
               - Ground elevation, swath half width or vehicle half angle.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DSwath.elevation_supported_types`
-              - Returns an array of valid choices.
+              - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DSwath.elevation`
               - Get the elevation value.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DSwath.options`
               - Options for swath display.
 
+
+
+Examples
+--------
+
+Set 2D Swath
+
+.. code-block:: python
+
+    # Satellite satellite: Satellite object
+    # Set swath in the 2D properties
+    swath = satellite.graphics.swath
+    swath.set_elevation_type(VehicleGraphics2DElevation.ELEVATION_GROUND_ELEVATION)
+    swath.elevation.angle = 30  # deg
+    satellite.graphics.swath.options = VehicleGraphics2DOptionType.OPTIONS_EDGE_LIMITS
 
 
 Import detail
@@ -61,7 +76,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DSwath.elevation_supported_types
     :type: list
 
-    Returns an array of valid choices.
+    Return an array of valid choices.
 
 .. py:property:: elevation
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DSwath.elevation

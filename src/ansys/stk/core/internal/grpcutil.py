@@ -1,4 +1,25 @@
-# Copyright 2020-2024, Ansys Government Initiatives 
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
 
 from __future__ import annotations
 
@@ -18,7 +39,7 @@ from ..utilities.exceptions import STKRuntimeError, GrpcUtilitiesError
 from ..utilities.colors import Color
 
 # comutil.GUID.from_registry_format("{00020404-0000-0000-C000-000000000046}").as_data_pair()
-IID_IEnumVARIANT = (132100, 5044031582654955712) 
+IID_IEnumVARIANT = (132100, 5044031582654955712)
 
 _logger = logging.getLogger("stk.internal.grpcutil")
         
@@ -491,7 +512,7 @@ class GrpcClient(object):
         connect_request = AgGrpcServices_pb2.EmptyMessage()
         connect_response = self.stub.GetConnectionMetadata(connect_request)
         server_version = f"{connect_response.version}.{connect_response.release}.{connect_response.update}"
-        expected_version = "12.9.0"
+        expected_version = "12.10.0"
         if server_version != expected_version:
             raise STKRuntimeError(f"Version mismatch between Python client and gRPC server. Expected STK {expected_version}, found STK {server_version}.")
         self._connection_id = connect_response.connection_id
@@ -537,10 +558,13 @@ class GrpcClient(object):
         future.reset_impl(bound_intf)
 
     @staticmethod
-    def new_client(host, port, timeout_sec:int=60) -> "GrpcClient":
+    def new_client(host, port, timeout_sec:int=60, max_receive_message_size:int=0) -> "GrpcClient":
         addr = f"{host}:{port}"
         new_grpc_client = GrpcClient()
-        new_grpc_client.channel = grpc.insecure_channel(addr)
+        channel_args = []
+        if max_receive_message_size > 0:
+            channel_args.append(("grpc.max_receive_message_length", max_receive_message_size))
+        new_grpc_client.channel = grpc.insecure_channel(addr, options=channel_args)
         try:
             grpc.channel_ready_future(new_grpc_client.channel).result(timeout=timeout_sec)
 
@@ -706,7 +730,10 @@ class GrpcClient(object):
                 else:
                     return tuple([self._marshall_return_arg(arg) for arg in response.return_vals])
         except grpc.RpcError as rpc_error:
-            self._handle_rpc_error(rpc_error)
+            if rpc_error.code() == grpc.StatusCode.RESOURCE_EXHAUSTED:
+                raise RuntimeError("gRPC message size limit exceeded. Try chunking the data request or specify a larger limit using grpc_max_message_size when starting the application.")
+            else:
+                self._handle_rpc_error(rpc_error)
 
     def get_property(self, p:AgGrpcServices_pb2.STKObject, guid:AgGrpcServices_pb2.InterfaceID, method_offset) -> typing.Any:
         self._execute_batched_invoke()
@@ -764,7 +791,7 @@ class GrpcClient(object):
                 try:
                     callback(*args)
                 except:
-                    _logger.exception(f"Exception raised during callback registered to {callback.__name__}")
+                    _logger.exception(f"Exception raised during callback registered to {callback.__name__}:")
                 self._execute_batched_invoke()
         self.acknowledge_event(event_id)
 

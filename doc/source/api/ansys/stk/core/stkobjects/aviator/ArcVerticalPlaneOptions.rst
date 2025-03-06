@@ -19,15 +19,15 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ArcVerticalPlaneOptions.start_arc_flight_path_angle`
-              - Gets or sets the pitch angle of the flight path at the start of the arc.
+              - Get or set the pitch angle of the flight path at the start of the arc.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ArcVerticalPlaneOptions.stop_arc_flight_path_angle`
-              - Gets or sets the pitch angle of the flight path at the end of the arc.
+              - Get or set the pitch angle of the flight path at the end of the arc.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ArcVerticalPlaneOptions.min_enroute_flight_path_angle`
-              - Gets or sets the minimum pitch angle of the flight path during enroute segments of the procedure.
+              - Get or set the minimum pitch angle of the flight path during enroute segments of the procedure.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ArcVerticalPlaneOptions.max_enroute_flight_path_angle`
-              - Gets or sets the maximum pitch angle of the flight path during enroute segments of the procedure.
+              - Get or set the maximum pitch angle of the flight path during enroute segments of the procedure.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ArcVerticalPlaneOptions.max_vert_plane_radius_factor`
-              - Gets or sets the maximum amount the radius of vertical curve will be increased to minimize the flight path angle required to complete it.
+              - Get or set the maximum amount the radius of vertical curve will be increased to minimize the flight path angle required to complete it.
 
 
 
@@ -46,30 +46,30 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.ArcVerticalPlaneOptions.start_arc_flight_path_angle
     :type: typing.Any
 
-    Gets or sets the pitch angle of the flight path at the start of the arc.
+    Get or set the pitch angle of the flight path at the start of the arc.
 
 .. py:property:: stop_arc_flight_path_angle
     :canonical: ansys.stk.core.stkobjects.aviator.ArcVerticalPlaneOptions.stop_arc_flight_path_angle
     :type: typing.Any
 
-    Gets or sets the pitch angle of the flight path at the end of the arc.
+    Get or set the pitch angle of the flight path at the end of the arc.
 
 .. py:property:: min_enroute_flight_path_angle
     :canonical: ansys.stk.core.stkobjects.aviator.ArcVerticalPlaneOptions.min_enroute_flight_path_angle
     :type: typing.Any
 
-    Gets or sets the minimum pitch angle of the flight path during enroute segments of the procedure.
+    Get or set the minimum pitch angle of the flight path during enroute segments of the procedure.
 
 .. py:property:: max_enroute_flight_path_angle
     :canonical: ansys.stk.core.stkobjects.aviator.ArcVerticalPlaneOptions.max_enroute_flight_path_angle
     :type: typing.Any
 
-    Gets or sets the maximum pitch angle of the flight path during enroute segments of the procedure.
+    Get or set the maximum pitch angle of the flight path during enroute segments of the procedure.
 
 .. py:property:: max_vert_plane_radius_factor
     :canonical: ansys.stk.core.stkobjects.aviator.ArcVerticalPlaneOptions.max_vert_plane_radius_factor
     :type: float
 
-    Gets or sets the maximum amount the radius of vertical curve will be increased to minimize the flight path angle required to complete it.
+    Get or set the maximum amount the radius of vertical curve will be increased to minimize the flight path angle required to complete it.
 
 

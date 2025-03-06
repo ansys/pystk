@@ -34,25 +34,25 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleEphemerisCCSDSExportTool.object_name`
               - A name for the Object. By recommendation of the CCSDS standard, the name from the SPACEWARN Bulletin should be used.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleEphemerisCCSDSExportTool.central_body_name`
-              - Gets or sets the central body of the coordinate system in which to express the ephemeris.
+              - Get or set the central body of the coordinate system in which to express the ephemeris.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleEphemerisCCSDSExportTool.reference_frame`
-              - Gets or sets the reference frame in which to express the ephemeris. Some frames are allowed for use only when the CentralBodyName is Earth or Moon.
+              - Get or set the reference frame in which to express the ephemeris. Some frames are allowed for use only when the CentralBodyName is Earth or Moon.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleEphemerisCCSDSExportTool.date_format`
-              - Gets or sets the desired date format.
+              - Get or set the desired date format.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleEphemerisCCSDSExportTool.ephemeris_format`
-              - Gets or sets the desired format to be used for representing the position and velocity information as either scientific notation or floating point notation. Scientific notation is recommended when possible.
+              - Get or set the desired format to be used for representing the position and velocity information as either scientific notation or floating point notation. Scientific notation is recommended when possible.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleEphemerisCCSDSExportTool.time_precision`
               - If selected, STK uses the Step Size specified in the vehicle's Basic properties. If not selected, specify a Step Size. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleEphemerisCCSDSExportTool.step_size`
               - If the Use Ephemeris Steps option is not selected, enter a Step Size to be used for the vehicle.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleEphemerisCCSDSExportTool.time_period`
-              - Sets the time period. Options are Use Entire Ephemeris - STK creates a data file using the Start and Stop Time specified in the vehicle's Orbit tab or Specify Time Period - STK creates a data file using the Start and Stop Time specified here.
+              - Set the time period. Options are Use Entire Ephemeris - STK creates a data file using the Start and Stop Time specified in the vehicle's Orbit tab or Specify Time Period - STK creates a data file using the Start and Stop Time specified here.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleEphemerisCCSDSExportTool.reference_frames_supported`
-              - Returns an array of valid choices.
+              - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleEphemerisCCSDSExportTool.use_satellite_center_and_frame`
               - Use the satellite center and frame. Setting the property to 'True' will cause CentralBody and ReferenceFrame properties become read-only.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleEphemerisCCSDSExportTool.time_system`
-              - Gets or sets the time system of the ephemeris.
+              - Get or set the time system of the ephemeris.
 
 
 
@@ -89,25 +89,25 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleEphemerisCCSDSExportTool.central_body_name
     :type: str
 
-    Gets or sets the central body of the coordinate system in which to express the ephemeris.
+    Get or set the central body of the coordinate system in which to express the ephemeris.
 
 .. py:property:: reference_frame
     :canonical: ansys.stk.core.stkobjects.VehicleEphemerisCCSDSExportTool.reference_frame
     :type: CCSDSReferenceFrame
 
-    Gets or sets the reference frame in which to express the ephemeris. Some frames are allowed for use only when the CentralBodyName is Earth or Moon.
+    Get or set the reference frame in which to express the ephemeris. Some frames are allowed for use only when the CentralBodyName is Earth or Moon.
 
 .. py:property:: date_format
     :canonical: ansys.stk.core.stkobjects.VehicleEphemerisCCSDSExportTool.date_format
     :type: CCSDSDateFormat
 
-    Gets or sets the desired date format.
+    Get or set the desired date format.
 
 .. py:property:: ephemeris_format
     :canonical: ansys.stk.core.stkobjects.VehicleEphemerisCCSDSExportTool.ephemeris_format
     :type: CCSDSEphemerisFormatType
 
-    Gets or sets the desired format to be used for representing the position and velocity information as either scientific notation or floating point notation. Scientific notation is recommended when possible.
+    Get or set the desired format to be used for representing the position and velocity information as either scientific notation or floating point notation. Scientific notation is recommended when possible.
 
 .. py:property:: time_precision
     :canonical: ansys.stk.core.stkobjects.VehicleEphemerisCCSDSExportTool.time_precision
@@ -125,13 +125,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleEphemerisCCSDSExportTool.time_period
     :type: ExportToolTimePeriod
 
-    Sets the time period. Options are Use Entire Ephemeris - STK creates a data file using the Start and Stop Time specified in the vehicle's Orbit tab or Specify Time Period - STK creates a data file using the Start and Stop Time specified here.
+    Set the time period. Options are Use Entire Ephemeris - STK creates a data file using the Start and Stop Time specified in the vehicle's Orbit tab or Specify Time Period - STK creates a data file using the Start and Stop Time specified here.
 
 .. py:property:: reference_frames_supported
     :canonical: ansys.stk.core.stkobjects.VehicleEphemerisCCSDSExportTool.reference_frames_supported
     :type: list
 
-    Returns an array of valid choices.
+    Return an array of valid choices.
 
 .. py:property:: use_satellite_center_and_frame
     :canonical: ansys.stk.core.stkobjects.VehicleEphemerisCCSDSExportTool.use_satellite_center_and_frame
@@ -143,7 +143,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleEphemerisCCSDSExportTool.time_system
     :type: CCSDSTimeSystem
 
-    Gets or sets the time system of the ephemeris.
+    Get or set the time system of the ephemeris.
 
 
 Method detail

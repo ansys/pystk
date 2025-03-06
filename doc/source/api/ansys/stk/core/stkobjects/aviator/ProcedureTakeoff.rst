@@ -38,8 +38,38 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureTakeoff.mode_as_low_transition`
               - Get the interface for a low transition takeoff.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.ProcedureTakeoff.takeoff_mode`
-              - Gets or sets the type of takeoff the aircraft will perform.
+              - Get or set the type of takeoff the aircraft will perform.
 
+
+
+Examples
+--------
+
+Add a takeoff procedure from a runway
+
+.. code-block:: python
+
+    # IProcedureCollection procedures: Procedure Collection object
+    # Add a takeoff procedure with a runway as a site
+    takeoff = procedures.add(SiteType.SITE_RUNWAY, ProcedureType.PROCEDURE_TAKEOFF)
+
+    # Get the runway heading options
+    headingOptions = takeoff.runway_heading_options
+    # Opt to use the headwind runway
+    headingOptions.runway_mode = RunwayHighLowEnd.HEADWIND
+
+    # Set the takeoff mode and get that interface
+    takeoff.takeoff_mode = TakeoffMode.TAKEOFF_NORMAL
+    takeoffNormal = takeoff.mode_as_normal
+
+    # Set the takeoff climb angle
+    takeoffNormal.takeoff_climb_angle = 5
+    # Set the departure altitude above the runway
+    takeoffNormal.departure_altitude = 600
+    # Set the altitude offset for the runway
+    takeoffNormal.runway_altitude_offset = 10
+    # Use terrain for the runway's altitude
+    takeoffNormal.use_runway_terrain = True
 
 
 Import detail
@@ -81,7 +111,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.ProcedureTakeoff.takeoff_mode
     :type: TakeoffMode
 
-    Gets or sets the type of takeoff the aircraft will perform.
+    Get or set the type of takeoff the aircraft will perform.
 
 
 Method detail

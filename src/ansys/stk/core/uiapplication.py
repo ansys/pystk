@@ -1,27 +1,48 @@
-################################################################################
-#          Copyright 2020-2023, Ansys Government Initiatives
-################################################################################ 
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
 
 """The STK UI Application library is a COM library containing classes, interfaces and enumerations for the Application Object Model."""
 
 __all__ = ["ApplicationConstants", "ApplicationErrorCodes", "ApplicationLogMessageType", "ApplicationOpenLogFileMode", "IUiApplicationPartnerAccess", 
 "MostRecentlyUsedCollection", "UiApplication", "UiFileOpenDialogExtension", "UiFileOpenDialogExtensionCollection"]
 
+from ctypes import POINTER
+from enum import IntEnum
 import typing
 
-from ctypes   import POINTER
-from enum     import IntEnum
-
-from .internal  import comutil          as agcom
-from .internal  import coclassutil      as agcls
-from .internal  import marshall         as agmarshall
-from .internal.comutil     import IUnknown, IDispatch
-from .internal.apiutil     import (InterfaceProxy, EnumeratorProxy, OutArg, 
-    initialize_from_source_object, get_interface_property, set_interface_attribute, 
-    set_class_attribute, SupportsDeleteCallback)
-from .utilities.exceptions import STKRuntimeError
-
+from .internal import coclassutil as agcls, comutil as agcom, marshall as agmarshall
+from .internal.apiutil import (
+    EnumeratorProxy,
+    InterfaceProxy,
+    OutArg,
+    SupportsDeleteCallback,
+    get_interface_property,
+    initialize_from_source_object,
+    set_class_attribute,
+    set_interface_attribute,
+)
+from .internal.comutil import IDispatch, IUnknown
 from .uicore import ApplicationWindowState
+from .utilities.exceptions import STKRuntimeError
 
 
 def _raise_uninitialized_error(*args):
@@ -135,7 +156,15 @@ agcls.AgTypeNameMap["IUiApplicationPartnerAccess"] = IUiApplicationPartnerAccess
 
 
 class UiApplication(IUiApplicationPartnerAccess, SupportsDeleteCallback):
-    """UiApplication represents a root of the Application Model."""
+    """
+    UiApplication represents a root of the Application Model.
+
+    Examples
+    --------
+    Close STK:
+    >>> # AgUiApplication uiApplication: STK Application
+    >>> uiApplication.shutdown()
+    """
 
     _num_methods = 37
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
@@ -739,8 +768,3 @@ class UiFileOpenDialogExtension(SupportsDeleteCallback):
 
 agcls.AgClassCatalog.add_catalog_entry((4850055024671377715, 12513386433369472389), UiFileOpenDialogExtension)
 agcls.AgTypeNameMap["UiFileOpenDialogExtension"] = UiFileOpenDialogExtension
-
-
-################################################################################
-#          Copyright 2020-2023, Ansys Government Initiatives
-################################################################################

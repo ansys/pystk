@@ -25,24 +25,81 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.GroundVehicle.graphics_3d`
               - Get the ground vehicle's 3D Graphics properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.GroundVehicle.export_tools`
-              - Returns the IAgGvExportTools interface.
+              - Return the IAgGvExportTools interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.GroundVehicle.atmosphere`
-              - This property is deprecated. The new RFEnvironment property can be used to configure atmospheric models.
+              - Do not use this property, as it is deprecated. The new RFEnvironment property can be used to configure atmospheric models.
             * - :py:attr:`~ansys.stk.core.stkobjects.GroundVehicle.radar_clutter_map`
-              - Returns the radar clutter map.
+              - Return the radar clutter map.
             * - :py:attr:`~ansys.stk.core.stkobjects.GroundVehicle.radar_cross_section`
-              - Returns the radar cross sectoin.
+              - Return the radar cross sectoin.
             * - :py:attr:`~ansys.stk.core.stkobjects.GroundVehicle.laser_environment`
-              - Gets the laser environment.
+              - Get the laser environment.
             * - :py:attr:`~ansys.stk.core.stkobjects.GroundVehicle.rf_environment`
-              - Gets the RF environment.
+              - Get the RF environment.
             * - :py:attr:`~ansys.stk.core.stkobjects.GroundVehicle.lighting_maximum_step_terrain`
-              - Gets or sets the maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
+              - Get or set the maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.GroundVehicle.lighting_maximum_step_central_body_shape`
-              - Gets or sets the maximum step size to use when computing lighting when UseTerrainInLightingComputations is false. Uses Time Dimension.
+              - Get or set the maximum step size to use when computing lighting when UseTerrainInLightingComputations is false. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.GroundVehicle.get_eoir_settings`
               - Get the EOIR properties of the gound vehicle.
 
+
+
+Examples
+--------
+
+Add Array of Waypoints to Ground Vehicle and Interpolate over Terrain
+
+.. code-block:: python
+
+    # GroundVehicle grndVehicle: Ground Vehicle object
+    route = grndVehicle.route
+    ptsArray = [
+        [41.97766217, 21.44863761, 0, 0.026, 0.5],
+        [41.97422351, 21.39956154, 0, 0.026, 0.5],
+        [41.99173299, 21.40796942, 0, 0.026, 0.5],
+    ]
+    route.set_points_smooth_rate_and_propagate(ptsArray)
+    route.set_altitude_reference_type(VehicleAltitudeReference.TERRAIN)
+    route.altitude_reference.granularity = 0.001
+    route.altitude_reference.interpolation_method = VehicleWaypointInterpolationMethod.TERRAIN_HEIGHT
+    # Propagate the route
+    route.propagate()
+
+
+Set Great Arc Propagator and Add Individual Waypoints to Ground Vehicle
+
+.. code-block:: python
+
+    # GroundVehicle grndVehicle: Ground Vehicle object
+    # Set route to great arc, method and altitude reference
+    groundVehicle.set_route_type(PropagatorType.GREAT_ARC)
+    route = groundVehicle.route
+    route.method = VehicleWaypointComputationMethod.DETERMINE_TIME_ACCELERATION_FROM_VELOCITY
+    route.set_altitude_reference_type(VehicleAltitudeReference.WGS84)
+    # Add first point
+    waypoint = route.waypoints.add()
+    waypoint.latitude = 56.18
+    waypoint.longitude = 40.91
+    waypoint.altitude = 0  # km
+    waypoint.speed = 0.026  # km/sec
+    # Add second point
+    waypoint2 = route.waypoints.add()
+    waypoint2.latitude = 50.22
+    waypoint2.longitude = 11.05
+    waypoint2.altitude = 0  # km
+    waypoint2.speed = 0.026  # km/sec
+    # Propagate the route
+    route.propagate()
+
+
+Create a New Ground Vehicle (on the current scenario central body)
+
+.. code-block:: python
+
+    # Scenario scenario: Scenario object
+    grndVehicle = scenario.children.new(STKObjectType.GROUND_VEHICLE, "MyVehicle")
+    grndVehicle.set_route_type(PropagatorType.GREAT_ARC)
 
 
 Import detail
@@ -72,49 +129,49 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.GroundVehicle.export_tools
     :type: GroundVehicleExportTools
 
-    Returns the IAgGvExportTools interface.
+    Return the IAgGvExportTools interface.
 
 .. py:property:: atmosphere
     :canonical: ansys.stk.core.stkobjects.GroundVehicle.atmosphere
     :type: Atmosphere
 
-    This property is deprecated. The new RFEnvironment property can be used to configure atmospheric models.
+    Do not use this property, as it is deprecated. The new RFEnvironment property can be used to configure atmospheric models.
 
 .. py:property:: radar_clutter_map
     :canonical: ansys.stk.core.stkobjects.GroundVehicle.radar_clutter_map
     :type: IRadarClutterMapInheritable
 
-    Returns the radar clutter map.
+    Return the radar clutter map.
 
 .. py:property:: radar_cross_section
     :canonical: ansys.stk.core.stkobjects.GroundVehicle.radar_cross_section
     :type: RadarCrossSectionInheritable
 
-    Returns the radar cross sectoin.
+    Return the radar cross sectoin.
 
 .. py:property:: laser_environment
     :canonical: ansys.stk.core.stkobjects.GroundVehicle.laser_environment
     :type: PlatformLaserEnvironment
 
-    Gets the laser environment.
+    Get the laser environment.
 
 .. py:property:: rf_environment
     :canonical: ansys.stk.core.stkobjects.GroundVehicle.rf_environment
     :type: IPlatformRFEnvironment
 
-    Gets the RF environment.
+    Get the RF environment.
 
 .. py:property:: lighting_maximum_step_terrain
     :canonical: ansys.stk.core.stkobjects.GroundVehicle.lighting_maximum_step_terrain
     :type: float
 
-    Gets or sets the maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
+    Get or set the maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
 
 .. py:property:: lighting_maximum_step_central_body_shape
     :canonical: ansys.stk.core.stkobjects.GroundVehicle.lighting_maximum_step_central_body_shape
     :type: float
 
-    Gets or sets the maximum step size to use when computing lighting when UseTerrainInLightingComputations is false. Uses Time Dimension.
+    Get or set the maximum step size to use when computing lighting when UseTerrainInLightingComputations is false. Uses Time Dimension.
 
 .. py:property:: get_eoir_settings
     :canonical: ansys.stk.core.stkobjects.GroundVehicle.get_eoir_settings

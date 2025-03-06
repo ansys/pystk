@@ -1,10 +1,10 @@
 services:
   stk-python-common:
-    image: ansys/stk:dev-ubuntu22.04-python-common
+    image: ansys/stk-12.10:dev-ubuntu22.04-python-common
     container_name: stk-python-common
     build: 
       context: .
       args:
-        baseImage: ansys/stk:dev-ubuntu22.04
+        baseImage: ansys/stk-12.10:dev-ubuntu22.04
     environment:
       - ANSYSLMD_LICENSE_FILE=$ANSYSLMD_LICENSE_FILE

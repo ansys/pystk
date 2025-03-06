@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.RotateFilter.angle`
-              - Gets or sets the counterclockwise rotation angle.
+              - Get or set the counterclockwise rotation angle.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.graphics.RotateFilter.angle
     :type: float
 
-    Gets or sets the counterclockwise rotation angle.
+    Get or set the counterclockwise rotation angle.
 
 

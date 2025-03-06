@@ -1,6 +1,24 @@
-################################################################################
-#          Copyright 2020-2023, Ansys Government Initiatives
-################################################################################ 
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
 
 """
 Object Model components to support the MATLAB strategies found in the Basic Maneuver Procedure.
@@ -12,19 +30,21 @@ Aerospace Toolbox functions to define the force modeling of the aircraft.
 __all__ = ["BasicManeuverMATLABFactory", "StrategyMATLAB3DGuidance", "StrategyMATLABFull3D", "StrategyMATLABNavigation", 
 "StrategyMATLABProfile"]
 
+from ctypes import POINTER
 import typing
 
-from ctypes   import POINTER
-
-from ...internal  import comutil          as agcom
-from ...internal  import coclassutil      as agcls
-from ...internal  import marshall         as agmarshall
-from ...internal.comutil     import IUnknown
-from ...internal.apiutil     import (InterfaceProxy, OutArg, initialize_from_source_object, 
-    get_interface_property, set_class_attribute, SupportsDeleteCallback)
-from ...utilities.exceptions import STKRuntimeError
-
+from ...internal import coclassutil as agcls, comutil as agcom, marshall as agmarshall
+from ...internal.apiutil import (
+    InterfaceProxy,
+    OutArg,
+    SupportsDeleteCallback,
+    get_interface_property,
+    initialize_from_source_object,
+    set_class_attribute,
+)
+from ...internal.comutil import IUnknown
 from ...stkobjects.aviator import ClosureMode, IAutomationStrategyFactory, IBasicManeuverStrategy
+from ...utilities.exceptions import STKRuntimeError
 
 
 def _raise_uninitialized_error(*args):
@@ -645,8 +665,3 @@ class BasicManeuverMATLABFactory(IAutomationStrategyFactory, SupportsDeleteCallb
 
 agcls.AgClassCatalog.add_catalog_entry((5583954005185604195, 6409795893672302240), BasicManeuverMATLABFactory)
 agcls.AgTypeNameMap["BasicManeuverMATLABFactory"] = BasicManeuverMATLABFactory
-
-
-################################################################################
-#          Copyright 2020-2023, Ansys Government Initiatives
-################################################################################

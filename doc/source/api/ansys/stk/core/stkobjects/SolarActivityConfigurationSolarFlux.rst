@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.SolarActivityConfigurationSolarFlux.solar_flux`
-              - Gets or sets the solar flux.
+              - Get or set the solar flux.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.SolarActivityConfigurationSolarFlux.solar_flux
     :type: float
 
-    Gets or sets the solar flux.
+    Get or set the solar flux.
 
 

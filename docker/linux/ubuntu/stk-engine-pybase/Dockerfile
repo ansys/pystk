@@ -1,5 +1,5 @@
 # By default, start from the base STK Engine image
-ARG baseImage=ansys/stk:dev-ubuntu22.04
+ARG baseImage=ansys/stk-12.10:dev-ubuntu22.04
 FROM ${baseImage}
 
 # Install system dependencies

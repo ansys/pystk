@@ -23,18 +23,39 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics2DRangeContours.show_filled_contours`
               - Display the range contours as a filled polygon on the surface of the central body.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics2DRangeContours.fill_style`
-              - Gets or sets the style in which the range contours polygon is filled. A member of the AgEFillStyle enumeration.
+              - Get or set the style in which the range contours polygon is filled. A member of the AgEFillStyle enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics2DRangeContours.level_attributes`
               - The collection of level attributes defining the way in which the range contours are displayed.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics2DRangeContours.number_of_decimal_digits`
               - Number of decimal digits.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics2DRangeContours.label_units`
-              - Gets or sets the display units on the 2d map.
+              - Get or set the display units on the 2d map.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics2DRangeContours.available_label_units`
               - Get the available units for the LabelUnit.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics2DRangeContours.fill_translucency`
               - Specify the fill translucency percentage of the polygon on the surface of the central body. Translucency ranges from 0 to 100 percent, where 100 percent is invisible.
 
+
+
+Examples
+--------
+
+Set 2D/3D Range Contours
+
+.. code-block:: python
+
+    # Satellite satellite: Satellite object
+    # Set a contour level in the 2D properties
+    rangeContours = satellite.graphics.range_contours
+    rangeContours.show_graphics = True
+    rangeLevel = rangeContours.level_attributes.add_level(2000)  # km
+    rangeLevel.color = Colors.Fuchsia
+    rangeLevel.line_width = LineWidth.WIDTH5
+    rangeLevel.label_angle = 90
+    rangeLevel.show_user_text_visible = True
+    rangeLevel.user_text = "Range"
+    # Turn the contours on in the 3D properties
+    satellite.graphics_3d.range_contours.show_graphics = True
 
 
 Import detail
@@ -64,7 +85,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Graphics2DRangeContours.fill_style
     :type: FillStyle
 
-    Gets or sets the style in which the range contours polygon is filled. A member of the AgEFillStyle enumeration.
+    Get or set the style in which the range contours polygon is filled. A member of the AgEFillStyle enumeration.
 
 .. py:property:: level_attributes
     :canonical: ansys.stk.core.stkobjects.Graphics2DRangeContours.level_attributes
@@ -82,7 +103,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Graphics2DRangeContours.label_units
     :type: str
 
-    Gets or sets the display units on the 2d map.
+    Get or set the display units on the 2d map.
 
 .. py:property:: available_label_units
     :canonical: ansys.stk.core.stkobjects.Graphics2DRangeContours.available_label_units

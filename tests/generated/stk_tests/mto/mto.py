@@ -1,3 +1,25 @@
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
 import pytest
 from test_util import *
 from assert_extension import *
@@ -1206,6 +1228,30 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(1, oTrackCollection.count)
         oTrackCollection.remove_all()
         Assert.assertEqual(0, oTrackCollection.count)
+
+        # AddTracksWithPosData invalid time input
+
+        arTrackIdsAddInvalid = [10, 11]
+        arNumPtsPerTrackAddInvalid = [2, 1]
+        arTimeAddInvalid = ["1 Jul 2005 12:00:00.000", "1 Jul 2005 12:10:00.000", "1"]
+        arLatitudeAddInvalid = [0.0, 10.0, 10.0]
+        arLongitudeAddInvalid = [0.0, 10.0, 0.0]
+        arAltitudeAddInvalid = [0.0, 1000.0, 500.0]
+        ex = ExceptionAssert.Throws(
+            lambda: oTrackCollection.add_tracks_with_position_data(
+                arTrackIdsAddInvalid,
+                arNumPtsPerTrackAddInvalid,
+                MTOInputDataType.DETIC,
+                arTimeAddInvalid,
+                arLatitudeAddInvalid,
+                arLongitudeAddInvalid,
+                arAltitudeAddInvalid,
+            )
+        )
+
+        StringAssert.Contains("Invalid time or position value", str(ex), "Exception message mismatch")
+
+        oTrackCollection.remove_all()
 
         # AddTracksWithPosData using different units
         TestBase.Application.units_preferences.set_current_unit("DateFormat", "EpSec")

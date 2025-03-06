@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.PointingStrategyFixed.orientation`
-              - Gets the fixed orientation.
+              - Get the fixed orientation.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.PointingStrategyFixed.orientation
     :type: IOrientation
 
-    Gets the fixed orientation.
+    Get the fixed orientation.
 
 

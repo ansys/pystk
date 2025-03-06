@@ -35,7 +35,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSOptions.save_numbers_in_raw_format`
               - If true, Astrogator will store satellite information in binary format - to preserve the maximum amount of precision.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSOptions.stopping_condition_time_tolerance`
-              - Gets or sets the time tolerance, which will be applied with respect to desired trip values throughout the MCS. If this value is set to zero, time tolerance will not be applied.
+              - Get or set the time tolerance, which will be applied with respect to desired trip values throughout the MCS. If this value is set to zero, time tolerance will not be applied.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSOptions.enable_segment_controls`
               - If true, Astrogator will automatically add independent variables to differential correctors.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSOptions.enable_segment_results`
@@ -43,19 +43,19 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSOptions.enable_logging`
               - If true, target sequences can be set to produce 'run history' log files for differential corrector profiles. By default, a target sequence does not produce a log file.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSOptions.graphics_update_rate`
-              - Gets or sets the rate (between 0 and 1) at which to update graphics. Dimensionless.
+              - Get or set the rate (between 0 and 1) at which to update graphics. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSOptions.promote_controls`
               - If true, a target sequence will be able to affect controls and results within a nested target sequence in addition to its own.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSOptions.use_nominal_settings`
               - If true, components or segments that are modified by a target sequence will be restored to their nominal values as soon as the target sequence completes its run.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSOptions.min_ephem_step`
-              - Gets or sets the minimum step size for saving ephemeris. Uses Time Dimension.
+              - Get or set the minimum step size for saving ephemeris. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSOptions.generate_ephemeris`
               - If true, Astrogator will generate ephemeris.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSOptions.user_variables`
               - Interface used to add/remove user variables.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MCSOptions.smart_run_mode`
-              - Controls whether the run will attempt to only run changed segments.
+              - Control whether the run will attempt to only run changed segments.
 
 
 
@@ -122,7 +122,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSOptions.stopping_condition_time_tolerance
     :type: float
 
-    Gets or sets the time tolerance, which will be applied with respect to desired trip values throughout the MCS. If this value is set to zero, time tolerance will not be applied.
+    Get or set the time tolerance, which will be applied with respect to desired trip values throughout the MCS. If this value is set to zero, time tolerance will not be applied.
 
 .. py:property:: enable_segment_controls
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSOptions.enable_segment_controls
@@ -146,7 +146,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSOptions.graphics_update_rate
     :type: float
 
-    Gets or sets the rate (between 0 and 1) at which to update graphics. Dimensionless.
+    Get or set the rate (between 0 and 1) at which to update graphics. Dimensionless.
 
 .. py:property:: promote_controls
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSOptions.promote_controls
@@ -164,7 +164,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSOptions.min_ephem_step
     :type: float
 
-    Gets or sets the minimum step size for saving ephemeris. Uses Time Dimension.
+    Get or set the minimum step size for saving ephemeris. Uses Time Dimension.
 
 .. py:property:: generate_ephemeris
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSOptions.generate_ephemeris
@@ -182,6 +182,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.MCSOptions.smart_run_mode
     :type: SmartRunMode
 
-    Controls whether the run will attempt to only run changed segments.
+    Control whether the run will attempt to only run changed segments.
 
 

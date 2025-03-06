@@ -1,3 +1,25 @@
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
 import pytest
 from test_util import *
 from assert_extension import *
@@ -345,7 +367,10 @@ class EarlyBoundTests(TestBase):
             boundsCustomRegions: "CoverageBoundsCustomRegions" = clr.CastAs(oBounds, CoverageBoundsCustomRegions)
             Assert.assertIsNotNone(boundsCustomRegions)
 
+            #
             # RegionFiles
+            #
+
             oFiles: "CoverageRegionFilesCollection" = boundsCustomRegions.region_files
             Assert.assertIsNotNone(oFiles)
             # Count
@@ -359,10 +384,13 @@ class EarlyBoundTests(TestBase):
             Assert.assertEqual(1, oFiles.count)
             TestBase.logger.WriteLine3("\t\tThe new RegionFiles collection contains: {0} elements.", oFiles.count)
             TestBase.logger.WriteLine5("\t\t\tElement 0: {0}", oFiles[0])
-            with pytest.raises(Exception):
+
+            with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid.")):
                 oFiles.add("")
-            with pytest.raises(Exception):
+
+            with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid.")):
                 oFiles.add("InvalidFile.Name")
+
             # Add
             oFiles.add("usstates.rl")
             TestBase.logger.WriteLine3("\t\tThe new RegionFiles collection contains: {0} elements.", oFiles.count)
@@ -382,20 +410,26 @@ class EarlyBoundTests(TestBase):
             oFiles.remove_all()
             TestBase.logger.WriteLine3("\t\tThe new RegionFiles collection contains: {0} elements.", oFiles.count)
             Assert.assertEqual(0, oFiles.count)
-
             # Add
             oFiles.add("usstates.rl")
             # Remove
-            with pytest.raises(Exception):
-                oFiles.remove("")
-            oFiles.remove("usstates.rl")
-            Assert.assertEqual(0, oFiles.count)
-            with pytest.raises(Exception):
-                oFiles.remove("usstates.rl")
-            with pytest.raises(Exception):
+
+            with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid.")):
                 oFiles.remove("")
 
+            oFiles.remove("usstates.rl")
+            Assert.assertEqual(0, oFiles.count)
+
+            with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid.")):
+                oFiles.remove("usstates.rl")
+
+            with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid.")):
+                oFiles.remove("")
+
+            #
             # AreaTargets
+            #
+
             areaTargetsCollection: "CoverageAreaTargetsCollection" = boundsCustomRegions.area_targets
             Assert.assertIsNotNone(areaTargetsCollection)
             # Count
@@ -422,11 +456,15 @@ class EarlyBoundTests(TestBase):
                 "\t\tThe new AreaTargets collection contains: {0} elements.", areaTargetsCollection.count
             )
             TestBase.logger.WriteLine5("\t\t\tElement 0: {0}", areaTargetsCollection[0])
-            with pytest.raises(Exception):
+
+            with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid.")):
                 areaTargetsCollection.add("")
+
             Assert.assertEqual(1, areaTargetsCollection.count)
-            with pytest.raises(Exception):
+
+            with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid.")):
                 areaTargetsCollection.add("InvalidAreaTarget.Name")
+
             Assert.assertEqual(1, areaTargetsCollection.count)
             # RemoveAt
             areaTargetsCollection.remove_at(0)
@@ -446,25 +484,275 @@ class EarlyBoundTests(TestBase):
                 TestBase.logger.WriteLine5("\t\t\tElement: {0}", strName)
 
             # Remove
-            with pytest.raises(Exception):
+            with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid.")):
                 areaTargetsCollection.remove("")
+
             areaTargetsCollection.remove("AreaTarget/AreaTarget1")
             TestBase.logger.WriteLine3(
                 "\t\tThe new AreaTargets collection contains: {0} elements.", areaTargetsCollection.count
             )
             Assert.assertEqual(0, areaTargetsCollection.count)
-            with pytest.raises(Exception):
+
+            with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid.")):
                 areaTargetsCollection.remove("")
-            with pytest.raises(Exception):
+
+            with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid.")):
                 areaTargetsCollection.remove("AreaTarget/AreaTarget1")
+
             # RemoveAll
             areaTargetsCollection.add(str(arTargets[0]))
             Assert.assertEqual(1, areaTargetsCollection.count)
             areaTargetsCollection.remove_all()
             Assert.assertEqual(0, areaTargetsCollection.count)
 
+            #
+            # Ellipses
+            #
+
+            place: "IStkObject" = TestBase.Application.current_scenario.children.new(STKObjectType.PLACE, "Place")
+
+            # Get collection
+            ellipsesCollection: "CoverageEllipseCollection" = boundsCustomRegions.ellipses
+            Assert.assertIsNotNone(ellipsesCollection)
+            Assert.assertEqual(0, ellipsesCollection.count)
+            TestBase.logger.WriteLine3(
+                "\t\tThe current Ellipse collection contains: {0} elements.", ellipsesCollection.count
+            )
+
+            # Add with place
+            ellipse: "CoverageEllipse" = ellipsesCollection.add(place.path)
+            Assert.assertIsNotNone(ellipse)
+            Assert.assertEqual(1, ellipsesCollection.count)
+
+            def code1():
+                nonlocal ellipsesCollection, place
+                ellipsesCollection.add(place.path)
+
+            # Ensure that we cannot add another custom region around the same object.
+            # This is functionally possible and supported by analysis, but the UI does
+            # not support it and making such a change via object model causes UI
+            # inconcistencies. If the UI functionality changes, we may want to revisit
+            # this restriction.
+            ExceptionAssert.Throws(code1)
+            Assert.assertEqual(1, ellipsesCollection.count)
+
+            def code2():
+                nonlocal boundsCustomRegions, place
+                boundsCustomRegions.boxes.add(place.path)
+
+            ExceptionAssert.Throws(code2)
+            Assert.assertEqual(0, boundsCustomRegions.boxes.count)
+
+            # Ellipse
+            Assert.assertEqual(0, ellipse.semi_major_axis)
+            ellipse.semi_major_axis = 10
+            Assert.assertEqual(10, ellipse.semi_major_axis)
+            Assert.assertEqual(0, ellipse.semi_minor_axis)
+            ellipse.semi_minor_axis = 0.5
+            Assert.assertEqual(0.5, ellipse.semi_minor_axis)
+            Assert.assertEqual(0, ellipse.bearing)
+            ellipse.bearing = 45
+            Assert.assertEqual(45, ellipse.bearing)
+
+            def code3():
+                nonlocal ellipse
+                ellipse.semi_major_axis = -1
+
+            # Invalid semi major axis assignment
+            ExceptionAssert.Throws(code3)
+
+            def code4():
+                nonlocal ellipse
+                ellipse.semi_major_axis = 0.4
+
+            ExceptionAssert.Throws(code4)
+
+            def code5():
+                nonlocal ellipse
+                ellipse.semi_minor_axis = -1
+
+            # Invalid semi minor axis assignment
+            ExceptionAssert.Throws(code5)
+
+            def code6():
+                nonlocal ellipse
+                ellipse.semi_minor_axis = 11
+
+            ExceptionAssert.Throws(code6)
+
+            def code7():
+                nonlocal ellipse
+                ellipse.bearing = -361
+
+            # Invalid bearing assignment
+            ExceptionAssert.Throws(code7)
+
+            def code8():
+                nonlocal ellipse
+                ellipse.bearing = 361
+
+            ExceptionAssert.Throws(code8)
+
+            # Add with facility
+            facility: "IStkObject" = TestBase.Application.current_scenario.children.new(
+                STKObjectType.FACILITY, "Facility"
+            )
+            ellipse2: "CoverageEllipse" = ellipsesCollection.add(facility.path)
+            Assert.assertIsNotNone(ellipse2)
+            Assert.assertEqual(2, ellipsesCollection.count)
+            Assert.assertIsNotNone(ellipse2.center)
+            ellipse2.semi_major_axis = 10
+            ellipse2.semi_minor_axis = 10
+            ellipse2.bearing = 40
+
+            # Add with target
+            target: "IStkObject" = TestBase.Application.current_scenario.children.new(STKObjectType.TARGET, "Target")
+            ellipse3: "CoverageEllipse" = ellipsesCollection.add(target.path)
+            Assert.assertIsNotNone(ellipse3)
+            Assert.assertEqual(3, ellipsesCollection.count)
+            Assert.assertIsNotNone(ellipse3.center)
+            ellipse3.semi_major_axis = 100
+            ellipse3.semi_minor_axis = 100
+            ellipse3.bearing = 25
+
+            # Add with invalid object
+            ExceptionAssert.Throws(lambda: ellipsesCollection.add("Satellite / Satellite1"))
+            Assert.assertEqual(3, ellipsesCollection.count)
+
+            # _NewEnum
+            ell: "CoverageEllipse"
+
+            # _NewEnum
+            for ell in ellipsesCollection:
+                TestBase.logger.WriteLine5("\t\tEllipse around object: {0}", ell.center.path)
+
+            # Get item
+            ellipseItem: "CoverageEllipse" = ellipsesCollection[0]
+            Assert.assertIsNotNone(ellipseItem)
+            Assert.assertEqual(ellipseItem.semi_major_axis, 10)
+
+            # Get center point
+            center: "IStkObject" = ellipseItem.center
+            Assert.assertIsNotNone(center)
+            Assert.assertEqual(place.path, center.path)
+
+            # Remove at
+            ellipsesCollection.remove_at(0)
+            Assert.assertEqual(2, ellipsesCollection.count)
+
+            # Remove all
+            ellipsesCollection.remove_all()
+            Assert.assertEqual(0, ellipsesCollection.count)
+
+            #
+            # Lat/Lon boxes
+            #
+
+            boxesCollection: "CoverageLatLonBoxCollection" = boundsCustomRegions.boxes
+            Assert.assertIsNotNone(boxesCollection)
+            Assert.assertEqual(0, boxesCollection.count)
+
+            # Insert box around place
+            box: "CoverageLatLonBox" = boxesCollection.add(place.path)
+            Assert.assertIsNotNone(box)
+            Assert.assertEqual(1, boxesCollection.count)
+
+            def code9():
+                nonlocal boxesCollection, place
+                boxesCollection.add(place.path)
+
+            # Ensure that we cannot add another custom region around the same object
+            # This is functionally possible and supported by analysis, but the UI does
+            # not support it and making such a change via object model causes UI
+            # inconcistencies. If the UI functionality changes, we may want to revisit
+            # this restriction.
+            ExceptionAssert.Throws(code9)
+            Assert.assertEqual(1, boxesCollection.count)
+
+            def code10():
+                nonlocal boundsCustomRegions, place
+                boundsCustomRegions.ellipses.add(place.path)
+
+            ExceptionAssert.Throws(code10)
+            Assert.assertEqual(0, boundsCustomRegions.ellipses.count)
+
+            # Box methods
+            Assert.assertEqual(0, box.latitude_span)
+            box.latitude_span = 2
+            Assert.assertEqual(2, box.latitude_span)
+            Assert.assertEqual(0, box.longitude_span)
+            box.longitude_span = 3
+            Assert.assertEqual(3, box.longitude_span)
+            Assert.assertEqual(place.path, box.center.path)
+
+            # Insert box around facility
+            boxesCollection.add(facility.path)
+
+            def code11():
+                nonlocal boxesCollection
+                boxesCollection[1].latitude_span = -1
+
+            # Invalid latitude assignment
+            ExceptionAssert.Throws(code11)
+
+            def code12():
+                nonlocal boxesCollection
+                boxesCollection[1].latitude_span = 100
+
+            ExceptionAssert.Throws(code12)
+
+            def code13():
+                nonlocal boxesCollection
+                boxesCollection[1].longitude_span = -1
+
+            # Invalid longitude assignment
+            ExceptionAssert.Throws(code13)
+
+            def code14():
+                nonlocal boxesCollection
+                boxesCollection[1].longitude_span = 100
+
+            ExceptionAssert.Throws(code14)
+
+            # Valid maximum longitude assignment
+            boxesCollection[1].longitude_span = 90
+            Assert.assertEqual(90, boxesCollection[1].longitude_span)
+
+            # Insert box around target
+            boxesCollection.add(target.path)
+            Assert.assertEqual(3, boxesCollection.count)
+
+            # Insert around invalid object
+            ExceptionAssert.Throws(lambda: boxesCollection.add("Satellite / Satellite1"))
+            Assert.assertEqual(3, boxesCollection.count)
+
+            # Get item
+            boxItem: "CoverageLatLonBox" = boxesCollection[0]
+            Assert.assertIsNotNone(boxItem)
+
+            # _NewEnum
+            ell: "CoverageLatLonBox"
+
+            # _NewEnum
+            for ell in boxesCollection:
+                TestBase.logger.WriteLine5("\t\tBox around object: {0}", box.center.path)
+
+            # Remove at
+            boxesCollection.remove_at(1)
+            Assert.assertEqual(2, boxesCollection.count)
+
+            # Remove all
+            boxesCollection.remove_all()
+            Assert.assertEqual(0, boxesCollection.count)
+
+            # Remove test objects
+            place.unload()
+            facility.unload()
+            target.unload()
+
             # For region CovDef only allow objects that have the same CB as coverage grid
             iCount: int = Array.Length(boundsCustomRegions.area_targets.available_area_targets)
+
             # create AreaTarget on Mars
             oATMars: "AreaTarget" = clr.CastAs(
                 TestBase.Application.current_scenario.children.new_on_central_body(
@@ -473,6 +761,7 @@ class EarlyBoundTests(TestBase):
                 AreaTarget,
             )
             Assert.assertIsNotNone(oATMars)
+
             # create LineTarget on Moon
             oLTMoon: "LineTarget" = clr.CastAs(
                 TestBase.Application.current_scenario.children.new_on_central_body(
@@ -481,6 +770,7 @@ class EarlyBoundTests(TestBase):
                 LineTarget,
             )
             Assert.assertIsNotNone(oLTMoon)
+
             # check available boundary objects
             Assert.assertEqual(iCount, Array.Length(boundsCustomRegions.area_targets.available_area_targets))
             strObject: str
@@ -504,18 +794,18 @@ class EarlyBoundTests(TestBase):
             boundsLat.maximum_latitude = 54
             TestBase.logger.WriteLine6("\t\tThe new MaxLatitude is: {0}", boundsLat.maximum_latitude)
             Assert.assertEqual(54, boundsLat.maximum_latitude)
-            with pytest.raises(Exception):
+            with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
                 boundsLat.maximum_latitude = 123
             # MinLatitude
             TestBase.logger.WriteLine6("\t\tThe current MinLatitude is: {0}", boundsLat.minimum_latitude)
             boundsLat.minimum_latitude = -12
             TestBase.logger.WriteLine6("\t\tThe new MinLatitude is: {0}", boundsLat.minimum_latitude)
             Assert.assertEqual(-12, boundsLat.minimum_latitude)
-            with pytest.raises(Exception):
+            with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
                 boundsLat.minimum_latitude = -123
-            with pytest.raises(Exception):
+            with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
                 boundsLat.maximum_latitude = -54
-            with pytest.raises(Exception):
+            with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
                 boundsLat.minimum_latitude = 65
         elif eType == CoverageBounds.LATITUDE_LONGITUDE_REGION:
             oLatLonRegion: "CoverageBoundsLatitudeLongitudeRegion" = clr.CastAs(
@@ -527,7 +817,7 @@ class EarlyBoundTests(TestBase):
             oLatLonRegion.maximum_latitude = 54
             TestBase.logger.WriteLine6("\t\tThe new MaxLatitude is: {0}", oLatLonRegion.maximum_latitude)
             Assert.assertEqual(54, oLatLonRegion.maximum_latitude)
-            with pytest.raises(Exception):
+            with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
                 oLatLonRegion.maximum_latitude = 123
             # MinLatitude
             TestBase.logger.WriteLine6("\t\tThe current MinLatitude is: {0}", oLatLonRegion.minimum_latitude)
@@ -539,18 +829,18 @@ class EarlyBoundTests(TestBase):
             oLatLonRegion.maximum_longitude = 45
             TestBase.logger.WriteLine6("\t\tThe new MaxLongitude is: {0}", oLatLonRegion.maximum_longitude)
             Assert.assertEqual(45, oLatLonRegion.maximum_longitude)
-            with pytest.raises(Exception):
+            with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
                 oLatLonRegion.maximum_longitude = 400
             # MinLongitude
             TestBase.logger.WriteLine6("\t\tThe current MinLongitude is: {0}", oLatLonRegion.minimum_longitude)
             oLatLonRegion.minimum_longitude = -45
             TestBase.logger.WriteLine6("\t\tThe new MinLongitude is: {0}", oLatLonRegion.minimum_longitude)
             Assert.assertEqual(-45, oLatLonRegion.minimum_longitude)
-            with pytest.raises(Exception):
+            with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
                 oLatLonRegion.minimum_latitude = -123
-            with pytest.raises(Exception):
+            with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
                 oLatLonRegion.maximum_latitude = -54
-            with pytest.raises(Exception):
+            with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
                 oLatLonRegion.minimum_latitude = 65
         elif eType == CoverageBounds.LATITUDE_LINE:
             boundsLatLine: "CoverageBoundsLatitudeLine" = clr.CastAs(oBounds, CoverageBoundsLatitudeLine)
@@ -560,21 +850,21 @@ class EarlyBoundTests(TestBase):
             boundsLatLine.stop_longitude = 123
             TestBase.logger.WriteLine6("\t\tThe new StopLongitude is: {0}", boundsLatLine.stop_longitude)
             Assert.assertEqual(123, boundsLatLine.stop_longitude)
-            with pytest.raises(Exception):
+            with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
                 boundsLatLine.stop_longitude = 456
             # StartLongitude
             TestBase.logger.WriteLine6("\t\tThe current StartLongitude is: {0}", boundsLatLine.start_longitude)
             boundsLatLine.start_longitude = -123
             TestBase.logger.WriteLine6("\t\tThe new StartLongitude is: {0}", boundsLatLine.start_longitude)
             Assert.assertEqual(-123, boundsLatLine.start_longitude)
-            with pytest.raises(Exception):
+            with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
                 boundsLatLine.start_longitude = -456
             # Latitude
             TestBase.logger.WriteLine6("\t\tThe current Latitude is: {0}", boundsLatLine.latitude)
             boundsLatLine.latitude = 12.34
             TestBase.logger.WriteLine6("\t\tThe new Latitude is: {0}", boundsLatLine.latitude)
             Assert.assertEqual(12.34, boundsLatLine.latitude)
-            with pytest.raises(Exception):
+            with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
                 boundsLatLine.latitude = 123.4
         elif eType == CoverageBounds.LONGITUDE_LINE:
             boundsLonLine: "CoverageBoundsLongitudeLine" = clr.CastAs(oBounds, CoverageBoundsLongitudeLine)
@@ -584,25 +874,25 @@ class EarlyBoundTests(TestBase):
             boundsLonLine.maximum_latitude = 56
             TestBase.logger.WriteLine6("\t\tThe new MaxLatitude is: {0}", boundsLonLine.maximum_latitude)
             Assert.assertEqual(56, boundsLonLine.maximum_latitude)
-            with pytest.raises(Exception):
+            with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
                 boundsLonLine.maximum_latitude = 123
             # MinLatitude
             TestBase.logger.WriteLine6("\t\tThe current MinLatitude is: {0}", boundsLonLine.minimum_latitude)
             boundsLonLine.minimum_latitude = -56
             TestBase.logger.WriteLine6("\t\tThe new MinLatitude is: {0}", boundsLonLine.minimum_latitude)
             Assert.assertEqual(-56, boundsLonLine.minimum_latitude)
-            with pytest.raises(Exception):
+            with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
                 boundsLonLine.minimum_latitude = -123
             # Longitude
             TestBase.logger.WriteLine6("\t\tThe current Longitude is: {0}", boundsLonLine.longitude)
             boundsLonLine.longitude = 12.34
             TestBase.logger.WriteLine6("\t\tThe new Longitude is: {0}", boundsLonLine.longitude)
             Assert.assertEqual(12.34, boundsLonLine.longitude)
-            with pytest.raises(Exception):
+            with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
                 boundsLonLine.longitude = 1234
-            with pytest.raises(Exception):
+            with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
                 boundsLonLine.maximum_latitude = -67
-            with pytest.raises(Exception):
+            with pytest.raises(Exception, match=RegexSubstringMatch("invalid")):
                 boundsLonLine.minimum_latitude = 67
         elif eType == CoverageBounds.CUSTOM_BOUNDARY:
             boundsCustomBoundary: "CoverageBoundsCustomBoundary" = clr.CastAs(oBounds, CoverageBoundsCustomBoundary)
@@ -622,10 +912,13 @@ class EarlyBoundTests(TestBase):
             Assert.assertEqual(1, oFiles.count)
             TestBase.logger.WriteLine3("\t\tThe new RegionFiles collection contains: {0} elements.", oFiles.count)
             TestBase.logger.WriteLine5("\t\t\tElement 0: {0}", oFiles[0])
-            with pytest.raises(Exception):
+
+            with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid.")):
                 oFiles.add("")
-            with pytest.raises(Exception):
+
+            with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid.")):
                 oFiles.add("InvalidFile.Name")
+
             # Add
             oFiles.add("usstates.rl")
             TestBase.logger.WriteLine3("\t\tThe new RegionFiles collection contains: {0} elements.", oFiles.count)
@@ -649,13 +942,16 @@ class EarlyBoundTests(TestBase):
             # Add
             oFiles.add("usstates.rl")
             # Remove
-            with pytest.raises(Exception):
+            with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid.")):
                 oFiles.remove("")
+
             oFiles.remove("usstates.rl")
             Assert.assertEqual(0, oFiles.count)
-            with pytest.raises(Exception):
+
+            with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid.")):
                 oFiles.remove("usstates.rl")
-            with pytest.raises(Exception):
+
+            with pytest.raises(Exception, match=RegexSubstringMatch("One or more arguments are invalid.")):
                 oFiles.remove("")
 
             # BoundaryObjects
@@ -2464,7 +2760,7 @@ class EarlyBoundTests(TestBase):
             (IStkObject(covDef)).unload()
 
     def test_CustomPointAltitudeMethodException(self):
-        def code1():
+        def code15():
             covDef: "CoverageDefinition" = CoverageDefinition(
                 TestBase.Application.current_scenario.children.new(
                     STKObjectType.COVERAGE_DEFINITION, "CovDef_PointAltitude"
@@ -2479,7 +2775,7 @@ class EarlyBoundTests(TestBase):
             finally:
                 (IStkObject(covDef)).unload()
 
-        ex = ExceptionAssert.Throws(code1)
+        ex = ExceptionAssert.Throws(code15)
         StringAssert.Contains("Cannot modify read-only attribute", str(ex), "Exception message mismatch")
 
     # region BUG68304_Assets

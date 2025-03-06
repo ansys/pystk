@@ -36,6 +36,30 @@ Overview
 
 
 
+Examples
+--------
+
+Configure the Aviator propagator
+
+.. code-block:: python
+
+    # Aircraft aircraft: Aircraft object
+    # Set to Propagator to Aviator
+    aircraft.set_route_type(PropagatorType.AVIATOR)
+    # Get the aircraft's route
+    aircraftRoute = aircraft.route
+    # Get the Aviator propagator
+    propagator = aircraftRoute.aviator_propagator
+    # Get the Aviator mission
+    mission = propagator.aviator_mission
+    # Get the list of phases from the mission
+    phases = mission.phases
+    # Get the list of procedures from the first phase
+    procedures = phases[0].procedures
+    # Propagate the route
+    propagator.propagate()
+
+
 Import detail
 -------------
 

@@ -1,3 +1,25 @@
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
 from test_util import *
 from code_snippets.code_snippets_test_base import *
 from ansys.stk.core.stkutil import *
@@ -119,15 +141,17 @@ class SearchTrackPDetSnippets(CodeSnippetsTestBase):
 
         # Configure the radar object as a monostatic model.
         radar.set_model("Monostatic")
-        monostaticModel: "RadarModelMonostatic" = clr.CastAs(radar.model, RadarModelMonostatic)
+        monostaticModel: "RadarModelMonostatic" = clr.CastAs(
+            radar.model_component_linking.component, RadarModelMonostatic
+        )
 
         # Orient the radar antenna in the direction of the target
         monostaticModel.antenna_control.embedded_model_orientation.assign_az_el(50.9, 36.8, AzElAboutBoresight.ROTATE)
 
         # Set the radar antenna model to parabolic
-        monostaticModel.antenna_control.set_embedded_model("Parabolic")
+        monostaticModel.antenna_control.embedded_model_component_linking.set_component("Parabolic")
         parabolic: "AntennaModelParabolic" = clr.CastAs(
-            monostaticModel.antenna_control.embedded_model, AntennaModelParabolic
+            monostaticModel.antenna_control.embedded_model_component_linking.component, AntennaModelParabolic
         )
 
         # Give the parabolic antenna a 2 deg beamwidth;
@@ -182,7 +206,9 @@ class SearchTrackPDetSnippets(CodeSnippetsTestBase):
 
         # Don't inherit the radar cross section settings from the scenario
         targetAircraft.radar_cross_section.inherit = False
-        rcs: "RadarCrossSectionModel" = clr.CastAs(targetAircraft.radar_cross_section.model, RadarCrossSectionModel)
+        rcs: "RadarCrossSectionModel" = clr.CastAs(
+            targetAircraft.radar_cross_section.model_component_linking.component, RadarCrossSectionModel
+        )
 
         # Set the radar cross section compute strategy to constan value
         rcs.frequency_bands[0].set_compute_strategy("Constant Value")

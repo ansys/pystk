@@ -40,7 +40,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorSARPattern.aft_exclusion_angle`
               - The minimum angle between the aft projection of the velocity vector and the vector to the target. Uses Angle Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorSARPattern.angular_resolution`
-              - Allows a user to set the angular separation between the pattern data points. This is an advanced user field, available only through STK's object model interface. The default value for the number of pattern samples is...
+              - Allow a user to set the angular separation between the pattern data points. This is an advanced user field, available only through STK's object model interface. The default value for the number of pattern samples is...
             * - :py:attr:`~ansys.stk.core.stkobjects.SensorSARPattern.track_parent_altitude`
               - Whether or not the SAR sensor tracks the altitude of the sensor's parent object.
 
@@ -91,7 +91,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.SensorSARPattern.angular_resolution
     :type: typing.Any
 
-    Allows a user to set the angular separation between the pattern data points. This is an advanced user field, available only through STK's object model interface. The default value for the number of pattern samples is...
+    Allow a user to set the angular separation between the pattern data points. This is an advanced user field, available only through STK's object model interface. The default value for the number of pattern samples is...
 
 .. py:property:: track_parent_altitude
     :canonical: ansys.stk.core.stkobjects.SensorSARPattern.track_parent_altitude

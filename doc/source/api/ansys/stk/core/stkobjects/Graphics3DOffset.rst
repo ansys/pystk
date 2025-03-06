@@ -19,13 +19,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DOffset.rotational`
-              - Returns the rotational offset attributes.
+              - Return the rotational offset attributes.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DOffset.translational`
-              - Returns the translational offset attributes.
+              - Return the translational offset attributes.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DOffset.label`
-              - Returns the label offset attributes.
+              - Return the label offset attributes.
             * - :py:attr:`~ansys.stk.core.stkobjects.Graphics3DOffset.attachment_point`
-              - Returns the attach point offset attributes.
+              - Return the attach point offset attributes.
 
 
 
@@ -44,24 +44,24 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Graphics3DOffset.rotational
     :type: Graphics3DOffsetRotate
 
-    Returns the rotational offset attributes.
+    Return the rotational offset attributes.
 
 .. py:property:: translational
     :canonical: ansys.stk.core.stkobjects.Graphics3DOffset.translational
     :type: Graphics3DOffsetTransformation
 
-    Returns the translational offset attributes.
+    Return the translational offset attributes.
 
 .. py:property:: label
     :canonical: ansys.stk.core.stkobjects.Graphics3DOffset.label
     :type: Graphics3DOffsetLabel
 
-    Returns the label offset attributes.
+    Return the label offset attributes.
 
 .. py:property:: attachment_point
     :canonical: ansys.stk.core.stkobjects.Graphics3DOffset.attachment_point
     :type: Graphics3DOffsetAttachment
 
-    Returns the attach point offset attributes.
+    Return the attach point offset attributes.
 
 

@@ -32,7 +32,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionDataBestN.best_n`
               - Navigation accuracy based on the specified number of satellites that yields the minimum GDOP.
             * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionDataBestN.best_n_metric`
-              - Gets or sets the minimization metric for the best N computation.
+              - Get or set the minimization metric for the best N computation.
             * - :py:attr:`~ansys.stk.core.stkobjects.FigureOfMeritDefinitionDataBestN.best_n_metric_supported_types`
               - Best N supported types.
 
@@ -59,7 +59,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.FigureOfMeritDefinitionDataBestN.best_n_metric
     :type: FigureOfMeritMethod
 
-    Gets or sets the minimization metric for the best N computation.
+    Get or set the minimization metric for the best N computation.
 
 .. py:property:: best_n_metric_supported_types
     :canonical: ansys.stk.core.stkobjects.FigureOfMeritDefinitionDataBestN.best_n_metric_supported_types

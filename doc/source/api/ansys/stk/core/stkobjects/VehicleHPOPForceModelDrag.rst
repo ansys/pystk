@@ -40,13 +40,13 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleHPOPForceModelDrag.solar_flux_geo_magnitude`
               - Solar and geomagnetic flux.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleHPOPForceModelDrag.drag_model_type`
-              - Returns a type of the active drag model.
+              - Return a type of the active drag model.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleHPOPForceModelDrag.drag_model_supported_types`
-              - Returns an array of valid choices.
+              - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleHPOPForceModelDrag.drag_model`
-              - Returns the active drag model.
+              - Return the active drag model.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleHPOPForceModelDrag.low_altitude_atmospheric_density_model`
-              - This property is deprecated. Use LowAltAtmosDensityModel instead. Select the low altitude atmospheric density model to be used.
+              - Do not use this property, as it is deprecated. Use LowAltAtmosDensityModel instead. Select the low altitude atmospheric density model to be used.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleHPOPForceModelDrag.blending_range`
               - Atmospheric blending range: measured from the lower extent of the upper atmospheric model. Uses distance dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleHPOPForceModelDrag.low_altitude_atmos_density_model`
@@ -93,25 +93,25 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleHPOPForceModelDrag.drag_model_type
     :type: DragModel
 
-    Returns a type of the active drag model.
+    Return a type of the active drag model.
 
 .. py:property:: drag_model_supported_types
     :canonical: ansys.stk.core.stkobjects.VehicleHPOPForceModelDrag.drag_model_supported_types
     :type: list
 
-    Returns an array of valid choices.
+    Return an array of valid choices.
 
 .. py:property:: drag_model
     :canonical: ansys.stk.core.stkobjects.VehicleHPOPForceModelDrag.drag_model
     :type: IVehicleHPOPDragModel
 
-    Returns the active drag model.
+    Return the active drag model.
 
 .. py:property:: low_altitude_atmospheric_density_model
     :canonical: ansys.stk.core.stkobjects.VehicleHPOPForceModelDrag.low_altitude_atmospheric_density_model
     :type: AtmosphericDensityModel
 
-    This property is deprecated. Use LowAltAtmosDensityModel instead. Select the low altitude atmospheric density model to be used.
+    Do not use this property, as it is deprecated. Use LowAltAtmosDensityModel instead. Select the low altitude atmospheric density model to be used.
 
 .. py:property:: blending_range
     :canonical: ansys.stk.core.stkobjects.VehicleHPOPForceModelDrag.blending_range

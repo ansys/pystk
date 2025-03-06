@@ -1,4 +1,25 @@
-# Copyright 2020-2020, Ansys Government Initiatives 
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
 
 import typing
 
@@ -407,6 +428,55 @@ def _single_dimension_list_from_SAFEARRAY(sa:agcom.LPSAFEARRAY, index:int, from_
     hr = agcom.OLEAut32Lib.SafeArrayUnaccessData(sa)
     return python_array
 
+
+def _five_dimension_list_from_SAFEARRAY(sa:agcom.LPSAFEARRAY) -> list:
+    python_array = []
+    vt = agcom.VARTYPE()
+    agcom.OLEAut32Lib.SafeArrayGetVartype(sa, byref(vt))
+    if vt.value != agcom.VT_VARIANT:
+        return []
+    indices = (agcom.LONG*5)()
+    indices[0] = 0
+    indices[1] = 0
+    indices[2] = 0
+    indices[3] = 0
+    indices[4] = 0
+    pIndx = cast(pointer(indices), POINTER(agcom.LONG))
+    lb = (agcom.LONG*5)()
+    ub = (agcom.LONG*5)()
+    for i in range(0,5):
+        getlb = agcom.LONG()
+        getub = agcom.LONG()
+        agcom.OLEAut32Lib.SafeArrayGetLBound(sa, agcom.UINT(i+1), byref(getlb))
+        agcom.OLEAut32Lib.SafeArrayGetUBound(sa, agcom.UINT(i+1), byref(getub))
+        lb[i] = getlb
+        ub[i] = getub
+    for first in range(int(lb[0]), int(ub[0]) + 1):
+        indices[0] = agcom.LONG(first)
+        secondlvl = []
+        for second in range(int(lb[1]), int(ub[1]) + 1):
+            indices[1] = agcom.LONG(second)
+            thirdlvl = []
+            for third in range(int(lb[2]), int(ub[2]) + 1):
+                indices[2]= agcom.LONG(third)
+                fourthlvl = []
+                for fourth in range(int(lb[3]), int(ub[3]) + 1):
+                    indices[3] = agcom.LONG(fourth)
+                    fifthlvl = []
+                    for fifth in range(int(lb[4]), int(ub[4]) + 1):
+                        indices[4] = agcom.LONG(fifth)
+                        pElem = _vartype_to_ctypes_type(agcom.VT_VARIANT)()
+                        agcom.OLEAut32Lib.VariantInit(pElem)
+                        hr = agcom.OLEAut32Lib.SafeArrayGetElement(sa, pIndx, byref(pElem))
+                        python_elem = python_val_from_ctypes_val(pElem, agcom.VT_VARIANT)
+                        agcom.OLEAut32Lib.VariantClear(pElem)
+                        fifthlvl.append(python_elem)
+                    fourthlvl.append(fifthlvl)
+                thirdlvl.append(fourthlvl)
+            secondlvl.append(thirdlvl)
+        python_array.append(secondlvl)
+    return python_array
+
 def list_from_SAFEARRAY(sa:agcom.LPSAFEARRAY) -> list:
     dim = agcom.OLEAut32Lib.SafeArrayGetDim(sa)
     if dim == 0:
@@ -422,6 +492,8 @@ def list_from_SAFEARRAY(sa:agcom.LPSAFEARRAY) -> list:
         for i in range(int(lb.value), int(ub.value)+1):
             ret.append(_single_dimension_list_from_SAFEARRAY(sa, i, True))
         return ret
+    elif dim == 5:
+        return _five_dimension_list_from_SAFEARRAY(sa)
     else:
         raise RuntimeError("Unexpected dimension of SafeArray.  Expected 1 or 2, got " + str(dim) + ".")
         

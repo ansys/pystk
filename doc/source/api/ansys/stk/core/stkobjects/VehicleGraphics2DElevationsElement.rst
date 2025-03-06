@@ -33,7 +33,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DElevationsElement.user_text`
               - Opt whether to display user defined text for the contour.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics2DElevationsElement.label_angle`
-              - Gets or sets the angle (0-359 deg, starting at 12 o'clock) along the contour at which the label displays.
+              - Get or set the angle (0-359 deg, starting at 12 o'clock) along the contour at which the label displays.
 
 
 
@@ -94,6 +94,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics2DElevationsElement.label_angle
     :type: int
 
-    Gets or sets the angle (0-359 deg, starting at 12 o'clock) along the contour at which the label displays.
+    Get or set the angle (0-359 deg, starting at 12 o'clock) along the contour at which the label displays.
 
 

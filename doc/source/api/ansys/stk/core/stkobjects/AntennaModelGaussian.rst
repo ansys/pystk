@@ -21,19 +21,19 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelGaussian.input_type`
-              - Gets or sets the input type.
+              - Get or set the input type.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelGaussian.diameter`
-              - Gets or sets the diameter.
+              - Get or set the diameter.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelGaussian.beamwidth`
-              - Gets or sets the beamwidth.
+              - Get or set the beamwidth.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelGaussian.mainlobe_gain`
-              - Gets or sets the main-lobe gain.
+              - Get or set the main-lobe gain.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelGaussian.backlobe_gain`
-              - Gets or sets the back-lobe gain.
+              - Get or set the back-lobe gain.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelGaussian.use_backlobe_as_mainlobe_atten`
-              - Gets or sets the use back-lobe gain as main-lobe attenuation flag.
+              - Get or set the use back-lobe gain as main-lobe attenuation flag.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelGaussian.efficiency`
-              - Gets or sets the efficiency.
+              - Get or set the efficiency.
 
 
 
@@ -52,42 +52,42 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.AntennaModelGaussian.input_type
     :type: AntennaModelInputType
 
-    Gets or sets the input type.
+    Get or set the input type.
 
 .. py:property:: diameter
     :canonical: ansys.stk.core.stkobjects.AntennaModelGaussian.diameter
     :type: float
 
-    Gets or sets the diameter.
+    Get or set the diameter.
 
 .. py:property:: beamwidth
     :canonical: ansys.stk.core.stkobjects.AntennaModelGaussian.beamwidth
     :type: typing.Any
 
-    Gets or sets the beamwidth.
+    Get or set the beamwidth.
 
 .. py:property:: mainlobe_gain
     :canonical: ansys.stk.core.stkobjects.AntennaModelGaussian.mainlobe_gain
     :type: float
 
-    Gets or sets the main-lobe gain.
+    Get or set the main-lobe gain.
 
 .. py:property:: backlobe_gain
     :canonical: ansys.stk.core.stkobjects.AntennaModelGaussian.backlobe_gain
     :type: float
 
-    Gets or sets the back-lobe gain.
+    Get or set the back-lobe gain.
 
 .. py:property:: use_backlobe_as_mainlobe_atten
     :canonical: ansys.stk.core.stkobjects.AntennaModelGaussian.use_backlobe_as_mainlobe_atten
     :type: bool
 
-    Gets or sets the use back-lobe gain as main-lobe attenuation flag.
+    Get or set the use back-lobe gain as main-lobe attenuation flag.
 
 .. py:property:: efficiency
     :canonical: ansys.stk.core.stkobjects.AntennaModelGaussian.efficiency
     :type: float
 
-    Gets or sets the efficiency.
+    Get or set the efficiency.
 
 

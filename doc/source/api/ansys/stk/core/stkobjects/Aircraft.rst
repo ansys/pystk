@@ -25,24 +25,81 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.Aircraft.graphics_3d`
               - Get the aircraft's 3D Graphics properties.
             * - :py:attr:`~ansys.stk.core.stkobjects.Aircraft.export_tools`
-              - Returns the IAgAcExportTools interface.
+              - Return the IAgAcExportTools interface.
             * - :py:attr:`~ansys.stk.core.stkobjects.Aircraft.atmosphere`
-              - This property is deprecated. The new RFEnvironment property can be used to configure atmospheric models.
+              - Do not use this property, as it is deprecated. The new RFEnvironment property can be used to configure atmospheric models.
             * - :py:attr:`~ansys.stk.core.stkobjects.Aircraft.radar_clutter_map`
-              - Returns the radar clutter map.
+              - Return the radar clutter map.
             * - :py:attr:`~ansys.stk.core.stkobjects.Aircraft.radar_cross_section`
-              - Returns the radar cross sectoin.
+              - Return the radar cross sectoin.
             * - :py:attr:`~ansys.stk.core.stkobjects.Aircraft.laser_environment`
-              - Gets the laser environment.
+              - Get the laser environment.
             * - :py:attr:`~ansys.stk.core.stkobjects.Aircraft.rf_environment`
-              - Gets the RF environment.
+              - Get the RF environment.
             * - :py:attr:`~ansys.stk.core.stkobjects.Aircraft.lighting_maximum_step_terrain`
-              - Gets or sets the maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
+              - Get or set the maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.Aircraft.lighting_maximum_step_central_body_shape`
-              - Gets or sets the maximum step size to use when computing lighting when UseTerrainInLightingComputations is false. Uses Time Dimension.
+              - Get or set the maximum step size to use when computing lighting when UseTerrainInLightingComputations is false. Uses Time Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.Aircraft.get_eoir_settings`
               - Get the EOIR properties of the aircraft.
 
+
+
+Examples
+--------
+
+Set the Attitude of the Aircraft
+
+.. code-block:: python
+
+    # Aircraft aircraft: Aircraft object
+    aircraft.attitude.basic.set_profile_type(AttitudeProfile.COORDINATED_TURN)
+
+
+Add Array of Waypoints to Aircraft
+
+.. code-block:: python
+
+    # Aircraft aircraft: Aircraft object
+    route = aircraft.route
+    ptsArray = [[37.5378, 14.2207, 3.0480, 0.0772, 2], [47.2602, 30.5517, 3.0480, 0.0772, 2]]
+    route.set_points_smooth_rate_and_propagate(ptsArray)
+    # Propagate the route
+    route.propagate()
+
+
+Set Great Arc Propagator and Add Individual Waypoints to Aircraft
+
+.. code-block:: python
+
+    # Aircraft aircraft: Aircraft object
+    # Set route to great arc, method and altitude reference
+    aircraft.set_route_type(PropagatorType.GREAT_ARC)
+    route = aircraft.route
+    route.method = VehicleWaypointComputationMethod.DETERMINE_TIME_ACCELERATION_FROM_VELOCITY
+    route.set_altitude_reference_type(VehicleAltitudeReference.MEAN_SEA_LEVEL)
+    # Add first point
+    waypoint = route.waypoints.add()
+    waypoint.latitude = 37.5378
+    waypoint.longitude = 14.2207
+    waypoint.altitude = 5  # km
+    waypoint.speed = 0.1  # km/sec
+    # Add second point
+    waypoint2 = route.waypoints.add()
+    waypoint2.latitude = 47.2602
+    waypoint2.longitude = 30.5517
+    waypoint2.altitude = 5  # km
+    waypoint2.speed = 0.1  # km/sec
+    # Propagate the route
+    route.propagate()
+
+
+Create a New Aircraft (on the current scenario central body)
+
+.. code-block:: python
+
+    # StkObjectRoot root: STK Object Model root
+    aircraft = root.current_scenario.children.new(STKObjectType.AIRCRAFT, "MyAircraft")
 
 
 Import detail
@@ -72,49 +129,49 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.Aircraft.export_tools
     :type: AircraftExportTools
 
-    Returns the IAgAcExportTools interface.
+    Return the IAgAcExportTools interface.
 
 .. py:property:: atmosphere
     :canonical: ansys.stk.core.stkobjects.Aircraft.atmosphere
     :type: Atmosphere
 
-    This property is deprecated. The new RFEnvironment property can be used to configure atmospheric models.
+    Do not use this property, as it is deprecated. The new RFEnvironment property can be used to configure atmospheric models.
 
 .. py:property:: radar_clutter_map
     :canonical: ansys.stk.core.stkobjects.Aircraft.radar_clutter_map
     :type: IRadarClutterMapInheritable
 
-    Returns the radar clutter map.
+    Return the radar clutter map.
 
 .. py:property:: radar_cross_section
     :canonical: ansys.stk.core.stkobjects.Aircraft.radar_cross_section
     :type: RadarCrossSectionInheritable
 
-    Returns the radar cross sectoin.
+    Return the radar cross sectoin.
 
 .. py:property:: laser_environment
     :canonical: ansys.stk.core.stkobjects.Aircraft.laser_environment
     :type: PlatformLaserEnvironment
 
-    Gets the laser environment.
+    Get the laser environment.
 
 .. py:property:: rf_environment
     :canonical: ansys.stk.core.stkobjects.Aircraft.rf_environment
     :type: IPlatformRFEnvironment
 
-    Gets the RF environment.
+    Get the RF environment.
 
 .. py:property:: lighting_maximum_step_terrain
     :canonical: ansys.stk.core.stkobjects.Aircraft.lighting_maximum_step_terrain
     :type: float
 
-    Gets or sets the maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
+    Get or set the maximum step size to use when computing lighting when UseTerrainInLightingComputations is true. Uses Time Dimension.
 
 .. py:property:: lighting_maximum_step_central_body_shape
     :canonical: ansys.stk.core.stkobjects.Aircraft.lighting_maximum_step_central_body_shape
     :type: float
 
-    Gets or sets the maximum step size to use when computing lighting when UseTerrainInLightingComputations is false. Uses Time Dimension.
+    Get or set the maximum step size to use when computing lighting when UseTerrainInLightingComputations is false. Uses Time Dimension.
 
 .. py:property:: get_eoir_settings
     :canonical: ansys.stk.core.stkobjects.Aircraft.get_eoir_settings

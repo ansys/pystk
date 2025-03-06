@@ -1,3 +1,25 @@
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
 import pytest
 from test_util import *
 from assertion_harness import *
@@ -235,7 +257,7 @@ class EarlyBoundTests(TestBase):
         wind.wind_model_source = WindAtmosModelSource.MISSION_MODEL
         wind.wind_model_type = WindModelType.CONSTANT_WIND
         addsWind: "WindModelADDS" = None
-        with pytest.raises(Exception, match=RegexSubstringMatch("must be set")):
+        with pytest.raises(Exception, match=RegexSubstringMatch("has been deprecated")):
             addsWind = wind.mode_as_adds
 
         constWind: "WindModelConstant" = wind.mode_as_constant
@@ -304,18 +326,20 @@ class EarlyBoundTests(TestBase):
     def test_WindModelADDS(self):
         wind: "WindModel" = EarlyBoundTests.AG_Mission.wind_model
         wind.wind_model_source = WindAtmosModelSource.MISSION_MODEL
-        wind.wind_model_type = WindModelType.ADDS
-        ADDSWind: "WindModelADDS" = wind.mode_as_adds
+        with pytest.raises(Exception, match=RegexSubstringMatch("has been deprecated")):
+            wind.wind_model_type = WindModelType.ADDS
 
-        ADDSWind.name = "ADDS Name Test"
-        Assert.assertEqual("ADDS Name Test", ADDSWind.name)
+        with pytest.raises(Exception, match=RegexSubstringMatch("has been deprecated")):
+            ADDSWind: "WindModelADDS" = wind.mode_as_adds
 
-        ADDSWind.interpolation_blend_time = 1
-        Assert.assertEqual(1, ADDSWind.interpolation_blend_time)
+        # ADDSWind.Name = "ADDS Name Test";
+        # Assert.AreEqual("ADDS Name Test", ADDSWind.Name);
+
+        # ADDSWind.InterpBlendTime = 1;
+        # Assert.AreEqual(1, ADDSWind.InterpBlendTime);
 
         wind.wind_model_type = WindModelType.DISABLED
-        with pytest.raises(Exception, match=RegexSubstringMatch("must be set")):
-            ADDSWind.interpolation_blend_time = 1
+        # TryCatchAssertBlock.ExpectedException("must be set", delegate () { ADDSWind.InterpBlendTime = 1; });
 
         wind.wind_model_source = WindAtmosModelSource.SCENARIO_MODEL
         wind.copy()

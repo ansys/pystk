@@ -34,11 +34,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.Configuration.empty_weight`
-              - Gets or sets the empty weight of the aircraft.
+              - Get or set the empty weight of the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.Configuration.max_landing_weight`
-              - Gets or sets the max landing weight of the aircraft.
+              - Get or set the max landing weight of the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.Configuration.base_drag_index`
-              - Gets or sets the base drag index of the aircraft.
+              - Get or set the base drag index of the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.Configuration.empty_cgx`
               - Get the X value of the aircraft's Empty CG position.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.Configuration.empty_cgy`
@@ -64,6 +64,44 @@ Overview
 
 
 
+Examples
+--------
+
+Set the Configuration used for the Mission
+
+.. code-block:: python
+
+    # Mission mission: Aviator Mission object
+    # Get the configuration used for the mission
+    configuration = mission.configuration
+    # Set the max landing weight
+    configuration.max_landing_weight = 300000
+    # Set the empty weight
+    configuration.empty_weight = 210000
+    # Update the center of gravity of the aircraft when empty
+    configuration.set_empty_cg(2, 0, 1)
+
+    # Get the stations
+    stations = configuration.get_stations()
+    # Check if there is an internal fuel station
+    if stations.contains_station("Internal Fuel") is True:
+        # Get the fuel tank
+        fuelTank = stations.get_internal_fuel_tank_by_name("Internal Fuel")
+        # Set the capacity of the fuel tank
+        fuelTank.capacity = 175000
+        # Set the initial state of the fuel tank
+        fuelTank.initial_fuel_state = 125000
+
+    # Add a new payload station
+    newPayload = stations.add_payload_station()
+    # Set the position of the payload station
+    newPayload.set_position(0, 2, 0)
+    # Add an external fuel tank
+    externalTank = newPayload.add_external_fuel_tank()
+    # Set the empty weight of the tank
+    externalTank.empty_weight = 2000
+
+
 Import detail
 -------------
 
@@ -79,19 +117,19 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.Configuration.empty_weight
     :type: float
 
-    Gets or sets the empty weight of the aircraft.
+    Get or set the empty weight of the aircraft.
 
 .. py:property:: max_landing_weight
     :canonical: ansys.stk.core.stkobjects.aviator.Configuration.max_landing_weight
     :type: float
 
-    Gets or sets the max landing weight of the aircraft.
+    Get or set the max landing weight of the aircraft.
 
 .. py:property:: base_drag_index
     :canonical: ansys.stk.core.stkobjects.aviator.Configuration.base_drag_index
     :type: float
 
-    Gets or sets the base drag index of the aircraft.
+    Get or set the base drag index of the aircraft.
 
 .. py:property:: empty_cgx
     :canonical: ansys.stk.core.stkobjects.aviator.Configuration.empty_cgx

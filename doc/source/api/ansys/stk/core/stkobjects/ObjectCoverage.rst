@@ -32,11 +32,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ObjectCoverage.data_providers`
-              - Returns the object representing a list of available data providers for the object.
+              - Return the object representing a list of available data providers for the object.
             * - :py:attr:`~ansys.stk.core.stkobjects.ObjectCoverage.start_time`
-              - Gets or sets the start time of object coverage. Uses DateFormat Dimension.
+              - Get or set the start time of object coverage. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ObjectCoverage.stop_time`
-              - Gets or sets the stop time of object coverage. Uses DateFormat Dimension.
+              - Get or set the stop time of object coverage. Uses DateFormat Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.ObjectCoverage.assets`
               - Get the asset list collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.ObjectCoverage.figure_of_merit`
@@ -48,6 +48,25 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.ObjectCoverage.is_coverage_configuration_saved`
               - Save the single-object coverage definitions when the scenario is saved to disk, if a compute has been done.
 
+
+
+Examples
+--------
+
+Compute Object Coverage
+
+.. code-block:: python
+
+    # Aircraft aircraft: Aircraft object
+    objCoverage = aircraft.object_coverage
+    objCoverage.assets.remove_all
+    objCoverage.assets.add("Satellite/MySatellite")
+    objCoverage.use_object_times = True
+    objCoverage.compute()
+
+    objCoverageFOM = objCoverage.figure_of_merit
+    objCoverageFOM.set_definition_type(FigureOfMeritDefinitionType.COVERAGE_TIME)
+    objCoverageFOM.definition.set_compute_type(FigureOfMeritCompute.TOTAL)
 
 
 Import detail
@@ -65,19 +84,19 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.ObjectCoverage.data_providers
     :type: DataProviderCollection
 
-    Returns the object representing a list of available data providers for the object.
+    Return the object representing a list of available data providers for the object.
 
 .. py:property:: start_time
     :canonical: ansys.stk.core.stkobjects.ObjectCoverage.start_time
     :type: typing.Any
 
-    Gets or sets the start time of object coverage. Uses DateFormat Dimension.
+    Get or set the start time of object coverage. Uses DateFormat Dimension.
 
 .. py:property:: stop_time
     :canonical: ansys.stk.core.stkobjects.ObjectCoverage.stop_time
     :type: typing.Any
 
-    Gets or sets the stop time of object coverage. Uses DateFormat Dimension.
+    Get or set the stop time of object coverage. Uses DateFormat Dimension.
 
 .. py:property:: assets
     :canonical: ansys.stk.core.stkobjects.ObjectCoverage.assets

@@ -27,7 +27,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioBeforeSaveEventArguments.save_as_vdf`
               - Saving as VDF.
             * - :py:attr:`~ansys.stk.core.stkobjects.ScenarioBeforeSaveEventArguments.save_to_sdf`
-              - Saving to SDF.
+              - Do not use this property, as it is deprecated. SDF functionality has been removed and this will be removed in the next major release. Saving to SDF.
 
 
 
@@ -70,6 +70,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.ScenarioBeforeSaveEventArguments.save_to_sdf
     :type: bool
 
-    Saving to SDF.
+    Do not use this property, as it is deprecated. SDF functionality has been removed and this will be removed in the next major release. Saving to SDF.
 
 

@@ -58,28 +58,52 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.PointBatchPrimitive.display_outline`
-              - Gets or sets whether an outline is rendered around each point in the batch.
+              - Get or set whether an outline is rendered around each point in the batch.
             * - :py:attr:`~ansys.stk.core.graphics.PointBatchPrimitive.outline_color`
-              - Gets or sets the outline's color.
+              - Get or set the outline's color.
             * - :py:attr:`~ansys.stk.core.graphics.PointBatchPrimitive.outline_translucency`
-              - Gets or sets the translucency of the outline. Translucency is between 0 and 1, where 0 is opaque and 1 is transparent.
+              - Get or set the translucency of the outline. Translucency is between 0 and 1, where 0 is opaque and 1 is transparent.
             * - :py:attr:`~ansys.stk.core.graphics.PointBatchPrimitive.outline_width`
-              - Gets or sets the size, in pixels, of the outline around each point in the batch.
+              - Get or set the size, in pixels, of the outline around each point in the batch.
             * - :py:attr:`~ansys.stk.core.graphics.PointBatchPrimitive.pixel_size`
-              - Gets or sets the size, in pixels, of each point in the point batch.
+              - Get or set the size, in pixels, of each point in the point batch.
             * - :py:attr:`~ansys.stk.core.graphics.PointBatchPrimitive.minimum_pixel_size_supported`
-              - Gets the minimum pixel size supported by the video card.
+              - Get the minimum pixel size supported by the video card.
             * - :py:attr:`~ansys.stk.core.graphics.PointBatchPrimitive.maximum_pixel_size_supported`
-              - Gets the maximum pixel size supported by the video card.
+              - Get the maximum pixel size supported by the video card.
             * - :py:attr:`~ansys.stk.core.graphics.PointBatchPrimitive.distance_display_condition_per_point`
-              - Gets or sets a distance display condition that is evaluated per point in the point batch during rendering. This is different than display condition, which is evaluated once for the entire point batch...
+              - Get or set a distance display condition that is evaluated per point in the point batch during rendering. This is different than display condition, which is evaluated once for the entire point batch...
             * - :py:attr:`~ansys.stk.core.graphics.PointBatchPrimitive.set_hint`
-              - Gets the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with.
+              - Get the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with.
             * - :py:attr:`~ansys.stk.core.graphics.PointBatchPrimitive.per_item_picking_enabled`
-              - Gets or sets whether individual point indices will be included in the pick results returned from the scene's Pick method. Each point index that is picked will be returned as a batch primitive index.
+              - Get or set whether individual point indices will be included in the pick results returned from the scene's Pick method. Each point index that is picked will be returned as a batch primitive index.
             * - :py:attr:`~ansys.stk.core.graphics.PointBatchPrimitive.central_body_clipped`
-              - Gets or sets whether individual points will be clipped by the central body.
+              - Get or set whether individual points will be clipped by the central body.
 
+
+
+Examples
+--------
+
+Draw a Point Primitive and set properties
+
+.. code-block:: python
+
+    # Scenario scenario: Scenario object
+    manager = scenario.scene_manager
+    point = manager.initializers.point_batch_primitive.initialize()
+    ptPosition = [[0], [-1], [0]]  # Lat, Lon, Alt
+
+    point.set_cartographic("Earth", ptPosition)
+    point.pixel_size = 15
+    point.color = Colors.Lime
+    point.display_outline = True
+    point.outline_width = 5
+    point.outline_color = Colors.Red
+
+    manager.primitives.add(point)
+    # Render the Scene
+    manager.render()
 
 
 Import detail
@@ -97,67 +121,67 @@ Property detail
     :canonical: ansys.stk.core.graphics.PointBatchPrimitive.display_outline
     :type: bool
 
-    Gets or sets whether an outline is rendered around each point in the batch.
+    Get or set whether an outline is rendered around each point in the batch.
 
 .. py:property:: outline_color
     :canonical: ansys.stk.core.graphics.PointBatchPrimitive.outline_color
     :type: agcolor.Color
 
-    Gets or sets the outline's color.
+    Get or set the outline's color.
 
 .. py:property:: outline_translucency
     :canonical: ansys.stk.core.graphics.PointBatchPrimitive.outline_translucency
     :type: float
 
-    Gets or sets the translucency of the outline. Translucency is between 0 and 1, where 0 is opaque and 1 is transparent.
+    Get or set the translucency of the outline. Translucency is between 0 and 1, where 0 is opaque and 1 is transparent.
 
 .. py:property:: outline_width
     :canonical: ansys.stk.core.graphics.PointBatchPrimitive.outline_width
     :type: float
 
-    Gets or sets the size, in pixels, of the outline around each point in the batch.
+    Get or set the size, in pixels, of the outline around each point in the batch.
 
 .. py:property:: pixel_size
     :canonical: ansys.stk.core.graphics.PointBatchPrimitive.pixel_size
     :type: float
 
-    Gets or sets the size, in pixels, of each point in the point batch.
+    Get or set the size, in pixels, of each point in the point batch.
 
 .. py:property:: minimum_pixel_size_supported
     :canonical: ansys.stk.core.graphics.PointBatchPrimitive.minimum_pixel_size_supported
     :type: float
 
-    Gets the minimum pixel size supported by the video card.
+    Get the minimum pixel size supported by the video card.
 
 .. py:property:: maximum_pixel_size_supported
     :canonical: ansys.stk.core.graphics.PointBatchPrimitive.maximum_pixel_size_supported
     :type: float
 
-    Gets the maximum pixel size supported by the video card.
+    Get the maximum pixel size supported by the video card.
 
 .. py:property:: distance_display_condition_per_point
     :canonical: ansys.stk.core.graphics.PointBatchPrimitive.distance_display_condition_per_point
     :type: DistanceDisplayCondition
 
-    Gets or sets a distance display condition that is evaluated per point in the point batch during rendering. This is different than display condition, which is evaluated once for the entire point batch...
+    Get or set a distance display condition that is evaluated per point in the point batch during rendering. This is different than display condition, which is evaluated once for the entire point batch...
 
 .. py:property:: set_hint
     :canonical: ansys.stk.core.graphics.PointBatchPrimitive.set_hint
     :type: SetHint
 
-    Gets the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with.
+    Get the primitive's set hint. See the Set Hint Performance Overview for selecting an appropriate value to construct the primitive with.
 
 .. py:property:: per_item_picking_enabled
     :canonical: ansys.stk.core.graphics.PointBatchPrimitive.per_item_picking_enabled
     :type: bool
 
-    Gets or sets whether individual point indices will be included in the pick results returned from the scene's Pick method. Each point index that is picked will be returned as a batch primitive index.
+    Get or set whether individual point indices will be included in the pick results returned from the scene's Pick method. Each point index that is picked will be returned as a batch primitive index.
 
 .. py:property:: central_body_clipped
     :canonical: ansys.stk.core.graphics.PointBatchPrimitive.central_body_clipped
     :type: bool
 
-    Gets or sets whether individual points will be clipped by the central body.
+    Get or set whether individual points will be clipped by the central body.
 
 
 Method detail

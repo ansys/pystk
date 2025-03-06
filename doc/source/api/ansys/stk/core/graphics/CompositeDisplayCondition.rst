@@ -54,14 +54,33 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.CompositeDisplayCondition.count`
-              - Gets the number of display conditions in the composite.
+              - Get the number of display conditions in the composite.
             * - :py:attr:`~ansys.stk.core.graphics.CompositeDisplayCondition.capacity`
-              - Gets the number of display conditions for which memory has been allocated. This will always be greater or equal to count.
+              - Get the number of display conditions for which memory has been allocated. This will always be greater or equal to count.
             * - :py:attr:`~ansys.stk.core.graphics.CompositeDisplayCondition.logic_operation`
-              - Gets or sets the binary logic operation applied to all display conditions in the composite when the composite is evaluated. To combine logical and and or operations in the same expression, create composites containing composites.
+              - Get or set the binary logic operation applied to all display conditions in the composite when the composite is evaluated. To combine logical and and or operations in the same expression, create composites containing composites.
             * - :py:attr:`~ansys.stk.core.graphics.CompositeDisplayCondition._new_enum`
-              - Returns an enumerator that iterates through the collection.
+              - Return an enumerator that iterates through the collection.
 
+
+
+Examples
+--------
+
+Display a Primitive During an Interval
+
+.. code-block:: python
+
+    # Scenario scenario: Scenario object
+    # ModelPrimitive model: Graphics Primitive
+    manager = scenario.scene_manager
+    composite = manager.initializers.composite_display_condition.initialize()
+    root.units_preferences.item("DateFormat").set_current_unit("EpSec")
+    start = root.conversion_utility.new_date("EpSec", str(scenario.start_time))
+    stop = root.conversion_utility.new_date("EpSec", str(scenario.start_time + 600))
+    timeInterval = manager.initializers.time_interval_display_condition.initialize_with_times(start, stop)
+    composite.add(timeInterval)
+    model.display_condition = composite
 
 
 Import detail
@@ -79,25 +98,25 @@ Property detail
     :canonical: ansys.stk.core.graphics.CompositeDisplayCondition.count
     :type: int
 
-    Gets the number of display conditions in the composite.
+    Get the number of display conditions in the composite.
 
 .. py:property:: capacity
     :canonical: ansys.stk.core.graphics.CompositeDisplayCondition.capacity
     :type: int
 
-    Gets the number of display conditions for which memory has been allocated. This will always be greater or equal to count.
+    Get the number of display conditions for which memory has been allocated. This will always be greater or equal to count.
 
 .. py:property:: logic_operation
     :canonical: ansys.stk.core.graphics.CompositeDisplayCondition.logic_operation
     :type: BinaryLogicOperation
 
-    Gets or sets the binary logic operation applied to all display conditions in the composite when the composite is evaluated. To combine logical and and or operations in the same expression, create composites containing composites.
+    Get or set the binary logic operation applied to all display conditions in the composite when the composite is evaluated. To combine logical and and or operations in the same expression, create composites containing composites.
 
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.graphics.CompositeDisplayCondition._new_enum
     :type: EnumeratorProxy
 
-    Returns an enumerator that iterates through the collection.
+    Return an enumerator that iterates through the collection.
 
 
 Method detail

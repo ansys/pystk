@@ -1,0 +1,31 @@
+<Mappings OldRootScope="agi.stk12.internal.marshall" NewRootScope="ansys.stk.core.internal.marshall">
+   <Mapping OldName="LONG_arg" NewName="LongArg" Category="class" />
+   <Mapping OldName="ULONG_arg" NewName="ULongArg" Category="class" />
+   <Mapping OldName="LONGLONG_arg" NewName="LongLongArg" Category="class" />
+   <Mapping OldName="ULONGLONG_arg" NewName="ULongLongArg" Category="class" />
+   <Mapping OldName="INT_arg" NewName="IntArg" Category="class" />
+   <Mapping OldName="UINT_arg" NewName="UIntArg" Category="class" />
+   <Mapping OldName="SHORT_arg" NewName="ShortArg" Category="class" />
+   <Mapping OldName="USHORT_arg" NewName="UShortArg" Category="class" />
+   <Mapping OldName="HRESULT_arg" NewName="HResultArg" Category="class" />
+   <Mapping OldName="OLE_COLOR_arg" NewName="OLEColorArg" Category="class" />
+   <Mapping OldName="VARIANT_BOOL_arg" NewName="VariantBoolArg" Category="class" />
+   <Mapping OldName="DOUBLE_arg" NewName="DoubleArg" Category="class" />
+   <Mapping OldName="FLOAT_arg" NewName="FloatArg" Category="class" />
+   <Mapping OldName="BSTR_arg" NewName="BStrArg" Category="class" />
+   <Mapping OldName="BYTE_arg" NewName="ByteArg" Category="class" />
+   <Mapping OldName="CHAR_arg" NewName="CharArg" Category="class" />
+   <Mapping OldName="VARIANT_arg" NewName="VariantArg" Category="class" />
+   <Mapping OldName="AgInterface_in_arg" NewName="InterfaceInArg" Category="class" />
+   <Mapping OldName="AgInterface_out_arg" NewName="InterfaceOutArg" Category="class" />
+   <Mapping OldName="PVOID_arg" NewName="PVoidArg" Category="class" />
+   <Mapping OldName="AgInterface_event_callback_arg" NewName="InterfaceEventCallbackArg" Category="class" />
+   <Mapping OldName="IEnumVARIANT_arg" NewName="IEnumVariantArg" Category="class" />
+   <Mapping OldName="AgEnum_arg" NewName="EnumArg" Category="class" />
+   <Mapping OldName="LPSAFEARRAY_arg" NewName="LPSafearrayArg" Category="class" />
+   <Mapping OldName="IPictureDisp_arg" NewName="IPictureDispArg" Category="class" />
+   <Mapping OldName="DATE_arg" NewName="DateArg" Category="class" />
+   <Mapping OldName="OLE_HANDLE_arg" NewName="OLEHandleArg" Category="class" />
+   <Mapping OldName="OLE_XPOS_PIXELS_arg" NewName="OLEXPosPixelsArg" Category="class" />
+   <Mapping OldName="OLE_YPOS_PIXELS_arg" NewName="OLEYPosPixelsArg" Category="class" />
+</Mappings>

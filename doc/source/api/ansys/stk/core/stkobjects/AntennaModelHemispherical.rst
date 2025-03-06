@@ -21,9 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelHemispherical.efficiency`
-              - Gets or sets the efficiency.
+              - Get or set the efficiency.
             * - :py:attr:`~ansys.stk.core.stkobjects.AntennaModelHemispherical.mainlobe_gain`
-              - Gets the mainlobe gain.
+              - Get the mainlobe gain.
 
 
 
@@ -42,12 +42,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.AntennaModelHemispherical.efficiency
     :type: float
 
-    Gets or sets the efficiency.
+    Get or set the efficiency.
 
 .. py:property:: mainlobe_gain
     :canonical: ansys.stk.core.stkobjects.AntennaModelHemispherical.mainlobe_gain
     :type: float
 
-    Gets the mainlobe gain.
+    Get the mainlobe gain.
 
 

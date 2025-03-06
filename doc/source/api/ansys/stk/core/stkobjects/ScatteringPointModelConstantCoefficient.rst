@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.ScatteringPointModelConstantCoefficient.constant_coefficient`
-              - Gets the constant coefficient value.
+              - Get the constant coefficient value.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.ScatteringPointModelConstantCoefficient.constant_coefficient
     :type: float
 
-    Gets the constant coefficient value.
+    Get the constant coefficient value.
 
 

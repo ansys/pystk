@@ -1,3 +1,25 @@
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
 import pytest
 from test_util import *
 from app_provider import *
@@ -1272,7 +1294,7 @@ class EarlyBoundTests(TestBase):
             '<Element Name="Pol. Rel. Angle" Type="0" Dim="AngleUnit"/>',
             '<Element Name="Atmos Loss" Type="0" Dim="RatioUnit"/>',
             '<DataPrv Name="Interferers" Desc="Interferer Information" PropBitMask="17">',
-            '<DataPrv Name="LinkInfo" Desc="Link Information" PropBitMask="770">',
+            '<DataPrv Name="LinkInfo" Desc="Link Information" PropBitMask="514">',
             '<Element Name="EIRP" Type="0" Dim="PowerUnit"/>',
             '<Element Name="Rcvd. Frequency" Type="0" Dim="FrequencyUnit"/>',
             '<Element Name="Tantenna" Type="0" Dim="Temperature"/>',

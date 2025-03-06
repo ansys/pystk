@@ -21,11 +21,11 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AttitudeControlImpulsiveFile.delta_v_magnitude`
-              - Gets or sets the size of the delta-V to be applied to the orbit along the specified direction. Uses Rate Dimension.
+              - Get or set the size of the delta-V to be applied to the orbit along the specified direction. Uses Rate Dimension.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AttitudeControlImpulsiveFile.filename`
-              - Gets or sets the attitude file to use.
+              - Get or set the attitude file to use.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AttitudeControlImpulsiveFile.file_time_offset`
-              - Gets or sets the time offset can be used to adjust the time stored in the attitude file. Dimensionless.
+              - Get or set the time offset can be used to adjust the time stored in the attitude file. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.AttitudeControlImpulsiveFile.full_filename`
               - Get the full path and name of the attitude file to use.
 
@@ -46,19 +46,19 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.AttitudeControlImpulsiveFile.delta_v_magnitude
     :type: float
 
-    Gets or sets the size of the delta-V to be applied to the orbit along the specified direction. Uses Rate Dimension.
+    Get or set the size of the delta-V to be applied to the orbit along the specified direction. Uses Rate Dimension.
 
 .. py:property:: filename
     :canonical: ansys.stk.core.stkobjects.astrogator.AttitudeControlImpulsiveFile.filename
     :type: str
 
-    Gets or sets the attitude file to use.
+    Get or set the attitude file to use.
 
 .. py:property:: file_time_offset
     :canonical: ansys.stk.core.stkobjects.astrogator.AttitudeControlImpulsiveFile.file_time_offset
     :type: float
 
-    Gets or sets the time offset can be used to adjust the time stored in the attitude file. Dimensionless.
+    Get or set the time offset can be used to adjust the time stored in the attitude file. Dimensionless.
 
 .. py:property:: full_filename
     :canonical: ansys.stk.core.stkobjects.astrogator.AttitudeControlImpulsiveFile.full_filename

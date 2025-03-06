@@ -38,6 +38,37 @@ Overview
 
 
 
+Examples
+--------
+
+Set 2D Display times to Custom and add intervals
+
+.. code-block:: python
+
+    # StkObjectRoot root: STK Object Model root
+    # Satellite satellite: Satellite object
+    root.units_preferences.item("DateFormat").set_current_unit("EpSec")
+    graphics = satellite.graphics
+    graphics.set_attributes_type(VehicleGraphics2DAttributeType.CUSTOM)
+    graphics.attributes.default.show_graphics = False
+
+    interval1 = graphics.attributes.intervals.add(0, 3600)
+    interval1.graphics_2d_attributes.show_graphics = True
+    interval1.graphics_2d_attributes.inherit = False
+    interval1.graphics_2d_attributes.line.width = LineWidth.WIDTH2
+    interval1.graphics_2d_attributes.line.style = LineStyle.LONG_DASH
+    interval1.graphics_2d_attributes.color = Colors.Fuchsia
+    interval1.graphics_2d_attributes.marker_style = "X"
+
+    interval2 = satellite.graphics.attributes.intervals.add(7200, 86400)
+    interval2.graphics_2d_attributes.show_graphics = True
+    interval2.graphics_2d_attributes.inherit = False
+    interval2.graphics_2d_attributes.line.width = LineWidth.WIDTH2
+    interval2.graphics_2d_attributes.line.style = LineStyle.DASHED
+    interval2.graphics_2d_attributes.color = Colors.Lime
+    interval2.graphics_2d_attributes.marker_style = "Point"
+
+
 Import detail
 -------------
 

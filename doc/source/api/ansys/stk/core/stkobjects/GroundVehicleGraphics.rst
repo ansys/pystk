@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.GroundVehicleGraphics.radar_cross_section`
-              - Gets the radar cross section graphics interface.
+              - Get the radar cross section graphics interface.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.GroundVehicleGraphics.radar_cross_section
     :type: RadarCrossSectionGraphics
 
-    Gets the radar cross section graphics interface.
+    Get the radar cross section graphics interface.
 
 

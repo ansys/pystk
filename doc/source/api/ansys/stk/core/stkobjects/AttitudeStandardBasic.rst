@@ -32,9 +32,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.AttitudeStandardBasic.profile_type`
               - Get basic attitude profile type.
             * - :py:attr:`~ansys.stk.core.stkobjects.AttitudeStandardBasic.profile_supported_types`
-              - Returns an array of valid choices.
+              - Return an array of valid choices.
             * - :py:attr:`~ansys.stk.core.stkobjects.AttitudeStandardBasic.profile`
-              - Returns the profile interface.
+              - Return the profile interface.
 
 
 
@@ -59,13 +59,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.AttitudeStandardBasic.profile_supported_types
     :type: list
 
-    Returns an array of valid choices.
+    Return an array of valid choices.
 
 .. py:property:: profile
     :canonical: ansys.stk.core.stkobjects.AttitudeStandardBasic.profile
     :type: IVehicleAttitudeProfile
 
-    Returns the profile interface.
+    Return the profile interface.
 
 
 Method detail

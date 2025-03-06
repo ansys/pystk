@@ -1,4 +1,7 @@
+2D
+3D
 apoapsis
+application
 ANSYS
 Ansys
 ansys
@@ -17,6 +20,8 @@ IPython
 Keplerian
 LOD
 lod
+MCS
+MTO
 namespace
 Nemo
 numpy
@@ -31,3 +36,5 @@ STKEngine
 STK Engine
 Subpackages
 Tox
+triangulator
+waypoint

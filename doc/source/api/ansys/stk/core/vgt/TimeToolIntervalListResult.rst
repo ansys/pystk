@@ -19,7 +19,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.TimeToolIntervalListResult.is_valid`
-              - Indicates whether the result object is valid.
+              - Indicate whether the result object is valid.
             * - :py:attr:`~ansys.stk.core.vgt.TimeToolIntervalListResult.intervals`
               - A list of intervals.
 
@@ -40,7 +40,7 @@ Property detail
     :canonical: ansys.stk.core.vgt.TimeToolIntervalListResult.is_valid
     :type: bool
 
-    Indicates whether the result object is valid.
+    Indicate whether the result object is valid.
 
 .. py:property:: intervals
     :canonical: ansys.stk.core.vgt.TimeToolIntervalListResult.intervals

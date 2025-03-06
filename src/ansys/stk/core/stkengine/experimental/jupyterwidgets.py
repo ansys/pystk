@@ -1,6 +1,24 @@
-################################################################################
-#          Copyright 2022-2022, Ansys Government Initiatives
-################################################################################
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
 
 """Map and globe widgets for Jupyter Notebooks using Remote Frame Buffer."""
 
@@ -9,23 +27,33 @@
 __all__ = ['GlobeWidget', 'MapWidget', 'GfxAnalysisWidget']
 
 import asyncio
-import numpy as np
+from ctypes import CFUNCTYPE, Structure, addressof, byref, c_int, c_size_t, c_void_p, cast, cdll, pointer
 import os
 import time
 
 from IPython.display import display
 from jupyter_rfb import RemoteFrameBuffer
 from jupyter_rfb._png import array2png
-from ctypes import byref, CFUNCTYPE, cdll, c_size_t, c_int, c_void_p, \
-    addressof, Structure, cast, pointer
+import numpy as np
 
-from ...stkx import Graphics3DControlBase, Graphics2DControlBase, \
-    GraphicsAnalysisControlBase, ButtonValues, ShiftValues
+from ...internal.comutil import (
+    CLSCTX_INPROC_SERVER,
+    E_NOINTERFACE,
+    GUID,
+    HRESULT,
+    LPVOID,
+    POINTER,
+    PVOID,
+    REFIID,
+    S_OK,
+    ULONG,
+    IUnknown,
+    OLE32Lib,
+    Succeeded,
+)
 from ...internal.stkxrfb import IRemoteFrameBuffer, IRemoteFrameBufferHost
-from ...internal.comutil import OLE32Lib, \
-    IUnknown, Succeeded, LPVOID, CLSCTX_INPROC_SERVER, \
-    GUID, PVOID, REFIID, POINTER, HRESULT, ULONG, S_OK, E_NOINTERFACE
 from ...stkobjects import StkObjectRoot
+from ...stkx import ButtonValues, Graphics2DControlBase, Graphics3DControlBase, GraphicsAnalysisControlBase, ShiftValues
 from ...utilities.exceptions import STKAttributeError
 
 TIMERPROC = CFUNCTYPE(None, c_size_t)

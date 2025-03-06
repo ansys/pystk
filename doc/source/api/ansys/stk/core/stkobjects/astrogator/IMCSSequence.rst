@@ -28,7 +28,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMCSSequence.repeat_count`
-              - Gets or sets the number of times that the sequence will be executed. A sequence that is repeated is executed immediately subsequent to the previous execution of the sequence. Dimensionless.
+              - Get or set the number of times that the sequence will be executed. A sequence that is repeated is executed immediately subsequent to the previous execution of the sequence. Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMCSSequence.generate_ephemeris`
               - If true, the sequence generates ephemeris and displays it in the 2D and 3D Graphics windows.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMCSSequence.segments`
@@ -36,7 +36,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMCSSequence.sequence_state_to_pass`
               - State To Pass To Next Segment - the state of the sequence to pass.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IMCSSequence.scripting_tool`
-              - Returns the Scripting tool for the sequence.
+              - Return the Scripting tool for the sequence.
 
 
 Import detail
@@ -54,7 +54,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.IMCSSequence.repeat_count
     :type: int
 
-    Gets or sets the number of times that the sequence will be executed. A sequence that is repeated is executed immediately subsequent to the previous execution of the sequence. Dimensionless.
+    Get or set the number of times that the sequence will be executed. A sequence that is repeated is executed immediately subsequent to the previous execution of the sequence. Dimensionless.
 
 .. py:property:: generate_ephemeris
     :canonical: ansys.stk.core.stkobjects.astrogator.IMCSSequence.generate_ephemeris
@@ -78,7 +78,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.IMCSSequence.scripting_tool
     :type: ScriptingTool
 
-    Returns the Scripting tool for the sequence.
+    Return the Scripting tool for the sequence.
 
 
 Method detail

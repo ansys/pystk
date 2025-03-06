@@ -19,7 +19,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IRadarSTCAttenuationMap.filename`
-              - Gets or sets the map filename.
+              - Get or set the map filename.
 
 
 Import detail
@@ -37,6 +37,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.IRadarSTCAttenuationMap.filename
     :type: str
 
-    Gets or sets the map filename.
+    Get or set the map filename.
 
 

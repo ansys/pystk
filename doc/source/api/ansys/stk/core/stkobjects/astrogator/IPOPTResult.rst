@@ -27,19 +27,19 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPOPTResult.parent_name`
               - Object - the name of the segment to which the parameter belongs.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPOPTResult.lower_bound`
-              - Gets or sets the lower limit achievable by this quantity in the optimizer's iteration history. Dimension depends on context.
+              - Get or set the lower limit achievable by this quantity in the optimizer's iteration history. Dimension depends on context.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPOPTResult.upper_bound`
-              - Gets or sets the upper limit achievable by this quantity in the optimizer's iteration history. Dimension depends on context.
+              - Get or set the upper limit achievable by this quantity in the optimizer's iteration history. Dimension depends on context.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPOPTResult.scaling_value`
-              - Applies to the Specified Value scaling method. Dimension depends on context.
+              - Apply to the Specified Value scaling method. Dimension depends on context.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPOPTResult.weight`
-              - Gets or sets the factor by which the constraint error is to be multiplied.
+              - Get or set the factor by which the constraint error is to be multiplied.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPOPTResult.goal`
-              - Gets or sets the purpose of the element in the problem.
+              - Get or set the purpose of the element in the problem.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPOPTResult.use_custom_display_unit`
               - If true, allows display of values in another unit.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.IPOPTResult.custom_display_unit`
-              - Gets or sets the unit in which the value will be displayed in the GUI.
+              - Get or set the unit in which the value will be displayed in the GUI.
 
 
 
@@ -82,31 +82,31 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.IPOPTResult.lower_bound
     :type: typing.Any
 
-    Gets or sets the lower limit achievable by this quantity in the optimizer's iteration history. Dimension depends on context.
+    Get or set the lower limit achievable by this quantity in the optimizer's iteration history. Dimension depends on context.
 
 .. py:property:: upper_bound
     :canonical: ansys.stk.core.stkobjects.astrogator.IPOPTResult.upper_bound
     :type: typing.Any
 
-    Gets or sets the upper limit achievable by this quantity in the optimizer's iteration history. Dimension depends on context.
+    Get or set the upper limit achievable by this quantity in the optimizer's iteration history. Dimension depends on context.
 
 .. py:property:: scaling_value
     :canonical: ansys.stk.core.stkobjects.astrogator.IPOPTResult.scaling_value
     :type: typing.Any
 
-    Applies to the Specified Value scaling method. Dimension depends on context.
+    Apply to the Specified Value scaling method. Dimension depends on context.
 
 .. py:property:: weight
     :canonical: ansys.stk.core.stkobjects.astrogator.IPOPTResult.weight
     :type: float
 
-    Gets or sets the factor by which the constraint error is to be multiplied.
+    Get or set the factor by which the constraint error is to be multiplied.
 
 .. py:property:: goal
     :canonical: ansys.stk.core.stkobjects.astrogator.IPOPTResult.goal
     :type: IPOPTGoal
 
-    Gets or sets the purpose of the element in the problem.
+    Get or set the purpose of the element in the problem.
 
 .. py:property:: use_custom_display_unit
     :canonical: ansys.stk.core.stkobjects.astrogator.IPOPTResult.use_custom_display_unit
@@ -118,6 +118,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.IPOPTResult.custom_display_unit
     :type: str
 
-    Gets or sets the unit in which the value will be displayed in the GUI.
+    Get or set the unit in which the value will be displayed in the GUI.
 
 

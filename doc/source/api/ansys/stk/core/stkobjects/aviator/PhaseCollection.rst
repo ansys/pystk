@@ -36,10 +36,27 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.PhaseCollection.count`
-              - Returns the number of elements in a collection.
+              - Return the number of elements in a collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.PhaseCollection._new_enum`
-              - Returns an enumerator that can iterate through the collection.
+              - Return an enumerator that can iterate through the collection.
 
+
+
+Examples
+--------
+
+Add a new phase and use the same performance models as the first phase
+
+.. code-block:: python
+
+    # PhaseCollection phases: Phase Collection object
+    # Add a new phase at the end of the mission
+    newPhase = phases.add()
+    # Rename the phase
+    newPhase.name = "New Phase"
+    # Copy the performance models from the first phase and paste it to the new phase
+    phases[0].copy_performance_models()
+    newPhase.paste_performance_models()
 
 
 Import detail
@@ -57,13 +74,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.aviator.PhaseCollection.count
     :type: int
 
-    Returns the number of elements in a collection.
+    Return the number of elements in a collection.
 
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkobjects.aviator.PhaseCollection._new_enum
     :type: EnumeratorProxy
 
-    Returns an enumerator that can iterate through the collection.
+    Return an enumerator that can iterate through the collection.
 
 
 Method detail

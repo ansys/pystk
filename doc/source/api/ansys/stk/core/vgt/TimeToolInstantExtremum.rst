@@ -29,7 +29,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.vgt.TimeToolInstantExtremum.use_custom_time_limits`
               - Indicate whether to use specified custom time limits (see CustomTimeLimits).
             * - :py:attr:`~ansys.stk.core.vgt.TimeToolInstantExtremum.save_data_option`
-              - Determines if computed time of extremum is saved/loaded, otherwise it is recomputed on load if necessary.
+              - Determine if computed time of extremum is saved/loaded, otherwise it is recomputed on load if necessary.
             * - :py:attr:`~ansys.stk.core.vgt.TimeToolInstantExtremum.sampling`
               - A Sampling definition, which can use a fixed step, relative tolerance or curvature tolerance. Relative tolerance uses a combination of relative and absolute changes in scalar values between samples...
             * - :py:attr:`~ansys.stk.core.vgt.TimeToolInstantExtremum.convergence`
@@ -76,7 +76,7 @@ Property detail
     :canonical: ansys.stk.core.vgt.TimeToolInstantExtremum.save_data_option
     :type: SaveDataType
 
-    Determines if computed time of extremum is saved/loaded, otherwise it is recomputed on load if necessary.
+    Determine if computed time of extremum is saved/loaded, otherwise it is recomputed on load if necessary.
 
 .. py:property:: sampling
     :canonical: ansys.stk.core.vgt.TimeToolInstantExtremum.sampling

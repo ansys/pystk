@@ -58,48 +58,77 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.graphics.Camera.position`
-              - Gets or sets the position of the camera. The array contains the components of the position arranged in the order x, y, z.
+              - Get or set the position of the camera. The array contains the components of the position arranged in the order x, y, z.
             * - :py:attr:`~ansys.stk.core.graphics.Camera.reference_point`
-              - Gets or sets the reference point of the camera. The array contains the components of the reference point arranged in the order x, y, z.
+              - Get or set the reference point of the camera. The array contains the components of the reference point arranged in the order x, y, z.
             * - :py:attr:`~ansys.stk.core.graphics.Camera.direction`
-              - Gets or sets the direction of the camera in axes. The array contains the components of the direction arranged in the order x, y, z.
+              - Get or set the direction of the camera in axes. The array contains the components of the direction arranged in the order x, y, z.
             * - :py:attr:`~ansys.stk.core.graphics.Camera.up_vector`
-              - Gets or sets the up direction of the camera in axes. The array contains the components of the direction arranged in the order x, y, z.
+              - Get or set the up direction of the camera in axes. The array contains the components of the direction arranged in the order x, y, z.
             * - :py:attr:`~ansys.stk.core.graphics.Camera.distance`
-              - Gets or sets the distance the camera position is from the reference point.
+              - Get or set the distance the camera position is from the reference point.
             * - :py:attr:`~ansys.stk.core.graphics.Camera.axes`
-              - Gets or sets camera's axes of rotation.
+              - Get or set camera's axes of rotation.
             * - :py:attr:`~ansys.stk.core.graphics.Camera.constrained_up_axis`
-              - Gets or sets the axis to constrain the up vector to.
+              - Get or set the axis to constrain the up vector to.
             * - :py:attr:`~ansys.stk.core.graphics.Camera.allow_rotation_over_constrained_up_axis`
-              - Gets or sets whether the camera can rotate over the constrained up axis. For example, if true the camera would be able to flip over the North Pole and view the globe upside down.
+              - Get or set whether the camera can rotate over the constrained up axis. For example, if true the camera would be able to flip over the North Pole and view the globe upside down.
             * - :py:attr:`~ansys.stk.core.graphics.Camera.lock_view_direction`
-              - Gets or sets whether the camera's direction is locked.
+              - Get or set whether the camera's direction is locked.
             * - :py:attr:`~ansys.stk.core.graphics.Camera.field_of_view`
-              - Gets or sets field of view. The field of view is applied to the larger of the window dimensions. For example, if the window width was 640 and the height was 480, the field of view applies to the horizontal...
+              - Get or set field of view. The field of view is applied to the larger of the window dimensions. For example, if the window width was 640 and the height was 480, the field of view applies to the horizontal...
             * - :py:attr:`~ansys.stk.core.graphics.Camera.horizontal_field_of_view`
-              - Gets the horizontal field of view.
+              - Get the horizontal field of view.
             * - :py:attr:`~ansys.stk.core.graphics.Camera.vertical_field_of_view`
-              - Gets the vertical field of view.
+              - Get the vertical field of view.
             * - :py:attr:`~ansys.stk.core.graphics.Camera.near_plane`
-              - Gets or sets the distance from the camera to the near plane.
+              - Get or set the distance from the camera to the near plane.
             * - :py:attr:`~ansys.stk.core.graphics.Camera.far_plane`
-              - Gets or sets the distance from the camera to the far plane.
+              - Get or set the distance from the camera to the far plane.
             * - :py:attr:`~ansys.stk.core.graphics.Camera.far_near_plane_ratio`
-              - Gets or sets the value that is used to compute subdivisions of the viewing frustum. A large value will be faster but lose z-value precision. A small value will have better precision but perform slower...
+              - Get or set the value that is used to compute subdivisions of the viewing frustum. A large value will be faster but lose z-value precision. A small value will have better precision but perform slower...
             * - :py:attr:`~ansys.stk.core.graphics.Camera.distance_per_radius`
-              - Returns the distance that the Camera's Position should be from the ReferencePoint in order to ensure that a sphere with a 1 meter radius centered at the ReferencePoint fits entirely in the view frustum.
+              - Return the distance that the Camera's Position should be from the ReferencePoint in order to ensure that a sphere with a 1 meter radius centered at the ReferencePoint fits entirely in the view frustum.
             * - :py:attr:`~ansys.stk.core.graphics.Camera.snapshot`
-              - Gets the camera snapshot settings.
+              - Get the camera snapshot settings.
             * - :py:attr:`~ansys.stk.core.graphics.Camera.video_recording`
-              - Gets the camera video recorder.
+              - Get the camera video recorder.
             * - :py:attr:`~ansys.stk.core.graphics.Camera.pixel_size_per_distance`
-              - Gets the approximate number of meters covered by a pixel that is 1 meter away from the camera. This is commonly multiplied by the distance from the camera to an object to compute the approximate number of meters covered by a pixel of the object.
+              - Get the approximate number of meters covered by a pixel that is 1 meter away from the camera. This is commonly multiplied by the distance from the camera to an object to compute the approximate number of meters covered by a pixel of the object.
             * - :py:attr:`~ansys.stk.core.graphics.Camera.position_reference_frame`
-              - Gets the reference frame that the position is returned in. This reference frame is composed of the camera's from point and the axes.
+              - Get the reference frame that the position is returned in. This reference frame is composed of the camera's from point and the axes.
             * - :py:attr:`~ansys.stk.core.graphics.Camera.reference_point_reference_frame`
-              - Gets the reference frame that the reference point is returned in. This reference frame is composed of the camera's to point and the axes.
+              - Get the reference frame that the reference point is returned in. This reference frame is composed of the camera's to point and the axes.
 
+
+
+Examples
+--------
+
+Change camera reference frame
+
+.. code-block:: python
+
+    # Scenario scenario: Scenario object
+    # StkObjectRoot root: STK Object Model Root
+    manager = scenario.scene_manager
+    manager.scenes.item(0).camera.view_central_body(
+        "Earth", root.central_bodies.earth.analysis_workbench_components.axes.item("Fixed")
+    )
+    manager.render()
+
+
+Change camera view to Imagery Extents
+
+.. code-block:: python
+
+    # Scenario scenario: Scenario object
+    # AGIProcessedImageGlobeOverlay imageryTile: Image Overlay object
+    manager = scenario.scene_manager
+    extent = imageryTile.extent
+    # Change extent in the default 3D window
+    manager.scenes.item(0).camera.view_extent("Earth", extent)
+    manager.render()
 
 
 Import detail
@@ -117,127 +146,127 @@ Property detail
     :canonical: ansys.stk.core.graphics.Camera.position
     :type: list
 
-    Gets or sets the position of the camera. The array contains the components of the position arranged in the order x, y, z.
+    Get or set the position of the camera. The array contains the components of the position arranged in the order x, y, z.
 
 .. py:property:: reference_point
     :canonical: ansys.stk.core.graphics.Camera.reference_point
     :type: list
 
-    Gets or sets the reference point of the camera. The array contains the components of the reference point arranged in the order x, y, z.
+    Get or set the reference point of the camera. The array contains the components of the reference point arranged in the order x, y, z.
 
 .. py:property:: direction
     :canonical: ansys.stk.core.graphics.Camera.direction
     :type: list
 
-    Gets or sets the direction of the camera in axes. The array contains the components of the direction arranged in the order x, y, z.
+    Get or set the direction of the camera in axes. The array contains the components of the direction arranged in the order x, y, z.
 
 .. py:property:: up_vector
     :canonical: ansys.stk.core.graphics.Camera.up_vector
     :type: list
 
-    Gets or sets the up direction of the camera in axes. The array contains the components of the direction arranged in the order x, y, z.
+    Get or set the up direction of the camera in axes. The array contains the components of the direction arranged in the order x, y, z.
 
 .. py:property:: distance
     :canonical: ansys.stk.core.graphics.Camera.distance
     :type: float
 
-    Gets or sets the distance the camera position is from the reference point.
+    Get or set the distance the camera position is from the reference point.
 
 .. py:property:: axes
     :canonical: ansys.stk.core.graphics.Camera.axes
     :type: IVectorGeometryToolAxes
 
-    Gets or sets camera's axes of rotation.
+    Get or set camera's axes of rotation.
 
 .. py:property:: constrained_up_axis
     :canonical: ansys.stk.core.graphics.Camera.constrained_up_axis
     :type: ConstrainedUpAxis
 
-    Gets or sets the axis to constrain the up vector to.
+    Get or set the axis to constrain the up vector to.
 
 .. py:property:: allow_rotation_over_constrained_up_axis
     :canonical: ansys.stk.core.graphics.Camera.allow_rotation_over_constrained_up_axis
     :type: bool
 
-    Gets or sets whether the camera can rotate over the constrained up axis. For example, if true the camera would be able to flip over the North Pole and view the globe upside down.
+    Get or set whether the camera can rotate over the constrained up axis. For example, if true the camera would be able to flip over the North Pole and view the globe upside down.
 
 .. py:property:: lock_view_direction
     :canonical: ansys.stk.core.graphics.Camera.lock_view_direction
     :type: bool
 
-    Gets or sets whether the camera's direction is locked.
+    Get or set whether the camera's direction is locked.
 
 .. py:property:: field_of_view
     :canonical: ansys.stk.core.graphics.Camera.field_of_view
     :type: float
 
-    Gets or sets field of view. The field of view is applied to the larger of the window dimensions. For example, if the window width was 640 and the height was 480, the field of view applies to the horizontal...
+    Get or set field of view. The field of view is applied to the larger of the window dimensions. For example, if the window width was 640 and the height was 480, the field of view applies to the horizontal...
 
 .. py:property:: horizontal_field_of_view
     :canonical: ansys.stk.core.graphics.Camera.horizontal_field_of_view
     :type: float
 
-    Gets the horizontal field of view.
+    Get the horizontal field of view.
 
 .. py:property:: vertical_field_of_view
     :canonical: ansys.stk.core.graphics.Camera.vertical_field_of_view
     :type: float
 
-    Gets the vertical field of view.
+    Get the vertical field of view.
 
 .. py:property:: near_plane
     :canonical: ansys.stk.core.graphics.Camera.near_plane
     :type: float
 
-    Gets or sets the distance from the camera to the near plane.
+    Get or set the distance from the camera to the near plane.
 
 .. py:property:: far_plane
     :canonical: ansys.stk.core.graphics.Camera.far_plane
     :type: float
 
-    Gets or sets the distance from the camera to the far plane.
+    Get or set the distance from the camera to the far plane.
 
 .. py:property:: far_near_plane_ratio
     :canonical: ansys.stk.core.graphics.Camera.far_near_plane_ratio
     :type: float
 
-    Gets or sets the value that is used to compute subdivisions of the viewing frustum. A large value will be faster but lose z-value precision. A small value will have better precision but perform slower...
+    Get or set the value that is used to compute subdivisions of the viewing frustum. A large value will be faster but lose z-value precision. A small value will have better precision but perform slower...
 
 .. py:property:: distance_per_radius
     :canonical: ansys.stk.core.graphics.Camera.distance_per_radius
     :type: float
 
-    Returns the distance that the Camera's Position should be from the ReferencePoint in order to ensure that a sphere with a 1 meter radius centered at the ReferencePoint fits entirely in the view frustum.
+    Return the distance that the Camera's Position should be from the ReferencePoint in order to ensure that a sphere with a 1 meter radius centered at the ReferencePoint fits entirely in the view frustum.
 
 .. py:property:: snapshot
     :canonical: ansys.stk.core.graphics.Camera.snapshot
     :type: CameraSnapshot
 
-    Gets the camera snapshot settings.
+    Get the camera snapshot settings.
 
 .. py:property:: video_recording
     :canonical: ansys.stk.core.graphics.Camera.video_recording
     :type: CameraVideoRecording
 
-    Gets the camera video recorder.
+    Get the camera video recorder.
 
 .. py:property:: pixel_size_per_distance
     :canonical: ansys.stk.core.graphics.Camera.pixel_size_per_distance
     :type: float
 
-    Gets the approximate number of meters covered by a pixel that is 1 meter away from the camera. This is commonly multiplied by the distance from the camera to an object to compute the approximate number of meters covered by a pixel of the object.
+    Get the approximate number of meters covered by a pixel that is 1 meter away from the camera. This is commonly multiplied by the distance from the camera to an object to compute the approximate number of meters covered by a pixel of the object.
 
 .. py:property:: position_reference_frame
     :canonical: ansys.stk.core.graphics.Camera.position_reference_frame
     :type: IVectorGeometryToolSystem
 
-    Gets the reference frame that the position is returned in. This reference frame is composed of the camera's from point and the axes.
+    Get the reference frame that the position is returned in. This reference frame is composed of the camera's from point and the axes.
 
 .. py:property:: reference_point_reference_frame
     :canonical: ansys.stk.core.graphics.Camera.reference_point_reference_frame
     :type: IVectorGeometryToolSystem
 
-    Gets the reference frame that the reference point is returned in. This reference frame is composed of the camera's to point and the axes.
+    Get the reference frame that the reference point is returned in. This reference frame is composed of the camera's to point and the axes.
 
 
 Method detail

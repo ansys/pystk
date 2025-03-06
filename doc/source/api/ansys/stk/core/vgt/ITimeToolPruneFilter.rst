@@ -19,7 +19,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.vgt.ITimeToolPruneFilter.filter_type`
-              - Returns a type of the filter.
+              - Return a type of the filter.
 
 
 Import detail
@@ -37,6 +37,6 @@ Property detail
     :canonical: ansys.stk.core.vgt.ITimeToolPruneFilter.filter_type
     :type: IntervalPruneFilterType
 
-    Returns a type of the filter.
+    Return a type of the filter.
 
 

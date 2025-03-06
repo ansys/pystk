@@ -21,7 +21,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcEarthMeanLocalTimeOfAscendingNode.central_body_name`
-              - Gets or sets the central body of the component.
+              - Get or set the central body of the component.
 
 
 
@@ -40,6 +40,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcEarthMeanLocalTimeOfAscendingNode.central_body_name
     :type: str
 
-    Gets or sets the central body of the component.
+    Get or set the central body of the component.
 
 

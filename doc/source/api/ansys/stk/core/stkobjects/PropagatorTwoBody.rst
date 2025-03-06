@@ -36,9 +36,11 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorTwoBody.ephemeris_interval`
               - Get the propagator's ephemeris interval.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorTwoBody.propagation_frame`
-              - Gets or sets the propagation frame.
+              - Get or set the propagation frame.
             * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorTwoBody.supported_propagation_frames`
-              - Returns supported propagation frames.
+              - Return supported propagation frames.
+            * - :py:attr:`~ansys.stk.core.stkobjects.PropagatorTwoBody.display_coordinate_type`
+              - The propagator's display coordinate type.
 
 
 
@@ -75,13 +77,19 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.PropagatorTwoBody.propagation_frame
     :type: VehiclePropagationFrame
 
-    Gets or sets the propagation frame.
+    Get or set the propagation frame.
 
 .. py:property:: supported_propagation_frames
     :canonical: ansys.stk.core.stkobjects.PropagatorTwoBody.supported_propagation_frames
     :type: list
 
-    Returns supported propagation frames.
+    Return supported propagation frames.
+
+.. py:property:: display_coordinate_type
+    :canonical: ansys.stk.core.stkobjects.PropagatorTwoBody.display_coordinate_type
+    :type: PropagatorDisplayCoordinateType
+
+    The propagator's display coordinate type.
 
 
 Method detail
@@ -95,6 +103,8 @@ Method detail
     :Returns:
 
         :obj:`~None`
+
+
 
 
 

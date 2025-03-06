@@ -19,7 +19,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.IModulatorModelScriptPlugin.filename`
-              - Gets or sets the external filename.
+              - Get or set the external filename.
 
 
 Import detail
@@ -37,6 +37,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.IModulatorModelScriptPlugin.filename
     :type: str
 
-    Gets or sets the external filename.
+    Get or set the external filename.
 
 

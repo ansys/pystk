@@ -30,9 +30,9 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.PassBreak.definition`
               - Get the break angle type and, in the case of latitude, the direction at latitiude crossing.
             * - :py:attr:`~ansys.stk.core.stkobjects.PassBreak.partial_pass_measurement`
-              - Gets or sets the method for calculating partial passes.
+              - Get or set the method for calculating partial passes.
             * - :py:attr:`~ansys.stk.core.stkobjects.PassBreak.coordinate_system`
-              - Gets or sets the coordinate system in which latitude and longitude are to be measured.
+              - Get or set the coordinate system in which latitude and longitude are to be measured.
             * - :py:attr:`~ansys.stk.core.stkobjects.PassBreak.repeat_ground_track_numbering`
               - Get data on repeat ground track numbering.
             * - :py:attr:`~ansys.stk.core.stkobjects.PassBreak.pass_numbering_type`
@@ -40,7 +40,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.PassBreak.pass_numbering`
               - Get pass numbering data.
             * - :py:attr:`~ansys.stk.core.stkobjects.PassBreak.supported_coordinate_systems`
-              - Returns supported coordinate systems.
+              - Return supported coordinate systems.
 
 
 
@@ -65,13 +65,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.PassBreak.partial_pass_measurement
     :type: VehiclePartialPassMeasurement
 
-    Gets or sets the method for calculating partial passes.
+    Get or set the method for calculating partial passes.
 
 .. py:property:: coordinate_system
     :canonical: ansys.stk.core.stkobjects.PassBreak.coordinate_system
     :type: VehicleCoordinateSystem
 
-    Gets or sets the coordinate system in which latitude and longitude are to be measured.
+    Get or set the coordinate system in which latitude and longitude are to be measured.
 
 .. py:property:: repeat_ground_track_numbering
     :canonical: ansys.stk.core.stkobjects.PassBreak.repeat_ground_track_numbering
@@ -95,7 +95,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.PassBreak.supported_coordinate_systems
     :type: list
 
-    Returns supported coordinate systems.
+    Return supported coordinate systems.
 
 
 Method detail

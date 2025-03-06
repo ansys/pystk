@@ -1,31 +1,58 @@
-################################################################################
-#          Copyright 2020-2024, Ansys Government Initiatives
-################################################################################
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
 
 """Starts STK Engine and provides access to the Object Model root."""
 
 __all__ = ["STKEngine", "STKEngineApplication", "STKEngineTimerType"]
 
-import os
 import atexit
 from ctypes import byref
 from enum import IntEnum
+import os
 
 if os.name != "nt":
     from ctypes import CFUNCTYPE, cdll
     from ctypes.util import find_library
+
     from ..internal.timerutil import NullTimer, SigAlarmTimer, SigRtTimer, TclTimer
 else:
     from ..internal.timerutil import NullTimer
 
-from ..internal.comutil            import CLSCTX_INPROC_SERVER, GUID
-from ..internal.comutil            import OLE32Lib, CoInitializeManager, IUnknown, ObjectLifetimeManager, Succeeded
-from ..internal.eventutil          import EventSubscriptionManager
-from ..utilities.grpcutilities     import GrpcCallBatcher
+from ..internal.comutil import (
+    CLSCTX_INPROC_SERVER,
+    GUID,
+    CoInitializeManager,
+    IUnknown,
+    ObjectLifetimeManager,
+    OLE32Lib,
+    Succeeded,
+)
+from ..internal.eventutil import EventSubscriptionManager
 from ..internal.stkxinitialization import STKXInitialize
-from ..utilities.exceptions        import STKRuntimeError, STKInitializationError, GrpcUtilitiesError
-from ..stkobjects                  import StkObjectRoot, StkObjectModelContext
-from ..stkx                        import STKXApplication
+from ..stkobjects import StkObjectModelContext, StkObjectRoot
+from ..stkx import STKXApplication
+from ..utilities.exceptions import GrpcUtilitiesError, STKInitializationError, STKRuntimeError
+from ..utilities.grpcutilities import GrpcCallBatcher
+
 
 class STKEngineTimerType(IntEnum):
     """
@@ -198,7 +225,7 @@ class STKEngine(object):
             x11lib = cdll.LoadLibrary(find_library("X11"))
             xinit_threads = CFUNCTYPE(None)(("XInitThreads", x11lib))
             xinit_threads()
-        except:
+        except OSError:
             raise STKRuntimeError("Failed attempting to run graphics mode without X11.")
             
     @staticmethod
@@ -226,6 +253,3 @@ class STKEngine(object):
                 return engine
         raise STKInitializationError("Failed to create STK Engine application.  Check for successful install and registration.")
        
-################################################################################
-#          Copyright 2020-2024, Ansys Government Initiatives
-################################################################################

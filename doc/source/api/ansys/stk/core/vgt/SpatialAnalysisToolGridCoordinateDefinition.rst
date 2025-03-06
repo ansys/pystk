@@ -36,7 +36,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolGridCoordinateDefinition.method_type`
               - Grid values method type.
             * - :py:attr:`~ansys.stk.core.vgt.SpatialAnalysisToolGridCoordinateDefinition.grid_values_method`
-              - Sets/Returns the grid values interface.
+              - Get or set the grid values interface.
 
 
 
@@ -61,7 +61,7 @@ Property detail
     :canonical: ansys.stk.core.vgt.SpatialAnalysisToolGridCoordinateDefinition.grid_values_method
     :type: ISpatialAnalysisToolGridValuesMethod
 
-    Sets/Returns the grid values interface.
+    Get or set the grid values interface.
 
 
 Method detail

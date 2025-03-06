@@ -1,6 +1,24 @@
-################################################################################
-#          Copyright 2020-2023, Ansys Government Initiatives
-################################################################################ 
+# Copyright (C) 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
 
 """
 STK X allows developers to add advanced STK 2D, 3D visualization and analytical capabilities to applications.
@@ -46,26 +64,31 @@ __all__ = ["ButtonValues", "DataObject", "DataObjectFiles", "Draw2DElemCollectio
 "STKXApplication", "STKXApplicationPartnerAccess", "STKXConControlQuitReceivedEventArgs", "STKXSSLCertificateErrorEventArgs", 
 "ShiftValues", "ShowProgressImage", "WindowProjectionPosition"]
 
+from ctypes import POINTER
+from datetime import datetime
+from enum import IntEnum
 import typing
 
-from ctypes   import POINTER
-from datetime import datetime
-from enum     import IntEnum
-
-from .internal  import comutil          as agcom
-from .internal  import coclassutil      as agcls
-from .internal  import marshall         as agmarshall
-from .utilities import colors           as agcolor
-from .internal.comutil     import IDispatch, IPictureDisp
-from .internal.apiutil     import (InterfaceProxy, EnumeratorProxy, OutArg, 
-    initialize_from_source_object, get_interface_property, set_interface_attribute, 
-    set_class_attribute, SupportsDeleteCallback)
-from .internal.eventutil import (ISTKXApplicationEventHandler, IUiAxGraphics2DCntrlEventHandler,
-                                 IUiAxGraphics3DCntrlEventHandler)
+from .internal import coclassutil as agcls, comutil as agcom, marshall as agmarshall
+from .internal.apiutil import (
+    EnumeratorProxy,
+    InterfaceProxy,
+    OutArg,
+    SupportsDeleteCallback,
+    get_interface_property,
+    initialize_from_source_object,
+    set_class_attribute,
+    set_interface_attribute,
+)
+from .internal.comutil import IDispatch, IPictureDisp
+from .internal.eventutil import (
+    ISTKXApplicationEventHandler,
+    IUiAxGraphics2DCntrlEventHandler,
+    IUiAxGraphics3DCntrlEventHandler,
+)
+from .stkutil import ExecuteCommandResult, ExecuteMultipleCommandsMode, ExecuteMultipleCommandsResult, LineStyle
+from .utilities import colors as agcolor
 from .utilities.exceptions import STKRuntimeError
-
-from .stkutil import (ExecuteCommandResult, ExecuteMultipleCommandsMode,
-                      ExecuteMultipleCommandsResult, LineStyle)
 
 
 def _raise_uninitialized_error(*args):
@@ -2731,8 +2754,3 @@ class STKXConControlQuitReceivedEventArgs(SupportsDeleteCallback):
 
 agcls.AgClassCatalog.add_catalog_entry((5130572763297124902, 5647256661091814069), STKXConControlQuitReceivedEventArgs)
 agcls.AgTypeNameMap["STKXConControlQuitReceivedEventArgs"] = STKXConControlQuitReceivedEventArgs
-
-
-################################################################################
-#          Copyright 2020-2023, Ansys Government Initiatives
-################################################################################

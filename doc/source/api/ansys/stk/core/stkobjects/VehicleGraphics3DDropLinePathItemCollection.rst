@@ -28,10 +28,26 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePathItemCollection.count`
-              - Returns the number of elements in a collection.
+              - Return the number of elements in a collection.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePathItemCollection._new_enum`
-              - Returns an enumerator that can iterate through the collection.
+              - Return an enumerator that can iterate through the collection.
 
+
+
+Examples
+--------
+
+Display drop lines in 3D Window
+
+.. code-block:: python
+
+    # Satellite satellite: Satellite object
+    orbitDroplines = satellite.graphics_3d.drop_lines.orbit
+    wgs84 = orbitDroplines.item(0)  # Droplines to WGS84 surface
+    wgs84.show_graphics = True
+    wgs84.line_width = LineWidth.WIDTH2
+    wgs84.use_2d_color = False
+    wgs84.color = Colors.Red
 
 
 Import detail
@@ -49,13 +65,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePathItemCollection.count
     :type: int
 
-    Returns the number of elements in a collection.
+    Return the number of elements in a collection.
 
 .. py:property:: _new_enum
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DDropLinePathItemCollection._new_enum
     :type: EnumeratorProxy
 
-    Returns an enumerator that can iterate through the collection.
+    Return an enumerator that can iterate through the collection.
 
 
 Method detail

@@ -31,10 +31,28 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.SatelliteGraphics3DModel.point_size`
               - A size of the point (in pixels). Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.SatelliteGraphics3DModel.gltf_reflection_map_type`
-              - Gets or sets the glTF reflection map type property. A member of the AgEModelGltfReflectionMapType enumeration.
+              - Get or set the glTF reflection map type property. A member of the AgEModelGltfReflectionMapType enumeration.
             * - :py:attr:`~ansys.stk.core.stkobjects.SatelliteGraphics3DModel.gltf_image_based`
-              - Gets glTF Image Based properties.
+              - Get glTF Image Based properties.
 
+
+
+Examples
+--------
+
+Change the 3D Model and marker properties
+
+.. code-block:: python
+
+    # Satellite satellite: Satellite object
+    model = satellite.graphics_3d.model
+    model.model_data.filename = r"STKData\VO\Models\Space\dsp.glb"
+    orbitmarker = model.orbit_marker
+    installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
+    orbitmarker.set_marker_image_filename(os.path.join(installPath, "STKData", "VO", "Markers", "Satellite.ppm"))
+    orbitmarker.marker_data.is_transparent = True
+    orbitmarker.pixel_size = 18
+    orbitmarker.orientation_mode = Graphics3DMarkerOrientation.FOLLOW_DIRECTION
 
 
 Import detail
@@ -82,12 +100,12 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.SatelliteGraphics3DModel.gltf_reflection_map_type
     :type: ModelGltfReflectionMapType
 
-    Gets or sets the glTF reflection map type property. A member of the AgEModelGltfReflectionMapType enumeration.
+    Get or set the glTF reflection map type property. A member of the AgEModelGltfReflectionMapType enumeration.
 
 .. py:property:: gltf_image_based
     :canonical: ansys.stk.core.stkobjects.SatelliteGraphics3DModel.gltf_image_based
     :type: Graphics3DModelglTFImageBased
 
-    Gets glTF Image Based properties.
+    Get glTF Image Based properties.
 
 

@@ -21,7 +21,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics3DPoint.show_graphics`
               - Opt whether to display the track point.
             * - :py:attr:`~ansys.stk.core.stkobjects.MTOGraphics3DPoint.size`
-              - Gets or sets the size of the track point in pixels. Dimensionless.
+              - Get or set the size of the track point in pixels. Dimensionless.
 
 
 
@@ -46,6 +46,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.MTOGraphics3DPoint.size
     :type: float
 
-    Gets or sets the size of the track point in pixels. Dimensionless.
+    Get or set the size of the track point in pixels. Dimensionless.
 
 

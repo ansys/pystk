@@ -46,7 +46,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DLeadTrailData.has_trail_data`
               - Determine whether the trailing display option has value data.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleGraphics3DLeadTrailData.supported_data_types`
-              - Returns an array of valid choices.
+              - Return an array of valid choices.
 
 
 
@@ -101,7 +101,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.VehicleGraphics3DLeadTrailData.supported_data_types
     :type: list
 
-    Returns an array of valid choices.
+    Return an array of valid choices.
 
 
 Method detail

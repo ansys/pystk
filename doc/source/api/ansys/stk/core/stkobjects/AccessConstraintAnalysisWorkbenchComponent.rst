@@ -21,9 +21,9 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintAnalysisWorkbenchComponent.enable_minimum`
-              - Enables the Min property.
+              - Enable the Min property.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintAnalysisWorkbenchComponent.enable_maximum`
-              - Enables the Max property.
+              - Enable the Max property.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintAnalysisWorkbenchComponent.minimum`
               - Min value for the access constraint.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintAnalysisWorkbenchComponent.maximum`
@@ -31,7 +31,7 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintAnalysisWorkbenchComponent.reference`
               - Reference value for the access constraint.
             * - :py:attr:`~ansys.stk.core.stkobjects.AccessConstraintAnalysisWorkbenchComponent.available_references`
-              - Returns an array of available References.
+              - Return an array of available References.
 
 
 
@@ -50,13 +50,13 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.AccessConstraintAnalysisWorkbenchComponent.enable_minimum
     :type: bool
 
-    Enables the Min property.
+    Enable the Min property.
 
 .. py:property:: enable_maximum
     :canonical: ansys.stk.core.stkobjects.AccessConstraintAnalysisWorkbenchComponent.enable_maximum
     :type: bool
 
-    Enables the Max property.
+    Enable the Max property.
 
 .. py:property:: minimum
     :canonical: ansys.stk.core.stkobjects.AccessConstraintAnalysisWorkbenchComponent.minimum
@@ -80,6 +80,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.AccessConstraintAnalysisWorkbenchComponent.available_references
     :type: list
 
-    Returns an array of available References.
+    Return an array of available References.
 
 

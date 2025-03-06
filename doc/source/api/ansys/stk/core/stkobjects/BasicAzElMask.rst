@@ -37,12 +37,29 @@ Overview
             * - :py:attr:`~ansys.stk.core.stkobjects.BasicAzElMask.display_color_at_altitude`
               - Display the color at altitude.
             * - :py:attr:`~ansys.stk.core.stkobjects.BasicAzElMask.altitude_color`
-              - Gets or sets the altitude color.
+              - Get or set the altitude color.
             * - :py:attr:`~ansys.stk.core.stkobjects.BasicAzElMask.show_color_at_range`
               - Display the color at range.
             * - :py:attr:`~ansys.stk.core.stkobjects.BasicAzElMask.range_color`
-              - Gets or sets the range color.
+              - Get or set the range color.
 
+
+
+Examples
+--------
+
+Display the AzEl Mask in 2D/3D
+
+.. code-block:: python
+
+    # Facility facility: Facility Object
+    azelMask = facility.graphics.az_el_mask
+    azelMask.show_mask_over_range = True
+    azelMask.number_of_range_steps = 10
+    azelMask.display_range_minimum = 0  # km
+    azelMask.display_range_maximum = 100  # km
+    azelMask.show_color_at_range = True
+    azelMask.range_color = Colors.Cyan
 
 
 Import detail
@@ -114,7 +131,7 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.BasicAzElMask.altitude_color
     :type: agcolor.Color
 
-    Gets or sets the altitude color.
+    Get or set the altitude color.
 
 .. py:property:: show_color_at_range
     :canonical: ansys.stk.core.stkobjects.BasicAzElMask.show_color_at_range
@@ -126,6 +143,6 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.BasicAzElMask.range_color
     :type: agcolor.Color
 
-    Gets or sets the range color.
+    Get or set the range color.
 
 

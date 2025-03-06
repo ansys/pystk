@@ -21,13 +21,13 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkobjects.TroposphericScintillationFadingLossModelP618Version8.compute_deep_fade`
-              - Gets or sets the option for computing deep fade.
+              - Get or set the option for computing deep fade.
             * - :py:attr:`~ansys.stk.core.stkobjects.TroposphericScintillationFadingLossModelP618Version8.fade_outage`
-              - Gets or sets the fade outage percent.
+              - Get or set the fade outage percent.
             * - :py:attr:`~ansys.stk.core.stkobjects.TroposphericScintillationFadingLossModelP618Version8.percent_time_refractivity_gradient`
-              - Gets or sets the percentage of time the refractivity is gradient is less than -100 N units / km.
+              - Get or set the percentage of time the refractivity is gradient is less than -100 N units / km.
             * - :py:attr:`~ansys.stk.core.stkobjects.TroposphericScintillationFadingLossModelP618Version8.surface_temperature`
-              - Gets or sets the surface temperature.
+              - Get or set the surface temperature.
 
 
 
@@ -46,24 +46,24 @@ Property detail
     :canonical: ansys.stk.core.stkobjects.TroposphericScintillationFadingLossModelP618Version8.compute_deep_fade
     :type: bool
 
-    Gets or sets the option for computing deep fade.
+    Get or set the option for computing deep fade.
 
 .. py:property:: fade_outage
     :canonical: ansys.stk.core.stkobjects.TroposphericScintillationFadingLossModelP618Version8.fade_outage
     :type: float
 
-    Gets or sets the fade outage percent.
+    Get or set the fade outage percent.
 
 .. py:property:: percent_time_refractivity_gradient
     :canonical: ansys.stk.core.stkobjects.TroposphericScintillationFadingLossModelP618Version8.percent_time_refractivity_gradient
     :type: float
 
-    Gets or sets the percentage of time the refractivity is gradient is less than -100 N units / km.
+    Get or set the percentage of time the refractivity is gradient is less than -100 N units / km.
 
 .. py:property:: surface_temperature
     :canonical: ansys.stk.core.stkobjects.TroposphericScintillationFadingLossModelP618Version8.surface_temperature
     :type: float
 
-    Gets or sets the surface temperature.
+    Get or set the surface temperature.
 
 

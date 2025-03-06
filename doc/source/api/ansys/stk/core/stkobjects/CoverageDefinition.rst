@@ -57,17 +57,12 @@ Overview
 Examples
 --------
 
-Set the Coverage Interval to an object's availability Analysis interval
+Compute Coverage
 
 .. code-block:: python
 
-    # Satellite satellite: Satellite object
     # CoverageDefinition coverage: Coverage object
-    satVGT: "AnalysisWorkbenchComponentProvider" = IStkObject(satellite).analysis_workbench_components
-    intervals: "TimeToolTimeIntervalGroup" = satVGT.time_intervals
-    AvailTimeSpan: "ITimeToolTimeInterval" = intervals.item("AvailabilityTimeSpan")
-    IntResult: "TimeToolTimeIntervalResult" = AvailTimeSpan.find_interval()
-    coverage.interval.analysis_interval.set_start_and_stop_times(IntResult.interval.start, IntResult.interval.stop)
+    coverage.compute_accesses()
 
 
 Set Advanced Settings for Coverage
@@ -75,18 +70,43 @@ Set Advanced Settings for Coverage
 .. code-block:: python
 
     # CoverageDefinition coverage: Coverage object
-    advanced: "CoverageAdvancedSettings" = coverage.advanced
+    advanced = coverage.advanced
     advanced.recompute_automatically = False
     advanced.data_retention = CoverageDataRetention.ALL_DATA
     advanced.save_mode = DataSaveMode.SAVE_ACCESSES
 
 
-Compute Coverage
+Set the Coverage Interval to an object's availability Analysis interval
 
 .. code-block:: python
 
+    # Satellite satellite: Satellite object
     # CoverageDefinition coverage: Coverage object
-    coverage.compute_accesses()
+    satVGT = satellite.analysis_workbench_components
+    AvailTimeSpan = satVGT.time_intervals.item("AvailabilityTimeSpan")
+    IntResult = AvailTimeSpan.find_interval()
+    coverage.interval.analysis_interval.set_start_and_stop_times(IntResult.interval.start, IntResult.interval.stop)
+
+
+Create a New Coverage Definition (on the current scenario central body)
+
+.. code-block:: python
+
+    # Scenario scenario: Scenario object
+    # Create new Coverage Definition and set the Bounds to an area target
+    coverage = scenario.children.new(STKObjectType.COVERAGE_DEFINITION, "MyCoverage")
+    coverage.grid.bounds_type = CoverageBounds.CUSTOM_REGIONS
+    covGrid = coverage.grid
+    bounds = covGrid.bounds
+    bounds.area_targets.add("AreaTarget/MyAreaTarget")
+    # Define the Grid Resolution
+    Res = covGrid.resolution
+    Res.latitude_longitude = 0.5  # deg
+    # Set the satellite as the Asset
+    coverage.asset_list.add("Satellite/MySatellite")
+
+    # Turn off Show Grid Points
+    coverage.graphics.static.show_points = False
 
 
 Import detail

@@ -19,7 +19,7 @@ Overview
             :widths: auto
 
             * - :py:attr:`~ansys.stk.core.stkx.STKXConControlQuitReceivedEventArgs.acknowledge`
-              - Indicates whether or not to acknowledge the connect command.
+              - Indicate whether or not to acknowledge the connect command.
 
 
 
@@ -38,6 +38,6 @@ Property detail
     :canonical: ansys.stk.core.stkx.STKXConControlQuitReceivedEventArgs.acknowledge
     :type: bool
 
-    Indicates whether or not to acknowledge the connect command.
+    Indicate whether or not to acknowledge the connect command.
 
 

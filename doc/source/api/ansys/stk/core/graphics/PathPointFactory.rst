@@ -51,41 +51,41 @@ Method detail
 
         :obj:`~PathPoint`
 
-.. py:method:: initialize_with_date(self, path_point_date: IDate) -> PathPoint
+.. py:method:: initialize_with_date(self, path_point_date: Date) -> PathPoint
     :canonical: ansys.stk.core.graphics.PathPointFactory.initialize_with_date
 
     Initialize a new path point with the given date.
 
     :Parameters:
 
-    **path_point_date** : :obj:`~IDate`
+    **path_point_date** : :obj:`~Date`
 
     :Returns:
 
         :obj:`~PathPoint`
 
-.. py:method:: initialize_with_date_and_position(self, path_point_date: IDate, position: list) -> PathPoint
+.. py:method:: initialize_with_date_and_position(self, path_point_date: Date, position: list) -> PathPoint
     :canonical: ansys.stk.core.graphics.PathPointFactory.initialize_with_date_and_position
 
     Initialize a new path point with the given date and position.
 
     :Parameters:
 
-    **path_point_date** : :obj:`~IDate`
+    **path_point_date** : :obj:`~Date`
     **position** : :obj:`~list`
 
     :Returns:
 
         :obj:`~PathPoint`
 
-.. py:method:: initialize_with_date_position_and_color(self, path_point_date: IDate, position: list, color: agcolor.Color) -> PathPoint
+.. py:method:: initialize_with_date_position_and_color(self, path_point_date: Date, position: list, color: agcolor.Color) -> PathPoint
     :canonical: ansys.stk.core.graphics.PathPointFactory.initialize_with_date_position_and_color
 
     Initialize a new path point with the given date, position and color.
 
     :Parameters:
 
-    **path_point_date** : :obj:`~IDate`
+    **path_point_date** : :obj:`~Date`
     **position** : :obj:`~list`
     **color** : :obj:`~agcolor.Color`
 
@@ -93,14 +93,14 @@ Method detail
 
         :obj:`~PathPoint`
 
-.. py:method:: initialize_with_date_position_color_and_translucency(self, path_point_date: IDate, position: list, color: agcolor.Color, translucency: float) -> PathPoint
+.. py:method:: initialize_with_date_position_color_and_translucency(self, path_point_date: Date, position: list, color: agcolor.Color, translucency: float) -> PathPoint
     :canonical: ansys.stk.core.graphics.PathPointFactory.initialize_with_date_position_color_and_translucency
 
     Initialize a new path point with the given date, position, color and translucency.
 
     :Parameters:
 
-    **path_point_date** : :obj:`~IDate`
+    **path_point_date** : :obj:`~Date`
     **position** : :obj:`~list`
     **color** : :obj:`~agcolor.Color`
     **translucency** : :obj:`~float`
