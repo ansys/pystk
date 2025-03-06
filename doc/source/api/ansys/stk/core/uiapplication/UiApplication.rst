@@ -86,6 +86,17 @@ Overview
 
 
 
+Examples
+--------
+
+Close STK
+
+.. code-block:: python
+
+    # AgUiApplication uiApplication: STK Application
+    uiApplication.shutdown()
+
+
 Import detail
 -------------
 

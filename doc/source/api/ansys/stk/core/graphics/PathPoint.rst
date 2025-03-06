@@ -54,7 +54,7 @@ Property detail
 
 .. py:property:: date
     :canonical: ansys.stk.core.graphics.PathPoint.date
-    :type: IDate
+    :type: Date
 
     A date/time of the path point.
 

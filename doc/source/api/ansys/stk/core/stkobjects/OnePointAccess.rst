@@ -46,6 +46,38 @@ Overview
 
 
 
+Examples
+--------
+
+Compute an access for one point
+
+.. code-block:: python
+
+    # IStkObject facility: Facility object
+    onePtAccess = facility.create_one_point_access("Satellite/MySatellite")
+
+    # Configure properties (if necessary)
+    onePtAccess.start_time = root.current_scenario.start_time
+    onePtAccess.stop_time = root.current_scenario.stop_time
+    onePtAccess.step_size = 600
+    onePtAccess.summary_option = OnePointAccessSummary.DETAILED
+
+    # Compute results
+    results = onePtAccess.compute()
+
+    # Print results
+    for i in range(0, results.count):
+        result = results.item(i)
+        print("Time: %s HasAccess: %s" % (result.time, str(result.access_is_satisfied)))
+
+        for j in range(0, result.constraints.count):
+            constraint = result.constraints.item(j)
+            print(
+                "Constraint: %s Object: %s Status: %s Value:%s"
+                % (constraint.constraint, constraint.object_path, constraint.status, str(constraint.value))
+            )
+
+
 Import detail
 -------------
 

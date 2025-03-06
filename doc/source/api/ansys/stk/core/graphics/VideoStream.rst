@@ -105,13 +105,13 @@ Property detail
 
 .. py:property:: interval_start_time
     :canonical: ansys.stk.core.graphics.VideoStream.interval_start_time
-    :type: IDate
+    :type: Date
 
     Get or set the scene manager time at which the video will begin playing when the playback property is set to time interval.
 
 .. py:property:: interval_end_time
     :canonical: ansys.stk.core.graphics.VideoStream.interval_end_time
-    :type: IDate
+    :type: Date
 
     Get or set the scene manager time at which the video will stop playing when the playback property is set to time interval.
 

@@ -82,6 +82,30 @@ Overview
 
 
 
+Examples
+--------
+
+Draw a Point Primitive and set properties
+
+.. code-block:: python
+
+    # Scenario scenario: Scenario object
+    manager = scenario.scene_manager
+    point = manager.initializers.point_batch_primitive.initialize()
+    ptPosition = [[0], [-1], [0]]  # Lat, Lon, Alt
+
+    point.set_cartographic("Earth", ptPosition)
+    point.pixel_size = 15
+    point.color = Colors.Lime
+    point.display_outline = True
+    point.outline_width = 5
+    point.outline_color = Colors.Red
+
+    manager.primitives.add(point)
+    # Render the Scene
+    manager.render()
+
+
 Import detail
 -------------
 

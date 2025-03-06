@@ -102,6 +102,35 @@ Overview
 
 
 
+Examples
+--------
+
+Change camera reference frame
+
+.. code-block:: python
+
+    # Scenario scenario: Scenario object
+    # StkObjectRoot root: STK Object Model Root
+    manager = scenario.scene_manager
+    manager.scenes.item(0).camera.view_central_body(
+        "Earth", root.central_bodies.earth.analysis_workbench_components.axes.item("Fixed")
+    )
+    manager.render()
+
+
+Change camera view to Imagery Extents
+
+.. code-block:: python
+
+    # Scenario scenario: Scenario object
+    # AGIProcessedImageGlobeOverlay imageryTile: Image Overlay object
+    manager = scenario.scene_manager
+    extent = imageryTile.extent
+    # Change extent in the default 3D window
+    manager.scenes.item(0).camera.view_extent("Earth", extent)
+    manager.render()
+
+
 Import detail
 -------------
 

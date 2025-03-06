@@ -37,9 +37,9 @@ all = [
     "grpcio",
     "protobuf",
     "jupyter-rfb==0.5.1",
-    "numpy==2.2.2",
+    "numpy==2.2.3",
     "Pillow==11.1.0",
-    "simplejpeg==1.8.1",
+    "simplejpeg==1.8.2",
     "sidecar==0.7.0",
     "libcst==1.6.0"
 ]
@@ -48,16 +48,16 @@ grpc = [
     "protobuf",
 ]
 tests = [
-    "pytest==8.3.4",
+    "pytest==8.3.5",
     "pytest-cov==6.0.0",
     "pytz==2025.1",
     "parameterized==0.9.0",
     "pandas==2.2.3",
-    "numpy==2.2.2",
+    "numpy==2.2.3",
     "libcst==1.6.0"
 ]
 doc = [
-    "ansys-sphinx-theme==1.3.1",
+    "ansys-sphinx-theme==1.3.2",
     "build==1.2.2.post1",
     "jupyterlab==4.3.5",
     "jupytext==1.16.7",
@@ -71,15 +71,15 @@ doc = [
     "sphinx-jinja==2.0.2",
     "sphinx-copybutton==0.5.2",
     "pandas==2.2.3",
-    "matplotlib==3.10.0",
+    "matplotlib==3.10.1",
     "sphinxcontrib-jquery==4.1",
     "sphinxcontrib-mermaid==1.0.0",
 ]
 visualization = [
     "jupyter-rfb==0.5.1",
-    "numpy==2.2.2",
+    "numpy==2.2.3",
     "Pillow==11.1.0",
-    "simplejpeg==1.8.1",
+    "simplejpeg==1.8.2",
     "sidecar==0.7.0"
 ]
 vulnerabilities = [

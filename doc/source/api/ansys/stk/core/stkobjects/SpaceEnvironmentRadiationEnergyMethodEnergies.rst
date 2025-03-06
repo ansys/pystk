@@ -38,13 +38,13 @@ Property detail
 
 .. py:property:: electron_energies
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentRadiationEnergyMethodEnergies.electron_energies
-    :type: IDoublesCollection
+    :type: DoublesCollection
 
     Electron energies being considered.
 
 .. py:property:: proton_energies
     :canonical: ansys.stk.core.stkobjects.SpaceEnvironmentRadiationEnergyMethodEnergies.proton_energies
-    :type: IDoublesCollection
+    :type: DoublesCollection
 
     Proton energies being considered.
 
