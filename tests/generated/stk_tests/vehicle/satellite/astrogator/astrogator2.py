@@ -27,7 +27,6 @@ from ansys.stk.core.stkx import *
 from ansys.stk.core.stkutil import *
 
 
-@category("EarlyBoundTests")
 class EarlyBoundTests(TestBase):
     def __init__(self, *args, **kwargs):
         super(EarlyBoundTests, self).__init__(*args, **kwargs)
