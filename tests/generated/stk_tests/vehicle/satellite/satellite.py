@@ -42,7 +42,6 @@ from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkutil import *
 
 
-@category("EarlyBoundTests")
 class EarlyBoundTests(TestBase):
     def __init__(self, *args, **kwargs):
         super(EarlyBoundTests, self).__init__(*args, **kwargs)
@@ -4066,7 +4065,6 @@ class EarlyBoundTests(TestBase):
 
     # region HPOP Third Body Grativity
 
-    @category("BUG60013: Lunar HPOP satellite cant add earth as a third body if it gets removed")
     def test_AddEarthToLunarSatelliteThirdBodyGravity(self):
         satelliteName: str = "Satellite12345678"
 
@@ -4101,7 +4099,6 @@ class EarlyBoundTests(TestBase):
         #        #             * Verifies that the list of third body gravities contains Earth for lunar satellite.        #             *
         TryCatchAssertBlock.DoActionRunFinalize(action2, finalizer1)
 
-    @category("BUG60013: Lunar HPOP satellite cant add earth as a third body if it gets removed")
     def test_AddMoonToGeoSatelliteThirdBodyGravity(self):
         satelliteName: str = "Satellite12345678"
 

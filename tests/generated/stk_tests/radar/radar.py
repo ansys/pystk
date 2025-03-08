@@ -38,7 +38,6 @@ from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkutil import *
 
 
-@category("EarlyBoundTests")
 # region EarlyBoundTests
 class EarlyBoundTests(TestBase):
     def __init__(self, *args, **kwargs):
