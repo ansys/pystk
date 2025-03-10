@@ -28,7 +28,6 @@ from ansys.stk.core.stkobjects import *
 from ansys.stk.core.stkutil import *
 
 
-@category("EarlyBoundTests")
 class TimePeriodTests(TestBase):
     def __init__(self, *args, **kwargs):
         super(TimePeriodTests, self).__init__(*args, **kwargs)

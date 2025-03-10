@@ -32,7 +32,6 @@ from ansys.stk.core.stkutil import *
 from ansys.stk.core.vgt import *
 
 
-@category("EarlyBoundTests")
 # [Ignore("To diagnose Regression Suite hang"), Category("Ignored")]
 class Propagation(TestBase):
     def __init__(self, *args, **kwargs):
@@ -1984,7 +1983,6 @@ class Propagation(TestBase):
             Propagation.InitHelper()
 
 
-@category("EarlyBoundTests")
 
 # [Ignore("To diagnose Regression Suite hang"), Category("Ignored")]
 class Coordinate(TestBase):
@@ -2426,7 +2424,6 @@ class Coordinate(TestBase):
         ComparisionUtility.CompareReportSnapshots()
 
 
-@category("EarlyBoundTests")
 
 # [Ignore("To diagnose Regression Suite hang"), Category("Ignored")]
 class Representation(TestBase):
@@ -2720,7 +2717,6 @@ class Representation(TestBase):
         ComparisionUtility.CompareReportSnapshots()
 
 
-@category("EarlyBoundTests")
 
 # [Ignore("To diagnose Regression Suite hang"), Category("Ignored")]
 class Attitude(TestBase):
@@ -3849,7 +3845,6 @@ class Attitude(TestBase):
         realtimeCompare.CompareReportSnapshots()
 
 
-@category("EarlyBoundTests")
 
 # [Ignore("To diagnose Regression Suite hang"), Category("Ignored")]
 class Pointing(TestBase):
@@ -4678,7 +4673,6 @@ class Pointing(TestBase):
         Console.WriteLine("Integrity - Pointing - GrazingAlt - End")
 
 
-@category("EarlyBoundTests")
 
 # [Ignore("To diagnose Regression Suite hang"), Category("Ignored")]
 class Definition(TestBase):
@@ -9576,7 +9570,6 @@ class Definition(TestBase):
             visibility.are_tracks_visible(MTOTrackEvaluationType.ALL, tracksOfInterest2, "23 Feb 2009 17:09:00.000")
 
 
-@category("EarlyBoundTests")
 
 # [Ignore("To diagnose Regression Suite hang"), Category("Ignored")]
 class Constraints(TestBase):
@@ -10132,7 +10125,6 @@ class Constraints(TestBase):
         CompareUtility.CompareReportSnapshots()
 
 
-@category("EarlyBoundTests")
 
 # [Ignore("To diagnose Regression Suite hang"), Category("Ignored")]
 class Access(TestBase):
