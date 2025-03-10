@@ -82,9 +82,9 @@ Install Linux artifacts by using the `pip`_ command:
 Install extra artifacts
 =======================
 
-PySTK includes some additional features such us gRPC connection support or
-Jupyter widgets for visualization. These features require some extra artifacts
-to be installed. If you wish to install these extra features, download 
+PySTK includes additional features, such as support for gRPC connections and widgets
+for Jupyter notebooks. These features require installing additional
+dependencies. Install them by running
 
 .. jinja:: optional_dependencies
 
