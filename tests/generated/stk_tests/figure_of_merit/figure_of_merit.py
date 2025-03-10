@@ -29,7 +29,6 @@ from logger import *
 from ansys.stk.core.stkobjects import *
 
 
-@category("EarlyBoundTests")
 class EarlyBoundTests(TestBase):
     def __init__(self, *args, **kwargs):
         super(EarlyBoundTests, self).__init__(*args, **kwargs)

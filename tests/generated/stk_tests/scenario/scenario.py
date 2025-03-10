@@ -39,7 +39,6 @@ from ansys.stk.core.vgt import *
 from ansys.stk.core.graphics import *
 
 
-@category("EarlyBoundTests")
 class EarlyBoundTests(TestBase):
     def __init__(self, *args, **kwargs):
         super(EarlyBoundTests, self).__init__(*args, **kwargs)
