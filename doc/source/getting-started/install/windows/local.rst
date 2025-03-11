@@ -82,9 +82,16 @@ Install Windows artifacts by using the `pip`_ command:
 Install extra artifacts
 =======================
 
-PySTK includes additional features, such as support for gRPC connections and widgets
-for Jupyter notebooks. These features require installing additional
-dependencies. Install them by running
+PySTK includes some additional features such as gRPC connection support or
+Jupyter widgets for visualization. These features require some extra artifacts
+to be installed, either pulling those dependencies from the public PyPi
+registry or from the wheelhouses included on the :ref:`artifacts <Artifacts>`
+page. A wheelhouse provide all the required dependencies. It facilitates
+deploying PySTK on isolated networks that do not have access to the public Pypi
+registry.
+
+Start by selecting the additional feature group to install with PySTK. Finally,
+select the type of installation.
 
 .. jinja:: optional_dependencies
 
