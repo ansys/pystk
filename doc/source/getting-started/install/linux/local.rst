@@ -79,6 +79,84 @@ Install Linux artifacts by using the `pip`_ command:
             
                 python -m pip install {{ source }}
 
+Install extra artifacts
+=======================
+
+PySTK includes some additional features such as gRPC connection support or
+Jupyter widgets for visualization. These features require some extra artifacts
+to be installed, either pulling those dependencies from the public PyPi
+registry or from the wheelhouses included on the :ref:`artifacts <Artifacts>`
+page. A wheelhouse provide all the required dependencies. It facilitates
+deploying PySTK on isolated networks that do not have access to the public Pypi
+registry.
+
+Start by selecting the additional feature group to install with PySTK. Finally,
+select the type of installation.
+
+.. jinja:: optional_dependencies
+
+    .. tab-set::
+
+        {% for target, dependencies in optional_dependencies.items() %}
+
+        .. tab-item:: {{ target }}
+
+            .. tab-set::
+                
+                .. tab-item:: PyPI install
+
+                    Install the extra dependencies by running:
+                    
+                    .. code-block:: bash
+
+                        python -m pip install ansys-stk-core[{{ target }}]
+
+                .. tab-item:: Wheelhouse install
+
+                    Download the wheelhouse for :ref:`all extra artifacts <all
+                    extra artifacts>`. Then, decompress it by running:
+
+                    .. code-block:: bash
+                       
+                        unzip <wheelhouse.zip> -d wheelhouse
+
+                    Finally, install the extra dependencies by running:
+
+                    .. code-block:: bash
+
+                        python -m pip install --find-links wheelhouse ansys-stk-core[{{ target }}]
+
+            Dependencies included with the ``{{ target }}`` target are:
+
+            .. raw:: html
+
+                <!-- Initialize DataTables -->
+                <script>
+                    $(document).ready(function() {
+                        $('#target-{{ target }}').DataTable();
+                    });
+                </script>
+
+                <!-- Populate and render the table -->
+                <table id="target-{{ target }}" class="display" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>PyAnsys project</th>
+                            <th>Version</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for project, version in dependencies.items() %}
+                        <tr>
+                            <td>{{ project }}</td>
+                            <td><a href="https://pypi.org/project/{{ project }}/{{ version }}">{{ version }}</a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+         {% endfor %}
+
 Verify installation
 ===================
 
