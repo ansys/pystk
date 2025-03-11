@@ -63,7 +63,7 @@ doc = [
     "jupytext==1.16.7",
     "jupyter-server==2.15.0",
     "myst-parser==4.0.1",
-    "nbsphinx==0.9.6",
+    "nbsphinx==0.9.7",
     "numpydoc==1.8.0",
     "nbconvert==7.16.6",
     "sphinx==7.4.7",
