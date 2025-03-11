@@ -74,6 +74,11 @@ html_theme_options = {
         "limit": 10,
         "minMatchCharLength": 2,
     },
+    "ansys_sphinx_theme_autoapi": {
+        "project": "ansys-stk-extensions",
+        "directory": "extensions/src/ansys",
+        "output": "api"
+    },
 }
 html_static_path = ["_static"]
 html_css_files = [
@@ -83,6 +88,7 @@ html_js_files = []
 
 # Sphinx extensions
 extensions = [
+    "ansys_sphinx_theme.extension.autoapi",
     "sphinx_copybutton",
     "sphinx.ext.autodoc",
     "sphinx.ext.autosectionlabel",
