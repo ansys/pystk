@@ -10,10 +10,10 @@ readme = "README.rst"
 requires-python = ">=3.11"
 license = {file = "LICENSE"}
 authors = [
-    {name = "ANSYS, Inc.", email = "pyansys.support@ansys.com"},
+    {name = "ANSYS, Inc.", email = "pyansys.core@ansys.com"},
 ]
 maintainers = [
-    {name = "PyAnsys developers", email = "pyansys.maintainers@ansys.com"},
+    {name = "ANSYS, Inc.", email = "pyansys.core@ansys.com"},
 ]
 
 classifiers = [
@@ -96,10 +96,10 @@ vulnerabilities = [
 name = "ansys.stk.core"
 
 [project.urls]
-Homepage = "https://www.ansys.com/products/missions/ansys-stk"
-Documentation = "https://stk.docs.pyansys.com/"
-Source = "https://github.com/pyansys/pystk"
-Tracker = "https://github.com/pyansys/pystk/issues"
+homepage = "https://www.ansys.com/products/missions/ansys-stk"
+documentation = "https://stk.docs.pyansys.com/"
+source = "https://github.com/ansys/pystk"
+tracker = "https://github.com/ansys/pystk/issues"
 
 [tool.ruff]
 line-length = 120
