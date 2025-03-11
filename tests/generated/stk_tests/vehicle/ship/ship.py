@@ -33,7 +33,6 @@ from vehicle.vehicle_vo import *
 from ansys.stk.core.stkobjects import *
 
 
-@category("EarlyBoundTests")
 class EarlyBoundTests(TestBase):
     def __init__(self, *args, **kwargs):
         super(EarlyBoundTests, self).__init__(*args, **kwargs)
@@ -78,7 +77,6 @@ class EarlyBoundTests(TestBase):
     # region BasicAttitude
     @category("Basic Tests")
     @category("Orientation Test")
-    @category("Causes crashes")
     def test_BasicAttitude(self):
         TestBase.logger.WriteLine("----- THE BASIC ATTITUDE TEST ----- BEGIN -----")
         # AttitudeType

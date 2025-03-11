@@ -40,8 +40,6 @@ from ansys.stk.core.stkutil import *
 from ansys.stk.core.vgt import *
 
 
-@category("EarlyBoundTests")
-@category("Causes crashes")
 class EarlyBoundTests(TestBase):
     def __init__(self, *args, **kwargs):
         super(EarlyBoundTests, self).__init__(*args, **kwargs)
@@ -197,7 +195,6 @@ class EarlyBoundTests(TestBase):
         helper.Run(TestBase.Application.current_scenario.children["Satellite1"].children["Sensor1"])
 
 
-@category("BugFixes")
 class BugFixes(TestBase):
     def __init__(self, *args, **kwargs):
         super(BugFixes, self).__init__(*args, **kwargs)

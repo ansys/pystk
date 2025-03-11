@@ -32,7 +32,6 @@ from ansys.stk.core.vgt import *
 
 
 @category("Excluded From RegFree")
-@category("EarlyBoundTests")
 class EarlyBoundTests(TestBase):
     def __init__(self, *args, **kwargs):
         super(EarlyBoundTests, self).__init__(*args, **kwargs)
