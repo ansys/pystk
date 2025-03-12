@@ -701,29 +701,6 @@ def read_migration_tables(app: sphinx.application.Sphinx):
             "mappings": mappings,
         }
 
-def update_stk_extensions_api_pages(app: sphinx.application.Sphinx, env: sphinx.environment.BuildEnvironment, docnames):
-    """
-    Update the API pages of the STK extensions.
-    Parameters
-    ----------
-    app : sphinx.application.Sphinx
-        Sphinx application instance containing the all the doc build configuration.
-    env : sphinx.environment.BuildEnvironment
-        Sphinx build environment.
-    """
-    logger = logging.getLogger(__name__)
-    logger.info("Renaming index.rst to extensions.rst")
-
-    SOURCE_FILE = pathlib.Path(app.srcdir) / "api" / "ansys" / "stk" / "extensions" / "index.rst"
-    if not SOURCE_FILE.exists():
-        raise RuntimeError(f"File {SOURCE_FILE} does not exist.")
-
-    OUTPUT_FILE = pathlib.Path(app.srcdir) / "api" / "ansys" / "stk" / "extensions.rst"
-    OUTPUT_FILE.write_text(SOURCE_FILE.read_text(encoding="utf-8"), encoding="utf-8")
-
-    #SOURCE_FILE.unlink()
-
-
 def setup(app: sphinx.application.Sphinx):
     """
     Run different hook functions during the documentation build.
@@ -741,9 +718,6 @@ def setup(app: sphinx.application.Sphinx):
     # the source directory.
     app.connect("builder-inited", copy_docker_files_to_static_dir)
     app.connect("builder-inited", read_migration_tables)
-
-    #if BUILD_API:
-    #    app.connect("env-before-read-docs", update_stk_extensions_api_pages)
 
     if BUILD_EXAMPLES:
         app.connect("builder-inited", copy_examples_files_to_source_dir)
