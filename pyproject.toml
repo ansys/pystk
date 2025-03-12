@@ -57,7 +57,7 @@ tests = [
     "libcst==1.6.0"
 ]
 doc = [
-    "ansys-sphinx-theme==1.3.2",
+    "ansys-sphinx-theme==1.3.3",
     "build==1.2.2.post1",
     "jupyterlab==4.3.5",
     "jupytext==1.16.7",
