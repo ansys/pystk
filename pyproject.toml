@@ -57,7 +57,7 @@ tests = [
     "libcst==1.6.0"
 ]
 doc = [
-    "ansys-sphinx-theme==1.3.2",
+    "ansys-sphinx-theme==1.3.3",
     "build==1.2.2.post1",
     "jupyterlab==4.3.5",
     "jupytext==1.16.7",
@@ -74,6 +74,7 @@ doc = [
     "matplotlib==3.10.1",
     "sphinxcontrib-jquery==4.1",
     "sphinxcontrib-mermaid==1.0.0",
+    "toml==0.10.2",
 ]
 visualization = [
     "jupyter-rfb==0.5.1",
