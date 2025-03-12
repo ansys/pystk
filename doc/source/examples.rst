@@ -13,7 +13,9 @@ Examples
     .. nbgallery::
         :caption: Basic examples
     
+        examples/create-load-scenarios
         examples/facility-to-satellite-access
+        examples/results-graphs
         examples/sensor-access
     
     Coverage examples

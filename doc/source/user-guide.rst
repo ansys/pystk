@@ -17,26 +17,12 @@ User guide
 
         Navigate PySTK effectively by exploring the foundational structure of the API.
 
-    .. grid-item-card:: :fa:`long-arrow-right` Create and load scenarios
-        :link: user-guide/create-load-scenarios
-        :link-type: doc
-        :padding: 2 2 2 2
-
-        Learn how to use PySTK to create and load STK scenarios.
-
     .. grid-item-card:: :fa:`long-arrow-right` Data types
         :link: user-guide/data-types
         :link-type: doc
         :padding: 2 2 2 2
 
         Leverage NumPy arrays and Pandas Dataframes data types to enhance your PySTK workflows.
-
-    .. grid-item-card:: :fa:`long-arrow-right` Results and graphs
-        :link: user-guide/results-graphs
-        :link-type: doc
-        :padding: 2 2 2 2
-
-        Learn how to translate a report into its corresponding set of Data Providers.
 
     .. grid-item-card:: :fa:`long-arrow-right` Help with STK
         :link: user-guide/help-with-pystk
@@ -65,9 +51,7 @@ User guide
 
    Initialization <user-guide/initialization>
    API structure <user-guide/api-structure>
-   Create and load scenarios <user-guide/create-load-scenarios>
    Data types <user-guide/data-types>
-   Results and graphs <user-guide/results-graphs>
    Help with STK <user-guide/help-with-pystk>
  
    Migration <user-guide/migration>
