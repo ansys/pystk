@@ -24,7 +24,7 @@ To get started, determine the configuration that you want to use:
 Initialize PySTK with STK Desktop
 ===================================
 
-This section describes how to use PySTK with STK Desktop. The STKDesktop.StartApplication and STKDesktop.AttachToApplication methods are available to obtain the STKDesktopApplication class and begin interacting with STK through the AgUiApplication API. From the application interface, the most common way to begin working with STK is to use the IAgStkObjectRoot interface, which is accessible as the Root property of the STKDesktopApplication object.
+This section describes how to use PySTK with STK Desktop. The :py:method:`ansys.stk.core.stkdesktop.STKDesktop.start_application` and :py:method`ansys.stk.core.stkdesktop.STKDesktop.attach_to_application` methods are available to obtain the :py:class:`ansys.stk.core.stkdesktop.STKDesktopApplication` class and begin interacting with STK through the AgUiApplication API. From the application interface, the most common way to begin working with STK is to use the :py:class:`ansys.stk.core.stkobjects.StkObjectRoot` class, which is accessible as the Root property of the :py:class:`ansys.stk.core.stkdesktop.STKDesktopApplication` object.
 
 Start a new STK Desktop instance
 --------------------------------
@@ -45,7 +45,7 @@ Argument | Description
 Attach to a running STK instance
 --------------------------------
 
-Use the STKDesktop.AttachToApplication method to attach to a running STK desktop application. The AttachToApplication method has additional arguments to specify the Process ID (PID) if more than one STK application is running:
+Use the :py:method:`ansys.stk.core.stkdesktop.STKDesktop.attach_to_application` method to attach to a running STK desktop application. The AttachToApplication method has additional arguments to specify the Process ID (PID) if more than one STK application is running:
 
 *INSERT TABLE*
 Argument | Description
@@ -55,21 +55,23 @@ Argument | Description
 Initialize STKEngine NoGraphics
 ================================
 
-If your use case consists of using STK Engine as a computational tool and does not require 2D/3D visualization (for instance, if your application is running as a service on a compute node without direct user interaction), using the NoGraphics option results in faster load times and a lighter memory footprint. When that option is turned on, all 2D and 3D graphics support is skipped, and the code and libraries related to graphics do not get loaded into memory. This option must be set to true when running on hardware that does not have hardware or software support for OpenGL or X11 on Linux. It needs to be turned on during initialization and cannot be changed afterwards. The 2D, 3D and Graphics Analysis controls are obviously not available. To select this mode, set the NoGraphics property to true after creating the STK X application object and before performing any other operation with STK Engine:
+If your use case consists of using STK Engine as a computational tool and does not require 2D/3D visualization (for instance, if your application is running as a service on a compute node without direct user interaction), using the `no_graphics=True` option results in faster load times and a lighter memory footprint. When that option is turned on, all 2D and 3D graphics support is skipped, and the code and libraries related to graphics do not get loaded into memory. This option must be set to true when running on hardware that does not have hardware or software support for OpenGL or X11 on Linux. It needs to be turned on during initialization and cannot be changed afterwards. The 2D, 3D and Graphics Analysis controls are obviously not available. To select this mode, set the `no_graphics` property to true after creating the STK X application object and before performing any other operation with STK Engine:
 
 Initialize with PySTK
 ---------------------
 
-from agi.stk12.stkengine import STKEngine
-stk = STKEngine.StartApplication(noGraphics=True)
+from ansys.stk.core.stkengine import STKEngine
 
-The NoGraphics mode also alters the way scenarios are saved and loaded. When an engine application in NoGraphics mode loads a scenario coming from STK Desktop, the 2D and 3D information serialized as part of the scenario is ignored. If that scenario is then saved, all 2D and 3D information is lost. If the scenario is then loaded into STK Desktop, default graphics options are used.
+
+stk = STKEngine.start_application(no_graphics=True)
+
+The `no_graphics=True` mode also alters the way scenarios are saved and loaded. When an engine application sets `no_graphics=True`, it loads a scenario coming from STK Desktop, the 2D and 3D information serialized as part of the scenario is ignored. If that scenario is then saved, all 2D and 3D information is lost. If the scenario is then loaded into STK Desktop, default graphics options are used.
 
 
 Initialize STK Engine
 =====================
 
-This section describes how to use PYSTK with STK Engine. The STK Engine API is supported on both Windows and Linux, although AGI has not implemented some features, such as events. STK Engine runs in-process in your Python script, so unlike STK Desktop, only one instance of engine is possible, which is started using STKEngine.StartApplication, returning the STKEngineApplication class and giving access to the AgSTKXApplication API. Unlike STKDesktopApplication, the object model root is not a property and a new root object may be obtained from the NewObjectRoot method on the STKEngineApplication object.
+This section describes how to use PySTK with STK Engine. The STK Engine API is supported on both Windows and Linux, although AGI has not implemented some features, such as events. STK Engine runs in-process in your Python script, so unlike STK Desktop, only one instance of engine is possible, which is started using :py:method:`ansys.stk.core.stkengine.STKEngine.start_application`, returning the :py:class`ansys.stk.core.stk.engine.STKEngineApplication` class and giving access to the :py:class:`ansys.stk.core.stkx.STKXApplication` API. Unlike :py:class:`ansys.stk.core.stkdesktop.STKDesktopApplication`, the object model root is not a property and a new root object may be obtained from the :py:method:`ansys.stk.core.stkengine.STKEngine.new_object_root` method on the :py:class:`ansys.stk.core.stkengine.STKEngineApplication` object.
 
 Start STK Engine
 ----------------
@@ -81,7 +83,7 @@ STKEngineApplication provides a ShutDown method that is the recommended way to s
 
 
 Tkinter GlobeControl, MapControl, and GfxAnalysisControl
-----------------------------------------------------
+--------------------------------------------------------
 This section describes how to use PySTK with the Tkinter GlobeControl, MapControl, and GfxAnalysisControl classes.
 
 Create a Tkinter window with a globe control
@@ -92,7 +94,7 @@ Create a Tkinter window with a globe control
 Initialize STKRuntime
 ======================
 
-STKRuntime is an executable that serves STK Engine capabilities via gRPC. Use agi.stk12.stkruntime to start or attach to a running STKRuntime application. Once the STKRuntimeApplication object is obtained, interact with STK, via IAgStkObjectRoot obtained from calling STKRuntimeApplication.NewObjectRoot(). Shutting down the remote STKRuntime process is possible by calling STKRuntimeApplication.ShutDown(), or using the userControl=False option when starting the application.
+:py:class:`ansys.stk.core.stkruntime.STKRuntime` is an executable that serves STK Engine capabilities via gRPC. Use the :py:class:`ansys.stk.core.stkruntime.STKRuntime` to start or attach to a running STK instance. Once the :py:class:`ansys.stk.core.stkruntime.STKRuntimeApplication` object is obtained, interact with STK, via :py:class:`ansys.stk.core.stkobjects.StkObjectRoot` obtained from calling the :py:method:`ansys.stk.core.stkruntime.STKRuntimeApplication.new_object_root` method. Shutting down the remote process is possible by calling :py:method`anys.stk.core.stkruntime.STKRuntimeApplication.shutdown`, or using the `user_control=False` option when starting the application.
 
 Start a new STKRuntime instance
 -------------------------------
