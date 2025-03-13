@@ -134,7 +134,7 @@ cart_vel_j2000 = cart_vel.group.item("J2000")
 cart_pos_j2000 = cart_pos.group.item("J2000")
 # -
 
-# The basic interfaces are now setup to compute information from the data providers that the report is using. Next, cast these objects to provide the `iDataProvider` interface with inputs so it can compute the proper data.
+# The basic interfaces are now setup to compute information from the data providers that the report is using. Next, cast these objects to provide the `IDataProvider` interface with inputs so it can compute the proper data.
 
 # ## Data provider "PreData" inputs
 
