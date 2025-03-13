@@ -12,7 +12,7 @@ This page contains the API reference for the ``ansys-stk-core`` and
        :titlesonly:
     
        api/ansys/stk/core
-       api/ansys/stk/extensions/index
+       api/ansys/stk/extensions
 
     {% else %}
 

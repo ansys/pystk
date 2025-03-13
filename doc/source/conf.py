@@ -701,6 +701,22 @@ def read_migration_tables(app: sphinx.application.Sphinx):
             "mappings": mappings,
         }
 
+
+def rename_api_index_files(app):
+
+    SOURCE_DIR = pathlib.Path(app.srcdir) / "api" / "ansys" / "stk" / "extensions"
+    for filepath in SOURCE_DIR.glob("**/*.rst"):
+        is_index_file = filepath.name == "index.rst"
+        if not is_index_file:
+            continue
+
+        new_filepath = filepath.parent.parent / f"{filepath.parent.name}.rst"
+        print(f"Old filepath: {filepath}", flush=True)
+        print(f"New filepath: {new_filepath}", flush=True)
+
+        new_filepath.write_text(filepath.read_text(encoding="utf-8"), encoding="utf-8")
+        filepath.unlink()
+
 def setup(app: sphinx.application.Sphinx):
     """
     Run different hook functions during the documentation build.
@@ -718,6 +734,9 @@ def setup(app: sphinx.application.Sphinx):
     # the source directory.
     app.connect("builder-inited", copy_docker_files_to_static_dir)
     app.connect("builder-inited", read_migration_tables)
+
+    if BUILD_API:
+        app.connect("builder-inited", rename_api_index_files)
 
     if BUILD_EXAMPLES:
         app.connect("builder-inited", copy_examples_files_to_source_dir)
