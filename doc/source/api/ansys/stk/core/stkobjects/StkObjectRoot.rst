@@ -129,16 +129,42 @@ Execute Connect command
     root.execute_command("New / */Target MyTarget")
 
 
-Start STK and get a reference to STK Object Root
+Attach to an already running STK Runtime and get a reference to STK Object Root
 
 .. code-block:: python
 
-    # Start new instance of STK
+    # Attach to already running instance of STK Runtime
+    from ansys.stk.core.stkruntime import STKRuntime
+
+    stk = STKRuntime.attach_to_application()
+
+    # Get the STK Object Root interface
+    root = stk.new_object_root()
+
+
+Start STK Runtime and get a reference to STK Object Root
+
+.. code-block:: python
+
+    # Start new instance of STK Runtime
+    from ansys.stk.core.stkruntime import STKRuntime
+
+    stk = STKRuntime.start_application()
+
+    # Get the STK Object Root interface
+    root = stk.new_object_root()
+
+
+Start STK Desktop and get a reference to STK Object Root
+
+.. code-block:: python
+
+    # Start new instance of STK Desktop
     from ansys.stk.core.stkdesktop import STKDesktop
 
     stk = STKDesktop.start_application(visible=True)  # using optional visible argument
 
-    # Get the IAgStkObjectRoot interface
+    # Get the STK Object Root interface
     root = stk.root
 
     # ...
@@ -147,29 +173,42 @@ Start STK and get a reference to STK Object Root
     stk.shutdown()
 
 
-Get a reference to STK Object Root using a running STK instance
+Get a reference to STK Object Root using a running STK Desktop instance
 
 .. code-block:: python
 
-    # Get reference to running STK instance
+    # Get reference to running STK Desktop instance
     from ansys.stk.core.stkdesktop import STKDesktop
 
     stk = STKDesktop.attach_to_application()
 
-    # Get the IAgStkObjectRoot interface
+    # Get the STK Object Root interface
     root = stk.root
 
 
-Start STK Engine and get a reference to STK Object Root
+Initialize STK Engine in no graphics mode and get a reference to STK Object Root
 
 .. code-block:: python
 
-    # Start new instance of STK Engine
+    # Initialize STK Engine without graphics in the current process
     from ansys.stk.core.stkengine import STKEngine
 
-    stk = STKEngine.StartApplication(no_graphics=False)  # optionally, no_graphics = True
+    stk = STKEngine.start_application(no_graphics=True)
 
-    # Get the IAgStkObjectRoot interface
+    # Get the STK Object Root interface
+    root = stk.new_object_root()
+
+
+Initialize STK Engine with graphics and get a reference to STK Object Root
+
+.. code-block:: python
+
+    # Initialize STK Engine with graphics in the current process
+    from ansys.stk.core.stkengine import STKEngine
+
+    stk = STKEngine.start_application(no_graphics=False)
+
+    # Get the STK Object Root interface
     root = stk.new_object_root()
 
 
