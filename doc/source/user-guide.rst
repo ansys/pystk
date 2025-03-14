@@ -30,5 +30,6 @@ User guide
    :hidden:
 
  
+   Initialization <user-guide/initialization>
    Migration <user-guide/migration>
    Code snippets <user-guide/code-snippets>
