@@ -186,6 +186,7 @@ pos_result = pos_time_var.execute_elements(
 #
 # Similarly, the result needs to be cast to the appropriate interface to make use of the data. In the case of the `J2000 Cartesian Velocity` and `Position` data providers, that interface is the `DataProviderResultIntervalCollection`. Since each data provider result shares the same result type, consolidate the data traversal into one method, which takes a `DataProviderResult`:
 
+
 def write_interval_data(result: DataProviderResult):
     """Traverse and write the data stored in a DataProviderResult."""
     intervals = result.intervals
