@@ -4,7 +4,7 @@
 
 # The following example uses the `J2000 Position Velocity` report to demonstrate the retrieval of data through the object model. This report consists of specific J2000 data provider elements from two groups: `Cartesian Velocity` and `Cartesian Position`.
 
-# ![The J2000 Position Velocity report contents](./img/results-graphs/object-model-report-contents.png)
+# ![The J2000 Position Velocity report contents](./img/object-model-report-contents.png)
 
 # ## Launch a new STK instance
 
@@ -130,13 +130,13 @@ result = DataProviderResult(
 
 # In the `Time Period` section of the `Report` window in STK, highlight `J2000 Position Velocity` and click the `Specify Time Properties` radio button. The `J2000 Position Velocity` report uses a time period to provide the underlying data provider's information about what data to compute. Provide the same information to the object model data providers.
 
-# ![Report time properties](./img/results-graphs/specify-time-properties.png)
+# ![Report time properties](./img/specify-time-properties.png)
 
 # ## Retrieve the data
 
 # There are three ways to compute the data, depending on the data provider type. The first method requires a time interval and step size, the second requires only a time interval, and the third is independent of time.
 #
-# Pprovide input information to the data providers by casting the data provider interfaces to the proper execution interface. In the case of the `Cartesian Velocity` and `Cartesian Position` data providers, cast to `DataProviderTimeVarying`:
+# Provide input information to the data providers by casting the data provider interfaces to the proper execution interface. In the case of the `Cartesian Velocity` and `Cartesian Position` data providers, cast to `DataProviderTimeVarying`:
 
 vel_time_var = DataProviderTimeVarying(cart_vel_j2000)
 pos_time_var = DataProviderTimeVarying(cart_pos_j2000)
@@ -159,8 +159,6 @@ pos_result = DataProviderResult(
 #
 # Recall that the original `Cartesian Position Velocity` report contained only four elements of the `Cartesian Velocity J2000` group: `x`, `y`, `z`, and `speed`. Similarly, the `Cartesian Position J2000` data provider contained within your report style only contains three elements: `x`, `y`, and `z`.
 #
-# ![The J2000 Position Velocity report contents](./img/results-graphs/object-model-report-contents.png)
-#
 # When the J2000 data provider of `Cartesian Velocity` was executed, seven elements were retrieved instead of the four specifically contained in the
 # report, adding the `time`, `radial`, and `intrack` elements to the `DataProviderResult`. To be precise as possible, DataProviderResult` should contain only the elements which were contained in the original report. To do this, use the `DataProviderTimeVarying.execute_elements()` method.
 #
@@ -176,8 +174,6 @@ vel_result = vel_time_var.execute_elements(
 pos_result = pos_time_var.execute_elements(
     "1 Jul 2020 17:14:00.00", "1 Jul 2020 17:29:00.00", 60, pos_elems
 )
-
-
 # -
 
 # The original data from the `J2000 Position Velocity` report is now stored in `DataProviderResult` objects and ready to traverse.
@@ -186,14 +182,12 @@ pos_result = pos_time_var.execute_elements(
 #
 # Review the original report. The data in the report consisted of time intervals with various elements.
 #
-# ![Original report](./img/results-graphs/original-report-data.png)
+# ![Original report](./img/original-report-data.png)
 #
 # Similarly, the result needs to be cast to the appropriate interface to make use of the data. In the case of the `J2000 Cartesian Velocity` and `Position` data providers, that interface is the `DataProviderResultIntervalCollection`. Since each data provider result shares the same result type, consolidate the data traversal into one method, which takes a `DataProviderResult`:
 
-
 def write_interval_data(result: DataProviderResult):
     """Traverse and write the data stored in a DataProviderResult."""
-
     intervals = result.intervals
 
     # iterate through the intervals

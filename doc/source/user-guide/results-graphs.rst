@@ -21,6 +21,7 @@ To browse the various report styles available for a particular object in STK, an
 .. image:: img/report-styles-expand.png
 
 .. |prop-icon| image:: img/properties-button.png
+    
 To view the data providers being used by a particular report style, click a report style, and click the `Properties` button |prop-icon| to display the `Report Style` window. 
 
 .. image:: img/report-style-window.png
