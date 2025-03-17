@@ -59,7 +59,7 @@ import pathlib
 
 
 # Save the scenario
-scenario_path = pathlib.Path(pathlib.Path.cwd() / "scenario" / "MyScenario.sc")
+scenario_path = pathlib.Path(pathlib.Path.cwd() / "scenario" / "MyScenario" / "MyScenario.sc")
 
 root.save_as(str(scenario_path))
 root.close_scenario()
