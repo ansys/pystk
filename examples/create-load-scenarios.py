@@ -58,9 +58,16 @@ propagator.propagate()  # To propagate the orbit
 import pathlib
 
 
-# Save the scenario
-scenario_path = pathlib.Path(pathlib.Path.cwd() / "scenario" / "MyScenario" / "MyScenario.sc")
+# Create a directory for scenario files
+scenario_directory = pathlib.Path(
+    pathlib.Path.cwd() / "scenario" / "MyScenario"
+)
+pathlib.Path(scenario_directory).mkdir(parents=True, exist_ok=True)
 
+# Save the scenario
+scenario_path = pathlib.Path(
+    scenario_directory / "MyScenario.sc"
+)
 root.save_as(str(scenario_path))
 root.close_scenario()
 # -
