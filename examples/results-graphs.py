@@ -144,9 +144,7 @@ provider = DataProviderTimeVarying(satellite.data_providers["RIC Coordinates"])
 
 provider.pre_data = "Satellite/SatelliteTwoBody"
 
-result = DataProviderResult(
-    provider.execute("1 Jul 2020 17:14:00.00", "1 Jul 2020 17:29:00.00", 1)
-)
+result = provider.execute("1 Jul 2020 17:14:00.00", "1 Jul 2020 17:29:00.00", 1)
 # -
 
 # ## Data provider time inputs
@@ -166,15 +164,8 @@ pos_time_var = DataProviderTimeVarying(cart_pos_j2000)
 
 # Retrieve the information from the data providers. The data is always returned as a `DataProviderResult` object. Provide the `DataProviderTimeVarying.execute()` method of the `DataProviderTimeVarying` interfaces with the data provider inputs (start time, stop time, and step size):
 
-# +
-vel_result = DataProviderResult(
-    vel_time_var.execute("1 Jul 2020 17:14:00.00", "1 Jul 2020 17:29:00.00", 1)
-)
-
-pos_result = DataProviderResult(
-    pos_time_var.execute("1 Jul 2020 17:14:00.00", "1 Jul 2020 17:29:00.00", 1)
-)
-# -
+vel_result = vel_time_var.execute("1 Jul 2020 17:14:00.00", "1 Jul 2020 17:29:00.00", 1)
+pos_result = pos_time_var.execute("1 Jul 2020 17:14:00.00", "1 Jul 2020 17:29:00.00", 1)
 
 # `vel_result` and `pos_result` now contain the data from the `J2000 Cartesian Velocity` and `Cartesian Position` data providers, more data than the original report contained.
 #
@@ -243,7 +234,7 @@ write_interval_data(pos_result)
 print("Velocity Results:")
 write_interval_data(vel_result)
 
-# As previously noted, it is up to you to decide in what unit the data is returned. Issuing the following command before calling `write_interval_data()` changes the data that is output to be displayed in meters per second, rather then kilometers.
+# As previously noted, it is up to you to decide in what unit the data is returned. Issuing the following command before calling `write_interval_data()` changes the data that is output to be displayed in meters per second, rather then kilometers per second.
 
 # +
 root.units_preferences.set_current_unit("DistanceUnit", "m")
