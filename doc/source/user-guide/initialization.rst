@@ -41,7 +41,7 @@ Use the :py:meth:`~ansys.stk.core.stkdesktop.STKDesktop.start_application` metho
   :end-at: root = stk.root
   :dedent:
 
-The :py:meth:`~ansys.stk.core.stkdesktop.STKDesktop.start_application` method has optional arguments to control if the application should be visible, if it should exit when the Python script ends and to switch to gRPC for communicating with STK Desktop (instead of Windows automation by default).
+The :py:meth:`~ansys.stk.core.stkdesktop.STKDesktop.start_application` method has optional arguments to control if the application should be visible, if it should exit when the Python script ends, and to switch to gRPC for communicating with STK Desktop (instead of Windows automation by default).
 
 .. note:: To learn more about gRPC see `https://grpc.io/ <https://grpc.io/>`_
 
@@ -79,7 +79,7 @@ To select this mode, do not specify any argument when calling  :py:meth:`~ansys.
 Initialize STK Engine without graphics
 --------------------------------------
 
-If your use case consists of using STK Engine as a computational tool and does not require 2D/3D visualization (for instance, if your application is running as a service on a compute node without direct user interaction), using the NoGraphics mode results in faster load times and a lighter memory footprint. When that option is turned on, all 2D and 3D graphics support is skipped, and the code and libraries related to graphics do not get loaded into memory. The NoGraphics mode must be used when running on hardware that does not have hardware or software support for OpenGL or X11 on Linux. It needs to be turned on during initialization and cannot be changed afterwards. The 2D, 3D and Graphics Analysis controls are obviously not available. To select this mode, pass the `no_graphics=True` argument when initializing STK Engine:
+If your use case consists of using STK Engine as a computational tool and does not require 2D/3D visualization (for instance, if your application is running as a service on a compute node without direct user interaction), skipping graphics mode results in faster load times and a lighter memory footprint. When graphics are not loaded, all 2D and 3D graphics support is skipped, and the code and libraries related to graphics do not get loaded into memory. Graphics cannot be used when running on hardware that does not have hardware or software support for OpenGL or X11 on Linux. It needs to be turned on during initialization and cannot be changed afterwards. The 2D, 3D and Graphics Analysis controls are not available. To avoid loading graphics, pass the `no_graphics=True` argument when initializing STK Engine:
 
 .. literalinclude:: /../../tests/doc_snippets_tests/initialization/initialization_snippets.py
   :language: py
