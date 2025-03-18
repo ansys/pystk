@@ -98,7 +98,7 @@ cart_pos_j2000 = cart_pos.group.item("J2000")
 # The `DataProviderCollection` and `DataProviderGroup` variables can be used to access information about the `J2000 Position Velocity` report.
 
 # +
-print("Some data providers available for the the \"SatelliteTwoBody\" satellite:")
+print('Some data providers available for the the "SatelliteTwoBody" satellite:')
 
 data_providers = list(satellite.data_providers)
 for index in range(len(data_providers)):
