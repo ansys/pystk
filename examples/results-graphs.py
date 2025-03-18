@@ -95,6 +95,29 @@ cart_vel_j2000 = cart_vel.group.item("J2000")
 cart_pos_j2000 = cart_pos.group.item("J2000")
 # -
 
+# The `DataProviderCollection` and `DataProviderGroup` variables can be used to access information about the `J2000 Position Velocity` report.
+
+# +
+print("Some data providers available for the the \"SatelliteTwoBody\" satellite:")
+
+data_providers = list(satellite.data_providers)
+for index in range(len(data_providers)):
+    if index > 9:
+        print(f"\t...and {len(data_providers) - 10} more ")
+        break
+    print("\t" + str(data_providers[index].name))
+
+print("Some data providers within the Cartesian Velocity group:")
+
+for item in cart_vel.group:
+    print("\t" + str(item.name))
+
+print("Some data providers within the Cartesia Position group:")
+
+for item in cart_pos.group:
+    print("\t" + str(item.name))
+# -
+
 # The basic interfaces are now setup to compute information from the data providers that the report is using. Next, cast these objects to provide the `IDataProvider` interface with inputs so it can compute the proper data.
 
 # ## Data provider "PreData" inputs
