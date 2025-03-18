@@ -112,7 +112,7 @@ print("Some data providers within the Cartesian Velocity group:")
 for item in cart_vel.group:
     print("\t" + str(item.name))
 
-print("Some data providers within the Cartesia Position group:")
+print("Some data providers within the Cartesian Position group:")
 
 for item in cart_pos.group:
     print("\t" + str(item.name))
