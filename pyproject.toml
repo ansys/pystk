@@ -41,7 +41,7 @@ all = [
     "Pillow==11.1.0",
     "simplejpeg==1.8.2",
     "sidecar==0.7.0",
-    "libcst==1.6.0"
+    "libcst==1.7.0"
 ]
 grpc = [
     "grpcio",
@@ -54,7 +54,7 @@ tests = [
     "parameterized==0.9.0",
     "pandas==2.2.3",
     "numpy==2.2.3",
-    "libcst==1.6.0"
+    "libcst==1.7.0"
 ]
 doc = [
     "ansys-sphinx-theme==1.3.3",
