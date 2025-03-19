@@ -189,6 +189,9 @@ if not BUILD_API:
 BUILD_EXAMPLES = True if os.environ.get("BUILD_EXAMPLES", "true") == "true" else False
 if not BUILD_EXAMPLES:
     exclude_patterns.extend(["examples/**"])
+    linkcheck_ignore.extend([
+        r"../examples/",
+    ])
 else:
     extensions.extend(["myst_parser", "nbsphinx"])
     nbsphinx_execute = "always"

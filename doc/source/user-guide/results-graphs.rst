@@ -44,4 +44,4 @@ In the `Data Providers` section of the `Report Style` window, the data providers
 
 Groups, data providers, and elements are the organizing principles of the data provider capability provided by the STK object model. 
 
-To learn more about data providers, their results, and STK graphs and reports, explore `this example <../examples/results-graphs.html>`_.
+To learn more about data providers, their results, and STK graphs and reports, explore `this example <../examples/results-graphs>`_.
