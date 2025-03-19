@@ -4,22 +4,23 @@
 
 # ## Create a new STK scenario
 
-# To create a new scenario, first connect to STK. This tutorial uses STK Desktop.
+# To create a new scenario, first connect to STK. This tutorial uses STK Engine.
 
 # +
-from ansys.stk.core.stkdesktop import STKDesktop
+from ansys.stk.core.stkengine import STKEngine
 
 
 # Connect to the STK Application object
-stk = STKDesktop.start_application(visible=True)
+stk = STKEngine.start_application(no_graphics=False)
+print(f"Using {stk.version}")
 # -
 
-# This creates an instance of the STK application. Setting `visible` to `True` opens the STK window.
+# This creates an instance of the STK application. Setting `no_graphics` to `False` opens the STK window.
 
 # Next, it's time to create a scenario.
 
 # Create a new scenario
-root = stk.root
+root = stk.new_object_root()
 root.new_scenario("MyScenario")
 
 # This creates a new scenario in STK named "MyScenario."
@@ -80,4 +81,4 @@ scenario = root.load_scenario(str(scenario_path))
 # After you're done, you can close the STK application:
 
 # Close the STK application
-stk.quit()
+stk.shutdown()
