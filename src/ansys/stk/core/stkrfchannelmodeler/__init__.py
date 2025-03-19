@@ -167,15 +167,15 @@ class PolarizationType(IntEnum):
     """Vertical"""
     HORIZONTAL = 1
     """Horizontal"""
-    RHCP = 2
+    RIGHT_HAND_CIRCULAR_POLARIZATION = 2
     """RHCP"""
-    LHCP = 3
+    LEFT_HAND_CIRCULAR_POLARIZATION = 3
     """LHCP"""
 
 PolarizationType.VERTICAL.__doc__ = "Vertical"
 PolarizationType.HORIZONTAL.__doc__ = "Horizontal"
-PolarizationType.RHCP.__doc__ = "RHCP"
-PolarizationType.LHCP.__doc__ = "LHCP"
+PolarizationType.RIGHT_HAND_CIRCULAR_POLARIZATION.__doc__ = "RHCP"
+PolarizationType.LEFT_HAND_CIRCULAR_POLARIZATION.__doc__ = "LHCP"
 
 agcls.AgTypeNameMap["PolarizationType"] = PolarizationType
 
