@@ -32,22 +32,22 @@ print(scenario.path)
 # After creating (or loading) the scenario, PySTK enables the creation and manipulation of objects like satellites, aircraft, or ground stations. For example, to add a satellite:
 
 # +
-from ansys.stk.core.stkobjects import Satellite, STKObjectType
+from ansys.stk.core.stkobjects import STKObjectType
 
 
 # Create a satellite in the scenario
-satellite = Satellite(scenario.children.new(STKObjectType.SATELLITE, "MySatellite"))
+satellite = scenario.children.new(STKObjectType.SATELLITE, "MySatellite")
 # -
 
 # To set the satellite's orbit and to set a propagator type:
 
 # +
-from ansys.stk.core.stkobjects import PropagatorSGP4, PropagatorType
+from ansys.stk.core.stkobjects import PropagatorType
 
 
 # Set the satellite's orbit (assuming you want a basic orbit definition)
 satellite.set_propagator_type(PropagatorType.SGP4)  # Using SGP4 propagator
-propagator = PropagatorSGP4(satellite.propagator)
+propagator = satellite.propagator
 propagator.propagate()  # To propagate the orbit
 # -
 
