@@ -35,6 +35,7 @@ STK Desktop
 STKEngine
 STK Engine
 Subpackages
+Tkinter
 Tox
 triangulator
 waypoint
