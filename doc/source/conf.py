@@ -179,6 +179,9 @@ linkcheck_ignore = [
     "https://support.agi.com/3d-models",
     "https://support.agi.com/downloads",
     "https://www.khronos.org/collada/",
+    # TODO: Determine a way to link to examples without breaking the linkcheck
+    # https://github.com/ansys-internal/pystk/issues/657
+    r"../examples/",
 ]
 
 # -- Declare the Jinja context -----------------------------------------------
@@ -189,9 +192,6 @@ if not BUILD_API:
 BUILD_EXAMPLES = True if os.environ.get("BUILD_EXAMPLES", "true") == "true" else False
 if not BUILD_EXAMPLES:
     exclude_patterns.extend(["examples/**"])
-    linkcheck_ignore.extend([
-        r"../examples/",
-    ])
 else:
     extensions.extend(["myst_parser", "nbsphinx"])
     nbsphinx_execute = "always"
