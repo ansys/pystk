@@ -56,15 +56,15 @@ propagator.propagate()  # To propagate the orbit
 # Now save the scenario along with all added objects using PySTK.
 
 # +
-import pathlib
+from pathlib import Path
 
 
 # Create a directory for scenario files
-scenario_directory = pathlib.Path(pathlib.Path.cwd() / "scenario" / "MyScenario")
-pathlib.Path(scenario_directory).mkdir(parents=True, exist_ok=True)
+scenario_directory = Path.cwd() / "scenario" / "MyScenario"
+scenario_directory.mkdir(parents=True, exist_ok=True)
 
 # Save the scenario
-scenario_path = pathlib.Path(scenario_directory / "MyScenario.sc")
+scenario_path = scenario_directory / "MyScenario.sc"
 root.save_as(str(scenario_path))
 root.close_scenario()
 # -
