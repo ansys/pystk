@@ -1,7 +1,7 @@
 Initialization
 ##############
 
-This topic explains how to perform the necessary steps to establish a connection with and prepare PySTK for usage with STK application interfaces and runnable programs.
+This topic explains how to establish a connection and prepare PySTK for usage with STK application interfaces and runnable programs.
 
 Configurations
 ==============

@@ -8,7 +8,7 @@ User guide
         :link-type: doc
         :padding: 2 2 2 2
 
-        Learn how to perform the necessary steps to establish a connection with and prepare PySTK for usage with the STK application.
+        Learn how to establish a connection and prepare PySTK for usage with the STK application.
     
     .. grid-item-card:: :fa:`long-arrow-right` Migrate
         :link: user-guide/migration
