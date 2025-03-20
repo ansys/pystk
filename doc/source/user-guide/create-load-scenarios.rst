@@ -22,4 +22,4 @@ You can create an unlimited number of scenarios with STK; however, only one scen
 STK scenarios in PySTK
 ======================
 
-To learn more about using PySTK to automate the process of creating, saving, and loading scenarios, see :ref:`this example <Creating and loading STK scenarios>`.
+To learn more about using PySTK to automate the process of creating, saving, and loading scenarios, see `this example <../examples/create-load-scenarios>`_.
