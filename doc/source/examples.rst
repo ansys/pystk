@@ -14,6 +14,7 @@ Examples
         :caption: Fundamental concepts
 
         examples/create-load-scenarios
+        examples/results-graphs
 
     Basic examples
     ==============
