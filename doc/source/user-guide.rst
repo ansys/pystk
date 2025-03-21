@@ -16,7 +16,14 @@ User guide
         :padding: 2 2 2 2
 
         Use PySTK to automate the processes of creating, saving, and loading scenarios.
-    
+
+    .. grid-item-card:: :fa:`bar-chart` Results and graphs
+        :link: user-guide/results-graphs
+        :link-type: doc
+        :padding: 2 2 2 2
+
+        Learn how to translate a report into its corresponding set of Data Providers.
+        
     .. grid-item-card:: :fa:`long-arrow-right` Migrate
         :link: user-guide/migration
         :link-type: doc
@@ -38,5 +45,6 @@ User guide
 
    Initialization <user-guide/initialization>
    Create and load scenarios <user-guide/create-load-scenarios>
+   Results and graphs <user-guide/results-graphs>
    Migration <user-guide/migration>
    Code snippets <user-guide/code-snippets>
