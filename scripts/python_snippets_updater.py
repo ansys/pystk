@@ -4,7 +4,6 @@ import _ast
 import ast
 import inspect
 import logging
-import os
 from pathlib import Path
 import re
 import stat
@@ -18,20 +17,11 @@ class SnippetsParser(object):
 
     def __init__(self, doc_snippets_dir):
         self.doc_snippets_dir = doc_snippets_dir
-        self.files_to_parse = []
         self.all_snippets = []
-
-    def _find_py_snippets_files(self):
-        for root, subdirs, files in os.walk(self.doc_snippets_dir):
-            for subdir in subdirs:
-                for file in os.listdir(Path(root).joinpath(subdir)):
-                    if file.endswith("_snippets.py"):
-                        self.files_to_parse.append(Path(root).joinpath(subdir, file))
 
     def parse_all_snippets(self):
         """Parse and return a representation of the PySTK code snippets."""
-        self._find_py_snippets_files()
-        for file in self.files_to_parse:
+        for file in list(self.doc_snippets_dir.glob("**/*_snippets.py")):
             with Path.open(file, "r") as in_file:
                 tree = ast.parse(in_file.read())
                 in_file.seek(0)
@@ -40,14 +30,14 @@ class SnippetsParser(object):
                     type_defintion for type_defintion in tree.body if isinstance(type_defintion, _ast.ClassDef)
                 ]
                 for snippet_class_definition in snippet_class_definitions:
-                    all_functions = [n for n in snippet_class_definition.body if isinstance(n, ast.FunctionDef)]
+                    all_funcs = [n for n in snippet_class_definition.body if isinstance(n, ast.FunctionDef)]
                     snippets = [
-                        function
-                        for function in all_functions
+                        func
+                        for func in all_funcs
                         if len(
                             [
                                 dec
-                                for dec in function.decorator_list
+                                for dec in func.decorator_list
                                 if isinstance(dec, ast.Call)
                                 and hasattr(dec.func, "id")
                                 and dec.func.id == "code_snippet"
@@ -351,33 +341,26 @@ class SnippetsDocstringInjector(libcst.CSTTransformer):
 
         self.docstrings_to_replace = []
 
-        self.all_targets = {}
         self.local_targets = {}
         self.current_class = None
 
     def inject(self):
         """Rewrite docstrings in .py files based on the snippets defined in doc_snippets_tests."""
+        targets_per_file = {}
         for snippet in self.all_snippets:
-            locations = self._compute_identifying_location_info(snippet)
+            locations = self._compute_identifying_location_info(snippet["eid"])
             content = {"desc": snippet["description"], "code": snippet["body"]}
 
             for location in locations:
-                if location not in self.all_targets.keys():
-                    self.all_targets[location] = []
+                filename = location.rsplit(":", 1)[0]
+                if filename not in targets_per_file.keys():
+                    targets_per_file.setdefault(filename, {"method_targets": {}, "class_targets": {}})
 
-                self.all_targets[location].append(content)
-
-        targets_per_file = {}
-        for target, content in self.all_targets.items():
-            filename = target.rsplit(":", 1)[0]
-            if filename not in targets_per_file.keys():
-                targets_per_file[filename] = {"method_targets": {}, "class_targets": {}}
-
-            element_name = target.rsplit(":", 1)[1]
-            if "." in element_name:
-                targets_per_file[filename]["method_targets"][element_name] = content
-            else:
-                targets_per_file[filename]["class_targets"][element_name] = content
+                element_name = location.rsplit(":", 1)[1]
+                if "." in element_name:
+                    targets_per_file[filename]["method_targets"].setdefault(element_name, []).append(content)
+                else:
+                    targets_per_file[filename]["class_targets"].setdefault(element_name, []).append(content)
 
         self._transform_modules(targets_per_file)
 
@@ -478,8 +461,8 @@ class SnippetsDocstringInjector(libcst.CSTTransformer):
         else:
             raise Warning(f"Library specified in eid does not map to a Python module: {eid_comp}")
 
-    def _compute_identifying_location_info(self, snippet_repr):
-        unique_locations = snippet_repr["eid"].split("|")
+    def _compute_identifying_location_info(self, eid):
+        unique_locations = eid.split("|")
 
         for i, location in enumerate(unique_locations):
             location_components = location.strip().split("~")
