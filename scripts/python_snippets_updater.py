@@ -12,85 +12,6 @@ import textwrap
 
 import libcst
 
-try:
-    import xml.etree.cElementTree as ElementTree
-except ImportError:
-    import xml.etree.ElementTree as ElementTree
-
-
-def read_mappings(xml_mappings_dir: str):
-    """Retrieve a list mapping STK Python API names to corresponding PySTK names."""
-    all_mappings = {"types": [], "methods": []}
-    all_new_names = set()
-    xml_migration_files = Path(xml_mappings_dir).glob("*.xml")
-    for xml_migration_file in xml_migration_files:
-        logging.info(f"Preparing migrations from {Path(xml_migration_file).name}")
-
-        etree = ElementTree.parse(xml_migration_file)
-        root = etree.getroot()
-
-        package = Path(xml_migration_file).stem
-
-        mappings = []
-        for mapping in root.findall("./Mapping"):
-            if "ParentScope" in mapping.attrib:
-                parent_scope = mapping.attrib["ParentScope"]
-            else:
-                parent_scope = None
-
-            all_new_names.add(mapping.attrib["NewName"])
-
-            if "Category" in mapping.attrib:
-                category = mapping.attrib["Category"]
-
-                if category not in ["method", "class", "enum_type", "enum_value", "interface"]:
-                    # filter out categories not relevant to current task
-                    # (such as "argument")
-                    continue
-
-                if category == "method":
-                    all_mappings["methods"].append(
-                        {
-                            "package": package,
-                            "parent_scope": parent_scope,
-                            "old_name": mapping.attrib["OldName"],
-                            "new_name": mapping.attrib["NewName"],
-                            "kind": category,
-                        }
-                    )
-                elif category in ["class", "enum_type", "interface"]:
-                    all_mappings["types"].append(
-                        {
-                            "package": package,
-                            "parent_scope": parent_scope,
-                            "old_name": mapping.attrib["OldName"],
-                            "new_name": mapping.attrib["NewName"],
-                            "kind": category,
-                        }
-                    )
-
-                mappings.append(
-                    {
-                        "package": package,
-                        "parent_scope": parent_scope,
-                        "old_name": mapping.attrib["OldName"],
-                        "new_name": mapping.attrib["NewName"],
-                        "kind": category,
-                    }
-                )
-
-    return all_mappings, all_new_names
-
-
-eid_to_module_map = {
-    "STKObjects": ["stkobjects", "__init__.py"],
-    "AgUiApplicationLib": ["uiapplication.py"],
-    "AgStkGatorLib": ["stkobjects", "astrogator.py"],
-    "AgSTKVgtLib": ["vgt.py"],
-    "AgSTKGraphicsLib": ["graphics.py"],
-    "AgStkAvtrLib": ["stkobjects", "aviator", "__init__.py"],
-}
-
 
 class SnippetsParser(object):
     """A utility for parsing PySTK code snippets."""
@@ -285,18 +206,6 @@ class SnippetsRSTGenerator(object):
 
 #         self.all_targets = {}
 
-#         all_mappings_repr, _ = read_mappings(xml_mappings_dir=self.mappings_dir)
-#         self.easy_hash = {}
-#         for mapping_repr in all_mappings_repr["types"] + all_mappings_repr["methods"]:
-#             components = mapping_repr["package"].replace("agi.stk12.", "").split(".")
-#             components[-1] = components[-1] + ".py"
-#             module_path = Path(self.api_src_dir).joinpath(*components)
-#             parent_scope = ""
-#             if "parent_scope" in mapping_repr.keys() and mapping_repr["parent_scope"] is not None:
-#                 parent_scope = mapping_repr["parent_scope"] + "."
-#             old_id = str(module_path) + ":" + parent_scope + mapping_repr["old_name"]
-#             self.easy_hash[old_id] = mapping_repr["new_name"]
-
 #     def inject(self):
 #         for snippet in self.all_snippets:
 #             locations = self._compute_identifying_location_info(snippet)
@@ -448,18 +357,6 @@ class SnippetsDocstringInjector(libcst.CSTTransformer):
         self.local_targets = {}
         self.current_class = None
 
-        all_mappings_repr, _ = read_mappings(xml_mappings_dir=self.mappings_dir)
-        self.easy_hash = {}
-        for mapping_repr in all_mappings_repr["types"] + all_mappings_repr["methods"]:
-            components = mapping_repr["package"].replace("agi.stk12.", "").split(".")
-            components[-1] = components[-1] + ".py"
-            module_path = Path(self.api_src_dir).joinpath(*components)
-            parent_scope = ""
-            if "parent_scope" in mapping_repr.keys() and mapping_repr["parent_scope"] is not None:
-                parent_scope = mapping_repr["parent_scope"] + "."
-            old_id = str(module_path) + ":" + parent_scope + mapping_repr["old_name"]
-            self.easy_hash[old_id] = mapping_repr["new_name"]
-
     def inject(self):
         """Rewrite docstrings in .py files based on the snippets defined in doc_snippets_tests."""
         for snippet in self.all_snippets:
@@ -488,7 +385,9 @@ class SnippetsDocstringInjector(libcst.CSTTransformer):
 
     def _transform_modules(self, targets_per_file):
         for path_number, path in enumerate(targets_per_file.keys()):
-            print(f"Updating docstrings... file {path_number + 1} of {len(targets_per_file.keys())}.")
+            print(
+                f"Checking for updates to docstrings in .py files... file {path_number + 1} of {len(targets_per_file.keys())}."
+            )
             self._transform_module(path, targets_per_file[str(path)])
 
     def _transform_module(self, path: Path, local_targets: dict):
@@ -572,23 +471,26 @@ class SnippetsDocstringInjector(libcst.CSTTransformer):
         formatted_snippets = "\n".join(formatted_snippets_lines)
         return formatted_snippets
 
+    def _filename_from_eid_component(self, eid_comp):
+        libname_path_stem = self.api_src_dir.joinpath(*eid_comp.split("."))
+        if libname_path_stem.with_suffix(".py").is_file():
+            return libname_path_stem.with_suffix(".py")
+        elif libname_path_stem.joinpath("__init__.py").is_file():
+            return libname_path_stem.joinpath("__init__.py")
+        else:
+            raise Warning(f"Library specified in eid does not map to a Python module: {eid_comp}")
+
     def _compute_identifying_location_info(self, snippet_repr):
         unique_locations = snippet_repr["eid"].split("|")
 
         for i, location in enumerate(unique_locations):
             location_components = location.strip().split("~")
-            libname = location_components[0]
+            filename = self._filename_from_eid_component(location_components[0])
             class_name = location_components[1]
             method_name = None if len(location_components) == 2 else location_components[2]
-            unique_locations[i] = str(Path(self.api_src_dir).joinpath(*eid_to_module_map[libname])) + ":"
+            unique_locations[i] = f"{filename}:{class_name}"
             if method_name is not None:
-                unique_locations[i] += (
-                    self.easy_hash[unique_locations[i] + class_name]
-                    + "."
-                    + self.easy_hash[unique_locations[i] + class_name + "." + method_name]
-                )
-            else:
-                unique_locations[i] += self.easy_hash[unique_locations[i] + class_name]
+                unique_locations[i] += "." + method_name
 
         return unique_locations
 

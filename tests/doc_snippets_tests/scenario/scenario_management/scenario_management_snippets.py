@@ -70,7 +70,7 @@ class ScenarioManagementSnippets(CodeSnippetsTestBase):
         name="OpenVdfSTK",
         description="Open a Viewer Data File",
         category="Scenario | Scenario Management",
-        eid="STKObjects~IAgStkObjectRoot | STKObjects~IAgStkObjectRoot~LoadVDF",
+        eid="stkobjects~StkObjectRoot | stkobjects~StkObjectRoot~load_vdf",
     )
     def OpenVdfSTKSnippet(self, root):
         # StkObjectRoot root: STK Object Model Root
@@ -89,7 +89,7 @@ class ScenarioManagementSnippets(CodeSnippetsTestBase):
         name="CloseScenario",
         description="Close an open Scenario",
         category="Scenario | Scenario Management",
-        eid="STKObjects~IAgStkObjectRoot | STKObjects~IAgStkObjectRoot~CloseScenario",
+        eid="stkobjects~StkObjectRoot | stkobjects~StkObjectRoot~close_scenario",
     )
     def CloseScenarioSnippet(self, root):
         # StkObjectRoot root: STK Object Model Root
@@ -107,7 +107,7 @@ class ScenarioManagementSnippets(CodeSnippetsTestBase):
         name="CloseSTK",
         description="Close STK",
         category="Scenario | Scenario Management",
-        eid="AgUiApplicationLib~IAgUiApplication",
+        eid="uiapplication~UiApplication",
     )
     def CloseSTKSnippet(self, uiApplication):
         # AgUiApplication uiApplication: STK Application
@@ -125,7 +125,7 @@ class ScenarioManagementSnippets(CodeSnippetsTestBase):
         name="CreateScenario",
         description="Create a new Scenario",
         category="Scenario | Scenario Management",
-        eid="STKObjects~IAgStkObjectRoot | STKObjects~IAgStkObjectRoot~NewScenario",
+        eid="stkobjects~StkObjectRoot | stkobjects~StkObjectRoot~new_scenario",
     )
     def CreateScenarioSnippet(self, root):
         # StkObjectRoot root: STK Object Model Root
@@ -138,7 +138,7 @@ class ScenarioManagementSnippets(CodeSnippetsTestBase):
         name="SetUnitPreferences",
         description="Set unit preferences for Object Model",
         category="Scenario | Scenario Management",
-        eid="STKObjects~IAgStkObjectRoot | STKObjects~IAgStkObjectRoot~UnitPreferences",
+        eid="stkobjects~StkObjectRoot | stkobjects~StkObjectRoot~units_preferences",
     )
     def SetUnitPreferencesSnippet(self, root):
         # StkObjectRoot root: STK Object Model Root
@@ -153,7 +153,7 @@ class ScenarioManagementSnippets(CodeSnippetsTestBase):
         name="ScenarioAnimationMode",
         description="Change animation mode",
         category="Scenario | Scenario Management",
-        eid="STKObjects~IAgAnimation",
+        eid="stkobjects~IAnimation",
     )
     def ScenarioAnimationModeSnippet(self, root):
         # StkObjectRoot root: STK Object Model Root
@@ -171,7 +171,7 @@ class ScenarioManagementSnippets(CodeSnippetsTestBase):
         name="ScenarioReset",
         description="Reset the scenario time",
         category="Scenario | Scenario Management",
-        eid="STKObjects~IAgAnimation",
+        eid="stkobjects~IAnimation",
     )
     def ScenarioResetSnippet(self, root):
         # StkObjectRoot root: STK Object Model Root
@@ -185,7 +185,7 @@ class ScenarioManagementSnippets(CodeSnippetsTestBase):
         name="ScenarioFont",
         description="Change scenario font",
         category="Scenario | Scenario Management",
-        eid="STKObjects~IAgScVO",
+        eid="stkobjects~ScenarioGraphics3D",
     )
     def ScenarioFontSnippet(self, root):
         # StkObjectRoot root: STK Object Model Root

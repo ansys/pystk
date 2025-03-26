@@ -67,7 +67,7 @@ class CameraSnippets(CodeSnippetsTestBase):
         name="CameraExtents",
         description="Change camera view to Imagery Extents",
         category="Camera",
-        eid="AgSTKGraphicsLib~IAgStkGraphicsCamera",
+        eid="graphics~Camera",
     )
     def CameraExtentsSnippet(self, scenario, imageryTile):
         # Scenario scenario: Scenario object
@@ -86,7 +86,7 @@ class CameraSnippets(CodeSnippetsTestBase):
         name="CameraReferenceFrame",
         description="Change camera reference frame",
         category="Camera",
-        eid="AgSTKGraphicsLib~IAgStkGraphicsCamera",
+        eid="graphics~Camera",
     )
     def CameraReferenceFrameSnippet(self, root, scenario):
         # Scenario scenario: Scenario object

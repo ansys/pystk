@@ -75,7 +75,7 @@ class SatelliteSnippets(CodeSnippetsTestBase):
         name="CreateSatellite",
         description="Create a satellite (on the current scenario central body)",
         category="STK Objects | Satellite",
-        eid="STKObjects~IAgSatellite",
+        eid="stkobjects~Satellite",
     )
     def CreateSatelliteSnippet(self, root):
         # StkObjectRoot root: STK Object Model Root
@@ -94,7 +94,7 @@ class SatelliteSnippets(CodeSnippetsTestBase):
         name="SatelliteInitialState",
         description="Set initial state of satellite and propagate",
         category="STK Objects | Satellite",
-        eid="STKObjects~IAgOrbitStateClassical",
+        eid="stkobjects~OrbitStateClassical",
     )
     def SatelliteInitialStateSnippet(self, satellite):
         # Satellite satellite: Satellite object
@@ -130,7 +130,7 @@ class SatelliteSnippets(CodeSnippetsTestBase):
         name="J4Satellite",
         description="Set satellite propagator to J4 and assign cartesian position",
         category="STK Objects | Satellite",
-        eid="STKObjects~IAgVePropagatorJ4Perturbation",
+        eid="stkobjects~PropagatorJ4Perturbation",
     )
     def J4SatelliteSnippet(self, satellite):
         # Satellite satellite: Satellite object
@@ -154,7 +154,7 @@ class SatelliteSnippets(CodeSnippetsTestBase):
         name="HPOPSatellite",
         description="Set satellite propagator to HPOP and set force model properties",
         category="STK Objects | Satellite",
-        eid="STKObjects~IAgVePropagatorHPOP",
+        eid="stkobjects~PropagatorHPOP",
     )
     def HPOPSatelliteSnippet(self, satellite):
         # Satellite satellite: Satellite object
@@ -201,7 +201,7 @@ class SatelliteSnippets(CodeSnippetsTestBase):
         name="AstrogatorSatellite",
         description="Set satellite propagator to Astrogator and clear segments",
         category="STK Objects | Satellite",
-        eid="AgStkGatorLib~IAgVADriverMCS",
+        eid="stkobjects.astrogator~MCSDriver",
     )
     def AstrogatorSatelliteSnippet(self, satellite):
         # Satellite satellite: Satellite object
@@ -223,7 +223,7 @@ class SatelliteSnippets(CodeSnippetsTestBase):
         name="SPICESatellite",
         description="Set satellite propagator to SPICE and propagate",
         category="STK Objects | Satellite",
-        eid="STKObjects~IAgVePropagatorSPICE",
+        eid="stkobjects~PropagatorSPICE",
     )
     def SPICESatelliteSnippet(self, root, satellite):
         # Satellite satellite: Satellite object
@@ -255,7 +255,7 @@ class SatelliteSnippets(CodeSnippetsTestBase):
         name="SGP4Satellite",
         description="Set satellite propagator to SGP4 and propagate",
         category="STK Objects | Satellite",
-        eid="STKObjects~IAgVePropagatorSGP4",
+        eid="stkobjects~PropagatorSGP4",
     )
     def SGP4SatelliteSnippet(self, root, satellite):
         # Satellite satellite: Satellite object
@@ -281,7 +281,7 @@ class SatelliteSnippets(CodeSnippetsTestBase):
         name="ExportEphemerisFile",
         description="Export an ephemeris file to scenario folder",
         category="STK Objects | Satellite",
-        eid="STKObjects~IAgSaExportTools",
+        eid="stkobjects~SatelliteExportTools",
     )
     def ExportEphemerisFileSnippet(self, root, satellite):
         # StkObjectRoot root: STK Object Model Root
@@ -304,7 +304,7 @@ class SatelliteSnippets(CodeSnippetsTestBase):
         name="SatelliteAttitudeSpinning",
         description="Set satellite attitude basic spinning",
         category="STK Objects | Satellite",
-        eid="STKObjects~IAgSatellite | STKObjects~IAgVeOrbitAttitudeStandard",
+        eid="stkobjects~Satellite | stkobjects~AttitudeStandardOrbit",
     )
     def SatelliteAttitudeSpinningSnippet(self, satellite):
         # Satellite satellite: Satellite object
@@ -329,7 +329,7 @@ class SatelliteSnippets(CodeSnippetsTestBase):
         name="SatelliteAttitudeTarget",
         description="Set satellite attitude targeting",
         category="STK Objects | Satellite",
-        eid="STKObjects~IAgSatellite | STKObjects~IAgVeOrbitAttitudeStandard",
+        eid="stkobjects~Satellite | stkobjects~AttitudeStandardOrbit",
     )
     def SatelliteAttitudeTargetSnippet(self, satellite):
         # Satellite satellite: Satellite object
@@ -352,7 +352,7 @@ class SatelliteSnippets(CodeSnippetsTestBase):
         name="SatelliteAttitudeExternal",
         description="Set satellite attitude external",
         category="STK Objects | Satellite",
-        eid="STKObjects~IAgSatellite | STKObjects~IAgVeOrbitAttitudeStandard",
+        eid="stkobjects~Satellite | stkobjects~AttitudeStandardOrbit",
     )
     def SatelliteAttitudeExternalSnippet(self, satellite):
         # Satellite satellite: Satellite object
@@ -375,7 +375,7 @@ class SatelliteSnippets(CodeSnippetsTestBase):
         name="SatelliteGraphicsResolution",
         description="Change the graphics resolution of the orbit for a smooth path",
         category="STK Objects | Satellite | Graphics",
-        eid="STKObjects~IAgVeGfxPassResolution",
+        eid="stkobjects~VehicleGraphics2DPassResolution",
     )
     def SatelliteGraphicsResolutionSnippet(self, satellite):
         # Satellite satellite: Satellite object
@@ -396,7 +396,7 @@ class SatelliteSnippets(CodeSnippetsTestBase):
         name="BasicGraphics2D",
         description="Set 2D Graphics display properties",
         category="STK Objects | Satellite | Graphics",
-        eid="STKObjects~IAgVeGfxAttributesBasic",
+        eid="stkobjects~IVehicleGraphics2DAttributesBasic",
     )
     def BasicGraphics2DSnippet(self, satellite):
         # StkObjectRoot root: STK Object Model root
@@ -427,7 +427,7 @@ class SatelliteSnippets(CodeSnippetsTestBase):
         name="CustomGraphics2D",
         description="Set 2D Display times to Custom and add intervals",
         category="STK Objects | Satellite | Graphics",
-        eid="STKObjects~IAgVeGfxAttributesCustom",
+        eid="stkobjects~VehicleGraphics2DAttributesCustom",
     )
     def CustomGraphics2DSnippet(self, root, satellite):
         # StkObjectRoot root: STK Object Model root
@@ -467,7 +467,7 @@ class SatelliteSnippets(CodeSnippetsTestBase):
         name="GraphicsElevationContours",
         description="Set 2D/3D Elevation Contours",
         category="STK Objects | Satellite | Graphics",
-        eid="STKObjects~IAgVeGfxElevContours",
+        eid="stkobjects~VehicleGraphics2DElevationContours",
     )
     def GraphicsElevationContoursSnippet(self, satellite):
         # Satellite satellite: Satellite object
@@ -493,7 +493,7 @@ class SatelliteSnippets(CodeSnippetsTestBase):
         name="GraphicsRangeContours",
         description="Set 2D/3D Range Contours",
         category="STK Objects | Satellite | Graphics",
-        eid="STKObjects~IAgGfxRangeContours",
+        eid="stkobjects~Graphics2DRangeContours",
     )
     def GraphicsRangeContoursSnippet(self, satellite):
         # Satellite satellite: Satellite object
@@ -523,7 +523,7 @@ class SatelliteSnippets(CodeSnippetsTestBase):
         name="GraphicsSwath",
         description="Set 2D Swath",
         category="STK Objects | Satellite | Graphics",
-        eid="STKObjects~IAgVeGfxSwath",
+        eid="stkobjects~VehicleGraphics2DSwath",
     )
     def GraphicsSwathSnippet(self, satellite):
         # Satellite satellite: Satellite object
@@ -547,7 +547,7 @@ class SatelliteSnippets(CodeSnippetsTestBase):
         name="GraphicsLighting",
         description="Set Vehicle Lighting Properties",
         category="STK Objects | Satellite | Graphics",
-        eid="AgSTKGraphicsLib~IAgStkGraphicsLighting",
+        eid="graphics~Lighting",
     )
     def GraphicsLightingSnippet(self, satellite):
         # Satellite satellite: Satellite object
@@ -582,7 +582,7 @@ class SatelliteSnippets(CodeSnippetsTestBase):
         name="GraphicsPass",
         description="Set 2D/3D Pass Display Properties",
         category="STK Objects | Satellite | Graphics",
-        eid="STKObjects~IAgVeGfxOrbitPassData",
+        eid="stkobjects~VehicleGraphics2DOrbitPassData",
     )
     def GraphicsPassSnippet(self, satellite):
         # Satellite satellite: Satellite object
@@ -617,7 +617,7 @@ class SatelliteSnippets(CodeSnippetsTestBase):
         name="GraphicsLabel",
         description="Change the Display Label of the vehicle",
         category="STK Objects | Satellite | Graphics",
-        eid="STKObjects~IAgSaGraphics",
+        eid="stkobjects~SatelliteGraphics",
     )
     def GraphicsLabelSnippet(self, satellite):
         # Satellite satellite: Satellite object
@@ -638,7 +638,7 @@ class SatelliteSnippets(CodeSnippetsTestBase):
         name="GraphicsDataDisplay",
         description="Add a Data Display to the 3D Window",
         category="STK Objects | Satellite | Graphics",
-        eid="STKObjects~IAgVODataDisplayElement",
+        eid="stkobjects~Graphics3DDataDisplayElement",
     )
     def GraphicsDataDisplaySnippet(self, satellite):
         # Satellite satellite: Satellite object
@@ -666,7 +666,7 @@ class SatelliteSnippets(CodeSnippetsTestBase):
         name="GraphicsDropline",
         description="Display drop lines in 3D Window",
         category="STK Objects | Satellite | Graphics",
-        eid="STKObjects~IAgVeVODropLinePathItemCollection",
+        eid="stkobjects~VehicleGraphics3DDropLinePathItemCollection",
     )
     def GraphicsDroplineSnippet(self, satellite):
         # Satellite satellite: Satellite object
@@ -691,7 +691,7 @@ class SatelliteSnippets(CodeSnippetsTestBase):
         name="GraphicsModel",
         description="Change the 3D Model and marker properties",
         category="STK Objects | Satellite | Graphics",
-        eid="STKObjects~IAgSaVOModel",
+        eid="stkobjects~SatelliteGraphics3DModel",
     )
     def GraphicsModelSnippet(self, satellite):
         # Satellite satellite: Satellite object
@@ -718,7 +718,7 @@ class SatelliteSnippets(CodeSnippetsTestBase):
         name="GraphicsDetails",
         description="Modify the Detail Thresholds Levels",
         category="STK Objects | Satellite | Graphics",
-        eid="STKObjects~IAgVODetailThreshold",
+        eid="stkobjects~Graphics3DDetailThreshold",
     )
     def GraphicsDetailsSnippet(self, satellite):
         # Satellite satellite: Satellite object
@@ -744,7 +744,7 @@ class SatelliteSnippets(CodeSnippetsTestBase):
         name="GraphicsOrbitSystem",
         description="Add Fixed System Orbit System in 3D Display",
         category="STK Objects | Satellite | Graphics",
-        eid="STKObjects~IAgVeVOSystemsCollection",
+        eid="stkobjects~VehicleGraphics3DSystemsCollection",
     )
     def GraphicsOrbitSystemSnippet(self, satellite):
         # Satellite satellite: Satellite object
@@ -770,7 +770,7 @@ class SatelliteSnippets(CodeSnippetsTestBase):
         name="AddGraphicsVector",
         description="Add a Vector to display in 3D",
         category="STK Objects | Satellite | Graphics",
-        eid="STKObjects~IAgVOVector",
+        eid="stkobjects~Graphics3DVector",
     )
     def AddGraphicsVectorSnippet(self, satellite):
         # Satellite satellite: Satellite object
