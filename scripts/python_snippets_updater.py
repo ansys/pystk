@@ -198,11 +198,10 @@ class SnippetsRSTGenerator(object):
 #         "AgStkAvtrLib": ["stkobjects", "aviator"],
 #     }
 
-#     def __init__(self, api_src_dir: Path, api_doc_dir: Path, all_snippets: Path, mappings_dir: Path = None):
+#     def __init__(self, api_src_dir: Path, api_doc_dir: Path, all_snippets: Path):
 #         self.api_src_dir = api_src_dir
 #         self.api_doc_dir = api_doc_dir
 #         self.all_snippets = all_snippets
-#         self.mappings_dir = mappings_dir
 
 #         self.all_targets = {}
 
@@ -346,10 +345,9 @@ class SnippetsRSTGenerator(object):
 class SnippetsDocstringInjector(libcst.CSTTransformer):
     """A utility for making changes to docstrings in .py files based on the state of the doc_snippets_tests directory."""
 
-    def __init__(self, api_src_dir, all_snippets, mappings_dir=None):
+    def __init__(self, api_src_dir, all_snippets):
         self.api_src_dir = api_src_dir
         self.all_snippets = all_snippets
-        self.mappings_dir = mappings_dir
 
         self.docstrings_to_replace = []
 
@@ -500,9 +498,6 @@ if __name__ == "__main__":
 
     snippets_dir = pystk_root_dir / "tests" / "doc_snippets_tests"
     src_core_dir = pystk_root_dir / "src" / "ansys" / "stk" / "core"
-    mappings_dir = (
-        pystk_root_dir / "src" / "ansys" / "stk" / "core" / "tools" / "api_migration_assistant" / "api-mappings"
-    )
     doc_core_dir = pystk_root_dir / "doc" / "source" / "source" / "ansys" / "stk" / "core"
 
     combined_snippets_rst_path = pystk_root_dir / "doc" / "source" / "user-guide" / "code-snippets.rst"
@@ -513,9 +508,7 @@ if __name__ == "__main__":
     logging.info(f"Done parsing PySTK-migrated snippets in {str(snippets_dir)}")
 
     logging.info("Injecting PySTK-migrated snippets into PySTK docstrings")
-    pystk_snippets_docstring_injector = SnippetsDocstringInjector(
-        api_src_dir=src_core_dir, all_snippets=all_snippets, mappings_dir=mappings_dir
-    )
+    pystk_snippets_docstring_injector = SnippetsDocstringInjector(api_src_dir=src_core_dir, all_snippets=all_snippets)
     pystk_snippets_docstring_injector.inject()
     logging.info("Done injecting PySTK-migrated snippets into PySTK docstrings")
 
@@ -527,6 +520,6 @@ if __name__ == "__main__":
     logging.info("Done creating a reStructuredText file with all of the PySTK-migrated snippets")
 
     # logging.info(f"Injecting PySTK-migrated snippets into PySTK Sphinx documentation")
-    # pystk_snippets_rst_injector = SnippetsRSTInjector(api_src_dir=src_core_dir, api_doc_dir=doc_core_dir, all_snippets=all_snippets, mappings_dir=mappings_dir)
+    # pystk_snippets_rst_injector = SnippetsRSTInjector(api_src_dir=src_core_dir, api_doc_dir=doc_core_dir, all_snippets=all_snippets)
     # pystk_snippets_rst_injector.inject()
     # logging.info(f"Done injecting PySTK-migrated snippets into PySTK Sphinx documentation")
