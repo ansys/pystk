@@ -139,6 +139,10 @@ combine-as-imports = true
 force-sort-within-sections = true
 known-first-party = ["ansys"]
 
+[tool.ruff.lint.pep8-naming]
+# Ignore overridden ast/libcst functions
+extend-ignore-names = ["visit_*", "leave_*"]
+
 # TODO: the following configuration has no effect, see issue
 # https://github.com/codespell-project/codespell/issues/2375
 # At the moment, all codespell configuration is done in the pre-commit file.
