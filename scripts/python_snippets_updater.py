@@ -21,7 +21,7 @@ class SnippetsParser(object):
 
     def parse_all_snippets(self):
         """Parse and return a representation of the PySTK code snippets."""
-        for file in list(self.doc_snippets_dir.glob("**/*_snippets.py")):
+        for file in list(self.doc_snippets_dir.rglob("*_snippets.py")):
             with Path.open(file, "r") as in_file:
                 tree = ast.parse(in_file.read())
                 in_file.seek(0)
@@ -178,158 +178,155 @@ class SnippetsRSTGenerator(object):
                 )
 
 
-# class SnippetsRSTInjector(object):
-#     eid_to_module_documentation_map = {
-#         "STKObjects": ["stkobjects"],
-#         "AgUiApplicationLib": ["uiapplication"],
-#         "AgStkGatorLib": ["stkobjects", "astrogator"],
-#         "AgSTKVgtLib": ["vgt"],
-#         "AgSTKGraphicsLib": ["graphics"],
-#         "AgStkAvtrLib": ["stkobjects", "aviator"],
-#     }
+class SnippetsRSTInjector(object):
+    """A utility for making changes to docstrings in .rst files based on the state of the doc_snippets_tests directory."""
 
-#     def __init__(self, api_src_dir: Path, api_doc_dir: Path, all_snippets: Path):
-#         self.api_src_dir = api_src_dir
-#         self.api_doc_dir = api_doc_dir
-#         self.all_snippets = all_snippets
+    def __init__(self, api_src_dir: Path, api_doc_dir: Path, all_snippets: Path):
+        self.api_src_dir = api_src_dir
+        self.api_doc_dir = api_doc_dir
+        self.all_snippets = all_snippets
 
-#         self.all_targets = {}
+        self.class_targets = {}
+        self.method_targets = {}
+        for snippet in self.all_snippets:
+            locations = self._compute_identifying_location_info(snippet)
+            content = {"desc": snippet["description"], "code": snippet["body"]}
 
-#     def inject(self):
-#         for snippet in self.all_snippets:
-#             locations = self._compute_identifying_location_info(snippet)
-#             content = {"desc": snippet["description"], "code": snippet["body"]}
+            for location in locations:
+                if ".rst:" in location:
+                    self.method_targets.setdefault(location, []).append(content)
+                else:
+                    self.class_targets.setdefault(location, []).append(content)
 
-#             for location in locations:
-#                 if location not in self.all_targets.keys():
-#                     self.all_targets[location] = []
+    def _format_class_examples(self, filename):
+        if filename in self.class_targets.keys():
+            all_examples = ""
+            for content in self.class_targets[filename]:
+                all_examples += content["desc"] + "\n\n"
+                all_examples += ".. code-block:: python\n\n"
+                all_examples += textwrap.indent(content["code"], "    ") + "\n\n\n"
 
-#                 self.all_targets[location].append(content)
+            return f"""Examples\n--------\n\n{all_examples}"""
 
-#         for target, all_content in self.all_targets.items():
-#             original_filename, temp_filename = "", ""
-#             if not Path(target.rsplit(":", 1)[0]).is_file():
-#                 target_location = 0
-#                 original_content = []
-#                 original_filename = target
-#                 temp_filename = target.replace(".rst", "_temp.rst")
-#                 with Path.open(original_filename, "r") as in_file:
-#                     original_content = in_file.readlines()
-#                     target_location = original_content.index("Import detail\n")
+        return ""
 
-#                 with Path.open(temp_filename, "w") as out_file:
-#                     for line in original_content[:target_location]:
-#                         out_file.write(line)
+    def inject_class_docstrings(self):
+        """Update class docstring examples in .rst files."""
+        for filename in self.api_doc_dir.rglob("*.rst"):
+            with Path.open(filename, "r") as in_file:
+                original_content = in_file.read()
 
-#                     out_file.write("Examples\n")
-#                     out_file.write("--------\n")
+            matched = re.match(r"([\S\s]*)(Examples\n--------[\S\s]*?)(Import detail[\S\s]*)", original_content)
 
-#                     examples_template = """
-#                     {}
+            if matched:
+                with Path.open(filename, "w") as out_file:
+                    out_file.seek(0)
+                    out_file.write(matched.group(1))
+                    out_file.write(self._format_class_examples(str(filename)))
+                    out_file.write(matched.group(3))
+                    out_file.truncate()
 
-#                     .. code-block:: python
+    def remove_method_docstring_examples(self):
+        """Remove docstring examples from method docstrings in .rst files."""
+        for filename in self.api_doc_dir.rglob("*.rst"):
+            with Path.open(filename, "r") as in_file:
+                original_content = in_file.read()
+                in_file.close()
 
-#                     {}
+            matched = re.findall(
+                r"(?:property::|method::)[\S\s]*?([ \t]*Examples\s*--------[\S\s]*?)(?:\.\. py:|Method detail|$)",
+                original_content,
+            )
 
-#                     """
-#                     for content in all_content:
-#                         out_file.write(
-#                             textwrap.dedent(examples_template).format(
-#                                 content["desc"], textwrap.indent(content["code"], "    ")
-#                             )
-#                         )
+            for method_examples in matched:
+                original_content = original_content.replace(method_examples, "")
 
-#                     out_file.write("\n")
+                with Path.open(filename, "w") as out_file:
+                    out_file.seek(0)
+                    out_file.write(original_content)
+                    out_file.truncate()
+                    out_file.close()
 
-#                     start_writing = False
-#                     for line in original_content[target_location:]:
-#                         if "Import detail" in line:
-#                             start_writing = True
-#                         if start_writing:
-#                             out_file.write(line)
-#             else:
-#                 target_location = -1
-#                 original_content = []
-#                 original_filename = target.rsplit(":", 1)[0]
-#                 temp_filename = target.rsplit(":", 1)[0].replace(".rst", "_temp.rst")
-#                 with Path.open(original_filename, "r") as in_file:
-#                     original_content = in_file.readlines()
-#                     member_name = str(target.rsplit(":", 1)[1])
-#                     if (".. py:property:: " + member_name + "\n") in original_content:
-#                         target_location = original_content.index(".. py:property:: " + member_name + "\n") + 1
-#                     else:
+    def add_method_docstring_examples(self):
+        """Re-add docstring examples to method docstrings in .rst files."""
+        for target in self.method_targets:
+            print(target)
 
-#                         def match_till_beginning_of_argument_list(line):
-#                             return line.startswith(".. py:method:: " + member_name + "(")
+    #     with Path.open(filename, "r") as in_file:
+    #         original_content = in_file.read()
 
-#                         method_line = [
-#                             line for line in original_content if match_till_beginning_of_argument_list(line)
-#                         ][0]
-#                         target_location = original_content.index(method_line) + 1
+    #     target_location = -1
+    #     original_content = []
+    #     original_filename = target.rsplit(":", 1)[0]
+    #     temp_filename = target.rsplit(":", 1)[0].replace(".rst", "_temp.rst")
+    #     with Path.open(original_filename, "r") as in_file:
+    #         original_content = in_file.readlines()
+    #         member_name = str(target.rsplit(":", 1)[1])
+    #         if (".. py:property:: " + member_name + "\n") in original_content:
+    #             target_location = original_content.index(".. py:property:: " + member_name + "\n") + 1
+    #         else:
 
-#                     while (
-#                         ".. py:method::" not in original_content[target_location]
-#                         and ".. py:property::" not in original_content[target_location]
-#                     ):
-#                         target_location += 1
+    #             def match_till_beginning_of_argument_list(line):
+    #                 return line.startswith(".. py:method:: " + member_name + "(")
 
-#                 with Path.open(temp_filename, "w") as out_file:
-#                     for line in original_content[:target_location]:
-#                         out_file.write(line)
+    #             method_line = [
+    #                 line for line in original_content if match_till_beginning_of_argument_list(line)
+    #             ][0]
+    #             target_location = original_content.index(method_line) + 1
 
-#                     out_file.write("    Examples\n")
-#                     out_file.write("    --------\n")
+    #         while (
+    #             ".. py:method::" not in original_content[target_location]
+    #             and ".. py:property::" not in original_content[target_location]
+    #         ):
+    #             target_location += 1
 
-#                     examples_template = """
-#                     {}
+    #     with Path.open(temp_filename, "w") as out_file:
+    #         for line in original_content[:target_location]:
+    #             out_file.write(line)
 
-#                     .. code-block:: python
+    #         out_file.write("    Examples\n")
+    #         out_file.write("    --------\n")
 
-#                     {}
+    #         examples_template = """
+    #         {}
 
-#                     """
-#                     for content in all_content:
-#                         out_file.write(
-#                             textwrap.indent(
-#                                 textwrap.dedent(examples_template).format(
-#                                     content["desc"], textwrap.indent(content["code"], "    ")
-#                                 ),
-#                                 "    ",
-#                             )
-#                         )
+    #         .. code-block:: python
 
-#                     out_file.write("\n")
-#                     start_writing = False
-#                     for line in original_content[target_location:]:
-#                         if ".. py:property::" in line or ".. py:method::" in line:
-#                             start_writing = True
-#                         if start_writing:
-#                             out_file.write(line)
+    #         {}
 
-#             if Path(original_filename).is_file():
-#                 Path.unlink(original_filename)
-#             Path.rename(temp_filename, original_filename)
+    #         """
+    #         for content in all_content:
+    #             out_file.write(
+    #                 textwrap.indent(
+    #                     textwrap.dedent(examples_template).format(
+    #                         content["desc"], textwrap.indent(content["code"], "    ")
+    #                     ),
+    #                     "    ",
+    #                 )
+    #             )
 
-#     def _compute_identifying_location_info(self, snippet_repr):
-#         unique_locations = snippet_repr["eid"].split("|")
+    #         out_file.write("\n")
+    #         start_writing = False
+    #         for line in original_content[target_location:]:
+    #             if ".. py:property::" in line or ".. py:method::" in line:
+    #                 start_writing = True
+    #             if start_writing:
+    #                 out_file.write(line)
 
-#         for i, location in enumerate(unique_locations):
-#             location_components = location.strip().split("~")
-#             libname = location_components[0]
-#             class_name = location_components[1]
-#             method_name = None if len(location_components) == 2 else location_components[2]
+    def _compute_identifying_location_info(self, snippet_repr):
+        unique_locations = snippet_repr["eid"].split("|")
 
-#             module_defn_path = Path(self.api_src_dir).joinpath(*eid_to_module_map[libname])
-#             hashed_class_name = self.easy_hash[module_defn_path + ":" + class_name]
+        for i, location in enumerate(unique_locations):
+            location_components = location.strip().split("~")
+            libname = location_components[0]
+            class_name = location_components[1]
+            method_name = None if len(location_components) == 2 else location_components[2]
 
-#             unique_locations[i] = Path(self.api_doc_dir).joinpath(
-#                 *self.eid_to_module_documentation_map[libname], hashed_class_name + ".rst"
-#             )
-#             if method_name is not None:
-#                 hashed_method_name = self.easy_hash[module_defn_path + ":" + class_name + "." + method_name]
-#                 unique_locations[i] += ":" + hashed_method_name
+            unique_locations[i] = str(self.api_doc_dir.joinpath(*libname.split("."), class_name).with_suffix(".rst"))
+            if method_name is not None:
+                unique_locations[i] += ":" + method_name
 
-#         return unique_locations
+        return unique_locations
 
 
 class SnippetsDocstringInjector(libcst.CSTTransformer):
@@ -481,7 +478,7 @@ if __name__ == "__main__":
 
     snippets_dir = pystk_root_dir / "tests" / "doc_snippets_tests"
     src_core_dir = pystk_root_dir / "src" / "ansys" / "stk" / "core"
-    doc_core_dir = pystk_root_dir / "doc" / "source" / "source" / "ansys" / "stk" / "core"
+    doc_core_dir = pystk_root_dir / "doc" / "source" / "api" / "ansys" / "stk" / "core"
 
     combined_snippets_rst_path = pystk_root_dir / "doc" / "source" / "user-guide" / "code-snippets.rst"
 
@@ -490,10 +487,10 @@ if __name__ == "__main__":
     all_snippets = pystk_snippets_parser.parse_all_snippets()
     logging.info(f"Done parsing PySTK-migrated snippets in {str(snippets_dir)}")
 
-    logging.info("Injecting PySTK-migrated snippets into PySTK docstrings")
-    pystk_snippets_docstring_injector = SnippetsDocstringInjector(api_src_dir=src_core_dir, all_snippets=all_snippets)
-    pystk_snippets_docstring_injector.inject()
-    logging.info("Done injecting PySTK-migrated snippets into PySTK docstrings")
+    # logging.info("Injecting PySTK-migrated snippets into PySTK docstrings")
+    # pystk_snippets_docstring_injector = SnippetsDocstringInjector(api_src_dir=src_core_dir, all_snippets=all_snippets)
+    # pystk_snippets_docstring_injector.inject()
+    # logging.info("Done injecting PySTK-migrated snippets into PySTK docstrings")
 
     logging.info("Creating a reStructuredText file with all of the PySTK-migrated snippets")
     pystk_snippets_rst_generator = SnippetsRSTGenerator(
@@ -502,7 +499,10 @@ if __name__ == "__main__":
     pystk_snippets_rst_generator.write_rst()
     logging.info("Done creating a reStructuredText file with all of the PySTK-migrated snippets")
 
-    # logging.info(f"Injecting PySTK-migrated snippets into PySTK Sphinx documentation")
-    # pystk_snippets_rst_injector = SnippetsRSTInjector(api_src_dir=src_core_dir, api_doc_dir=doc_core_dir, all_snippets=all_snippets)
-    # pystk_snippets_rst_injector.inject()
-    # logging.info(f"Done injecting PySTK-migrated snippets into PySTK Sphinx documentation")
+    logging.info("Injecting PySTK-migrated snippets into PySTK Sphinx documentation")
+    pystk_snippets_rst_injector = SnippetsRSTInjector(
+        api_src_dir=src_core_dir, api_doc_dir=doc_core_dir, all_snippets=all_snippets
+    )
+    # pystk_snippets_rst_injector.inject_class_docstrings()
+    pystk_snippets_rst_injector.remove_method_docstring_examples()
+    logging.info("Done injecting PySTK-migrated snippets into PySTK Sphinx documentation")
