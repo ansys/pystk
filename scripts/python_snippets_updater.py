@@ -395,7 +395,7 @@ class SnippetsDocstringInjector(libcst.CSTTransformer):
             docstring_to_replace = self.docstrings_to_replace.pop(
                 self.docstrings_to_replace.index(original_node.value.lstrip("r"))
             )
-            docstring_to_replace, indent_lvl = self._remove_and_return_indentation(docstring_to_replace)
+            docstring_to_replace = inspect.cleandoc(docstring_to_replace)
             indent_lvl = self.get_metadata(libcst.metadata.PositionProvider, original_node).start.column
             docstring_pattern = r"(r?)(\"\"\")(\s*)(\S[\S\s]*\S)(\s*Examples\s*--------[\S\s]*)?(\"\"\")"
 
@@ -417,11 +417,6 @@ class SnippetsDocstringInjector(libcst.CSTTransformer):
 
             return updated_node.with_changes(value=new_docstring)
         return updated_node
-
-    def _remove_and_return_indentation(self, docstring):
-        last_line = docstring.split("\n")[-1]
-        indent_lvl = len(last_line) - len(last_line.lstrip())
-        return inspect.cleandoc(docstring), indent_lvl
 
     def _format_snippet_content(self, content):
         formatted_snippets_lines = ["\n", "Examples", "--------"]
