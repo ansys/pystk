@@ -10,6 +10,7 @@ import stat
 import textwrap
 
 import libcst
+import libcst.metadata
 
 
 class SnippetsParser(object):
@@ -311,6 +312,8 @@ class SnippetsRSTInjector(object):
 class SnippetsDocstringInjector(libcst.CSTTransformer):
     """A utility for making changes to docstrings in .py files based on the state of the doc_snippets_tests directory."""
 
+    METADATA_DEPENDENCIES = (libcst.metadata.PositionProvider,)
+
     def __init__(self, api_src_dir, all_snippets):
         self.api_src_dir = api_src_dir
         self.all_snippets = all_snippets
@@ -353,7 +356,8 @@ class SnippetsDocstringInjector(libcst.CSTTransformer):
         new_tree = None
         with Path.open(path, "r") as file:
             source = file.read()
-            tree = libcst.parse_module(source)
+            tree = libcst.metadata.MetadataWrapper(libcst.parse_module(source))
+
             new_tree = tree.visit(self)
 
         with Path.open(path, "w") as file:
@@ -392,6 +396,7 @@ class SnippetsDocstringInjector(libcst.CSTTransformer):
                 self.docstrings_to_replace.index(original_node.value.lstrip("r"))
             )
             docstring_to_replace, indent_lvl = self._remove_and_return_indentation(docstring_to_replace)
+            indent_lvl = self.get_metadata(libcst.metadata.PositionProvider, original_node).start.column
             docstring_pattern = r"(r?)(\"\"\")(\s*)(\S[\S\s]*\S)(\s*Examples\s*--------[\S\s]*)?(\"\"\")"
 
             if self.examples_to_add:
