@@ -211,13 +211,15 @@ class SnippetsRSTInjector(object):
                 original_content = in_file.read()
 
             matched = re.match(r"([\S\s]*)(Examples\n--------[\S\s]*?)(Import detail[\S\s]*)", original_content)
+            if not matched:
+                matched = re.match(r"([\S\s]*)(Import detail[\S\s]*)", original_content)
 
             if matched:
                 with Path.open(filename, "w") as out_file:
                     out_file.seek(0)
                     out_file.write(matched.group(1))
                     out_file.write(self._format_class_examples(str(filename)))
-                    out_file.write(matched.group(3))
+                    out_file.write(matched.group(matched.lastindex))
                     out_file.truncate()
 
     def _format_class_examples(self, filename):
