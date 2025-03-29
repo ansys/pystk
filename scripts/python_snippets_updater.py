@@ -201,9 +201,14 @@ class SnippetsRSTInjector(object):
 
     def inject(self):
         """Update docstring examples in .rst files."""
+        print("Checking for updates to class docstrings in .rst files...")
         self._inject_class_docstrings()
+        print("Done checking for updates to class docstrings in .rst files.")
+
+        print("Checking for updates to method docstrings in .rst files...")
         self._remove_method_docstring_examples()
         self._add_method_docstring_examples()
+        print("Done checking for updates to method docstrings in .rst files.")
 
     def _inject_class_docstrings(self):
         for filename in self.api_doc_dir.rglob("*.rst"):
@@ -346,11 +351,11 @@ class SnippetsDocstringInjector(libcst.CSTTransformer):
         self._transform_modules(targets_per_file)
 
     def _transform_modules(self, targets_per_file):
+        print("Checking for updates to docstrings in .py files...")
         for path_number, path in enumerate(targets_per_file.keys()):
-            print(
-                f"Checking for updates to docstrings in .py files... file {path_number + 1} of {len(targets_per_file.keys())}."
-            )
+            print(f"\tfile {path_number + 1} of {len(targets_per_file.keys())}.")
             self._transform_module(path, targets_per_file[str(path)])
+        print("Done checking for updates to docstrings in .py files.")
 
     def _transform_module(self, path: Path, local_targets: dict):
         self.local_targets = local_targets
