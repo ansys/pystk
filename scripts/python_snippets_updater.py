@@ -387,7 +387,7 @@ class SnippetsDocstringInjector(libcst.CSTTransformer):
         self.current_class = node.name.value
         docstring = node.get_docstring()
 
-        if "Examples" in docstring or node.name.value in self.local_targets["class_targets"].keys():
+        if (docstring and "Examples" in docstring) or node.name.value in self.local_targets["class_targets"].keys():
             self.docstrings_to_replace.append(f'"""{node.get_docstring(clean=False)}"""')
             self.examples_to_add = self.local_targets["class_targets"].get(node.name.value)
             return True
