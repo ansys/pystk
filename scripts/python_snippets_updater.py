@@ -112,7 +112,7 @@ class SnippetsRSTGenerator(object):
         if not Path.exists(Path(self.destination).parent):
             Path.mkdir(Path(self.destination).parent, parents=True)
 
-        Path.chmod(self.destination, stat.S_IWRITE)
+        Path.chmod(self.destination, stat.S_IREAD | stat.S_IWRITE)
         with Path.open(self.destination, "w") as out_file:
             rst_header = textwrap.dedent(
                 """
