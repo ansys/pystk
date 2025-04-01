@@ -459,7 +459,8 @@ class SnippetsDocstringInjector(libcst.CSTTransformer):
         return unique_locations
 
 
-if __name__ == "__main__":
+def main():
+    """Define an entry point for the PySTK snippet updater tool."""
     pystk_root_dir = Path(__file__).parent.parent
 
     snippets_dir = pystk_root_dir / "tests" / "doc_snippets_tests"
@@ -491,3 +492,7 @@ if __name__ == "__main__":
     )
     pystk_snippets_rst_injector.inject()
     logging.info("Done injecting PySTK-migrated snippets into PySTK Sphinx documentation")
+
+
+if __name__ == "__main__":
+    main()
