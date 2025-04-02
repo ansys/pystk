@@ -68,7 +68,7 @@ class FacilitySnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="SetHeightFacility",
-        description="Create a facility and set its height above ground level",
+        description="Create a facility and set its height relative to ground level",
         category="STK Objects | Facility",
         eid="STKObjects~Facility",
     )

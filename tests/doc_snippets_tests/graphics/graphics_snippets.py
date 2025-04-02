@@ -57,7 +57,7 @@ class GraphicsSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="CylinderFillEnumeration",
-        description="Combine IntFlag enumerations with the logical OR operator",
+        description="Combine enumerations with the logical OR operator",
         category="Graphics",
         eid="AgSTKGraphicsLib~CylinderFillOptions",
     )

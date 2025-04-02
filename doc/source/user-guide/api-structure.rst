@@ -70,12 +70,12 @@ STK interfaces and classes
 The STK object model is comprised of programming interfaces that are 
 implemented by Python classes located in the provided modules. With few 
 exceptions, classes returned from PySTK methods inherit from one or more 
-interfaces. You may immediately access any method from 
-the inherited interfaces without casting, although in some situations casting
-may help with your IDE's auto-complete feature. These classes have a reference
-to an STK object; this reference is removed upon calling ``del()`` on the Python
-class. Because these classes are references to STK objects, you cannot create 
-them directly from Python; objects must be returned from PySTK methods.
+interfaces. You may immediately access any method from the inherited 
+interfaces without casting, although in some situations casting may improve 
+IDE auto-complete feature results. These classes have a reference to an STK 
+object; this reference is removed upon calling ``del()`` on the Python class. 
+Because these classes are references to STK objects, you cannot create them 
+directly from Python; objects must be returned from PySTK methods.
 
 .. literalinclude:: /../../tests/doc_snippets_tests/stk_objects/facility/facility_snippets.py
   :language: py

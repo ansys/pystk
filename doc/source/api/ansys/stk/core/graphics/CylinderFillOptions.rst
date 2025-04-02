@@ -35,7 +35,7 @@ Overview
 Examples
 --------
 
-Combine IntFlag enumerations with the logical OR operator
+Combine enumerations with the logical OR operator
 
 .. code-block:: python
 

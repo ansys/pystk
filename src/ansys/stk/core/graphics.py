@@ -124,7 +124,7 @@ class CylinderFillOptions(IntFlag):
 
     Examples
     --------
-    Combine IntFlag enumerations with the logical OR operator:
+    Combine enumerations with the logical OR operator:
     >>> from ansys.stk.core.graphics import CylinderFillOptions
     >>> 
     >>> # CylinderFillOptions inherits from enum.IntFlag and may be combined

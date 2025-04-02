@@ -57,7 +57,7 @@ Graphics
   - :ref:`Draw a new surface extent triangulator <SurfaceExtentTriangulator>`
   - :ref:`Draw a new surface mesh <DrawNewSurfaceMeshPrimitive>`
   - :ref:`Great arc interpolator primitives <GreatArcInterpolatorPrimitives>`
-  - :ref:`Combine intflag enumerations with the logical or operator <CylinderFillEnumeration>`
+  - :ref:`Combine enumerations with the logical or operator <CylinderFillEnumeration>`
 Initialization
   - :ref:`Attach to an already running stk runtime and get a reference to stk object root <AttachSTKRuntimeSnippet>`
   - :ref:`Start stk runtime and get a reference to stk object root <CreateSTKRuntimeNewSnippet>`
@@ -138,7 +138,7 @@ STK Objects
     - :ref:`Add an azel mask to a facility <AzElMaskFacility>`
     - :ref:`Get the cartesian position of the facility <GetPositionFacility>`
     - :ref:`Set the geodetic position of the facility <SetPositionFacility>`
-    - :ref:`Create a facility and set its height above ground level <SetHeightFacility>`
+    - :ref:`Create a facility and set its height relative to ground level <SetHeightFacility>`
     - :ref:`Create a facility (on the current scenario central body) <CreateFacility>`
   Figure Of Merit
     - :ref:`Configure the contours of the fom and define a color ramp <FOMContoursColorRamp>`
@@ -965,7 +965,7 @@ Great arc interpolator primitives
 
 .. _CylinderFillEnumeration:
 
-Combine intflag enumerations with the logical or operator
+Combine enumerations with the logical or operator
 =========================================================
 
 .. code-block:: python
@@ -2169,7 +2169,7 @@ Set the geodetic position of the facility
 
 .. _SetHeightFacility:
 
-Create a facility and set its height above ground level
+Create a facility and set its height relative to ground level
 =======================================================
 
 .. code-block:: python
