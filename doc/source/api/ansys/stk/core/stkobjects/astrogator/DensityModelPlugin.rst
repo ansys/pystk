@@ -32,7 +32,7 @@ Overview
               - Flag indicates whether this model computes pressure.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.sun_position`
               - Get or set the sun position computation.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.atmos_data_source`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.atmosphere_data_source`
               - Get or set the atmospheric model data source - data file or constant values.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.f10`
               - Solar Flux (F10). Dimensionless.
@@ -54,15 +54,15 @@ Overview
               - Geomagnetic Index (Kp). Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.dst_d_tc`
               - Temperature change calculated from disturbance storm time (DstDTc). Dimensionless.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.atmos_data_geo_magnetic_flux_source`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.atmosphere_data_geo_magnetic_flux_source`
               - Whether to use Kp or Ap data from the flux file.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.atmos_data_geo_magnetic_flux_update_rate`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.atmosphere_data_geo_magnetic_flux_update_rate`
               - Get or set the update rate for geomagnetic flux values from the flux file.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.atmos_data_filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.atmosphere_data_filename`
               - Get or set the atmospheric model data file path.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.atmos_aug_data_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.atmosphere_aug_data_file`
               - Get or set the atmospheric model augmented data file path.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.atmos_aug_dtc_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.atmosphere_aug_dtc_file`
               - Get or set the atmospheric model augmented geomagnetic data file path.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.drag_model_type`
               - Drag model type.
@@ -126,9 +126,9 @@ Property detail
 
     Get or set the sun position computation.
 
-.. py:property:: atmos_data_source
-    :canonical: ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.atmos_data_source
-    :type: AtmosDataSource
+.. py:property:: atmosphere_data_source
+    :canonical: ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.atmosphere_data_source
+    :type: AtmosphereDataSource
 
     Get or set the atmospheric model data source - data file or constant values.
 
@@ -192,32 +192,32 @@ Property detail
 
     Temperature change calculated from disturbance storm time (DstDTc). Dimensionless.
 
-.. py:property:: atmos_data_geo_magnetic_flux_source
-    :canonical: ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.atmos_data_geo_magnetic_flux_source
+.. py:property:: atmosphere_data_geo_magnetic_flux_source
+    :canonical: ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.atmosphere_data_geo_magnetic_flux_source
     :type: GeoMagneticFluxSource
 
     Whether to use Kp or Ap data from the flux file.
 
-.. py:property:: atmos_data_geo_magnetic_flux_update_rate
-    :canonical: ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.atmos_data_geo_magnetic_flux_update_rate
+.. py:property:: atmosphere_data_geo_magnetic_flux_update_rate
+    :canonical: ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.atmosphere_data_geo_magnetic_flux_update_rate
     :type: GeoMagneticFluxUpdateRate
 
     Get or set the update rate for geomagnetic flux values from the flux file.
 
-.. py:property:: atmos_data_filename
-    :canonical: ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.atmos_data_filename
+.. py:property:: atmosphere_data_filename
+    :canonical: ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.atmosphere_data_filename
     :type: str
 
     Get or set the atmospheric model data file path.
 
-.. py:property:: atmos_aug_data_file
-    :canonical: ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.atmos_aug_data_file
+.. py:property:: atmosphere_aug_data_file
+    :canonical: ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.atmosphere_aug_data_file
     :type: str
 
     Get or set the atmospheric model augmented data file path.
 
-.. py:property:: atmos_aug_dtc_file
-    :canonical: ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.atmos_aug_dtc_file
+.. py:property:: atmosphere_aug_dtc_file
+    :canonical: ansys.stk.core.stkobjects.astrogator.DensityModelPlugin.atmosphere_aug_dtc_file
     :type: str
 
     Get or set the atmospheric model augmented geomagnetic data file path.

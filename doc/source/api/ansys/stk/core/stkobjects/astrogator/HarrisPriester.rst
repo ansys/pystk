@@ -28,11 +28,11 @@ Overview
               - Flag indicates whether this model computes pressure.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.HarrisPriester.sun_position`
               - Get or set the sun position computation.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.HarrisPriester.atmos_data_source`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.HarrisPriester.atmosphere_data_source`
               - Get or set the atmospheric model data source - data file or constant values.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.HarrisPriester.f_10_p7_avg`
               - Average solar Flux (F10.7); the 81-day averaged Ottawa 10.7 cm solar flux value. Dimensionless.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.HarrisPriester.atmos_data_filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.HarrisPriester.atmosphere_data_filename`
               - Flux file.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.HarrisPriester.drag_model_type`
               - Drag model type.
@@ -82,9 +82,9 @@ Property detail
 
     Get or set the sun position computation.
 
-.. py:property:: atmos_data_source
-    :canonical: ansys.stk.core.stkobjects.astrogator.HarrisPriester.atmos_data_source
-    :type: AtmosDataSource
+.. py:property:: atmosphere_data_source
+    :canonical: ansys.stk.core.stkobjects.astrogator.HarrisPriester.atmosphere_data_source
+    :type: AtmosphereDataSource
 
     Get or set the atmospheric model data source - data file or constant values.
 
@@ -94,8 +94,8 @@ Property detail
 
     Average solar Flux (F10.7); the 81-day averaged Ottawa 10.7 cm solar flux value. Dimensionless.
 
-.. py:property:: atmos_data_filename
-    :canonical: ansys.stk.core.stkobjects.astrogator.HarrisPriester.atmos_data_filename
+.. py:property:: atmosphere_data_filename
+    :canonical: ansys.stk.core.stkobjects.astrogator.HarrisPriester.atmosphere_data_filename
     :type: str
 
     Flux file.

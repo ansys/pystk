@@ -579,9 +579,9 @@
    <Mapping ParentScope="AgEVASTMPertVariables" OldName="eVASTMPertVariablePosX" NewName="POSITION_X" Category="enum_value" />
    <Mapping ParentScope="AgEVASTMPertVariables" OldName="eVASTMPertVariablePosY" NewName="POSITION_Y" Category="enum_value" />
    <Mapping ParentScope="AgEVASTMPertVariables" OldName="eVASTMPertVariablePosZ" NewName="POSITION_Z" Category="enum_value" />
-   <Mapping ParentScope="AgEVASTMPertVariables" OldName="eVASTMPertVariableVelX" NewName="VEL_X" Category="enum_value" />
-   <Mapping ParentScope="AgEVASTMPertVariables" OldName="eVASTMPertVariableVelY" NewName="VEL_Y" Category="enum_value" />
-   <Mapping ParentScope="AgEVASTMPertVariables" OldName="eVASTMPertVariableVelZ" NewName="VEL_Z" Category="enum_value" />
+   <Mapping ParentScope="AgEVASTMPertVariables" OldName="eVASTMPertVariableVelX" NewName="VELOCITY_X" Category="enum_value" />
+   <Mapping ParentScope="AgEVASTMPertVariables" OldName="eVASTMPertVariableVelY" NewName="VELOCITY_Y" Category="enum_value" />
+   <Mapping ParentScope="AgEVASTMPertVariables" OldName="eVASTMPertVariableVelZ" NewName="VELOCITY_Z" Category="enum_value" />
    <Mapping OldName="AgEVASTMPertVariables" NewName="STMPerturbationVariables" Category="enum_type" />
    <Mapping ParentScope="AgEVASTMEigenNumber" OldName="eVASTMEigenNumber1" NewName="NUMBER1" Category="enum_value" />
    <Mapping ParentScope="AgEVASTMEigenNumber" OldName="eVASTMEigenNumber2" NewName="NUMBER2" Category="enum_value" />
@@ -696,7 +696,7 @@
    <Mapping OldName="AgEVASunPosition" NewName="SunPosition" Category="enum_type" />
    <Mapping ParentScope="AgEVAAtmosDataSource" OldName="eVAAtmosDataSourceConstant" NewName="CONSTANT" Category="enum_value" />
    <Mapping ParentScope="AgEVAAtmosDataSource" OldName="eVAAtmosDataSourceFile" NewName="FILE" Category="enum_value" />
-   <Mapping OldName="AgEVAAtmosDataSource" NewName="AtmosDataSource" Category="enum_type" />
+   <Mapping OldName="AgEVAAtmosDataSource" NewName="AtmosphereDataSource" Category="enum_type" />
    <Mapping ParentScope="AgEVAGeoMagneticFluxSource" OldName="eVAGeoMagneticFluxSourceAp" NewName="AP" Category="enum_value" />
    <Mapping ParentScope="AgEVAGeoMagneticFluxSource" OldName="eVAGeoMagneticFluxSourceKp" NewName="KP" Category="enum_value" />
    <Mapping OldName="AgEVAGeoMagneticFluxSource" NewName="GeoMagneticFluxSource" Category="enum_type" />
@@ -2048,9 +2048,9 @@
    <Mapping ParentScope="IAgVAManeuverOptimalFiniteSteeringNodeElement" OldName="PosX" NewName="position_x" Category="method" />
    <Mapping ParentScope="IAgVAManeuverOptimalFiniteSteeringNodeElement" OldName="PosY" NewName="position_y" Category="method" />
    <Mapping ParentScope="IAgVAManeuverOptimalFiniteSteeringNodeElement" OldName="PosZ" NewName="position_z" Category="method" />
-   <Mapping ParentScope="IAgVAManeuverOptimalFiniteSteeringNodeElement" OldName="VelX" NewName="vel_x" Category="method" />
-   <Mapping ParentScope="IAgVAManeuverOptimalFiniteSteeringNodeElement" OldName="VelY" NewName="vel_y" Category="method" />
-   <Mapping ParentScope="IAgVAManeuverOptimalFiniteSteeringNodeElement" OldName="VelZ" NewName="vel_z" Category="method" />
+   <Mapping ParentScope="IAgVAManeuverOptimalFiniteSteeringNodeElement" OldName="VelX" NewName="velocity_x" Category="method" />
+   <Mapping ParentScope="IAgVAManeuverOptimalFiniteSteeringNodeElement" OldName="VelY" NewName="velocity_y" Category="method" />
+   <Mapping ParentScope="IAgVAManeuverOptimalFiniteSteeringNodeElement" OldName="VelZ" NewName="velocity_z" Category="method" />
    <Mapping OldName="IAgVAProfileLambertProfile" NewName="ProfileLambertProfile" Category="interface" />
    <Mapping ParentScope="IAgVAProfileLambertProfile" OldName="CoordSystemName" NewName="coord_system_name" Category="method" />
    <Mapping ParentScope="IAgVAProfileLambertProfile" OldName="TargetCoordType" NewName="target_coordinate_type" Category="method" />
@@ -2194,7 +2194,7 @@
    <Mapping ParentScope="IAgVAStateCalcSTMEigenvecElem" OldName="EigenvectorComplexPart" NewName="eigenvector_complex_part" Category="method" />
    <Mapping OldName="IAgVAStateCalcEnvironment" NewName="StateCalcEnvironment" Category="interface" />
    <Mapping ParentScope="IAgVAStateCalcEnvironment" OldName="CentralBodyName" NewName="central_body_name" Category="method" />
-   <Mapping ParentScope="IAgVAStateCalcEnvironment" OldName="AtmosModelName" NewName="atmos_model_name" Category="method" />
+   <Mapping ParentScope="IAgVAStateCalcEnvironment" OldName="AtmosModelName" NewName="atmosphere_model_name" Category="method" />
    <Mapping OldName="IAgVAStateCalcEquinoctialElem" NewName="StateCalcEquinoctialElem" Category="interface" />
    <Mapping ParentScope="IAgVAStateCalcEquinoctialElem" OldName="CoordSystemName" NewName="coord_system_name" Category="method" />
    <Mapping ParentScope="IAgVAStateCalcEquinoctialElem" OldName="ElementType" NewName="element_type" Category="method" />
@@ -2401,10 +2401,10 @@
    <Mapping OldName="IAgVAStateCalcPosDifferenceOtherSegment" NewName="StateCalcPositionDifferenceOtherSegment" Category="interface" />
    <Mapping ParentScope="IAgVAStateCalcPosDifferenceOtherSegment" OldName="OtherSegmentName" NewName="other_segment_name" Category="method" />
    <Mapping ParentScope="IAgVAStateCalcPosDifferenceOtherSegment" OldName="SegmentStateToUse" NewName="segment_state_to_use" Category="method" />
-   <Mapping OldName="IAgVAStateCalcVelDifferenceOtherSegment" NewName="StateCalcVelDifferenceOtherSegment" Category="interface" />
+   <Mapping OldName="IAgVAStateCalcVelDifferenceOtherSegment" NewName="StateCalcVelocityDifferenceOtherSegment" Category="interface" />
    <Mapping ParentScope="IAgVAStateCalcVelDifferenceOtherSegment" OldName="OtherSegmentName" NewName="other_segment_name" Category="method" />
    <Mapping ParentScope="IAgVAStateCalcVelDifferenceOtherSegment" OldName="SegmentStateToUse" NewName="segment_state_to_use" Category="method" />
-   <Mapping OldName="IAgVAStateCalcPosVelDifferenceOtherSegment" NewName="StateCalcPositionVelDifferenceOtherSegment" Category="interface" />
+   <Mapping OldName="IAgVAStateCalcPosVelDifferenceOtherSegment" NewName="StateCalcPositionVelocityDifferenceOtherSegment" Category="interface" />
    <Mapping ParentScope="IAgVAStateCalcPosVelDifferenceOtherSegment" OldName="OtherSegmentName" NewName="other_segment_name" Category="method" />
    <Mapping ParentScope="IAgVAStateCalcPosVelDifferenceOtherSegment" OldName="SegmentStateToUse" NewName="segment_state_to_use" Category="method" />
    <Mapping OldName="IAgVAStateCalcValueAtSegment" NewName="StateCalcValueAtSegment" Category="interface" />
@@ -2553,7 +2553,7 @@
    <Mapping ParentScope="IAgVAStateCalcRA" OldName="CoordSystemName" NewName="coord_system_name" Category="method" />
    <Mapping OldName="IAgVAStateCalcVMag" NewName="StateCalcVMagnitude" Category="interface" />
    <Mapping ParentScope="IAgVAStateCalcVMag" OldName="CoordSystemName" NewName="coord_system_name" Category="method" />
-   <Mapping OldName="IAgVAStateCalcVelAz" NewName="StateCalcVelAz" Category="interface" />
+   <Mapping OldName="IAgVAStateCalcVelAz" NewName="StateCalcVelocityAz" Category="interface" />
    <Mapping ParentScope="IAgVAStateCalcVelAz" OldName="CoordSystemName" NewName="coord_system_name" Category="method" />
    <Mapping OldName="IAgVAStateCalcC3Energy" NewName="StateCalcC3Energy" Category="interface" />
    <Mapping ParentScope="IAgVAStateCalcC3Energy" OldName="CentralBodyName" NewName="central_body_name" Category="method" />
@@ -2562,13 +2562,13 @@
    <Mapping ParentScope="IAgVAStateCalcInAsympDec" OldName="CoordSystemName" NewName="coord_system_name" Category="method" />
    <Mapping OldName="IAgVAStateCalcInAsympRA" NewName="StateCalcInAsympRA" Category="interface" />
    <Mapping ParentScope="IAgVAStateCalcInAsympRA" OldName="CoordSystemName" NewName="coord_system_name" Category="method" />
-   <Mapping OldName="IAgVAStateCalcInVelAzAtPeriapsis" NewName="StateCalcInVelAzAtPeriapsis" Category="interface" />
+   <Mapping OldName="IAgVAStateCalcInVelAzAtPeriapsis" NewName="StateCalcInVelocityAzAtPeriapsis" Category="interface" />
    <Mapping ParentScope="IAgVAStateCalcInVelAzAtPeriapsis" OldName="CoordSystemName" NewName="coord_system_name" Category="method" />
    <Mapping OldName="IAgVAStateCalcOutAsympDec" NewName="StateCalcOutAsympDec" Category="interface" />
    <Mapping ParentScope="IAgVAStateCalcOutAsympDec" OldName="CoordSystemName" NewName="coord_system_name" Category="method" />
    <Mapping OldName="IAgVAStateCalcOutAsympRA" NewName="StateCalcOutAsympRA" Category="interface" />
    <Mapping ParentScope="IAgVAStateCalcOutAsympRA" OldName="CoordSystemName" NewName="coord_system_name" Category="method" />
-   <Mapping OldName="IAgVAStateCalcOutVelAzAtPeriapsis" NewName="StateCalcOutVelAzAtPeriapsis" Category="interface" />
+   <Mapping OldName="IAgVAStateCalcOutVelAzAtPeriapsis" NewName="StateCalcOutVelocityAzAtPeriapsis" Category="interface" />
    <Mapping ParentScope="IAgVAStateCalcOutVelAzAtPeriapsis" OldName="CoordSystemName" NewName="coord_system_name" Category="method" />
    <Mapping OldName="IAgVAStateCalcDuration" NewName="StateCalcDuration" Category="interface" />
    <Mapping OldName="IAgVAStateCalcUserValue" NewName="StateCalcUserValue" Category="interface" />
@@ -2829,13 +2829,13 @@
    <Mapping ParentScope="IAgVACira72Function" OldName="ComputesTemperature" NewName="computes_temperature" Category="method" />
    <Mapping ParentScope="IAgVACira72Function" OldName="ComputesPressure" NewName="computes_pressure" Category="method" />
    <Mapping ParentScope="IAgVACira72Function" OldName="SunPosition" NewName="sun_position" Category="method" />
-   <Mapping ParentScope="IAgVACira72Function" OldName="AtmosDataSource" NewName="atmos_data_source" Category="method" />
+   <Mapping ParentScope="IAgVACira72Function" OldName="AtmosDataSource" NewName="atmosphere_data_source" Category="method" />
    <Mapping ParentScope="IAgVACira72Function" OldName="F10p7" NewName="f_10_p7" Category="method" />
    <Mapping ParentScope="IAgVACira72Function" OldName="F10p7Avg" NewName="f_10_p7_avg" Category="method" />
    <Mapping ParentScope="IAgVACira72Function" OldName="Kp" NewName="kp" Category="method" />
-   <Mapping ParentScope="IAgVACira72Function" OldName="AtmosDataGeoMagneticFluxSource" NewName="atmos_data_geo_magnetic_flux_source" Category="method" />
-   <Mapping ParentScope="IAgVACira72Function" OldName="AtmosDataGeoMagneticFluxUpdateRate" NewName="atmos_data_geo_magnetic_flux_update_rate" Category="method" />
-   <Mapping ParentScope="IAgVACira72Function" OldName="AtmosDataFilename" NewName="atmos_data_filename" Category="method" />
+   <Mapping ParentScope="IAgVACira72Function" OldName="AtmosDataGeoMagneticFluxSource" NewName="atmosphere_data_geo_magnetic_flux_source" Category="method" />
+   <Mapping ParentScope="IAgVACira72Function" OldName="AtmosDataGeoMagneticFluxUpdateRate" NewName="atmosphere_data_geo_magnetic_flux_update_rate" Category="method" />
+   <Mapping ParentScope="IAgVACira72Function" OldName="AtmosDataFilename" NewName="atmosphere_data_filename" Category="method" />
    <Mapping ParentScope="IAgVACira72Function" OldName="DragModelType" NewName="drag_model_type" Category="method" />
    <Mapping ParentScope="IAgVACira72Function" OldName="DragModelPluginName" NewName="drag_model_plugin_name" Category="method" />
    <Mapping ParentScope="IAgVACira72Function" OldName="DragModelPlugin" NewName="drag_model_plugin" Category="method" />
@@ -2856,9 +2856,9 @@
    <Mapping ParentScope="IAgVAHarrisPriester" OldName="ComputesTemperature" NewName="computes_temperature" Category="method" />
    <Mapping ParentScope="IAgVAHarrisPriester" OldName="ComputesPressure" NewName="computes_pressure" Category="method" />
    <Mapping ParentScope="IAgVAHarrisPriester" OldName="SunPosition" NewName="sun_position" Category="method" />
-   <Mapping ParentScope="IAgVAHarrisPriester" OldName="AtmosDataSource" NewName="atmos_data_source" Category="method" />
+   <Mapping ParentScope="IAgVAHarrisPriester" OldName="AtmosDataSource" NewName="atmosphere_data_source" Category="method" />
    <Mapping ParentScope="IAgVAHarrisPriester" OldName="F10p7Avg" NewName="f_10_p7_avg" Category="method" />
-   <Mapping ParentScope="IAgVAHarrisPriester" OldName="AtmosDataFilename" NewName="atmos_data_filename" Category="method" />
+   <Mapping ParentScope="IAgVAHarrisPriester" OldName="AtmosDataFilename" NewName="atmosphere_data_filename" Category="method" />
    <Mapping ParentScope="IAgVAHarrisPriester" OldName="DragModelType" NewName="drag_model_type" Category="method" />
    <Mapping ParentScope="IAgVAHarrisPriester" OldName="DragModelPluginName" NewName="drag_model_plugin_name" Category="method" />
    <Mapping ParentScope="IAgVAHarrisPriester" OldName="DragModelPlugin" NewName="drag_model_plugin" Category="method" />
@@ -2871,7 +2871,7 @@
    <Mapping ParentScope="IAgVADensityModelPlugin" OldName="ComputesTemperature" NewName="computes_temperature" Category="method" />
    <Mapping ParentScope="IAgVADensityModelPlugin" OldName="ComputesPressure" NewName="computes_pressure" Category="method" />
    <Mapping ParentScope="IAgVADensityModelPlugin" OldName="SunPosition" NewName="sun_position" Category="method" />
-   <Mapping ParentScope="IAgVADensityModelPlugin" OldName="AtmosDataSource" NewName="atmos_data_source" Category="method" />
+   <Mapping ParentScope="IAgVADensityModelPlugin" OldName="AtmosDataSource" NewName="atmosphere_data_source" Category="method" />
    <Mapping ParentScope="IAgVADensityModelPlugin" OldName="F10" NewName="f10" Category="method" />
    <Mapping ParentScope="IAgVADensityModelPlugin" OldName="F10Avg" NewName="f10_avg" Category="method" />
    <Mapping ParentScope="IAgVADensityModelPlugin" OldName="M10" NewName="m10" Category="method" />
@@ -2882,11 +2882,11 @@
    <Mapping ParentScope="IAgVADensityModelPlugin" OldName="Y10Avg" NewName="y10_avg" Category="method" />
    <Mapping ParentScope="IAgVADensityModelPlugin" OldName="Kp" NewName="kp" Category="method" />
    <Mapping ParentScope="IAgVADensityModelPlugin" OldName="DstDTc" NewName="dst_d_tc" Category="method" />
-   <Mapping ParentScope="IAgVADensityModelPlugin" OldName="AtmosDataGeoMagneticFluxSource" NewName="atmos_data_geo_magnetic_flux_source" Category="method" />
-   <Mapping ParentScope="IAgVADensityModelPlugin" OldName="AtmosDataGeoMagneticFluxUpdateRate" NewName="atmos_data_geo_magnetic_flux_update_rate" Category="method" />
-   <Mapping ParentScope="IAgVADensityModelPlugin" OldName="AtmosDataFilename" NewName="atmos_data_filename" Category="method" />
-   <Mapping ParentScope="IAgVADensityModelPlugin" OldName="AtmosAugDataFile" NewName="atmos_aug_data_file" Category="method" />
-   <Mapping ParentScope="IAgVADensityModelPlugin" OldName="AtmosAugDTCFile" NewName="atmos_aug_dtc_file" Category="method" />
+   <Mapping ParentScope="IAgVADensityModelPlugin" OldName="AtmosDataGeoMagneticFluxSource" NewName="atmosphere_data_geo_magnetic_flux_source" Category="method" />
+   <Mapping ParentScope="IAgVADensityModelPlugin" OldName="AtmosDataGeoMagneticFluxUpdateRate" NewName="atmosphere_data_geo_magnetic_flux_update_rate" Category="method" />
+   <Mapping ParentScope="IAgVADensityModelPlugin" OldName="AtmosDataFilename" NewName="atmosphere_data_filename" Category="method" />
+   <Mapping ParentScope="IAgVADensityModelPlugin" OldName="AtmosAugDataFile" NewName="atmosphere_aug_data_file" Category="method" />
+   <Mapping ParentScope="IAgVADensityModelPlugin" OldName="AtmosAugDTCFile" NewName="atmosphere_aug_dtc_file" Category="method" />
    <Mapping ParentScope="IAgVADensityModelPlugin" OldName="DragModelType" NewName="drag_model_type" Category="method" />
    <Mapping ParentScope="IAgVADensityModelPlugin" OldName="DragModelPluginName" NewName="drag_model_plugin_name" Category="method" />
    <Mapping ParentScope="IAgVADensityModelPlugin" OldName="DragModelPlugin" NewName="drag_model_plugin" Category="method" />
@@ -2898,13 +2898,13 @@
    <Mapping ParentScope="IAgVAJacchiaRoberts" OldName="ComputesTemperature" NewName="computes_temperature" Category="method" />
    <Mapping ParentScope="IAgVAJacchiaRoberts" OldName="ComputesPressure" NewName="computes_pressure" Category="method" />
    <Mapping ParentScope="IAgVAJacchiaRoberts" OldName="SunPosition" NewName="sun_position" Category="method" />
-   <Mapping ParentScope="IAgVAJacchiaRoberts" OldName="AtmosDataSource" NewName="atmos_data_source" Category="method" />
+   <Mapping ParentScope="IAgVAJacchiaRoberts" OldName="AtmosDataSource" NewName="atmosphere_data_source" Category="method" />
    <Mapping ParentScope="IAgVAJacchiaRoberts" OldName="F10p7" NewName="f_10_p7" Category="method" />
    <Mapping ParentScope="IAgVAJacchiaRoberts" OldName="F10p7Avg" NewName="f_10_p7_avg" Category="method" />
    <Mapping ParentScope="IAgVAJacchiaRoberts" OldName="Kp" NewName="kp" Category="method" />
-   <Mapping ParentScope="IAgVAJacchiaRoberts" OldName="AtmosDataGeoMagneticFluxSource" NewName="atmos_data_geo_magnetic_flux_source" Category="method" />
-   <Mapping ParentScope="IAgVAJacchiaRoberts" OldName="AtmosDataGeoMagneticFluxUpdateRate" NewName="atmos_data_geo_magnetic_flux_update_rate" Category="method" />
-   <Mapping ParentScope="IAgVAJacchiaRoberts" OldName="AtmosDataFilename" NewName="atmos_data_filename" Category="method" />
+   <Mapping ParentScope="IAgVAJacchiaRoberts" OldName="AtmosDataGeoMagneticFluxSource" NewName="atmosphere_data_geo_magnetic_flux_source" Category="method" />
+   <Mapping ParentScope="IAgVAJacchiaRoberts" OldName="AtmosDataGeoMagneticFluxUpdateRate" NewName="atmosphere_data_geo_magnetic_flux_update_rate" Category="method" />
+   <Mapping ParentScope="IAgVAJacchiaRoberts" OldName="AtmosDataFilename" NewName="atmosphere_data_filename" Category="method" />
    <Mapping ParentScope="IAgVAJacchiaRoberts" OldName="DragModelType" NewName="drag_model_type" Category="method" />
    <Mapping ParentScope="IAgVAJacchiaRoberts" OldName="DragModelPluginName" NewName="drag_model_plugin_name" Category="method" />
    <Mapping ParentScope="IAgVAJacchiaRoberts" OldName="DragModelPlugin" NewName="drag_model_plugin" Category="method" />
@@ -2913,7 +2913,7 @@
    <Mapping OldName="IAgVAJacchiaBowman2008" NewName="JacchiaBowman2008" Category="interface" />
    <Mapping ParentScope="IAgVAJacchiaBowman2008" OldName="UseApproximateAltitude" NewName="use_approximate_altitude" Category="method" />
    <Mapping ParentScope="IAgVAJacchiaBowman2008" OldName="SunPosition" NewName="sun_position" Category="method" />
-   <Mapping ParentScope="IAgVAJacchiaBowman2008" OldName="AtmosDataSource" NewName="atmos_data_source" Category="method" />
+   <Mapping ParentScope="IAgVAJacchiaBowman2008" OldName="AtmosDataSource" NewName="atmosphere_data_source" Category="method" />
    <Mapping ParentScope="IAgVAJacchiaBowman2008" OldName="F10" NewName="f10" Category="method" />
    <Mapping ParentScope="IAgVAJacchiaBowman2008" OldName="F10Avg" NewName="f10_avg" Category="method" />
    <Mapping ParentScope="IAgVAJacchiaBowman2008" OldName="M10" NewName="m10" Category="method" />
@@ -2923,8 +2923,8 @@
    <Mapping ParentScope="IAgVAJacchiaBowman2008" OldName="Y10" NewName="y10" Category="method" />
    <Mapping ParentScope="IAgVAJacchiaBowman2008" OldName="Y10Avg" NewName="y10_avg" Category="method" />
    <Mapping ParentScope="IAgVAJacchiaBowman2008" OldName="DstDTc" NewName="dst_d_tc" Category="method" />
-   <Mapping ParentScope="IAgVAJacchiaBowman2008" OldName="AtmosAugDataFile" NewName="atmos_aug_data_file" Category="method" />
-   <Mapping ParentScope="IAgVAJacchiaBowman2008" OldName="AtmosAugDTCFile" NewName="atmos_aug_dtc_file" Category="method" />
+   <Mapping ParentScope="IAgVAJacchiaBowman2008" OldName="AtmosAugDataFile" NewName="atmosphere_aug_data_file" Category="method" />
+   <Mapping ParentScope="IAgVAJacchiaBowman2008" OldName="AtmosAugDTCFile" NewName="atmosphere_aug_dtc_file" Category="method" />
    <Mapping ParentScope="IAgVAJacchiaBowman2008" OldName="DragModelType" NewName="drag_model_type" Category="method" />
    <Mapping ParentScope="IAgVAJacchiaBowman2008" OldName="DragModelPluginName" NewName="drag_model_plugin_name" Category="method" />
    <Mapping ParentScope="IAgVAJacchiaBowman2008" OldName="DragModelPlugin" NewName="drag_model_plugin" Category="method" />
@@ -2945,13 +2945,13 @@
    <Mapping ParentScope="IAgVAJacchia_1970" OldName="ComputesTemperature" NewName="computes_temperature" Category="method" />
    <Mapping ParentScope="IAgVAJacchia_1970" OldName="ComputesPressure" NewName="computes_pressure" Category="method" />
    <Mapping ParentScope="IAgVAJacchia_1970" OldName="SunPosition" NewName="sun_position" Category="method" />
-   <Mapping ParentScope="IAgVAJacchia_1970" OldName="AtmosDataSource" NewName="atmos_data_source" Category="method" />
+   <Mapping ParentScope="IAgVAJacchia_1970" OldName="AtmosDataSource" NewName="atmosphere_data_source" Category="method" />
    <Mapping ParentScope="IAgVAJacchia_1970" OldName="F10p7" NewName="f_10_p7" Category="method" />
    <Mapping ParentScope="IAgVAJacchia_1970" OldName="F10p7Avg" NewName="f_10_p7_avg" Category="method" />
    <Mapping ParentScope="IAgVAJacchia_1970" OldName="Kp" NewName="kp" Category="method" />
-   <Mapping ParentScope="IAgVAJacchia_1970" OldName="AtmosDataGeoMagneticFluxSource" NewName="atmos_data_geo_magnetic_flux_source" Category="method" />
-   <Mapping ParentScope="IAgVAJacchia_1970" OldName="AtmosDataGeoMagneticFluxUpdateRate" NewName="atmos_data_geo_magnetic_flux_update_rate" Category="method" />
-   <Mapping ParentScope="IAgVAJacchia_1970" OldName="AtmosDataFilename" NewName="atmos_data_filename" Category="method" />
+   <Mapping ParentScope="IAgVAJacchia_1970" OldName="AtmosDataGeoMagneticFluxSource" NewName="atmosphere_data_geo_magnetic_flux_source" Category="method" />
+   <Mapping ParentScope="IAgVAJacchia_1970" OldName="AtmosDataGeoMagneticFluxUpdateRate" NewName="atmosphere_data_geo_magnetic_flux_update_rate" Category="method" />
+   <Mapping ParentScope="IAgVAJacchia_1970" OldName="AtmosDataFilename" NewName="atmosphere_data_filename" Category="method" />
    <Mapping ParentScope="IAgVAJacchia_1970" OldName="DragModelType" NewName="drag_model_type" Category="method" />
    <Mapping ParentScope="IAgVAJacchia_1970" OldName="DragModelPluginName" NewName="drag_model_plugin_name" Category="method" />
    <Mapping ParentScope="IAgVAJacchia_1970" OldName="DragModelPlugin" NewName="drag_model_plugin" Category="method" />
@@ -2962,13 +2962,13 @@
    <Mapping ParentScope="IAgVAJacchia_1971" OldName="ComputesTemperature" NewName="computes_temperature" Category="method" />
    <Mapping ParentScope="IAgVAJacchia_1971" OldName="ComputesPressure" NewName="computes_pressure" Category="method" />
    <Mapping ParentScope="IAgVAJacchia_1971" OldName="SunPosition" NewName="sun_position" Category="method" />
-   <Mapping ParentScope="IAgVAJacchia_1971" OldName="AtmosDataSource" NewName="atmos_data_source" Category="method" />
+   <Mapping ParentScope="IAgVAJacchia_1971" OldName="AtmosDataSource" NewName="atmosphere_data_source" Category="method" />
    <Mapping ParentScope="IAgVAJacchia_1971" OldName="F10p7" NewName="f_10_p7" Category="method" />
    <Mapping ParentScope="IAgVAJacchia_1971" OldName="F10p7Avg" NewName="f_10_p7_avg" Category="method" />
    <Mapping ParentScope="IAgVAJacchia_1971" OldName="Kp" NewName="kp" Category="method" />
-   <Mapping ParentScope="IAgVAJacchia_1971" OldName="AtmosDataGeoMagneticFluxSource" NewName="atmos_data_geo_magnetic_flux_source" Category="method" />
-   <Mapping ParentScope="IAgVAJacchia_1971" OldName="AtmosDataGeoMagneticFluxUpdateRate" NewName="atmos_data_geo_magnetic_flux_update_rate" Category="method" />
-   <Mapping ParentScope="IAgVAJacchia_1971" OldName="AtmosDataFilename" NewName="atmos_data_filename" Category="method" />
+   <Mapping ParentScope="IAgVAJacchia_1971" OldName="AtmosDataGeoMagneticFluxSource" NewName="atmosphere_data_geo_magnetic_flux_source" Category="method" />
+   <Mapping ParentScope="IAgVAJacchia_1971" OldName="AtmosDataGeoMagneticFluxUpdateRate" NewName="atmosphere_data_geo_magnetic_flux_update_rate" Category="method" />
+   <Mapping ParentScope="IAgVAJacchia_1971" OldName="AtmosDataFilename" NewName="atmosphere_data_filename" Category="method" />
    <Mapping ParentScope="IAgVAJacchia_1971" OldName="DragModelType" NewName="drag_model_type" Category="method" />
    <Mapping ParentScope="IAgVAJacchia_1971" OldName="DragModelPluginName" NewName="drag_model_plugin_name" Category="method" />
    <Mapping ParentScope="IAgVAJacchia_1971" OldName="DragModelPlugin" NewName="drag_model_plugin" Category="method" />
@@ -2979,13 +2979,13 @@
    <Mapping ParentScope="IAgVAMSISE_1990" OldName="ComputesTemperature" NewName="computes_temperature" Category="method" />
    <Mapping ParentScope="IAgVAMSISE_1990" OldName="ComputesPressure" NewName="computes_pressure" Category="method" />
    <Mapping ParentScope="IAgVAMSISE_1990" OldName="SunPosition" NewName="sun_position" Category="method" />
-   <Mapping ParentScope="IAgVAMSISE_1990" OldName="AtmosDataSource" NewName="atmos_data_source" Category="method" />
+   <Mapping ParentScope="IAgVAMSISE_1990" OldName="AtmosDataSource" NewName="atmosphere_data_source" Category="method" />
    <Mapping ParentScope="IAgVAMSISE_1990" OldName="F10p7" NewName="f_10_p7" Category="method" />
    <Mapping ParentScope="IAgVAMSISE_1990" OldName="F10p7Avg" NewName="f_10_p7_avg" Category="method" />
    <Mapping ParentScope="IAgVAMSISE_1990" OldName="Kp" NewName="kp" Category="method" />
-   <Mapping ParentScope="IAgVAMSISE_1990" OldName="AtmosDataGeoMagneticFluxSource" NewName="atmos_data_geo_magnetic_flux_source" Category="method" />
-   <Mapping ParentScope="IAgVAMSISE_1990" OldName="AtmosDataGeoMagneticFluxUpdateRate" NewName="atmos_data_geo_magnetic_flux_update_rate" Category="method" />
-   <Mapping ParentScope="IAgVAMSISE_1990" OldName="AtmosDataFilename" NewName="atmos_data_filename" Category="method" />
+   <Mapping ParentScope="IAgVAMSISE_1990" OldName="AtmosDataGeoMagneticFluxSource" NewName="atmosphere_data_geo_magnetic_flux_source" Category="method" />
+   <Mapping ParentScope="IAgVAMSISE_1990" OldName="AtmosDataGeoMagneticFluxUpdateRate" NewName="atmosphere_data_geo_magnetic_flux_update_rate" Category="method" />
+   <Mapping ParentScope="IAgVAMSISE_1990" OldName="AtmosDataFilename" NewName="atmosphere_data_filename" Category="method" />
    <Mapping ParentScope="IAgVAMSISE_1990" OldName="DragModelType" NewName="drag_model_type" Category="method" />
    <Mapping ParentScope="IAgVAMSISE_1990" OldName="DragModelPluginName" NewName="drag_model_plugin_name" Category="method" />
    <Mapping ParentScope="IAgVAMSISE_1990" OldName="DragModelPlugin" NewName="drag_model_plugin" Category="method" />
@@ -2996,13 +2996,13 @@
    <Mapping ParentScope="IAgVAMSIS_1986" OldName="ComputesTemperature" NewName="computes_temperature" Category="method" />
    <Mapping ParentScope="IAgVAMSIS_1986" OldName="ComputesPressure" NewName="computes_pressure" Category="method" />
    <Mapping ParentScope="IAgVAMSIS_1986" OldName="SunPosition" NewName="sun_position" Category="method" />
-   <Mapping ParentScope="IAgVAMSIS_1986" OldName="AtmosDataSource" NewName="atmos_data_source" Category="method" />
+   <Mapping ParentScope="IAgVAMSIS_1986" OldName="AtmosDataSource" NewName="atmosphere_data_source" Category="method" />
    <Mapping ParentScope="IAgVAMSIS_1986" OldName="F10p7" NewName="f_10_p7" Category="method" />
    <Mapping ParentScope="IAgVAMSIS_1986" OldName="F10p7Avg" NewName="f_10_p7_avg" Category="method" />
    <Mapping ParentScope="IAgVAMSIS_1986" OldName="Kp" NewName="kp" Category="method" />
-   <Mapping ParentScope="IAgVAMSIS_1986" OldName="AtmosDataGeoMagneticFluxSource" NewName="atmos_data_geo_magnetic_flux_source" Category="method" />
-   <Mapping ParentScope="IAgVAMSIS_1986" OldName="AtmosDataGeoMagneticFluxUpdateRate" NewName="atmos_data_geo_magnetic_flux_update_rate" Category="method" />
-   <Mapping ParentScope="IAgVAMSIS_1986" OldName="AtmosDataFilename" NewName="atmos_data_filename" Category="method" />
+   <Mapping ParentScope="IAgVAMSIS_1986" OldName="AtmosDataGeoMagneticFluxSource" NewName="atmosphere_data_geo_magnetic_flux_source" Category="method" />
+   <Mapping ParentScope="IAgVAMSIS_1986" OldName="AtmosDataGeoMagneticFluxUpdateRate" NewName="atmosphere_data_geo_magnetic_flux_update_rate" Category="method" />
+   <Mapping ParentScope="IAgVAMSIS_1986" OldName="AtmosDataFilename" NewName="atmosphere_data_filename" Category="method" />
    <Mapping ParentScope="IAgVAMSIS_1986" OldName="DragModelType" NewName="drag_model_type" Category="method" />
    <Mapping ParentScope="IAgVAMSIS_1986" OldName="DragModelPluginName" NewName="drag_model_plugin_name" Category="method" />
    <Mapping ParentScope="IAgVAMSIS_1986" OldName="DragModelPlugin" NewName="drag_model_plugin" Category="method" />
@@ -3013,13 +3013,13 @@
    <Mapping ParentScope="IAgVANRLMSISE_2000" OldName="ComputesTemperature" NewName="computes_temperature" Category="method" />
    <Mapping ParentScope="IAgVANRLMSISE_2000" OldName="ComputesPressure" NewName="computes_pressure" Category="method" />
    <Mapping ParentScope="IAgVANRLMSISE_2000" OldName="SunPosition" NewName="sun_position" Category="method" />
-   <Mapping ParentScope="IAgVANRLMSISE_2000" OldName="AtmosDataSource" NewName="atmos_data_source" Category="method" />
+   <Mapping ParentScope="IAgVANRLMSISE_2000" OldName="AtmosDataSource" NewName="atmosphere_data_source" Category="method" />
    <Mapping ParentScope="IAgVANRLMSISE_2000" OldName="F10p7" NewName="f_10_p7" Category="method" />
    <Mapping ParentScope="IAgVANRLMSISE_2000" OldName="F10p7Avg" NewName="f_10_p7_avg" Category="method" />
    <Mapping ParentScope="IAgVANRLMSISE_2000" OldName="Kp" NewName="kp" Category="method" />
-   <Mapping ParentScope="IAgVANRLMSISE_2000" OldName="AtmosDataGeoMagneticFluxSource" NewName="atmos_data_geo_magnetic_flux_source" Category="method" />
-   <Mapping ParentScope="IAgVANRLMSISE_2000" OldName="AtmosDataGeoMagneticFluxUpdateRate" NewName="atmos_data_geo_magnetic_flux_update_rate" Category="method" />
-   <Mapping ParentScope="IAgVANRLMSISE_2000" OldName="AtmosDataFilename" NewName="atmos_data_filename" Category="method" />
+   <Mapping ParentScope="IAgVANRLMSISE_2000" OldName="AtmosDataGeoMagneticFluxSource" NewName="atmosphere_data_geo_magnetic_flux_source" Category="method" />
+   <Mapping ParentScope="IAgVANRLMSISE_2000" OldName="AtmosDataGeoMagneticFluxUpdateRate" NewName="atmosphere_data_geo_magnetic_flux_update_rate" Category="method" />
+   <Mapping ParentScope="IAgVANRLMSISE_2000" OldName="AtmosDataFilename" NewName="atmosphere_data_filename" Category="method" />
    <Mapping ParentScope="IAgVANRLMSISE_2000" OldName="DragModelType" NewName="drag_model_type" Category="method" />
    <Mapping ParentScope="IAgVANRLMSISE_2000" OldName="DragModelPluginName" NewName="drag_model_plugin_name" Category="method" />
    <Mapping ParentScope="IAgVANRLMSISE_2000" OldName="DragModelPlugin" NewName="drag_model_plugin" Category="method" />
@@ -3042,9 +3042,9 @@
    <Mapping ParentScope="IAgVAMarsGRAM37" OldName="DataDirectory" NewName="data_directory" Category="method" />
    <Mapping ParentScope="IAgVAMarsGRAM37" OldName="NamelistFile" NewName="namelist_file" Category="method" />
    <Mapping ParentScope="IAgVAMarsGRAM37" OldName="DensityType" NewName="density_type" Category="method" />
-   <Mapping ParentScope="IAgVAMarsGRAM37" OldName="AtmosDataSource" NewName="atmos_data_source" Category="method" />
+   <Mapping ParentScope="IAgVAMarsGRAM37" OldName="AtmosDataSource" NewName="atmosphere_data_source" Category="method" />
    <Mapping ParentScope="IAgVAMarsGRAM37" OldName="F10p7" NewName="f_10_p7" Category="method" />
-   <Mapping ParentScope="IAgVAMarsGRAM37" OldName="AtmosDataFilename" NewName="atmos_data_filename" Category="method" />
+   <Mapping ParentScope="IAgVAMarsGRAM37" OldName="AtmosDataFilename" NewName="atmosphere_data_filename" Category="method" />
    <Mapping ParentScope="IAgVAMarsGRAM37" OldName="DragModelType" NewName="drag_model_type" Category="method" />
    <Mapping ParentScope="IAgVAMarsGRAM37" OldName="DragModelPluginName" NewName="drag_model_plugin_name" Category="method" />
    <Mapping ParentScope="IAgVAMarsGRAM37" OldName="DragModelPlugin" NewName="drag_model_plugin" Category="method" />
@@ -3058,9 +3058,9 @@
    <Mapping ParentScope="IAgVAMarsGRAM2005" OldName="DataDirectory" NewName="data_directory" Category="method" />
    <Mapping ParentScope="IAgVAMarsGRAM2005" OldName="NamelistFile" NewName="namelist_file" Category="method" />
    <Mapping ParentScope="IAgVAMarsGRAM2005" OldName="DensityType" NewName="density_type" Category="method" />
-   <Mapping ParentScope="IAgVAMarsGRAM2005" OldName="AtmosDataSource" NewName="atmos_data_source" Category="method" />
+   <Mapping ParentScope="IAgVAMarsGRAM2005" OldName="AtmosDataSource" NewName="atmosphere_data_source" Category="method" />
    <Mapping ParentScope="IAgVAMarsGRAM2005" OldName="F10p7" NewName="f_10_p7" Category="method" />
-   <Mapping ParentScope="IAgVAMarsGRAM2005" OldName="AtmosDataFilename" NewName="atmos_data_filename" Category="method" />
+   <Mapping ParentScope="IAgVAMarsGRAM2005" OldName="AtmosDataFilename" NewName="atmosphere_data_filename" Category="method" />
    <Mapping ParentScope="IAgVAMarsGRAM2005" OldName="DragModelType" NewName="drag_model_type" Category="method" />
    <Mapping ParentScope="IAgVAMarsGRAM2005" OldName="DragModelPluginName" NewName="drag_model_plugin_name" Category="method" />
    <Mapping ParentScope="IAgVAMarsGRAM2005" OldName="DragModelPlugin" NewName="drag_model_plugin" Category="method" />
@@ -3086,9 +3086,9 @@
    <Mapping ParentScope="IAgVAMarsGRAM2010" OldName="DataDirectory" NewName="data_directory" Category="method" />
    <Mapping ParentScope="IAgVAMarsGRAM2010" OldName="NamelistFile" NewName="namelist_file" Category="method" />
    <Mapping ParentScope="IAgVAMarsGRAM2010" OldName="DensityType" NewName="density_type" Category="method" />
-   <Mapping ParentScope="IAgVAMarsGRAM2010" OldName="AtmosDataSource" NewName="atmos_data_source" Category="method" />
+   <Mapping ParentScope="IAgVAMarsGRAM2010" OldName="AtmosDataSource" NewName="atmosphere_data_source" Category="method" />
    <Mapping ParentScope="IAgVAMarsGRAM2010" OldName="F10p7" NewName="f_10_p7" Category="method" />
-   <Mapping ParentScope="IAgVAMarsGRAM2010" OldName="AtmosDataFilename" NewName="atmos_data_filename" Category="method" />
+   <Mapping ParentScope="IAgVAMarsGRAM2010" OldName="AtmosDataFilename" NewName="atmosphere_data_filename" Category="method" />
    <Mapping ParentScope="IAgVAMarsGRAM2010" OldName="DragModelType" NewName="drag_model_type" Category="method" />
    <Mapping ParentScope="IAgVAMarsGRAM2010" OldName="DragModelPluginName" NewName="drag_model_plugin_name" Category="method" />
    <Mapping ParentScope="IAgVAMarsGRAM2010" OldName="DragModelPlugin" NewName="drag_model_plugin" Category="method" />
@@ -3102,9 +3102,9 @@
    <Mapping ParentScope="IAgVAMarsGRAM2001" OldName="DataDirectory" NewName="data_directory" Category="method" />
    <Mapping ParentScope="IAgVAMarsGRAM2001" OldName="NamelistFile" NewName="namelist_file" Category="method" />
    <Mapping ParentScope="IAgVAMarsGRAM2001" OldName="DensityType" NewName="density_type" Category="method" />
-   <Mapping ParentScope="IAgVAMarsGRAM2001" OldName="AtmosDataSource" NewName="atmos_data_source" Category="method" />
+   <Mapping ParentScope="IAgVAMarsGRAM2001" OldName="AtmosDataSource" NewName="atmosphere_data_source" Category="method" />
    <Mapping ParentScope="IAgVAMarsGRAM2001" OldName="F10p7" NewName="f_10_p7" Category="method" />
-   <Mapping ParentScope="IAgVAMarsGRAM2001" OldName="AtmosDataFilename" NewName="atmos_data_filename" Category="method" />
+   <Mapping ParentScope="IAgVAMarsGRAM2001" OldName="AtmosDataFilename" NewName="atmosphere_data_filename" Category="method" />
    <Mapping ParentScope="IAgVAMarsGRAM2001" OldName="DragModelType" NewName="drag_model_type" Category="method" />
    <Mapping ParentScope="IAgVAMarsGRAM2001" OldName="DragModelPluginName" NewName="drag_model_plugin_name" Category="method" />
    <Mapping ParentScope="IAgVAMarsGRAM2001" OldName="DragModelPlugin" NewName="drag_model_plugin" Category="method" />
@@ -3118,9 +3118,9 @@
    <Mapping ParentScope="IAgVAMarsGRAM2000" OldName="DataDirectory" NewName="data_directory" Category="method" />
    <Mapping ParentScope="IAgVAMarsGRAM2000" OldName="NamelistFile" NewName="namelist_file" Category="method" />
    <Mapping ParentScope="IAgVAMarsGRAM2000" OldName="DensityType" NewName="density_type" Category="method" />
-   <Mapping ParentScope="IAgVAMarsGRAM2000" OldName="AtmosDataSource" NewName="atmos_data_source" Category="method" />
+   <Mapping ParentScope="IAgVAMarsGRAM2000" OldName="AtmosDataSource" NewName="atmosphere_data_source" Category="method" />
    <Mapping ParentScope="IAgVAMarsGRAM2000" OldName="F10p7" NewName="f_10_p7" Category="method" />
-   <Mapping ParentScope="IAgVAMarsGRAM2000" OldName="AtmosDataFilename" NewName="atmos_data_filename" Category="method" />
+   <Mapping ParentScope="IAgVAMarsGRAM2000" OldName="AtmosDataFilename" NewName="atmosphere_data_filename" Category="method" />
    <Mapping ParentScope="IAgVAMarsGRAM2000" OldName="DragModelType" NewName="drag_model_type" Category="method" />
    <Mapping ParentScope="IAgVAMarsGRAM2000" OldName="DragModelPluginName" NewName="drag_model_plugin_name" Category="method" />
    <Mapping ParentScope="IAgVAMarsGRAM2000" OldName="DragModelPlugin" NewName="drag_model_plugin" Category="method" />
@@ -3131,16 +3131,16 @@
    <Mapping ParentScope="IAgVADTM2012" OldName="ComputesTemperature" NewName="computes_temperature" Category="method" />
    <Mapping ParentScope="IAgVADTM2012" OldName="ComputesPressure" NewName="computes_pressure" Category="method" />
    <Mapping ParentScope="IAgVADTM2012" OldName="SunPosition" NewName="sun_position" Category="method" />
-   <Mapping ParentScope="IAgVADTM2012" OldName="AtmosDataSource" NewName="atmos_data_source" Category="method" />
+   <Mapping ParentScope="IAgVADTM2012" OldName="AtmosDataSource" NewName="atmosphere_data_source" Category="method" />
    <Mapping ParentScope="IAgVADTM2012" OldName="F10p7Avg" NewName="f_10_p7_avg" Category="method" />
-   <Mapping ParentScope="IAgVADTM2012" OldName="AtmosDataFilename" NewName="atmos_data_filename" Category="method" />
+   <Mapping ParentScope="IAgVADTM2012" OldName="AtmosDataFilename" NewName="atmosphere_data_filename" Category="method" />
    <Mapping ParentScope="IAgVADTM2012" OldName="DragModelType" NewName="drag_model_type" Category="method" />
    <Mapping ParentScope="IAgVADTM2012" OldName="DragModelPluginName" NewName="drag_model_plugin_name" Category="method" />
    <Mapping ParentScope="IAgVADTM2012" OldName="DragModelPlugin" NewName="drag_model_plugin" Category="method" />
    <Mapping ParentScope="IAgVADTM2012" OldName="F10p7" NewName="f_10_p7" Category="method" />
    <Mapping ParentScope="IAgVADTM2012" OldName="Kp" NewName="kp" Category="method" />
-   <Mapping ParentScope="IAgVADTM2012" OldName="AtmosDataGeoMagneticFluxSource" NewName="atmos_data_geo_magnetic_flux_source" Category="method" />
-   <Mapping ParentScope="IAgVADTM2012" OldName="AtmosDataGeoMagneticFluxUpdateRate" NewName="atmos_data_geo_magnetic_flux_update_rate" Category="method" />
+   <Mapping ParentScope="IAgVADTM2012" OldName="AtmosDataGeoMagneticFluxSource" NewName="atmosphere_data_geo_magnetic_flux_source" Category="method" />
+   <Mapping ParentScope="IAgVADTM2012" OldName="AtmosDataGeoMagneticFluxUpdateRate" NewName="atmosphere_data_geo_magnetic_flux_update_rate" Category="method" />
    <Mapping ParentScope="IAgVADTM2012" OldName="VariableAreaHistoryFile" NewName="variable_area_history_file" Category="method" />
    <Mapping ParentScope="IAgVADTM2012" OldName="NPlateDefinitionFile" NewName="n_plate_definition_file" Category="method" />
    <Mapping OldName="IAgVADTM2020" NewName="DTM2020" Category="interface" />
@@ -3148,16 +3148,16 @@
    <Mapping ParentScope="IAgVADTM2020" OldName="ComputesTemperature" NewName="computes_temperature" Category="method" />
    <Mapping ParentScope="IAgVADTM2020" OldName="ComputesPressure" NewName="computes_pressure" Category="method" />
    <Mapping ParentScope="IAgVADTM2020" OldName="SunPosition" NewName="sun_position" Category="method" />
-   <Mapping ParentScope="IAgVADTM2020" OldName="AtmosDataSource" NewName="atmos_data_source" Category="method" />
+   <Mapping ParentScope="IAgVADTM2020" OldName="AtmosDataSource" NewName="atmosphere_data_source" Category="method" />
    <Mapping ParentScope="IAgVADTM2020" OldName="F10p7Avg" NewName="f_10_p7_avg" Category="method" />
-   <Mapping ParentScope="IAgVADTM2020" OldName="AtmosDataFilename" NewName="atmos_data_filename" Category="method" />
+   <Mapping ParentScope="IAgVADTM2020" OldName="AtmosDataFilename" NewName="atmosphere_data_filename" Category="method" />
    <Mapping ParentScope="IAgVADTM2020" OldName="DragModelType" NewName="drag_model_type" Category="method" />
    <Mapping ParentScope="IAgVADTM2020" OldName="DragModelPluginName" NewName="drag_model_plugin_name" Category="method" />
    <Mapping ParentScope="IAgVADTM2020" OldName="DragModelPlugin" NewName="drag_model_plugin" Category="method" />
    <Mapping ParentScope="IAgVADTM2020" OldName="F10p7" NewName="f_10_p7" Category="method" />
    <Mapping ParentScope="IAgVADTM2020" OldName="Kp" NewName="kp" Category="method" />
-   <Mapping ParentScope="IAgVADTM2020" OldName="AtmosDataGeoMagneticFluxSource" NewName="atmos_data_geo_magnetic_flux_source" Category="method" />
-   <Mapping ParentScope="IAgVADTM2020" OldName="AtmosDataGeoMagneticFluxUpdateRate" NewName="atmos_data_geo_magnetic_flux_update_rate" Category="method" />
+   <Mapping ParentScope="IAgVADTM2020" OldName="AtmosDataGeoMagneticFluxSource" NewName="atmosphere_data_geo_magnetic_flux_source" Category="method" />
+   <Mapping ParentScope="IAgVADTM2020" OldName="AtmosDataGeoMagneticFluxUpdateRate" NewName="atmosphere_data_geo_magnetic_flux_update_rate" Category="method" />
    <Mapping ParentScope="IAgVADTM2020" OldName="VariableAreaHistoryFile" NewName="variable_area_history_file" Category="method" />
    <Mapping ParentScope="IAgVADTM2020" OldName="NPlateDefinitionFile" NewName="n_plate_definition_file" Category="method" />
    <Mapping OldName="IAgVAGravityFieldFunction" NewName="GravityFieldFunction" Category="interface" />
@@ -3195,7 +3195,7 @@
    <Mapping ParentScope="IAgVAEOMFuncPluginFunction" OldName="PluginIdentifier" NewName="plugin_identifier" Category="method" />
    <Mapping ParentScope="IAgVAEOMFuncPluginFunction" OldName="PluginConfig" NewName="plugin_config" Category="method" />
    <Mapping OldName="IAgVASRPAeroT20" NewName="SRPAerospaceT20" Category="interface" />
-   <Mapping ParentScope="IAgVASRPAeroT20" OldName="AtmosAlt" NewName="atmos_altitude" Category="method" />
+   <Mapping ParentScope="IAgVASRPAeroT20" OldName="AtmosAlt" NewName="atmosphere_altitude" Category="method" />
    <Mapping ParentScope="IAgVASRPAeroT20" OldName="ShadowModel" NewName="shadow_model" Category="method" />
    <Mapping ParentScope="IAgVASRPAeroT20" OldName="SunPosition" NewName="sun_position" Category="method" />
    <Mapping ParentScope="IAgVASRPAeroT20" OldName="EclipsingBodies" NewName="eclipsing_bodies" Category="method" />
@@ -3203,7 +3203,7 @@
    <Mapping ParentScope="IAgVASRPAeroT20" OldName="UseSunCbFileValues" NewName="use_sun_central_body_file_values" Category="method" />
    <Mapping ParentScope="IAgVASRPAeroT20" OldName="SolarRadius" NewName="solar_radius" Category="method" />
    <Mapping OldName="IAgVASRPAeroT30" NewName="SRPAerospaceT30" Category="interface" />
-   <Mapping ParentScope="IAgVASRPAeroT30" OldName="AtmosAlt" NewName="atmos_altitude" Category="method" />
+   <Mapping ParentScope="IAgVASRPAeroT30" OldName="AtmosAlt" NewName="atmosphere_altitude" Category="method" />
    <Mapping ParentScope="IAgVASRPAeroT30" OldName="ShadowModel" NewName="shadow_model" Category="method" />
    <Mapping ParentScope="IAgVASRPAeroT30" OldName="SunPosition" NewName="sun_position" Category="method" />
    <Mapping ParentScope="IAgVASRPAeroT30" OldName="EclipsingBodies" NewName="eclipsing_bodies" Category="method" />
@@ -3211,7 +3211,7 @@
    <Mapping ParentScope="IAgVASRPAeroT30" OldName="UseSunCbFileValues" NewName="use_sun_central_body_file_values" Category="method" />
    <Mapping ParentScope="IAgVASRPAeroT30" OldName="SolarRadius" NewName="solar_radius" Category="method" />
    <Mapping OldName="IAgVASRPGSPM04aIIA" NewName="SRPGSPM04aIIA" Category="interface" />
-   <Mapping ParentScope="IAgVASRPGSPM04aIIA" OldName="AtmosAlt" NewName="atmos_altitude" Category="method" />
+   <Mapping ParentScope="IAgVASRPGSPM04aIIA" OldName="AtmosAlt" NewName="atmosphere_altitude" Category="method" />
    <Mapping ParentScope="IAgVASRPGSPM04aIIA" OldName="ShadowModel" NewName="shadow_model" Category="method" />
    <Mapping ParentScope="IAgVASRPGSPM04aIIA" OldName="SunPosition" NewName="sun_position" Category="method" />
    <Mapping ParentScope="IAgVASRPGSPM04aIIA" OldName="EclipsingBodies" NewName="eclipsing_bodies" Category="method" />
@@ -3219,7 +3219,7 @@
    <Mapping ParentScope="IAgVASRPGSPM04aIIA" OldName="UseSunCbFileValues" NewName="use_sun_central_body_file_values" Category="method" />
    <Mapping ParentScope="IAgVASRPGSPM04aIIA" OldName="SolarRadius" NewName="solar_radius" Category="method" />
    <Mapping OldName="IAgVASRPGSPM04aIIR" NewName="SRPGSPM04aIIR" Category="interface" />
-   <Mapping ParentScope="IAgVASRPGSPM04aIIR" OldName="AtmosAlt" NewName="atmos_altitude" Category="method" />
+   <Mapping ParentScope="IAgVASRPGSPM04aIIR" OldName="AtmosAlt" NewName="atmosphere_altitude" Category="method" />
    <Mapping ParentScope="IAgVASRPGSPM04aIIR" OldName="ShadowModel" NewName="shadow_model" Category="method" />
    <Mapping ParentScope="IAgVASRPGSPM04aIIR" OldName="SunPosition" NewName="sun_position" Category="method" />
    <Mapping ParentScope="IAgVASRPGSPM04aIIR" OldName="EclipsingBodies" NewName="eclipsing_bodies" Category="method" />
@@ -3227,7 +3227,7 @@
    <Mapping ParentScope="IAgVASRPGSPM04aIIR" OldName="UseSunCbFileValues" NewName="use_sun_central_body_file_values" Category="method" />
    <Mapping ParentScope="IAgVASRPGSPM04aIIR" OldName="SolarRadius" NewName="solar_radius" Category="method" />
    <Mapping OldName="IAgVASRPGSPM04aeIIA" NewName="SRPGSPM04aeIIA" Category="interface" />
-   <Mapping ParentScope="IAgVASRPGSPM04aeIIA" OldName="AtmosAlt" NewName="atmos_altitude" Category="method" />
+   <Mapping ParentScope="IAgVASRPGSPM04aeIIA" OldName="AtmosAlt" NewName="atmosphere_altitude" Category="method" />
    <Mapping ParentScope="IAgVASRPGSPM04aeIIA" OldName="ShadowModel" NewName="shadow_model" Category="method" />
    <Mapping ParentScope="IAgVASRPGSPM04aeIIA" OldName="SunPosition" NewName="sun_position" Category="method" />
    <Mapping ParentScope="IAgVASRPGSPM04aeIIA" OldName="EclipsingBodies" NewName="eclipsing_bodies" Category="method" />
@@ -3235,7 +3235,7 @@
    <Mapping ParentScope="IAgVASRPGSPM04aeIIA" OldName="UseSunCbFileValues" NewName="use_sun_central_body_file_values" Category="method" />
    <Mapping ParentScope="IAgVASRPGSPM04aeIIA" OldName="SolarRadius" NewName="solar_radius" Category="method" />
    <Mapping OldName="IAgVASRPGSPM04aeIIR" NewName="SRPGSPM04aeIIR" Category="interface" />
-   <Mapping ParentScope="IAgVASRPGSPM04aeIIR" OldName="AtmosAlt" NewName="atmos_altitude" Category="method" />
+   <Mapping ParentScope="IAgVASRPGSPM04aeIIR" OldName="AtmosAlt" NewName="atmosphere_altitude" Category="method" />
    <Mapping ParentScope="IAgVASRPGSPM04aeIIR" OldName="ShadowModel" NewName="shadow_model" Category="method" />
    <Mapping ParentScope="IAgVASRPGSPM04aeIIR" OldName="SunPosition" NewName="sun_position" Category="method" />
    <Mapping ParentScope="IAgVASRPGSPM04aeIIR" OldName="EclipsingBodies" NewName="eclipsing_bodies" Category="method" />
@@ -3243,7 +3243,7 @@
    <Mapping ParentScope="IAgVASRPGSPM04aeIIR" OldName="UseSunCbFileValues" NewName="use_sun_central_body_file_values" Category="method" />
    <Mapping ParentScope="IAgVASRPGSPM04aeIIR" OldName="SolarRadius" NewName="solar_radius" Category="method" />
    <Mapping OldName="IAgVASRPSpherical" NewName="SRPSpherical" Category="interface" />
-   <Mapping ParentScope="IAgVASRPSpherical" OldName="AtmosAlt" NewName="atmos_altitude" Category="method" />
+   <Mapping ParentScope="IAgVASRPSpherical" OldName="AtmosAlt" NewName="atmosphere_altitude" Category="method" />
    <Mapping ParentScope="IAgVASRPSpherical" OldName="ShadowModel" NewName="shadow_model" Category="method" />
    <Mapping ParentScope="IAgVASRPSpherical" OldName="SunPosition" NewName="sun_position" Category="method" />
    <Mapping ParentScope="IAgVASRPSpherical" OldName="EclipsingBodies" NewName="eclipsing_bodies" Category="method" />
@@ -3254,7 +3254,7 @@
    <Mapping ParentScope="IAgVASRPSpherical" OldName="UseSunCbFileValues" NewName="use_sun_central_body_file_values" Category="method" />
    <Mapping ParentScope="IAgVASRPSpherical" OldName="SolarRadius" NewName="solar_radius" Category="method" />
    <Mapping OldName="IAgVASRPNPlate" NewName="SRPNPlate" Category="interface" />
-   <Mapping ParentScope="IAgVASRPNPlate" OldName="AtmosAlt" NewName="atmos_altitude" Category="method" />
+   <Mapping ParentScope="IAgVASRPNPlate" OldName="AtmosAlt" NewName="atmosphere_altitude" Category="method" />
    <Mapping ParentScope="IAgVASRPNPlate" OldName="ShadowModel" NewName="shadow_model" Category="method" />
    <Mapping ParentScope="IAgVASRPNPlate" OldName="SunPosition" NewName="sun_position" Category="method" />
    <Mapping ParentScope="IAgVASRPNPlate" OldName="EclipsingBodies" NewName="eclipsing_bodies" Category="method" />
@@ -3266,7 +3266,7 @@
    <Mapping ParentScope="IAgVASRPNPlate" OldName="SolarRadius" NewName="solar_radius" Category="method" />
    <Mapping ParentScope="IAgVASRPNPlate" OldName="NPlateDefinitionFile" NewName="n_plate_definition_file" Category="method" />
    <Mapping OldName="IAgVASRPTabAreaVec" NewName="SRPTabulatedAreaVector" Category="interface" />
-   <Mapping ParentScope="IAgVASRPTabAreaVec" OldName="AtmosAlt" NewName="atmos_altitude" Category="method" />
+   <Mapping ParentScope="IAgVASRPTabAreaVec" OldName="AtmosAlt" NewName="atmosphere_altitude" Category="method" />
    <Mapping ParentScope="IAgVASRPTabAreaVec" OldName="ShadowModel" NewName="shadow_model" Category="method" />
    <Mapping ParentScope="IAgVASRPTabAreaVec" OldName="SunPosition" NewName="sun_position" Category="method" />
    <Mapping ParentScope="IAgVASRPTabAreaVec" OldName="EclipsingBodies" NewName="eclipsing_bodies" Category="method" />
@@ -3279,7 +3279,7 @@
    <Mapping ParentScope="IAgVASRPTabAreaVec" OldName="TabAreaVectorDefinitionFile" NewName="tab_area_vector_definition_file" Category="method" />
    <Mapping ParentScope="IAgVASRPTabAreaVec" OldName="InterpolationMethod" NewName="interpolation_method" Category="method" />
    <Mapping OldName="IAgVASRPVariableArea" NewName="SRPVariableArea" Category="interface" />
-   <Mapping ParentScope="IAgVASRPVariableArea" OldName="AtmosAlt" NewName="atmos_altitude" Category="method" />
+   <Mapping ParentScope="IAgVASRPVariableArea" OldName="AtmosAlt" NewName="atmosphere_altitude" Category="method" />
    <Mapping ParentScope="IAgVASRPVariableArea" OldName="ShadowModel" NewName="shadow_model" Category="method" />
    <Mapping ParentScope="IAgVASRPVariableArea" OldName="SunPosition" NewName="sun_position" Category="method" />
    <Mapping ParentScope="IAgVASRPVariableArea" OldName="EclipsingBodies" NewName="eclipsing_bodies" Category="method" />
@@ -3300,7 +3300,7 @@
    <Mapping OldName="IAgVASRPReflectionPlugin" NewName="SRPReflectionPlugin" Category="interface" />
    <Mapping ParentScope="IAgVASRPReflectionPlugin" OldName="PluginIdentifier" NewName="plugin_identifier" Category="method" />
    <Mapping ParentScope="IAgVASRPReflectionPlugin" OldName="PluginConfig" NewName="plugin_config" Category="method" />
-   <Mapping ParentScope="IAgVASRPReflectionPlugin" OldName="AtmosAlt" NewName="atmos_altitude" Category="method" />
+   <Mapping ParentScope="IAgVASRPReflectionPlugin" OldName="AtmosAlt" NewName="atmosphere_altitude" Category="method" />
    <Mapping ParentScope="IAgVASRPReflectionPlugin" OldName="ShadowModel" NewName="shadow_model" Category="method" />
    <Mapping ParentScope="IAgVASRPReflectionPlugin" OldName="SunPosition" NewName="sun_position" Category="method" />
    <Mapping ParentScope="IAgVASRPReflectionPlugin" OldName="EclipsingBodies" NewName="eclipsing_bodies" Category="method" />
@@ -3822,8 +3822,8 @@
    <Mapping OldName="AgVAStateCalcDifference" NewName="StateCalcDifference" Category="class" />
    <Mapping OldName="AgVAStateCalcDifferenceOtherSegment" NewName="StateCalcDifferenceOtherSegment" Category="class" />
    <Mapping OldName="AgVAStateCalcPosDifferenceOtherSegment" NewName="StateCalcPositionDifferenceOtherSegment" Category="class" />
-   <Mapping OldName="AgVAStateCalcVelDifferenceOtherSegment" NewName="StateCalcVelDifferenceOtherSegment" Category="class" />
-   <Mapping OldName="AgVAStateCalcPosVelDifferenceOtherSegment" NewName="StateCalcPositionVelDifferenceOtherSegment" Category="class" />
+   <Mapping OldName="AgVAStateCalcVelDifferenceOtherSegment" NewName="StateCalcVelocityDifferenceOtherSegment" Category="class" />
+   <Mapping OldName="AgVAStateCalcPosVelDifferenceOtherSegment" NewName="StateCalcPositionVelocityDifferenceOtherSegment" Category="class" />
    <Mapping OldName="AgVAStateCalcValueAtSegment" NewName="StateCalcValueAtSegment" Category="class" />
    <Mapping OldName="AgVAStateCalcMaxValue" NewName="StateCalcMaxValue" Category="class" />
    <Mapping OldName="AgVAStateCalcMinValue" NewName="StateCalcMinValue" Category="class" />
@@ -3869,14 +3869,14 @@
    <Mapping OldName="AgVAStateCalcRMag" NewName="StateCalcRMagnitude" Category="class" />
    <Mapping OldName="AgVAStateCalcRA" NewName="StateCalcRA" Category="class" />
    <Mapping OldName="AgVAStateCalcVMag" NewName="StateCalcVMagnitude" Category="class" />
-   <Mapping OldName="AgVAStateCalcVelAz" NewName="StateCalcVelAz" Category="class" />
+   <Mapping OldName="AgVAStateCalcVelAz" NewName="StateCalcVelocityAz" Category="class" />
    <Mapping OldName="AgVAStateCalcC3Energy" NewName="StateCalcC3Energy" Category="class" />
    <Mapping OldName="AgVAStateCalcInAsympDec" NewName="StateCalcInAsympDec" Category="class" />
    <Mapping OldName="AgVAStateCalcInAsympRA" NewName="StateCalcInAsympRA" Category="class" />
-   <Mapping OldName="AgVAStateCalcInVelAzAtPeriapsis" NewName="StateCalcInVelAzAtPeriapsis" Category="class" />
+   <Mapping OldName="AgVAStateCalcInVelAzAtPeriapsis" NewName="StateCalcInVelocityAzAtPeriapsis" Category="class" />
    <Mapping OldName="AgVAStateCalcOutAsympDec" NewName="StateCalcOutAsympDec" Category="class" />
    <Mapping OldName="AgVAStateCalcOutAsympRA" NewName="StateCalcOutAsympRA" Category="class" />
-   <Mapping OldName="AgVAStateCalcOutVelAzAtPeriapsis" NewName="StateCalcOutVelAzAtPeriapsis" Category="class" />
+   <Mapping OldName="AgVAStateCalcOutVelAzAtPeriapsis" NewName="StateCalcOutVelocityAzAtPeriapsis" Category="class" />
    <Mapping OldName="AgVAStateCalcDuration" NewName="StateCalcDuration" Category="class" />
    <Mapping OldName="AgVAStateCalcUserValue" NewName="StateCalcUserValue" Category="class" />
    <Mapping OldName="AgVAStateCalcCrdnAngle" NewName="StateCalcVectorGeometryToolAngle" Category="class" />

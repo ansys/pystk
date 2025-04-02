@@ -49,7 +49,7 @@ Overview
               - Do not use this property, as it is deprecated. Use LowAltAtmosDensityModel instead. Select the low altitude atmospheric density model to be used.
             * - :py:attr:`~ansys.stk.core.stkobjects.VehicleHPOPForceModelDrag.blending_range`
               - Atmospheric blending range: measured from the lower extent of the upper atmospheric model. Uses distance dimension.
-            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleHPOPForceModelDrag.low_altitude_atmos_density_model`
+            * - :py:attr:`~ansys.stk.core.stkobjects.VehicleHPOPForceModelDrag.low_altitude_atmosphere_density_model`
               - Select the low altitude atmospheric density model to be used.
 
 
@@ -119,8 +119,8 @@ Property detail
 
     Atmospheric blending range: measured from the lower extent of the upper atmospheric model. Uses distance dimension.
 
-.. py:property:: low_altitude_atmos_density_model
-    :canonical: ansys.stk.core.stkobjects.VehicleHPOPForceModelDrag.low_altitude_atmos_density_model
+.. py:property:: low_altitude_atmosphere_density_model
+    :canonical: ansys.stk.core.stkobjects.VehicleHPOPForceModelDrag.low_altitude_atmosphere_density_model
     :type: LowAltitudeAtmosphericDensityModel
 
     Select the low altitude atmospheric density model to be used.
