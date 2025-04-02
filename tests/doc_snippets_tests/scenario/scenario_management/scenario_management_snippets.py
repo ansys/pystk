@@ -21,6 +21,7 @@
 # SOFTWARE.
 
 import os
+import pytest
 import sys
 
 from ansys.stk.core.stkdesktop import STKDesktop
@@ -94,6 +95,76 @@ class ScenarioManagementSnippets(CodeSnippetsTestBase):
     def CloseScenarioSnippet(self, root):
         # StkObjectRoot root: STK Object Model Root
         root.close_scenario()
+
+    def test_STKEngineEventsSnippet(self):
+        try:
+            root = self.get_root()
+            root.close_scenario()
+            self.STKEngineEventsSnippet(self.get_root())
+        finally:
+            self.reset_to_default_scenario()
+
+    @code_snippet(
+        name="STKEngineEvents",
+        description="Manage STK Engine events",
+        category="Scenario | Scenario Management",
+        eid="STKObjects~StkObjectRoot",
+    )
+    def STKEngineEventsSnippet(self, root):
+        # StkObjectRoot root: STK Object Model Root
+        def on_scenario_new_custom_callback(path:str):
+            print(f'Scenario {path} has been created.')
+
+        skt_object_root_events = root.subscribe()
+        skt_object_root_events.on_scenario_new += on_scenario_new_custom_callback
+        
+        root.new_scenario('ExampleScenario')
+        # callback should be executed now
+
+        # remove the callback from the handler
+        skt_object_root_events.on_scenario_new -= on_scenario_new_custom_callback
+
+        # all finished with events, unsubscribe
+        skt_object_root_events.unsubscribe()
+
+    @pytest.mark.skip(reason="User interface interaction required to prevent application from hanging")
+    @category("ExcludeOnLinux")
+    def test_STKDesktopEventsSnippet(self):
+        self.STKDesktopEventsSnippet()
+
+    @code_snippet(
+        name="STKDesktopEvents",
+        description="Manage STK Desktop events",
+        category="Scenario | Scenario Management",
+        eid="STKObjects~StkObjectRoot",
+    )
+    def STKDesktopEventsSnippet(self):
+        from ansys.stk.core.stkdesktop import STKDesktop
+        from ansys.stk.core.stkobjects import STKObjectType
+
+        def on_stk_object_added_custom_callback(path:str):
+            print(f'{path} has been added.')
+
+        stk = STKDesktop.start_application(visible=True)
+        root = stk.root
+        root.new_scenario('ExampleScenario')
+        skt_object_root_events = root.subscribe()
+        skt_object_root_events.on_stk_object_added += on_stk_object_added_custom_callback
+        scenario = root.current_scenario
+
+        # on_stk_object_added_custom_callback is successfully called when the next line is executed
+        facility = scenario.children.new(STKObjectType.FACILITY, 'AGI_HQ')
+
+        # Now switch control to the desktop application and create another facility.
+        # The user interface becomes unresponsive.
+
+        # Now open a tkinter window that processing COM messages.
+        from tkinter import Tk
+
+        window = Tk()
+        window.mainloop()
+        # Switch control to the desktop application and create another facility.
+        # The user interface is responsive and the event callback is successful.
 
     @category("ExcludeOnLinux")
     def test_CloseSTKSnippet(self):

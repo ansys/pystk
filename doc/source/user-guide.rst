@@ -17,6 +17,13 @@ User guide
 
         Use PySTK to automate the processes of creating, saving, and loading scenarios.
 
+    .. grid-item-card:: :fa:`sitemap` API structure
+        :link: user-guide/api-structure
+        :link-type: doc
+        :padding: 2 2 2 2
+
+        Navigate PySTK effectively by exploring the foundational structure of the API.
+
     .. grid-item-card:: :fa:`bar-chart` Results and graphs
         :link: user-guide/results-graphs
         :link-type: doc
@@ -45,6 +52,7 @@ User guide
 
    Initialization <user-guide/initialization>
    Create and load scenarios <user-guide/create-load-scenarios>
+   API structure <user-guide/api-structure>
    Results and graphs <user-guide/results-graphs>
    Migration <user-guide/migration>
    Code snippets <user-guide/code-snippets>

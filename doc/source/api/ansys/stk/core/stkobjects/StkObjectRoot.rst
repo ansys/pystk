@@ -114,6 +114,22 @@ Extract data from Connect result
         print(cmdRes)
 
 
+Use arrays to send and retrieve data with Connect
+
+.. code-block:: python
+
+    from ansys.stk.core.stkutil import ExecuteMultipleCommandsMode
+
+    connect_commands = ['GetStkVersion /', 'New / Scenario ExampleScenario']
+    command_results = root.execute_multiple_commands(connect_commands, ExecuteMultipleCommandsMode.CONTINUE_ON_ERROR)
+
+    first_message = command_results.item(0)
+    also_first_message = command_results[0]
+
+    for message in command_results:
+        print(message.count)
+
+
 Execute multiple Connect commands
 
 .. code-block:: python
@@ -227,6 +243,60 @@ Create a new Scenario
 
     # StkObjectRoot root: STK Object Model Root
     root.new_scenario("Example_Scenario")
+
+
+Manage STK Desktop events
+
+.. code-block:: python
+
+    from ansys.stk.core.stkdesktop import STKDesktop
+    from ansys.stk.core.stkobjects import STKObjectType
+
+    def on_stk_object_added_custom_callback(path:str):
+        print(f'{path} has been added.')
+
+    stk = STKDesktop.start_application(visible=True)
+    root = stk.root
+    root.new_scenario('ExampleScenario')
+    skt_object_root_events = root.subscribe()
+    skt_object_root_events.on_stk_object_added += on_stk_object_added_custom_callback
+    scenario = root.current_scenario
+
+    # on_stk_object_added_custom_callback is successfully called when the next line is executed
+    facility = scenario.children.new(STKObjectType.FACILITY, 'AGI_HQ')
+
+    # Now switch control to the desktop application and create another facility.
+    # The user interface becomes unresponsive.
+
+    # Now open a tkinter window that processing COM messages.
+    from tkinter import Tk
+
+    window = Tk()
+    window.mainloop()
+
+
+Manage STK Engine events
+
+.. code-block:: python
+
+    from ansys.stk.core.stkengine import STKEngine
+
+    def on_scenario_new_custom_callback(path:str):
+        print(f'Scenario {path} has been created.')
+
+    stk = STKEngine.start_application()
+    root = stk.new_object_root()
+    skt_object_root_events = root.subscribe()
+    skt_object_root_events.on_scenario_new += on_scenario_new_custom_callback
+
+    root.new_scenario('ExampleScenario')
+    # callback should be executed now
+
+    # remove the callback from the handler
+    skt_object_root_events.on_scenario_new -= on_scenario_new_custom_callback
+
+    # all finished with events, unsubscribe
+    skt_object_root_events.unsubscribe()
 
 
 Close an open Scenario

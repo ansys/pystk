@@ -81,6 +81,27 @@ class ConnectSnippets(CodeSnippetsTestBase):
         commandList = [["New / */Place MyPlace"], ["SetPosition */Place/MyPlace Geodetic 37.9 -75.5 0.0"]]
         root.execute_multiple_commands(commandList, ExecuteMultipleCommandsMode.EXCEPTION_ON_ERROR)
 
+    def test_ConnectCommandArraysSnippet(self):
+        self.ConnectCommandArraysSnippet(self.get_root())
+
+    @code_snippet(
+        name="ConnectCommandArrays",
+        description="Use arrays to send and retrieve data with Connect",
+        category="Connect",
+        eid="STKObjects~StkObjectRoot",
+    )
+    def ConnectCommandArraysSnippet(self, root):
+        from ansys.stk.core.stkutil import ExecuteMultipleCommandsMode
+
+        connect_commands = ['GetStkVersion /', 'New / Scenario ExampleScenario']
+        command_results = root.execute_multiple_commands(connect_commands, ExecuteMultipleCommandsMode.CONTINUE_ON_ERROR)
+
+        first_message = command_results.item(0)
+        also_first_message = command_results[0]
+
+        for message in command_results:
+            print(message.count)
+
     def test_ResultsConnectCommandSnippet(self):
         try:
             MyPlace = self.get_scenario().children.new(STKObjectType.PLACE, "MyPlace")

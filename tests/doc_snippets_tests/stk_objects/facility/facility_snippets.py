@@ -63,6 +63,30 @@ class FacilitySnippets(CodeSnippetsTestBase):
         # StkObjectRoot root: STK Object Model Root
         facility = root.current_scenario.children.new(STKObjectType.FACILITY, "MyFacility")
 
+    def test_SetHeightFacilitySnippet(self):
+        self.SetHeightFacilitySnippet(self.get_root())
+
+    @code_snippet(
+        name="SetHeightFacility",
+        description="Create a facility and set its height above ground level",
+        category="STK Objects | Facility",
+        eid="STKObjects~Facility",
+    )
+    def SetHeightFacilitySnippet(self, root):
+        from ansys.stk.core.utilities.exceptions import STKRuntimeError
+        from ansys.stk.core.stkobjects import Facility, STKObjectType
+
+        try:
+            # this facility is not a valid STK reference
+            my_facility_attempt = Facility()
+            my_facility_attempt.height_above_ground = 123.4
+        except STKRuntimeError as e:
+            print(e)
+
+        # this facility represents a valid STK object
+        facility = Facility(root.current_scenario.children.new(STKObjectType.FACILITY, "facility1"))
+        facility.height_above_ground = 123.4
+
     def test_SetPositionFacilitySnippet(self):
         try:
             facility = self.get_scenario().children.new(STKObjectType.FACILITY, "facility")
@@ -86,6 +110,24 @@ class FacilitySnippets(CodeSnippetsTestBase):
 
         # Set altitude to a distance above the ground
         facility.height_above_ground = 0.05  # km
+
+    def test_GetPositionFacilitySnippet(self):
+        try:
+            facility = self.get_scenario().children.new(STKObjectType.FACILITY, "facility")
+
+            self.GetPositionFacilitySnippet(facility)
+        finally:
+            facility.unload()
+
+    @code_snippet(
+        name="GetPositionFacility",
+        description="Get the cartesian position of the facility",
+        category="STK Objects | Facility",
+        eid="STKObjects~Facility",
+    )
+    def GetPositionFacilitySnippet(self, facility):
+        # Facility facility: Facility Object
+        (x, y, z) = facility.position.query_cartesian()
 
     def test_AzElMaskFacilitySnippet(self):
         try:
