@@ -625,11 +625,13 @@ class EarlyBoundTests(TestBase):
         Assert.assertEqual(AtmosphericDensityModel.MSIS00, oDrag.low_altitude_atmospheric_density_model)
 
         # LowAltAtmosDensityModel (MSIS00)
-        oDrag.low_altitude_atmos_density_model = LowAltitudeAtmosphericDensityModel.MSISE1990
-        TestBase.logger.WriteLine6("\tThe new LowAltAtmosDensityModel is: {0}", oDrag.low_altitude_atmos_density_model)
-        Assert.assertEqual(LowAltitudeAtmosphericDensityModel.MSISE1990, oDrag.low_altitude_atmos_density_model)
+        oDrag.low_altitude_atmosphere_density_model = LowAltitudeAtmosphericDensityModel.MSISE1990
+        TestBase.logger.WriteLine6(
+            "\tThe new LowAltAtmosDensityModel is: {0}", oDrag.low_altitude_atmosphere_density_model
+        )
+        Assert.assertEqual(LowAltitudeAtmosphericDensityModel.MSISE1990, oDrag.low_altitude_atmosphere_density_model)
         # Reset LowAltAtmosDensityModel
-        oDrag.low_altitude_atmos_density_model = LowAltitudeAtmosphericDensityModel.NONE
+        oDrag.low_altitude_atmosphere_density_model = LowAltitudeAtmosphericDensityModel.NONE
 
         # Drag Model
         oDrag.set_drag_model_type(DragModel.SPHERICAL)

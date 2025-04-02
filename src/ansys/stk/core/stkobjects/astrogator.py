@@ -22,7 +22,7 @@
 
 """Object Model components specifically designed to support STK Astrogator."""
 
-__all__ = ["AccessCriterion", "AccessStoppingCondition", "AsTriggerCondition", "AscentType", "AtmosDataSource", "AttitudeControl", 
+__all__ = ["AccessCriterion", "AccessStoppingCondition", "AsTriggerCondition", "AscentType", "AtmosphereDataSource", "AttitudeControl", 
 "AttitudeControlFiniteAntiVelocityVector", "AttitudeControlFiniteAttitude", "AttitudeControlFiniteFile", "AttitudeControlFinitePlugin", 
 "AttitudeControlFiniteThrustVector", "AttitudeControlFiniteTimeVarying", "AttitudeControlFiniteVelocityVector", "AttitudeControlImpulsiveAntiVelocityVector", 
 "AttitudeControlImpulsiveAttitude", "AttitudeControlImpulsiveFile", "AttitudeControlImpulsiveThrustVector", "AttitudeControlImpulsiveVelocityVector", 
@@ -100,7 +100,7 @@ __all__ = ["AccessCriterion", "AccessStoppingCondition", "AsTriggerCondition", "
 "StateCalcEccentricityX", "StateCalcEccentricityY", "StateCalcEnvironment", "StateCalcEpoch", "StateCalcEquinoctialElem", 
 "StateCalcFlightPathAngle", "StateCalcFuelMass", "StateCalcGeodeticElem", "StateCalcGeodeticMeanRightAscension", "StateCalcGeodeticTrueLongitude", 
 "StateCalcGeodeticTrueLongitudeAtTimeOfPerigee", "StateCalcGravCoeff", "StateCalcGravitationalParameter", "StateCalcHeightAboveTerrain", 
-"StateCalcImpactFlux", "StateCalcImpactMassFlux", "StateCalcInAsympDec", "StateCalcInAsympRA", "StateCalcInVelAzAtPeriapsis", 
+"StateCalcImpactFlux", "StateCalcImpactMassFlux", "StateCalcInAsympDec", "StateCalcInAsympRA", "StateCalcInVelocityAzAtPeriapsis", 
 "StateCalcInclination", "StateCalcInclinationX", "StateCalcInclinationY", "StateCalcInertialDeltaVMagnitude", "StateCalcInertialDeltaVx", 
 "StateCalcInertialDeltaVy", "StateCalcInertialDeltaVz", "StateCalcJacobiConstant", "StateCalcJacobiOsculating", "StateCalcLocalApparentSolarLon", 
 "StateCalcLonDriftRate", "StateCalcLonOfAscNode", "StateCalcLonOfPeriapsis", "StateCalcMCSDeltaV", "StateCalcMCSDeltaVSquared", 
@@ -108,8 +108,8 @@ __all__ = ["AccessCriterion", "AccessStoppingCondition", "AsTriggerCondition", "
 "StateCalcMaxValue", "StateCalcMeanAnomaly", "StateCalcMeanEarthLon", "StateCalcMeanMotion", "StateCalcMeanRightAscension", 
 "StateCalcMeanValue", "StateCalcMedianValue", "StateCalcMinValue", "StateCalcNegative", "StateCalcNumRevs", "StateCalcOnePointAccess", 
 "StateCalcOrbitDelaunayG", "StateCalcOrbitDelaunayH", "StateCalcOrbitDelaunayL", "StateCalcOrbitPeriod", "StateCalcOrbitSemilatusRectum", 
-"StateCalcOrbitStateValue", "StateCalcOutAsympDec", "StateCalcOutAsympRA", "StateCalcOutVelAzAtPeriapsis", "StateCalcPi", 
-"StateCalcPositionDifferenceOtherSegment", "StateCalcPositionVelDifferenceOtherSegment", "StateCalcPower", "StateCalcPressure", 
+"StateCalcOrbitStateValue", "StateCalcOutAsympDec", "StateCalcOutAsympRA", "StateCalcOutVelocityAzAtPeriapsis", "StateCalcPi", 
+"StateCalcPositionDifferenceOtherSegment", "StateCalcPositionVelocityDifferenceOtherSegment", "StateCalcPower", "StateCalcPressure", 
 "StateCalcRA", "StateCalcRAAN", "StateCalcRARate", "StateCalcRMagnitude", "StateCalcRadOfApoapsis", "StateCalcRadOfPeriapsis", 
 "StateCalcRadiationPressureArea", "StateCalcRadiationPressureCoefficient", "StateCalcRangeRate", "StateCalcRectifiedLon", 
 "StateCalcReferenceRadius", "StateCalcRelativeAtAOLMaster", "StateCalcRelativeGroundTrackError", "StateCalcRelativeInclination", 
@@ -121,7 +121,7 @@ __all__ = ["AccessCriterion", "AccessStoppingCondition", "AsTriggerCondition", "
 "StateCalcTrueLongitude", "StateCalcTwoBodyDriftRate", "StateCalcUnitAngularMomentumX", "StateCalcUnitAngularMomentumY", 
 "StateCalcUnitAngularMomentumZ", "StateCalcUserValue", "StateCalcVMagnitude", "StateCalcValueAtSegment", "StateCalcValueAtSegmentOtherSat", 
 "StateCalcVectorDec", "StateCalcVectorGeometryToolAngle", "StateCalcVectorMagnitude", "StateCalcVectorRA", "StateCalcVectorX", 
-"StateCalcVectorY", "StateCalcVectorZ", "StateCalcVelAz", "StateCalcVelDifferenceOtherSegment", "StateTransformationFunction", 
+"StateCalcVectorY", "StateCalcVectorZ", "StateCalcVelocityAz", "StateCalcVelocityDifferenceOtherSegment", "StateTransformationFunction", 
 "StateType", "StoppingCondition", "StoppingConditionCollection", "StoppingConditionElement", "StoppingConditionType", "SunPosition", 
 "TabVecInterpolationMethod", "TargetSequenceAction", "TargeterGraph", "TargeterGraphActiveControl", "TargeterGraphActiveControlCollection", 
 "TargeterGraphCollection", "TargeterGraphResult", "TargeterGraphResultCollection", "ThirdBodyFunction", "ThirdBodyMode", 
@@ -2261,19 +2261,19 @@ class STMPerturbationVariables(IntEnum):
     """Designates the initial or final variation in the 'y' component of position."""
     POSITION_Z = 2
     """Designates the initial or final variation in the 'z' component of position."""
-    VEL_X = 3
+    VELOCITY_X = 3
     """Designates the initial or final variation in the 'x' component of velocity."""
-    VEL_Y = 4
+    VELOCITY_Y = 4
     """Designates the initial or final variation in the 'y' component of velocity."""
-    VEL_Z = 5
+    VELOCITY_Z = 5
     """Designates the initial or final variation in the 'z' component of velocity."""
 
 STMPerturbationVariables.POSITION_X.__doc__ = "Designates the initial or final variation in the 'x' component of position."
 STMPerturbationVariables.POSITION_Y.__doc__ = "Designates the initial or final variation in the 'y' component of position."
 STMPerturbationVariables.POSITION_Z.__doc__ = "Designates the initial or final variation in the 'z' component of position."
-STMPerturbationVariables.VEL_X.__doc__ = "Designates the initial or final variation in the 'x' component of velocity."
-STMPerturbationVariables.VEL_Y.__doc__ = "Designates the initial or final variation in the 'y' component of velocity."
-STMPerturbationVariables.VEL_Z.__doc__ = "Designates the initial or final variation in the 'z' component of velocity."
+STMPerturbationVariables.VELOCITY_X.__doc__ = "Designates the initial or final variation in the 'x' component of velocity."
+STMPerturbationVariables.VELOCITY_Y.__doc__ = "Designates the initial or final variation in the 'y' component of velocity."
+STMPerturbationVariables.VELOCITY_Z.__doc__ = "Designates the initial or final variation in the 'z' component of velocity."
 
 agcls.AgTypeNameMap["STMPerturbationVariables"] = STMPerturbationVariables
 
@@ -2682,7 +2682,7 @@ SunPosition.TRUE.__doc__ = "True - assumes that light from the sun reaches the s
 
 agcls.AgTypeNameMap["SunPosition"] = SunPosition
 
-class AtmosDataSource(IntEnum):
+class AtmosphereDataSource(IntEnum):
     """The Atmospheric data source type."""
    
     CONSTANT = 0
@@ -2690,10 +2690,10 @@ class AtmosDataSource(IntEnum):
     FILE = 1
     """Atmopsheric data source from file."""
 
-AtmosDataSource.CONSTANT.__doc__ = "Constant Atmospheric data source."
-AtmosDataSource.FILE.__doc__ = "Atmopsheric data source from file."
+AtmosphereDataSource.CONSTANT.__doc__ = "Constant Atmospheric data source."
+AtmosphereDataSource.FILE.__doc__ = "Atmopsheric data source from file."
 
-agcls.AgTypeNameMap["AtmosDataSource"] = AtmosDataSource
+agcls.AgTypeNameMap["AtmosphereDataSource"] = AtmosphereDataSource
 
 class GeoMagneticFluxSource(IntEnum):
     """Whether to use Kp or Ap data from the flux file."""
@@ -17508,8 +17508,8 @@ class StateCalcEnvironment(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
     _get_central_body_name_method_offset = 1
     _set_central_body_name_method_offset = 2
-    _get_atmos_model_name_method_offset = 3
-    _set_atmos_model_name_method_offset = 4
+    _get_atmosphere_model_name_method_offset = 3
+    _set_atmosphere_model_name_method_offset = 4
     _metadata = {
         "iid_data" : (4823976028697900760, 927912681356112823),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -17533,23 +17533,23 @@ class StateCalcEnvironment(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def central_body_name(self, value:str) -> None:
         return self._intf.set_property(StateCalcEnvironment._metadata, StateCalcEnvironment._set_central_body_name_metadata, value)
 
-    _get_atmos_model_name_metadata = { "offset" : _get_atmos_model_name_method_offset,
+    _get_atmosphere_model_name_metadata = { "offset" : _get_atmosphere_model_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
-    def atmos_model_name(self) -> str:
+    def atmosphere_model_name(self) -> str:
         """Get or set the atmospheric density model of the component."""
-        return self._intf.get_property(StateCalcEnvironment._metadata, StateCalcEnvironment._get_atmos_model_name_metadata)
+        return self._intf.get_property(StateCalcEnvironment._metadata, StateCalcEnvironment._get_atmosphere_model_name_metadata)
 
-    _set_atmos_model_name_metadata = { "offset" : _set_atmos_model_name_method_offset,
+    _set_atmosphere_model_name_metadata = { "offset" : _set_atmosphere_model_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    @atmos_model_name.setter
-    def atmos_model_name(self, value:str) -> None:
-        return self._intf.set_property(StateCalcEnvironment._metadata, StateCalcEnvironment._set_atmos_model_name_metadata, value)
+    @atmosphere_model_name.setter
+    def atmosphere_model_name(self, value:str) -> None:
+        return self._intf.set_property(StateCalcEnvironment._metadata, StateCalcEnvironment._set_atmosphere_model_name_metadata, value)
 
     _property_names[central_body_name] = "central_body_name"
-    _property_names[atmos_model_name] = "atmos_model_name"
+    _property_names[atmosphere_model_name] = "atmosphere_model_name"
 
     def __init__(self, source_object=None):
         """Construct an object of type StateCalcEnvironment."""
@@ -22170,7 +22170,7 @@ class StateCalcPositionDifferenceOtherSegment(IComponentInfo, ICloneable, Suppor
 agcls.AgClassCatalog.add_catalog_entry((5410120896638206049, 17404805778208513193), StateCalcPositionDifferenceOtherSegment)
 agcls.AgTypeNameMap["StateCalcPositionDifferenceOtherSegment"] = StateCalcPositionDifferenceOtherSegment
 
-class StateCalcVelDifferenceOtherSegment(IComponentInfo, ICloneable, SupportsDeleteCallback):
+class StateCalcVelocityDifferenceOtherSegment(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for a Velocity Difference Across Segments calculation object."""
 
     _num_methods = 4
@@ -22185,7 +22185,7 @@ class StateCalcVelDifferenceOtherSegment(IComponentInfo, ICloneable, SupportsDel
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, StateCalcVelDifferenceOtherSegment)
+        return get_interface_property(attrname, StateCalcVelocityDifferenceOtherSegment)
     
     _get_other_segment_name_metadata = { "offset" : _get_other_segment_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -22193,14 +22193,14 @@ class StateCalcVelDifferenceOtherSegment(IComponentInfo, ICloneable, SupportsDel
     @property
     def other_segment_name(self) -> str:
         """Get or set the segment to be compared against."""
-        return self._intf.get_property(StateCalcVelDifferenceOtherSegment._metadata, StateCalcVelDifferenceOtherSegment._get_other_segment_name_metadata)
+        return self._intf.get_property(StateCalcVelocityDifferenceOtherSegment._metadata, StateCalcVelocityDifferenceOtherSegment._get_other_segment_name_metadata)
 
     _set_other_segment_name_metadata = { "offset" : _set_other_segment_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @other_segment_name.setter
     def other_segment_name(self, value:str) -> None:
-        return self._intf.set_property(StateCalcVelDifferenceOtherSegment._metadata, StateCalcVelDifferenceOtherSegment._set_other_segment_name_metadata, value)
+        return self._intf.set_property(StateCalcVelocityDifferenceOtherSegment._metadata, StateCalcVelocityDifferenceOtherSegment._set_other_segment_name_metadata, value)
 
     _get_segment_state_to_use_metadata = { "offset" : _get_segment_state_to_use_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -22208,22 +22208,22 @@ class StateCalcVelDifferenceOtherSegment(IComponentInfo, ICloneable, SupportsDel
     @property
     def segment_state_to_use(self) -> "SegmentState":
         """Get or set the segment state to use in the calculation."""
-        return self._intf.get_property(StateCalcVelDifferenceOtherSegment._metadata, StateCalcVelDifferenceOtherSegment._get_segment_state_to_use_metadata)
+        return self._intf.get_property(StateCalcVelocityDifferenceOtherSegment._metadata, StateCalcVelocityDifferenceOtherSegment._get_segment_state_to_use_metadata)
 
     _set_segment_state_to_use_metadata = { "offset" : _set_segment_state_to_use_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(SegmentState),) }
     @segment_state_to_use.setter
     def segment_state_to_use(self, value:"SegmentState") -> None:
-        return self._intf.set_property(StateCalcVelDifferenceOtherSegment._metadata, StateCalcVelDifferenceOtherSegment._set_segment_state_to_use_metadata, value)
+        return self._intf.set_property(StateCalcVelocityDifferenceOtherSegment._metadata, StateCalcVelocityDifferenceOtherSegment._set_segment_state_to_use_metadata, value)
 
     _property_names[other_segment_name] = "other_segment_name"
     _property_names[segment_state_to_use] = "segment_state_to_use"
 
     def __init__(self, source_object=None):
-        """Construct an object of type StateCalcVelDifferenceOtherSegment."""
+        """Construct an object of type StateCalcVelocityDifferenceOtherSegment."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, source_object, StateCalcVelDifferenceOtherSegment)
+        initialize_from_source_object(self, source_object, StateCalcVelocityDifferenceOtherSegment)
         IComponentInfo.__init__(self, source_object)
         ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
@@ -22235,12 +22235,12 @@ class StateCalcVelDifferenceOtherSegment(IComponentInfo, ICloneable, SupportsDel
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, StateCalcVelDifferenceOtherSegment, [StateCalcVelDifferenceOtherSegment, IComponentInfo, ICloneable])
+        set_class_attribute(self, attrname, value, StateCalcVelocityDifferenceOtherSegment, [StateCalcVelocityDifferenceOtherSegment, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4700414338115361174, 7357519667103594396), StateCalcVelDifferenceOtherSegment)
-agcls.AgTypeNameMap["StateCalcVelDifferenceOtherSegment"] = StateCalcVelDifferenceOtherSegment
+agcls.AgClassCatalog.add_catalog_entry((4700414338115361174, 7357519667103594396), StateCalcVelocityDifferenceOtherSegment)
+agcls.AgTypeNameMap["StateCalcVelocityDifferenceOtherSegment"] = StateCalcVelocityDifferenceOtherSegment
 
-class StateCalcPositionVelDifferenceOtherSegment(IComponentInfo, ICloneable, SupportsDeleteCallback):
+class StateCalcPositionVelocityDifferenceOtherSegment(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for a Position and Velocity Difference Across Segments calculation object."""
 
     _num_methods = 4
@@ -22255,7 +22255,7 @@ class StateCalcPositionVelDifferenceOtherSegment(IComponentInfo, ICloneable, Sup
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, StateCalcPositionVelDifferenceOtherSegment)
+        return get_interface_property(attrname, StateCalcPositionVelocityDifferenceOtherSegment)
     
     _get_other_segment_name_metadata = { "offset" : _get_other_segment_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -22263,14 +22263,14 @@ class StateCalcPositionVelDifferenceOtherSegment(IComponentInfo, ICloneable, Sup
     @property
     def other_segment_name(self) -> str:
         """Get or set the segment to be compared against."""
-        return self._intf.get_property(StateCalcPositionVelDifferenceOtherSegment._metadata, StateCalcPositionVelDifferenceOtherSegment._get_other_segment_name_metadata)
+        return self._intf.get_property(StateCalcPositionVelocityDifferenceOtherSegment._metadata, StateCalcPositionVelocityDifferenceOtherSegment._get_other_segment_name_metadata)
 
     _set_other_segment_name_metadata = { "offset" : _set_other_segment_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @other_segment_name.setter
     def other_segment_name(self, value:str) -> None:
-        return self._intf.set_property(StateCalcPositionVelDifferenceOtherSegment._metadata, StateCalcPositionVelDifferenceOtherSegment._set_other_segment_name_metadata, value)
+        return self._intf.set_property(StateCalcPositionVelocityDifferenceOtherSegment._metadata, StateCalcPositionVelocityDifferenceOtherSegment._set_other_segment_name_metadata, value)
 
     _get_segment_state_to_use_metadata = { "offset" : _get_segment_state_to_use_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -22278,22 +22278,22 @@ class StateCalcPositionVelDifferenceOtherSegment(IComponentInfo, ICloneable, Sup
     @property
     def segment_state_to_use(self) -> "SegmentState":
         """Get or set the segment state to use in the calculation."""
-        return self._intf.get_property(StateCalcPositionVelDifferenceOtherSegment._metadata, StateCalcPositionVelDifferenceOtherSegment._get_segment_state_to_use_metadata)
+        return self._intf.get_property(StateCalcPositionVelocityDifferenceOtherSegment._metadata, StateCalcPositionVelocityDifferenceOtherSegment._get_segment_state_to_use_metadata)
 
     _set_segment_state_to_use_metadata = { "offset" : _set_segment_state_to_use_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(SegmentState),) }
     @segment_state_to_use.setter
     def segment_state_to_use(self, value:"SegmentState") -> None:
-        return self._intf.set_property(StateCalcPositionVelDifferenceOtherSegment._metadata, StateCalcPositionVelDifferenceOtherSegment._set_segment_state_to_use_metadata, value)
+        return self._intf.set_property(StateCalcPositionVelocityDifferenceOtherSegment._metadata, StateCalcPositionVelocityDifferenceOtherSegment._set_segment_state_to_use_metadata, value)
 
     _property_names[other_segment_name] = "other_segment_name"
     _property_names[segment_state_to_use] = "segment_state_to_use"
 
     def __init__(self, source_object=None):
-        """Construct an object of type StateCalcPositionVelDifferenceOtherSegment."""
+        """Construct an object of type StateCalcPositionVelocityDifferenceOtherSegment."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, source_object, StateCalcPositionVelDifferenceOtherSegment)
+        initialize_from_source_object(self, source_object, StateCalcPositionVelocityDifferenceOtherSegment)
         IComponentInfo.__init__(self, source_object)
         ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
@@ -22305,10 +22305,10 @@ class StateCalcPositionVelDifferenceOtherSegment(IComponentInfo, ICloneable, Sup
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, StateCalcPositionVelDifferenceOtherSegment, [StateCalcPositionVelDifferenceOtherSegment, IComponentInfo, ICloneable])
+        set_class_attribute(self, attrname, value, StateCalcPositionVelocityDifferenceOtherSegment, [StateCalcPositionVelocityDifferenceOtherSegment, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4698031524605327091, 1241434726579484094), StateCalcPositionVelDifferenceOtherSegment)
-agcls.AgTypeNameMap["StateCalcPositionVelDifferenceOtherSegment"] = StateCalcPositionVelDifferenceOtherSegment
+agcls.AgClassCatalog.add_catalog_entry((4698031524605327091, 1241434726579484094), StateCalcPositionVelocityDifferenceOtherSegment)
+agcls.AgTypeNameMap["StateCalcPositionVelocityDifferenceOtherSegment"] = StateCalcPositionVelocityDifferenceOtherSegment
 
 class StateCalcValueAtSegment(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for a Value At Segment calculation object."""
@@ -25711,7 +25711,7 @@ class StateCalcVMagnitude(IComponentInfo, ICloneable, SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5490853135291077774, 8078175307779202206), StateCalcVMagnitude)
 agcls.AgTypeNameMap["StateCalcVMagnitude"] = StateCalcVMagnitude
 
-class StateCalcVelAz(IComponentInfo, ICloneable, SupportsDeleteCallback):
+class StateCalcVelocityAz(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for a Velocity Azimuth calculation object."""
 
     _num_methods = 2
@@ -25724,7 +25724,7 @@ class StateCalcVelAz(IComponentInfo, ICloneable, SupportsDeleteCallback):
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, StateCalcVelAz)
+        return get_interface_property(attrname, StateCalcVelocityAz)
     
     _get_coord_system_name_metadata = { "offset" : _get_coord_system_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -25732,21 +25732,21 @@ class StateCalcVelAz(IComponentInfo, ICloneable, SupportsDeleteCallback):
     @property
     def coord_system_name(self) -> str:
         """Get or set the coordinate system within which the element is defined."""
-        return self._intf.get_property(StateCalcVelAz._metadata, StateCalcVelAz._get_coord_system_name_metadata)
+        return self._intf.get_property(StateCalcVelocityAz._metadata, StateCalcVelocityAz._get_coord_system_name_metadata)
 
     _set_coord_system_name_metadata = { "offset" : _set_coord_system_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @coord_system_name.setter
     def coord_system_name(self, value:str) -> None:
-        return self._intf.set_property(StateCalcVelAz._metadata, StateCalcVelAz._set_coord_system_name_metadata, value)
+        return self._intf.set_property(StateCalcVelocityAz._metadata, StateCalcVelocityAz._set_coord_system_name_metadata, value)
 
     _property_names[coord_system_name] = "coord_system_name"
 
     def __init__(self, source_object=None):
-        """Construct an object of type StateCalcVelAz."""
+        """Construct an object of type StateCalcVelocityAz."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, source_object, StateCalcVelAz)
+        initialize_from_source_object(self, source_object, StateCalcVelocityAz)
         IComponentInfo.__init__(self, source_object)
         ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
@@ -25758,10 +25758,10 @@ class StateCalcVelAz(IComponentInfo, ICloneable, SupportsDeleteCallback):
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, StateCalcVelAz, [StateCalcVelAz, IComponentInfo, ICloneable])
+        set_class_attribute(self, attrname, value, StateCalcVelocityAz, [StateCalcVelocityAz, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5165638287317774015, 15762677018237969026), StateCalcVelAz)
-agcls.AgTypeNameMap["StateCalcVelAz"] = StateCalcVelAz
+agcls.AgClassCatalog.add_catalog_entry((5165638287317774015, 15762677018237969026), StateCalcVelocityAz)
+agcls.AgTypeNameMap["StateCalcVelocityAz"] = StateCalcVelocityAz
 
 class StateCalcC3Energy(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for a C3 Energy calculation object."""
@@ -25937,7 +25937,7 @@ class StateCalcInAsympRA(IComponentInfo, ICloneable, SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5126981333921246025, 18032583169117203367), StateCalcInAsympRA)
 agcls.AgTypeNameMap["StateCalcInAsympRA"] = StateCalcInAsympRA
 
-class StateCalcInVelAzAtPeriapsis(IComponentInfo, ICloneable, SupportsDeleteCallback):
+class StateCalcInVelocityAzAtPeriapsis(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for an Incoming Vel Az at Periapsis calculation object."""
 
     _num_methods = 2
@@ -25950,7 +25950,7 @@ class StateCalcInVelAzAtPeriapsis(IComponentInfo, ICloneable, SupportsDeleteCall
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, StateCalcInVelAzAtPeriapsis)
+        return get_interface_property(attrname, StateCalcInVelocityAzAtPeriapsis)
     
     _get_coord_system_name_metadata = { "offset" : _get_coord_system_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -25958,21 +25958,21 @@ class StateCalcInVelAzAtPeriapsis(IComponentInfo, ICloneable, SupportsDeleteCall
     @property
     def coord_system_name(self) -> str:
         """Get or set the coordinate system within which the element is defined."""
-        return self._intf.get_property(StateCalcInVelAzAtPeriapsis._metadata, StateCalcInVelAzAtPeriapsis._get_coord_system_name_metadata)
+        return self._intf.get_property(StateCalcInVelocityAzAtPeriapsis._metadata, StateCalcInVelocityAzAtPeriapsis._get_coord_system_name_metadata)
 
     _set_coord_system_name_metadata = { "offset" : _set_coord_system_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @coord_system_name.setter
     def coord_system_name(self, value:str) -> None:
-        return self._intf.set_property(StateCalcInVelAzAtPeriapsis._metadata, StateCalcInVelAzAtPeriapsis._set_coord_system_name_metadata, value)
+        return self._intf.set_property(StateCalcInVelocityAzAtPeriapsis._metadata, StateCalcInVelocityAzAtPeriapsis._set_coord_system_name_metadata, value)
 
     _property_names[coord_system_name] = "coord_system_name"
 
     def __init__(self, source_object=None):
-        """Construct an object of type StateCalcInVelAzAtPeriapsis."""
+        """Construct an object of type StateCalcInVelocityAzAtPeriapsis."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, source_object, StateCalcInVelAzAtPeriapsis)
+        initialize_from_source_object(self, source_object, StateCalcInVelocityAzAtPeriapsis)
         IComponentInfo.__init__(self, source_object)
         ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
@@ -25984,10 +25984,10 @@ class StateCalcInVelAzAtPeriapsis(IComponentInfo, ICloneable, SupportsDeleteCall
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, StateCalcInVelAzAtPeriapsis, [StateCalcInVelAzAtPeriapsis, IComponentInfo, ICloneable])
+        set_class_attribute(self, attrname, value, StateCalcInVelocityAzAtPeriapsis, [StateCalcInVelocityAzAtPeriapsis, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((5179240558843252526, 13982908359142996870), StateCalcInVelAzAtPeriapsis)
-agcls.AgTypeNameMap["StateCalcInVelAzAtPeriapsis"] = StateCalcInVelAzAtPeriapsis
+agcls.AgClassCatalog.add_catalog_entry((5179240558843252526, 13982908359142996870), StateCalcInVelocityAzAtPeriapsis)
+agcls.AgTypeNameMap["StateCalcInVelocityAzAtPeriapsis"] = StateCalcInVelocityAzAtPeriapsis
 
 class StateCalcOutAsympDec(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for a Outgoing Asymptote Dec calculation object."""
@@ -26093,7 +26093,7 @@ class StateCalcOutAsympRA(IComponentInfo, ICloneable, SupportsDeleteCallback):
 agcls.AgClassCatalog.add_catalog_entry((5073736063413390121, 8816824065024077976), StateCalcOutAsympRA)
 agcls.AgTypeNameMap["StateCalcOutAsympRA"] = StateCalcOutAsympRA
 
-class StateCalcOutVelAzAtPeriapsis(IComponentInfo, ICloneable, SupportsDeleteCallback):
+class StateCalcOutVelocityAzAtPeriapsis(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for a Outgoing Vel Az at Periapsis calculation object."""
 
     _num_methods = 2
@@ -26106,7 +26106,7 @@ class StateCalcOutVelAzAtPeriapsis(IComponentInfo, ICloneable, SupportsDeleteCal
     }
     _property_names = {}
     def _get_property(self, attrname):
-        return get_interface_property(attrname, StateCalcOutVelAzAtPeriapsis)
+        return get_interface_property(attrname, StateCalcOutVelocityAzAtPeriapsis)
     
     _get_coord_system_name_metadata = { "offset" : _get_coord_system_name_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -26114,21 +26114,21 @@ class StateCalcOutVelAzAtPeriapsis(IComponentInfo, ICloneable, SupportsDeleteCal
     @property
     def coord_system_name(self) -> str:
         """Get or set the coordinate system within which the element is defined."""
-        return self._intf.get_property(StateCalcOutVelAzAtPeriapsis._metadata, StateCalcOutVelAzAtPeriapsis._get_coord_system_name_metadata)
+        return self._intf.get_property(StateCalcOutVelocityAzAtPeriapsis._metadata, StateCalcOutVelocityAzAtPeriapsis._get_coord_system_name_metadata)
 
     _set_coord_system_name_metadata = { "offset" : _set_coord_system_name_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
     @coord_system_name.setter
     def coord_system_name(self, value:str) -> None:
-        return self._intf.set_property(StateCalcOutVelAzAtPeriapsis._metadata, StateCalcOutVelAzAtPeriapsis._set_coord_system_name_metadata, value)
+        return self._intf.set_property(StateCalcOutVelocityAzAtPeriapsis._metadata, StateCalcOutVelocityAzAtPeriapsis._set_coord_system_name_metadata, value)
 
     _property_names[coord_system_name] = "coord_system_name"
 
     def __init__(self, source_object=None):
-        """Construct an object of type StateCalcOutVelAzAtPeriapsis."""
+        """Construct an object of type StateCalcOutVelocityAzAtPeriapsis."""
         SupportsDeleteCallback.__init__(self)
-        initialize_from_source_object(self, source_object, StateCalcOutVelAzAtPeriapsis)
+        initialize_from_source_object(self, source_object, StateCalcOutVelocityAzAtPeriapsis)
         IComponentInfo.__init__(self, source_object)
         ICloneable.__init__(self, source_object)
     def _private_init(self, intf:InterfaceProxy):
@@ -26140,10 +26140,10 @@ class StateCalcOutVelAzAtPeriapsis(IComponentInfo, ICloneable, SupportsDeleteCal
         return agcls.compare_com_objects(self, other)
     def __setattr__(self, attrname, value):
         """Attempt to assign an attribute."""
-        set_class_attribute(self, attrname, value, StateCalcOutVelAzAtPeriapsis, [StateCalcOutVelAzAtPeriapsis, IComponentInfo, ICloneable])
+        set_class_attribute(self, attrname, value, StateCalcOutVelocityAzAtPeriapsis, [StateCalcOutVelocityAzAtPeriapsis, IComponentInfo, ICloneable])
 
-agcls.AgClassCatalog.add_catalog_entry((4844314183630368135, 5039558183622268350), StateCalcOutVelAzAtPeriapsis)
-agcls.AgTypeNameMap["StateCalcOutVelAzAtPeriapsis"] = StateCalcOutVelAzAtPeriapsis
+agcls.AgClassCatalog.add_catalog_entry((4844314183630368135, 5039558183622268350), StateCalcOutVelocityAzAtPeriapsis)
+agcls.AgTypeNameMap["StateCalcOutVelocityAzAtPeriapsis"] = StateCalcOutVelocityAzAtPeriapsis
 
 class StateCalcDuration(IComponentInfo, ICloneable, SupportsDeleteCallback):
     """Properties for a Duration calculation object."""
@@ -30965,20 +30965,20 @@ class Cira72Function(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_computes_pressure_method_offset = 4
     _get_sun_position_method_offset = 5
     _set_sun_position_method_offset = 6
-    _get_atmos_data_source_method_offset = 7
-    _set_atmos_data_source_method_offset = 8
+    _get_atmosphere_data_source_method_offset = 7
+    _set_atmosphere_data_source_method_offset = 8
     _get_f_10_p7_method_offset = 9
     _set_f_10_p7_method_offset = 10
     _get_f_10_p7_avg_method_offset = 11
     _set_f_10_p7_avg_method_offset = 12
     _get_kp_method_offset = 13
     _set_kp_method_offset = 14
-    _get_atmos_data_geo_magnetic_flux_source_method_offset = 15
-    _set_atmos_data_geo_magnetic_flux_source_method_offset = 16
-    _get_atmos_data_geo_magnetic_flux_update_rate_method_offset = 17
-    _set_atmos_data_geo_magnetic_flux_update_rate_method_offset = 18
-    _get_atmos_data_filename_method_offset = 19
-    _set_atmos_data_filename_method_offset = 20
+    _get_atmosphere_data_geo_magnetic_flux_source_method_offset = 15
+    _set_atmosphere_data_geo_magnetic_flux_source_method_offset = 16
+    _get_atmosphere_data_geo_magnetic_flux_update_rate_method_offset = 17
+    _set_atmosphere_data_geo_magnetic_flux_update_rate_method_offset = 18
+    _get_atmosphere_data_filename_method_offset = 19
+    _set_atmosphere_data_filename_method_offset = 20
     _get_drag_model_type_method_offset = 21
     _set_drag_model_type_method_offset = 22
     _get_drag_model_plugin_name_method_offset = 23
@@ -31042,20 +31042,20 @@ class Cira72Function(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def sun_position(self, value:"SunPosition") -> None:
         return self._intf.set_property(Cira72Function._metadata, Cira72Function._set_sun_position_metadata, value)
 
-    _get_atmos_data_source_metadata = { "offset" : _get_atmos_data_source_method_offset,
+    _get_atmosphere_data_source_metadata = { "offset" : _get_atmosphere_data_source_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(AtmosDataSource),) }
+            "marshallers" : (agmarshall.EnumArg(AtmosphereDataSource),) }
     @property
-    def atmos_data_source(self) -> "AtmosDataSource":
+    def atmosphere_data_source(self) -> "AtmosphereDataSource":
         """Get or set the atmospheric model data source - data file or constant values."""
-        return self._intf.get_property(Cira72Function._metadata, Cira72Function._get_atmos_data_source_metadata)
+        return self._intf.get_property(Cira72Function._metadata, Cira72Function._get_atmosphere_data_source_metadata)
 
-    _set_atmos_data_source_metadata = { "offset" : _set_atmos_data_source_method_offset,
+    _set_atmosphere_data_source_metadata = { "offset" : _set_atmosphere_data_source_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(AtmosDataSource),) }
-    @atmos_data_source.setter
-    def atmos_data_source(self, value:"AtmosDataSource") -> None:
-        return self._intf.set_property(Cira72Function._metadata, Cira72Function._set_atmos_data_source_metadata, value)
+            "marshallers" : (agmarshall.EnumArg(AtmosphereDataSource),) }
+    @atmosphere_data_source.setter
+    def atmosphere_data_source(self, value:"AtmosphereDataSource") -> None:
+        return self._intf.set_property(Cira72Function._metadata, Cira72Function._set_atmosphere_data_source_metadata, value)
 
     _get_f_10_p7_metadata = { "offset" : _get_f_10_p7_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -31102,50 +31102,50 @@ class Cira72Function(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def kp(self, value:float) -> None:
         return self._intf.set_property(Cira72Function._metadata, Cira72Function._set_kp_metadata, value)
 
-    _get_atmos_data_geo_magnetic_flux_source_metadata = { "offset" : _get_atmos_data_geo_magnetic_flux_source_method_offset,
+    _get_atmosphere_data_geo_magnetic_flux_source_metadata = { "offset" : _get_atmosphere_data_geo_magnetic_flux_source_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(GeoMagneticFluxSource),) }
     @property
-    def atmos_data_geo_magnetic_flux_source(self) -> "GeoMagneticFluxSource":
+    def atmosphere_data_geo_magnetic_flux_source(self) -> "GeoMagneticFluxSource":
         """Whether to use Kp or Ap data from the flux file."""
-        return self._intf.get_property(Cira72Function._metadata, Cira72Function._get_atmos_data_geo_magnetic_flux_source_metadata)
+        return self._intf.get_property(Cira72Function._metadata, Cira72Function._get_atmosphere_data_geo_magnetic_flux_source_metadata)
 
-    _set_atmos_data_geo_magnetic_flux_source_metadata = { "offset" : _set_atmos_data_geo_magnetic_flux_source_method_offset,
+    _set_atmosphere_data_geo_magnetic_flux_source_metadata = { "offset" : _set_atmosphere_data_geo_magnetic_flux_source_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(GeoMagneticFluxSource),) }
-    @atmos_data_geo_magnetic_flux_source.setter
-    def atmos_data_geo_magnetic_flux_source(self, value:"GeoMagneticFluxSource") -> None:
-        return self._intf.set_property(Cira72Function._metadata, Cira72Function._set_atmos_data_geo_magnetic_flux_source_metadata, value)
+    @atmosphere_data_geo_magnetic_flux_source.setter
+    def atmosphere_data_geo_magnetic_flux_source(self, value:"GeoMagneticFluxSource") -> None:
+        return self._intf.set_property(Cira72Function._metadata, Cira72Function._set_atmosphere_data_geo_magnetic_flux_source_metadata, value)
 
-    _get_atmos_data_geo_magnetic_flux_update_rate_metadata = { "offset" : _get_atmos_data_geo_magnetic_flux_update_rate_method_offset,
+    _get_atmosphere_data_geo_magnetic_flux_update_rate_metadata = { "offset" : _get_atmosphere_data_geo_magnetic_flux_update_rate_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(GeoMagneticFluxUpdateRate),) }
     @property
-    def atmos_data_geo_magnetic_flux_update_rate(self) -> "GeoMagneticFluxUpdateRate":
+    def atmosphere_data_geo_magnetic_flux_update_rate(self) -> "GeoMagneticFluxUpdateRate":
         """Get or set the update rate of geomagnetic flux values from the flux file."""
-        return self._intf.get_property(Cira72Function._metadata, Cira72Function._get_atmos_data_geo_magnetic_flux_update_rate_metadata)
+        return self._intf.get_property(Cira72Function._metadata, Cira72Function._get_atmosphere_data_geo_magnetic_flux_update_rate_metadata)
 
-    _set_atmos_data_geo_magnetic_flux_update_rate_metadata = { "offset" : _set_atmos_data_geo_magnetic_flux_update_rate_method_offset,
+    _set_atmosphere_data_geo_magnetic_flux_update_rate_metadata = { "offset" : _set_atmosphere_data_geo_magnetic_flux_update_rate_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(GeoMagneticFluxUpdateRate),) }
-    @atmos_data_geo_magnetic_flux_update_rate.setter
-    def atmos_data_geo_magnetic_flux_update_rate(self, value:"GeoMagneticFluxUpdateRate") -> None:
-        return self._intf.set_property(Cira72Function._metadata, Cira72Function._set_atmos_data_geo_magnetic_flux_update_rate_metadata, value)
+    @atmosphere_data_geo_magnetic_flux_update_rate.setter
+    def atmosphere_data_geo_magnetic_flux_update_rate(self, value:"GeoMagneticFluxUpdateRate") -> None:
+        return self._intf.set_property(Cira72Function._metadata, Cira72Function._set_atmosphere_data_geo_magnetic_flux_update_rate_metadata, value)
 
-    _get_atmos_data_filename_metadata = { "offset" : _get_atmos_data_filename_method_offset,
+    _get_atmosphere_data_filename_metadata = { "offset" : _get_atmosphere_data_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
-    def atmos_data_filename(self) -> str:
+    def atmosphere_data_filename(self) -> str:
         """Flux file."""
-        return self._intf.get_property(Cira72Function._metadata, Cira72Function._get_atmos_data_filename_metadata)
+        return self._intf.get_property(Cira72Function._metadata, Cira72Function._get_atmosphere_data_filename_metadata)
 
-    _set_atmos_data_filename_metadata = { "offset" : _set_atmos_data_filename_method_offset,
+    _set_atmosphere_data_filename_metadata = { "offset" : _set_atmosphere_data_filename_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    @atmos_data_filename.setter
-    def atmos_data_filename(self, value:str) -> None:
-        return self._intf.set_property(Cira72Function._metadata, Cira72Function._set_atmos_data_filename_metadata, value)
+    @atmosphere_data_filename.setter
+    def atmosphere_data_filename(self, value:str) -> None:
+        return self._intf.set_property(Cira72Function._metadata, Cira72Function._set_atmosphere_data_filename_metadata, value)
 
     _get_drag_model_type_metadata = { "offset" : _get_drag_model_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -31219,13 +31219,13 @@ class Cira72Function(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[computes_temperature] = "computes_temperature"
     _property_names[computes_pressure] = "computes_pressure"
     _property_names[sun_position] = "sun_position"
-    _property_names[atmos_data_source] = "atmos_data_source"
+    _property_names[atmosphere_data_source] = "atmosphere_data_source"
     _property_names[f_10_p7] = "f_10_p7"
     _property_names[f_10_p7_avg] = "f_10_p7_avg"
     _property_names[kp] = "kp"
-    _property_names[atmos_data_geo_magnetic_flux_source] = "atmos_data_geo_magnetic_flux_source"
-    _property_names[atmos_data_geo_magnetic_flux_update_rate] = "atmos_data_geo_magnetic_flux_update_rate"
-    _property_names[atmos_data_filename] = "atmos_data_filename"
+    _property_names[atmosphere_data_geo_magnetic_flux_source] = "atmosphere_data_geo_magnetic_flux_source"
+    _property_names[atmosphere_data_geo_magnetic_flux_update_rate] = "atmosphere_data_geo_magnetic_flux_update_rate"
+    _property_names[atmosphere_data_filename] = "atmosphere_data_filename"
     _property_names[drag_model_type] = "drag_model_type"
     _property_names[drag_model_plugin_name] = "drag_model_plugin_name"
     _property_names[drag_model_plugin] = "drag_model_plugin"
@@ -31451,12 +31451,12 @@ class HarrisPriester(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_computes_pressure_method_offset = 4
     _get_sun_position_method_offset = 5
     _set_sun_position_method_offset = 6
-    _get_atmos_data_source_method_offset = 7
-    _set_atmos_data_source_method_offset = 8
+    _get_atmosphere_data_source_method_offset = 7
+    _set_atmosphere_data_source_method_offset = 8
     _get_f_10_p7_avg_method_offset = 9
     _set_f_10_p7_avg_method_offset = 10
-    _get_atmos_data_filename_method_offset = 11
-    _set_atmos_data_filename_method_offset = 12
+    _get_atmosphere_data_filename_method_offset = 11
+    _set_atmosphere_data_filename_method_offset = 12
     _get_drag_model_type_method_offset = 13
     _set_drag_model_type_method_offset = 14
     _get_drag_model_plugin_name_method_offset = 15
@@ -31520,20 +31520,20 @@ class HarrisPriester(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def sun_position(self, value:"SunPosition") -> None:
         return self._intf.set_property(HarrisPriester._metadata, HarrisPriester._set_sun_position_metadata, value)
 
-    _get_atmos_data_source_metadata = { "offset" : _get_atmos_data_source_method_offset,
+    _get_atmosphere_data_source_metadata = { "offset" : _get_atmosphere_data_source_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(AtmosDataSource),) }
+            "marshallers" : (agmarshall.EnumArg(AtmosphereDataSource),) }
     @property
-    def atmos_data_source(self) -> "AtmosDataSource":
+    def atmosphere_data_source(self) -> "AtmosphereDataSource":
         """Get or set the atmospheric model data source - data file or constant values."""
-        return self._intf.get_property(HarrisPriester._metadata, HarrisPriester._get_atmos_data_source_metadata)
+        return self._intf.get_property(HarrisPriester._metadata, HarrisPriester._get_atmosphere_data_source_metadata)
 
-    _set_atmos_data_source_metadata = { "offset" : _set_atmos_data_source_method_offset,
+    _set_atmosphere_data_source_metadata = { "offset" : _set_atmosphere_data_source_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(AtmosDataSource),) }
-    @atmos_data_source.setter
-    def atmos_data_source(self, value:"AtmosDataSource") -> None:
-        return self._intf.set_property(HarrisPriester._metadata, HarrisPriester._set_atmos_data_source_metadata, value)
+            "marshallers" : (agmarshall.EnumArg(AtmosphereDataSource),) }
+    @atmosphere_data_source.setter
+    def atmosphere_data_source(self, value:"AtmosphereDataSource") -> None:
+        return self._intf.set_property(HarrisPriester._metadata, HarrisPriester._set_atmosphere_data_source_metadata, value)
 
     _get_f_10_p7_avg_metadata = { "offset" : _get_f_10_p7_avg_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -31550,20 +31550,20 @@ class HarrisPriester(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def f_10_p7_avg(self, value:float) -> None:
         return self._intf.set_property(HarrisPriester._metadata, HarrisPriester._set_f_10_p7_avg_metadata, value)
 
-    _get_atmos_data_filename_metadata = { "offset" : _get_atmos_data_filename_method_offset,
+    _get_atmosphere_data_filename_metadata = { "offset" : _get_atmosphere_data_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
-    def atmos_data_filename(self) -> str:
+    def atmosphere_data_filename(self) -> str:
         """Flux file."""
-        return self._intf.get_property(HarrisPriester._metadata, HarrisPriester._get_atmos_data_filename_metadata)
+        return self._intf.get_property(HarrisPriester._metadata, HarrisPriester._get_atmosphere_data_filename_metadata)
 
-    _set_atmos_data_filename_metadata = { "offset" : _set_atmos_data_filename_method_offset,
+    _set_atmosphere_data_filename_metadata = { "offset" : _set_atmosphere_data_filename_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    @atmos_data_filename.setter
-    def atmos_data_filename(self, value:str) -> None:
-        return self._intf.set_property(HarrisPriester._metadata, HarrisPriester._set_atmos_data_filename_metadata, value)
+    @atmosphere_data_filename.setter
+    def atmosphere_data_filename(self, value:str) -> None:
+        return self._intf.set_property(HarrisPriester._metadata, HarrisPriester._set_atmosphere_data_filename_metadata, value)
 
     _get_drag_model_type_metadata = { "offset" : _get_drag_model_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -31637,9 +31637,9 @@ class HarrisPriester(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[computes_temperature] = "computes_temperature"
     _property_names[computes_pressure] = "computes_pressure"
     _property_names[sun_position] = "sun_position"
-    _property_names[atmos_data_source] = "atmos_data_source"
+    _property_names[atmosphere_data_source] = "atmosphere_data_source"
     _property_names[f_10_p7_avg] = "f_10_p7_avg"
-    _property_names[atmos_data_filename] = "atmos_data_filename"
+    _property_names[atmosphere_data_filename] = "atmosphere_data_filename"
     _property_names[drag_model_type] = "drag_model_type"
     _property_names[drag_model_plugin_name] = "drag_model_plugin_name"
     _property_names[drag_model_plugin] = "drag_model_plugin"
@@ -31680,8 +31680,8 @@ class DensityModelPlugin(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_computes_pressure_method_offset = 7
     _get_sun_position_method_offset = 8
     _set_sun_position_method_offset = 9
-    _get_atmos_data_source_method_offset = 10
-    _set_atmos_data_source_method_offset = 11
+    _get_atmosphere_data_source_method_offset = 10
+    _set_atmosphere_data_source_method_offset = 11
     _get_f10_method_offset = 12
     _set_f10_method_offset = 13
     _get_f10_avg_method_offset = 14
@@ -31702,16 +31702,16 @@ class DensityModelPlugin(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _set_kp_method_offset = 29
     _get_dst_d_tc_method_offset = 30
     _set_dst_d_tc_method_offset = 31
-    _get_atmos_data_geo_magnetic_flux_source_method_offset = 32
-    _set_atmos_data_geo_magnetic_flux_source_method_offset = 33
-    _get_atmos_data_geo_magnetic_flux_update_rate_method_offset = 34
-    _set_atmos_data_geo_magnetic_flux_update_rate_method_offset = 35
-    _get_atmos_data_filename_method_offset = 36
-    _set_atmos_data_filename_method_offset = 37
-    _get_atmos_aug_data_file_method_offset = 38
-    _set_atmos_aug_data_file_method_offset = 39
-    _get_atmos_aug_dtc_file_method_offset = 40
-    _set_atmos_aug_dtc_file_method_offset = 41
+    _get_atmosphere_data_geo_magnetic_flux_source_method_offset = 32
+    _set_atmosphere_data_geo_magnetic_flux_source_method_offset = 33
+    _get_atmosphere_data_geo_magnetic_flux_update_rate_method_offset = 34
+    _set_atmosphere_data_geo_magnetic_flux_update_rate_method_offset = 35
+    _get_atmosphere_data_filename_method_offset = 36
+    _set_atmosphere_data_filename_method_offset = 37
+    _get_atmosphere_aug_data_file_method_offset = 38
+    _set_atmosphere_aug_data_file_method_offset = 39
+    _get_atmosphere_aug_dtc_file_method_offset = 40
+    _set_atmosphere_aug_dtc_file_method_offset = 41
     _get_drag_model_type_method_offset = 42
     _set_drag_model_type_method_offset = 43
     _get_drag_model_plugin_name_method_offset = 44
@@ -31799,20 +31799,20 @@ class DensityModelPlugin(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def sun_position(self, value:"SunPosition") -> None:
         return self._intf.set_property(DensityModelPlugin._metadata, DensityModelPlugin._set_sun_position_metadata, value)
 
-    _get_atmos_data_source_metadata = { "offset" : _get_atmos_data_source_method_offset,
+    _get_atmosphere_data_source_metadata = { "offset" : _get_atmosphere_data_source_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(AtmosDataSource),) }
+            "marshallers" : (agmarshall.EnumArg(AtmosphereDataSource),) }
     @property
-    def atmos_data_source(self) -> "AtmosDataSource":
+    def atmosphere_data_source(self) -> "AtmosphereDataSource":
         """Get or set the atmospheric model data source - data file or constant values."""
-        return self._intf.get_property(DensityModelPlugin._metadata, DensityModelPlugin._get_atmos_data_source_metadata)
+        return self._intf.get_property(DensityModelPlugin._metadata, DensityModelPlugin._get_atmosphere_data_source_metadata)
 
-    _set_atmos_data_source_metadata = { "offset" : _set_atmos_data_source_method_offset,
+    _set_atmosphere_data_source_metadata = { "offset" : _set_atmosphere_data_source_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(AtmosDataSource),) }
-    @atmos_data_source.setter
-    def atmos_data_source(self, value:"AtmosDataSource") -> None:
-        return self._intf.set_property(DensityModelPlugin._metadata, DensityModelPlugin._set_atmos_data_source_metadata, value)
+            "marshallers" : (agmarshall.EnumArg(AtmosphereDataSource),) }
+    @atmosphere_data_source.setter
+    def atmosphere_data_source(self, value:"AtmosphereDataSource") -> None:
+        return self._intf.set_property(DensityModelPlugin._metadata, DensityModelPlugin._set_atmosphere_data_source_metadata, value)
 
     _get_f10_metadata = { "offset" : _get_f10_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -31964,80 +31964,80 @@ class DensityModelPlugin(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def dst_d_tc(self, value:float) -> None:
         return self._intf.set_property(DensityModelPlugin._metadata, DensityModelPlugin._set_dst_d_tc_metadata, value)
 
-    _get_atmos_data_geo_magnetic_flux_source_metadata = { "offset" : _get_atmos_data_geo_magnetic_flux_source_method_offset,
+    _get_atmosphere_data_geo_magnetic_flux_source_metadata = { "offset" : _get_atmosphere_data_geo_magnetic_flux_source_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(GeoMagneticFluxSource),) }
     @property
-    def atmos_data_geo_magnetic_flux_source(self) -> "GeoMagneticFluxSource":
+    def atmosphere_data_geo_magnetic_flux_source(self) -> "GeoMagneticFluxSource":
         """Whether to use Kp or Ap data from the flux file."""
-        return self._intf.get_property(DensityModelPlugin._metadata, DensityModelPlugin._get_atmos_data_geo_magnetic_flux_source_metadata)
+        return self._intf.get_property(DensityModelPlugin._metadata, DensityModelPlugin._get_atmosphere_data_geo_magnetic_flux_source_metadata)
 
-    _set_atmos_data_geo_magnetic_flux_source_metadata = { "offset" : _set_atmos_data_geo_magnetic_flux_source_method_offset,
+    _set_atmosphere_data_geo_magnetic_flux_source_metadata = { "offset" : _set_atmosphere_data_geo_magnetic_flux_source_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(GeoMagneticFluxSource),) }
-    @atmos_data_geo_magnetic_flux_source.setter
-    def atmos_data_geo_magnetic_flux_source(self, value:"GeoMagneticFluxSource") -> None:
-        return self._intf.set_property(DensityModelPlugin._metadata, DensityModelPlugin._set_atmos_data_geo_magnetic_flux_source_metadata, value)
+    @atmosphere_data_geo_magnetic_flux_source.setter
+    def atmosphere_data_geo_magnetic_flux_source(self, value:"GeoMagneticFluxSource") -> None:
+        return self._intf.set_property(DensityModelPlugin._metadata, DensityModelPlugin._set_atmosphere_data_geo_magnetic_flux_source_metadata, value)
 
-    _get_atmos_data_geo_magnetic_flux_update_rate_metadata = { "offset" : _get_atmos_data_geo_magnetic_flux_update_rate_method_offset,
+    _get_atmosphere_data_geo_magnetic_flux_update_rate_metadata = { "offset" : _get_atmosphere_data_geo_magnetic_flux_update_rate_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(GeoMagneticFluxUpdateRate),) }
     @property
-    def atmos_data_geo_magnetic_flux_update_rate(self) -> "GeoMagneticFluxUpdateRate":
+    def atmosphere_data_geo_magnetic_flux_update_rate(self) -> "GeoMagneticFluxUpdateRate":
         """Get or set the update rate for geomagnetic flux values from the flux file."""
-        return self._intf.get_property(DensityModelPlugin._metadata, DensityModelPlugin._get_atmos_data_geo_magnetic_flux_update_rate_metadata)
+        return self._intf.get_property(DensityModelPlugin._metadata, DensityModelPlugin._get_atmosphere_data_geo_magnetic_flux_update_rate_metadata)
 
-    _set_atmos_data_geo_magnetic_flux_update_rate_metadata = { "offset" : _set_atmos_data_geo_magnetic_flux_update_rate_method_offset,
+    _set_atmosphere_data_geo_magnetic_flux_update_rate_metadata = { "offset" : _set_atmosphere_data_geo_magnetic_flux_update_rate_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(GeoMagneticFluxUpdateRate),) }
-    @atmos_data_geo_magnetic_flux_update_rate.setter
-    def atmos_data_geo_magnetic_flux_update_rate(self, value:"GeoMagneticFluxUpdateRate") -> None:
-        return self._intf.set_property(DensityModelPlugin._metadata, DensityModelPlugin._set_atmos_data_geo_magnetic_flux_update_rate_metadata, value)
+    @atmosphere_data_geo_magnetic_flux_update_rate.setter
+    def atmosphere_data_geo_magnetic_flux_update_rate(self, value:"GeoMagneticFluxUpdateRate") -> None:
+        return self._intf.set_property(DensityModelPlugin._metadata, DensityModelPlugin._set_atmosphere_data_geo_magnetic_flux_update_rate_metadata, value)
 
-    _get_atmos_data_filename_metadata = { "offset" : _get_atmos_data_filename_method_offset,
+    _get_atmosphere_data_filename_metadata = { "offset" : _get_atmosphere_data_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
-    def atmos_data_filename(self) -> str:
+    def atmosphere_data_filename(self) -> str:
         """Get or set the atmospheric model data file path."""
-        return self._intf.get_property(DensityModelPlugin._metadata, DensityModelPlugin._get_atmos_data_filename_metadata)
+        return self._intf.get_property(DensityModelPlugin._metadata, DensityModelPlugin._get_atmosphere_data_filename_metadata)
 
-    _set_atmos_data_filename_metadata = { "offset" : _set_atmos_data_filename_method_offset,
+    _set_atmosphere_data_filename_metadata = { "offset" : _set_atmosphere_data_filename_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    @atmos_data_filename.setter
-    def atmos_data_filename(self, value:str) -> None:
-        return self._intf.set_property(DensityModelPlugin._metadata, DensityModelPlugin._set_atmos_data_filename_metadata, value)
+    @atmosphere_data_filename.setter
+    def atmosphere_data_filename(self, value:str) -> None:
+        return self._intf.set_property(DensityModelPlugin._metadata, DensityModelPlugin._set_atmosphere_data_filename_metadata, value)
 
-    _get_atmos_aug_data_file_metadata = { "offset" : _get_atmos_aug_data_file_method_offset,
+    _get_atmosphere_aug_data_file_metadata = { "offset" : _get_atmosphere_aug_data_file_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
-    def atmos_aug_data_file(self) -> str:
+    def atmosphere_aug_data_file(self) -> str:
         """Get or set the atmospheric model augmented data file path."""
-        return self._intf.get_property(DensityModelPlugin._metadata, DensityModelPlugin._get_atmos_aug_data_file_metadata)
+        return self._intf.get_property(DensityModelPlugin._metadata, DensityModelPlugin._get_atmosphere_aug_data_file_metadata)
 
-    _set_atmos_aug_data_file_metadata = { "offset" : _set_atmos_aug_data_file_method_offset,
+    _set_atmosphere_aug_data_file_metadata = { "offset" : _set_atmosphere_aug_data_file_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    @atmos_aug_data_file.setter
-    def atmos_aug_data_file(self, value:str) -> None:
-        return self._intf.set_property(DensityModelPlugin._metadata, DensityModelPlugin._set_atmos_aug_data_file_metadata, value)
+    @atmosphere_aug_data_file.setter
+    def atmosphere_aug_data_file(self, value:str) -> None:
+        return self._intf.set_property(DensityModelPlugin._metadata, DensityModelPlugin._set_atmosphere_aug_data_file_metadata, value)
 
-    _get_atmos_aug_dtc_file_metadata = { "offset" : _get_atmos_aug_dtc_file_method_offset,
+    _get_atmosphere_aug_dtc_file_metadata = { "offset" : _get_atmosphere_aug_dtc_file_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
-    def atmos_aug_dtc_file(self) -> str:
+    def atmosphere_aug_dtc_file(self) -> str:
         """Get or set the atmospheric model augmented geomagnetic data file path."""
-        return self._intf.get_property(DensityModelPlugin._metadata, DensityModelPlugin._get_atmos_aug_dtc_file_metadata)
+        return self._intf.get_property(DensityModelPlugin._metadata, DensityModelPlugin._get_atmosphere_aug_dtc_file_metadata)
 
-    _set_atmos_aug_dtc_file_metadata = { "offset" : _set_atmos_aug_dtc_file_method_offset,
+    _set_atmosphere_aug_dtc_file_metadata = { "offset" : _set_atmosphere_aug_dtc_file_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    @atmos_aug_dtc_file.setter
-    def atmos_aug_dtc_file(self, value:str) -> None:
-        return self._intf.set_property(DensityModelPlugin._metadata, DensityModelPlugin._set_atmos_aug_dtc_file_metadata, value)
+    @atmosphere_aug_dtc_file.setter
+    def atmosphere_aug_dtc_file(self, value:str) -> None:
+        return self._intf.set_property(DensityModelPlugin._metadata, DensityModelPlugin._set_atmosphere_aug_dtc_file_metadata, value)
 
     _get_drag_model_type_metadata = { "offset" : _get_drag_model_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -32121,7 +32121,7 @@ class DensityModelPlugin(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[computes_temperature] = "computes_temperature"
     _property_names[computes_pressure] = "computes_pressure"
     _property_names[sun_position] = "sun_position"
-    _property_names[atmos_data_source] = "atmos_data_source"
+    _property_names[atmosphere_data_source] = "atmosphere_data_source"
     _property_names[f10] = "f10"
     _property_names[f10_avg] = "f10_avg"
     _property_names[m10] = "m10"
@@ -32132,11 +32132,11 @@ class DensityModelPlugin(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[y10_avg] = "y10_avg"
     _property_names[kp] = "kp"
     _property_names[dst_d_tc] = "dst_d_tc"
-    _property_names[atmos_data_geo_magnetic_flux_source] = "atmos_data_geo_magnetic_flux_source"
-    _property_names[atmos_data_geo_magnetic_flux_update_rate] = "atmos_data_geo_magnetic_flux_update_rate"
-    _property_names[atmos_data_filename] = "atmos_data_filename"
-    _property_names[atmos_aug_data_file] = "atmos_aug_data_file"
-    _property_names[atmos_aug_dtc_file] = "atmos_aug_dtc_file"
+    _property_names[atmosphere_data_geo_magnetic_flux_source] = "atmosphere_data_geo_magnetic_flux_source"
+    _property_names[atmosphere_data_geo_magnetic_flux_update_rate] = "atmosphere_data_geo_magnetic_flux_update_rate"
+    _property_names[atmosphere_data_filename] = "atmosphere_data_filename"
+    _property_names[atmosphere_aug_data_file] = "atmosphere_aug_data_file"
+    _property_names[atmosphere_aug_dtc_file] = "atmosphere_aug_dtc_file"
     _property_names[drag_model_type] = "drag_model_type"
     _property_names[drag_model_plugin_name] = "drag_model_plugin_name"
     _property_names[drag_model_plugin] = "drag_model_plugin"
@@ -32175,20 +32175,20 @@ class JacchiaRoberts(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_computes_pressure_method_offset = 4
     _get_sun_position_method_offset = 5
     _set_sun_position_method_offset = 6
-    _get_atmos_data_source_method_offset = 7
-    _set_atmos_data_source_method_offset = 8
+    _get_atmosphere_data_source_method_offset = 7
+    _set_atmosphere_data_source_method_offset = 8
     _get_f_10_p7_method_offset = 9
     _set_f_10_p7_method_offset = 10
     _get_f_10_p7_avg_method_offset = 11
     _set_f_10_p7_avg_method_offset = 12
     _get_kp_method_offset = 13
     _set_kp_method_offset = 14
-    _get_atmos_data_geo_magnetic_flux_source_method_offset = 15
-    _set_atmos_data_geo_magnetic_flux_source_method_offset = 16
-    _get_atmos_data_geo_magnetic_flux_update_rate_method_offset = 17
-    _set_atmos_data_geo_magnetic_flux_update_rate_method_offset = 18
-    _get_atmos_data_filename_method_offset = 19
-    _set_atmos_data_filename_method_offset = 20
+    _get_atmosphere_data_geo_magnetic_flux_source_method_offset = 15
+    _set_atmosphere_data_geo_magnetic_flux_source_method_offset = 16
+    _get_atmosphere_data_geo_magnetic_flux_update_rate_method_offset = 17
+    _set_atmosphere_data_geo_magnetic_flux_update_rate_method_offset = 18
+    _get_atmosphere_data_filename_method_offset = 19
+    _set_atmosphere_data_filename_method_offset = 20
     _get_drag_model_type_method_offset = 21
     _set_drag_model_type_method_offset = 22
     _get_drag_model_plugin_name_method_offset = 23
@@ -32252,20 +32252,20 @@ class JacchiaRoberts(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def sun_position(self, value:"SunPosition") -> None:
         return self._intf.set_property(JacchiaRoberts._metadata, JacchiaRoberts._set_sun_position_metadata, value)
 
-    _get_atmos_data_source_metadata = { "offset" : _get_atmos_data_source_method_offset,
+    _get_atmosphere_data_source_metadata = { "offset" : _get_atmosphere_data_source_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(AtmosDataSource),) }
+            "marshallers" : (agmarshall.EnumArg(AtmosphereDataSource),) }
     @property
-    def atmos_data_source(self) -> "AtmosDataSource":
+    def atmosphere_data_source(self) -> "AtmosphereDataSource":
         """Get or set the atmospheric model data source - data file or constant values."""
-        return self._intf.get_property(JacchiaRoberts._metadata, JacchiaRoberts._get_atmos_data_source_metadata)
+        return self._intf.get_property(JacchiaRoberts._metadata, JacchiaRoberts._get_atmosphere_data_source_metadata)
 
-    _set_atmos_data_source_metadata = { "offset" : _set_atmos_data_source_method_offset,
+    _set_atmosphere_data_source_metadata = { "offset" : _set_atmosphere_data_source_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(AtmosDataSource),) }
-    @atmos_data_source.setter
-    def atmos_data_source(self, value:"AtmosDataSource") -> None:
-        return self._intf.set_property(JacchiaRoberts._metadata, JacchiaRoberts._set_atmos_data_source_metadata, value)
+            "marshallers" : (agmarshall.EnumArg(AtmosphereDataSource),) }
+    @atmosphere_data_source.setter
+    def atmosphere_data_source(self, value:"AtmosphereDataSource") -> None:
+        return self._intf.set_property(JacchiaRoberts._metadata, JacchiaRoberts._set_atmosphere_data_source_metadata, value)
 
     _get_f_10_p7_metadata = { "offset" : _get_f_10_p7_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -32312,50 +32312,50 @@ class JacchiaRoberts(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def kp(self, value:float) -> None:
         return self._intf.set_property(JacchiaRoberts._metadata, JacchiaRoberts._set_kp_metadata, value)
 
-    _get_atmos_data_geo_magnetic_flux_source_metadata = { "offset" : _get_atmos_data_geo_magnetic_flux_source_method_offset,
+    _get_atmosphere_data_geo_magnetic_flux_source_metadata = { "offset" : _get_atmosphere_data_geo_magnetic_flux_source_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(GeoMagneticFluxSource),) }
     @property
-    def atmos_data_geo_magnetic_flux_source(self) -> "GeoMagneticFluxSource":
+    def atmosphere_data_geo_magnetic_flux_source(self) -> "GeoMagneticFluxSource":
         """Whether to use Kp or Ap data from the flux file."""
-        return self._intf.get_property(JacchiaRoberts._metadata, JacchiaRoberts._get_atmos_data_geo_magnetic_flux_source_metadata)
+        return self._intf.get_property(JacchiaRoberts._metadata, JacchiaRoberts._get_atmosphere_data_geo_magnetic_flux_source_metadata)
 
-    _set_atmos_data_geo_magnetic_flux_source_metadata = { "offset" : _set_atmos_data_geo_magnetic_flux_source_method_offset,
+    _set_atmosphere_data_geo_magnetic_flux_source_metadata = { "offset" : _set_atmosphere_data_geo_magnetic_flux_source_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(GeoMagneticFluxSource),) }
-    @atmos_data_geo_magnetic_flux_source.setter
-    def atmos_data_geo_magnetic_flux_source(self, value:"GeoMagneticFluxSource") -> None:
-        return self._intf.set_property(JacchiaRoberts._metadata, JacchiaRoberts._set_atmos_data_geo_magnetic_flux_source_metadata, value)
+    @atmosphere_data_geo_magnetic_flux_source.setter
+    def atmosphere_data_geo_magnetic_flux_source(self, value:"GeoMagneticFluxSource") -> None:
+        return self._intf.set_property(JacchiaRoberts._metadata, JacchiaRoberts._set_atmosphere_data_geo_magnetic_flux_source_metadata, value)
 
-    _get_atmos_data_geo_magnetic_flux_update_rate_metadata = { "offset" : _get_atmos_data_geo_magnetic_flux_update_rate_method_offset,
+    _get_atmosphere_data_geo_magnetic_flux_update_rate_metadata = { "offset" : _get_atmosphere_data_geo_magnetic_flux_update_rate_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(GeoMagneticFluxUpdateRate),) }
     @property
-    def atmos_data_geo_magnetic_flux_update_rate(self) -> "GeoMagneticFluxUpdateRate":
+    def atmosphere_data_geo_magnetic_flux_update_rate(self) -> "GeoMagneticFluxUpdateRate":
         """Get or set the update rate for geomagnetic flux values from the flux file."""
-        return self._intf.get_property(JacchiaRoberts._metadata, JacchiaRoberts._get_atmos_data_geo_magnetic_flux_update_rate_metadata)
+        return self._intf.get_property(JacchiaRoberts._metadata, JacchiaRoberts._get_atmosphere_data_geo_magnetic_flux_update_rate_metadata)
 
-    _set_atmos_data_geo_magnetic_flux_update_rate_metadata = { "offset" : _set_atmos_data_geo_magnetic_flux_update_rate_method_offset,
+    _set_atmosphere_data_geo_magnetic_flux_update_rate_metadata = { "offset" : _set_atmosphere_data_geo_magnetic_flux_update_rate_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(GeoMagneticFluxUpdateRate),) }
-    @atmos_data_geo_magnetic_flux_update_rate.setter
-    def atmos_data_geo_magnetic_flux_update_rate(self, value:"GeoMagneticFluxUpdateRate") -> None:
-        return self._intf.set_property(JacchiaRoberts._metadata, JacchiaRoberts._set_atmos_data_geo_magnetic_flux_update_rate_metadata, value)
+    @atmosphere_data_geo_magnetic_flux_update_rate.setter
+    def atmosphere_data_geo_magnetic_flux_update_rate(self, value:"GeoMagneticFluxUpdateRate") -> None:
+        return self._intf.set_property(JacchiaRoberts._metadata, JacchiaRoberts._set_atmosphere_data_geo_magnetic_flux_update_rate_metadata, value)
 
-    _get_atmos_data_filename_metadata = { "offset" : _get_atmos_data_filename_method_offset,
+    _get_atmosphere_data_filename_metadata = { "offset" : _get_atmosphere_data_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
-    def atmos_data_filename(self) -> str:
+    def atmosphere_data_filename(self) -> str:
         """Get or set the atmospheric model data file path."""
-        return self._intf.get_property(JacchiaRoberts._metadata, JacchiaRoberts._get_atmos_data_filename_metadata)
+        return self._intf.get_property(JacchiaRoberts._metadata, JacchiaRoberts._get_atmosphere_data_filename_metadata)
 
-    _set_atmos_data_filename_metadata = { "offset" : _set_atmos_data_filename_method_offset,
+    _set_atmosphere_data_filename_metadata = { "offset" : _set_atmosphere_data_filename_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    @atmos_data_filename.setter
-    def atmos_data_filename(self, value:str) -> None:
-        return self._intf.set_property(JacchiaRoberts._metadata, JacchiaRoberts._set_atmos_data_filename_metadata, value)
+    @atmosphere_data_filename.setter
+    def atmosphere_data_filename(self, value:str) -> None:
+        return self._intf.set_property(JacchiaRoberts._metadata, JacchiaRoberts._set_atmosphere_data_filename_metadata, value)
 
     _get_drag_model_type_metadata = { "offset" : _get_drag_model_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -32429,13 +32429,13 @@ class JacchiaRoberts(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[computes_temperature] = "computes_temperature"
     _property_names[computes_pressure] = "computes_pressure"
     _property_names[sun_position] = "sun_position"
-    _property_names[atmos_data_source] = "atmos_data_source"
+    _property_names[atmosphere_data_source] = "atmosphere_data_source"
     _property_names[f_10_p7] = "f_10_p7"
     _property_names[f_10_p7_avg] = "f_10_p7_avg"
     _property_names[kp] = "kp"
-    _property_names[atmos_data_geo_magnetic_flux_source] = "atmos_data_geo_magnetic_flux_source"
-    _property_names[atmos_data_geo_magnetic_flux_update_rate] = "atmos_data_geo_magnetic_flux_update_rate"
-    _property_names[atmos_data_filename] = "atmos_data_filename"
+    _property_names[atmosphere_data_geo_magnetic_flux_source] = "atmosphere_data_geo_magnetic_flux_source"
+    _property_names[atmosphere_data_geo_magnetic_flux_update_rate] = "atmosphere_data_geo_magnetic_flux_update_rate"
+    _property_names[atmosphere_data_filename] = "atmosphere_data_filename"
     _property_names[drag_model_type] = "drag_model_type"
     _property_names[drag_model_plugin_name] = "drag_model_plugin_name"
     _property_names[drag_model_plugin] = "drag_model_plugin"
@@ -32471,8 +32471,8 @@ class JacchiaBowman2008(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _set_use_approximate_altitude_method_offset = 2
     _get_sun_position_method_offset = 3
     _set_sun_position_method_offset = 4
-    _get_atmos_data_source_method_offset = 5
-    _set_atmos_data_source_method_offset = 6
+    _get_atmosphere_data_source_method_offset = 5
+    _set_atmosphere_data_source_method_offset = 6
     _get_f10_method_offset = 7
     _set_f10_method_offset = 8
     _get_f10_avg_method_offset = 9
@@ -32491,10 +32491,10 @@ class JacchiaBowman2008(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _set_y10_avg_method_offset = 22
     _get_dst_d_tc_method_offset = 23
     _set_dst_d_tc_method_offset = 24
-    _get_atmos_aug_data_file_method_offset = 25
-    _set_atmos_aug_data_file_method_offset = 26
-    _get_atmos_aug_dtc_file_method_offset = 27
-    _set_atmos_aug_dtc_file_method_offset = 28
+    _get_atmosphere_aug_data_file_method_offset = 25
+    _set_atmosphere_aug_data_file_method_offset = 26
+    _get_atmosphere_aug_dtc_file_method_offset = 27
+    _set_atmosphere_aug_dtc_file_method_offset = 28
     _get_drag_model_type_method_offset = 29
     _set_drag_model_type_method_offset = 30
     _get_drag_model_plugin_name_method_offset = 31
@@ -32542,20 +32542,20 @@ class JacchiaBowman2008(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def sun_position(self, value:"SunPosition") -> None:
         return self._intf.set_property(JacchiaBowman2008._metadata, JacchiaBowman2008._set_sun_position_metadata, value)
 
-    _get_atmos_data_source_metadata = { "offset" : _get_atmos_data_source_method_offset,
+    _get_atmosphere_data_source_metadata = { "offset" : _get_atmosphere_data_source_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(AtmosDataSource),) }
+            "marshallers" : (agmarshall.EnumArg(AtmosphereDataSource),) }
     @property
-    def atmos_data_source(self) -> "AtmosDataSource":
+    def atmosphere_data_source(self) -> "AtmosphereDataSource":
         """Get or set the atmospheric model data source - data file or constant values."""
-        return self._intf.get_property(JacchiaBowman2008._metadata, JacchiaBowman2008._get_atmos_data_source_metadata)
+        return self._intf.get_property(JacchiaBowman2008._metadata, JacchiaBowman2008._get_atmosphere_data_source_metadata)
 
-    _set_atmos_data_source_metadata = { "offset" : _set_atmos_data_source_method_offset,
+    _set_atmosphere_data_source_metadata = { "offset" : _set_atmosphere_data_source_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(AtmosDataSource),) }
-    @atmos_data_source.setter
-    def atmos_data_source(self, value:"AtmosDataSource") -> None:
-        return self._intf.set_property(JacchiaBowman2008._metadata, JacchiaBowman2008._set_atmos_data_source_metadata, value)
+            "marshallers" : (agmarshall.EnumArg(AtmosphereDataSource),) }
+    @atmosphere_data_source.setter
+    def atmosphere_data_source(self, value:"AtmosphereDataSource") -> None:
+        return self._intf.set_property(JacchiaBowman2008._metadata, JacchiaBowman2008._set_atmosphere_data_source_metadata, value)
 
     _get_f10_metadata = { "offset" : _get_f10_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -32692,35 +32692,35 @@ class JacchiaBowman2008(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def dst_d_tc(self, value:float) -> None:
         return self._intf.set_property(JacchiaBowman2008._metadata, JacchiaBowman2008._set_dst_d_tc_metadata, value)
 
-    _get_atmos_aug_data_file_metadata = { "offset" : _get_atmos_aug_data_file_method_offset,
+    _get_atmosphere_aug_data_file_metadata = { "offset" : _get_atmosphere_aug_data_file_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
-    def atmos_aug_data_file(self) -> str:
+    def atmosphere_aug_data_file(self) -> str:
         """Get or set the atmospheric model space weather data file path."""
-        return self._intf.get_property(JacchiaBowman2008._metadata, JacchiaBowman2008._get_atmos_aug_data_file_metadata)
+        return self._intf.get_property(JacchiaBowman2008._metadata, JacchiaBowman2008._get_atmosphere_aug_data_file_metadata)
 
-    _set_atmos_aug_data_file_metadata = { "offset" : _set_atmos_aug_data_file_method_offset,
+    _set_atmosphere_aug_data_file_metadata = { "offset" : _set_atmosphere_aug_data_file_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    @atmos_aug_data_file.setter
-    def atmos_aug_data_file(self, value:str) -> None:
-        return self._intf.set_property(JacchiaBowman2008._metadata, JacchiaBowman2008._set_atmos_aug_data_file_metadata, value)
+    @atmosphere_aug_data_file.setter
+    def atmosphere_aug_data_file(self, value:str) -> None:
+        return self._intf.set_property(JacchiaBowman2008._metadata, JacchiaBowman2008._set_atmosphere_aug_data_file_metadata, value)
 
-    _get_atmos_aug_dtc_file_metadata = { "offset" : _get_atmos_aug_dtc_file_method_offset,
+    _get_atmosphere_aug_dtc_file_metadata = { "offset" : _get_atmosphere_aug_dtc_file_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
-    def atmos_aug_dtc_file(self) -> str:
+    def atmosphere_aug_dtc_file(self) -> str:
         """Get or set the atmospheric model DTC file path."""
-        return self._intf.get_property(JacchiaBowman2008._metadata, JacchiaBowman2008._get_atmos_aug_dtc_file_metadata)
+        return self._intf.get_property(JacchiaBowman2008._metadata, JacchiaBowman2008._get_atmosphere_aug_dtc_file_metadata)
 
-    _set_atmos_aug_dtc_file_metadata = { "offset" : _set_atmos_aug_dtc_file_method_offset,
+    _set_atmosphere_aug_dtc_file_metadata = { "offset" : _set_atmosphere_aug_dtc_file_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    @atmos_aug_dtc_file.setter
-    def atmos_aug_dtc_file(self, value:str) -> None:
-        return self._intf.set_property(JacchiaBowman2008._metadata, JacchiaBowman2008._set_atmos_aug_dtc_file_metadata, value)
+    @atmosphere_aug_dtc_file.setter
+    def atmosphere_aug_dtc_file(self, value:str) -> None:
+        return self._intf.set_property(JacchiaBowman2008._metadata, JacchiaBowman2008._set_atmosphere_aug_dtc_file_metadata, value)
 
     _get_drag_model_type_metadata = { "offset" : _get_drag_model_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -32792,7 +32792,7 @@ class JacchiaBowman2008(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _property_names[use_approximate_altitude] = "use_approximate_altitude"
     _property_names[sun_position] = "sun_position"
-    _property_names[atmos_data_source] = "atmos_data_source"
+    _property_names[atmosphere_data_source] = "atmosphere_data_source"
     _property_names[f10] = "f10"
     _property_names[f10_avg] = "f10_avg"
     _property_names[m10] = "m10"
@@ -32802,8 +32802,8 @@ class JacchiaBowman2008(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[y10] = "y10"
     _property_names[y10_avg] = "y10_avg"
     _property_names[dst_d_tc] = "dst_d_tc"
-    _property_names[atmos_aug_data_file] = "atmos_aug_data_file"
-    _property_names[atmos_aug_dtc_file] = "atmos_aug_dtc_file"
+    _property_names[atmosphere_aug_data_file] = "atmosphere_aug_data_file"
+    _property_names[atmosphere_aug_dtc_file] = "atmosphere_aug_dtc_file"
     _property_names[drag_model_type] = "drag_model_type"
     _property_names[drag_model_plugin_name] = "drag_model_plugin_name"
     _property_names[drag_model_plugin] = "drag_model_plugin"
@@ -33013,20 +33013,20 @@ class Jacchia1970(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_computes_pressure_method_offset = 4
     _get_sun_position_method_offset = 5
     _set_sun_position_method_offset = 6
-    _get_atmos_data_source_method_offset = 7
-    _set_atmos_data_source_method_offset = 8
+    _get_atmosphere_data_source_method_offset = 7
+    _set_atmosphere_data_source_method_offset = 8
     _get_f_10_p7_method_offset = 9
     _set_f_10_p7_method_offset = 10
     _get_f_10_p7_avg_method_offset = 11
     _set_f_10_p7_avg_method_offset = 12
     _get_kp_method_offset = 13
     _set_kp_method_offset = 14
-    _get_atmos_data_geo_magnetic_flux_source_method_offset = 15
-    _set_atmos_data_geo_magnetic_flux_source_method_offset = 16
-    _get_atmos_data_geo_magnetic_flux_update_rate_method_offset = 17
-    _set_atmos_data_geo_magnetic_flux_update_rate_method_offset = 18
-    _get_atmos_data_filename_method_offset = 19
-    _set_atmos_data_filename_method_offset = 20
+    _get_atmosphere_data_geo_magnetic_flux_source_method_offset = 15
+    _set_atmosphere_data_geo_magnetic_flux_source_method_offset = 16
+    _get_atmosphere_data_geo_magnetic_flux_update_rate_method_offset = 17
+    _set_atmosphere_data_geo_magnetic_flux_update_rate_method_offset = 18
+    _get_atmosphere_data_filename_method_offset = 19
+    _set_atmosphere_data_filename_method_offset = 20
     _get_drag_model_type_method_offset = 21
     _set_drag_model_type_method_offset = 22
     _get_drag_model_plugin_name_method_offset = 23
@@ -33090,20 +33090,20 @@ class Jacchia1970(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def sun_position(self, value:"SunPosition") -> None:
         return self._intf.set_property(Jacchia1970._metadata, Jacchia1970._set_sun_position_metadata, value)
 
-    _get_atmos_data_source_metadata = { "offset" : _get_atmos_data_source_method_offset,
+    _get_atmosphere_data_source_metadata = { "offset" : _get_atmosphere_data_source_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(AtmosDataSource),) }
+            "marshallers" : (agmarshall.EnumArg(AtmosphereDataSource),) }
     @property
-    def atmos_data_source(self) -> "AtmosDataSource":
+    def atmosphere_data_source(self) -> "AtmosphereDataSource":
         """Get or set the atmospheric model data source - data file or constant values."""
-        return self._intf.get_property(Jacchia1970._metadata, Jacchia1970._get_atmos_data_source_metadata)
+        return self._intf.get_property(Jacchia1970._metadata, Jacchia1970._get_atmosphere_data_source_metadata)
 
-    _set_atmos_data_source_metadata = { "offset" : _set_atmos_data_source_method_offset,
+    _set_atmosphere_data_source_metadata = { "offset" : _set_atmosphere_data_source_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(AtmosDataSource),) }
-    @atmos_data_source.setter
-    def atmos_data_source(self, value:"AtmosDataSource") -> None:
-        return self._intf.set_property(Jacchia1970._metadata, Jacchia1970._set_atmos_data_source_metadata, value)
+            "marshallers" : (agmarshall.EnumArg(AtmosphereDataSource),) }
+    @atmosphere_data_source.setter
+    def atmosphere_data_source(self, value:"AtmosphereDataSource") -> None:
+        return self._intf.set_property(Jacchia1970._metadata, Jacchia1970._set_atmosphere_data_source_metadata, value)
 
     _get_f_10_p7_metadata = { "offset" : _get_f_10_p7_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -33150,50 +33150,50 @@ class Jacchia1970(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def kp(self, value:float) -> None:
         return self._intf.set_property(Jacchia1970._metadata, Jacchia1970._set_kp_metadata, value)
 
-    _get_atmos_data_geo_magnetic_flux_source_metadata = { "offset" : _get_atmos_data_geo_magnetic_flux_source_method_offset,
+    _get_atmosphere_data_geo_magnetic_flux_source_metadata = { "offset" : _get_atmosphere_data_geo_magnetic_flux_source_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(GeoMagneticFluxSource),) }
     @property
-    def atmos_data_geo_magnetic_flux_source(self) -> "GeoMagneticFluxSource":
+    def atmosphere_data_geo_magnetic_flux_source(self) -> "GeoMagneticFluxSource":
         """Whether to use Kp or Ap data from the flux file."""
-        return self._intf.get_property(Jacchia1970._metadata, Jacchia1970._get_atmos_data_geo_magnetic_flux_source_metadata)
+        return self._intf.get_property(Jacchia1970._metadata, Jacchia1970._get_atmosphere_data_geo_magnetic_flux_source_metadata)
 
-    _set_atmos_data_geo_magnetic_flux_source_metadata = { "offset" : _set_atmos_data_geo_magnetic_flux_source_method_offset,
+    _set_atmosphere_data_geo_magnetic_flux_source_metadata = { "offset" : _set_atmosphere_data_geo_magnetic_flux_source_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(GeoMagneticFluxSource),) }
-    @atmos_data_geo_magnetic_flux_source.setter
-    def atmos_data_geo_magnetic_flux_source(self, value:"GeoMagneticFluxSource") -> None:
-        return self._intf.set_property(Jacchia1970._metadata, Jacchia1970._set_atmos_data_geo_magnetic_flux_source_metadata, value)
+    @atmosphere_data_geo_magnetic_flux_source.setter
+    def atmosphere_data_geo_magnetic_flux_source(self, value:"GeoMagneticFluxSource") -> None:
+        return self._intf.set_property(Jacchia1970._metadata, Jacchia1970._set_atmosphere_data_geo_magnetic_flux_source_metadata, value)
 
-    _get_atmos_data_geo_magnetic_flux_update_rate_metadata = { "offset" : _get_atmos_data_geo_magnetic_flux_update_rate_method_offset,
+    _get_atmosphere_data_geo_magnetic_flux_update_rate_metadata = { "offset" : _get_atmosphere_data_geo_magnetic_flux_update_rate_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(GeoMagneticFluxUpdateRate),) }
     @property
-    def atmos_data_geo_magnetic_flux_update_rate(self) -> "GeoMagneticFluxUpdateRate":
+    def atmosphere_data_geo_magnetic_flux_update_rate(self) -> "GeoMagneticFluxUpdateRate":
         """Get or set the update rate for geomagnetic flux values from the flux file."""
-        return self._intf.get_property(Jacchia1970._metadata, Jacchia1970._get_atmos_data_geo_magnetic_flux_update_rate_metadata)
+        return self._intf.get_property(Jacchia1970._metadata, Jacchia1970._get_atmosphere_data_geo_magnetic_flux_update_rate_metadata)
 
-    _set_atmos_data_geo_magnetic_flux_update_rate_metadata = { "offset" : _set_atmos_data_geo_magnetic_flux_update_rate_method_offset,
+    _set_atmosphere_data_geo_magnetic_flux_update_rate_metadata = { "offset" : _set_atmosphere_data_geo_magnetic_flux_update_rate_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(GeoMagneticFluxUpdateRate),) }
-    @atmos_data_geo_magnetic_flux_update_rate.setter
-    def atmos_data_geo_magnetic_flux_update_rate(self, value:"GeoMagneticFluxUpdateRate") -> None:
-        return self._intf.set_property(Jacchia1970._metadata, Jacchia1970._set_atmos_data_geo_magnetic_flux_update_rate_metadata, value)
+    @atmosphere_data_geo_magnetic_flux_update_rate.setter
+    def atmosphere_data_geo_magnetic_flux_update_rate(self, value:"GeoMagneticFluxUpdateRate") -> None:
+        return self._intf.set_property(Jacchia1970._metadata, Jacchia1970._set_atmosphere_data_geo_magnetic_flux_update_rate_metadata, value)
 
-    _get_atmos_data_filename_metadata = { "offset" : _get_atmos_data_filename_method_offset,
+    _get_atmosphere_data_filename_metadata = { "offset" : _get_atmosphere_data_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
-    def atmos_data_filename(self) -> str:
+    def atmosphere_data_filename(self) -> str:
         """Get or set the atmospheric model data file path."""
-        return self._intf.get_property(Jacchia1970._metadata, Jacchia1970._get_atmos_data_filename_metadata)
+        return self._intf.get_property(Jacchia1970._metadata, Jacchia1970._get_atmosphere_data_filename_metadata)
 
-    _set_atmos_data_filename_metadata = { "offset" : _set_atmos_data_filename_method_offset,
+    _set_atmosphere_data_filename_metadata = { "offset" : _set_atmosphere_data_filename_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    @atmos_data_filename.setter
-    def atmos_data_filename(self, value:str) -> None:
-        return self._intf.set_property(Jacchia1970._metadata, Jacchia1970._set_atmos_data_filename_metadata, value)
+    @atmosphere_data_filename.setter
+    def atmosphere_data_filename(self, value:str) -> None:
+        return self._intf.set_property(Jacchia1970._metadata, Jacchia1970._set_atmosphere_data_filename_metadata, value)
 
     _get_drag_model_type_metadata = { "offset" : _get_drag_model_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -33267,13 +33267,13 @@ class Jacchia1970(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[computes_temperature] = "computes_temperature"
     _property_names[computes_pressure] = "computes_pressure"
     _property_names[sun_position] = "sun_position"
-    _property_names[atmos_data_source] = "atmos_data_source"
+    _property_names[atmosphere_data_source] = "atmosphere_data_source"
     _property_names[f_10_p7] = "f_10_p7"
     _property_names[f_10_p7_avg] = "f_10_p7_avg"
     _property_names[kp] = "kp"
-    _property_names[atmos_data_geo_magnetic_flux_source] = "atmos_data_geo_magnetic_flux_source"
-    _property_names[atmos_data_geo_magnetic_flux_update_rate] = "atmos_data_geo_magnetic_flux_update_rate"
-    _property_names[atmos_data_filename] = "atmos_data_filename"
+    _property_names[atmosphere_data_geo_magnetic_flux_source] = "atmosphere_data_geo_magnetic_flux_source"
+    _property_names[atmosphere_data_geo_magnetic_flux_update_rate] = "atmosphere_data_geo_magnetic_flux_update_rate"
+    _property_names[atmosphere_data_filename] = "atmosphere_data_filename"
     _property_names[drag_model_type] = "drag_model_type"
     _property_names[drag_model_plugin_name] = "drag_model_plugin_name"
     _property_names[drag_model_plugin] = "drag_model_plugin"
@@ -33311,20 +33311,20 @@ class Jacchia1971(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_computes_pressure_method_offset = 4
     _get_sun_position_method_offset = 5
     _set_sun_position_method_offset = 6
-    _get_atmos_data_source_method_offset = 7
-    _set_atmos_data_source_method_offset = 8
+    _get_atmosphere_data_source_method_offset = 7
+    _set_atmosphere_data_source_method_offset = 8
     _get_f_10_p7_method_offset = 9
     _set_f_10_p7_method_offset = 10
     _get_f_10_p7_avg_method_offset = 11
     _set_f_10_p7_avg_method_offset = 12
     _get_kp_method_offset = 13
     _set_kp_method_offset = 14
-    _get_atmos_data_geo_magnetic_flux_source_method_offset = 15
-    _set_atmos_data_geo_magnetic_flux_source_method_offset = 16
-    _get_atmos_data_geo_magnetic_flux_update_rate_method_offset = 17
-    _set_atmos_data_geo_magnetic_flux_update_rate_method_offset = 18
-    _get_atmos_data_filename_method_offset = 19
-    _set_atmos_data_filename_method_offset = 20
+    _get_atmosphere_data_geo_magnetic_flux_source_method_offset = 15
+    _set_atmosphere_data_geo_magnetic_flux_source_method_offset = 16
+    _get_atmosphere_data_geo_magnetic_flux_update_rate_method_offset = 17
+    _set_atmosphere_data_geo_magnetic_flux_update_rate_method_offset = 18
+    _get_atmosphere_data_filename_method_offset = 19
+    _set_atmosphere_data_filename_method_offset = 20
     _get_drag_model_type_method_offset = 21
     _set_drag_model_type_method_offset = 22
     _get_drag_model_plugin_name_method_offset = 23
@@ -33388,20 +33388,20 @@ class Jacchia1971(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def sun_position(self, value:"SunPosition") -> None:
         return self._intf.set_property(Jacchia1971._metadata, Jacchia1971._set_sun_position_metadata, value)
 
-    _get_atmos_data_source_metadata = { "offset" : _get_atmos_data_source_method_offset,
+    _get_atmosphere_data_source_metadata = { "offset" : _get_atmosphere_data_source_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(AtmosDataSource),) }
+            "marshallers" : (agmarshall.EnumArg(AtmosphereDataSource),) }
     @property
-    def atmos_data_source(self) -> "AtmosDataSource":
+    def atmosphere_data_source(self) -> "AtmosphereDataSource":
         """Get or set the atmospheric model data source - data file or constant values."""
-        return self._intf.get_property(Jacchia1971._metadata, Jacchia1971._get_atmos_data_source_metadata)
+        return self._intf.get_property(Jacchia1971._metadata, Jacchia1971._get_atmosphere_data_source_metadata)
 
-    _set_atmos_data_source_metadata = { "offset" : _set_atmos_data_source_method_offset,
+    _set_atmosphere_data_source_metadata = { "offset" : _set_atmosphere_data_source_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(AtmosDataSource),) }
-    @atmos_data_source.setter
-    def atmos_data_source(self, value:"AtmosDataSource") -> None:
-        return self._intf.set_property(Jacchia1971._metadata, Jacchia1971._set_atmos_data_source_metadata, value)
+            "marshallers" : (agmarshall.EnumArg(AtmosphereDataSource),) }
+    @atmosphere_data_source.setter
+    def atmosphere_data_source(self, value:"AtmosphereDataSource") -> None:
+        return self._intf.set_property(Jacchia1971._metadata, Jacchia1971._set_atmosphere_data_source_metadata, value)
 
     _get_f_10_p7_metadata = { "offset" : _get_f_10_p7_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -33448,50 +33448,50 @@ class Jacchia1971(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def kp(self, value:float) -> None:
         return self._intf.set_property(Jacchia1971._metadata, Jacchia1971._set_kp_metadata, value)
 
-    _get_atmos_data_geo_magnetic_flux_source_metadata = { "offset" : _get_atmos_data_geo_magnetic_flux_source_method_offset,
+    _get_atmosphere_data_geo_magnetic_flux_source_metadata = { "offset" : _get_atmosphere_data_geo_magnetic_flux_source_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(GeoMagneticFluxSource),) }
     @property
-    def atmos_data_geo_magnetic_flux_source(self) -> "GeoMagneticFluxSource":
+    def atmosphere_data_geo_magnetic_flux_source(self) -> "GeoMagneticFluxSource":
         """Whether to use Kp or Ap data from the flux file."""
-        return self._intf.get_property(Jacchia1971._metadata, Jacchia1971._get_atmos_data_geo_magnetic_flux_source_metadata)
+        return self._intf.get_property(Jacchia1971._metadata, Jacchia1971._get_atmosphere_data_geo_magnetic_flux_source_metadata)
 
-    _set_atmos_data_geo_magnetic_flux_source_metadata = { "offset" : _set_atmos_data_geo_magnetic_flux_source_method_offset,
+    _set_atmosphere_data_geo_magnetic_flux_source_metadata = { "offset" : _set_atmosphere_data_geo_magnetic_flux_source_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(GeoMagneticFluxSource),) }
-    @atmos_data_geo_magnetic_flux_source.setter
-    def atmos_data_geo_magnetic_flux_source(self, value:"GeoMagneticFluxSource") -> None:
-        return self._intf.set_property(Jacchia1971._metadata, Jacchia1971._set_atmos_data_geo_magnetic_flux_source_metadata, value)
+    @atmosphere_data_geo_magnetic_flux_source.setter
+    def atmosphere_data_geo_magnetic_flux_source(self, value:"GeoMagneticFluxSource") -> None:
+        return self._intf.set_property(Jacchia1971._metadata, Jacchia1971._set_atmosphere_data_geo_magnetic_flux_source_metadata, value)
 
-    _get_atmos_data_geo_magnetic_flux_update_rate_metadata = { "offset" : _get_atmos_data_geo_magnetic_flux_update_rate_method_offset,
+    _get_atmosphere_data_geo_magnetic_flux_update_rate_metadata = { "offset" : _get_atmosphere_data_geo_magnetic_flux_update_rate_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(GeoMagneticFluxUpdateRate),) }
     @property
-    def atmos_data_geo_magnetic_flux_update_rate(self) -> "GeoMagneticFluxUpdateRate":
+    def atmosphere_data_geo_magnetic_flux_update_rate(self) -> "GeoMagneticFluxUpdateRate":
         """Get or set the update rate for geomagnetic flux values from the flux file."""
-        return self._intf.get_property(Jacchia1971._metadata, Jacchia1971._get_atmos_data_geo_magnetic_flux_update_rate_metadata)
+        return self._intf.get_property(Jacchia1971._metadata, Jacchia1971._get_atmosphere_data_geo_magnetic_flux_update_rate_metadata)
 
-    _set_atmos_data_geo_magnetic_flux_update_rate_metadata = { "offset" : _set_atmos_data_geo_magnetic_flux_update_rate_method_offset,
+    _set_atmosphere_data_geo_magnetic_flux_update_rate_metadata = { "offset" : _set_atmosphere_data_geo_magnetic_flux_update_rate_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(GeoMagneticFluxUpdateRate),) }
-    @atmos_data_geo_magnetic_flux_update_rate.setter
-    def atmos_data_geo_magnetic_flux_update_rate(self, value:"GeoMagneticFluxUpdateRate") -> None:
-        return self._intf.set_property(Jacchia1971._metadata, Jacchia1971._set_atmos_data_geo_magnetic_flux_update_rate_metadata, value)
+    @atmosphere_data_geo_magnetic_flux_update_rate.setter
+    def atmosphere_data_geo_magnetic_flux_update_rate(self, value:"GeoMagneticFluxUpdateRate") -> None:
+        return self._intf.set_property(Jacchia1971._metadata, Jacchia1971._set_atmosphere_data_geo_magnetic_flux_update_rate_metadata, value)
 
-    _get_atmos_data_filename_metadata = { "offset" : _get_atmos_data_filename_method_offset,
+    _get_atmosphere_data_filename_metadata = { "offset" : _get_atmosphere_data_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
-    def atmos_data_filename(self) -> str:
+    def atmosphere_data_filename(self) -> str:
         """Get or set the atmospheric model data file path."""
-        return self._intf.get_property(Jacchia1971._metadata, Jacchia1971._get_atmos_data_filename_metadata)
+        return self._intf.get_property(Jacchia1971._metadata, Jacchia1971._get_atmosphere_data_filename_metadata)
 
-    _set_atmos_data_filename_metadata = { "offset" : _set_atmos_data_filename_method_offset,
+    _set_atmosphere_data_filename_metadata = { "offset" : _set_atmosphere_data_filename_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    @atmos_data_filename.setter
-    def atmos_data_filename(self, value:str) -> None:
-        return self._intf.set_property(Jacchia1971._metadata, Jacchia1971._set_atmos_data_filename_metadata, value)
+    @atmosphere_data_filename.setter
+    def atmosphere_data_filename(self, value:str) -> None:
+        return self._intf.set_property(Jacchia1971._metadata, Jacchia1971._set_atmosphere_data_filename_metadata, value)
 
     _get_drag_model_type_metadata = { "offset" : _get_drag_model_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -33565,13 +33565,13 @@ class Jacchia1971(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[computes_temperature] = "computes_temperature"
     _property_names[computes_pressure] = "computes_pressure"
     _property_names[sun_position] = "sun_position"
-    _property_names[atmos_data_source] = "atmos_data_source"
+    _property_names[atmosphere_data_source] = "atmosphere_data_source"
     _property_names[f_10_p7] = "f_10_p7"
     _property_names[f_10_p7_avg] = "f_10_p7_avg"
     _property_names[kp] = "kp"
-    _property_names[atmos_data_geo_magnetic_flux_source] = "atmos_data_geo_magnetic_flux_source"
-    _property_names[atmos_data_geo_magnetic_flux_update_rate] = "atmos_data_geo_magnetic_flux_update_rate"
-    _property_names[atmos_data_filename] = "atmos_data_filename"
+    _property_names[atmosphere_data_geo_magnetic_flux_source] = "atmosphere_data_geo_magnetic_flux_source"
+    _property_names[atmosphere_data_geo_magnetic_flux_update_rate] = "atmosphere_data_geo_magnetic_flux_update_rate"
+    _property_names[atmosphere_data_filename] = "atmosphere_data_filename"
     _property_names[drag_model_type] = "drag_model_type"
     _property_names[drag_model_plugin_name] = "drag_model_plugin_name"
     _property_names[drag_model_plugin] = "drag_model_plugin"
@@ -33609,20 +33609,20 @@ class MSISE1990(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_computes_pressure_method_offset = 4
     _get_sun_position_method_offset = 5
     _set_sun_position_method_offset = 6
-    _get_atmos_data_source_method_offset = 7
-    _set_atmos_data_source_method_offset = 8
+    _get_atmosphere_data_source_method_offset = 7
+    _set_atmosphere_data_source_method_offset = 8
     _get_f_10_p7_method_offset = 9
     _set_f_10_p7_method_offset = 10
     _get_f_10_p7_avg_method_offset = 11
     _set_f_10_p7_avg_method_offset = 12
     _get_kp_method_offset = 13
     _set_kp_method_offset = 14
-    _get_atmos_data_geo_magnetic_flux_source_method_offset = 15
-    _set_atmos_data_geo_magnetic_flux_source_method_offset = 16
-    _get_atmos_data_geo_magnetic_flux_update_rate_method_offset = 17
-    _set_atmos_data_geo_magnetic_flux_update_rate_method_offset = 18
-    _get_atmos_data_filename_method_offset = 19
-    _set_atmos_data_filename_method_offset = 20
+    _get_atmosphere_data_geo_magnetic_flux_source_method_offset = 15
+    _set_atmosphere_data_geo_magnetic_flux_source_method_offset = 16
+    _get_atmosphere_data_geo_magnetic_flux_update_rate_method_offset = 17
+    _set_atmosphere_data_geo_magnetic_flux_update_rate_method_offset = 18
+    _get_atmosphere_data_filename_method_offset = 19
+    _set_atmosphere_data_filename_method_offset = 20
     _get_drag_model_type_method_offset = 21
     _set_drag_model_type_method_offset = 22
     _get_drag_model_plugin_name_method_offset = 23
@@ -33686,20 +33686,20 @@ class MSISE1990(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def sun_position(self, value:"SunPosition") -> None:
         return self._intf.set_property(MSISE1990._metadata, MSISE1990._set_sun_position_metadata, value)
 
-    _get_atmos_data_source_metadata = { "offset" : _get_atmos_data_source_method_offset,
+    _get_atmosphere_data_source_metadata = { "offset" : _get_atmosphere_data_source_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(AtmosDataSource),) }
+            "marshallers" : (agmarshall.EnumArg(AtmosphereDataSource),) }
     @property
-    def atmos_data_source(self) -> "AtmosDataSource":
+    def atmosphere_data_source(self) -> "AtmosphereDataSource":
         """Get or set the atmospheric model data source - data file or constant values."""
-        return self._intf.get_property(MSISE1990._metadata, MSISE1990._get_atmos_data_source_metadata)
+        return self._intf.get_property(MSISE1990._metadata, MSISE1990._get_atmosphere_data_source_metadata)
 
-    _set_atmos_data_source_metadata = { "offset" : _set_atmos_data_source_method_offset,
+    _set_atmosphere_data_source_metadata = { "offset" : _set_atmosphere_data_source_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(AtmosDataSource),) }
-    @atmos_data_source.setter
-    def atmos_data_source(self, value:"AtmosDataSource") -> None:
-        return self._intf.set_property(MSISE1990._metadata, MSISE1990._set_atmos_data_source_metadata, value)
+            "marshallers" : (agmarshall.EnumArg(AtmosphereDataSource),) }
+    @atmosphere_data_source.setter
+    def atmosphere_data_source(self, value:"AtmosphereDataSource") -> None:
+        return self._intf.set_property(MSISE1990._metadata, MSISE1990._set_atmosphere_data_source_metadata, value)
 
     _get_f_10_p7_metadata = { "offset" : _get_f_10_p7_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -33746,50 +33746,50 @@ class MSISE1990(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def kp(self, value:float) -> None:
         return self._intf.set_property(MSISE1990._metadata, MSISE1990._set_kp_metadata, value)
 
-    _get_atmos_data_geo_magnetic_flux_source_metadata = { "offset" : _get_atmos_data_geo_magnetic_flux_source_method_offset,
+    _get_atmosphere_data_geo_magnetic_flux_source_metadata = { "offset" : _get_atmosphere_data_geo_magnetic_flux_source_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(GeoMagneticFluxSource),) }
     @property
-    def atmos_data_geo_magnetic_flux_source(self) -> "GeoMagneticFluxSource":
+    def atmosphere_data_geo_magnetic_flux_source(self) -> "GeoMagneticFluxSource":
         """Whether to use Kp or Ap data from the flux file."""
-        return self._intf.get_property(MSISE1990._metadata, MSISE1990._get_atmos_data_geo_magnetic_flux_source_metadata)
+        return self._intf.get_property(MSISE1990._metadata, MSISE1990._get_atmosphere_data_geo_magnetic_flux_source_metadata)
 
-    _set_atmos_data_geo_magnetic_flux_source_metadata = { "offset" : _set_atmos_data_geo_magnetic_flux_source_method_offset,
+    _set_atmosphere_data_geo_magnetic_flux_source_metadata = { "offset" : _set_atmosphere_data_geo_magnetic_flux_source_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(GeoMagneticFluxSource),) }
-    @atmos_data_geo_magnetic_flux_source.setter
-    def atmos_data_geo_magnetic_flux_source(self, value:"GeoMagneticFluxSource") -> None:
-        return self._intf.set_property(MSISE1990._metadata, MSISE1990._set_atmos_data_geo_magnetic_flux_source_metadata, value)
+    @atmosphere_data_geo_magnetic_flux_source.setter
+    def atmosphere_data_geo_magnetic_flux_source(self, value:"GeoMagneticFluxSource") -> None:
+        return self._intf.set_property(MSISE1990._metadata, MSISE1990._set_atmosphere_data_geo_magnetic_flux_source_metadata, value)
 
-    _get_atmos_data_geo_magnetic_flux_update_rate_metadata = { "offset" : _get_atmos_data_geo_magnetic_flux_update_rate_method_offset,
+    _get_atmosphere_data_geo_magnetic_flux_update_rate_metadata = { "offset" : _get_atmosphere_data_geo_magnetic_flux_update_rate_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(GeoMagneticFluxUpdateRate),) }
     @property
-    def atmos_data_geo_magnetic_flux_update_rate(self) -> "GeoMagneticFluxUpdateRate":
+    def atmosphere_data_geo_magnetic_flux_update_rate(self) -> "GeoMagneticFluxUpdateRate":
         """Get or set the update rate for geomagnetic flux values from the flux file."""
-        return self._intf.get_property(MSISE1990._metadata, MSISE1990._get_atmos_data_geo_magnetic_flux_update_rate_metadata)
+        return self._intf.get_property(MSISE1990._metadata, MSISE1990._get_atmosphere_data_geo_magnetic_flux_update_rate_metadata)
 
-    _set_atmos_data_geo_magnetic_flux_update_rate_metadata = { "offset" : _set_atmos_data_geo_magnetic_flux_update_rate_method_offset,
+    _set_atmosphere_data_geo_magnetic_flux_update_rate_metadata = { "offset" : _set_atmosphere_data_geo_magnetic_flux_update_rate_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(GeoMagneticFluxUpdateRate),) }
-    @atmos_data_geo_magnetic_flux_update_rate.setter
-    def atmos_data_geo_magnetic_flux_update_rate(self, value:"GeoMagneticFluxUpdateRate") -> None:
-        return self._intf.set_property(MSISE1990._metadata, MSISE1990._set_atmos_data_geo_magnetic_flux_update_rate_metadata, value)
+    @atmosphere_data_geo_magnetic_flux_update_rate.setter
+    def atmosphere_data_geo_magnetic_flux_update_rate(self, value:"GeoMagneticFluxUpdateRate") -> None:
+        return self._intf.set_property(MSISE1990._metadata, MSISE1990._set_atmosphere_data_geo_magnetic_flux_update_rate_metadata, value)
 
-    _get_atmos_data_filename_metadata = { "offset" : _get_atmos_data_filename_method_offset,
+    _get_atmosphere_data_filename_metadata = { "offset" : _get_atmosphere_data_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
-    def atmos_data_filename(self) -> str:
+    def atmosphere_data_filename(self) -> str:
         """Get or set the atmospheric model data file path."""
-        return self._intf.get_property(MSISE1990._metadata, MSISE1990._get_atmos_data_filename_metadata)
+        return self._intf.get_property(MSISE1990._metadata, MSISE1990._get_atmosphere_data_filename_metadata)
 
-    _set_atmos_data_filename_metadata = { "offset" : _set_atmos_data_filename_method_offset,
+    _set_atmosphere_data_filename_metadata = { "offset" : _set_atmosphere_data_filename_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    @atmos_data_filename.setter
-    def atmos_data_filename(self, value:str) -> None:
-        return self._intf.set_property(MSISE1990._metadata, MSISE1990._set_atmos_data_filename_metadata, value)
+    @atmosphere_data_filename.setter
+    def atmosphere_data_filename(self, value:str) -> None:
+        return self._intf.set_property(MSISE1990._metadata, MSISE1990._set_atmosphere_data_filename_metadata, value)
 
     _get_drag_model_type_metadata = { "offset" : _get_drag_model_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -33863,13 +33863,13 @@ class MSISE1990(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[computes_temperature] = "computes_temperature"
     _property_names[computes_pressure] = "computes_pressure"
     _property_names[sun_position] = "sun_position"
-    _property_names[atmos_data_source] = "atmos_data_source"
+    _property_names[atmosphere_data_source] = "atmosphere_data_source"
     _property_names[f_10_p7] = "f_10_p7"
     _property_names[f_10_p7_avg] = "f_10_p7_avg"
     _property_names[kp] = "kp"
-    _property_names[atmos_data_geo_magnetic_flux_source] = "atmos_data_geo_magnetic_flux_source"
-    _property_names[atmos_data_geo_magnetic_flux_update_rate] = "atmos_data_geo_magnetic_flux_update_rate"
-    _property_names[atmos_data_filename] = "atmos_data_filename"
+    _property_names[atmosphere_data_geo_magnetic_flux_source] = "atmosphere_data_geo_magnetic_flux_source"
+    _property_names[atmosphere_data_geo_magnetic_flux_update_rate] = "atmosphere_data_geo_magnetic_flux_update_rate"
+    _property_names[atmosphere_data_filename] = "atmosphere_data_filename"
     _property_names[drag_model_type] = "drag_model_type"
     _property_names[drag_model_plugin_name] = "drag_model_plugin_name"
     _property_names[drag_model_plugin] = "drag_model_plugin"
@@ -33907,20 +33907,20 @@ class MSIS1986(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_computes_pressure_method_offset = 4
     _get_sun_position_method_offset = 5
     _set_sun_position_method_offset = 6
-    _get_atmos_data_source_method_offset = 7
-    _set_atmos_data_source_method_offset = 8
+    _get_atmosphere_data_source_method_offset = 7
+    _set_atmosphere_data_source_method_offset = 8
     _get_f_10_p7_method_offset = 9
     _set_f_10_p7_method_offset = 10
     _get_f_10_p7_avg_method_offset = 11
     _set_f_10_p7_avg_method_offset = 12
     _get_kp_method_offset = 13
     _set_kp_method_offset = 14
-    _get_atmos_data_geo_magnetic_flux_source_method_offset = 15
-    _set_atmos_data_geo_magnetic_flux_source_method_offset = 16
-    _get_atmos_data_geo_magnetic_flux_update_rate_method_offset = 17
-    _set_atmos_data_geo_magnetic_flux_update_rate_method_offset = 18
-    _get_atmos_data_filename_method_offset = 19
-    _set_atmos_data_filename_method_offset = 20
+    _get_atmosphere_data_geo_magnetic_flux_source_method_offset = 15
+    _set_atmosphere_data_geo_magnetic_flux_source_method_offset = 16
+    _get_atmosphere_data_geo_magnetic_flux_update_rate_method_offset = 17
+    _set_atmosphere_data_geo_magnetic_flux_update_rate_method_offset = 18
+    _get_atmosphere_data_filename_method_offset = 19
+    _set_atmosphere_data_filename_method_offset = 20
     _get_drag_model_type_method_offset = 21
     _set_drag_model_type_method_offset = 22
     _get_drag_model_plugin_name_method_offset = 23
@@ -33984,20 +33984,20 @@ class MSIS1986(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def sun_position(self, value:"SunPosition") -> None:
         return self._intf.set_property(MSIS1986._metadata, MSIS1986._set_sun_position_metadata, value)
 
-    _get_atmos_data_source_metadata = { "offset" : _get_atmos_data_source_method_offset,
+    _get_atmosphere_data_source_metadata = { "offset" : _get_atmosphere_data_source_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(AtmosDataSource),) }
+            "marshallers" : (agmarshall.EnumArg(AtmosphereDataSource),) }
     @property
-    def atmos_data_source(self) -> "AtmosDataSource":
+    def atmosphere_data_source(self) -> "AtmosphereDataSource":
         """Get or set the atmospheric model data source - data file or constant values."""
-        return self._intf.get_property(MSIS1986._metadata, MSIS1986._get_atmos_data_source_metadata)
+        return self._intf.get_property(MSIS1986._metadata, MSIS1986._get_atmosphere_data_source_metadata)
 
-    _set_atmos_data_source_metadata = { "offset" : _set_atmos_data_source_method_offset,
+    _set_atmosphere_data_source_metadata = { "offset" : _set_atmosphere_data_source_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(AtmosDataSource),) }
-    @atmos_data_source.setter
-    def atmos_data_source(self, value:"AtmosDataSource") -> None:
-        return self._intf.set_property(MSIS1986._metadata, MSIS1986._set_atmos_data_source_metadata, value)
+            "marshallers" : (agmarshall.EnumArg(AtmosphereDataSource),) }
+    @atmosphere_data_source.setter
+    def atmosphere_data_source(self, value:"AtmosphereDataSource") -> None:
+        return self._intf.set_property(MSIS1986._metadata, MSIS1986._set_atmosphere_data_source_metadata, value)
 
     _get_f_10_p7_metadata = { "offset" : _get_f_10_p7_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -34044,50 +34044,50 @@ class MSIS1986(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def kp(self, value:float) -> None:
         return self._intf.set_property(MSIS1986._metadata, MSIS1986._set_kp_metadata, value)
 
-    _get_atmos_data_geo_magnetic_flux_source_metadata = { "offset" : _get_atmos_data_geo_magnetic_flux_source_method_offset,
+    _get_atmosphere_data_geo_magnetic_flux_source_metadata = { "offset" : _get_atmosphere_data_geo_magnetic_flux_source_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(GeoMagneticFluxSource),) }
     @property
-    def atmos_data_geo_magnetic_flux_source(self) -> "GeoMagneticFluxSource":
+    def atmosphere_data_geo_magnetic_flux_source(self) -> "GeoMagneticFluxSource":
         """Whether to use Kp or Ap data from the flux file."""
-        return self._intf.get_property(MSIS1986._metadata, MSIS1986._get_atmos_data_geo_magnetic_flux_source_metadata)
+        return self._intf.get_property(MSIS1986._metadata, MSIS1986._get_atmosphere_data_geo_magnetic_flux_source_metadata)
 
-    _set_atmos_data_geo_magnetic_flux_source_metadata = { "offset" : _set_atmos_data_geo_magnetic_flux_source_method_offset,
+    _set_atmosphere_data_geo_magnetic_flux_source_metadata = { "offset" : _set_atmosphere_data_geo_magnetic_flux_source_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(GeoMagneticFluxSource),) }
-    @atmos_data_geo_magnetic_flux_source.setter
-    def atmos_data_geo_magnetic_flux_source(self, value:"GeoMagneticFluxSource") -> None:
-        return self._intf.set_property(MSIS1986._metadata, MSIS1986._set_atmos_data_geo_magnetic_flux_source_metadata, value)
+    @atmosphere_data_geo_magnetic_flux_source.setter
+    def atmosphere_data_geo_magnetic_flux_source(self, value:"GeoMagneticFluxSource") -> None:
+        return self._intf.set_property(MSIS1986._metadata, MSIS1986._set_atmosphere_data_geo_magnetic_flux_source_metadata, value)
 
-    _get_atmos_data_geo_magnetic_flux_update_rate_metadata = { "offset" : _get_atmos_data_geo_magnetic_flux_update_rate_method_offset,
+    _get_atmosphere_data_geo_magnetic_flux_update_rate_metadata = { "offset" : _get_atmosphere_data_geo_magnetic_flux_update_rate_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(GeoMagneticFluxUpdateRate),) }
     @property
-    def atmos_data_geo_magnetic_flux_update_rate(self) -> "GeoMagneticFluxUpdateRate":
+    def atmosphere_data_geo_magnetic_flux_update_rate(self) -> "GeoMagneticFluxUpdateRate":
         """Get or set the update rate for geomagnetic flux values from the flux file."""
-        return self._intf.get_property(MSIS1986._metadata, MSIS1986._get_atmos_data_geo_magnetic_flux_update_rate_metadata)
+        return self._intf.get_property(MSIS1986._metadata, MSIS1986._get_atmosphere_data_geo_magnetic_flux_update_rate_metadata)
 
-    _set_atmos_data_geo_magnetic_flux_update_rate_metadata = { "offset" : _set_atmos_data_geo_magnetic_flux_update_rate_method_offset,
+    _set_atmosphere_data_geo_magnetic_flux_update_rate_metadata = { "offset" : _set_atmosphere_data_geo_magnetic_flux_update_rate_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(GeoMagneticFluxUpdateRate),) }
-    @atmos_data_geo_magnetic_flux_update_rate.setter
-    def atmos_data_geo_magnetic_flux_update_rate(self, value:"GeoMagneticFluxUpdateRate") -> None:
-        return self._intf.set_property(MSIS1986._metadata, MSIS1986._set_atmos_data_geo_magnetic_flux_update_rate_metadata, value)
+    @atmosphere_data_geo_magnetic_flux_update_rate.setter
+    def atmosphere_data_geo_magnetic_flux_update_rate(self, value:"GeoMagneticFluxUpdateRate") -> None:
+        return self._intf.set_property(MSIS1986._metadata, MSIS1986._set_atmosphere_data_geo_magnetic_flux_update_rate_metadata, value)
 
-    _get_atmos_data_filename_metadata = { "offset" : _get_atmos_data_filename_method_offset,
+    _get_atmosphere_data_filename_metadata = { "offset" : _get_atmosphere_data_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
-    def atmos_data_filename(self) -> str:
+    def atmosphere_data_filename(self) -> str:
         """Get or set the atmospheric model data file path."""
-        return self._intf.get_property(MSIS1986._metadata, MSIS1986._get_atmos_data_filename_metadata)
+        return self._intf.get_property(MSIS1986._metadata, MSIS1986._get_atmosphere_data_filename_metadata)
 
-    _set_atmos_data_filename_metadata = { "offset" : _set_atmos_data_filename_method_offset,
+    _set_atmosphere_data_filename_metadata = { "offset" : _set_atmosphere_data_filename_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    @atmos_data_filename.setter
-    def atmos_data_filename(self, value:str) -> None:
-        return self._intf.set_property(MSIS1986._metadata, MSIS1986._set_atmos_data_filename_metadata, value)
+    @atmosphere_data_filename.setter
+    def atmosphere_data_filename(self, value:str) -> None:
+        return self._intf.set_property(MSIS1986._metadata, MSIS1986._set_atmosphere_data_filename_metadata, value)
 
     _get_drag_model_type_metadata = { "offset" : _get_drag_model_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -34161,13 +34161,13 @@ class MSIS1986(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[computes_temperature] = "computes_temperature"
     _property_names[computes_pressure] = "computes_pressure"
     _property_names[sun_position] = "sun_position"
-    _property_names[atmos_data_source] = "atmos_data_source"
+    _property_names[atmosphere_data_source] = "atmosphere_data_source"
     _property_names[f_10_p7] = "f_10_p7"
     _property_names[f_10_p7_avg] = "f_10_p7_avg"
     _property_names[kp] = "kp"
-    _property_names[atmos_data_geo_magnetic_flux_source] = "atmos_data_geo_magnetic_flux_source"
-    _property_names[atmos_data_geo_magnetic_flux_update_rate] = "atmos_data_geo_magnetic_flux_update_rate"
-    _property_names[atmos_data_filename] = "atmos_data_filename"
+    _property_names[atmosphere_data_geo_magnetic_flux_source] = "atmosphere_data_geo_magnetic_flux_source"
+    _property_names[atmosphere_data_geo_magnetic_flux_update_rate] = "atmosphere_data_geo_magnetic_flux_update_rate"
+    _property_names[atmosphere_data_filename] = "atmosphere_data_filename"
     _property_names[drag_model_type] = "drag_model_type"
     _property_names[drag_model_plugin_name] = "drag_model_plugin_name"
     _property_names[drag_model_plugin] = "drag_model_plugin"
@@ -34205,20 +34205,20 @@ class NRLMSISE2000(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_computes_pressure_method_offset = 4
     _get_sun_position_method_offset = 5
     _set_sun_position_method_offset = 6
-    _get_atmos_data_source_method_offset = 7
-    _set_atmos_data_source_method_offset = 8
+    _get_atmosphere_data_source_method_offset = 7
+    _set_atmosphere_data_source_method_offset = 8
     _get_f_10_p7_method_offset = 9
     _set_f_10_p7_method_offset = 10
     _get_f_10_p7_avg_method_offset = 11
     _set_f_10_p7_avg_method_offset = 12
     _get_kp_method_offset = 13
     _set_kp_method_offset = 14
-    _get_atmos_data_geo_magnetic_flux_source_method_offset = 15
-    _set_atmos_data_geo_magnetic_flux_source_method_offset = 16
-    _get_atmos_data_geo_magnetic_flux_update_rate_method_offset = 17
-    _set_atmos_data_geo_magnetic_flux_update_rate_method_offset = 18
-    _get_atmos_data_filename_method_offset = 19
-    _set_atmos_data_filename_method_offset = 20
+    _get_atmosphere_data_geo_magnetic_flux_source_method_offset = 15
+    _set_atmosphere_data_geo_magnetic_flux_source_method_offset = 16
+    _get_atmosphere_data_geo_magnetic_flux_update_rate_method_offset = 17
+    _set_atmosphere_data_geo_magnetic_flux_update_rate_method_offset = 18
+    _get_atmosphere_data_filename_method_offset = 19
+    _set_atmosphere_data_filename_method_offset = 20
     _get_drag_model_type_method_offset = 21
     _set_drag_model_type_method_offset = 22
     _get_drag_model_plugin_name_method_offset = 23
@@ -34282,20 +34282,20 @@ class NRLMSISE2000(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def sun_position(self, value:"SunPosition") -> None:
         return self._intf.set_property(NRLMSISE2000._metadata, NRLMSISE2000._set_sun_position_metadata, value)
 
-    _get_atmos_data_source_metadata = { "offset" : _get_atmos_data_source_method_offset,
+    _get_atmosphere_data_source_metadata = { "offset" : _get_atmosphere_data_source_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(AtmosDataSource),) }
+            "marshallers" : (agmarshall.EnumArg(AtmosphereDataSource),) }
     @property
-    def atmos_data_source(self) -> "AtmosDataSource":
+    def atmosphere_data_source(self) -> "AtmosphereDataSource":
         """Get or set the atmospheric model data source - data file or constant values."""
-        return self._intf.get_property(NRLMSISE2000._metadata, NRLMSISE2000._get_atmos_data_source_metadata)
+        return self._intf.get_property(NRLMSISE2000._metadata, NRLMSISE2000._get_atmosphere_data_source_metadata)
 
-    _set_atmos_data_source_metadata = { "offset" : _set_atmos_data_source_method_offset,
+    _set_atmosphere_data_source_metadata = { "offset" : _set_atmosphere_data_source_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(AtmosDataSource),) }
-    @atmos_data_source.setter
-    def atmos_data_source(self, value:"AtmosDataSource") -> None:
-        return self._intf.set_property(NRLMSISE2000._metadata, NRLMSISE2000._set_atmos_data_source_metadata, value)
+            "marshallers" : (agmarshall.EnumArg(AtmosphereDataSource),) }
+    @atmosphere_data_source.setter
+    def atmosphere_data_source(self, value:"AtmosphereDataSource") -> None:
+        return self._intf.set_property(NRLMSISE2000._metadata, NRLMSISE2000._set_atmosphere_data_source_metadata, value)
 
     _get_f_10_p7_metadata = { "offset" : _get_f_10_p7_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -34342,50 +34342,50 @@ class NRLMSISE2000(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def kp(self, value:float) -> None:
         return self._intf.set_property(NRLMSISE2000._metadata, NRLMSISE2000._set_kp_metadata, value)
 
-    _get_atmos_data_geo_magnetic_flux_source_metadata = { "offset" : _get_atmos_data_geo_magnetic_flux_source_method_offset,
+    _get_atmosphere_data_geo_magnetic_flux_source_metadata = { "offset" : _get_atmosphere_data_geo_magnetic_flux_source_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(GeoMagneticFluxSource),) }
     @property
-    def atmos_data_geo_magnetic_flux_source(self) -> "GeoMagneticFluxSource":
+    def atmosphere_data_geo_magnetic_flux_source(self) -> "GeoMagneticFluxSource":
         """Whether to use Kp or Ap data from the flux file."""
-        return self._intf.get_property(NRLMSISE2000._metadata, NRLMSISE2000._get_atmos_data_geo_magnetic_flux_source_metadata)
+        return self._intf.get_property(NRLMSISE2000._metadata, NRLMSISE2000._get_atmosphere_data_geo_magnetic_flux_source_metadata)
 
-    _set_atmos_data_geo_magnetic_flux_source_metadata = { "offset" : _set_atmos_data_geo_magnetic_flux_source_method_offset,
+    _set_atmosphere_data_geo_magnetic_flux_source_metadata = { "offset" : _set_atmosphere_data_geo_magnetic_flux_source_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(GeoMagneticFluxSource),) }
-    @atmos_data_geo_magnetic_flux_source.setter
-    def atmos_data_geo_magnetic_flux_source(self, value:"GeoMagneticFluxSource") -> None:
-        return self._intf.set_property(NRLMSISE2000._metadata, NRLMSISE2000._set_atmos_data_geo_magnetic_flux_source_metadata, value)
+    @atmosphere_data_geo_magnetic_flux_source.setter
+    def atmosphere_data_geo_magnetic_flux_source(self, value:"GeoMagneticFluxSource") -> None:
+        return self._intf.set_property(NRLMSISE2000._metadata, NRLMSISE2000._set_atmosphere_data_geo_magnetic_flux_source_metadata, value)
 
-    _get_atmos_data_geo_magnetic_flux_update_rate_metadata = { "offset" : _get_atmos_data_geo_magnetic_flux_update_rate_method_offset,
+    _get_atmosphere_data_geo_magnetic_flux_update_rate_metadata = { "offset" : _get_atmosphere_data_geo_magnetic_flux_update_rate_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(GeoMagneticFluxUpdateRate),) }
     @property
-    def atmos_data_geo_magnetic_flux_update_rate(self) -> "GeoMagneticFluxUpdateRate":
+    def atmosphere_data_geo_magnetic_flux_update_rate(self) -> "GeoMagneticFluxUpdateRate":
         """Get or set the update rate for geomagnetic flux values from the flux file."""
-        return self._intf.get_property(NRLMSISE2000._metadata, NRLMSISE2000._get_atmos_data_geo_magnetic_flux_update_rate_metadata)
+        return self._intf.get_property(NRLMSISE2000._metadata, NRLMSISE2000._get_atmosphere_data_geo_magnetic_flux_update_rate_metadata)
 
-    _set_atmos_data_geo_magnetic_flux_update_rate_metadata = { "offset" : _set_atmos_data_geo_magnetic_flux_update_rate_method_offset,
+    _set_atmosphere_data_geo_magnetic_flux_update_rate_metadata = { "offset" : _set_atmosphere_data_geo_magnetic_flux_update_rate_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(GeoMagneticFluxUpdateRate),) }
-    @atmos_data_geo_magnetic_flux_update_rate.setter
-    def atmos_data_geo_magnetic_flux_update_rate(self, value:"GeoMagneticFluxUpdateRate") -> None:
-        return self._intf.set_property(NRLMSISE2000._metadata, NRLMSISE2000._set_atmos_data_geo_magnetic_flux_update_rate_metadata, value)
+    @atmosphere_data_geo_magnetic_flux_update_rate.setter
+    def atmosphere_data_geo_magnetic_flux_update_rate(self, value:"GeoMagneticFluxUpdateRate") -> None:
+        return self._intf.set_property(NRLMSISE2000._metadata, NRLMSISE2000._set_atmosphere_data_geo_magnetic_flux_update_rate_metadata, value)
 
-    _get_atmos_data_filename_metadata = { "offset" : _get_atmos_data_filename_method_offset,
+    _get_atmosphere_data_filename_metadata = { "offset" : _get_atmosphere_data_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
-    def atmos_data_filename(self) -> str:
+    def atmosphere_data_filename(self) -> str:
         """Get or set the atmospheric model data file path."""
-        return self._intf.get_property(NRLMSISE2000._metadata, NRLMSISE2000._get_atmos_data_filename_metadata)
+        return self._intf.get_property(NRLMSISE2000._metadata, NRLMSISE2000._get_atmosphere_data_filename_metadata)
 
-    _set_atmos_data_filename_metadata = { "offset" : _set_atmos_data_filename_method_offset,
+    _set_atmosphere_data_filename_metadata = { "offset" : _set_atmosphere_data_filename_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    @atmos_data_filename.setter
-    def atmos_data_filename(self, value:str) -> None:
-        return self._intf.set_property(NRLMSISE2000._metadata, NRLMSISE2000._set_atmos_data_filename_metadata, value)
+    @atmosphere_data_filename.setter
+    def atmosphere_data_filename(self, value:str) -> None:
+        return self._intf.set_property(NRLMSISE2000._metadata, NRLMSISE2000._set_atmosphere_data_filename_metadata, value)
 
     _get_drag_model_type_metadata = { "offset" : _get_drag_model_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -34459,13 +34459,13 @@ class NRLMSISE2000(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[computes_temperature] = "computes_temperature"
     _property_names[computes_pressure] = "computes_pressure"
     _property_names[sun_position] = "sun_position"
-    _property_names[atmos_data_source] = "atmos_data_source"
+    _property_names[atmosphere_data_source] = "atmosphere_data_source"
     _property_names[f_10_p7] = "f_10_p7"
     _property_names[f_10_p7_avg] = "f_10_p7_avg"
     _property_names[kp] = "kp"
-    _property_names[atmos_data_geo_magnetic_flux_source] = "atmos_data_geo_magnetic_flux_source"
-    _property_names[atmos_data_geo_magnetic_flux_update_rate] = "atmos_data_geo_magnetic_flux_update_rate"
-    _property_names[atmos_data_filename] = "atmos_data_filename"
+    _property_names[atmosphere_data_geo_magnetic_flux_source] = "atmosphere_data_geo_magnetic_flux_source"
+    _property_names[atmosphere_data_geo_magnetic_flux_update_rate] = "atmosphere_data_geo_magnetic_flux_update_rate"
+    _property_names[atmosphere_data_filename] = "atmosphere_data_filename"
     _property_names[drag_model_type] = "drag_model_type"
     _property_names[drag_model_plugin_name] = "drag_model_plugin_name"
     _property_names[drag_model_plugin] = "drag_model_plugin"
@@ -34663,12 +34663,12 @@ class MarsGRAM37(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _set_namelist_file_method_offset = 10
     _get_density_type_method_offset = 11
     _set_density_type_method_offset = 12
-    _get_atmos_data_source_method_offset = 13
-    _set_atmos_data_source_method_offset = 14
+    _get_atmosphere_data_source_method_offset = 13
+    _set_atmosphere_data_source_method_offset = 14
     _get_f_10_p7_method_offset = 15
     _set_f_10_p7_method_offset = 16
-    _get_atmos_data_filename_method_offset = 17
-    _set_atmos_data_filename_method_offset = 18
+    _get_atmosphere_data_filename_method_offset = 17
+    _set_atmosphere_data_filename_method_offset = 18
     _get_drag_model_type_method_offset = 19
     _set_drag_model_type_method_offset = 20
     _get_drag_model_plugin_name_method_offset = 21
@@ -34777,20 +34777,20 @@ class MarsGRAM37(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def density_type(self, value:"MarsGRAMDensityType") -> None:
         return self._intf.set_property(MarsGRAM37._metadata, MarsGRAM37._set_density_type_metadata, value)
 
-    _get_atmos_data_source_metadata = { "offset" : _get_atmos_data_source_method_offset,
+    _get_atmosphere_data_source_metadata = { "offset" : _get_atmosphere_data_source_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(AtmosDataSource),) }
+            "marshallers" : (agmarshall.EnumArg(AtmosphereDataSource),) }
     @property
-    def atmos_data_source(self) -> "AtmosDataSource":
+    def atmosphere_data_source(self) -> "AtmosphereDataSource":
         """Get or set the atmospheric model data source - data file or constant values."""
-        return self._intf.get_property(MarsGRAM37._metadata, MarsGRAM37._get_atmos_data_source_metadata)
+        return self._intf.get_property(MarsGRAM37._metadata, MarsGRAM37._get_atmosphere_data_source_metadata)
 
-    _set_atmos_data_source_metadata = { "offset" : _set_atmos_data_source_method_offset,
+    _set_atmosphere_data_source_metadata = { "offset" : _set_atmosphere_data_source_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(AtmosDataSource),) }
-    @atmos_data_source.setter
-    def atmos_data_source(self, value:"AtmosDataSource") -> None:
-        return self._intf.set_property(MarsGRAM37._metadata, MarsGRAM37._set_atmos_data_source_metadata, value)
+            "marshallers" : (agmarshall.EnumArg(AtmosphereDataSource),) }
+    @atmosphere_data_source.setter
+    def atmosphere_data_source(self, value:"AtmosphereDataSource") -> None:
+        return self._intf.set_property(MarsGRAM37._metadata, MarsGRAM37._set_atmosphere_data_source_metadata, value)
 
     _get_f_10_p7_metadata = { "offset" : _get_f_10_p7_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -34807,20 +34807,20 @@ class MarsGRAM37(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def f_10_p7(self, value:float) -> None:
         return self._intf.set_property(MarsGRAM37._metadata, MarsGRAM37._set_f_10_p7_metadata, value)
 
-    _get_atmos_data_filename_metadata = { "offset" : _get_atmos_data_filename_method_offset,
+    _get_atmosphere_data_filename_metadata = { "offset" : _get_atmosphere_data_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
-    def atmos_data_filename(self) -> str:
+    def atmosphere_data_filename(self) -> str:
         """Get or set the atmospheric model data file path."""
-        return self._intf.get_property(MarsGRAM37._metadata, MarsGRAM37._get_atmos_data_filename_metadata)
+        return self._intf.get_property(MarsGRAM37._metadata, MarsGRAM37._get_atmosphere_data_filename_metadata)
 
-    _set_atmos_data_filename_metadata = { "offset" : _set_atmos_data_filename_method_offset,
+    _set_atmosphere_data_filename_metadata = { "offset" : _set_atmosphere_data_filename_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    @atmos_data_filename.setter
-    def atmos_data_filename(self, value:str) -> None:
-        return self._intf.set_property(MarsGRAM37._metadata, MarsGRAM37._set_atmos_data_filename_metadata, value)
+    @atmosphere_data_filename.setter
+    def atmosphere_data_filename(self, value:str) -> None:
+        return self._intf.set_property(MarsGRAM37._metadata, MarsGRAM37._set_atmosphere_data_filename_metadata, value)
 
     _get_drag_model_type_metadata = { "offset" : _get_drag_model_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -34897,9 +34897,9 @@ class MarsGRAM37(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[data_directory] = "data_directory"
     _property_names[namelist_file] = "namelist_file"
     _property_names[density_type] = "density_type"
-    _property_names[atmos_data_source] = "atmos_data_source"
+    _property_names[atmosphere_data_source] = "atmosphere_data_source"
     _property_names[f_10_p7] = "f_10_p7"
-    _property_names[atmos_data_filename] = "atmos_data_filename"
+    _property_names[atmosphere_data_filename] = "atmosphere_data_filename"
     _property_names[drag_model_type] = "drag_model_type"
     _property_names[drag_model_plugin_name] = "drag_model_plugin_name"
     _property_names[drag_model_plugin] = "drag_model_plugin"
@@ -34943,12 +34943,12 @@ class MarsGRAM2000(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _set_namelist_file_method_offset = 10
     _get_density_type_method_offset = 11
     _set_density_type_method_offset = 12
-    _get_atmos_data_source_method_offset = 13
-    _set_atmos_data_source_method_offset = 14
+    _get_atmosphere_data_source_method_offset = 13
+    _set_atmosphere_data_source_method_offset = 14
     _get_f_10_p7_method_offset = 15
     _set_f_10_p7_method_offset = 16
-    _get_atmos_data_filename_method_offset = 17
-    _set_atmos_data_filename_method_offset = 18
+    _get_atmosphere_data_filename_method_offset = 17
+    _set_atmosphere_data_filename_method_offset = 18
     _get_drag_model_type_method_offset = 19
     _set_drag_model_type_method_offset = 20
     _get_drag_model_plugin_name_method_offset = 21
@@ -35057,20 +35057,20 @@ class MarsGRAM2000(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def density_type(self, value:"MarsGRAMDensityType") -> None:
         return self._intf.set_property(MarsGRAM2000._metadata, MarsGRAM2000._set_density_type_metadata, value)
 
-    _get_atmos_data_source_metadata = { "offset" : _get_atmos_data_source_method_offset,
+    _get_atmosphere_data_source_metadata = { "offset" : _get_atmosphere_data_source_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(AtmosDataSource),) }
+            "marshallers" : (agmarshall.EnumArg(AtmosphereDataSource),) }
     @property
-    def atmos_data_source(self) -> "AtmosDataSource":
+    def atmosphere_data_source(self) -> "AtmosphereDataSource":
         """Get or set the atmospheric model data source - data file or constant values."""
-        return self._intf.get_property(MarsGRAM2000._metadata, MarsGRAM2000._get_atmos_data_source_metadata)
+        return self._intf.get_property(MarsGRAM2000._metadata, MarsGRAM2000._get_atmosphere_data_source_metadata)
 
-    _set_atmos_data_source_metadata = { "offset" : _set_atmos_data_source_method_offset,
+    _set_atmosphere_data_source_metadata = { "offset" : _set_atmosphere_data_source_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(AtmosDataSource),) }
-    @atmos_data_source.setter
-    def atmos_data_source(self, value:"AtmosDataSource") -> None:
-        return self._intf.set_property(MarsGRAM2000._metadata, MarsGRAM2000._set_atmos_data_source_metadata, value)
+            "marshallers" : (agmarshall.EnumArg(AtmosphereDataSource),) }
+    @atmosphere_data_source.setter
+    def atmosphere_data_source(self, value:"AtmosphereDataSource") -> None:
+        return self._intf.set_property(MarsGRAM2000._metadata, MarsGRAM2000._set_atmosphere_data_source_metadata, value)
 
     _get_f_10_p7_metadata = { "offset" : _get_f_10_p7_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -35087,20 +35087,20 @@ class MarsGRAM2000(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def f_10_p7(self, value:float) -> None:
         return self._intf.set_property(MarsGRAM2000._metadata, MarsGRAM2000._set_f_10_p7_metadata, value)
 
-    _get_atmos_data_filename_metadata = { "offset" : _get_atmos_data_filename_method_offset,
+    _get_atmosphere_data_filename_metadata = { "offset" : _get_atmosphere_data_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
-    def atmos_data_filename(self) -> str:
+    def atmosphere_data_filename(self) -> str:
         """Get or set the atmospheric model data file path."""
-        return self._intf.get_property(MarsGRAM2000._metadata, MarsGRAM2000._get_atmos_data_filename_metadata)
+        return self._intf.get_property(MarsGRAM2000._metadata, MarsGRAM2000._get_atmosphere_data_filename_metadata)
 
-    _set_atmos_data_filename_metadata = { "offset" : _set_atmos_data_filename_method_offset,
+    _set_atmosphere_data_filename_metadata = { "offset" : _set_atmosphere_data_filename_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    @atmos_data_filename.setter
-    def atmos_data_filename(self, value:str) -> None:
-        return self._intf.set_property(MarsGRAM2000._metadata, MarsGRAM2000._set_atmos_data_filename_metadata, value)
+    @atmosphere_data_filename.setter
+    def atmosphere_data_filename(self, value:str) -> None:
+        return self._intf.set_property(MarsGRAM2000._metadata, MarsGRAM2000._set_atmosphere_data_filename_metadata, value)
 
     _get_drag_model_type_metadata = { "offset" : _get_drag_model_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -35177,9 +35177,9 @@ class MarsGRAM2000(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[data_directory] = "data_directory"
     _property_names[namelist_file] = "namelist_file"
     _property_names[density_type] = "density_type"
-    _property_names[atmos_data_source] = "atmos_data_source"
+    _property_names[atmosphere_data_source] = "atmosphere_data_source"
     _property_names[f_10_p7] = "f_10_p7"
-    _property_names[atmos_data_filename] = "atmos_data_filename"
+    _property_names[atmosphere_data_filename] = "atmosphere_data_filename"
     _property_names[drag_model_type] = "drag_model_type"
     _property_names[drag_model_plugin_name] = "drag_model_plugin_name"
     _property_names[drag_model_plugin] = "drag_model_plugin"
@@ -35223,12 +35223,12 @@ class MarsGRAM2001(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _set_namelist_file_method_offset = 10
     _get_density_type_method_offset = 11
     _set_density_type_method_offset = 12
-    _get_atmos_data_source_method_offset = 13
-    _set_atmos_data_source_method_offset = 14
+    _get_atmosphere_data_source_method_offset = 13
+    _set_atmosphere_data_source_method_offset = 14
     _get_f_10_p7_method_offset = 15
     _set_f_10_p7_method_offset = 16
-    _get_atmos_data_filename_method_offset = 17
-    _set_atmos_data_filename_method_offset = 18
+    _get_atmosphere_data_filename_method_offset = 17
+    _set_atmosphere_data_filename_method_offset = 18
     _get_drag_model_type_method_offset = 19
     _set_drag_model_type_method_offset = 20
     _get_drag_model_plugin_name_method_offset = 21
@@ -35337,20 +35337,20 @@ class MarsGRAM2001(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def density_type(self, value:"MarsGRAMDensityType") -> None:
         return self._intf.set_property(MarsGRAM2001._metadata, MarsGRAM2001._set_density_type_metadata, value)
 
-    _get_atmos_data_source_metadata = { "offset" : _get_atmos_data_source_method_offset,
+    _get_atmosphere_data_source_metadata = { "offset" : _get_atmosphere_data_source_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(AtmosDataSource),) }
+            "marshallers" : (agmarshall.EnumArg(AtmosphereDataSource),) }
     @property
-    def atmos_data_source(self) -> "AtmosDataSource":
+    def atmosphere_data_source(self) -> "AtmosphereDataSource":
         """Get or set the atmospheric model data source - data file or constant values."""
-        return self._intf.get_property(MarsGRAM2001._metadata, MarsGRAM2001._get_atmos_data_source_metadata)
+        return self._intf.get_property(MarsGRAM2001._metadata, MarsGRAM2001._get_atmosphere_data_source_metadata)
 
-    _set_atmos_data_source_metadata = { "offset" : _set_atmos_data_source_method_offset,
+    _set_atmosphere_data_source_metadata = { "offset" : _set_atmosphere_data_source_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(AtmosDataSource),) }
-    @atmos_data_source.setter
-    def atmos_data_source(self, value:"AtmosDataSource") -> None:
-        return self._intf.set_property(MarsGRAM2001._metadata, MarsGRAM2001._set_atmos_data_source_metadata, value)
+            "marshallers" : (agmarshall.EnumArg(AtmosphereDataSource),) }
+    @atmosphere_data_source.setter
+    def atmosphere_data_source(self, value:"AtmosphereDataSource") -> None:
+        return self._intf.set_property(MarsGRAM2001._metadata, MarsGRAM2001._set_atmosphere_data_source_metadata, value)
 
     _get_f_10_p7_metadata = { "offset" : _get_f_10_p7_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -35367,20 +35367,20 @@ class MarsGRAM2001(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def f_10_p7(self, value:float) -> None:
         return self._intf.set_property(MarsGRAM2001._metadata, MarsGRAM2001._set_f_10_p7_metadata, value)
 
-    _get_atmos_data_filename_metadata = { "offset" : _get_atmos_data_filename_method_offset,
+    _get_atmosphere_data_filename_metadata = { "offset" : _get_atmosphere_data_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
-    def atmos_data_filename(self) -> str:
+    def atmosphere_data_filename(self) -> str:
         """Get or set the atmospheric model data file path."""
-        return self._intf.get_property(MarsGRAM2001._metadata, MarsGRAM2001._get_atmos_data_filename_metadata)
+        return self._intf.get_property(MarsGRAM2001._metadata, MarsGRAM2001._get_atmosphere_data_filename_metadata)
 
-    _set_atmos_data_filename_metadata = { "offset" : _set_atmos_data_filename_method_offset,
+    _set_atmosphere_data_filename_metadata = { "offset" : _set_atmosphere_data_filename_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    @atmos_data_filename.setter
-    def atmos_data_filename(self, value:str) -> None:
-        return self._intf.set_property(MarsGRAM2001._metadata, MarsGRAM2001._set_atmos_data_filename_metadata, value)
+    @atmosphere_data_filename.setter
+    def atmosphere_data_filename(self, value:str) -> None:
+        return self._intf.set_property(MarsGRAM2001._metadata, MarsGRAM2001._set_atmosphere_data_filename_metadata, value)
 
     _get_drag_model_type_metadata = { "offset" : _get_drag_model_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -35457,9 +35457,9 @@ class MarsGRAM2001(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[data_directory] = "data_directory"
     _property_names[namelist_file] = "namelist_file"
     _property_names[density_type] = "density_type"
-    _property_names[atmos_data_source] = "atmos_data_source"
+    _property_names[atmosphere_data_source] = "atmosphere_data_source"
     _property_names[f_10_p7] = "f_10_p7"
-    _property_names[atmos_data_filename] = "atmos_data_filename"
+    _property_names[atmosphere_data_filename] = "atmosphere_data_filename"
     _property_names[drag_model_type] = "drag_model_type"
     _property_names[drag_model_plugin_name] = "drag_model_plugin_name"
     _property_names[drag_model_plugin] = "drag_model_plugin"
@@ -35503,12 +35503,12 @@ class MarsGRAM2005(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _set_namelist_file_method_offset = 10
     _get_density_type_method_offset = 11
     _set_density_type_method_offset = 12
-    _get_atmos_data_source_method_offset = 13
-    _set_atmos_data_source_method_offset = 14
+    _get_atmosphere_data_source_method_offset = 13
+    _set_atmosphere_data_source_method_offset = 14
     _get_f_10_p7_method_offset = 15
     _set_f_10_p7_method_offset = 16
-    _get_atmos_data_filename_method_offset = 17
-    _set_atmos_data_filename_method_offset = 18
+    _get_atmosphere_data_filename_method_offset = 17
+    _set_atmosphere_data_filename_method_offset = 18
     _get_drag_model_type_method_offset = 19
     _set_drag_model_type_method_offset = 20
     _get_drag_model_plugin_name_method_offset = 21
@@ -35617,20 +35617,20 @@ class MarsGRAM2005(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def density_type(self, value:"MarsGRAMDensityType") -> None:
         return self._intf.set_property(MarsGRAM2005._metadata, MarsGRAM2005._set_density_type_metadata, value)
 
-    _get_atmos_data_source_metadata = { "offset" : _get_atmos_data_source_method_offset,
+    _get_atmosphere_data_source_metadata = { "offset" : _get_atmosphere_data_source_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(AtmosDataSource),) }
+            "marshallers" : (agmarshall.EnumArg(AtmosphereDataSource),) }
     @property
-    def atmos_data_source(self) -> "AtmosDataSource":
+    def atmosphere_data_source(self) -> "AtmosphereDataSource":
         """Get or set the atmospheric model data source - data file or constant values."""
-        return self._intf.get_property(MarsGRAM2005._metadata, MarsGRAM2005._get_atmos_data_source_metadata)
+        return self._intf.get_property(MarsGRAM2005._metadata, MarsGRAM2005._get_atmosphere_data_source_metadata)
 
-    _set_atmos_data_source_metadata = { "offset" : _set_atmos_data_source_method_offset,
+    _set_atmosphere_data_source_metadata = { "offset" : _set_atmosphere_data_source_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(AtmosDataSource),) }
-    @atmos_data_source.setter
-    def atmos_data_source(self, value:"AtmosDataSource") -> None:
-        return self._intf.set_property(MarsGRAM2005._metadata, MarsGRAM2005._set_atmos_data_source_metadata, value)
+            "marshallers" : (agmarshall.EnumArg(AtmosphereDataSource),) }
+    @atmosphere_data_source.setter
+    def atmosphere_data_source(self, value:"AtmosphereDataSource") -> None:
+        return self._intf.set_property(MarsGRAM2005._metadata, MarsGRAM2005._set_atmosphere_data_source_metadata, value)
 
     _get_f_10_p7_metadata = { "offset" : _get_f_10_p7_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -35647,20 +35647,20 @@ class MarsGRAM2005(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def f_10_p7(self, value:float) -> None:
         return self._intf.set_property(MarsGRAM2005._metadata, MarsGRAM2005._set_f_10_p7_metadata, value)
 
-    _get_atmos_data_filename_metadata = { "offset" : _get_atmos_data_filename_method_offset,
+    _get_atmosphere_data_filename_metadata = { "offset" : _get_atmosphere_data_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
-    def atmos_data_filename(self) -> str:
+    def atmosphere_data_filename(self) -> str:
         """Get or set the atmospheric model data file path."""
-        return self._intf.get_property(MarsGRAM2005._metadata, MarsGRAM2005._get_atmos_data_filename_metadata)
+        return self._intf.get_property(MarsGRAM2005._metadata, MarsGRAM2005._get_atmosphere_data_filename_metadata)
 
-    _set_atmos_data_filename_metadata = { "offset" : _set_atmos_data_filename_method_offset,
+    _set_atmosphere_data_filename_metadata = { "offset" : _set_atmosphere_data_filename_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    @atmos_data_filename.setter
-    def atmos_data_filename(self, value:str) -> None:
-        return self._intf.set_property(MarsGRAM2005._metadata, MarsGRAM2005._set_atmos_data_filename_metadata, value)
+    @atmosphere_data_filename.setter
+    def atmosphere_data_filename(self, value:str) -> None:
+        return self._intf.set_property(MarsGRAM2005._metadata, MarsGRAM2005._set_atmosphere_data_filename_metadata, value)
 
     _get_drag_model_type_metadata = { "offset" : _get_drag_model_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -35737,9 +35737,9 @@ class MarsGRAM2005(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[data_directory] = "data_directory"
     _property_names[namelist_file] = "namelist_file"
     _property_names[density_type] = "density_type"
-    _property_names[atmos_data_source] = "atmos_data_source"
+    _property_names[atmosphere_data_source] = "atmosphere_data_source"
     _property_names[f_10_p7] = "f_10_p7"
-    _property_names[atmos_data_filename] = "atmos_data_filename"
+    _property_names[atmosphere_data_filename] = "atmosphere_data_filename"
     _property_names[drag_model_type] = "drag_model_type"
     _property_names[drag_model_plugin_name] = "drag_model_plugin_name"
     _property_names[drag_model_plugin] = "drag_model_plugin"
@@ -35783,12 +35783,12 @@ class MarsGRAM2010(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _set_namelist_file_method_offset = 10
     _get_density_type_method_offset = 11
     _set_density_type_method_offset = 12
-    _get_atmos_data_source_method_offset = 13
-    _set_atmos_data_source_method_offset = 14
+    _get_atmosphere_data_source_method_offset = 13
+    _set_atmosphere_data_source_method_offset = 14
     _get_f_10_p7_method_offset = 15
     _set_f_10_p7_method_offset = 16
-    _get_atmos_data_filename_method_offset = 17
-    _set_atmos_data_filename_method_offset = 18
+    _get_atmosphere_data_filename_method_offset = 17
+    _set_atmosphere_data_filename_method_offset = 18
     _get_drag_model_type_method_offset = 19
     _set_drag_model_type_method_offset = 20
     _get_drag_model_plugin_name_method_offset = 21
@@ -35897,20 +35897,20 @@ class MarsGRAM2010(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def density_type(self, value:"MarsGRAMDensityType") -> None:
         return self._intf.set_property(MarsGRAM2010._metadata, MarsGRAM2010._set_density_type_metadata, value)
 
-    _get_atmos_data_source_metadata = { "offset" : _get_atmos_data_source_method_offset,
+    _get_atmosphere_data_source_metadata = { "offset" : _get_atmosphere_data_source_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(AtmosDataSource),) }
+            "marshallers" : (agmarshall.EnumArg(AtmosphereDataSource),) }
     @property
-    def atmos_data_source(self) -> "AtmosDataSource":
+    def atmosphere_data_source(self) -> "AtmosphereDataSource":
         """Get or set the atmospheric model data source - data file or constant values."""
-        return self._intf.get_property(MarsGRAM2010._metadata, MarsGRAM2010._get_atmos_data_source_metadata)
+        return self._intf.get_property(MarsGRAM2010._metadata, MarsGRAM2010._get_atmosphere_data_source_metadata)
 
-    _set_atmos_data_source_metadata = { "offset" : _set_atmos_data_source_method_offset,
+    _set_atmosphere_data_source_metadata = { "offset" : _set_atmosphere_data_source_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(AtmosDataSource),) }
-    @atmos_data_source.setter
-    def atmos_data_source(self, value:"AtmosDataSource") -> None:
-        return self._intf.set_property(MarsGRAM2010._metadata, MarsGRAM2010._set_atmos_data_source_metadata, value)
+            "marshallers" : (agmarshall.EnumArg(AtmosphereDataSource),) }
+    @atmosphere_data_source.setter
+    def atmosphere_data_source(self, value:"AtmosphereDataSource") -> None:
+        return self._intf.set_property(MarsGRAM2010._metadata, MarsGRAM2010._set_atmosphere_data_source_metadata, value)
 
     _get_f_10_p7_metadata = { "offset" : _get_f_10_p7_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -35927,20 +35927,20 @@ class MarsGRAM2010(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def f_10_p7(self, value:float) -> None:
         return self._intf.set_property(MarsGRAM2010._metadata, MarsGRAM2010._set_f_10_p7_metadata, value)
 
-    _get_atmos_data_filename_metadata = { "offset" : _get_atmos_data_filename_method_offset,
+    _get_atmosphere_data_filename_metadata = { "offset" : _get_atmosphere_data_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
-    def atmos_data_filename(self) -> str:
+    def atmosphere_data_filename(self) -> str:
         """Get or set the atmospheric model data file path."""
-        return self._intf.get_property(MarsGRAM2010._metadata, MarsGRAM2010._get_atmos_data_filename_metadata)
+        return self._intf.get_property(MarsGRAM2010._metadata, MarsGRAM2010._get_atmosphere_data_filename_metadata)
 
-    _set_atmos_data_filename_metadata = { "offset" : _set_atmos_data_filename_method_offset,
+    _set_atmosphere_data_filename_metadata = { "offset" : _set_atmosphere_data_filename_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    @atmos_data_filename.setter
-    def atmos_data_filename(self, value:str) -> None:
-        return self._intf.set_property(MarsGRAM2010._metadata, MarsGRAM2010._set_atmos_data_filename_metadata, value)
+    @atmosphere_data_filename.setter
+    def atmosphere_data_filename(self, value:str) -> None:
+        return self._intf.set_property(MarsGRAM2010._metadata, MarsGRAM2010._set_atmosphere_data_filename_metadata, value)
 
     _get_drag_model_type_metadata = { "offset" : _get_drag_model_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -36017,9 +36017,9 @@ class MarsGRAM2010(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[data_directory] = "data_directory"
     _property_names[namelist_file] = "namelist_file"
     _property_names[density_type] = "density_type"
-    _property_names[atmos_data_source] = "atmos_data_source"
+    _property_names[atmosphere_data_source] = "atmosphere_data_source"
     _property_names[f_10_p7] = "f_10_p7"
-    _property_names[atmos_data_filename] = "atmos_data_filename"
+    _property_names[atmosphere_data_filename] = "atmosphere_data_filename"
     _property_names[drag_model_type] = "drag_model_type"
     _property_names[drag_model_plugin_name] = "drag_model_plugin_name"
     _property_names[drag_model_plugin] = "drag_model_plugin"
@@ -36265,12 +36265,12 @@ class DTM2012(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_computes_pressure_method_offset = 4
     _get_sun_position_method_offset = 5
     _set_sun_position_method_offset = 6
-    _get_atmos_data_source_method_offset = 7
-    _set_atmos_data_source_method_offset = 8
+    _get_atmosphere_data_source_method_offset = 7
+    _set_atmosphere_data_source_method_offset = 8
     _get_f_10_p7_avg_method_offset = 9
     _set_f_10_p7_avg_method_offset = 10
-    _get_atmos_data_filename_method_offset = 11
-    _set_atmos_data_filename_method_offset = 12
+    _get_atmosphere_data_filename_method_offset = 11
+    _set_atmosphere_data_filename_method_offset = 12
     _get_drag_model_type_method_offset = 13
     _set_drag_model_type_method_offset = 14
     _get_drag_model_plugin_name_method_offset = 15
@@ -36280,10 +36280,10 @@ class DTM2012(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _set_f_10_p7_method_offset = 19
     _get_kp_method_offset = 20
     _set_kp_method_offset = 21
-    _get_atmos_data_geo_magnetic_flux_source_method_offset = 22
-    _set_atmos_data_geo_magnetic_flux_source_method_offset = 23
-    _get_atmos_data_geo_magnetic_flux_update_rate_method_offset = 24
-    _set_atmos_data_geo_magnetic_flux_update_rate_method_offset = 25
+    _get_atmosphere_data_geo_magnetic_flux_source_method_offset = 22
+    _set_atmosphere_data_geo_magnetic_flux_source_method_offset = 23
+    _get_atmosphere_data_geo_magnetic_flux_update_rate_method_offset = 24
+    _set_atmosphere_data_geo_magnetic_flux_update_rate_method_offset = 25
     _get_variable_area_history_file_method_offset = 26
     _set_variable_area_history_file_method_offset = 27
     _get_n_plate_definition_file_method_offset = 28
@@ -36342,20 +36342,20 @@ class DTM2012(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def sun_position(self, value:"SunPosition") -> None:
         return self._intf.set_property(DTM2012._metadata, DTM2012._set_sun_position_metadata, value)
 
-    _get_atmos_data_source_metadata = { "offset" : _get_atmos_data_source_method_offset,
+    _get_atmosphere_data_source_metadata = { "offset" : _get_atmosphere_data_source_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(AtmosDataSource),) }
+            "marshallers" : (agmarshall.EnumArg(AtmosphereDataSource),) }
     @property
-    def atmos_data_source(self) -> "AtmosDataSource":
+    def atmosphere_data_source(self) -> "AtmosphereDataSource":
         """Get or set the atmospheric model data source - data file or constant values."""
-        return self._intf.get_property(DTM2012._metadata, DTM2012._get_atmos_data_source_metadata)
+        return self._intf.get_property(DTM2012._metadata, DTM2012._get_atmosphere_data_source_metadata)
 
-    _set_atmos_data_source_metadata = { "offset" : _set_atmos_data_source_method_offset,
+    _set_atmosphere_data_source_metadata = { "offset" : _set_atmosphere_data_source_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(AtmosDataSource),) }
-    @atmos_data_source.setter
-    def atmos_data_source(self, value:"AtmosDataSource") -> None:
-        return self._intf.set_property(DTM2012._metadata, DTM2012._set_atmos_data_source_metadata, value)
+            "marshallers" : (agmarshall.EnumArg(AtmosphereDataSource),) }
+    @atmosphere_data_source.setter
+    def atmosphere_data_source(self, value:"AtmosphereDataSource") -> None:
+        return self._intf.set_property(DTM2012._metadata, DTM2012._set_atmosphere_data_source_metadata, value)
 
     _get_f_10_p7_avg_metadata = { "offset" : _get_f_10_p7_avg_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -36372,20 +36372,20 @@ class DTM2012(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def f_10_p7_avg(self, value:float) -> None:
         return self._intf.set_property(DTM2012._metadata, DTM2012._set_f_10_p7_avg_metadata, value)
 
-    _get_atmos_data_filename_metadata = { "offset" : _get_atmos_data_filename_method_offset,
+    _get_atmosphere_data_filename_metadata = { "offset" : _get_atmosphere_data_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
-    def atmos_data_filename(self) -> str:
+    def atmosphere_data_filename(self) -> str:
         """Flux file."""
-        return self._intf.get_property(DTM2012._metadata, DTM2012._get_atmos_data_filename_metadata)
+        return self._intf.get_property(DTM2012._metadata, DTM2012._get_atmosphere_data_filename_metadata)
 
-    _set_atmos_data_filename_metadata = { "offset" : _set_atmos_data_filename_method_offset,
+    _set_atmosphere_data_filename_metadata = { "offset" : _set_atmosphere_data_filename_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    @atmos_data_filename.setter
-    def atmos_data_filename(self, value:str) -> None:
-        return self._intf.set_property(DTM2012._metadata, DTM2012._set_atmos_data_filename_metadata, value)
+    @atmosphere_data_filename.setter
+    def atmosphere_data_filename(self, value:str) -> None:
+        return self._intf.set_property(DTM2012._metadata, DTM2012._set_atmosphere_data_filename_metadata, value)
 
     _get_drag_model_type_metadata = { "offset" : _get_drag_model_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -36455,35 +36455,35 @@ class DTM2012(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def kp(self, value:float) -> None:
         return self._intf.set_property(DTM2012._metadata, DTM2012._set_kp_metadata, value)
 
-    _get_atmos_data_geo_magnetic_flux_source_metadata = { "offset" : _get_atmos_data_geo_magnetic_flux_source_method_offset,
+    _get_atmosphere_data_geo_magnetic_flux_source_metadata = { "offset" : _get_atmosphere_data_geo_magnetic_flux_source_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(GeoMagneticFluxSource),) }
     @property
-    def atmos_data_geo_magnetic_flux_source(self) -> "GeoMagneticFluxSource":
+    def atmosphere_data_geo_magnetic_flux_source(self) -> "GeoMagneticFluxSource":
         """Whether to use Kp or Ap data from the flux file."""
-        return self._intf.get_property(DTM2012._metadata, DTM2012._get_atmos_data_geo_magnetic_flux_source_metadata)
+        return self._intf.get_property(DTM2012._metadata, DTM2012._get_atmosphere_data_geo_magnetic_flux_source_metadata)
 
-    _set_atmos_data_geo_magnetic_flux_source_metadata = { "offset" : _set_atmos_data_geo_magnetic_flux_source_method_offset,
+    _set_atmosphere_data_geo_magnetic_flux_source_metadata = { "offset" : _set_atmosphere_data_geo_magnetic_flux_source_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(GeoMagneticFluxSource),) }
-    @atmos_data_geo_magnetic_flux_source.setter
-    def atmos_data_geo_magnetic_flux_source(self, value:"GeoMagneticFluxSource") -> None:
-        return self._intf.set_property(DTM2012._metadata, DTM2012._set_atmos_data_geo_magnetic_flux_source_metadata, value)
+    @atmosphere_data_geo_magnetic_flux_source.setter
+    def atmosphere_data_geo_magnetic_flux_source(self, value:"GeoMagneticFluxSource") -> None:
+        return self._intf.set_property(DTM2012._metadata, DTM2012._set_atmosphere_data_geo_magnetic_flux_source_metadata, value)
 
-    _get_atmos_data_geo_magnetic_flux_update_rate_metadata = { "offset" : _get_atmos_data_geo_magnetic_flux_update_rate_method_offset,
+    _get_atmosphere_data_geo_magnetic_flux_update_rate_metadata = { "offset" : _get_atmosphere_data_geo_magnetic_flux_update_rate_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(GeoMagneticFluxUpdateRate),) }
     @property
-    def atmos_data_geo_magnetic_flux_update_rate(self) -> "GeoMagneticFluxUpdateRate":
+    def atmosphere_data_geo_magnetic_flux_update_rate(self) -> "GeoMagneticFluxUpdateRate":
         """Get or set the update rate of geomagnetic flux values from the flux file."""
-        return self._intf.get_property(DTM2012._metadata, DTM2012._get_atmos_data_geo_magnetic_flux_update_rate_metadata)
+        return self._intf.get_property(DTM2012._metadata, DTM2012._get_atmosphere_data_geo_magnetic_flux_update_rate_metadata)
 
-    _set_atmos_data_geo_magnetic_flux_update_rate_metadata = { "offset" : _set_atmos_data_geo_magnetic_flux_update_rate_method_offset,
+    _set_atmosphere_data_geo_magnetic_flux_update_rate_metadata = { "offset" : _set_atmosphere_data_geo_magnetic_flux_update_rate_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(GeoMagneticFluxUpdateRate),) }
-    @atmos_data_geo_magnetic_flux_update_rate.setter
-    def atmos_data_geo_magnetic_flux_update_rate(self, value:"GeoMagneticFluxUpdateRate") -> None:
-        return self._intf.set_property(DTM2012._metadata, DTM2012._set_atmos_data_geo_magnetic_flux_update_rate_metadata, value)
+    @atmosphere_data_geo_magnetic_flux_update_rate.setter
+    def atmosphere_data_geo_magnetic_flux_update_rate(self, value:"GeoMagneticFluxUpdateRate") -> None:
+        return self._intf.set_property(DTM2012._metadata, DTM2012._set_atmosphere_data_geo_magnetic_flux_update_rate_metadata, value)
 
     _get_variable_area_history_file_metadata = { "offset" : _get_variable_area_history_file_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -36519,16 +36519,16 @@ class DTM2012(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[computes_temperature] = "computes_temperature"
     _property_names[computes_pressure] = "computes_pressure"
     _property_names[sun_position] = "sun_position"
-    _property_names[atmos_data_source] = "atmos_data_source"
+    _property_names[atmosphere_data_source] = "atmosphere_data_source"
     _property_names[f_10_p7_avg] = "f_10_p7_avg"
-    _property_names[atmos_data_filename] = "atmos_data_filename"
+    _property_names[atmosphere_data_filename] = "atmosphere_data_filename"
     _property_names[drag_model_type] = "drag_model_type"
     _property_names[drag_model_plugin_name] = "drag_model_plugin_name"
     _property_names[drag_model_plugin] = "drag_model_plugin"
     _property_names[f_10_p7] = "f_10_p7"
     _property_names[kp] = "kp"
-    _property_names[atmos_data_geo_magnetic_flux_source] = "atmos_data_geo_magnetic_flux_source"
-    _property_names[atmos_data_geo_magnetic_flux_update_rate] = "atmos_data_geo_magnetic_flux_update_rate"
+    _property_names[atmosphere_data_geo_magnetic_flux_source] = "atmosphere_data_geo_magnetic_flux_source"
+    _property_names[atmosphere_data_geo_magnetic_flux_update_rate] = "atmosphere_data_geo_magnetic_flux_update_rate"
     _property_names[variable_area_history_file] = "variable_area_history_file"
     _property_names[n_plate_definition_file] = "n_plate_definition_file"
 
@@ -36563,12 +36563,12 @@ class DTM2020(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_computes_pressure_method_offset = 4
     _get_sun_position_method_offset = 5
     _set_sun_position_method_offset = 6
-    _get_atmos_data_source_method_offset = 7
-    _set_atmos_data_source_method_offset = 8
+    _get_atmosphere_data_source_method_offset = 7
+    _set_atmosphere_data_source_method_offset = 8
     _get_f_10_p7_avg_method_offset = 9
     _set_f_10_p7_avg_method_offset = 10
-    _get_atmos_data_filename_method_offset = 11
-    _set_atmos_data_filename_method_offset = 12
+    _get_atmosphere_data_filename_method_offset = 11
+    _set_atmosphere_data_filename_method_offset = 12
     _get_drag_model_type_method_offset = 13
     _set_drag_model_type_method_offset = 14
     _get_drag_model_plugin_name_method_offset = 15
@@ -36578,10 +36578,10 @@ class DTM2020(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _set_f_10_p7_method_offset = 19
     _get_kp_method_offset = 20
     _set_kp_method_offset = 21
-    _get_atmos_data_geo_magnetic_flux_source_method_offset = 22
-    _set_atmos_data_geo_magnetic_flux_source_method_offset = 23
-    _get_atmos_data_geo_magnetic_flux_update_rate_method_offset = 24
-    _set_atmos_data_geo_magnetic_flux_update_rate_method_offset = 25
+    _get_atmosphere_data_geo_magnetic_flux_source_method_offset = 22
+    _set_atmosphere_data_geo_magnetic_flux_source_method_offset = 23
+    _get_atmosphere_data_geo_magnetic_flux_update_rate_method_offset = 24
+    _set_atmosphere_data_geo_magnetic_flux_update_rate_method_offset = 25
     _get_variable_area_history_file_method_offset = 26
     _set_variable_area_history_file_method_offset = 27
     _get_n_plate_definition_file_method_offset = 28
@@ -36640,20 +36640,20 @@ class DTM2020(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def sun_position(self, value:"SunPosition") -> None:
         return self._intf.set_property(DTM2020._metadata, DTM2020._set_sun_position_metadata, value)
 
-    _get_atmos_data_source_metadata = { "offset" : _get_atmos_data_source_method_offset,
+    _get_atmosphere_data_source_metadata = { "offset" : _get_atmosphere_data_source_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
-            "marshallers" : (agmarshall.EnumArg(AtmosDataSource),) }
+            "marshallers" : (agmarshall.EnumArg(AtmosphereDataSource),) }
     @property
-    def atmos_data_source(self) -> "AtmosDataSource":
+    def atmosphere_data_source(self) -> "AtmosphereDataSource":
         """Get or set the atmospheric model data source - data file or constant values."""
-        return self._intf.get_property(DTM2020._metadata, DTM2020._get_atmos_data_source_metadata)
+        return self._intf.get_property(DTM2020._metadata, DTM2020._get_atmosphere_data_source_metadata)
 
-    _set_atmos_data_source_metadata = { "offset" : _set_atmos_data_source_method_offset,
+    _set_atmosphere_data_source_metadata = { "offset" : _set_atmosphere_data_source_method_offset,
             "arg_types" : (agcom.LONG,),
-            "marshallers" : (agmarshall.EnumArg(AtmosDataSource),) }
-    @atmos_data_source.setter
-    def atmos_data_source(self, value:"AtmosDataSource") -> None:
-        return self._intf.set_property(DTM2020._metadata, DTM2020._set_atmos_data_source_metadata, value)
+            "marshallers" : (agmarshall.EnumArg(AtmosphereDataSource),) }
+    @atmosphere_data_source.setter
+    def atmosphere_data_source(self, value:"AtmosphereDataSource") -> None:
+        return self._intf.set_property(DTM2020._metadata, DTM2020._set_atmosphere_data_source_metadata, value)
 
     _get_f_10_p7_avg_metadata = { "offset" : _get_f_10_p7_avg_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
@@ -36670,20 +36670,20 @@ class DTM2020(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def f_10_p7_avg(self, value:float) -> None:
         return self._intf.set_property(DTM2020._metadata, DTM2020._set_f_10_p7_avg_metadata, value)
 
-    _get_atmos_data_filename_metadata = { "offset" : _get_atmos_data_filename_method_offset,
+    _get_atmosphere_data_filename_metadata = { "offset" : _get_atmosphere_data_filename_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
             "marshallers" : (agmarshall.BStrArg,) }
     @property
-    def atmos_data_filename(self) -> str:
+    def atmosphere_data_filename(self) -> str:
         """Flux file."""
-        return self._intf.get_property(DTM2020._metadata, DTM2020._get_atmos_data_filename_metadata)
+        return self._intf.get_property(DTM2020._metadata, DTM2020._get_atmosphere_data_filename_metadata)
 
-    _set_atmos_data_filename_metadata = { "offset" : _set_atmos_data_filename_method_offset,
+    _set_atmosphere_data_filename_metadata = { "offset" : _set_atmosphere_data_filename_method_offset,
             "arg_types" : (agcom.BSTR,),
             "marshallers" : (agmarshall.BStrArg,) }
-    @atmos_data_filename.setter
-    def atmos_data_filename(self, value:str) -> None:
-        return self._intf.set_property(DTM2020._metadata, DTM2020._set_atmos_data_filename_metadata, value)
+    @atmosphere_data_filename.setter
+    def atmosphere_data_filename(self, value:str) -> None:
+        return self._intf.set_property(DTM2020._metadata, DTM2020._set_atmosphere_data_filename_metadata, value)
 
     _get_drag_model_type_metadata = { "offset" : _get_drag_model_type_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -36753,35 +36753,35 @@ class DTM2020(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def kp(self, value:float) -> None:
         return self._intf.set_property(DTM2020._metadata, DTM2020._set_kp_metadata, value)
 
-    _get_atmos_data_geo_magnetic_flux_source_metadata = { "offset" : _get_atmos_data_geo_magnetic_flux_source_method_offset,
+    _get_atmosphere_data_geo_magnetic_flux_source_metadata = { "offset" : _get_atmosphere_data_geo_magnetic_flux_source_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(GeoMagneticFluxSource),) }
     @property
-    def atmos_data_geo_magnetic_flux_source(self) -> "GeoMagneticFluxSource":
+    def atmosphere_data_geo_magnetic_flux_source(self) -> "GeoMagneticFluxSource":
         """Whether to use Kp or Ap data from the flux file."""
-        return self._intf.get_property(DTM2020._metadata, DTM2020._get_atmos_data_geo_magnetic_flux_source_metadata)
+        return self._intf.get_property(DTM2020._metadata, DTM2020._get_atmosphere_data_geo_magnetic_flux_source_metadata)
 
-    _set_atmos_data_geo_magnetic_flux_source_metadata = { "offset" : _set_atmos_data_geo_magnetic_flux_source_method_offset,
+    _set_atmosphere_data_geo_magnetic_flux_source_metadata = { "offset" : _set_atmosphere_data_geo_magnetic_flux_source_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(GeoMagneticFluxSource),) }
-    @atmos_data_geo_magnetic_flux_source.setter
-    def atmos_data_geo_magnetic_flux_source(self, value:"GeoMagneticFluxSource") -> None:
-        return self._intf.set_property(DTM2020._metadata, DTM2020._set_atmos_data_geo_magnetic_flux_source_metadata, value)
+    @atmosphere_data_geo_magnetic_flux_source.setter
+    def atmosphere_data_geo_magnetic_flux_source(self, value:"GeoMagneticFluxSource") -> None:
+        return self._intf.set_property(DTM2020._metadata, DTM2020._set_atmosphere_data_geo_magnetic_flux_source_metadata, value)
 
-    _get_atmos_data_geo_magnetic_flux_update_rate_metadata = { "offset" : _get_atmos_data_geo_magnetic_flux_update_rate_method_offset,
+    _get_atmosphere_data_geo_magnetic_flux_update_rate_metadata = { "offset" : _get_atmosphere_data_geo_magnetic_flux_update_rate_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
             "marshallers" : (agmarshall.EnumArg(GeoMagneticFluxUpdateRate),) }
     @property
-    def atmos_data_geo_magnetic_flux_update_rate(self) -> "GeoMagneticFluxUpdateRate":
+    def atmosphere_data_geo_magnetic_flux_update_rate(self) -> "GeoMagneticFluxUpdateRate":
         """Get or set the update rate of geomagnetic flux values from the flux file."""
-        return self._intf.get_property(DTM2020._metadata, DTM2020._get_atmos_data_geo_magnetic_flux_update_rate_metadata)
+        return self._intf.get_property(DTM2020._metadata, DTM2020._get_atmosphere_data_geo_magnetic_flux_update_rate_metadata)
 
-    _set_atmos_data_geo_magnetic_flux_update_rate_metadata = { "offset" : _set_atmos_data_geo_magnetic_flux_update_rate_method_offset,
+    _set_atmosphere_data_geo_magnetic_flux_update_rate_metadata = { "offset" : _set_atmosphere_data_geo_magnetic_flux_update_rate_method_offset,
             "arg_types" : (agcom.LONG,),
             "marshallers" : (agmarshall.EnumArg(GeoMagneticFluxUpdateRate),) }
-    @atmos_data_geo_magnetic_flux_update_rate.setter
-    def atmos_data_geo_magnetic_flux_update_rate(self, value:"GeoMagneticFluxUpdateRate") -> None:
-        return self._intf.set_property(DTM2020._metadata, DTM2020._set_atmos_data_geo_magnetic_flux_update_rate_metadata, value)
+    @atmosphere_data_geo_magnetic_flux_update_rate.setter
+    def atmosphere_data_geo_magnetic_flux_update_rate(self, value:"GeoMagneticFluxUpdateRate") -> None:
+        return self._intf.set_property(DTM2020._metadata, DTM2020._set_atmosphere_data_geo_magnetic_flux_update_rate_metadata, value)
 
     _get_variable_area_history_file_metadata = { "offset" : _get_variable_area_history_file_method_offset,
             "arg_types" : (POINTER(agcom.BSTR),),
@@ -36817,16 +36817,16 @@ class DTM2020(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _property_names[computes_temperature] = "computes_temperature"
     _property_names[computes_pressure] = "computes_pressure"
     _property_names[sun_position] = "sun_position"
-    _property_names[atmos_data_source] = "atmos_data_source"
+    _property_names[atmosphere_data_source] = "atmosphere_data_source"
     _property_names[f_10_p7_avg] = "f_10_p7_avg"
-    _property_names[atmos_data_filename] = "atmos_data_filename"
+    _property_names[atmosphere_data_filename] = "atmosphere_data_filename"
     _property_names[drag_model_type] = "drag_model_type"
     _property_names[drag_model_plugin_name] = "drag_model_plugin_name"
     _property_names[drag_model_plugin] = "drag_model_plugin"
     _property_names[f_10_p7] = "f_10_p7"
     _property_names[kp] = "kp"
-    _property_names[atmos_data_geo_magnetic_flux_source] = "atmos_data_geo_magnetic_flux_source"
-    _property_names[atmos_data_geo_magnetic_flux_update_rate] = "atmos_data_geo_magnetic_flux_update_rate"
+    _property_names[atmosphere_data_geo_magnetic_flux_source] = "atmosphere_data_geo_magnetic_flux_source"
+    _property_names[atmosphere_data_geo_magnetic_flux_update_rate] = "atmosphere_data_geo_magnetic_flux_update_rate"
     _property_names[variable_area_history_file] = "variable_area_history_file"
     _property_names[n_plate_definition_file] = "n_plate_definition_file"
 
@@ -37491,8 +37491,8 @@ class SRPAerospaceT20(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _num_methods = 13
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_atmos_altitude_method_offset = 1
-    _set_atmos_altitude_method_offset = 2
+    _get_atmosphere_altitude_method_offset = 1
+    _set_atmosphere_altitude_method_offset = 2
     _get_shadow_model_method_offset = 3
     _set_shadow_model_method_offset = 4
     _get_sun_position_method_offset = 5
@@ -37512,20 +37512,20 @@ class SRPAerospaceT20(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def _get_property(self, attrname):
         return get_interface_property(attrname, SRPAerospaceT20)
     
-    _get_atmos_altitude_metadata = { "offset" : _get_atmos_altitude_method_offset,
+    _get_atmosphere_altitude_metadata = { "offset" : _get_atmosphere_altitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def atmos_altitude(self) -> float:
+    def atmosphere_altitude(self) -> float:
         """Get or set the atmospheric altitude for eclipse. A simple model to account for some measure of attenuation that simply increases the shape of the Earth by the defined altitude height, often taken to be 23 km. Uses Distance Dimension."""
-        return self._intf.get_property(SRPAerospaceT20._metadata, SRPAerospaceT20._get_atmos_altitude_metadata)
+        return self._intf.get_property(SRPAerospaceT20._metadata, SRPAerospaceT20._get_atmosphere_altitude_metadata)
 
-    _set_atmos_altitude_metadata = { "offset" : _set_atmos_altitude_method_offset,
+    _set_atmosphere_altitude_metadata = { "offset" : _set_atmosphere_altitude_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @atmos_altitude.setter
-    def atmos_altitude(self, value:float) -> None:
-        return self._intf.set_property(SRPAerospaceT20._metadata, SRPAerospaceT20._set_atmos_altitude_metadata, value)
+    @atmosphere_altitude.setter
+    def atmosphere_altitude(self, value:float) -> None:
+        return self._intf.set_property(SRPAerospaceT20._metadata, SRPAerospaceT20._set_atmosphere_altitude_metadata, value)
 
     _get_shadow_model_metadata = { "offset" : _get_shadow_model_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -37610,7 +37610,7 @@ class SRPAerospaceT20(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def solar_radius(self, value:float) -> None:
         return self._intf.set_property(SRPAerospaceT20._metadata, SRPAerospaceT20._set_solar_radius_metadata, value)
 
-    _property_names[atmos_altitude] = "atmos_altitude"
+    _property_names[atmosphere_altitude] = "atmosphere_altitude"
     _property_names[shadow_model] = "shadow_model"
     _property_names[sun_position] = "sun_position"
     _property_names[eclipsing_bodies] = "eclipsing_bodies"
@@ -37643,8 +37643,8 @@ class SRPAerospaceT30(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _num_methods = 13
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_atmos_altitude_method_offset = 1
-    _set_atmos_altitude_method_offset = 2
+    _get_atmosphere_altitude_method_offset = 1
+    _set_atmosphere_altitude_method_offset = 2
     _get_shadow_model_method_offset = 3
     _set_shadow_model_method_offset = 4
     _get_sun_position_method_offset = 5
@@ -37664,20 +37664,20 @@ class SRPAerospaceT30(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def _get_property(self, attrname):
         return get_interface_property(attrname, SRPAerospaceT30)
     
-    _get_atmos_altitude_metadata = { "offset" : _get_atmos_altitude_method_offset,
+    _get_atmosphere_altitude_metadata = { "offset" : _get_atmosphere_altitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def atmos_altitude(self) -> float:
+    def atmosphere_altitude(self) -> float:
         """Get or set the atmospheric altitude for eclipse. A simple model to account for some measure of attenuation that simply increases the shape of the Earth by the defined altitude height, often taken to be 23 km. Uses Distance Dimension."""
-        return self._intf.get_property(SRPAerospaceT30._metadata, SRPAerospaceT30._get_atmos_altitude_metadata)
+        return self._intf.get_property(SRPAerospaceT30._metadata, SRPAerospaceT30._get_atmosphere_altitude_metadata)
 
-    _set_atmos_altitude_metadata = { "offset" : _set_atmos_altitude_method_offset,
+    _set_atmosphere_altitude_metadata = { "offset" : _set_atmosphere_altitude_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @atmos_altitude.setter
-    def atmos_altitude(self, value:float) -> None:
-        return self._intf.set_property(SRPAerospaceT30._metadata, SRPAerospaceT30._set_atmos_altitude_metadata, value)
+    @atmosphere_altitude.setter
+    def atmosphere_altitude(self, value:float) -> None:
+        return self._intf.set_property(SRPAerospaceT30._metadata, SRPAerospaceT30._set_atmosphere_altitude_metadata, value)
 
     _get_shadow_model_metadata = { "offset" : _get_shadow_model_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -37762,7 +37762,7 @@ class SRPAerospaceT30(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def solar_radius(self, value:float) -> None:
         return self._intf.set_property(SRPAerospaceT30._metadata, SRPAerospaceT30._set_solar_radius_metadata, value)
 
-    _property_names[atmos_altitude] = "atmos_altitude"
+    _property_names[atmosphere_altitude] = "atmosphere_altitude"
     _property_names[shadow_model] = "shadow_model"
     _property_names[sun_position] = "sun_position"
     _property_names[eclipsing_bodies] = "eclipsing_bodies"
@@ -37795,8 +37795,8 @@ class SRPGSPM04aIIA(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _num_methods = 13
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_atmos_altitude_method_offset = 1
-    _set_atmos_altitude_method_offset = 2
+    _get_atmosphere_altitude_method_offset = 1
+    _set_atmosphere_altitude_method_offset = 2
     _get_shadow_model_method_offset = 3
     _set_shadow_model_method_offset = 4
     _get_sun_position_method_offset = 5
@@ -37816,20 +37816,20 @@ class SRPGSPM04aIIA(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def _get_property(self, attrname):
         return get_interface_property(attrname, SRPGSPM04aIIA)
     
-    _get_atmos_altitude_metadata = { "offset" : _get_atmos_altitude_method_offset,
+    _get_atmosphere_altitude_metadata = { "offset" : _get_atmosphere_altitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def atmos_altitude(self) -> float:
+    def atmosphere_altitude(self) -> float:
         """Get or set the atmospheric altitude for eclipse. A simple model to account for some measure of attenuation that simply increases the shape of the Earth by the defined altitude height, often taken to be 23 km. Uses Distance Dimension."""
-        return self._intf.get_property(SRPGSPM04aIIA._metadata, SRPGSPM04aIIA._get_atmos_altitude_metadata)
+        return self._intf.get_property(SRPGSPM04aIIA._metadata, SRPGSPM04aIIA._get_atmosphere_altitude_metadata)
 
-    _set_atmos_altitude_metadata = { "offset" : _set_atmos_altitude_method_offset,
+    _set_atmosphere_altitude_metadata = { "offset" : _set_atmosphere_altitude_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @atmos_altitude.setter
-    def atmos_altitude(self, value:float) -> None:
-        return self._intf.set_property(SRPGSPM04aIIA._metadata, SRPGSPM04aIIA._set_atmos_altitude_metadata, value)
+    @atmosphere_altitude.setter
+    def atmosphere_altitude(self, value:float) -> None:
+        return self._intf.set_property(SRPGSPM04aIIA._metadata, SRPGSPM04aIIA._set_atmosphere_altitude_metadata, value)
 
     _get_shadow_model_metadata = { "offset" : _get_shadow_model_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -37914,7 +37914,7 @@ class SRPGSPM04aIIA(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def solar_radius(self, value:float) -> None:
         return self._intf.set_property(SRPGSPM04aIIA._metadata, SRPGSPM04aIIA._set_solar_radius_metadata, value)
 
-    _property_names[atmos_altitude] = "atmos_altitude"
+    _property_names[atmosphere_altitude] = "atmosphere_altitude"
     _property_names[shadow_model] = "shadow_model"
     _property_names[sun_position] = "sun_position"
     _property_names[eclipsing_bodies] = "eclipsing_bodies"
@@ -37947,8 +37947,8 @@ class SRPGSPM04aIIR(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _num_methods = 13
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_atmos_altitude_method_offset = 1
-    _set_atmos_altitude_method_offset = 2
+    _get_atmosphere_altitude_method_offset = 1
+    _set_atmosphere_altitude_method_offset = 2
     _get_shadow_model_method_offset = 3
     _set_shadow_model_method_offset = 4
     _get_sun_position_method_offset = 5
@@ -37968,20 +37968,20 @@ class SRPGSPM04aIIR(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def _get_property(self, attrname):
         return get_interface_property(attrname, SRPGSPM04aIIR)
     
-    _get_atmos_altitude_metadata = { "offset" : _get_atmos_altitude_method_offset,
+    _get_atmosphere_altitude_metadata = { "offset" : _get_atmosphere_altitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def atmos_altitude(self) -> float:
+    def atmosphere_altitude(self) -> float:
         """Get or set the atmospheric altitude for eclipse. A simple model to account for some measure of attenuation that simply increases the shape of the Earth by the defined altitude height, often taken to be 23 km. Uses Distance Dimension."""
-        return self._intf.get_property(SRPGSPM04aIIR._metadata, SRPGSPM04aIIR._get_atmos_altitude_metadata)
+        return self._intf.get_property(SRPGSPM04aIIR._metadata, SRPGSPM04aIIR._get_atmosphere_altitude_metadata)
 
-    _set_atmos_altitude_metadata = { "offset" : _set_atmos_altitude_method_offset,
+    _set_atmosphere_altitude_metadata = { "offset" : _set_atmosphere_altitude_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @atmos_altitude.setter
-    def atmos_altitude(self, value:float) -> None:
-        return self._intf.set_property(SRPGSPM04aIIR._metadata, SRPGSPM04aIIR._set_atmos_altitude_metadata, value)
+    @atmosphere_altitude.setter
+    def atmosphere_altitude(self, value:float) -> None:
+        return self._intf.set_property(SRPGSPM04aIIR._metadata, SRPGSPM04aIIR._set_atmosphere_altitude_metadata, value)
 
     _get_shadow_model_metadata = { "offset" : _get_shadow_model_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -38066,7 +38066,7 @@ class SRPGSPM04aIIR(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def solar_radius(self, value:float) -> None:
         return self._intf.set_property(SRPGSPM04aIIR._metadata, SRPGSPM04aIIR._set_solar_radius_metadata, value)
 
-    _property_names[atmos_altitude] = "atmos_altitude"
+    _property_names[atmosphere_altitude] = "atmosphere_altitude"
     _property_names[shadow_model] = "shadow_model"
     _property_names[sun_position] = "sun_position"
     _property_names[eclipsing_bodies] = "eclipsing_bodies"
@@ -38099,8 +38099,8 @@ class SRPGSPM04aeIIA(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _num_methods = 13
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_atmos_altitude_method_offset = 1
-    _set_atmos_altitude_method_offset = 2
+    _get_atmosphere_altitude_method_offset = 1
+    _set_atmosphere_altitude_method_offset = 2
     _get_shadow_model_method_offset = 3
     _set_shadow_model_method_offset = 4
     _get_sun_position_method_offset = 5
@@ -38120,20 +38120,20 @@ class SRPGSPM04aeIIA(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def _get_property(self, attrname):
         return get_interface_property(attrname, SRPGSPM04aeIIA)
     
-    _get_atmos_altitude_metadata = { "offset" : _get_atmos_altitude_method_offset,
+    _get_atmosphere_altitude_metadata = { "offset" : _get_atmosphere_altitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def atmos_altitude(self) -> float:
+    def atmosphere_altitude(self) -> float:
         """Get or set the atmospheric altitude for eclipse. A simple model to account for some measure of attenuation that simply increases the shape of the Earth by the defined altitude height, often taken to be 23 km. Uses Distance Dimension."""
-        return self._intf.get_property(SRPGSPM04aeIIA._metadata, SRPGSPM04aeIIA._get_atmos_altitude_metadata)
+        return self._intf.get_property(SRPGSPM04aeIIA._metadata, SRPGSPM04aeIIA._get_atmosphere_altitude_metadata)
 
-    _set_atmos_altitude_metadata = { "offset" : _set_atmos_altitude_method_offset,
+    _set_atmosphere_altitude_metadata = { "offset" : _set_atmosphere_altitude_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @atmos_altitude.setter
-    def atmos_altitude(self, value:float) -> None:
-        return self._intf.set_property(SRPGSPM04aeIIA._metadata, SRPGSPM04aeIIA._set_atmos_altitude_metadata, value)
+    @atmosphere_altitude.setter
+    def atmosphere_altitude(self, value:float) -> None:
+        return self._intf.set_property(SRPGSPM04aeIIA._metadata, SRPGSPM04aeIIA._set_atmosphere_altitude_metadata, value)
 
     _get_shadow_model_metadata = { "offset" : _get_shadow_model_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -38218,7 +38218,7 @@ class SRPGSPM04aeIIA(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def solar_radius(self, value:float) -> None:
         return self._intf.set_property(SRPGSPM04aeIIA._metadata, SRPGSPM04aeIIA._set_solar_radius_metadata, value)
 
-    _property_names[atmos_altitude] = "atmos_altitude"
+    _property_names[atmosphere_altitude] = "atmosphere_altitude"
     _property_names[shadow_model] = "shadow_model"
     _property_names[sun_position] = "sun_position"
     _property_names[eclipsing_bodies] = "eclipsing_bodies"
@@ -38251,8 +38251,8 @@ class SRPGSPM04aeIIR(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _num_methods = 13
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_atmos_altitude_method_offset = 1
-    _set_atmos_altitude_method_offset = 2
+    _get_atmosphere_altitude_method_offset = 1
+    _set_atmosphere_altitude_method_offset = 2
     _get_shadow_model_method_offset = 3
     _set_shadow_model_method_offset = 4
     _get_sun_position_method_offset = 5
@@ -38272,20 +38272,20 @@ class SRPGSPM04aeIIR(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def _get_property(self, attrname):
         return get_interface_property(attrname, SRPGSPM04aeIIR)
     
-    _get_atmos_altitude_metadata = { "offset" : _get_atmos_altitude_method_offset,
+    _get_atmosphere_altitude_metadata = { "offset" : _get_atmosphere_altitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def atmos_altitude(self) -> float:
+    def atmosphere_altitude(self) -> float:
         """Get or set the atmospheric altitude for eclipse. A simple model to account for some measure of attenuation that simply increases the shape of the Earth by the defined altitude height, often taken to be 23 km. Uses Distance Dimension."""
-        return self._intf.get_property(SRPGSPM04aeIIR._metadata, SRPGSPM04aeIIR._get_atmos_altitude_metadata)
+        return self._intf.get_property(SRPGSPM04aeIIR._metadata, SRPGSPM04aeIIR._get_atmosphere_altitude_metadata)
 
-    _set_atmos_altitude_metadata = { "offset" : _set_atmos_altitude_method_offset,
+    _set_atmosphere_altitude_metadata = { "offset" : _set_atmosphere_altitude_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @atmos_altitude.setter
-    def atmos_altitude(self, value:float) -> None:
-        return self._intf.set_property(SRPGSPM04aeIIR._metadata, SRPGSPM04aeIIR._set_atmos_altitude_metadata, value)
+    @atmosphere_altitude.setter
+    def atmosphere_altitude(self, value:float) -> None:
+        return self._intf.set_property(SRPGSPM04aeIIR._metadata, SRPGSPM04aeIIR._set_atmosphere_altitude_metadata, value)
 
     _get_shadow_model_metadata = { "offset" : _get_shadow_model_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -38370,7 +38370,7 @@ class SRPGSPM04aeIIR(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def solar_radius(self, value:float) -> None:
         return self._intf.set_property(SRPGSPM04aeIIR._metadata, SRPGSPM04aeIIR._set_solar_radius_metadata, value)
 
-    _property_names[atmos_altitude] = "atmos_altitude"
+    _property_names[atmosphere_altitude] = "atmosphere_altitude"
     _property_names[shadow_model] = "shadow_model"
     _property_names[sun_position] = "sun_position"
     _property_names[eclipsing_bodies] = "eclipsing_bodies"
@@ -38403,8 +38403,8 @@ class SRPSpherical(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _num_methods = 19
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_atmos_altitude_method_offset = 1
-    _set_atmos_altitude_method_offset = 2
+    _get_atmosphere_altitude_method_offset = 1
+    _set_atmosphere_altitude_method_offset = 2
     _get_shadow_model_method_offset = 3
     _set_shadow_model_method_offset = 4
     _get_sun_position_method_offset = 5
@@ -38430,20 +38430,20 @@ class SRPSpherical(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def _get_property(self, attrname):
         return get_interface_property(attrname, SRPSpherical)
     
-    _get_atmos_altitude_metadata = { "offset" : _get_atmos_altitude_method_offset,
+    _get_atmosphere_altitude_metadata = { "offset" : _get_atmosphere_altitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def atmos_altitude(self) -> float:
+    def atmosphere_altitude(self) -> float:
         """Get or set the atmospheric altitude for eclipse. A simple model to account for some measure of attenuation that simply increases the shape of the Earth by the defined altitude height, often taken to be 23 km. Uses Distance Dimension."""
-        return self._intf.get_property(SRPSpherical._metadata, SRPSpherical._get_atmos_altitude_metadata)
+        return self._intf.get_property(SRPSpherical._metadata, SRPSpherical._get_atmosphere_altitude_metadata)
 
-    _set_atmos_altitude_metadata = { "offset" : _set_atmos_altitude_method_offset,
+    _set_atmosphere_altitude_metadata = { "offset" : _set_atmosphere_altitude_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @atmos_altitude.setter
-    def atmos_altitude(self, value:float) -> None:
-        return self._intf.set_property(SRPSpherical._metadata, SRPSpherical._set_atmos_altitude_metadata, value)
+    @atmosphere_altitude.setter
+    def atmosphere_altitude(self, value:float) -> None:
+        return self._intf.set_property(SRPSpherical._metadata, SRPSpherical._set_atmosphere_altitude_metadata, value)
 
     _get_shadow_model_metadata = { "offset" : _get_shadow_model_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -38573,7 +38573,7 @@ class SRPSpherical(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def solar_radius(self, value:float) -> None:
         return self._intf.set_property(SRPSpherical._metadata, SRPSpherical._set_solar_radius_metadata, value)
 
-    _property_names[atmos_altitude] = "atmos_altitude"
+    _property_names[atmosphere_altitude] = "atmosphere_altitude"
     _property_names[shadow_model] = "shadow_model"
     _property_names[sun_position] = "sun_position"
     _property_names[eclipsing_bodies] = "eclipsing_bodies"
@@ -38609,8 +38609,8 @@ class SRPNPlate(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _num_methods = 21
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_atmos_altitude_method_offset = 1
-    _set_atmos_altitude_method_offset = 2
+    _get_atmosphere_altitude_method_offset = 1
+    _set_atmosphere_altitude_method_offset = 2
     _get_shadow_model_method_offset = 3
     _set_shadow_model_method_offset = 4
     _get_sun_position_method_offset = 5
@@ -38638,20 +38638,20 @@ class SRPNPlate(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def _get_property(self, attrname):
         return get_interface_property(attrname, SRPNPlate)
     
-    _get_atmos_altitude_metadata = { "offset" : _get_atmos_altitude_method_offset,
+    _get_atmosphere_altitude_metadata = { "offset" : _get_atmosphere_altitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def atmos_altitude(self) -> float:
+    def atmosphere_altitude(self) -> float:
         """Get or set the atmospheric altitude for eclipse. A simple model to account for some measure of attenuation that simply increases the shape of the Earth by the defined altitude height, often taken to be 23 km. Uses Distance Dimension."""
-        return self._intf.get_property(SRPNPlate._metadata, SRPNPlate._get_atmos_altitude_metadata)
+        return self._intf.get_property(SRPNPlate._metadata, SRPNPlate._get_atmosphere_altitude_metadata)
 
-    _set_atmos_altitude_metadata = { "offset" : _set_atmos_altitude_method_offset,
+    _set_atmosphere_altitude_metadata = { "offset" : _set_atmosphere_altitude_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @atmos_altitude.setter
-    def atmos_altitude(self, value:float) -> None:
-        return self._intf.set_property(SRPNPlate._metadata, SRPNPlate._set_atmos_altitude_metadata, value)
+    @atmosphere_altitude.setter
+    def atmosphere_altitude(self, value:float) -> None:
+        return self._intf.set_property(SRPNPlate._metadata, SRPNPlate._set_atmosphere_altitude_metadata, value)
 
     _get_shadow_model_metadata = { "offset" : _get_shadow_model_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -38796,7 +38796,7 @@ class SRPNPlate(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def n_plate_definition_file(self, value:str) -> None:
         return self._intf.set_property(SRPNPlate._metadata, SRPNPlate._set_n_plate_definition_file_metadata, value)
 
-    _property_names[atmos_altitude] = "atmos_altitude"
+    _property_names[atmosphere_altitude] = "atmosphere_altitude"
     _property_names[shadow_model] = "shadow_model"
     _property_names[sun_position] = "sun_position"
     _property_names[eclipsing_bodies] = "eclipsing_bodies"
@@ -38833,8 +38833,8 @@ class SRPTabulatedAreaVector(IComponentInfo, ICloneable, SupportsDeleteCallback)
 
     _num_methods = 23
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_atmos_altitude_method_offset = 1
-    _set_atmos_altitude_method_offset = 2
+    _get_atmosphere_altitude_method_offset = 1
+    _set_atmosphere_altitude_method_offset = 2
     _get_shadow_model_method_offset = 3
     _set_shadow_model_method_offset = 4
     _get_sun_position_method_offset = 5
@@ -38864,20 +38864,20 @@ class SRPTabulatedAreaVector(IComponentInfo, ICloneable, SupportsDeleteCallback)
     def _get_property(self, attrname):
         return get_interface_property(attrname, SRPTabulatedAreaVector)
     
-    _get_atmos_altitude_metadata = { "offset" : _get_atmos_altitude_method_offset,
+    _get_atmosphere_altitude_metadata = { "offset" : _get_atmosphere_altitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def atmos_altitude(self) -> float:
+    def atmosphere_altitude(self) -> float:
         """Get or set the atmospheric altitude for eclipse. A simple model to account for some measure of attenuation that simply increases the shape of the Earth by the defined altitude height, often taken to be 23 km. Uses Distance Dimension."""
-        return self._intf.get_property(SRPTabulatedAreaVector._metadata, SRPTabulatedAreaVector._get_atmos_altitude_metadata)
+        return self._intf.get_property(SRPTabulatedAreaVector._metadata, SRPTabulatedAreaVector._get_atmosphere_altitude_metadata)
 
-    _set_atmos_altitude_metadata = { "offset" : _set_atmos_altitude_method_offset,
+    _set_atmosphere_altitude_metadata = { "offset" : _set_atmosphere_altitude_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @atmos_altitude.setter
-    def atmos_altitude(self, value:float) -> None:
-        return self._intf.set_property(SRPTabulatedAreaVector._metadata, SRPTabulatedAreaVector._set_atmos_altitude_metadata, value)
+    @atmosphere_altitude.setter
+    def atmosphere_altitude(self, value:float) -> None:
+        return self._intf.set_property(SRPTabulatedAreaVector._metadata, SRPTabulatedAreaVector._set_atmosphere_altitude_metadata, value)
 
     _get_shadow_model_metadata = { "offset" : _get_shadow_model_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -39037,7 +39037,7 @@ class SRPTabulatedAreaVector(IComponentInfo, ICloneable, SupportsDeleteCallback)
     def interpolation_method(self, value:"TabVecInterpolationMethod") -> None:
         return self._intf.set_property(SRPTabulatedAreaVector._metadata, SRPTabulatedAreaVector._set_interpolation_method_metadata, value)
 
-    _property_names[atmos_altitude] = "atmos_altitude"
+    _property_names[atmosphere_altitude] = "atmosphere_altitude"
     _property_names[shadow_model] = "shadow_model"
     _property_names[sun_position] = "sun_position"
     _property_names[eclipsing_bodies] = "eclipsing_bodies"
@@ -39075,8 +39075,8 @@ class SRPVariableArea(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _num_methods = 21
     _vtable_offset = IUnknown._vtable_offset + IUnknown._num_methods
-    _get_atmos_altitude_method_offset = 1
-    _set_atmos_altitude_method_offset = 2
+    _get_atmosphere_altitude_method_offset = 1
+    _set_atmosphere_altitude_method_offset = 2
     _get_shadow_model_method_offset = 3
     _set_shadow_model_method_offset = 4
     _get_sun_position_method_offset = 5
@@ -39104,20 +39104,20 @@ class SRPVariableArea(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def _get_property(self, attrname):
         return get_interface_property(attrname, SRPVariableArea)
     
-    _get_atmos_altitude_metadata = { "offset" : _get_atmos_altitude_method_offset,
+    _get_atmosphere_altitude_metadata = { "offset" : _get_atmosphere_altitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def atmos_altitude(self) -> float:
+    def atmosphere_altitude(self) -> float:
         """Get or set the atmospheric altitude for eclipse. A simple model to account for some measure of attenuation that simply increases the shape of the Earth by the defined altitude height, often taken to be 23 km. Uses Distance Dimension."""
-        return self._intf.get_property(SRPVariableArea._metadata, SRPVariableArea._get_atmos_altitude_metadata)
+        return self._intf.get_property(SRPVariableArea._metadata, SRPVariableArea._get_atmosphere_altitude_metadata)
 
-    _set_atmos_altitude_metadata = { "offset" : _set_atmos_altitude_method_offset,
+    _set_atmosphere_altitude_metadata = { "offset" : _set_atmosphere_altitude_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @atmos_altitude.setter
-    def atmos_altitude(self, value:float) -> None:
-        return self._intf.set_property(SRPVariableArea._metadata, SRPVariableArea._set_atmos_altitude_metadata, value)
+    @atmosphere_altitude.setter
+    def atmosphere_altitude(self, value:float) -> None:
+        return self._intf.set_property(SRPVariableArea._metadata, SRPVariableArea._set_atmosphere_altitude_metadata, value)
 
     _get_shadow_model_metadata = { "offset" : _get_shadow_model_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -39262,7 +39262,7 @@ class SRPVariableArea(IComponentInfo, ICloneable, SupportsDeleteCallback):
     def variable_area_history_file(self, value:str) -> None:
         return self._intf.set_property(SRPVariableArea._metadata, SRPVariableArea._set_variable_area_history_file_metadata, value)
 
-    _property_names[atmos_altitude] = "atmos_altitude"
+    _property_names[atmosphere_altitude] = "atmosphere_altitude"
     _property_names[shadow_model] = "shadow_model"
     _property_names[sun_position] = "sun_position"
     _property_names[eclipsing_bodies] = "eclipsing_bodies"
@@ -39472,8 +39472,8 @@ class SRPReflectionPlugin(IComponentInfo, ICloneable, SupportsDeleteCallback):
     _get_plugin_identifier_method_offset = 1
     _set_plugin_identifier_method_offset = 2
     _get_plugin_config_method_offset = 3
-    _get_atmos_altitude_method_offset = 4
-    _set_atmos_altitude_method_offset = 5
+    _get_atmosphere_altitude_method_offset = 4
+    _set_atmosphere_altitude_method_offset = 5
     _get_shadow_model_method_offset = 6
     _set_shadow_model_method_offset = 7
     _get_sun_position_method_offset = 8
@@ -39516,20 +39516,20 @@ class SRPReflectionPlugin(IComponentInfo, ICloneable, SupportsDeleteCallback):
         """Get the properties of the selected plugin."""
         return self._intf.get_property(SRPReflectionPlugin._metadata, SRPReflectionPlugin._get_plugin_config_metadata)
 
-    _get_atmos_altitude_metadata = { "offset" : _get_atmos_altitude_method_offset,
+    _get_atmosphere_altitude_metadata = { "offset" : _get_atmosphere_altitude_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def atmos_altitude(self) -> float:
+    def atmosphere_altitude(self) -> float:
         """Get or set the atmospheric altitude for eclipse. A simple model to account for some measure of attenuation that simply increases the shape of the Earth by the defined altitude height, often taken to be 23 km. Uses Distance Dimension."""
-        return self._intf.get_property(SRPReflectionPlugin._metadata, SRPReflectionPlugin._get_atmos_altitude_metadata)
+        return self._intf.get_property(SRPReflectionPlugin._metadata, SRPReflectionPlugin._get_atmosphere_altitude_metadata)
 
-    _set_atmos_altitude_metadata = { "offset" : _set_atmos_altitude_method_offset,
+    _set_atmosphere_altitude_metadata = { "offset" : _set_atmosphere_altitude_method_offset,
             "arg_types" : (agcom.DOUBLE,),
             "marshallers" : (agmarshall.DoubleArg,) }
-    @atmos_altitude.setter
-    def atmos_altitude(self, value:float) -> None:
-        return self._intf.set_property(SRPReflectionPlugin._metadata, SRPReflectionPlugin._set_atmos_altitude_metadata, value)
+    @atmosphere_altitude.setter
+    def atmosphere_altitude(self, value:float) -> None:
+        return self._intf.set_property(SRPReflectionPlugin._metadata, SRPReflectionPlugin._set_atmosphere_altitude_metadata, value)
 
     _get_shadow_model_metadata = { "offset" : _get_shadow_model_method_offset,
             "arg_types" : (POINTER(agcom.LONG),),
@@ -39616,7 +39616,7 @@ class SRPReflectionPlugin(IComponentInfo, ICloneable, SupportsDeleteCallback):
 
     _property_names[plugin_identifier] = "plugin_identifier"
     _property_names[plugin_config] = "plugin_config"
-    _property_names[atmos_altitude] = "atmos_altitude"
+    _property_names[atmosphere_altitude] = "atmosphere_altitude"
     _property_names[shadow_model] = "shadow_model"
     _property_names[sun_position] = "sun_position"
     _property_names[eclipsing_bodies] = "eclipsing_bodies"
@@ -49883,9 +49883,9 @@ class ManeuverOptimalFiniteSteeringNodeElement(SupportsDeleteCallback):
     _get_position_x_method_offset = 9
     _get_position_y_method_offset = 10
     _get_position_z_method_offset = 11
-    _get_vel_x_method_offset = 12
-    _get_vel_y_method_offset = 13
-    _get_vel_z_method_offset = 14
+    _get_velocity_x_method_offset = 12
+    _get_velocity_y_method_offset = 13
+    _get_velocity_z_method_offset = 14
     _metadata = {
         "iid_data" : (5681974857341656774, 10284978685885765302),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -49982,29 +49982,29 @@ class ManeuverOptimalFiniteSteeringNodeElement(SupportsDeleteCallback):
         """Get the Z component of the position vector."""
         return self._intf.get_property(ManeuverOptimalFiniteSteeringNodeElement._metadata, ManeuverOptimalFiniteSteeringNodeElement._get_position_z_metadata)
 
-    _get_vel_x_metadata = { "offset" : _get_vel_x_method_offset,
+    _get_velocity_x_metadata = { "offset" : _get_velocity_x_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def vel_x(self) -> float:
+    def velocity_x(self) -> float:
         """Get the X component of the velocity vector."""
-        return self._intf.get_property(ManeuverOptimalFiniteSteeringNodeElement._metadata, ManeuverOptimalFiniteSteeringNodeElement._get_vel_x_metadata)
+        return self._intf.get_property(ManeuverOptimalFiniteSteeringNodeElement._metadata, ManeuverOptimalFiniteSteeringNodeElement._get_velocity_x_metadata)
 
-    _get_vel_y_metadata = { "offset" : _get_vel_y_method_offset,
+    _get_velocity_y_metadata = { "offset" : _get_velocity_y_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def vel_y(self) -> float:
+    def velocity_y(self) -> float:
         """Get the Y component of the velocity vector."""
-        return self._intf.get_property(ManeuverOptimalFiniteSteeringNodeElement._metadata, ManeuverOptimalFiniteSteeringNodeElement._get_vel_y_metadata)
+        return self._intf.get_property(ManeuverOptimalFiniteSteeringNodeElement._metadata, ManeuverOptimalFiniteSteeringNodeElement._get_velocity_y_metadata)
 
-    _get_vel_z_metadata = { "offset" : _get_vel_z_method_offset,
+    _get_velocity_z_metadata = { "offset" : _get_velocity_z_method_offset,
             "arg_types" : (POINTER(agcom.DOUBLE),),
             "marshallers" : (agmarshall.DoubleArg,) }
     @property
-    def vel_z(self) -> float:
+    def velocity_z(self) -> float:
         """Get the Z component of the velocity vector."""
-        return self._intf.get_property(ManeuverOptimalFiniteSteeringNodeElement._metadata, ManeuverOptimalFiniteSteeringNodeElement._get_vel_z_metadata)
+        return self._intf.get_property(ManeuverOptimalFiniteSteeringNodeElement._metadata, ManeuverOptimalFiniteSteeringNodeElement._get_velocity_z_metadata)
 
     _property_names[node_index] = "node_index"
     _property_names[time] = "time"
@@ -50017,9 +50017,9 @@ class ManeuverOptimalFiniteSteeringNodeElement(SupportsDeleteCallback):
     _property_names[position_x] = "position_x"
     _property_names[position_y] = "position_y"
     _property_names[position_z] = "position_z"
-    _property_names[vel_x] = "vel_x"
-    _property_names[vel_y] = "vel_y"
-    _property_names[vel_z] = "vel_z"
+    _property_names[velocity_x] = "velocity_x"
+    _property_names[velocity_y] = "velocity_y"
+    _property_names[velocity_z] = "velocity_z"
 
     def __init__(self, source_object=None):
         """Construct an object of type ManeuverOptimalFiniteSteeringNodeElement."""

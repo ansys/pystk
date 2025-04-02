@@ -22,7 +22,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcEnvironment.central_body_name`
               - Get or set the central body of the component.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcEnvironment.atmos_model_name`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.StateCalcEnvironment.atmosphere_model_name`
               - Get or set the atmospheric density model of the component.
 
 
@@ -44,8 +44,8 @@ Property detail
 
     Get or set the central body of the component.
 
-.. py:property:: atmos_model_name
-    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcEnvironment.atmos_model_name
+.. py:property:: atmosphere_model_name
+    :canonical: ansys.stk.core.stkobjects.astrogator.StateCalcEnvironment.atmosphere_model_name
     :type: str
 
     Get or set the atmospheric density model of the component.

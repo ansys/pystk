@@ -120,7 +120,7 @@ Property detail
 
 .. py:property:: atmosphere_model_source
     :canonical: ansys.stk.core.stkobjects.aviator.AtmosphereModel.atmosphere_model_source
-    :type: WindAtmosModelSource
+    :type: WindAtmosphereModelSource
 
     Get or set the atmosphere model source.
 
