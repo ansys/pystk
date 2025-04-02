@@ -404,7 +404,7 @@ class SnippetsDocstringInjector(libcst.CSTTransformer):
             )
             docstring_to_replace = inspect.cleandoc(docstring_to_replace)
             indent_lvl = self.get_metadata(libcst.metadata.PositionProvider, original_node).start.column
-            docstring_pattern = r"(r?)(\"\"\")(\s*)(\S[\S\s]*\S)(\s*Examples\s*--------[\S\s]*)?(\"\"\")"
+            docstring_pattern = r"(r?)(\"\"\")(\s*)(\S[\S\s]*?\S)(\s*Examples\s*--------[\S\s]*)?\s*(\"\"\")"
 
             if self.examples_to_add:
                 formatted_snippets = self._format_snippet_content(self.examples_to_add)
