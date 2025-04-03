@@ -56,7 +56,7 @@ class GlobeOverlaysSnippets(CodeSnippetsTestBase):
         name="AddTerrainImagery",
         description="Add Imagery and Terrain to the Scene",
         category="Graphics | GlobeOverlays",
-        eid="AgSTKGraphicsLib~IAgStkGraphicsCentralBodyGraphics",
+        eid="graphics~CentralBodyGraphics",
     )
     def AddTerrainImagerySnippet(self, scenario):
         # Scenario scenario: Scenario object
@@ -90,7 +90,7 @@ class GlobeOverlaysSnippets(CodeSnippetsTestBase):
         name="DisplayStarsWater",
         description="Control Display of Stars and Water Texture",
         category="Graphics | GlobeOverlays",
-        eid="AgSTKGraphicsLib~IAgStkGraphicsScene",
+        eid="graphics~Scene",
     )
     def DisplayStarsWaterSnippet(self, scenario):
         # Scenario scenario: Scenario object
@@ -107,7 +107,7 @@ class GlobeOverlaysSnippets(CodeSnippetsTestBase):
         name="SceneLighting",
         description="Control the Lighting of the 3D scene",
         category="Graphics | GlobeOverlays",
-        eid="AgSTKGraphicsLib~IAgStkGraphicsLighting",
+        eid="graphics~Lighting",
     )
     def SceneLightingSnippet(self, scenario):
         # Scenario scenario: Scenario object

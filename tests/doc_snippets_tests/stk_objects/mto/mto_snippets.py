@@ -58,7 +58,7 @@ class MTOSnippets(CodeSnippetsTestBase):
         name="CreateMTO",
         description="Create a New MTO (on the current scenario central body)",
         category="STK Objects | MTO",
-        eid="STKObjects~IAgMto",
+        eid="stkobjects~MTO",
     )
     def CreateMTOSnippet(self, root, scenario):
         # Scenario scenario: Scenario object
@@ -88,7 +88,7 @@ class MTOSnippets(CodeSnippetsTestBase):
         name="MTOLoadTrack",
         description="Load MTO track points from file",
         category="STK Objects | MTO",
-        eid="STKObjects~IAgMto",
+        eid="stkobjects~MTO",
     )
     def MTOLoadTrackSnippet(self, mto):
         # load_points expects the path an Ephemeris file path
