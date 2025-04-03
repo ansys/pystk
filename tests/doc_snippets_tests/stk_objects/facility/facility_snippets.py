@@ -57,7 +57,7 @@ class FacilitySnippets(CodeSnippetsTestBase):
         name="CreateFacility",
         description="Create a facility (on the current scenario central body)",
         category="STK Objects | Facility",
-        eid="STKObjects~IAgFacility",
+        eid="stkobjects~Facility",
     )
     def CreateFacilitySnippet(self, root):
         # StkObjectRoot root: STK Object Model Root
@@ -99,7 +99,7 @@ class FacilitySnippets(CodeSnippetsTestBase):
         name="SetPositionFacility",
         description="Set the geodetic position of the facility",
         category="STK Objects | Facility",
-        eid="STKObjects~IAgFacility",
+        eid="stkobjects~Facility",
     )
     def SetPositionFacilitySnippet(self, facility):
         # Facility facility: Facility Object
@@ -141,7 +141,7 @@ class FacilitySnippets(CodeSnippetsTestBase):
         name="AzElMaskFacility",
         description="Add an AzEl Mask to a Facility",
         category="STK Objects | Facility",
-        eid="STKObjects~IAgFacility",
+        eid="stkobjects~Facility",
     )
     def AzElMaskFacilitySnippet(self, facility):
         # Facility facility: Facility Object
@@ -160,7 +160,7 @@ class FacilitySnippets(CodeSnippetsTestBase):
         name="FacilityAzElMaskDisplay",
         description="Display the AzEl Mask in 2D/3D",
         category="STK Objects | Facility | Graphics",
-        eid="STKObjects~IAgBasicAzElMask",
+        eid="stkobjects~BasicAzElMask",
     )
     def FacilityAzElMaskDisplaySnippet(self, facility):
         # Facility facility: Facility Object

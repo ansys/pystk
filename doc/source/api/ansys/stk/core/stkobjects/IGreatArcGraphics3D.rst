@@ -99,7 +99,7 @@ Property detail
 
 .. py:property:: velocity_covariance
     :canonical: ansys.stk.core.stkobjects.IGreatArcGraphics3D.velocity_covariance
-    :type: VehicleGraphics3DVelCovariance
+    :type: VehicleGraphics3DVelocityCovariance
 
     Get the vehicle's 3D velocity covariance properties.
 

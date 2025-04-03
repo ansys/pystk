@@ -45,7 +45,7 @@ from ansys.stk.core.stkobjects.aviator import (
     StraightAheadReferenceFrame,
     TakeoffMode,
     TurnMode,
-    WindAtmosModelSource,
+    WindAtmosphereModelSource,
     WindModelType,
 )
 
@@ -99,7 +99,7 @@ class AviatorSnippets(CodeSnippetsTestBase):
         name="AddAndRemoveProcedures",
         description="Add and remove procedures",
         category="STK Objects | Vehicles | Common | Propagators | Aviator",
-        eid="AgStkAvtrLib~IAgAvtrProcedureCollection | AgStkAvtrLib~IAgAvtrMission",
+        eid="stkobjects.aviator~ProcedureCollection | stkobjects.aviator~Mission",
     )
     def AddAndRemoveProceduresSnippet(self, propagator, procedures):
         # IProcedureCollection procedures: Procedure Collection object
@@ -138,7 +138,7 @@ class AviatorSnippets(CodeSnippetsTestBase):
         name="AddBasicManeuverProcedure",
         description="Add and configure a basic maneuver procedure",
         category="STK Objects | Vehicles | Common | Propagators | Aviator",
-        eid="AgStkAvtrLib~IAgAvtrProcedureCollection | AgStkAvtrLib~IAgAvtrProcedureBasicManeuver | AgStkAvtrLib~IAgAvtrBasicManeuverStrategyStraightAhead | AgStkAvtrLib~IAgAvtrBasicManeuverStrategyAutopilotProf | AgStkAvtrLib~IAgAvtrBasicManeuverAirspeedOptions",
+        eid="stkobjects.aviator~ProcedureCollection | stkobjects.aviator~ProcedureBasicManeuver | stkobjects.aviator~BasicManeuverStrategyStraightAhead | stkobjects.aviator~BasicManeuverStrategyAutopilotProf | stkobjects.aviator~BasicManeuverAirspeedOptions",
     )
     def AddBasicManeuverProcedureSnippet(self, procedures):
         # IProcedureCollection procedures: Procedure Collection object
@@ -188,7 +188,7 @@ class AviatorSnippets(CodeSnippetsTestBase):
         name="AddEnrouteProcedure",
         description="Add and configure an en-route procedure",
         category="STK Objects | Vehicles | Common | Propagators | Aviator",
-        eid="AgStkAvtrLib~IAgAvtrProcedureCollection | AgStkAvtrLib~IAgAvtrProcedureEnroute | AgStkAvtrLib~IAgAvtrAltitudeMSLAndLevelOffOptions | AgStkAvtrLib~IAgAvtrNavigationOptions | AgStkAvtrLib~IAgAvtrCruiseAirspeedOptions",
+        eid="stkobjects.aviator~ProcedureCollection | stkobjects.aviator~ProcedureEnroute | stkobjects.aviator~AltitudeMSLAndLevelOffOptions | stkobjects.aviator~NavigationOptions | stkobjects.aviator~CruiseAirspeedOptions",
     )
     def AddEnrouteProcedureSnippet(self, procedures):
         # IProcedureCollection procedures: Procedure Collection object
@@ -232,7 +232,7 @@ class AviatorSnippets(CodeSnippetsTestBase):
         name="AddLandingProcedure",
         description="Add and configure a landing procedure",
         category="STK Objects | Vehicles | Common | Propagators | Aviator",
-        eid="AgStkAvtrLib~IAgAvtrProcedureCollection | AgStkAvtrLib~IAgAvtrProcedureLanding | AgStkAvtrLib~IAgAvtrRunwayHeadingOptions | AgStkAvtrLib~IAgAvtrLandingStandardInstrumentApproach",
+        eid="stkobjects.aviator~ProcedureCollection | stkobjects.aviator~ProcedureLanding | stkobjects.aviator~RunwayHeadingOptions | stkobjects.aviator~LandingStandardInstrumentApproach",
     )
     def AddLandingProcedureSnippet(self, procedures):
         # IProcedureCollection procedures: Procedure Collection object
@@ -268,7 +268,7 @@ class AviatorSnippets(CodeSnippetsTestBase):
         name="AddPhase",
         description="Add a new phase and use the same performance models as the first phase",
         category="STK Objects | Vehicles | Common | Propagators | Aviator",
-        eid="AgStkAvtrLib~IAgAvtrPhaseCollection | AgStkAvtrLib~IAgAvtrPhase",
+        eid="stkobjects.aviator~PhaseCollection | stkobjects.aviator~Phase",
     )
     def AddPhaseSnippet(self, phases):
         # PhaseCollection phases: Phase Collection object
@@ -291,7 +291,7 @@ class AviatorSnippets(CodeSnippetsTestBase):
         name="AddTakeoffProcedure",
         description="Add a takeoff procedure from a runway",
         category="STK Objects | Vehicles | Common | Propagators | Aviator",
-        eid="AgStkAvtrLib~IAgAvtrProcedureCollection | AgStkAvtrLib~IAgAvtrProcedureTakeoff | AgStkAvtrLib~IAgAvtrRunwayHeadingOptions | AgStkAvtrLib~IAgAvtrTakeoffNormal",
+        eid="stkobjects.aviator~ProcedureCollection | stkobjects.aviator~ProcedureTakeoff | stkobjects.aviator~RunwayHeadingOptions | stkobjects.aviator~TakeoffNormal",
     )
     def AddTakeoffProcedureSnippet(self, procedures):
         # IProcedureCollection procedures: Procedure Collection object
@@ -328,7 +328,7 @@ class AviatorSnippets(CodeSnippetsTestBase):
         name="ConfigureAviatorPropagator",
         description="Configure the Aviator propagator",
         category="STK Objects | Vehicles | Common | Propagators | Aviator",
-        eid="AgStkAvtrLib~IAgAvtrPropagator",
+        eid="stkobjects.aviator~AviatorPropagator",
     )
     def ConfigureAviatorPropagatorSnippet(self, aircraft):
         # Aircraft aircraft: Aircraft object
@@ -358,7 +358,7 @@ class AviatorSnippets(CodeSnippetsTestBase):
         name="ConfigureBasicAccelerationPerfModel",
         description="Configure the basic acceleration performance model of an aircraft",
         category="STK Objects | Vehicles | Common | Propagators | Aviator",
-        eid="AgStkAvtrLib~IAgAvtrAircraft | AgStkAvtrLib~IAgAvtrAircraftAcceleration | AgStkAvtrLib~IAgAvtrAircraftBasicAccelerationModel | AgStkAvtrLib~IAgAvtrLevelTurns | AgStkAvtrLib~IAgAvtrClimbAndDescentTransitions | AgStkAvtrLib~IAgAvtrAttitudeTransitions | AgStkAvtrLib~IAgAvtrAircraftAero | AgStkAvtrLib~IAgAvtrAircraftSimpleAero | AgStkAvtrLib~IAgAvtrAircraftProp | AgStkAvtrLib~IAgAvtrAircraftSimpleProp",
+        eid="stkobjects.aviator~AircraftModel | stkobjects.aviator~AircraftAcceleration | stkobjects.aviator~AircraftBasicAccelerationModel | stkobjects.aviator~LevelTurns | stkobjects.aviator~ClimbAndDescentTransitions | stkobjects.aviator~AttitudeTransitions | stkobjects.aviator~AircraftAerodynamic | stkobjects.aviator~AircraftSimpleAerodynamic | stkobjects.aviator~AircraftPropulsion | stkobjects.aviator~AircraftSimplePropulsion",
     )
     def ConfigureBasicAccelerationPerfModelSnippet(self, aviatorAircraft):
         # AircraftModel aviatorAircraft: Aviator Aircraft object
@@ -414,7 +414,7 @@ class AviatorSnippets(CodeSnippetsTestBase):
         name="ConfigureBasicCruisePerfModel",
         description="Configure the basic cruise performance model of an aircraft",
         category="STK Objects | Vehicles | Common | Propagators | Aviator",
-        eid="AgStkAvtrLib~IAgAvtrAircraft | AgStkAvtrLib~IAgAvtrAircraftCruise | AgStkAvtrLib~IAgAvtrAircraftBasicCruiseModel",
+        eid="stkobjects.aviator~AircraftModel | stkobjects.aviator~AircraftCruise | stkobjects.aviator~AircraftBasicCruiseModel",
     )
     def ConfigureBasicCruisePerfModelSnippet(self, aviatorAircraft):
         # AircraftModel aviatorAircraft: Aviator Aircraft object
@@ -462,7 +462,7 @@ class AviatorSnippets(CodeSnippetsTestBase):
         name="ConfigurePhasePerformanceModels",
         description="Configure the performance models to be used in the phase",
         category="STK Objects | Vehicles | Common | Propagators | Aviator",
-        eid="AgStkAvtrLib~IAgAvtrPhase | AgStkAvtrLib~IAgAvtrPerformanceModelOptions",
+        eid="stkobjects.aviator~Phase | stkobjects.aviator~PerformanceModelOptions",
     )
     def ConfigurePhasePerformanceModelsSnippet(self, phase):
         # Phase phase: Phase object
@@ -492,7 +492,7 @@ class AviatorSnippets(CodeSnippetsTestBase):
         name="ConfigureProcedure",
         description="Rename a procedure and its site",
         category="STK Objects | Vehicles | Common | Propagators | Aviator",
-        eid="AgStkAvtrLib~IAgAvtrProcedure | AgStkAvtrLib~IAgAvtrSite",
+        eid="stkobjects.aviator~IProcedure | stkobjects.aviator~ISite",
     )
     def ConfigureProcedureSnippet(self, procedure):
         # IProcedure procedure: Procedure object
@@ -515,7 +515,7 @@ class AviatorSnippets(CodeSnippetsTestBase):
         name="ConfigureProcedureTimeOptions",
         description="Configure a procedure time options",
         category="STK Objects | Vehicles | Common | Propagators | Aviator",
-        eid="AgStkAvtrLib~IAgAvtrProcedure | AgStkAvtrLib~IAgAvtrProcedureTimeOptions",
+        eid="stkobjects.aviator~IProcedure | stkobjects.aviator~ProcedureTimeOptions",
     )
     def ConfigureProcedureTimeOptionsSnippet(self, root, procedure):
         # IProcedure procedure: Procedure object
@@ -540,14 +540,14 @@ class AviatorSnippets(CodeSnippetsTestBase):
         name="ConfigureProcedureWindAtmos",
         description="Configure the wind and atmosphere for a procedure",
         category="STK Objects | Vehicles | Common | Propagators | Aviator",
-        eid="AgStkAvtrLib~IAgAvtrProcedure | AgStkAvtrLib~IAgAvtrWindModel | AgStkAvtrLib~IAgAvtrWindModelConstant | AgStkAvtrLib~IAgAvtrAtmosphereModel | AgStkAvtrLib~IAgAvtrAtmosphereModelBasic",
+        eid="stkobjects.aviator~IProcedure | stkobjects.aviator~WindModel | stkobjects.aviator~WindModelConstant | stkobjects.aviator~AtmosphereModel | stkobjects.aviator~AtmosphereModelBasic",
     )
     def ConfigureProcedureWindAtmosSnippet(self, procedure):
         # IProcedure procedure: Procedure object
         # Get the wind model for the procedure
         windModel = procedure.wind_model
         # Use the procedure model
-        windModel.wind_model_source = WindAtmosModelSource.PROCEDURE_MODEL
+        windModel.wind_model_source = WindAtmosphereModelSource.PROCEDURE_MODEL
         # Let's use constant wind
         windModel.wind_model_type = WindModelType.CONSTANT_WIND
         # Get the constant wind model options
@@ -560,7 +560,7 @@ class AviatorSnippets(CodeSnippetsTestBase):
         # Get the atmosphere model used for the procedure
         atmosphere = procedure.atmosphere_model
         # Let's use the procedure model
-        atmosphere.atmosphere_model_source = WindAtmosModelSource.PROCEDURE_MODEL
+        atmosphere.atmosphere_model_source = WindAtmosphereModelSource.PROCEDURE_MODEL
         # Get the basic atmosphere options
         basicAtmosphere = atmosphere.mode_as_basic
         # Use standard 1976 atmosphere
@@ -580,7 +580,7 @@ class AviatorSnippets(CodeSnippetsTestBase):
         name="ConfigureRunwayFromCatalog",
         description="Configure a runway site from a runway in the Aviator catalog",
         category="STK Objects | Vehicles | Common | Propagators | Aviator",
-        eid="AgStkAvtrLib~IAgAvtrSiteRunway | AgStkAvtrLib~IAgAvtrCatalog | AgStkAvtrLib~IAgAvtrUserRunwaySource",
+        eid="stkobjects.aviator~SiteRunway | stkobjects.aviator~Catalog | stkobjects.aviator~UserRunwaySource",
     )
     def ConfigureRunwayFromCatalogSnippet(self, catalog, runway):
         # SiteRunway runway: Runway object
@@ -606,7 +606,7 @@ class AviatorSnippets(CodeSnippetsTestBase):
         name="ConfigureRunwaySite",
         description="Configure a runway site",
         category="STK Objects | Vehicles | Common | Propagators | Aviator",
-        eid="AgStkAvtrLib~IAgAvtrSiteRunway",
+        eid="stkobjects.aviator~SiteRunway",
     )
     def ConfigureRunwaySiteSnippet(self, runway):
         # SiteRunway runway: Runway object
@@ -642,14 +642,14 @@ class AviatorSnippets(CodeSnippetsTestBase):
         name="ConfigureWeatherAtmosphere",
         description="Configure the weather and atmosphere of the Mission",
         category="STK Objects | Vehicles | Common | Propagators | Aviator",
-        eid="AgStkAvtrLib~IAgAvtrMission | AgStkAvtrLib~IAgAvtrWindModel | AgStkAvtrLib~IAgAvtrWindModelConstant | AgStkAvtrLib~IAgAvtrAtmosphereModel | AgStkAvtrLib~IAgAvtrAtmosphereModelBasic",
+        eid="stkobjects.aviator~Mission | stkobjects.aviator~WindModel | stkobjects.aviator~WindModelConstant | stkobjects.aviator~AtmosphereModel | stkobjects.aviator~AtmosphereModelBasic",
     )
     def ConfigureWeatherAtmosphereSnippet(self, mission):
         # Mission mission: Aviator Mission object
         # Get the wind model used for the mission
         windModel = mission.wind_model
         # Let's use the mission model
-        windModel.wind_model_source = WindAtmosModelSource.MISSION_MODEL
+        windModel.wind_model_source = WindAtmosphereModelSource.MISSION_MODEL
         # Let's use constant wind
         windModel.wind_model_type = WindModelType.CONSTANT_WIND
         # Get the constant wind model options
@@ -662,7 +662,7 @@ class AviatorSnippets(CodeSnippetsTestBase):
         # Get the atmosphere model used for the mission
         atmosphere = mission.atmosphere_model
         # Let's use the mission model
-        atmosphere.atmosphere_model_source = WindAtmosModelSource.MISSION_MODEL
+        atmosphere.atmosphere_model_source = WindAtmosphereModelSource.MISSION_MODEL
         # Get the basic atmosphere options
         basicAtmosphere = atmosphere.mode_as_basic
         # Use standard 1976 atmosphere
@@ -683,7 +683,7 @@ class AviatorSnippets(CodeSnippetsTestBase):
         name="CreatePerformanceModel",
         description="Create a new performance model for an aircraft",
         category="STK Objects | Vehicles | Common | Propagators | Aviator",
-        eid="AgStkAvtrLib~IAgAvtrAircraft | AgStkAvtrLib~IAgAvtrAircraftAcceleration | AgStkAvtrLib~IAgAvtrCatalogItem | AgStkAvtrLib~IAgAvtrPerformanceModel",
+        eid="stkobjects.aviator~AircraftModel | stkobjects.aviator~AircraftAcceleration | stkobjects.aviator~ICatalogItem | stkobjects.aviator~IPerformanceModel",
     )
     def CreatePerformanceModelSnippet(self, aviatorAircraft):
         # AircraftModel aviatorAircraft: Aviator Aircraft object
@@ -711,7 +711,7 @@ class AviatorSnippets(CodeSnippetsTestBase):
         name="SetAviatorVehicle",
         description="Set the aircraft used for the mission to an aircraft found in the Aviator catalog",
         category="STK Objects | Vehicles | Common | Propagators | Aviator",
-        eid="AgStkAvtrLib~IAgAvtrMission | AgStkAvtrLib~IAgAvtrCatalog | AgStkAvtrLib~IAgAvtrAircraftCategory | AgStkAvtrLib~IAgAvtrAircraftModels | AgStkAvtrLib~IAgAvtrAircraft",
+        eid="stkobjects.aviator~Mission | stkobjects.aviator~Catalog | stkobjects.aviator~AircraftCategory | stkobjects.aviator~AircraftModels | stkobjects.aviator~AircraftModel",
     )
     def SetAviatorVehicleSnippet(self, propagator):
         # AviatorPropagator propagator: Aviator Propagator object
@@ -739,7 +739,7 @@ class AviatorSnippets(CodeSnippetsTestBase):
         name="SetTheConfiguration",
         description="Set the Configuration used for the Mission",
         category="STK Objects | Vehicles | Common | Propagators | Aviator",
-        eid="AgStkAvtrLib~IAgAvtrMission | AgStkAvtrLib~IAgAvtrConfiguration | AgStkAvtrLib~IAgAvtrStationCollection | AgStkAvtrLib~IAgAvtrPayloadStation | AgStkAvtrLib~IAgAvtrFuelTankExternal",
+        eid="stkobjects.aviator~Mission | stkobjects.aviator~Configuration | stkobjects.aviator~StationCollection | stkobjects.aviator~PayloadStation | stkobjects.aviator~FuelTankExternal",
     )
     def SetTheConfigurationSnippet(self, mission):
         # Mission mission: Aviator Mission object
@@ -783,7 +783,7 @@ class AviatorSnippets(CodeSnippetsTestBase):
         name="SetupAdvancedFixedWingTool",
         description="Configure the Advanced Fixed Wing Tool and set the aircraft to use the resulting performance models",
         category="STK Objects | Vehicles | Common | Propagators | Aviator",
-        eid="AgStkAvtrLib~IAgAvtrAircraft | AgStkAvtrLib~IAgAvtrAdvFixedWingTool",
+        eid="stkobjects.aviator~AircraftModel | stkobjects.aviator~AdvancedFixedWingTool",
     )
     def SetupAdvancedFixedWingToolSnippet(self, aviatorAircraft):
         # AircraftModel aviatorAircraft: Aviator Aircraft object

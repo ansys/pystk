@@ -26,7 +26,7 @@ Overview
               - Set the option to use the stop slant range stopping condition and set the according value.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.is_function_path_valid`
               - Check if the MATLAB function path is valid.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.cancel_target_position_vel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.cancel_target_position_velocity`
               - Cancel the position velocity strategies for MATLAB 3D Guidance.
 
     .. tab-item:: Properties
@@ -65,7 +65,7 @@ Overview
               - Get or set the option to allow MATLAB to compute the true airspeed for the aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.airspeed_options`
               - Get the airspeed options.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.position_vel_strategies`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.position_velocity_strategies`
               - Get the position velocity strategies for MATLAB 3D Guidance.
 
 
@@ -171,9 +171,9 @@ Property detail
 
     Get the airspeed options.
 
-.. py:property:: position_vel_strategies
-    :canonical: ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.position_vel_strategies
-    :type: IBasicManeuverTargetPositionVel
+.. py:property:: position_velocity_strategies
+    :canonical: ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.position_velocity_strategies
+    :type: IBasicManeuverTargetPositionVelocity
 
     Get the position velocity strategies for MATLAB 3D Guidance.
 
@@ -243,8 +243,8 @@ Method detail
 
 
 
-.. py:method:: cancel_target_position_vel(self) -> None
-    :canonical: ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.cancel_target_position_vel
+.. py:method:: cancel_target_position_velocity(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.matlab.StrategyMATLAB3DGuidance.cancel_target_position_velocity
 
     Cancel the position velocity strategies for MATLAB 3D Guidance.
 

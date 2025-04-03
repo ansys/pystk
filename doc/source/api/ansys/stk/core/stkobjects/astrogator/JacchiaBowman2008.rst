@@ -24,7 +24,7 @@ Overview
               - True if using approximate altitude formula.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.sun_position`
               - Get or set the sun position computation.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.atmos_data_source`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.atmosphere_data_source`
               - Get or set the atmospheric model data source - data file or constant values.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.f10`
               - Solar Flux (F10). Dimensionless.
@@ -44,9 +44,9 @@ Overview
               - Average solar Flux (Y10). Dimensionless.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.dst_d_tc`
               - Temperature change calculated from disturbance storm time (DstDTc). Dimensionless.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.atmos_aug_data_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.atmosphere_aug_data_file`
               - Get or set the atmospheric model space weather data file path.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.atmos_aug_dtc_file`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.atmosphere_aug_dtc_file`
               - Get or set the atmospheric model DTC file path.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.drag_model_type`
               - Drag model type.
@@ -84,9 +84,9 @@ Property detail
 
     Get or set the sun position computation.
 
-.. py:property:: atmos_data_source
-    :canonical: ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.atmos_data_source
-    :type: AtmosDataSource
+.. py:property:: atmosphere_data_source
+    :canonical: ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.atmosphere_data_source
+    :type: AtmosphereDataSource
 
     Get or set the atmospheric model data source - data file or constant values.
 
@@ -144,14 +144,14 @@ Property detail
 
     Temperature change calculated from disturbance storm time (DstDTc). Dimensionless.
 
-.. py:property:: atmos_aug_data_file
-    :canonical: ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.atmos_aug_data_file
+.. py:property:: atmosphere_aug_data_file
+    :canonical: ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.atmosphere_aug_data_file
     :type: str
 
     Get or set the atmospheric model space weather data file path.
 
-.. py:property:: atmos_aug_dtc_file
-    :canonical: ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.atmos_aug_dtc_file
+.. py:property:: atmosphere_aug_dtc_file
+    :canonical: ansys.stk.core.stkobjects.astrogator.JacchiaBowman2008.atmosphere_aug_dtc_file
     :type: str
 
     Get or set the atmospheric model DTC file path.

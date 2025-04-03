@@ -6847,7 +6847,7 @@
    <Mapping ParentScope="IAgVeHPOPForceModelDrag" OldName="DragModel" NewName="drag_model" Category="method" />
    <Mapping ParentScope="IAgVeHPOPForceModelDrag" OldName="LowAltAtmosphericDensityModel" NewName="low_altitude_atmospheric_density_model" Category="method" />
    <Mapping ParentScope="IAgVeHPOPForceModelDrag" OldName="BlendingRange" NewName="blending_range" Category="method" />
-   <Mapping ParentScope="IAgVeHPOPForceModelDrag" OldName="LowAltAtmosDensityModel" NewName="low_altitude_atmos_density_model" Category="method" />
+   <Mapping ParentScope="IAgVeHPOPForceModelDrag" OldName="LowAltAtmosDensityModel" NewName="low_altitude_atmosphere_density_model" Category="method" />
    <Mapping OldName="IAgVeHPOPForceModelDragOptions" NewName="VehicleHPOPForceModelDragOptions" Category="interface" />
    <Mapping ParentScope="IAgVeHPOPForceModelDragOptions" OldName="UseApproxAlt" NewName="use_approx_altitude" Category="method" />
    <Mapping ParentScope="IAgVeHPOPForceModelDragOptions" OldName="UseApparentSunPosition" NewName="use_apparent_sun_position" Category="method" />
@@ -8061,7 +8061,7 @@
    <Mapping ParentScope="IAgVeVOCovariance" OldName="IsAttributesTypeSupported" NewName="is_attributes_type_supported" Category="method" />
    <Mapping ParentScope="IAgVeVOCovariance" OldName="AttributesSupportedTypes" NewName="attributes_supported_types" Category="method" />
    <Mapping ParentScope="IAgVeVOCovariance" OldName="Attributes" NewName="attributes" Category="method" />
-   <Mapping OldName="IAgVeVOVelCovariance" NewName="VehicleGraphics3DVelCovariance" Category="interface" />
+   <Mapping OldName="IAgVeVOVelCovariance" NewName="VehicleGraphics3DVelocityCovariance" Category="interface" />
    <Mapping ParentScope="IAgVeVOVelCovariance" OldName="Scale" NewName="scale" Category="method" />
    <Mapping ParentScope="IAgVeVOVelCovariance" OldName="AttributesType" NewName="attributes_type" Category="method" />
    <Mapping ParentScope="IAgVeVOVelCovariance" OldName="SetAttributesType" NewName="set_attributes_type" Category="method" />
@@ -10300,7 +10300,7 @@
    <Mapping OldName="AgVeVOOrbitTickMarks" NewName="VehicleGraphics3DOrbitTickMarks" Category="class" />
    <Mapping OldName="AgVeVOPass" NewName="VehicleGraphics3DPass" Category="class" />
    <Mapping OldName="AgVeVOCovariance" NewName="VehicleGraphics3DCovariance" Category="class" />
-   <Mapping OldName="AgVeVOVelCovariance" NewName="VehicleGraphics3DVelCovariance" Category="class" />
+   <Mapping OldName="AgVeVOVelCovariance" NewName="VehicleGraphics3DVelocityCovariance" Category="class" />
    <Mapping OldName="AgVeVOTrajectoryProximity" NewName="VehicleGraphics3DTrajectoryProximity" Category="class" />
    <Mapping OldName="AgVeVOTrajectory" NewName="VehicleGraphics3DTrajectory" Category="class" />
    <Mapping OldName="AgVeVOTrajectoryTrackData" NewName="VehicleGraphics3DTrajectoryTrackData" Category="class" />
@@ -10811,10 +10811,10 @@
    <Mapping OldName="AgPolarization" NewName="Polarization" Category="class" />
    <Mapping OldName="AgPolarizationElliptical" NewName="PolarizationElliptical" Category="class" />
    <Mapping OldName="AgReceivePolarizationElliptical" NewName="ReceivePolarizationElliptical" Category="class" />
-   <Mapping OldName="AgPolarizationLHC" NewName="PolarizationLHC" Category="class" />
-   <Mapping OldName="AgPolarizationRHC" NewName="PolarizationRHC" Category="class" />
-   <Mapping OldName="AgReceivePolarizationLHC" NewName="ReceivePolarizationLHC" Category="class" />
-   <Mapping OldName="AgReceivePolarizationRHC" NewName="ReceivePolarizationRHC" Category="class" />
+   <Mapping OldName="AgPolarizationLHC" NewName="PolarizationLeftHandCircular" Category="class" />
+   <Mapping OldName="AgPolarizationRHC" NewName="PolarizationRightHandCircular" Category="class" />
+   <Mapping OldName="AgReceivePolarizationLHC" NewName="ReceivePolarizationLeftHandCircular" Category="class" />
+   <Mapping OldName="AgReceivePolarizationRHC" NewName="ReceivePolarizationRightHandCircular" Category="class" />
    <Mapping OldName="AgPolarizationLinear" NewName="PolarizationLinear" Category="class" />
    <Mapping OldName="AgReceivePolarizationLinear" NewName="ReceivePolarizationLinear" Category="class" />
    <Mapping OldName="AgPolarizationHorizontal" NewName="PolarizationHorizontal" Category="class" />

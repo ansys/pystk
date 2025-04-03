@@ -64,7 +64,7 @@ class ObjectCoverageSnippets(CodeSnippetsTestBase):
         name="ComputeObjectCoverage",
         description="Compute Object Coverage",
         category="STK Objects | Object Coverage",
-        eid="STKObjects~IAgStkObjectCoverage",
+        eid="stkobjects~ObjectCoverage",
     )
     def ComputeObjectCoverageSnippet(self, aircraft):
         # Aircraft aircraft: Aircraft object

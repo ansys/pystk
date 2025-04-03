@@ -606,10 +606,10 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcPositionDifferenceOtherSegment`
               - PosDifferenceOtherSegment Calc objects.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcVelDifferenceOtherSegment`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcVelocityDifferenceOtherSegment`
               - VelDifferenceOtherSegment Calc objects.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcPositionVelDifferenceOtherSegment`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcPositionVelocityDifferenceOtherSegment`
               - PosVelDifferenceOtherSegment Calc objects.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcValueAtSegment`
@@ -747,7 +747,7 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcVMagnitude`
               - VMag Calc objects.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcVelAz`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcVelocityAz`
               - Velocity Azimuth Calc objects.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcC3Energy`
@@ -759,7 +759,7 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcInAsympRA`
               - InAsymptoteRA Calc objects.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcInVelAzAtPeriapsis`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcInVelocityAzAtPeriapsis`
               - InVelocityAzAtPeriapsis Calc objects.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcOutAsympDec`
@@ -768,7 +768,7 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcOutAsympRA`
               - OutAsymptoteRA Calc objects.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcOutVelAzAtPeriapsis`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcOutVelocityAzAtPeriapsis`
               - OutVelocityAzAtPeriapsis Calc objects.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.StateCalcDuration`
@@ -1631,7 +1631,7 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.SunPosition`
               - The sun position type.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.AtmosDataSource`
+            * - :py:class:`~ansys.stk.core.stkobjects.astrogator.AtmosphereDataSource`
               - The Atmospheric data source type.
 
             * - :py:class:`~ansys.stk.core.stkobjects.astrogator.GeoMagneticFluxSource`
@@ -1920,8 +1920,8 @@ Object Model components specifically designed to support STK Astrogator.
      StateCalcDifference<astrogator/StateCalcDifference>
      StateCalcDifferenceOtherSegment<astrogator/StateCalcDifferenceOtherSegment>
      StateCalcPositionDifferenceOtherSegment<astrogator/StateCalcPositionDifferenceOtherSegment>
-     StateCalcVelDifferenceOtherSegment<astrogator/StateCalcVelDifferenceOtherSegment>
-     StateCalcPositionVelDifferenceOtherSegment<astrogator/StateCalcPositionVelDifferenceOtherSegment>
+     StateCalcVelocityDifferenceOtherSegment<astrogator/StateCalcVelocityDifferenceOtherSegment>
+     StateCalcPositionVelocityDifferenceOtherSegment<astrogator/StateCalcPositionVelocityDifferenceOtherSegment>
      StateCalcValueAtSegment<astrogator/StateCalcValueAtSegment>
      StateCalcMaxValue<astrogator/StateCalcMaxValue>
      StateCalcMinValue<astrogator/StateCalcMinValue>
@@ -1967,14 +1967,14 @@ Object Model components specifically designed to support STK Astrogator.
      StateCalcRMagnitude<astrogator/StateCalcRMagnitude>
      StateCalcRA<astrogator/StateCalcRA>
      StateCalcVMagnitude<astrogator/StateCalcVMagnitude>
-     StateCalcVelAz<astrogator/StateCalcVelAz>
+     StateCalcVelocityAz<astrogator/StateCalcVelocityAz>
      StateCalcC3Energy<astrogator/StateCalcC3Energy>
      StateCalcInAsympDec<astrogator/StateCalcInAsympDec>
      StateCalcInAsympRA<astrogator/StateCalcInAsympRA>
-     StateCalcInVelAzAtPeriapsis<astrogator/StateCalcInVelAzAtPeriapsis>
+     StateCalcInVelocityAzAtPeriapsis<astrogator/StateCalcInVelocityAzAtPeriapsis>
      StateCalcOutAsympDec<astrogator/StateCalcOutAsympDec>
      StateCalcOutAsympRA<astrogator/StateCalcOutAsympRA>
-     StateCalcOutVelAzAtPeriapsis<astrogator/StateCalcOutVelAzAtPeriapsis>
+     StateCalcOutVelocityAzAtPeriapsis<astrogator/StateCalcOutVelocityAzAtPeriapsis>
      StateCalcDuration<astrogator/StateCalcDuration>
      StateCalcUserValue<astrogator/StateCalcUserValue>
      StateCalcVectorGeometryToolAngle<astrogator/StateCalcVectorGeometryToolAngle>
@@ -2265,7 +2265,7 @@ Object Model components specifically designed to support STK Astrogator.
     ≔ SolarForceMethod<astrogator/SolarForceMethod>
     ≔ ShadowModel<astrogator/ShadowModel>
     ≔ SunPosition<astrogator/SunPosition>
-    ≔ AtmosDataSource<astrogator/AtmosDataSource>
+    ≔ AtmosphereDataSource<astrogator/AtmosphereDataSource>
     ≔ GeoMagneticFluxSource<astrogator/GeoMagneticFluxSource>
     ≔ GeoMagneticFluxUpdateRate<astrogator/GeoMagneticFluxUpdateRate>
     ≔ DragModelType<astrogator/DragModelType>
