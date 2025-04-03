@@ -59,7 +59,7 @@ class GraphicsSnippets(CodeSnippetsTestBase):
         name="CylinderFillEnumeration",
         description="Combine enumerations with the logical OR operator",
         category="Graphics",
-        eid="AgSTKGraphicsLib~CylinderFillOptions",
+        eid="graphics~CylinderFillOptions",
     )
     def CylinderFillEnumerationSnippet(self):
         from ansys.stk.core.graphics import CylinderFillOptions

@@ -108,7 +108,7 @@ class ScenarioManagementSnippets(CodeSnippetsTestBase):
         name="STKEngineEvents",
         description="Manage STK Engine events",
         category="Scenario | Scenario Management",
-        eid="STKObjects~StkObjectRoot",
+        eid="stkobjects~StkObjectRoot",
     )
     def STKEngineEventsSnippet(self, root):
         # StkObjectRoot root: STK Object Model Root
@@ -136,7 +136,7 @@ class ScenarioManagementSnippets(CodeSnippetsTestBase):
         name="STKDesktopEvents",
         description="Manage STK Desktop events",
         category="Scenario | Scenario Management",
-        eid="STKObjects~StkObjectRoot",
+        eid="stkobjects~StkObjectRoot",
     )
     def STKDesktopEventsSnippet(self):
         from ansys.stk.core.stkdesktop import STKDesktop

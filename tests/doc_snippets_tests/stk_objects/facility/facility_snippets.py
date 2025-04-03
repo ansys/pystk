@@ -70,7 +70,7 @@ class FacilitySnippets(CodeSnippetsTestBase):
         name="SetHeightFacility",
         description="Create a facility and set its height relative to ground level",
         category="STK Objects | Facility",
-        eid="STKObjects~Facility",
+        eid="stkobjects~Facility",
     )
     def SetHeightFacilitySnippet(self, root):
         from ansys.stk.core.utilities.exceptions import STKRuntimeError
@@ -123,7 +123,7 @@ class FacilitySnippets(CodeSnippetsTestBase):
         name="GetPositionFacility",
         description="Get the cartesian position of the facility",
         category="STK Objects | Facility",
-        eid="STKObjects~Facility",
+        eid="stkobjects~Facility",
     )
     def GetPositionFacilitySnippet(self, facility):
         # Facility facility: Facility Object

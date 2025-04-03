@@ -54,7 +54,7 @@ class ConnectSnippets(CodeSnippetsTestBase):
         name="GetSetRGBColor",
         description="Get and set a three-channel color for the graphics of an STK object",
         category="Colors",
-        eid="AgColors~Color | AgColors~Colors",
+        eid="utilities.colors~Color | utilities.colors~Colors",
     )
     def GetSetRGBColorSnippet(self, root):
         from ansys.stk.core.stkobjects import STKObjectType
@@ -73,7 +73,7 @@ class ConnectSnippets(CodeSnippetsTestBase):
         name="GetSetRGBAColor",
         description="Get and set a four-channel color for the graphics of an STK object",
         category="Colors",
-        eid="AgColors~Color | AgColors~ColorRGBA | AgColors~Colors",
+        eid="utilities.colors~Color | utilities.colors~ColorRGBA | utilities.colors~Colors",
     )
     def GetSetRGBAColorSnippet(self, root):
         from ansys.stk.core.utilities.colors import Colors, ColorRGBA

@@ -29,7 +29,7 @@ Overview
 Examples
 --------
 
-Get and set a three-channel color for the graphics of an STK object
+Get and set a four-channel color for the graphics of an STK object
 
 .. code-block:: python
 

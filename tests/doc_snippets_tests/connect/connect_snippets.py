@@ -88,7 +88,7 @@ class ConnectSnippets(CodeSnippetsTestBase):
         name="ConnectCommandArrays",
         description="Use arrays to send and retrieve data with Connect",
         category="Connect",
-        eid="STKObjects~StkObjectRoot",
+        eid="stkobjects~StkObjectRoot",
     )
     def ConnectCommandArraysSnippet(self, root):
         from ansys.stk.core.stkutil import ExecuteMultipleCommandsMode

@@ -111,7 +111,7 @@ Set the geodetic position of the facility
     facility.height_above_ground = 0.05  # km
 
 
-Create a facility and set its height above ground level
+Create a facility and set its height relative to ground level
 
 .. code-block:: python
 

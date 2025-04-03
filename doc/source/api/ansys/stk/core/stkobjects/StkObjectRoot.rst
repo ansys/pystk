@@ -279,13 +279,10 @@ Manage STK Engine events
 
 .. code-block:: python
 
-    from ansys.stk.core.stkengine import STKEngine
-
+    # StkObjectRoot root: STK Object Model Root
     def on_scenario_new_custom_callback(path:str):
         print(f'Scenario {path} has been created.')
 
-    stk = STKEngine.start_application()
-    root = stk.new_object_root()
     skt_object_root_events = root.subscribe()
     skt_object_root_events.on_scenario_new += on_scenario_new_custom_callback
 
