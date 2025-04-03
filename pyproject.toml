@@ -62,6 +62,7 @@ doc = [
     "jupyterlab==4.3.6",
     "jupytext==1.16.7",
     "jupyter-server==2.15.0",
+    "libcst==1.6.0",
     "myst-parser==4.0.1",
     "nbsphinx==0.9.7",
     "numpydoc==1.8.0",
@@ -138,6 +139,10 @@ convention = "numpy"
 combine-as-imports = true
 force-sort-within-sections = true
 known-first-party = ["ansys"]
+
+[tool.ruff.lint.pep8-naming]
+# Ignore overridden ast/libcst functions
+extend-ignore-names = ["visit_*", "leave_*"]
 
 # TODO: the following configuration has no effect, see issue
 # https://github.com/codespell-project/codespell/issues/2375

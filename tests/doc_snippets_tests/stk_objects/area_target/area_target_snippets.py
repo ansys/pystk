@@ -56,7 +56,7 @@ class AreaTargetSnippets(CodeSnippetsTestBase):
         name="CreateAreaTarget",
         description="Create an area target (on the current scenario central body)",
         category="STK Objects | Area Target",
-        eid="STKObjects~IAgAreaTarget",
+        eid="stkobjects~AreaTarget",
     )
     def CreateAreaTargetSnippet(self, root):
         # StkObjectRoot root: STK Object Model Root
@@ -77,7 +77,7 @@ class AreaTargetSnippets(CodeSnippetsTestBase):
         name="CreateEllipticalAreaTarget",
         description="Set an elliptical area target",
         category="STK Objects | Area Target",
-        eid="STKObjects~IAgAreaTarget",
+        eid="stkobjects~AreaTarget",
     )
     def CreateEllipticalAreaTargetSnippet(self, root, areaTarget):
         # StkObjectRoot root: STK Object Model Root
@@ -105,7 +105,7 @@ class AreaTargetSnippets(CodeSnippetsTestBase):
         name="CreateAreaTargetCommon",
         description="Set an elliptical area target (using common tasks)",
         category="STK Objects | Area Target",
-        eid="STKObjects~IAgAreaTarget",
+        eid="stkobjects~AreaTarget",
     )
     def CreateAreaTargetCommonSnippet(self, areaTarget):
         # StkObjectRoot root: STK Object Model Root
@@ -126,7 +126,7 @@ class AreaTargetSnippets(CodeSnippetsTestBase):
         name="CreateBoundaryAreaTarget",
         description="Define area target boundary and position from list of lat/lon/alt",
         category="STK Objects | Area Target",
-        eid="STKObjects~IAgAreaTarget | STKObjects~IAgAreaTypePatternCollection",
+        eid="stkobjects~AreaTarget | stkobjects~AreaTypePatternCollection",
     )
     def CreateBoundaryAreaTargetSnippet(self, root, areaTarget):
         # StkObjectRoot root: STK Object Model Root
@@ -155,7 +155,7 @@ class AreaTargetSnippets(CodeSnippetsTestBase):
         name="CreateBoundaryAreaTargetList",
         description="Define area target boundary and position from list of lat/lon/alt (using common tasks)",
         category="STK Objects | Area Target",
-        eid="STKObjects~IAgAreaTarget",
+        eid="stkobjects~AreaTarget",
     )
     def CreateBoundaryAreaTargetListSnippet(self, areaTarget):
         # AreaTarget areaTarget: AreaTarget object
@@ -181,7 +181,7 @@ class AreaTargetSnippets(CodeSnippetsTestBase):
         name="ListAreaTargetPoints",
         description="List all points in an area target",
         category="STK Objects | Area Target",
-        eid="STKObjects~IAgAreaTarget",
+        eid="stkobjects~AreaTarget",
     )
     def ListAreaTargetPointsSnippet(self, areaTarget):
         # AreaTarget areaTarget: AreaTarget object

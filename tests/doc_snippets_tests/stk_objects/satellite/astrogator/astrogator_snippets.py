@@ -64,7 +64,7 @@ class AstrogatorSnippets(CodeSnippetsTestBase):
         name="AstrogatorRunMCS",
         description="Run the Astrogator MCS",
         category="STK Objects | Satellite | Astrogator",
-        eid="AgStkGatorLib~IAgVADriverMCS",
+        eid="stkobjects.astrogator~MCSDriver",
     )
     def AstrogatorRunMCSSnippet(self, driver):
         # MCSDriver driver: MCS driver interface

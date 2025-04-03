@@ -60,7 +60,7 @@ class ConnectSnippets(CodeSnippetsTestBase):
         name="ConnectCommand",
         description="Execute Connect command",
         category="Connect",
-        eid="STKObjects~IAgStkObjectRoot",
+        eid="stkobjects~StkObjectRoot",
     )
     def ConnectCommandSnippet(self, root):
         root.execute_command("New / */Target MyTarget")
@@ -75,7 +75,7 @@ class ConnectSnippets(CodeSnippetsTestBase):
         name="ConnectCommandMultiple",
         description="Execute multiple Connect commands",
         category="Connect",
-        eid="STKObjects~IAgStkObjectRoot",
+        eid="stkobjects~StkObjectRoot",
     )
     def ConnectCommandMultipleSnippet(self, root):
         commandList = [["New / */Place MyPlace"], ["SetPosition */Place/MyPlace Geodetic 37.9 -75.5 0.0"]]
@@ -92,7 +92,7 @@ class ConnectSnippets(CodeSnippetsTestBase):
         name="ResultsConnectCommand",
         description="Extract data from Connect result",
         category="Connect",
-        eid="STKObjects~IAgStkObjectRoot",
+        eid="stkobjects~StkObjectRoot",
     )
     def ResultsConnectCommandSnippet(self, root):
         result = root.execute_command('Report_RM */Place/MyPlace Style "Cartesian Position"')
