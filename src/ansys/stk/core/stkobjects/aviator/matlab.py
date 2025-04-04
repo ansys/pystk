@@ -374,8 +374,8 @@ class StrategyMATLAB3DGuidance(IBasicManeuverStrategy, SupportsDeleteCallback):
     _get_compute_tas_dot_method_offset = 25
     _set_compute_tas_dot_method_offset = 26
     _get_airspeed_options_method_offset = 27
-    _get_position_vel_strategies_method_offset = 28
-    _cancel_target_position_vel_method_offset = 29
+    _get_position_velocity_strategies_method_offset = 28
+    _cancel_target_position_velocity_method_offset = 29
     _metadata = {
         "iid_data" : (5207808632699689454, 11389872158525712815),
         "vtable_reference" : IUnknown._vtable_offset + IUnknown._num_methods - 1,
@@ -597,20 +597,20 @@ class StrategyMATLAB3DGuidance(IBasicManeuverStrategy, SupportsDeleteCallback):
         """Get the airspeed options."""
         return self._intf.get_property(StrategyMATLAB3DGuidance._metadata, StrategyMATLAB3DGuidance._get_airspeed_options_metadata)
 
-    _get_position_vel_strategies_metadata = { "offset" : _get_position_vel_strategies_method_offset,
+    _get_position_velocity_strategies_metadata = { "offset" : _get_position_velocity_strategies_method_offset,
             "arg_types" : (POINTER(agcom.PVOID),),
             "marshallers" : (agmarshall.InterfaceOutArg,) }
     @property
-    def position_vel_strategies(self) -> "IBasicManeuverTargetPositionVel":
+    def position_velocity_strategies(self) -> "IBasicManeuverTargetPositionVelocity":
         """Get the position velocity strategies for MATLAB 3D Guidance."""
-        return self._intf.get_property(StrategyMATLAB3DGuidance._metadata, StrategyMATLAB3DGuidance._get_position_vel_strategies_metadata)
+        return self._intf.get_property(StrategyMATLAB3DGuidance._metadata, StrategyMATLAB3DGuidance._get_position_velocity_strategies_metadata)
 
-    _cancel_target_position_vel_metadata = { "offset" : _cancel_target_position_vel_method_offset,
+    _cancel_target_position_velocity_metadata = { "offset" : _cancel_target_position_velocity_method_offset,
             "arg_types" : (),
             "marshallers" : () }
-    def cancel_target_position_vel(self) -> None:
+    def cancel_target_position_velocity(self) -> None:
         """Cancel the position velocity strategies for MATLAB 3D Guidance."""
-        return self._intf.invoke(StrategyMATLAB3DGuidance._metadata, StrategyMATLAB3DGuidance._cancel_target_position_vel_metadata, )
+        return self._intf.invoke(StrategyMATLAB3DGuidance._metadata, StrategyMATLAB3DGuidance._cancel_target_position_velocity_metadata, )
 
     _property_names[target_name] = "target_name"
     _property_names[valid_target_names] = "valid_target_names"
@@ -627,7 +627,7 @@ class StrategyMATLAB3DGuidance(IBasicManeuverStrategy, SupportsDeleteCallback):
     _property_names[hobs_angle_tol] = "hobs_angle_tol"
     _property_names[compute_tas_dot] = "compute_tas_dot"
     _property_names[airspeed_options] = "airspeed_options"
-    _property_names[position_vel_strategies] = "position_vel_strategies"
+    _property_names[position_velocity_strategies] = "position_velocity_strategies"
 
     def __init__(self, source_object=None):
         """Construct an object of type StrategyMATLAB3DGuidance."""

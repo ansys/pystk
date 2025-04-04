@@ -22,7 +22,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeCourse.set_control_limit`
               - Set the method and corresponding value to define the control limits of the aircraft during the maneuver.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeCourse.cancel_target_position_vel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeCourse.cancel_target_position_velocity`
               - Cancel the position velocity strategies for Relative Course.
 
     .. tab-item:: Properties
@@ -67,7 +67,7 @@ Overview
               - Get or set the closure high off boresight angle tolerance.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeCourse.compensate_for_coriolis_acceleration`
               - Get or set the option to compensate for the acceleration due to the Coriolis effect.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeCourse.position_vel_strategies`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeCourse.position_velocity_strategies`
               - Get the position velocity strategies for Relative Course.
 
 
@@ -191,9 +191,9 @@ Property detail
 
     Get or set the option to compensate for the acceleration due to the Coriolis effect.
 
-.. py:property:: position_vel_strategies
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeCourse.position_vel_strategies
-    :type: BasicManeuverTargetPositionVel
+.. py:property:: position_velocity_strategies
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeCourse.position_velocity_strategies
+    :type: BasicManeuverTargetPositionVelocity
 
     Get the position velocity strategies for Relative Course.
 
@@ -247,8 +247,8 @@ Method detail
 
 
 
-.. py:method:: cancel_target_position_vel(self) -> None
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeCourse.cancel_target_position_vel
+.. py:method:: cancel_target_position_velocity(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRelativeCourse.cancel_target_position_velocity
 
     Cancel the position velocity strategies for Relative Course.
 

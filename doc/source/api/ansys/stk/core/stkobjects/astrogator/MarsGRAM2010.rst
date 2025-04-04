@@ -34,11 +34,11 @@ Overview
               - Full path of namelist file.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MarsGRAM2010.density_type`
               - Low, mean, high or randomly perturbed density type.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MarsGRAM2010.atmos_data_source`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MarsGRAM2010.atmosphere_data_source`
               - Get or set the atmospheric model data source - data file or constant values.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MarsGRAM2010.f_10_p7`
               - Solar Flux (F10.7); the daily Ottawa 10.7 cm solar flux value. Dimensionless.
-            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MarsGRAM2010.atmos_data_filename`
+            * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MarsGRAM2010.atmosphere_data_filename`
               - Get or set the atmospheric model data file path.
             * - :py:attr:`~ansys.stk.core.stkobjects.astrogator.MarsGRAM2010.drag_model_type`
               - Drag model type.
@@ -106,9 +106,9 @@ Property detail
 
     Low, mean, high or randomly perturbed density type.
 
-.. py:property:: atmos_data_source
-    :canonical: ansys.stk.core.stkobjects.astrogator.MarsGRAM2010.atmos_data_source
-    :type: AtmosDataSource
+.. py:property:: atmosphere_data_source
+    :canonical: ansys.stk.core.stkobjects.astrogator.MarsGRAM2010.atmosphere_data_source
+    :type: AtmosphereDataSource
 
     Get or set the atmospheric model data source - data file or constant values.
 
@@ -118,8 +118,8 @@ Property detail
 
     Solar Flux (F10.7); the daily Ottawa 10.7 cm solar flux value. Dimensionless.
 
-.. py:property:: atmos_data_filename
-    :canonical: ansys.stk.core.stkobjects.astrogator.MarsGRAM2010.atmos_data_filename
+.. py:property:: atmosphere_data_filename
+    :canonical: ansys.stk.core.stkobjects.astrogator.MarsGRAM2010.atmosphere_data_filename
     :type: str
 
     Get or set the atmospheric model data file path.

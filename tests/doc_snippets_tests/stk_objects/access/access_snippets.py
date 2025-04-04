@@ -72,7 +72,7 @@ class AccessSnippets(CodeSnippetsTestBase):
         name="AccessConstraints",
         description="Get handle to the object access constraints",
         category="STK Objects | Access",
-        eid="STKObjects~IAgAccessConstraintCollection",
+        eid="stkobjects~AccessConstraintCollection",
     )
     def AccessConstraintsSnippet(self, satellite):
         # Satellite satellite: Satellite object
@@ -92,7 +92,7 @@ class AccessSnippets(CodeSnippetsTestBase):
         name="AvailableAccessConstraints",
         description="Return a list of available constraints",
         category="STK Objects | Access",
-        eid="STKObjects~IAgAccessConstraint",
+        eid="stkobjects~IAccessConstraint",
     )
     def AvailableAccessConstraintsSnippet(self, accessConstraints):
         # AccessConstraintCollection accessConstraints: Access Constraint collection
@@ -116,7 +116,7 @@ class AccessSnippets(CodeSnippetsTestBase):
         name="AddLightingConstraint",
         description="Add and configure a lighting condition access constraint",
         category="STK Objects | Access",
-        eid="STKObjects~IAgAccessConstraint",
+        eid="stkobjects~IAccessConstraint",
     )
     def AddLightingConstraintSnippet(self, accessConstraints):
         # AccessConstraintCollection accessConstraints: Access Constraint collection
@@ -139,7 +139,7 @@ class AccessSnippets(CodeSnippetsTestBase):
         name="AddSunExclusionConstraint",
         description="Add and configure a Line Of Sight sun exclusion access constraint",
         category="STK Objects | Access",
-        eid="STKObjects~IAgAccessConstraint",
+        eid="stkobjects~IAccessConstraint",
     )
     def AddSunExclusionConstraintSnippet(self, accessConstraints):
         # AccessConstraintCollection accessConstraints: Access Constraint collection
@@ -162,7 +162,7 @@ class AccessSnippets(CodeSnippetsTestBase):
         name="AddLunarElevationAngleConstraint",
         description="Add and configure a lunar elevation angle access constraint",
         category="STK Objects | Access",
-        eid="STKObjects~IAgAccessConstraint",
+        eid="stkobjects~IAccessConstraint",
     )
     def AddLunarElevationAngleConstraintSnippet(self, accessConstraints):
         # AccessConstraintCollection accessConstraints: Access Constraint collection
@@ -188,7 +188,7 @@ class AccessSnippets(CodeSnippetsTestBase):
         name="AddSunElevationAngleConstraint",
         description="Add and configure a sun elevation angle access constraint",
         category="STK Objects | Access",
-        eid="STKObjects~IAgAccessConstraint",
+        eid="stkobjects~IAccessConstraint",
     )
     def AddSunElevationAngleConstraintSnippet(self, accessConstraints):
         # AccessConstraintCollection accessConstraints: Access Constraint collection
@@ -214,7 +214,7 @@ class AccessSnippets(CodeSnippetsTestBase):
         name="AddCbObstructionConstraint",
         description="Add and configure a central body obstruction access constraint",
         category="STK Objects | Access",
-        eid="STKObjects~IAgAccessConstraint",
+        eid="stkobjects~IAccessConstraint",
     )
     def AddCbObstructionConstraintSnippet(self, accessConstraints):
         # AccessConstraintCollection accessConstraints: Access Constraint collection
@@ -252,7 +252,7 @@ class AccessSnippets(CodeSnippetsTestBase):
         name="AddAltitudeConstraint",
         description="Add and configure an altitude access constraint",
         category="STK Objects | Access",
-        eid="STKObjects~IAgAccessConstraint",
+        eid="stkobjects~IAccessConstraint",
     )
     def AddAltitudeConstraintSnippet(self, accessConstraints):
         # AccessConstraintCollection accessConstraints: Access Constraint collection
@@ -277,7 +277,7 @@ class AccessSnippets(CodeSnippetsTestBase):
         name="AddMultipleConstraint",
         description="Add multiple access constraints of the same type to an STK Object",
         category="STK Objects | Access",
-        eid="STKObjects~IAgAccessConstraint",
+        eid="stkobjects~IAccessConstraint",
     )
     def AddMultipleConstraintSnippet(self, accessConstraints):
         # AccessConstraintCollection accessConstraints: Access Constraint collection
@@ -303,7 +303,7 @@ class AccessSnippets(CodeSnippetsTestBase):
         name="AddExclusionZoneConstraint",
         description="Add an Exclusion Zone access constraint",
         category="STK Objects | Access",
-        eid="STKObjects~IAgAccessConstraint",
+        eid="stkobjects~IAccessConstraint",
     )
     def AddExclusionZoneConstraintSnippet(self, accessConstraints):
         # AccessConstraintCollection accessConstraints: Access Constraint collection
@@ -327,7 +327,7 @@ class AccessSnippets(CodeSnippetsTestBase):
         name="RemoveAllConstraints",
         description="Remove all access constraints except for Line Of Sight",
         category="STK Objects | Access",
-        eid="STKObjects~IAgAccessConstraint",
+        eid="stkobjects~IAccessConstraint",
     )
     def RemoveAllConstraintsSnippet(self, accessConstraints):
         # AccessConstraintCollection accessConstraints: Access Constraint collection
@@ -363,7 +363,7 @@ class AccessSnippets(CodeSnippetsTestBase):
         name="ComputeAccess",
         description="Compute an access between two STK Objects (using IStkObject interface)",
         category="STK Objects | Access",
-        eid="STKObjects~IAgStkAccess",
+        eid="stkobjects~Access",
     )
     def ComputeAccessSnippet(self, satellite, facility):
         # Satellite satellite: Satellite object
@@ -390,7 +390,7 @@ class AccessSnippets(CodeSnippetsTestBase):
         name="ComputeAccessPaths",
         description="Compute an access between two STK Objects (using object path)",
         category="STK Objects | Access",
-        eid="STKObjects~IAgStkAccess",
+        eid="stkobjects~Access",
     )
     def ComputeAccessPathsSnippet(self, satellite):
         # Satellite satellite: Satellite object
@@ -419,7 +419,7 @@ class AccessSnippets(CodeSnippetsTestBase):
         name="ComputeAccessAdvancedSettings",
         description="Compute Access with Advanced Settings",
         category="STK Objects | Access",
-        eid="STKObjects~IAgStkAccess",
+        eid="stkobjects~Access",
     )
     def ComputeAccessAdvancedSettingsSnippet(self, access):
         # Access access: Access object
@@ -447,7 +447,7 @@ class AccessSnippets(CodeSnippetsTestBase):
         name="ComputeAccessPoint",
         description="Compute an access for one point",
         category="STK Objects | Access",
-        eid="STKObjects~IAgOnePtAccess",
+        eid="stkobjects~OnePointAccess",
     )
     def ComputeAccessPointSnippet(self, root, facility):
         # IStkObject facility: Facility object
@@ -492,7 +492,7 @@ class AccessSnippets(CodeSnippetsTestBase):
         name="ExtractAccessIntervals",
         description="Compute and extract access interval times",
         category="STK Objects | Access",
-        eid="STKObjects~IAgStkAccess",
+        eid="stkobjects~Access",
     )
     def ExtractAccessIntervalsSnippet(self, access):
         # Access access: Access calculation
@@ -518,7 +518,7 @@ class AccessSnippets(CodeSnippetsTestBase):
         name="ConfigureAccessInterval",
         description="Configure the access analysis time period to specified time instants",
         category="STK Objects | Access",
-        eid="STKObjects~IAgStkAccess",
+        eid="stkobjects~Access",
     )
     def ConfigureAccessIntervalSnippet(self, root):
         # StkObjectRoot root: STK Object Model root
@@ -565,7 +565,7 @@ class AccessSnippets(CodeSnippetsTestBase):
         name="ConfigureAccessIntervalAvailability",
         description="Configure the access interval to the availability time span of the object where access is being computed to",
         category="STK Objects | Access",
-        eid="STKObjects~IAgAccessConstraint",
+        eid="stkobjects~IAccessConstraint",
     )
     def ConfigureAccessIntervalAvailabilitySnippet(self, root):
         # StkObjectRoot root: STK Object Model root
@@ -599,7 +599,7 @@ class AccessSnippets(CodeSnippetsTestBase):
         name="GetAccesses",
         description="Get access between objects by path using the existing accesses",
         category="STK Objects | Access",
-        eid="STKObjects~IAgAccessConstraint",
+        eid="stkobjects~IAccessConstraint",
     )
     def GetAccessesSnippet(self, root):
         # StkObjectRoot root: STK Object Model root

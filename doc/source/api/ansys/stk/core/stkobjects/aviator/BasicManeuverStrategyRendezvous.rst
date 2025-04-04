@@ -24,7 +24,7 @@ Overview
               - Set whether to enable collision avoidance and the corresponding minimum distance between this aircraft and the target aircraft.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRendezvous.set_airspeed_factor`
               - Set whether to enable the option to control how fine the control is and the corresponding dimensionless factor.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRendezvous.cancel_target_position_vel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRendezvous.cancel_target_position_velocity`
               - Cancel the position velocity strategies for Rendezvous.
 
     .. tab-item:: Properties
@@ -73,7 +73,7 @@ Overview
               - Get the maneuver factor, a dimensionless factor defining how fine the control is over airspeed adjustments in formation flight.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRendezvous.stop_condition`
               - Get or set the stopping condition for the maneuver.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRendezvous.position_vel_strategies`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRendezvous.position_velocity_strategies`
               - Get the position velocity strategies for Rendezvous.
 
 
@@ -209,9 +209,9 @@ Property detail
 
     Get or set the stopping condition for the maneuver.
 
-.. py:property:: position_vel_strategies
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRendezvous.position_vel_strategies
-    :type: BasicManeuverTargetPositionVel
+.. py:property:: position_velocity_strategies
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRendezvous.position_velocity_strategies
+    :type: BasicManeuverTargetPositionVelocity
 
     Get the position velocity strategies for Rendezvous.
 
@@ -283,8 +283,8 @@ Method detail
 
 
 
-.. py:method:: cancel_target_position_vel(self) -> None
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRendezvous.cancel_target_position_vel
+.. py:method:: cancel_target_position_velocity(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyRendezvous.cancel_target_position_velocity
 
     Cancel the position velocity strategies for Rendezvous.
 

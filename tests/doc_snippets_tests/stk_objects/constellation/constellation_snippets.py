@@ -65,7 +65,7 @@ class ConstellationSnippets(CodeSnippetsTestBase):
         name="CreateConstellation",
         description="Define a constellation",
         category="STK Objects | Constellation",
-        eid="STKObjects~IAgConstellation",
+        eid="stkobjects~Constellation",
     )
     def CreateConstellationSnippet(self, root, satellite):
         # StkObjectRoot root: STK Object Model Root
