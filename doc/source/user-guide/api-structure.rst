@@ -238,21 +238,21 @@ the table below.
 
     * - **Event interface**
       - **Parent object**
-    * - ``IAgStkObjectRootEvents``
+    * - ``IStkObjectRootEvents``
       - :py:class:`~ansys.stk.core.stkobjects.StkObjectRoot`
-    * - ``IAgSTKXApplicationEvents``
+    * - ``ISTKXApplicationEvents``
       - :py:class:`~ansys.stk.core.stkengine.STKEngineApplication`
-    * - ``IAgUiAxVOCntrlEvents``
+    * - ``IUiAxGraphics3DCntrlEvents``
       - :py:class:`~ansys.stk.core.stkengine.tkcontrols.GlobeControl`
-    * - ``IAgUiAx2DCntrlEvents``
+    * - ``IUiAxGraphics2DCntrlEvents``
       - :py:class:`~ansys.stk.core.stkengine.tkcontrols.MapControl`
-    * - ``IAgStkGraphicsSceneEvents``
+    * - ``ISceneEventHandlers``
       - :py:class:`~ansys.stk.core.graphics.Scene`
-    * - ``IAgStkGraphicsKmlGraphicsEvents``
+    * - ``IKmlGraphicsEvents``
       - :py:class:`~ansys.stk.core.graphics.KmlGraphics`
-    * - ``IAgStkGraphicsImageCollectionEvents``
+    * - ``IImageCollectionEvents``
       - :py:class:`~ansys.stk.core.graphics.ImageCollection`
-    * - ``IAgStkGraphicsTerrainCollectionEvents``
+    * - ``ITerrainOverlayCollectionEvents``
       - :py:class:`~ansys.stk.core.graphics.TerrainOverlayCollection`
 
 Events are accessed through the ``subscribe()`` method on the parent object, 
@@ -262,7 +262,7 @@ operators. These operators change the callbacks that get executed by the event
 but do not affect whether the handler remains subscribed. The event handler 
 should be unsubscribed using the ``unsubscribe()`` method when event handling is
 no longer needed. Refer to the following example for using 
-``IAgStkObjectRootEvents``.
+``IStkObjectRootEvents``.
 
 .. literalinclude:: /../../tests/doc_snippets_tests/scenario/scenario_management/scenario_management_snippets.py
   :language: py
