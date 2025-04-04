@@ -99,8 +99,8 @@ def VARIANT_from_python_data(data:typing.Any) -> agcom.Variant:
     var = agcom.Variant()
     var.vt = agcom.VT_EMPTY
     if data is not None:
-        if hasattr(data, "_ToArgb"):
-            data = data._ToArgb()
+        if hasattr(data, "_to_argb"):
+            data = data._to_argb()
         var.vt = pytype_to_vartype(data)
         union_val = agcom.varUnion()
         if var.vt == agcom.VT_BOOL:
