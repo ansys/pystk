@@ -9,6 +9,13 @@ User guide
         :padding: 2 2 2 2
 
         Learn how to establish a connection and prepare PySTK for usage with the STK application.
+
+    .. grid-item-card:: :fa:`magnifying-glass-chart` Data analysis
+        :link: user-guide/data-analysis
+        :link-type: doc
+        :padding: 2 2 2 2
+
+        Leverage NumPy and Pandas data types to enhance your PySTK workflows.
         
     .. grid-item-card:: :fa:`square-plus` Create and load scenarios
         :link: user-guide/create-load-scenarios
@@ -44,6 +51,7 @@ User guide
    :hidden:
 
    Initialization <user-guide/initialization>
+   Data analysis <user-guide/data-analysis>
    Create and load scenarios <user-guide/create-load-scenarios>
    Results and graphs <user-guide/results-graphs>
    Migration <user-guide/migration>
