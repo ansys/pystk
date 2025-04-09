@@ -67,7 +67,7 @@ doc = [
     "nbsphinx==0.9.7",
     "numpydoc==1.8.0",
     "nbconvert==7.16.6",
-    "sphinx==7.4.7",
+    "sphinx==8.2.3",
     "sphinx-design==0.6.1",
     "sphinx-jinja==2.0.2",
     "sphinx-copybutton==0.5.2",
