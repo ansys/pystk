@@ -36,6 +36,12 @@ Connect
   - :ref:`Extract data from connect result <ResultsConnectCommand>`
   - :ref:`Execute multiple connect commands <ConnectCommandMultiple>`
   - :ref:`Execute connect command <ConnectCommand>`
+Data Analysis
+  - :ref:`Create a heat map of coverage definition results graphing duration by asset using a pandas dataframe <CoverageDefinitionResultsPandasDataFrameHeatMap>`
+  - :ref:`Compute descriptive statistics for access measurements using a pandas dataframe <DescriptiveStatisticsPandasDataFrame>`
+  - :ref:`Convert access data provider results to a pandas dataframe <AccessResultsToPandasDataFrame>`
+  - :ref:`Convert coverage definition data provider results to a pandas dataframe <CoverageDefinitionResultsToPandasDataFrame>`
+  - :ref:`Load a numpy array with flight profile data <FlightProfileNumpyArray>`
 Graphics
   GlobeOverlays
     - :ref:`Control the lighting of the 3d scene <SceneLighting>`
@@ -641,6 +647,128 @@ Execute connect command
 .. code-block:: python
 
     root.execute_command("New / */Target MyTarget")
+
+.. _CoverageDefinitionResultsPandasDataFrameHeatMap:
+
+Create a heat map of coverage definition results graphing duration by asset using a pandas dataframe
+====================================================================================================
+
+.. code-block:: python
+
+    # CoverageDefinition coverage: Coverage object
+    from matplotlib import pyplot as plt
+    import numpy as np
+
+    # compute data provider results for All Regions by Pass coverage
+    coverage_data_provider = coverage.data_providers.item('All Regions By Pass')
+    coverage_data = coverage_data_provider.execute()
+
+    # convert dataset collection in a row format as a Pandas DataFrame with default numeric row index
+    coverage_all_regions_elements = coverage_data_provider.elements
+    all_regions_coverage_df = coverage_data.data_sets.to_pandas_dataframe(data_provider_elements=coverage_all_regions_elements)
+
+    # reshape the DataFrame based on column values
+    pivot = all_regions_coverage_df.pivot_table(index='region name', columns='asset name', values='duration')
+
+    # plot heat map that shows duration by asset name by region
+    plt.xlabel('Duration by Asset', fontsize=20)
+    plt.xticks(ticks=range(len(pivot.columns.values)), labels=pivot.columns.values)
+
+    plt.ylabel('Region Name', fontsize=20)
+    plt.yticks(ticks=np.arange(len(pivot.index), step=10), labels=pivot.index[::10])
+
+    im = plt.imshow(pivot, cmap="YlGnBu", aspect='auto', interpolation='none')
+    plt.colorbar(orientation='vertical')
+
+.. _DescriptiveStatisticsPandasDataFrame:
+
+Compute descriptive statistics for access measurements using a pandas dataframe
+===============================================================================
+
+.. code-block:: python
+
+    # CoverageDefinition coverage: Coverage object
+    import pandas as pd
+
+    # compute data provider results for All Regions by Pass coverage
+    coverage_data_provider = coverage.data_providers.item('All Regions By Pass')
+    coverage_data = coverage_data_provider.execute()
+
+    # convert dataset collection in a row format as a Pandas DataFrame with default numeric row index
+    all_regions_coverage_df = coverage_data.data_sets.to_pandas_dataframe()
+
+    # compute descriptive statistics of Duration, Percent Coverage, Area Coverage
+    all_regions_coverage_df[['duration', 'percent coverage', 'area coverage']].apply(pd.to_numeric).describe()
+
+.. _AccessResultsToPandasDataFrame:
+
+Convert access data provider results to a pandas dataframe
+==========================================================
+
+.. code-block:: python
+
+    # Access facility_sensor_satellite_access: Access calculation
+    # compute data provider results for basic Access
+    field_names = ['Access Number', 'Start Time', 'Stop Time', 'Duration']
+
+    access_data = facility_sensor_satellite_access.data_providers['Access Data'].execute_elements(
+        self.get_scenario().start_time, self.get_scenario().stop_time, field_names
+    )
+
+    # convert dataset collection in a row format as a Pandas DataFrame
+    index_column = 'Access Number'
+    access_data_df = access_data.data_sets.to_pandas_dataframe(index_element_name=index_column)
+
+.. _CoverageDefinitionResultsToPandasDataFrame:
+
+Convert coverage definition data provider results to a pandas dataframe
+=======================================================================
+
+.. code-block:: python
+
+    # CoverageDefinition coverage: Coverage object
+    # compute data provider results for All Regions by Pass coverage
+    coverage_data_provider = coverage.data_providers.item('All Regions By Pass')
+    coverage_data = coverage_data_provider.execute()
+
+    # convert dataset collection in a row format as a Pandas DataFrame with default numeric row index
+    coverage_arr = coverage_data.data_sets.to_pandas_dataframe()
+
+.. _FlightProfileNumpyArray:
+
+Load a numpy array with flight profile data
+===========================================
+
+.. code-block:: python
+
+    # Aircraft aircraft: Aircraft object
+    from scipy.spatial import ConvexHull
+    import matplotlib.pyplot as plt
+
+    # compute data provider results for an aircraft's Flight Profile By Time
+    field_names = ['Mach #', 'Altitude']
+    time_step_sec = 1.0
+
+    flight_profile_data_provider = aircraft.data_providers.item('Flight Profile By Time')
+    flight_profile_data = flight_profile_data_provider.execute_elements(self.get_scenario().start_time, self.get_scenario().stop_time, time_step_sec, field_names)
+
+    # convert dataset collection in a row format as a Numpy array
+    flight_profile_data_arr = flight_profile_data.data_sets.to_numpy_array()
+
+    # plot estimated fligth envelope as a convex hull
+    hull = ConvexHull(flight_profile_data_arr)
+
+    plt.figure(figsize=(15,10))
+    for simplex in hull.simplices:
+        plt.plot(flight_profile_data_arr[simplex, 1], flight_profile_data_arr[simplex, 0], color="darkblue")
+
+    plt.title('Estimated Flight Envelope', fontsize=15)
+    plt.xlabel('Mach Number', fontsize=15)
+    plt.ylabel('Altitude', fontsize=15)
+
+    plt.tick_params(axis='x', labelsize=15)
+    plt.tick_params(axis='y', labelsize=15)
+    plt.grid(visible=True)
 
 .. _DisplayPrimitiveInterval:
 
@@ -3293,7 +3421,7 @@ Configure the weather and atmosphere of the mission
     # Get the wind model used for the mission
     windModel = mission.wind_model
     # Let's use the mission model
-    windModel.wind_model_source = WindAtmosModelSource.MISSION_MODEL
+    windModel.wind_model_source = WindAtmosphereModelSource.MISSION_MODEL
     # Let's use constant wind
     windModel.wind_model_type = WindModelType.CONSTANT_WIND
     # Get the constant wind model options
@@ -3306,7 +3434,7 @@ Configure the weather and atmosphere of the mission
     # Get the atmosphere model used for the mission
     atmosphere = mission.atmosphere_model
     # Let's use the mission model
-    atmosphere.atmosphere_model_source = WindAtmosModelSource.MISSION_MODEL
+    atmosphere.atmosphere_model_source = WindAtmosphereModelSource.MISSION_MODEL
     # Get the basic atmosphere options
     basicAtmosphere = atmosphere.mode_as_basic
     # Use standard 1976 atmosphere
@@ -3374,7 +3502,7 @@ Configure the wind and atmosphere for a procedure
     # Get the wind model for the procedure
     windModel = procedure.wind_model
     # Use the procedure model
-    windModel.wind_model_source = WindAtmosModelSource.PROCEDURE_MODEL
+    windModel.wind_model_source = WindAtmosphereModelSource.PROCEDURE_MODEL
     # Let's use constant wind
     windModel.wind_model_type = WindModelType.CONSTANT_WIND
     # Get the constant wind model options
@@ -3387,7 +3515,7 @@ Configure the wind and atmosphere for a procedure
     # Get the atmosphere model used for the procedure
     atmosphere = procedure.atmosphere_model
     # Let's use the procedure model
-    atmosphere.atmosphere_model_source = WindAtmosModelSource.PROCEDURE_MODEL
+    atmosphere.atmosphere_model_source = WindAtmosphereModelSource.PROCEDURE_MODEL
     # Get the basic atmosphere options
     basicAtmosphere = atmosphere.mode_as_basic
     # Use standard 1976 atmosphere
