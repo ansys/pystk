@@ -115,17 +115,9 @@ Create a facility and set its height relative to ground level
 
 .. code-block:: python
 
-    from ansys.stk.core.utilities.exceptions import STKRuntimeError
+    # StkObjectRoot root: STK Object Model Root
     from ansys.stk.core.stkobjects import Facility, STKObjectType
 
-    try:
-        # this facility is not a valid STK reference
-        my_facility_attempt = Facility()
-        my_facility_attempt.height_above_ground = 123.4
-    except STKRuntimeError as e:
-        print(e)
-
-    # this facility represents a valid STK object
     facility = Facility(root.current_scenario.children.new(STKObjectType.FACILITY, "facility1"))
     facility.height_above_ground = 123.4
 

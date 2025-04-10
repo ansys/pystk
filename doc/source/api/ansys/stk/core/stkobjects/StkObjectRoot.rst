@@ -280,7 +280,7 @@ Manage STK Engine events
 .. code-block:: python
 
     # StkObjectRoot root: STK Object Model Root
-    def on_scenario_new_custom_callback(path:str):
+    def on_scenario_new_custom_callback(path: str):
         print(f'Scenario {path} has been created.')
 
     skt_object_root_events = root.subscribe()

@@ -139,6 +139,7 @@ STK Objects
     - :ref:`Get the cartesian position of the facility <GetPositionFacility>`
     - :ref:`Set the geodetic position of the facility <SetPositionFacility>`
     - :ref:`Create a facility and set its height relative to ground level <SetHeightFacility>`
+    - :ref:`Get a valid reference to a facility <GetValidFacility>`
     - :ref:`Create a facility (on the current scenario central body) <CreateFacility>`
   Figure Of Merit
     - :ref:`Configure the contours of the fom and define a color ramp <FOMContoursColorRamp>`
@@ -1238,7 +1239,7 @@ Manage STK Engine events
 .. code-block:: python
 
     # StkObjectRoot root: STK Object Model Root
-    def on_scenario_new_custom_callback(path:str):
+    def on_scenario_new_custom_callback(path: str):
         print(f'Scenario {path} has been created.')
 
     skt_object_root_events = root.subscribe()
@@ -2171,6 +2172,20 @@ Create a facility and set its height relative to ground level
 
 .. code-block:: python
 
+    # StkObjectRoot root: STK Object Model Root
+    from ansys.stk.core.stkobjects import Facility, STKObjectType
+
+    facility = Facility(root.current_scenario.children.new(STKObjectType.FACILITY, "facility1"))
+    facility.height_above_ground = 123.4
+
+.. _GetValidFacility:
+
+Get a valid reference to a facility
+===================================
+
+.. code-block:: python
+
+    # StkObjectRoot root: STK Object Model Root
     from ansys.stk.core.utilities.exceptions import STKRuntimeError
     from ansys.stk.core.stkobjects import Facility, STKObjectType
 

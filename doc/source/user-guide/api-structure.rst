@@ -40,7 +40,7 @@ Enumerations enable you to define a set of named constant values. Enumeration
 classes are located in the STK Object Model modules (for 
 example—:py:mod:`~ansys.stk.core.stkobjects`). Most inherit from Python's 
 :obj:`enum.IntEnum` class while a few inherit from :obj:`enum.IntFlag` and may
-be combined using the logical OR operator to select multiple options from within the 
+be combined using the bitwise OR operator to select multiple options from within the 
 enumeration.
 
 .. literalinclude:: /../../tests/doc_snippets_tests/graphics/graphics_snippets.py
@@ -80,7 +80,7 @@ directly from Python; objects must be returned from PySTK methods.
 .. literalinclude:: /../../tests/doc_snippets_tests/stk_objects/facility/facility_snippets.py
   :language: py
   :tab-width: 4
-  :start-after: def SetHeightFacilitySnippet
+  :start-after: def GetValidFacilitySnippet
   :end-at: facility.height_above_ground = 123.4
   :dedent:
 
@@ -198,19 +198,6 @@ Therefore, to reduce the number of remote API requests and improve
 performance, code must be organized to group together commands that do not 
 have a return value. Call chaining interrupts a batch request because of the 
 get-property command within the chain.
-
-Exceptions
-==========
-
-Exceptions are used to signal errors or unexpected conditions that arise 
-during the execution of a script. When working with PySTK, you may encounter
-situations where something goes wrong, such as trying to access a non-existent
-object, providing invalid input, or encountering a runtime error while 
-manipulating your scenario. Exceptions provide a mechanism for handling these 
-errors in a controlled and predictable way.
-
-See the table on the :py:mod:`~ansys.stk.core.utilities.exceptions` module 
-page for a description of the exceptions provided by PySTK. 
 
 Events
 ======

@@ -29,7 +29,7 @@ from code_snippet_decorator import code_snippet
 from code_snippets_test_base import CodeSnippetsTestBase
 
 
-class ConnectSnippets(CodeSnippetsTestBase):
+class ColorSnippets(CodeSnippetsTestBase):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
