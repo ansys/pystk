@@ -49,7 +49,7 @@ grpc = [
 ]
 tests = [
     "pytest==8.3.5",
-    "pytest-cov==6.1.0",
+    "pytest-cov==6.1.1",
     "pytz==2025.2",
     "parameterized==0.9.0",
     "pandas==2.2.3",
@@ -57,12 +57,12 @@ tests = [
     "libcst==1.7.0"
 ]
 doc = [
-    "ansys-sphinx-theme==1.3.3",
+    "ansys-sphinx-theme==1.4.2",
     "build==1.2.2.post1",
     "jupyterlab==4.3.6",
     "jupytext==1.16.7",
     "jupyter-server==2.15.0",
-    "libcst==1.6.0",
+    "libcst==1.7.0",
     "myst-parser==4.0.1",
     "nbsphinx==0.9.7",
     "numpydoc==1.8.0",
