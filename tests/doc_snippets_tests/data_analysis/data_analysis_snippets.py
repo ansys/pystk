@@ -56,8 +56,9 @@ class DataAnalysisSnippets(CodeSnippetsTestBase):
         scenario: "Scenario" = Scenario(TestBase.Application.current_scenario)
         scenario.set_time_period("1 Jan 2012 12:00:00.000", "2 Jan 2012 12:00:00.000")
 
-    def _configured_coverage_scenario_root(self):
+    def _create_coverage_scenario(self):
         root = self.get_root()
+        root.close_scenario()
 
         from ansys.stk.core.stkobjects import Scenario
         root.new_scenario(r"CoverageDataAnalysisSnippets")
@@ -135,8 +136,9 @@ class DataAnalysisSnippets(CodeSnippetsTestBase):
 
         return root
 
-    def _configured_access_scenario_root(self):
+    def _create_access_scenario(self):
         root = self.get_root()
+        root.close_scenario()
 
         from ansys.stk.core.stkobjects import Scenario
         root.new_scenario(r"AccessDataAnalysisSnippets")
@@ -179,8 +181,11 @@ class DataAnalysisSnippets(CodeSnippetsTestBase):
 
         return root
     
-    def _configured_aviator_scenario_root(self):
+    def _create_aviator_scenario(self):
         root = self.get_root()
+        root.close_scenario()
+
+        from ansys.stk.core.stkobjects import Scenario
         root.new_scenario(r"Aviator")
 
         scenario: Scenario = root.current_scenario
@@ -297,16 +302,10 @@ class DataAnalysisSnippets(CodeSnippetsTestBase):
 
 
     def test_FlightProfileNumpyArraySnippet(self):
-        try:
-            root = self.get_root()
-            root.close_scenario()
+        root = self._create_aviator_scenario()
+        aircraft = root.current_scenario.children.item("TestFlight")
 
-            root = self._configured_aviator_scenario_root()
-            aircraft = root.current_scenario.children.item("TestFlight")
-
-            self.FlightProfileNumpyArraySnippet(aircraft)
-        finally:
-            self.reset_to_default_scenario()
+        self.FlightProfileNumpyArraySnippet(aircraft)
 
     @code_snippet(
         name="FlightProfileNumpyArray",
@@ -332,7 +331,7 @@ class DataAnalysisSnippets(CodeSnippetsTestBase):
         # plot estimated fligth envelope as a convex hull
         hull = ConvexHull(flight_profile_data_arr)
 
-        plt.figure(figsize=(15,10))
+        plt.figure(figsize=(15, 10))
         for simplex in hull.simplices:
             plt.plot(flight_profile_data_arr[simplex, 1], flight_profile_data_arr[simplex, 0], color="darkblue")
 
@@ -345,16 +344,10 @@ class DataAnalysisSnippets(CodeSnippetsTestBase):
         plt.grid(visible=True)
     
     def test_CoverageDefinitionResultsToPandasDataFrameSnippet(self):
-        try:
-            root = self.get_root()
-            root.close_scenario()
+        root = self._create_coverage_scenario()
+        coverage = root.current_scenario.children.item("World_Cov")
 
-            root = self._configured_coverage_scenario_root()
-            coverage = root.current_scenario.children.item("World_Cov")
-
-            self.CoverageDefinitionResultsToPandasDataFrameSnippet(coverage)
-        finally:
-            self.reset_to_default_scenario()
+        self.CoverageDefinitionResultsToPandasDataFrameSnippet(coverage)
 
     @code_snippet(
         name="CoverageDefinitionResultsToPandasDataFrame",
@@ -369,23 +362,17 @@ class DataAnalysisSnippets(CodeSnippetsTestBase):
         coverage_data = coverage_data_provider.execute()
 
         # convert dataset collection in a row format as a Pandas DataFrame with default numeric row index
-        coverage_arr = coverage_data.data_sets.to_pandas_dataframe()
+        coverage_df = coverage_data.data_sets.to_pandas_dataframe()
 
     def test_AccessResultsToPandasDataFrameSnippet(self):
-        try:
-            root = self.get_root()
-            root.close_scenario()
+        root = self._create_access_scenario()
+        cube_sat_obj = root.current_scenario.children.item("KSU-CUBESAT_47954")
+        facility_sensor_obj = root.current_scenario.children.item("Castle_Rock_Teleport").children.item("CR_FOV")
+        
+        facility_sensor_satellite_access = facility_sensor_obj.get_access_to_object(cube_sat_obj)
+        facility_sensor_satellite_access.compute_access()
 
-            root = self._configured_access_scenario_root()
-            cube_sat_obj = root.current_scenario.children.item("KSU-CUBESAT_47954")
-            facility_sensor_obj = root.current_scenario.children.item("Castle_Rock_Teleport").children.item("CR_FOV")
-            
-            facility_sensor_satellite_access = facility_sensor_obj.get_access_to_object(cube_sat_obj)
-            facility_sensor_satellite_access.compute_access()
-
-            self.AccessResultsToPandasDataFrameSnippet(facility_sensor_satellite_access)
-        finally:
-            self.reset_to_default_scenario()
+        self.AccessResultsToPandasDataFrameSnippet(facility_sensor_satellite_access)
 
     @code_snippet(
         name="AccessResultsToPandasDataFrame",
@@ -407,16 +394,10 @@ class DataAnalysisSnippets(CodeSnippetsTestBase):
         access_data_df = access_data.data_sets.to_pandas_dataframe(index_element_name=index_column)
 
     def test_DescriptiveStatisticsPandasDataFrameSnippet(self):
-        try:
-            root = self.get_root()
-            root.close_scenario()
+        root = self._create_coverage_scenario()
+        coverage = root.current_scenario.children.item("World_Cov")
 
-            root = self._configured_coverage_scenario_root()
-            coverage = root.current_scenario.children.item("World_Cov")
-
-            self.DescriptiveStatisticsPandasDataFrameSnippet(coverage)
-        finally:
-            self.reset_to_default_scenario()
+        self.DescriptiveStatisticsPandasDataFrameSnippet(coverage)
 
     @code_snippet(
         name="DescriptiveStatisticsPandasDataFrame",
@@ -439,16 +420,10 @@ class DataAnalysisSnippets(CodeSnippetsTestBase):
         all_regions_coverage_df[['duration', 'percent coverage', 'area coverage']].apply(pd.to_numeric).describe()
 
     def test_CoverageDefinitionResultsPandasDataFrameHeatMapSnippet(self):
-        try:
-            root = self.get_root()
-            root.close_scenario()
+        root = self._create_coverage_scenario()
+        coverage = root.current_scenario.children.item("World_Cov")
 
-            root = self._configured_coverage_scenario_root()
-            coverage = root.current_scenario.children.item("World_Cov")
-
-            self.CoverageDefinitionResultsPandasDataFrameHeatMapSnippet(coverage)
-        finally:
-            self.reset_to_default_scenario()
+        self.CoverageDefinitionResultsPandasDataFrameHeatMapSnippet(coverage)
 
     @code_snippet(
         name="CoverageDefinitionResultsPandasDataFrameHeatMap",

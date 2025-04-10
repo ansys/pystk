@@ -50,7 +50,7 @@ This example provides the Python implementation for converting ``All Regions By 
   :language: py
   :tab-width: 4
   :start-after: def CoverageDefinitionResultsToPandasDataFrameSnippet
-  :end-at: coverage_arr = coverage_data.data_sets.to_pandas_dataframe()
+  :end-at: coverage_df = coverage_data.data_sets.to_pandas_dataframe()
   :dedent:
 
 The :py:meth:`~ansys.stk.core.stkobjects.DataProviderResultDataSetCollection.to_pandas_dataframe` method supports setting a single column as the index. To create a hierarchical index or a composite index comprised of more than a single column, get your data provider's results dataset collection as a Pandas DataFrame with the default numeric index, then update the index accordingly.

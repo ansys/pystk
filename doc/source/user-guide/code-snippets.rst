@@ -732,7 +732,7 @@ Convert coverage definition data provider results to a pandas dataframe
     coverage_data = coverage_data_provider.execute()
 
     # convert dataset collection in a row format as a Pandas DataFrame with default numeric row index
-    coverage_arr = coverage_data.data_sets.to_pandas_dataframe()
+    coverage_df = coverage_data.data_sets.to_pandas_dataframe()
 
 .. _FlightProfileNumpyArray:
 
@@ -758,7 +758,7 @@ Load a numpy array with flight profile data
     # plot estimated fligth envelope as a convex hull
     hull = ConvexHull(flight_profile_data_arr)
 
-    plt.figure(figsize=(15,10))
+    plt.figure(figsize=(15, 10))
     for simplex in hull.simplices:
         plt.plot(flight_profile_data_arr[simplex, 1], flight_profile_data_arr[simplex, 0], color="darkblue")
 
