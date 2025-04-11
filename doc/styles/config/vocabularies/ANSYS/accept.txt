@@ -8,6 +8,7 @@ ansys
 Astrogator
 Dockerfiles
 documentarians
+eid
 ephemerides
 cartodetic
 FOM
