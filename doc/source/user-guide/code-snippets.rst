@@ -10,14 +10,14 @@ Analysis Workbench
   - :ref:`Create a new collection of interval list <CreateCollectionList>`
   - :ref:`Create a new time interval <CreateTimeInterval>`
   - :ref:`Create a new time instant <CreateTimeInstant>`
-  - :ref:`Get times from defined time instant and create an cell array <GetTimesFromTimeInstant>`
+  - :ref:`Get times from a defined time instant and create an cell array <GetTimesFromTimeInstant>`
   - :ref:`Create a new orbit parameter set <CreateOrbitParameterSet>`
   - :ref:`Create a new attitude parameter set <CreateAttitudeParameterSet>`
-  - :ref:`Get a scalar component and evaluate at a time <GetScalarAndEvaluate>`
+  - :ref:`Get a scalar component and evaluate at a specific time <GetScalarAndEvaluate>`
   - :ref:`Create a data element scalar <CreateDataElementScalar>`
   - :ref:`Create a new vector magnitude scalar <CreateVectorMagScalar>`
   - :ref:`Create a new assembled system <CreateAssembledSystem>`
-  - :ref:`Create a new aligned and constrained axes <CreateAlignedConstrainedAxes>`
+  - :ref:`Create new aligned and constrained axes <CreateAlignedConstrainedAxes>`
   - :ref:`Create a new between vectors angle <CreateBetweenAngle>`
   - :ref:`Create a new fixed at time instant point <CreateFixedTimeInstantPoint>`
   - :ref:`Create a new model attachment point <CreateModelAttachmentPoint>`
@@ -27,19 +27,19 @@ Analysis Workbench
   - :ref:`Create a new cross product vector <CreateCrossProductVector>`
   - :ref:`Create a new fixed in axes vector <CreateFixedAxesVector>`
   - :ref:`Create a new displacement vector <CreateDisplacementVector>`
-  - :ref:`Get default vgt component on vehicle <GetVGTCompVehicle>`
-  - :ref:`Get center point and inertial system of earth central body <GetVGTPoint>`
+  - :ref:`Get a default vgt component on vehicle <GetVGTCompVehicle>`
+  - :ref:`Get the center point and inertial system of earth's central body <GetVGTPoint>`
 Camera
-  - :ref:`Change camera reference frame <CameraReferenceFrame>`
-  - :ref:`Change camera view to imagery extents <CameraExtents>`
+  - :ref:`Change the camera reference frame <CameraReferenceFrame>`
+  - :ref:`Change the camera view to imagery extents <CameraExtents>`
 Connect
-  - :ref:`Extract data from connect result <ResultsConnectCommand>`
+  - :ref:`Extract data from connect results <ResultsConnectCommand>`
   - :ref:`Execute multiple connect commands <ConnectCommandMultiple>`
-  - :ref:`Execute connect command <ConnectCommand>`
+  - :ref:`Execute a connect command <ConnectCommand>`
 Graphics
   GlobeOverlays
-    - :ref:`Control the lighting of the 3d scene <SceneLighting>`
-    - :ref:`Control display of stars and water texture <DisplayStarsWater>`
+    - :ref:`Control the lighting of the 3D scene <SceneLighting>`
+    - :ref:`Control the display of stars and water texture <DisplayStarsWater>`
     - :ref:`Add imagery and terrain to the scene <AddTerrainImagery>`
 
   - :ref:`Display a primitive during an interval <DisplayPrimitiveInterval>`
@@ -52,22 +52,22 @@ Graphics
   - :ref:`Draw a new text primitive <TextPrimitive>`
   - :ref:`Draw a new surface extent triangulator <SurfaceExtentTriangulator>`
   - :ref:`Draw a new surface mesh <DrawNewSurfaceMeshPrimitive>`
-  - :ref:`Great arc interpolator primitives <GreatArcInterpolatorPrimitives>`
+  - :ref:`Compute interpolated positions along a great arc <GreatArcInterpolatorPrimitives>`
 Initialization
-  - :ref:`Attach to an already running stk runtime and get a reference to stk object root <AttachSTKRuntimeSnippet>`
-  - :ref:`Start stk runtime and get a reference to stk object root <CreateSTKRuntimeNewSnippet>`
-  - :ref:`Start stk desktop and get a reference to stk object root <CreateSTKNew>`
-  - :ref:`Get a reference to stk object root using a running stk desktop instance <AttachSTK>`
-  - :ref:`Initialize stk engine in no graphics mode and get a reference to stk object root <StartSTKEngineSnippetWithoutGfx>`
-  - :ref:`Initialize stk engine with graphics and get a reference to stk object root <StartSTKEngineWithGfx>`
+  - :ref:`Attach to an already running STK Runtime instance and get a reference to the STK object root <AttachSTKRuntimeSnippet>`
+  - :ref:`Start STK Runtime and get a reference to the STK object root <CreateSTKRuntimeNewSnippet>`
+  - :ref:`Start STK desktop and get a reference to the STK object root <CreateSTKNew>`
+  - :ref:`Get a reference to the STK object root using a running STK desktop application instance <AttachSTK>`
+  - :ref:`Initialize STK Engine in no graphics mode and get a reference to the STK object root <StartSTKEngineSnippetWithoutGfx>`
+  - :ref:`Initialize STK Engine with graphics and get a reference to the STK object root <StartSTKEngineWithGfx>`
 Scenario
   Scenario Management
-    - :ref:`Change scenario font <ScenarioFont>`
+    - :ref:`Change the scenario font <ScenarioFont>`
     - :ref:`Reset the scenario time <ScenarioReset>`
     - :ref:`Change animation mode <ScenarioAnimationMode>`
-    - :ref:`Set unit preferences for object model <SetUnitPreferences>`
+    - :ref:`Set unit preferences for the object model <SetUnitPreferences>`
     - :ref:`Create a new scenario <CreateScenario>`
-    - :ref:`Close stk <CloseSTK>`
+    - :ref:`Close the STK application <CloseSTK>`
     - :ref:`Close an open scenario <CloseScenario>`
     - :ref:`Open a viewer data file <OpenVdfSTK>`
 STK Objects
@@ -77,12 +77,12 @@ STK Objects
     - :ref:`Configure the access analysis time period to specified time instants <ConfigureAccessInterval>`
     - :ref:`Compute and extract access interval times <ExtractAccessIntervals>`
     - :ref:`Compute an access for one point <ComputeAccessPoint>`
-    - :ref:`Compute access with advanced settings <ComputeAccessAdvancedSettings>`
-    - :ref:`Compute an access between two stk objects (using object path) <ComputeAccessPaths>`
-    - :ref:`Compute an access between two stk objects (using istkobject interface) <ComputeAccess>`
+    - :ref:`Compute an access with advanced settings <ComputeAccessAdvancedSettings>`
+    - :ref:`Compute an access between two STK objects (using object path) <ComputeAccessPaths>`
+    - :ref:`Compute an access between two STK objects (using iSTKobject interface) <ComputeAccess>`
     - :ref:`Remove all access constraints except for line of sight <RemoveAllConstraints>`
     - :ref:`Add an exclusion zone access constraint <AddExclusionZoneConstraint>`
-    - :ref:`Add multiple access constraints of the same type to an stk object <AddMultipleConstraint>`
+    - :ref:`Add multiple access constraints of the same type to an STK object <AddMultipleConstraint>`
     - :ref:`Add and configure an altitude access constraint <AddAltitudeConstraint>`
     - :ref:`Add and configure a central body obstruction access constraint <AddCbObstructionConstraint>`
     - :ref:`Add and configure a sun elevation angle access constraint <AddSunElevationAngleConstraint>`
@@ -96,19 +96,19 @@ STK Objects
   Aircraft
     - :ref:`Set the attitude of the aircraft <AircraftAttitude>`
     - :ref:`Add array of waypoints to aircraft <AddAircraftArrayPoints>`
-    - :ref:`Set great arc propagator and add individual waypoints to aircraft <AddAircraftPoints>`
+    - :ref:`Set the great arc propagator and add individual waypoints to an aircraft <AddAircraftPoints>`
     - :ref:`Create a new aircraft (on the current scenario central body) <CreateAircraft>`
   Area Target
     - :ref:`List all points in an area target <ListAreaTargetPoints>`
-    - :ref:`Define area target boundary and position from list of lat/lon/alt (using common tasks) <CreateBoundaryAreaTargetList>`
-    - :ref:`Define area target boundary and position from list of lat/lon/alt <CreateBoundaryAreaTarget>`
+    - :ref:`Define an area target boundary and position from a list of lat/lon/alt (using common tasks) <CreateBoundaryAreaTargetList>`
+    - :ref:`Define an area target boundary and position from a list of lat/lon/alt <CreateBoundaryAreaTarget>`
     - :ref:`Set an elliptical area target (using common tasks) <CreateAreaTargetCommon>`
     - :ref:`Set an elliptical area target <CreateEllipticalAreaTarget>`
     - :ref:`Create an area target (on the current scenario central body) <CreateAreaTarget>`
   Chain
-    - :ref:`Prints the strand intervals of chain object <ChainStrandIntervals>`
-    - :ref:`Define and compute a chain (advanced) <CreateChainAdvanced>`
+    - :ref:`Print the strand intervals of a chain object <ChainStrandIntervals>`
     - :ref:`Define and compute a chain (basic) <ComputeChain>`
+    - :ref:`Define and compute a chain (advanced) <CreateChainAdvanced>`
     - :ref:`Create a chain (on the current scenario central body) <CreateChain>`
   Constellation
     - :ref:`Define a constellation <CreateConstellation>`
@@ -118,78 +118,78 @@ STK Objects
     - :ref:`Set the coverage interval to an object's availability analysis interval <SetCoverageIntervalToAvailability>`
     - :ref:`Create a new coverage definition (on the current scenario central body) <CreateCoverage>`
   Data Providers
-    - :ref:`Getting data for specific points and elements <SingleTimesDataProvider>`
-    - :ref:`Getting data for a single point in time <SingleTimeDataProvider>`
-    - :ref:`Extracting elements from data providers with pre-data <DataProviderPreData>`
-    - :ref:`Extracting elements from data providers with groups <GroupsDataProvider>`
-    - :ref:`Using a time dependent data provider and requesting only specified elements <TimeDependentDataProviderElements>`
-    - :ref:`Using an interval data provider <IntervalDataProvider>`
+    - :ref:`Get data for specific points and elements <SingleTimesDataProvider>`
+    - :ref:`Get data for a single point in time <SingleTimeDataProvider>`
+    - :ref:`Extract elements from data providers with pre-data <DataProviderPreData>`
+    - :ref:`Extract elements from data providers with groups <GroupsDataProvider>`
+    - :ref:`Use a time dependent data provider and requesting only specified elements <TimeDependentDataProviderElements>`
+    - :ref:`Use an interval data provider <IntervalDataProvider>`
   Facility
     Graphics
-      - :ref:`Display the azel mask in 2d/3d <FacilityAzElMaskDisplay>`
+      - :ref:`Display the AzEl mask in 2D/3D <FacilityAzElMaskDisplay>`
 
-    - :ref:`Add an azel mask to a facility <AzElMaskFacility>`
-    - :ref:`Set the geodetic position of the facility <SetPositionFacility>`
+    - :ref:`Add an AzEl mask to a facility <AzElMaskFacility>`
+    - :ref:`Set the geodetic position of a facility <SetPositionFacility>`
     - :ref:`Create a facility (on the current scenario central body) <CreateFacility>`
   Figure Of Merit
-    - :ref:`Configure the contours of the fom and define a color ramp <FOMContoursColorRamp>`
+    - :ref:`Configure the contours of the figure of merit (FOM) and define a color ramp <FOMContoursColorRamp>`
     - :ref:`Create a new figure of merit of type access duration <CreateFOM>`
   Ground Vehicle
-    - :ref:`Add array of waypoints to ground vehicle and interpolate over terrain <AddGroundVehicleArrayPoints>`
-    - :ref:`Set great arc propagator and add individual waypoints to ground vehicle <AddGroundVehiclePoints>`
+    - :ref:`Add array of waypoints to a ground vehicle and interpolate over terrain <AddGroundVehicleArrayPoints>`
+    - :ref:`Set the great arc propagator and add individual waypoints to a ground vehicle <AddGroundVehiclePoints>`
     - :ref:`Create a new ground vehicle (on the current scenario central body) <CreateVehicle>`
   Line Target
     - :ref:`Create a new line target (on the current scenario central body) <CreateLineTarget>`
   Missile
     - :ref:`Create a new missile (on the current scenario central body) <CreateMissile>`
   MTO
-    - :ref:`Load mto track points from file <MTOLoadTrack>`
-    - :ref:`Create a new mto (on the current scenario central body) <CreateMTO>`
+    - :ref:`Load multi-track object (MTO) track points from a file <MTOLoadTrack>`
+    - :ref:`Create a new MTO (on the current scenario central body) <CreateMTO>`
   Object Coverage
     - :ref:`Compute object coverage <ComputeObjectCoverage>`
   Planet
     Graphics
-      - :ref:`Modify planet 2d properties <ModifyPlanet2DGraphics>`
+      - :ref:`Modify a planet's 2D properties <ModifyPlanet2DGraphics>`
 
     - :ref:`Create a new planet <CreatePlanet>`
   Satellite
     Graphics
-      - :ref:`Add a vector to display in 3d <AddGraphicsVector>`
-      - :ref:`Add fixed system orbit system in 3d display <GraphicsOrbitSystem>`
+      - :ref:`Add a vector to display in 3D <AddGraphicsVector>`
+      - :ref:`Add fixed system orbit system in 3D display <GraphicsOrbitSystem>`
       - :ref:`Modify the detail thresholds levels <GraphicsDetails>`
-      - :ref:`Change the 3d model and marker properties <GraphicsModel>`
-      - :ref:`Display drop lines in 3d window <GraphicsDropline>`
-      - :ref:`Add a data display to the 3d window <GraphicsDataDisplay>`
+      - :ref:`Change the 3D model and marker properties <GraphicsModel>`
+      - :ref:`Display drop lines in 3D window <GraphicsDropline>`
+      - :ref:`Add a data display to the 3D window <GraphicsDataDisplay>`
       - :ref:`Change the display label of the vehicle <GraphicsLabel>`
-      - :ref:`Set 2d/3d pass display properties <GraphicsPass>`
+      - :ref:`Set 2D/3D pass display properties <GraphicsPass>`
       - :ref:`Set vehicle lighting properties <GraphicsLighting>`
-      - :ref:`Set 2d swath <GraphicsSwath>`
-      - :ref:`Set 2d/3d range contours <GraphicsRangeContours>`
-      - :ref:`Set 2d/3d elevation contours <GraphicsElevationContours>`
-      - :ref:`Set 2d display times to custom and add intervals <CustomGraphics2D>`
-      - :ref:`Set 2d graphics display properties <BasicGraphics2D>`
+      - :ref:`Set 2D swath <GraphicsSwath>`
+      - :ref:`Set 2D/3D range contours <GraphicsRangeContours>`
+      - :ref:`Set 2D/3D elevation contours <GraphicsElevationContours>`
+      - :ref:`Set 2D display times to custom and add intervals <CustomGraphics2D>`
+      - :ref:`Set 2D graphics display properties <BasicGraphics2D>`
       - :ref:`Change the graphics resolution of the orbit for a smooth path <SatelliteGraphicsResolution>`
     Astrogator
-      - :ref:`Run the astrogator mcs <AstrogatorRunMCS>`
+      - :ref:`Run the Astrogator® misson control sequence (MCS) <AstrogatorRunMCS>`
 
     - :ref:`Set satellite attitude external <SatelliteAttitudeExternal>`
     - :ref:`Set satellite attitude targeting <SatelliteAttitudeTarget>`
     - :ref:`Set satellite attitude basic spinning <SatelliteAttitudeSpinning>`
-    - :ref:`Export an ephemeris file to scenario folder <ExportEphemerisFile>`
-    - :ref:`Set satellite propagator to sgp4 and propagate <SGP4Satellite>`
+    - :ref:`Export an ephemeris file to a scenario folder <ExportEphemerisFile>`
+    - :ref:`Set satellite propagator to SGP4 and propagate <SGP4Satellite>`
     - :ref:`Set satellite propagator to spice and propagate <SPICESatellite>`
-    - :ref:`Set satellite propagator to astrogator and clear segments <AstrogatorSatellite>`
-    - :ref:`Set satellite propagator to hpop and set force model properties <HPOPSatellite>`
-    - :ref:`Set satellite propagator to j4 and assign cartesian position <J4Satellite>`
-    - :ref:`Set initial state of satellite and propagate <SatelliteInitialState>`
+    - :ref:`Set satellite propagator to Astrogator and clear segments <AstrogatorSatellite>`
+    - :ref:`Set satellite propagator to HPOP and set force model properties <HPOPSatellite>`
+    - :ref:`Set satellite propagator to J4 and assign cartesian position <J4Satellite>`
+    - :ref:`Set the initial state of a satellite and propagate <SatelliteInitialState>`
     - :ref:`Create a satellite (on the current scenario central body) <CreateSatellite>`
   Sensor
     Graphics
       - :ref:`Sensor persistence <SensorPersistence>`
 
     - :ref:`Sensor body mask <SensorBodyMask>`
-    - :ref:`Define sensor pointing fixed axes ypr <DefineSensorPointingFixedAxesYPR>`
-    - :ref:`Define sensor pointing fixed ypr <DefineSensorPointingFixedYPR>`
+    - :ref:`Define sensor pointing fixed axes YPR <DefineSensorPointingFixedAxesYPR>`
+    - :ref:`Define sensor pointing fixed YPR <DefineSensorPointingFixedYPR>`
     - :ref:`Define sensor pointing fixed axes quaternion <DefineSensorPointingFixedAxesQuaternion>`
     - :ref:`Define sensor pointing fixed quaternion <DefineSensorPointingFixedQuaternion>`
     - :ref:`Define sensor pointing fixed axes euler <DefineSensorPointingFixedAxesEuler>`
@@ -217,12 +217,12 @@ STK Objects
       - :ref:`Create a new receiver object <CreateReceiver>`
     Transmitter
       - :ref:`Transmitter additional gain <TransmitteradditionalGain>`
-      - :ref:`Modify transmitter filter <ModifyTransmitterFilter>`
-      - :ref:`Modify transmitter modulator properties <ModifyTransmitterModulator>`
-      - :ref:`Modify transmitter orientation and position <ModifyTransmitterPolarizationOrientationAndPosition>`
-      - :ref:`Modify transmitter polarization properties <ModifyTransmitterPolarizationProperties>`
-      - :ref:`Modify transmitter embedded antenna <ModifyTransmitterAntenna>`
-      - :ref:`Modify transmitter model type <ModifyTransmitter>`
+      - :ref:`Modify a transmitter filter <ModifyTransmitterFilter>`
+      - :ref:`Modify a transmitter's modulator properties <ModifyTransmitterModulator>`
+      - :ref:`Modify a transmitter's orientation and position <ModifyTransmitterPolarizationOrientationAndPosition>`
+      - :ref:`Modify a transmitter's polarization properties <ModifyTransmitterPolarizationProperties>`
+      - :ref:`Modify a transmitter's embedded antenna <ModifyTransmitterAntenna>`
+      - :ref:`Modify a transmitter's model type <ModifyTransmitter>`
       - :ref:`Create a new transmitter object <CreateTransmitter>`
   Vehicles
     Common
@@ -230,13 +230,13 @@ STK Objects
         Aviator
           - :ref:`Configure the advanced fixed wing tool and set the aircraft to use the resulting performance models <SetupAdvancedFixedWingTool>`
           - :ref:`Set the configuration used for the mission <SetTheConfiguration>`
-          - :ref:`Set the aircraft used for the mission to an aircraft found in the aviator catalog <SetAviatorVehicle>`
+          - :ref:`Set the aircraft used for the mission to an aircraft found in the Aviator catalog <SetAviatorVehicle>`
           - :ref:`Create a new performance model for an aircraft <CreatePerformanceModel>`
           - :ref:`Configure the weather and atmosphere of the mission <ConfigureWeatherAtmosphere>`
           - :ref:`Configure a runway site <ConfigureRunwaySite>`
           - :ref:`Configure a runway site from a runway in the aviator catalog <ConfigureRunwayFromCatalog>`
           - :ref:`Configure the wind and atmosphere for a procedure <ConfigureProcedureWindAtmos>`
-          - :ref:`Configure a procedure time options <ConfigureProcedureTimeOptions>`
+          - :ref:`Configure a procedure's time options <ConfigureProcedureTimeOptions>`
           - :ref:`Rename a procedure and its site <ConfigureProcedure>`
           - :ref:`Configure the performance models to be used in the phase <ConfigurePhasePerformanceModels>`
           - :ref:`Configure the basic cruise performance model of an aircraft <ConfigureBasicCruisePerfModel>`
@@ -271,7 +271,7 @@ Create a new time interval
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
     # Change DateFormat dimension to epoch seconds to make the time easier to handle in
     # Python
@@ -287,7 +287,7 @@ Create a new time instant
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
     # Change DateFormat dimension to epoch seconds to make the time easier to handle in
     # Python
@@ -298,12 +298,12 @@ Create a new time instant
 
 .. _GetTimesFromTimeInstant:
 
-Get times from defined time instant and create an cell array
-============================================================
+Get times from a defined time instant and create a cell array
+=============================================================
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
     # Change DateFormat dimension to epoch seconds to make the time easier to handle in
     # Python
@@ -347,8 +347,8 @@ Create a new attitude parameter set
 
 .. _GetScalarAndEvaluate:
 
-Get a scalar component and evaluate at a time
-=============================================
+Get a scalar component and evaluate at a spcecific time
+=======================================================
 
 .. code-block:: python
 
@@ -502,13 +502,13 @@ Create a new custom script vector
     customScript = VectFactory.create("Script", "Description", VectorType.CUSTOM_SCRIPT)
     # Initialization script if needed
     # customScript.InitializationScriptFile = ''
-    customScript.script_file = r"C:\Program Files\AGI\STK 12\Data\Resources\stktraining\samples\Heliograph\Scripting\VectorTool\Vector\vector.vbs"
+    customScript.script_file = r"C:\Program Files\AGI\STK 12\Data\Resources\STKtraining\samples\Heliograph\Scripting\VectorTool\Vector\vector.vbs"
     if customScript.is_valid is False:
         print("Script component not valid!")
         from os import getenv
 
         print(
-            r"Copy vbs file from C:\Program Files\AGI\STK 12\Data\Resources\stktraining\samples\Heliograph\Scripting\VectorTool\Vector\vector.vbs to C:\Users\%s\Documents\STK 12\Config\Scripting\VectorTool"
+            r"Copy vbs file from C:\Program Files\AGI\STK 12\Data\Resources\STKtraining\samples\Heliograph\Scripting\VectorTool\Vector\vector.vbs to C:\Users\%s\Documents\STK 12\Config\Scripting\VectorTool"
             % getenv("USERNAME")
         )
 
@@ -554,8 +554,8 @@ Create a new displacement vector
 
 .. _GetVGTCompVehicle:
 
-Get default VGT component on vehicle
-====================================
+Get a default VGT component on a vehicle
+========================================
 
 .. code-block:: python
 
@@ -571,24 +571,24 @@ Get default VGT component on vehicle
 
 .. _GetVGTPoint:
 
-Get center point and inertial system of Earth central body
-==========================================================
+Get the center point and inertial system of Earth's central body
+================================================================
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model root
+    # STKObjectRoot root: STK Object Model root
     centerPtEarth = root.central_bodies.earth.analysis_workbench_components.points.item("Center")
     icrf = root.central_bodies.earth.analysis_workbench_components.systems.item("ICRF")
 
 .. _CameraReferenceFrame:
 
-Change camera reference frame
-=============================
+Change the camera reference frame
+=================================
 
 .. code-block:: python
 
     # Scenario scenario: Scenario object
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     manager = scenario.scene_manager
     manager.scenes.item(0).camera.view_central_body(
         "Earth", root.central_bodies.earth.analysis_workbench_components.axes.item("Fixed")
@@ -597,8 +597,8 @@ Change camera reference frame
 
 .. _CameraExtents:
 
-Change camera view to imagery extents
-=====================================
+Change the camera view to imagery extents
+=========================================
 
 .. code-block:: python
 
@@ -612,8 +612,8 @@ Change camera view to imagery extents
 
 .. _ResultsConnectCommand:
 
-Extract data from connect result
-================================
+Extract data from a connect result
+==================================
 
 .. code-block:: python
 
@@ -635,8 +635,8 @@ Execute multiple connect commands
 
 .. _ConnectCommand:
 
-Execute connect command
-=======================
+Execute a connect command
+=========================
 
 .. code-block:: python
 
@@ -690,8 +690,8 @@ Draw a solid cylinder primitive and set properties
 
 .. _SolidEllipsoidPrimitive:
 
-Draw a solid ellipsoid primitive and set properties
-===================================================
+Draw a solid ellipsoid primitive and set its properties
+=======================================================
 
 .. code-block:: python
 
@@ -720,8 +720,8 @@ Draw a solid ellipsoid primitive and set properties
 
 .. _SolidBoxPrimitive:
 
-Draw a solid box primitive and set properties
-=============================================
+Draw a solid box primitive and set its properties
+=================================================
 
 .. code-block:: python
 
@@ -748,8 +748,8 @@ Draw a solid box primitive and set properties
 
 .. _PointPrimitive:
 
-Draw a point primitive and set properties
-=========================================
+Draw a point primitive and set its properties
+=============================================
 
 .. code-block:: python
 
@@ -883,8 +883,8 @@ Draw a new surface mesh
 
 .. _GreatArcInterpolatorPrimitives:
 
-Great arc interpolator primitives
-=================================
+Compute interpolated positions along a great arc
+================================================
 
 .. code-block:: python
 
@@ -900,68 +900,68 @@ Great arc interpolator primitives
 
 .. _AttachSTKRuntimeSnippet:
 
-Attach to an already running STK runtime and get a reference to STK object root
-===============================================================================
+Attach to an already running STK Runtime and get a reference to the STK object root
+===================================================================================
 
 .. code-block:: python
 
     # Attach to already running instance of STK Runtime
-    from ansys.stk.core.stkruntime import STKRuntime
+    from ansys.STK.core.STKruntime import STKRuntime
 
-    stk = STKRuntime.attach_to_application()
+    STK = STKRuntime.attach_to_application()
 
     # Get the STK Object Root interface
-    root = stk.new_object_root()
+    root = STK.new_object_root()
 
 .. _CreateSTKRuntimeNewSnippet:
 
-Start STK runtime and get a reference to STK object root
-========================================================
+Start STK Runtime and get a reference to the STK object root
+============================================================
 
 .. code-block:: python
 
     # Start new instance of STK Runtime
-    from ansys.stk.core.stkruntime import STKRuntime
+    from ansys.STK.core.STKruntime import STKRuntime
 
-    stk = STKRuntime.start_application()
+    STK = STKRuntime.start_application()
 
     # Get the STK Object Root interface
-    root = stk.new_object_root()
+    root = STK.new_object_root()
 
 .. _CreateSTKNew:
 
-Start STK desktop and get a reference to STK object root
-========================================================
+Start the STK desktop application and get a reference to the STK object root
+============================================================================
 
 .. code-block:: python
 
     # Start new instance of STK Desktop
-    from ansys.stk.core.stkdesktop import STKDesktop
+    from ansys.STK.core.STKdesktop import STKDesktop
 
-    stk = STKDesktop.start_application(visible=True)  # using optional visible argument
+    STK = STKDesktop.start_application(visible=True)  # using optional visible argument
 
     # Get the STK Object Root interface
-    root = stk.root
+    root = STK.root
 
     # ...
 
     # Clean-up when done
-    stk.shutdown()
+    STK.shutdown()
 
 .. _AttachSTK:
 
-Get a reference to STK object root using a running STK desktop instance
-=======================================================================
+Get a reference to the STK application object root using a running STK desktop instance
+=======================================================================================
 
 .. code-block:: python
 
     # Get reference to running STK Desktop instance
-    from ansys.stk.core.stkdesktop import STKDesktop
+    from ansys.STK.core.STKdesktop import STKDesktop
 
-    stk = STKDesktop.attach_to_application()
+    STK = STKDesktop.attach_to_application()
 
     # Get the STK Object Root interface
-    root = stk.root
+    root = STK.root
 
 .. _StartSTKEngineSnippetWithoutGfx:
 
@@ -971,12 +971,12 @@ Initialize STK Engine in no graphics mode and get a reference to STK object root
 .. code-block:: python
 
     # Initialize STK Engine without graphics in the current process
-    from ansys.stk.core.stkengine import STKEngine
+    from ansys.STK.core.STKengine import STKEngine
 
-    stk = STKEngine.start_application(no_graphics=True)
+    STK = STKEngine.start_application(no_graphics=True)
 
     # Get the STK Object Root interface
-    root = stk.new_object_root()
+    root = STK.new_object_root()
 
 .. _StartSTKEngineWithGfx:
 
@@ -986,12 +986,12 @@ Initialize STK Engine with graphics and get a reference to STK object root
 .. code-block:: python
 
     # Initialize STK Engine with graphics in the current process
-    from ansys.stk.core.stkengine import STKEngine
+    from ansys.STK.core.STKengine import STKEngine
 
-    stk = STKEngine.start_application(no_graphics=False)
+    STK = STKEngine.start_application(no_graphics=False)
 
     # Get the STK Object Root interface
-    root = stk.new_object_root()
+    root = STK.new_object_root()
 
 .. _SceneLighting:
 
@@ -1010,8 +1010,8 @@ Control the lighting of the 3D scene
 
 .. _DisplayStarsWater:
 
-Control display of stars and water texture
-==========================================
+Control the display of stars and water texture
+==============================================
 
 .. code-block:: python
 
@@ -1034,7 +1034,7 @@ Add imagery and terrain to the scene
     # Add Terrain
     installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
     terrainTile = manager.scenes.item(0).central_bodies.earth.terrain.add_uri_string(
-        os.path.join(installPath, "Data", "Resources", "stktraining", "samples", "SRTM_Skopje.pdtt")
+        os.path.join(installPath, "Data", "Resources", "STKtraining", "samples", "SRTM_Skopje.pdtt")
     )
     extentTerrain = terrainTile.extent
     print(
@@ -1043,7 +1043,7 @@ Add imagery and terrain to the scene
     )
     # Add Imagery
     imageryTile = manager.scenes.item(0).central_bodies.earth.imagery.add_uri_string(
-        os.path.join(installPath, "Data", "Resources", "stktraining", "imagery", "NPS_OrganPipeCactus_Map.pdttx")
+        os.path.join(installPath, "Data", "Resources", "STKtraining", "imagery", "NPS_OrganPipeCactus_Map.pdttx")
     )
     extentImagery = imageryTile.extent
     print(
@@ -1053,12 +1053,12 @@ Add imagery and terrain to the scene
 
 .. _ScenarioFont:
 
-Change scenario font
-====================
+Change the scenario font
+========================
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     scenario = root.current_scenario
     scenario.graphics_3d.medium_font.name = "Arial"
     scenario.graphics_3d.medium_font.point_size = 18
@@ -1072,7 +1072,7 @@ Reset the scenario time
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     root.rewind()
 
 .. _ScenarioAnimationMode:
@@ -1082,7 +1082,7 @@ Change animation mode
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     scenario = root.current_scenario
     root.animation_options = AnimationOptionType.STOP
     root.mode = AnimationEndTimeMode.X_REAL_TIME
@@ -1091,12 +1091,12 @@ Change animation mode
 
 .. _SetUnitPreferences:
 
-Set unit preferences for object model
-=====================================
+Set unit preferences for the object model
+=========================================
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     root.units_preferences.item("DateFormat").set_current_unit("UTCG")
     root.units_preferences.item("Distance").set_current_unit("km")
 
@@ -1107,13 +1107,13 @@ Create a new scenario
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     root.new_scenario("Example_Scenario")
 
 .. _CloseSTK:
 
-Close STK
-=========
+Close the STK application
+=========================
 
 .. code-block:: python
 
@@ -1127,7 +1127,7 @@ Close an open scenario
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     root.close_scenario()
 
 .. _OpenVdfSTK:
@@ -1137,7 +1137,7 @@ Open a viewer data file
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
     root.load_vdf(os.path.join(installPath, "Data", "ExampleScenarios", "Intro_STK_Space_Systems.vdf"), "")
 
@@ -1148,7 +1148,7 @@ Get access between objects by path using the existing accesses
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model root
+    # STKObjectRoot root: STK Object Model root
     scenario = root.current_scenario
     accesses = scenario.get_existing_accesses()
 
@@ -1167,7 +1167,7 @@ Configure the access interval to the availability time span of the object where 
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model root
+    # STKObjectRoot root: STK Object Model root
 
     satellite = root.get_object_from_path("Satellite/MySatellite")
     facility = root.get_object_from_path("Facility/MyFacility")
@@ -1187,7 +1187,7 @@ Configure the access analysis time period to specified time instants
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model root
+    # STKObjectRoot root: STK Object Model root
 
     satellite = root.get_object_from_path("Satellite/MySatellite")
     facility = root.get_object_from_path("Facility/MyFacility")
@@ -1238,7 +1238,7 @@ Compute an access for one point
 
 .. code-block:: python
 
-    # IStkObject facility: Facility object
+    # ISTKObject facility: Facility object
     onePtAccess = facility.create_one_point_access("Satellite/MySatellite")
 
     # Configure properties (if necessary)
@@ -1296,7 +1296,7 @@ Compute an access between two STK objects (using object path)
 
 .. _ComputeAccess:
 
-Compute an access between two STK objects (using istkobject interface)
+Compute an access between two STK objects (using iSTKobject interface)
 ======================================================================
 
 .. code-block:: python
@@ -1526,8 +1526,8 @@ Add array of waypoints to aircraft
 
 .. _AddAircraftPoints:
 
-Set great arc propagator and add individual waypoints to aircraft
-=================================================================
+Set the great arc propagator and add individual waypoints to an aircraft
+========================================================================
 
 .. code-block:: python
 
@@ -1559,7 +1559,7 @@ Create a new aircraft (on the current scenario central body)
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model root
+    # STKObjectRoot root: STK Object Model root
     aircraft = root.current_scenario.children.new(STKObjectType.AIRCRAFT, "MyAircraft")
 
 .. _ListAreaTargetPoints:
@@ -1583,8 +1583,8 @@ List all points in an area target
 
 .. _CreateBoundaryAreaTargetList:
 
-Define area target boundary and position from list of lat/lon/alt (using common tasks)
-======================================================================================
+Define an area target boundary and position from list of lat/lon/alt (using common tasks)
+=========================================================================================
 
 .. code-block:: python
 
@@ -1601,12 +1601,12 @@ Define area target boundary and position from list of lat/lon/alt (using common 
 
 .. _CreateBoundaryAreaTarget:
 
-Define area target boundary and position from list of lat/lon/alt
-=================================================================
+Define an area target boundary and position from list of lat/lon/alt
+====================================================================
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     # AreaTarget areaTarget: AreaTarget object
 
     # By using the fine grained interfaces,
@@ -1627,7 +1627,7 @@ Set an elliptical area target (using common tasks)
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     # AreaTarget areaTarget: AreaTarget object
 
     # By using the CommonTasks interface
@@ -1640,7 +1640,7 @@ Set an elliptical area target
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     # AreaTarget areaTarget: AreaTarget object
 
     # By using the fine grained interfaces,
@@ -1660,7 +1660,7 @@ Create an area target (on the current scenario central body)
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
 
     # Create the AreaTarget on the current scenario central body (use
     # NewOnCentralBody to specify explicitly the central body)
@@ -1760,7 +1760,7 @@ Create a chain (on the current scenario central body)
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     # Create the Chain on the current scenario central body (use
     # NewOnCentralBody to specify explicitly the central body)
     chain = root.current_scenario.children.new(STKObjectType.CHAIN, "MyChain")
@@ -1772,7 +1772,7 @@ Define a constellation
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     # Satellite satellite: Satellite object
     constellation = root.current_scenario.children.new(STKObjectType.CONSTELLATION, "MyConstellation")
     constellation.objects.add_object(satellite)
@@ -1840,12 +1840,12 @@ Create a new coverage definition (on the current scenario central body)
 
 .. _SingleTimesDataProvider:
 
-Getting data for specific points and elements
-=============================================
+Get data for specific points and elements
+=========================================
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model root
+    # STKObjectRoot root: STK Object Model root
     # Satellite satellite: Satellite object
     # Change DateFormat dimension to epoch seconds to make the data easier to handle in
     # Python
@@ -1857,12 +1857,12 @@ Getting data for specific points and elements
 
 .. _SingleTimeDataProvider:
 
-Getting data for a single point in time
-=======================================
+Get data for a single point in time
+===================================
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model root
+    # STKObjectRoot root: STK Object Model root
     # Satellite satellite: Satellite object
     # Change DateFormat dimension to epoch seconds to make the data easier to handle in
     # Python
@@ -1872,12 +1872,12 @@ Getting data for a single point in time
 
 .. _DataProviderPreData:
 
-Extracting elements from data providers with pre-data
-=====================================================
+Extract elements from data providers with pre-data
+==================================================
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model root
+    # STKObjectRoot root: STK Object Model root
     # Facility facility: Facility object
     # Scenario scenario: Scenario object
     # Change DateFormat dimension to epoch seconds to make the data easier to handle in
@@ -1902,7 +1902,7 @@ Extracting elements from data providers with groups
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model root
+    # STKObjectRoot root: STK Object Model root
     # Satellite satellite: Satellite object
     # Scenario scenario: Scenario object
     # Change DateFormat dimension to epoch seconds to make the data easier to handle in
@@ -1931,12 +1931,12 @@ Extracting elements from data providers with groups
 
 .. _TimeDependentDataProviderElements:
 
-Using a time dependent data provider and requesting only specified elements
-===========================================================================
+Use a time dependent data provider and requesting only specified elements
+=========================================================================
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model root
+    # STKObjectRoot root: STK Object Model root
     # Satellite satellite: Satellite object
     # Scenario scenario: Scenario object
     # Change DateFormat dimension to epoch seconds to make the data easier to handle in
@@ -1956,12 +1956,12 @@ Using a time dependent data provider and requesting only specified elements
 
 .. _IntervalDataProvider:
 
-Using an interval data provider
-===============================
+Use an interval data provider
+=============================
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model root
+    # STKObjectRoot root: STK Object Model root
     # Satellite satellite: Satellite object
     # Facility facility: Facility object
 
@@ -2028,7 +2028,7 @@ Create a facility (on the current scenario central body)
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     facility = root.current_scenario.children.new(STKObjectType.FACILITY, "MyFacility")
 
 .. _FOMContoursColorRamp:
@@ -2091,8 +2091,8 @@ Add array of waypoints to ground vehicle and interpolate over terrain
 
 .. _AddGroundVehiclePoints:
 
-Set great arc propagator and add individual waypoints to ground vehicle
-=======================================================================
+Set great arc propagator and add individual waypoints to a ground vehicle
+=========================================================================
 
 .. code-block:: python
 
@@ -2163,8 +2163,8 @@ Create a new missile (on the current scenario central body)
 
 .. _MTOLoadTrack:
 
-Load MTO track points from file
-===============================
+Load MTO track points from a file
+=================================
 
 .. code-block:: python
 
@@ -2173,7 +2173,7 @@ Load MTO track points from file
     track2 = mto.tracks.add(2)
     installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
     track2.points.load_points(
-        os.path.join(installPath, "Data", "Resources", "stktraining", "text", "EphemerisLLATimePosVel_Example.e")
+        os.path.join(installPath, "Data", "Resources", "STKtraining", "text", "EphemerisLLATimePosVel_Example.e")
     )
     track2.interpolate = True
 
@@ -2219,8 +2219,8 @@ Compute object coverage
 
 .. _ModifyPlanet2DGraphics:
 
-Modify planet 2D properties
-===========================
+Modify a planet's 2D properties
+===============================
 
 .. code-block:: python
 
@@ -2257,8 +2257,8 @@ Add a vector to display in 3D
 
 .. _GraphicsOrbitSystem:
 
-Add fixed system orbit system in 3D display
-===========================================
+Add a fixed system orbit system in 3D display
+=============================================
 
 .. code-block:: python
 
@@ -2452,7 +2452,7 @@ Set 2D display times to custom and add intervals
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model root
+    # STKObjectRoot root: STK Object Model root
     # Satellite satellite: Satellite object
     root.units_preferences.item("DateFormat").set_current_unit("EpSec")
     graphics = satellite.graphics
@@ -2482,7 +2482,7 @@ Set 2D graphics display properties
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model root
+    # STKObjectRoot root: STK Object Model root
     # Satellite satellite: Satellite object
     # Change the line width, style, color and marker
 
@@ -2510,20 +2510,20 @@ Change the graphics resolution of the orbit for a smooth path
 .. _SatelliteAttitudeExternal:
 
 Set satellite attitude external
-===============================
+===================================
 
 .. code-block:: python
 
     # Satellite satellite: Satellite object
     installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
     satellite.attitude.external.load(
-        os.path.join(installPath, "Data", "Resources", "stktraining", "text", "AttitudeTimeEulerAngles_Example.a")
+        os.path.join(installPath, "Data", "Resources", "STKtraining", "text", "AttitudeTimeEulerAngles_Example.a")
     )
 
 .. _SatelliteAttitudeTarget:
 
 Set satellite attitude targeting
-================================
+====================================
 
 .. code-block:: python
 
@@ -2537,7 +2537,7 @@ Set satellite attitude targeting
 .. _SatelliteAttitudeSpinning:
 
 Set satellite attitude basic spinning
-=====================================
+=========================================
 
 .. code-block:: python
 
@@ -2550,21 +2550,21 @@ Set satellite attitude basic spinning
 
 .. _ExportEphemerisFile:
 
-Export an ephemeris file to scenario folder
-===========================================
+Export an ephemeris file to a scenario folder
+=============================================
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     # Satellite satellite: Satellite object
     scenPath = root.execute_command("GetDirectory / Scenario").item(0)
     satelliteFilePath = "%s\\%s.e" % (scenPath, satellite.instance_name)
     satelliteFilePath = satelliteFilePath.replace("\\", "\\\\")
-    satellite.export_tools.get_ephemeris_stk_export_tool().export(satelliteFilePath)
+    satellite.export_tools.get_ephemeris_STK_export_tool().export(satelliteFilePath)
 
 .. _SGP4Satellite:
 
-Set satellite propagator to sgp4 and propagate
+Set satellite propagator to SGP4 and propagate
 ==============================================
 
 .. code-block:: python
@@ -2587,7 +2587,7 @@ Set satellite propagator to spice and propagate
 .. code-block:: python
 
     # Satellite satellite: Satellite object
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     satellite.set_propagator_type(PropagatorType.SPICE)
     propagator = satellite.propagator
     installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
@@ -2655,7 +2655,7 @@ Set satellite propagator to HPOP and set force model properties
 
 .. _J4Satellite:
 
-Set satellite propagator to j4 and assign Cartesian position
+Set satellite propagator to J4 and assign Cartesian position
 ============================================================
 
 .. code-block:: python
@@ -2670,8 +2670,8 @@ Set satellite propagator to j4 and assign Cartesian position
 
 .. _SatelliteInitialState:
 
-Set initial state of satellite and propagate
-============================================
+Set the initial state of a satellite and propagate
+==================================================
 
 .. code-block:: python
 
@@ -2702,7 +2702,7 @@ Create a satellite (on the current scenario central body)
 
 .. code-block:: python
 
-    # StkObjectRoot root: STK Object Model Root
+    # STKObjectRoot root: STK Object Model Root
     satellite = root.current_scenario.children.new(STKObjectType.SATELLITE, "MySatellite")
 
 .. _SensorPersistence:
@@ -2730,7 +2730,7 @@ Sensor body mask
     # Sensor sensor: Sensor object
     installPath = r"C:\Program Files\AGI\STK 12" if os.name == "nt" else os.environ["STK_INSTALL_DIR"]
     sensor.set_az_el_mask_file(
-        os.path.join(installPath, "Data", "Resources", "stktraining", "text", "BodyMask_hga.bmsk")
+        os.path.join(installPath, "Data", "Resources", "STKtraining", "text", "BodyMask_hga.bmsk")
     )
 
 .. _DefineSensorPointingFixedAxesYPR:
@@ -2916,7 +2916,7 @@ Create a new antenna object
 
 .. code-block:: python
 
-    # IStkObject satellite: STK object
+    # ISTKObject satellite: STK object
     antenna = satellite.children.new(STKObjectType.ANTENNA, "MyAntenna")
 
 .. _ReceiverAdditionalGain:
@@ -3038,7 +3038,7 @@ Create a new receiver object
 
 .. code-block:: python
 
-    # IStkObject satellite: STK object
+    # ISTKObject satellite: STK object
     receiver = satellite.children.new(STKObjectType.RECEIVER, "MyReceiver")
 
 .. _TransmitteradditionalGain:
@@ -3149,7 +3149,7 @@ Create a new transmitter object
 
 .. code-block:: python
 
-    # IStkObject satellite: STK object
+    # ISTKObject satellite: STK object
     transmitter = satellite.children.new(STKObjectType.TRANSMITTER, "MyTransmitter")
 
 .. _AstrogatorRunMCS:
@@ -3242,7 +3242,7 @@ Set the configuration used for the mission
 
 .. _SetAviatorVehicle:
 
-Set the aircraft used for the mission to an aircraft found in the aviator catalog
+Set the aircraft used for the mission to an aircraft found in the Aviator catalog
 =================================================================================
 
 .. code-block:: python
@@ -3347,7 +3347,7 @@ Configure a runway site
 
 .. _ConfigureRunwayFromCatalog:
 
-Configure a runway site from a runway in the aviator catalog
+Configure a runway site from a runway in the Aviator catalog
 ============================================================
 
 .. code-block:: python
@@ -3395,8 +3395,8 @@ Configure the wind and atmosphere for a procedure
 
 .. _ConfigureProcedureTimeOptions:
 
-Configure a procedure time options
-==================================
+Configure a procedure's time options
+====================================
 
 .. code-block:: python
 

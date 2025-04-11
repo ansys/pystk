@@ -8,7 +8,7 @@ User guide
         :link-type: doc
         :padding: 2 2 2 2
 
-        Learn how to perform the necessary steps to establish a connection with and prepare PySTK for usage with the STK application.
+        Learn how to perform the necessary steps to establish a connection with and prepare PySTK for use with the STK® application.
 
     .. grid-item-card:: :fa:`long-arrow-right` API structure
         :link: user-guide/api-structure
@@ -43,7 +43,7 @@ User guide
         :link-type: doc
         :padding: 2 2 2 2
 
-        Learn how to automate the most common STK capabilities with PySTK
+        Learn how to automate the most common STK software capabilities with PySTK.
 
 .. toctree::
    :maxdepth: 3
@@ -52,7 +52,7 @@ User guide
    Initialization <user-guide/initialization>
    API structure <user-guide/api-structure>
    Data types <user-guide/data-types>
-   Help with STK <user-guide/help-with-pystk>
+   Help with STK software <user-guide/help-with-pystk>
  
    Migration <user-guide/migration>
    Code snippets <user-guide/code-snippets>

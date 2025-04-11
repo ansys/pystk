@@ -1,29 +1,31 @@
 Migrate to PySTK
 ################
 
-You might have existing Python scripts based on the `STK API for Python <https://help.agi.com/stkdevkit/Content/python/pythonIntro.htm>`_ currently shipped with the STK install. This page describes how you can migrate your code to PySTK to benefit from the improvements provided by the new API. 
+This topic describes how to migrate your existing Python code to PySTK, so that you can benefit from the improvements provided by the new API. This is useful if you have existing Python scripts based on the `STK API for Python <https://help.agi.com/stkdevkit/Content/python/pythonIntro.htm>`_ that is currently shipped with the Ansys STK® application install.
 
-In general, the overall logic of the code is unchanged, but namespaces, classes, interfaces, enumerations, methods, and arguments have been renamed. Migrating your code consists in replacing the old names with the new names. The :ref:`migration table <Migration table>` provided on this page contains the mappings between the old names and the new names. Updating your code manually by looking up the mappings one at a time can be time consuming. The :ref:`API Migration Assistant <API migration assistant>` included with the PySTK package facilitates that process.
+In general, the overall logic of the code is unchanged, but namespaces, classes, interfaces, enumerations, methods, and arguments have been renamed. Migrating your code consists of replacing the old names with the new names. The :ref:`migration table <Migration table>` provided on this page contains the mappings between the old names and the new names.
+
+Updating your code manually by looking up the mappings one at a time can be time consuming. The :ref:`API Migration Assistant <API migration assistant>` included with the PySTK package facilitates this process.
 
 API migration assistant
 =======================
 
-The API migration assistant automates migrating your code to the new API. It relies on a mix of dynamic and static analysis to locate the symbols that need to be updated in your code, and then perform the required edits. The dynamic analysis phase consists in running your application while recording the calls performed to the STK API. The static analysis phase uses the information recorded in the first phase to identify the methods and types that need to be renamed. It also renames imports, enumerations, and type hints by inspecting the source code.
+The API migration assistant automates migrating your code to the new API. It relies on a mix of dynamic and static analysis to locate the symbols that need to be updated in your code, and then performs the required edits. The dynamic analysis phase consists of running your application while recording the calls performed to the STK API. The static analysis phase uses the information recorded in the first phase to identify the methods and types that need to be renamed. It also renames imports, enumerations, and type hints by inspecting the source code.
 
 .. warning::
-    Before making changes to your existing code, make sure that all changes have been committed to your source control system.
+    Before making changes to your existing code, ensure that you have comitted all changes to your source control system.
 
 The following steps are recommended:
 
-1. Upgrade your code to STK version 12.10.0.
-2. Test your code using STK version 12.10.0 to make sure it works properly.
-3. Run the API migration assistant in recording mode. Repeat to cover all the code paths.
+1. Upgrade your code to STK software version 12.10.0.
+2. Test your code using STK software version 12.10.0 to ensure it works properly.
+3. Run the API migration assistant in recording mode. Repeat to cover all of the code paths.
 4. Run the API migration assistant to apply the changes.
 5. Review the changes.
 6. If you are satisfied with the changes, rename the migrated files to overwrite the original files.
 7. Test the migrated application.
 
-This workflow is depicted in the following diagram.
+The following diagram depicts this workflow:
 
 .. mermaid::
 
@@ -36,7 +38,7 @@ This workflow is depicted in the following diagram.
         E --> F[Overwrite the original files]
         F --> G[Done!]
 
-To illustrate this process, the examples below use a script in a filename named `snippet.py`:
+To illustrate this process, the examples below use a script in a file named `snippet.py`:
 
 .. vale off
 
@@ -66,17 +68,17 @@ To illustrate this process, the examples below use a script in a filename named 
 
 .. vale on
 
-Recording traces
+Record traces
 ~~~~~~~~~~~~~~~~
 
-The first phase of the process is to record one or multiple traces of the execution of your Python application using the old API. Start the recording by invoking the API migration assistant with the following options:
+The first phase of the migration process is to record one or multiple traces of the execution of your Python application using the old STK API. Start the recording by invoking the API migration assistant with the following options:
 
 .. code-block:: console
 
    $ pystk-migration-assistant record --recordings-directory=... snippet.py
    INFO: Recording ... snippet.py
 
-The recordings are saved in the specified directory. Therefore, make sure to specify an empty directory if starting from scratch on migrating a new application.
+The recordings are saved in the specified directory. Make sure to specify an empty directory if starting from scratch on migrating a new application.
 
 By default, the API migration assistant executes the provided script and invokes ``main`` as an entry point. If you want to trigger the execution of a different entry point, use the ``--entry-point`` command line option.
 
@@ -145,10 +147,10 @@ Note that the ``-m`` option is required if your program is a library module. Her
     ================================== 1 passed in 17.95s ==================================
 
 
-Applying the changes
+Apply the changes
 ~~~~~~~~~~~~~~~~~~~~
 
-Once you have accumulated one or more traces to cover all the paths in your Python application, you can apply the changes using the following command line:
+Once you have accumulated one or more traces to cover all of the paths in your Python application, you can apply the changes using the following command line:
 
 .. code-block:: console
 
