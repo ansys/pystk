@@ -36,8 +36,8 @@ pystk-migration-assistant = "ansys.stk.core.tools.api_migration_assistant.api_mi
 # TODO: split between dependency groups and installation targets with the release of pip v25.1
 # https://github.com/pypa/pip/milestone/78
 all = [
-    "grpcio",
-    "protobuf",
+    "grpcio>=1.71.0",
+    "protobuf>=6.30.2",
     "jupyter-rfb>=0.5.1",
     "numpy>=2.2.4",
     "Pillow>=11.1.0",
@@ -47,7 +47,7 @@ all = [
 ]
 grpc = [
     "grpcio>=1.71.0",
-    "protobuf>6.30.2",
+    "protobuf>=6.30.2",
 ]
 jupyter = [
     "jupyter-rfb>=0.5.1",
