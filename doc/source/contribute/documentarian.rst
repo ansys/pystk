@@ -172,8 +172,8 @@ snippet's assumed configuration. Decorate this method with PySTK's
     :header-rows: 1
     :widths: auto
     
-    * - Attribute
-      - Description
+    * - **Attribute**
+      - **Description**
     * - **name**
       - A Pascal-cased name briefly describing the snippet's objective (tip: use this name followed by ``Snippet`` to name the function enclosing the snippet)
     * - **description**
@@ -270,8 +270,10 @@ a snippet updater tool.
    $ python scripts/python_snippets_updater.py
 
 .. vale on
+
 View the changes using a diff application to ensure the process completed 
-smoothly. Once you have verified these changes, you are ready to `open a PR <PySTK pull requests>`_.
+smoothly. Once you have verified these changes, you are ready to open a PR on
+the `PySTK pull requests`_ page.
 
 .. _build-documentation:
 

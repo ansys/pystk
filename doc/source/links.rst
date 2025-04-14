@@ -6,7 +6,7 @@
 .. _PySTK discussions: https://github.com/ansys-internal/pystk/discussions
 .. _PySTK labels: https://github.com/ansys-internal/pystk/labels
 .. _docker/ directory: https://github.com/ansys-internal/pystk/tree/docker/
-.. _code snippet directory: https://github.com/ansys-internal/pystk/tree/tests/doc_snippets_tests
+.. _code snippet directory: https://github.com/ansys-internal/pystk/tree/main/tests/doc_snippets_tests
 
 .. Ansys products
 
