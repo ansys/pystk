@@ -68,7 +68,7 @@ class FigureOfMeritSnippets(CodeSnippetsTestBase):
         name="CreateFOM",
         description="Create a new Figure of Merit of type Access Duration",
         category="STK Objects | Figure Of Merit",
-        eid="STKObjects~IAgFigureOfMerit",
+        eid="stkobjects~FigureOfMerit",
     )
     def CreateFOMSnippet(self, coverage):
         # CoverageDefinition coverage: Coverage object
@@ -91,7 +91,7 @@ class FigureOfMeritSnippets(CodeSnippetsTestBase):
         name="FOMContoursColorRamp",
         description="Configure the Contours of the FOM and define a color ramp",
         category="STK Objects | Figure Of Merit",
-        eid="STKObjects~IAgFigureOfMerit",
+        eid="stkobjects~FigureOfMerit",
     )
     def FOMContoursColorRampSnippet(self, coverage, fom):
         # CoverageDefinition coverage: Coverage object

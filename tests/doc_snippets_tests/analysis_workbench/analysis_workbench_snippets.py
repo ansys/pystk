@@ -65,7 +65,7 @@ class AnalysisWorkbenchSnippets(CodeSnippetsTestBase):
         name="GetVGTPoint",
         description="Get Center point and Inertial System of Earth central body",
         category="Analysis Workbench",
-        eid="AgSTKVgtLib~IAgCrdnProvider",
+        eid="vgt~AnalysisWorkbenchComponentProvider",
     )
     def GetVGTPointSnippet(self, root):
         # StkObjectRoot root: STK Object Model root
@@ -85,7 +85,7 @@ class AnalysisWorkbenchSnippets(CodeSnippetsTestBase):
         name="GetVGTCompVehicle",
         description="Get default VGT component on vehicle",
         category="Analysis Workbench",
-        eid="AgSTKVgtLib~IAgCrdnProvider",
+        eid="vgt~AnalysisWorkbenchComponentProvider",
     )
     def GetVGTCompVehicleSnippet(self, satellite):
         # Satellite satellite: Satellite object
@@ -114,7 +114,7 @@ class AnalysisWorkbenchSnippets(CodeSnippetsTestBase):
         name="CreateDisplacementVector",
         description="Create a new Displacement Vector",
         category="Analysis Workbench",
-        eid="AgSTKVgtLib~IAgCrdnProvider",
+        eid="vgt~AnalysisWorkbenchComponentProvider",
     )
     def CreateDisplacementVectorSnippet(self, vgtSat, centerPtSat, centerPtEarth):
         # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
@@ -138,7 +138,7 @@ class AnalysisWorkbenchSnippets(CodeSnippetsTestBase):
         name="CreateFixedAxesVector",
         description="Create a new Fixed in Axes Vector",
         category="Analysis Workbench",
-        eid="AgSTKVgtLib~IAgCrdnProvider",
+        eid="vgt~AnalysisWorkbenchComponentProvider",
     )
     def CreateFixedAxesVectorSnippet(self, vgtSat, bodyAxes):
         # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
@@ -172,7 +172,7 @@ class AnalysisWorkbenchSnippets(CodeSnippetsTestBase):
         name="CreateCrossProductVector",
         description="Create a new Cross Product Vector",
         category="Analysis Workbench",
-        eid="AgSTKVgtLib~IAgCrdnProvider",
+        eid="vgt~AnalysisWorkbenchComponentProvider",
     )
     def CreateCrossProductVectorSnippet(self, vgtSat, Sat2EarthCenter, fixedAxesVector):
         # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
@@ -196,7 +196,7 @@ class AnalysisWorkbenchSnippets(CodeSnippetsTestBase):
         name="CreateScriptVector",
         description="Create a new Custom Script Vector",
         category="Analysis Workbench",
-        eid="AgSTKVgtLib~IAgCrdnProvider",
+        eid="vgt~AnalysisWorkbenchComponentProvider",
     )
     def CreateScriptVectorSnippet(self, vgtSat):
         # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
@@ -233,7 +233,7 @@ class AnalysisWorkbenchSnippets(CodeSnippetsTestBase):
         name="CreateProjectionVector",
         description="Create a new Projection Vector",
         category="Analysis Workbench",
-        eid="AgSTKVgtLib~IAgCrdnProvider",
+        eid="vgt~AnalysisWorkbenchComponentProvider",
     )
     def CreateProjectionVectorSnippet(self, vgtSat, Sat2EarthCenter):
         # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
@@ -258,7 +258,7 @@ class AnalysisWorkbenchSnippets(CodeSnippetsTestBase):
         name="CreateFixedPoint",
         description="Create a new Fixed in System Point",
         category="Analysis Workbench",
-        eid="AgSTKVgtLib~IAgCrdnProvider",
+        eid="vgt~AnalysisWorkbenchComponentProvider",
     )
     def CreateFixedPointSnippet(self, vgtSat):
         # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
@@ -280,7 +280,7 @@ class AnalysisWorkbenchSnippets(CodeSnippetsTestBase):
         name="CreateModelAttachmentPoint",
         description="Create a new Model Attachment Point",
         category="Analysis Workbench",
-        eid="AgSTKVgtLib~IAgCrdnProvider",
+        eid="vgt~AnalysisWorkbenchComponentProvider",
     )
     def CreateModelAttachmentPointSnippet(self, vgtSat):
         # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
@@ -305,7 +305,7 @@ class AnalysisWorkbenchSnippets(CodeSnippetsTestBase):
         name="CreateFixedTimeInstantPoint",
         description="Create a new Fixed at Time Instant Point",
         category="Analysis Workbench",
-        eid="AgSTKVgtLib~IAgCrdnProvider",
+        eid="vgt~AnalysisWorkbenchComponentProvider",
     )
     def CreateFixedTimeInstantPointSnippet(self, vgtSat, icrf):
         # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
@@ -338,7 +338,7 @@ class AnalysisWorkbenchSnippets(CodeSnippetsTestBase):
         name="CreateBetweenAngle",
         description="Create a new Between Vectors Angle",
         category="Analysis Workbench",
-        eid="AgSTKVgtLib~IAgCrdnProvider",
+        eid="vgt~AnalysisWorkbenchComponentProvider",
     )
     def CreateBetweenAngleSnippet(self, vgtSat, Sat2EarthCenter, bodyYSat):
         # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
@@ -371,7 +371,7 @@ class AnalysisWorkbenchSnippets(CodeSnippetsTestBase):
         name="CreateAlignedConstrainedAxes",
         description="Create a new Aligned and Constrained Axes",
         category="Analysis Workbench",
-        eid="AgSTKVgtLib~IAgCrdnProvider",
+        eid="vgt~AnalysisWorkbenchComponentProvider",
     )
     def CreateAlignedConstrainedAxesSnippet(self, vgtSat, Sat2EarthCenter, bodyYSat):
         # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
@@ -406,7 +406,7 @@ class AnalysisWorkbenchSnippets(CodeSnippetsTestBase):
         name="CreateAssembledSystem",
         description="Create a new Assembled System",
         category="Analysis Workbench",
-        eid="AgSTKVgtLib~IAgCrdnProvider",
+        eid="vgt~AnalysisWorkbenchComponentProvider",
     )
     def CreateAssembledSystemSnippet(self, vgtSat, fixedPt, bodyAxes):
         # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
@@ -436,7 +436,7 @@ class AnalysisWorkbenchSnippets(CodeSnippetsTestBase):
         name="CreateVectorMagScalar",
         description="Create a new Vector Magnitude Scalar",
         category="Analysis Workbench",
-        eid="AgSTKVgtLib~IAgCrdnProvider",
+        eid="vgt~AnalysisWorkbenchComponentProvider",
     )
     def CreateVectorMagScalarSnippet(self, vgtSat, Sat2EarthCenter):
         # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
@@ -461,7 +461,7 @@ class AnalysisWorkbenchSnippets(CodeSnippetsTestBase):
         name="CreateDataElementScalar",
         description="Create a Data Element Scalar",
         category="Analysis Workbench",
-        eid="AgSTKVgtLib~IAgCrdnProvider",
+        eid="vgt~AnalysisWorkbenchComponentProvider",
     )
     def CreateDataElementScalarSnippet(self, vgtSat):
         # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
@@ -484,7 +484,7 @@ class AnalysisWorkbenchSnippets(CodeSnippetsTestBase):
         name="GetScalarAndEvaluate",
         description="Get a Scalar component and evaluate at a time",
         category="Analysis Workbench",
-        eid="AgSTKVgtLib~IAgCrdnProvider",
+        eid="vgt~AnalysisWorkbenchComponentProvider",
     )
     def GetScalarAndEvaluateSnippet(self, scenario, vgtSat):
         # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
@@ -509,7 +509,7 @@ class AnalysisWorkbenchSnippets(CodeSnippetsTestBase):
         name="CreateAttitudeParameterSet",
         description="Create a new Attitude Parameter Set",
         category="Analysis Workbench",
-        eid="AgSTKVgtLib~IAgCrdnProvider",
+        eid="vgt~AnalysisWorkbenchComponentProvider",
     )
     def CreateAttitudeParameterSetSnippet(self, vgtSat, bodyAxes, icrfAxes):
         # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
@@ -534,7 +534,7 @@ class AnalysisWorkbenchSnippets(CodeSnippetsTestBase):
         name="CreateOrbitParameterSet",
         description="Create a new Orbit Parameter Set",
         category="Analysis Workbench",
-        eid="AgSTKVgtLib~IAgCrdnProvider",
+        eid="vgt~AnalysisWorkbenchComponentProvider",
     )
     def CreateOrbitParameterSetSnippet(self, vgtSat):
         # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface
@@ -559,7 +559,7 @@ class AnalysisWorkbenchSnippets(CodeSnippetsTestBase):
         name="GetTimesFromTimeInstant",
         description="Get Times From Defined Time Instant and create an cell array",
         category="Analysis Workbench",
-        eid="AgSTKVgtLib~IAgCrdnProvider",
+        eid="vgt~AnalysisWorkbenchComponentProvider",
     )
     def GetTimesFromTimeInstantSnippet(self, root, vgtSat):
         # StkObjectRoot root: STK Object Model Root
@@ -588,7 +588,7 @@ class AnalysisWorkbenchSnippets(CodeSnippetsTestBase):
         name="CreateTimeInstant",
         description="Create a new Time Instant",
         category="Analysis Workbench",
-        eid="AgSTKVgtLib~IAgCrdnProvider",
+        eid="vgt~AnalysisWorkbenchComponentProvider",
     )
     def CreateTimeInstantSnippet(self, root, vgtSat):
         # StkObjectRoot root: STK Object Model Root
@@ -614,7 +614,7 @@ class AnalysisWorkbenchSnippets(CodeSnippetsTestBase):
         name="CreateTimeInterval",
         description="Create a new Time Interval",
         category="Analysis Workbench",
-        eid="AgSTKVgtLib~IAgCrdnProvider",
+        eid="vgt~AnalysisWorkbenchComponentProvider",
     )
     def CreateTimeIntervalSnippet(self, root, vgtSat):
         # StkObjectRoot root: STK Object Model Root
@@ -641,7 +641,7 @@ class AnalysisWorkbenchSnippets(CodeSnippetsTestBase):
         name="CreateCollectionList",
         description="Create a new Collection of Interval List",
         category="Analysis Workbench",
-        eid="AgSTKVgtLib~IAgCrdnProvider",
+        eid="vgt~AnalysisWorkbenchComponentProvider",
     )
     def CreateCollectionListSnippet(self, vgtSat, centerPtSat):
         # AnalysisWorkbenchComponentProvider vgtSat: Vector Geometry Tool Interface

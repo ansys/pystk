@@ -34,8 +34,8 @@
    <Mapping ParentScope="IAgAvtrStrategyMATLAB3DGuidance" OldName="HOBSAngleTol" NewName="hobs_angle_tol" Category="method" />
    <Mapping ParentScope="IAgAvtrStrategyMATLAB3DGuidance" OldName="ComputeTASDot" NewName="compute_tas_dot" Category="method" />
    <Mapping ParentScope="IAgAvtrStrategyMATLAB3DGuidance" OldName="AirspeedOptions" NewName="airspeed_options" Category="method" />
-   <Mapping ParentScope="IAgAvtrStrategyMATLAB3DGuidance" OldName="PosVelStrategies" NewName="position_vel_strategies" Category="method" />
-   <Mapping ParentScope="IAgAvtrStrategyMATLAB3DGuidance" OldName="CancelTgtPosVel" NewName="cancel_target_position_vel" Category="method" />
+   <Mapping ParentScope="IAgAvtrStrategyMATLAB3DGuidance" OldName="PosVelStrategies" NewName="position_velocity_strategies" Category="method" />
+   <Mapping ParentScope="IAgAvtrStrategyMATLAB3DGuidance" OldName="CancelTgtPosVel" NewName="cancel_target_position_velocity" Category="method" />
    <Mapping OldName="AgAvtrStrategyMATLABNav" NewName="StrategyMATLABNavigation" Category="class" />
    <Mapping OldName="AgAvtrStrategyMATLABProfile" NewName="StrategyMATLABProfile" Category="class" />
    <Mapping OldName="AgAvtrStrategyMATLABFull3D" NewName="StrategyMATLABFull3D" Category="class" />

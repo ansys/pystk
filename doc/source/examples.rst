@@ -5,6 +5,17 @@ Examples
 
     {% if build_examples %}
 
+    Fundamental concepts
+    ====================
+
+    This series of tutorials demonstrates how to perform fundamental actions in PySTK.
+
+    .. nbgallery::
+        :caption: Fundamental concepts
+
+        examples/create-load-scenarios
+        examples/results-graphs
+
     Basic examples
     ==============
     

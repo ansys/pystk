@@ -158,7 +158,7 @@ Property detail
 
 .. py:property:: velocity_covariance
     :canonical: ansys.stk.core.stkobjects.MissileGraphics3D.velocity_covariance
-    :type: VehicleGraphics3DVelCovariance
+    :type: VehicleGraphics3DVelocityCovariance
 
     Get the missile's 3D velocity covariance properties.
 

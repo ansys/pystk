@@ -57,7 +57,7 @@ class PlanetSnippets(CodeSnippetsTestBase):
         name="CreatePlanet",
         description="Create a New Planet",
         category="STK Objects | Planet",
-        eid="STKObjects~IAgPlanet",
+        eid="stkobjects~Planet",
     )
     def CreatePlanetSnippet(self, scenario):
         # Scenario scenario: Scenario object
@@ -77,7 +77,7 @@ class PlanetSnippets(CodeSnippetsTestBase):
         name="ModifyPlanet2DGraphics",
         description="Modify Planet 2D Properties",
         category="STK Objects | Planet | Graphics",
-        eid="STKObjects~IAgPlanet",
+        eid="stkobjects~Planet",
     )
     def PlanetGraphicsSnippet(self, planet):
         # Planet planet: Planet object

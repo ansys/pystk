@@ -179,6 +179,9 @@ linkcheck_ignore = [
     "https://support.agi.com/3d-models",
     "https://support.agi.com/downloads",
     "https://www.khronos.org/collada/",
+    # TODO: Determine a way to link to examples without breaking the linkcheck
+    # https://github.com/ansys-internal/pystk/issues/657
+    r"../examples/",
 ]
 
 # -- Declare the Jinja context -----------------------------------------------

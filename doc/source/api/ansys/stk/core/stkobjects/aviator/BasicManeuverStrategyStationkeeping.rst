@@ -22,7 +22,7 @@ Overview
 
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStationkeeping.set_control_limit`
               - Set the method and corresponding value to define the control limits of the aircraft during the maneuver.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStationkeeping.cancel_target_position_vel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStationkeeping.cancel_target_position_velocity`
               - Cancel the position velocity strategies for Station Keeping.
 
     .. tab-item:: Properties
@@ -71,7 +71,7 @@ Overview
               - Get the specified horizontal acceleration for a control limit mode of specify max horiz accel.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStationkeeping.compensate_for_coriolis_acceleration`
               - Get or set the option to compensate for the acceleration due to the Coriolis effect.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStationkeeping.position_vel_strategies`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStationkeeping.position_velocity_strategies`
               - Get the position velocity strategies for Station Keeping.
 
 
@@ -207,9 +207,9 @@ Property detail
 
     Get or set the option to compensate for the acceleration due to the Coriolis effect.
 
-.. py:property:: position_vel_strategies
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStationkeeping.position_vel_strategies
-    :type: BasicManeuverTargetPositionVel
+.. py:property:: position_velocity_strategies
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStationkeeping.position_velocity_strategies
+    :type: BasicManeuverTargetPositionVelocity
 
     Get the position velocity strategies for Station Keeping.
 
@@ -267,8 +267,8 @@ Method detail
 
 
 
-.. py:method:: cancel_target_position_vel(self) -> None
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStationkeeping.cancel_target_position_vel
+.. py:method:: cancel_target_position_velocity(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyStationkeeping.cancel_target_position_velocity
 
     Cancel the position velocity strategies for Station Keeping.
 

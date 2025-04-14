@@ -1,12 +1,12 @@
-WindAtmosModelSource
-====================
+WindAtmosphereModelSource
+=========================
 
-.. py:class:: ansys.stk.core.stkobjects.aviator.WindAtmosModelSource
+.. py:class:: ansys.stk.core.stkobjects.aviator.WindAtmosphereModelSource
 
    IntEnum
 
 
-.. py:currentmodule:: WindAtmosModelSource
+.. py:currentmodule:: WindAtmosphereModelSource
 
 Overview
 --------
@@ -34,6 +34,6 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects.aviator import WindAtmosModelSource
+    from ansys.stk.core.stkobjects.aviator import WindAtmosphereModelSource
 
 

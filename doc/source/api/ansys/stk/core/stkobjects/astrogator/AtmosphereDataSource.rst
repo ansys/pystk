@@ -1,12 +1,12 @@
-AtmosDataSource
-===============
+AtmosphereDataSource
+====================
 
-.. py:class:: ansys.stk.core.stkobjects.astrogator.AtmosDataSource
+.. py:class:: ansys.stk.core.stkobjects.astrogator.AtmosphereDataSource
 
    IntEnum
 
 
-.. py:currentmodule:: AtmosDataSource
+.. py:currentmodule:: AtmosphereDataSource
 
 Overview
 --------
@@ -31,6 +31,6 @@ Import detail
 
 .. code-block:: python
 
-    from ansys.stk.core.stkobjects.astrogator import AtmosDataSource
+    from ansys.stk.core.stkobjects.astrogator import AtmosphereDataSource
 
 

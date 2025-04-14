@@ -1609,7 +1609,7 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DCovariance`
               - 3D position covariance ellipsoids.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DVelCovariance`
+            * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DVelocityCovariance`
               - 3D velocity covariance ellipsoids.
 
             * - :py:class:`~ansys.stk.core.stkobjects.VehicleGraphics3DTrajectoryProximity`
@@ -3142,16 +3142,16 @@ Summary
             * - :py:class:`~ansys.stk.core.stkobjects.ReceivePolarizationElliptical`
               - Class defining an elliptical polarization.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.PolarizationLHC`
+            * - :py:class:`~ansys.stk.core.stkobjects.PolarizationLeftHandCircular`
               - Class defining a LHC polarization.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.PolarizationRHC`
+            * - :py:class:`~ansys.stk.core.stkobjects.PolarizationRightHandCircular`
               - Class defining a RHC polarization.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.ReceivePolarizationLHC`
+            * - :py:class:`~ansys.stk.core.stkobjects.ReceivePolarizationLeftHandCircular`
               - Class defining a LHC polarization.
 
-            * - :py:class:`~ansys.stk.core.stkobjects.ReceivePolarizationRHC`
+            * - :py:class:`~ansys.stk.core.stkobjects.ReceivePolarizationRightHandCircular`
               - Class defining a RHC polarization.
 
             * - :py:class:`~ansys.stk.core.stkobjects.PolarizationLinear`
@@ -5750,7 +5750,7 @@ The following is an overview of the classes, interfaces and enumerations of the 
      VehicleGraphics3DOrbitTickMarks<stkobjects/VehicleGraphics3DOrbitTickMarks>
      VehicleGraphics3DPass<stkobjects/VehicleGraphics3DPass>
      VehicleGraphics3DCovariance<stkobjects/VehicleGraphics3DCovariance>
-     VehicleGraphics3DVelCovariance<stkobjects/VehicleGraphics3DVelCovariance>
+     VehicleGraphics3DVelocityCovariance<stkobjects/VehicleGraphics3DVelocityCovariance>
      VehicleGraphics3DTrajectoryProximity<stkobjects/VehicleGraphics3DTrajectoryProximity>
      VehicleGraphics3DTrajectory<stkobjects/VehicleGraphics3DTrajectory>
      VehicleGraphics3DTrajectoryTrackData<stkobjects/VehicleGraphics3DTrajectoryTrackData>
@@ -6261,10 +6261,10 @@ The following is an overview of the classes, interfaces and enumerations of the 
      Polarization<stkobjects/Polarization>
      PolarizationElliptical<stkobjects/PolarizationElliptical>
      ReceivePolarizationElliptical<stkobjects/ReceivePolarizationElliptical>
-     PolarizationLHC<stkobjects/PolarizationLHC>
-     PolarizationRHC<stkobjects/PolarizationRHC>
-     ReceivePolarizationLHC<stkobjects/ReceivePolarizationLHC>
-     ReceivePolarizationRHC<stkobjects/ReceivePolarizationRHC>
+     PolarizationLeftHandCircular<stkobjects/PolarizationLeftHandCircular>
+     PolarizationRightHandCircular<stkobjects/PolarizationRightHandCircular>
+     ReceivePolarizationLeftHandCircular<stkobjects/ReceivePolarizationLeftHandCircular>
+     ReceivePolarizationRightHandCircular<stkobjects/ReceivePolarizationRightHandCircular>
      PolarizationLinear<stkobjects/PolarizationLinear>
      ReceivePolarizationLinear<stkobjects/ReceivePolarizationLinear>
      PolarizationHorizontal<stkobjects/PolarizationHorizontal>

@@ -64,7 +64,7 @@ class DataProvidersSnippets(CodeSnippetsTestBase):
         name="IntervalDataProvider",
         description="Using an interval Data Provider",
         category="STK Objects | Data Providers",
-        eid="STKObjects~IAgDataProviderCollection",
+        eid="stkobjects~DataProviderCollection",
     )
     def IntervalDataProviderSnippet(self, root, satellite, facility):
         # StkObjectRoot root: STK Object Model root
@@ -99,7 +99,7 @@ class DataProvidersSnippets(CodeSnippetsTestBase):
         name="TimeDependentDataProviderElements",
         description="Using a Time Dependent Data Provider and requesting only specified elements",
         category="STK Objects | Data Providers",
-        eid="STKObjects~IAgDataProviderCollection",
+        eid="stkobjects~DataProviderCollection",
     )
     def TimeDependentDataProviderElementsSnippet(self, root, scenario, satellite):
         # StkObjectRoot root: STK Object Model root
@@ -134,7 +134,7 @@ class DataProvidersSnippets(CodeSnippetsTestBase):
         name="GroupsDataProvider",
         description="Extracting Elements from Data Providers with Groups",
         category="STK Objects | Data Providers",
-        eid="STKObjects~IAgDataProviderCollection",
+        eid="stkobjects~DataProviderCollection",
     )
     def GroupsDataProviderSnippet(self, root, scenario, satellite):
         # StkObjectRoot root: STK Object Model root
@@ -177,7 +177,7 @@ class DataProvidersSnippets(CodeSnippetsTestBase):
         name="DataProviderPreData",
         description="Extracting Elements from Data Providers with pre-data",
         category="STK Objects | Data Providers",
-        eid="STKObjects~IAgDataProviderCollection",
+        eid="stkobjects~DataProviderCollection",
     )
     def DataProviderPreDataSnippet(self, root, scenario, facility):
         # StkObjectRoot root: STK Object Model root
@@ -211,7 +211,7 @@ class DataProvidersSnippets(CodeSnippetsTestBase):
         name="SingleTimeDataProvider",
         description="Getting Data for a Single Point in Time",
         category="STK Objects | Data Providers",
-        eid="STKObjects~IAgDataProviderCollection",
+        eid="stkobjects~DataProviderCollection",
     )
     def SingleTimeDataProviderSnippet(self, root, satellite):
         # StkObjectRoot root: STK Object Model root
@@ -235,7 +235,7 @@ class DataProvidersSnippets(CodeSnippetsTestBase):
         name="SingleTimesDataProvider",
         description="Getting Data for Specific Points and Elements",
         category="STK Objects | Data Providers",
-        eid="STKObjects~IAgDataProviderCollection",
+        eid="stkobjects~DataProviderCollection",
     )
     def SingleTimesDataProviderSnippet(self, root, satellite):
         # StkObjectRoot root: STK Object Model root

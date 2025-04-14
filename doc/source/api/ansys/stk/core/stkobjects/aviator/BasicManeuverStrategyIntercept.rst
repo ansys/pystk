@@ -26,7 +26,7 @@ Overview
               - Set the option to use the stop slant range stopping condition and set the according value.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyIntercept.set_control_limit`
               - Set the method and corresponding value to define the control limits of the aircraft during the maneuver.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyIntercept.cancel_target_position_vel`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyIntercept.cancel_target_position_velocity`
               - Cancel the position velocity strategies for Intercept.
 
     .. tab-item:: Properties
@@ -73,7 +73,7 @@ Overview
               - Get or set the closure high off boresight angle tolerance.
             * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyIntercept.compensate_for_coriolis_acceleration`
               - Get or set the option to compensate for the acceleration due to the Coriolis effect.
-            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyIntercept.position_vel_strategies`
+            * - :py:attr:`~ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyIntercept.position_velocity_strategies`
               - Get the position velocity strategies for Intercept.
 
 
@@ -203,9 +203,9 @@ Property detail
 
     Get or set the option to compensate for the acceleration due to the Coriolis effect.
 
-.. py:property:: position_vel_strategies
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyIntercept.position_vel_strategies
-    :type: BasicManeuverTargetPositionVel
+.. py:property:: position_velocity_strategies
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyIntercept.position_velocity_strategies
+    :type: BasicManeuverTargetPositionVelocity
 
     Get the position velocity strategies for Intercept.
 
@@ -285,8 +285,8 @@ Method detail
 
 
 
-.. py:method:: cancel_target_position_vel(self) -> None
-    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyIntercept.cancel_target_position_vel
+.. py:method:: cancel_target_position_velocity(self) -> None
+    :canonical: ansys.stk.core.stkobjects.aviator.BasicManeuverStrategyIntercept.cancel_target_position_velocity
 
     Cancel the position velocity strategies for Intercept.
 

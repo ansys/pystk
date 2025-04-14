@@ -26,8 +26,8 @@
    <Mapping OldName="AgERfcmTransceiverModelType" NewName="TransceiverModelType" Category="enum_type" />
    <Mapping ParentScope="AgERfcmPolarizationType" OldName="eRfcmPolarizationTypeVertical" NewName="VERTICAL" Category="enum_value" />
    <Mapping ParentScope="AgERfcmPolarizationType" OldName="eRfcmPolarizationTypeHorizontal" NewName="HORIZONTAL" Category="enum_value" />
-   <Mapping ParentScope="AgERfcmPolarizationType" OldName="eRfcmPolarizationTypeRHCP" NewName="RHCP" Category="enum_value" />
-   <Mapping ParentScope="AgERfcmPolarizationType" OldName="eRfcmPolarizationTypeLHCP" NewName="LHCP" Category="enum_value" />
+   <Mapping ParentScope="AgERfcmPolarizationType" OldName="eRfcmPolarizationTypeRHCP" NewName="RIGHT_HAND_CIRCULAR_POLARIZATION" Category="enum_value" />
+   <Mapping ParentScope="AgERfcmPolarizationType" OldName="eRfcmPolarizationTypeLHCP" NewName="LEFT_HAND_CIRCULAR_POLARIZATION" Category="enum_value" />
    <Mapping OldName="AgERfcmPolarizationType" NewName="PolarizationType" Category="enum_type" />
    <Mapping ParentScope="AgERfcmImageWindowType" OldName="eRfcmImageWindowTypeFlat" NewName="FLAT" Category="enum_value" />
    <Mapping ParentScope="AgERfcmImageWindowType" OldName="eRfcmImageWindowTypeHann" NewName="HANN" Category="enum_value" />
