@@ -88,8 +88,14 @@ Add an AzEl Mask to a Facility
     # Facility facility: Facility Object
     facility.set_az_el_mask(AzElMaskType.TERRAIN_DATA, 0)
 
+Get the cartesian position of a facility
 
-Set the geodetic position of a facility
+.. code-block:: python
+
+    # Facility facility: Facility Object
+    (x, y, z) = facility.position.query_cartesian()
+    
+Set the geodetic position of the facility
 
 .. code-block:: python
 
@@ -101,6 +107,17 @@ Set the geodetic position of a facility
 
     # Set altitude to a distance above the ground
     facility.height_above_ground = 0.05  # km
+
+
+Create a facility and set its height relative to ground level
+
+.. code-block:: python
+
+    # StkObjectRoot root: STK Object Model Root
+    from ansys.stk.core.stkobjects import Facility, STKObjectType
+
+    facility = Facility(root.current_scenario.children.new(STKObjectType.FACILITY, "facility1"))
+    facility.height_above_ground = 123.4
 
 
 Create a facility (on the current scenario central body)

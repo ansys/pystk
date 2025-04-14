@@ -32,6 +32,20 @@ Overview
               - Completely fill the cylinder, including its wall, bottom, and top cap.
 
 
+Examples
+--------
+
+Combine enumerations with the logical OR operator
+
+.. code-block:: python
+
+    from ansys.stk.core.graphics import CylinderFillOptions
+
+    # CylinderFillOptions inherits from enum.IntFlag and may be combined
+    # using the `|` operator
+    cyl_fill = CylinderFillOptions.BOTTOM_CAP | CylinderFillOptions.TOP_CAP
+
+
 Import detail
 -------------
 
