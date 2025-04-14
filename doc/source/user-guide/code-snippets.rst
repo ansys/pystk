@@ -71,6 +71,7 @@ Scenario
     - :ref:`Change scenario font <ScenarioFont>`
     - :ref:`Reset the scenario time <ScenarioReset>`
     - :ref:`Change animation mode <ScenarioAnimationMode>`
+    - :ref:`Set the current scenario's time period <SetScenarioTimePeriod>`
     - :ref:`Set unit preferences for object model <SetUnitPreferences>`
     - :ref:`Create a new scenario <CreateScenario>`
     - :ref:`Close stk <CloseSTK>`
@@ -1216,6 +1217,21 @@ Change animation mode
     root.mode = AnimationEndTimeMode.X_REAL_TIME
     scenario.animation_settings.animation_step_value = 1  # second
     scenario.animation_settings.refresh_delta = 0.03  # second
+
+.. _SetScenarioTimePeriod:
+
+Set the current scenario's time period
+======================================
+
+.. code-block:: python
+
+    # StkObjectRoot root: STK Object Model Root
+    from ansys.stk.core.stkobjects import Scenario
+    scenario: Scenario = root.current_scenario
+    scenario.set_time_period(
+        start_time="1 Jan 2012 12:00:00.000",
+        stop_time="2 Jan 2012 12:00:00.000"
+    )
 
 .. _SetUnitPreferences:
 
