@@ -13,7 +13,7 @@ API migration assistant
 The API migration assistant automates migrating your code to the new API. It relies on a mix of dynamic and static analysis to locate the symbols that need to be updated in your code, and then performs the required edits. The dynamic analysis phase consists of running your application while recording the calls performed to the STK API. The static analysis phase uses the information recorded in the first phase to identify the methods and types that need to be renamed. It also renames imports, enumerations, and type hints by inspecting the source code.
 
 .. warning::
-    Before making changes to your existing code, ensure that you have comitted all changes to your source control system.
+    Before making changes to your existing code, ensure that you have committed all changes to your source control system.
 
 The following steps are recommended:
 
