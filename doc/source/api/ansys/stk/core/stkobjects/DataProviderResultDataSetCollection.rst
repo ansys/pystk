@@ -48,6 +48,121 @@ Overview
 
 
 
+Examples
+--------
+
+Create a heat map of coverage definition results graphing duration by asset using a Pandas DataFrame
+
+.. code-block:: python
+
+    # CoverageDefinition coverage: Coverage object
+    from matplotlib import pyplot as plt
+    import numpy as np
+
+    # compute data provider results for All Regions by Pass coverage
+    coverage_data_provider = coverage.data_providers.item('All Regions By Pass')
+    coverage_data = coverage_data_provider.execute()
+
+    # convert dataset collection in a row format as a Pandas DataFrame with default numeric row index
+    coverage_all_regions_elements = coverage_data_provider.elements
+    all_regions_coverage_df = coverage_data.data_sets.to_pandas_dataframe(data_provider_elements=coverage_all_regions_elements)
+
+    # reshape the DataFrame based on column values
+    pivot = all_regions_coverage_df.pivot_table(index='region name', columns='asset name', values='duration')
+
+    # plot heat map that shows duration by asset name by region
+    plt.xlabel('Duration by Asset', fontsize=20)
+    plt.xticks(ticks=range(len(pivot.columns.values)), labels=pivot.columns.values)
+
+    plt.ylabel('Region Name', fontsize=20)
+    plt.yticks(ticks=np.arange(len(pivot.index), step=10), labels=pivot.index[::10])
+
+    im = plt.imshow(pivot, cmap="YlGnBu", aspect='auto', interpolation='none')
+    plt.colorbar(orientation='vertical')
+
+
+Compute descriptive statistics for access measurements using a Pandas DataFrame
+
+.. code-block:: python
+
+    # CoverageDefinition coverage: Coverage object
+    import pandas as pd
+
+    # compute data provider results for All Regions by Pass coverage
+    coverage_data_provider = coverage.data_providers.item('All Regions By Pass')
+    coverage_data = coverage_data_provider.execute()
+
+    # convert dataset collection in a row format as a Pandas DataFrame with default numeric row index
+    all_regions_coverage_df = coverage_data.data_sets.to_pandas_dataframe()
+
+    # compute descriptive statistics of Duration, Percent Coverage, Area Coverage
+    all_regions_coverage_df[['duration', 'percent coverage', 'area coverage']].apply(pd.to_numeric).describe()
+
+
+Convert access data provider results to a Pandas DataFrame
+
+.. code-block:: python
+
+    # Access facility_sensor_satellite_access: Access calculation
+    # compute data provider results for basic Access
+    field_names = ['Access Number', 'Start Time', 'Stop Time', 'Duration']
+
+    access_data = facility_sensor_satellite_access.data_providers['Access Data'].execute_elements(
+        self.get_scenario().start_time, self.get_scenario().stop_time, field_names
+    )
+
+    # convert dataset collection in a row format as a Pandas DataFrame
+    index_column = 'Access Number'
+    access_data_df = access_data.data_sets.to_pandas_dataframe(index_element_name=index_column)
+
+
+Convert coverage definition data provider results to a Pandas DataFrame
+
+.. code-block:: python
+
+    # CoverageDefinition coverage: Coverage object
+    # compute data provider results for All Regions by Pass coverage
+    coverage_data_provider = coverage.data_providers.item('All Regions By Pass')
+    coverage_data = coverage_data_provider.execute()
+
+    # convert dataset collection in a row format as a Pandas DataFrame with default numeric row index
+    coverage_df = coverage_data.data_sets.to_pandas_dataframe()
+
+
+Load a Numpy array with flight profile data
+
+.. code-block:: python
+
+    # Aircraft aircraft: Aircraft object
+    from scipy.spatial import ConvexHull
+    import matplotlib.pyplot as plt
+
+    # compute data provider results for an aircraft's Flight Profile By Time
+    field_names = ['Mach #', 'Altitude']
+    time_step_sec = 1.0
+
+    flight_profile_data_provider = aircraft.data_providers.item('Flight Profile By Time')
+    flight_profile_data = flight_profile_data_provider.execute_elements(self.get_scenario().start_time, self.get_scenario().stop_time, time_step_sec, field_names)
+
+    # convert dataset collection in a row format as a Numpy array
+    flight_profile_data_arr = flight_profile_data.data_sets.to_numpy_array()
+
+    # plot estimated fligth envelope as a convex hull
+    hull = ConvexHull(flight_profile_data_arr)
+
+    plt.figure(figsize=(15, 10))
+    for simplex in hull.simplices:
+        plt.plot(flight_profile_data_arr[simplex, 1], flight_profile_data_arr[simplex, 0], color="darkblue")
+
+    plt.title('Estimated Flight Envelope', fontsize=15)
+    plt.xlabel('Mach Number', fontsize=15)
+    plt.ylabel('Altitude', fontsize=15)
+
+    plt.tick_params(axis='x', labelsize=15)
+    plt.tick_params(axis='y', labelsize=15)
+    plt.grid(visible=True)
+
+
 Import detail
 -------------
 
