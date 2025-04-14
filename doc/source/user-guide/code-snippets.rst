@@ -142,9 +142,8 @@ STK Objects
       - :ref:`Display the azel mask in 2d/3d <FacilityAzElMaskDisplay>`
 
     - :ref:`Add an azel mask to a facility <AzElMaskFacility>`
-    - :ref:`Get the cartesian position of the facility <GetPositionFacility>`
+    - :ref:`Get the cartesian position of a facility <GetPositionFacility>`
     - :ref:`Set the geodetic position of a facility <SetPositionFacility>`
-
     - :ref:`Create a facility and set its height relative to ground level <SetHeightFacility>`
     - :ref:`Get a valid reference to a facility <GetValidFacility>`
     - :ref:`Create a facility (on the current scenario central body) <CreateFacility>`
@@ -1349,12 +1348,12 @@ Manage STK desktop events
     scenario = root.current_scenario
 
     # on_stk_object_added_custom_callback is successfully called when the next line is executed
-    facility = scenario.children.new(STKObjectType.FACILITY, 'AGI_HQ')
+    facility = scenario.children.new(STKObjectType.FACILITY, 'Exton')
 
     # Now switch control to the desktop application and create another facility.
     # The user interface becomes unresponsive.
 
-    # Now open a tkinter window that processing COM messages.
+    # Now open a tkinter window that processing Windows messages.
     from tkinter import Tk
 
     window = Tk()
@@ -2270,8 +2269,8 @@ Add an AzEl mask to a facility
 
 .. _GetPositionFacility:
 
-Get the Cartesian position of the facility
-==========================================
+Get the Cartesian position of a facility
+========================================
 
 .. code-block:: python
 

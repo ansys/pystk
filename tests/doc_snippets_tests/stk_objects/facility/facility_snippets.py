@@ -146,7 +146,7 @@ class FacilitySnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="GetPositionFacility",
-        description="Get the cartesian position of the facility",
+        description="Get the cartesian position of a facility",
         category="STK Objects | Facility",
         eid="stkobjects~Facility",
     )

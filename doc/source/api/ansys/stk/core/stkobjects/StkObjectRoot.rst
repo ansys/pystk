@@ -263,12 +263,12 @@ Manage STK Desktop events
     scenario = root.current_scenario
 
     # on_stk_object_added_custom_callback is successfully called when the next line is executed
-    facility = scenario.children.new(STKObjectType.FACILITY, 'AGI_HQ')
+    facility = scenario.children.new(STKObjectType.FACILITY, 'Exton')
 
     # Now switch control to the desktop application and create another facility.
     # The user interface becomes unresponsive.
 
-    # Now open a tkinter window that processing COM messages.
+    # Now open a tkinter window that processing Windows messages.
     from tkinter import Tk
 
     window = Tk()
