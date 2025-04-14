@@ -33,8 +33,8 @@ Camera
   - :ref:`Change the camera reference frame <CameraReferenceFrame>`
   - :ref:`Change the camera view to imagery extents <CameraExtents>`
 Colors
-  - :ref:`Get and set a four-channel color for the graphics of an stk object <GetSetRGBAColor>`
-  - :ref:`Get and set a three-channel color for the graphics of an stk object <GetSetRGBColor>`
+  - :ref:`Get and set a four-channel color for the graphics of an stk application object <GetSetRGBAColor>`
+  - :ref:`Get and set a three-channel color for the graphics of an stk application object <GetSetRGBColor>`
 Connect
   - :ref:`Extract data from connect results <ResultsConnectCommand>`
   - :ref:`Use arrays to send and retrieve data with connect <ConnectCommandArrays>`
@@ -65,7 +65,7 @@ Graphics
   - :ref:`Compute interpolated positions along a great arc <GreatArcInterpolatorPrimitives>`
   - :ref:`Combine enumerations with the logical or operator <CylinderFillEnumeration>`
 Initialization
-  - :ref:`Attach to an already running stk runtime instance and get a reference to the stk object root <AttachSTKRuntimeSnippet>`
+  - :ref:`Attach to an already running stk runtime instance and get a reference to the stk application object root <AttachSTKRuntimeSnippet>`
   - :ref:`Start stk runtime and get a reference to the stk object root <CreateSTKRuntimeNewSnippet>`
   - :ref:`Start stk desktop and get a reference to the stk object root <CreateSTKNew>`
   - :ref:`Get a reference to the stk object root using a running stk desktop application instance <AttachSTK>`
@@ -79,8 +79,8 @@ Scenario
     - :ref:`Set unit preferences for the object model <SetUnitPreferences>`
     - :ref:`Create a new scenario <CreateScenario>`
     - :ref:`Close the stk application <CloseSTK>`
-    - :ref:`Manage stk desktop events <STKDesktopEvents>`
-    - :ref:`Manage stk engine events <STKEngineEvents>`
+    - :ref:`Manage stk desktop application events <STKDesktopEvents>`
+    - :ref:`Manage stk engine application events <STKEngineEvents>`
     - :ref:`Close an open scenario <CloseScenario>`
     - :ref:`Open a viewer data file <OpenVdfSTK>`
 STK Objects
@@ -628,8 +628,8 @@ Change the camera view to imagery extents
 
 .. _GetSetRGBAColor:
 
-Get and set a four-channel color for the graphics of an STK object
-==================================================================
+Get and set a four-channel color for the graphics of an STK application object
+==============================================================================
 
 .. code-block:: python
 
@@ -650,8 +650,8 @@ Get and set a four-channel color for the graphics of an STK object
 
 .. _GetSetRGBColor:
 
-Get and set a three-channel color for the graphics of an STK object
-===================================================================
+Get and set a three-channel color for the graphics of an STK application object
+===============================================================================
 
 .. code-block:: python
 
@@ -1107,8 +1107,8 @@ Combine enumerations with the logical or operator
 
 .. _AttachSTKRuntimeSnippet:
 
-Attach to an already running STK runtime instance and get a reference to the STK object root
-============================================================================================
+Attach to an already running STK runtime instance and get a reference to the STK application object root
+========================================================================================================
 
 .. code-block:: python
 
@@ -1329,8 +1329,8 @@ Close the STK application
 
 .. _STKDesktopEvents:
 
-Manage STK desktop events
-=========================
+Manage STK desktop application events
+=====================================
 
 .. code-block:: python
 
@@ -1361,8 +1361,8 @@ Manage STK desktop events
 
 .. _STKEngineEvents:
 
-Manage STK Engine events
-========================
+Manage STK Engine application events
+====================================
 
 .. code-block:: python
 

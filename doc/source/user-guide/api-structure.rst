@@ -64,8 +64,8 @@ represented using the :obj:`list` class.
   :end-at: command_results = root.execute_multiple_commands(connect_commands, ExecuteMultipleCommandsMode.CONTINUE_ON_ERROR)
   :dedent:
 
-STK interfaces and classes
---------------------------
+STK application interfaces and classes
+--------------------------------------
 
 The STK object model is comprised of programming interfaces that are 
 implemented by Python classes located in the provided modules. With few 
@@ -74,8 +74,8 @@ interfaces. You may immediately access any method from the inherited
 interfaces without casting, although in some situations casting may improve 
 IDE auto-complete feature results. These classes have a reference to an STK 
 object; this reference is removed upon calling ``del()`` on the Python class. 
-Because these classes are references to STK objects, you cannot create them 
-directly from Python; objects must be returned from PySTK methods.
+Because these classes are references to STK application objects, you cannot 
+create them directly from Python; objects must be returned from PySTK methods.
 
 .. literalinclude:: /../../tests/doc_snippets_tests/stk_objects/facility/facility_snippets.py
   :language: py
@@ -203,10 +203,10 @@ Events
 ======
 
 Events are mechanisms that enable you to respond to specific changes or 
-actions occurring within an STK scenario or the application itself. Events 
-enable you to automate responses to particular triggers, such as when a 
-scenario reaches a certain time, when an object's state changes, or when 
-specific conditions are met during a simulation.
+actions occurring within an STK application scenario or the application 
+itself. Events enable you to automate responses to particular triggers, such 
+as when a scenario reaches a certain time, when an object's state changes, or 
+when specific conditions are met during a simulation.
 
 Using events, you can build more dynamic and interactive simulations by 
 attaching custom Python functions or scripts that are executed automatically 

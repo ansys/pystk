@@ -52,7 +52,7 @@ class ColorSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="GetSetRGBColor",
-        description="Get and set a three-channel color for the graphics of an STK object",
+        description="Get and set a three-channel color for the graphics of an STK application object",
         category="Colors",
         eid="utilities.colors~Color | utilities.colors~Colors",
     )
@@ -71,7 +71,7 @@ class ColorSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="GetSetRGBAColor",
-        description="Get and set a four-channel color for the graphics of an STK object",
+        description="Get and set a four-channel color for the graphics of an STK application object",
         category="Colors",
         eid="utilities.colors~Color | utilities.colors~ColorRGBA | utilities.colors~Colors",
     )

@@ -145,7 +145,7 @@ Execute a Connect command
     root.execute_command("New / */Target MyTarget")
 
 
-Attach to an already running STK Runtime instance and get a reference to the STK object root
+Attach to an already running STK Runtime instance and get a reference to the STK application object root
 
 .. code-block:: python
 
@@ -245,7 +245,7 @@ Create a new Scenario
     root.new_scenario("Example_Scenario")
 
 
-Manage STK Desktop events
+Manage STK Desktop application events
 
 .. code-block:: python
 
@@ -275,7 +275,7 @@ Manage STK Desktop events
     window.mainloop()
 
 
-Manage STK Engine events
+Manage STK Engine application events
 
 .. code-block:: python
 

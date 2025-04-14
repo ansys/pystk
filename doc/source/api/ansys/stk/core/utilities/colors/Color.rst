@@ -29,7 +29,7 @@ Overview
 Examples
 --------
 
-Get and set a four-channel color for the graphics of an STK object
+Get and set a four-channel color for the graphics of an STK application object
 
 .. code-block:: python
 
@@ -49,7 +49,7 @@ Get and set a four-channel color for the graphics of an STK object
     point.set_cartographic_with_colors('Earth', lla_pts, colors)
 
 
-Get and set a three-channel color for the graphics of an STK object
+Get and set a three-channel color for the graphics of an STK application object
 
 .. code-block:: python
 

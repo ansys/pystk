@@ -155,7 +155,7 @@ class InitializationSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="AttachSTKRuntimeSnippet",
-        description="Attach to an already running STK Runtime instance and get a reference to the STK object root",
+        description="Attach to an already running STK Runtime instance and get a reference to the STK application object root",
         category="Initialization",
         eid="stkobjects~StkObjectRoot",
     )
