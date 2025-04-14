@@ -58,7 +58,7 @@ class GraphicsSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="GreatArcInterpolatorPrimitives",
-        description="Great Arc Interpolator Primitives",
+        description="Compute interpolated positions along a great arc",
         category="Graphics",
         eid="graphics~GreatArcInterpolatorFactory",
     )

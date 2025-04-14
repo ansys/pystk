@@ -7937,7 +7937,7 @@ class Camera(SupportsDeleteCallback):
 
     Examples
     --------
-    Change camera reference frame:
+    Change the camera reference frame:
     >>> # Scenario scenario: Scenario object
     >>> # StkObjectRoot root: STK Object Model Root
     >>> manager = scenario.scene_manager
@@ -7946,7 +7946,7 @@ class Camera(SupportsDeleteCallback):
     >>> )
     >>> manager.render()
 
-    Change camera view to Imagery Extents:
+    Change the camera view to Imagery Extents:
     >>> # Scenario scenario: Scenario object
     >>> # AGIProcessedImageGlobeOverlay imageryTile: Image Overlay object
     >>> manager = scenario.scene_manager
@@ -14965,7 +14965,7 @@ class Scene(SupportsDeleteCallback):
 
     Examples
     --------
-    Control Display of Stars and Water Texture:
+    Control the Display of Stars and Water Texture:
     >>> # Scenario scenario: Scenario object
     >>> # Turn off the stars and water texture
     >>> manager = scenario.scene_manager
@@ -19525,7 +19525,7 @@ class GreatArcInterpolatorFactory(SupportsDeleteCallback):
 
     Examples
     --------
-    Great Arc Interpolator Primitives:
+    Compute interpolated positions along a great arc:
     >>> # Scenario scenario: Scenario object
     >>> # Create a array of LLA values and interoplate them over the specified
     >>> # central body

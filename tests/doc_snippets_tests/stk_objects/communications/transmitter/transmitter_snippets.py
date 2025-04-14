@@ -80,7 +80,7 @@ class TransmitterSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="ModifyTransmitter",
-        description="Modify Transmitter Model Type",
+        description="Modify a Transmitter's Model Type",
         category="STK Objects | Communications | Transmitter",
         eid="stkobjects~Transmitter",
     )
@@ -104,7 +104,7 @@ class TransmitterSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="ModifyTransmitterAntenna",
-        description="Modify Transmitter Embedded Antenna",
+        description="Modify a Transmitter's Embedded Antenna",
         category="STK Objects | Communications | Transmitter",
         eid="stkobjects~Transmitter",
     )
@@ -128,7 +128,7 @@ class TransmitterSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="ModifyTransmitterPolarizationProperties",
-        description="Modify Transmitter Polarization Properties",
+        description="Modify a Transmitter's Polarization Properties",
         category="STK Objects | Communications | Transmitter",
         eid="stkobjects~Transmitter",
     )
@@ -154,7 +154,7 @@ class TransmitterSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="ModifyTransmitterPolarizationOrientationAndPosition",
-        description="Modify Transmitter Orientation and Position",
+        description="Modify a Transmitter's Orientation and Position",
         category="STK Objects | Communications | Transmitter",
         eid="stkobjects~Transmitter",
     )
@@ -181,7 +181,7 @@ class TransmitterSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="ModifyTransmitterModulator",
-        description="Modify Transmitter Modulator Properties",
+        description="Modify a Transmitter's Modulator Properties",
         category="STK Objects | Communications | Transmitter",
         eid="stkobjects~Transmitter",
     )
@@ -203,7 +203,7 @@ class TransmitterSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="ModifyTransmitterFilter",
-        description="Modify Transmitter Filter",
+        description="Modify a Transmitter Filter",
         category="STK Objects | Communications | Transmitter",
         eid="stkobjects~Transmitter",
     )

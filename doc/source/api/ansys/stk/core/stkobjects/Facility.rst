@@ -89,7 +89,7 @@ Add an AzEl Mask to a Facility
     facility.set_az_el_mask(AzElMaskType.TERRAIN_DATA, 0)
 
 
-Set the geodetic position of the facility
+Set the geodetic position of a facility
 
 .. code-block:: python
 

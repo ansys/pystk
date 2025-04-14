@@ -103,7 +103,7 @@ Overview
 Examples
 --------
 
-Extract data from Connect result
+Extract data from Connect results
 
 .. code-block:: python
 
@@ -122,14 +122,14 @@ Execute multiple Connect commands
     root.execute_multiple_commands(commandList, ExecuteMultipleCommandsMode.EXCEPTION_ON_ERROR)
 
 
-Execute Connect command
+Execute a Connect command
 
 .. code-block:: python
 
     root.execute_command("New / */Target MyTarget")
 
 
-Attach to an already running STK Runtime and get a reference to STK Object Root
+Attach to an already running STK Runtime instance and get a reference to the STK object root
 
 .. code-block:: python
 
@@ -142,7 +142,7 @@ Attach to an already running STK Runtime and get a reference to STK Object Root
     root = stk.new_object_root()
 
 
-Start STK Runtime and get a reference to STK Object Root
+Start STK Runtime and get a reference to the STK object root
 
 .. code-block:: python
 
@@ -155,7 +155,7 @@ Start STK Runtime and get a reference to STK Object Root
     root = stk.new_object_root()
 
 
-Start STK Desktop and get a reference to STK Object Root
+Start STK desktop and get a reference to the STK object root
 
 .. code-block:: python
 
@@ -173,7 +173,7 @@ Start STK Desktop and get a reference to STK Object Root
     stk.shutdown()
 
 
-Get a reference to STK Object Root using a running STK Desktop instance
+Get a reference to the STK object root using a running STK desktop application instance
 
 .. code-block:: python
 
@@ -186,7 +186,7 @@ Get a reference to STK Object Root using a running STK Desktop instance
     root = stk.root
 
 
-Initialize STK Engine in no graphics mode and get a reference to STK Object Root
+Initialize STK Engine in no graphics mode and get a reference to the STK object root
 
 .. code-block:: python
 
@@ -199,7 +199,7 @@ Initialize STK Engine in no graphics mode and get a reference to STK Object Root
     root = stk.new_object_root()
 
 
-Initialize STK Engine with graphics and get a reference to STK Object Root
+Initialize STK Engine with graphics and get a reference to the STK object root
 
 .. code-block:: python
 
@@ -212,7 +212,7 @@ Initialize STK Engine with graphics and get a reference to STK Object Root
     root = stk.new_object_root()
 
 
-Set unit preferences for Object Model
+Set unit preferences for the Object Model
 
 .. code-block:: python
 
@@ -266,7 +266,7 @@ Property detail
     Examples
     --------
 
-    Set unit preferences for Object Model
+    Set unit preferences for the Object Model
 
     .. code-block:: python
 

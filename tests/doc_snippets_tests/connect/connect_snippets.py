@@ -58,7 +58,7 @@ class ConnectSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="ConnectCommand",
-        description="Execute Connect command",
+        description="Execute a Connect command",
         category="Connect",
         eid="stkobjects~StkObjectRoot",
     )
@@ -90,7 +90,7 @@ class ConnectSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="ResultsConnectCommand",
-        description="Extract data from Connect result",
+        description="Extract data from Connect results",
         category="Connect",
         eid="stkobjects~StkObjectRoot",
     )

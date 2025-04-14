@@ -513,7 +513,7 @@ class AviatorSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="ConfigureProcedureTimeOptions",
-        description="Configure a procedure time options",
+        description="Configure a procedure's time options",
         category="STK Objects | Vehicles | Common | Propagators | Aviator",
         eid="stkobjects.aviator~IProcedure | stkobjects.aviator~ProcedureTimeOptions",
     )

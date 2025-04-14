@@ -67,7 +67,7 @@ List all points in an area target
             print("Latitude: %s Longitude: %s" % (str(areaTargetPoints[i][0]), str(areaTargetPoints[i][1])))
 
 
-Define area target boundary and position from list of lat/lon/alt (using common tasks)
+Define an area target boundary and position from a list of lat/lon/alt (using common tasks)
 
 .. code-block:: python
 
@@ -83,7 +83,7 @@ Define area target boundary and position from list of lat/lon/alt (using common 
     areaTarget.common_tasks.set_area_type_pattern(boundary)
 
 
-Define area target boundary and position from list of lat/lon/alt
+Define an area target boundary and position from a list of lat/lon/alt
 
 .. code-block:: python
 

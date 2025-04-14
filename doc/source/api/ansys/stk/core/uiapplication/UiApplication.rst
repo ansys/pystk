@@ -89,7 +89,7 @@ Overview
 Examples
 --------
 
-Close STK
+Close the STK application
 
 .. code-block:: python
 

@@ -124,7 +124,7 @@ class AreaTargetSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="CreateBoundaryAreaTarget",
-        description="Define area target boundary and position from list of lat/lon/alt",
+        description="Define an area target boundary and position from a list of lat/lon/alt",
         category="STK Objects | Area Target",
         eid="stkobjects~AreaTarget | stkobjects~AreaTypePatternCollection",
     )
@@ -153,7 +153,7 @@ class AreaTargetSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="CreateBoundaryAreaTargetList",
-        description="Define area target boundary and position from list of lat/lon/alt (using common tasks)",
+        description="Define an area target boundary and position from a list of lat/lon/alt (using common tasks)",
         category="STK Objects | Area Target",
         eid="stkobjects~AreaTarget",
     )

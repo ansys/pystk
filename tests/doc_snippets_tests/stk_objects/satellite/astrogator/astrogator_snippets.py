@@ -62,7 +62,7 @@ class AstrogatorSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="AstrogatorRunMCS",
-        description="Run the Astrogator MCS",
+        description="Run the Astrogator® mission control sequence (MCS)",
         category="STK Objects | Satellite | Astrogator",
         eid="stkobjects.astrogator~MCSDriver",
     )

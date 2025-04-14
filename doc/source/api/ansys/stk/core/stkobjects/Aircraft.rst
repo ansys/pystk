@@ -68,7 +68,7 @@ Add Array of Waypoints to Aircraft
     route.propagate()
 
 
-Set Great Arc Propagator and Add Individual Waypoints to Aircraft
+Set the Great Arc Propagator and Add Individual Waypoints to an Aircraft
 
 .. code-block:: python
 

@@ -89,7 +89,7 @@ class FigureOfMeritSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="FOMContoursColorRamp",
-        description="Configure the Contours of the FOM and define a color ramp",
+        description="Configure the Contours of the figure of merit (FOM) and define a color ramp",
         category="STK Objects | Figure Of Merit",
         eid="stkobjects~FigureOfMerit",
     )

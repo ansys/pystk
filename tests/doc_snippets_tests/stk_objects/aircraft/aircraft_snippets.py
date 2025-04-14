@@ -78,7 +78,7 @@ class AircraftSnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="AddAircraftPoints",
-        description="Set Great Arc Propagator and Add Individual Waypoints to Aircraft",
+        description="Set the Great Arc Propagator and Add Individual Waypoints to an Aircraft",
         category="STK Objects | Aircraft",
         eid="stkobjects~Aircraft",
     )

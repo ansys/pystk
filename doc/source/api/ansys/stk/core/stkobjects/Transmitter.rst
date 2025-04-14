@@ -69,7 +69,7 @@ Transmitter additional Gain
     gain.identifier = "Example Loss"
 
 
-Modify Transmitter Filter
+Modify a Transmitter Filter
 
 .. code-block:: python
 
@@ -83,7 +83,7 @@ Modify Transmitter Filter
     recFilter.cut_off_frequency = 10
 
 
-Modify Transmitter Modulator Properties
+Modify a Transmitter's Modulator Properties
 
 .. code-block:: python
 
@@ -93,7 +93,7 @@ Modify Transmitter Modulator Properties
     txModel.modulator.scale_bandwidth_automatically = True
 
 
-Modify Transmitter Orientation and Position
+Modify a Transmitter's Orientation and Position
 
 .. code-block:: python
 
@@ -108,7 +108,7 @@ Modify Transmitter Orientation and Position
     antOrientation.position_offset.z = 0.25  # m
 
 
-Modify Transmitter Polarization Properties
+Modify a Transmitter's Polarization Properties
 
 .. code-block:: python
 
@@ -122,7 +122,7 @@ Modify Transmitter Polarization Properties
     polarization.tilt_angle = 15  # deg
 
 
-Modify Transmitter Embedded Antenna
+Modify a Transmitter's Embedded Antenna
 
 .. code-block:: python
 
@@ -134,7 +134,7 @@ Modify Transmitter Embedded Antenna
     antennaControl.embedded_model.efficiency = 85  # Percent
 
 
-Modify Transmitter Model Type
+Modify a Transmitter's Model Type
 
 .. code-block:: python
 

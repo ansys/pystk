@@ -73,7 +73,7 @@ class FacilitySnippets(CodeSnippetsTestBase):
 
     @code_snippet(
         name="SetPositionFacility",
-        description="Set the geodetic position of the facility",
+        description="Set the geodetic position of a facility",
         category="STK Objects | Facility",
         eid="stkobjects~Facility",
     )
