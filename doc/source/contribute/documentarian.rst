@@ -152,8 +152,6 @@ process of attaching this snippet to its
     :linenos:
 
     # StkObjectRoot root: STK Object Model Root
-    from ansys.stk.core.stkobjects import Scenario
-
     scenario: Scenario = root.current_scenario
     scenario.set_time_period(
       start_time="1 Jan 2012 12:00:00.000", 
@@ -198,8 +196,6 @@ Here is an example of a decorated method for the preceding code snippet:
     )
     def SetScenarioTimePeriodSnippet(self, root):
       # StkObjectRoot root: STK Object Model Root
-      from ansys.stk.core.stkobjects import Scenario
-
       scenario: Scenario = root.current_scenario
       scenario.set_time_period(
         start_time="1 Jan 2012 12:00:00.000", 
@@ -232,8 +228,6 @@ for this application using ``self.get_root()``.
     )
     def SetScenarioTimePeriodSnippet(self, root):
       # StkObjectRoot root: STK Object Model Root
-      from ansys.stk.core.stkobjects import Scenario
-
       scenario: Scenario = root.current_scenario
       scenario.set_time_period(
         start_time="1 Jan 2012 12:00:00.000", 
