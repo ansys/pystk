@@ -146,19 +146,12 @@ Additionally, for instructional purposes, this example demonstrates the
 process of attaching this snippet to its
 :py:meth:`~ansys.stk.core.stkobjects.Scenario.set_time_period()` method.
 
-.. vale off
-
-.. code-block:: python
-    :linenos:
-
-    # StkObjectRoot root: STK Object Model Root
-    scenario: Scenario = root.current_scenario
-    scenario.set_time_period(
-      start_time="1 Jan 2012 12:00:00.000", 
-      stop_time="2 Jan 2012 12:00:00.000"
-    )
-
-.. vale on
+.. literalinclude:: /../../tests/doc_snippets_tests/scenario/scenario_management/scenario_management_snippets.py
+  :language: py
+  :tab-width: 4
+  :start-after: def SetScenarioTimePeriodSnippet
+  :end-at: # Use scenario.start_time, scenario.stop_time to get time period
+  :dedent:
 
 Next, wrap the snippet in a method with a descriptive name ending with 
 ``Snippet``. If the method consumes a non-self parameter, add a comment to the 
@@ -183,26 +176,13 @@ snippet's assumed configuration. Decorate this method with PySTK's
 
 Here is an example of a decorated method for the preceding code snippet:
 
-.. vale off
-
-.. code-block:: python
-    :linenos:
-
-    @code_snippet(
-        name="SetScenarioTimePeriod",
-        description="Set the current scenario's time period",
-        category="Scenario | Scenario Management",
-        eid="stkobjects~Scenario | stkobjects~Scenario~set_time_period",
-    )
-    def SetScenarioTimePeriodSnippet(self, root):
-      # StkObjectRoot root: STK Object Model Root
-      scenario: Scenario = root.current_scenario
-      scenario.set_time_period(
-        start_time="1 Jan 2012 12:00:00.000", 
-        stop_time="2 Jan 2012 12:00:00.000"
-      )
-
-.. vale on
+.. literalinclude:: /../../tests/doc_snippets_tests/scenario/scenario_management/scenario_management_snippets.py
+  :language: py
+  :tab-width: 4
+  :prepend: @code_snippet(
+  :start-after: name="SetScenarioTimePeriod",
+  :end-at: # Use scenario.start_time, scenario.stop_time to get time period
+  :dedent:
 
 Next, add a pytest-discoverable method (beginning with ``test``) that calls
 the decorated method. This new method should perform any configuration that 
@@ -211,30 +191,12 @@ you may assume that an STK application is started and a basic STK scenario is
 open. You may access the :py:class:`~ansys.stk.core.stkobjects.StkObjectRoot`
 for this application using ``self.get_root()``.
 
-.. vale off
-
-.. code-block:: python
-    :linenos:
-
-    def test_SetScenarioTimePeriodSnippet(self):
-      root = self.get_root()
-      self.SetScenarioTimePeriodSnippet(root)
-
-    @code_snippet(
-        name="SetScenarioTimePeriod",
-        description="Set the current scenario's time period",
-        category="Scenario | Scenario Management",
-        eid="stkobjects~Scenario | stkobjects~Scenario~set_time_period",
-    )
-    def SetScenarioTimePeriodSnippet(self, root):
-      # StkObjectRoot root: STK Object Model Root
-      scenario: Scenario = root.current_scenario
-      scenario.set_time_period(
-        start_time="1 Jan 2012 12:00:00.000", 
-        stop_time="2 Jan 2012 12:00:00.000"
-      )
-
-.. vale on
+.. literalinclude:: /../../tests/doc_snippets_tests/scenario/scenario_management/scenario_management_snippets.py
+  :language: py
+  :tab-width: 4
+  :start-at: def test_SetScenarioTimePeriodSnippet
+  :end-at: # Use scenario.start_time, scenario.stop_time to get time period
+  :dedent:
 
 Copy these methods into the file corresponding to the value provided for the 
 ``@code_snippet`` decorator's ``category`` attribute. 
@@ -242,11 +204,11 @@ Copy these methods into the file corresponding to the value provided for the
 .. note:: 
 
     If you created a new category for this attribute, you may also need to 
-create a new test file. If this is the case, create a copy of 
-``template_snippets.py`` in the `code snippet directory`_ and rename the copy 
-``<subcategory>_snippets.py`` where ``<subcategory>`` is the new subcategory. 
-If necessary, create directories matching the category organization up to 
-``doc_snippets_tests``.
+    create a new test file. If this is the case, create a copy of 
+    ``template_snippets.py`` in the `code snippet directory`_ and rename the copy 
+    ``<subcategory>_snippets.py`` where ``<subcategory>`` is the new subcategory. 
+    If necessary, create directories matching the category organization up to 
+    ``doc_snippets_tests``.
 
 Run the tests defined in the `code snippet directory`_ and make sure 
 your new snippet runs and passes.
