@@ -8,6 +8,7 @@ ansys
 Astrogator
 Dockerfiles
 dataframe
+DataFrames
 documentarians
 ephemerides
 cartodetic
@@ -26,6 +27,8 @@ MTO
 namespace
 Nemo
 numpy
+NumPy
+Pandas
 PySTK
 periapsis
 prograde
