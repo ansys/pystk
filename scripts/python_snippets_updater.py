@@ -190,7 +190,9 @@ class SnippetsRSTInjector(object):
         self.class_targets = {}
         self.method_targets = {}
         for snippet in self.all_snippets:
-            locations = self._compute_identifying_location_info(snippet)
+            locations = self._compute_identifying_location_info(snippet["eid"])
+            if locations == "":
+                continue
             content = {"desc": snippet["description"], "code": snippet["body"]}
 
             for location in locations:
@@ -300,8 +302,10 @@ class SnippetsRSTInjector(object):
 
         return ""
 
-    def _compute_identifying_location_info(self, snippet_repr):
-        unique_locations = snippet_repr["eid"].split("|")
+    def _compute_identifying_location_info(self, eid):
+        if eid == "":
+            return ""
+        unique_locations = eid.split("|")
 
         for i, location in enumerate(unique_locations):
             location_components = location.strip().split("~")
@@ -335,6 +339,8 @@ class SnippetsDocstringInjector(libcst.CSTTransformer):
         targets_per_file = {}
         for snippet in self.all_snippets:
             locations = self._compute_identifying_location_info(snippet["eid"])
+            if locations == "":
+                continue
             content = {"desc": snippet["description"], "code": snippet["body"]}
 
             for location in locations:
@@ -445,6 +451,8 @@ class SnippetsDocstringInjector(libcst.CSTTransformer):
             raise Warning(f"Library specified in eid does not map to a Python module: {eid_comp}")
 
     def _compute_identifying_location_info(self, eid):
+        if eid == "":
+            return ""
         unique_locations = eid.split("|")
 
         for i, location in enumerate(unique_locations):

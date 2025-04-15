@@ -51,6 +51,22 @@ class GraphicsSnippets(CodeSnippetsTestBase):
 
     def get_scenario(self):
         return CodeSnippetsTestBase.m_Root.current_scenario
+    
+    def test_CylinderFillEnumerationSnippet(self):
+        self.CylinderFillEnumerationSnippet()
+
+    @code_snippet(
+        name="CylinderFillEnumeration",
+        description="Combine enumerations with the logical OR operator",
+        category="Graphics",
+        eid="graphics~CylinderFillOptions",
+    )
+    def CylinderFillEnumerationSnippet(self):
+        from ansys.stk.core.graphics import CylinderFillOptions
+
+        # CylinderFillOptions inherits from enum.IntFlag and may be combined
+        # using the `|` operator
+        cyl_fill = CylinderFillOptions.BOTTOM_CAP | CylinderFillOptions.TOP_CAP
 
     @category("VO Tests")
     def test_GreatArcInterpolatorSnippet(self):
