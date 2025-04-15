@@ -1,7 +1,7 @@
 Initialization
 ##############
 
-This topic explains how to establish a connection and prepare PySTK for usage with STK application interfaces and runnable programs.
+This topic explains how to establish a connection and prepare PySTK for usage with Ansys STK® application interfaces and runnable programs.
 
 Configurations
 ==============
@@ -15,24 +15,24 @@ To get started, determine the configuration that you want to use:
     * - **Configuration**
       - **Available options**
     * - Windows
-      - STK Desktop, STK Engine, STK Engine NoGraphics, STKRuntime
+      - STK desktop, STK Engine, STK Engine NoGraphics, STKRuntime
     * - Linux
       - STK Engine, STK Engine NoGraphics, STKRuntime
     * - Jupyter Notebook with 3D and 2D widgets
       - STK Engine
 
 
-Initialize with STK Desktop
-===========================
+Initialize with the STK desktop application
+===========================================
 
-This section describes how to use PySTK with STK Desktop. 
+This section describes how to use PySTK with the STK desktop application. 
 
-The :py:meth:`~ansys.stk.core.stkdesktop.STKDesktop.start_application` and :py:meth:`~ansys.stk.core.stkdesktop.STKDesktop.attach_to_application` methods are available to obtain the :py:class:`~ansys.stk.core.stkdesktop.STKDesktopApplication` class and begin interacting with STK through the :py:mod:`~ansys.stk.core.UiApplication` API. From the application interface, the most common way to begin working with STK is to use the :py:class:`~ansys.stk.core.stkobjects.StkObjectRoot` class, which is accessible as the :py:attr:`~ansys.stk.core.stkdesktop.STKDesktopApplication.root` property of the :py:class:`~ansys.stk.core.stkdesktop.STKDesktopApplication` object.
+The :py:meth:`~ansys.stk.core.stkdesktop.STKDesktop.start_application` and :py:meth:`~ansys.stk.core.stkdesktop.STKDesktop.attach_to_application` methods are available to obtain the :py:class:`~ansys.stk.core.stkdesktop.STKDesktopApplication` class and begin interacting with STK through the :py:mod:`~ansys.stk.core.UiApplication` API. From the application interface, the most common way to begin working with STK software is to use the :py:class:`~ansys.stk.core.stkobjects.StkObjectRoot` class, which is accessible as the :py:attr:`~ansys.stk.core.stkdesktop.STKDesktopApplication.root` property of the :py:class:`~ansys.stk.core.stkdesktop.STKDesktopApplication` object.
 
-Start a new STK Desktop instance
---------------------------------
+Start a new STK desktop application instance
+--------------------------------------------
 
-Use the :py:meth:`~ansys.stk.core.stkdesktop.STKDesktop.start_application` method to start a new STK Desktop application session:
+Use the :py:meth:`~ansys.stk.core.stkdesktop.STKDesktop.start_application` method to start a new STK desktop application session:
 
 .. literalinclude:: /../../tests/doc_snippets_tests/initialization/initialization_snippets.py
   :language: py
@@ -41,12 +41,12 @@ Use the :py:meth:`~ansys.stk.core.stkdesktop.STKDesktop.start_application` metho
   :end-at: root = stk.root
   :dedent:
 
-The :py:meth:`~ansys.stk.core.stkdesktop.STKDesktop.start_application` method has optional arguments to control if the application should be visible, if it should exit when the Python script ends, and to switch to gRPC for communicating with STK Desktop (instead of Windows automation by default).
+The :py:meth:`~ansys.stk.core.stkdesktop.STKDesktop.start_application` method has optional arguments to control if the application should be visible, if it should exit when the Python script ends, and to switch to gRPC for communicating with the STK desktop application (instead of Windows automation by default).
 
 .. note:: To learn more about gRPC see `https://grpc.io/ <https://grpc.io/>`_
 
-Attach to a running STK Desktop instance
-----------------------------------------
+Attach to a running STK desktop application instance
+----------------------------------------------------
 
 Use the :py:meth:`~ansys.stk.core.stkdesktop.STKDesktop.attach_to_application` method to attach to a running STK desktop application:
 
@@ -57,12 +57,12 @@ Use the :py:meth:`~ansys.stk.core.stkdesktop.STKDesktop.attach_to_application` m
   :end-at: root = stk.root
   :dedent:
 
-The :py:meth:`~ansys.stk.core.stkdesktop.STKDesktop.attach_to_application` method has additional arguments to specify the Process ID (PID) if more than one STK application is running, as well as switching to gRPC for communicating with STK Desktop (instead of Windows automation by default).
+The :py:meth:`~ansys.stk.core.stkdesktop.STKDesktop.attach_to_application` method has additional arguments to specify the Process ID (PID) if more than one STK application is running, as well as switching to gRPC for communicating with STK the desktop application (instead of Windows automation by default).
 
 Initialize with STK Engine
 ==========================
 
-This section describes how to use PySTK with STK Engine. The STK Engine API is supported on both Windows and Linux, although `some features <https://help.agi.com/stkEngineOnUNIX/Content/stkEngineUX/stkFunctionalityNS.htm>`_ are not supported on Linux. STK Engine runs in-process in your Python script, so unlike STK Desktop, only one instance of engine is possible, which is started using :py:meth:`~ansys.stk.core.stkengine.STKEngine.start_application`, returning the :py:class:`~ansys.stk.core.stkengine.STKEngineApplication` class and giving access to the :py:class:`~ansys.stk.core.stkx.STKXApplication` API. Unlike :py:class:`~ansys.stk.core.stkdesktop.STKDesktopApplication`, the object model root is not a property and a new root object may be obtained from the :py:meth:`~ansys.stk.core.stkengine.STKEngineApplication.new_object_root` method on the :py:class:`~ansys.stk.core.stkengine.STKEngineApplication` object.
+This section describes how to use PySTK with STK Engine. The STK Engine API is supported on both Windows and Linux, although `some features <https://help.agi.com/stkEngineOnUNIX/Content/stkEngineUX/stkFunctionalityNS.htm>`_ are not supported on Linux. STK Engine runs in-process in your Python script, so unlike the STK desktop application, only one instance of engine is possible, which is started using :py:meth:`~ansys.stk.core.stkengine.STKEngine.start_application`, returning the :py:class:`~ansys.stk.core.stkengine.STKEngineApplication` class and giving access to the :py:class:`~ansys.stk.core.stkx.STKXApplication` API. Unlike :py:class:`~ansys.stk.core.stkdesktop.STKDesktopApplication`, the object model root is not a property and a new root object may be obtained from the :py:meth:`~ansys.stk.core.stkengine.STKEngineApplication.new_object_root` method on the :py:class:`~ansys.stk.core.stkengine.STKEngineApplication` object.
 
 Initialize STK Engine with graphics
 -----------------------------------
@@ -88,7 +88,7 @@ If your use case consists of using STK Engine as a computational tool and does n
   :end-at: root = stk.new_object_root()
   :dedent:
 
-The NoGraphics mode also alters the way scenarios are saved and loaded. When an engine application in NoGraphics mode loads a scenario coming from STK Desktop, the 2D and 3D information serialized as part of the scenario is ignored. If that scenario is then saved, all 2D and 3D information is lost. If the scenario is then loaded into STK Desktop, default graphics options are used.
+The NoGraphics mode also alters the way scenarios are saved and loaded. When an engine application in NoGraphics mode loads a scenario coming from the STK desktop application, the 2D and 3D information serialized as part of the scenario is ignored. If that scenario is then saved, all 2D and 3D information is lost. If the scenario is then loaded into the STK desktop application, default graphics options are used.
 
 
 Finish your work with STK Engine
@@ -115,7 +115,7 @@ Create a Tkinter window with a map control and a globe control
 Initialize STKRuntime
 ======================
 
-STKRuntime is an executable that serves STK Engine capabilities via gRPC. Use the :py:mod:`~ansys.stk.core.stkruntime` module to start or attach to a running STKRuntime application. Once the :py:class:`ansys.stk.core.stkruntime.STKRuntimeApplication` object is obtained, interact with STK, via :py:class:`~ansys.stk.core.stkobjects.StkObjectRoot` obtained from calling :py:meth:`~ansys.stk.core.stkruntime.STKRuntimeApplication.new_object_root`. Shutting down the remote STKRuntime process is possible by calling :py:meth:`~ansys.stk.core.stkruntime.STKRuntimeApplication.shutdown`, or using the `user_control=False` option when starting the application.
+STKRuntime is an executable that serves STK Engine capabilities via gRPC. Use the :py:mod:`~ansys.stk.core.stkruntime` module to start or attach to a running STKRuntime application. Once the :py:class:`ansys.stk.core.stkruntime.STKRuntimeApplication` object is obtained, interact with the STK application via :py:class:`~ansys.stk.core.stkobjects.StkObjectRoot` obtained from calling :py:meth:`~ansys.stk.core.stkruntime.STKRuntimeApplication.new_object_root`. Shutting down the remote STKRuntime process is possible by calling :py:meth:`~ansys.stk.core.stkruntime.STKRuntimeApplication.shutdown`, or using the `user_control=False` option when starting the application.
 
 Start a new STKRuntime instance
 -------------------------------

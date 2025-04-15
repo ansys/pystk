@@ -258,7 +258,7 @@ no longer needed. Refer to the following example for using
   :end-at: skt_object_root_events.unsubscribe()
   :dedent:
 
-The STK Desktop application user interface might become unresponsive to user 
+The STK desktop application user interface might become unresponsive to user 
 input when Python has event subscribers, and the STK application tries to call
 back into the Python interpreter to notify of an event. That callback relies 
 on the Windows message loop to be dispatched. To work around this issue, 
