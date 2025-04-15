@@ -135,9 +135,9 @@ tests. They are also included in the documentation, providing PySTK users
 useful templates for the building blocks of PySTK scenario design. This 
 enables the snippets to appear:
 
-- on the API reference pages for the elements used in the snippet, 
-- on the :ref:`code snippets <PySTK code snippets>` landing page, and
-- in the quick info provided by code completion tools such as `IntelliSense`_.
+- On the API reference pages for the elements used in the snippet
+- On the :ref:`code snippets <PySTK code snippets>` landing page
+- In the quick info provided by code completion tools such as `IntelliSense`_
 
 To contribute your own code snippet, first identify the critical API element 
 or elements used in the snippet. In the following example, the primary element 
@@ -239,7 +239,14 @@ for this application using ``self.get_root()``.
 Copy these methods into the file corresponding to the value provided for the 
 ``@code_snippet`` decorator's ``category`` attribute. 
 
-.. note:: If you created a new category for this attribute, you may also need to create a new test file. If this is the case, create a copy of ``template_snippets.py`` in the `code snippet directory`_ and rename the copy ``<subcategory>_snippets.py`` where ``<subcategory>`` is the new subcategory. If necessary, create directories matching the category organization up to ``doc_snippets_tests``.
+.. note:: 
+
+    If you created a new category for this attribute, you may also need to 
+create a new test file. If this is the case, create a copy of 
+``template_snippets.py`` in the `code snippet directory`_ and rename the copy 
+``<subcategory>_snippets.py`` where ``<subcategory>`` is the new subcategory. 
+If necessary, create directories matching the category organization up to 
+``doc_snippets_tests``.
 
 Run the tests defined in the `code snippet directory`_ and make sure 
 your new snippet runs and passes.
@@ -248,7 +255,7 @@ your new snippet runs and passes.
 
 .. code-block:: console
 
-   $ python -m pytest tests/doc_snippets_tests --target StkX -vv
+   $ python -m tox -e test-snippets
 
 .. vale on
 
@@ -261,7 +268,7 @@ a snippet updater tool.
 
 .. code-block:: console
 
-   $ python scripts/python_snippets_updater.py
+   $ python -m tox -e doc-snippets
 
 .. vale on
 
