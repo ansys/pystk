@@ -32,10 +32,20 @@ Analysis Workbench
 Camera
   - :ref:`Change camera reference frame <CameraReferenceFrame>`
   - :ref:`Change camera view to imagery extents <CameraExtents>`
+Colors
+  - :ref:`Get and set a four-channel color for the graphics of an stk object <GetSetRGBAColor>`
+  - :ref:`Get and set a three-channel color for the graphics of an stk object <GetSetRGBColor>`
 Connect
   - :ref:`Extract data from connect result <ResultsConnectCommand>`
+  - :ref:`Use arrays to send and retrieve data with connect <ConnectCommandArrays>`
   - :ref:`Execute multiple connect commands <ConnectCommandMultiple>`
   - :ref:`Execute connect command <ConnectCommand>`
+Data Analysis
+  - :ref:`Create a heat map of coverage definition results graphing duration by asset using a pandas dataframe <CoverageDefinitionResultsPandasDataFrameHeatMap>`
+  - :ref:`Compute descriptive statistics for access measurements using a pandas dataframe <DescriptiveStatisticsPandasDataFrame>`
+  - :ref:`Convert access data provider results to a pandas dataframe <AccessResultsToPandasDataFrame>`
+  - :ref:`Convert coverage definition data provider results to a pandas dataframe <CoverageDefinitionResultsToPandasDataFrame>`
+  - :ref:`Load a numpy array with flight profile data <FlightProfileNumpyArray>`
 Graphics
   GlobeOverlays
     - :ref:`Control the lighting of the 3d scene <SceneLighting>`
@@ -53,6 +63,7 @@ Graphics
   - :ref:`Draw a new surface extent triangulator <SurfaceExtentTriangulator>`
   - :ref:`Draw a new surface mesh <DrawNewSurfaceMeshPrimitive>`
   - :ref:`Great arc interpolator primitives <GreatArcInterpolatorPrimitives>`
+  - :ref:`Combine enumerations with the logical or operator <CylinderFillEnumeration>`
 Initialization
   - :ref:`Attach to an already running stk runtime and get a reference to stk object root <AttachSTKRuntimeSnippet>`
   - :ref:`Start stk runtime and get a reference to stk object root <CreateSTKRuntimeNewSnippet>`
@@ -68,6 +79,8 @@ Scenario
     - :ref:`Set unit preferences for object model <SetUnitPreferences>`
     - :ref:`Create a new scenario <CreateScenario>`
     - :ref:`Close stk <CloseSTK>`
+    - :ref:`Manage stk desktop events <STKDesktopEvents>`
+    - :ref:`Manage stk engine events <STKEngineEvents>`
     - :ref:`Close an open scenario <CloseScenario>`
     - :ref:`Open a viewer data file <OpenVdfSTK>`
 STK Objects
@@ -129,7 +142,10 @@ STK Objects
       - :ref:`Display the azel mask in 2d/3d <FacilityAzElMaskDisplay>`
 
     - :ref:`Add an azel mask to a facility <AzElMaskFacility>`
+    - :ref:`Get the cartesian position of the facility <GetPositionFacility>`
     - :ref:`Set the geodetic position of the facility <SetPositionFacility>`
+    - :ref:`Create a facility and set its height relative to ground level <SetHeightFacility>`
+    - :ref:`Get a valid reference to a facility <GetValidFacility>`
     - :ref:`Create a facility (on the current scenario central body) <CreateFacility>`
   Figure Of Merit
     - :ref:`Configure the contours of the fom and define a color ramp <FOMContoursColorRamp>`
@@ -610,6 +626,44 @@ Change camera view to imagery extents
     manager.scenes.item(0).camera.view_extent("Earth", extent)
     manager.render()
 
+.. _GetSetRGBAColor:
+
+Get and set a four-channel color for the graphics of an STK object
+==================================================================
+
+.. code-block:: python
+
+    from ansys.stk.core.utilities.colors import Colors, ColorRGBA
+
+    manager = root.current_scenario.scene_manager
+    point = manager.initializers.point_batch_primitive.initialize()
+
+    lla_pts = [ 39.88, -75.25, 0,
+                38.85, -77.04, 0,
+                37.37, -121.92, 0 ]
+
+    colors = [ Colors.Red,
+            ColorRGBA(Colors.Blue, 127),
+            Colors.from_rgba(0, 255, 0, 127) ]
+
+    point.set_cartographic_with_colors('Earth', lla_pts, colors)
+
+.. _GetSetRGBColor:
+
+Get and set a three-channel color for the graphics of an STK object
+===================================================================
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects import STKObjectType
+    from ansys.stk.core.utilities.colors import Color, Colors
+
+    facility = root.current_scenario.children.new(STKObjectType.FACILITY, "facility1")
+
+    facility.graphics.color = Colors.Blue
+    facility.graphics.color = Color.from_rgb(127, 255, 212)
+    (r, g, b) = facility.graphics.color.get_rgb()
+
 .. _ResultsConnectCommand:
 
 Extract data from connect result
@@ -622,6 +676,24 @@ Extract data from connect result
     for i in range(0, result.count):
         cmdRes = result.item(i)
         print(cmdRes)
+
+.. _ConnectCommandArrays:
+
+Use arrays to send and retrieve data with connect
+=================================================
+
+.. code-block:: python
+
+    from ansys.stk.core.stkutil import ExecuteMultipleCommandsMode
+
+    connect_commands = ['GetStkVersion /', 'New / Scenario ExampleScenario']
+    command_results = root.execute_multiple_commands(connect_commands, ExecuteMultipleCommandsMode.CONTINUE_ON_ERROR)
+
+    first_message = command_results.item(0)
+    also_first_message = command_results[0]
+
+    for message in command_results:
+        print(message.count)
 
 .. _ConnectCommandMultiple:
 
@@ -641,6 +713,128 @@ Execute connect command
 .. code-block:: python
 
     root.execute_command("New / */Target MyTarget")
+
+.. _CoverageDefinitionResultsPandasDataFrameHeatMap:
+
+Create a heat map of coverage definition results graphing duration by asset using a pandas dataframe
+====================================================================================================
+
+.. code-block:: python
+
+    # CoverageDefinition coverage: Coverage object
+    from matplotlib import pyplot as plt
+    import numpy as np
+
+    # compute data provider results for All Regions by Pass coverage
+    coverage_data_provider = coverage.data_providers.item('All Regions By Pass')
+    coverage_data = coverage_data_provider.execute()
+
+    # convert dataset collection in a row format as a Pandas DataFrame with default numeric row index
+    coverage_all_regions_elements = coverage_data_provider.elements
+    all_regions_coverage_df = coverage_data.data_sets.to_pandas_dataframe(data_provider_elements=coverage_all_regions_elements)
+
+    # reshape the DataFrame based on column values
+    pivot = all_regions_coverage_df.pivot_table(index='region name', columns='asset name', values='duration')
+
+    # plot heat map that shows duration by asset name by region
+    plt.xlabel('Duration by Asset', fontsize=20)
+    plt.xticks(ticks=range(len(pivot.columns.values)), labels=pivot.columns.values)
+
+    plt.ylabel('Region Name', fontsize=20)
+    plt.yticks(ticks=np.arange(len(pivot.index), step=10), labels=pivot.index[::10])
+
+    im = plt.imshow(pivot, cmap="YlGnBu", aspect='auto', interpolation='none')
+    plt.colorbar(orientation='vertical')
+
+.. _DescriptiveStatisticsPandasDataFrame:
+
+Compute descriptive statistics for access measurements using a pandas dataframe
+===============================================================================
+
+.. code-block:: python
+
+    # CoverageDefinition coverage: Coverage object
+    import pandas as pd
+
+    # compute data provider results for All Regions by Pass coverage
+    coverage_data_provider = coverage.data_providers.item('All Regions By Pass')
+    coverage_data = coverage_data_provider.execute()
+
+    # convert dataset collection in a row format as a Pandas DataFrame with default numeric row index
+    all_regions_coverage_df = coverage_data.data_sets.to_pandas_dataframe()
+
+    # compute descriptive statistics of Duration, Percent Coverage, Area Coverage
+    all_regions_coverage_df[['duration', 'percent coverage', 'area coverage']].apply(pd.to_numeric).describe()
+
+.. _AccessResultsToPandasDataFrame:
+
+Convert access data provider results to a pandas dataframe
+==========================================================
+
+.. code-block:: python
+
+    # Access facility_sensor_satellite_access: Access calculation
+    # compute data provider results for basic Access
+    field_names = ['Access Number', 'Start Time', 'Stop Time', 'Duration']
+
+    access_data = facility_sensor_satellite_access.data_providers['Access Data'].execute_elements(
+        self.get_scenario().start_time, self.get_scenario().stop_time, field_names
+    )
+
+    # convert dataset collection in a row format as a Pandas DataFrame
+    index_column = 'Access Number'
+    access_data_df = access_data.data_sets.to_pandas_dataframe(index_element_name=index_column)
+
+.. _CoverageDefinitionResultsToPandasDataFrame:
+
+Convert coverage definition data provider results to a pandas dataframe
+=======================================================================
+
+.. code-block:: python
+
+    # CoverageDefinition coverage: Coverage object
+    # compute data provider results for All Regions by Pass coverage
+    coverage_data_provider = coverage.data_providers.item('All Regions By Pass')
+    coverage_data = coverage_data_provider.execute()
+
+    # convert dataset collection in a row format as a Pandas DataFrame with default numeric row index
+    coverage_df = coverage_data.data_sets.to_pandas_dataframe()
+
+.. _FlightProfileNumpyArray:
+
+Load a numpy array with flight profile data
+===========================================
+
+.. code-block:: python
+
+    # Aircraft aircraft: Aircraft object
+    from scipy.spatial import ConvexHull
+    import matplotlib.pyplot as plt
+
+    # compute data provider results for an aircraft's Flight Profile By Time
+    field_names = ['Mach #', 'Altitude']
+    time_step_sec = 1.0
+
+    flight_profile_data_provider = aircraft.data_providers.item('Flight Profile By Time')
+    flight_profile_data = flight_profile_data_provider.execute_elements(self.get_scenario().start_time, self.get_scenario().stop_time, time_step_sec, field_names)
+
+    # convert dataset collection in a row format as a Numpy array
+    flight_profile_data_arr = flight_profile_data.data_sets.to_numpy_array()
+
+    # plot estimated fligth envelope as a convex hull
+    hull = ConvexHull(flight_profile_data_arr)
+
+    plt.figure(figsize=(15, 10))
+    for simplex in hull.simplices:
+        plt.plot(flight_profile_data_arr[simplex, 1], flight_profile_data_arr[simplex, 0], color="darkblue")
+
+    plt.title('Estimated Flight Envelope', fontsize=15)
+    plt.xlabel('Mach Number', fontsize=15)
+    plt.ylabel('Altitude', fontsize=15)
+
+    plt.tick_params(axis='x', labelsize=15)
+    plt.tick_params(axis='y', labelsize=15)
+    plt.grid(visible=True)
 
 .. _DisplayPrimitiveInterval:
 
@@ -898,6 +1092,19 @@ Great arc interpolator primitives
     interpolator.granularity = 0.1
     result = interpolator.interpolate(positionArray)
 
+.. _CylinderFillEnumeration:
+
+Combine enumerations with the logical or operator
+=================================================
+
+.. code-block:: python
+
+    from ansys.stk.core.graphics import CylinderFillOptions
+
+    # CylinderFillOptions inherits from enum.IntFlag and may be combined
+    # using the `|` operator
+    cyl_fill = CylinderFillOptions.BOTTOM_CAP | CylinderFillOptions.TOP_CAP
+
 .. _AttachSTKRuntimeSnippet:
 
 Attach to an already running STK runtime and get a reference to STK object root
@@ -1119,6 +1326,61 @@ Close STK
 
     # AgUiApplication uiApplication: STK Application
     uiApplication.shutdown()
+
+.. _STKDesktopEvents:
+
+Manage STK desktop events
+=========================
+
+.. code-block:: python
+
+    from ansys.stk.core.stkdesktop import STKDesktop
+    from ansys.stk.core.stkobjects import STKObjectType
+
+    def on_stk_object_added_custom_callback(path:str):
+        print(f'{path} has been added.')
+
+    stk = STKDesktop.start_application(visible=True)
+    root = stk.root
+    root.new_scenario('ExampleScenario')
+    skt_object_root_events = root.subscribe()
+    skt_object_root_events.on_stk_object_added += on_stk_object_added_custom_callback
+    scenario = root.current_scenario
+
+    # on_stk_object_added_custom_callback is successfully called when the next line is executed
+    facility = scenario.children.new(STKObjectType.FACILITY, 'AGI_HQ')
+
+    # Now switch control to the desktop application and create another facility.
+    # The user interface becomes unresponsive.
+
+    # Now open a tkinter window that processing COM messages.
+    from tkinter import Tk
+
+    window = Tk()
+    window.mainloop()
+
+.. _STKEngineEvents:
+
+Manage STK Engine events
+========================
+
+.. code-block:: python
+
+    # StkObjectRoot root: STK Object Model Root
+    def on_scenario_new_custom_callback(path: str):
+        print(f'Scenario {path} has been created.')
+
+    skt_object_root_events = root.subscribe()
+    skt_object_root_events.on_scenario_new += on_scenario_new_custom_callback
+
+    root.new_scenario('ExampleScenario')
+    # callback should be executed now
+
+    # remove the callback from the handler
+    skt_object_root_events.on_scenario_new -= on_scenario_new_custom_callback
+
+    # all finished with events, unsubscribe
+    skt_object_root_events.unsubscribe()
 
 .. _CloseScenario:
 
@@ -2005,6 +2267,16 @@ Add an AzEl mask to a facility
     # Facility facility: Facility Object
     facility.set_az_el_mask(AzElMaskType.TERRAIN_DATA, 0)
 
+.. _GetPositionFacility:
+
+Get the Cartesian position of the facility
+==========================================
+
+.. code-block:: python
+
+    # Facility facility: Facility Object
+    (x, y, z) = facility.position.query_cartesian()
+
 .. _SetPositionFacility:
 
 Set the geodetic position of the facility
@@ -2020,6 +2292,41 @@ Set the geodetic position of the facility
 
     # Set altitude to a distance above the ground
     facility.height_above_ground = 0.05  # km
+
+.. _SetHeightFacility:
+
+Create a facility and set its height relative to ground level
+=============================================================
+
+.. code-block:: python
+
+    # StkObjectRoot root: STK Object Model Root
+    from ansys.stk.core.stkobjects import Facility, STKObjectType
+
+    facility = Facility(root.current_scenario.children.new(STKObjectType.FACILITY, "facility1"))
+    facility.height_above_ground = 123.4
+
+.. _GetValidFacility:
+
+Get a valid reference to a facility
+===================================
+
+.. code-block:: python
+
+    # StkObjectRoot root: STK Object Model Root
+    from ansys.stk.core.utilities.exceptions import STKRuntimeError
+    from ansys.stk.core.stkobjects import Facility, STKObjectType
+
+    try:
+        # this facility is not a valid STK reference
+        my_facility_attempt = Facility()
+        my_facility_attempt.height_above_ground = 123.4
+    except STKRuntimeError as e:
+        print(e)
+
+    # this facility represents a valid STK object
+    facility = Facility(root.current_scenario.children.new(STKObjectType.FACILITY, "facility1"))
+    facility.height_above_ground = 123.4
 
 .. _CreateFacility:
 
@@ -3293,7 +3600,7 @@ Configure the weather and atmosphere of the mission
     # Get the wind model used for the mission
     windModel = mission.wind_model
     # Let's use the mission model
-    windModel.wind_model_source = WindAtmosModelSource.MISSION_MODEL
+    windModel.wind_model_source = WindAtmosphereModelSource.MISSION_MODEL
     # Let's use constant wind
     windModel.wind_model_type = WindModelType.CONSTANT_WIND
     # Get the constant wind model options
@@ -3306,7 +3613,7 @@ Configure the weather and atmosphere of the mission
     # Get the atmosphere model used for the mission
     atmosphere = mission.atmosphere_model
     # Let's use the mission model
-    atmosphere.atmosphere_model_source = WindAtmosModelSource.MISSION_MODEL
+    atmosphere.atmosphere_model_source = WindAtmosphereModelSource.MISSION_MODEL
     # Get the basic atmosphere options
     basicAtmosphere = atmosphere.mode_as_basic
     # Use standard 1976 atmosphere
@@ -3374,7 +3681,7 @@ Configure the wind and atmosphere for a procedure
     # Get the wind model for the procedure
     windModel = procedure.wind_model
     # Use the procedure model
-    windModel.wind_model_source = WindAtmosModelSource.PROCEDURE_MODEL
+    windModel.wind_model_source = WindAtmosphereModelSource.PROCEDURE_MODEL
     # Let's use constant wind
     windModel.wind_model_type = WindModelType.CONSTANT_WIND
     # Get the constant wind model options
@@ -3387,7 +3694,7 @@ Configure the wind and atmosphere for a procedure
     # Get the atmosphere model used for the procedure
     atmosphere = procedure.atmosphere_model
     # Let's use the procedure model
-    atmosphere.atmosphere_model_source = WindAtmosModelSource.PROCEDURE_MODEL
+    atmosphere.atmosphere_model_source = WindAtmosphereModelSource.PROCEDURE_MODEL
     # Get the basic atmosphere options
     basicAtmosphere = atmosphere.mode_as_basic
     # Use standard 1976 atmosphere

@@ -44,7 +44,7 @@ Configure the weather and atmosphere of the Mission
     # Get the wind model used for the mission
     windModel = mission.wind_model
     # Let's use the mission model
-    windModel.wind_model_source = WindAtmosModelSource.MISSION_MODEL
+    windModel.wind_model_source = WindAtmosphereModelSource.MISSION_MODEL
     # Let's use constant wind
     windModel.wind_model_type = WindModelType.CONSTANT_WIND
     # Get the constant wind model options
@@ -57,7 +57,7 @@ Configure the weather and atmosphere of the Mission
     # Get the atmosphere model used for the mission
     atmosphere = mission.atmosphere_model
     # Let's use the mission model
-    atmosphere.atmosphere_model_source = WindAtmosModelSource.MISSION_MODEL
+    atmosphere.atmosphere_model_source = WindAtmosphereModelSource.MISSION_MODEL
     # Get the basic atmosphere options
     basicAtmosphere = atmosphere.mode_as_basic
     # Use standard 1976 atmosphere
@@ -76,7 +76,7 @@ Configure the wind and atmosphere for a procedure
     # Get the wind model for the procedure
     windModel = procedure.wind_model
     # Use the procedure model
-    windModel.wind_model_source = WindAtmosModelSource.PROCEDURE_MODEL
+    windModel.wind_model_source = WindAtmosphereModelSource.PROCEDURE_MODEL
     # Let's use constant wind
     windModel.wind_model_type = WindModelType.CONSTANT_WIND
     # Get the constant wind model options
@@ -89,7 +89,7 @@ Configure the wind and atmosphere for a procedure
     # Get the atmosphere model used for the procedure
     atmosphere = procedure.atmosphere_model
     # Let's use the procedure model
-    atmosphere.atmosphere_model_source = WindAtmosModelSource.PROCEDURE_MODEL
+    atmosphere.atmosphere_model_source = WindAtmosphereModelSource.PROCEDURE_MODEL
     # Get the basic atmosphere options
     basicAtmosphere = atmosphere.mode_as_basic
     # Use standard 1976 atmosphere

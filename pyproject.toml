@@ -57,13 +57,15 @@ jupyter = [
     "sidecar>=0.7.0",
 ]
 tests = [
+    "libcst==1.7.0",
+    "matplotlib==3.10.1",
+    "numpy==2.2.4",
     "pytest==8.3.5",
     "pytest-cov==6.1.1",
     "pytz==2025.2",
     "parameterized==0.9.0",
     "pandas==2.2.3",
-    "numpy==2.2.4",
-    "libcst==1.7.0"
+    "scipy==1.15.2",
 ]
 doc = [
     "ansys-sphinx-theme==1.4.2",
@@ -76,6 +78,7 @@ doc = [
     "nbsphinx==0.9.7",
     "numpydoc==1.8.0",
     "nbconvert==7.16.6",
+    "scipy==1.15.2",
     "sphinx==7.4.7",
     "sphinx-design==0.6.1",
     "sphinx-jinja==2.0.2",
