@@ -38,7 +38,7 @@ all = [
     "protobuf",
     "jupyter-rfb==0.5.1",
     "numpy==2.2.4",
-    "Pillow==11.1.0",
+    "Pillow==11.2.1",
     "simplejpeg==1.8.2",
     "sidecar==0.7.0",
     "libcst==1.7.0"
@@ -83,7 +83,7 @@ doc = [
 visualization = [
     "jupyter-rfb==0.5.1",
     "numpy==2.2.4",
-    "Pillow==11.1.0",
+    "Pillow==11.2.1",
     "simplejpeg==1.8.2",
     "sidecar==0.7.0"
 ]

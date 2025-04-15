@@ -119,7 +119,18 @@ def _raise_uninitialized_error(*args):
     raise STKRuntimeError("Valid STK object model classes are returned from STK methods and should not be created independently.")
 
 class CylinderFillOptions(IntFlag):
-    """Cylinder faces that can be filled."""
+    """
+    Cylinder faces that can be filled.
+
+    Examples
+    --------
+    Combine enumerations with the logical OR operator:
+    >>> from ansys.stk.core.graphics import CylinderFillOptions
+    >>> 
+    >>> # CylinderFillOptions inherits from enum.IntFlag and may be combined
+    >>> # using the `|` operator
+    >>> cyl_fill = CylinderFillOptions.BOTTOM_CAP | CylinderFillOptions.TOP_CAP
+    """
    
     WALL = 1
     """Fill the cylinder's wall."""

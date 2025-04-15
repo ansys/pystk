@@ -32,8 +32,12 @@ Analysis Workbench
 Camera
   - :ref:`Change camera reference frame <CameraReferenceFrame>`
   - :ref:`Change camera view to imagery extents <CameraExtents>`
+Colors
+  - :ref:`Get and set a four-channel color for the graphics of an stk object <GetSetRGBAColor>`
+  - :ref:`Get and set a three-channel color for the graphics of an stk object <GetSetRGBColor>`
 Connect
   - :ref:`Extract data from connect result <ResultsConnectCommand>`
+  - :ref:`Use arrays to send and retrieve data with connect <ConnectCommandArrays>`
   - :ref:`Execute multiple connect commands <ConnectCommandMultiple>`
   - :ref:`Execute connect command <ConnectCommand>`
 Data Analysis
@@ -59,6 +63,7 @@ Graphics
   - :ref:`Draw a new surface extent triangulator <SurfaceExtentTriangulator>`
   - :ref:`Draw a new surface mesh <DrawNewSurfaceMeshPrimitive>`
   - :ref:`Great arc interpolator primitives <GreatArcInterpolatorPrimitives>`
+  - :ref:`Combine enumerations with the logical or operator <CylinderFillEnumeration>`
 Initialization
   - :ref:`Attach to an already running stk runtime and get a reference to stk object root <AttachSTKRuntimeSnippet>`
   - :ref:`Start stk runtime and get a reference to stk object root <CreateSTKRuntimeNewSnippet>`
@@ -75,6 +80,8 @@ Scenario
     - :ref:`Set unit preferences for object model <SetUnitPreferences>`
     - :ref:`Create a new scenario <CreateScenario>`
     - :ref:`Close stk <CloseSTK>`
+    - :ref:`Manage stk desktop events <STKDesktopEvents>`
+    - :ref:`Manage stk engine events <STKEngineEvents>`
     - :ref:`Close an open scenario <CloseScenario>`
     - :ref:`Open a viewer data file <OpenVdfSTK>`
 STK Objects
@@ -136,7 +143,10 @@ STK Objects
       - :ref:`Display the azel mask in 2d/3d <FacilityAzElMaskDisplay>`
 
     - :ref:`Add an azel mask to a facility <AzElMaskFacility>`
+    - :ref:`Get the cartesian position of the facility <GetPositionFacility>`
     - :ref:`Set the geodetic position of the facility <SetPositionFacility>`
+    - :ref:`Create a facility and set its height relative to ground level <SetHeightFacility>`
+    - :ref:`Get a valid reference to a facility <GetValidFacility>`
     - :ref:`Create a facility (on the current scenario central body) <CreateFacility>`
   Figure Of Merit
     - :ref:`Configure the contours of the fom and define a color ramp <FOMContoursColorRamp>`
@@ -617,6 +627,44 @@ Change camera view to imagery extents
     manager.scenes.item(0).camera.view_extent("Earth", extent)
     manager.render()
 
+.. _GetSetRGBAColor:
+
+Get and set a four-channel color for the graphics of an STK object
+==================================================================
+
+.. code-block:: python
+
+    from ansys.stk.core.utilities.colors import Colors, ColorRGBA
+
+    manager = root.current_scenario.scene_manager
+    point = manager.initializers.point_batch_primitive.initialize()
+
+    lla_pts = [ 39.88, -75.25, 0,
+                38.85, -77.04, 0,
+                37.37, -121.92, 0 ]
+
+    colors = [ Colors.Red,
+            ColorRGBA(Colors.Blue, 127),
+            Colors.from_rgba(0, 255, 0, 127) ]
+
+    point.set_cartographic_with_colors('Earth', lla_pts, colors)
+
+.. _GetSetRGBColor:
+
+Get and set a three-channel color for the graphics of an STK object
+===================================================================
+
+.. code-block:: python
+
+    from ansys.stk.core.stkobjects import STKObjectType
+    from ansys.stk.core.utilities.colors import Color, Colors
+
+    facility = root.current_scenario.children.new(STKObjectType.FACILITY, "facility1")
+
+    facility.graphics.color = Colors.Blue
+    facility.graphics.color = Color.from_rgb(127, 255, 212)
+    (r, g, b) = facility.graphics.color.get_rgb()
+
 .. _ResultsConnectCommand:
 
 Extract data from connect result
@@ -629,6 +677,24 @@ Extract data from connect result
     for i in range(0, result.count):
         cmdRes = result.item(i)
         print(cmdRes)
+
+.. _ConnectCommandArrays:
+
+Use arrays to send and retrieve data with connect
+=================================================
+
+.. code-block:: python
+
+    from ansys.stk.core.stkutil import ExecuteMultipleCommandsMode
+
+    connect_commands = ['GetStkVersion /', 'New / Scenario ExampleScenario']
+    command_results = root.execute_multiple_commands(connect_commands, ExecuteMultipleCommandsMode.CONTINUE_ON_ERROR)
+
+    first_message = command_results.item(0)
+    also_first_message = command_results[0]
+
+    for message in command_results:
+        print(message.count)
 
 .. _ConnectCommandMultiple:
 
@@ -1027,6 +1093,19 @@ Great arc interpolator primitives
     interpolator.granularity = 0.1
     result = interpolator.interpolate(positionArray)
 
+.. _CylinderFillEnumeration:
+
+Combine enumerations with the logical or operator
+=================================================
+
+.. code-block:: python
+
+    from ansys.stk.core.graphics import CylinderFillOptions
+
+    # CylinderFillOptions inherits from enum.IntFlag and may be combined
+    # using the `|` operator
+    cyl_fill = CylinderFillOptions.BOTTOM_CAP | CylinderFillOptions.TOP_CAP
+
 .. _AttachSTKRuntimeSnippet:
 
 Attach to an already running STK runtime and get a reference to STK object root
@@ -1262,6 +1341,61 @@ Close STK
 
     # AgUiApplication uiApplication: STK Application
     uiApplication.shutdown()
+
+.. _STKDesktopEvents:
+
+Manage STK desktop events
+=========================
+
+.. code-block:: python
+
+    from ansys.stk.core.stkdesktop import STKDesktop
+    from ansys.stk.core.stkobjects import STKObjectType
+
+    def on_stk_object_added_custom_callback(path:str):
+        print(f'{path} has been added.')
+
+    stk = STKDesktop.start_application(visible=True)
+    root = stk.root
+    root.new_scenario('ExampleScenario')
+    skt_object_root_events = root.subscribe()
+    skt_object_root_events.on_stk_object_added += on_stk_object_added_custom_callback
+    scenario = root.current_scenario
+
+    # on_stk_object_added_custom_callback is successfully called when the next line is executed
+    facility = scenario.children.new(STKObjectType.FACILITY, 'AGI_HQ')
+
+    # Now switch control to the desktop application and create another facility.
+    # The user interface becomes unresponsive.
+
+    # Now open a tkinter window that processing COM messages.
+    from tkinter import Tk
+
+    window = Tk()
+    window.mainloop()
+
+.. _STKEngineEvents:
+
+Manage STK Engine events
+========================
+
+.. code-block:: python
+
+    # StkObjectRoot root: STK Object Model Root
+    def on_scenario_new_custom_callback(path: str):
+        print(f'Scenario {path} has been created.')
+
+    skt_object_root_events = root.subscribe()
+    skt_object_root_events.on_scenario_new += on_scenario_new_custom_callback
+
+    root.new_scenario('ExampleScenario')
+    # callback should be executed now
+
+    # remove the callback from the handler
+    skt_object_root_events.on_scenario_new -= on_scenario_new_custom_callback
+
+    # all finished with events, unsubscribe
+    skt_object_root_events.unsubscribe()
 
 .. _CloseScenario:
 
@@ -2148,6 +2282,16 @@ Add an AzEl mask to a facility
     # Facility facility: Facility Object
     facility.set_az_el_mask(AzElMaskType.TERRAIN_DATA, 0)
 
+.. _GetPositionFacility:
+
+Get the Cartesian position of the facility
+==========================================
+
+.. code-block:: python
+
+    # Facility facility: Facility Object
+    (x, y, z) = facility.position.query_cartesian()
+
 .. _SetPositionFacility:
 
 Set the geodetic position of the facility
@@ -2163,6 +2307,41 @@ Set the geodetic position of the facility
 
     # Set altitude to a distance above the ground
     facility.height_above_ground = 0.05  # km
+
+.. _SetHeightFacility:
+
+Create a facility and set its height relative to ground level
+=============================================================
+
+.. code-block:: python
+
+    # StkObjectRoot root: STK Object Model Root
+    from ansys.stk.core.stkobjects import Facility, STKObjectType
+
+    facility = Facility(root.current_scenario.children.new(STKObjectType.FACILITY, "facility1"))
+    facility.height_above_ground = 123.4
+
+.. _GetValidFacility:
+
+Get a valid reference to a facility
+===================================
+
+.. code-block:: python
+
+    # StkObjectRoot root: STK Object Model Root
+    from ansys.stk.core.utilities.exceptions import STKRuntimeError
+    from ansys.stk.core.stkobjects import Facility, STKObjectType
+
+    try:
+        # this facility is not a valid STK reference
+        my_facility_attempt = Facility()
+        my_facility_attempt.height_above_ground = 123.4
+    except STKRuntimeError as e:
+        print(e)
+
+    # this facility represents a valid STK object
+    facility = Facility(root.current_scenario.children.new(STKObjectType.FACILITY, "facility1"))
+    facility.height_above_ground = 123.4
 
 .. _CreateFacility:
 
