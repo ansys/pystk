@@ -10,6 +10,7 @@ Dockerfiles
 dataframe
 DataFrames
 documentarians
+eid
 ephemerides
 cartodetic
 FOM
