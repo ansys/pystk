@@ -90,6 +90,21 @@ Overview
 
 
 
+Examples
+--------
+
+Set the current scenario's time period
+
+.. code-block:: python
+
+    # StkObjectRoot root: STK Object Model Root
+    scenario = root.current_scenario
+    scenario.set_time_period(
+        start_time="1 Jan 2012 12:00:00.000",
+        stop_time="2 Jan 2012 12:00:00.000"
+    )
+
+
 Import detail
 -------------
 
@@ -298,6 +313,21 @@ Method detail
 
 
 
+
+
+    Examples
+    --------
+
+    Set the current scenario's time period
+
+    .. code-block:: python
+
+        # StkObjectRoot root: STK Object Model Root
+        scenario = root.current_scenario
+        scenario.set_time_period(
+            start_time="1 Jan 2012 12:00:00.000",
+            stop_time="2 Jan 2012 12:00:00.000"
+        )
 
 
 .. py:method:: set_dirty(self) -> None

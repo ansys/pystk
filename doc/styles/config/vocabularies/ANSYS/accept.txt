@@ -9,6 +9,7 @@ Astrogator
 Dockerfiles
 dataframe
 documentarians
+eid
 ephemerides
 cartodetic
 FOM
