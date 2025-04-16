@@ -51,6 +51,17 @@ propagator = satellite.propagator
 propagator.propagate()  # To propagate the orbit
 # -
 
+# ## Display the scenario
+#
+# It is possible to display the created scenario by using PySTK widgets for Jupyter:
+
+# +
+from ansys.stk.core.stkengine.experimental.jupyterwidgets import GlobeWidget
+
+plotter = GlobeWidget(root, 640, 480)
+plotter.show()
+# -
+
 # ## Save a scenario
 
 # Now save the scenario along with all added objects using PySTK.
